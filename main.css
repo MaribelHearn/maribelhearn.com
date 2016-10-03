@@ -1,0 +1,97 @@
+body {
+	background-image: url('./eosdbig.jpg');
+}
+table, tr, th, td {
+	border: 3px solid hotpink;
+	text-align: center;
+}
+.hidden {
+    border: none;
+    text-align: left;
+}
+.list {
+	width: 250px;
+}
+.overview {
+    width: 80px;
+}
+.attempted {
+    background-color: orange;
+}
+.clear {
+    background-color: green;
+}
+.nm {
+    background-color: brown;
+}
+.nb {
+    background-color: blue;
+}
+.nmnb {
+    background-color: purple;
+}
+.g {
+	color: green;
+	font-weight: bold;
+}
+.y {
+	background-color: green;
+}
+.r {
+	background-color: red;
+}
+.v {
+	font-weight: bold;
+}
+.i {
+	color: black;
+}
+.cover {
+	width: 300px;
+	height: 300px;
+}
+#Title {
+	text-align: center;
+}
+#GamesLeft, #GamesRight {
+	float: left;
+}
+#Links {
+	float: right;
+}
+#Achievements {
+	margin-left: 30%; /* 566px */
+	margin-right: auto;
+	width: 50%;
+}
+@media screen and (max-width: 1000px) {
+	#Achievements {
+		margin-left: 28%; /* 283px */
+		margin-right: auto;
+		width: 50%;
+	}
+}
+@media only screen and (min-device-width: 320px) and (max-device-width : 480px) and (orientation: portrait) {
+	table {
+		width: 100%;
+	}
+	.l {
+		width: 100%;
+	}
+	#GamesLeft, #GamesRight, #Links {
+		float: none;
+	}
+	#Achievements {
+		margin-left: 0px;
+		margin-right: 0px;
+		width: 100%;
+	}
+}
+@media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
+	#Achievements {
+		margin-top: 1100px;
+		margin-left: 0px;
+		margin-right: 0px;
+		width: 100%;
+	}
+}
