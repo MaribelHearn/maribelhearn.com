@@ -1,0 +1,1197 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+
+	<head>
+		<title>Maribel's Survival Calculator</title>
+		<meta charset='UTF-8'>
+        <style>
+            table, tr, th, td {
+                border: 1px solid black;
+            }
+            div {
+                background-color: #FFFFFF;
+            }
+            h1 {
+                font: 48px monotype corsiva;
+            }
+            .wrap {
+                border: 1px solid black;
+                text-align: center;
+                margin-left: 25%;
+                margin-right: 25%;
+                opacity: 0.8;
+                font: 14px verdana, sans-serif;
+            }
+        </style>
+        <script src='./sorttable.js'></script>
+		<script>
+            var rand = function (min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            };
+            
+            var load = function () {
+                var random = rand(1, 8);
+                document.body.style.background = "url('./bg/" + random + ".png')";
+            };
+            
+            
+            var games = {
+                "HRtP": ["Easy", "Normal", "Hard", "Lunatic"],
+                "SoEW": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+                "PoDD": ["Easy", "Normal", "Hard", "Lunatic"],
+                "LLS": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+                "MS": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+                "EoSD": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+                "PCB": ["Easy", "Normal", "Hard", "Lunatic", "Extra", "Phantasm"],
+                "IN": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+                "PoFV": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+                "MoF": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+                "SA": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+                "UFO": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+                "GFW": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+                "TD": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+                "DDC": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+                "LoLK": ["Easy", "Normal", "Hard", "Lunatic", "Extra"]
+            };
+            
+            var isTripleNGame = function (game) {
+                return game == "PCB" || game == "UFO" || game == "TD";
+            };
+            
+            var numericSort = function (a, b) {
+                return b - a;
+            };
+            
+            var sep = function (number) {
+                if (isNaN(number)) {
+                    return '-';
+                }
+                return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            };
+            
+			var calc = function () {
+				var results = "", game, i, difficulty, id, survival,
+                    survivals = {
+                        "Not cleared": {
+                            "Easy": 0,
+                            "Normal": 0,
+                            "Hard": 0,
+                            "Lunatic": 0,
+                            "Extra": 0
+                        },
+                        "Clear": {
+                            "Easy": 0,
+                            "Normal": 0,
+                            "Hard": 0,
+                            "Lunatic": 0,
+                            "Extra": 0
+                        },
+                        "1cc / EX Clear": {
+                            "Easy": 0,
+                            "Normal": 0,
+                            "Hard": 0,
+                            "Lunatic": 0,
+                            "Extra": 0
+                        },
+                        "NM": {
+                            "Easy": 0,
+                            "Normal": 0,
+                            "Hard": 0,
+                            "Lunatic": 0,
+                            "Extra": 0
+                        },
+                        "NB": {
+                            "Easy": 0,
+                            "Normal": 0,
+                            "Hard": 0,
+                            "Lunatic": 0,
+                            "Extra": 0
+                        },
+                        "NN*": {
+                            "Easy": 0,
+                            "Normal": 0,
+                            "Hard": 0,
+                            "Lunatic": 0,
+                            "Extra": 0
+                        },
+                        "NN(N)": {
+                            "Easy": 0,
+                            "Normal": 0,
+                            "Hard": 0,
+                            "Lunatic": 0,
+                            "Extra": 0
+                        }
+                    },
+                    na = {
+                        "HRtP": 0,
+                        "SoEW": 0,
+                        "PoDD": 0,
+                        "LLS": 0,
+                        "MS": 0,
+                        "EoSD": 0,
+                        "PCB": 0,
+                        "IN": 0,
+                        "PoFV": 0,
+                        "MoF": 0,
+                        "SA": 0,
+                        "UFO": 0,
+                        "GFW": 0,
+                        "TD": 0,
+                        "DDC": 0,
+                        "LoLK": 0
+                    }
+                    completions = {
+                        "HRtP": 0,
+                        "SoEW": 0,
+                        "PoDD": 0,
+                        "LLS": 0,
+                        "MS": 0,
+                        "EoSD": 0,
+                        "PCB": 0,
+                        "IN": 0,
+                        "PoFV": 0,
+                        "MoF": 0,
+                        "SA": 0,
+                        "UFO": 0,
+                        "GFW": 0,
+                        "TD": 0,
+                        "DDC": 0,
+                        "LoLK": 0
+                    };
+                
+                for (game in games) {
+                    for (i in games[game]) {
+                        difficulty = games[game][i];
+                        id = game + difficulty;
+                        survival = document.getElementById(id).value;
+                        
+                        if (survival == "N/A") {
+                            na[game] += 100 / games[game].length;
+                            continue;
+                        }
+                        
+                        if (difficulty == "Phantasm") {
+                            difficulty = "Extra";
+                        }
+                        
+                        if (survival == "Not cleared") {
+                            survivals["Not cleared"][difficulty]++;
+                            continue;
+                        }
+                        
+                        if (survival == "Clear") {
+                            difficulty == "Extra" ? survivals["1cc / EX Clear"][difficulty]++ : survivals["Clear"][difficulty]++;
+                        }
+                        
+                        if (survival == "1cc") {
+                            survivals["1cc / EX Clear"][difficulty]++;
+                        }
+                        
+                        if (survival == "NM") {
+                            survivals["NM"][difficulty]++;
+                        }
+                        
+                        if (survival == "NB") {
+                            survivals["NB"][difficulty]++;
+                        }
+                        
+                        if (survival == "NN") {
+                            isTripleNGame(game) ? survivals["NN*"][difficulty]++ : survivals["NN(N)"][difficulty]++;
+                        }
+                        
+                        if (survival == "NNN") {
+                            survivals["NN(N)"][difficulty]++;
+                        }
+                        
+                        completions[game] += 100 / games[game].length;
+                    }
+                }
+                
+                results = "<table id='table' class='sortable'><thead><tr><th>Survival</th><th>Easy</th><th>Normal</th><th>Hard</th><th>Lunatic</th><th>Extra</th></tr></thead><tbody>";
+                
+                for (survival in survivals) {
+                    results += "<tr><td>" + survival + "</td><td>" + survivals[survival]["Easy"] + "</td><td>" + survivals[survival]["Normal"] +
+                    "</td><td>" + survivals[survival]["Hard"] + "</td><td>" + survivals[survival]["Lunatic"] + "</td><td>" + survivals[survival]["Extra"] + "</td></tr>";
+                }
+                
+                results += "</tbody></table><br><p>* Any NN that was achieved in a game with a third N.</p><br>" +
+                "<table id='gameTable' class='sortable'><thead><tr><th>Game</th><th>Completion</th></tr></thead><tbody>";
+                
+                for (game in games) {
+                    if (Math.round(na[game]) == 100) {
+                        continue;
+                    }
+                    
+                    results += "<tr><td>" + game + "</td><td>" + Math.round(completions[game]) + "%</td></tr>";
+                }
+                
+                results += "</tbody></table>";
+                
+                document.getElementById("results").innerHTML = results;
+                table = document.getElementById("table");
+                gameTable = document.getElementById("gameTable");
+                table.setAttribute("align", "center");
+                gameTable.setAttribute("align", "center");
+                sorttable.makeSortable(table);
+                sorttable.makeSortable(gameTable);
+			};
+		</script>
+	</head>
+	
+	<body onLoad='javascript:load()'>
+		<div class='wrap'>
+			<h1>Survival Calculator</h1>
+            
+			<br>
+			Fill in the best survivals you have pulled off in the table below.<br>
+            If you leave a dropdown menu on the N/A option, it will not be factored in.<br>
+            At the bottom of the page, two tables indicating your survival progress will be printed.<br>
+            NM = No Miss (no deaths), NB = No Bomb, NN = No Miss No Bomb, NNN = NN with a third restriction depending on the game.<br>
+            In PCB this restriction is No Border Breaks, in UFO it is No UFO Summons and in TD it is No Trance.<br>
+            The Phantasm Stage counts as another Extra Stage.<br>
+			<br>
+            
+            <table id='survival' align='center'>
+                <tr>
+                    <th>Game</th>
+                    <th>Easy</th>
+                    <th>Normal</th>
+                    <th>Hard</th>
+                    <th>Lunatic</th>
+                    <th>Extra</th>
+                    <th>Phantasm</th>
+                </tr>
+                <tr>
+                    <td>HRtP</td>
+                    <td>
+                        <select id='HRtPEasy'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='HRtPNormal'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='HRtPHard'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='HRtPLunatic'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>SoEW</td>
+                    <td>
+                        <select id='SoEWEasy'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='SoEWNormal'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='SoEWHard'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='SoEWLunatic'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='SoEWExtra'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>PoDD</td>
+                    <td>
+                        <select id='PoDDEasy'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='PoDDNormal'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='PoDDHard'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='PoDDLunatic'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>LLS</td>
+                    <td>
+                        <select id='LLSEasy'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='LLSNormal'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='LLSHard'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='LLSLunatic'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='LLSExtra'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>MS</td>
+                    <td>
+                        <select id='MSEasy'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='MSNormal'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='MSHard'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='MSLunatic'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='MSExtra'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>EoSD</td>
+                    <td>
+                        <select id='EoSDEasy'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='EoSDNormal'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='EoSDHard'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='EoSDLunatic'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='EoSDExtra'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>PCB</td>
+                    <td>
+                        <select id='PCBEasy'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                            <option>NNN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='PCBNormal'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                            <option>NNN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='PCBHard'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                            <option>NNN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='PCBLunatic'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                            <option>NNN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='PCBExtra'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                            <option>NNN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='PCBPhantasm'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                            <option>NNN</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>IN</td>
+                    <td>
+                        <select id='INEasy'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='INNormal'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='INHard'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='INLunatic'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='INExtra'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>PoFV</td>
+                    <td>
+                        <select id='PoFVEasy'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='PoFVNormal'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='PoFVHard'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='PoFVLunatic'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='PoFVExtra'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                        </select>
+                    </td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>MoF</td>
+                    <td>
+                        <select id='MoFEasy'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='MoFNormal'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='MoFHard'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='MoFLunatic'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='MoFExtra'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>SA</td>
+                    <td>
+                        <select id='SAEasy'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='SANormal'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='SAHard'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='SALunatic'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='SAExtra'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>UFO</td>
+                    <td>
+                        <select id='UFOEasy'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                            <option>NNN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='UFONormal'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                            <option>NNN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='UFOHard'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                            <option>NNN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='UFOLunatic'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                            <option>NNN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='UFOExtra'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                            <option>NNN</option>
+                        </select>
+                    </td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>GFW</td>
+                    <td>
+                        <select id='GFWEasy'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='GFWNormal'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='GFWHard'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='GFWLunatic'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='GFWExtra'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>TD</td>
+                    <td>
+                        <select id='TDEasy'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                            <option>NNN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='TDNormal'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                            <option>NNN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='TDHard'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                            <option>NNN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='TDLunatic'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                            <option>NNN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='TDExtra'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                            <option>NNN</option>
+                        </select>
+                    </td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>DDC</td>
+                    <td>
+                        <select id='DDCEasy'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='DDCNormal'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='DDCHard'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='DDCLunatic'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='DDCExtra'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>LoLK</td>
+                    <td>
+                        <select id='LoLKEasy'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='LoLKNormal'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='LoLKHard'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='LoLKLunatic'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='LoLKExtra'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>Clear</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                        </select>
+                    </td>
+                    <td>N/A</td>
+                </tr>
+            </table>
+            
+            <br>
+            
+			<div id='results'>
+			</div>
+            
+            <br>
+            
+			<input type='button' onClick='javascript:calc()' value='Calculate' /> <form action='./index.html'><input type='submit' value='Go Back'></form>
+		</div>
+	</body>
+
+</html>
