@@ -15,7 +15,7 @@ h1 {
     opacity: 0.8;
     font: 14px verdana, sans-serif;
 }
-@media only screen and (max-width: 1400) {
+@media only screen and (max-width: 1400px) {
     .wrap {
         margin-left: 15%;
         margin-right: 15%;
