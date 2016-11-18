@@ -1,4 +1,4 @@
-var rand = function (min, max) {
+Ôªøvar rand = function (min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
@@ -127,7 +127,7 @@ var WRs = {
         "Extra": {
             "ReimuA": [78308100, "Karisa", ""],
             "ReimuB": [78625740, "Zil", ""],
-            "MarisaA": [80289020, "Ç“Ç¶Ç∆ÇÎ", ""],
+            "MarisaA": [80289020, "„Å¥„Åà„Å®„Çç", ""],
             "MarisaB": [79182030, "Chirpy", ""]
         }
     },
@@ -159,7 +159,7 @@ var WRs = {
         "Extra": {
             "Reimu": [193632780, "Zigzagwolf", ""],
             "Marisa": [170836740, "Zigzagwolf", ""],
-            "Mima": [204022370, "ïîâÆä±Çµ", ""],
+            "Mima": [204022370, "ÈÉ®Â±ãÂπ≤„Åó", ""],
             "Yuuka": [186900220, "Zigzagwolf", ""]
         }
     },
@@ -190,35 +190,35 @@ var WRs = {
         },
         "Extra": {
             "ReimuA": [629609710, "OOSAKA", "https://zh.touhouwiki.net/images/0/08/Th6_ud0501.rpy"],
-            "ReimuB": [642579790 	, "OOSAKA", "https://zh.touhouwiki.net/images/e/e9/Th6_ud0502.rpy"],
+            "ReimuB": [642579790, "OOSAKA", "https://zh.touhouwiki.net/images/e/e9/Th6_ud0502.rpy"],
             "MarisaA": [631488580, "OOSAKA", "https://zh.touhouwiki.net/images/7/76/Th6_udz973.rpy"],
             "MarisaB": [663244220 , "OOSAKA", "https://zh.touhouwiki.net/images/5/53/Th6_udx716.jpg"]
         }
     },
     "PCB": {
         "Easy": {
-            "ReimuA": [1799871950, "HSéQñd", "http://score.royalflare.net/th07/replay7/th7_ud1d79.rpy"],
+            "ReimuA": [1799871950, "HSÂèÇË¨Ä", "http://score.royalflare.net/th07/replay7/th7_ud1d79.rpy"],
             "ReimuB": [2042271460, "Yu-suke", ""],
             "MarisaA": [1950541980, "Lcy", "http://score.royalflare.net/th07/replay7/th7_ud21ab.rpy"],
-            "MarisaB": [1768291980, "HSéQñd", "http://score.royalflare.net/th07/replay7/th7_ud1d45.rpy"],
-            "SakuyaA": [1777849120, "HSéQñd", "http://score.royalflare.net/th07/replay7/th7_ud1d7a.rpy"],
-            "SakuyaB": [1929606150, "HSéQñd", "http://score.royalflare.net/th07/replay7/th7_ud1d7b.rpy"]
+            "MarisaB": [1768291980, "HSÂèÇË¨Ä", "http://score.royalflare.net/th07/replay7/th7_ud1d45.rpy"],
+            "SakuyaA": [1777849120, "HSÂèÇË¨Ä", "http://score.royalflare.net/th07/replay7/th7_ud1d7a.rpy"],
+            "SakuyaB": [1929606150, "HSÂèÇË¨Ä", "http://score.royalflare.net/th07/replay7/th7_ud1d7b.rpy"]
         },
         "Normal": {
-            "ReimuA": [2001369010, "HSéQñd", "http://score.royalflare.net/th07/replay7/th7_ud1b7a.rpy"],
+            "ReimuA": [2001369010, "HSÂèÇË¨Ä", "http://score.royalflare.net/th07/replay7/th7_ud1b7a.rpy"],
             "ReimuB": [2167768950, "clo-naga", "http://score.royalflare.net/th07/replay7/th7_ud212a.rpy"],
-            "MarisaA": [2132017710, "HSéQñd", "http://score.royalflare.net/th07/replay7/th7_ud1d94.rpy"],
-            "MarisaB": [2011470500, "HSéQñd", "http://score.royalflare.net/th07/replay7/th7_ud1b88.rpy"],
-            "SakuyaA": [2014928480, "HSéQñd", "http://score.royalflare.net/th07/replay7/th7_ud1b85.rpy"],
-            "SakuyaB": [2104019460, "HSéQñd", "http://score.royalflare.net/th07/replay7/th7_ud1d92.rpy"]
+            "MarisaA": [2132017710, "HSÂèÇË¨Ä", "http://score.royalflare.net/th07/replay7/th7_ud1d94.rpy"],
+            "MarisaB": [2011470500, "HSÂèÇË¨Ä", "http://score.royalflare.net/th07/replay7/th7_ud1b88.rpy"],
+            "SakuyaA": [2014928480, "HSÂèÇË¨Ä", "http://score.royalflare.net/th07/replay7/th7_ud1b85.rpy"],
+            "SakuyaB": [2104019460, "HSÂèÇË¨Ä", "http://score.royalflare.net/th07/replay7/th7_ud1d92.rpy"]
         },
         "Hard": {
-            "ReimuA": [2548721870, "HSéQñd", "http://score.royalflare.net/th07/replay7/th7_ud1db4.rpy"],
+            "ReimuA": [2548721870, "HSÂèÇË¨Ä", "http://score.royalflare.net/th07/replay7/th7_ud1db4.rpy"],
             "ReimuB": [2820415430, "st", "http://score.royalflare.net/th07/replay7/th7_ud1ef1.rpy"],
             "MarisaA": [2576184230, "st", "http://score.royalflare.net/th07/replay7/th7_ud1ec6.rpy"],
-            "MarisaB": [2387521220, "HSéQñd", "http://score.royalflare.net/th07/replay7/th7_ud1d95.rpy"],
-            "SakuyaA": [2379101080, "HSéQñd", "http://score.royalflare.net/th07/replay7/th7_ud1d96.rpy"],
-            "SakuyaB": [2778765040, "HSéQñd", "http://score.royalflare.net/th07/replay7/th7_ud1d97.rpy"]
+            "MarisaB": [2387521220, "HSÂèÇË¨Ä", "http://score.royalflare.net/th07/replay7/th7_ud1d95.rpy"],
+            "SakuyaA": [2379101080, "HSÂèÇË¨Ä", "http://score.royalflare.net/th07/replay7/th7_ud1d96.rpy"],
+            "SakuyaB": [2778765040, "HSÂèÇË¨Ä", "http://score.royalflare.net/th07/replay7/th7_ud1d97.rpy"]
         },
         "Lunatic": {
             "ReimuA": [3001249690, "Yu-suke", "http://pndsng.wwww.jp/touhou/highscores/replay/th7_ud0251.rpy"],
@@ -229,12 +229,12 @@ var WRs = {
             "SakuyaB": [3859588140, "Yu-suke", "http://pndsng.wwww.jp/touhou/highscores/replay/th7_ud0283.rpy"]
         },
         "Extra": {
-            "ReimuA": [1368382510, "HSéQñd", "http://score.royalflare.net/th07/replay7/th7_ud1d14.rpy"],
-            "ReimuB": [1441790870, "Ç¢Ç»", "http://score.royalflare.net/th07/replay7/th7_ud2257.rpy"],
-            "MarisaA": [1257244350, "HSéQñd", "http://score.royalflare.net/th07/replay7/th7_ud1f23.rpy"],
-            "MarisaB": [1242595110, "HSéQñd", "http://score.royalflare.net/th07/replay7/th7_ud1f43.rpy"],
-            "SakuyaA": [1277681830, "Ç¢Ç»", "http://score.royalflare.net/th07/replay7/th7_ud2267.rpy"],
-            "SakuyaB": [1412782710, "Ç¢Ç»", "http://score.royalflare.net/th07/replay7/th7_ud2233.rpy"]
+            "ReimuA": [1368382510, "HSÂèÇË¨Ä", "http://score.royalflare.net/th07/replay7/th7_ud1d14.rpy"],
+            "ReimuB": [1441790870, "„ÅÑ„Å™", "http://score.royalflare.net/th07/replay7/th7_ud2257.rpy"],
+            "MarisaA": [1257244350, "HSÂèÇË¨Ä", "http://score.royalflare.net/th07/replay7/th7_ud1f23.rpy"],
+            "MarisaB": [1242595110, "HSÂèÇË¨Ä", "http://score.royalflare.net/th07/replay7/th7_ud1f43.rpy"],
+            "SakuyaA": [1277681830, "„ÅÑ„Å™", "http://score.royalflare.net/th07/replay7/th7_ud2267.rpy"],
+            "SakuyaB": [1412782710, "„ÅÑ„Å™", "http://score.royalflare.net/th07/replay7/th7_ud2233.rpy"]
         },
         "Phantasm": {
             "ReimuA": [1580640510, "Yu-suke", "https://zh.touhouwiki.net/images/1/14/Th7_ud1f4a.rpy"],
@@ -252,13 +252,13 @@ var WRs = {
             "ScarletTeam": [3012091640, "coco", "http://score.royalflare.net/th08/dlreplay.cgi?id=27da"],
             "GhostTeam": [2764571140, "coco", "http://score.royalflare.net/th08/dlreplay.cgi?id=28b1"],
             "Reimu": [2714579940, "KWS", "http://score.royalflare.net/th08/dlreplay.cgi?id=1f48"],
-            "Yukari": [1731029240, "ÉâÉr", "http://score.royalflare.net/th08/dlreplay.cgi?id=1d41"],
+            "Yukari": [1731029240, "„É©„Éì", "http://score.royalflare.net/th08/dlreplay.cgi?id=1d41"],
             "Marisa": [3127823070, "coco", "http://score.royalflare.net/th08/dlreplay.cgi?id=2845"],
             "Alice": [1813182090, "Eternal", "http://score.royalflare.net/th08/dlreplay.cgi?id=0452"],
             "Sakuya": [2559477930, "Suika", "http://score.royalflare.net/th08/dlreplay.cgi?id=1901"],
             "Remilia": [191553325, "tomo", "http://score.royalflare.net/th08/dlreplay.cgi?id=09a7"],
             "Youmu": [3379425090, "coco", "http://score.royalflare.net/th08/dlreplay.cgi?id=2873"],
-            "Yuyuko": [1734179460, "êÖê´Ç∑ÇÁÇ¢Çﬁ", "http://score.royalflare.net/th08/dlreplay.cgi?id=0f9f"]
+            "Yuyuko": [1734179460, "Ê∞¥ÊÄß„Åô„Çâ„ÅÑ„ÇÄ", "http://score.royalflare.net/th08/dlreplay.cgi?id=0f9f"]
         },
         "Normal": {
             "BorderTeam": [3893073500, "st", "http://score.royalflare.net/th08/dlreplay.cgi?id=23f8"],
@@ -266,13 +266,13 @@ var WRs = {
             "ScarletTeam": [4007899720, "LET", "http://score.royalflare.net/th08/dlreplay.cgi?id=096b"],
             "GhostTeam": [3907285270, "LET", "http://score.royalflare.net/th08/dlreplay.cgi?id=18a2"],
             "Reimu": [3394175570, "LET", "http://score.royalflare.net/th08/dlreplay.cgi?id=04f0"],
-            "Yukari": [2419192380, "êÖê´Ç∑ÇÁÇ¢Çﬁ", "http://score.royalflare.net/th08/dlreplay.cgi?id=0f70"],
-            "Marisa": [3570181460, "KÅEG", "http://score.royalflare.net/th08/dlreplay.cgi?id=2922"],
-            "Alice": [2429706040, "êÖê´Ç∑ÇÁÇ¢Çﬁ", "http://score.royalflare.net/th08/dlreplay.cgi?id=0f79"],
-            "Sakuya": [3055555970, "êÖê´Ç∑ÇÁÇ¢Çﬁ", "http://score.royalflare.net/th08/dlreplay.cgi?id=0f82"],
-            "Remilia": [2755844610, "êÖê´Ç∑ÇÁÇ¢Çﬁ", "http://score.royalflare.net/th08/dlreplay.cgi?id=0f95"],
+            "Yukari": [2419192380, "Ê∞¥ÊÄß„Åô„Çâ„ÅÑ„ÇÄ", "http://score.royalflare.net/th08/dlreplay.cgi?id=0f70"],
+            "Marisa": [3570181460, "K„ÉªG", "http://score.royalflare.net/th08/dlreplay.cgi?id=2922"],
+            "Alice": [2429706040, "Ê∞¥ÊÄß„Åô„Çâ„ÅÑ„ÇÄ", "http://score.royalflare.net/th08/dlreplay.cgi?id=0f79"],
+            "Sakuya": [3055555970, "Ê∞¥ÊÄß„Åô„Çâ„ÅÑ„ÇÄ", "http://score.royalflare.net/th08/dlreplay.cgi?id=0f82"],
+            "Remilia": [2755844610, "Ê∞¥ÊÄß„Åô„Çâ„ÅÑ„ÇÄ", "http://score.royalflare.net/th08/dlreplay.cgi?id=0f95"],
             "Youmu": [4496668100, "coco", "http://score.royalflare.net/th08/dlreplay.cgi?id=2946"],
-            "Yuyuko": [2485053240, "êÖê´Ç∑ÇÁÇ¢Çﬁ", "http://score.royalflare.net/th08/dlreplay.cgi?id=0fa0"]
+            "Yuyuko": [2485053240, "Ê∞¥ÊÄß„Åô„Çâ„ÅÑ„ÇÄ", "http://score.royalflare.net/th08/dlreplay.cgi?id=0fa0"]
         },
         "Hard": {
             "BorderTeam": [4502225760, "LET", "http://score.royalflare.net/th08/dlreplay.cgi?id=09d2"],
@@ -280,25 +280,25 @@ var WRs = {
             "ScarletTeam": [4506799970, "LET", "http://score.royalflare.net/th08/dlreplay.cgi?id=081b"],
             "GhostTeam": [4708571630, "PALM", "http://score.royalflare.net/th08/dlreplay.cgi?id=27c7"],
             "Reimu": [3653112510, "Eternal", "http://score.royalflare.net/th08/dlreplay.cgi?id=0922"],
-            "Yukari": [2991504170, "êÖê´Ç∑ÇÁÇ¢Çﬁ", "http://score.royalflare.net/th08/dlreplay.cgi?id=0ed9"],
+            "Yukari": [2991504170, "Ê∞¥ÊÄß„Åô„Çâ„ÅÑ„ÇÄ", "http://score.royalflare.net/th08/dlreplay.cgi?id=0ed9"],
             "Marisa": [3558337820, "KLG", "http://score.royalflare.net/th08/dlreplay.cgi?id=1bbd"],
-            "Alice": [2758767770, "êÖê´Ç∑ÇÁÇ¢Çﬁ", "http://score.royalflare.net/th08/dlreplay.cgi?id=0f7a"],
-            "Sakuya": [3687402450, "êÖê´Ç∑ÇÁÇ¢Çﬁ", "http://score.royalflare.net/th08/dlreplay.cgi?id=0f8e"],
+            "Alice": [2758767770, "Ê∞¥ÊÄß„Åô„Çâ„ÅÑ„ÇÄ", "http://score.royalflare.net/th08/dlreplay.cgi?id=0f7a"],
+            "Sakuya": [3687402450, "Ê∞¥ÊÄß„Åô„Çâ„ÅÑ„ÇÄ", "http://score.royalflare.net/th08/dlreplay.cgi?id=0f8e"],
             "Remilia": [3006963610, "AQUA", "http://score.royalflare.net/th08/dlreplay.cgi?id=1190"],
             "Youmu": [5242086820, "PALM", "http://score.royalflare.net/th08/dlreplay.cgi?id=287b"],
-            "Yuyuko": [2828843340, "êÖê´Ç∑ÇÁÇ¢Çﬁ", "http://score.royalflare.net/th08/dlreplay.cgi?id=0fa2"]
+            "Yuyuko": [2828843340, "Ê∞¥ÊÄß„Åô„Çâ„ÅÑ„ÇÄ", "http://score.royalflare.net/th08/dlreplay.cgi?id=0fa2"]
         },
         "Lunatic": {
             "BorderTeam": [6121136060, "Inefushi", "http://pndsng.wwww.jp/touhou/highscores/replay/th8_ud0088.rpy"],
             "MagicTeam": [6168365790, "Inefushi", "http://pndsng.wwww.jp/touhou/highscores/replay/th8_ud0090.rpy"],
             "ScarletTeam": [6565277950, "Inefushi", "http://pndsng.wwww.jp/touhou/highscores/replay/th8_ud0084.rpy"],
-            "GhostTeam": [6458237920, "ä‚ãõèıñ∫", "http://pndsng.wwww.jp/touhou/highscores/replay/th8_ud0100.rpy"],
+            "GhostTeam": [6458237920, "Â≤©È≠öÁ©£Â®ò", "http://pndsng.wwww.jp/touhou/highscores/replay/th8_ud0100.rpy"],
             "Reimu": [4359005630, "R@P", "http://score.royalflare.net/th08/dlreplay.cgi?id=07f0"],
             "Yukari": [3646001370, "SET", "http://score.royalflare.net/th08/dlreplay.cgi?id=1702"],
             "Marisa": [4748592990, "PALM", "http://score.royalflare.net/th08/dlreplay.cgi?id=27c5"],
             "Alice": [3500438410, "asbr", "http://score.royalflare.net/th08/dlreplay.cgi?id=209d"],
-            "Sakuya": [4022200840, "KÅEG", "http://score.royalflare.net/th08/dlreplay.cgi?id=2954"],
-            "Remilia": [3727419620, "KÅEG", "http://score.royalflare.net/th08/dlreplay.cgi?id=2945"],
+            "Sakuya": [4022200840, "K„ÉªG", "http://score.royalflare.net/th08/dlreplay.cgi?id=2954"],
+            "Remilia": [3727419620, "K„ÉªG", "http://score.royalflare.net/th08/dlreplay.cgi?id=2945"],
             "Youmu": [6695345940, "Inefushi", "http://pndsng.wwww.jp/touhou/highscores/replay/th8_ud0082.rpy"],
             "Yuyuko": [3691650760, "SET", "http://score.royalflare.net/th08/dlreplay.cgi?id=180d"]
         },
@@ -312,7 +312,7 @@ var WRs = {
             "Marisa": [2549422900, "YABU", "http://score.royalflare.net/th08/dlreplay.cgi?id=217d"],
             "Alice": [1743695170, "Eternal", "http://score.royalflare.net/th08/dlreplay.cgi?id=06fc"],
             "Sakuya": [2357010670, "ASAPIN", "http://score.royalflare.net/th08/dlreplay.cgi?id=0314"],
-            "Remilia": [1852942870, "êÍëÆÉÅÉCÉh", "http://score.royalflare.net/th08/dlreplay.cgi?id=2776"],
+            "Remilia": [1852942870, "Â∞ÇÂ±û„É°„Ç§„Éâ", "http://score.royalflare.net/th08/dlreplay.cgi?id=2776"],
             "Youmu": [3159508570, "Sakurei", "http://score.royalflare.net/th08/dlreplay.cgi?id=28be"],
             "Yuyuko": [1977266880, "YABU", "http://score.royalflare.net/th08/dlreplay.cgi?id=1f34"]
         }
@@ -420,12 +420,12 @@ var WRs = {
             "ReimuA": [2000132070, "coa", "http://score.royalflare.net/th10/replay10/th10_ud090d.rpy"],
             "ReimuB": [2038649790, "dxk", "http://score.royalflare.net/th10/replay10/th10_ud1941.rpy"],
             "ReimuC": [2015786990, "nanamaru", "http://score.royalflare.net/th10/replay10/th10_ud15f7.rpy"],
-            "MarisaA": [1787193800, "êÖê´Ç∑ÇÁÇ¢Çﬁ", "http://score.royalflare.net/th10/replay10/th10_ud04ee.rpy"],
-            "MarisaB": [2015212370, "KÅEG", "http://score.royalflare.net/th10/replay10/th10_ud1940.rpy"],
-            "MarisaC": [2048246580, "ÉLÉÉÉã", "http://score.royalflare.net/th10/replay10/th10_ud18f9.rpy"]
+            "MarisaA": [1787193800, "Ê∞¥ÊÄß„Åô„Çâ„ÅÑ„ÇÄ", "http://score.royalflare.net/th10/replay10/th10_ud04ee.rpy"],
+            "MarisaB": [2015212370, "K„ÉªG", "http://score.royalflare.net/th10/replay10/th10_ud1940.rpy"],
+            "MarisaC": [2048246580, "„Ç≠„É£„É´", "http://score.royalflare.net/th10/replay10/th10_ud18f9.rpy"]
         },
         "Lunatic": {
-            "ReimuA": [2160049630, "ó¨êØ", "http://pndsng.wwww.jp/touhou/highscores/replay/th10_ud0245.rpy"],
+            "ReimuA": [2160049630, "ÊµÅÊòü", "http://pndsng.wwww.jp/touhou/highscores/replay/th10_ud0245.rpy"],
             "ReimuB": [2191799870, "SOC", "http://score.royalflare.net/th10/replay10/th10_ud1919.rpy"],
             "ReimuC": [2175863360, "Spira", "http://score.royalflare.net/th10/replay10/th10_ud189a.rpy"],
             "MarisaA": [2134927060, "nanamaru", "http://score.royalflare.net/th10/replay10/th10_ud1732.rpy"],
@@ -446,25 +446,25 @@ var WRs = {
             "ReimuA": [659735900, "morth", "http://score.royalflare.net/th11/replay11/th11_ud1349.rpy"],
             "ReimuB": [623749430, "morth", "http://score.royalflare.net/th11/replay11/th11_ud135a.rpy"],
             "ReimuC": [660024840, "morth", "http://score.royalflare.net/th11/replay11/th11_ud135f.rpy"],
-            "MarisaA": [706826820, "Ç…Ç·ÇÒÇ±", "http://score.royalflare.net/th11/replay11/th11_ud1364.rpy"],
+            "MarisaA": [706826820, "„Å´„ÇÉ„Çì„Åì", "http://score.royalflare.net/th11/replay11/th11_ud1364.rpy"],
             "MarisaB": [713931860, "morth", "http://score.royalflare.net/th11/replay11/th11_ud1371.rpy"],
             "MarisaC": [639535650, "morth", "http://score.royalflare.net/th11/replay11/th11_ud13ba.rpy"]
         },
         "Normal": {
             "ReimuA": [1089307060, "Deep Brillante", "http://score.royalflare.net/th11/replay11/th11_ud119c.rpy"],
-            "ReimuB": [1017688610, "è¨ëñêÊîy", "http://score.royalflare.net/th11/replay11/th11_ud1104.rpy"],
-            "ReimuC": [1071892480, "Ç…Ç·ÇÒÇ±", "http://score.royalflare.net/th11/replay11/th11_ud110b.rpy"],
-            "MarisaA": [1145838900, "Ç…Ç·ÇÒÇ±", "http://score.royalflare.net/th11/replay11/th11_ud0d67.rpy"],
-            "MarisaB": [1197670530, "Ç…Ç·ÇÒÇ±", "http://score.royalflare.net/th11/replay11/th11_ud12f8.rpy"],
-            "MarisaC": [951080690, "óIñÿï…", "http://score.royalflare.net/th11/replay11/th11_ud1113.rpy"]
+            "ReimuB": [1017688610, "Â∞èËµ∞ÂÖàËº©", "http://score.royalflare.net/th11/replay11/th11_ud1104.rpy"],
+            "ReimuC": [1071892480, "„Å´„ÇÉ„Çì„Åì", "http://score.royalflare.net/th11/replay11/th11_ud110b.rpy"],
+            "MarisaA": [1145838900, "„Å´„ÇÉ„Çì„Åì", "http://score.royalflare.net/th11/replay11/th11_ud0d67.rpy"],
+            "MarisaB": [1197670530, "„Å´„ÇÉ„Çì„Åì", "http://score.royalflare.net/th11/replay11/th11_ud12f8.rpy"],
+            "MarisaC": [951080690, "ÊÇ†Êú®Á¢ß", "http://score.royalflare.net/th11/replay11/th11_ud1113.rpy"]
         },
         "Hard": {
-            "ReimuA": [1919799160, "Ç…Ç·ÇÒÇ±", "http://score.royalflare.net/th11/replay11/th11_ud0d96.rpy"],
-            "ReimuB": [1704847550, "Ç…Ç·ÇÒÇ±", "http://score.royalflare.net/th11/replay11/th11_ud0db3.rpy"],
+            "ReimuA": [1919799160, "„Å´„ÇÉ„Çì„Åì", "http://score.royalflare.net/th11/replay11/th11_ud0d96.rpy"],
+            "ReimuB": [1704847550, "„Å´„ÇÉ„Çì„Åì", "http://score.royalflare.net/th11/replay11/th11_ud0db3.rpy"],
             "ReimuC": [1591047400, "OYM", "http://score.royalflare.net/th11/replay11/th11_ud101d.rpy"],
-            "MarisaA": [1920135380, "ñ≤òHéı", "http://score.royalflare.net/th11/replay11/th11_ud119d.rpy"],
-            "MarisaB": [2033714330, "Ç¶Ç»ÇﬂÇÈ", "http://score.royalflare.net/th11/replay11/th11_ud10b1.rpy"],
-            "MarisaC": [1401024060, "KÅEG", "http://score.royalflare.net/th11/replay11/th11_ud1316.rpy"]
+            "MarisaA": [1920135380, "Â§¢Ë∑ØÂØø", "http://score.royalflare.net/th11/replay11/th11_ud119d.rpy"],
+            "MarisaB": [2033714330, "„Åà„Å™„ÇÅ„Çã", "http://score.royalflare.net/th11/replay11/th11_ud10b1.rpy"],
+            "MarisaC": [1401024060, "K„ÉªG", "http://score.royalflare.net/th11/replay11/th11_ud1316.rpy"]
         },
         "Lunatic": {
             "ReimuA": [5036683530, "Gobou", "http://score.royalflare.net/th11/replay11/th11_ud1320.rpy"],
@@ -512,14 +512,14 @@ var WRs = {
             "ReimuA": [3003541930, "shin", "http://score.royalflare.net/th12/replay12/th12_ud0f6d.rpy"],
             "ReimuB": [2859531860, "shin", "http://score.royalflare.net/th12/replay12/th12_ud0f37.rpy"],
             "MarisaA": [3292353200, "shin", "http://score.royalflare.net/th12/replay12/th12_ud0f01.rpy"],
-            "MarisaB": [3062639820, "KÅEG", "http://score.royalflare.net/th12/replay12/th12_ud115e.rpy"],
+            "MarisaB": [3062639820, "K„ÉªG", "http://score.royalflare.net/th12/replay12/th12_ud115e.rpy"],
             "SanaeA": [3128973420, "E-Splice", "http://score.royalflare.net/th12/replay12/th12_ud1150.rpy"],
-            "SanaeB": [3357725380, "KÅEG", "http://score.royalflare.net/th12/replay12/th12_ud11c9.rpy"]
+            "SanaeB": [3357725380, "K„ÉªG", "http://score.royalflare.net/th12/replay12/th12_ud11c9.rpy"]
         },
         "Extra": {
-            "ReimuA": [660751150, "ÉjÉÉÉÄÉjÉÉÉÄ", "http://score.royalflare.net/th12/replay12/th12_ud11a0.rpy"],
-            "ReimuB": [630584000, "ÉjÉÉÉÄÉjÉÉÉÄ", "http://score.royalflare.net/th12/replay12/th12_ud11cd.rpy"],
-            "MarisaA": [703054650, "ÉjÉÉÉÄÉjÉÉÉÄ", "http://score.royalflare.net/th12/replay12/th12_ud11ee.rpy"],
+            "ReimuA": [660751150, "„Éã„É£„É†„Éã„É£„É†", "http://score.royalflare.net/th12/replay12/th12_ud11a0.rpy"],
+            "ReimuB": [630584000, "„Éã„É£„É†„Éã„É£„É†", "http://score.royalflare.net/th12/replay12/th12_ud11cd.rpy"],
+            "MarisaA": [703054650, "„Éã„É£„É†„Éã„É£„É†", "http://score.royalflare.net/th12/replay12/th12_ud11ee.rpy"],
             "MarisaB": [630651970, "omega", "http://score.royalflare.net/th12/replay12/th12_ud1029.rpy"],
             "SanaeA": [639197870, "omega", "http://score.royalflare.net/th12/replay12/th12_ud0ff9.rpy"],
             "SanaeB": [725404370, "SOC", "http://score.royalflare.net/th12/replay12/th12_ud0ff0.rpy"]
@@ -559,7 +559,7 @@ var WRs = {
             "C2": [105483820, "chum", "http://score.royalflare.net/th128/replay128/th128_ud071d.rpy"]
         },
         "Extra": {
-            "-": [100742250, "Ç›ÇºÇÈ", "http://score.royalflare.net/th128/replay128/th128_ud0556.rpy"]
+            "-": [100742250, "„Åø„Åû„Çã", "http://score.royalflare.net/th128/replay128/th128_ud0556.rpy"]
         }
     },
     "TD": {
@@ -588,7 +588,7 @@ var WRs = {
             "Youmu": [3905681530, "Mithril", "http://pndsng.wwww.jp/touhou/highscores/replay/th13_ud0277.rpy"]
         },
         "Extra": {
-            "Reimu": [559865500, "ÇØÇ¢Ç∆", "http://score.royalflare.net/th13/replay13/th13_ud09a1.rpy"],
+            "Reimu": [559865500, "„Åë„ÅÑ„Å®", "http://score.royalflare.net/th13/replay13/th13_ud09a1.rpy"],
             "Marisa": [591623200, "morth", "http://score.royalflare.net/th13/replay13/th13_ud0a9b.rpy"],
             "Sanae": [532111870, "omega", "http://score.royalflare.net/th13/replay13/th13_ud06db.rpy"],
             "Youmu": [603783460, "omega", "http://score.royalflare.net/th13/replay13/th13_ud0641.rpy"]
@@ -598,62 +598,62 @@ var WRs = {
         "Easy": {
             "ReimuA": [920715460, "NSNSNS556", "http://score.royalflare.net/th14/replay14/th14_ud0724.rpy"],
             "ReimuB": [755021000, "Karisa", "http://score.royalflare.net/th14/replay14/th14_ud073a.rpy"],
-            "MarisaA": [803853320, "KÅEG", "http://score.royalflare.net/th14/replay14/th14_ud05d2.rpy"],
-            "MarisaB": [789629180, "KÅEG", "http://score.royalflare.net/th14/replay14/th14_ud05d4.rpy"],
-            "SakuyaA": [872467360, "?", "http://score.royalflare.net/th14/replay14/th14_ud06cb.rpy"],
-            "SakuyaB": [1046334940, "KÅEG", "http://score.royalflare.net/th14/replay14/th14_ud0522.rpy"]
+            "MarisaA": [803853320, "K„ÉªG", "http://score.royalflare.net/th14/replay14/th14_ud05d2.rpy"],
+            "MarisaB": [789629180, "K„ÉªG", "http://score.royalflare.net/th14/replay14/th14_ud05d4.rpy"],
+            "SakuyaA": [872467360, "Ëãè", "http://score.royalflare.net/th14/replay14/th14_ud06cb.rpy"],
+            "SakuyaB": [1046334940, "K„ÉªG", "http://score.royalflare.net/th14/replay14/th14_ud0522.rpy"]
         },
         "Normal": {
-            "ReimuA": [1039581950, "KÅEG", "http://score.royalflare.net/th14/replay14/th14_ud05a4.rpy"],
-            "ReimuB": [862853770, "KÅEG", "http://score.royalflare.net/th14/replay14/th14_ud05ad.rpy"],
-            "MarisaA": [945713840, "KÅEG", "http://score.royalflare.net/th14/replay14/th14_ud05a7.rpy"],
-            "MarisaB": [965259250, "KÅEG", "http://score.royalflare.net/th14/replay14/th14_ud05aa.rpy"],
-            "SakuyaA": [1066975790, "?", "http://score.royalflare.net/th14/replay14/th14_ud06cc.rpy"],
-            "SakuyaB": [1516878910, "KÅEG", "http://score.royalflare.net/th14/replay14/th14_ud0700.rpy"]
+            "ReimuA": [1039581950, "K„ÉªG", "http://score.royalflare.net/th14/replay14/th14_ud05a4.rpy"],
+            "ReimuB": [862853770, "K„ÉªG", "http://score.royalflare.net/th14/replay14/th14_ud05ad.rpy"],
+            "MarisaA": [945713840, "K„ÉªG", "http://score.royalflare.net/th14/replay14/th14_ud05a7.rpy"],
+            "MarisaB": [965259250, "K„ÉªG", "http://score.royalflare.net/th14/replay14/th14_ud05aa.rpy"],
+            "SakuyaA": [1066975790, "Ëãè", "http://score.royalflare.net/th14/replay14/th14_ud06cc.rpy"],
+            "SakuyaB": [1516878910, "K„ÉªG", "http://score.royalflare.net/th14/replay14/th14_ud0700.rpy"]
         },
         "Hard": {
             "ReimuA": [1232640340, "White Rat", "http://score.royalflare.net/th14/replay14/th14_ud069d.rpy"],
-            "ReimuB": [969187110, "KÅEG", "http://score.royalflare.net/th14/replay14/th14_ud0616.rpy"],
-            "MarisaA": [1017599040, "KÅEG", "http://score.royalflare.net/th14/replay14/th14_ud0578.rpy"],
-            "MarisaB": [1241630210, "KÅEG", "http://score.royalflare.net/th14/replay14/th14_ud066b.rpy"],
-            "SakuyaA": [1248118740, "?", "http://score.royalflare.net/th14/replay14/th14_ud06d3.rpy"],
-            "SakuyaB": [1929988730, "?", "http://score.royalflare.net/th14/replay14/th14_ud06c2.rpy"]
+            "ReimuB": [969187110, "K„ÉªG", "http://score.royalflare.net/th14/replay14/th14_ud0616.rpy"],
+            "MarisaA": [1017599040, "K„ÉªG", "http://score.royalflare.net/th14/replay14/th14_ud0578.rpy"],
+            "MarisaB": [1241630210, "K„ÉªG", "http://score.royalflare.net/th14/replay14/th14_ud066b.rpy"],
+            "SakuyaA": [1248118740, "Ëãè", "http://score.royalflare.net/th14/replay14/th14_ud06d3.rpy"],
+            "SakuyaB": [1929988730, "Ëãè", "http://score.royalflare.net/th14/replay14/th14_ud06c2.rpy"]
         },
         "Lunatic": {
             "ReimuA": [1565969810, "White Rat", "http://score.royalflare.net/th14/replay14/th14_ud0652.rpy"],
             "ReimuB": [1140297420, "White Rat", "http://score.royalflare.net/th14/replay14/th14_ud0695.rpy"],
             "MarisaA": [1230732810, "White Rat", "http://score.royalflare.net/th14/replay14/th14_ud0699.rpy"],
-            "MarisaB": [1759036540, "KÅEG", "http://score.royalflare.net/th14/replay14/th14_ud06c0.rpy"],
-            "SakuyaA": [1511462090, "?", "http://score.royalflare.net/th14/replay14/th14_ud06d8.rpy"],
+            "MarisaB": [1759036540, "K„ÉªG", "http://score.royalflare.net/th14/replay14/th14_ud06c0.rpy"],
+            "SakuyaA": [1511462090, "Ëãè", "http://score.royalflare.net/th14/replay14/th14_ud06d8.rpy"],
             "SakuyaB": [2204848600, "SenCy", "http://score.royalflare.net/th14/replay14/th14_ud0726.rpy"]
         },
         "Extra": {
-            "ReimuA": [780112600, "KÅEG", "http://score.royalflare.net/th14/replay14/th14_ud073b.rpy"],
+            "ReimuA": [780112600, "K„ÉªG", "http://score.royalflare.net/th14/replay14/th14_ud073b.rpy"],
             "ReimuB": [715926700, "KMK", "http://score.royalflare.net/th14/replay14/th14_ud059c.rpy"],
-            "MarisaA": [732504040, "KÅEG", "http://score.royalflare.net/th14/replay14/th14_ud072b.rpy"],
-            "MarisaB": [1191151260, "KÅEG", "http://score.royalflare.net/th14/replay14/th14_ud0744.rpy"],
-            "SakuyaA": [759067670, "KÅEG", "http://score.royalflare.net/th14/replay14/th14_ud0733.rpy"],
-            "SakuyaB": [816484120, "KÅEG", "http://score.royalflare.net/th14/replay14/th14_ud0738.rpy"]
+            "MarisaA": [732504040, "K„ÉªG", "http://score.royalflare.net/th14/replay14/th14_ud072b.rpy"],
+            "MarisaB": [1191151260, "K„ÉªG", "http://score.royalflare.net/th14/replay14/th14_ud0744.rpy"],
+            "SakuyaA": [759067670, "K„ÉªG", "http://score.royalflare.net/th14/replay14/th14_ud0733.rpy"],
+            "SakuyaB": [816484120, "K„ÉªG", "http://score.royalflare.net/th14/replay14/th14_ud0738.rpy"]
         }
     },
     "LoLK": {
         "Easy": {
-            "Reimu": [1229423590, "KÅEG", "http://score.royalflare.net/th15/replay15/th15_ud028d.rpy"],
-            "Marisa": [1323232690, "KÅEG", "http://score.royalflare.net/th15/replay15/th15_ud02a3.rpy"],
-            "Sanae": [1583467770, "KÅEG", "http://score.royalflare.net/th15/replay15/th15_ud02a0.rpy"],
-            "Reisen": [1649644690, "KÅEG", "http://score.royalflare.net/th15/replay15/th15_ud029f.rpy"]
+            "Reimu": [1229423590, "K„ÉªG", "http://score.royalflare.net/th15/replay15/th15_ud028d.rpy"],
+            "Marisa": [1323232690, "K„ÉªG", "http://score.royalflare.net/th15/replay15/th15_ud02a3.rpy"],
+            "Sanae": [1583467770, "K„ÉªG", "http://score.royalflare.net/th15/replay15/th15_ud02a0.rpy"],
+            "Reisen": [1649644690, "K„ÉªG", "http://score.royalflare.net/th15/replay15/th15_ud029f.rpy"]
         },
         "Normal": {
-            "Reimu": [1624716830, "KÅEG", "http://score.royalflare.net/th15/replay15/th15_ud0287.rpy"],
+            "Reimu": [1624716830, "K„ÉªG", "http://score.royalflare.net/th15/replay15/th15_ud0287.rpy"],
             "Marisa": [1809184820, "kisara", "http://score.royalflare.net/th15/replay15/th15_ud026f.rpy"],
             "Sanae": [2517604770, "kisara", "http://score.royalflare.net/th15/replay15/th15_ud026e.rpy"],
-            "Reisen": [2454170970, "KÅEG", "http://score.royalflare.net/th15/replay15/th15_ud0259.rpy"]
+            "Reisen": [2454170970, "K„ÉªG", "http://score.royalflare.net/th15/replay15/th15_ud0259.rpy"]
         },
         "Hard": {
-            "Reimu": [1820860890, "KÅEG", "http://score.royalflare.net/th15/replay15/th15_ud0250.rpy"],
-            "Marisa": [1919488870, "KÅEG", "http://score.royalflare.net/th15/replay15/th15_ud0235.rpy"],
+            "Reimu": [1820860890, "K„ÉªG", "http://score.royalflare.net/th15/replay15/th15_ud0250.rpy"],
+            "Marisa": [1919488870, "K„ÉªG", "http://score.royalflare.net/th15/replay15/th15_ud0235.rpy"],
             "Sanae": [2513954510, "kisara", "http://score.royalflare.net/th15/replay15/th15_ud026a.rpy"],
-            "Reisen": [2540876730, "KÅEG", "http://score.royalflare.net/th15/replay15/th15_ud0278.rpy"]
+            "Reisen": [2540876730, "K„ÉªG", "http://score.royalflare.net/th15/replay15/th15_ud0278.rpy"]
         },
         "Lunatic": {
             "Reimu": [2024337900, "kisara", "http://score.royalflare.net/th15/replay15/th15_ud0268.rpy"],
