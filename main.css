@@ -97,6 +97,9 @@ table, tr, th, td {
 	}
 }
 @media only screen and (max-width: 1400px) {
+    #Achievements {
+        margin-left: 35%;
+    }
     .list {
         width: 200px;
     }
