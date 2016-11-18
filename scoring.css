@@ -21,7 +21,7 @@ body {
 #gameTable {
      border: 1px solid black;
 }
-@media only screen and (max-device-width: 1366) and (orientation: landscape) {
+@media only screen and (max-device-width: 1400) and (orientation: landscape) {
     .wrap {
         margin-left: 15%;
         margin-right: 15%;
