@@ -1,0 +1,17 @@
+table, tr, th, td {
+    border: 1px solid black;
+}
+div {
+    background-color: #FFFFFF;
+}
+h1 {
+    font: 48px monotype corsiva;
+}
+.wrap {
+    border: 1px solid black;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    opacity: 0.8;
+    font: 14px verdana, sans-serif;
+}
