@@ -21,7 +21,7 @@ body {
 #gameTable {
      border: 1px solid black;
 }
-@media only screen and (max-width: 1400) {
+@media only screen and (max-width: 1400px) {
     .wrap {
         margin-left: 15%;
         margin-right: 15%;
