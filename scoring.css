@@ -7,8 +7,8 @@ h1 {
 .wrap {
     border: 1px solid black;
     text-align: center;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 25%;
+    margin-right: 25%;
     opacity: 0.8;
     font: 14px verdana, sans-serif;
 }
@@ -20,4 +20,10 @@ body {
 }
 #gameTable {
      border: 1px solid black;
+}
+@media only screen and (max-device-width: 1366) and (orientation: landscape) {
+    .wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
 }
