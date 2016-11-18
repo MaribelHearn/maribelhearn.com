@@ -154,5 +154,5 @@ function musicOff() {
 }
 
 function changeTheme(theme) {
-	document.getElementById("ADB").style.background = "url('" + theme + "big.jpg')";
+	document.getElementById("ADB").style.background = "url('./games/" + theme + "big.jpg')";
 }
