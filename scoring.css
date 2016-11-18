@@ -1,0 +1,23 @@
+div {
+    background-color: #FFFFFF;
+}
+h1 {
+    font: 48px monotype corsiva;
+}
+.wrap {
+    border: 1px solid black;
+    text-align: center;
+    margin-left: 22%;
+    margin-right: 22%;
+    opacity: 0.8;
+    font: 14px verdana, sans-serif;
+}
+body {
+    
+}
+#table {
+     border: 1px solid black;
+}
+#gameTable {
+     border: 1px solid black;
+}
