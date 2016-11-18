@@ -15,7 +15,7 @@ h1 {
     opacity: 0.8;
     font: 14px verdana, sans-serif;
 }
-@media only screen and (max-device-width: 1400) and (orientation: landscape) {
+@media only screen and (max-width: 1400) {
     .wrap {
         margin-left: 15%;
         margin-right: 15%;
