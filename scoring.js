@@ -601,7 +601,7 @@ var WRs = {
             "MarisaA": [803853320, "K・G", "http://score.royalflare.net/th14/replay14/th14_ud05d2.rpy"],
             "MarisaB": [789629180, "K・G", "http://score.royalflare.net/th14/replay14/th14_ud05d4.rpy"],
             "SakuyaA": [872467360, "苏", "http://score.royalflare.net/th14/replay14/th14_ud06cb.rpy"],
-            "SakuyaB": [1046334940, "K・G", "http://score.royalflare.net/th14/replay14/th14_ud0522.rpy"]
+            "SakuyaB": [1118074340, "LYX", ""]
         },
         "Normal": {
             "ReimuA": [1039581950, "K・G", "http://score.royalflare.net/th14/replay14/th14_ud05a4.rpy"],
@@ -609,7 +609,7 @@ var WRs = {
             "MarisaA": [945713840, "K・G", "http://score.royalflare.net/th14/replay14/th14_ud05a7.rpy"],
             "MarisaB": [965259250, "K・G", "http://score.royalflare.net/th14/replay14/th14_ud05aa.rpy"],
             "SakuyaA": [1066975790, "苏", "http://score.royalflare.net/th14/replay14/th14_ud06cc.rpy"],
-            "SakuyaB": [1516878910, "K・G", "http://score.royalflare.net/th14/replay14/th14_ud0700.rpy"]
+            "SakuyaB": [1643366120, "LYX", ""]
         },
         "Hard": {
             "ReimuA": [1232640340, "White Rat", "http://score.royalflare.net/th14/replay14/th14_ud069d.rpy"],
@@ -633,7 +633,7 @@ var WRs = {
             "MarisaA": [732504040, "K・G", "http://score.royalflare.net/th14/replay14/th14_ud072b.rpy"],
             "MarisaB": [1191151260, "K・G", "http://score.royalflare.net/th14/replay14/th14_ud0744.rpy"],
             "SakuyaA": [759067670, "K・G", "http://score.royalflare.net/th14/replay14/th14_ud0733.rpy"],
-            "SakuyaB": [816484120, "K・G", "http://score.royalflare.net/th14/replay14/th14_ud0738.rpy"]
+            "SakuyaB": [842596500, "LYX", ""]
         }
     },
     "LoLK": {
@@ -808,4 +808,20 @@ var calc = function () {
     gameTable.setAttribute("align", "center");
     sorttable.makeSortable(table);
     sorttable.makeSortable(gameTable);
+};
+
+var check = function (player) {
+    var totalWRs = 0;
+    
+    for (var game in WRs) {
+        for (var difficulty in WRs[game]) {
+            for (var shottype in WRs[game][difficulty]) {
+                if (WRs[game][difficulty][shottype][1].toLowerCase() == player.toLowerCase()) {
+                    totalWRs += 1;
+                }
+            }
+        }
+    }
+    
+    return totalWRs;
 };
