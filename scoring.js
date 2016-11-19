@@ -810,7 +810,7 @@ var calc = function () {
     sorttable.makeSortable(gameTable);
 };
 
-var check = function (player) {
+var totalWRs = function (player) {
     var totalWRs = 0;
     
     for (var game in WRs) {
