@@ -90,10 +90,10 @@ table, tr, th, td {
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
     table {
-		width: 45%;
+		width: 100%;
 	}
 	.list {
-		width: 45%;
+		width: 100%;
 	}
 	#GamesLeft, #GamesRight, #Links {
 		float: none;
@@ -105,7 +105,7 @@ table, tr, th, td {
 		width: 100%;
 	}
 }
-@media only screen and (min-width: 640px) and (max-width: 1400px) {
+@media only screen and (min-width: 800px) and (max-width: 1400px) {
     #Achievements {
         margin-left: 35%;
     }
