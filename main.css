@@ -100,14 +100,24 @@ table, tr, th, td {
 }
 @media only screen and (min-width: 801px) and (max-width: 1024px) {
     body {
-        font-size: 14px;
+        font-size: 12px;
     }
     #Achievements {
-        margin-left: 35%;
-        margin-right: 35%;
+        margin-left: 40%;
     }
     .list {
         width: 150px;
+    }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1279px) {
+    body {
+        font-size: 14px;
+    }
+    #Achievements {
+        margin-left: 38%;
+    }
+    .list {
+        width: 175px;
     }
 }
 @media only screen and (min-width: 1280px) and (max-width: 1399px) {
