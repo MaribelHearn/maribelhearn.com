@@ -99,11 +99,19 @@ table, tr, th, td {
 		float: none;
 	}
 }
-@media only screen and (min-width: 800px) and (max-width: 1400px) {
+@media only screen and (min-width: 1280px) and (max-width: 1400px) {
     #Achievements {
         margin-left: 35%;
     }
     .list {
         width: 200px;
+    }
+}
+@media only screen and (min-width: 800px) and (max-width: 1024px) {
+    #Achievements {
+        margin-left: 40%;
+    }
+    .list {
+        width: 150px;
     }
 }
