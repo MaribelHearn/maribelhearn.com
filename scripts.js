@@ -32,12 +32,16 @@ $(document).ready(function() {
 });
 
 window.addEventListener("resize", function (event) {
+    var gamesLeft = document.getElementById("GamesLeft"),
+        gamesRight = document.getElementById("GamesRight");
+    
     if ($(window).width() < MAX_WIDTH_SMALL_SCREEN) {
-		var GamesLeft = document.getElementById("GamesLeft"),
-			GamesRight = document.getElementById("GamesRight");
 		GamesLeft.innerHTML = GamesLeft.innerHTML + GamesRight.innerHTML;
 		GamesRight.style.display = "none";
-	}
+	} else {
+		GamesLeft.innerHTML = GamesLeft.innerHTML.split("<div id='GamesRight'>")[0];
+		GamesRight.style.display = "block";
+    }
 });
 
 function collapse(exception) {
