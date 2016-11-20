@@ -65,13 +65,13 @@ table, tr, th, td {
 	margin-right: auto;
 	width: 50%;
 }
-@media screen and (max-width: 1000px) {
+/*@media screen and (max-width: 1000px) {
 	#Achievements {
-		margin-left: 28%; /* 283px */
+		margin-left: 28%; /* 283px
 		margin-right: auto;
 		width: 50%;
 	}
-}
+}*/
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) {
 	.list {
 		width: 100%;
@@ -96,7 +96,7 @@ table, tr, th, td {
         width: 75%;
     }
 	#GamesLeft, #GamesRight, #Links {
-		float: none;
+		margin: 25% auto;
 	}
 }
 @media only screen and (min-width: 1280px) and (max-width: 1400px) {
