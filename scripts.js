@@ -28,8 +28,7 @@ $(document).ready(function() {
 	
 	if (navigator.userAgent.indexOf("Mobile") > -1) {
 		for (var i in games) {
-			//$("#a" + games[i]).attr("href","index.html#" + games[i].toLowerCase());
-			document.getElementById(games[i]).innerHTML += "<strong><a href='index.html#GamesLeft'>Back</a></strong>";
+			document.getElementById(games[i]).innerHTML += "<strong><a href='#GamesLeft'>Back</a></strong>";
 		}
 		
 		document.getElementById("OtherOptions").style.display = "none";
