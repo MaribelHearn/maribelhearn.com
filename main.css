@@ -91,7 +91,7 @@ table, tr, th, td {
 	}
 	.list {
 		width: 50%;
-        margin: 0px auto;
+        margin: 25% auto;
 	}
 	#GamesLeft, #GamesRight, #Links {
 		float: none;
