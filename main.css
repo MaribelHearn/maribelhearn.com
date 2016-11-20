@@ -86,9 +86,6 @@ table, tr, th, td {
 	}
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
-    table {
-		width: 50%;
-	}
 	.list {
 		width: 50%;
 	}
@@ -96,7 +93,8 @@ table, tr, th, td {
         width: 75%;
     }
 	#GamesLeft, #GamesRight, #Links {
-		margin: 25% auto;
+		margin-left: auto;
+        margin-right: auto;
         float: none;
 	}
     #Achievements {
