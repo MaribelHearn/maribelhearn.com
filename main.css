@@ -87,26 +87,18 @@ table, tr, th, td {
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
 	.list {
-		width: 75%;
+		width: 100%;
 	}
 	#GamesLeft, #GamesRight, #Links {
-        float: none;
+		float: none;
 	}
-    #Achievements {
+	#Achievements {
 		margin-left: 0px;
 		margin-right: 0px;
-        width: 75%;
+		width: 100%;
 	}
 }
-@media only screen and (min-width: 1280px) and (max-width: 1600px) {
-    #Achievements {
-        margin-left: 35%;
-    }
-    .list {
-        width: 200px;
-    }
-}
-@media only screen and (min-width: 900px) and (max-width: 1024px) {
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
     body {
         font-size: 14px;
     }
@@ -116,5 +108,21 @@ table, tr, th, td {
     }
     .list {
         width: 150px;
+    }
+}
+@media only screen and (min-width: 1280px) and (max-width: 1399px) {
+    #Achievements {
+        margin-left: 35%;
+    }
+    .list {
+        width: 200px;
+    }
+}
+@media only screen and (min-width: 1400px) and (max-width: 1600px) {
+    #Achievements {
+        margin-left: 35%;
+    }
+    .list {
+        width: 225px;
     }
 }
