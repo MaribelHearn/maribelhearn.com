@@ -1,10 +1,10 @@
 var maxWidthSmallScreen = 1000,
 	exceptions = ["Title", "Games", "GamesLeft", "GamesRight", "Links", "MusicPlayer", "Achievements"],
-	games = ["LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "StB", "MoF", "SA", "UFO", "DS", "GFW", "TD", "DDC", "ISC",
+	games = ["SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "StB", "MoF", "SA", "UFO", "DS", "GFW", "TD", "DDC", "ISC",
 	"LoLK", "SG", "BSR", "SMD", "MRS", "DP", "DDP", "DOJ", "DFK", "SDOJ",  "Batsugun", "ESP", "ESPg", "Ketsui", "MSm", "MSF", "DSm", "Ikaruga", "CCWI", "eX1", "eX2", "eX3"],
 	arcade = ["DP", "DDP", "DOJ", "DFK", "SDOJ", "Batsugun", "ESP", "ESPg", "Ketsui", "MSm", "MSF", "DSm", "Ikaruga"],
-	touhou = ["LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "StB", "MoF", "SA", "UFO", "DS", "GFW", "TD", "DDC", "ISC", "LoLK"],
-	doujin = ["LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "StB", "MoF", "SA", "UFO", "DS", "GFW", "TD", "DDC", "ISC", "LoLK", "SG", "BSR", "SMD", "MRS", "CCWI", "eX1", "eX2", "eX3"],
+	touhou = ["SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "StB", "MoF", "SA", "UFO", "DS", "GFW", "TD", "DDC", "ISC", "LoLK"],
+	doujin = ["SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "StB", "MoF", "SA", "UFO", "DS", "GFW", "TD", "DDC", "ISC", "LoLK", "SG", "BSR", "SMD", "MRS", "CCWI", "eX1", "eX2", "eX3"],
 	musicLink = ["", "wlY8pwFt6kg", "aQOtLRa8Phw", "bAdsMgIZAEE", "fb41shIeDCA", "QXrvaugGThA", "w5MOMgLvTqU", "OfH1FrSlDws", "BHppysY6Ib4",
 	"XRRKWkW92O4", "Laj-7MA5g4M", "N0jhujOdrdY", "sZkUFWmBEiE", "SQL69b7_5Qs", "v8xtmqN6jpc", "8kb8SQOPiQY", "vu2TixUgsnQ", "OMWm9SmoZGo"];
 
@@ -28,7 +28,7 @@ $(document).ready(function() {
 	
 	if (navigator.userAgent.indexOf("Mobile") > -1) {
 		for (var i in games) {
-			$("#a" + games[i]).attr("href","index.html#" + games[i].toLowerCase());
+			//$("#a" + games[i]).attr("href","index.html#" + games[i].toLowerCase());
 			document.getElementById(games[i]).innerHTML += "<strong><a href='index.html#GamesLeft'>Back</a></strong>";
 		}
 		
