@@ -108,8 +108,11 @@ table, tr, th, td {
     }
 }
 @media only screen and (min-width: 800px) and (max-width: 1024px) {
+    body {
+        font-size: 14px;
+    }
     #Achievements {
-        margin-left: 40%;
+        margin-left: 35%;
     }
     .list {
         width: 150px;
