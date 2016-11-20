@@ -24,12 +24,9 @@ $(document).ready(function() {
 		GamesRight.style.display = "none";
 	}
 	
-	// detect smartphone
-    
-    var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+	// detect smartphone and tablet
 	
-	if (navigator.userAgent.indexOf("Mobile") > -1 || (navigator.userAgent.indexOf("Tablet") > -1 && viewportHeight > viewportWidth)) {
+	if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) {
         document.getElementById("Achievements").innerHTML += "<strong><a href='#GamesLeft'>Back</a></strong>";
 	
 		var divList = document.getElementsByTagName("div");
