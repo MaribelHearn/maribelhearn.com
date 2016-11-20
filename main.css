@@ -1,5 +1,5 @@
 body {
-	background: url('./games/eosdbig.jpg') right top;
+	background: url('./games/eosdbig.jpg') top;
     font: 16px times new roman;
 }
 table, tr, th, td {
@@ -91,8 +91,10 @@ table, tr, th, td {
 	}
 	.list {
 		width: 50%;
-        margin: 25% auto;
 	}
+    #Overview {
+        width: 75%;
+    }
 	#GamesLeft, #GamesRight, #Links {
 		float: none;
 	}
