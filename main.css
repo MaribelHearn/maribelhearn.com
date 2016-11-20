@@ -93,7 +93,7 @@ table, tr, th, td {
 		width: 100%;
 	}
 	.list {
-		width: 100%;
+		width: 50%;
         margin: 0px auto;
 	}
 	#GamesLeft, #GamesRight, #Links {
