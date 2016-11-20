@@ -72,7 +72,7 @@ table, tr, th, td {
 		width: 50%;
 	}
 }*/
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
 	.list {
 		width: 100%;
 	}
@@ -89,12 +89,7 @@ table, tr, th, td {
 	.list {
 		width: 75%;
 	}
-    #Overview {
-        width: 75%;
-    }
 	#GamesLeft, #GamesRight, #Links {
-		margin-left: auto;
-        margin-right: auto;
         float: none;
 	}
     #Achievements {
@@ -103,7 +98,7 @@ table, tr, th, td {
         width: 75%;
 	}
 }
-@media only screen and (min-width: 1280px) and (max-width: 1400px) {
+@media only screen and (min-width: 1280px) and (max-width: 1600px) {
     #Achievements {
         margin-left: 35%;
     }
@@ -111,7 +106,7 @@ table, tr, th, td {
         width: 200px;
     }
 }
-@media only screen and (min-width: 800px) and (max-width: 1024px) {
+@media only screen and (min-width: 900px) and (max-width: 1024px) {
     body {
         font-size: 14px;
     }
