@@ -97,6 +97,7 @@ table, tr, th, td {
     }
 	#GamesLeft, #GamesRight, #Links {
 		margin: 25% auto;
+        float: none;
 	}
     #Achievements {
 		margin-left: 0px;
@@ -117,6 +118,7 @@ table, tr, th, td {
     }
     #Achievements {
         margin-left: 35%;
+        margin-right: 10%;
     }
     .list {
         width: 150px;
