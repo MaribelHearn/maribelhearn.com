@@ -28,17 +28,6 @@ $(document).ready(function() {
 	
 	if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) {
         document.getElementById("Achievements").innerHTML += "<strong><a href='#GamesLeft'>Back</a></strong>";
-	
-		var divList = document.getElementsByTagName("div");
-		
-		for (var i in divList) {
-			if (!divList[i].id) {
-				continue;
-			}
-			if (divList[i] && !exceptions.contains(divList[i].id)) {
-				divList[i].style.display = "block";
-			}
-		}
 	}
 });
 
