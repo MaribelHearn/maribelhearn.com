@@ -87,7 +87,7 @@ table, tr, th, td {
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
 	.list {
-		width: 50%;
+		width: 75%;
 	}
     #Overview {
         width: 75%;
@@ -100,6 +100,7 @@ table, tr, th, td {
     #Achievements {
 		margin-left: 0px;
 		margin-right: 0px;
+        width: 75%;
 	}
 }
 @media only screen and (min-width: 1280px) and (max-width: 1400px) {
@@ -116,7 +117,7 @@ table, tr, th, td {
     }
     #Achievements {
         margin-left: 35%;
-        margin-right: 10%;
+        margin-right: 20%;
     }
     .list {
         width: 150px;
