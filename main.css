@@ -98,6 +98,10 @@ table, tr, th, td {
 	#GamesLeft, #GamesRight, #Links {
 		margin: 25% auto;
 	}
+    #Achievements {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
 }
 @media only screen and (min-width: 1280px) and (max-width: 1400px) {
     #Achievements {
