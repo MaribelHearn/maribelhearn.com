@@ -1,4 +1,4 @@
-var MAX_WIDTH_SMALL_SCREEN = 1024,
+var MAX_WIDTH_SMALL_SCREEN = 1160,
 	exceptions = ["Title", "Games", "GamesLeft", "GamesRight", "Links", "MusicPlayer", "Achievements"],
 	games = ["SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "StB", "MoF", "SA", "UFO", "DS", "GFW", "TD", "DDC", "ISC",
 	"LoLK", "SG", "BSR", "SMD", "MRS", "DP", "DDP", "DOJ", "DFK", "SDOJ",  "Batsugun", "ESP", "ESPg", "Ketsui", "MSm", "MSF", "DSm", "Ikaruga", "CCWI", "eX1", "eX2", "eX3"],
@@ -17,7 +17,7 @@ Object.defineProperty(Array.prototype, "contains", {
 });
 
 $(document).ready(function() {
-	if ($(window).width() <= MAX_WIDTH_SMALL_SCREEN) {
+	if ($(window).width() < MAX_WIDTH_SMALL_SCREEN) {
 		var GamesLeft = document.getElementById("GamesLeft"),
 			GamesRight = document.getElementById("GamesRight");
 		GamesLeft.innerHTML = GamesLeft.innerHTML + GamesRight.innerHTML;
@@ -32,7 +32,7 @@ $(document).ready(function() {
 });
 
 window.addEventListener("resize", function (event) {
-    if ($(window).width() <= MAX_WIDTH_SMALL_SCREEN) {
+    if ($(window).width() < MAX_WIDTH_SMALL_SCREEN) {
 		var GamesLeft = document.getElementById("GamesLeft"),
 			GamesRight = document.getElementById("GamesRight");
 		GamesLeft.innerHTML = GamesLeft.innerHTML + GamesRight.innerHTML;
