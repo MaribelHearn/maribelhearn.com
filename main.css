@@ -94,6 +94,7 @@ table, tr, th, td {
 	}
 	.list {
 		width: 100%;
+        margin: 0px auto;
 	}
 	#GamesLeft, #GamesRight, #Links {
 		float: none;
