@@ -7,7 +7,7 @@ var MAX_WIDTH_SMALL_SCREEN = 1160,
 	doujin = ["SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "StB", "MoF", "SA", "UFO", "DS", "GFW", "TD", "DDC", "ISC", "LoLK", "SG", "BSR", "SMD", "MRS", "CCWI", "eX1", "eX2", "eX3"],
 	musicLink = ["", "wlY8pwFt6kg", "aQOtLRa8Phw", "bAdsMgIZAEE", "fb41shIeDCA", "QXrvaugGThA", "w5MOMgLvTqU", "OfH1FrSlDws", "BHppysY6Ib4",
 	"XRRKWkW92O4", "Laj-7MA5g4M", "N0jhujOdrdY", "sZkUFWmBEiE", "SQL69b7_5Qs", "v8xtmqN6jpc", "8kb8SQOPiQY", "vu2TixUgsnQ", "OMWm9SmoZGo"],
-    gamesLeftOriginal = document.getElementById("GamesLeft").innerHTML;
+    gamesLeftOriginal;
 
 Object.defineProperty(Array.prototype, "contains", {
     configurable: true,
@@ -18,6 +18,8 @@ Object.defineProperty(Array.prototype, "contains", {
 });
 
 $(document).ready(function() {
+    gamesLeftOriginal = document.getElementById("GamesLeft").innerHTML;
+    
 	if ($(window).width() < MAX_WIDTH_SMALL_SCREEN) {
 		var GamesLeft = document.getElementById("GamesLeft"),
 			GamesRight = document.getElementById("GamesRight");
