@@ -98,7 +98,7 @@ table, tr, th, td {
 		width: 100%;
 	}
 }
-@media only screen and (min-width: 801px) and (max-width: 1079px) {
+@media only screen and (min-width: 801px) and (max-width: 1159px) {
     body {
         font-size: 12px;
     }
@@ -111,7 +111,7 @@ table, tr, th, td {
         width: 150px;
     }
 }
-@media only screen and (min-width: 1080px) and (max-width: 1279px) {
+@media only screen and (min-width: 1160px) and (max-width: 1279px) {
     body {
         font-size: 14px;
     }
