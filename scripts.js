@@ -27,10 +27,6 @@ $(document).ready(function() {
 	// detect smartphone
 	
 	if (navigator.userAgent.indexOf("Mobile") > -1) {
-		for (var i in games) {
-			document.getElementById(games[i]).innerHTML += "<strong><a href='#GamesLeft'>Back</a></strong>";
-		}
-        
         document.getElementById("Achievements").innerHTML += "<strong><a href='#GamesLeft'>Back</a></strong>";
 		document.getElementById("OtherOptions").style.display = "none";
 		document.getElementById("br2").style.display = "none";
