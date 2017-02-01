@@ -8,8 +8,10 @@
 		<link rel='stylesheet' type='text/css' href='main.css'>
 		<link rel='icon' type='image/x-icon' href='favicon.ico'>
 		<script src='jquery.js'></script>
+		<script src='calendar.js'></script>
 		<script src='scripts.js'></script>
 		<script src='youtube.js'></script>
+        <script>javascript:calendar.set("calendar");</script>
 	</head>
 	
 	<body id='ADB'>
@@ -561,10 +563,19 @@
                             <td id='1DSmbl' class='nb'></td>
                             <td id='2DSmbl' class='nb'></td>
                             <td id='3DSmbl' class='clear'></td>
-                            <td id='9DSmbl'></td>
+                            <td id='999DSmbl'></td>
                         </tr>
                    </tbody>
                 </table>
+                <br>
+                <h3>Date Selector</h3>
+                <table>
+                    <tr>
+                        <td>Check Maribel's achievements at a given point in time.</td>
+                        <td><input id='calendar' type='text' onClick='javascript:calendar.showCalendar()' onChange='javascript:getClearHistory(this.value)' readonly></td>
+                    </tr>
+                </table>
+                <br><br><br><br><br><br><br><br><br><br><br><br>
             </div>
 			<div id='SoEW' style='display:none'>
 				<h2 id='soew'>TH02 - Story of Eastern Wonderland</h2>
