@@ -357,7 +357,7 @@ var MAX_WIDTH_SMALL_SCREEN = 1160,
         },
         "MRS": {
             "e": {
-                "clear": "23-2-2013"
+                "clear": "23-2-2013",
                 "nb": "9-6-2016"
             },
             "n": {
