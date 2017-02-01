@@ -127,34 +127,3 @@ function showArcade() {
 		document.getElementById(arcade[i]).style.display = "block";
 	}
 }
-
-function changeMusic(music) {
-	if (music == "random") {	
-		var random = Math.ceil(Math.random() * (musicLink.length - 1));
-		document.getElementById("Frame").src = "https://www.youtube.com/embed/" + musicLink[random] +
-		"?enablejsapi=1&origin=https%3A%2F%2Fdl.dropboxusercontent.com&autoplay=1";
-	} else {
-		document.getElementById("Frame").src = "https://www.youtube.com/embed/" + musicLink[music] +
-		"?enablejsapi=1&origin=https%3A%2F%2Fdl.dropboxusercontent.com&autoplay=1";
-	}
-}
-
-function musicOff() {
-	var browser = navigator.userAgent;
-	if (browser.indexOf("Chrome") > -1 && browser.indexOf("OPR") == -1 && browser.indexOf("Version") == -1) {
-		alert("Why would you turn the epic music off? :( Do you REALLY want to do this? Okay then... ;_;");
-		document.getElementById("Frame").src = "";
-	} else {
-		if (document.getElementById("Frame").style.display == "none") {
-			document.getElementById("Frame").style.display = "block";
-			document.getElementById("TurnOffMusic").value = "Turn Music Off";
-		} else {
-			document.getElementById("Frame").style.display = "none";
-			document.getElementById("TurnOffMusic").value = "Turn Music On";
-		}
-	}
-}
-
-function changeTheme(theme) {
-	document.getElementById("ADB").style.background = "url('./games/" + theme + "big.jpg')";
-}
