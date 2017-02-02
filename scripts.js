@@ -215,14 +215,17 @@ function getClearHistory(date) {
                 "nb": "1/2/2016"
             },
             "h": {
+                "attempted": "6/5/2012",
                 "clear": "12/18/2012",
                 "nb": "2/15/2016"
             },
             "l": {
+                "attempted": "12/19/2013",
                 "clear": "1/27/2014",
                 "nb": "12/12/2016"
             },
             "x": {
+                "attempted": "11/16/2011",
                 "clear": "5/29/2012",
                 "nm": "8/28/2014",
                 "nb": "2/18/2016",
@@ -231,6 +234,7 @@ function getClearHistory(date) {
         },
         "PCB": {
             "e": {
+                "attempted": "11/2/2011",
                 "clear": "1/15/2012",
                 "nb": "12/12/2015",
                 "nmnb": "6/24/2016"
@@ -240,10 +244,12 @@ function getClearHistory(date) {
                 "nb": "2/5/2016"
             },
             "h": {
+                "attempted": "9/25/2012",
                 "clear": "9/27/2012",
                 "nb": "6/19/2016"
             },
             "l": {
+                "attempted": "8/30/2013",
                 "clear": "12/18/2013",
                 "nb": "10/21/2016"
             },
@@ -268,6 +274,7 @@ function getClearHistory(date) {
                 "nb": "1/3/2016"
             },
             "h": {
+                "attempted": "4/3/2012",
                 "clear": "4/8/2012",
                 "nb": "1/27/2017"
             },
@@ -276,6 +283,7 @@ function getClearHistory(date) {
                 "nb": "1/27/2017"
             },
             "x": {
+                "attempted": "12/5/2012",
                 "clear": "12/7/2012",
                 "nb": "5/12/2016"
             }
@@ -288,6 +296,7 @@ function getClearHistory(date) {
                 "clear": "7/13/2012"
             },
             "h": {
+                "attempted": "12/22/2012",
                 "clear": "12/25/2012"
             },
             "l": {
@@ -299,16 +308,19 @@ function getClearHistory(date) {
         },
         "MoF": {
             "e": {
+                "attempted": "12/10/2011",
                 "clear": "12/19/2011",
                 "nb": "12/12/2015",
                 "nmnb": "12/14/2015"
             },
             "n": {
+                "attempted": "1/19/2011",
                 "clear": "2/2/2012",
                 "nm": "12/13/2015",
                 "nb": "2/5/2016"
             },
             "h": {
+                "attempted": "12/10/2012",
                 "clear": "12/8/2013",
                 "nb": "7/4/2016"
             },
@@ -336,9 +348,11 @@ function getClearHistory(date) {
                 "clear": "9/23/2013"
             },
             "l": {
+                "attempted": "10/31/2014",
                 "clear": "6/7/2015"
             },
             "x": {
+                "attempted": "12/9/2012",
                 "clear": "9/5/2013",
                 "nb": "5/12/2016",
                 "nmnb": "9/29/2016"
@@ -355,12 +369,15 @@ function getClearHistory(date) {
                 "nb": "1/18/2016"
             },
             "h": {
+                "attempted": "8/29/2014",
                 "clear": "9/7/2014"
             },
             "l": {
+                "attempted": "8/27/2015",
                 "clear": "12/4/2015"
             },
             "x": {
+                "attempted": "11/9/2012",
                 "clear": "9/17/2013",
                 "nb": "6/1/2016",
                 "nmnb": "7/4/2016"
@@ -368,10 +385,12 @@ function getClearHistory(date) {
         },
         "GFW": {
             "e": {
+                "attempted": "7/2/2012",
                 "clear": "7/20/2012",
                 "nmnb": "12/12/2015"
             },
             "n": {
+                "attempted": "7/2/2012",
                 "clear": "12/17/2012",
                 "nb": "12/14/2015"
             },
@@ -403,9 +422,11 @@ function getClearHistory(date) {
                 "nb": "1/3/2016"
             },
             "l": {
+                "attempted": "4/28/2014",
                 "clear": "6/3/2015"
             },
             "x": {
+                "attempted": "12/14/2012",
                 "clear": "5/2/2013",
                 "nb": "5/28/2016"
             }
@@ -420,12 +441,14 @@ function getClearHistory(date) {
                 "nb": "2/6/2016"
             },
             "h": {
+                "attempted": "9/24/2013",
                 "clear": "1/30/2014"
             },
             "l": {
                 "clear": "6/8/2015"
             },
             "x": {
+                "attempted": "2/9/2014",
                 "clear": "2/10/2014",
                 "nb": "5/28/2016"
             }
@@ -442,6 +465,7 @@ function getClearHistory(date) {
                 "clear": "8/16/2015"
             },
             "l": {
+                "attempted": "8/18/2015",
                 "clear": "8/19/2015"
             },
             "x": {
@@ -511,6 +535,7 @@ function getClearHistory(date) {
         },
         "DP": {
             "1": {
+                "attempted": "3/6/2015",
                 "clear": "9/5/2015"
             }
         },
