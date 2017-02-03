@@ -355,7 +355,7 @@ function getClearHistory(date) {
                 "attempted": "12/9/2012",
                 "clear": "9/5/2013",
                 "nb": "5/12/2016",
-                "nmnb": "9/29/2016"
+                "nmnb": "5/17/2016"
             }
         },
         "UFO": {
