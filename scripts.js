@@ -455,7 +455,7 @@ function getClearHistory(date) {
         },
         "LoLK": {
             "e": {
-                "clear": "8/16/2015",
+                "nm": "8/16/2015",
                 "nb": "1/18/2016"
             },
             "n": {
