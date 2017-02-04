@@ -530,7 +530,7 @@ function survivalPoints(rubric) {
     
     n += misses * rubric.miss;
     
-    if (bombs === 1) {
+    if (bombs >= 1) {
         n += bombs * rubric.firstBomb;
         bombs -= 1;
     }
