@@ -10,6 +10,9 @@ div {
 h1 {
     font: 48px monotype corsiva;
 }
+h2 {
+    font: 36px monotype corsiva;
+}
 .wrap {
     border: 1px solid black;
     text-align: center;
