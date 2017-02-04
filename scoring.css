@@ -12,8 +12,8 @@ h1 {
     opacity: 0.8;
     font: 14px verdana, sans-serif;
 }
-body {
-    
+.wr {
+    color: #0000EE;
 }
 #table {
      border: 1px solid black;
