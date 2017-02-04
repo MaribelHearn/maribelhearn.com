@@ -18,6 +18,8 @@ h2 {
     text-align: center;
     margin-left: 25%;
     margin-right: 25%;
+    padding-left: 15px;
+    padding-right: 15px;
     opacity: 0.8;
     font: 14px verdana, sans-serif;
 }
