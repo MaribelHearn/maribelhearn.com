@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+	<head>
+		<title>DRC Points Calculator</title>
+		<meta charset='UTF-8'>
+		<meta name='viewport' content='width=device-width'>
+		<link rel='stylesheet' type='text/css' href='./drc.css'>
+		<script src='./scoring.js'></script>
+		<script src='./jquery.js'></script>
+        <script src='./drc.js'></script>
+	</head>
+	
+	<body onLoad='javascript:load()'>
+		<div class='wrap'>
+			<h1>DRC Points Calculator</h1>
+            
+            <p>As of now, the scoring rubrics are undetermined; every point calculation will result in 0.</p>
+            
+			<label for='game'>Category</label>
+            <select id='game' onChange='javascript:if (typeof(this.selectedIndex) != "undefined") checkGame(this.value)'>
+                <option>SoEW</option>
+                <option>LLS</option>
+                <option>MS</option>
+                <option>EoSD</option>
+                <option>PCB</option>
+                <option>IN</option>
+                <option>MoF</option>
+                <option>SA</option>
+                <option>UFO</option>
+                <option>GFW</option>
+                <option>TD</option>
+                <option>DDC</option>
+                <option>LoLK</option>
+            </select>
+            <select id='difficulty'>
+                <option>Easy</option>
+                <option>Normal</option>
+                <option>Hard</option>
+                <option>Lunatic</option>
+                <option>Extra</option>
+            </select>
+            <select id='challenge' onChange='javascript:if (typeof(this.selectedIndex) != "undefined") checkChallenge(this.value)'>
+                <option>Scoring</option>
+                <option>Survival</option>
+            </select>
+            <div id='performance'></div>
+			<div id='drcpoints'></div>
+            <div id='error'></div>
+			<input type='button' onClick='javascript:drcPoints()' value='Calculate'> <form action='./index.html'><input type='submit' value='Go Back'></form>
+		</div>
+	</body>
+
+</html>
