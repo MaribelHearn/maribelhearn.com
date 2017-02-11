@@ -6,7 +6,7 @@
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
 		<link rel='stylesheet' type='text/css' href='./drc.css'>
-		<script src='./scoring.js'></script>
+		<script id='scoring' src='./scoring.js'></script>
 		<script src='./jquery.js'></script>
         <script src='./drc.js'></script>
 	</head>
@@ -40,7 +40,7 @@
                 <option>DDC</option>
                 <option>LoLK</option>
             </select>
-            <select id='difficulty'>
+            <select id='difficulty' onChange='javascript:if (typeof(this.selectedIndex) != "undefined") checkChallenge(this.value)'>
                 <option>Easy</option>
                 <option>Normal</option>
                 <option>Hard</option>
