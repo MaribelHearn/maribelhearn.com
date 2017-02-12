@@ -132,9 +132,7 @@ function showArcade() {
 }
 
 function getClearHistory(date) {
-    var unixTime = new Date(date).getTime();
-    
-    var clearHistory = {
+    var unixTime = new Date(date).getTime(), count = 0, clearHistory = {
         "SoEW": {
             "e": {
                 "clear": "2/1/2014"
@@ -314,7 +312,7 @@ function getClearHistory(date) {
                 "nmnb": "12/14/2015"
             },
             "n": {
-                "attempted": "1/19/2011",
+                "attempted": "1/19/2012",
                 "clear": "2/2/2012",
                 "nm": "12/13/2015",
                 "nb": "2/5/2016"
@@ -584,7 +582,7 @@ function getClearHistory(date) {
             "nu": {
                 "clear": "11/9/2015"
             },
-            "o": {
+            "or": {
                 "clear": "11/8/2015"
             },
             "m": {
@@ -604,12 +602,12 @@ function getClearHistory(date) {
                 "clear": "11/1/2013",
                 "nm": "11/27/2013"
             },
-            "o": {},
+            "or": {},
             "m": {},
             "u": {}
         },
         "MSFbl": {
-            "o": {
+            "or": {
                 "clear": "9/5/2015"
             },
             "m": {},
@@ -655,29 +653,37 @@ function getClearHistory(date) {
             if (!jQuery.isEmptyObject(clears)) {
                 if (clears.hasOwnProperty("nmnb") && unixTime >= clears.nmnb.toUnixTime()) {
                     $(element).addClass("nmnb");
+                    count++;
                     continue;
                 }
                 
                 if (clears.hasOwnProperty("nb") && unixTime >= clears.nb.toUnixTime()) {
                     $(element).addClass("nb");
+                    count++;
                     continue;
                 }
                 
                 if (clears.hasOwnProperty("nm") && unixTime >= clears.nm.toUnixTime()) {
                     $(element).addClass("nm");
+                    count++;
                     continue;
                 }
                 
                 if (clears.hasOwnProperty("clear") && unixTime >= clears.clear.toUnixTime()) {
                     $(element).addClass("clear");
+                    count++;
                     continue;
                 }
                 
                 if (clears.hasOwnProperty("attempted") && unixTime >= clears.attempted.toUnixTime()) {
                     $(element).addClass("attempted");
+                    count++;
                     continue;
                 }
             }
         }
+        
+        $("#o" + game).css("display", count === 0 ? "none" : "");
+        count = 0;
     }
 }
