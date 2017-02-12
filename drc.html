@@ -40,7 +40,7 @@
                 <option>DDC</option>
                 <option>LoLK</option>
             </select>
-            <select id='difficulty' onChange='javascript:if (typeof(this.selectedIndex) != "undefined") checkChallenge(this.value)'>
+            <select id='difficulty' onChange='javascript:if ($(CHALLENGE).val() == "Scoring") { $(PERFORMANCE).html(SCORE_OPTIONS); checkShottypes(); }'>
                 <option>Easy</option>
                 <option>Normal</option>
                 <option>Hard</option>
