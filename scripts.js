@@ -149,7 +149,7 @@ function getClearHistory(date) {
                 "attempted": "11/3/2016"
             },
             "x": {
-                "attempted": "11/12016",
+                "attempted": "11/1/2016",
                 "clear": "11/2/2016"
             }
         },
