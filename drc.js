@@ -327,7 +327,20 @@ var global = this, phantasm = true, noExtra = true, GAME = "#game", DIFFICULTY =
                 "min": 15,
                 "lives": 8
             },
-            "multiplier": {}
+            "multiplier": {
+                "Reimu": 1.1,
+                "Marisa": 1.1,
+                "Sakuya": 1.1,
+                "Youmu": 1.1,
+                "Reisen": 1.1,
+                "Cirno": 1.1,
+                "Lyrica": 1.1,
+                "Mystia": 1.1,
+                "Tewi": 1.1,
+                "Yuuka": 1.1,
+                "Komachi": 1.1,
+                "Eiki": 1.1
+            }
         },
         "MoF": {
             "Easy": {

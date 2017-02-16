@@ -44,6 +44,7 @@
                 <option>DDC</option>
                 <option>LoLK</option>
             </select>
+            <label id='difficultyLabel' for='difficulty'>Difficulty</label>
             <select id='difficulty' onChange='javascript:if ($(GAME).val() == "GFW") { checkShottypes(); }'>
                 <option>Easy</option>
                 <option>Normal</option>
@@ -51,6 +52,7 @@
                 <option>Lunatic</option>
                 <option>Extra</option>
             </select>
+            <label id='challengeLabel' for='challenge'>Challenge</label>
             <select id='challenge' onChange='javascript:checkValues(true, false)'>
                 <option>Scoring</option>
                 <option>Survival</option>
