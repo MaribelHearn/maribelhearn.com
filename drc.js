@@ -955,38 +955,44 @@ var global = this, phantasm = true, noExtra = true, GAME = "#game", DIFFICULTY =
     };
 
 $(document).ready(function() {
-    checkValues(true);
+    checkValues(true, true);
 });
 
-function checkValues(changeShottypes) {
+function checkValues(changePerformance, changeShottypes) {
     var game = $(GAME).val(), difficulty = $(DIFFICULTY).val(), challenge = $(CHALLENGE).val(), shottype = $(SHOTTYPE).val();
     
-    if (game == "MoF" && challenge == "Survival" && shottype == "MarisaB") {
-        $(NOTIFY).html(NOTIFY_TEXT + "usage of the MarisaB damage bug is BANNED in survival.");
-    } else if (game == "TD" && challenge == "Survival") {
-        $(NOTIFY).html(NOTIFY_TEXT + "manual trances count as bombs (that is, trances from pressing C).");
-    } else if (game == "PCB" && challenge == "Survival") {
-        $(NOTIFY).html(NOTIFY_TEXT + "border breaks count as bombs (even if they are accidental).");
-    } else if (challenge == "Survival") {
-        $(NOTIFY).html("");
+    if (challenge == "Survival") {
+        if (game == "MoF" && shottype == "MarisaB") {
+            $(NOTIFY).html(NOTIFY_TEXT + "usage of the MarisaB damage bug is BANNED in survival.");
+        } else if (game == "TD") {
+            $(NOTIFY).html(NOTIFY_TEXT + "manual trances count as bombs (that is, trances from pressing C).");
+        } else if (game == "PCB") {
+            $(NOTIFY).html(NOTIFY_TEXT + "border breaks count as bombs (even if they are accidental).");
+        } else if (game == "PoDD" || game == "PoFV") {
+            $(NOTIFY).html(NOTIFY_TEXT + "Stage 9 Round 1 does <em>not</em> count for the number of rounds lost.<br>Base points used in the calculation are still subject to change.");
+        } else {
+            $(NOTIFY).html("");
+        }
     }
     
     
-    if (changeShottypes) {
-        if (game == "PCB") {
-            $(DIFFICULTY).html(PHANTASM);
-            phantasm = true;
-        } else if (phantasm) {
-            $(DIFFICULTY).html(DIFF_OPTIONS);
-            phantasm = false;
-        }
-        
-        if (game == "HRtP" || game == "PoDD") {
-            $(DIFFICULTY).html(NO_EXTRA);
-            noExtra = true;
-        } else if (game != "PCB" && noExtra) {
-            $(DIFFICULTY).html(DIFF_OPTIONS);
-            noExtra = false;
+    if (changePerformance) {
+        if (changeShottypes) {
+            if (game == "PCB") {
+                $(DIFFICULTY).html(PHANTASM);
+                phantasm = true;
+            } else if (phantasm) {
+                $(DIFFICULTY).html(DIFF_OPTIONS);
+                phantasm = false;
+            }
+            
+            if (game == "HRtP" || game == "PoDD") {
+                $(DIFFICULTY).html(NO_EXTRA);
+                noExtra = true;
+            } else if (game != "PCB" && noExtra) {
+                $(DIFFICULTY).html(DIFF_OPTIONS);
+                noExtra = false;
+            }
         }
         
         if (challenge == "Survival") {
