@@ -935,7 +935,7 @@ function drcPoints() {
     if (challenge == "Survival") {
         rubric = SURV_RUBRICS[game][difficulty];
         shottypeMultiplier = (SURV_RUBRICS[game].multiplier[shottype] ? SURV_RUBRICS[game].multiplier[shottype] : 1);
-        points = survivalPoints(rubric, shottypeMultiplier);
+        points = survivalPoints(rubric, difficulty, shottypeMultiplier);
     } else {
         rubric = (game != "MoF" ? SCORE_RUBRICS[game][difficulty] : undefined);
         points = scoringPoints(rubric, game, difficulty, shottype);
@@ -944,7 +944,7 @@ function drcPoints() {
     $(DRCPOINTS).html("Your DRC points for this run: <b>" + points + "</b>!");
 }
 
-function survivalPoints(rubric, shottypeMultiplier) {
+function survivalPoints(rubric, difficulty, shottypeMultiplier) {
     var misses = Number($(MISSES).val()), bombs = Number($(BOMBS).val()), n = 0;
     
     $(ERROR).html("");
@@ -958,7 +958,9 @@ function survivalPoints(rubric, shottypeMultiplier) {
     
     n += bombs * rubric.bomb;
     
-    return Math.round(Math.round(rubric.base * Math.pow(rubric.exp, -n)) * shottypeMultiplier);
+    drcpoints = Math.round(rubric.base * Math.pow(rubric.exp, -n));
+    
+    return (difficulty == "Extra" ? drcpoints : drcpoints * shottypeMultiplier);
 }
 
 function mofFormula(score) {
