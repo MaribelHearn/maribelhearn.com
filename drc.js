@@ -960,7 +960,7 @@ function survivalPoints(rubric, difficulty, shottypeMultiplier) {
     
     drcpoints = Math.round(rubric.base * Math.pow(rubric.exp, -n));
     
-    return (difficulty == "Extra" ? drcpoints : drcpoints * shottypeMultiplier);
+    return (difficulty == "Extra" ? drcpoints : Math.round(drcpoints * shottypeMultiplier));
 }
 
 function mofFormula(score) {
