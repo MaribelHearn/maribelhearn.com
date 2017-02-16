@@ -49,25 +49,25 @@ var global = this, phantasm = true, noExtra = true, GAME = "#game", DIFFICULTY =
         "PoDD": {
             "Easy": {
                 "base": 50,
-                "min": 10,
+                "min": 15,
                 "lives": 5,
                 "noBombBonus": 10
             },
             "Normal": {
                 "base": 90,
-                "min": 15,
+                "min": 25,
                 "lives": 5,
                 "noBombBonus": 20
             },
             "Hard": {
                 "base": 130,
-                "min": 20,
+                "min": 40,
                 "lives": 5,
                 "noBombBonus": 30
             },
             "Lunatic": {
                 "base": 260,
-                "min": 30,
+                "min": 50,
                 "lives": 5,
                 "noBombBonus": 50
             },
@@ -981,8 +981,8 @@ function checkValues(changePerformance, changeShottypes) {
             $(NOTIFY).html(NOTIFY_TEXT + "manual trances count as bombs (that is, trances from pressing C).");
         } else if (game == "PCB") {
             $(NOTIFY).html(NOTIFY_TEXT + "border breaks count as bombs (even if they are accidental).");
-        } else if (game == "PoDD" || game == "PoFV") {
-            $(NOTIFY).html(NOTIFY_TEXT + "Stage 9 Round 1 does <em>not</em> count for the number of rounds lost.<br>Base points used in the calculation are still subject to change.");
+        } else if (game == "PoFV") {
+            $(NOTIFY).html(NOTIFY_TEXT + "this point calculation is still subject to change.");
         } else {
             $(NOTIFY).html("");
         }
