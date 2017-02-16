@@ -1,8 +1,10 @@
-var global = this, phantasm = true, GAME = "#game", DIFFICULTY = "#difficulty", CHALLENGE = "#challenge", MISSES = "#misses", SCORING = "#scoring",
+var global = this, phantasm = true, noExtra = true, GAME = "#game", DIFFICULTY = "#difficulty", CHALLENGE = "#challenge", MISSES = "#misses", SCORING = "#scoring", NB = "#nb",
     BOMBS = "#bombs", SCORE = "#score", PERFORMANCE = "#performance", DRCPOINTS = "#drcpoints", ERROR = "#error", SHOTTYPE = "#shottype", NOTIFY = "#notify",
-    DIFF_OPTIONS = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option>", NOTIFY_TEXT = "<b>Important Notice:</b> ",
-    SURV_OPTIONS = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100><br><label for='bombs'>Bombs</label><input id='bombs' type='number' value=0 min=0 max=100>",
-    SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>", ERROR_TEXT = "<b style='color:red'>Error: ",
+    NO_EXTRA = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>", NOTIFY_TEXT = "<b>Important Notice:</b> ",
+    DIFF_OPTIONS = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option>",
+    PHANTASM = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option><option>Phantasm</option>",
+    MISSES_INPUT = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>", ERROR_TEXT = "<b style='color:red'>Error: ",
+    SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>",
     SURV_RUBRICS = {
         "SoEW": {
             "Easy": {
@@ -42,6 +44,40 @@ var global = this, phantasm = true, GAME = "#game", DIFFICULTY = "#difficulty", 
             },
             "multiplier": {
                 "ReimuC": 1.05
+            }
+        },
+        "PoDD": {
+            "Easy": {
+                "base": 50,
+                "min": 10,
+                "lives": 5,
+                "noBombBonus": 10
+            },
+            "Normal": {
+                "base": 100,
+                "min": 15,
+                "lives": 5,
+                "noBombBonus": 20
+            },
+            "Hard": {
+                "base": 150,
+                "min": 20,
+                "lives": 5,
+                "noBombBonus": 30
+            },
+            "Lunatic": {
+                "base": 300,
+                "min": 30,
+                "lives": 5,
+                "noBombBonus": 50
+            },
+            "multiplier": {
+                "Mima": 1.1,
+                "Marisa": 1.1,
+                "Ellen": 1.2,
+                "Kotohime": 1.1,
+                "Kana": 1.15,
+                "Chiyuri": 1.2
             }
         },
         "LLS": {
@@ -265,6 +301,34 @@ var global = this, phantasm = true, GAME = "#game", DIFFICULTY = "#difficulty", 
                 "Yuyuko": 1.05
             }
         },
+        "PoFV": {
+            "Easy": {
+                "base": 50,
+                "min": 10,
+                "lives": 7
+            },
+            "Normal": {
+                "base": 100,
+                "min": 15,
+                "lives": 7
+            },
+            "Hard": {
+                "base": 150,
+                "min": 20,
+                "lives": 7
+            },
+            "Lunatic": {
+                "base": 300,
+                "min": 30,
+                "lives": 7
+            },
+            "Extra": {
+                "base": 110,
+                "min": 15,
+                "lives": 8
+            },
+            "multiplier": {}
+        },
         "MoF": {
             "Easy": {
                 "base": 60,
@@ -303,7 +367,8 @@ var global = this, phantasm = true, GAME = "#game", DIFFICULTY = "#difficulty", 
             },
             "multiplier": {
                 "ReimuC": 1.15,
-                "MarisaA": 1.15
+                "MarisaA": 1.15,
+                "MarisaB": 1.05
             }
         },
         "SA": {
@@ -429,8 +494,9 @@ var global = this, phantasm = true, GAME = "#game", DIFFICULTY = "#difficulty", 
                 "bomb": 1,
             },
             "multiplier": {
-                "B1": 1.1,
-                "C1": 1.05
+                "B1": 1.15,
+                "B2": 1.05,
+                "C1": 1.1
             }
         },
         "TD": {
@@ -513,7 +579,7 @@ var global = this, phantasm = true, GAME = "#game", DIFFICULTY = "#difficulty", 
                 "ReimuB": 1.05,
                 "MarisaA": 1.2,
                 "MarisaB": 1.05,
-                "SakuyaB": 1.15
+                "SakuyaB": 1.2
             }
         },
         "LoLK": {
@@ -893,29 +959,49 @@ $(document).ready(function() {
 });
 
 function checkValues(changeShottypes) {
-    var game = $(GAME).val(), challenge = $(CHALLENGE).val(), shottype = $(SHOTTYPE).val();
+    var game = $(GAME).val(), difficulty = $(DIFFICULTY).val(), challenge = $(CHALLENGE).val(), shottype = $(SHOTTYPE).val();
     
     if (game == "MoF" && challenge == "Survival" && shottype == "MarisaB") {
-        $(NOTIFY).append(NOTIFY_TEXT + "usage of the MarisaB damage bug is BANNED in survival.");
+        $(NOTIFY).html(NOTIFY_TEXT + "usage of the MarisaB damage bug is BANNED in survival.");
     } else if (game == "TD" && challenge == "Survival") {
-        $(NOTIFY).append(NOTIFY_TEXT + "manual trances count as bombs (that is, trances from pressing C).");
+        $(NOTIFY).html(NOTIFY_TEXT + "manual trances count as bombs (that is, trances from pressing C).");
     } else if (game == "PCB" && challenge == "Survival") {
-        $(NOTIFY).append(NOTIFY_TEXT + "border breaks count as bombs (even if they are accidental).");
+        $(NOTIFY).html(NOTIFY_TEXT + "border breaks count as bombs (even if they are accidental).");
     } else if (challenge == "Survival") {
         $(NOTIFY).html("");
     }
     
-    if (game == "PCB" && challenge == "Survival") {
-        $(DIFFICULTY).append("<option>Phantasm</option>");
-        phantasm = true;
-    } else if (phantasm) {
-        $(DIFFICULTY).html(DIFF_OPTIONS);
-        phantasm = false;
-    }
     
     if (changeShottypes) {
+        if (game == "PCB") {
+            $(DIFFICULTY).html(PHANTASM);
+            phantasm = true;
+        } else if (phantasm) {
+            $(DIFFICULTY).html(DIFF_OPTIONS);
+            phantasm = false;
+        }
+        
+        if (game == "HRtP" || game == "PoDD") {
+            $(DIFFICULTY).html(NO_EXTRA);
+            noExtra = true;
+        } else if (game != "PCB" && noExtra) {
+            $(DIFFICULTY).html(DIFF_OPTIONS);
+            noExtra = false;
+        }
+        
         if (challenge == "Survival") {
-            $(PERFORMANCE).html(SURV_OPTIONS);
+            var survOptions = MISSES_INPUT;
+            
+            if (game == "PoDD") {
+                survOptions += "<br><label for='nb'>No Bomb</label><input id='nb' type='checkbox'>";
+                survOptions = survOptions.replace("Misses</label>", "Rounds lost</label>").replace("max=100", "max=5");
+            } else if (game == "PoFV") {
+                survOptions = survOptions.replace("Misses</label>", "Rounds lost</label>").replace("max=100", "max=8");
+            } else {
+                survOptions += "<br><label for='bombs'>Bombs</label><input id='bombs' type='number' value=0 min=0 max=100>";
+            }
+            
+            $(PERFORMANCE).html(survOptions);
         } else {
             $(PERFORMANCE).html(SCORE_OPTIONS);
             $(NOTIFY).html("");
@@ -956,9 +1042,8 @@ function drcPoints() {
         }
         
         rubric = SURV_RUBRICS[game][difficulty];
-        
         shottypeMultiplier = (SURV_RUBRICS[game].multiplier[shottype] ? SURV_RUBRICS[game].multiplier[shottype] : 1);
-        points = survivalPoints(rubric, difficulty, shottypeMultiplier);
+        points = (game == "PoDD" || game == "PoFV" ? phantasmagoria(rubric, game, shottypeMultiplier) : survivalPoints(rubric, difficulty, shottypeMultiplier));
     } else {
         rubric = (game != "MoF" ? SCORE_RUBRICS[game][difficulty] : undefined);
         points = scoringPoints(rubric, game, difficulty, shottype);
@@ -967,12 +1052,29 @@ function drcPoints() {
     $(DRCPOINTS).html("Your DRC points for this run: <b>" + points + "</b>!");
 }
 
+function phantasmagoria(rubric, game, shottypeMultiplier) {
+    var roundsLost = Number($(MISSES).val()), bonus = 0;
+    
+    if (roundsLost > rubric.lives) {
+        $(ERROR).html(ERROR_TEXT + "the number of rounds lost cannot exceed " + rubric.lives + ".");
+        return 0;
+    } else {
+        $(ERROR).html("");
+    }
+    
+    if (game == "PoDD") {
+        bonus = $(NB).is(":checked") ? rubric.noBombBonus : 0;
+    }
+    
+    return Math.round(shottypeMultiplier * (rubric.base - ((rubric.base - rubric.min) / rubric.lives * roundsLost) + bonus));
+}
+
 function survivalPoints(rubric, difficulty, shottypeMultiplier) {
-    var misses = Number($(MISSES).val()), bombs = Number($(BOMBS).val()), n = 0;
+    var misses = Number($(MISSES).val()), bombs = Number($(BOMBS).val()), n = 0, originalBombs;
     
     $(ERROR).html("");
-    
     n += misses * rubric.miss;
+    originalBombs = bombs;
     
     if (bombs >= 1) {
         n += rubric.firstBomb;
@@ -983,7 +1085,11 @@ function survivalPoints(rubric, difficulty, shottypeMultiplier) {
     
     drcpoints = Math.round(rubric.base * Math.pow(rubric.exp, -n));
     
-    return (difficulty == "Extra" ? drcpoints : Math.round(drcpoints * shottypeMultiplier));
+    if (difficulty != "Extra" && originalBombs === 0) {
+        drcpoints = Math.round(drcpoints * shottypeMultiplier);
+    }
+    
+    return drcpoints;
 }
 
 function mofFormula(score) {
