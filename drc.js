@@ -379,6 +379,7 @@ var global = this, phantasm = true, noExtra = true, GAME = "#game", DIFFICULTY =
                 "bomb": 1,
             },
             "multiplier": {
+                "ReimuA": 1.05,
                 "ReimuC": 1.15,
                 "MarisaA": 1.15,
                 "MarisaB": 1.05
@@ -589,7 +590,7 @@ var global = this, phantasm = true, noExtra = true, GAME = "#game", DIFFICULTY =
                 "bomb": 1,
             },
             "multiplier": {
-                "ReimuB": 1.05,
+                "ReimuB": 1.1,
                 "MarisaA": 1.2,
                 "MarisaB": 1.05,
                 "SakuyaB": 1.2
