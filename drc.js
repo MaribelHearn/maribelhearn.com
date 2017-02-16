@@ -1084,6 +1084,10 @@ function phantasmagoria(rubric, game, shottypeMultiplier) {
         bonus = $(NB).is(":checked") ? rubric.noBombBonus : 0;
     }
     
+    if (difficulty == "Extra") {
+        shottypeMultiplier = 1;
+    }
+    
     return Math.round(shottypeMultiplier * (rubric.base - ((rubric.base - rubric.min) / rubric.lives * roundsLost))) + bonus;
 }
 
