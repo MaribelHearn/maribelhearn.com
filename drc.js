@@ -1032,7 +1032,7 @@ function scoringPoints(rubric, game, difficulty, shottype) {
     }
     
     if (game == "MoF") {
-        return (mofFormula(score);
+        return mofFormula(score);
     } else if (game == "SoEW" && difficulty == "Hard") {
         wr = WRs[game][difficulty]["ReimuB"][0];
     } else if (game == "SoEW" && difficulty == "Lunatic") {
