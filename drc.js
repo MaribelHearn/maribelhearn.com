@@ -332,12 +332,12 @@ var global = this, phantasm = true, noExtra = true, GAME = "#game", DIFFICULTY =
                 "Marisa": 1.1,
                 "Sakuya": 1.1,
                 "Youmu": 1.1,
-                "Reisen": 1.1,
+                "Reisen": 1.15,
                 "Cirno": 1.1,
-                "Lyrica": 1.1,
+                "Lyrica": 1.15,
                 "Mystia": 1.1,
-                "Tewi": 1.1,
-                "Yuuka": 1.1,
+                "Tewi": 1.15,
+                "Yuuka": 1.15,
                 "Komachi": 1.1,
                 "Eiki": 1.1
             }
@@ -981,8 +981,6 @@ function checkValues(changePerformance, changeShottypes) {
             $(NOTIFY).html(NOTIFY_TEXT + "manual trances count as bombs (that is, trances from pressing C).");
         } else if (game == "PCB") {
             $(NOTIFY).html(NOTIFY_TEXT + "border breaks count as bombs (even if they are accidental).");
-        } else if (game == "PoFV") {
-            $(NOTIFY).html(NOTIFY_TEXT + "this point calculation is still subject to change.");
         } else {
             $(NOTIFY).html("");
         }
