@@ -1032,7 +1032,7 @@ function scoringPoints(rubric, game, difficulty, shottype) {
     }
     
     if (game == "MoF") {
-        return mofFormula(score);
+        return (mofFormula(score);
     } else if (game == "SoEW" && difficulty == "Hard") {
         wr = WRs[game][difficulty]["ReimuB"][0];
     } else if (game == "SoEW" && difficulty == "Lunatic") {
@@ -1051,5 +1051,5 @@ function scoringPoints(rubric, game, difficulty, shottype) {
         wr = WRs[game][difficulty][shottype][0];
     }
     
-    return Math.round(rubric.base * Math.pow((score / wr), rubric.exp));
+    return (score >= WR ? rubric.base : Math.round(rubric.base * Math.pow((score / wr), rubric.exp)));
 }
