@@ -1051,5 +1051,5 @@ function scoringPoints(rubric, game, difficulty, shottype) {
         wr = WRs[game][difficulty][shottype][0];
     }
     
-    return (score >= WR ? rubric.base : Math.round(rubric.base * Math.pow((score / wr), rubric.exp)));
+    return (score >= wr ? rubric.base : Math.round(rubric.base * Math.pow((score / wr), rubric.exp)));
 }
