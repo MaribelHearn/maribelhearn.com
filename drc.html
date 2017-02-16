@@ -7,6 +7,7 @@
 		<meta name='viewport' content='width=device-width'>
 		<link rel='stylesheet' type='text/css' href='./drc.css'>
 		<script id='scoring' src='./scoring.js'></script>
+        <script src='./sorttable.js'></script>
 		<script src='./jquery.js'></script>
         <script src='./drc.js'></script>
 	</head>
@@ -23,16 +24,19 @@
             <p>If you want to know how many DRC points a run is worth, the points for a given run can be determined using the calculator below.</p>
             <h2>Points Calculator</h2>
             <p>Scores can only contain digits, commas, dots and spaces.</p>
-            <p>Note that for PCB and TD, border breaks and trances count as bombs (even if the border breaks are accidental).</p>
+            <div id='notify'></div>
 			<label for='game'>Category</label>
-            <select id='game' onChange='javascript:if (typeof(this.selectedIndex) != "undefined") checkGame(this.value)'>
+            <select id='game' onChange='javascript:checkValues(true)'>
+                <option>HRtP</option>
                 <option>SoEW</option>
+                <option>PoDD</option>
                 <option>LLS</option>
                 <option>MS</option>
                 <option>EoSD</option>
                 <option>PCB</option>
                 <option>IN</option>
                 <option>MoF</option>
+                <option>PoFV</option>
                 <option>SA</option>
                 <option>UFO</option>
                 <option>GFW</option>
@@ -40,19 +44,19 @@
                 <option>DDC</option>
                 <option>LoLK</option>
             </select>
-            <select id='difficulty' onChange='javascript:if ($(CHALLENGE).val() == "Scoring") { $(PERFORMANCE).html(SCORE_OPTIONS); checkShottypes(); }'>
+            <select id='difficulty' onChange='javascript:if ($(GAME).val() == "GFW") { checkShottypes(); }'>
                 <option>Easy</option>
                 <option>Normal</option>
                 <option>Hard</option>
                 <option>Lunatic</option>
                 <option>Extra</option>
             </select>
-            <select id='challenge' onChange='javascript:if (typeof(this.selectedIndex) != "undefined") checkChallenge(this.value)'>
+            <select id='challenge' onChange='javascript:checkValues(true)'>
                 <option>Scoring</option>
                 <option>Survival</option>
             </select>
             <div id='performance'></div>
-            <label for='shottype'>Shottype / Route</label><select id='shottype'></select>
+            <label for='shottype'>Shottype / Route</label><select id='shottype' onChange='checkValues(false)'></select>
 			<div id='drcpoints'></div>
             <div id='error'></div>
 			<input type='button' onClick='javascript:drcPoints()' value='Calculate'>
