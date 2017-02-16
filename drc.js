@@ -1,8 +1,8 @@
 var global = this, phantasm = true, GAME = "#game", DIFFICULTY = "#difficulty", CHALLENGE = "#challenge", MISSES = "#misses", SCORING = "#scoring",
-    BOMBS = "#bombs", SCORE = "#score", PERFORMANCE = "#performance", DRCPOINTS = "#drcpoints", ERROR = "#error", SHOTTYPE = "#shottype",
-    DIFF_OPTIONS = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option>",
+    BOMBS = "#bombs", SCORE = "#score", PERFORMANCE = "#performance", DRCPOINTS = "#drcpoints", ERROR = "#error", SHOTTYPE = "#shottype", NOTIFY = "#notify",
+    DIFF_OPTIONS = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option>", NOTIFY_TEXT = "<b>Important Notice:</b> ",
     SURV_OPTIONS = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100><br><label for='bombs'>Bombs</label><input id='bombs' type='number' value=0 min=0 max=100>",
-    SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>",
+    SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>", ERROR_TEXT = "<b style='color:red'>Error: ",
     SURV_RUBRICS = {
         "SoEW": {
             "Easy": {
@@ -428,7 +428,10 @@ var global = this, phantasm = true, GAME = "#game", DIFFICULTY = "#difficulty", 
                 "firstBomb": 3,
                 "bomb": 1,
             },
-            "multiplier": {}
+            "multiplier": {
+                "B1": 1.1,
+                "C1": 1.05
+            }
         },
         "TD": {
             "Easy": {
@@ -886,14 +889,23 @@ var global = this, phantasm = true, GAME = "#game", DIFFICULTY = "#difficulty", 
     };
 
 $(document).ready(function() {
-    checkGame($(GAME).val());
-    checkChallenge($(CHALLENGE).val());
+    checkValues(true);
 });
 
-function checkGame(game) {
-    var challenge = $(CHALLENGE).val();
+function checkValues(changeShottypes) {
+    var game = $(GAME).val(), challenge = $(CHALLENGE).val(), shottype = $(SHOTTYPE).val();
     
-    if (game == "PCB") {
+    if (game == "MoF" && challenge == "Survival" && shottype == "MarisaB") {
+        $(NOTIFY).append(NOTIFY_TEXT + "usage of the MarisaB damage bug is BANNED in survival.");
+    } else if (game == "TD" && challenge == "Survival") {
+        $(NOTIFY).append(NOTIFY_TEXT + "manual trances count as bombs (that is, trances from pressing C).");
+    } else if (game == "PCB" && challenge == "Survival") {
+        $(NOTIFY).append(NOTIFY_TEXT + "border breaks count as bombs (even if they are accidental).");
+    } else if (challenge == "Survival") {
+        $(NOTIFY).html("");
+    }
+    
+    if (game == "PCB" && challenge == "Survival") {
         $(DIFFICULTY).append("<option>Phantasm</option>");
         phantasm = true;
     } else if (phantasm) {
@@ -901,20 +913,22 @@ function checkGame(game) {
         phantasm = false;
     }
     
-    checkShottypes();
-}
-
-function checkChallenge(challenge) {
-    if (challenge == "Survival") {
-        $(PERFORMANCE).html(SURV_OPTIONS);
-    } else {
-        $(PERFORMANCE).html(SCORE_OPTIONS);
+    if (changeShottypes) {
+        if (challenge == "Survival") {
+            $(PERFORMANCE).html(SURV_OPTIONS);
+        } else {
+            $(PERFORMANCE).html(SCORE_OPTIONS);
+            $(NOTIFY).html("");
+        }
+    }
+    
+    if (changeShottypes) {
         checkShottypes();
     }
 }
 
 function checkShottypes() {
-    var game = $(GAME).val(), difficulty = $(DIFFICULTY).val(), shottypes = Object.keys(WRs[game][difficulty]), shottypeList = "";
+    var game = $(GAME).val(), challenge = $(CHALLENGE).val(), difficulty = $(DIFFICULTY).val(), shottypes = Object.keys(WRs[game][difficulty]), shottypeList = "";
     
     for (var i in shottypes) {
         var shottype = (shottypes[i].indexOf("Team") > -1 ? shottypes[i].replace("Team", " Team") : shottypes[i]);
@@ -933,7 +947,16 @@ function drcPoints() {
     var game = $(GAME).val(), difficulty = $(DIFFICULTY).val(), challenge = $(CHALLENGE).val(), shottype = $(SHOTTYPE).val(), rubric, points;
     
     if (challenge == "Survival") {
+        if (!SURV_RUBRICS[game]) {
+            $(ERROR).html(ERROR_TEXT + "the survival rubrics for this game are undetermined as of now.</b>");
+            $(DRCPOINTS).html("Your DRC points for this run: <b>0</b>!");
+            return;
+        } else {
+            $(ERROR).html("");
+        }
+        
         rubric = SURV_RUBRICS[game][difficulty];
+        
         shottypeMultiplier = (SURV_RUBRICS[game].multiplier[shottype] ? SURV_RUBRICS[game].multiplier[shottype] : 1);
         points = survivalPoints(rubric, difficulty, shottypeMultiplier);
     } else {
@@ -1026,7 +1049,8 @@ function scoringPoints(rubric, game, difficulty, shottype) {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), wr;
     
     if (isNaN(score)) {
-        $(ERROR).html("<b style='color:red'>Invalid score.</b>");
+        $(ERROR).html(ERROR_TEXT + "invalid score.</b>");
+        return 0;
     } else {
         $(ERROR).html("");
     }
