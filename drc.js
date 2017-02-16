@@ -54,19 +54,19 @@ var global = this, phantasm = true, noExtra = true, GAME = "#game", DIFFICULTY =
                 "noBombBonus": 10
             },
             "Normal": {
-                "base": 100,
+                "base": 90,
                 "min": 15,
                 "lives": 5,
                 "noBombBonus": 20
             },
             "Hard": {
-                "base": 150,
+                "base": 130,
                 "min": 20,
                 "lives": 5,
                 "noBombBonus": 30
             },
             "Lunatic": {
-                "base": 300,
+                "base": 260,
                 "min": 30,
                 "lives": 5,
                 "noBombBonus": 50
@@ -308,17 +308,17 @@ var global = this, phantasm = true, noExtra = true, GAME = "#game", DIFFICULTY =
                 "lives": 7
             },
             "Normal": {
-                "base": 100,
+                "base": 90,
                 "min": 15,
                 "lives": 7
             },
             "Hard": {
-                "base": 150,
+                "base": 130,
                 "min": 20,
                 "lives": 7
             },
             "Lunatic": {
-                "base": 300,
+                "base": 260,
                 "min": 30,
                 "lives": 7
             },
@@ -1072,7 +1072,7 @@ function phantasmagoria(rubric, game, shottypeMultiplier) {
         bonus = $(NB).is(":checked") ? rubric.noBombBonus : 0;
     }
     
-    return Math.round(shottypeMultiplier * (rubric.base - ((rubric.base - rubric.min) / rubric.lives * roundsLost) + bonus));
+    return Math.round(shottypeMultiplier * (rubric.base - ((rubric.base - rubric.min) / rubric.lives * roundsLost))) + bonus;
 }
 
 function survivalPoints(rubric, difficulty, shottypeMultiplier) {
