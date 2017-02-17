@@ -46,7 +46,7 @@
                 <option>LoLK</option>
             </select>
             <label id='difficultyLabel' for='difficulty'>Difficulty</label>
-            <select id='difficulty' onChange='javascript:if ($(GAME).val() == "GFW") { checkShottypes(); }'>
+            <select id='difficulty' onChange='javascript:if ($(GAME).val() == "GFW") { checkShottypes(true); }'>
                 <option>Easy</option>
                 <option>Normal</option>
                 <option>Hard</option>
@@ -54,7 +54,7 @@
                 <option>Extra</option>
             </select>
             <label id='challengeLabel' for='challenge'>Challenge</label>
-            <select id='challenge' onChange='javascript:checkValues(true, false)'>
+            <select id='challenge' onChange='javascript:checkValues(true, false); checkShottypes(false);'>
                 <option>Scoring</option>
                 <option>Survival</option>
             </select>

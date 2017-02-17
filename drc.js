@@ -1,10 +1,10 @@
-var global = this, phantasm = true, noExtra = true, GAME = "#game", DIFFICULTY = "#difficulty", CHALLENGE = "#challenge", MISSES = "#misses", SCORING = "#scoring", RUBRICS = "#rubrics", NB = "#nb",
+var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "#game", DIFFICULTY = "#difficulty", CHALLENGE = "#challenge", MISSES = "#misses", SCORING = "#scoring", RUBRICS = "#rubrics",
     BOMBS = "#bombs", SCORE = "#score", PERFORMANCE = "#performance", DRCPOINTS = "#drcpoints", ERROR = "#error", SHOTTYPE = "#shottype", NOTIFY = "#notify", RUBRICS_BUTTON = "#rubricsButton",
     NO_EXTRA = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>", NOTIFY_TEXT = "<b>Important Notice:</b> ", PHANTASMAGORIA = "#phantasmagoriaTable",
     DIFF_OPTIONS = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option>", SHOTTYPE_MULTIPLIERS = "#shottypeMultipliersTable",
     PHANTASM = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option><option>Phantasm</option>", MOF_TABLE = "#mofScoringTable",
-    MISSES_INPUT = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>", ERROR_TEXT = "<b style='color:red'>Error: ", CLEARED = "#cleared"
-    SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>", SCORING_TABLE = "#scoringTable", SURV_TABLE = "#survivalTable",
+    MISSES_INPUT = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>", ERROR_TEXT = "<b style='color:red'>Error: ", CLEARED = "#cleared",
+    SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>", SCORING_TABLE = "#scoringTable", SURV_TABLE = "#survivalTable", NB = "#nb",
     SURV_RUBRICS = {
         "SoEW": {
             "Easy": {
@@ -1039,11 +1039,11 @@ function checkValues(changePerformance, changeShottypes) {
     }
     
     if (changeShottypes) {
-        checkShottypes();
+        checkShottypes(true);
     }
 }
 
-function checkShottypes() {
+function checkShottypes(alwaysChange) {
     var game = $(GAME).val(), challenge = $(CHALLENGE).val(), difficulty = $(DIFFICULTY).val(), shottypes = Object.keys(WRs[game][difficulty]), shottypeList = "";
     
     for (var i in shottypes) {
@@ -1052,10 +1052,16 @@ function checkShottypes() {
         shottypeList += "<option value='" + shottypes[i] + "'>" + shottype + "</option>";
     }
     
-    if (game == "GFW" && difficulty == "Extra") {
-        $(SHOTTYPE).html("<option value='-'>-</option>");
-    } else {
+    if (alwaysChange) {
         $(SHOTTYPE).html(shottypeList);
+    }
+    
+    if (game == "MoF" && challenge == "Scoring" || game == "GFW") {
+        $(SHOTTYPE).html("<option value='-'>-</option>");
+        noShottypes = true;
+    } else if (noShottypes) {
+        $(SHOTTYPE).html(shottypeList);
+        noShottypes = false;
     }
 }
 
@@ -1137,7 +1143,7 @@ function mofFormula(score) {
         drcpoints = MOF_RUBRIC.base[i] + clearBonus;
         
         if (i == MOF_RUBRIC.score.length || originalScore < MOF_RUBRIC.score[i]) {
-            while (score > MOF_RUBRIC.per[i]) {
+            while (score >= MOF_RUBRIC.per[i]) {
                 score -= MOF_RUBRIC.per[i];
                 drcpoints += MOF_RUBRIC.increment[i];
             }
@@ -1220,7 +1226,7 @@ function generateRubrics() {
                 $(SHOTTYPE_MULTIPLIERS).append("</tr>");
                 
                 for (shottype in rubric) {
-                    $(SHOTTYPE_MULTIPLIERS).append("<tr><th>" + game + " " + shottype + "</th><td>" + rubric[shottype] + "</td></tr>");
+                    $(SHOTTYPE_MULTIPLIERS).append("<tr><th>" + game + " " + shottype.replace("Team", " Team") + "</th><td>" + rubric[shottype] + "</td></tr>");
                 }
                 
                 continue;
