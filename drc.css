@@ -27,12 +27,6 @@ h2 {
     opacity: 0.8;
     font: 14px verdana, sans-serif;
 }
-#fl {
-    float: left;
-}
-#fr {
-    float: right;
-}
 #difficultyLabel, #challengeLabel {
     display: none;
 }
