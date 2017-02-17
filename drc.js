@@ -1145,7 +1145,7 @@ function mofFormula(score) {
             return drcpoints;
         }
         
-        score -= (MOF_RUBRIC.score[i] ? MOF_RUBRIC.score[i] : MOF_RUBRIC.score[MOF_RUBRIC.score.length - 1]);
+        score = originalScore - (MOF_RUBRIC.score[i] ? MOF_RUBRIC.score[i] : MOF_RUBRIC.score[MOF_RUBRIC.score.length - 1]);
     }
 }
 
