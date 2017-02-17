@@ -13,7 +13,10 @@ h1 {
 h2 {
     font: 36px monotype corsiva;
 }
-.wrap {
+.noborders {
+    border: none;
+}
+#wrap {
     border: 1px solid black;
     text-align: center;
     margin-left: 25%;
@@ -23,6 +26,12 @@ h2 {
     padding-bottom: 15px;
     opacity: 0.8;
     font: 14px verdana, sans-serif;
+}
+#fl {
+    float: left;
+}
+#fr {
+    float: right;
 }
 #difficultyLabel, #challengeLabel {
     display: none;

@@ -13,7 +13,7 @@
 	</head>
 	
 	<body>
-		<div class='wrap'>
+		<div id='wrap' class='wrap'>
 			<h1>Dodging Rain Competition</h1>
             <p>The <b>Dodging Rain Competition (DRC)</b> is a Touhou game competition that was invented by ZM and is held on
             <a href='http://eientei.boards.net/thread/829/official-dodging-rain-competition-thread'>Eientei Forums</a>.
@@ -62,7 +62,72 @@
 			<div id='drcpoints'></div>
             <div id='error'></div>
 			<p><input type='button' onClick='javascript:drcPoints()' value='Calculate'></p>
-            <p><form action='./index.html'><input type='submit' value='Go Back'></form></p>
+            <h2>Rubrics</h2>
+            <p>The rubrics are the formulas and fixed values used to calculate the number of DRC points for a run. If you are curious about how your points are being determined, click the button below to expand.</p>
+            <input id='rubricsButton' type='button' onClick='javascript:showRubrics()' value='Show Rubrics'>
+            <div id='rubrics' style='display:none'>
+                <p>
+                    <b>Scoring Notes:</b>
+                    <ul>
+                        <li>If a new World Record is achieved, the points are equal to the base points; otherwise, the formula applies.</li>
+                        <li>For MoF, due to its awkward scaling, there is a separate system for points. Click <a href='#mofScoring'>here</a> for said system.</li>
+                    </ul>
+                </p>
+                <p>
+                    <b>Survival Notes:</b>
+                    <ul>
+                        <li>For a main game No Bomb run, a shottype multiplier is applied to the result of the formula, the result of which is again rounded.
+                        Click <a href='#shottypeMultipliers'>here</a> for the list of them.</li>
+                        <li>The Phantasmagorias use a separate system, for which the shottype multiplier is always applied. Click <a href='#phantasmagoria'>here</a> for said system.</li>
+                    </ul>
+                </p>
+                <table id='rubricsTable' align='center' class='noborders'>
+                    <tr class='noborders'>
+                        <td class='noborders'>
+                            <table class='sortable'>
+                                <thead><tr><td colspan='3'><b>Scoring</b><br>||Base * (Score/WR)^Exp||</td></tr></thead>
+                                <tbody id='scoringTable'></tbody>
+                            </table>
+                        </td>
+                        <td class='noborders' style='float:left'>
+                            <table class='sortable'>
+                                <thead><tr><td colspan='6'><b>Survival</b><br>||Base * (Exp^-n)||</td></tr></thead>
+                                <tbody id='survivalTable'></tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <b id='mofScoring'>MoF Scoring</b>
+                <p>The base points are set depending on the score, after which increments are applied depending on how much higher than the lower limit the score is. 15 points are added if the run clears.</p>
+                <table align='center'>
+                    <tr><th>Score range</th><th>Base points</th><th>Incrementing</th></tr>
+                    <tr><td>&lt;= 1.5b</td><td>0</td><td>+30 for every 30m</td></tr>
+                    <tr><td>1.5b -&lt; 2b</td><td>100</td><td>+10 for every 50m</td></tr>
+                    <tr><td>2b -&lt; 2.05b</td><td>200</td><td>+5 for every 10m</td></tr>
+                    <tr><td>2.05b -&lt; 2.1b</td><td>225</td><td>+10 for every 10m</td></tr>
+                    <tr><td>>= 2.1b</td><td>275</td><td>+15 for every 10m</td></tr>
+                </table>
+                <br>
+                <b id='phantasmagoria'>PoDD, PoFV Survival</b>
+                <p>In the below formula, MaxLives is equal to 5 for PoDD, 7 for PoFV main game and 8 for PoFV Extra.
+                NoBombBonus is 0 for PoFV and a difficulty-specific No Bomb bonus for PoDD.
+                RoundsLost is equal to how many rounds the player lost.</p>
+                <table align='center'>
+                    <thead><tr><td colspan='4'>||Shot * (Base - ((Base - Min) / MaxLives * RoundsLost))|| + NoBombBonus</td></tr></thead>
+                    <tbody id='phantasmagoriaTable'></tbody>
+                </table>
+                <br>
+                <b id='shottypeMultipliers'>Shottype Multipliers</b>
+                <p>These are applied to the result of the survival formula for a main game No Bomb run only; however, for the Phantasmagorias, they are always applied.
+                For all shots <em>not</em> listed here, the shottype multipliers are equal to 1.</p>
+                <table align='center'>
+                    <tbody id='shottypeMultipliersTable'></tbody>
+                </table>
+                <br>
+                <a href='#wrap'>Back to Top</a>
+            </div>
+            <p><a href='./index.html'>Back to Main Page</a></p>
 		</div>
 	</body>
 
