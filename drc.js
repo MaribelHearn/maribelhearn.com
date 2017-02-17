@@ -2,8 +2,8 @@ var global = this, phantasm = true, noExtra = true, GAME = "#game", DIFFICULTY =
     BOMBS = "#bombs", SCORE = "#score", PERFORMANCE = "#performance", DRCPOINTS = "#drcpoints", ERROR = "#error", SHOTTYPE = "#shottype", NOTIFY = "#notify", RUBRICS_BUTTON = "#rubricsButton",
     NO_EXTRA = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>", NOTIFY_TEXT = "<b>Important Notice:</b> ", PHANTASMAGORIA = "#phantasmagoriaTable",
     DIFF_OPTIONS = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option>", SHOTTYPE_MULTIPLIERS = "#shottypeMultipliersTable",
-    PHANTASM = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option><option>Phantasm</option>", CLEARED = "#cleared",
-    MISSES_INPUT = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>", ERROR_TEXT = "<b style='color:red'>Error: ",
+    PHANTASM = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option><option>Phantasm</option>", MOF_TABLE = "#mofScoringTable",
+    MISSES_INPUT = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>", ERROR_TEXT = "<b style='color:red'>Error: ", CLEARED = "#cleared"
     SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>", SCORING_TABLE = "#scoringTable", SURV_TABLE = "#survivalTable",
     SURV_RUBRICS = {
         "SoEW": {
@@ -966,6 +966,12 @@ var global = this, phantasm = true, noExtra = true, GAME = "#game", DIFFICULTY =
                 "exp": 2.5
             }
         }
+    },
+    MOF_RUBRIC = {
+        "base": [0, 100, 200, 225, 275],
+        "score": [1500000000, 2000000000, 2050000000, 2100000000],
+        "increment": [2, 10, 5, 10, 15],
+        "per": [30000000, 50000000, 10000000, 10000000, 10000000]
     };
 
 $(document).ready(function() {
@@ -1125,62 +1131,22 @@ function survivalPoints(rubric, difficulty, shottypeMultiplier) {
 }
 
 function mofFormula(score) {
-    var originalScore = score, drcpoints = ($(CLEARED).is(":checked") ? 15 : 0);
+    var originalScore = score, clearBonus = ($(CLEARED).is(":checked") ? 15 : 0), i;
     
-    if (score < 1500000000) {
-        while (score >= 30000000) {
-            score -= 30000000;
-            drcpoints += 2;
+    for (i = 0; i < MOF_RUBRIC.increment.length; i++) {
+        drcpoints = MOF_RUBRIC.base[i] + clearBonus;
+        
+        if (i == MOF_RUBRIC.score.length || originalScore < MOF_RUBRIC.score[i]) {
+            while (score > MOF_RUBRIC.per[i]) {
+                score -= MOF_RUBRIC.per[i];
+                drcpoints += MOF_RUBRIC.increment[i];
+            }
+            
+            return drcpoints;
         }
         
-        return drcpoints;
+        score -= (MOF_RUBRIC.score[i] ? MOF_RUBRIC.score[i] : MOF_RUBRIC.score[MOF_RUBRIC.score.length - 1]);
     }
-    
-    score = originalScore - 1500000000;
-    drcpoints = 100;
-    
-    if (originalScore < 2000000000) {
-        while (score >= 50000000) {
-            score -= 50000000;
-            drcpoints += 10;
-        }
-        
-        return drcpoints;
-    }
-    
-    score = originalScore - 2000000000;
-    drcpoints = 200;
-    
-    if (originalScore < 2050000000) {
-        while (score >= 10000000) {
-            score -= 10000000;
-            drcpoints += 5;
-        }
-        
-        return drcpoints;
-    }
-    
-    score = originalScore - 2050000000;
-    drcpoints = 225;
-    
-    if (originalScore < 2100000000) {
-        while (score >= 10000000) {
-            score -= 10000000;
-            drcpoints += 10;
-        }
-        
-        return drcpoints;
-    }
-    
-    score = originalScore - 2100000000;
-    drcpoints = 275;
-    
-    while (score >= 10000000) {
-        score -= 10000000;
-        drcpoints += 15;
-    }
-    
-    return drcpoints;
 }
 
 function scoringPoints(rubric, game, difficulty, shottype) {
@@ -1216,8 +1182,12 @@ function scoringPoints(rubric, game, difficulty, shottype) {
     return (score >= wr ? rubric.base : Math.round(rubric.base * Math.pow((score / wr), rubric.exp)));
 }
 
+function abbreviate(num) {
+    return String(num).replace("000000000", "b").replace("100000000", ".1b").replace("500000000", ".5b").replace("050000000", ".05b").replace("0000000", "0m").replace("000000", "m");
+}
+
 function generateRubrics() {
-    var game, difficulty, rubric, shottype;
+    var game, difficulty, rubric, shottype, scoreRange, i;
     
     for (game in SCORE_RUBRICS) {
         $(SCORING_TABLE).append("<tr>");
@@ -1264,6 +1234,22 @@ function generateRubrics() {
                 "</td><td>" + rubric.miss + "</td><td>" + rubric.firstBomb + "</td><td>" + rubric.bomb + "</td></tr>");
             }
         }
+    }
+    
+    $(MOF_TABLE).append("<tr><th>Score range</th><th>Base points</th><th>Incrementing</th></tr>");
+    
+    for (i = 0; i < MOF_RUBRIC.base.length; i++) {
+        if (i == MOF_RUBRIC.score.length) {
+            scoreRange = ">= " + abbreviate(MOF_RUBRIC.score[MOF_RUBRIC.score.length - 1]);
+        } else {
+            if (i === 0) {
+                scoreRange = "< " + abbreviate(MOF_RUBRIC.score[i]);
+            } else {
+                scoreRange = abbreviate(MOF_RUBRIC.score[i - 1]) + " -< " + abbreviate(MOF_RUBRIC.score[i]);
+            }
+        }
+        
+        $(MOF_TABLE).append("<tr><td>" + scoreRange + "</td><td>" + abbreviate(MOF_RUBRIC.base[i]) + "</td><td>+" + MOF_RUBRIC.increment[i] + " for every " + abbreviate(MOF_RUBRIC.per[i]) + "</td></tr>");
     }
 }
 
