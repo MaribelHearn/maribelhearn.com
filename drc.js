@@ -2,7 +2,7 @@ var global = this, phantasm = true, noExtra = true, GAME = "#game", DIFFICULTY =
     BOMBS = "#bombs", SCORE = "#score", PERFORMANCE = "#performance", DRCPOINTS = "#drcpoints", ERROR = "#error", SHOTTYPE = "#shottype", NOTIFY = "#notify", RUBRICS_BUTTON = "#rubricsButton",
     NO_EXTRA = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>", NOTIFY_TEXT = "<b>Important Notice:</b> ", PHANTASMAGORIA = "#phantasmagoriaTable",
     DIFF_OPTIONS = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option>", SHOTTYPE_MULTIPLIERS = "#shottypeMultipliersTable",
-    PHANTASM = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option><option>Phantasm</option>",
+    PHANTASM = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option><option>Phantasm</option>", CLEARED = "#cleared",
     MISSES_INPUT = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>", ERROR_TEXT = "<b style='color:red'>Error: ",
     SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>", SCORING_TABLE = "#scoringTable", SURV_TABLE = "#survivalTable",
     SURV_RUBRICS = {
@@ -1022,7 +1022,12 @@ function checkValues(changePerformance, changeShottypes) {
             
             $(PERFORMANCE).html(survOptions);
         } else {
-            $(PERFORMANCE).html(SCORE_OPTIONS);
+            if (game == "MoF") {
+                $(PERFORMANCE).html(SCORE_OPTIONS + "<br><label for='cleared'>Cleared</label><input id='cleared' type='checkbox'>");
+            } else {
+                $(PERFORMANCE).html(SCORE_OPTIONS);
+            }
+            
             $(NOTIFY).html("");
         }
     }
@@ -1120,7 +1125,7 @@ function survivalPoints(rubric, difficulty, shottypeMultiplier) {
 }
 
 function mofFormula(score) {
-    var originalScore = score, drcpoints = 15;
+    var originalScore = score, drcpoints = ($(CLEARED).is(":checked") ? 15 : 0);
     
     if (score < 1500000000) {
         while (score >= 30000000) {
@@ -1132,7 +1137,7 @@ function mofFormula(score) {
     }
     
     score = originalScore - 1500000000;
-    drcpoints = 115;
+    drcpoints = 100;
     
     if (originalScore < 2000000000) {
         while (score >= 50000000) {
@@ -1144,7 +1149,7 @@ function mofFormula(score) {
     }
     
     score = originalScore - 2000000000;
-    drcpoints = 215;
+    drcpoints = 200;
     
     if (originalScore < 2050000000) {
         while (score >= 10000000) {
@@ -1156,7 +1161,7 @@ function mofFormula(score) {
     }
     
     score = originalScore - 2050000000;
-    drcpoints = 240;
+    drcpoints = 225;
     
     if (originalScore < 2100000000) {
         while (score >= 10000000) {
@@ -1168,7 +1173,7 @@ function mofFormula(score) {
     }
     
     score = originalScore - 2100000000;
-    drcpoints = 290;
+    drcpoints = 275;
     
     while (score >= 10000000) {
         score -= 10000000;
