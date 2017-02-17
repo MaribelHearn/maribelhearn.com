@@ -1,10 +1,10 @@
-var global = this, phantasm = true, noExtra = true, GAME = "#game", DIFFICULTY = "#difficulty", CHALLENGE = "#challenge", MISSES = "#misses", SCORING = "#scoring", NB = "#nb",
-    BOMBS = "#bombs", SCORE = "#score", PERFORMANCE = "#performance", DRCPOINTS = "#drcpoints", ERROR = "#error", SHOTTYPE = "#shottype", NOTIFY = "#notify",
-    NO_EXTRA = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>", NOTIFY_TEXT = "<b>Important Notice:</b> ",
-    DIFF_OPTIONS = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option>",
+var global = this, phantasm = true, noExtra = true, GAME = "#game", DIFFICULTY = "#difficulty", CHALLENGE = "#challenge", MISSES = "#misses", SCORING = "#scoring", RUBRICS = "#rubrics", NB = "#nb",
+    BOMBS = "#bombs", SCORE = "#score", PERFORMANCE = "#performance", DRCPOINTS = "#drcpoints", ERROR = "#error", SHOTTYPE = "#shottype", NOTIFY = "#notify", RUBRICS_BUTTON = "#rubricsButton",
+    NO_EXTRA = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>", NOTIFY_TEXT = "<b>Important Notice:</b> ", PHANTASMAGORIA = "#phantasmagoriaTable",
+    DIFF_OPTIONS = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option>", SHOTTYPE_MULTIPLIERS = "#shottypeMultipliersTable",
     PHANTASM = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option><option>Phantasm</option>",
     MISSES_INPUT = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>", ERROR_TEXT = "<b style='color:red'>Error: ",
-    SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>",
+    SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>", SCORING_TABLE = "#scoringTable", SURV_TABLE = "#survivalTable",
     SURV_RUBRICS = {
         "SoEW": {
             "Easy": {
@@ -116,7 +116,7 @@ var global = this, phantasm = true, noExtra = true, GAME = "#game", DIFFICULTY =
                 "firstBomb": 3,
                 "bomb": 1,
             },
-            "shots": {
+            "multiplier": {
                 "ReimuB": 1.05,
                 "MarisaB": 1.05
             }
@@ -474,35 +474,35 @@ var global = this, phantasm = true, noExtra = true, GAME = "#game", DIFFICULTY =
         "GFW": {
             "Easy": {
                 "base": 50,
-                "exp": 1.05,
+                "exp": 1.09,
                 "miss": 2,
                 "firstBomb": 2,
                 "bomb": 1,
             },
             "Normal": {
                 "base": 90,
-                "exp": 1.05,
+                "exp": 1.08,
                 "miss": 2,
                 "firstBomb": 3,
                 "bomb": 1,
             },
             "Hard": {
                 "base": 130,
-                "exp": 1.05,
+                "exp": 1.06,
                 "miss": 2,
                 "firstBomb": 3,
                 "bomb": 1,
             },
             "Lunatic": {
                 "base": 260,
-                "exp": 1.05,
+                "exp": 1.06,
                 "miss": 2,
                 "firstBomb": 4,
                 "bomb": 1,
             },
             "Extra": {
                 "base": 130,
-                "exp": 1.08,
+                "exp": 1.07,
                 "miss": 2,
                 "firstBomb": 3,
                 "bomb": 1,
@@ -970,6 +970,7 @@ var global = this, phantasm = true, noExtra = true, GAME = "#game", DIFFICULTY =
 
 $(document).ready(function() {
     checkValues(true, true);
+    generateRubrics();
 });
 
 function checkValues(changePerformance, changeShottypes) {
@@ -1047,6 +1048,10 @@ function checkShottypes() {
     }
 }
 
+function isPhantasmagoria(game) {
+    return game == "PoDD" || game == "PoFV";
+}
+
 function drcPoints() {
     var game = $(GAME).val(), difficulty = $(DIFFICULTY).val(), challenge = $(CHALLENGE).val(), shottype = $(SHOTTYPE).val(), rubric, points;
     
@@ -1061,7 +1066,7 @@ function drcPoints() {
         
         rubric = SURV_RUBRICS[game][difficulty];
         shottypeMultiplier = (SURV_RUBRICS[game].multiplier[shottype] ? SURV_RUBRICS[game].multiplier[shottype] : 1);
-        points = (game == "PoDD" || game == "PoFV" ? phantasmagoria(rubric, game, difficulty, shottypeMultiplier) : survivalPoints(rubric, difficulty, shottypeMultiplier));
+        points = (isPhantasmagoria(game) ? phantasmagoria(rubric, game, difficulty, shottypeMultiplier) : survivalPoints(rubric, difficulty, shottypeMultiplier));
     } else {
         rubric = (game != "MoF" ? SCORE_RUBRICS[game][difficulty] : undefined);
         points = scoringPoints(rubric, game, difficulty, shottype);
@@ -1204,4 +1209,67 @@ function scoringPoints(rubric, game, difficulty, shottype) {
     }
     
     return (score >= wr ? rubric.base : Math.round(rubric.base * Math.pow((score / wr), rubric.exp)));
+}
+
+function generateRubrics() {
+    var game, difficulty, rubric, shottype;
+    
+    for (game in SCORE_RUBRICS) {
+        $(SCORING_TABLE).append("<tr>");
+        $(SCORING_TABLE).append(game == "HRtP" ? "<th>Game</th><th>Base points</th><th>Exponent</th>" : "<th></th><td></td><td></td>");
+        $(SCORING_TABLE).append("</tr>");
+        
+        for (difficulty in SCORE_RUBRICS[game]) {
+            rubric = SCORE_RUBRICS[game][difficulty];
+            $(SCORING_TABLE).append("<tr><th>" + game + " " + difficulty + "</th><td>" + rubric.base + "</td><td>" + rubric.exp + "</td></tr>");
+        }
+    }
+    
+    for (game in SURV_RUBRICS) {
+        if (isPhantasmagoria(game)) {
+            $(PHANTASMAGORIA).append("<tr>");
+            $(PHANTASMAGORIA).append(game == "PoDD" ? "<th>Game</th><th>Base points</th><th>Min points</th><th>No Bomb bonus</th>" : "<th></th><td></td><td></td><td></td>");
+            $(PHANTASMAGORIA).append("</tr>");
+        } else {
+            $(SURV_TABLE).append("<tr>");
+            $(SURV_TABLE).append(game == "SoEW" ? "<th>Game</th><th>Base points</th><th>Exponent</th><th>Lost life (n)</th><th>First bomb (n)</th><th>Further bombs (n)</th>" : "<th></th><td></td><td></td><td></td><td></td><td></td>");
+            $(SURV_TABLE).append("</tr>");
+        }
+        
+        for (difficulty in SURV_RUBRICS[game]) {
+            rubric = SURV_RUBRICS[game][difficulty];
+            
+            if (difficulty == "multiplier") {
+                $(SHOTTYPE_MULTIPLIERS).append("<tr>");
+                $(SHOTTYPE_MULTIPLIERS).append(game == "SoEW" ? "<th>Game and shottype</th><th>Multiplier</th><" : "<th></th><td></td>");
+                $(SHOTTYPE_MULTIPLIERS).append("</tr>");
+                
+                for (shottype in rubric) {
+                    $(SHOTTYPE_MULTIPLIERS).append("<tr><th>" + game + " " + shottype + "</th><td>" + rubric[shottype] + "</td></tr>");
+                }
+                
+                continue;
+            }
+            
+            if (isPhantasmagoria(game)) {
+                $(PHANTASMAGORIA).append("<tr><th>" + game + " " + difficulty + "</th><td>" + rubric.base + "</td><td>" + rubric.min +
+                "</td><td>" + (rubric.noBombBonus ? rubric.noBombBonus : "-") + "</td></tr>");
+            } else {
+                $(SURV_TABLE).append("<tr><th>" + game + " " + difficulty + "</th><td>" + rubric.base + "</td><td>" + rubric.exp +
+                "</td><td>" + rubric.miss + "</td><td>" + rubric.firstBomb + "</td><td>" + rubric.bomb + "</td></tr>");
+            }
+        }
+    }
+}
+
+function showRubrics() {
+    $(RUBRICS).css("display", "block");
+    $(RUBRICS_BUTTON).attr("onClick", "javascript:hideRubrics()");
+    $(RUBRICS_BUTTON).val("Hide Rubrics");
+}
+
+function hideRubrics() {
+    $(RUBRICS).css("display", "none");
+    $(RUBRICS_BUTTON).attr("onClick", "javascript:showRubrics()");
+    $(RUBRICS_BUTTON).val("Show Rubrics");
 }
