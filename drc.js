@@ -1061,7 +1061,7 @@ function drcPoints() {
         
         rubric = SURV_RUBRICS[game][difficulty];
         shottypeMultiplier = (SURV_RUBRICS[game].multiplier[shottype] ? SURV_RUBRICS[game].multiplier[shottype] : 1);
-        points = (game == "PoDD" || game == "PoFV" ? phantasmagoria(rubric, game, shottypeMultiplier) : survivalPoints(rubric, difficulty, shottypeMultiplier));
+        points = (game == "PoDD" || game == "PoFV" ? phantasmagoria(rubric, game, difficulty, shottypeMultiplier) : survivalPoints(rubric, difficulty, shottypeMultiplier));
     } else {
         rubric = (game != "MoF" ? SCORE_RUBRICS[game][difficulty] : undefined);
         points = scoringPoints(rubric, game, difficulty, shottype);
@@ -1070,7 +1070,7 @@ function drcPoints() {
     $(DRCPOINTS).html("Your DRC points for this run: <b>" + points + "</b>!");
 }
 
-function phantasmagoria(rubric, game, shottypeMultiplier) {
+function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
     var roundsLost = Number($(MISSES).val()), bonus = 0;
     
     if (roundsLost > rubric.lives) {
