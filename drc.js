@@ -1007,8 +1007,6 @@ function checkValues(changePerformance, changeShottypes) {
             $(NOTIFY).html(NOTIFY_TEXT + "manual trances count as bombs (that is, trances from pressing C).");
         } else if (game == "PCB") {
             $(NOTIFY).html(NOTIFY_TEXT + "border breaks count as bombs (even if they are accidental).");
-        } else if (game == "IN") {
-            $(NOTIFY).html(NOTIFY_TEXT + "the point calculation for this game is currently subject to change.");
         } else {
             $(NOTIFY).html("");
         }
