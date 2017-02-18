@@ -3,7 +3,7 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
     NO_EXTRA = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>", NOTIFY_TEXT = "<b>Important Notice:</b> ", PHANTASMAGORIA = "#phantasmagoriaTable", IS = "#is",
     DIFF_OPTIONS = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option>", SHOTTYPE_MULTIPLIERS = "#shottypeMultipliersTable", LS = "#ls",
     PHANTASM = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option><option>Phantasm</option>", MOF_TABLE = "#mofScoringTable",
-    MISSES_INPUT = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>", ERROR_TEXT = "<b style='color:red'>Error: ", CLEARED = "#cleared", NCA = "#nca",
+    MISSES_INPUT = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>", ERROR_TEXT = "<b style='color:red'>Error: ", CLEARED = "#cleared",
     SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>", SCORING_TABLE = "#scoringTable", SURV_TABLE = "#survivalTable", ROUTE = "#route",
     SURV_RUBRICS = {
         "SoEW": {
@@ -306,31 +306,31 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
                 "base": 40,
                 "min": 10,
                 "lives": 7,
-                "noChargeAttacksBonus": 10
+                "noBombBonus": 10
             },
             "Normal": {
                 "base": 70,
                 "min": 15,
                 "lives": 7,
-                "noChargeAttacksBonus": 20
+                "noBombBonus": 20
             },
             "Hard": {
                 "base": 100,
                 "min": 20,
                 "lives": 7,
-                "noChargeAttacksBonus": 30
+                "noBombBonus": 30
             },
             "Lunatic": {
                 "base": 210,
                 "min": 30,
                 "lives": 7,
-                "noChargeAttacksBonus": 50
+                "noBombBonus": 50
             },
             "Extra": {
                 "base": 85,
                 "min": 15,
                 "lives": 8,
-                "noChargeAttacksBonus": 25
+                "noBombBonus": 25
             },
             "multiplier": {
                 "Reimu": 1.1,
@@ -1046,7 +1046,7 @@ function checkValues(changePerformance, changeShottypes) {
                 survOptions += "<br><label for='nb'>No Bomb</label><input id='nb' type='checkbox'>";
                 survOptions = survOptions.replace("Misses</label>", "Rounds lost</label>").replace("max=100", "max=5");
             } else if (game == "PoFV") {
-                survOptions += "<br><label for='nca'>No Charge Attacks</label><input id='nca' type='checkbox'>";
+                survOptions += "<br><label for='nb'>No Charge Attacks</label><input id='nb' type='checkbox'>";
                 survOptions = survOptions.replace("Misses</label>", "Rounds lost</label>").replace("max=100", "max=8");
             } else {
                 survOptions += "<br><label for='bombs'>Bombs</label><input id='bombs' type='number' value=0 min=0 max=100>";
@@ -1138,12 +1138,8 @@ function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
     } else {
         $(ERROR).html("");
     }
-    
-    if (game == "PoDD") {
-        bonus = $(NB).is(":checked") ? rubric.noBombBonus : 0;
-    } else {
-        bonus = $(NCA).is(":checked") ? rubric.noChargeAttacksBonus : 0;
-    }
+
+    bonus = $(NB).is(":checked") ? rubric.noBombBonus : 0;
     
     if (difficulty == "Extra") {
         shottypeMultiplier = 1;
@@ -1290,7 +1286,7 @@ function generateRubrics() {
             
             if (isPhantasmagoria(game)) {
                 $(PHANTASMAGORIA).append("<tr><th>" + game + " " + difficulty + "</th><td>" + rubric.base + "</td><td>" + rubric.min +
-                "</td><td>" + (rubric.noBombBonus ? rubric.noBombBonus : "-") + "</td></tr>");
+                "</td><td>" + rubric.noBombBonus + "</td></tr>");
             } else {
                 $(SURV_TABLE).append("<tr><th>" + game + " " + difficulty + "</th><td>" + rubric.base + "</td><td>" + rubric.exp +
                 "</td><td>" + rubric.miss + "</td><td>" + rubric.firstBomb + "</td><td>" + rubric.bomb + "</td></tr>");
