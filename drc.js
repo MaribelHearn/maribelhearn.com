@@ -303,31 +303,31 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
         },
         "PoFV": {
             "Easy": {
-                "base": 50,
+                "base": 40,
                 "min": 10,
                 "lives": 7,
                 "noChargeAttacksBonus": 10
             },
             "Normal": {
-                "base": 90,
+                "base": 70,
                 "min": 15,
                 "lives": 7,
                 "noChargeAttacksBonus": 20
             },
             "Hard": {
-                "base": 130,
+                "base": 100,
                 "min": 20,
                 "lives": 7,
                 "noChargeAttacksBonus": 30
             },
             "Lunatic": {
-                "base": 260,
+                "base": 210,
                 "min": 30,
                 "lives": 7,
                 "noChargeAttacksBonus": 50
             },
             "Extra": {
-                "base": 110,
+                "base": 85,
                 "min": 15,
                 "lives": 8,
                 "noChargeAttacksBonus": 25
