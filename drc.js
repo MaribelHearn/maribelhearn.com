@@ -3,7 +3,7 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
     NO_EXTRA = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>", NOTIFY_TEXT = "<b>Important Notice:</b> ", PHANTASMAGORIA = "#phantasmagoriaTable", IS = "#is",
     DIFF_OPTIONS = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option>", SHOTTYPE_MULTIPLIERS = "#shottypeMultipliersTable", LS = "#ls",
     PHANTASM = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option><option>Phantasm</option>", MOF_TABLE = "#mofScoringTable",
-    MISSES_INPUT = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>", ERROR_TEXT = "<b style='color:red'>Error: ", CLEARED = "#cleared",
+    MISSES_INPUT = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>", ERROR_TEXT = "<b style='color:red'>Error: ", CLEARED = "#cleared", NCA = "#nca",
     SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>", SCORING_TABLE = "#scoringTable", SURV_TABLE = "#survivalTable", ROUTE = "#route",
     SURV_RUBRICS = {
         "SoEW": {
@@ -305,27 +305,32 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
             "Easy": {
                 "base": 50,
                 "min": 10,
-                "lives": 7
+                "lives": 7,
+                "noChargeAttacksBonus": 10
             },
             "Normal": {
                 "base": 90,
                 "min": 15,
-                "lives": 7
+                "lives": 7,
+                "noChargeAttacksBonus": 20
             },
             "Hard": {
                 "base": 130,
                 "min": 20,
-                "lives": 7
+                "lives": 7,
+                "noChargeAttacksBonus": 30
             },
             "Lunatic": {
                 "base": 260,
                 "min": 30,
-                "lives": 7
+                "lives": 7,
+                "noChargeAttacksBonus": 50
             },
             "Extra": {
                 "base": 110,
                 "min": 15,
-                "lives": 8
+                "lives": 8,
+                "noChargeAttacksBonus": 25
             },
             "multiplier": {
                 "Reimu": 1.1,
@@ -1041,6 +1046,7 @@ function checkValues(changePerformance, changeShottypes) {
                 survOptions += "<br><label for='nb'>No Bomb</label><input id='nb' type='checkbox'>";
                 survOptions = survOptions.replace("Misses</label>", "Rounds lost</label>").replace("max=100", "max=5");
             } else if (game == "PoFV") {
+                survOptions += "<br><label for='nca'>No Charge Attacks</label><input id='nca' type='checkbox'>";
                 survOptions = survOptions.replace("Misses</label>", "Rounds lost</label>").replace("max=100", "max=8");
             } else {
                 survOptions += "<br><label for='bombs'>Bombs</label><input id='bombs' type='number' value=0 min=0 max=100>";
@@ -1124,7 +1130,7 @@ function drcPoints() {
 }
 
 function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
-    var roundsLost = Number($(MISSES).val()), bonus = 0;
+    var roundsLost = Number($(MISSES).val()), bonus;
     
     if (roundsLost > rubric.lives) {
         $(ERROR).html(ERROR_TEXT + "the number of rounds lost cannot exceed " + rubric.lives + ".");
@@ -1135,6 +1141,8 @@ function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
     
     if (game == "PoDD") {
         bonus = $(NB).is(":checked") ? rubric.noBombBonus : 0;
+    } else {
+        bonus = $(NCA).is(":checked") ? rubric.noChargeAttacksBonus : 0;
     }
     
     if (difficulty == "Extra") {
