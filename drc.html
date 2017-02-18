@@ -46,12 +46,16 @@
                 <option>LoLK</option>
             </select>
             <label id='difficultyLabel' for='difficulty'>Difficulty</label>
-            <select id='difficulty' onChange='javascript:if ($(GAME).val() == "GFW") { checkShottypes(true); }'>
+            <select id='difficulty' onChange='javascript:if ($(GAME).val() == "GFW") { checkShottypes(true); } if ($(GAME).val() == "IN") { checkValues(true, false); }'>
                 <option>Easy</option>
                 <option>Normal</option>
                 <option>Hard</option>
                 <option>Lunatic</option>
                 <option>Extra</option>
+            </select>
+            <select id='route' onChange='' style='display:none'>
+                <option>FinalA</option>
+                <option>FinalB</option>
             </select>
             <label id='challengeLabel' for='challenge'>Challenge</label>
             <select id='challenge' onChange='javascript:checkValues(true, false); checkShottypes(false);'>
@@ -80,6 +84,7 @@
                         <li>For a main game run, a shottype multiplier is applied to the result of the formula, the result of which is again rounded.
                         Click <a href='#shottypeMultipliers'>here</a> for the list of them.</li>
                         <li>The Phantasmagorias use a separate system. Click <a href='#phantasmagoria'>here</a> for said system.</li>
+                        <li>For IN, you obtain 2 (1 on Easy) additional points for each captured Last Spell, with the exception of Imperishable Shooting, which yields 5 points.
                     </ul>
                 </p>
                 <table id='rubricsTable' align='center' class='noborders'>
