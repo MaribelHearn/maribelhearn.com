@@ -1,10 +1,10 @@
 var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "#game", DIFFICULTY = "#difficulty", CHALLENGE = "#challenge", MISSES = "#misses", SCORING = "#scoring", RUBRICS = "#rubrics",
-    BOMBS = "#bombs", SCORE = "#score", PERFORMANCE = "#performance", DRCPOINTS = "#drcpoints", ERROR = "#error", SHOTTYPE = "#shottype", NOTIFY = "#notify", RUBRICS_BUTTON = "#rubricsButton",
-    NO_EXTRA = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>", NOTIFY_TEXT = "<b>Important Notice:</b> ", PHANTASMAGORIA = "#phantasmagoriaTable",
-    DIFF_OPTIONS = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option>", SHOTTYPE_MULTIPLIERS = "#shottypeMultipliersTable",
+    BOMBS = "#bombs", SCORE = "#score", PERFORMANCE = "#performance", DRCPOINTS = "#drcpoints", ERROR = "#error", SHOTTYPE = "#shottype", NOTIFY = "#notify", RUBRICS_BUTTON = "#rubricsButton", NB = "#nb",
+    NO_EXTRA = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>", NOTIFY_TEXT = "<b>Important Notice:</b> ", PHANTASMAGORIA = "#phantasmagoriaTable", IS = "#is",
+    DIFF_OPTIONS = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option>", SHOTTYPE_MULTIPLIERS = "#shottypeMultipliersTable", LS = "#ls",
     PHANTASM = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option><option>Phantasm</option>", MOF_TABLE = "#mofScoringTable",
     MISSES_INPUT = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>", ERROR_TEXT = "<b style='color:red'>Error: ", CLEARED = "#cleared",
-    SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>", SCORING_TABLE = "#scoringTable", SURV_TABLE = "#survivalTable", NB = "#nb",
+    SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>", SCORING_TABLE = "#scoringTable", SURV_TABLE = "#survivalTable", ROUTE = "#route",
     SURV_RUBRICS = {
         "SoEW": {
             "Easy": {
@@ -256,35 +256,35 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
         },
         "IN": {
             "Easy": {
-                "base": 50,
+                "base": 45,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 2,
                 "bomb": 1,
             },
             "Normal": {
-                "base": 100,
+                "base": 90,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 3,
                 "bomb": 1,
             },
             "Hard": {
-                "base": 150,
+                "base": 140,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 3,
                 "bomb": 1,
             },
             "Lunatic": {
-                "base": 305,
+                "base": 290,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 5,
                 "bomb": 1,
             },
             "Extra": {
-                "base": 115,
+                "base": 110,
                 "exp": 1.08,
                 "miss": 2,
                 "firstBomb": 3,
@@ -972,6 +972,24 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
         "score": [1500000000, 2000000000, 2050000000, 2100000000],
         "increment": [2, 10, 5, 10, 15],
         "per": [30000000, 50000000, 10000000, 10000000, 10000000]
+    },
+    MAX_LAST_SPELLS = {
+        "Easy": {
+            "FinalA": 1,
+            "FinalB": 5
+        },
+        "Normal": {
+            "FinalA": 6,
+            "FinalB": 10
+        },
+        "Hard": {
+            "FinalA": 6,
+            "FinalB": 10
+        },
+        "Lunatic": {
+            "FinalA": 6,
+            "FinalB": 10
+        }
     };
 
 $(document).ready(function() {
@@ -989,6 +1007,8 @@ function checkValues(changePerformance, changeShottypes) {
             $(NOTIFY).html(NOTIFY_TEXT + "manual trances count as bombs (that is, trances from pressing C).");
         } else if (game == "PCB") {
             $(NOTIFY).html(NOTIFY_TEXT + "border breaks count as bombs (even if they are accidental).");
+        } else if (game == "IN") {
+            $(NOTIFY).html(NOTIFY_TEXT + "the point calculation for this game is currently subject to change.");
         } else {
             $(NOTIFY).html("");
         }
@@ -996,6 +1016,8 @@ function checkValues(changePerformance, changeShottypes) {
     
     
     if (changePerformance) {
+        $(ROUTE).css("display", "none");
+        
         if (changeShottypes) {
             if (game == "PCB") {
                 $(DIFFICULTY).html(PHANTASM);
@@ -1024,6 +1046,17 @@ function checkValues(changePerformance, changeShottypes) {
                 survOptions = survOptions.replace("Misses</label>", "Rounds lost</label>").replace("max=100", "max=8");
             } else {
                 survOptions += "<br><label for='bombs'>Bombs</label><input id='bombs' type='number' value=0 min=0 max=100>";
+                
+                if (game == "IN") {
+                    difficulty = $(DIFFICULTY).val();
+                    
+                    if (difficulty == "Extra") {
+                        survOptions += "<br><label for='is'>Imperishable Shooting Captured</label><input id='is' type='checkbox'>";
+                    } else {
+                        survOptions += "<br><label for='ls'>Last Spells Captured</label><input id='ls' type='number' value=0 min=0 max=10>";
+                        $(ROUTE).css("display", "inline");
+                    }
+                }
             }
             
             $(PERFORMANCE).html(survOptions);
@@ -1056,7 +1089,7 @@ function checkShottypes(alwaysChange) {
         $(SHOTTYPE).html(shottypeList);
     }
     
-    if (game == "MoF" && challenge == "Scoring" || game == "GFW") {
+    if (game == "MoF" && challenge == "Scoring" || game == "GFW" && difficulty == "Extra") {
         $(SHOTTYPE).html("<option value='-'>-</option>");
         noShottypes = true;
     } else if (noShottypes) {
@@ -1083,7 +1116,7 @@ function drcPoints() {
         
         rubric = SURV_RUBRICS[game][difficulty];
         shottypeMultiplier = (SURV_RUBRICS[game].multiplier[shottype] ? SURV_RUBRICS[game].multiplier[shottype] : 1);
-        points = (isPhantasmagoria(game) ? phantasmagoria(rubric, game, difficulty, shottypeMultiplier) : survivalPoints(rubric, difficulty, shottypeMultiplier));
+        points = (isPhantasmagoria(game) ? phantasmagoria(rubric, game, difficulty, shottypeMultiplier) : survivalPoints(rubric, game, difficulty, shottypeMultiplier));
     } else {
         rubric = (game != "MoF" ? SCORE_RUBRICS[game][difficulty] : undefined);
         points = scoringPoints(rubric, game, difficulty, shottype);
@@ -1113,8 +1146,8 @@ function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
     return Math.round(shottypeMultiplier * (rubric.base - ((rubric.base - rubric.min) / rubric.lives * roundsLost))) + bonus;
 }
 
-function survivalPoints(rubric, difficulty, shottypeMultiplier) {
-    var misses = Number($(MISSES).val()), bombs = Number($(BOMBS).val()), n = 0, originalBombs;
+function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
+    var misses = Number($(MISSES).val()), bombs = Number($(BOMBS).val()), n = 0, route, lastSpells, originalBombs;
     
     $(ERROR).html("");
     n += misses * rubric.miss;
@@ -1128,6 +1161,22 @@ function survivalPoints(rubric, difficulty, shottypeMultiplier) {
     n += bombs * rubric.bomb;
     
     drcpoints = Math.round(rubric.base * Math.pow(rubric.exp, -n));
+    
+    if (game == "IN") {
+        if (difficulty == "Extra") {
+            drcpoints += ($(IS).is(":checked") ? 5 : 0);
+        } else {
+            route = $(ROUTE).val();
+            lastSpells = $(LS).val();
+            
+            if (lastSpells > MAX_LAST_SPELLS[difficulty][route]) {
+                $(ERROR).html(ERROR_TEXT + "the number of Last Spells captured in a " + route + " clear on " + difficulty + " cannot exceed " + MAX_LAST_SPELLS[difficulty][route] + ".");
+                return 0;
+            }
+            
+            drcpoints += lastSpells * (difficulty == "Easy" ? 1 : 2);
+        }
+    }
     
     if (difficulty != "Extra") {
         drcpoints = Math.round(drcpoints * shottypeMultiplier);
@@ -1213,7 +1262,8 @@ function generateRubrics() {
             $(PHANTASMAGORIA).append("</tr>");
         } else {
             $(SURV_TABLE).append("<tr>");
-            $(SURV_TABLE).append(game == "SoEW" ? "<th>Game</th><th>Base points</th><th>Exponent</th><th>Lost life (n)</th><th>First bomb (n)</th><th>Further bombs (n)</th>" : "<th></th><td></td><td></td><td></td><td></td><td></td>");
+            $(SURV_TABLE).append(game == "SoEW" ? "<th>Game</th><th>Base points</th><th>Exponent</th><th>Lost life (n)</th>" +
+            "<th>First bomb (n)</th><th>Further bombs (n)</th>" : "<th></th><td></td><td></td><td></td><td></td><td></td>");
             $(SURV_TABLE).append("</tr>");
         }
         
