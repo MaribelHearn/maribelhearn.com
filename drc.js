@@ -1129,7 +1129,7 @@ function survivalPoints(rubric, difficulty, shottypeMultiplier) {
     
     drcpoints = Math.round(rubric.base * Math.pow(rubric.exp, -n));
     
-    if (difficulty != "Extra" && originalBombs === 0) {
+    if (difficulty != "Extra") {
         drcpoints = Math.round(drcpoints * shottypeMultiplier);
     }
     
