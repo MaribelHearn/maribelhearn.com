@@ -323,7 +323,8 @@ function getClearHistory(date) {
                 "nb": "7/4/2016"
             },
             "l": {
-                "clear": "6/6/2015"
+                "clear": "6/6/2015",
+                "nb": "2/19/2017"
             },
             "x": {
                 "clear": "12/8/2012",
