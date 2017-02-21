@@ -323,6 +323,7 @@ function getClearHistory(date) {
                 "nb": "7/4/2016"
             },
             "l": {
+                "attempted": "6/4/2015",
                 "clear": "6/6/2015",
                 "nb": "2/19/2017"
             },
@@ -340,6 +341,7 @@ function getClearHistory(date) {
                 "nmnb": "2/16/2016"
             },
             "n": {
+                "attempted": "7/25/2012",
                 "clear": "7/31/2012",
                 "nb": "2/6/2016"
             },
@@ -502,6 +504,7 @@ function getClearHistory(date) {
                 "clear": "12/14/2012"
             },
             "l": {
+                "attempted": "8/24/2013",
                 "clear": "8/26/2013"
             }
         },
