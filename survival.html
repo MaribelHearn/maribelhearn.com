@@ -22,8 +22,24 @@
             The Phantasm Stage counts as another Extra Stage.</p>
             <p>Use the below selectors to fill up many achievements at once. Normal, Hard and Lunatic will also fill the difficulties below them.</p>
             <p>
-                <label for='fillDifficulty'>Difficulty</label>
-                <select id='fillDifficulty'>
+                <label for='fillGameDifficulty'>Game / Difficulty</label>
+                <select id='fillGameDifficulty'>
+                    <option>HRtP</option>
+                    <option>SoEW</option>
+                    <option>PoDD</option>
+                    <option>LLS</option>
+                    <option>MS</option>
+                    <option>EoSD</option>
+                    <option>PCB</option>
+                    <option>IN</option>
+                    <option>PoFV</option>
+                    <option>MoF</option>
+                    <option>SA</option>
+                    <option>UFO</option>
+                    <option>GFW</option>
+                    <option>TD</option>
+                    <option>DDC</option>
+                    <option>LoLK</option>
                     <option>Easy</option>
                     <option>Normal</option>
                     <option>Hard</option>
@@ -33,13 +49,14 @@
                 <br>
                 <label for='fillAchievement'>Achievement</label>
                 <select id='fillAchievement'>
+                    <option>N/A</option>
                     <option>Not cleared</option>
                     <option>1cc</option>
                     <option>NB</option>
                     <option>NN</option>
                 </select>
                 <br>
-                <input type='button' onClick='javascript:fillAll($("#fillDifficulty").val(), $("#fillAchievement").val())' value='Fill All'>
+                <input type='button' onClick='javascript:fillAll($("#fillGameDifficulty").val(), $("#fillAchievement").val())' value='Fill All'>
             </p>
             <table id='survival' align='center'>
                 <tr>

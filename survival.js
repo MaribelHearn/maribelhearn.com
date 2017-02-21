@@ -27,27 +27,33 @@ var isTripleNGame = function (game) {
     return game == "PCB" || game == "UFO" || game == "TD";
 };
 
-var fillAll = function (difficulty, achievement) {
-    var game;
+var fillAll = function (value, achievement) {
+    var value, i;
     
-    if (difficulty == "Extra") {
-        $("#PCBPhantasm").val(achievement);
-    }
-    
-    for (game in games) {
-        if (difficulty == "Normal" || difficulty == "Hard" || difficulty == "Lunatic") {
-            $("#" + game + "Easy").val(achievement);
-            
-            if (difficulty == "Hard" || difficulty == "Lunatic") {
-                $("#" + game + "Normal").val(achievement);
-                
-                if (difficulty == "Lunatic") {
-                    $("#" + game + "Hard").val(achievement);
-                }
-            }
+    if (games.hasOwnProperty(value)) {
+        for (i in games[value]) {
+            $("#" + value + games[value][i]).val(achievement);
+        }
+    } else {
+        if (value == "Extra") {
+            $("#PCBPhantasm").val(achievement);
         }
         
-        $("#" + game + difficulty).val(achievement);
+        for (game in games) {
+            if (value == "Normal" || value == "Hard" || value == "Lunatic") {
+                $("#" + game + "Easy").val(achievement);
+                
+                if (value == "Hard" || value == "Lunatic") {
+                    $("#" + game + "Normal").val(achievement);
+                    
+                    if (value == "Lunatic") {
+                        $("#" + game + "Hard").val(achievement);
+                    }
+                }
+            }
+            
+            $("#" + game + value).val(achievement);
+        }
     }
 }
 
