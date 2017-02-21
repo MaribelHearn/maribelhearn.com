@@ -2,27 +2,45 @@
 <html lang='en'>
 
 	<head>
-		<title>Maribel's Survival Calculator</title>
+		<title>Maribel's Survival Checker</title>
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
 		<link rel='stylesheet' type='text/css' href='survival.css'>
         <script src='sorttable.js'></script>
 		<script src='survival.js'></script>
+		<script src='jquery.js'></script>
+		<script src='utils.js'></script>
 	</head>
 	
 	<body onLoad='javascript:load()'>
 		<div class='wrap'>
-			<h1>Survival Calculator</h1>
-            
-			<br>
-			Fill in the best survivals you have pulled off in the table below.<br>
-            If you leave a dropdown menu on the N/A option, it will not be factored in.<br>
-            At the bottom of the page, two tables indicating your survival progress will be printed.<br>
-            NM = No Miss (no deaths), NB = No Bomb, NN = No Miss No Bomb, NNN = NN with a third restriction depending on the game.<br>
-            In PCB this restriction is No Border Breaks, in UFO it is No UFO Summons and in TD it is No Trance.<br>
-            The Phantasm Stage counts as another Extra Stage.<br>
-			<br>
-            
+			<h1>Survival Checker</h1>
+			<p>Fill in the best survivals you have pulled off in the table below. If you leave a dropdown menu on the N/A option, it will not be factored in.
+            At the bottom of the page, three different tables indicating your survival progress will be printed.</p>
+            <p>NM = No Miss (no deaths), NB = No Bomb, NN = No Miss No Bomb, NNN = NN with a third restriction depending on the game.
+            In PCB this restriction is No Border Breaks, in UFO it is No UFO Summons and in TD it is No Trance.
+            The Phantasm Stage counts as another Extra Stage.</p>
+            <p>Use the below selectors to fill up many achievements at once. Normal, Hard and Lunatic will also fill the difficulties below them.</p>
+            <p>
+                <label for='fillDifficulty'>Difficulty</label>
+                <select id='fillDifficulty'>
+                    <option>Easy</option>
+                    <option>Normal</option>
+                    <option>Hard</option>
+                    <option>Lunatic</option>
+                    <option>Extra</option>
+                </select>
+                <br>
+                <label for='fillAchievement'>Achievement</label>
+                <select id='fillAchievement'>
+                    <option>Not cleared</option>
+                    <option>1cc</option>
+                    <option>NB</option>
+                    <option>NN</option>
+                </select>
+                <br>
+                <input type='button' onClick='javascript:fillAll($("#fillDifficulty").val(), $("#fillAchievement").val())' value='Fill All'>
+            </p>
             <table id='survival' align='center'>
                 <tr>
                     <th>Game</th>
@@ -39,8 +57,7 @@
                         <select id='HRtPEasy'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
-                            <option>1cc</option>
+                            <option value='1cc'>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
                             <option>NN</option>
@@ -50,7 +67,6 @@
                         <select id='HRtPNormal'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -61,7 +77,6 @@
                         <select id='HRtPHard'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -72,7 +87,6 @@
                         <select id='HRtPLunatic'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -88,7 +102,6 @@
                         <select id='SoEWEasy'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -99,7 +112,6 @@
                         <select id='SoEWNormal'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -110,7 +122,6 @@
                         <select id='SoEWHard'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -121,7 +132,6 @@
                         <select id='SoEWLunatic'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -132,7 +142,7 @@
                         <select id='SoEWExtra'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
+                            <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
                             <option>NN</option>
@@ -146,7 +156,6 @@
                         <select id='PoDDEasy'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -157,7 +166,6 @@
                         <select id='PoDDNormal'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -168,7 +176,6 @@
                         <select id='PoDDHard'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -179,7 +186,6 @@
                         <select id='PoDDLunatic'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -195,7 +201,6 @@
                         <select id='LLSEasy'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -206,7 +211,6 @@
                         <select id='LLSNormal'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -217,7 +221,6 @@
                         <select id='LLSHard'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -228,7 +231,6 @@
                         <select id='LLSLunatic'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -239,7 +241,7 @@
                         <select id='LLSExtra'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
+                            <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
                             <option>NN</option>
@@ -253,7 +255,6 @@
                         <select id='MSEasy'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -264,7 +265,6 @@
                         <select id='MSNormal'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -275,7 +275,6 @@
                         <select id='MSHard'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -286,7 +285,6 @@
                         <select id='MSLunatic'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -297,7 +295,7 @@
                         <select id='MSExtra'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
+                            <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
                             <option>NN</option>
@@ -311,7 +309,6 @@
                         <select id='EoSDEasy'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -322,7 +319,6 @@
                         <select id='EoSDNormal'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -333,7 +329,6 @@
                         <select id='EoSDHard'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -344,7 +339,6 @@
                         <select id='EoSDLunatic'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -355,7 +349,7 @@
                         <select id='EoSDExtra'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
+                            <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
                             <option>NN</option>
@@ -369,7 +363,6 @@
                         <select id='PCBEasy'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -381,7 +374,6 @@
                         <select id='PCBNormal'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -393,7 +385,6 @@
                         <select id='PCBHard'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -405,7 +396,6 @@
                         <select id='PCBLunatic'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -417,7 +407,7 @@
                         <select id='PCBExtra'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
+                            <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
                             <option>NN</option>
@@ -428,7 +418,7 @@
                         <select id='PCBPhantasm'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
+                            <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
                             <option>NN</option>
@@ -442,7 +432,6 @@
                         <select id='INEasy'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -453,7 +442,6 @@
                         <select id='INNormal'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -464,7 +452,6 @@
                         <select id='INHard'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -475,7 +462,6 @@
                         <select id='INLunatic'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -486,7 +472,7 @@
                         <select id='INExtra'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
+                            <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
                             <option>NN</option>
@@ -500,39 +486,50 @@
                         <select id='PoFVEasy'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
                         </select>
                     </td>
                     <td>
                         <select id='PoFVNormal'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
                         </select>
                     </td>
                     <td>
                         <select id='PoFVHard'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
                         </select>
                     </td>
                     <td>
                         <select id='PoFVLunatic'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
                         </select>
                     </td>
                     <td>
                         <select id='PoFVExtra'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
                         </select>
                     </td>
                     <td>N/A</td>
@@ -543,7 +540,6 @@
                         <select id='MoFEasy'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -554,7 +550,6 @@
                         <select id='MoFNormal'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -565,7 +560,6 @@
                         <select id='MoFHard'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -576,7 +570,6 @@
                         <select id='MoFLunatic'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -587,7 +580,7 @@
                         <select id='MoFExtra'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
+                            <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
                             <option>NN</option>
@@ -601,7 +594,6 @@
                         <select id='SAEasy'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -612,7 +604,6 @@
                         <select id='SANormal'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -623,7 +614,6 @@
                         <select id='SAHard'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -634,7 +624,6 @@
                         <select id='SALunatic'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -645,7 +634,7 @@
                         <select id='SAExtra'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
+                            <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
                             <option>NN</option>
@@ -659,7 +648,6 @@
                         <select id='UFOEasy'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -671,7 +659,6 @@
                         <select id='UFONormal'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -683,7 +670,6 @@
                         <select id='UFOHard'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -695,7 +681,6 @@
                         <select id='UFOLunatic'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -707,7 +692,7 @@
                         <select id='UFOExtra'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
+                            <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
                             <option>NN</option>
@@ -722,7 +707,6 @@
                         <select id='GFWEasy'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -733,7 +717,6 @@
                         <select id='GFWNormal'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -744,7 +727,6 @@
                         <select id='GFWHard'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -755,7 +737,6 @@
                         <select id='GFWLunatic'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -766,7 +747,7 @@
                         <select id='GFWExtra'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
+                            <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
                             <option>NN</option>
@@ -780,7 +761,6 @@
                         <select id='TDEasy'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -792,7 +772,6 @@
                         <select id='TDNormal'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -804,7 +783,6 @@
                         <select id='TDHard'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -816,7 +794,6 @@
                         <select id='TDLunatic'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -828,7 +805,7 @@
                         <select id='TDExtra'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
+                            <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
                             <option>NN</option>
@@ -843,7 +820,6 @@
                         <select id='DDCEasy'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -854,7 +830,6 @@
                         <select id='DDCNormal'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -865,7 +840,6 @@
                         <select id='DDCHard'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -876,7 +850,6 @@
                         <select id='DDCLunatic'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -887,7 +860,7 @@
                         <select id='DDCExtra'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
+                            <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
                             <option>NN</option>
@@ -901,7 +874,6 @@
                         <select id='LoLKEasy'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -912,7 +884,6 @@
                         <select id='LoLKNormal'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -923,7 +894,6 @@
                         <select id='LoLKHard'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -934,7 +904,6 @@
                         <select id='LoLKLunatic'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
@@ -945,7 +914,7 @@
                         <select id='LoLKExtra'>
                             <option>N/A</option>
                             <option>Not cleared</option>
-                            <option>Clear</option>
+                            <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
                             <option>NN</option>
@@ -954,15 +923,10 @@
                     <td>N/A</td>
                 </tr>
             </table>
-            
             <br>
-            
-			<div id='results'>
-			</div>
-            
-            <br>
-            
-			<input type='button' onClick='javascript:calc()' value='Calculate' /> <form action='./index.html'><input type='submit' value='Go Back'></form>
+			<p><input type='button' onClick='javascript:apply()' value='Apply'></p>
+			<div id='results'></div>
+            <p><a href='index.html'>Back to Main Page</a></p>
 		</div>
 	</body>
 

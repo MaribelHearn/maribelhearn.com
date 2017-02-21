@@ -1,8 +1,4 @@
-﻿var rand = function (min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-};
-
-var load = function () {
+﻿var load = function () {
     var random = rand(1, 8);
     document.body.style.background = "url('./bg/" + random + ".png')";
 };
@@ -31,18 +27,43 @@ var isTripleNGame = function (game) {
     return game == "PCB" || game == "UFO" || game == "TD";
 };
 
-var numericSort = function (a, b) {
-    return b - a;
-};
-
-var sep = function (number) {
-    if (isNaN(number)) {
-        return '-';
+var fillAll = function (difficulty, achievement) {
+    var game;
+    
+    if (difficulty == "Extra") {
+        $("#PCBPhantasm").val(achievement);
     }
-    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    
+    for (game in games) {
+        if (difficulty == "Normal" || difficulty == "Hard" || difficulty == "Lunatic") {
+            $("#" + game + "Easy").val(achievement);
+            
+            if (difficulty == "Hard" || difficulty == "Lunatic") {
+                $("#" + game + "Normal").val(achievement);
+                
+                if (difficulty == "Lunatic") {
+                    $("#" + game + "Hard").val(achievement);
+                }
+            }
+        }
+        
+        $("#" + game + difficulty).val(achievement);
+    }
+}
+
+var format = function (achievement) {
+    return ({
+        "N/A": "",
+        "Not cleared": "",
+        "1cc": "clear",
+        "NM": "nm",
+        "NB": "nb",
+        "NN": "nmnb",
+        "NNN": "nmnb"
+    })[achievement];
 };
 
-var calc = function () {
+var apply = function () {
     var results = "", game, i, difficulty, id, survival,
         survivals = {
             "Not cleared": {
@@ -52,14 +73,7 @@ var calc = function () {
                 "Lunatic": 0,
                 "Extra": 0
             },
-            "Clear": {
-                "Easy": 0,
-                "Normal": 0,
-                "Hard": 0,
-                "Lunatic": 0,
-                "Extra": 0
-            },
-            "1cc / EX Clear": {
+            "1cc": {
                 "Easy": 0,
                 "Normal": 0,
                 "Hard": 0,
@@ -87,7 +101,7 @@ var calc = function () {
                 "Lunatic": 0,
                 "Extra": 0
             },
-            "NN(N)": {
+            "NN": {
                 "Easy": 0,
                 "Normal": 0,
                 "Hard": 0,
@@ -135,8 +149,7 @@ var calc = function () {
     for (game in games) {
         for (i in games[game]) {
             difficulty = games[game][i];
-            id = game + difficulty;
-            survival = document.getElementById(id).value;
+            survival = $("#" + game + difficulty).val();
             
             if (survival == "N/A") {
                 na[game] += 100 / games[game].length;
@@ -152,12 +165,8 @@ var calc = function () {
                 continue;
             }
             
-            if (survival == "Clear") {
-                difficulty == "Extra" ? survivals["1cc / EX Clear"][difficulty]++ : survivals["Clear"][difficulty]++;
-            }
-            
             if (survival == "1cc") {
-                survivals["1cc / EX Clear"][difficulty]++;
+                survivals["1cc"][difficulty]++;
             }
             
             if (survival == "NM") {
@@ -169,26 +178,48 @@ var calc = function () {
             }
             
             if (survival == "NN") {
-                isTripleNGame(game) ? survivals["NN*"][difficulty]++ : survivals["NN(N)"][difficulty]++;
+                isTripleNGame(game) ? survivals["NN*"][difficulty]++ : survivals["NN"][difficulty]++;
             }
             
             if (survival == "NNN") {
-                survivals["NN(N)"][difficulty]++;
+                survivals["NN"][difficulty]++;
             }
             
             completions[game] += 100 / games[game].length;
         }
     }
     
-    results = "<table id='table' class='sortable'><thead><tr><th>Survival</th><th>Easy</th><th>Normal</th><th>Hard</th><th>Lunatic</th><th>Extra</th></tr></thead><tbody>";
+    results = "<h2>Progress Table</h2><table id='overview'><thead><tr><th class='overview'>Game</th><th class='overview'>Easy</th><th class='overview'>Normal</th><th class='overview'>Hard</th>" +
+    "<th class='overview'>Lunatic</th><th class='overview' colspan='2'>Extra</th></tr></thead><tbody>";
+    
+    for (game in games) {
+        results += "<tr><th>" + game + "</th>";
+        
+        for (i in games[game]) {
+            difficulty = games[game][i];
+            results += "<td class='" + format($("#" + game + difficulty).val()) + "'" + (difficulty == "Extra" && game != "PCB" ? " colspan='2'" : "") + "></td>";
+        }
+            
+        if (game == "HRtP" || game == "PoDD") {
+            results += "<td colspan='2'>X</td>";
+        }
+        
+        results += "</tr>";
+        
+        if (game == "MS") {
+            results += "<tr><td></td><td></td><td></td><td></td><td></td><td colspan='2'></td></tr>";
+        }
+    }
+    
+    results += "</tbody></table><h2>Numbers of Achievements</h2><table id='table' class='sortable'><thead><tr><th>Survival</th><th>Easy</th><th>Normal</th><th>Hard</th><th>Lunatic</th><th>Extra</th></tr></thead><tbody>";
     
     for (survival in survivals) {
         results += "<tr><td>" + survival + "</td><td>" + survivals[survival]["Easy"] + "</td><td>" + survivals[survival]["Normal"] +
         "</td><td>" + survivals[survival]["Hard"] + "</td><td>" + survivals[survival]["Lunatic"] + "</td><td>" + survivals[survival]["Extra"] + "</td></tr>";
     }
     
-    results += "</tbody></table><br><p>* Any NN that was achieved in a game with a third N.</p><br>" +
-    "<table id='gameTable' class='sortable'><thead><tr><th>Game</th><th>Completion</th></tr></thead><tbody>";
+    results += "</tbody></table><p>* Any NN that was achieved in a game with a third N.</p>" +
+    "<h2>Clear Completions</h2><table id='gameTable' class='sortable'><thead><tr><th>Game</th><th>Clear Completion</th></tr></thead><tbody>";
     
     for (game in games) {
         if (Math.round(na[game]) == 100) {
@@ -200,11 +231,10 @@ var calc = function () {
     
     results += "</tbody></table>";
     
-    document.getElementById("results").innerHTML = results;
-    table = document.getElementById("table");
-    gameTable = document.getElementById("gameTable");
-    table.setAttribute("align", "center");
-    gameTable.setAttribute("align", "center");
+    $("#results").html(results);
+    $("#table").attr("align", "center");
+    $("#gameTable").attr("align", "center");
+    $("#overview").attr("align", "center");
     sorttable.makeSortable(table);
     sorttable.makeSortable(gameTable);
 };
