@@ -7,13 +7,34 @@ div {
 h1 {
     font: 48px monotype corsiva;
 }
+h2 {
+    font: 36px monotype corsiva;
+}
 .wrap {
     border: 1px solid black;
     text-align: center;
     margin-left: 25%;
     margin-right: 25%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
     opacity: 0.8;
     font: 14px verdana, sans-serif;
+}
+.overview {
+    width: 80px;
+}
+.clear {
+    background-color: green;
+}
+.nm {
+    background-color: brown;
+}
+.nb {
+    background-color: blue;
+}
+.nmnb {
+    background-color: purple;
 }
 @media only screen and (max-width: 1400px) {
     .wrap {
