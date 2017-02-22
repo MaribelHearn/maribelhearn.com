@@ -604,9 +604,9 @@ var WRs = {
                 "http://score.royalflare.net/th06/replay6/th6_ud1040.rpy"
             ],
             "ReimuB": [
-                453340130,
-                "st",
-                "http://score.royalflare.net/th06/replay6/th6_ud0eed.rpy"
+                523094750,
+                "Izumico",
+                ""
             ],
             "MarisaA": [
                 404007980,
@@ -1057,9 +1057,9 @@ var WRs = {
                 "http://pndsng.wwww.jp/touhou/highscores/replay/th8_ud0090.rpy"
             ],
             "ScarletTeam": [
-                6565277950,
-                "Inefushi",
-                "http://pndsng.wwww.jp/touhou/highscores/replay/th8_ud0084.rpy"
+                6609355970,
+                "Yu-suke",
+                ""
             ],
             "GhostTeam": [
                 6458237920,
@@ -2476,9 +2476,9 @@ var WRs = {
         },
         "Hard": {
             "Reimu": [
-                1820860890,
-                "K・G",
-                "http://score.royalflare.net/th15/replay15/th15_ud0250.rpy"
+                1915404560,
+                "kisara",
+                ""
             ],
             "Marisa": [
                 1919488870,
@@ -2491,9 +2491,9 @@ var WRs = {
                 "http://score.royalflare.net/th15/replay15/th15_ud026a.rpy"
             ],
             "Reisen": [
-                2540876730,
-                "K・G",
-                "http://score.royalflare.net/th15/replay15/th15_ud0278.rpy"
+                2549910870,
+                "kisara",
+                ""
             ]
         },
         "Lunatic": {
