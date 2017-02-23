@@ -902,7 +902,7 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
             },
             "Extra": {
                 "base": 450,
-                "exp": 2.5
+                "exp": 7
             }
         },
         "TD": {
