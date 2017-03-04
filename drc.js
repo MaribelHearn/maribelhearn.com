@@ -4,7 +4,7 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
     DIFF_OPTIONS = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option>", SHOTTYPE_MULTIPLIERS = "#shottypeMultipliersTable", LS = "#ls",
     PHANTASM = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option><option>Phantasm</option>", MOF_TABLE = "#mofScoringTable",
     MISSES_INPUT = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>", ERROR_TEXT = "<b style='color:red'>Error: ", CLEARED = "#cleared",
-    SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>", SCORING_TABLE = "#scoringTable", SURV_TABLE = "#survivalTable", ROUTE = "#route",
+    SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>", SCORING_TABLE = "#scoringTable", SURV_TABLE = "#survivalTable", ROUTE = "#route", BB = "#bb",
     SURV_RUBRICS = {
         "SoEW": {
             "Easy": {
@@ -1051,6 +1051,10 @@ function checkValues(changePerformance, changeShottypes) {
             } else {
                 survOptions += "<br><label for='bombs'>Bombs</label><input id='bombs' type='number' value=0 min=0 max=100>";
                 
+                if (game == "PCB") {
+                    survOptions += "<br><label for='bb'>Border Breaks Only</label><input id='bb' type='checkbox'>"
+                }
+                
                 if (game == "IN") {
                     difficulty = $(DIFFICULTY).val();
                     
@@ -1155,7 +1159,7 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
     n += misses * rubric.miss;
     originalBombs = bombs;
     
-    if (bombs >= 1) {
+    if (bombs >= 1 && !(game == "PCB" && $(BB).is(":checked"))) {
         n += rubric.firstBomb;
         bombs -= 1;
     }
