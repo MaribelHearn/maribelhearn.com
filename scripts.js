@@ -431,7 +431,8 @@ function getClearHistory(date) {
             "x": {
                 "attempted": "12/14/2012",
                 "clear": "5/2/2013",
-                "nb": "5/28/2016"
+                "nb": "5/28/2016",
+                "nmnb": "4/5/2017"
             }
         },
         "DDC": {
