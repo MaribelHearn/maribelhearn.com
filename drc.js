@@ -2,7 +2,7 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
     BOMBS = "#bombs", SCORE = "#score", PERFORMANCE = "#performance", DRCPOINTS = "#drcpoints", ERROR = "#error", SHOTTYPE = "#shottype", NOTIFY = "#notify", RUBRICS_BUTTON = "#rubricsButton", NB = "#nb",
     NO_EXTRA = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>", NOTIFY_TEXT = "<b>Important Notice:</b> ", PHANTASMAGORIA = "#phantasmagoriaTable", IS = "#is",
     DIFF_OPTIONS = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option>", SHOTTYPE_MULTIPLIERS = "#shottypeMultipliersTable", LS = "#ls",
-    PHANTASM = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option><option>Phantasm</option>", MOF_TABLE = "#mofScoringTable",
+    PHANTASM = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option><option>Phantasm</option>",
     MISSES_INPUT = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>", ERROR_TEXT = "<b style='color:red'>Error: ", CLEARED = "#cleared",
     SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>", SCORING_TABLE = "#scoringTable", SURV_TABLE = "#survivalTable", ROUTE = "#route", BB = "#bb",
     SURV_RUBRICS = {
@@ -839,6 +839,28 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
                 "exp": 2.5
             }
         },
+        "MoF": {
+            "Easy": {
+                "base": 375,
+                "exp": 5
+            },
+            "Normal": {
+                "base": 400,
+                "exp": 5
+            },
+            "Hard": {
+                "base": 450,
+                "exp": 5
+            },
+            "Lunatic": {
+                "base": 500,
+                "exp": 5
+            },
+            "Extra": {
+                "base": 450,
+                "exp": 10
+            }
+        },
         "SA": {
             "Easy": {
                 "base": 375,
@@ -972,12 +994,6 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
             }
         }
     },
-    MOF_RUBRIC = {
-        "base": [0, 100, 200, 225, 275],
-        "score": [1500000000, 2000000000, 2050000000, 2100000000],
-        "increment": [2, 10, 5, 10, 15],
-        "per": [30000000, 50000000, 10000000, 10000000, 10000000]
-    },
     MAX_LAST_SPELLS = {
         "Easy": {
             "FinalA": 1,
@@ -1069,12 +1085,7 @@ function checkValues(changePerformance, changeShottypes) {
             
             $(PERFORMANCE).html(survOptions);
         } else {
-            if (game == "MoF") {
-                $(PERFORMANCE).html(SCORE_OPTIONS + "<br><label for='cleared'>Cleared</label><input id='cleared' type='checkbox'>");
-            } else {
-                $(PERFORMANCE).html(SCORE_OPTIONS);
-            }
-            
+            $(PERFORMANCE).html(SCORE_OPTIONS);
             $(NOTIFY).html("");
         }
     }
@@ -1097,7 +1108,7 @@ function checkShottypes(alwaysChange) {
         $(SHOTTYPE).html(shottypeList);
     }
     
-    if (game == "MoF" && challenge == "Scoring" || game == "GFW" && difficulty == "Extra") {
+    if (game == "GFW" && difficulty == "Extra") {
         $(SHOTTYPE).html("<option value='-'>-</option>");
         noShottypes = true;
     } else if (noShottypes) {
@@ -1126,7 +1137,7 @@ function drcPoints() {
         shottypeMultiplier = (SURV_RUBRICS[game].multiplier[shottype] ? SURV_RUBRICS[game].multiplier[shottype] : 1);
         points = (isPhantasmagoria(game) ? phantasmagoria(rubric, game, difficulty, shottypeMultiplier) : survivalPoints(rubric, game, difficulty, shottypeMultiplier));
     } else {
-        rubric = (game != "MoF" ? SCORE_RUBRICS[game][difficulty] : undefined);
+        rubric = SCORE_RUBRICS[game][difficulty];
         points = scoringPoints(rubric, game, difficulty, shottype);
     }
     
@@ -1191,25 +1202,6 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
     return drcpoints;
 }
 
-function mofFormula(score) {
-    var originalScore = score, clearBonus = ($(CLEARED).is(":checked") ? 15 : 0), i;
-    
-    for (i = 0; i < MOF_RUBRIC.increment.length; i++) {
-        drcpoints = MOF_RUBRIC.base[i] + clearBonus;
-        
-        if (i == MOF_RUBRIC.score.length || originalScore < MOF_RUBRIC.score[i]) {
-            while (score >= MOF_RUBRIC.per[i]) {
-                score -= MOF_RUBRIC.per[i];
-                drcpoints += MOF_RUBRIC.increment[i];
-            }
-            
-            return drcpoints;
-        }
-        
-        score = originalScore - (MOF_RUBRIC.score[i] ? MOF_RUBRIC.score[i] : MOF_RUBRIC.score[MOF_RUBRIC.score.length - 1]);
-    }
-}
-
 function scoringPoints(rubric, game, difficulty, shottype) {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), wr;
     
@@ -1220,9 +1212,7 @@ function scoringPoints(rubric, game, difficulty, shottype) {
         $(ERROR).html("");
     }
     
-    if (game == "MoF") {
-        return mofFormula(score);
-    } else if (game == "SoEW" && difficulty == "Hard") {
+    if (game == "SoEW" && difficulty == "Hard") {
         wr = WRs[game][difficulty]["ReimuB"][0];
     } else if (game == "SoEW" && difficulty == "Lunatic") {
         wr = WRs[game][difficulty]["ReimuA"][0];
@@ -1244,7 +1234,8 @@ function scoringPoints(rubric, game, difficulty, shottype) {
 }
 
 function abbreviate(num) {
-    return String(num).replace("000000000", "b").replace("100000000", ".1b").replace("500000000", ".5b").replace("050000000", ".05b").replace("0000000", "0m").replace("000000", "m");
+    var string = String(num).replace("000000000", "b").replace("100000000", ".1b").replace("400000000", ".4b").replace("500000000", ".5b").replace("600000000", ".6b").replace("900000000", ".9b");
+    return string.replace("450000000", ".45b").replace("550000000", ".55b").replace("650000000", ".65b").replace("950000000", ".95b").replace("050000000", ".05b").replace("0000000", "0m").replace("000000", "m");
 }
 
 function generateRubrics() {
@@ -1296,22 +1287,6 @@ function generateRubrics() {
                 "</td><td>" + rubric.miss + "</td><td>" + rubric.firstBomb + "</td><td>" + rubric.bomb + "</td></tr>");
             }
         }
-    }
-    
-    $(MOF_TABLE).append("<tr><th>Score range</th><th>Base points</th><th>Incrementing</th></tr>");
-    
-    for (i = 0; i < MOF_RUBRIC.base.length; i++) {
-        if (i == MOF_RUBRIC.score.length) {
-            scoreRange = ">= " + abbreviate(MOF_RUBRIC.score[MOF_RUBRIC.score.length - 1]);
-        } else {
-            if (i === 0) {
-                scoreRange = "< " + abbreviate(MOF_RUBRIC.score[i]);
-            } else {
-                scoreRange = abbreviate(MOF_RUBRIC.score[i - 1]) + " -< " + abbreviate(MOF_RUBRIC.score[i]);
-            }
-        }
-        
-        $(MOF_TABLE).append("<tr><td>" + scoreRange + "</td><td>" + abbreviate(MOF_RUBRIC.base[i]) + "</td><td>+" + MOF_RUBRIC.increment[i] + " for every " + abbreviate(MOF_RUBRIC.per[i]) + "</td></tr>");
     }
 }
 
