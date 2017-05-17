@@ -54,17 +54,17 @@ var WRs = {
     "SoEW": {
         "Easy": {
             "ReimuA": [
-                21049470,
+                24025500,
                 "KirbyComment",
                 ""
             ],
             "ReimuB": [
-                20713130,
+                22909640,
                 "KirbyComment",
                 ""
             ],
             "ReimuC": [
-                18783800,
+                21519230,
                 "KirbyComment",
                 ""
             ]
