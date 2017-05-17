@@ -287,7 +287,7 @@ var WRs = {
                 ""
             ],
             "Mima": [
-                121289990,
+                127826260,
                 "Zil",
                 ""
             ],
@@ -582,9 +582,9 @@ var WRs = {
                 "http://score.royalflare.net/th06/replay6/th6_ud135e.rpy"
             ],
             "ReimuB": [
-                347208050,
+                359540720,
                 "MATSU",
-                "http://score.royalflare.net/th06/replay6/th6_ud1130.rpy"
+                "https://en.touhouwiki.net/images/7/71/Th6_udz994.rpy"
             ],
             "MarisaA": [
                 308626960,
@@ -604,8 +604,8 @@ var WRs = {
                 "http://score.royalflare.net/th06/replay6/th6_ud1040.rpy"
             ],
             "ReimuB": [
-                523094750,
-                "Izumico",
+                551876370,
+                "izumico",
                 ""
             ],
             "MarisaA": [
@@ -626,9 +626,9 @@ var WRs = {
                 "http://pndsng.wwww.jp/touhou/highscores/replay/th6_ud0008.rpy"
             ],
             "ReimuB": [
-                665148660,
-                "Cactu",
-                ""
+                709947060,
+                "SOC",
+                "https://en.touhouwiki.net/images/0/09/Th6_ud7099.rpy"
             ],
             "MarisaA": [
                 581241260,
@@ -800,9 +800,9 @@ var WRs = {
                 "http://score.royalflare.net/th07/replay7/th7_ud1d14.rpy"
             ],
             "ReimuB": [
-                1441790870,
-                "いな",
-                "http://score.royalflare.net/th07/replay7/th7_ud2257.rpy"
+                1458636220,
+                "Yu-suke",
+                "https://en.touhouwiki.net/images/0/03/Th7_ud3106.rpy"
             ],
             "MarisaA": [
                 1257244350,
@@ -886,9 +886,9 @@ var WRs = {
                 "http://score.royalflare.net/th08/dlreplay.cgi?id=1f48"
             ],
             "Yukari": [
-                1731029240,
-                "ラビ",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=1d41"
+                1812041920,
+                "NALIS",
+                ""
             ],
             "Marisa": [
                 3127823070,
@@ -896,19 +896,19 @@ var WRs = {
                 "http://score.royalflare.net/th08/dlreplay.cgi?id=2845"
             ],
             "Alice": [
-                1813182090,
-                "Eternal",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=0452"
+                1979902210,
+                "NALIS",
+                ""
             ],
             "Sakuya": [
-                2559477930,
-                "Suika",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=1901"
+                2748974260,
+                "NALIS",
+                ""
             ],
             "Remilia": [
-                191553325,
-                "tomo",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=09a7"
+                2066097660,
+                "NALIS",
+                ""
             ],
             "Youmu": [
                 3379425090,
@@ -916,9 +916,9 @@ var WRs = {
                 "http://score.royalflare.net/th08/dlreplay.cgi?id=2873"
             ],
             "Yuyuko": [
-                1734179460,
-                "水性すらいむ",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=0f9f"
+                1804692830,
+                "NALIS",
+                ""
             ]
         },
         "Normal": {
@@ -928,49 +928,49 @@ var WRs = {
                 "http://score.royalflare.net/th08/dlreplay.cgi?id=23f8"
             ],
             "MagicTeam": [
-                3895532070,
-                "LET",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=0599"
+                4040949070,
+                "NALIS",
+                ""
             ],
             "ScarletTeam": [
-                4007899720,
-                "LET",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=096b"
+                4076786440,
+                "NALIS",
+                ""
             ],
             "GhostTeam": [
-                3907285270,
-                "LET",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=18a2"
+                3914237750,
+                "NALIS",
+                ""
             ],
             "Reimu": [
-                3394175570,
-                "LET",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=04f0"
+                3696303320,
+                "NALIS",
+                ""
             ],
             "Yukari": [
-                2419192380,
-                "水性すらいむ",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=0f70"
+                2698842890,
+                "NALIS",
+                ""
             ],
             "Marisa": [
-                3570181460,
-                "K・G",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=2922"
+                4013581690,
+                "NALIS",
+                ""
             ],
             "Alice": [
-                2429706040,
-                "水性すらいむ",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=0f79"
+                2712863460,
+                "NALIS",
+                ""
             ],
             "Sakuya": [
-                3055555970,
-                "水性すらいむ",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=0f82"
+                3575396270,
+                "NALIS",
+                ""
             ],
             "Remilia": [
-                2755844610,
-                "水性すらいむ",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=0f95"
+                2897204740,
+                "NALIS",
+                ""
             ],
             "Youmu": [
                 4496668100,
@@ -978,71 +978,71 @@ var WRs = {
                 "http://score.royalflare.net/th08/dlreplay.cgi?id=2946"
             ],
             "Yuyuko": [
-                2485053240,
-                "水性すらいむ",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=0fa0"
+                2670363590,
+                "NALIS",
+                ""
             ]
         },
         "Hard": {
             "BorderTeam": [
-                4502225760,
-                "LET",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=09d2"
+                4611654980,
+                "NALIS",
+                ""
             ],
             "MagicTeam": [
-                4533616650,
-                "LET",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=0862"
+                4761104730,
+                "NALIS",
+                ""
             ],
             "ScarletTeam": [
-                4506799970,
-                "LET",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=081b"
+                4822813140,
+                "NALIS",
+                ""
             ],
             "GhostTeam": [
-                4708571630,
-                "PALM",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=27c7"
+                4800527370,
+                "NALIS",
+                ""
             ],
             "Reimu": [
-                3653112510,
-                "Eternal",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=0922"
+                4337288270,
+                "NALIS",
+                ""
             ],
             "Yukari": [
-                2991504170,
-                "水性すらいむ",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=0ed9"
+                3335090210,
+                "NALIS",
+                ""
             ],
             "Marisa": [
-                3558337820,
-                "KLG",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=1bbd"
+                4699343520,
+                "NALIS",
+                ""
             ],
             "Alice": [
-                2758767770,
-                "水性すらいむ",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=0f7a"
+                3312959350,
+                "NALIS",
+                ""
             ],
             "Sakuya": [
-                3687402450,
-                "水性すらいむ",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=0f8e"
+                4176608820,
+                "NALIS",
+                ""
             ],
             "Remilia": [
-                3006963610,
-                "AQUA",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=1190"
+                3363249180,
+                "NALIS",
+                ""
             ],
             "Youmu": [
-                5242086820,
-                "PALM",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=287b"
+                5306388370,
+                "NALIS",
+                ""
             ],
             "Yuyuko": [
-                2828843340,
-                "水性すらいむ",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=0fa2"
+                3302388350,
+                "NALIS",
+                ""
             ]
         },
         "Lunatic": {
@@ -1059,7 +1059,7 @@ var WRs = {
             "ScarletTeam": [
                 6609355970,
                 "Yu-suke",
-                ""
+                "https://en.touhouwiki.net/images/9/94/Th8_ud2529.rpy"
             ],
             "GhostTeam": [
                 6458237920,
@@ -1067,34 +1067,34 @@ var WRs = {
                 "http://pndsng.wwww.jp/touhou/highscores/replay/th8_ud0100.rpy"
             ],
             "Reimu": [
-                4359005630,
-                "R@P",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=07f0"
+                5044782510,
+                "YASU",
+                ""
             ],
             "Yukari": [
-                3646001370,
-                "SET",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=1702"
+                3973007340,
+                "Eon",
+                "https://en.touhouwiki.net/images/0/09/Th8_ud0011.rpy"
             ],
             "Marisa": [
-                4748592990,
-                "PALM",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=27c5"
+                5409275820,
+                "YASU",
+                "https://en.touhouwiki.net/images/d/d1/Th8_ud0000.rpy"
             ],
             "Alice": [
-                3500438410,
-                "asbr",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=209d"
+                3793096300,
+                "Eon",
+                "https://en.touhouwiki.net/images/9/96/Th8_ud0016.rpy"
             ],
             "Sakuya": [
-                4022200840,
-                "K・G",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=2954"
+                4780013310,
+                "sogebu",
+                "https://en.touhouwiki.net/images/7/75/Th8_udu397.rpy"
             ],
             "Remilia": [
-                3727419620,
-                "K・G",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=2945"
+                4209142350,
+                "Eon",
+                "https://en.touhouwiki.net/images/4/42/Th8_ud0010.rpy"
             ],
             "Youmu": [
                 6751224840,
@@ -1102,9 +1102,9 @@ var WRs = {
                 "http://pndsng.wwww.jp/touhou/highscores/replay/th8_ud0082.rpy"
             ],
             "Yuyuko": [
-                3691650760,
-                "SET",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=180d"
+                3940090660,
+                "Eon",
+                "https://en.touhouwiki.net/images/b/b2/Th8_ud0012.rpy"
             ]
         },
         "Extra": {
@@ -1129,34 +1129,34 @@ var WRs = {
                 "http://score.royalflare.net/th08/dlreplay.cgi?id=2938"
             ],
             "Reimu": [
-                2310715730,
-                "ASAPIN",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=0349"
+                2435204430,
+                "ASL",
+                "https://en.touhouwiki.net/images/5/5b/Th8_ud1978.rpy"
             ],
             "Yukari": [
-                1817410330,
-                "YABU",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=1eaf"
+                2112244750,
+                "ASL",
+                "https://en.touhouwiki.net/images/8/8c/Th8_ud1ab1.rpy"
             ],
             "Marisa": [
-                2549422900,
-                "YABU",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=217d"
+                2600855470,
+                "ASL",
+                "https://en.touhouwiki.net/images/e/e1/Th8_ud1ffb.rpy"
             ],
             "Alice": [
-                1743695170,
-                "Eternal",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=06fc"
+                2092010760,
+                "ASL",
+                "https://en.touhouwiki.net/images/6/67/Th8_ud1936.rpy"
             ],
             "Sakuya": [
-                2357010670,
-                "ASAPIN",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=0314"
+                2525295090,
+                "ASL",
+                "https://en.touhouwiki.net/images/3/39/Th8_ud252a.rpy"
             ],
             "Remilia": [
-                1852942870,
-                "専属メイド",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=2776"
+                2221694800,
+                "ASL",
+                "https://en.touhouwiki.net/images/4/4f/Th8_ud21cb.rpy"
             ],
             "Youmu": [
                 3159508570,
@@ -1164,9 +1164,9 @@ var WRs = {
                 "http://score.royalflare.net/th08/dlreplay.cgi?id=28be"
             ],
             "Yuyuko": [
-                1977266880,
-                "YABU",
-                "http://score.royalflare.net/th08/dlreplay.cgi?id=1f34"
+                2179007270,
+                "ASL",
+                ""
             ]
         }
     },
