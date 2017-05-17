@@ -1987,9 +1987,9 @@ var WRs = {
         },
         "Extra": {
             "ReimuA": [
-                660751150,
+                670462130,
                 "ニャムニャム",
-                "http://score.royalflare.net/th12/replay12/th12_ud11a0.rpy"
+                "https://en.touhouwiki.net/images/6/6e/Th12_ud1214.rpy"
             ],
             "ReimuB": [
                 630584000,
@@ -2002,9 +2002,9 @@ var WRs = {
                 "http://score.royalflare.net/th12/replay12/th12_ud11f7.rpy"
             ],
             "MarisaB": [
-                630651970,
-                "omega",
-                "http://score.royalflare.net/th12/replay12/th12_ud1029.rpy"
+                646413950,
+                "ニャムニャム",
+                "https://en.touhouwiki.net/images/4/4c/Th12_ud1226.rpy"
             ],
             "SanaeA": [
                 639197870,
@@ -2122,9 +2122,9 @@ var WRs = {
                 ""
             ],
             "A2": [
-                119625730,
-                "chum",
-                "http://score.royalflare.net/th128/replay128/th128_ud077c.rpy"
+                124662240,
+                "MegaPulse",
+                ""
             ],
             "B1": [
                 107163550,
@@ -2239,9 +2239,9 @@ var WRs = {
                 ""
             ],
             "Youmu": [
-                3917965610,
+                4000147890,
                 "おとど",
-                ""
+                "https://en.touhouwiki.net/images/8/84/Th13_ud0b0f.rpy"
             ]
         },
         "Extra": {
@@ -2256,9 +2256,9 @@ var WRs = {
                 "http://score.royalflare.net/th13/replay13/th13_ud0acf.rpy"
             ],
             "Sanae": [
-                532111870,
-                "omega",
-                "http://score.royalflare.net/th13/replay13/th13_ud06db.rpy"
+                535000480,
+                "morth",
+                "https://en.touhouwiki.net/images/e/e0/Th13_ud0b15.rpy"
             ],
             "Youmu": [
                 603783460,
@@ -2307,9 +2307,9 @@ var WRs = {
                 "http://score.royalflare.net/th14/replay14/th14_ud05a4.rpy"
             ],
             "ReimuB": [
-                862853770,
-                "K・G",
-                "http://score.royalflare.net/th14/replay14/th14_ud05ad.rpy"
+                897637460,
+                "Aeteas",
+                "https://en.touhouwiki.net/images/6/63/Th14_ud076a.rpy"
             ],
             "MarisaA": [
                 945713840,
@@ -2334,9 +2334,9 @@ var WRs = {
         },
         "Hard": {
             "ReimuA": [
-                1232640340,
-                "WhiteRat",
-                "http://score.royalflare.net/th14/replay14/th14_ud069d.rpy"
+                1252745050,
+                "K・G",
+                "https://en.touhouwiki.net/images/4/49/Th14_ud0760.rpy"
             ],
             "ReimuB": [
                 969187110,
@@ -2413,9 +2413,9 @@ var WRs = {
                 "http://score.royalflare.net/th14/replay14/th14_ud072b.rpy"
             ],
             "MarisaB": [
-                1224623140,
+                1228539850,
                 "Marisa",
-                "http://score.royalflare.net/th14/replay14/th14_ud0759.rpy"
+                "https://en.touhouwiki.net/images/8/8f/Th14_ud0762.rpy"
             ],
             "SakuyaA": [
                 759067670,
@@ -2503,9 +2503,9 @@ var WRs = {
                 "http://score.royalflare.net/th15/replay15/th15_ud0268.rpy"
             ],
             "Marisa": [
-                2101532750,
-                "kisara",
-                "http://score.royalflare.net/th15/replay15/th15_ud0267.rpy"
+                2106333590,
+                "K・G",
+                "https://en.touhouwiki.net/images/3/31/Th15_ud02d6.rpy"
             ],
             "Sanae": [
                 3077565890,
@@ -2513,9 +2513,9 @@ var WRs = {
                 "http://score.royalflare.net/th15/replay15/th15_ud029d.rpy"
             ],
             "Reisen": [
-                2616458440,
-                "HUF",
-                "http://score.royalflare.net/th15/replay15/th15_ud0277.rpy"
+                2668283540,
+                "K・G",
+                "https://en.touhouwiki.net/images/3/31/Th15_ud02d6.rpy"
             ]
         },
         "Extra": {
@@ -2530,9 +2530,9 @@ var WRs = {
                 "http://score.royalflare.net/th15/replay15/th15_ud0263.rpy"
             ],
             "Sanae": [
-                1008302770,
-                "AM",
-                "http://score.royalflare.net/th15/replay15/th15_ud00c5.rpy"
+                1009636890,
+                "kisara",
+                "https://en.touhouwiki.net/images/2/25/Th15_ud02d5.rpy"
             ],
             "Reisen": [
                 1016971530,
