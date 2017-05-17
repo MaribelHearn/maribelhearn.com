@@ -443,13 +443,13 @@ var WRs = {
     "MS": {
         "Easy": {
             "Reimu": [
-                73893590,
-                "Zil",
+                80583650,
+                "KirbyComment",
                 ""
             ],
             "Marisa": [
-                72999090,
-                "Zil",
+                80457000,
+                "KirbyComment",
                 ""
             ],
             "Mima": [
@@ -458,8 +458,8 @@ var WRs = {
                 ""
             ],
             "Yuuka": [
-                70576320,
-                "Zil",
+                80729690,
+                "KirbyComment",
                 ""
             ]
         },
