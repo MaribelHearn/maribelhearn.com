@@ -665,7 +665,7 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
         },
         "SoEW": {
             "Easy": {
-                "base": 275,
+                "base": 300,
                 "exp": 4
             },
             "Normal": {
