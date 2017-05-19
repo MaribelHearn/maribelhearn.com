@@ -1216,14 +1216,14 @@ function scoringPoints(rubric, game, difficulty, shottype) {
         wr = WRs[game][difficulty]["ReimuB"][0];
     } else if (game == "SoEW" && difficulty == "Lunatic") {
         wr = WRs[game][difficulty]["ReimuA"][0];
-    } else if (game == "LLS") {
+    } else if (game == "LLS" && difficulty != "Extra") {
         wr = WRs[game][difficulty];
         
         if (difficulty == "Easy" || difficulty == "Normal") {
             wr = wr["ReimuB"][0];
         } else if (difficulty == "Hard") {
-            wr = wr["ReimuA"][0];
-        } else if (difficulty == "Lunatic" || difficulty == "Extra") {
+            wr = wr["MarisaB"][0];
+        } else if (difficulty == "Lunatic") {
             wr = wr["MarisaA"][0];
         }
     } else {
