@@ -1651,9 +1651,9 @@ var WRs = {
                 "http://score.royalflare.net/th10/replay10/th10_ud1732.rpy"
             ],
             "MarisaB": [
-                2186471780,
-                "nanamaru",
-                "http://score.royalflare.net/th10/replay10/th10_ud1624.rpy"
+                2196175410,
+                "LYX",
+                ""
             ],
             "MarisaC": [
                 2214529240,
