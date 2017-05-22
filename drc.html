@@ -27,7 +27,7 @@
             <p>Scores can only contain digits, commas, dots and spaces. Survival runs are assumed to have cleared, scoring runs not.</p>
             <p id='notify'></p>
             <label for='game'>Category</label>
-            <select id='game' onChange='javascript:checkValues(true, true)'>
+            <select id='game' onChange='javascript:checkValues(true, true, true);'>
                 <option>HRtP</option>
                 <option>SoEW</option>
                 <option>PoDD</option>
@@ -40,13 +40,14 @@
                 <option>MoF</option>
                 <option>SA</option>
                 <option>UFO</option>
+                <option>DS</option>
                 <option>GFW</option>
                 <option>TD</option>
                 <option>DDC</option>
                 <option>LoLK</option>
             </select>
             <label id='difficultyLabel' for='difficulty'>Difficulty</label>
-            <select id='difficulty' onChange='javascript:if ($(GAME).val() == "GFW") { checkShottypes(true); } if ($(GAME).val() == "IN") { checkValues(true, false); }'>
+            <select id='difficulty' onChange='javascript:if ($(GAME).val() == "GFW") { checkShottypes(true); } if ($(GAME).val() == "IN") { checkValues(true, false, false); }'>
                 <option>Easy</option>
                 <option>Normal</option>
                 <option>Hard</option>
@@ -58,12 +59,12 @@
                 <option>FinalB</option>
             </select>
             <label id='challengeLabel' for='challenge'>Challenge</label>
-            <select id='challenge' onChange='javascript:checkValues(true, false); checkShottypes(false);'>
+            <select id='challenge' onChange='javascript:checkValues(true, false, false); checkShottypes(false);'>
                 <option>Scoring</option>
                 <option>Survival</option>
             </select>
             <div id='performance'></div>
-            <label for='shottype'>Shottype / Route</label><select id='shottype' onChange='checkValues(false, false)'></select>
+            <label id='shottypeLabel' for='shottype'>Shottype / Route</label><select id='shottype' onChange='checkValues(false, false, false)'></select>
 			<div id='drcpoints'></div>
             <div id='error'></div>
 			<p><input type='button' onClick='javascript:drcPoints()' value='Calculate'></p>
@@ -76,6 +77,7 @@
                     <ul>
                         <li>If a new World Record is achieved, the points are equal to the base points; otherwise, the formula applies.</li>
                         <li>The exponents for MoF are preliminary and are thus subject to change.</li>
+                        <li>DS uses a separate system. Click <a href='#doublespoiler'>here</a> for said system.</li>
                     </ul>
                 </p>
                 <p>
@@ -102,6 +104,15 @@
                             </table>
                         </td>
                     </tr>
+                </table>
+                <br>
+                <b id='doublespoiler'>DS Scoring</b>
+                <p>This system is specific to DRC Round 8 and the 10 scenes that are being played. For each scene there are three thresholds,
+                at which you will have 10, 30 and 50 points respectively. The way this works is that 1 point is added for every 10th or 20th of
+                the amount of score between the thresholds (10th below the first threshold, 20th otherwise).</p>
+                <table align='center'>
+                    <thead><tr><th>Scene</th><th>Threshold 1</th><th>Threshold 2</th><th>Threshold 3</th></tr></thead>
+                    <tbody id='dsTable'></tbody>
                 </table>
                 <br>
                 <b id='phantasmagoria'>PoDD, PoFV Survival</b>
