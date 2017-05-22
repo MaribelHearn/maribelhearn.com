@@ -2,9 +2,9 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
     BOMBS = "#bombs", SCORE = "#score", PERFORMANCE = "#performance", DRCPOINTS = "#drcpoints", ERROR = "#error", SHOTTYPE = "#shottype", NOTIFY = "#notify", RUBRICS_BUTTON = "#rubricsButton", NB = "#nb",
     NO_EXTRA = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>", NOTIFY_TEXT = "<b>Important Notice:</b> ", PHANTASMAGORIA = "#phantasmagoriaTable", IS = "#is",
     DIFF_OPTIONS = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option>", SHOTTYPE_MULTIPLIERS = "#shottypeMultipliersTable", LS = "#ls",
-    PHANTASM = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option><option>Phantasm</option>",
-    MISSES_INPUT = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>", ERROR_TEXT = "<b style='color:red'>Error: ", CLEARED = "#cleared",
-    SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>", SCORING_TABLE = "#scoringTable", SURV_TABLE = "#survivalTable", ROUTE = "#route", BB = "#bb",
+    PHANTASM = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option><option>Phantasm</option>", SHOTTYPE_LABEL = "#shottypeLabel",
+    MISSES_INPUT = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>", ERROR_TEXT = "<b style='color:red'>Error: ", CLEARED = "#cleared", SCENE = "#scene",
+    SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>", SCORING_TABLE = "#scoringTable", SURV_TABLE = "#survivalTable", ROUTE = "#route", BB = "#bb", DS_TABLE = "#dsTable",
     SURV_RUBRICS = {
         "SoEW": {
             "Easy": {
@@ -200,8 +200,8 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
                 "bomb": 1,
             },
             "multiplier": {
-                "ReimuA": 1.1,
-                "MarisaA": 1.05
+                "ReimuA": 1.05,
+                "MarisaA": 1.1
             }
         },
         "PCB": {
@@ -333,18 +333,12 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
                 "noBombBonus": 25
             },
             "multiplier": {
-                "Reimu": 1.1,
-                "Marisa": 1.1,
-                "Sakuya": 1.1,
-                "Youmu": 1.1,
-                "Reisen": 1.15,
-                "Cirno": 1.1,
-                "Lyrica": 1.15,
-                "Mystia": 1.1,
-                "Tewi": 1.15,
-                "Yuuka": 1.15,
-                "Komachi": 1.1,
-                "Eiki": 1.1
+                "Reisen": 1.05,
+                "Lyrica": 1.05,
+                "Tewi": 1.05,
+                "Aya": 0.8,
+                "Medicine": 0.8,
+                "Yuuka": 1.05
             }
         },
         "MoF": {
@@ -854,7 +848,7 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
             },
             "Lunatic": {
                 "base": 500,
-                "exp": 5
+                "exp": 9
             },
             "Extra": {
                 "base": 450,
@@ -1011,15 +1005,37 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
             "FinalA": 6,
             "FinalB": 10
         }
+    },
+    SCENE_THRESHOLDS = {
+        "2-2": [0, 170000, 205000, 225000],
+        "5-4": [0, 450000, 600000, 700000],
+        "5-5": [0, 330000, 390000, 425000],
+        "7-6": [0, 1000000, 1500000, 1800000],
+        "10-1": [0, 700000, 940000, 1000000],
+        "10-2": [0, 750000, 1350000, 1525000],
+        "12-2": [0, 700000, 810000, 840000],
+        "12-8": [0, 2000000, 2750000, 3050000],
+        "EX-6": [0, 700000, 1200000, 1242000],
+        "EX-9": [0, 3600000, 4040000, 4140000]
     };
 
 $(document).ready(function() {
-    checkValues(true, true);
+    checkValues(true, true, true);
     generateRubrics();
 });
 
-function checkValues(changePerformance, changeShottypes) {
+function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
     var game = $(GAME).val(), difficulty = $(DIFFICULTY).val(), challenge = $(CHALLENGE).val(), shottype = $(SHOTTYPE).val();
+    
+    if (doubleSpoilerCheck) {
+        if (game == "DS") {
+            $(CHALLENGE).html("<option>Scoring</option>");
+            $(DIFFICULTY).css("display", "none");
+        } else {
+            $(CHALLENGE).html("<option>Scoring</option><option>Survival</option>");
+            $(DIFFICULTY).css("display", "inline");
+        }
+    }
     
     if (challenge == "Survival") {
         if (game == "MoF" && shottype == "MarisaB") {
@@ -1085,7 +1101,8 @@ function checkValues(changePerformance, changeShottypes) {
             
             $(PERFORMANCE).html(survOptions);
         } else {
-            $(PERFORMANCE).html(SCORE_OPTIONS);
+            $(PERFORMANCE).html(game == "DS" ? "<label for='scene'>Scene</label><select id='scene'><option>2-2</option><option>5-4</option><option>5-5</option><option>7-6</option>" +
+            "<option>10-1</option><option>10-2</option>option>12-2</option><option>12-8</option><option>EX-6</option><option>EX-9</option></select><br>" + SCORE_OPTIONS : SCORE_OPTIONS);
             $(NOTIFY).html("");
         }
     }
@@ -1096,9 +1113,11 @@ function checkValues(changePerformance, changeShottypes) {
 }
 
 function checkShottypes(alwaysChange) {
-    var game = $(GAME).val(), challenge = $(CHALLENGE).val(), difficulty = $(DIFFICULTY).val(), shottypes = Object.keys(WRs[game][difficulty]), shottypeList = "";
+    var game = $(GAME).val(), challenge = $(CHALLENGE).val(), difficulty = $(DIFFICULTY).val(), shottypeList = "", shottypes, i;
     
-    for (var i in shottypes) {
+    shottypes = (game == "DS" ? ["Aya", "Hatate"] : Object.keys(WRs[game][difficulty]));
+    
+    for (i = 0; i < shottypes.length; i++) {
         var shottype = (shottypes[i].indexOf("Team") > -1 ? shottypes[i].replace("Team", " Team") : shottypes[i]);
         
         shottypeList += "<option value='" + shottypes[i] + "'>" + shottype + "</option>";
@@ -1137,8 +1156,12 @@ function drcPoints() {
         shottypeMultiplier = (SURV_RUBRICS[game].multiplier[shottype] ? SURV_RUBRICS[game].multiplier[shottype] : 1);
         points = (isPhantasmagoria(game) ? phantasmagoria(rubric, game, difficulty, shottypeMultiplier) : survivalPoints(rubric, game, difficulty, shottypeMultiplier));
     } else {
-        rubric = SCORE_RUBRICS[game][difficulty];
-        points = scoringPoints(rubric, game, difficulty, shottype);
+        if (game == "DS") {
+            points = dsFormula(shottype);
+        } else {
+            rubric = SCORE_RUBRICS[game][difficulty];
+            points = scoringPoints(rubric, game, difficulty, shottype);
+        }
     }
     
     $(DRCPOINTS).html("Your DRC points for this run: <b>" + points + "</b>!");
@@ -1202,6 +1225,27 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
     return drcpoints;
 }
 
+function determineIncrement(thresholds, i) {
+    var increment = (i === 1 ? 10 : 20), lowerBound = (i === 1 ? 0 : thresholds[i - 1]);
+    
+    return (thresholds[i] - lowerBound) / increment;
+}
+
+function dsFormula(shottype) {
+    var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), scene = $(SCENE).val(), thresholds = SCENE_THRESHOLDS[scene], drcpoints = 0, step, i;
+    
+    for (i = 2; i >= 0; i--) {
+        step = determineIncrement(thresholds, i + 1);
+        
+        while (score > thresholds[i]) {
+            drcpoints += 1;
+            score -= step;
+        }
+    }
+    
+    return drcpoints;
+}
+
 function scoringPoints(rubric, game, difficulty, shottype) {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), wr;
     
@@ -1239,7 +1283,7 @@ function abbreviate(num) {
 }
 
 function generateRubrics() {
-    var game, difficulty, rubric, shottype, scoreRange, i;
+    var game, difficulty, rubric, shottype, scoreRange, thresholds, scene, i;
     
     for (game in SCORE_RUBRICS) {
         $(SCORING_TABLE).append("<tr>");
@@ -1287,6 +1331,12 @@ function generateRubrics() {
                 "</td><td>" + rubric.miss + "</td><td>" + rubric.firstBomb + "</td><td>" + rubric.bomb + "</td></tr>");
             }
         }
+    }
+    
+    for (scene in SCENE_THRESHOLDS) {
+        thresholds = SCENE_THRESHOLDS[scene];
+        
+        $(DS_TABLE).append("<tr><td>" + scene + "</td><td>" + sep(thresholds[1]) + "</td><td>" + sep(thresholds[2]) + "</td><td>" + sep(thresholds[3]) + "</td></tr>");
     }
 }
 
