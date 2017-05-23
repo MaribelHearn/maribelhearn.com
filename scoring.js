@@ -621,8 +621,8 @@ var WRs = {
         },
         "Lunatic": {
             "ReimuA": [
-                544487970,
-                "Miki",
+                558947670,
+                "OOSAKA",
                 "http://pndsng.wwww.jp/touhou/highscores/replay/th6_ud0008.rpy"
             ],
             "ReimuB": [
@@ -1636,9 +1636,9 @@ var WRs = {
                 "http://pndsng.wwww.jp/touhou/highscores/replay/th10_ud0245.rpy"
             ],
             "ReimuB": [
-                2191799870,
-                "SOC",
-                "http://score.royalflare.net/th10/replay10/th10_ud1919.rpy"
+                2192469040,
+                "dxk",
+                "http://score.royalflare.net/th10/replay10/th10_ud1987.rpy"
             ],
             "ReimuC": [
                 2175863360,
