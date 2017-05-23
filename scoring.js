@@ -623,7 +623,7 @@ var WRs = {
             "ReimuA": [
                 558947670,
                 "OOSAKA",
-                "http://pndsng.wwww.jp/touhou/highscores/replay/th6_ud0008.rpy"
+                "http://thscore.pndsng.com/replay/th6_ud0257.rpy"
             ],
             "ReimuB": [
                 709947060,
