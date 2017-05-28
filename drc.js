@@ -1382,6 +1382,8 @@ function generateRubrics() {
         $(DS_TABLE).append("<tr><td>" + scene + "</td><td>" + sep(thresholds[1]) + "</td><td>" + sep(thresholds[2]) + "</td><td>" + sep(thresholds[3]) + "</td></tr>");
     }
     
+    $(MOF_TABLE).append("<tr><td colspan='12'>If score < 2b, then: ||200 * (Score/2b)^2||</td></tr>");
+            
     for (difficulty in MOF_THRESHOLDS) {
         $(MOF_TABLE).append("<tr><th colspan='12'>" + difficulty + "</th></tr>");
         
