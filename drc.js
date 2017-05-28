@@ -1275,7 +1275,7 @@ function mofFormula(difficulty, shottype) {
         }
     }
     
-    return Math.min(drcpoints, 500);
+    return Math.min(Math.round(drcpoints), 500);
 }
 
 function scoringPoints(rubric, game, difficulty, shottype) {
