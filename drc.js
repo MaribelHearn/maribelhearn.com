@@ -5,6 +5,7 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
     PHANTASM = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option><option>Phantasm</option>", SHOTTYPE_LABEL = "#shottypeLabel",
     MISSES_INPUT = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>", ERROR_TEXT = "<b style='color:red'>Error: ", CLEARED = "#cleared", SCENE = "#scene",
     SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>", SCORING_TABLE = "#scoringTable", SURV_TABLE = "#survivalTable", ROUTE = "#route", BB = "#bb", DS_TABLE = "#dsTable",
+    MOF_TABLE = "#mofTable",
     SURV_RUBRICS = {
         "SoEW": {
             "Easy": {
@@ -833,28 +834,6 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
                 "exp": 2.5
             }
         },
-        "MoF": {
-            "Easy": {
-                "base": 375,
-                "exp": 5
-            },
-            "Normal": {
-                "base": 400,
-                "exp": 5
-            },
-            "Hard": {
-                "base": 450,
-                "exp": 5
-            },
-            "Lunatic": {
-                "base": 500,
-                "exp": 9
-            },
-            "Extra": {
-                "base": 450,
-                "exp": 10
-            }
-        },
         "SA": {
             "Easy": {
                 "base": 375,
@@ -1017,6 +996,22 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
         "12-8": [0, 2000000, 2750000, 3050000],
         "EX-6": [0, 700000, 1200000, 1242000],
         "EX-9": [0, 3600000, 4040000, 4140000]
+    },
+    MOF_THRESHOLDS = {
+        "Lunatic": {
+            "ReimuB": {
+                "score": [2000000000, 2100000000, 2150000000, 2170000000, 2180000000, 2190000000],
+                "base": [220, 270, 320, 360, 410, 470],
+                "increment": [5, 1, 2, 5, 6, 7],
+                "step": [10000000, 1000000, 1000000, 1000000, 1000000, 1000000]
+            },
+            "MarisaC": {
+                "score": [2000000000, 2100000000, 2150000000, 2190000000, 2200000000, 2210000000],
+                "base": [210, 260, 310, 370, 420, 480],
+                "increment": [5, 1, 1.5, 5, 6, 6],
+                "step": [10000000, 1000000, 1000000, 1000000, 1000000, 1000000]
+            }
+        }
     };
 
 $(document).ready(function() {
@@ -1158,6 +1153,8 @@ function drcPoints() {
     } else {
         if (game == "DS") {
             points = dsFormula(shottype);
+        } else if (game == "MoF") {
+            points = mofFormula(difficulty, shottype);
         } else {
             rubric = SCORE_RUBRICS[game][difficulty];
             points = scoringPoints(rubric, game, difficulty, shottype);
@@ -1246,6 +1243,41 @@ function dsFormula(shottype) {
     return drcpoints;
 }
 
+function mofFormula(difficulty, shottype) {
+    var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), drcpoints = 0, originalScore = score, thresholds, i;
+    
+    // rubric currently only determined for Lunatic ReimuB and Lunatic MarisaC
+    if (difficulty != "Lunatic") {
+        $(ERROR).html(ERROR_TEXT + "the scoring rubrics for this difficulty are undetermined as of now.</b>");
+        return drcpoints;
+    } else if (shottype != "ReimuB" && shottype != "MarisaC") {
+        $(ERROR).html(ERROR_TEXT + "the scoring rubrics for this shottype are undetermined as of now.</b>");
+        return drcpoints;
+    }
+    
+    thresholds = MOF_THRESHOLDS[difficulty][shottype];
+    
+    if (score < thresholds.score[0]) {
+        return Math.round(Math.pow((score / thresholds.score[0]), 2) * 200);
+    }
+    
+    for (i = thresholds.increment.length - 1; i >= 0; i--) {
+        drcpoints = thresholds.base[i];
+        step = thresholds.step[i];
+        
+        if (score >= thresholds.score[i]) {
+            while (score > thresholds.score[i]) {
+                drcpoints += thresholds.increment[i];
+                score -= step;
+            }
+            
+            break;
+        }
+    }
+    
+    return Math.min(drcpoints, 500);
+}
+
 function scoringPoints(rubric, game, difficulty, shottype) {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), wr;
     
@@ -1278,12 +1310,24 @@ function scoringPoints(rubric, game, difficulty, shottype) {
 }
 
 function abbreviate(num) {
-    var string = String(num).replace("000000000", "b").replace("100000000", ".1b").replace("400000000", ".4b").replace("500000000", ".5b").replace("600000000", ".6b").replace("900000000", ".9b");
-    return string.replace("450000000", ".45b").replace("550000000", ".55b").replace("650000000", ".65b").replace("950000000", ".95b").replace("050000000", ".05b").replace("0000000", "0m").replace("000000", "m");
+    var string = String(num), original = string, i = 0, rest;
+    
+    while (string.indexOf("000") != -1) {
+        string = string.replace("000", "");
+        i += 1;
+    }
+    
+    if (original.length >= 10) {
+        rest = string.substr(1, string.length).replace("00", "").replace("0", "");
+    
+        return string.charAt(0) + (rest === "" ? "" : "." + rest) + "b";
+    } else {
+        return string + "m";
+    }
 }
 
 function generateRubrics() {
-    var game, difficulty, rubric, shottype, scoreRange, thresholds, scene, i;
+    var game, difficulty, rubric, shottype, thresholds, scene, i;
     
     for (game in SCORE_RUBRICS) {
         $(SCORING_TABLE).append("<tr>");
@@ -1335,8 +1379,21 @@ function generateRubrics() {
     
     for (scene in SCENE_THRESHOLDS) {
         thresholds = SCENE_THRESHOLDS[scene];
-        
         $(DS_TABLE).append("<tr><td>" + scene + "</td><td>" + sep(thresholds[1]) + "</td><td>" + sep(thresholds[2]) + "</td><td>" + sep(thresholds[3]) + "</td></tr>");
+    }
+    
+    for (difficulty in MOF_THRESHOLDS) {
+        $(MOF_TABLE).append("<tr><th colspan='12'>" + difficulty + "</th></tr>");
+        
+        for (shottype in MOF_THRESHOLDS[difficulty]) {
+            $(MOF_TABLE).append("<tr><th colspan='3'>" + shottype + "</th></tr>");
+            $(MOF_TABLE).append("<tr><th>Threshold</th><th>Base points</th><th>Increments</th></tr>");
+            thresholds = MOF_THRESHOLDS[difficulty][shottype];
+            
+            for (i = 0; i < thresholds.base.length; i++) {
+                $(MOF_TABLE).append("<tr><td>" + abbreviate(thresholds.score[i]) + "</td><td>" + thresholds.base[i] + "</td><td>+" + thresholds.increment[i] + " for every " + abbreviate(thresholds.step[i]) + "</td></tr>");
+            }
+        }
     }
 }
 
