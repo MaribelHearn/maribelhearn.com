@@ -1,10 +1,10 @@
 var MAX_WIDTH_SMALL_SCREEN = 1160,
 	exceptions = ["Title", "Games", "GamesLeft", "GamesRight", "Links", "MusicPlayer", "Achievements"],
 	games = ["SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "StB", "MoF", "SA", "UFO", "DS", "GFW", "TD", "DDC", "ISC",
-	"LoLK", "SG", "BSR", "SMD", "MRS", "DP", "DDP", "DOJ", "DFK", "SDOJ",  "Batsugun", "ESP", "ESPg", "Ketsui", "MSm", "MSF", "DSm", "Ikaruga", "CCWI", "eX1", "eX2", "eX3"],
+	"LoLK", "HSiFS", "SG", "BSR", "SMD", "MRS", "DP", "DDP", "DOJ", "DFK", "SDOJ",  "Batsugun", "ESP", "ESPg", "Ketsui", "MSm", "MSF", "DSm", "Ikaruga", "CCWI", "eX1", "eX2", "eX3"],
 	arcade = ["DP", "DDP", "DOJ", "DFK", "SDOJ", "Batsugun", "ESP", "ESPg", "Ketsui", "MSm", "MSF", "DSm", "Ikaruga"],
-	touhou = ["SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "StB", "MoF", "SA", "UFO", "DS", "GFW", "TD", "DDC", "ISC", "LoLK"],
-	doujin = ["SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "StB", "MoF", "SA", "UFO", "DS", "GFW", "TD", "DDC", "ISC", "LoLK", "SG", "BSR", "SMD", "MRS", "CCWI", "eX1", "eX2", "eX3"],
+	touhou = ["SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "StB", "MoF", "SA", "UFO", "DS", "GFW", "TD", "DDC", "ISC", "LoLK", "HSiFS"],
+	doujin = ["SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "StB", "MoF", "SA", "UFO", "DS", "GFW", "TD", "DDC", "ISC", "LoLK", "HSiFS", "SG", "BSR", "SMD", "MRS", "CCWI", "eX1", "eX2", "eX3"],
     gamesLeft, gamesRight, gamesLeftOriginal, gamesRightOriginal, viewportWidth;
 
 String.prototype.toUnixTime = function () {
@@ -475,6 +475,13 @@ function getClearHistory(date) {
             "x": {
                 "clear": "8/15/2015"
             }
+        },
+        "HSiFS": {
+            "e": {},
+            "n": {},
+            "h": {},
+            "l": {},
+            "x": {}
         },
         "SG": {
             "e": {
