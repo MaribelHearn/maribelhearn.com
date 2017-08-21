@@ -496,7 +496,8 @@ function getClearHistory(date) {
             },
             "x": {
                 "clear": "8/11/2017",
-                "nb": "8/12/2017"
+                "nb": "8/12/2017",
+                "nmnb": "8/21/2017"
             }
         },
         "SG": {
