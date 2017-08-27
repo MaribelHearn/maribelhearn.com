@@ -40,11 +40,11 @@
                 <option>MoF</option>
                 <option>SA</option>
                 <option>UFO</option>
-                <option>DS</option>
                 <option>GFW</option>
                 <option>TD</option>
                 <option>DDC</option>
                 <option>LoLK</option>
+                <option>HSiFS</option>
             </select>
             <label id='difficultyLabel' for='difficulty'>Difficulty</label>
             <select id='difficulty' onChange='javascript:if ($(GAME).val() == "GFW") { checkShottypes(true); } if ($(GAME).val() == "IN") { checkValues(true, false, false); }'>
@@ -77,7 +77,7 @@
                     <ul>
                         <li>If a new World Record is achieved, the points are equal to the base points; otherwise, the formula applies.</li>
                         <li>MoF uses a separate system. Click <a href='#mountainOfFaith'>here</a> for said system.</li>
-                        <li>DS uses a separate system. Click <a href='#doubleSpoiler'>here</a> for said system.</li>
+                        <!--<li>DS uses a separate system. Click <a href='#doubleSpoiler'>here</a> for said system.</li>-->
                     </ul>
                 </p>
                 <p>
@@ -112,7 +112,7 @@
                 <table align='center'>
                     <tbody id='mofTable'></tbody>
                 </table>
-                <br>
+                <!--<br>
                 <b id='doubleSpoiler'>DS Scoring</b>
                 <p>This system is specific to DRC Round 8 and the 10 scenes that are being played. For each scene there are three thresholds,
                 at which you will have 10, 30 and 50 points respectively. The way this works is that 1 point is added for every 10th or 20th of
@@ -120,7 +120,7 @@
                 <table align='center'>
                     <thead><tr><th>Scene</th><th>Threshold 1</th><th>Threshold 2</th><th>Threshold 3</th></tr></thead>
                     <tbody id='dsTable'></tbody>
-                </table>
+                </table>-->
                 <br>
                 <b id='phantasmagoria'>PoDD, PoFV Survival</b>
                 <p>In the below formula, MaxLives is equal to 5 for PoDD, 7 for PoFV main game and 8 for PoFV Extra.

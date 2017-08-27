@@ -1,4 +1,4 @@
-var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "#game", DIFFICULTY = "#difficulty", CHALLENGE = "#challenge", MISSES = "#misses", SCORING = "#scoring", RUBRICS = "#rubrics",
+﻿var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "#game", DIFFICULTY = "#difficulty", CHALLENGE = "#challenge", MISSES = "#misses", SCORING = "#scoring", RUBRICS = "#rubrics",
     BOMBS = "#bombs", SCORE = "#score", PERFORMANCE = "#performance", DRCPOINTS = "#drcpoints", ERROR = "#error", SHOTTYPE = "#shottype", NOTIFY = "#notify", RUBRICS_BUTTON = "#rubricsButton", NB = "#nb",
     NO_EXTRA = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>", NOTIFY_TEXT = "<b>Important Notice:</b> ", PHANTASMAGORIA = "#phantasmagoriaTable", IS = "#is",
     DIFF_OPTIONS = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option>", SHOTTYPE_MULTIPLIERS = "#shottypeMultipliersTable", LS = "#ls",
@@ -228,7 +228,7 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
                 "bomb": 1,
             },
             "Lunatic": {
-                "base": 300,
+                "base": 280,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 5,
@@ -365,7 +365,7 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
                 "bomb": 1,
             },
             "Lunatic": {
-                "base": 300,
+                "base": 290,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 5,
@@ -451,7 +451,7 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
                 "bomb": 1,
             },
             "Lunatic": {
-                "base": 320,
+                "base": 315,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 5,
@@ -576,7 +576,7 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
                 "bomb": 1,
             },
             "Lunatic": {
-                "base": 300,
+                "base": 290,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 5,
@@ -619,7 +619,7 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
                 "bomb": 1,
             },
             "Lunatic": {
-                "base": 330,
+                "base": 320,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 5,
@@ -637,7 +637,7 @@ var global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "
                 "Sanae": 1.05,
                 "Reisen": 1.05
             }
-        }
+        },
     },
     SCORE_RUBRICS = {
         "HRtP": {
@@ -1079,7 +1079,7 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
                 survOptions += "<br><label for='bombs'>Bombs</label><input id='bombs' type='number' value=0 min=0 max=100>";
                 
                 if (game == "PCB") {
-                    survOptions += "<br><label for='bb'>Border Breaks Only</label><input id='bb' type='checkbox'>"
+                    survOptions += "<br><label for='bb'>Border Breaks Only</label><input id='bb' type='checkbox'>";
                 }
                 
                 if (game == "IN") {
@@ -1151,6 +1151,14 @@ function drcPoints() {
         shottypeMultiplier = (SURV_RUBRICS[game].multiplier[shottype] ? SURV_RUBRICS[game].multiplier[shottype] : 1);
         points = (isPhantasmagoria(game) ? phantasmagoria(rubric, game, difficulty, shottypeMultiplier) : survivalPoints(rubric, game, difficulty, shottypeMultiplier));
     } else {
+        if (!SCORE_RUBRICS[game]) {
+            $(ERROR).html(ERROR_TEXT + "the scoring rubrics for this game are undetermined as of now.</b>");
+            $(DRCPOINTS).html("Your DRC points for this run: <b>0</b>!");
+            return;
+        } else {
+            $(ERROR).html("");
+        }
+        
         if (game == "DS") {
             points = dsFormula(shottype);
         } else if (game == "MoF") {
@@ -1228,7 +1236,7 @@ function determineIncrement(thresholds, i) {
     return (thresholds[i] - lowerBound) / increment;
 }
 
-function dsFormula(shottype) {
+/*function dsFormula(shottype) {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), scene = $(SCENE).val(), thresholds = SCENE_THRESHOLDS[scene], drcpoints = 0, step, i;
     
     for (i = 2; i >= 0; i--) {
@@ -1241,7 +1249,7 @@ function dsFormula(shottype) {
     }
     
     return drcpoints;
-}
+}*/
 
 function mofFormula(difficulty, shottype) {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), drcpoints = 0, originalScore = score, thresholds, i;
@@ -1292,14 +1300,14 @@ function scoringPoints(rubric, game, difficulty, shottype) {
         wr = WRs[game][difficulty]["ReimuB"][0];
     } else if (game == "SoEW" && difficulty == "Lunatic") {
         wr = WRs[game][difficulty]["ReimuA"][0];
-    } else if (game == "LLS" && difficulty != "Extra") {
+    } else if (game == "LLS") {
         wr = WRs[game][difficulty];
         
         if (difficulty == "Easy" || difficulty == "Normal") {
             wr = wr["ReimuB"][0];
         } else if (difficulty == "Hard") {
             wr = wr["MarisaB"][0];
-        } else if (difficulty == "Lunatic") {
+        } else if (difficulty == "Lunatic" || difficulty == "Extra") {
             wr = wr["MarisaA"][0];
         }
     } else {
