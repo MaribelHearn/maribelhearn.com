@@ -5,7 +5,7 @@
     PHANTASM = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option><option>Phantasm</option>", SHOTTYPE_LABEL = "#shottypeLabel",
     MISSES_INPUT = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>", ERROR_TEXT = "<b style='color:red'>Error: ", CLEARED = "#cleared", SCENE = "#scene",
     SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>", SCORING_TABLE = "#scoringTable", SURV_TABLE = "#survivalTable", ROUTE = "#route", BB = "#bb", DS_TABLE = "#dsTable",
-    MOF_TABLE = "#mofTable",
+    MOF_TABLE = "#mofTable", RELEASES = "#releases", SEASON = "#season",
     SURV_RUBRICS = {
         "SoEW": {
             "Easy": {
@@ -13,35 +13,35 @@
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 2,
-                "bomb": 1,
+                "bomb": 1
             },
             "Normal": {
                 "base": 80,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "Hard": {
                 "base": 120,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "Lunatic": {
                 "base": 250,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 5,
-                "bomb": 1,
+                "bomb": 1
             },
             "Extra": {
                 "base": 100,
                 "exp": 1.1,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "multiplier": {
                 "ReimuC": 1.05
@@ -87,35 +87,35 @@
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 2,
-                "bomb": 1,
+                "bomb": 1
             },
             "Normal": {
                 "base": 90,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 2,
-                "bomb": 1,
+                "bomb": 1
             },
             "Hard": {
                 "base": 140,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 2,
-                "bomb": 1,
+                "bomb": 1
             },
             "Lunatic": {
                 "base": 280,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "Extra": {
                 "base": 90,
                 "exp": 1.07,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "multiplier": {
                 "ReimuB": 1.05,
@@ -128,35 +128,35 @@
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 2,
-                "bomb": 1,
+                "bomb": 1
             },
             "Normal": {
                 "base": 100,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "Hard": {
                 "base": 150,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "Lunatic": {
                 "base": 300,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 5,
-                "bomb": 1,
+                "bomb": 1
             },
             "Extra": {
                 "base": 100,
                 "exp": 1.08,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "multiplier": {
                 "Reimu": 1.05,
@@ -170,35 +170,35 @@
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 2,
-                "bomb": 1,
+                "bomb": 1
             },
             "Normal": {
                 "base": 100,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "Hard": {
                 "base": 150,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "Lunatic": {
                 "base": 320,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 5,
-                "bomb": 1,
+                "bomb": 1
             },
             "Extra": {
                 "base": 110,
                 "exp": 1.08,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "multiplier": {
                 "ReimuA": 1.05,
@@ -211,42 +211,42 @@
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 2,
-                "bomb": 1,
+                "bomb": 1
             },
             "Normal": {
                 "base": 100,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "Hard": {
                 "base": 150,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "Lunatic": {
                 "base": 280,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 5,
-                "bomb": 1,
+                "bomb": 1
             },
             "Extra": {
                 "base": 110,
                 "exp": 1.08,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "Phantasm": {
                 "base": 110,
                 "exp": 1.08,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "multiplier": {
                 "ReimuA": 1.05,
@@ -261,35 +261,35 @@
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 2,
-                "bomb": 1,
+                "bomb": 1
             },
             "Normal": {
                 "base": 90,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "Hard": {
                 "base": 140,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "Lunatic": {
                 "base": 290,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 5,
-                "bomb": 1,
+                "bomb": 1
             },
             "Extra": {
                 "base": 110,
                 "exp": 1.08,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "multiplier": {
                 "MagicTeam": 1.05,
@@ -348,35 +348,35 @@
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 2,
-                "bomb": 1,
+                "bomb": 1
             },
             "Normal": {
                 "base": 100,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "Hard": {
                 "base": 150,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 4,
-                "bomb": 1,
+                "bomb": 1
             },
             "Lunatic": {
                 "base": 290,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 5,
-                "bomb": 1,
+                "bomb": 1
             },
             "Extra": {
                 "base": 105,
                 "exp": 1.08,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "multiplier": {
                 "ReimuA": 1.05,
@@ -391,35 +391,35 @@
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 2,
-                "bomb": 1,
+                "bomb": 1
             },
             "Normal": {
                 "base": 110,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "Hard": {
                 "base": 150,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 4,
-                "bomb": 1,
+                "bomb": 1
             },
             "Lunatic": {
                 "base": 300,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 5,
-                "bomb": 1,
+                "bomb": 1
             },
             "Extra": {
                 "base": 110,
                 "exp": 1.08,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "multiplier": {
                 "ReimuB": 1.05,
@@ -434,35 +434,35 @@
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 2,
-                "bomb": 1,
+                "bomb": 1
             },
             "Normal": {
                 "base": 100,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "Hard": {
                 "base": 160,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 4,
-                "bomb": 1,
+                "bomb": 1
             },
             "Lunatic": {
                 "base": 315,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 5,
-                "bomb": 1,
+                "bomb": 1
             },
             "Extra": {
                 "base": 110,
                 "exp": 1.08,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "multiplier": {
                 "ReimuB": 1.05,
@@ -477,35 +477,35 @@
                 "exp": 1.09,
                 "miss": 2,
                 "firstBomb": 2,
-                "bomb": 1,
+                "bomb": 1
             },
             "Normal": {
                 "base": 90,
                 "exp": 1.08,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "Hard": {
                 "base": 130,
                 "exp": 1.06,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "Lunatic": {
                 "base": 260,
                 "exp": 1.06,
                 "miss": 2,
                 "firstBomb": 4,
-                "bomb": 1,
+                "bomb": 1
             },
             "Extra": {
                 "base": 130,
                 "exp": 1.07,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "multiplier": {
                 "B1": 1.15,
@@ -519,35 +519,35 @@
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 2,
-                "bomb": 1,
+                "bomb": 1
             },
             "Normal": {
                 "base": 90,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "Hard": {
                 "base": 140,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 4,
-                "bomb": 1,
+                "bomb": 1
             },
             "Lunatic": {
                 "base": 280,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 5,
-                "bomb": 1,
+                "bomb": 1
             },
             "Extra": {
                 "base": 110,
                 "exp": 1.08,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "multiplier": {
                 "Sanae": 1.1
@@ -559,35 +559,35 @@
                 "exp": 1.07,
                 "miss": 2,
                 "firstBomb": 2,
-                "bomb": 1,
+                "bomb": 1
             },
             "Normal": {
                 "base": 100,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "Hard": {
                 "base": 150,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 4,
-                "bomb": 1,
+                "bomb": 1
             },
             "Lunatic": {
                 "base": 290,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 5,
-                "bomb": 1,
+                "bomb": 1
             },
             "Extra": {
                 "base": 110,
                 "exp": 1.08,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "multiplier": {
                 "ReimuB": 1.1,
@@ -602,35 +602,35 @@
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 2,
-                "bomb": 1,
+                "bomb": 1
             },
             "Normal": {
                 "base": 120,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "Hard": {
                 "base": 160,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 4,
-                "bomb": 1,
+                "bomb": 1
             },
             "Lunatic": {
                 "base": 320,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 5,
-                "bomb": 1,
+                "bomb": 1
             },
             "Extra": {
                 "base": 130,
                 "exp": 1.08,
                 "miss": 2,
                 "firstBomb": 3,
-                "bomb": 1,
+                "bomb": 1
             },
             "multiplier": {
                 "Marisa": 1.15,
@@ -638,6 +638,61 @@
                 "Reisen": 1.05
             }
         },
+        "HSiFS": {
+            "Easy": {
+                "base": 50,
+                "exp": 1.05,
+                "miss": 2,
+                "firstBomb": 2,
+                "bomb": 1,
+                "firstRelease": 2,
+                "release": 1
+            },
+            "Normal": {
+                "base": 100,
+                "exp": 1.05,
+                "miss": 2,
+                "firstBomb": 3,
+                "bomb": 1,
+                "firstRelease": 2,
+                "release": 1
+            },
+            "Hard": {
+                "base": 150,
+                "exp": 1.05,
+                "miss": 2,
+                "firstBomb": 4,
+                "bomb": 1,
+                "firstRelease": 2,
+                "release": 1
+            },
+            "Lunatic": {
+                "base": 315,
+                "exp": 1.05,
+                "miss": 2,
+                "firstBomb": 5,
+                "bomb": 1,
+                "firstRelease": 3,
+                "release": 1
+            },
+            "Extra": {
+                "base": 105,
+                "exp": 1.08,
+                "miss": 2,
+                "firstBomb": 3,
+                "bomb": 1,
+            },
+            "multiplier": {
+                "Cirno": 1.15,
+                "Aya": 1.10,
+                "Marisa": 1.05
+            },
+            "seasonMultiplier": {
+                "Spring": 1.15,
+                "Summer": 1.15,
+                "Autumn": 1.05
+            }
+        }
     },
     SCORE_RUBRICS = {
         "HRtP": {
@@ -1039,6 +1094,8 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
             $(NOTIFY).html(NOTIFY_TEXT + "manual trances count as bombs (that is, trances from pressing C).");
         } else if (game == "PCB") {
             $(NOTIFY).html(NOTIFY_TEXT + "border breaks count as bombs (even if they are accidental).");
+        } else if (game == "HSiFS") {
+            $(NOTIFY).html(NOTIFY_TEXT + "the way releases are factored in is preliminary and thus subject to change.");
         } else {
             $(NOTIFY).html("");
         }
@@ -1092,6 +1149,10 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
                         $(ROUTE).css("display", "inline");
                     }
                 }
+                
+                if (game == "HSiFS") {
+                    survOptions += "<br><label for='releases'>Releases</label><input id='releases' type='number' value=0 min=0 max=1000>";
+                }
             }
             
             $(PERFORMANCE).html(survOptions);
@@ -1108,18 +1169,27 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
 }
 
 function checkShottypes(alwaysChange) {
-    var game = $(GAME).val(), challenge = $(CHALLENGE).val(), difficulty = $(DIFFICULTY).val(), shottypeList = "", shottypes, i;
+    var game = $(GAME).val(), challenge = $(CHALLENGE).val(), difficulty = $(DIFFICULTY).val(), shottypeList = "", shottypes, shottype, i;
     
     shottypes = (game == "DS" ? ["Aya", "Hatate"] : Object.keys(WRs[game][difficulty]));
     
+    if (game == "HSiFS") {
+        shottypes = ["Reimu", "Cirno", "Aya", "Marisa"];
+    }
+    
     for (i = 0; i < shottypes.length; i++) {
-        var shottype = (shottypes[i].indexOf("Team") > -1 ? shottypes[i].replace("Team", " Team") : shottypes[i]);
-        
+        shottype = (shottypes[i].indexOf("Team") > -1 ? shottypes[i].replace("Team", " Team") : shottypes[i]);
         shottypeList += "<option value='" + shottypes[i] + "'>" + shottype + "</option>";
     }
     
     if (alwaysChange) {
         $(SHOTTYPE).html(shottypeList);
+        
+        if (game == "HSiFS") {
+            $(SEASON).css("display", "inline");
+        } else {
+            $(SEASON).css("display", "none");
+        }
     }
     
     if (game == "GFW" && difficulty == "Extra") {
@@ -1128,6 +1198,12 @@ function checkShottypes(alwaysChange) {
     } else if (noShottypes) {
         $(SHOTTYPE).html(shottypeList);
         noShottypes = false;
+        
+        if (game == "HSiFS") {
+            $(SEASON).css("display", "inline");
+        } else {
+            $(SEASON).css("display", "none");
+        }
     }
 }
 
@@ -1192,11 +1268,10 @@ function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
 }
 
 function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
-    var misses = Number($(MISSES).val()), bombs = Number($(BOMBS).val()), n = 0, route, lastSpells, originalBombs;
+    var misses = Number($(MISSES).val()), bombs = Number($(BOMBS).val()), n = 0, route, lastSpells, releases, season, seasonMultiplier;
     
     $(ERROR).html("");
     n += misses * rubric.miss;
-    originalBombs = bombs;
     
     if (bombs >= 1 && !(game == "PCB" && $(BB).is(":checked"))) {
         n += rubric.firstBomb;
@@ -1204,6 +1279,17 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
     }
     
     n += bombs * rubric.bomb;
+    
+    if (game == "HSiFS") {
+        releases = Number($(RELEASES).val());
+        
+        if (releases >= 1) {
+            n += rubric.firstRelease;
+            releases -= 1;
+        }
+    
+        n += releases * rubric.release;
+    }
     
     drcpoints = Math.round(rubric.base * Math.pow(rubric.exp, -n));
     
@@ -1224,7 +1310,13 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
     }
     
     if (difficulty != "Extra") {
-        drcpoints = Math.round(drcpoints * shottypeMultiplier);
+        if (game == "HSiFS" && Number($(RELEASES).val()) === 0) {
+            season = $(SEASON).val();
+            seasonMultiplier = (SURV_RUBRICS[game].seasonMultiplier[season] ? SURV_RUBRICS[game].seasonMultiplier[season] : 1);
+            drcpoints = Math.round(drcpoints * (shottypeMultiplier + seasonMultiplier - 1));
+        } else {
+            drcpoints = Math.round(drcpoints * shottypeMultiplier);
+        }
     }
     
     return drcpoints;
@@ -1363,7 +1455,7 @@ function generateRubrics() {
         for (difficulty in SURV_RUBRICS[game]) {
             rubric = SURV_RUBRICS[game][difficulty];
             
-            if (difficulty == "multiplier") {
+            if (difficulty == "multiplier" || difficulty == "seasonMultiplier") {
                 $(SHOTTYPE_MULTIPLIERS).append("<tr>");
                 $(SHOTTYPE_MULTIPLIERS).append(game == "SoEW" ? "<th>Game and shottype</th><th>Multiplier</th><" : "<th></th><td></td>");
                 $(SHOTTYPE_MULTIPLIERS).append("</tr>");

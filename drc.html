@@ -65,6 +65,12 @@
             </select>
             <div id='performance'></div>
             <label id='shottypeLabel' for='shottype'>Shottype / Route</label><select id='shottype' onChange='checkValues(false, false, false)'></select>
+            <select id='season' onChange='' style='display:none'>
+                <option>Spring</option>
+                <option>Summer</option>
+                <option>Autumn</option>
+                <option>Winter</option>
+            </select>
 			<div id='drcpoints'></div>
             <div id='error'></div>
 			<p><input type='button' onClick='javascript:drcPoints()' value='Calculate'></p>
@@ -86,7 +92,7 @@
                         <li>For a main game run, a shottype multiplier is applied to the result of the formula, the result of which is again rounded.
                         Click <a href='#shottypeMultipliers'>here</a> for the list of them.</li>
                         <li>The Phantasmagorias use a separate system. Click <a href='#phantasmagoria'>here</a> for said system.</li>
-                        <li>For IN, you obtain 2 (1 on Easy) additional points for each captured Last Spell, with the exception of Imperishable Shooting, which yields 5 points.
+                        <li>For IN, you obtain 2 (1 on Easy) additional points for each captured Last Spell, with the exception of Imperishable Shooting, which yields 5 points.</li>
                     </ul>
                 </p>
                 <table id='rubricsTable' align='center' class='noborders'>
