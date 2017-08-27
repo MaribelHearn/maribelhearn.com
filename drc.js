@@ -641,7 +641,7 @@
         "HSiFS": {
             "Easy": {
                 "base": 50,
-                "exp": 1.05,
+                "exp": 1.07,
                 "miss": 2,
                 "firstBomb": 2,
                 "bomb": 1,
