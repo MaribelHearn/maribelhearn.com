@@ -1077,7 +1077,7 @@ $(document).ready(function() {
 function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
     var game = $(GAME).val(), difficulty = $(DIFFICULTY).val(), challenge = $(CHALLENGE).val(), shottype = $(SHOTTYPE).val();
     
-    if (doubleSpoilerCheck) {
+    /*if (doubleSpoilerCheck) {
         if (game == "DS") {
             $(CHALLENGE).html("<option>Scoring</option>");
             $(DIFFICULTY).css("display", "none");
@@ -1085,7 +1085,7 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
             $(CHALLENGE).html("<option>Scoring</option><option>Survival</option>");
             $(DIFFICULTY).css("display", "inline");
         }
-    }
+    }*/
     
     if (challenge == "Survival") {
         if (game == "MoF" && shottype == "MarisaB") {
