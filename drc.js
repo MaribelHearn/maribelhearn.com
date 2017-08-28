@@ -646,7 +646,7 @@
                 "firstBomb": 2,
                 "bomb": 1,
                 "firstRelease": 2,
-                "release": 1
+                "release": 0.5
             },
             "Normal": {
                 "base": 100,
@@ -655,7 +655,7 @@
                 "firstBomb": 3,
                 "bomb": 1,
                 "firstRelease": 2,
-                "release": 1
+                "release": 0.5
             },
             "Hard": {
                 "base": 150,
@@ -664,7 +664,7 @@
                 "firstBomb": 4,
                 "bomb": 1,
                 "firstRelease": 2,
-                "release": 1
+                "release": 0.5
             },
             "Lunatic": {
                 "base": 315,
@@ -673,7 +673,7 @@
                 "firstBomb": 5,
                 "bomb": 1,
                 "firstRelease": 3,
-                "release": 1
+                "release": 0.5
             },
             "Extra": {
                 "base": 105,
@@ -681,6 +681,8 @@
                 "miss": 2,
                 "firstBomb": 3,
                 "bomb": 1,
+                "firstRelease": 2,
+                "release": 0.5
             },
             "multiplier": {
                 "Cirno": 1.15,
