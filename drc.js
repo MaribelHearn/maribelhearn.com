@@ -1425,7 +1425,7 @@ function generateRubrics() {
     
     for (game in SCORE_RUBRICS) {
         $(SCORING_TABLE).append("<tr>");
-        $(SCORING_TABLE).append(game == "HRtP" ? "<th>Game</th><th>Base points</th><th>Exponent</th>" : "<th></th><td></td><td></td>");
+        $(SCORING_TABLE).append(game == "HRtP" ? "<th>Game</th><th>Max points</th><th>Exponent</th>" : "<th></th><td></td><td></td>");
         $(SCORING_TABLE).append("</tr>");
         
         for (difficulty in SCORE_RUBRICS[game]) {
@@ -1437,11 +1437,11 @@ function generateRubrics() {
     for (game in SURV_RUBRICS) {
         if (isPhantasmagoria(game)) {
             $(PHANTASMAGORIA).append("<tr>");
-            $(PHANTASMAGORIA).append(game == "PoDD" ? "<th>Game</th><th>Base points</th><th>Min points</th><th>No Bomb bonus</th>" : "<th></th><td></td><td></td><td></td>");
+            $(PHANTASMAGORIA).append(game == "PoDD" ? "<th>Game</th><th>Max points</th><th>Min points</th><th>No Bomb bonus</th>" : "<th></th><td></td><td></td><td></td>");
             $(PHANTASMAGORIA).append("</tr>");
         } else {
             $(SURV_TABLE).append("<tr>");
-            $(SURV_TABLE).append(game == "SoEW" ? "<th>Game</th><th>Base points</th><th>Exponent</th><th>Lost life (n)</th>" +
+            $(SURV_TABLE).append(game == "SoEW" ? "<th>Game</th><th>Max points</th><th>Base</th><th>Lost life (n)</th>" +
             "<th>First bomb (n)</th><th>Further bombs (n)</th>" : "<th></th><td></td><td></td><td></td><td></td><td></td>");
             $(SURV_TABLE).append("</tr>");
         }
