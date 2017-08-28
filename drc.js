@@ -1451,7 +1451,7 @@ function generateRubrics() {
             
             if (difficulty == "multiplier" || difficulty == "seasonMultiplier") {
                 $(SHOTTYPE_MULTIPLIERS).append("<tr>");
-                $(SHOTTYPE_MULTIPLIERS).append(game == "SoEW" ? "<th>Game and shottype</th><th>Multiplier</th><" : "<th></th><td></td>");
+                $(SHOTTYPE_MULTIPLIERS).append(game == "SoEW" ? "<th>Shottype</th><th>Multiplier</th><" : "<th></th><td></td>");
                 $(SHOTTYPE_MULTIPLIERS).append("</tr>");
                 
                 for (shottype in rubric) {
