@@ -1125,6 +1125,10 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
             }
         }
         
+        if (game == "HSiFS" && $(DIFFICULTY).val() != "Extra") {
+            $(SEASON).css("display", "inline");
+        }
+        
         if (challenge == "Survival") {
             var survOptions = MISSES_INPUT;
             
@@ -1186,12 +1190,6 @@ function checkShottypes(alwaysChange) {
     
     if (alwaysChange) {
         $(SHOTTYPE).html(shottypeList);
-        
-        if (game == "HSiFS") {
-            $(SEASON).css("display", "inline");
-        } else {
-            $(SEASON).css("display", "none");
-        }
     }
     
     if (game == "GFW" && difficulty == "Extra") {
@@ -1200,12 +1198,6 @@ function checkShottypes(alwaysChange) {
     } else if (noShottypes) {
         $(SHOTTYPE).html(shottypeList);
         noShottypes = false;
-        
-        if (game == "HSiFS") {
-            $(SEASON).css("display", "inline");
-        } else {
-            $(SEASON).css("display", "none");
-        }
     }
 }
 
