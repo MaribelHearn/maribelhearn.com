@@ -1118,8 +1118,6 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
             $(NOTIFY).html(NOTIFY_TEXT + "manual trances count as bombs (that is, trances from pressing C).");
         } else if (game == "PCB") {
             $(NOTIFY).html(NOTIFY_TEXT + "border breaks count as bombs (even if they are accidental).");
-        } else if (game == "HSiFS") {
-            $(NOTIFY).html(NOTIFY_TEXT + "the way releases are factored in is preliminary and thus subject to change.");
         } else {
             $(NOTIFY).html("");
         }
