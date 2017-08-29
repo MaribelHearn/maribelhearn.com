@@ -1022,6 +1022,28 @@
                 "base": 450,
                 "exp": 2.5
             }
+        },
+        "HSiFS": {
+            "Easy": {
+                "base": 300,
+                "exp": 4
+            },
+            "Normal": {
+                "base": 350,
+                "exp": 3
+            },
+            "Hard": {
+                "base": 400,
+                "exp": 3
+            },
+            "Lunatic": {
+                "base": 450,
+                "exp": 2
+            },
+            "Extra": {
+                "base": 350,
+                "exp": 3
+            }
         }
     },
     MAX_LAST_SPELLS = {
@@ -1395,6 +1417,18 @@ function scoringPoints(rubric, game, difficulty, shottype) {
             wr = wr["MarisaB"][0];
         } else if (difficulty == "Lunatic" || difficulty == "Extra") {
             wr = wr["MarisaA"][0];
+        }
+    } else if (game == "HSiFS") {
+        wr = WRs[game][difficulty];
+        
+        if (difficulty == "Easy") {
+            wr = wr["CirnoSummer"][0];
+        } else if (difficulty == "Normal" || difficulty == "Lunatic") {
+            wr = wr["AyaAutumn"][0];
+        } else if (difficulty == "Hard") {
+            wr = wr["MarisaAutumn"][0];
+        } else if (difficulty == "Extra") {
+            wr = wr["Cirno"][0];
         }
     } else {
         wr = WRs[game][difficulty][shottype][0];
