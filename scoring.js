@@ -2513,7 +2513,7 @@ var WRs = {
         "http://score.royalflare.net/th15/replay15/th15_ud029d.rpy"
       ],
       "Reisen": [
-        2922020800,
+        3007972150,
         "HUF",
         ""
       ]
