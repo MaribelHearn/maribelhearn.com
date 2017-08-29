@@ -1365,7 +1365,7 @@ function generateText(firstTime) {
         
         generateRubrics();
         $(IMP_NOT).html("重要通知:");
-        $(IMP_NOT_TEXT + "0").html("魔理沙Bのバグは使用できない。");
+        $(IMP_NOT_TEXT + "0").html("魔理沙Bのバグを使ってはいけまでん。");
         $(IMP_NOT_TEXT + "1").html("<em>manual</em> trances count as bombs (that is, trances from pressing C).");
         $(IMP_NOT_TEXT + "2").html("border breaks count as bombs <em>even if they are accidental</em>.");
         $(LOST_LIFE).html("ミス (n)");
@@ -1435,7 +1435,7 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
             if (language == "English") {
                 text = "<span id='impNotText0'>usage of the MarisaB damage bug is BANNED in survival.</span>";
             } else {
-                text = "<span id='impNotText0'>魔理沙Bのバグは使用できない。</span>";
+                text = "<span id='impNotText0'>魔理沙Bのバグを使ってはいけまでん。</span>";
             }
             
             $(NOTIFY).html(notifyText + text);
