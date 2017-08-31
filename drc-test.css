@@ -1,5 +1,5 @@
 body {
-	background: url('./bg/drc.jpg') top;
+	background: url('bg/drc.jpg') top;
 }
 table, tr, th, td {
     border: 1px solid black;
