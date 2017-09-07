@@ -1,0 +1,50 @@
+body {
+	background: url('c67/title.png') top;
+}
+div {
+    background-color: #FFFFFF;
+}
+h1 {
+    font: 48px monotype corsiva;
+}
+h2 {
+    font: 36px monotype corsiva;
+}
+h3 {
+    font: 24px monotype corsiva;
+}
+#wrap {
+    border: 1px solid black;
+    text-align: center;
+    margin-left: 23%;
+    margin-right: 23%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    opacity: 0.8;
+    font: 14px verdana, sans-serif;
+}
+p {
+    font: 14px verdana, sans-serif;
+}
+.description {
+    font-size: 12px;
+}
+table, tr, th, td {
+    border: 1px solid black;
+}
+.noborder {
+    border: none;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
+    #wrap {
+	    margin-left: 0%;
+	    margin-right: 0%;
+	}
+}
+@media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
+    #wrap {
+	    margin-left: 0%;
+	    margin-right: 0%;
+	}
+}
