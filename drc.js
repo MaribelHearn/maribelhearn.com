@@ -1126,6 +1126,7 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
     
     if (changePerformance) {
         $(ROUTE).css("display", "none");
+        $(SEASON).css("display", "none");
         
         if (changeShottypes) {
             if (game == "PCB") {
