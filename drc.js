@@ -337,8 +337,8 @@
                 "Reisen": 1.05,
                 "Lyrica": 1.05,
                 "Tewi": 1.05,
-                "Aya": 0.8,
-                "Medicine": 0.8,
+                "Aya": 0.5,
+                "Medicine": 0.5,
                 "Yuuka": 1.05
             }
         },
