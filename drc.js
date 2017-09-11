@@ -1242,7 +1242,7 @@ function drcPoints() {
         shottypeMultiplier = (SURV_RUBRICS[game].multiplier[shottype] ? SURV_RUBRICS[game].multiplier[shottype] : 1);
         points = (isPhantasmagoria(game) ? phantasmagoria(rubric, game, difficulty, shottypeMultiplier) : survivalPoints(rubric, game, difficulty, shottypeMultiplier));
     } else {
-        if (!SCORE_RUBRICS[game]) {
+        if (!(game == "MoF" && difficulty == "Lunatic") && !SCORE_RUBRICS[game]) {
             $(ERROR).html(ERROR_TEXT + "the scoring rubrics for this game are undetermined as of now.</b>");
             $(DRCPOINTS).html("Your DRC points for this run: <b>0</b>!");
             return;
