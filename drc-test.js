@@ -1592,7 +1592,7 @@ function drcPoints() {
         shottypeMultiplier = (SURV_RUBRICS[game].multiplier[shottype] ? SURV_RUBRICS[game].multiplier[shottype] : 1);
         points = (isPhantasmagoria(game) ? phantasmagoria(rubric, game, difficulty, shottypeMultiplier) : survivalPoints(rubric, game, difficulty, shottypeMultiplier));
     } else {
-        if (!SCORE_RUBRICS[game]) {
+        if (!(game == "MoF" && difficulty == "Lunatic") && !SCORE_RUBRICS[game]) {
             $(ERROR).html(ERROR_TEXT + "the scoring rubrics for this game are undetermined as of now.</b>");
             $(DRCPOINTS).html((language == "English" ? "Your DRC points for this run" : "DRCポイント") + ": <b>0</b>!");
             return;
@@ -1747,7 +1747,7 @@ function scoringPoints(rubric, game, difficulty, shottype) {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), wr;
     
     if (isNaN(score)) {
-        $(ERROR).html(ERROR_TEXT + "invalid score.</b>");
+        $(ERROR).html(ERROR_TEXT + (language == "English" ? "invalid score.</b>" : "無効のスコア。</b>");
         return 0;
     } else {
         $(ERROR).html("");
