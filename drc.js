@@ -1324,7 +1324,7 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
         }
     }
     
-    if (difficulty != "Extra") {
+    if (difficulty != "Extra" && difficulty != "Phantasm") {
         if (game == "HSiFS" && Number($(RELEASES).val()) === 0) {
             season = $(SEASON).val();
             seasonMultiplier = (SURV_RUBRICS[game].seasonMultiplier[season] ? SURV_RUBRICS[game].seasonMultiplier[season] : 1);
