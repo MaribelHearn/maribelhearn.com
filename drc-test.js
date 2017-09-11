@@ -1747,7 +1747,7 @@ function scoringPoints(rubric, game, difficulty, shottype) {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), wr;
     
     if (isNaN(score)) {
-        $(ERROR).html(ERROR_TEXT + (language == "English" ? "invalid score.</b>" : "無効のスコア。</b>");
+        $(ERROR).html(ERROR_TEXT + (language == "English" ? "invalid score.</b>" : "無効のスコア。</b>"));
         return 0;
     } else {
         $(ERROR).html("");
