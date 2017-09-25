@@ -1347,13 +1347,13 @@ function generateText(firstTime) {
         $(SCORING_NOTES).html("稼ぎのノート");
         $(SURV_NOTES).html("サバイバルのノート");
         $(NEW_WR).html("新しい世界記録が起こすと、あのプレイヤーは最大点をもらいます。");
-        $(MOF_SEPARATE).html("風神録が別のシステムを使います。 <a href='#mountainOfFaith'>ここをクリック</a>そのシステムのために。");
+        $(MOF_SEPARATE).html("東方風神録が別のシステムを使います。 <a href='#mountainOfFaith'>ここをクリック</a>そのシステムのために。");
         $(MAINGAME).html("ENHLクリアから、DRCポイントでキャラの倍率が適用されて、切り上げます。 リストを見せたいと<a href='#shottypeMultipliers'>ここをクリック</a>する。");
         $(PHANTASMAGORIA_SEPARATE).html("夢時空や花映塚も別のシステムを使う。 <a href='#phantasmagoria'>ここをクリック</a>そのシステムのために。");
-        $(IN_LS).html("永夜抄には、それぞれの最後のスペカは2点を与える。 Easy最後のスペカは1点を与える。 「インペリシャブルシューティング」取得をことは5点を与える。");
+        $(IN_LS).html("東方永夜抄にはそれぞれの最後のスペカは2点を与える。 Easy最後のスペカは1点を与える。 「インペリシャブルシューティング」取得をことは5点を与える。");
         $(HSIFS_RELEASES).html("For HSiFS, the first release adds 2 to <em>n</em> (3 on Lunatic), and further releases add 0.5 to <em>n</em>.");
-        $(POFV_SURV).html("夢時空のサバイバル&花映塚のサバイバル");
-        $(MOFAITH).html("風神録の稼ぎ");
+        $(POFV_SURV).html("東方夢時空のサバイバル&花映塚のサバイバル");
+        $(MOFAITH).html("東方風神録の稼ぎ");
         $(SHOT_MULT).html("キャラの倍率");
         $(SCORE_FORMULA).html("||最大点 * (スコア / 世界記録) ^ 冪指数||");
         $(SURV_FORMULA).html("||最大点 * (底 ^ -n)||");
@@ -1411,7 +1411,7 @@ function generateText(firstTime) {
         "この二週間で、競技者はリプレイを出して下さい。 大会が終わった後で、リプレイを出すはいけません。");
         $(DRC_INTRO_PTS).html("リプレイは幾つDRCポイントが稼ぐが知りたいなら、下のカルキュレーターを使ったもいいです。");
         $(DRC_SCORES).html("スコアは桁、カンマ、ドット、スペースを含めることができる。 サバイバルからクリアをしなければいけません。 稼ぎからクリアをしなくてもいいです。");
-        $(RUBRICS_EXPL).html("ルーブリックは、実行のDRCポイントの数を計算するために使用される式および固定値です。 ポイントの決定方法が不明な場合は、下のボタンをクリックして展開して下さい。");
+        $(RUBRICS_EXPL).html("ルーブリックは実行のDRCポイントの数を計算するために使用される式および固定値です。 ポイントの決定方法が不明な場合は、下のボタンをクリックして展開して下さい。");
     }
 }
 
@@ -1443,7 +1443,7 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
             if (language == "English") {
                 text = "<span id='impNotText1'><em>manual</em> trances count as bombs (that is, trances from pressing C).</span>";
             } else {
-                text = "<span id='impNotText1'><em>manual</em> trances count as bombs (that is, trances from pressing C).</span>";
+                text = "<span id='impNotText1'>Cキー押下による手動トランスはボムとして扱います。</span>";
             }
             
             $(NOTIFY).html(notifyText + text);
@@ -1451,7 +1451,7 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
             if (language == "English") {
                 text = "<span id='impNotText2'>border breaks count as bombs <em>even if they are accidental</em>.</span>";
             } else {
-                text = "<span id='impNotText2'>border breaks count as bombs <em>even if they are accidental</em>.</span>";
+                text = "<span id='impNotText2'>霊撃は偶発的なものであってもボムとして扱います。</span>";
             }
             
             $(NOTIFY).html(notifyText + text);
