@@ -1,0 +1,22 @@
+body {
+	background: url('./bg/index.png') top;
+    font: 16px times new roman;
+}
+div {
+    background-color: #FFFFFF;
+}
+h1 {
+    font: 48px times new roman;
+}
+#wrap {
+    border: 1px solid black;
+    text-align: center;
+    margin-left: 23%;
+    margin-right: 23%;
+    margin-top: 7%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    opacity: 0.8;
+    font: 14px verdana, sans-serif;
+}
