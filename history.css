@@ -60,7 +60,7 @@ table, tr, th, td {
 #Achievements {
 	margin-left: 30%; /* 566px */
 	margin-right: 0px;
-	width: 100%;
+	width: auto;
 }
 .calendar-box {
 	display: none;
@@ -115,7 +115,6 @@ table, tr, th, td {
 	#Achievements {
 		margin-left: 0px;
 		margin-right: 0px;
-		width: 100%;
 	}
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
@@ -128,7 +127,6 @@ table, tr, th, td {
 	#Achievements {
 		margin-left: 0px;
 		margin-right: 0px;
-		width: 100%;
 	}
 }
 @media only screen and (min-width: 801px) and (max-width: 1159px) {
@@ -138,7 +136,6 @@ table, tr, th, td {
     #Achievements {
         margin-left: 20%;
         margin-right: 0px;
-        width: 75%;
     }
     .list {
         width: 150px;

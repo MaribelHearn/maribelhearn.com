@@ -88,6 +88,21 @@ function showTouhou() {
 	}
 }
 
+function showFanmemes() {
+	var divList = document.getElementsByTagName("div");
+	
+	for (var i in divList) {
+		if (!divList[i].id) {
+			continue;
+		}
+		if (divList[i] && !exceptions.contains(divList[i].id)) {
+			divList[i].style.display = "none";
+		}
+	}
+	
+    document.getElementById("SSS").style.display = "block";
+}
+
 function showDoujin() {
 	var divList = document.getElementsByTagName("div");
 	
