@@ -2,25 +2,27 @@
 <html lang='en'>
 
 	<head>
-		<title>Maribel's Survival Checker</title>
+		<title>Survival Progress Table Generator</title>
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
 		<link rel='stylesheet' type='text/css' href='survival.css'>
+		<link rel='icon' type='image/x-icon' href='survival.ico'>
         <script src='sorttable.js'></script>
 		<script src='survival.js'></script>
 		<script src='jquery.js'></script>
 		<script src='utils.js'></script>
 	</head>
 	
-	<body onLoad='javascript:load()'>
-		<div class='wrap'>
-			<h1>Survival Checker</h1>
+	<body>
+		<div id='wrap'>
+			<h1>Survival Progress Table Generator</h1>
 			<p>Fill in the best survivals you have pulled off in the table below. If you leave a dropdown menu on the N/A option, it will not be factored in.
             At the bottom of the page, three different tables indicating your survival progress will be printed.</p>
             <p>NM = No Miss (no deaths), NB = No Bomb, NN = No Miss No Bomb, NNN = NN with a third restriction depending on the game.
             In PCB this restriction is No Border Breaks, in UFO it is No UFO Summons and in TD it is No Trance.
             The Phantasm Stage counts as another Extra Stage.</p>
             <p>Use the below selectors to fill up many achievements at once. Normal, Hard and Lunatic will also fill the difficulties below them.</p>
+            <p>To allow for proper screenshots, the background for the tables is not transparent.</p>
             <p>
                 <label for='fillGameDifficulty'>Game / Difficulty</label>
                 <select id='fillGameDifficulty'>
@@ -935,6 +937,65 @@
                             <option>NM</option>
                             <option>NB</option>
                             <option>NN</option>
+                        </select>
+                    </td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>HSiFS</td>
+                    <td>
+                        <select id='HSiFSEasy'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                            <option>NNN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='HSiFSNormal'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                            <option>NNN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='HSiFSHard'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                            <option>NNN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='HSiFSLunatic'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                            <option>NNN</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='HSiFSExtra'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NN</option>
+                            <option>NNN</option>
                         </select>
                     </td>
                     <td>N/A</td>

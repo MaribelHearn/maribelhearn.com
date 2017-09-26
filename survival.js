@@ -1,10 +1,4 @@
-﻿var load = function () {
-    var random = rand(1, 8);
-    document.body.style.background = "url('./bg/" + random + ".png')";
-};
-
-
-var games = {
+﻿var games = {
     "HRtP": ["Easy", "Normal", "Hard", "Lunatic"],
     "SoEW": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
     "PoDD": ["Easy", "Normal", "Hard", "Lunatic"],
@@ -20,11 +14,12 @@ var games = {
     "GFW": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
     "TD": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
     "DDC": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
-    "LoLK": ["Easy", "Normal", "Hard", "Lunatic", "Extra"]
+    "LoLK": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
+    "HSiFS": ["Easy", "Normal", "Hard", "Lunatic", "Extra"]
 };
 
 var isTripleNGame = function (game) {
-    return game == "PCB" || game == "UFO" || game == "TD";
+    return game == "PCB" || game == "UFO" || game == "TD" || game == "HSiFS";
 };
 
 var fillAll = function (value, achievement) {
@@ -131,7 +126,8 @@ var apply = function () {
             "GFW": 0,
             "TD": 0,
             "DDC": 0,
-            "LoLK": 0
+            "LoLK": 0,
+            "HSiFS": 0
         }
         completions = {
             "HRtP": 0,
@@ -149,7 +145,8 @@ var apply = function () {
             "GFW": 0,
             "TD": 0,
             "DDC": 0,
-            "LoLK": 0
+            "LoLK": 0,
+            "HSiFS": 0
         };
     
     for (game in games) {
@@ -235,7 +232,7 @@ var apply = function () {
         results += "<tr><td>" + game + "</td><td>" + Math.round(completions[game]) + "%</td></tr>";
     }
     
-    results += "</tbody></table>";
+    results += "</tbody></table><br>";
     
     $("#results").html(results);
     $("#table").attr("align", "center");

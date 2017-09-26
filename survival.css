@@ -1,3 +1,6 @@
+body {
+	background: url('bg/survival.jpg') top;
+}
 table, tr, th, td {
     border: 1px solid black;
 }
@@ -10,7 +13,7 @@ h1 {
 h2 {
     font: 36px monotype corsiva;
 }
-.wrap {
+#wrap {
     border: 1px solid black;
     text-align: center;
     margin-left: 25%;
@@ -18,8 +21,12 @@ h2 {
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 15px;
-    opacity: 0.8;
+    background-color: rgba(255, 255, 255, 0.8);
     font: 14px verdana, sans-serif;
+}
+#results {
+    border: 1px solid black;
+    background-color: rgba(255, 255, 255, 1);
 }
 .overview {
     width: 80px;
