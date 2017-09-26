@@ -1,0 +1,173 @@
+body {
+	background: url('./games/eosdbig.jpg') top;
+    font: 16px times new roman;
+}
+table, tr, th, td {
+	border: 3px solid hotpink;
+	text-align: center;
+}
+.hidden {
+    border: none;
+    text-align: left;
+}
+.list {
+	width: 250px;
+}
+.overview {
+    width: 80px;
+}
+.attempted {
+    background-color: orange;
+}
+.clear {
+    background-color: green;
+}
+.nm {
+    background-color: brown;
+}
+.nb {
+    background-color: blue;
+}
+.nmnb {
+    background-color: purple;
+}
+.g {
+	color: green;
+	font-weight: bold;
+}
+.y {
+	background-color: green;
+}
+.r {
+	background-color: red;
+}
+.v {
+	font-weight: bold;
+}
+.i {
+	color: black;
+}
+.cover {
+	width: 300px;
+	height: 300px;
+}
+#Title {
+	text-align: center;
+}
+#GamesLeft, #GamesRight {
+	float: left;
+}
+#Achievements {
+	margin-left: 30%; /* 566px */
+	margin-right: 0px;
+	width: 100%;
+}
+.calendar-box {
+	display: none;
+	background-color: #fff;
+	border: 1px solid #444;
+	position: absolute;
+	width: 250px;
+	padding: 0 5px;
+}
+.calendar-box select.calendar-month {
+	width: 90px;
+}
+.calendar-box select.calendar-year {
+	width: 70px;
+}
+.calendar-box .calendar-cancel {
+	width: 100%;
+}
+.calendar-box table td {
+	width: 14%;
+}
+.calendar-box .calendar-title {
+	text-align: center;
+}
+.calendar-box a {
+	text-decoration: none;
+}
+.calendar-box .today a {
+	padding: 0 5px;
+	margin-left: -5px;
+	background-color: #ffe9c6;
+} 
+.calendar-box .selected a {
+	padding: 0 5px;
+	margin-left: -5px;
+	background-color: #c9ff8b;
+}
+/*@media screen and (max-width: 1000px) {
+	#Achievements {
+		margin-left: 28%; /* 283px
+		margin-right: auto;
+		width: 50%;
+	}
+}*/
+@media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
+	.list {
+		width: 100%;
+	}
+	#GamesLeft, #GamesRight, #Links {
+		float: none;
+	}
+	#Achievements {
+		margin-left: 0px;
+		margin-right: 0px;
+		width: 100%;
+	}
+}
+@media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
+	.list {
+		width: 100%;
+	}
+	#GamesLeft, #GamesRight, #Links {
+		float: none;
+	}
+	#Achievements {
+		margin-left: 0px;
+		margin-right: 0px;
+		width: 100%;
+	}
+}
+@media only screen and (min-width: 801px) and (max-width: 1159px) {
+    body {
+        font-size: 12px;
+    }
+    #Achievements {
+        margin-left: 20%;
+        margin-right: 0px;
+        width: 75%;
+    }
+    .list {
+        width: 150px;
+    }
+}
+@media only screen and (min-width: 1160px) and (max-width: 1279px) {
+    body {
+        font-size: 14px;
+    }
+    #Achievements {
+        margin-left: 35%;
+    }
+    .list {
+        width: 175px;
+    }
+}
+@media only screen and (min-width: 1280px) and (max-width: 1499px) {
+    #Achievements {
+        margin-left: 35%;
+    }
+    .list {
+        width: 200px;
+    }
+}
+@media only screen and (min-width: 1500px) and (max-width: 1725px) {
+    #Achievements {
+        margin-left: 32%;
+    }
+    .list {
+        width: 225px;
+    }
+}
