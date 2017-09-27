@@ -12,3 +12,15 @@ var sep = function (number) {
     }
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 };
+
+String.prototype.contains = function (string) {
+    return this.indexOf(string) > -1;
+};
+
+Object.defineProperty(Array.prototype, "contains", {
+    configurable: true,
+    enumerable: false,
+    value: function (value) {
+        return this.indexOf(value) > -1;
+    }
+});
