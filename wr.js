@@ -3,6 +3,10 @@ var all = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "Mo
     untracked = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "PoFV"],
     WRs;
 
+$.get("wrlist.json", function(data) {
+    WRs = data;
+}, "json");
+
 function bestSeason(difficulty, shottype) {
     var shottypes = WRs.HSiFS[difficulty], max = 0, season, i;
     
@@ -22,10 +26,6 @@ function bestSeason(difficulty, shottype) {
 
 $(document).ready(function() {
     var game, max, difficulty, bestshotmax, shottypes, shottype, wr, overall, overallplayer, overallseason, bestshot, bestshotplayer, bestshotseason, text;
-    
-    $.get("wrlist.json", function(data) {
-        WRs = data;
-    }, "json");
     
     for (game in WRs) {
         max = 0;
