@@ -1,11 +1,10 @@
-var all = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
-    tracked = ["EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
-    untracked = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "PoFV"],
-    WRs;
-
 $.get("wrlist.json", function(data) {
     WRs = data;
 }, "json");
+
+var all = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
+    tracked = ["EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
+    untracked = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "PoFV"];
 
 function bestSeason(difficulty, shottype) {
     var shottypes = WRs.HSiFS[difficulty], max = 0, season, i;
@@ -23,49 +22,6 @@ function bestSeason(difficulty, shottype) {
     
     return season;
 }
-
-$(document).ready(function() {
-    var game, max, difficulty, bestshotmax, shottypes, shottype, wr, overall, overallplayer, overallseason, bestshot, bestshotplayer, bestshotseason, text;
-    
-    for (game in WRs) {
-        max = 0;
-        
-        for (difficulty in WRs[game]) {
-            bestshotmax = 0;
-            shottypes = (game == "HSiFS" ? {"Reimu": "", "Cirno": "", "Aya": "", "Marisa": ""} : WRs[game][difficulty]);
-            
-            for (shottype in shottypes) {
-                season = (game == "HSiFS" ? bestSeason(difficulty, shottype) : "");
-                wr = WRs[game][difficulty][shottype + season];
-                
-                if (wr[0] > max) {
-                    overall = "#" + game + difficulty + shottype;
-                    overallplayer = wr[1];
-                    overallseason = season;
-                    max = wr[0];
-                }
-                
-                if (wr[0] > bestshotmax) {
-                    bestshot = "#" + game + difficulty + shottype;
-                    bestshotplayer = wr[1];
-                    bestshotseason = season;
-                    bestshotmax = wr[0];
-                }
-                
-                text = sep(wr[0]) + "<br>by <em>" + wr[1] + "</em>";
-                wr[0] > 0 ? $("#" + game + difficulty + shottype).html(text + (game == "HSiFS" && difficulty != "Extra" ? " (" + season + ")" : "")) : $("#" + game + difficulty + shottype).html('-');
-            }
-            
-            $(bestshot).html("<u>" + sep(bestshotmax) + "</u><br>by <em>" + bestshotplayer + "</em>" + (game == "HSiFS" && difficulty != "Extra" ? " (" + bestshotseason + ")" : ""));
-        }
-        
-        $(overall).html($(overall).html().replace("<u>", "<u><strong>").replace("</u>", "</strong></u>"));
-        
-        if (!$("#" + game + "c").is(":checked")) {
-            hide(game);
-        }
-    }
-});
 
 function show(game) {
     $("#" + game).css("display", "block");
@@ -122,3 +78,46 @@ function checkAll() {
         checked ? show(all[key]) : hide(all[key]);
     }
 }
+
+$(document).ready(function() {
+    var game, max, difficulty, bestshotmax, shottypes, shottype, wr, overall, overallplayer, overallseason, bestshot, bestshotplayer, bestshotseason, text;
+    
+    for (game in WRs) {
+        max = 0;
+        
+        for (difficulty in WRs[game]) {
+            bestshotmax = 0;
+            shottypes = (game == "HSiFS" ? {"Reimu": "", "Cirno": "", "Aya": "", "Marisa": ""} : WRs[game][difficulty]);
+            
+            for (shottype in shottypes) {
+                season = (game == "HSiFS" ? bestSeason(difficulty, shottype) : "");
+                wr = WRs[game][difficulty][shottype + season];
+                
+                if (wr[0] > max) {
+                    overall = "#" + game + difficulty + shottype;
+                    overallplayer = wr[1];
+                    overallseason = season;
+                    max = wr[0];
+                }
+                
+                if (wr[0] > bestshotmax) {
+                    bestshot = "#" + game + difficulty + shottype;
+                    bestshotplayer = wr[1];
+                    bestshotseason = season;
+                    bestshotmax = wr[0];
+                }
+                
+                text = sep(wr[0]) + "<br>by <em>" + wr[1] + "</em>";
+                wr[0] > 0 ? $("#" + game + difficulty + shottype).html(text + (game == "HSiFS" && difficulty != "Extra" ? " (" + season + ")" : "")) : $("#" + game + difficulty + shottype).html('-');
+            }
+            
+            $(bestshot).html("<u>" + sep(bestshotmax) + "</u><br>by <em>" + bestshotplayer + "</em>" + (game == "HSiFS" && difficulty != "Extra" ? " (" + bestshotseason + ")" : ""));
+        }
+        
+        $(overall).html($(overall).html().replace("<u>", "<u><strong>").replace("</u>", "</strong></u>"));
+        
+        if (!$("#" + game + "c").is(":checked")) {
+            hide(game);
+        }
+    }
+});
