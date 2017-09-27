@@ -1,5 +1,5 @@
 body {
-	background: url('bg/jargon.jpg') top no-repeat;
+	background: url('bg/jargon.jpg') top no-repeat fixed;
 }
 div {
     background-color: #FFFFFF;
