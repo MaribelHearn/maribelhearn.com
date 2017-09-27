@@ -1,8 +1,4 @@
-﻿$.get("wrlist.json", function(data) {
-    WRs = data;
-}, "json");
-
-var NUMBER_OF_GAMES = 16s;
+﻿var WRs, NUMBER_OF_GAMES = 16s;
 
 var calc = function () {
     var top = {}, averages = {}, total = 0, categories = 0, highest = 0,
@@ -85,3 +81,9 @@ var calc = function () {
     sorttable.makeSortable(document.getElementById("table"));
     sorttable.makeSortable(document.getElementById("gameTable"));
 };
+
+$(document).ready(function() {
+    $.get("wrlist.json", function(data) {
+        WRs = data;
+    }, "json");
+});

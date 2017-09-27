@@ -1,8 +1,4 @@
-$.get("wrlist.json", function(data) {
-    WRs = data;
-}, "json");
-
-var all = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
+var WRs, all = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
     tracked = ["EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
     untracked = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "PoFV"];
 
@@ -80,6 +76,10 @@ function checkAll() {
 }
 
 $(document).ready(function() {
+    $.get("wrlist.json", function(data) {
+        WRs = data;
+    }, "json");
+    
     var game, max, difficulty, bestshotmax, shottypes, shottype, wr, overall, overallplayer, overallseason, bestshot, bestshotplayer, bestshotseason, text;
     
     for (game in WRs) {
