@@ -1,5 +1,5 @@
 body {
-	background: url('c67/title.png') top;
+	background: url('c67/title.png') top no-repeat fixed;
 }
 div {
     background-color: #FFFFFF;
