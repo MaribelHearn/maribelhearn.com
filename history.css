@@ -1,5 +1,5 @@
 body {
-	background: url('./games/eosdbig.jpg') top;
+	background: url('./games/eosdbig.jpg') top no-repeat;
     font: 16px times new roman;
 }
 table, tr, th, td {

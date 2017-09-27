@@ -1,5 +1,5 @@
 body {
-	background: url('bg/survival.jpg') top;
+	background: url('bg/survival.jpg') top no-repeat;
 }
 table, tr, th, td {
     border: 1px solid black;
