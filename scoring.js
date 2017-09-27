@@ -1,5 +1,9 @@
 ﻿var NUMBER_OF_GAMES = 16;
 
+$.get("wrlist.json", function(data) {
+    WRs = data;
+}, "json");
+
 var calc = function () {
     var top = {}, averages = {}, total = 0, categories = 0, highest = 0,
         game, difficulty, id, span, score, shottype, wr, percentage, average, key, i, table, gameTable, temp,
