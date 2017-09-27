@@ -1,4 +1,4 @@
-﻿var NUMBER_OF_GAMES = 16;
+﻿var NUMBER_OF_GAMES = 16, WRs;
 
 $.get("wrlist.json", function(data) {
     WRs = data;
