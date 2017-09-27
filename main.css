@@ -1,5 +1,5 @@
 body {
-	background: url('./bg/index.png') top no-repeat;
+	background: url('./bg/index.png') top no-repeat fixed fixed;
     font: 16px times new roman;
 }
 div {
