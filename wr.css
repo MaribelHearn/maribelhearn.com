@@ -27,6 +27,12 @@ table, th, td {
     opacity: 0.8;
     font: 14px verdana, sans-serif;
 }
+#wrap:after {
+    content: "\200C";
+    display: block;
+    line-height: 1em;
+    color: black;
+}
 #HRtPi, #SoEWi, #PoDDi, #LLSi, #MSi {
     border: 1px solid black;
 }
