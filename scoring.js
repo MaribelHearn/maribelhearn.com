@@ -1,4 +1,4 @@
-﻿var WRs, NUMBER_OF_GAMES = 16s;
+﻿var WRs, NUMBER_OF_GAMES = 16;
 
 var calc = function () {
     var top = {}, averages = {}, total = 0, categories = 0, highest = 0,

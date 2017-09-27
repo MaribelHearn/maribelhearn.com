@@ -1096,10 +1096,9 @@
 $(document).ready(function() {
     $.get("wrlist.json", function(data) {
         WRs = data;
+        checkValues(true, true, true);
+        generateRubrics();
     }, "json");
-    
-    checkValues(true, true, true);
-    generateRubrics();
 });
 
 function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
