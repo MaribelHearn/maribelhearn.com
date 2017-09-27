@@ -1106,11 +1106,10 @@
 $(document).ready(function() {
     $.get("wrlist.json", function(data) {
         WRs = data;
+        generateText(true);
+        checkValues(true, true, true);
+        generateRubrics();
     }, "json");
-    
-    generateText(true);
-    checkValues(true, true, true);
-    generateRubrics();
 });
 
 function japaneseCharNames(charName) {
