@@ -1,8 +1,8 @@
-﻿var NUMBER_OF_GAMES = 16, WRs;
-
-$.get("wrlist.json", function(data) {
+﻿$.get("wrlist.json", function(data) {
     WRs = data;
 }, "json");
+
+var NUMBER_OF_GAMES = 16s;
 
 var calc = function () {
     var top = {}, averages = {}, total = 0, categories = 0, highest = 0,
