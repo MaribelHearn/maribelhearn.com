@@ -11,14 +11,6 @@ String.prototype.toUnixTime = function () {
     return new Date(this).getTime();
 };
 
-Object.defineProperty(Array.prototype, "contains", {
-    configurable: true,
-    enumerable: false,
-    value: function (value) {
-        return this.indexOf(value) > -1;
-    }
-});
-
 $(document).ready(function() {
     calendar.set("calendar");
 	gamesLeft = document.getElementById("GamesLeft"),
