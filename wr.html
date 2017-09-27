@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+	<head>
+		<title>Touhou World Records</title>
+		<meta charset='UTF-8'>
+		<meta name='viewport' content='width=device-width'>
+		<link rel='stylesheet' type='text/css' href='wr.css'>
+		<script src='sorttable.js'></script>
+		<script src='wrlist.js'></script>
+		<script src='jquery.js'></script>
+		<script src='utils.js'></script>
+		<script src='wr.js'></script>
+	</head>
+	
+	<body>
+        <div id='wrap'>
+			<h1>Touhou World Records</h1>
+            <p>An accurate list of Touhou world records, updated every so often.</p>
+            <p>World records are current as of September 27, 2017.</p>
+            <h2>Contents</h2>
+            <table id='checkboxes' align='center'>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input id='HRtPc' type='checkbox' onClick='checkGame("HRtP")' checked>
+                            <label for='HRtPc'>HRtP</label>
+                        </td><td>
+                            <input id='EoSDc' type='checkbox' onClick='checkGame("EoSD")' checked>
+                            <label for='EoSDc'>EoSD</label>
+                        </td><td>
+                            <input id='SAc' type='checkbox' onClick='checkGame("SA")' checked>
+                            <label for='SAc'>SA</label>
+                        </td><td>
+                            <input id='LoLKc' type='checkbox' onClick='checkGame("LoLK")' checked>
+                            <label for='LoLKc'>LoLK</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id='SoEWc' type='checkbox' onClick='checkGame("SoEW")' checked>
+                            <label for='SoEWc'>SoEW</label>
+                        </td><td>
+                            <input id='PCBc' type='checkbox' onClick='checkGame("PCB")' checked>
+                            <label for='PCBc'>PCB</label>
+                        </td><td>
+                            <input id='UFOc' type='checkbox' onClick='checkGame("UFO")' checked>
+                            <label for='UFOc'>UFO</label>
+                        </td><td>
+                            <input id='HSiFSc' type='checkbox' onClick='checkGame("HSiFS")' checked>
+                            <label for='HSiFSc'>HSiFS</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id='PoDDc' type='checkbox' onClick='checkGame("PoDD")' checked>
+                            <label for='PoDDc'>PoDD</label>
+                        </td><td>
+                            <input id='INc' type='checkbox' onClick='checkGame("IN")' checked>
+                            <label for='INc'>IN</label>
+                        </td><td>
+                            <input id='GFWc' type='checkbox' onClick='checkGame("GFW")' checked>
+                            <label for='GFWc'>GFW</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id='LLSc' type='checkbox' onClick='checkGame("LLS")' checked>
+                            <label for='LLSc'>LLS</label>
+                        </td><td>
+                            <input id='PoFVc' type='checkbox' onClick='checkGame("PoFV")' checked>
+                            <label for='PoFVc'>PoFV</label>
+                        </td><td>
+                            <input id='TDc' type='checkbox' onClick='checkGame("TD")' checked>
+                            <label for='TDc'>TD</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id='MSc' type='checkbox' onClick='checkGame("MS")' checked>
+                            <label for='MSc'>MS</label>
+                        </td><td>
+                            <input id='MoFc' type='checkbox' onClick='checkGame("MoF")' checked>
+                            <label for='MoFc'>MoF</label>
+                        </td><td>
+                            <input id='DDCc' type='checkbox' onClick='checkGame("DDC")' checked>
+                            <label for='DDCc'>DDC</label>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>
+                            <input id='tracked' type='checkbox' onClick='checkTracked()'>
+                            <label for='tracked'>Tracked</label>
+                        </td><td>
+                            <input id='untracked' type='checkbox' onClick='checkUntracked()' checked>
+                            <label for='untracked'>Untracked</label>
+                        </td><td>
+                            <input id='all' type='checkbox' onClick='checkAll()' checked>
+                            <label for='all'>All</label>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div id='HRtP' style='display:block'>
+                <p><img id='HRtPi' src='games/hrtp.jpg' class='cover'> HRtP</p>
+                <table align='center' class='sortable'>
+                    <tr>
+                        <th>Route</th>
+                        <th class='sorttable_numeric'>Easy</th>
+                        <th class='sorttable_numeric'>Normal</th>
+                        <th class='sorttable_numeric'>Hard</th>
+                        <th class='sorttable_numeric'>Lunatic</th>
+                    </tr><tr>
+                        <td>Makai</td>
+                        <td id='HRtPEasyMakai'></td>
+                        <td id='HRtPNormalMakai'></td>
+                        <td id='HRtPHardMakai'></td>
+                        <td id='HRtPLunaticMakai'></td>
+                    </tr><tr>
+                        <td>Jigoku</td>
+                        <td id='HRtPEasyJigoku'></td>
+                        <td id='HRtPNormalJigoku'></td>
+                        <td id='HRtPHardJigoku'></td>
+                        <td id='HRtPLunaticJigoku'></td>
+                    </tr>
+                </table>
+            </div>
+            <div id='SoEW' style='display:block'>
+                <p><img id='SoEWi' src='games/soew.jpg' class='cover'> SoEW</p>
+                <table align='center' class='sortable'>
+                    <tr>
+                        <th>Shottype</th>
+                        <th class='sorttable_numeric'>Easy</th>
+                        <th class='sorttable_numeric'>Normal</th>
+                        <th class='sorttable_numeric'>Hard</th>
+                        <th class='sorttable_numeric'>Lunatic</th>
+                        <th class='sorttable_numeric'>Extra</th>
+                    </tr><tr>
+                        <td>ReimuA</td>
+                        <td id='SoEWEasyReimuA'></td>
+                        <td id='SoEWNormalReimuA'></td>
+                        <td id='SoEWHardReimuA'></td>
+                        <td id='SoEWLunaticReimuA'></td>
+                        <td id='SoEWExtraReimuA'></td>
+                    </tr><tr>
+                        <td>ReimuB</td>
+                        <td id='SoEWEasyReimuB'></td>
+                        <td id='SoEWNormalReimuB'></td>
+                        <td id='SoEWHardReimuB'></td>
+                        <td id='SoEWLunaticReimuB'></td>
+                        <td id='SoEWExtraReimuB'></td>
+                    </tr><tr>
+                        <td>ReimuC</td>
+                        <td id='SoEWEasyReimuC'></td>
+                        <td id='SoEWNormalReimuC'></td>
+                        <td id='SoEWHardReimuC'></td>
+                        <td id='SoEWLunaticReimuC'></td>
+                        <td id='SoEWExtraReimuC'></td>
+                    </tr>
+                </table>
+            </div>
+            <div id='PoDD' style='display:block'>
+                <p><img id='PoDDi' src='games/podd.jpg' class='cover'> PoDD</p>
+                <table align='center' class='sortable'>
+                    <tr>
+                        <th>Shottype</th>
+                        <th class='sorttable_numeric'>Easy</th>
+                        <th class='sorttable_numeric'>Normal</th>
+                        <th class='sorttable_numeric'>Hard</th>
+                        <th class='sorttable_numeric'>Lunatic</th>
+                    </tr><tr>
+                        <td>Reimu</td>
+                        <td id='PoDDEasyReimu'></td>
+                        <td id='PoDDNormalReimu'></td>
+                        <td id='PoDDLunaticReimu'></td>
+                        <td id='PoDDHardReimu'></td>
+                    </tr><tr>
+                        <td>Mima</td>
+                        <td id='PoDDEasyMima'></td>
+                        <td id='PoDDNormalMima'></td>
+                        <td id='PoDDHardMima'></td>
+                        <td id='PoDDLunaticMima'></td>
+                    </tr><tr>
+                        <td>Marisa</td>
+                        <td id='PoDDEasyMarisa'></td>
+                        <td id='PoDDNormalMarisa'></td>
+                        <td id='PoDDHardMarisa'></td>
+                        <td id='PoDDLunaticMarisa'></td>
+                    </tr><tr>
+                        <td>Ellen</td>
+                        <td id='PoDDEasyEllen'></td>
+                        <td id='PoDDNormalEllen'></td>
+                        <td id='PoDDHardEllen'></td>
+                        <td id='PoDDLunaticEllen'></td>
+                    </tr><tr>
+                        <td>Kotohime</td>
+                        <td id='PoDDEasyKotohime'></td>
+                        <td id='PoDDNormalKotohime'></td>
+                        <td id='PoDDHardKotohime'></td>
+                        <td id='PoDDLunaticKotohime'></td>
+                    </tr><tr>
+                        <td>Kana</td>
+                        <td id='PoDDEasyKana'></td>
+                        <td id='PoDDNormalKana'></td>
+                        <td id='PoDDHardKana'></td>
+                        <td id='PoDDLunaticKana'></td>
+                    </tr><tr>
+                        <td>Rikako</td>
+                        <td id='PoDDEasyRikako'></td>
+                        <td id='PoDDNormalRikako'></td>
+                        <td id='PoDDHardRikako'></td>
+                        <td id='PoDDLunaticRikako'></td>
+                    </tr><tr>
+                        <td>Chiyuri</td>
+                        <td id='PoDDEasyChiyuri'></td>
+                        <td id='PoDDNormalChiyuri'></td>
+                        <td id='PoDDHardChiyuri'></td>
+                        <td id='PoDDLunaticChiyuri'></td>
+                    </tr><tr>
+                        <td>Yumemi</td>
+                        <td id='PoDDEasyYumemi'></td>
+                        <td id='PoDDNormalYumemi'></td>
+                        <td id='PoDDHardYumemi'></td>
+                        <td id='PoDDLunaticYumemi'></td>
+                    </tr>
+                </table>
+            </div>
+            <div id='LLS' style='display:block'>
+                <p><img id='LLSi' src='games/lls.jpg' class='cover'> LLS</p>
+                <table align='center' class='sortable'>
+                    <tr>
+                        <th>Shottype</th>
+                        <th class='sorttable_numeric'>Easy</th>
+                        <th class='sorttable_numeric'>Normal</th>
+                        <th class='sorttable_numeric'>Hard</th>
+                        <th class='sorttable_numeric'>Lunatic</th>
+                        <th class='sorttable_numeric'>Extra</th>
+                    </tr><tr>
+                        <td>ReimuA</td>
+                        <td id='LLSEasyReimuA'></td>
+                        <td id='LLSNormalReimuA'></td>
+                        <td id='LLSLunaticReimuA'></td>
+                        <td id='LLSHardReimuA'></td>
+                        <td id='LLSExtraReimuA'></td>
+                    </tr><tr>
+                        <td>ReimuB</td>
+                        <td id='LLSEasyReimuB'></td>
+                        <td id='LLSNormalReimuB'></td>
+                        <td id='LLSHardReimuB'></td>
+                        <td id='LLSLunaticReimuB'></td>
+                        <td id='LLSExtraReimuB'></td>
+                    </tr><tr>
+                        <td>MarisaA</td>
+                        <td id='LLSEasyMarisaA'></td>
+                        <td id='LLSNormalMarisaA'></td>
+                        <td id='LLSHardMarisaA'></td>
+                        <td id='LLSLunaticMarisaA'></td>
+                        <td id='LLSExtraMarisaA'></td>
+                    </tr><tr>
+                        <td>MarisaB</td>
+                        <td id='LLSEasyMarisaB'></td>
+                        <td id='LLSNormalMarisaB'></td>
+                        <td id='LLSHardMarisaB'></td>
+                        <td id='LLSLunaticMarisaB'></td>
+                        <td id='LLSExtraMarisaB'></td>
+                    </tr>
+                </table>
+            </div>
+            <div id='MS' style='display:block'>
+                <p><img id='MSi' src='games/ms.jpg' class='cover'> MS</p>
+                <table align='center' class='sortable'>
+                    <tr>
+                        <th>Shottype</th>
+                        <th class='sorttable_numeric'>Easy</th>
+                        <th class='sorttable_numeric'>Normal</th>
+                        <th class='sorttable_numeric'>Hard</th>
+                        <th class='sorttable_numeric'>Lunatic</th>
+                        <th class='sorttable_numeric'>Extra</th>
+                    </tr><tr>
+                        <td>Reimu</td>
+                        <td id='MSEasyReimu'></td>
+                        <td id='MSNormalReimu'></td>
+                        <td id='MSHardReimu'></td>
+                        <td id='MSLunaticReimu'></td>
+                        <td id='MSExtraReimu'></td>
+                    </tr><tr>
+                        <td>Marisa</td>
+                        <td id='MSEasyMarisa'></td>
+                        <td id='MSNormalMarisa'></td>
+                        <td id='MSHardMarisa'></td>
+                        <td id='MSLunaticMarisa'></td>
+                        <td id='MSExtraMarisa'></td>
+                    </tr><tr>
+                        <td>Mima</td>
+                        <td id='MSEasyMima'></td>
+                        <td id='MSNormalMima'></td>
+                        <td id='MSHardMima'></td>
+                        <td id='MSLunaticMima'></td>
+                        <td id='MSExtraMima'></td>
+                    </tr><tr>
+                        <td>Yuuka</td>
+                        <td id='MSEasyYuuka'></td>
+                        <td id='MSNormalYuuka'></td>
+                        <td id='MSHardYuuka'></td>
+                        <td id='MSLunaticYuuka'></td>
+                        <td id='MSExtraYuuka'></td>
+                    </tr>
+                </table>
+            </div>
+            <div id='EoSD' style='display:block'>
+			<p><img src='games/eosd.jpg' class='cover'> EoSD</p>
+                <table align='center' class='sortable'>
+                    <tr>
+                        <th>Shottype</th>
+                        <th class='sorttable_numeric'>Easy</th>
+                        <th class='sorttable_numeric'>Normal</th>
+                        <th class='sorttable_numeric'>Hard</th>
+                        <th class='sorttable_numeric'>Lunatic</th>
+                        <th class='sorttable_numeric'>Extra</th>
+                    </tr><tr>
+                        <td>ReimuA</td>
+                        <td id='EoSDEasyReimuA'></td>
+                        <td id='EoSDNormalReimuA'></td>
+                        <td id='EoSDHardReimuA'></td>
+                        <td id='EoSDLunaticReimuA'></td>
+                        <td id='EoSDExtraReimuA'></td>
+                    </tr><tr>
+                        <td>ReimuB</td>
+                        <td id='EoSDEasyReimuB'></td>
+                        <td id='EoSDNormalReimuB'></td>
+                        <td id='EoSDHardReimuB'></td>
+                        <td id='EoSDLunaticReimuB'></td>
+                        <td id='EoSDExtraReimuB'></td>
+                    </tr><tr>
+                        <td>MarisaA</td>
+                        <td id='EoSDEasyMarisaA'></td>
+                        <td id='EoSDNormalMarisaA'></td>
+                        <td id='EoSDHardMarisaA'></td>
+                        <td id='EoSDExtraMarisaA'></td>
+                        <td id='EoSDLunaticMarisaA'></td>
+                    </tr><tr>
+                        <td>MarisaB</td>
+                        <td id='EoSDEasyMarisaB'></td>
+                        <td id='EoSDNormalMarisaB'></td>
+                        <td id='EoSDHardMarisaB'></td>
+                        <td id='EoSDLunaticMarisaB'></td>
+                        <td id='EoSDExtraMarisaB'></td>
+                    </tr>
+                </table>
+            </div>
+            <div id='PCB' style='display:block'>
+                <p><img src='games/pcb.jpg' class='cover'> PCB</p>
+                <table align='center' class='sortable'>
+                    <tr>
+                        <th>Shottype</th>
+                        <th class='sorttable_numeric'>Easy</th>
+                        <th class='sorttable_numeric'>Normal</th>
+                        <th class='sorttable_numeric'>Hard</th>
+                        <th class='sorttable_numeric'>Lunatic</th>
+                        <th class='sorttable_numeric'>Extra</th>
+                        <th class='sorttable_numeric'>Phantasm</th>
+                    </tr><tr>
+                        <td>ReimuA</td>
+                        <td id='PCBEasyReimuA'></td>
+                        <td id='PCBNormalReimuA'></td>
+                        <td id='PCBHardReimuA'></td>
+                        <td id='PCBLunaticReimuA'></td>
+                        <td id='PCBExtraReimuA'></td>
+                        <td id='PCBPhantasmReimuA'></td>
+                    </tr><tr>
+                        <td>ReimuA</td>
+                        <td id='PCBEasyReimuB'></td>
+                        <td id='PCBNormalReimuB'></td>
+                        <td id='PCBHardReimuB'></td>
+                        <td id='PCBLunaticReimuB'></td>
+                        <td id='PCBExtraReimuB'></td>
+                        <td id='PCBPhantasmReimuB'></td>
+                    </tr><tr>
+                        <td>MarisaA</td>
+                        <td id='PCBEasyMarisaA'></td>
+                        <td id='PCBNormalMarisaA'></td>
+                        <td id='PCBHardMarisaA'></td>
+                        <td id='PCBLunaticMarisaA'></td>
+                        <td id='PCBExtraMarisaA'></td>
+                        <td id='PCBPhantasmMarisaA'></td>
+                    </tr><tr>
+                        <td>MarisaB</td>
+                        <td id='PCBEasyMarisaB'></td>
+                        <td id='PCBNormalMarisaB'></td>
+                        <td id='PCBHardMarisaB'></td>
+                        <td id='PCBLunaticMarisaB'></td>
+                        <td id='PCBExtraMarisaB'></td>
+                        <td id='PCBPhantasmMarisaB'></td>
+                    </tr><tr>
+                        <td>SakuyaA</td>
+                        <td id='PCBEasySakuyaA'></td>
+                        <td id='PCBNormalSakuyaA'></td>
+                        <td id='PCBHardSakuyaA'></td>
+                        <td id='PCBLunaticSakuyaA'></td>
+                        <td id='PCBPhantasmSakuyaA'></td>
+                        <td id='PCBExtraSakuyaA'></td>
+                    </tr><tr>
+                        <td>SakuyaB</td>
+                        <td id='PCBEasySakuyaB'></td>
+                        <td id='PCBNormalSakuyaB'></td>
+                        <td id='PCBHardSakuyaB'></td>
+                        <td id='PCBLunaticSakuyaB'></td>
+                        <td id='PCBExtraSakuyaB'></td>
+                        <td id='PCBPhantasmSakuyaB'></td>
+                    </tr>
+                </table>
+            </div>
+            <div id='IN' style='display:block'>
+                <p><img src='games/in.jpg' class='cover'> IN (FinalB)</p>
+                <table align='center' class='sortable'>
+                    <tr>
+                        <th>Shottype</th>
+                        <th class='sorttable_numeric'>Easy</th>
+                        <th class='sorttable_numeric'>Normal</th>
+                        <th class='sorttable_numeric'>Hard</th>
+                        <th class='sorttable_numeric'>Lunatic</th>
+                        <th class='sorttable_numeric'>Extra</th>
+                    </tr><tr>
+                        <td>Border Team</td>
+                        <td id='INEasyBorderTeam'></td>
+                        <td id='INNormalBorderTeam'></td>
+                        <td id='INHardBorderTeam'></td>
+                        <td id='INLunaticBorderTeam'></td>
+                        <td id='INExtraBorderTeam'></td>
+                    </tr><tr>
+                        <td>Magic Team</td>
+                        <td id='INEasyMagicTeam'></td>
+                        <td id='INNormalMagicTeam'></td>
+                        <td id='INHardMagicTeam'></td>
+                        <td id='INLunaticMagicTeam'></td>
+                        <td id='INExtraMagicTeam'></td>
+                    </tr><tr>
+                        <td>Scarlet Team</td>
+                        <td id='INEasyScarletTeam'></td>
+                        <td id='INNormalScarletTeam'></td>
+                        <td id='INHardScarletTeam'></td>
+                        <td id='INLunaticScarletTeam'></td>
+                        <td id='INExtraScarletTeam'></td>
+                    </tr><tr>
+                        <td>Ghost Team</td>
+                        <td id='INEasyGhostTeam'></td>
+                        <td id='INNormalGhostTeam'></td>
+                        <td id='INHardGhostTeam'></td>
+                        <td id='INLunaticGhostTeam'></td>
+                        <td id='INExtraGhostTeam'></td>
+                    </tr><tr>
+                        <td>Reimu</td>
+                        <td id='INEasyReimu'></td>
+                        <td id='INNormalReimu'></td>
+                        <td id='INHardReimu'></td>
+                        <td id='INLunaticReimu'></td>
+                        <td id='INExtraReimu'></td>
+                    </tr><tr>
+                        <td>Yukari</td>
+                        <td id='INEasyYukari'></td>
+                        <td id='INNormalYukari'></td>
+                        <td id='INHardYukari'></td>
+                        <td id='INLunaticYukari'></td>
+                        <td id='INExtraYukari'></td>
+                    </tr><tr>
+                        <td>Marisa</td>
+                        <td id='INEasyMarisa'></td>
+                        <td id='INNormalMarisa'></td>
+                        <td id='INHardMarisa'></td>
+                        <td id='INLunaticMarisa'></td>
+                        <td id='INExtraMarisa'></td>
+                    </tr><tr>
+                        <td>Alice</td>
+                        <td id='INEasyAlice'></td>
+                        <td id='INNormalAlice'></td>
+                        <td id='INHardAlice'></td>
+                        <td id='INLunaticAlice'></td>
+                        <td id='INExtraAlice'></td>
+                    </tr><tr>
+                        <td>Sakuya</td>
+                        <td id='INEasySakuya'></td>
+                        <td id='INNormalSakuya'></td>
+                        <td id='INHardSakuya'></td>
+                        <td id='INLunaticSakuya'></td>
+                        <td id='INExtraSakuya'></td>
+                    </tr><tr>
+                        <td>Remilia</td>
+                        <td id='INEasyRemilia'></td>
+                        <td id='INNormalRemilia'></td>
+                        <td id='INHardRemilia'></td>
+                        <td id='INLunaticRemilia'></td>
+                        <td id='INExtraRemilia'></td>
+                    </tr><tr>
+                        <td>Youmu</td>
+                        <td id='INEasyYoumu'></td>
+                        <td id='INNormalYoumu'></td>
+                        <td id='INHardYoumu'></td>
+                        <td id='INLunaticYoumu'></td>
+                        <td id='INExtraYoumu'></td>
+                    </tr><tr>
+                        <td>Yuyuko</td>
+                        <td id='INEasyYuyuko'></td>
+                        <td id='INNormalYuyuko'></td>
+                        <td id='INHardYuyuko'></td>
+                        <td id='INLunaticYuyuko'></td>
+                        <td id='INExtraYuyuko'></td>
+                    </tr>
+                </table>
+            </div>
+            <div id='PoFV' style='display:block'>
+                <p><img src='games/pofv.jpg' class='cover'> PoFV</p>
+                <table align='center' class='sortable'>
+                    <tr>
+                        <th>Shottype</th>
+                        <th class='sorttable_numeric'>Easy</th>
+                        <th class='sorttable_numeric'>Normal</th>
+                        <th class='sorttable_numeric'>Hard</th>
+                        <th class='sorttable_numeric'>Lunatic</th>
+                        <th class='sorttable_numeric'>Extra</th>
+                    </tr><tr>
+                        <td>Reimu</td>
+                        <td id='PoFVEasyReimu'></td>
+                        <td id='PoFVNormalReimu'></td>
+                        <td id='PoFVHardReimu'></td>
+                        <td id='PoFVLunaticReimu'></td>
+                        <td id='PoFVExtraReimu'></td>
+                    </tr><tr>
+                        <td>Marisa</td>
+                        <td id='PoFVEasyMarisa'></td>
+                        <td id='PoFVNormalMarisa'></td>
+                        <td id='PoFVHardMarisa'></td>
+                        <td id='PoFVLunaticMarisa'></td>
+                        <td id='PoFVExtraMarisa'></td>
+                    </tr><tr>
+                        <td>Sakuya</td>
+                        <td id='PoFVEasySakuya'></td>
+                        <td id='PoFVNormalSakuya'></td>
+                        <td id='PoFVHardSakuya'></td>
+                        <td id='PoFVLunaticSakuya'></td>
+                        <td id='PoFVExtraSakuya'></td>
+                    </tr><tr>
+                        <td>Youmu</td>
+                        <td id='PoFVEasyYoumu'></td>
+                        <td id='PoFVNormalYoumu'></td>
+                        <td id='PoFVHardYoumu'></td>
+                        <td id='PoFVLunaticYoumu'></td>
+                        <td id='PoFVExtraYoumu'></td>
+                    </tr><tr>
+                        <td>Reisen</td>
+                        <td id='PoFVEasyReisen'></td>
+                        <td id='PoFVNormalReisen'></td>
+                        <td id='PoFVHardReisen'></td>
+                        <td id='PoFVLunaticReisen'></td>
+                        <td id='PoFVExtraReisen'></td>
+                    </tr><tr>
+                        <td>Cirno</td>
+                        <td id='PoFVEasyCirno'></td>
+                        <td id='PoFVNormalCirno'></td>
+                        <td id='PoFVHardCirno'></td>
+                        <td id='PoFVLunaticCirno'></td>
+                        <td id='PoFVExtraCirno'></td>
+                    </tr><tr>
+                        <td>Lyrica</td>
+                        <td id='PoFVEasyLyrica'></td>
+                        <td id='PoFVNormalLyrica'></td>
+                        <td id='PoFVHardLyrica'></td>
+                        <td id='PoFVLunaticLyrica'></td>
+                        <td id='PoFVExtraLyrica'></td>
+                    </tr><tr>
+                        <td>Mystia</td>
+                        <td id='PoFVEasyMystia'></td>
+                        <td id='PoFVNormalMystia'></td>
+                        <td id='PoFVHardMystia'></td>
+                        <td id='PoFVLunaticMystia'></td>
+                        <td id='PoFVExtraMystia'></td>
+                    </tr><tr>
+                        <td>Tewi</td>
+                        <td id='PoFVEasyTewi'></td>
+                        <td id='PoFVNormalTewi'></td>
+                        <td id='PoFVHardTewi'></td>
+                        <td id='PoFVLunaticTewi'></td>
+                        <td id='PoFVExtraTewi'></td>
+                    </tr><tr>
+                        <td>Aya</td>
+                        <td id='PoFVEasyAya'></td>
+                        <td id='PoFVNormalAya'></td>
+                        <td id='PoFVHardAya'></td>
+                        <td id='PoFVLunaticAya'></td>
+                        <td id='PoFVExtraAya'></td>
+                    </tr><tr>
+                        <td>Medicine</td>
+                        <td id='PoFVEasyMedicine'></td>
+                        <td id='PoFVNormalMedicine'></td>
+                        <td id='PoFVHardMedicine'></td>
+                        <td id='PoFVLunaticMedicine'></td>
+                        <td id='PoFVExtraMedicine'></td>
+                    </tr><tr>
+                        <td>Yuuka</td>
+                        <td id='PoFVEasyYuuka'></td>
+                        <td id='PoFVNormalYuuka'></td>
+                        <td id='PoFVHardYuuka'></td>
+                        <td id='PoFVLunaticYuuka'></td>
+                        <td id='PoFVExtraYuuka'></td>
+                    </tr><tr>
+                        <td>Komachi</td>
+                        <td id='PoFVEasyKomachi'></td>
+                        <td id='PoFVNormalKomachi'></td>
+                        <td id='PoFVHardKomachi'></td>
+                        <td id='PoFVLunaticKomachi'></td>
+                        <td id='PoFVExtraKomachi'></td>
+                    </tr><tr>
+                        <td>Eiki</td>
+                        <td id='PoFVEasyEiki'></td>
+                        <td id='PoFVNormalEiki'></td>
+                        <td id='PoFVHardEiki'></td>
+                        <td id='PoFVLunaticEiki'></td>
+                        <td id='PoFVExtraEiki'></td>
+                    </tr>
+                </table>
+            </div>
+            <div id='MoF' style='display:block'>
+                <p><img src='games/mof.jpg' class='cover'> MoF</p>
+                <table align='center' class='sortable'>
+                    <tr>
+                        <th>Shottype</th>
+                        <th class='sorttable_numeric'>Easy</th>
+                        <th class='sorttable_numeric'>Normal</th>
+                        <th class='sorttable_numeric'>Hard</th>
+                        <th class='sorttable_numeric'>Lunatic</th>
+                        <th class='sorttable_numeric'>Extra</th>
+                    </tr><tr>
+                        <td>ReimuA</td>
+                        <td id='MoFEasyReimuA'></td>
+                        <td id='MoFNormalReimuA'></td>
+                        <td id='MoFHardReimuA'></td>
+                        <td id='MoFLunaticReimuA'></td>
+                        <td id='MoFExtraReimuA'></td>
+                    </tr><tr>
+                        <td>ReimuB</td>
+                        <td id='MoFEasyReimuB'></td>
+                        <td id='MoFNormalReimuB'></td>
+                        <td id='MoFHardReimuB'></td>
+                        <td id='MoFLunaticReimuB'></td>
+                        <td id='MoFExtraReimuB'></td>
+                    </tr><tr>
+                        <td>ReimuC</td>
+                        <td id='MoFEasyReimuC'></td>
+                        <td id='MoFNormalReimuC'></td>
+                        <td id='MoFHardReimuC'></td>
+                        <td id='MoFLunaticReimuC'></td>
+                        <td id='MoFExtraReimuC'></td>
+                    </tr><tr>
+                        <td>MarisaA</td>
+                        <td id='MoFEasyMarisaA'></td>
+                        <td id='MoFNormalMarisaA'></td>
+                        <td id='MoFHardMarisaA'></td>
+                        <td id='MoFLunaticMarisaA'></td>
+                        <td id='MoFExtraMarisaA'></td>
+                    </tr><tr>
+                        <td>MarisaB</td>
+                        <td id='MoFEasyMarisaB'></td>
+                        <td id='MoFNormalMarisaB'></td>
+                        <td id='MoFHardMarisaB'></td>
+                        <td id='MoFLunaticMarisaB'></td>
+                        <td id='MoFExtraMarisaB'></td>
+                    </tr><tr>
+                        <td>MarisaC</td>
+                        <td id='MoFEasyMarisaC'></td>
+                        <td id='MoFNormalMarisaC'></td>
+                        <td id='MoFHardMarisaC'></td>
+                        <td id='MoFLunaticMarisaC'></td>
+                        <td id='MoFExtraMarisaC'></td>
+                    </tr>
+                </table>
+            </div>
+			<div id='SA' style='display:block'>
+                <p><img src='games/sa.jpg' class='cover'> SA</p>
+                <table align='center' class='sortable'>
+                    <tr>
+                        <th>Shottype</th>
+                        <th class='sorttable_numeric'>Easy</th>
+                        <th class='sorttable_numeric'>Normal</th>
+                        <th class='sorttable_numeric'>Hard</th>
+                        <th class='sorttable_numeric'>Lunatic</th>
+                        <th class='sorttable_numeric'>Extra</th>
+                    </tr><tr>
+                        <td>ReimuA</td>
+                        <td id='SAEasyReimuA'></td>
+                        <td id='SANormalReimuA'></td>
+                        <td id='SAHardReimuA'></td>
+                        <td id='SALunaticReimuA'></td>
+                        <td id='SAExtraReimuA'></td>
+                    </tr><tr>
+                        <td>ReimuB</td>
+                        <td id='SAEasyReimuB'></td>
+                        <td id='SANormalReimuB'></td>
+                        <td id='SAHardReimuB'></td>
+                        <td id='SALunaticReimuB'></td>
+                        <td id='SAExtraReimuB'></td>
+                    </tr><tr>
+                        <td>ReimuC</td>
+                        <td id='SAEasyReimuC'></td>
+                        <td id='SANormalReimuC'></td>
+                        <td id='SAHardReimuC'></td>
+                        <td id='SALunaticReimuC'></td>
+                        <td id='SAExtraReimuC'></td>
+                    </tr><tr>
+                        <td>MarisaA</td>
+                        <td id='SAEasyMarisaA'></td>
+                        <td id='SANormalMarisaA'></td>
+                        <td id='SAHardMarisaA'></td>
+                        <td id='SALunaticMarisaA'></td>
+                        <td id='SAExtraMarisaA'></td>
+                    </tr><tr>
+                        <td>MarisaB</td>
+                        <td id='SAEasyMarisaB'></td>
+                        <td id='SANormalMarisaB'></td>
+                        <td id='SAHardMarisaB'></td>
+                        <td id='SALunaticMarisaB'></td>
+                        <td id='SAExtraMarisaB'></td>
+                    </tr><tr>
+                        <td>MarisaC</td>
+                        <td id='SAEasyMarisaC'></td>
+                        <td id='SANormalMarisaC'></td>
+                        <td id='SAHardMarisaC'></td>
+                        <td id='SALunaticMarisaC'></td>
+                        <td id='SAExtraMarisaC'></td>
+                    </tr>
+                </table>
+            </div>
+			<div id='UFO' style='display:block'>
+                <p><img src='games/ufo.jpg' class='cover'> UFO</p>
+                <table align='center' class='sortable'>
+                    <tr>
+                        <th>Shottype</th>
+                        <th class='sorttable_numeric'>Easy</th>
+                        <th class='sorttable_numeric'>Normal</th>
+                        <th class='sorttable_numeric'>Hard</th>
+                        <th class='sorttable_numeric'>Lunatic</th>
+                        <th class='sorttable_numeric'>Extra</th>
+                    </tr><tr>
+                        <td>ReimuA</td>
+                        <td id='UFOEasyReimuA'></td>
+                        <td id='UFONormalReimuA'></td>
+                        <td id='UFOHardReimuA'></td>
+                        <td id='UFOLunaticReimuA'></td>
+                        <td id='UFOExtraReimuA'></td>
+                    </tr><tr>
+                        <td>ReimuB</td>
+                        <td id='UFOEasyReimuB'></td>
+                        <td id='UFONormalReimuB'></td>
+                        <td id='UFOHardReimuB'></td>
+                        <td id='UFOLunaticReimuB'></td>
+                        <td id='UFOExtraReimuB'></td>
+                    </tr><tr>
+                        <td>MariUFOA</td>
+                        <td id='UFOEasyMarisaA'></td>
+                        <td id='UFONormalMarisaA'></td>
+                        <td id='UFOHardMarisaA'></td>
+                        <td id='UFOLunaticMarisaA'></td>
+                        <td id='UFOExtraMarisaA'></td>
+                    </tr><tr>
+                        <td>MariUFOB</td>
+                        <td id='UFOEasyMarisaB'></td>
+                        <td id='UFONormalMarisaB'></td>
+                        <td id='UFOHardMarisaB'></td>
+                        <td id='UFOLunaticMarisaB'></td>
+                        <td id='UFOExtraMarisaB'></td>
+                    </tr><tr>
+                        <td>SanaeA</td>
+                        <td id='UFOEasySanaeA'></td>
+                        <td id='UFONormalSanaeA'></td>
+                        <td id='UFOHardSanaeA'></td>
+                        <td id='UFOLunaticSanaeA'></td>
+                        <td id='UFOExtraSanaeA'></td>
+                    </tr><tr>
+                        <td>SanaeB</td>
+                        <td id='UFOEasySanaeB'></td>
+                        <td id='UFONormalSanaeB'></td>
+                        <td id='UFOHardSanaeB'></td>
+                        <td id='UFOLunaticSanaeB'></td>
+                        <td id='UFOExtraSanaeB'></td>
+                    </tr>
+                </table>
+            </div>
+			<div id='GFW' style='display:block'>
+                <p><img src='games/gfw.jpg' class='cover'> GFW</p>
+                <table align='center' class='sortable'>
+                    <tr>
+                        <th>Route</th>
+                        <th class='sorttable_numeric'>Easy</th>
+                        <th class='sorttable_numeric'>Normal</th>
+                        <th class='sorttable_numeric'>Hard</th>
+                        <th class='sorttable_numeric'>Lunatic</th>
+                        <th class='sorttable_numeric'>Extra</th>
+                    </tr><tr>
+                        <td>A1</td>
+                        <td id='GFWEasyA1'></td>
+                        <td id='GFWNormalA1'></td>
+                        <td id='GFWHardA1'></td>
+                        <td id='GFWLunaticA1'></td>
+                        <td id='GFWExtra-' rowspan='6'></td>
+                    </tr><tr>
+                        <td>A2</td>
+                        <td id='GFWEasyA2'></td>
+                        <td id='GFWNormalA2'></td>
+                        <td id='GFWHardA2'></td>
+                        <td id='GFWLunaticA2'></td>
+                    </tr><tr>
+                        <td>B1</td>
+                        <td id='GFWEasyB1'></td>
+                        <td id='GFWNormalB1'></td>
+                        <td id='GFWHardB1'></td>
+                        <td id='GFWLunaticB1'></td>
+                    </tr><tr>
+                        <td>B2</td>
+                        <td id='GFWEasyB2'></td>
+                        <td id='GFWNormalB2'></td>
+                        <td id='GFWHardB2'></td>
+                        <td id='GFWLunaticB2'></td>
+                    </tr><tr>
+                        <td>C1</td>
+                        <td id='GFWEasyC1'></td>
+                        <td id='GFWNormalC1'></td>
+                        <td id='GFWHardC1'></td>
+                        <td id='GFWLunaticC1'></td>
+                    </tr><tr>
+                        <td>C2</td>
+                        <td id='GFWEasyC2'></td>
+                        <td id='GFWNormalC2'></td>
+                        <td id='GFWHardC2'></td>
+                        <td id='GFWLunaticC2'></td>
+                    </tr>
+                </table>
+            </div>
+            <div id='TD' style='display:block'>
+                <p><img src='games/td.jpg' class='cover'> TD</p>
+                <table align='center' class='sortable'>
+                    <tr>
+                        <th>Shottype</th>
+                        <th class='sorttable_numeric'>Easy</th>
+                        <th class='sorttable_numeric'>Normal</th>
+                        <th class='sorttable_numeric'>Hard</th>
+                        <th class='sorttable_numeric'>Lunatic</th>
+                        <th class='sorttable_numeric'>Extra</th>
+                    </tr><tr>
+                        <td>Reimu</td>
+                        <td id='TDEasyReimu'></td>
+                        <td id='TDNormalReimu'></td>
+                        <td id='TDHardReimu'></td>
+                        <td id='TDLunaticReimu'></td>
+                        <td id='TDExtraReimu'></td>
+                    </tr><tr>
+                        <td>Marisa</td>
+                        <td id='TDEasyMarisa'></td>
+                        <td id='TDNormalMarisa'></td>
+                        <td id='TDHardMarisa'></td>
+                        <td id='TDLunaticMarisa'></td>
+                        <td id='TDExtraMarisa'></td>
+                    </tr><tr>
+                        <td>Sanae</td>
+                        <td id='TDEasySanae'></td>
+                        <td id='TDNormalSanae'></td>
+                        <td id='TDHardSanae'></td>
+                        <td id='TDLunaticSanae'></td>
+                        <td id='TDExtraSanae'></td>
+                    </tr><tr>
+                        <td>Youmu</td>
+                        <td id='TDEasyYoumu'></td>
+                        <td id='TDNormalYoumu'></td>
+                        <td id='TDHardYoumu'></td>
+                        <td id='TDLunaticYoumu'></td>
+                        <td id='TDExtraYoumu'></td>
+                    </tr>
+                </table>
+            </div>
+			<div id='DDC' style='display:block'>
+                <p><img src='games/ddc.jpg' class='cover'> DDC</p>
+                <table align='center' class='sortable'>
+                    <tr>
+                        <th>Shottype</th>
+                        <th class='sorttable_numeric'>Easy</th>
+                        <th class='sorttable_numeric'>Normal</th>
+                        <th class='sorttable_numeric'>Hard</th>
+                        <th class='sorttable_numeric'>Lunatic</th>
+                        <th class='sorttable_numeric'>Extra</th>
+                    </tr><tr>
+                        <td>ReimuA</td>
+                        <td id='DDCEasyReimuA'></td>
+                        <td id='DDCNormalReimuA'></td>
+                        <td id='DDCHardReimuA'></td>
+                        <td id='DDCLunaticReimuA'></td>
+                        <td id='DDCExtraReimuA'></td>
+                    </tr><tr>
+                        <td>ReimuB</td>
+                        <td id='DDCEasyReimuB'></td>
+                        <td id='DDCNormalReimuB'></td>
+                        <td id='DDCHardReimuB'></td>
+                        <td id='DDCLunaticReimuB'></td>
+                        <td id='DDCExtraReimuB'></td>
+                    </tr><tr>
+                        <td>MarisaA</td>
+                        <td id='DDCEasyMarisaA'></td>
+                        <td id='DDCNormalMarisaA'></td>
+                        <td id='DDCHardMarisaA'></td>
+                        <td id='DDCLunaticMarisaA'></td>
+                        <td id='DDCExtraMarisaA'></td>
+                    </tr><tr>
+                        <td>MarisaB</td>
+                        <td id='DDCEasyMarisaB'></td>
+                        <td id='DDCNormalMarisaB'></td>
+                        <td id='DDCHardMarisaB'></td>
+                        <td id='DDCLunaticMarisaB'></td>
+                        <td id='DDCExtraMarisaB'></td>
+                    </tr><tr>
+                        <td>SakuyaA</td>
+                        <td id='DDCEasySakuyaA'></td>
+                        <td id='DDCNormalSakuyaA'></td>
+                        <td id='DDCHardSakuyaA'></td>
+                        <td id='DDCLunaticSakuyaA'></td>
+                        <td id='DDCExtraSakuyaA'></td>
+                    </tr><tr>
+                        <td>SakuyaB</td>
+                        <td id='DDCEasySakuyaB'></td>
+                        <td id='DDCNormalSakuyaB'></td>
+                        <td id='DDCHardSakuyaB'></td>
+                        <td id='DDCLunaticSakuyaB'></td>
+                        <td id='DDCExtraSakuyaB'></td>
+                    </tr>
+                </table>
+            </div>
+            <div id='LoLK' style='display:block'>
+                <p><img src='games/lolk.jpg' class='cover'> LoLK</p>
+                <table align='center' class='sortable'>
+                    <tr>
+                        <th>Shottype</th>
+                        <th class='sorttable_numeric'>Easy</th>
+                        <th class='sorttable_numeric'>Normal</th>
+                        <th class='sorttable_numeric'>Hard</th>
+                        <th class='sorttable_numeric'>Lunatic</th>
+                        <th class='sorttable_numeric'>Extra</th>
+                    </tr><tr>
+                        <td>Reimu</td>
+                        <td id='LoLKEasyReimu'></td>
+                        <td id='LoLKNormalReimu'></td>
+                        <td id='LoLKHardReimu'></td>
+                        <td id='LoLKLunaticReimu'></td>
+                        <td id='LoLKExtraReimu'></td>
+                    </tr><tr>
+                        <td>Marisa</td>
+                        <td id='LoLKEasyMarisa'></td>
+                        <td id='LoLKNormalMarisa'></td>
+                        <td id='LoLKHardMarisa'></td>
+                        <td id='LoLKLunaticMarisa'></td>
+                        <td id='LoLKExtraMarisa'></td>
+                    </tr><tr>
+                        <td>Sanae</td>
+                        <td id='LoLKEasySanae'></td>
+                        <td id='LoLKNormalSanae'></td>
+                        <td id='LoLKHardSanae'></td>
+                        <td id='LoLKLunaticSanae'></td>
+                        <td id='LoLKExtraSanae'></td>
+                    </tr><tr>
+                        <td>Reisen</td>
+                        <td id='LoLKEasyReisen'></td>
+                        <td id='LoLKNormalReisen'></td>
+                        <td id='LoLKHardReisen'></td>
+                        <td id='LoLKLunaticReisen'></td>
+                        <td id='LoLKExtraReisen'></td>
+                    </tr>
+                </table>
+            </div>
+            <div id='HSiFS' style='display:block'>
+                <p><img src='games/hsifs.jpg' class='cover'> HSiFS</p>
+                <table align='center' class='sortable'>
+                    <tr>
+                        <th>Shottype</th>
+                        <th class='sorttable_numeric'>Easy</th>
+                        <th class='sorttable_numeric'>Normal</th>
+                        <th class='sorttable_numeric'>Hard</th>
+                        <th class='sorttable_numeric'>Lunatic</th>
+                        <th class='sorttable_numeric'>Extra</th>
+                    </tr><tr>
+                        <td>Reimu</td>
+                        <td id='HSiFSEasyReimu'></td>
+                        <td id='HSiFSNormalReimu'></td>
+                        <td id='HSiFSHardReimu'></td>
+                        <td id='HSiFSLunaticReimu'></td>
+                        <td id='HSiFSExtraReimu'></td>
+                    </tr><tr>
+                        <td>Cirno</td>
+                        <td id='HSiFSEasyCirno'></td>
+                        <td id='HSiFSNormalCirno'></td>
+                        <td id='HSiFSHardCirno'></td>
+                        <td id='HSiFSLunaticCirno'></td>
+                        <td id='HSiFSExtraCirno'></td>
+                    </tr><tr>
+                        <td>Aya</td>
+                        <td id='HSiFSEasyAya'></td>
+                        <td id='HSiFSNormalAya'></td>
+                        <td id='HSiFSHardAya'></td>
+                        <td id='HSiFSLunaticAya'></td>
+                        <td id='HSiFSExtraAya'></td>
+                    </tr><tr>
+                        <td>Marisa</td>
+                        <td id='HSiFSEasyMarisa'></td>
+                        <td id='HSiFSNormalMarisa'></td>
+                        <td id='HSiFSHardMarisa'></td>
+                        <td id='HSiFSLunaticMarisa'></td>
+                        <td id='HSiFSExtraMarisa'></td>
+                    </tr>
+                </table>
+            </div>
+		</div>
+    </body>
+</html>

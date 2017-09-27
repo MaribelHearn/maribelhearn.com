@@ -1,0 +1,42 @@
+body {
+    background: url('bg/wr.jpg') top;
+}
+div {
+    background-color: #FFFFFF;
+}
+h1 {
+    font: 48px monotype corsiva;
+}
+h2 {
+    font: 36px monotype corsiva;
+}
+table, th, td {
+    border: 1px solid black;
+}
+#checkboxes tbody:after {
+    content: "\200C";
+    display: block;
+    line-height: 1em;
+    color: black;
+}
+#wrap {
+    border: 1px solid black;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    opacity: 0.8;
+    font: 14px verdana, sans-serif;
+}
+#HRtPi, #SoEWi, #PoDDi, #LLSi, #MSi {
+    border: 1px solid black;
+}
+.cover {
+    width: 50px;
+    height: 50px;
+}
+@media only screen and (max-width: 1400px) {
+    .wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
