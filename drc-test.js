@@ -1,4 +1,8 @@
-﻿var global = this, phantasm = true, noExtra = true, noShottypes = true, language = "English", GAME = "#game", DIFFICULTY = "#difficulty", CHALLENGE = "#challenge", PHANTASMAGORIA = "#phantasmagoriaTable",
+﻿$.get("wrlist.json", function(data) {
+    WRs = data;
+}, "json");
+
+var global = this, phantasm = true, noExtra = true, noShottypes = true, language = "English", GAME = "#game", DIFFICULTY = "#difficulty", CHALLENGE = "#challenge", PHANTASMAGORIA = "#phantasmagoriaTable",
     RUBRICS = "#rubrics", BOMBS = "#bombs", SCORE = "#score", PERFORMANCE = "#performance", DRCPOINTS = "#drcpoints", ERROR = "#error", SHOTTYPE = "#shottype", NOTIFY = "#notify", RUBRICS_BUTTON = "#rubricsButton",
     NB = "#nb", NO_EXTRA = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>", MISSES = "#misses", IMP_NOT = "#impNot", IMP_NOT_TEXT = "#impNotText",
     DIFF_OPTIONS = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option>", SHOTTYPE_MULTIPLIERS = "#shottypeMultipliersTable", LS = "#ls",
