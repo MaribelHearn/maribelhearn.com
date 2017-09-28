@@ -19,6 +19,28 @@
             <p>An accurate list of Touhou world records, updated every so often.</p>
             <p>World records are current as of September 27, 2017.</p>
             <h2>Contents</h2>
+            <table id='contents' align='center'>
+                <tr><td><a href='#overall'>Overall Records</a></td></tr>
+                <tr><td><a href='#HRtP'>Touhou 1 - The Highly Responsive to Prayers</a></td></tr>
+                <tr><td><a href='#SoEW'>Touhou 2 - The Story of Eastern Wonderland</a></td></tr>
+                <tr><td><a href='#PoDD'>Touhou 3 - Phantasmagoria of Dim.Dream</a></td></tr>
+                <tr><td><a href='#LLS'>Touhou 4 - Lotus Land Story</a></td></tr>
+                <tr><td><a href='#MS'>Touhou 5 - Mystic Square</a></td></tr>
+                <tr><td><br></td></tr>
+                <tr><td><a href='#EoSD'>Touhou 6 - The Embodiment of Scarlet Devil</a></td></tr>
+                <tr><td><a href='#PCB'>Touhou 7 - Perfect Cherry Blossom</a></td></tr>
+                <tr><td><a href='#IN'>Touhou 8 - Imperishable Night</a></td></tr>
+                <tr><td><a href='#PoFV'>Touhou 9 - Phantasmagoria of Flower View</a></td></tr>
+                <tr><td><a href='#MoF'>Touhou 10 - Mountain of Faith</a></td></tr>
+                <tr><td><a href='#SA'>Touhou 11 - Subterranean Animism</a></td></tr>
+                <tr><td><a href='#UFO'>Touhou 12 - Undefined Fantastic Object</a></td></tr>
+                <tr><td><a href='#GFW'>Touhou 12.8 - Great Fairy Wars</a></td></tr>
+                <tr><td><a href='#TD'>Touhou 13 - Ten Desires</a></td></tr>
+                <tr><td><a href='#DDC'>Touhou 14 - Double Dealing Character</a></td></tr>
+                <tr><td><a href='#LoLK'>Touhou 15 - Legacy of Lunatic Kingdom</a></td></tr>
+                <tr><td><a href='#HSiFS'>Touhou 16 - Hidden Star in Four Seasons</a></td></tr>
+            </table>
+            <h2>Customize</h2>
             <table id='checkboxes' align='center'>
                 <tbody>
                     <tr>
@@ -91,6 +113,9 @@
                 <tfoot>
                     <tr>
                         <td>
+                            <input id='overallc' type='checkbox' onClick='checkGame("overall")' checked>
+                            <label for='overallc'>Overall</label>
+                        </td><td>
                             <input id='tracked' type='checkbox' onClick='checkTracked()' checked>
                             <label for='tracked'>Tracked</label>
                         </td><td>
@@ -103,6 +128,155 @@
                     </tr>
                 </tfoot>
             </table>
+            <div id='overall' style='display:block'>
+                <p>Overall Records</p>
+                <table align='center' class='sortable'>
+                    <tr>
+                        <th>#</th>
+                        <th>Game</th>
+                        <th class='sorttable_numeric'>Score</th>
+                        <th>Player</th>
+                        <th>Difficulty</th>
+                        <th>Shot</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>HRtP</td>
+                        <td id='HRtPoverall0'></td>
+                        <td id='HRtPoverall1'></td>
+                        <td id='HRtPoverall2'></td>
+                        <td id='HRtPoverall3'></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>SoEW</td>
+                        <td id='SoEWoverall0'></td>
+                        <td id='SoEWoverall1'></td>
+                        <td id='SoEWoverall2'></td>
+                        <td id='SoEWoverall3'></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>PoDD</td>
+                        <td id='PoDDoverall0'></td>
+                        <td id='PoDDoverall1'></td>
+                        <td id='PoDDoverall2'></td>
+                        <td id='PoDDoverall3'></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>LLS</td>
+                        <td id='LLSoverall0'></td>
+                        <td id='LLSoverall1'></td>
+                        <td id='LLSoverall2'></td>
+                        <td id='LLSoverall3'></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>MS</td>
+                        <td id='MSoverall0'></td>
+                        <td id='MSoverall1'></td>
+                        <td id='MSoverall2'></td>
+                        <td id='MSoverall3'></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>EoSD</td>
+                        <td id='EoSDoverall0'></td>
+                        <td id='EoSDoverall1'></td>
+                        <td id='EoSDoverall2'></td>
+                        <td id='EoSDoverall3'></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>PCB</td>
+                        <td id='PCBoverall0'></td>
+                        <td id='PCBoverall1'></td>
+                        <td id='PCBoverall2'></td>
+                        <td id='PCBoverall3'></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>IN</td>
+                        <td id='INoverall0'></td>
+                        <td id='INoverall1'></td>
+                        <td id='INoverall2'></td>
+                        <td id='INoverall3'></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>PoFV</td>
+                        <td id='PoFVoverall0'></td>
+                        <td id='PoFVoverall1'></td>
+                        <td id='PoFVoverall2'></td>
+                        <td id='PoFVoverall3'></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>MoF</td>
+                        <td id='MoFoverall0'></td>
+                        <td id='MoFoverall1'></td>
+                        <td id='MoFoverall2'></td>
+                        <td id='MoFoverall3'></td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>SA</td>
+                        <td id='SAoverall0'></td>
+                        <td id='SAoverall1'></td>
+                        <td id='SAoverall2'></td>
+                        <td id='SAoverall3'></td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>UFO</td>
+                        <td id='UFOoverall0'></td>
+                        <td id='UFOoverall1'></td>
+                        <td id='UFOoverall2'></td>
+                        <td id='UFOoverall3'></td>
+                    </tr>
+                    <tr>
+                        <td>12.8</td>
+                        <td>GFW</td>
+                        <td id='GFWoverall0'></td>
+                        <td id='GFWoverall1'></td>
+                        <td id='GFWoverall2'></td>
+                        <td id='GFWoverall3'></td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>TD</td>
+                        <td id='TDoverall0'></td>
+                        <td id='TDoverall1'></td>
+                        <td id='TDoverall2'></td>
+                        <td id='TDoverall3'></td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>DDC</td>
+                        <td id='DDCoverall0'></td>
+                        <td id='DDCoverall1'></td>
+                        <td id='DDCoverall2'></td>
+                        <td id='DDCoverall3'></td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>LoLK</td>
+                        <td id='LoLKoverall0'></td>
+                        <td id='LoLKoverall1'></td>
+                        <td id='LoLKoverall2'></td>
+                        <td id='LoLKoverall3'></td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>HSiFS</td>
+                        <td id='HSiFSoverall0'></td>
+                        <td id='HSiFSoverall1'></td>
+                        <td id='HSiFSoverall2'></td>
+                        <td id='HSiFSoverall3'></td>
+                    </tr>
+                </table>
+            </div>
             <div id='HRtP' style='display:block'>
                 <p><img src='games/hrtp.jpg' class='cover98'> Touhou 1 - The Highly Responsive to Prayers</p>
                 <table align='center' class='sortable'>

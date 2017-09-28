@@ -1,4 +1,4 @@
-var WRs, all = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
+var WRs, all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
     tracked = ["EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
     untracked = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "PoFV"];
 
@@ -79,7 +79,7 @@ $(document).ready(function() {
     $.get("wrlist.json", function(data) {
         WRs = data;
         
-        var game, max, difficulty, bestshotmax, shottypes, shottype, wr, overall, overallplayer, overallseason, bestshot, bestshotplayer, bestshotseason, text;
+        var game, max, difficulty, bestshotmax, shottypes, shottype, wr, overall, overallplayer, overalldifficulty, overallshottype, overallseason, bestshot, bestshotplayer, bestshotseason, text;
         
         for (game in WRs) {
             max = 0;
@@ -95,6 +95,8 @@ $(document).ready(function() {
                     if (wr[0] > max) {
                         overall = "#" + game + difficulty + shottype;
                         overallplayer = wr[1];
+                        overalldifficulty = difficulty;
+                        overallshottype = shottype;
                         overallseason = season;
                         max = wr[0];
                     }
@@ -114,10 +116,18 @@ $(document).ready(function() {
             }
             
             $(overall).html($(overall).html().replace("<u>", "<u><strong>").replace("</u>", "</strong></u>"));
+            $("#" + game + "overall0").html(sep(max));
+            $("#" + game + "overall1").html(overallplayer);
+            $("#" + game + "overall2").html(overalldifficulty);
+            $("#" + game + "overall3").html(overallshottype);
             
             if (!$("#" + game + "c").is(":checked")) {
                 hide(game);
             }
+        }
+            
+        if (!$("#overallc").is(":checked")) {
+            hide("overall");
         }
     }, "json");
 });

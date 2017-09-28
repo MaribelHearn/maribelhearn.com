@@ -13,6 +13,9 @@ h2 {
 table, th, td {
     border: 1px solid black;
 }
+#contents th, #contents td {
+    border: none;
+}
 #checkboxes tbody:after {
     content: "\200C";
     display: block;
