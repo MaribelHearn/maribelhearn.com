@@ -24,3 +24,13 @@ Object.defineProperty(Array.prototype, "contains", {
         return this.indexOf(value) > -1;
     }
 });
+
+Object.defineProperty(Array.prototype, "pushStrict", {
+    configurable: true,
+    enumerable: false,
+    value: function (value) {
+        if (!this.contains(value)) {
+            this.push(value);
+        }
+    }
+});
