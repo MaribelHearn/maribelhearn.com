@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+	<head>
+		<title>Touhou Lunatic No Miss No Bombs</title>
+		<meta charset='UTF-8'>
+		<meta name='viewport' content='width=device-width'>
+		<link rel='stylesheet' type='text/css' href='lnn.css'>
+		<link rel='icon' type='image/x-icon' href='full.ico'>
+		<script src='sorttable.js'></script>
+		<script src='jquery.js'></script>
+		<script src='utils.js'></script>
+		<script src='lnn.js'></script>
+	</head>
+	
+	<body>
+        <div id='wrap'>
+			<h1>Touhou Lunatic No Miss No Bombs</h1>
+            <p>A listing of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. For every shottype in a game, tables will tell you which players have done an LNN with it, if any.
+            If a player has multiple LNNs for one particular shottype, those are not factored in.</p>
+            <p>Extra conditions are required for PCB, TD and HSiFS; these are No Border Breaks, No Trance and No Release respectively. LNN in these games is called LNNN, with an extra N to denote the extra condition.
+            The extra condition in UFO, no UFO summons, is optional, as it is not considered to have a significant impact on the difficulty of the run.
+            As for IN, an LNN is assumed to capture or timeout all Last Spells; these are usually captured and LNN is referred to as LNNFS.</p>
+            <p>All of the table columns are sortable.</p>
+            <h2>Contents</h2>
+            <table id='contents' align='center'>
+                <tr><td><a href='#EoSD'>Touhou 6 - The Embodiment of Scarlet Devil</a></td></tr>
+                <tr><td><a href='#PCB'>Touhou 7 - Perfect Cherry Blossom</a></td></tr>
+                <tr><td><a href='#IN'>Touhou 8 - Imperishable Night</a></td></tr>
+                <tr><td><a href='#MoF'>Touhou 10 - Mountain of Faith</a></td></tr>
+                <tr><td><a href='#SA'>Touhou 11 - Subterranean Animism</a></td></tr>
+                <tr><td><a href='#UFO'>Touhou 12 - Undefined Fantastic Object</a></td></tr>
+                <tr><td><a href='#GFW'>Touhou 12.8 - Great Fairy Wars</a></td></tr>
+                <tr><td><a href='#TD'>Touhou 13 - Ten Desires</a></td></tr>
+                <tr><td><a href='#DDC'>Touhou 14 - Double Dealing Character</a></td></tr>
+                <tr><td><a href='#LoLK'>Touhou 15 - Legacy of Lunatic Kingdom</a></td></tr>
+                <tr><td><a href='#HSiFS'>Touhou 16 - Hidden Star in Four Seasons</a></td></tr>
+                <tr><td><a href='#overall'>Overall Count</a></td></tr>
+                <tr><td><a href='#players'>Player Ranking</a></td></tr>
+            </table>
+            <h2>Customize</h2>
+            <table id='checkboxes' align='center'>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input id='EoSDc' type='checkbox' onClick='checkGame("EoSD")' checked>
+                            <label for='EoSDc'>EoSD</label>
+                        </td><td>
+                            <input id='SAc' type='checkbox' onClick='checkGame("SA")' checked>
+                            <label for='SAc'>SA</label>
+                        </td><td>
+                            <input id='DDCc' type='checkbox' onClick='checkGame("DDC")' checked>
+                            <label for='DDCc'>DDC</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id='PCBc' type='checkbox' onClick='checkGame("PCB")' checked>
+                            <label for='PCBc'>PCB</label>
+                        </td><td>
+                            <input id='UFOc' type='checkbox' onClick='checkGame("UFO")' checked>
+                            <label for='UFOc'>UFO</label>
+                        </td><td>
+                            <input id='LoLKc' type='checkbox' onClick='checkGame("LoLK")' checked>
+                            <label for='LoLKc'>LoLK</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id='INc' type='checkbox' onClick='checkGame("IN")' checked>
+                            <label for='INc'>IN</label>
+                        </td><td>
+                            <input id='GFWc' type='checkbox' onClick='checkGame("GFW")' checked>
+                            <label for='GFWc'>GFW</label>
+                        </td><td>
+                            <input id='HSiFSc' type='checkbox' onClick='checkGame("HSiFS")' checked>
+                            <label for='HSiFSc'>HSiFS</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id='MoFc' type='checkbox' onClick='checkGame("MoF")' checked>
+                            <label for='MoFc'>MoF</label>
+                        </td><td>
+                            <input id='TDc' type='checkbox' onClick='checkGame("TD")' checked>
+                            <label for='TDc'>TD</label>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>
+                            <input id='overallc' type='checkbox' onClick='checkGame("overall")' checked>
+                            <label for='overallc'>Overall</label>
+                        </td><td>
+                            <input id='playersc' type='checkbox' onClick='checkGame("players")' checked>
+                            <label for='playersc'>Players</label>
+                        </td><td>
+                            <input id='all' type='checkbox' onClick='checkAll()' checked>
+                            <label for='all'>All</label>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div id='EoSD' style='display:block'>
+			<p><img src='games/eosd.jpg' class='cover'> Touhou 6 - The Embodiment of Scarlet Devil</p>
+                <table align='center' class='sortable'>
+                    <thead>
+                        <tr>
+                            <th>Shottype</th>
+                            <th class='sorttable_numeric'>No. of LNNs<br>(Different players)</th>
+                            <th>Players</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ReimuA</td>
+                            <td id='EoSDReimuAn'></td>
+                            <td id='EoSDReimuA'></td>
+                        </tr><tr>
+                            <td>ReimuB</td>
+                            <td id='EoSDReimuBn'></td>
+                            <td id='EoSDReimuB'></td>
+                        </tr><tr>
+                            <td>MarisaA</td>
+                            <td id='EoSDMarisaAn'></td>
+                            <td id='EoSDMarisaA'></td>
+                        </tr><tr>
+                            <td>MarisaB</td>
+                            <td id='EoSDMarisaBn'></td>
+                            <td id='EoSDMarisaB'></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan='3'></td></tr>
+                        <tr>
+                            <td class='t'>Overall</td>
+                            <td id='EoSDtn' class='t'></td>
+                            <td id='EoSDt'></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div id='PCB' style='display:block'>
+                <p><img src='games/pcb.jpg' class='cover'> Touhou 7 - Perfect Cherry Blossom</p>
+                <table align='center' class='sortable'>
+                    <thead>
+                        <tr>
+                            <th>Shottype</th>
+                            <th class='sorttable_numeric'>No. of LNNNs<br>(Different players)</th>
+                            <th>Players</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ReimuA</td>
+                            <td id='PCBReimuAn'></td>
+                            <td id='PCBReimuA'></td>
+                        </tr><tr>
+                            <td>ReimuA</td>
+                            <td id='PCBReimuBn'></td>
+                            <td id='PCBReimuB'></td>
+                        </tr><tr>
+                            <td>MarisaA</td>
+                            <td id='PCBMarisaAn'></td>
+                            <td id='PCBMarisaA'></td>
+                        </tr><tr>
+                            <td>MarisaB</td>
+                            <td id='PCBMarisaBn'></td>
+                            <td id='PCBMarisaB'></td>
+                        </tr><tr>
+                            <td>SakuyaA</td>
+                            <td id='PCBSakuyaAn'></td>
+                            <td id='PCBSakuyaA'></td>
+                        </tr><tr>
+                            <td>SakuyaB</td>
+                            <td id='PCBSakuyaBn'></td>
+                            <td id='PCBSakuyaB'></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan='3'></td></tr>
+                        <tr>
+                            <td class='t'>Overall</td>
+                            <td id='PCBtn' class='t'></td>
+                            <td id='PCBt'></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div id='IN' style='display:block'>
+                <p><img src='games/in.jpg' class='cover'> Touhou 8 - Imperishable Night</p>
+                <table align='center' class='sortable'>
+                    <thead>
+                        <tr>
+                            <th>Shottype</th>
+                            <th class='sorttable_numeric'>No. of LNNFSs<br>(Different players)</th>
+                            <th>Players</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Border Team</td>
+                            <td id='INBorderTeamn'></td>
+                            <td id='INBorderTeam'></td>
+                        </tr><tr>
+                            <td>Magic Team</td>
+                            <td id='INMagicTeamn'></td>
+                            <td id='INMagicTeam'></td>
+                        </tr><tr>
+                            <td>Scarlet Team</td>
+                            <td id='INScarletTeamn'></td>
+                            <td id='INScarletTeam'></td>
+                        </tr><tr>
+                            <td>Ghost Team</td>
+                            <td id='INGhostTeamn'></td>
+                            <td id='INGhostTeam'></td>
+                        </tr><tr>
+                            <td>Reimu</td>
+                            <td id='INReimun'></td>
+                            <td id='INReimu'></td>
+                        </tr><tr>
+                            <td>Yukari</td>
+                            <td id='INYukarin'></td>
+                            <td id='INYukari'></td>
+                        </tr><tr>
+                            <td>Marisa</td>
+                            <td id='INMarisan'></td>
+                            <td id='INMarisa'></td>
+                        </tr><tr>
+                            <td>Alice</td>
+                            <td id='INAlicen'></td>
+                            <td id='INAlice'></td>
+                        </tr><tr>
+                            <td>Sakuya</td>
+                            <td id='INSakuyan'></td>
+                            <td id='INSakuya'></td>
+                        </tr><tr>
+                            <td>Remilia</td>
+                            <td id='INRemilian'></td>
+                            <td id='INRemilia'></td>
+                        </tr><tr>
+                            <td>Youmu</td>
+                            <td id='INYoumun'></td>
+                            <td id='INYoumu'></td>
+                        </tr><tr>
+                            <td>Yuyuko</td>
+                            <td id='INYuyukon'></td>
+                            <td id='INYuyuko'></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan='3'></td></tr>
+                        <tr>
+                            <td class='t'>Overall</td>
+                            <td id='INtn' class='t'></td>
+                            <td id='INt'></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div id='MoF' style='display:block'>
+                <p><img src='games/mof.jpg' class='cover'> Touhou 10 - Mountain of Faith</p>
+                <table align='center' class='sortable'>
+                    <thead>
+                        <tr>
+                            <th>Shottype</th>
+                            <th class='sorttable_numeric'>No. of LNNs<br>(Different players)</th>
+                            <th>Players</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ReimuA</td>
+                            <td id='MoFReimuAn'></td>
+                            <td id='MoFReimuA'></td>
+                        </tr><tr>
+                            <td>ReimuB</td>
+                            <td id='MoFReimuBn'></td>
+                            <td id='MoFReimuB'></td>
+                        </tr><tr>
+                            <td>ReimuC</td>
+                            <td id='MoFReimuCn'></td>
+                            <td id='MoFReimuC'></td>
+                        </tr><tr>
+                            <td>MarisaA</td>
+                            <td id='MoFMarisaAn'></td>
+                            <td id='MoFMarisaA'></td>
+                        </tr><tr>
+                            <td>MarisaB</td>
+                            <td id='MoFMarisaBn'></td>
+                            <td id='MoFMarisaB'></td>
+                        </tr><tr>
+                            <td>MarisaC</td>
+                            <td id='MoFMarisaCn'></td>
+                            <td id='MoFMarisaC'></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan='3'></td></tr>
+                        <tr>
+                            <td class='t'>Overall</td>
+                            <td id='MoFtn' class='t'></td>
+                            <td id='MoFt'></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+			<div id='SA' style='display:block'>
+                <p><img src='games/sa.jpg' class='cover'> Touhou 11 - Subterranean Animism</p>
+                <table align='center' class='sortable'>
+                    <thead>
+                        <tr>
+                            <th>Shottype</th>
+                            <th class='sorttable_numeric'>No. of LNNs<br>(Different players)</th>
+                            <th>Players</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ReimuA</td>
+                            <td id='SAReimuAn'></td>
+                            <td id='SAReimuA'></td>
+                        </tr><tr>
+                            <td>ReimuB</td>
+                            <td id='SAReimuBn'></td>
+                            <td id='SAReimuB'></td>
+                        </tr><tr>
+                            <td>ReimuC</td>
+                            <td id='SAReimuCn'></td>
+                            <td id='SAReimuC'></td>
+                        </tr><tr>
+                            <td>MarisaA</td>
+                            <td id='SAMarisaAn'></td>
+                            <td id='SAMarisaA'></td>
+                        </tr><tr>
+                            <td>MarisaB</td>
+                            <td id='SAMarisaBn'></td>
+                            <td id='SAMarisaB'></td>
+                        </tr><tr>
+                            <td>MarisaC</td>
+                            <td id='SAMarisaCn'></td>
+                            <td id='SAMarisaC'></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan='3'></td></tr>
+                        <tr>
+                            <td class='t'>Overall</td>
+                            <td id='SAtn' class='t'></td>
+                            <td id='SAt'></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+			<div id='UFO' style='display:block'>
+                <p><img src='games/ufo.jpg' class='cover'> Touhou 12 - Undefined Fantastic Object</p>
+                <table align='center' class='sortable'>
+                    <thead>
+                        <tr>
+                            <th>Shottype</th>
+                            <th class='sorttable_numeric'>No. of LNN(N)s<br>(Different players)</th>
+                            <th>Players</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ReimuA</td>
+                            <td id='UFOReimuAn'></td>
+                            <td id='UFOReimuA'></td>
+                        </tr><tr>
+                            <td>ReimuB</td>
+                            <td id='UFOReimuBn'></td>
+                            <td id='UFOReimuB'></td>
+                        </tr><tr>
+                            <td>MariUFOA</td>
+                            <td id='UFOMarisaAn'></td>
+                            <td id='UFOMarisaA'></td>
+                        </tr><tr>
+                            <td>MariUFOB</td>
+                            <td id='UFOMarisaBn'></td>
+                            <td id='UFOMarisaB'></td>
+                        </tr><tr>
+                            <td>SanaeA</td>
+                            <td id='UFOSanaeAn'></td>
+                            <td id='UFOSanaeA'></td>
+                        </tr><tr>
+                            <td>SanaeB</td>
+                            <td id='UFOSanaeBn'></td>
+                            <td id='UFOSanaeB'></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan='3'></td></tr>
+                        <tr>
+                            <td class='t'>Overall</td>
+                            <td id='UFOtn' class='t'></td>
+                            <td id='UFOt'></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+			<div id='GFW' style='display:block'>
+                <p><img src='games/gfw.jpg' class='cover'> Touhou 12.8 - Great Fairy Wars</p>
+                <table id='GFWt' align='center' class='sortable'>
+                    <thead>
+                        <tr>
+                            <th>Route</th>
+                            <th class='sorttable_numeric'>No. of LNNs<br>(Different players)</th>
+                            <th>Players</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A1</td>
+                            <td id='GFWA1n'></td>
+                            <td id='GFWA1'></td>
+                        </tr><tr>
+                            <td>A2</td>
+                            <td id='GFWA2n'></td>
+                            <td id='GFWA2'></td>
+                        </tr><tr>
+                            <td>B1</td>
+                            <td id='GFWB1n'></td>
+                            <td id='GFWB1'></td>
+                        </tr><tr>
+                            <td>B2</td>
+                            <td id='GFWB2n'></td>
+                            <td id='GFWB2'></td>
+                        </tr><tr>
+                            <td>C1</td>
+                            <td id='GFWC1n'></td>
+                            <td id='GFWC1'></td>
+                        </tr><tr>
+                            <td>C2</td>
+                            <td id='GFWC2n'></td>
+                            <td id='GFWC2'></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan='3'></td></tr>
+                        <tr>
+                            <td class='t'>Overall</td>
+                            <td id='GFWtn' class='t'></td>
+                            <td id='GFWt'></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div id='TD' style='display:block'>
+                <p><img src='games/td.jpg' class='cover'> Touhou 13 - Ten Desires</p>
+                <table align='center' class='sortable'>
+                    <thead>
+                        <tr>
+                            <th>Shottype</th>
+                            <th class='sorttable_numeric'>No. of LNNNs<br>(Different players)</th>
+                            <th>Players</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Reimu</td>
+                            <td id='TDReimun'></td>
+                            <td id='TDReimu'></td>
+                        </tr><tr>
+                            <td>Marisa</td>
+                            <td id='TDMarisan'></td>
+                            <td id='TDMarisa'></td>
+                        </tr><tr>
+                            <td>Sanae</td>
+                            <td id='TDSanaen'></td>
+                            <td id='TDSanae'></td>
+                        </tr><tr>
+                            <td>Youmu</td>
+                            <td id='TDYoumun'></td>
+                            <td id='TDYoumu'></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan='3'></td></tr>
+                        <tr>
+                            <td class='t'>Overall</td>
+                            <td id='TDtn' class='t'></td>
+                            <td id='TDt'></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+			<div id='DDC' style='display:block'>
+                <p><img src='games/ddc.jpg' class='cover'> Touhou 14 - Double Dealing Character</p>
+                <table align='center' class='sortable'>
+                    <thead>
+                        <tr>
+                            <th>Shottype</th>
+                            <th class='sorttable_numeric'>No. of LNNs<br>(Different players)</th>
+                            <th>Players</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ReimuA</td>
+                            <td id='DDCReimuAn'></td>
+                            <td id='DDCReimuA'></td>
+                        </tr><tr>
+                            <td>ReimuB</td>
+                            <td id='DDCReimuBn'></td>
+                            <td id='DDCReimuB'></td>
+                        </tr><tr>
+                            <td>MarisaA</td>
+                            <td id='DDCMarisaAn'></td>
+                            <td id='DDCMarisaA'></td>
+                        </tr><tr>
+                            <td>MarisaB</td>
+                            <td id='DDCMarisaBn'></td>
+                            <td id='DDCMarisaB'></td>
+                        </tr><tr>
+                            <td>SakuyaA</td>
+                            <td id='DDCSakuyaAn'></td>
+                            <td id='DDCSakuyaA'></td>
+                        </tr><tr>
+                            <td>SakuyaB</td>
+                            <td id='DDCSakuyaBn'></td>
+                            <td id='DDCSakuyaB'></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan='3'></td></tr>
+                        <tr>
+                            <td class='t'>Overall</td>
+                            <td id='DDCtn' class='t'></td>
+                            <td id='DDCt'></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div id='LoLK' style='display:block'>
+                <p><img src='games/lolk.jpg' class='cover'> Touhou 15 - Legacy of Lunatic Kingdom</p>
+                <table align='center' class='sortable'>
+                    <thead>
+                        <tr>
+                            <th>Shottype</th>
+                            <th class='sorttable_numeric'>No. of LNNs<br>(Different players)</th>
+                            <th>Players</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Reimu</td>
+                            <td id='LoLKReimun'></td>
+                            <td id='LoLKReimu'></td>
+                        </tr><tr>
+                            <td>Marisa</td>
+                            <td id='LoLKMarisan'></td>
+                            <td id='LoLKMarisa'></td>
+                        </tr><tr>
+                            <td>Sanae</td>
+                            <td id='LoLKSanaen'></td>
+                            <td id='LoLKSanae'></td>
+                        </tr><tr>
+                            <td>Reisen</td>
+                            <td id='LoLKReisenn'></td>
+                            <td id='LoLKReisen'></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan='3'></td></tr>
+                        <tr>
+                            <td class='t'>Overall</td>
+                            <td id='LoLKtn' class='t'></td>
+                            <td id='LoLKt'></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div id='HSiFS' style='display:block'>
+                <p><img src='games/hsifs.jpg' class='cover'> Touhou 16 - Hidden Star in Four Seasons</p>
+                <table align='center' class='sortable'>
+                    <thead>
+                        <tr>
+                            <th>Shottype</th>
+                            <th class='sorttable_numeric'>No. of LNNNs<br>(Different players)</th>
+                            <th>Players</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Reimu</td>
+                            <td id='HSiFSReimun'></td>
+                            <td id='HSiFSReimu'></td>
+                        </tr><tr>
+                            <td>Cirno</td>
+                            <td id='HSiFSCirnon'></td>
+                            <td id='HSiFSCirno'></td>
+                        </tr><tr>
+                            <td>Aya</td>
+                            <td id='HSiFSAyan'></td>
+                            <td id='HSiFSAya'></td>
+                        </tr><tr>
+                            <td>Marisa</td>
+                            <td id='HSiFSMarisan'></td>
+                            <td id='HSiFSMarisa'></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan='3'></td></tr>
+                        <tr>
+                            <td class='t'>Overall</td>
+                            <td id='HSiFStn' class='t'></td>
+                            <td id='HSiFSt'></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div id='overall'>
+                <p>Overall Count</p>
+                <table align='center' class='sortable'>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Game</th>
+                            <th class='sorttable_numeric'>No. of LNNs</th>
+                            <th class='sorttable_numeric'>Different players</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>6</td>
+                            <td>EoSD</td>
+                            <td id='EoSDon'></td>
+                            <td id='EoSDo'></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>PCB</td>
+                            <td id='PCBon'></td>
+                            <td id='PCBo'></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>IN</td>
+                            <td id='INon'></td>
+                            <td id='INo'></td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>MoF</td>
+                            <td id='MoFon'></td>
+                            <td id='MoFo'></td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>SA</td>
+                            <td id='SAon'></td>
+                            <td id='SAo'></td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>UFO</td>
+                            <td id='UFOon'></td>
+                            <td id='UFOo'></td>
+                        </tr>
+                        <tr>
+                            <td>12.8</td>
+                            <td>GFW</td>
+                            <td id='GFWon'></td>
+                            <td id='GFWo'></td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>TD</td>
+                            <td id='TDon'></td>
+                            <td id='TDo'></td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>DDC</td>
+                            <td id='DDCon'></td>
+                            <td id='DDCo'></td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>LoLK</td>
+                            <td id='LoLKon'></td>
+                            <td id='LoLKo'></td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>HSiFS</td>
+                            <td id='HSiFSon'></td>
+                            <td id='HSiFSo'></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan='4'></td></tr>
+                        <tr>
+                            <td colspan='2' class='t'>Overall</td>
+                            <td id='on' class='t'></td>
+                            <td id='o' class='t'></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div id='players'>
+                <p>Player Ranking</p>
+                <table id='ranking' align='center' class='sortable'>
+                    <thead>
+                        <tr>
+                            <th>Player</th>
+                            <th class='sorttable_numeric'>LNNs</th>
+                            <th class='sorttable_numeric'>Games LNNed</th>
+                        </tr>
+                    </thead>
+                    <tbody id='ranking_tbody'>
+                    </tbody>
+                </table>
+            </div>
+		</div>
+    </body>
+</html>
