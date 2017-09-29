@@ -205,6 +205,7 @@ function load() {
         }
         
         $("#autosort").click();
+        $("#autosort").click();
     }, "json");
 }
 

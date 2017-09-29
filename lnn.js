@@ -137,5 +137,6 @@ $(document).ready(function() {
         }
         
         $("#autosort").click();
+        $("#autosort").click();
     }, "json");
 });
