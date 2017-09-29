@@ -241,3 +241,10 @@ var apply = function () {
     sorttable.makeSortable(table);
     sorttable.makeSortable(gameTable);
 };
+
+$(document).ready(function() {
+    // detect smartphone and tablet
+    if (navigator.userAgent.contains("Mobile") || navigator.userAgent.contains("Tablet")) {
+        $("#notice").css("display", "block");
+	}
+});
