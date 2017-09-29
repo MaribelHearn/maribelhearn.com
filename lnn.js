@@ -36,7 +36,7 @@ $(document).ready(function() {
     $.get("lnnlist.json", function(data) {
         LNNs = data;
         
-        var playergameLNNs = {}, playerLNNs = {}, count = 0, playercount = 0, game, players, gamecount, shottype, shotplayers, shotplayersIN, shotcount, character, type, i, player;
+        var playergameLNNs = {}, playerLNNs = {}, overallplayers = [], count = 0, game, players, gamecount, shottype, shotplayers, shotplayersIN, shotcount, character, type, i, player;
         
         for (game in LNNs) {
             players = [];
@@ -74,7 +74,6 @@ $(document).ready(function() {
                     
                     if (!players.contains(player)) {
                         players.push(player);
-                        playercount += 1;
                     }
                     
                     count += 1;
@@ -122,7 +121,7 @@ $(document).ready(function() {
         }
         
         $("#on").html(count);
-        $("#o").html(playercount);
+        $("#o").html(Object.keys(playerLNNs).length);
             
         if (!$("#overallc").is(":checked")) {
             hide("overall");
