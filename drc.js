@@ -5,7 +5,7 @@
     PHANTASM = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option><option>Phantasm</option>", SHOTTYPE_LABEL = "#shottypeLabel",
     MISSES_INPUT = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>", ERROR_TEXT = "<b style='color:red'>Error: ", CLEARED = "#cleared", SCENE = "#scene",
     SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>", SCORING_TABLE = "#scoringTable", SURV_TABLE = "#survivalTable", ROUTE = "#route", BB = "#bb", DS_TABLE = "#dsTable",
-    MOF_TABLE = "#mofTable", RELEASES = "#releases", SEASON = "#season",
+    MOF_TABLE = "#mofTable", RELEASES = "#releases", SEASON = "#season", RUBRICS_TABLES = "#rubricsTables",
     SURV_RUBRICS = {
         "SoEW": {
             "Easy": {
@@ -1458,6 +1458,36 @@ function abbreviate(num) {
 
 function generateRubrics() {
     var game, difficulty, rubric, shottype, thresholds, scene, i;
+    
+    // detect smartphone
+	
+	if (navigator.userAgent.contains("Mobile")) {
+        $(RUBRICS_TABLES).html("<table align='center'>" +
+        "<thead><tr><td colspan='3'><b>Scoring</b><br>||Max * (Score/WR)^Exp||</td></tr></thead>" +
+        "<tbody id='scoringTable'></tbody>" +
+        "</table>" +
+        "<table align='center'>" +
+        "<thead><tr><td colspan='6'><b>Survival</b><br>||Max * (Base^-n)||</td></tr></thead>" +
+        "<tbody id='survivalTable'></tbody>" +
+        "</table>");
+	} else {
+        $(RUBRICS_TABLES).html("<table align='center' class='noborders'>" +
+        "<tr class='noborders'>" +
+        "<td class='noborders'>" +
+        "<table>" +
+        "<thead><tr><td colspan='3'><b>Scoring</b><br>||Max * (Score/WR)^Exp||</td></tr></thead>" +
+        "<tbody id='scoringTable'></tbody>" +
+        "</table>" +
+        "</td>" +
+        "<td class='noborders' style='float:left'>" +
+        "<table>" +
+        "<thead><tr><td colspan='6'><b>Survival</b><br>||Max * (Base^-n)||</td></tr></thead>" +
+        "<tbody id='survivalTable'></tbody>" +
+        "</table>" +
+        "</td>" +
+        "</tr>" +
+        "</table>");
+    }
     
     for (game in SCORE_RUBRICS) {
         $(SCORING_TABLE).append("<tr>");
