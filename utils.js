@@ -34,3 +34,13 @@ Object.defineProperty(Array.prototype, "pushStrict", {
         }
     }
 });
+
+Object.defineProperty(Array.prototype, "remove", {
+    configurable: true,
+    enumerable: false,
+    value: function (value) {
+        if (this.contains(value)) {
+            this.splice(this.indexOf(value), 1);
+        }
+    }
+});
