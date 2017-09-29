@@ -206,4 +206,11 @@ function load() {
     }, "json");
 }
 
-$(document).ready(load);
+$(document).ready(function() {
+	// detect smartphone and tablet
+	if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) {
+        $("#wrap").append("<strong><a href='#wrap'>Back</a></strong>");
+	}
+    
+    load();
+});
