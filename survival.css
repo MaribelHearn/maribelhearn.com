@@ -62,6 +62,9 @@ h2 {
     }
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
+    body {
+        background: url('bg/survival.jpg') bottom no-repeat fixed;
+    }
 	#wrap {
         margin-left: 0%;
         margin-right: 0%;
