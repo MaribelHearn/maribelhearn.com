@@ -77,11 +77,17 @@ table, th, td {
         margin-right: 0%;
         font-size: 11px;
     }
+    #back, #notice {
+        display: block;
+    }
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
 	#wrap {
         margin-left: 0%;
         margin-right: 0%;
         font-size: 11px;
+    }
+    #back, #notice {
+        display: block;
     }
 }
