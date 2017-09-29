@@ -1836,12 +1836,12 @@ function generateRubrics() {
 	if (navigator.userAgent.contains("Mobile")) {
         $(RUBRICS_TABLES).html("<table align='center'>" +
         "<thead><tr><td colspan='3'><b id='scoring1'>" + (language == "English" ? "Scoring" : "稼ぎ") +
-        "</b><br><span id='scoreFormula'>" + (language == "English" ? : "||Max * (Score/WR)^Exp||" : "||最大点 * (スコア / 世界記録) ^ 冪指数||") + "</span></td></tr></thead>" +
+        "</b><br><span id='scoreFormula'>" + (language == "English" ? "||Max * (Score/WR)^Exp||" : "||最大点 * (スコア / 世界記録) ^ 冪指数||") + "</span></td></tr></thead>" +
         "<tbody id='scoringTable'></tbody>" +
         "</table>" +
         "<table align='center'>" +
         "<thead><tr><td colspan='6'><b id='survival1'>" + (language == "English" ? "Survival" : "サバイバル") +
-        "</b><br><span id='survFormula'>" + (language == "English" ? : "||Max * (Base^-n)||" : "||最大点 * (底 ^ -n)||" ) + "</span></td></tr></thead>" +
+        "</b><br><span id='survFormula'>" + (language == "English" ? "||Max * (Base^-n)||" : "||最大点 * (底 ^ -n)||" ) + "</span></td></tr></thead>" +
         "<tbody id='survivalTable'></tbody>" +
         "</table>");
 	} else {
@@ -1850,14 +1850,14 @@ function generateRubrics() {
         "<td class='noborders'>" +
         "<table>" +
         "<thead><tr><td colspan='3'><b id='scoring1'>" + (language == "English" ? "Scoring" : "稼ぎ") +
-        "</b><br><span id='scoreFormula'>" + (language == "English" ? : "||Max * (Score/WR)^Exp||" : "||最大点 * (スコア / 世界記録) ^ 冪指数||") + "</span></td></tr></thead>" +
+        "</b><br><span id='scoreFormula'>" + (language == "English" ? "||Max * (Score/WR)^Exp||" : "||最大点 * (スコア / 世界記録) ^ 冪指数||") + "</span></td></tr></thead>" +
         "<tbody id='scoringTable'></tbody>" +
         "</table>" +
         "</td>" +
         "<td class='noborders' style='float:left'>" +
         "<table>" +
         "<thead><tr><td colspan='6'><b id='survival1'>" + (language == "English" ? "Survival" : "サバイバル") +
-        "</b><br><span id='survFormula'>" + (language == "English" ? : "||Max * (Base^-n)||" : "||最大点 * (底 ^ -n)||" ) + "</span></td></tr></thead>" +
+        "</b><br><span id='survFormula'>" + (language == "English" ? "||Max * (Base^-n)||" : "||最大点 * (底 ^ -n)||" ) + "</span></td></tr></thead>" +
         "<tbody id='survivalTable'></tbody>" +
         "</table>" +
         "</td>" +
