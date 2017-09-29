@@ -13,6 +13,12 @@ h2 {
 h3 {
     font: 24px monotype corsiva;
 }
+p {
+    font: 14px verdana, sans-serif;
+}
+table, tr, th, td {
+    border: 1px solid black;
+}
 #wrap {
     border: 1px solid black;
     text-align: center;
@@ -24,14 +30,11 @@ h3 {
     opacity: 0.8;
     font: 14px verdana, sans-serif;
 }
-p {
-    font: 14px verdana, sans-serif;
+#contents th, #contents td {
+    border: none;
 }
 .description {
     font-size: 12px;
-}
-table, tr, th, td {
-    border: 1px solid black;
 }
 .noborder {
     border: none;
@@ -57,6 +60,13 @@ table, tr, th, td {
         width: 300px;
         height: 125px;
     }
+    #yuitia {
+        width: 117px;
+        height: 228px;
+    }
+    #table {
+        font-size: 11px;
+    }
     .shot {
         width: 320px;
         height: 240px;
@@ -66,6 +76,10 @@ table, tr, th, td {
 	#wrap {
         margin-left: 0%;
         margin-right: 0%;
+    }
+    #yuitia {
+        width: 117px;
+        height: 228px;
     }
     .shot {
         width: 320px;
