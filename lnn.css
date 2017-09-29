@@ -38,18 +38,6 @@ table, th, td {
     line-height: 1em;
     color: black;
 }
-.cover98 {
-    border: 1px solid black;
-    width: 50px;
-    height: 50px;
-}
-.cover {
-    width: 50px;
-    height: 50px;
-}
-.t {
-    text-decoration: underline;
-}
 #ranking.sortable tbody {
     counter-reset: sortabletablescope;
 }
@@ -61,6 +49,18 @@ table, th, td {
     content: counter(sortabletablescope);
     counter-increment: sortabletablescope;
     display: table-cell;
+}
+.cover98 {
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+}
+.cover {
+    width: 50px;
+    height: 50px;
+}
+.t {
+    text-decoration: underline;
 }
 @media only screen and (max-width: 1400px) {
     #wrap {
