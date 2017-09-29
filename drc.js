@@ -1460,7 +1460,6 @@ function generateRubrics() {
     var game, difficulty, rubric, shottype, thresholds, scene, i;
     
     // detect smartphone
-	
 	if (navigator.userAgent.contains("Mobile")) {
         $(RUBRICS_TABLES).html("<table align='center'>" +
         "<thead><tr><td colspan='3'><b>Scoring</b><br>||Max * (Score/WR)^Exp||</td></tr></thead>" +
