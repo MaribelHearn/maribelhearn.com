@@ -213,5 +213,6 @@ $(document).ready(function() {
         $("#wrap").append("<strong><a href='#wrap'>Back</a></strong>");
 	}
     
+    $("#autosort").click();
     load();
 });

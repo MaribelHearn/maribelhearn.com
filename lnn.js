@@ -38,6 +38,7 @@ $(document).ready(function() {
         $("#wrap").append("<strong><a href='#wrap'>Back</a></strong>");
 	}
     
+    $("#autosort").click();
     $.get("lnnlist.json", function(data) {
         LNNs = data;
         
