@@ -203,6 +203,8 @@ function load() {
         if (!$("#overallc").is(":checked")) {
             hide("overall");
         }
+        
+        $("#autosort").click();
     }, "json");
 }
 
@@ -213,6 +215,5 @@ $(document).ready(function() {
         $("#wrap").append("<strong><a href='#wrap'>Back</a></strong>");
 	}
     
-    $("#autosort").click();
     load();
 });
