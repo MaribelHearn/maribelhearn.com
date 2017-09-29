@@ -38,7 +38,6 @@ $(document).ready(function() {
         $("#wrap").append("<strong><a href='#wrap'>Back</a></strong>");
 	}
     
-    $("#autosort").click();
     $.get("lnnlist.json", function(data) {
         LNNs = data;
         
@@ -136,5 +135,7 @@ $(document).ready(function() {
         if (!$("#playersc").is(":checked")) {
             hide("players");
         }
+        
+        $("#autosort").click();
     }, "json");
 });
