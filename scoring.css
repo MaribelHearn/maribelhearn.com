@@ -66,14 +66,22 @@ input {
     }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
+    input {
+        width: 85px;
+    }
 	#wrap {
         margin-left: 0%;
         margin-right: 0%;
+        font-size: 13px;
     }
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
+    input {
+        width: 80px;
+    }
 	#wrap {
         margin-left: 0%;
         margin-right: 0%;
+        font-size: 13px;
     }
 }
