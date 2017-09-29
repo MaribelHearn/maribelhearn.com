@@ -16,7 +16,7 @@
 	<body>
         <div id='wrap'>
 			<h1>Touhou World Records</h1>
-            <p>An accurate list of Touhou world records, updated every so often.</p>
+            <p>An accurate list of Touhou world records, updated every so often. Note that the player ranking at the bottom does not take into account how strong specific records are, only numbers.</p>
             <p>World records are current as of September 29, 2017.</p>
             <h2>Contents</h2>
             <table id='contents' align='center'>
@@ -39,6 +39,7 @@
                 <tr><td><a href='#DDC'>Touhou 14 - Double Dealing Character</a></td></tr>
                 <tr><td><a href='#LoLK'>Touhou 15 - Legacy of Lunatic Kingdom</a></td></tr>
                 <tr><td><a href='#HSiFS'>Touhou 16 - Hidden Star in Four Seasons</a></td></tr>
+                <tr><td><a href='#players'>Player Ranking</a></td></tr>
             </table>
             <h2>Customize</h2>
             <table id='checkboxes' align='center'>
@@ -128,7 +129,7 @@
                     </tr>
                 </tfoot>
             </table>
-            <div id='overall' style='display:block'>
+            <div id='overall'>
                 <p>Overall Records</p>
                 <table align='center' class='sortable'>
                     <tr>
@@ -139,7 +140,7 @@
                         <th>Difficulty</th>
                         <th>Shot</th>
                     </tr>
-                    <tr>
+                    <tr id='HRtPo'>
                         <td>1</td>
                         <td>HRtP</td>
                         <td id='HRtPoverall0'></td>
@@ -147,7 +148,7 @@
                         <td id='HRtPoverall2'></td>
                         <td id='HRtPoverall3'></td>
                     </tr>
-                    <tr>
+                    <tr id='SoEWo'>
                         <td>2</td>
                         <td>SoEW</td>
                         <td id='SoEWoverall0'></td>
@@ -155,7 +156,7 @@
                         <td id='SoEWoverall2'></td>
                         <td id='SoEWoverall3'></td>
                     </tr>
-                    <tr>
+                    <tr id='PoDDo'>
                         <td>3</td>
                         <td>PoDD</td>
                         <td id='PoDDoverall0'></td>
@@ -163,7 +164,7 @@
                         <td id='PoDDoverall2'></td>
                         <td id='PoDDoverall3'></td>
                     </tr>
-                    <tr>
+                    <tr id='LLSo'>
                         <td>4</td>
                         <td>LLS</td>
                         <td id='LLSoverall0'></td>
@@ -171,7 +172,7 @@
                         <td id='LLSoverall2'></td>
                         <td id='LLSoverall3'></td>
                     </tr>
-                    <tr>
+                    <tr id='MSo'>
                         <td>5</td>
                         <td>MS</td>
                         <td id='MSoverall0'></td>
@@ -179,7 +180,7 @@
                         <td id='MSoverall2'></td>
                         <td id='MSoverall3'></td>
                     </tr>
-                    <tr>
+                    <tr id='EoSDo'>
                         <td>6</td>
                         <td>EoSD</td>
                         <td id='EoSDoverall0'></td>
@@ -187,7 +188,7 @@
                         <td id='EoSDoverall2'></td>
                         <td id='EoSDoverall3'></td>
                     </tr>
-                    <tr>
+                    <tr id='PCBo'>
                         <td>7</td>
                         <td>PCB</td>
                         <td id='PCBoverall0'></td>
@@ -195,7 +196,7 @@
                         <td id='PCBoverall2'></td>
                         <td id='PCBoverall3'></td>
                     </tr>
-                    <tr>
+                    <tr id='INo'>
                         <td>8</td>
                         <td>IN</td>
                         <td id='INoverall0'></td>
@@ -203,7 +204,7 @@
                         <td id='INoverall2'></td>
                         <td id='INoverall3'></td>
                     </tr>
-                    <tr>
+                    <tr id='PoFVo'>
                         <td>9</td>
                         <td>PoFV</td>
                         <td id='PoFVoverall0'></td>
@@ -211,7 +212,7 @@
                         <td id='PoFVoverall2'></td>
                         <td id='PoFVoverall3'></td>
                     </tr>
-                    <tr>
+                    <tr id='MoFo'>
                         <td>10</td>
                         <td>MoF</td>
                         <td id='MoFoverall0'></td>
@@ -219,7 +220,7 @@
                         <td id='MoFoverall2'></td>
                         <td id='MoFoverall3'></td>
                     </tr>
-                    <tr>
+                    <tr id='SAo'>
                         <td>11</td>
                         <td>SA</td>
                         <td id='SAoverall0'></td>
@@ -227,7 +228,7 @@
                         <td id='SAoverall2'></td>
                         <td id='SAoverall3'></td>
                     </tr>
-                    <tr>
+                    <tr id='UFOo'>
                         <td>12</td>
                         <td>UFO</td>
                         <td id='UFOoverall0'></td>
@@ -235,7 +236,7 @@
                         <td id='UFOoverall2'></td>
                         <td id='UFOoverall3'></td>
                     </tr>
-                    <tr>
+                    <tr id='GFWo'>
                         <td>12.8</td>
                         <td>GFW</td>
                         <td id='GFWoverall0'></td>
@@ -243,7 +244,7 @@
                         <td id='GFWoverall2'></td>
                         <td id='GFWoverall3'></td>
                     </tr>
-                    <tr>
+                    <tr id='TDo'>
                         <td>13</td>
                         <td>TD</td>
                         <td id='TDoverall0'></td>
@@ -251,7 +252,7 @@
                         <td id='TDoverall2'></td>
                         <td id='TDoverall3'></td>
                     </tr>
-                    <tr>
+                    <tr id='DDCo'>
                         <td>14</td>
                         <td>DDC</td>
                         <td id='DDCoverall0'></td>
@@ -259,7 +260,7 @@
                         <td id='DDCoverall2'></td>
                         <td id='DDCoverall3'></td>
                     </tr>
-                    <tr>
+                    <tr id='LoLKo'>
                         <td>15</td>
                         <td>LoLK</td>
                         <td id='LoLKoverall0'></td>
@@ -267,7 +268,7 @@
                         <td id='LoLKoverall2'></td>
                         <td id='LoLKoverall3'></td>
                     </tr>
-                    <tr>
+                    <tr id='HSiFSo'>
                         <td>16</td>
                         <td>HSiFS</td>
                         <td id='HSiFSoverall0'></td>
@@ -277,7 +278,7 @@
                     </tr>
                 </table>
             </div>
-            <div id='HRtP' style='display:block'>
+            <div id='HRtP'>
                 <p><img src='games/hrtp.jpg' class='cover98'> Touhou 1 - The Highly Responsive to Prayers</p>
                 <table align='center' class='sortable'>
                     <tr>
@@ -301,7 +302,7 @@
                     </tr>
                 </table>
             </div>
-            <div id='SoEW' style='display:block'>
+            <div id='SoEW'>
                 <p><img src='games/soew.jpg' class='cover98'> Touhou 2 - The Story of Eastern Wonderland</p>
                 <table align='center' class='sortable'>
                     <tr>
@@ -335,7 +336,7 @@
                     </tr>
                 </table>
             </div>
-            <div id='PoDD' style='display:block'>
+            <div id='PoDD'>
                 <p><img src='games/podd.jpg' class='cover98'> Touhou 3 - Phantasmagoria of Dim.Dream</p>
                 <table align='center' class='sortable'>
                     <tr>
@@ -401,7 +402,7 @@
                     </tr>
                 </table>
             </div>
-            <div id='LLS' style='display:block'>
+            <div id='LLS'>
                 <p><img src='games/lls.jpg' class='cover98'> Touhou 4 - Lotus Land Story</p>
                 <table align='center' class='sortable'>
                     <tr>
@@ -442,7 +443,7 @@
                     </tr>
                 </table>
             </div>
-            <div id='MS' style='display:block'>
+            <div id='MS'>
                 <p><img src='games/ms.jpg' class='cover98'> Touhou 5 - Mystic Square</p>
                 <table align='center' class='sortable'>
                     <tr>
@@ -483,7 +484,7 @@
                     </tr>
                 </table>
             </div>
-            <div id='EoSD' style='display:block'>
+            <div id='EoSD'>
 			<p><img src='games/eosd.jpg' class='cover'> Touhou 6 - The Embodiment of Scarlet Devil</p>
                 <table align='center' class='sortable'>
                     <tr>
@@ -524,7 +525,7 @@
                     </tr>
                 </table>
             </div>
-            <div id='PCB' style='display:block'>
+            <div id='PCB'>
                 <p><img src='games/pcb.jpg' class='cover'> Touhou 7 - Perfect Cherry Blossom</p>
                 <table align='center' class='sortable'>
                     <tr>
@@ -586,7 +587,7 @@
                     </tr>
                 </table>
             </div>
-            <div id='IN' style='display:block'>
+            <div id='IN'>
                 <p><img src='games/in.jpg' class='cover'> Touhou 8 - Imperishable Night (FinalB)</p>
                 <table align='center' class='sortable'>
                     <tr>
@@ -683,7 +684,7 @@
                     </tr>
                 </table>
             </div>
-            <div id='PoFV' style='display:block'>
+            <div id='PoFV'>
                 <p><img src='games/pofv.jpg' class='cover'> Touhou 9 - Phantasmagoria of Flower View</p>
                 <table align='center' class='sortable'>
                     <tr>
@@ -794,7 +795,7 @@
                     </tr>
                 </table>
             </div>
-            <div id='MoF' style='display:block'>
+            <div id='MoF'>
                 <p><img src='games/mof.jpg' class='cover'> Touhou 10 - Mountain of Faith</p>
                 <table align='center' class='sortable'>
                     <tr>
@@ -849,7 +850,7 @@
                     </tr>
                 </table>
             </div>
-			<div id='SA' style='display:block'>
+			<div id='SA'>
                 <p><img src='games/sa.jpg' class='cover'> Touhou 11 - Subterranean Animism</p>
                 <table align='center' class='sortable'>
                     <tr>
@@ -904,7 +905,7 @@
                     </tr>
                 </table>
             </div>
-			<div id='UFO' style='display:block'>
+			<div id='UFO'>
                 <p><img src='games/ufo.jpg' class='cover'> Touhou 12 - Undefined Fantastic Object</p>
                 <table align='center' class='sortable'>
                     <tr>
@@ -959,7 +960,7 @@
                     </tr>
                 </table>
             </div>
-			<div id='GFW' style='display:block'>
+			<div id='GFW'>
                 <p><img src='games/gfw.jpg' class='cover'> Touhou 12.8 - Great Fairy Wars</p>
                 <table id='GFWt' align='center' class='sortable'>
                     <thead>
@@ -1018,7 +1019,7 @@
                     </tfoot>
                 </table>
             </div>
-            <div id='TD' style='display:block'>
+            <div id='TD'>
                 <p><img src='games/td.jpg' class='cover'> Touhou 13 - Ten Desires</p>
                 <table align='center' class='sortable'>
                     <tr>
@@ -1059,7 +1060,7 @@
                     </tr>
                 </table>
             </div>
-			<div id='DDC' style='display:block'>
+			<div id='DDC'>
                 <p><img src='games/ddc.jpg' class='cover'> Touhou 14 - Double Dealing Character</p>
                 <table align='center' class='sortable'>
                     <tr>
@@ -1114,7 +1115,7 @@
                     </tr>
                 </table>
             </div>
-            <div id='LoLK' style='display:block'>
+            <div id='LoLK'>
                 <p><img src='games/lolk.jpg' class='cover'> Touhou 15 - Legacy of Lunatic Kingdom</p>
                 <table align='center' class='sortable'>
                     <tr>
@@ -1155,7 +1156,7 @@
                     </tr>
                 </table>
             </div>
-            <div id='HSiFS' style='display:block'>
+            <div id='HSiFS'>
                 <p><img src='games/hsifs.jpg' class='cover'> Touhou 16 - Hidden Star in Four Seasons</p>
                 <table align='center' class='sortable'>
                     <tr>
@@ -1194,6 +1195,19 @@
                         <td id='HSiFSLunaticMarisa'></td>
                         <td id='HSiFSExtraMarisa'></td>
                     </tr>
+                </table>
+            </div>
+            <div id='players'>
+                <p>Player Ranking</p>
+                <table id='ranking' align='center' class='sortable'>
+                    <thead>
+                        <tr>
+                            <th>Player</th>
+                            <th class='sorttable_numeric'>WRs</th>
+                            <th>Different games</th>
+                        </tr>
+                    </thead>
+                    <tbody id='ranking_tbody'></tbody>
                 </table>
             </div>
 		</div>

@@ -36,6 +36,18 @@ table, th, td {
     line-height: 1em;
     color: black;
 }
+#ranking.sortable tbody {
+    counter-reset: sortabletablescope;
+}
+#ranking.sortable thead tr::before {
+    content: "";
+    display: table-cell;
+}
+#ranking.sortable tbody tr::before {
+    content: counter(sortabletablescope);
+    counter-increment: sortabletablescope;
+    display: table-cell;
+}
 .cover98 {
     border: 1px solid black;
     width: 50px;
