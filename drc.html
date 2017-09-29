@@ -96,22 +96,7 @@
                         <li>For HSiFS, the first release adds 2 to <em>n</em> (3 on Lunatic), and further releases add 0.5 to <em>n</em>.</li>
                     </ul>
                 </p>
-                <table id='rubricsTable' align='center' class='noborders'>
-                    <tr class='noborders'>
-                        <td class='noborders'>
-                            <table>
-                                <thead><tr><td colspan='3'><b>Scoring</b><br>||Max * (Score/WR)^Exp||</td></tr></thead>
-                                <tbody id='scoringTable'></tbody>
-                            </table>
-                        </td>
-                        <td class='noborders' style='float:left'>
-                            <table>
-                                <thead><tr><td colspan='6'><b>Survival</b><br>||Max * (Base^-n)||</td></tr></thead>
-                                <tbody id='survivalTable'></tbody>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
+                <div id='rubricsTables'></div>
                 <br>
                 <b id='mountainOfFaith'>MoF Scoring</b>
                 <p>For each difficulty and shottype there are six thresholds, at which you will have set numbers of points respectively.
@@ -119,15 +104,6 @@
                 <table align='center'>
                     <tbody id='mofTable'></tbody>
                 </table>
-                <!--<br>
-                <b id='doubleSpoiler'>DS Scoring</b>
-                <p>This system is specific to DRC Round 8 and the 10 scenes that are being played. For each scene there are three thresholds,
-                at which you will have 10, 30 and 50 points respectively. The way this works is that 1 point is added for every 10th or 20th of
-                the amount of score between the thresholds (10th below the first threshold, 20th otherwise).</p>
-                <table align='center'>
-                    <thead><tr><th>Scene</th><th>Threshold 1</th><th>Threshold 2</th><th>Threshold 3</th></tr></thead>
-                    <tbody id='dsTable'></tbody>
-                </table>-->
                 <br>
                 <b id='phantasmagoria'>PoDD, PoFV Survival</b>
                 <p>In the below formula, MaxLives is equal to 5 for PoDD, 7 for PoFV main game and 8 for PoFV Extra.
