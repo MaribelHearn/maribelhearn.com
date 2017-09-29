@@ -64,7 +64,7 @@ h2 {
         margin-right: 0%;
     }
     #survival option {
-        width: 50px;
+        width: 40px;
     }
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
@@ -76,6 +76,6 @@ h2 {
         margin-right: 0%;
     }
     #survival option {
-        width: 50px;
+        width: 40px;
     }
 }
