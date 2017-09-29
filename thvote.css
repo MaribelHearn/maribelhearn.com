@@ -55,9 +55,6 @@ h3 {
     #correlation th, #correlation td {
         font-size: 8px;
     }
-    #back, #notice {
-        display: block;
-    }
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
 	#wrap {
@@ -67,8 +64,5 @@ h3 {
     }
     #correlation th, #correlation td {
         font-size: 8px;
-    }
-    #back, #notice {
-        display: block;
     }
 }

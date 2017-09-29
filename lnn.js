@@ -33,6 +33,11 @@ function checkAll() {
 }
 
 $(document).ready(function() {
+    // detect smartphone and tablet
+    if (navigator.userAgent.contains("Mobile") || navigator.userAgent.contains("Tablet")) {
+        $("#back").css("display", "block");
+	}
+    
     $.get("lnnlist.json", function(data) {
         LNNs = data;
         

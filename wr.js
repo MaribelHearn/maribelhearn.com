@@ -210,5 +210,11 @@ function load() {
 }
 
 $(document).ready(function() {
+    // detect smartphone and tablet
+    if (navigator.userAgent.contains("Mobile") || navigator.userAgent.contains("Tablet")) {
+        $("#notice").css("display", "block");
+        $("#back").css("display", "block");
+	}
+    
 	load();
 });
