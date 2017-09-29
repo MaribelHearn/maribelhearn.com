@@ -83,6 +83,11 @@ var calc = function () {
 };
 
 $(document).ready(function() {
+    // detect smartphone and tablet
+    if (navigator.userAgent.contains("Mobile") || navigator.userAgent.contains("Tablet")) {
+        $("#notice").css("display", "block");
+	}
+    
     $.get("wrlist.json", function(data) {
         WRs = data;
     }, "json");
