@@ -63,7 +63,7 @@ h2 {
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
 	#wrap {
-        margin-left: 15%;
-        margin-right: 15%;
+        margin-left: 0%;
+        margin-right: 0%;
     }
 }
