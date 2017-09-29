@@ -1,5 +1,5 @@
 body {
-	background: url('./bg/drc.jpg') top no-repeat fixed;
+	background: url('bg/drc.jpg') top no-repeat fixed;
 }
 table, tr, th, td {
     border: 1px solid black;
@@ -30,21 +30,27 @@ h2 {
 #difficultyLabel, #challengeLabel {
     display: none;
 }
-@media only screen and (max-width: 1400px) {
-    .wrap {
+@media only screen and (min-width: 800px) and (max-width: 1400px) {
+    #wrap {
         margin-left: 15%;
         margin-right: 15%;
     }
 }
+@media only screen and (max-width: 800px) {
+    #wrap {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+}
 @media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
-    .wrap {
-	    margin-left: 0%;
-	    margin-right: 0%;
-	}
+	#wrap {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
-    .wrap {
-	    margin-left: 0%;
-	    margin-right: 0%;
-	}
+	#wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
 }
