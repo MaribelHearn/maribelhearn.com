@@ -1,3 +1,5 @@
+var maxAge = "Fri, 31 Dec 9999 23:59:59 UTC";
+
 var numericSort = function (a, b) {
     return b - a;
 };
