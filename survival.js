@@ -1,53 +1,189 @@
-﻿var games = {
-    "HRtP": ["Easy", "Normal", "Hard", "Lunatic"],
-    "SoEW": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
-    "PoDD": ["Easy", "Normal", "Hard", "Lunatic"],
-    "LLS": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
-    "MS": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
-    "EoSD": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
-    "PCB": ["Easy", "Normal", "Hard", "Lunatic", "Extra", "Phantasm"],
-    "IN": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
-    "PoFV": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
-    "MoF": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
-    "SA": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
-    "UFO": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
-    "GFW": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
-    "TD": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
-    "DDC": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
-    "LoLK": ["Easy", "Normal", "Hard", "Lunatic", "Extra"],
-    "HSiFS": ["Easy", "Normal", "Hard", "Lunatic", "Extra"]
+﻿var vals = {
+    "HRtP": {
+        "Easy": "N/A",
+        "Normal": "N/A",
+        "Hard": "N/A",
+        "Lunatic": "N/A"
+    },
+    "SoEW": {
+        "Easy": "N/A",
+        "Normal": "N/A",
+        "Hard": "N/A",
+        "Lunatic": "N/A",
+        "Extra": "N/A"
+    },
+    "PoDD": {
+        "Easy": "N/A",
+        "Normal": "N/A",
+        "Hard": "N/A",
+        "Lunatic": "N/A"
+    },
+    "LLS": {
+        "Easy": "N/A",
+        "Normal": "N/A",
+        "Hard": "N/A",
+        "Lunatic": "N/A",
+        "Extra": "N/A"
+    },
+    "MS": {
+        "Easy": "N/A",
+        "Normal": "N/A",
+        "Hard": "N/A",
+        "Lunatic": "N/A",
+        "Extra": "N/A"
+    },
+    "EoSD": {
+        "Easy": "N/A",
+        "Normal": "N/A",
+        "Hard": "N/A",
+        "Lunatic": "N/A",
+        "Extra": "N/A"
+    },
+    "PCB": {
+        "Easy": "N/A",
+        "Normal": "N/A",
+        "Hard": "N/A",
+        "Lunatic": "N/A",
+        "Extra": "N/A",
+        "Phantasm": "N/A"
+    },
+    "IN": {
+        "Easy": "N/A",
+        "Normal": "N/A",
+        "Hard": "N/A",
+        "Lunatic": "N/A",
+        "Extra": "N/A"
+    },
+    "PoFV": {
+        "Easy": "N/A",
+        "Normal": "N/A",
+        "Hard": "N/A",
+        "Lunatic": "N/A",
+        "Extra": "N/A"
+    },
+    "MoF": {
+        "Easy": "N/A",
+        "Normal": "N/A",
+        "Hard": "N/A",
+        "Lunatic": "N/A",
+        "Extra": "N/A"
+    },
+    "SA": {
+        "Easy": "N/A",
+        "Normal": "N/A",
+        "Hard": "N/A",
+        "Lunatic": "N/A",
+        "Extra": "N/A"
+    },
+    "UFO": {
+        "Easy": "N/A",
+        "Normal": "N/A",
+        "Hard": "N/A",
+        "Lunatic": "N/A",
+        "Extra": "N/A"
+    },
+    "GFW": {
+        "Easy": "N/A",
+        "Normal": "N/A",
+        "Hard": "N/A",
+        "Lunatic": "N/A",
+        "Extra": "N/A"
+    },
+    "TD": {
+        "Easy": "N/A",
+        "Normal": "N/A",
+        "Hard": "N/A",
+        "Lunatic": "N/A",
+        "Extra": "N/A"
+    },
+    "DDC": {
+        "Easy": "N/A",
+        "Normal": "N/A",
+        "Hard": "N/A",
+        "Lunatic": "N/A",
+        "Extra": "N/A"
+    },
+    "LoLK": {
+        "Easy": "N/A",
+        "Normal": "N/A",
+        "Hard": "N/A",
+        "Lunatic": "N/A",
+        "Extra": "N/A"
+    },
+    "HSiFS": {
+        "Easy": "N/A",
+        "Normal": "N/A",
+        "Hard": "N/A",
+        "Lunatic": "N/A",
+        "Extra": "N/A"
+    }
 };
+
+var setCookie = function () {
+    document.cookie = "vals=" + JSON.stringify(vals) + ";expires=" + maxAge + ";path=/";
+}
+
+var readCookie = function () {
+    var array, cookie, pair;
+    
+    array = document.cookie.split(';');
+    cookie = array[0];
+    
+    if (!cookie) {
+        return undefined;
+    }
+    
+    pair = cookie.split('=');
+    return JSON.parse(pair[1]);
+}
 
 var isTripleNGame = function (game) {
     return game == "PCB" || game == "UFO" || game == "TD" || game == "HSiFS";
 };
 
-var fillAll = function (value, achievement) {
-    var value, i;
+var getPercentage = function (game) {
+    return 100 / Object.keys(vals[game]).length;
+};
+
+var setProgress = function (category, val) {
+    var game, difficulty;
     
-    if (games.hasOwnProperty(value)) {
-        for (i in games[value]) {
-            $("#" + value + games[value][i]).val(achievement);
+    difficulty = category.match(/Easy|Normal|Hard|Lunatic|Extra|Phantasm/);
+    game = category.replace(difficulty, "");
+    vals[game][difficulty] = val;
+};
+
+var fillAll = function (value, achievement) {
+    var value, difficulty;
+    
+    if (vals.hasOwnProperty(value)) {
+        for (difficulty in vals[value]) {
+            $("#" + value + difficulty).val(achievement);
+            vals[value][difficulty] = achievement;
         }
     } else {
         if (value == "Extra") {
             $("#PCBPhantasm").val(achievement);
         }
         
-        for (game in games) {
+        for (game in vals) {
             if (value == "Normal" || value == "Hard" || value == "Lunatic") {
                 $("#" + game + "Easy").val(achievement);
+                vals[game]["Easy"] = achievement;
                 
                 if (value == "Hard" || value == "Lunatic") {
                     $("#" + game + "Normal").val(achievement);
+                    vals[game]["Normal"] = achievement;
                     
                     if (value == "Lunatic") {
                         $("#" + game + "Hard").val(achievement);
+                        vals[game]["Hard"] = achievement;
                     }
                 }
             }
             
             $("#" + game + value).val(achievement);
+            vals[game][value] = achievement;
         }
     }
 }
@@ -65,142 +201,45 @@ var format = function (achievement) {
 };
 
 var apply = function () {
-    var results = "", game, i, difficulty, id, survival,
-        survivals = {
-            "Not cleared": {
-                "Easy": 0,
-                "Normal": 0,
-                "Hard": 0,
-                "Lunatic": 0,
-                "Extra": 0
-            },
-            "1cc": {
-                "Easy": 0,
-                "Normal": 0,
-                "Hard": 0,
-                "Lunatic": 0,
-                "Extra": 0
-            },
-            "NM": {
-                "Easy": 0,
-                "Normal": 0,
-                "Hard": 0,
-                "Lunatic": 0,
-                "Extra": 0
-            },
-            "NB": {
-                "Easy": 0,
-                "Normal": 0,
-                "Hard": 0,
-                "Lunatic": 0,
-                "Extra": 0
-            },
-            "NN*": {
-                "Easy": 0,
-                "Normal": 0,
-                "Hard": 0,
-                "Lunatic": 0,
-                "Extra": 0
-            },
-            "NN": {
-                "Easy": 0,
-                "Normal": 0,
-                "Hard": 0,
-                "Lunatic": 0,
-                "Extra": 0
-            }
-        },
-        na = {
-            "HRtP": 0,
-            "SoEW": 0,
-            "PoDD": 0,
-            "LLS": 0,
-            "MS": 0,
-            "EoSD": 0,
-            "PCB": 0,
-            "IN": 0,
-            "PoFV": 0,
-            "MoF": 0,
-            "SA": 0,
-            "UFO": 0,
-            "GFW": 0,
-            "TD": 0,
-            "DDC": 0,
-            "LoLK": 0,
-            "HSiFS": 0
-        }
-        completions = {
-            "HRtP": 0,
-            "SoEW": 0,
-            "PoDD": 0,
-            "LLS": 0,
-            "MS": 0,
-            "EoSD": 0,
-            "PCB": 0,
-            "IN": 0,
-            "PoFV": 0,
-            "MoF": 0,
-            "SA": 0,
-            "UFO": 0,
-            "GFW": 0,
-            "TD": 0,
-            "DDC": 0,
-            "LoLK": 0,
-            "HSiFS": 0
-        };
+    var numbers = {
+        "Easy": {"Not cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NN*": 0, "NN(N)": 0},
+        "Normal": {"Not cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NN*": 0, "NN(N)": 0},
+        "Hard": {"Not cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NN*": 0, "NN(N)": 0},
+        "Lunatic": {"Not cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NN*": 0, "NN(N)": 0},
+        "Extra": {"Not cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NN*": 0, "NN(N)": 0},
+    },
+    na = {"HRtP": 0, "SoEW": 0, "PoDD": 0, "LLS": 0, "MS": 0, "EoSD": 0, "PCB": 0, "IN": 0, "PoFV": 0, "MoF": 0, "SA": 0, "UFO": 0, "GFW": 0, "TD": 0, "DDC": 0, "LoLK": 0, "HSiFS": 0},
+    completions = {"HRtP": 0, "SoEW": 0, "PoDD": 0, "LLS": 0, "MS": 0, "EoSD": 0, "PCB": 0, "IN": 0, "PoFV": 0, "MoF": 0, "SA": 0, "UFO": 0, "GFW": 0, "TD": 0, "DDC": 0, "LoLK": 0, "HSiFS": 0},
+    results = "<h2>Progress Table</h2><table id='overview'><thead><tr><th class='overview'>Game</th><th class='overview'>Easy</th><th class='overview'>Normal</th><th class='overview'>Hard</th>" +
+    "<th class='overview'>Lunatic</th><th class='overview' colspan='2'>Extra</th></tr></thead><tbody>",
+    game, difficulty, val;
     
-    for (game in games) {
-        for (i in games[game]) {
-            difficulty = games[game][i];
-            survival = $("#" + game + difficulty).val();
-            
-            if (survival == "N/A") {
-                na[game] += 100 / games[game].length;
-                continue;
-            }
+    for (game in vals) {
+        results += "<tr><th>" + game + "</th>";
+        
+        for (difficulty in vals[game]) {
+            val = vals[game][difficulty];
+            results += "<td class='" + format(val) + "'" + (difficulty == "Extra" && game != "PCB" ? " colspan='2'" : "") + "></td>";
             
             if (difficulty == "Phantasm") {
                 difficulty = "Extra";
             }
             
-            if (survival == "Not cleared") {
-                survivals["Not cleared"][difficulty]++;
-                continue;
+            if (val == "N/A") {
+                na[game] += getPercentage(game);
+            } else if (val == "Not cleared") {
+                numbers[difficulty]["Not cleared"] += 1;
+            } else {
+                completions[game] += getPercentage(game);
+                
+                if (val == "NN" && isTripleNGame(game)) {
+                    numbers[difficulty]["NN*"] += 1;
+                } else if (val == "NN" || val == "NNN") {
+                    numbers[difficulty]["NN(N)"] += 1;
+                } else {
+                    numbers[difficulty][val] += 1;
+                }
             }
-            
-            if (survival == "1cc") {
-                survivals["1cc"][difficulty]++;
-            }
-            
-            if (survival == "NM") {
-                survivals["NM"][difficulty]++;
-            }
-            
-            if (survival == "NB") {
-                survivals["NB"][difficulty]++;
-            }
-            
-            if (survival == "NN") {
-                isTripleNGame(game) ? survivals["NN*"][difficulty]++ : survivals["NN"][difficulty]++;
-            }
-            
-            if (survival == "NNN") {
-                survivals["NN"][difficulty]++;
-            }
-            
-            completions[game] += 100 / games[game].length;
-        }
-    }
-    
-    results = "<h2>Progress Table</h2><table id='overview'><thead><tr><th class='overview'>Game</th><th class='overview'>Easy</th><th class='overview'>Normal</th><th class='overview'>Hard</th>" +
-    "<th class='overview'>Lunatic</th><th class='overview' colspan='2'>Extra</th></tr></thead><tbody>";
-    
-    for (game in games) {
-        results += "<tr><th>" + game + "</th>";
-        
-        for (i in games[game]) {
-            difficulty = games[game][i];
-            results += "<td class='" + format($("#" + game + difficulty).val()) + "'" + (difficulty == "Extra" && game != "PCB" ? " colspan='2'" : "") + "></td>";
         }
             
         if (game == "HRtP" || game == "PoDD") {
@@ -214,17 +253,23 @@ var apply = function () {
         }
     }
     
-    results += "</tbody></table><h2>Numbers of Achievements</h2><table id='table' class='sortable'><thead><tr><th>Survival</th><th>Easy</th><th>Normal</th><th>Hard</th><th>Lunatic</th><th>Extra</th></tr></thead><tbody>";
+    results += "</tbody></table>" +
+    "<h2>Numbers of Achievements</h2><table id='table' class='sortable'><thead><tr><th>Difficulty</th><th>Not cleared</th><th>1cc</th><th>NM</th><th>NB</th><th>NN*</th><th>NN(N)</th></tr></thead><tbody>";
     
-    for (survival in survivals) {
-        results += "<tr><td>" + survival + "</td><td>" + survivals[survival]["Easy"] + "</td><td>" + survivals[survival]["Normal"] +
-        "</td><td>" + survivals[survival]["Hard"] + "</td><td>" + survivals[survival]["Lunatic"] + "</td><td>" + survivals[survival]["Extra"] + "</td></tr>";
+    for (difficulty in numbers) {
+        results += "<tr><th>" + difficulty + "</th>";
+        
+        for (val in numbers[difficulty]) {
+            results += "<td>" + numbers[difficulty][val] + "</td>";
+        }
+        
+        results += "</tr>";
     }
     
     results += "</tbody></table><p>* Any NN that was achieved in a game with a third N.</p>" +
     "<h2>Clear Completions</h2><table id='gameTable' class='sortable'><thead><tr><th>Game</th><th>Clear Completion</th></tr></thead><tbody>";
     
-    for (game in games) {
+    for (game in vals) {
         if (Math.round(na[game]) == 100) {
             continue;
         }
@@ -240,9 +285,22 @@ var apply = function () {
     $("#overview").attr("align", "center");
     sorttable.makeSortable(table);
     sorttable.makeSortable(gameTable);
+    setCookie();
 };
 
 $(document).ready(function() {
+    var cookie = readCookie();
+    
+    if (cookie) {
+        vals = cookie;
+    }
+    
+    for (game in vals) {
+        for (difficulty in vals[game]) {
+            $("#" + game + difficulty).val(vals[game][difficulty]);
+        }
+    }
+    
     // detect smartphone and tablet
     if (navigator.userAgent.contains("Mobile") || navigator.userAgent.contains("Tablet")) {
         $("#notice").css("display", "block");
