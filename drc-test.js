@@ -1109,6 +1109,7 @@ $(document).ready(function() {
         generateText(true);
         checkValues(true, true, true);
         generateRubrics();
+        $(POFV_FORMULA).attr("colspan", 4);
     }, "json");
 });
 

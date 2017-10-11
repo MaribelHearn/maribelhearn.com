@@ -5,7 +5,7 @@
     PHANTASM = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option><option>Phantasm</option>", SHOTTYPE_LABEL = "#shottypeLabel",
     MISSES_INPUT = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>", ERROR_TEXT = "<b style='color:red'>Error: ", CLEARED = "#cleared", SCENE = "#scene",
     SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>", SCORING_TABLE = "#scoringTable", SURV_TABLE = "#survivalTable", ROUTE = "#route", BB = "#bb", DS_TABLE = "#dsTable",
-    MOF_TABLE = "#mofTable", RELEASES = "#releases", SEASON = "#season", RUBRICS_TABLES = "#rubricsTables",
+    MOF_TABLE = "#mofTable", RELEASES = "#releases", SEASON = "#season", RUBRICS_TABLES = "#rubricsTables", POFV_FORMULA = "#pofvFormula",
     SURV_RUBRICS = {
         "SoEW": {
             "Easy": {
@@ -1098,6 +1098,7 @@ $(document).ready(function() {
         WRs = data;
         checkValues(true, true, true);
         generateRubrics();
+        $(POFV_FORMULA).attr("colspan", 4);
     }, "json");
 });
 
