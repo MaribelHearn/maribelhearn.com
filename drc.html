@@ -16,7 +16,7 @@
 	<body>
 		<div id='wrap'>
 			<h1>Dodging Rain Competition</h1>
-            <p>The <b>Dodging Rain Competition (DRC)</b> is a Touhou game competition that was invented by ZM and is held on
+            <p>The <strong>Dodging Rain Competition (DRC)</strong> is a Touhou game competition that was invented by ZM and is held on
             <a href='http://eientei.boards.net/thread/829/official-dodging-rain-competition-thread'>Eientei Forums</a>.
             Two teams go up against each other in several different categories. Each player posts an arbitrarily long list of categories, ordered by preference,
             which can be either survival or scoring of any Touhou shooting game and any difficulty. They will be matched up against a player from the other team, in a category that both players had on their list.
@@ -78,34 +78,30 @@
             <p>The rubrics are the formulas and fixed values used to calculate the number of DRC points for a run. If you are curious about how your points are being determined, click the button below to expand.</p>
             <input id='rubricsButton' type='button' onClick='javascript:showRubrics()' value='Show Rubrics'>
             <div id='rubrics' style='display:none'>
-                <p>
-                    <b>Scoring Notes</b>
-                    <ul>
-                        <li>If a new World Record is achieved, the points are equal to the base points; otherwise, the formula applies.</li>
-                        <li>MoF uses a separate system. Click <a href='#mountainOfFaith'>here</a> for said system.</li>
-                        <!--<li>DS uses a separate system. Click <a href='#doubleSpoiler'>here</a> for said system.</li>-->
-                    </ul>
-                </p>
-                <p>
-                    <b>Survival Notes</b>
-                    <ul>
-                        <li>For a main game run, a shottype multiplier is applied to the result of the formula, the result of which is again rounded.
-                        Click <a href='#shottypeMultipliers'>here</a> for the list of them.</li>
-                        <li>The Phantasmagorias use a separate system. Click <a href='#phantasmagoria'>here</a> for said system.</li>
-                        <li>For IN, you obtain 2 (1 on Easy) additional points for each captured Last Spell, with the exception of Imperishable Shooting, which yields 5 points.</li>
-                        <li>For HSiFS, the first release adds 2 to <em>n</em> (3 on Lunatic), and further releases add 0.5 to <em>n</em>.</li>
-                    </ul>
-                </p>
+                <p><strong>Scoring Notes</strong></p>
+                <ul>
+                    <li>If a new World Record is achieved, the points are equal to the base points; otherwise, the formula applies.</li>
+                    <li>MoF uses a separate system. Click <a href='#mountainOfFaith'>here</a> for said system.</li>
+                    <!--<li>DS uses a separate system. Click <a href='#doubleSpoiler'>here</a> for said system.</li>-->
+                </ul>
+                <p><strong>Survival Notes</strong></p>
+                <ul>
+                    <li>For a main game run, a shottype multiplier is applied to the result of the formula, the result of which is again rounded.
+                    Click <a href='#shottypeMultipliers'>here</a> for the list of them.</li>
+                    <li>The Phantasmagorias use a separate system. Click <a href='#phantasmagoria'>here</a> for said system.</li>
+                    <li>For IN, you obtain 2 (1 on Easy) additional points for each captured Last Spell, with the exception of Imperishable Shooting, which yields 5 points.</li>
+                    <li>For HSiFS, the first release adds 2 to <em>n</em> (3 on Lunatic), and further releases add 0.5 to <em>n</em>.</li>
+                </ul>
                 <div id='rubricsTables'></div>
                 <br>
-                <b id='mountainOfFaith'>MoF Scoring</b>
+                <strong id='mountainOfFaith'>MoF Scoring</strong>
                 <p>For each difficulty and shottype there are six thresholds, at which you will have set numbers of points respectively.
                 Then, increments are done, dependent on how much higher than the threshold your score is.</p>
                 <table align='center'>
                     <tbody id='mofTable'></tbody>
                 </table>
                 <br>
-                <b id='phantasmagoria'>PoDD, PoFV Survival</b>
+                <strong id='phantasmagoria'>PoDD, PoFV Survival</strong>
                 <p>In the below formula, MaxLives is equal to 5 for PoDD, 7 for PoFV main game and 8 for PoFV Extra.
                 NoBombBonus is a difficulty-specific No Bomb bonus for PoDD and a No Charge Attacks bonus for PoFV.
                 RoundsLost is equal to how many rounds the player lost.</p>
@@ -114,7 +110,7 @@
                     <tbody id='phantasmagoriaTable'></tbody>
                 </table>
                 <br>
-                <b id='shottypeMultipliers'>Shottype Multipliers</b>
+                <strong id='shottypeMultipliers'>Shottype Multipliers</strong>
                 <p>These are applied to the result of the survival formula for a main game run only; they do <em>not</em> apply for Extra,
                 nor do they apply for HSiFS runs that use releases. For all shots not listed here, the shottype multipliers are equal to 1.</p>
                 <table align='center'>
