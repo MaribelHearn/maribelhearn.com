@@ -21,8 +21,17 @@ input {
     opacity: 0.8;
     font: 14px verdana, sans-serif;
 }
+#contents {
+    border: 1px solid black;
+}
 #table {
     margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#gameTable {
+    margin-left: auto;
+    margin-right: auto;
 }
 #table, #table th, #table td {
     border: 1px solid black;
@@ -41,6 +50,10 @@ input {
     content: counter(sortabletablescope);
     counter-increment: sortabletablescope;
     display: table-cell;
+}
+.center {
+    margin-left: auto;
+    margin-right: auto;
 }
 .wr {
     color: #0000EE;

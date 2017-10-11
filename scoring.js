@@ -76,8 +76,6 @@ var calc = function () {
     }
     
     $("#topList").html(topList);
-    $("#table").attr("align", "center");
-    $("#gameTable").attr("align", "center");
     sorttable.makeSortable(document.getElementById("table"));
     sorttable.makeSortable(document.getElementById("gameTable"));
 };
