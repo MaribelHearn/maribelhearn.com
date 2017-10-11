@@ -33,6 +33,10 @@ table, tr, th, td {
 #contents th, #contents td {
     border: none;
 }
+.center, #table {
+    margin-left: auto;
+    margin-right: auto;
+}
 .description {
     font-size: 12px;
 }
