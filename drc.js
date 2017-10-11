@@ -1461,16 +1461,16 @@ function generateRubrics() {
     
     // detect smartphone
 	if (navigator.userAgent.contains("Mobile")) {
-        $(RUBRICS_TABLES).html("<table align='center'>" +
+        $(RUBRICS_TABLES).html("<table class='center'>" +
         "<thead><tr><td colspan='3'><b>Scoring</b><br>||Max * (Score/WR)^Exp||</td></tr></thead>" +
         "<tbody id='scoringTable'></tbody>" +
         "</table>" +
-        "<table align='center'>" +
+        "<table class='center'>" +
         "<thead><tr><td colspan='6'><b>Survival</b><br>||Max * (Base^-n)||</td></tr></thead>" +
         "<tbody id='survivalTable'></tbody>" +
         "</table>");
 	} else {
-        $(RUBRICS_TABLES).html("<table align='center' class='noborders'>" +
+        $(RUBRICS_TABLES).html("<table id='noborders'>" +
         "<tr class='noborders'>" +
         "<td class='noborders'>" +
         "<table>" +
