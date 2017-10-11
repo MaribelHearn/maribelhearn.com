@@ -18,7 +18,7 @@
 			<h1>Dodging Rain Competition</h1>
             <p id='drcIntro'></p>
             <p id='drcIntroPts'></p>
-            <h2 id='pointsCalculator'></h2>
+            <h2 id='pointsCalculator'>Points Calculator</h2>
             <p id='drcScores'></p>
             <p id='notify'></p>
             <label id='category' for='game'>Category</label>
@@ -69,80 +69,74 @@
 			<div id='drcpoints'></div>
             <div id='error'></div>
 			<p><input id='calculate' type='button' onClick='javascript:drcPoints()' value='Calculate'></p>
-            <h2 id='rubricsText'></h2>
+            <h2 id='rubricsText'>Rubrics</h2>
             <p id='rubricsExpl'></p>
             <input id='rubricsButton' type='button' onClick='javascript:showRubrics()' value='Show Rubrics'>
             <div id='rubrics' style='display:none'>
-                <p>
-                    <b id='scoringNotes'>Scoring Notes:</b>
-                    <ul>
-                        <li id='newWR'></li>
-                        <li id='mofSeparate'></li>
-                        <!--<li>DS uses a separate system. Click <a href='#doubleSpoiler'>here</a> for said system.</li>-->
-                    </ul>
-                </p>
-                <p>
-                    <b id='survivalNotes'>Survival Notes:</b>
-                    <ul>
-                        <li id='maingame'></li>
-                        <li id='phantasmagoriaSeparate'></li>
-                        <li id='inLS'></li>
-                        <li id='hsifsReleases'></li>
-                    </ul>
-                </p>
+                <p><strong id='scoringNotes'>Scoring Notes:</strong></p>
+                <ul>
+                    <li id='newWR'></li>
+                    <li id='mofSeparate'></li>
+                    <!--<li>DS uses a separate system. Click <a href='#doubleSpoiler'>here</a> for said system.</li>-->
+                </ul>
+                <p><strong id='survivalNotes'>Survival Notes:</strong></p>
+                <ul>
+                    <li id='maingame'></li>
+                    <li id='phantasmagoriaSeparate'></li>
+                    <li id='inLS'></li>
+                    <li id='hsifsReleases'></li>
+                </ul>
                 <div id='rubricsTables'></div>
                 <br>
-                <b id='mountainOfFaith'>MoF Scoring</b>
+                <strong id='mountainOfFaith'>MoF Scoring</strong>
                 <p>For each difficulty and shottype there are six thresholds, at which you will have set numbers of points respectively.
                 Then, increments are done, dependent on how much higher than the threshold your score is.</p>
-                <table align='center'>
+                <table class='center'>
                     <tbody id='mofTable'></tbody>
                 </table>
                 <!--<br>
-                <b id='doubleSpoiler'>DS Scoring</b>
+                <strong id='doubleSpoiler'>DS Scoring</strong>
                 <p>This system is specific to DRC Round 8 and the 10 scenes that are being played. For each scene there are three thresholds,
                 at which you will have 10, 30 and 50 points respectively. The way this works is that 1 point is added for every 10th or 20th of
                 the amount of score between the thresholds (10th below the first threshold, 20th otherwise).</p>
-                <table align='center'>
+                <table class='center'>
                     <thead><tr><th>Scene</th><th>Threshold 1</th><th>Threshold 2</th><th>Threshold 3</th></tr></thead>
                     <tbody id='dsTable'></tbody>
                 </table>-->
                 <br>
-                <b id='phantasmagoria'>PoDD &amp; PoFV Survival</b>
+                <strong id='phantasmagoria'>PoDD &amp; PoFV Survival</strong>
                 <p>In the below formula, MaxLives is equal to 5 for PoDD, 7 for PoFV main game and 8 for PoFV Extra.
                 NoBombBonus is a difficulty-specific No Bomb bonus for PoDD and a No Charge Attacks bonus for PoFV.
                 RoundsLost is equal to how many rounds the player lost.</p>
-                <table align='center'>
+                <table class='center'>
                     <thead><tr><td id='pofvFormula' colspan='4'></td></tr></thead>
                     <tbody id='phantasmagoriaTable'></tbody>
                 </table>
                 <br>
-                <b id='shottypeMultipliers'>Shottype Multipliers</b>
+                <strong id='shottypeMultipliers'>Shottype Multipliers</strong>
                 <p>These are applied to the result of the survival formula for a main game run only; they do <em>not</em> apply for Extra,
                 nor do they apply for HSiFS runs that use releases. For all shots not listed here, the shottype multipliers are equal to 1.</p>
-                <table align='center'>
+                <table class='center'>
                     <tbody id='shottypeMultipliersTable'></tbody>
                 </table>
                 <br>
                 <a id='backToTop' href='#wrap'></a>
             </div>
-            <h2 id='languageText'></h2>
-            <span class='language'>
-                <table class='noborders' align='center'>
-                    <tr class='noborders'>
-                        <td class='noborders'>
-                            <a href='javascript:setLanguage("English")'><img src='./uk.png' alt='Flag of the United Kingdom'></a>
-                        </td>
-                        <td class='noborders'>
-                            <a href='javascript:setLanguage("Japanese")'><img src='./japan.png' alt='Flag of Japan'></a>
-                        </td>
-                    </tr>
-                    <tr class='noborders'>
-                        <td class='noborders'><a href='javascript:setLanguage("English")'>English</a></td>
-                        <td class='noborders'><a href='javascript:setLanguage("Japanese")'>日本語</a></td>
-                    </tr>
-                </table>
-            </span>
+            <h2 id='languageText'>Language</h2>
+            <table id='languages' class='noborders'>
+                <tr class='noborders'>
+                    <td class='noborders'>
+                        <a href='javascript:setLanguage("English")'><img src='./uk.png' alt='Flag of the United Kingdom'></a>
+                    </td>
+                    <td class='noborders'>
+                        <a href='javascript:setLanguage("Japanese")'><img src='./japan.png' alt='Flag of Japan'></a>
+                    </td>
+                </tr>
+                <tr class='noborders'>
+                    <td class='noborders'><a href='javascript:setLanguage("English")'>English</a></td>
+                    <td class='noborders'><a href='javascript:setLanguage("Japanese")'>日本語</a></td>
+                </tr>
+            </table>
 		</div>
 	</body>
 
