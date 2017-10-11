@@ -13,6 +13,10 @@ h2 {
 h3 {
     font: 24px monotype corsiva;
 }
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
 #contents, #responses {
    border: 1px solid black;
 }
