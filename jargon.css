@@ -5,10 +5,10 @@ div {
     background-color: #FFFFFF;
 }
 h1 {
-    font: 48px monotype corsiva;
+    font: 48px 'monotype corsiva';
 }
 h2 {
-    font: 36px monotype corsiva;
+    font: 36px 'monotype corsiva';
 }
 #wrap {
     border: 1px solid black;
@@ -30,7 +30,7 @@ h2 {
         margin-right: 15%;
     }
     .jargon {
-        width: default;
+        width: auto;
     }
 }
 @media only screen and (max-width: 800px) {
@@ -39,7 +39,7 @@ h2 {
         margin-right: 0%;
     }
     .jargon {
-        width: default;
+        width: auto;
     }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
@@ -48,7 +48,7 @@ h2 {
         margin-right: 0%;
     }
     .jargon {
-        width: default;
+        width: auto;
     }
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
@@ -57,6 +57,6 @@ h2 {
         margin-right: 15%;
     }
     .jargon {
-        width: default;
+        width: auto;
     }
 }
