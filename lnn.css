@@ -10,6 +10,10 @@ h1 {
 h2 {
     font: 36px monotype corsiva;
 }
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
 table, th, td {
     border: 1px solid black;
 }
@@ -58,6 +62,9 @@ table, th, td {
 .cover {
     width: 50px;
     height: 50px;
+}
+.noborders {
+    border: none;
 }
 .t {
     text-decoration: underline;
