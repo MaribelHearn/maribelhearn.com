@@ -742,7 +742,7 @@
 
 var calc = function () {
     var top = {}, averages = {}, total = 0, categories = 0, highest = 0,
-        game, difficulty, id, span, score, shottype, wr, percentage, average, key, i, table, gameTable, temp,
+        game, difficulty, id, span, score, shottype, wr, percentage, wrText, average, table, gameTable,
         topList = "<table id='table'><thead><tr><th>Game + Difficulty</th><th>Shottype / Route</th><th class='sorttable_numeric'>Score</th><th>WR Percentage</th><th>Progress Bar</th><th>WR</th></tr></thead><tbody>",
         precision = parseInt($("#precision").val());
         
@@ -781,7 +781,13 @@ var calc = function () {
                     score -= 1;
                 }
                 
-                percentage = (wr[0] === 0 ? 100 : score / wr[0] * 100);
+                if (wr[0] === 0) {
+                    percentage = 100;
+                    wrText = "";
+                } else {
+                    score / wr[0] * 100;
+                    wrText = sep(wr[0]) + " by <i>" + wr[1] + "</i>";
+                }
                 
                 if (percentage > highest) {
                     highest = percentage;
@@ -789,7 +795,7 @@ var calc = function () {
                 
                 percentage = (precision === 0 ? Math.round(percentage) : Number(percentage).toFixed(precision));
                 topList += "<tr><td>" + game + " " + difficulty + "</td><td>" + shottype.replace("Team", " Team") + "</td><td>" + sep(score) + "</td><td>" + percentage +
-                "%</td><td><progress value='" + percentage + "' max='100'></progress></td><td>" + sep(wr[0]) + " by <i>" + wr[1] + "</i>";
+                "%</td><td><progress value='" + percentage + "' max='100'></progress></td><td>" + wrText + "</td>";
                 
                 total += Number(percentage);
                 categories++;
