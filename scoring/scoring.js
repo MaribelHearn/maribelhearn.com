@@ -1,4 +1,4 @@
-﻿var WRs, NUMBER_OF_GAMES = 16, scores = {
+﻿var WRs, NUMBER_OF_GAMES = 16, scoreList = {
   "HRtP": {
     "Easy": {
       "Makai": 0,
@@ -774,7 +774,7 @@ var calc = function () {
                 
                 score = parseInt(score);
                 wr = WRs[game][difficulty][shottype];
-                scores[game][difficulty][shottype] = score;
+                scoreList[game][difficulty][shottype] = score;
                 
                 if (score == wr[0]) {
                     hack = true;
@@ -819,21 +819,21 @@ var calc = function () {
     $("#topList").html(topList);
     sorttable.makeSortable(document.getElementById("table"));
     sorttable.makeSortable(document.getElementById("gameTable"));
-    document.cookie = "scores=" + JSON.stringify(scores) + ";expires=" + maxAge;
+    document.cookie = "scoreList=" + JSON.stringify(scoreList) + ";expires=" + maxAge;
 };
 
 $(document).ready(function() {
-    var cookie = getCookie("scores");
+    var cookie = getCookie("scoreList");
     
     if (cookie) {
-        scores = cookie;
+        scoreList = cookie;
     }
     
-    for (var game in scores) {
-        for (difficulty in scores[game]) {
-            for (var shottype in scores[game][difficulty]) {
-                if (scores[game][difficulty][shottype] !== 0) {
-                    $("#" + game + difficulty + shottype).val(scores[game][difficulty][shottype]);
+    for (var game in scoreList) {
+        for (difficulty in scoreList[game]) {
+            for (var shottype in scoreList[game][difficulty]) {
+                if (scoreList[game][difficulty][shottype] !== 0) {
+                    $("#" + game + difficulty + shottype).val(scoreList[game][difficulty][shottype]);
                 }
             }
         }
