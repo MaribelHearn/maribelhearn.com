@@ -1104,7 +1104,7 @@
     };
 
 $(document).ready(function() {
-    $.get("../wr/wrlist.json", function(data) {
+    $.get("../json/wrlist.json", function(data) {
         WRs = data;
         generateText(true);
         checkValues(true, true, true);

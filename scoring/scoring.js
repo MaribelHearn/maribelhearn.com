@@ -86,7 +86,7 @@ $(document).ready(function() {
         $("#notice").css("display", "block");
 	}
     
-    $.get("../wr/wrlist.json", function(data) {
+    $.get("../json/wrlist.json", function(data) {
         WRs = data;
     }, "json");
 });

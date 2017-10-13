@@ -38,7 +38,7 @@ $(document).ready(function() {
         $("#back").css("display", "block");
 	}
     
-    $.get("lnnlist.json", function(data) {
+    $.get("../json/lnnlist.json", function(data) {
         LNNs = data;
         
         var playergameLNNs = {}, playerLNNs = {}, overallplayers = [], count = 0, game, players, gamecount, shottype, shotplayers, shotplayersIN, shotcount, character, type, i, player;
