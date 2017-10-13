@@ -119,24 +119,6 @@
     }
 };
 
-var setCookie = function () {
-    document.cookie = "vals=" + JSON.stringify(vals) + ";expires=" + maxAge + ";path=/";
-}
-
-var readCookie = function () {
-    var array, cookie, pair;
-    
-    array = document.cookie.split(';');
-    cookie = array[0];
-    
-    if (!cookie) {
-        return undefined;
-    }
-    
-    pair = cookie.split('=');
-    return JSON.parse(pair[1]);
-}
-
 var isTripleNGame = function (game) {
     return game == "PCB" || game == "UFO" || game == "TD" || game == "HSiFS";
 };
@@ -285,17 +267,17 @@ var apply = function () {
     $("#overview").attr("align", "center");
     sorttable.makeSortable(table);
     sorttable.makeSortable(gameTable);
-    setCookie();
+    setCookie("vals", vals);
 };
 
 $(document).ready(function() {
-    var cookie = readCookie();
+    var cookie = getCookie("vals");
     
     if (cookie) {
         vals = cookie;
     }
     
-    for (game in vals) {
+    for (var game in vals) {
         for (difficulty in vals[game]) {
             $("#" + game + difficulty).val(vals[game][difficulty]);
         }
