@@ -832,7 +832,9 @@ $(document).ready(function() {
     for (var game in scores) {
         for (difficulty in scores[game]) {
             for (var shottype in scores[game][difficulty]) {
-                $("#" + game + difficulty + shottype).val(scores[game][difficulty][shottype]);
+                if (scores[game][difficulty][shottype] !== 0) {
+                    $("#" + game + difficulty + shottype).val(scores[game][difficulty][shottype]);
+                }
             }
         }
     }
