@@ -111,7 +111,7 @@ function checkAll() {
 }
 
 function load() {
-    $.get("wrlist.json", function(data) {
+    $.get("../json/wrlist.json", function(data) {
         WRs = data;
         playerWRs = {};
         

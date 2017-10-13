@@ -1094,7 +1094,7 @@
     };
 
 $(document).ready(function() {
-    $.get("../wr/wrlist.json", function(data) {
+    $.get("../json/wrlist.json", function(data) {
         WRs = data;
         checkValues(true, true, true);
         generateRubrics();
