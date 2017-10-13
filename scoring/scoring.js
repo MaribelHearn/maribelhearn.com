@@ -829,7 +829,7 @@ $(document).ready(function() {
     var game, cookie, difficulty, shottype;
     
     for (game in scores) {
-        cookie = getCookie(game);
+        cookie = JSON.parse(getCookie(game));
         
         if (cookie) {
             scores[game] = cookie;
@@ -837,7 +837,7 @@ $(document).ready(function() {
             for (difficulty in scores[game]) {
                 for (var shottype in scores[game][difficulty]) {
                     if (scores[game][difficulty][shottype] !== 0) {
-                        $("#" + game + difficulty + shottype).val(scores[game][difficulty][shottype]);
+                        $("#" + game + difficulty + shottype).val(sep(scores[game][difficulty][shottype]));
                     }
                 }
             }
