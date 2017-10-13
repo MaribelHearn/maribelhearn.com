@@ -1,6 +1,8 @@
 body {
-	background: url('index.png') center no-repeat fixed;
-    font: 16px times new roman;
+	background: url('survival.jpg') top no-repeat fixed;
+}
+table, tr, th, td {
+    border: 1px solid black;
 }
 div {
     background-color: #FFFFFF;
@@ -14,22 +16,36 @@ h2 {
 #wrap {
     border: 1px solid black;
     text-align: center;
-    margin-left: 23%;
-    margin-right: 23%;
-    margin-top: 2%;
+    margin-left: 25%;
+    margin-right: 25%;
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 15px;
-    opacity: 0.8;
+    background-color: rgba(255, 255, 255, 0.8);
     font: 14px verdana, sans-serif;
 }
-.center {
+#results {
+    border: 1px solid black;
+    background-color: rgba(255, 255, 255, 1);
+}
+.centerr {
     margin-left: auto;
     margin-right: auto;
 }
-.ico-32 {
-    width: 16px;
-    height: 16px;
+.overview {
+    width: 80px;
+}
+.clear {
+    background-color: green;
+}
+.nm {
+    background-color: brown;
+}
+.nb {
+    background-color: blue;
+}
+.nmnb {
+    background-color: purple;
 }
 @media only screen and (min-width: 800px) and (max-width: 1400px) {
     #wrap {
@@ -44,14 +60,26 @@ h2 {
     }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
+    body {
+        background: url('bg/survival.jpg') bottom no-repeat fixed;
+    }
 	#wrap {
         margin-left: 0%;
         margin-right: 0%;
     }
+    #survival option {
+        width: 40px;
+    }
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
+    body {
+        background: url('bg/survival.jpg') bottom no-repeat fixed;
+    }
 	#wrap {
-        margin-left: 15%;
-        margin-right: 15%;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+    #survival option {
+        width: 40px;
     }
 }

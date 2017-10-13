@@ -1,0 +1,100 @@
+body {
+    background: url('scoring.png') bottom no-repeat fixed;
+}
+div {
+    background-color: #FFFFFF;
+}
+h1 {
+    font: 48px monotype corsiva;
+}
+h2 {
+    font: 36px monotype corsiva;
+}
+input {
+    width: 85px;
+}
+#wrap {
+    border: 1px solid black;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    opacity: 0.8;
+    font: 14px verdana, sans-serif;
+}
+#contents {
+    border: 1px solid black;
+}
+#table {
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#gameTable {
+    margin-left: auto;
+    margin-right: auto;
+}
+#table, #table th, #table td {
+    border: 1px solid black;
+}
+#gameTable, #gameTable th, #gameTable td {
+    border: 1px solid black;
+}
+#table tbody, #gameTable tbody {
+    counter-reset: sortabletablescope;
+}
+#table thead tr::before, #gameTable thead tr::before {
+    content: "";
+    display: table-cell;
+}
+#table tbody tr::before, #gameTable tbody tr::before {
+    content: counter(sortabletablescope);
+    counter-increment: sortabletablescope;
+    display: table-cell;
+}
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+.wr {
+    color: #0000EE;
+}
+.cover98 {
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+}
+.cover {
+    width: 50px;
+}
+@media only screen and (min-width: 800px) and (max-width: 1400px) {
+    #wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
+@media only screen and (max-width: 800px) {
+    #wrap {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
+    input {
+        width: 85px;
+    }
+	#wrap {
+        margin-left: 0%;
+        margin-right: 0%;
+        font-size: 13px;
+    }
+}
+@media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
+    input {
+        width: 80px;
+    }
+	#wrap {
+        margin-left: 0%;
+        margin-right: 0%;
+        font-size: 13px;
+    }
+}
