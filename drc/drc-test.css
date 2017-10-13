@@ -1,6 +1,8 @@
 body {
-	background: url('index.png') center no-repeat fixed;
-    font: 16px times new roman;
+	background: url('drc.jpg') top no-repeat fixed;
+}
+table, tr, th, td {
+    border: 1px solid black;
 }
 div {
     background-color: #FFFFFF;
@@ -11,25 +13,42 @@ h1 {
 h2 {
     font: 36px monotype corsiva;
 }
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+.noborders {
+    border: none;
+}
 #wrap {
     border: 1px solid black;
     text-align: center;
     margin-left: 23%;
     margin-right: 23%;
-    margin-top: 2%;
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 15px;
     opacity: 0.8;
     font: 14px verdana, sans-serif;
 }
-.center {
+#difficultyLabel, #challengeLabel {
+    display: none;
+}
+#languages {
+    text-decoration: none;
     margin-left: auto;
     margin-right: auto;
 }
-.ico-32 {
-    width: 16px;
-    height: 16px;
+#noborders {
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media only screen and (max-width: 1400px) {
+    .wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
 }
 @media only screen and (min-width: 800px) and (max-width: 1400px) {
     #wrap {

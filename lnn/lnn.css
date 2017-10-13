@@ -1,0 +1,95 @@
+body {
+    background: url('lnn.jpg') bottom no-repeat fixed;
+}
+div {
+    background-color: #FFFFFF;
+}
+h1 {
+    font: 48px monotype corsiva;
+}
+h2 {
+    font: 36px monotype corsiva;
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+table, th, td {
+    border: 1px solid black;
+}
+#contents th, #contents td {
+    border: none;
+}
+#checkboxes tbody:after {
+    content: "\200C";
+    display: block;
+    line-height: 1em;
+    color: black;
+}
+#wrap {
+    border: 1px solid black;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-left: 15px;
+    padding-right: 15px;
+    opacity: 0.8;
+    font: 14px verdana, sans-serif;
+}
+#wrap:after {
+    content: "\200C";
+    display: block;
+    line-height: 1em;
+    color: black;
+}
+#ranking.sortable tbody {
+    counter-reset: sortabletablescope;
+}
+#ranking.sortable thead tr::before {
+    content: "";
+    display: table-cell;
+}
+#ranking.sortable tbody tr::before {
+    content: counter(sortabletablescope);
+    counter-increment: sortabletablescope;
+    display: table-cell;
+}
+.cover98 {
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+}
+.cover {
+    width: 50px;
+    height: 50px;
+}
+.noborders {
+    border: none;
+}
+.t {
+    text-decoration: underline;
+}
+@media only screen and (min-width: 800px) and (max-width: 1400px) {
+    #wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
+@media only screen and (max-width: 800px) {
+    #wrap {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
+	#wrap {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+}
+@media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
+	#wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}

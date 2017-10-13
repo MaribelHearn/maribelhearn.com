@@ -1,6 +1,5 @@
 body {
-	background: url('index.png') center no-repeat fixed;
-    font: 16px times new roman;
+	background: url('title.png') top no-repeat fixed;
 }
 div {
     background-color: #FFFFFF;
@@ -11,25 +10,38 @@ h1 {
 h2 {
     font: 36px monotype corsiva;
 }
+h3 {
+    font: 24px monotype corsiva;
+}
+p {
+    font: 14px verdana, sans-serif;
+}
+table, tr, th, td {
+    border: 1px solid black;
+}
 #wrap {
     border: 1px solid black;
     text-align: center;
     margin-left: 23%;
     margin-right: 23%;
-    margin-top: 2%;
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 15px;
     opacity: 0.8;
     font: 14px verdana, sans-serif;
 }
-.center {
+#contents th, #contents td {
+    border: none;
+}
+.center, #table {
     margin-left: auto;
     margin-right: auto;
 }
-.ico-32 {
-    width: 16px;
-    height: 16px;
+.description {
+    font-size: 12px;
+}
+.noborder {
+    border: none;
 }
 @media only screen and (min-width: 800px) and (max-width: 1400px) {
     #wrap {
@@ -48,10 +60,33 @@ h2 {
         margin-left: 0%;
         margin-right: 0%;
     }
+    #graze {
+        width: 300px;
+        height: 125px;
+    }
+    #yuitia {
+        width: 117px;
+        height: 228px;
+    }
+    #table {
+        font-size: 11px;
+    }
+    .shot {
+        width: 320px;
+        height: 240px;
+    }
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
 	#wrap {
-        margin-left: 15%;
-        margin-right: 15%;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+    #yuitia {
+        width: 117px;
+        height: 228px;
+    }
+    .shot {
+        width: 320px;
+        height: 240px;
     }
 }
