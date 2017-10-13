@@ -785,7 +785,7 @@ var calc = function () {
                     percentage = 100;
                     wrText = "";
                 } else {
-                    score / wr[0] * 100;
+                    percentage = score / wr[0] * 100;
                     wrText = sep(wr[0]) + " by <i>" + wr[1] + "</i>";
                 }
                 
