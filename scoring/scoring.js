@@ -782,23 +782,23 @@ var calc = function () {
                 }
                 
                 if (wr[0] === 0) {
-                    percentage = 100;
-                    wrText = "";
+                    percentage = '-';
+                    wrText = '-';
                 } else {
                     percentage = score / wr[0] * 100;
                     wrText = sep(wr[0]) + " by <i>" + wr[1] + "</i>";
+                    
+                    if (percentage > highest) {
+                        highest = percentage;
+                    }
+                    
+                    percentage = (precision === 0 ? Math.round(percentage) : Number(percentage).toFixed(precision));
+                    total += Number(percentage);
+                    categories++;
                 }
                 
-                if (percentage > highest) {
-                    highest = percentage;
-                }
-                
-                percentage = (precision === 0 ? Math.round(percentage) : Number(percentage).toFixed(precision));
                 topList += "<tr><td>" + game + " " + difficulty + "</td><td>" + shottype.replace("Team", " Team") + "</td><td>" + sep(score) + "</td><td>" + percentage +
                 "%</td><td><progress value='" + percentage + "' max='100'></progress></td><td>" + wrText + "</td>";
-                
-                total += Number(percentage);
-                categories++;
             }
         }
         
