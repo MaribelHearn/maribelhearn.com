@@ -1,5 +1,9 @@
 var maxAge = "Fri, 31 Dec 9999 23:59:59 UTC";
 
+var setCookie = function (name, value) {
+    document.cookie = name + "=" + JSON.stringify(value) + ";expires=" + maxAge;
+};
+
 var getCookie = function (name) {
     var decodedCookies, cookieArray, cookie;
     
