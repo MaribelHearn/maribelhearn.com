@@ -267,7 +267,7 @@ var apply = function () {
     $("#overview").attr("align", "center");
     sorttable.makeSortable(table);
     sorttable.makeSortable(gameTable);
-    setCookie("vals", vals);
+    document.cookie = "vals=" + JSON.stringify(vals) + ";expires=" + maxAge + ";path=/";
 };
 
 $(document).ready(function() {

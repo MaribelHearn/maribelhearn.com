@@ -819,7 +819,7 @@ var calc = function () {
     $("#topList").html(topList);
     sorttable.makeSortable(document.getElementById("table"));
     sorttable.makeSortable(document.getElementById("gameTable"));
-    setCookie("scores", scores);
+    document.cookie = "scores=" + JSON.stringify(scores) + ";expires=" + maxAge + ";path=/";
 };
 
 $(document).ready(function() {
