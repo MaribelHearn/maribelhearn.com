@@ -1,5 +1,31 @@
 var maxAge = "Fri, 31 Dec 9999 23:59:59 UTC";
 
+var setCookie = function (name, value) {
+    document.cookie = name + "=" + JSON.stringify(value) + ";expires=" + maxAge + ";path=/";
+};
+
+var getCookie = function (name) {
+    var decodedCookies, cookieArray, cookie;
+    
+    decodedCookies = decodeURIComponent(document.cookie);
+    cookieArray = decodedCookies.split(';');
+    name += '=';
+    
+    for (var i = 0; i < cookieArray.length; i++) {
+        cookie = cookieArray[i];
+        
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1);
+        }
+        
+        if (cookie.indexOf(name) === 0) {
+            return JSON.parse(cookie.substring(name.length, cookie.length));
+        }
+    }
+    
+    return "";
+};
+
 var numericSort = function (a, b) {
     return b - a;
 };
