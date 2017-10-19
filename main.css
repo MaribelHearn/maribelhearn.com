@@ -11,6 +11,9 @@ h1 {
 h2 {
     font: 36px monotype corsiva;
 }
+p {
+    margin: 10px;
+}
 #wrap {
     border: 1px solid black;
     text-align: center;
