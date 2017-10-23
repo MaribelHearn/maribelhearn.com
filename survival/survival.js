@@ -267,7 +267,10 @@ var apply = function () {
     $("#overview").attr("align", "center");
     sorttable.makeSortable(table);
     sorttable.makeSortable(gameTable);
-    setCookie("vals", vals);
+    
+    if ($("#toggleCookie").is(":checked")) {
+        setCookie("vals", vals);
+    }
 };
 
 $(document).ready(function() {

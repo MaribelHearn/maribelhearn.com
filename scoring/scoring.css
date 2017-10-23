@@ -10,7 +10,7 @@ h1 {
 h2 {
     font: 36px monotype corsiva;
 }
-input {
+input[type=text] {
     width: 85px;
 }
 #wrap {
