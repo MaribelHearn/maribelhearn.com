@@ -826,8 +826,10 @@ var calc = function () {
     sorttable.makeSortable(document.getElementById("table"));
     sorttable.makeSortable(document.getElementById("gameTable"));
     
-    for (game in scores) {
-        setCookie(game, JSON.stringify(scores[game]));
+    if ($("#toggleCookie").is(":checked")) {
+        for (game in scores) {
+            setCookie(game, JSON.stringify(scores[game]));
+        }
     }
 };
 
