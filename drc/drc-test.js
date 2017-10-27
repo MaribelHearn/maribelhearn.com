@@ -1110,6 +1110,11 @@ $(document).ready(function() {
         checkValues(true, true, true);
         generateRubrics();
         $(POFV_FORMULA).attr("colspan", 4);
+        
+        if (getCookie("lang") == "Japanese") {
+            language = "Japanese";
+            generateText(false);
+        }
     }, "json");
 });
 
@@ -1962,4 +1967,5 @@ function setLanguage(newLanguage) {
     
     language = newLanguage;
     generateText(false);
+    setCookie("lang", newLanguage);
 }
