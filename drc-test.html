@@ -22,7 +22,7 @@
             <p id='drcScores'></p>
             <p id='notify'></p>
             <label id='category' for='game'>Category</label>
-            <select id='game' onChange='javascript:checkValues(true, true, true);'>
+            <select id='game' onChange='checkValues(true, true, true);'>
                 <option id='hrtp' value='HRtP'>HRtP</option>
                 <option id='soew' value='SoEW'>SoEW</option>
                 <option id='podd' value='PoDD'>PoDD</option>
@@ -42,7 +42,7 @@
                 <option id='hsifs' value='HSiFS'>HSiFS</option>
             </select>
             <label id='difficultyLabel' for='difficulty'></label>
-            <select id='difficulty' onChange='javascript:if ($(GAME).val() == "GFW") { checkShottypes(true); } if ($(GAME).val() == "IN" || $(GAME).val() == "HSiFS") { checkValues(true, false, false); }'>
+            <select id='difficulty' onChange='if ($(GAME).val() == "GFW") { checkShottypes(true); } if ($(GAME).val() == "IN" || $(GAME).val() == "HSiFS") { checkValues(true, false, false); }'>
                 <option>Easy</option>
                 <option>Normal</option>
                 <option>Hard</option>
@@ -54,7 +54,7 @@
                 <option id='finalb' value='FinalB'>FinalB</option>
             </select>
             <label id='challengeLabel' for='challenge'>Challenge</label>
-            <select id='challenge' onChange='javascript:checkValues(true, false, false); checkShottypes(false);'>
+            <select id='challenge' onChange='checkValues(true, false, false); checkShottypes(false);'>
                 <option id='scoring0' value='Scoring'>Scoring</option>
                 <option id='survival0' value='Survival'>Survival</option>
             </select>
@@ -68,16 +68,15 @@
             </select>
 			<div id='drcpoints'></div>
             <div id='error'></div>
-			<p><input id='calculate' type='button' onClick='javascript:drcPoints()' value='Calculate'></p>
+			<p><input id='calculate' type='button' onClick='drcPoints()' value='Calculate'></p>
             <h2 id='rubricsText'>Rubrics</h2>
             <p id='rubricsExpl'></p>
-            <input id='rubricsButton' type='button' onClick='javascript:showRubrics()' value='Show Rubrics'>
+            <input id='rubricsButton' type='button' onClick='showRubrics()' value='Show Rubrics'>
             <div id='rubrics' style='display:none'>
                 <p><strong id='scoringNotes'>Scoring Notes:</strong></p>
                 <ul>
                     <li id='newWR'></li>
                     <li id='mofSeparate'></li>
-                    <!--<li>DS uses a separate system. Click <a href='#doubleSpoiler'>here</a> for said system.</li>-->
                 </ul>
                 <p><strong id='survivalNotes'>Survival Notes:</strong></p>
                 <ul>
@@ -94,15 +93,6 @@
                 <table class='center'>
                     <tbody id='mofTable'></tbody>
                 </table>
-                <!--<br>
-                <strong id='doubleSpoiler'>DS Scoring</strong>
-                <p>This system is specific to DRC Round 8 and the 10 scenes that are being played. For each scene there are three thresholds,
-                at which you will have 10, 30 and 50 points respectively. The way this works is that 1 point is added for every 10th or 20th of
-                the amount of score between the thresholds (10th below the first threshold, 20th otherwise).</p>
-                <table class='center'>
-                    <thead><tr><th>Scene</th><th>Threshold 1</th><th>Threshold 2</th><th>Threshold 3</th></tr></thead>
-                    <tbody id='dsTable'></tbody>
-                </table>-->
                 <br>
                 <strong id='phantasmagoria'>PoDD &amp; PoFV Survival</strong>
                 <p>In the below formula, MaxLives is equal to 5 for PoDD, 7 for PoFV main game and 8 for PoFV Extra.
@@ -126,15 +116,15 @@
             <table id='languages' class='noborders'>
                 <tr class='noborders'>
                     <td class='noborders'>
-                        <a href='javascript:setLanguage("English")'><img src='drc/uk.png' alt='Flag of the United Kingdom'></a>
+                        <a href='setLanguage("English")'><img src='drc/uk.png' alt='Flag of the United Kingdom'></a>
                     </td>
                     <td class='noborders'>
-                        <a href='javascript:setLanguage("Japanese")'><img src='drc/japan.png' alt='Flag of Japan'></a>
+                        <a href='setLanguage("Japanese")'><img src='drc/japan.png' alt='Flag of Japan'></a>
                     </td>
                 </tr>
                 <tr class='noborders'>
-                    <td class='noborders'><a href='javascript:setLanguage("English")'>English</a></td>
-                    <td class='noborders'><a href='javascript:setLanguage("Japanese")'>日本語</a></td>
+                    <td class='noborders'><a href='setLanguage("English")'>English</a></td>
+                    <td class='noborders'><a href='setLanguage("Japanese")'>日本語</a></td>
                 </tr>
             </table>
 		</div>
