@@ -66,6 +66,21 @@ table, th, td {
 .noborders {
     border: none;
 }
+.does_not_even_score {
+    color: #6c869b;
+}
+.barely_even_scores {
+    color: red;
+}
+.moderately_even_scores {
+    color: green;
+}
+.does_even_score {
+    color: darkblue;
+}
+.does_even_score_well {
+    color: #e768c3;
+}
 @media only screen and (min-width: 1000px) and (max-width: 1400px) {
     #wrap {
         margin-left: 15%;
