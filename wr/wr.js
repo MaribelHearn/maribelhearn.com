@@ -111,7 +111,7 @@ function checkAll() {
 }
 
 function load() {
-    $.get("../json/wrlist.json", function(data) {
+    $.get("../json/wrlist.json", function (data) {
         WRs = data;
         playerWRs = {};
         
@@ -171,7 +171,7 @@ function load() {
                 
                 $(bestshot).html("<u>" + sep(bestshotmax) + "</u><br>by <em>" + bestshotplayer + "</em>" + (game == "HSiFS" && difficulty != "Extra" ? " (" + bestshotseason + ")" : ""));
                 $("#west_tbody").append("<tr><td colspan='3'>" + game + " " + difficulty + "</td></tr>");
-                $("#west_tbody").append("<tr id='#" + game + difficulty + "'><td><span id='wr_" + game + difficulty + "'>" + sep(bestshotmax) + "</span><br>by <em>" + bestshotplayer +
+                $("#west_tbody").append("<tr id='" + game + difficulty + "'><td><span id='wr_" + game + difficulty + "'>" + sep(bestshotmax) + "</span><br>by <em>" + bestshotplayer +
                 "</em><br>(" + bestshot.replace("#" + game + difficulty, "") + (game == "HSiFS" && difficulty != "Extra" ? bestshotseason : "") + ")</td></tr>");
             }
             
