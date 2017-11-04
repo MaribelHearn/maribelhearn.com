@@ -256,8 +256,8 @@ function load() {
                     worldShottype = compareWRs[game][difficulty][2];
                     percentage = (west / world * 100).toFixed(2);
                     $("#west_tbody").append("<tr><td colspan='3'>" + difficulty + "</td></tr>");
-                    $("#west_tbody").append("<tr><td>" + sep(world) + "<br>by <em>" + worldPlayer + "</em>" + (worldShottype != '-' ? "<br>(" + worldShottype + ")" : "") + "</td>");
-                    $("#west_tbody").append("<td>" + sep(west) + "<br>by <em>" + westPlayer + "</em>" + (westShottype != '-' ? "<br>(" + westShottype + ")" : "") +
+                    $("#west_tbody").append("<tr><td>" + sep(world) + "<br>by <em>" + worldPlayer + "</em>" + (worldShottype != '-' ? "<br>(" + worldShottype + ")" : "") + "</td>" +
+                    "<td>" + sep(west) + "<br>by <em>" + westPlayer + "</em>" + (westShottype != '-' ? "<br>(" + westShottype + ")" : "") +
                     "</td>" + "<th class='" + percentageClass(percentage) + "'>(" + (parseInt(percentage) == 100 ? 100 : percentage) + "%)</th></tr>");
                 }
             }
