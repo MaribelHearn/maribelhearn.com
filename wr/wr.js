@@ -1,4 +1,4 @@
-var WRs, playerWRs, skips = [], all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
+var WRs, playerWRs, westScores, skips = [], all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
     tracked = ["EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"], untracked = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "PoFV"];
 
 function bestSeason(difficulty, shottype) {
@@ -115,7 +115,8 @@ function load() {
         WRs = data;
         playerWRs = {};
         
-        var skip = {}, game, max, difficulty, bestshotmax, shottypes, shottype, wr, score, player, overall, overallplayer, overalldifficulty, overallshottype, overallseason, bestshot, bestshotplayer, bestshotseason, text, count;
+        var skip = {}, game, max, difficulty, bestshotmax, shottypes, shottype, wr, score, player, overall, overallplayer,
+        overalldifficulty, overallshottype, overallseason, bestshot, bestshotplayer, bestshotseason, text, count, percentage;
         
         for (game in WRs) {
             if (!$("#" + game + "c").is(":checked") || skips.contains(game)) {
@@ -169,6 +170,9 @@ function load() {
                 }
                 
                 $(bestshot).html("<u>" + sep(bestshotmax) + "</u><br>by <em>" + bestshotplayer + "</em>" + (game == "HSiFS" && difficulty != "Extra" ? " (" + bestshotseason + ")" : ""));
+                $("#west_tbody").append("<tr><td colspan='3'>" + game + " " + difficulty + "</td></tr>");
+                $("#west_tbody").append("<tr id='#" + game + difficulty + "'><td><span id='wr_" + game + difficulty + "'>" + sep(bestshotmax) + "</span><br>by <em>" + bestshotplayer +
+                "</em><br>(" + bestshot.replace("#" + game + difficulty, "") + (game == "HSiFS" && difficulty != "Extra" ? bestshotseason : "") + ")</td></tr>");
             }
             
             $(overall).html($(overall).html().replace("<u>", "<u><strong>").replace("</u>", "</strong></u>"));
@@ -206,6 +210,18 @@ function load() {
         
         $("#autosort").click();
         $("#autosort").click();
+        $.get("../json/bestinthewest.json", function (data) {
+            westScores = data;
+            
+            for (game in westScores) {
+                for (difficulty in westScores[game]) {
+                    percentage = (westScores[game][difficulty][0] / Number($("#wr_" + game + difficulty).html().replace(',', ""))).toFixed(2);
+                    $("#" + game + difficulty).append("<td>" + sep(westScores[game][difficulty][0]) +
+                    "<br>by <em>" + westScores[game][difficulty][1] + "</em><br>(" + westScores[game][difficulty][2] + ")</td>" +
+                    "<th>(" + percentage + ")</th>");
+                }
+            }
+        }, "json");
     }, "json");
 }
 
