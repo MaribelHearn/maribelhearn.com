@@ -1,4 +1,4 @@
-var WRs, playerWRs, westScores, skips = [], all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
+var WRs, playerWRs, westScores, firstTime = true, skips = [], all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
     tracked = ["EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"], untracked = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "PoFV"];
 
 function bestSeason(difficulty, shottype) {
@@ -22,6 +22,11 @@ function show(game, skip) {
     $("#" + game).css("display", "block");
     $("#" + game + "o").css("display", "table-row");
     
+    for (var difficulty in WRs[game]) {
+        $("#" + game + difficulty).css("display", "table-row");
+        $("#cat_" + game + difficulty).css("display", "table-row");
+    }
+    
     if (!$("#" + game + "c").is(":checked")) {
         $("#" + game + "c").prop("checked", true);
     }
@@ -35,6 +40,11 @@ function show(game, skip) {
 function hide(game, skip) {
     $("#" + game).css("display", "none");
     $("#" + game + "o").css("display", "none");
+    
+    for (var difficulty in WRs[game]) {
+        $("#" + game + difficulty).css("display", "none");
+        $("#cat_" + game + difficulty).css("display", "none");
+    }
     
     if ($("#" + game + "c").is(":checked")) {
         $("#" + game + "c").prop("checked", false);
@@ -125,6 +135,10 @@ function percentageClass(percentage) {
 }
 
 function addWesternRecords() {
+    if (!firstTime) {
+        return;
+    }
+    
     var game, difficulty, west, player, shottype, world, percentage;
     
     $.get("../json/bestinthewest.json", function (data) {
@@ -146,6 +160,8 @@ function addWesternRecords() {
                 "</td>" + "<th class='" + percentageClass(percentage) + "'>(" + (parseInt(percentage) == 100 ? 100 : percentage) + "%)</th>");
             }
         }
+        
+        firstTime = false;
     }, "json");
 }
 
@@ -209,7 +225,7 @@ function load() {
                 }
                 
                 $(bestshot).html("<u>" + sep(bestshotmax) + "</u><br>by <em>" + bestshotplayer + "</em>" + (game == "HSiFS" && difficulty != "Extra" ? " (" + bestshotseason + ")" : ""));
-                $("#west_tbody").append("<tr><td colspan='3'>" + game + " " + difficulty + "</td></tr>");
+                $("#west_tbody").append("<tr id='cat_" + game + difficulty + "'><td colspan='3'>" + game + " " + difficulty + "</td></tr>");
                 $("#west_tbody").append("<tr id='" + game + difficulty + "'><td><span id='wr_" + game + difficulty + "'>" + sep(bestshotmax) + "</span><br>by <em>" + bestshotplayer +
                 "</em><br>(" + bestshot.replace("#" + game + difficulty, "") + (game == "HSiFS" && difficulty != "Extra" ? bestshotseason : "") + ")</td></tr>");
             }
