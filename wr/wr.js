@@ -1,4 +1,4 @@
-var WRs, playerWRs, westScores, firstTime = true, skips = [], all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
+var WRs, playerWRs, compareWRs, westScores, firstTime = true, skips = [], all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
     tracked = ["EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"], untracked = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "PoFV"];
 
 function bestSeason(difficulty, shottype) {
@@ -134,37 +134,11 @@ function percentageClass(percentage) {
     }
 }
 
-function addWesternRecords() {
-    var game, difficulty, west, player, shottype, world, percentage;
-    
-    $.get("../json/bestinthewest.json", function (data) {
-        westScores = data;
-        
-        for (game in westScores) {
-            for (difficulty in westScores[game]) {
-                if (westScores[game][difficulty].length === 0) {
-                    $("#" + game + difficulty).append("<td>-</td><th>-</th>");
-                    continue;
-                }
-                
-                west = westScores[game][difficulty][0];
-                player = westScores[game][difficulty][1];
-                shottype = westScores[game][difficulty][2];
-                world = Number($("#wr_" + game + difficulty).html().replace(/,/g, ""));
-                percentage = (west / world * 100).toFixed(2);
-                $("#" + game + difficulty).append("<td>" + sep(west) + "<br>by <em>" + player + "</em>" + (shottype != '-' ? "<br>(" + shottype + ")" : "") +
-                "</td>" + "<th class='" + percentageClass(percentage) + "'>(" + (parseInt(percentage) == 100 ? 100 : percentage) + "%)</th>");
-            }
-        }
-        
-        firstTime = false;
-    }, "json");
-}
-
 function load() {
     $.get("../json/wrlist.json", function (data) {
         WRs = data;
         playerWRs = {};
+        compareWRs = {};
         
         var skip = {}, game, max, difficulty, bestshotmax, shottypes, shottype, wr, score, player, overall, overallplayer,
         overalldifficulty, overallshottype, overallseason, bestshot, bestshotplayer, bestshotseason, text, count;
@@ -221,12 +195,7 @@ function load() {
                 }
                 
                 $(bestshot).html("<u>" + sep(bestshotmax) + "</u><br>by <em>" + bestshotplayer + "</em>" + (game == "HSiFS" && difficulty != "Extra" ? " (" + bestshotseason + ")" : ""));
-                
-                if (firstTime) {
-                    $("#west_tbody").append("<tr id='cat_" + game + difficulty + "'><td colspan='3'>" + game + " " + difficulty + "</td></tr>");
-                    $("#west_tbody").append("<tr id='" + game + difficulty + "'><td><span id='wr_" + game + difficulty + "'>" + sep(bestshotmax) + "</span><br>by <em>" + bestshotplayer +
-                    "</em><br>(" + bestshot.replace("#" + game + difficulty, "") + (game == "HSiFS" && difficulty != "Extra" ? bestshotseason : "") + ")</td></tr>");
-                }
+                compareWRs[game][difficulty] = [bestshotmax, bestshotplayer, bestshot.replace("#" + game + difficulty, "") + (game == "HSiFS" && difficulty != "Extra" ? bestshotseason : "")];
             }
             
             $(overall).html($(overall).html().replace("<u>", "<u><strong>").replace("</u>", "</strong></u>"));
@@ -237,6 +206,7 @@ function load() {
         }
         
         $("#ranking_tbody").html("");
+        $("#west_tbody").html("");
         
         for (player in playerWRs) {
             count = 0;
@@ -258,16 +228,48 @@ function load() {
             "</td><td id='player_" + player + "g'>" + Object.keys(playerWRs[player]).length + "</td></tr>");
         }
         
+        // west scores
+        var west, world, percentage;
+        
+        $.get("../json/bestinthewest.json", function (data) {
+            westScores = data;
+            
+            for (game in westScores) {
+                if (skips.contains(game)) {
+                    continue;
+                }
+                
+                $("#west_tbody").append("<tr><td colspan='3'><u>" + game + "</u></td></tr>");
+                
+                for (difficulty in westScores[game]) {
+                    if (westScores[game][difficulty].length === 0) {
+                        $("#" + game + difficulty).append("<td>-</td><th>-</th>");
+                        continue;
+                    }
+                    
+                    west = westScores[game][difficulty][0];
+                    westPlayer = westScores[game][difficulty][1];
+                    westShottype = westScores[game][difficulty][2];
+                    world = compareWRs[game][difficulty][0];
+                    worldPlayer = compareWRs[game][difficulty][1];
+                    worldShottype = compareWRs[game][difficulty][2];
+                    percentage = (west / world * 100).toFixed(2);
+                    $("#west_tbody").append("<tr><td colspan='3'>" + difficulty + "</td></tr>");
+                    $("#west_tbody").append("<tr><td>" + sep(world) + "<br>by <em>" worldPlayer + "</em>" + (worldShottype != '-' ? "<br>(" + worldShottype + ")" : "") + "</td>");
+                    $("#west_tbody").append("<td>" + sep(west) + "<br>by <em>" + westPlayer + "</em>" + (westShottype != '-' ? "<br>(" + westShottype + ")" : "") +
+                    "</td>" + "<th class='" + percentageClass(percentage) + "'>(" + (parseInt(percentage) == 100 ? 100 : percentage) + "%)</th></tr>");
+                }
+            }
+            
+            firstTime = false;
+        }, "json");
+        
         if (!$("#overallc").is(":checked")) {
             hide("overall");
         }
         
         $("#autosort").click();
         $("#autosort").click();
-        
-        if (firstTime) {
-            addWesternRecords();
-        }
     }, "json");
 }
 
