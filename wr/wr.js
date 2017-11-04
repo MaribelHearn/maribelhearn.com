@@ -135,10 +135,6 @@ function percentageClass(percentage) {
 }
 
 function addWesternRecords() {
-    if (!firstTime) {
-        return;
-    }
-    
     var game, difficulty, west, player, shottype, world, percentage;
     
     $.get("../json/bestinthewest.json", function (data) {
@@ -225,9 +221,12 @@ function load() {
                 }
                 
                 $(bestshot).html("<u>" + sep(bestshotmax) + "</u><br>by <em>" + bestshotplayer + "</em>" + (game == "HSiFS" && difficulty != "Extra" ? " (" + bestshotseason + ")" : ""));
-                $("#west_tbody").append("<tr id='cat_" + game + difficulty + "'><td colspan='3'>" + game + " " + difficulty + "</td></tr>");
-                $("#west_tbody").append("<tr id='" + game + difficulty + "'><td><span id='wr_" + game + difficulty + "'>" + sep(bestshotmax) + "</span><br>by <em>" + bestshotplayer +
-                "</em><br>(" + bestshot.replace("#" + game + difficulty, "") + (game == "HSiFS" && difficulty != "Extra" ? bestshotseason : "") + ")</td></tr>");
+                
+                if (firstTime) {
+                    $("#west_tbody").append("<tr id='cat_" + game + difficulty + "'><td colspan='3'>" + game + " " + difficulty + "</td></tr>");
+                    $("#west_tbody").append("<tr id='" + game + difficulty + "'><td><span id='wr_" + game + difficulty + "'>" + sep(bestshotmax) + "</span><br>by <em>" + bestshotplayer +
+                    "</em><br>(" + bestshot.replace("#" + game + difficulty, "") + (game == "HSiFS" && difficulty != "Extra" ? bestshotseason : "") + ")</td></tr>");
+                }
             }
             
             $(overall).html($(overall).html().replace("<u>", "<u><strong>").replace("</u>", "</strong></u>"));
@@ -265,7 +264,10 @@ function load() {
         
         $("#autosort").click();
         $("#autosort").click();
-        addWesternRecords();
+        
+        if (firstTime) {
+            addWesternRecords();
+        }
     }, "json");
 }
 
