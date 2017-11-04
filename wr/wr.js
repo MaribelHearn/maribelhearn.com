@@ -110,20 +110,35 @@ function checkAll() {
     load();
 }
 
+function percentageClass(percentage) {
+    if (percentage < 50) {
+        return "does_not_even_score";
+    } else if (percentage < 75) {
+        return "barely_even_scores";
+    } else if (percentage < 90) {
+        return "moderately_even_scores";
+    } else if (percentage < 100) {
+        return "does_even_score";
+    } else {
+        return "does_even_score_well"
+    }
+}
+
 function addWesternRecords() {
-    var game, difficulty, score, player, shottype, percentage;
+    var game, difficulty, west, player, shottype, world, percentage;
     
     $.get("../json/bestinthewest.json", function (data) {
         westScores = data;
         
         for (game in westScores) {
             for (difficulty in westScores[game]) {
-                score = westScores[game][difficulty][0];
+                west = westScores[game][difficulty][0];
                 player = westScores[game][difficulty][1];
                 shottype = westScores[game][difficulty][2];
-                percentage = (score / Number($("#wr_" + game + difficulty).html().replace(',', ""))).toFixed(2);
-                $("#" + game + difficulty).append("<td>" + sep(score) + "<br>by <em>" + player +
-                "</em>" + (shottype != '-' ? "<br>(" + shottype + ")" : "") + "</td>" + "<th>(" + percentage + ")</th>");
+                world = Number($("#wr_" + game + difficulty).html().replace(/,/g, ""));
+                percentage = (west / world * 100).toFixed(2);
+                $("#" + game + difficulty).append("<td>" + sep(west) + "<br>by <em>" + player + "</em>" + (shottype != '-' ? "<br>(" + shottype + ")" : "") +
+                "</td>" + "<th class='" + percentageClass(percentage) + "'>(" + (parseInt(percentage) == 100 ? 100 : percentage) + "%)</th>");
             }
         }
     }, "json");
