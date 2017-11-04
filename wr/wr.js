@@ -110,13 +110,30 @@ function checkAll() {
     load();
 }
 
+function addWesternRecords() {
+    var game, difficulty, percentage;
+    
+    $.get("../json/bestinthewest.json", function (data) {
+        westScores = data;
+        
+        for (game in westScores) {
+            for (difficulty in westScores[game]) {
+                percentage = (westScores[game][difficulty][0] / Number($("#wr_" + game + difficulty).html().replace(',', ""))).toFixed(2);
+                $("#" + game + difficulty).append("<td>" + sep(westScores[game][difficulty][0]) +
+                "<br>by <em>" + westScores[game][difficulty][1] + "</em><br>(" + westScores[game][difficulty][2] + ")</td>" +
+                "<th>(" + percentage + ")</th>");
+            }
+        }
+    }, "json");
+}
+
 function load() {
     $.get("../json/wrlist.json", function (data) {
         WRs = data;
         playerWRs = {};
         
         var skip = {}, game, max, difficulty, bestshotmax, shottypes, shottype, wr, score, player, overall, overallplayer,
-        overalldifficulty, overallshottype, overallseason, bestshot, bestshotplayer, bestshotseason, text, count, percentage;
+        overalldifficulty, overallshottype, overallseason, bestshot, bestshotplayer, bestshotseason, text, count;
         
         for (game in WRs) {
             if (!$("#" + game + "c").is(":checked") || skips.contains(game)) {
@@ -210,18 +227,7 @@ function load() {
         
         $("#autosort").click();
         $("#autosort").click();
-        $.get("../json/bestinthewest.json", function (data) {
-            westScores = data;
-            
-            for (game in westScores) {
-                for (difficulty in westScores[game]) {
-                    percentage = (westScores[game][difficulty][0] / Number($("#wr_" + game + difficulty).html().replace(',', ""))).toFixed(2);
-                    $("#" + game + difficulty).append("<td>" + sep(westScores[game][difficulty][0]) +
-                    "<br>by <em>" + westScores[game][difficulty][1] + "</em><br>(" + westScores[game][difficulty][2] + ")</td>" +
-                    "<th>(" + percentage + ")</th>");
-                }
-            }
-        }, "json");
+        addWesternRecords();
     }, "json");
 }
 
