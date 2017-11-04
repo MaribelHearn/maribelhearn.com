@@ -151,6 +151,7 @@ function load() {
             }
             
             max = 0;
+            compareWRs[game] = {};
             
             for (difficulty in WRs[game]) {
                 bestshotmax = 0;
