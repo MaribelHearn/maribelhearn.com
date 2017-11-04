@@ -132,6 +132,11 @@ function addWesternRecords() {
         
         for (game in westScores) {
             for (difficulty in westScores[game]) {
+                if (westScores[game][difficulty].length === 0) {
+                    $("#" + game + difficulty).append("<td>-</td><th>-</th>");
+                    continue;
+                }
+                
                 west = westScores[game][difficulty][0];
                 player = westScores[game][difficulty][1];
                 shottype = westScores[game][difficulty][2];
