@@ -111,17 +111,19 @@ function checkAll() {
 }
 
 function addWesternRecords() {
-    var game, difficulty, percentage;
+    var game, difficulty, score, player, shottype, percentage;
     
     $.get("../json/bestinthewest.json", function (data) {
         westScores = data;
         
         for (game in westScores) {
             for (difficulty in westScores[game]) {
-                percentage = (westScores[game][difficulty][0] / Number($("#wr_" + game + difficulty).html().replace(',', ""))).toFixed(2);
-                $("#" + game + difficulty).append("<td>" + sep(westScores[game][difficulty][0]) +
-                "<br>by <em>" + westScores[game][difficulty][1] + "</em><br>(" + westScores[game][difficulty][2] + ")</td>" +
-                "<th>(" + percentage + ")</th>");
+                score = westScores[game][difficulty][0];
+                player = westScores[game][difficulty][1];
+                shottype = westScores[game][difficulty][2];
+                percentage = (score / Number($("#wr_" + game + difficulty).html().replace(',', ""))).toFixed(2);
+                $("#" + game + difficulty).append("<td>" + sep(score) + "<br>by <em>" + player +
+                "</em>" + (shottype != '-' ? "<br>(" + shottype + ")" : "") + "</td>" + "<th>(" + percentage + ")</th>");
             }
         }
     }, "json");
