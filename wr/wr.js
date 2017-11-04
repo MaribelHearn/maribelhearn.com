@@ -1,4 +1,4 @@
-var WRs, playerWRs, compareWRs, westScores, firstTime = true, skips = [], all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
+var WRs, playerWRs, compareWRs, westScores, skips = [], all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
     tracked = ["EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"], untracked = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "PoFV"];
 
 function bestSeason(difficulty, shottype) {
@@ -255,13 +255,12 @@ function load() {
                     worldShottype = compareWRs[game][difficulty][2];
                     percentage = (west / world * 100).toFixed(2);
                     $("#west_tbody").append("<tr><td colspan='3'>" + difficulty + "</td></tr>");
-                    $("#west_tbody").append("<tr><td>" + sep(world) + "<br>by <em>" worldPlayer + "</em>" + (worldShottype != '-' ? "<br>(" + worldShottype + ")" : "") + "</td>");
+                    $("#west_tbody").append("<tr><td>" + sep(world) + "<br>by <em>" + worldPlayer + "</em>" + (worldShottype != '-' ? "<br>(" + worldShottype + ")" : "") + "</td>");
                     $("#west_tbody").append("<td>" + sep(west) + "<br>by <em>" + westPlayer + "</em>" + (westShottype != '-' ? "<br>(" + westShottype + ")" : "") +
                     "</td>" + "<th class='" + percentageClass(percentage) + "'>(" + (parseInt(percentage) == 100 ? 100 : percentage) + "%)</th></tr>");
                 }
             }
             
-            firstTime = false;
         }, "json");
         
         if (!$("#overallc").is(":checked")) {
