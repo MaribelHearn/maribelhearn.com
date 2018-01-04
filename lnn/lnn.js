@@ -136,7 +136,8 @@ $(document).ready(function() {
             hide("players");
         }
         
-        $("#autosort").click();
-        $("#autosort").click();
+        $("#autosort2").click();
+        $("#autosort1").click();
+        $("#autosort1").click();
     }, "json");
 });
