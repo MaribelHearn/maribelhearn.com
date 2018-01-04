@@ -137,6 +137,7 @@ $(document).ready(function() {
         }
         
         $("#autosort2").click();
+        $("#autosort2").click();
         $("#autosort1").click();
         $("#autosort1").click();
     }, "json");
