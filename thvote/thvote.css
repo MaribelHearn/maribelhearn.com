@@ -31,6 +31,18 @@ table {
     opacity: 0.8;
     font: 14px verdana, sans-serif;
 }
+#chars_table.sortable tbody, #music_table.sortable tbody, #works_table.sortable tbody {
+    counter-reset: sortabletablescope;
+}
+#chars_table.sortable thead tr::before, #music_table.sortable thead tr::before, #works_table.sortable thead tr::before {
+    content: "";
+    display: table-cell;
+}
+#chars_table.sortable tbody tr::before, #music_table.sortable tbody tr::before, #works_table.sortable tbody tr::before {
+    content: counter(sortabletablescope);
+    counter-increment: sortabletablescope;
+    display: table-cell;
+}
 @media only screen and (min-width: 1500px) and (max-width: 1850px) {
     #wrap {
         margin-left: 15%;
