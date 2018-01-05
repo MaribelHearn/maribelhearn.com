@@ -20,12 +20,12 @@
             <p id='notice' style='display:none'><strong>Notice:</strong> this page is best viewed on mobile using landscape mode.</p>
 			<p>Fill in the best survivals you have pulled off in the table below. If you leave a dropdown menu on the N/A option, it will not be factored in.
             At the bottom of the page, three different sortable tables indicating your survival progress will be generated.</p>
-            <p>NM = No Miss (no deaths), NB = No Bomb, NN = No Miss No Bomb, NNN = NN with a third restriction depending on the game.
-            In PCB this restriction is No Border Breaks, in UFO it is No UFO Summons, in TD it is No Trance and in HSiFS it is No Releases.
+            <p>NM = No Miss (no deaths), NB = No Bomb, NMNB = No Miss No Bomb. There can also be a third restriction, depending on the game.
+            In PCB this restriction is NBB (No Border Breaks), in UFO it is NV (No UFO Summons), in TD it is NT (No Trance) and in HSiFS it is NR (No Releases).
             The Phantasm Stage counts as another Extra Stage.</p>
             <p>Use the below selectors to fill up many achievements at once. Normal, Hard and Lunatic will also fill the difficulties below them.</p>
             <p>To allow for proper screenshots, the background for the tables is not transparent.</p>
-            <p>Legend: purple = NMNB, blue = NB, brown = NM, green = 1cc.</p>
+            <p>Legend: purple = NMNB (with third restriction, if any), dark blue = NB with third restriction, blue = NB, brown = NM, green = 1cc.</p>
             <p>
                 <label for='fillGameDifficulty'>Game / Difficulty</label>
                 <select id='fillGameDifficulty'>
@@ -60,7 +60,7 @@
                     <option>1cc</option>
                     <option>NM</option>
                     <option>NB</option>
-                    <option>NN</option>
+                    <option>NMNB</option>
                 </select>
                 <br>
                 <input type='button' onClick='javascript:fillAll($("#fillGameDifficulty").val(), $("#fillAchievement").val())' value='Fill All'>
@@ -84,7 +84,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -94,7 +94,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -104,7 +104,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -114,7 +114,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>N/A</td>
@@ -129,7 +129,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -139,7 +139,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -149,7 +149,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -159,7 +159,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -169,7 +169,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>N/A</td>
@@ -183,7 +183,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -193,7 +193,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -203,7 +203,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -213,7 +213,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>N/A</td>
@@ -228,7 +228,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -238,7 +238,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -248,7 +248,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -258,7 +258,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -268,7 +268,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>N/A</td>
@@ -282,7 +282,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -292,7 +292,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -302,7 +302,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -312,7 +312,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -322,7 +322,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>N/A</td>
@@ -336,7 +336,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -346,7 +346,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -356,7 +356,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -366,7 +366,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -376,7 +376,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>N/A</td>
@@ -390,8 +390,8 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
-                            <option>NNN</option>
+                            <option>NBNBB</option>
+                            <option>NMNBNBB</option>
                         </select>
                     </td>
                     <td>
@@ -401,8 +401,8 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
-                            <option>NNN</option>
+                            <option>NBNBB</option>
+                            <option>NMNBNBB</option>
                         </select>
                     </td>
                     <td>
@@ -412,8 +412,8 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
-                            <option>NNN</option>
+                            <option>NBNBB</option>
+                            <option>NMNBNBB</option>
                         </select>
                     </td>
                     <td>
@@ -423,8 +423,8 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
-                            <option>NNN</option>
+                            <option>NBNBB</option>
+                            <option>NMNBNBB</option>
                         </select>
                     </td>
                     <td>
@@ -434,8 +434,8 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
-                            <option>NNN</option>
+                            <option>NBNBB</option>
+                            <option>NMNBNBB</option>
                         </select>
                     </td>
                     <td>
@@ -445,8 +445,8 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
-                            <option>NNN</option>
+                            <option>NBNBB</option>
+                            <option>NMNBNBB</option>
                         </select>
                     </td>
                 </tr>
@@ -459,7 +459,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -469,7 +469,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -479,7 +479,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -489,7 +489,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -499,7 +499,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>N/A</td>
@@ -513,7 +513,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -523,7 +523,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -533,7 +533,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -543,7 +543,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -553,7 +553,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>N/A</td>
@@ -567,7 +567,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -577,7 +577,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -587,7 +587,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -597,7 +597,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -607,7 +607,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>N/A</td>
@@ -621,7 +621,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -631,7 +631,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -641,7 +641,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -651,7 +651,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -661,7 +661,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>N/A</td>
@@ -675,8 +675,8 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
-                            <option>NNN</option>
+                            <option>NBNV</option>
+                            <option>NMNB(NV)</option>
                         </select>
                     </td>
                     <td>
@@ -686,8 +686,8 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
-                            <option>NNN</option>
+                            <option>NBNV</option>
+                            <option>NMNB(NV)</option>
                         </select>
                     </td>
                     <td>
@@ -697,8 +697,8 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
-                            <option>NNN</option>
+                            <option>NBNV</option>
+                            <option>NMNB(NV)</option>
                         </select>
                     </td>
                     <td>
@@ -708,8 +708,8 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
-                            <option>NNN</option>
+                            <option>NBNV</option>
+                            <option>NMNB(NV)</option>
                         </select>
                     </td>
                     <td>
@@ -719,8 +719,8 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
-                            <option>NNN</option>
+                            <option>NBNV</option>
+                            <option>NMNB(NV)</option>
                         </select>
                     </td>
                     <td>N/A</td>
@@ -734,7 +734,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -744,7 +744,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -754,7 +754,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -764,7 +764,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -774,7 +774,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>N/A</td>
@@ -788,8 +788,8 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
-                            <option>NNN</option>
+                            <option>NBNT</option>
+                            <option>NMNBNT</option>
                         </select>
                     </td>
                     <td>
@@ -799,8 +799,8 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
-                            <option>NNN</option>
+                            <option>NBNT</option>
+                            <option>NMNBNT</option>
                         </select>
                     </td>
                     <td>
@@ -810,8 +810,8 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
-                            <option>NNN</option>
+                            <option>NBNT</option>
+                            <option>NMNBNT</option>
                         </select>
                     </td>
                     <td>
@@ -821,8 +821,8 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
-                            <option>NNN</option>
+                            <option>NBNT</option>
+                            <option>NMNBNT</option>
                         </select>
                     </td>
                     <td>
@@ -832,8 +832,8 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
-                            <option>NNN</option>
+                            <option>NBNT</option>
+                            <option>NMNBNT</option>
                         </select>
                     </td>
                     <td>N/A</td>
@@ -847,7 +847,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -857,7 +857,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -867,7 +867,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -877,7 +877,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -887,7 +887,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>N/A</td>
@@ -901,7 +901,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -911,7 +911,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -921,7 +921,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -931,7 +931,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>
@@ -941,7 +941,7 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
+                            <option>NMNB</option>
                         </select>
                     </td>
                     <td>N/A</td>
@@ -955,8 +955,8 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
-                            <option>NNN</option>
+                            <option>NBNR</option>
+                            <option>NMNBNR</option>
                         </select>
                     </td>
                     <td>
@@ -966,8 +966,8 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
-                            <option>NNN</option>
+                            <option>NBNR</option>
+                            <option>NMNBNR</option>
                         </select>
                     </td>
                     <td>
@@ -977,8 +977,8 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
-                            <option>NNN</option>
+                            <option>NBNR</option>
+                            <option>NMNBNR</option>
                         </select>
                     </td>
                     <td>
@@ -988,8 +988,8 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
-                            <option>NNN</option>
+                            <option>NBNR</option>
+                            <option>NMNBNR</option>
                         </select>
                     </td>
                     <td>
@@ -999,8 +999,8 @@
                             <option>1cc</option>
                             <option>NM</option>
                             <option>NB</option>
-                            <option>NN</option>
-                            <option>NNN</option>
+                            <option>NBNR</option>
+                            <option>NMNBNR</option>
                         </select>
                     </td>
                     <td>N/A</td>

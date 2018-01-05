@@ -44,6 +44,11 @@ h2 {
 .nb {
     background-color: blue;
 }
+.nbp {
+    color: white;
+    text-align: center;
+    background-color: blue;
+}
 .nmnb {
     background-color: purple;
 }
