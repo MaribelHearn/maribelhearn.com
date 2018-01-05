@@ -164,6 +164,10 @@ var fillAll = function (value, achievement) {
                 }
             }
             
+            if (value == "Extra" && game == "HRtP" || game == "PoDD") {
+                continue;
+            }
+            
             $("#" + game + value).val(achievement);
             vals[game][value] = achievement;
         }
@@ -177,18 +181,25 @@ var format = function (achievement) {
         "1cc": "clear",
         "NM": "nm",
         "NB": "nb",
-        "NN": "nmnb",
-        "NNN": "nmnb"
+        "NBNBB": "nbp",
+        "NBNV": "nbp",
+        "NBNT": "nbp",
+        "NBNR": "nbp",
+        "NMNB": "nmnb",
+        "NMNBNBB": "nmnb",
+        "NMNB(NV)": "nmnb",
+        "NMNBNT": "nmnb",
+        "NMNBNR": "nmnb"
     })[achievement];
 };
 
 var apply = function () {
     var numbers = {
-        "Easy": {"Not cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NN*": 0, "NN(N)": 0},
-        "Normal": {"Not cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NN*": 0, "NN(N)": 0},
-        "Hard": {"Not cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NN*": 0, "NN(N)": 0},
-        "Lunatic": {"Not cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NN*": 0, "NN(N)": 0},
-        "Extra": {"Not cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NN*": 0, "NN(N)": 0},
+        "Easy": {"NB+ot cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NB+": 0, "NMNB": 0},
+        "Normal": {"Not cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NB+": 0, "NMNB": 0},
+        "Hard": {"Not cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NB+": 0, "NMNB": 0},
+        "Lunatic": {"Not cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NB+": 0, "NMNB": 0},
+        "Extra": {"Not cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NB+": 0, "NMNB": 0},
     },
     na = {"HRtP": 0, "SoEW": 0, "PoDD": 0, "LLS": 0, "MS": 0, "EoSD": 0, "PCB": 0, "IN": 0, "PoFV": 0, "MoF": 0, "SA": 0, "UFO": 0, "GFW": 0, "TD": 0, "DDC": 0, "LoLK": 0, "HSiFS": 0},
     completions = {"HRtP": 0, "SoEW": 0, "PoDD": 0, "LLS": 0, "MS": 0, "EoSD": 0, "PCB": 0, "IN": 0, "PoFV": 0, "MoF": 0, "SA": 0, "UFO": 0, "GFW": 0, "TD": 0, "DDC": 0, "LoLK": 0, "HSiFS": 0},
@@ -201,7 +212,7 @@ var apply = function () {
         
         for (difficulty in vals[game]) {
             val = vals[game][difficulty];
-            results += "<td class='" + format(val) + "'" + (difficulty == "Extra" && game != "PCB" ? " colspan='2'" : "") + "></td>";
+            results += "<td class='" + format(val) + "'" + (difficulty == "Extra" && game != "PCB" ? " colspan='2'" : "") + ">" + (format(val) == "nbp" ? val : "") + "</td>";
             
             if (difficulty == "Phantasm") {
                 difficulty = "Extra";
@@ -214,10 +225,10 @@ var apply = function () {
             } else {
                 completions[game] += getPercentage(game);
                 
-                if (val == "NN" && isTripleNGame(game)) {
-                    numbers[difficulty]["NN*"] += 1;
-                } else if (val == "NN" || val == "NNN") {
-                    numbers[difficulty]["NN(N)"] += 1;
+                if (val.substr(0, 2) == "NB" && val.length > 2) {
+                    numbers[difficulty]["NB+"] += 1;
+                } else if (val.substr(0, 4) == "NMNB") {
+                    numbers[difficulty]["NMNB"] += 1;
                 } else {
                     numbers[difficulty][val] += 1;
                 }
@@ -236,7 +247,7 @@ var apply = function () {
     }
     
     results += "</tbody></table>" +
-    "<h2>Numbers of Achievements</h2><table id='table' class='sortable'><thead><tr><th>Difficulty</th><th>Not cleared</th><th>1cc</th><th>NM</th><th>NB</th><th>NN*</th><th>NN(N)</th></tr></thead><tbody>";
+    "<h2>Numbers of Achievements</h2><table id='table' class='sortable'><thead><tr><th>Difficulty</th><th>Not cleared</th><th>1cc</th><th>NM</th><th>NB</th><th>NB+</th><th>NMNB</th></tr></thead><tbody>";
     
     for (difficulty in numbers) {
         results += "<tr><th>" + difficulty + "</th>";
@@ -248,8 +259,7 @@ var apply = function () {
         results += "</tr>";
     }
     
-    results += "</tbody></table><p>* Any NN that was achieved in a game with a third N.</p>" +
-    "<h2>Clear Completions</h2><table id='gameTable' class='sortable'><thead><tr><th>Game</th><th>Clear Completion</th></tr></thead><tbody>";
+    results += "</tbody></table><h2>Clear Completions</h2><table id='gameTable' class='sortable'><thead><tr><th>Game</th><th>Clear Completion</th></tr></thead><tbody>";
     
     for (game in vals) {
         if (Math.round(na[game]) == 100) {
