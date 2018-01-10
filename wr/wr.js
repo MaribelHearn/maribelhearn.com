@@ -140,7 +140,7 @@ function load() {
         playerWRs = {};
         compareWRs = {};
         
-        var skip = {}, game, max, difficulty, bestshotmax, shottypes, shottype, wr, score, player, overall, overallplayer,
+        var skip = {}, game, max, difficulty, bestshotmax, shottypes, shottype, wr, score, player, replay, overall, overallplayer,
         overalldifficulty, overallshottype, overallseason, bestshot, bestshotplayer, bestshotseason, text, count;
         
         for (game in WRs) {
@@ -162,6 +162,7 @@ function load() {
                     wr = WRs[game][difficulty][shottype + season];
                     score = wr[0];
                     player = wr[1];
+                    replay = wr[2];
                     
                     if (score > max) {
                         overall = "#" + game + difficulty + shottype;
@@ -191,7 +192,7 @@ function load() {
                         playerWRs[player][game] += 1;
                     }
                     
-                    text = sep(score) + "<br>by <em>" + player + "</em>";
+                    text = "<a href='" + replay + "'>" + sep(score) + "</a><br>by <em>" + player + "</em>";
                     score > 0 ? $("#" + game + difficulty + shottype).html(text + (game == "HSiFS" && difficulty != "Extra" ? " (" + season + ")" : "")) : $("#" + game + difficulty + shottype).html('-');
                 }
                 
