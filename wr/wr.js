@@ -192,11 +192,12 @@ function load() {
                         playerWRs[player][game] += 1;
                     }
                     
-                    text = "<a class='replay' href='" + replay + "'>" + sep(score) + "</a><br>by <em>" + player + "</em>";
+                    text = (replay === "" ? sep(score) : "<a class='replay' href='" + replay + "'>" + sep(score) + "</a>") + "<br>by <em>" + player + "</em>";
                     score > 0 ? $("#" + game + difficulty + shottype).html(text + (game == "HSiFS" && difficulty != "Extra" ? " (" + season + ")" : "")) : $("#" + game + difficulty + shottype).html('-');
                 }
                 
-                $(bestshot).html("<u><a class='replay' href='" + replay + "'>" + sep(bestshotmax) + "</a></u><br>by <em>" + bestshotplayer + "</em>" + (game == "HSiFS" && difficulty != "Extra" ? " (" + bestshotseason + ")" : ""));
+                $(bestshot).html((replay === "" ? "<u>" + sep(bestshotmax) + "</u>" : "<u><a class='replay' href='" + replay + "'>" + sep(bestshotmax) + "</a>") + "</u><br>by <em>" + bestshotplayer +
+                "</em>" + (game == "HSiFS" && difficulty != "Extra" ? " (" + bestshotseason + ")" : ""));
                 compareWRs[game][difficulty] = [bestshotmax, bestshotplayer, bestshot.replace("#" + game + difficulty, "") + (game == "HSiFS" && difficulty != "Extra" ? bestshotseason : "")];
             }
             
