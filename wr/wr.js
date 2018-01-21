@@ -178,6 +178,7 @@ function load() {
                         bestshotplayer = player;
                         bestshotseason = season;
                         bestshotmax = score;
+                        bestshotreplay = replay;
                     }
                     
                     if (player !== "") {
@@ -196,8 +197,8 @@ function load() {
                     score > 0 ? $("#" + game + difficulty + shottype).html(text + (game == "HSiFS" && difficulty != "Extra" ? " (" + season + ")" : "")) : $("#" + game + difficulty + shottype).html('-');
                 }
                 
-                $(bestshot).html((replay === "" ? "<u>" + sep(bestshotmax) + "</u>" : "<u><a class='replay' href='" + replay + "'>" + sep(bestshotmax) + "</a>") + "</u><br>by <em>" + bestshotplayer +
-                "</em>" + (game == "HSiFS" && difficulty != "Extra" ? " (" + bestshotseason + ")" : ""));
+                $(bestshot).html((bestshotreplay === "" ? "<u>" + sep(bestshotmax) + "</u>" : "<u><a class='replay' href='" + bestshotreplay +
+                "'>" + sep(bestshotmax) + "</a>") + "</u><br>by <em>" + bestshotplayer + "</em>" + (game == "HSiFS" && difficulty != "Extra" ? " (" + bestshotseason + ")" : ""));
                 compareWRs[game][difficulty] = [bestshotmax, bestshotplayer, bestshot.replace("#" + game + difficulty, "") + (game == "HSiFS" && difficulty != "Extra" ? bestshotseason : "")];
             }
             
@@ -205,7 +206,7 @@ function load() {
             $("#" + game + "overall0").html(sep(max));
             $("#" + game + "overall1").html(overallplayer);
             $("#" + game + "overall2").html(overalldifficulty);
-            $("#" + game + "overall3").html(overallshottype);
+            $("#" + game + "overall3").html(overallshottype + (game == "HSiFS" ? " (" + overallseason + ")" : ""));
         }
         
         $("#ranking_tbody").html("");
