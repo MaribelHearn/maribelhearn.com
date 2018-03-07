@@ -34,10 +34,21 @@ h2 {
 #difficultyLabel, #challengeLabel {
     display: none;
 }
+#languages {
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+}
 #noborders {
     border: none;
     margin-left: auto;
     margin-right: auto;
+}
+@media only screen and (max-width: 1400px) {
+    .wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
 }
 @media only screen and (min-width: 800px) and (max-width: 1400px) {
     #wrap {

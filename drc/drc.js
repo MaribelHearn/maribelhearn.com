@@ -1,11 +1,27 @@
-﻿var WRs, global = this, phantasm = true, noExtra = true, noShottypes = true, GAME = "#game", DIFFICULTY = "#difficulty", CHALLENGE = "#challenge", MISSES = "#misses", SCORING = "#scoring", RUBRICS = "#rubrics",
-    BOMBS = "#bombs", SCORE = "#score", PERFORMANCE = "#performance", DRCPOINTS = "#drcpoints", ERROR = "#error", SHOTTYPE = "#shottype", NOTIFY = "#notify", RUBRICS_BUTTON = "#rubricsButton", NB = "#nb",
-    NO_EXTRA = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>", NOTIFY_TEXT = "<b>Important Notice:</b> ", PHANTASMAGORIA = "#phantasmagoriaTable", IS = "#is",
-    DIFF_OPTIONS = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option>", SHOTTYPE_MULTIPLIERS = "#shottypeMultipliersTable", LS = "#ls",
-    PHANTASM = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option><option>Phantasm</option>", SHOTTYPE_LABEL = "#shottypeLabel",
-    MISSES_INPUT = "<label for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>", ERROR_TEXT = "<b style='color:red'>Error: ", CLEARED = "#cleared", SCENE = "#scene",
-    SCORE_OPTIONS = "<label for='score'>Score</label><input id='score' type='text'>", SCORING_TABLE = "#scoringTable", SURV_TABLE = "#survivalTable", ROUTE = "#route", BB = "#bb", DS_TABLE = "#dsTable",
-    MOF_TABLE = "#mofTable", RELEASES = "#releases", SEASON = "#season", RUBRICS_TABLES = "#rubricsTables", POFV_FORMULA = "#pofvFormula",
+﻿var WRs, global = this, phantasm = true, noExtra = true, noShottypes = true, language = "English", GAME = "#game", DIFFICULTY = "#difficulty", CHALLENGE = "#challenge",
+    PHANTASMAGORIA = "#phantasmagoriaTable", RUBRICS = "#rubrics", BOMBS = "#bombs", SCORE = "#score", PERFORMANCE = "#performance", DRCPOINTS = "#drcpoints", ERROR = "#error",
+    SHOTTYPE = "#shottype", NOTIFY = "#notify", RUBRICS_BUTTON = "#rubricsButton", NB = "#nb", MISSES = "#misses", IMP_NOT = "#impNot", IMP_NOT_TEXT = "#impNotText",
+    NO_EXTRA = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>", SHOTTYPE_MULTIPLIERS = "#shottypeMultipliersTable",
+    DIFF_OPTIONS = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option>", LS = "#ls", IS = "#is",
+    PHANTASM = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option><option>Phantasm</option>",
+    SHOTTYPE_LABEL = "#shottypeLabel", MISSES_INPUT = "<label id='missesLabel' for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>",
+    ERROR_TEXT = "<strong style='color:red'>Error: ", ERROR_TEXT_JP = "<strong style='color:red'>エラー: ", SCORING_TABLE = "#scoringTable", SURV_TABLE = "#survivalTable",
+    ROUTE = "#route", SCORE_OPTIONS = "<label id='scoreLabel' for='score'>Score</label><input id='score' type='text'>", DS_TABLE = "#dsTable", MOF_TABLE = "#mofTable",
+    RELEASES = "#releases", SEASON = "#season", SPRING = "#spring", SUMMER = "#summer", AUTUMN = "#autumn", WINTER = "#winter", HRTP = "#hrtp", SOEW = "#soew", PODD = "#podd",
+    LLS = "#lls", MS = "#ms", EOSD = "#eosd", PCB = "#pcb", IN = "#in", POFV = "#pofv", MOF = "#mof", SA = "#sa", UFO = "#ufo", GFW = "#gfw", TD = "#td", DDC = "#ddc",
+    LOLK = "#lolk", HSIFS = "#hsifs", MISSES_LABEL = "#missesLabel", BOMBS_LABEL = "#bombsLabel", NB_LABEL = "#nbLabel", DIFFICULTY_LABEL = "#difficultyLabel",
+    RELEASES_LABEL = "#releasesLabel", SURVIVAL = "#survival", SCORING = "#scoring", IS_LABEL = "#isLabel", LS_LABEL = "#lsLabel", SCORE_LABEL = "#scoreLabel",
+    FINALA = "#finala", FINALB = "#finalb", SCORING_COLUMN = "<th id='game0'>Game</th><th id='maxPoints0'>Max points</th><th id='exp0'>Exponent</th>",
+    SURV_COLUMN = "<th id='game2'>Game</th><th id='maxPoints1'>Max points</th><th id='base0'>Base</th><th id='lostLife'>Lost life (n)</th><th id='firstBomb'>" +
+    "First bomb (n)</th><th id='further'>Further bombs (n)</th>", FIRST_BOMB = "#firstBomb", FURTHER = "#further", LOST_LIFE = "#lostLife", POFV_SURV = "#phantasmagoria",
+    POFV_SURV_DESC = "#phantasmagoriaDesc", MOFAITH = "#mountainOfFaith", MOFAITH_DESC = "#mountainOfFaithDesc", SHOT_MULT = "#shottypeMultipliers",
+    SHOT_MULT_DESC = "#shotMultDesc", BASE_POINTS = "#basePoints", MULTIPLIEDSHOTTYPE = "#multipliedShottype", MULTIPLIER = "#multiplier", MAX_POINTS = "#maxPoints",
+    BASE = "#base", EXP = "#exp", WR = "#wr", SCORE_TEXT = "#scoreText", MIN_POINTS = "#minPoints", NB_BONUS = "#nbBonus", POINTS_CALCULATOR = "#pointsCalculator",
+    RUBRICS_TEXT = "#rubricsText", LANGUAGE_TEXT = "#languageText", DRC_INTRO = "#drcIntro", CATEGORY = "#category", BACK_TO_TOP = "#backToTop",
+    DRC_INTRO_PTS = "#drcIntroPts", DRC_SCORES = "#drcScores", RUBRICS_EXPL = "#rubricsExpl", SCORING_NOTES = "#scoringNotes", SURV_NOTES = "#survivalNotes",
+    NEW_WR = "#newWR", MOF_SEPARATE = "#mofSeparate", MAINGAME = "#maingame", PHANTASMAGORIA_SEPARATE = "#phantasmagoriaSeparate", THRESHOLD = "#threshold",
+    INCREMENTS = "#increments", IN_LS = "#inLS", HSIFS_RELEASES = "#hsifsReleases", CALCULATE = "#calculate", MAX_LIVES = "#maxLives", SURV_FORMULA = "#survFormula",
+    SCORE_FORMULA = "#scoreFormula", POFV_FORMULA = "#pofvFormula", RUBRICS_TABLES = "#rubricsTables", CLEARED = "#cleared", SCENE = "#scene",
     SURV_RUBRICS = {
         "SoEW": {
             "Easy": {
@@ -337,8 +353,8 @@
                 "Reisen": 1.05,
                 "Lyrica": 1.05,
                 "Tewi": 1.05,
-                "Aya": 0.5,
-                "Medicine": 0.5,
+                "Aya": 0.8,
+                "Medicine": 0.8,
                 "Yuuka": 1.05
             }
         },
@@ -976,7 +992,7 @@
             },
             "Extra": {
                 "base": 450,
-                "exp": 7
+                "exp": 2.5
             }
         },
         "DDC": {
@@ -1096,32 +1112,365 @@
 $(document).ready(function() {
     $.get("../json/wrlist.json", function(data) {
         WRs = data;
+        generateText(true);
         checkValues(true, true, true);
         generateRubrics();
         $(POFV_FORMULA).attr("colspan", 4);
+        
+        if (getCookie("lang") == "Japanese") {
+            language = "Japanese";
+            generateText(false);
+        }
     }, "json");
 });
+
+function japaneseCharNames(charName) {
+    return ({
+        "Makai": "魔界",
+        "Jigoku": "地獄",
+        "ReimuA": "霊夢A",
+        "ReimuB": "霊夢B",
+        "ReimuC": "霊夢C",
+        "Reimu": "霊夢",
+        "Mima": "魅魔",
+        "Marisa": "魔理沙",
+        "Ellen": "エレン",
+        "Kotohime": "小兎姫",
+        "Kana": "カナ",
+        "Rikako": "理香子",
+        "Chiyuri": "ちゆり",
+        "Yumemi": "夢美",
+        "Yuuka": "幽香",
+        "MarisaA": "魔理沙A",
+        "MarisaB": "魔理沙B",
+        "SakuyaA": "咲夜A",
+        "SakuyaB": "咲夜B",
+        "BorderTeam": "霊夢＆紫",
+        "MagicTeam": "魔理沙＆アリス",
+        "ScarletTeam": "咲夜＆レミリア",
+        "GhostTeam": "妖夢＆幽々子",
+        "Yukari": "紫",
+        "Alice": "アリス",
+        "Sakuya": "咲夜",
+        "Remilia": "レミリア",
+        "Youmu": "妖夢",
+        "Yuyuko": "幽々子",
+        "Reisen": "鈴仙",
+        "Cirno": "チルノ",
+        "Lyrica": "リリカ",
+        "Mystia": "ミスティア",
+        "Tewi": "てゐ",
+        "Aya": "文",
+        "Medicine": "メディスン",
+        "Komachi": "小町",
+        "Eiki": "映姫",
+        "MarisaC": "魔理沙C",
+        "SanaeA": "早苗A",
+        "SanaeB": "早苗B",
+        "A1": "A1",
+        "A2": "A2",
+        "B1": "B1",
+        "B2": "B2",
+        "C1": "C1",
+        "C2": "B2",
+        "Sanae": "早苗",
+        "Spring": "春",
+        "Summer": "夏",
+        "Autumn": "秋",
+        "Winter": "冬"
+    }[charName]);
+}
+
+function japaneseGameName(game) {
+    return ({
+        "HRtP": "靈",
+        "SoEW": "封",
+        "PoDD": "夢",
+        "LLS": "幻",
+        "MS": "怪",
+        "EoSD": "紅",
+        "PCB": "妖",
+        "IN": "永",
+        "PoFV": "花",
+        "MoF": "風",
+        "SA": "地",
+        "UFO": "星",
+        "GFW": "大",
+        "TD": "神",
+        "DDC": "輝",
+        "LoLK": "紺",
+        "HSiFS": "天"
+    }[game]);
+}
+
+function generateText(firstTime) {
+    var numberOfShottypes = $(SHOTTYPE + " option").length, i;
+    
+    if (language == "English") {
+        $(HRTP).html("HRtP");
+        $(SOEW).html("SoEW");
+        $(PODD).html("PoDD");
+        $(LLS).html("LLS");
+        $(MS).html("MS");
+        $(EOSD).html("EoSD");
+        $(PCB).html("PCB");
+        $(IN).html("IN");
+        $(POFV).html("PoFV");
+        $(MOF).html("MoF");
+        $(SA).html("SA");
+        $(UFO).html("UFO");
+        $(GFW).html("GFW");
+        $(TD).html("TD");
+        $(DDC).html("DDC");
+        $(LOLK).html("LoLK");
+        $(HSIFS).html("HSiFS");
+        $(SPRING).html("Spring");
+        $(SUMMER).html("Summer");
+        $(AUTUMN).html("Autumn");
+        $(WINTER).html("Winter");
+        $(CATEGORY).html("Category");
+        $(DIFFICULTY_LABEL).html("Difficulty");
+        $(FINALA).html("FinalA");
+        $(FINALB).html("FinalB");
+        $(SCORE_LABEL).html("Score");
+        $(SHOTTYPE_LABEL).html("Shottype");
+        $(MISSES_LABEL).html("Misses");
+        $(BOMBS_LABEL).html("Bombs");
+        $(POINTS_CALCULATOR).html("Points Calculator");
+        $(RUBRICS_TEXT).html("Rubrics");
+        $(LANGUAGE_TEXT).html("Language");
+        $(BACK_TO_TOP).html("Back to Top");
+        game = $(GAME).val();
+        
+        if (game) {
+            if (game == "PCB") {
+                $(BOMBS_LABEL).html("Bombs / Border Breaks");
+            } else if (game == "TD") {
+                $(BOMBS_LABEL).html("Bombs / Trances");
+            } else if (game == "HRtP" || game == "GFW") {
+                $(SHOTTYPE_LABEL).html("Route");
+            }
+        }
+        
+        for (i = 0; i < 2; i++) {
+            $(SURVIVAL + i).html("Survival");
+            $(SCORING + i).html("Scoring");
+        }
+        
+        $(NB_LABEL).html("No Bomb");
+        $(IS_LABEL).html("Imperishable Shooting Captured");
+        $(LS_LABEL).html("Last Spells Captured");
+        $(RELEASES_LABEL).html("Releases");
+        $(DRCPOINTS).html($(DRCPOINTS).html().replace("DRCポイント", "Your DRC points for this run"));
+        $(RUBRICS_BUTTON).val($(RUBRICS_BUTTON).val().replace("ルーブリックを見せて", "Show Rubrics").replace("ルーブリックを見せない", "Hide Rubrics"));
+        $(CALCULATE).val("Calculate");
+        $(SCORING_NOTES).html("Scoring Notes");
+        $(SURV_NOTES).html("Survival Notes");
+        $(NEW_WR).html("If you achieve a new World Record, your points are equal to the max points; otherwise, the formula applies.");
+        $(MOF_SEPARATE).html("MoF uses a separate system. <a href='#mountainOfFaith'>Click here</a> for said system.");
+        $(MAINGAME).html("For a main game clear, a shottype multiplier is applied to your DRC points, the result of which is again rounded." +
+        "Click <a href='#shottypeMultipliers'>here</a> for the list of them.");
+        $(PHANTASMAGORIA_SEPARATE).html("The Phantasmagorias use a separate system. <a href='#phantasmagoria'>Click here</a> for said system.");
+        $(IN_LS).html("For IN, you obtain 2 (1 on Easy) additional points for each captured Last Spell, with the exception of Imperishable Shooting, which yields 5 points.");
+        $(HSIFS_RELEASES).html("For HSiFS, the first release adds 2 to <em>n</em> (3 on Lunatic), and further releases add 0.5 to <em>n</em>.");
+        $(MOFAITH).html("MoF Scoring");
+        $(MOFAITH_DESC).html("For each difficulty and shottype there are six thresholds, at which you will have set numbers of points respectively. " +
+        "Then, increments are done, dependent on how much higher than the threshold your score is.");
+        $(POFV_SURV).html("PoDD & PoFV Survival");
+        $(POFV_SURV_DESC).html("In the below formula, MaxLives is equal to 5 for PoDD, 7 for PoFV main game and 8 for PoFV Extra." +
+        "NoBombBonus is a difficulty-specific No Bomb bonus for PoDD and a No Charge Attacks bonus for PoFV. RoundsLost is equal to how many rounds the player lost.");
+        $(SHOT_MULT).html("Shottype Multipliers");
+        $(SHOT_MULT_DESC).html("These are applied to the result of the survival formula for a main game run only; they do <em>not</em> apply for Extra, " +
+        "nor do they apply for HSiFS runs that use releases. For all shots not listed here, the shottype multipliers are equal to 1.");
+        $(SCORE_FORMULA).html("||Max * (Score / WR) ^ Exp||");
+        $(SURV_FORMULA).html("||Max * (Base ^ -n)||");
+        $(POFV_FORMULA).html("||Max - ((Max - Min) / MaxLives * RoundsLost)|| + NoBombBonus");
+        
+        for (i = 0; i < numberOfShottypes; i++) {
+            $(SHOTTYPE + i).html($(SHOTTYPE + i).val().replace("Team", " Team"));
+        }
+        
+        if (!firstTime) {
+            $(IMP_NOT).html("Important Notice:");
+            $(IMP_NOT_TEXT + "0").html("usage of the MarisaB damage bug is BANNED in survival.");
+            $(IMP_NOT_TEXT + "1").html("<em>manual</em> trances count as bombs (that is, trances from pressing C).");
+            $(IMP_NOT_TEXT + "2").html("border breaks count as bombs <em>even if they are accidental</em>.");
+            generateRubrics();
+        }
+        
+        $(DRC_INTRO).html("The <b>Dodging Rain Competition (DRC)</b> is a Touhou game competition that was invented by ZM and is held on " +
+        "<a href='https://discord.gg/tu47Hrs'>the official DRC Discord</a>. " +
+        "Two teams go up against each other in several different categories. Each player posts an arbitrarily long list of categories, ordered by preference, " +
+        "which can be either survival or scoring of any Touhou shooting game and any difficulty. They will be matched up against a player from the other team, " +
+        "in a category that both players had on their list. The teams and categories are determined by the DRC management team. Players are given two weeks to " +
+        "sign up for the competition, and once it starts, two weeks to submit a replay, which will be awarded points dependent on the rubrics. " +
+        "Runs done outside those two weeks are invalid.");
+        $(DRC_INTRO_PTS).html("If you want to know how many DRC points a run is worth, the points for a given run can be determined using the calculator below.");
+        $(DRC_SCORES).html("Scores can only contain digits, commas, dots and spaces. Survival runs are assumed to have cleared, scoring runs not.");
+        $(RUBRICS_EXPL).html("The rubrics are the formulas and fixed values used to calculate the number of DRC points for a run. " +
+        "If you are curious about how your points are being determined, click the button below to expand.");
+    } else {
+        $(HRTP).html(japaneseGameName("HRtP"));
+        $(SOEW).html(japaneseGameName("SoEW"));
+        $(PODD).html(japaneseGameName("PoDD"));
+        $(LLS).html(japaneseGameName("LLS"));
+        $(MS).html(japaneseGameName("MS"));
+        $(EOSD).html(japaneseGameName("EoSD"));
+        $(PCB).html(japaneseGameName("PCB"));
+        $(IN).html(japaneseGameName("IN"));
+        $(POFV).html(japaneseGameName("PoFV"));
+        $(MOF).html(japaneseGameName("MoF"));
+        $(SA).html(japaneseGameName("SA"));
+        $(UFO).html(japaneseGameName("UFO"));
+        $(GFW).html(japaneseGameName("GFW"));
+        $(TD).html(japaneseGameName("TD"));
+        $(DDC).html(japaneseGameName("DDC"));
+        $(LOLK).html(japaneseGameName("LoLK"));
+        $(HSIFS).html(japaneseGameName("HSiFS"));
+        $(SPRING).html(japaneseCharNames("Spring"));
+        $(SUMMER).html(japaneseCharNames("Summer"));
+        $(AUTUMN).html(japaneseCharNames("Autumn"));
+        $(WINTER).html(japaneseCharNames("Winter"));
+        $(CATEGORY).html("カテゴリー");
+        $(DIFFICULTY_LABEL).html("難易度");
+        $(FINALA).html("Aルート");
+        $(FINALB).html("Bルート");
+        $(SCORE_LABEL).html("スコア");
+        $(SHOTTYPE_LABEL).html("キャラ");
+        $(MISSES_LABEL).html("ミス");
+        $(BOMBS_LABEL).html("ボム");
+        $(POINTS_CALCULATOR).html("ポイントのカルキュレーター");
+        $(RUBRICS_TEXT).html("ルーブリック");
+        $(LANGUAGE_TEXT).html("言語");
+        $(BACK_TO_TOP).html("上に帰る");
+        game = $(GAME).val();
+        
+        if (game) {
+            if (game == "PCB") {
+                $(BOMBS_LABEL).html("ボム / 霊撃");
+            } else if (game == "TD") {
+                $(BOMBS_LABEL).html("ボム / トランス");
+            } else if (game == "HRtP" || game == "GFW") {
+                $(SHOTTYPE_LABEL).html("ルート");
+            }
+        }
+        
+        for (i = 0; i < 2; i++) {
+            $(SURVIVAL + i).html("クリア重視");
+            $(SCORING + i).html("稼ぎ");
+        }
+        
+        $(NB_LABEL).html("ノーボム");
+        $(IS_LABEL).html("「インペリシャブルシューティング」取得");
+        $(LS_LABEL).html("ラストスペル取得");
+        $(RELEASES_LABEL).html("解放");
+        $(DRCPOINTS).html($(DRCPOINTS).html().replace("Your DRC points for this run", "DRCポイント"));
+        $(RUBRICS_BUTTON).val($(RUBRICS_BUTTON).val().replace("Show Rubrics", "ルーブリックを見せて").replace("Hide Rubrics", "ルーブリックを見せない"));
+        $(CALCULATE).val("計算する");
+        $(SCORING_NOTES).html("稼ぎのノート");
+        $(SURV_NOTES).html("クリア重視のノート");
+        $(NEW_WR).html("新しい世界記録が起こすと、あのプレイヤーは最大点をもらいます。");
+        $(MOF_SEPARATE).html("東方風神録が別のシステムを使います。 <a href='#mountainOfFaith'>ここをクリック</a>そのシステムのために。");
+        $(MAINGAME).html("ENHLクリアから、DRCポイントでキャラの倍率が適用されて、切り上げます。 リストを見せたいと<a href='#shottypeMultipliers'>ここをクリック</a>する。");
+        $(PHANTASMAGORIA_SEPARATE).html("東方夢時空や東方花映塚も別のシステムを使う。 <a href='#phantasmagoria'>ここをクリック</a>そのシステムのために。");
+        $(IN_LS).html("東方永夜抄にはそれぞれのラストスペルは2点を与える。 Easyラストスペルは1点を与える。 「インペリシャブルシューティング」取得をことは5点を与える。");
+        $(HSIFS_RELEASES).html("東方天空璋では、最初の季節解放は２ボム扱い(ルナティックでは３ボム扱い)、以降は解放するたびに0.5ボム扱いとしますまた");
+        $(MOFAITH).html("東方風神録の稼ぎ");
+        $(MOFAITH_DESC).html("各難易度各機体においてスコアの限界点が存在するため、機体ごとにポイントの追加を規定しています。以下のリストを参照し、最終ポイントを決定します。");
+        $(POFV_SURV).html("東方夢時空のクリア重視&東方花映塚のクリア重視");
+        $(POFV_SURV_DESC).html("最大残機は東方夢時空では５、花映塚本編では７、花映塚エクストラでは８となっていますノーボムボーナスは東方夢時空ではボムの不使用、花映塚ではチャージ攻撃(C1含む)の不使用と規定しています花映塚でのラウンド１敗は残機１機ロスト扱いとなります");
+        $(SHOT_MULT).html("キャラの倍率");
+        $(SHOT_MULT_DESC).html("以下のリストは各作品でのクリア重視における、本編にのみ適用される使用機体によるボーナス倍率です。エクストラでは倍率は付加されません。また、解放を使用した場合の天空璋本編にも適用されません。リストに記載されていない機体のボーナス倍率は１となります。");
+        $(SCORE_FORMULA).html("||最大点 * (スコア / 世界記録) ^ 冪指数||");
+        $(SURV_FORMULA).html("||最大点 * (底 ^ -n)||");
+        $(POFV_FORMULA).html("||最大点 - ((最大点 - 最小点) / 最大残機 * ラウンド失った)|| + ノーボムボーナス");
+        
+        for (i = 0; i < numberOfShottypes; i++) {
+            $(SHOTTYPE + i).html(japaneseCharNames($(SHOTTYPE + i).val()));
+        }
+        
+        generateRubrics();
+        $(IMP_NOT).html("重要通知:");
+        $(IMP_NOT_TEXT + "0").html("魔理沙Bのバグを使ってはいけまでん。");
+        $(IMP_NOT_TEXT + "1").html("Cキー押下による手動トランスはボムとして扱います。");
+        $(IMP_NOT_TEXT + "2").html("霊撃は偶発的なものであってもボムとして扱います。");
+        $(LOST_LIFE).html("ミス (n)");
+        $(FIRST_BOMB).html("第一ボム (n)");
+        $(FURTHER).html("ボム (n)");
+        $(MULTIPLIEDSHOTTYPE).html("キャラ");
+        $(MULTIPLIER).html("倍率");
+        $(WR).html("世界記録");
+        $(SCORE_TEXT).html("スコア");
+        $(MIN_POINTS).html("最小点");
+        $(NB_BONUS).html("ノーボムボーナス");
+        
+        for (i = 0; i < 2; i++) {
+            $(BASE + i).html("底");
+        }
+        
+        for (i = 0; i < 2; i++) {
+            $(EXP + i).html("冪指数");
+        }
+        
+        for (i = 0; i < 3; i++) {
+            $(GAME + i).html("ゲーム");
+        }
+        
+        for (i = 0; i < 2; i++) {
+            $(BASE_POINTS + i).html("素点");
+        }
+        
+        for (i = 0; i < 5; i++) {
+            $(MAX_POINTS + i).html("最大点");
+        }
+        
+        for (i = 0; i < 2; i++) {
+            $(THRESHOLD + i).html("閾値");
+        }
+        
+        for (i = 0; i < 2; i++) {
+            $(INCREMENTS + i).html("増加");
+        }
+        
+        $(DRC_INTRO).html("<b>Dodging Rain Competition(DRC)</b>はZMさんから作った<a href='https://discord.gg/tu47Hrs'>DRC Discord</a>で起こす東方Projectの定期大会です。 " +
+        "大会のために二つのチームは幾すかのカテゴリーで競争します。 各の競技者が欲しかった稼ぎやクリア重視のカテゴリーの優先順位からリストを作ります。 リストを使いて、プレイヤー達が同じのカテゴリーにペアになります。DRCの経営陣がカテゴリーやチームを選びます。 申し込み期間は二週間です。そして、次の二週間は大会が起きています。 " +
+        "この二週間で、競技者はリプレイを出して下さい。 大会が終わった後で、リプレイを出すはいけません。");
+        $(DRC_INTRO_PTS).html("リプレイは幾つDRCポイントが稼ぐが知りたいなら、下のカルキュレーターを使ったもいいです。");
+        $(DRC_SCORES).html("スコアは桁、カンマ、ドット、スペースを含めることができる。 クリア重視からクリアをしなければいけません。 稼ぎからクリアをしなくてもいいです。");
+        $(RUBRICS_EXPL).html("ルーブリックは実行のDRCポイントの数を計算するために使用される式および固定値です。 ポイントの決定方法が不明な場合は、下のボタンをクリックして展開して下さい。");
+    }
+}
 
 function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
     var game = $(GAME).val(), difficulty = $(DIFFICULTY).val(), challenge = $(CHALLENGE).val(), shottype = $(SHOTTYPE).val();
     
-    /*if (doubleSpoilerCheck) {
-        if (game == "DS") {
-            $(CHALLENGE).html("<option>Scoring</option>");
-            $(DIFFICULTY).css("display", "none");
-        } else {
-            $(CHALLENGE).html("<option>Scoring</option><option>Survival</option>");
-            $(DIFFICULTY).css("display", "inline");
-        }
-    }*/
-    
     if (challenge == "Survival") {
+        var notifyText = (language == "English" ? "<b id='impNot'>Important Notice:</b> " : "<b id='impNot'>重要通知:</b> "), text;
+        
         if (game == "MoF" && shottype == "MarisaB") {
-            $(NOTIFY).html(NOTIFY_TEXT + "usage of the MarisaB damage bug is BANNED in survival.");
+            if (language == "English") {
+                text = "<span id='impNotText0'>usage of the MarisaB damage bug is BANNED in survival.</span>";
+            } else {
+                text = "<span id='impNotText0'>魔理沙Bのバグを使ってはいけまでん。</span>";
+            }
+            
+            $(NOTIFY).html(notifyText + text);
         } else if (game == "TD") {
-            $(NOTIFY).html(NOTIFY_TEXT + "manual trances count as bombs (that is, trances from pressing C).");
+            if (language == "English") {
+                text = "<span id='impNotText1'><em>manual</em> trances count as bombs (that is, trances from pressing C).</span>";
+            } else {
+                text = "<span id='impNotText1'>Cキー押下による手動トランスはボムとして扱います。</span>";
+            }
+            
+            $(NOTIFY).html(notifyText + text);
         } else if (game == "PCB") {
-            $(NOTIFY).html(NOTIFY_TEXT + "border breaks count as bombs (even if they are accidental).");
+            if (language == "English") {
+                text = "<span id='impNotText2'>border breaks count as bombs <em>even if they are accidental</em>.</span>";
+            } else {
+                text = "<span id='impNotText2'>霊撃は偶発的なものであってもボムとして扱います。</span>";
+            }
+            
+            $(NOTIFY).html(notifyText + text);
         } else {
             $(NOTIFY).html("");
         }
@@ -1158,31 +1507,34 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
             var survOptions = MISSES_INPUT;
             
             if (game == "PoDD") {
-                survOptions += "<br><label for='nb'>No Bomb</label><input id='nb' type='checkbox'>";
+                survOptions += "<br><label id='nbLabel' for='nb'>No Bomb</label><input id='nb' type='checkbox'>";
                 survOptions = survOptions.replace("Misses</label>", "Rounds lost</label>").replace("max=100", "max=5");
             } else if (game == "PoFV") {
                 survOptions += "<br><label for='nb'>No Charge Attacks</label><input id='nb' type='checkbox'>";
                 survOptions = survOptions.replace("Misses</label>", "Rounds lost</label>").replace("max=100", "max=8");
             } else {
-                survOptions += "<br><label for='bombs'>Bombs</label><input id='bombs' type='number' value=0 min=0 max=100>";
-                
                 if (game == "PCB") {
-                    survOptions += "<br><label for='bb'>Border Breaks Only</label><input id='bb' type='checkbox'>";
+                    survOptions += "<br><label id='bombsLabel' for='bombs'>Bombs / Border Breaks</label><input id='bombs' type='number' value=0 min=0 max=100>";
+                    survOptions += "<br><label id='nbLabel' for='nb'>No Bomb</label><input id='nb' type='checkbox'>";
+                } else if (game == "TD") {
+                    survOptions += "<br><label id='bombsLabel' for='bombs'>Bombs / Trances</label><input id='bombs' type='number' value=0 min=0 max=100>";
+                } else {
+                    survOptions += "<br><label id='bombsLabel' for='bombs'>Bombs</label><input id='bombs' type='number' value=0 min=0 max=100>";
                 }
                 
                 if (game == "IN") {
                     difficulty = $(DIFFICULTY).val();
                     
                     if (difficulty == "Extra") {
-                        survOptions += "<br><label for='is'>Imperishable Shooting Captured</label><input id='is' type='checkbox'>";
+                        survOptions += "<br><label id='isLabel' for='is'>Imperishable Shooting Captured</label><input id='is' type='checkbox'>";
                     } else {
-                        survOptions += "<br><label for='ls'>Last Spells Captured</label><input id='ls' type='number' value=0 min=0 max=10>";
+                        survOptions += "<br><label id='lsLabel' for='ls'>Last Spells Captured</label><input id='ls' type='number' value=0 min=0 max=10>";
                         $(ROUTE).css("display", "inline");
                     }
                 }
                 
                 if (game == "HSiFS") {
-                    survOptions += "<br><label for='releases'>Releases</label><input id='releases' type='number' value=0 min=0 max=1000>";
+                    survOptions += "<br><label id='releasesLabel' for='releases'>Releases</label><input id='releases' type='number' value=0 min=0 max=1000>";
                 }
             }
             
@@ -1191,6 +1543,10 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
             $(PERFORMANCE).html(game == "DS" ? "<label for='scene'>Scene</label><select id='scene'><option>2-2</option><option>5-4</option><option>5-5</option><option>7-6</option>" +
             "<option>10-1</option><option>10-2</option><option>12-2</option><option>12-8</option><option>EX-6</option><option>EX-9</option></select><br>" + SCORE_OPTIONS : SCORE_OPTIONS);
             $(NOTIFY).html("");
+        }
+            
+        if (language == "Japanese") {
+            generateText(false);
         }
     }
     
@@ -1209,12 +1565,18 @@ function checkShottypes(alwaysChange) {
     }
     
     for (i = 0; i < shottypes.length; i++) {
-        shottype = (shottypes[i].indexOf("Team") > -1 ? shottypes[i].replace("Team", " Team") : shottypes[i]);
-        shottypeList += "<option value='" + shottypes[i] + "'>" + shottype + "</option>";
+        shottype = shottypes[i].replace("Team", " Team");
+        shottypeList += "<option id='shottype" + i + "' value='" + shottypes[i] + "'>" + (language == "English" ? shottype : japaneseCharNames(shottypes[i])) + "</option>";
     }
     
     if (alwaysChange) {
         $(SHOTTYPE).html(shottypeList);
+    }
+    
+    if (game == "HRtP" || game == "GFW") {
+        $(SHOTTYPE_LABEL).html(language == "English" ? "Route" : "ルート");
+    } else {
+        $(SHOTTYPE_LABEL).html(language == "English" ? "Shottype" : "キャラ");
     }
     
     if (game == "GFW" && difficulty == "Extra") {
@@ -1235,8 +1597,8 @@ function drcPoints() {
     
     if (challenge == "Survival") {
         if (!SURV_RUBRICS[game]) {
-            $(ERROR).html(ERROR_TEXT + "the survival rubrics for this game are undetermined as of now.</b>");
-            $(DRCPOINTS).html("Your DRC points for this run: <b>0</b>!");
+            $(ERROR).html((language == "English" ? ERROR_TEXT + "the survival rubrics for this game are undetermined as of now." : ERROR_TEXT_JP + "このゲームのクリア重視のルーブリックはまだ決めていない。") + "</strong>");
+            $(DRCPOINTS).html((language == "English" ? "Your DRC points for this run" : "DRCポイント") + ": <strong>0</strong>!");
             return;
         } else {
             $(ERROR).html("");
@@ -1247,8 +1609,8 @@ function drcPoints() {
         points = (isPhantasmagoria(game) ? phantasmagoria(rubric, game, difficulty, shottypeMultiplier) : survivalPoints(rubric, game, difficulty, shottypeMultiplier));
     } else {
         if (!(game == "MoF" && difficulty == "Lunatic") && !SCORE_RUBRICS[game]) {
-            $(ERROR).html(ERROR_TEXT + "the scoring rubrics for this game are undetermined as of now.</b>");
-            $(DRCPOINTS).html("Your DRC points for this run: <b>0</b>!");
+            $(ERROR).html((language == "English" ? ERROR_TEXT + "the scoring rubrics for this game are undetermined as of now." : ERROR_TEXT_JP + "このゲームの稼ぎのルーブリックはまだ決めていない。") + "</strong>");
+            $(DRCPOINTS).html((language == "English" ? "Your DRC points for this run" : "DRCポイント") + ": <strong>0</strong>!");
             return;
         } else {
             $(ERROR).html("");
@@ -1264,14 +1626,14 @@ function drcPoints() {
         }
     }
     
-    $(DRCPOINTS).html("Your DRC points for this run: <b>" + points + "</b>!");
+    $(DRCPOINTS).html((language == "English" ? "Your DRC points for this run" : "DRCポイント") + ": <strong>" + points + "</strong>!");
 }
 
 function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
     var roundsLost = Number($(MISSES).val()), bonus;
     
     if (roundsLost > rubric.lives) {
-        $(ERROR).html(ERROR_TEXT + "the number of rounds lost cannot exceed " + rubric.lives + ".");
+        $(ERROR).html((language == "English" ? ERROR_TEXT + "the number of rounds lost cannot exceed " + rubric.lives : ERROR_TEXT_JP + "ラウンドが" + rubric.lives + "を超えてはいけません。") + "</strong>");
         return 0;
     } else {
         $(ERROR).html("");
@@ -1292,7 +1654,7 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
     $(ERROR).html("");
     n += misses * rubric.miss;
     
-    if (bombs >= 1 && !(game == "PCB" && $(BB).is(":checked"))) {
+    if (bombs >= 1 && !(game == "PCB" && $(NB).is(":checked"))) {
         n += rubric.firstBomb;
         bombs -= 1;
     }
@@ -1320,7 +1682,8 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
             lastSpells = $(LS).val();
             
             if (lastSpells > MAX_LAST_SPELLS[difficulty][route]) {
-                $(ERROR).html(ERROR_TEXT + "the number of Last Spells captured in a " + route + " clear on " + difficulty + " cannot exceed " + MAX_LAST_SPELLS[difficulty][route] + ".");
+                $(ERROR).html((language == "English" ? ERROR_TEXT + "the number of Last Spells captured in a " + route + " clear on " + difficulty +
+                " cannot exceed " + MAX_LAST_SPELLS[difficulty][route] : ERROR_TEXT_JP + "一回のラストスペルが" + MAX_LAST_SPELLS[difficulty][route] + "を超えてはいけません。") + ".</strong>");
                 return 0;
             }
             
@@ -1347,30 +1710,15 @@ function determineIncrement(thresholds, i) {
     return (thresholds[i] - lowerBound) / increment;
 }
 
-/*function dsFormula(shottype) {
-    var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), scene = $(SCENE).val(), thresholds = SCENE_THRESHOLDS[scene], drcpoints = 0, step, i;
-    
-    for (i = 2; i >= 0; i--) {
-        step = determineIncrement(thresholds, i + 1);
-        
-        while (score > thresholds[i]) {
-            drcpoints += 1;
-            score -= step;
-        }
-    }
-    
-    return drcpoints;
-}*/
-
 function mofFormula(difficulty, shottype) {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), drcpoints = 0, originalScore = score, thresholds, i;
     
     // rubric currently only determined for Lunatic ReimuB and Lunatic MarisaC
     if (difficulty != "Lunatic") {
-        $(ERROR).html(ERROR_TEXT + "the scoring rubrics for this difficulty are undetermined as of now.</b>");
+        $(ERROR).html((language == "English" ? ERROR_TEXT + "the scoring rubrics for this difficulty are undetermined as of now.</strong>" : ERROR_TEXT_JP + "この難易度の稼ぎのルーブリックはまだ決めていない。") + "</strong>");
         return drcpoints;
     } else if (shottype != "ReimuB" && shottype != "MarisaC") {
-        $(ERROR).html(ERROR_TEXT + "the scoring rubrics for this shottype are undetermined as of now.</b>");
+        $(ERROR).html((language == "English" ? ERROR_TEXT + "the scoring rubrics for this shottype are undetermined as of now.</strong>" : ERROR_TEXT_JP + "このキャラの稼ぎのルーブリックはまだ決めていない。") + "</strong>");
         return drcpoints;
     }
     
@@ -1401,7 +1749,7 @@ function scoringPoints(rubric, game, difficulty, shottype) {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), wr;
     
     if (isNaN(score)) {
-        $(ERROR).html(ERROR_TEXT + "invalid score.</b>");
+        $(ERROR).html(ERROR_TEXT + (language == "English" ? "invalid score.</strong>" : "無効のスコア。</strong>"));
         return 0;
     } else {
         $(ERROR).html("");
@@ -1457,17 +1805,42 @@ function abbreviate(num) {
     }
 }
 
+function abbreviateJapanese(num) {
+     var string = String(num), original = string, i = 0, rest;
+    
+    while (string.indexOf("0000") != -1) {
+        string = string.replace("0000", "");
+        i += 1;
+    }
+    
+    if (original.length >= 10) {
+        rest = string.substr(2, string.length).replace("000", "").replace("00", "");
+    
+        return string.substr(0, 2) + (rest === "" ? "" : "." + rest) + "億";
+    } else {
+        return string + "万";
+    }
+}
+
 function generateRubrics() {
-    var game, difficulty, rubric, shottype, thresholds, scene, i;
+    var id = 0, game, difficulty, rubric, shottype, thresholds, scene, i;
+    $(DS_TABLE).html("");
+    $(MOF_TABLE).html("");
+    $(SURV_TABLE).html("");
+    $(SCORING_TABLE).html("");
+    $(PHANTASMAGORIA).html("");
+    $(SHOTTYPE_MULTIPLIERS).html("");
     
     // detect smartphone
 	if (navigator.userAgent.contains("Mobile")) {
         $(RUBRICS_TABLES).html("<table class='center'>" +
-        "<thead><tr><td colspan='3'><b>Scoring</b><br>||Max * (Score/WR)^Exp||</td></tr></thead>" +
+        "<thead><tr><td colspan='3'><b id='scoring1'>" + (language == "English" ? "Scoring" : "稼ぎ") +
+        "</b><br><span id='scoreFormula'>" + (language == "English" ? "||Max * (Score/WR)^Exp||" : "||最大点 * (スコア / 世界記録) ^ 冪指数||") + "</span></td></tr></thead>" +
         "<tbody id='scoringTable'></tbody>" +
         "</table>" +
         "<table class='center'>" +
-        "<thead><tr><td colspan='6'><b>Survival</b><br>||Max * (Base^-n)||</td></tr></thead>" +
+        "<thead><tr><td colspan='6'><b id='survival1'>" + (language == "English" ? "Survival" : "クリア重視") +
+        "</b><br><span id='survFormula'>" + (language == "English" ? "||Max * (Base^-n)||" : "||最大点 * (底 ^ -n)||" ) + "</span></td></tr></thead>" +
         "<tbody id='survivalTable'></tbody>" +
         "</table>");
 	} else {
@@ -1475,13 +1848,15 @@ function generateRubrics() {
         "<tr class='noborders'>" +
         "<td class='noborders'>" +
         "<table>" +
-        "<thead><tr><td colspan='3'><b>Scoring</b><br>||Max * (Score/WR)^Exp||</td></tr></thead>" +
+        "<thead><tr><td colspan='3'><b id='scoring1'>" + (language == "English" ? "Scoring" : "稼ぎ") +
+        "</b><br><span id='scoreFormula'>" + (language == "English" ? "||Max * (Score/WR)^Exp||" : "||最大点 * (スコア / 世界記録) ^ 冪指数||") + "</span></td></tr></thead>" +
         "<tbody id='scoringTable'></tbody>" +
         "</table>" +
         "</td>" +
         "<td class='noborders' style='float:left'>" +
         "<table>" +
-        "<thead><tr><td colspan='6'><b>Survival</b><br>||Max * (Base^-n)||</td></tr></thead>" +
+        "<thead><tr><td colspan='6'><b id='survival1'>" + (language == "English" ? "Survival" : "クリア重視") +
+        "</b><br><span id='survFormula'>" + (language == "English" ? "||Max * (Base^-n)||" : "||最大点 * (底 ^ -n)||" ) + "</span></td></tr></thead>" +
         "<tbody id='survivalTable'></tbody>" +
         "</table>" +
         "</td>" +
@@ -1491,24 +1866,23 @@ function generateRubrics() {
     
     for (game in SCORE_RUBRICS) {
         $(SCORING_TABLE).append("<tr>");
-        $(SCORING_TABLE).append(game == "HRtP" ? "<th>Game</th><th>Max points</th><th>Exponent</th>" : "<th></th><td></td><td></td>");
+        $(SCORING_TABLE).append(game == "HRtP" ? SCORING_COLUMN : "<th></th><td></td><td></td>");
         $(SCORING_TABLE).append("</tr>");
         
         for (difficulty in SCORE_RUBRICS[game]) {
             rubric = SCORE_RUBRICS[game][difficulty];
-            $(SCORING_TABLE).append("<tr><th>" + game + " " + difficulty + "</th><td>" + rubric.base + "</td><td>" + rubric.exp + "</td></tr>");
+            $(SCORING_TABLE).append("<tr><th>" + (language == "English" ? game + " " : japaneseGameName(game)) + difficulty + "</th><td>" + rubric.base + "</td><td>" + rubric.exp + "</td></tr>");
         }
     }
     
     for (game in SURV_RUBRICS) {
         if (isPhantasmagoria(game)) {
             $(PHANTASMAGORIA).append("<tr>");
-            $(PHANTASMAGORIA).append(game == "PoDD" ? "<th>Game</th><th>Max points</th><th>Min points</th><th>No Bomb bonus</th>" : "<th></th><td></td><td></td><td></td>");
+            $(PHANTASMAGORIA).append(game == "PoDD" ? "<th id='game1'>Game</th><th id='maxPoints2'>Max points</th><th id='minPoints'>Min points</th><th id='nbBonus'>No Bomb bonus</th>" : "<th></th><td></td><td></td><td></td>");
             $(PHANTASMAGORIA).append("</tr>");
         } else {
             $(SURV_TABLE).append("<tr>");
-            $(SURV_TABLE).append(game == "SoEW" ? "<th>Game</th><th>Max points</th><th>Base</th><th>Lost life (n)</th>" +
-            "<th>First bomb (n)</th><th>Further bombs (n)</th>" : "<th></th><td></td><td></td><td></td><td></td><td></td>");
+            $(SURV_TABLE).append(game == "SoEW" ? SURV_COLUMN : "<th></th><td></td><td></td><td></td><td></td><td></td>");
             $(SURV_TABLE).append("</tr>");
         }
         
@@ -1517,21 +1891,22 @@ function generateRubrics() {
             
             if (difficulty == "multiplier" || difficulty == "seasonMultiplier") {
                 $(SHOTTYPE_MULTIPLIERS).append("<tr>");
-                $(SHOTTYPE_MULTIPLIERS).append(game == "SoEW" ? "<th>Shottype</th><th>Multiplier</th><" : "<th></th><td></td>");
+                $(SHOTTYPE_MULTIPLIERS).append(game == "SoEW" ? "<th id='multipliedShottype'>Shottype</th><th id='multiplier'>Multiplier</th><" : "<th></th><td></td>");
                 $(SHOTTYPE_MULTIPLIERS).append("</tr>");
                 
                 for (shottype in rubric) {
-                    $(SHOTTYPE_MULTIPLIERS).append("<tr><th>" + game + " " + shottype.replace("Team", " Team") + "</th><td>" + rubric[shottype] + "</td></tr>");
+                    $(SHOTTYPE_MULTIPLIERS).append("<tr><th>" + (language == "English" ? game + " " + shottype.replace("Team", " Team") : japaneseGameName(game) +
+                    "の" + japaneseCharNames(shottype)) + "</th><td>" + rubric[shottype] + "</td></tr>");
                 }
                 
                 continue;
             }
             
             if (isPhantasmagoria(game)) {
-                $(PHANTASMAGORIA).append("<tr><th>" + game + " " + difficulty + "</th><td>" + rubric.base + "</td><td>" + rubric.min +
+                $(PHANTASMAGORIA).append("<tr><th>" + (language == "English" ? game + " " : japaneseGameName(game)) + difficulty + "</th><td>" + rubric.base + "</td><td>" + rubric.min +
                 "</td><td>" + rubric.noBombBonus + "</td></tr>");
             } else {
-                $(SURV_TABLE).append("<tr><th>" + game + " " + difficulty + "</th><td>" + rubric.base + "</td><td>" + rubric.exp +
+                $(SURV_TABLE).append("<tr><th>" + (language == "English" ? game + " " : japaneseGameName(game)) + difficulty + "</th><td>" + rubric.base + "</td><td>" + rubric.exp +
                 "</td><td>" + rubric.miss + "</td><td>" + rubric.firstBomb + "</td><td>" + rubric.bomb + "</td></tr>");
             }
         }
@@ -1542,18 +1917,25 @@ function generateRubrics() {
         $(DS_TABLE).append("<tr><td>" + scene + "</td><td>" + sep(thresholds[1]) + "</td><td>" + sep(thresholds[2]) + "</td><td>" + sep(thresholds[3]) + "</td></tr>");
     }
     
-    $(MOF_TABLE).append("<tr><td colspan='12'>If score < 2b, then: ||200 * (Score/2b)^2||</td></tr>");
+    $(MOF_TABLE).append("<tr><td colspan='12'>" + (language == "English" ? "If score < 2b, then: ||200*(Score/2b)^2||" : "スコアが20億よりも小さければ、||200*(スコア/20億)^2||") + "</td></tr>");
             
     for (difficulty in MOF_THRESHOLDS) {
         $(MOF_TABLE).append("<tr><th colspan='12'>" + difficulty + "</th></tr>");
         
         for (shottype in MOF_THRESHOLDS[difficulty]) {
-            $(MOF_TABLE).append("<tr><th colspan='3'>" + shottype + "</th></tr>");
-            $(MOF_TABLE).append("<tr><th>Threshold</th><th>Base points</th><th>Increments</th></tr>");
+            $(MOF_TABLE).append("<tr><th colspan='3'>" + (language == "English" ? shottype : japaneseCharNames(shottype)) + "</th></tr>");
+            $(MOF_TABLE).append("<tr><th id='threshold" + id + "'>Threshold</th><th id='basePoints" + id + "'>Base points</th><th id='increments" + id + "'>Increments</th></tr>");
             thresholds = MOF_THRESHOLDS[difficulty][shottype];
+            id += 1;
             
             for (i = 0; i < thresholds.base.length; i++) {
-                $(MOF_TABLE).append("<tr><td>" + abbreviate(thresholds.score[i]) + "</td><td>" + thresholds.base[i] + "</td><td>+" + thresholds.increment[i] + " for every " + abbreviate(thresholds.step[i]) + "</td></tr>");
+                if (language == "English") {
+                    $(MOF_TABLE).append("<tr><td>" + abbreviate(thresholds.score[i]) + "</td><td>" + thresholds.base[i] +
+                    "</td><td>+" + thresholds.increment[i] + " for every " + abbreviate(thresholds.step[i]) + "</td></tr>");
+                } else {
+                    $(MOF_TABLE).append("<tr><td>" + abbreviateJapanese(thresholds.score[i]) + "</td><td>" + thresholds.base[i] +
+                    "</td><td>" + abbreviateJapanese(thresholds.step[i]) + "ごとに+" + thresholds.increment[i] + "を</td></tr>");
+                }
             }
         }
     }
@@ -1562,11 +1944,21 @@ function generateRubrics() {
 function showRubrics() {
     $(RUBRICS).css("display", "block");
     $(RUBRICS_BUTTON).attr("onClick", "javascript:hideRubrics()");
-    $(RUBRICS_BUTTON).val("Hide Rubrics");
+    $(RUBRICS_BUTTON).val(language == "English" ? "Hide Rubrics" : "ルーブリックを見せない");
 }
 
 function hideRubrics() {
     $(RUBRICS).css("display", "none");
     $(RUBRICS_BUTTON).attr("onClick", "javascript:showRubrics()");
-    $(RUBRICS_BUTTON).val("Show Rubrics");
+    $(RUBRICS_BUTTON).val(language == "English" ? "Show Rubrics" : "ルーブリックを見せて");
+}
+
+function setLanguage(newLanguage) {
+    if (language == newLanguage) {
+        return;
+    }
+    
+    language = newLanguage;
+    generateText(false);
+    setCookie("lang", newLanguage);
 }
