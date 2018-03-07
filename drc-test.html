@@ -21,7 +21,7 @@
             <h2 id='pointsCalculator'>Points Calculator</h2>
             <p id='drcScores'></p>
             <p id='notify'></p>
-            <label id='category' for='game'>Category</label>
+            <label id='category' for='game'></label>
             <select id='game' onChange='checkValues(true, true, true);'>
                 <option id='hrtp' value='HRtP'>HRtP</option>
                 <option id='soew' value='SoEW'>SoEW</option>
@@ -53,7 +53,7 @@
                 <option id='finala' value='FinalA'>FinalA</option>
                 <option id='finalb' value='FinalB'>FinalB</option>
             </select>
-            <label id='challengeLabel' for='challenge'>Challenge</label>
+            <label id='challengeLabel' for='challenge'></label>
             <select id='challenge' onChange='checkValues(true, false, false); checkShottypes(false);'>
                 <option id='scoring0' value='Scoring'>Scoring</option>
                 <option id='survival0' value='Survival'>Survival</option>
@@ -73,12 +73,12 @@
             <p id='rubricsExpl'></p>
             <input id='rubricsButton' type='button' onClick='showRubrics()' value='Show Rubrics'>
             <div id='rubrics' style='display:none'>
-                <p><strong id='scoringNotes'>Scoring Notes:</strong></p>
+                <p><strong id='scoringNotes'></strong></p>
                 <ul>
                     <li id='newWR'></li>
                     <li id='mofSeparate'></li>
                 </ul>
-                <p><strong id='survivalNotes'>Survival Notes:</strong></p>
+                <p><strong id='survivalNotes'></strong></p>
                 <ul>
                     <li id='maingame'></li>
                     <li id='phantasmagoriaSeparate'></li>
@@ -87,25 +87,21 @@
                 </ul>
                 <div id='rubricsTables'></div>
                 <br>
-                <strong id='mountainOfFaith'>MoF Scoring</strong>
-                <p>For each difficulty and shottype there are six thresholds, at which you will have set numbers of points respectively.
-                Then, increments are done, dependent on how much higher than the threshold your score is.</p>
+                <strong id='mountainOfFaith'></strong>
+                <p id='mountainOfFaithDesc'></p>
                 <table class='center'>
                     <tbody id='mofTable'></tbody>
                 </table>
                 <br>
-                <strong id='phantasmagoria'>PoDD &amp; PoFV Survival</strong>
-                <p>In the below formula, MaxLives is equal to 5 for PoDD, 7 for PoFV main game and 8 for PoFV Extra.
-                NoBombBonus is a difficulty-specific No Bomb bonus for PoDD and a No Charge Attacks bonus for PoFV.
-                RoundsLost is equal to how many rounds the player lost.</p>
+                <strong id='phantasmagoria'></strong>
+                <p id='phantasmagoriaDesc'></p>
                 <table class='center'>
                     <thead><tr><td id='pofvFormula'></td></tr></thead>
                     <tbody id='phantasmagoriaTable'><tr><td></td></tr></tbody>
                 </table>
                 <br>
-                <strong id='shottypeMultipliers'>Shottype Multipliers</strong>
-                <p>These are applied to the result of the survival formula for a main game run only; they do <em>not</em> apply for Extra,
-                nor do they apply for HSiFS runs that use releases. For all shots not listed here, the shottype multipliers are equal to 1.</p>
+                <strong id='shottypeMultipliers'></strong>
+                <p id='shotMultDesc'></p>
                 <table class='center'>
                     <tbody id='shottypeMultipliersTable'></tbody>
                 </table>
