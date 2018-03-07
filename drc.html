@@ -1,53 +1,48 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang='en'>
 
 	<head>
 		<title>Dodging Rain Competition</title>
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
-		<link rel='stylesheet' type='text/css' href='drc/drc.css'>
+		<link rel='stylesheet' type='text/css' href='drc/drc-test.css'>
 		<link rel='icon' type='x/icon' href='drc/power.ico'>
         <script src='sorttable.js'></script>
 		<script src='jquery.js'></script>
 		<script src='utils.js'></script>
-        <script src='drc/drc.js'></script>
+        <script src='drc/drc-test.js'></script>
 	</head>
 	
 	<body>
 		<div id='wrap'>
 			<h1>Dodging Rain Competition</h1>
-            <p>The <strong>Dodging Rain Competition (DRC)</strong> is a Touhou game competition that was invented by ZM and is held on
-            <a href='http://eientei.boards.net/thread/829/official-dodging-rain-competition-thread'>Eientei Forums</a>.
-            Two teams go up against each other in several different categories. Each player posts an arbitrarily long list of categories, ordered by preference,
-            which can be either survival or scoring of any Touhou shooting game and any difficulty. They will be matched up against a player from the other team, in a category that both players had on their list.
-            The teams and categories are determined by the DRC management team. Players are given two weeks to sign up for the competition, and once it starts, two weeks to submit a replay,
-            which will be awarded points dependent on the rubrics. Runs done outside those two weeks are invalid.</p>
-            <p>If you want to know how many DRC points a run is worth, the points for a given run can be determined using the calculator below.</p>
-            <h2>Points Calculator</h2>
-            <p>Scores can only contain digits, commas, dots and spaces. Survival runs are assumed to have cleared, scoring runs not.</p>
+            <p id='drcIntro'></p>
+            <p id='drcIntroPts'></p>
+            <h2 id='pointsCalculator'>Points Calculator</h2>
+            <p id='drcScores'></p>
             <p id='notify'></p>
-            <label for='game'>Category</label>
-            <select id='game' onChange='javascript:checkValues(true, true, true);'>
-                <option>HRtP</option>
-                <option>SoEW</option>
-                <option>PoDD</option>
-                <option>LLS</option>
-                <option>MS</option>
-                <option>EoSD</option>
-                <option>PCB</option>
-                <option>IN</option>
-                <option>PoFV</option>
-                <option>MoF</option>
-                <option>SA</option>
-                <option>UFO</option>
-                <option>GFW</option>
-                <option>TD</option>
-                <option>DDC</option>
-                <option>LoLK</option>
-                <option>HSiFS</option>
+            <label id='category' for='game'></label>
+            <select id='game' onChange='checkValues(true, true, true);'>
+                <option id='hrtp' value='HRtP'>HRtP</option>
+                <option id='soew' value='SoEW'>SoEW</option>
+                <option id='podd' value='PoDD'>PoDD</option>
+                <option id='lls' value='LLS'>LLS</option>
+                <option id='ms' value='MS'>MS</option>
+                <option id='eosd' value='EoSD'>EoSD</option>
+                <option id='pcb' value='PCB'>PCB</option>
+                <option id='in' value='IN'>IN</option>
+                <option id='pofv' value='PoFV'>PoFV</option>
+                <option id='mof' value='MoF'>MoF</option>
+                <option id='sa' value='SA'>SA</option>
+                <option id='ufo' value='UFO'>UFO</option>
+                <option id='gfw' value='GFW'>GFW</option>
+                <option id='td' value='TD'>TD</option>
+                <option id='ddc' value='DDC'>DDC</option>
+                <option id='lolk' value='LoLK'>LoLK</option>
+                <option id='hsifs' value='HSiFS'>HSiFS</option>
             </select>
-            <label id='difficultyLabel' for='difficulty'>Difficulty</label>
-            <select id='difficulty' onChange='javascript:if ($(GAME).val() == "GFW") { checkShottypes(true); } if ($(GAME).val() == "IN") { checkValues(true, false, false); }'>
+            <label id='difficultyLabel' for='difficulty'></label>
+            <select id='difficulty' onChange='if ($(GAME).val() == "GFW") { checkShottypes(true); } if ($(GAME).val() == "IN" || $(GAME).val() == "HSiFS") { checkValues(true, false, false); }'>
                 <option>Easy</option>
                 <option>Normal</option>
                 <option>Hard</option>
@@ -55,70 +50,79 @@
                 <option>Extra</option>
             </select>
             <select id='route' style='display:none'>
-                <option>FinalA</option>
-                <option>FinalB</option>
+                <option id='finala' value='FinalA'>FinalA</option>
+                <option id='finalb' value='FinalB'>FinalB</option>
             </select>
-            <label id='challengeLabel' for='challenge'>Challenge</label>
-            <select id='challenge' onChange='javascript:checkValues(true, false, false); checkShottypes(false);'>
-                <option>Scoring</option>
-                <option>Survival</option>
+            <label id='challengeLabel' for='challenge'></label>
+            <select id='challenge' onChange='checkValues(true, false, false); checkShottypes(false);'>
+                <option id='scoring0' value='Scoring'>Scoring</option>
+                <option id='survival0' value='Survival'>Survival</option>
             </select>
             <div id='performance'></div>
-            <label id='shottypeLabel' for='shottype'>Shottype / Route</label><select id='shottype' onChange='checkValues(false, false, false)'></select>
+            <label id='shottypeLabel' for='shottype'></label><select id='shottype' onChange='checkValues(false, false, false)'></select>
             <select id='season' style='display:none'>
-                <option>Spring</option>
-                <option>Summer</option>
-                <option>Autumn</option>
-                <option>Winter</option>
+                <option id='spring' value='Spring'>Spring</option>
+                <option id='summer' value='Summer'>Summer</option>
+                <option id='autumn' value='Autumn'>Autumn</option>
+                <option id='winter' value='Winter'>Winter</option>
             </select>
 			<div id='drcpoints'></div>
             <div id='error'></div>
-			<p><input type='button' onClick='javascript:drcPoints()' value='Calculate'></p>
-            <h2>Rubrics</h2>
-            <p>The rubrics are the formulas and fixed values used to calculate the number of DRC points for a run. If you are curious about how your points are being determined, click the button below to expand.</p>
-            <input id='rubricsButton' type='button' onClick='javascript:showRubrics()' value='Show Rubrics'>
+			<p><input id='calculate' type='button' onClick='drcPoints()' value='Calculate'></p>
+            <h2 id='rubricsText'>Rubrics</h2>
+            <p id='rubricsExpl'></p>
+            <input id='rubricsButton' type='button' onClick='showRubrics()' value='Show Rubrics'>
             <div id='rubrics' style='display:none'>
-                <p><strong>Scoring Notes</strong></p>
+                <p><strong id='scoringNotes'></strong></p>
                 <ul>
-                    <li>If a new World Record is achieved, the points are equal to the base points; otherwise, the formula applies.</li>
-                    <li>MoF uses a separate system. Click <a href='#mountainOfFaith'>here</a> for said system.</li>
-                    <!--<li>DS uses a separate system. Click <a href='#doubleSpoiler'>here</a> for said system.</li>-->
+                    <li id='newWR'></li>
+                    <li id='mofSeparate'></li>
                 </ul>
-                <p><strong>Survival Notes</strong></p>
+                <p><strong id='survivalNotes'></strong></p>
                 <ul>
-                    <li>For a main game run, a shottype multiplier is applied to the result of the formula, the result of which is again rounded.
-                    Click <a href='#shottypeMultipliers'>here</a> for the list of them.</li>
-                    <li>The Phantasmagorias use a separate system. Click <a href='#phantasmagoria'>here</a> for said system.</li>
-                    <li>For IN, you obtain 2 (1 on Easy) additional points for each captured Last Spell, with the exception of Imperishable Shooting, which yields 5 points.</li>
-                    <li>For HSiFS, the first release adds 2 to <em>n</em> (3 on Lunatic), and further releases add 0.5 to <em>n</em>.</li>
+                    <li id='maingame'></li>
+                    <li id='phantasmagoriaSeparate'></li>
+                    <li id='inLS'></li>
+                    <li id='hsifsReleases'></li>
                 </ul>
                 <div id='rubricsTables'></div>
                 <br>
-                <strong id='mountainOfFaith'>MoF Scoring</strong>
-                <p>For each difficulty and shottype there are six thresholds, at which you will have set numbers of points respectively.
-                Then, increments are done, dependent on how much higher than the threshold your score is.</p>
+                <strong id='mountainOfFaith'></strong>
+                <p id='mountainOfFaithDesc'></p>
                 <table class='center'>
                     <tbody id='mofTable'></tbody>
                 </table>
                 <br>
-                <strong id='phantasmagoria'>PoDD, PoFV Survival</strong>
-                <p>In the below formula, MaxLives is equal to 5 for PoDD, 7 for PoFV main game and 8 for PoFV Extra.
-                NoBombBonus is a difficulty-specific No Bomb bonus for PoDD and a No Charge Attacks bonus for PoFV.
-                RoundsLost is equal to how many rounds the player lost.</p>
+                <strong id='phantasmagoria'></strong>
+                <p id='phantasmagoriaDesc'></p>
                 <table class='center'>
-                    <thead><tr><td id='pofvFormula'>||Max - ((Max - Min) / MaxLives * RoundsLost)|| + NoBombBonus</td></tr></thead>
+                    <thead><tr><td id='pofvFormula'></td></tr></thead>
                     <tbody id='phantasmagoriaTable'><tr><td></td></tr></tbody>
                 </table>
                 <br>
-                <strong id='shottypeMultipliers'>Shottype Multipliers</strong>
-                <p>These are applied to the result of the survival formula for a main game run only; they do <em>not</em> apply for Extra,
-                nor do they apply for HSiFS runs that use releases. For all shots not listed here, the shottype multipliers are equal to 1.</p>
+                <strong id='shottypeMultipliers'></strong>
+                <p id='shotMultDesc'></p>
                 <table class='center'>
                     <tbody id='shottypeMultipliersTable'></tbody>
                 </table>
                 <br>
-                <a href='#wrap'>Back to Top</a>
+                <a id='backToTop' href='#wrap'></a>
             </div>
+            <h2 id='languageText'>Language</h2>
+            <table id='languages' class='noborders'>
+                <tr class='noborders'>
+                    <td class='noborders'>
+                        <a href='javascript:setLanguage("English")'><img src='drc/uk.png' alt='Flag of the United Kingdom'></a>
+                    </td>
+                    <td class='noborders'>
+                        <a href='javascript:setLanguage("Japanese")'><img src='drc/japan.png' alt='Flag of Japan'></a>
+                    </td>
+                </tr>
+                <tr class='noborders'>
+                    <td class='noborders'><a href='javascript:setLanguage("English")'>English</a></td>
+                    <td class='noborders'><a href='javascript:setLanguage("Japanese")'>日本語</a></td>
+                </tr>
+            </table>
 		</div>
 	</body>
 
