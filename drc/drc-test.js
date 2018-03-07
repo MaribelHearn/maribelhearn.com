@@ -1356,7 +1356,7 @@ function generateText(firstTime) {
         }
         
         for (i = 0; i < 2; i++) {
-            $(SURVIVAL + i).html("サバイバル");
+            $(SURVIVAL + i).html("クリア重視");
             $(SCORING + i).html("稼ぎ");
         }
         
@@ -1368,17 +1368,17 @@ function generateText(firstTime) {
         $(RUBRICS_BUTTON).val($(RUBRICS_BUTTON).val().replace("Show Rubrics", "ルーブリックを見せて").replace("Hide Rubrics", "ルーブリックを見せない"));
         $(CALCULATE).val("計算する");
         $(SCORING_NOTES).html("稼ぎのノート");
-        $(SURV_NOTES).html("サバイバルのノート");
+        $(SURV_NOTES).html("クリア重視のノート");
         $(NEW_WR).html("新しい世界記録が起こすと、あのプレイヤーは最大点をもらいます。");
         $(MOF_SEPARATE).html("東方風神録が別のシステムを使います。 <a href='#mountainOfFaith'>ここをクリック</a>そのシステムのために。");
         $(MAINGAME).html("ENHLクリアから、DRCポイントでキャラの倍率が適用されて、切り上げます。 リストを見せたいと<a href='#shottypeMultipliers'>ここをクリック</a>する。");
         $(PHANTASMAGORIA_SEPARATE).html("東方夢時空や東方花映塚も別のシステムを使う。 <a href='#phantasmagoria'>ここをクリック</a>そのシステムのために。");
         $(IN_LS).html("東方永夜抄にはそれぞれの最後のスペカは2点を与える。 Easy最後のスペカは1点を与える。 「インペリシャブルシューティング」取得をことは5点を与える。");
-        $(HSIFS_RELEASES).html("東方天空璋では、最初の季節解放は２ボム扱い(ルナティックでは３ボム扱い)、以降は解放するたびに0.5ボム扱いとしますまた、全ての難易度及びサブ季節において季節ゲージは上限が６に設定されています。ゲージが貯まるごとに最大得点の上昇値は高くなります。");
+        $(HSIFS_RELEASES).html("東方天空璋では、最初の季節解放は２ボム扱い(ルナティックでは３ボム扱い)、以降は解放するたびに0.5ボム扱いとしますまた");
         $(MOFAITH).html("東方風神録の稼ぎ");
         $(MOFAITH_DESC).html("For each difficulty and shottype there are six thresholds, at which you will have set numbers of points respectively. " +
         "Then, increments are done, dependent on how much higher than the threshold your score is.");
-        $(POFV_SURV).html("東方夢時空のサバイバル&東方花映塚のサバイバル");
+        $(POFV_SURV).html("東方夢時空のクリア重視&東方花映塚のクリア重視");
         $(POFV_SURV_DESC).html("最大残機は東方夢時空では５、花映塚本編では７、花映塚エクストラでは８となっていますノーボムボーナスは東方夢時空ではボムの不使用、花映塚ではチャージ攻撃(C1含む)の不使用と規定しています花映塚でのラウンド１敗は残機１機ロスト扱いとなります");
         $(SHOT_MULT).html("キャラの倍率");
         $(SHOT_MULT_DESC).html("These are applied to the result of the survival formula for a main game run only; they do <em>not</em> apply for Extra, " +
@@ -1435,10 +1435,10 @@ function generateText(firstTime) {
         }
         
         $(DRC_INTRO).html("<b>Dodging Rain Competition(DRC)</b>はZMさんから作った<a href='http://eientei.boards.net/thread/829/official-dodging-rain-competition-thread'>Eientei Forums</a>で起こす東方Projectの定期大会です。 " +
-        "大会のために二つのチームは幾すかのカテゴリーで競争します。 各の競技者が欲しかった稼ぎやサバイバルのカテゴリーの優先順位からリストを作ります。 リストを使いて、プレイヤー達が同じのカテゴリーにペアになります。DRCの経営陣がカテゴリーやチームを選びます。 申し込み期間は二週間です。そして、次の二週間は大会が起きています。 " +
+        "大会のために二つのチームは幾すかのカテゴリーで競争します。 各の競技者が欲しかった稼ぎやクリア重視のカテゴリーの優先順位からリストを作ります。 リストを使いて、プレイヤー達が同じのカテゴリーにペアになります。DRCの経営陣がカテゴリーやチームを選びます。 申し込み期間は二週間です。そして、次の二週間は大会が起きています。 " +
         "この二週間で、競技者はリプレイを出して下さい。 大会が終わった後で、リプレイを出すはいけません。");
         $(DRC_INTRO_PTS).html("リプレイは幾つDRCポイントが稼ぐが知りたいなら、下のカルキュレーターを使ったもいいです。");
-        $(DRC_SCORES).html("スコアは桁、カンマ、ドット、スペースを含めることができる。 サバイバルからクリアをしなければいけません。 稼ぎからクリアをしなくてもいいです。");
+        $(DRC_SCORES).html("スコアは桁、カンマ、ドット、スペースを含めることができる。 クリア重視からクリアをしなければいけません。 稼ぎからクリアをしなくてもいいです。");
         $(RUBRICS_EXPL).html("ルーブリックは実行のDRCポイントの数を計算するために使用される式および固定値です。 ポイントの決定方法が不明な場合は、下のボタンをクリックして展開して下さい。");
     }
 }
@@ -1599,7 +1599,7 @@ function drcPoints() {
     
     if (challenge == "Survival") {
         if (!SURV_RUBRICS[game]) {
-            $(ERROR).html((language == "English" ? ERROR_TEXT + "the survival rubrics for this game are undetermined as of now." : ERROR_TEXT_JP + "このゲームのサバイバルのルーブリックはまだ決めていない。") + "</strong>");
+            $(ERROR).html((language == "English" ? ERROR_TEXT + "the survival rubrics for this game are undetermined as of now." : ERROR_TEXT_JP + "このゲームのクリア重視のルーブリックはまだ決めていない。") + "</strong>");
             $(DRCPOINTS).html((language == "English" ? "Your DRC points for this run" : "DRCポイント") + ": <strong>0</strong>!");
             return;
         } else {
@@ -1717,10 +1717,10 @@ function mofFormula(difficulty, shottype) {
     
     // rubric currently only determined for Lunatic ReimuB and Lunatic MarisaC
     if (difficulty != "Lunatic") {
-        $(ERROR).html(ERROR_TEXT + "the scoring rubrics for this difficulty are undetermined as of now.</strong>");
+        $(ERROR).html((language == "English" ? ERROR_TEXT + "the scoring rubrics for this diff are undetermined as of now.</strong>" : ERROR_TEXT_JP + "この難易度の稼ぎのルーブリックはまだ決めていない。") + "</strong>");
         return drcpoints;
     } else if (shottype != "ReimuB" && shottype != "MarisaC") {
-        $(ERROR).html(ERROR_TEXT + "the scoring rubrics for this shottype are undetermined as of now.</strong>");
+        $(ERROR).html((language == "English" ? ERROR_TEXT + "the scoring rubrics for this shottype are undetermined as of now.</strong>" : ERROR_TEXT_JP + "このキャラの稼ぎのルーブリックはまだ決めていない。") + "</strong>");
         return drcpoints;
     }
     
@@ -1841,7 +1841,7 @@ function generateRubrics() {
         "<tbody id='scoringTable'></tbody>" +
         "</table>" +
         "<table class='center'>" +
-        "<thead><tr><td colspan='6'><b id='survival1'>" + (language == "English" ? "Survival" : "サバイバル") +
+        "<thead><tr><td colspan='6'><b id='survival1'>" + (language == "English" ? "Survival" : "クリア重視") +
         "</b><br><span id='survFormula'>" + (language == "English" ? "||Max * (Base^-n)||" : "||最大点 * (底 ^ -n)||" ) + "</span></td></tr></thead>" +
         "<tbody id='survivalTable'></tbody>" +
         "</table>");
@@ -1857,7 +1857,7 @@ function generateRubrics() {
         "</td>" +
         "<td class='noborders' style='float:left'>" +
         "<table>" +
-        "<thead><tr><td colspan='6'><b id='survival1'>" + (language == "English" ? "Survival" : "サバイバル") +
+        "<thead><tr><td colspan='6'><b id='survival1'>" + (language == "English" ? "Survival" : "クリア重視") +
         "</b><br><span id='survFormula'>" + (language == "English" ? "||Max * (Base^-n)||" : "||最大点 * (底 ^ -n)||" ) + "</span></td></tr></thead>" +
         "<tbody id='survivalTable'></tbody>" +
         "</table>" +
@@ -1897,8 +1897,8 @@ function generateRubrics() {
                 $(SHOTTYPE_MULTIPLIERS).append("</tr>");
                 
                 for (shottype in rubric) {
-                    $(SHOTTYPE_MULTIPLIERS).append("<tr><th>" + (language == "English" ? game : japaneseGameName(game)) +
-                    " " + (language == "English" ? shottype.replace("Team", " Team") : japaneseCharNames(shottype)) + "</th><td>" + rubric[shottype] + "</td></tr>");
+                    $(SHOTTYPE_MULTIPLIERS).append("<tr><th>" + (language == "English" ? game + " " + shottype.replace("Team", " Team") : japaneseGameName(game) +
+                    "の" + japaneseCharNames(shottype)) + "</th><td>" + rubric[shottype] + "</td></tr>");
                 }
                 
                 continue;
