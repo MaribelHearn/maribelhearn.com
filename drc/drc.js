@@ -1762,22 +1762,20 @@ function scoringPoints(rubric, game, difficulty, shottype) {
     } else if (game == "LLS") {
         wr = WRs[game][difficulty];
         
-        if (difficulty == "Easy" || difficulty == "Normal") {
+        if (difficulty == "Easy") {
+            wr = wr["ReimuA"][0];
+        } else if (difficulty == "Normal" || difficulty == "Hard" || difficulty == "Extra") {
             wr = wr["ReimuB"][0];
-        } else if (difficulty == "Hard") {
-            wr = wr["MarisaB"][0];
-        } else if (difficulty == "Lunatic" || difficulty == "Extra") {
+        } else if (difficulty == "Lunatic") {
             wr = wr["MarisaA"][0];
         }
     } else if (game == "HSiFS") {
         wr = WRs[game][difficulty];
         
         if (difficulty == "Easy") {
-            wr = wr["CirnoSummer"][0];
-        } else if (difficulty == "Normal" || difficulty == "Lunatic") {
+            wr = wr["CirnoWinter"][0];
+        } else if (difficulty == "Normal" || difficulty == "Hard" || difficulty == "Lunatic") {
             wr = wr["AyaAutumn"][0];
-        } else if (difficulty == "Hard") {
-            wr = wr["MarisaAutumn"][0];
         } else if (difficulty == "Extra") {
             wr = wr["Cirno"][0];
         }
