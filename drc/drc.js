@@ -1394,7 +1394,7 @@ function generateText(firstTime) {
         "<a href='https://discord.gg/tu47Hrs'>the official DRC Discord</a>. " +
         "Two teams go up against each other in several different categories. Each player posts an arbitrarily long list of categories, ordered by preference, " +
         "which can be either survival or scoring of any Touhou shooting game and any difficulty. They will be matched up against a player from the other team, " +
-        "in a category that both players had on their list. The teams and categories are determined by the DRC management team. Players are given two weeks to " +
+        "in a category that both players had on their list. The teams and categories are determined by the DRC management team. Players are given one week to " +
         "sign up for the competition, and once it starts, two weeks to submit a replay, which will be awarded points dependent on the rubrics. " +
         "Runs done outside those two weeks are invalid.");
         $(DRC_INTRO_PTS).html("If you want to know how many DRC points a run is worth, the points for a given run can be determined using the calculator below.");
@@ -1525,11 +1525,11 @@ function generateText(firstTime) {
         }
         
         $(DRC_INTRO).html("<b>Dodging Rain Competition(DRC)</b>はZMさんから作った<a href='https://discord.gg/tu47Hrs'>DRC Discord</a>で起こす東方Projectの定期大会です。 " +
-        "大会のために二つのチームは幾すかのカテゴリーで競争します。 各の競技者が欲しかった稼ぎやクリア重視のカテゴリーの優先順位からリストを作ります。 リストを使いて、プレイヤー達が同じのカテゴリーにペアになります。DRCの経営陣がカテゴリーやチームを選びます。 申し込み期間は二週間です。そして、次の二週間は大会が起きています。 " +
-        "この二週間で、競技者はリプレイを出して下さい。 大会が終わった後で、リプレイを出すはいけません。");
+        "大会のために二つのチームは幾すかのカテゴリーで競争します。各の競技者が欲しかった稼ぎやクリア重視のカテゴリーの優先順位からリストを作ります。リストを使いて、プレイヤー達が同じのカテゴリーにペアになります。DRCの経営陣がカテゴリーやチームを選びます。申し込み期間は二週間です。そして、次の一週間は大会が起きています。" +
+        "この二週間で、競技者はリプレイを出して下さい。大会が終わった後で、リプレイを出すはいけません。");
         $(DRC_INTRO_PTS).html("リプレイは幾つDRCポイントが稼ぐが知りたいなら、下のカルキュレーターを使ったもいいです。");
-        $(DRC_SCORES).html("スコアは桁、カンマ、ドット、スペースを含めることができる。 クリア重視からクリアをしなければいけません。 稼ぎからクリアをしなくてもいいです。");
-        $(RUBRICS_EXPL).html("ルーブリックは実行のDRCポイントの数を計算するために使用される式および固定値です。 ポイントの決定方法が不明な場合は、下のボタンをクリックして展開して下さい。");
+        $(DRC_SCORES).html("スコアは桁、カンマ、ドット、スペースを含めることができる。クリア重視からクリアをしなければいけません。稼ぎからクリアをしなくてもいいです。");
+        $(RUBRICS_EXPL).html("ルーブリックは実行のDRCポイントの数を計算するために使用される式および固定値です。ポイントの決定方法が不明な場合は、下のボタンをクリックして展開して下さい。");
     }/* else {
         // TODO: Chinese translation
     }*/
