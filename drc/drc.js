@@ -1041,24 +1041,24 @@
         },
         "HSiFS": {
             "Easy": {
-                "base": 300,
+                "base": 375,
                 "exp": 4
             },
             "Normal": {
-                "base": 350,
-                "exp": 3
-            },
-            "Hard": {
                 "base": 400,
                 "exp": 3
             },
-            "Lunatic": {
+            "Hard": {
                 "base": 450,
+                "exp": 2.5
+            },
+            "Lunatic": {
+                "base": 500,
                 "exp": 2
             },
             "Extra": {
-                "base": 350,
-                "exp": 3
+                "base": 450,
+                "exp": 2.5
             }
         }
     },
@@ -1876,6 +1876,27 @@ function mofFormula(difficulty, shottype) {
     return Math.min(Math.round(drcpoints), 500);
 }
 
+function bestSeason(difficulty, shottype) {
+    var shottypes = WRs.HSiFS[difficulty], max = 0, season, i;
+    
+    for (i in shottypes) {
+        if (!i.contains(shottype)) {
+            continue;
+        }
+        
+        if (shottypes[i][0] > max) {
+            season = i.replace(shottype, "");
+            max = shottypes[i][0];
+        }
+    }
+    
+    return season;
+}
+
+function removeSeason(shottype) {
+    return shottype.replace("Spring", "").replace("Summer", "").replace("Autumn", "").replace("Winter", "");
+}
+
 function scoringPoints(rubric, game, difficulty, shottype) {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), wr;
     
@@ -1900,18 +1921,10 @@ function scoringPoints(rubric, game, difficulty, shottype) {
         } else if (difficulty == "Lunatic") {
             wr = wr["MarisaA"][0];
         }
-    } else if (game == "HSiFS") {
-        wr = WRs[game][difficulty];
-        
-        if (difficulty == "Easy") {
-            wr = wr["CirnoWinter"][0];
-        } else if (difficulty == "Normal" || difficulty == "Hard" || difficulty == "Lunatic") {
-            wr = wr["AyaAutumn"][0];
-        } else if (difficulty == "Extra") {
-            wr = wr["Cirno"][0];
-        }
+    } else if (game == "HSiFS" && difficulty == "Hard") {
+        wr = WRs[game][difficulty]["AyaAutumn"][0];
     } else {
-        wr = WRs[game][difficulty][shottype][0];
+        wr = WRs[game][difficulty][removeSeason(shottype) + (game == "HSiFS" ? bestSeason(difficulty, shottype) : "")][0];
     }
     
     return (score >= wr ? rubric.base : Math.round(rubric.base * Math.pow((score / wr), rubric.exp)));
