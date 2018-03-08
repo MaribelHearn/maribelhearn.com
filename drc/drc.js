@@ -21,6 +21,7 @@
     DRC_INTRO_PTS = "#drcIntroPts", DRC_SCORES = "#drcScores", RUBRICS_EXPL = "#rubricsExpl", SCORING_NOTES = "#scoringNotes", SURV_NOTES = "#survivalNotes",
     NEW_WR = "#newWR", MOF_SEPARATE = "#mofSeparate", MAINGAME = "#maingame", PHANTASMAGORIA_SEPARATE = "#phantasmagoriaSeparate", THRESHOLD = "#threshold",
     INCREMENTS = "#increments", IN_LS = "#inLS", HSIFS_RELEASES = "#hsifsReleases", CALCULATE = "#calculate", MAX_LIVES = "#maxLives", SURV_FORMULA = "#survFormula",
+    JP_TL_CREDIT = "#jptlcredit",
     SURV_RUBRICS = {
         "SoEW": {
             "Easy": {
@@ -1360,7 +1361,7 @@ function generateText(firstTime) {
         $(SURV_NOTES).html("Survival Notes");
         $(NEW_WR).html("If you achieve a new World Record, your points are equal to the max points; otherwise, the formula applies.");
         $(MOF_SEPARATE).html("MoF uses a separate system. <a href='#mountainOfFaith'>Click here</a> for said system.");
-        $(MAINGAME).html("For a main game clear, a shottype multiplier is applied to your DRC points, the result of which is again rounded." +
+        $(MAINGAME).html("For a main game clear, a shottype multiplier is applied to your DRC points, the result of which is again rounded. " +
         "Click <a href='#shottypeMultipliers'>here</a> for the list of them.");
         $(PHANTASMAGORIA_SEPARATE).html("The Phantasmagorias use a separate system. <a href='#phantasmagoria'>Click here</a> for said system.");
         $(IN_LS).html("For IN, you obtain 2 (1 on Easy) additional points for each captured Last Spell, with the exception of Imperishable Shooting, which yields 5 points.");
@@ -1401,6 +1402,7 @@ function generateText(firstTime) {
         $(DRC_SCORES).html("Scores can only contain digits, commas, dots and spaces. Survival runs are assumed to have cleared, scoring runs not.");
         $(RUBRICS_EXPL).html("The rubrics are the formulas and fixed values used to calculate the number of DRC points for a run. " +
         "If you are curious about how your points are being determined, click the button below to expand.");
+        $(JP_TL_CREDIT).html("The Japanese translation was done by <a href='https://twitter.com/7bitm'>7bitm</a> and <a href='https://twitter.com/toho_yumiya'>Yu-miya</a>.");
     } else if (language == "Japanese") {
         $(HRTP).html(translateGameName("HRtP"));
         $(SOEW).html(translateGameName("SoEW"));
@@ -1431,7 +1433,7 @@ function generateText(firstTime) {
         $(SHOTTYPE_LABEL).html("キャラ");
         $(MISSES_LABEL).html("ミス");
         $(BOMBS_LABEL).html("ボム");
-        $(POINTS_CALCULATOR).html("ポイントのカルキュレーター");
+        $(POINTS_CALCULATOR).html("ポイント計算機");
         $(RUBRICS_TEXT).html("ルーブリック");
         $(LANGUAGE_TEXT).html("言語");
         $(BACK_TO_TOP).html("上に帰る");
@@ -1461,21 +1463,21 @@ function generateText(firstTime) {
         $(CALCULATE).val("計算する");
         $(SCORING_NOTES).html("稼ぎのノート");
         $(SURV_NOTES).html("クリア重視のノート");
-        $(NEW_WR).html("新しい世界記録が起こすと、あのプレイヤーは最大点をもらいます。");
-        $(MOF_SEPARATE).html("東方風神録が別のシステムを使います。 <a href='#mountainOfFaith'>ここをクリック</a>そのシステムのために。");
-        $(MAINGAME).html("ENHLクリアから、DRCポイントでキャラの倍率が適用されて、切り上げます。 リストを見せたいと<a href='#shottypeMultipliers'>ここをクリック</a>する。");
-        $(PHANTASMAGORIA_SEPARATE).html("東方夢時空や東方花映塚も別のシステムを使う。 <a href='#phantasmagoria'>ここをクリック</a>そのシステムのために。");
-        $(IN_LS).html("東方永夜抄にはそれぞれのラストスペルは2点を与える。 Easyラストスペルは1点を与える。 「インペリシャブルシューティング」取得をことは5点を与える。");
-        $(HSIFS_RELEASES).html("東方天空璋では、最初の季節解放は２ボム扱い(Lunaticでは３ボム扱い)、以降は解放するたびに0.5ボム扱いとしますまた");
+        $(NEW_WR).html("もし新世界記録を達成すれば、あなたのポイントは最高点になります。そうでなければ式を適用します。");
+        $(MOF_SEPARATE).html("東方風神録が別のシステムを使います。その方式は<a href='#mountainOfFaith'ここをクリック</a>。");
+        $(MAINGAME).html("本編クリアではキャラ倍率がDRCポイントに掛けられます。その結果は四捨五入されます。キャラ倍率のリストは<a href='#shottypeMultipliers'>ここをクリック</a>。");
+        $(PHANTASMAGORIA_SEPARATE).html("東方夢時空と東方花映塚では別の方式を使います。その方式は<a href='#phantasmagoria'>ここをクリック</a>。");
+        $(IN_LS).html("東方永夜抄では、取得したラストスペルそれぞれで２点の追加点を獲得します。Easyラストスペルは1点を与える。「インペリシャブルシューティング」取得をことは5点を与える。");
+        $(HSIFS_RELEASES).html("東方天空璋では、最初の季節解放は２ボム扱い（Lunaticでは３ボム扱い）、以降の解放は0.5ボム扱いとします。");
         $(MOFAITH).html("東方風神録の稼ぎ");
-        $(MOFAITH_DESC).html("各難易度各機体においてスコアの限界点が存在するため、機体ごとにポイントの追加を規定しています。以下のリストを参照し、最終ポイントを決定します。");
-        $(POFV_SURV).html("東方夢時空のクリア重視&東方花映塚のクリア重視");
-        $(POFV_SURV_DESC).html("最大残機は東方夢時空では５、花映塚本編では７、花映塚エクストラでは８となっていますノーボムボーナスは東方夢時空ではボムの不使用、花映塚ではチャージ攻撃(C1含む)の不使用と規定しています花映塚でのラウンド１敗は残機１機ロスト扱いとなります");
-        $(SHOT_MULT).html("キャラの倍率");
-        $(SHOT_MULT_DESC).html("以下のリストは各作品でのクリア重視における、本編にのみ適用される使用機体によるボーナス倍率です。エクストラでは倍率は付加されません。また、解放を使用した場合の天空璋本編にも適用されません。リストに記載されていない機体のボーナス倍率は１となります。");
+        $(MOFAITH_DESC).html("各難易度各機体で６つの閾値があり、それぞれで点数を設定しています。その後、あなたのスコアがどれだけ閾値より高いかに基づき増分します。");
+        $(POFV_SURV).html("東方夢時空と東方花映塚のクリア重視");
+        $(POFV_SURV_DESC).html("下式において、最大残機を夢時空で５、花映塚本編で７、花映塚エキストラでは８です。ノーボムボーナスは難易度ごとに変わる、夢時空でのボムの不使用ボーナスと花映塚の（Ｃ１含む）チャージ攻撃の不使用ボーナスです。");
+        $(SHOT_MULT).html("キャラ倍率");
+        $(SHOT_MULT_DESC).html("これらは本編のクリア重視プレイのスコアにのみ適用されます。Extraでは適用されません。解放を使用した天空璋のプレイにも適用されません。ここに載っていない機体のキャラ倍率は１となります。");
         $(SCORE_FORMULA).html("||最大点 * (スコア / 世界記録) ^ 冪指数||");
         $(SURV_FORMULA).html("||最大点 * (底 ^ -n)||");
-        $(POFV_FORMULA).html("||最大点 - ((最大点 - 最小点) / 最大残機 * ラウンド失った)|| + ノーボムボーナス");
+        $(POFV_FORMULA).html("||最大点 - ((最大点 - 最小点) / 最大残機 * 敗北数)|| + ノーボムボーナス");
         
         for (i = 0; i < numberOfShottypes; i++) {
             $(SHOTTYPE + i).html(translateCharName($(SHOTTYPE + i).val()));
@@ -1524,12 +1526,14 @@ function generateText(firstTime) {
             $(INCREMENTS + i).html("増加");
         }
         
-        $(DRC_INTRO).html("<b>Dodging Rain Competition(DRC)</b>はZMさんから作った<a href='https://discord.gg/tu47Hrs'>DRC Discord</a>で起こす東方Projectの定期大会です。 " +
-        "大会のために二つのチームは幾すかのカテゴリーで競争します。各の競技者が欲しかった稼ぎやクリア重視のカテゴリーの優先順位からリストを作ります。リストを使いて、プレイヤー達が同じのカテゴリーにペアになります。DRCの経営陣がカテゴリーやチームを選びます。申し込み期間は二週間です。そして、次の一週間は大会が起きています。" +
-        "この二週間で、競技者はリプレイを出して下さい。大会が終わった後で、リプレイを出すはいけません。");
-        $(DRC_INTRO_PTS).html("リプレイは幾つDRCポイントが稼ぐが知りたいなら、下のカルキュレーターを使ったもいいです。");
-        $(DRC_SCORES).html("スコアは桁、カンマ、ドット、スペースを含めることができる。クリア重視からクリアをしなければいけません。稼ぎからクリアをしなくてもいいです。");
-        $(RUBRICS_EXPL).html("ルーブリックは実行のDRCポイントの数を計算するために使用される式および固定値です。ポイントの決定方法が不明な場合は、下のボタンをクリックして展開して下さい。");
+        $(DRC_INTRO).html("<b>Dodging Rain Competition(DRC)</b>はZMが開催する<a href='https://discord.gg/tu47Hrs'>DRC Discord</a>で開かれる東方projectの定期大会です。" +
+        "２つのチームが幾つかのカテゴリーで競争します。各プレイヤーはやりたい順にカデゴリーのリストを作ります。カデゴリーは東方STGゲームの任意の難易度での「クリア重視」と「スコアアタック（稼ぎ）」のどちらかを選ぶことができます。" +
+        "両者のリストに共に入っていたカテゴリーで、相手チームのプレイヤーと対戦することになります。このチームとカデゴリーはDRC運営陣によって決められます。プレイヤーには大会登録のために１週間が与えられます。そして大会が始まり、リプレイ提出のための２週間が与えられます。" +
+        "その後ルーブリックに基づいてポイントが授与されます。この２週間以外でのプレイは無効です。");
+        $(DRC_INTRO_PTS).html("リプレイは幾つDRCポイントが稼ぐが知りたいなら、下の計算機を使ったもいいです。");
+        $(DRC_SCORES).html("スコアは桁、カンマ、ドット、スペースを含めることができます。クリア重視ではクリアする必要があります。稼ぎではクリアしなくてもよいです。");
+        $(RUBRICS_EXPL).html("ルーブリックとはプレイのDRCポイントを計算するために使用される式および固定数のことです。ポイントの決定方法を知りたい場合は、下のボタンをクリックして展開して下さい。");
+        $(JP_TL_CREDIT).html("<a href='https://twitter.com/7bitm'>7bitm</a>と<a href='https://twitter.com/toho_yumiya'>ゆーみや</a>によって日本語に翻訳されました。");
     }/* else {
         // TODO: Chinese translation
     }*/
