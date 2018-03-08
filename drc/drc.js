@@ -1391,8 +1391,8 @@ function generateText(firstTime) {
             generateRubrics();
         }
         
-        $(DRC_INTRO).html("The <b>Dodging Rain Competition (DRC)</b> is a Touhou game competition that was invented by ZM and is held on " +
-        "<a href='https://discord.gg/tu47Hrs'>the official DRC Discord</a>. " +
+        $(DRC_INTRO).html("The <b>Dodging Rain Competition (DRC)</b> is a Touhou game competition that was invented by" +
+        "<a href='https://twitter.com/VincentZeem'>ZM</a> and is held on <a href='https://discord.gg/tu47Hrs'>the official DRC Discord</a>. " +
         "Two teams go up against each other in several different categories. Each player posts an arbitrarily long list of categories, ordered by preference, " +
         "which can be either survival or scoring of any Touhou shooting game and any difficulty. They will be matched up against a player from the other team, " +
         "in a category that both players had on their list. The teams and categories are determined by the DRC management team. Players are given one week to " +
@@ -1402,7 +1402,8 @@ function generateText(firstTime) {
         $(DRC_SCORES).html("Scores can only contain digits, commas, dots and spaces. Survival runs are assumed to have cleared, scoring runs not.");
         $(RUBRICS_EXPL).html("The rubrics are the formulas and fixed values used to calculate the number of DRC points for a run. " +
         "If you are curious about how your points are being determined, click the button below to expand.");
-        $(JP_TL_CREDIT).html("The Japanese translation was done by <a href='https://twitter.com/7bitm'>7bitm</a> and <a href='https://twitter.com/toho_yumiya'>Yu-miya</a>.");
+        $(JP_TL_CREDIT).html("The Japanese translation was done by <a href='https://twitter.com/7bitm'>7bitm</a> and " +
+        "<a href='https://twitter.com/toho_yumiya'>Yu-miya</a>.");
     } else if (language == "Japanese") {
         $(HRTP).html(translateGameName("HRtP"));
         $(SOEW).html(translateGameName("SoEW"));
@@ -1472,9 +1473,11 @@ function generateText(firstTime) {
         $(MOFAITH).html("東方風神録の稼ぎ");
         $(MOFAITH_DESC).html("各難易度各機体で６つの閾値があり、それぞれで点数を設定しています。その後、あなたのスコアがどれだけ閾値より高いかに基づき増分します。");
         $(POFV_SURV).html("東方夢時空と東方花映塚のクリア重視");
-        $(POFV_SURV_DESC).html("下式において、最大残機を夢時空で５、花映塚本編で７、花映塚エキストラでは８です。ノーボムボーナスは難易度ごとに変わる、夢時空でのボムの不使用ボーナスと花映塚の（Ｃ１含む）チャージ攻撃の不使用ボーナスです。");
+        $(POFV_SURV_DESC).html("下式において、最大残機を夢時空で５、花映塚本編で７、花映塚エキストラでは８です。" +
+        "ノーボムボーナスは難易度ごとに変わる、夢時空でのボムの不使用ボーナスと花映塚の（Ｃ１含む）チャージ攻撃の不使用ボーナスです。");
         $(SHOT_MULT).html("キャラ倍率");
-        $(SHOT_MULT_DESC).html("これらは本編のクリア重視プレイのスコアにのみ適用されます。Extraでは適用されません。解放を使用した天空璋のプレイにも適用されません。ここに載っていない機体のキャラ倍率は１となります。");
+        $(SHOT_MULT_DESC).html("これらは本編のクリア重視プレイのスコアにのみ適用されます。Extraでは適用されません。" +
+        "解放を使用した天空璋のプレイにも適用されません。ここに載っていない機体のキャラ倍率は１となります。");
         $(SCORE_FORMULA).html("||最大点 * (スコア / 世界記録) ^ 冪指数||");
         $(SURV_FORMULA).html("||最大点 * (底 ^ -n)||");
         $(POFV_FORMULA).html("||最大点 - ((最大点 - 最小点) / 最大残機 * 敗北数)|| + ノーボムボーナス");
@@ -1526,14 +1529,19 @@ function generateText(firstTime) {
             $(INCREMENTS + i).html("増加");
         }
         
-        $(DRC_INTRO).html("<b>Dodging Rain Competition(DRC)</b>はZMが開催する<a href='https://discord.gg/tu47Hrs'>DRC Discord</a>で開かれる東方projectの定期大会です。" +
-        "２つのチームが幾つかのカテゴリーで競争します。各プレイヤーはやりたい順にカデゴリーのリストを作ります。カデゴリーは東方STGゲームの任意の難易度での「クリア重視」と「スコアアタック（稼ぎ）」のどちらかを選ぶことができます。" +
-        "両者のリストに共に入っていたカテゴリーで、相手チームのプレイヤーと対戦することになります。このチームとカデゴリーはDRC運営陣によって決められます。プレイヤーには大会登録のために１週間が与えられます。そして大会が始まり、リプレイ提出のための２週間が与えられます。" +
+        $(DRC_INTRO).html("<b>Dodging Rain Competition(DRC)</b>は<a href='https://twitter.com/VincentZeem'>ZM</a>が開催する" +
+        "<a href='https://discord.gg/tu47Hrs'>DRC Discord</a>で開かれる東方projectの定期大会です。" +
+        "２つのチームが幾つかのカテゴリーで競争します。各プレイヤーはやりたい順にカテゴリーのリストを作ります。" +
+        "カテゴリーは東方STGゲームの任意の難易度での「クリア重視」と「スコアアタック（稼ぎ）」のどちらかを選ぶことができます。" +
+        "両者のリストに共に入っていたカテゴリーで、相手チームのプレイヤーと対戦することになります。このチームとカテゴリーはDRC運営陣によって決められます。" +
+        "プレイヤーには大会登録のために１週間が与えられます。そして大会が始まり、リプレイ提出のための２週間が与えられます。" +
         "その後ルーブリックに基づいてポイントが授与されます。この２週間以外でのプレイは無効です。");
         $(DRC_INTRO_PTS).html("リプレイは幾つDRCポイントが稼ぐが知りたいなら、下の計算機を使ったもいいです。");
         $(DRC_SCORES).html("スコアは桁、カンマ、ドット、スペースを含めることができます。クリア重視ではクリアする必要があります。稼ぎではクリアしなくてもよいです。");
-        $(RUBRICS_EXPL).html("ルーブリックとはプレイのDRCポイントを計算するために使用される式および固定数のことです。ポイントの決定方法を知りたい場合は、下のボタンをクリックして展開して下さい。");
-        $(JP_TL_CREDIT).html("<a href='https://twitter.com/7bitm'>7bitm</a>と<a href='https://twitter.com/toho_yumiya'>ゆーみや</a>によって日本語に翻訳されました。");
+        $(RUBRICS_EXPL).html("ルーブリックとはプレイのDRCポイントを計算するために使用される式および固定数のことです。" +
+        "ポイントの決定方法を知りたい場合は、下のボタンをクリックして展開して下さい。");
+        $(JP_TL_CREDIT).html("<a href='https://twitter.com/7bitm'>7bitm</a>と" +
+        "<a href='https://twitter.com/toho_yumiya'>ゆーみや</a>によって日本語に翻訳されました。");
     }/* else {
         // TODO: Chinese translation
     }*/
