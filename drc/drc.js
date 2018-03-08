@@ -1391,7 +1391,7 @@ function generateText(firstTime) {
             generateRubrics();
         }
         
-        $(DRC_INTRO).html("The <b>Dodging Rain Competition (DRC)</b> is a Touhou game competition that was invented by" +
+        $(DRC_INTRO).html("The <b>Dodging Rain Competition (DRC)</b> is a Touhou game competition that was invented by " +
         "<a href='https://twitter.com/VincentZeem'>ZM</a> and is held on <a href='https://discord.gg/tu47Hrs'>the official DRC Discord</a>. " +
         "Two teams go up against each other in several different categories. Each player posts an arbitrarily long list of categories, ordered by preference, " +
         "which can be either survival or scoring of any Touhou shooting game and any difficulty. They will be matched up against a player from the other team, " +
