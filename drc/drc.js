@@ -1376,7 +1376,7 @@ function generateText(firstTime) {
         $(RELEASES_LABEL).html("Releases");
         $(DRCPOINTS).html($(DRCPOINTS).html().replace("DRCポイント: ", "Your DRC points for this run: ").replace("本轮DRC得分：", "Your DRC points for this run: "));
         
-        if ($(RUBRICS_BUTTON).val() == "ルーブリックを見せて" || $(RUBRICS_BUTTON).val() == "显示计算公式") {
+        if ($(RUBRICS_BUTTON).val() == "" || $(RUBRICS_BUTTON).val() == "ルーブリックを見せて" || $(RUBRICS_BUTTON).val() == "显示计算公式") {
             $(RUBRICS_BUTTON).val(translate("Show Rubrics"));
         } else {
             $(RUBRICS_BUTTON).val(translate("Hide Rubrics"));
@@ -1489,7 +1489,7 @@ function generateText(firstTime) {
         $(RELEASES_LABEL).html("解放");
         $(DRCPOINTS).html($(DRCPOINTS).html().replace("Your DRC points for this run:", translate("Your DRC points for this run:")).replace("本轮DRC得分：", translate("Your DRC points for this run:") + " "));
         
-        if ($(RUBRICS_BUTTON).val() == "Show Rubrics" || $(RUBRICS_BUTTON).val() == "显示计算公式") {
+        if ($(RUBRICS_BUTTON).val() == "" || $(RUBRICS_BUTTON).val() == "Show Rubrics" || $(RUBRICS_BUTTON).val() == "显示计算公式") {
             $(RUBRICS_BUTTON).val(translate("Show Rubrics"));
         } else {
             $(RUBRICS_BUTTON).val(translate("Hide Rubrics"));
@@ -1643,7 +1643,7 @@ function generateText(firstTime) {
         $(RELEASES_LABEL).html("季节解放数");
         $(DRCPOINTS).html($(DRCPOINTS).html().replace("Your DRC points for this run: ", translate("Your DRC points for this run:")).replace("DRCポイント: ", translate("Your DRC points for this run:")));
         
-        if ($(RUBRICS_BUTTON).val() == "Show Rubrics" || $(RUBRICS_BUTTON).val() == "ルーブリックを見せて") {
+        if ($(RUBRICS_BUTTON).val() == "" || $(RUBRICS_BUTTON).val() == "Show Rubrics" || $(RUBRICS_BUTTON).val() == "ルーブリックを見せて") {
             $(RUBRICS_BUTTON).val(translate("Show Rubrics"));
         } else {
             $(RUBRICS_BUTTON).val(translate("Hide Rubrics"));
