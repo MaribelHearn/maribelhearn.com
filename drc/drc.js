@@ -21,7 +21,7 @@
     DRC_INTRO_PTS = "#drcIntroPts", DRC_SCORES = "#drcScores", RUBRICS_EXPL = "#rubricsExpl", SCORING_NOTES = "#scoringNotes", SURV_NOTES = "#survivalNotes",
     NEW_WR = "#newWR", MOF_SEPARATE = "#mofSeparate", MAINGAME = "#maingame", PHANTASMAGORIA_SEPARATE = "#phantasmagoriaSeparate", THRESHOLD = "#threshold",
     INCREMENTS = "#increments", IN_LS = "#inLS", HSIFS_RELEASES = "#hsifsReleases", CALCULATE = "#calculate", MAX_LIVES = "#maxLives", SURV_FORMULA = "#survFormula",
-    JP_TL_CREDIT = "#jptlcredit", CN_TL_CREDIT = "#cntlcredit", COUNTDOWN = "#countdown",
+    JP_TL_CREDIT = "#jptlcredit", CN_TL_CREDIT = "#cntlcredit", COUNTDOWN = "#countdown", NO_CHARGE_LABEL = "#ncLabel",
     SURV_RUBRICS = {
         "SoEW": {
             "Easy": {
@@ -1371,6 +1371,7 @@ function generateText(firstTime) {
         }
         
         $(NB_LABEL).html("No Bomb");
+        $(NO_CHARGE_LABEL).html("No Charge Attacks");
         $(IS_LABEL).html("Imperishable Shooting Captured");
         $(LS_LABEL).html("Last Spells Captured");
         $(RELEASES_LABEL).html("Releases");
@@ -1484,6 +1485,7 @@ function generateText(firstTime) {
         }
         
         $(NB_LABEL).html("ノーボム");
+        $(NO_CHARGE_LABEL).html("ノーチャージ攻撃");
         $(IS_LABEL).html("「インペリシャブルシューティング」取得");
         $(LS_LABEL).html("ラストスペル取得");
         $(RELEASES_LABEL).html("解放");
@@ -1630,6 +1632,7 @@ function generateText(firstTime) {
         }
         
         $(NB_LABEL).html("禁雷");
+        $(NO_CHARGE_LABEL).html("NC");
         $(IS_LABEL).html("【不朽的弹幕】收取");
         $(LS_LABEL).html("LSC收取数");
         $(RELEASES_LABEL).html("季节解放数");
@@ -1653,8 +1656,7 @@ function generateText(firstTime) {
         $(MOFAITH).html("东方风神录打分");
         $(MOFAITH_DESC).html("对于每个难度和机体有六个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅取决于你的游戏内得分。");
         $(POFV_SURV).html("东方梦时空和东方花映塚生存");
-
-        $(POFV_SURV_DESC).html("在以下公式中，梦时空的最大残机数为5，花映塚故事模式为7，EX为8.NB奖分依难度而定。梦时空为NB奖分，花映塚为NC奖分。");
+        $(POFV_SURV_DESC).html("在以下公式中，东方梦时空的最大残机数为5，东方花映塚故事模式为7，EX为8.NB奖分依难度而定。东方梦时空为NB奖分，东方花映塚为NC奖分。");
         $(SHOT_MULT).html("机体系数");
         $(SHOT_MULT_DESC).html("该要素仅适用于生存项目的计算公式，不适用于EX和使用了季节解放的天空璋。未列出的机体，系数均为1.");
         $(SCORE_FORMULA).html("||Max * (得分 / 世界纪录) ^ 指数||");
@@ -1743,6 +1745,16 @@ function translate(arg) {
             "If score < 2b, then: ||200*(Score/2b)^2||": "スコアが20億よりも小さければ、||200*(スコア/20億)^2||",
             "Hide Rubrics": "ルーブリックを見せない",
             "Show Rubrics": "ルーブリックを見せて",
+            "No Bomb": "ノーボム",
+            "Misses": "ミス",
+            "Rounds lost": "敗北数",
+            "No Charge Attacks": "ノーチャージ攻撃",
+            "Bombs / Border Breaks": "ボム / 霊撃",
+            "Bombs / Trances": "ボム / トランス",
+            "Bombs": "ボム",
+            "Imperishable Shooting Captured": "「インペリシャブルシューティング」取得",
+            "Last Spells Captured": "ラストスペル取得",
+            "Releases": "解放",
             "d ": "日",
             "h ": "時",
             "m ": "分",
@@ -1770,6 +1782,16 @@ function translate(arg) {
             "If score < 2b, then: ||200*(Score/2b)^2||": "若分数小于20亿，||200*(分数/20亿)^2||",
             "Hide Rubrics": "隐藏计算公式",
             "Show Rubrics": "显示计算公式",
+            "No Bomb": "禁雷",
+            "Misses": "被弹数",
+            "Rounds lost": "败北数",
+            "No Charge Attacks": "NC",
+            "Bombs / Border Breaks": "扔雷数/灵击数",
+            "Bombs / Trances": "扔雷数/灵界数",
+            "Bombs": "扔雷数",
+            "Imperishable Shooting Captured": "【不朽的弹幕】收取",
+            "Last Spells Captured": "LSC收取数",
+            "Releases": "季节解放数",
             "d ": "日",
             "h ": "时",
             "m ": "分",
@@ -1826,34 +1848,34 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
             var survOptions = MISSES_INPUT;
             
             if (game == "PoDD") {
-                survOptions += "<br><label id='nbLabel' for='nb'>No Bomb</label><input id='nb' type='checkbox'>";
-                survOptions = survOptions.replace("Misses</label>", "Rounds lost</label>").replace("max=100", "max=5");
+                survOptions += "<br><label id='nbLabel' for='nb'>" + translate("No Bomb") + "</label><input id='nb' type='checkbox'>";
+                survOptions = survOptions.replace(translate("Misses") + "</label>", translate("Rounds lost") + "</label>").replace("max=100", "max=5");
             } else if (game == "PoFV") {
-                survOptions += "<br><label for='nb'>No Charge Attacks</label><input id='nb' type='checkbox'>";
-                survOptions = survOptions.replace("Misses</label>", "Rounds lost</label>").replace("max=100", "max=8");
+                survOptions += "<br><label id='ncLabel' for='nb'>" + translate("No Charge Attacks") + "</label><input id='nb' type='checkbox'>";
+                survOptions = survOptions.replace(translate("Misses") + "</label>", translate("Rounds lost") + "</label>").replace("max=100", "max=8");
             } else {
                 if (game == "PCB") {
-                    survOptions += "<br><label id='bombsLabel' for='bombs'>Bombs / Border Breaks</label><input id='bombs' type='number' value=0 min=0 max=100>";
-                    survOptions += "<br><label id='nbLabel' for='nb'>No Bomb</label><input id='nb' type='checkbox'>";
+                    survOptions += "<br><label id='bombsLabel' for='bombs'>" + translate("Bombs / Border Breaks") + "</label><input id='bombs' type='number' value=0 min=0 max=100>";
+                    survOptions += "<br><label id='nbLabel' for='nb'>" + translate("No Bomb") + "</label><input id='nb' type='checkbox'>";
                 } else if (game == "TD") {
-                    survOptions += "<br><label id='bombsLabel' for='bombs'>Bombs / Trances</label><input id='bombs' type='number' value=0 min=0 max=100>";
+                    survOptions += "<br><label id='bombsLabel' for='bombs'>" + translate("Bombs / Trances") + "</label><input id='bombs' type='number' value=0 min=0 max=100>";
                 } else {
-                    survOptions += "<br><label id='bombsLabel' for='bombs'>Bombs</label><input id='bombs' type='number' value=0 min=0 max=100>";
+                    survOptions += "<br><label id='bombsLabel' for='bombs'>" + translate("Bombs") + "</label><input id='bombs' type='number' value=0 min=0 max=100>";
                 }
                 
                 if (game == "IN") {
                     difficulty = $(DIFFICULTY).val();
                     
                     if (difficulty == "Extra") {
-                        survOptions += "<br><label id='isLabel' for='is'>Imperishable Shooting Captured</label><input id='is' type='checkbox'>";
+                        survOptions += "<br><label id='isLabel' for='is'>" + translate("Imperishable Shooting Captured") + "</label><input id='is' type='checkbox'>";
                     } else {
-                        survOptions += "<br><label id='lsLabel' for='ls'>Last Spells Captured</label><input id='ls' type='number' value=0 min=0 max=10>";
+                        survOptions += "<br><label id='lsLabel' for='ls'>" + translate("Last Spells Captured") + "</label><input id='ls' type='number' value=0 min=0 max=10>";
                         $(ROUTE).css("display", "inline");
                     }
                 }
                 
                 if (game == "HSiFS") {
-                    survOptions += "<br><label id='releasesLabel' for='releases'>Releases</label><input id='releases' type='number' value=0 min=0 max=1000>";
+                    survOptions += "<br><label id='releasesLabel' for='releases'>" + translate("Releases") + "</label><input id='releases' type='number' value=0 min=0 max=1000>";
                 }
             }
             
@@ -1954,7 +1976,7 @@ function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
         if (language == "English") {
             $(ERROR).html("<strong style='color:red'>Error: the number of rounds lost cannot exceed " + rubric.lives + "</strong>");
         } else if (language == "Japanese") {
-            $(ERROR).html("<strong style='color:red'>エラー: ラウンドが" + rubric.lives + "を超えてはいけません。</strong>");
+            $(ERROR).html("<strong style='color:red'>エラー: 敗北数が" + rubric.lives + "を超えてはいけません。</strong>");
         } else {
             $(ERROR).html("<strong style='color:red'>错误：败北数不能超过" + rubric.lives + "。</strong>");
         }
