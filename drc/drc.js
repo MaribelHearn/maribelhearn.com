@@ -1127,25 +1127,29 @@ $(document).ready(function() {
         
     }, "json");
     
-    var currentDate = new Date(), countDownDate, step, now, distance, days, hours, minutes, seconds;
+    var currentDate = new Date(), countDownDate, step;
     
     countDownDate = Date.UTC("2018", "2", "14", "13", "0", "0");
-    
-    step = setInterval(function () {
-        now = new Date().getTime();
-        distance = countDownDate - now;
-        days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        $(COUNTDOWN).html("DRC10<br>" + days + translate("d ") + hours + translate("h ") + minutes + translate("m ") + seconds + translate("s"));
-        
-        if (distance < 0) {
-            $(COUNTDOWN).html("");
-            clearInterval(step);
-        }
-    }, 1000);
+    step = setInterval(updateCountdown, 1000);
+    updateCountdown();
 });
+
+function updateCountdown() {
+    var now, distance, days, hours, minutes, seconds;
+    
+    now = new Date().getTime();
+    distance = countDownDate - now;
+    days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    $(COUNTDOWN).html("DRC10<br>" + days + translate("d ") + hours + translate("h ") + minutes + translate("m ") + seconds + translate("s"));
+    
+    if (distance < 0) {
+        $(COUNTDOWN).html("");
+        clearInterval(step);
+    }
+}
 
 function translateCharName(charName) {
     if (language == "English") {
