@@ -21,7 +21,7 @@
     DRC_INTRO_PTS = "#drcIntroPts", DRC_SCORES = "#drcScores", RUBRICS_EXPL = "#rubricsExpl", SCORING_NOTES = "#scoringNotes", SURV_NOTES = "#survivalNotes",
     NEW_WR = "#newWR", MOF_SEPARATE = "#mofSeparate", MAINGAME = "#maingame", PHANTASMAGORIA_SEPARATE = "#phantasmagoriaSeparate", THRESHOLD = "#threshold",
     INCREMENTS = "#increments", IN_LS = "#inLS", HSIFS_RELEASES = "#hsifsReleases", CALCULATE = "#calculate", MAX_LIVES = "#maxLives", SURV_FORMULA = "#survFormula",
-    JP_TL_CREDIT = "#jptlcredit",
+    JP_TL_CREDIT = "#jptlcredit", CN_TL_CREDIT = "#cntlcredit",
     SURV_RUBRICS = {
         "SoEW": {
             "Easy": {
@@ -790,7 +790,7 @@
             },
             "Extra": {
                 "base": 350,
-                "exp": 5
+                "exp": 9
             }
         },
         "MS": {
@@ -1362,7 +1362,7 @@ function generateText(firstTime) {
         $(NEW_WR).html("If you achieve a new World Record, your points are equal to the max points; otherwise, the formula applies.");
         $(MOF_SEPARATE).html("MoF uses a separate system. <a href='#mountainOfFaith'>Click here</a> for said system.");
         $(MAINGAME).html("For a main game clear, a shottype multiplier is applied to your DRC points, the result of which is again rounded. " +
-        "Click <a href='#shottypeMultipliers'>here</a> for the list of them.");
+        "<a href='#shottypeMultipliers'>Click here</a> for the list of them.");
         $(PHANTASMAGORIA_SEPARATE).html("The Phantasmagorias use a separate system. <a href='#phantasmagoria'>Click here</a> for said system.");
         $(IN_LS).html("For IN, you obtain 2 (1 on Easy) additional points for each captured Last Spell, with the exception of Imperishable Shooting, which yields 5 points.");
         $(HSIFS_RELEASES).html("For HSiFS, the first release adds 2 to <em>n</em> (3 on Lunatic), and further releases add 0.5 to <em>n</em>.");
@@ -1404,6 +1404,8 @@ function generateText(firstTime) {
         "If you are curious about how your points are being determined, click the button below to expand.");
         $(JP_TL_CREDIT).html("The Japanese translation was done by <a href='https://twitter.com/7bitm'>7bitm</a> and " +
         "<a href='https://twitter.com/toho_yumiya'>Yu-miya</a>.");
+        /*$(CN_TL_CREDIT).html("The Simplified Chinese translation was done by <a href='https://twitter.com/IzayoiMeirin'>Cero</a> and " +
+        "<a href='https://twitter.com/CrestedPeak9'>CrestedPeak9</a> and <a href='https://twitter.com/Cerasis_th'>Cerasis</a>.");*/
     } else if (language == "Japanese") {
         $(HRTP).html(translateGameName("HRtP"));
         $(SOEW).html(translateGameName("SoEW"));
@@ -1465,7 +1467,7 @@ function generateText(firstTime) {
         $(SCORING_NOTES).html("稼ぎのノート");
         $(SURV_NOTES).html("クリア重視のノート");
         $(NEW_WR).html("もし新世界記録を達成すれば、あなたのポイントは最高点になります。そうでなければ式を適用します。");
-        $(MOF_SEPARATE).html("東方風神録が別のシステムを使います。その方式は<a href='#mountainOfFaith'ここをクリック</a>。");
+        $(MOF_SEPARATE).html("東方風神録が別のシステムを使います。その方式は<a href='#mountainOfFaith'>ここをクリック</a>。");
         $(MAINGAME).html("本編クリアではキャラ倍率がDRCポイントに掛けられます。その結果は四捨五入されます。キャラ倍率のリストは<a href='#shottypeMultipliers'>ここをクリック</a>。");
         $(PHANTASMAGORIA_SEPARATE).html("東方夢時空と東方花映塚では別の方式を使います。その方式は<a href='#phantasmagoria'>ここをクリック</a>。");
         $(IN_LS).html("東方永夜抄では、取得したラストスペルそれぞれで２点の追加点を獲得します。Easyラストスペルは1点を与える。「インペリシャブルシューティング」取得をことは5点を与える。");
@@ -1542,6 +1544,8 @@ function generateText(firstTime) {
         "ポイントの決定方法を知りたい場合は、下のボタンをクリックして展開して下さい。");
         $(JP_TL_CREDIT).html("<a href='https://twitter.com/7bitm'>7bitm</a>と" +
         "<a href='https://twitter.com/toho_yumiya'>ゆーみや</a>によって日本語に翻訳されました。");
+        /*$(CN_TL_CREDIT).html("<a href='https://twitter.com/IzayoiMeirin'>Cero</a>とa href='https://twitter.com/CrestedPeak9'>CrestedPeak9</a>" +
+        "と<a href='https://twitter.com/Cerasis_th'>Cerasis</a>によって中国語に翻訳されました。");*/
     }/* else {
         // TODO: Chinese translation
     }*/
@@ -1948,7 +1952,7 @@ function abbreviate(num) {
 }
 
 function abbreviateJapanese(num) {
-     var string = String(num), original = string, i = 0, rest;
+    var string = String(num), original = string, i = 0, rest;
     
     while (string.indexOf("0000") != -1) {
         string = string.replace("0000", "");
@@ -1965,7 +1969,7 @@ function abbreviateJapanese(num) {
 }
 
 /*function abbreviateChinese(num) {
-     var string = String(num), original = string, i = 0, rest;
+    var string = String(num), original = string, i = 0, rest;
     
     while (string.indexOf("0000") != -1) {
         string = string.replace("0000", "");
@@ -1975,7 +1979,7 @@ function abbreviateJapanese(num) {
     if (original.length >= 10) {
         rest = string.substr(2, string.length).replace("000", "").replace("00", "");
     
-        return string.substr(0, 2) + (rest === "" ? "" : "." + rest) + "億";
+        return string.substr(0, 2) + (rest === "" ? "" : "." + rest) + "亿";
     } else {
         return string + "万";
     }
