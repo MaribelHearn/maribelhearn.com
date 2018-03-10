@@ -1127,10 +1127,9 @@ $(document).ready(function() {
         
     }, "json");
     
-    var currentDate = new Date(), DSTcheck, countDownDate, step, now, distance, days, hours, minutes, seconds;
+    var currentDate = new Date(), countDownDate, step, now, distance, days, hours, minutes, seconds;
     
-    DSTcheck = currentDate.getDate() < 11 || currentDate.getDate() == 11 && currentDate.getHours() < 8;
-    countDownDate = Date.UTC("2018", "2", "14", DSTcheck ? "13" : "14", "0", "0");
+    countDownDate = Date.UTC("2018", "2", "14", "13", "0", "0");
     
     step = setInterval(function () {
         now = new Date().getTime();
