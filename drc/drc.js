@@ -17,7 +17,7 @@
     POFV_SURV_DESC = "#phantasmagoriaDesc", MOFAITH = "#mountainOfFaith", MOFAITH_DESC = "#mountainOfFaithDesc", SHOT_MULT = "#shottypeMultipliers",
     SHOT_MULT_DESC = "#shotMultDesc", BASE_POINTS = "#basePoints", MULTIPLIEDSHOTTYPE = "#multipliedShottype", MULTIPLIER = "#multiplier", MAX_POINTS = "#maxPoints",
     BASE = "#base", EXP = "#exp", WR = "#wr", SCORE_TEXT = "#scoreText", MIN_POINTS = "#minPoints", NB_BONUS = "#nbBonus", POINTS_CALCULATOR = "#pointsCalculator",
-    RUBRICS_TEXT = "#rubricsText", LANGUAGE_TEXT = "#languageText", DRC_INTRO = "#drcIntro", CATEGORY = "#category", BACK_TO_TOP = "#backToTop", SCORE_FORMULA = "#scoreFormula",
+    RUBRICS_TEXT = "#rubricsText", ACK_TEXT = "#ackText", DRC_INTRO = "#drcIntro", CATEGORY = "#category", BACK_TO_TOP = "#backToTop", SCORE_FORMULA = "#scoreFormula",
     DRC_INTRO_PTS = "#drcIntroPts", DRC_SCORES = "#drcScores", RUBRICS_EXPL = "#rubricsExpl", SCORING_NOTES = "#scoringNotes", SURV_NOTES = "#survivalNotes",
     NEW_WR = "#newWR", MOF_SEPARATE = "#mofSeparate", MAINGAME = "#maingame", PHANTASMAGORIA_SEPARATE = "#phantasmagoriaSeparate", THRESHOLD = "#threshold",
     INCREMENTS = "#increments", IN_LS = "#inLS", HSIFS_RELEASES = "#hsifsReleases", CALCULATE = "#calculate", MAX_LIVES = "#maxLives", SURV_FORMULA = "#survFormula",
@@ -1351,7 +1351,7 @@ function generateText(firstTime) {
         $(BOMBS_LABEL).html("Bombs");
         $(POINTS_CALCULATOR).html("Points Calculator");
         $(RUBRICS_TEXT).html("Rubrics");
-        $(LANGUAGE_TEXT).html("Language");
+        $(ACK_TEXT).html("Acknowledgements");
         $(BACK_TO_TOP).html("Back to Top");
         game = $(GAME).val();
         
@@ -1464,7 +1464,7 @@ function generateText(firstTime) {
         $(BOMBS_LABEL).html("ボム");
         $(POINTS_CALCULATOR).html("ポイント計算機");
         $(RUBRICS_TEXT).html("ルーブリック");
-        $(LANGUAGE_TEXT).html("言語");
+        $(ACK_TEXT).html("謝辞");
         $(BACK_TO_TOP).html("上に帰る");
         game = $(GAME).val();
         
@@ -1618,7 +1618,7 @@ function generateText(firstTime) {
         $(BOMBS_LABEL).html("扔雷数");
         $(POINTS_CALCULATOR).html("得分计算器");
         $(RUBRICS_TEXT).html("计算公式");
-        $(LANGUAGE_TEXT).html("言語");
+        $(ACK_TEXT).html("致谢");
         $(BACK_TO_TOP).html("回到顶部");
         game = $(GAME).val();
         
