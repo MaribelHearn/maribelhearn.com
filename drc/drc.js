@@ -21,7 +21,7 @@
     DRC_INTRO_PTS = "#drcIntroPts", DRC_SCORES = "#drcScores", RUBRICS_EXPL = "#rubricsExpl", SCORING_NOTES = "#scoringNotes", SURV_NOTES = "#survivalNotes",
     NEW_WR = "#newWR", MOF_SEPARATE = "#mofSeparate", MAINGAME = "#maingame", PHANTASMAGORIA_SEPARATE = "#phantasmagoriaSeparate", THRESHOLD = "#threshold",
     INCREMENTS = "#increments", IN_LS = "#inLS", HSIFS_RELEASES = "#hsifsReleases", CALCULATE = "#calculate", MAX_LIVES = "#maxLives", SURV_FORMULA = "#survFormula",
-    JP_TL_CREDIT = "#jptlcredit", CN_TL_CREDIT = "#cntlcredit",
+    JP_TL_CREDIT = "#jptlcredit", CN_TL_CREDIT = "#cntlcredit", COUNTDOWN = "#countdown",
     SURV_RUBRICS = {
         "SoEW": {
             "Easy": {
@@ -1126,6 +1126,26 @@ $(document).ready(function() {
         }*/
         
     }, "json");
+    
+    var currentDate = new Date(), DSTcheck, countDownDate, step, now, distance, days, hours, minutes, seconds;
+    
+    DSTcheck = currentDate.getDate() < 11 || currentDate.getDate() == 11 && currentDate.getHours() < 8;
+    countDownDate = Date.UTC("2018", "2", "14", DSTcheck ? "13" : "14", "0", "0");
+    
+    step = setInterval(function () {
+        now = new Date().getTime();
+        distance = countDownDate - now;
+        days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        $(COUNTDOWN).html("DRC10<br>" + days + translate("d ") + hours + translate("h ") + minutes + translate("m ") + seconds + translate("s"));
+        
+        if (distance < 0) {
+            $(COUNTDOWN).html("");
+            clearInterval(step);
+        }
+    }, 1000);
 });
 
 function translateCharName(charName) {
@@ -1575,7 +1595,11 @@ function translate(arg) {
             "Survival": "クリア重視",
             "If score < 2b, then: ||200*(Score/2b)^2||": "スコアが20億よりも小さければ、||200*(スコア/20億)^2||",
             "Hide Rubrics": "ルーブリックを見せない",
-            "Show Rubrics": "ルーブリックを見せて"
+            "Show Rubrics": "ルーブリックを見せて",
+            "d ": "日",
+            "h ": "時",
+            "m ": "分",
+            "s": "秒"
         }[arg]);
     }/* else {
        // TODO: Chinese translation
