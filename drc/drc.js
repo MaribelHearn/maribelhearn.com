@@ -1678,9 +1678,9 @@ function generateText(firstTime) {
         $(IMP_NOT_TEXT + "0").html("生存向 弑神炮禁止。");
         $(IMP_NOT_TEXT + "1").html("主动灵界视作扔雷。");
         $(IMP_NOT_TEXT + "2").html("灵击视作扔雷，无论是否被弹灵击。");
-        $(LOST_LIFE).html("被弹数 (n)");
+        $(LOST_LIFE).html("被弹 (n)");
         $(FIRST_BOMB).html("第一扔雷 (n)");
-        $(FURTHER).html("扔雷数 (n)");
+        $(FURTHER).html("扔雷 (n)");
         $(MULTIPLIEDSHOTTYPE).html("机体");
         $(MULTIPLIER).html("系数");
         $(WR).html("世界纪录");
@@ -1720,9 +1720,9 @@ function generateText(firstTime) {
         $(DRC_INTRO_PTS).html("如果你想知道得了多少DRC分，请将你完成的项目填入下方计算器内开始计算。");
         $(DRC_SCORES).html("分数可包含数字、逗号、句号、空格。生存向将会被假定为已通关，打分则不会。");
         $(RUBRICS_EXPL).html("计算公式将计算出你所完成项目的分数。如果你想知道分数是如何计算的，请点击下方按钮展开。");
-        $(JP_TL_CREDIT).html("本页面由<a href='https://twitter.com/7bitm'>7bitm</a>," +
+        $(JP_TL_CREDIT).html("本页面由<a href='https://twitter.com/7bitm'>7bitm</a>，" +
         "<a href='https://twitter.com/toho_yumiya'>ゆーみや</a>日语翻译。");
-        $(CN_TL_CREDIT).html("本页面由<a href='https://twitter.com/IzayoiMeirin'>Cero</a>,<a href='https://twitter.com/CrestedPeak9'>CrestedPeak9</a>,<a href='https://twitter.com/Cerasis_th'>Cerasis</a>中文翻译。");
+        $(CN_TL_CREDIT).html("本页面由<a href='https://twitter.com/IzayoiMeirin'>Cero</a>，<a href='https://twitter.com/CrestedPeak9'>CrestedPeak9</a>，<a href='https://twitter.com/Cerasis_th'>Cerasis</a>中文翻译。");
     }
 }
 
