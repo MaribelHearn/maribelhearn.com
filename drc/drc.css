@@ -38,13 +38,8 @@ h2 {
 #difficultyLabel, #challengeLabel {
     display: none;
 }
-#languages {
+#languages, #acks {
     text-decoration: none;
-    margin-left: auto;
-    margin-right: auto;
-}
-#noborders {
-    border: none;
     margin-left: auto;
     margin-right: auto;
 }
