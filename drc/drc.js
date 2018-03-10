@@ -1292,6 +1292,8 @@ function translateGameName(game) {
             "HSiFS": "天"
         }[game]);
     } else {
+        game = game.trim();
+        
         return ({
             "HRtP": "灵",
             "SoEW": "封",
@@ -1422,7 +1424,7 @@ function generateText(firstTime) {
         "If you are curious about how your points are being determined, click the button below to expand.");
         $(JP_TL_CREDIT).html("The Japanese translation was done by <a href='https://twitter.com/7bitm'>7bitm</a> and " +
         "<a href='https://twitter.com/toho_yumiya'>Yu-miya</a>.");
-        $(CN_TL_CREDIT).html("The Simplified Chinese translation was done by <a href='https://twitter.com/IzayoiMeirin'>Cero</a> and " +
+        $(CN_TL_CREDIT).html("The Simplified Chinese translation was done by <a href='https://twitter.com/IzayoiMeirin'>Cero</a>, " +
         "<a href='https://twitter.com/CrestedPeak9'>CrestedPeak9</a> and <a href='https://twitter.com/Cerasis_th'>Cerasis</a>.");
     } else if (language == "Japanese") {
         $(HRTP).html(translateGameName("HRtP"));
@@ -1562,7 +1564,7 @@ function generateText(firstTime) {
         "ポイントの決定方法を知りたい場合は、下のボタンをクリックして展開して下さい。");
         $(JP_TL_CREDIT).html("<a href='https://twitter.com/7bitm'>7bitm</a>と" +
         "<a href='https://twitter.com/toho_yumiya'>ゆーみや</a>によって日本語に翻訳されました。");
-        $(CN_TL_CREDIT).html("<a href='https://twitter.com/IzayoiMeirin'>Cero</a>とa href='https://twitter.com/CrestedPeak9'>CrestedPeak9</a>" +
+        $(CN_TL_CREDIT).html("<a href='https://twitter.com/IzayoiMeirin'>Cero</a>と<a href='https://twitter.com/CrestedPeak9'>CrestedPeak9</a>" +
         "と<a href='https://twitter.com/Cerasis_th'>Cerasis</a>によって中国語に翻訳されました。");
     } else {
         $(HRTP).html(translateGameName("HRtP"));
@@ -2243,7 +2245,7 @@ function generateRubrics() {
                 $(SHOTTYPE_MULTIPLIERS).append("</tr>");
                 
                 for (shottype in rubric) {
-                    $(SHOTTYPE_MULTIPLIERS).append("<tr><th>" + translateGameName(game + " ") + (language == "Japanese" ? "の" : "") + translateCharName(shottype) + "</th><td>" + rubric[shottype] + "</td></tr>");
+                    $(SHOTTYPE_MULTIPLIERS).append("<tr><th>" + translateGameName(game + " ") + (language == "Japanese" ? "の" : "") + (language == "Chinese" ? " " : "") + translateCharName(shottype) + "</th><td>" + rubric[shottype] + "</td></tr>");
                 }
                 
                 continue;
