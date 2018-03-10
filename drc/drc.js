@@ -1755,6 +1755,7 @@ function translate(arg) {
             "Imperishable Shooting Captured": "「インペリシャブルシューティング」取得",
             "Last Spells Captured": "ラストスペル取得",
             "Releases": "解放",
+            "Score": "スコア",
             "d ": "日",
             "h ": "時",
             "m ": "分",
@@ -1777,7 +1778,7 @@ function translate(arg) {
             "invalid score.": "无效分数。",
             "||Max * (Score/WR)^Exp||": "||Max * (得分 / 世界纪录) ^ 指数||",
             "||Max * (Base^-n)||": "||最大值 * (基数 ^ -n)||",
-            "Scoring": "分数",
+            "Scoring": "打分",
             "Survival": "生存",
             "If score < 2b, then: ||200*(Score/2b)^2||": "若分数小于20亿，||200*(分数/20亿)^2||",
             "Hide Rubrics": "隐藏计算公式",
@@ -1792,6 +1793,7 @@ function translate(arg) {
             "Imperishable Shooting Captured": "【不朽的弹幕】收取",
             "Last Spells Captured": "LSC收取数",
             "Releases": "季节解放数",
+            "Score": "分数",
             "d ": "日",
             "h ": "时",
             "m ": "分",
@@ -1883,6 +1885,7 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
         } else {
             $(PERFORMANCE).html(game == "DS" ? "<label for='scene'>Scene</label><select id='scene'><option>2-2</option><option>5-4</option><option>5-5</option><option>7-6</option>" +
             "<option>10-1</option><option>10-2</option><option>12-2</option><option>12-8</option><option>EX-6</option><option>EX-9</option></select><br>" + SCORE_OPTIONS : SCORE_OPTIONS);
+            $(SCORE_LABEL).html(translate("Score"));
             $(NOTIFY).html("");
         }
             
