@@ -1127,18 +1127,17 @@ $(document).ready(function() {
         
     }, "json");
     
-    var currentDate = new Date(), countDownDate, step;
+    var step = setInterval(updateCountdown, 1000);
     
-    countDownDate = Date.UTC("2018", "2", "14", "13", "0", "0");
-    step = setInterval(updateCountdown, 1000);
     updateCountdown();
 });
 
 function updateCountdown() {
-    var now, distance, days, hours, minutes, seconds;
+    var countdownDate, now, distance, days, hours, minutes, seconds;
     
+    countdownDate = Date.UTC("2018", "2", "14", "13", "0", "0");
     now = new Date().getTime();
-    distance = countDownDate - now;
+    distance = countdownDate - now;
     days = Math.floor(distance / (1000 * 60 * 60 * 24));
     hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
