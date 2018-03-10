@@ -1292,8 +1292,6 @@ function translateGameName(game) {
             "HSiFS": "天"
         }[game]);
     } else {
-        game = game.trim();
-        
         return ({
             "HRtP": "灵",
             "SoEW": "封",
@@ -1312,7 +1310,7 @@ function translateGameName(game) {
             "DDC": "辉",
             "LoLK": "绀",
             "HSiFS": "天"
-        });
+        }[game]);
     }
 }
 
@@ -1704,7 +1702,7 @@ function generateText(firstTime) {
         $(RUBRICS_EXPL).html("计算公式将计算出你所完成项目的分数。如果你想知道分数是如何计算的，请点击下方按钮展开。");
         $(JP_TL_CREDIT).html("本页面由<a href='https://twitter.com/7bitm'>7bitm</a>," +
         "<a href='https://twitter.com/toho_yumiya'>ゆーみや</a>日语翻译。");
-        $(CN_TL_CREDIT).html("本页面由<a href='https://twitter.com/Cerasis_th'>Cerasis</a>,<a href='https://twitter.com/CrestedPeak9'>CrestedPeak9</a>,<a href='https://twitter.com/IzayoiMeirin'>Cero</a>中文翻译。");
+        $(CN_TL_CREDIT).html("本页面由<a href='https://twitter.com/IzayoiMeirin'>Cero</a>,<a href='https://twitter.com/CrestedPeak9'>CrestedPeak9</a>,<a href='https://twitter.com/Cerasis_th'>Cerasis</a>中文翻译。");
     }
 }
 
