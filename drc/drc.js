@@ -1657,7 +1657,7 @@ function generateText(firstTime) {
         $(MAINGAME).html("当完成一项游戏，机体系数会影响DRC总分，结果会再次近似。<a href='#shottypeMultipliers'>单击此处</a>查看列表。");
         $(PHANTASMAGORIA_SEPARATE).html("东方梦时空和东方花映塚关卡采用单独的计分方式。<a href='#phantasmagoria'>单击此处</a>以获取系统介绍。");
         $(IN_LS).html("对于永夜抄，每收取一张LSC，则获得额外的2分（Easy难度为1分）。收取【不朽的弹幕】获得5分。");
-        $(HSIFS_RELEASES).html("東方天空璋では、最初の季節解放は２ボム扱い（Lunaticでは３ボム扱い）、以降の解放は0.5ボム扱いとします。");
+        $(HSIFS_RELEASES).html("对于东方天空璋，初次季节解放则n+2（Lunatic难度n+3），之后的季节释放n+0.5。");
         $(MOFAITH).html("东方风神录打分");
         $(MOFAITH_DESC).html("对于每个难度和机体有六个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅取决于你的游戏内得分。");
         $(POFV_SURV).html("東方夢時空と東方花映塚のクリア重視");
@@ -1679,7 +1679,7 @@ function generateText(firstTime) {
         $(IMP_NOT_TEXT + "1").html("主动灵界视作扔雷。");
         $(IMP_NOT_TEXT + "2").html("灵击视作扔雷，无论是否被弹灵击。");
         $(LOST_LIFE).html("被弹数 (n)");
-        $(FIRST_BOMB).html("第一ボム (n)");
+        $(FIRST_BOMB).html("第一扔雷 (n)");
         $(FURTHER).html("扔雷数 (n)");
         $(MULTIPLIEDSHOTTYPE).html("机体");
         $(MULTIPLIER).html("系数");
