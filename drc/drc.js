@@ -1120,10 +1120,10 @@ $(document).ready(function() {
         if (getCookie("lang") == "Japanese") {
             language = "Japanese";
             generateText(false);
-        }/* else if (getCookie("lang") == "Chinese") {
+        } else if (getCookie("lang") == "Chinese") {
             language = "Chinese";
             generateText(false);
-        }*/
+        }
         
     }, "json");
     
@@ -1208,47 +1208,46 @@ function translateCharName(charName) {
             "Autumn": "秋",
             "Winter": "冬"
         }[charName]);
-    }/* else {
-       // TODO: Chinese translation
+    } else {
        return ({
             "Makai": "魔界",
-            "Jigoku": "地獄",
-            "ReimuA": "霊夢A",
-            "ReimuB": "霊夢B",
-            "ReimuC": "霊夢C",
-            "Reimu": "霊夢",
+            "Jigoku": "地狱",
+            "ReimuA": "灵梦A",
+            "ReimuB": "灵梦B",
+            "ReimuC": "灵梦C",
+            "Reimu": "灵梦",
             "Mima": "魅魔",
             "Marisa": "魔理沙",
-            "Ellen": "エレン",
-            "Kotohime": "小兎姫",
-            "Kana": "カナ",
+            "Ellen": "爱莲",
+            "Kotohime": "小兔姬",
+            "Kana": "卡娜",
             "Rikako": "理香子",
-            "Chiyuri": "ちゆり",
-            "Yumemi": "夢美",
+            "Chiyuri": "千百合",
+            "Yumemi": "梦美",
             "Yuuka": "幽香",
             "MarisaA": "魔理沙A",
             "MarisaB": "魔理沙B",
             "SakuyaA": "咲夜A",
             "SakuyaB": "咲夜B",
-            "BorderTeam": "霊夢＆紫",
-            "MagicTeam": "魔理沙＆アリス",
-            "ScarletTeam": "咲夜＆レミリア",
-            "GhostTeam": "妖夢＆幽々子",
+            "BorderTeam": "结界组",
+            "MagicTeam": "咏唱组",
+            "ScarletTeam": "红魔组",
+            "GhostTeam": "幽冥组",
             "Yukari": "紫",
-            "Alice": "アリス",
+            "Alice": "爱丽丝",
             "Sakuya": "咲夜",
-            "Remilia": "レミリア",
-            "Youmu": "妖夢",
-            "Yuyuko": "幽々子",
-            "Reisen": "鈴仙",
-            "Cirno": "チルノ",
-            "Lyrica": "リリカ",
-            "Mystia": "ミスティア",
-            "Tewi": "てゐ",
+            "Remilia": "蕾米莉亚",
+            "Youmu": "妖梦",
+            "Yuyuko": "幽幽子",
+            "Reisen": "铃仙",
+            "Cirno": "琪露诺",
+            "Lyrica": "莉莉卡",
+            "Mystia": "米丝蒂亚",
+            "Tewi": "帝",
             "Aya": "文",
-            "Medicine": "メディスン",
+            "Medicine": "梅蒂薪",
             "Komachi": "小町",
-            "Eiki": "映姫",
+            "Eiki": "映姬",
             "MarisaC": "魔理沙C",
             "SanaeA": "早苗A",
             "SanaeB": "早苗B",
@@ -1264,7 +1263,7 @@ function translateCharName(charName) {
             "Autumn": "秋",
             "Winter": "冬"
         }[charName]);
-    }*/
+    }
 }
 
 function translateGameName(game) {
@@ -1292,30 +1291,29 @@ function translateGameName(game) {
             "LoLK": "紺",
             "HSiFS": "天"
         }[game]);
-    }/* else {
-        // TODO: Chinese translation
+    } else {
         game = game.trim();
         
         return ({
-            "HRtP": "靈",
+            "HRtP": "灵",
             "SoEW": "封",
-            "PoDD": "夢",
+            "PoDD": "梦",
             "LLS": "幻",
             "MS": "怪",
-            "EoSD": "紅",
+            "EoSD": "红",
             "PCB": "妖",
             "IN": "永",
             "PoFV": "花",
-            "MoF": "風",
+            "MoF": "风",
             "SA": "地",
             "UFO": "星",
             "GFW": "大",
             "TD": "神",
-            "DDC": "輝",
-            "LoLK": "紺",
+            "DDC": "辉",
+            "LoLK": "绀",
             "HSiFS": "天"
         });
-    }*/
+    }
 }
 
 function generateText(firstTime) {
@@ -1426,8 +1424,8 @@ function generateText(firstTime) {
         "If you are curious about how your points are being determined, click the button below to expand.");
         $(JP_TL_CREDIT).html("The Japanese translation was done by <a href='https://twitter.com/7bitm'>7bitm</a> and " +
         "<a href='https://twitter.com/toho_yumiya'>Yu-miya</a>.");
-        /*$(CN_TL_CREDIT).html("The Simplified Chinese translation was done by <a href='https://twitter.com/IzayoiMeirin'>Cero</a> and " +
-        "<a href='https://twitter.com/CrestedPeak9'>CrestedPeak9</a> and <a href='https://twitter.com/Cerasis_th'>Cerasis</a>.");*/
+        $(CN_TL_CREDIT).html("The Simplified Chinese translation was done by <a href='https://twitter.com/IzayoiMeirin'>Cero</a> and " +
+        "<a href='https://twitter.com/CrestedPeak9'>CrestedPeak9</a> and <a href='https://twitter.com/Cerasis_th'>Cerasis</a>.");
     } else if (language == "Japanese") {
         $(HRTP).html(translateGameName("HRtP"));
         $(SOEW).html(translateGameName("SoEW"));
@@ -1566,11 +1564,148 @@ function generateText(firstTime) {
         "ポイントの決定方法を知りたい場合は、下のボタンをクリックして展開して下さい。");
         $(JP_TL_CREDIT).html("<a href='https://twitter.com/7bitm'>7bitm</a>と" +
         "<a href='https://twitter.com/toho_yumiya'>ゆーみや</a>によって日本語に翻訳されました。");
-        /*$(CN_TL_CREDIT).html("<a href='https://twitter.com/IzayoiMeirin'>Cero</a>とa href='https://twitter.com/CrestedPeak9'>CrestedPeak9</a>" +
-        "と<a href='https://twitter.com/Cerasis_th'>Cerasis</a>によって中国語に翻訳されました。");*/
-    }/* else {
-        // TODO: Chinese translation
-    }*/
+        $(CN_TL_CREDIT).html("<a href='https://twitter.com/IzayoiMeirin'>Cero</a>とa href='https://twitter.com/CrestedPeak9'>CrestedPeak9</a>" +
+        "と<a href='https://twitter.com/Cerasis_th'>Cerasis</a>によって中国語に翻訳されました。");
+    } else {
+        $(HRTP).html(translateGameName("HRtP"));
+
+        $(SOEW).html(translateGameName("SoEW"));
+
+        $(PODD).html(translateGameName("PoDD"));
+
+        $(LLS).html(translateGameName("LLS"));
+
+        $(MS).html(translateGameName("MS"));
+
+        $(EOSD).html(translateGameName("EoSD"));
+
+        $(PCB).html(translateGameName("PCB"));
+
+        $(IN).html(translateGameName("IN"));
+
+        $(POFV).html(translateGameName("PoFV"));
+        $(MOF).html(translateGameName("MoF"));
+        $(SA).html(translateGameName("SA"));
+        $(UFO).html(translateGameName("UFO"));
+        $(GFW).html(translateGameName("GFW"));
+        $(TD).html(translateGameName("TD"));
+        $(DDC).html(translateGameName("DDC"));
+        $(LOLK).html(translateGameName("LoLK"));
+        $(HSIFS).html(translateGameName("HSiFS"));
+        $(SPRING).html(translateCharName("Spring"));
+        $(SUMMER).html(translateCharName("Summer"));
+        $(AUTUMN).html(translateCharName("Autumn"));
+        $(WINTER).html(translateCharName("Winter"));
+        $(CATEGORY).html("项目");
+        $(DIFFICULTY_LABEL).html("难度");
+        $(FINALA).html("路线A");
+        $(FINALB).html("路线B");
+        $(SCORE_LABEL).html("分数");
+        $(SHOTTYPE_LABEL).html("机体");
+        $(MISSES_LABEL).html("被弹数");
+        $(BOMBS_LABEL).html("扔雷数");
+        $(POINTS_CALCULATOR).html("得分计算器");
+        $(RUBRICS_TEXT).html("计算公式");
+        $(LANGUAGE_TEXT).html("言語");
+        $(BACK_TO_TOP).html("回到顶部");
+        game = $(GAME).val();
+        
+        if (game) {
+            if (game == "PCB") {
+                $(BOMBS_LABEL).html("扔雷数/灵击数");
+            } else if (game == "TD") {
+                $(BOMBS_LABEL).html("扔雷数/灵界数");
+            } else if (game == "HRtP" || game == "GFW") {
+                $(SHOTTYPE_LABEL).html("路线");
+            }
+        }
+        
+        for (i = 0; i < 2; i++) {
+            $(SURVIVAL + i).html("生存");
+            $(SCORING + i).html("打分");
+        }
+        
+        $(NB_LABEL).html("禁雷");
+        $(IS_LABEL).html("【不朽的弹幕】收取");
+        $(LS_LABEL).html("LSC收取数");
+        $(RELEASES_LABEL).html("季节解放数");
+        $(DRCPOINTS).html($(DRCPOINTS).html().replace("Your DRC points for this run:", "本轮DRC得分："));
+        $(RUBRICS_BUTTON).val($(RUBRICS_BUTTON).val().replace("Show Rubrics", "显示计算公式").replace("Hide Rubrics", "隐藏计算公式"));
+        $(CALCULATE).val("计算");
+        $(SCORING_NOTES).html("打分简介");
+        $(SURV_NOTES).html("生存简介");
+        $(NEW_WR).html("如果获得新世界纪录，你的分数即为最大值。否则，则按公式计算。");
+        $(MOF_SEPARATE).html("东方风神录采用单独的计分方式。<a href='#mountainOfFaith'>单击此处</a>以获取系统介绍。");
+        $(MAINGAME).html("当完成一项游戏，机体系数会影响DRC总分，结果会再次近似。<a href='#shottypeMultipliers'>单击此处</a>查看列表。");
+        $(PHANTASMAGORIA_SEPARATE).html("东方梦时空和东方花映塚关卡采用单独的计分方式。<a href='#phantasmagoria'>单击此处</a>以获取系统介绍。");
+        $(IN_LS).html("对于永夜抄，每收取一张LSC，则获得额外的2分（easy难度为1分）。收取【不朽的弹幕】获得5分。");
+        $(HSIFS_RELEASES).html("東方天空璋では、最初の季節解放は２ボム扱い（Lunaticでは３ボム扱い）、以降の解放は0.5ボム扱いとします。");
+        $(MOFAITH).html("东方风神录打分");
+        $(MOFAITH_DESC).html("对于每个难度和机体有六个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅取决于你的游戏内得分。");
+        $(POFV_SURV).html("東方夢時空と東方花映塚のクリア重視");
+
+        $(POFV_SURV_DESC).html("在以下公式中，梦时空的最大残机数为5，花映塚故事模式为7，EX为8.NB奖分依难度而定。梦时空为NB奖分，花映塚为NC奖分。");
+        $(SHOT_MULT).html("机体系数");
+        $(SHOT_MULT_DESC).html("该要素仅适用于生存项目的计算公式，不适用于EX和使用了季节解放的天空璋。未列出的机体，系数均为1.");
+        $(SCORE_FORMULA).html("||Max * (得分 / 世界纪录) ^ 指数||");
+        $(SURV_FORMULA).html("||最大值 * (基数 ^ -n)||");
+        $(POFV_FORMULA).html("||最大值 - ((最大值 - 最小值) / 最大残机 * 败北数)|| + NB奖分");
+        
+        for (i = 0; i < numberOfShottypes; i++) {
+            $(SHOTTYPE + i).html(translateCharName($(SHOTTYPE + i).val()));
+        }
+        
+        generateRubrics();
+        $(IMP_NOT).html("重要提示：");
+        $(IMP_NOT_TEXT + "0").html("生存向 弑神炮禁止。");
+        $(IMP_NOT_TEXT + "1").html("主动灵界视作扔雷。");
+        $(IMP_NOT_TEXT + "2").html("灵击视作扔雷，无论是否被弹灵击。");
+        $(LOST_LIFE).html("被弹数 (n)");
+        $(FIRST_BOMB).html("第一ボム (n)");
+        $(FURTHER).html("扔雷数 (n)");
+        $(MULTIPLIEDSHOTTYPE).html("机体");
+        $(MULTIPLIER).html("系数");
+        $(WR).html("世界纪录");
+        $(SCORE_TEXT).html("分数");
+        $(MIN_POINTS).html("最小值");
+        $(NB_BONUS).html("NB奖分");
+        
+        for (i = 0; i < 2; i++) {
+            $(BASE + i).html("基数");
+        }
+        
+        for (i = 0; i < 2; i++) {
+            $(EXP + i).html("指数");
+        }
+        
+        for (i = 0; i < 3; i++) {
+            $(GAME + i).html("游戏");
+        }
+        
+        for (i = 0; i < 2; i++) {
+            $(BASE_POINTS + i).html("基数分");
+        }
+        
+        for (i = 0; i < 5; i++) {
+            $(MAX_POINTS + i).html("最大值");
+        }
+        
+        for (i = 0; i < 2; i++) {
+            $(THRESHOLD + i).html("阈值");
+        }
+        
+        for (i = 0; i < 2; i++) {
+            $(INCREMENTS + i).html("增幅");
+        }
+        
+        $(DRC_INTRO).html("<b>Dodging Rain Competition(DRC)</b>是由<a href='https://twitter.com/VincentZeem'>ZM</a>发起的东方比赛，举办地点：<a href='https://discord.gg/tu47Hrs'>DRC Discord</a>。两队进行不同项目的比赛。每位选手报名时写下想打的任意项目，根据偏好排序，可以是避弹向的生存，也可以是打分，任意作品、任意难度均可。列出的项目会与另一队进行匹配，相同项目的选手即匹配成功。分组与项目由DRC主办方决定。选手将会有一周时间报名。一旦开赛，有两周时间提交参赛录像，录像所获得分根据计算公式而定。未在两周内提交则视为无效。");
+        $(DRC_INTRO_PTS).html("如果你想知道得了多少DRC分，请将你完成的项目填入下方计算器内开始计算。");
+        $(DRC_SCORES).html("分数可包含数字、逗号、句号、空格。生存向将会被假定为已通关，打分则不会。");
+        $(RUBRICS_EXPL).html("计算公式将计算出你所完成项目的分数。如果你想知道分数是如何计算的，请点击下方按钮展开。");
+        $(JP_TL_CREDIT).html("本页面由<a href='https://twitter.com/7bitm'>7bitm</a>," +
+        "<a href='https://twitter.com/toho_yumiya'>ゆーみや</a>日语翻译。");
+        $(CN_TL_CREDIT).html("本页面由<a href='https://twitter.com/Cerasis_th'>Cerasis</a>,<a href='https://twitter.com/CrestedPeak9'>CrestedPeak9</a>,<a href='https://twitter.com/IzayoiMeirin'>Cero</a>中文翻译。");
+    }
 }
 
 function translate(arg) {
@@ -1603,9 +1738,34 @@ function translate(arg) {
             "m ": "分",
             "s": "秒"
         }[arg]);
-    }/* else {
-       // TODO: Chinese translation
-    }*/
+    } else {
+       return ({
+            "Route": "路线",
+            "Shottype": "机体",
+            "Important Notice:": "重要提示：",
+            "usage of the MarisaB damage bug is BANNED in survival.": "生存向 弑神炮禁止。",
+            "<em>manual</em> trances count as bombs (that is, trances from pressing C).": "主动灵界视作扔雷。",
+            "border breaks count as bombs <em>even if they are accidental</em>.": "灵击视作扔雷，无论是否被弹灵击。",
+            "Your DRC points for this run:": "本轮DRC得分：",
+            "Error: ": "错误：",
+            "the survival rubrics for this game are undetermined as of now.": "此游戏的生存向计算公式现在仍未决定。",
+            "the scoring rubrics for this game are undetermined as of now.": "此游戏的打分向计算公式现在仍未决定。",
+            "the scoring rubrics for this difficulty are undetermined as of now.": "此难度的打分向计算公式现在仍未决定。",
+            "the scoring rubrics for this shottype are undetermined as of now.": "此机体的打分向计算公式现在仍未决定。",
+            "invalid score.": "无效分数。",
+            "||Max * (Score/WR)^Exp||": "||最大点 * (スコア / 世界記録) ^ 冪指数||",
+            "||Max * (Base^-n)||": "||最大点 * (底 ^ -n)||",
+            "Scoring": "稼ぎ",
+            "Survival": "クリア重視",
+            "If score < 2b, then: ||200*(Score/2b)^2||": "若分数小于20亿，||200*(分数/20亿)^2||",
+            "Hide Rubrics": "隐藏计算公式",
+            "Show Rubrics": "显示计算公式",
+            "d ": "日",
+            "h ": "时",
+            "m ": "分",
+            "s": "秒"
+        }[arg]);
+    }
 }
 
 function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
@@ -1785,9 +1945,9 @@ function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
             $(ERROR).html("<strong style='color:red'>Error: the number of rounds lost cannot exceed " + rubric.lives + "</strong>");
         } else if (language == "Japanese") {
             $(ERROR).html("<strong style='color:red'>エラー: ラウンドが" + rubric.lives + "を超えてはいけません。</strong>");
-        }/* else {
-            // TODO: Chinese translation
-        }*/
+        } else {
+            $(ERROR).html("<strong style='color:red'>错误：败北数不能超过" + rubric.lives + "。</strong>");
+        }
         return 0;
     } else {
         $(ERROR).html("");
@@ -1840,10 +2000,11 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
                     $(ERROR).html("<strong style='color:red'>Error: the number of Last Spells captured in a " + route +
                     " clear on " + difficulty + " cannot exceed " + MAX_LAST_SPELLS[difficulty][route] + "</strong>");
                 } else if (language == "Japanese") {
-                    $(ERROR).html("<strong style='color:red'>エラー: 一回のラストスペルが" + MAX_LAST_SPELLS[difficulty][route] + "を超えてはいけません。</strong>");
-                }/* else {
-                    // TODO: Chinese translation
-                }*/
+                    $(ERROR).html("<strong style='color:red'>エラー: ラストスペルが" + MAX_LAST_SPELLS[difficulty][route] + "を超えてはいけません。</strong>");
+                } else {
+                    $(ERROR).html("<strong style='color:red'>错误：" + route + "路线" + difficulty +
+                    "难度中的LSC收取数不能超过" + MAX_LAST_SPELLS[difficulty][route] + "。");
+                }
                 
                 return 0;
             }
@@ -1994,7 +2155,7 @@ function abbreviateJapanese(num) {
     }
 }
 
-/*function abbreviateChinese(num) {
+function abbreviateChinese(num) {
     var string = String(num), original = string, i = 0, rest;
     
     while (string.indexOf("0000") != -1) {
@@ -2009,7 +2170,7 @@ function abbreviateJapanese(num) {
     } else {
         return string + "万";
     }
-}*/
+}
 
 function generateRubrics() {
     var id = 0, game, difficulty, rubric, shottype, thresholds, scene, i;
@@ -2120,9 +2281,12 @@ function generateRubrics() {
                 if (language == "English") {
                     $(MOF_TABLE).append("<tr><td>" + abbreviate(thresholds.score[i]) + "</td><td>" + thresholds.base[i] +
                     "</td><td>+" + thresholds.increment[i] + " for every " + abbreviate(thresholds.step[i]) + "</td></tr>");
-                } else {
+                } else if (language == "Japanese") {
                     $(MOF_TABLE).append("<tr><td>" + abbreviateJapanese(thresholds.score[i]) + "</td><td>" + thresholds.base[i] +
                     "</td><td>" + abbreviateJapanese(thresholds.step[i]) + "ごとに+" + thresholds.increment[i] + "を</td></tr>");
+                } else {
+                    $(MOF_TABLE).append("<tr><td>" + abbreviateChinese(thresholds.score[i]) + "</td><td>" + thresholds.base[i] +
+                    "</td><td>每" + abbreviateChinese(thresholds.step[i]) + "增加" + thresholds.increment[i] + "</td></tr>");
                 }
             }
         }
