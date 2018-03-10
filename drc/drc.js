@@ -1374,7 +1374,7 @@ function generateText(firstTime) {
         $(IS_LABEL).html("Imperishable Shooting Captured");
         $(LS_LABEL).html("Last Spells Captured");
         $(RELEASES_LABEL).html("Releases");
-        $(DRCPOINTS).html(translate("Your DRC points for this run:"));
+        $(DRCPOINTS).html($(DRCPOINTS).html().replace("DRCポイント: ", "Your DRC points for this run: ").replace("本轮DRC得分：", "Your DRC points for this run: "));
         
         if ($(RUBRICS_BUTTON).val() == "ルーブリックを見せて" || $(RUBRICS_BUTTON).val() == "显示计算公式") {
             $(RUBRICS_BUTTON).val(translate("Show Rubrics"));
@@ -1487,7 +1487,7 @@ function generateText(firstTime) {
         $(IS_LABEL).html("「インペリシャブルシューティング」取得");
         $(LS_LABEL).html("ラストスペル取得");
         $(RELEASES_LABEL).html("解放");
-        $(DRCPOINTS).html(translate("Your DRC points for this run:"));
+        $(DRCPOINTS).html($(DRCPOINTS).html().replace("Your DRC points for this run:", translate("Your DRC points for this run:")).replace("本轮DRC得分：", translate("Your DRC points for this run:") + " "));
         
         if ($(RUBRICS_BUTTON).val() == "Show Rubrics" || $(RUBRICS_BUTTON).val() == "显示计算公式") {
             $(RUBRICS_BUTTON).val(translate("Show Rubrics"));
@@ -1641,7 +1641,7 @@ function generateText(firstTime) {
         $(IS_LABEL).html("【不朽的弹幕】收取");
         $(LS_LABEL).html("LSC收取数");
         $(RELEASES_LABEL).html("季节解放数");
-        $(DRCPOINTS).html(translate("Your DRC points for this run:"));
+        $(DRCPOINTS).html($(DRCPOINTS).html().replace("Your DRC points for this run: ", translate("Your DRC points for this run:")).replace("DRCポイント: ", translate("Your DRC points for this run:")));
         
         if ($(RUBRICS_BUTTON).val() == "Show Rubrics" || $(RUBRICS_BUTTON).val() == "ルーブリックを見せて") {
             $(RUBRICS_BUTTON).val(translate("Show Rubrics"));
