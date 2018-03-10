@@ -1580,21 +1580,13 @@ function generateText(firstTime) {
         "と<a href='https://twitter.com/Cerasis_th'>Cerasis</a>によって中国語に翻訳されました。");
     } else {
         $(HRTP).html(translateGameName("HRtP"));
-
         $(SOEW).html(translateGameName("SoEW"));
-
         $(PODD).html(translateGameName("PoDD"));
-
         $(LLS).html(translateGameName("LLS"));
-
         $(MS).html(translateGameName("MS"));
-
         $(EOSD).html(translateGameName("EoSD"));
-
         $(PCB).html(translateGameName("PCB"));
-
         $(IN).html(translateGameName("IN"));
-
         $(POFV).html(translateGameName("PoFV"));
         $(MOF).html(translateGameName("MoF"));
         $(SA).html(translateGameName("SA"));
@@ -1660,7 +1652,7 @@ function generateText(firstTime) {
         $(HSIFS_RELEASES).html("对于东方天空璋，初次季节解放则n+2（Lunatic难度n+3），之后的季节释放n+0.5。");
         $(MOFAITH).html("东方风神录打分");
         $(MOFAITH_DESC).html("对于每个难度和机体有六个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅取决于你的游戏内得分。");
-        $(POFV_SURV).html("東方夢時空と東方花映塚のクリア重視");
+        $(POFV_SURV).html("东方梦时空和东方花映塚生存");
 
         $(POFV_SURV_DESC).html("在以下公式中，梦时空的最大残机数为5，花映塚故事模式为7，EX为8.NB奖分依难度而定。梦时空为NB奖分，花映塚为NC奖分。");
         $(SHOT_MULT).html("机体系数");
