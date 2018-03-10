@@ -43,6 +43,11 @@ h2 {
     margin-left: auto;
     margin-right: auto;
 }
+#noborders {
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+}
 @media only screen and (max-width: 1400px) {
     .wrap {
         margin-left: 15%;
