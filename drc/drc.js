@@ -1374,8 +1374,14 @@ function generateText(firstTime) {
         $(IS_LABEL).html("Imperishable Shooting Captured");
         $(LS_LABEL).html("Last Spells Captured");
         $(RELEASES_LABEL).html("Releases");
-        $(DRCPOINTS).html($(DRCPOINTS).html().replace("DRCポイント:", "Your DRC points for this run:"));
-        $(RUBRICS_BUTTON).val($(RUBRICS_BUTTON).val().replace("ルーブリックを見せて", "Show Rubrics").replace("ルーブリックを見せない", "Hide Rubrics"));
+        $(DRCPOINTS).html(translate("Your DRC points for this run:"));
+        
+        if ($(RUBRICS_BUTTON).val() == "ルーブリックを見せて" || $(RUBRICS_BUTTON).val() == "显示计算公式") {
+            $(RUBRICS_BUTTON).val(translate("Show Rubrics"));
+        } else {
+            $(RUBRICS_BUTTON).val(translate("Hide Rubrics"));
+        }
+        
         $(CALCULATE).val("Calculate");
         $(SCORING_NOTES).html("Scoring Notes");
         $(SURV_NOTES).html("Survival Notes");
@@ -1481,8 +1487,14 @@ function generateText(firstTime) {
         $(IS_LABEL).html("「インペリシャブルシューティング」取得");
         $(LS_LABEL).html("ラストスペル取得");
         $(RELEASES_LABEL).html("解放");
-        $(DRCPOINTS).html($(DRCPOINTS).html().replace("Your DRC points for this run:", "DRCポイント:"));
-        $(RUBRICS_BUTTON).val($(RUBRICS_BUTTON).val().replace("Show Rubrics", "ルーブリックを見せて").replace("Hide Rubrics", "ルーブリックを見せない"));
+        $(DRCPOINTS).html(translate("Your DRC points for this run:"));
+        
+        if ($(RUBRICS_BUTTON).val() == "Show Rubrics" || $(RUBRICS_BUTTON).val() == "显示计算公式") {
+            $(RUBRICS_BUTTON).val(translate("Show Rubrics"));
+        } else {
+            $(RUBRICS_BUTTON).val(translate("Hide Rubrics"));
+        }
+        
         $(CALCULATE).val("計算する");
         $(SCORING_NOTES).html("稼ぎのノート");
         $(SURV_NOTES).html("クリア重視のノート");
@@ -1629,8 +1641,14 @@ function generateText(firstTime) {
         $(IS_LABEL).html("【不朽的弹幕】收取");
         $(LS_LABEL).html("LSC收取数");
         $(RELEASES_LABEL).html("季节解放数");
-        $(DRCPOINTS).html($(DRCPOINTS).html().replace("Your DRC points for this run:", "本轮DRC得分："));
-        $(RUBRICS_BUTTON).val($(RUBRICS_BUTTON).val().replace("Show Rubrics", "显示计算公式").replace("Hide Rubrics", "隐藏计算公式"));
+        $(DRCPOINTS).html(translate("Your DRC points for this run:"));
+        
+        if ($(RUBRICS_BUTTON).val() == "Show Rubrics" || $(RUBRICS_BUTTON).val() == "ルーブリックを見せて") {
+            $(RUBRICS_BUTTON).val(translate("Show Rubrics"));
+        } else {
+            $(RUBRICS_BUTTON).val(translate("Hide Rubrics"));
+        }
+        
         $(CALCULATE).val("计算");
         $(SCORING_NOTES).html("打分简介");
         $(SURV_NOTES).html("生存简介");
@@ -1753,10 +1771,10 @@ function translate(arg) {
             "the scoring rubrics for this difficulty are undetermined as of now.": "此难度的打分向计算公式现在仍未决定。",
             "the scoring rubrics for this shottype are undetermined as of now.": "此机体的打分向计算公式现在仍未决定。",
             "invalid score.": "无效分数。",
-            "||Max * (Score/WR)^Exp||": "||最大点 * (スコア / 世界記録) ^ 冪指数||",
-            "||Max * (Base^-n)||": "||最大点 * (底 ^ -n)||",
-            "Scoring": "稼ぎ",
-            "Survival": "クリア重視",
+            "||Max * (Score/WR)^Exp||": "||Max * (得分 / 世界纪录) ^ 指数||",
+            "||Max * (Base^-n)||": "||最大值 * (基数 ^ -n)||",
+            "Scoring": "分数",
+            "Survival": "生存",
             "If score < 2b, then: ||200*(Score/2b)^2||": "若分数小于20亿，||200*(分数/20亿)^2||",
             "Hide Rubrics": "隐藏计算公式",
             "Show Rubrics": "显示计算公式",
