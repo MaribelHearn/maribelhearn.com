@@ -2114,7 +2114,7 @@ function hrtpFormula(difficulty) {
     
     thresholds = HRTP_THRESHOLDS[difficulty];
     
-    if (score < thresholds.score[0]) {
+    if (score < thresholds.score1) {
         return Math.round(Math.pow((score / thresholds.score1), 3) * thresholds.base);
     }
     
