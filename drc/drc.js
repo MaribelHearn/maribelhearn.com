@@ -1079,29 +1079,25 @@
         "Easy": {
             "base": 145,
             "cap": 300,
-            "score1": 10000000,
-            "score2": 11550000,
+            "score": 10000000,
             "step": 10000
         },
         "Normal": {
             "base": 170,
             "cap": 325,
-            "score1": 10000000,
-            "score2": 11550000,
+            "score": 10000000,
             "step": 10000
         },
         "Hard": {
             "base": 175,
             "cap": 350,
-            "score1": 10000000,
-            "score2": 11575000,
+            "score": 10000000,
             "step": 9000
         },
         "Lunatic": {
             "base": 200,
             "cap": 400,
-            "score1": 13000000,
-            "score2": 14200000,
+            "score": 13000000,
             "step": 6000
         }
     };
@@ -2110,19 +2106,19 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
 }
 
 function hrtpFormula(difficulty) {
-    var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), drcpoints = 0, originalScore = score, cap, thresholds;
+    var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), drcpoints = 0, thresholds;
     
     thresholds = HRTP_THRESHOLDS[difficulty];
     
-    if (score < thresholds.score1) {
-        return Math.round(Math.pow((score / thresholds.score1), 3) * thresholds.base);
+    if (score < thresholds.score) {
+        return Math.round(Math.pow((score / thresholds.score), 3) * thresholds.base);
     }
     
-    score = thresholds.score1;
+    score = thresholds.score;
     drcpoints = thresholds.base;
    
-    while (score < thresholds.score2) {
-        score += thresholds.step;
+    while (score > thresholds.score) {
+        score -= thresholds.step;
         drcpoints += 1;
     }
     
@@ -2373,21 +2369,21 @@ function generateRubrics() {
     for (difficulty in HRTP_THRESHOLDS) {
         thresholds = HRTP_THRESHOLDS[difficulty];
         $(HRTP_TABLE).append("<tr><th colspan='12'>" + difficulty + "</th></tr>");
-        $(HRTP_TABLE).append("<tr><td colspan='4'>" + translate("If score < " + abbreviate(thresholds.score1) +
-        ", then: ||" + thresholds.base + "*(Score/" + abbreviate(thresholds.score1) + ")^2||") + "</td></tr>");
+        $(HRTP_TABLE).append("<tr><td colspan='4'>" + translate("If score < " + abbreviate(thresholds.score) +
+        ", then: ||" + thresholds.base + "*(Score/" + abbreviate(thresholds.score) + ")^2||") + "</td></tr>");
         $(HRTP_TABLE).append("<tr><th id='threshold" + id + "'>Threshold</th><th id='basePoints" + id +
         "'>Base points</th><th id='increments" + id + "'>Increments</th><th id='maxPoints" + id2 + "'>Max points</th></tr>");
         id += 1;
         id2 += 1;
         
         if (language == "English") {
-            $(HRTP_TABLE).append("<tr><td>" + abbreviate(thresholds.score1) + "</td><td>" + thresholds.base +
+            $(HRTP_TABLE).append("<tr><td>" + abbreviate(thresholds.score) + "</td><td>" + thresholds.base +
             "</td><td>+1 for every " + sep(thresholds.step) + "</td><td>" + thresholds.cap + "</td></tr>");
         } else if (language == "Japanese") {
-            $(HRTP_TABLE).append("<tr><td>" + abbreviateJapanese(thresholds.score1) + "</td><td>" + thresholds.base +
+            $(HRTP_TABLE).append("<tr><td>" + abbreviateJapanese(thresholds.score) + "</td><td>" + thresholds.base +
             "</td><td>" + abbreviateJapanese(thresholds.step) + "ごとに+1を</td><td>" + thresholds.cap + "</td></tr>");
         } else {
-            $(HRTP_TABLE).append("<tr><td>" + abbreviateChinese(thresholds.score1) + "</td><td>" + thresholds.base +
+            $(HRTP_TABLE).append("<tr><td>" + abbreviateChinese(thresholds.score) + "</td><td>" + thresholds.base +
             "</td><td>每" + abbreviateChinese(thresholds.step) + "增加1</td><td>" + thresholds.cap + "</td></tr>");
         }
     }
