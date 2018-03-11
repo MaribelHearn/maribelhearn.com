@@ -21,7 +21,8 @@
     DRC_INTRO_PTS = "#drcIntroPts", DRC_SCORES = "#drcScores", RUBRICS_EXPL = "#rubricsExpl", SCORING_NOTES = "#scoringNotes", SURV_NOTES = "#survivalNotes",
     NEW_WR = "#newWR", MOF_SEPARATE = "#mofSeparate", MAINGAME = "#maingame", PHANTASMAGORIA_SEPARATE = "#phantasmagoriaSeparate", THRESHOLD = "#threshold",
     INCREMENTS = "#increments", IN_LS = "#inLS", HSIFS_RELEASES = "#hsifsReleases", CALCULATE = "#calculate", MAX_LIVES = "#maxLives", SURV_FORMULA = "#survFormula",
-    JP_TL_CREDIT = "#jptlcredit", CN_TL_CREDIT = "#cntlcredit", COUNTDOWN = "#countdown", NO_CHARGE_LABEL = "#ncLabel",
+    JP_TL_CREDIT = "#jptlcredit", CN_TL_CREDIT = "#cntlcredit", COUNTDOWN = "#countdown", NO_CHARGE_LABEL = "#ncLabel", HRTP_SCORING = "#hrtpScoring",
+    HRTP_SCORING_DESC = "#hrtpScoringDesc", HRTP_TABLE = "#hrtpTable", HRTP_SEPARATE = "#hrtpSeparate",
     SURV_RUBRICS = {
         "SoEW": {
             "Easy": {
@@ -713,24 +714,6 @@
         }
     },
     SCORE_RUBRICS = {
-        "HRtP": {
-            "Easy": {
-                "base": 300,
-                "exp": 4
-            },
-            "Normal": {
-                "base": 325,
-                "exp": 4
-            },
-            "Hard": {
-                "base": 375,
-                "exp": 3
-            },
-            "Lunatic": {
-                "base": 400,
-                "exp": 3
-            }
-        },
         "SoEW": {
             "Easy": {
                 "base": 300,
@@ -852,7 +835,7 @@
             },
             "Lunatic": {
                 "base": 500,
-                "exp": 2
+                "exp": 1.5
             },
             "Extra": {
                 "base": 450,
@@ -1092,6 +1075,36 @@
         "EX-6": [0, 700000, 1200000, 1242000],
         "EX-9": [0, 3600000, 4040000, 4140000]
     },
+    HRTP_THRESHOLDS = {
+        "Easy": {
+            "base": 145,
+            "cap": 300,
+            "score1": 10000000,
+            "score2": 11550000,
+            "step": 10000
+        },
+        "Normal": {
+            "base": 170,
+            "cap": 325,
+            "score1": 10000000,
+            "score2": 11550000,
+            "step": 10000
+        },
+        "Hard": {
+            "base": 175,
+            "cap": 350,
+            "score1": 10000000,
+            "score2": 11575000,
+            "step": 9000
+        },
+        "Lunatic": {
+            "base": 200,
+            "cap": 400,
+            "score1": 13000000,
+            "score2": 14200000,
+            "step": 6000
+        }
+    };
     MOF_THRESHOLDS = {
         "Lunatic": {
             "ReimuB": {
@@ -1387,17 +1400,19 @@ function generateText(firstTime) {
         $(SCORING_NOTES).html("Scoring Notes");
         $(SURV_NOTES).html("Survival Notes");
         $(NEW_WR).html("If you achieve a new World Record, your points are equal to the max points; otherwise, the formula applies.");
+        $(HRTP_SEPARATE).html("HRtP uses a separate system. <a href='#hrtpScoring'>Click here</a> for said system.");
         $(MOF_SEPARATE).html("MoF uses a separate system. <a href='#mountainOfFaith'>Click here</a> for said system.");
         $(MAINGAME).html("For a main game clear, a shottype multiplier is applied to your DRC points, the result of which is again rounded. " +
         "<a href='#shottypeMultipliers'>Click here</a> for the list of them.");
         $(PHANTASMAGORIA_SEPARATE).html("The Phantasmagorias use a separate system. <a href='#phantasmagoria'>Click here</a> for said system.");
         $(IN_LS).html("For IN, you obtain 2 (1 on Easy) additional points for each captured Last Spell, with the exception of Imperishable Shooting, which yields 5 points.");
         $(HSIFS_RELEASES).html("For HSiFS, the first release adds 2 to <em>n</em> (3 on Lunatic), and further releases add 0.5 to <em>n</em>.");
+        $(HRTP_SCORING).html("HRtP Scoring");
         $(MOFAITH).html("MoF Scoring");
         $(MOFAITH_DESC).html("For each difficulty and shottype there are six thresholds, at which you will have set numbers of points respectively. " +
-        "Then, increments are done, dependent on how much higher than the threshold your score is.");
+        "Then, increments are done, dependent on how much higher than the threshold your score is. The maximum is 500.");
         $(POFV_SURV).html("PoDD & PoFV Survival");
-        $(POFV_SURV_DESC).html("In the below formula, MaxLives is equal to 5 for PoDD, 7 for PoFV main game and 8 for PoFV Extra." +
+        $(POFV_SURV_DESC).html("In the below formula, MaxLives is equal to 5 for PoDD, 7 for PoFV main game and 8 for PoFV Extra. " +
         "NoBombBonus is a difficulty-specific No Bomb bonus for PoDD and a No Charge Attacks bonus for PoFV. RoundsLost is equal to how many rounds the player lost.");
         $(SHOT_MULT).html("Shottype Multipliers");
         $(SHOT_MULT_DESC).html("These are applied to the result of the survival formula for a main game run only; they do <em>not</em> apply for Extra, " +
@@ -1501,13 +1516,15 @@ function generateText(firstTime) {
         $(SCORING_NOTES).html("稼ぎのノート");
         $(SURV_NOTES).html("クリア重視のノート");
         $(NEW_WR).html("もし新世界記録を達成すれば、あなたのポイントは最高点になります。そうでなければ式を適用します。");
+        $(HRTP_SEPARATE).html("東方靈異伝では別のシステムを使います。そのシステムは<a href='#hrtpScoring'>>ここをクリック</a>。");
         $(MOF_SEPARATE).html("東方風神録では別のシステムを使います。そのシステムは<a href='#mountainOfFaith'>ここをクリック</a>。");
         $(MAINGAME).html("本編クリアではキャラ倍率がDRCポイントに掛けられます。その結果は四捨五入されます。キャラ倍率のリストは<a href='#shottypeMultipliers'>ここをクリック</a>。");
         $(PHANTASMAGORIA_SEPARATE).html("東方夢時空と東方花映塚では別のシステムを使います。その方式は<a href='#phantasmagoria'>ここをクリック</a>。");
         $(IN_LS).html("東方永夜抄ではラストスペルを取得する度に２点（Easyのみ１点）の追加点を得ます。「インペリシャブルシューティング」の追加点は５点とします。");
         $(HSIFS_RELEASES).html("東方天空璋では、最初の季節解放は２ボム扱い（Lunaticでは３ボム扱い）、以降の解放は0.5ボム扱いとします。");
+        $(HRTP_SCORING).html("東方靈異伝の稼ぎ");
         $(MOFAITH).html("東方風神録の稼ぎ");
-        $(MOFAITH_DESC).html("各難易度各機体で６つの閾値があり、それぞれで点数を設定しています。その後、あなたのスコアがどれだけ閾値より高いかに基づき増分します。");
+        $(MOFAITH_DESC).html("各難易度各機体で６つの閾値があり、それぞれで点数を設定しています。その後、あなたのスコアがどれだけ閾値より高いかに基づき増分します。最大点は500です。");
         $(POFV_SURV).html("東方夢時空と東方花映塚のクリア重視");
         $(POFV_SURV_DESC).html("下式において、最大残機を夢時空で５、花映塚本編で７、花映塚エキストラでは８です。" +
         "ノーボムボーナスは難易度ごとに変わる、夢時空でのボムの不使用ボーナスと花映塚の（Ｃ１含む）チャージ攻撃の不使用ボーナスです。");
@@ -1648,13 +1665,15 @@ function generateText(firstTime) {
         $(SCORING_NOTES).html("打分简介");
         $(SURV_NOTES).html("生存简介");
         $(NEW_WR).html("如果获得新世界纪录，你的分数即为最大值。否则，则按公式计算。");
+        $(HRTP_SEPARATE).html("东方灵异传采用单独的计分方式。<a href='#hrtpScoring'>单击此处</a>以获取系统介绍。");
         $(MOF_SEPARATE).html("东方风神录采用单独的计分方式。<a href='#mountainOfFaith'>单击此处</a>以获取系统介绍。");
         $(MAINGAME).html("当完成一项游戏，机体系数会影响DRC总分，结果会再次近似。<a href='#shottypeMultipliers'>单击此处</a>查看列表。");
         $(PHANTASMAGORIA_SEPARATE).html("东方梦时空和东方花映塚关卡采用单独的计分方式。<a href='#phantasmagoria'>单击此处</a>以获取系统介绍。");
         $(IN_LS).html("对于永夜抄，每收取一张LSC，则获得额外的2分（Easy难度为1分）。收取【不朽的弹幕】获得5分。");
         $(HSIFS_RELEASES).html("对于东方天空璋，初次季节解放则n+2（Lunatic难度n+3），之后的季节释放n+0.5。");
+        $(HRTP_SCORING).html("东方灵异传打分");
         $(MOFAITH).html("东方风神录打分");
-        $(MOFAITH_DESC).html("对于每个难度和机体有六个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅取决于你的游戏内得分。");
+        $(MOFAITH_DESC).html("对于每个难度和机体有六个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅取决于你的游戏内得分。最大值是500。");
         $(POFV_SURV).html("东方梦时空和东方花映塚生存");
         $(POFV_SURV_DESC).html("在以下公式中，东方梦时空的最大残机数为5，东方花映塚故事模式为7，EX为8.NB奖分依难度而定。东方梦时空为NB奖分，东方花映塚为NC奖分。");
         $(SHOT_MULT).html("机体系数");
@@ -1742,6 +1761,10 @@ function translate(arg) {
             "||Max * (Base^-n)||": "||最大点 * (底 ^ -n)||",
             "Scoring": "稼ぎ",
             "Survival": "クリア重視",
+            "If score < 10m, then: ||145*(Score/10m)^3||": "スコアが1000万よりも小さければ、||145*(スコア/1000万)^3||",
+            "If score < 10m, then: ||170*(Score/10m)^3||": "スコアが1000万よりも小さければ、||170*(スコア/1000万)^3||",
+            "If score < 10m, then: ||175*(Score/10m)^3||": "スコアが1000万よりも小さければ、||175*(スコア/1000万)^3||",
+            "If score < 13m, then: ||200*(Score/13m)^3||": "スコアが1300万よりも小さければ、||200*(スコア/1300万)^3||",
             "If score < 2b, then: ||200*(Score/2b)^2||": "スコアが20億よりも小さければ、||200*(スコア/20億)^2||",
             "Hide Rubrics": "ルーブリックを見せない",
             "Show Rubrics": "ルーブリックを見せて",
@@ -1780,6 +1803,10 @@ function translate(arg) {
             "||Max * (Base^-n)||": "||最大值 * (基数 ^ -n)||",
             "Scoring": "打分",
             "Survival": "生存",
+            "If score < 10m, then: ||145*(Score/10m)^3||": "若分数小于1000万，||145*(分数/1000万)^3||",
+            "If score < 10m, then: ||170*(Score/10m)^3||": "若分数小于1000万，||170*(分数/1000万)^3||",
+            "If score < 10m, then: ||175*(Score/10m)^3||": "若分数小于1000万，||175*(分数/1000万)^3||",
+            "If score < 13m, then: ||200*(Score/13m)^3||": "若分数小于1300万，||200*(分数/1000万)^3||",
             "If score < 2b, then: ||200*(Score/2b)^2||": "若分数小于20亿，||200*(分数/20亿)^2||",
             "Hide Rubrics": "隐藏计算公式",
             "Show Rubrics": "显示计算公式",
@@ -1962,6 +1989,8 @@ function drcPoints() {
         
         if (game == "DS") {
             points = dsFormula(shottype);
+        } else if (game == "HRtP") {
+            points = hrtpFormula(difficulty);
         } else if (game == "MoF") {
             points = mofFormula(difficulty, shottype);
         } else {
@@ -2062,6 +2091,26 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
     return drcpoints;
 }
 
+function hrtpFormula(difficulty) {
+    var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), drcpoints = 0, originalScore = score, cap, thresholds;
+    
+    thresholds = HRTP_THRESHOLDS[difficulty];
+    
+    if (score < thresholds.score[0]) {
+        return Math.round(Math.pow((score / thresholds.score1), 3) * thresholds.base);
+    }
+    
+    score = thresholds.score2;
+    drcpoints = thresholds.base;
+   
+    while (score > originalScore) {
+        score -= thresholds.step;
+        drcpoints += 1;
+    }
+    
+    return Math.min(drcpoints, thresholds.cap);
+}
+
 function determineIncrement(thresholds, i) {
     var increment = (i === 1 ? 10 : 20), lowerBound = (i === 1 ? 0 : thresholds[i - 1]);
     
@@ -2146,7 +2195,7 @@ function scoringPoints(rubric, game, difficulty, shottype) {
         } else if (difficulty == "Normal" || difficulty == "Hard" || difficulty == "Extra") {
             wr = wr["ReimuB"][0];
         } else if (difficulty == "Lunatic") {
-            wr = wr["MarisaA"][0];
+            wr = 165000000;
         }
     } else if (game == "HSiFS" && difficulty == "Hard") {
         wr = WRs[game][difficulty]["AyaAutumn"][0];
@@ -2209,7 +2258,7 @@ function abbreviateChinese(num) {
 }
 
 function generateRubrics() {
-    var id = 0, game, difficulty, rubric, shottype, thresholds, scene, i;
+    var id = 0, id2 = 3, game, difficulty, rubric, shottype, thresholds, scene, i;
     $(DS_TABLE).html("");
     $(MOF_TABLE).html("");
     $(SURV_TABLE).html("");
@@ -2300,6 +2349,28 @@ function generateRubrics() {
     for (scene in SCENE_THRESHOLDS) {
         thresholds = SCENE_THRESHOLDS[scene];
         $(DS_TABLE).append("<tr><td>" + scene + "</td><td>" + sep(thresholds[1]) + "</td><td>" + sep(thresholds[2]) + "</td><td>" + sep(thresholds[3]) + "</td></tr>");
+    }
+    
+    for (difficulty in HRTP_THRESHOLDS) {
+        thresholds = HRTP_THRESHOLDS[difficulty];
+        $(HRTP_TABLE).append("<tr><th colspan='12'>" + difficulty + "</th></tr>");
+        $(HRTP_TABLE).append("<tr><td colspan='4'>" + translate("If score < " + abbreviate(thresholds.score1) +
+        ", then: ||" + thresholds.base + "*(Score/" + abbreviate(thresholds.score1) + ")^2||") + "</td></tr>");
+        $(HRTP_TABLE).append("<tr><th id='threshold" + id + "'>Threshold</th><th id='basePoints" + id +
+        "'>Base points</th><th id='increments" + id + "'>Increments</th><th id='maxPoints" + id2 + "'>maxPoints</th></tr>");
+        id += 1;
+        id2 += 1;
+        
+        if (language == "English") {
+            $(HRTP_TABLE).append("<tr><td>" + abbreviate(thresholds.score1) + "</td><td>" + thresholds.base +
+            "</td><td>+1 for every " + abbreviate(thresholds.step) + "</td><td>" + thresholds.cap + "</td></tr>");
+        } else if (language == "Japanese") {
+            $(HRTP_TABLE).append("<tr><td>" + abbreviateJapanese(thresholds.score1) + "</td><td>" + thresholds.base +
+            "</td><td>" + abbreviateJapanese(thresholds.step) + "ごとに+1を</td><td>" + thresholds.cap + "</td></tr>");
+        } else {
+            $(HRTP_TABLE).append("<tr><td>" + abbreviateChinese(thresholds.score1) + "</td><td>" + thresholds.base +
+            "</td><td>每" + abbreviateChinese(thresholds.step) + "增加1</td><td>" + thresholds.cap + "</td></tr>");
+        }
     }
     
     $(MOF_TABLE).append("<tr><td colspan='12'>" + translate("If score < 2b, then: ||200*(Score/2b)^2||") + "</td></tr>");
