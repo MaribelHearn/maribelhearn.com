@@ -14,7 +14,7 @@
     FINALA = "#finala", FINALB = "#finalb", SCORING_COLUMN = "<th id='game0'>Game</th><th id='maxPoints0'>Max points</th><th id='exp0'>Exponent</th>",
     SURV_COLUMN = "<th id='game2'>Game</th><th id='maxPoints1'>Max points</th><th id='base0'>Base</th><th id='lostLife'>Lost life (n)</th><th id='firstBomb'>" +
     "First bomb (n)</th><th id='further'>Further bombs (n)</th>", FIRST_BOMB = "#firstBomb", FURTHER = "#further", LOST_LIFE = "#lostLife", POFV_SURV = "#phantasmagoria",
-    POFV_SURV_DESC = "#phantasmagoriaDesc", MOFAITH = "#mountainOfFaith", MOFAITH_DESC = "#mountainOfFaithDesc", SHOT_MULT = "#shottypeMultipliers",
+    POFV_SURV_DESC = "#phantasmagoriaDesc", MOFAITH = "#mountainOfFaith", MOFAITH_DESC = "#mountainOfFaithDesc", SHOT_MULT = "#shottypeMultipliers",RULES_TEXT = "#rulesText",
     SHOT_MULT_DESC = "#shotMultDesc", BASE_POINTS = "#basePoints", MULTIPLIEDSHOTTYPE = "#multipliedShottype", MULTIPLIER = "#multiplier", MAX_POINTS = "#maxPoints",
     BASE = "#base", EXP = "#exp", WR = "#wr", SCORE_TEXT = "#scoreText", MIN_POINTS = "#minPoints", NB_BONUS = "#nbBonus", POINTS_CALCULATOR = "#pointsCalculator",
     RUBRICS_TEXT = "#rubricsText", ACK_TEXT = "#ackText", DRC_INTRO = "#drcIntro", CATEGORY = "#category", BACK_TO_TOP = "#backToTop", SCORE_FORMULA = "#scoreFormula",
@@ -22,7 +22,7 @@
     NEW_WR = "#newWR", MOF_SEPARATE = "#mofSeparate", MAINGAME = "#maingame", PHANTASMAGORIA_SEPARATE = "#phantasmagoriaSeparate", THRESHOLD = "#threshold",
     INCREMENTS = "#increments", IN_LS = "#inLS", HSIFS_RELEASES = "#hsifsReleases", CALCULATE = "#calculate", MAX_LIVES = "#maxLives", SURV_FORMULA = "#survFormula",
     JP_TL_CREDIT = "#jptlcredit", CN_TL_CREDIT = "#cntlcredit", COUNTDOWN = "#countdown", NO_CHARGE_LABEL = "#ncLabel", HRTP_SCORING = "#hrtpScoring",
-    HRTP_SCORING_DESC = "#hrtpScoringDesc", HRTP_TABLE = "#hrtpTable", HRTP_SEPARATE = "#hrtpSeparate",
+    HRTP_SCORING_DESC = "#hrtpScoringDesc", HRTP_TABLE = "#hrtpTable", HRTP_SEPARATE = "#hrtpSeparate", RULE1 = "#rule1", RULE2 = "#rule2", RULE3 = "#rule3",
     SURV_RUBRICS = {
         "SoEW": {
             "Easy": {
@@ -860,7 +860,7 @@
             },
             "Lunatic": {
                 "base": 500,
-                "exp": 2
+                "exp": 2.1
             },
             "Extra": {
                 "base": 450,
@@ -904,7 +904,7 @@
             },
             "Lunatic": {
                 "base": 500,
-                "exp": 2
+                "exp": 2.2
             },
             "Extra": {
                 "base": 450,
@@ -970,7 +970,7 @@
             },
             "Lunatic": {
                 "base": 500,
-                "exp": 2
+                "exp": 2.2
             },
             "Extra": {
                 "base": 450,
@@ -1006,19 +1006,19 @@
             },
             "Normal": {
                 "base": 400,
-                "exp": 3
+                "exp": 3.5
             },
             "Hard": {
                 "base": 450,
-                "exp": 2.5
+                "exp": 3
             },
             "Lunatic": {
                 "base": 500,
-                "exp": 2
+                "exp": 3
             },
             "Extra": {
                 "base": 450,
-                "exp": 2.5
+                "exp": 3.5
             }
         },
         "HSiFS": {
@@ -1358,6 +1358,7 @@ function generateText(firstTime) {
         $(MISSES_LABEL).html("Misses");
         $(BOMBS_LABEL).html("Bombs");
         $(POINTS_CALCULATOR).html("Points Calculator");
+        //$(RULES_TEXT).html("Rules");
         $(RUBRICS_TEXT).html("Rubrics");
         $(ACK_TEXT).html("Acknowledgements");
         $(BACK_TO_TOP).html("Back to Top");
@@ -1378,6 +1379,9 @@ function generateText(firstTime) {
             $(SCORING + i).html("Scoring");
         }
         
+        //$(RULE1).html("No cheating by using external programs or modifying the game FPS.");
+        //$(RULE2).html("Replays are required for Windows game submissions, while for PC-98 a video or screenshot is accepted.");
+        //$(RULE3).html("All runs must be played using default lives and bombs.");
         $(NB_LABEL).html("No Bomb");
         $(NO_CHARGE_LABEL).html("No Charge Attacks");
         $(IS_LABEL).html("Imperishable Shooting Captured");
@@ -1476,6 +1480,7 @@ function generateText(firstTime) {
         $(MISSES_LABEL).html("ミス");
         $(BOMBS_LABEL).html("ボム");
         $(POINTS_CALCULATOR).html("ポイント計算機");
+        //$(RULES_TEXT).html("規定");
         $(RUBRICS_TEXT).html("ルーブリック");
         $(ACK_TEXT).html("謝辞");
         $(BACK_TO_TOP).html("上に帰る");
@@ -1496,6 +1501,9 @@ function generateText(firstTime) {
             $(SCORING + i).html("稼ぎ");
         }
         
+        //$(RULE1).html("外部ツールの使用またはゲームFPSを変更するツールの禁止です。");
+        //$(RULE2).html("Windows版作品の登録にはリプレイが必要です。PC-98版作品においては録画ファイルまたはスクリーンショットにて受け付け可能です。");
+        //$(RULE3).html("全てのプレイにおいて、初期残機、初期ボム数でのプレイが必須です。");
         $(NB_LABEL).html("ノーボム");
         $(NO_CHARGE_LABEL).html("ノーチャージ攻撃");
         $(IS_LABEL).html("「インペリシャブルシューティング」取得");
@@ -1626,6 +1634,7 @@ function generateText(firstTime) {
         $(MISSES_LABEL).html("被弹数");
         $(BOMBS_LABEL).html("扔雷数");
         $(POINTS_CALCULATOR).html("得分计算器");
+        //$(RULES_TEXT).html("");
         $(RUBRICS_TEXT).html("计算公式");
         $(ACK_TEXT).html("致谢");
         $(BACK_TO_TOP).html("回到顶部");
@@ -1646,6 +1655,9 @@ function generateText(firstTime) {
             $(SCORING + i).html("打分");
         }
         
+        //$(RULE1).html("");
+        //$(RULE2).html("");
+        //$(RULE3).html("");
         $(NB_LABEL).html("禁雷");
         $(NO_CHARGE_LABEL).html("NC");
         $(IS_LABEL).html("【不朽的弹幕】收取");
