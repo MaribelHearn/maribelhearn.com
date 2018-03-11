@@ -2239,6 +2239,10 @@ function abbreviate(num) {
 function abbreviateJapanese(num) {
     var string = String(num), original = string, i = 0, rest;
     
+    if (string.indexOf("0000") == -1) {
+        return string;
+    }
+    
     while (string.indexOf("0000") != -1) {
         string = string.replace("0000", "");
         i += 1;
@@ -2255,6 +2259,10 @@ function abbreviateJapanese(num) {
 
 function abbreviateChinese(num) {
     var string = String(num), original = string, i = 0, rest;
+    
+    if (string.indexOf("0000") == -1) {
+        return string;
+    }
     
     while (string.indexOf("0000") != -1) {
         string = string.replace("0000", "");
