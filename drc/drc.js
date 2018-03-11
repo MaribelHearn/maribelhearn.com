@@ -2369,7 +2369,7 @@ function generateRubrics() {
         thresholds = HRTP_THRESHOLDS[difficulty];
         $(HRTP_TABLE).append("<tr><th colspan='12'>" + difficulty + "</th></tr>");
         $(HRTP_TABLE).append("<tr><td colspan='4'>" + translate("If score < " + abbreviate(thresholds.score) +
-        ", then: ||" + thresholds.base + "*(Score/" + abbreviate(thresholds.score) + ")^2||") + "</td></tr>");
+        ", then: ||" + thresholds.base + "*(Score/" + abbreviate(thresholds.score) + ")^3||") + "</td></tr>");
         $(HRTP_TABLE).append("<tr><th id='threshold" + id + "'>Threshold</th><th id='basePoints" + id +
         "'>Base points</th><th id='increments" + id + "'>Increments</th><th id='maxPoints" + id2 + "'>Max points</th></tr>");
         id += 1;
