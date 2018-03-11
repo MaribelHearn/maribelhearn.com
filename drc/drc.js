@@ -658,7 +658,7 @@
         "HSiFS": {
             "Easy": {
                 "base": 50,
-                "exp": 1.07,
+                "exp": 1.06,
                 "miss": 2,
                 "firstBomb": 2,
                 "bomb": 1,
@@ -678,7 +678,7 @@
                 "base": 150,
                 "exp": 1.05,
                 "miss": 2,
-                "firstBomb": 4,
+                "firstBomb": 3,
                 "bomb": 1,
                 "firstRelease": 2,
                 "release": 0.5
@@ -687,14 +687,14 @@
                 "base": 315,
                 "exp": 1.05,
                 "miss": 2,
-                "firstBomb": 5,
+                "firstBomb": 3,
                 "bomb": 1,
                 "firstRelease": 3,
                 "release": 0.5
             },
             "Extra": {
                 "base": 105,
-                "exp": 1.08,
+                "exp": 1.07,
                 "miss": 2,
                 "firstBomb": 3,
                 "bomb": 1,
@@ -1406,8 +1406,10 @@ function generateText(firstTime) {
         "<a href='#shottypeMultipliers'>Click here</a> for the list of them.");
         $(PHANTASMAGORIA_SEPARATE).html("The Phantasmagorias use a separate system. <a href='#phantasmagoria'>Click here</a> for said system.");
         $(IN_LS).html("For IN, you obtain 2 (1 on Easy) additional points for each captured Last Spell, with the exception of Imperishable Shooting, which yields 5 points.");
-        $(HSIFS_RELEASES).html("For HSiFS, the first release adds 2 to <em>n</em> (3 on Lunatic), and further releases add 0.5 to <em>n</em>.");
+        $(HSIFS_RELEASES).html("For HSiFS, the first release adds 2 to <em>n</em>, and further releases add 0.5, 0.4, 0.3, 0.2, 0.1, to <em>n</em>.");
         $(HRTP_SCORING).html("HRtP Scoring");
+        $(HRTP_SCORING_DESC).html("For each difficulty there is a threshold, at which you will have the base points." +
+        "Then, increments are done, dependent on how much higher than the threshold your score is.");
         $(MOFAITH).html("MoF Scoring");
         $(MOFAITH_DESC).html("For each difficulty and shottype there are six thresholds, at which you will have set numbers of points respectively. " +
         "Then, increments are done, dependent on how much higher than the threshold your score is. The maximum is 500.");
@@ -1504,7 +1506,7 @@ function generateText(firstTime) {
         $(IS_LABEL).html("「インペリシャブルシューティング」取得");
         $(LS_LABEL).html("ラストスペル取得");
         $(RELEASES_LABEL).html("解放");
-        $(DRCPOINTS).html($(DRCPOINTS).html().replace("Your DRC points for this run:", translate("Your DRC points for this run:")).replace("本轮DRC得分：", translate("Your DRC points for this run:") + " "));
+        $(DRCPOINTS).html($(DRCPOINTS).html().replace("Your DRC points for this run: ", translate("Your DRC points for this run: ")).replace("本轮DRC得分：", translate("Your DRC points for this run: ") + " "));
         
         if ($(RUBRICS_BUTTON).val() == "Show Rubrics" || $(RUBRICS_BUTTON).val() == "显示计算公式") {
             $(RUBRICS_BUTTON).val(translate("Show Rubrics"));
@@ -1521,8 +1523,9 @@ function generateText(firstTime) {
         $(MAINGAME).html("本編クリアではキャラ倍率がDRCポイントに掛けられます。その結果は四捨五入されます。キャラ倍率のリストは<a href='#shottypeMultipliers'>ここをクリック</a>。");
         $(PHANTASMAGORIA_SEPARATE).html("東方夢時空と東方花映塚では別のシステムを使います。その方式は<a href='#phantasmagoria'>ここをクリック</a>。");
         $(IN_LS).html("東方永夜抄ではラストスペルを取得する度に２点（Easyのみ１点）の追加点を得ます。「インペリシャブルシューティング」の追加点は５点とします。");
-        $(HSIFS_RELEASES).html("東方天空璋では、最初の季節解放は２ボム扱い（Lunaticでは３ボム扱い）、以降の解放は0.5ボム扱いとします。");
+        $(HSIFS_RELEASES).html("東方天空璋では、最初の季節解放は２ボム扱い、以降の解放は0.5、0.4、0.3、0.2、0.1ボム扱いとします。");
         $(HRTP_SCORING).html("東方靈異伝の稼ぎ");
+        $(HRTP_SCORING_DESC).html("各難易度で閾値があり、それぞれで点数を設定しています。その後、あなたのスコアがどれだけ閾値より高いかに基づき増分します。");
         $(MOFAITH).html("東方風神録の稼ぎ");
         $(MOFAITH_DESC).html("各難易度各機体で６つの閾値があり、それぞれで点数を設定しています。その後、あなたのスコアがどれだけ閾値より高いかに基づき増分します。最大点は500です。");
         $(POFV_SURV).html("東方夢時空と東方花映塚のクリア重視");
@@ -1653,7 +1656,7 @@ function generateText(firstTime) {
         $(IS_LABEL).html("【不朽的弹幕】收取");
         $(LS_LABEL).html("LSC收取数");
         $(RELEASES_LABEL).html("季节解放数");
-        $(DRCPOINTS).html($(DRCPOINTS).html().replace("Your DRC points for this run: ", translate("Your DRC points for this run:")).replace("DRCポイント: ", translate("Your DRC points for this run:")));
+        $(DRCPOINTS).html($(DRCPOINTS).html().replace("Your DRC points for this run: ", translate("Your DRC points for this run: ")).replace("DRCポイント: ", translate("Your DRC points for this run: ")));
         
         if ($(RUBRICS_BUTTON).val() == "Show Rubrics" || $(RUBRICS_BUTTON).val() == "ルーブリックを見せて") {
             $(RUBRICS_BUTTON).val(translate("Show Rubrics"));
@@ -1670,8 +1673,9 @@ function generateText(firstTime) {
         $(MAINGAME).html("当完成一项游戏，机体系数会影响DRC总分，结果会再次近似。<a href='#shottypeMultipliers'>单击此处</a>查看列表。");
         $(PHANTASMAGORIA_SEPARATE).html("东方梦时空和东方花映塚关卡采用单独的计分方式。<a href='#phantasmagoria'>单击此处</a>以获取系统介绍。");
         $(IN_LS).html("对于永夜抄，每收取一张LSC，则获得额外的2分（Easy难度为1分）。收取【不朽的弹幕】获得5分。");
-        $(HSIFS_RELEASES).html("对于东方天空璋，初次季节解放则n+2（Lunatic难度n+3），之后的季节释放n+0.5。");
+        $(HSIFS_RELEASES).html("对于东方天空璋，初次季节解放则n+2，之后的季节释放n+0.5，0.4，0.3，0.2，0.1。");
         $(HRTP_SCORING).html("东方灵异传打分");
+        $(HRTP_SCORING_DESC).html("对于每个难度有一个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅取决于你的游戏内得分。");
         $(MOFAITH).html("东方风神录打分");
         $(MOFAITH_DESC).html("对于每个难度和机体有六个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅取决于你的游戏内得分。最大值是500。");
         $(POFV_SURV).html("东方梦时空和东方花映塚生存");
@@ -1750,7 +1754,7 @@ function translate(arg) {
             "usage of the MarisaB damage bug is BANNED in survival.": "魔理沙Bのバグを使ってはいけまでん。",
             "<em>manual</em> trances count as bombs (that is, trances from pressing C).": "Cキー押下による手動トランスはボムとして扱います。",
             "border breaks count as bombs <em>even if they are accidental</em>.": "霊撃は偶発的なものであってもボムとして扱います。",
-            "Your DRC points for this run:": "DRCポイント:",
+            "Your DRC points for this run: ": "DRCポイント: ",
             "Error: ": "エラー: ",
             "the survival rubrics for this game are undetermined as of now.": "このゲームのクリア重視のルーブリックはまだ決めていない。",
             "the scoring rubrics for this game are undetermined as of now.": "このゲームの稼ぎのルーブリックはまだ決めていない。",
@@ -1792,7 +1796,7 @@ function translate(arg) {
             "usage of the MarisaB damage bug is BANNED in survival.": "生存向 弑神炮禁止。",
             "<em>manual</em> trances count as bombs (that is, trances from pressing C).": "主动灵界视作扔雷。",
             "border breaks count as bombs <em>even if they are accidental</em>.": "灵击视作扔雷，无论是否被弹灵击。",
-            "Your DRC points for this run:": "本轮DRC得分：",
+            "Your DRC points for this run: ": "本轮DRC得分：",
             "Error: ": "错误：",
             "the survival rubrics for this game are undetermined as of now.": "此游戏的生存向计算公式现在仍未决定。",
             "the scoring rubrics for this game are undetermined as of now.": "此游戏的打分向计算公式现在仍未决定。",
@@ -1969,7 +1973,7 @@ function drcPoints() {
     if (challenge == "Survival") {
         if (!SURV_RUBRICS[game]) {
             $(ERROR).html("<strong style='color:red'>" + translate("Error: ") + translate("the survival rubrics for this game are undetermined as of now.") + "</strong>");
-            $(DRCPOINTS).html(translate("Your DRC points for this run:") + " <strong>0</strong>!");
+            $(DRCPOINTS).html(translate("Your DRC points for this run: ") + " <strong>0</strong>!");
             return;
         } else {
             $(ERROR).html("");
@@ -1981,7 +1985,7 @@ function drcPoints() {
     } else {
         if (!(game == "MoF" && difficulty == "Lunatic") && !SCORE_RUBRICS[game]) {
             $(ERROR).html("<strong style='color:red'>" + translate("Error: ") + translate("the scoring rubrics for this game are undetermined as of now.") + "</strong>");
-            $(DRCPOINTS).html(translate("Your DRC points for this run:") + " <strong>0</strong>!");
+            $(DRCPOINTS).html(translate("Your DRC points for this run: ") + " <strong>0</strong>!");
             return;
         } else {
             $(ERROR).html("");
@@ -1999,7 +2003,7 @@ function drcPoints() {
         }
     }
     
-    $(DRCPOINTS).html(translate("Your DRC points for this run:") + " <strong>" + points + "</strong>!");
+    $(DRCPOINTS).html(translate("Your DRC points for this run: ") + " <strong>" + points + "</strong>!");
 }
 
 function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
@@ -2028,7 +2032,9 @@ function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
 }
 
 function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
-    var misses = Number($(MISSES).val()), bombs = Number($(BOMBS).val()), n = 0, route, lastSpells, releases, season, seasonMultiplier;
+    var misses = Number($(MISSES).val()), bombs = Number($(BOMBS).val()), n = 0, decrement = 0;
+    
+    var route, lastSpells, releases, season, seasonMultiplier, i;
     
     $(ERROR).html("");
     n += misses * rubric.miss;
@@ -2047,8 +2053,15 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
             n += rubric.firstRelease;
             releases -= 1;
         }
-    
-        n += releases * rubric.release;
+        
+        while (releases > 0) {
+            for (i = 0; i < 10; i++) {
+                n += rubric.release - decrement;
+                releases -= 1;
+            }
+            
+            decrement += (decrement == 0.5 ? 0 : 0.1);
+        }
     }
     
     drcpoints = Math.round(rubric.base * Math.pow(rubric.exp, -n));
@@ -2363,7 +2376,7 @@ function generateRubrics() {
         
         if (language == "English") {
             $(HRTP_TABLE).append("<tr><td>" + abbreviate(thresholds.score1) + "</td><td>" + thresholds.base +
-            "</td><td>+1 for every " + abbreviate(thresholds.step) + "</td><td>" + thresholds.cap + "</td></tr>");
+            "</td><td>+1 for every " + sep(thresholds.step) + "</td><td>" + thresholds.cap + "</td></tr>");
         } else if (language == "Japanese") {
             $(HRTP_TABLE).append("<tr><td>" + abbreviateJapanese(thresholds.score1) + "</td><td>" + thresholds.base +
             "</td><td>" + abbreviateJapanese(thresholds.step) + "ごとに+1を</td><td>" + thresholds.cap + "</td></tr>");
