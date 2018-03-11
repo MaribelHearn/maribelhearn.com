@@ -2064,7 +2064,7 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
                 }
             }
             
-            decrement += (decrement == 0.5 ? 0 : 0.1);
+            decrement += (decrement == 0.4 ? 0 : 0.1);
             i = 0;
         }
     }
