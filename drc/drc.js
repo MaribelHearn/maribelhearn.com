@@ -689,7 +689,7 @@
                 "miss": 2,
                 "firstBomb": 3,
                 "bomb": 1,
-                "firstRelease": 3,
+                "firstRelease": 2,
                 "release": 0.5
             },
             "Extra": {
@@ -1406,7 +1406,7 @@ function generateText(firstTime) {
         "<a href='#shottypeMultipliers'>Click here</a> for the list of them.");
         $(PHANTASMAGORIA_SEPARATE).html("The Phantasmagorias use a separate system. <a href='#phantasmagoria'>Click here</a> for said system.");
         $(IN_LS).html("For IN, you obtain 2 (1 on Easy) additional points for each captured Last Spell, with the exception of Imperishable Shooting, which yields 5 points.");
-        $(HSIFS_RELEASES).html("For HSiFS, the first release adds 2 to <em>n</em>, and further releases add 0.5, 0.4, 0.3, 0.2, 0.1, to <em>n</em>.");
+        $(HSIFS_RELEASES).html("For HSiFS, the first release adds 2 to <em>n</em>, and further releases add 0.5, 0.4, 0.3, 0.2, 0.1 to <em>n</em>.");
         $(HRTP_SCORING).html("HRtP Scoring");
         $(HRTP_SCORING_DESC).html("For each difficulty there is a threshold, at which you will have the base points." +
         "Then, increments are done, dependent on how much higher than the threshold your score is.");
@@ -2273,6 +2273,7 @@ function abbreviateChinese(num) {
 function generateRubrics() {
     var id = 0, id2 = 3, game, difficulty, rubric, shottype, thresholds, scene, i;
     $(DS_TABLE).html("");
+    $(HRTP_TABLE).html("");
     $(MOF_TABLE).html("");
     $(SURV_TABLE).html("");
     $(SCORING_TABLE).html("");
