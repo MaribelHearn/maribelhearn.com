@@ -1566,19 +1566,19 @@ function generateText(firstTime) {
             $(GAME + i).html("ゲーム");
         }
         
-        for (i = 0; i < 2; i++) {
+        for (i = 0; i < 6; i++) {
             $(BASE_POINTS + i).html("素点");
         }
         
-        for (i = 0; i < 5; i++) {
+        for (i = 0; i < 9; i++) {
             $(MAX_POINTS + i).html("最大点");
         }
         
-        for (i = 0; i < 2; i++) {
+        for (i = 0; i < 6; i++) {
             $(THRESHOLD + i).html("閾値");
         }
         
-        for (i = 0; i < 2; i++) {
+        for (i = 0; i < 6; i++) {
             $(INCREMENTS + i).html("増加");
         }
         
@@ -1713,19 +1713,19 @@ function generateText(firstTime) {
             $(GAME + i).html("游戏");
         }
         
-        for (i = 0; i < 2; i++) {
+        for (i = 0; i < 6; i++) {
             $(BASE_POINTS + i).html("基数分");
         }
         
-        for (i = 0; i < 5; i++) {
+        for (i = 0; i < 9; i++) {
             $(MAX_POINTS + i).html("最大值");
         }
         
-        for (i = 0; i < 2; i++) {
+        for (i = 0; i < 6; i++) {
             $(THRESHOLD + i).html("阈值");
         }
         
-        for (i = 0; i < 2; i++) {
+        for (i = 0; i < 6; i++) {
             $(INCREMENTS + i).html("增幅");
         }
         
@@ -2357,7 +2357,7 @@ function generateRubrics() {
         $(HRTP_TABLE).append("<tr><td colspan='4'>" + translate("If score < " + abbreviate(thresholds.score1) +
         ", then: ||" + thresholds.base + "*(Score/" + abbreviate(thresholds.score1) + ")^2||") + "</td></tr>");
         $(HRTP_TABLE).append("<tr><th id='threshold" + id + "'>Threshold</th><th id='basePoints" + id +
-        "'>Base points</th><th id='increments" + id + "'>Increments</th><th id='maxPoints" + id2 + "'>maxPoints</th></tr>");
+        "'>Base points</th><th id='increments" + id + "'>Increments</th><th id='maxPoints" + id2 + "'>Max points</th></tr>");
         id += 1;
         id2 += 1;
         
