@@ -2114,7 +2114,6 @@ function hrtpFormula(difficulty) {
         return Math.round(Math.pow((score / thresholds.score), 3) * thresholds.base);
     }
     
-    score = thresholds.score;
     drcpoints = thresholds.base;
    
     while (score > thresholds.score) {
