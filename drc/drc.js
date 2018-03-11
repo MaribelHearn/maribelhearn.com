@@ -684,7 +684,7 @@
                 "release": 0.5
             },
             "Lunatic": {
-                "base": 315,
+                "base": 310,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 3,
@@ -708,8 +708,7 @@
             },
             "seasonMultiplier": {
                 "Spring": 1.15,
-                "Summer": 1.15,
-                "Autumn": 1.05
+                "Summer": 1.15
             }
         }
     },
@@ -1404,7 +1403,7 @@ function generateText(firstTime) {
         $(IN_LS).html("For IN, you obtain 2 (1 on Easy) additional points for each captured Last Spell, with the exception of Imperishable Shooting, which yields 5 points.");
         $(HSIFS_RELEASES).html("For HSiFS, the first release adds 2 to <em>n</em>, and further releases add 0.5, 0.4, 0.3, 0.2, 0.1 to <em>n</em>.");
         $(HRTP_SCORING).html("HRtP Scoring");
-        $(HRTP_SCORING_DESC).html("For each difficulty there is a threshold, at which you will have the base points." +
+        $(HRTP_SCORING_DESC).html("For each difficulty there is a threshold, at which you will have the base points. " +
         "Then, increments are done, dependent on how much higher than the threshold your score is.");
         $(MOFAITH).html("MoF Scoring");
         $(MOFAITH_DESC).html("For each difficulty and shottype there are six thresholds, at which you will have set numbers of points respectively. " +
