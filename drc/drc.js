@@ -1983,7 +1983,7 @@ function drcPoints() {
         shottypeMultiplier = (SURV_RUBRICS[game].multiplier[shottype] ? SURV_RUBRICS[game].multiplier[shottype] : 1);
         points = (isPhantasmagoria(game) ? phantasmagoria(rubric, game, difficulty, shottypeMultiplier) : survivalPoints(rubric, game, difficulty, shottypeMultiplier));
     } else {
-        if (!(game == "MoF" && difficulty == "Lunatic") && !SCORE_RUBRICS[game]) {
+        if (!(game == "MoF" && difficulty == "Lunatic") && game != "HRtP" && !SCORE_RUBRICS[game]) {
             $(ERROR).html("<strong style='color:red'>" + translate("Error: ") + translate("the scoring rubrics for this game are undetermined as of now.") + "</strong>");
             $(DRCPOINTS).html(translate("Your DRC points for this run: ") + " <strong>0</strong>!");
             return;
@@ -2058,9 +2058,14 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
             for (i = 0; i < 10; i++) {
                 n += rubric.release - decrement;
                 releases -= 1;
+                
+                if (releases === 0) {
+                    break;
+                }
             }
             
             decrement += (decrement == 0.5 ? 0 : 0.1);
+            i = 0;
         }
     }
     
@@ -2113,11 +2118,11 @@ function hrtpFormula(difficulty) {
         return Math.round(Math.pow((score / thresholds.score1), 3) * thresholds.base);
     }
     
-    score = thresholds.score2;
+    score = thresholds.score1;
     drcpoints = thresholds.base;
    
-    while (score > originalScore) {
-        score -= thresholds.step;
+    while (score < thresholds.score2) {
+        score += thresholds.step;
         drcpoints += 1;
     }
     
