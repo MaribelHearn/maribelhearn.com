@@ -2334,7 +2334,7 @@ function generateRubrics() {
     
     for (game in SCORE_RUBRICS) {
         $(SCORING_TABLE).append("<tr>");
-        $(SCORING_TABLE).append(game == "HRtP" ? SCORING_COLUMN : "<th></th><td></td><td></td>");
+        $(SCORING_TABLE).append(game == "SoEW" ? SCORING_COLUMN : "<th></th><td></td><td></td>");
         $(SCORING_TABLE).append("</tr>");
         
         for (difficulty in SCORE_RUBRICS[game]) {
