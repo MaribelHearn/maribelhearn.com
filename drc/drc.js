@@ -1675,7 +1675,7 @@ function generateText(firstTime) {
         $(MOFAITH).html("东方风神录打分");
         $(MOFAITH_DESC).html("对于每个难度和机体有六个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅取决于你的游戏内得分。最大值是500。");
         $(POFV_SURV).html("东方梦时空和东方花映塚生存");
-        $(POFV_SURV_DESC).html("在以下公式中，东方梦时空的最大残机数为5，东方花映塚故事模式为7，EX为8.NB奖分依难度而定。东方梦时空为NB奖分，东方花映塚为NC奖分。");
+        $(POFV_SURV_DESC).html("在以下公式中，东方梦时空的最大残机数为5，东方花映塚故事模式为7，EX为8。NB奖分依难度而定。东方梦时空为NB奖分，东方花映塚为NC奖分。");
         $(SHOT_MULT).html("机体系数");
         $(SHOT_MULT_DESC).html("该要素仅适用于生存项目的计算公式，不适用于EX和使用了季节解放的天空璋。未列出的机体，系数均为1.");
         $(SCORE_FORMULA).html("||Max * (得分 / 世界纪录) ^ 指数||");
