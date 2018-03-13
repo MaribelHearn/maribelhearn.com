@@ -268,8 +268,7 @@
             "multiplier": {
                 "ReimuA": 1.05,
                 "MarisaB": 1.05,
-                "SakuyaA": 1.05,
-                "SakuyaB": 1.05
+                "SakuyaA": 1.05
             }
         },
         "IN": {
