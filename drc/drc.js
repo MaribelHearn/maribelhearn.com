@@ -1358,7 +1358,7 @@ function generateText(firstTime) {
         $(MISSES_LABEL).html("Misses");
         $(BOMBS_LABEL).html("Bombs");
         $(POINTS_CALCULATOR).html("Points Calculator");
-        //$(RULES_TEXT).html("Rules");
+        $(RULES_TEXT).html("Rules");
         $(RUBRICS_TEXT).html("Rubrics");
         $(ACK_TEXT).html("Acknowledgements");
         $(BACK_TO_TOP).html("Back to Top");
@@ -1379,9 +1379,9 @@ function generateText(firstTime) {
             $(SCORING + i).html("Scoring");
         }
         
-        //$(RULE1).html("No cheating by using external programs or modifying the game FPS.");
-        //$(RULE2).html("Replays are required for Windows game submissions, while for PC-98 a video or screenshot is accepted.");
-        //$(RULE3).html("All runs must be played using default lives and bombs.");
+        $(RULE1).html("No cheating by using external programs or modifying the game FPS.");
+        $(RULE2).html("Replays are required for Windows game submissions, while for PC-98 a video or screenshot is accepted.");
+        $(RULE3).html("All runs must be played using default lives and bombs.");
         $(NB_LABEL).html("No Bomb");
         $(NO_CHARGE_LABEL).html("No Charge Attacks");
         $(IS_LABEL).html("Imperishable Shooting Captured");
@@ -1440,7 +1440,7 @@ function generateText(firstTime) {
         "which can be either survival or scoring of any Touhou shooting game and any difficulty. They will be matched up against a player from the other team, " +
         "in a category that both players had on their list. The teams and categories are determined by the DRC management team. Players are given one week to " +
         "sign up for the competition, and once it starts, two weeks to submit a replay, which will be awarded points dependent on the rubrics. " +
-        "Runs done outside those two weeks are invalid.");
+        "Runs done outside those two weeks are invalid. Players can submit an unlimited number of replays; the replay that is worth the most DRC points will count.");
         $(DRC_INTRO_PTS).html("If you want to know how many DRC points a run is worth, the points for a given run can be determined using the calculator below.");
         $(DRC_SCORES).html("Scores can only contain digits, commas, dots and spaces. Survival runs are assumed to have cleared, scoring runs not.");
         $(RUBRICS_EXPL).html("The rubrics are the formulas and fixed values used to calculate the number of DRC points for a run. " +
@@ -1480,7 +1480,7 @@ function generateText(firstTime) {
         $(MISSES_LABEL).html("ミス");
         $(BOMBS_LABEL).html("ボム");
         $(POINTS_CALCULATOR).html("ポイント計算機");
-        //$(RULES_TEXT).html("規定");
+        $(RULES_TEXT).html("規定");
         $(RUBRICS_TEXT).html("ルーブリック");
         $(ACK_TEXT).html("謝辞");
         $(BACK_TO_TOP).html("上に帰る");
@@ -1501,9 +1501,9 @@ function generateText(firstTime) {
             $(SCORING + i).html("稼ぎ");
         }
         
-        //$(RULE1).html("外部ツールの使用またはゲームFPSを変更するツールの禁止です。");
-        //$(RULE2).html("Windows版作品の登録にはリプレイが必要です。PC-98版作品においては録画ファイルまたはスクリーンショットにて受け付け可能です。");
-        //$(RULE3).html("全てのプレイにおいて、初期残機、初期ボム数でのプレイが必須です。");
+        $(RULE1).html("外部ツールの使用またはゲームFPSを変更するツールの禁止です。");
+        $(RULE2).html("Windows版作品の登録にはリプレイが必要です。PC-98版作品においては録画ファイルまたはスクリーンショットにて受け付け可能です。");
+        $(RULE3).html("全てのプレイにおいて、初期残機、初期ボム数でのプレイが必須です。");
         $(NB_LABEL).html("ノーボム");
         $(NO_CHARGE_LABEL).html("ノーチャージ攻撃");
         $(IS_LABEL).html("「インペリシャブルシューティング」取得");
@@ -1594,7 +1594,8 @@ function generateText(firstTime) {
         "カテゴリーは東方STGゲームの任意の難易度での「クリア重視」と「スコアアタック（稼ぎ）」のどちらかを選ぶことができます。" +
         "相手チームのプレイヤーと、共通してリストされていた１つのカテゴリーで、マッチングされます。このチームとカテゴリーはDRC運営陣によって決められます。" +
         "プレイヤーには大会登録のために１週間が与えられます。そして大会が始まり、リプレイ提出のための２週間が与えられます。" +
-        "その後ルーブリックに基づいてポイントが授与されます。この２週間以外でのプレイは無効です。");
+        "その後ルーブリックに基づいてポイントが授与されます。この２週間以外でのプレイは無効です。" +
+        "プレイヤーは無制限にリプレイを登録することが出来ますが、DRCポイントが最高であるリプレイのみが採用されます。");
         $(DRC_INTRO_PTS).html("リプレイにどれだけDRCポイントが貰えるか知りたいならば、下の計算機を使うことが出来ます。");
         $(DRC_SCORES).html("スコアは桁、カンマ、ドット、スペースを含めることができます。クリア重視ではクリアする必要があります。稼ぎではクリアしなくてもよいです。");
         $(RUBRICS_EXPL).html("ルーブリックとはプレイのDRCポイントを計算するために使用される式および固定数のことです。" +
@@ -1634,7 +1635,7 @@ function generateText(firstTime) {
         $(MISSES_LABEL).html("被弹数");
         $(BOMBS_LABEL).html("扔雷数");
         $(POINTS_CALCULATOR).html("得分计算器");
-        //$(RULES_TEXT).html("");
+        $(RULES_TEXT).html("规则");
         $(RUBRICS_TEXT).html("计算公式");
         $(ACK_TEXT).html("致谢");
         $(BACK_TO_TOP).html("回到顶部");
@@ -1655,9 +1656,9 @@ function generateText(firstTime) {
             $(SCORING + i).html("打分");
         }
         
-        //$(RULE1).html("");
-        //$(RULE2).html("");
-        //$(RULE3).html("");
+        $(RULE1).html("禁止通过使用内置程序或修改游戏帧数作弊。");
+        $(RULE2).html("windows平台游戏需要提交rep；PC98平台游戏可提交视频或截图。");
+        $(RULE3).html("所有游戏必须在默认残机数、bomb数的情况下进行。");
         $(NB_LABEL).html("禁雷");
         $(NO_CHARGE_LABEL).html("NC");
         $(IS_LABEL).html("【不朽的弹幕】收取");
@@ -1689,9 +1690,9 @@ function generateText(firstTime) {
         $(POFV_SURV_DESC).html("在以下公式中，东方梦时空的最大残机数为5，东方花映塚故事模式为7，EX为8。NB奖分依难度而定。东方梦时空为NB奖分，东方花映塚为NC奖分。");
         $(SHOT_MULT).html("机体系数");
         $(SHOT_MULT_DESC).html("该要素仅适用于生存项目的计算公式，不适用于EX和使用了季节解放的天空璋。未列出的机体，系数均为1。");
-        $(SCORE_FORMULA).html("||Max * (得分 / 世界纪录) ^ 指数||");
-        $(SURV_FORMULA).html("||最大值 * (基数 ^ -n)||");
-        $(POFV_FORMULA).html("||最大值 - ((最大值 - 最小值) / 最大残机 * 败北数)|| + NB奖分");
+        $(SCORE_FORMULA).html("||最大值 *（得分 / 世界纪录）^ 指数||");
+        $(SURV_FORMULA).html("||最大值 *（基数 ^ -n）||");
+        $(POFV_FORMULA).html("||最大值 -最大值 - 最小值） / 最大残机 * 败北数）|| + NB奖分");
         
         for (i = 0; i < numberOfShottypes; i++) {
             $(SHOTTYPE + i).html(translateCharName($(SHOTTYPE + i).val()));
@@ -1702,9 +1703,9 @@ function generateText(firstTime) {
         $(IMP_NOT_TEXT + "0").html("生存向 弑神炮禁止。");
         $(IMP_NOT_TEXT + "1").html("主动灵界视作扔雷。");
         $(IMP_NOT_TEXT + "2").html("灵击视作扔雷，无论是否被弹灵击。");
-        $(LOST_LIFE).html("被弹 (n)");
-        $(FIRST_BOMB).html("第一扔雷 (n)");
-        $(FURTHER).html("扔雷 (n)");
+        $(LOST_LIFE).html("被弹（n）");
+        $(FIRST_BOMB).html("第一次扔雷（n）");
+        $(FURTHER).html("扔雷（从第二次扔雷开始）（n）");
         $(MULTIPLIEDSHOTTYPE).html("机体");
         $(MULTIPLIER).html("系数");
         $(WR).html("世界纪录");
@@ -1740,7 +1741,9 @@ function generateText(firstTime) {
             $(INCREMENTS + i).html("增幅");
         }
         
-        $(DRC_INTRO).html("<b>Dodging Rain Competition(DRC)</b>是由<a href='https://twitter.com/VincentZeem'>ZM</a>发起的东方比赛，举办地点：<a href='https://discord.gg/tu47Hrs'>DRC Discord</a>。两队进行不同项目的比赛。每位选手报名时写下想打的任意项目，根据偏好排序，可以是避弹向的生存，也可以是打分，任意作品、任意难度均可。列出的项目会与另一队进行匹配，相同项目的选手即匹配成功。分组与项目由DRC主办方决定。选手将会有一周时间报名。一旦开赛，有两周时间提交参赛录像，录像所获得分根据计算公式而定。未在两周内提交则视为无效。");
+        $(DRC_INTRO).html("<b>Dodging Rain Competition(DRC)</b>是由<a href='https://twitter.com/VincentZeem'>ZM</a>发起的东方比赛，举办地点：<a href='https://discord.gg/tu47Hrs'>DRC Discord</a>。" +
+        "两队进行不同项目的比赛。每位选手报名时写下想打的任意项目，根据偏好排序，可以是避弹向的生存，也可以是打分，任意作品、任意难度均可。列出的项目会与另一队进行匹配，相同项目的选手即匹配成功。分组与项目由DRC主办方决定。选手将会有一周时间报名。" +
+        "一旦开赛，有两周时间提交参赛录像，录像所获得分根据计算公式而定。未在两周内提交则视为无效。玩家提交的rep个数无限制，最终DRC得分将选取最高分录入。");
         $(DRC_INTRO_PTS).html("如果你想知道得了多少DRC分，请将你完成的项目填入下方计算器内开始计算。");
         $(DRC_SCORES).html("分数可包含数字、逗号、句号、空格。生存向将会被假定为已通关，打分则不会。");
         $(RUBRICS_EXPL).html("计算公式将计算出你所完成项目的分数。如果你想知道分数是如何计算的，请点击下方按钮展开。");
@@ -1810,7 +1813,7 @@ function translate(arg) {
             "the scoring rubrics for this difficulty are undetermined as of now.": "此难度的打分向计算公式现在仍未决定。",
             "the scoring rubrics for this shottype are undetermined as of now.": "此机体的打分向计算公式现在仍未决定。",
             "invalid score.": "无效分数。",
-            "||Max * (Score/WR)^Exp||": "||Max * (得分 / 世界纪录) ^ 指数||",
+            "||Max * (Score/WR)^Exp||": "||最大值 * (得分 / 世界纪录) ^ 指数||",
             "||Max * (Base^-n)||": "||最大值 * (基数 ^ -n)||",
             "Scoring": "打分",
             "Survival": "生存",
