@@ -2499,9 +2499,9 @@ function generateRubrics() {
     }
     
     $(DS_TABLE).append("<tr><th>" + translate("Scene") + "</th><th id='basePoints" + (id + 1) + "'>" + translate("Base points") +
-    "</th><th id='increments" + (id + 1) + "'>" + translate("Increments") + "</th><th id='threshold" + (id + 1) + "'>" + translate("Threshold 1") +
-    "</th><th id='increments" + (id + 2) + "'>" + translate("Increments") + "</th><th id='threshold" + (id + 1) + "'>" + translate("Threshold 2") +
-    "</th><th id='increments" + (id + 3) + "'>" + translate("Increments") + "</th><th id='threshold" + (id + 1) + "'>" + translate("Threshold 3") + "</th></tr>");
+    "</th><th id='increments" + (id) + "'>" + translate("Increments") + "</th><th id='threshold" + (id) + "'>" + translate("Threshold 1") +
+    "</th><th id='increments" + (id + 1) + "'>" + translate("Increments") + "</th><th id='threshold" + (id + 1) + "'>" + translate("Threshold 2") +
+    "</th><th id='increments" + (id + 2) + "'>" + translate("Increments") + "</th><th id='threshold" + (id + 2) + "'>" + translate("Threshold 3") + "</th></tr>");
     
     for (scene in SCENE_THRESHOLDS) {
         thresholds = SCENE_THRESHOLDS[scene];
@@ -2515,7 +2515,7 @@ function generateRubrics() {
             $(DS_TABLE).append("<tr><td>" + scene + "</td><td>0</td><td>+1 for every " + sep(step1) +
             "</td><td>" + sep(n1) + "</td><td>+1 for every " + sep(step2) +
             "</td><td>" + sep(n2) + "</td><td>+1 for every " + sep(step2) +
-            "</td><td>" + sep() + "</td></tr>");
+            "</td><td>" + sep(n3) + "</td></tr>");
         } else if (language == "Japanese") {
             $(DS_TABLE).append("<tr><td>" + scene + "</td><td>0</td><td>ごとに+" + abbreviateJapanese(step1) +
             "を</td><td>" + abbreviateJapanese(n1) + "</td><td>ごとに+" + abbreviateJapanese(step2) +
