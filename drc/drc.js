@@ -312,11 +312,12 @@
                 "MagicTeam": 1.05,
                 "ScarletTeam": 1.05,
                 "Reimu": 1.1,
-                "Marisa": 1.05,
+                "Yukari": 1.05,
+                "Marisa": 1.1,
                 "Alice": 1.2,
                 "Sakuya": 1.2,
-                "Remilia": 1.05,
-                "Yuyuko": 1.05
+                "Remilia": 1.1,
+                "Yuyuko": 1.1
             }
         },
         "PoFV": {
