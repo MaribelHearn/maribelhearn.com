@@ -1826,6 +1826,7 @@ function translate(arg) {
             "Threshold 1": "第一閾値",
             "Threshold 2": "第二閾値",
             "Threshold 3": "第三閾値",
+            "Base points": "素点",
             "d ": "日",
             "h ": "時",
             "m ": "分",
@@ -1872,6 +1873,7 @@ function translate(arg) {
             "Threshold 1": "第一阈值",
             "Threshold 2": "第二阈值",
             "Threshold 3": "第三阈值",
+            "Base points": "基数分",
             "d ": "日",
             "h ": "时",
             "m ": "分",
@@ -2359,7 +2361,7 @@ function abbreviateChinese(num) {
 }
 
 function generateRubrics() {
-    var id = 0, id2 = 3, game, difficulty, rubric, shottype, thresholds, scene, i, n1, n2, n3;
+    var id = 0, id2 = 3, game, difficulty, rubric, shottype, thresholds, scene, i, n1, n2, n3, step1, step2;
     $(HRTP_TABLE).html("");
     $(MOF_TABLE).html("");
     $(DS_TABLE).html("");
@@ -2496,7 +2498,7 @@ function generateRubrics() {
         }
     }
     
-    $(DS_TABLE).append("<tr><th>" + translate("Scene") + "</th><th id='basePoints" + (id + 1) + ">0" +
+    $(DS_TABLE).append("<tr><th>" + translate("Scene") + "</th><th id='basePoints" + (id + 1) + ">" + translate("Base points") +
     "</th><th id='increments" + (id + 1) + ">" + translate("Increments") + "</th><th id='threshold" + (id + 1) + "'>" + translate("Threshold 1") +
     "</th><th id='increments" + (id + 2) + ">" + translate("Increments") + "</th><th id='threshold" + (id + 1) + "'>" + translate("Threshold 2") +
     "</th><th id='increments" + (id + 3) + ">" + translate("Increments") + "</th><th id='threshold" + (id + 1) + "'>" + translate("Threshold 3") + "</th></tr>");
@@ -2506,21 +2508,23 @@ function generateRubrics() {
         n1 = thresholds[1] * 1000;
         n2 = thresholds[2] * 1000;
         n3 = thresholds[3] * 1000;
+        step1 = Math.round((n2 - n1) / 10);
+        step2 = Math.round((n3 - n2) / 20);
         
         if (language == "English") {
-            $(DS_TABLE).append("<tr><td>" + scene + "</td><td>+1 for every " + sep(((n2) - (n1)) / 10) +
-            "</td><td>" + sep(n1) + "</td><td>+1 for every " + sep(((n3) - (n2)) / 10) +
-            "</td><td>" + sep(n2) + "</td><td>+1 for every " + sep(((n3) - (n2)) / 10) +
+            $(DS_TABLE).append("<tr><td>" + scene + "</td><td>0</td><td>+1 for every " + sep(step1) +
+            "</td><td>" + sep(n1) + "</td><td>+1 for every " + sep(step2) +
+            "</td><td>" + sep(n2) + "</td><td>+1 for every " + sep(step2) +
             "</td><td>" + sep() + "</td></tr>");
         } else if (language == "Japanese") {
-            $(DS_TABLE).append("<tr><td>" + scene + "</td><td>ごとに+" + abbreviateJapanese(((n2) - (n1)) / 10) +
-            "を</td><td>" + abbreviateJapanese(n1) + "</td><td>ごとに+" + abbreviateJapanese(((n3) - (n2)) / 10) +
-            "を</td><td>" + abbreviateJapanese(n2) + "</td><td>ごとに+ " + abbreviateJapanese(((n3) - (n2)) / 10) +
+            $(DS_TABLE).append("<tr><td>" + scene + "</td><td>0</td><td>ごとに+" + abbreviateJapanese(step1) +
+            "を</td><td>" + abbreviateJapanese(n1) + "</td><td>ごとに+" + abbreviateJapanese(step2) +
+            "を</td><td>" + abbreviateJapanese(n2) + "</td><td>ごとに+ " + abbreviateJapanese(step2) +
             "を</td><td>" + abbreviateJapanese(n3) + "</td></tr>");
         } else {
-            $(DS_TABLE).append("<tr><td>" + scene + "</td><td>每" + abbreviateChinese(((n2) - (n1)) / 10) +
-            "增加1</td><td>" + abbreviateChinese(n1) + "</td><td>每" + abbreviateChinese(((n3) - (n2)) / 10) +
-            "增加1</td><td>" + abbreviateChinese(n2) + "</td><td>每" + abbreviateChinese(((n3) - (n2)) / 10) +
+            $(DS_TABLE).append("<tr><td>" + scene + "</td><td>0</td><td>每" + abbreviateChinese(step1) +
+            "增加1</td><td>" + abbreviateChinese(n1) + "</td><td>每" + abbreviateChinese(step2) +
+            "增加1</td><td>" + abbreviateChinese(n2) + "</td><td>每" + abbreviateChinese(step2) +
             "增加1</td><td>" + abbreviateChinese(n3) + "</td></tr>");
         }
     }
