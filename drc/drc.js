@@ -1085,9 +1085,9 @@
     HRTP_THRESHOLDS = {
         "Easy": {
             "base": 145,
-            "cap": 300,
+            "cap": 250,
             "score": 10000000,
-            "step": 10000
+            "step": 14750
         },
         "Normal": {
             "base": 170,
