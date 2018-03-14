@@ -23,7 +23,7 @@
     INCREMENTS = "#increments", IN_LS = "#inLS", HSIFS_RELEASES = "#hsifsReleases", CALCULATE = "#calculate", MAX_LIVES = "#maxLives", SURV_FORMULA = "#survFormula",
     JP_TL_CREDIT = "#jptlcredit", CN_TL_CREDIT = "#cntlcredit", COUNTDOWN = "#countdown", NO_CHARGE_LABEL = "#ncLabel", HRTP_SCORING = "#hrtpScoring",
     HRTP_SCORING_DESC = "#hrtpScoringDesc", HRTP_TABLE = "#hrtpTable", HRTP_SEPARATE = "#hrtpSeparate", RULE1 = "#rule1", RULE2 = "#rule2", RULE3 = "#rule3",
-    DS_SEPARATE = "#dsSeparate", DOUBLE_SPOILER = "#doubleSpoiler", DOUBLE_SPOILER_DESC = "#doubleSpoilerDesc", DS_TABLE = "#dsTable",
+    DS_SEPARATE = "#dsSeparate", DOUBLE_SPOILER = "#doubleSpoiler", DOUBLE_SPOILER_DESC = "#doubleSpoilerDesc", DS_TABLE = "#dsTable", DS = "#ds",
     SURV_RUBRICS = {
         "SoEW": {
             "Easy": {
@@ -1158,7 +1158,7 @@ function updateCountdown() {
     hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    $(COUNTDOWN).html("DRC10<br>" + days + translate("d ") + hours + translate("h ") + minutes + translate("m ") + seconds + translate("s"));
+    $(COUNTDOWN).html("DRC End<br>" + days + translate("d ") + hours + translate("h ") + minutes + translate("m ") + seconds + translate("s"));
     
     if (distance < 0) {
         $(COUNTDOWN).html("");
