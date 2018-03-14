@@ -1895,6 +1895,12 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
         $(SEASON).css("display", "none");
         
         if (changeShottypes) {
+            if (game == "DS") {
+                $(DIFFICULTY).html("");
+            } else {
+                $(DIFFICULTY).html(DIFF_OPTIONS);
+            }
+            
             if (game == "PCB") {
                 $(DIFFICULTY).html(PHANTASM);
                 phantasm = true;
@@ -1954,9 +1960,14 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
             $(PERFORMANCE).html(survOptions);
             $(MISSES_LABEL).html(translate("Misses"));
         } else {
-            $(PERFORMANCE).html(game == "DS" ? "<label for='scene'>Scene</label><select id='scene'><option>2-2</option><option>2-3</option><option>2-4</option><option>5-2</option>" +
-            "<option>5-4</option><option>5-6</option><option>6-4</option><option>7-6</option><option>8-3</option><option>8-6</option><option>9-6</option><option>9-7</option>" +
-            "<option>10-6</option><option>12-3</option><option>12-4</option><option>12-8</option><option>EX-3</option><option>EX-9</option><option>SP-2</option></select><br>" + SCORE_OPTIONS : SCORE_OPTIONS);
+            if (game == "DS") {
+                $(PERFORMANCE).html("<label for='scene'>Scene</label><select id='scene'><option>2-2</option><option>2-3</option><option>2-4</option><option>5-2</option>" +
+                "<option>5-4</option><option>5-6</option><option>6-4</option><option>7-6</option><option>8-3</option><option>8-6</option><option>9-6</option><option>9-7</option>" +
+                "<option>10-6</option><option>12-3</option><option>12-4</option><option>12-8</option><option>EX-3</option><option>EX-9</option><option>SP-2</option></select><br>" + SCORE_OPTIONS);
+            } else {
+                $(PERFORMANCE).html(SCORE_OPTIONS);
+            }
+            
             $(SCORE_LABEL).html(translate("Score"));
             $(NOTIFY).html("");
         }
