@@ -23,6 +23,7 @@
     INCREMENTS = "#increments", IN_LS = "#inLS", HSIFS_RELEASES = "#hsifsReleases", CALCULATE = "#calculate", MAX_LIVES = "#maxLives", SURV_FORMULA = "#survFormula",
     JP_TL_CREDIT = "#jptlcredit", CN_TL_CREDIT = "#cntlcredit", COUNTDOWN = "#countdown", NO_CHARGE_LABEL = "#ncLabel", HRTP_SCORING = "#hrtpScoring",
     HRTP_SCORING_DESC = "#hrtpScoringDesc", HRTP_TABLE = "#hrtpTable", HRTP_SEPARATE = "#hrtpSeparate", RULE1 = "#rule1", RULE2 = "#rule2", RULE3 = "#rule3",
+    DS_SEPARATE = "#dsSeparate", DOUBLE_SPOILER = "#doubleSpoiler", DOUBLE_SPOILER_DESC = "#doubleSpoilerDesc", DS_TABLE = "#dsTable",
     SURV_RUBRICS = {
         "SoEW": {
             "Easy": {
@@ -935,19 +936,19 @@
         "GFW": {
             "Easy": {
                 "base": 375,
-                "exp": 4
+                "exp": 8.5
             },
             "Normal": {
                 "base": 400,
-                "exp": 3
+                "exp": 7.5
             },
             "Hard": {
                 "base": 450,
-                "exp": 2.5
+                "exp": 7
             },
             "Lunatic": {
                 "base": 500,
-                "exp": 2
+                "exp": 6.5
             },
             "Extra": {
                 "base": 450,
@@ -1062,16 +1063,24 @@
         }
     },
     SCENE_THRESHOLDS = {
-        "2-2": [0, 170000, 205000, 225000],
-        "5-4": [0, 450000, 600000, 700000],
-        "5-5": [0, 330000, 390000, 425000],
-        "7-6": [0, 1000000, 1500000, 1800000],
-        "10-1": [0, 700000, 940000, 1000000],
-        "10-2": [0, 750000, 1350000, 1525000],
-        "12-2": [0, 700000, 810000, 840000],
-        "12-8": [0, 2000000, 2750000, 3050000],
-        "EX-6": [0, 700000, 1200000, 1242000],
-        "EX-9": [0, 3600000, 4040000, 4140000]
+        "2-2": [0, 170, 205, 225],
+        "2-3": [0, 130, 150, 163],
+        "5-2": [0, 300, 375, 400],
+        "5-4": [0, 450, 600, 700],
+        "5-6": [0, 385, 455, 490],
+        "6-4": [0, 500, 700, 900],
+        "7-6": [0, 1000, 1500, 1830],
+        "8-3": [0, 1500, 2900, 3120],
+        "8-6": [0, 450, 810, 900],
+        "9-6": [0, 1000, 1900, 2400],
+        "9-7": [0, 350, 550, 730],
+        "10-6": [0, 400, 750, 950],
+        "12-3": [0, 1100, 1620, 1740],
+        "12-4": [0, 800, 1200, 1485],
+        "12-8": [0, 1400, 2600, 3050],
+        "EX-3": [0, 400, 650, 750],
+        "EX-9": [0, 3600, 4060, 4160],
+        "SP-2": [0, 500, 660, 680]
     },
     HRTP_THRESHOLDS = {
         "Easy": {
@@ -1142,7 +1151,7 @@ $(document).ready(function() {
 function updateCountdown() {
     var countdownDate, now, distance, days, hours, minutes, seconds;
     
-    countdownDate = Date.UTC("2018", "2", "14", "13", "0", "0");
+    countdownDate = Date.UTC("2018", "2", "28", "16", "0", "0");
     now = new Date().getTime();
     distance = countdownDate - now;
     days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -1292,6 +1301,7 @@ function translateGameName(game) {
             "MoF": "風",
             "SA": "地",
             "UFO": "星",
+            "DS": "DS",
             "GFW": "大",
             "TD": "神",
             "DDC": "輝",
@@ -1314,6 +1324,7 @@ function translateGameName(game) {
             "MoF": "风",
             "SA": "地",
             "UFO": "星",
+            "DS": "DS",
             "GFW": "大",
             "TD": "神",
             "DDC": "辉",
@@ -1339,6 +1350,7 @@ function generateText(firstTime) {
         $(MOF).html("MoF");
         $(SA).html("SA");
         $(UFO).html("UFO");
+        $(DS).html("DS");
         $(GFW).html("GFW");
         $(TD).html("TD");
         $(DDC).html("DDC");
@@ -1400,6 +1412,7 @@ function generateText(firstTime) {
         $(NEW_WR).html("If you achieve a new World Record, your points are equal to the max points; otherwise, the formula applies.");
         $(HRTP_SEPARATE).html("HRtP uses a separate system. <a href='#hrtpScoring'>Click here</a> for said system.");
         $(MOF_SEPARATE).html("MoF uses a separate system. <a href='#mountainOfFaith'>Click here</a> for said system.");
+        $(DS_SEPARATE).html("DS uses a separate system. <a href='#doubleSpoiler'>Click here</a> for said system.");
         $(MAINGAME).html("For a main game clear, a shottype multiplier is applied to your DRC points, the result of which is again rounded. " +
         "<a href='#shottypeMultipliers'>Click here</a> for the list of them.");
         $(PHANTASMAGORIA_SEPARATE).html("The Phantasmagorias use a separate system. <a href='#phantasmagoria'>Click here</a> for said system.");
@@ -1411,6 +1424,9 @@ function generateText(firstTime) {
         $(MOFAITH).html("MoF Scoring");
         $(MOFAITH_DESC).html("For each difficulty and shottype there are six thresholds, at which you will have set numbers of points respectively. " +
         "Then, increments are done, dependent on how much higher than the threshold your score is. The maximum is 500.");
+        $(DOUBLE_SPOILER).html("DS Scoring");
+        $(DOUBLE_SPOILER_DESC).html("For each scene there are three thresholds, at which you will have set numbers of points points respectively. " +
+        "Then, increments are done, dependent on how much higher than the threshold your score is.");
         $(POFV_SURV).html("PoDD & PoFV Survival");
         $(POFV_SURV_DESC).html("In the below formula, MaxLives is equal to 5 for PoDD, 7 for PoFV main game and 8 for PoFV Extra. " +
         "NoBombBonus is a difficulty-specific No Bomb bonus for PoDD and a No Charge Attacks bonus for PoFV. RoundsLost is equal to how many rounds the player lost.");
@@ -1500,7 +1516,7 @@ function generateText(firstTime) {
             $(SCORING + i).html("稼ぎ");
         }
         
-        $(RULE1).html("外部ツールの使用またはゲームFPSを変更するツールの禁止です。");
+        $(RULE1).html("外部ツールを用いたチート行為やゲームのFPSを変更することを禁止します。");
         $(RULE2).html("Windows版作品の登録にはリプレイが必要です。PC-98版作品においては録画ファイルまたはスクリーンショットにて受け付け可能です。");
         $(RULE3).html("全てのプレイにおいて、初期残機、初期ボム数でのプレイが必須です。");
         $(NB_LABEL).html("ノーボム");
@@ -1522,6 +1538,7 @@ function generateText(firstTime) {
         $(NEW_WR).html("もし新世界記録を達成すれば、あなたのポイントは最高点になります。そうでなければ式を適用します。");
         $(HRTP_SEPARATE).html("東方靈異伝では別のシステムを使います。そのシステムは<a href='#hrtpScoring'>>ここをクリック</a>。");
         $(MOF_SEPARATE).html("東方風神録では別のシステムを使います。そのシステムは<a href='#mountainOfFaith'>ここをクリック</a>。");
+        $(DS_SEPARATE).html("ダブルスポイラーでは別のシステムを使います。そのシステムは<a href='#doubleSpoiler'>ここをクリック</a>。");
         $(MAINGAME).html("本編クリアではキャラ倍率がDRCポイントに掛けられます。その結果は四捨五入されます。キャラ倍率のリストは<a href='#shottypeMultipliers'>ここをクリック</a>。");
         $(PHANTASMAGORIA_SEPARATE).html("東方夢時空と東方花映塚では別のシステムを使います。その方式は<a href='#phantasmagoria'>ここをクリック</a>。");
         $(IN_LS).html("東方永夜抄ではラストスペルを取得する度に２点（Easyのみ１点）の追加点を得ます。「インペリシャブルシューティング」の追加点は５点とします。");
@@ -1530,6 +1547,8 @@ function generateText(firstTime) {
         $(HRTP_SCORING_DESC).html("各難易度で閾値があり、それぞれで点数を設定しています。その後、あなたのスコアがどれだけ閾値より高いかに基づき増分します。");
         $(MOFAITH).html("東方風神録の稼ぎ");
         $(MOFAITH_DESC).html("各難易度各機体で６つの閾値があり、それぞれで点数を設定しています。その後、あなたのスコアがどれだけ閾値より高いかに基づき増分します。最大点は500です。");
+        $(DOUBLE_SPOILER).html("ダブルスポイラーの稼ぎ");
+        $(DOUBLE_SPOILER_DESC).html("各撮影対象各機体で3つの閾値があり、それぞれで点数を設定しています。その後、あなたのスコアがどれだけ閾値より高いかに基づき増分します。");
         $(POFV_SURV).html("東方夢時空と東方花映塚のクリア重視");
         $(POFV_SURV_DESC).html("下式において、最大残機を夢時空で５、花映塚本編で７、花映塚エキストラでは８です。" +
         "ノーボムボーナスは難易度ごとに変わる、夢時空でのボムの不使用ボーナスと花映塚の（Ｃ１含む）チャージ攻撃の不使用ボーナスです。");
@@ -1677,6 +1696,7 @@ function generateText(firstTime) {
         $(NEW_WR).html("如果获得新世界纪录，你的分数即为最大值。否则，则按公式计算。");
         $(HRTP_SEPARATE).html("东方灵异传采用单独的计分方式。<a href='#hrtpScoring'>单击此处</a>以获取系统介绍。");
         $(MOF_SEPARATE).html("东方风神录采用单独的计分方式。<a href='#mountainOfFaith'>单击此处</a>以获取系统介绍。");
+        $(DS_SEPARATE).html("对抗新闻采用单独的计分方式。<a href='#doubleSpoiler'>单击此处</a>以获取系统介绍。");
         $(MAINGAME).html("当完成一项游戏，机体系数会影响DRC总分，结果会再次近似。<a href='#shottypeMultipliers'>单击此处</a>查看列表。");
         $(PHANTASMAGORIA_SEPARATE).html("东方梦时空和东方花映塚关卡采用单独的计分方式。<a href='#phantasmagoria'>单击此处</a>以获取系统介绍。");
         $(IN_LS).html("对于永夜抄，每收取一张LSC，则获得额外的2分（Easy难度为1分）。收取【不朽的弹幕】获得5分。");
@@ -1685,6 +1705,8 @@ function generateText(firstTime) {
         $(HRTP_SCORING_DESC).html("对于每个难度有一个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅取决于你的游戏内得分。");
         $(MOFAITH).html("东方风神录打分");
         $(MOFAITH_DESC).html("对于每个难度和机体有六个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅取决于你的游戏内得分。最大值是500。");
+        $(DOUBLE_SPOILER).html("对抗新闻打分");
+        $(DOUBLE_SPOILER_DESC).html("对于每个场景和机体有三个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅取决于你的游戏内得分。");
         $(POFV_SURV).html("东方梦时空和东方花映塚生存");
         $(POFV_SURV_DESC).html("在以下公式中，东方梦时空的最大残机数为5，东方花映塚故事模式为7，EX为8。NB奖分依难度而定。东方梦时空为NB奖分，东方花映塚为NC奖分。");
         $(SHOT_MULT).html("机体系数");
@@ -1792,6 +1814,10 @@ function translate(arg) {
             "Last Spells Captured": "ラストスペル取得",
             "Releases": "解放",
             "Score": "スコア",
+            "Scene": "撮影対象",
+            "Threshold 1": "第一閾値",
+            "Threshold 2": "第二閾値",
+            "Threshold 3": "第三閾値",
             "d ": "日",
             "h ": "時",
             "m ": "分",
@@ -1834,6 +1860,10 @@ function translate(arg) {
             "Last Spells Captured": "LSC收取数",
             "Releases": "季节解放数",
             "Score": "分数",
+            "Scene": "场景",
+            "Threshold 1": "第一阈值",
+            "Threshold 2": "第二阈值",
+            "Threshold 3": "第三阈值",
             "d ": "日",
             "h ": "时",
             "m ": "分",
@@ -1924,8 +1954,9 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
             $(PERFORMANCE).html(survOptions);
             $(MISSES_LABEL).html(translate("Misses"));
         } else {
-            $(PERFORMANCE).html(game == "DS" ? "<label for='scene'>Scene</label><select id='scene'><option>2-2</option><option>5-4</option><option>5-5</option><option>7-6</option>" +
-            "<option>10-1</option><option>10-2</option><option>12-2</option><option>12-8</option><option>EX-6</option><option>EX-9</option></select><br>" + SCORE_OPTIONS : SCORE_OPTIONS);
+            $(PERFORMANCE).html(game == "DS" ? "<label for='scene'>Scene</label><select id='scene'><option>2-2</option><option>2-3</option><option>2-4</option><option>5-2</option>" +
+            "<option>5-4</option><option>5-6</option><option>6-4</option><option>7-6</option><option>8-3</option><option>8-6</option><option>9-6</option><option>9-7</option>" +
+            "<option>10-6</option><option>12-3</option><option>12-4</option><option>12-8</option><option>EX-3</option><option>EX-9</option><option>SP-2</option></select><br>" + SCORE_OPTIONS : SCORE_OPTIONS);
             $(SCORE_LABEL).html(translate("Score"));
             $(NOTIFY).html("");
         }
@@ -2001,7 +2032,7 @@ function drcPoints() {
         }
         
         if (game == "DS") {
-            points = dsFormula(shottype);
+            points = dsFormula();
         } else if (game == "HRtP") {
             points = hrtpFormula(difficulty);
         } else if (game == "MoF") {
@@ -2138,9 +2169,9 @@ function hrtpFormula(difficulty) {
 }
 
 function determineIncrement(thresholds, i) {
-    var increment = (i === 1 ? 10 : 20), lowerBound = (i === 1 ? 0 : thresholds[i - 1]);
+    var increment = (i === 1 ? 10 : 20), lowerBound = (i === 1 ? 0 : thresholds[i - 1]) * 1000;
     
-    return (thresholds[i] - lowerBound) / increment;
+    return (thresholds[i] * 1000 - lowerBound) / increment;
 }
 
 function mofFormula(difficulty, shottype) {
@@ -2176,6 +2207,21 @@ function mofFormula(difficulty, shottype) {
     }
     
     return Math.min(Math.round(drcpoints), 500);
+}
+
+function dsFormula() {
+    var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), scene = $(SCENE).val(), thresholds = SCENE_THRESHOLDS[scene], drcpoints = 0, step, i;
+    
+    for (i = 2; i >= 0; i--) {
+        step = determineIncrement(thresholds, i + 1);
+        
+        while (score > thresholds[i] * 1000) {
+            drcpoints += 1;
+            score -= step;
+        }
+    }
+    
+    return drcpoints;
 }
 
 function bestSeason(difficulty, shottype) {
@@ -2293,9 +2339,9 @@ function abbreviateChinese(num) {
 
 function generateRubrics() {
     var id = 0, id2 = 3, game, difficulty, rubric, shottype, thresholds, scene, i;
-    $(DS_TABLE).html("");
     $(HRTP_TABLE).html("");
     $(MOF_TABLE).html("");
+    $(DS_TABLE).html("");
     $(SURV_TABLE).html("");
     $(SCORING_TABLE).html("");
     $(PHANTASMAGORIA).html("");
@@ -2381,11 +2427,6 @@ function generateRubrics() {
         }
     }
     
-    for (scene in SCENE_THRESHOLDS) {
-        thresholds = SCENE_THRESHOLDS[scene];
-        $(DS_TABLE).append("<tr><td>" + scene + "</td><td>" + sep(thresholds[1]) + "</td><td>" + sep(thresholds[2]) + "</td><td>" + sep(thresholds[3]) + "</td></tr>");
-    }
-    
     for (difficulty in HRTP_THRESHOLDS) {
         thresholds = HRTP_THRESHOLDS[difficulty];
         $(HRTP_TABLE).append("<tr><th colspan='12'>" + difficulty + "</th></tr>");
@@ -2431,6 +2472,24 @@ function generateRubrics() {
                     "</td><td>每" + abbreviateChinese(thresholds.step[i]) + "增加" + thresholds.increment[i] + "</td></tr>");
                 }
             }
+        }
+    }
+    
+    $(DS_TABLE).append("<tr><tr><th>" + translate("Scene") + "</th><th>" + translate("Threshold 1") +
+    "</th><th>" + translate("Threshold 2") + "</th><th>" + translate("Threshold 3") + "</th></tr></tr>");
+    
+    for (scene in SCENE_THRESHOLDS) {
+        thresholds = SCENE_THRESHOLDS[scene];
+        
+        if (language == "English") {
+            $(DS_TABLE).append("<tr><td>" + scene + "</td><td>" + sep(thresholds[1] * 1000) +
+            "</td><td>" + sep(thresholds[2] * 1000) + "</td><td>" + sep(thresholds[3] * 1000) + "</td></tr>");
+        } else if (language == "Japanese") {
+            $(DS_TABLE).append("<tr><td>" + scene + "</td><td>" + abbreviateJapanese(thresholds[1] * 1000) +
+            "</td><td>" + abbreviateJapanese(thresholds[2] * 1000) + "</td><td>" + abbreviateJapanese(thresholds[3] * 1000) + "</td></tr>");
+        } else {
+            $(DS_TABLE).append("<tr><td>" + scene + "</td><td>" + abbreviateChinese(thresholds[1] * 1000) +
+            "</td><td>" + abbreviateChinese(thresholds[2] * 1000) + "</td><td>" + abbreviateChinese(thresholds[3] * 1000) + "</td></tr>");
         }
     }
 }
