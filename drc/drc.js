@@ -2498,10 +2498,10 @@ function generateRubrics() {
         }
     }
     
-    $(DS_TABLE).append("<tr><th>" + translate("Scene") + "</th><th id='basePoints" + (id + 1) + ">" + translate("Base points") +
-    "</th><th id='increments" + (id + 1) + ">" + translate("Increments") + "</th><th id='threshold" + (id + 1) + "'>" + translate("Threshold 1") +
-    "</th><th id='increments" + (id + 2) + ">" + translate("Increments") + "</th><th id='threshold" + (id + 1) + "'>" + translate("Threshold 2") +
-    "</th><th id='increments" + (id + 3) + ">" + translate("Increments") + "</th><th id='threshold" + (id + 1) + "'>" + translate("Threshold 3") + "</th></tr>");
+    $(DS_TABLE).append("<tr><th>" + translate("Scene") + "</th><th id='basePoints" + (id + 1) + "'>" + translate("Base points") +
+    "</th><th id='increments" + (id + 1) + "'>" + translate("Increments") + "</th><th id='threshold" + (id + 1) + "'>" + translate("Threshold 1") +
+    "</th><th id='increments" + (id + 2) + "'>" + translate("Increments") + "</th><th id='threshold" + (id + 1) + "'>" + translate("Threshold 2") +
+    "</th><th id='increments" + (id + 3) + "'>" + translate("Increments") + "</th><th id='threshold" + (id + 1) + "'>" + translate("Threshold 3") + "</th></tr>");
     
     for (scene in SCENE_THRESHOLDS) {
         thresholds = SCENE_THRESHOLDS[scene];
