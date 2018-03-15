@@ -136,6 +136,7 @@
                 "bomb": 1
             },
             "multiplier": {
+                "ReimuA": 1.05,
                 "ReimuB": 1.05,
                 "MarisaB": 1.05
             }
@@ -268,8 +269,8 @@
             },
             "multiplier": {
                 "ReimuA": 1.05,
-                "MarisaB": 1.05,
-                "SakuyaA": 1.05
+                "MarisaA": 1.05,
+                "MarisaB": 1.05
             }
         },
         "IN": {
@@ -2293,6 +2294,8 @@ function scoringPoints(rubric, game, difficulty, shottype) {
         } else if (difficulty == "Lunatic") {
             wr = 165000000;
         }
+    } else if (game == "LoLK" && difficulty == "Lunatic" && shottype == "Reisen") {
+        wr = 3209081800;
     } else if (game == "HSiFS" && difficulty == "Hard") {
         wr = WRs[game][difficulty]["AyaAutumn"][0];
     } else {
