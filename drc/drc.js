@@ -1084,14 +1084,14 @@
     },
     SCENE_THRESHOLDS = {
         "2-2": [0, 170, 205, 225],
-        "2-3": [0, 130, 150, 163],
+        "2-3": [0, 135, 153, 164],
         "2-4": [0, 130, 155, 170],
         "5-2": [0, 300, 375, 400],
         "5-4": [0, 450, 600, 700],
         "5-6": [0, 385, 455, 490],
         "6-4": [0, 500, 700, 900],
         "7-6": [0, 1000, 1500, 1830],
-        "8-3": [0, 1500, 2900, 3120],
+        "8-3": [0, 2200, 2900, 3120],
         "8-6": [0, 450, 810, 900],
         "9-6": [0, 1000, 1900, 2400],
         "9-7": [0, 350, 550, 730],
@@ -2317,6 +2317,8 @@ function scoringPoints(rubric, game, difficulty, shottype) {
         } else if (difficulty == "Lunatic") {
             wr = 165000000;
         }
+    } else if (game == "EoSD" && difficulty == "Lunatic" && shottype == "ReimuA") {
+        wr = 558947670;
     } else if (game == "LoLK" && difficulty == "Lunatic" && shottype == "Reisen") {
         wr = 3209081800;
     } else if (game == "HSiFS" && difficulty == "Hard") {
