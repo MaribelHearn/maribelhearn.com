@@ -2402,8 +2402,7 @@ function allZeroes(string) {
 }
 
 function abbreviateJapanese(num) {
-    //var string = String(num), original = string, i = 0, rest;
-    var string = String(num), original = string, current = string.lastIndexOf("0"), index = string.length, count = 0;
+    var string = String(num), original = string, current = string.lastIndexOf("0"), index = string.length, count = -1;
     
     if (string.length < 5) {
         return string;
@@ -2425,23 +2424,6 @@ function abbreviateJapanese(num) {
     } else {
         return string.substr(0, index) + "." + string.substr(index, string.length) + (count == 2 ? "億" : "万");
     }
-    
-    /*if (string.indexOf("0000") == -1) {
-        return string;
-    }
-    
-    while (string.indexOf("0000") != -1) {
-        string = string.replace("0000", "");
-        i += 1;
-    }
-    
-    if (original.length >= 10) {
-        rest = string.substr(2, string.length).replace("000", "").replace("00", "");
-    
-        return string.substr(0, 2) + (rest === "" ? "" : "." + rest) + "億";
-    } else {
-        return string + "万";
-    }*/
 }
 
 function abbreviateChinese(num) {
