@@ -2421,9 +2421,9 @@ function abbreviateJapanese(num) {
     
     if (string.substr(index, string.length) === "") {
         if (count == 2) {
-            return string + zeroes(original.length - 9) + "億";
+            return string + (string.length < original.length - 9 ? zeroes(original.length - 9) : "") + "億";
         } else {
-            return string + zeroes(original.length - 5) + "万";
+            return string + (string.length < original.length - 5 ? zeroes(original.length - 5) : "") + "万";
         }
     } else {
         return string.substr(0, index) + "." + string.substr(index, string.length) + (count == 2 ? "億" : "万");
@@ -2450,9 +2450,9 @@ function abbreviateChinese(num) {
     
     if (string.substr(index, string.length) === "") {
         if (count == 2) {
-            return string + zeroes(original.length - 9) + "亿";
+            return string + (string.length < original.length - 9 ? zeroes(original.length - 9) : "") + "亿";
         } else {
-            return string + zeroes(original.length - 5) + "万";
+            return string + (string.length < original.length - 5 ? zeroes(original.length - 5) : "") + "万";
         }
     } else {
         return string.substr(0, index) + "." + string.substr(index, string.length) + (count == 2 ? "亿" : "万");
