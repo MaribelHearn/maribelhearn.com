@@ -1130,6 +1130,44 @@
         }
     };*/
     MOF_THRESHOLDS = {
+        "Easy": {
+            "ReimuA": {
+                "score": [1480000000, 1510000000, 1520000000, 1530000000, 1540000000],
+                "base": [220, 230, 250, 280, 320],
+                "increment": [1, 2, 3, 4, 5.5],
+                "step": [3000000, 1000000, 1000000, 1000000, 1000000]
+            },
+            "ReimuB": {
+                "score": [1500000000, 1530000000, 1540000000, 1550000000, 1560000000],
+                "base": [220, 230, 250, 280, 320],
+                "increment": [1, 2, 3, 4, 5.5],
+                "step": [3000000, 1000000, 1000000, 1000000, 1000000]
+            },
+            "ReimuC": {
+                "score": [1495000000, 1525000000, 1535000000, 1545000000, 1555000000],
+                "base": [220, 230, 250, 280, 320],
+                "increment": [1, 2, 3, 4, 5.5],
+                "step": [3000000, 1000000, 1000000, 1000000, 1000000]
+            },
+            "MarisaA": {
+                "score": [1495000000, 1525000000, 1535000000, 1545000000, 1555000000],
+                "base": [220, 230, 250, 280, 320],
+                "increment": [1, 2, 3, 4, 5.5],
+                "step": [3000000, 1000000, 1000000, 1000000, 1000000]
+            },
+            "MarisaB": {
+                "score": [1505000000, 1535000000, 1545000000, 1555000000, 1565000000],
+                "base": [220, 230, 250, 280, 320],
+                "increment": [1, 2, 3, 4, 5.5],
+                "step": [3000000, 1000000, 1000000, 1000000, 1000000]
+            },
+            "MarisaC": {
+                "score": [1510000000, 1540000000, 1550000000, 1560000000, 1570000000],
+                "base": [220, 230, 250, 280, 320],
+                "increment": [1, 2, 3, 4, 5.5],
+                "step": [3000000, 1000000, 1000000, 1000000, 1000000]
+            },
+        },
         "Lunatic": {
             "ReimuB": {
                 "score": [2000000000, 2100000000, 2150000000, 2170000000, 2180000000, 2190000000],
@@ -1444,7 +1482,7 @@ function generateText(firstTime) {
         //"Then, increments are done, dependent on how much higher than the threshold your score is.");
         $(MOFAITH).html("MoF Scoring");
         $(MOFAITH_DESC).html("For each difficulty and shottype there are six thresholds, at which you will have set numbers of points respectively. " +
-        "Then, increments are done, dependent on how much higher than the threshold your score is. The maximum is 500.");
+        "Then, increments are done, dependent on how much higher than the threshold your score is. The maximum is 375 on Easy and 500 on Lunatic.");
         $(DOUBLE_SPOILER).html("DS Scoring");
         $(DOUBLE_SPOILER_DESC).html("For each scene there are three thresholds, at which you will have set numbers of points points respectively. " +
         "Then, increments are done, dependent on how much higher than the threshold your score is.");
@@ -1563,11 +1601,11 @@ function generateText(firstTime) {
         $(MAINGAME).html("本編クリアではキャラ倍率がDRCポイントに掛けられます。その結果は四捨五入されます。キャラ倍率のリストは<a href='#shottypeMultipliers'>ここをクリック</a>。");
         $(PHANTASMAGORIA_SEPARATE).html("東方夢時空と東方花映塚では別のシステムを使います。その方式は<a href='#phantasmagoria'>ここをクリック</a>。");
         $(IN_LS).html("東方永夜抄ではラストスペルを取得する度に２点（Easyのみ１点）の追加点を得ます。「インペリシャブルシューティング」の追加点は５点とします。");
-        $(HSIFS_RELEASES).html("東方天空璋では、最初の季節解放は２ボム扱い、以降の解放は0.5、0.4、0.3、0.2、0.1ボム扱いとします。");
+        $(HSIFS_RELEASES).html("東方天空璋では、最初の季節解放は２ボム扱い、以降の解放は０.５、０.４、０.３、０.２、０.１ボム扱いとします。");
         //$(HRTP_SCORING).html("東方靈異伝の稼ぎ");
         //$(HRTP_SCORING_DESC).html("各難易度で閾値があり、それぞれで点数を設定しています。その後、あなたのスコアがどれだけ閾値より高いかに基づき増分します。");
         $(MOFAITH).html("東方風神録の稼ぎ");
-        $(MOFAITH_DESC).html("各難易度各機体で６つの閾値があり、それぞれで点数を設定しています。その後、あなたのスコアがどれだけ閾値より高いかに基づき増分します。最大点は500です。");
+        $(MOFAITH_DESC).html("各難易度各機体で６つの閾値があり、それぞれで点数を設定しています。その後、あなたのスコアがどれだけ閾値より高いかに基づき増分します。Easyの最大点は３７５です。Lunaticの最大点は５００です。");
         $(DOUBLE_SPOILER).html("ダブルスポイラーの稼ぎ");
         $(DOUBLE_SPOILER_DESC).html("各撮影対象各機体で3つの閾値があり、それぞれで点数を設定しています。その後、あなたのスコアがどれだけ閾値より高いかに基づき増分します。");
         $(POFV_SURV).html("東方夢時空と東方花映塚のクリア重視");
@@ -1729,7 +1767,7 @@ function generateText(firstTime) {
         //$(HRTP_SCORING).html("东方灵异传打分");
         //$(HRTP_SCORING_DESC).html("对于每个难度有一个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅取决于你的游戏内得分。");
         $(MOFAITH).html("东方风神录打分");
-        $(MOFAITH_DESC).html("对于每个难度和机体有六个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅取决于你的游戏内得分。最大值是500。");
+        $(MOFAITH_DESC).html("对于每个难度和机体有六个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅取决于你的游戏内得分。Easy最大值是375。Lunatic最大值是500。");
         $(DOUBLE_SPOILER).html("对抗新闻打分");
         $(DOUBLE_SPOILER_DESC).html("对于每个场景和机体有三个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅取决于你的游戏内得分。");
         $(POFV_SURV).html("东方梦时空和东方花映塚生存");
@@ -1829,6 +1867,7 @@ function translate(arg) {
             "If score < 10m, then: ||170*(Score/10m)^3||": "スコアが1000万よりも小さければ、||170*(スコア/1000万)^3||",
             "If score < 10m, then: ||175*(Score/10m)^3||": "スコアが1000万よりも小さければ、||175*(スコア/1000万)^3||",
             "If score < 13m, then: ||200*(Score/13m)^3||": "スコアが1300万よりも小さければ、||200*(スコア/1300万)^3||",
+            "If score < 1.5b, then: ||220*(Score/1.5b)^2||": "スコアが15億よりも小さければ、||220*(スコア/15億)^2||",
             "If score < 2b, then: ||200*(Score/2b)^2||": "スコアが20億よりも小さければ、||200*(スコア/20億)^2||",
             "Hide Rubrics": "ルーブリックを見せない",
             "Show Rubrics": "ルーブリックを見せて",
@@ -1876,6 +1915,7 @@ function translate(arg) {
             "If score < 10m, then: ||170*(Score/10m)^3||": "若分数小于1000万，||170*(分数/1000万)^3||",
             "If score < 10m, then: ||175*(Score/10m)^3||": "若分数小于1000万，||175*(分数/1000万)^3||",
             "If score < 13m, then: ||200*(Score/13m)^3||": "若分数小于1300万，||200*(分数/1000万)^3||",
+            "If score < 1.5b, then: ||220*(Score/1.5b)^2||": "若分数小于15亿，||220*(分数/15亿)^2||",
             "If score < 2b, then: ||200*(Score/2b)^2||": "若分数小于20亿，||200*(分数/20亿)^2||",
             "Hide Rubrics": "隐藏计算公式",
             "Show Rubrics": "显示计算公式",
@@ -2219,11 +2259,11 @@ function determineIncrement(thresholds, i) {
 function mofFormula(difficulty, shottype) {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), drcpoints = 0, originalScore = score, thresholds, i;
     
-    // rubric currently only determined for Lunatic ReimuB and Lunatic MarisaC
-    if (difficulty != "Lunatic") {
+    // rubric currently only determined for Easy, Lunatic ReimuB and Lunatic MarisaC
+    if (difficulty != "Easy" && difficulty != "Lunatic") {
         $(ERROR).html("<strong style='color:red'>" + translate("Error: ") + translate("the scoring rubrics for this difficulty are undetermined as of now.") + "</strong>");
         return drcpoints;
-    } else if (shottype != "ReimuB" && shottype != "MarisaC") {
+    } else if (difficulty == "Lunatic" && shottype != "ReimuB" && shottype != "MarisaC") {
         $(ERROR).html("<strong style='color:red'>" + translate("Error: ") + translate("the scoring rubrics for this shottype are undetermined as of now.") + "</strong>");
         return drcpoints;
     }
@@ -2231,7 +2271,7 @@ function mofFormula(difficulty, shottype) {
     thresholds = MOF_THRESHOLDS[difficulty][shottype];
     
     if (score < thresholds.score[0]) {
-        return Math.round(Math.pow((score / thresholds.score[0]), 2) * 200);
+        return Math.round(Math.pow((score / thresholds.score[0]), 2) * (difficulty == "Easy" ? 220 : 200));
     }
     
     for (i = thresholds.increment.length - 1; i >= 0; i--) {
@@ -2248,7 +2288,7 @@ function mofFormula(difficulty, shottype) {
         }
     }
     
-    return Math.min(Math.round(drcpoints), 500);
+    return Math.min(Math.round(drcpoints), (difficulty == "Easy" ? 375 : 500));
 }
 
 function dsFormula() {
@@ -2501,10 +2541,11 @@ function generateRubrics() {
         }
     }*/
     
-    $(MOF_TABLE).append("<tr><td colspan='12'>" + translate("If score < 2b, then: ||200*(Score/2b)^2||") + "</td></tr>");
             
     for (difficulty in MOF_THRESHOLDS) {
         $(MOF_TABLE).append("<tr><th colspan='12'>" + difficulty + "</th></tr>");
+        $(MOF_TABLE).append("<tr><td colspan='12'>" + (difficulty == "Easy" ? translate("If score < 1.5b, " +
+        "then: ||220*(Score/1.5b)^2||") : translate("If score < 2b, then: ||200*(Score/2b)^2||")) + "</td></tr>");
         
         for (shottype in MOF_THRESHOLDS[difficulty]) {
             $(MOF_TABLE).append("<tr><th colspan='3'>" + translateCharName(shottype) + "</th></tr>");
