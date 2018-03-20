@@ -2420,7 +2420,7 @@ function abbreviateJapanese(num) {
         count += 1;
     }
     
-    if (allZeroes(string.substr(index, string.length)) {
+    if (allZeroes(string.substr(index, string.length))) {
         return string + (count == 2 ? "億" : "万");
     } else {
         return string.substr(0, index) + "." + string.substr(index, string.length) + (count == 2 ? "億" : "万");
@@ -2462,7 +2462,7 @@ function abbreviateChinese(num) {
         count += 1;
     }
     
-    if (allZeroes(string.substr(index, string.length)) {
+    if (allZeroes(string.substr(index, string.length))) {
         return string + (count == 2 ? "亿" : "万");
     } else {
         return string.substr(0, index) + "." + string.substr(index, string.length) + (count == 2 ? "亿" : "万");
