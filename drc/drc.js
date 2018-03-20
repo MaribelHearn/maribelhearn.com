@@ -1867,7 +1867,7 @@ function translate(arg) {
             "If score < 10m, then: ||170*(Score/10m)^3||": "スコアが1000万よりも小さければ、||170*(スコア/1000万)^3||",
             "If score < 10m, then: ||175*(Score/10m)^3||": "スコアが1000万よりも小さければ、||175*(スコア/1000万)^3||",
             "If score < 13m, then: ||200*(Score/13m)^3||": "スコアが1300万よりも小さければ、||200*(スコア/1300万)^3||",
-            "If score < 1.5b, then: ||220*(Score/1.5b)^2||": "スコアが15億よりも小さければ、||220*(スコア/15億)^2||",
+            "If score < 1st threshold, then: ||220*(Score/T1)^2||": "スコアが第一閾値よりも小さければ、||220*(スコア/第一閾値)^2||",
             "If score < 2b, then: ||200*(Score/2b)^2||": "スコアが20億よりも小さければ、||200*(スコア/20億)^2||",
             "Hide Rubrics": "ルーブリックを見せない",
             "Show Rubrics": "ルーブリックを見せて",
@@ -1915,7 +1915,7 @@ function translate(arg) {
             "If score < 10m, then: ||170*(Score/10m)^3||": "若分数小于1000万，||170*(分数/1000万)^3||",
             "If score < 10m, then: ||175*(Score/10m)^3||": "若分数小于1000万，||175*(分数/1000万)^3||",
             "If score < 13m, then: ||200*(Score/13m)^3||": "若分数小于1300万，||200*(分数/1000万)^3||",
-            "If score < 1.5b, then: ||220*(Score/1.5b)^2||": "若分数小于15亿，||220*(分数/15亿)^2||",
+            "If score < 1st threshold, then: ||220*(Score/T1)^2||": "若分数小于第一阈值，||220*(分数/第一阈值)^2||",
             "If score < 2b, then: ||200*(Score/2b)^2||": "若分数小于20亿，||200*(分数/20亿)^2||",
             "Hide Rubrics": "隐藏计算公式",
             "Show Rubrics": "显示计算公式",
@@ -2107,7 +2107,7 @@ function drcPoints() {
         shottypeMultiplier = (SURV_RUBRICS[game].multiplier[shottype] ? SURV_RUBRICS[game].multiplier[shottype] : 1);
         points = (isPhantasmagoria(game) ? phantasmagoria(rubric, game, difficulty, shottypeMultiplier) : survivalPoints(rubric, game, difficulty, shottypeMultiplier));
     } else {
-        if (!(game == "MoF" && difficulty == "Lunatic") && game != "DS" && !SCORE_RUBRICS[game]) {
+        if (!(game == "MoF" && (difficulty == "Easy" || difficulty == "Lunatic")) && game != "DS" && !SCORE_RUBRICS[game]) {
             $(ERROR).html("<strong style='color:red'>" + translate("Error: ") + translate("the scoring rubrics for this game are undetermined as of now.") + "</strong>");
             $(DRCPOINTS).html(translate("Your DRC points for this run: ") + " <strong>0</strong>!");
             return;
@@ -2379,7 +2379,11 @@ function abbreviate(num) {
     }
     
     if (original.length >= 10) {
-        rest = string.substr(1, string.length).replace("00", "").replace("0", "");
+        rest = string.substr(1, string.length).replace("00", "");
+        
+        if (rest.lastIndexOf("0") == rest.length - 1) {
+            rest = rest.replace("0", "");
+        }
     
         return string.charAt(0) + (rest === "" ? "" : "." + rest) + "b";
     } else {
@@ -2544,8 +2548,8 @@ function generateRubrics() {
             
     for (difficulty in MOF_THRESHOLDS) {
         $(MOF_TABLE).append("<tr><th colspan='12'>" + difficulty + "</th></tr>");
-        $(MOF_TABLE).append("<tr><td colspan='12'>" + (difficulty == "Easy" ? translate("If score < 1.5b, " +
-        "then: ||220*(Score/1.5b)^2||") : translate("If score < 2b, then: ||200*(Score/2b)^2||")) + "</td></tr>");
+        $(MOF_TABLE).append("<tr><td colspan='12'>" + (difficulty == "Easy" ? translate("If score < 1st threshold, " +
+        "then: ||220*(Score/T1)^2||") : translate("If score < 2b, then: ||200*(Score/2b)^2||")) + "</td></tr>");
         
         for (shottype in MOF_THRESHOLDS[difficulty]) {
             $(MOF_TABLE).append("<tr><th colspan='3'>" + translateCharName(shottype) + "</th></tr>");
