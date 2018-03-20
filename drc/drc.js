@@ -2402,7 +2402,7 @@ function allZeroes(string) {
 }
 
 function abbreviateJapanese(num) {
-    var string = String(num), original = string, current = string.lastIndexOf("0"), index = string.length, count = -1;
+    var string = String(num), original = string, current = string.lastIndexOf("0"), index = string.length, count = 0;
     
     if (string.length < 5) {
         return string;
@@ -2414,7 +2414,7 @@ function abbreviateJapanese(num) {
     
     string = string.substr(0, current + 1);
     
-    while (index > 0) {
+    while (index - 4 > 0) {
         index -= 4;
         count += 1;
     }
@@ -2439,7 +2439,7 @@ function abbreviateChinese(num) {
     
     string = string.substr(0, current + 1);
     
-    while (index > 0) {
+    while (index - 4 > 0) {
         index -= 4;
         count += 1;
     }
