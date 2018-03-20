@@ -1605,7 +1605,7 @@ function generateText(firstTime) {
         //$(HRTP_SCORING).html("東方靈異伝の稼ぎ");
         //$(HRTP_SCORING_DESC).html("各難易度で閾値があり、それぞれで点数を設定しています。その後、あなたのスコアがどれだけ閾値より高いかに基づき増分します。");
         $(MOFAITH).html("東方風神録の稼ぎ");
-        $(MOFAITH_DESC).html("各難易度各機体で６つの閾値があり、それぞれで点数を設定しています。その後、あなたのスコアがどれだけ閾値より高いかに基づき増分します。Easyの最大点は３７５です。Lunaticの最大点は５００です。");
+        $(MOFAITH_DESC).html("各難易度各機体で６つの閾値があり、それぞれで点数を設定しています。その後、あなたのスコアがどれだけ閾値より高いかに基づき増分します。Easyの最大点は375です。Lunaticの最大点は500です。");
         $(DOUBLE_SPOILER).html("ダブルスポイラーの稼ぎ");
         $(DOUBLE_SPOILER_DESC).html("各撮影対象各機体で3つの閾値があり、それぞれで点数を設定しています。その後、あなたのスコアがどれだけ閾値より高いかに基づき増分します。");
         $(POFV_SURV).html("東方夢時空と東方花映塚のクリア重視");
@@ -1665,7 +1665,7 @@ function generateText(firstTime) {
         $(THRESHOLD + "7").html("第二閾値");
         $(THRESHOLD + "8").html("第三閾値");
         
-        for (i = 0; i < 9; i++) {
+        for (i = 0; i < 11; i++) {
             $(INCREMENTS + i).html("増加");
         }
         
@@ -1825,7 +1825,7 @@ function generateText(firstTime) {
         $(THRESHOLD + "7").html("第二阈值");
         $(THRESHOLD + "8").html("第三阈值");
         
-        for (i = 0; i < 9; i++) {
+        for (i = 0; i < 11; i++) {
             $(INCREMENTS + i).html("增幅");
         }
         
@@ -2391,10 +2391,42 @@ function abbreviate(num) {
     }
 }
 
-function abbreviateJapanese(num) {
-    var string = String(num), original = string, i = 0, rest;
+function allZeroes(string) {
+    for (var i in string) {
+        if (string.charAt(i) !== "0") {
+            return false;
+        }
+    }
     
-    if (string.indexOf("0000") == -1) {
+    return true;
+}
+
+function abbreviateJapanese(num) {
+    //var string = String(num), original = string, i = 0, rest;
+    var string = String(num), original = string, current = string.lastIndexOf("0"), index = string.length, count = 0;
+    
+    if (string.length < 5) {
+        return string;
+    }
+    
+    while (string.charAt(current) == "0") {
+        current -= 1;
+    }
+    
+    string = string.substr(0, current + 1);
+    
+    while (index > 0) {
+        index -= 4;
+        count += 1;
+    }
+    
+    if (allZeroes(string.substr(index, string.length)) {
+        return string + (count == 2 ? "億" : "万");
+    } else {
+        return string.substr(0, index) + "." + string.substr(index, string.length) + (count == 2 ? "億" : "万");
+    }
+    
+    /*if (string.indexOf("0000") == -1) {
         return string;
     }
     
@@ -2409,27 +2441,31 @@ function abbreviateJapanese(num) {
         return string.substr(0, 2) + (rest === "" ? "" : "." + rest) + "億";
     } else {
         return string + "万";
-    }
+    }*/
 }
 
 function abbreviateChinese(num) {
-    var string = String(num), original = string, i = 0, rest;
+    var string = String(num), original = string, current = string.lastIndexOf("0"), index = string.length, count = 0;
     
-    if (string.indexOf("0000") == -1) {
+    if (string.length < 5) {
         return string;
     }
     
-    while (string.indexOf("0000") != -1) {
-        string = string.replace("0000", "");
-        i += 1;
+    while (string.charAt(current) == "0") {
+        current -= 1;
     }
     
-    if (original.length >= 10) {
-        rest = string.substr(2, string.length).replace("000", "").replace("00", "");
+    string = string.substr(0, current + 1);
     
-        return string.substr(0, 2) + (rest === "" ? "" : "." + rest) + "亿";
+    while (index > 0) {
+        index -= 4;
+        count += 1;
+    }
+    
+    if (allZeroes(string.substr(index, string.length)) {
+        return string + (count == 2 ? "亿" : "万");
     } else {
-        return string + "万";
+        return string.substr(0, index) + "." + string.substr(index, string.length) + (count == 2 ? "亿" : "万");
     }
 }
 
