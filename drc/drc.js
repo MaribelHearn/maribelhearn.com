@@ -2391,6 +2391,16 @@ function abbreviate(num) {
     }
 }
 
+function zeroes(num) {
+    var result = "", i;
+    
+    for (i = 0; i < num; i++) {
+        result += "0";
+    }
+    
+    return result;
+}
+
 function abbreviateJapanese(num) {
     var string = String(num), original = string, current = string.lastIndexOf("0"), index = string.length, count = 0;
     
@@ -2410,7 +2420,11 @@ function abbreviateJapanese(num) {
     }
     
     if (string.substr(index, string.length) === "") {
-        return string + (count == 2 ? "億" : "万");
+        if (count == 2) {
+            return string + zeroes(original.length - 9) + "億";
+        } else {
+            return string + zeroes(original.length - 5) + "万";
+        }
     } else {
         return string.substr(0, index) + "." + string.substr(index, string.length) + (count == 2 ? "億" : "万");
     }
@@ -2435,7 +2449,11 @@ function abbreviateChinese(num) {
     }
     
     if (string.substr(index, string.length) === "") {
-        return string + (count == 2 ? "亿" : "万");
+        if (count == 2) {
+            return string + zeroes(original.length - 9) + "亿";
+        } else {
+            return string + zeroes(original.length - 5) + "万";
+        }
     } else {
         return string.substr(0, index) + "." + string.substr(index, string.length) + (count == 2 ? "亿" : "万");
     }
