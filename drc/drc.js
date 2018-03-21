@@ -2257,7 +2257,7 @@ function determineIncrement(thresholds, i) {
 }
 
 function mofFormula(difficulty, shottype) {
-    var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), drcpoints = 0, originalScore = score, thresholds, i;
+    var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), drcpoints = 0, originalScore = score, thresholds, increment, step, i;
     
     // rubric currently only determined for Easy, Lunatic ReimuB and Lunatic MarisaC
     if (difficulty != "Easy" && difficulty != "Lunatic") {
@@ -2274,7 +2274,7 @@ function mofFormula(difficulty, shottype) {
         return Math.round(Math.pow((score / thresholds.score[0]), 2) * (difficulty == "Easy" ? 220 : 200));
     }
     
-    for (i = thresholds.increment.length - 1; i >= 0; i--) {
+    /*for (i = thresholds.increment.length - 1; i >= 0; i--) {
         drcpoints = thresholds.base[i];
         step = thresholds.step[i];
         
@@ -2285,6 +2285,17 @@ function mofFormula(difficulty, shottype) {
             }
             
             break;
+        }
+    }*/
+    
+    for (i = thresholds.increment.length - 1; i >= 0; i--) {
+        increment = thresholds.increment[i];
+        drcpoints = thresholds.base[i];
+        step = thresholds.step[i];
+        
+        while (score > thresholds.score[i]) {
+            drcpoints += increment;
+            score -= step;
         }
     }
     
