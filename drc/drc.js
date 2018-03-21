@@ -2294,7 +2294,7 @@ function mofFormula(difficulty, shottype) {
         increment = thresholds.increment[i];
         step = thresholds.step[i];
         
-        while (score - step > thresholds.score[i]) {
+        while (score - step >= thresholds.score[i]) {
             drcpoints += increment;
             score -= step;
         }
