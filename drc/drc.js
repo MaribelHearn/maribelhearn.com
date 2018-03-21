@@ -2298,8 +2298,6 @@ function mofFormula(difficulty, shottype) {
             drcpoints += increment;
             score -= step;
         }
-        
-        score = Math.min(score, thresholds.score[i - 1]);
     }
     
     return Math.min(Math.round(drcpoints), (difficulty == "Easy" ? 375 : 500));
