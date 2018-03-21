@@ -2621,9 +2621,9 @@ function generateRubrics() {
             "</td><td>" + sep(n3) + "</td></tr>");
         } else if (language == "Japanese") {
             $(DS_TABLE).append("<tr><td>" + scene + "</td><td>0</td><td>ごとに+" + abbreviateJapanese(step1) +
-            "を</td><td>" + abbreviateJapanese(n1) + "</td><td>ごとに+" + abbreviateJapanese(step2) +
-            "を</td><td>" + abbreviateJapanese(n2) + "</td><td>ごとに+ " + abbreviateJapanese(step3) +
-            "を</td><td>" + abbreviateJapanese(n3) + "</td></tr>");
+            "を</td><td>" + abbreviateJapanese(n1) + "</td><td>" + abbreviateJapanese(step2) +
+            "ごとに+1を</td><td>" + abbreviateJapanese(n2) + "</td><td>" + abbreviateJapanese(step3) +
+            "ごとに+1を</td><td>" + abbreviateJapanese(n3) + "</td></tr>");
         } else {
             $(DS_TABLE).append("<tr><td>" + scene + "</td><td>0</td><td>每" + abbreviateChinese(step1) +
             "增加1</td><td>" + abbreviateChinese(n1) + "</td><td>每" + abbreviateChinese(step2) +
