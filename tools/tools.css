@@ -1,0 +1,57 @@
+body {
+	background: url('tools.jpg') top no-repeat fixed;
+}
+div {
+    background-color: #FFFFFF;
+}
+h1 {
+    font: 48px 'monotype corsiva';
+}
+h2 {
+    font: 36px 'monotype corsiva';
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+table, tr, th, td {
+    border: none;
+}
+.code {
+    font-family: 'courier new';
+}
+#wrap {
+    border: 1px solid black;
+    text-align: center;
+    margin-left: 23%;
+    margin-right: 23%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    opacity: 0.8;
+    font: 14px verdana, sans-serif;
+}
+@media only screen and (min-width: 800px) and (max-width: 1400px) {
+    #wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
+@media only screen and (max-width: 800px) {
+    #wrap {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
+	#wrap {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+}
+@media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
+	#wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
