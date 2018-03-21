@@ -2250,12 +2250,6 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
     return Math.min(drcpoints, thresholds.cap);
 }*/
 
-function determineIncrement(thresholds, i) {
-    var increment = (i === 1 ? 10 : 20), lowerBound = (i === 1 ? 0 : thresholds[i - 1]) * 1000;
-    
-    return (thresholds[i] * 1000 - lowerBound) / increment;
-}
-
 function mofFormula(difficulty, shottype) {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), drcpoints = 0, originalScore = score, thresholds, increment, step, i;
     
@@ -2274,20 +2268,6 @@ function mofFormula(difficulty, shottype) {
         return Math.round(Math.pow((score / thresholds.score[0]), 2) * (difficulty == "Easy" ? 220 : 200));
     }
     
-    /*for (i = thresholds.increment.length - 1; i >= 0; i--) {
-        drcpoints = thresholds.base[i];
-        step = thresholds.step[i];
-        
-        if (score >= thresholds.score[i]) {
-            while (score > thresholds.score[i]) {
-                drcpoints += thresholds.increment[i];
-                score -= step;
-            }
-            
-            break;
-        }
-    }*/
-    
     drcpoints = thresholds.base[0];
     
     for (i = thresholds.increment.length - 1; i >= 0; i--) {
@@ -2303,10 +2283,20 @@ function mofFormula(difficulty, shottype) {
     return Math.min(Math.round(drcpoints), (difficulty == "Easy" ? 375 : 500));
 }
 
+function determineIncrement(thresholds, i) {
+    if (i == 4) {
+        i = 3;
+    }
+    
+    var increment = (i === 1 ? 10 : 20), lowerBound = thresholds[i - 1] * 1000;
+    
+    return (thresholds[i] * 1000 - lowerBound) / increment;
+}
+
 function dsFormula() {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), scene = $(SCENE).val(), thresholds = SCENE_THRESHOLDS[scene], drcpoints = 0, step, i;
     
-    for (i = 2; i >= 0; i--) {
+    for (i = 3; i >= 0; i--) {
         step = determineIncrement(thresholds, i + 1);
         
         while (score - step >= thresholds[i] * 1000) {
