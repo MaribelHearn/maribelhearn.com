@@ -21,6 +21,9 @@ h2 {
     opacity: 0.8;
     font: 14px verdana, sans-serif;
 }
+#jargontable, #spelltable {
+    text-align: justify;
+}
 .jargon {
     width: 150px;
 }
