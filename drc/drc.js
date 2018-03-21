@@ -2610,23 +2610,24 @@ function generateRubrics() {
         n1 = thresholds[1] * 1000;
         n2 = thresholds[2] * 1000;
         n3 = thresholds[3] * 1000;
-        step1 = Math.round((n2 - n1) / 10);
-        step2 = Math.round((n3 - n2) / 20);
+        step1 = Math.round(n1 / 10);
+        step2 = Math.round((n2 - n1) / 20);
+        step3 = Math.round((n3 - n2) / 20);
         
         if (language == "English") {
             $(DS_TABLE).append("<tr><td>" + scene + "</td><td>0</td><td>+1 for every " + sep(step1) +
             "</td><td>" + sep(n1) + "</td><td>+1 for every " + sep(step2) +
-            "</td><td>" + sep(n2) + "</td><td>+1 for every " + sep(step2) +
+            "</td><td>" + sep(n2) + "</td><td>+1 for every " + sep(step3) +
             "</td><td>" + sep(n3) + "</td></tr>");
         } else if (language == "Japanese") {
             $(DS_TABLE).append("<tr><td>" + scene + "</td><td>0</td><td>ごとに+" + abbreviateJapanese(step1) +
             "を</td><td>" + abbreviateJapanese(n1) + "</td><td>ごとに+" + abbreviateJapanese(step2) +
-            "を</td><td>" + abbreviateJapanese(n2) + "</td><td>ごとに+ " + abbreviateJapanese(step2) +
+            "を</td><td>" + abbreviateJapanese(n2) + "</td><td>ごとに+ " + abbreviateJapanese(step3) +
             "を</td><td>" + abbreviateJapanese(n3) + "</td></tr>");
         } else {
             $(DS_TABLE).append("<tr><td>" + scene + "</td><td>0</td><td>每" + abbreviateChinese(step1) +
             "增加1</td><td>" + abbreviateChinese(n1) + "</td><td>每" + abbreviateChinese(step2) +
-            "增加1</td><td>" + abbreviateChinese(n2) + "</td><td>每" + abbreviateChinese(step2) +
+            "增加1</td><td>" + abbreviateChinese(n2) + "</td><td>每" + abbreviateChinese(step3) +
             "增加1</td><td>" + abbreviateChinese(n3) + "</td></tr>");
         }
     }
