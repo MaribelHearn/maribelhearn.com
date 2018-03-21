@@ -2620,8 +2620,8 @@ function generateRubrics() {
             "</td><td>" + sep(n2) + "</td><td>+1 for every " + sep(step3) +
             "</td><td>" + sep(n3) + "</td></tr>");
         } else if (language == "Japanese") {
-            $(DS_TABLE).append("<tr><td>" + scene + "</td><td>0</td><td>ごとに+" + abbreviateJapanese(step1) +
-            "を</td><td>" + abbreviateJapanese(n1) + "</td><td>" + abbreviateJapanese(step2) +
+            $(DS_TABLE).append("<tr><td>" + scene + "</td><td>0</td><td>" + abbreviateJapanese(step1) +
+            "ごとに+1を</td><td>" + abbreviateJapanese(n1) + "</td><td>" + abbreviateJapanese(step2) +
             "ごとに+1を</td><td>" + abbreviateJapanese(n2) + "</td><td>" + abbreviateJapanese(step3) +
             "ごとに+1を</td><td>" + abbreviateJapanese(n3) + "</td></tr>");
         } else {
