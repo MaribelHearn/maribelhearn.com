@@ -2309,7 +2309,7 @@ function dsFormula() {
     for (i = 2; i >= 0; i--) {
         step = determineIncrement(thresholds, i + 1);
         
-        while (score > thresholds[i] * 1000) {
+        while (score - step > thresholds[i] * 1000) {
             drcpoints += 1;
             score -= step;
         }
