@@ -2288,15 +2288,18 @@ function mofFormula(difficulty, shottype) {
         }
     }*/
     
+    drcpoints = thresholds.base[0];
+    
     for (i = thresholds.increment.length - 1; i >= 0; i--) {
         increment = thresholds.increment[i];
-        drcpoints = thresholds.base[i];
         step = thresholds.step[i];
         
-        while (score > thresholds.score[i]) {
+        while (score - step > thresholds.score[i]) {
             drcpoints += increment;
             score -= step;
         }
+        
+        score = Math.min(score, thresholds.score[i - 1]);
     }
     
     return Math.min(Math.round(drcpoints), (difficulty == "Easy" ? 375 : 500));
