@@ -53,6 +53,9 @@ h2 {
     .jargon {
         width: auto;
     }
+    #jargontable, #spelltable {
+        text-align: default;
+    }
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
 	#wrap {
@@ -61,5 +64,8 @@ h2 {
     }
     .jargon {
         width: auto;
+    }
+    #jargontable, #spelltable {
+        text-align: default;
     }
 }
