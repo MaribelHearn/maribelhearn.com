@@ -2361,6 +2361,8 @@ function scoringPoints(rubric, game, difficulty, shottype) {
         }
     } else if (game == "EoSD" && difficulty == "Lunatic" && shottype == "ReimuA") {
         wr = 558947670;
+    } else if (game == "UFO" && difficulty == "Lunatic" && shottype == "MarisaA") {
+        wr = 3292353200;
     } else if (game == "LoLK" && difficulty == "Lunatic" && shottype == "Reisen") {
         wr = 3209081800;
     } else if (game == "HSiFS" && difficulty == "Hard") {
