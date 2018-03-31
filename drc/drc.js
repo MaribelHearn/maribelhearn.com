@@ -1657,13 +1657,13 @@ function generateText(firstTime) {
             $(MAX_POINTS + i).html("最大点");
         }
         
-        for (i = 0; i < 6; i++) {
+        for (i = 0; i < 8; i++) {
             $(THRESHOLD + i).html("閾値");
         }
         
-        $(THRESHOLD + "6").html("第一閾値");
-        $(THRESHOLD + "7").html("第二閾値");
-        $(THRESHOLD + "8").html("第三閾値");
+        $(THRESHOLD + "8").html("第一閾値");
+        $(THRESHOLD + "9").html("第二閾値");
+        $(THRESHOLD + "10").html("第三閾値");
         
         for (i = 0; i < 11; i++) {
             $(INCREMENTS + i).html("増加");
@@ -1817,13 +1817,13 @@ function generateText(firstTime) {
             $(MAX_POINTS + i).html("最大值");
         }
         
-        for (i = 0; i < 6; i++) {
+        for (i = 0; i < 8; i++) {
             $(THRESHOLD + i).html("阈值");
         }
         
-        $(THRESHOLD + "6").html("第一阈值");
-        $(THRESHOLD + "7").html("第二阈值");
-        $(THRESHOLD + "8").html("第三阈值");
+        $(THRESHOLD + "8").html("第一阈值");
+        $(THRESHOLD + "9").html("第二阈值");
+        $(THRESHOLD + "10").html("第三阈值");
         
         for (i = 0; i < 11; i++) {
             $(INCREMENTS + i).html("增幅");
