@@ -2593,7 +2593,7 @@ function generateRubrics() {
                     "</td><td>+" + thresholds.increment[i] + " for every " + abbreviate(thresholds.step[i]) + "</td></tr>");
                 } else if (language == "Japanese") {
                     $(MOF_TABLE).append("<tr><td>" + abbreviateJapanese(thresholds.score[i]) + "</td><td>" + thresholds.base[i] +
-                    "</td><td>" + abbreviateJapanese(thresholds.step[i]) + "ごとに+" + thresholds.increment[i] + "を</td></tr>");
+                    "</td><td>" + abbreviateJapanese(thresholds.step[i]) + "ごとに+" + thresholds.increment[i] + "</td></tr>");
                 } else {
                     $(MOF_TABLE).append("<tr><td>" + abbreviateChinese(thresholds.score[i]) + "</td><td>" + thresholds.base[i] +
                     "</td><td>每" + abbreviateChinese(thresholds.step[i]) + "增加" + thresholds.increment[i] + "</td></tr>");
@@ -2623,9 +2623,9 @@ function generateRubrics() {
             "</td><td>" + sep(n3) + "</td></tr>");
         } else if (language == "Japanese") {
             $(DS_TABLE).append("<tr><td>" + scene + "</td><td>0</td><td>" + abbreviateJapanese(step1) +
-            "ごとに+1を</td><td>" + abbreviateJapanese(n1) + "</td><td>" + abbreviateJapanese(step2) +
-            "ごとに+1を</td><td>" + abbreviateJapanese(n2) + "</td><td>" + abbreviateJapanese(step3) +
-            "ごとに+1を</td><td>" + abbreviateJapanese(n3) + "</td></tr>");
+            "ごとに+1</td><td>" + abbreviateJapanese(n1) + "</td><td>" + abbreviateJapanese(step2) +
+            "ごとに+1</td><td>" + abbreviateJapanese(n2) + "</td><td>" + abbreviateJapanese(step3) +
+            "ごとに+1</td><td>" + abbreviateJapanese(n3) + "</td></tr>");
         } else {
             $(DS_TABLE).append("<tr><td>" + scene + "</td><td>0</td><td>每" + abbreviateChinese(step1) +
             "增加1</td><td>" + abbreviateChinese(n1) + "</td><td>每" + abbreviateChinese(step2) +
