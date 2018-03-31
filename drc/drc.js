@@ -1661,9 +1661,9 @@ function generateText(firstTime) {
             $(THRESHOLD + i).html("閾値");
         }
         
-        $(THRESHOLD + "8").html("第一閾値");
-        $(THRESHOLD + "9").html("第二閾値");
-        $(THRESHOLD + "10").html("第三閾値");
+        $(THRESHOLD + "8").html("閾値1");
+        $(THRESHOLD + "9").html("閾値2");
+        $(THRESHOLD + "10").html("閾値3");
         
         for (i = 0; i < 11; i++) {
             $(INCREMENTS + i).html("増加");
