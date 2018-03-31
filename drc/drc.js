@@ -1649,7 +1649,7 @@ function generateText(firstTime) {
             $(GAME + i).html("ゲーム");
         }
         
-        for (i = 0; i < 7; i++) {
+        for (i = 0; i < 8; i++) {
             $(BASE_POINTS + i).html("素点");
         }
         
@@ -1809,7 +1809,7 @@ function generateText(firstTime) {
             $(GAME + i).html("游戏");
         }
         
-        for (i = 0; i < 7; i++) {
+        for (i = 0; i < 8; i++) {
             $(BASE_POINTS + i).html("基数分");
         }
         
@@ -1883,9 +1883,9 @@ function translate(arg) {
             "Releases": "解放",
             "Score": "スコア",
             "Scene": "撮影対象",
-            "Threshold 1": "第一閾値",
-            "Threshold 2": "第二閾値",
-            "Threshold 3": "第三閾値",
+            "Threshold 1": "閾値1",
+            "Threshold 2": "閾値2",
+            "Threshold 3": "閾値3",
             "Base points": "素点",
             "d ": "日",
             "h ": "時",
