@@ -75,6 +75,9 @@ input[type=text] {
 .cover {
     width: 50px;
 }
+.noborders {
+    border: none;
+}
 @media only screen and (min-width: 800px) and (max-width: 1400px) {
     #wrap {
         margin-left: 15%;
