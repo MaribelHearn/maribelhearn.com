@@ -24,6 +24,12 @@ input[type=text] {
 #contents {
     border: 1px solid black;
 }
+#checkboxes tbody:after {
+    content: "\200C";
+    display: block;
+    line-height: 1em;
+    color: black;
+}
 #table {
     margin-top: 15px;
     margin-left: auto;
