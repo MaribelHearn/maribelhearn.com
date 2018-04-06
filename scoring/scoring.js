@@ -1,4 +1,4 @@
-﻿var WRs, NUMBER_OF_GAMES = 16, scores = {
+﻿var WRs, NUMBER_OF_GAMES = 16, tracked = ["EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"], untracked = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "PoFV"], scores = {
   "HRtP": {
     "Easy": {
       "Makai": 0,
@@ -799,7 +799,7 @@ function checkAll() {
         $("#untracked").prop("checked", false);
     }
     
-    for (var key in all) {
+    for (var key in scores) {
         if (checked) {
             show(all[key], false);
         } else {
