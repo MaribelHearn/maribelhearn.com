@@ -24,6 +24,9 @@ input[type=text] {
 #contents {
     border: 1px solid black;
 }
+#checkboxes, #checkboxes td {
+    border: 1px solid black;
+}
 #checkboxes tbody:after {
     content: "\200C";
     display: block;
