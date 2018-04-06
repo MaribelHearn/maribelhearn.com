@@ -740,6 +740,74 @@
   }
 };
 
+function show(game, skip) {
+    $("#" + game).css("display", "block");
+    
+    if (!$("#" + game + "c").is(":checked")) {
+        $("#" + game + "c").prop("checked", true);
+    }
+}
+
+function hide(game, skip) {
+    $("#" + game).css("display", "none");
+    
+    if ($("#" + game + "c").is(":checked")) {
+        $("#" + game + "c").prop("checked", false);
+    }
+}
+
+function checkGame(arg) {
+    if ($("#" + arg + "c").is(":checked")) {
+        show(arg, true);
+    } else {
+        hide(arg, true);
+    }
+}
+
+function checkTracked() {
+    var checked = $("#tracked").is(":checked");
+    
+    for (var key in tracked) {
+        if (checked) {
+            show(tracked[key], false);
+        } else {
+            hide(tracked[key], false);
+        }
+    }
+}
+
+function checkUntracked() {
+    var checked = $("#untracked").is(":checked");
+    
+    for (var key in untracked) {
+        if (checked) {
+            show(untracked[key], false);
+        } else {
+            hide(untracked[key], false);
+        }
+    }
+}
+
+function checkAll() {
+    var checked = $("#all").is(":checked");
+    
+    if (checked) {
+        $("#tracked").prop("checked", true);
+        $("#untracked").prop("checked", true);
+    } else {
+        $("#tracked").prop("checked", false);
+        $("#untracked").prop("checked", false);
+    }
+    
+    for (var key in all) {
+        if (checked) {
+            show(all[key], false);
+        } else {
+            hide(all[key], false);
+        }
+    }
+}
+
 var calc = function () {
     var top = {}, averages = {}, total = 0, categories = 0, highest = 0,
         game, difficulty, id, span, score, shottype, wr, percentage, wrText, average, table, gameTable,
@@ -754,6 +822,10 @@ var calc = function () {
     }
     
     for (game in WRs) {
+        if ($("#" + game).css("display") == "none") {
+            continue;
+        }
+        
         total = 0;
         categories = 0;
         
