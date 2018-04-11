@@ -48,7 +48,7 @@ $(document).ready(function() {
             gamecount = 0;
             
             for (shottype in LNNs[game]) {
-                if (game != "IN" && game != "UFO" && game != "HSiFS" || (game == "IN" && shottype.contains("FinalA")) || (game == "UFO" && !shottype.contains("UFOs")) || (game == "HSiFS" && shottype.contains("Spring"))) {
+                if (game != "IN" && game != "HSiFS" || (game == "IN" && shottype.contains("FinalA")) || (game == "HSiFS" && shottype.contains("Spring"))) {
                     shotplayers = [];
                     shotplayersIN = [];
                     shotcount = 0;
@@ -58,15 +58,11 @@ $(document).ready(function() {
                 
                 if (game == "IN" || game == "UFO" || game == "HSiFS") {
                     type = shottype.replace(character, "");
-                    
-                    if (type !== "") {
-                        type = " (" + type + ")";
-                    }
                 }
                 
                 for (i in LNNs[game][shottype]) {
                     player = LNNs[game][shottype][i];
-                    shotplayers.push(player + (game == "IN" || game == "UFO" || game == "HSiFS" ? type : ""));
+                    shotplayers.push(player + (game == "IN" || game == "UFO" || game == "HSiFS" ? " (" + type + ")" : ""));
                     shotplayersIN.pushStrict(player);
                     
                     if (!playerLNNs.hasOwnProperty(player)) {
@@ -90,7 +86,7 @@ $(document).ready(function() {
                     shotcount += 1;
                 }
                 
-                if (!(game == "IN" && type != "FinalB") && !(game == "UFO" && type != "UFOs") && !(game == "HSiFS" && type != "Winter")) {
+                if (!(game == "IN" && type != "FinalB") && !(game == "HSiFS" && type != "Winter")) {
                     shotplayers.sort();
                     $("#" + game + character + "n").html(shotcount + (game == "IN" ? " (" + shotplayersIN.length + ")" : ""));
                     
