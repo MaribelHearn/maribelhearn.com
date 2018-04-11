@@ -48,7 +48,7 @@ $(document).ready(function() {
             gamecount = 0;
             
             for (shottype in LNNs[game]) {
-                if (game != "IN" && game != "HSiFS" || (game == "IN" && shottype.contains("FinalA")) || (game == "UFO" && !shottype.contains("UFOs")) || (game == "HSiFS" && shottype.contains("Spring"))) {
+                if (game != "IN" && game != "UFO" && game != "HSiFS" || (game == "IN" && shottype.contains("FinalA")) || (game == "UFO" && !shottype.contains("UFOs")) || (game == "HSiFS" && shottype.contains("Spring"))) {
                     shotplayers = [];
                     shotplayersIN = [];
                     shotcount = 0;
@@ -61,6 +61,8 @@ $(document).ready(function() {
                     
                     if (type !== "") {
                         typeString = " (" + type + ")";
+                    } else {
+                        typeString = "";
                     }
                 }
                 
