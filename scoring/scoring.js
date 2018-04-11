@@ -801,9 +801,9 @@ function checkAll() {
     
     for (var key in scores) {
         if (checked) {
-            show(all[key], false);
+            show(scores[key], false);
         } else {
-            hide(all[key], false);
+            hide(scores[key], false);
         }
     }
 }
