@@ -4,12 +4,15 @@ body {
 div {
     background-color: #FFFFFF;
 }
+/*
 h1 {
-    font: 48px 'monotype corsiva';
+    font-family:'Elise', 'cursive';
 }
+
 h2 {
     font: 36px 'monotype corsiva';
 }
+*/
 table {
     margin-left: auto;
     margin-right: auto;
