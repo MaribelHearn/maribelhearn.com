@@ -6,7 +6,7 @@ div {
     background-color: #FFFFFF;
 }
 h1 {
-    font: 48px times new roman;
+    font-family: 'Libre Baskerville';
 }
 #wrap {
     border: 1px solid black;
