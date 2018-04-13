@@ -6,10 +6,12 @@ div {
     background-color: #FFFFFF;
 }
 h1 {
-    font: 48px monotype corsiva;
+	font-family: 'Felipa';
+	font-size: 48px
 }
 h2 {
-    font: 36px monotype corsiva;
+	font-family: 'Felipa';
+	font-size: 36px
 }
 p {
     margin: 10px;
