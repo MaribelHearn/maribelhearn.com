@@ -5,16 +5,16 @@ div {
     background-color: #FFFFFF;
 }
 h1 {
-	    font-family: 'Felipa';
-		font-size: 48px
+    font-family: 'Felipa';
+    font-size: 48px
 }
 h2 {
-		font-family: 'Felipa';
-		font-size: 36px
+    font-family: 'Felipa';
+    font-size: 36px
 }
 h3 {
-		font-family: 'Felipa';
-		font-size: 24px
+    font-family: 'Felipa';
+    font-size: 24px
 }
 table {
     margin-left: auto;
@@ -37,15 +37,18 @@ table {
 #chars_table.sortable tbody, #music_table.sortable tbody, #works_table.sortable tbody {
     counter-reset: sortabletablescope;
 }
-#chars_table.sortable thead tr::before, #music_table.sortable thead tr::before, #works_table.sortable thead tr::before {
+#chars_head, #music_head, #works_head {
     content: "";
     display: table-cell;
 }
-#chars_table.sortable tbody tr::before, #music_table.sortable tbody tr::before, #works_table.sortable tbody tr::before {
+#chars_table.sortable tbody tr:before, #music_table.sortable tbody tr:before, #works_table.sortable tbody tr:before {
     content: counter(sortabletablescope);
     counter-increment: sortabletablescope;
     display: table-cell;
     vertical-align: middle;
+}
+.hidden {
+    display: none;
 }
 @media only screen and (min-width: 1500px) and (max-width: 1850px) {
     #wrap {
