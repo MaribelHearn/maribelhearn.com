@@ -12,6 +12,8 @@ String.prototype.toUnixTime = function () {
 };
 
 $(document).ready(function() {
+    var link;
+    
     calendar.set("calendar");
 	gamesLeft = document.getElementById("GamesLeft"),
 	gamesRight = document.getElementById("GamesRight");
@@ -27,11 +29,13 @@ $(document).ready(function() {
 	// detect smartphone and tablet
 	if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) {
         $("#Notice").css("display", "block");
+        $("#DateSelector").css("display", "none");
         $("#Achievements").html($("#Achievements").html() + "<strong><a href='#Title'>Back</a></strong>");
         $("a").each(function (index, element) {
-            if ($(element).attr("id").charAt(0) === 'a') {
+            if ($(element).attr("id") && $(element).attr("id").charAt(0) === 'a') {
+                link = $(element).attr("id").replace('a', '#');
                 $(element).attr("onClick", $(element).attr("href"));
-                $(element).attr("href", $(element).attr("id").replace('a', '#'));
+                $(element).attr("href", link);
             }
         });
 	}
