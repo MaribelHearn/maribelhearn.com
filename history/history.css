@@ -71,7 +71,7 @@ table, tr, th, td {
 	background-color: #fff;
 	border: 1px solid #444;
 	position: absolute;
-	width: 250px;
+	width: 300px;
 	padding: 0 5px;
 }
 .calendar-box select.calendar-month {
