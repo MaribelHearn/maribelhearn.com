@@ -31,14 +31,14 @@ $(document).ready(function() {
         $("#Notice").css("display", "block");
         $("#DateSelector").css("display", "none");
         $("#Achievements").html($("#Achievements").html() + "<strong><a href='#Title'>Back</a></strong>");
+	} else {
         $("a").each(function (index, element) {
             if ($(element).attr("id") && $(element).attr("id").charAt(0) === 'a') {
-                link = $(element).attr("id").replace('a', '#');
-                $(element).attr("onClick", $(element).attr("href"));
-                $(element).attr("href", link);
+                $(element).attr("href", $(element).attr("onClick"));
+                $(element).prop("onClick", null);
             }
         });
-	}
+    }
 });
 
 window.addEventListener("resize", function (event) {
