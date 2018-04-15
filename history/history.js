@@ -26,7 +26,14 @@ $(document).ready(function() {
 	
 	// detect smartphone and tablet
 	if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) {
-        document.getElementById("Achievements").innerHTML += "<strong><a href='#Title'>Back</a></strong>";
+        $("#Notice").css("display", "block");
+        $("#Achievements").html($("#Achievements").html() + "<strong><a href='#Title'>Back</a></strong>");
+        $("a").each(function (index, element) {
+            if ($(element).attr("id").charAt(0) === 'a') {
+                $(element).attr("onClick", $(element).attr("href"));
+                $(element).attr("href", $(element).attr("id").replace('a', '#'));
+            }
+        });
 	}
 });
 

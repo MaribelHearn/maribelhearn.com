@@ -6,8 +6,8 @@
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
 		<link rel='stylesheet' type='text/css' href='history/history.css'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Libre+Baskerville'>
 		<link rel='icon' type='image/x-icon' href='favicon.ico'>
-        <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
 		<script src='jquery.js'></script>
 		<script src='utils.js'></script>
 		<script src='history/calendar.js'></script>
@@ -17,9 +17,10 @@
 	
 	<body>
 		<div id='Title'>
-			<h1 id='title'>Maribel's Complete Shmup Achievement History</h1>
+			<h1>Maribel's Complete Shmup Achievement History</h1>
             <noscript><strong>Notice:</strong> this page cannot function properly with JavaScript disabled.</noscript>
-			<p id='Description'><em>I am a bullet hell player who scores Seihou Banshiryuu C67 and Samidare. There is also a wide array of other games I play or have played.</em></p><hr>
+            <p id='Notice' style='display:none'><strong>Notice:</strong> this page is best viewed on mobile using landscape mode.</p>
+			<p id='Description'><em>I am a bullet hell player who mostly plays for score. I currently focus on Touhou 13: Ten Desires on Lunatic.</em></p><hr>
 		</div>
 		<div id='GamesLeft'>
 			<table id='TouhouProjectShmups' class='list'>
@@ -209,26 +210,127 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td><a href='javascript:collapse("Overview")'>Overview</a></td>
+						<td><a id='aOverview' href='javascript:collapse("Overview")'>Overview</a></td>
 					</tr>
 					<tr>
-						<td><a href='javascript:showTouhou()'>Show Touhou Official</a></td>
+						<td><a id='aTouhouOfficial' href='javascript:showTouhou()'>Show Touhou Official</a></td>
 					</tr>
 					<tr>
-						<td><a href='javascript:showFanmemes()'>Show Touhou Fangames</a></td>
+						<td><a id='aTouhouFangames' href='javascript:showFanmemes()'>Show Touhou Fangames</a></td>
 					</tr>
 					<tr>
-						<td><a href='javascript:showDoujin()'>Show Doujin</a></td>
+						<td><a id='aDoujin' href='javascript:showDoujin()'>Show Doujin</a></td>
 					</tr>
 					<tr>
-						<td><a href='javascript:showArcade()'>Show Arcade</a></td>
+						<td><a id='aArcade' href='javascript:showArcade()'>Show Arcade</a></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 		<div id='Achievements'>
             <div id='Overview'>
-                <h2>Overview</h2>
+                <h2>High Scores</h2>
+                <p>The following tables list my current high scores in the categories I have scored,
+                <br>as well as, if I did not 1cc, which stage was reached.</p>
+                <h3>Notable</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Score</th>
+                            <th>Shottype</th>
+                            <th>Date</th>
+                            <th>Video / VOD</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TD Lunatic</td>
+                            <td>2,667,475,780</td>
+                            <td>Marisa</td>
+                            <td>April 4, 2018</td>
+                            <td><strong><a href='https://www.twitch.tv/videos/246743058?t=9s'>Link (Twitch)</a></strong></td>
+                        </tr>
+                        <tr>
+                            <td>EoSD Extra</td>
+                            <td>502,276,420</td>
+                            <td>MarisaB</td>
+                            <td>March 3, 2017</td>
+                            <td><strong><a href='https://www.youtube.com/watch?v=nTaYBo5Ec44'>Link (YouTube)</a></strong></td>
+                        </tr>
+                        <tr>
+                            <td><abbr title='Shining Shooting Star'>SSS</abbr> Extra</td>
+                            <td>1,049,352,190</td>
+                            <td>Koishi</td>
+                            <td>December 25, 2017</td>
+                            <td>Possibly upcoming</td>
+                        </tr>
+                        <tr>
+                            <td><abbr title='Banshiryuu (C67)'>BSR</abbr> Easy</td>
+                            <td>193,423,440 (<abbr title='Highest known score'>HKS</abbr>)</td>
+                            <td>HiranoS</td>
+                            <td>December 23, 2017</td>
+                            <td>Possibly upcoming</td>
+                        </tr>
+                        <tr>
+                            <td><abbr title='Samidare'>SMD</abbr></td>
+                            <td>46,815,936</td>
+                            <td><em>N/A</em></td>
+                            <td>December 9, 2017</td>
+                            <td>Possibly upcoming</td>
+                        </tr>
+                        <tr>
+                            <td><abbr title='Samidare'>SMD</abbr> Extra</td>
+                            <td>294,204,460 (WR)</td>
+                            <td><em>N/A</em></td>
+                            <td>November 17, 2017</td>
+                            <td><strong><a href='https://www.youtube.com/watch?v=ALCrslNqGmo'>Link (YouTube)</a></strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>Other</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Score</th>
+                            <th>Shottype</th>
+                            <th>Date</th>
+                            <th>Video / VOD</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>EoSD Lunatic</td>
+                            <td>340,970,920 (6)</td>
+                            <td>ReimuB</td>
+                            <td>June 3, 2017</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td><abbr title='Shining Shooting Star'>SSS</abbr> Lunatic</td>
+                            <td>4,290,992,620</td>
+                            <td>Koishi</td>
+                            <td>September 17, 2017</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td><abbr title='Mrs. Estacion'>MRS</abbr> Easy</td>
+                            <td>348,933,504,628 (<abbr title='Highest known score'>HKS</abbr>)</td>
+                            <td>HimekaB</td>
+                            <td>January 11, 2018</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td><abbr title='Mrs. Estacion'>MRS</abbr> Special</td>
+                            <td>114,994,208,403 (<abbr title='Highest known score'>HKS</abbr>)</td>
+                            <td>HimekaB</td>
+                            <td>June 17, 2016</td>
+                            <td><strong><a href='https://www.youtube.com/watch?v=hRM74eMjGuY'>Link (YouTube)</a></strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Survival</h2>
                 <p>Legend:<br>
                 <b style='color:purple'>No Miss No Bomb (NMNB)</b><br>
                 <b style='color:blue'>No Bomb (NB)</b><br>
@@ -560,9 +662,10 @@
                 <br><br><br><br><br><br><br><br><br><br><br><br>
             </div>
 			<div id='SoEW' style='display:none'>
-				<h2 id='soew'>TH02 - Story of Eastern Wonderland</h2>
+				<h2>TH02 - Story of Eastern Wonderland</h2>
 				<img class='cover' src='games/soew.jpg' alt='SoEW'>
 				<br>Obtained: March 28, 2012
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -607,12 +710,12 @@
                     <td>No</td>
                 </tr>
 				</table>
-				<br>
 			</div>
 			<div id='PoDD' style='display:none'>
-				<h2 id='podd'>TH03 - Phantasmagoria of Dim.Dream</h2>
+				<h2>TH03 - Phantasmagoria of Dim.Dream</h2>
 				<img class='cover' src='games/podd.jpg' alt='PoDD'>
 				<br>Obtained: March 28, 2012
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -645,12 +748,12 @@
 					<td>No</td>
 				</tr>
 				</table>
-				<br>
 			</div>
 			<div id='LLS' style='display:none'>
-				<h2 id='lls'>TH04 - Lotus Land Story</h2>
+				<h2>TH04 - Lotus Land Story</h2>
 				<img class='cover' src='games/lls.jpg' alt='LLS'>
 				<br>Obtained: March 28, 2012
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -704,9 +807,10 @@
 				</table>
 			</div>
 			<div id='MS' style='display:none'>
-				<h2 id='ms'>TH05 - Mystic Square</h2>
+				<h2>TH05 - Mystic Square</h2>
 				<img class='cover' src='games/ms.jpg' alt='MS'>
 				<br>Obtained: March 28, 2012
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -760,9 +864,37 @@
 				</table>
 			</div>
 			<div id='EoSD' style='display:none'>
-				<h2 id='eosd'>TH06 - The Embodiment of Scarlet Devil</h2>
+				<h2>TH06 - The Embodiment of Scarlet Devil</h2>
 				<img class='cover' src='games/eosd.jpg' alt='EoSD'>
 				<br>Obtained: September 28, 2011
+                <h3>Scoring</h3>
+                <table>
+                <tr>
+                    <th>Difficulty</th>
+                    <th>Shottype</th>
+                    <th>Score</th>
+                    <th>Cleared</th>
+                    <th>Date achieved</th>
+                    <th>Video</th>
+                </tr>
+                <tr>
+                    <td><strong>Lunatic</strong></td>
+                    <td>ReimuB</td>
+                    <td>340,970,920</td>
+                    <td>No</td>
+                    <td>June 3, 2017</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>Extra</strong></td>
+                    <td>MarisaB</td>
+                    <td>502,276,420</td>
+                    <td class='g'>Yes</td>
+                    <td>March 3, 2017</td>
+                    <td><strong><a href='https://www.youtube.com/watch?v=nTaYBo5Ec44'>Link</a></strong></td>
+                </tr>
+                </table>
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -824,33 +956,6 @@
                     <a href='https://www.youtube.com/watch?v=GvB1NznGjs8'>NMNB</a></strong></td>
 				</tr>
 				</table>
-                <h3>Scoring</h3>
-                <table>
-                <tr>
-                    <th>Difficulty</th>
-                    <th>Shottype</th>
-                    <th>Score</th>
-                    <th>Cleared</th>
-                    <th>Date achieved</th>
-                    <th>Video</th>
-                </tr>
-                <tr>
-                    <td><strong>Lunatic</strong></td>
-                    <td>Reimu-B</td>
-                    <td>340,970,920</td>
-                    <td>No</td>
-                    <td>June 3, 2017</td>
-                    <td>No</td>
-                </tr>
-                <tr>
-                    <td><strong>Extra</strong></td>
-                    <td>Marisa-B</td>
-                    <td>502,276,420</td>
-                    <td class='g'>Yes</td>
-                    <td>March 3, 2017</td>
-                    <td><strong><a href='https://www.youtube.com/watch?v=nTaYBo5Ec44'>Link</a></strong></td>
-                </tr>
-                </table>
                 <h3>Clears with continues</h3>
                 <table>
                 <tr>
@@ -884,7 +989,6 @@
                     <td>No</td>
                 </tr>
                 </table>
-                <br>
                 <h3>Other achievements</h3>
                 <table>
                 <tr>
@@ -903,9 +1007,10 @@
                 <p>EoSD was my first bullet hell game, and the EoSD Easy clear was my first ever "achievement".</p>
 			</div>
 			<div id='PCB' style='display:none'>
-				<h2 id='pcb'>TH07 - Perfect Cherry Blossom</h2>
+				<h2>TH07 - Perfect Cherry Blossom</h2>
 				<img class='cover' src='games/pcb.jpg' alt='PCB'>
 				<br>Obtained: November 2, 2011
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -976,7 +1081,6 @@
                     <a href='https://www.youtube.com/watch?v=quRT-E1lL7c'>NNN</a></strong></td>
 				</tr>
 				</table>
-                <br>
                 <h3>Other achievements</h3>
                 <table>
                 <tr>
@@ -1000,9 +1104,10 @@
                 </table>
 			</div>
 			<div id='IN' style='display:none'>
-				<h2 id='in'>TH08 - Imperishable Night</h2>
+				<h2>TH08 - Imperishable Night</h2>
 				<img class='cover' src='games/in.jpg' alt='IN'>
-				<br>Obtained: November 2, 2011 
+				<br>Obtained: November 2, 2011
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -1062,7 +1167,6 @@
                     <a href='https://www.youtube.com/watch?v=nP5sBxmr0bI'>NB</a></strong></td>
 				</tr>
 				</table>
-                <br>
                 <h3>Spell Captures</h3>
                 <table>
                 <tr>
@@ -1137,9 +1241,10 @@
                 </table>
 			</div>
 			<div id='PoFV' style='display:none'>
-				<h2 id='pofv'>TH09 - Phantasmagoria of Flower View</h2>
+				<h2>TH09 - Phantasmagoria of Flower View</h2>
 				<img class='cover' src='games/pofv.jpg' alt='PoFV'>
 				<br>Obtained: November 2, 2011
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -1184,12 +1289,12 @@
 					<td>No</td>
 				</tr>
 				</table>
-				<br>
 			</div>
 			<div id='StB' style='display:none'>
-				<h2 id='stb'>TH9.5 Shoot the Bullet</h2>
+				<h2>TH9.5 Shoot the Bullet</h2>
 				<img class='cover' src='games/stb.jpg' alt='StB'>
 				<br>Obtained: April 14, 2012
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Character</th>
@@ -1203,7 +1308,6 @@
                     <td>Possibly upcoming</td>
 				</tr>
 				</table>
-				<br>
                 <h3>Progress</h3>
                 <table>
                     <tr>
@@ -1353,9 +1457,10 @@
                 </table>
 			</div>
 			<div id='MoF' style='display:none'>
-				<h2 id='mof'>TH10 - Mountain of Faith</h2>
+				<h2>TH10 - Mountain of Faith</h2>
 				<img class='cover' src='games/mof.jpg' alt='MoF'>
 				<br>Obtained: December 10, 2011 (est.)
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -1416,7 +1521,6 @@
                     <a href='https://www.youtube.com/watch?v=DvOxtmKcXrg'>NMNB</a></strong></td>
 				</tr>
 				</table>
-                <br>
                 <h3>Other achievements</h3>
                 <table>
                 <tr>
@@ -1434,9 +1538,10 @@
                 </table>
 			</div>
 			<div id='SA' style='display:none'>
-				<h2 id='sa'>TH11 - Subterranean Animism</h2>
+				<h2>TH11 - Subterranean Animism</h2>
 				<img class='cover' src='games/sa.jpg' alt='SA'>
 				<br>Obtained: November 16, 2011 (est.)
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -1498,9 +1603,10 @@
 				</table>
 			</div>
 			<div id='UFO' style='display:none'>
-				<h2 id='ufo'>TH12 - Undefined Fantastic Object</h2>
+				<h2>TH12 - Undefined Fantastic Object</h2>
 				<img class='cover' src='games/ufo.jpg' alt='UFO'>
 				<br>Obtained: December 14, 2011 (demo by mistake, est.); December 21, 2011 (est.)
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -1562,9 +1668,10 @@
 				</table>
 			</div>
 			<div id='DS' style='display:none'>
-				<h2 id='ds'>TH12.5 Double Spoiler</h2>
+				<h2>TH12.5 Double Spoiler</h2>
 				<img class='cover' src='games/ds.jpg' alt='DS'>
 				<br>Obtained: April 14, 2012
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Character</th>
@@ -1584,7 +1691,6 @@
                     <td>Possibly upcoming</td>
 				</tr>
 				</table>
-				<br>
                 <table class='hidden'>
                     <tr class='hidden'>
                         <td class='hidden'>
@@ -1949,9 +2055,10 @@
                 </table>
 			</div>
 			<div id='GFW' style='display:none'>
-				<h2 id='gfw'>TH12.8 - Great Fairy Wars</h2>
+				<h2>TH12.8 - Great Fairy Wars</h2>
 				<img class='cover' src='games/gfw.jpg' alt='GFW'>
 				<br>Obtained: April 14, 2012
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -2015,7 +2122,6 @@
                     <a href='https://www.youtube.com/watch?v=1MpLjJIDVtk'>NB</a></strong></td>
 				</tr>
 				</table>
-                <br>
                 <h3>Other achievements</h3>
                 <table>
                 <tr>
@@ -2035,9 +2141,29 @@
                 </table>
 			</div>
 			<div id='TD' style='display:none'>
-				<h2 id='td'>TH13 - Ten Desires</h2>
+				<h2>TH13 - Ten Desires</h2>
 				<img class='cover' src='games/td.jpg' alt='TD'>
 				<br>Obtained: February 3, 2012 (est.)
+                <h3>Scoring</h3>
+                <table>
+                <tr>
+                    <th>Difficulty</th>
+                    <th>Shottype</th>
+                    <th>Score</th>
+                    <th>Cleared</th>
+                    <th>Date achieved</th>
+                    <th>Video / VOD</th>
+                </tr>
+                <tr>
+                    <td>Lunatic</td>
+                    <td>Marisa</td>
+                    <td>2,667,475,780</td>
+                    <td class='g'>Yes</td>
+                    <td>April 4, 2018</td>
+                    <td><strong><a href='https://www.twitch.tv/videos/246743058?t=9s'>Link (Twitch)</a></strong></td>
+                </tr>
+                </table>
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -2098,7 +2224,6 @@
                     <a href='https://www.youtube.com/watch?v=pTD7GBZzvB0'>NNN</a></strong></td>
 				</tr>
 				</table>
-                <br>
                 <h3>Spell Captures</h3>
                 <table>
                 <tr>
@@ -2128,9 +2253,10 @@
                 </table>
 			</div>
 			<div id='DDC' style='display:none'>
-				<h2 id='ddc'>TH14 - Double Dealing Character</h2>
+				<h2>TH14 - Double Dealing Character</h2>
 				<img class='cover' src='games/ddc.jpg' alt='DDC'>
 				<br>Obtained: August 12, 2013
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -2190,7 +2316,6 @@
                     <a href='https://www.youtube.com/watch?v=SZWY1JGXPS4'>NB</a></strong></td>
 				</tr>
 				</table>
-                <br>
                 <h3>Spell Captures</h3>
                 <table>
                 <tr>
@@ -2230,9 +2355,10 @@
                 </table>
 			</div>
 			<div id='ISC' style='display:none'>
-				<h2 id='isc'>TH14.3 - Impossible Spell Card</h2>
+				<h2>TH14.3 - Impossible Spell Card</h2>
 				<img class='cover' src='games/isc.jpg' alt='ISC'>
 				<br>Obtained: May 11, 2014
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -2249,7 +2375,6 @@
 					<td>-</td>
 				</tr>
 				</table>
-				<br>
                 <h3>No Items Clear Progress</h3>
                 <table>
                     <tr>
@@ -2398,9 +2523,10 @@
                 </table>
 			</div>
 			<div id='LoLK' style='display:none'>
-				<h2 id='lolk'>TH15 - Legacy of Lunatic Kingdom</h2>
+				<h2>TH15 - Legacy of Lunatic Kingdom</h2>
 				<img class='cover' src='games/lolk.jpg' alt='LoLK'>
 				<br>Obtained: August 14, 2015
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -2459,7 +2585,6 @@
 					<td><strong><a href='https://www.youtube.com/watch?v=3simoF6ESfU'>1cc</a></strong></td>
 				</tr>
 				</table>
-                <br>
                 <h3>Pointdevice Mode</h3>
                 <table>
                     <tr>
@@ -2495,9 +2620,10 @@
                 </table>
 			</div>
             <div id='HSiFS' style='display:none'>
-				<h2 id='hsifs'>TH16 - Hidden Star in Four Seasons</h2>
+				<h2>TH16 - Hidden Star in Four Seasons</h2>
 				<img class='cover' src='games/hsifs.jpg' alt='HSiFS'>
 				<br>Obtained: August 11, 2017
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -2560,9 +2686,37 @@
 				</table>
 			</div>
             <div id='SSS' style='display:none'>
-				<h2 id='sss'>Shining Shooting Star</h2>
+				<h2>Shining Shooting Star</h2>
 				<img class='cover' src='games/sss.jpg' alt='SSS'>
 				<br>Obtained: April 27, 2017
+                <h3>Scoring</h3>
+                <table>
+                <tr>
+                    <th>Difficulty</th>
+                    <th>Shottype</th>
+                    <th>Score</th>
+                    <th>Cleared</th>
+                    <th>Date achieved</th>
+                    <th>Video</th>
+                </tr>
+                <tr>
+                    <td><strong>Lunatic</strong></td>
+                    <td>Koishi</td>
+                    <td>4,290,992,620</td>
+                    <td class='g'>Yes</td>
+                    <td>September 17, 2017</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>Extra</strong></td>
+                    <td>Koishi</td>
+                    <td>1,049,352,190</td>
+                    <td class='g'>Yes</td>
+                    <td>December 25, 2017</td>
+                    <td>Possibly upcoming</td>
+                </tr>
+                </table>
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -2621,38 +2775,12 @@
 					<td>No</td>
 				</tr>
 				</table>
-                <h3>Scoring</h3>
-                <table>
-                <tr>
-                    <th>Difficulty</th>
-                    <th>Shottype</th>
-                    <th>Score</th>
-                    <th>Cleared</th>
-                    <th>Date achieved</th>
-                    <th>Video</th>
-                </tr>
-                <tr>
-                    <td><strong>Lunatic</strong></td>
-                    <td>Koishi</td>
-                    <td>4,290,992,620</td>
-                    <td class='g'>Yes</td>
-                    <td>September 30, 2017</td>
-                    <td>No</td>
-                </tr>
-                <tr>
-                    <td><strong>Extra</strong></td>
-                    <td>Koishi</td>
-                    <td>1,049,352,190</td>
-                    <td class='g'>Yes</td>
-                    <td>December 25, 2017</td>
-                    <td>Upcoming</td>
-                </tr>
-                </table>
 			</div>
 			<div id='SG' style='display:none'>
-				<h2 id='sg'>SH01 - Shuusou Gyoku</h2>
+				<h2>SH01 - Shuusou Gyoku</h2>
 				<img class='cover' src='games/sg.jpg' alt='SG'>
 				<br>Obtained: November 30, 2012
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -2697,12 +2825,175 @@
 					<td><strong><a href='https://www.youtube.com/watch?v=IZFBd92OXbY'>Link</a></strong></td>
 				</tr>
 				</table>
-				<br>
 			</div>
 			<div id='BSR' style='display:none'>
-				<h2 id='bsr'>SH03 - Banshiryuu (C67)</h2>
+				<h2>SH03 - Banshiryuu (C67)</h2>
 				<img class='cover' src='games/bsr.jpg' alt='BSR'>
 				<br>Obtained: September 7, 2012
+                <h3>Scoring</h3>
+                <table>
+                <tr>
+                    <th>Difficulty</th>
+                    <th>Shottype</th>
+                    <th>Score</th>
+                    <th>Cleared</th>
+                    <th>Date achieved</th>
+                    <th>Video</th>
+                </tr>
+                <tr>
+                    <td><strong>Easy</strong></td>
+                    <td>VIVIT-W</td>
+                    <td>116,070,140</td>
+                    <td class='g'>Yes</td>
+                    <td>May 25, 2016</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>Easy</strong></td>
+                    <td>VIVIT-A</td>
+                    <td>140,038,330</td>
+                    <td class='g'>Yes</td>
+                    <td>August 24, 2017</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>Easy</strong></td>
+                    <td>HiranoS</td>
+                    <td>193,423,440 (<abbr title='Highest known score'>HKS</abbr>)</td>
+                    <td class='g'>Yes</td>
+                    <td>December 23, 2017</td>
+                    <td>Possibly upcoming</td>
+                </tr>
+                <tr>
+                    <td><strong>Easy</strong></td>
+                    <td>HiranoO</td>
+                    <td>102,227,080</td>
+                    <td class='g'>Yes</td>
+                    <td>February 21, 2016</td>
+                    <td>No</td>
+                </tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+                <tr>
+                    <td><strong>Normal</strong></td>
+                    <td>VIVIT-W</td>
+                    <td>113,469,690</td>
+                    <td class='g'>Yes</td>
+                    <td>February 23, 2016</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>Normal</strong></td>
+                    <td>VIVIT-A</td>
+                    <td>101,413,330</td>
+                    <td class='g'>Yes</td>
+                    <td>February 20, 2016</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>Normal</strong></td>
+                    <td>HiranoS</td>
+                    <td>129,868,420</td>
+                    <td class='g'>Yes</td>
+                    <td>March 5, 2016</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>Normal</strong></td>
+                    <td>HiranoO</td>
+                    <td>56,031,750</td>
+                    <td>No</td>
+                    <td>?, 2016</td>
+                    <td>No</td>
+                </tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+                <tr>
+                    <td><strong>Hard</strong></td>
+                    <td>VIVIT-W</td>
+                    <td>123,221,150</td>
+                    <td class='g'>Yes</td>
+                    <td>February 21, 2016</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>Hard</strong></td>
+                    <td>VIVIT-A</td>
+                    <td>71,573,250</td>
+                    <td>No</td>
+                    <td>?, 2016</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>Hard</strong></td>
+                    <td>HiranoS</td>
+                    <td>131,703,960</td>
+                    <td class='g'>Yes</td>
+                    <td>February 22, 2016</td>
+                    <td><strong><a href='https://www.youtube.com/watch?v=jHNBUxwv32E'>Link</a></strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Hard</strong></td>
+                    <td>HiranoO</td>
+                    <td>-</td>
+                    <td>No</td>
+                    <td>-</td>
+                    <td>No</td>
+                </tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+                <tr>
+                    <td><strong>Lunatic</strong></td>
+                    <td>VIVIT-W</td>
+                    <td>55,202,090</td>
+                    <td>No</td>
+                    <td>?, 2016</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>Lunatic</strong></td>
+                    <td>VIVIT-A</td>
+                    <td>48,891,100</td>
+                    <td>No</td>
+                    <td>?, 2016</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>Lunatic</strong></td>
+                    <td>HiranoS</td>
+                    <td>124,652,750</td>
+                    <td class='g'>Yes</td>
+                    <td>October 31, 2014</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>Lunatic</strong></td>
+                    <td>HiranoO</td>
+                    <td>-</td>
+                    <td>No</td>
+                    <td>-</td>
+                    <td>No</td>
+                </tr>
+                </table>
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -2735,201 +3026,11 @@
 					<td><strong><a href='https://www.youtube.com/watch?v=wkgcGgzymXw'>Link</a></strong></td>
 				</tr>
 				</table>
-                <h3>Scoring</h3>
-                <table>
-                <tr>
-                    <th>Difficulty</th>
-                    <th>Shottype</th>
-                    <th>Score</th>
-                    <th>Cleared</th>
-                    <th>Date achieved</th>
-                    <th>Video</th>
-                </tr>
-                <tr>
-                    <td><strong>Easy</strong></td>
-                    <td>VIVIT-W</td>
-                    <td>116,070,140</td>
-                    <td class='g'>Yes</td>
-                    <td>May 25, 2016</td>
-                    <td>No</td>
-                </tr>
-                <tr>
-                    <td><strong>Easy</strong></td>
-                    <td>VIVIT-A</td>
-                    <td>140,038,330</td>
-                    <td class='g'>Yes</td>
-                    <td>August 24, 2017</td>
-                    <td>No</td>
-                </tr>
-                <tr>
-                    <td><strong>Easy</strong></td>
-                    <td>Hirano-S</td>
-                    <td>193,423,440 (WR)</td>
-                    <td class='g'>Yes</td>
-                    <td>December 23, 2017</td>
-                    <td>No</td>
-                </tr>
-                <tr>
-                    <td><strong>Easy</strong></td>
-                    <td>Hirano-O</td>
-                    <td>102,227,080</td>
-                    <td class='g'>Yes</td>
-                    <td>February 21, 2016</td>
-                    <td>No</td>
-                </tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-                <tr>
-                    <td><strong>Normal</strong></td>
-                    <td>VIVIT-W</td>
-                    <td>113,469,690</td>
-                    <td class='g'>Yes</td>
-                    <td>February 23, 2016</td>
-                    <td>No</td>
-                </tr>
-                <tr>
-                    <td><strong>Normal</strong></td>
-                    <td>VIVIT-A</td>
-                    <td>101,413,330</td>
-                    <td class='g'>Yes</td>
-                    <td>February 20, 2016</td>
-                    <td>No</td>
-                </tr>
-                <tr>
-                    <td><strong>Normal</strong></td>
-                    <td>Hirano-S</td>
-                    <td>129,868,420</td>
-                    <td class='g'>Yes</td>
-                    <td>March 5, 2016</td>
-                    <td>No</td>
-                </tr>
-                <tr>
-                    <td><strong>Normal</strong></td>
-                    <td>Hirano-O</td>
-                    <td>56,031,750</td>
-                    <td>No</td>
-                    <td>?, 2016</td>
-                    <td>No</td>
-                </tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-                <tr>
-                    <td><strong>Hard</strong></td>
-                    <td>VIVIT-W</td>
-                    <td>123,221,150</td>
-                    <td class='g'>Yes</td>
-                    <td>February 21, 2016</td>
-                    <td>No</td>
-                </tr>
-                <tr>
-                    <td><strong>Hard</strong></td>
-                    <td>VIVIT-A</td>
-                    <td>71,573,250</td>
-                    <td>No</td>
-                    <td>?, 2016</td>
-                    <td>No</td>
-                </tr>
-                <tr>
-                    <td><strong>Hard</strong></td>
-                    <td>Hirano-S</td>
-                    <td>131,703,960</td>
-                    <td class='g'>Yes</td>
-                    <td>February 22, 2016</td>
-                    <td><strong><a href='https://www.youtube.com/watch?v=jHNBUxwv32E'>Link</a></strong></td>
-                </tr>
-                <tr>
-                    <td><strong>Hard</strong></td>
-                    <td>Hirano-O</td>
-                    <td>-</td>
-                    <td>No</td>
-                    <td>-</td>
-                    <td>No</td>
-                </tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-                <tr>
-                    <td><strong>Lunatic</strong></td>
-                    <td>VIVIT-W</td>
-                    <td>55,202,090</td>
-                    <td>No</td>
-                    <td>?, 2016</td>
-                    <td>No</td>
-                </tr>
-                <tr>
-                    <td><strong>Lunatic</strong></td>
-                    <td>VIVIT-A</td>
-                    <td>48,891,100</td>
-                    <td>No</td>
-                    <td>?, 2016</td>
-                    <td>No</td>
-                </tr>
-                <tr>
-                    <td><strong>Lunatic</strong></td>
-                    <td>Hirano-S</td>
-                    <td>124,652,750</td>
-                    <td class='g'>Yes</td>
-                    <td>October 31, 2014</td>
-                    <td>No</td>
-                </tr>
-                <tr>
-                    <td><strong>Lunatic</strong></td>
-                    <td>Hirano-O</td>
-                    <td>-</td>
-                    <td>No</td>
-                    <td>-</td>
-                    <td>No</td>
-                </tr>
-                </table>
-				<br>
 			</div>
 			<div id='SMD' style='display:none'>
-				<h2 id='smd'>Samidare</h2>
+				<h2>Samidare</h2>
 				<img class='cover' src='games/smd.jpg' alt='SMD'>
 				<br>Obtained: October 10, 2012
-				<table>
-				<tr>
-					<th>Difficulty</th>
-					<th>Progress</th>
-					<th>Date of first 1cc</th>
-					<th>Video</th>
-				</tr>
-				<tr>
-					<td><strong>Normal</strong></td>
-					<td class='g'>Completed</td>
-					<td>December 7, 2012</td>
-					<td>No</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td><strong>Extra</strong></td>
-					<td class='g'>Completed</td>
-					<td>February 12, 2013</td>
-					<td><strong><a href='https://www.youtube.com/watch?v=9yy0cUNaPhA'>Link</a></strong></td>
-				</tr>
-				</table>
                 <h3>Scoring</h3>
                 <table>
                 <tr>
@@ -2954,27 +3055,69 @@
                     <td><strong><a href='https://www.youtube.com/watch?v=ALCrslNqGmo'>Link</a></strong></td>
                 </tr>
                 </table>
-                <h3>Other achievements</h3>
-                <table>
-                <tr>
-                    <td><strong>Normal <abbr title='Without dying'>No Miss</abbr></strong></td>
-                    <td class='g'>Completed</td>
+                <h3>Survival</h3>
+				<table>
+				<tr>
+					<th>Difficulty</th>
+					<th>Progress</th>
+					<th>Date of first 1cc</th>
+					<th>Date of first <abbr title='No Miss, without dying'>NM</abbr></th>
+					<th>Video</th>
+				</tr>
+				<tr>
+					<td><strong>Normal</strong></td>
+					<td class='g'>Completed</td>
+					<td>December 7, 2012</td>
                     <td>September 20, 2013</td>
-                    <td><strong><a href='https://www.youtube.com/watch?v=PL6-CDjRjMk'>Link</a></strong></td>
-                </tr>
-                <tr>
-                    <td><strong>Extra <abbr title='Without dying'>No Miss</abbr></strong></td>
-                    <td class='g'>Completed</td>
+					<td><strong><a href='https://www.youtube.com/watch?v=PL6-CDjRjMk'>NM</a></strong></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><strong>Extra</strong></td>
+					<td class='g'>Completed</td>
+					<td>February 12, 2013</td>
                     <td>December 17, 2013</td>
-                    <td><strong><a href='https://www.youtube.com/watch?v=leJRk5RF_8A'>Link</a></strong></td>
-                </tr>
-                </table>
-				<br>
+					<td><strong><a href='https://www.youtube.com/watch?v=9yy0cUNaPhA'>1cc</a> <a href='https://www.youtube.com/watch?v=leJRk5RF_8A'>NM</a></strong></td>
+				</tr>
+				</table>
 			</div>
 			<div id='MRS' style='display:none'>
-				<h2 id='mrs'>Mrs. Estacion</h2>
+				<h2>Mrs. Estacion</h2>
 				<img class='cover' src='games/mrs.jpg' alt='Mrs. Estacion'>
 				<br>Obtained: February 23, 2013
+                <h3>Scoring</h3>
+                <table>
+                <tr>
+                    <th>Difficulty</th>
+                    <th>Shottype</th>
+                    <th>Score</th>
+                    <th>Cleared</th>
+                    <th>Date achieved</th>
+                    <th>Video</th>
+                </tr>
+                <tr>
+                    <td><strong>Easy</strong></td>
+                    <td>HimekaB</td>
+                    <td>348,933,504,628 (<abbr title='Highest known score'>HKS</abbr>)</td>
+                    <td class='g'>Yes</td>
+                    <td>January 11, 2018</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>Special</strong></td>
+                    <td>HimekaB</td>
+                    <td>114,994,208,403 (<abbr title='Highest known score'>HKS</abbr>)</td>
+                    <td class='g'>Yes</td>
+                    <td>June 17, 2016</td>
+                    <td><strong><a href='https://www.youtube.com/watch?v=hRM74eMjGuY'>Link</a></strong></td>
+                </tr>
+                </table>
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -3013,33 +3156,6 @@
 					<td><strong><a href='https://www.youtube.com/watch?v=64_UYh1nPYo'>Link</a></strong></td>
 				</tr>
 				</table>
-                <h3>Scoring</h3>
-                <table>
-                <tr>
-                    <th>Difficulty</th>
-                    <th>Shottype</th>
-                    <th>Score</th>
-                    <th>Cleared</th>
-                    <th>Date achieved</th>
-                    <th>Video</th>
-                </tr>
-                <tr>
-                    <td><strong>Easy</strong></td>
-                    <td>Himeka-B</td>
-                    <td>225,827,331,256</td>
-                    <td class='g'>Yes</td>
-                    <td>September 15, 2017</td>
-                    <td>No</td>
-                </tr>
-                <tr>
-                    <td><strong>Special</strong></td>
-                    <td>Himeka-B</td>
-                    <td>114,994,208,403</td>
-                    <td class='g'>Yes</td>
-                    <td>June 17, 2016</td>
-                    <td><strong><a href='https://www.youtube.com/watch?v=hRM74eMjGuY'>Link</a></strong></td>
-                </tr>
-                </table>
                 <h3>Other achievements</h3>
                 <table>
                 <tr>
@@ -3055,12 +3171,12 @@
                     <td><strong><a href='https://www.youtube.com/watch?v=5ZQqGy9wXP0'>Link</a></strong></td>
                 </tr>
                 </table>
-				<br>
 			</div>
 			<div id='DP' style='display:none'>
-				<h2 id='dp'>DonPachi</h2>
+				<h2>DonPachi</h2>
 				<img class='cover' src='games/dp.jpg' alt='DP'>
 				<br>Obtained: March 18, 2014
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -3081,12 +3197,12 @@
 					<td>No</td>
 				</tr>
 				</table>
-				<br>
 			</div>
 			<div id='DDP' style='display:none'>
-				<h2 id='ddp'>DoDonPachi</h2>
+				<h2>DoDonPachi</h2>
 				<img class='cover' src='games/ddp.jpg' alt='DDP'>
 				<br>Obtained: March 18, 2014
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -3107,12 +3223,12 @@
 					<td>No</td>
 				</tr>
 				</table>
-				<br>
 			</div>
 			<div id='DOJ' style='display:none'>
-				<h2 id='doj'>DoDonPachi Dai-Ou-Jou BL</h2>
+				<h2>DoDonPachi Dai-Ou-Jou BL</h2>
 				<img class='cover' src='games/doj.jpg' alt='DOJ'>
 				<br>Obtained: November 3, 2012
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -3133,12 +3249,12 @@
 					<td>No</td>
 				</tr>
 				</table>
-				<br>
 			</div>
 			<div id='DFK' style='display:none'>
-				<h2 id='dfk'>DoDonPachi Dai-Fukkatsu</h2>
+				<h2>DoDonPachi Dai-Fukkatsu</h2>
 				<img class='cover' src='games/dfk.jpg' alt='DFK'>
 				<br>Obtained: October 8, 2013 (X360), October 14, 2016 (Steam)
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -3165,7 +3281,6 @@
 					<td>No</td>
 				</tr>
 				</table>
-				<br>
                 <h3>Novice</h3>
                 <table>
                 <tr>
@@ -3262,9 +3377,10 @@
                 </table>
 			</div>
 			<div id='SDOJ' style='display:none'>
-				<h2 id='sdoj'>DoDonPachi Saidaioujou</h2>
+				<h2>DoDonPachi Saidaioujou</h2>
 				<img class='cover' src='games/sdoj.jpg' alt='SDOJ'>
 				<br>Obtained: October 29, 2013
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -3297,12 +3413,12 @@
 					<td>No</td>
 				</tr>
 				</table>
-				<br>
 			</div>
             <div id='Batsugun' style='display:none'>
-                <h2 id='batsugun'>Batsugun Special Version</h2>
+                <h2>Batsugun Special Version</h2>
                 <img class='cover' src='games/batsugunsp.png' alt='Batsugun Special Version'>
                 <br>Obtained: March 2, 2016
+                <h3>Survival</h3>
                 <table>
                 <tr>
 					<th>Difficulty</th>
@@ -3335,12 +3451,12 @@
 					<td>No</td>
 				</tr>
                 </table>
-                <br>
             </div>
 			<div id='ESP' style='display:none'>
-				<h2 id='esp'>ESP Ra.De.</h2>
+				<h2>ESP Ra.De.</h2>
 				<img class='cover' src='games/esp.png' alt='ESP Ra.De.'>
 				<br>Obtained: March 28, 2014
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -3355,12 +3471,12 @@
 					<td>No</td>
 				</tr>
 				</table>
-				<br>
 			</div>
 			<div id='ESPg' style='display:none'>
-				<h2 id='espg'>Espgaluda</h2>
+				<h2>Espgaluda</h2>
 				<img class='cover' src='games/espg.jpg' alt='Espgaluda Cover'>
 				<br>Obtained: March 28, 2014
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -3375,12 +3491,12 @@
 					<td><strong><a href='https://www.youtube.com/watch?v=WtVbxjLpAbs'>Link</a></strong></td>
 				</tr>
 				</table>
-				<br>
 			</div>
 			<div id='Ketsui' style='display:none'>
-				<h2 id='ketsui'>Ketsui ~Kizuna Jigoku Tachi~</h2>
+				<h2>Ketsui ~Kizuna Jigoku Tachi~</h2>
 				<img class='cover' src='games/ket.jpg' alt='Ketsui'>
 				<br>Obtained: December 1, 2012
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -3407,12 +3523,12 @@
 					<td>No</td>
 				</tr>
 				</table>
-				<br>
 			</div>
 			<div id='MSm' style='display:none'>
-				<h2 id='msm'>Mushihime-sama</h2>
+				<h2>Mushihime-sama</h2>
 				<img class='cover' src='games/ms.png' alt='MSm'>
 				<br>Obtained: November 6, 2015 (Steam)
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -3439,7 +3555,6 @@
 					<td>No</td>
 				</tr>
 				</table>
-				<br>
                 <h3>Novice</h3>
                 <table>
                 <tr>
@@ -3484,9 +3599,10 @@
                 </table>
 			</div>
 			<div id='MSF' style='display:none'>
-				<h2 id='msf'>Mushihime-sama Futari</h2>
+				<h2>Mushihime-sama Futari</h2>
 				<img class='cover' src='games/msf.jpg' alt='MSF'>
 				<br>Obtained: October 29, 2013
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -3513,7 +3629,6 @@
 					<td>No</td>
 				</tr>
 				</table>
-				<br>
                 <h3>Novice</h3>
                 <table>
                 <tr>
@@ -3570,9 +3685,10 @@
                 </table>
 			</div>
 			<div id='DSm' style='display:none'>
-				<h2 id='dsm'>Deathsmiles</h2>
+				<h2>Deathsmiles</h2>
 				<img class='cover' src='games/dsm.jpg' alt='DSm'>
 				<br>Obtained: October 8, 2013 (X360); March 11, 2016 (Steam)
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -3599,7 +3715,6 @@
 					<td>No</td>
 				</tr>
 				</table>
-                <br>
                 <h3>Mega Black Label</h3>
                 <table>
                 <tr>
@@ -3635,9 +3750,10 @@
                 </table>
 			</div>
 			<div id='Ikaruga' style='display:none'>
-				<h2 id='ikaruga'>Ikaruga</h2>
+				<h2>Ikaruga</h2>
 				<img class='cover' src='games/ikaruga.jpg' alt='IkarugaImage'>
-				<br>Obtained: December 5, 2015
+				<br>Obtained: December 5, 2015 (Steam)
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -3666,9 +3782,10 @@
 				</table>
 			</div>
 			<div id='CCWI' style='display:none'>
-				<h2 id='ccwi'>Crimzon Clover</h2>
+				<h2>Crimzon Clover</h2>
 				<img class='cover' src='games/ccwi.jpg' alt='CCWI'>
-				<br>Obtained: December 5, 2015
+				<br>Obtained: December 5, 2015 (Steam)
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -3718,9 +3835,10 @@
                 </table>
 			</div>
 			<div id='eX1' style='display:none'>
-				<h2 id='ex1'>eXceed - Gun Bullet Children</h2>
+				<h2>eXceed - Gun Bullet Children</h2>
 				<img class='cover' src='games/ex1.jpg' alt='eX1'>
-				<br>Obtained: December 27, 2015
+				<br>Obtained: December 27, 2015 (Steam)
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -3749,9 +3867,10 @@
 				</table>
 			</div>
 			<div id='eX2' style='display:none'>
-				<h2 id='ex2'>eXceed 2nd - Vampire REX</h2>
+				<h2>eXceed 2nd - Vampire REX</h2>
 				<img class='cover' src='games/ex2.jpg' alt='eX2'>
-				<br>Obtained: December 27, 2015
+				<br>Obtained: December 27, 2015 (Steam)
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
@@ -3786,9 +3905,10 @@
 				</table>
 			</div>
 			<div id='eX3' style='display:none'>
-				<h2 id='ex3'>eXceed 3rd - Jade Penetrate Black Package</h2>
+				<h2>eXceed 3rd - Jade Penetrate Black Package</h2>
 				<img class='cover' src='games/ex3.jpg' alt='eX3'>
-				<br>Obtained: December 27, 2015
+				<br>Obtained: December 27, 2015 (Steam)
+                <h3>Survival</h3>
 				<table>
 				<tr>
 					<th>Difficulty</th>
