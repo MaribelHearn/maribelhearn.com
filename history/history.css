@@ -1,10 +1,37 @@
 body {
-	background: url('eosdbig.jpg') top no-repeat fixed;
-  	font-family: 'Libre Baskerville';
+	background: url('history.jpg') top no-repeat fixed;
+}
+div {
+    background-color: #FFFFFF;
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
 }
 table, tr, th, td {
-	border: 3px solid hotpink;
+	border: 1px solid black;
 	text-align: center;
+}
+h1 {
+    font-family: 'Felipa';
+    font-size: 48px;
+}
+h2 {
+    font-family: 'Felipa';
+    font-size: 36px;
+}
+h3 {
+    font-family: 'Felipa';
+    font-size: 24px;
+}
+#wrap {
+    border: 1px solid black;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    opacity: 0.8;
+    font: 14px verdana, sans-serif;
+    padding-bottom: 10px;
 }
 .hidden {
     border: none;
@@ -51,21 +78,6 @@ table, tr, th, td {
 	width: 300px;
 	height: 300px;
 }
-#Description {
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-#Title {
-	text-align: center;
-}
-#GamesLeft, #GamesRight {
-	float: left;
-}
-#Achievements {
-	margin-left: 30%; /* 566px */
-	margin-right: 0px;
-	width: auto;
-}
 .calendar-box {
 	display: none;
 	background-color: #fff;
@@ -102,44 +114,19 @@ table, tr, th, td {
 	margin-left: -5px;
 	background-color: #c9ff8b;
 }
-/*@media screen and (max-width: 1000px) {
-	#Achievements {
-		margin-left: 28%; /* 283px
-		margin-right: auto;
-		width: 50%;
-	}
-}*/
 @media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
 	.list {
 		width: 100%;
-	}
-	#GamesLeft, #GamesRight, #Links {
-		float: none;
-	}
-	#Achievements {
-		margin-left: 0px;
-		margin-right: 0px;
 	}
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
 	.list {
 		width: 100%;
 	}
-	#GamesLeft, #GamesRight, #Links {
-		float: none;
-	}
-	#Achievements {
-		margin-left: 0px;
-		margin-right: 0px;
-	}
 }
 @media only screen and (min-width: 801px) and (max-width: 1159px) {
     body {
         font-size: 12px;
-    }
-    #Achievements {
-        margin-left: 20%;
-        margin-right: 0px;
     }
     .list {
         width: 150px;
@@ -149,25 +136,16 @@ table, tr, th, td {
     body {
         font-size: 14px;
     }
-    #Achievements {
-        margin-left: 35%;
-    }
     .list {
         width: 175px;
     }
 }
 @media only screen and (min-width: 1280px) and (max-width: 1499px) {
-    #Achievements {
-        margin-left: 35%;
-    }
     .list {
         width: 200px;
     }
 }
 @media only screen and (min-width: 1500px) and (max-width: 1725px) {
-    #Achievements {
-        margin-left: 32%;
-    }
     .list {
         width: 225px;
     }
