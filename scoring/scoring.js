@@ -900,7 +900,7 @@ var calc = function () {
     
     if ($("#toggleCookie").is(":checked")) {
         for (game in scores) {
-            setCookie(game, JSON.stringify(scores[game]));
+            setCookie(game, scores[game]);
         }
     }
 };
