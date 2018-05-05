@@ -909,19 +909,24 @@ $(document).ready(function() {
     var game, cookie, difficulty, shottype;
     
     for (game in scores) {
-        cookie = JSON.parse(getCookie(game));
-        
-        if (cookie) {
-            scores[game] = cookie;
+        try {
+            cookie = getCookie(game);
             
-            for (difficulty in scores[game]) {
-                for (var shottype in scores[game][difficulty]) {
-                    if (scores[game][difficulty][shottype] !== 0) {
-                        $("#" + game + difficulty + shottype).val(sep(scores[game][difficulty][shottype]));
+            if (cookie) {
+                scores[game] = cookie;
+                
+                for (difficulty in scores[game]) {
+                    for (var shottype in scores[game][difficulty]) {
+                        if (scores[game][difficulty][shottype] !== 0) {
+                            $("#" + game + difficulty + shottype).val(sep(scores[game][difficulty][shottype]));
+                        }
                     }
                 }
             }
+        } catch (err) {
+            // do nothing
         }
+        
     }
     
     // detect smartphone and tablet
