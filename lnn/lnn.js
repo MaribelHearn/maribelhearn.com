@@ -1,4 +1,4 @@
-var LNNs, all = ["overall", "players", "EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"];
+var LNNs, all = ["overall", "players", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"];
 
 function show(game) {
     $("#" + game).css("display", "block");

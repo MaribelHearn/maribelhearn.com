@@ -23,10 +23,14 @@
             <p>Extra conditions are required for PCB, TD and HSiFS; these are No Border Breaks, No Trance and No Release respectively. LNN in these games is called LNNN, with an extra N to denote the extra condition.
             The extra condition in UFO, no UFO summons, is optional, as it is not considered to have a significant impact on the difficulty of the run.
             As for IN, an LNN is assumed to capture or timeout all Last Spells; these are usually captured and LNN is referred to as LNNFS.</p>
-            <p>LNNs are current as of April 21, 2018.</p>
+            <p>LNNs are current as of May 5, 2018.</p>
             <p>All of the table columns are sortable.</p>
             <h2>Contents</h2>
             <table id='contents'>
+                <tr><td><a href='#SoEW'>Touhou 2 - The Story of Eastern Wonderland</a></td></tr>
+                <tr><td><a href='#PoDD'>Touhou 3 - Phantasmagoria of Dim.Dream</a></td></tr>
+                <tr><td><a href='#LLS'>Touhou 4 - Lotus Land Story</a></td></tr>
+                <tr><td><a href='#MS'>Touhou 5 - Mystic Square</a></td></tr>
                 <tr><td><a href='#EoSD'>Touhou 6 - The Embodiment of Scarlet Devil</a></td></tr>
                 <tr><td><a href='#PCB'>Touhou 7 - Perfect Cherry Blossom</a></td></tr>
                 <tr><td><a href='#IN'>Touhou 8 - Imperishable Night</a></td></tr>
@@ -46,6 +50,9 @@
                 <tbody>
                     <tr>
                         <td>
+                            <input id='SoEWc' type='checkbox' onClick='checkGame("SoEW")' checked>
+                            <label for='SoEWc'>SoEW</label>
+                        </td><td>
                             <input id='EoSDc' type='checkbox' onClick='checkGame("EoSD")' checked>
                             <label for='EoSDc'>EoSD</label>
                         </td><td>
@@ -58,6 +65,9 @@
                     </tr>
                     <tr>
                         <td>
+                            <input id='PoDDc' type='checkbox' onClick='checkGame("PoDD")' checked>
+                            <label for='PoDDc'>PoDD</label>
+                        </td><td>
                             <input id='PCBc' type='checkbox' onClick='checkGame("PCB")' checked>
                             <label for='PCBc'>PCB</label>
                         </td><td>
@@ -70,6 +80,9 @@
                     </tr>
                     <tr>
                         <td>
+                            <input id='LLSc' type='checkbox' onClick='checkGame("LLS")' checked>
+                            <label for='LLSc'>LLS</label>
+                        </td><td>
                             <input id='INc' type='checkbox' onClick='checkGame("IN")' checked>
                             <label for='INc'>IN</label>
                         </td><td>
@@ -82,6 +95,9 @@
                     </tr>
                     <tr>
                         <td>
+                            <input id='MSc' type='checkbox' onClick='checkGame("MS")' checked>
+                            <label for='MSc'>MS</label>
+                        </td><td>
                             <input id='MoFc' type='checkbox' onClick='checkGame("MoF")' checked>
                             <label for='MoFc'>MoF</label>
                         </td><td>
@@ -102,9 +118,182 @@
                             <input id='all' type='checkbox' onClick='checkAll()' checked>
                             <label for='all'>All</label>
                         </td>
+                        </td><td class='noborders'></td>
                     </tr>
                 </tfoot>
             </table>
+            <div id='SoEW' style='display:block'>
+			<p><img src='games/soew.jpg' class='cover' alt='SoEW cover'> Touhou 2 - The Story of Eastern Wonderland</p>
+                <table class='sortable'>
+                    <thead>
+                        <tr>
+                            <th>Shottype</th>
+                            <th class='sorttable_numeric'>No. of LNNs<br>(Different players)</th>
+                            <th>Players</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ReimuA</td>
+                            <td id='SoEWReimuAn'></td>
+                            <td id='SoEWReimuA'></td>
+                        </tr><tr>
+                            <td>ReimuB</td>
+                            <td id='SoEWReimuBn'></td>
+                            <td id='SoEWReimuB'></td>
+                        </tr><tr>
+                            <td>ReimuC</td>
+                            <td id='SoEWReimuCn'></td>
+                            <td id='SoEWReimuC'></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan='3'></td></tr>
+                        <tr>
+                            <td class='t'>Overall</td>
+                            <td id='SoEWtn' class='t'></td>
+                            <td id='SoEWt'></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div id='PoDD' style='display:block'>
+			<p><img src='games/podd.jpg' class='cover' alt='PoDD cover'> Touhou 3 - Phantasmagoria of Dim.Dream</p>
+                <table class='sortable'>
+                    <thead>
+                        <tr>
+                            <th>Shottype</th>
+                            <th class='sorttable_numeric'>No. of LNNs<br>(Different players)</th>
+                            <th>Players</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Reimu</td>
+                            <td id='PoDDReimun'></td>
+                            <td id='PoDDReimu'></td>
+                        </tr><tr>
+                            <td>Mima</td>
+                            <td id='PoDDMiman'></td>
+                            <td id='PoDDMima'></td>
+                        </tr><tr>
+                            <td>Marisa</td>
+                            <td id='PoDDMarisan'></td>
+                            <td id='PoDDMarisa'></td>
+                        </tr><tr>
+                            <td>Ellen</td>
+                            <td id='PoDDEllenn'></td>
+                            <td id='PoDDEllen'></td>
+                        </tr><tr>
+                            <td>Kotohime</td>
+                            <td id='PoDDKotohimen'></td>
+                            <td id='PoDDKotohime'></td>
+                        </tr><tr>
+                            <td>Kana</td>
+                            <td id='PoDDKanan'></td>
+                            <td id='PoDDKana'></td>
+                        </tr><tr>
+                            <td>Rikako</td>
+                            <td id='PoDDRikakon'></td>
+                            <td id='PoDDRikako'></td>
+                        </tr><tr>
+                            <td>Chiyuri</td>
+                            <td id='PoDDChiyurin'></td>
+                            <td id='PoDDChiyuri'></td>
+                        </tr><tr>
+                            <td>Yumemi</td>
+                            <td id='PoDDYumemin'></td>
+                            <td id='PoDDYumemi'></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan='3'></td></tr>
+                        <tr>
+                            <td class='t'>Overall</td>
+                            <td id='PoDDtn' class='t'></td>
+                            <td id='PoDDt'></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div id='LLS' style='display:block'>
+			<p><img src='games/lls.jpg' class='cover' alt='LLS cover'> Touhou 4 - Lotus Land Story</p>
+                <table class='sortable'>
+                    <thead>
+                        <tr>
+                            <th>Shottype</th>
+                            <th class='sorttable_numeric'>No. of LNNs<br>(Different players)</th>
+                            <th>Players</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ReimuA</td>
+                            <td id='LLSReimuAn'></td>
+                            <td id='LLSReimuA'></td>
+                        </tr><tr>
+                            <td>ReimuB</td>
+                            <td id='LLSReimuBn'></td>
+                            <td id='LLSReimuB'></td>
+                        </tr><tr>
+                            <td>MarisaA</td>
+                            <td id='LLSMarisaAn'></td>
+                            <td id='LLSMarisaA'></td>
+                        </tr><tr>
+                            <td>MarisaB</td>
+                            <td id='LLSMarisaBn'></td>
+                            <td id='LLSMarisaB'></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan='3'></td></tr>
+                        <tr>
+                            <td class='t'>Overall</td>
+                            <td id='LLSWtn' class='t'></td>
+                            <td id='LLSt'></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div id='MS' style='display:block'>
+			<p><img src='games/ms.jpg' class='cover' alt='MS cover'> Touhou 5 - Mystic Square</p>
+                <table class='sortable'>
+                    <thead>
+                        <tr>
+                            <th>Shottype</th>
+                            <th class='sorttable_numeric'>No. of LNNs<br>(Different players)</th>
+                            <th>Players</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Reimu</td>
+                            <td id='MSReimun'></td>
+                            <td id='MSReimu'></td>
+                        </tr><tr>
+                            <td>Marisa</td>
+                            <td id='MSMarisan'></td>
+                            <td id='MSMarisa'></td>
+                        </tr><tr>
+                            <td>Mima</td>
+                            <td id='MSMiman'></td>
+                            <td id='MSMima'></td>
+                        </tr><tr>
+                            <td>Yuuka</td>
+                            <td id='MSYuukan'></td>
+                            <td id='MSYuuka'></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan='3'></td></tr>
+                        <tr>
+                            <td class='t'>Overall</td>
+                            <td id='LLSWtn' class='t'></td>
+                            <td id='LLSt'></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
             <div id='EoSD' style='display:block'>
 			<p><img src='games/eosd.jpg' class='cover' alt='EoSD cover'> Touhou 6 - The Embodiment of Scarlet Devil</p>
                 <table class='sortable'>
