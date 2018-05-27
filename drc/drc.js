@@ -1,4 +1,4 @@
-﻿var WRs, global = this, phantasm = true, noExtra = true, noShottypes = true, dsActive = true, language = "English", GAME = "#game", DIFFICULTY = "#difficulty", CHALLENGE = "#challenge",
+﻿var WRs, step, global = this, phantasm = true, noExtra = true, noShottypes = true, dsActive = true, language = "English", DIFFICULTY = "#difficulty", CHALLENGE = "#challenge",
     PHANTASMAGORIA = "#phantasmagoriaTable", RUBRICS = "#rubrics", BOMBS = "#bombs", SCORE = "#score", PERFORMANCE = "#performance", DRCPOINTS = "#drcpoints", ERROR = "#error",
     SHOTTYPE = "#shottype", NOTIFY = "#notify", RUBRICS_BUTTON = "#rubricsButton", NB = "#nb", MISSES = "#misses", IMP_NOT = "#impNot", IMP_NOT_TEXT = "#impNotText",
     NO_EXTRA = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>", SHOTTYPE_MULTIPLIERS = "#shottypeMultipliersTable",
@@ -11,7 +11,7 @@
     LLS = "#lls", MS = "#ms", EOSD = "#eosd", PCB = "#pcb", IN = "#in", POFV = "#pofv", MOF = "#mof", SA = "#sa", UFO = "#ufo", GFW = "#gfw", TD = "#td", DDC = "#ddc",
     LOLK = "#lolk", HSIFS = "#hsifs", MISSES_LABEL = "#missesLabel", BOMBS_LABEL = "#bombsLabel", NB_LABEL = "#nbLabel", DIFFICULTY_LABEL = "#difficultyLabel",
     RELEASES_LABEL = "#releasesLabel", SURVIVAL = "#survival", SCORING = "#scoring", IS_LABEL = "#isLabel", LS_LABEL = "#lsLabel", SCORE_LABEL = "#scoreLabel",
-    FINALA = "#finala", FINALB = "#finalb", SCORING_COLUMN = "<th id='game0'>Game</th><th id='maxPoints0'>Max points</th><th id='exp0'>Exponent</th>",
+    FINALA = "#finala", FINALB = "#finalb", SCORING_COLUMN = "<th id='game0'>Game</th><th id='maxPoints0'>Max points</th><th id='exp0'>Exponent</th>", BB_LABEL = "#bbLabel",
     SURV_COLUMN = "<th id='game2'>Game</th><th id='maxPoints1'>Max points</th><th id='base0'>Base</th><th id='lostLife'>Lost life (n)</th><th id='firstBomb'>" +
     "First bomb (n)</th><th id='further'>Further bombs (n)</th>", FIRST_BOMB = "#firstBomb", FURTHER = "#further", LOST_LIFE = "#lostLife", POFV_SURV = "#phantasmagoria",
     POFV_SURV_DESC = "#phantasmagoriaDesc", MOFAITH = "#mountainOfFaith", MOFAITH_DESC = "#mountainOfFaithDesc", SHOT_MULT = "#shottypeMultipliers",RULES_TEXT = "#rulesText",
@@ -22,7 +22,7 @@
     NEW_WR = "#newWR", MOF_SEPARATE = "#mofSeparate", MAINGAME = "#maingame", PHANTASMAGORIA_SEPARATE = "#phantasmagoriaSeparate", THRESHOLD = "#threshold",
     INCREMENTS = "#increments", IN_LS = "#inLS", HSIFS_RELEASES = "#hsifsReleases", CALCULATE = "#calculate", MAX_LIVES = "#maxLives", SURV_FORMULA = "#survFormula",
     JP_TL_CREDIT = "#jptlcredit", CN_TL_CREDIT = "#cntlcredit", COUNTDOWN = "#countdown", NO_CHARGE_LABEL = "#ncLabel", RULE1 = "#rule1", RULE2 = "#rule2", RULE3 = "#rule3",
-    DS_SEPARATE = "#dsSeparate", DOUBLE_SPOILER = "#doubleSpoiler", DOUBLE_SPOILER_DESC = "#doubleSpoilerDesc", DS_TABLE = "#dsTable", DS = "#ds",
+    DS_SEPARATE = "#dsSeparate", DOUBLE_SPOILER = "#doubleSpoiler", DOUBLE_SPOILER_DESC = "#doubleSpoilerDesc", DS_TABLE = "#dsTable", DS = "#ds", GAME = "#game", BB = "#bb",
     // HRTP_SCORING = "#hrtpScoring", HRTP_SCORING_DESC = "#hrtpScoringDesc", HRTP_TABLE = "#hrtpTable", HRTP_SEPARATE = "#hrtpSeparate",
     SURV_RUBRICS = {
         "SoEW": {
@@ -1202,8 +1202,7 @@ $(document).ready(function() {
         
     }, "json");
     
-    var step = setInterval(updateCountdown, 1000);
-    
+    step = setInterval(updateCountdown, 1000);
     updateCountdown();
 });
 
@@ -1435,9 +1434,7 @@ function generateText(firstTime) {
         game = $(GAME).val();
         
         if (game) {
-            if (game == "PCB") {
-                $(BOMBS_LABEL).html("Bombs / Border Breaks");
-            } else if (game == "TD") {
+            if (game == "TD") {
                 $(BOMBS_LABEL).html("Bombs / Trances");
             } else if (game == "HRtP" || game == "GFW") {
                 $(SHOTTYPE_LABEL).html("Route");
@@ -1875,7 +1872,7 @@ function translate(arg) {
             "Misses": "ミス",
             "Rounds lost": "敗北数",
             "No Charge Attacks": "ノーチャージ攻撃",
-            "Bombs / Border Breaks": "ボム / 霊撃",
+            "Border Breaks": "霊撃",
             "Bombs / Trances": "ボム / トランス",
             "Bombs": "ボム",
             "Imperishable Shooting Captured": "「インペリシャブルシューティング」取得",
@@ -1923,7 +1920,7 @@ function translate(arg) {
             "Misses": "被弹数",
             "Rounds lost": "败北数",
             "No Charge Attacks": "NC",
-            "Bombs / Border Breaks": "扔雷数/灵击数",
+            "Border Breaks": "灵击数",
             "Bombs / Trances": "扔雷数/灵界数",
             "Bombs": "扔雷数",
             "Imperishable Shooting Captured": "【不朽的弹幕】收取",
@@ -2006,8 +2003,8 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
                 survOptions = survOptions.replace(translate("Misses") + "</label>", translate("Rounds lost") + "</label>").replace("max=100", "max=8");
             } else {
                 if (game == "PCB") {
-                    survOptions += "<br><label id='bombsLabel' for='bombs'>" + translate("Bombs / Border Breaks") + "</label><input id='bombs' type='number' value=0 min=0 max=100>";
-                    survOptions += "<br><label id='nbLabel' for='nb'>" + translate("No Bomb") + "</label><input id='nb' type='checkbox'>";
+                    survOptions += "<br><label id='bombsLabel' for='bombs'>" + translate("Bombs") + "</label><input id='bombs' type='number' value=0 min=0 max=100>";
+                    survOptions += "<br><label id='bbLabel' for='bb'>" + translate("Border Breaks") + "</label><input id='bb' type='number' value=0 min=0 max=100>";
                 } else if (game == "TD") {
                     survOptions += "<br><label id='bombsLabel' for='bombs'>" + translate("Bombs / Trances") + "</label><input id='bombs' type='number' value=0 min=0 max=100>";
                 } else {
@@ -2156,17 +2153,22 @@ function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
 function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
     var misses = Number($(MISSES).val()), bombs = Number($(BOMBS).val()), n = 0, decrement = 0;
     
-    var route, lastSpells, releases, season, seasonMultiplier, i;
+    var borderBreaks, route, lastSpells, releases, season, seasonMultiplier, i;
     
     $(ERROR).html("");
     n += misses * rubric.miss;
     
-    if (bombs >= 1 && !(game == "PCB" && $(NB).is(":checked"))) {
+    if (bombs >= 1) {
         n += rubric.firstBomb;
         bombs -= 1;
     }
     
     n += bombs * rubric.bomb;
+    
+    if (game == "PCB") {
+        borderBreaks = Number($(BB).val());
+        n += borderBreaks * rubric.bomb;
+    }
     
     if (game == "HSiFS") {
         releases = Number($(RELEASES).val());
@@ -2341,9 +2343,9 @@ function scoringPoints(rubric, game, difficulty, shottype) {
     
     if (game == "HRtP") {
         if (difficulty == "Lunatic") {
-            wr = 14800000;
+            wr = 15500000;
         } else {
-            wr = 12000000;
+            wr = 13400000;
         }
     } else if (game == "SoEW" && difficulty == "Hard") {
         wr = WRs[game][difficulty]["ReimuB"][0];
