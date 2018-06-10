@@ -1285,7 +1285,19 @@ function translateCharName(charName) {
             "Spring": "春",
             "Summer": "夏",
             "Autumn": "秋",
-            "Winter": "冬"
+            "Winter": "冬",
+            "ReimuSpring": "霊夢春",
+            "CirnoSpring": "チルノ春",
+            "AyaSpring": "文春",
+            "MarisaSpring": "魔理沙春",
+            "ReimuSummer": "霊夢夏",
+            "CirnoSummer": "チルノ夏",
+            "AyaSummer": "文夏",
+            "MarisaSummer": "魔理沙夏",
+            "CirnoAutumn": "チルノ秋",
+            "AyaAutumn": "文秋",
+            "CirnoWinter": "チルノ冬",
+            "AyaWinter": "文冬"
         }[charName]);
     } else {
        return ({
@@ -1340,7 +1352,19 @@ function translateCharName(charName) {
             "Spring": "春",
             "Summer": "夏",
             "Autumn": "秋",
-            "Winter": "冬"
+            "Winter": "冬",
+            "ReimuSpring": "灵梦春",
+            "CirnoSpring": "琪露诺春",
+            "AyaSpring": "文春",
+            "MarisaSpring": "魔理沙春",
+            "ReimuSummer": "灵梦夏",
+            "CirnoSummer": "琪露诺夏",
+            "AyaSummer": "文夏",
+            "MarisaSummer": "魔理沙夏",
+            "CirnoAutumn": "琪露诺秋",
+            "AyaAutumn": "文秋",
+            "CirnoWinter": "琪露诺冬",
+            "AyaWinter": "文冬"
         }[charName]);
     }
 }
