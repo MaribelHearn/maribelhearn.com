@@ -27,7 +27,7 @@
     SURV_RUBRICS = {
         "SoEW": {
             "Easy": {
-                "base": 30,
+                "base": 40,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 2,
@@ -138,7 +138,7 @@
             "multiplier": {
                 "ReimuA": 1.05,
                 "ReimuB": 1.05,
-                "MarisaB": 1.05
+                "MarisaB": 1.1
             }
         },
         "MS": {
@@ -529,7 +529,7 @@
             "multiplier": {
                 "B1": 1.15,
                 "B2": 1.05,
-                "C1": 1.1
+                "C1": 1.15
             }
         },
         "TD": {
@@ -686,7 +686,7 @@
                 "release": 0.5
             },
             "Lunatic": {
-                "base": 310,
+                "base": 300,
                 "exp": 1.05,
                 "miss": 2,
                 "firstBomb": 3,
@@ -704,13 +704,18 @@
                 "release": 0.5
             },
             "multiplier": {
-                "Cirno": 1.15,
-                "Aya": 1.10,
-                "Marisa": 1.05
-            },
-            "seasonMultiplier": {
-                "Spring": 1.15,
-                "Summer": 1.15
+                "ReimuSpring": 1.15,
+                "ReimuSummer": 1.15,
+                "CirnoSpring": 1.2,
+                "CirnoSummer": 1.2,
+                "CirnoAutumn": 1.1,
+                "CirnoWinter": 1.1,
+                "AyaSpring": 1.15,
+                "AyaSummer": 1.15,
+                "AyaAutumn": 1.05,
+                "AyaWinter": 1.05,
+                "MarisaSpring": 1.15,
+                "MarisaSummer": 1.15
             }
         }
     },
@@ -1209,14 +1214,14 @@ $(document).ready(function() {
 function updateCountdown() {
     var countdownDate, now, distance, days, hours, minutes, seconds;
     
-    countdownDate = Date.UTC("2018", "2", "28", "16", "0", "0");
+    countdownDate = Date.UTC("2018", "5", "23", "10", "0", "0");
     now = new Date().getTime();
     distance = countdownDate - now;
     days = Math.floor(distance / (1000 * 60 * 60 * 24));
     hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    $(COUNTDOWN).html("DRC End<br>" + days + translate("d ") + hours + translate("h ") + minutes + translate("m ") + seconds + translate("s"));
+    $(COUNTDOWN).html("DRC Start<br>" + days + translate("d ") + hours + translate("h ") + minutes + translate("m ") + seconds + translate("s"));
     
     if (distance < 0) {
         $(COUNTDOWN).html("");
@@ -1509,7 +1514,7 @@ function generateText(firstTime) {
         "<a href='https://twitter.com/VincentZeem'>ZM</a> and is held on <a href='https://discord.gg/tu47Hrs'>the official DRC Discord</a>. " +
         "Two teams go up against each other in several different categories. Each player posts an arbitrarily long list of categories, ordered by preference, " +
         "which can be either survival or scoring of any Touhou shooting game and any difficulty. They will be matched up against a player from the other team, " +
-        "in a category that both players had on their list. The teams and categories are determined by the DRC management team. Players are given one week to " +
+        "in a category that both players had on their list. The teams and categories are determined by the DRC management team. Players are given two weeks to " +
         "sign up for the competition, and once it starts, two weeks to submit a replay, which will be awarded points dependent on the rubrics. " +
         "Runs done outside those two weeks are invalid. Players can submit an unlimited number of replays; the replay that is worth the most DRC points will count.");
         $(DRC_INTRO_PTS).html("If you want to know how many DRC points a run is worth, the points for a given run can be determined using the calculator below.");
@@ -1671,7 +1676,7 @@ function generateText(firstTime) {
         "２つのチームが幾つかのカテゴリーで競争します。各プレイヤーは希望順に並べたカテゴリーのリストを作ります。" +
         "カテゴリーは東方STGゲームの任意の難易度での「クリア重視」と「スコアアタック（稼ぎ）」のどちらかを選ぶことができます。" +
         "相手チームのプレイヤーと、共通してリストされていた１つのカテゴリーで、マッチングされます。このチームとカテゴリーはDRC運営陣によって決められます。" +
-        "プレイヤーには大会登録のために１週間が与えられます。そして大会が始まり、リプレイ提出のための２週間が与えられます。" +
+        "プレイヤーには大会登録のために２週間が与えられます。そして大会が始まり、リプレイ提出のための２週間が与えられます。" +
         "その後ルーブリックに基づいてポイントが授与されます。この２週間以外でのプレイは無効です。" +
         "プレイヤーは無制限にリプレイを登録することが出来ますが、DRCポイントが最高であるリプレイのみが採用されます。");
         $(DRC_INTRO_PTS).html("リプレイにどれだけDRCポイントが貰えるか知りたいならば、下の計算機を使うことが出来ます。");
@@ -1827,7 +1832,7 @@ function generateText(firstTime) {
         }
         
         $(DRC_INTRO).html("<b>Dodging Rain Competition(DRC)</b>是由<a href='https://twitter.com/VincentZeem'>ZM</a>发起的东方比赛，举办地点：<a href='https://discord.gg/tu47Hrs'>DRC Discord</a>。" +
-        "两队进行不同项目的比赛。每位选手报名时写下想打的任意项目，根据偏好排序，可以是避弹向的生存，也可以是打分，任意作品、任意难度均可。列出的项目会与另一队进行匹配，相同项目的选手即匹配成功。分组与项目由DRC主办方决定。选手将会有一周时间报名。" +
+        "两队进行不同项目的比赛。每位选手报名时写下想打的任意项目，根据偏好排序，可以是避弹向的生存，也可以是打分，任意作品、任意难度均可。列出的项目会与另一队进行匹配，相同项目的选手即匹配成功。分组与项目由DRC主办方决定。选手将会有二周时间报名。" +
         "一旦开赛，有两周时间提交参赛录像，录像所获得分根据计算公式而定。未在两周内提交则视为无效。玩家提交的rep个数无限制，最终DRC得分将选取最高分录入。");
         $(DRC_INTRO_PTS).html("如果你想知道得了多少DRC分，请将你完成的项目填入下方计算器内开始计算。");
         $(DRC_SCORES).html("分数可包含数字、逗号、句号、空格。生存向将会被假定为已通关，打分则不会。");
@@ -2089,7 +2094,7 @@ function isPhantasmagoria(game) {
 }
 
 function drcPoints() {
-    var game = $(GAME).val(), difficulty = $(DIFFICULTY).val(), challenge = $(CHALLENGE).val(), shottype = $(SHOTTYPE).val(), rubric, points;
+    var game = $(GAME).val(), difficulty = $(DIFFICULTY).val(), challenge = $(CHALLENGE).val(), shottype = $(SHOTTYPE).val(), rubric, season, points;
     
     if (challenge == "Survival") {
         if (!SURV_RUBRICS[game]) {
@@ -2101,7 +2106,14 @@ function drcPoints() {
         }
         
         rubric = SURV_RUBRICS[game][difficulty];
-        shottypeMultiplier = (SURV_RUBRICS[game].multiplier[shottype] ? SURV_RUBRICS[game].multiplier[shottype] : 1);
+        
+        if (game == "HSiFS" && Number($(RELEASES).val()) === 0) {
+            season = $(SEASON).val();
+            shottypeMultiplier = (SURV_RUBRICS[game].multiplier[shottype + season] ? SURV_RUBRICS[game].multiplier[shottype + season] : 1);
+        } else {
+            shottypeMultiplier = (SURV_RUBRICS[game].multiplier[shottype] ? SURV_RUBRICS[game].multiplier[shottype] : 1);
+        }
+        
         points = (isPhantasmagoria(game) ? phantasmagoria(rubric, game, difficulty, shottypeMultiplier) : survivalPoints(rubric, game, difficulty, shottypeMultiplier));
     } else {
         if (!(game == "MoF" && (difficulty == "Easy" || difficulty == "Lunatic")) && game != "DS" && !SCORE_RUBRICS[game]) {
@@ -2153,7 +2165,7 @@ function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
 function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
     var misses = Number($(MISSES).val()), bombs = Number($(BOMBS).val()), n = 0, decrement = 0;
     
-    var borderBreaks, route, lastSpells, releases, season, seasonMultiplier, i;
+    var borderBreaks, route, lastSpells, releases, season, i;
     
     $(ERROR).html("");
     n += misses * rubric.miss;
@@ -2221,13 +2233,7 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
     }
     
     if (difficulty != "Extra" && difficulty != "Phantasm") {
-        if (game == "HSiFS" && Number($(RELEASES).val()) === 0) {
-            season = $(SEASON).val();
-            seasonMultiplier = (SURV_RUBRICS[game].seasonMultiplier[season] ? SURV_RUBRICS[game].seasonMultiplier[season] : 1);
-            drcpoints = Math.round(drcpoints * (shottypeMultiplier + seasonMultiplier - 1));
-        } else {
-            drcpoints = Math.round(drcpoints * shottypeMultiplier);
-        }
+        drcpoints = Math.round(drcpoints * shottypeMultiplier);
     }
     
     return drcpoints;
