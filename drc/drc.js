@@ -122,8 +122,8 @@
                 "bomb": 1
             },
             "Lunatic": {
-                "base": 280,
-                "exp": 1.05,
+                "base": 290,
+                "exp": 1.07,
                 "miss": 2,
                 "firstBomb": 3,
                 "bomb": 1
@@ -165,7 +165,7 @@
             },
             "Lunatic": {
                 "base": 300,
-                "exp": 1.05,
+                "exp": 1.07,
                 "miss": 2,
                 "firstBomb": 5,
                 "bomb": 1
@@ -819,7 +819,7 @@
             },
             "Extra": {
                 "base": 375,
-                "exp": 3
+                "exp": 4
             }
         },
         "EoSD": {
