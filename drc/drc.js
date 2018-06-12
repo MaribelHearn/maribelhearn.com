@@ -814,7 +814,7 @@
                 "exp": 3
             },
             "Lunatic": {
-                "base": 425,
+                "base": 450,
                 "exp": 2
             },
             "Extra": {
@@ -955,7 +955,7 @@
             },
             "Extra": {
                 "base": 450,
-                "exp": 2.5
+                "exp": 3
             }
         },
         "GFW": {
@@ -2189,6 +2189,8 @@ function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
 function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
     var misses = Number($(MISSES).val()), bombs = Number($(BOMBS).val()), n = 0, decrement = 0;
     
+
+
     var borderBreaks, route, lastSpells, releases, season, i;
     
     $(ERROR).html("");
@@ -2391,12 +2393,8 @@ function scoringPoints(rubric, game, difficulty, shottype) {
         } else if (difficulty == "Lunatic") {
             wr = 165000000;
         }
-    } else if (game == "EoSD" && difficulty == "Lunatic" && shottype == "ReimuA") {
-        wr = 558947670;
-    } else if (game == "UFO" && difficulty == "Lunatic" && shottype == "MarisaA") {
-        wr = 3292353200;
-    } else if (game == "LoLK" && difficulty == "Lunatic" && shottype == "Reisen") {
-        wr = 3209081800;
+    } else if (game == "MS" && difficulty == "Lunatic") {
+        wr = 200000000;
     } else if (game == "HSiFS" && difficulty == "Hard") {
         wr = WRs[game][difficulty]["AyaAutumn"][0];
     } else {
