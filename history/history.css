@@ -115,16 +115,28 @@ h3 {
 	background-color: #c9ff8b;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
+    #wrap {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
 	.list {
 		width: 100%;
 	}
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
+    #wrap {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
 	.list {
 		width: 100%;
 	}
 }
 @media only screen and (min-width: 801px) and (max-width: 1159px) {
+    #wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
     body {
         font-size: 12px;
     }
@@ -133,6 +145,10 @@ h3 {
     }
 }
 @media only screen and (min-width: 1160px) and (max-width: 1279px) {
+    #wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
     body {
         font-size: 14px;
     }
