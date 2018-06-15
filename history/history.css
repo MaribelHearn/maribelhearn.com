@@ -132,37 +132,15 @@ h3 {
 		width: 100%;
 	}
 }
-@media only screen and (min-width: 801px) and (max-width: 1159px) {
+@media only screen and (max-width: 800px) {
+    #wrap {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+}
+@media only screen and (min-width: 800px) and (max-width: 1400px) {
     #wrap {
         margin-left: 15%;
         margin-right: 15%;
-    }
-    body {
-        font-size: 12px;
-    }
-    .list {
-        width: 150px;
-    }
-}
-@media only screen and (min-width: 1160px) and (max-width: 1279px) {
-    #wrap {
-        margin-left: 15%;
-        margin-right: 15%;
-    }
-    body {
-        font-size: 14px;
-    }
-    .list {
-        width: 175px;
-    }
-}
-@media only screen and (min-width: 1280px) and (max-width: 1499px) {
-    .list {
-        width: 200px;
-    }
-}
-@media only screen and (min-width: 1500px) and (max-width: 1725px) {
-    .list {
-        width: 225px;
     }
 }
