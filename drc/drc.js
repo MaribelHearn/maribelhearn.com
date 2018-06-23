@@ -757,7 +757,7 @@
             },
             "Extra": {
                 "base": 325,
-                "exp": 3
+                "exp": 5
             }
         },
         "PoDD": {
@@ -889,7 +889,7 @@
             },
             "Extra": {
                 "base": 450,
-                "exp": 2.5
+                "exp": 3
             }
         },
         "PoFV": {
@@ -2183,13 +2183,11 @@ function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
         shottypeMultiplier = 1;
     }
     
-    return Math.round(shottypeMultiplier * (rubric.base - ((rubric.base - rubric.min) / rubric.lives * roundsLost))) + bonus;
+    return Math.round(shottypeMultiplier * ((rubric.base - ((rubric.base - rubric.min) / rubric.lives * roundsLost)) + bonus));
 }
 
 function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
     var misses = Number($(MISSES).val()), bombs = Number($(BOMBS).val()), n = 0, decrement = 0;
-    
-
 
     var borderBreaks, route, lastSpells, releases, season, i;
     
