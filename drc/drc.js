@@ -1088,25 +1088,12 @@
         }
     },
     SCENE_THRESHOLDS = {
-        "2-2": [0, 170, 205, 225],
-        "2-3": [0, 135, 153, 164],
-        "2-4": [0, 130, 155, 170],
-        "5-2": [0, 300, 375, 400],
-        "5-4": [0, 450, 600, 700],
-        "5-6": [0, 385, 455, 490],
-        "6-4": [0, 500, 700, 900],
-        "7-6": [0, 1000, 1500, 1830],
-        "8-3": [0, 2200, 2900, 3120],
-        "8-6": [0, 450, 810, 900],
-        "9-6": [0, 1000, 1900, 2400],
-        "9-7": [0, 350, 550, 730],
-        "10-6": [0, 400, 750, 950],
-        "12-3": [0, 1100, 1620, 1740],
-        "12-4": [0, 800, 1200, 1485],
-        "12-8": [0, 1400, 2600, 3050],
-        "EX-3": [0, 400, 650, 750],
-        "EX-9": [0, 3600, 4060, 4160],
-        "SP-2": [0, 500, 660, 680]
+        "4-7": [0, 250, 340, 400],
+        "9-6": [0, 1400, 2100, 2450],
+        "10-1": [0, 800, 950, 1010],
+        "11-8": [0, 1300, 1800, 1940],
+        "12-4": [0, 1000, 1330, 1490],
+        "EX-6": [0, 1100, 1210, 1250]
     },
     /*HRTP_THRESHOLDS = {
         "Easy": {
@@ -1214,7 +1201,7 @@ $(document).ready(function() {
 function updateCountdown() {
     var countdownDate, now, distance, days, hours, minutes, seconds;
     
-    countdownDate = Date.UTC("2018", "5", "23", "10", "0", "0");
+    countdownDate = Date.UTC("2018", "6", "9", "2", "30", "0");
     now = new Date().getTime();
     distance = countdownDate - now;
     days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -2320,7 +2307,7 @@ function determineIncrement(thresholds, i) {
         i = 3;
     }
     
-    var increment = (i === 1 ? 10 : 20), lowerBound = thresholds[i - 1] * 1000;
+    var increment = (i === 1 ? 20 : 30), lowerBound = thresholds[i - 1] * 1000;
     
     return (thresholds[i] * 1000 - lowerBound) / increment;
 }
@@ -2640,9 +2627,9 @@ function generateRubrics() {
         n1 = thresholds[1] * 1000;
         n2 = thresholds[2] * 1000;
         n3 = thresholds[3] * 1000;
-        step1 = Math.round(n1 / 10);
-        step2 = Math.round((n2 - n1) / 20);
-        step3 = Math.round((n3 - n2) / 20);
+        step1 = Math.round(n1 / 20);
+        step2 = Math.round((n2 - n1) / 30);
+        step3 = Math.round((n3 - n2) / 30);
         
         if (language == "English") {
             $(DS_TABLE).append("<tr><td>" + scene + "</td><td>0</td><td>+1 for every " + sep(step1) +
