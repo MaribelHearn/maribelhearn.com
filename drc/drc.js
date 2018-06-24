@@ -2047,9 +2047,8 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
             $(MISSES_LABEL).html(translate("Misses"));
         } else {
             if (game == "DS") {
-                $(PERFORMANCE).html("<label for='scene'>Scene</label><select id='scene'><option>2-2</option><option>2-3</option><option>2-4</option><option>5-2</option>" +
-                "<option>5-4</option><option>5-6</option><option>6-4</option><option>7-6</option><option>8-3</option><option>8-6</option><option>9-6</option><option>9-7</option>" +
-                "<option>10-6</option><option>12-3</option><option>12-4</option><option>12-8</option><option>EX-3</option><option>EX-9</option><option>SP-2</option></select><br>" + SCORE_OPTIONS);
+                $(PERFORMANCE).html("<label for='scene'>Scene</label><select id='scene'><option>4-7</option><option>9-6</option>" +
+                "<option>10-1</option><option>11-8</option><option>12-4</option><option>EX-6</option></select><br>" + SCORE_OPTIONS);
             } else {
                 $(PERFORMANCE).html(SCORE_OPTIONS);
             }
