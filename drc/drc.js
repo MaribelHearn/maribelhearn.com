@@ -1049,7 +1049,7 @@
         "HSiFS": {
             "Easy": {
                 "base": 375,
-                "exp": 4
+                "exp": 3
             },
             "Normal": {
                 "base": 400,
