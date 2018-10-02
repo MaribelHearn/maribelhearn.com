@@ -54,7 +54,9 @@
                 "firstBomb": 10,
                 "bomb": 2
             },
-            "multiplier": {}
+            "multiplier": {
+                "Makai": 1.05
+            }
         },
         "SoEW": {
             "Easy": {
@@ -2588,7 +2590,7 @@ function generateRubrics() {
             
             if (difficulty == "multiplier" || difficulty == "seasonMultiplier") {
                 $(SHOTTYPE_MULTIPLIERS).append("<tr>");
-                $(SHOTTYPE_MULTIPLIERS).append(game == "SoEW" ? "<th id='multipliedShottype'>Shottype</th><th id='multiplier'>Multiplier</th><" : "<th></th><td></td>");
+                $(SHOTTYPE_MULTIPLIERS).append(game == "HRtP" ? "<th id='multipliedShottype'>Shottype</th><th id='multiplier'>Multiplier</th><" : "<th></th><td></td>");
                 $(SHOTTYPE_MULTIPLIERS).append("</tr>");
                 
                 for (shottype in rubric) {
