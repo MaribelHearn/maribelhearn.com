@@ -25,6 +25,37 @@
     DS_SEPARATE = "#dsSeparate", DOUBLE_SPOILER = "#doubleSpoiler", DOUBLE_SPOILER_DESC = "#doubleSpoilerDesc", DS_TABLE = "#dsTable", DS = "#ds", GAME = "#game", BB = "#bb",
     // HRTP_SCORING = "#hrtpScoring", HRTP_SCORING_DESC = "#hrtpScoringDesc", HRTP_TABLE = "#hrtpTable", HRTP_SEPARATE = "#hrtpSeparate",
     SURV_RUBRICS = {
+        "HRtP": {
+            "Easy": {
+                "base": 60,
+                "exp": 1.04,
+                "miss": 2,
+                "firstBomb": 4,
+                "bomb": 2
+            },
+            "Normal": {
+                "base": 110,
+                "exp": 1.04,
+                "miss": 2,
+                "firstBomb": 4,
+                "bomb": 2
+            },
+            "Hard": {
+                "base": 150,
+                "exp": 1.04,
+                "miss": 2,
+                "firstBomb": 5,
+                "bomb": 2
+            },
+            "Lunatic": {
+                "base": 300,
+                "exp": 1.04,
+                "miss": 2,
+                "firstBomb": 10,
+                "bomb": 2
+            },
+            "multiplier": {}
+        },
         "SoEW": {
             "Easy": {
                 "base": 40,
@@ -859,7 +890,7 @@
             },
             "Lunatic": {
                 "base": 500,
-                "exp": 1.5
+                "exp": 2
             },
             "Extra": {
                 "base": 450,
@@ -873,19 +904,19 @@
         "IN": {
             "Easy": {
                 "base": 375,
-                "exp": 4
+                "exp": 4 // tbd
             },
             "Normal": {
                 "base": 400,
-                "exp": 3
+                "exp": 3 // tbd
             },
             "Hard": {
                 "base": 450,
-                "exp": 2.5
+                "exp": 2.5 // tbd
             },
             "Lunatic": {
                 "base": 500,
-                "exp": 2.1
+                "exp": 2.7
             },
             "Extra": {
                 "base": 450,
@@ -943,11 +974,11 @@
             },
             "Normal": {
                 "base": 400,
-                "exp": 3
+                "exp": 2.5
             },
             "Hard": {
                 "base": 450,
-                "exp": 2.5
+                "exp": 2
             },
             "Lunatic": {
                 "base": 500,
@@ -983,19 +1014,19 @@
         "TD": {
             "Easy": {
                 "base": 375,
-                "exp": 4
+                "exp": 5
             },
             "Normal": {
                 "base": 400,
-                "exp": 3
+                "exp": 4
             },
             "Hard": {
                 "base": 450,
-                "exp": 2.5
+                "exp": 3.5
             },
             "Lunatic": {
                 "base": 500,
-                "exp": 2.2
+                "exp": 3.5
             },
             "Extra": {
                 "base": 450,
@@ -2379,6 +2410,16 @@ function scoringPoints(rubric, game, difficulty, shottype) {
         }
     } else if (game == "MS" && difficulty == "Lunatic") {
         wr = 200000000;
+    } else if (game == "PCB" && difficulty == "Lunatic") {
+        wr = WRs[game][difficulty];
+        
+        if (shottype == "ReimuB") {
+            wr = 3300000000;
+        } else if (shottype == "MarisaA") {
+            wr = 3100000000;
+        } else if (shottype == "SakuyaB") {
+            wr = 3600000000;
+        }
     } else if (game == "HSiFS" && difficulty == "Hard") {
         wr = WRs[game][difficulty]["AyaAutumn"][0];
     } else {
@@ -2538,7 +2579,7 @@ function generateRubrics() {
             $(PHANTASMAGORIA).append("</tr>");
         } else {
             $(SURV_TABLE).append("<tr>");
-            $(SURV_TABLE).append(game == "SoEW" ? SURV_COLUMN : "<th></th><td></td><td></td><td></td><td></td><td></td>");
+            $(SURV_TABLE).append(game == "HRtP" ? SURV_COLUMN : "<th></th><td></td><td></td><td></td><td></td><td></td>");
             $(SURV_TABLE).append("</tr>");
         }
         
