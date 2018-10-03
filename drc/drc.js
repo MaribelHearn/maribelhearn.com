@@ -2422,6 +2422,14 @@ function scoringPoints(rubric, game, difficulty, shottype) {
         } else if (shottype == "SakuyaB") {
             wr = 3600000000;
         }
+    } else if (game == "LoLK" && difficulty == "Lunatic") {
+        wr = WRs[game][difficulty];
+        
+        if (shottype == "Reimu") {
+            wr = 2500000000;
+        } else if (shottype == "Marisa") {
+            wr = 2400000000;
+        }
     } else if (game == "HSiFS" && difficulty == "Hard") {
         wr = WRs[game][difficulty]["AyaAutumn"][0];
     } else {
