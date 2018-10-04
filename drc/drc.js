@@ -1243,7 +1243,7 @@ function updateCountdown() {
     hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    $(COUNTDOWN).html("DRC Start<br>" + days + translate("d ") + hours + translate("h ") + minutes + translate("m ") + seconds + translate("s"));
+    $(COUNTDOWN).html("DRC End<br>" + days + translate("d ") + hours + translate("h ") + minutes + translate("m ") + seconds + translate("s"));
     
     if (distance < 0) {
         $(COUNTDOWN).html("");
