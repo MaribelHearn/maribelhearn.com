@@ -345,13 +345,13 @@
             "multiplier": {
                 "MagicTeam": 1.05,
                 "ScarletTeam": 1.05,
-                "Reimu": 1.1,
+                "Reimu": 1.2,
                 "Yukari": 1.05,
                 "Marisa": 1.1,
-                "Alice": 1.2,
-                "Sakuya": 1.2,
+                "Alice": 1.3,
+                "Sakuya": 1.3,
                 "Remilia": 1.1,
-                "Yuyuko": 1.1
+                "Yuyuko": 1.15
             }
         },
         "PoFV": {
@@ -560,9 +560,11 @@
                 "bomb": 1
             },
             "multiplier": {
+                "A1": 1.05,
                 "B1": 1.15,
                 "B2": 1.05,
-                "C1": 1.15
+                "C1": 1.15,
+                "C2": 1.05
             }
         },
         "TD": {
@@ -643,9 +645,9 @@
             },
             "multiplier": {
                 "ReimuB": 1.1,
-                "MarisaA": 1.2,
+                "MarisaA": 1.3,
                 "MarisaB": 1.05,
-                "SakuyaB": 1.2
+                "SakuyaB": 1.3
             }
         },
         "LoLK": {
@@ -685,7 +687,7 @@
                 "bomb": 1
             },
             "multiplier": {
-                "Marisa": 1.15,
+                "Marisa": 1.2,
                 "Sanae": 1.05,
                 "Reisen": 1.05
             }
@@ -1234,7 +1236,7 @@ $(document).ready(function() {
 function updateCountdown() {
     var countdownDate, now, distance, days, hours, minutes, seconds;
     
-    countdownDate = Date.UTC("2018", "9", "3", "17", "0", "0");
+    countdownDate = Date.UTC("2018", "9", "18", "14", "30", "0");
     now = new Date().getTime();
     distance = countdownDate - now;
     days = Math.floor(distance / (1000 * 60 * 60 * 24));
