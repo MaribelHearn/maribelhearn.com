@@ -1557,7 +1557,7 @@ function generateText(firstTime) {
         }
         
         $(DRC_INTRO).html("The <b>Dodging Rain Competition (DRC)</b> is a Touhou game competition that was invented by " +
-        "<a href='https://twitter.com/VincentZeem'>ZM</a> and is held on <a href='https://discord.gg/tu47Hrs'>the official DRC Discord</a>. " +
+        "<a href='https://twitter.com/VincentZeem'>ZM</a> and is held on <a href='https://discord.gg/Ucae3Uf'>the official DRC Discord</a>. " +
         "Two teams go up against each other in several different categories. Each player posts an arbitrarily long list of categories, ordered by preference, " +
         "which can be either survival or scoring of any Touhou shooting game and any difficulty. They will be matched up against a player from the other team, " +
         "in a category that both players had on their list. The teams and categories are determined by the DRC management team. Players are given two weeks to " +
@@ -1718,7 +1718,7 @@ function generateText(firstTime) {
         }
         
         $(DRC_INTRO).html("<b>Dodging Rain Competition(DRC)</b>は<a href='https://twitter.com/VincentZeem'>ZM</a>により考案された" +
-        "<a href='https://discord.gg/tu47Hrs'>DRC Discord</a>で開かれる東方projectの定期大会です。" +
+        "<a href='https://discord.gg/Ucae3Uf'>DRC Discord</a>で開かれる東方projectの定期大会です。" +
         "２つのチームが幾つかのカテゴリーで競争します。各プレイヤーは希望順に並べたカテゴリーのリストを作ります。" +
         "カテゴリーは東方STGゲームの任意の難易度での「クリア重視」と「スコアアタック（稼ぎ）」のどちらかを選ぶことができます。" +
         "相手チームのプレイヤーと、共通してリストされていた１つのカテゴリーで、マッチングされます。このチームとカテゴリーはDRC運営陣によって決められます。" +
@@ -1877,7 +1877,7 @@ function generateText(firstTime) {
             $(INCREMENTS + i).html("增幅");
         }
         
-        $(DRC_INTRO).html("<b>Dodging Rain Competition(DRC)</b>是由<a href='https://twitter.com/VincentZeem'>ZM</a>发起的东方比赛，举办地点：<a href='https://discord.gg/tu47Hrs'>DRC Discord</a>。" +
+        $(DRC_INTRO).html("<b>Dodging Rain Competition(DRC)</b>是由<a href='https://twitter.com/VincentZeem'>ZM</a>发起的东方比赛，举办地点：<a href='https://discord.gg/Ucae3Uf'>DRC Discord</a>。" +
         "两队进行不同项目的比赛。每位选手报名时写下想打的任意项目，根据偏好排序，可以是避弹向的生存，也可以是打分，任意作品、任意难度均可。列出的项目会与另一队进行匹配，相同项目的选手即匹配成功。分组与项目由DRC主办方决定。选手将会有二周时间报名。" +
         "一旦开赛，有两周时间提交参赛录像，录像所获得分根据计算公式而定。未在两周内提交则视为无效。玩家提交的rep个数无限制，最终DRC得分将选取最高分录入。");
         $(DRC_INTRO_PTS).html("如果你想知道得了多少DRC分，请将你完成的项目填入下方计算器内开始计算。");
