@@ -810,7 +810,7 @@
             },
             "Lunatic": {
                 "base": 450,
-                "exp": 2
+                "exp": 3
             }
         },
         "LLS": {
@@ -1056,7 +1056,7 @@
             },
             "Extra": {
                 "base": 450,
-                "exp": 2.5
+                "exp": 7
             }
         },
         "LoLK": {
@@ -2423,6 +2423,8 @@ function scoringPoints(rubric, game, difficulty, shottype) {
             wr = 3100000000;
         } else if (shottype == "SakuyaB") {
             wr = 3600000000;
+        } else {
+            wr = wr[shottype][0];
         }
     } else if (game == "LoLK" && difficulty == "Lunatic") {
         wr = WRs[game][difficulty];
@@ -2431,6 +2433,8 @@ function scoringPoints(rubric, game, difficulty, shottype) {
             wr = 2500000000;
         } else if (shottype == "Marisa") {
             wr = 2400000000;
+        } else {
+            wr = wr[shottype][0];
         }
     } else if (game == "HSiFS" && difficulty == "Hard") {
         wr = WRs[game][difficulty]["AyaAutumn"][0];
