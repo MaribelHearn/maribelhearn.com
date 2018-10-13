@@ -203,6 +203,12 @@ function load() {
             }
             
             $(overall).html($(overall).html().replace("<u>", "<u><strong>").replace("</u>", "</strong></u>"));
+            
+            // Nanashi suspicion footnote
+            if (game == "MoF") {
+                $(overall).html($(overall).html()replace("</strong>", "*</strong>"));
+            }
+            
             $("#" + game + "overall0").html(sep(max));
             $("#" + game + "overall1").html(overallplayer);
             $("#" + game + "overall2").html(overalldifficulty);
