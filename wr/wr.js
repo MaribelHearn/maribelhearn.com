@@ -206,7 +206,7 @@ function load() {
             
             // Nanashi suspicion footnote
             if (game == "MoF") {
-                $(overall).html($(overall).html()replace("</strong>", "*</strong>"));
+                $(overall).html($(overall).html().replace("</strong>", "*</strong>"));
             }
             
             $("#" + game + "overall0").html(sep(max));
