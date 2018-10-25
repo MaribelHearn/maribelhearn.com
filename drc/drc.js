@@ -24,29 +24,30 @@ var WRs, step, global = this, phantasm = true, noExtra = true, noShottypes = tru
     JP_TL_CREDIT = "#jptlcredit", CN_TL_CREDIT = "#cntlcredit", COUNTDOWN = "#countdown", NO_CHARGE_LABEL = "#ncLabel", RULE1 = "#rule1", RULE2 = "#rule2", RULE3 = "#rule3",
     DS_SEPARATE = "#dsSeparate", DOUBLE_SPOILER = "#doubleSpoiler", DOUBLE_SPOILER_DESC = "#doubleSpoilerDesc", DS_TABLE = "#dsTable", DS = "#ds", GAME = "#game", BB = "#bb",
     // HRTP_SCORING = "#hrtpScoring", HRTP_SCORING_DESC = "#hrtpScoringDesc", HRTP_TABLE = "#hrtpTable", HRTP_SEPARATE = "#hrtpSeparate",
-	RubricsJSON;
+    Rubrics;
     
 $(document).ready(function() {
     $.get("../json/wrlist.json", function(data) {
         WRs = data;
-        generateText(true);
-        checkValues(true, true, true);
-        generateRubrics();
-        $(POFV_FORMULA).attr("colspan", 4);
-        
-        if (getCookie("lang") == "Japanese") {
-            language = "Japanese";
-            generateText(false);
-        } else if (getCookie("lang") == "Chinese") {
-            language = "Chinese";
-            generateText(false);
-        }
-        
-    }, "json");
     
-    $.getJSON("../json/rubrics.json", function(data) {
-        RubricsJSON = data;
-    });
+        $.get("../json/rubrics.json", function(data) {
+            Rubrics = data;
+            
+            generateText(true);
+            checkValues(true, true, true);
+            generateRubrics();
+            $(POFV_FORMULA).attr("colspan", 4);
+            
+            if (getCookie("lang") == "Japanese") {
+                language = "Japanese";
+                generateText(false);
+            } else if (getCookie("lang") == "Chinese") {
+                language = "Chinese";
+                generateText(false);
+            }
+        }, "json");
+              
+    }, "json");
     
     step = setInterval(updateCountdown, 1000);
     updateCountdown();
@@ -961,7 +962,7 @@ function drcPoints() {
     var game = $(GAME).val(), difficulty = $(DIFFICULTY).val(), challenge = $(CHALLENGE).val(), shottype = $(SHOTTYPE).val(), rubric, season, points;
     
     if (challenge == "Survival") {
-        if (!RubricsJSON.SURV_RUBRICS[game]) {
+        if (!Rubrics.SURV_RUBRICS[game]) {
             $(ERROR).html("<strong style='color:red'>" + translate("Error: ") + translate("the survival rubrics for this game are undetermined as of now.") + "</strong>");
             $(DRCPOINTS).html(translate("Your DRC points for this run: ") + " <strong>0</strong>!");
             return;
@@ -969,18 +970,18 @@ function drcPoints() {
             $(ERROR).html("");
         }
         
-        rubric = RubricsJSON.SURV_RUBRICS[game][difficulty];
+        rubric = Rubrics.SURV_RUBRICS[game][difficulty];
         
         if (game == "HSiFS" && Number($(RELEASES).val()) === 0) {
             season = $(SEASON).val();
-            shottypeMultiplier = (RubricsJSON.SURV_RUBRICS[game].multiplier[shottype + season] ? RubricsJSON.SURV_RUBRICS[game].multiplier[shottype + season] : 1);
+            shottypeMultiplier = (Rubrics.SURV_RUBRICS[game].multiplier[shottype + season] ? Rubrics.SURV_RUBRICS[game].multiplier[shottype + season] : 1);
         } else {
-            shottypeMultiplier = (RubricsJSON.SURV_RUBRICS[game].multiplier[shottype] ? RubricsJSON.SURV_RUBRICS[game].multiplier[shottype] : 1);
+            shottypeMultiplier = (Rubrics.SURV_RUBRICS[game].multiplier[shottype] ? Rubrics.SURV_RUBRICS[game].multiplier[shottype] : 1);
         }
         
         points = (isPhantasmagoria(game) ? phantasmagoria(rubric, game, difficulty, shottypeMultiplier) : survivalPoints(rubric, game, difficulty, shottypeMultiplier));
     } else {
-        if (!(game == "MoF" && (difficulty == "Easy" || difficulty == "Lunatic")) && game != "DS" && !RubricsJSON.SCORE_RUBRICS[game]) {
+        if (!(game == "MoF" && (difficulty == "Easy" || difficulty == "Lunatic")) && game != "DS" && !Rubrics.SCORE_RUBRICS[game]) {
             $(ERROR).html("<strong style='color:red'>" + translate("Error: ") + translate("the scoring rubrics for this game are undetermined as of now.") + "</strong>");
             $(DRCPOINTS).html(translate("Your DRC points for this run: ") + " <strong>0</strong>!");
             return;
@@ -993,7 +994,7 @@ function drcPoints() {
         } else if (game == "MoF") {
             points = mofFormula(difficulty, shottype);
         } else {
-            rubric = RubricsJSON.SCORE_RUBRICS[game][difficulty];
+            rubric = Rubrics.SCORE_RUBRICS[game][difficulty];
             points = scoringPoints(rubric, game, difficulty, shottype);
         }
     }
@@ -1078,15 +1079,15 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
             route = $(ROUTE).val();
             lastSpells = $(LS).val();
             
-            if (lastSpells > RubricsJSON.MAX_LAST_SPELLS[difficulty][route]) {
+            if (lastSpells > Rubrics.MAX_LAST_SPELLS[difficulty][route]) {
                 if (language == "English") {
                     $(ERROR).html("<strong style='color:red'>Error: the number of Last Spells captured in a " + route +
-                    " clear on " + difficulty + " cannot exceed " + RubricsJSON.MAX_LAST_SPELLS[difficulty][route] + "</strong>");
+                    " clear on " + difficulty + " cannot exceed " + Rubrics.MAX_LAST_SPELLS[difficulty][route] + "</strong>");
                 } else if (language == "Japanese") {
-                    $(ERROR).html("<strong style='color:red'>エラー: ラストスペルが" + RubricsJSON.MAX_LAST_SPELLS[difficulty][route] + "を超えてはいけません。</strong>");
+                    $(ERROR).html("<strong style='color:red'>エラー: ラストスペルが" + Rubrics.MAX_LAST_SPELLS[difficulty][route] + "を超えてはいけません。</strong>");
                 } else {
                     $(ERROR).html("<strong style='color:red'>错误：" + route + "路线" + difficulty +
-                    "难度中的LSC收取数不能超过" + RubricsJSON.MAX_LAST_SPELLS[difficulty][route] + "。");
+                    "难度中的LSC收取数不能超过" + Rubrics.MAX_LAST_SPELLS[difficulty][route] + "。");
                 }
                 
                 return 0;
@@ -1134,7 +1135,7 @@ function mofFormula(difficulty, shottype) {
         return drcpoints;
     }
     
-    thresholds = RubricsJSON.MOF_THRESHOLDS[difficulty][shottype];
+    thresholds = Rubrics.MOF_THRESHOLDS[difficulty][shottype];
     
     if (score < thresholds.score[0]) {
         return Math.round(Math.pow((score / thresholds.score[0]), 2) * (difficulty == "Easy" ? 220 : 200));
@@ -1166,7 +1167,7 @@ function determineIncrement(thresholds, i) {
 }
 
 function dsFormula() {
-    var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), scene = $(SCENE).val(), thresholds = RubricsJSON.SCENE_THRESHOLDS[scene], drcpoints = 0, step, i;
+    var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), scene = $(SCENE).val(), thresholds = Rubrics.SCENE_THRESHOLDS[scene], drcpoints = 0, step, i;
     
     for (i = 3; i >= 0; i--) {
         step = determineIncrement(thresholds, i + 1);
@@ -1396,18 +1397,18 @@ function generateRubrics() {
         "</table>");
     }
 
-    for (game in RubricsJSON.SCORE_RUBRICS) {
+    for (game in Rubrics.SCORE_RUBRICS) {
         $(SCORING_TABLE).append("<tr>");
         $(SCORING_TABLE).append(game == "HRtP" ? SCORING_COLUMN : "<th></th><td></td><td></td>");
         $(SCORING_TABLE).append("</tr>");
         
-        for (difficulty in RubricsJSON.SCORE_RUBRICS[game]) {
-            rubric = RubricsJSON.SCORE_RUBRICS[game][difficulty];
+        for (difficulty in Rubrics.SCORE_RUBRICS[game]) {
+            rubric = Rubrics.SCORE_RUBRICS[game][difficulty];
             $(SCORING_TABLE).append("<tr><th>" + translateGameName(game + " ") + difficulty + "</th><td>" + rubric.base + "</td><td>" + rubric.exp + "</td></tr>");
         }
     }
     
-    for (game in RubricsJSON.SURV_RUBRICS) {
+    for (game in Rubrics.SURV_RUBRICS) {
         if (isPhantasmagoria(game)) {
             $(PHANTASMAGORIA).append("<tr>");
             $(PHANTASMAGORIA).append(game == "PoDD" ? "<th id='game1'>Game</th><th id='maxPoints2'>Max points</th><th id='minPoints'>Min points</th><th id='nbBonus'>No Bomb bonus</th>" : "<th></th><td></td><td></td><td></td>");
@@ -1418,8 +1419,8 @@ function generateRubrics() {
             $(SURV_TABLE).append("</tr>");
         }
         
-        for (difficulty in RubricsJSON.SURV_RUBRICS[game]) {
-            rubric = RubricsJSON.SURV_RUBRICS[game][difficulty];
+        for (difficulty in Rubrics.SURV_RUBRICS[game]) {
+            rubric = Rubrics.SURV_RUBRICS[game][difficulty];
             
             if (difficulty == "multiplier" || difficulty == "seasonMultiplier") {
                 $(SHOTTYPE_MULTIPLIERS).append("<tr>");
@@ -1466,15 +1467,15 @@ function generateRubrics() {
     }*/
     
             
-    for (difficulty in RubricsJSON.MOF_THRESHOLDS) {
+    for (difficulty in Rubrics.MOF_THRESHOLDS) {
         $(MOF_TABLE).append("<tr><th colspan='12'>" + difficulty + "</th></tr>");
         $(MOF_TABLE).append("<tr><td colspan='12'>" + (difficulty == "Easy" ? translate("If score < 1st threshold, " +
         "then: ||220*(Score/T1)^2||") : translate("If score < 2b, then: ||200*(Score/2b)^2||")) + "</td></tr>");
         
-        for (shottype in RubricsJSON.MOF_THRESHOLDS[difficulty]) {
+        for (shottype in Rubrics.MOF_THRESHOLDS[difficulty]) {
             $(MOF_TABLE).append("<tr><th colspan='3'>" + translateCharName(shottype) + "</th></tr>");
             $(MOF_TABLE).append("<tr><th id='threshold" + id + "'>Threshold</th><th id='basePoints" + id + "'>Base points</th><th id='increments" + id + "'>Increments</th></tr>");
-            thresholds = RubricsJSON.MOF_THRESHOLDS[difficulty][shottype];
+            thresholds = Rubrics.MOF_THRESHOLDS[difficulty][shottype];
             id += 1;
             
             for (i = 0; i < thresholds.base.length; i++) {
@@ -1497,8 +1498,8 @@ function generateRubrics() {
     "</th><th id='increments" + (id + 1) + "'>" + translate("Increments") + "</th><th id='threshold" + (id + 1) + "'>" + translate("Threshold 2") +
     "</th><th id='increments" + (id + 2) + "'>" + translate("Increments") + "</th><th id='threshold" + (id + 2) + "'>" + translate("Threshold 3") + "</th></tr>");
     
-    for (scene in RubricsJSON.SCENE_THRESHOLDS) {
-        thresholds = RubricsJSON.SCENE_THRESHOLDS[scene];
+    for (scene in Rubrics.SCENE_THRESHOLDS) {
+        thresholds = Rubrics.SCENE_THRESHOLDS[scene];
         n1 = thresholds[1] * 1000;
         n2 = thresholds[2] * 1000;
         n3 = thresholds[3] * 1000;
