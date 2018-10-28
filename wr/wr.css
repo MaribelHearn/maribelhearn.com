@@ -73,10 +73,10 @@ table, th, td {
     border: none;
 }
 .does_not_even_score {
-    color: #6c869b;
+    color: red; /* old: #6c869b */
 }
 .barely_even_scores {
-    color: red;
+    color: darkorange; /* old: red */
 }
 .moderately_even_scores {
     color: green;
