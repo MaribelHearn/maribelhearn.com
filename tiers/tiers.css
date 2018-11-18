@@ -1,0 +1,77 @@
+﻿body {
+	background: url('tiers.png') center no-repeat fixed;
+    background-size: 100%;
+	font: 16px times new roman;
+}
+div {
+	background-color: #888888;
+}
+h1 {
+	font-family: 'Felipa';
+	font-size: 48px
+}
+h2 {
+	font-family: 'Felipa';
+	font-size: 36px
+}
+p {
+    margin: 10px;
+}
+img {
+    width: 120px;
+    height: 120px;
+}
+th {
+    font-size: 32px;
+    width: 120px;
+    max-width: 120px;
+    height: 120px;
+    border: 1px solid black;
+    word-wrap: break-word;
+}
+td {
+    text-align: left;
+}
+.list {
+    width: 42px;
+    height: 42px;
+}
+#wrap {
+    border: 1px solid black;
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    font: 14px verdana, sans-serif;
+}
+#characters1, #characters2 {
+     border: 1px solid black;
+     width: 49%;
+     text-align: center;
+}
+@media only screen and (min-width: 800px) and (max-width: 1400px) {
+    #wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
+@media only screen and (max-width: 800px) {
+    #wrap {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
+	#wrap {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+}
+@media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
+	#wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
