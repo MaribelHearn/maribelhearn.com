@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+
+    <head>
+		<title>Touhou Tier List Creator</title>
+		<meta charset='UTF-8'>
+		<meta name='viewport' content='width=device-width'>
+		<link rel='stylesheet' type='text/css' href='tiers/tiers.css'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa'>
+		<link rel='icon' type='image/x-icon' href='tiers/shinto.png'>
+		<script src='utils.js'></script>
+		<script src='jquery.js'></script>
+		<script src='tiers/tiers.js'></script>
+    </head>
+    
+    <body onMouseMove='updateMouseLoc(event)'>
+        <div id='wrap'>
+            <div id='init'>
+                <h1>Touhou Tier List Creator</h1>
+                <p>How to use:
+                <ul>
+                    <li>Click a character and then a tier to add that character to it.</li>
+                    <li>Right click a character in a tier to remove it from that tier.</li>
+                    <li>Click a tier to enter a new name for that tier.</li>
+                    <li>Right click a tier to remove that tier and all of its contents.</li>
+                </ul>
+                </p>
+                <p>The artworks used for this page are drawn by <a href='https://twitter.com/rhmksiykskruhm'>るう</a>.</p>
+            </div>
+            <div id='characters'>
+                <table style='width: 100%;'>
+                    <tr>
+                        <td id='characters1'></td>
+                        <td id='characters2'></td>
+                    </tr>
+                </table>
+            </div>
+            <div id='tier_list_container'>
+                <table id='tier_list_table'>
+                    <tbody id='tier_list_tbody'>
+                    </tbody>
+                    <tfoot><tr><td><input id='tier_name' type='text' value='' onKeyUp='detectAddTierEnter(event)'><input type='button' value='Add Tier' onClick='addTier($("#tier_name").val())'></td></tr></tfoot>
+                </table>
+            </div>
+            <div id='cookie_container'>
+                <input type='button' value='Save Cookie' onClick='save()'>
+            </div>
+            <div id='msg_container'></div>
+        </div>
+    </body>
+
+</html>
