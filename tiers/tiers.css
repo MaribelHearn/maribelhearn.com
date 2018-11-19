@@ -3,9 +3,6 @@
     background-size: 100%;
 	font: 16px times new roman;
 }
-div {
-	background-color: #888888;
-}
 h1 {
 	font-family: 'Felipa';
 	font-size: 48px
@@ -21,7 +18,7 @@ img {
     width: 120px;
     height: 120px;
 }
-th {
+.tier_header {
     font-size: 32px;
     width: 120px;
     max-width: 120px;
@@ -29,14 +26,21 @@ th {
     border: 1px solid black;
     word-wrap: break-word;
 }
-td {
+.tier_content {
     text-align: left;
 }
 .list {
     width: 42px;
     height: 42px;
 }
+.name {
+    margin-top: 10px;
+}
+.colour {
+    margin-bottom: 10px;
+}
 #wrap {
+	background-color: #888888;
     border: 1px solid black;
     text-align: center;
     margin-left: 15%;
@@ -47,9 +51,35 @@ td {
     font: 14px verdana, sans-serif;
 }
 #characters1, #characters2 {
-     border: 1px solid black;
-     width: 49%;
-     text-align: center;
+    border: 1px solid black;
+    width: 49%;
+    text-align: center;
+}
+#modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+#customisation {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+#custom_table {
+    table-layout: fixed;
+}
+#custom_table td {
+    width: 33%;
 }
 @media only screen and (min-width: 800px) and (max-width: 1400px) {
     #wrap {
