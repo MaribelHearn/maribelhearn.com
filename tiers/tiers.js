@@ -20,15 +20,6 @@
         "HSiFS": ["Eternity Larva", "Nemuno Sakata", "Aunn Komano", "Narumi Yatadera", "Satono Nishida", "Mai Teireida", "Okina Matara"],
         "Other": ["Maribel Hearn", "Renko Usami", "Watatsuki no Toyohime", "Watatsuki no Yorihime", "Hieda no Akyuu"]
     },
-    /*gradients = [
-        "radial-gradient(#8B0000, #C54500, #FF8C00)",
-        "radial-gradient(#FF8C00, #FFA500, #FFFF00)",
-        "radial-gradient(#FFFF00, #D6FF18, #ADFF2F)",
-        "radial-gradient(#ADFF2F, #57A818, #008000)",
-        "radial-gradient(#008080, #00BFBF, #00FFFF)",
-        "radial-gradient(#FF69B4, #B34EA7, #663399)",
-        "radial-gradient(#663399, #B31ACC, #FF00FF)"
-    ],*/
     tiers = {},
     maxTiers = 15,
     maxNameLength = 15,
@@ -123,8 +114,7 @@ var addTier = function (tierName) {
         return;
     }
     
-    //style='background:" + gradients[tierNum] +"' 
-    $("#tier_list_tbody").append("<tr id='tr" + tierNum + "'><th id='th" + tierNum + "' class='tier_header' onClick='moveToTop(" + tierNum +
+    $("#tier_list_tbody").append("<tr id='tr" + tierNum + "'><th id='th" + tierNum + "' class='tier_header' onClick='startSwap(" + tierNum +
     ")' onContextMenu='removeTier(" + tierNum + ")'>" + tierName + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr>");
     $("#add").append("<option id='to" + tierNum + "' value='#tier" + tierNum + "'>" + tierName + "</option>");
     tiers[tierNum] = {};
@@ -134,8 +124,34 @@ var addTier = function (tierName) {
     tiers[tierNum].flag = false;
 };
 
-var moveToTop = function (movedTierNum) {
-    $("#tier_list_tbody").prepend($("#tr" + tierNum));
+var startSwap = function (tierNum) {
+    var i;
+    
+    for (i in tiers) {
+        $("#th" + i).attr("onClick", "swap(" + tierNum + ", " + i + ")");
+    }
+};
+
+var swap = function (tierNum1, tierNum2) {
+    var tmp = tiers[tierNum1];
+    
+    tiers[tierNum1] = tiers[tierNum2];
+    tiers[tierNum2] = tmp;
+    tmp = $("#th" + tierNum1).html();
+    $("#th" + tierNum1).html($("#th" + tierNum2).html());
+    $("#th" + tierNum2).html(tmp);
+    tmp = $("#tier" + tierNum1).html();
+    $("#tier" + tierNum1).html($("#tier" + tierNum2).html());
+    $("#tier" + tierNum2).html(tmp);
+    endSwap();
+};
+
+var endSwap = function () {
+    var i;
+    
+    for (i in tiers) {
+        $("#th" + i).attr("onClick", "startSwap(" + i + ")");
+    }
 };
 
 var removeTier = function (tierNum) {
@@ -170,7 +186,7 @@ var unfollowMouse = function () {
     following = "";
     
     for (tierNum = 0; tierNum < Object.keys(tiers).length; tierNum++) {
-        $("#th" + tierNum).attr("onClick", "moveToTop(" + tierNum + ")");
+        $("#th" + tierNum).attr("onClick", "startSwap(" + tierNum + ")");
         
         for (i = 0; i < tiers[tierNum].chars.length; i++) {
             $("#" + tiers[tierNum].chars[i]).attr("onClick", "removeFromTier('" + following + "', false); followMouse('" + tiers[tierNum].chars[i] + "'); updateMouseLoc(event);");
@@ -297,7 +313,7 @@ $(document).ready(function () {
             tiers[tierNum].flag = tiersCookie[tierNum].flag;
             
             if (!tiers[tierNum].flag) {
-                $("#tier_list_tbody").append("<tr id='tr" + tierNum + "'><th id='th" + tierNum + "' class='tier_header' onClick='moveToTop(" + tierNum +
+                $("#tier_list_tbody").append("<tr id='tr" + tierNum + "'><th id='th" + tierNum + "' class='tier_header' onClick='startSwap(" + tierNum +
                 ")' onContextMenu='removeTier(" + tierNum + ")' style='background-color: " + tiers[tierNum].colour +
                 ";'>" + tiersCookie[tierNum].name + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr>");
                 $("#add").append("<option id='to" + tierNum + "' value='#tier" + tierNum + "'>" + tiersCookie[tierNum].name + "</option>");
