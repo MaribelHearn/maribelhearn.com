@@ -78,7 +78,7 @@
         },
         "Other": {
             "enabled": true,
-            "chars": ["Maribel Hearn", "Renko Usami", "Watatsuki no Toyohime", "Watatsuki no Yorihime", "Hieda no Akyuu"]
+            "chars": ["Maribel Hearn", "Renko Usami", "Watatsuki no Toyohime", "Watatsuki no Yorihime", "Hieda no Akyuu", "Tokiko"]
         }
     },
     tiers = {},
