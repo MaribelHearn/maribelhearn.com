@@ -12,28 +12,29 @@
 		<script src='jquery.js'></script>
 		<script src='tiers/tiers.js'></script>
     </head>
-    
+
     <body onMouseMove='updateMouseLoc(event)' onClick='closeModal(event)'>
+        <div id='characters'>
+            <table id='characters_table'>
+                <tr>
+                    <td id='characters1'></td>
+                    <td id='characters2'></td>
+                </tr>
+            </table>
+        </div>
         <div id='wrap'>
             <div id='init'>
                 <h1>Touhou Tier List Creator</h1>
                 <p>How to use:
                 <ul>
                     <li>Click a character and then a tier to add that character to it.</li>
-                    <li>Right click a character in a tier to remove it from that tier.</li>
+                    <li>While holding a character, right click to put them back.</li>
+                    <li>Right click a character in a tier to remove them from that tier.</li>
                     <li>Click a tier and then another tier to swap their positions.</li>
                     <li>Right click a tier to remove that tier and all of its contents.</li>
                 </ul>
                 </p>
                 <p>The artworks used for this page are drawn by <a href='https://twitter.com/rhmksiykskruhm'>るう</a>.</p>
-            </div>
-            <div id='characters'>
-                <table style='width: 100%;'>
-                    <tr>
-                        <td id='characters1'></td>
-                        <td id='characters2'></td>
-                    </tr>
-                </table>
             </div>
             <div id='tier_list_container'>
                 <table id='tier_list_table'>
@@ -45,11 +46,14 @@
             <div id='button_container'>
                 <input type='button' value='Save Cookie' onClick='save()'>
                 <input type='button' value='Convert to Text' onClick='toText()'>
-                <input type='button' value='Customise' onClick='customise()'>
+                <input type='button' value='Customise Tiers' onClick='customise()'>
+                <input id='hideShow' type='button' value='Hide Character Boxes' onClick='hideShowChars()'>
+                <input type='button' value='Settings' onClick='settings()'>
             </div>
             <div id='msg_container'></div>
             <div id='modal'>
                 <div id='customisation'></div>
+                <div id='settings'></div>
             </div>
         </div>
     </body>
