@@ -119,9 +119,7 @@ var addToTier = function (tierNum) {
     unfollowMouse();
     $("#msg_container").html("");
     $("#" + character).removeClass("list");
-    $("#" + character).css("position", "");
-    $("#" + character).css("top", "");
-    $("#" + character).css("left", "");
+    $("#" + character).attr("style", "");
     $("#" + character).attr("onContextMenu", "removeFromTier('" + character + "', " + tierNum + "); return false;");
     id = "tier" + tierNum + "_" + tiers[tierNum].chars.length;
     $("#tier" + tierNum).append("<span id='" + id + "'></span>");
@@ -138,9 +136,7 @@ var moveToBack = function (character, tierNum) {
 
     unfollowMouse();
     $("#tier" + tierNum + "_" + (tiers[tierNum].chars.length - 1)).html(help);
-    $("#" + character).css("position", "");
-    $("#" + character).css("top", "");
-    $("#" + character).css("left", "");
+    $("#" + character).attr("style", "");;
 };
 
 var changeToTier = function (tierNum) {
@@ -235,14 +231,17 @@ var addTier = function (tierName) {
 };
 
 var startTierSwap = function (tierNum) {
-    var tierName = $("#th" + tierNum).html(), i;
+    var tierName = $("#th" + tierNum).html(), invertedColour = new RGBColor(tiers[tierNum].colour),
+        invertedBg = new RGBColor(tiers[tierNum].bg), otherTierNum;
 
-    $("#th" + tierNum).html("<span id='ts" + tierNum + "' style='color: black; background-color: white;'></span>");
+    $("#th" + tierNum).html("<span id='ts" + tierNum + "'></span>");
     $("#ts" + tierNum).html(tierName);
+    $("#ts" + tierNum).css("color", "rgb(" + (255 - invertedColour.r) + ", " + (255 - invertedColour.g) + ", " + (255 - invertedColour.b) + ")");
+    $("#ts" + tierNum).css("background-color", "rgb(" + (255 - invertedBg.r) + ", " + (255 - invertedBg.g) + ", " + (255 - invertedBg.b) + ")");
     swapOngoing = tierNum;
 
-    for (i in tiers) {
-        $("#th" + i).attr("onClick", "swapTiers(" + tierNum + ", " + i + ")");
+    for (otherTierNum in tiers) {
+        $("#th" + otherTierNum).attr("onClick", "swapTiers(" + tierNum + ", " + otherTierNum + ")");
     }
 };
 
@@ -250,6 +249,8 @@ var swapTiers = function (tierNum1, tierNum2) {
     var tmp = tiers[tierNum1], tierNum;
 
     $("#th" + tierNum1).html($("#ts" + tierNum1).html());
+    $("#th" + tierNum1).attr("style", "color: " + tiers[tierNum2].colour + "; background-color: " + tiers[tierNum2].bg + ";");
+    $("#th" + tierNum2).attr("style", "color: " + tiers[tierNum1].colour + "; background-color: " + tiers[tierNum1].bg + ";");
     tiers[tierNum1] = tiers[tierNum2];
     tiers[tierNum2] = tmp;
     tmp = $("#th" + tierNum1).html();
@@ -308,9 +309,7 @@ var swap = function (character1, character2) {
     }
 
     unfollowMouse();
-    $("#" + character1).css("position", "");
-    $("#" + character1).css("top", "");
-    $("#" + character1).css("left", "");
+    $("#" + character).attr("style", "");
 };
 
 var followMouse = function (character) {
@@ -372,7 +371,7 @@ var unfollowMouse = function () {
             character = categories[i].chars[j].removeSpaces();
 
             // check if the character is in a tier
-            if ($("#" + character + "C").html() == "") {
+            if (isTiered(character)) {
                 $("#" + character).attr("onClick", "removeFromTier('" + following +
                 "', false); followMouse('" + character + "'); updateMouseLoc(event);");
             } else {
@@ -555,13 +554,18 @@ var saveSettings = function () {
         categories[categoryName].enabled = $("#checkbox_" + categoryName).is(":checked");
         $("#" + categoryName).css("display", $("#checkbox_" + categoryName).is(":checked") ? "block" : "none");
 
-        // check if any disabled characters are in tiers
+        // check if any disabled characters are in tiers or being held
         if (!$("#checkbox_" + categoryName).is(":checked")) {
             for (i in categories[categoryName].chars) {
                 character = categories[categoryName].chars[i].removeSpaces();
 
-                if (getTierNumOf(character)) {
+                if (isTiered(character)) {
                     removedCategories.push(categoryName);
+                }
+
+                if (following == character) {
+                    $("#" + following).attr("style", "");
+                    unfollowMouse();
                 }
             }
         }
@@ -604,9 +608,7 @@ var loadTiersFromCookie = function () {
             for (i = 0; i < tiersCookie[tierNum].chars.length; i++) {
                 character = tiersCookie[tierNum].chars[i];
                 $("#" + character).removeClass("list");
-                $("#" + character).css("position", "");
-                $("#" + character).css("top", "");
-                $("#" + character).css("left", "");
+                $("#" + character).attr("style", "");
                 $("#" + character).attr("onContextMenu", "removeFromTier('" + character + "', " + tierNum + "); return false;");
                 id = "tier" + tierNum + "_" + tiers[tierNum].chars.length;
                 $("#tier" + tierNum).append("<span id='" + id + "'></span>");
