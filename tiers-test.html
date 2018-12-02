@@ -33,8 +33,7 @@
             </div>
             <div id='tier_list_container'>
                 <table id='tier_list_table'>
-                    <tbody id='tier_list_tbody'>
-                    </tbody>
+                    <tbody id='tier_list_tbody'></tbody>
                     <tfoot>
                         <tr>
                             <td><input id='tier_name' type='text' value='' onKeyUp='detectAddTierEnter(event)'>
@@ -57,7 +56,7 @@
             <div id='customisation'></div>
             <div id='settings'></div>
         </div>
-        <div id='characters'></div>
+        <div id='characters' onDragOver='allowDrop(event)' onDrop='drop(event)'></div>
     </body>
 
 </html>
