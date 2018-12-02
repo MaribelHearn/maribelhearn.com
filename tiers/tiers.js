@@ -113,17 +113,30 @@ var getPositionOf = function (character) {
     return Number($("#" + character).parent().attr("id").split("_")[1]);
 };
 
-var addToTier = function (tierNum) {
-    var character = following, id;
+var addToTier = function (character, tierNum, pos) {
+    var id;
 
-    unfollowMouse();
     $("#msg_container").html("");
     $("#" + character).removeClass("list");
-    $("#" + character).attr("style", "");
     $("#" + character).attr("onContextMenu", "removeFromTier('" + character + "', " + tierNum + "); return false;");
-    id = "tier" + tierNum + "_" + tiers[tierNum].chars.length;
-    $("#tier" + tierNum).append("<span id='" + id + "'></span>");
-    $("#" + id).html($("#" + character));
+
+    // insert at specific position
+    if (typeof pos == "number") {
+        id = "tier" + tierNum + "_";
+        $("#tier" + tierNum).append("<span id='" + id + tiers[tierNum].chars.length + "'></span>");
+
+        for (i = tiers[tierNum].chars.length; i > (pos + 1); i--) {
+            $("#" + id + i).html($("#" + id + (i - 1)).html());
+        }
+
+        $("#" + id + (pos + 1)).html($("#" + character));
+    // add to the back (default)
+    } else {
+        id = "tier" + tierNum + "_" + tiers[tierNum].chars.length;
+        $("#tier" + tierNum).append("<span id='" + id + "'></span>");
+        $("#" + id).html($("#" + character));
+    }
+
     tiers[tierNum].chars.pushStrict(character);
 };
 
@@ -134,13 +147,11 @@ var moveToBack = function (character, tierNum) {
         $("#tier" + tierNum + "_" + counter).html($("#tier" + tierNum + "_" + (counter + 1)).html());
     }
 
-    unfollowMouse();
     $("#tier" + tierNum + "_" + (tiers[tierNum].chars.length - 1)).html(help);
-    $("#" + character).attr("style", "");;
 };
 
-var changeToTier = function (tierNum) {
-    var character = following, oldTierNum = getTierNumOf(character), help, id;
+var changeToTier = function (character, tierNum) {
+    var oldTierNum = getTierNumOf(character), help, id;
 
     $("#msg_container").html("");
 
@@ -148,7 +159,7 @@ var changeToTier = function (tierNum) {
         moveToBack(character, tierNum);
     } else {
         removeFromTier(character, oldTierNum);
-        addToTier(tierNum);
+        addToTier(character, tierNum);
     }
 };
 
@@ -209,20 +220,15 @@ var addTier = function (tierName) {
     }
 
     // add the tier
-    $("#tier_list_tbody").append("<tr id='tr" + tierNum + "'><th id='th" + tierNum + "' class='tier_header' onClick='startTierSwap(" + tierNum +
-    ")' onContextMenu='removeTier(" + tierNum + "); return false;'>" + tierName + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr>");
+    $("#tier_list_tbody").append("<tr id='tr" + tierNum + "' onDragOver='allowDrop(event)' onDrop='drop(event)'><th id='th" + tierNum +
+    "' class='tier_header' onClick='startTierSwap(" + tierNum + ")' onContextMenu='removeTier(" + tierNum +
+    "); return false;'>" + tierName + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr>");
     tiers[tierNum] = {};
     tiers[tierNum].name = tierName;
     tiers[tierNum].bg = "#2f2c2c";
     tiers[tierNum].colour = "#a0a0a0";
     tiers[tierNum].chars = [];
     tiers[tierNum].flag = false;
-
-    // if character held, set onClick to changeToTier
-    if (following !== "") {
-        $("#th" + tierNum).attr("onClick", isTiered(following) ? "changeToTier(" + tierNum + ")" : "addToTier(" + tierNum + ")");
-        return; // swap cannot be ongoing at the same time
-    }
 
     // if tier swap ongoing, set onClick to swapTiers
     if (swapOngoing >= 0) {
@@ -306,91 +312,6 @@ var swap = function (character1, character2) {
         tiers[tierNum2].chars.push(character1);
         tiers[tierNum1].chars.remove(character1);
         tiers[tierNum2].chars.remove(character2);
-    }
-
-    unfollowMouse();
-    $("#" + character1).attr("style", "");
-};
-
-var followMouse = function (character) {
-    var tierNum, otherCharacter, i, j;
-
-    following = character;
-
-    for (tierNum in tiers) {
-        $("#th" + tierNum).attr("onClick", isTiered(character) ? "changeToTier(" + tierNum + ")" : "addToTier(" + tierNum + ")");
-        $("#th" + tierNum).attr("onContextMenu", "");
-
-        // undo ongoing tier swap if any
-        if ($("#ts" + tierNum)) {
-            $("#th" + tierNum).html($("#ts" + tierNum).html());
-            swapOngoing = -1;
-        }
-
-        for (i in tiers[tierNum].chars) {
-            otherCharacter = tiers[tierNum].chars[i];
-            $("#" + otherCharacter).attr("onContextMenu", "");
-
-            // allow character swap if clicked character is in a tier
-            if (isTiered(character)) {
-                $("#" + otherCharacter).attr("onClick", "swap('" + character + "', '" + otherCharacter + "')");
-            }
-        }
-    }
-
-    // cannot leave character in picker
-    for (i in categories) {
-        for (j in categories[i].chars) {
-            otherCharacter = categories[i].chars[j].removeSpaces();
-
-            if (!isTiered(otherCharacter)) {
-                $("#" + otherCharacter).attr("onClick", "");
-            }
-        }
-    }
-
-    $("body").attr("onContextMenu", "unfollowMouse(); $('#" + character + "').attr('style', ''); return false;");
-};
-
-var unfollowMouse = function () {
-    var tierNum, character, i, j;
-
-    following = "";
-
-    for (tierNum in tiers) {
-        $("#th" + tierNum).attr("onClick", "startTierSwap(" + tierNum + ")");
-        $("#th" + tierNum).attr("onContextMenu", "removeTier(" + tierNum + "); return false;");
-
-        for (i in tiers[tierNum].chars) {
-            $("#" + tiers[tierNum].chars[i]).attr("onContextMenu", "removeFromTier('" + tiers[tierNum].chars[i] + "', " + tierNum + "); return false;");
-        }
-    }
-
-    for (i in categories) {
-        for (j in categories[i].chars) {
-            character = categories[i].chars[j].removeSpaces();
-
-            // check if the character is in a tier
-            if (isTiered(character)) {
-                $("#" + character).attr("onClick", "removeFromTier('" + following +
-                "', false); followMouse('" + character + "'); updateMouseLoc(event);");
-            } else {
-                $("#" + character).attr("onClick", "removeFromTier('', false); followMouse('" + character + "'); updateMouseLoc(event);");
-            }
-        }
-    }
-
-    $("body").attr("onContextMenu", "");
-};
-
-var updateMouseLoc = function (event) {
-    mouseX = event.clientX;
-    mouseY = event.clientY;
-
-    if (following !== "") {
-        $("#" + following).css("position", "fixed");
-        $("#" + following).css("left", (mouseX + 1) + "px");
-        $("#" + following).css("top", (mouseY + 1) + "px");
     }
 };
 
@@ -562,11 +483,6 @@ var saveSettings = function () {
                 if (isTiered(character)) {
                     removedCategories.push(categoryName);
                 }
-
-                if (following == character) {
-                    $("#" + following).attr("style", "");
-                    unfollowMouse();
-                }
             }
         }
     }
@@ -589,6 +505,38 @@ var hideShowChars = function () {
     $("#wrap").css("left", charsHidden ? "5px" : "");
 };
 
+var drag = function (event) {
+    following = event.target.id;
+};
+
+var allowDrop = function (event) {
+    event.preventDefault();
+};
+
+var drop = function (event) {
+    var tierNum;
+
+    event.preventDefault();
+
+    if (event.target.id.substring(0, 2) == "th") {
+        tierNum = Number(event.target.id.replace("th", ""));
+
+        if (isTiered(following)) {
+            changeToTier(following, tierNum);
+        } else {
+            addToTier(following, tierNum);
+        }
+    } else if (isTiered(event.target.id)) {
+        if (isTiered(following)) {
+            swap(following, event.target.id);
+        } else {
+            addToTier(following, getTierNumOf(event.target.id), getPositionOf(event.target.id));
+        }
+    }
+
+    following = "";
+}
+
 var loadTiersFromCookie = function () {
     var tiersCookie = JSON.parse(getCookie("tiers")), tierNum, character;
 
@@ -601,8 +549,9 @@ var loadTiersFromCookie = function () {
         tiers[tierNum].flag = tiersCookie[tierNum].flag;
 
         if (!tiers[tierNum].flag) {
-            $("#tier_list_tbody").append("<tr id='tr" + tierNum + "'><th id='th" + tierNum + "' class='tier_header' onClick='startTierSwap(" + tierNum +
-            ")' onContextMenu='removeTier(" + tierNum + "); return false;' style='color: " + tiers[tierNum].colour + "; background-color: " + tiers[tierNum].bg +
+            $("#tier_list_tbody").append("<tr id='tr" + tierNum + "' onDragOver='allowDrop(event)' onDrop='drop(event)'><th id='th" + tierNum +
+            "' class='tier_header' onClick='startTierSwap(" + tierNum + ")' onContextMenu='removeTier(" + tierNum +
+            "); return false;' style='color: " + tiers[tierNum].colour + "; background-color: " + tiers[tierNum].bg +
             ";'>" + tiersCookie[tierNum].name + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr>");
 
             for (i = 0; i < tiersCookie[tierNum].chars.length; i++) {
@@ -633,9 +582,8 @@ var loadCharacters = function () {
         for (i in categories[categoryName].chars) {
             character = categories[categoryName].chars[i];
             $("#" + categoryName).append("<span id='" + character.removeSpaces() + "C'><img id='" + character.removeSpaces() +
-            "' class='list' src='tiers/" + categoryName + "/" + character.removeSpaces() + ".jpg' alt='" + character +
-            "' title='" + character + "' onClick='removeFromTier(\"" + following +
-            "\", false); followMouse(\"" + character.removeSpaces() + "\"); updateMouseLoc(event);'></span>");
+            "' class='list' draggable='true' onDragStart='drag(event)' src='tiers/" + categoryName + "/" + character.removeSpaces() +
+            ".jpg' alt='" + character + "' title='" + character + "'>");
         }
 
         $("#characters").append("</div>");
