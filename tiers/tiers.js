@@ -91,22 +91,30 @@
     mouseX,
     mouseY;
 
-var getTierNumOf = function (character) {
-    var tierNum, i;
+var isCharacter = function (character) {
+    return JSON.stringify(categories).removeSpaces().contains(character);
+};
 
-    for (tierNum in tiers) {
-        for (i = 0; i < tiers[tierNum].chars.length; i++) {
-            if (tiers[tierNum].chars[i] == character) {
-                return Number(tierNum);
-            }
-        }
-    }
-
-    return false;
+var isCategory = function (category) {
+    return Object.keys(categories).contains(category);
 };
 
 var isTiered = function (character) {
     return JSON.stringify(tiers).contains(character);
+};
+
+var getTierNumOf = function (character) {
+var tierNum, i;
+
+for (tierNum in tiers) {
+    for (i = 0; i < tiers[tierNum].chars.length; i++) {
+        if (tiers[tierNum].chars[i] == character) {
+            return Number(tierNum);
+        }
+    }
+}
+
+return false;
 };
 
 var getPositionOf = function (character) {
@@ -222,10 +230,10 @@ var addTier = function (tierName) {
     // add the tier
     $("#tier_list_tbody").append("<tr id='tr" + tierNum + "' onDragOver='allowDrop(event)' onDrop='drop(event)'><th id='th" + tierNum +
     "' class='tier_header' onClick='startTierSwap(" + tierNum + ")' onContextMenu='removeTier(" + tierNum +
-    "); return false;'>" + tierName + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr>");
+    "); return false;'>" + tierName + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr><hr>");
     tiers[tierNum] = {};
     tiers[tierNum].name = tierName;
-    tiers[tierNum].bg = "#2f2c2c";
+    tiers[tierNum].bg = "#1b232e";
     tiers[tierNum].colour = "#a0a0a0";
     tiers[tierNum].chars = [];
     tiers[tierNum].flag = false;
@@ -518,8 +526,8 @@ var drop = function (event) {
 
     event.preventDefault();
 
-    if (event.target.id.substring(0, 2) == "th") {
-        tierNum = Number(event.target.id.replace("th", ""));
+    if (event.target.id.substring(0, 2) == "th" || event.target.id.substring(0, 4) == "tier") {
+        tierNum = Number(event.target.id.replace("th", "").replace("tier", ""));
 
         if (isTiered(following)) {
             changeToTier(following, tierNum);
@@ -532,6 +540,8 @@ var drop = function (event) {
         } else {
             addToTier(following, getTierNumOf(event.target.id), getPositionOf(event.target.id));
         }
+    } else if ((isCharacter(event.target.id) || isCategory(event.target.id)) && isTiered(following)) {
+        removeFromTier(following, getTierNumOf(following));
     }
 
     following = "";
