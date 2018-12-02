@@ -1,5 +1,5 @@
 ﻿body {
-	background: url('tiers.png') center no-repeat fixed;
+	background: url('tiers.jpg') center no-repeat fixed;
 	background-size: cover;
 }
 h1 {
@@ -21,12 +21,16 @@ hr {
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
+a:link {
+	color: dodgerblue;
+}
+a:visited {
+	color: hotpink;
+}
 .tier_header {
 	font-size: 32px;
 	width: 120px;
 	height: 120px;
-	max-width: 120px;
-	max-height: 120px;
 	border: 1px solid black;
 	word-wrap: break-word;
 }
@@ -34,8 +38,8 @@ hr {
 	text-align: left;
 }
 .list {
-	width: 30px;
-	height: 30px;
+	width: 80px;
+	height: 80px;
 }
 .name {
 	margin-top: 10px;
@@ -43,42 +47,48 @@ hr {
 .colour {
 	margin-bottom: 10px;
 }
-#wrap, #characters1, #characters2 {
-	background-color: #888888;
-}
-#wrap {
-	font: 14px verdana, sans-serif;
-	border: 1px solid black;
-	text-align: center;
-	margin-left: 15%;
-	margin-right: 15%;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-bottom: 10px;
-	width: auto;
-}
 #notice {
 	display: none;
 }
-#characters_table {
-	width: 100%;
-}
-#characters1, #characters2 {
+#wrap, #characters, #buttons {
+	background-color: #2f2c2c;
+	font: 14px verdana, sans-serif;
 	border: 1px solid black;
 	text-align: center;
-	max-height: 600px;
-	overflow-y: auto;
 	position: fixed;
-	width: 275px;
+	color: #a0a0a0;
+}
+#wrap {
+	max-height: 88%;
+	overflow-y: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	width: 48%;
+	right: 5px;
 	top: 5px;
 }
-#characters1 {
-	left: 5px;
+#tier_name {
+	width: 120px;
 }
-#characters2 {
+#characters {
+	overflow-y: auto;
+	max-height: 98%;
+	width: 50%;
+	left: 5px;
+	top: 5px;
+}
+#buttons {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	width: auto;
+	bottom: 5px;
 	right: 5px;
 }
 #modal {
+	font: 14px verdana, sans-serif;
+	text-align: center;
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
 	z-index: 1; /* Sit on top */
@@ -89,8 +99,9 @@ hr {
 	height: 100%; /* Full height */
 	background-color: rgb(0,0,0); /* Fallback color */
 	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	color: black;
 }
-#customisation, #settings {
+#text_conversion, #customisation, #settings {
 	background-color: #fefefe;
 	margin: auto;
 	padding: 20px;
@@ -100,58 +111,9 @@ hr {
 	display: none;
 	overflow-y: auto;
 }
-
 #settings_table {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 15px;
 	margin-bottom: 15px;
-}
-@media only screen and (min-width: 1645px) and (max-width: 1860px) {
-	#wrap {
-		margin-left: 17%;
-		margin-right: 17%;
-	}
-}
-@media only screen and (min-width: 1400px) and (max-width: 1645px) {
-	#wrap {
-		margin-left: 20%;
-		margin-right: 20%;
-	}
-}
-@media only screen and (min-width: 1220px) and (max-width: 1400px) {
-	#wrap {
-		margin-left: 23%;
-		margin-right: 23%;
-	}
-}
-@media only screen and (min-width: 1125px) and (max-width: 1220px) {
-	#wrap {
-		margin-left: 25%;
-		margin-right: 25%;
-	}
-}
-@media only screen and (min-width: 1010px) and (max-width: 1125px) {
-	#wrap {
-		margin-left: 28%;
-		margin-right: 0%;
-	}
-}
-@media only screen and (min-width: 940px) and (max-width: 1010px) {
-	#wrap {
-		margin-left: 30%;
-		margin-right: 0%;
-	}
-}
-@media only screen and (min-width: 860px) and (max-width: 940px) {
-	#wrap {
-		margin-left: 33%;
-		margin-right: 0%;
-	}
-}
-@media only screen and (max-width: 860px) {
-	#wrap {
-		margin-left: 35%;
-		margin-right: 0%;
-	}
 }

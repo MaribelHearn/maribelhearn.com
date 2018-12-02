@@ -14,14 +14,7 @@
     </head>
 
     <body onMouseMove='updateMouseLoc(event)' onClick='closeModal(event)'>
-        <div id='characters'>
-            <table id='characters_table'>
-                <tr>
-                    <td id='characters1'></td>
-                    <td id='characters2'></td>
-                </tr>
-            </table>
-        </div>
+        <div id='characters'></div>
         <div id='wrap'>
             <div id='init'>
                 <h1>Touhou Tier List Creator</h1>
@@ -42,21 +35,27 @@
                 <table id='tier_list_table'>
                     <tbody id='tier_list_tbody'>
                     </tbody>
-                    <tfoot><tr><td><input id='tier_name' type='text' value='' onKeyUp='detectAddTierEnter(event)'><input type='button' value='Add Tier' onClick='addTier($("#tier_name").val())'></td></tr></tfoot>
+                    <tfoot>
+                        <tr>
+                            <td><input id='tier_name' type='text' value='' onKeyUp='detectAddTierEnter(event)'>
+                            <input type='button' value='Add Tier' onClick='addTier($("#tier_name").val())'></td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
-            <div id='button_container'>
-                <input type='button' value='Save Cookies' onClick='save()'>
-                <input type='button' value='Convert to Text' onClick='toText()'>
-                <input type='button' value='Customise Tiers' onClick='customise()'>
-                <input id='hideShow' type='button' value='Hide Character Boxes' onClick='hideShowChars()'>
-                <input type='button' value='Settings' onClick='settings()'>
-            </div>
-            <div id='msg_container'></div>
-            <div id='modal'>
-                <div id='customisation'></div>
-                <div id='settings'></div>
-            </div>
+        </div>
+        <div id='buttons'>
+            <input type='button' value='Save Cookies' onClick='save()'>
+            <input type='button' value='Convert to Text' onClick='convertToText()'>
+            <input type='button' value='Customise Tiers' onClick='customise()'>
+            <input id='hideShow' type='button' value='Hide Character Picker' onClick='hideShowChars()'>
+            <input type='button' value='Settings' onClick='settings()'>
+            <p id='msg_container'></p>
+        </div>
+        <div id='modal'>
+            <div id='text_conversion'></div>
+            <div id='customisation'></div>
+            <div id='settings'></div>
         </div>
     </body>
 
