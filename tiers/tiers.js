@@ -309,7 +309,7 @@ var swap = function (character1, character2) {
     }
 
     unfollowMouse();
-    $("#" + character).attr("style", "");
+    $("#" + character1).attr("style", "");
 };
 
 var followMouse = function (character) {
