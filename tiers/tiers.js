@@ -104,21 +104,32 @@ var isTiered = function (character) {
 };
 
 var getTierNumOf = function (character) {
-var tierNum, i;
+    var tierNum, i;
 
-for (tierNum in tiers) {
-    for (i = 0; i < tiers[tierNum].chars.length; i++) {
-        if (tiers[tierNum].chars[i] == character) {
-            return Number(tierNum);
+    for (tierNum in tiers) {
+        for (i = 0; i < tiers[tierNum].chars.length; i++) {
+            if (tiers[tierNum].chars[i] == character) {
+                return Number(tierNum);
+            }
         }
     }
-}
 
-return false;
+    return false;
 };
 
 var getPositionOf = function (character) {
     return Number($("#" + character).parent().attr("id").split("_")[1]);
+};
+
+var updateArrays = function () {
+    var tierNum, id, i;
+
+    for (tierNum in tiers) {
+        for (i = 0; i < tiers[tierNum].chars.length; i++) {
+            id = "#tier" + tierNum + "_";
+            tiers[tierNum].chars[i] = $(id + i).children()[0].id;
+        }
+    }
 };
 
 var addToTier = function (character, tierNum, pos) {
@@ -138,14 +149,15 @@ var addToTier = function (character, tierNum, pos) {
         }
 
         $("#" + id + (pos + 1)).html($("#" + character));
+        tiers[tierNum].chars.pushStrict(character);
+        updateArrays();
     // add to the back (default)
     } else {
         id = "tier" + tierNum + "_" + tiers[tierNum].chars.length;
         $("#tier" + tierNum).append("<span id='" + id + "'></span>");
         $("#" + id).html($("#" + character));
+        tiers[tierNum].chars.pushStrict(character);
     }
-
-    tiers[tierNum].chars.pushStrict(character);
 };
 
 var moveToBack = function (character, tierNum) {
@@ -156,6 +168,7 @@ var moveToBack = function (character, tierNum) {
     }
 
     $("#tier" + tierNum + "_" + (tiers[tierNum].chars.length - 1)).html(help);
+    updateArrays();
 };
 
 var changeToTier = function (character, tierNum) {
@@ -305,7 +318,7 @@ var removeTier = function (tierNum) {
     }
 };
 
-var swap = function (character1, character2) {
+var swapCharacters = function (character1, character2) {
     var parent1 = $("#" + character1).parent(),
         parent2 = $("#" + character2).parent(),
         tierNum1 = getTierNumOf(character1),
@@ -321,12 +334,14 @@ var swap = function (character1, character2) {
         tiers[tierNum1].chars.remove(character1);
         tiers[tierNum2].chars.remove(character2);
     }
+
+    updateArrays();
 };
 
 var closeModal = function (event) {
     var modal = document.getElementById("modal");
 
-    if (event.target == modal) {
+    if ((event.target && event.target == modal) || (event.keyCode && event.keyCode == 27)) {
         $("#text_conversion").html("");
         $("#customisation").html("");
         $("#settings").html("");
@@ -536,7 +551,7 @@ var drop = function (event) {
         }
     } else if (isTiered(event.target.id)) {
         if (isTiered(following)) {
-            swap(following, event.target.id);
+            swapCharacters(following, event.target.id);
         } else {
             addToTier(following, getTierNumOf(event.target.id), getPositionOf(event.target.id));
         }
