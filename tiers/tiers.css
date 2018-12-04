@@ -17,6 +17,9 @@ img {
 	width: 120px;
 	height: 120px;
 }
+label {
+	padding-right: 5px;
+}
 a:link {
 	color: dodgerblue;
 }
