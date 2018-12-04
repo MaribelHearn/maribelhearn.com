@@ -527,7 +527,7 @@ var settings = function () {
     var categoryName, current = 0, counter = 0;
 
     emptyModal();
-    $("#settings").html("<div><h2>Settings</h2></div><div>Include the following characters:<table id='settings_table'><tbody><tr id='settings_tr0'>");
+    $("#settings").html("<div><h2>Settings</h2></div><div>Include characters in the following games of first appearance:<table id='settings_table'><tbody><tr id='settings_tr0'>");
 
     for (categoryName in categories) {
         if (counter > 0 && counter % 5 === 0) {
