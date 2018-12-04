@@ -17,13 +17,6 @@ img {
 	width: 120px;
 	height: 120px;
 }
-hr {
-	height: 1px;
-	border: none;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	background-color: #606060;
-}
 a:link {
 	color: dodgerblue;
 }
@@ -52,10 +45,13 @@ a:visited {
 .colour {
 	margin-bottom: 10px;
 }
+.sep {
+	border-top: 1px solid #606060;
+}
 #notice {
 	display: none;
 }
-#wrap, #characters, #buttons {
+#wrap, #characters, #buttons, #show {
 	background-color: #1b232e;
 	font: 14px verdana, sans-serif;
 	border: 1px solid black;
@@ -64,7 +60,7 @@ a:visited {
 	color: #a0a0a0;
 }
 #wrap {
-	max-height: 88%;
+	max-height: 77%;
 	overflow-y: auto;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -81,8 +77,10 @@ a:visited {
 }
 #characters {
 	overflow-y: auto;
-	max-height: 98%;
-	width: 50%;
+	max-height: 99%;
+	min-height: 10%;
+	bottom: 5px;
+	width: 48%;
 	left: 5px;
 	top: 5px;
 }
@@ -90,9 +88,19 @@ a:visited {
 	padding-left: 10px;
 	padding-right: 10px;
 	padding-top: 10px;
-	width: auto;
+	max-height: 25%;
+	max-width: 48%;
 	bottom: 5px;
 	right: 5px;
+}
+#button_split {
+	display: none;
+}
+#show {
+	display: none;
+	border: none;
+	bottom: 10px;
+	right: 5%;
 }
 #modal {
 	font: 14px verdana, sans-serif;
@@ -109,7 +117,7 @@ a:visited {
 	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 	color: black;
 }
-#text_conversion, #customisation, #settings {
+#confirmation, #text_conversion, #customisation, #settings {
 	background-color: #fefefe;
 	margin: auto;
 	padding: 20px;
@@ -118,6 +126,10 @@ a:visited {
 	max-height: 80%;
 	display: none;
 	overflow-y: auto;
+}
+#import {
+	width: 80%;
+	height: 400px;
 }
 #settings_table {
 	margin-left: auto;
