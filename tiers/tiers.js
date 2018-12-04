@@ -285,10 +285,8 @@ var startTierSwap = function (tierNum) {
     var tierName = $("#th" + tierNum).html(), invertedColour = new RGBColor(tiers[tierNum].colour),
         invertedBg = new RGBColor(tiers[tierNum].bg), otherTierNum;
 
-    $("#th" + tierNum).html("<span id='ts" + tierNum + "'></span>");
-    $("#ts" + tierNum).html(tierName);
-    $("#ts" + tierNum).css("color", "rgb(" + (255 - invertedColour.r) + ", " + (255 - invertedColour.g) + ", " + (255 - invertedColour.b) + ")");
-    $("#ts" + tierNum).css("background-color", "rgb(" + (255 - invertedBg.r) + ", " + (255 - invertedBg.g) + ", " + (255 - invertedBg.b) + ")");
+    $("#th" + tierNum).css("color", "rgb(" + (255 - invertedColour.r) + ", " + (255 - invertedColour.g) + ", " + (255 - invertedColour.b) + ")");
+    $("#th" + tierNum).css("background-color", "rgb(" + (255 - invertedBg.r) + ", " + (255 - invertedBg.g) + ", " + (255 - invertedBg.b) + ")");
     swapOngoing = tierNum;
 
     for (otherTierNum in tiers) {
@@ -299,7 +297,6 @@ var startTierSwap = function (tierNum) {
 var swapTiers = function (tierNum1, tierNum2) {
     var tmp = tiers[tierNum1], tierNum;
 
-    $("#th" + tierNum1).html($("#ts" + tierNum1).html());
     $("#th" + tierNum1).attr("style", "color: " + tiers[tierNum2].colour + "; background-color: " + tiers[tierNum2].bg + ";");
     $("#th" + tierNum2).attr("style", "color: " + tiers[tierNum1].colour + "; background-color: " + tiers[tierNum1].bg + ";");
     tiers[tierNum1] = tiers[tierNum2];
@@ -331,7 +328,7 @@ var removeTier = function (tierNum, skipConfirmation) {
         }
 
         // undo ongoing swap if any
-        if ($("#ts" + tierNum)) {
+        if (swapOngoing >= 0) {
             for (otherTierNum in tiers) {
                 $("#th" + otherTierNum).attr("onClick", "startTierSwap(" + otherTierNum + ")");
             }
@@ -492,22 +489,33 @@ var customise = function () {
 var saveCustom = function () {
     var tierNum, tierName, tierColour;
 
-    for (tierNum in tiers) {
-        tierName = $("#custom_name_tier" + tierNum).val();
-        tierBg = $("#custom_bg_tier" + tierNum).val();
-        tierColour = $("#custom_colour_tier" + tierNum).val();
-
-        if (!validateTierName(tierName)) {
-            $("#custom_msg_container").html("<strong style='color:orange'>Error: tier names may not exceed " + maxNameLength + " characters.</strong>");
-            return;
+    // undo ongoing swap if any
+    if (swapOngoing >= 0) {
+        for (tierNum in tiers) {
+            $("#th" + tierNum).attr("onClick", "startTierSwap(" + tierNum + ")");
         }
 
-        $(($("#ts" + tierNum).length ? "#ts" : "#th") + tierNum).html(tierName);
-        $("#th" + tierNum).css("background-color", tierBg);
-        $("#th" + tierNum).css("color", tierColour);
-        tiers[tierNum].name = tierName;
-        tiers[tierNum].bg = tierBg;
-        tiers[tierNum].colour = tierColour;
+        swapOngoing = -1;
+    }
+
+    for (tierNum in tiers) {
+        if (!tiers[tierNum].flag) {
+            tierName = $("#custom_name_tier" + tierNum).val();
+            tierBg = $("#custom_bg_tier" + tierNum).val();
+            tierColour = $("#custom_colour_tier" + tierNum).val();
+
+            if (!validateTierName(tierName)) {
+                $("#custom_msg_container").html("<strong style='color:orange'>Error: tier names may not exceed " + maxNameLength + " characters.</strong>");
+                return;
+            }
+
+            $("#th" + tierNum).html(tierName);
+            $("#th" + tierNum).css("background-color", tierBg);
+            $("#th" + tierNum).css("color", tierColour);
+            tiers[tierNum].name = tierName;
+            tiers[tierNum].bg = tierBg;
+            tiers[tierNum].colour = tierColour;
+        }
     }
 
     $("#customisation").html("");
@@ -667,7 +675,8 @@ var loadCharacters = function () {
     var insertRight = false, categoryName, character, i;
 
     for (categoryName in categories) {
-        $("#characters").append("<div id='" + categoryName + "'" + (categoryName != "Main" ? " class='sep'" : "") + ">");
+        $("#characters").append("<div id='" + categoryName + "'>");
+        //(categoryName != "Main" ? " class='sep'" : "") + ">");
 
         for (i in categories[categoryName].chars) {
             character = categories[categoryName].chars[i];
