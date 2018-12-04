@@ -19,7 +19,8 @@
             <div id='init'>
                 <h1>Touhou Tier List Creator</h1>
                 <p id='notice'><strong>Notice:</strong> this page is not designed for mobile use. Apologies for the inconvenience.</p>
-                <p>How to use:
+                <p><strong>Notice:</strong> PC-98 characters and the remaining manga characters will become available at a later date.</p>
+                <p>This page allows you to create your own Touhou character tier list. Usage instructions are listed below.
                 <ul>
                     <li>Drag a character onto a tier box to add that character to it.</li>
                     <li>Drag a character from the picker onto a tiered character to insert them to the right of them.</li>
@@ -27,9 +28,9 @@
                     <li>Right click a character in a tier to remove them from that tier.</li>
                     <li>Click a tier and then another tier to swap their positions.</li>
                     <li>Right click a tier to remove that tier and all of its contents.</li>
+                    <li>Hover your cursor above a character to see their name.</li>
                 </ul>
                 </p>
-                <p>The artworks used for this page are drawn by <a href='https://twitter.com/rhmksiykskruhm' target='_blank'>るう</a>.</p>
             </div>
             <div id='tier_list_container'>
                 <table id='tier_list_table'>
@@ -44,13 +45,19 @@
             </div>
         </div>
         <div id='buttons'>
+            <p>The artworks used for this page are drawn by <a href='https://twitter.com/rhmksiykskruhm' target='_blank'>るう</a>.
+            Special thanks go to <a href='https://twitter.com/Plus5298'>Plus</a> for the original idea as well as testing,
+            <a href='https://twitter.com/pienyan_'>pienyan</a> for testing and <a href='https://twitter.com/Doroshii_Sweet'>Dorothy Sweet</a> for design improvements.</p>
             <input type='button' value='Save Cookies' onClick='save()'>
-            <input type='button' value='Convert to Text' onClick='convertToText()'>
+            <input type='button' value='Import' onClick='importText()'>
+            <input type='button' value='Export' onClick='exportText()'>
+            <br id='button_split'>
             <input type='button' value='Customise Tiers' onClick='customise()'>
-            <input id='hideShow' type='button' value='Hide Character Picker' onClick='hideShowChars()'>
+            <input id='hide' type='button' value='Tier List View' onClick='toggleTierView()'>
             <input type='button' value='Settings' onClick='settings()'>
             <p id='msg_container'></p>
         </div>
+        <div id='show'><input type='button' value='Normal View' onClick='toggleTierView()'></div>
         <div id='modal'>
             <div id='text_conversion'></div>
             <div id='customisation'></div>

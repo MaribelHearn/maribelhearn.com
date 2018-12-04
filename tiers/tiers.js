@@ -85,22 +85,20 @@
     maxTiers = 15,
     maxNameLength = 15,
     following = "",
-    charsHidden = false,
+    tierView = false,
     swapOngoing = -1,
-    innerWidth = window.innerWidth,
-    mouseX,
-    mouseY;
+    innerWidth = window.innerWidth;
 
 var isCharacter = function (character) {
-    return JSON.stringify(categories).removeSpaces().contains(character);
+    return character !== "" && JSON.stringify(categories).removeSpaces().contains(character);
 };
 
 var isCategory = function (category) {
-    return Object.keys(categories).contains(category);
+    return category !== "" && Object.keys(categories).contains(category);
 };
 
 var isTiered = function (character) {
-    return JSON.stringify(tiers).contains(character);
+    return character !== "" && JSON.stringify(tiers).contains(character.removeSpaces());
 };
 
 var getTierNumOf = function (character) {
@@ -121,6 +119,18 @@ var getPositionOf = function (character) {
     return Number($("#" + character).parent().attr("id").split("_")[1]);
 };
 
+var getCategoryOf = function (character) {
+    var categoryName;
+
+    for (categoryName in categories) {
+        if (JSON.stringify(categories[categoryName].chars).removeSpaces().contains(character)) {
+            return categoryName;
+        }
+    }
+
+    return false;
+}
+
 var updateArrays = function () {
     var tierNum, id, i;
 
@@ -133,7 +143,11 @@ var updateArrays = function () {
 };
 
 var addToTier = function (character, tierNum, pos) {
-    var id;
+    var categoryName = getCategoryOf(character), id, i;
+
+    if (isTiered(character)) {
+        return;
+    }
 
     $("#msg_container").html("");
     $("#" + character).removeClass("list");
@@ -158,6 +172,15 @@ var addToTier = function (character, tierNum, pos) {
         $("#" + id).html($("#" + character));
         tiers[tierNum].chars.pushStrict(character);
     }
+
+    // check for category emptiness
+    for (i in categories[categoryName].chars) {
+        if (!isTiered(categories[categoryName].chars[i])) {
+            return;
+        }
+    }
+
+    $("#" + categoryName).css("display", "none");
 };
 
 var moveToBack = function (character, tierNum) {
@@ -196,6 +219,7 @@ var removeFromTier = function (character, tierNum) {
     $("#" + character).attr("onContextMenu", "");
     pos = getPositionOf(character);
     $("#" + character + "C").append($("#" + character));
+    $("#" + getCategoryOf(character)).css("display", "block");
 
     if (tierNum !== false) {
         // move all characters after the removed one a position backward
@@ -293,9 +317,12 @@ var swapTiers = function (tierNum1, tierNum2) {
     }
 };
 
-var removeTier = function (tierNum) {
-    var confirmation = confirm("Are you sure you want to remove this tier?"),
-        length = tiers[tierNum].chars.length, otherTierNum, i;
+var removeTier = function (tierNum, skipConfirmation) {
+    var length = tiers[tierNum].chars.length, confirmation = true, otherTierNum, i;
+
+    if (!skipConfirmation) {
+        confirmation = confirm("Are you sure you want to remove this tier? Removal may take a moment with many characters inside.");
+    }
 
     if (confirmation) {
         // remove all characters
@@ -321,34 +348,28 @@ var removeTier = function (tierNum) {
 var swapCharacters = function (character1, character2) {
     var parent1 = $("#" + character1).parent(),
         parent2 = $("#" + character2).parent(),
-        tierNum1 = getTierNumOf(character1),
-        tierNum2 = getTierNumOf(character2),
         backup = $("#" + character1);
 
     $(parent1).html($("#" + character2));
     $(parent2).html(backup);
-
-    if (tierNum1 !== tierNum2) {
-        tiers[tierNum1].chars.push(character2);
-        tiers[tierNum2].chars.push(character1);
-        tiers[tierNum1].chars.remove(character1);
-        tiers[tierNum2].chars.remove(character2);
-    }
-
     updateArrays();
 };
+
+var emptyModal = function () {
+    $("#text_conversion").html("");
+    $("#customisation").html("");
+    $("#settings").html("");
+    $("#text_conversion").css("display", "none");
+    $("#customisation").css("display", "none");
+    $("#settings").css("display", "none");
+    $("#modal").css("display", "none");
+}
 
 var closeModal = function (event) {
     var modal = document.getElementById("modal");
 
     if ((event.target && event.target == modal) || (event.keyCode && event.keyCode == 27)) {
-        $("#text_conversion").html("");
-        $("#customisation").html("");
-        $("#settings").html("");
-        $("#text_conversion").css("display", "none");
-        $("#customisation").css("display", "none");
-        $("#settings").css("display", "none");
-        $("#modal").css("display", "none");
+        emptyModal();
     }
 };
 
@@ -364,18 +385,56 @@ var save = function () {
     $("#msg_container").html("<strong style='color:green'>Tier list and settings saved!</strong>");
 };
 
-var copyToClipboard = function () {
-    navigator.clipboard.writeText($("#text").html().replace(/<\/p><p>/g, "\n").strip());
+var load = function () {
+    var text = $("#import").val().split('\n'), counter = -1, i, j;
+
+    $("#import_msg_container").html("<strong style='color:orange'>Please watch warmly as your tier list is imported...</strong>");
+
+    for (tierNum in tiers) {
+        removeTier(tierNum, true);
+    }
+
+    for (i = 0; i < text.length; i++) {
+        if (text[i].contains(':')) {
+            addTier(text[i].replace(':', ""));
+            counter += 1;
+        } else if (text[i] !== "") {
+            characters = text[i].split(',');
+            for (j = 0; j < characters.length; j++) {
+                addToTier(characters[j].removeSpaces(), counter);
+            }
+        }
+    }
+
     $("#text_conversion").html("");
     $("#modal").css("display", "none");
     $("#text_conversion").css("display", "none");
+    $("#msg_container").html("<strong style='color:green'>Tier list successfully imported!</strong>");
+};
+
+var importText = function () {
+    var tierNum, character, i;
+
+    emptyModal();
+    $("#text_conversion").html("<h2>Import from Text</h2><p>Note that the format should be the same as the exported text.</p>");
+    $("#text_conversion").append("<p><strong>Warning:</strong> Importing will overwrite your current tier list!");
+    $("#text_conversion").append("<textarea id='import'></textarea><p><input type='button' value='Import' onClick='load()'></p>");
+    $("#text_conversion").append("<p id='import_msg_container'></p>");
+    $("#text_conversion").css("display", "block");
+    $("#modal").css("display", "block");
+};
+
+var copyToClipboard = function () {
+    navigator.clipboard.writeText($("#text").html().replace(/<\/p><p>/g, "\n").strip());
+    emptyModal();
     $("#msg_container").html("<strong style='color:green'>Copied to clipboard!</strong>");
 };
 
-var convertToText = function () {
+var exportText = function () {
     var tierNum, character, i;
 
-    $("#text_conversion").html("<h2>Textual Version</h2><p id='text'></p>");
+    emptyModal();
+    $("#text_conversion").html("<h2>Export to Text</h2><p id='text'></p>");
 
     for (tierNum in tiers) {
         if (!tiers[tierNum].flag) {
@@ -390,6 +449,12 @@ var convertToText = function () {
         }
     }
 
+    if ($("#text").html() === "") {
+        $("#msg_container").html("<strong style='color:orange'>Error: there are no tiers to export.</strong>");
+        $("#text_conversion").html("");
+        return;
+    }
+
     $("#text_conversion").append("<p><input type='button' value='Copy to Clipboard' onClick='copyToClipboard()'></p>");
     $("#text_conversion").css("display", "block");
     $("#modal").css("display", "block");
@@ -398,6 +463,7 @@ var convertToText = function () {
 var customise = function () {
     var tierNum;
 
+    emptyModal();
     $("#customisation").html("<div><h2>Tier Customisation</h2></div><div id='custom_tier_container'>");
 
     for (tierNum in tiers) {
@@ -452,6 +518,7 @@ var saveCustom = function () {
 var settings = function () {
     var categoryName, current = 0, counter = 0;
 
+    emptyModal();
     $("#settings").html("<div><h2>Settings</h2></div><div>Include the following characters:<table id='settings_table'><tbody><tr id='settings_tr0'>");
 
     for (categoryName in categories) {
@@ -467,7 +534,8 @@ var settings = function () {
         counter += 1;
     }
 
-    $("#settings").append("</tr></tbody></table></div><div><p><input type='button' value='Save Changes' onClick='saveSettings()'></p></div>");
+    $("#settings").append("</tr></tbody></table></div><div><p><input type='button' value='Save Changes' onClick='saveSettings()'></p>");
+    $("#settings").append("<p id='settings_msg_container'></p></div>");
     $("#settings").css("display", "block");
     $("#modal").css("display", "block");
 };
@@ -477,6 +545,8 @@ var confirmMassRemoval = function (removedCategories) {
         categoryName, character, i, j;
 
     if (confirmation) {
+        $("#settings_msg_container").html("<strong style='color:orange'>Girls are being removed, please wait warmly...</strong>");
+
         for (i = 0; i < removedCategories.length; i++) {
             categoryName = removedCategories[i];
 
@@ -496,7 +566,6 @@ var saveSettings = function () {
 
     for (categoryName in categories) {
         categories[categoryName].enabled = $("#checkbox_" + categoryName).is(":checked");
-        $("#" + categoryName).css("display", $("#checkbox_" + categoryName).is(":checked") ? "block" : "none");
 
         // check if any disabled characters are in tiers or being held
         if (!$("#checkbox_" + categoryName).is(":checked")) {
@@ -514,18 +583,25 @@ var saveSettings = function () {
         confirmMassRemoval(removedCategories);
     }
 
+    for (categoryName in categories) {
+        $("#" + categoryName).css("display", $("#checkbox_" + categoryName).is(":checked") ? "block" : "none");
+    }
+
     $("#settings").html("");
     $("#settings").css("display", "none");
     $("#modal").css("display", "none");
 };
 
-var hideShowChars = function () {
+var toggleTierView = function () {
     $("#msg_container").html("");
-    $("#characters").css("display", charsHidden ? "block" : "none");
-    charsHidden = !charsHidden;
-    $("#hideShow").val((charsHidden ? "Show" : "Hide") + " Character Picker");
-    $("#wrap").css("width", charsHidden ? "auto" : "48%");
-    $("#wrap").css("left", charsHidden ? "5px" : "");
+    $("#characters").css("display", tierView ? "block" : "none");
+    $("#buttons").css("display", tierView ? "block" : "none");
+    tierView = !tierView;
+    $("#show").css("display", tierView ? "block" : "none");
+    $("#wrap").css("max-height", tierView ? "100%" : "77%");
+    $("#wrap").css("width", tierView ? "auto" : "48%");
+    $("#wrap").css("bottom", tierView ? "5px" : "");
+    $("#wrap").css("left", tierView ? "5px" : "");
 };
 
 var drag = function (event) {
@@ -555,7 +631,7 @@ var drop = function (event) {
         } else {
             addToTier(following, getTierNumOf(event.target.id), getPositionOf(event.target.id));
         }
-    } else if ((isCharacter(event.target.id) || isCategory(event.target.id)) && isTiered(following)) {
+    } else if ((isCharacter(event.target.id) || isCategory(event.target.id) || event.target.id == "characters") && isTiered(following)) {
         removeFromTier(following, getTierNumOf(following));
     }
 
@@ -581,13 +657,7 @@ var loadTiersFromCookie = function () {
 
             for (i = 0; i < tiersCookie[tierNum].chars.length; i++) {
                 character = tiersCookie[tierNum].chars[i];
-                $("#" + character).removeClass("list");
-                $("#" + character).attr("style", "");
-                $("#" + character).attr("onContextMenu", "removeFromTier('" + character + "', " + tierNum + "); return false;");
-                id = "tier" + tierNum + "_" + tiers[tierNum].chars.length;
-                $("#tier" + tierNum).append("<span id='" + id + "'></span>");
-                $("#" + id).html($("#" + character));
-                tiers[tierNum].chars.pushStrict(character);
+                addToTier(character, tierNum);
             }
         }
     }
@@ -597,12 +667,7 @@ var loadCharacters = function () {
     var insertRight = false, categoryName, character, i;
 
     for (categoryName in categories) {
-        $("#characters").append("<div id='" + categoryName + "'>");
-
-        // no category separators at top
-        if (categoryName != "Main" && categoryName != "DS") {
-            $("#" + categoryName).append("<hr>");
-        }
+        $("#characters").append("<div id='" + categoryName + "'" + (categoryName != "Main" ? " class='sep'" : "") + ">");
 
         for (i in categories[categoryName].chars) {
             character = categories[categoryName].chars[i];
@@ -646,7 +711,6 @@ $(document).ready(function () {
     } catch (error) {
         addTier("S");
         addTier("A");
-        addTier("B");
-        $("#tier_name").val("C");
+        $("#tier_name").val("B");
     }
 });
