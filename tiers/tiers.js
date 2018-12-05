@@ -853,10 +853,9 @@ var eraseAll = function () {
         addTier("S");
         addTier("A");
         $("#tier_name").val("B");
+        $("#msg_container").html("<strong style='color:green'>Reset the tier list and settings to their default states!</strong>");
+        window.onbeforeunload = undefined;
     }
-
-    $("#msg_container").html("<strong style='color:green'>Reset the tier list and settings to their default states!</strong>");
-    window.onbeforeunload = undefined;
 };
 
 var drag = function (event) {
