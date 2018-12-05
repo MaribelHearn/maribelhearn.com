@@ -514,6 +514,10 @@ var load = function () {
         } else if (text[i] !== "") {
             characters = text[i].split(',');
             for (j = 0; j < characters.length; j++) {
+                if (characters[j] == "Mai") { // fix legacy name
+                    characters[j] = "Mai PC-98";
+                }
+
                 addToTier(characters[j].removeSpaces(), counter);
             }
         }
@@ -911,6 +915,11 @@ var loadTiersFromCookie = function () {
 
             for (i = 0; i < tiersCookie[tierNum].chars.length; i++) {
                 character = tiersCookie[tierNum].chars[i];
+
+                if (character == "Mai") { // fix legacy name
+                    character = "Mai PC-98";
+                }
+
                 addToTier(character, tierNum);
             }
         }
