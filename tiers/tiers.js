@@ -82,6 +82,7 @@
         }
     },
     tiers = {},
+    tiersSaved = {},
     maxTiers = 15,
     maxNameLength = 15,
     following = "",
@@ -269,7 +270,7 @@ var addTier = function (tierName) {
 
     // add the tier
     $("#tier_list_tbody").append("<tr id='tr" + tierNum + "' onDragOver='allowDrop(event)' onDrop='drop(event)'><th id='th" + tierNum +
-    "' class='tier_header' onClick='detectShiftCombo(event, " + tierNum + ")' onClick='detectShiftCombo(event)' onContextMenu='removeTier(" + tierNum +
+    "' class='tier_header' onClick='detectLeftCtrlCombo(event, " + tierNum + ")' onContextMenu='detectRightCtrlCombo(event, " + tierNum +
     "); return false;'>" + tierName + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr><hr>");
     tiers[tierNum] = {};
     tiers[tierNum].name = tierName;
@@ -313,7 +314,13 @@ var swapTiers = function (tierNum1, tierNum2) {
     swapOngoing = -1;
 
     for (tierNum in tiers) {
-        $("#th" + tierNum).attr("onClick", "detectShiftCombo(event, " + tierNum + ")");
+        $("#th" + tierNum).attr("onClick", "detectLeftCtrlCombo(event, " + tierNum + ")");
+    }
+};
+
+var removeCharacters = function (tierNum) {
+    while (tiers[tierNum].chars.length > 0) {
+        removeFromTier(tiers[tierNum].chars[0], tierNum);
     }
 };
 
@@ -322,12 +329,12 @@ var cancelOngoingSwap = function () {
 
     if (swapOngoing >= 0) {
         for (tierNum in tiers) {
-            $("#th" + tierNum).attr("onClick", "detectShiftCombo(event, " + tierNum + ")");
+            $("#th" + tierNum).attr("onClick", "detectLeftCtrlCombo(event, " + tierNum + ")");
         }
 
         swapOngoing = -1;
     }
-}
+};
 
 var removeTier = function (tierNum, skipConfirmation) {
     var length = tiers[tierNum].chars.length, confirmation = true, otherTierNum, i;
@@ -337,14 +344,8 @@ var removeTier = function (tierNum, skipConfirmation) {
     }
 
     if (confirmation) {
-        // remove all characters
-        while (tiers[tierNum].chars.length > 0) {
-            removeFromTier(tiers[tierNum].chars[0], tierNum);
-        }
-
+        removeCharacters(tierNum);
         cancelOngoingSwap();
-
-        // remove the tier
         $("#tr" + tierNum).remove();
         tiers[tierNum].flag = true;
     }
@@ -392,13 +393,29 @@ var quickAdd = function (tierNum) {
     }
 };
 
-var detectShiftCombo = function (event, tierNum) {
-    if (event.shiftKey) { // quick-add on shift + left click
+var detectLeftCtrlCombo = function (event, tierNum) {
+    if (event.ctrlKey) { // quick-add on ctrl + left click
         quickAdd(tierNum);
     } else { // initiate swap on left click
         startTierSwap(tierNum);
     }
-}
+};
+
+var emptyTier = function (tierNum) {
+    var confirmation = confirm("Are you sure you want to empty this tier? Emptying may take a moment with many characters inside.");
+
+    if (confirmation) {
+        removeCharacters(tierNum);
+    }
+};
+
+var detectRightCtrlCombo = function (event, tierNum) {
+    if (event.ctrlKey) { // empty tier on ctrl + right click
+        emptyTier(tierNum);
+    } else { // remove tier on right click
+        removeTier(tierNum);
+    }
+};
 
 var detectAddTierEnter = function (event) {
     if (event.keyCode == 13) { // enter press
@@ -406,7 +423,13 @@ var detectAddTierEnter = function (event) {
     }
 };
 
+var toggleInstructions = function () {
+    $(".instructions").css("display", $(".instructions").css("display") == "none" ? "block" : "none");
+    $("#toggle").html("Click here to " + ($(".instructions").css("display") == "none" ? "show" : "hide") + " the instructions.");
+};
+
 var save = function () {
+    tiersSaved = tiers;
     setCookie("tiers", JSON.stringify(tiers));
     setCookie("settings", JSON.stringify(categories));
     $("#msg_container").html("<strong style='color:green'>Tier list and settings saved!</strong>");
@@ -682,7 +705,7 @@ var loadTiersFromCookie = function () {
 
         if (!tiers[tierNum].flag) {
             $("#tier_list_tbody").append("<tr id='tr" + tierNum + "' onDragOver='allowDrop(event)' onDrop='drop(event)'><th id='th" + tierNum +
-            "' class='tier_header' onClick='detectShiftCombo(event, " + tierNum + ")' onContextMenu='removeTier(" + tierNum +
+            "' class='tier_header' onClick='detectLeftCtrlCombo(event, " + tierNum + ")' onContextMenu='detectRightCtrlCombo(event, " + tierNum +
             "); return false;' style='color: " + tiers[tierNum].colour + "; background-color: " + tiers[tierNum].bg +
             ";'>" + tiersCookie[tierNum].name + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr>");
 
@@ -699,7 +722,6 @@ var loadCharacters = function () {
 
     for (categoryName in categories) {
         $("#characters").append("<div id='" + categoryName + "'>");
-        //(categoryName != "Main" ? " class='sep'" : "") + ">");
 
         for (i in categories[categoryName].chars) {
             character = categories[categoryName].chars[i];
