@@ -137,7 +137,10 @@ var updateArrays = function () {
     for (tierNum in tiers) {
         for (i = 0; i < tiers[tierNum].chars.length; i++) {
             id = "#tier" + tierNum + "_";
-            tiers[tierNum].chars[i] = $(id + i).children()[0].id;
+
+            if ($(id + i).children().length > 0) {
+                tiers[tierNum].chars[i] = $(id + i).children()[0].id;
+            }
         }
     }
 };
@@ -266,7 +269,7 @@ var addTier = function (tierName) {
 
     // add the tier
     $("#tier_list_tbody").append("<tr id='tr" + tierNum + "' onDragOver='allowDrop(event)' onDrop='drop(event)'><th id='th" + tierNum +
-    "' class='tier_header' onClick='startTierSwap(" + tierNum + ")' onContextMenu='removeTier(" + tierNum +
+    "' class='tier_header' onClick='detectShiftCombo(event, " + tierNum + ")' onClick='detectShiftCombo(event)' onContextMenu='removeTier(" + tierNum +
     "); return false;'>" + tierName + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr><hr>");
     tiers[tierNum] = {};
     tiers[tierNum].name = tierName;
@@ -310,9 +313,21 @@ var swapTiers = function (tierNum1, tierNum2) {
     swapOngoing = -1;
 
     for (tierNum in tiers) {
-        $("#th" + tierNum).attr("onClick", "startTierSwap(" + tierNum + ")");
+        $("#th" + tierNum).attr("onClick", "detectShiftCombo(event, " + tierNum + ")");
     }
 };
+
+var cancelOngoingSwap = function () {
+    var tierNum;
+
+    if (swapOngoing >= 0) {
+        for (tierNum in tiers) {
+            $("#th" + tierNum).attr("onClick", "detectShiftCombo(event, " + tierNum + ")");
+        }
+
+        swapOngoing = -1;
+    }
+}
 
 var removeTier = function (tierNum, skipConfirmation) {
     var length = tiers[tierNum].chars.length, confirmation = true, otherTierNum, i;
@@ -327,14 +342,7 @@ var removeTier = function (tierNum, skipConfirmation) {
             removeFromTier(tiers[tierNum].chars[0], tierNum);
         }
 
-        // undo ongoing swap if any
-        if (swapOngoing >= 0) {
-            for (otherTierNum in tiers) {
-                $("#th" + otherTierNum).attr("onClick", "startTierSwap(" + otherTierNum + ")");
-            }
-
-            swapOngoing = -1;
-        }
+        cancelOngoingSwap();
 
         // remove the tier
         $("#tr" + tierNum).remove();
@@ -369,6 +377,28 @@ var closeModal = function (event) {
         emptyModal();
     }
 };
+
+var quickAdd = function (tierNum) {
+    var categoryName, character, i;
+
+    for (categoryName in categories) {
+        for (i = 0; i < categories[categoryName].chars.length; i++) {
+            character = categories[categoryName].chars[i].removeSpaces();
+
+            if (!isTiered(character)) {
+                addToTier(character, tierNum);
+            }
+        }
+    }
+};
+
+var detectShiftCombo = function (event, tierNum) {
+    if (event.shiftKey) { // quick-add on shift + left click
+        quickAdd(tierNum);
+    } else { // initiate swap on left click
+        startTierSwap(tierNum);
+    }
+}
 
 var detectAddTierEnter = function (event) {
     if (event.keyCode == 13) { // enter press
@@ -489,14 +519,7 @@ var customise = function () {
 var saveCustom = function () {
     var tierNum, tierName, tierColour;
 
-    // undo ongoing swap if any
-    if (swapOngoing >= 0) {
-        for (tierNum in tiers) {
-            $("#th" + tierNum).attr("onClick", "startTierSwap(" + tierNum + ")");
-        }
-
-        swapOngoing = -1;
-    }
+    cancelOngoingSwap();
 
     for (tierNum in tiers) {
         if (!tiers[tierNum].flag) {
@@ -659,7 +682,7 @@ var loadTiersFromCookie = function () {
 
         if (!tiers[tierNum].flag) {
             $("#tier_list_tbody").append("<tr id='tr" + tierNum + "' onDragOver='allowDrop(event)' onDrop='drop(event)'><th id='th" + tierNum +
-            "' class='tier_header' onClick='startTierSwap(" + tierNum + ")' onContextMenu='removeTier(" + tierNum +
+            "' class='tier_header' onClick='detectShiftCombo(event, " + tierNum + ")' onContextMenu='removeTier(" + tierNum +
             "); return false;' style='color: " + tiers[tierNum].colour + "; background-color: " + tiers[tierNum].bg +
             ";'>" + tiersCookie[tierNum].name + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr>");
 
