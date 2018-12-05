@@ -1,94 +1,110 @@
 ﻿var categories = {
         "Main": {
-            "enabled": true,
             "chars": ["Reimu Hakurei", "Marisa Kirisame"]
         },
+        "HRtP": {
+            "chars": ["Reimu PC-98", "SinGyoku M", "SinGyoku F", "YuugenMagan", "Mima", "Elis", "Kikuri", "Sariel", "Konngara"]
+        },
+        "SoEW": {
+            "chars": ["Genjii", "Rika", "Meira", "Marisa PC-98", "Evil Eye Sigma"]
+        },
+        "PoDD": {
+            "chars": ["Ellen", "Kotohime", "Kana Anaberal", "Rikako Asakura", "Chiyuri Kitashirakawa", "Yumemi Okazaki", "Ruukoto", "Mimi-chan"]
+        },
+        "LLS": {
+            "chars": ["Orange", "Kurumi", "Elly", "Yuuka PC-98", "Mugetsu", "Gengetsu"]
+        },
+        "MS": {
+            "chars": ["Sara", "Luize", "Alice PC-98", "Yuki", "Mai", "Yumeko", "Shinki"]
+        },
         "EoSD": {
-            "enabled": true,
             "chars": ["Rumia", "Daiyousei", "Cirno", "Hong Meiling", "Koakuma", "Patchouli Knowledge", "Sakuya Izayoi", "Remilia Scarlet", "Flandre Scarlet"]
         },
         "PCB": {
-            "enabled": true,
             "chars": ["Letty Whiterock", "Chen", "Alice Margatroid", "Lily White", "Lyrica Prismriver", "Lunasa Prismriver",
             "Merlin Prismriver", "Youmu Konpaku", "Yuyuko Saigyouji", "Ran Yakumo", "Yukari Yakumo"]
         },
         "IaMP": {
-            "enabled": true,
             "chars": ["Suika Ibuki"]
         },
         "IN": {
-            "enabled": true,
             "chars": ["Wriggle Nightbug", "Mystia Lorelei", "Keine Kamishirasawa", "Tewi Inaba", "Reisen Udongein Inaba", "Eirin Yagokoro", "Kaguya Houraisan", "Fujiwara no Mokou"]
         },
         "PoFV": {
-            "enabled": true,
             "chars": ["Aya Shameimaru", "Medicine Melancholy", "Yuuka Kazami", "Komachi Onozuka", "Eiki Shiki Yamaxanadu"]
         },
         "MoF": {
-            "enabled": true,
             "chars": ["Shizuha Aki", "Minoriko Aki", "Hina Kagiyama", "Nitori Kawashiro", "Momiji Inubashiri", "Sanae Kochiya", "Kanako Yasaka", "Suwako Moriya"]
         },
         "SWR": {
-            "enabled": true,
             "chars": ["Iku Nagae", "Tenshi Hinanawi"]
         },
         "SA": {
-            "enabled": true,
             "chars": ["Kisume", "Yamame Kurodani", "Parsee Mizuhashi", "Yuugi Hoshiguma", "Satori Komeiji", "Rin Kaenbyou", "Utsuho Reiuji", "Koishi Komeiji"]
         },
         "UFO": {
-            "enabled": true,
-            "chars": ["Nazrin", "Kogasa Tatara", "Ichirin Kumoi", "Minamitsu Murasa", "Shou Toramaru", "Byakuren Hijiri", "Nue Houjuu"]
+            "chars": ["Nazrin", "Kogasa Tatara", "Ichirin Kumoi", "Unzan", "Minamitsu Murasa", "Shou Toramaru", "Byakuren Hijiri", "Nue Houjuu"]
+        },
+        "Soku": {
+            "chars": ["Hisoutensoku"]
         },
         "DS": {
-            "enabled": true,
             "chars": ["Hatate Himekaidou"]
         },
         "GFW": {
-            "enabled": true,
             "chars": ["Luna Child", "Star Sapphire", "Sunny Milk"]
         },
         "TD": {
-            "enabled": true,
             "chars": ["Kyouko Kasodani", "Yoshika Miyako", "Seiga Kaku", "Soga no Tojiko", "Mononobe no Futo", "Toyosatomimi no Miko", "Mamizou Futatsuiwa"]
         },
         "HM": {
-            "enabled": true,
             "chars": ["Hata no Kokoro"]
         },
         "DDC": {
-            "enabled": true,
             "chars": ["Wakasagihime", "Sekibanki", "Kagerou Imaizumi", "Benben Tsukumo", "Yatsuhashi Tsukumo", "Seija Kijin", "Shinmyoumaru Sukuna", "Raiko Horikawa"]
         },
         "ULiL": {
-            "enabled": true,
-            "chars": ["Kasen Ibaraki", "Sumireko Usami"]
+            "chars": ["Sumireko Usami"]
         },
         "LoLK": {
-            "enabled": true,
             "chars": ["Seiran", "Ringo", "Doremy Sweet", "Sagume Kishin", "Clownpiece", "Junko", "Hecatia Lapislazuli"]
         },
         "AoCF": {
-            "enabled": true,
             "chars": ["Joon Yorigami", "Shion Yorigami"]
         },
         "HSiFS": {
-            "enabled": true,
             "chars": ["Eternity Larva", "Nemuno Sakata", "Aunn Komano", "Narumi Yatadera", "Satono Nishida", "Mai Teireida", "Okina Matara"]
         },
-        "Other": {
-            "enabled": true,
-            "chars": ["Maribel Hearn", "Renko Usami", "Watatsuki no Toyohime", "Watatsuki no Yorihime", "Hieda no Akyuu", "Tokiko", "Kosuzu Motoori"]
+        "Manga": {
+            "chars": ["Hieda no Akyuu", "Watatsuki no Toyohime", "Watatsuki no Yorihime", "Reisen II",
+            "Kasen Ibaraki", "Rinnosuke Morichika", "Tokiko", "Kosuzu Motoori", "Fortune Teller"]
+        },
+        "CD": {
+            "chars": ["Maribel Hearn", "Renko Usami"]
         }
     },
+    settings = {
+        "categories": {
+            "Main": { enabled: true }, "HRtP": { enabled: true }, "SoEW": { enabled: true }, "PoDD": { enabled: true }, "LLS": { enabled: true }, "MS": { enabled: true },
+            "EoSD": { enabled: true }, "PCB": { enabled: true }, "IaMP": { enabled: true }, "IN": { enabled: true }, "PoFV": { enabled: true }, "MoF": { enabled: true },
+            "SWR": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true }, "Soku": { enabled: true }, "DS": { enabled: true }, "GFW": { enabled: true },
+            "TD": { enabled: true }, "HM": { enabled: true }, "DDC": { enabled: true }, "ULiL": { enabled: true }, "LoLK": { enabled: true }, "AoCF": { enabled: true },
+            "HSiFS": { enabled: true }, "Manga": { enabled: true }, "CD": { enabled: true }
+        },
+        "pc98Enabled": true,
+        "windowsEnabled": true,
+        "maleEnabled": true,
+        "artist": "Dairi"
+    },
+    windows = ["EoSD", "PCB", "IaMP", "IN", "PoFV", "MoF", "SWR", "SA", "UFO", "Soku", "DS", "GFW", "TD", "HM", "DDC", "ULiL", "LoLK", "AoCF", "HSiFS"],
+    maleCharacters = ["Genjii", "Unzan", "RinnosukeMorichika", "FortuneTeller"],
+    pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"],
     tiers = {},
-    tiersSaved = {},
-    maxTiers = 15,
-    maxNameLength = 15,
+    maxTiers = 20,
+    maxNameLength = 30,
     following = "",
     tierView = false,
-    swapOngoing = -1,
-    innerWidth = window.innerWidth;
+    swapOngoing = -1;
 
 var isCharacter = function (character) {
     return character !== "" && JSON.stringify(categories).removeSpaces().contains(character);
@@ -100,6 +116,16 @@ var isCategory = function (category) {
 
 var isTiered = function (character) {
     return character !== "" && JSON.stringify(tiers).contains(character.removeSpaces());
+};
+
+var allTiered = function (categoryName) {
+    for (var i = 0; i < categories[categoryName].chars.length; i++) {
+        if (!isTiered(categories[categoryName].chars[i].removeSpaces())) {
+            return false;
+        }
+    }
+
+    return true;
 };
 
 var getTierNumOf = function (character) {
@@ -136,9 +162,9 @@ var updateArrays = function () {
     var tierNum, id, i;
 
     for (tierNum in tiers) {
-        for (i = 0; i < tiers[tierNum].chars.length; i++) {
-            id = "#tier" + tierNum + "_";
+        id = "#tier" + tierNum + "_";
 
+        for (i = 0; i < tiers[tierNum].chars.length; i++) {
             if ($(id + i).children().length > 0) {
                 tiers[tierNum].chars[i] = $(id + i).children()[0].id;
             }
@@ -177,6 +203,8 @@ var addToTier = function (character, tierNum, pos) {
         tiers[tierNum].chars.pushStrict(character);
     }
 
+    window.onbeforeunload = function () { return confirm(); };
+
     // check for category emptiness
     for (i in categories[categoryName].chars) {
         if (!isTiered(categories[categoryName].chars[i])) {
@@ -196,6 +224,7 @@ var moveToBack = function (character, tierNum) {
 
     $("#tier" + tierNum + "_" + (tiers[tierNum].chars.length - 1)).html(help);
     updateArrays();
+    window.onbeforeunload = function () { return confirm(); };
 };
 
 var changeToTier = function (character, tierNum) {
@@ -234,6 +263,8 @@ var removeFromTier = function (character, tierNum) {
         $("#tier" + tierNum + "_" + (tiers[tierNum].chars.length - 1)).remove();
         tiers[tierNum].chars.remove(character);
     }
+
+    window.onbeforeunload = function () { return confirm(); };
 };
 
 var validateTierName = function (tierName) {
@@ -256,7 +287,7 @@ var addTier = function (tierName) {
         return;
     }
 
-    tierName = tierName.strip();
+    tierName = tierName.strip().replace(/'/g, "");
     $("#tier_name").val(tierName);
 
     if (!tierName || tierName === "") {
@@ -283,6 +314,8 @@ var addTier = function (tierName) {
     if (swapOngoing >= 0) {
         $("#th" + tierNum).attr("onClick", "swapTiers(" + swapOngoing + ", " + tierNum + ")");
     }
+
+    window.onbeforeunload = function () { return confirm(); };
 };
 
 var startTierSwap = function (tierNum) {
@@ -316,6 +349,8 @@ var swapTiers = function (tierNum1, tierNum2) {
     for (tierNum in tiers) {
         $("#th" + tierNum).attr("onClick", "detectLeftCtrlCombo(event, " + tierNum + ")");
     }
+
+    window.onbeforeunload = function () { return confirm(); };
 };
 
 var removeCharacters = function (tierNum) {
@@ -349,6 +384,8 @@ var removeTier = function (tierNum, skipConfirmation) {
         $("#tr" + tierNum).remove();
         tiers[tierNum].flag = true;
     }
+
+    window.onbeforeunload = function () { return confirm(); };
 };
 
 var swapCharacters = function (character1, character2) {
@@ -359,6 +396,7 @@ var swapCharacters = function (character1, character2) {
     $(parent1).html($("#" + character2));
     $(parent2).html(backup);
     updateArrays();
+    window.onbeforeunload = function () { return confirm(); };
 };
 
 var emptyModal = function () {
@@ -383,11 +421,13 @@ var quickAdd = function (tierNum) {
     var categoryName, character, i;
 
     for (categoryName in categories) {
-        for (i = 0; i < categories[categoryName].chars.length; i++) {
-            character = categories[categoryName].chars[i].removeSpaces();
+        if (settings.categories[categoryName].enabled) {
+            for (i = 0; i < categories[categoryName].chars.length; i++) {
+                character = categories[categoryName].chars[i].removeSpaces();
 
-            if (!isTiered(character)) {
-                addToTier(character, tierNum);
+                if (!isTiered(character)) {
+                    addToTier(character, tierNum);
+                }
             }
         }
     }
@@ -428,11 +468,34 @@ var toggleInstructions = function () {
     $("#toggle").html("Click here to " + ($(".instructions").css("display") == "none" ? "show" : "hide") + " the instructions.");
 };
 
-var save = function () {
-    tiersSaved = tiers;
+var allowCookies = function () {
+    var confirmation;
+
+    if (document.cookie === "") {
+        return confirm("This will store a cookie file on your device. Do you allow this?");
+    } else {
+        return true;
+    }
+}
+
+var saveTiersCookie = function () {
+    if (!allowCookies()) {
+        return;
+    }
+
     setCookie("tiers", JSON.stringify(tiers));
-    setCookie("settings", JSON.stringify(categories));
-    $("#msg_container").html("<strong style='color:green'>Tier list and settings saved!</strong>");
+    $("#msg_container").html("<strong style='color:green'>Tier list saved!</strong>");
+    window.onbeforeunload = undefined;
+};
+
+var saveSettingsCookie = function () {
+    if (!allowCookies()) {
+        return;
+    }
+
+    setCookie("settings", JSON.stringify(settings));
+    $("#msg_container").html("<strong style='color:green'>Settings saved!</strong>");
+    window.onbeforeunload = undefined;
 };
 
 var load = function () {
@@ -478,6 +541,7 @@ var copyToClipboard = function () {
     navigator.clipboard.writeText($("#text").html().replace(/<\/p><p>/g, "\n").strip());
     emptyModal();
     $("#msg_container").html("<strong style='color:green'>Copied to clipboard!</strong>");
+    window.onbeforeunload = undefined;
 };
 
 var exportText = function () {
@@ -510,7 +574,7 @@ var exportText = function () {
     $("#modal").css("display", "block");
 };
 
-var customise = function () {
+var customiseMenu = function () {
     var tierNum;
 
     emptyModal();
@@ -546,7 +610,7 @@ var saveCustom = function () {
 
     for (tierNum in tiers) {
         if (!tiers[tierNum].flag) {
-            tierName = $("#custom_name_tier" + tierNum).val();
+            tierName = $("#custom_name_tier" + tierNum).val().strip().replace(/'/g, "");
             tierBg = $("#custom_bg_tier" + tierNum).val();
             tierColour = $("#custom_colour_tier" + tierNum).val();
 
@@ -567,13 +631,18 @@ var saveCustom = function () {
     $("#customisation").html("");
     $("#customisation").css("display", "none");
     $("#modal").css("display", "none");
+    saveTiersCookie();
 };
 
-var settings = function () {
+var settingsMenu = function () {
     var categoryName, current = 0, counter = 0;
 
     emptyModal();
-    $("#settings").html("<div><h2>Settings</h2></div><div>Include characters in the following games of first appearance:<table id='settings_table'><tbody><tr id='settings_tr0'>");
+    $("#settings").html("<h2>Settings</h2><div>Use the following art set:<form id='artist_form'></form></div>");
+    $("#artist_form").append("<label for='dairi'>Dairi</label><input id='dairi' name='artist' type='radio'" + (settings.artist == "Dairi" ? " checked" : "") + ">");
+    $("#artist_form").append("<label for='ruu'>るう</label><input id='ruu' name='artist' type='radio'" + (settings.artist == "Ruu" ? " checked" : "") + ">");
+    $("#settings").append("Include characters in the following works of first appearance:<table id='settings_table'><tbody><tr id='settings_tr0'>");
+    $("#artist_form").attr("onClick", "toggleArtist()");
 
     for (categoryName in categories) {
         if (counter > 0 && counter % 5 === 0) {
@@ -583,27 +652,31 @@ var settings = function () {
         }
 
         $("#settings_tr" + current).append("<td><input id='checkbox_" + categoryName +
-        "' type='checkbox' value=''" + (categories[categoryName].enabled ? " checked" : "") +
+        "' type='checkbox'" + (settings.categories[categoryName].enabled ? " checked" : "") +
         "><label for='" + categoryName + "'>" + categoryName + "</label></td>");
         counter += 1;
     }
 
-    $("#settings").append("</tr></tbody></table></div><div><p><input type='button' value='Save Changes' onClick='saveSettings()'></p>");
-    $("#settings").append("<p id='settings_msg_container'></p></div>");
+    $("#settings").append("</tr></tbody></table>");
+    $("#settings").append("<p><label for='pc-98'>PC-98</label><input id='pc98' type='checkbox' onClick='togglePC98()'" + (settings.pc98Enabled ? " checked" : "") + "></p>");
+    $("#settings").append("<p><label for='windows'>Windows</label><input id='windows' type='checkbox' " +
+    "onClick='toggleWindows()'" + (settings.windowsEnabled ? " checked" : "") + "></p>");
+    $("#settings").append("<p><label for='male'>Male Characters</label><input id='male' type='checkbox' " +
+    "onClick='toggleMale()'" + (settings.maleEnabled ? " checked" : "") + "></p>");
+    $("#settings").append("<div><p><input type='button' value='Save Changes' onClick='saveSettings()'></p><p id='settings_msg_container'></p></div>");
     $("#settings").css("display", "block");
     $("#modal").css("display", "block");
 };
 
-var confirmMassRemoval = function (removedCategories) {
-    var confirmation = confirm("Do you want to remove characters from disabled categories from the current tiers?"),
-        categoryName, character, i, j;
+var massRemoval = function (removedCategories) {
+    var categoryName, character, i, j;
 
-    if (confirmation) {
-        $("#settings_msg_container").html("<strong style='color:orange'>Girls are being removed, please wait warmly...</strong>");
+    $("#settings_msg_container").html("<strong style='color:orange'>Girls are being removed, please wait warmly...</strong>");
 
-        for (i = 0; i < removedCategories.length; i++) {
-            categoryName = removedCategories[i];
+    for (i = 0; i < removedCategories.length; i++) {
+        categoryName = removedCategories[i];
 
+        if (isCategory(categoryName)) { // remove category
             for (j in categories[categoryName].chars) {
                 character = categories[categoryName].chars[j].removeSpaces();
 
@@ -611,15 +684,56 @@ var confirmMassRemoval = function (removedCategories) {
                     removeFromTier(character, getTierNumOf(character));
                 }
             }
+        } else { // remove male character
+            character = categoryName;
+            removeFromTier(character, getTierNumOf(character));
         }
     }
-}
+};
+
+var togglePC98 = function () {
+    for (var i = 0; i < pc98.length; i++) {
+        $("#checkbox_" + pc98[i]).prop("checked", $("#pc98").is(":checked") ? true : false);
+    }
+};
+
+var toggleWindows = function () {
+    for (var i = 0; i < windows.length; i++) {
+        $("#checkbox_" + windows[i]).prop("checked", $("#windows").is(":checked") ? true : false);
+    }
+};
+
+var toggleMale = function () {
+    $("#checkbox_Soku").prop("checked", $("#male").is(":checked") ? true : false);
+};
+
+var toggleArtist = function () {
+    var i;
+
+    $("#pc98").attr("disabled", $("#ruu").is(":checked"));
+    $("#male").attr("disabled", $("#ruu").is(":checked"));
+    $("#soku").attr("disabled", $("#ruu").is(":checked"));
+
+    for (i = 0; i < pc98.length; i++) {
+        if ($("#ruu").is(":checked")) {
+            $("#checkbox_" + pc98[i]).prop("checked", false);
+        }
+
+        $("#checkbox_" + pc98[i]).attr("disabled", $("#ruu").is(":checked"));
+    }
+
+    if ($("#ruu").is(":checked")) {
+        $("#pc98").prop("checked", false);
+        $("#male").prop("checked", false);
+        $("#checkbox_Soku").prop("checked", false);
+    }
+};
 
 var saveSettings = function () {
-    var removedCategories = [], categoryName, character, i;
+    var removedCategories = [], categoryName, character, confirmation, i;
 
     for (categoryName in categories) {
-        categories[categoryName].enabled = $("#checkbox_" + categoryName).is(":checked");
+        settings.categories[categoryName].enabled = $("#checkbox_" + categoryName).is(":checked");
 
         // check if any disabled characters are in tiers or being held
         if (!$("#checkbox_" + categoryName).is(":checked")) {
@@ -631,19 +745,71 @@ var saveSettings = function () {
                 }
             }
         }
+
+        window.onbeforeunload = function () { return confirm(); };
+    }
+
+    // male characters also trigger confirmation window
+    if (!$("#male").is(":checked")) {
+        for (i in maleCharacters) {
+            if (isTiered(maleCharacters[i])) {
+                removedCategories.push(maleCharacters[i]);
+            }
+        }
     }
 
     if (removedCategories.length > 0) {
-        confirmMassRemoval(removedCategories);
+        confirmation = confirm("This will remove characters from disabled categories from the current tiers. Are you sure you want to do that?");
+
+        if (confirmation) {
+            massRemoval(removedCategories);
+        } else {
+            return;
+        }
     }
 
+    // show or hide categories and male characters based on checkboxes and tieredness
     for (categoryName in categories) {
-        $("#" + categoryName).css("display", $("#checkbox_" + categoryName).is(":checked") ? "block" : "none");
+        if ($("#checkbox_" + categoryName).is(":checked") && !allTiered(categoryName)) {
+            $("#" + categoryName).css("display", "block");
+        } else {
+            $("#" + categoryName).css("display", "none");
+        }
     }
 
+    for (i in maleCharacters) {
+        if ($("#male").is(":checked") && !isTiered(maleCharacters[i])) {
+            $("#" + maleCharacters[i]).css("display", "inline");
+        } else {
+            $("#" + maleCharacters[i]).css("display", "none");
+        }
+    }
+
+    // check if artist changed
+    if ($("#dairi").is(":checked") && settings.artist != "Dairi") {
+        for (categoryName in categories) {
+            for (i in categories[categoryName].chars) {
+                character = categories[categoryName].chars[i].removeSpaces();
+                $("#" + character).attr("src", $("#" + character).attr("src").replace("Ruu", "Dairi").replace("jpg", "png"));
+            }
+        }
+    } else if ($("#ruu").is(":checked") && settings.artist != "Ruu") {
+        for (categoryName in categories) {
+            for (i in categories[categoryName].chars) {
+                character = categories[categoryName].chars[i].removeSpaces();
+                $("#" + character).attr("src", $("#" + character).attr("src").replace("Dairi", "Ruu").replace("png", "jpg"));
+            }
+        }
+    }
+
+    settings.artist = $("#dairi").is(":checked") ? "Dairi" : "Ruu";
+    settings.pc98Enabled = $("#pc98").is(":checked");
+    settings.windowsEnabled = $("#windows").is(":checked");
+    settings.maleEnabled = $("#male").is(":checked");
     $("#settings").html("");
     $("#settings").css("display", "none");
     $("#modal").css("display", "none");
+    saveSettingsCookie();
 };
 
 var toggleTierView = function () {
@@ -725,24 +891,46 @@ var loadCharacters = function () {
 
         for (i in categories[categoryName].chars) {
             character = categories[categoryName].chars[i];
+
             $("#" + categoryName).append("<span id='" + character.removeSpaces() + "C'><img id='" + character.removeSpaces() +
-            "' class='list' draggable='true' onDragStart='drag(event)' src='tiers/" + categoryName + "/" + character.removeSpaces() +
-            ".jpg' alt='" + character + "' title='" + character + "'>");
+            "' class='list' draggable='true' onDragStart='drag(event)' src='tiers/" + settings.artist + "/" + categoryName +
+            "/" + character.removeSpaces() + "." + (settings.artist == "Dairi" ? "png" : "jpg") +
+            "' alt='" + character + "' title='" + character + "'>");
+
+            if (maleCharacters.contains(character.removeSpaces()) && !settings.maleEnabled) {
+                $("#" + character.removeSpaces()).css("display", "none");
+            }
         }
 
         $("#characters").append("</div>");
 
-        if (!categories[categoryName].enabled) {
+        if (!settings.categories[categoryName].enabled) {
             $("#" + categoryName).css("display", "none");
         }
     }
 };
 
 var loadSettingsFromCookie = function () {
-    var settingsCookie = JSON.parse(getCookie("settings"));
+    var settingsCookie = JSON.parse(getCookie("settings")), category;
 
-    for (category in settingsCookie) {
-        categories[category].enabled = settingsCookie[category].enabled;
+    if (settingsCookie.hasOwnProperty("categories")) { // new cookie
+        for (category in settingsCookie.categories) {
+            settings.categories[category].enabled = settingsCookie.categories[category].enabled;
+        }
+
+        settings.pc98Enabled = settingsCookie.pc98Enabled;
+        settings.windowsEnabled = settingsCookie.windowsEnabled;
+        settings.maleEnabled = settingsCookie.maleEnabled;
+        settings.artist = settingsCookie.artist;
+    } else { // legacy cookie
+        for (category in settingsCookie) {
+            if (category == "Other") {
+                settings.categories["Manga"].enabled = settingsCookie[category].enabled;
+                settings.categories["CD"].enabled = settingsCookie[category].enabled;
+            } else {
+                settings.categories[category].enabled = settingsCookie[category].enabled;
+            }
+        }
     }
 };
 
@@ -767,4 +955,6 @@ $(document).ready(function () {
         addTier("A");
         $("#tier_name").val("B");
     }
+
+    window.onbeforeunload = undefined;
 });
