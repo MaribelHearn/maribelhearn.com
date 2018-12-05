@@ -19,7 +19,6 @@
             <div id='init'>
                 <h1>Touhou Tier List Creator</h1>
                 <p id='notice'><strong>Notice:</strong> this page is not designed for mobile use. Apologies for the inconvenience.</p>
-                <p><strong>Notice:</strong> PC-98 characters and the remaining manga characters will become available at a later date.</p>
                 <p class='instructions'>This page allows you to create your own Touhou character tier list. Usage instructions are listed below.
                 <ul class='instructions'>
                     <li>Drag a character onto a tier box to add that character to it.</li>
@@ -46,17 +45,19 @@
             </div>
         </div>
         <div id='buttons'>
-            <p>The artworks used for this page are drawn by <a href='https://twitter.com/rhmksiykskruhm' target='_blank'>るう</a>.
+            <p>The artworks used for this page are drawn by <a href='https://www.pixiv.net/member.php?id=4920496'>Dairi</a> and
+            <a href='https://www.pixiv.net/member.php?id=10349996' target='_blank'>るう</a>.
             Special thanks go to <a href='https://twitter.com/Plus5298' target='_blank'>Plus</a> for the original idea as well as testing,
-            <a href='https://twitter.com/pienyan_' target='_blank'>pienyan</a> for testing and
-            <a href='https://twitter.com/Doroshii_Sweet' target='_blank'>Dorothy Sweet</a> for design improvements.</p>
-            <input type='button' value='Save Cookies' onClick='save()'>
+            <a href='https://twitter.com/pienyan_' target='_blank'>pienyan</a> for testing,
+            <a href='https://twitter.com/Doroshii_Sweet' target='_blank'>Dorothy Sweet</a> for design improvements and
+            <a href='https://twitter.com/TheDukeofBooms'>ZXNova</a> for the Dairi face crops.</p>
+            <input type='button' value='Save Tiers' onClick='saveTiersCookie()'>
             <input type='button' value='Import' onClick='importText()'>
             <input type='button' value='Export' onClick='exportText()'>
             <br id='button_split'>
-            <input type='button' value='Customise Tiers' onClick='customise()'>
+            <input type='button' value='Customise Tiers' onClick='customiseMenu()'>
             <input id='hide' type='button' value='Tier List View' onClick='toggleTierView()'>
-            <input type='button' value='Settings' onClick='settings()'>
+            <input type='button' value='Settings' onClick='settingsMenu()'>
             <p id='msg_container'></p>
         </div>
         <div id='show'><input type='button' value='Normal View' onClick='toggleTierView()'></div>
