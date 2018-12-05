@@ -826,6 +826,39 @@ var toggleTierView = function () {
     $("#wrap").css("left", tierView ? "5px" : "");
 };
 
+var eraseAll = function () {
+    var confirmation = confirm("Are you sure you want to reset your tier list and settings to the defaults?"), tierNum;
+
+    if (confirmation) {
+        for (tierNum in tiers) {
+            removeTier(tierNum, true);
+        }
+
+        settings = {
+            "categories": {
+                "Main": { enabled: true }, "HRtP": { enabled: true }, "SoEW": { enabled: true }, "PoDD": { enabled: true }, "LLS": { enabled: true }, "MS": { enabled: true },
+                "EoSD": { enabled: true }, "PCB": { enabled: true }, "IaMP": { enabled: true }, "IN": { enabled: true }, "PoFV": { enabled: true }, "MoF": { enabled: true },
+                "SWR": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true }, "Soku": { enabled: true }, "DS": { enabled: true }, "GFW": { enabled: true },
+                "TD": { enabled: true }, "HM": { enabled: true }, "DDC": { enabled: true }, "ULiL": { enabled: true }, "LoLK": { enabled: true }, "AoCF": { enabled: true },
+                "HSiFS": { enabled: true }, "Manga": { enabled: true }, "CD": { enabled: true }
+            },
+            "pc98Enabled": true,
+            "windowsEnabled": true,
+            "maleEnabled": true,
+            "artist": "Dairi"
+        };
+
+        deleteCookie("tiers");
+        deleteCookie("settings");
+        addTier("S");
+        addTier("A");
+        $("#tier_name").val("B");
+    }
+
+    $("#msg_container").html("<strong style='color:green'>Reset the tier list and settings to their default states!</strong>");
+    window.onbeforeunload = undefined;
+};
+
 var drag = function (event) {
     following = event.target.id;
 };
