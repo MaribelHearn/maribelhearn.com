@@ -15,7 +15,7 @@
             "chars": ["Orange", "Kurumi", "Elly", "Yuuka PC-98", "Mugetsu", "Gengetsu"]
         },
         "MS": {
-            "chars": ["Sara", "Luize", "Alice PC-98", "Yuki", "Mai", "Yumeko", "Shinki"]
+            "chars": ["Sara", "Luize", "Alice PC-98", "Yuki", "Mai PC-98", "Yumeko", "Shinki"]
         },
         "EoSD": {
             "chars": ["Rumia", "Daiyousei", "Cirno", "Hong Meiling", "Koakuma", "Patchouli Knowledge", "Sakuya Izayoi", "Remilia Scarlet", "Flandre Scarlet"]
