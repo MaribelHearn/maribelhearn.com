@@ -653,16 +653,18 @@ var settingsMenu = function () {
 
         $("#settings_tr" + current).append("<td><input id='checkbox_" + categoryName +
         "' type='checkbox'" + (settings.categories[categoryName].enabled ? " checked" : "") +
+        " " + ((pc98.contains(categoryName) || categoryName == "Soku") && settings.artist == "Ruu" ? "disabled=true" : "") +
         "><label for='" + categoryName + "'>" + categoryName + "</label></td>");
         counter += 1;
     }
 
     $("#settings").append("</tr></tbody></table>");
-    $("#settings").append("<p><label for='pc-98'>PC-98</label><input id='pc98' type='checkbox' onClick='togglePC98()'" + (settings.pc98Enabled ? " checked" : "") + "></p>");
+    $("#settings").append("<p><label for='pc-98'>PC-98</label><input id='pc98' type='checkbox' onClick='togglePC98()'" + (settings.pc98Enabled ? " checked" : "") +
+    " " + (settings.artist == "Ruu" ? "disabled=true" : "") + "></p>");
     $("#settings").append("<p><label for='windows'>Windows</label><input id='windows' type='checkbox' " +
     "onClick='toggleWindows()'" + (settings.windowsEnabled ? " checked" : "") + "></p>");
     $("#settings").append("<p><label for='male'>Male Characters</label><input id='male' type='checkbox' " +
-    "onClick='toggleMale()'" + (settings.maleEnabled ? " checked" : "") + "></p>");
+    "onClick='toggleMale()'" + (settings.maleEnabled ? " checked" : "") + " " + (settings.artist == "Ruu" ? "disabled=true" : "") + "></p>");
     $("#settings").append("<div><p><input type='button' value='Save Changes' onClick='saveSettings()'></p><p id='settings_msg_container'></p></div>");
     $("#settings").css("display", "block");
     $("#modal").css("display", "block");
@@ -712,7 +714,7 @@ var toggleArtist = function () {
 
     $("#pc98").attr("disabled", $("#ruu").is(":checked"));
     $("#male").attr("disabled", $("#ruu").is(":checked"));
-    $("#soku").attr("disabled", $("#ruu").is(":checked"));
+    $("#checkbox_Soku").attr("disabled", $("#ruu").is(":checked"));
 
     for (i = 0; i < pc98.length; i++) {
         if ($("#ruu").is(":checked")) {
