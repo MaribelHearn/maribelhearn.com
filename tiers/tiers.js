@@ -396,8 +396,8 @@ var swapCharacters = function (character1, character2) {
     $(parent1).html($("#" + character2));
     $(parent2).html(backup);
     updateArrays();
-    $("#" + character1).attr("onContextMenu", "removeFromTier(" + getTierNumOf(character1) + "); return false;");
-    $("#" + character2).attr("onContextMenu", "removeFromTier(" + getTierNumOf(character2) + "); return false;");
+    $("#" + character1).attr("onContextMenu", "removeFromTier('" + character1 + "', " + getTierNumOf(character1) + "); return false;");
+    $("#" + character2).attr("onContextMenu", "removeFromTier('" + character2 + "', " + getTierNumOf(character2) + "); return false;");
     window.onbeforeunload = function () { return confirm(); };
 };
 
