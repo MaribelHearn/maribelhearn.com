@@ -97,7 +97,7 @@
         "artist": "Dairi"
     },
     windows = ["EoSD", "PCB", "IaMP", "IN", "PoFV", "MoF", "SWR", "SA", "UFO", "Soku", "DS", "GFW", "TD", "HM", "DDC", "ULiL", "LoLK", "AoCF", "HSiFS"],
-    maleCharacters = ["Genjii", "Unzan", "RinnosukeMorichika", "FortuneTeller"],
+    maleCharacters = ["SinGyokuM", "Genjii", "Unzan", "RinnosukeMorichika", "FortuneTeller"],
     pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"],
     tiers = {},
     maxTiers = 20,
@@ -395,6 +395,8 @@ var swapCharacters = function (character1, character2) {
 
     $(parent1).html($("#" + character2));
     $(parent2).html(backup);
+    $("#" + character1).attr("onContextMenu", "removeFromTier(" + getTierNumOf(character1) + "); return false;");
+    $("#" + character2).attr("onContextMenu", "removeFromTier(" + getTierNumOf(character2) + "); return false;");
     updateArrays();
     window.onbeforeunload = function () { return confirm(); };
 };
@@ -980,7 +982,7 @@ var loadSettingsFromCookie = function () {
 $(document).ready(function () {
     // detect smartphone
     if (navigator.userAgent.indexOf("Mobile") > -1) {
-        $("notice").css("display", "block");
+        $("#notice").css("display", "block");
 	}
 
     try {
