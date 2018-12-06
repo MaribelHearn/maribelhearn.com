@@ -1,12 +1,13 @@
 body {
-	background: url('index.png') top no-repeat fixed;
-    font: 16px times new roman;
+	background: url('index.png') center no-repeat fixed;
+	background-size: cover;
 }
 div {
     background-color: #FFFFFF;
 }
 h1 {
-    font-family: 'Libre Baskerville';
+    font-family: 'Felipa';
+	font-size: 48px;
 }
 #wrap {
     border: 1px solid black;

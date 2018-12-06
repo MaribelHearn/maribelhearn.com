@@ -1,5 +1,6 @@
 body {
 	background: url('history.jpg') top no-repeat fixed;
+    background-size: cover;
 }
 div {
     background-color: #FFFFFF;
@@ -108,7 +109,7 @@ h3 {
 	padding: 0 5px;
 	margin-left: -5px;
 	background-color: #ffe9c6;
-} 
+}
 .calendar-box .selected a {
 	padding: 0 5px;
 	margin-left: -5px;
