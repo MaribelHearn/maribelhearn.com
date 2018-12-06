@@ -1,5 +1,6 @@
 body {
     background: url('scoring.png') bottom no-repeat fixed;
+    background-size: cover;
 }
 div {
     background-color: #FFFFFF;

@@ -1,5 +1,6 @@
 body {
 	background: url('title.png') top no-repeat fixed;
+    background-size: cover;
 }
 div {
     background-color: #FFFFFF;

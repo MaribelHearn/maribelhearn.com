@@ -1,5 +1,6 @@
 body {
 	background: url('tools.jpg') top no-repeat fixed;
+	background-size: cover;
 }
 div {
     background-color: #FFFFFF;
