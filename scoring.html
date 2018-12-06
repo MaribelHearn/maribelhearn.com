@@ -13,12 +13,12 @@
 		<script src='utils.js'></script>
 		<script src='scoring/scoring.js'></script>
 	</head>
-	
+
 	<body>
 		<div id='wrap'>
 			<h1>High Score Storage</h1>
             <noscript><strong>Notice:</strong> this page cannot function properly with JavaScript disabled.</noscript>
-            <p id='notice' style='display:none'><strong>Notice:</strong> this page is best viewed on mobile using landscape mode.</p>
+            <p id='notice'><strong>Notice:</strong> this page is best viewed on mobile using landscape mode.</p>
             <p>Enter your high scores. You can leave any high score empty. The scores you entered will be compared to the world records that
             were achieved with the same shottypes and percentages will be given. When you click the 'Calculate' button at the bottom of the
             page, sortable tables will be generated to tell you how your scores compare to the world records.</p>
@@ -377,7 +377,7 @@
                 </table>
             </div>
             <div id='PCB'>
-                <p id='PCB'><img src='games/pcb.jpg' class='cover' alt='PCB cover'> <u>Touhou 7 - Perfect Cherry Blossom</u></p>
+                <p><img src='games/pcb.jpg' class='cover' alt='PCB cover'> <u>Touhou 7 - Perfect Cherry Blossom</u></p>
                 <table class='center'>
                     <tr>
                         <th>Shottype</th>
@@ -536,7 +536,7 @@
                 </table>
             </div>
             <div id='PoFV'>
-                <p><img src='games/pofv.jpg' class='cover' alt='PoFV cover'> <u id='PoFV'>Touhou 9 - Phantasmagoria of Flower View</u></p>
+                <p><img src='games/pofv.jpg' class='cover' alt='PoFV cover'> <u>Touhou 9 - Phantasmagoria of Flower View</u></p>
                 <table class='center'>
                     <tr>
                         <th>Shottype</th>
@@ -757,7 +757,7 @@
                 </table>
             </div>
             <div id='UFO'>
-                <p id='UFO'><img src='games/ufo.jpg' class='cover' alt='UFO cover'> <u>Touhou 12 - Undefined Fantastic Object</u></p>
+                <p><img src='games/ufo.jpg' class='cover' alt='UFO cover'> <u>Touhou 12 - Undefined Fantastic Object</u></p>
                 <table class='center'>
                     <tr>
                         <th>Shottype</th>
@@ -1125,10 +1125,10 @@
                 </table>
             </div>
 			<div id='topList'></div>
-            <p>Number of decimals: <input type='number' id='precision' value='0' min='0' max='5' step='1' /></p>
+            <p>Number of decimals: <input id='precision' type='number' value='0' min='0' max='5' step='1'></p>
             <p id='error'></p>
 			<p><label for='toggleCookie'>Save Cookies</label><input id='toggleCookie' type='checkbox'></p>
-			<p><input type='button' onClick='calc()' value='Calculate'></p>
+			<p><input type='button' onClick='calc()' value='Calculate'><input type='button' onClick='reset()' value='Reset'></p>
 		</div>
 	</body>
 

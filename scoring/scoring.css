@@ -14,15 +14,27 @@ h2 {
     font-size: 36px
 }
 input[type=text] {
-    width: 85px;
+    width: 90px;
+    height: 15px;
+}
+input[type=number] {
+    height: 20px;
+}
+input[type=button] {
+    margin: 5px;
 }
 #wrap {
     border: 1px solid black;
     text-align: center;
     margin-left: 25%;
     margin-right: 25%;
+	padding-left: 10px;
+	padding-right: 10px;
     opacity: 0.8;
     font: 14px verdana, sans-serif;
+}
+#notice {
+    display: none;
 }
 #contents {
     border: 1px solid black;
