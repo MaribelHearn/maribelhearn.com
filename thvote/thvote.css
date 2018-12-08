@@ -21,6 +21,9 @@ table {
     margin-left: auto;
     margin-right: auto;
 }
+.left {
+	text-align: left;
+}
 #contents, #responses {
     border: 1px solid black;
 }
@@ -34,6 +37,9 @@ table {
     padding-bottom: 15px;
     opacity: 0.8;
     font: 14px verdana, sans-serif;
+}
+#notice {
+	display: none;
 }
 #chars_table.sortable tbody, #music_table.sortable tbody, #works_table.sortable tbody {
     counter-reset: sortabletablescope;
@@ -85,6 +91,7 @@ table {
         margin-left: 0%;
         margin-right: 0%;
         font-size: 11px;
+        width: 100%;
     }
     #correlation th, #correlation td {
         font-size: 8px;
