@@ -25,19 +25,19 @@ var WRs, step, global = this, phantasm = true, noExtra = true, noShottypes = tru
     DS_SEPARATE = "#dsSeparate", DOUBLE_SPOILER = "#doubleSpoiler", DOUBLE_SPOILER_DESC = "#doubleSpoilerDesc", DS_TABLE = "#dsTable", DS = "#ds", GAME = "#game", BB = "#bb",
     // HRTP_SCORING = "#hrtpScoring", HRTP_SCORING_DESC = "#hrtpScoringDesc", HRTP_TABLE = "#hrtpTable", HRTP_SEPARATE = "#hrtpSeparate",
     Rubrics;
-    
+
 $(document).ready(function() {
-    $.get("../json/wrlist.json", function(data) {
+    $.get("https://maribelhearn.github.io/json/wrlist.json", function(data) {
         WRs = data;
-    
-        $.get("../json/rubrics.json", function(data) {
+
+        $.get("https://maribelhearn.github.io/json/rubrics.json", function(data) {
             Rubrics = data;
-            
+
             generateText(true);
             checkValues(true, true, true);
             generateRubrics();
             $(POFV_FORMULA).attr("colspan", 4);
-            
+
             if (getCookie("lang") == "Japanese") {
                 language = "Japanese";
                 generateText(false);
@@ -46,16 +46,16 @@ $(document).ready(function() {
                 generateText(false);
             }
         }, "json");
-              
+
     }, "json");
-    
+
     step = setInterval(updateCountdown, 1000);
     updateCountdown();
 });
 
 function updateCountdown() {
     var countdownDate, now, distance, days, hours, minutes, seconds;
-    
+
     countdownDate = Date.UTC("2018", "9", "18", "14", "30", "0");
     now = new Date().getTime();
     distance = countdownDate - now;
@@ -64,7 +64,7 @@ function updateCountdown() {
     minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     seconds = Math.floor((distance % (1000 * 60)) / 1000);
     $(COUNTDOWN).html("DRC End<br>" + days + translate("d ") + hours + translate("h ") + minutes + translate("m ") + seconds + translate("s"));
-    
+
     if (distance < 0) {
         $(COUNTDOWN).html("");
         clearInterval(step);
@@ -216,7 +216,7 @@ function translateGameName(game) {
         return game;
     } else if (language == "Japanese") {
         game = game.trim();
-        
+
         return ({
             "HRtP": "靈",
             "SoEW": "封",
@@ -239,7 +239,7 @@ function translateGameName(game) {
         }[game]);
     } else {
         game = game.trim();
-        
+
         return ({
             "HRtP": "灵",
             "SoEW": "封",
@@ -265,7 +265,7 @@ function translateGameName(game) {
 
 function generateText(firstTime) {
     var numberOfShottypes = $(SHOTTYPE + " option").length, i;
-    
+
     if (language == "English") {
         $(HRTP).html("HRtP");
         $(SOEW).html("SoEW");
@@ -303,7 +303,7 @@ function generateText(firstTime) {
         $(ACK_TEXT).html("Acknowledgements");
         $(BACK_TO_TOP).html("Back to Top");
         game = $(GAME).val();
-        
+
         if (game) {
             if (game == "TD") {
                 $(BOMBS_LABEL).html("Bombs / Trances");
@@ -311,12 +311,12 @@ function generateText(firstTime) {
                 $(SHOTTYPE_LABEL).html("Route");
             }
         }
-        
+
         for (i = 0; i < 2; i++) {
             $(SURVIVAL + i).html("Survival");
             $(SCORING + i).html("Scoring");
         }
-        
+
         $(RULE1).html("No cheating by using external programs or modifying the game FPS.");
         $(RULE2).html("Replays are required for Windows game submissions, while for PC-98 a video or screenshot is accepted.");
         $(RULE3).html("All runs must be played using default lives and bombs.");
@@ -326,13 +326,13 @@ function generateText(firstTime) {
         $(LS_LABEL).html("Last Spells Captured");
         $(RELEASES_LABEL).html("Releases");
         $(DRCPOINTS).html($(DRCPOINTS).html().replace("DRCポイント: ", "Your DRC points for this run: ").replace("本轮DRC得分：", "Your DRC points for this run: "));
-        
+
         if ($(RUBRICS_BUTTON).val() == "Show Rubrics" || $(RUBRICS_BUTTON).val() == "ルーブリックを見せて" || $(RUBRICS_BUTTON).val() == "显示计算公式") {
             $(RUBRICS_BUTTON).val("Show Rubrics");
         } else {
             $(RUBRICS_BUTTON).val("Hide Rubrics");
         }
-        
+
         $(CALCULATE).val("Calculate");
         $(SCORING_NOTES).html("Scoring Notes");
         $(SURV_NOTES).html("Survival Notes");
@@ -363,11 +363,11 @@ function generateText(firstTime) {
         $(SCORE_FORMULA).html("||Max * (Score / WR) ^ Exp||");
         $(SURV_FORMULA).html("||Max * (Base ^ -n)||");
         $(POFV_FORMULA).html("||Max - ((Max - Min) / MaxLives * RoundsLost)|| + NoBombBonus");
-        
+
         for (i = 0; i < numberOfShottypes; i++) {
             $(SHOTTYPE + i).html($(SHOTTYPE + i).val().replace("Team", " Team"));
         }
-        
+
         if (!firstTime) {
             $(IMP_NOT).html("Important Notice:");
             $(IMP_NOT_TEXT + "0").html("usage of the MarisaB damage bug is BANNED in survival.");
@@ -375,7 +375,7 @@ function generateText(firstTime) {
             $(IMP_NOT_TEXT + "2").html("border breaks count as bombs <em>even if they are accidental</em>.");
             generateRubrics();
         }
-        
+
         $(DRC_INTRO).html("The <b>Dodging Rain Competition (DRC)</b> is a Touhou game competition that was invented by " +
         "<a href='https://twitter.com/VincentZeem'>ZM</a> and is held on <a href='https://discord.gg/Ucae3Uf'>the official DRC Discord</a>. " +
         "Two teams go up against each other in several different categories. Each player posts an arbitrarily long list of categories, ordered by preference, " +
@@ -427,7 +427,7 @@ function generateText(firstTime) {
         $(ACK_TEXT).html("謝辞");
         $(BACK_TO_TOP).html("上に帰る");
         game = $(GAME).val();
-        
+
         if (game) {
             if (game == "PCB") {
                 $(BOMBS_LABEL).html("ボム / 霊撃");
@@ -437,12 +437,12 @@ function generateText(firstTime) {
                 $(SHOTTYPE_LABEL).html("ルート");
             }
         }
-        
+
         for (i = 0; i < 2; i++) {
             $(SURVIVAL + i).html("クリア重視");
             $(SCORING + i).html("稼ぎ");
         }
-        
+
         $(RULE1).html("外部ツールを用いたチート行為やゲームのFPSを変更することを禁止します。");
         $(RULE2).html("Windows版作品の登録にはリプレイが必要です。PC-98版作品においては録画ファイルまたはスクリーンショットにて受け付け可能です。");
         $(RULE3).html("全てのプレイにおいて、初期残機、初期ボム数でのプレイが必須です。");
@@ -452,13 +452,13 @@ function generateText(firstTime) {
         $(LS_LABEL).html("ラストスペル取得");
         $(RELEASES_LABEL).html("解放");
         $(DRCPOINTS).html($(DRCPOINTS).html().replace("Your DRC points for this run: ", translate("Your DRC points for this run: ")).replace("本轮DRC得分：", translate("Your DRC points for this run: ") + " "));
-        
+
         if ($(RUBRICS_BUTTON).val() == "Show Rubrics" || $(RUBRICS_BUTTON).val() == "显示计算公式") {
             $(RUBRICS_BUTTON).val(translate("Show Rubrics"));
         } else {
             $(RUBRICS_BUTTON).val(translate("Hide Rubrics"));
         }
-        
+
         $(CALCULATE).val("計算する");
         $(SCORING_NOTES).html("稼ぎのノート");
         $(SURV_NOTES).html("クリア重視のノート");
@@ -485,11 +485,11 @@ function generateText(firstTime) {
         $(SCORE_FORMULA).html("||最大点 * (スコア / 世界記録) ^ 冪指数||");
         $(SURV_FORMULA).html("||最大点 * (底 ^ -n)||");
         $(POFV_FORMULA).html("||最大点 - ((最大点 - 最小点) / 最大残機 * 敗北数)|| + ノーボムボーナス");
-        
+
         for (i = 0; i < numberOfShottypes; i++) {
             $(SHOTTYPE + i).html(translateCharName($(SHOTTYPE + i).val()));
         }
-        
+
         generateRubrics();
         $(IMP_NOT).html("重要通知:");
         $(IMP_NOT_TEXT + "0").html("魔理沙Bのバグを使ってはいけまでん。");
@@ -504,39 +504,39 @@ function generateText(firstTime) {
         $(SCORE_TEXT).html("スコア");
         $(MIN_POINTS).html("最小点");
         $(NB_BONUS).html("ノーボムボーナス");
-        
+
         for (i = 0; i < 2; i++) {
             $(BASE + i).html("底");
         }
-        
+
         for (i = 0; i < 2; i++) {
             $(EXP + i).html("冪指数");
         }
-        
+
         for (i = 0; i < 3; i++) {
             $(GAME + i).html("ゲーム");
         }
-        
+
         for (i = 0; i < 8; i++) {
             $(BASE_POINTS + i).html("素点");
         }
-        
+
         for (i = 0; i < 9; i++) {
             $(MAX_POINTS + i).html("最大点");
         }
-        
+
         for (i = 0; i < 8; i++) {
             $(THRESHOLD + i).html("閾値");
         }
-        
+
         $(THRESHOLD + "8").html("閾値1");
         $(THRESHOLD + "9").html("閾値2");
         $(THRESHOLD + "10").html("閾値3");
-        
+
         for (i = 0; i < 11; i++) {
             $(INCREMENTS + i).html("増加");
         }
-        
+
         $(DRC_INTRO).html("<b>Dodging Rain Competition(DRC)</b>は<a href='https://twitter.com/VincentZeem'>ZM</a>により考案された" +
         "<a href='https://discord.gg/Ucae3Uf'>DRC Discord</a>で開かれる東方projectの定期大会です。" +
         "２つのチームが幾つかのカテゴリーで競争します。各プレイヤーは希望順に並べたカテゴリーのリストを作ります。" +
@@ -589,7 +589,7 @@ function generateText(firstTime) {
         $(ACK_TEXT).html("致谢");
         $(BACK_TO_TOP).html("回到顶部");
         game = $(GAME).val();
-        
+
         if (game) {
             if (game == "PCB") {
                 $(BOMBS_LABEL).html("扔雷数/灵击数");
@@ -599,12 +599,12 @@ function generateText(firstTime) {
                 $(SHOTTYPE_LABEL).html("路线");
             }
         }
-        
+
         for (i = 0; i < 2; i++) {
             $(SURVIVAL + i).html("生存");
             $(SCORING + i).html("打分");
         }
-        
+
         $(RULE1).html("禁止通过使用内置程序或修改游戏帧数作弊。");
         $(RULE2).html("windows平台游戏需要提交rep；PC98平台游戏可提交视频或截图。");
         $(RULE3).html("所有游戏必须在默认残机数、bomb数的情况下进行。");
@@ -614,13 +614,13 @@ function generateText(firstTime) {
         $(LS_LABEL).html("LSC收取数");
         $(RELEASES_LABEL).html("季节解放数");
         $(DRCPOINTS).html($(DRCPOINTS).html().replace("Your DRC points for this run: ", translate("Your DRC points for this run: ")).replace("DRCポイント: ", translate("Your DRC points for this run: ")));
-        
+
         if ($(RUBRICS_BUTTON).val() == "Show Rubrics" || $(RUBRICS_BUTTON).val() == "ルーブリックを見せて") {
             $(RUBRICS_BUTTON).val(translate("Show Rubrics"));
         } else {
             $(RUBRICS_BUTTON).val(translate("Hide Rubrics"));
         }
-        
+
         $(CALCULATE).val("计算");
         $(SCORING_NOTES).html("打分简介");
         $(SURV_NOTES).html("生存简介");
@@ -645,11 +645,11 @@ function generateText(firstTime) {
         $(SCORE_FORMULA).html("||最大值 *（得分 / 世界纪录）^ 指数||");
         $(SURV_FORMULA).html("||最大值 *（基数 ^ -n）||");
         $(POFV_FORMULA).html("||最大值 -最大值 - 最小值） / 最大残机 * 败北数）|| + NB奖分");
-        
+
         for (i = 0; i < numberOfShottypes; i++) {
             $(SHOTTYPE + i).html(translateCharName($(SHOTTYPE + i).val()));
         }
-        
+
         generateRubrics();
         $(IMP_NOT).html("重要提示：");
         $(IMP_NOT_TEXT + "0").html("生存向 弑神炮禁止。");
@@ -664,39 +664,39 @@ function generateText(firstTime) {
         $(SCORE_TEXT).html("分数");
         $(MIN_POINTS).html("最小值");
         $(NB_BONUS).html("NB奖分");
-        
+
         for (i = 0; i < 2; i++) {
             $(BASE + i).html("基数");
         }
-        
+
         for (i = 0; i < 2; i++) {
             $(EXP + i).html("指数");
         }
-        
+
         for (i = 0; i < 3; i++) {
             $(GAME + i).html("游戏");
         }
-        
+
         for (i = 0; i < 8; i++) {
             $(BASE_POINTS + i).html("基数分");
         }
-        
+
         for (i = 0; i < 9; i++) {
             $(MAX_POINTS + i).html("最大值");
         }
-        
+
         for (i = 0; i < 8; i++) {
             $(THRESHOLD + i).html("阈值");
         }
-        
+
         $(THRESHOLD + "8").html("第一阈值");
         $(THRESHOLD + "9").html("第二阈值");
         $(THRESHOLD + "10").html("第三阈值");
-        
+
         for (i = 0; i < 11; i++) {
             $(INCREMENTS + i).html("增幅");
         }
-        
+
         $(DRC_INTRO).html("<b>Dodging Rain Competition(DRC)</b>是由<a href='https://twitter.com/VincentZeem'>ZM</a>发起的东方比赛，举办地点：<a href='https://discord.gg/Ucae3Uf'>DRC Discord</a>。" +
         "两队进行不同项目的比赛。每位选手报名时写下想打的任意项目，根据偏好排序，可以是避弹向的生存，也可以是打分，任意作品、任意难度均可。列出的项目会与另一队进行匹配，相同项目的选手即匹配成功。分组与项目由DRC主办方决定。选手将会有二周时间报名。" +
         "一旦开赛，有两周时间提交参赛录像，录像所获得分根据计算公式而定。未在两周内提交则视为无效。玩家提交的rep个数无限制，最终DRC得分将选取最高分录入。");
@@ -813,10 +813,10 @@ function translate(arg) {
 
 function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
     var game = $(GAME).val(), difficulty = $(DIFFICULTY).val(), challenge = $(CHALLENGE).val(), shottype = $(SHOTTYPE).val();
-    
+
     if (challenge == "Survival") {
         var notifyText = "<b id='impNot'>" + translate("Important Notice:") + "</b> ";
-        
+
         if (game == "MoF" && shottype == "MarisaB") {
             $(NOTIFY).html(notifyText + "<span id='impNotText0'>" + translate("usage of the MarisaB damage bug is BANNED in survival.") + "</span>");
         } else if (game == "TD") {
@@ -827,12 +827,12 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
             $(NOTIFY).html("");
         }
     }
-    
-    
+
+
     if (changePerformance) {
         $(ROUTE).css("display", "none");
         $(SEASON).css("display", "none");
-        
+
         if (changeShottypes) {
             if (game == "DS") {
                 $(DIFFICULTY).css("display", "none");
@@ -841,7 +841,7 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
                 $(DIFFICULTY).css("display", "inline");
                 dsActive = false;
             }
-            
+
             if (game == "PCB") {
                 $(DIFFICULTY).html(PHANTASM);
                 phantasm = true;
@@ -849,7 +849,7 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
                 $(DIFFICULTY).html(DIFF_OPTIONS);
                 phantasm = false;
             }
-            
+
             if (game == "HRtP" || game == "PoDD") {
                 $(DIFFICULTY).html(NO_EXTRA);
                 noExtra = true;
@@ -858,14 +858,14 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
                 noExtra = false;
             }
         }
-        
+
         if (game == "HSiFS" && $(DIFFICULTY).val() != "Extra") {
             $(SEASON).css("display", "inline");
         }
-        
+
         if (challenge == "Survival") {
             var survOptions = MISSES_INPUT;
-            
+
             if (game == "PoDD") {
                 survOptions += "<br><label id='nbLabel' for='nb'>" + translate("No Bomb") + "</label><input id='nb' type='checkbox'>";
                 survOptions = survOptions.replace(translate("Misses") + "</label>", translate("Rounds lost") + "</label>").replace("max=100", "max=5");
@@ -881,10 +881,10 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
                 } else {
                     survOptions += "<br><label id='bombsLabel' for='bombs'>" + translate("Bombs") + "</label><input id='bombs' type='number' value=0 min=0 max=100>";
                 }
-                
+
                 if (game == "IN") {
                     difficulty = $(DIFFICULTY).val();
-                    
+
                     if (difficulty == "Extra") {
                         survOptions += "<br><label id='isLabel' for='is'>" + translate("Imperishable Shooting Captured") + "</label><input id='is' type='checkbox'>";
                     } else {
@@ -892,12 +892,12 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
                         $(ROUTE).css("display", "inline");
                     }
                 }
-                
+
                 if (game == "HSiFS") {
                     survOptions += "<br><label id='releasesLabel' for='releases'>" + translate("Releases") + "</label><input id='releases' type='number' value=0 min=0 max=1000>";
                 }
             }
-            
+
             $(PERFORMANCE).html(survOptions);
             $(MISSES_LABEL).html(translate("Misses"));
         } else {
@@ -907,16 +907,16 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
             } else {
                 $(PERFORMANCE).html(SCORE_OPTIONS);
             }
-            
+
             $(SCORE_LABEL).html(translate("Score"));
             $(NOTIFY).html("");
         }
-            
+
         if (language == "Japanese") {
             generateText(false);
         }
     }
-    
+
     if (changeShottypes) {
         checkShottypes(true);
     }
@@ -924,27 +924,27 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
 
 function checkShottypes(alwaysChange) {
     var game = $(GAME).val(), challenge = $(CHALLENGE).val(), difficulty = $(DIFFICULTY).val(), shottypeList = "", shottypes, shottype, i;
-    
+
     shottypes = (game == "DS" ? ["Aya", "Hatate"] : Object.keys(WRs[game][difficulty]));
-    
+
     if (game == "HSiFS") {
         shottypes = ["Reimu", "Cirno", "Aya", "Marisa"];
     }
-    
+
     for (i = 0; i < shottypes.length; i++) {
         shottypeList += "<option id='shottype" + i + "' value='" + shottypes[i] + "'>" + translateCharName(shottypes[i]) + "</option>";
     }
-    
+
     if (alwaysChange) {
         $(SHOTTYPE).html(shottypeList);
     }
-    
+
     if (game == "HRtP" || game == "GFW") {
         $(SHOTTYPE_LABEL).html(translate("Route"));
     } else {
         $(SHOTTYPE_LABEL).html(translate("Shottype"));
     }
-    
+
     if (game == "GFW" && difficulty == "Extra") {
         $(SHOTTYPE).html("<option value='-'>-</option>");
         noShottypes = true;
@@ -960,7 +960,7 @@ function isPhantasmagoria(game) {
 
 function drcPoints() {
     var game = $(GAME).val(), difficulty = $(DIFFICULTY).val(), challenge = $(CHALLENGE).val(), shottype = $(SHOTTYPE).val(), rubric, season, points;
-    
+
     if (challenge == "Survival") {
         if (!Rubrics.SURV_RUBRICS[game]) {
             $(ERROR).html("<strong style='color:red'>" + translate("Error: ") + translate("the survival rubrics for this game are undetermined as of now.") + "</strong>");
@@ -969,16 +969,16 @@ function drcPoints() {
         } else {
             $(ERROR).html("");
         }
-        
+
         rubric = Rubrics.SURV_RUBRICS[game][difficulty];
-        
+
         if (game == "HSiFS" && Number($(RELEASES).val()) === 0) {
             season = $(SEASON).val();
             shottypeMultiplier = (Rubrics.SURV_RUBRICS[game].multiplier[shottype + season] ? Rubrics.SURV_RUBRICS[game].multiplier[shottype + season] : 1);
         } else {
             shottypeMultiplier = (Rubrics.SURV_RUBRICS[game].multiplier[shottype] ? Rubrics.SURV_RUBRICS[game].multiplier[shottype] : 1);
         }
-        
+
         points = (isPhantasmagoria(game) ? phantasmagoria(rubric, game, difficulty, shottypeMultiplier) : survivalPoints(rubric, game, difficulty, shottypeMultiplier));
     } else {
         if (!(game == "MoF" && (difficulty == "Easy" || difficulty == "Lunatic")) && game != "DS" && !Rubrics.SCORE_RUBRICS[game]) {
@@ -988,7 +988,7 @@ function drcPoints() {
         } else {
             $(ERROR).html("");
         }
-        
+
         if (game == "DS") {
             points = dsFormula();
         } else if (game == "MoF") {
@@ -998,13 +998,13 @@ function drcPoints() {
             points = scoringPoints(rubric, game, difficulty, shottype);
         }
     }
-    
+
     $(DRCPOINTS).html(translate("Your DRC points for this run: ") + " <strong>" + points + "</strong>!");
 }
 
 function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
     var roundsLost = Number($(MISSES).val()), bonus;
-    
+
     if (roundsLost > rubric.lives) {
         if (language == "English") {
             $(ERROR).html("<strong style='color:red'>Error: the number of rounds lost cannot exceed " + rubric.lives + "</strong>");
@@ -1019,11 +1019,11 @@ function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
     }
 
     bonus = $(NB).is(":checked") ? rubric.noBombBonus : 0;
-    
+
     if (difficulty == "Extra") {
         shottypeMultiplier = 1;
     }
-    
+
     return Math.round(shottypeMultiplier * ((rubric.base - ((rubric.base - rubric.min) / rubric.lives * roundsLost)) + bonus));
 }
 
@@ -1031,54 +1031,54 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
     var misses = Number($(MISSES).val()), bombs = Number($(BOMBS).val()), n = 0, decrement = 0;
 
     var borderBreaks, route, lastSpells, releases, season, i;
-    
+
     $(ERROR).html("");
     n += misses * rubric.miss;
-    
+
     if (bombs >= 1) {
         n += rubric.firstBomb;
         bombs -= 1;
     }
-    
+
     n += bombs * rubric.bomb;
-    
+
     if (game == "PCB") {
         borderBreaks = Number($(BB).val());
         n += borderBreaks * rubric.bomb;
     }
-    
+
     if (game == "HSiFS") {
         releases = Number($(RELEASES).val());
-        
+
         if (releases >= 1) {
             n += rubric.firstRelease;
             releases -= 1;
         }
-        
+
         while (releases > 0) {
             for (i = 0; i < 10; i++) {
                 n += rubric.release - decrement;
                 releases -= 1;
-                
+
                 if (releases === 0) {
                     break;
                 }
             }
-            
+
             decrement += (decrement == 0.4 ? 0 : 0.1);
             i = 0;
         }
     }
-    
+
     drcpoints = Math.round(rubric.base * Math.pow(rubric.exp, -n));
-    
+
     if (game == "IN") {
         if (difficulty == "Extra") {
             drcpoints += ($(IS).is(":checked") ? 5 : 0);
         } else {
             route = $(ROUTE).val();
             lastSpells = $(LS).val();
-            
+
             if (lastSpells > Rubrics.MAX_LAST_SPELLS[difficulty][route]) {
                 if (language == "English") {
                     $(ERROR).html("<strong style='color:red'>Error: the number of Last Spells captured in a " + route +
@@ -1089,43 +1089,43 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
                     $(ERROR).html("<strong style='color:red'>错误：" + route + "路线" + difficulty +
                     "难度中的LSC收取数不能超过" + Rubrics.MAX_LAST_SPELLS[difficulty][route] + "。");
                 }
-                
+
                 return 0;
             }
-            
+
             drcpoints += lastSpells * (difficulty == "Easy" ? 1 : 2);
         }
     }
-    
+
     if (difficulty != "Extra" && difficulty != "Phantasm") {
         drcpoints = Math.round(drcpoints * shottypeMultiplier);
     }
-    
+
     return drcpoints;
 }
 
 /*function hrtpFormula(difficulty) {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), drcpoints = 0, thresholds;
-    
+
     thresholds = HRTP_THRESHOLDS[difficulty];
-    
+
     if (score < thresholds.score) {
         return Math.round(Math.pow((score / thresholds.score), 3) * thresholds.base);
     }
-    
+
     drcpoints = thresholds.base;
-   
+
     while (score > thresholds.score) {
         score -= thresholds.step;
         drcpoints += 1;
     }
-    
+
     return Math.min(drcpoints, thresholds.cap);
 }*/
 
 function mofFormula(difficulty, shottype) {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), drcpoints = 0, originalScore = score, thresholds, increment, step, i;
-    
+
     // rubric currently only determined for Easy, Lunatic ReimuB and Lunatic MarisaC
     if (difficulty != "Easy" && difficulty != "Lunatic") {
         $(ERROR).html("<strong style='color:red'>" + translate("Error: ") + translate("the scoring rubrics for this difficulty are undetermined as of now.") + "</strong>");
@@ -1134,25 +1134,25 @@ function mofFormula(difficulty, shottype) {
         $(ERROR).html("<strong style='color:red'>" + translate("Error: ") + translate("the scoring rubrics for this shottype are undetermined as of now.") + "</strong>");
         return drcpoints;
     }
-    
+
     thresholds = Rubrics.MOF_THRESHOLDS[difficulty][shottype];
-    
+
     if (score < thresholds.score[0]) {
         return Math.round(Math.pow((score / thresholds.score[0]), 2) * (difficulty == "Easy" ? 220 : 200));
     }
-    
+
     drcpoints = thresholds.base[0];
-    
+
     for (i = thresholds.increment.length - 1; i >= 0; i--) {
         increment = thresholds.increment[i];
         step = thresholds.step[i];
-        
+
         while (score - step >= thresholds.score[i]) {
             drcpoints += increment;
             score -= step;
         }
     }
-    
+
     return Math.min(Math.round(drcpoints), (difficulty == "Easy" ? 375 : 500));
 }
 
@@ -1160,41 +1160,41 @@ function determineIncrement(thresholds, i) {
     if (i == 4) {
         i = 3;
     }
-    
+
     var increment = (i === 1 ? 20 : 30), lowerBound = thresholds[i - 1] * 1000;
-    
+
     return (thresholds[i] * 1000 - lowerBound) / increment;
 }
 
 function dsFormula() {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), scene = $(SCENE).val(), thresholds = Rubrics.SCENE_THRESHOLDS[scene], drcpoints = 0, step, i;
-    
+
     for (i = 3; i >= 0; i--) {
         step = determineIncrement(thresholds, i + 1);
-        
+
         while (score - step >= thresholds[i] * 1000) {
             drcpoints += 1;
             score -= step;
         }
     }
-    
+
     return drcpoints;
 }
 
 function bestSeason(difficulty, shottype) {
     var shottypes = WRs.HSiFS[difficulty], max = 0, season, i;
-    
+
     for (i in shottypes) {
         if (!i.contains(shottype)) {
             continue;
         }
-        
+
         if (shottypes[i][0] > max) {
             season = i.replace(shottype, "");
             max = shottypes[i][0];
         }
     }
-    
+
     return season;
 }
 
@@ -1204,14 +1204,14 @@ function removeSeason(shottype) {
 
 function scoringPoints(rubric, game, difficulty, shottype) {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), wr;
-    
+
     if (isNaN(score)) {
         $(ERROR).html("<strong style='color:red'>" + translate("Error: ") + translate("invalid score.") + "</strong>");
         return 0;
     } else {
         $(ERROR).html("");
     }
-    
+
     if (game == "HRtP") {
         if (difficulty == "Lunatic") {
             wr = 15500000;
@@ -1224,7 +1224,7 @@ function scoringPoints(rubric, game, difficulty, shottype) {
         wr = WRs[game][difficulty]["ReimuA"][0];
     } else if (game == "LLS") {
         wr = WRs[game][difficulty];
-        
+
         if (difficulty == "Easy") {
             wr = wr["ReimuA"][0];
         } else if (difficulty == "Normal" || difficulty == "Hard" || difficulty == "Extra") {
@@ -1236,7 +1236,7 @@ function scoringPoints(rubric, game, difficulty, shottype) {
         wr = 200000000;
     } else if (game == "PCB" && difficulty == "Lunatic") {
         wr = WRs[game][difficulty];
-        
+
         if (shottype == "ReimuB") {
             wr = 3300000000;
         } else if (shottype == "MarisaA") {
@@ -1248,7 +1248,7 @@ function scoringPoints(rubric, game, difficulty, shottype) {
         }
     } else if (game == "LoLK" && difficulty == "Lunatic") {
         wr = WRs[game][difficulty];
-        
+
         if (shottype == "Reimu") {
             wr = 2500000000;
         } else if (shottype == "Marisa") {
@@ -1261,25 +1261,25 @@ function scoringPoints(rubric, game, difficulty, shottype) {
     } else {
         wr = WRs[game][difficulty][removeSeason(shottype) + (game == "HSiFS" ? bestSeason(difficulty, shottype) : "")][0];
     }
-    
+
     return (score >= wr ? rubric.base : Math.round(rubric.base * Math.pow((score / wr), rubric.exp)));
 }
 
 function abbreviate(num) {
     var string = String(num), original = string, i = 0, rest;
-    
+
     while (string.indexOf("000") != -1) {
         string = string.replace("000", "");
         i += 1;
     }
-    
+
     if (original.length >= 10) {
         rest = string.substr(1, string.length).replace("00", "");
-        
+
         if (rest.lastIndexOf("0") == rest.length - 1) {
             rest = rest.replace("0", "");
         }
-    
+
         return string.charAt(0) + (rest === "" ? "" : "." + rest) + "b";
     } else {
         return string + "m";
@@ -1288,32 +1288,32 @@ function abbreviate(num) {
 
 function zeroes(num) {
     var result = "", i;
-    
+
     for (i = 0; i < num; i++) {
         result += "0";
     }
-    
+
     return result;
 }
 
 function abbreviateJapanese(num) {
     var string = String(num), original = string, current = string.lastIndexOf("0"), index = string.length, count = 0;
-    
+
     if (string.length < 5) {
         return string;
     }
-    
+
     while (string.charAt(current) == "0") {
         current -= 1;
     }
-    
+
     string = string.substr(0, current + 1);
-    
+
     while (index - 4 > 0) {
         index -= 4;
         count += 1;
     }
-    
+
     if (string.substr(index, string.length) === "") {
         if (count == 2) {
             return string + (string.length <= original.length - 9 ? zeroes(original.length - 9) : "") + "億";
@@ -1327,22 +1327,22 @@ function abbreviateJapanese(num) {
 
 function abbreviateChinese(num) {
     var string = String(num), original = string, current = string.lastIndexOf("0"), index = string.length, count = 0;
-    
+
     if (string.length < 5) {
         return string;
     }
-    
+
     while (string.charAt(current) == "0") {
         current -= 1;
     }
-    
+
     string = string.substr(0, current + 1);
-    
+
     while (index - 4 > 0) {
         index -= 4;
         count += 1;
     }
-    
+
     if (string.substr(index, string.length) === "") {
         if (count == 2) {
             return string + (string.length <= original.length - 9 ? zeroes(original.length - 9) : "") + "亿";
@@ -1363,7 +1363,7 @@ function generateRubrics() {
     $(SCORING_TABLE).html("");
     $(PHANTASMAGORIA).html("");
     $(SHOTTYPE_MULTIPLIERS).html("");
-    
+
     // detect smartphone
 	if (navigator.userAgent.contains("Mobile")) {
         $(RUBRICS_TABLES).html("<table class='center'>" +
@@ -1401,13 +1401,13 @@ function generateRubrics() {
         $(SCORING_TABLE).append("<tr>");
         $(SCORING_TABLE).append(game == "HRtP" ? SCORING_COLUMN : "<th></th><td></td><td></td>");
         $(SCORING_TABLE).append("</tr>");
-        
+
         for (difficulty in Rubrics.SCORE_RUBRICS[game]) {
             rubric = Rubrics.SCORE_RUBRICS[game][difficulty];
             $(SCORING_TABLE).append("<tr><th>" + translateGameName(game + " ") + difficulty + "</th><td>" + rubric.base + "</td><td>" + rubric.exp + "</td></tr>");
         }
     }
-    
+
     for (game in Rubrics.SURV_RUBRICS) {
         if (isPhantasmagoria(game)) {
             $(PHANTASMAGORIA).append("<tr>");
@@ -1418,22 +1418,22 @@ function generateRubrics() {
             $(SURV_TABLE).append(game == "HRtP" ? SURV_COLUMN : "<th></th><td></td><td></td><td></td><td></td><td></td>");
             $(SURV_TABLE).append("</tr>");
         }
-        
+
         for (difficulty in Rubrics.SURV_RUBRICS[game]) {
             rubric = Rubrics.SURV_RUBRICS[game][difficulty];
-            
+
             if (difficulty == "multiplier" || difficulty == "seasonMultiplier") {
                 $(SHOTTYPE_MULTIPLIERS).append("<tr>");
                 $(SHOTTYPE_MULTIPLIERS).append(game == "HRtP" ? "<th id='multipliedShottype'>Shottype</th><th id='multiplier'>Multiplier</th><" : "<th></th><td></td>");
                 $(SHOTTYPE_MULTIPLIERS).append("</tr>");
-                
+
                 for (shottype in rubric) {
                     $(SHOTTYPE_MULTIPLIERS).append("<tr><th>" + translateGameName(game + " ") + (language == "Japanese" ? "の" : "") + (language == "Chinese" ? " " : "") + translateCharName(shottype) + "</th><td>" + rubric[shottype] + "</td></tr>");
                 }
-                
+
                 continue;
             }
-            
+
             if (isPhantasmagoria(game)) {
                 $(PHANTASMAGORIA).append("<tr><th>" + translateGameName(game + " ") + difficulty + "</th><td>" + rubric.base + "</td><td>" + rubric.min +
                 "</td><td>" + rubric.noBombBonus + "</td></tr>");
@@ -1443,7 +1443,7 @@ function generateRubrics() {
             }
         }
     }
-    
+
     /*for (difficulty in HRTP_THRESHOLDS) {
         thresholds = HRTP_THRESHOLDS[difficulty];
         $(HRTP_TABLE).append("<tr><th colspan='12'>" + difficulty + "</th></tr>");
@@ -1453,7 +1453,7 @@ function generateRubrics() {
         "'>Base points</th><th id='increments" + id + "'>Increments</th><th id='maxPoints" + id2 + "'>Max points</th></tr>");
         id += 1;
         id2 += 1;
-        
+
         if (language == "English") {
             $(HRTP_TABLE).append("<tr><td>" + abbreviate(thresholds.score) + "</td><td>" + thresholds.base +
             "</td><td>+1 for every " + sep(thresholds.step) + "</td><td>" + thresholds.cap + "</td></tr>");
@@ -1465,19 +1465,19 @@ function generateRubrics() {
             "</td><td>每" + abbreviateChinese(thresholds.step) + "增加1</td><td>" + thresholds.cap + "</td></tr>");
         }
     }*/
-    
-            
+
+
     for (difficulty in Rubrics.MOF_THRESHOLDS) {
         $(MOF_TABLE).append("<tr><th colspan='12'>" + difficulty + "</th></tr>");
         $(MOF_TABLE).append("<tr><td colspan='12'>" + (difficulty == "Easy" ? translate("If score < 1st threshold, " +
         "then: ||220*(Score/T1)^2||") : translate("If score < 2b, then: ||200*(Score/2b)^2||")) + "</td></tr>");
-        
+
         for (shottype in Rubrics.MOF_THRESHOLDS[difficulty]) {
             $(MOF_TABLE).append("<tr><th colspan='3'>" + translateCharName(shottype) + "</th></tr>");
             $(MOF_TABLE).append("<tr><th id='threshold" + id + "'>Threshold</th><th id='basePoints" + id + "'>Base points</th><th id='increments" + id + "'>Increments</th></tr>");
             thresholds = Rubrics.MOF_THRESHOLDS[difficulty][shottype];
             id += 1;
-            
+
             for (i = 0; i < thresholds.base.length; i++) {
                 if (language == "English") {
                     $(MOF_TABLE).append("<tr><td>" + abbreviate(thresholds.score[i]) + "</td><td>" + thresholds.base[i] +
@@ -1492,12 +1492,12 @@ function generateRubrics() {
             }
         }
     }
-    
+
     $(DS_TABLE).append("<tr><th>" + translate("Scene") + "</th><th id='basePoints" + (id + 1) + "'>" + translate("Base points") +
     "</th><th id='increments" + (id) + "'>" + translate("Increments") + "</th><th id='threshold" + (id) + "'>" + translate("Threshold 1") +
     "</th><th id='increments" + (id + 1) + "'>" + translate("Increments") + "</th><th id='threshold" + (id + 1) + "'>" + translate("Threshold 2") +
     "</th><th id='increments" + (id + 2) + "'>" + translate("Increments") + "</th><th id='threshold" + (id + 2) + "'>" + translate("Threshold 3") + "</th></tr>");
-    
+
     for (scene in Rubrics.SCENE_THRESHOLDS) {
         thresholds = Rubrics.SCENE_THRESHOLDS[scene];
         n1 = thresholds[1] * 1000;
@@ -1506,7 +1506,7 @@ function generateRubrics() {
         step1 = Math.round(n1 / 20);
         step2 = Math.round((n2 - n1) / 30);
         step3 = Math.round((n3 - n2) / 30);
-        
+
         if (language == "English") {
             $(DS_TABLE).append("<tr><td>" + scene + "</td><td>0</td><td>+1 for every " + sep(step1) +
             "</td><td>" + sep(n1) + "</td><td>+1 for every " + sep(step2) +
@@ -1542,7 +1542,7 @@ function setLanguage(newLanguage) {
     if (language == newLanguage) {
         return;
     }
-    
+
     language = newLanguage;
     generateText(false);
     setCookie("lang", newLanguage);
