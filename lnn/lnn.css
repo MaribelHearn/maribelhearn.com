@@ -57,6 +57,9 @@ table, th, td {
     counter-increment: sortabletablescope;
     display: table-cell;
 }
+#back {
+    display: none;
+}
 .cover98 {
     border: 1px solid black;
     width: 50px;
