@@ -979,12 +979,23 @@ var loadSettingsFromCookie = function () {
     }
 };
 
-$(document).ready(function () {
-    // detect smartphone
-    if (navigator.userAgent.indexOf("Mobile") > -1) {
-        $("#notice").css("display", "block");
-	}
+var applyMobileCSS = function () {
+    $("#notice").css("display", "block");
+    $("#characters").css("display", "none");
+    $("#buttons").css("display", "none");
+    $("#toggle").css("display", "none");
+    $(".instructions").css("display", "none");
+    $("#tier_list_container").css("display", "none");
+    $("#wrap").css("top", "5px");
+    $("#wrap").css("bottom", "5px");
+    $("#wrap").css("right", "5px");
+    $("#wrap").css("left", "5px");
+    $("#wrap").css("width", "auto");
+    $("#wrap").css("max-height", "100%");
+    $("#wrap").css("height", "100%");
+};
 
+$(document).ready(function () {
     try {
         loadSettingsFromCookie();
     } catch (error) {
@@ -1002,4 +1013,9 @@ $(document).ready(function () {
     }
 
     window.onbeforeunload = undefined;
+
+    // detect smartphone and tablet
+    if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) {
+        applyMobileCSS();
+	}
 });
