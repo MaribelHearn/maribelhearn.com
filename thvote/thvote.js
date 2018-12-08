@@ -13,4 +13,4 @@ window.onresize = function(event) {
         document.styleSheets[0].insertRule("#wrap:before { content: ''; background-color: #FFFFFF; position: absolute; " +
         "height: " + document.body.clientHeight + "px; width: " + document.body.clientWidth + "; left: -2000px; z-index: -1; }", 0);
 	}
-}
+};
