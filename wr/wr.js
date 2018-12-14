@@ -1,5 +1,14 @@
-var WRs, playerWRs, compareWRs, westScores, skips = [], all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
+var WRs, playerWRs, compareWRs, westScores, seasonsEnabled, skips = [],
+    all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
     tracked = ["EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"], untracked = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "PoFV"];
+
+String.prototype.removeChar = function () {
+    return this.replace("Reimu", "").replace("Cirno", "").replace("Aya", "").replace("Marisa", "");
+};
+
+String.prototype.removeSeason = function () {
+    return this.replace("Spring", "").replace("Summer", "").replace("Autumn", "").replace("Winter", "");
+};
 
 function bestSeason(difficulty, shottype) {
     var shottypes = WRs.HSiFS[difficulty], max = 0, season, i;
@@ -120,6 +129,17 @@ function checkAll() {
     load();
 }
 
+function swapTables() {
+    $("#HSiFSsmall").css("display", seasonsEnabled ? "none" : "block");
+    $("#HSiFS").css("display", seasonsEnabled ? "block" : "none");
+    $("#HSiFSlink").attr("href", seasonsEnabled ? "#HSiFS" : "#HSiFSsmall");
+}
+
+function toggleSeasons() {
+    seasonsEnabled = !seasonsEnabled;
+    swapTables();
+}
+
 function percentageClass(percentage) {
     if (percentage < 50) {
         return "does_not_even_score";
@@ -135,13 +155,14 @@ function percentageClass(percentage) {
 }
 
 function load() {
-    $.get("https://maribelhearn.github.io/json/wrlist.json", function (data) {
+    $.get("https://maribelHearn.github.io/json/wrlist.json", function (data) {
         WRs = data;
         playerWRs = {};
         compareWRs = {};
 
-        var skip = {}, game, max, difficulty, bestshotmax, shottypes, shottype, wr, score, player, replay, overall, overallplayer,
-        overalldifficulty, overallshottype, overallseason, bestshot, bestshotplayer, bestshotseason, text, count;
+        var skip = {}, game, max, difficulty, bestshotmax, shottype, wr, score, player, replay, overall, overallplayer,
+        overalldifficulty, overallshottype, overallseason, bestshot, bestshotplayer, bestshotseason, text, count, seasonless;
+        //shottypes,
 
         for (game in WRs) {
             if (!$("#" + game + "c").is(":checked") || skips.contains(game)) {
@@ -155,11 +176,12 @@ function load() {
 
             for (difficulty in WRs[game]) {
                 bestshotmax = 0;
-                shottypes = (game == "HSiFS" ? {"Reimu": "", "Cirno": "", "Aya": "", "Marisa": ""} : WRs[game][difficulty]);
+                //shottypes = (game == "HSiFS" ? {"Reimu": "", "Cirno": "", "Aya": "", "Marisa": ""} : WRs[game][difficulty]);
 
-                for (shottype in shottypes) {
-                    season = (game == "HSiFS" ? bestSeason(difficulty, shottype) : "");
-                    wr = WRs[game][difficulty][shottype + season];
+                for (shottype in WRs[game][difficulty]) {
+                    season = (game == "HSiFS" ? shottype.removeChar() : "");
+
+                    wr = WRs[game][difficulty][shottype];
                     score = wr[0];
                     player = wr[1];
                     replay = wr[2];
@@ -194,12 +216,27 @@ function load() {
                     }
 
                     text = (replay === "" ? sep(score) : "<a class='replay' href='" + replay + "'>" + sep(score) + "</a>") + "<br>by <em>" + player + "</em>";
-                    score > 0 ? $("#" + game + difficulty + shottype).html(text + (game == "HSiFS" && difficulty != "Extra" ? " (" + season + ")" : "")) : $("#" + game + difficulty + shottype).html('-');
+
+                    if (score > 0) {
+                        $("#" + game + difficulty + shottype).html(text);
+                    } else {
+                        $("#" + game + difficulty + shottype).html('-');
+                    }
+
+                    seasonless = shottype.removeSeason();
+
+                    if (game == "HSiFS" && shottype.removeChar() == bestSeason(difficulty, seasonless)) {
+                        $("#" + game + difficulty + seasonless + (difficulty == "Extra" ? "Small" : "")).html(text +
+                        (game == "HSiFS" && difficulty != "Extra" ? " (" + bestSeason(difficulty, seasonless) + ")" : ""));
+                    }
                 }
 
                 $(bestshot).html((bestshotreplay === "" ? "<u>" + sep(bestshotmax) + "</u>" : "<u><a class='replay' href='" + bestshotreplay +
+                "'>" + sep(bestshotmax) + "</a>") + "</u><br>by <em>" + bestshotplayer + "</em>");
+                $(bestshot.removeSeason()).html((bestshotreplay === "" ? "<u>" + sep(bestshotmax) + "</u>" : "<u><a class='replay' href='" + bestshotreplay +
                 "'>" + sep(bestshotmax) + "</a>") + "</u><br>by <em>" + bestshotplayer + "</em>" + (game == "HSiFS" && difficulty != "Extra" ? " (" + bestshotseason + ")" : ""));
-                compareWRs[game][difficulty] = [bestshotmax, bestshotplayer, bestshot.replace("#" + game + difficulty, "") + (game == "HSiFS" && difficulty != "Extra" ? bestshotseason : "")];
+                compareWRs[game][difficulty] = [bestshotmax, bestshotplayer, bestshot.replace("#" + game +
+                difficulty, "") + (game == "HSiFS" && difficulty != "Extra" ? bestshotseason : "")];
             }
 
             $(overall).html($(overall).html().replace("<u>", "<u><strong>").replace("</u>", "</strong></u>"));
@@ -212,7 +249,7 @@ function load() {
             $("#" + game + "overall0").html(sep(max));
             $("#" + game + "overall1").html(overallplayer);
             $("#" + game + "overall2").html(overalldifficulty);
-            $("#" + game + "overall3").html(overallshottype + (game == "HSiFS" ? " (" + overallseason + ")" : ""));
+            $("#" + game + "overall3").html(overallshottype);
         }
 
         $("#ranking_tbody").html("");
@@ -289,5 +326,7 @@ $(document).ready(function() {
         $("#back").css("display", "block");
 	}
 
+    seasonsEnabled = $("#seasons").is(":checked");
 	load();
+    swapTables();
 });

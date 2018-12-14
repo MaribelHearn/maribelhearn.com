@@ -73,6 +73,18 @@ table, th, td {
 .noborders {
     border: none;
 }
+.spring {
+    color: fuchsia;
+}
+.summer {
+    color: green;
+}
+.autumn {
+    color: chocolate;
+}
+.winter {
+    color: blue;
+}
 .does_not_even_score {
     color: red; /* old: #6c869b */
 }

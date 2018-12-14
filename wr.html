@@ -44,7 +44,7 @@
                 <tr><td><a href='#TD'>Touhou 13 - Ten Desires</a></td></tr>
                 <tr><td><a href='#DDC'>Touhou 14 - Double Dealing Character</a></td></tr>
                 <tr><td><a href='#LoLK'>Touhou 15 - Legacy of Lunatic Kingdom</a></td></tr>
-                <tr><td><a href='#HSiFS'>Touhou 16 - Hidden Star in Four Seasons</a></td></tr>
+                <tr><td><a id='HSiFSlink' href='#HSiFS'>Touhou 16 - Hidden Star in Four Seasons</a></td></tr>
                 <tr><td><a href='#players'>Player Ranking</a></td></tr>
                 <tr><td><a href='#west'>Western Records</a></td></tr>
             </table>
@@ -134,8 +134,15 @@
                             <label for='all'>All</label>
                         </td>
                     </tr>
+					<tr>
+						<td colspan='4'>
+							<input id='seasons' type='checkbox' onClick='toggleSeasons()'>
+							<label for='seasons'>HSiFS Seasons</label>
+						</td>
+					</tr>
                 </tfoot>
             </table>
+			<p></p>
             <div id='overall'>
                 <p>Overall Records</p>
                 <table class='sortable'>
@@ -1164,6 +1171,47 @@
                     </tr>
                 </table>
             </div>
+            <div id='HSiFSsmall'>
+                <p><img src='games/hsifs.jpg' class='cover' alt='HSiFS cover'> Touhou 16 - Hidden Star in Four Seasons</p>
+                <table class='sortable'>
+                    <tr>
+                        <th>Shottype</th>
+                        <th class='sorttable_numeric'>Easy</th>
+                        <th class='sorttable_numeric'>Normal</th>
+                        <th class='sorttable_numeric'>Hard</th>
+                        <th class='sorttable_numeric'>Lunatic</th>
+                        <th class='sorttable_numeric'>Extra</th>
+                    </tr><tr id='HSiFSReimu'>
+                        <td>Reimu</td>
+                        <td id='HSiFSEasyReimu'></td>
+                        <td id='HSiFSNormalReimu'></td>
+                        <td id='HSiFSHardReimu'></td>
+                        <td id='HSiFSLunaticReimu'></td>
+                        <td id='HSiFSExtraReimuSmall'></td>
+                    </tr><tr id='HSiFSCirno'>
+                        <td>Cirno</td>
+                        <td id='HSiFSEasyCirno'></td>
+                        <td id='HSiFSNormalCirno'></td>
+                        <td id='HSiFSHardCirno'></td>
+                        <td id='HSiFSLunaticCirno'></td>
+                        <td id='HSiFSExtraCirnoSmall'></td>
+                    </tr><tr id='HSiFSAya'>
+                        <td>Aya</td>
+                        <td id='HSiFSEasyAya'></td>
+                        <td id='HSiFSNormalAya'></td>
+                        <td id='HSiFSHardAya'></td>
+                        <td id='HSiFSLunaticAya'></td>
+                        <td id='HSiFSExtraAyaSmall'></td>
+                    </tr><tr id='HSiFSMarisa'>
+                        <td>Marisa</td>
+                        <td id='HSiFSEasyMarisa'></td>
+                        <td id='HSiFSNormalMarisa'></td>
+                        <td id='HSiFSHardMarisa'></td>
+                        <td id='HSiFSLunaticMarisa'></td>
+                        <td id='HSiFSExtraMarisaSmall'></td>
+                    </tr>
+                </table>
+            </div>
             <div id='HSiFS'>
                 <p><img src='games/hsifs.jpg' class='cover' alt='HSiFS cover'> Touhou 16 - Hidden Star in Four Seasons</p>
                 <table class='sortable'>
@@ -1174,34 +1222,106 @@
                         <th class='sorttable_numeric'>Hard</th>
                         <th class='sorttable_numeric'>Lunatic</th>
                         <th class='sorttable_numeric'>Extra</th>
-                    </tr><tr>
-                        <td>Reimu</td>
-                        <td id='HSiFSEasyReimu'></td>
-                        <td id='HSiFSNormalReimu'></td>
-                        <td id='HSiFSHardReimu'></td>
-                        <td id='HSiFSLunaticReimu'></td>
-                        <td id='HSiFSExtraReimu'></td>
-                    </tr><tr>
-                        <td>Cirno</td>
-                        <td id='HSiFSEasyCirno'></td>
-                        <td id='HSiFSNormalCirno'></td>
-                        <td id='HSiFSHardCirno'></td>
-                        <td id='HSiFSLunaticCirno'></td>
-                        <td id='HSiFSExtraCirno'></td>
-                    </tr><tr>
-                        <td>Aya</td>
-                        <td id='HSiFSEasyAya'></td>
-                        <td id='HSiFSNormalAya'></td>
-                        <td id='HSiFSHardAya'></td>
-                        <td id='HSiFSLunaticAya'></td>
-                        <td id='HSiFSExtraAya'></td>
-                    </tr><tr>
-                        <td>Marisa</td>
-                        <td id='HSiFSEasyMarisa'></td>
-                        <td id='HSiFSNormalMarisa'></td>
-                        <td id='HSiFSHardMarisa'></td>
-                        <td id='HSiFSLunaticMarisa'></td>
-                        <td id='HSiFSExtraMarisa'></td>
+                    </tr><tr id='HSiFSReimuSpring'>
+                        <td>Reimu<br><span class='spring'>Spring</span></td>
+                        <td id='HSiFSEasyReimuSpring'></td>
+                        <td id='HSiFSNormalReimuSpring'></td>
+                        <td id='HSiFSHardReimuSpring'></td>
+                        <td id='HSiFSLunaticReimuSpring'></td>
+                        <td id='HSiFSExtraReimu' rowspan='4'></td>
+                    </tr><tr id='HSiFSReimuSummer'>
+                        <td>Reimu<br><span class='summer'>Summer</span></td>
+                        <td id='HSiFSEasyReimuSummer'></td>
+                        <td id='HSiFSNormalReimuSummer'></td>
+                        <td id='HSiFSHardReimuSummer'></td>
+                        <td id='HSiFSLunaticReimuSummer'></td>
+                    </tr><tr id='HSiFSReimuAutumn'>
+                        <td>Reimu<br><span class='autumn'>Autumn</span></td>
+                        <td id='HSiFSEasyReimuAutumn'></td>
+                        <td id='HSiFSNormalReimuAutumn'></td>
+                        <td id='HSiFSHardReimuAutumn'></td>
+                        <td id='HSiFSLunaticReimuAutumn'></td>
+                    </tr><tr id='HSiFSReimuWinter'>
+                        <td>Reimu<br><span class='winter'>Winter</span></td>
+                        <td id='HSiFSEasyReimuWinter'></td>
+                        <td id='HSiFSNormalReimuWinter'></td>
+                        <td id='HSiFSHardReimuWinter'></td>
+                        <td id='HSiFSLunaticReimuWinter'></td>
+                    </tr><tr id='HSiFSCirnoSpring'>
+                        <td>Cirno<br><span class='spring'>Spring</span></td>
+                        <td id='HSiFSEasyCirnoSpring'></td>
+                        <td id='HSiFSNormalCirnoSpring'></td>
+                        <td id='HSiFSHardCirnoSpring'></td>
+                        <td id='HSiFSLunaticCirnoSpring'></td>
+                        <td id='HSiFSExtraCirno' rowspan='4'></td>
+                    </tr><tr id='HSiFSCirnoSummer'>
+                        <td>Cirno<br><span class='summer'>Summer</span></td>
+                        <td id='HSiFSEasyCirnoSummer'></td>
+                        <td id='HSiFSNormalCirnoSummer'></td>
+                        <td id='HSiFSHardCirnoSummer'></td>
+                        <td id='HSiFSLunaticCirnoSummer'></td>
+                    </tr><tr id='HSiFSCirnoAutumn'>
+                        <td>Cirno<br><span class='autumn'>Autumn</span></td>
+                        <td id='HSiFSEasyCirnoAutumn'></td>
+                        <td id='HSiFSNormalCirnoAutumn'></td>
+                        <td id='HSiFSHardCirnoAutumn'></td>
+                        <td id='HSiFSLunaticCirnoAutumn'></td>
+                    </tr><tr id='HSiFSCirnoWinter'>
+                        <td>Cirno<br><span class='winter'>Winter</span></td>
+                        <td id='HSiFSEasyCirnoWinter'></td>
+                        <td id='HSiFSNormalCirnoWinter'></td>
+                        <td id='HSiFSHardCirnoWinter'></td>
+                        <td id='HSiFSLunaticCirnoWinter'></td>
+                    </tr><tr id='HSiFSAyaSpring'>
+                        <td>Aya<br><span class='spring'>Spring</span></td>
+                        <td id='HSiFSEasyAyaSpring'></td>
+                        <td id='HSiFSNormalAyaSpring'></td>
+                        <td id='HSiFSHardAyaSpring'></td>
+                        <td id='HSiFSLunaticAyaSpring'></td>
+                        <td id='HSiFSExtraAya' rowspan='4'></td>
+                    </tr><tr id='HSiFSAyaSummer'>
+                        <td>Aya<br><span class='summer'>Summer</span></td>
+                        <td id='HSiFSEasyAyaSummer'></td>
+                        <td id='HSiFSNormalAyaSummer'></td>
+                        <td id='HSiFSHardAyaSummer'></td>
+                        <td id='HSiFSLunaticAyaSummer'></td>
+                    </tr><tr id='HSiFSAyaAutumn'>
+                        <td>Aya<br><span class='autumn'>Autumn</span></td>
+                        <td id='HSiFSEasyAyaAutumn'></td>
+                        <td id='HSiFSNormalAyaAutumn'></td>
+                        <td id='HSiFSHardAyaAutumn'></td>
+                        <td id='HSiFSLunaticAyaAutumn'></td>
+                    </tr><tr id='HSiFSAyaWinter'>
+                        <td>Aya<br><span class='winter'>Winter</span></td>
+                        <td id='HSiFSEasyAyaWinter'></td>
+                        <td id='HSiFSNormalAyaWinter'></td>
+                        <td id='HSiFSHardAyaWinter'></td>
+                        <td id='HSiFSLunaticAyaWinter'></td>
+                    </tr><tr id='HSiFSMarisaSpring'>
+                        <td>Marisa<br><span class='spring'>Spring</span></td>
+                        <td id='HSiFSEasyMarisaSpring'></td>
+                        <td id='HSiFSNormalMarisaSpring'></td>
+                        <td id='HSiFSHardMarisaSpring'></td>
+                        <td id='HSiFSLunaticMarisaSpring'></td>
+                        <td id='HSiFSExtraMarisa' rowspan='4'></td>
+                    </tr><tr id='HSiFSMarisaSummer'>
+                        <td>Marisa<br><span class='summer'>Summer</span></td>
+                        <td id='HSiFSEasyMarisaSummer'></td>
+                        <td id='HSiFSNormalMarisaSummer'></td>
+                        <td id='HSiFSHardMarisaSummer'></td>
+                        <td id='HSiFSLunaticMarisaSummer'></td>
+                    </tr><tr id='HSiFSMarisaAutumn'>
+                        <td>Marisa<br><span class='autumn'>Autumn</span></td>
+                        <td id='HSiFSEasyMarisaAutumn'></td>
+                        <td id='HSiFSNormalMarisaAutumn'></td>
+                        <td id='HSiFSHardMarisaAutumn'></td>
+                        <td id='HSiFSLunaticMarisaAutumn'></td>
+                    </tr><tr id='HSiFSMarisaWinter'>
+                        <td>Marisa<br><span class='winter'>Winter</span></td>
+                        <td id='HSiFSEasyMarisaWinter'></td>
+                        <td id='HSiFSNormalMarisaWinter'></td>
+                        <td id='HSiFSHardMarisaWinter'></td>
+                        <td id='HSiFSLunaticMarisaWinter'></td>
                     </tr>
                 </table>
             </div>
