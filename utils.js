@@ -6,23 +6,23 @@ var setCookie = function (name, value) {
 
 var getCookie = function (name) {
     var decodedCookies, cookieArray, cookie;
-    
+
     decodedCookies = decodeURIComponent(document.cookie);
     cookieArray = decodedCookies.split(';');
     name += '=';
-    
+
     for (var i = 0; i < cookieArray.length; i++) {
         cookie = cookieArray[i];
-        
+
         while (cookie.charAt(0) === ' ') {
             cookie = cookie.substring(1);
         }
-        
+
         if (cookie.indexOf(name) === 0) {
             return JSON.parse(cookie.substring(name.length, cookie.length));
         }
     }
-    
+
     return "";
 };
 
@@ -59,6 +59,14 @@ String.prototype.removeSpaces = function () {
 
 String.prototype.strip = function () {
     return this.replace(/<\/?[^>]*>/g, "");
+};
+
+String.prototype.insertAt = function (index, string) {
+    return this.substr(0, index) + string + this.substr(index);
+};
+
+String.prototype.removeAt = function (index) {
+    return this.substr(0, index) + this.substr(index + 1);
 };
 
 Object.defineProperty(Array.prototype, "contains", {
