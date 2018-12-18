@@ -459,28 +459,28 @@
             "Easy": {
                 "base": 50,
                 "exp": 1.05,
-                "miss": 2,
+                "miss": 1.6,
                 "firstBomb": 2,
                 "bomb": 1
             },
             "Normal": {
                 "base": 100,
                 "exp": 1.05,
-                "miss": 2,
+                "miss": 1.6,
                 "firstBomb": 3,
                 "bomb": 1
             },
             "Hard": {
                 "base": 160,
                 "exp": 1.05,
-                "miss": 2,
+                "miss": 1.6,
                 "firstBomb": 4,
                 "bomb": 1
             },
             "Lunatic": {
                 "base": 315,
                 "exp": 1.05,
-                "miss": 2,
+                "miss": 1.6,
                 "firstBomb": 5,
                 "bomb": 1
             },
@@ -586,28 +586,28 @@
             "Easy": {
                 "base": 50,
                 "exp": 1.07,
-                "miss": 2,
+                "miss": 1.8,
                 "firstBomb": 2,
                 "bomb": 1
             },
             "Normal": {
                 "base": 100,
                 "exp": 1.05,
-                "miss": 2,
+                "miss": 1.8,
                 "firstBomb": 3,
                 "bomb": 1
             },
             "Hard": {
                 "base": 150,
                 "exp": 1.05,
-                "miss": 2,
+                "miss": 1.8,
                 "firstBomb": 4,
                 "bomb": 1
             },
             "Lunatic": {
                 "base": 290,
                 "exp": 1.05,
-                "miss": 2,
+                "miss": 1.8,
                 "firstBomb": 5,
                 "bomb": 1
             },
@@ -629,28 +629,28 @@
             "Easy": {
                 "base": 60,
                 "exp": 1.05,
-                "miss": 2,
+                "miss": 1.3,
                 "firstBomb": 2,
                 "bomb": 1
             },
             "Normal": {
                 "base": 120,
                 "exp": 1.05,
-                "miss": 2,
+                "miss": 1.3,
                 "firstBomb": 3,
                 "bomb": 1
             },
             "Hard": {
                 "base": 160,
                 "exp": 1.05,
-                "miss": 2,
+                "miss": 1.3,
                 "firstBomb": 4,
                 "bomb": 1
             },
             "Lunatic": {
                 "base": 320,
                 "exp": 1.05,
-                "miss": 2,
+                "miss": 1.3,
                 "firstBomb": 5,
                 "bomb": 1
             },
@@ -1089,7 +1089,7 @@
             "Hard": {
                 "base": 450,
                 "exp": 2.5,
-				"basedOn": "AyaAutumn"
+				"basedOn": "MarisaAutumn"
             },
             "Lunatic": {
                 "base": 500,
