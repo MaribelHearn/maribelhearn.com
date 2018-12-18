@@ -56,7 +56,7 @@ $(document).ready(function() {
 function updateCountdown() {
     var countdownDate, now, distance, days, hours, minutes, seconds;
 
-    countdownDate = Date.UTC("2018", "9", "18", "14", "30", "0");
+    countdownDate = Date.UTC("2018", "11", "31", "16", "00", "0");
     now = new Date().getTime();
     distance = countdownDate - now;
     days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -138,6 +138,7 @@ function translateCharName(charName) {
             "MarisaSummer": "魔理沙夏",
             "CirnoAutumn": "チルノ秋",
             "AyaAutumn": "文秋",
+            "MarisaAutumn": "魔理沙秋",
             "CirnoWinter": "チルノ冬",
             "AyaWinter": "文冬"
         }[charName]);
@@ -205,6 +206,7 @@ function translateCharName(charName) {
             "MarisaSummer": "魔理沙夏",
             "CirnoAutumn": "琪露诺秋",
             "AyaAutumn": "文秋",
+            "MarisaAutumn": "魔理沙秋",
             "CirnoWinter": "琪露诺冬",
             "AyaWinter": "文冬"
         }[charName]);
@@ -301,7 +303,6 @@ function generateText(firstTime) {
         $(RULES_TEXT).html("Rules");
         $(RUBRICS_TEXT).html("Rubrics");
         $(ACK_TEXT).html("Acknowledgements");
-        $(BACK_TO_TOP).html("Back to Top");
         game = $(GAME).val();
 
         if (game) {
@@ -310,6 +311,10 @@ function generateText(firstTime) {
             } else if (game == "HRtP" || game == "GFW") {
                 $(SHOTTYPE_LABEL).html("Route");
             }
+        }
+
+        for (i = 0; i < 2; i++) {
+            $(BACK_TO_TOP + i).html("Back to Top");
         }
 
         for (i = 0; i < 2; i++) {
@@ -434,7 +439,6 @@ function generateText(firstTime) {
         $(RULES_TEXT).html("規定");
         $(RUBRICS_TEXT).html("ルーブリック");
         $(ACK_TEXT).html("謝辞");
-        $(BACK_TO_TOP).html("上に帰る");
         game = $(GAME).val();
 
         if (game) {
@@ -445,6 +449,10 @@ function generateText(firstTime) {
             } else if (game == "HRtP" || game == "GFW") {
                 $(SHOTTYPE_LABEL).html("ルート");
             }
+        }
+
+        for (i = 0; i < 2; i++) {
+            $(BACK_TO_TOP + i).html("上に帰る");
         }
 
         for (i = 0; i < 2; i++) {
@@ -606,7 +614,6 @@ function generateText(firstTime) {
         $(RULES_TEXT).html("规则");
         $(RUBRICS_TEXT).html("计算公式");
         $(ACK_TEXT).html("致谢");
-        $(BACK_TO_TOP).html("回到顶部");
         game = $(GAME).val();
 
         if (game) {
@@ -617,6 +624,10 @@ function generateText(firstTime) {
             } else if (game == "HRtP" || game == "GFW") {
                 $(SHOTTYPE_LABEL).html("路线");
             }
+        }
+
+        for (i = 0; i < 2; i++) {
+            $(BACK_TO_TOP + i).html("回到顶部");
         }
 
         for (i = 0; i < 2; i++) {
@@ -1185,7 +1196,8 @@ function determineIncrement(thresholds, i) {
 }
 
 function dsFormula() {
-    var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), scene = $(SCENE).val(), thresholds = Rubrics.SCENE_THRESHOLDS[scene], drcpoints = 0, step, i;
+    var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")),
+    scene = $(SCENE).val(), thresholds = Rubrics.SCENE_THRESHOLDS[scene], drcpoints = 0, step, i;
 
     for (i = 3; i >= 0; i--) {
         step = determineIncrement(thresholds, i + 1);
@@ -1239,74 +1251,6 @@ function scoringPoints(rubric, game, difficulty, shottype) {
     }
 
     return (score >= wr ? rubric.base : Math.round(rubric.base * Math.pow((score / wr), rubric.exp)));
-}
-
-/*function zeroes(num) {
-    var result = "", i;
-
-    for (i = 0; i < num; i++) {
-        result += "0";
-    }
-
-    return result;
-}*/
-
-function abbreviateJapanese(num) {
-    var string = String(num), original = string, current = string.lastIndexOf("0"), index = string.length, count = 0;
-
-    if (string.length < 5) {
-        return string;
-    }
-
-    while (string.charAt(current) == "0") {
-        current -= 1;
-    }
-
-    string = string.substr(0, current + 1);
-
-    while (index - 4 > 0) {
-        index -= 4;
-        count += 1;
-    }
-
-    if (string.substr(index, string.length) === "") {
-        if (count == 2) {
-            return string + (string.length <= original.length - 9 ? zeroes(original.length - 9) : "") + "億";
-        } else {
-            return string + (string.length <= original.length - 5 ? zeroes(original.length - 5) : "") + "万";
-        }
-    } else {
-        return string.substr(0, index) + "." + string.substr(index, string.length) + (count == 2 ? "億" : "万");
-    }
-}
-
-function abbreviateChinese(num) {
-    var string = String(num), original = string, current = string.lastIndexOf("0"), index = string.length, count = 0;
-
-    if (string.length < 5) {
-        return string;
-    }
-
-    while (string.charAt(current) == "0") {
-        current -= 1;
-    }
-
-    string = string.substr(0, current + 1);
-
-    while (index - 4 > 0) {
-        index -= 4;
-        count += 1;
-    }
-
-    if (string.substr(index, string.length) === "") {
-        if (count == 2) {
-            return string + (string.length <= original.length - 9 ? zeroes(original.length - 9) : "") + "亿";
-        } else {
-            return string + (string.length <= original.length - 5 ? zeroes(original.length - 5) : "") + "万";
-        }
-    } else {
-        return string.substr(0, index) + "." + string.substr(index, string.length) + (count == 2 ? "亿" : "万");
-    }
 }
 
 function manoku(string, length, offset) {
