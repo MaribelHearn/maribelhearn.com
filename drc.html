@@ -13,7 +13,7 @@
 		<script src='utils.js'></script>
         <script src='drc/drc.js'></script>
 	</head>
-	
+
 	<body>
 		<div id='wrap'>
             <table id='languages' class='noborders'>
@@ -83,7 +83,7 @@
             </select>
             <div id='performance'></div>
             <label id='shottypeLabel' for='shottype'></label><select id='shottype' onChange='checkValues(false, false, false)'></select>
-            <select id='season' style='display:none'>
+            <select id='season'>
                 <option id='spring' value='Spring'>Spring</option>
                 <option id='summer' value='Summer'>Summer</option>
                 <option id='autumn' value='Autumn'>Autumn</option>
@@ -100,29 +100,38 @@
             </ol>
             <h2 id='rubricsText'>Rubrics</h2>
             <p id='rubricsExpl'></p>
-            <input id='rubricsButton' type='button' onClick='showRubrics()' value='Show Rubrics'>
-            <div id='rubrics' style='display:none'>
+            <input id='scoringButton' type='button' onClick='showRubrics("Scoring")' value='Show Scoring Rubrics'>
+            <input id='survivalButton' type='button' onClick='showRubrics("Survival")' value='Show Survival Rubrics'>
+            <div id='scoringRubrics'>
                 <p><strong id='scoringNotes'></strong></p>
                 <ul>
+					<li id='WRpage'></li>
                     <li id='newWR'></li>
-                    <!--<li id='hrtpSeparate'></li>-->
+                    <li id='fictionalWR'></li>
+                    <li id='WRdefinition'></li>
                     <li id='mofSeparate'></li>
                     <li id='dsSeparate'></li>
                 </ul>
-                <p><strong id='survivalNotes'></strong></p>
-                <ul>
-                    <li id='maingame'></li>
-                    <li id='phantasmagoriaSeparate'></li>
-                    <li id='inLS'></li>
-                    <li id='hsifsReleases'></li>
-                </ul>
-                <div id='rubricsTables'></div>
-                <!--<br>
-                <strong id='hrtpScoring'></strong>
-                <p id='hrtpScoringDesc'></p>
-                <table class='center'>
-                    <tbody id='hrtpTable'></tbody>
-                </table>-->
+				<table class='center'>
+		        	<thead>
+						<tr>
+							<td colspan='3'><strong id='scoring1'></strong><br><span id='scoreFormula'></span></td>
+						</tr>
+					</thead>
+		        	<tbody id='scoringTable'></tbody>
+		        </table>
+				<br>
+				<strong id='fictionalWRtitle'></strong>
+				<p id='fictionalWRdesc'></p>
+				<table class='center'>
+					<tbody id='fictionalWRtable'></tbody>
+				</table>
+				<br>
+				<strong id='WRdefinitionTitle'></strong>
+				<p id='WRdefinitionDesc'></p>
+				<table class='center'>
+					<tbody id='WRdefinitionTable'></tbody>
+				</table>
                 <br>
                 <strong id='mountainOfFaith'></strong>
                 <p id='mountainOfFaithDesc'></p>
@@ -135,7 +144,24 @@
                 <table class='center'>
                     <tbody id='dsTable'></tbody>
                 </table>
-                <br>
+			</div>
+			<div id='survivalRubrics'>
+                <p><strong id='survivalNotes'></strong></p>
+                <ul>
+                    <li id='maingame'></li>
+                    <li id='phantasmagoriaSeparate'></li>
+                    <li id='inLS'></li>
+                    <li id='hsifsReleases'></li>
+                </ul>
+		        <table class='center'>
+		        	<thead>
+						<tr>
+							<td colspan='6'><strong id='survival1'></strong><br><span id='survFormula'></span></td>
+						</tr>
+					</thead>
+		        	<tbody id='survivalTable'></tbody>
+		        </table>
+				<br>
                 <strong id='phantasmagoria'></strong>
                 <p id='phantasmagoriaDesc'></p>
                 <table class='center'>
