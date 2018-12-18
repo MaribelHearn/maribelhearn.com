@@ -1,5 +1,5 @@
 {
-	"SURV_RUBRICS": {
+	"SURV": {
         "HRtP": {
             "Easy": {
                 "base": 60,
@@ -729,23 +729,27 @@
             }
         }
     },
-    "SCORE_RUBRICS": {
+    "SCORE": {
         "HRtP": {
             "Easy": {
                 "base": 300,
-                "exp": 11
+                "exp": 11,
+				"wr": 13400000
             },
             "Normal": {
                 "base": 325,
-                "exp": 11
+                "exp": 11,
+				"wr": 13400000
             },
             "Hard": {
                 "base": 350,
-                "exp": 11
+                "exp": 11,
+				"wr": 13400000
             },
             "Lunatic": {
                 "base": 400,
-                "exp": 10
+                "exp": 10,
+				"wr": 15500000
             }
         },
         "SoEW": {
@@ -759,11 +763,13 @@
             },
             "Hard": {
                 "base": 350,
-                "exp": 3
+                "exp": 3,
+				"basedOn": "ReimuB"
             },
             "Lunatic": {
                 "base": 375,
-                "exp": 2
+                "exp": 2,
+				"basedOn": "ReimuA"
             },
             "Extra": {
                 "base": 325,
@@ -791,23 +797,28 @@
         "LLS": {
             "Easy": {
                 "base": 300,
-                "exp": 4
+                "exp": 4,
+				"basedOn": "ReimuA"
             },
             "Normal": {
                 "base": 350,
-                "exp": 3
+                "exp": 3,
+				"basedOn": "ReimuB"
             },
             "Hard": {
                 "base": 375,
-                "exp": 3
+                "exp": 3,
+				"basedOn": "ReimuB"
             },
             "Lunatic": {
                 "base": 400,
-                "exp": 2.5
+                "exp": 2.5,
+				"wr": 165000000
             },
             "Extra": {
                 "base": 350,
-                "exp": 9
+                "exp": 9,
+				"basedOn": "ReimuB"
             }
         },
         "MS": {
@@ -825,7 +836,8 @@
             },
             "Lunatic": {
                 "base": 450,
-                "exp": 2
+                "exp": 2,
+				"wr": 200000000
             },
             "Extra": {
                 "base": 375,
@@ -869,7 +881,12 @@
             },
             "Lunatic": {
                 "base": 500,
-                "exp": 2
+                "exp": 2,
+				"wr": {
+					"ReimuB": 3300000000,
+					"MarisaA": 3100000000,
+					"SakuyaB": 3600000000
+				}
             },
             "Extra": {
                 "base": 450,
@@ -1049,7 +1066,11 @@
             },
             "Lunatic": {
                 "base": 500,
-                "exp": 3
+                "exp": 3,
+				"wr": {
+					"Reimu": 2500000000,
+					"Marisa": 2400000000
+				}
             },
             "Extra": {
                 "base": 450,
@@ -1067,7 +1088,8 @@
             },
             "Hard": {
                 "base": 450,
-                "exp": 2.5
+                "exp": 2.5,
+				"basedOn": "AyaAutumn"
             },
             "Lunatic": {
                 "base": 500,

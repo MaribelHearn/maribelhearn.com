@@ -9,12 +9,15 @@ div {
     background-color: #FFFFFF;
 }
 h1 {
-	    font-family: 'Felipa';
-		font-size: 48px
+    font-family: 'Felipa';
+	font-size: 48px
 }
 h2 {
-		font-family: 'Felipa';
-		font-size: 36px
+	font-family: 'Felipa';
+	font-size: 36px
+}
+input[type=number] {
+	height: 20px;
 }
 .center {
     margin-left: auto;
@@ -50,6 +53,9 @@ h2 {
     border: none;
     margin-left: auto;
     margin-right: auto;
+}
+#season, #scoringRubrics, #survivalRubrics {
+	display: none;
 }
 @media only screen and (max-width: 1400px) {
     #wrap {
