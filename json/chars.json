@@ -1,0 +1,85 @@
+{
+    "Main": {
+        "chars": ["Reimu Hakurei", "Marisa Kirisame"]
+    },
+    "HRtP": {
+        "chars": ["Reimu PC-98", "SinGyoku M", "SinGyoku F", "YuugenMagan", "Mima", "Elis", "Kikuri", "Sariel", "Konngara"]
+    },
+    "SoEW": {
+        "chars": ["Genjii", "Rika", "Meira", "Marisa PC-98", "Evil Eye Sigma"]
+    },
+    "PoDD": {
+        "chars": ["Ellen", "Kotohime", "Kana Anaberal", "Rikako Asakura", "Chiyuri Kitashirakawa", "Yumemi Okazaki", "Ruukoto", "Mimi-chan"]
+    },
+    "LLS": {
+        "chars": ["Orange", "Kurumi", "Elly", "Yuuka PC-98", "Mugetsu", "Gengetsu"]
+    },
+    "MS": {
+        "chars": ["Sara", "Luize", "Alice PC-98", "Yuki", "Mai PC-98", "Yumeko", "Shinki"]
+    },
+    "EoSD": {
+        "chars": ["Rumia", "Daiyousei", "Cirno", "Hong Meiling", "Koakuma", "Patchouli Knowledge", "Sakuya Izayoi", "Remilia Scarlet", "Flandre Scarlet"]
+    },
+    "PCB": {
+        "chars": ["Letty Whiterock", "Chen", "Alice Margatroid", "Lily White", "Lyrica Prismriver", "Lunasa Prismriver",
+        "Merlin Prismriver", "Youmu Konpaku", "Yuyuko Saigyouji", "Ran Yakumo", "Yukari Yakumo"]
+    },
+    "IaMP": {
+        "chars": ["Suika Ibuki"]
+    },
+    "IN": {
+        "chars": ["Wriggle Nightbug", "Mystia Lorelei", "Keine Kamishirasawa", "Tewi Inaba", "Reisen Udongein Inaba", "Eirin Yagokoro", "Kaguya Houraisan", "Fujiwara no Mokou"]
+    },
+    "PoFV": {
+        "chars": ["Aya Shameimaru", "Medicine Melancholy", "Yuuka Kazami", "Komachi Onozuka", "Eiki Shiki Yamaxanadu"]
+    },
+    "MoF": {
+        "chars": ["Shizuha Aki", "Minoriko Aki", "Hina Kagiyama", "Nitori Kawashiro", "Momiji Inubashiri", "Sanae Kochiya", "Kanako Yasaka", "Suwako Moriya"]
+    },
+    "SWR": {
+        "chars": ["Iku Nagae", "Tenshi Hinanawi"]
+    },
+    "SA": {
+        "chars": ["Kisume", "Yamame Kurodani", "Parsee Mizuhashi", "Yuugi Hoshiguma", "Satori Komeiji", "Rin Kaenbyou", "Utsuho Reiuji", "Koishi Komeiji"]
+    },
+    "UFO": {
+        "chars": ["Nazrin", "Kogasa Tatara", "Ichirin Kumoi", "Unzan", "Minamitsu Murasa", "Shou Toramaru", "Byakuren Hijiri", "Nue Houjuu"]
+    },
+    "Soku": {
+        "chars": ["Hisoutensoku"]
+    },
+    "DS": {
+        "chars": ["Hatate Himekaidou"]
+    },
+    "GFW": {
+        "chars": ["Luna Child", "Star Sapphire", "Sunny Milk"]
+    },
+    "TD": {
+        "chars": ["Kyouko Kasodani", "Yoshika Miyako", "Seiga Kaku", "Soga no Tojiko", "Mononobe no Futo", "Toyosatomimi no Miko", "Mamizou Futatsuiwa"]
+    },
+    "HM": {
+        "chars": ["Hata no Kokoro"]
+    },
+    "DDC": {
+        "chars": ["Wakasagihime", "Sekibanki", "Kagerou Imaizumi", "Benben Tsukumo", "Yatsuhashi Tsukumo", "Seija Kijin", "Shinmyoumaru Sukuna", "Raiko Horikawa"]
+    },
+    "ULiL": {
+        "chars": ["Sumireko Usami"]
+    },
+    "LoLK": {
+        "chars": ["Seiran", "Ringo", "Doremy Sweet", "Sagume Kishin", "Clownpiece", "Junko", "Hecatia Lapislazuli"]
+    },
+    "AoCF": {
+        "chars": ["Joon Yorigami", "Shion Yorigami"]
+    },
+    "HSiFS": {
+        "chars": ["Eternity Larva", "Nemuno Sakata", "Aunn Komano", "Narumi Yatadera", "Satono Nishida", "Mai Teireida", "Okina Matara"]
+    },
+    "Manga": {
+        "chars": ["Hieda no Akyuu", "Watatsuki no Toyohime", "Watatsuki no Yorihime", "Reisen II",
+        "Kasen Ibaraki", "Rinnosuke Morichika", "Tokiko", "Kosuzu Motoori", "Fortune Teller"]
+    },
+    "CD": {
+        "chars": ["Maribel Hearn", "Renko Usami"]
+    }
+}
