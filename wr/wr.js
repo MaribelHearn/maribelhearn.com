@@ -155,7 +155,7 @@ function percentageClass(percentage) {
 }
 
 function load() {
-    $.get("https://maribelHearn.github.io/json/wrlist.json", function (data) {
+    $.get("https://maribelhearn.github.io/json/wrlist.json", function (data) {
         WRs = data;
         playerWRs = {};
         compareWRs = {};
