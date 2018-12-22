@@ -96,3 +96,13 @@ Object.defineProperty(Array.prototype, "remove", {
         }
     }
 });
+
+Object.defineProperty(Array.prototype, "append", {
+    configurable: true,
+    enumerable: false,
+    value: function (array) {
+        for (var i = 0; i < array.length; i++) {
+            this.push(array[i]);
+        }
+    }
+});

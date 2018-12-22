@@ -1,89 +1,4 @@
-﻿var categories = {
-        "Main": {
-            "chars": ["Reimu Hakurei", "Marisa Kirisame"]
-        },
-        "HRtP": {
-            "chars": ["Reimu PC-98", "SinGyoku M", "SinGyoku F", "YuugenMagan", "Mima", "Elis", "Kikuri", "Sariel", "Konngara"]
-        },
-        "SoEW": {
-            "chars": ["Genjii", "Rika", "Meira", "Marisa PC-98", "Evil Eye Sigma"]
-        },
-        "PoDD": {
-            "chars": ["Ellen", "Kotohime", "Kana Anaberal", "Rikako Asakura", "Chiyuri Kitashirakawa", "Yumemi Okazaki", "Ruukoto", "Mimi-chan"]
-        },
-        "LLS": {
-            "chars": ["Orange", "Kurumi", "Elly", "Yuuka PC-98", "Mugetsu", "Gengetsu"]
-        },
-        "MS": {
-            "chars": ["Sara", "Luize", "Alice PC-98", "Yuki", "Mai PC-98", "Yumeko", "Shinki"]
-        },
-        "EoSD": {
-            "chars": ["Rumia", "Daiyousei", "Cirno", "Hong Meiling", "Koakuma", "Patchouli Knowledge", "Sakuya Izayoi", "Remilia Scarlet", "Flandre Scarlet"]
-        },
-        "PCB": {
-            "chars": ["Letty Whiterock", "Chen", "Alice Margatroid", "Lily White", "Lyrica Prismriver", "Lunasa Prismriver",
-            "Merlin Prismriver", "Youmu Konpaku", "Yuyuko Saigyouji", "Ran Yakumo", "Yukari Yakumo"]
-        },
-        "IaMP": {
-            "chars": ["Suika Ibuki"]
-        },
-        "IN": {
-            "chars": ["Wriggle Nightbug", "Mystia Lorelei", "Keine Kamishirasawa", "Tewi Inaba", "Reisen Udongein Inaba", "Eirin Yagokoro", "Kaguya Houraisan", "Fujiwara no Mokou"]
-        },
-        "PoFV": {
-            "chars": ["Aya Shameimaru", "Medicine Melancholy", "Yuuka Kazami", "Komachi Onozuka", "Eiki Shiki Yamaxanadu"]
-        },
-        "MoF": {
-            "chars": ["Shizuha Aki", "Minoriko Aki", "Hina Kagiyama", "Nitori Kawashiro", "Momiji Inubashiri", "Sanae Kochiya", "Kanako Yasaka", "Suwako Moriya"]
-        },
-        "SWR": {
-            "chars": ["Iku Nagae", "Tenshi Hinanawi"]
-        },
-        "SA": {
-            "chars": ["Kisume", "Yamame Kurodani", "Parsee Mizuhashi", "Yuugi Hoshiguma", "Satori Komeiji", "Rin Kaenbyou", "Utsuho Reiuji", "Koishi Komeiji"]
-        },
-        "UFO": {
-            "chars": ["Nazrin", "Kogasa Tatara", "Ichirin Kumoi", "Unzan", "Minamitsu Murasa", "Shou Toramaru", "Byakuren Hijiri", "Nue Houjuu"]
-        },
-        "Soku": {
-            "chars": ["Hisoutensoku"]
-        },
-        "DS": {
-            "chars": ["Hatate Himekaidou"]
-        },
-        "GFW": {
-            "chars": ["Luna Child", "Star Sapphire", "Sunny Milk"]
-        },
-        "TD": {
-            "chars": ["Kyouko Kasodani", "Yoshika Miyako", "Seiga Kaku", "Soga no Tojiko", "Mononobe no Futo", "Toyosatomimi no Miko", "Mamizou Futatsuiwa"]
-        },
-        "HM": {
-            "chars": ["Hata no Kokoro"]
-        },
-        "DDC": {
-            "chars": ["Wakasagihime", "Sekibanki", "Kagerou Imaizumi", "Benben Tsukumo", "Yatsuhashi Tsukumo", "Seija Kijin", "Shinmyoumaru Sukuna", "Raiko Horikawa"]
-        },
-        "ULiL": {
-            "chars": ["Sumireko Usami"]
-        },
-        "LoLK": {
-            "chars": ["Seiran", "Ringo", "Doremy Sweet", "Sagume Kishin", "Clownpiece", "Junko", "Hecatia Lapislazuli"]
-        },
-        "AoCF": {
-            "chars": ["Joon Yorigami", "Shion Yorigami"]
-        },
-        "HSiFS": {
-            "chars": ["Eternity Larva", "Nemuno Sakata", "Aunn Komano", "Narumi Yatadera", "Satono Nishida", "Mai Teireida", "Okina Matara"]
-        },
-        "Manga": {
-            "chars": ["Hieda no Akyuu", "Watatsuki no Toyohime", "Watatsuki no Yorihime", "Reisen II",
-            "Kasen Ibaraki", "Rinnosuke Morichika", "Tokiko", "Kosuzu Motoori", "Fortune Teller"]
-        },
-        "CD": {
-            "chars": ["Maribel Hearn", "Renko Usami"]
-        }
-    },
-    settings = {
+﻿var categories, settings = {
         "categories": {
             "Main": { enabled: true }, "HRtP": { enabled: true }, "SoEW": { enabled: true }, "PoDD": { enabled: true }, "LLS": { enabled: true }, "MS": { enabled: true },
             "EoSD": { enabled: true }, "PCB": { enabled: true }, "IaMP": { enabled: true }, "IN": { enabled: true }, "PoFV": { enabled: true }, "MoF": { enabled: true },
@@ -938,7 +853,7 @@ var loadCharacters = function () {
             character = categories[categoryName].chars[i];
 
             $("#" + categoryName).append("<span id='" + character.removeSpaces() + "C'><img id='" + character.removeSpaces() +
-            "' class='list' draggable='true' onDragStart='drag(event)' src='tiers/" + settings.artist + "/" + categoryName +
+            "' class='list' draggable='true' onDragStart='drag(event)' src='art/" + settings.artist + "/" + categoryName +
             "/" + character.removeSpaces() + "." + (settings.artist == "Dairi" ? "png" : "jpg") +
             "' alt='" + character + "' title='" + character + "'>");
 
@@ -996,26 +911,30 @@ var applyMobileCSS = function () {
 };
 
 $(document).ready(function () {
-    try {
-        loadSettingsFromCookie();
-    } catch (error) {
-        // do nothing
-    }
+    $.get("https://maribelhearn.github.io/json/chars.json", function (data) {
+        categories = data;
 
-    loadCharacters();
+        try {
+            loadSettingsFromCookie();
+        } catch (error) {
+            // do nothing
+        }
 
-    try {
-        loadTiersFromCookie();
-    } catch (error) {
-        addTier("S");
-        addTier("A");
-        $("#tier_name").val("B");
-    }
+        loadCharacters();
 
-    window.onbeforeunload = undefined;
+        try {
+            loadTiersFromCookie();
+        } catch (error) {
+            addTier("S");
+            addTier("A");
+            $("#tier_name").val("B");
+        }
 
-    // detect smartphone and tablet
-    if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) {
-        applyMobileCSS();
-	}
+        window.onbeforeunload = undefined;
+
+        // detect smartphone and tablet
+        if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) {
+            applyMobileCSS();
+    	}
+    });
 });
