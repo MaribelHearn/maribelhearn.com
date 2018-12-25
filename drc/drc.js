@@ -299,6 +299,7 @@ function generateText(firstTime) {
         $(SHOTTYPE_LABEL).html("Shottype");
         $(MISSES_LABEL).html("Misses");
         $(BOMBS_LABEL).html("Bombs");
+        $(BB_LABEL).html("Border Breaks");
         $(POINTS_CALCULATOR).html("Points Calculator");
         $(RULES_TEXT).html("Rules");
         $(RUBRICS_TEXT).html("Rubrics");
@@ -435,6 +436,7 @@ function generateText(firstTime) {
         $(SHOTTYPE_LABEL).html("キャラ");
         $(MISSES_LABEL).html("ミス");
         $(BOMBS_LABEL).html("ボム");
+        $(BB_LABEL).html("霊撃");
         $(POINTS_CALCULATOR).html("ポイント計算機");
         $(RULES_TEXT).html("規定");
         $(RUBRICS_TEXT).html("ルーブリック");
@@ -442,9 +444,7 @@ function generateText(firstTime) {
         game = $(GAME).val();
 
         if (game) {
-            if (game == "PCB") {
-                $(BOMBS_LABEL).html("ボム / 霊撃");
-            } else if (game == "TD") {
+            if (game == "TD") {
                 $(BOMBS_LABEL).html("ボム / トランス");
             } else if (game == "HRtP" || game == "GFW") {
                 $(SHOTTYPE_LABEL).html("ルート");
@@ -610,6 +610,7 @@ function generateText(firstTime) {
         $(SHOTTYPE_LABEL).html("机体");
         $(MISSES_LABEL).html("被弹数");
         $(BOMBS_LABEL).html("扔雷数");
+        $(BB_LABEL).html("灵击数");
         $(POINTS_CALCULATOR).html("得分计算器");
         $(RULES_TEXT).html("规则");
         $(RUBRICS_TEXT).html("计算公式");
@@ -617,9 +618,7 @@ function generateText(firstTime) {
         game = $(GAME).val();
 
         if (game) {
-            if (game == "PCB") {
-                $(BOMBS_LABEL).html("扔雷数/灵击数");
-            } else if (game == "TD") {
+            if (game == "TD") {
                 $(BOMBS_LABEL).html("扔雷数/灵界数");
             } else if (game == "HRtP" || game == "GFW") {
                 $(SHOTTYPE_LABEL).html("路线");
