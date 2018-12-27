@@ -1243,8 +1243,10 @@ function scoringPoints(rubric, game, difficulty, shottype) {
 
     if (Rubrics.SCORE[game][difficulty].basedOn) {
         wr = WRs[game][difficulty][Rubrics.SCORE[game][difficulty].basedOn][0];
-    } else if (Rubrics.SCORE[game][difficulty].wr) {
-        wr = typeof Rubrics.SCORE[game][difficulty].wr == "object" ? Rubrics.SCORE[game][difficulty].wr[shottype] : Rubrics.SCORE[game][difficulty].wr;
+    } else if (Rubrics.SCORE[game][difficulty].wr && typeof Rubrics.SCORE[game][difficulty].wr == "object" && Rubrics.SCORE[game][difficulty].wr.hasOwnProperty(shottype)) {
+        wr = Rubrics.SCORE[game][difficulty].wr[shottype];
+    } else if (Rubrics.SCORE[game][difficulty].wr && typeof Rubrics.SCORE[game][difficulty].wr != "object") {
+        wr = Rubrics.SCORE[game][difficulty].wr;
     } else {
         wr = WRs[game][difficulty][removeSeason(shottype) + (game == "HSiFS" ? bestSeason(difficulty, shottype) : "")][0];
     }
