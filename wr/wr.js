@@ -162,7 +162,6 @@ function load() {
 
         var skip = {}, game, max, difficulty, bestshotmax, shottype, wr, score, player, replay, overall, overallplayer,
         overalldifficulty, overallshottype, overallseason, bestshot, bestshotplayer, bestshotseason, text, count, seasonless;
-        //shottypes,
 
         for (game in WRs) {
             if (!$("#" + game + "c").is(":checked") || skips.contains(game)) {
@@ -176,7 +175,6 @@ function load() {
 
             for (difficulty in WRs[game]) {
                 bestshotmax = 0;
-                //shottypes = (game == "HSiFS" ? {"Reimu": "", "Cirno": "", "Aya": "", "Marisa": ""} : WRs[game][difficulty]);
 
                 for (shottype in WRs[game][difficulty]) {
                     season = (game == "HSiFS" ? shottype.removeChar() : "");
@@ -232,14 +230,20 @@ function load() {
                 }
 
                 $(bestshot).html((bestshotreplay === "" ? "<u>" + sep(bestshotmax) + "</u>" : "<u><a class='replay' href='" + bestshotreplay +
-                "'>" + sep(bestshotmax) + "</a>") + "</u><br>by <em>" + bestshotplayer + "</em>");
-                $(bestshot.removeSeason()).html((bestshotreplay === "" ? "<u>" + sep(bestshotmax) + "</u>" : "<u><a class='replay' href='" + bestshotreplay +
-                "'>" + sep(bestshotmax) + "</a>") + "</u><br>by <em>" + bestshotplayer + "</em>" + (game == "HSiFS" && difficulty != "Extra" ? " (" + bestshotseason + ")" : ""));
+                "'>" + sep(bestshotmax) + "</a></u>") + "<br>by <em>" + bestshotplayer + "</em>");
+
+                if (game == "HSiFS") {
+                    $(bestshot.removeSeason() + (difficulty == "Extra" ? "Small" : "")).html((bestshotreplay === "" ? "<u>" + sep(bestshotmax) +
+                    "</u>" : "<u><a class='replay' href='" + bestshotreplay + "'>" + sep(bestshotmax) + "</a></u>") + "<br>by <em>" + bestshotplayer +
+                    "</em>" + (game == "HSiFS" && difficulty != "Extra" ? " (" + bestshotseason + ")" : ""));
+                }
+
                 compareWRs[game][difficulty] = [bestshotmax, bestshotplayer, bestshot.replace("#" + game +
                 difficulty, "") + (game == "HSiFS" && difficulty != "Extra" ? bestshotseason : "")];
             }
 
             $(overall).html($(overall).html().replace("<u>", "<u><strong>").replace("</u>", "</strong></u>"));
+            $(overall.removeSeason()).html($(overall).html().replace("<u>", "<u><strong>").replace("</u>", "</strong></u>"));
 
             // Nanashi suspicion footnote
             if (game == "MoF") {
