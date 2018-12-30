@@ -949,8 +949,8 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
             $(MISSES_LABEL).html(translate("Misses"));
         } else {
             if (game == "DS") {
-                $(PERFORMANCE).html("<label for='scene'>Scene</label><select id='scene'><option>4-7</option><option>9-6</option>" +
-                "<option>10-1</option><option>11-8</option><option>12-4</option><option>EX-6</option></select><br>" + SCORE_OPTIONS);
+                $(PERFORMANCE).html("<label for='scene'>Scene</label><select id='scene'><option>2-5</option><option>5-3</option>" +
+                "<option>7-3</option><option>8-1</option><option>8-5</option><option>11-8</option></select><br>" + SCORE_OPTIONS);
             } else {
                 $(PERFORMANCE).html(SCORE_OPTIONS);
             }
@@ -1197,6 +1197,10 @@ function determineIncrement(thresholds, i) {
 function dsFormula() {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")),
     scene = $(SCENE).val(), thresholds = Rubrics.SCENE_THRESHOLDS[scene], drcpoints = 0, step, i;
+
+    if (score == thresholds[3] * 1000) {
+        drcpoints += 1;
+    }
 
     for (i = 3; i >= 0; i--) {
         step = determineIncrement(thresholds, i + 1);
