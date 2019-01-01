@@ -56,7 +56,7 @@ $(document).ready(function() {
 function updateCountdown() {
     var countdownDate, now, distance, days, hours, minutes, seconds;
 
-    countdownDate = Date.UTC("2018", "11", "31", "16", "00", "0");
+    countdownDate = Date.UTC("2019", "0", "16", "16", "00", "0");
     now = new Date().getTime();
     distance = countdownDate - now;
     days = Math.floor(distance / (1000 * 60 * 60 * 24));
