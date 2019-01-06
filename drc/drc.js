@@ -1075,7 +1075,7 @@ function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
 }
 
 function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
-    var misses = Number($(MISSES).val()), bombs = Number($(BOMBS).val()), n = 0, decrement = 0;
+    var misses = Number($(MISSES).val()), bombs = Number($(BOMBS).val()), originalBombs = bombs, n = 0, decrement = 0;
 
     var borderBreaks, route, lastSpells, releases, season, i;
 
@@ -1144,7 +1144,7 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
         }
     }
 
-    if (difficulty != "Extra" && difficulty != "Phantasm") {
+    if (difficulty != "Extra" && difficulty != "Phantasm" && !(game == "LoLK" && originalBombs > 0)) {
         drcpoints = Math.round(drcpoints * shottypeMultiplier);
     }
 
