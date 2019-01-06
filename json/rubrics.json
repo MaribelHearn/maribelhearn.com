@@ -662,9 +662,9 @@
                 "bomb": 1
             },
             "multiplier": {
-                "Marisa": 1.2,
-                "Sanae": 1.05,
-                "Reisen": 1.05
+                "Marisa": 1.15,
+                "Sanae": 1.15,
+                "Reisen": 1.15
             }
         },
         "HSiFS": {
