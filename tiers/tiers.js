@@ -217,7 +217,7 @@ var addTier = function (tierName) {
     // add the tier
     $("#tier_list_tbody").append("<tr id='tr" + tierNum + "' onDragOver='allowDrop(event)' onDrop='drop(event)'><th id='th" + tierNum +
     "' class='tier_header' onClick='detectLeftCtrlCombo(event, " + tierNum + ")' onContextMenu='detectRightCtrlCombo(event, " + tierNum +
-    "); return false;'>" + tierName + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr><hr>");
+    "); return false;' style='max-width:" + settings.tierHeaderWidth + "px'>" + tierName + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr><hr>");
     tiers[tierNum] = {};
     tiers[tierNum].name = tierName;
     tiers[tierNum].bg = "#1b232e";
@@ -586,6 +586,8 @@ var settingsMenu = function () {
     "onClick='toggleWindows()'" + (settings.windowsEnabled ? " checked" : "") + "></p>");
     $("#settings").append("<p><label for='male'>Male Characters</label><input id='male' type='checkbox' " +
     "onClick='toggleMale()'" + (settings.maleEnabled ? " checked" : "") + " " + (settings.artist == "Ruu" ? "disabled=true" : "") + "></p>");
+    $("#settings").append("<div>Other settings:<p><label for='tierHeaderWidth'>Max tier header width</label>" +
+    "<input id='tierHeaderWidth' type='number' value=" + settings.tierHeaderWidth + " min=120></p></div>");
     $("#settings").append("<div><p><input type='button' value='Save Changes' onClick='saveSettings()'></p><p id='settings_msg_container'></p></div>");
     $("#settings").css("display", "block");
     $("#modal").css("display", "block");
@@ -729,6 +731,8 @@ var saveSettings = function () {
     settings.pc98Enabled = $("#pc98").is(":checked");
     settings.windowsEnabled = $("#windows").is(":checked");
     settings.maleEnabled = $("#male").is(":checked");
+    settings.tierHeaderWidth = $("#tierHeaderWidth").val() > 120 ? $("#tierHeaderWidth").val() : 120;
+    $(".tier_header").css("max-width", settings.tierHeaderWidth + "px");
     $("#settings").html("");
     $("#settings").css("display", "none");
     $("#modal").css("display", "none");
@@ -766,6 +770,7 @@ var eraseAll = function () {
             "pc98Enabled": true,
             "windowsEnabled": true,
             "maleEnabled": true,
+            "tierHeaderWidth": 120,
             "artist": "Dairi"
         };
 
@@ -881,6 +886,7 @@ var loadSettingsFromCookie = function () {
         settings.pc98Enabled = settingsCookie.pc98Enabled;
         settings.windowsEnabled = settingsCookie.windowsEnabled;
         settings.maleEnabled = settingsCookie.maleEnabled;
+        settings.tierHeaderWidth = (settingsCookie.tierHeaderWidth ? settingsCookie.tierHeaderWidth : 120);
         settings.artist = settingsCookie.artist;
     } else { // legacy cookie
         for (category in settingsCookie) {
