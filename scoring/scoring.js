@@ -893,12 +893,15 @@ var calc = function () {
     // save cookies
     if ($("#toggleCookie").is(":checked")) {
         setCookie("precision", precision);
+        setCookie("saveCookies", true);
 
         for (game in scores) {
             shown[game] = $("#" + game + "c").is(":checked");
             setCookie("shown", shown);
             setCookie(game, scores[game]);
         }
+    } else {
+        deleteCookie("saveCookies");
     }
 };
 
@@ -909,6 +912,7 @@ var reset = function () {
     if (confirmation) {
         deleteCookie("shown");
         deleteCookie("precision");
+        deleteCookie("saveCookies");
 
         for (game in scores) {
             deleteCookie(game);
@@ -958,6 +962,10 @@ $(document).ready(function() {
         loadGameCookies();
         loadShownCookie();
         $("#precision").val(getCookie("precision") === "" ? 0 : getCookie("precision"));
+
+        if (getCookie("saveCookies") !== "") {
+            $("#toggleCookie").prop("checked", getCookie("saveCookies"));
+        }
     } catch (err) {
         // do nothing
     }
