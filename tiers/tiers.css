@@ -26,6 +26,9 @@ a:link {
 a:visited {
 	color: hotpink;
 }
+input[type=number] {
+	height: 20px;
+}
 .tier_header {
 	font-size: 32px;
 	width: 120px;
