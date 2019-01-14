@@ -587,7 +587,7 @@ var settingsMenu = function () {
     $("#settings").append("<p><label for='male'>Male Characters</label><input id='male' type='checkbox' " +
     "onClick='toggleMale()'" + (settings.maleEnabled ? " checked" : "") + " " + (settings.artist == "Ruu" ? "disabled=true" : "") + "></p>");
     $("#settings").append("<div>Other settings:<p><label for='tierHeaderWidth'>Max tier header width</label>" +
-    "<input id='tierHeaderWidth' type='number' value=" + settings.tierHeaderWidth + " min=120></p></div>");
+    "<input id='tierHeaderWidth' type='number' value=" + (settings.tierHeaderWidth ? settings.tierHeaderWidth : 120) + " min=120></p></div>");
     $("#settings").append("<div><p><input type='button' value='Save Changes' onClick='saveSettings()'></p><p id='settings_msg_container'></p></div>");
     $("#settings").css("display", "block");
     $("#modal").css("display", "block");
