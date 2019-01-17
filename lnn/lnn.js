@@ -535,12 +535,12 @@ $(document).ready(function() {
         $("#autosort1").click();
         $("#autosort1").click();
 
-        if (getCookie("lang") == "Japanese") {
+        /*if (getCookie("lang") == "Japanese") {
             language = "Japanese";
             generateText();
         } else if (getCookie("lang") == "Chinese") {
             language = "Chinese";
             generateText();
-        }
+        }*/
     }, "json");
 });
