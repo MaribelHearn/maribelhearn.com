@@ -689,13 +689,13 @@ function load() {
                 }
             }
 
-            if (getCookie("lang") == "Japanese") {
+            /*if (getCookie("lang") == "Japanese") {
                 language = "Japanese";
                 generateText();
             } else if (getCookie("lang") == "Chinese") {
                 language = "Chinese";
                 generateText();
-            }
+            }*/
         }, "json");
 
         if (!$("#overallc").is(":checked")) {
