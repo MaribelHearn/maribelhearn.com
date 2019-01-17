@@ -30,6 +30,19 @@ var deleteCookie = function (name) {
     document.cookie = name + "=;expires=" + minAge + ";path=/;";
 };
 
+var listCookies = function () {
+    var cookieNames = [], decodedCookies, cookieArray, i;
+
+    decodedCookies = decodeURIComponent(document.cookie);
+    cookieArray = decodedCookies.split(';');
+
+    for (i = 0; i < cookieArray.length; i++) {
+        cookieNames.push(cookieArray[i].split('=')[0]);
+    }
+
+    return cookieNames.join(", ");
+};
+
 var numericSort = function (a, b) {
     return b - a;
 };

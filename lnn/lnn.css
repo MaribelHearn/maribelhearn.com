@@ -60,6 +60,9 @@ table, th, td {
 #back {
     display: none;
 }
+.noborders {
+    border: none;
+}
 .cover98 {
     border: 1px solid black;
     width: 50px;

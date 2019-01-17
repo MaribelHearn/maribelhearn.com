@@ -6,12 +6,12 @@ div {
     background-color: #FFFFFF;
 }
 h1 {
-	    font-family: 'Felipa';
-		font-size: 48px
+    font-family: 'Felipa';
+	font-size: 48px
 }
 h2 {
-		font-family: 'Felipa';
-		font-size: 36px
+	font-family: 'Felipa';
+	font-size: 36px
 }
 table {
     margin-left: auto;
@@ -57,6 +57,9 @@ table, th, td {
     counter-increment: sortabletablescope;
     display: table-cell;
 }
+.noborders {
+    border: none;
+}
 .replay {
     color: inherit;
     text-decoration: none;
@@ -73,16 +76,16 @@ table, th, td {
 .noborders {
     border: none;
 }
-.spring {
+.Spring {
     color: fuchsia;
 }
-.summer {
+.Summer {
     color: green;
 }
-.autumn {
+.Autumn {
     color: chocolate;
 }
-.winter {
+.Winter {
     color: blue;
 }
 .does_not_even_score {
