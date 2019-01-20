@@ -1,4 +1,6 @@
-﻿var categories, settings = {
+﻿var categories,
+    defaultWidth = (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) ? 60 : 120,
+    settings = {
         "categories": {
             "Main": { enabled: true }, "HRtP": { enabled: true }, "SoEW": { enabled: true }, "PoDD": { enabled: true }, "LLS": { enabled: true }, "MS": { enabled: true },
             "EoSD": { enabled: true }, "PCB": { enabled: true }, "IaMP": { enabled: true }, "IN": { enabled: true }, "PoFV": { enabled: true }, "MoF": { enabled: true },
@@ -9,6 +11,7 @@
         "pc98Enabled": true,
         "windowsEnabled": true,
         "maleEnabled": true,
+        "tierHeaderWidth": defaultWidth,
         "artist": "Dairi"
     },
     windows = ["EoSD", "PCB", "IaMP", "IN", "PoFV", "MoF", "SWR", "SA", "UFO", "Soku", "DS", "GFW", "TD", "HM", "DDC", "ULiL", "LoLK", "AoCF", "HSiFS"],
@@ -21,6 +24,10 @@
     tierView = false,
     swapOngoing = -1;
 
+var isMobile = function () {
+    return navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1;
+}
+
 var isCharacter = function (character) {
     return character !== "" && JSON.stringify(categories).removeSpaces().contains(character);
 };
@@ -31,6 +38,10 @@ var isCategory = function (category) {
 
 var isTiered = function (character) {
     return character !== "" && JSON.stringify(tiers).contains(character.removeSpaces());
+};
+
+var tierHeaderHeight = function () {
+    return isMobile() ? 60 : 120;
 };
 
 var allTiered = function (categoryName) {
@@ -130,6 +141,30 @@ var addToTier = function (character, tierNum, pos) {
     $("#" + categoryName).css("display", "none");
 };
 
+// Mobile-Only
+var addToTierMobile = function (character, tierNum) {
+    $("#" + character.removeSpaces()).attr("onClick", "");
+    addToTier(character.removeSpaces(), tierNum);
+    emptyModal();
+    $("#msg_container").html("<strong style='color:green'>Added " + character + " to " + tiers[tierNum].name + "!</strong>");
+}
+
+// Mobile-only
+var addMenu = function (character) {
+    var tierNum;
+
+    emptyModal();
+    $("#mobile_modal").html("<h2>" + character + "</h2><p>Add to tier:</p>");
+
+    for (tierNum in tiers) {
+        $("#mobile_modal").append("<p><input type='button' value='" + tiers[tierNum].name +
+        "' onClick='addToTierMobile(\"" + character + "\", " + tierNum + ")'></p>");
+    }
+
+    $("#mobile_modal").css("display", "block");
+    $("#modal").css("display", "block");
+};
+
 var moveToBack = function (character, tierNum) {
     var help = $("#" + character);
 
@@ -165,6 +200,11 @@ var removeFromTier = function (character, tierNum) {
     $("#msg_container").html("");
     $("#" + character).addClass("list");
     $("#" + character).attr("onContextMenu", "");
+
+    if (isMobile()) {
+        $("#" + character).attr("onClick", "addMenu('" + $("#" + character).attr("alt") + "')");
+    }
+
     pos = getPositionOf(character);
     $("#" + character + "C").append($("#" + character));
     $("#" + getCategoryOf(character)).css("display", "block");
@@ -217,7 +257,8 @@ var addTier = function (tierName) {
     // add the tier
     $("#tier_list_tbody").append("<tr id='tr" + tierNum + "' onDragOver='allowDrop(event)' onDrop='drop(event)'><th id='th" + tierNum +
     "' class='tier_header' onClick='detectLeftCtrlCombo(event, " + tierNum + ")' onContextMenu='detectRightCtrlCombo(event, " + tierNum +
-    "); return false;' style='max-width:" + settings.tierHeaderWidth + "px'>" + tierName + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr><hr>");
+    "); return false;' style='max-width:" + settings.tierHeaderWidth + "px" + (isMobile() ? ";height:60px" : "") + "'>" + tierName +
+    "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr><hr>");
     tiers[tierNum] = {};
     tiers[tierNum].name = tierName;
     tiers[tierNum].bg = "#1b232e";
@@ -249,8 +290,10 @@ var startTierSwap = function (tierNum) {
 var swapTiers = function (tierNum1, tierNum2) {
     var tmp = tiers[tierNum1], tierNum;
 
-    $("#th" + tierNum1).attr("style", "color: " + tiers[tierNum2].colour + "; background-color: " + tiers[tierNum2].bg + ";");
-    $("#th" + tierNum2).attr("style", "color: " + tiers[tierNum1].colour + "; background-color: " + tiers[tierNum1].bg + ";");
+    $("#th" + tierNum1).attr("style", "color: " + tiers[tierNum2].colour + "; background-color: " + tiers[tierNum2].bg +
+    "; max-width: " + settings.tierHeaderWidth + "px; width: " + settings.tierHeaderWidth + "px; height: " + tierHeaderHeight() + "px;");
+    $("#th" + tierNum2).attr("style", "color: " + tiers[tierNum1].colour + "; background-color: " + tiers[tierNum1].bg +
+    "; max-width: " + settings.tierHeaderWidth + "px; width: " + settings.tierHeaderWidth + "px; height: " + tierHeaderHeight() + "px;");
     tiers[tierNum1] = tiers[tierNum2];
     tiers[tierNum2] = tmp;
     tmp = $("#th" + tierNum1).html();
@@ -289,6 +332,10 @@ var cancelOngoingSwap = function () {
 var removeTier = function (tierNum, skipConfirmation) {
     var length = tiers[tierNum].chars.length, confirmation = true, otherTierNum, i;
 
+    if (isMobile()) {
+        skipConfirmation = true;
+    }
+
     if (!skipConfirmation) {
         confirmation = confirm("Are you sure you want to remove this tier? Removal may take a moment with many characters inside.");
     }
@@ -317,9 +364,11 @@ var swapCharacters = function (character1, character2) {
 };
 
 var emptyModal = function () {
+    $("#mobile_modal").html("");
     $("#text_conversion").html("");
     $("#customisation").html("");
     $("#settings").html("");
+    $("#mobile_modal").css("display", "none");
     $("#text_conversion").css("display", "none");
     $("#customisation").css("display", "none");
     $("#settings").css("display", "none");
@@ -361,16 +410,31 @@ var detectLeftCtrlCombo = function (event, tierNum) {
 var emptyTier = function (tierNum) {
     var confirmation = confirm("Are you sure you want to empty this tier? Emptying may take a moment with many characters inside.");
 
-    if (confirmation) {
+    if (isMobile() || confirmation) {
         removeCharacters(tierNum);
     }
+};
+
+// Mobile-only
+var modalTier = function (tierNum) {
+    emptyModal();
+    $("#mobile_modal").html("<h2>" + tiers[tierNum].name + "</h2>");
+    $("#mobile_modal").append("<p><input type='button' value='Remove' onClick='removeTier(" + tierNum + "); emptyModal()'></p>");
+    $("#mobile_modal").append("<p><input type='button' value='Add All Characters' onClick='quickAdd(" + tierNum + "); emptyModal()'></p>");
+    $("#mobile_modal").append("<p><input type='button' value='Remove All Characters' onClick='emptyTier(" + tierNum + "); emptyModal()'></p>");
+    $("#mobile_modal").css("display", "block");
+    $("#modal").css("display", "block");
 };
 
 var detectRightCtrlCombo = function (event, tierNum) {
     if (event.ctrlKey) { // empty tier on ctrl + right click
         emptyTier(tierNum);
     } else { // remove tier on right click
-        removeTier(tierNum);
+        if (isMobile()) {
+            modalTier(tierNum);
+        } else {
+            removeTier(tierNum);
+        }
     }
 };
 
@@ -382,22 +446,24 @@ var detectAddTierEnter = function (event) {
 
 var toggleInstructions = function () {
     $(".instructions").css("display", $(".instructions").css("display") == "none" ? "block" : "none");
-    $("#toggle").html("Click here to " + ($(".instructions").css("display") == "none" ? "show" : "hide") + " the instructions.");
+    $("#toggle").html("<a href='javascript:toggleInstructions()'>Click here to " + ($(".instructions").css("display") == "none" ? "show" : "hide") + " the instructions.</a>");
+};
+
+var cookieSaved = function () {
+    return listCookies().contains("tiers") || listCookies().contains("settings");
 };
 
 var allowCookies = function () {
-    var confirmation;
-
-    if (document.cookie === "") {
+    if (!cookieSaved()) {
         return confirm("This will store a cookie file on your device. Do you allow this?");
     } else {
         return true;
     }
-}
+};
 
 var saveTiersCookie = function () {
-    if (!allowCookies()) {
-        return;
+    if (isMobile()) {
+        emptyModal();
     }
 
     setCookie("tiers", JSON.stringify(tiers));
@@ -405,14 +471,74 @@ var saveTiersCookie = function () {
     window.onbeforeunload = undefined;
 };
 
-var saveSettingsCookie = function () {
+var saveTiers = function () {
+    if (isMobile() && !cookieSaved()) {
+        emptyModal();
+        $("#mobile_modal").html("<h2>Save Tiers</h2><p>This will store a cookie file on your device. Do you allow this?</p>");
+        $("#mobile_modal").append("<input type='button' value='Yes' onClick='saveTiersCookie()'>");
+        $("#mobile_modal").append("<input type='button' value='No' onClick='emptyModal()'>");
+        $("#mobile_modal").css("display", "block");
+        $("#modal").css("display", "block");
+        return;
+    }
+
     if (!allowCookies()) {
         return;
+    }
+
+    saveTiersCookie();
+};
+
+var saveSettingsCookie = function () {
+    if (isMobile()) {
+        emptyModal();
     }
 
     setCookie("settings", JSON.stringify(settings));
     $("#msg_container").html("<strong style='color:green'>Settings saved!</strong>");
     window.onbeforeunload = undefined;
+}
+
+var saveSettings = function () {
+    if (isMobile() && !cookieSaved()) {
+        emptyModal();
+        $("#mobile_modal").html("<h2>Save Tiers</h2><p>This will store a cookie file on your device. Do you allow this?</p>");
+        $("#mobile_modal").append("<input type='button' value='Yes' onClick='saveSettingsCookie()'>");
+        $("#mobile_modal").append("<input type='button' value='No' onClick='emptyModal()'>");
+        $("#mobile_modal").css("display", "block");
+        $("#modal").css("display", "block");
+        return;
+    }
+
+    if (!allowCookies()) {
+        return;
+    }
+
+    saveSettingsCookie();
+};
+
+// Mobile-only
+var modalInstructions = function () {
+    emptyModal();
+    $("#mobile_modal").html("<h2>Instructions</h2>" + $("#instructions").html());
+    $("#mobile_modal").css("display", "block");
+    $("#modal").css("display", "block");
+};
+
+// Mobile-only
+var modalCredits = function () {
+    emptyModal();
+    $("#mobile_modal").html("<h2>Acknowledgements</h2>" + $("#credits").html());
+    $("#mobile_modal").css("display", "block");
+    $("#modal").css("display", "block");
+};
+
+// Mobile-only
+var menu = function () {
+    emptyModal();
+    $("#mobile_modal").html("<h2>Menu</h2>" + $("#menu").html());
+    $("#mobile_modal").css("display", "block");
+    $("#modal").css("display", "block");
 };
 
 var load = function () {
@@ -552,7 +678,7 @@ var saveCustom = function () {
     $("#customisation").html("");
     $("#customisation").css("display", "none");
     $("#modal").css("display", "none");
-    saveTiersCookie();
+    saveTiers();
 };
 
 var settingsMenu = function () {
@@ -587,7 +713,7 @@ var settingsMenu = function () {
     $("#settings").append("<p><label for='male'>Male Characters</label><input id='male' type='checkbox' " +
     "onClick='toggleMale()'" + (settings.maleEnabled ? " checked" : "") + " " + (settings.artist == "Ruu" ? "disabled=true" : "") + "></p>");
     $("#settings").append("<div>Other settings:<p><label for='tierHeaderWidth'>Max tier header width</label>" +
-    "<input id='tierHeaderWidth' type='number' value=" + (settings.tierHeaderWidth ? settings.tierHeaderWidth : 120) + " min=120></p></div>");
+    "<input id='tierHeaderWidth' type='number' value=" + settings.tierHeaderWidth + " min=" + defaultWidth + "></p></div>");
     $("#settings").append("<div><p><input type='button' value='Save Changes' onClick='saveSettings()'></p><p id='settings_msg_container'></p></div>");
     $("#settings").css("display", "block");
     $("#modal").css("display", "block");
@@ -686,7 +812,7 @@ var saveSettings = function () {
     if (removedCategories.length > 0) {
         confirmation = confirm("This will remove characters from disabled categories from the current tiers. Are you sure you want to do that?");
 
-        if (confirmation) {
+        if (isMobile() || confirmation) {
             massRemoval(removedCategories);
         } else {
             return;
@@ -731,7 +857,7 @@ var saveSettings = function () {
     settings.pc98Enabled = $("#pc98").is(":checked");
     settings.windowsEnabled = $("#windows").is(":checked");
     settings.maleEnabled = $("#male").is(":checked");
-    settings.tierHeaderWidth = $("#tierHeaderWidth").val() > 120 ? $("#tierHeaderWidth").val() : 120;
+    settings.tierHeaderWidth = $("#tierHeaderWidth").val() > defaultWidth ? $("#tierHeaderWidth").val() : defaultWidth;
     $(".tier_header").css("max-width", settings.tierHeaderWidth + "px");
     $("#settings").html("");
     $("#settings").css("display", "none");
@@ -740,47 +866,67 @@ var saveSettings = function () {
 };
 
 var toggleTierView = function () {
-    $("#msg_container").html("");
-    $("#characters").css("display", tierView ? "block" : "none");
-    $("#buttons").css("display", tierView ? "block" : "none");
-    tierView = !tierView;
-    $("#show").css("display", tierView ? "block" : "none");
-    $("#wrap").css("max-height", tierView ? "100%" : "77%");
-    $("#wrap").css("width", tierView ? "auto" : "48%");
-    $("#wrap").css("bottom", tierView ? "5px" : "");
-    $("#wrap").css("left", tierView ? "5px" : "");
+    if (isMobile()) {
+        tierView = !tierView;
+        $("#tier_list_container").css("display", tierView ? "block" : "none");
+        $("#characters").css("display", tierView ? "none" : "block");
+        $("#hide").val(tierView ? "Picker View" : "Tier List View");
+    } else {
+        $("#msg_container").html("");
+        $("#characters").css("display", tierView ? "block" : "none");
+        $("#buttons").css("display", tierView ? "block" : "none");
+        tierView = !tierView;
+        $("#show").css("display", tierView ? "block" : "none");
+        $("#wrap").css("max-height", tierView ? "100%" : "77%");
+        $("#wrap").css("width", tierView ? "auto" : "48%");
+        $("#wrap").css("bottom", tierView ? "5px" : "");
+        $("#wrap").css("left", tierView ? "5px" : "");
+    }
+};
+
+var eraseAllConfirmed = function () {
+    var tierNum;
+
+    for (tierNum in tiers) {
+        removeTier(tierNum, true);
+    }
+
+    settings = {
+        "categories": {
+            "Main": { enabled: true }, "HRtP": { enabled: true }, "SoEW": { enabled: true }, "PoDD": { enabled: true }, "LLS": { enabled: true }, "MS": { enabled: true },
+            "EoSD": { enabled: true }, "PCB": { enabled: true }, "IaMP": { enabled: true }, "IN": { enabled: true }, "PoFV": { enabled: true }, "MoF": { enabled: true },
+            "SWR": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true }, "Soku": { enabled: true }, "DS": { enabled: true }, "GFW": { enabled: true },
+            "TD": { enabled: true }, "HM": { enabled: true }, "DDC": { enabled: true }, "ULiL": { enabled: true }, "LoLK": { enabled: true }, "AoCF": { enabled: true },
+            "HSiFS": { enabled: true }, "Manga": { enabled: true }, "CD": { enabled: true }
+        },
+        "pc98Enabled": true,
+        "windowsEnabled": true,
+        "maleEnabled": true,
+        "tierHeaderWidth": defaultWidth,
+        "artist": "Dairi"
+    };
+
+    deleteCookie("tiers");
+    deleteCookie("settings");
+    addTier("S");
+    addTier("A");
+    $("#tier_name").val("B");
+    $("#msg_container").html("<strong style='color:green'>Reset the tier list and settings to their default states!</strong>");
+    window.onbeforeunload = undefined;
 };
 
 var eraseAll = function () {
-    var confirmation = confirm("Are you sure you want to reset your tier list and settings to the defaults?"), tierNum;
+    var confirmation = confirm("Are you sure you want to reset your tier list and settings to the defaults?");
 
-    if (confirmation) {
-        for (tierNum in tiers) {
-            removeTier(tierNum, true);
-        }
-
-        settings = {
-            "categories": {
-                "Main": { enabled: true }, "HRtP": { enabled: true }, "SoEW": { enabled: true }, "PoDD": { enabled: true }, "LLS": { enabled: true }, "MS": { enabled: true },
-                "EoSD": { enabled: true }, "PCB": { enabled: true }, "IaMP": { enabled: true }, "IN": { enabled: true }, "PoFV": { enabled: true }, "MoF": { enabled: true },
-                "SWR": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true }, "Soku": { enabled: true }, "DS": { enabled: true }, "GFW": { enabled: true },
-                "TD": { enabled: true }, "HM": { enabled: true }, "DDC": { enabled: true }, "ULiL": { enabled: true }, "LoLK": { enabled: true }, "AoCF": { enabled: true },
-                "HSiFS": { enabled: true }, "Manga": { enabled: true }, "CD": { enabled: true }
-            },
-            "pc98Enabled": true,
-            "windowsEnabled": true,
-            "maleEnabled": true,
-            "tierHeaderWidth": 120,
-            "artist": "Dairi"
-        };
-
-        deleteCookie("tiers");
-        deleteCookie("settings");
-        addTier("S");
-        addTier("A");
-        $("#tier_name").val("B");
-        $("#msg_container").html("<strong style='color:green'>Reset the tier list and settings to their default states!</strong>");
-        window.onbeforeunload = undefined;
+    if (isMobile()) {
+        emptyModal();
+        $("#mobile_modal").html("<h2>Reset</h2><p>Are you sure you want to reset your tier list and settings to the defaults?</p>");
+        $("#mobile_modal").append("<input type='button' value='Yes' onClick='eraseAllConfirmed(); emptyModal()'>");
+        $("#mobile_modal").append("<input type='button' value='No' onClick='emptyModal()'>");
+        $("#mobile_modal").css("display", "block");
+        $("#modal").css("display", "block");
+    } else if (confirmation) {
+        eraseAllConfirmed();
     }
 };
 
@@ -857,10 +1003,17 @@ var loadCharacters = function () {
         for (i in categories[categoryName].chars) {
             character = categories[categoryName].chars[i];
 
-            $("#" + categoryName).append("<span id='" + character.removeSpaces() + "C'><img id='" + character.removeSpaces() +
-            "' class='list' draggable='true' onDragStart='drag(event)' src='art/" + settings.artist + "/" + categoryName +
-            "/" + character.removeSpaces() + "." + (settings.artist == "Dairi" ? "png" : "jpg") +
-            "' alt='" + character + "' title='" + character + "'>");
+            if (isMobile()) {
+                $("#" + categoryName).append("<span id='" + character.removeSpaces() + "C'><img id='" + character.removeSpaces() +
+                "' class='list' onClick='addMenu(\"" + character + "\")' src='art/" + settings.artist +
+                "/" + categoryName + "/" + character.removeSpaces() + "." + (settings.artist == "Dairi" ? "png" : "jpg") +
+                "' alt='" + character + "'>");
+            } else {
+                $("#" + categoryName).append("<span id='" + character.removeSpaces() + "C'><img id='" + character.removeSpaces() +
+                "' class='list' draggable='true' onDragStart='drag(event)' src='art/" + settings.artist + "/" + categoryName +
+                "/" + character.removeSpaces() + "." + (settings.artist == "Dairi" ? "png" : "jpg") +
+                "' alt='" + character + "' title='" + character + "'>");
+            }
 
             if (maleCharacters.contains(character.removeSpaces()) && !settings.maleEnabled) {
                 $("#" + character.removeSpaces()).css("display", "none");
@@ -886,7 +1039,7 @@ var loadSettingsFromCookie = function () {
         settings.pc98Enabled = settingsCookie.pc98Enabled;
         settings.windowsEnabled = settingsCookie.windowsEnabled;
         settings.maleEnabled = settingsCookie.maleEnabled;
-        settings.tierHeaderWidth = (settingsCookie.tierHeaderWidth ? settingsCookie.tierHeaderWidth : 120);
+        settings.tierHeaderWidth = (settingsCookie.tierHeaderWidth ? settingsCookie.tierHeaderWidth : defaultWidth);
         settings.artist = settingsCookie.artist;
     } else { // legacy cookie
         for (category in settingsCookie) {
@@ -901,19 +1054,60 @@ var loadSettingsFromCookie = function () {
 };
 
 var applyMobileCSS = function () {
-    $("#notice").css("display", "block");
-    $("#characters").css("display", "none");
-    $("#buttons").css("display", "none");
-    $("#toggle").css("display", "none");
-    $(".instructions").css("display", "none");
+    $("#instructions_list").html("<li>Tap a character to add them to a tier.</li>" +
+    "<li>Long press a character in a tier to remove them from that tier.</li>" +
+    "<li>Tap a tier and then another tier to swap their positions.</li>" +
+    "<li>Long press a tier to either remove it, remove all its characters, or add all remaining characters to it.</li>");
+    $("#instructions_button").html("<input type='button' value='Instructions' onClick='modalInstructions()'>");
+    $("#view_button").html($("#hide"));
+    $("#mobile_button_split").html("<br>");
+    $("#menu_button").html("<input type='button' value='Menu' onClick='menu()'>");
+    $("#credits_button").html("<input type='button' value='Acknowledgements' onClick='modalCredits()'>");
     $("#tier_list_container").css("display", "none");
+    $("#instructions").css("display", "none");
+    $("#credits").css("display", "none");
+    $("#menu").css("display", "none");
+    $("p").css("margin", "2px");
+    $("h1").css("margin", "5px");
+    $("h1").css("font-size", "28px");
+    $("#wrap").css("font", "12px verdana, sans-serif");
+    $("#characters").css("font", "12px verdana, sans-serif");
+    $("#buttons").css("font", "12px verdana, sans-serif");
+    $("#show").css("font", "12px verdana, sans-serif");
+    $("input[type=button]").css("width", "48%");
+    $("input[type=button]").css("height", "25px");
+    $("input[type=button]").css("font-size", "12px");
+    $("#toggle").css("display", "none");
+    $("#buttons").css("max-width", "98%");
+    $("#buttons").css("padding-top", "5px");
+    $("#buttons").css("left", "5px");
+    $("#buttons").css("height", "16%");
+    $("#buttons").css("min-height", "50px");
+    $("#characters").css("width", "auto");
+    $("#characters").css("top", "50px");
+    $("#characters").css("right", "5px");
+    $("#characters").css("bottom", "18%");
+    $("#tier_list_container").css("bottom", "100px");
+    $("#tier_list_container").css("max-height", "71%");
+    $("#tier_list_container").css("overflow-y", "auto");
+    $("#tier_list_container").css("border", "1px solid black");
+    $(".tier_header").css("width", "60px");
+    $(".tier_header").css("height", "60px");
+    $("#tier_name").css("width", "auto");
+    $("#add_tier").css("width", "auto");
+    $("#tier_list_tfoot").attr("colspan", "2");
+    $(".list").css("width", "80px");
+    $(".list").css("height", "80px");
+    $("img").css("width", "60px");
+    $("img").css("height", "60px");
     $("#wrap").css("top", "5px");
     $("#wrap").css("bottom", "5px");
     $("#wrap").css("right", "5px");
     $("#wrap").css("left", "5px");
     $("#wrap").css("width", "auto");
-    $("#wrap").css("max-height", "100%");
     $("#wrap").css("height", "100%");
+    $("#wrap").css("max-height", "100%");
+    $("#modal").css("padding-top", "10%");
 };
 
 $(document).ready(function () {
@@ -938,8 +1132,7 @@ $(document).ready(function () {
 
         window.onbeforeunload = undefined;
 
-        // detect smartphone and tablet
-        if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) {
+        if (isMobile()) {
             applyMobileCSS();
     	}
     });
