@@ -20,54 +20,64 @@
         <div id='wrap'>
             <div id='init'>
                 <h1>Touhou Tier List Creator</h1>
-                <div id='notice'>
-                    <p><strong>Notice:</strong> this page is not designed for mobile use. Apologies for the inconvenience.</p>
-                    <p><a href='/'>Click here to return to the main page.</a></p>
+                <div id='instructions'>
+                    <p class='instructions'>This page allows you to create your own Touhou character tier list. Usage instructions are listed below.</p>
+                    <ul id='instructions_list' class='instructions'>
+                        <li>Drag a character onto a tier box to add that character to it.</li>
+                        <li>Drag a character from the picker onto a tiered character to insert them to the right of them.</li>
+                        <li>Drag a tiered character onto another tiered character to swap their positions.</li>
+                        <li>Right click a character in a tier, or drag them onto the picker, to remove them from that tier.</li>
+                        <li>Click a tier and then another tier to swap their positions.</li>
+                        <li>Ctrl+Click a tier to automatically add all remaining characters to it, and Ctrl+Right Click a tier to empty it.</li>
+                        <li>Right click a tier to remove that tier and all of its contents.</li>
+                        <li>Hover your cursor above a character to see their name.</li>
+                    </ul>
                 </div>
-                <p class='instructions'>This page allows you to create your own Touhou character tier list. Usage instructions are listed below.<p>
-                <ul class='instructions'>
-                    <li>Drag a character onto a tier box to add that character to it.</li>
-                    <li>Drag a character from the picker onto a tiered character to insert them to the right of them.</li>
-                    <li>Drag a tiered character onto another tiered character to swap their positions.</li>
-                    <li>Right click a character in a tier, or drag them onto the picker, to remove them from that tier.</li>
-                    <li>Click a tier and then another tier to swap their positions.</li>
-                    <li>Ctrl+Click a tier to automatically add all remaining characters to it, and Ctrl+Right Click a tier to empty it.</li>
-                    <li>Right click a tier to remove that tier and all of its contents.</li>
-                    <li>Hover your cursor above a character to see their name.</li>
-                </ul>
-                <p><a id='toggle' href='javascript:toggleInstructions()'>Click here to hide the instructions.</a></p>
+                <p id='toggle'><a href='javascript:toggleInstructions()'>Click here to hide the instructions.</a></p>
             </div>
             <div id='tier_list_container'>
                 <table id='tier_list_table'>
                     <tbody id='tier_list_tbody'></tbody>
                     <tfoot>
                         <tr>
-                            <td><input id='tier_name' type='text' value='' onKeyUp='detectAddTierEnter(event)'>
-                            <input type='button' value='Add Tier' onClick='addTier($("#tier_name").val())'></td>
+                            <td id='tier_list_tfoot'>
+                                <input id='tier_name' type='text' value='' onKeyUp='detectAddTierEnter(event)'>
+                                <input id='add_tier' type='button' value='Add Tier' onClick='addTier($("#tier_name").val())'>
+                            </td>
                         </tr>
                     </tfoot>
                 </table>
             </div>
         </div>
         <div id='buttons'>
-            <p>The artworks used for this page are drawn by <a href='https://www.pixiv.net/member.php?id=4920496' target='_blank'>Dairi</a> and
-            <a href='https://www.pixiv.net/member.php?id=10349996' target='_blank'>るう</a>.
-            Special thanks go to <a href='https://twitter.com/Plus5298' target='_blank'>Plus</a> for the original idea as well as testing,
-            <a href='https://twitter.com/pienyan_' target='_blank'>pienyan</a> for testing,
-            <a href='https://twitter.com/Doroshii_Sweet' target='_blank'>Dorothy Sweet</a> for design improvements and
-            <a href='https://twitter.com/TheDukeofBooms' target='_blank'>ZXNova</a> for the Dairi face crops.</p>
-            <input type='button' value='Save Tiers' onClick='saveTiersCookie()'>
-            <input type='button' value='Import' onClick='importText()'>
-            <input type='button' value='Export' onClick='exportText()'>
-            <br id='button_split'>
-            <input type='button' value='Customise Tiers' onClick='customiseMenu()'>
-            <input id='hide' type='button' value='Tier List View' onClick='toggleTierView()'>
-            <input type='button' value='Settings' onClick='settingsMenu()'>
-            <input type='button' value='Reset' onClick='eraseAll()'>
+            <div id='credits'>
+                <p>The artworks used for this page are drawn by <a href='https://www.pixiv.net/member.php?id=4920496' target='_blank'>Dairi</a> and
+                <a href='https://www.pixiv.net/member.php?id=10349996' target='_blank'>るう</a>.
+                Special thanks go to <a href='https://twitter.com/Plus5298' target='_blank'>Plus</a> for the original idea as well as testing,
+                <a href='https://twitter.com/pienyan_' target='_blank'>pienyan</a> for testing,
+                <a href='https://twitter.com/Doroshii_Sweet' target='_blank'>Dorothy Sweet</a> for design improvements and
+                <a href='https://twitter.com/TheDukeofBooms' target='_blank'>ZXNova</a> for the Dairi face crops.</p>
+            </div>
+            <div id='menu'>
+                <input type='button' value='Save Tiers' onClick='saveTiers()'>
+                <input type='button' value='Import' onClick='importText()'>
+                <input type='button' value='Export' onClick='exportText()'>
+                <br id='button_split'>
+                <input type='button' value='Customise Tiers' onClick='customiseMenu()'>
+                <input id='hide' type='button' value='Tier List View' onClick='toggleTierView()'>
+                <input type='button' value='Settings' onClick='settingsMenu()'>
+                <input type='button' value='Reset' onClick='eraseAll()'>
+            </div>
+            <span id='instructions_button'></span>
+            <span id='view_button'></span>
+            <span id='mobile_button_split'></span>
+            <span id='menu_button'></span>
+            <span id='credits_button'></span>
             <p id='msg_container'></p>
         </div>
         <div id='show'><input type='button' value='Normal View' onClick='toggleTierView()'></div>
         <div id='modal'>
+            <div id='mobile_modal'></div>
             <div id='text_conversion'></div>
             <div id='customisation'></div>
             <div id='settings'></div>

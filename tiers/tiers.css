@@ -4,11 +4,11 @@ body {
 }
 h1 {
 	font-family: 'Felipa';
-	font-size: 48px
+	font-size: 48px;
 }
 h2 {
 	font-family: 'Felipa';
-	font-size: 36px
+	font-size: 36px;
 }
 p {
 	margin: 10px;
@@ -73,6 +73,13 @@ input[type=number] {
 	right: 5px;
 	top: 5px;
 }
+#tier_list_container_mobile {
+	overflow-y: auto;
+    top: 50px;
+    right: 5px;
+    bottom: 100px;
+	width: auto;
+}
 #tier_list_table {
 	width: 100%;
 }
@@ -123,7 +130,7 @@ input[type=number] {
 	background-color: rgba(0,0,0,0.4);
 	color: black;
 }
-#confirmation, #text_conversion, #customisation, #settings {
+#confirmation, #mobile_modal, #text_conversion, #customisation, #settings {
 	background-color: #fefefe;
 	margin: auto;
 	padding: 20px;

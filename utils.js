@@ -40,7 +40,7 @@ var listCookies = function () {
         cookieNames.push(cookieArray[i].split('=')[0]);
     }
 
-    return cookieNames.join(", ");
+    return cookieNames;
 };
 
 var numericSort = function (a, b) {
