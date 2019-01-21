@@ -27,7 +27,11 @@
 
 var isMobile = function () {
     return navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1;
-}
+};
+
+var isLandscape = function () {
+    return window.orientation == -90 || window.orientation == 90;
+};
 
 var isCharacter = function (character) {
     return character !== "" && JSON.stringify(categories).removeSpaces().contains(character);
@@ -108,7 +112,12 @@ var addToTier = function (character, tierNum, pos) {
 
     $("#msg_container").html("");
     $("#" + character).removeClass("list");
-    $("#" + character).attr("onContextMenu", "removeFromTier('" + character + "', " + tierNum + "); return false;");
+
+    if (isMobile()) {
+        $("#" + character).attr("onContextMenu", "modalChar('" + character + "', " + tierNum + "); return false;");
+    } else {
+        $("#" + character).attr("onContextMenu", "removeFromTier('" + character + "', " + tierNum + "); return false;");
+    }
 
     // insert at specific position
     if (typeof pos == "number") {
@@ -178,22 +187,10 @@ var moveToBack = function (character, tierNum) {
         $("#tier" + tierNum + "_" + counter).html($("#tier" + tierNum + "_" + (counter + 1)).html());
     }
 
+    $("#msg_container").html("");
     $("#tier" + tierNum + "_" + (tiers[tierNum].chars.length - 1)).html(help);
     updateArrays();
     window.onbeforeunload = function () { return confirm(); };
-};
-
-var changeToTier = function (character, tierNum) {
-    var oldTierNum = getTierNumOf(character), help, id;
-
-    $("#msg_container").html("");
-
-    if (oldTierNum === tierNum) {
-        moveToBack(character, tierNum);
-    } else {
-        removeFromTier(character, oldTierNum);
-        addToTier(character, tierNum);
-    }
 };
 
 var removeFromTier = function (character, tierNum) {
@@ -231,6 +228,41 @@ var removeFromTier = function (character, tierNum) {
     }
 
     window.onbeforeunload = function () { return confirm(); };
+};
+
+var changeToTier = function (character, tierNum) {
+    var oldTierNum = getTierNumOf(character), help, id;
+
+    if (oldTierNum === tierNum) {
+        moveToBack(character, tierNum);
+    } else {
+        removeFromTier(character, oldTierNum);
+        addToTier(character, tierNum);
+    }
+};
+
+// Mobile-only
+var modalChar = function (character, tierNum) {
+    var above, below;
+
+    emptyModal();
+    $("#mobile_modal").html("<h2>" + character + "</h2><input type='button' value='Remove' onClick='removeFromTier(\"" + character +
+    "\", " + tierNum + "); emptyModal()' style='margin:10px'>");
+
+    if (order.indexOf(tierNum) !== 0) {
+        above = order[order.indexOf(tierNum) - 1];
+        $("#mobile_modal").append("<input type='button' value='Move Up' onClick='changeToTier(\"" + character +
+        "\", " + above + "); emptyModal()' style='margin:10px'>");
+    } else if (order.indexOf(tierNum) != order.length - 1) {
+        below = order[order.indexOf(tierNum) + 1];
+        $("#mobile_modal").append("<input type='button' value='Move Down' onClick='changeToTier(\"" + character +
+        "\", " + below + "); emptyModal()' style='margin:10px'>");
+    }
+
+    $("#mobile_modal").append("<input type='button' value='Move to Back' onClick='moveToBack(\"" + character +
+    "\", " + tierNum + "); emptyModal()' style='margin:10px'>");
+    $("#mobile_modal").css("display", "block");
+    $("#modal").css("display", "block");
 };
 
 var validateTierName = function (tierName) {
@@ -371,8 +403,15 @@ var swapCharacters = function (character1, character2) {
     $(parent1).html($("#" + character2));
     $(parent2).html(backup);
     updateArrays();
-    $("#" + character1).attr("onContextMenu", "removeFromTier('" + character1 + "', " + getTierNumOf(character1) + "); return false;");
-    $("#" + character2).attr("onContextMenu", "removeFromTier('" + character2 + "', " + getTierNumOf(character2) + "); return false;");
+
+    if (isMobile()) {
+        $("#" + character1).attr("onContextMenu", "modalChar('" + character1 + "', " + getTierNumOf(character1) + "); return false;");
+        $("#" + character2).attr("onContextMenu", "modalChar('" + character2 + "', " + getTierNumOf(character2) + "); return false;");
+    } else {
+        $("#" + character1).attr("onContextMenu", "removeFromTier('" + character1 + "', " + getTierNumOf(character1) + "); return false;");
+        $("#" + character2).attr("onContextMenu", "removeFromTier('" + character2 + "', " + getTierNumOf(character2) + "); return false;");
+    }
+
     window.onbeforeunload = function () { return confirm(); };
 };
 
@@ -486,6 +525,7 @@ var saveTiersCookie = function () {
     }
 
     setCookie("tiers", JSON.stringify(tiers));
+    setCookie("order", JSON.stringify(order));
     $("#msg_container").html("<strong style='color:green'>Tier list saved!</strong>");
     window.onbeforeunload = undefined;
 };
@@ -992,32 +1032,53 @@ var drop = function (event) {
     following = "";
 }
 
-var loadTiersFromCookie = function () {
-    var tiersCookie = JSON.parse(getCookie("tiers")), tierNum, character;
+var loadTier = function (tiersCookie, tierNum) {
+    var character;
 
-    for (tierNum in tiersCookie) {
-        tiers[tierNum] = {};
-        tiers[tierNum].name = tiersCookie[tierNum].name;
-        tiers[tierNum].bg = tiersCookie[tierNum].bg;
-        tiers[tierNum].colour = tiersCookie[tierNum].colour;
-        tiers[tierNum].chars = [];
-        tiers[tierNum].flag = tiersCookie[tierNum].flag;
+    tiers[tierNum] = {};
+    tiers[tierNum].name = tiersCookie[tierNum].name;
+    tiers[tierNum].bg = tiersCookie[tierNum].bg;
+    tiers[tierNum].colour = tiersCookie[tierNum].colour;
+    tiers[tierNum].chars = [];
+    tiers[tierNum].flag = tiersCookie[tierNum].flag;
 
-        if (!tiers[tierNum].flag) {
-            $("#tier_list_tbody").append("<tr id='tr" + tierNum + "' onDragOver='allowDrop(event)' onDrop='drop(event)'><th id='th" + tierNum +
-            "' class='tier_header' onClick='detectLeftCtrlCombo(event, " + tierNum + ")' onContextMenu='detectRightCtrlCombo(event, " + tierNum +
-            "); return false;' style='color: " + tiers[tierNum].colour + "; background-color: " + tiers[tierNum].bg +
-            ";'>" + tiersCookie[tierNum].name + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr>");
+    if (!tiers[tierNum].flag) {
+        $("#tier_list_tbody").append("<tr id='tr" + tierNum + "' onDragOver='allowDrop(event)' onDrop='drop(event)'><th id='th" + tierNum +
+        "' class='tier_header' onClick='detectLeftCtrlCombo(event, " + tierNum + ")' onContextMenu='detectRightCtrlCombo(event, " + tierNum +
+        "); return false;' style='color: " + tiers[tierNum].colour + "; background-color: " + tiers[tierNum].bg +
+        ";'>" + tiersCookie[tierNum].name + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr>");
 
-            for (i = 0; i < tiersCookie[tierNum].chars.length; i++) {
-                character = tiersCookie[tierNum].chars[i];
+        for (i = 0; i < tiersCookie[tierNum].chars.length; i++) {
+            character = tiersCookie[tierNum].chars[i];
 
-                if (character == "Mai") { // fix legacy name
-                    character = "Mai PC-98";
-                }
-
-                addToTier(character, tierNum);
+            if (character == "Mai") { // fix legacy name
+                character = "Mai PC-98";
             }
+
+            if (isMobile()) {
+                $("#" + character).attr("onClick", "");
+            }
+
+            addToTier(character, tierNum);
+        }
+    }
+};
+
+var loadTiersFromCookie = function () {
+    var orderCookie = JSON.parse(getCookie("order")), tiersCookie = JSON.parse(getCookie("tiers")), tierNum, i;
+
+    if (orderCookie) {
+        order = orderCookie;
+
+        for (i = 0; i < order.length; i++) {
+            tierNum = order[i];
+            loadTier(tiersCookie, tierNum);
+        }
+    } else {
+        for (tierNum in tiersCookie) {
+            tierNum = Number(tierNum);
+            loadTier(tiersCookie, tierNum);
+            order.push(tierNum);
         }
     }
 };
@@ -1081,6 +1142,7 @@ var loadSettingsFromCookie = function () {
     }
 };
 
+// Mobile-only
 var applyMobileCSS = function () {
     $("#instructions_list").html("<li>Tap a character to add them to a tier.</li>" +
     "<li>Long press a character in a tier to remove them from that tier.</li>" +
@@ -1116,7 +1178,7 @@ var applyMobileCSS = function () {
     $("#characters").css("right", "5px");
     $("#characters").css("bottom", "18%");
     $("#tier_list_container").css("bottom", "100px");
-    $("#tier_list_container").css("max-height", "71%");
+    $("#tier_list_container").css("max-height", isLandscape() ? "62%" : "71%");
     $("#tier_list_container").css("overflow-y", "auto");
     $("#tier_list_container").css("border", "1px solid black");
     $(".tier_header").css("width", "60px");
@@ -1125,6 +1187,8 @@ var applyMobileCSS = function () {
     $("#tier_list_tfoot").remove();
     $("#add_tier_box").attr("colspan", "2");
     $("#tier_name").css("width", "auto");
+    $("#tier_name").attr("onFocus", '$("#buttons").css("display", "none")');
+    $("#tier_name").attr("onBlur", '$("#buttons").css("display", "block")');
     $("#add_tier").css("width", "auto");
     $(".list").css("width", "80px");
     $(".list").css("height", "80px");
@@ -1138,6 +1202,15 @@ var applyMobileCSS = function () {
     $("#wrap").css("height", "100%");
     $("#wrap").css("max-height", "100%");
     $("#modal").css("padding-top", "10%");
+};
+
+// Mobile-only
+var updateOrientation = function () {
+    console.log("updateOrientation()");
+
+    if (isMobile()) {
+        $("#tier_list_container").css("max-height", isLandscape() ? "62%" : "71%");
+    }
 };
 
 $(document).ready(function () {
