@@ -157,8 +157,9 @@ var addMenu = function (character) {
     $("#mobile_modal").html("<h2>" + character + "</h2><p>Add to tier:</p>");
 
     for (tierNum in tiers) {
-        $("#mobile_modal").append("<p><input type='button' value='" + tiers[tierNum].name +
-        "' onClick='addToTierMobile(\"" + character + "\", " + tierNum + ")'></p>");
+        $("#mobile_modal").append("<input type='button' value='" + tiers[tierNum].name +
+        "' onClick='addToTierMobile(\"" + character + "\", " + tierNum + ")' " +
+        "style='width: 25px; height: 25px; margin: 5px'>");
     }
 
     $("#mobile_modal").css("display", "block");
@@ -217,6 +218,11 @@ var removeFromTier = function (character, tierNum) {
 
         $("#tier" + tierNum + "_" + (tiers[tierNum].chars.length - 1)).remove();
         tiers[tierNum].chars.remove(character);
+    }
+
+    if (isMobile()) {
+        $("#msg_container").html("<strong style='color:green'>Removed " + $("#" + character).attr("alt") +
+        " from " + tiers[tierNum].name + "!</strong>");
     }
 
     window.onbeforeunload = function () { return confirm(); };
@@ -408,9 +414,15 @@ var detectLeftCtrlCombo = function (event, tierNum) {
 };
 
 var emptyTier = function (tierNum) {
-    var confirmation = confirm("Are you sure you want to empty this tier? Emptying may take a moment with many characters inside.");
+    var confirmation;
 
-    if (isMobile() || confirmation) {
+    if (isMobile()) {
+        removeCharacters(tierNum);
+    }
+
+    confirmation = confirm("Are you sure you want to empty this tier? Emptying may take a moment with many characters inside.");
+
+    if (confirmation) {
         removeCharacters(tierNum);
     }
 };
@@ -891,6 +903,7 @@ var eraseAllConfirmed = function () {
         removeTier(tierNum, true);
     }
 
+    tiers = {};
     settings = {
         "categories": {
             "Main": { enabled: true }, "HRtP": { enabled: true }, "SoEW": { enabled: true }, "PoDD": { enabled: true }, "LLS": { enabled: true }, "MS": { enabled: true },
@@ -916,7 +929,7 @@ var eraseAllConfirmed = function () {
 };
 
 var eraseAll = function () {
-    var confirmation = confirm("Are you sure you want to reset your tier list and settings to the defaults?");
+    var confirmation;
 
     if (isMobile()) {
         emptyModal();
@@ -925,7 +938,12 @@ var eraseAll = function () {
         $("#mobile_modal").append("<input type='button' value='No' onClick='emptyModal()'>");
         $("#mobile_modal").css("display", "block");
         $("#modal").css("display", "block");
-    } else if (confirmation) {
+        return;
+    }
+
+    confirmation = confirm("Are you sure you want to reset your tier list and settings to the defaults?");
+
+    if (confirmation) {
         eraseAllConfirmed();
     }
 };
@@ -1093,9 +1111,11 @@ var applyMobileCSS = function () {
     $("#tier_list_container").css("border", "1px solid black");
     $(".tier_header").css("width", "60px");
     $(".tier_header").css("height", "60px");
+    $("#tier_list_thead").html($("#tier_list_tfoot").html());
+    $("#tier_list_tfoot").remove();
+    $("#add_tier_box").attr("colspan", "2");
     $("#tier_name").css("width", "auto");
     $("#add_tier").css("width", "auto");
-    $("#tier_list_tfoot").attr("colspan", "2");
     $(".list").css("width", "80px");
     $(".list").css("height", "80px");
     $("img").css("width", "60px");

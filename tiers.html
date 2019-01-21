@@ -37,10 +37,11 @@
             </div>
             <div id='tier_list_container'>
                 <table id='tier_list_table'>
+                    <thead id='tier_list_thead'></thead>
                     <tbody id='tier_list_tbody'></tbody>
-                    <tfoot>
+                    <tfoot id='tier_list_tfoot'>
                         <tr>
-                            <td id='tier_list_tfoot'>
+                            <td id='add_tier_box'>
                                 <input id='tier_name' type='text' value='' onKeyUp='detectAddTierEnter(event)'>
                                 <input id='add_tier' type='button' value='Add Tier' onClick='addTier($("#tier_name").val())'>
                             </td>
