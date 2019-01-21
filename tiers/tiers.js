@@ -237,7 +237,12 @@ var changeToTier = function (character, tierNum) {
         moveToBack(character, tierNum);
     } else {
         removeFromTier(character, oldTierNum);
-        addToTier(character, tierNum);
+
+        if (isMobile()) {
+            addToTierMobile(character, tierNum);
+        } else {
+            addToTier(character, tierNum);
+        }
     }
 };
 
@@ -1145,7 +1150,8 @@ var loadSettingsFromCookie = function () {
 // Mobile-only
 var applyMobileCSS = function () {
     $("#instructions_list").html("<li>Tap a character to add them to a tier.</li>" +
-    "<li>Long press a character in a tier to remove them from that tier.</li>" +
+    "<li>Long press a character in a tier to either remove them from that tier, " +
+    "move them to the back of the tier, or move them a tier up or down.</li>" +
     "<li>Tap a tier and then another tier to swap their positions.</li>" +
     "<li>Long press a tier to either remove it, remove all its characters, or add all remaining characters to it.</li>");
     $("#instructions_button").html("<input type='button' value='Instructions' onClick='modalInstructions()'>");
