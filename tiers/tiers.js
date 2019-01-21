@@ -164,7 +164,7 @@ var addMenu = function (character) {
     var tierNum, i;
 
     emptyModal();
-    $("#mobile_modal").html("<h2>" + character + "</h2><p>Add to tier:</p>");
+    $("#mobile_modal").html("<h3>" + character + "</h3><p>Add to tier:</p>");
 
     for (i = 0; i < order.length; i++) {
         tierNum = order[i];
@@ -251,7 +251,7 @@ var modalChar = function (character, tierNum) {
     var above, below;
 
     emptyModal();
-    $("#mobile_modal").html("<h2>" + character + "</h2><input type='button' value='Remove' onClick='removeFromTier(\"" + character +
+    $("#mobile_modal").html("<h3>" + character + "</h3><input type='button' value='Remove' onClick='removeFromTier(\"" + character +
     "\", " + tierNum + "); emptyModal()' style='margin:10px'>");
 
     if (order.indexOf(tierNum) !== 0) {
@@ -481,7 +481,7 @@ var emptyTier = function (tierNum) {
 // Mobile-only
 var modalTier = function (tierNum) {
     emptyModal();
-    $("#mobile_modal").html("<h2>" + tiers[tierNum].name + "</h2>");
+    $("#mobile_modal").html("<h3>" + tiers[tierNum].name + "</h3>");
     $("#mobile_modal").append("<p><input type='button' value='Remove' onClick='removeTier(" + tierNum + "); emptyModal()'></p>");
     $("#mobile_modal").append("<p><input type='button' value='Add All Characters' onClick='quickAdd(" + tierNum + "); emptyModal()'></p>");
     $("#mobile_modal").append("<p><input type='button' value='Remove All Characters' onClick='emptyTier(" + tierNum + "); emptyModal()'></p>");
@@ -538,7 +538,7 @@ var saveTiersCookie = function () {
 var saveTiers = function () {
     if (isMobile() && !cookieSaved()) {
         emptyModal();
-        $("#mobile_modal").html("<h2>Save Tiers</h2><p>This will store a cookie file on your device. Do you allow this?</p>");
+        $("#mobile_modal").html("<h3>Save Tiers</h3><p>This will store a cookie file on your device. Do you allow this?</p>");
         $("#mobile_modal").append("<input type='button' value='Yes' onClick='saveTiersCookie()' style='margin: 10px'>");
         $("#mobile_modal").append("<input type='button' value='No' onClick='emptyModal()' style='margin: 10px'>");
         $("#mobile_modal").css("display", "block");
@@ -566,7 +566,7 @@ var saveSettingsCookie = function () {
 var saveSettings = function () {
     if (isMobile() && !cookieSaved()) {
         emptyModal();
-        $("#mobile_modal").html("<h2>Save Tiers</h2><p>This will store a cookie file on your device. Do you allow this?</p>");
+        $("#mobile_modal").html("<h3>Save Tiers</h3><p>This will store a cookie file on your device. Do you allow this?</p>");
         $("#mobile_modal").append("<input type='button' value='Yes' onClick='saveSettingsCookie()' style='margin: 10px'>");
         $("#mobile_modal").append("<input type='button' value='No' onClick='emptyModal()' style='margin: 10px'>");
         $("#mobile_modal").css("display", "block");
@@ -584,7 +584,7 @@ var saveSettings = function () {
 // Mobile-only
 var modalInstructions = function () {
     emptyModal();
-    $("#mobile_modal").html("<h2>Instructions</h2>" + $("#instructions").html());
+    $("#mobile_modal").html("<h3>Instructions</h3>" + $("#instructions").html());
     $("#mobile_modal").css("display", "block");
     $("#modal").css("display", "block");
 };
@@ -592,7 +592,7 @@ var modalInstructions = function () {
 // Mobile-only
 var modalCredits = function () {
     emptyModal();
-    $("#mobile_modal").html("<h2>Acknowledgements</h2>" + $("#credits").html());
+    $("#mobile_modal").html("<h3>Acknowledgements</h3>" + $("#credits").html());
     $("#mobile_modal").css("display", "block");
     $("#modal").css("display", "block");
 };
@@ -600,7 +600,7 @@ var modalCredits = function () {
 // Mobile-only
 var menu = function () {
     emptyModal();
-    $("#mobile_modal").html("<h2>Menu</h2>" + $("#menu").html());
+    $("#mobile_modal").html("<h3>Menu</h3>" + $("#menu").html());
     $("#mobile_modal").css("display", "block");
     $("#modal").css("display", "block");
 };
@@ -988,7 +988,7 @@ var eraseAll = function () {
 
     if (isMobile()) {
         emptyModal();
-        $("#mobile_modal").html("<h2>Reset</h2><p>Are you sure you want to reset your tier list and settings to the defaults?</p>");
+        $("#mobile_modal").html("<h3>Reset</h3><p>Are you sure you want to reset your tier list and settings to the defaults?</p>");
         $("#mobile_modal").append("<input type='button' value='Yes' onClick='eraseAllConfirmed(); emptyModal()' style='margin: 10px'>");
         $("#mobile_modal").append("<input type='button' value='No' onClick='emptyModal()' style='margin: 10px'>");
         $("#mobile_modal").css("display", "block");
@@ -1193,8 +1193,6 @@ var applyMobileCSS = function () {
     $("#tier_list_tfoot").remove();
     $("#add_tier_box").attr("colspan", "2");
     $("#tier_name").css("width", "auto");
-    $("#tier_name").attr("onFocus", '$("#buttons").css("display", "none")');
-    $("#tier_name").attr("onBlur", '$("#buttons").css("display", "block")');
     $("#add_tier").css("width", "auto");
     $(".list").css("width", "80px");
     $(".list").css("height", "80px");
@@ -1210,12 +1208,26 @@ var applyMobileCSS = function () {
     $("#modal").css("padding-top", "10%");
 };
 
+// Mobile-Only
+var checkHeight = function () {
+    if (isMobile()) {
+        if (window.innerHeight < 100) {
+            $("h1").css("display", "none");
+            $("#buttons").css("display", "none");
+        } else {
+            $("h1").css("display", "block");
+            $("#buttons").css("display", "block");
+        }
+    }
+}
+
 // Mobile-only
 var updateOrientation = function () {
-    console.log("updateOrientation()");
-
     if (isMobile()) {
+        $("h1").css("display", isLandscape() ? "none" : "block");
         $("#tier_list_container").css("max-height", isLandscape() ? "62%" : "71%");
+        $("#characters").css("bottom", isLandscape() ? "20%" : "18%");
+        $("#modal").css("padding-top", isLandscape() ? "2%" : "10%");
     }
 };
 
