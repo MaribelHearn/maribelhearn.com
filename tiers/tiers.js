@@ -912,6 +912,7 @@ var eraseAllConfirmed = function () {
         removeTier(tierNum, true);
     }
 
+    order = [];
     tiers = {};
     settings = {
         "categories": {
