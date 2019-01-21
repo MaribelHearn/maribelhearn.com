@@ -18,6 +18,7 @@
     maleCharacters = ["SinGyokuM", "Genjii", "Unzan", "RinnosukeMorichika", "FortuneTeller"],
     pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"],
     tiers = {},
+    order = [],
     maxTiers = 20,
     maxNameLength = 30,
     following = "",
@@ -151,15 +152,19 @@ var addToTierMobile = function (character, tierNum) {
 
 // Mobile-only
 var addMenu = function (character) {
-    var tierNum;
+    var tierNum, i;
 
     emptyModal();
     $("#mobile_modal").html("<h2>" + character + "</h2><p>Add to tier:</p>");
 
-    for (tierNum in tiers) {
-        $("#mobile_modal").append("<input type='button' value='" + tiers[tierNum].name +
-        "' onClick='addToTierMobile(\"" + character + "\", " + tierNum + ")' " +
-        "style='width: 25px; height: 25px; margin: 5px'>");
+    for (i = 0; i < order.length; i++) {
+        tierNum = order[i];
+
+        if (!tiers[tierNum].flag) {
+            $("#mobile_modal").append("<input type='button' value='" + tiers[tierNum].name +
+            "' onClick='addToTierMobile(\"" + character + "\", " + tierNum + ")' " +
+            "style='min-width: 25px; height: 25px; margin: 10px'>");
+        }
     }
 
     $("#mobile_modal").css("display", "block");
@@ -271,6 +276,7 @@ var addTier = function (tierName) {
     tiers[tierNum].colour = "#a0a0a0";
     tiers[tierNum].chars = [];
     tiers[tierNum].flag = false;
+    order.push(tierNum);
 
     // if tier swap ongoing, set onClick to swapTiers
     if (swapOngoing >= 0) {
@@ -351,6 +357,7 @@ var removeTier = function (tierNum, skipConfirmation) {
         cancelOngoingSwap();
         $("#tr" + tierNum).remove();
         tiers[tierNum].flag = true;
+        order.remove(tierNum);
     }
 
     window.onbeforeunload = function () { return confirm(); };
@@ -487,8 +494,8 @@ var saveTiers = function () {
     if (isMobile() && !cookieSaved()) {
         emptyModal();
         $("#mobile_modal").html("<h2>Save Tiers</h2><p>This will store a cookie file on your device. Do you allow this?</p>");
-        $("#mobile_modal").append("<input type='button' value='Yes' onClick='saveTiersCookie()'>");
-        $("#mobile_modal").append("<input type='button' value='No' onClick='emptyModal()'>");
+        $("#mobile_modal").append("<input type='button' value='Yes' onClick='saveTiersCookie()' style='margin: 10px'>");
+        $("#mobile_modal").append("<input type='button' value='No' onClick='emptyModal()' style='margin: 10px'>");
         $("#mobile_modal").css("display", "block");
         $("#modal").css("display", "block");
         return;
@@ -515,8 +522,8 @@ var saveSettings = function () {
     if (isMobile() && !cookieSaved()) {
         emptyModal();
         $("#mobile_modal").html("<h2>Save Tiers</h2><p>This will store a cookie file on your device. Do you allow this?</p>");
-        $("#mobile_modal").append("<input type='button' value='Yes' onClick='saveSettingsCookie()'>");
-        $("#mobile_modal").append("<input type='button' value='No' onClick='emptyModal()'>");
+        $("#mobile_modal").append("<input type='button' value='Yes' onClick='saveSettingsCookie()' style='margin: 10px'>");
+        $("#mobile_modal").append("<input type='button' value='No' onClick='emptyModal()' style='margin: 10px'>");
         $("#mobile_modal").css("display", "block");
         $("#modal").css("display", "block");
         return;
@@ -634,12 +641,14 @@ var exportText = function () {
 };
 
 var customiseMenu = function () {
-    var tierNum;
+    var tierNum, i;
 
     emptyModal();
     $("#customisation").html("<div><h2>Tier Customisation</h2></div><div id='custom_tier_container'>");
 
-    for (tierNum in tiers) {
+    for (i = 0; i < order.length; i++) {
+        tierNum = order[i];
+
         if (!tiers[tierNum].flag) {
             $("#custom_tier_container").append("<p><strong>" + tiers[tierNum].name + "</strong></p>");
             $("#custom_tier_container").append("<p class='name'><label for='custom_name_tier" + tierNum +
@@ -934,8 +943,8 @@ var eraseAll = function () {
     if (isMobile()) {
         emptyModal();
         $("#mobile_modal").html("<h2>Reset</h2><p>Are you sure you want to reset your tier list and settings to the defaults?</p>");
-        $("#mobile_modal").append("<input type='button' value='Yes' onClick='eraseAllConfirmed(); emptyModal()'>");
-        $("#mobile_modal").append("<input type='button' value='No' onClick='emptyModal()'>");
+        $("#mobile_modal").append("<input type='button' value='Yes' onClick='eraseAllConfirmed(); emptyModal()' style='margin: 10px'>");
+        $("#mobile_modal").append("<input type='button' value='No' onClick='emptyModal()' style='margin: 10px'>");
         $("#mobile_modal").css("display", "block");
         $("#modal").css("display", "block");
         return;
