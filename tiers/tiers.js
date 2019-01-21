@@ -30,7 +30,7 @@ var isMobile = function () {
 };
 
 var isLandscape = function () {
-    return window.orientation == -90 || window.orientation == 90;
+    return window.orientation == -90 || window.orientation == 90 || screen.width > screen.height;
 };
 
 var isCharacter = function (character) {
@@ -258,7 +258,9 @@ var modalChar = function (character, tierNum) {
         above = order[order.indexOf(tierNum) - 1];
         $("#mobile_modal").append("<input type='button' value='Move Up' onClick='changeToTier(\"" + character +
         "\", " + above + "); emptyModal()' style='margin:10px'>");
-    } else if (order.indexOf(tierNum) != order.length - 1) {
+    }
+
+    if (order.indexOf(tierNum) != order.length - 1) {
         below = order[order.indexOf(tierNum) + 1];
         $("#mobile_modal").append("<input type='button' value='Move Down' onClick='changeToTier(\"" + character +
         "\", " + below + "); emptyModal()' style='margin:10px'>");
@@ -1166,6 +1168,7 @@ var applyMobileCSS = function () {
     $("p").css("margin", "2px");
     $("h1").css("margin", "5px");
     $("h1").css("font-size", "28px");
+    $("#title").css("display", isLandscape() ? "none" : "block");
     $("#wrap").css("font", "12px verdana, sans-serif");
     $("#characters").css("font", "12px verdana, sans-serif");
     $("#buttons").css("font", "12px verdana, sans-serif");
@@ -1177,14 +1180,14 @@ var applyMobileCSS = function () {
     $("#buttons").css("max-width", "98%");
     $("#buttons").css("padding-top", "5px");
     $("#buttons").css("left", "5px");
-    $("#buttons").css("height", "16%");
+    $("#buttons").css("height", isLandscape() ? "22%" : "16%");
     $("#buttons").css("min-height", "50px");
     $("#characters").css("width", "auto");
-    $("#characters").css("top", "50px");
+    $("#characters").css("top", isLandscape() ? "2%" : "50px");
     $("#characters").css("right", "5px");
-    $("#characters").css("bottom", "18%");
+    $("#characters").css("bottom", isLandscape() ? "25%" : "18%");
     $("#tier_list_container").css("bottom", "100px");
-    $("#tier_list_container").css("max-height", isLandscape() ? "62%" : "71%");
+    $("#tier_list_container").css("max-height", "71%");
     $("#tier_list_container").css("overflow-y", "auto");
     $("#tier_list_container").css("border", "1px solid black");
     $(".tier_header").css("width", "60px");
@@ -1205,28 +1208,29 @@ var applyMobileCSS = function () {
     $("#wrap").css("width", "auto");
     $("#wrap").css("height", "100%");
     $("#wrap").css("max-height", "100%");
-    $("#modal").css("padding-top", "10%");
+    $("#modal").css("padding-top", isLandscape() ? "2%" : "10%");
 };
 
 // Mobile-Only
 var checkHeight = function () {
     if (isMobile()) {
         if (window.innerHeight < 100) {
-            $("h1").css("display", "none");
             $("#buttons").css("display", "none");
         } else {
-            $("h1").css("display", "block");
             $("#buttons").css("display", "block");
         }
     }
+
+    updateOrientation();
 }
 
 // Mobile-only
 var updateOrientation = function () {
     if (isMobile()) {
-        $("h1").css("display", isLandscape() ? "none" : "block");
-        $("#tier_list_container").css("max-height", isLandscape() ? "62%" : "71%");
-        $("#characters").css("bottom", isLandscape() ? "20%" : "18%");
+        $("#title").css("display", isLandscape() ? "none" : "block");
+        $("#buttons").css("height", isLandscape() ? "22%" : "16%");
+        $("#characters").css("top", isLandscape() ? "2%" : "50px");
+        $("#characters").css("bottom", isLandscape() ? "25%" : "18%");
         $("#modal").css("padding-top", isLandscape() ? "2%" : "10%");
     }
 };
