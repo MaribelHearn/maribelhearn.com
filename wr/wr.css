@@ -103,10 +103,22 @@ table, th, td {
 .does_even_score_well {
     color: #e768c3;
 }
-@media only screen and (min-width: 1000px) and (max-width: 1400px) {
+@media only screen and (min-width: 1400px) and (max-width: 1600px) {
+    #wrap {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
     #wrap {
         margin-left: 15%;
         margin-right: 15%;
+    }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+    #wrap {
+        margin-left: 10%;
+        margin-right: 10%;
     }
 }
 @media only screen and (max-width: 1000px) {
