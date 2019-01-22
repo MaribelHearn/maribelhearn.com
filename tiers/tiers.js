@@ -673,20 +673,22 @@ var copyToClipboard = function () {
 };
 
 var exportText = function () {
-    var tierNum, character, i;
+    var tierNum, character, i, j;
 
     emptyModal();
     $("#text_conversion").html("<h2>Export to Text</h2><p id='text'></p>");
     $("#text_conversion").append("<p><input type='button' value='Copy to Clipboard' onClick='copyToClipboard()'></p>");
 
-    for (tierNum in tiers) {
+    for (i = 0; i < order.length; i++) {
+        tierNum = order[i];
+
         if (!tiers[tierNum].flag) {
             $("#text").append("<p>" + tiers[tierNum].name +
             ":</p><p>" + tiers[tierNum].bg + " " + tiers[tierNum].colour + "</p><p>");
 
-            for (i = 0; i < tiers[tierNum].chars.length; i++) {
+            for (j = 0; i < tiers[tierNum].chars.length; j++) {
                 character = $("#" + tiers[tierNum].chars[i]).attr("alt");
-                $("#text").append(character + (i == tiers[tierNum].chars.length - 1 ? "" : ", "));
+                $("#text").append(character + (j == tiers[tierNum].chars.length - 1 ? "" : ", "));
             }
 
             $("#text").append("</p>");
