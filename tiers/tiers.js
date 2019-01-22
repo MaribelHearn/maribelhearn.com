@@ -608,7 +608,7 @@ var menu = function () {
 };
 
 var load = function () {
-    var text = $("#import").val().split('\n'), counter = -1, i, j;
+    var text = $("#import").val().split('\n'), counter = -1, tierToAdd, i, j;
 
     $("#import_msg_container").html("<strong style='color:orange'>Please watch warmly as your tier list is imported...</strong>");
 
@@ -616,12 +616,27 @@ var load = function () {
         removeTier(tierNum, true);
     }
 
+    order = [];
+    tiers = {};
+
     for (i = 0; i < text.length; i++) {
         if (text[i].contains(':')) {
             addTier(text[i].replace(':', ""));
             counter += 1;
-        } else if (text[i] !== "") {
+            i += 1;
+        }
+
+        if (text[i].charAt(0) == '#') {
+            tiers[counter].bg = text[i].split(' ')[0];
+            tiers[counter].colour = text[i].split(' ')[1];
+            $("#th" + counter).css("background-color", tiers[counter].bg);
+            $("#th" + counter).css("color", tiers[counter].colour);
+            i += 1;
+        }
+
+        if (text[i] !== "") {
             characters = text[i].split(',');
+
             for (j = 0; j < characters.length; j++) {
                 if (characters[j] == "Mai") { // fix legacy name
                     characters[j] = "Mai PC-98";
@@ -662,10 +677,12 @@ var exportText = function () {
 
     emptyModal();
     $("#text_conversion").html("<h2>Export to Text</h2><p id='text'></p>");
+    $("#text_conversion").append("<p><input type='button' value='Copy to Clipboard' onClick='copyToClipboard()'></p>");
 
     for (tierNum in tiers) {
         if (!tiers[tierNum].flag) {
-            $("#text").append("<p>" + tiers[tierNum].name + ":</p><p>");
+            $("#text").append("<p>" + tiers[tierNum].name +
+            ":</p><p>" + tiers[tierNum].bg + " " + tiers[tierNum].colour + "</p><p>");
 
             for (i = 0; i < tiers[tierNum].chars.length; i++) {
                 character = $("#" + tiers[tierNum].chars[i]).attr("alt");
@@ -682,7 +699,6 @@ var exportText = function () {
         return;
     }
 
-    $("#text_conversion").append("<p><input type='button' value='Copy to Clipboard' onClick='copyToClipboard()'></p>");
     $("#text_conversion").css("display", "block");
     $("#modal").css("display", "block");
 };
