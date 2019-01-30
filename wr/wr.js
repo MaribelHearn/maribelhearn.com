@@ -19,8 +19,12 @@ function generateText() {
         $(".difficulty").html("Difficulty");
         $(".shottype").html("Shottype");
         $(".route").html("Route");
+        $(".overall").html("Overall");
+        $(".overallrecords").html("Overall Records");
         $(".playerranking").html("Player Ranking");
         $(".westernrecords").html("Western Records");
+        $(".tracked").html("Tracked");
+        $(".untracked").html("Untracked");
         $(".world").html("World");
         $(".west").html("West");
         $(".percentage").html("Percentage");
@@ -137,8 +141,12 @@ function generateText() {
         $(".difficulty").html("難易度");
         $(".shottype").html("キャラ");
         $(".route").html("ルート");
+        $(".overall").html("Overall");
+        $(".overallrecords").html("Overall Records");
         $(".playerranking").html("プレイヤーのランキング");
         $(".westernrecords").html("海外記録");
+        $(".tracked").html("Tracked");
+        $(".untracked").html("Untracked");
         $(".world").html("世界");
         $(".west").html("海外"); // The West = 西洋
         $(".percentage").html("割合");
@@ -254,8 +262,12 @@ function generateText() {
         $(".difficulty").html("难度");
         $(".shottype").html("机体");
         $(".route").html("路线");
+        $(".overall").html("整体");
+        $(".overallrecords").html("整体世界纪录");
         $(".playerranking").html("玩家排行");
         $(".westernrecords").html("西方纪录");
+        $(".tracked").html("已纪录");
+        $(".untracked").html("未纪录");
         $(".world").html("世界");
         $(".west").html("西方");
         $(".percentage").html("百分");

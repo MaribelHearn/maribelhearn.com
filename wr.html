@@ -43,12 +43,12 @@
             <p id='notice' style='display:none'><strong>Notice:</strong> this page is best viewed on mobile using landscape mode.</p>
             <p>An accurate list of Touhou world records, updated every so often. Note that the player ranking at the bottom does not take into account how strong specific records are, only numbers.
             The list does not include scene games as of now.</p>
-            <p>World records are current as of January 21, 2018.</p>
+            <p>World records are current as of January 30, 2019.</p>
             <p>Click a score to download the corresponding replay, if there is one available. All of the table columns are sortable.</p>
             <p>The replays provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.</p>
             <h2 id='contents_header'>Contents</h2>
             <table id='contents'>
-                <tr><td><a href='#overall'>Overall Records</a></td></tr>
+                <tr><td><a href='#overall' class='overallrecords'>Overall Records</a></td></tr>
                 <tr><td><a href='#HRtP' class='th1'>Touhou 1 - The Highly Responsive to Prayers</a></td></tr>
                 <tr><td><a href='#SoEW' class='th2'>Touhou 2 - The Story of Eastern Wonderland</a></td></tr>
                 <tr><td><a href='#PoDD' class='th3'>Touhou 3 - Phantasmagoria of Dim.Dream</a></td></tr>
@@ -144,13 +144,13 @@
                     <tr>
                         <td>
                             <input id='overallc' type='checkbox' onClick='checkGame("overall")' checked>
-                            <label for='overallc'>Overall</label>
+                            <label for='overallc' class='overall'>Overall</label>
                         </td><td>
                             <input id='tracked' type='checkbox' onClick='checkTracked()' checked>
-                            <label for='tracked'>Tracked</label>
+                            <label for='tracked' class='tracked'>Tracked</label>
                         </td><td>
                             <input id='untracked' type='checkbox' onClick='checkUntracked()' checked>
-                            <label for='untracked'>Untracked</label>
+                            <label for='untracked' class='untracked'>Untracked</label>
                         </td><td>
 							<input id='all' type='checkbox' onClick='checkAll()' checked>
                             <label id='label_all' for='untracked'>All</label>
@@ -166,7 +166,7 @@
             </table>
 			<p></p>
             <div id='overall'>
-                <h2>Overall Records</h2>
+                <h2 class='overallrecords'>Overall Records</h2>
                 <table class='sortable'>
                     <tr>
                         <th>#</th>
