@@ -41,14 +41,19 @@ table {
 #notice {
 	display: none;
 }
-#chars_table.sortable tbody, #music_table.sortable tbody, #works_table.sortable tbody {
+#chars_table.sortable tbody, #music_table.sortable tbody, #works_table.sortable tbody, #eosd_table.sortable tbody, #pcb_table.sortable tbody, #in_table.sortable tbody,
+#mof_table.sortable tbody, #sa_table.sortable tbody, #ufo_table.sortable tbody, #td_table.sortable tbody, #ddc_table.sortable tbody, #lolk_table.sortable tbody,
+#hsifs_table.sortable tbody {
     counter-reset: sortabletablescope;
 }
-#chars_head, #music_head, #works_head {
+#chars_head, #music_head, #works_head, #eosd_head, #pcb_head, #in_head, #mof_head, #sa_head, #ufo_head, #td_head, #ddc_head, #lolk_head, #hsifs_head {
     content: "";
     display: table-cell;
 }
-#chars_table.sortable tbody tr:before, #music_table.sortable tbody tr:before, #works_table.sortable tbody tr:before {
+#chars_table.sortable tbody tr:before, #music_table.sortable tbody tr:before, #works_table.sortable tbody tr:before, #eosd_table.sortable tbody tr:before,
+#pcb_table.sortable tbody tr:before, #in_table.sortable tbody tr:before, #mof_table.sortable tbody tr:before, #sa_table.sortable tbody tr:before,
+#ufo_table.sortable tbody tr:before, #td_table.sortable tbody tr:before, #ddc_table.sortable tbody tr:before, #lolk_table.sortable tbody tr:before,
+#hsifs_table.sortable tbody tr:before {
     content: counter(sortabletablescope);
     counter-increment: sortabletablescope;
     display: table-cell;
