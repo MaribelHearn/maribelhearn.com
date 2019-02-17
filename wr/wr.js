@@ -10,7 +10,7 @@ String.prototype.removeSeason = function () {
     return this.replace("Spring", "").replace("Summer", "").replace("Autumn", "").replace("Winter", "");
 };
 
-function generateText() {
+/*function generateText() {
     if (language == "English") {
         $("title").html("Touhou World Records");
         $("h1").html("Touhou World Records");
@@ -376,7 +376,7 @@ function generateText() {
         $("#differentgames").html("游戏");
         $("#backtotop").html("回到顶部");
     }
-}
+}*/
 
 function bestSeason(difficulty, shottype) {
     var shottypes = WRs.HSiFS[difficulty], max = 0, season, i;
