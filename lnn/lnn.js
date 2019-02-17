@@ -1,6 +1,6 @@
 var LNNs, language = "English", all = ["overall", "players", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"];
 
-function generateText() {
+/*function generateText() {
     if (language == "English") {
         $("title").html("Touhou Lunatic No Miss No Bombs");
         $("h1").html("Touhou Lunatic No Miss No Bombs");
@@ -366,7 +366,7 @@ function generateText() {
         $(".CirnoWinter").html("琪露诺冬");
         $(".AyaWinter").html("文冬");
         $(".MarisaWinter").html("魔理沙冬");
-        $("#tables").html("所有表格是排序。");
+        $("#tables").html("所有表格均可分类。");
         $("#contents_header").html("内容");
         $("#customize").html("定制");
         $("#score").html("分数");
@@ -385,7 +385,7 @@ function setLanguage(newLanguage) {
     language = newLanguage;
     generateText();
     setCookie("lang", newLanguage);
-}
+}*/
 
 function show(game) {
     $("#" + game).css("display", "block");
