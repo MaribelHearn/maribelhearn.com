@@ -112,6 +112,7 @@ var addToTier = function (character, tierNum, pos) {
 
     $("#msg_container").html("");
     $("#" + character).removeClass("list");
+    $("#" + character).addClass("tiered");
 
     if (isMobile()) {
         $("#" + character).attr("onContextMenu", "modalChar('" + character + "', " + tierNum + "); return false;");
@@ -201,6 +202,7 @@ var removeFromTier = function (character, tierNum) {
     }
 
     $("#msg_container").html("");
+    $("#" + character).removeClass("tiered");
     $("#" + character).addClass("list");
     $("#" + character).attr("onContextMenu", "");
 
@@ -1037,7 +1039,7 @@ var drop = function (event) {
     event.preventDefault();
 
     if (event.target.id.substring(0, 2) == "th" || event.target.id.substring(0, 4) == "tier") {
-        tierNum = Number(event.target.id.replace("th", "").replace("tier", ""));
+        tierNum = Number(event.target.id.replace("th", "").replace("tier", "").replace(/_\d+/, ""));
 
         if (isTiered(following)) {
             changeToTier(following, tierNum);
@@ -1215,10 +1217,11 @@ var applyMobileCSS = function () {
     $("#add_tier_box").attr("colspan", "2");
     $("#tier_name").css("width", "auto");
     $("#add_tier").css("width", "auto");
-    $(".list").css("width", "80px");
-    $(".list").css("height", "80px");
-    $("img").css("width", "60px");
-    $("img").css("height", "60px");
+    $(".list").css("width", "60px");
+    $(".list").css("height", "60px");
+    $(".tiered").css("width", "60px");
+    $(".tiered").css("height", "60px");
+    $("#nav").css("display", "none");
     $("#wrap").css("top", "5px");
     $("#wrap").css("bottom", "5px");
     $("#wrap").css("right", "5px");

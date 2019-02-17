@@ -5,6 +5,7 @@ body {
 h1 {
 	font-family: 'Felipa';
 	font-size: 48px;
+	margin: 15px;
 }
 h2 {
 	font-family: 'Felipa';
@@ -16,10 +17,6 @@ h3 {
 }
 p {
 	margin: 10px;
-}
-img {
-	width: 120px;
-	height: 120px;
 }
 label {
 	padding-right: 5px;
@@ -50,11 +47,19 @@ input[type=number] {
 	width: 80px;
 	height: 80px;
 }
+.tiered {
+	width: 120px;
+	height: 120px;
+}
 .name {
 	margin-top: 10px;
 }
 .colour {
 	margin-bottom: 10px;
+}
+.ico-32 {
+    width: 16px;
+    height: 16px;
 }
 #notice {
 	display: none;

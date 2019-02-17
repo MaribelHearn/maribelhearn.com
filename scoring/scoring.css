@@ -23,15 +23,8 @@ input[type=number] {
 input[type=button] {
     margin: 5px;
 }
-#wrap {
-    border: 1px solid black;
-    text-align: center;
-    margin-left: 24%;
-    margin-right: 24%;
-	padding-left: 10px;
-	padding-right: 10px;
-    opacity: 0.8;
-    font: 14px verdana, sans-serif;
+#nav {
+    margin-bottom: 5px;
 }
 #notice {
     display: none;
@@ -75,6 +68,16 @@ input[type=button] {
     counter-increment: sortabletablescope;
     display: table-cell;
 }
+.wrap {
+    border: 1px solid black;
+    text-align: center;
+    margin-left: 24%;
+    margin-right: 24%;
+	padding-left: 10px;
+	padding-right: 10px;
+    opacity: 0.8;
+    font: 14px verdana, sans-serif;
+}
 .center {
     margin-left: auto;
     margin-right: auto;
@@ -93,26 +96,30 @@ input[type=button] {
 .noborders {
     border: none;
 }
+.ico-32 {
+    width: 16px;
+    height: 16px;
+}
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
-    #wrap {
+    .wrap {
         margin-left: 15%;
         margin-right: 15%;
     }
 }
 @media only screen and (min-width: 1100px) and (max-width: 1200px) {
-    #wrap {
+    .wrap {
         margin-left: 10%;
         margin-right: 10%;
     }
 }
 @media only screen and (min-width: 900px) and (max-width: 1100px) {
-    #wrap {
+    .wrap {
         margin-left: 5%;
         margin-right: 5%;
     }
 }
 @media only screen and (max-width: 900px) {
-    #wrap {
+    .wrap {
         margin-left: 0%;
         margin-right: 0%;
     }
@@ -121,7 +128,7 @@ input[type=button] {
     input {
         width: 85px;
     }
-	#wrap {
+	.wrap {
         margin-left: 0%;
         margin-right: 0%;
         font-size: 13px;
@@ -131,7 +138,7 @@ input[type=button] {
     input {
         width: 80px;
     }
-	#wrap {
+	.wrap {
         margin-left: 0%;
         margin-right: 0%;
         font-size: 13px;
