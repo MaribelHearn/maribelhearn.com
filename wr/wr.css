@@ -29,15 +29,8 @@ table, th, td {
     line-height: 1em;
     color: black;
 }
-#wrap {
-    border: 1px solid black;
-    text-align: center;
-    margin-left: 25%;
-    margin-right: 25%;
-    padding-left: 15px;
-    padding-right: 15px;
-    opacity: 0.8;
-    font: 14px verdana, sans-serif;
+#nav {
+    margin-bottom: 5px;
 }
 #wrap:after {
     content: "\200C";
@@ -56,6 +49,16 @@ table, th, td {
     content: counter(sortabletablescope);
     counter-increment: sortabletablescope;
     display: table-cell;
+}
+.wrap {
+    border: 1px solid black;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-left: 15px;
+    padding-right: 15px;
+    opacity: 0.8;
+    font: 14px verdana, sans-serif;
 }
 .noborders {
     border: none;
@@ -103,39 +106,43 @@ table, th, td {
 .does_even_score_well {
     color: #e768c3;
 }
+.ico-32 {
+    width: 16px;
+    height: 16px;
+}
 @media only screen and (min-width: 1400px) and (max-width: 1600px) {
-    #wrap {
+    .wrap {
         margin-left: 20%;
         margin-right: 20%;
     }
 }
 @media only screen and (min-width: 1200px) and (max-width: 1400px) {
-    #wrap {
+    .wrap {
         margin-left: 15%;
         margin-right: 15%;
     }
 }
 @media only screen and (min-width: 1000px) and (max-width: 1200px) {
-    #wrap {
+    .wrap {
         margin-left: 10%;
         margin-right: 10%;
     }
 }
 @media only screen and (max-width: 1000px) {
-    #wrap {
+    .wrap {
         margin-left: 0%;
         margin-right: 0%;
     }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
-	#wrap {
+	.wrap {
         margin-left: 0%;
         margin-right: 0%;
         font-size: 11px;
     }
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
-	#wrap {
+	.wrap {
         margin-left: 0%;
         margin-right: 0%;
         font-size: 11px;

@@ -16,14 +16,19 @@ h2 {
 p {
     margin: 10px;
 }
+#nav {
+    margin-bottom: 5px;
+}
 #wrap {
+    padding-bottom: 15px;
+}
+.wrap {
     border: 1px solid black;
     text-align: center;
     margin-left: 23%;
     margin-right: 23%;
     padding-left: 15px;
     padding-right: 15px;
-    padding-bottom: 15px;
     opacity: 0.8;
     font: 14px verdana, sans-serif;
 }
@@ -36,26 +41,29 @@ p {
     height: 16px;
 }
 @media only screen and (min-width: 800px) and (max-width: 1400px) {
-    #wrap {
+    .wrap {
         margin-left: 15%;
         margin-right: 15%;
     }
 }
 @media only screen and (max-width: 800px) {
-    #wrap {
+    .wrap {
         margin-left: 0%;
         margin-right: 0%;
     }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
-	#wrap {
+	.wrap {
         margin-left: 0%;
         margin-right: 0%;
+		font-size: 11px;
+		padding-left: 0px;
+		padding-right: 0px;
     }
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
-	#wrap {
-        margin-left: 15%;
-        margin-right: 15%;
+	.wrap {
+        margin-left: 0%;
+        margin-right: 0%;
     }
 }
