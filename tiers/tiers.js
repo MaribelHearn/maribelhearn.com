@@ -688,8 +688,8 @@ var exportText = function () {
             $("#text").append("<p>" + tiers[tierNum].name +
             ":</p><p>" + tiers[tierNum].bg + " " + tiers[tierNum].colour + "</p><p>");
 
-            for (j = 0; i < tiers[tierNum].chars.length; j++) {
-                character = $("#" + tiers[tierNum].chars[i]).attr("alt");
+            for (j = 0; j < tiers[tierNum].chars.length; j++) {
+                character = $("#" + tiers[tierNum].chars[j]).attr("alt");
                 $("#text").append(character + (j == tiers[tierNum].chars.length - 1 ? "" : ", "));
             }
 
