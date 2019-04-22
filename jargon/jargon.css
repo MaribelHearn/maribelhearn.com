@@ -19,8 +19,12 @@ h2 {
 #wrap {
 	padding-bottom: 15px;
 }
-#jargontable, #spelltable {
+#jargontable, #spelltable, #bullettable {
     text-align: justify;
+}
+#bullettable {
+	margin-left: auto;
+	margin-right: auto;
 }
 .wrap {
     border: 1px solid black;
