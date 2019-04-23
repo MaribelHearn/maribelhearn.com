@@ -1,0 +1,31 @@
+{
+    "PC-98": {
+        "chars": ["Highly Responsive to Prayers", "Story of Eastern Wonderland", "Phantasmagoria of Dim.Dream",
+            "Lotus Land Story", "Mystic Square"]
+    },
+    "Classic": {
+        "chars": ["Embodiment of Scarlet Devil", "Perfect Cherry Blossom", "Immaterial and Missing Power",
+            "Imperishable Night", "Phantasmagoria of Flower View", "Shoot the Bullet"]
+    },
+    "Modern1": {
+        "chars": ["Mountain of Faith", "Scarlet Weather Rhapsody", "Subterranean Animism", "Undefined Fantastic Object",
+            "Touhou Hisoutensoku", "Double Spoiler", "Great Fairy Wars"]
+    },
+    "Modern2": {
+        "chars": ["Ten Desires", "Hopeless Masquerade", "Double Dealing Character", "Urban Legend in Limbo",
+            "Legacy of Lunatic Kingdom", "Antinomy of Common Flowers", "Hidden Star in Four Seasons", "Violet Detector"]
+    },
+    "Manga": {
+        "chars": ["Touhou Sangetsusei", "Touhou Bougetsushou", "Wild and Horned Hermit",
+            "Curiosities of Lotus Asia", "Forbidden Scrollery"]
+    },
+    "Books": {
+        "chars": ["Bohemian Archive in Japanese Red", "Perfect Memento in Strict Sense", "The Grimoire of Marisa",
+            "Symposium of Post-mysticism", "Alternative Facts in Eastern Utopia"]
+    },
+    "CDs": {
+        "chars": ["Dolls in Pseudo Paradise", "Ghostly Field Club", "Changeability of Strange Dream",
+            "Retrospective 53 minutes", "Akyuu's Untouched Score", "Magical Astronomy", "Unknown Flower, Mesmerizing Journey",
+            "Trojan Green Asteroid", "Neo-traditionalism of Japan", "Dr. Latency's Freak Report", "Dateless Bar \"Old Adam\""]
+    }
+}
