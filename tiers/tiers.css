@@ -30,6 +30,9 @@ a:visited {
 input[type=number] {
 	height: 20px;
 }
+.instructions {
+	display: none;
+}
 .tier_header {
 	font-size: 32px;
 	width: 120px;

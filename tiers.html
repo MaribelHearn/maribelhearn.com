@@ -32,12 +32,17 @@
     				<strong><img src='tiers/castle.png' alt='Japanese castle icon'> Tiers</a></strong>
     			</nav>
                 <h1 id='title'>Touhou Tier List Creator</h1>
+                <div id='sort_selection'>Currently tiering: <select id='sort' onChange='switchSort()'>
+                    <option value='characters'>Characters</option>
+                    <option value='works'>Works</option>
+                </select></div>
                 <div id='instructions'>
                     <p class='instructions'>This page allows you to create your own Touhou character tier list. Usage instructions are listed below.</p>
                     <ul id='instructions_list' class='instructions'>
                         <li>Drag a character onto a tier box to add that character to it.</li>
                         <li>Drag a character from the picker onto a tiered character to insert them to the right of them.</li>
                         <li>Drag a tiered character onto another tiered character to swap their positions.</li>
+                        <li>Double click a character to add them to the most recently added tier (not remembered after closure).</li>
                         <li>Right click a character in a tier, or drag them onto the picker, to remove them from that tier.</li>
                         <li>Click a tier and then another tier to swap their positions.</li>
                         <li>Ctrl+Click a tier to automatically add all remaining characters to it, and Ctrl+Right Click a tier to empty it.</li>
@@ -45,7 +50,7 @@
                         <li>Hover your cursor above a character to see their name.</li>
                     </ul>
                 </div>
-                <p id='toggle'><a href='javascript:toggleInstructions()'>Click here to hide the instructions.</a></p>
+                <p id='toggle'><a href='javascript:toggleInstructions()'>Click here to show the instructions.</a></p>
             </div>
             <div id='tier_list_container'>
                 <table id='tier_list_table'>
@@ -81,11 +86,11 @@
                 <input type='button' value='Settings' onClick='settingsMenu()'>
                 <input type='button' value='Reset' onClick='eraseAll()'>
             </div>
-            <span id='instructions_button'></span>
+            <span id='information_button'></span>
             <span id='view_button'></span>
             <span id='mobile_button_split'></span>
             <span id='menu_button'></span>
-            <span id='credits_button'></span>
+            <span id='switch_button'></span>
             <p id='msg_container'></p>
         </div>
         <div id='show'><input type='button' value='Normal View' onClick='toggleTierView()'></div>
