@@ -1,6 +1,6 @@
 {
     "PC-98": {
-        "chars": ["Highly Responsive to Prayers", "Story of Eastern Wonderland", "Phantasmagoria of Dim.Dream",
+        "chars": ["Highly Responsive to Prayers", "Story of Eastern Wonderland", "Phantasmagoria of Dim Dream",
             "Lotus Land Story", "Mystic Square"]
     },
     "Classic": {
@@ -26,6 +26,6 @@
     "CDs": {
         "chars": ["Dolls in Pseudo Paradise", "Ghostly Field Club", "Changeability of Strange Dream",
             "Retrospective 53 minutes", "Akyuus Untouched Score", "Magical Astronomy", "Unknown Flower Mesmerizing Journey",
-            "Trojan Green Asteroid", "Neo-traditionalism of Japan", "Dr. Latencys Freak Report", "Dateless Bar \"Old Adam\""]
+            "Trojan Green Asteroid", "Neo-traditionalism of Japan", "Dr Latencys Freak Report", "Dateless Bar Old Adam"]
     }
 }

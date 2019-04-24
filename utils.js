@@ -119,3 +119,11 @@ Object.defineProperty(Array.prototype, "append", {
         }
     }
 });
+
+Object.defineProperty(Object.prototype, "isEmpty", {
+    configurable: true,
+    enumerable: false,
+    value: function () {
+        return Object.keys(this).length === 0;
+    }
+});
