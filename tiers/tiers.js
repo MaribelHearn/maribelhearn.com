@@ -533,6 +533,10 @@ var removeTier = function (tierNum, skipConfirmation) {
         $("#tr" + tierNum).remove();
         tierList[tierNum].flag = true;
         tierOrder.remove(tierNum);
+
+        if (mostRecentTiers[settings.sort] == tierNum) {
+            mostRecentTiers[settings.sort] = -1;
+        }
     }
 
     window.onbeforeunload = function () { return confirm(); };
@@ -1191,12 +1195,16 @@ var toggleTierView = function () {
 var eraseAllConfirmed = function () {
     var tierNum;
 
-    for (tierNum in tiers) {
-        removeTier(tierNum, true);
+    if (settings.sort == "characters") {
+        for (tierNum in tiers) {
+            removeTier(tierNum, true);
+        }
     }
 
-    for (tierNum in gameTiers) {
-        removeTier(tierNum, true);
+    if (settings.sort == "works") {
+        for (tierNum in gameTiers) {
+            removeTier(tierNum, true);
+        }
     }
 
     order = [];
