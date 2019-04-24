@@ -653,8 +653,7 @@ var toggleInstructions = function () {
 };
 
 var cookieSaved = function () {
-    return listCookies().contains("tiers") || listCookies().contains("settings") || listCookies().contains("order") ||
-        listCookies().contains("gameTiers") || listCookies().contains("gameOrder");
+    return listCookies().contains("tiers") || listCookies().contains("settings") || listCookies().contains("order") || listCookies().contains("gameTiers") || listCookies().contains("gameOrder");
 };
 
 var allowCookies = function () {
@@ -721,25 +720,6 @@ var saveSettingsPre = function () {
         return;
     }
 
-    saveSettingsCookie();
-};
-
-var saveAll = function() {
-    if (isMobile() && !cookieSaved()) {
-        emptyModal();
-        $("#mobile_modal").html("<h3>Save Tiers</h3><p>This will store a cookie file on your device. Do you allow this?</p>");
-        $("#mobile_modal").append("<input type='button' value='Yes' onClick='saveTiersCookie(); saveSettingsCookie()' style='margin: 10px'>");
-        $("#mobile_modal").append("<input type='button' value='No' onClick='emptyModal()' style='margin: 10px'>");
-        $("#mobile_modal").css("display", "block");
-        $("#modal").css("display", "block");
-        return;
-    }
-
-    if (!allowCookies()) {
-        return;
-    }
-
-    saveTiersCookie();
     saveSettingsCookie();
 };
 
