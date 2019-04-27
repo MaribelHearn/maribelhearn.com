@@ -32,7 +32,7 @@
 			</nav>
 		</div>
         <div id='wrap' class='wrap'>
-            <!--<table id='languages' class='noborders'>
+            <table id='languages' class='noborders'>
                 <tbody>
                     <tr class='noborders'>
                         <td class='noborders'>
@@ -41,26 +41,26 @@
                         <td class='noborders'>
                             <a href='javascript:setLanguage("Japanese")'><img src='drc/japan.png' alt='Flag of Japan'></a>
                         </td>
-                        <td class='noborders'>
+                        <!--<td class='noborders'>
                             <a href='javascript:setLanguage("Chinese")'><img src='drc/china.png' alt='Flag of the P.R.C.'></a>
-                        </td>
+                        </td>-->
                     </tr>
                     <tr class='noborders'>
                         <td class='noborders'><a href='javascript:setLanguage("English")'>English</a></td>
                         <td class='noborders'><a href='javascript:setLanguage("Japanese")'>日本語</a></td>
-                        <td class='noborders'><a href='javascript:setLanguage("Chinese")'>简体中文</a></td>
+                        <!--<td class='noborders'><a href='javascript:setLanguage("Chinese")'>简体中文</a></td>-->
                     </tr>
                 </tbody>
-            </table>-->
+            </table>
 			<h1>Touhou Lunatic No Miss No Bombs</h1>
             <noscript><strong>Notice:</strong> this page cannot function properly with JavaScript disabled.</noscript>
-            <p>A listing of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. For every shottype in a game, tables will tell you which players have done an LNN with it, if any.
+            <p id='description'>A listing of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. For every shottype in a game, tables will tell you which players have done an LNN with it, if any.
             If a player has multiple LNNs for one particular shottype, those are not factored in.</p>
-            <p>Extra conditions are required for PCB, TD and HSiFS; these are No Border Breaks, No Trance and No Release respectively. LNN in these games is called LNNN, with an extra N to denote the extra condition.
+            <p id='conditions'>Extra conditions are required for PCB, TD and HSiFS; these are No Border Breaks, No Trance and No Release respectively. LNN in these games is called LNNN, with an extra N to denote the extra condition.
             The extra condition in UFO, no UFO summons, is optional, as it is not considered to have a significant impact on the difficulty of the run.
             As for IN, an LNN is assumed to capture all Last Spells and is referred to as LNNFS.</p>
-            <p>LNNs are current as of March 25, 2019.</p>
             <p id='tables'>All of the table columns are sortable.</p>
+            <p id='lastupdate'>LNNs are current as of April 26, 2019.</p><!-- Update through JS file -->
             <h2 id='contents_header'>Contents</h2>
             <table id='contents'>
                 <tr><td><a href='#SoEW' class='th2'>Touhou 2 - The Story of Eastern Wonderland</a></td></tr>
@@ -157,6 +157,7 @@
                     </tr>
                 </tfoot>
             </table>
+			<h2 id='lnns'>LNN Listings</h2>
             <div id='SoEW' style='display:block'>
 			<p><img src='games/soew.jpg' class='cover' alt='SoEW cover'> <span class='th2'>Touhou 2 - The Story of Eastern Wonderland</span></p>
                 <table class='sortable'>

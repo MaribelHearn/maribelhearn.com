@@ -1,6 +1,8 @@
-var LNNs, language = "English", all = ["overall", "players", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"];
+var LNNs, language = "English", all = ["overall", "players", "SoEW", "PoDD", "LLS", "MS", "EoSD",
+    "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
+    lastUpdate =  "April 26, 2019";
 
-/*function generateText() {
+function generateText() {
     if (language == "English") {
         $("title").html("Touhou Lunatic No Miss No Bombs");
         $("h1").html("Touhou Lunatic No Miss No Bombs");
@@ -118,7 +120,15 @@ var LNNs, language = "English", all = ["overall", "players", "SoEW", "PoDD", "LL
         $(".CirnoWinter").html("CirnoWinter");
         $(".AyaWinter").html("AyaWinter");
         $(".MarisaWinter").html("MarisaWinter");
+        $("#description").html("A listing of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. " +
+        "For every shottype in a game, tables will tell you which players have done an LNN with it, if any." +
+        "If a player has multiple LNNs for one particular shottype, those are not factored in.");
+        $("#conditions").html(">Extra conditions are required for PCB, TD and HSiFS; these are No Border Breaks, " +
+        "No Trance and No Release respectively. LNN in these games is called LNNN, with an extra N to denote the extra condition." +
+        "The extra condition in UFO, no UFO summons, is optional, as it is not considered to have a significant impact on " +
+        "the difficulty of the run. As for IN, an LNN is assumed to capture all Last Spells and is referred to as LNNFS.");
         $("#tables").html("All of the table columns are sortable.");
+        $("#lastupdate").html("LNNs are current as of " + lastUpdate + ".");
         $("#contents_header").html("Contents");
         $("#customize").html("Customize");
         $("#score").html("Score");
@@ -242,9 +252,18 @@ var LNNs, language = "English", all = ["overall", "players", "SoEW", "PoDD", "LL
         $(".CirnoWinter").html("チルノ冬");
         $(".AyaWinter").html("文冬");
         $(".MarisaWinter").html("魔理沙冬");
-        $("#tables").html("すべてのテーブル列がソート可能です。");
+        $("#description").html("東方原作STG各作品の難易度Lunaticのノーミスノーボム（LNN）リストです。適宜頻繁に更新します。" +
+        "各作品の表とも、各機体において誰が達成したかを記載しています。特定の作品、" +
+        "ショットタイプで複数回のLNNを達成している場合でも１回とカウントされます。");
+        $("#conditions").html("また妖々夢では霊撃無し、神霊廟ではトランス無し、天空璋では開放無しが条件となります。" +
+        "この３作品では追加条件によってNが追加され、LNNNと呼称します。" +
+        "また星蓮船ではUFO招喚無しも考慮されますが、難易度が劇的に変化するわけではないため必須条件とはなっていません。" +
+        "永夜抄ではラストスペル取得を含めLNNFSが条件となります。");
+        $("#tables").html("各欄は並べ替え可能となっています。並べ替えには各表の最上段をクリックしてください。");
+        $("#lastupdate").html(translateDate(lastUpdate) + "現在のLNN記録です。");
         $("#contents_header").html("内容");
         $("#customize").html("カスタマイズ");
+        $("#lnns").html("LNNリスト");
         $("#score").html("スコア");
         $("#label_all").html("全");
         $("#autosort").html("WR数");
@@ -366,9 +385,18 @@ var LNNs, language = "English", all = ["overall", "players", "SoEW", "PoDD", "LL
         $(".CirnoWinter").html("琪露诺冬");
         $(".AyaWinter").html("文冬");
         $(".MarisaWinter").html("魔理沙冬");
+        $("#description").html("A listing of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. " +
+        "For every shottype in a game, tables will tell you which players have done an LNN with it, if any." +
+        "If a player has multiple LNNs for one particular shottype, those are not factored in.");
+        $("#conditions").html(">Extra conditions are required for PCB, TD and HSiFS; these are No Border Breaks, " +
+        "No Trance and No Release respectively. LNN in these games is called LNNN, with an extra N to denote the extra condition." +
+        "The extra condition in UFO, no UFO summons, is optional, as it is not considered to have a significant impact on " +
+        "the difficulty of the run. As for IN, an LNN is assumed to capture all Last Spells and is referred to as LNNFS.");
         $("#tables").html("所有表格均可分类。");
+        $("#lastupdate").html("LNNs are current as of " + translateDate(lastUpdate) + ".");
         $("#contents_header").html("内容");
         $("#customize").html("定制");
+        $("#lnns").html("LNN Listings");
         $("#score").html("分数");
         $("#label_all").html("皆");
         $("#autosort").html("WR数量");
@@ -385,7 +413,7 @@ function setLanguage(newLanguage) {
     language = newLanguage;
     generateText();
     setCookie("lang", newLanguage);
-}*/
+}
 
 function show(game) {
     $("#" + game).css("display", "block");
@@ -535,12 +563,12 @@ $(document).ready(function() {
         $("#autosort1").click();
         $("#autosort1").click();
 
-        /*if (getCookie("lang") == "Japanese") {
+        if (getCookie("lang") == "Japanese") {
             language = "Japanese";
             generateText();
         } else if (getCookie("lang") == "Chinese") {
             language = "Chinese";
             generateText();
-        }*/
+        }
     }, "json");
 });
