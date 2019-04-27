@@ -1,6 +1,8 @@
 var WRs, playerWRs, compareWRs, westScores, seasonsEnabled, language = "English", skips = [],
     all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
-    tracked = ["EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"], untracked = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "PoFV"];
+    windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
+    pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"],
+    lastUpdate = "April 26, 2019";
 
 String.prototype.removeChar = function () {
     return this.replace("Reimu", "").replace("Cirno", "").replace("Aya", "").replace("Marisa", "");
@@ -10,10 +12,15 @@ String.prototype.removeSeason = function () {
     return this.replace("Spring", "").replace("Summer", "").replace("Autumn", "").replace("Winter", "");
 };
 
-/*function generateText() {
+function generateText() {
     if (language == "English") {
         $("title").html("Touhou World Records");
         $("h1").html("Touhou World Records");
+        $("#description").html("An accurate list of Touhou world records, updated every so often. Note that the player ranking at the bottom does not take into account" +
+        "how strong specific records are, only numbers. The list does not include scene games as of now.");
+        $("#clicktodl").html("Click a score to download the corresponding replay, if there is one available. All of the table columns are sortable.");
+        $("#noreup").html("The replays provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.");
+        $("#lastupdate").html("World records are current as of " + lastUpdate + ".");
         $(".game").html("Game");
         $(".player").html("Player");
         $(".difficulty").html("Difficulty");
@@ -23,8 +30,8 @@ String.prototype.removeSeason = function () {
         $(".overallrecords").html("Overall Records");
         $(".playerranking").html("Player Ranking");
         $(".westernrecords").html("Western Records");
-        $(".tracked").html("Tracked");
-        $(".untracked").html("Untracked");
+        $(".windows").html("Windows");
+        $(".pc98").html("PC-98");
         $(".world").html("World");
         $(".west").html("West");
         $(".percentage").html("Percentage");
@@ -136,17 +143,25 @@ String.prototype.removeSeason = function () {
     } else if (language == "Japanese") {
         $("title").html("東方の世界記録");
         $("h1").html("東方の世界記録");
+        $("#description").html("東方原作STG各作品世界記録の正確なリストです。適宜頻繁に更新します。" +
+        "下部に記載されているプレイヤーランキングは特定のスコアの高低を示すものではなく、あくまで世界記録取得数を示したものですのでご留意ください。" +
+        "また今のところ文花帖のようなシーンを基準にするリストは作成しておりません。");
+        $("#clicktodl").html("該当のリプレイファイルをダウンロードするにはスコアをクリックしてください。" +
+        "各欄は並べ替え可能となっています。並べ替えには各表の最上段をクリックしてください。");
+        $("#noreup").html("リプレイファイルの二次利用は禁止致します。");
+        $("#lastupdate").html(translateDate(lastUpdate) + "現在の世界記録です。");
         $(".game").html("ゲーム");
         $(".player").html("プレイヤー");
         $(".difficulty").html("難易度");
         $(".shottype").html("キャラ");
         $(".route").html("ルート");
-        $(".overall").html("Overall");
-        $(".overallrecords").html("Overall Records");
+        $(".overall").html("WR一覧");
+        $(".overallrecords").html("各作品世界記録一覧");
+        $(".worldrecords").html("世界記録");
         $(".playerranking").html("プレイヤーのランキング");
         $(".westernrecords").html("海外記録");
-        $(".tracked").html("Tracked");
-        $(".untracked").html("Untracked");
+        $(".windows").html("Windows");
+        $(".pc98").html("PC-98");
         $(".world").html("世界");
         $(".west").html("海外"); // The West = 西洋
         $(".percentage").html("割合");
@@ -257,6 +272,11 @@ String.prototype.removeSeason = function () {
     } else { // language == "Chinese"
         $("title").html("东方世界纪录");
         $("h1").html("东方世界纪录");
+        $("#description").html("An accurate list of Touhou world records, updated every so often. Note that the player ranking at the bottom does not take into account" +
+        "how strong specific records are, only numbers. The list does not include scene games as of now.");
+        $("#clicktodl").html("Click a score to download the corresponding replay, if there is one available. All of the table columns are sortable.");
+        $("#noreup").html("The replays provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.");
+        $("#lastupdate").html("World records are current as of " + translateDate(lastUpdate) + ".");
         $(".game").html("游戏");
         $(".player").html("玩家");
         $(".difficulty").html("难度");
@@ -264,10 +284,11 @@ String.prototype.removeSeason = function () {
         $(".route").html("路线");
         $(".overall").html("整体");
         $(".overallrecords").html("整体世界纪录");
+        $(".worldrecords").html("世界纪录");
         $(".playerranking").html("玩家排行");
         $(".westernrecords").html("西方纪录");
-        $(".tracked").html("已纪录");
-        $(".untracked").html("未纪录");
+        $(".windows").html("Windows"); // tracked = 已纪录
+        $(".pc98").html("PC-98"); // untracked = 未纪录
         $(".world").html("世界");
         $(".west").html("西方");
         $(".percentage").html("百分");
@@ -376,7 +397,7 @@ String.prototype.removeSeason = function () {
         $("#differentgames").html("游戏");
         $("#backtotop").html("回到顶部");
     }
-}*/
+}
 
 function bestSeason(difficulty, shottype) {
     var shottypes = WRs.HSiFS[difficulty], max = 0, season, i;
@@ -457,32 +478,32 @@ function checkGame(arg) {
     }
 }
 
-function checkTracked() {
-    var checked = $("#tracked").is(":checked");
+function checkWindows() {
+    var checked = $("#windows").is(":checked");
 
-    for (var key in tracked) {
+    for (var key in windows) {
         if (checked) {
-            show(tracked[key], false);
-            skips.remove(tracked[key]);
+            show(windows[key], false);
+            skips.remove(windows[key]);
         } else {
-            hide(tracked[key], false);
-            skips.pushStrict(tracked[key]);
+            hide(windows[key], false);
+            skips.pushStrict(windows[key]);
         }
     }
 
     load();
 }
 
-function checkUntracked() {
-    var checked = $("#untracked").is(":checked");
+function checkPC98() {
+    var checked = $("#pc98").is(":checked");
 
-    for (var key in untracked) {
+    for (var key in pc98) {
         if (checked) {
-            show(untracked[key], false);
-            skips.remove(untracked[key]);
+            show(pc98[key], false);
+            skips.remove(pc98[key]);
         } else {
-            hide(untracked[key], false);
-            skips.pushStrict(untracked[key]);
+            hide(pc98[key], false);
+            skips.pushStrict(pc98[key]);
         }
     }
 
@@ -493,11 +514,11 @@ function checkAll() {
     var checked = $("#all").is(":checked");
 
     if (checked) {
-        $("#tracked").prop("checked", true);
-        $("#untracked").prop("checked", true);
+        $("#windows").prop("checked", true);
+        $("#pc98").prop("checked", true);
     } else {
-        $("#tracked").prop("checked", false);
-        $("#untracked").prop("checked", false);
+        $("#windows").prop("checked", false);
+        $("#pc98").prop("checked", false);
     }
 
     for (var key in all) {
@@ -701,13 +722,13 @@ function load() {
                 }
             }
 
-            /*if (getCookie("lang") == "Japanese") {
+            if (getCookie("lang") == "Japanese") {
                 language = "Japanese";
                 generateText();
             } else if (getCookie("lang") == "Chinese") {
                 language = "Chinese";
                 generateText();
-            }*/
+            }
         }, "json");
 
         if (!$("#overallc").is(":checked")) {
