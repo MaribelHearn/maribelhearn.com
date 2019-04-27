@@ -123,7 +123,7 @@ function generateText() {
         $("#description").html("A listing of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. " +
         "For every shottype in a game, tables will tell you which players have done an LNN with it, if any." +
         "If a player has multiple LNNs for one particular shottype, those are not factored in.");
-        $("#conditions").html(">Extra conditions are required for PCB, TD and HSiFS; these are No Border Breaks, " +
+        $("#conditions").html("Extra conditions are required for PCB, TD and HSiFS; these are No Border Breaks, " +
         "No Trance and No Release respectively. LNN in these games is called LNNN, with an extra N to denote the extra condition." +
         "The extra condition in UFO, no UFO summons, is optional, as it is not considered to have a significant impact on " +
         "the difficulty of the run. As for IN, an LNN is assumed to capture all Last Spells and is referred to as LNNFS.");
@@ -269,7 +269,7 @@ function generateText() {
         $("#autosort").html("WR数");
         $("#differentgames").html("ゲーム");
         $("#backtotop").html("上に帰る");
-    } else { // language == "Chinese"
+    } /*else { // language == "Chinese"
         $("title").html("东方LunaticNMNB");
         $("h1").html("东方LunaticNMNB");
         $(".game").html("游戏");
@@ -388,7 +388,7 @@ function generateText() {
         $("#description").html("A listing of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. " +
         "For every shottype in a game, tables will tell you which players have done an LNN with it, if any." +
         "If a player has multiple LNNs for one particular shottype, those are not factored in.");
-        $("#conditions").html(">Extra conditions are required for PCB, TD and HSiFS; these are No Border Breaks, " +
+        $("#conditions").html("Extra conditions are required for PCB, TD and HSiFS; these are No Border Breaks, " +
         "No Trance and No Release respectively. LNN in these games is called LNNN, with an extra N to denote the extra condition." +
         "The extra condition in UFO, no UFO summons, is optional, as it is not considered to have a significant impact on " +
         "the difficulty of the run. As for IN, an LNN is assumed to capture all Last Spells and is referred to as LNNFS.");
@@ -402,7 +402,7 @@ function generateText() {
         $("#autosort").html("WR数量");
         $("#differentgames").html("游戏");
         $("#backtotop").html("回到顶部");
-    }
+    }*/
 }
 
 function setLanguage(newLanguage) {
@@ -566,9 +566,9 @@ $(document).ready(function() {
         if (getCookie("lang") == "Japanese") {
             language = "Japanese";
             generateText();
-        } else if (getCookie("lang") == "Chinese") {
+        } /*else if (getCookie("lang") == "Chinese") {
             language = "Chinese";
             generateText();
-        }
+        }*/
     }, "json");
 });

@@ -269,7 +269,7 @@ function generateText() {
         $("#autosort").html("WR数");
         $("#differentgames").html("ゲーム");
         $("#backtotop").html("上に帰る");
-    } else { // language == "Chinese"
+    } /*else { // language == "Chinese"
         $("title").html("东方世界纪录");
         $("h1").html("东方世界纪录");
         $("#description").html("An accurate list of Touhou world records, updated every so often. Note that the player ranking at the bottom does not take into account" +
@@ -396,7 +396,7 @@ function generateText() {
         $("#autosort").html("WR数量");
         $("#differentgames").html("游戏");
         $("#backtotop").html("回到顶部");
-    }
+    }*/
 }
 
 function bestSeason(difficulty, shottype) {
@@ -725,10 +725,10 @@ function load() {
             if (getCookie("lang") == "Japanese") {
                 language = "Japanese";
                 generateText();
-            } else if (getCookie("lang") == "Chinese") {
+            } /*else if (getCookie("lang") == "Chinese") {
                 language = "Chinese";
                 generateText();
-            }
+            }*/
         }, "json");
 
         if (!$("#overallc").is(":checked")) {
