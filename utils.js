@@ -127,3 +127,32 @@ var sep = function (number) {
     }
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 };
+
+var monthToNumber = function (month) {
+    return {
+        "January": 1,
+        "February": 2,
+        "March": 3,
+        "April": 4,
+        "May": 5,
+        "June": 6,
+        "July": 7,
+        "August": 8,
+        "September": 9,
+        "October": 10,
+        "November": 11,
+        "December": 12
+    }[month];
+};
+
+var translateDate = function (date) { // <Month name> <Day>, <Full year>
+    var tmp = date.split(", ");
+
+    var date = tmp[0], year = tmp[1];
+
+    tmp = date.split(' ');
+
+    var month = monthToNumber(tmp[0]), day = tmp[1];
+
+    return (year + "年" + month + "月" + day + "日");
+};

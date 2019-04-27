@@ -32,7 +32,7 @@
 			</nav>
 		</div>
         <div id='wrap' class='wrap'>
-            <!--<table id='languages' class='noborders'>
+            <table id='languages' class='noborders'>
                 <tbody>
                     <tr class='noborders'>
                         <td class='noborders'>
@@ -41,25 +41,25 @@
                         <td class='noborders'>
                             <a href='javascript:setLanguage("Japanese")'><img src='drc/japan.png' alt='Flag of Japan'></a>
                         </td>
-                        <td class='noborders'>
+                        <!--<td class='noborders'>
                             <a href='javascript:setLanguage("Chinese")'><img src='drc/china.png' alt='Flag of the P.R.C.'></a>
-                        </td>
+                        </td>-->
                     </tr>
                     <tr class='noborders'>
                         <td class='noborders'><a href='javascript:setLanguage("English")'>English</a></td>
                         <td class='noborders'><a href='javascript:setLanguage("Japanese")'>日本語</a></td>
-                        <td class='noborders'><a href='javascript:setLanguage("Chinese")'>简体中文</a></td>
+                        <!--<td class='noborders'><a href='javascript:setLanguage("Chinese")'>简体中文</a></td>-->
                     </tr>
                 </tbody>
-            </table>-->
+            </table>
 			<h1>Touhou World Records</h1>
             <noscript><strong>Notice:</strong> this page cannot function properly with JavaScript disabled.</noscript>
             <p id='notice' style='display:none'><strong>Notice:</strong> this page is best viewed on mobile using landscape mode.</p>
-            <p>An accurate list of Touhou world records, updated every so often. Note that the player ranking at the bottom does not take into account how strong specific records are, only numbers.
-            The list does not include scene games as of now.</p>
-            <p>World records are current as of March 25, 2019.</p>
-            <p>Click a score to download the corresponding replay, if there is one available. All of the table columns are sortable.</p>
-            <p>The replays provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.</p>
+            <p id='description'>An accurate list of Touhou world records, updated every so often. Note that the player ranking at the bottom does not take into account
+			how strong specific records are, only numbers. The list does not include scene games as of now.</p>
+            <p id='clicktodl'>Click a score to download the corresponding replay, if there is one available. All of the table columns are sortable.</p>
+            <p id='noreup'>The replays provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.</p>
+            <p id='lastupdate'>World records are current as of April 26, 2019.</p><!-- Update through JS file -->
             <h2 id='contents_header'>Contents</h2>
             <table id='contents'>
                 <tr><td><a href='#overall' class='overallrecords'>Overall Records</a></td></tr>
@@ -160,14 +160,14 @@
                             <input id='overallc' type='checkbox' onClick='checkGame("overall")' checked>
                             <label for='overallc' class='overall'>Overall</label>
                         </td><td>
-                            <input id='tracked' type='checkbox' onClick='checkTracked()' checked>
-                            <label for='tracked' class='tracked'>Tracked</label>
+                            <input id='windows' type='checkbox' onClick='checkWindows()' checked>
+                            <label for='windows' class='windows'>Windows</label>
                         </td><td>
-                            <input id='untracked' type='checkbox' onClick='checkUntracked()' checked>
-                            <label for='untracked' class='untracked'>Untracked</label>
+                            <input id='pc98' type='checkbox' onClick='checkPC98()' checked>
+                            <label for='pc98' class='pc98'>PC-98</label>
                         </td><td>
 							<input id='all' type='checkbox' onClick='checkAll()' checked>
-                            <label id='label_all' for='untracked'>All</label>
+                            <label id='label_all' for='all'>All</label>
 						</td>
                     </tr>
 					<tr>
@@ -328,6 +328,7 @@
                     </tr>
                 </table>
             </div>
+            <h2 class='worldrecords'>World Records</h2>
             <div id='HRtP'>
                 <p><img src='games/hrtp.jpg' class='cover98' alt='HRtP cover'> <span class='th1'>Touhou 1 - The Highly Responsive to Prayers</span></p>
                 <table class='sortable'>
