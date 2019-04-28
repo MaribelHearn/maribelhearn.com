@@ -16,11 +16,6 @@ function generateText() {
     if (language == "English") {
         $("title").html("Touhou World Records");
         $("h1").html("Touhou World Records");
-        $("#description").html("An accurate list of Touhou world records, updated every so often. Note that the player ranking at the bottom does not take into account" +
-        "how strong specific records are, only numbers. The list does not include scene games as of now.");
-        $("#clicktodl").html("Click a score to download the corresponding replay, if there is one available. All of the table columns are sortable.");
-        $("#noreup").html("The replays provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.");
-        $("#lastupdate").html("World records are current as of " + lastUpdate + ".");
         $(".game").html("Game");
         $(".player").html("Player");
         $(".difficulty").html("Difficulty");
@@ -35,6 +30,7 @@ function generateText() {
         $(".world").html("World");
         $(".west").html("West");
         $(".percentage").html("Percentage");
+        $(".ack").html("Acknowledgements");
         $(".HRtP").html("HRtP");
         $(".SoEW").html("SoEW");
         $(".PoDD").html("PoDD");
@@ -132,6 +128,11 @@ function generateText() {
         $(".CirnoWinter").html("CirnoWinter");
         $(".AyaWinter").html("AyaWinter");
         $(".MarisaWinter").html("MarisaWinter");
+        $("#description").html("An accurate list of Touhou world records, updated every so often. Note that the player ranking at the bottom does not take into account" +
+        "how strong specific records are, only numbers. The list does not include scene games as of now.");
+        $("#clicktodl").html("Click a score to download the corresponding replay, if there is one available. All of the table columns are sortable.");
+        $("#noreup").html("The replays provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.");
+        $("#lastupdate").html("World records are current as of " + lastUpdate + ".");
         $("#contents_header").html("Contents");
         $("#customize").html("Customize");
         $("#score").html("Score");
@@ -139,17 +140,11 @@ function generateText() {
         $("#label_all").html("All");
         $("#autosort").html("No. of WRs");
         $("#differentgames").html("Different games");
+        $("#jptlcredit").html("The Japanese translation of the top text was done by <a href='https://twitter.com/toho_yumiya'>Yu-miya</a>.");
         $("#backtotop").html("Back to Top");
     } else if (language == "Japanese") {
         $("title").html("東方の世界記録");
         $("h1").html("東方の世界記録");
-        $("#description").html("東方原作STG各作品世界記録の正確なリストです。適宜頻繁に更新します。" +
-        "下部に記載されているプレイヤーランキングは特定のスコアの高低を示すものではなく、あくまで世界記録取得数を示したものですのでご留意ください。" +
-        "また今のところ文花帖のようなシーンを基準にするリストは作成しておりません。");
-        $("#clicktodl").html("該当のリプレイファイルをダウンロードするにはスコアをクリックしてください。" +
-        "各欄は並べ替え可能となっています。並べ替えには各表の最上段をクリックしてください。");
-        $("#noreup").html("リプレイファイルの二次利用は禁止致します。");
-        $("#lastupdate").html(translateDate(lastUpdate) + "現在の世界記録です。");
         $(".game").html("ゲーム");
         $(".player").html("プレイヤー");
         $(".difficulty").html("難易度");
@@ -165,6 +160,7 @@ function generateText() {
         $(".world").html("世界");
         $(".west").html("海外"); // The West = 西洋
         $(".percentage").html("割合");
+        $(".ack").html("謝辞");
         $(".HRtP").html("靈");
         $(".SoEW").html("封");
         $(".PoDD").html("夢");
@@ -261,6 +257,13 @@ function generateText() {
         $(".CirnoWinter").html("チルノ冬");
         $(".AyaWinter").html("文冬");
         $(".MarisaWinter").html("魔理沙冬");
+        $("#description").html("東方原作STG各作品世界記録の正確なリストです。適宜頻繁に更新します。" +
+        "下部に記載されているプレイヤーランキングは特定のスコアの高低を示すものではなく、あくまで世界記録取得数を示したものですのでご留意ください。" +
+        "また今のところ文花帖のようなシーンを基準にするリストは作成しておりません。");
+        $("#clicktodl").html("該当のリプレイファイルをダウンロードするにはスコアをクリックしてください。" +
+        "各欄は並べ替え可能となっています。並べ替えには各表の最上段をクリックしてください。");
+        $("#noreup").html("リプレイファイルの二次利用は禁止致します。");
+        $("#lastupdate").html(translateDate(lastUpdate) + "現在の世界記録です。");
         $("#contents_header").html("内容");
         $("#customize").html("カスタマイズ");
         $("#score").html("スコア");
@@ -268,15 +271,11 @@ function generateText() {
         $("#label_all").html("全");
         $("#autosort").html("WR数");
         $("#differentgames").html("ゲーム");
+        $("#jptlcredit").html("ページ上部のテキストは<a href='https://twitter.com/toho_yumiya'>Yu-miya</a>によって日本語に翻訳されました。");
         $("#backtotop").html("上に帰る");
     } /*else { // language == "Chinese"
         $("title").html("东方世界纪录");
         $("h1").html("东方世界纪录");
-        $("#description").html("An accurate list of Touhou world records, updated every so often. Note that the player ranking at the bottom does not take into account" +
-        "how strong specific records are, only numbers. The list does not include scene games as of now.");
-        $("#clicktodl").html("Click a score to download the corresponding replay, if there is one available. All of the table columns are sortable.");
-        $("#noreup").html("The replays provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.");
-        $("#lastupdate").html("World records are current as of " + translateDate(lastUpdate) + ".");
         $(".game").html("游戏");
         $(".player").html("玩家");
         $(".difficulty").html("难度");
@@ -292,6 +291,7 @@ function generateText() {
         $(".world").html("世界");
         $(".west").html("西方");
         $(".percentage").html("百分");
+        $(".ack").html("致谢");
         $(".HRtP").html("灵");
         $(".SoEW").html("封");
         $(".PoDD").html("梦");
@@ -388,6 +388,11 @@ function generateText() {
         $(".CirnoWinter").html("琪露诺冬");
         $(".AyaWinter").html("文冬");
         $(".MarisaWinter").html("魔理沙冬");
+        $("#description").html("An accurate list of Touhou world records, updated every so often. Note that the player ranking at the bottom does not take into account" +
+        "how strong specific records are, only numbers. The list does not include scene games as of now.");
+        $("#clicktodl").html("Click a score to download the corresponding replay, if there is one available. All of the table columns are sortable.");
+        $("#noreup").html("The replays provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.");
+        $("#lastupdate").html("World records are current as of " + translateDate(lastUpdate) + ".");
         $("#contents_header").html("内容");
         $("#customize").html("定制");
         $("#score").html("分数");
@@ -395,6 +400,7 @@ function generateText() {
         $("#label_all").html("皆");
         $("#autosort").html("WR数量");
         $("#differentgames").html("游戏");
+        $("#jptlcredit").html("The Japanese translation of the top text was done by <a href='https://twitter.com/toho_yumiya'>Yu-miya</a>.");
         $("#backtotop").html("回到顶部");
     }*/
 }
@@ -754,7 +760,6 @@ $(document).ready(function() {
     // detect smartphone and tablet
     if (navigator.userAgent.contains("Mobile") || navigator.userAgent.contains("Tablet")) {
         $("#notice").css("display", "block");
-        $("#back").css("display", "block");
 	}
 
     seasonsEnabled = $("#seasons").is(":checked");

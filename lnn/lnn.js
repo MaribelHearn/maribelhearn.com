@@ -23,6 +23,7 @@ function generateText() {
         $(".nooflnnns").html("No. of LNNNs");
         $(".nooflnnfss").html("No. of LNNFSs");
         $(".nooflnnnsu").html("No. of LNN(N)s");
+        $(".ack").html("Acknowledgements");
         $(".HRtP").html("HRtP");
         $(".SoEW").html("SoEW");
         $(".PoDD").html("PoDD");
@@ -135,6 +136,7 @@ function generateText() {
         $("#label_all").html("All");
         $("#autosort").html("No. of WRs");
         $("#differentgames").html("Different games");
+        $("#jptlcredit").html("The Japanese translation of the top text was done by <a href='https://twitter.com/toho_yumiya'>Yu-miya</a>.");
         $("#backtotop").html("Back to Top");
     } else if (language == "Japanese") {
         $("title").html("東方Lunaticノーミスノーボム");
@@ -156,6 +158,7 @@ function generateText() {
         $(".nooflnnns").html("LNNNの数");
         $(".nooflnnfss").html("LNNFSの数");
         $(".nooflnnnsu").html("LNNの数");
+        $(".ack").html("謝辞");
         $(".HRtP").html("靈");
         $(".SoEW").html("封");
         $(".PoDD").html("夢");
@@ -268,6 +271,7 @@ function generateText() {
         $("#label_all").html("全");
         $("#autosort").html("WR数");
         $("#differentgames").html("ゲーム");
+        $("#jptlcredit").html("ページ上部のテキストは<a href='https://twitter.com/toho_yumiya'>Yu-miya</a>によって日本語に翻訳されました。");
         $("#backtotop").html("上に帰る");
     } /*else { // language == "Chinese"
         $("title").html("东方LunaticNMNB");
@@ -289,6 +293,7 @@ function generateText() {
         $(".nooflnnns").html("LNNN的数量");
         $(".nooflnnfss").html("LNNFS的数量");
         $(".nooflnnnsu").html("LNN的数量");
+        $(".ack").html("致谢");
         $(".HRtP").html("灵");
         $(".SoEW").html("封");
         $(".PoDD").html("梦");
@@ -401,6 +406,7 @@ function generateText() {
         $("#label_all").html("皆");
         $("#autosort").html("WR数量");
         $("#differentgames").html("游戏");
+        $("#jptlcredit").html("The Japanese translation of the top text was done by <a href='https://twitter.com/toho_yumiya'>Yu-miya</a>.");
         $("#backtotop").html("回到顶部");
     }*/
 }
@@ -448,11 +454,6 @@ function checkAll() {
 }
 
 $(document).ready(function() {
-    // detect smartphone and tablet
-    if (navigator.userAgent.contains("Mobile") || navigator.userAgent.contains("Tablet")) {
-        $("#back").css("display", "block");
-	}
-
     $.get("https://maribelhearn.github.io/json/lnnlist.json", function(data) {
         LNNs = data;
 
