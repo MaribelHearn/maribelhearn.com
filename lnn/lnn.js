@@ -122,7 +122,7 @@ function generateText() {
         $(".AyaWinter").html("AyaWinter");
         $(".MarisaWinter").html("MarisaWinter");
         $("#description").html("A listing of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. " +
-        "For every shottype in a game, tables will tell you which players have done an LNN with it, if any." +
+        "For every shottype in a game, tables will tell you which players have done an LNN with it, if any. " +
         "If a player has multiple LNNs for one particular shottype, those are not factored in.");
         $("#conditions").html("Extra conditions are required for PCB, TD and HSiFS; these are No Border Breaks, " +
         "No Trance and No Release respectively. LNN in these games is called LNNN, with an extra N to denote the extra condition." +
