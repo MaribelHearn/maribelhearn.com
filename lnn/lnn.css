@@ -50,9 +50,6 @@ table, th, td {
     counter-increment: sortabletablescope;
     display: table-cell;
 }
-#back {
-    display: none;
-}
 .wrap {
     border: 1px solid black;
     text-align: center;
