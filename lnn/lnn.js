@@ -1,6 +1,6 @@
 var LNNs, language = "English", all = ["overall", "players", "SoEW", "PoDD", "LLS", "MS", "EoSD",
     "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
-    lastUpdate =  "April 26, 2019";
+    lastUpdate =  "May 8, 2019";
 
 function generateText() {
     if (language == "English") {
