@@ -2,7 +2,7 @@ var WRs, playerWRs, compareWRs, westScores, seasonsEnabled, language = "English"
     all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
     windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
     pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"],
-    lastUpdate = "April 26, 2019";
+    lastUpdate = "May 8, 2019";
 
 String.prototype.removeChar = function () {
     return this.replace("Reimu", "").replace("Cirno", "").replace("Aya", "").replace("Marisa", "");
