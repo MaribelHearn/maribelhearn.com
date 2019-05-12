@@ -1,4 +1,4 @@
-var WRs, playerWRs, compareWRs, westScores, seasonsEnabled, language = "English", skips = [],
+var WRs, LIMIT = 16, playerWRs, compareWRs, westScores, seasonsEnabled, datesEnabled, notation, language = "English", skips = [],
     all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
     windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
     pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"],
@@ -12,7 +12,60 @@ String.prototype.removeSeason = function () {
     return this.replace("Spring", "").replace("Summer", "").replace("Autumn", "").replace("Winter", "");
 };
 
+function ymd(date) {
+    var tmp;
+
+    date = date.replace("<br>", "");
+    tmp = date.split('/');
+
+    if (notation == "DMY") {
+        day = tmp[0], month = tmp[1], year = tmp[2];
+    } else {
+        day = tmp[1], month = tmp[0], year = tmp[2];
+    }
+
+    notation = "YMD";
+
+    return year + "年" + month + "月" + day + "日";
+}
+
+function dmy(date) {
+    var tmp;
+
+    date = date.replace("<br>", "");
+
+    if (date.contains('年')) {
+        date = date.replace('年', '/').replace('月', '/').replace('日', '/');
+        tmp = date.split('/');
+        day = tmp[2], month = tmp[1], year = tmp[0];
+    } else {
+        tmp = date.split('/');
+        day = tmp[1], month = tmp[0], year = tmp[2];
+    }
+
+    return day + "/" + month + "/" + year;
+}
+
+function mdy(date) {
+    var tmp;
+
+    date = date.replace("<br>", "");
+
+    if (date.contains('年')) {
+        date = date.replace('年', '/').replace('月', '/').replace('日', '/');
+        tmp = date.split('/');
+        day = tmp[2], month = tmp[1], year = tmp[0];
+    } else {
+        tmp = date.split('/');
+        day = tmp[0], month = tmp[1], year = tmp[2];
+    }
+
+    return month + "/" + day + "/" + year;
+}
+
 function generateText() {
+    var datestrings = $(".datestring"), date, i;
+
     if (language == "English") {
         $("title").html("Touhou World Records");
         $("h1").html("Touhou World Records");
@@ -21,6 +74,8 @@ function generateText() {
         $(".difficulty").html("Difficulty");
         $(".shottype").html("Shottype");
         $(".route").html("Route");
+        $(".date").html("Date");
+        $(".dates").html("Dates");
         $(".overall").html("Overall");
         $(".overallrecords").html("Overall Records");
         $(".playerranking").html("Player Ranking");
@@ -128,11 +183,11 @@ function generateText() {
         $(".CirnoWinter").html("CirnoWinter");
         $(".AyaWinter").html("AyaWinter");
         $(".MarisaWinter").html("MarisaWinter");
-        $("#description").html("An accurate list of Touhou world records, updated every so often. Note that the player ranking at the bottom does not take into account" +
+        $("#description").html("An accurate list of Touhou world records, updated every so often. Note that the player ranking at the bottom does not take into account " +
         "how strong specific records are, only numbers. The list does not include scene games as of now.");
         $("#clicktodl").html("Click a score to download the corresponding replay, if there is one available. All of the table columns are sortable.");
         $("#noreup").html("The replays provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.");
-        $("#lastupdate").html("World records are current as of " + lastUpdate + ".");
+        $("#lastupdate").html("World records are current as of " + (notation == "DMY" ? translateDate(lastUpdate, "DMY") : lastUpdate) + ".");
         $("#contents_header").html("Contents");
         $("#customize").html("Customize");
         $("#score").html("Score");
@@ -150,6 +205,8 @@ function generateText() {
         $(".difficulty").html("難易度");
         $(".shottype").html("キャラ");
         $(".route").html("ルート");
+        $(".date").html("日付");
+        $(".dates").html("日付");
         $(".overall").html("WR一覧");
         $(".overallrecords").html("各作品世界記録一覧");
         $(".worldrecords").html("世界記録");
@@ -263,7 +320,7 @@ function generateText() {
         $("#clicktodl").html("該当のリプレイファイルをダウンロードするにはスコアをクリックしてください。" +
         "各欄は並べ替え可能となっています。並べ替えには各表の最上段をクリックしてください。");
         $("#noreup").html("リプレイファイルの二次利用は禁止致します。");
-        $("#lastupdate").html(translateDate(lastUpdate) + "現在の世界記録です。");
+        $("#lastupdate").html(translateDate(lastUpdate, "YMD") + "現在の世界記録です。");
         $("#contents_header").html("内容");
         $("#customize").html("カスタマイズ");
         $("#score").html("スコア");
@@ -281,6 +338,8 @@ function generateText() {
         $(".difficulty").html("难度");
         $(".shottype").html("机体");
         $(".route").html("路线");
+        $(".date").html("日期");
+        $(".dates").html("日期");
         $(".overall").html("整体");
         $(".overallrecords").html("整体世界纪录");
         $(".worldrecords").html("世界纪录");
@@ -392,7 +451,7 @@ function generateText() {
         "how strong specific records are, only numbers. The list does not include scene games as of now.");
         $("#clicktodl").html("Click a score to download the corresponding replay, if there is one available. All of the table columns are sortable.");
         $("#noreup").html("The replays provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.");
-        $("#lastupdate").html("World records are current as of " + translateDate(lastUpdate) + ".");
+        $("#lastupdate").html("World records are current as of " + translateDate(lastUpdate, "YMD") + ".");
         $("#contents_header").html("内容");
         $("#customize").html("定制");
         $("#score").html("分数");
@@ -403,6 +462,23 @@ function generateText() {
         $("#jptlcredit").html("The Japanese translation of the top text was done by <a href='https://twitter.com/toho_yumiya'>Yu-miya</a>.");
         $("#backtotop").html("回到顶部");
     }*/
+
+    if (language == "Japanese" || language == "Chinese") {
+        for (i in datestrings) {
+            date = ymd($(datestrings[i]).html());
+            $(datestrings[i]).html((i > LIMIT ? "<br>" : "") + date);
+        }
+    } else if (notation == "MDY") {
+        for (i in datestrings) {
+            date = mdy($(datestrings[i]).html());
+            $(datestrings[i]).html((i > LIMIT ? "<br>" : "") + date);
+        }
+    } else {
+        for (i in datestrings) {
+            date = dmy($(datestrings[i]).html());
+            $(datestrings[i]).html((i > LIMIT ? "<br>" : "") + date);
+        }
+    }
 }
 
 function bestSeason(difficulty, shottype) {
@@ -555,6 +631,23 @@ function toggleSeasons() {
     swapTables();
 }
 
+function toggleDates() {
+    var i;
+
+    datesEnabled = !datesEnabled;
+
+    for (i in all) {
+        if (all[i] == "overall") {
+            continue;
+        }
+
+        $("#" + all[i] + "overall4").css("display", datesEnabled ? "table-cell" : "none");
+    }
+
+    $(".date").css("display", datesEnabled ? "table-cell" : "none");
+    $(".datestring").css("display", datesEnabled ? "inline" : "none");
+}
+
 function percentageClass(percentage) {
     if (percentage < 50) {
         return "does_not_even_score";
@@ -575,8 +668,9 @@ function load() {
         playerWRs = {};
         compareWRs = {};
 
-        var skip = {}, game, max, difficulty, bestshotmax, shottype, wr, score, player, replay, overall, overallplayer,
-        overalldifficulty, overallshottype, overallseason, bestshot, bestshotplayer, bestshotseason, text, count, seasonless;
+        var skip = {}, game, max, difficulty, bestshotmax, shottype, wr, score, player, replay, overall,
+        overallplayer, overalldifficulty, overallshottype, overallseason, overalldate, bestshot,
+        bestshotplayer, bestshotseason, bestshotdate, text, count, seasonless, i, j;
 
         for (game in WRs) {
             if (!$("#" + game + "c").is(":checked") || skips.contains(game)) {
@@ -598,6 +692,7 @@ function load() {
                     score = wr[0];
                     player = wr[1];
                     replay = wr[2];
+                    date = wr[3];
 
                     if (score > max) {
                         overall = "#" + game + difficulty + shottype;
@@ -605,6 +700,7 @@ function load() {
                         overalldifficulty = difficulty;
                         overallshottype = shottype;
                         overallseason = season;
+                        overalldate = date;
                         max = score;
                     }
 
@@ -614,6 +710,7 @@ function load() {
                         bestshotseason = season;
                         bestshotmax = score;
                         bestshotreplay = replay;
+                        bestshotdate = date;
                     }
 
                     if (player !== "") {
@@ -628,7 +725,9 @@ function load() {
                         playerWRs[player][game] += 1;
                     }
 
-                    text = (replay === "" ? sep(score) : "<a class='replay' href='" + replay + "'>" + sep(score) + "</a>") + "<br>by <em>" + player + "</em>";
+                    text = (replay === "" ? sep(score) : "<a class='replay' href='" + replay +
+                    "'>" + sep(score) + "</a>") + "<br>by <em>" + player + "</em>" + (date ? "" +
+                    "<span class='datestring'><br>" + date + "</span>" : "");
 
                     if (score > 0) {
                         $("#" + game + difficulty + shottype).html(text);
@@ -645,12 +744,14 @@ function load() {
                 }
 
                 $(bestshot).html((bestshotreplay === "" ? "<u>" + sep(bestshotmax) + "</u>" : "<u><a class='replay' href='" + bestshotreplay +
-                "'>" + sep(bestshotmax) + "</a></u>") + "<br>by <em>" + bestshotplayer + "</em>");
+                "'>" + sep(bestshotmax) + "</a></u>") + "<br>by <em>" + bestshotplayer + "</em>" + (bestshotdate ? "" +
+                "<span class='datestring'><br>" + bestshotdate + "</span>" : ""));
 
                 if (game == "HSiFS") {
                     $(bestshot.removeSeason() + (difficulty == "Extra" ? "Small" : "")).html((bestshotreplay === "" ? "<u>" + sep(bestshotmax) +
                     "</u>" : "<u><a class='replay' href='" + bestshotreplay + "'>" + sep(bestshotmax) + "</a></u>") + "<br>by <em>" + bestshotplayer +
-                    "</em>" + (game == "HSiFS" && difficulty != "Extra" ? " (" + bestshotseason + ")" : ""));
+                    "</em>" + (game == "HSiFS" && difficulty != "Extra" ? " (" + bestshotseason + ")" : "") + (bestshotdate ? "" +
+                    "<span class='datestring'><br>" + bestshotdate + "</span>" : ""));
                 }
 
                 compareWRs[game][difficulty] = [bestshotmax, bestshotplayer, bestshot.replace("#" + game + difficulty, "")];
@@ -668,6 +769,7 @@ function load() {
             $("#" + game + "overall1").html(overallplayer);
             $("#" + game + "overall2").html(overalldifficulty);
             $("#" + game + "overall3").html("<span class='" + overallshottype + "'>" + overallshottype + "</span>");
+            $("#" + game + "overall4").html("<span class='datestring'>" + (overalldate ? overalldate : '-') + "</span>");
         }
 
         $("#ranking_tbody").html("");
@@ -730,11 +832,40 @@ function load() {
 
             if (getCookie("lang") == "Japanese") {
                 language = "Japanese";
+                notation = "YMD";
                 generateText();
             } /*else if (getCookie("lang") == "Chinese") {
                 language = "Chinese";
+                notation = "YMD";
                 generateText();
-            }*/
+            }*/ else {
+                language = "English";
+                notation = (getCookie("datenotation") ? getCookie("datenotation") : "DMY");
+
+                if (notation == "DMY") {
+                    $("#lastupdate").html("World records are current as of " + translateDate(lastUpdate, "DMY") + ".");
+                } else if (notation == "MDY") {
+                    var datestrings = $(".datestring");
+
+                    for (i in datestrings) {
+                        date = mdy($(datestrings[i]).html());
+                        $(datestrings[i]).html((i > LIMIT ? "<br>" : "") + date);
+                    }
+                }
+            }
+
+            if (!datesEnabled) {
+                for (j in all) {
+                    if (all[j] == "overall") {
+                        continue;
+                    }
+
+                    $("#" + all[j] + "overall4").css("display", "none");
+                }
+
+                $(".date").css("display", "none");
+                $(".datestring").css("display", "none");
+            }
         }, "json");
 
         if (!$("#overallc").is(":checked")) {
@@ -751,9 +882,18 @@ function setLanguage(newLanguage) {
         return;
     }
 
-    language = newLanguage;
+    language = newLanguage.replace("UK", "").replace("US", "");
+    setCookie("lang", newLanguage.replace("UK", "").replace("US", ""));
+
+    if (language == "Japanese" || language == "Chinese") {
+        notation = "YMD";
+        setCookie("datenotation", "YMD");
+    } else {
+        notation = (newLanguage == "EnglishUK" ? "DMY" : "MDY");
+        setCookie("datenotation", newLanguage == "EnglishUK" ? "DMY" : "MDY");
+    }
+
     generateText();
-    setCookie("lang", newLanguage);
 }
 
 $(document).ready(function() {
@@ -763,6 +903,11 @@ $(document).ready(function() {
 	}
 
     seasonsEnabled = $("#seasons").is(":checked");
+    datesEnabled = $("#dates").is(":checked");
 	load();
     swapTables();
+
+    if (!datesEnabled) {
+        $(".datestring").css("display", "none");
+    }
 });

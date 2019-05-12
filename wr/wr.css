@@ -79,6 +79,10 @@ table, th, td {
 .noborders {
     border: none;
 }
+/*.date {
+    font-family: 'Inconsolata';
+    font-size: 16px;
+}*/
 .Spring {
     color: fuchsia;
 }

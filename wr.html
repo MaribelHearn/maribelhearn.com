@@ -37,7 +37,10 @@
                 <tbody>
                     <tr class='noborders'>
                         <td class='noborders'>
-                            <a href='javascript:setLanguage("English")'><img src='drc/uk.png' alt='Flag of the United Kingdom'></a>
+                            <a href='javascript:setLanguage("EnglishUK")'><img src='drc/uk.png' alt='Flag of the United Kingdom'></a>
+                        </td>
+                        <td class='noborders'>
+                            <a href='javascript:setLanguage("EnglishUS")'><img src='drc/us.png' alt='Flag of the United States'></a>
                         </td>
                         <td class='noborders'>
                             <a href='javascript:setLanguage("Japanese")'><img src='drc/japan.png' alt='Flag of Japan'></a>
@@ -47,7 +50,8 @@
                         </td>-->
                     </tr>
                     <tr class='noborders'>
-                        <td class='noborders'><a href='javascript:setLanguage("English")'>English</a></td>
+                        <td class='noborders'><a href='javascript:setLanguage("EnglishUK")'>UK English</a></td>
+                        <td class='noborders'><a href='javascript:setLanguage("EnglishUS")'>US English</a></td>
                         <td class='noborders'><a href='javascript:setLanguage("Japanese")'>日本語</a></td>
                         <!--<td class='noborders'><a href='javascript:setLanguage("Chinese")'>简体中文</a></td>-->
                     </tr>
@@ -173,9 +177,13 @@
 						</td>
                     </tr>
 					<tr>
-						<td colspan='4'>
+						<td colspan='2'>
 							<input id='seasons' type='checkbox' onClick='toggleSeasons()'>
 							<label id='label_seasons' for='seasons'>HSiFS Seasons</label>
+						</td>
+						<td colspan='2'>
+							<input id='dates' type='checkbox' onClick='toggleDates()'>
+							<label id='label_dates' for='dates' class='dates'>Dates</label>
 						</td>
 					</tr>
                 </tfoot>
@@ -191,6 +199,7 @@
                         <th class='player'>Player</th>
                         <th class='difficulty'>Difficulty</th>
                         <th class='shottype'>Shottype</th>
+                        <th class='date'>Date</th>
                     </tr>
                     <tr id='HRtPo'>
                         <td>1</td>
@@ -199,6 +208,7 @@
                         <td id='HRtPoverall1'></td>
                         <td id='HRtPoverall2'></td>
                         <td id='HRtPoverall3'></td>
+                        <td id='HRtPoverall4'></td>
                     </tr>
                     <tr id='SoEWo'>
                         <td>2</td>
@@ -207,6 +217,7 @@
                         <td id='SoEWoverall1'></td>
                         <td id='SoEWoverall2'></td>
                         <td id='SoEWoverall3'></td>
+                        <td id='SoEWoverall4'></td>
                     </tr>
                     <tr id='PoDDo'>
                         <td>3</td>
@@ -215,6 +226,7 @@
                         <td id='PoDDoverall1'></td>
                         <td id='PoDDoverall2'></td>
                         <td id='PoDDoverall3'></td>
+                        <td id='PoDDoverall4'></td>
                     </tr>
                     <tr id='LLSo'>
                         <td>4</td>
@@ -223,6 +235,7 @@
                         <td id='LLSoverall1'></td>
                         <td id='LLSoverall2'></td>
                         <td id='LLSoverall3'></td>
+                        <td id='LLSoverall4'></td>
                     </tr>
                     <tr id='MSo'>
                         <td>5</td>
@@ -231,6 +244,7 @@
                         <td id='MSoverall1'></td>
                         <td id='MSoverall2'></td>
                         <td id='MSoverall3'></td>
+                        <td id='MSoverall4'></td>
                     </tr>
                     <tr id='EoSDo'>
                         <td>6</td>
@@ -239,6 +253,7 @@
                         <td id='EoSDoverall1'></td>
                         <td id='EoSDoverall2'></td>
                         <td id='EoSDoverall3'></td>
+                        <td id='EoSDoverall4'></td>
                     </tr>
                     <tr id='PCBo'>
                         <td>7</td>
@@ -247,6 +262,7 @@
                         <td id='PCBoverall1'></td>
                         <td id='PCBoverall2'></td>
                         <td id='PCBoverall3'></td>
+                        <td id='PCBoverall4'></td>
                     </tr>
                     <tr id='INo'>
                         <td>8</td>
@@ -255,6 +271,7 @@
                         <td id='INoverall1'></td>
                         <td id='INoverall2'></td>
                         <td id='INoverall3'></td>
+                        <td id='INoverall4'></td>
                     </tr>
                     <tr id='PoFVo'>
                         <td>9</td>
@@ -263,6 +280,7 @@
                         <td id='PoFVoverall1'></td>
                         <td id='PoFVoverall2'></td>
                         <td id='PoFVoverall3'></td>
+                        <td id='PoFVoverall4'></td>
                     </tr>
                     <tr id='MoFo'>
                         <td>10</td>
@@ -271,6 +289,7 @@
                         <td id='MoFoverall1'></td>
                         <td id='MoFoverall2'></td>
                         <td id='MoFoverall3'></td>
+                        <td id='MoFoverall4'></td>
                     </tr>
                     <tr id='SAo'>
                         <td>11</td>
@@ -279,6 +298,7 @@
                         <td id='SAoverall1'></td>
                         <td id='SAoverall2'></td>
                         <td id='SAoverall3'></td>
+                        <td id='SAoverall4'></td>
                     </tr>
                     <tr id='UFOo'>
                         <td>12</td>
@@ -287,6 +307,7 @@
                         <td id='UFOoverall1'></td>
                         <td id='UFOoverall2'></td>
                         <td id='UFOoverall3'></td>
+                        <td id='UFOoverall4'></td>
                     </tr>
                     <tr id='GFWo'>
                         <td>12.8</td>
@@ -295,6 +316,7 @@
                         <td id='GFWoverall1'></td>
                         <td id='GFWoverall2'></td>
                         <td id='GFWoverall3'></td>
+                        <td id='GFWoverall4'></td>
                     </tr>
                     <tr id='TDo'>
                         <td>13</td>
@@ -303,6 +325,7 @@
                         <td id='TDoverall1'></td>
                         <td id='TDoverall2'></td>
                         <td id='TDoverall3'></td>
+                        <td id='TDoverall4'></td>
                     </tr>
                     <tr id='DDCo'>
                         <td>14</td>
@@ -311,6 +334,7 @@
                         <td id='DDCoverall1'></td>
                         <td id='DDCoverall2'></td>
                         <td id='DDCoverall3'></td>
+                        <td id='DDCoverall4'></td>
                     </tr>
                     <tr id='LoLKo'>
                         <td>15</td>
@@ -319,6 +343,7 @@
                         <td id='LoLKoverall1'></td>
                         <td id='LoLKoverall2'></td>
                         <td id='LoLKoverall3'></td>
+                        <td id='LoLKoverall4'></td>
                     </tr>
                     <tr id='HSiFSo'>
                         <td>16</td>
@@ -327,6 +352,7 @@
                         <td id='HSiFSoverall1'></td>
                         <td id='HSiFSoverall2'></td>
                         <td id='HSiFSoverall3'></td>
+                        <td id='HSiFSoverall4'></td>
                     </tr>
                 </table>
             </div>
