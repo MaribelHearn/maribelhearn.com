@@ -145,14 +145,21 @@ var monthToNumber = function (month) {
     }[month];
 };
 
-var translateDate = function (date) { // <Month name> <Day>, <Full year>
+var translateDate = function (date, notation) { // <Month name> <Day>, <Full year>
     var tmp = date.split(", ");
 
     var date = tmp[0], year = tmp[1];
 
     tmp = date.split(' ');
+    day = tmp[1];
 
-    var month = monthToNumber(tmp[0]), day = tmp[1];
+    if (notation == "YMD") {
+        month = monthToNumber(tmp[0]);
 
-    return (year + "年" + month + "月" + day + "日");
+        return (year + "年" + month + "月" + day + "日");
+    } else if (notation == "DMY") {
+        month = tmp[0];
+
+        return day + " " + month + ", " + year;
+    }
 };
