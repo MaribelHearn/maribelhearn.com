@@ -1,4 +1,4 @@
-var WRs, LIMIT = 16, playerWRs, compareWRs, westScores, seasonsEnabled, datesEnabled, notation, language = "English", skips = [],
+var WRs, LIMIT = 16, playerWRs, compareWRs, westScores, seasonsEnabled, datesEnabled, notation = "DMY", language = "English", skips = [],
     all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
     windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS"],
     pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"],
@@ -832,11 +832,9 @@ function load() {
 
             if (getCookie("lang") == "Japanese") {
                 language = "Japanese";
-                notation = "YMD";
                 generateText();
             } /*else if (getCookie("lang") == "Chinese") {
                 language = "Chinese";
-                notation = "YMD";
                 generateText();
             }*/ else {
                 language = "English";
@@ -877,22 +875,15 @@ function load() {
     }, "json");
 }
 
-function setLanguage(newLanguage) {
-    if (language == newLanguage) {
+function setLanguage(newLanguage, newNotation) {
+    if (language == newLanguage && notation == newNotation) {
         return;
     }
 
-    language = newLanguage.replace("UK", "").replace("US", "");
-    setCookie("lang", newLanguage.replace("UK", "").replace("US", ""));
-
-    if (language == "Japanese" || language == "Chinese") {
-        notation = "YMD";
-        setCookie("datenotation", "YMD");
-    } else {
-        notation = (newLanguage == "EnglishUK" ? "DMY" : "MDY");
-        setCookie("datenotation", newLanguage == "EnglishUK" ? "DMY" : "MDY");
-    }
-
+    language = newLanguage;
+    setCookie("lang", newLanguage);
+    notation = newNotation;
+    setCookie("datenotation", newNotation);
     generateText();
 }
 
