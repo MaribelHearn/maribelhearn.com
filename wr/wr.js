@@ -760,7 +760,7 @@ function load() {
 
                 $(bestshot).html((bestshotreplay === "" ? "<u>" + sep(bestshotmax) + "</u>" : "<u><a class='replay' href='" + bestshotreplay +
                 "'>" + sep(bestshotmax) + "</a></u>") + "<br>by <em>" + bestshotplayer + "</em>" + (bestshotdate ? "" +
-                "<span class='datestring'><span class='dimgrey'><br>" + bestshotdate + ""</span></span>" : ""));
+                "<span class='datestring'><span class='dimgrey'><br>" + bestshotdate + "</span></span>" : ""));
 
                 if (game == "HSiFS") {
                     $(bestshot.removeSeason() + (difficulty == "Extra" ? "Small" : "")).html((bestshotreplay === "" ? "<u>" + sep(bestshotmax) +
