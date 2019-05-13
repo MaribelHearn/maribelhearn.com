@@ -648,6 +648,21 @@ function toggleDates() {
     $(".datestring").css("display", datesEnabled ? "inline" : "none");
 }
 
+function disableDates() {
+    var i;
+
+    for (i in all) {
+        if (all[i] == "overall") {
+            continue;
+        }
+
+        $("#" + all[i] + "overall4").css("display", "none");
+    }
+
+    $(".date").css("display", "none");
+    $(".datestring").css("display", "none");
+}
+
 function percentageClass(percentage) {
     if (percentage < 50) {
         return "does_not_even_score";
@@ -670,7 +685,7 @@ function load() {
 
         var skip = {}, game, max, difficulty, bestshotmax, shottype, wr, score, player, replay, overall,
         overallplayer, overalldifficulty, overallshottype, overallseason, overalldate, bestshot,
-        bestshotplayer, bestshotseason, bestshotdate, text, count, seasonless, i, j;
+        bestshotplayer, bestshotseason, bestshotdate, text, count, seasonless, i;
 
         for (game in WRs) {
             if (!$("#" + game + "c").is(":checked") || skips.contains(game)) {
@@ -727,7 +742,7 @@ function load() {
 
                     text = (replay === "" ? sep(score) : "<a class='replay' href='" + replay +
                     "'>" + sep(score) + "</a>") + "<br>by <em>" + player + "</em>" + (date ? "" +
-                    "<span class='datestring'><br>" + date + "</span>" : "");
+                    "<span class='datestring'><span class='dimgrey'><br>" + date + "</span></span>" : "");
 
                     if (score > 0) {
                         $("#" + game + difficulty + shottype).html(text);
@@ -745,13 +760,13 @@ function load() {
 
                 $(bestshot).html((bestshotreplay === "" ? "<u>" + sep(bestshotmax) + "</u>" : "<u><a class='replay' href='" + bestshotreplay +
                 "'>" + sep(bestshotmax) + "</a></u>") + "<br>by <em>" + bestshotplayer + "</em>" + (bestshotdate ? "" +
-                "<span class='datestring'><br>" + bestshotdate + "</span>" : ""));
+                "<span class='datestring'><span class='dimgrey'><br>" + bestshotdate + ""</span></span>" : ""));
 
                 if (game == "HSiFS") {
                     $(bestshot.removeSeason() + (difficulty == "Extra" ? "Small" : "")).html((bestshotreplay === "" ? "<u>" + sep(bestshotmax) +
                     "</u>" : "<u><a class='replay' href='" + bestshotreplay + "'>" + sep(bestshotmax) + "</a></u>") + "<br>by <em>" + bestshotplayer +
                     "</em>" + (game == "HSiFS" && difficulty != "Extra" ? " (" + bestshotseason + ")" : "") + (bestshotdate ? "" +
-                    "<span class='datestring'><br>" + bestshotdate + "</span>" : ""));
+                    "<span class='datestring'><span class='dimgrey'><br>" + bestshotdate + "</span></span>" : ""));
                 }
 
                 compareWRs[game][difficulty] = [bestshotmax, bestshotplayer, bestshot.replace("#" + game + difficulty, "")];
@@ -829,42 +844,34 @@ function load() {
                     "'>(" + (parseInt(percentage) == 100 ? 100 : percentage) + "%)</th></tr>");
                 }
             }
-
-            if (getCookie("lang") == "Japanese") {
-                language = "Japanese";
-                generateText();
-            } /*else if (getCookie("lang") == "Chinese") {
-                language = "Chinese";
-                generateText();
-            }*/ else {
-                language = "English";
-                notation = (getCookie("datenotation") ? getCookie("datenotation") : "DMY");
-
-                if (notation == "DMY") {
-                    $("#lastupdate").html("World records are current as of " + translateDate(lastUpdate, "DMY") + ".");
-                } else if (notation == "MDY") {
-                    var datestrings = $(".datestring");
-
-                    for (i in datestrings) {
-                        date = mdy($(datestrings[i]).html());
-                        $(datestrings[i]).html((i > LIMIT ? "<br>" : "") + date);
-                    }
-                }
-            }
-
-            if (!datesEnabled) {
-                for (j in all) {
-                    if (all[j] == "overall") {
-                        continue;
-                    }
-
-                    $("#" + all[j] + "overall4").css("display", "none");
-                }
-
-                $(".date").css("display", "none");
-                $(".datestring").css("display", "none");
-            }
         }, "json");
+
+        // date checking
+        if (getCookie("lang") == "Japanese") {
+            language = "Japanese";
+            generateText();
+        } /*else if (getCookie("lang") == "Chinese") {
+            language = "Chinese";
+            generateText();
+        }*/ else {
+            language = "English";
+            notation = (getCookie("datenotation") ? getCookie("datenotation") : "DMY");
+
+            if (notation == "DMY") {
+                $("#lastupdate").html("World records are current as of " + translateDate(lastUpdate, "DMY") + ".");
+            } else if (notation == "MDY") {
+                var datestrings = $(".datestring");
+
+                for (i in datestrings) {
+                    date = mdy($(datestrings[i]).html());
+                    $(datestrings[i]).html((i > LIMIT ? "<br>" : "") + date);
+                }
+            }
+        }
+
+        if (!datesEnabled) {
+            disableDates();
+        }
 
         if (!$("#overallc").is(":checked")) {
             hide("overall");
@@ -899,6 +906,6 @@ $(document).ready(function() {
     swapTables();
 
     if (!datesEnabled) {
-        $(".datestring").css("display", "none");
+        disableDates();
     }
 });
