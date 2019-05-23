@@ -56,7 +56,7 @@ $(document).ready(function() {
 function updateCountdown() {
     var countdownDate, now, distance, days, hours, minutes, seconds;
 
-    countdownDate = Date.UTC("2019", "2", "29", "19", "30", "0");
+    countdownDate = Date.UTC("2019", "5", "3", "13", "30", "0");
     now = new Date().getTime();
     distance = countdownDate - now;
     days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -122,7 +122,7 @@ function translateCharName(charName) {
             "B1": "B1",
             "B2": "B2",
             "C1": "C1",
-            "C2": "B2",
+            "C2": "C2",
             "Sanae": "早苗",
             "Spring": "春",
             "Summer": "夏",
@@ -190,7 +190,7 @@ function translateCharName(charName) {
             "B1": "B1",
             "B2": "B2",
             "C1": "C1",
-            "C2": "B2",
+            "C2": "C2",
             "Sanae": "早苗",
             "Spring": "春",
             "Summer": "夏",
