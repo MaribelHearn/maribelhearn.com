@@ -75,36 +75,39 @@
         },
         "PoDD": {
             "Easy": {
-                "base": 50,
+                "base": 65,
                 "min": 15,
-                "lives": 5,
+                "lives": 4,
                 "noBombBonus": 10
             },
             "Normal": {
-                "base": 90,
+                "base": 105,
                 "min": 25,
-                "lives": 5,
-                "noBombBonus": 20
+                "lives": 4,
+                "noBombBonus": 15
             },
             "Hard": {
-                "base": 130,
+                "base": 140,
                 "min": 40,
-                "lives": 5,
-                "noBombBonus": 30
+                "lives": 4,
+                "noBombBonus": 25
             },
             "Lunatic": {
                 "base": 260,
-                "min": 50,
-                "lives": 5,
+                "min": 60,
+                "lives": 4,
                 "noBombBonus": 50
             },
             "multiplier": {
+				"Reimu": 0.9,
                 "Mima": 1.1,
                 "Marisa": 1.1,
-                "Ellen": 1.2,
+                "Ellen": 1.15,
                 "Kotohime": 1.1,
                 "Kana": 1.15,
-                "Chiyuri": 1.2
+				"Rikako": 0.9,
+                "Chiyuri": 1.2,
+				"Yumemi": 0.9
             }
         },
         "LLS": {
@@ -884,7 +887,6 @@
                 "exp": 2,
 				"wr": {
 					"ReimuB": 3300000000,
-					"MarisaA": 3100000000,
 					"SakuyaB": 3600000000
 				}
             },
@@ -1048,7 +1050,7 @@
             },
             "Extra": {
                 "base": 450,
-                "exp": 7
+                "exp": 9
             }
         },
         "LoLK": {
@@ -1179,6 +1181,14 @@
                 "increment": [5, 1, 1.5, 5, 6, 6],
                 "step": [10000000, 1000000, 1000000, 1000000, 1000000, 1000000]
             }
-        }
+        },
+		"Extra": {
+			"ReimuB": {
+				"score": [900000000, 950000000, 975000000, 990000000, 994000000, 995700000],
+				"base": [100, 150, 200, 300, 400, 450],
+				"increment": [1, 1, 1, 1, 1, 1],
+				"step": [1000000, 500000, 150000, 40000, 34000, 25000]
+			}
+		}
 	}
 }
