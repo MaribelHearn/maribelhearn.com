@@ -739,7 +739,18 @@ var modalInformation = function () {
 // Mobile-only
 var menu = function () {
     emptyModal();
-    $("#mobile_modal").html("<h3>Menu</h3>" + $("#menu").html());
+    $("#mobile_modal").html("<h3>Menu</h3>" + $("#menu").html() + "<h3>Navigation</h3>" +
+    "<a href='/'><img src='favicon.ico' class='ico-32' alt='Index icon'> Index</a>" +
+    "<a href='scoring'><img src='scoring/spell.ico' class='ico-32' alt='Spell Card icon'> Scoring</a>" +
+    "<a href='survival'><img src='survival/survival.ico' class='ico-32' alt='1up Item icon'> Survival</a>" +
+    "<a href='drc'><img src='drc/power.ico' alt='Power icon'> DRC</a>" +
+    "<a href='tools'><img src='tools/ufo.ico' class='ico-32' alt='UFO icon'> Tools</a>" +
+    "<a href='wr'><img src='wr/point.ico' alt='Point Item icon'> WR</a>" +
+    "<a href='lnn'><img src='lnn/full.ico' class='ico-32' alt='Full Power icon'> LNN</a>" +
+    "<a href='thvote'><img src='thvote/tou-32.ico' class='ico-32' alt='Tou kanji icon'> Poll</a>" +
+    "<a href='jargon'><img src='jargon/bomb.ico' alt='Bomb icon'> Jargon</a>" +
+    "<a href='trs'><img src='trs/shinto.png' alt='Shinto shrine icon'> TRS</a>" +
+    "<strong><img src='tiers/castle.png' alt='Japanese castle icon'> Tiers</a></strong>");
     $("#mobile_modal").css("display", "block");
     $("#modal").css("display", "block");
 };
