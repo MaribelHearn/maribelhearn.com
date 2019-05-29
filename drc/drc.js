@@ -1236,7 +1236,7 @@ function removeSeason(shottype) {
 }
 
 function scoringPoints(rubric, game, difficulty, shottype) {
-    var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), wr;
+    var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), wr, wrshottype, exp;
 
     if (isNaN(score)) {
         $(ERROR).html("<strong style='color:red'>" + translate("Error: ") + translate("invalid score.") + "</strong>");
@@ -1252,10 +1252,13 @@ function scoringPoints(rubric, game, difficulty, shottype) {
     } else if (Rubrics.SCORE[game][difficulty].wr && typeof Rubrics.SCORE[game][difficulty].wr != "object") {
         wr = Rubrics.SCORE[game][difficulty].wr;
     } else {
-        wr = WRs[game][difficulty][removeSeason(shottype) + (game == "HSiFS" ? bestSeason(difficulty, shottype) : "")][0];
+        wrshottype = (game == "HSiFS" && difficulty != "Easy" ? removeSeason(shottype) + bestSeason(difficulty, shottype) : shottype);
+        wr = WRs[game][difficulty][wrshottype][0];
     }
 
-    return (score >= wr ? rubric.base : Math.round(rubric.base * Math.pow((score / wr), rubric.exp)));
+    exp = (game == "DDC" && difficulty == "Extra" && shottype == "MarisaB" ? 7 : rubric.exp);
+
+    return (score >= wr ? rubric.base : Math.round(rubric.base * Math.pow((score / wr), exp)));
 }
 
 function manoku(string, length, offset) {
