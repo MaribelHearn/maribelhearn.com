@@ -778,6 +778,7 @@ function translate(arg) {
             "If score < 13m, then: ||200*(Score/13m)^3||": "スコアが1300万よりも小さければ、||200*(スコア/1300万)^3||",
             "If score < 1st threshold, then: ||220*(Score/T1)^2||": "スコアが第一閾値よりも小さければ、||220*(スコア/第一閾値)^2||",
             "If score < 2b, then: ||200*(Score/2b)^2||": "スコアが20億よりも小さければ、||200*(スコア/20億)^2||",
+            "If score < 900m, then: ||100*(Score/900m)^2||": "スコアが9億よりも小さければ、||100*(スコア/9億)^2||",
             "Hide Survival Rubrics": "クリア重視のルーブリックを見せない",
             "Show Survival Rubrics": "クリア重視のルーブリックを見せて",
             "Hide Scoring Rubrics": "稼ぎのルーブリックを見せない",
@@ -1312,7 +1313,7 @@ function abbreviate(num) {
 }
 
 function generateRubrics() {
-    var id = 0, id2 = 3, game, difficulty, rubric, shottype, thresholds, scene, i, n1, n2, n3, step1, step2;
+    var id = 0, id2 = 3, game, difficulty, rubric, shottype, thresholds, scene, i, n1, n2, n3, step1, step2, baseformula;
     $(MOF_TABLE).html("");
     $(DS_TABLE).html("");
     $(SURV_TABLE).html("");
@@ -1385,9 +1386,16 @@ function generateRubrics() {
     }
 
     for (difficulty in Rubrics.MOF_THRESHOLDS) {
+        if (difficulty == "Easy") {
+            baseformula = translate("If score < 1st threshold, then: ||220*(Score/T1)^2||");
+        } else if (difficulty == "Lunatic") {
+            baseformula = translate("If score < 2b, then: ||200*(Score/2b)^2||");
+        } else if (difficulty == "Extra") {
+            baseformula = translate("If score < 900m, then: ||100*(Score/900m)^2||");
+        }
+
         $(MOF_TABLE).append("<tr><th colspan='12'>" + difficulty + "</th></tr>");
-        $(MOF_TABLE).append("<tr><td colspan='12'>" + (difficulty == "Easy" ? translate("If score < 1st threshold, " +
-        "then: ||220*(Score/T1)^2||") : translate("If score < 2b, then: ||200*(Score/2b)^2||")) + "</td></tr>");
+        $(MOF_TABLE).append("<tr><td colspan='12'>" + baseformula + "</td></tr>");
 
         for (shottype in Rubrics.MOF_THRESHOLDS[difficulty]) {
             $(MOF_TABLE).append("<tr><th colspan='3'>" + translateCharName(shottype) + "</th></tr>");
