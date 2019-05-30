@@ -126,7 +126,7 @@ input[type=button] {
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
     input {
-        width: 85px;
+        width: 75px;
     }
 	.wrap {
         margin-left: 0%;
@@ -136,7 +136,7 @@ input[type=button] {
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
     input {
-        width: 80px;
+        width: 75px;
     }
 	.wrap {
         margin-left: 0%;
