@@ -76,19 +76,19 @@
         "PoDD": {
             "Easy": {
                 "base": 65,
-                "min": 15,
+                "min": 10,
                 "lives": 4,
                 "noBombBonus": 10
             },
             "Normal": {
                 "base": 105,
-                "min": 25,
+                "min": 20,
                 "lives": 4,
                 "noBombBonus": 15
             },
             "Hard": {
                 "base": 140,
-                "min": 40,
+                "min": 35,
                 "lives": 4,
                 "noBombBonus": 25
             },
