@@ -1155,11 +1155,11 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
 function mofFormula(difficulty, shottype) {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), drcpoints = 0, originalScore = score, thresholds, increment, step, i;
 
-    // rubric currently only determined for Easy, Lunatic ReimuB and Lunatic MarisaC
-    if (difficulty != "Easy" && difficulty != "Lunatic") {
+    // rubric currently only determined for Easy, Lunatic ReimuB, Lunatic MarisaC, and Extra ReimuB
+    if (difficulty != "Easy" && difficulty != "Lunatic" && difficulty != "Extra") {
         $(ERROR).html("<strong style='color:red'>" + translate("Error: ") + translate("the scoring rubrics for this difficulty are undetermined as of now.") + "</strong>");
         return drcpoints;
-    } else if (difficulty == "Lunatic" && shottype != "ReimuB" && shottype != "MarisaC") {
+    } else if (difficulty == "Lunatic" && shottype != "ReimuB" && shottype != "MarisaC" || difficulty == "Extra" && shottype != "ReimuB") {
         $(ERROR).html("<strong style='color:red'>" + translate("Error: ") + translate("the scoring rubrics for this shottype are undetermined as of now.") + "</strong>");
         return drcpoints;
     }
