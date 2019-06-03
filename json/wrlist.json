@@ -100,7 +100,7 @@
         "Normal": {
             "ReimuA": [91536580, "Karisa", "https://www.youtube.com/watch?v=flWdjn9n3vw", "15/04/2013"],
             "ReimuB": [128477620, "KirbyComment", "https://www.youtube.com/watch?v=UGa2yKiL6UM", "22/03/2016"],
-            "MarisaA": [70985510, "Pearl", "", "??/??/2017"],
+            "MarisaA": [85315200, "ZPScissors", "https://www.youtube.com/watch?v=KNQmT3W05bQ", "13/05/2019"],
             "MarisaB": [117081300, "Chirpy", "", "15/12/2013"]
         },
         "Hard": {
@@ -327,7 +327,7 @@
         },
         "Normal": {
             "Reimu": [213107450, "yet", "http://replays.gensokyo.org/download.php?id=40778", "03/07/2016"],
-            "Marisa": [340799970, "FSX", ""],
+            "Marisa": [340799970, "FSX", "", "28-12-2016"],
             "Sakuya": [176406360, "yet", "http://replays.gensokyo.org/download.php?id=36510", "09/03/2015"],
             "Youmu": [252385710, "そにつく", "http://replay.royalflare.net/replay2/th9_uda872.rpy", "30/01/2019"],
             "Reisen": [332105510, "yet", "http://replays.gensokyo.org/download.php?id=36511", "09/03/2015"],
@@ -375,13 +375,13 @@
         },
         "Extra": {
             "Reimu": [165685530, "yet", "http://replays.gensokyo.org/download.php?id=42225", "04/01/2017"],
-            "Marisa": [292353820, "FSX", ""],
+            "Marisa": [292353820, "FSX", "", "30-12-2016"],
             "Sakuya": [113998290, "yet", "http://replays.gensokyo.org/download.php?id=40481", "27/05/2016"],
             "Youmu": [218307360, "Dagoth-Ur", "http://replays.gensokyo.org/download.php?id=45779", "07/04/2019"],
             "Reisen": [323094170, "FSX", "http://replays.gensokyo.org/download.php?id=41935", "15/11/2016"],
-            "Cirno": [219085850, "FSX", ""],
+            "Cirno": [219085850, "FSX", "", "30-12-2016"],
             "Lyrica": [145103100, "Dagoth-Ur", "http://replay.royalflare.net/replay2/th9_udb497.rpy", "22/04/2019"],
-            "Mystia": [124277920, "yet", "http://ux.getuploader.com/story_extra/download/7/th9_08.rpy", "27/02/2015"],
+            "Mystia": [133765710, "Dagoth-Ur", "http://replays.gensokyo.org/download.php?id=45827", "02/06/2019"],
             "Tewi": [141114220, "yet", "http://replays.gensokyo.org/download.php?id=42226", "04/01/2017"],
             "Aya": [110601940, "yet", "http://ux.getuploader.com/story_extra/download/5/th9_10.rpy", "27/05/2016"],
             "Medicine": [174308280, "Zil", "http://replays.gensokyo.org/download.php?id=32087", "03/02/2014"],
@@ -576,7 +576,7 @@
             "Reimu": [3382821780, "まふらー", "", "08/06/2017"],
             "Marisa": [3647136540, "leo", "http://score.royalflare.net/th13/replay13/th13_ud0b7f.rpy", "06/11/2017"],
             "Sanae": [3260257490, "leo", "https://thscore.pndsng.com/replay/th13_ud0479.rpy", "17/03/2019"],
-            "Youmu": [4000147890, "おとど", "http://score.royalflare.net/th13/replay13/th13_ud0b0f.rpy", "10/03/2017"]
+            "Youmu": [4030422400, "leo", "https://thscore.pndsng.com/replay/th13_ud0357.rpy", "03/06/2019"]
         },
         "Extra": {
             "Reimu": [566200720, "T", "https://zh.touhouwiki.net/images/1/11/Th13_ud07da.rpy", "31/08/2013"],
@@ -716,7 +716,7 @@
         },
         "Lunatic": {
             "ReimuSpring": [4809599290, "Lutino", "http://score.royalflare.net/th16/replay16/th16_ud02e3.rpy", "07/05/2018"],
-            "ReimuSummer": [3509910960, "おいたん", "", "01/01/2019"],
+            "ReimuSummer": [3795404650, "おいたん", "http://score.royalflare.net/th16/replay16/th16_ud0434.rpy", "19/05/2019"],
             "ReimuAutumn": [6927014090, "ひろ♪☆", "http://score.royalflare.net/th16/replay16/th16_ud0413.rpy", "21/04/2019"],
             "ReimuWinter": [4264305670, "LYX", "", "03/01/2018"],
             "CirnoSpring": [3635960560, "あやめ", "", "25/09/2017"],
@@ -730,7 +730,7 @@
             "MarisaSpring": [3104298420, "ありょき", "http://score.royalflare.net/th16/replay16/th16_ud0170.rpy", "24/10/2017"],
             "MarisaSummer": [3651981750, "おいたん", "http://score.royalflare.net/th16/replay16/th16_ud03f6.rpy", "06/03/2019"],
             "MarisaAutumn": [8532659810, "そにつく", "http://score.royalflare.net/th16/replay16/th16_ud03fc.rpy", "16/03/2019"],
-            "MarisaWinter": [3921595600, "kkkn", "http://score.royalflare.net/th16/replay16/th16_ud040e.rpy", "15/04/2019"]
+            "MarisaWinter": [4571372010, "kkkn", "http://score.royalflare.net/th16/replay16/th16_ud040e.rpy", "10/05/2019"]
         },
         "Extra": {
             "Reimu": [3336378300, "fon", "http://score.royalflare.net/th16/replay16/th16_ud02b5.rpy", "06/04/2018"],
