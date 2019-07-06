@@ -94,13 +94,13 @@
         "Easy": {
             "ReimuA": [71657220, "KirbyComment", "https://www.youtube.com/watch?v=suMvCisqv8k", "05/02/2018"],
             "ReimuB": [68786970, "KirbyComment", "https://www.youtube.com/watch?v=fmDKGnMiFhU", "06/02/2016"],
-            "MarisaA": [50667300, "ZPScissors", "https://www.youtube.com/watch?v=UBUH4A0XBLw", "03/04/2019"],
+            "MarisaA": [50667300, "ZPS", "https://www.youtube.com/watch?v=UBUH4A0XBLw", "03/04/2019"],
             "MarisaB": [60481450, "KirbyComment", "https://www.youtube.com/watch?v=M3qFMMmgImw", "26/03/2015"]
         },
         "Normal": {
-            "ReimuA": [91536580, "Karisa", "https://www.youtube.com/watch?v=flWdjn9n3vw", "15/04/2013"],
+            "ReimuA": [105201200, "ZPS", "https://www.youtube.com/watch?v=cggYFR72A6k", "19/06/2019"],
             "ReimuB": [128477620, "KirbyComment", "https://www.youtube.com/watch?v=UGa2yKiL6UM", "22/03/2016"],
-            "MarisaA": [85315200, "ZPScissors", "https://www.youtube.com/watch?v=KNQmT3W05bQ", "13/05/2019"],
+            "MarisaA": [85315200, "ZPS", "https://www.youtube.com/watch?v=KNQmT3W05bQ", "13/05/2019"],
             "MarisaB": [117081300, "Chirpy", "https://www.youtube.com/watch?v=iOPfLlDV7Yk", "15/12/2013"]
         },
         "Hard": {
@@ -110,13 +110,13 @@
             "MarisaB": [108524270, "Chirpy", "", "05/11/2012"]
         },
         "Lunatic": {
-            "ReimuA": [101701550, "ZPScissors", "https://www.youtube.com/watch?v=_kdDhzQYw0E", "01/03/2019"],
+            "ReimuA": [101701550, "ZPS", "https://www.youtube.com/watch?v=_kdDhzQYw0E", "01/03/2019"],
             "ReimuB": [107064900, "Chirpy", "", "14/11/2012"],
             "MarisaA": [123322470, "Pearl", "https://www.youtube.com/watch?v=U7mUG8pokRU", "21/07/2017"],
-            "MarisaB": [95206480, "ZPScissors", "https://www.youtube.com/watch?v=O3b4cgx_cbI", "21/01/2019"]
+            "MarisaB": [95206480, "ZPS", "https://www.youtube.com/watch?v=O3b4cgx_cbI", "21/01/2019"]
         },
         "Extra": {
-            "ReimuA": [79085070, "ZPScissors", "https://www.youtube.com/watch?v=e6LeW7zcMQI", "15/07/2018"],
+            "ReimuA": [79085070, "ZPS", "https://www.youtube.com/watch?v=e6LeW7zcMQI", "15/07/2018"],
             "ReimuB": [80901730, "KirbyComment", "https://www.youtube.com/watch?v=0hbJSbV5ix8", "16/09/2017"],
             "MarisaA": [80357780, "Chirpy", "", "10/09/2017"],
             "MarisaB": [79182030, "Chirpy", "", "24/12/2013"]
@@ -442,7 +442,7 @@
             "MarisaC": [639535650, "morth", "http://score.royalflare.net/th11/replay11/th11_ud13ba.rpy", "21/10/2016"]
         },
         "Normal": {
-            "ReimuA": [1089307060, "にゃんこ", "http://score.royalflare.net/th11/replay11/th11_ud119c.rpy", "09/11/2009"],
+            "ReimuA": [1102010590, "LILI", "http://score.royalflare.net/th11/replay11/th11_ud14e0.rpy", "05/07/2019"],
             "ReimuB": [1017688610, "小走先輩", "http://score.royalflare.net/th11/replay11/th11_ud1104.rpy", "25/04/2012"],
             "ReimuC": [1071892480, "にゃんこ", "http://score.royalflare.net/th11/replay11/th11_ud110b.rpy", "01/05/2012"],
             "MarisaA": [1147733170, "にゃんこ", "https://zh.touhouwiki.net/images/2/29/Th11_ud13d5.rpy", "28/12/2016"],
@@ -463,7 +463,7 @@
             "ReimuC": [3642572170, "UKT", "http://score.royalflare.net/th11/replay11/th11_ud11ba.rpy", "14/01/2013"],
             "MarisaA": [4347625050, "UKT", "http://score.royalflare.net/th11/replay11/th11_ud10d0.rpy", "19/01/2012"],
             "MarisaB": [4426325590, "Cerasis", "http://score.royalflare.net/th11/replay11/th11_ud1486.rpy", "08/11/2018"],
-            "MarisaC": [3133453200, "UKT", "http://score.royalflare.net/th11/replay11/th11_ud0fc8.rpy", "20/06/2011"]
+            "MarisaC": [3358779330, "UKT", "http://score.royalflare.net/th11/replay11/th11_ud14df.rpy", "29/06/2019"]
         },
         "Extra": {
             "ReimuA": [1126846180, "ASL", "http://score.royalflare.net/th11/replay11/th11_ud141c.rpy", "17/09/2017"],
