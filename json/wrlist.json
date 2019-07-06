@@ -80,10 +80,10 @@
         },
         "Lunatic": {
             "Reimu": [103244120, "KirbyComment", "https://www.youtube.com/watch?v=0_-lAKiHMPQ", "25/05/2017"],
-            "Mima": [127826260, "Zil", "", "24/02/2017"],
+            "Mima": [131132780, "KirbyComment", "https://www.youtube.com/watch?v=r4cmUifN79E", "05/07/2019"],
             "Marisa": [109691220, "Zil", "", "15/10/2014"],
             "Ellen": [122656180, "KirbyComment", "https://www.youtube.com/watch?v=qfMHiah8vVg", "10/06/2017"],
-            "Kotohime": [123393850, "KirbyComment", "https://www.youtube.com/watch?v=gnTMvIs0Jng", "03/06/2017"],
+            "Kotohime": [126239720, "Zil", "https://www.twitch.tv/videos/436934003", "10/06/2019"],
             "Kana": [109828660, "Zil", "", "26/10/2014"],
             "Rikako": [98761280, "KirbyComment", "https://www.youtube.com/watch?v=vBuobm_8QYI", "06/10/2018"],
             "Chiyuri": [132887850, "Zil", "https://www.youtube.com/watch?v=NCNG5BRgq8Y", "20/01/2016"],
@@ -101,7 +101,7 @@
             "ReimuA": [91536580, "Karisa", "https://www.youtube.com/watch?v=flWdjn9n3vw", "15/04/2013"],
             "ReimuB": [128477620, "KirbyComment", "https://www.youtube.com/watch?v=UGa2yKiL6UM", "22/03/2016"],
             "MarisaA": [85315200, "ZPScissors", "https://www.youtube.com/watch?v=KNQmT3W05bQ", "13/05/2019"],
-            "MarisaB": [117081300, "Chirpy", "", "15/12/2013"]
+            "MarisaB": [117081300, "Chirpy", "https://www.youtube.com/watch?v=iOPfLlDV7Yk", "15/12/2013"]
         },
         "Hard": {
             "ReimuA": [100687310, "Karisa", "https://www.youtube.com/watch?v=6TAYwjJk1Mo", "01/03/2013"],
@@ -722,7 +722,7 @@
             "CirnoSpring": [3635960560, "あやめ", "", "25/09/2017"],
             "CirnoSummer": [4023762580, "おいたん", "http://score.royalflare.net/th16/replay16/th16_ud03f2.rpy", "03/03/2019"],
             "CirnoAutumn": [6886106900, "みょん吉", "http://score.royalflare.net/th16/replay16/th16_ud0385.rpy", "08/10/2018"],
-            "CirnoWinter": [4717418720, "kkkn", "http://score.royalflare.net/th16/replay16/th16_ud042a.rpy", "11/05/2019"],
+            "CirnoWinter": [4911710210, "kkkn", "http://score.royalflare.net/th16/replay16/th16_ud0446.rpy", "25/06/2019"],
             "AyaSpring": [4045450910, "ISN", "https://zh.touhouwiki.net/images/7/7b/Th16_ud003L.rpy", "10/03/2018"],
             "AyaSummer": [3740850940, "おいたん", "http://score.royalflare.net/th16/replay16/th16_ud03f3.rpy", "04/03/2019"],
             "AyaAutumn": [9145566010, "そにつく", "http://score.royalflare.net/th16/replay16/th16_ud03e6.rpy", "17/02/2019"],
