@@ -32,27 +32,25 @@ var similarity = function (a, b) {
 
 var path = location.pathname.split('/').pop(), loc = location.toString(), max = 0, maxPath, sim, i;
 
-if (!isNaN(path) || path == "404.html") {
-    return;
-}
+if (isNaN(path) && path != "404.html") {
+    for (i = 0; i < pages.length; i++) {
+        sim = similarity(path, pages[i]);
 
-for (i = 0; i < pages.length; i++) {
-    sim = similarity(path, pages[i]);
+        if (sim > max) {
+            max = sim;
+            maxPath = pages[i];
+        }
+    }
 
-    if (sim > max) {
-        max = sim;
-        maxPath = pages[i];
+    loc = (loc.indexOf("file:///") > -1 ? loc.replace(path, maxPath) + ".html" : maxPath);
+
+    if (max > maxPath.length - 2) {
+        location.replace(loc.replace(path, maxPath)); // redirection
     }
 }
 
-loc = (loc.indexOf("file:///") > -1 ? loc.replace(path, maxPath) + ".html" : maxPath);
-
-if (max > maxPath.length - 2) {
-    location.replace(loc.replace(path, maxPath)); // redirection
-}
-
 var load = function () {
-    if (max <= maxPath.length - 2) {
+    if (isNaN(path) && path != "404.html" && max <= maxPath.length - 2) {
         document.getElementById("didyoumean").innerHTML = ", did you mean <a href='/" + loc + "'>" + maxPath + "</a>?";
     }
 };
