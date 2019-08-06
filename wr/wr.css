@@ -50,6 +50,60 @@ table, th, td {
     counter-increment: sortabletablescope;
     display: table-cell;
 }
+#HRtP th {
+    background-color: #B6423C;
+}
+#SoEW th {
+    color: white;
+    background-color: #7D3884;
+}
+#PoDD th {
+    background-color: gold;
+}
+#LLS th {
+    background-color: lightgreen;
+}
+#MS th {
+    background-color: #AE11D5;
+}
+#EoSD th {
+    background-color: #FF2400;
+}
+#PCB th {
+    background-color: #FF8ED2;
+}
+#IN th {
+    color: white;
+    background-color: #333399;
+}
+#PoFV th {
+    background-color: #009973;
+}
+#MoF th {
+    background-color: #96B300;
+}
+#SA th {
+    color: white;
+    background-color: #591400;
+}
+#UFO th {
+    background-color: #4169E1;
+}
+#GFW th {
+    background-color: #00C8C8;
+}
+#TD th {
+    background-color: #4A808C;
+}
+#DDC th {
+    background-color: #AA7777;
+}
+#LoLK th {
+    background-color: #6A47BE;
+}
+#HSiFS th, #HSiFSsmall th {
+    background-color: #176E0E;
+}
 .wrap {
     border: 1px solid black;
     text-align: center;
