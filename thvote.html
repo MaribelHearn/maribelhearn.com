@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang='en'>
+<html lang='en' class='no-js'>
 
     <head>
         <title>THWiki Popularity Poll 2019 Full Results</title>
@@ -12,11 +12,14 @@
 		<link rel='icon' type='image/x-icon' href='thvote/tou-32.ico'>
         <script src='sorttable.js'></script>
         <script src='thvote/thvote.js'></script>
+        <script src='modernizr-custom.js'></script>
+        <script>document.documentElement.classList.remove("no-js");</script>
     </head>
 
     <body onLoad='ready()'>
 		<div id='nav' class='wrap'>
 			<nav>
+				<a href='/'><img src='favicon.ico' class='ico-32' alt='Index icon'> Index</a>
 				<a href='scoring'><img src='scoring/spell.ico' class='ico-32' alt='Spell Card icon'> Scoring</a>
 				<a href='survival'><img src='survival/survival.ico' class='ico-32' alt='1up Item icon'> Survival</a>
 				<a href='drc'><img src='drc/power.ico' alt='Power icon'> DRC</a>

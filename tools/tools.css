@@ -1,4 +1,8 @@
-body {
+.webp body {
+	background: url('tools.webp') top no-repeat fixed;
+	background-size: cover;
+}
+.no-webp body, .no-js body {
 	background: url('tools.jpg') top no-repeat fixed;
 	background-size: cover;
 }

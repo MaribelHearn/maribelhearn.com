@@ -1,4 +1,8 @@
-body {
+.webp body {
+	background: url('index.webp') center no-repeat fixed;
+	background-size: cover;
+}
+.no-webp body, .no-js body {
 	background: url('index.png') center no-repeat fixed;
 	background-size: cover;
 }
