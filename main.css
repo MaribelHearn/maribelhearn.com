@@ -1,5 +1,10 @@
-body {
+.webp body {
+	background: url('index.webp') center no-repeat fixed;
+}
+.no-webp body, .no-js body {
 	background: url('index.png') center no-repeat fixed;
+}
+body {
 	background-size: cover;
 }
 div {
@@ -26,10 +31,6 @@ td {
 .center {
     margin-left: auto;
     margin-right: auto;
-}
-.ico-32 {
-    width: 16px;
-    height: 16px;
 }
 #wrap {
     border: 1px solid black;

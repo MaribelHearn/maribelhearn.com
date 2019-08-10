@@ -1,4 +1,8 @@
-body {
+.webp body {
+	background: url('title.webp') top no-repeat fixed;
+    background-size: cover;
+}
+.no-webp body, .no-js body {
 	background: url('title.png') top no-repeat fixed;
     background-size: cover;
 }
@@ -68,29 +72,13 @@ table, tr, th, td {
         width: 300px;
         height: 125px;
     }
-    #yuitia {
-        width: 117px;
-        height: 228px;
-    }
     #table {
         font-size: 11px;
-    }
-    .shot {
-        width: 320px;
-        height: 240px;
     }
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
 	#wrap {
         margin-left: 0%;
         margin-right: 0%;
-    }
-    #yuitia {
-        width: 117px;
-        height: 228px;
-    }
-    .shot {
-        width: 320px;
-        height: 240px;
     }
 }

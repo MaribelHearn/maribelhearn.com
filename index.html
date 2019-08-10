@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='en' class='no-js'>
 
     <head>
 		<title>Maribel Hearn's GitHub Pages</title>
@@ -10,6 +10,8 @@
 		<link rel='stylesheet' type='text/css' href='main.css'>
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa'>
 		<link rel='icon' type='image/x-icon' href='favicon.ico'>
+        <script src='modernizr-custom.js'></script>
+        <script>document.documentElement.classList.remove("no-js");</script>
     </head>
 
     <body>
@@ -20,41 +22,67 @@
             <table class='center'>
                 <tr>
                     <td><table>
-                        <tr><td><a href='scoring'><img src='scoring/spell.ico' class='ico-32' alt='Spell Card icon'> High Score Storage</a></td></tr>
+                        <tr><td><a href='scoring'><img src='scoring/spell.ico' alt='Spell Card icon'> High Score Storage</a></td></tr>
                         <tr><td><em>Allows you to save your Touhou game scores, as well as calculate how they compare to the world records.</em></td></tr>
                     </table></td>
                     <td><table>
-                        <tr><td><a href='survival'><img src='survival/survival.ico' class='ico-32' alt='1up Item icon'> Survival Progress Table Generator</a></td></tr>
+                        <tr><td><a href='survival'><img src='survival/survival.ico' alt='1up Item icon'> Survival Progress Table Generator</a></td></tr>
                         <tr><td><em>Tool that lets you generate a table that summarises your Touhou survival progress.</em></td></tr>
                     </table></td>
                 </tr>
                 <tr>
                     <td><table>
                         <tr><td><a href='drc'><img src='drc/power.ico' alt='Power icon'> Dodging Rain Competition</a>
-                        <img src='drc/japan.png' alt='Flag of Japan' class='ico-32'>
-                        <img src='drc/china.png' alt='Flag of the P.R.C.' class='ico-32'></td></tr>
+                        <picture>
+                            <source srcset='drc/japan16x16.webp'>
+                            <source srcset='drc/japan16x16.png'>
+                            <img src='drc/japan16x16.png' alt='Flag of Japan'>
+                        </picture>
+                        <picture>
+                            <source srcset='drc/china16x16.webp'>
+                            <source srcset='drc/china16x16.png'>
+                            <img src='drc/china16x16.png' alt='Flag of the P.R.C.'>
+                        </picture>
                         <tr><td><em>Webpage intended for use by the Dodging Rain Competition (see page for explanation).</em></td></tr>
                     </table></td>
                     <td><table>
-                        <tr><td><a href='tools'><img src='tools/ufo.ico' class='ico-32' alt='UFO icon'> Touhou Patches and Tools</a></td></tr>
+                        <tr><td><a href='tools'><img src='tools/ufo.ico' alt='UFO icon'> Touhou Patches and Tools</a></td></tr>
                         <tr><td><em>A collection of helpful patches and tools for the Touhou shooting games, many of which for efficient practicing.</em></td></tr>
                     </table></td>
                 </tr>
                 <tr>
                     <td><table>
                         <tr><td><a href='wr'><img src='wr/point.ico' alt='Point Item icon'> Touhou World Records</a>
-                        <img src='drc/japan.png' alt='Flag of Japan' class='ico-32'></td></tr>
+                        <picture>
+                            <source srcset='drc/japan16x16.webp'>
+                            <source srcset='drc/japan16x16.png'>
+                            <img src='drc/japan16x16.png' alt='Flag of Japan'>
+                        </picture>
+                        <!--<picture>
+                            <source srcset='drc/china16x16.webp'>
+                            <source srcset='drc/china16x16.png'>
+                            <img src='drc/china16x16.png' alt='Flag of the P.R.C.'>
+                        </picture>-->
                         <tr><td><em>The world records for all Touhou shooting games except for the scene games.</em></td></tr>
                     </table></td>
                     <td><table>
-                        <tr><td><a href='lnn'><img src='lnn/full.ico' class='ico-32' alt='Full Power icon'> Touhou Lunatic No Miss No Bombs</a>
-                        <img src='drc/japan.png' alt='Flag of Japan' class='ico-32'></td></tr>
+                        <tr><td><a href='lnn'><img src='lnn/full.ico' alt='Full Power icon'> Touhou Lunatic No Miss No Bombs</a>
+                        <picture>
+                            <source srcset='drc/japan16x16.webp'>
+                            <source srcset='drc/japan16x16.png'>
+                            <img src='drc/japan16x16.png' alt='Flag of Japan'>
+                        </picture>
+                        <!--<picture>
+                            <source srcset='drc/china16x16.webp'>
+                            <source srcset='drc/china16x16.png'>
+                            <img src='drc/china16x16.png' alt='Flag of the P.R.C.'>
+                        </picture>-->
                         <tr><td><em>Players who have done Lunatic No Miss No Bomb (LNN) runs of the Touhou shooting games are listed here.</em></td></tr>
                     </table></td>
                 </tr>
                 <tr>
                     <td><table>
-                        <tr><td><a href='thvote'><img src='thvote/tou-32.ico' class='ico-32' alt='Tou kanji icon'> THWiki Popularity Poll 2019 Results Translation</a></td></tr>
+                        <tr><td><a href='thvote'><img src='thvote/tou-32.ico' alt='Tou kanji icon'> THWiki Popularity Poll 2019 Results Translation</a></td></tr>
                         <tr><td><em>Complete English translation of the full results of the THWiki Popularity Poll held in 2019.</em></td></tr>
                     </table></td>
                     <td><table>
@@ -81,7 +109,7 @@
                         <tr><td><em>Documentation of my history as a shmup player.</em></td></tr>
                     </table></td>
                     <td><table>
-                        <tr><td><a href='c67'><img src='c67/c67.ico' class='ico-32' alt='Banshiryuu icon'> Seihou Banshiryuu C67</a></td></tr>
+                        <tr><td><a href='c67'><img src='c67/c67.ico' alt='Banshiryuu icon'> Seihou Banshiryuu C67</a></td></tr>
                         <tr><td><em>Explanation of scoring in Banshiryuu C67, the earlier version of the third Seihou game (unfinished).</em></td></tr>
                     </table></td>
                 </tr>
@@ -91,8 +119,21 @@
 			<a href='https://twitter.com/MaribelHearn42'><img src='icons/twitter-icon-small.png' alt='Twitter favicon'>Twitter</a>
             <a href='https://twitch.tv/maribel_hearn'><img src='icons/twitch-icon-small.ico' alt='Twitch favicon'>Twitch</a>
             <a href='https://steamcommunity.com/id/maribelhearn42'><img src='icons/steam-icon-small.ico' alt='Steam favicon'>Steam</a>
-            <a href='https://github.com/MaribelHearn'><img src='icons/github-icon.ico' class='ico-32' alt='GitHub favicon'>GitHub</a></p>
-            <p>Partners: <a href='http://replay.lunarcast.net'><img src='icons/favicon-lunarcast.ico' class='ico-32' alt='Lunarcast favicon'>Lunarcast Replay Database</a></p>
+            <a href='https://github.com/MaribelHearn'><img src='icons/github-icon.ico' alt='GitHub favicon'>GitHub</a></p>
+            <p>Partners: <a href='http://replay.lunarcast.net'><img src='icons/favicon-lunarcast.ico' alt='Lunarcast favicon'>Lunarcast Replay Database</a></p>
+            <script>
+            if (location.protocol == "file:") {
+                var path = location.pathname.split('/').pop(), length = document.links.length, href;
+
+                for (var i = 0; i < length; i++) {
+                    href = document.links[i].href;
+
+                    if (document.links[i].protocol == "file:" && href.indexOf('#') == -1) {
+                        document.links[i].href += ".html";
+                    }
+                }
+            }
+            </script>
             <!-- Default Statcounter code for Maribel Hearn's GitHub Pages
             https://maribelhearn.github.io -->
             <script type="text/javascript">

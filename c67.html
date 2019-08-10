@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='en' class='no-js'>
 
     <head>
         <title>Seihou Banshiryuu C67</title>
@@ -8,15 +8,20 @@
 		<link rel='stylesheet' type='text/css' href='c67/c67.css'>
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa'>
 		<link rel='icon' type='image/x-icon' href='c67/c67.ico'>
-        <script src='sorttable.js'></script>
+        <script src='modernizr-custom.js'></script>
+        <script>document.documentElement.classList.remove("no-js");</script>
     </head>
 
     <body>
         <div id='wrap'>
             <h1>Seihou Banshiryuu C67</h1>
-            <p>This page covers the scoring system and mechanics of the Comiket C67 release of Seihou Banshiryuu.</p>
-			<p><a href='/'>Back to Main Page</a></p>
-            <img src='c67/boxart.jpg' alt='Banshiryuu Cover'>
+            <p>This page covers the scoring system and mechanics of the Comiket 67 release of Seihou Banshiryuu.</p>
+			<p><a id='backtomain' href='/'>Back to Main Page</a></p>
+            <picture>
+                <source srcset='c67/boxart.webp'>
+                <source srcset='c67/boxart.jpg'>
+                <img src='c67/boxart.jpg' alt='Banshiryuu Cover'>
+            </picture>
             <hr>
             <h2>Contents</h2>
             <table id='contents' class='center'>
@@ -36,7 +41,11 @@
             </table>
             <hr>
             <h2 id='items'>Items</h2>
-            <img src='c67/item_rank.jpg' alt='Items'>
+            <picture>
+                <source srcset='c67/item_rank.webp'>
+                <source srcset='c67/item_rank.jpg'>
+                <img src='c67/item_rank.jpg' alt='Items'>
+            </picture>
             <p>Items will be automatically collected when an enemy is killed in close proximity. As you collect more of the same item,
             the item rank will gradually increase, also changing what the items look like. The points awarded per item on each rank are as follows:</p>
             <p>100 -> 1,000 -> 6,400 -> 12,800 -> 51,200</p>
@@ -45,8 +54,14 @@
             <p>In case an enemy is killed from even further away, it will not drop any item at all.</p>
             <hr>
             <h2 id='grazing'>Grazing</h2>
-            <img id='graze' src='c67/grazing.png' alt='Grazing'><br>
-            <em class='description'>A counter, showing your current continuous graze and total graze points on the stage, appears as you perform continuous grazing.</em>
+            <picture>
+                <source srcset='c67/grazing.webp'>
+                <source srcset='c67/grazing.png'>
+                <img id='graze' src='c67/grazing.png' alt='Grazing'>
+            </picture>
+            <br>
+            <em class='description'>A counter appears as you perform continuous grazing,
+            showing your current continuous graze and total graze points on the stage.</em>
             <p>It is possible to automatically collect all items on the screen by means of <em>grazing</em> bullets,
             which is having a bullet enter your 'grazebox', the area around your character in which a bullet is considered to be grazed.
             This area is larger when you are focused and focusing also makes the grazebox display on screen,
@@ -54,13 +69,21 @@
             For each graze point, 300 points are added to your score.</p>
             <hr>
             <h2 id='se'>Special Equipment (SE)</h2>
-            <img src='c67/normal_se.jpg' alt='SE-attack'>
+            <picture>
+                <source srcset='c67/normal_se.webp'>
+                <source srcset='c67/normal_se.jpg'>
+                <img src='c67/normal_se.jpg' alt='SE-attack'>
+            </picture>
             <p>Bosses and midbosses may use <em>SE attacks</em>. They have a set duration and the boss is invincible during one,
             as denoted by the text "-- ABSOLUTE DEFEND --" displayed on their health bar. During an SE, you should
             attempt to deal as much damage as possible; when an SE ends, the damage dealt to the boss during it
             is multiplied by 100 and added to your score. The damage dealt to the boss during an SE is displayed
             on the right of the screen, below your current score.</p>
-            <img src='c67/se.jpg' alt='Damage dealt to SE'><br>
+            <picture>
+                <source srcset='c67/se.webp'>
+                <source srcset='c67/se.jpg'>
+                <img src='c67/se.jpg' alt='Damage dealt to SE'><br>
+            </picture>
             <em class='description'>The bottom number is the current damage dealt to the boss during an SE.</em>
             <p>There are several different kinds of SE attacks. Every boss has an opening SE, which will always be used
             at the start of a boss battle. Bosses also have at least one SE that is always used when the boss reaches
@@ -69,7 +92,11 @@
             SE that can be skipped if enough damage is dealt to the boss to bring it past that health range before
             their regular pattern finishes. This is the most notable in the battle against VIVIT when using
             Hirano, due to VIVIT's low health.</p>
-            <img src='c67/final_se.jpg' alt='Final SE-attack'><br>
+            <picture>
+                <source srcset='c67/final_se.webp'>
+                <source srcset='c67/final_se.jpg'>
+                <img src='c67/final_se.jpg' alt='Final SE-attack'><br>
+            </picture>
             <em class='description'>The stage 1 midboss' final (and in this case, only) SE begins.</em>
             <p>Every boss also has a single <em>final SE</em>, which cannot be skipped and is used once their health bar
             is empty. Their health bar will be refilled with a red color when the final SE begins. If this health
@@ -115,7 +142,11 @@
                     <td>1,000,000</td>
                 </tr>
             </table>
-            <img id='yuitia' src='c67/yuitia.png' alt='Yuitia (final boss)'><br>
+            <picture>
+                <source srcset='c67/yuitia.webp'>
+                <source srcset='c67/yuitia.png'>
+                <img src='c67/yuitia.png' alt='Yuitia (final boss)'><br>
+            </picture>
             <em class='description'>Yuitia, the stage 6 (final) boss of the game.</em>
             <p>The final boss, Yuitia, has some unique properties; she does not drop any item once she explodes and cannot
             be damaged by bombs, which makes bombing them <em>bad</em> for scoring rather than good.
@@ -131,7 +162,11 @@
             <h2 id='shottypes'>Shottypes</h2>
             <p>Note that for every shottype, the regular shot can only hit enemies in front of you, and the focused shot automatically aims at enemies.</p>
             <h3 id='vivitw'>VIVIT-W</h3>
-            <img src='c67/vivitw.png' alt='VIVIT-W Shottype Info' class='shot'>
+            <picture>
+                <source srcset='c67/vivitw.webp'>
+                <source srcset='c67/vivitw.png'>
+                <img src='c67/vivitw.png' alt='VIVIT-W Shottype Info'>
+            </picture>
             <br>
             <p>A shottype with slow movement speed and medium powered shots. Her regular shot covers a wide area and is inconsistent,
             because the familiars change their firing direction, their shots on the side moving from left to right (independently
@@ -146,7 +181,11 @@
             which is helpful during certain patterns, though you may mostly want to be fast, still, given the fast bullet speeds in most
             of the game. Her bomb duration can also help her last out through patterns, having far more I-frames than other bombs.</p>
             <h3 id='vivita'>VIVIT-A</h3>
-            <img src='c67/vivita.png' alt='VIVIT-A Shottype Info' class='shot'>
+            <picture>
+                <source srcset='c67/vivita.webp'>
+                <source srcset='c67/vivita.png'>
+                <img src='c67/vivita.png' alt='VIVIT-A Shottype Info'>
+            </picture>
             <br>
             <p>The faster VIVIT, boasting the second fastest movement speed, the second most powerful regular shot and second weakest
             focused shot. Her regular shot is very thin and does not automatically end when you let go of the shot key; the lasers
@@ -160,7 +199,11 @@
             not being in point blank range while killing enemies, as well as making sure she is always directly below what you
             want to deal damage to. Avoid focusing as much as possible and limit it to when it is needed for survival.</p>
             <h3 id='hiranos'>HiranoS</h3>
-            <img src='c67/hiranos.png' alt='HiranoS Shottype Info' class='shot'>
+            <picture>
+                <source srcset='c67/hiranos.webp'>
+                <source srcset='c67/hiranos.png'>
+                <img src='c67/hiranos.png' alt='HiranoS Shottype Info'>
+            </picture>
             <br>
             <p>Arguably the best shottype in the game. Her regular shot is the most powerful shot in the game, beating not just all
             regular shots, but also all focused shots. On top of this, it covers more than twice as wide an area as the powerful
@@ -174,7 +217,11 @@
             Mastering unfocused dodging is very much necessary if you want to get good with HiranoS, since that will make her deal much more
             damage and achieve very high scores; her amazing damage combined with her speed is what makes her the best shottype to use overall.</p>
             <h3 id='hiranoo'>HiranoO</h3>
-            <img src='c67/hiranoo.png' alt='HiranoO Shottype Info' class='shot'>
+            <picture>
+                <source srcset='c67/hiranoo.webp'>
+                <source srcset='c67/hiranoo.png'>
+                <img src='c67/hiranoo.png' alt='HiranoO Shottype Info'>
+            </picture>
             <br>
             <p>HiranoO is a gimmicky shottype. Her regular shot is the third strongest, being twice as powerful as VIVIT-W's one but weaker
             than those of VIVIT-A and HiranoS, and it bends with horizontal movement; bending to the left when you move left, and vice
@@ -188,7 +235,7 @@
             together with slow movement, that make her very poor at item collection, although her damage dealt to bosses is pretty good,
             having the strongest focused shot in the game, which is the second strongest shot overall, only beaten by Hirano-S's regular shot.</p>
             <h3 id='comparison'>Comparison</h3>
-            <table id='table' class='sortable'>
+            <table id='table'>
                 <tr>
                     <th></th>
                     <th>Regular shot power</th>
@@ -232,6 +279,13 @@
             </table>
             <p>* Much higher than any other bomb in practice (if used on top of an enemy or boss)</p>
         </div>
+        <script>
+        var path = location.pathname.split('/').pop();
+
+    	if (location.protocol == "file:") {
+            document.getElementById("backtomain").setAttribute("href", location.href.replace(path, "index.html"));
+        }
+        </script>
         <!-- Default Statcounter code for Maribel Hearn's GitHub Pages
         https://maribelhearn.github.io -->
         <script type="text/javascript">
