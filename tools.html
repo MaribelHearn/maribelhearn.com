@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='en' class='no-js'>
 
 	<head>
 		<title>Touhou Patches and Tools</title>
@@ -10,6 +10,8 @@
 		<link href='https://fonts.googleapis.com/css?family=Felipa' rel='stylesheet'>
 		<link rel='stylesheet' type='text/css' href='tools/tools.css'>
 		<link rel='icon' type='image/x-icon' href='tools/ufo.ico'>
+        <script src='modernizr-custom.js'></script>
+        <script>document.documentElement.classList.remove("no-js");</script>
 	</head>
 
 	<body>
@@ -417,6 +419,19 @@
 			<hr>
             <p id='back'><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
         </div>
+        <script>
+        if (location.protocol == "file:") {
+            var path = location.pathname.split('/').pop(), length = document.links.length, href;
+
+            for (var i = 0; i < length; i++) {
+                href = document.links[i].href;
+
+                if (document.links[i].protocol == "file:" && href.indexOf('#') == -1) {
+                    document.links[i].href = (href == "file:///" ? location.href.replace(path, "index.html") : href + ".html");
+                }
+            }
+        }
+        </script>
 		<!-- Default Statcounter code for Maribel Hearn's GitHub Pages
 		https://maribelhearn.github.io -->
 		<script type="text/javascript">

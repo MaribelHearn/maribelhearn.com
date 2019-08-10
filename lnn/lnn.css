@@ -1,4 +1,8 @@
-body {
+.webp body {
+    background: url('lnn.webp') bottom no-repeat fixed;
+    background-size: cover;
+}
+.no-webp body, .no-js body {
     background: url('lnn.jpg') bottom no-repeat fixed;
     background-size: cover;
 }
