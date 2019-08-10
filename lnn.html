@@ -55,7 +55,7 @@
             </table>
 			<h1>Touhou Lunatic No Miss No Bombs</h1>
             <noscript><strong>Notice:</strong> this page cannot function properly with JavaScript disabled.</noscript>
-            <p id='description'>A listing of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. For every shottype in a game, tables will tell you which players have done an LNN with it, if any.
+            <p id='description'>A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. For every shottype in a game, tables will tell you which players have done an LNN with it, if any.
             If a player has multiple LNNs for one particular shottype, those are not factored in.</p>
             <p id='conditions'>Extra conditions are required for PCB, TD and HSiFS; these are No Border Breaks, No Trance and No Release respectively. LNN in these games is called LNNN, with an extra N to denote the extra condition.
             The extra condition in UFO, no UFO summons, is optional, as it is not considered to have a significant impact on the difficulty of the run.
@@ -79,6 +79,7 @@
                 <tr><td><a href='#DDC' class='th14'>Touhou 14 - Double Dealing Character</a></td></tr>
                 <tr><td><a href='#LoLK' class='th15'>Touhou 15 - Legacy of Lunatic Kingdom</a></td></tr>
                 <tr><td><a href='#HSiFS' class='th16'>Touhou 16 - Hidden Star in Four Seasons</a></td></tr>
+                <!--<tr><td><a href='#WBaWC' class='th17'>Touhou 17 - Wily Beast and Weakest Creature</a></td></tr>-->
                 <tr><td><a href='#overall' class='overallcount'>Overall Count</a></td></tr>
                 <tr><td><a href='#players' class='playerranking'>Player Ranking</a></td></tr>
                 <tr><td><a href='#ack' class='ack'>Acknowledgements</a></td></tr>
@@ -141,7 +142,10 @@
                         </td><td>
                             <input id='TDc' type='checkbox' onClick='checkGame("TD")' checked>
                             <label for='TDc' class='TD'>TD</label>
-                        </td><td class='noborders'></td>
+                        </td><td class='noborders'>
+                            <!--<input id='WBaWCc' type='checkbox' onClick='checkGame("WBaWC")' checked>
+                            <label for='WBaWCc' class='WBaWC'>WBaWC</label>-->
+                        </td>
                     </tr>
                 </tbody>
                 <tfoot>
@@ -159,9 +163,9 @@
                     </tr>
                 </tfoot>
             </table>
-			<h2 id='lnns'>LNN Listings</h2>
+			<h2 id='lnns'>LNN Lists</h2>
             <div id='SoEW' style='display:block'>
-			<p><img src='games/soew.jpg' class='cover' alt='SoEW cover'> <span class='th2'>Touhou 2 - The Story of Eastern Wonderland</span></p>
+			<p><img src='games/soew50x50.jpg' alt='SoEW cover'> <span class='th2'>Touhou 2 - The Story of Eastern Wonderland</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -196,7 +200,7 @@
                 </table>
             </div>
             <div id='PoDD' style='display:block'>
-			<p><img src='games/podd.jpg' class='cover' alt='PoDD cover'> <span class='th3'>Touhou 3 - Phantasmagoria of Dim.Dream</span></p>
+			<p><img src='games/podd50x50.jpg' alt='PoDD cover'> <span class='th3'>Touhou 3 - Phantasmagoria of Dim.Dream</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -255,7 +259,7 @@
                 </table>
             </div>
             <div id='LLS' style='display:block'>
-			<p><img src='games/lls.jpg' class='cover' alt='LLS cover'> <span class='th4'>Touhou 4 - Lotus Land Story</span></p>
+			<p><img src='games/lls50x50.jpg' alt='LLS cover'> <span class='th4'>Touhou 4 - Lotus Land Story</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -294,7 +298,7 @@
                 </table>
             </div>
             <div id='MS' style='display:block'>
-			<p><img src='games/ms.jpg' class='cover' alt='MS cover'> <span class='th5'>Touhou 5 - Mystic Square</span></p>
+			<p><img src='games/ms50x50.jpg' alt='MS cover'> <span class='th5'>Touhou 5 - Mystic Square</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -333,7 +337,7 @@
                 </table>
             </div>
             <div id='EoSD' style='display:block'>
-			<p><img src='games/eosd.jpg' class='cover' alt='EoSD cover'> <span class='th6'>Touhou 6 - The Embodiment of Scarlet Devil</span></p>
+			<p><img src='games/eosd50x50.jpg' alt='EoSD cover'> <span class='th6'>Touhou 6 - The Embodiment of Scarlet Devil</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -372,7 +376,7 @@
                 </table>
             </div>
             <div id='PCB' style='display:block'>
-                <p><img src='games/pcb.jpg' class='cover' alt='PCB cover'> <span class='th7'>Touhou 7 - Perfect Cherry Blossom</span></p>
+                <p><img src='games/pcb50x50.jpg' alt='PCB cover'> <span class='th7'>Touhou 7 - Perfect Cherry Blossom</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -419,7 +423,7 @@
                 </table>
             </div>
             <div id='IN' style='display:block'>
-                <p><img src='games/in.jpg' class='cover' alt='IN cover'> <span class='th8'>Touhou 8 - Imperishable Night</span></p>
+                <p><img src='games/in50x50.jpg' alt='IN cover'> <span class='th8'>Touhou 8 - Imperishable Night</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -490,7 +494,7 @@
                 </table>
             </div>
             <div id='MoF' style='display:block'>
-                <p><img src='games/mof.jpg' class='cover' alt='MoF cover'> <span class='th10'>Touhou 10 - Mountain of Faith</span></p>
+                <p><img src='games/mof50x50.jpg' alt='MoF cover'> <span class='th10'>Touhou 10 - Mountain of Faith</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -537,7 +541,7 @@
                 </table>
             </div>
 			<div id='SA' style='display:block'>
-                <p><img src='games/sa.jpg' class='cover' alt='SA cover'> <span class='th11'>Touhou 11 - Subterranean Animism</span></p>
+                <p><img src='games/sa50x50.jpg' alt='SA cover'> <span class='th11'>Touhou 11 - Subterranean Animism</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -584,7 +588,7 @@
                 </table>
             </div>
 			<div id='UFO' style='display:block'>
-                <p><img src='games/ufo.jpg' class='cover' alt='UFO cover'> <span class='th12'>Touhou 12 - Undefined Fantastic Object</span></p>
+                <p><img src='games/ufo50x50.jpg' alt='UFO cover'> <span class='th12'>Touhou 12 - Undefined Fantastic Object</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -631,7 +635,7 @@
                 </table>
             </div>
 			<div id='GFW' style='display:block'>
-                <p><img src='games/gfw.jpg' class='cover' alt='GFW cover'> <span class='th128'>Touhou 12.8 - Great Fairy Wars</span></p>
+                <p><img src='games/gfw50x50.jpg' alt='GFW cover'> <span class='th128'>Touhou 12.8 - Great Fairy Wars</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -678,7 +682,7 @@
                 </table>
             </div>
             <div id='TD' style='display:block'>
-                <p><img src='games/td.jpg' class='cover' alt='TD cover'> <span class='th13'>Touhou 13 - Ten Desires</span></p>
+                <p><img src='games/td50x50.jpg' alt='TD cover'> <span class='th13'>Touhou 13 - Ten Desires</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -717,7 +721,7 @@
                 </table>
             </div>
 			<div id='DDC' style='display:block'>
-                <p><img src='games/ddc.jpg' class='cover' alt='DDC cover'> <span class='th14'>Touhou 14 - Double Dealing Character</span></p>
+                <p><img src='games/ddc50x50.jpg' alt='DDC cover'> <span class='th14'>Touhou 14 - Double Dealing Character</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -764,7 +768,7 @@
                 </table>
             </div>
             <div id='LoLK' style='display:block'>
-                <p><img src='games/lolk.jpg' class='cover' alt='LoLK cover'> <span class='th15'>Touhou 15 - Legacy of Lunatic Kingdom</span></p>
+                <p><img src='games/lolk50x50.jpg' alt='LoLK cover'> <span class='th15'>Touhou 15 - Legacy of Lunatic Kingdom</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -803,7 +807,7 @@
                 </table>
             </div>
             <div id='HSiFS' style='display:block'>
-                <p><img src='games/hsifs.jpg' class='cover' alt='HSiFS cover'> <span class='th16'>Touhou 16 - Hidden Star in Four Seasons</span></p>
+                <p><img src='games/hsifs50x50.jpg' alt='HSiFS cover'> <span class='th16'>Touhou 16 - Hidden Star in Four Seasons</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -841,6 +845,65 @@
                     </tfoot>
                 </table>
             </div>
+            <!--<div id='WBaWC' style='display:block'>
+                <p><img src='games/wbawc50x50.jpg' alt='WBaWC cover'> <span class='th17'>Touhou 17 - Wily Beast and Weakest Creature</span></p>
+                <table class='sortable'>
+                    <thead>
+                        <tr>
+                            <th class='shottype'>Shottype</th>
+                            <th class='sorttable_numeric'><span class='nooflnnns'>No. of LNNNs</span><br><span class='different'>(Different players)</span></th>
+                            <th class='players'>Players</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class='ReimuWolf'>ReimuWolf</td>
+                            <td id='WBaWCReimuWolfn'></td>
+                            <td id='WBaWCReimuWolf'></td>
+                        </tr><tr>
+                            <td class='ReimuOtter'>ReimuOtter</td>
+                            <td id='WBaWCReimuOttern'></td>
+                            <td id='WBaWCReimuOtter'></td>
+                        </tr><tr>
+                            <td class='ReimuEagle'>ReimuEagle</td>
+                            <td id='WBaWCReimuEaglen'></td>
+                            <td id='WBaWCReimuEagle'></td>
+                        </tr><tr>
+                            <td class='MarisaWolf'>MarisaWolf</td>
+                            <td id='WBaWCMarisaWolfn'></td>
+                            <td id='WBaWCMarisaWolf'></td>
+                        </tr><tr>
+                            <td class='MarisaOtter'>MarisaOtter</td>
+                            <td id='WBaWCMarisaOttern'></td>
+                            <td id='WBaWCMarisaOtter'></td>
+                        </tr><tr>
+                            <td class='MarisaEagle'>MarisaEagle</td>
+                            <td id='WBaWCMarisaEaglen'></td>
+                            <td id='WBaWCMarisaEagle'></td>
+                        </tr><tr>
+                            <td class='YoumuWolf'>YoumuWolf</td>
+                            <td id='WBaWCYoumuWolfn'></td>
+                            <td id='WBaWCYoumuWolf'></td>
+                        </tr><tr>
+                            <td class='YoumuOtter'>YoumuOtter</td>
+                            <td id='WBaWCYoumuOttern'></td>
+                            <td id='WBaWCYoumuOtter'></td>
+                        </tr><tr>
+                            <td class='YoumuEagle'>YoumuEagle</td>
+                            <td id='WBaWCYoumuEaglen'></td>
+                            <td id='WBaWCYoumuEagle'></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan='3'></td></tr>
+                        <tr>
+                            <td class='t'><span class='overall'>Overall</span></td>
+                            <td id='WBaWCtn' class='t'></td>
+                            <td id='WBaWCt'></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>-->
             <div id='overall'>
                 <h2 class='overallcount'>Overall Count</h2>
                 <table class='sortable'>
@@ -919,6 +982,12 @@
                             <td id='HSiFSon'></td>
                             <td id='HSiFSo'></td>
                         </tr>
+                        <!--<tr>
+                            <td>17</td>
+                            <td class='WBaWC'>WBaWC</td>
+                            <td id='WBaWCon'></td>
+                            <td id='WBaWCo'></td>
+                        </tr>-->
                     </tbody>
                     <tfoot>
                         <tr><td colspan='4'></td></tr>
@@ -951,7 +1020,7 @@
                         <td id='jptlcredit' class='noborders'>The Japanese translation of the top text was done by <a href='https://twitter.com/toho_yumiya'>Yu-miya</a>.</td>
                     </tr>
                     <!--<tr class='noborders'>
-                        <td id='cntlcredit' class='noborders'></td>
+                        <td id='cntlcredit' class='noborders'>The Chinese translation of the top text was done by <a href='https://twitter.com/williewillus'>williewillus</a>.</td>
                     </tr>-->
                 </tbody>
             </table>
