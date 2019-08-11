@@ -116,11 +116,18 @@
         "Hard": "N/A",
         "Lunatic": "N/A",
         "Extra": "N/A"
+    },
+    "WBaWC": {
+        "Easy": "N/A",
+        "Normal": "N/A",
+        "Hard": "N/A",
+        "Lunatic": "N/A",
+        "Extra": "N/A"
     }
 };
 
 var isTripleNGame = function (game) {
-    return game == "PCB" || game == "UFO" || game == "TD" || game == "HSiFS";
+    return game == "PCB" || game == "UFO" || game == "TD" || game == "HSiFS" || game == "WBaWC";
 };
 
 var getPercentage = function (game) {
@@ -202,8 +209,8 @@ var apply = function () {
         "Extra": {"Not cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NB+": 0, "NMNB": 0},
         "Total": {"Not cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NB+": 0, "NMNB": 0}
     },
-    na = {"HRtP": 0, "SoEW": 0, "PoDD": 0, "LLS": 0, "MS": 0, "EoSD": 0, "PCB": 0, "IN": 0, "PoFV": 0, "MoF": 0, "SA": 0, "UFO": 0, "GFW": 0, "TD": 0, "DDC": 0, "LoLK": 0, "HSiFS": 0},
-    completions = {"HRtP": 0, "SoEW": 0, "PoDD": 0, "LLS": 0, "MS": 0, "EoSD": 0, "PCB": 0, "IN": 0, "PoFV": 0, "MoF": 0, "SA": 0, "UFO": 0, "GFW": 0, "TD": 0, "DDC": 0, "LoLK": 0, "HSiFS": 0},
+    na = {"HRtP": 0, "SoEW": 0, "PoDD": 0, "LLS": 0, "MS": 0, "EoSD": 0, "PCB": 0, "IN": 0, "PoFV": 0, "MoF": 0, "SA": 0, "UFO": 0, "GFW": 0, "TD": 0, "DDC": 0, "LoLK": 0, "HSiFS": 0, "WBaWC": 0},
+    completions = {"HRtP": 0, "SoEW": 0, "PoDD": 0, "LLS": 0, "MS": 0, "EoSD": 0, "PCB": 0, "IN": 0, "PoFV": 0, "MoF": 0, "SA": 0, "UFO": 0, "GFW": 0, "TD": 0, "DDC": 0, "LoLK": 0, "HSiFS": 0, "WBaWC": 0},
     results = "<h2>Progress Table</h2><table id='overview'><thead><tr><th class='overview'>Game</th><th class='overview'>Easy</th><th class='overview'>Normal</th><th class='overview'>Hard</th>" +
     "<th class='overview'>Lunatic</th><th class='overview' colspan='2'>Extra</th></tr></thead><tbody>",
     game, difficulty, val;
@@ -294,6 +301,14 @@ var apply = function () {
 };
 
 $(document).ready(function() {
+    if (location.protocol == "file:") {
+        var path = location.pathname.split('/').pop();
+
+        $("#nav a").attr("href", function(i, oldHref) {
+            return (oldHref == '/' ? location.href.replace(path, "index.html") + "" : oldHref + ".html");
+        });
+    }
+
     var cookie = getCookie("vals");
 
     if (cookie) {
