@@ -10,12 +10,10 @@
 		<link rel='stylesheet' type='text/css' href='scoring/scoring.css'>
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa'>
 		<link rel='icon' type='image/x-icon' href='scoring/spell.ico'>
-        <script src='modernizr-custom.js'></script>
         <script src='jquery.js' defer></script>
 		<script src='utils.js' defer></script>
 		<script src='scoring/scoring.js' defer></script>
         <script src='sorttable.js' defer></script>
-        <script>document.documentElement.classList.remove("no-js");</script>
 	</head>
 
 	<body>
@@ -1227,7 +1225,14 @@
             <p>Number of decimals: <input id='precision' type='number' value='0' min='0' max='5' step='1'></p>
             <p id='error'></p>
 			<p><label for='toggleCookie'>Save Cookies</label><input id='toggleCookie' type='checkbox'></p>
-			<p><input type='button' onClick='calc()' value='Calculate'><input type='button' onClick='reset()' value='Reset'></p><!-- Default Statcounter code for Maribel Hearn's GitHub Pages
+			<p><input type='button' onClick='calc()' value='Calculate'><input type='button' onClick='reset()' value='Reset'></p>
+			<script src='modernizr-custom.js'></script>
+			<script>document.documentElement.classList.remove("no-js");</script>
+			<style>
+			.webp body {background: url("scoring/scoring.webp") bottom no-repeat fixed;background-size: cover;}
+			.no-js body, .no-webp body {background: url("scoring/scoring.jpg") bottom no-repeat fixed;background-size: cover;}
+			</style>
+			<!-- Default Statcounter code for Maribel Hearn's GitHub Pages
             https://maribelhearn.github.io -->
             <script type="text/javascript">
             var sc_project=11928143;
