@@ -10,8 +10,6 @@
 		<link rel='stylesheet' type='text/css' href='main.css'>
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa'>
 		<link rel='icon' type='image/x-icon' href='favicon.ico'>
-        <script src='modernizr-custom.js'></script>
-        <script>document.documentElement.classList.remove("no-js");</script>
     </head>
 
     <body>
@@ -121,6 +119,12 @@
             <a href='https://steamcommunity.com/id/maribelhearn42'><img src='icons/steam-icon-small.ico' alt='Steam favicon'>Steam</a>
             <a href='https://github.com/MaribelHearn'><img src='icons/github-icon.ico' alt='GitHub favicon'>GitHub</a></p>
             <p>Partners: <a href='http://replay.lunarcast.net'><img src='icons/favicon-lunarcast.ico' alt='Lunarcast favicon'>Lunarcast Replay Database</a></p>
+            <script src='modernizr-custom.js'></script>
+            <script>document.documentElement.classList.remove("no-js");</script>
+            <style>
+            .webp body{background:url("index.webp") center no-repeat fixed}
+            .no-js body,.no-webp body{background:url("index.png") center no-repeat fixed}
+            </style>
             <script>
             if (location.protocol == "file:") {
                 var path = location.pathname.split('/').pop(), length = document.links.length, href;

@@ -10,12 +10,10 @@
 		<link rel='stylesheet' type='text/css' href='lnn/lnn.css'>
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa'>
 		<link rel='icon' type='image/x-icon' href='lnn/full.ico'>
-        <script src='modernizr-custom.js'></script>
 		<script src='jquery.js' defer></script>
 		<script src='utils.js' defer></script>
 		<script src='lnn/lnn.js' defer></script>
 		<script src='sorttable.js' defer></script>
-        <script>document.documentElement.classList.remove("no-js");</script>
 	</head>
 
 	<body>
@@ -1028,6 +1026,12 @@
             </table>
             <p id='back'><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
 		</div>
+        <script src='modernizr-custom.js'></script>
+        <script>document.documentElement.classList.remove("no-js");</script>
+		<style>
+		.webp body {background: url("lnn/lnn.webp") bottom no-repeat fixed;background-size: cover;}
+		.no-js body, .no-webp body {background: url("lnn/lnn.jpg") bottom no-repeat fixed;background-size: cover;}
+		</style>
 		<!-- Default Statcounter code for Maribel Hearn's GitHub Pages
 		https://maribelhearn.github.io -->
 		<script type="text/javascript">
