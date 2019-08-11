@@ -14,6 +14,7 @@
 		<script src='jquery.js'></script>
 		<script src='utils.js'></script>
 		<script src='lnn/lnn.js'></script>
+        <script src='lazysizes-min.js'></script>
         <script src='modernizr-custom.js'></script>
         <script>document.documentElement.classList.remove("no-js");</script>
 	</head>
@@ -167,7 +168,7 @@
             </table>
 			<h2 id='lnns'>LNN Lists</h2>
             <div id='SoEW' style='display:block'>
-			<p><img src='games/soew50x50.jpg' class='cover98' alt='SoEW cover'> <span class='th2'>Touhou 2 - The Story of Eastern Wonderland</span></p>
+			<p><img data-src='games/soew50x50.jpg' class='cover98 lazyload' alt='SoEW cover'> <span class='th2'>Touhou 2 - The Story of Eastern Wonderland</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -202,7 +203,7 @@
                 </table>
             </div>
             <div id='PoDD' style='display:block'>
-			<p><img src='games/podd50x50.jpg' class='cover98' alt='PoDD cover'> <span class='th3'>Touhou 3 - Phantasmagoria of Dim.Dream</span></p>
+			<p><img data-src='games/podd50x50.jpg' class='cover98 lazyload' alt='PoDD cover'> <span class='th3'>Touhou 3 - Phantasmagoria of Dim.Dream</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -261,7 +262,7 @@
                 </table>
             </div>
             <div id='LLS' style='display:block'>
-			<p><img src='games/lls50x50.jpg' class='cover98' alt='LLS cover'> <span class='th4'>Touhou 4 - Lotus Land Story</span></p>
+			<p><img data-src='games/lls50x50.jpg' class='cover98 lazyload' alt='LLS cover'> <span class='th4'>Touhou 4 - Lotus Land Story</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -300,7 +301,7 @@
                 </table>
             </div>
             <div id='MS' style='display:block'>
-			<p><img src='games/ms50x50.jpg' class='cover98' alt='MS cover'> <span class='th5'>Touhou 5 - Mystic Square</span></p>
+			<p><img data-src='games/ms50x50.jpg' class='cover98 lazyload' alt='MS cover'> <span class='th5'>Touhou 5 - Mystic Square</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -339,7 +340,7 @@
                 </table>
             </div>
             <div id='EoSD' style='display:block'>
-			<p><img src='games/eosd50x50.jpg' alt='EoSD cover'> <span class='th6'>Touhou 6 - The Embodiment of Scarlet Devil</span></p>
+			<p><img data-src='games/eosd50x50.jpg' class='lazyload' alt='EoSD cover'> <span class='th6'>Touhou 6 - The Embodiment of Scarlet Devil</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -378,7 +379,7 @@
                 </table>
             </div>
             <div id='PCB' style='display:block'>
-                <p><img src='games/pcb50x50.jpg' alt='PCB cover'> <span class='th7'>Touhou 7 - Perfect Cherry Blossom</span></p>
+                <p><img data-src='games/pcb50x50.jpg' class='lazyload' alt='PCB cover'> <span class='th7'>Touhou 7 - Perfect Cherry Blossom</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -425,7 +426,7 @@
                 </table>
             </div>
             <div id='IN' style='display:block'>
-                <p><img src='games/in50x50.jpg' alt='IN cover'> <span class='th8'>Touhou 8 - Imperishable Night</span></p>
+                <p><img data-src='games/in50x50.jpg' class='lazyload' alt='IN cover'> <span class='th8'>Touhou 8 - Imperishable Night</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -496,7 +497,7 @@
                 </table>
             </div>
             <div id='MoF' style='display:block'>
-                <p><img src='games/mof50x50.jpg' alt='MoF cover'> <span class='th10'>Touhou 10 - Mountain of Faith</span></p>
+                <p><img data-src='games/mof50x50.jpg' class='lazyload' alt='MoF cover'> <span class='th10'>Touhou 10 - Mountain of Faith</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -543,7 +544,7 @@
                 </table>
             </div>
 			<div id='SA' style='display:block'>
-                <p><img src='games/sa50x50.jpg' alt='SA cover'> <span class='th11'>Touhou 11 - Subterranean Animism</span></p>
+                <p><img data-src='games/sa50x50.jpg' class='lazyload' alt='SA cover'> <span class='th11'>Touhou 11 - Subterranean Animism</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -590,7 +591,7 @@
                 </table>
             </div>
 			<div id='UFO' style='display:block'>
-                <p><img src='games/ufo50x50.jpg' alt='UFO cover'> <span class='th12'>Touhou 12 - Undefined Fantastic Object</span></p>
+                <p><img data-src='games/ufo50x50.jpg' class='lazyload' alt='UFO cover'> <span class='th12'>Touhou 12 - Undefined Fantastic Object</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -637,7 +638,7 @@
                 </table>
             </div>
 			<div id='GFW' style='display:block'>
-                <p><img src='games/gfw50x50.jpg' alt='GFW cover'> <span class='th128'>Touhou 12.8 - Great Fairy Wars</span></p>
+                <p><img data-src='games/gfw50x50.jpg' class='lazyload' alt='GFW cover'> <span class='th128'>Touhou 12.8 - Great Fairy Wars</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -684,7 +685,7 @@
                 </table>
             </div>
             <div id='TD' style='display:block'>
-                <p><img src='games/td50x50.jpg' alt='TD cover'> <span class='th13'>Touhou 13 - Ten Desires</span></p>
+                <p><img data-src='games/td50x50.jpg' class='lazyload' alt='TD cover'> <span class='th13'>Touhou 13 - Ten Desires</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -723,7 +724,7 @@
                 </table>
             </div>
 			<div id='DDC' style='display:block'>
-                <p><img src='games/ddc50x50.jpg' alt='DDC cover'> <span class='th14'>Touhou 14 - Double Dealing Character</span></p>
+                <p><img data-src='games/ddc50x50.jpg' class='lazyload' alt='DDC cover'> <span class='th14'>Touhou 14 - Double Dealing Character</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -770,7 +771,7 @@
                 </table>
             </div>
             <div id='LoLK' style='display:block'>
-                <p><img src='games/lolk50x50.jpg' alt='LoLK cover'> <span class='th15'>Touhou 15 - Legacy of Lunatic Kingdom</span></p>
+                <p><img data-src='games/lolk50x50.jpg' class='lazyload' alt='LoLK cover'> <span class='th15'>Touhou 15 - Legacy of Lunatic Kingdom</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -809,7 +810,7 @@
                 </table>
             </div>
             <div id='HSiFS' style='display:block'>
-                <p><img src='games/hsifs50x50.jpg' alt='HSiFS cover'> <span class='th16'>Touhou 16 - Hidden Star in Four Seasons</span></p>
+                <p><img data-src='games/hsifs50x50.jpg' class='lazyload' alt='HSiFS cover'> <span class='th16'>Touhou 16 - Hidden Star in Four Seasons</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
@@ -848,7 +849,7 @@
                 </table>
             </div>
             <!--<div id='WBaWC' style='display:block'>
-                <p><img src='games/wbawc50x50.jpg' alt='WBaWC cover'> <span class='th17'>Touhou 17 - Wily Beast and Weakest Creature</span></p>
+                <p><img data-src='games/wbawc50x50.jpg' class='lazyload' alt='WBaWC cover'> <span class='th17'>Touhou 17 - Wily Beast and Weakest Creature</span></p>
                 <table class='sortable'>
                     <thead>
                         <tr>
