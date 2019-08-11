@@ -14,6 +14,8 @@
 		<script src='utils.js' defer></script>
 		<script src='scoring/scoring.js' defer></script>
         <script src='sorttable.js' defer></script>
+		<script src='modernizr-custom.js' defer></script>
+		<script defer>document.documentElement.classList.remove("no-js");</script>
 	</head>
 
 	<body>
@@ -1226,12 +1228,6 @@
             <p id='error'></p>
 			<p><label for='toggleCookie'>Save Cookies</label><input id='toggleCookie' type='checkbox'></p>
 			<p><input type='button' onClick='calc()' value='Calculate'><input type='button' onClick='reset()' value='Reset'></p>
-			<script src='modernizr-custom.js'></script>
-			<script>document.documentElement.classList.remove("no-js");</script>
-			<style>
-			.webp body {background: url("scoring/scoring.webp") bottom no-repeat fixed;background-size: cover;}
-			.no-js body, .no-webp body {background: url("scoring/scoring.jpg") bottom no-repeat fixed;background-size: cover;}
-			</style>
 			<!-- Default Statcounter code for Maribel Hearn's GitHub Pages
             https://maribelhearn.github.io -->
             <script type="text/javascript">
