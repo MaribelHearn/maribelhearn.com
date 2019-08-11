@@ -11,6 +11,8 @@
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa'>
 		<link rel='icon' type='image/x-icon' href='thvote/tou-32.ico'>
         <script src='sorttable.js' defer></script>
+        <script src='modernizr-custom.js' defer></script>
+        <script defer>document.documentElement.classList.remove("no-js");</script>
     </head>
 
     <body onLoad='ready()'>
@@ -1855,12 +1857,6 @@
                 </tbody>
             </table>
         </div>
-        <script src='modernizr-custom.js'></script>
-        <script>document.documentElement.classList.remove("no-js");</script>
-        <style>
-        .webp body{background:url("thvote/thvote.webp") center no-repeat fixed;background-size:cover}
-        .no-js body,.no-webp body{background:url("thvote/thvote.jpg") center no-repeat fixed;background-size:cover}
-        </style>
         <script>
         if (location.protocol == "file:") {
             var path = location.pathname.split('/').pop(), length = document.links.length, href;

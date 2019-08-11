@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang='en'>
+<html lang='en' class='no-js'>
 
 	<head>
 		<title>Survival Progress Table Generator</title>
@@ -10,10 +10,12 @@
 		<link rel='stylesheet' type='text/css' href='survival/survival.css'>
 		<link rel='icon' type='image/x-icon' href='survival/survival.ico'>
         <link href="https://fonts.googleapis.com/css?family=Felipa" rel="stylesheet">
-        <script src='sorttable.js'></script>
-		<script src='jquery.js'></script>
-		<script src='utils.js'></script>
-		<script src='survival/survival.js'></script>
+		<script src='jquery.js' defer></script>
+		<script src='utils.js' defer></script>
+		<script src='survival/survival.js' defer></script>
+        <script src='sorttable.js' defer></script>
+        <script src='modernizr-custom.js' defer></script>
+        <script defer>document.documentElement.classList.remove("no-js");</script>
 	</head>
 
 	<body>
@@ -39,7 +41,8 @@
 			<p>Fill in the best survivals you have pulled off in the table below. If you leave a dropdown menu on the N/A option, it will not be factored in.
             At the bottom of the page, three different sortable tables indicating your survival progress will be generated.</p>
             <p>NM = No Miss (no deaths), NB = No Bomb, NMNB = No Miss No Bomb. There can also be a third restriction, depending on the game.
-            In PCB this restriction is NBB (No Border Breaks), in UFO it is NV (No UFO Summons), in TD it is NT (No Trance) and in HSiFS it is NR (No Releases).
+            In PCB this restriction is NBB (No Border Breaks), in UFO it is NV (No UFO Summons), in TD it is NT (No Trance),
+			in HSiFS it is NR (No Releases) and in WBaWC it is NONRB (Neutral Only, No Roar Break).
             The Phantasm Stage counts as another Extra Stage.</p>
             <p>Use the below selectors to fill up many achievements at once. Normal, Hard and Lunatic will also fill the difficulties below them.</p>
             <p>To allow for proper screenshots, the background for the tables is not transparent.</p>
@@ -64,6 +67,7 @@
                     <option>DDC</option>
                     <option>LoLK</option>
                     <option>HSiFS</option>
+                    <option>WBaWC</option>
                     <option>Easy</option>
                     <option>Normal</option>
                     <option>Hard</option>
@@ -1012,6 +1016,65 @@
                     </td>
                     <td>
                         <select id='HSiFSExtra' onChange='setProgress(this.id, this.value)'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NBNR</option>
+                            <option>NMNBNR</option>
+                        </select>
+                    </td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>WBaWC</td>
+                    <td>
+                        <select id='WBaWCEasy' onChange='setProgress(this.id, this.value)'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NBNR</option>
+                            <option>NMNBNR</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='WBaWCNormal' onChange='setProgress(this.id, this.value)'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NBNR</option>
+                            <option>NMNBNR</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='WBaWCHard' onChange='setProgress(this.id, this.value)'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NBNR</option>
+                            <option>NMNBNR</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='WBaWCLunatic' onChange='setProgress(this.id, this.value)'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NBNR</option>
+                            <option>NMNBNR</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id='WBaWCExtra' onChange='setProgress(this.id, this.value)'>
                             <option>N/A</option>
                             <option>Not cleared</option>
                             <option>1cc</option>

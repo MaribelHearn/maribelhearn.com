@@ -10,6 +10,8 @@
 		<link rel='stylesheet' type='text/css' href='jargon/jargon.css'>
 		<link rel='icon' type='image/x-icon' href='jargon/bomb.ico'>
         <link href="https://fonts.googleapis.com/css?family=Felipa" rel="stylesheet">
+        <script src='modernizr-custom.js' defer></script>
+        <script defer>document.documentElement.classList.remove("no-js");</script>
 	</head>
 
 	<body>
@@ -653,12 +655,6 @@
                 </tbody>
             </table>
         </div>
-        <script src='modernizr-custom.js'></script>
-        <script>document.documentElement.classList.remove("no-js");</script>
-		<style>
-		.webp body{background:url("jargon/jargon.webp") top no-repeat fixed;background-size:cover}
-		.no-js body,.no-webp body{background:url("jargon/jargon.jpg") top no-repeat fixed;background-size:cover}
-		</style>
         <script>
         if (location.protocol == "file:") {
             var path = location.pathname.split('/').pop(), length = document.links.length, href;

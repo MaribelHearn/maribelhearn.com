@@ -14,6 +14,8 @@
 		<script src='jquery.js' defer></script>
 		<script src='tiers/tiers.js' defer></script>
         <script src='tiers/rgbcolor.js' defer></script>
+        <script src='modernizr-custom.js' defer></script>
+        <script defer>document.documentElement.classList.remove("no-js");</script>
     </head>
 
     <body onClick='closeModal(event)' onKeyPress='closeModal(event)' onResize='checkHeight()' onOrientationChange='updateOrientation()'>
@@ -102,14 +104,6 @@
             <div id='settings'></div>
         </div>
         <div id='characters' onDragOver='allowDrop(event)' onDrop='drop(event)'></div>
-        <script src='modernizr-custom.js'></script>
-        <script>document.documentElement.classList.remove("no-js");</script>
-        <style>
-        .webp body{background:url("tiers/tiers.webp") center no-repeat fixed;background-size:cover}
-        .no-js body, .no-webp body{background:url("tiers/tiers.jpg") center no-repeat fixed;background-size:cover}
-        @media only screen and (max-device-width:800px) and (orientation:portrait){.no-js body,.no-webp body,.webp body{background:#1b232e}}
-        @media only screen and (max-device-width:600px) and (orientation:landscape){.no-js body,.no-webp body,.webp body{background:#1b232e}}
-        </style>
         <!-- Default Statcounter code for Maribel Hearn's GitHub Pages
         https://maribelhearn.github.io -->
         <script type="text/javascript">
