@@ -9,7 +9,7 @@ var WRs, Rubrics, step, global = this, phantasm = true, noExtra = true, noShotty
     ROUTE = "#route", SCORE_OPTIONS = "<label id='scoreLabel' for='score'>Score</label><input id='score' type='text'>", DS_TABLE = "#dsTable", MOF_TABLE = "#mofTable",
     RELEASES = "#releases", SEASON = "#season", SPRING = "#spring", SUMMER = "#summer", AUTUMN = "#autumn", WINTER = "#winter", HRTP = "#hrtp", SOEW = "#soew", PODD = "#podd",
     LLS = "#lls", MS = "#ms", EOSD = "#eosd", PCB = "#pcb", IN = "#in", POFV = "#pofv", MOF = "#mof", SA = "#sa", UFO = "#ufo", GFW = "#gfw", TD = "#td", DDC = "#ddc",
-    LOLK = "#lolk", HSIFS = "#hsifs", MISSES_LABEL = "#missesLabel", BOMBS_LABEL = "#bombsLabel", NB_LABEL = "#nbLabel", DIFFICULTY_LABEL = "#difficultyLabel",
+    LOLK = "#lolk", HSIFS = "#hsifs", WBAWC = "#wbawc", MISSES_LABEL = "#missesLabel", BOMBS_LABEL = "#bombsLabel", NB_LABEL = "#nbLabel", DIFFICULTY_LABEL = "#difficultyLabel",
     RELEASES_LABEL = "#releasesLabel", SURVIVAL = "#survival", SCORING = "#scoring", IS_LABEL = "#isLabel", LS_LABEL = "#lsLabel", SCORE_LABEL = "#scoreLabel",
     FINALA = "#finala", FINALB = "#finalb", SCORING_COLUMN = "<th id='game0'>Game</th><th id='maxPoints0'>Max points</th><th id='exp0'>Exponent</th>", BB_LABEL = "#bbLabel",
     SURV_COLUMN = "<th id='game2'>Game</th><th id='maxPoints1'>Max points</th><th id='base0'>Base</th><th id='lostLife'>Lost life (n)</th><th id='firstBomb'>" +
@@ -28,6 +28,14 @@ var WRs, Rubrics, step, global = this, phantasm = true, noExtra = true, noShotty
     SCORE_BUTTON = "#scoringButton", SURV_RUBRICS = "#survivalRubrics", SCORE_RUBRICS = "#scoringRubrics";
 
 $(document).ready(function() {
+    if (location.protocol == "file:") {
+        var path = location.pathname.split('/').pop();
+
+        $("#nav a").attr("href", function(i, oldHref) {
+            return (oldHref == '/' ? location.href.replace(path, "index.html") + "" : oldHref + ".html");
+        });
+    }
+
     $.get("https://maribelhearn.github.io/json/wrlist.json", function(data) {
         WRs = data;
         $.get("https://maribelhearn.github.io/json/rubrics.json", function(data) {
@@ -140,7 +148,16 @@ function translateCharName(charName) {
             "AyaAutumn": "文秋",
             "MarisaAutumn": "魔理沙秋",
             "CirnoWinter": "チルノ冬",
-            "AyaWinter": "文冬"
+            "AyaWinter": "文冬",
+            "ReimuWolf": "霊夢狼",
+            "ReimuOtter": "霊夢獺",
+            "ReimuEagle": "霊夢鷲",
+            "MarisaWolf": "魔理沙狼",
+            "MarisaOtter": "魔理沙獺",
+            "MarisaEagle": "魔理沙鷲",
+            "YoumuWolf": "妖夢狼",
+            "YoumuOtter": "妖夢獺",
+            "YoumuEagle": "妖夢鷲"
         }[charName]);
     } else {
        return ({
@@ -208,7 +225,16 @@ function translateCharName(charName) {
             "AyaAutumn": "文秋",
             "MarisaAutumn": "魔理沙秋",
             "CirnoWinter": "琪露诺冬",
-            "AyaWinter": "文冬"
+            "AyaWinter": "文冬",
+            "ReimuWolf": "灵梦狼",
+            "ReimuOtter": "灵梦獺",
+            "ReimuEagle": "灵梦鹰",
+            "MarisaWolf": "魔理沙狼",
+            "MarisaOtter": "魔理沙獺",
+            "MarisaEagle": "魔理沙鹰",
+            "YoumuWolf": "妖梦狼",
+            "YoumuOtter": "妖梦獺",
+            "YoumuEagle": "妖梦鹰"
         }[charName]);
     }
 }
@@ -237,7 +263,8 @@ function translateGameName(game) {
             "TD": "神",
             "DDC": "輝",
             "LoLK": "紺",
-            "HSiFS": "天"
+            "HSiFS": "天",
+            "WBaWC": "鬼"
         }[game]);
     } else {
         game = game.trim();
@@ -260,7 +287,8 @@ function translateGameName(game) {
             "TD": "神",
             "DDC": "辉",
             "LoLK": "绀",
-            "HSiFS": "天"
+            "HSiFS": "天",
+            "WBaWC": "鬼"
         }[game]);
     }
 }
@@ -287,6 +315,7 @@ function generateText(firstTime) {
         $(DDC).html("DDC");
         $(LOLK).html("LoLK");
         $(HSIFS).html("HSiFS");
+        $(WBAWC).html("WBaWC");
         $(SPRING).html("Spring");
         $(SUMMER).html("Summer");
         $(AUTUMN).html("Autumn");
@@ -424,6 +453,7 @@ function generateText(firstTime) {
         $(DDC).html(translateGameName("DDC"));
         $(LOLK).html(translateGameName("LoLK"));
         $(HSIFS).html(translateGameName("HSiFS"));
+        $(WBAWC).html(translateGameName("WBaWC"));
         $(SPRING).html(translateCharName("Spring"));
         $(SUMMER).html(translateCharName("Summer"));
         $(AUTUMN).html(translateCharName("Autumn"));
@@ -598,6 +628,7 @@ function generateText(firstTime) {
         $(DDC).html(translateGameName("DDC"));
         $(LOLK).html(translateGameName("LoLK"));
         $(HSIFS).html(translateGameName("HSiFS"));
+        $(WBAWC).html(translateGameName("WBaWC"));
         $(SPRING).html(translateCharName("Spring"));
         $(SUMMER).html(translateCharName("Summer"));
         $(AUTUMN).html(translateCharName("Autumn"));

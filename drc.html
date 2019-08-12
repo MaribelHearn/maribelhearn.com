@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang='en'>
+<html lang='en' class='no-js'>
 
 	<head>
 		<title>Dodging Rain Competition</title>
@@ -10,10 +10,12 @@
 		<link rel='stylesheet' type='text/css' href='drc/drc.css'>
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa'>
 		<link rel='icon' type='x/icon' href='drc/power.ico'>
-        <script src='sorttable.js'></script>
-		<script src='jquery.js'></script>
-		<script src='utils.js'></script>
-        <script src='drc/drc.js'></script>
+		<script src='jquery.js' defer></script>
+		<script src='utils.js' defer></script>
+        <script src='drc/drc.js' defer></script>
+        <script src='sorttable.js' defer></script>
+        <script src='modernizr-custom.js' defer></script>
+        <script defer>document.documentElement.classList.remove("no-js");</script>
 	</head>
 
 	<body>
@@ -80,6 +82,7 @@
                 <option id='ddc' value='DDC'>DDC</option>
                 <option id='lolk' value='LoLK'>LoLK</option>
                 <option id='hsifs' value='HSiFS'>HSiFS</option>
+                <option id='wbawc' value='WBaWC'>WBaWC</option>
             </select>
             <label id='difficultyLabel' for='difficulty'></label>
             <select id='difficulty' onChange='if ($(GAME).val() == "GFW") { checkShottypes(true); } if ($(GAME).val() == "IN" || $(GAME).val() == "HSiFS") { checkValues(true, false, false); }'>
