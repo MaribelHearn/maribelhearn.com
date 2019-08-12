@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang='en'>
+<html lang='en' class='no-js'>
 
 	<head>
 		<title>Maribel's Achievement History</title>
@@ -8,9 +8,11 @@
 		<link rel='stylesheet' type='text/css' href='history/history.css'>
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa'>
 		<link rel='icon' type='image/x-icon' href='history/history.ico'>
-		<script src='jquery.js'></script>
-		<script src='utils.js'></script>
-		<script src='history/history.js'></script>
+		<script src='jquery.js' defer></script>
+		<script src='utils.js' defer></script>
+		<script src='history/history.js' defer></script>
+        <script src='modernizr-custom.js' defer></script>
+        <script defer>document.documentElement.classList.remove("no-js");</script>
 	</head>
 
 	<body>
@@ -19,7 +21,7 @@
             <noscript><strong>Notice:</strong> this page cannot function properly with JavaScript disabled.</noscript>
             <p id='notice' style='display:none'><strong>Notice:</strong> this page is best viewed on mobile using landscape mode.</p>
             <p>I am a bullet hell player who mostly plays for score. So far I have seriously scored Touhou 13: Ten Desires and Touhou 16: Hidden Star in Four Seasons.</p>
-			<p><a href='/'>Back to Main Page</a></p>
+			<p><a id='backtomain' href='/'>Back to Main Page</a></p>
             <hr>
             <h2>Contents</h2>
             <table id='contents'>
@@ -46,6 +48,7 @@
                 <tr><td><a href='#LoLK'>Touhou 15 - Legacy of Lunatic Kingdom</a></td></tr>
                 <tr><td><a href='#HSiFS'>Touhou 16 - Hidden Star in Four Seasons</a></td></tr>
                 <tr><td><a href='#VD'>Touhou 16.5 - Violet Detector</a></td></tr>
+                <tr><td><a href='#WBaWC'>Touhou 17 - Wily Beast and Weakest Creature</a></td></tr>
                 <tr><th>Touhou Fangames</th></tr>
                 <tr><td><a href='#SSS'>Shining Shooting Star</a></td></tr>
                 <tr><th>eXceed Shmups</th></tr>
@@ -353,6 +356,14 @@
                             <td id='hHSiFS' class='nb'></td>
                             <td id='lHSiFS' class='nb'></td>
                             <td id='xHSiFS' class='nmnb' colspan='2'></td>
+                        </tr>
+                        <tr id='oWBaWC'>
+                            <th>WBaWC</th>
+                            <td id='eWBaWC' class=''></td>
+                            <td id='nWBaWC' class=''></td>
+                            <td id='hWBaWC' class=''></td>
+                            <td id='lWBaWC' class=''></td>
+                            <td id='xWBaWC' class='' colspan='2'></td>
                         </tr>
                     </tbody>
                 </table>
@@ -2881,6 +2892,70 @@
                     </tr>
                 </table>
             </div>
+            <div id='WBaWC'>
+                <h2>TH17 - Wily Beast and Weakest Creature</h2>
+                <img class='cover' src='games/wbawc.jpg' alt='WBaWC'>
+                <br>Obtained: August 12, 2019
+                <h3>Survival</h3>
+                <table>
+                <tr>
+                    <th>Difficulty</th>
+                    <th>Progress</th>
+                    <th>Date of first 1cc</th>
+                    <th>Date of first <abbr title='No Bomb'>NB</abbr></th>
+                    <th>Date of first <abbr title='No Miss No Bomb'>NMNB</abbr></th>
+                    <th>Video</th>
+                </tr>
+                <tr>
+                    <td><strong>Easy</strong></td>
+                    <td>Not yet tried</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>Normal</strong></td>
+                    <td>Not yet tried</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>Hard</strong></td>
+                    <td>Not yet tried</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>Lunatic</strong></td>
+                    <td>Not yet tried</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><strong>Extra</strong></td>
+                    <td>Not yet tried</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>No</td>
+                </tr>
+                </table>
+            </div>
             <div id='SSS'>
                 <h2>Shining Shooting Star</h2>
                 <img class='cover' src='games/sss.jpg' alt='SSS'>
@@ -4164,6 +4239,20 @@
             </div>
             <p><strong><a href='#wrap'>Back to Top</a></strong></p>
         </div>
+		<script>
+		$(document).ready(function() {
+			var path = location.pathname.split('/').pop();
+
+			if (location.protocol == "file:") {
+		        $("#backtomain").attr("href", location.href.replace(path, "index.html"));
+		    }
+
+			// detect smartphone and tablet
+			if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) {
+		        $("#notice").css("display", "block");
+			}
+		});
+		</script>
 		<!-- Default Statcounter code for Maribel Hearn's GitHub Pages
 		https://maribelhearn.github.io -->
 		<script type="text/javascript">
