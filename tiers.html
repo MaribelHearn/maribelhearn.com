@@ -7,13 +7,13 @@
 		<meta name='viewport' content='width=device-width'>
         <meta name='description' content='Create your own Touhou tier lists!'>
         <meta name='keywords' content='touhou, touhou project, 東方, 东方, tier list, tiers, sorter, sort, sorting, creator'>
-		<link rel='stylesheet' type='text/css' href='tiers/tiers.css'>
+		<link rel='stylesheet' type='text/css' href='assets/tiers/tiers.css'>
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa'>
-		<link rel='icon' type='image/x-icon' href='tiers/castle.png'>
+		<link rel='icon' type='image/x-icon' href='assets/tiers/castle.png'>
 		<script src='utils.js' defer></script>
 		<script src='jquery.js' defer></script>
-		<script src='tiers/tiers.js' defer></script>
-        <script src='tiers/rgbcolor.js' defer></script>
+		<script src='assets/tiers/tiers.js' defer></script>
+        <script src='assets/tiers/rgbcolor.js' defer></script>
         <script src='modernizr-custom.js' defer></script>
         <script defer>document.documentElement.classList.remove("no-js");</script>
     </head>
@@ -23,16 +23,16 @@
             <div id='init'>
     			<nav id='nav'>
     				<a href='/'><img src='favicon.ico' class='ico-32' alt='Index icon'> Index</a>
-    				<a href='scoring'><img src='scoring/spell.ico' class='ico-32' alt='Spell Card icon'> Scoring</a>
-    				<a href='survival'><img src='survival/survival.ico' class='ico-32' alt='1up Item icon'> Survival</a>
-    				<a href='drc'><img src='drc/power.ico' alt='Power icon'> DRC</a>
-    				<a href='tools'><img src='tools/ufo.ico' class='ico-32' alt='UFO icon'> Tools</a>
-    				<a href='wr'><img src='wr/point.ico' alt='Point Item icon'> WR</a>
-    				<a href='lnn'><img src='lnn/full.ico' class='ico-32' alt='Full Power icon'> LNN</a>
-    				<a href='thvote'><img src='thvote/tou-32.ico' class='ico-32' alt='Tou kanji icon'> Poll</a>
-    				<a href='jargon'><img src='jargon/bomb.ico' alt='Bomb icon'> Jargon</a>
-    				<a href='trs'><img src='trs/shinto.png' alt='Shinto shrine icon'> TRS</a>
-    				<strong><img src='tiers/castle.png' alt='Japanese castle icon'> Tiers</a></strong>
+    				<a href='scoring'><img src='assets/scoring/spell.ico' class='ico-32' alt='Spell Card icon'> Scoring</a>
+    				<a href='survival'><img src='assets/survival/survival.ico' class='ico-32' alt='1up Item icon'> Survival</a>
+    				<a href='drc'><img src='assets/drc/power.ico' alt='Power icon'> DRC</a>
+    				<a href='tools'><img src='assets/tools/ufo.ico' class='ico-32' alt='UFO icon'> Tools</a>
+    				<a href='wr'><img src='assets/wr/point.ico' alt='Point Item icon'> WR</a>
+    				<a href='lnn'><img src='assets/lnn/full.ico' class='ico-32' alt='Full Power icon'> LNN</a>
+    				<a href='thvote'><img src='assets/thvote/tou-32.ico' class='ico-32' alt='Tou kanji icon'> Poll</a>
+    				<a href='jargon'><img src='assets/jargon/bomb.ico' alt='Bomb icon'> Jargon</a>
+    				<a href='trs'><img src='assets/trs/shinto.png' alt='Shinto shrine icon'> TRS</a>
+    				<strong><img src='assets/tiers/castle.png' alt='Japanese castle icon'> Tiers</a></strong>
     			</nav>
                 <h1 id='title'>Touhou Tier List Creator</h1>
                 <div id='sort_selection'>Currently tiering: <select id='sort' onChange='switchSort()'>
