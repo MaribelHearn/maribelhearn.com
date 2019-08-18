@@ -36,9 +36,9 @@ $(document).ready(function() {
         });
     }
 
-    $.get("https://maribelhearn.github.io/json/wrlist.json", function(data) {
+    $.get("https://maribelhearn.com/json/wrlist.json", function(data) {
         WRs = data;
-        $.get("https://maribelhearn.github.io/json/rubrics.json", function(data) {
+        $.get("https://maribelhearn.com/json/rubrics.json", function(data) {
             Rubrics = data;
 
             generateText(true);

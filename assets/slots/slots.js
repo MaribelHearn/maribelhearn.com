@@ -24,7 +24,7 @@ var stop = function () {
 };
 
 $(document).ready(function () {
-    $.get("https://maribelhearn.github.io/json/chars.json", function (data) {
+    $.get("https://maribelhearn.com/json/chars.json", function (data) {
         var category, character, i, j;
 
         // convert chars object into array of names and category mapping
