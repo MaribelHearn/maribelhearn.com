@@ -755,19 +755,24 @@ function percentageClass(percentage) {
 }
 function gameAbbr(game) {
     return ({
-        "EoSD": "6",
-        "PCB": "7",
-        "IN": "8",
-        "PoFV": "9",
-        "MoF": "10",
-        "SA": "11",
-        "UFO": "12",
-        "GFW": "128",
-        "TD": "13",
-        "DDC": "14",
-        "LoLK": "15",
-        "HSiFS": "16",
-        "WBaWC": "17"
+        "HRtP": 1,
+        "SoEW": 2,
+        "PoDD": 3,
+        "LLS": 4,
+        "MS": 5,
+        "EoSD": 6,
+        "PCB": 7,
+        "IN": 8,
+        "PoFV": 9,
+        "MoF": 10,
+        "SA": 11,
+        "UFO": 12,
+        "GFW": 128,
+        "TD": 13,
+        "DDC": 14,
+        "LoLK": 15,
+        "HSiFS": 16,
+        "WBaWC": 17
     })[game];
 }
 function shottypeAbbr(shottype) {
@@ -889,7 +894,11 @@ function load() {
                         score = wr[0];
                         player = wr[1];
                         date = wr[2];
-                        replay = (wr[3] ? wr[3] : replayPath(game, difficulty, shottype));
+                        if (wr[3]) {
+                            replay = wr[3];
+                        } else {
+                            replay = (gameAbbr(game) < 6 ? "" : replayPath(game, difficulty, shottype));
+                        }
                         if (score > max) {
                             overall = "#" + game + difficulty + shottype;
                             overallplayer = player;
