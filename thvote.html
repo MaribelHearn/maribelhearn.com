@@ -45,6 +45,7 @@
                 <tr><td><a href='#Questionnaire'>Questionnaire</a></td></tr>
                 <tr><td><a href='#Extra'>Extra Statistics</a></td></tr>
                 <tr><td><a href='#MusicByGame'> - Music by game</a></td></tr>
+                <tr><td><a href='#Ack'>Acknowledgements</a></td></tr>
             </table>
             <h2>Valid responses</h2>
             <table id='responses'>
@@ -1858,37 +1859,12 @@
 <tr><td>506</td><td>461</td><td>－</td><td class="left">Unnatural Nature</td><td>2</td><td>0</td><td>0</td><td class='hidden'></td></tr>
                 </tbody>
             </table>
+            <h2 id='Ack'>Acknowledgements</h2>
+			<p id='credit' class='noborders'>The background image
+			was drawn by <a href='https://www.pixiv.net/member.php?id=2025430'>Yakumo_Stocking</a>.</p>
+            <p id='back'><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
         </div>
-        <script>
-        if (location.protocol == "file:") {
-            var path = location.pathname.split('/').pop(), length = document.links.length, href;
-
-            for (var i = 0; i < length; i++) {
-                href = document.links[i].href;
-
-                if (document.links[i].protocol == "file:" && href.indexOf('#') == -1) {
-                    document.links[i].href = (href == "file:///" ? location.href.replace(path, "index.html") : href + ".html");
-                }
-            }
-        }
-
-        var ready = function () {
-            // detect smartphone and tablet
-            if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) {
-                document.getElementById("notice").style.display = "block";
-                document.styleSheets[0].insertRule("#wrap:before { content: ''; background-color: #FFFFFF; position: absolute; " +
-                "height: " + document.body.clientHeight + "px; width: " + document.body.clientWidth + "; left: -2000px; z-index: -1; }", 0);
-        	}
-        };
-        window.onresize = function(event) {
-            // detect smartphone and tablet
-            if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) {
-                document.styleSheets[0].removeRule(0);
-                document.styleSheets[0].insertRule("#wrap:before { content: ''; background-color: #FFFFFF; position: absolute; " +
-                "height: " + document.body.clientHeight + "px; width: " + document.body.clientWidth + "; left: -2000px; z-index: -1; }", 0);
-        	}
-        };
-        </script>
+        <script>if(location.protocol=="file:"){var path=location.pathname.split('/').pop(),length=document.links.length,href;for(var i=0;i<length;i+=1){href=document.links[i].href;if(document.links[i].protocol=="file:"&&href.indexOf('#')==-1){document.links[i].href=(href=="file:///"?location.href.replace(path,"index.html"):href+".html")}}}var ready=function(){if(navigator.userAgent.indexOf("Mobile")>-1||navigator.userAgent.indexOf("Tablet")>-1){document.getElementById("notice").style.display="block";document.styleSheets[0].insertRule("#wrap:before { content: ''; background-color: #FFFFFF; position: absolute; height: "+document.body.clientHeight+"px; width: "+document.body.clientWidth+"; left: -2000px; z-index: -1; }",0)}};window.onresize=function(event){if(navigator.userAgent.indexOf("Mobile")>-1||navigator.userAgent.indexOf("Tablet")>-1){document.styleSheets[0].removeRule(0);document.styleSheets[0].insertRule("#wrap:before { content: ''; background-color: #FFFFFF; position: absolute; height: "+document.body.clientHeight+"px; width: "+document.body.clientWidth+"; left: -2000px; z-index: -1; }",0)}};</script>
         <!-- Default Statcounter code for Maribel Hearn's Web Portal
         http://maribelhearn.com -->
         <script type="text/javascript">
