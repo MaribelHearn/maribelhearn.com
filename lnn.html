@@ -69,34 +69,45 @@
             <p id='lastupdate'>LNNs are current as of an unknown date.</p>
             <h2 id='contents_header'>Contents</h2>
             <table id='contents'>
+                <tr><td><a href='#lnns' class='lnns'>LNN Lists</a></td></tr>
                 <tr><td><a href='#overall' class='overallcount'>Overall Count</a></td></tr>
                 <tr><td><a href='#players' class='playerranking'>Player Ranking</a></td></tr>
                 <tr><td><a href='#ack' class='ack'>Acknowledgements</a></td></tr>
             </table>
-			<h2 id='lnns'>LNN Lists</h2>
+			<h2 id='lnns' class='lnns'>LNN Lists</h2>
 			<p id='clickgame'>Click a game cover to show its list of LNNs.</p>
-            <img id='SoEW' src='games/soew50x50.jpg' class='cover98' alt='SoEW cover' onClick='show($(this).attr("id"))'>
-			<img id='PoDD' src='games/podd50x50.jpg' class='cover98' alt='PoDD cover' onClick='show($(this).attr("id"))'>
-			<img id='LLS' src='games/lls50x50.jpg' class='cover98' alt='LLS cover' onClick='show($(this).attr("id"))'>
-			<img id='MS' src='games/ms50x50.jpg' class='cover98' alt='MS cover' onClick='show($(this).attr("id"))'>
-			<img id='EoSD' src='games/eosd50x50.jpg' alt='EoSD cover' onClick='show($(this).attr("id"))'>
-			<img id='PCB' src='games/pcb50x50.jpg' alt='PCB cover' onClick='show($(this).attr("id"))'>
-			<img id='IN' src='games/in50x50.jpg' alt='IN cover' onClick='show($(this).attr("id"))'>
-			<img id='MoF' src='games/mof50x50.jpg' alt='MoF cover' onClick='show($(this).attr("id"))'>
-			<img id='SA' src='games/sa50x50.jpg' alt='SA cover' onClick='show($(this).attr("id"))'>
-			<img id='UFO' src='games/ufo50x50.jpg' alt='UFO cover' onClick='show($(this).attr("id"))'>
-			<img id='GFW' src='games/gfw50x50.jpg' alt='GFW cover' onClick='show($(this).attr("id"))'>
-			<img id='TD' src='games/td50x50.jpg' alt='TD cover' onClick='show($(this).attr("id"))'>
-			<img id='DDC' src='games/ddc50x50.jpg' alt='DDC cover' onClick='show($(this).attr("id"))'>
-			<img id='LoLK' src='games/lolk50x50.jpg' alt='LoLK cover' onClick='show($(this).attr("id"))'>
-			<img id='HSiFS' src='games/hsifs50x50.jpg' alt='HSiFS cover' onClick='show($(this).attr("id"))'>
-			<img id='WBaWC' src='games/wbawc50x50.jpg' alt='WBaWC cover' onClick='show($(this).attr("id"))'>
+            <img id='SoEW' src='games/soew50x50.jpg' class='cover98' alt='SoEW cover' onClick='show(this.id)'>
+			<img id='PoDD' src='games/podd50x50.jpg' class='cover98' alt='PoDD cover' onClick='show(this.id)'>
+			<img id='LLS' src='games/lls50x50.jpg' class='cover98' alt='LLS cover' onClick='show(this.id)'>
+			<img id='MS' src='games/ms50x50.jpg' class='cover98' alt='MS cover' onClick='show(this.id)'>
+			<img id='EoSD' src='games/eosd50x50.jpg' alt='EoSD cover' onClick='show(this.id)'>
+			<img id='PCB' src='games/pcb50x50.jpg' alt='PCB cover' onClick='show(this.id)'>
+			<img id='IN' src='games/in50x50.jpg' alt='IN cover' onClick='show(this.id)'>
+			<img id='MoF' src='games/mof50x50.jpg' alt='MoF cover' onClick='show(this.id)'>
+			<img id='SA' src='games/sa50x50.jpg' alt='SA cover' onClick='show(this.id)'>
+			<img id='UFO' src='games/ufo50x50.jpg' alt='UFO cover' onClick='show(this.id)'>
+			<img id='GFW' src='games/gfw50x50.jpg' alt='GFW cover' onClick='show(this.id)'>
+			<img id='TD' src='games/td50x50.jpg' alt='TD cover' onClick='show(this.id)'>
+			<img id='DDC' src='games/ddc50x50.jpg' alt='DDC cover' onClick='show(this.id)'>
+			<img id='LoLK' src='games/lolk50x50.jpg' alt='LoLK cover' onClick='show(this.id)'>
+			<img id='HSiFS' src='games/hsifs50x50.jpg' alt='HSiFS cover' onClick='show(this.id)'>
+			<img id='WBaWC' src='games/wbawc50x50.jpg' alt='WBaWC cover' onClick='show(this.id)'>
 			<div id='list'>
 				<p id='fullname'></p>
 				<table class='sortable'>
 					<thead id='listhead'></thead>
                     <tbody id='listbody'></tbody>
                     <tfoot id='listfoot'></tfoot>
+				</table>
+			</div>
+			<p id='playerlnns'>Choose a player name from the menu below to show their LNNs.</p>
+			<label for='player' class='player'>Player</label>
+			<select id='player' onChange='getPlayerLNNs(this.value)'><option>...</option></select>
+			<div id='playerlist'>
+				<table>
+					<thead id='playerlisthead'></thead>
+					<tbody id='playerlistbody'></tbody>
+					<tfoot id='playerlistfoot'></tfoot>
 				</table>
 			</div>
             <div id='overall'>
