@@ -21,14 +21,14 @@
 	<body>
 		<div id='nav' class='wrap'>
 			<nav>
-				<a href='/'><img src='favicon.ico' class='ico-32' alt='Index icon'> Index</a>
-				<a href='scoring'><img src='assets/scoring/spell.ico' class='ico-32' alt='Spell Card icon'> Scoring</a>
-				<a href='survival'><img src='assets/survival/survival.ico' class='ico-32' alt='1up Item icon'> Survival</a>
+				<a href='/'><img src='favicon.ico' alt='Index icon'> Index</a>
+				<a href='scoring'><img src='assets/scoring/spell.ico' alt='Spell Card icon'> Scoring</a>
+				<a href='survival'><img src='assets/survival/survival.ico' alt='1up Item icon'> Survival</a>
 				<a href='drc'><img src='assets/drc/power.ico' alt='Power icon'> DRC</a>
-				<a href='tools'><img src='assets/tools/ufo.ico' class='ico-32' alt='UFO icon'> Tools</a>
+				<a href='tools'><img src='assets/tools/ufo.ico' alt='UFO icon'> Tools</a>
 				<strong><img src='assets/wr/point.ico' alt='Point Item icon'> WR</strong>
-				<a href='lnn'><img src='assets/lnn/full.ico' class='ico-32' alt='Full Power icon'> LNN</a>
-				<a href='thvote'><img src='assets/thvote/tou-32.ico' class='ico-32' alt='Tou kanji icon'> Poll</a>
+				<a href='lnn'><img src='assets/lnn/full.ico' alt='Full Power icon'> LNN</a>
+				<a href='thvote'><img src='assets/thvote/tou-32.ico' alt='Tou kanji icon'> Poll</a>
 				<a href='jargon'><img src='assets/jargon/bomb.ico' alt='Bomb icon'> Jargon</a>
 				<a href='trs'><img src='assets/trs/shinto.png' alt='Shinto shrine icon'> TRS</a>
 				<a href='tiers'><img src='assets/tiers/castle.png' alt='Japanese castle icon'> Tiers</a>
@@ -69,132 +69,14 @@
             <p id='lastupdate'>World records are current as of August 12, 2019.</p><!-- Update through JS file -->
             <h2 id='contents_header'>Contents</h2>
             <table id='contents'>
-                <tr><td><a href='#overall' class='overallrecords'>Overall Records</a></td></tr>
-                <tr><td><a href='#HRtP' class='th1'>Touhou 1 - The Highly Responsive to Prayers</a></td></tr>
-                <tr><td><a href='#SoEW' class='th2'>Touhou 2 - The Story of Eastern Wonderland</a></td></tr>
-                <tr><td><a href='#PoDD' class='th3'>Touhou 3 - Phantasmagoria of Dim.Dream</a></td></tr>
-                <tr><td><a href='#LLS' class='th4'>Touhou 4 - Lotus Land Story</a></td></tr>
-                <tr><td><a href='#MS' class='th5'>Touhou 5 - Mystic Square</a></td></tr>
-                <tr><td><br></td></tr>
-                <tr><td><a href='#EoSD' class='th6'>Touhou 6 - The Embodiment of Scarlet Devil</a></td></tr>
-                <tr><td><a href='#PCB' class='th7'>Touhou 7 - Perfect Cherry Blossom</a></td></tr>
-                <tr><td><a href='#IN' class='th8'>Touhou 8 - Imperishable Night (FinalB)</a></td></tr>
-                <tr><td><a href='#PoFV' class='th9'>Touhou 9 - Phantasmagoria of Flower View</a></td></tr>
-                <tr><td><a href='#MoF' class='th10'>Touhou 10 - Mountain of Faith</a></td></tr>
-                <tr><td><a href='#SA' class='th11'>Touhou 11 - Subterranean Animism</a></td></tr>
-                <tr><td><a href='#UFO' class='th12'>Touhou 12 - Undefined Fantastic Object</a></td></tr>
-                <tr><td><a href='#GFW' class='th128'>Touhou 12.8 - Great Fairy Wars</a></td></tr>
-                <tr><td><a href='#TD' class='th13'>Touhou 13 - Ten Desires</a></td></tr>
-                <tr><td><a href='#DDC' class='th14'>Touhou 14 - Double Dealing Character</a></td></tr>
-                <tr><td><a href='#LoLK' class='th15'>Touhou 15 - Legacy of Lunatic Kingdom</a></td></tr>
-                <tr><td><a id='HSiFSlink' href='#HSiFS' class='th16'>Touhou 16 - Hidden Star in Four Seasons</a></td></tr>
-                <tr><td><a href='#WBaWC' class='th17'>Touhou 17 - Wily Beast and Weakest Creature</a></td></tr>
+				<tr><td><a href='#overall' class='overallrecords'>Overall Records</a></td></tr>
+				<tr><td><a href='#list' class='wr'>World Records</a></td></tr>
                 <tr><td><a href='#players' class='playerranking'>Player Ranking</a></td></tr>
                 <tr><td><a href='#west' class='westernrecords'>Western Records</a></td></tr>
                 <tr><td><a href='#ack' class='ack'>Acknowledgements</a></td></tr>
             </table>
-            <h2 id='customize'>Customize</h2>
-            <table id='checkboxes'>
-                <tbody>
-                    <tr>
-                        <td>
-                            <input id='HRtPc' type='checkbox' onClick='checkGame("HRtP")' checked>
-                            <label for='HRtPc' class='HRtP'>HRtP</label>
-                        </td><td>
-                            <input id='EoSDc' type='checkbox' onClick='checkGame("EoSD")' checked>
-                            <label for='EoSDc' class='EoSD'>EoSD</label>
-                        </td><td>
-                            <input id='SAc' type='checkbox' onClick='checkGame("SA")' checked>
-                            <label for='SAc' class='SA'>SA</label>
-                        </td><td>
-                            <input id='LoLKc' type='checkbox' onClick='checkGame("LoLK")' checked>
-                            <label for='LoLKc' class='LoLK'>LoLK</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input id='SoEWc' type='checkbox' onClick='checkGame("SoEW")' checked>
-                            <label for='SoEWc' class='SoEW'>SoEW</label>
-                        </td><td>
-                            <input id='PCBc' type='checkbox' onClick='checkGame("PCB")' checked>
-                            <label for='PCBc' class='PCB'>PCB</label>
-                        </td><td>
-                            <input id='UFOc' type='checkbox' onClick='checkGame("UFO")' checked>
-                            <label for='UFOc' class='UFO'>UFO</label>
-                        </td><td>
-                            <input id='HSiFSc' type='checkbox' onClick='checkGame("HSiFS")' checked>
-                            <label for='HSiFSc' class='HSiFS'>HSiFS</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input id='PoDDc' type='checkbox' onClick='checkGame("PoDD")' checked>
-                            <label for='PoDDc' class='PoDD'>PoDD</label>
-                        </td><td>
-                            <input id='INc' type='checkbox' onClick='checkGame("IN")' checked>
-                            <label for='INc' class='IN'>IN</label>
-                        </td><td>
-                            <input id='GFWc' type='checkbox' onClick='checkGame("GFW")' checked>
-                            <label for='GFWc' class='GFW'>GFW</label>
-                        </td><td>
-                            <input id='WBaWCc' type='checkbox' onClick='checkGame("WBaWC")' checked>
-                            <label for='WBaWCc' class='WBaWC'>WBaWC</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input id='LLSc' type='checkbox' onClick='checkGame("LLS")' checked>
-                            <label for='LLSc' class='LLS'>LLS</label>
-                        </td><td>
-                            <input id='PoFVc' type='checkbox' onClick='checkGame("PoFV")' checked>
-                            <label for='PoFVc' class='PoFV'>PoFV</label>
-                        </td><td>
-                            <input id='TDc' type='checkbox' onClick='checkGame("TD")' checked>
-                            <label for='TDc' class='TD'>TD</label>
-                        </td><td class='noborders'></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input id='MSc' type='checkbox' onClick='checkGame("MS")' checked>
-                            <label for='MSc' class='MS'>MS</label>
-                        </td><td>
-                            <input id='MoFc' type='checkbox' onClick='checkGame("MoF")' checked>
-                            <label for='MoFc' class='MoF'>MoF</label>
-                        </td><td>
-                            <input id='DDCc' type='checkbox' onClick='checkGame("DDC")' checked>
-                            <label for='DDCc' class='DDC'>DDC</label>
-                        </td><td class='noborders'></td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td>
-                            <input id='overallc' type='checkbox' onClick='checkGame("overall")' checked>
-                            <label for='overallc' class='overall'>Overall</label>
-                        </td><td>
-                            <input id='windows' type='checkbox' onClick='checkWindows()' checked>
-                            <label for='windows' class='windows'>Windows</label>
-                        </td><td>
-                            <input id='pc98' type='checkbox' onClick='checkPC98()' checked>
-                            <label for='pc98' class='pc98'>PC-98</label>
-                        </td><td>
-							<input id='all' type='checkbox' onClick='checkAll()' checked>
-                            <label id='label_all' for='all'>All</label>
-						</td>
-                    </tr>
-					<tr>
-						<td colspan='2'>
-							<input id='seasons' type='checkbox' onClick='toggleSeasons()'>
-							<label id='label_seasons' for='seasons'>HSiFS Seasons</label>
-						</td>
-						<td colspan='2'>
-							<input id='dates' type='checkbox' onClick='toggleDates()'>
-							<label id='label_dates' for='dates' class='dates'>Dates</label>
-						</td>
-					</tr>
-                </tfoot>
-            </table>
-			<p></p>
+            <table id='checkboxes'><tr><td><input id='dates' type='checkbox' onClick='toggleDates()'>
+			<label id='label_dates' for='dates' class='dates'>Dates</label></td></tr></table>
             <div id='overall'>
                 <h2 class='overallrecords'>Overall Records</h2>
                 <table class='sortable'>
@@ -372,1117 +254,131 @@
                 </table>
             </div>
             <h2 class='worldrecords'>World Records</h2>
-            <div id='HRtP'>
-                <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src='games/hrtp50x50.jpg' class='cover98' alt='HRtP cover'> <span class='th1'>Touhou 1 - The Highly Responsive to Prayers</span></p>
-                <table class='sortable'>
-                    <tr>
-                        <th class='route'>Route</th>
-                        <th class='sorttable_numeric'>Easy</th>
-                        <th class='sorttable_numeric'>Normal</th>
-                        <th class='sorttable_numeric'>Hard</th>
-                        <th class='sorttable_numeric'>Lunatic</th>
-                    </tr><tr>
-                        <td class='Makai'>Makai</td>
-                        <td id='HRtPEasyMakai'></td>
-                        <td id='HRtPNormalMakai'></td>
-                        <td id='HRtPHardMakai'></td>
-                        <td id='HRtPLunaticMakai'></td>
-                    </tr><tr>
-                        <td class='Jigoku'>Jigoku</td>
-                        <td id='HRtPEasyJigoku'></td>
-                        <td id='HRtPNormalJigoku'></td>
-                        <td id='HRtPHardJigoku'></td>
-                        <td id='HRtPLunaticJigoku'></td>
-                    </tr>
+			<p id='clickgame'>Click a game cover to show its list of world records.</p>
+            <img id='HRtP' src='games/hrtp50x50.jpg' class='cover98' alt='HRtP cover' onClick='display($(this).attr("id"))'>
+            <img id='SoEW' src='games/soew50x50.jpg' class='cover98' alt='SoEW cover' onClick='display($(this).attr("id"))'>
+			<img id='PoDD' src='games/podd50x50.jpg' class='cover98' alt='PoDD cover' onClick='display($(this).attr("id"))'>
+			<img id='LLS' src='games/lls50x50.jpg' class='cover98' alt='LLS cover' onClick='display($(this).attr("id"))'>
+			<img id='MS' src='games/ms50x50.jpg' class='cover98' alt='MS cover' onClick='display($(this).attr("id"))'>
+			<img id='EoSD' src='games/eosd50x50.jpg' alt='EoSD cover' onClick='display($(this).attr("id"))'>
+			<img id='PCB' src='games/pcb50x50.jpg' alt='PCB cover' onClick='display($(this).attr("id"))'>
+			<img id='IN' src='games/in50x50.jpg' alt='IN cover' onClick='display($(this).attr("id"))'>
+			<img id='PoFV' src='games/pofv50x50.jpg' alt='PoFV cover' onClick='display($(this).attr("id"))'><br>
+			<img id='MoF' src='games/mof50x50.jpg' alt='MoF cover' onClick='display($(this).attr("id"))'>
+			<img id='SA' src='games/sa50x50.jpg' alt='SA cover' onClick='display($(this).attr("id"))'>
+			<img id='UFO' src='games/ufo50x50.jpg' alt='UFO cover' onClick='display($(this).attr("id"))'>
+			<img id='GFW' src='games/gfw50x50.jpg' alt='GFW cover' onClick='display($(this).attr("id"))'>
+			<img id='TD' src='games/td50x50.jpg' alt='TD cover' onClick='display($(this).attr("id"))'>
+			<img id='DDC' src='games/ddc50x50.jpg' alt='DDC cover' onClick='display($(this).attr("id"))'>
+			<img id='LoLK' src='games/lolk50x50.jpg' alt='LoLK cover' onClick='display($(this).attr("id"))'>
+			<img id='HSiFS' src='games/hsifs50x50.jpg' alt='HSiFS cover' onClick='display($(this).attr("id"))'>
+			<img id='WBaWC' src='games/wbawc50x50.jpg' alt='WBaWC cover' onClick='display($(this).attr("id"))'>
+			<div id='list'>
+				<p id='fullname'></p>
+				<p id='seasontoggle'>
+					<input id='seasons' type='checkbox' onClick='toggleSeasons()'>
+					<label id='label_seasons' for='seasons'>Seasons</label>
+				</p>
+				<table id='table' class='sortable'>
+					<thead id='list_thead'></thead>
+                    <tbody id='list_tbody'></tbody>
+				</table>
+				<p id='cheat'>* This record is suspected of cheating. If it is found to have been cheated, the record will be 2,209,324,900 by nanamaru.</p>
+                <table>
+                    <thead id='west_thead'></thead>
+                    <tbody id='west_tbody'></tbody>
                 </table>
-            </div>
-            <div id='SoEW'>
-                <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src='games/soew50x50.jpg' class='cover98' alt='SoEW cover'> <span class='th2'>Touhou 2 - The Story of Eastern Wonderland</span></p>
-                <table class='sortable'>
-                    <tr>
-                        <th class='shottype'>Shottype</th>
-                        <th class='sorttable_numeric'>Easy</th>
-                        <th class='sorttable_numeric'>Normal</th>
-                        <th class='sorttable_numeric'>Hard</th>
-                        <th class='sorttable_numeric'>Lunatic</th>
-                        <th class='sorttable_numeric'>Extra</th>
-                    </tr><tr>
-                        <td class='ReimuA'>ReimuA</td>
-                        <td id='SoEWEasyReimuA'></td>
-                        <td id='SoEWNormalReimuA'></td>
-                        <td id='SoEWHardReimuA'></td>
-                        <td id='SoEWLunaticReimuA'></td>
-                        <td id='SoEWExtraReimuA'></td>
-                    </tr><tr>
-                        <td class='ReimuB'>ReimuB</td>
-                        <td id='SoEWEasyReimuB'></td>
-                        <td id='SoEWNormalReimuB'></td>
-                        <td id='SoEWHardReimuB'></td>
-                        <td id='SoEWLunaticReimuB'></td>
-                        <td id='SoEWExtraReimuB'></td>
-                    </tr><tr>
-                        <td class='ReimuC'>ReimuC</td>
-                        <td id='SoEWEasyReimuC'></td>
-                        <td id='SoEWNormalReimuC'></td>
-                        <td id='SoEWHardReimuC'></td>
-                        <td id='SoEWLunaticReimuC'></td>
-                        <td id='SoEWExtraReimuC'></td>
-                    </tr>
-                </table>
-            </div>
-            <div id='PoDD'>
-                <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src='games/podd50x50.jpg' class='cover98' alt='PoDD cover'> <span class='th3'>Touhou 3 - Phantasmagoria of Dim.Dream</span></p>
-                <table class='sortable'>
-                    <tr>
-                        <th class='shottype'>Shottype</th>
-                        <th class='sorttable_numeric'>Easy</th>
-                        <th class='sorttable_numeric'>Normal</th>
-                        <th class='sorttable_numeric'>Hard</th>
-                        <th class='sorttable_numeric'>Lunatic</th>
-                    </tr><tr>
-                        <td class='Reimu'>Reimu</td>
-                        <td id='PoDDEasyReimu'></td>
-                        <td id='PoDDNormalReimu'></td>
-                        <td id='PoDDHardReimu'></td>
-                        <td id='PoDDLunaticReimu'></td>
-                    </tr><tr>
-                        <td class='Mima'>Mima</td>
-                        <td id='PoDDEasyMima'></td>
-                        <td id='PoDDNormalMima'></td>
-                        <td id='PoDDHardMima'></td>
-                        <td id='PoDDLunaticMima'></td>
-                    </tr><tr>
-                        <td class='Marisa'>Marisa</td>
-                        <td id='PoDDEasyMarisa'></td>
-                        <td id='PoDDNormalMarisa'></td>
-                        <td id='PoDDHardMarisa'></td>
-                        <td id='PoDDLunaticMarisa'></td>
-                    </tr><tr>
-                        <td class='Ellen'>Ellen</td>
-                        <td id='PoDDEasyEllen'></td>
-                        <td id='PoDDNormalEllen'></td>
-                        <td id='PoDDHardEllen'></td>
-                        <td id='PoDDLunaticEllen'></td>
-                    </tr><tr>
-                        <td class='Kotohime'>Kotohime</td>
-                        <td id='PoDDEasyKotohime'></td>
-                        <td id='PoDDNormalKotohime'></td>
-                        <td id='PoDDHardKotohime'></td>
-                        <td id='PoDDLunaticKotohime'></td>
-                    </tr><tr>
-                        <td class='Kana'>Kana</td>
-                        <td id='PoDDEasyKana'></td>
-                        <td id='PoDDNormalKana'></td>
-                        <td id='PoDDHardKana'></td>
-                        <td id='PoDDLunaticKana'></td>
-                    </tr><tr>
-                        <td class='Rikako'>Rikako</td>
-                        <td id='PoDDEasyRikako'></td>
-                        <td id='PoDDNormalRikako'></td>
-                        <td id='PoDDHardRikako'></td>
-                        <td id='PoDDLunaticRikako'></td>
-                    </tr><tr>
-                        <td class='Chiyuri'>Chiyuri</td>
-                        <td id='PoDDEasyChiyuri'></td>
-                        <td id='PoDDNormalChiyuri'></td>
-                        <td id='PoDDHardChiyuri'></td>
-                        <td id='PoDDLunaticChiyuri'></td>
-                    </tr><tr>
-                        <td class='Yumemi'>Yumemi</td>
-                        <td id='PoDDEasyYumemi'></td>
-                        <td id='PoDDNormalYumemi'></td>
-                        <td id='PoDDHardYumemi'></td>
-                        <td id='PoDDLunaticYumemi'></td>
-                    </tr>
-                </table>
-            </div>
-            <div id='LLS'>
-                <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src='games/lls50x50.jpg' class='cover98' alt='LLS cover'> <span class='th4'>Touhou 4 - Lotus Land Story</span></p>
-                <table class='sortable'>
-                    <tr>
-                        <th class='shottype'>Shottype</th>
-                        <th class='sorttable_numeric'>Easy</th>
-                        <th class='sorttable_numeric'>Normal</th>
-                        <th class='sorttable_numeric'>Hard</th>
-                        <th class='sorttable_numeric'>Lunatic</th>
-                        <th class='sorttable_numeric'>Extra</th>
-                    </tr><tr>
-                        <td class='ReimuA'>ReimuA</td>
-                        <td id='LLSEasyReimuA'></td>
-                        <td id='LLSNormalReimuA'></td>
-                        <td id='LLSHardReimuA'></td>
-                        <td id='LLSLunaticReimuA'></td>
-                        <td id='LLSExtraReimuA'></td>
-                    </tr><tr>
-                        <td class='ReimuB'>ReimuB</td>
-                        <td id='LLSEasyReimuB'></td>
-                        <td id='LLSNormalReimuB'></td>
-                        <td id='LLSHardReimuB'></td>
-                        <td id='LLSLunaticReimuB'></td>
-                        <td id='LLSExtraReimuB'></td>
-                    </tr><tr>
-                        <td class='MarisaA'>MarisaA</td>
-                        <td id='LLSEasyMarisaA'></td>
-                        <td id='LLSNormalMarisaA'></td>
-                        <td id='LLSHardMarisaA'></td>
-                        <td id='LLSLunaticMarisaA'></td>
-                        <td id='LLSExtraMarisaA'></td>
-                    </tr><tr>
-                        <td class='MarisaB'>MarisaB</td>
-                        <td id='LLSEasyMarisaB'></td>
-                        <td id='LLSNormalMarisaB'></td>
-                        <td id='LLSHardMarisaB'></td>
-                        <td id='LLSLunaticMarisaB'></td>
-                        <td id='LLSExtraMarisaB'></td>
-                    </tr>
-                </table>
-            </div>
-            <div id='MS'>
-                <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src='games/ms50x50.jpg' class='cover98' alt='MS cover'> <span class='th5'>Touhou 5 - Mystic Square</span></p>
-                <table class='sortable'>
-                    <tr>
-                        <th class='shottype'>Shottype</th>
-                        <th class='sorttable_numeric'>Easy</th>
-                        <th class='sorttable_numeric'>Normal</th>
-                        <th class='sorttable_numeric'>Hard</th>
-                        <th class='sorttable_numeric'>Lunatic</th>
-                        <th class='sorttable_numeric'>Extra</th>
-                    </tr><tr>
-                        <td class='Reimu'>Reimu</td>
-                        <td id='MSEasyReimu'></td>
-                        <td id='MSNormalReimu'></td>
-                        <td id='MSHardReimu'></td>
-                        <td id='MSLunaticReimu'></td>
-                        <td id='MSExtraReimu'></td>
-                    </tr><tr>
-                        <td class='Marisa'>Marisa</td>
-                        <td id='MSEasyMarisa'></td>
-                        <td id='MSNormalMarisa'></td>
-                        <td id='MSHardMarisa'></td>
-                        <td id='MSLunaticMarisa'></td>
-                        <td id='MSExtraMarisa'></td>
-                    </tr><tr>
-                        <td class='Mima'>Mima</td>
-                        <td id='MSEasyMima'></td>
-                        <td id='MSNormalMima'></td>
-                        <td id='MSHardMima'></td>
-                        <td id='MSLunaticMima'></td>
-                        <td id='MSExtraMima'></td>
-                    </tr><tr>
-                        <td class='Yuuka'>Yuuka</td>
-                        <td id='MSEasyYuuka'></td>
-                        <td id='MSNormalYuuka'></td>
-                        <td id='MSHardYuuka'></td>
-                        <td id='MSLunaticYuuka'></td>
-                        <td id='MSExtraYuuka'></td>
-                    </tr>
-                </table>
-            </div>
-            <div id='EoSD'>
-			<p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src='games/eosd50x50.jpg' alt='EoSD cover'> <span class='th6'>Touhou 6 - The Embodiment of Scarlet Devil</span></p>
-                <table class='sortable'>
-                    <tr>
-                        <th class='shottype'>Shottype</th>
-                        <th class='sorttable_numeric'>Easy</th>
-                        <th class='sorttable_numeric'>Normal</th>
-                        <th class='sorttable_numeric'>Hard</th>
-                        <th class='sorttable_numeric'>Lunatic</th>
-                        <th class='sorttable_numeric'>Extra</th>
-                    </tr><tr>
-                        <td class='ReimuA'>ReimuA</td>
-                        <td id='EoSDEasyReimuA'></td>
-                        <td id='EoSDNormalReimuA'></td>
-                        <td id='EoSDHardReimuA'></td>
-                        <td id='EoSDLunaticReimuA'></td>
-                        <td id='EoSDExtraReimuA'></td>
-                    </tr><tr>
-                        <td class='ReimuB'>ReimuB</td>
-                        <td id='EoSDEasyReimuB'></td>
-                        <td id='EoSDNormalReimuB'></td>
-                        <td id='EoSDHardReimuB'></td>
-                        <td id='EoSDLunaticReimuB'></td>
-                        <td id='EoSDExtraReimuB'></td>
-                    </tr><tr>
-                        <td class='MarisaA'>MarisaA</td>
-                        <td id='EoSDEasyMarisaA'></td>
-                        <td id='EoSDNormalMarisaA'></td>
-                        <td id='EoSDHardMarisaA'></td>
-                        <td id='EoSDLunaticMarisaA'></td>
-                        <td id='EoSDExtraMarisaA'></td>
-                    </tr><tr>
-                        <td class='MarisaB'>MarisaB</td>
-                        <td id='EoSDEasyMarisaB'></td>
-                        <td id='EoSDNormalMarisaB'></td>
-                        <td id='EoSDHardMarisaB'></td>
-                        <td id='EoSDLunaticMarisaB'></td>
-                        <td id='EoSDExtraMarisaB'></td>
-                    </tr>
-                </table>
-            </div>
-            <div id='PCB'>
-                <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src='games/pcb50x50.jpg' alt='PCB cover'> <span class='th7'>Touhou 7 - Perfect Cherry Blossom</span></p>
-                <table class='sortable'>
-                    <tr>
-                        <th class='shottype'>Shottype</th>
-                        <th class='sorttable_numeric'>Easy</th>
-                        <th class='sorttable_numeric'>Normal</th>
-                        <th class='sorttable_numeric'>Hard</th>
-                        <th class='sorttable_numeric'>Lunatic</th>
-                        <th class='sorttable_numeric'>Extra</th>
-                        <th class='sorttable_numeric'>Phantasm</th>
-                    </tr><tr>
-                        <td class='ReimuA'>ReimuA</td>
-                        <td id='PCBEasyReimuA'></td>
-                        <td id='PCBNormalReimuA'></td>
-                        <td id='PCBHardReimuA'></td>
-                        <td id='PCBLunaticReimuA'></td>
-                        <td id='PCBExtraReimuA'></td>
-                        <td id='PCBPhantasmReimuA'></td>
-                    </tr><tr>
-                        <td class='ReimuB'>ReimuB</td>
-                        <td id='PCBEasyReimuB'></td>
-                        <td id='PCBNormalReimuB'></td>
-                        <td id='PCBHardReimuB'></td>
-                        <td id='PCBLunaticReimuB'></td>
-                        <td id='PCBExtraReimuB'></td>
-                        <td id='PCBPhantasmReimuB'></td>
-                    </tr><tr>
-                        <td class='MarisaA'>MarisaA</td>
-                        <td id='PCBEasyMarisaA'></td>
-                        <td id='PCBNormalMarisaA'></td>
-                        <td id='PCBHardMarisaA'></td>
-                        <td id='PCBLunaticMarisaA'></td>
-                        <td id='PCBExtraMarisaA'></td>
-                        <td id='PCBPhantasmMarisaA'></td>
-                    </tr><tr>
-                        <td class='MarisaB'>MarisaB</td>
-                        <td id='PCBEasyMarisaB'></td>
-                        <td id='PCBNormalMarisaB'></td>
-                        <td id='PCBHardMarisaB'></td>
-                        <td id='PCBLunaticMarisaB'></td>
-                        <td id='PCBExtraMarisaB'></td>
-                        <td id='PCBPhantasmMarisaB'></td>
-                    </tr><tr>
-                        <td class='SakuyaA'>SakuyaA</td>
-                        <td id='PCBEasySakuyaA'></td>
-                        <td id='PCBNormalSakuyaA'></td>
-                        <td id='PCBHardSakuyaA'></td>
-                        <td id='PCBLunaticSakuyaA'></td>
-                        <td id='PCBExtraSakuyaA'></td>
-                        <td id='PCBPhantasmSakuyaA'></td>
-                    </tr><tr>
-                        <td class='SakuyaB'>SakuyaB</td>
-                        <td id='PCBEasySakuyaB'></td>
-                        <td id='PCBNormalSakuyaB'></td>
-                        <td id='PCBHardSakuyaB'></td>
-                        <td id='PCBLunaticSakuyaB'></td>
-                        <td id='PCBExtraSakuyaB'></td>
-                        <td id='PCBPhantasmSakuyaB'></td>
-                    </tr>
-                </table>
-            </div>
-            <div id='IN'>
-                <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src='games/in50x50.jpg' alt='IN cover'> <span class='th8'>Touhou 8 - Imperishable Night (FinalB)</span></p>
-                <table class='sortable'>
-                    <tr>
-                        <th class='shottype'>Shottype</th>
-                        <th class='sorttable_numeric'>Easy</th>
-                        <th class='sorttable_numeric'>Normal</th>
-                        <th class='sorttable_numeric'>Hard</th>
-                        <th class='sorttable_numeric'>Lunatic</th>
-                        <th class='sorttable_numeric'>Extra</th>
-                    </tr><tr>
-                        <td class='BorderTeam'>Border Team</td>
-                        <td id='INEasyBorderTeam'></td>
-                        <td id='INNormalBorderTeam'></td>
-                        <td id='INHardBorderTeam'></td>
-                        <td id='INLunaticBorderTeam'></td>
-                        <td id='INExtraBorderTeam'></td>
-                    </tr><tr>
-                        <td class='MagicTeam'>Magic Team</td>
-                        <td id='INEasyMagicTeam'></td>
-                        <td id='INNormalMagicTeam'></td>
-                        <td id='INHardMagicTeam'></td>
-                        <td id='INLunaticMagicTeam'></td>
-                        <td id='INExtraMagicTeam'></td>
-                    </tr><tr>
-                        <td class='ScarletTeam'>Scarlet Team</td>
-                        <td id='INEasyScarletTeam'></td>
-                        <td id='INNormalScarletTeam'></td>
-                        <td id='INHardScarletTeam'></td>
-                        <td id='INLunaticScarletTeam'></td>
-                        <td id='INExtraScarletTeam'></td>
-                    </tr><tr>
-                        <td class='GhostTeam'>Ghost Team</td>
-                        <td id='INEasyGhostTeam'></td>
-                        <td id='INNormalGhostTeam'></td>
-                        <td id='INHardGhostTeam'></td>
-                        <td id='INLunaticGhostTeam'></td>
-                        <td id='INExtraGhostTeam'></td>
-                    </tr><tr>
-                        <td class='Reimu'>Reimu</td>
-                        <td id='INEasyReimu'></td>
-                        <td id='INNormalReimu'></td>
-                        <td id='INHardReimu'></td>
-                        <td id='INLunaticReimu'></td>
-                        <td id='INExtraReimu'></td>
-                    </tr><tr>
-                        <td class='Yukari'>Yukari</td>
-                        <td id='INEasyYukari'></td>
-                        <td id='INNormalYukari'></td>
-                        <td id='INHardYukari'></td>
-                        <td id='INLunaticYukari'></td>
-                        <td id='INExtraYukari'></td>
-                    </tr><tr>
-                        <td class='Marisa'>Marisa</td>
-                        <td id='INEasyMarisa'></td>
-                        <td id='INNormalMarisa'></td>
-                        <td id='INHardMarisa'></td>
-                        <td id='INLunaticMarisa'></td>
-                        <td id='INExtraMarisa'></td>
-                    </tr><tr>
-                        <td class='Alice'>Alice</td>
-                        <td id='INEasyAlice'></td>
-                        <td id='INNormalAlice'></td>
-                        <td id='INHardAlice'></td>
-                        <td id='INLunaticAlice'></td>
-                        <td id='INExtraAlice'></td>
-                    </tr><tr>
-                        <td class='Sakuya'>Sakuya</td>
-                        <td id='INEasySakuya'></td>
-                        <td id='INNormalSakuya'></td>
-                        <td id='INHardSakuya'></td>
-                        <td id='INLunaticSakuya'></td>
-                        <td id='INExtraSakuya'></td>
-                    </tr><tr>
-                        <td class='Remilia'>Remilia</td>
-                        <td id='INEasyRemilia'></td>
-                        <td id='INNormalRemilia'></td>
-                        <td id='INHardRemilia'></td>
-                        <td id='INLunaticRemilia'></td>
-                        <td id='INExtraRemilia'></td>
-                    </tr><tr>
-                        <td class='Youmu'>Youmu</td>
-                        <td id='INEasyYoumu'></td>
-                        <td id='INNormalYoumu'></td>
-                        <td id='INHardYoumu'></td>
-                        <td id='INLunaticYoumu'></td>
-                        <td id='INExtraYoumu'></td>
-                    </tr><tr>
-                        <td class='Yuyuko'>Yuyuko</td>
-                        <td id='INEasyYuyuko'></td>
-                        <td id='INNormalYuyuko'></td>
-                        <td id='INHardYuyuko'></td>
-                        <td id='INLunaticYuyuko'></td>
-                        <td id='INExtraYuyuko'></td>
-                    </tr>
-                </table>
-            </div>
-            <div id='PoFV'>
-                <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src='games/pofv50x50.jpg' alt='PoFV cover'> <span class='th9'>Touhou 9 - Phantasmagoria of Flower View</span></p>
-                <table class='sortable'>
-                    <tr>
-                        <th class='shottype'>Shottype</th>
-                        <th class='sorttable_numeric'>Easy</th>
-                        <th class='sorttable_numeric'>Normal</th>
-                        <th class='sorttable_numeric'>Hard</th>
-                        <th class='sorttable_numeric'>Lunatic</th>
-                        <th class='sorttable_numeric'>Extra</th>
-                    </tr><tr>
-                        <td class='Reimu'>Reimu</td>
-                        <td id='PoFVEasyReimu'></td>
-                        <td id='PoFVNormalReimu'></td>
-                        <td id='PoFVHardReimu'></td>
-                        <td id='PoFVLunaticReimu'></td>
-                        <td id='PoFVExtraReimu'></td>
-                    </tr><tr>
-                        <td class='Marisa'>Marisa</td>
-                        <td id='PoFVEasyMarisa'></td>
-                        <td id='PoFVNormalMarisa'></td>
-                        <td id='PoFVHardMarisa'></td>
-                        <td id='PoFVLunaticMarisa'></td>
-                        <td id='PoFVExtraMarisa'></td>
-                    </tr><tr>
-                        <td class='Sakuya'>Sakuya</td>
-                        <td id='PoFVEasySakuya'></td>
-                        <td id='PoFVNormalSakuya'></td>
-                        <td id='PoFVHardSakuya'></td>
-                        <td id='PoFVLunaticSakuya'></td>
-                        <td id='PoFVExtraSakuya'></td>
-                    </tr><tr>
-                        <td class='Youmu'>Youmu</td>
-                        <td id='PoFVEasyYoumu'></td>
-                        <td id='PoFVNormalYoumu'></td>
-                        <td id='PoFVHardYoumu'></td>
-                        <td id='PoFVLunaticYoumu'></td>
-                        <td id='PoFVExtraYoumu'></td>
-                    </tr><tr>
-                        <td class='Reisen'>Reisen</td>
-                        <td id='PoFVEasyReisen'></td>
-                        <td id='PoFVNormalReisen'></td>
-                        <td id='PoFVHardReisen'></td>
-                        <td id='PoFVLunaticReisen'></td>
-                        <td id='PoFVExtraReisen'></td>
-                    </tr><tr>
-                        <td class='Cirno'>Cirno</td>
-                        <td id='PoFVEasyCirno'></td>
-                        <td id='PoFVNormalCirno'></td>
-                        <td id='PoFVHardCirno'></td>
-                        <td id='PoFVLunaticCirno'></td>
-                        <td id='PoFVExtraCirno'></td>
-                    </tr><tr>
-                        <td class='Lyrica'>Lyrica</td>
-                        <td id='PoFVEasyLyrica'></td>
-                        <td id='PoFVNormalLyrica'></td>
-                        <td id='PoFVHardLyrica'></td>
-                        <td id='PoFVLunaticLyrica'></td>
-                        <td id='PoFVExtraLyrica'></td>
-                    </tr><tr>
-                        <td class='Mystia'>Mystia</td>
-                        <td id='PoFVEasyMystia'></td>
-                        <td id='PoFVNormalMystia'></td>
-                        <td id='PoFVHardMystia'></td>
-                        <td id='PoFVLunaticMystia'></td>
-                        <td id='PoFVExtraMystia'></td>
-                    </tr><tr>
-                        <td class='Tewi'>Tewi</td>
-                        <td id='PoFVEasyTewi'></td>
-                        <td id='PoFVNormalTewi'></td>
-                        <td id='PoFVHardTewi'></td>
-                        <td id='PoFVLunaticTewi'></td>
-                        <td id='PoFVExtraTewi'></td>
-                    </tr><tr>
-                        <td class='Aya'>Aya</td>
-                        <td id='PoFVEasyAya'></td>
-                        <td id='PoFVNormalAya'></td>
-                        <td id='PoFVHardAya'></td>
-                        <td id='PoFVLunaticAya'></td>
-                        <td id='PoFVExtraAya'></td>
-                    </tr><tr>
-                        <td class='Medicine'>Medicine</td>
-                        <td id='PoFVEasyMedicine'></td>
-                        <td id='PoFVNormalMedicine'></td>
-                        <td id='PoFVHardMedicine'></td>
-                        <td id='PoFVLunaticMedicine'></td>
-                        <td id='PoFVExtraMedicine'></td>
-                    </tr><tr>
-                        <td class='Yuuka'>Yuuka</td>
-                        <td id='PoFVEasyYuuka'></td>
-                        <td id='PoFVNormalYuuka'></td>
-                        <td id='PoFVHardYuuka'></td>
-                        <td id='PoFVLunaticYuuka'></td>
-                        <td id='PoFVExtraYuuka'></td>
-                    </tr><tr>
-                        <td class='Komachi'>Komachi</td>
-                        <td id='PoFVEasyKomachi'></td>
-                        <td id='PoFVNormalKomachi'></td>
-                        <td id='PoFVHardKomachi'></td>
-                        <td id='PoFVLunaticKomachi'></td>
-                        <td id='PoFVExtraKomachi'></td>
-                    </tr><tr>
-                        <td class='Eiki'>Eiki</td>
-                        <td id='PoFVEasyEiki'></td>
-                        <td id='PoFVNormalEiki'></td>
-                        <td id='PoFVHardEiki'></td>
-                        <td id='PoFVLunaticEiki'></td>
-                        <td id='PoFVExtraEiki'></td>
-                    </tr>
-                </table>
-            </div>
-            <div id='MoF'>
-                <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src='games/mof50x50.jpg' alt='MoF cover'> <span class='th10'>Touhou 10 - Mountain of Faith</span></p>
-                <table class='sortable'>
-                    <tr>
-                        <th class='shottype'>Shottype</th>
-                        <th class='sorttable_numeric'>Easy</th>
-                        <th class='sorttable_numeric'>Normal</th>
-                        <th class='sorttable_numeric'>Hard</th>
-                        <th class='sorttable_numeric'>Lunatic</th>
-                        <th class='sorttable_numeric'>Extra</th>
-                    </tr><tr>
-                        <td class='ReimuA'>ReimuA</td>
-                        <td id='MoFEasyReimuA'></td>
-                        <td id='MoFNormalReimuA'></td>
-                        <td id='MoFHardReimuA'></td>
-                        <td id='MoFLunaticReimuA'></td>
-                        <td id='MoFExtraReimuA'></td>
-                    </tr><tr>
-                        <td class='ReimuB'>ReimuB</td>
-                        <td id='MoFEasyReimuB'></td>
-                        <td id='MoFNormalReimuB'></td>
-                        <td id='MoFHardReimuB'></td>
-                        <td id='MoFLunaticReimuB'></td>
-                        <td id='MoFExtraReimuB'></td>
-                    </tr><tr>
-                        <td class='ReimuC'>ReimuC</td>
-                        <td id='MoFEasyReimuC'></td>
-                        <td id='MoFNormalReimuC'></td>
-                        <td id='MoFHardReimuC'></td>
-                        <td id='MoFLunaticReimuC'></td>
-                        <td id='MoFExtraReimuC'></td>
-                    </tr><tr>
-                        <td class='MarisaA'>MarisaA</td>
-                        <td id='MoFEasyMarisaA'></td>
-                        <td id='MoFNormalMarisaA'></td>
-                        <td id='MoFHardMarisaA'></td>
-                        <td id='MoFLunaticMarisaA'></td>
-                        <td id='MoFExtraMarisaA'></td>
-                    </tr><tr>
-                        <td class='MarisaB'>MarisaB</td>
-                        <td id='MoFEasyMarisaB'></td>
-                        <td id='MoFNormalMarisaB'></td>
-                        <td id='MoFHardMarisaB'></td>
-                        <td id='MoFLunaticMarisaB'></td>
-                        <td id='MoFExtraMarisaB'></td>
-                    </tr><tr>
-                        <td class='MarisaC'>MarisaC</td>
-                        <td id='MoFEasyMarisaC'></td>
-                        <td id='MoFNormalMarisaC'></td>
-                        <td id='MoFHardMarisaC'></td>
-                        <td id='MoFLunaticMarisaC'></td>
-                        <td id='MoFExtraMarisaC'></td>
-                    </tr>
-                </table>
-                <p>* This record is suspected of cheating. If it is found to have been cheated, the record will be 2,209,324,900 by nanamaru.</p>
-            </div>
-			<div id='SA'>
-                <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src='games/sa50x50.jpg' alt='SA cover'> <span class='th11'>Touhou 11 - Subterranean Animism</span></p>
-                <table class='sortable'>
-                    <tr>
-                        <th class='shottype'>Shottype</th>
-                        <th class='sorttable_numeric'>Easy</th>
-                        <th class='sorttable_numeric'>Normal</th>
-                        <th class='sorttable_numeric'>Hard</th>
-                        <th class='sorttable_numeric'>Lunatic</th>
-                        <th class='sorttable_numeric'>Extra</th>
-                    </tr><tr>
-                        <td class='ReimuA'>ReimuA</td>
-                        <td id='SAEasyReimuA'></td>
-                        <td id='SANormalReimuA'></td>
-                        <td id='SAHardReimuA'></td>
-                        <td id='SALunaticReimuA'></td>
-                        <td id='SAExtraReimuA'></td>
-                    </tr><tr>
-                        <td class='ReimuB'>ReimuB</td>
-                        <td id='SAEasyReimuB'></td>
-                        <td id='SANormalReimuB'></td>
-                        <td id='SAHardReimuB'></td>
-                        <td id='SALunaticReimuB'></td>
-                        <td id='SAExtraReimuB'></td>
-                    </tr><tr>
-                        <td class='ReimuC'>ReimuC</td>
-                        <td id='SAEasyReimuC'></td>
-                        <td id='SANormalReimuC'></td>
-                        <td id='SAHardReimuC'></td>
-                        <td id='SALunaticReimuC'></td>
-                        <td id='SAExtraReimuC'></td>
-                    </tr><tr>
-                        <td class='MarisaA'>MarisaA</td>
-                        <td id='SAEasyMarisaA'></td>
-                        <td id='SANormalMarisaA'></td>
-                        <td id='SAHardMarisaA'></td>
-                        <td id='SALunaticMarisaA'></td>
-                        <td id='SAExtraMarisaA'></td>
-                    </tr><tr>
-                        <td class='MarisaB'>MarisaB</td>
-                        <td id='SAEasyMarisaB'></td>
-                        <td id='SANormalMarisaB'></td>
-                        <td id='SAHardMarisaB'></td>
-                        <td id='SALunaticMarisaB'></td>
-                        <td id='SAExtraMarisaB'></td>
-                    </tr><tr>
-                        <td class='MarisaC'>MarisaC</td>
-                        <td id='SAEasyMarisaC'></td>
-                        <td id='SANormalMarisaC'></td>
-                        <td id='SAHardMarisaC'></td>
-                        <td id='SALunaticMarisaC'></td>
-                        <td id='SAExtraMarisaC'></td>
-                    </tr>
-                </table>
-            </div>
-			<div id='UFO'>
-                <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src='games/ufo50x50.jpg' alt='UFO cover'> <span class='th12'>Touhou 12 - Undefined Fantastic Object</span></p>
-                <table class='sortable'>
-                    <tr>
-                        <th class='shottype'>Shottype</th>
-                        <th class='sorttable_numeric'>Easy</th>
-                        <th class='sorttable_numeric'>Normal</th>
-                        <th class='sorttable_numeric'>Hard</th>
-                        <th class='sorttable_numeric'>Lunatic</th>
-                        <th class='sorttable_numeric'>Extra</th>
-                    </tr><tr>
-                        <td class='ReimuA'>ReimuA</td>
-                        <td id='UFOEasyReimuA'></td>
-                        <td id='UFONormalReimuA'></td>
-                        <td id='UFOHardReimuA'></td>
-                        <td id='UFOLunaticReimuA'></td>
-                        <td id='UFOExtraReimuA'></td>
-                    </tr><tr>
-                        <td class='ReimuB'>ReimuB</td>
-                        <td id='UFOEasyReimuB'></td>
-                        <td id='UFONormalReimuB'></td>
-                        <td id='UFOHardReimuB'></td>
-                        <td id='UFOLunaticReimuB'></td>
-                        <td id='UFOExtraReimuB'></td>
-                    </tr><tr>
-                        <td class='MarisaA'>MarisaA</td>
-                        <td id='UFOEasyMarisaA'></td>
-                        <td id='UFONormalMarisaA'></td>
-                        <td id='UFOHardMarisaA'></td>
-                        <td id='UFOLunaticMarisaA'></td>
-                        <td id='UFOExtraMarisaA'></td>
-                    </tr><tr>
-                        <td class='MarisaB'>MarisaB</td>
-                        <td id='UFOEasyMarisaB'></td>
-                        <td id='UFONormalMarisaB'></td>
-                        <td id='UFOHardMarisaB'></td>
-                        <td id='UFOLunaticMarisaB'></td>
-                        <td id='UFOExtraMarisaB'></td>
-                    </tr><tr>
-                        <td class='SanaeA'>SanaeA</td>
-                        <td id='UFOEasySanaeA'></td>
-                        <td id='UFONormalSanaeA'></td>
-                        <td id='UFOHardSanaeA'></td>
-                        <td id='UFOLunaticSanaeA'></td>
-                        <td id='UFOExtraSanaeA'></td>
-                    </tr><tr>
-                        <td class='SanaeB'>SanaeB</td>
-                        <td id='UFOEasySanaeB'></td>
-                        <td id='UFONormalSanaeB'></td>
-                        <td id='UFOHardSanaeB'></td>
-                        <td id='UFOLunaticSanaeB'></td>
-                        <td id='UFOExtraSanaeB'></td>
-                    </tr>
-                </table>
-            </div>
-			<div id='GFW'>
-                <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src='games/gfw50x50.jpg' alt='GFW cover'> <span class='th128'>Touhou 12.8 - Great Fairy Wars</span></p>
-                <table id='GFWt' class='sortable'>
-                    <thead>
-                        <tr>
-                            <th class='route'>Route</th>
-                            <th class='sorttable_numeric'>Easy</th>
-                            <th class='sorttable_numeric'>Normal</th>
-                            <th class='sorttable_numeric'>Hard</th>
-                            <th class='sorttable_numeric'>Lunatic</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>A1</td>
-                            <td id='GFWEasyA1'></td>
-                            <td id='GFWNormalA1'></td>
-                            <td id='GFWHardA1'></td>
-                            <td id='GFWLunaticA1'></td>
-                        </tr><tr>
-                            <td>A2</td>
-                            <td id='GFWEasyA2'></td>
-                            <td id='GFWNormalA2'></td>
-                            <td id='GFWHardA2'></td>
-                            <td id='GFWLunaticA2'></td>
-                        </tr><tr>
-                            <td>B1</td>
-                            <td id='GFWEasyB1'></td>
-                            <td id='GFWNormalB1'></td>
-                            <td id='GFWHardB1'></td>
-                            <td id='GFWLunaticB1'></td>
-                        </tr><tr>
-                            <td>B2</td>
-                            <td id='GFWEasyB2'></td>
-                            <td id='GFWNormalB2'></td>
-                            <td id='GFWHardB2'></td>
-                            <td id='GFWLunaticB2'></td>
-                        </tr><tr>
-                            <td>C1</td>
-                            <td id='GFWEasyC1'></td>
-                            <td id='GFWNormalC1'></td>
-                            <td id='GFWHardC1'></td>
-                            <td id='GFWLunaticC1'></td>
-                        </tr><tr>
-                            <td>C2</td>
-                            <td id='GFWEasyC2'></td>
-                            <td id='GFWNormalC2'></td>
-                            <td id='GFWHardC2'></td>
-                            <td id='GFWLunaticC2'></td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td>Extra</td>
-                            <td id='GFWExtra-' colspan='4'></td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-            <div id='TD'>
-                <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src='games/td50x50.jpg' alt='TD cover'> <span class='th13'>Touhou 13 - Ten Desires</span></p>
-                <table class='sortable'>
-                    <tr>
-                        <th class='shottype'>Shottype</th>
-                        <th class='sorttable_numeric'>Easy</th>
-                        <th class='sorttable_numeric'>Normal</th>
-                        <th class='sorttable_numeric'>Hard</th>
-                        <th class='sorttable_numeric'>Lunatic</th>
-                        <th class='sorttable_numeric'>Extra</th>
-                    </tr><tr>
-                        <td class='Reimu'>Reimu</td>
-                        <td id='TDEasyReimu'></td>
-                        <td id='TDNormalReimu'></td>
-                        <td id='TDHardReimu'></td>
-                        <td id='TDLunaticReimu'></td>
-                        <td id='TDExtraReimu'></td>
-                    </tr><tr>
-                        <td class='Marisa'>Marisa</td>
-                        <td id='TDEasyMarisa'></td>
-                        <td id='TDNormalMarisa'></td>
-                        <td id='TDHardMarisa'></td>
-                        <td id='TDLunaticMarisa'></td>
-                        <td id='TDExtraMarisa'></td>
-                    </tr><tr>
-                        <td class='Sanae'>Sanae</td>
-                        <td id='TDEasySanae'></td>
-                        <td id='TDNormalSanae'></td>
-                        <td id='TDHardSanae'></td>
-                        <td id='TDLunaticSanae'></td>
-                        <td id='TDExtraSanae'></td>
-                    </tr><tr>
-                        <td class='Youmu'>Youmu</td>
-                        <td id='TDEasyYoumu'></td>
-                        <td id='TDNormalYoumu'></td>
-                        <td id='TDHardYoumu'></td>
-                        <td id='TDLunaticYoumu'></td>
-                        <td id='TDExtraYoumu'></td>
-                    </tr>
-                </table>
-            </div>
-			<div id='DDC'>
-                <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src='games/ddc50x50.jpg' alt='DDC cover'> <span class='th14'>Touhou 14 - Double Dealing Character</span></p>
-                <table class='sortable'>
-                    <tr>
-                        <th class='shottype'>Shottype</th>
-                        <th class='sorttable_numeric'>Easy</th>
-                        <th class='sorttable_numeric'>Normal</th>
-                        <th class='sorttable_numeric'>Hard</th>
-                        <th class='sorttable_numeric'>Lunatic</th>
-                        <th class='sorttable_numeric'>Extra</th>
-                    </tr><tr>
-                        <td class='ReimuA'>ReimuA</td>
-                        <td id='DDCEasyReimuA'></td>
-                        <td id='DDCNormalReimuA'></td>
-                        <td id='DDCHardReimuA'></td>
-                        <td id='DDCLunaticReimuA'></td>
-                        <td id='DDCExtraReimuA'></td>
-                    </tr><tr>
-                        <td class='ReimuB'>ReimuB</td>
-                        <td id='DDCEasyReimuB'></td>
-                        <td id='DDCNormalReimuB'></td>
-                        <td id='DDCHardReimuB'></td>
-                        <td id='DDCLunaticReimuB'></td>
-                        <td id='DDCExtraReimuB'></td>
-                    </tr><tr>
-                        <td class='MarisaA'>MarisaA</td>
-                        <td id='DDCEasyMarisaA'></td>
-                        <td id='DDCNormalMarisaA'></td>
-                        <td id='DDCHardMarisaA'></td>
-                        <td id='DDCLunaticMarisaA'></td>
-                        <td id='DDCExtraMarisaA'></td>
-                    </tr><tr>
-                        <td class='MarisaB'>MarisaB</td>
-                        <td id='DDCEasyMarisaB'></td>
-                        <td id='DDCNormalMarisaB'></td>
-                        <td id='DDCHardMarisaB'></td>
-                        <td id='DDCLunaticMarisaB'></td>
-                        <td id='DDCExtraMarisaB'></td>
-                    </tr><tr>
-                        <td class='SakuyaA'>SakuyaA</td>
-                        <td id='DDCEasySakuyaA'></td>
-                        <td id='DDCNormalSakuyaA'></td>
-                        <td id='DDCHardSakuyaA'></td>
-                        <td id='DDCLunaticSakuyaA'></td>
-                        <td id='DDCExtraSakuyaA'></td>
-                    </tr><tr>
-                        <td class='SakuyaB'>SakuyaB</td>
-                        <td id='DDCEasySakuyaB'></td>
-                        <td id='DDCNormalSakuyaB'></td>
-                        <td id='DDCHardSakuyaB'></td>
-                        <td id='DDCLunaticSakuyaB'></td>
-                        <td id='DDCExtraSakuyaB'></td>
-                    </tr>
-                </table>
-            </div>
-            <div id='LoLK'>
-                <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src='games/lolk50x50.jpg' alt='LoLK cover'> <span class='th15'>Touhou 15 - Legacy of Lunatic Kingdom</span></p>
-                <table class='sortable'>
-                    <tr>
-                        <th class='shottype'>Shottype</th>
-                        <th class='sorttable_numeric'>Easy</th>
-                        <th class='sorttable_numeric'>Normal</th>
-                        <th class='sorttable_numeric'>Hard</th>
-                        <th class='sorttable_numeric'>Lunatic</th>
-                        <th class='sorttable_numeric'>Extra</th>
-                    </tr><tr>
-                        <td class='Reimu'>Reimu</td>
-                        <td id='LoLKEasyReimu'></td>
-                        <td id='LoLKNormalReimu'></td>
-                        <td id='LoLKHardReimu'></td>
-                        <td id='LoLKLunaticReimu'></td>
-                        <td id='LoLKExtraReimu'></td>
-                    </tr><tr>
-                        <td class='Marisa'>Marisa</td>
-                        <td id='LoLKEasyMarisa'></td>
-                        <td id='LoLKNormalMarisa'></td>
-                        <td id='LoLKHardMarisa'></td>
-                        <td id='LoLKLunaticMarisa'></td>
-                        <td id='LoLKExtraMarisa'></td>
-                    </tr><tr>
-                        <td class='Sanae'>Sanae</td>
-                        <td id='LoLKEasySanae'></td>
-                        <td id='LoLKNormalSanae'></td>
-                        <td id='LoLKHardSanae'></td>
-                        <td id='LoLKLunaticSanae'></td>
-                        <td id='LoLKExtraSanae'></td>
-                    </tr><tr>
-                        <td class='Reisen'>Reisen</td>
-                        <td id='LoLKEasyReisen'></td>
-                        <td id='LoLKNormalReisen'></td>
-                        <td id='LoLKHardReisen'></td>
-                        <td id='LoLKLunaticReisen'></td>
-                        <td id='LoLKExtraReisen'></td>
-                    </tr>
-                </table>
-            </div>
-            <div id='HSiFSsmall'>
-                <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src='games/hsifs50x50.jpg' alt='HSiFS cover'> <span class='th16'>Touhou 16 - Hidden Star in Four Seasons</span></p>
-                <table class='sortable'>
-                    <tr>
-                        <th class='shottype'>Shottype</th>
-                        <th class='sorttable_numeric'>Easy</th>
-                        <th class='sorttable_numeric'>Normal</th>
-                        <th class='sorttable_numeric'>Hard</th>
-                        <th class='sorttable_numeric'>Lunatic</th>
-                        <th class='sorttable_numeric'>Extra</th>
-                    </tr><tr id='HSiFSReimu'>
-                        <td class='Reimu'>Reimu</td>
-                        <td id='HSiFSEasyReimu'></td>
-                        <td id='HSiFSNormalReimu'></td>
-                        <td id='HSiFSHardReimu'></td>
-                        <td id='HSiFSLunaticReimu'></td>
-                        <td id='HSiFSExtraReimuSmall'></td>
-                    </tr><tr id='HSiFSCirno'>
-                        <td class='Cirno'>Cirno</td>
-                        <td id='HSiFSEasyCirno'></td>
-                        <td id='HSiFSNormalCirno'></td>
-                        <td id='HSiFSHardCirno'></td>
-                        <td id='HSiFSLunaticCirno'></td>
-                        <td id='HSiFSExtraCirnoSmall'></td>
-                    </tr><tr id='HSiFSAya'>
-                        <td class='Aya'>Aya</td>
-                        <td id='HSiFSEasyAya'></td>
-                        <td id='HSiFSNormalAya'></td>
-                        <td id='HSiFSHardAya'></td>
-                        <td id='HSiFSLunaticAya'></td>
-                        <td id='HSiFSExtraAyaSmall'></td>
-                    </tr><tr id='HSiFSMarisa'>
-                        <td class='Marisa'>Marisa</td>
-                        <td id='HSiFSEasyMarisa'></td>
-                        <td id='HSiFSNormalMarisa'></td>
-                        <td id='HSiFSHardMarisa'></td>
-                        <td id='HSiFSLunaticMarisa'></td>
-                        <td id='HSiFSExtraMarisaSmall'></td>
-                    </tr>
-                </table>
-            </div>
-            <div id='HSiFS'>
-                <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src='games/hsifs50x50.jpg' alt='HSiFS cover'> <span class='th16'>Touhou 16 - Hidden Star in Four Seasons</span></p>
-                <table class='sortable'>
-                    <tr>
-                        <th class='shottype'>Shottype</th>
-                        <th class='sorttable_numeric'>Easy</th>
-                        <th class='sorttable_numeric'>Normal</th>
-                        <th class='sorttable_numeric'>Hard</th>
-                        <th class='sorttable_numeric'>Lunatic</th>
-                        <th class='sorttable_numeric'>Extra</th>
-                    </tr><tr id='HSiFSReimuSpring'>
-                        <td><span class='Reimu'>Reimu</span><span class='Spring'><br>Spring</span></td>
-                        <td id='HSiFSEasyReimuSpring'></td>
-                        <td id='HSiFSNormalReimuSpring'></td>
-                        <td id='HSiFSHardReimuSpring'></td>
-                        <td id='HSiFSLunaticReimuSpring'></td>
-                        <td id='HSiFSExtraReimu' rowspan='4'></td>
-                    </tr><tr id='HSiFSReimuSummer'>
-                        <td><span class='Reimu'>Reimu</span><span class='Summer'><br>Summer</span></td>
-                        <td id='HSiFSEasyReimuSummer'></td>
-                        <td id='HSiFSNormalReimuSummer'></td>
-                        <td id='HSiFSHardReimuSummer'></td>
-                        <td id='HSiFSLunaticReimuSummer'></td>
-                    </tr><tr id='HSiFSReimuAutumn'>
-                        <td><span class='Reimu'>Reimu</span><span class='Autumn'><br>Autumn</span></td>
-                        <td id='HSiFSEasyReimuAutumn'></td>
-                        <td id='HSiFSNormalReimuAutumn'></td>
-                        <td id='HSiFSHardReimuAutumn'></td>
-                        <td id='HSiFSLunaticReimuAutumn'></td>
-                    </tr><tr id='HSiFSReimuWinter'>
-                        <td><span class='Reimu'>Reimu</span><span class='Winter'><br>Winter</span></td>
-                        <td id='HSiFSEasyReimuWinter'></td>
-                        <td id='HSiFSNormalReimuWinter'></td>
-                        <td id='HSiFSHardReimuWinter'></td>
-                        <td id='HSiFSLunaticReimuWinter'></td>
-                    </tr><tr id='HSiFSCirnoSpring'>
-                        <td><span class='Cirno'>Cirno</span><span class='Spring'><br>Spring</span></td>
-                        <td id='HSiFSEasyCirnoSpring'></td>
-                        <td id='HSiFSNormalCirnoSpring'></td>
-                        <td id='HSiFSHardCirnoSpring'></td>
-                        <td id='HSiFSLunaticCirnoSpring'></td>
-                        <td id='HSiFSExtraCirno' rowspan='4'></td>
-                    </tr><tr id='HSiFSCirnoSummer'>
-                        <td><span class='Cirno'>Cirno</span><span class='Summer'><br>Summer</span></td>
-                        <td id='HSiFSEasyCirnoSummer'></td>
-                        <td id='HSiFSNormalCirnoSummer'></td>
-                        <td id='HSiFSHardCirnoSummer'></td>
-                        <td id='HSiFSLunaticCirnoSummer'></td>
-                    </tr><tr id='HSiFSCirnoAutumn'>
-                        <td><span class='Cirno'>Cirno</span><span class='Autumn'><br>Autumn</span></td>
-                        <td id='HSiFSEasyCirnoAutumn'></td>
-                        <td id='HSiFSNormalCirnoAutumn'></td>
-                        <td id='HSiFSHardCirnoAutumn'></td>
-                        <td id='HSiFSLunaticCirnoAutumn'></td>
-                    </tr><tr id='HSiFSCirnoWinter'>
-                        <td><span class='Cirno'>Cirno</span><span class='Winter'><br>Winter</span></td>
-                        <td id='HSiFSEasyCirnoWinter'></td>
-                        <td id='HSiFSNormalCirnoWinter'></td>
-                        <td id='HSiFSHardCirnoWinter'></td>
-                        <td id='HSiFSLunaticCirnoWinter'></td>
-                    </tr><tr id='HSiFSAyaSpring'>
-                        <td><span class='Aya'>Aya</span><span class='Spring'><br>Spring</span></td>
-                        <td id='HSiFSEasyAyaSpring'></td>
-                        <td id='HSiFSNormalAyaSpring'></td>
-                        <td id='HSiFSHardAyaSpring'></td>
-                        <td id='HSiFSLunaticAyaSpring'></td>
-                        <td id='HSiFSExtraAya' rowspan='4'></td>
-                    </tr><tr id='HSiFSAyaSummer'>
-                        <td><span class='Aya'>Aya</span><span class='Summer'><br>Summer</span></td>
-                        <td id='HSiFSEasyAyaSummer'></td>
-                        <td id='HSiFSNormalAyaSummer'></td>
-                        <td id='HSiFSHardAyaSummer'></td>
-                        <td id='HSiFSLunaticAyaSummer'></td>
-                    </tr><tr id='HSiFSAyaAutumn'>
-                        <td><span class='Aya'>Aya</span><span class='Autumn'><br>Autumn</span></td>
-                        <td id='HSiFSEasyAyaAutumn'></td>
-                        <td id='HSiFSNormalAyaAutumn'></td>
-                        <td id='HSiFSHardAyaAutumn'></td>
-                        <td id='HSiFSLunaticAyaAutumn'></td>
-                    </tr><tr id='HSiFSAyaWinter'>
-                        <td><span class='Aya'>Aya</span><span class='Winter'><br>Winter</span></td>
-                        <td id='HSiFSEasyAyaWinter'></td>
-                        <td id='HSiFSNormalAyaWinter'></td>
-                        <td id='HSiFSHardAyaWinter'></td>
-                        <td id='HSiFSLunaticAyaWinter'></td>
-                    </tr><tr id='HSiFSMarisaSpring'>
-                        <td><span class='Marisa'>Marisa</span><span class='Spring'><br>Spring</span></td>
-                        <td id='HSiFSEasyMarisaSpring'></td>
-                        <td id='HSiFSNormalMarisaSpring'></td>
-                        <td id='HSiFSHardMarisaSpring'></td>
-                        <td id='HSiFSLunaticMarisaSpring'></td>
-                        <td id='HSiFSExtraMarisa' rowspan='4'></td>
-                    </tr><tr id='HSiFSMarisaSummer'>
-                        <td><span class='Marisa'>Marisa</span><span class='Summer'><br>Summer</span></td>
-                        <td id='HSiFSEasyMarisaSummer'></td>
-                        <td id='HSiFSNormalMarisaSummer'></td>
-                        <td id='HSiFSHardMarisaSummer'></td>
-                        <td id='HSiFSLunaticMarisaSummer'></td>
-                    </tr><tr id='HSiFSMarisaAutumn'>
-                        <td><span class='Marisa'>Marisa</span><span class='Autumn'><br>Autumn</span></td>
-                        <td id='HSiFSEasyMarisaAutumn'></td>
-                        <td id='HSiFSNormalMarisaAutumn'></td>
-                        <td id='HSiFSHardMarisaAutumn'></td>
-                        <td id='HSiFSLunaticMarisaAutumn'></td>
-                    </tr><tr id='HSiFSMarisaWinter'>
-                        <td><span class='Marisa'>Marisa</span><span class='Winter'><br>Winter</span></td>
-                        <td id='HSiFSEasyMarisaWinter'></td>
-                        <td id='HSiFSNormalMarisaWinter'></td>
-                        <td id='HSiFSHardMarisaWinter'></td>
-                        <td id='HSiFSLunaticMarisaWinter'></td>
-                    </tr>
-                </table>
-            </div>
-            <div id='WBaWC'>
-                <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src='games/wbawc50x50.jpg' alt='WBaWC cover'> <span class='th17'>Touhou 17 - Wily Beast and Weakest Creature</span></p>
-                <table class='sortable'>
-                    <tr>
-                        <th class='shottype'>Shottype</th>
-                        <th class='sorttable_numeric'>Easy</th>
-                        <th class='sorttable_numeric'>Normal</th>
-                        <th class='sorttable_numeric'>Hard</th>
-                        <th class='sorttable_numeric'>Lunatic</th>
-                        <th class='sorttable_numeric'>Extra</th>
-                    </tr><tr>
-                        <td class='ReimuWolf'>ReimuWolf</td>
-                        <td id='WBaWCEasyReimuWolf'></td>
-                        <td id='WBaWCNormalReimuWolf'></td>
-                        <td id='WBaWCHardReimuWolf'></td>
-                        <td id='WBaWCLunaticReimuWolf'></td>
-                        <td id='WBaWCExtraReimuWolf'></td>
-                    </tr><tr>
-                        <td class='ReimuOtter'>ReimuOtter</td>
-                        <td id='WBaWCEasyReimuOtter'></td>
-                        <td id='WBaWCNormalReimuOtter'></td>
-                        <td id='WBaWCHardReimuOtter'></td>
-                        <td id='WBaWCLunaticReimuOtter'></td>
-                        <td id='WBaWCExtraReimuOtter'></td>
-                    </tr><tr>
-                        <td class='ReimuEagle'>ReimuEagle</td>
-                        <td id='WBaWCEasyReimuEagle'></td>
-                        <td id='WBaWCNormalReimuEagle'></td>
-                        <td id='WBaWCHardReimuEagle'></td>
-                        <td id='WBaWCLunaticReimuEagle'></td>
-                        <td id='WBaWCExtraReimuEagle'></td>
-                    </tr><tr>
-                        <td class='MarisaWolf'>MarisaWolf</td>
-                        <td id='WBaWCEasyMarisaWolf'></td>
-                        <td id='WBaWCNormalMarisaWolf'></td>
-                        <td id='WBaWCHardMarisaWolf'></td>
-                        <td id='WBaWCLunaticMarisaWolf'></td>
-                        <td id='WBaWCExtraMarisaWolf'></td>
-                    </tr><tr>
-                        <td class='MarisaOtter'>MarisaOtter</td>
-                        <td id='WBaWCEasyMarisaOtter'></td>
-                        <td id='WBaWCNormalMarisaOtter'></td>
-                        <td id='WBaWCHardMarisaOtter'></td>
-                        <td id='WBaWCLunaticMarisaOtter'></td>
-                        <td id='WBaWCExtraMarisaOtter'></td>
-                    </tr><tr>
-                        <td class='MarisaEagle'>MarisaEagle</td>
-                        <td id='WBaWCEasyMarisaEagle'></td>
-                        <td id='WBaWCNormalMarisaEagle'></td>
-                        <td id='WBaWCHardMarisaEagle'></td>
-                        <td id='WBaWCLunaticMarisaEagle'></td>
-                        <td id='WBaWCExtraMarisaEagle'></td>
-                    </tr><tr>
-                        <td class='YoumuWolf'>YoumuWolf</td>
-                        <td id='WBaWCEasyYoumuWolf'></td>
-                        <td id='WBaWCNormalYoumuWolf'></td>
-                        <td id='WBaWCHardYoumuWolf'></td>
-                        <td id='WBaWCLunaticYoumuWolf'></td>
-                        <td id='WBaWCExtraYoumuWolf'></td>
-                    </tr><tr>
-                        <td class='YoumuOtter'>YoumuOtter</td>
-                        <td id='WBaWCEasyYoumuOtter'></td>
-                        <td id='WBaWCNormalYoumuOtter'></td>
-                        <td id='WBaWCHardYoumuOtter'></td>
-                        <td id='WBaWCLunaticYoumuOtter'></td>
-                        <td id='WBaWCExtraYoumuOtter'></td>
-                    </tr><tr>
-                        <td class='YoumuEagle'>YoumuEagle</td>
-                        <td id='WBaWCEasyYoumuEagle'></td>
-                        <td id='WBaWCNormalYoumuEagle'></td>
-                        <td id='WBaWCHardYoumuEagle'></td>
-                        <td id='WBaWCLunaticYoumuEagle'></td>
-                        <td id='WBaWCExtraYoumuEagle'></td>
-                    </tr>
-                </table>
-            </div>
+			</div>
             <div id='players'>
                 <h2 class='playerranking'>Player Ranking</h2>
+				<table>
+	                <tbody>
+	                    <tr>
+	                        <td>
+	                            <input id='HRtPc' type='checkbox' onClick='checkGame("HRtP")' checked>
+	                            <label for='HRtPc' class='HRtP'>HRtP</label>
+	                        </td><td>
+	                            <input id='EoSDc' type='checkbox' onClick='checkGame("EoSD")' checked>
+	                            <label for='EoSDc' class='EoSD'>EoSD</label>
+	                        </td><td>
+	                            <input id='SAc' type='checkbox' onClick='checkGame("SA")' checked>
+	                            <label for='SAc' class='SA'>SA</label>
+	                        </td><td>
+	                            <input id='LoLKc' type='checkbox' onClick='checkGame("LoLK")' checked>
+	                            <label for='LoLKc' class='LoLK'>LoLK</label>
+	                        </td>
+	                    </tr>
+	                    <tr>
+	                        <td>
+	                            <input id='SoEWc' type='checkbox' onClick='checkGame("SoEW")' checked>
+	                            <label for='SoEWc' class='SoEW'>SoEW</label>
+	                        </td><td>
+	                            <input id='PCBc' type='checkbox' onClick='checkGame("PCB")' checked>
+	                            <label for='PCBc' class='PCB'>PCB</label>
+	                        </td><td>
+	                            <input id='UFOc' type='checkbox' onClick='checkGame("UFO")' checked>
+	                            <label for='UFOc' class='UFO'>UFO</label>
+	                        </td><td>
+	                            <input id='HSiFSc' type='checkbox' onClick='checkGame("HSiFS")' checked>
+	                            <label for='HSiFSc' class='HSiFS'>HSiFS</label>
+	                        </td>
+	                    </tr>
+	                    <tr>
+	                        <td>
+	                            <input id='PoDDc' type='checkbox' onClick='checkGame("PoDD")' checked>
+	                            <label for='PoDDc' class='PoDD'>PoDD</label>
+	                        </td><td>
+	                            <input id='INc' type='checkbox' onClick='checkGame("IN")' checked>
+	                            <label for='INc' class='IN'>IN</label>
+	                        </td><td>
+	                            <input id='GFWc' type='checkbox' onClick='checkGame("GFW")' checked>
+	                            <label for='GFWc' class='GFW'>GFW</label>
+	                        </td><td>
+	                            <input id='WBaWCc' type='checkbox' onClick='checkGame("WBaWC")' checked>
+	                            <label for='WBaWCc' class='WBaWC'>WBaWC</label>
+	                        </td>
+	                    </tr>
+	                    <tr>
+	                        <td>
+	                            <input id='LLSc' type='checkbox' onClick='checkGame("LLS")' checked>
+	                            <label for='LLSc' class='LLS'>LLS</label>
+	                        </td><td>
+	                            <input id='PoFVc' type='checkbox' onClick='checkGame("PoFV")' checked>
+	                            <label for='PoFVc' class='PoFV'>PoFV</label>
+	                        </td><td>
+	                            <input id='TDc' type='checkbox' onClick='checkGame("TD")' checked>
+	                            <label for='TDc' class='TD'>TD</label>
+	                        </td><td class='noborders'></td>
+	                    </tr>
+	                    <tr>
+	                        <td>
+	                            <input id='MSc' type='checkbox' onClick='checkGame("MS")' checked>
+	                            <label for='MSc' class='MS'>MS</label>
+	                        </td><td>
+	                            <input id='MoFc' type='checkbox' onClick='checkGame("MoF")' checked>
+	                            <label for='MoFc' class='MoF'>MoF</label>
+	                        </td><td>
+	                            <input id='DDCc' type='checkbox' onClick='checkGame("DDC")' checked>
+	                            <label for='DDCc' class='DDC'>DDC</label>
+	                        </td><td class='noborders'></td>
+	                    </tr>
+						<tr><td class='noborders'></td><td class='noborders'></td><td class='noborders'></td><td class='noborders'></td></tr>
+	                </tbody>
+					<tfoot>
+	                    <tr>
+	                        <td>
+	                            <input id='windows' type='checkbox' onClick='checkWindows()' checked>
+	                            <label for='windows' class='windows'>Windows</label>
+	                        </td><td>
+	                            <input id='pc98' type='checkbox' onClick='checkPC98()' checked>
+	                            <label for='pc98' class='pc98'>PC-98</label>
+	                        </td><td>
+								<input id='all' type='checkbox' onClick='checkAll()' checked>
+	                            <label id='label_all' for='all'>All</label>
+							</td><td class='noborders'></td>
+	                    </tr>
+					</tfoot>
+				</table>
                 <table id='ranking' class='sortable'>
                     <thead>
                         <tr>
@@ -1492,19 +388,6 @@
                         </tr>
                     </thead>
                     <tbody id='ranking_tbody'></tbody>
-                </table>
-            </div>
-            <div id='west'>
-                <h2 class='westernrecords'>Western Records</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th class='world'>World</th>
-                            <th class='west'>West</th>
-                            <th class='percentage'>Percentage</th>
-                        </tr>
-                    </thead>
-                    <tbody id='west_tbody'></tbody>
                 </table>
             </div>
             <h2 id='ack' class='ack'>Acknowledgements</h2>
