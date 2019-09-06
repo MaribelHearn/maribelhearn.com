@@ -1,6 +1,7 @@
 var LNNs,
     language = "English",
     selected = "",
+    playerSelected = false,
     all = [
         "overall",
         "players",
@@ -40,23 +41,6 @@ function generateText() {
         $(".nooflnns").html("No. of LNNs");
         $(".all").html(" (All)");
         $(".ack").html("Acknowledgements");
-        $(".SoEW").html("SoEW");
-        $(".PoDD").html("PoDD");
-        $(".LLS").html("LLS");
-        $(".MS").html("MS");
-        $(".EoSD").html("EoSD");
-        $(".PCB").html("PCB");
-        $(".IN").html("IN");
-        $(".MoF").html("MoF");
-        $(".SA").html("SA");
-        $(".UFO").html("UFO");
-        $(".DS").html("DS");
-        $(".GFW").html("GFW");
-        $(".TD").html("TD");
-        $(".DDC").html("DDC");
-        $(".LoLK").html("LoLK");
-        $(".HSiFS").html("HSiFS");
-        $(".WBaWC").html("WBaWC");
         $("#description").html("A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. For" +
                 " every shottype in a game, tables will tell you which players have done an LNN w" +
                 "ith it, if any. If a player has multiple LNNs for one particular shottype, those" +
@@ -98,22 +82,6 @@ function generateText() {
         $(".nooflnns").html("LNNの数");
         $(".all").html("（全）");
         $(".ack").html("謝辞");
-        $(".SoEW").html("封");
-        $(".PoDD").html("夢");
-        $(".LLS").html("幻");
-        $(".MS").html("怪");
-        $(".EoSD").html("紅");
-        $(".PCB").html("妖");
-        $(".IN").html("永");
-        $(".MoF").html("風");
-        $(".SA").html("地");
-        $(".UFO").html("星");
-        $(".GFW").html("大");
-        $(".TD").html("神");
-        $(".DDC").html("輝");
-        $(".LoLK").html("紺");
-        $(".HSiFS").html("天");
-        $(".WBaWC").html("鬼");
         $("#description").html("東方原作STG各作品の難易度Lunaticのノーミスノーボム（LNN）リストです。適宜頻繁に更新します。各作品の表とも、各機体において誰が達成したかを記載してい" +
                 "ます。特定の作品、ショットタイプで複数回のLNNを達成している場合でも１回とカウントされます。");
         $("#conditions").html("また妖々夢では霊撃無し、神霊廟ではトランス無し、天空璋では開放無し、鬼形獣では霊撃無し、暴走ロアリング無しが条件となります。この４作品では追加条件によってNが追" +
@@ -149,22 +117,6 @@ function generateText() {
         $(".nooflnns").html("LNN的数量");
         $(".all").html("（全）");
         $(".ack").html("致谢");
-        $(".SoEW").html("封");
-        $(".PoDD").html("梦");
-        $(".LLS").html("幻");
-        $(".MS").html("怪");
-        $(".EoSD").html("红");
-        $(".PCB").html("妖");
-        $(".IN").html("永");
-        $(".MoF").html("风");
-        $(".SA").html("地");
-        $(".UFO").html("星");
-        $(".GFW").html("大");
-        $(".TD").html("神");
-        $(".DDC").html("辉");
-        $(".LoLK").html("绀");
-        $(".HSiFS").html("天");
-        $(".WBaWC").html("鬼");
         $("#description").html("这个网页记载所有「东方Project」的LNN（Lunatic No Miss No Bomb），时不时地更新。每作游戏的每个机体有一行显示打出LNN的玩家。如" +
                 "果某一位玩家用一个机体打出多次LNN，只算一次，其余次数不算入统计。");
         $("#conditions").html("妖妖梦、神灵庙、天空璋打NN时有附加条件，即是不爆结界、不开灵界、不使用季节解放。此三作LNN被称为LNNN，以第三个N代表着附加的条件。星莲船的附加条件（不开" +
@@ -194,22 +146,30 @@ function generateTableText() {
         $(".nooflnnfss").html("No. of LNNFSs");
         $(".nooflnnnns").html("No. of LNNNNs");
         $(".different").html("(Different players)");
-        $(".SoEWf").html("Touhou 2 - The Story of Eastern Wonderland");
-        $(".PoDDf").html("Touhou 3 - Phantasmagoria of Dim.Dream");
-        $(".LLSf").html("Touhou 4 - Lotus Land Story");
-        $(".MSf").html("Touhou 5 - Mystic Square");
-        $(".EoSDf").html("Touhou 6 - The Embodiment of Scarlet Devil");
-        $(".PCBf").html("Touhou 7 - Perfect Cherry Blossom");
-        $(".INf").html("Touhou 8 - Imperishable Night");
-        $(".MoFf").html("Touhou 10 - Mountain of Faith");
-        $(".SAf").html("Touhou 11 - Subterranean Animism");
-        $(".UFOf").html("Touhou 12 - Undefined Fantastic Object");
-        $(".GFWf").html("Touhou 12.8 - Great Fairy Wars");
-        $(".TDf").html("Touhou 13 - Ten Desires");
-        $(".DDCf").html("Touhou 14 - Double Dealing Character");
-        $(".LoLKf").html("Touhou 15 - Legacy of Lunatic Kingdom");
-        $(".HSiFSf").html("Touhou 16 - Hidden Star in Four Seasons");
-        $(".WBaWCf").html("Touhou 17 - Wily Beast and Weakest Creature");
+    } else if (language == "Japanese") {
+        $(".shottype").html("キャラ");
+        $(".players").html("プレイヤー");
+        $(".overall").html("合計");
+        $(".nooflnns").html("LNNの数");
+        $(".nooflnnus").html("LNNの数");
+        $(".nooflnnns").html("LNNNの数");
+        $(".nooflnnfss").html("LNNFSの数");
+        $(".nooflnnnns").html("LNNNNの数");
+        $(".different").html("（プレイヤー）");
+    } else {
+        $(".shottype").html("机体");
+        $(".players").html("玩家");
+        $(".overall").html("合計");
+        $(".nooflnns").html("LNN的数量");
+        $(".nooflnnus").html("LNN的数量");
+        $(".nooflnnns").html("LNNN的数量");
+        $(".nooflnnfss").html("LNNFS的数量");
+        $(".nooflnnnns").html("LNNNN的数量");
+        $(".different").html("（玩家）");
+    }
+}
+function generateShottypes() {
+    if (language == "English") {
         $(".ReimuA").html("ReimuA");
         $(".ReimuB").html("ReimuB");
         $(".ReimuC").html("ReimuC");
@@ -227,6 +187,8 @@ function generateTableText() {
         $(".MarisaB").html("MarisaB");
         $(".SakuyaA").html("SakuyaA");
         $(".SakuyaB").html("SakuyaB");
+        $(".FinalA").html("FinalA");
+        $(".FinalB").html("FinalB");
         $(".BorderTeam").html("Border Team");
         $(".MagicTeam").html("Magic Team");
         $(".ScarletTeam").html("Scarlet Team");
@@ -278,33 +240,8 @@ function generateTableText() {
         $(".MarisaEagle").html("MarisaEagle");
         $(".YoumuWolf").html("YoumuWolf");
         $(".YoumuOtter").html("YoumuOtter");
-        $(".YoumuEagle").html("YoumuEagle")
+        $(".YoumuEagle").html("YoumuEagle");
     } else if (language == "Japanese") {
-        $(".shottype").html("キャラ");
-        $(".players").html("プレイヤー");
-        $(".overall").html("合計");
-        $(".nooflnns").html("LNNの数");
-        $(".nooflnnus").html("LNNの数");
-        $(".nooflnnns").html("LNNNの数");
-        $(".nooflnnfss").html("LNNFSの数");
-        $(".nooflnnnns").html("LNNNNの数");
-        $(".different").html("（プレイヤー）");
-        $(".SoEWf").html("東方封魔録　～ the Story of Eastern Wonderland");
-        $(".PoDDf").html("東方夢時空　～ Phantasmagoria of Dim.Dream");
-        $(".LLSf").html("東方幻想郷　～ Lotus Land Story");
-        $(".MSf").html("東方怪綺談　～ Mystic Square");
-        $(".EoSDf").html("東方紅魔郷　～ the Embodiment of Scarlet Devil");
-        $(".PCBf").html("東方妖々夢　～ Perfect Cherry Blossom");
-        $(".INf").html("東方永夜抄　～ Imperishable Night");
-        $(".MoFf").html("東方風神録　～ Mountain of Faith");
-        $(".SAf").html("東方地霊殿　～ Subterranean Animism");
-        $(".UFOf").html("東方星蓮船　～ Undefined Fantastic Object");
-        $(".GFWf").html("妖精大戦争　～ 東方三月精");
-        $(".TDf").html("東方神霊廟　～ Ten Desires");
-        $(".DDCf").html("東方輝針城　～ Double Dealing Character");
-        $(".LoLKf").html("東方紺珠伝　～ Legacy of Lunatic Kingdom");
-        $(".HSiFSf").html("東方天空璋　～ Hidden Star in Four Seasons");
-        $(".WBaWCf").html("東方鬼形獣　～ Wily Beast and Weakest Creature");
         $(".ReimuA").html("霊夢A");
         $(".ReimuB").html("霊夢B");
         $(".ReimuC").html("霊夢C");
@@ -322,6 +259,8 @@ function generateTableText() {
         $(".MarisaB").html("魔理沙B");
         $(".SakuyaA").html("咲夜A");
         $(".SakuyaB").html("咲夜B");
+        $(".FinalA").html("Aルート");
+        $(".FinalB").html("Bルート");
         $(".BorderTeam").html("霊夢＆紫");
         $(".MagicTeam").html("魔理沙＆アリス");
         $(".ScarletTeam").html("咲夜＆レミリア");
@@ -373,33 +312,8 @@ function generateTableText() {
         $(".MarisaEagle").html("魔理沙鷲");
         $(".YoumuWolf").html("妖夢狼");
         $(".YoumuOtter").html("妖夢獺");
-        $(".YoumuEagle").html("妖夢鷲")
+        $(".YoumuEagle").html("妖夢鷲");
     } else {
-        $(".shottype").html("机体");
-        $(".players").html("玩家");
-        $(".overall").html("合計");
-        $(".nooflnns").html("LNN的数量");
-        $(".nooflnnus").html("LNN的数量");
-        $(".nooflnnns").html("LNNN的数量");
-        $(".nooflnnfss").html("LNNFS的数量");
-        $(".nooflnnnns").html("LNNNN的数量");
-        $(".different").html("（玩家）");
-        $(".SoEWf").html("东方封魔录　～ the Story of Eastern Wonderland");
-        $(".PoDDf").html("东方梦时空　～ Phantasmagoria of Dim.Dream");
-        $(".LLSf").html("东方幻想乡　～ Lotus Land Story");
-        $(".MSf").html("东方怪绮谈　～ Mystic Square");
-        $(".EoSDf").html("东方红魔乡　～ the Embodiment of Scarlet Devil");
-        $(".PCBf").html("东方妖妖梦　～ Perfect Cherry Blossom");
-        $(".INf").html("东方永夜抄　～ Imperishable Night");
-        $(".MoFf").html("东方风神录　～ Mountain of Faith");
-        $(".SAf").html("东方地灵殿　～ Subterranean Animism");
-        $(".UFOf").html("东方星莲船　～ Undefined Fantastic Object");
-        $(".GFWf").html("妖精大战争　～ 东方三月精");
-        $(".TDf").html("东方神灵庙　～ Ten Desires");
-        $(".DDCf").html("东方辉针城　～ Double Dealing Character");
-        $(".LoLKf").html("东方绀珠传　～ Legacy of Lunatic Kingdom");
-        $(".HSiFSf").html("东方天空璋　～ Hidden Star in Four Seasons");
-        $(".WBaWCf").html("东方鬼形獣　～ Wily Beast and Weakest Creature");
         $(".ReimuA").html("灵梦A");
         $(".ReimuB").html("灵梦B");
         $(".ReimuC").html("灵梦C");
@@ -417,6 +331,8 @@ function generateTableText() {
         $(".MarisaB").html("魔理沙B");
         $(".SakuyaA").html("咲夜A");
         $(".SakuyaB").html("咲夜B");
+        $(".FinalA").html("路线A");
+        $(".FinalB").html("路线B");
         $(".BorderTeam").html("结界组");
         $(".MagicTeam").html("咏唱组");
         $(".ScarletTeam").html("红魔组");
@@ -468,8 +384,124 @@ function generateTableText() {
         $(".MarisaEagle").html("魔理沙鹰");
         $(".YoumuWolf").html("妖梦狼");
         $(".YoumuOtter").html("妖梦獭");
-        $(".YoumuEagle").html("妖梦鹰")
+        $(".YoumuEagle").html("妖梦鹰");
     }
+}
+function generateFullNames() {
+    if (language == "English") {
+        $(".SoEWf").html("Touhou 2 - The Story of Eastern Wonderland");
+        $(".PoDDf").html("Touhou 3 - Phantasmagoria of Dim.Dream");
+        $(".LLSf").html("Touhou 4 - Lotus Land Story");
+        $(".MSf").html("Touhou 5 - Mystic Square");
+        $(".EoSDf").html("Touhou 6 - The Embodiment of Scarlet Devil");
+        $(".PCBf").html("Touhou 7 - Perfect Cherry Blossom");
+        $(".INf").html("Touhou 8 - Imperishable Night");
+        $(".MoFf").html("Touhou 10 - Mountain of Faith");
+        $(".SAf").html("Touhou 11 - Subterranean Animism");
+        $(".UFOf").html("Touhou 12 - Undefined Fantastic Object");
+        $(".GFWf").html("Touhou 12.8 - Great Fairy Wars");
+        $(".TDf").html("Touhou 13 - Ten Desires");
+        $(".DDCf").html("Touhou 14 - Double Dealing Character");
+        $(".LoLKf").html("Touhou 15 - Legacy of Lunatic Kingdom");
+        $(".HSiFSf").html("Touhou 16 - Hidden Star in Four Seasons");
+        $(".WBaWCf").html("Touhou 17 - Wily Beast and Weakest Creature");
+    } else if (language == "Japanese") {
+        $(".SoEWf").html("東方封魔録　～ the Story of Eastern Wonderland");
+        $(".PoDDf").html("東方夢時空　～ Phantasmagoria of Dim.Dream");
+        $(".LLSf").html("東方幻想郷　～ Lotus Land Story");
+        $(".MSf").html("東方怪綺談　～ Mystic Square");
+        $(".EoSDf").html("東方紅魔郷　～ the Embodiment of Scarlet Devil");
+        $(".PCBf").html("東方妖々夢　～ Perfect Cherry Blossom");
+        $(".INf").html("東方永夜抄　～ Imperishable Night");
+        $(".MoFf").html("東方風神録　～ Mountain of Faith");
+        $(".SAf").html("東方地霊殿　～ Subterranean Animism");
+        $(".UFOf").html("東方星蓮船　～ Undefined Fantastic Object");
+        $(".GFWf").html("妖精大戦争　～ 東方三月精");
+        $(".TDf").html("東方神霊廟　～ Ten Desires");
+        $(".DDCf").html("東方輝針城　～ Double Dealing Character");
+        $(".LoLKf").html("東方紺珠伝　～ Legacy of Lunatic Kingdom");
+        $(".HSiFSf").html("東方天空璋　～ Hidden Star in Four Seasons");
+        $(".WBaWCf").html("東方鬼形獣　～ Wily Beast and Weakest Creature");
+    } else {
+        $(".SoEWf").html("东方封魔录　～ the Story of Eastern Wonderland");
+        $(".PoDDf").html("东方梦时空　～ Phantasmagoria of Dim.Dream");
+        $(".LLSf").html("东方幻想乡　～ Lotus Land Story");
+        $(".MSf").html("东方怪绮谈　～ Mystic Square");
+        $(".EoSDf").html("东方红魔乡　～ the Embodiment of Scarlet Devil");
+        $(".PCBf").html("东方妖妖梦　～ Perfect Cherry Blossom");
+        $(".INf").html("东方永夜抄　～ Imperishable Night");
+        $(".MoFf").html("东方风神录　～ Mountain of Faith");
+        $(".SAf").html("东方地灵殿　～ Subterranean Animism");
+        $(".UFOf").html("东方星莲船　～ Undefined Fantastic Object");
+        $(".GFWf").html("妖精大战争　～ 东方三月精");
+        $(".TDf").html("东方神灵庙　～ Ten Desires");
+        $(".DDCf").html("东方辉针城　～ Double Dealing Character");
+        $(".LoLKf").html("东方绀珠传　～ Legacy of Lunatic Kingdom");
+        $(".HSiFSf").html("东方天空璋　～ Hidden Star in Four Seasons");
+        $(".WBaWCf").html("东方鬼形獣　～ Wily Beast and Weakest Creature");
+    }
+}
+function generateShortNames() {
+    if (language == "English") {
+        $(".SoEW").html("SoEW");
+        $(".PoDD").html("PoDD");
+        $(".LLS").html("LLS");
+        $(".MS").html("MS");
+        $(".EoSD").html("EoSD");
+        $(".PCB").html("PCB");
+        $(".IN").html("IN");
+        $(".MoF").html("MoF");
+        $(".SA").html("SA");
+        $(".UFO").html("UFO");
+        $(".DS").html("DS");
+        $(".GFW").html("GFW");
+        $(".TD").html("TD");
+        $(".DDC").html("DDC");
+        $(".LoLK").html("LoLK");
+        $(".HSiFS").html("HSiFS");
+        $(".WBaWC").html("WBaWC");
+    } else if (language == "Japanese") {
+        $(".SoEW").html("封");
+        $(".PoDD").html("夢");
+        $(".LLS").html("幻");
+        $(".MS").html("怪");
+        $(".EoSD").html("紅");
+        $(".PCB").html("妖");
+        $(".IN").html("永");
+        $(".MoF").html("風");
+        $(".SA").html("地");
+        $(".UFO").html("星");
+        $(".GFW").html("大");
+        $(".TD").html("神");
+        $(".DDC").html("輝");
+        $(".LoLK").html("紺");
+        $(".HSiFS").html("天");
+        $(".WBaWC").html("鬼");
+    } else {
+        $(".SoEW").html("封");
+        $(".PoDD").html("梦");
+        $(".LLS").html("幻");
+        $(".MS").html("怪");
+        $(".EoSD").html("红");
+        $(".PCB").html("妖");
+        $(".IN").html("永");
+        $(".MoF").html("风");
+        $(".SA").html("地");
+        $(".UFO").html("星");
+        $(".GFW").html("大");
+        $(".TD").html("神");
+        $(".DDC").html("辉");
+        $(".LoLK").html("绀");
+        $(".HSiFS").html("天");
+        $(".WBaWC").html("鬼");
+    }
+}
+function generateAll() {
+    generateText();
+    generateTableText();
+    generateShottypes();
+    generateFullNames();
+    generateShortNames()
 }
 function restrictions(game) {
     return ({
@@ -534,7 +566,7 @@ function show(game) {
         if (game == "IN" || game == "UFO" || game == "HSiFS") {
             type = shottype.replace(character, "");
             typeString = (type !== ""
-                ? " (" + type + ")"
+                ? " (<span class='" + type + "'>" + type + "</span>)"
                 : "")
         }
         for (i in LNNs[game][shottype]) {
@@ -571,7 +603,9 @@ function show(game) {
     $("#count").html(gamecount + " (" + players.length + ")");
     $("#total").html($("#total").html().replace(", ", ""));
     $("#list").css("display", "block");
-    generateTableText()
+    generateTableText();
+    generateShottypes();
+    generateFullNames()
 }
 function load() {
     $
@@ -625,10 +659,12 @@ function load() {
             $("#autosort1").click();
             if (getCookie("lang") == "Japanese") {
                 language = "Japanese";
-                generateText()
+                generateText();
+                generateShortNames()
             } else if (getCookie("lang") == "Chinese") {
                 language = "Chinese";
-                generateText()
+                generateText();
+                generateShortNames()
             } else {
                 $("#lastupdate").html("LNNs are current as of " + lastUpdate + ".")
             }
@@ -639,9 +675,11 @@ function setLanguage(newLanguage) {
         return
     }
     language = newLanguage;
-    generateText();
-    if (selected !== "") {
-        generateTableText()
+    if (selected !== "" || playerSelected) {
+        generateAll()
+    } else {
+        generateText();
+        generateShortNames()
     }
     setCookie("lang", newLanguage)
 }
