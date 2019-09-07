@@ -8,12 +8,19 @@
 		<link rel='stylesheet' type='text/css' href='assets/c67/c67.css'>
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='assets/c67/c67.ico'>
-        <script src='modernizr-custom.js' defer></script>
-        <script defer>document.documentElement.classList.remove("no-js");</script>
+        <script src='assets/shared/modernizr-custom.js' defer></script>
+        <script defer>document.documentElement.classList.remove("no-js");head=document.getElementsByTagName("head")[0];done=false;
+		function dark(){style=document.createElement("link");style.id="dark";style.href="assets/shared/dark-tables.css";
+		style.type="text/css";style.rel="stylesheet";head.append(style)}function ready(){if(done){return}done=true;
+		hy=document.getElementById("hy");if(localStorage.theme=="dark"){hy.src="assets/shared/y-bar.png";hy.title="Youkai Mode";dark()}}
+		function theme(e){if(e.src.indexOf("y")<0){e.src="assets/shared/y-bar.png";e.title="Youkai Mode";localStorage.theme="dark";
+		dark()}else{e.src="assets/shared/h-bar.png";e.title="Human Mode";head.removeChild(head.lastChild);localStorage.theme="light"}}
+		</script>
     </head>
 
     <body>
         <div id='wrap'>
+            <img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
             <h1>Seihou Banshiryuu C67</h1>
             <p>This page covers the scoring system and mechanics of the Comiket 67 release of Seihou Banshiryuu.</p>
 			<p><a id='backtomain' href='/'>Back to Main Page</a></p>

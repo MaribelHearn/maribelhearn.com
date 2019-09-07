@@ -10,12 +10,19 @@
 		<link rel='stylesheet' type='text/css' href='assets/index/main.css'>
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='favicon.ico'>
-        <script src='modernizr-custom.js' defer></script>
-        <script defer>document.documentElement.classList.remove("no-js");</script>
+        <script src='assets/shared/modernizr-custom.js' defer></script>
+        <script defer>document.documentElement.classList.remove("no-js");head=document.getElementsByTagName("head")[0];done=false;
+		function dark(){style=document.createElement("link");style.id="dark";style.href="assets/shared/dark.css";
+		style.type="text/css";style.rel="stylesheet";head.append(style)}function ready(){if(done){return}done=true;
+		hy=document.getElementById("hy");if(localStorage.theme=="dark"){hy.src="assets/shared/y-bar.png";hy.title="Youkai Mode";dark()}}
+		function theme(e){if(e.src.indexOf("y")<0){e.src="assets/shared/y-bar.png";e.title="Youkai Mode";localStorage.theme="dark";
+		dark()}else{e.src="assets/shared/h-bar.png";e.title="Human Mode";head.removeChild(head.lastChild);localStorage.theme="light"}}
+		</script>
     </head>
 
     <body>
         <div id='wrap'>
+            <img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
             <h1>Maribel Hearn's Web Portal</h1>
             <p class='thin'>A collection of convenience webpages for the Touhou community.</p>
             <h2>Page Links</h2>
@@ -121,36 +128,24 @@
             <a href='https://steamcommunity.com/id/maribelhearn42'><img src='ext/steam-icon-small.ico' alt='Steam favicon'>Steam</a>
             <a href='https://github.com/MaribelHearn'><img src='ext/github-icon.ico' alt='GitHub favicon'>GitHub</a></p>
             <p>Partners: <a href='http://replay.lunarcast.net'><img src='ext/favicon-lunarcast.ico' alt='Lunarcast favicon'>Lunarcast Replay Database</a></p>
-            <script defer>
-            if (location.protocol == "file:") {
-                var path = location.pathname.split('/').pop(), length = document.links.length, href;
-
-                for (var i = 0; i < length; i++) {
-                    href = document.links[i].href;
-
-                    if (document.links[i].protocol == "file:" && href.indexOf('#') == -1) {
-                        document.links[i].href += ".html";
-                    }
-                }
-            }
-            </script>
-            <!-- Default Statcounter code for Maribel Hearn's Web Portal
-            http://maribelhearn.com -->
-            <script type="text/javascript">
-            var sc_project=12065202;
-            var sc_invisible=1;
-            var sc_security="a3a19e1b";
-            </script>
-            <script type="text/javascript"
-            src="https://www.statcounter.com/counter/counter.js"
-            async></script>
-            <noscript><div class="statcounter"><a title="Web Analytics"
-            href="https://statcounter.com/" target="_blank"><img
-            class="statcounter"
-            src="https://c.statcounter.com/12065202/0/a3a19e1b/1/"
-            alt="Web Analytics"></a></div></noscript>
-            <!-- End of Statcounter Code -->
         </div>
+        <script defer>if(location.protocol=="file:"){var path=location.pathname.split('/').pop(),length=document.links.length,href;for(var i=0;i<length;i+=1){href=document.links[i].href;if(document.links[i].protocol=="file:"&&href.indexOf('#')==-1){document.links[i].href+=".html"}}}</script>
+        <!-- Default Statcounter code for Maribel Hearn's Web Portal
+        http://maribelhearn.com -->
+        <script type="text/javascript">
+        var sc_project=12065202;
+        var sc_invisible=1;
+        var sc_security="a3a19e1b";
+        </script>
+        <script type="text/javascript"
+        src="https://www.statcounter.com/counter/counter.js"
+        async></script>
+        <noscript><div class="statcounter"><a title="Web Analytics"
+        href="https://statcounter.com/" target="_blank"><img
+        class="statcounter"
+        src="https://c.statcounter.com/12065202/0/a3a19e1b/1/"
+        alt="Web Analytics"></a></div></noscript>
+        <!-- End of Statcounter Code -->
     </body>
 
 </html>

@@ -10,27 +10,64 @@
 		<link rel='stylesheet' type='text/css' href='assets/tools/tools.css'>
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='assets/tools/ufo.ico'>
-        <script src='modernizr-custom.js' defer></script>
-        <script defer>document.documentElement.classList.remove("no-js");</script>
+        <script src='assets/shared/modernizr-custom.js' defer></script>
+        <script defer>
+		document.documentElement.classList.remove("no-js");
+		head = document.getElementsByTagName("head")[0];
+		done = false;
+		function dark() {
+			style = document.createElement("link");
+			style.id = "dark";
+			style.href = "assets/shared/dark.css";
+			style.type = "text/css";
+			style.rel = "stylesheet";
+			head.append(style);
+		}
+		function ready() {
+		    if (done)
+		        return;
+		    done = true;
+		    hy = document.getElementById("hy");
+		    if (localStorage.theme == "dark") {
+		        hy.src = "assets/shared/y-bar.png";
+		        hy.title = "Youkai Mode";
+		        dark()
+		    }
+		}
+		function theme(e) {
+		    if (e.src.indexOf("y") < 0) {
+		        e.src = "assets/shared/y-bar.png";
+		        e.title = "Youkai Mode";
+		        localStorage.theme = "dark";
+				dark()
+		    } else {
+		        e.src = "assets/shared/h-bar.png";
+		        e.title = "Human Mode";
+		        head.removeChild(head.lastChild);
+		        localStorage.theme = "light"
+		    }
+		}
+		</script>
 	</head>
 
 	<body>
 		<div id='nav' class='wrap'>
 			<nav>
-				<a href='/'><img src='favicon.ico' class='ico-32' alt='Index icon'> Index</a>
-				<a href='scoring'><img src='assets/scoring/spell.ico' class='ico-32' alt='Spell Card icon'> Scoring</a>
-				<a href='survival'><img src='assets/survival/survival.ico' class='ico-32' alt='1up Item icon'> Survival</a>
+				<a href='/'><img src='favicon.ico' alt='Index icon'> Index</a>
+				<a href='scoring'><img src='assets/scoring/spell.ico' alt='Spell Card icon'> Scoring</a>
+				<a href='survival'><img src='assets/survival/survival.ico' alt='1up Item icon'> Survival</a>
 				<a href='drc'><img src='assets/drc/power.ico' alt='Power icon'> DRC</a>
-				<strong><img src='assets/tools/ufo.ico' class='ico-32' alt='UFO icon'> Tools</strong>
+				<strong><img src='assets/tools/ufo.ico' alt='UFO icon'> Tools</strong>
 				<a href='wr'><img src='assets/wr/point.ico' alt='Point Item icon'> WR</a>
-				<a href='lnn'><img src='assets/lnn/full.ico' class='ico-32' alt='Full Power icon'> LNN</a>
-				<a href='thvote'><img src='assets/thvote/tou-32.ico' class='ico-32' alt='Tou kanji icon'> Poll</a>
+				<a href='lnn'><img src='assets/lnn/full.ico' alt='Full Power icon'> LNN</a>
+				<a href='thvote'><img src='assets/thvote/tou-32.ico' alt='Tou kanji icon'> Poll</a>
 				<a href='jargon'><img src='assets/jargon/bomb.ico' alt='Bomb icon'> Jargon</a>
 				<a href='trs'><img src='assets/trs/shinto.png' alt='Shinto shrine icon'> TRS</a>
 				<a href='tiers'><img src='assets/tiers/castle.png' alt='Japanese castle icon'> Tiers</a>
 			</nav>
 		</div>
         <div id='wrap' class='wrap'>
+            <img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
             <h1>Touhou Patches and Tools</h1>
             <p>This page contains download links to all kinds of different patches or tools applicable to the official Touhou shooting games.</p>
 			<p>Some of the patches are also available at <a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers'>
@@ -38,23 +75,23 @@
 			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Download'>their automatic translation patcher and modding tool</a>,
 			which can also be downloaded using our mirror below (see THCRAP section).
 			These patches will have the favicon of their site next to them.</p>
-            <h2>Quick Links</h2>
-            <ul>
-                <li><a href='#vpatch'>Vpatch</a></li>
-                <li><a href='#thcrap'>THCRAP (Translation patches / Modding tool)</a></li>
-                <li><a href='#enbconvertor'><strong>For Windows 10:</strong> DX8 to DX9</a></li>
-                <li><a href='#scorefiles'>Completed Scorefiles</a></li>
-                <li><a href='#spoileral'>SpoilerAL</a></li>
-                <li><a href='#practools'>General Practice Tools</a></li>
-                <li><a href='#bossrush'>Boss Rush Patches</a></li>
-                <li><a href='#specific'>Specific Pattern Practice</a></li>
-                <li><a href='#shottypes'>Shottype Modifications</a></li>
-                <li><a href='#hardultra'>Hard Mode / Ultra Patches</a></li>
-                <li><a href='#graphical'>Graphical Patches</a></li>
-                <li><a href='#emulators'>PC-98 Emulators</a></li>
-                <li><a href='#miscellaneous'>Miscellaneous</a></li>
-				<li><a href='#ack'>Acknowledgements</a></li>
-            </ul>
+            <h2 id='contents'>Contents</h2>
+            <table class='border'>
+                <tr><td><a href='#vpatch'>Vpatch</a></td></tr>
+                <tr><td><a href='#thcrap'>THCRAP (Translation patches / Modding tool)</a></td></tr>
+                <tr><td><a href='#enbconvertor'><strong>For Windows 10:</strong> DX8 to DX9</a></td></tr>
+                <tr><td><a href='#scorefiles'>Completed Scorefiles</a></td></tr>
+                <tr><td><a href='#spoileral'>SpoilerAL</a></td></tr>
+                <tr><td><a href='#practools'>General Practice Tools</a></td></tr>
+                <tr><td><a href='#bossrush'>Boss Rush Patches</a></td></tr>
+                <tr><td><a href='#specific'>Specific Pattern Practice</a></td></tr>
+                <tr><td><a href='#shottypes'>Shottype Modifications</a></td></tr>
+                <tr><td><a href='#hardultra'>Hard Mode / Ultra Patches</a></td></tr>
+                <tr><td><a href='#graphical'>Graphical Patches</a></td></tr>
+                <tr><td><a href='#emulators'>PC-98 Emulators</a></td></tr>
+                <tr><td><a href='#miscellaneous'>Miscellaneous</a></td></tr>
+				<tr><td><a href='#ack'>Acknowledgements</a></td></tr>
+            </table>
             <!-- Vpatch -->
             <hr>
             <h2 id='vpatch'>Vpatch</h2>
@@ -433,20 +470,8 @@
 			<hr>
             <p id='back'><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
         </div>
-        <script>
-        if (location.protocol == "file:") {
-            var path = location.pathname.split('/').pop(), length = document.links.length, href;
-
-            for (var i = 0; i < length; i++) {
-                href = document.links[i].href;
-
-                if (document.links[i].protocol == "file:" && href.indexOf('#') == -1) {
-                    document.links[i].href = (href == "file:///" ? location.href.replace(path, "index.html") : href + ".html");
-                }
-            }
-        }
-        </script>
-		<!-- Default Statcounter code for Maribel Hearn's Web Portal
+		<script defer>if(location.protocol=="file:"){var path=location.pathname.split('/').pop(),length=document.links.length,href;for(var i=0;i<length;i+=1){href=document.links[i].href;if(document.links[i].protocol=="file:"&&href.indexOf('#')==-1){document.links[i].href=(href=="file:///"?location.href.replace(path,"index.html"):href+".html")}}}</script>
+        <!-- Default Statcounter code for Maribel Hearn's Web Portal
 		http://maribelhearn.com -->
 		<script type="text/javascript">
 		var sc_project=12065202;

@@ -8,12 +8,19 @@
 		<link rel='stylesheet' type='text/css' href='assets/history/history.css'>
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='assets/history/history.ico'>
-        <script src='modernizr-custom.js' defer></script>
-        <script defer>document.documentElement.classList.remove("no-js");</script>
+        <script src='assets/shared/modernizr-custom.js' defer></script>
+        <script defer>document.documentElement.classList.remove("no-js");head=document.getElementsByTagName("head")[0];done=false;
+		function dark(){style=document.createElement("link");style.id="dark";style.href="assets/shared/dark-tables.css";
+		style.type="text/css";style.rel="stylesheet";head.append(style)}function ready(){if(done){return}done=true;
+		hy=document.getElementById("hy");if(localStorage.theme=="dark"){hy.src="assets/shared/y-bar.png";hy.title="Youkai Mode";dark()}}
+		function theme(e){if(e.src.indexOf("y")<0){e.src="assets/shared/y-bar.png";e.title="Youkai Mode";localStorage.theme="dark";
+		dark()}else{e.src="assets/shared/h-bar.png";e.title="Human Mode";head.removeChild(head.lastChild);localStorage.theme="light"}}
+		</script>
 	</head>
 
 	<body>
 		<div id='wrap'>
+            <img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
             <h1>Maribel's Achievement History</h1>
             <noscript><strong>Notice:</strong> this page cannot function properly with JavaScript disabled.</noscript>
             <p id='notice' style='display:none'><strong>Notice:</strong> this page is best viewed on mobile using landscape mode.</p>
@@ -73,7 +80,7 @@
                 <tr><td><a href='#MSF'>Mushihime-sama Futari</a></td></tr>
                 <tr><td><a href='#DSm'>Deathsmiles</a></td></tr>
                 <tr><td><a href='#Ikaruga'>Ikaruga</a></td></tr>
-                <tr><th></th></tr>
+				<tr><th>Acknowledgements</th></tr>
                 <tr><td><a href='#ack'>Acknowledgements</a></td></tr>
             </table>
             <div id='overview'>
@@ -4254,7 +4261,7 @@
 			was drawn by <a href='https://www.pixiv.net/member.php?id=2263353'>RAT_Huang</a>.</p>
             <p><strong><a href='#wrap'>Back to Top</a></strong></p>
         </div>
-		<script>if(location.protocol=="file:"){var path=location.pathname.split('/').pop(),length=document.links.length,href;for(var i=0;i<length;i+=1){href=document.links[i].href;if(document.links[i].protocol=="file:"&&href.indexOf('#')==-1){document.links[i].href=(href=="file:///"?location.href.replace(path,"index.html"):href+".html")}}}var ready=function(){if(navigator.userAgent.indexOf("Mobile")>-1||navigator.userAgent.indexOf("Tablet")>-1){$("#notice").css("display","block")}};</script>
+		<script>if(location.protocol=="file:"){var path=location.pathname.split('/').pop(),length=document.links.length,href;for(var i=0;i<length;i+=1){href=document.links[i].href;if(document.links[i].protocol=="file:"&&href.indexOf('#')==-1){document.links[i].href=(href=="file:///"?location.href.replace(path,"index.html"):href+".html")}}}</script>
 		<!-- Default Statcounter code for Maribel Hearn's Web Portal
 		http://maribelhearn.com -->
 		<script type="text/javascript">

@@ -10,11 +10,11 @@
 		<link rel='stylesheet' type='text/css' href='assets/lnn/lnn.css'>
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='assets/lnn/full.ico'>
-		<script src='jquery.js' defer></script>
-		<script src='utils.js' defer></script>
+		<script src='assets/shared/jquery.js' defer></script>
+		<script src='assets/shared/utils.js' defer></script>
 		<script src='assets/lnn/lnn.js' defer></script>
-		<script src='sorttable.js' defer></script>
-        <script src='modernizr-custom.js' defer></script>
+		<script src='assets/shared/sorttable.js' defer></script>
+        <script src='assets/shared/modernizr-custom.js' defer></script>
         <script defer>document.documentElement.classList.remove("no-js");</script>
 	</head>
 
@@ -35,26 +35,32 @@
 			</nav>
 		</div>
         <div id='wrap' class='wrap'>
-            <table id='languages' class='noborders'>
-                <tbody>
-                    <tr class='noborders'>
-                        <td class='noborders'>
-                            <a href='javascript:setLanguage("English")'><img src='assets/drc/uk.png' alt='Flag of the United Kingdom'></a>
-                        </td>
-                        <td class='noborders'>
-                            <a href='javascript:setLanguage("Japanese")'><img src='assets/drc/japan.png' alt='Flag of Japan'></a>
-                        </td>
-                        <td class='noborders'>
-                            <a href='javascript:setLanguage("Chinese")'><img src='assets/drc/china.png' alt='Flag of the P.R.C.'></a>
-                        </td>
-                    </tr>
-                    <tr class='noborders'>
-                        <td class='noborders'><a href='javascript:setLanguage("English")'>English</a></td>
-                        <td class='noborders'><a href='javascript:setLanguage("Japanese")'>日本語</a></td>
-                        <td class='noborders'><a href='javascript:setLanguage("Chinese")'>简体中文</a></td>
-                    </tr>
-                </tbody>
-            </table>
+			<table id='top' class='center noborders'>
+				<tr class='noborders'>
+					<td class='noborders' style='width:22%'></td>
+					<td class='noborders' style='width:55%'><table id='languages' class='noborders'>
+		                <tbody>
+		                    <tr class='noborders'>
+		                        <td class='noborders'>
+		                            <a href='javascript:setLanguage("English")'><img src='assets/drc/uk.png' alt='Flag of the United Kingdom'></a>
+		                        </td>
+		                        <td class='noborders'>
+		                            <a href='javascript:setLanguage("Japanese")'><img src='assets/drc/japan.png' alt='Flag of Japan'></a>
+		                        </td>
+		                        <td class='noborders'>
+		                            <a href='javascript:setLanguage("Chinese")'><img src='assets/drc/china.png' alt='Flag of the P.R.C.'></a>
+		                        </td>
+		                    </tr>
+		                    <tr class='noborders'>
+		                        <td class='noborders'><a href='javascript:setLanguage("English")'>English</a></td>
+		                        <td class='noborders'><a href='javascript:setLanguage("Japanese")'>日本語</a></td>
+		                        <td class='noborders'><a href='javascript:setLanguage("Chinese")'>简体中文</a></td>
+		                    </tr>
+		                </tbody>
+		            </table></td>
+					<td class='noborders' style='width:22%;text-align:right;vertical-align:top'><img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)'></td>
+				</tr>
+			</table>
 			<h1>Touhou Lunatic No Miss No Bombs</h1>
             <noscript><strong>Notice:</strong> this page cannot function properly with JavaScript disabled.</noscript>
             <p id='description'>A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. For every shottype in a game,
