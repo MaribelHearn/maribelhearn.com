@@ -10,34 +10,72 @@
 		<link rel='stylesheet' type='text/css' href='assets/jargon/jargon.css'>
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='assets/jargon/bomb.ico'>
-        <script src='modernizr-custom.js' defer></script>
+        <script src='assets/shared/modernizr-custom.js' defer></script>
         <script defer>document.documentElement.classList.remove("no-js");</script>
+        <script defer>
+		document.documentElement.classList.remove("no-js");
+		head = document.getElementsByTagName("head")[0];
+		done = false;
+		function dark() {
+			style = document.createElement("link");
+			style.id = "dark";
+			style.href = "assets/shared/dark.css";
+			style.type = "text/css";
+			style.rel = "stylesheet";
+			head.append(style);
+		}
+		function ready() {
+		    if (done)
+		        return;
+		    done = true;
+		    hy = document.getElementById("hy");
+		    if (localStorage.theme == "dark") {
+		        hy.src = "assets/shared/y-bar.png";
+		        hy.title = "Youkai Mode";
+		        dark()
+		    }
+		}
+		function theme(e) {
+		    if (e.src.indexOf("y") < 0) {
+		        e.src = "assets/shared/y-bar.png";
+		        e.title = "Youkai Mode";
+		        localStorage.theme = "dark";
+				dark()
+		    } else {
+		        e.src = "assets/shared/h-bar.png";
+		        e.title = "Human Mode";
+		        head.removeChild(head.lastChild);
+		        localStorage.theme = "light"
+		    }
+		}
+		</script>
 	</head>
 
 	<body>
 		<div id='nav' class='wrap'>
 			<nav>
-				<a href='/'><img src='favicon.ico' class='ico-32' alt='Index icon'> Index</a>
-				<a href='scoring'><img src='assets/scoring/spell.ico' class='ico-32' alt='Spell Card icon'> Scoring</a>
-				<a href='survival'><img src='assets/survival/survival.ico' class='ico-32' alt='1up Item icon'> Survival</a>
+				<a href='/'><img src='favicon.ico' alt='Index icon'> Index</a>
+				<a href='scoring'><img src='assets/scoring/spell.ico' alt='Spell Card icon'> Scoring</a>
+				<a href='survival'><img src='assets/survival/survival.ico' alt='1up Item icon'> Survival</a>
 				<a href='drc'><img src='assets/drc/power.ico' alt='Power icon'> DRC</a>
-				<a href='tools'><img src='assets/tools/ufo.ico' class='ico-32' alt='UFO icon'> Tools</a>
+				<a href='tools'><img src='assets/tools/ufo.ico' alt='UFO icon'> Tools</a>
 				<a href='wr'><img src='assets/wr/point.ico' alt='Point Item icon'> WR</a>
-				<a href='lnn'><img src='assets/lnn/full.ico' class='ico-32' alt='Full Power icon'> LNN</a>
-				<a href='thvote'><img src='assets/thvote/tou-32.ico' class='ico-32' alt='Tou kanji icon'> Poll</a>
+				<a href='lnn'><img src='assets/lnn/full.ico' alt='Full Power icon'> LNN</a>
+				<a href='thvote'><img src='assets/thvote/tou-32.ico' alt='Tou kanji icon'> Poll</a>
 				<strong><img src='assets/jargon/bomb.ico' alt='Bomb icon'> Jargon</strong>
 				<a href='trs'><img src='assets/trs/shinto.png' alt='Shinto shrine icon'> TRS</a>
 				<a href='tiers'><img src='assets/tiers/castle.png' alt='Japanese castle icon'> Tiers</a>
 			</nav>
 		</div>
         <div id='wrap' class='wrap'>
+            <img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
             <h1>Touhou Community Jargon</h1>
             <p>This list contains explanations for terms and acronyms used in the community of Touhou players. It also contains general gaming and shoot 'em up terms that are relevant to Touhou.</p>
-            <h2>Quick Links</h2>
-            <ul>
-                <li><a href='#spells'>Spell Card / Pattern Acronyms</a></li>
-                <li><a href='#bullets'>Bullet Type Names</a></li>
-            </ul>
+            <h2>Contents</h2>
+            <table class='border'>
+                <tr><td><a href='#spells'>Spell Card / Pattern Acronyms</a></td></tr>
+                <tr><td><a href='#bullets'>Bullet Type Names</a></td></tr>
+            </table>
             <h2 id='main'>Gameplay Related Terms</h2>
             <table id='jargontable'>
                 <thead>
@@ -654,21 +692,10 @@
                     </tr>
                 </tbody>
             </table>
+            <p id='back'><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
         </div>
-        <script>
-        if (location.protocol == "file:") {
-            var path = location.pathname.split('/').pop(), length = document.links.length, href;
-
-            for (var i = 0; i < length; i++) {
-                href = document.links[i].href;
-
-                if (document.links[i].protocol == "file:" && href.indexOf('#') == -1) {
-                    document.links[i].href = (href == "file:///" ? location.href.replace(path, "index.html") : href + ".html");
-                }
-            }
-        }
-        </script>
-		<!-- Default Statcounter code for Maribel Hearn's Web Portal
+		<script defer>if(location.protocol=="file:"){var path=location.pathname.split('/').pop(),length=document.links.length,href;for(var i=0;i<length;i+=1){href=document.links[i].href;if(document.links[i].protocol=="file:"&&href.indexOf('#')==-1){document.links[i].href=(href=="file:///"?location.href.replace(path,"index.html"):href+".html")}}}</script>
+        <!-- Default Statcounter code for Maribel Hearn's Web Portal
 		http://maribelhearn.com -->
 		<script type="text/javascript">
 		var sc_project=12065202;

@@ -1,1 +1,132 @@
-.webp body{background:url("survival.webp") top no-repeat fixed;background-size:cover}.no-js body,.no-webp body{background:url("survival.jpg") top no-repeat fixed;background-size:cover}table,td,th,tr{border:1px solid black}div{background-color:#FFFFFF}h1{font-family:'Felipa';font-size:48px}h2{font-family:'Felipa';font-size:36px}#nav{margin-bottom:5px}#wrap{padding-bottom:15px}#results{border:1px solid black;background-color:rgba(255, 255, 255, 1)}.wrap{border:1px solid black;text-align:center;margin-left:25%;margin-right:25%;padding-left:15px;padding-right:15px;background-color:rgba(255, 255, 255, 0.8);font:14px verdana, sans-serif}.center{margin-left:auto;margin-right:auto}.overview{width:80px}.clear{background-color:green}.nm{background-color:brown}.nb{background-color:blue}.nbp{color:white;text-align:center;background-color:blue}.nmnb{background-color:purple}@media only screen and (min-width: 800px) and (max-width: 1400px){.wrap{margin-left:15%;margin-right:15%}}@media only screen and (max-width: 800px){.wrap{margin-left:0;margin-right:0}}@media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait){.wrap{margin-left:0;margin-right:0;font-size:11px}#survival option{width:40px}h1{font-size:36px}h2{font-size:24px}select{height:10px;width:70px;font-size:11px}input{font-size:11px}}@media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape){.wrap{margin-left:0;margin-right:0;font-size:11px}#survival option{width:40px}h1{font-size:36px}h2{font-size:24px}select{height:10px;width:70px;font-size:11px}input{font-size:11px}}
+.webp body {
+    background: url("survival.webp")top no-repeat fixed;
+    background-size: cover;
+}
+.no-js body,
+.no-webp body {
+    background: url("survival.jpg")top no-repeat fixed;
+    background-size: cover;
+}
+table,
+td,
+th,
+tr {
+    border: 1px solid black;
+}
+div {
+    background-color: #FFFFFF;
+}
+h1 {
+    font-family: 'Felipa';
+    font-size: 48px;
+}
+h2 {
+    font-family: 'Felipa';
+    font-size: 36px;
+}
+#nav {
+    margin-bottom: 5px;
+}
+#wrap {
+    padding-bottom: 15px;
+}
+#results {
+    border: 1px solid black;
+    background-color: rgba(255,255,255,1);
+}
+#hy {
+    float: right;
+}
+.wrap {
+    border: 1px solid black;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-left: 15px;
+    padding-right: 15px;
+    font: 14px verdana,sans-serif;
+}
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+.overview {
+    width: 80px;
+}
+.clear {
+    background-color: green;
+}
+.nm {
+    background-color: brown;
+}
+.nb {
+    background-color: blue;
+}
+.nbp {
+    color: white;
+    text-align: center;
+    background-color: blue;
+}
+.nmnb {
+    background-color: purple;
+}
+@media only screen and(min-width:800px)and(max-width:1400px) {
+    .wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
+@media only screen and(max-width:800px) {
+    .wrap {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+@media only screen and(min-device-width:320px)and(max-device-width:800px)and(orientation:portrait) {
+    .wrap {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 11px;
+    }
+    #survival option {
+        width: 40px;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    select {
+        height: 10px;
+        width: 70px;
+        font-size: 11px;
+    }
+    input {
+        font-size: 11px;
+    }
+}
+@media only screen and(min-device-width:480px)and(max-device-width:640px)and(orientation:landscape) {
+    .wrap {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 11px;
+    }
+    #survival option {
+        width: 40px;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    select {
+        height: 10px;
+        width: 70px;
+        font-size: 11px;
+    }
+    input {
+        font-size: 11px;
+    }
+}

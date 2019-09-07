@@ -10,11 +10,11 @@
 		<link rel='stylesheet' type='text/css' href='assets/survival/survival.css'>
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='assets/survival/survival.ico'>
-		<script src='jquery.js' defer></script>
-		<script src='utils.js' defer></script>
+		<script src='assets/shared/jquery.js' defer></script>
+		<script src='assets/shared/utils.js' defer></script>
 		<script src='assets/survival/survival.js' defer></script>
-        <script src='sorttable.js' defer></script>
-        <script src='modernizr-custom.js' defer></script>
+        <script src='assets/shared/sorttable.js' defer></script>
+        <script src='assets/shared/modernizr-custom.js' defer></script>
         <script defer>document.documentElement.classList.remove("no-js");</script>
 	</head>
 
@@ -35,6 +35,7 @@
 			</nav>
 		</div>
 		<div id='wrap' class='wrap'>
+			<img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)'>
 			<h1>Survival Progress Table Generator</h1>
             <noscript><strong>Notice:</strong> this page cannot function properly with JavaScript disabled.</noscript>
             <p id='notice' style='display:none'><strong>Notice:</strong> this page is best viewed on mobile using landscape mode.</p>

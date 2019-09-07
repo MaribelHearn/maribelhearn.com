@@ -2,38 +2,45 @@
 <html lang='en' class='no-js'>
 
     <head>
-		<title>Touhou Replay Showcase Scheduling</title>
+		<title>Touhou Replay Showcase</title>
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
-        <meta name='description' content='Schedules for the weekly Touhou Replay Showcase Twitch streams.'>
-        <meta name='keywords' content='touhou, touhou project, replay, showcase, twitch, stream, schedule, schedules'>
+        <meta name='description' content='Submit to the Touhou Replay Showcase Twitch stream and see the schedules.'>
+        <meta name='keywords' content='touhou, touhou project, replay, showcase, twitch, stream, submit, submitting, submission, schedule, schedules'>
 		<link rel='stylesheet' type='text/css' href='assets/trs/trs.css'>
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='assets/trs/shinto.png'>
-        <script src='modernizr-custom.js' defer></script>
-        <script defer>document.documentElement.classList.remove("no-js");</script>
+        <script src='assets/shared/modernizr-custom.js' defer></script>
+        <script defer>document.documentElement.classList.remove("no-js");head=document.getElementsByTagName("head")[0];done=false;
+		function dark(){style=document.createElement("link");style.id="dark";style.href="assets/shared/dark.css";
+		style.type="text/css";style.rel="stylesheet";head.append(style)}function ready(){if(done){return}done=true;
+		hy=document.getElementById("hy");if(localStorage.theme=="dark"){hy.src="assets/shared/y-bar.png";hy.title="Youkai Mode";dark()}}
+		function theme(e){if(e.src.indexOf("y")<0){e.src="assets/shared/y-bar.png";e.title="Youkai Mode";localStorage.theme="dark";
+		dark()}else{e.src="assets/shared/h-bar.png";e.title="Human Mode";head.removeChild(head.lastChild);localStorage.theme="light"}}
+		</script>
     </head>
 
     <body>
 		<div id='nav' class='wrap'>
 			<nav>
-				<a href='/'><img src='favicon.ico' class='ico-32' alt='Index icon'> Index</a>
-				<a href='scoring'><img src='assets/scoring/spell.ico' class='ico-32' alt='Spell Card icon'> Scoring</a>
-				<a href='survival'><img src='assets/survival/survival.ico' class='ico-32' alt='1up Item icon'> Survival</a>
+				<a href='/'><img src='favicon.ico' alt='Index icon'> Index</a>
+				<a href='scoring'><img src='assets/scoring/spell.ico'  alt='Spell Card icon'> Scoring</a>
+				<a href='survival'><img src='assets/survival/survival.ico' alt='1up Item icon'> Survival</a>
 				<a href='drc'><img src='assets/drc/power.ico' alt='Power icon'> DRC</a>
-				<a href='tools'><img src='assets/tools/ufo.ico' class='ico-32' alt='UFO icon'> Tools</a>
+				<a href='tools'><img src='assets/tools/ufo.ico' alt='UFO icon'> Tools</a>
 				<a href='wr'><img src='assets/wr/point.ico' alt='Point Item icon'> WR</a>
-				<a href='lnn'><img src='assets/lnn/full.ico' class='ico-32' alt='Full Power icon'> LNN</a>
-				<a href='thvote'><img src='assets/thvote/tou-32.ico' class='ico-32' alt='Tou kanji icon'> Poll</a>
+				<a href='lnn'><img src='assets/lnn/full.ico' alt='Full Power icon'> LNN</a>
+				<a href='thvote'><img src='assets/thvote/tou-32.ico' alt='Tou kanji icon'> Poll</a>
 				<a href='jargon'><img src='assets/jargon/bomb.ico' alt='Bomb icon'> Jargon</a>
 				<strong><img src='assets/trs/shinto.png' alt='Shinto shrine icon'> TRS</strong>
 				<a href='tiers'><img src='assets/tiers/castle.png' alt='Japanese castle icon'> Tiers</a>
 			</nav>
 		</div>
         <div id='wrap' class='wrap'>
+            <img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
             <h1>Touhou Replay Showcase Scheduling</h1>
-            <p>This page contains the schedules of the <a href='https://twitch.tv/touhou_replay_showcase'><img src='ext/twitch-icon-small.ico' alt='Twitch favicon'> Touhou Replay Showcase</a>
-            stream from its 2018 reboot onward. The upcoming stream's schedule will be listed at the top once it becomes available.</p>
+            <p>This page contains the schedules of the <a href="https://twitch.tv/touhou_replay_showcase"><img src="ext/twitch-icon-small.ico" alt="Twitch favicon"> Touhou
+            Replay Showcase</a> stream from its 2018 reboot onward. The upcoming stream's schedule will be listed at the top once it becomes available.</p>
             <h3>Saturday, 31 August 2019</h3>
             <ul>
                 <li>Borealis WBaWC Extra YoumuWolf NNNN</li>
@@ -649,6 +656,8 @@
                 <li>Yeashie SSS Lunatic Sanae NB</li>
                 <li>ZPScissors LLS Lunatic MarisaA NB</li>
             </ul>
+            <h2 id='ack'>Acknowledgements</h2>
+            <p id='credit'>The background image was drawn by <a href='http://www.pixiv.net/member.php?id=21613'>Kong Xian</a>.</p>
             <p id='back'><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
         </div>
         <script>
