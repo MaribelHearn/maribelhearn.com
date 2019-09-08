@@ -11,43 +11,12 @@
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='assets/jargon/bomb.ico'>
         <script src='assets/shared/modernizr-custom.js' defer></script>
-        <script defer>document.documentElement.classList.remove("no-js");</script>
-        <script defer>
-		document.documentElement.classList.remove("no-js");
-		head = document.getElementsByTagName("head")[0];
-		done = false;
-		function dark() {
-			style = document.createElement("link");
-			style.id = "dark";
-			style.href = "assets/shared/dark.css";
-			style.type = "text/css";
-			style.rel = "stylesheet";
-			head.append(style);
-		}
-		function ready() {
-		    if (done)
-		        return;
-		    done = true;
-		    hy = document.getElementById("hy");
-		    if (localStorage.theme == "dark") {
-		        hy.src = "assets/shared/y-bar.png";
-		        hy.title = "Youkai Mode";
-		        dark()
-		    }
-		}
-		function theme(e) {
-		    if (e.src.indexOf("y") < 0) {
-		        e.src = "assets/shared/y-bar.png";
-		        e.title = "Youkai Mode";
-		        localStorage.theme = "dark";
-				dark()
-		    } else {
-		        e.src = "assets/shared/h-bar.png";
-		        e.title = "Human Mode";
-		        head.removeChild(head.lastChild);
-		        localStorage.theme = "light"
-		    }
-		}
+        <script>document.documentElement.classList.remove("no-js");head=document.getElementsByTagName("head")[0];done=false;
+		function dark(){style=document.createElement("link");style.id="dark";style.href="assets/shared/dark.css";
+		style.type="text/css";style.rel="stylesheet";head.append(style)}function ready(){if(done){return}done=true;
+		hy=document.getElementById("hy");if(localStorage.theme=="dark"){hy.src="assets/shared/y-bar.png";hy.title="Youkai Mode";dark()}}
+		function theme(e){if(e.src.indexOf("y")<0){e.src="assets/shared/y-bar.png";e.title="Youkai Mode";localStorage.theme="dark";
+		dark()}else{e.src="assets/shared/h-bar.png";e.title="Human Mode";head.removeChild(head.lastChild);localStorage.theme="light"}}
 		</script>
 	</head>
 
@@ -694,15 +663,15 @@
             </table>
             <p id='back'><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
         </div>
-		<script defer>if(location.protocol=="file:"){var path=location.pathname.split('/').pop(),length=document.links.length,href;for(var i=0;i<length;i+=1){href=document.links[i].href;if(document.links[i].protocol=="file:"&&href.indexOf('#')==-1){document.links[i].href=(href=="file:///"?location.href.replace(path,"index.html"):href+".html")}}}</script>
+		<script>if(location.protocol=="file:"){var path=location.pathname.split('/').pop(),length=document.links.length,href;for(var i=0;i<length;i+=1){href=document.links[i].href;if(document.links[i].protocol=="file:"&&href.indexOf('#')==-1){document.links[i].href=(href=="file:///"?location.href.replace(path,"index.html"):href+".html")}}}</script>
         <!-- Default Statcounter code for Maribel Hearn's Web Portal
 		http://maribelhearn.com -->
-		<script type="text/javascript">
+		<script>
 		var sc_project=12065202;
 		var sc_invisible=1;
 		var sc_security="a3a19e1b";
 		</script>
-		<script type="text/javascript"
+		<script
 		src="https://www.statcounter.com/counter/counter.js"
 		async></script>
 		<noscript><div class="statcounter"><a title="Web Analytics"
