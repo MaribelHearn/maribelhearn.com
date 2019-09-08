@@ -11,42 +11,12 @@
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='assets/tools/ufo.ico'>
         <script src='assets/shared/modernizr-custom.js' defer></script>
-        <script defer>
-		document.documentElement.classList.remove("no-js");
-		head = document.getElementsByTagName("head")[0];
-		done = false;
-		function dark() {
-			style = document.createElement("link");
-			style.id = "dark";
-			style.href = "assets/shared/dark.css";
-			style.type = "text/css";
-			style.rel = "stylesheet";
-			head.append(style);
-		}
-		function ready() {
-		    if (done)
-		        return;
-		    done = true;
-		    hy = document.getElementById("hy");
-		    if (localStorage.theme == "dark") {
-		        hy.src = "assets/shared/y-bar.png";
-		        hy.title = "Youkai Mode";
-		        dark()
-		    }
-		}
-		function theme(e) {
-		    if (e.src.indexOf("y") < 0) {
-		        e.src = "assets/shared/y-bar.png";
-		        e.title = "Youkai Mode";
-		        localStorage.theme = "dark";
-				dark()
-		    } else {
-		        e.src = "assets/shared/h-bar.png";
-		        e.title = "Human Mode";
-		        head.removeChild(head.lastChild);
-		        localStorage.theme = "light"
-		    }
-		}
+        <script>document.documentElement.classList.remove("no-js");head=document.getElementsByTagName("head")[0];done=false;
+		function dark(){style=document.createElement("link");style.id="dark";style.href="assets/shared/dark.css";
+		style.type="text/css";style.rel="stylesheet";head.append(style)}function ready(){if(done){return}done=true;
+		hy=document.getElementById("hy");if(localStorage.theme=="dark"){hy.src="assets/shared/y-bar.png";hy.title="Youkai Mode";dark()}}
+		function theme(e){if(e.src.indexOf("y")<0){e.src="assets/shared/y-bar.png";e.title="Youkai Mode";localStorage.theme="dark";
+		dark()}else{e.src="assets/shared/h-bar.png";e.title="Human Mode";head.removeChild(head.lastChild);localStorage.theme="light"}}
 		</script>
 	</head>
 
@@ -101,7 +71,7 @@
             <a href='http://www.mediafire.com/file/5uk43317q0ozjkj/VsyncPatch.zip' target='_blank'>Download</a>
             <!-- English Patches -->
             <hr>
-            <h2 id='thcrap'>THCRAP (Translation patches / Modding tool) <a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page' target='_blank'><img src='ext/thcrap-icon-small.ico'></a></h2>
+            <h2 id='thcrap'>THCRAP (Translation patches / Modding tool) <a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'></a></h2>
             <p>Translation patches into English and many other languages, as well as countless modifications to gameplay,
 			graphics and more, plus the ability to make your own, are provided by the Touhou Community Reliant Automatic Patcher (THCRAP) for all Windows Touhou games.
 			The thpatch.net link also links to instructions on how to use the patcher.</p>
@@ -146,9 +116,6 @@
                 <tr>
                     <td><a href='https://mega.nz/#!BJwhwYRB!5Zgr6redSWbA2v2vco0b7k00XH-BIeTAPUnW28gI-20' target='_blank'>GFW SSG (English translated)</a></td>
                 </tr>
-                <!--<tr> Dead link
-                    <td><a href='https://ux.getuploader.com/leo_1729/download/23'>TD Scoring SSG by Leo</a></td>
-                </tr>-->
                 <tr>
                     <td><a href='https://drive.google.com/open?id=1Qs4jOBkDH3dN7tI5X2cJRzd_awZFf80d' target='_blank'>TD Scoring SSG by Leo (English translated)</a></td>
                 </tr>
@@ -156,8 +123,7 @@
                     <td><a href='https://gitlab.com/32th/th14ssg' target='_blank'>DDC SSG by 32th System</a></td>
                 </tr>
 				<tr>
-					<td><a href='https://mega.nz/#!cAwknKTB!3PCN0me2Q3uTXwo4VgfBIouOqf5W0spBEhZwwR2uNfA' target='_blank'>LoLK SSG by
-					<a href='https://twitter.com/CreepyNinja_' target='_blank'>CreepyNinja</a></a></td>
+					<td><a href='https://mega.nz/#!cAwknKTB!3PCN0me2Q3uTXwo4VgfBIouOqf5W0spBEhZwwR2uNfA' target='_blank'>LoLK SSG by CreepyNinja</a></td>
 				</tr>
                 <tr>
                     <td><a href='https://gitlab.com/32th/th15ssg' target='_blank'>LoLK Chapter Practice SSG by 32th System</a></td>
@@ -190,7 +156,7 @@
                     <td><a href='http://www.mediafire.com/download/88ncjlua3hjrma2/th15_assist_2.2.rar' target='_blank'>LoLK</a></td>
                 </tr>
             </table>
-            <p><strong>GFW "Brown Label" Practice by <a href=''>MegaPulse</a></strong></p>
+            <p><strong>GFW "Brown Label" Practice by <a href='https://twitter.com/givemeberserker'>MegaPulse</a></strong></p>
             <p>Modified <span class='code'>.dat</span> files that allow you to practice specific stages of any route in the game. Select A in-game for full stage practice,
             B for midboss and boss and C for boss only. Refer to the readme file for further information.</p>
             <a href='https://mega.nz/#!8LgRVLxa!TQpU7xqurMF9JgWloQAHORx6XhswuK_NaaCk1gStWfs' target='_blank'>Download</a>
@@ -286,19 +252,19 @@
 			<p>Replaces ReimuC with Reisen in MoF.</p>
 			<a href='https://mega.nz/#!SXYHzIAL!ybiykqvDKGJ-WB99fd1NzsXWh_F5l9N0VZN6IVyvZ8o' target='_blank'>Download</a>
 			<p><strong>UFO Tsubakura mod by <a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico'> th12tsuba</a></p>
+			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> th12tsuba</a></p>
 			<p>Replaces both Reimu shottypes in UFO with Tsubakura shottypes, a character from the Len'en series. Also changes the dialogues and endings.</p>
 			<a href='https://mega.nz/#!10JzTKBC!GLi2MJZADsRPqdn1b9knvLfJknXepM69vHJ01-XjJ7s'>Download</a>
 			<p><strong>DDC Sanae by <a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico'> th14sanae</a></p>
+			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> th14sanae</a></p>
 			<p>Replaces ReimuB with Sanae in DDC.</p>
 			<a href='https://mega.nz/#!oh4lBA4C!Fq7UV5LfQulUaCAubGRk_LMLOeR4nfE9CdMa0OQZryA'>Download</a>
 			<p><strong>HSiFS Sanae by <a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico'> th16sanae</a></p>
+			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> th16sanae</a></p>
 			<p>Replaces Marisa with Sanae in HSiFS.</p>
 			<a href='https://mega.nz/#!lsBQxSwB!X-YB1uwIN1u8CRYjU-2HZnjhb7zrFE5WvQFZru-CXr8'>Download</a>
 			<p><strong>LoLK Sakuya by <a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico'> th15sakuya</a></p>
+			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> th15sakuya</a></p>
 			<p>Replaces Reisen with Sakuya in LoLK.</p>
 			<a href='https://mega.nz/#!1s5GHIqI!sSPZm0FZCxE_EL0jzGqC4oheH5Xs7-MmlbjARxqbzQY' target='_blank'>Download</a>
 			<p><strong>TD Yuuka by Gamer251</strong></p>
@@ -337,7 +303,7 @@
                 </tr>
             </table>
 			<p><strong>RNG patches by <a href='https://www.twitch.tv/thedaikarasu' target='_blank'>Daikarasu</a></strong>
-			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico'> RNG</a></p>
+			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> RNG</a></p>
 			<p>A collection of modified <span class='code'>.dat</span> files that randomise the patterns in the game.</p>
 			<a href='https://drive.google.com/file/d/14PGGkoxHTH-bHKfzSt3OGarZp_APq7KB/view' target='_blank'>Download</a>
             <p><strong>LoLK Black Label</strong></p>
@@ -357,12 +323,12 @@
             <p>An alternate HSiFS Ultra patch that also increases density.</p>
             <a href='https://mega.nz/#!LxNAQbyB!a2qOOOgYQ8-NwTWvLSgcykBXsEmhgy6IDpdEdxlG-90' target='_blank'>Download</a>
 			<p><strong>"LoDDK" by <a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico'> LoDDK</a></p>
+			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> LoDDK</a></p>
 			<p>Combines LoLK with DDC, making each boss fight a dual boss fight against the bosses of both games.
 			It removes all stage portions, effectively making it a boss rush, and also combines the HUDs of both games.</p>
 			<a href='https://priw8.github.io/#s=patches/loddk' target='_blank'>Download</a>
 			<p><strong>OC Patches by Bravi</strong>
-			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico'> BraviOCOkina</a></p>
+			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> BraviOCOkina</a></p>
 			<p>Remastered version of Stage 6 and harder version of Extra in HSiFS, including an original character replacing Okina and alternate story along with pattern,
 			bullet type, stage music and graphical changes. There is another patch with the same OC replacement and pattern modding for VD on the Okina scenes on the same download page.</p>
 			<a href='https://drive.google.com/drive/folders/1b5HIukg61_8_I1hUceE770Q_Jfwu8iy1?usp=sharing' target='_blank'>Downloads</a>
@@ -460,7 +426,7 @@
             <p>Disables the 0.01 power loss mechanic of Pointdevice Mode in LoLK, making sure you never lose power upon restarting a chapter.</p>
             <a href='https://drive.google.com/file/d/1VibcZoC-V0VI6cRw7r507dfimP9Dif1d' target='_blank'>Download</a>
 			<p><strong>HSiFS UFO mod by <a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico'> th16ufos</a></p>
+			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> th16ufos</a></p>
 			<p>Adds UFOs to HSiFS.</p>
 			<a href='https://priw8.github.io/#s=patches/uffs' target='_blank'>Download</a>
 			<hr>
@@ -470,15 +436,15 @@
 			<hr>
             <p id='back'><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
         </div>
-		<script defer>if(location.protocol=="file:"){var path=location.pathname.split('/').pop(),length=document.links.length,href;for(var i=0;i<length;i+=1){href=document.links[i].href;if(document.links[i].protocol=="file:"&&href.indexOf('#')==-1){document.links[i].href=(href=="file:///"?location.href.replace(path,"index.html"):href+".html")}}}</script>
+		<script>if(location.protocol=="file:"){var path=location.pathname.split('/').pop(),length=document.links.length,href;for(var i=0;i<length;i+=1){href=document.links[i].href;if(document.links[i].protocol=="file:"&&href.indexOf('#')==-1){document.links[i].href=(href=="file:///"?location.href.replace(path,"index.html"):href+".html")}}}</script>
         <!-- Default Statcounter code for Maribel Hearn's Web Portal
 		http://maribelhearn.com -->
-		<script type="text/javascript">
+		<script>
 		var sc_project=12065202;
 		var sc_invisible=1;
 		var sc_security="a3a19e1b";
 		</script>
-		<script type="text/javascript"
+		<script
 		src="https://www.statcounter.com/counter/counter.js"
 		async></script>
 		<noscript><div class="statcounter"><a title="Web Analytics"

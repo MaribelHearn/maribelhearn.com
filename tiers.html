@@ -15,24 +15,24 @@
 		<script src='assets/tiers/tiers.js' defer></script>
         <script src='assets/tiers/rgbcolor.js' defer></script>
         <script src='assets/shared/modernizr-custom.js' defer></script>
-        <script defer>document.documentElement.classList.remove("no-js");</script>
+        <script>document.documentElement.classList.remove("no-js");</script>
     </head>
 
-    <body onClick='closeModal(event)' onKeyPress='closeModal(event)' onResize='checkHeight()' onOrientationChange='updateOrientation()'>
+    <body onClick='closeModal(event)' onKeyPress='closeModal(event)' onResize='checkHeight()'>
         <div id='wrap'>
             <div id='init'>
     			<nav id='nav'>
-    				<a href='/'><img src='favicon.ico' class='ico-32' alt='Index icon'> Index</a>
-    				<a href='scoring'><img src='assets/scoring/spell.ico' class='ico-32' alt='Spell Card icon'> Scoring</a>
-    				<a href='survival'><img src='assets/survival/survival.ico' class='ico-32' alt='1up Item icon'> Survival</a>
+    				<a href='/'><img src='favicon.ico' alt='Index icon'> Index</a>
+    				<a href='scoring'><img src='assets/scoring/spell.ico' alt='Spell Card icon'> Scoring</a>
+    				<a href='survival'><img src='assets/survival/survival.ico' alt='1up Item icon'> Survival</a>
     				<a href='drc'><img src='assets/drc/power.ico' alt='Power icon'> DRC</a>
-    				<a href='tools'><img src='assets/tools/ufo.ico' class='ico-32' alt='UFO icon'> Tools</a>
+    				<a href='tools'><img src='assets/tools/ufo.ico' alt='UFO icon'> Tools</a>
     				<a href='wr'><img src='assets/wr/point.ico' alt='Point Item icon'> WR</a>
-    				<a href='lnn'><img src='assets/lnn/full.ico' class='ico-32' alt='Full Power icon'> LNN</a>
-    				<a href='thvote'><img src='assets/thvote/tou-32.ico' class='ico-32' alt='Tou kanji icon'> Poll</a>
+    				<a href='lnn'><img src='assets/lnn/full.ico' alt='Full Power icon'> LNN</a>
+    				<a href='thvote'><img src='assets/thvote/tou-32.ico' alt='Tou kanji icon'> Poll</a>
     				<a href='jargon'><img src='assets/jargon/bomb.ico' alt='Bomb icon'> Jargon</a>
     				<a href='trs'><img src='assets/trs/shinto.png' alt='Shinto shrine icon'> TRS</a>
-    				<strong><img src='assets/tiers/castle.png' alt='Japanese castle icon'> Tiers</a></strong>
+    				<strong><img src='assets/tiers/castle.png' alt='Japanese castle icon'> Tiers</strong>
     			</nav>
                 <h1 id='title'>Touhou Tier List Creator</h1>
                 <div id='sort_selection'>Currently tiering: <select id='sort' onChange='switchSort()'>
@@ -108,12 +108,12 @@
         <div id='characters' onDragOver='allowDrop(event)' onDrop='drop(event)'></div>
         <!-- Default Statcounter code for Maribel Hearn's Web Portal
         http://maribelhearn.com -->
-        <script type="text/javascript">
+        <script>
         var sc_project=12065202;
         var sc_invisible=1;
         var sc_security="a3a19e1b";
         </script>
-        <script type="text/javascript"
+        <script
         src="https://www.statcounter.com/counter/counter.js"
         async></script>
         <noscript><div class="statcounter"><a title="Web Analytics"

@@ -9,7 +9,7 @@
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='assets/c67/c67.ico'>
         <script src='assets/shared/modernizr-custom.js' defer></script>
-        <script defer>document.documentElement.classList.remove("no-js");head=document.getElementsByTagName("head")[0];done=false;
+        <script>document.documentElement.classList.remove("no-js");head=document.getElementsByTagName("head")[0];done=false;
 		function dark(){style=document.createElement("link");style.id="dark";style.href="assets/shared/dark-tables.css";
 		style.type="text/css";style.rel="stylesheet";head.append(style)}function ready(){if(done){return}done=true;
 		hy=document.getElementById("hy");if(localStorage.theme=="dark"){hy.src="assets/shared/y-bar.png";hy.title="Youkai Mode";dark()}}
@@ -25,7 +25,7 @@
             <p>This page covers the scoring system and mechanics of the Comiket 67 release of Seihou Banshiryuu.</p>
 			<p><a id='backtomain' href='/'>Back to Main Page</a></p>
             <picture>
-                <source srcset='assets/c67/boxart.webp'>
+                <source srcset='assets/c67/boxart.webp' type='image/webp'>
                 <source srcset='assets/c67/boxart.jpg'>
                 <img src='assets/c67/boxart.jpg' alt='Banshiryuu Cover'>
             </picture>
@@ -49,7 +49,7 @@
             <hr>
             <h2 id='items'>Items</h2>
             <picture>
-                <source srcset='assets/c67/item_rank.webp'>
+                <source srcset='assets/c67/item_rank.webp' type='image/webp'>
                 <source srcset='assets/c67/item_rank.jpg'>
                 <img src='assets/c67/item_rank.jpg' alt='Items'>
             </picture>
@@ -62,7 +62,7 @@
             <hr>
             <h2 id='grazing'>Grazing</h2>
             <picture>
-                <source srcset='assets/c67/grazing.webp'>
+                <source srcset='assets/c67/grazing.webp' type='image/webp'>
                 <source srcset='assets/c67/grazing.png'>
                 <img id='graze' src='assets/c67/grazing.png' alt='Grazing'>
             </picture>
@@ -77,7 +77,7 @@
             <hr>
             <h2 id='se'>Special Equipment (SE)</h2>
             <picture>
-                <source srcset='assets/c67/normal_se.webp'>
+                <source srcset='assets/c67/normal_se.webp' type='image/webp'>
                 <source srcset='assets/c67/normal_se.jpg'>
                 <img src='assets/c67/normal_se.jpg' alt='SE-attack'>
             </picture>
@@ -87,10 +87,11 @@
             is multiplied by 100 and added to your score. The damage dealt to the boss during an SE is displayed
             on the right of the screen, below your current score.</p>
             <picture>
-                <source srcset='assets/c67/se.webp'>
+                <source srcset='assets/c67/se.webp' type='image/webp'>
                 <source srcset='assets/c67/se.jpg'>
-                <img src='assets/c67/se.jpg' alt='Damage dealt to SE'><br>
+                <img src='assets/c67/se.jpg' alt='Damage dealt to SE'>
             </picture>
+            <br>
             <em class='description'>The bottom number is the current damage dealt to the boss during an SE.</em>
             <p>There are several different kinds of SE attacks. Every boss has an opening SE, which will always be used
             at the start of a boss battle. Bosses also have at least one SE that is always used when the boss reaches
@@ -100,10 +101,11 @@
             their regular pattern finishes. This is the most notable in the battle against VIVIT when using
             Hirano, due to VIVIT's low health.</p>
             <picture>
-                <source srcset='assets/c67/final_se.webp'>
+                <source srcset='assets/c67/final_se.webp' type='image/webp'>
                 <source srcset='assets/c67/final_se.jpg'>
-                <img src='assets/c67/final_se.jpg' alt='Final SE-attack'><br>
+                <img src='assets/c67/final_se.jpg' alt='Final SE-attack'>
             </picture>
+            <br>
             <em class='description'>The stage 1 midboss' final (and in this case, only) SE begins.</em>
             <p>Every boss also has a single <em>final SE</em>, which cannot be skipped and is used once their health bar
             is empty. Their health bar will be refilled with a red color when the final SE begins. If this health
@@ -150,10 +152,11 @@
                 </tr>
             </table>
             <picture>
-                <source srcset='assets/c67/yuitia.webp'>
+                <source srcset='assets/c67/yuitia.webp' type='image/webp'>
                 <source srcset='assets/c67/yuitia.png'>
-                <img src='assets/c67/yuitia.png' alt='Yuitia (final boss)'><br>
+                <img src='assets/c67/yuitia.png' alt='Yuitia (final boss)'>
             </picture>
+            <br>
             <em class='description'>Yuitia, the stage 6 (final) boss of the game.</em>
             <p>The final boss, Yuitia, has some unique properties; she does not drop any item once she explodes and cannot
             be damaged by bombs, which makes bombing them <em>bad</em> for scoring rather than good.
@@ -170,7 +173,7 @@
             <p>Note that for every shottype, the regular shot can only hit enemies in front of you, and the focused shot automatically aims at enemies.</p>
             <h3 id='vivitw'>VIVIT-W</h3>
             <picture>
-                <source srcset='assets/c67/vivitw.webp'>
+                <source srcset='assets/c67/vivitw.webp' type='image/webp'>
                 <source srcset='assets/c67/vivitw.png'>
                 <img src='assets/c67/vivitw.png' alt='VIVIT-W Shottype Info'>
             </picture>
@@ -189,7 +192,7 @@
             of the game. Her bomb duration can also help her last out through patterns, having far more I-frames than other bombs.</p>
             <h3 id='vivita'>VIVIT-A</h3>
             <picture>
-                <source srcset='assets/c67/vivita.webp'>
+                <source srcset='assets/c67/vivita.webp' type='image/webp'>
                 <source srcset='assets/c67/vivita.png'>
                 <img src='assets/c67/vivita.png' alt='VIVIT-A Shottype Info'>
             </picture>
@@ -207,7 +210,7 @@
             want to deal damage to. Avoid focusing as much as possible and limit it to when it is needed for survival.</p>
             <h3 id='hiranos'>HiranoS</h3>
             <picture>
-                <source srcset='assets/c67/hiranos.webp'>
+                <source srcset='assets/c67/hiranos.webp' type='image/webp'>
                 <source srcset='assets/c67/hiranos.png'>
                 <img src='assets/c67/hiranos.png' alt='HiranoS Shottype Info'>
             </picture>
@@ -225,7 +228,7 @@
             damage and achieve very high scores; her amazing damage combined with her speed is what makes her the best shottype to use overall.</p>
             <h3 id='hiranoo'>HiranoO</h3>
             <picture>
-                <source srcset='assets/c67/hiranoo.webp'>
+                <source srcset='assets/c67/hiranoo.webp' type='image/webp'>
                 <source srcset='assets/c67/hiranoo.png'>
                 <img src='assets/c67/hiranoo.png' alt='HiranoO Shottype Info'>
             </picture>
@@ -286,21 +289,15 @@
             </table>
             <p>* Much higher than any other bomb in practice (if used on top of an enemy or boss)</p>
         </div>
-        <script>
-        var path = location.pathname.split('/').pop();
-
-    	if (location.protocol == "file:") {
-            document.getElementById("backtomain").setAttribute("href", location.href.replace(path, "index.html"));
-        }
-        </script>
+        <script>var path=location.pathname.split('/').pop();if(location.protocol=="file:"){document.getElementById("backtomain").setAttribute("href",location.href.replace(path,"index.html"));}</script>
         <!-- Default Statcounter code for Maribel Hearn's Web Portal
         http://maribelhearn.com -->
-        <script type="text/javascript">
+        <script>
         var sc_project=12065202;
         var sc_invisible=1;
         var sc_security="a3a19e1b";
         </script>
-        <script type="text/javascript"
+        <script
         src="https://www.statcounter.com/counter/counter.js"
         async></script>
         <noscript><div class="statcounter"><a title="Web Analytics"
