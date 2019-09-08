@@ -18,7 +18,7 @@
         <script defer>document.documentElement.classList.remove("no-js");</script>
 	</head>
 
-	<body>
+	<body onResize='updateOrientation()'>
 		<div id='nav' class='wrap'>
 			<nav>
 				<a href='/'><img src='favicon.ico' alt='Index icon'> Index</a>
@@ -37,8 +37,8 @@
         <div id='wrap' class='wrap'>
 			<table id='top' class='center noborders'>
 				<tr class='noborders'>
-					<td class='noborders' style='width:22%'></td>
-					<td class='noborders' style='width:55%'> <table id='languages' class='noborders'>
+					<td id='emptytd' class='noborders' style='width:22%'></td>
+					<td id='languagestd' class='noborders' style='width:55%'> <table id='languages' class='noborders'>
 		                <tbody>
 		                    <tr class='noborders'>
 		                        <td class='noborders'>
@@ -67,7 +67,6 @@
 			</table>
 			<h1>Touhou World Records</h1>
             <noscript><strong>Notice:</strong> this page cannot function properly with JavaScript disabled.</noscript>
-            <p id='notice' style='display:none'><strong>Notice:</strong> this page is best viewed on mobile using landscape mode.</p>
             <p id='description'>An accurate list of Touhou world records, updated every so often. Note that the player ranking at the bottom does not take into account
 			how strong specific records are, only numbers. The list does not include scene games as of now.</p>
             <p id='clicktodl'>Click a score to download the corresponding replay, if there is one available. All of the table columns are sortable.</p>
@@ -257,6 +256,136 @@
 						<td id='WBaWCoverall3'></td>
 						<td id='WBaWCoverall4'></td>
 					</tr>
+                </table>
+            </div>
+            <div id='overallm'>
+                <h2 class='overallrecords'>Overall Records</h2>
+                    <p class='HRtP count'>HRtP</p><p>
+                        <span id='HRtPoverall0m'></span>
+                        <span id='HRtPoverall2m'></span>
+                        <span id='HRtPoverall3m'></span> by
+                        <span id='HRtPoverall1m'></span>
+                        <span id='HRtPoverall4m'></span>
+                    </p>
+					<p class='SoEW count'>SoEW</p><p>
+                        <span id='SoEWoverall0m'></span>
+                        <span id='SoEWoverall2m'></span>
+                        <span id='SoEWoverall3m'></span> by
+                        <span id='SoEWoverall1m'></span>
+                        <span id='SoEWoverall4m'></span>
+                    </p>
+                    <p class='PoDD count'>PoDD</p><p>
+                        <span id='PoDDoverall0m'></span>
+                        <span id='PoDDoverall2m'></span>
+                        <span id='PoDDoverall3m'></span> by
+                        <span id='PoDDoverall1m'></span>
+                        <span id='PoDDoverall4m'></span>
+                    </p>
+                    <p class='LLS count'>LLS</p><p>
+                        <span id='LLSoverall0m'></span>
+                        <span id='LLSoverall2m'></span>
+                        <span id='LLSoverall3m'></span> by
+                        <span id='LLSoverall1m'></span>
+                        <span id='LLSoverall4m'></span>
+                    </p>
+                    <p class='MS count'>MS</p><p>
+                        <span id='MSoverall0m'></span>
+                        <span id='MSoverall2m'></span>
+                        <span id='MSoverall3m'></span> by
+                        <span id='MSoverall1m'></span>
+                        <span id='MSoverall4m'></span>
+                    </p>
+                    <p class='EoSD count'>EoSD</p><p>
+                        <span id='EoSDoverall0m'></span>
+                        <span id='EoSDoverall2m'></span>
+                        <span id='EoSDoverall3m'></span> by
+                        <span id='EoSDoverall1m'></span>
+                        <span id='EoSDoverall4m'></span>
+                    </p>
+                    <p class='PCB count'>PCB</p><p>
+                        <span id='PCBoverall0m'></span>
+                        <span id='PCBoverall2m'></span>
+                        <span id='PCBoverall3m'></span> by
+                        <span id='PCBoverall1m'></span>
+                        <span id='PCBoverall4m'></span>
+                    </p>
+                    <p class='IN count'>IN</p><p>
+                        <span id='INoverall0m'></span>
+                        <span id='INoverall2m'></span>
+                        <span id='INoverall3m'></span> by
+                        <span id='INoverall1m'></span>
+                        <span id='INoverall4m'></span>
+                    </p>
+                    <p class='PoFV count'>PoFV</p><p>
+                        <span id='PoFVoverall0m'></span>
+                        <span id='PoFVoverall2m'></span>
+                        <span id='PoFVoverall3m'></span> by
+                        <span id='PoFVoverall1m'></span>
+                        <span id='PoFVoverall4m'></span>
+                    </p>
+                    <p class='MoF count'>MoF</p><p>
+                        <span id='MoFoverall0m'></span>
+                        <span id='MoFoverall2m'></span>
+                        <span id='MoFoverall3m'></span> by
+                        <span id='MoFoverall1m'></span>
+                        <span id='MoFoverall4m'></span>
+                    </p>
+                    <p class='SA count'>SA</p><p>
+                        <span id='SAoverall0m'></span>
+                        <span id='SAoverall2m'></span>
+                        <span id='SAoverall3m'></span> by
+                        <span id='SAoverall1m'></span>
+                        <span id='SAoverall4m'></span>
+                    </p>
+                    <p class='UFO count'>UFO</p><p>
+                        <span id='UFOoverall0m'></span>
+                        <span id='UFOoverall2m'></span>
+                        <span id='UFOoverall3m'></span> by
+                        <span id='UFOoverall1m'></span>
+                        <span id='UFOoverall4m'></span>
+                    </p>
+                    <p class='GFW count'>GFW</p><p>
+                        <span id='GFWoverall0m'></span>
+                        <span id='GFWoverall2m'></span>
+                        <span id='GFWoverall3m'></span> by
+                        <span id='GFWoverall1m'></span>
+                        <span id='GFWoverall4m'></span>
+                    </p>
+                    <p class='TD count'>TD</p><p>
+                        <span id='TDoverall0m'></span>
+                        <span id='TDoverall2m'></span>
+                        <span id='TDoverall3m'></span> by
+                        <span id='TDoverall1m'></span>
+                        <span id='TDoverall4m'></span>
+                    </p>
+                    <p class='DDC count'>DDC</p><p>
+                        <span id='DDCoverall0m'></span>
+                        <span id='DDCoverall2m'></span>
+                        <span id='DDCoverall3m'></span> by
+                        <span id='DDCoverall1m'></span>
+                        <span id='DDCoverall4m'></span>
+                    </p>
+                    <p class='LoLK count'>LoLK</p><p>
+                        <span id='LoLKoverall0m'></span>
+                        <span id='LoLKoverall2m'></span>
+                        <span id='LoLKoverall3m'></span> by
+                        <span id='LoLKoverall1m'></span>
+                        <span id='LoLKoverall4m'></span>
+                    </p>
+                    <p class='HSiFS count'>HSiFS</p><p>
+                        <span id='HSiFSoverall0m'></span>
+                        <span id='HSiFSoverall2m'></span>
+                        <span id='HSiFSoverall3m'></span> by
+                        <span id='HSiFSoverall1m'></span>
+                        <span id='HSiFSoverall4m'></span>
+                    </p>
+					<p class='WBaWC count'>WBaWC</p><p>
+						<span id='WBaWCoverall0m'></span>
+						<span id='WBaWCoverall2m'></span>
+						<span id='WBaWCoverall3m'></span> by
+						<span id='WBaWCoverall1m'></span>
+						<span id='WBaWCoverall4m'></span>
+					</p>
                 </table>
             </div>
             <h2 class='worldrecords'>World Records</h2>
