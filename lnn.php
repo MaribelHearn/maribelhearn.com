@@ -3,6 +3,11 @@
 <?php
     $json = file_get_contents('json/lnnlist.json');
     $lnn = json_decode($json, true);
+    $lang = $_COOKIE['lang'];
+    $pl = array();
+    $pl_lnn = array();
+    $flag = array();
+    $gt = 0;
     function num($game) {
         switch ($game) {
             case 'SoEW': return '2';
@@ -24,10 +29,20 @@
             default: return '1';
         }
     }
-    $gt = 0;
-    $pl = array();
-    $pl_lnn = array();
-    $flag = array();
+    function date_tl($date) {
+        $tmp = preg_split('/\//', $date);
+        $day = $tmp[0];
+        $month = $tmp[1];
+        $year = $tmp[2];
+        return $year . '年' . $month . '月' . $day . '日';
+    }
+    function format_lm($lm, $lang) {
+        switch ($lang) {
+            case '"Japanese"': return '<span id="lm">' . date_tl($lm) . '</span>現在のLNN記録です。';
+            case '"Chinese"': return 'LNN更新于<span id="lm">' . date_tl($lm) . '</span>。';
+            default: return 'LNNs are current as of <span id="lm">' . $lm . '</span>.';
+        }
+    }
     foreach ($lnn as $game => $data1) {
         if (num($game) < 6 || $game == 'LM') {
             continue;
@@ -126,7 +141,7 @@
             The extra condition in UFO, no UFO summons, is optional, as it is not considered to have a significant impact on the difficulty of the run.
             As for IN, an LNN is assumed to capture all Last Spells and is referred to as LNNFS.</p>
             <p id='tables'>All of the table columns are sortable.</p>
-            <p id='lastupdate'>LNNs are current as of <?php echo $lnn["LM"] ?>.</p>
+            <p id='lastupdate'><?php echo format_lm($lnn['LM'], $lang) ?></p>
             <h2 id='contents_header'>Contents</h2>
             <table id='contents'>
                 <tr><td><a href='#lnns' class='lnns'>LNN Lists</a></td></tr>
@@ -137,74 +152,21 @@
 			<h2 id='lnns' class='lnns'>LNN Lists</h2>
 			<p id='clickgame'>Click a game cover to show its list of LNNs.</p>
 			<?php
-                function shotRoute($game) {
-                    return $game == "HRtP" || $game == "GFW" ? "Route" : "Shottype";
-                }
-			    function restrictions($game) {
-                    switch ($game) {
-                        case 'PCB': return 'n';
-                        case 'IN': return 'fs';
-                        case 'UFO': return 'u';
-                        case 'TD': return 'n';
-                        case 'HSiFS': return 'n';
-                        case 'WBaWC': return 'nn';
-                        default: return '';
-                    }
-                }
 			    foreach ($lnn as $game => $value) {
 			        if ($game == 'LM') {
 			            continue;
 		            }
 			        echo '<img id="' . $game . 'i" src="games/' . strtolower($game) . '50x50.jpg" alt="' . $game . ' cover" onClick="show(this.id.slice(0, -1))">';
 			    }
-			    foreach ($lnn as $game => $value) {
-			        if ($game == 'LM') {
-			            continue;
-		            }
-		            $game_pl = array();
-		            $gamecount = 0;
-			        echo '<div id="' . $game . '"><p id="' . $game . 'f"></p><table class="sortable">';
-			        echo '<thead id="' . $game . 'head"><tr><th class="' . strtolower(shotRoute($game)) . '">' . shotRoute($game) . '</th>';
-			        echo '<th class="sorttable_numeric"><span id="numeric" class="nooflnn' . (restrictions($game) ? restrictions($game) : "") . 's">No. of LNNs</span><br><span class="different">(Different players)</span></th>';
-			        echo '<th class="players">Players</th></tr></thead><tbody id="' . $game . 'body">';
-			        foreach ($lnn[$game] as $shottype => $value) {
-			            if ($game != 'IN' && $game != 'UFO' && $game != 'HSiFS' || ($game == 'IN' && strpos($shottype, 'FinalA')) || ($game == 'UFO' && !strpos($shottype, 'UFOs')) || ($game == 'HSiFS' && strpos($shottype, 'Spring'))) {
-                            $shotplayers = array();
-                            $shotplayersIN = array();
-                            $shotcount = 0;
-			                $char = str_replace(array('Spring', 'Summer', 'Autumn', 'Winter', 'FinalA', 'FinalB', 'UFOs'), '', $shottype);
-			                echo '<tr><td class="' . $char . '">' . $char . '</td>';
-                        }
-                        if ($game == 'IN' || $game == 'UFO' || $game == 'HSiFS') {
-                            $type = str_replace($char, '', $shottype);
-                            $typeString = ($type !== '' ? ' (<span class="' . $type . '">' . $type . '</span>)' : '');
-                        }
-                        foreach ($lnn[$game][$shottype] as $key => $player) {
-                            $tmp = $player . ($game == 'IN' || $game == 'UFO' || $game == 'HSiFS' ? $typeString : '');
-                            array_push($shotplayers, $tmp);
-                            array_push($shotplayersIN, $player);
-                            array_push($game_pl, $player);
-                            $shotcount += 1;
-                            $gamecount += 1;
-                        }
-                        $shotplayersIN = array_unique($shotplayersIN);
-                        if (!($game == 'IN' && $type != 'FinalB') && !($game == 'UFO' && $type != 'UFOs') && !($game == 'HSiFS' && $type != 'Winter')) {
-                            asort($shotplayers);
-                            echo '<td id="' . $char . 'n">' . ($shotcount . ($game == 'IN' ? ' (' . sizeof($shotplayersIN) . ')' : '')) . '</td><td id="' . $char . '">';
-                            if ($shotcount === 0) {
-                                echo '-';
-                                continue;
-                            }
-                            echo implode(', ', $shotplayers);
-                            echo '</td></tr>';
-                        }
-			        }
-			        echo '</tbody><tfoot id="' . $game . 'foot"><tr><td colspan="3"></td></tr>';
-			        echo '<tr><td class="count"><span class="overall">Overall</span></td><td id="count" class="count">' . sizeof($game_pl) . ' (' . sizeof(array_unique($game_pl)) . ')</td>';
-			        echo '<td id="total">' . implode(', ', $game_pl) . '</td></tr></tfoot>';
-			        echo '</table></div>';
-			    }
 			?>
+            <div id='list'>
+				<p id='fullname'></p>
+				<table class='sortable'>
+					<thead id='listhead'></thead>
+                    <tbody id='listbody'></tbody>
+                    <tfoot id='listfoot'></tfoot>
+				</table>
+			</div>
 			<p id='playerlnns'>Choose a player name from the menu below to show their LNNs.</p>
 			<label for='player' class='player'>Player</label>
 			<select id='player' onChange='getPlayerLNNs(this.value)'>
@@ -230,8 +192,8 @@
                         <tr>
                             <th>#</th>
                             <th class='game'>Game</th>
-                            <th class='sorttable_numeric'><span class='nooflnns'>No. of LNNs</span></th>
-                            <th class='sorttable_numeric'><span class='differentn'>Different players</span></th>
+                            <th id='autosort1' class='sorttable_numeric'><span class='nooflnns'>No. of LNNs</span></th>
+                            <th id='autosort2' class='sorttable_numeric'><span class='differentn'>Different players</span></th>
                         </tr>
                     </thead>
                     <tbody>
