@@ -156,7 +156,7 @@
 			        if ($game == 'LM') {
 			            continue;
 		            }
-			        echo '<img id="' . $game . 'i" src="games/' . strtolower($game) . '50x50.jpg" alt="' . $game . ' cover" onClick="show(this.id.slice(0, -1))">';
+			        echo '<img id="' . $game . '" src="games/' . strtolower($game) . '50x50.jpg" alt="' . $game . ' cover" onClick="show(this.id)">';
 			    }
 			?>
             <div id='list'>
