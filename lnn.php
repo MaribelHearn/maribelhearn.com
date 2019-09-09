@@ -1,5 +1,59 @@
 <!DOCTYPE html>
 <html lang='en' class='no-js'>
+<?php
+    $json = file_get_contents('json/lnnlist.json');
+    $lnn = json_decode($json, true);
+    function num($game) {
+        switch ($game) {
+            case 'SoEW': return '2';
+            case 'PoDD': return '3';
+            case 'LLS': return '4';
+            case 'MS': return '5';
+            case 'EoSD': return '6';
+            case 'PCB': return '7';
+            case 'IN': return '8';
+            case 'MoF': return '10';
+            case 'SA': return '11';
+            case 'UFO': return '12';
+            case 'GFW': return '12.8';
+            case 'TD': return '13';
+            case 'DDC': return '14';
+            case 'LoLK': return '15';
+            case 'HSiFS': return '16';
+            case 'WBaWC': return '17';
+            default: return '1';
+        }
+    }
+    $gt = 0;
+    $pl = array();
+    $pl_lnn = array();
+    $flag = array();
+    foreach ($lnn as $game => $data1) {
+        if (num($game) < 6 || $game == 'LM') {
+            continue;
+        }
+        $sum = 0;
+        $flag = array_fill(0, sizeof($flag), true);
+        foreach ($lnn[$game] as $shottype => $data2) {
+            $sum += sizeof($lnn[$game][$shottype]);
+            foreach ($lnn[$game][$shottype] as $player => $data3) {
+                if (!in_array($data3, $pl)) {
+                    array_push($pl, $data3);
+                    array_push($pl_lnn, array($data3, 1, 1));
+                    array_push($flag, false);
+                } else {
+                    $key = array_search($data3, $pl);
+                    $pl_lnn[$key][1] += 1;
+                    if ($flag[$key]) {
+                        $pl_lnn[$key][2] += 1;
+                        $flag[$key] = false;
+                    }
+                }
+            }
+        }
+        $gt += $sum;
+    }
+?>
 
 	<head>
 		<title>Touhou Lunatic No Miss No Bombs</title>
@@ -72,7 +126,7 @@
             The extra condition in UFO, no UFO summons, is optional, as it is not considered to have a significant impact on the difficulty of the run.
             As for IN, an LNN is assumed to capture all Last Spells and is referred to as LNNFS.</p>
             <p id='tables'>All of the table columns are sortable.</p>
-            <p id='lastupdate'>LNNs are current as of an unknown date.</p>
+            <p id='lastupdate'>LNNs are current as of <?php echo $lnn["LM"] ?>.</p>
             <h2 id='contents_header'>Contents</h2>
             <table id='contents'>
                 <tr><td><a href='#lnns' class='lnns'>LNN Lists</a></td></tr>
@@ -82,36 +136,89 @@
             </table>
 			<h2 id='lnns' class='lnns'>LNN Lists</h2>
 			<p id='clickgame'>Click a game cover to show its list of LNNs.</p>
-            <img id='SoEW' src='games/soew50x50.jpg' class='cover98' alt='SoEW cover' onClick='show(this.id)'>
-			<img id='PoDD' src='games/podd50x50.jpg' class='cover98' alt='PoDD cover' onClick='show(this.id)'>
-			<img id='LLS' src='games/lls50x50.jpg' class='cover98' alt='LLS cover' onClick='show(this.id)'>
-			<img id='MS' src='games/ms50x50.jpg' class='cover98' alt='MS cover' onClick='show(this.id)'>
-			<img id='EoSD' src='games/eosd50x50.jpg' alt='EoSD cover' onClick='show(this.id)'>
-			<img id='PCB' src='games/pcb50x50.jpg' alt='PCB cover' onClick='show(this.id)'>
-			<img id='IN' src='games/in50x50.jpg' alt='IN cover' onClick='show(this.id)'>
-			<img id='MoF' src='games/mof50x50.jpg' alt='MoF cover' onClick='show(this.id)'>
-			<img id='SA' src='games/sa50x50.jpg' alt='SA cover' onClick='show(this.id)'>
-			<img id='UFO' src='games/ufo50x50.jpg' alt='UFO cover' onClick='show(this.id)'>
-			<img id='GFW' src='games/gfw50x50.jpg' alt='GFW cover' onClick='show(this.id)'>
-			<img id='TD' src='games/td50x50.jpg' alt='TD cover' onClick='show(this.id)'>
-			<img id='DDC' src='games/ddc50x50.jpg' alt='DDC cover' onClick='show(this.id)'>
-			<img id='LoLK' src='games/lolk50x50.jpg' alt='LoLK cover' onClick='show(this.id)'>
-			<img id='HSiFS' src='games/hsifs50x50.jpg' alt='HSiFS cover' onClick='show(this.id)'>
-			<img id='WBaWC' src='games/wbawc50x50.jpg' alt='WBaWC cover' onClick='show(this.id)'>
-			<div id='list'>
-				<p id='fullname'></p>
-				<table class='sortable'>
-					<thead id='listhead'></thead>
-                    <tbody id='listbody'></tbody>
-                    <tfoot id='listfoot'></tfoot>
-				</table>
-			</div>
+			<?php
+                function shotRoute($game) {
+                    return $game == "HRtP" || $game == "GFW" ? "Route" : "Shottype";
+                }
+			    function restrictions($game) {
+                    switch ($game) {
+                        case 'PCB': return 'n';
+                        case 'IN': return 'fs';
+                        case 'UFO': return 'u';
+                        case 'TD': return 'n';
+                        case 'HSiFS': return 'n';
+                        case 'WBaWC': return 'nn';
+                        default: return '';
+                    }
+                }
+			    foreach ($lnn as $game => $value) {
+			        if ($game == 'LM') {
+			            continue;
+		            }
+			        echo '<img id="' . $game . 'i" src="games/' . strtolower($game) . '50x50.jpg" alt="' . $game . ' cover" onClick="show(this.id.slice(0, -1))">';
+			    }
+			    foreach ($lnn as $game => $value) {
+			        if ($game == 'LM') {
+			            continue;
+		            }
+		            $game_pl = array();
+		            $gamecount = 0;
+			        echo '<div id="' . $game . '"><p id="' . $game . 'f"></p><table class="sortable">';
+			        echo '<thead id="' . $game . 'head"><tr><th class="' . strtolower(shotRoute($game)) . '">' . shotRoute($game) . '</th>';
+			        echo '<th class="sorttable_numeric"><span id="numeric" class="nooflnn' . (restrictions($game) ? restrictions($game) : "") . 's">No. of LNNs</span><br><span class="different">(Different players)</span></th>';
+			        echo '<th class="players">Players</th></tr></thead><tbody id="' . $game . 'body">';
+			        foreach ($lnn[$game] as $shottype => $value) {
+			            if ($game != 'IN' && $game != 'UFO' && $game != 'HSiFS' || ($game == 'IN' && strpos($shottype, 'FinalA')) || ($game == 'UFO' && !strpos($shottype, 'UFOs')) || ($game == 'HSiFS' && strpos($shottype, 'Spring'))) {
+                            $shotplayers = array();
+                            $shotplayersIN = array();
+                            $shotcount = 0;
+			                $char = str_replace(array('Spring', 'Summer', 'Autumn', 'Winter', 'FinalA', 'FinalB', 'UFOs'), '', $shottype);
+			                echo '<tr><td class="' . $char . '">' . $char . '</td>';
+                        }
+                        if ($game == 'IN' || $game == 'UFO' || $game == 'HSiFS') {
+                            $type = str_replace($char, '', $shottype);
+                            $typeString = ($type !== '' ? ' (<span class="' . $type . '">' . $type . '</span>)' : '');
+                        }
+                        foreach ($lnn[$game][$shottype] as $key => $player) {
+                            $tmp = $player . ($game == 'IN' || $game == 'UFO' || $game == 'HSiFS' ? $typeString : '');
+                            array_push($shotplayers, $tmp);
+                            array_push($shotplayersIN, $player);
+                            array_push($game_pl, $player);
+                            $shotcount += 1;
+                            $gamecount += 1;
+                        }
+                        $shotplayersIN = array_unique($shotplayersIN);
+                        if (!($game == 'IN' && $type != 'FinalB') && !($game == 'UFO' && $type != 'UFOs') && !($game == 'HSiFS' && $type != 'Winter')) {
+                            asort($shotplayers);
+                            echo '<td id="' . $char . 'n">' . ($shotcount . ($game == 'IN' ? ' (' . sizeof($shotplayersIN) . ')' : '')) . '</td><td id="' . $char . '">';
+                            if ($shotcount === 0) {
+                                echo '-';
+                                continue;
+                            }
+                            echo implode(', ', $shotplayers);
+                            echo '</td></tr>';
+                        }
+			        }
+			        echo '</tbody><tfoot id="' . $game . 'foot"><tr><td colspan="3"></td></tr>';
+			        echo '<tr><td class="count"><span class="overall">Overall</span></td><td id="count" class="count">' . sizeof($game_pl) . ' (' . sizeof(array_unique($game_pl)) . ')</td>';
+			        echo '<td id="total">' . implode(', ', $game_pl) . '</td></tr></tfoot>';
+			        echo '</table></div>';
+			    }
+			?>
 			<p id='playerlnns'>Choose a player name from the menu below to show their LNNs.</p>
 			<label for='player' class='player'>Player</label>
-			<select id='player' onChange='getPlayerLNNs(this.value)'><option>...</option></select>
+			<select id='player' onChange='getPlayerLNNs(this.value)'>
+			    <option>...</option>
+			    <?php
+			        asort($pl);
+			        foreach ($pl as $key => $player) {
+			            echo '<option>' . $player . '</option>';
+			        }
+			    ?>
+		    </select>
 			<div id='playerlist'>
 				<table>
-					<thead id='playerlisthead'></thead>
+					<thead id='playerlisthead'><tr><th class='game'>Game</th><th class='shottype'>Shottype</th></tr></thead>
 					<tbody id='playerlistbody'></tbody>
 					<tfoot id='playerlistfoot'></tfoot>
 				</table>
@@ -128,85 +235,32 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>6</td>
-                            <td class='EoSD'>EoSD</td>
-                            <td id='EoSDon'></td>
-                            <td id='EoSDo'></td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td class='PCB'>PCB</td>
-                            <td id='PCBon'></td>
-                            <td id='PCBo'></td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td class='IN'>IN</td>
-                            <td id='INon'></td>
-                            <td id='INo'></td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td class='MoF'>MoF</td>
-                            <td id='MoFon'></td>
-                            <td id='MoFo'></td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td class='SA'>SA</td>
-                            <td id='SAon'></td>
-                            <td id='SAo'></td>
-                        </tr>
-                        <tr>
-                            <td>12</td>
-                            <td class='UFO'>UFO</td>
-                            <td id='UFOon'></td>
-                            <td id='UFOo'></td>
-                        </tr>
-                        <tr>
-                            <td>12.8</td>
-                            <td class='GFW'>GFW</td>
-                            <td id='GFWon'></td>
-                            <td id='GFWo'></td>
-                        </tr>
-                        <tr>
-                            <td>13</td>
-                            <td class='TD'>TD</td>
-                            <td id='TDon'></td>
-                            <td id='TDo'></td>
-                        </tr>
-                        <tr>
-                            <td>14</td>
-                            <td class='DDC'>DDC</td>
-                            <td id='DDCon'></td>
-                            <td id='DDCo'></td>
-                        </tr>
-                        <tr>
-                            <td>15</td>
-                            <td class='LoLK'>LoLK</td>
-                            <td id='LoLKon'></td>
-                            <td id='LoLKo'></td>
-                        </tr>
-                        <tr>
-                            <td>16</td>
-                            <td class='HSiFS'>HSiFS</td>
-                            <td id='HSiFSon'></td>
-                            <td id='HSiFSo'></td>
-                        </tr>
-                        <tr>
-                            <td>17</td>
-                            <td class='WBaWC'>WBaWC</td>
-                            <td id='WBaWCon'></td>
-                            <td id='WBaWCo'></td>
-                        </tr>
+                        <?php
+                            foreach ($lnn as $game => $data1) {
+                                if (num($game) < 6 || $game == 'LM') {
+                                    continue;
+                                }
+                                echo '<tr><td>' . num($game) . '</td><td class="' . $game . '">' . $game . '</td>';
+                                $sum = 0;
+                                $game_pl = array();
+                                foreach ($lnn[$game] as $shottype => $data2) {
+                                    $sum += sizeof($lnn[$game][$shottype]);
+                                    foreach ($lnn[$game][$shottype] as $player => $data3) {
+                                        if (!in_array($data3, $game_pl)) {
+                                            array_push($game_pl, $data3);
+                                        }
+                                    }
+                                }
+                                echo '<td>' . $sum . '</td><td>' . sizeof($game_pl) . '</td></tr>';
+                            }
+                        ?>
                     </tbody>
                     <tfoot>
                         <tr><td colspan='4'></td></tr>
                         <tr>
                             <td colspan='2' class='count'><span class='overall'>Overall</span></td>
-                            <td id='on' class='count'></td>
-                            <td id='o' class='count'></td>
+                            <td class='count'><?php echo $gt ?></td>
+                            <td class='count'><?php echo sizeof($pl_lnn) ?></td>
                         </tr>
                     </tfoot>
                 </table>
@@ -221,7 +275,13 @@
                             <th id='autosort2' class='sorttable_numeric'><span class='games'>Games LNNed</span></th>
                         </tr>
                     </thead>
-                    <tbody id='ranking_tbody'>
+                    <tbody>
+                        <?php
+                            foreach ($pl as $key => $player) {
+                                $game_lnns = $pl_lnn[$key][2] == 12 ? $pl_lnn[$key][2] . ' (All)' : $pl_lnn[$key][2];
+                                echo '<tr><td>' . $player . '</td><td>' . $pl_lnn[$key][1] . '</td><td>' . $game_lnns . '</td></tr>';
+                            }
+                        ?>
                     </tbody>
                 </table>
             </div>
