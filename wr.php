@@ -142,13 +142,13 @@
 				}
 				if (!in_array($array[1], $pl)) {
                     array_push($pl, $array[1]);
-                    array_push($pl_wr, array(1, 1));
+                    array_push($pl_wr, array($array[1], 1, 1));
                     array_push($flag, false);
                 } else {
                     $key = array_search($array[1], $pl);
-                    $pl_wr[$key][0] += 1;
+                    $pl_wr[$key][1] += 1;
                     if ($flag[$key]) {
-                        $pl_wr[$key][1] += 1;
+                        $pl_wr[$key][2] += 1;
                         $flag[$key] = false;
                     }
                 }
@@ -318,13 +318,20 @@
                     </thead>
                     <tbody>
 						<?php
-        			        asort($pl);
-							foreach ($pl as $key => $player) {
-								if ($player === '') {
+                            uasort($pl_wr, function($a, $b) {
+                                $val = $b[1] <=> $a[1];
+                                if ($val == 0) {
+                                    $val = $b[2] <=> $a[2];
+                                }
+                                return $val;
+                            });
+							foreach ($pl_wr as $key => $value) {
+								if ($pl[$key] === '') {
 									continue;
 								}
-								echo '<tr id="' . $player . '"><td>' . $player . '</td>';
-								echo '<td id="' . $player . 'n">' . $pl_wr[$key][0] . '</td><td id="' . $player . 'g">' . $pl_wr[$key][1] . '</td></tr>';
+								echo '<tr id="' . $pl_wr[$key][0] . '"><td>' . $pl_wr[$key][0] . '</td>';
+								echo '<td id="' . $pl_wr[$key][0] . 'n">' . $pl_wr[$key][1] . '</td>';
+                                echo '<td id="' . $pl_wr[$key][0] . 'g">' . $pl_wr[$key][2] . '</td></tr>';
 							}
 						?>
 					</tbody>

@@ -239,9 +239,16 @@
                     </thead>
                     <tbody>
                         <?php
-                            foreach ($pl as $key => $player) {
+                            uasort($pl_lnn, function($a, $b) {
+                                $val = $b[1] <=> $a[1];
+                                if ($val == 0) {
+                                    $val = $b[2] <=> $a[2];
+                                }
+                                return $val;
+                            });
+                            foreach ($pl_lnn as $key => $value) {
                                 $game_lnns = $pl_lnn[$key][2] == 12 ? $pl_lnn[$key][2] . ' (All)' : $pl_lnn[$key][2];
-                                echo '<tr><td>' . $player . '</td><td>' . $pl_lnn[$key][1] . '</td><td>' . $game_lnns . '</td></tr>';
+                                echo '<tr><td>' . $pl_lnn[$key][0] . '</td><td>' . $pl_lnn[$key][1] . '</td><td>' . $game_lnns . '</td></tr>';
                             }
                         ?>
                     </tbody>
