@@ -28,7 +28,7 @@
             case 'MoF': return 10;
             case 'SA': return 11;
             case 'UFO': return 12;
-            case 'GFW': return 12.8;
+            case 'GFW': return 128;
             case 'TD': return 13;
             case 'DDC': return 14;
             case 'LoLK': return 15;
@@ -108,7 +108,7 @@
 	    }
 	}
 	function replay_path($game, $diff, $shot) {
-	    return 'replays/th' . ($game == 'GFW' ? 128 : num($game)) . '_ud' . substr($diff, 0, 2) . shot_abbr($shot) . '.rpy';
+	    return 'replays/th' . num($game) . '_ud' . substr($diff, 0, 2) . shot_abbr($shot) . '.rpy';
 	}
     function date_tl($date) {
         $tmp = preg_split('/\//', $date);
@@ -233,11 +233,11 @@
 			how strong specific records are, only numbers. The list does not include scene games as of now.</p>
             <p id='clicktodl'>Click a score to download the corresponding replay, if there is one available. All of the table columns are sortable.</p>
             <p id='noreup'>The replays provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.</p>
-            <p id='lastupdate'>World records are current as of <span id='lm'><?php echo format_lm($lm, $lang) ?></span></p>
+            <p id='lastupdate'><?php echo format_lm($lm, $lang) ?></p>
             <h2 id='contents_header'>Contents</h2>
             <table id='contents'>
 				<tr><td><a href='#overall' class='overallrecords'>Overall Records</a></td></tr>
-				<tr><td><a href='#list' class='wr'>World Records</a></td></tr>
+				<tr><td><a href='#list' class='worldrecords'>World Records</a></td></tr>
                 <tr><td><a href='#players' class='playerranking'>Player Ranking</a></td></tr>
                 <tr><td><a href='#west' class='westernrecords'>Western Records</a></td></tr>
                 <tr><td><a href='#ack' class='ack'>Acknowledgements</a></td></tr>
@@ -264,7 +264,7 @@
 							echo '<td id="' . $game . 'overall1">' . $overall_player[$num] . '</td>';
 							echo '<td id="' . $game . 'overall2">' . $overall_diff[$num] . '</td>';
 							echo '<td id="' . $game . 'overall3">' . $overall_shottype[$num] . '</td>';
-							echo '<td id="' . $game . 'overall4">' . $overall_date[$num] . '</td></tr>';
+							echo '<td id="' . $game . 'overall4" class="datestring">' . $overall_date[$num] . '</td></tr>';
 						}
 					?>
                 </table>
@@ -276,10 +276,10 @@
 						$num = num($game);
 						echo '<p class="' . $game . ' count">' . $game . '</p><p>';
 						echo '<span id="' . $game . 'overall0m">' . number_format($overall[$num], 0, '.', ',') . '</td>';
-						echo '<span id="' . $game . 'overall1m">' . $overall_player[$num] . '</td>';
-						echo '<span id="' . $game . 'overall2m">' . $overall_diff[$num] . '</td>';
-						echo '<span id="' . $game . 'overall3m">' . $overall_shottype[$num] . '</td>';
-						echo '<span id="' . $game . 'overall4m">' . $overall_date[$num] . '</td></p>';
+						echo '<span id="' . $game . 'overall1m">' . $overall_player[$num] . '</span> ';
+						echo '<span id="' . $game . 'overall2m">' . $overall_diff[$num] . '</span> ';
+						echo '<span id="' . $game . 'overall3m">' . $overall_shottype[$num] . '</span> ';
+						echo '<span id="' . $game . 'overall4m" class="datestring">' . $overall_date[$num] . '</span></p>';
 					}
 				?>
             </div>
@@ -318,6 +318,7 @@
                     </thead>
                     <tbody>
 						<?php
+        			        asort($pl);
 							foreach ($pl as $key => $player) {
 								if ($player === '') {
 									continue;
