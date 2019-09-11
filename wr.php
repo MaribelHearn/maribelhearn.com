@@ -236,10 +236,10 @@
             <p id='lastupdate'><?php echo format_lm($lm, $lang) ?></p>
             <h2 id='contents_header'>Contents</h2>
             <table id='contents'>
-				<tr><td><a href='#overall' class='overallrecords'>Overall Records</a></td></tr>
-				<tr><td><a href='#list' class='worldrecords'>World Records</a></td></tr>
+				<tr id='overall_link'><td><a href='#overall' class='overallrecords'>Overall Records</a></td></tr>
+				<tr id='overall_linkm'><td><a href='#overallm' class='overallrecords'>Overall Records</a></td></tr>
+				<tr><td><a href='#wrs' class='worldrecords'>World Records</a></td></tr>
                 <tr><td><a href='#players' class='playerranking'>Player Ranking</a></td></tr>
-                <tr><td><a href='#west' class='westernrecords'>Western Records</a></td></tr>
                 <tr><td><a href='#ack' class='ack'>Acknowledgements</a></td></tr>
             </table>
             <table id='checkboxes'><tr class='noborders'><td class='noborders'><input id='dates' type='checkbox' onClick='toggleDates()'>
@@ -272,18 +272,19 @@
             <div id='overallm'>
                 <h2 class='overallrecords'>Overall Records</h2>
 				<?php
+                    echo '<hr>';
 					foreach ($wr as $game => $value) {
 						$num = num($game);
 						echo '<p class="' . $game . ' count">' . $game . '</p><p>';
-						echo '<span id="' . $game . 'overall0m">' . number_format($overall[$num], 0, '.', ',') . '</td>';
-						echo '<span id="' . $game . 'overall1m">' . $overall_player[$num] . '</span> ';
+						echo '<span id="' . $game . 'overall0m">' . number_format($overall[$num], 0, '.', ',') . '</span> ';
 						echo '<span id="' . $game . 'overall2m">' . $overall_diff[$num] . '</span> ';
-						echo '<span id="' . $game . 'overall3m">' . $overall_shottype[$num] . '</span> ';
-						echo '<span id="' . $game . 'overall4m" class="datestring">' . $overall_date[$num] . '</span></p>';
+						echo '<span id="' . $game . 'overall3m">' . $overall_shottype[$num] . '</span> by ';
+						echo '<span id="' . $game . 'overall1m"><em>' . $overall_player[$num] . '</em></span> ';
+						echo '<br><span id="' . $game . 'overall4m" class="datestring">' . $overall_date[$num] . '</span></p><hr>';
 					}
 				?>
             </div>
-            <h2 class='worldrecords'>World Records</h2>
+            <h2 id='wrs' class='worldrecords'>World Records</h2>
 			<p id='clickgame'>Click a game cover to show its list of world records.</p>
 			<?php
 			    foreach ($wr as $game => $value) {
