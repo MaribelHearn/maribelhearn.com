@@ -2,15 +2,11 @@
     background: url("survival.webp")top no-repeat fixed;
     background-size: cover;
 }
-.no-js body,
-.no-webp body {
+.no-js body, .no-webp body {
     background: url("survival.jpg")top no-repeat fixed;
     background-size: cover;
 }
-table,
-td,
-th,
-tr {
+table, tr, th, td {
     border: 1px solid black;
 }
 div {
@@ -30,12 +26,18 @@ h2 {
 #wrap {
     padding-bottom: 15px;
 }
+#hy {
+    float: right;
+}
+#dummy {
+    display: none;
+}
+#survival {
+    overflow: auto;
+}
 #results {
     border: 1px solid black;
     background-color: rgba(255,255,255,1);
-}
-#hy {
-    float: right;
 }
 .wrap {
     border: 1px solid black;
@@ -70,26 +72,28 @@ h2 {
 .nmnb {
     background-color: purple;
 }
-@media only screen and(min-width:800px)and(max-width:1400px) {
+@media only screen and (min-width: 800px) and (max-width: 1400px) {
     .wrap {
         margin-left: 15%;
         margin-right: 15%;
     }
 }
-@media only screen and(max-width:800px) {
+@media only screen and (max-width: 800px) {
     .wrap {
         margin-left: 0;
         margin-right: 0;
     }
 }
-@media only screen and(min-device-width:320px)and(max-device-width:800px)and(orientation:portrait) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
     .wrap {
         margin-left: 0;
         margin-right: 0;
         font-size: 11px;
     }
-    #survival option {
-        width: 40px;
+    #dummy, #container {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        display: block;
     }
     h1 {
         font-size: 36px;
@@ -99,21 +103,23 @@ h2 {
     }
     select {
         height: 10px;
-        width: 70px;
+        width: 90px;
         font-size: 11px;
     }
     input {
         font-size: 11px;
     }
 }
-@media only screen and(min-device-width:480px)and(max-device-width:640px)and(orientation:landscape) {
+@media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
     .wrap {
         margin-left: 0;
         margin-right: 0;
         font-size: 11px;
     }
-    #survival option {
-        width: 40px;
+    #dummy, #container {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        display: block;
     }
     h1 {
         font-size: 36px;
@@ -123,7 +129,7 @@ h2 {
     }
     select {
         height: 10px;
-        width: 70px;
+        width: 90px;
         font-size: 11px;
     }
     input {
