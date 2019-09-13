@@ -2,8 +2,7 @@
     background: url("thvote.webp") center no-repeat fixed;
     background-size: cover;
 }
-.no-js body,
-.no-webp body {
+.no-js body, .no-webp body {
     background: url("thvote.jpg") center no-repeat fixed;
     background-size: cover;
 }
@@ -51,12 +50,8 @@ table {
 #hy {
     float: right;
 }
-#contents,
-#responses {
+#contents, #responses {
     border: 1px solid #000;
-}
-#notice {
-    display: none;
 }
 #chars_table, #music_table, #chars_table, #clear_table, #corr_table, #maingame_highlow, #eosd_table, #pcb_table,
 #in_table, #mof_table, #sa_table, #ufo_table, #td_table, #ddc_table, #lolk_table, #hsifs_table {
@@ -93,20 +88,20 @@ table {
         margin-right: 15%;
     }
 }
-@media only screen and (min-width:1000px) and (max-width:1500px) {
+@media only screen and (min-width: 1000px) and (max-width: 1500px) {
     .wrap {
         margin-left: 0;
         margin-right: 0;
     }
 }
-@media only screen and (max-width:1000px) {
+@media only screen and (max-width: 1000px) {
     .wrap {
         margin-left: 0;
         margin-right: 0;
         font-size: 11px;
     }
 }
-@media only screen and (min-device-width:320px) and (max-device-width:800px) and (orientation:portrait) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
     .wrap {
         margin-left: 0;
         margin-right: 0;
@@ -125,15 +120,8 @@ table {
         overflow-x: scroll;
         overflow-y: hidden;
     }
-    #correlation td,
-    #correlation th {
-        font-size: 8px;
-    }
-    #notice {
-        display: block;
-    }
 }
-@media only screen and (min-device-width:480px) and (max-device-width:640px) and (orientation:landscape) {
+@media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
     .wrap {
         margin-left: 0;
         margin-right: 0;
@@ -142,13 +130,6 @@ table {
     #corr_dummy, #corr_container {
         overflow-x: scroll;
         overflow-y: hidden;
-        display: block;
-    }
-    #correlation td,
-    #correlation th {
-        font-size: 8px;
-    }
-    #notice {
         display: block;
     }
 }
