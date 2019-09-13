@@ -126,12 +126,10 @@ var vals = {
     }
 };
 function isTripleNGame(game) {
-    return game == "PCB" || game == "UFO" || game == "TD" || game == "HSiFS" || game == "WBaWC"
+    return game == "PCB" || game == "UFO" || game == "TD" || game == "HSiFS" || game == "WBaWC";
 }
 function getPercentage(game) {
-    return 100 / Object
-        .keys(vals[game])
-        .length
+    return 100 / Object.keys(vals[game]).length;
 }
 function setProgress(category, val) {
     var game,
@@ -139,23 +137,23 @@ function setProgress(category, val) {
         tmp;
     difficulty = category.match(/Easy|Normal|Hard|Lunatic|Extra|Phantasm/);
     game = category.replace(difficulty, "");
-    vals[game][difficulty] = val
+    vals[game][difficulty] = val;
 }
 function gameSpecific(game, achievement) {
     if (game == "PCB") {
-        return ({"NB+": "NBNBB", "NMNB": "NMNBNBB"}[achievement])
+        return ({"NB+": "NBNBB", "NMNB": "NMNBNBB"}[achievement]);
     } else if (game == "UFO") {
-        return ({"NB+": "NBNV", "NMNB": "NMNB(NV)"}[achievement])
+        return ({"NB+": "NBNV", "NMNB": "NMNB(NV)"}[achievement]);
     } else if (game == "UFO") {
-        return ({"NB+": "NBNV", "NMNB": "NMNB(NV)"}[achievement])
+        return ({"NB+": "NBNV", "NMNB": "NMNB(NV)"}[achievement]);
     } else if (game == "TD") {
-        return ({"NB+": "NBNT", "NMNB": "NMNBNT"}[achievement])
+        return ({"NB+": "NBNT", "NMNB": "NMNBNT"}[achievement]);
     } else if (game == "HSiFS") {
-        return ({"NB+": "NBNR", "NMNB": "NMNBNR"}[achievement])
+        return ({"NB+": "NBNR", "NMNB": "NMNBNR"}[achievement]);
     } else if (game == "WBaWC") {
-        return ({"NB+": "NBNHNRB", "NMNB": "NNNN"}[achievement])
+        return ({"NB+": "NBNHNRB", "NMNB": "NNNN"}[achievement]);
     } else {
-        return ({"NB+": "NB", "NMNB": "NMNB"}[achievement])
+        return ({"NB+": "NB", "NMNB": "NMNB"}[achievement]);
     }
 }
 function fillAll(value, achievement) {
@@ -164,20 +162,21 @@ function fillAll(value, achievement) {
         for (difficulty in vals[value]) {
             tmp = achievement;
             if (achievement == "NB+" || achievement == "NMNB") {
-                achievement = gameSpecific(value, achievement)
+                achievement = gameSpecific(value, achievement);
             }
             $("#" + value + difficulty).val(achievement);
             vals[value][difficulty] = achievement;
-            achievement = tmp
+            achievement = tmp;
         }
     } else {
         if (value == "Extra") {
-            $("#PCBPhantasm").val(gameSpecific("PCB", achievement))
+            $("#PCBPhantasm").val(gameSpecific("PCB", achievement));
+            vals.PCB.Phantasm = achievement;
         }
         for (game in vals) {
             tmp = achievement;
             if (achievement == "NB+" || achievement == "NMNB") {
-                achievement = gameSpecific(game, achievement)
+                achievement = gameSpecific(game, achievement);
             }
             if (value == "Normal" || value == "Hard" || value == "Lunatic") {
                 $("#" + game + "Easy").val(achievement);
@@ -187,16 +186,16 @@ function fillAll(value, achievement) {
                     vals[game]["Normal"] = achievement;
                     if (value == "Lunatic") {
                         $("#" + game + "Hard").val(achievement);
-                        vals[game]["Hard"] = achievement
+                        vals[game]["Hard"] = achievement;
                     }
                 }
             }
             if (value == "Extra" && (game == "HRtP" || game == "PoDD")) {
-                continue
+                continue;
             }
             $("#" + game + value).val(achievement);
             vals[game][value] = achievement;
-            achievement = tmp
+            achievement = tmp;
         }
     }
 }
@@ -218,7 +217,7 @@ function format(achievement) {
         "NMNBNT": "nmnb",
         "NMNBNR": "nmnb",
         "NNNN": "nmnb"
-    })[achievement]
+    })[achievement];
 }
 function apply() {
     var numbers = {
@@ -312,49 +311,40 @@ function apply() {
             "WBaWC": 0
         },
         results = "<h2>Progress Table</h2><table id='overview'><thead><tr><th class='overview'>Game" +
-                "</th><th class='overview'>Easy</th><th class='overview'>Normal</th><th class='ov" +
-                "erview'>Hard</th><th class='overview'>Lunatic</th><th class='overview' colspan='" +
-                "2'>Extra</th></tr></thead><tbody>",
-        game,
-        difficulty,
-        val;
+        "</th><th class='overview'>Easy</th><th class='overview'>Normal</th><th class='overview'>Hard</th>" +
+        "<th class='overview'>Lunatic</th><th class='overview' colspan='2'>Extra</th></tr></thead><tbody>",
+        game, difficulty, val;
     for (game in vals) {
         results += "<tr><th>" + game + "</th>";
         for (difficulty in vals[game]) {
             val = vals[game][difficulty];
-            results += "<td class='" + format(val) + "'" + (difficulty == "Extra" && game != "PCB"
-                ? " colspan='2'"
-                : "") + ">" + (format(val) == "nbp"
-                ? val
-                : "") + "</td>";
-            if (difficulty == "Phantasm") {
-                difficulty = "Extra"
-            }
+            results += "<td class='" + format(val) + "'" + (difficulty == "Extra" && game != "PCB" ? " colspan='2'" : "") +
+            ">" + (format(val) == "nbp" ? val : "") + "</td>";
             if (val == "N/A") {
-                na[game] += getPercentage(game)
+                na[game] += getPercentage(game);
             } else if (val == "Not cleared") {
                 numbers[difficulty]["Not cleared"] += 1;
                 numbers["Total"]["Not cleared"] += 1
             } else {
                 completions[game] += getPercentage(game);
                 if (val.substr(0, 2) == "NB" && val.length > 2) {
-                    numbers[difficulty]["NB+"] += 1;
-                    numbers["Total"]["NB+"] += 1
-                } else if (val.substr(0, 4) == "NMNB") {
-                    numbers[difficulty]["NMNB"] += 1;
-                    numbers["Total"]["NMNB"] += 1
+                    numbers[difficulty == "Phantasm" ? "Extra" : difficulty]["NB+"] += 1;
+                    numbers["Total"]["NB+"] += 1;
+                } else if (val.substr(0, 4) == "NMNB" || val == "NNNN") {
+                    numbers[difficulty == "Phantasm" ? "Extra" : difficulty]["NMNB"] += 1;
+                    numbers["Total"]["NMNB"] += 1;
                 } else {
-                    numbers[difficulty][val] += 1;
-                    numbers["Total"][val] += 1
+                    numbers[difficulty == "Phantasm" ? "Extra" : difficulty][val] += 1;
+                    numbers["Total"][val] += 1;
                 }
             }
         }
         if (game == "HRtP" || game == "PoDD") {
-            results += "<td colspan='2'>X</td>"
+            results += "<td colspan='2'>X</td>";
         }
         results += "</tr>";
         if (game == "MS") {
-            results += "<tr><td></td><td></td><td></td><td></td><td></td><td colspan='2'></td></tr>"
+            results += "<tr><td></td><td></td><td></td><td></td><td></td><td colspan='2'></td></tr>";
         }
     }
     results += "</tbody></table><h2>Numbers of Achievements</h2><table id='table' class='sortabl" +
@@ -362,21 +352,21 @@ function apply() {
             "NB</th><th>NB+</th><th>NMNB</th></tr></thead><tbody>";
     for (difficulty in numbers) {
         if (difficulty == "Total") {
-            results += "<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>"
+            results += "<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
         }
         results += "<tr><th>" + difficulty + "</th>";
         for (val in numbers[difficulty]) {
-            results += "<td>" + numbers[difficulty][val] + "</td>"
+            results += "<td>" + numbers[difficulty][val] + "</td>";
         }
-        results += "</tr>"
+        results += "</tr>";
     }
     results += "</tbody></table><h2>Clear Completions</h2><table id='gameTable' class='sortable'" +
             "><thead><tr><th>Game</th><th>Clear Completion</th></tr></thead><tbody>";
     for (game in vals) {
         if (Math.round(na[game]) == 100) {
-            continue
+            continue;
         }
-        results += "<tr><td>" + game + "</td><td>" + Math.round(completions[game]) + "%</td></tr>"
+        results += "<tr><td>" + game + "</td><td>" + Math.round(completions[game]) + "%</td></tr>";
     }
     results += "</tbody></table><br>";
     $("#results").html(results);
@@ -387,9 +377,9 @@ function apply() {
     sorttable.makeSortable(gameTable);
     if ($("#toggleData").is(":checked")) {
         localStorage.setItem("saveData", true);
-        localStorage.setItem("vals", JSON.stringify(vals))
+        localStorage.setItem("vals", JSON.stringify(vals));
     } else {
-        localStorage.removeItem("saveData")
+        localStorage.removeItem("saveData");
     }
 }
 function reset() {
@@ -399,21 +389,20 @@ function reset() {
     if (confirmation) {
         $("#toggleData").prop("checked", false);
         localStorage.removeItem("vals");
-        localStorage.removeItem("saveData")
+        localStorage.removeItem("saveData");
     }
     for (var game in vals) {
         for (difficulty in vals[game]) {
             vals[game][difficulty] = "N/A";
-            $("#" + game + difficulty).val("N/A")
+            $("#" + game + difficulty).val("N/A");
         }
     }
 }
 function allowData() {
     if (localStorage.length <= 2) {
-        var allowed = confirm("This will store data in your browser's Web Storage, which functions like a cooki" +
-                "e. Do you allow this?");
+        var allowed = confirm("This will store data in your browser's Web Storage, which functions like a cookie. Do you allow this?");
         if (!allowed) {
-            $("#toggleData").prop("checked", false)
+            $("#toggleData").prop("checked", false);
         }
     }
 }
@@ -430,64 +419,63 @@ function theme(e) {
     if (e.src.indexOf("y") < 0) {
         e.src = "assets/shared/y-bar.png";
         localStorage.theme = "dark";
-        dark()
+        dark();
     } else {
         e.src = "assets/shared/h-bar.png";
         $("head").children("#dark").remove();
         $("#hy").attr("title", "Human Mode");
-        localStorage.theme = "light"
+        localStorage.theme = "light";
     }
 }
-$(document)
-    .ready(function () {
-        var data;
-        if (localStorage.theme == "dark") {
-            $("#hy").attr("src", "assets/shared/y-bar.png");
-            dark()
+$(document).ready(function () {
+    var data;
+    if (localStorage.theme == "dark") {
+        $("#hy").attr("src", "assets/shared/y-bar.png");
+        dark();
+    }
+    if (getCookie("vals")) {
+        localStorage.setItem("vals", JSON.stringify(getCookie("vals")));
+        deleteCookie("vals");
+    }
+    if (getCookie("saveCookies")) {
+        localStorage.setItem("saveData", getCookie("saveCookies"));
+        deleteCookie("saveCookies");
+    }
+    if (location.protocol == "file:") {
+        var path = location.pathname.split('/').pop();
+        $("#nav a").attr("href", function (i, oldHref) {
+            return (oldHref == '/' ? location.href.replace(path, "index.html") + "" : oldHref + ".html");
+        })
+    }
+    try {
+        if (localStorage.saveData) {
+            $("#toggleData").prop("checked", Boolean(localStorage.saveData));
         }
-        if (getCookie("vals")) {
-            localStorage.setItem("vals", JSON.stringify(getCookie("vals")));
-            deleteCookie("vals")
-        }
-        if (getCookie("saveCookies")) {
-            localStorage.setItem("saveData", getCookie("saveCookies"));
-            deleteCookie("saveCookies")
-        }
-        if (location.protocol == "file:") {
-            var path = location
-                .pathname
-                .split('/')
-                .pop();
-            $("#nav a").attr("href", function (i, oldHref) {
-                return (oldHref == '/'
-                    ? location.href.replace(path, "index.html") + ""
-                    : oldHref + ".html")
-            })
-        }
-        try {
-            if (localStorage.saveData) {
-                $("#toggleData").prop("checked", Boolean(localStorage.saveData))
-            }
-        } catch (err) {}
-        data = localStorage.getItem("vals");
-        if (data) {
-            vals = JSON.parse(data);
-            if (!vals.hasOwnProperty("WBaWC")) {
-                vals.WBaWC = {
-                    "Easy": "N/A",
-                    "Normal": "N/A",
-                    "Hard": "N/A",
-                    "Lunatic": "N/A",
-                    "Extra": "N/A"
-                }
+    } catch (err) {}
+    data = localStorage.getItem("vals");
+    if (data) {
+        vals = JSON.parse(data);
+        if (!vals.hasOwnProperty("WBaWC")) {
+            vals.WBaWC = {
+                "Easy": "N/A",
+                "Normal": "N/A",
+                "Hard": "N/A",
+                "Lunatic": "N/A",
+                "Extra": "N/A"
             }
         }
-        for (var game in vals) {
-            for (difficulty in vals[game]) {
-                $("#" + game + difficulty).val(vals[game][difficulty])
-            }
+    }
+    for (var game in vals) {
+        for (difficulty in vals[game]) {
+            $("#" + game + difficulty).val(vals[game][difficulty]);
         }
-        if (navigator.userAgent.contains("Mobile") || navigator.userAgent.contains("Tablet")) {
-            $("#notice").css("display", "block")
-        }
-    });
+    }
+    if (navigator.userAgent.contains("Mobile") || navigator.userAgent.contains("Tablet")) {
+        $("#dummy").scroll(function(){
+            $("#container").scrollLeft($("#dummy").scrollLeft());
+        });
+        $("#container").scroll(function(){
+            $("#dummy").scrollLeft($("#container").scrollLeft());
+        });
+    }
+});
