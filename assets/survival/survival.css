@@ -1,9 +1,9 @@
 .webp body {
-    background: url("survival.webp")top no-repeat fixed;
+    background: url('survival.webp')top no-repeat fixed;
     background-size: cover;
 }
 .no-js body, .no-webp body {
-    background: url("survival.jpg")top no-repeat fixed;
+    background: url('survival.jpg')top no-repeat fixed;
     background-size: cover;
 }
 table, tr, th, td {
@@ -90,7 +90,7 @@ h2 {
         margin-right: 0;
         font-size: 11px;
     }
-    #dummy, #container {
+    #container, #dummy {
         overflow-x: scroll;
         overflow-y: hidden;
         display: block;
@@ -116,7 +116,7 @@ h2 {
         margin-right: 0;
         font-size: 11px;
     }
-    #dummy, #container {
+    #container, #dummy {
         overflow-x: scroll;
         overflow-y: hidden;
         display: block;
