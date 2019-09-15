@@ -1,24 +1,24 @@
 .webp body {
-    background: url("thvote.webp") center no-repeat fixed;
+    background: url('thvote.webp') center no-repeat fixed;
     background-size: cover;
 }
 .no-js body, .no-webp body {
-    background: url("thvote.jpg") center no-repeat fixed;
+    background: url('thvote.jpg') center no-repeat fixed;
     background-size: cover;
 }
 div {
     background-color: #fff;
 }
 h1 {
-    font-family: Felipa;
+    font-family: 'Felipa';
     font-size: 48px;
 }
 h2 {
-    font-family: Felipa;
+    font-family: 'Felipa';
     font-size: 36px;
 }
 h3 {
-    font-family: Felipa;
+    font-family: 'Felipa';
     font-size: 24px;
 }
 table {
@@ -69,7 +69,7 @@ table {
 }
 #chars_head, #ddc_head, #eosd_head, #hsifs_head, #in_head, #lolk_head, #mof_head,
 #music_head, #pcb_head, #sa_head, #td_head, #ufo_head, #works_head {
-    content: "";
+    content: '';
     display: table-cell;
 }
 #chars_table.sortable tbody tr:before, #ddc_table.sortable tbody tr:before, #eosd_table.sortable tbody tr:before,

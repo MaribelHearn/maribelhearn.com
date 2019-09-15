@@ -132,9 +132,8 @@ function getPercentage(game) {
     return 100 / Object.keys(vals[game]).length;
 }
 function setProgress(category, val) {
-    var game,
-        difficulty,
-        tmp;
+    var game, difficulty, tmp;
+
     difficulty = category.match(/Easy|Normal|Hard|Lunatic|Extra|Phantasm/);
     game = category.replace(difficulty, "");
     vals[game][difficulty] = val;
@@ -161,9 +160,11 @@ function fillAll(value, achievement) {
     if (vals.hasOwnProperty(value)) {
         for (difficulty in vals[value]) {
             tmp = achievement;
+
             if (achievement == "NB+" || achievement == "NMNB") {
                 achievement = gameSpecific(value, achievement);
             }
+
             $("#" + value + difficulty).val(achievement);
             vals[value][difficulty] = achievement;
             achievement = tmp;
@@ -173,26 +174,33 @@ function fillAll(value, achievement) {
             $("#PCBPhantasm").val(gameSpecific("PCB", achievement));
             vals.PCB.Phantasm = achievement;
         }
+
         for (game in vals) {
             tmp = achievement;
+
             if (achievement == "NB+" || achievement == "NMNB") {
                 achievement = gameSpecific(game, achievement);
             }
+
             if (value == "Normal" || value == "Hard" || value == "Lunatic") {
                 $("#" + game + "Easy").val(achievement);
                 vals[game]["Easy"] = achievement;
+
                 if (value == "Hard" || value == "Lunatic") {
                     $("#" + game + "Normal").val(achievement);
                     vals[game]["Normal"] = achievement;
+
                     if (value == "Lunatic") {
                         $("#" + game + "Hard").val(achievement);
                         vals[game]["Hard"] = achievement;
                     }
                 }
             }
+
             if (value == "Extra" && (game == "HRtP" || game == "PoDD")) {
                 continue;
             }
+
             $("#" + game + value).val(achievement);
             vals[game][value] = achievement;
             achievement = tmp;
@@ -314,8 +322,10 @@ function apply() {
         "</th><th class='overview'>Easy</th><th class='overview'>Normal</th><th class='overview'>Hard</th>" +
         "<th class='overview'>Lunatic</th><th class='overview' colspan='2'>Extra</th></tr></thead><tbody>",
         game, difficulty, val;
+
     for (game in vals) {
         results += "<tr><th>" + game + "</th>";
+
         for (difficulty in vals[game]) {
             val = vals[game][difficulty];
             results += "<td class='" + format(val) + "'" + (difficulty == "Extra" && game != "PCB" ? " colspan='2'" : "") +
@@ -339,17 +349,22 @@ function apply() {
                 }
             }
         }
+
         if (game == "HRtP" || game == "PoDD") {
             results += "<td colspan='2'>X</td>";
         }
+
         results += "</tr>";
+
         if (game == "MS") {
             results += "<tr><td></td><td></td><td></td><td></td><td></td><td colspan='2'></td></tr>";
         }
     }
+
     results += "</tbody></table><h2>Numbers of Achievements</h2><table id='table' class='sortabl" +
             "e'><thead><tr><th>Difficulty</th><th>Not cleared</th><th>1cc</th><th>NM</th><th>" +
             "NB</th><th>NB+</th><th>NMNB</th></tr></thead><tbody>";
+
     for (difficulty in numbers) {
         if (difficulty == "Total") {
             results += "<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
@@ -360,14 +375,17 @@ function apply() {
         }
         results += "</tr>";
     }
+
     results += "</tbody></table><h2>Clear Completions</h2><table id='gameTable' class='sortable'" +
             "><thead><tr><th>Game</th><th>Clear Completion</th></tr></thead><tbody>";
+
     for (game in vals) {
         if (Math.round(na[game]) == 100) {
             continue;
         }
         results += "<tr><td>" + game + "</td><td>" + Math.round(completions[game]) + "%</td></tr>";
     }
+
     results += "</tbody></table><br>";
     $("#results").html(results);
     $("#table").attr("align", "center");
@@ -375,6 +393,7 @@ function apply() {
     $("#overview").attr("align", "center");
     sorttable.makeSortable(table);
     sorttable.makeSortable(gameTable);
+
     if ($("#toggleData").is(":checked")) {
         localStorage.setItem("saveData", true);
         localStorage.setItem("vals", JSON.stringify(vals));
@@ -383,14 +402,14 @@ function apply() {
     }
 }
 function reset() {
-    var confirmation = confirm("Are you sure you want to reset your progress table?"),
-        game,
-        difficulty;
+    var confirmation = confirm("Are you sure you want to reset your progress table?"), game, difficulty;
+
     if (confirmation) {
         $("#toggleData").prop("checked", false);
         localStorage.removeItem("vals");
         localStorage.removeItem("saveData");
     }
+
     for (var game in vals) {
         for (difficulty in vals[game]) {
             vals[game][difficulty] = "N/A";
@@ -429,30 +448,37 @@ function theme(e) {
 }
 $(document).ready(function () {
     var data;
+
     if (localStorage.theme == "dark") {
         $("#hy").attr("src", "assets/shared/y-bar.png");
         dark();
     }
+
     if (getCookie("vals")) {
         localStorage.setItem("vals", JSON.stringify(getCookie("vals")));
         deleteCookie("vals");
     }
+
     if (getCookie("saveCookies")) {
         localStorage.setItem("saveData", getCookie("saveCookies"));
         deleteCookie("saveCookies");
     }
+
     if (location.protocol == "file:") {
         var path = location.pathname.split('/').pop();
         $("#nav a").attr("href", function (i, oldHref) {
             return (oldHref == '/' ? location.href.replace(path, "index.html") + "" : oldHref + ".html");
-        })
+        });
     }
+
     try {
         if (localStorage.saveData) {
             $("#toggleData").prop("checked", Boolean(localStorage.saveData));
         }
     } catch (err) {}
+
     data = localStorage.getItem("vals");
+
     if (data) {
         vals = JSON.parse(data);
         if (!vals.hasOwnProperty("WBaWC")) {
@@ -465,11 +491,13 @@ $(document).ready(function () {
             }
         }
     }
+
     for (var game in vals) {
         for (difficulty in vals[game]) {
             $("#" + game + difficulty).val(vals[game][difficulty]);
         }
     }
+
     if (navigator.userAgent.contains("Mobile") || navigator.userAgent.contains("Tablet")) {
         $("#dummy").scroll(function(){
             $("#container").scrollLeft($("#dummy").scrollLeft());

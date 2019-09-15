@@ -1,1 +1,169 @@
-.webp body{background:url("history.webp") top no-repeat fixed;background-size:cover}.no-js body,.no-webp body{background:url("history.jpg") top no-repeat fixed;background-size:cover}div{background-color:#FFFFFF}table{margin-left:auto;margin-right:auto}table,td,th,tr{border:1px solid black;text-align:center}h1{font-family:'Felipa';font-size:48px}h2{font-family:'Felipa';font-size:36px}h3{font-family:'Felipa';font-size:24px}#wrap{border:1px solid black;text-align:center;margin-left:25%;margin-right:25%;padding-left:15px;padding-right:15px;opacity:0.8;font:14px verdana, sans-serif;padding-bottom:10px}#hy{float:right}#contents td,#contents th,#contents tr{border:none}.hidden{border:none;text-align:left}.list{width:250px}.overview{width:80px}.attempted{background-color:orange}.clear{background-color:green}.nm{background-color:brown}.nb{background-color:blue}.nmnb{background-color:purple}.g{color:green;font-weight:bold}.y{background-color:green}.r{background-color:red}.v{font-weight:bold}.i{color:black}.calendar-box{display:none;background-color:#fff;border:1px solid #444;position:absolute;width:300px;padding:0 5px}.calendar-box select.calendar-month{width:90px}.calendar-box select.calendar-year{width:70px}.calendar-box .calendar-cancel{width:100%}.calendar-box table td{width:14%}.calendar-box .calendar-title{text-align:center}.calendar-box a{text-decoration:none}.calendar-box .today a{padding:0 5px;margin-left:-5px;background-color:#ffe9c6}.calendar-box .selected a{padding:0 5px;margin-left:-5px;background-color:#c9ff8b}@media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait){#wrap{margin-left:0;margin-right:0;font-size:11px}.list{width:100%}h1{font-size:36px}h2{font-size:24px}}@media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape){#wrap{margin-left:0;margin-right:0;font-size:11px}.list{width:100%}h1{font-size:36px}h2{font-size:24px}}@media only screen and (max-width: 800px){#wrap{margin-left:0;margin-right:0}}@media only screen and (min-width: 800px) and (max-width: 1400px){#wrap{margin-left:15%;margin-right:15%}}
+.webp body {
+    background: url('history.webp') top no-repeat fixed;
+    background-size: cover;
+}
+.no-js body, .no-webp body {
+    background: url('history.jpg') top no-repeat fixed;
+    background-size: cover;
+}
+div {
+    background-color: #FFFFFF;
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+table, tr, th, td {
+    border: 1px solid black;
+    text-align: center;
+}
+h1 {
+    font-family: 'Felipa';
+    font-size: 48px;
+}
+h2 {
+    font-family: 'Felipa';
+    font-size: 36px;
+}
+h3 {
+    font-family: 'Felipa';
+    font-size: 24px;
+}
+#wrap {
+    border: 1px solid black;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-left: 15px;
+    padding-right: 15px;
+    opacity: 0.8;
+    font: 14px verdana, sans-serif;
+    padding-bottom: 10px;
+}
+#hy {
+    float: right;
+}
+#contents td, #contents th, #contents tr {
+    border: none;
+}
+.hidden {
+    border: none;
+    text-align: left;
+}
+.list {
+    width: 250px;
+}
+.overview {
+    width: 80px;
+}
+.attempted {
+    background-color: orange;
+}
+.clear {
+    background-color: green;
+}
+.nm {
+    background-color: brown;
+}
+.nb {
+    background-color: blue;
+}
+.nmnb {
+    background-color: purple;
+}
+.g {
+    color: green;
+    font-weight: bold;
+}
+.y {
+    background-color: green;
+}
+.r {
+    background-color: red;
+}
+.v {
+    font-weight: bold;
+}
+.i {
+    color: black;
+}
+.calendar-box {
+    display: none;
+    background-color: #fff;
+    border: 1px solid #444;
+    position: absolute;
+    width: 300px;
+    padding: 0 5px;
+}
+.calendar-box select.calendar-month {
+    width: 90px;
+}
+.calendar-box select.calendar-year {
+    width: 70px;
+}
+.calendar-box .calendar-cancel {
+    width: 100%;
+}
+.calendar-box table td {
+    width: 14%;
+}
+.calendar-box .calendar-title {
+    text-align: center;
+}
+.calendar-box a {
+    text-decoration: none;
+}
+.calendar-box .today a {
+    padding: 0 5px;
+    margin-left: -5px;
+    background-color: #ffe9c6;
+}
+.calendar-box .selected a {
+    padding: 0 5px;
+    margin-left: -5px;
+    background-color: #c9ff8b;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
+    #wrap {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 11px;
+    }
+    .list {
+        width: 100%;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+}
+@media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
+    #wrap {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 11px;
+    }
+    .list {
+        width: 100%;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    #wrap {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+@media only screen and (min-width: 800px) and (max-width: 1400px) {
+    #wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}

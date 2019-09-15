@@ -1,1 +1,164 @@
-.webp body{background:url("scoring.webp") bottom no-repeat fixed;background-size:cover}.no-js body,.no-webp body{background:url("scoring.jpg") bottom no-repeat fixed;background-size:cover}div{background-color:#fff}h1{font-family:Felipa;font-size:48px}h2{font-family:Felipa;font-size:36px}input[type=text]{width:95px;height:15px}input[type=number]{height:20px}input[type=button]{margin:5px}#nav{margin-bottom:5px}#notice{display:none}#contents{border:1px solid #000}#checkboxes,#checkboxes td{border:1px solid #000}#checkboxes tbody:after{content:"\200C";display:block;line-height:1em;color:#000}#table{margin-top:15px;margin-left:auto;margin-right:auto}#gameTable{margin-left:auto;margin-right:auto}#table,#table td,#table th{border:1px solid #000}#gameTable,#gameTable td,#gameTable th{border:1px solid #000}#gameTable tbody,#table tbody{counter-reset:sortabletablescope}#gameTable thead tr::before,#table thead tr::before{content:"";display:table-cell}#gameTable tbody tr::before,#table tbody tr::before{content:counter(sortabletablescope);counter-increment:sortabletablescope;display:table-cell}#hy{float:right}.wrap{border:1px solid #000;text-align:center;margin-left:24%;margin-right:24%;padding-left:10px;padding-right:10px;opacity:0.8;font:14px verdana,sans-serif}.center{margin-left:auto;margin-right:auto}.wr{color:#00e}.cover98{border:1px solid #000}.noborders{border:none}@media only screen and (min-width:1200px) and (max-width:1600px){.wrap{margin-left:15%;margin-right:15%}}@media only screen and (min-width:1100px) and (max-width:1200px){.wrap{margin-left:10%;margin-right:10%}}@media only screen and (min-width:900px) and (max-width:1100px){.wrap{margin-left:5%;margin-right:5%}}@media only screen and (max-width:900px){.wrap{margin-left:0;margin-right:0}}@media only screen and (min-device-width:320px) and (max-device-width:800px) and (orientation:portrait){.wrap{margin-left:0;margin-right:0;font-size:11px}h1{font-size:36px}h2{font-size:24px}input{font-size:11px}input[type=text]{width:65px;height:10px}}@media only screen and (min-device-width:480px) and (max-device-width:640px) and (orientation:landscape){.wrap{margin-left:0;margin-right:0;font-size:11px}h1{font-size:36px}h2{font-size:24px}input{font-size:11px}input[type=text]{width:65px;height:10px}}
+.webp body {
+    background: url('scoring.webp') bottom no-repeat fixed;
+    background-size: cover;
+}
+.no-js body, .no-webp body {
+    background: url('scoring.jpg') bottom no-repeat fixed;
+    background-size: cover;
+}
+div {
+    background-color: #fff;
+}
+h1 {
+    font-family: 'Felipa';
+    font-size: 48px;
+}
+h2 {
+    font-family: 'Felipa';
+    font-size: 36px;
+}
+input[type=text] {
+    width: 95px;
+    height: 15px;
+}
+input[type=number] {
+    height: 20px;
+}
+input[type=button] {
+    margin: 5px;
+}
+#nav {
+    margin-bottom: 5px;
+}
+#notice {
+    display: none;
+}
+#contents {
+    border: 1px solid #000;
+}
+#checkboxes, #checkboxes td {
+    border: 1px solid #000;
+}
+#checkboxes tbody:after {
+    content: '\200C';
+    display: block;
+    line-height: 1em;
+    color: #000;
+}
+#table {
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#gameTable {
+    margin-left: auto;
+    margin-right: auto;
+}
+#table, #table th, #table td {
+    border: 1px solid #000;
+}
+#gameTable, #gameTable th, #gameTable td {
+    border: 1px solid #000;
+}
+#gameTable tbody, #table tbody {
+    counter-reset: sortabletablescope;
+}
+#gameTable thead tr::before, #table thead tr::before {
+    content: '';
+    display: table-cell;
+}
+#gameTable tbody tr::before, #table tbody tr::before {
+    content: counter(sortabletablescope);
+    counter-increment: sortabletablescope;
+    display: table-cell;
+}
+#hy {
+    float: right;
+}
+.wrap {
+    border: 1px solid #000;
+    text-align: center;
+    margin-left: 24%;
+    margin-right: 24%;
+    padding-left: 10px;
+    padding-right: 10px;
+    opacity: 0.8;
+    font: 14px verdana,sans-serif;
+}
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+.wr {
+    color: #00e;
+}
+.cover98 {
+    border: 1px solid #000;
+}
+.noborders {
+    border: none;
+}
+@media only screen and (min-width:1200px) and (max-width:1600px) {
+    .wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
+@media only screen and (min-width:1100px) and (max-width:1200px) {
+    .wrap {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+@media only screen and (min-width:900px) and (max-width:1100px) {
+    .wrap {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+@media only screen and (max-width:900px) {
+    .wrap {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+@media only screen and (min-device-width:320px) and (max-device-width:800px) and (orientation:portrait) {
+    .wrap {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 11px;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    input {
+        font-size: 11px;
+    }
+    input[type=text] {
+        width: 65px;
+        height: 10px;
+    }
+}
+@media only screen and (min-device-width:480px) and (max-device-width:640px) and (orientation:landscape) {
+    .wrap {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 11px;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    input {
+        font-size: 11px;
+    }
+    input[type=text] {
+        width: 65px;
+        height: 10px;
+    }
+}

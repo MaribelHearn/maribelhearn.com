@@ -1,1 +1,18 @@
-body{color:white}div{background-color:#202020}a:link{color:#1e90ff}a:active{color:red}a:visited{color:#ff69b4}#checkboxes,#checkboxes td,#gameTable,#gameTable td,#gameTable th,#table,#table td,#table th,.border,table#contents{border:1px solid #808080}
+body {
+    color: white;
+}
+div {
+    background-color: #202020;
+}
+a:link {
+    color: #1e90ff;
+}
+a:active {
+    color: red;
+}
+a:visited {
+    color: #ff69b4;
+}
+#checkboxes, #checkboxes td, #gameTable, #gameTable th, #gameTable td, #table, #table th, #table td, .border, table#contents {
+    border: 1px solid #808080;
+}
