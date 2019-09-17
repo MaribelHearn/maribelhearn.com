@@ -157,7 +157,17 @@ input[type=number] {
 #artist_form, #settings_table {
     margin: 15px auto;
 }
-@media only screen and (((min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait)) or 
+@media screen and (max-width: 1100px) and (max-height: 800px) {
+    .no-js body, .no-webp body, .webp body {
+        background: #1b232e;
+    }
+}
+@media screen and (max-width: 100px) {
+    #buttons {
+        display: none;
+    }
+}
+@media only screen and (((min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait)) or
 ((min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape))) {
     .no-js body, .no-webp body, .webp body {
         background: #1b232e;
