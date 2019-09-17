@@ -301,7 +301,7 @@
 					<thead id='list_thead'></thead>
                     <tbody id='list_tbody'></tbody>
 				</table>
-				<p id='cheat'>* This record is suspected of cheating. If it is found to have been cheated, the record will be 2,209,324,900 by nanamaru.</p>
+				<p id='cheat'>* This record is suspected of cheating. If it is found to have been cheated, the record will be 2,209,324,900 by ななまる.</p>
                 <table>
                     <thead id='west_thead'></thead>
                     <tbody id='west_tbody'></tbody>

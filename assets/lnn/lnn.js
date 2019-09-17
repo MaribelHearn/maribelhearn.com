@@ -1,17 +1,14 @@
-var LNNs,
-    language = "English",
-    selected = "",
-    playerSelected = false,
-    playergameLNNs;
+var LNNs, language = "English", selected = "", playerSelected = false, playergameLNNs;
+
 function load() {
     if (getCookie("lang") == "Japanese") {
         language = "Japanese";
         generateText();
-        generateShortNames()
+        generateShortNames();
     } else if (getCookie("lang") == "Chinese") {
         language = "Chinese";
         generateText();
-        generateShortNames()
+        generateShortNames();
     }
 }
 function restrictions(game) {
@@ -22,22 +19,20 @@ function restrictions(game) {
         "TD": "n",
         "HSiFS": "n",
         "WBaWC": "nn"
-    }[game])
+    }[game]);
 }
 function shotRoute(game) {
-    return game == "HRtP" || game == "GFW"
-        ? "Route"
-        : "Shottype"
+    return game == "HRtP" || game == "GFW" ? "Route" : "Shottype";
 }
 function show(game) {
     if (!LNNs) {
-        $
-            .get("json/lnnlist.json", function (data) {
-                LNNs = data;
-                show(game)
-            }, "json");
-        return
+        $.get("json/lnnlist.json", function (data) {
+            LNNs = data;
+            show(game);
+        }, "json");
+        return;
     }
+
     if (game == selected) {
         $("#list").css("display", "none");
         $("#" + game).css("border", $("#" + game).hasClass("cover98")
@@ -46,8 +41,9 @@ function show(game) {
         $("#fullname, #listhead, #listbody, #listfoot").html("");
         $("#fullname").removeClass(game + "f");
         selected = "";
-        return
+        return;
     }
+
     var playergameLNNs = {},
         overallplayers = [],
         players = [],
@@ -61,14 +57,15 @@ function show(game) {
         type,
         player,
         i;
+
     if (selected !== "") {
-        $("#" + selected).css("border", $("#" + selected).hasClass("cover98")
-            ? "1px solid black"
-            : "none")
+        $("#" + selected).css("border", $("#" + selected).hasClass("cover98") ? "1px solid black" : "none");
     }
+
     if ($("#fullname").hasClass(selected + "f")) {
-        $("#fullname").removeClass(selected + "f")
+        $("#fullname").removeClass(selected + "f");
     }
+
     $("#" + game).css("border", "3px solid gold");
     selected = game;
     $("#fullname").addClass(game + "f");
@@ -214,15 +211,17 @@ function generateText() {
         $("#tables").html("All of the table columns are sortable.");
         $("#contents_header").html("Contents");
         $("#clickgame").html("Click a game cover to show its list of LNNs.");
+        $("#playerlnns").html("Choose a player name from the menu below to show their LNNs.");
         $("#score").html("Score");
         $("#label_all").html("All");
         $("#autosort").html("No. of WRs");
         $("#differentgames").html("Different games");
-        $("#jptlcredit").html("The Japanese translation of the top text was done by <a href='https://twitter.co" +
-                "m/toho_yumiya'>Yu-miya</a>.");
-        $("#cntlcredit").html("The Chinese translation of the top text was done by <a href='https://twitter.com" +
-                "/williewillus'>williewillus</a>.");
-        $("#backtotop").html("Back to Top")
+        $("#credit").html("The background image was drawn by <a href='https://www.pixiv.net/member.php?id=1111435'>C.Z</a>.");
+        $("#jptlcredit").html("The Japanese translation of the top text was done by " +
+        "<a href='https://twitter.com/toho_yumiya'>Yu-miya</a>.");
+        $("#cntlcredit").html("The Chinese translation of the top text was done by " +
+        "<a href='https://twitter.com/williewillus'>williewillus</a>.");
+        $("#backtotop").html("Back to Top");
     } else if (language == "Japanese") {
         $("title").html("東方Lunaticノーミスノーボム");
         $("h1").html("東方Lunaticノーミスノーボム");
@@ -248,14 +247,16 @@ function generateText() {
         $("#tables").html("各欄は並べ替え可能となっています。並べ替えには各表の最上段をクリックしてください。");
         $("#contents_header").html("内容");
         $("#clickgame").html("LNNリストはゲームをクリック。");
+        $("#playerlnns").html("個人のLNN(s)を表示するには、下記のメニューからプレイヤー名を選んでください。");
         $("#score").html("スコア");
         $("#label_all").html("全");
         $("#autosort").html("WR数");
         $("#differentgames").html("ゲーム");
+        $("#credit").html("背景イメージは<a href='https://www.pixiv.net/member.php?id=1111435'>C.Z</a>" +
+        "さんのものを使用させていただいております。");
         $("#jptlcredit").html("ページ上部のテキストは<a href='https://twitter.com/toho_yumiya'>Yu-miya</a>によって日本語に翻訳されました。");
-        $("#cntlcredit").html("ページ上部のテキストは<a href='https://twitter.com/williewillus'>williewillus</a>によって中国語に翻訳" +
-                "されました。");
-        $("#backtotop").html("上に帰る")
+        $("#cntlcredit").html("ページ上部のテキストは<a href='https://twitter.com/williewillus'>williewillus</a>によって中国語に翻訳されました。");
+        $("#backtotop").html("上に帰る");
     } else {
         $("title").html("东方LNN");
         $("h1").html("东方LNN");
@@ -280,13 +281,15 @@ function generateText() {
         $("#tables").html("点击任何标题即可排序表格内容。");
         $("#contents_header").html("内容");
         $("#clickgame").html("单击游戏处查看LNN列表。");
+        $("#playerlnns").html("Choose a player name from the menu below to show their LNNs.");
         $("#score").html("分数");
         $("#label_all").html("皆");
         $("#autosort").html("WR数量");
         $("#differentgames").html("游戏");
+        $("#credit").html("The background image was drawn by <a href='https://www.pixiv.net/member.php?id=1111435'>C.Z</a>.");
         $("#jptlcredit").html("感谢<a href='https://twitter.com/toho_yumiya'>Yu-miya</a>提供头部文字的日语翻译。");
         $("#cntlcredit").html("感谢<a href='https://twitter.com/williewillus'>williewillus</a>提供头部文字的中文翻译。");
-        $("#backtotop").html("回到顶部")
+        $("#backtotop").html("回到顶部");
     }
 }
 function generateTableText() {
