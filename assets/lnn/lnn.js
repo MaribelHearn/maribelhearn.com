@@ -44,19 +44,8 @@ function show(game) {
         return;
     }
 
-    var playergameLNNs = {},
-        overallplayers = [],
-        players = [],
-        typeString = "",
-        gamecount = 0,
-        shottype,
-        shotplayers,
-        shotplayersIN,
-        shotcount,
-        character,
-        type,
-        player,
-        i;
+    var playergameLNNs = {}, overallplayers = [], players = [], typeString = "", gamecount = 0,
+        shottype, shotplayers, shotplayersIN, shotcount, character, type, player, i;
 
     if (selected !== "") {
         $("#" + selected).css("border", $("#" + selected).hasClass("cover98") ? "1px solid black" : "none");
@@ -70,94 +59,97 @@ function show(game) {
     selected = game;
     $("#fullname").addClass(game + "f");
     $("#fullname").html(fullNameNumber(game));
-    $("#listhead").html("<tr><th class='" + shotRoute(game).toLowerCase() + "'>" + shotRoute(game) + "</th><th class='sorttable_numeric'><span id='numeric' class='nooflnn" + (restrictions(game)
-        ? restrictions(game)
-        : "") + "s'>No. of LNNs</span><br><span class='different'>(Different players)</span></th>" +
-            "<th class='players'>Players</th></tr>");
-    $("#listfoot").html("<tr><td colspan='3'></td></tr><tr><td class='count'><span class='overall'>Overal" +
-            "l</span></td><td id='count' class='count'></td><td id='total'></td></tr>");
+    $("#listhead").html("<tr><th class='" + shotRoute(game).toLowerCase() + "'>" + shotRoute(game) +
+    "</th><th class='sorttable_numeric'><span id='numeric' class='nooflnn" + (restrictions(game) ? restrictions(game) : "") +
+    "s'>No. of LNNs</span><br><span class='different'>(Different players)</span></th><th class='players'>Players</th></tr>");
+    $("#listfoot").html("<tr><td colspan='3'></td></tr><tr><td class='count'><span class='overall'>Overall</span></td>" +
+    "<td id='count' class='count'></td><td id='total'></td></tr>");
     $("#listbody").html("");
+
     for (shottype in LNNs[game]) {
         if (game != "IN" && game != "UFO" && game != "HSiFS" || (game == "IN" && shottype.contains("FinalA")) || (game == "UFO" && !shottype.contains("UFOs")) || (game == "HSiFS" && shottype.contains("Spring"))) {
             shotplayers = [];
             shotplayersIN = [];
             shotcount = 0;
             character = shottype.replace(/Spring|Summer|Autumn|Winter|FinalA|FinalB|UFOs/, "");
-            $("#listbody").append("<tr><td class='" + character + "'>" + character + "</td><td id='" + character + "n'></td><td id='" + character + "'></td>")
+            $("#listbody").append("<tr><td class='" + character + "'>" + character +
+            "</td><td id='" + character + "n'></td><td id='" + character + "'></td>");
         }
+
         if (game == "IN" || game == "UFO" || game == "HSiFS") {
             type = shottype.replace(character, "");
-            typeString = (type !== ""
-                ? " (<span class='" + type + "'>" + type + "</span>)"
-                : "")
+            typeString = (type !== "" ? " (<span class='" + type + "'>" + type + "</span>)" : "");
         }
+
         for (i in LNNs[game][shottype]) {
             player = LNNs[game][shottype][i];
-            shotplayers.push(player + (game == "IN" || game == "UFO" || game == "HSiFS"
-                ? typeString
-                : ""));
+            shotplayers.push(player + (game == "IN" || game == "UFO" || game == "HSiFS" ? typeString : ""));
             shotplayersIN.pushStrict(player);
             players.pushStrict(player);
             shotcount += 1;
-            gamecount += 1
+            gamecount += 1;
         }
+
         if (!(game == "IN" && type != "FinalB") && !(game == "UFO" && type != "UFOs") && !(game == "HSiFS" && type != "Winter")) {
             shotplayers.sort();
-            $("#" + character + "n").html(shotcount + (game == "IN"
-                ? " (" + shotplayersIN.length + ")"
-                : ""));
+            $("#" + character + "n").html(shotcount + (game == "IN" ? " (" + shotplayersIN.length + ")" : ""));
+
             if (shotcount === 0) {
                 $("#" + character).html('-');
-                continue
+                continue;
             }
+
             for (i in shotplayers) {
-                $("#" + character).append(", " + shotplayers[i])
+                $("#" + character).append(", " + shotplayers[i]);
             }
+
             if ($("#" + character).html().substring(0, 2) == ", ") {
-                $("#" + character).html($("#" + character).html().replace(", ", ""))
+                $("#" + character).html($("#" + character).html().replace(", ", ""));
             }
         }
     }
+
     players.sort();
+
     for (i in players) {
         $("#total").append(", " + players[i])
     }
+
     $("#count").html(gamecount + " (" + players.length + ")");
     $("#total").html($("#total").html().replace(", ", ""));
     $("#list").css("display", "block");
     generateTableText();
     generateShottypes();
-    generateFullNames()
+    generateFullNames();
 }
 function getPlayerLNNs(player) {
     if (!LNNs) {
-        $
-            .get("json/lnnlist.json", function (data) {
-                LNNs = data;
-                getPlayerLNNs(player)
-            }, "json")
+        $.get("json/lnnlist.json", function (data) {
+            LNNs = data;
+            getPlayerLNNs(player);
+        }, "json");
     }
+
     if (player == "...") {
         $("#playerlist").css("display", "none");
         $("#playerlistbody, #playerlistfoot").html("");
         playerSelected = false;
-        return
+        return;
     }
-    var games = [],
-        sum = 0,
-        game,
-        array,
-        shottype,
-        character,
-        type,
-        i;
+
+    var games = [], sum = 0, game, array, gamesum, shottype, character, type, list, i;
+
     playerSelected = true;
     $("#playerlistbody").html("");
+
     for (game in LNNs) {
         if (game == "LM") {
-            continue
+            continue;
         }
+
         array = [];
+        gamesum = 0;
+
         for (shottype in LNNs[game]) {
             if (LNNs[game][shottype].contains(player)) {
                 if (!games.contains(game)) {
@@ -166,19 +158,28 @@ function getPlayerLNNs(player) {
                 }
                 character = shottype.replace(/(FinalA|FinalB|UFOs)/g, "");
                 type = shottype.replace(character, "");
-                array.push("<span class='" + character + "'>" + character + "</span>" + (type === ""
-                    ? ""
-                    : " (<span class='" + type + "'>" + type + "</span>)"));
-                sum += 1
+                array.push("<span class='" + character + "'>" + character +
+                "</span>" + (type === "" ? "": " (<span class='" + type + "'>" + type + "</span>)"));
+                gamesum += 1;
+                sum += 1;
             }
         }
-        $("#" + game + "s").html(array.join(", "))
+
+        list = array.join(", ");
+        $("#" + game + "s").html(list);
+
+        if (game == "UFO" && list.contains("ReimuA") && list.contains("ReimuB") && list.contains("MarisaA") && list.contains("MarisaB") && list.contains("SanaeA") && list.contains("SanaeB")) {
+            $("#UFOs").append(" <strong>(All)</strong>");
+        } else if (game != "UFO" && gamesum == Object.keys(LNNs[game]).length) {
+            $("#" + game + "s").append(" <strong>(All)</strong>");
+        }
     }
+
     $("#playerlistfoot").html("<tr><td colspan='2'></td></tr><tr><td class='total'>Total</td><td>" + sum + "</td></tr>");
     $("#playerlist").css("display", "block");
     generateTableText();
     generateShottypes();
-    generateShortNames()
+    generateShortNames();
 }
 function generateText() {
     if (language == "English") {
@@ -198,16 +199,14 @@ function generateText() {
         $(".all").html(" (All)");
         $(".ack").html("Acknowledgements");
         $(".lnns").html("LNN Lists");
-        $("#description").html("A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. For" +
-                " every shottype in a game, tables will tell you which players have done an LNN w" +
-                "ith it, if any. If a player has multiple LNNs for one particular shottype, those" +
-                " are not factored in.");
-        $("#conditions").html("Extra conditions are required for PCB, TD and HSiFS; these are No Border Breaks," +
-                " No Trance and No Release respectively. LNN in these games is called LNNN, with " +
-                "an extra N to denote the extra condition.The extra condition in UFO, no UFO summ" +
-                "ons, is optional, as it is not considered to have a significant impact on the di" +
-                "fficulty of the run. As for IN, an LNN is assumed to capture all Last Spells and" +
-                " is referred to as LNNFS.");
+        $("#description").html("A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. " +
+        "For every shottype in a game, tables will tell you which players have done an LNN with it, if any. " +
+        "If a player has multiple LNNs for one particular shottype, those are not factored in.");
+        $("#conditions").html("Extra conditions are required for PCB, TD, HSiFS and WBaWC; these are No Border Breaks for PCB, " +
+        "No Trance for TD, No Release for HSiFS and No Berserk Roar No Roar Breaks for WBaWC. " +
+        "LNN in these games is called LNNN or LNNNN, with extra Ns to denote the extra conditions. " +
+        "The extra condition in UFO, no UFO summons, is optional, as it is not considered to have a significant impact on the " +
+        "difficulty of the run. As for IN, an LNN is assumed to capture all Last Spells and is referred to as LNNFS.");
         $("#tables").html("All of the table columns are sortable.");
         $("#contents_header").html("Contents");
         $("#clickgame").html("Click a game cover to show its list of LNNs.");
@@ -239,11 +238,12 @@ function generateText() {
         $(".all").html("（全）");
         $(".ack").html("謝辞");
         $(".lnns").html("LNNリスト");
-        $("#description").html("東方原作STG各作品の難易度Lunaticのノーミスノーボム（LNN）リストです。適宜頻繁に更新します。各作品の表とも、各機体において誰が達成したかを記載してい" +
-                "ます。特定の作品、ショットタイプで複数回のLNNを達成している場合でも１回とカウントされます。");
-        $("#conditions").html("また妖々夢では霊撃無し、神霊廟ではトランス無し、天空璋では開放無し、鬼形獣では霊撃無し、暴走ロアリング無しが条件となります。この４作品では追加条件によってNが追" +
-                "加され、LNNN又はLNNNNと呼称します。また星蓮船ではUFO招喚無しも考慮されますが、難易度が劇的に変化するわけではないため必須条件とはなっていません。永夜" +
-                "抄ではラストスペル取得を含めLNNFSが条件となります。");
+        $("#description").html("東方原作STG各作品の難易度Lunaticのノーミスノーボム（LNN）リストです。適宜頻繁に更新します。各作品の表とも、" +
+        "各機体において誰が達成したかを記載しています。特定の作品、ショットタイプで複数回のLNNを達成している場合でも１回とカウントされます。");
+        $("#conditions").html("また妖々夢では霊撃無し、神霊廟ではトランス無し、天空璋では開放無し、鬼形獣では霊撃無し、" +
+        "暴走ロアリング無しが条件となります。この４作品では追加条件によってNが追加され、LNNN又はLNNNNと呼称します。" +
+        "また星蓮船ではUFO招喚無しも考慮されますが、難易度が劇的に変化するわけではないため必須条件とはなっていません。" +
+        "永夜抄ではラストスペル取得を含めLNNFSが条件となります。");
         $("#tables").html("各欄は並べ替え可能となっています。並べ替えには各表の最上段をクリックしてください。");
         $("#contents_header").html("内容");
         $("#clickgame").html("LNNリストはゲームをクリック。");
@@ -274,10 +274,10 @@ function generateText() {
         $(".all").html("（全）");
         $(".ack").html("致谢");
         $(".lnns").html("LNN列表");
-        $("#description").html("这个网页记载所有「东方Project」的LNN（Lunatic No Miss No Bomb），时不时地更新。每作游戏的每个机体有一行显示打出LNN的玩家。如" +
-                "果某一位玩家用一个机体打出多次LNN，只算一次，其余次数不算入统计。");
-        $("#conditions").html("妖妖梦、神灵庙、天空璋打NN时有附加条件，即是不爆结界、不开灵界、不使用季节解放。此三作LNN被称为LNNN，以第三个N代表着附加的条件。星莲船的附加条件（不开" +
-                "飞碟）由于对难度没有大量的影响，可以自选。永夜抄的LNN必须收取所有LSC，称做LNNFS。");
+        $("#description").html("这个网页记载所有「东方Project」的LNN（Lunatic No Miss No Bomb），时不时地更新。" +
+        "每作游戏的每个机体有一行显示打出LNN的玩家。如果某一位玩家用一个机体打出多次LNN，只算一次，其余次数不算入统计。");
+        $("#conditions").html("妖妖梦、神灵庙、天空璋打NN时有附加条件，即是不爆结界、不开灵界、不使用季节解放。此三作LNN被称为LNNN，" +
+        "以第三个N代表着附加的条件。星莲船的附加条件（不开飞碟）由于对难度没有大量的影响，可以自选。永夜抄的LNN必须收取所有LSC，称做LNNFS。");
         $("#tables").html("点击任何标题即可排序表格内容。");
         $("#contents_header").html("内容");
         $("#clickgame").html("单击游戏处查看LNN列表。");
@@ -304,7 +304,7 @@ function generateTableText() {
         $(".nooflnnns").html("No. of LNNNs");
         $(".nooflnnfss").html("No. of LNNFSs");
         $(".nooflnnnns").html("No. of LNNNNs");
-        $(".different").html("(Different players)")
+        $(".different").html("(Different players)");
     } else if (language == "Japanese") {
         $(".shottype").html("キャラ");
         $(".route").html("ルート");
@@ -316,7 +316,7 @@ function generateTableText() {
         $(".nooflnnns").html("LNNNの数");
         $(".nooflnnfss").html("LNNFSの数");
         $(".nooflnnnns").html("LNNNNの数");
-        $(".different").html("（プレイヤー）")
+        $(".different").html("（プレイヤー）");
     } else {
         $(".shottype").html("机体");
         $(".route").html("路线");
@@ -328,7 +328,7 @@ function generateTableText() {
         $(".nooflnnns").html("LNNN的数量");
         $(".nooflnnfss").html("LNNFS的数量");
         $(".nooflnnnns").html("LNNNN的数量");
-        $(".different").html("（玩家）")
+        $(".different").html("（玩家）");
     }
 }
 function generateShottypes() {
@@ -403,7 +403,7 @@ function generateShottypes() {
         $(".MarisaEagle").html("MarisaEagle");
         $(".YoumuWolf").html("YoumuWolf");
         $(".YoumuOtter").html("YoumuOtter");
-        $(".YoumuEagle").html("YoumuEagle")
+        $(".YoumuEagle").html("YoumuEagle");
     } else if (language == "Japanese") {
         $(".ReimuA").html("霊夢A");
         $(".ReimuB").html("霊夢B");
@@ -475,7 +475,7 @@ function generateShottypes() {
         $(".MarisaEagle").html("魔理沙鷲");
         $(".YoumuWolf").html("妖夢狼");
         $(".YoumuOtter").html("妖夢獺");
-        $(".YoumuEagle").html("妖夢鷲")
+        $(".YoumuEagle").html("妖夢鷲");
     } else {
         $(".ReimuA").html("灵梦A");
         $(".ReimuB").html("灵梦B");
@@ -547,7 +547,7 @@ function generateShottypes() {
         $(".MarisaEagle").html("魔理沙鹰");
         $(".YoumuWolf").html("妖梦狼");
         $(".YoumuOtter").html("妖梦獭");
-        $(".YoumuEagle").html("妖梦鹰")
+        $(".YoumuEagle").html("妖梦鹰");
     }
 }
 function generateFullNames() {
@@ -567,7 +567,7 @@ function generateFullNames() {
         $(".DDCf").html("Touhou 14 - Double Dealing Character");
         $(".LoLKf").html("Touhou 15 - Legacy of Lunatic Kingdom");
         $(".HSiFSf").html("Touhou 16 - Hidden Star in Four Seasons");
-        $(".WBaWCf").html("Touhou 17 - Wily Beast and Weakest Creature")
+        $(".WBaWCf").html("Touhou 17 - Wily Beast and Weakest Creature");
     } else if (language == "Japanese") {
         $(".SoEWf").html("東方封魔録　～ the Story of Eastern Wonderland");
         $(".PoDDf").html("東方夢時空　～ Phantasmagoria of Dim.Dream");
@@ -584,7 +584,7 @@ function generateFullNames() {
         $(".DDCf").html("東方輝針城　～ Double Dealing Character");
         $(".LoLKf").html("東方紺珠伝　～ Legacy of Lunatic Kingdom");
         $(".HSiFSf").html("東方天空璋　～ Hidden Star in Four Seasons");
-        $(".WBaWCf").html("東方鬼形獣　～ Wily Beast and Weakest Creature")
+        $(".WBaWCf").html("東方鬼形獣　～ Wily Beast and Weakest Creature");
     } else {
         $(".SoEWf").html("东方封魔录　～ the Story of Eastern Wonderland");
         $(".PoDDf").html("东方梦时空　～ Phantasmagoria of Dim.Dream");
@@ -601,7 +601,7 @@ function generateFullNames() {
         $(".DDCf").html("东方辉针城　～ Double Dealing Character");
         $(".LoLKf").html("东方绀珠传　～ Legacy of Lunatic Kingdom");
         $(".HSiFSf").html("东方天空璋　～ Hidden Star in Four Seasons");
-        $(".WBaWCf").html("东方鬼形獣　～ Wily Beast and Weakest Creature")
+        $(".WBaWCf").html("东方鬼形獣　～ Wily Beast and Weakest Creature");
     }
 }
 function generateShortNames() {
@@ -622,7 +622,7 @@ function generateShortNames() {
         $(".DDC").html("DDC");
         $(".LoLK").html("LoLK");
         $(".HSiFS").html("HSiFS");
-        $(".WBaWC").html("WBaWC")
+        $(".WBaWC").html("WBaWC");
     } else if (language == "Japanese") {
         $(".SoEW").html("封");
         $(".PoDD").html("夢");
@@ -639,7 +639,7 @@ function generateShortNames() {
         $(".DDC").html("輝");
         $(".LoLK").html("紺");
         $(".HSiFS").html("天");
-        $(".WBaWC").html("鬼")
+        $(".WBaWC").html("鬼");
     } else {
         $(".SoEW").html("封");
         $(".PoDD").html("梦");
@@ -656,7 +656,7 @@ function generateShortNames() {
         $(".DDC").html("辉");
         $(".LoLK").html("绀");
         $(".HSiFS").html("天");
-        $(".WBaWC").html("鬼")
+        $(".WBaWC").html("鬼");
     }
 }
 function generateAll() {
@@ -664,32 +664,34 @@ function generateAll() {
     generateTableText();
     generateShottypes();
     generateFullNames();
-    generateShortNames()
+    generateShortNames();
 }
 function setLanguage(newLanguage) {
     if (language == newLanguage) {
-        return
+        return;
     }
-    var oldLanguage = language,
-        lm = $("#lm").html();
+
+    var oldLanguage = language, lm = $("#lm").html();
+
     language = newLanguage;
+
     if (selected !== "" || playerSelected) {
-        generateAll()
+        generateAll();
     } else {
         generateText();
-        generateShortNames()
+        generateShortNames();
     }
+
     setCookie("lang", newLanguage);
+
     if (language == "English") {
-        $("#lastupdate").html("LNNs are current as of <span id='lm'>" + translateEADate(lm, "DMY") + "</span>.")
+        $("#lastupdate").html("LNNs are current as of <span id='lm'>" + translateEADate(lm, "DMY") + "</span>.");
     } else if (language == "Japanese") {
-        $("#lastupdate").html("<span id='lm'>" + (oldLanguage == "English"
-            ? translateDate(lm, "YMD")
-            : lm) + "</span>現在のLNN記録です。")
+        $("#lastupdate").html("<span id='lm'>" + (oldLanguage == "English" ? translateDate(lm, "YMD") : lm) +
+        "</span>現在のLNN記録です。");
     } else {
-        $("#lastupdate").html("LNN更新于<span id='lm'>" + (oldLanguage == "English"
-            ? translateDate(lm, "YMD")
-            : lm) + "</span>。")
+        $("#lastupdate").html("LNN更新于<span id='lm'>" + (oldLanguage == "English" ? translateDate(lm, "YMD") : lm) +
+        "</span>。");
     }
 }
 function dark() {
@@ -699,38 +701,33 @@ function dark() {
     style.type = "text/css";
     style.rel = "stylesheet";
     $("head").append(style);
-    $("#hy").attr("title", "Youkai Mode")
+    $("#hy").attr("title", "Youkai Mode");
 }
 function theme(e) {
     if (e.src.indexOf("y") < 0) {
         e.src = "assets/shared/y-bar.png";
         localStorage.theme = "dark";
-        dark()
+        dark();
     } else {
         e.src = "assets/shared/h-bar.png";
-        $("head")
-            .children("#dark")
-            .remove();
+        $("head").children("#dark").remove();
         $("#hy").attr("title", "Human Mode");
-        localStorage.theme = "light"
+        localStorage.theme = "light";
     }
 }
-$(document)
-    .ready(function () {
-        if (localStorage.theme == "dark") {
-            $("#hy").attr("src", "assets/shared/y-bar.png");
-            dark()
-        }
-        if (location.protocol == "file:") {
-            var path = location
-                .pathname
-                .split('/')
-                .pop();
-            $("#nav a").attr("href", function (i, oldHref) {
-                return (oldHref == '/'
-                    ? location.href.replace(path, "index.html") + ""
-                    : oldHref + ".html")
-            })
-        }
-        load()
-    });
+$(document).ready(function () {
+    if (localStorage.theme == "dark") {
+        $("#hy").attr("src", "assets/shared/y-bar.png");
+        dark();
+    }
+
+    if (location.protocol == "file:") {
+        var path = location.pathname.split('/').pop();
+
+        $("#nav a").attr("href", function (i, oldHref) {
+            return (oldHref == '/' ? location.href.replace(path, "index.html") + "" : oldHref + ".html");
+        });
+    }
+
+    load();
+});
