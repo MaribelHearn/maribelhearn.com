@@ -157,41 +157,39 @@ var WRs,
     SCORE_BUTTON = "#scoringButton",
     SURV_RUBRICS = "#survivalRubrics",
     SCORE_RUBRICS = "#scoringRubrics";
+
 $(document).ready(function () {
     if (localStorage.theme == "dark") {
         $("#hy").attr("src", "assets/shared/y-bar.png");
-        dark()
+        dark();
     }
+
     if (location.protocol == "file:") {
-        var path = location
-            .pathname
-            .split('/')
-            .pop();
+        var path = location.pathname.split('/').pop();
+
         $("#nav a").attr("href", function (i, oldHref) {
-            return (oldHref == '/'
-                ? location.href.replace(path, "index.html") + ""
-                : oldHref + ".html")
-        })
+            return (oldHref == '/' ? location.href.replace(path, "index.html") + "" : oldHref + ".html");
+        });
     }
-    $
-        .get("https://maribelhearn.com/json/wrlist.json", function (data) {
-            WRs = data;
-            $.get("https://maribelhearn.com/json/rubrics.json", function (data) {
-                Rubrics = data;
-                generateText(FIRST_TIME);
-                checkValues(true, true, true);
-                $(POFV_FORMULA).attr("colspan", 4);
-                if (getCookie("lang") == "Japanese") {
-                    language = "Japanese";
-                    generateText(NOT_FIRST_TIME)
-                } else if (getCookie("lang") == "Chinese") {
-                    language = "Chinese";
-                    generateText(NOT_FIRST_TIME)
-                }
-            }, "json")
+
+    $.get("https://maribelhearn.com/json/wrlist.json", function (data) {
+        WRs = data;
+        $.get("https://maribelhearn.com/json/rubrics.json", function (data) {
+            Rubrics = data;
+            generateText(FIRST_TIME);
+            checkValues(true, true, true);
+            $(POFV_FORMULA).attr("colspan", 4);
+            if (getCookie("lang") == "Japanese") {
+                language = "Japanese";
+                generateText(NOT_FIRST_TIME);
+            } else if (getCookie("lang") == "Chinese") {
+                language = "Chinese";
+                generateText(NOT_FIRST_TIME);
+            }
         }, "json");
+    }, "json");
     step = setInterval(updateCountdown, 1000);
-    updateCountdown()
+    updateCountdown();
 });
 function dark() {
     var style = document.createElement("link");
@@ -761,8 +759,8 @@ function generateText(firstTime) {
         $(DRC_SCORES).html("スコアは桁、カンマ、ドット、スペースを含めることができます。クリア重視ではクリアする必要があります。稼ぎではクリアしなくてもよいです。");
         $(RUBRICS_EXPL).html("ルーブリックとはプレイのDRCポイントを計算するために使用される式および固定数のことです。ポイントの決定方法を知りたい場合は、下のボタンをクリックして展開して下" +
                 "さい。");
-        $(CREDIT).html("The background image was drawn by <a href='https://www.pixiv.net/member.php?id=1" +
-                "61300'>ウータン</a>.");
+        $(CREDIT).html("背景イメージは<a href='https://www.pixiv.net/member.php?id=1" +
+                "61300'>ウータン</a>さんのものを使用させていただいております。");
         $(JP_TL_CREDIT).html("<a href='https://twitter.com/7bitm'>7bitm</a>と<a href='https://twitter.com/toho_" +
                 "yumiya'>ゆーみや</a>によって日本語に翻訳されました。");
         $(CN_TL_CREDIT).html("<a href='https://twitter.com/IzayoiMeirin'>Cero</a>と<a href='https://twitter.com" +
