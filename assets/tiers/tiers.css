@@ -162,7 +162,7 @@ input[type=number] {
         background: #1b232e;
     }
 }
-@media screen and (max-width: 100px) {
+@media only screen and (max-height: 100px) {
     #buttons {
         display: none;
     }
