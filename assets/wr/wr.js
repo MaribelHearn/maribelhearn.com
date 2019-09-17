@@ -1,4 +1,4 @@
-var WRs, westScores, missingReplays, seasonsEnabled, datesEnabled.
+var WRs, westScores, missingReplays, seasonsEnabled, datesEnabled,
     notation = "DMY", language = "English", selected = "", skips = [],
     all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN",
     "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC"],
