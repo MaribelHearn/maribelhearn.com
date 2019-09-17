@@ -140,7 +140,6 @@ input[type=number] {
     background-color: rgba(0,0,0,.4);
     color: #000;
 }
-/* #confirmation, #customisation, #mobile_modal, #settings, #text_conversion { */
 #modal_inner {
     background-color: #fefefe;
     margin: auto;
@@ -158,22 +157,7 @@ input[type=number] {
 #artist_form, #settings_table {
     margin: 15px auto;
 }
-@media only screen and (max-device-width: 1100px) {
-    h1 {
-        font-size: 36px;
-    }
-    #add_tier_mobile {
-        width: auto;
-        height: 25px;
-        font-size: 12px;
-    }
-    .button {
-        width: 48%;
-        height: 25px;
-        font-size: 12px;
-    }
-}
-@media only screen and (((min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait)) or
+@media only screen and (((min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait)) or 
 ((min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape))) {
     .no-js body, .no-webp body, .webp body {
         background: #1b232e;
