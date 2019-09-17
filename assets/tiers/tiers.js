@@ -1655,11 +1655,6 @@ function loadSettingsFromStorage() {
         }
     }
 }
-function checkHeight() {
-    if (isMobile()) {
-        $("#buttons").css("display", window.innerHeight < 100 ? "none" : "block");
-    }
-}
 $(document).ready(function () {
     if (getCookie("settings")) {
         localStorage.setItem("settings", getCookie("settings"));
