@@ -120,6 +120,25 @@
             <div id='modal_inner'></div>
         </div>
         <div id='characters' onDragOver='allowDrop(event)' onDrop='drop(event)'></div>
+        <?php
+            $json = file_get_contents('json/chars.json');
+            $chars = json_decode($json, true);
+            $json = file_get_contents('json/works.json');
+            $works = json_decode($json, true);
+            echo '<div id="chars_load">';
+            foreach ($chars as $category => $value) {
+                foreach ($chars[$category] as $key => $value) {
+                    echo '<input id="' . $category . '" type="hidden" value="' . implode($value, ',') . '">';
+                }
+            }
+            echo '</div><div id="works_load">';
+            foreach ($works as $category => $value) {
+                foreach ($works[$category] as $key => $value) {
+                    echo '<input id="' . $category . '" type="hidden" value="' . implode($value, ',') . '">';
+                }
+            }
+            echo '</div>';
+        ?>
         <!-- Default Statcounter code for Maribel Hearn's Web Portal
         http://maribelhearn.com -->
         <script>
