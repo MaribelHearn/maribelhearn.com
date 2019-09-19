@@ -1,105 +1,19 @@
-var categories,
-    gameCategories,
+var categories = {},
+    gameCategories = {},
     defaultWidth = (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) ? 60 : 120,
     settings = {
         "categories": {
-            "Main": {
-                enabled: true
-            },
-            "HRtP": {
-                enabled: true
-            },
-            "SoEW": {
-                enabled: true
-            },
-            "PoDD": {
-                enabled: true
-            },
-            "LLS": {
-                enabled: true
-            },
-            "MS": {
-                enabled: true
-            },
-            "EoSD": {
-                enabled: true
-            },
-            "PCB": {
-                enabled: true
-            },
-            "IaMP": {
-                enabled: true
-            },
-            "IN": {
-                enabled: true
-            },
-            "PoFV": {
-                enabled: true
-            },
-            "MoF": {
-                enabled: true
-            },
-            "SWR": {
-                enabled: true
-            },
-            "SA": {
-                enabled: true
-            },
-            "UFO": {
-                enabled: true
-            },
-            "Soku": {
-                enabled: true
-            },
-            "DS": {
-                enabled: true
-            },
-            "GFW": {
-                enabled: true
-            },
-            "TD": {
-                enabled: true
-            },
-            "HM": {
-                enabled: true
-            },
-            "DDC": {
-                enabled: true
-            },
-            "ULiL": {
-                enabled: true
-            },
-            "LoLK": {
-                enabled: true
-            },
-            "AoCF": {
-                enabled: true
-            },
-            "HSiFS": {
-                enabled: true
-            },
-            "Manga": {
-                enabled: true
-            },
-            "CD": {
-                enabled: true
-            }
+            "Main": { enabled: true }, "HRtP": { enabled: true }, "SoEW": { enabled: true }, "PoDD": { enabled: true },
+            "LLS": { enabled: true }, "MS": { enabled: true }, "EoSD": { enabled: true }, "PCB": { enabled: true },
+            "IaMP": { enabled: true }, "IN": { enabled: true }, "PoFV": { enabled: true }, "MoF": { enabled: true },
+            "SWR": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true }, "Soku": { enabled: true },
+            "DS": { enabled: true }, "GFW": { enabled: true }, "TD": { enabled: true }, "HM": { enabled: true },
+            "DDC": { enabled: true }, "ULiL": { enabled: true }, "LoLK": { enabled: true }, "AoCF": { enabled: true },
+            "HSiFS": { enabled: true }, "Manga": { enabled: true }, "CD": { enabled: true }
         },
         "gameCategories": {
-            "PC-98": { enabled: true }, "Classic": { enabled: true },
-            "Modern1": {
-                enabled: true
-            },
-            "Modern2": {
-                enabled: true
-            },
-            "Manga": {
-                enabled: true
-            },
-            "Books": {
-                enabled: true
-            },
-            "CDs": { enabled: true }
+            "PC-98": { enabled: true }, "Classic": { enabled: true }, "Modern1": { enabled: true }, "Modern2": { enabled: true },
+            "Manga": { enabled: true }, "Books": { enabled: true }, "CDs": { enabled: true }
         },
         "pc98Enabled": true,
         "windowsEnabled": true,
@@ -317,7 +231,7 @@ var addToTier = function (character, tierNum, pos, noDisplay) {
     }
 
     window.onbeforeunload = function () {
-        return confirm()
+        return confirm();
     };
 
     for (i in cats[categoryName].chars) {
@@ -340,41 +254,41 @@ function addToTierMobile(character, tierNum) {
     emptyModal();
     $("#msg_container").html("<strong style='color:green'>Added " + character + " to " + tierList[tierNum].name + "!</strong>");
 }
-var addMenu = function (character) {
-    var tierList = (settings.sort == "characters"
-            ? tiers
-            : gameTiers),
-        tierOrder = (settings.sort == "characters"
-            ? order
-            : gameOrder),
-        tierNum,
-        i;
+function addMenu(character) {
+    var tierList = (settings.sort == "characters" ? tiers : gameTiers),
+        tierOrder = (settings.sort == "characters" ? order : gameOrder),
+        tierNum, i;
+
     emptyModal();
     $("#modal_inner").html("<h3>" + character + "</h3><p>Add to tier:</p>");
+
     for (i = 0; i < tierOrder.length; i += 1) {
         tierNum = tierOrder[i];
+
         if (!tierList[tierNum].flag) {
-            $("#modal_inner").append("<input type='button' value='" + tierList[tierNum].name + "' onClick='addToTierMobile(\"" + character + "\", " + tierNum + ")' style='min-width: 25px; height: 25px; margin: 10px'>")
+            $("#modal_inner").append("<input type='button' value='" + tierList[tierNum].name +
+            "' onClick='addToTierMobile(\"" + character + "\", " + tierNum +
+            ")' style='min-width: 25px; height: 25px; margin: 10px'>");
         }
     }
     $("#modal_inner").css("display", "block");
-    $("#modal").css("display", "block")
-};
-var moveToBack = function (character, tierNum) {
-    var tierList = (settings.sort == "characters"
-            ? tiers
-            : gameTiers),
-        help = $("#" + character);
+    $("#modal").css("display", "block");
+}
+function moveToBack(character, tierNum) {
+    var tierList = (settings.sort == "characters" ? tiers : gameTiers), help = $("#" + character);
+
     for (counter = getPositionOf(character); counter + 1 < tierList[tierNum].chars.length; counter += 1) {
-        $("#tier" + tierNum + "_" + counter).html($("#tier" + tierNum + "_" + (counter + 1)).html())
+        $("#tier" + tierNum + "_" + counter).html($("#tier" + tierNum + "_" + (counter + 1)).html());
     }
+
     $("#msg_container").html("");
     $("#tier" + tierNum + "_" + (tierList[tierNum].chars.length - 1)).html(help);
     updateArrays();
+
     window.onbeforeunload = function () {
-        return confirm()
+        return confirm();
     }
-};
+}
 function removeFromTier(character, tierNum) {
     var tierList = (settings.sort == "characters" ? tiers : gameTiers), pos, counter;
 
@@ -479,7 +393,8 @@ function addTier(tierName, noDisplay) {
     }
 
     if (!validateTierName(tierName)) {
-        $("#msg_container").html("<strong style='color:orange'>Error: tier names may not exceed " + maxNameLength + " characters.</strong>");
+        $("#msg_container").html("<strong style='color:orange'>Error: tier names may not exceed " + maxNameLength +
+        " characters.</strong>");
         return;
     }
 
@@ -600,74 +515,77 @@ function removeTier(tierNum, skipConfirmation) {
         return confirm();
     }
 }
-var swapCharacters = function (character1, character2) {
-    var parent1 = $("#" + character1).parent(),
-        parent2 = $("#" + character2).parent(),
-        backup = $("#" + character1);
+function swapCharacters(character1, character2) {
+    var parent1 = $("#" + character1).parent(), parent2 = $("#" + character2).parent(), backup = $("#" + character1);
+
     $(parent1).html($("#" + character2));
     $(parent2).html(backup);
     updateArrays();
+
     if (isMobile()) {
-        $("#" + character1).attr("onContextMenu", "modalChar('" + character1 + "', " + getTierNumOf(character1) + "); return false;");
-        $("#" + character2).attr("onContextMenu", "modalChar('" + character2 + "', " + getTierNumOf(character2) + "); return false;")
+        $("#" + character1).attr("onContextMenu", "modalChar('" + character1 +
+        "', " + getTierNumOf(character1) + "); return false;");
+        $("#" + character2).attr("onContextMenu", "modalChar('" + character2 +
+        "', " + getTierNumOf(character2) + "); return false;")
     } else {
-        $("#" + character1).attr("onContextMenu", "removeFromTier('" + character1 + "', " + getTierNumOf(character1) + "); return false;");
-        $("#" + character2).attr("onContextMenu", "removeFromTier('" + character2 + "', " + getTierNumOf(character2) + "); return false;")
+        $("#" + character1).attr("onContextMenu", "removeFromTier('" + character1 +
+        "', " + getTierNumOf(character1) + "); return false;");
+        $("#" + character2).attr("onContextMenu", "removeFromTier('" + character2 +
+        "', " + getTierNumOf(character2) + "); return false;")
     }
+
     window.onbeforeunload = function () {
-        return confirm()
+        return confirm();
     }
-};
-var emptyModal = function () {
+}
+function emptyModal() {
     $("#modal_inner").html("");
     $("#modal_inner").css("display", "none");
     $("#modal").css("display", "none")
-};
-var closeModal = function (event) {
+}
+function closeModal(event) {
     var modal = document.getElementById("modal");
+
     if ((event.target && event.target == modal) || (event.keyCode && event.keyCode == 27)) {
-        emptyModal()
+        emptyModal();
     }
-};
-var quickAdd = function (tierNum) {
-    var cats = (settings.sort == "characters"
-            ? categories
-            : gameCategories),
-        categoryName,
-        character,
-        i;
+}
+function quickAdd(tierNum) {
+    var cats = (settings.sort == "characters" ? categories : gameCategories), categoryName, character, i;
+
     for (categoryName in cats) {
         if (settings.sort == "characters" && settings.categories[categoryName].enabled || settings.sort == "works" && settings.gameCategories[categoryName].enabled) {
             for (i = 0; i < cats[categoryName].chars.length; i += 1) {
-                character = cats[categoryName]
-                    .chars[i]
-                    .removeSpaces();
+                character = cats[categoryName].chars[i].removeSpaces();
+
                 if (!isTiered(character)) {
-                    addToTier(character, tierNum)
+                    addToTier(character, tierNum);
                 }
             }
         }
     }
-};
-var detectLeftCtrlCombo = function (event, tierNum) {
+}
+function detectLeftCtrlCombo(event, tierNum) {
     if (event.ctrlKey) {
-        quickAdd(tierNum)
+        quickAdd(tierNum);
     } else {
-        startTierSwap(tierNum)
+        startTierSwap(tierNum);
     }
-};
-var emptyTier = function (tierNum) {
+}
+function emptyTier(tierNum) {
     var confirmation;
+
     if (isMobile()) {
-        removeCharacters(tierNum)
+        removeCharacters(tierNum);
     }
-    confirmation = confirm("Are you sure you want to empty this tier? Emptying may take a moment with many c" +
-            "haracters inside.");
+
+    confirmation = confirm("Are you sure you want to empty this tier? Emptying may take a moment with many characters inside.");
+
     if (confirmation) {
-        removeCharacters(tierNum)
+        removeCharacters(tierNum);
     }
-};
-var modalTier = function (tierNum) {
+}
+function modalTier(tierNum) {
     var tierList = (settings.sort == "characters" ? tiers : gameTiers);
 
     emptyModal();
@@ -696,7 +614,7 @@ function detectAddTierEnter(event) {
 }
 function toggleInstructions() {
     $("#instructions").css("display", $("#instructions").css("display") == "none" ? "block" : "none");
-    $("#toggle").html("<a href='javascript:toggleInstructions()'>Click here to " + ($(".instructions").css("display") == "none" ? "show" : "hide") + " the instructions.</a>")
+    $("#toggle").html("<a href='javascript:toggleInstructions()'>Click here to " + ($(".instructions").css("display") == "none" ? "show" : "hide") + " the instructions.</a>");
 }
 function allowData() {
     if (localStorage.length <= 2) {
@@ -734,8 +652,8 @@ function saveTiers() {
     }
 
     saveTiersData();
-};
-var saveSettingsData = function () {
+}
+function saveSettingsData() {
     if (isMobile()) {
         emptyModal();
     }
@@ -743,8 +661,8 @@ var saveSettingsData = function () {
     localStorage.setItem("settings", JSON.stringify(settings));
     $("#msg_container").html("<strong style='color:green'>Settings saved!</strong>");
     window.onbeforeunload = undefined;
-};
-var saveSettingsPre = function () {
+}
+function saveSettingsPre() {
     if (isMobile() && localStorage.length <= 2) {
         emptyModal();
         $("#modal_inner").html("<h3>Save Settings</h3><p>This will store data in your browser's Web Storage, whi" +
@@ -762,7 +680,7 @@ var saveSettingsPre = function () {
     }
 
     saveSettingsData();
-};
+}
 function modalInformation() {
     emptyModal();
     $("#modal_inner").html("<h3>Acknowledgements</h3>" + $("#credits").html() +
@@ -772,303 +690,285 @@ function modalInformation() {
 }
 function menu() {
     emptyModal();
-    $("#modal_inner").html("<h3>Menu</h3>" + $("#menu").html() + "<h3>Navigation</h3><a href='/'><img src='favicon.ico' alt='Index icon'> Index</a" +
-            "><a href='scoring'><img src='assets/scoring/spell.ico' alt='Spell Card icon'> Sc" +
-            "oring</a><a href='survival'><img src='assets/survival/survival.ico' alt='1up Ite" +
-            "m icon'> Survival</a><a href='drc'><img src='assets/drc/power.ico' alt='Power ic" +
-            "on'> DRC</a><a href='tools'><img src='assets/tools/ufo.ico' alt='UFO icon'> Tool" +
-            "s</a><a href='wr'><img src='assets/wr/point.ico' alt='Point Item icon'> WR</a><a" +
-            " href='lnn'><img src='assets/lnn/full.ico' alt='Full Power icon'> LNN</a><a href" +
-            "='thvote'><img src='assets/thvote/tou-32.ico' alt='Tou kanji icon'> Poll</a><a h" +
-            "ref='jargon'><img src='assets/jargon/bomb.ico' alt='Bomb icon'> Jargon</a><a hre" +
-            "f='trs'><img src='assets/trs/shinto.png' alt='Shinto shrine icon'> TRS</a><stron" +
-            "g><img src='assets/tiers/castle.png' alt='Japanese castle icon'> Tiers</a></stro" +
-            "ng>");
+    $("#modal_inner").html("<h3>Menu</h3>" + $("#menu").html() + "<h3>Navigation</h3><a href='/'>" +
+    "<img src='favicon.ico' alt='Index icon'> Index</a><a href='scoring'><img src='assets/scoring/spell.ico' " +
+    "alt='Spell Card icon'> Scoring</a><a href='survival'><img src='assets/survival/survival.ico' alt='1up Item icon'> " +
+    "Survival</a><a href='drc'><img src='assets/drc/power.ico' alt='Power icon'> DRC</a><a href='tools'>" +
+    "<img src='assets/tools/ufo.ico' alt='UFO icon'> Tools</a><a href='wr'><img src='assets/wr/point.ico' alt='Point Item icon'> " +
+    "WR</a><a href='lnn'><img src='assets/lnn/full.ico' alt='Full Power icon'> LNN</a><a href='thvote'>" +
+    "<img src='assets/thvote/tou-32.ico' alt='Tou kanji icon'> Poll</a><a href='jargon'><img src='assets/jargon/bomb.ico' " +
+    "alt='Bomb icon'> Jargon</a><a href='trs'><img src='assets/trs/shinto.png' alt='Shinto shrine icon'> TRS</a><strong>" +
+    "<img src='assets/tiers/castle.png' alt='Japanese castle icon'> Tiers</a></strong>");
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
 }
-var checkSort = function (text) {
-    var i,
-        j,
-        characters;
+function checkSort(text) {
+    var i, j, characters;
+
     for (i = 0; i < text.length; i += 1) {
         if (text[i].contains(':')) {
-            continue
+            continue;
         }
+
         if (text[i].charAt(0) == '#') {
-            continue
+            continue;
         }
+
         if (text[i] !== "") {
             characters = text[i].split(',');
+
             for (j = 0; j < characters.length; j += 1) {
                 if (isCharacter(characters[j].removeSpaces())) {
-                    return "characters"
+                    return "characters";
                 } else {
-                    return "works"
+                    return "works";
                 }
             }
         }
     }
-};
-var load = function () {
-    var text = $("#import")
-            .val()
-            .split('\n'),
-        noDisplay = true,
-        counter = -1,
-        tierList,
-        tierSort,
-        characters,
-        i,
-        j;
+}
+function load() {
+    var text = $("#import").val().split('\n'), noDisplay = true, counter = -1, tierList, tierSort, characters, i, j;
+
     tierSort = checkSort(text);
+
     if (tierSort != settings.sort) {
         $("#modal_inner").html("");
         $("#modal").css("display", "none");
         $("#modal_inner").css("display", "none");
-        $("#msg_container").html("<strong style='color:orange'>Cannot import characters into works or vice versa!<" +
-                "/strong>");
-        return
+        $("#msg_container").html("<strong style='color:orange'>Cannot import characters into works or vice versa!</strong>");
+        return;
     }
-    $("#import_msg_container").html("<strong style='color:orange'>Please watch warmly as your tier list is imported.." +
-            ".</strong>");
-    tierList = (settings.sort == "characters"
-        ? tiers
-        : gameTiers);
+
+    $("#import_msg_container").html("<strong style='color:orange'>Please watch warmly as your tier list is imported...</strong>");
+    tierList = (settings.sort == "characters" ? tiers : gameTiers);
+
     for (tierNum in tierList) {
-        removeTier(tierNum, true)
+        removeTier(tierNum, true);
     }
+
     if (settings.sort == "characters") {
-        order = []
+        order = [];
     } else {
-        gameOrder = []
+        gameOrder = [];
     }
+
     for (i = 0; i < text.length; i += 1) {
         if (text[i].contains(':')) {
             addTier(text[i].replace(':', ""));
             counter += 1;
-            i += 1
+            i += 1;
         }
+
         if (text[i].charAt(0) == '#') {
             tierList[counter].bg = text[i].split(' ')[0];
             tierList[counter].colour = text[i].split(' ')[1];
             $("#th" + counter).css("background-color", tierList[counter].bg);
             $("#th" + counter).css("color", tierList[counter].colour);
-            i += 1
+            i += 1;
         }
+
         if (text[i] !== "") {
             characters = text[i].split(',');
+
             for (j = 0; j < characters.length; j += 1) {
                 if (characters[j] == "Mai") {
-                    characters[j] = "Mai PC-98"
+                    characters[j] = "Mai PC-98";
                 }
-                addToTier(characters[j].removeSpaces(), counter)
+                addToTier(characters[j].removeSpaces(), counter);
             }
         }
     }
+
     $("#modal_inner").html("");
     $("#modal").css("display", "none");
     $("#modal_inner").css("display", "none");
-    $("#msg_container").html("<strong style='color:green'>Tier list successfully imported!</strong>")
-};
-var importText = function () {
-    var tierNum,
-        character,
-        i;
+    $("#msg_container").html("<strong style='color:green'>Tier list successfully imported!</strong>");
+}
+function importText() {
+    var tierNum, character, i;
+
     emptyModal();
-    $("#modal_inner").html("<h2>Import from Text</h2><p>Note that the format should be the same as the expor" +
-            "ted text.</p>");
+    $("#modal_inner").html("<h2>Import from Text</h2><p>Note that the format should be the same as the exported text.</p>");
     $("#modal_inner").append("<p><strong>Warning:</strong> Importing will overwrite your current tier list!");
-    $("#modal_inner").append("<textarea id='import'></textarea><p><input type='button' value='Import' onClick=" +
-            "'load()'></p>");
+    $("#modal_inner").append("<textarea id='import'></textarea><p><input type='button' value='Import' onClick='load()'></p>");
     $("#modal_inner").append("<p id='import_msg_container'></p>");
     $("#modal_inner").css("display", "block");
-    $("#modal").css("display", "block")
-};
+    $("#modal").css("display", "block");
+}
 function copyToClipboard() {
     navigator.clipboard.writeText($("#text").html().replace(/<\/p><p>/g, "\n").strip());
     emptyModal();
     $("#msg_container").html("<strong style='color:green'>Copied to clipboard!</strong>");
     window.onbeforeunload = undefined;
 }
-var exportText = function () {
-    var tierList = (settings.sort == "characters"
-            ? tiers
-            : gameTiers),
-        tierOrder = (settings.sort == "characters"
-            ? order
-            : gameOrder),
-        tierNum,
-        character,
-        i,
-        j;
+function exportText() {
+    var tierList = (settings.sort == "characters" ? tiers : gameTiers),
+    tierOrder = (settings.sort == "characters" ? order : gameOrder),
+    tierNum, character, i, j;
+
     emptyModal();
     $("#modal_inner").html("<h2>Export to Text</h2><p id='text'></p>");
-    $("#modal_inner").append("<p><input type='button' value='Copy to Clipboard' onClick='copyToClipboard()'></" +
-            "p>");
+    $("#modal_inner").append("<p><input type='button' value='Copy to Clipboard' onClick='copyToClipboard()'></p>");
+
     for (i = 0; i < tierOrder.length; i += 1) {
         tierNum = tierOrder[i];
+
         if (!tierList[tierNum].flag) {
-            $("#text").append("<p>" + tierList[tierNum].name + ":</p><p>" + tierList[tierNum].bg + " " + tierList[tierNum].colour + "</p><p>");
+            $("#text").append("<p>" + tierList[tierNum].name + ":</p><p>" + tierList[tierNum].bg +
+            " " + tierList[tierNum].colour + "</p><p>");
+
             for (j = 0; j < tierList[tierNum].chars.length; j += 1) {
                 character = $("#" + tierList[tierNum].chars[j]).attr("alt");
-                $("#text").append(character + (j == tierList[tierNum].chars.length - 1
-                    ? ""
-                    : ", "))
+                $("#text").append(character + (j == tierList[tierNum].chars.length - 1 ? "" : ", "));
             }
-            $("#text").append("</p>")
+
+            $("#text").append("</p>");
         }
     }
+
     if ($("#text").html() === "") {
         $("#msg_container").html("<strong style='color:orange'>Error: there are no tiers to export.</strong>");
         $("#modal_inner").html("");
-        return
+        return;
     }
+
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block")
-};
-var customiseMenu = function () {
-    var tierList = (settings.sort == "characters"
-            ? tiers
-            : gameTiers),
-        tierOrder = (settings.sort == "characters"
-            ? order
-            : gameOrder),
-        tierNum,
-        i;
+}
+function customiseMenu() {
+    var tierList = (settings.sort == "characters" ? tiers : gameTiers),
+        tierOrder = (settings.sort == "characters" ? order : gameOrder),
+        tierNum, i;
+
     emptyModal();
     $("#modal_inner").html("<div><h2>Tier Customisation</h2></div><div id='custom_tier_container'>");
+
     for (i = 0; i < tierOrder.length; i += 1) {
         tierNum = tierOrder[i];
+
         if (!tierList[tierNum].flag) {
             $("#custom_tier_container").append("<p><strong>" + tierList[tierNum].name + "</strong></p>");
-            $("#custom_tier_container").append("<p class='name'><label for='custom_name_tier" + tierNum + "'>Name</label><input id='custom_name_tier" + tierNum + "' type='text' value='" + tierList[tierNum].name + "'></p>");
-            $("#custom_tier_container").append("<p class='colour'><label for='custom_bg_tier" + tierNum + "'>Background Colour</label><input id='custom_bg_tier" + tierNum + "' type='color' value='" + tierList[tierNum].bg + "'>");
-            $("#custom_tier_container").append("<label for='custom_colour_tier" + tierNum + "'>Text Colour</label><input id='custom_colour_tier" + tierNum + "' type='color' value='" + tierList[tierNum].colour + "'></p>")
+            $("#custom_tier_container").append("<p class='name'><label for='custom_name_tier" + tierNum +
+            "'>Name</label><input id='custom_name_tier" + tierNum + "' type='text' value='" + tierList[tierNum].name + "'></p>");
+            $("#custom_tier_container").append("<p class='colour'><label for='custom_bg_tier" + tierNum +
+            "'>Background Colour</label><input id='custom_bg_tier" + tierNum + "' type='color' value='" + tierList[tierNum].bg + "'>");
+            $("#custom_tier_container").append("<label for='custom_colour_tier" + tierNum +
+            "'>Text Colour</label><input id='custom_colour_tier" + tierNum +
+            "' type='color' value='" + tierList[tierNum].colour + "'></p>");
         }
     }
+
     if ($("#custom_tier_container").html() === "") {
         $("#msg_container").html("<strong style='color:orange'>Error: there are no tiers to customise.</strong>");
         $("#modal_inner").html("");
-        return
+        return;
     }
-    $("#modal_inner").append("</div><div><p><input type='button' value='Save Changes' onClick='saveCustom()'><" +
-            "/p><p id='custom_msg_container'></p></div>");
+
+    $("#modal_inner").append("</div><div><p><input type='button' value='Save Changes' onClick='saveCustom()'></p>" +
+    "<p id='custom_msg_container'></p></div>");
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block")
-};
-var saveCustom = function () {
-    var tierList = (settings.sort == "characters"
-            ? tiers
-            : gameTiers),
-        tierNum,
-        tierName,
-        tierColour;
+}
+function saveCustom() {
+    var tierList = (settings.sort == "characters" ? tiers : gameTiers), tierNum, tierName, tierColour;
+
     cancelOngoingSwap();
+
     for (tierNum in tierList) {
         if (!tierList[tierNum].flag) {
-            tierName = $("#custom_name_tier" + tierNum)
-                .val()
-                .strip()
-                .replace(/'/g, "");
+            tierName = $("#custom_name_tier" + tierNum).val().strip().replace(/'/g, "");
             tierBg = $("#custom_bg_tier" + tierNum).val();
             tierColour = $("#custom_colour_tier" + tierNum).val();
+
             if (!validateTierName(tierName)) {
                 $("#custom_msg_container").html("<strong style='color:orange'>Error: tier names may not exceed " + maxNameLength + " characters.</strong>");
-                return
+                return;
             }
+
             $("#th" + tierNum).html(tierName);
             $("#th" + tierNum).css("background-color", tierBg);
             $("#th" + tierNum).css("color", tierColour);
             tierList[tierNum].name = tierName;
             tierList[tierNum].bg = tierBg;
-            tierList[tierNum].colour = tierColour
+            tierList[tierNum].colour = tierColour;
         }
     }
+
     $("#modal_inner").html("");
     $("#modal_inner").css("display", "none");
     $("#modal").css("display", "none");
-    saveTiers()
-};
-var settingsMenuChars = function () {
-    var categoryName,
-        current = 0,
-        counter = 0;
+    saveTiers();
+}
+function settingsMenuChars() {
+    var categoryName, current = 0, counter = 0;
+
     emptyModal();
-    $("#modal_inner").html("<h2>Settings</h2><div>Use the following art set:<form id='artist_form'></form></" +
-            "div>");
-    $("#artist_form").append("<label for='dairi'>Dairi</label><input id='dairi' name='artist' type='radio'" + (settings.artist == "Dairi"
-        ? " checked"
-        : "") + ">");
-    $("#artist_form").append("<label for='ruu'>るう</label><input id='ruu' name='artist' type='radio'" + (settings.artist == "Ruu"
-        ? " checked"
-        : "") + ">");
-    $("#modal_inner").append("Include characters in the following works of first appearance:<table id='setting" +
-            "s_table'><tbody><tr id='settings_tr0'>");
+    $("#modal_inner").html("<h2>Settings</h2><div>Use the following art set:<form id='artist_form'></form></div>");
+    $("#artist_form").append("<label for='dairi'>Dairi</label><input id='dairi' name='artist' " +
+    "type='radio'" + (settings.artist == "Dairi" ? " checked" : "") + ">");
+    $("#artist_form").append("<label for='ruu'>るう</label><input id='ruu' name='artist' " +
+    "type='radio'" + (settings.artist == "Ruu" ? " checked" : "") + ">");
+    $("#modal_inner").append("Include characters in the following works of first appearance:" +
+    "<table id='settings_table'><tbody><tr id='settings_tr0'>");
     $("#artist_form").attr("onClick", "toggleArtist()");
+
     for (categoryName in categories) {
         if (counter > 0 && counter % 5 === 0) {
             counter = 0;
             current += 1;
-            $("#settings_table").append("</tr><tr id='settings_tr" + current + "'>")
+            $("#settings_table").append("</tr><tr id='settings_tr" + current + "'>");
         }
-        $("#settings_tr" + current).append("<td><input id='checkbox_" + categoryName + "' type='checkbox'" + (settings.categories[categoryName].enabled
-            ? " checked"
-            : "") + " " + ((pc98.contains(categoryName) || categoryName == "Soku") && settings.artist == "Ruu"
-            ? "disabled=true"
-            : "") + "><label for='" + categoryName + "'>" + categoryName + "</label></td>");
-        counter += 1
+
+        $("#settings_tr" + current).append("<td><input id='checkbox_" + categoryName +
+        "' type='checkbox'" + (settings.categories[categoryName].enabled ? " checked" : "") +
+        " " + ((pc98.contains(categoryName) || categoryName == "Soku") && settings.artist == "Ruu" ? "disabled=true" : "") +
+        "><label for='" + categoryName + "'>" + categoryName + "</label></td>");
+        counter += 1;
     }
+
     $("#modal_inner").append("</tr></tbody></table>");
-    $("#modal_inner").append("<p><label for='pc-98'>PC-98</label><input id='pc98' type='checkbox' onClick='tog" +
-            "glePC98()'" + (settings.pc98Enabled
-        ? " checked"
-        : "") + " " + (settings.artist == "Ruu"
-        ? "disabled=true"
-        : "") + "></p>");
-    $("#modal_inner").append("<p><label for='windows'>Windows</label><input id='windows' type='checkbox' onCli" +
-            "ck='toggleWindows()'" + (settings.windowsEnabled
-        ? " checked"
-        : "") + "></p>");
-    $("#modal_inner").append("<p><label for='male'>Male Characters</label><input id='male' type='checkbox' onC" +
-            "lick='toggleMale()'" + (settings.maleEnabled
-        ? " checked"
-        : "") + " " + (settings.artist == "Ruu"
-        ? "disabled=true"
-        : "") + "></p>");
-    $("#modal_inner").append("<div>Other settings:<p><label for='tierHeaderWidth'>Max tier header width</label" +
-            "><input id='tierHeaderWidth' type='number' value=" + settings.tierHeaderWidth + " min=" + defaultWidth + "></p></div>");
-    $("#modal_inner").append("<div><p><input type='button' value='Save Changes' onClick='saveSettings()'></p><" +
-            "p id='settings_msg_container'></p></div>");
+    $("#modal_inner").append("<p><label for='pc-98'>PC-98</label><input id='pc98' type='checkbox' " +
+    "onClick='togglePC98()'" + (settings.pc98Enabled ? " checked" : "") +
+    " " + (settings.artist == "Ruu" ? "disabled=true" : "") + "></p>");
+    $("#modal_inner").append("<p><label for='windows'>Windows</label><input id='windows' type='checkbox' " +
+    "onClick='toggleWindows()'" + (settings.windowsEnabled ? " checked" : "") + "></p>");
+    $("#modal_inner").append("<p><label for='male'>Male Characters</label><input id='male' type='checkbox' " +
+    "onClick='toggleMale()'" + (settings.maleEnabled ? " checked" : "") +
+    " " + (settings.artist == "Ruu" ? "disabled=true" : "") + "></p>");
+    $("#modal_inner").append("<div>Other settings:<p><label for='tierHeaderWidth'>Max tier header width</label><input id='tierHeaderWidth' type='number' value=" + settings.tierHeaderWidth + " min=" + defaultWidth + "></p></div>");
+    $("#modal_inner").append("<div><p><input type='button' value='Save Changes' onClick='saveSettings()'></p>" +
+    "<p id='settings_msg_container'></p></div>");
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block")
-};
-var settingsMenuWorks = function () {
-    var categoryName,
-        current = 0,
-        counter = 0;
+}
+function settingsMenuWorks() {
+    var categoryName, current = 0, counter = 0;
+
     emptyModal();
-    $("#modal_inner").html("<h2>Settings</h2>Include works in the following categories:<table id='settings_t" +
-            "able'><tbody><tr id='settings_tr0'>");
+    $("#modal_inner").html("<h2>Settings</h2>Include works in the following categories:" +
+    "<table id='settings_table'><tbody><tr id='settings_tr0'>");
+
     for (categoryName in gameCategories) {
         if (counter > 0 && counter % 5 === 0) {
             counter = 0;
             current += 1;
-            $("#settings_table").append("</tr><tr id='settings_tr" + current + "'>")
+            $("#settings_table").append("</tr><tr id='settings_tr" + current + "'>");
         }
-        $("#settings_tr" + current).append("<td><input id='checkbox_" + categoryName + "' type='checkbox'" + (settings.gameCategories[categoryName].enabled
-            ? " checked"
-            : "") + "><label for='" + categoryName + "'>" + categoryName + "</label></td>");
-        counter += 1
+
+        $("#settings_tr" + current).append("<td><input id='checkbox_" + categoryName +
+        "' type='checkbox'" + (settings.gameCategories[categoryName].enabled ? " checked" : "") +
+        "><label for='" + categoryName + "'>" + categoryName + "</label></td>");
+        counter += 1;
     }
     $("#modal_inner").append("</tr></tbody></table>");
-    $("#modal_inner").append("<div>Other settings:<p><label for='tierHeaderWidth'>Max tier header width</label" +
-            "><input id='tierHeaderWidth' type='number' value=" + settings.tierHeaderWidth + " min=" + defaultWidth + "></p></div>");
-    $("#modal_inner").append("<div><p><input type='button' value='Save Changes' onClick='saveSettings()'></p><" +
-            "p id='settings_msg_container'></p></div>");
+    $("#modal_inner").append("<div>Other settings:<p><label for='tierHeaderWidth'>Max tier header width</label>" +
+    "<input id='tierHeaderWidth' type='number' value=" + settings.tierHeaderWidth + " min=" + defaultWidth + "></p></div>");
+    $("#modal_inner").append("<div><p><input type='button' value='Save Changes' onClick='saveSettings()'></p>" +
+    "<p id='settings_msg_container'></p></div>");
     $("#modal_inner").css("display", "block");
-    $("#modal").css("display", "block")
-};
+    $("#modal").css("display", "block");
+}
 function settingsMenu() {
     if (settings.sort == "characters") {
         settingsMenuChars();
@@ -1076,33 +976,28 @@ function settingsMenu() {
         settingsMenuWorks();
     }
 }
-var massRemoval = function (removedCategories) {
-    var cats = (settings.sort == "characters"
-            ? categories
-            : gameCategories),
-        categoryName,
-        character,
-        i,
-        j;
-    $("#settings_msg_container").html("<strong style='color:orange'>Girls are being removed, please wait warmly...</str" +
-            "ong>");
+function massRemoval(removedCategories) {
+    var cats = (settings.sort == "characters" ? categories : gameCategories), categoryName, character, i, j;
+
+    $("#settings_msg_container").html("<strong style='color:orange'>Girls are being removed, please wait warmly...</strong>");
+
     for (i = 0; i < removedCategories.length; i += 1) {
         categoryName = removedCategories[i];
+
         if (isCategory(categoryName)) {
             for (j in categories[categoryName].chars) {
-                character = categories[categoryName]
-                    .chars[j]
-                    .removeSpaces();
+                character = categories[categoryName].chars[j].removeSpaces();
+
                 if (isTiered(character)) {
-                    removeFromTier(character, getTierNumOf(character))
+                    removeFromTier(character, getTierNumOf(character));
                 }
             }
         } else {
             character = categoryName;
-            removeFromTier(character, getTierNumOf(character))
+            removeFromTier(character, getTierNumOf(character));
         }
     }
-};
+}
 function togglePC98() {
     for (var i = 0; i < pc98.length; i += 1) {
         $("#checkbox_" + pc98[i]).prop("checked", $("#pc98").is(":checked") ? true : false);
@@ -1202,19 +1097,15 @@ function saveSettings() {
         if ($("#dairi").is(":checked") && settings.artist != "Dairi") {
             for (categoryName in categories) {
                 for (i in categories[categoryName].chars) {
-                    character = categories[categoryName]
-                        .chars[i]
-                        .removeSpaces();
-                    $("#" + character).attr("src", $("#" + character).attr("src").replace("Ruu", "Dairi").replace("jpg", "png"))
+                    character = categories[categoryName].chars[i].removeSpaces();
+                    $("#" + character).attr("src", $("#" + character).attr("src").replace("Ruu", "Dairi").replace("jpg", "png"));
                 }
             }
         } else if ($("#ruu").is(":checked") && settings.artist != "Ruu") {
             for (categoryName in categories) {
                 for (i in categories[categoryName].chars) {
-                    character = categories[categoryName]
-                        .chars[i]
-                        .removeSpaces();
-                    $("#" + character).attr("src", $("#" + character).attr("src").replace("Dairi", "Ruu").replace("png", "jpg"))
+                    character = categories[categoryName].chars[i].removeSpaces();
+                    $("#" + character).attr("src", $("#" + character).attr("src").replace("Dairi", "Ruu").replace("png", "jpg"));
                 }
             }
         }
@@ -1261,16 +1152,19 @@ function changeLog() {
 }
 function eraseAllConfirmed() {
     var tierNum;
+
     if (settings.sort == "characters") {
         for (tierNum in tiers) {
-            removeTier(tierNum, true)
+            removeTier(tierNum, true);
         }
     }
+
     if (settings.sort == "works") {
         for (tierNum in gameTiers) {
-            removeTier(tierNum, true)
+            removeTier(tierNum, true);
         }
     }
+
     order = [];
     tiers = {};
     gameOrder = [];
@@ -1278,110 +1172,17 @@ function eraseAllConfirmed() {
     tmp = settings.sort;
     settings = {
         "categories": {
-            "Main": {
-                enabled: true
-            },
-            "HRtP": {
-                enabled: true
-            },
-            "SoEW": {
-                enabled: true
-            },
-            "PoDD": {
-                enabled: true
-            },
-            "LLS": {
-                enabled: true
-            },
-            "MS": {
-                enabled: true
-            },
-            "EoSD": {
-                enabled: true
-            },
-            "PCB": {
-                enabled: true
-            },
-            "IaMP": {
-                enabled: true
-            },
-            "IN": {
-                enabled: true
-            },
-            "PoFV": {
-                enabled: true
-            },
-            "MoF": {
-                enabled: true
-            },
-            "SWR": {
-                enabled: true
-            },
-            "SA": {
-                enabled: true
-            },
-            "UFO": {
-                enabled: true
-            },
-            "Soku": {
-                enabled: true
-            },
-            "DS": {
-                enabled: true
-            },
-            "GFW": {
-                enabled: true
-            },
-            "TD": {
-                enabled: true
-            },
-            "HM": {
-                enabled: true
-            },
-            "DDC": {
-                enabled: true
-            },
-            "ULiL": {
-                enabled: true
-            },
-            "LoLK": {
-                enabled: true
-            },
-            "AoCF": {
-                enabled: true
-            },
-            "HSiFS": {
-                enabled: true
-            },
-            "Manga": {
-                enabled: true
-            },
-            "CD": {
-                enabled: true
-            }
+            "Main": { enabled: true }, "HRtP": { enabled: true }, "SoEW": { enabled: true }, "PoDD": { enabled: true },
+            "LLS": { enabled: true }, "MS": { enabled: true }, "EoSD": { enabled: true }, "PCB": { enabled: true },
+            "IaMP": { enabled: true }, "IN": { enabled: true }, "PoFV": { enabled: true }, "MoF": { enabled: true },
+            "SWR": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true }, "Soku": { enabled: true },
+            "DS": { enabled: true }, "GFW": { enabled: true }, "TD": { enabled: true }, "HM": { enabled: true },
+            "DDC": { enabled: true }, "ULiL": { enabled: true }, "LoLK": { enabled: true }, "AoCF": { enabled: true },
+            "HSiFS": { enabled: true }, "Manga": { enabled: true }, "CD": { enabled: true }
         },
         "gameCategories": {
-            "PC-98": {
-                enabled: true
-            },
-            "Classic": {
-                enabled: true
-            },
-            "Modern1": {
-                enabled: true
-            },
-            "Modern2": {
-                enabled: true
-            },
-            "Manga": {
-                enabled: true
-            },
-            "Books": {
-                enabled: true
-            },
-            "CDs": {
-                enabled: true
-            }
+            "PC-98": { enabled: true }, "Classic": { enabled: true }, "Modern1": { enabled: true }, "Modern2": { enabled: true },
+            "Manga": { enabled: true }, "Books": { enabled: true }, "CDs": { enabled: true }
         },
         "pc98Enabled": true,
         "windowsEnabled": true,
@@ -1396,8 +1197,7 @@ function eraseAllConfirmed() {
     localStorage.removeItem("gameTiers");
     localStorage.removeItem("settings");
     initialise();
-    $("#msg_container").html("<strong style='color:green'>Reset the tier list and settings to their default st" +
-            "ates!</strong>");
+    $("#msg_container").html("<strong style='color:green'>Reset the tier list and settings to their default states!</strong>");
     window.onbeforeunload = undefined;
 }
 function eraseAll() {
@@ -1562,14 +1362,14 @@ function loadCharacters() {
             }
 
             if (maleCharacters.contains(character.removeSpaces()) && !settings.maleEnabled) {
-                $("#" + character.removeSpaces()).css("display", "none")
+                $("#" + character.removeSpaces()).css("display", "none");
             }
         }
 
         $("#characters").append("</div>");
 
         if (!settings.categories[categoryName].enabled) {
-            $("#" + categoryName).css("display", "none")
+            $("#" + categoryName).css("display", "none");
         }
     }
 }
@@ -1589,12 +1389,13 @@ function acronym(game) {
     }
 
     return acronym.toLowerCase();
-};
+}
 function loadWorks() {
     var categoryName, game, i;
 
     for (categoryName in gameCategories) {
         $("#characters").append("<div id='" + categoryName + "'>");
+
         for (i in gameCategories[categoryName].chars) {
             game = gameCategories[categoryName].chars[i].replace("'", "");
 
@@ -1656,6 +1457,8 @@ function loadSettingsFromStorage() {
     }
 }
 $(document).ready(function () {
+    var chars = $("#chars_load").children(), works = $("#works_load").children(), val, i, j;
+
     if (getCookie("settings")) {
         localStorage.setItem("settings", getCookie("settings"));
         deleteCookie("settings");
@@ -1689,27 +1492,39 @@ $(document).ready(function () {
         });
     }
 
-    $.get("https://maribelhearn.com/json/chars.json", function (data1) {
-        $.get("https://maribelhearn.com/json/works.json", function (data2) {
-            categories = data1;
-            gameCategories = data2;
+    for (i = 0; i < chars.length; i++) {
+        val = chars[i].value.split(',');
+        categories[chars[i].id] = {"chars": []};
 
-            if (localStorage.settings) {
-                loadSettingsFromStorage();
-            }
+        for (j = 0; j < val.length; j++) {
+            categories[chars[i].id].chars.push(val[j]);
+        }
+    }
 
-            $("#sort").val(settings.sort);
-            loadItems();
+    for (i = 0; i < works.length; i++) {
+        val = works[i].value.split(',');
+        gameCategories[works[i].id] = {"chars": []};
 
-            if (localStorage.tiers || localStorage.gameTiers) {
-                loadTiersFromStorage();
-                mostRecentTiers["characters"] = -1;
-                mostRecentTiers["works"] = -1;
-            } else {
-                initialise();
-            }
+        for (j = 0; j < val.length; j++) {
+            gameCategories[works[i].id].chars.push(val[j]);
+        }
+    }
 
-            window.onbeforeunload = undefined;
-        });
-    });
+    if (localStorage.settings) {
+        loadSettingsFromStorage();
+    }
+
+    $("#chars_load, #works_load").remove();
+    $("#sort").val(settings.sort);
+    loadItems();
+
+    if (localStorage.tiers || localStorage.gameTiers) {
+        loadTiersFromStorage();
+        mostRecentTiers["characters"] = -1;
+        mostRecentTiers["works"] = -1;
+    } else {
+        initialise();
+    }
+
+    window.onbeforeunload = undefined;
 });
