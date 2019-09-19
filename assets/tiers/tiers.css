@@ -162,11 +162,6 @@ input[type=number] {
         background: #1b232e;
     }
 }
-@media only screen and (max-height: 100px) {
-    #buttons {
-        display: none;
-    }
-}
 @media only screen and (((min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait)) or
 ((min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape))) {
     .no-js body, .no-webp body, .webp body {
@@ -271,5 +266,46 @@ input[type=number] {
     }
     #modal {
         padding-top: 2%;
+    }
+}
+@media only screen and (max-height: 320px) {
+    #information_button, #view_button, #mobile_button_split, #menu_button, #switch_button {
+        display: inline;
+    }
+    #menu, #credits, #characters, #tier_list_tfoot, #init, #buttons {
+        display: none;
+    }
+    #tier_list_container, #instructions, #instructions_mobile {
+        display: block;
+    }
+    #add_tier_box_mobile {
+        display: table-row;
+    }
+    #wrap {
+        top: 5px;
+        bottom: 5px;
+        right: 5px;
+        left: 5px;
+        width: auto;
+        height: 100%;
+        max-height: 100%;
+    }
+    #tier_list_container {
+        bottom: 100px;
+        max-height: 71%;
+        overflow-y: auto;
+        border: 1px solid black;
+    }
+    #wrap, #buttons, #msg_container, #show, #characters {
+        font: 12px verdana, sans-serif;
+    }
+    #add_tier_mobile {
+        width: auto;
+        height: 25px;
+        font-size: 12px;
+    }
+    .tier_header, .list, .tiered {
+        width: 60px;
+        height: 60px;
     }
 }
