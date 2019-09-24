@@ -1,26 +1,6 @@
 var WRs,
-    tracked = [
-        "EoSD",
-        "PCB",
-        "IN",
-        "MoF",
-        "SA",
-        "UFO",
-        "GFW",
-        "TD",
-        "DDC",
-        "LoLK",
-        "HSiFS",
-        "WBaWC"
-    ],
-    untracked = [
-        "HRtP",
-        "SoEW",
-        "PoDD",
-        "LLS",
-        "MS",
-        "PoFV"
-    ],
+    tracked = ["EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC"],
+    untracked = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "PoFV"],
     scores = {
         "HRtP": {
             "Easy": {
@@ -819,168 +799,165 @@ var WRs,
             }
         }
     };
+
 function show(game) {
     $("#" + game).css("display", "block");
+
     if (!$("#" + game + "c").is(":checked")) {
-        $("#" + game + "c").prop("checked", true)
+        $("#" + game + "c").prop("checked", true);
     }
 }
 function hide(game) {
     $("#" + game).css("display", "none");
+
     if ($("#" + game + "c").is(":checked")) {
-        $("#" + game + "c").prop("checked", false)
+        $("#" + game + "c").prop("checked", false);
     }
 }
 function checkGame(arg) {
     if ($("#" + arg + "c").is(":checked")) {
-        show(arg)
+        show(arg);
     } else {
-        hide(arg)
+        hide(arg);
     }
 }
 function checkTracked() {
-    var checked = $("#tracked").is(":checked");
-    for (var key in tracked) {
+    var checked = $("#tracked").is(":checked"), key;
+
+    for (key in tracked) {
         if (checked) {
-            show(tracked[key])
+            show(tracked[key]);
         } else {
-            hide(tracked[key])
+            hide(tracked[key]);
         }
     }
 }
 function checkUntracked() {
-    var checked = $("#untracked").is(":checked");
-    for (var key in untracked) {
+    var checked = $("#untracked").is(":checked"), key;
+
+    for (key in untracked) {
         if (checked) {
-            show(untracked[key])
+            show(untracked[key]);
         } else {
-            hide(untracked[key])
+            hide(untracked[key]);
         }
     }
 }
 function checkAll() {
-    var checked = $("#all").is(":checked"),
-        key;
+    var checked = $("#all").is(":checked");
+
     $("#tracked").prop("checked", checked);
     $("#untracked").prop("checked", checked);
     checkTracked();
-    checkUntracked()
+    checkUntracked();
 }
 function calc() {
-    var top = {},
-        averages = {},
-        shown = {},
-        total = 0,
-        categories = 0,
-        highest = 0,
-        game,
-        difficulty,
-        id,
-        span,
-        score,
-        shottype,
-        wr,
-        percentage,
-        wrText,
-        average,
-        table,
-        gameTable,
+    var top = {}, averages = {}, shown = {}, total = 0, categories = 0, highest = 0, game, difficulty,
+        id, span, score, shottype, wr, percentage, wrText, average, table, gameTable,
         topList = "<table id='table'><thead><tr><th>Game + Difficulty</th><th>Shottype / Route</th>" +
-                "<th class='sorttable_numeric'>Score</th><th>WR Percentage</th><th>Progress Bar</" +
-                "th><th>WR</th></tr></thead><tbody>",
+        "<th class='sorttable_numeric'>Score</th><th>WR Percentage</th><th>Progress Bar</th><th>WR</th></tr></thead><tbody>",
         precision = parseInt($("#precision").val());
+
     if (isNaN(precision) || precision < 0 || precision > 5) {
         $("#error").html("<b style='color:red'>Invalid precision; minimum is 0, maximum is 5.</b>");
-        return
+        return;
     } else {
-        $("#error").html("")
+        $("#error").html("");
     }
+
     for (game in WRs) {
         if ($("#" + game).css("display") == "none") {
-            continue
+            continue;
         }
         total = 0;
         categories = 0;
+
         for (difficulty in WRs[game]) {
             for (shottype in WRs[game][difficulty]) {
                 id = "#" + game + difficulty + shottype;
-                score = $(id)
-                    .val()
-                    .replace(/,/g, "")
-                    .replace(/\./g, "")
-                    .replace(/ /g, "");
+                score = $(id).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "");
+
                 if (score === "") {
                     $("#error").html("");
-                    continue
+                    continue;
                 }
+
                 if (isNaN(score)) {
-                    $("#error").html("<b style='color:red'>You entered one or more invalid scores. Please use only dig" +
-                            "its, dots, commas and spaces.</b>");
-                    return
+                    $("#error").html("<b style='color:red'>You entered one or more invalid scores. " +
+                    "Please use only digits, dots, commas and spaces.</b>");
+                    return;
                 }
+
                 score = parseInt(score);
                 wr = WRs[game][difficulty][shottype];
                 scores[game][difficulty][shottype] = score;
+
                 if (score == wr[0]) {
                     hack = true;
-                    score -= 1
+                    score -= 1;
                 }
                 if (wr[0] === 0) {
                     percentage = '-';
-                    wrText = '-'
+                    wrText = '-';
                 } else {
                     percentage = score / wr[0] * 100;
                     wrText = sep(wr[0]) + " by <i>" + wr[1] + "</i>";
+
                     if (percentage > highest) {
-                        highest = percentage
+                        highest = percentage;
                     }
-                    percentage = (precision === 0
-                        ? Math.round(percentage)
-                        : Number(percentage).toFixed(precision));
+
+                    percentage = (precision === 0 ? Math.round(percentage) : Number(percentage).toFixed(precision));
                     total += Number(percentage);
-                    categories += 1
+                    categories += 1;
                 }
-                topList += "<tr><td>" + game + " " + difficulty + "</td><td>" + shottype.replace("Team", " Team") + "</td><td>" + sep(score) + "</td><td>" + percentage + "%</td><td><progress value='" + percentage + "' max='100'></progress></td><td>" + wrText + "</td>"
+
+                topList += "<tr><td>" + game + " " + difficulty + "</td><td>" + shottype.replace("Team", " Team") +
+                "</td><td>" + sep(score) + "</td><td>" + percentage + "%</td><td><progress value='" + percentage +
+                "' max='100'></progress></td><td>" + wrText + "</td>";
             }
         }
+
         if (categories > 0) {
             average = total / categories;
-            averages[game] = (precision === 0
-                ? Math.round(average)
-                : Number(average).toFixed(precision))
+            averages[game] = (precision === 0 ? Math.round(average) : Number(average).toFixed(precision));
         }
     }
-    topList += "</tbody></table><br><table id='gameTable'><thead><tr><th>Game</th><th>Average Pe" +
-            "rcentage</th></tr></thead><tbody>";
+
+    topList += "</tbody></table><br><table id='gameTable'><thead><tr><th>Game</th><th>Average Percentage</th></tr></thead><tbody>";
+
     for (game in averages) {
-        topList += "<tr><td>" + game + "</td><td>" + averages[game] + "%</td></tr>"
+        topList += "<tr><td>" + game + "</td><td>" + averages[game] + "%</td></tr>";
     }
+
     topList += "</tbody></table>";
+
     if (highest === 0) {
         $("#error").html("<b style='color:red'>You have no significant scores! Try to score some more!</b>");
         $("#topList").html("");
-        return
+        return;
     }
+
     $("#topList").html(topList);
     sorttable.makeSortable(document.getElementById("table"));
     sorttable.makeSortable(document.getElementById("gameTable"));
+
     if ($("#toggleData").is(":checked")) {
         localStorage.setItem("precision", precision);
         localStorage.setItem("saveData", true);
+
         for (game in scores) {
             shown[game] = $("#" + game + "c").is(":checked");
             localStorage.setItem("shown", JSON.stringify(shown));
-            localStorage.setItem(game, JSON.stringify(scores[game]))
+            localStorage.setItem(game, JSON.stringify(scores[game]));
         }
     } else {
-        localStorage.removeItem("saveData")
+        localStorage.removeItem("saveData");
     }
 }
 function reset() {
-    var confirmation = confirm("Are you sure you want to erase all your scores?"),
-        game,
-        difficulty,
-        shottype;
+    var confirmation = confirm("Are you sure you want to erase all your scores?"), game, difficulty, shottype;
+
     if (confirmation) {
         $("#toggleData").prop("checked", false);
         localStorage.removeItem("shown");
@@ -988,28 +965,29 @@ function reset() {
         localStorage.removeItem("saveData");
         for (game in scores) {
             localStorage.removeItem(game);
+
             for (difficulty in scores[game]) {
                 for (shottype in scores[game][difficulty]) {
                     scores[game][difficulty][shottype] = 0;
-                    $("#" + game + difficulty + shottype).val("")
+                    $("#" + game + difficulty + shottype).val("");
                 }
             }
         }
     }
 }
 function loadScores() {
-    var game,
-        data,
-        difficulty,
-        shottype;
+    var game, data, difficulty, shottype;
+
     for (game in scores) {
         data = localStorage.getItem(game);
+
         if (data) {
             scores[game] = JSON.parse(data);
+
             for (difficulty in scores[game]) {
-                for (var shottype in scores[game][difficulty]) {
+                for (shottype in scores[game][difficulty]) {
                     if (scores[game][difficulty][shottype] !== 0) {
-                        $("#" + game + difficulty + shottype).val(sep(scores[game][difficulty][shottype]))
+                        $("#" + game + difficulty + shottype).val(sep(scores[game][difficulty][shottype]));
                     }
                 }
             }
@@ -1017,23 +995,25 @@ function loadScores() {
     }
 }
 function checkShown() {
-    var shownData = localStorage.getItem("shown"),
-        game;
+    var shownData = localStorage.getItem("shown"), game;
+
     if (shownData) {
-        shownData = JSON.parse(shownData)
+        shownData = JSON.parse(shownData);
     }
+
     for (game in shownData) {
         if (!shownData[game]) {
-            hide(game)
+            hide(game);
         }
     }
 }
 function allowData() {
     if (localStorage.length <= 2) {
-        var allowed = confirm("This will store data in your browser's Web Storage, which functions like a cooki" +
-                "e. Do you allow this?");
+        var allowed = confirm("This will store data in your browser's Web Storage, " +
+        "which functions like a cookie. Do you allow this?");
+
         if (!allowed) {
-            $("#toggleData").prop("checked", false)
+            $("#toggleData").prop("checked", false);
         }
     }
 }
@@ -1044,61 +1024,59 @@ function dark() {
     style.type = "text/css";
     style.rel = "stylesheet";
     $("head").append(style);
-    $("#hy").attr("title", "Youkai Mode")
+    $("#hy").attr("title", "Youkai Mode");
 }
 function theme(e) {
     if (e.src.indexOf("y") < 0) {
         e.src = "assets/shared/y-bar.png";
         localStorage.theme = "dark";
-        dark()
+        dark();
     } else {
         e.src = "assets/shared/h-bar.png";
-        $("head")
-            .children("#dark")
-            .remove();
+        $("head").children("#dark").remove();
         $("#hy").attr("title", "Human Mode");
-        localStorage.theme = "light"
+        localStorage.theme = "light";
     }
 }
-$(document)
-    .ready(function () {
-        var game;
-        if (localStorage.theme == "dark") {
-            $("#hy").attr("src", "assets/shared/y-bar.png");
-            dark()
+$(document).ready(function () {
+    var game;
+
+    if (localStorage.theme == "dark") {
+        $("#hy").attr("src", "assets/shared/y-bar.png");
+        dark();
+    }
+
+    deleteCookie("saveCookies");
+    deleteCookie("precision");
+    deleteCookie("shown");
+
+    for (game in scores) {
+        deleteCookie(game);
+    }
+
+    if (location.protocol == "file:") {
+        var path = location.pathname.split('/').pop();
+
+        $("#nav a").attr("href", function (i, oldHref) {
+            return (oldHref == '/' ? location.href.replace(path, "index.html") + "" : oldHref + ".html");
+        })
+    }
+
+    try {
+        loadScores();
+        checkShown();
+        $("#precision").val(localStorage.precision ? Number(localStorage.precision) : 0);
+
+        if (localStorage.saveData) {
+            $("#toggleData").prop("checked", Boolean(localStorage.saveData));
         }
-        deleteCookie("saveCookies");
-        deleteCookie("precision");
-        deleteCookie("shown");
-        for (game in scores) {
-            deleteCookie(game)
-        }
-        if (location.protocol == "file:") {
-            var path = location
-                .pathname
-                .split('/')
-                .pop();
-            $("#nav a").attr("href", function (i, oldHref) {
-                return (oldHref == '/'
-                    ? location.href.replace(path, "index.html") + ""
-                    : oldHref + ".html")
-            })
-        }
-        try {
-            loadScores();
-            checkShown();
-            $("#precision").val(localStorage.precision
-                ? Number(localStorage.precision)
-                : 0);
-            if (localStorage.saveData) {
-                $("#toggleData").prop("checked", Boolean(localStorage.saveData))
-            }
-        } catch (err) {}
-        if (navigator.userAgent.contains("Mobile") || navigator.userAgent.contains("Tablet")) {
-            $("#notice").css("display", "block")
-        }
-        $
-            .get("https://maribelhearn.com/json/wrlist.json", function (data) {
-                WRs = data
-            }, "json")
-    });
+    } catch (err) {}
+
+    if (navigator.userAgent.contains("Mobile") || navigator.userAgent.contains("Tablet")) {
+        $("#notice").css("display", "block");
+    }
+
+    $.get("json/wrlist.json", function (data) {
+        WRs = data;
+    }, "json");
+});
