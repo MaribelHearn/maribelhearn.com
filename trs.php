@@ -9,7 +9,7 @@
         <meta name='keywords' content='touhou, touhou project, replay, showcase, twitch, stream, submit, submitting, submission, schedule, schedules'>
 		<link rel='stylesheet' type='text/css' href='assets/trs/trs.css'>
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
-		<link rel='icon' type='image/x-icon' href='assets/trs/shinto.png'>
+		<link rel='icon' type='image/x-icon' href='assets/trs/trs.ico'>
         <script src='assets/shared/modernizr-custom.js' defer></script>
         <script>document.documentElement.classList.remove("no-js");head=document.getElementsByTagName("head")[0];done=false;
 		function dark(){style=document.createElement("link");style.id="dark";style.href="assets/shared/dark.css";
@@ -23,17 +23,13 @@
     <body>
 		<div id='nav' class='wrap'>
 			<nav>
-				<a href='/'><img src='favicon.ico' alt='Index icon'> Index</a>
-				<a href='scoring'><img src='assets/scoring/spell.ico'  alt='Spell Card icon'> Scoring</a>
-				<a href='survival'><img src='assets/survival/survival.ico' alt='1up Item icon'> Survival</a>
-				<a href='drc'><img src='assets/drc/power.ico' alt='Power icon'> DRC</a>
-				<a href='tools'><img src='assets/tools/ufo.ico' alt='UFO icon'> Tools</a>
-				<a href='wr'><img src='assets/wr/point.ico' alt='Point Item icon'> WR</a>
-				<a href='lnn'><img src='assets/lnn/full.ico' alt='Full Power icon'> LNN</a>
-				<a href='thvote'><img src='assets/thvote/tou-32.ico' alt='Tou kanji icon'> Poll</a>
-				<a href='jargon'><img src='assets/jargon/bomb.ico' alt='Bomb icon'> Jargon</a>
-				<strong><img src='assets/trs/shinto.png' alt='Shinto shrine icon'> TRS</strong>
-				<a href='tiers'><img src='assets/tiers/castle.png' alt='Japanese castle icon'> Tiers</a>
+                <?php
+                    $nav = file_get_contents('nav.html');
+                    $page = str_replace('.php', '', basename(__FILE__));
+                    $nav = str_replace('<a href="' . $page . '">', '<strong>', $nav);
+                    $cap = strlen($page) < 4 ? strtoupper($page) : ucfirst($page);
+                    echo str_ireplace($page . '</a>', $cap . '</strong>', $nav);
+                ?>
 			</nav>
 		</div>
         <div id='wrap' class='wrap'>
