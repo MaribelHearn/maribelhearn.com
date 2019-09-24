@@ -30,7 +30,7 @@
                     $page = str_replace('.php', '', basename(__FILE__));
                     $nav = str_replace('<a href="' . $page . '">', '<strong>', $nav);
                     $cap = strlen($page) < 4 ? strtoupper($page) : ucfirst($page);
-                    echo str_ireplace($page . '</a>', $cap . '</strong>', $nav);
+                    echo str_ireplace('Poll</a>', 'Poll</strong>', $nav);
                 ?>
 			</nav>
 		</div>
