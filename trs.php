@@ -6,7 +6,7 @@
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
         <meta name='description' content='Submit to the Touhou Replay Showcase Twitch stream and see the schedules.'>
-        <meta name='keywords' content='touhou, touhou project, replay, showcase, twitch, stream, submit, submitting, submission, schedule, schedules'>
+        <meta name='keywords' content='touhou, touhou project, replay, showcase, trs, twitch, stream, submit, submitting, submission, schedule, schedules'>
 		<link rel='stylesheet' type='text/css' href='assets/trs/trs.css'>
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='assets/trs/trs.ico'>
@@ -37,6 +37,19 @@
             <h1>Touhou Replay Showcase Scheduling</h1>
             <p>This page contains the schedules of the <a href='https://twitch.tv/touhou_replay_showcase'><img src='ext/twitch-icon-small.ico' alt='Twitch favicon'> Touhou
             Replay Showcase</a> stream from its 2018 reboot onward. The upcoming stream's schedule will be listed at the top once it becomes available.</p>
+            <!--<h3>Saturday, 28 September 2019</h3>
+            <ul>
+                <li>ZPS UFO Lunatic SanaeB Scoring</li>
+                <li>AntiHoodBravi EoSD Lunatic ReimuB</li>
+                <li>Cephiro EoSD Extra MarisaA NMNB</li>
+                <li>Levea IN Lunatic Border Team Scoring</li>
+                <li>Chum/Dagoth PoFV Lunatic PvP matches</li>
+                <li>KirbyComment GFW Lunatic Route A2 NMNB</li>
+                <li>Kachirou Kano GFW Lunatic Route A1 NMNB</li>
+                <li>Dai SA Lunatic ReimuA N B</li>
+            </ul>-->
+            <h3>Saturday, 28 September 2019</h3>
+            <em>Moved to Sunday</em>
             <h3>Saturday, 21 September 2019</h3>
             <ul>
                 <li>Priw8 IN Lunatic Border Team NB</li>
@@ -58,6 +71,8 @@
                 <li>Lusus Danmakufu Junko Fight</li>
                 <li>Gaston EoSD Lunatic ReimuB</li>
             </ul>
+            <h3>Saturday, 14 September 2019</h3>
+            <em>Moved to Sunday</em>
             <h3>Saturday, 7 September 2019</h3>
             <ul>
                 <li>InceRabbit WBaWC Extra MarisaW</li>
@@ -110,6 +125,8 @@
                 <li>Lone DDC Extra MarisaB</li>
                 <li>32th System VD Nightmare Week Wednesday-5</li>
             </ul>
+            <h3>Saturday, 10 August 2019</h3>
+            <em>Moved to Sunday</em>
             <h3>Saturday, 3 August 2019</h3>
             <ul>
                 <li>Raymario Pokenic MoF Lunatic ReimuB Stage 6 NMNB</li>
