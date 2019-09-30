@@ -5,7 +5,7 @@
     $reps = json_decode($json, true);
     $games = Array('EoSD', 'PCB', 'IN', 'PoFV', 'StB', 'MoF', 'SA', 'UFO', 'DS', 'GFW', 'TD');
     $diffs = Array('Easy', 'Normal', 'Hard', 'Lunatic', 'Extra', 'Phantasm', 'Last Word');
-    $types = Array('Normal', 'Practice', 'Card');
+    $types = Array('Normal', 'Practice', 'Spell');
     if (empty($_GET['id'])) {
         if (!empty($_GET['player'])) {
             $player = $_GET['player'];
@@ -97,7 +97,7 @@
                         <select id='type' name='type'>
                             <option value='Normal'<?php echo !empty($type) && $type == 'Normal' ? ' selected' : ''?>>Full Game</option>
                             <option<?php echo !empty($type) && $type == 'Practice' ? ' selected' : ''?>>Practice</option>
-                            <option value='Card'<?php echo !empty($type) && $type == 'Card' ? ' selected' : ''?>>Spell Card</option>
+                            <option value='Spell'<?php echo !empty($type) && $type == 'Spell' ? ' selected' : ''?>>Spell Card</option>
                         </select>
                         <label for='diff'>Difficulty</label>
                         <select id='diff' name='diff'>
@@ -166,7 +166,7 @@
                         if (!empty($shot) && $rep['shottype'] != $shot) {
                             continue;
                         }
-                        if (!empty($type) && $rep['type'] != !strpos($rep['type'], $type)) {
+                        if (!empty($type) && strpos($rep['type'], $type) === false) {
                             continue;
                         }
                         if (!empty($diff) && $diff != '-') {
@@ -181,32 +181,32 @@
                                 if (!$isLW) {
                                     continue;
                                 }
-                            } else if (!strpos($rep['category'], $diff)) {
+                            } else if (strpos($rep['category'], $diff) === false) {
                                 continue;
                             }
                         }
-                        if ($_GET['nd'] == 'on' && !strpos($rep['conditions'], 'No Deaths')) {
+                        if ($_GET['nd'] == 'on' && strpos($rep['conditions'], 'No Deaths') === false) {
                             continue;
                         }
-                        if ($_GET['nb'] == 'on' && !strpos($rep['conditions'], 'No Bomb Usage')) {
+                        if ($_GET['nb'] == 'on' && strpos($rep['conditions'], 'No Bomb Usage') === false) {
                             continue;
                         }
-                        if ($_GET['nf'] == 'on' && !strpos($rep['conditions'], 'No Focused Movement')) {
+                        if ($_GET['nf'] == 'on' && strpos($rep['conditions'], 'No Focused Movement') === false) {
                             continue;
                         }
-                        if ($_GET['nv'] == 'on' && !strpos($rep['conditions'], 'No Vertical Movement')) {
+                        if ($_GET['nv'] == 'on' && strpos($rep['conditions'], 'No Vertical Movement') === false) {
                             continue;
                         }
-                        if ($_GET['tas'] == 'on' && !strpos($rep['conditions'], 'Tool-Assisted Replay')) {
+                        if ($_GET['tas'] == 'on' && strpos($rep['conditions'], 'Tool-Assisted Replay') === false) {
                             continue;
                         }
-                        if ($_GET['chz'] == 'on' && !strpos($rep['conditions'], 'Tool-Assisted Replay (not marked by original uploader)')) {
+                        if ($_GET['chz'] == 'on' && strpos($rep['conditions'], 'Tool-Assisted Replay (not marked by original uploader)') === false) {
                             continue;
                         }
-                        if ($_GET['pa'] == 'on' && !strpos($rep['conditions'], 'Pacifist')) {
+                        if ($_GET['pa'] == 'on' && strpos($rep['conditions'], 'Pacifist') === false) {
                             continue;
                         }
-                        if ($_GET['co'] == 'on' && !strpos($rep['conditions'], 'Other Condition')) {
+                        if ($_GET['co'] == 'on' && strpos($rep['conditions'], 'Other Condition') === false) {
                             continue;
                         }
                         foreach (glob('replays/gensokyo/' . $key . '/*.rpy') as $file) {
