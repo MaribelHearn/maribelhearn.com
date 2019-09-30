@@ -95,6 +95,7 @@
                         <input id='shot' name='shot' type='text' value='<?php echo !empty($shot) ? $shot : '' ?>'>
                         <label for='type'>Type of Run</label>
                         <select id='type' name='type'>
+                            <option value='-'>...</option>
                             <option value='Normal'<?php echo !empty($type) && $type == 'Normal' ? ' selected' : ''?>>Full Game</option>
                             <option<?php echo !empty($type) && $type == 'Practice' ? ' selected' : ''?>>Practice</option>
                             <option value='Spell'<?php echo !empty($type) && $type == 'Spell' ? ' selected' : ''?>>Spell Card</option>
@@ -133,6 +134,8 @@
                 </table>
             </form>
             <?php
+                $tmp = explode('?', $_SERVER['REQUEST_URI']);
+                $searched = !empty($tmp[1]);
                 if (!empty($_GET['id'])) {
                     $rep = $reps[$_GET['id']];
                     $comment = str_replace('<', '&lt;', $rep['comment']);
@@ -154,7 +157,7 @@
                         echo '<tr><th>Download</th><td><a href="' . $file . '">' . $replay[3] . '</a></td></tr>';
                     }
                     echo '</tbody><tfoot><tr><th id="back" colspan="2"><a href="' . $backlink[0] . '">Back</a></th></tr></tfoot></table>';
-                } else if (!empty($_GET['type'])) {
+                } else if ($searched) {
                     $found = false;
                     foreach ($reps as $key => $rep) {
                         if (!empty($player) && strpos($rep['player'], $player) !== 0) {
@@ -166,7 +169,7 @@
                         if (!empty($shot) && $rep['shottype'] != $shot) {
                             continue;
                         }
-                        if (!empty($type) && strpos($rep['type'], $type) === false) {
+                        if (!empty($type) && $type != '-' && strpos($rep['type'], $type) === false) {
                             continue;
                         }
                         if (!empty($diff) && $diff != '-') {
