@@ -6,28 +6,30 @@
     $games = Array('EoSD', 'PCB', 'IN', 'PoFV', 'StB', 'MoF', 'SA', 'UFO', 'DS', 'GFW', 'TD');
     $diffs = Array('Easy', 'Normal', 'Hard', 'Lunatic', 'Extra', 'Phantasm', 'Last Word');
     $types = Array('Normal', 'Practice', 'Card');
-    if (!empty($_GET['player'])) {
-        $player = $_GET['player'];
-    }
-    if (!empty($_GET['game']) && $_GET['game'] !== '-' && in_array($_GET['game'], $games)) {
-        $game = $_GET['game'];
-    }
-    if (!empty($_GET['shot'])) {
-        $shot = $_GET['shot'];
-    }
-    if (!empty($_GET['type']) && in_array($_GET['type'], $types)) {
-        $type = $_GET['type'];
-    }
-    if (!empty($_GET['diff']) && $_GET['diff'] !== '-' && in_array($_GET['diff'], $diffs)) {
-        $diff = $_GET['diff'];
-        if ($game == 'StB' || $game == 'DS') {
-            $diff = '-';
+    if (empty($_GET['id'])) {
+        if (!empty($_GET['player'])) {
+            $player = $_GET['player'];
         }
-        if ($game != 'PCB' && $diff == 'Phantasm') {
-            $diff = 'Extra';
+        if (!empty($_GET['game']) && $_GET['game'] !== '-' && in_array($_GET['game'], $games)) {
+            $game = $_GET['game'];
         }
-        if ($game != 'IN' && $diff == 'Last Word') {
-            $diff = '-';
+        if (!empty($_GET['shot'])) {
+            $shot = $_GET['shot'];
+        }
+        if (!empty($_GET['type']) && in_array($_GET['type'], $types)) {
+            $type = $_GET['type'];
+        }
+        if (!empty($_GET['diff']) && $_GET['diff'] !== '-' && in_array($_GET['diff'], $diffs)) {
+            $diff = $_GET['diff'];
+            if ($game == 'StB' || $game == 'DS') {
+                $diff = '-';
+            }
+            if ($game != 'PCB' && $diff == 'Phantasm') {
+                $diff = 'Extra';
+            }
+            if ($game != 'IN' && $diff == 'Last Word') {
+                $diff = '-';
+            }
         }
     }
 ?>
@@ -39,7 +41,7 @@
         <meta name='description' content='Complete archive of the Touhou replays from replays.gensokyo.org.'>
         <meta name='keywords' content='touhou, touhou project, 東方, 东方, replay, replays, gensokyo, gensokyo.org, replays.gensokyo, replays.gensokyo.org'>
 		<link rel='stylesheet' type='text/css' href='assets/gensokyo/gensokyo.css'>
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='assets/gensokyo/gensokyo.ico'>
         <script src='assets/shared/jquery.js' defer></script>
         <script src='assets/shared/sorttable.js' defer></script>
@@ -73,8 +75,8 @@
             <p>On 25 September 2019, gensokyo.org expired, and as of the 30th it is inaccessible.
             As such, this archive has been created to preserve all of its replays.
             Unlike the original website, these replays cannot be deleted.</p>
-            <p>The table resulting from search can be sorted by date (note that this might be slow depending on the size).</p>
-            <p>Checking a single replay (including the player's comment) is currently being implemented.</p>
+            <p>The table resulting from search can be sorted by date (note that this might be slow depending on the size),
+            and the player name can be clicked to view the corresponding replay in detail.</p>
             <form>
                 <table id='searchtable'>
                     <thead><tr><td>
@@ -131,11 +133,31 @@
                 </table>
             </form>
             <?php
-                if (!empty($_GET['type'])) {
-                    echo '<table id="replays" class="center sortable"><thead><tr><th>Player</th><th>Category</th><th>Score</th>' .
-                    '<th class="sorttable_mmdd">Date added</th><th>Type</th><th>Conditions</th><th>Download</th></tr></thead><tbody>';
+                if (!empty($_GET['id'])) {
+                    $rep = $reps[$_GET['id']];
+                    $comment = str_replace('<', '&lt;', $rep['comment']);
+                    $comment = str_replace('>', '&gt;', $comment);
+                    $backlink = explode('&id', $_SERVER['REQUEST_URI']);
+                    echo '<table class="center sortable"><tbody>';
+                    echo '<tr><th>Player</th><td>' . $rep['player'] . '</td></tr>';
+                    echo '<tr><th>Category</th><td>' . $rep['category'] . '</td></tr>';
+                    echo '<tr><th>Game Version</th><td>' . $rep['ver'] . '</td></tr>';
+                    echo '<tr><th>Upload Date</th><td>' . $rep['date'] . '</td></tr>';
+                    echo '<tr><th>Type</th><td>' . $rep['type'] . '</td></tr>';
+                    echo '<tr><th>Score</th><td>' . $rep['score'] . '</td></tr>';
+                    echo '<tr><th>Slowdown</th><td>' . $rep['slowdown'] . '</td></tr>';
+                    echo '<tr><th>Shottype</th><td>' . $rep['shottype'] . '</td></tr>';
+                    echo '<tr><th>Conditions</th><td>' . $rep['conditions'] . '</td></tr>';
+                    echo '<tr><th>Comment</th><td>' . $comment . '</td></tr>';
+                    foreach (glob('replays/gensokyo/' . $_GET['id'] . '/*.rpy') as $file) {
+                        $replay = explode('/', $file);
+                        echo '<tr><th>Download</th><td><a href="' . $file . '">' . $replay[3] . '</a></td></tr>';
+                    }
+                    echo '</tbody><tfoot><tr><th id="back" colspan="2"><a href="' . $backlink[0] . '">Back</a></th></tr></tfoot></table>';
+                } else if (!empty($_GET['type'])) {
+                    $found = false;
                     foreach ($reps as $key => $rep) {
-                        if (!empty($player) && $rep['player'] != $player) {
+                        if (!empty($player) && strpos($rep['player'], $player) !== 0) {
                             continue;
                         }
                         if (!empty($game) && $game != '-' && strpos($rep['category'], $game) !== 0) {
@@ -188,14 +210,23 @@
                             continue;
                         }
                         foreach (glob('replays/gensokyo/' . $key . '/*.rpy') as $file) {
+                            if (!$found) {
+                                echo '<table id="replays" class="center sortable"><thead><tr><th>Player</th><th>Category</th><th>Score</th>' .
+                                '<th class="sorttable_mmdd">Date added</th><th>Type</th><th>Conditions</th><th>Download</th></tr></thead><tbody>';
+                                $found = true;
+                            }
                             $replay = explode('/', $file);
-                            echo '<tr><td>' . $rep['player'] . '</td><td>' . $rep['category'] .
+                            echo '<tr><td><a href="' . $_SERVER['REQUEST_URI'] . '&id=' . $key . '">' . $rep['player'] . '</a></td><td>' . $rep['category'] .
                             '<br>' . $rep['shottype'] . '</td><td>' . $rep['score'] .
                             '</td><td>' . str_replace(' ', '<br>', $rep['date']) . '</td><td>' . $rep['type'] .
                             '</td><td>' . $rep['conditions'] . '</td><td><a href="' . $file . '">' . $replay[3] . '</a></td></tr>';
                         }
                     }
-                    echo '</tbody></table>';
+                    if ($found) {
+                        echo '</tbody></table>';
+                    } else {
+                        echo 'No replays found.';
+                    }
                 }
             ?>
             <h2 id='ack'>Acknowledgements</h2>
