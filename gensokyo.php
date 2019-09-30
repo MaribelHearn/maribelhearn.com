@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang='en' class='no-js'>
+<?php
+    $json = file_get_contents('json/gensokyo.json');
+    $reps = json_decode($json, true);
+    $games = Array('EoSD', 'PCB', 'IN', 'PoFV', 'StB', 'MoF', 'SA', 'UFO', 'DS', 'GFW', 'TD');
+    $diffs = Array('Easy', 'Normal', 'Hard', 'Lunatic', 'Extra', 'Phantasm', 'Last Word');
+    $types = Array('Normal', 'Practice', 'Card');
+    if (!empty($_GET['player'])) {
+        $player = $_GET['player'];
+    }
+    if (!empty($_GET['game']) && $_GET['game'] !== '-' && in_array($_GET['game'], $games)) {
+        $game = $_GET['game'];
+    }
+    if (!empty($_GET['shot'])) {
+        $shot = $_GET['shot'];
+    }
+    if (!empty($_GET['type']) && in_array($_GET['type'], $types)) {
+        $type = $_GET['type'];
+    }
+    if (!empty($_GET['diff']) && $_GET['diff'] !== '-' && in_array($_GET['diff'], $diffs)) {
+        $diff = $_GET['diff'];
+        if ($game == 'StB' || $game == 'DS') {
+            $diff = '-';
+        }
+        if ($game != 'PCB' && $diff == 'Phantasm') {
+            $diff = 'Extra';
+        }
+        if ($game != 'IN' && $diff == 'Last Word') {
+            $diff = '-';
+        }
+    }
+?>
+
+    <head>
+		<title>Gensokyo Replay Archive</title>
+		<meta charset='UTF-8'>
+		<meta name='viewport' content='width=device-width'>
+        <meta name='description' content='Complete archive of the Touhou replays from replays.gensokyo.org.'>
+        <meta name='keywords' content='touhou, touhou project, 東方, 东方, replay, replays, gensokyo, gensokyo.org, replays.gensokyo, replays.gensokyo.org'>
+		<link rel='stylesheet' type='text/css' href='assets/gensokyo/gensokyo.css'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa'>
+		<link rel='icon' type='image/x-icon' href='assets/gensokyo/gensokyo.ico'>
+        <script src='assets/shared/jquery.js' defer></script>
+        <script src='assets/shared/sorttable.js' defer></script>
+        <script src='assets/shared/modernizr-custom.js' defer></script>
+        <script>document.documentElement.classList.remove("no-js");head=document.getElementsByTagName("head")[0];done=false;
+		function dark(){style=document.createElement("link");style.id="dark";style.href="assets/shared/dark-wr.css";
+		style.type="text/css";style.rel="stylesheet";head.append(style)}
+        function ready(){if(done){return}done=true;hy=document.getElementById("hy");
+        if(localStorage.theme=="dark"){hy.src="assets/shared/y-bar.png";hy.title="Youkai Mode";dark()}}
+		function theme(e){if(e.src.indexOf("y")<0){e.src="assets/shared/y-bar.png";e.title="Youkai Mode";localStorage.theme="dark";
+		dark()}else{e.src="assets/shared/h-bar.png";e.title="Human Mode";head.removeChild(head.lastChild);localStorage.theme="light"}}
+		</script>
+    </head>
+
+    <body>
+		<div id='nav' class='wrap'>
+			<nav>
+				<?php
+					$nav = file_get_contents('nav.html');
+					$page = str_replace('.php', '', basename(__FILE__));
+					$nav = str_replace('<a href="' . $page . '">', '<strong>', $nav);
+					$cap = strlen($page) < 4 ? strtoupper($page) : ucfirst($page);
+					echo str_ireplace('Archive</a>', 'Archive</strong>', $nav);
+				?>
+			</nav>
+		</div>
+        <div id='wrap' class='wrap'>
+            <img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
+            <h1>Gensokyo Replay Archive</h1>
+            <p>A complete archive of the Touhou replays from replays.gensokyo.org, with the same search functionality as said website.</p>
+            <p>On 25 September 2019, gensokyo.org expired, and as of the 30th it is inaccessible.
+            As such, this archive has been created to preserve all of its replays.
+            Unlike the original website, these replays cannot be deleted.</p>
+            <p>The table resulting from search can be sorted by date (note that this might be slow depending on the size).</p>
+            <p>Checking a single replay (including the player's comment) is currently being implemented.</p>
+            <form>
+                <table id='searchtable'>
+                    <thead><tr><td>
+                        <label for='player'>Player</label>
+                        <input id='player' name='player' type='text' value='<?php echo !empty($player) ? $player : '' ?>'>
+                        <label for='game'>Game</label>
+                        <select id='game' name='game'>
+                            <option value='-'>...</option>
+                            <?php
+                                foreach ($games as $key => $value) {
+                                    echo '<option' . (!empty($game) && $game == $value ? ' selected' : '') . '>' . $value . '</option>';
+                                }
+                            ?>
+                        </select>
+                        <label for='shot'>Shottype</label>
+                        <input id='shot' name='shot' type='text' value='<?php echo !empty($shot) ? $shot : '' ?>'>
+                        <label for='type'>Type of Run</label>
+                        <select id='type' name='type'>
+                            <option value='Normal'<?php echo !empty($type) && $type == 'Normal' ? ' selected' : ''?>>Full Game</option>
+                            <option<?php echo !empty($type) && $type == 'Practice' ? ' selected' : ''?>>Practice</option>
+                            <option value='Card'<?php echo !empty($type) && $type == 'Card' ? ' selected' : ''?>>Spell Card</option>
+                        </select>
+                        <label for='diff'>Difficulty</label>
+                        <select id='diff' name='diff'>
+                            <option value='-'>...</option>
+                            <?php
+                                foreach ($diffs as $key => $value) {
+                                    echo '<option' . (!empty($diff) && $diff == $value ? ' selected' : '') . '>' . $value . '</option>';
+                                }
+                            ?>
+                        </select>
+                    </td></tr></thead>
+                    <tbody><tr><td>
+                        <label for='nd'><img src='assets/gensokyo/nd.gif' title='No Deaths'></label>
+                        <input id='nd' name='nd' type='checkbox'<?php echo $_GET['nd'] == 'on' ? ' checked' : '' ?>>
+                        <label for='nb'><img src='assets/gensokyo/nb.gif' title='No Bomb Usage'></label>
+                        <input id='nb' name='nb' type='checkbox'<?php echo $_GET['nb'] == 'on' ? ' checked' : '' ?>>
+                        <label for='nf'><img src='assets/gensokyo/nf.gif' title='No Focused Movement'></label>
+                        <input id='nf' name='nf' type='checkbox'<?php echo $_GET['nf'] == 'on' ? ' checked' : '' ?>>
+                        <label for='nv'><img src='assets/gensokyo/nv.gif' title='No Vertical Movement'></label>
+                        <input id='nv' name='nv' type='checkbox'<?php echo $_GET['nv'] == 'on' ? ' checked' : '' ?>>
+                        <label for='tas'><img src='assets/gensokyo/tas.gif' title='Tool-Assisted Replay'></label>
+                        <input id='tas' name='tas' type='checkbox'<?php echo $_GET['tas'] == 'on' ? ' checked' : '' ?>>
+                        <label for='chz'><img src='assets/gensokyo/chz.gif' title='Tool-Assisted Replay (not marked by original uploader)'></label>
+                        <input id='chz' name='chz' type='checkbox'<?php echo $_GET['chz'] == 'on' ? ' checked' : '' ?>>
+                        <label for='pa'><img src='assets/gensokyo/pa.gif' title='Pacifist'></label>
+                        <input id='pa' name='pa' type='checkbox'<?php echo $_GET['pa'] == 'on' ? ' checked' : '' ?>>
+                        <label for='co'><img src='assets/gensokyo/co.gif' title='Other Condition'></label>
+                        <input id='co' name='co' type='checkbox'<?php echo $_GET['co'] == 'on' ? ' checked' : '' ?>>
+                    </td></tr></tbody>
+                    <tfoot><tr><td>
+                        <input type='submit' value='Search'>
+                    </td></tr></tfoot>
+                </table>
+            </form>
+            <?php
+                if (!empty($_GET['type'])) {
+                    echo '<table id="replays" class="center sortable"><thead><tr><th>Player</th><th>Category</th><th>Score</th>' .
+                    '<th class="sorttable_mmdd">Date added</th><th>Type</th><th>Conditions</th><th>Download</th></tr></thead><tbody>';
+                    foreach ($reps as $key => $rep) {
+                        if (!empty($player) && $rep['player'] != $player) {
+                            continue;
+                        }
+                        if (!empty($game) && $game != '-' && strpos($rep['category'], $game) !== 0) {
+                            continue;
+                        }
+                        if (!empty($shot) && $rep['shottype'] != $shot) {
+                            continue;
+                        }
+                        if (!empty($type) && $rep['type'] != !strpos($rep['type'], $type)) {
+                            continue;
+                        }
+                        if (!empty($diff) && $diff != '-') {
+                            if ($diff == 'Last Word') {
+                                $LWs = Array('206', '207', '208', '209', '210', '211', '212', '213', '214', '215', '216', '217', '218', '219', '220', '221', '222');
+                                $isLW = false;
+                                foreach ($LWs as $LW) {
+                                    if (strpos($type, $LW)) {
+                                        $isLW = true;
+                                    }
+                                }
+                                if (!$isLW) {
+                                    continue;
+                                }
+                            } else if (!strpos($rep['category'], $diff)) {
+                                continue;
+                            }
+                        }
+                        if ($_GET['nd'] == 'on' && !strpos($rep['conditions'], 'No Deaths')) {
+                            continue;
+                        }
+                        if ($_GET['nb'] == 'on' && !strpos($rep['conditions'], 'No Bomb Usage')) {
+                            continue;
+                        }
+                        if ($_GET['nf'] == 'on' && !strpos($rep['conditions'], 'No Focused Movement')) {
+                            continue;
+                        }
+                        if ($_GET['nv'] == 'on' && !strpos($rep['conditions'], 'No Vertical Movement')) {
+                            continue;
+                        }
+                        if ($_GET['tas'] == 'on' && !strpos($rep['conditions'], 'Tool-Assisted Replay')) {
+                            continue;
+                        }
+                        if ($_GET['chz'] == 'on' && !strpos($rep['conditions'], 'Tool-Assisted Replay (not marked by original uploader)')) {
+                            continue;
+                        }
+                        if ($_GET['pa'] == 'on' && !strpos($rep['conditions'], 'Pacifist')) {
+                            continue;
+                        }
+                        if ($_GET['co'] == 'on' && !strpos($rep['conditions'], 'Other Condition')) {
+                            continue;
+                        }
+                        foreach (glob('replays/gensokyo/' . $key . '/*.rpy') as $file) {
+                            $replay = explode('/', $file);
+                            echo '<tr><td>' . $rep['player'] . '</td><td>' . $rep['category'] .
+                            '<br>' . $rep['shottype'] . '</td><td>' . $rep['score'] .
+                            '</td><td>' . str_replace(' ', '<br>', $rep['date']) . '</td><td>' . $rep['type'] .
+                            '</td><td>' . $rep['conditions'] . '</td><td><a href="' . $file . '">' . $replay[3] . '</a></td></tr>';
+                        }
+                    }
+                    echo '</tbody></table>';
+                }
+            ?>
+            <h2 id='ack'>Acknowledgements</h2>
+            <p id='credit'>The background image was drawn by <a href='http://h-yde.deviantart.com/'>h-yde</a>.</p>
+            <p id='back'><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
+        </div>
+        <!-- Default Statcounter code for Maribel Hearn's Web Portal
+        http://maribelhearn.com -->
+        <script>
+        var sc_project=12065202;
+        var sc_invisible=1;
+        var sc_security="a3a19e1b";
+        </script>
+        <script
+        src="https://www.statcounter.com/counter/counter.js"
+        async></script>
+        <noscript><div class="statcounter"><a title="Web Analytics"
+        href="https://statcounter.com/" target="_blank"><img
+        class="statcounter"
+        src="https://c.statcounter.com/12065202/0/a3a19e1b/1/"
+        alt="Web Analytics"></a></div></noscript>
+        <!-- End of Statcounter Code -->
+    </body>
+
+</html>
