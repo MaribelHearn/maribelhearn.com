@@ -63,6 +63,10 @@ form {
 #shot {
     width: 90px;
 }
+#back {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 @media only screen and (min-width: 800px) and (max-width: 1400px) {
     .wrap {
         margin-left: 15%;
@@ -74,12 +78,18 @@ form {
         margin-left: 0;
         margin-right: 0;
     }
+    #replays {
+        overflow-x: scroll;
+    }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
     .wrap {
         margin-left: 0;
         margin-right: 0;
         font-size: 11px;
+    }
+    #replays {
+        overflow-x: scroll;
     }
     h1 {
         font-size: 36px;
@@ -93,6 +103,9 @@ form {
         margin-left: 0%;
         margin-right: 0%;
         font-size: 11px;
+    }
+    #replays {
+        overflow-x: scroll;
     }
     h1 {
         font-size: 36px;
