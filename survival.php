@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang='en' class='no-js'>
+<?php include '.stats/count.php'; hit(basename(__FILE__)); ?>
 
 	<head>
 		<title>Survival Progress Table Generator</title>

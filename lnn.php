@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang='en' class='no-js'>
 <?php
+    include '.stats/count.php';
+    hit(basename(__FILE__));
     $json = file_get_contents('json/lnnlist.json');
     $lnn = json_decode($json, true);
     $lang = $_COOKIE['lang'];
