@@ -1,12 +1,13 @@
 ﻿<!DOCTYPE html>
 <html lang='en' class='no-js'>
+<?php include '.stats/count.php'; hit(basename(__FILE__)); ?>
 
     <head>
         <title>THWiki Popularity Poll 2019 Full Results</title>
         <meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
         <meta name='description' content='Complete English translation of the full results of the THWiki Popularity Poll.'>
-        <meta name='keywords' content='touhou, touhou project, thwiki, popularity, poll, vote, contest'>
+        <meta name='keywords' content='touhou, touhou project, thwiki, popularity, poll, vote, contest, thpoll, thvote'>
 		<link rel='stylesheet' type='text/css' href='assets/thvote/thvote.css'>
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='assets/thvote/thvote.ico'>
@@ -1913,7 +1914,6 @@
 			was drawn by <a href='https://www.pixiv.net/member.php?id=2025430'>Yakumo_Stocking</a>.</p>
             <p id='back'><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
         </div>
-        <script>if(location.protocol=="file:"){var path=location.pathname.split('/').pop(),length=document.links.length,href;for(var i=0;i<length;i+=1){href=document.links[i].href;if(document.links[i].protocol=="file:"&&href.indexOf('#')==-1){document.links[i].href=(href=="file:///"?location.href.replace(path,"index.html"):href+".html")}}}</script>
         <script>if(navigator.userAgent.indexOf("Mobile")>-1||navigator.userAgent.indexOf("Tablet")>-1){
         w1=document.getElementById("chars_dummy");w2=document.getElementById("chars_container");
         w1.onscroll=function(){w2.scrollLeft=w1.scrollLeft;};w2.onscroll=function(){w1.scrollLeft=w2.scrollLeft;}
@@ -1947,21 +1947,5 @@
         ws.onscroll=function(){wt.scrollLeft=ws.scrollLeft;};wt.onscroll=function(){ws.scrollLeft=wt.scrollLeft;}
         wu=document.getElementById("hsifs_dummy");wv=document.getElementById("hsifs_container");
         wu.onscroll=function(){wv.scrollLeft=wu.scrollLeft;};wv.onscroll=function(){wu.scrollLeft=wv.scrollLeft;}}</script>
-        <!-- Default Statcounter code for Maribel Hearn's Web Portal
-        http://maribelhearn.com -->
-        <script>
-        var sc_project=12065202;
-        var sc_invisible=1;
-        var sc_security="a3a19e1b";
-        </script>
-        <script
-        src="https://www.statcounter.com/counter/counter.js"
-        async></script>
-        <noscript><div class="statcounter"><a title="Web Analytics"
-        href="https://statcounter.com/" target="_blank"><img
-        class="statcounter"
-        src="https://c.statcounter.com/12065202/0/a3a19e1b/1/"
-        alt="Web Analytics"></a></div></noscript>
-        <!-- End of Statcounter Code -->
     </body>
 </html>

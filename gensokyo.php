@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang='en' class='no-js'>
 <?php
+    include '.stats/hitcount.php';
+    hit(basename(__FILE__));
     $json = file_get_contents('json/gensokyo.json');
     $reps = json_decode($json, true);
     $games = Array('EoSD', 'PCB', 'IN', 'PoFV', 'StB', 'MoF', 'SA', 'UFO', 'DS', 'GFW', 'TD');
@@ -160,7 +162,7 @@
                 } else if ($searched) {
                     $found = false;
                     foreach ($reps as $key => $rep) {
-                        if (!empty($player) && strpos($rep['player'], $player) !== 0) {
+                        if (!empty($player) && stripos($rep['player'], $player) !== 0) {
                             continue;
                         }
                         if (!empty($game) && $game != '-' && strpos($rep['category'], $game) !== 0) {
@@ -236,22 +238,6 @@
             <p id='credit'>The background image was drawn by <a href='http://h-yde.deviantart.com/'>h-yde</a>.</p>
             <p id='back'><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
         </div>
-        <!-- Default Statcounter code for Maribel Hearn's Web Portal
-        http://maribelhearn.com -->
-        <script>
-        var sc_project=12065202;
-        var sc_invisible=1;
-        var sc_security="a3a19e1b";
-        </script>
-        <script
-        src="https://www.statcounter.com/counter/counter.js"
-        async></script>
-        <noscript><div class="statcounter"><a title="Web Analytics"
-        href="https://statcounter.com/" target="_blank"><img
-        class="statcounter"
-        src="https://c.statcounter.com/12065202/0/a3a19e1b/1/"
-        alt="Web Analytics"></a></div></noscript>
-        <!-- End of Statcounter Code -->
     </body>
 
 </html>
