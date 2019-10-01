@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='en' class='no-js'>
 <?php
-    include '.stats/hitcount.php';
+    include '.stats/count.php';
     hit(basename(__FILE__));
     $json = file_get_contents('json/gensokyo.json');
     $reps = json_decode($json, true);
