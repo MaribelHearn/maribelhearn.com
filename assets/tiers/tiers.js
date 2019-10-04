@@ -9,7 +9,7 @@ var categories = {},
             "SWR": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true }, "Soku": { enabled: true },
             "DS": { enabled: true }, "GFW": { enabled: true }, "TD": { enabled: true }, "HM": { enabled: true },
             "DDC": { enabled: true }, "ULiL": { enabled: true }, "LoLK": { enabled: true }, "AoCF": { enabled: true },
-            "HSiFS": { enabled: true }, "Manga": { enabled: true }, "CD": { enabled: true }
+            "HSiFS": { enabled: true }, "WBaWC": { enabled: true }, "Manga": { enabled: true }, "CD": { enabled: true }
         },
         "gameCategories": {
             "PC-98": { enabled: true }, "Classic": { enabled: true }, "Modern1": { enabled: true }, "Modern2": { enabled: true },
@@ -23,7 +23,7 @@ var categories = {},
         "sort": "characters"
     },
     windows = ["EoSD", "PCB", "IaMP", "IN", "PoFV", "MoF", "SWR", "SA", "UFO", "Soku",
-    "DS", "GFW", "TD", "HM", "DDC", "ULiL", "LoLK", "AoCF", "HSiFS"],
+    "DS", "GFW", "TD", "HM", "DDC", "ULiL", "LoLK", "AoCF", "HSiFS", "WBaWC"],
     maleCharacters = ["SinGyokuM", "Genjii", "Unzan", "RinnosukeMorichika", "FortuneTeller"],
     pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"],
     tiers = {},
