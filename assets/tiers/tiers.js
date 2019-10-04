@@ -1138,7 +1138,8 @@ function changeLog() {
     $("#modal_inner").html("<h2>Changelog</h2><ul style='text-align:left'><li>05/12/2018: Initial release</li>" +
     "<li>05/12/2018: Dairi art added and made the default; PC-98 and male characters added</li>" +
     "<li>21/01/2019: Mobile version</li><li>24/04/2019: Works added</li><li>18/08/2019: Migrated to maribelhearn.com</li>" +
-    "<li>17/09/2019: Mobile version bugs fixed and speed increased; changelog added</li></ul>");
+    "<li>17/09/2019: Mobile version bugs fixed and speed increased; changelog added</li>"
+    "<li>04/10/2019: WBaWC characters added</li></ul>");
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
 }
