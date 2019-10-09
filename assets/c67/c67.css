@@ -72,9 +72,17 @@ table, tr, th, td {
         margin-right: 0;
         font-size: 11px;
     }
+    #boxart {
+        width: 140px;
+        height: 140px;
+    }
     #graze {
-        width: 300px;
-        height: 125px;
+        width: 175px;
+        height: 72px;
+    }
+    #yuitia {
+        width: 117px;
+        height: 228px;
     }
     #container {
         overflow-x: scroll;
@@ -91,12 +99,20 @@ table, tr, th, td {
     h2 {
         font-size: 24px;
     }
+    .shotinfo {
+        width: 213px;
+        height: 160px;
+    }
 }
 @media only screen and (min-device-width:480px) and (max-device-width:640px) and (orientation:landscape) {
     #wrap {
         margin-left: 0;
         margin-right: 0;
         font-size: 11px;
+    }
+    #yuitia {
+        width: 117px;
+        height: 228px;
     }
     em, p {
         font-size: 11px;
@@ -106,5 +122,9 @@ table, tr, th, td {
     }
     h2 {
         font-size: 24px;
+    }
+    .shotinfo {
+        width: 213px;
+        height: 160px;
     }
 }
