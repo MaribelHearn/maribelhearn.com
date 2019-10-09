@@ -21,7 +21,7 @@
         <script src='../assets/shared/utils.js' defer></script>
         <script src='../assets/shared/modernizr-custom.js' defer></script>
         <script>document.documentElement.classList.remove("no-js");
-        function set(){setCookie("token",<?php echo file_get_contents('.stats/token') ?>);
+        function set(){setCookie("token",<?php echo file_get_contents('../.stats/token') ?>);
         document.getElementById("set").style="display:block"}</script>
     </head>
 
