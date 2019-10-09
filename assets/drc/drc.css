@@ -34,8 +34,8 @@ input[type=number] {
     border: 1px solid black;
     text-align: center;
     list-style-position: inside;
-    margin-left: 23%;
-    margin-right: 23%;
+    margin-left: 22%;
+    margin-right: 22%;
     padding-left: 15px;
     padding-right: 15px;
     opacity: 0.8;
@@ -54,9 +54,6 @@ input[type=number] {
     font-size: 16px;
     font-weight: bold;
 }
-#challengeLabel, #difficultyLabel {
-    display: none;
-}
 #acks, #languages {
     text-decoration: none;
     margin-left: auto;
@@ -67,7 +64,7 @@ input[type=number] {
     margin-left: auto;
     margin-right: auto;
 }
-#scoringRubrics, #season, #survivalRubrics {
+#season, #calculator, #scoringButton, #survivalButton {
     display: none;
 }
 @media only screen and (max-width: 1400px) {
