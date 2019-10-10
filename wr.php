@@ -5,7 +5,11 @@
     hit(basename(__FILE__));
     $json = file_get_contents('json/wrlist.json');
     $wr = json_decode($json, true);
-    $lang = $_COOKIE['lang'];
+	if (isset($_COOKIE['lang'])) {
+		$lang = str_replace('"', '', $_COOKIE['lang']);
+	} else {
+        $lang = 'English';
+    }
 	$overall = array(0);
 	$overall_player = array(0);
 	$overall_diff = array(0);
@@ -121,8 +125,8 @@
     }
     function format_lm($lm, $lang) {
         switch ($lang) {
-            case '"Japanese"': return '<span id="lm">' . date_tl($lm) . '</span>現在の世界記録です。';
-            case '"Chinese"': return '世界记录更新于<span id="lm">' . date_tl($lm) . '</span>。';
+            case 'Japanese': return '<span id="lm">' . date_tl($lm) . '</span>現在の世界記録です。';
+            case 'Chinese': return '世界记录更新于<span id="lm">' . date_tl($lm) . '</span>。';
             default: return 'World records are current as of <span id="lm">' . $lm . '</span>.';
         }
     }
@@ -240,8 +244,12 @@
                 <tr><td><a href='#players' class='playerranking'>Player Ranking</a></td></tr>
                 <tr><td><a href='#ack' class='ack'>Acknowledgements</a></td></tr>
             </table>
-            <table id='checkboxes'><tr class='noborders'><td class='noborders'><input id='dates' type='checkbox' onClick='toggleDates()'>
-			<label id='label_dates' for='dates' class='dates'>Dates</label></td></tr></table>
+            <table id='checkboxes'>
+                <tr class='noborders'><td class='noborders'>
+                    <input id='dates' type='checkbox' onClick='toggleDates()'>
+			        <label id='label_dates' for='dates' class='dates'>Dates</label>
+                </td></tr>
+            </table>
             <div id='overall'>
                 <h2 class='overallrecords'>Overall Records</h2>
                 <table class='sortable'>
@@ -289,6 +297,15 @@
 			        echo '<img id="' . $game . '" src="games/' . strtolower($game) . '50x50.jpg" alt="' . $game . ' cover" onClick="display(this.id)">';
 			    }
 			?>
+			<noscript><?php
+				if ($lang == 'English') {
+					echo '<p><em>Sorry, you cannot show the game world records with JavaScript disabled as of now.</em></p>';
+				} else if ($lang == 'Japanese') {
+					echo '<p>JavaScriptなしではWRを示すできません。</p>';
+				} else {
+					echo '<p>没有JavaScript就WR无法显示。</p>';
+				}
+			?></noscript>
 			<div id='list'>
 				<p id='fullname'></p>
 				<p id='seasontoggle'>
