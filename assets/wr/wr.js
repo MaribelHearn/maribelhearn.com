@@ -990,14 +990,7 @@ $(document).ready(function () {
         dark();
     }
 
-    if (location.protocol == "file:") {
-        var path = location.pathname.split('/').pop();
-
-        $("#nav a").attr("href", function (i, oldHref) {
-            return (oldHref == '/' ? location.href.replace(path, "index.html") + "" : oldHref + ".html");
-        });
-    }
-
+    $("#checkboxes").css("display", "table");
     seasonsEnabled = $("#seasons").is(":checked");
     datesEnabled = $("#dates").is(":checked");
     load();
