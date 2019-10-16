@@ -38,6 +38,7 @@
             <h1>Touhou Replay Showcase Scheduling</h1>
             <p>This page contains the schedules of the <a href='https://twitch.tv/touhou_replay_showcase'><img src='ext/twitch-icon-small.ico' alt='Twitch favicon'> Touhou
             Replay Showcase</a> stream from its 2018 reboot onward. The upcoming stream's schedule will be listed at the top once it becomes available.</p>
+            <p><strong>Notice:</strong> The stream is currently being transferred to <a href='https://twitter.com/Gastari_'>Gastari</a> and several changes will be made. We will probably resume by November.</p>
             <h3>Saturday, 5 October 2019 (September runs)</h3>
             <ul>
                 <li>ZPS UFO Lunatic SanaeB Scoring</li>
@@ -47,7 +48,7 @@
                 <li>Chum/Dagoth PoFV Lunatic PvP matches</li>
                 <li>KirbyComment GFW Lunatic Route A2 NMNB</li>
                 <li>Kachirou Kano GFW Lunatic Route A1 NMNB</li>
-                <li>Dai SA Lunatic ReimuA N B</li>
+                <li>Dai SA Lunatic ReimuA NB</li>
             </ul>
             <h3>Sunday, 29 September 2019</h3>
             <em>Moved to next week</em>
