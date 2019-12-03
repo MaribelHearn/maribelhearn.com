@@ -153,6 +153,9 @@
                     <td><a href='http://www.mediafire.com/download/88ncjlua3hjrma2/th15_assist_2.2.rar' target='_blank'>LoLK</a></td>
                 </tr>
             </table>
+			<p><strong>WBaWC Practice by <a href='https://twitter.com/Priweejt'>Priw8</a></strong></p>
+			<p>Allows skipping to any part of the game, similar to Riri's practice tools, using an in-game menu.</p>
+			<a href='https://priw8.github.io/#s=patches/prac' target='_blank'>Download</a>
             <p><strong>GFW "Brown Label" Practice by <a href='https://twitter.com/givemeberserker'>MegaPulse</a></strong></p>
             <p>Modified <span class='code'>.dat</span> files that allow you to practice specific stages of any route in the game. Select A in-game for full stage practice,
             B for midboss and boss and C for boss only. Refer to the readme file for further information.</p>
