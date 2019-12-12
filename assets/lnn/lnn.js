@@ -3,12 +3,8 @@ var LNNs, language = "English", selected = "", playerSelected = false, playergam
 function load() {
     if (getCookie("lang") == "Japanese") {
         language = "Japanese";
-        generateText();
-        generateShortNames();
     } else if (getCookie("lang") == "Chinese") {
         language = "Chinese";
-        generateText();
-        generateShortNames();
     }
 }
 function restrictions(game) {
@@ -169,9 +165,9 @@ function getPlayerLNNs(player) {
         $("#" + game + "s").html(list);
 
         if (game == "UFO" && list.contains("ReimuA") && list.contains("ReimuB") && list.contains("MarisaA") && list.contains("MarisaB") && list.contains("SanaeA") && list.contains("SanaeB")) {
-            $("#UFOs").append(" <strong>(All)</strong>");
+            $("#UFOs").append(" <strong class='all'>(All)</strong>");
         } else if (game != "UFO" && gamesum == Object.keys(LNNs[game]).length) {
-            $("#" + game + "s").append(" <strong>(All)</strong>");
+            $("#" + game + "s").append(" <strong class='all'>(All)</strong>");
         }
     }
 
@@ -183,113 +179,23 @@ function getPlayerLNNs(player) {
 }
 function generateText() {
     if (language == "English") {
-        $("title").html("Touhou Lunatic No Miss No Bombs");
-        $("h1").html("Touhou Lunatic No Miss No Bombs");
-        $(".game").html("Game");
-        $(".games").html("Games LNN'd");
-        $(".player").html("Player");
-        $(".players").html("Players");
-        $(".differentn").html("Different players");
         $(".ranking").html("Ranking");
-        $(".overall").html("Overall");
         $(".difficulty").html("Difficulty");
-        $(".playerranking").html("Player Ranking");
-        $(".overallcount").html("Overall Count");
-        $(".nooflnns").html("No. of LNNs");
-        $(".all").html(" (All)");
-        $(".ack").html("Acknowledgements");
-        $(".lnns").html("LNN Lists");
-        $("#description").html("A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. " +
-        "For every shottype in a game, tables will tell you which players have done an LNN with it, if any. " +
-        "If a player has multiple LNNs for one particular shottype, those are not factored in.");
-        $("#conditions").html("Extra conditions are required for PCB, TD, HSiFS and WBaWC; these are No Border Breaks for PCB, " +
-        "No Trance for TD, No Release for HSiFS and No Berserk Roar No Roar Breaks for WBaWC. " +
-        "LNN in these games is called LNNN or LNNNN, with extra Ns to denote the extra conditions. " +
-        "The extra condition in UFO, no UFO summons, is optional, as it is not considered to have a significant impact on the " +
-        "difficulty of the run. As for IN, an LNN is assumed to capture all Last Spells and is referred to as LNNFS.");
-        $("#tables").html("All of the table columns are sortable.");
-        $("#contents_header").html("Contents");
-        $("#clickgame").html("Click a game cover to show its list of LNNs.");
-        $("#playerlnns").html("Choose a player name from the menu below to show their LNNs.");
         $("#score").html("Score");
         $("#label_all").html("All");
-        $("#autosort").html("No. of WRs");
         $("#differentgames").html("Different games");
-        $("#credit").html("The background image was drawn by <a href='https://www.pixiv.net/member.php?id=1111435'>C.Z</a>.");
-        $("#jptlcredit").html("The Japanese translation of the top text was done by " +
-        "<a href='https://twitter.com/toho_yumiya'>Yu-miya</a>.");
-        $("#cntlcredit").html("The Chinese translation of the top text was done by " +
-        "<a href='https://twitter.com/williewillus'>williewillus</a>.");
-        $("#backtotop").html("Back to Top");
     } else if (language == "Japanese") {
-        $("title").html("東方Lunaticノーミスノーボム");
-        $("h1").html("東方Lunaticノーミスノーボム");
-        $(".game").html("ゲーム");
-        $(".games").html("ゲーム");
-        $(".player").html("プレイヤー");
-        $(".players").html("プレイヤー");
-        $(".differentn").html("プレイヤー");
-        $(".overall").html("合計");
         $(".ranking").html("ランキング");
         $(".difficulty").html("難易度");
-        $(".playerranking").html("プレイヤーのランキング");
-        $(".overallcount").html("総数");
-        $(".nooflnns").html("LNNの数");
-        $(".all").html("（全）");
-        $(".ack").html("謝辞");
-        $(".lnns").html("LNNリスト");
-        $("#description").html("東方原作STG各作品の難易度Lunaticのノーミスノーボム（LNN）リストです。適宜頻繁に更新します。各作品の表とも、" +
-        "各機体において誰が達成したかを記載しています。特定の作品、ショットタイプで複数回のLNNを達成している場合でも１回とカウントされます。");
-        $("#conditions").html("また妖々夢では霊撃無し、神霊廟ではトランス無し、天空璋では開放無し、鬼形獣では霊撃無し、" +
-        "暴走ロアリング無しが条件となります。この４作品では追加条件によってNが追加され、LNNN又はLNNNNと呼称します。" +
-        "また星蓮船ではUFO招喚無しも考慮されますが、難易度が劇的に変化するわけではないため必須条件とはなっていません。" +
-        "永夜抄ではラストスペル取得を含めLNNFSが条件となります。");
-        $("#tables").html("各欄は並べ替え可能となっています。並べ替えには各表の最上段をクリックしてください。");
-        $("#contents_header").html("内容");
-        $("#clickgame").html("LNNリストはゲームをクリック。");
-        $("#playerlnns").html("個人のLNN(s)を表示するには、下記のメニューからプレイヤー名を選んでください。");
         $("#score").html("スコア");
         $("#label_all").html("全");
-        $("#autosort").html("WR数");
         $("#differentgames").html("ゲーム");
-        $("#credit").html("背景イメージは<a href='https://www.pixiv.net/member.php?id=1111435'>C.Z</a>" +
-        "さんのものを使用させていただいております。");
-        $("#jptlcredit").html("ページ上部のテキストは<a href='https://twitter.com/toho_yumiya'>Yu-miya</a>によって日本語に翻訳されました。");
-        $("#cntlcredit").html("ページ上部のテキストは<a href='https://twitter.com/williewillus'>williewillus</a>によって中国語に翻訳されました。");
-        $("#backtotop").html("上に帰る");
     } else {
-        $("title").html("东方LNN");
-        $("h1").html("东方LNN");
-        $(".game").html("游戏");
-        $(".games").html("游戏");
-        $(".player").html("玩家");
-        $(".players").html("玩家");
-        $(".differentn").html("玩家");
-        $(".overall").html("合計");
         $(".ranking").html("排行");
         $(".difficulty").html("难度");
-        $(".playerranking").html("玩家排行");
-        $(".overallcount").html("总数");
-        $(".nooflnns").html("LNN的数量");
-        $(".all").html("（全）");
-        $(".ack").html("致谢");
-        $(".lnns").html("LNN列表");
-        $("#description").html("这个网页记载所有「东方Project」的LNN（Lunatic No Miss No Bomb），时不时地更新。" +
-        "每作游戏的每个机体有一行显示打出LNN的玩家。如果某一位玩家用一个机体打出多次LNN，只算一次，其余次数不算入统计。");
-        $("#conditions").html("妖妖梦、神灵庙、天空璋打NN时有附加条件，即是不爆结界、不开灵界、不使用季节解放。此三作LNN被称为LNNN，" +
-        "以第三个N代表着附加的条件。星莲船的附加条件（不开飞碟）由于对难度没有大量的影响，可以自选。永夜抄的LNN必须收取所有LSC，称做LNNFS。");
-        $("#tables").html("点击任何标题即可排序表格内容。");
-        $("#contents_header").html("内容");
-        $("#clickgame").html("单击游戏处查看LNN列表。");
-        $("#playerlnns").html("Choose a player name from the menu below to show their LNNs.");
         $("#score").html("分数");
         $("#label_all").html("皆");
-        $("#autosort").html("WR数量");
         $("#differentgames").html("游戏");
-        $("#credit").html("The background image was drawn by <a href='https://www.pixiv.net/member.php?id=1111435'>C.Z</a>.");
-        $("#jptlcredit").html("感谢<a href='https://twitter.com/toho_yumiya'>Yu-miya</a>提供头部文字的日语翻译。");
-        $("#cntlcredit").html("感谢<a href='https://twitter.com/williewillus'>williewillus</a>提供头部文字的中文翻译。");
-        $("#backtotop").html("回到顶部");
     }
 }
 function generateTableText() {
@@ -305,6 +211,7 @@ function generateTableText() {
         $(".nooflnnfss").html("No. of LNNFSs");
         $(".nooflnnnns").html("No. of LNNNNs");
         $(".different").html("(Different players)");
+        $(".all").html("(All)");
     } else if (language == "Japanese") {
         $(".shottype").html("キャラ");
         $(".route").html("ルート");
@@ -317,6 +224,7 @@ function generateTableText() {
         $(".nooflnnfss").html("LNNFSの数");
         $(".nooflnnnns").html("LNNNNの数");
         $(".different").html("（プレイヤー）");
+        $(".all").html("（全）");
     } else {
         $(".shottype").html("机体");
         $(".route").html("路线");
@@ -329,6 +237,7 @@ function generateTableText() {
         $(".nooflnnfss").html("LNNFS的数量");
         $(".nooflnnnns").html("LNNNN的数量");
         $(".different").html("（玩家）");
+        $(".all").html("（全）");
     }
 }
 function generateShottypes() {
@@ -659,40 +568,14 @@ function generateShortNames() {
         $(".WBaWC").html("鬼");
     }
 }
-function generateAll() {
-    generateText();
-    generateTableText();
-    generateShottypes();
-    generateFullNames();
-    generateShortNames();
-}
 function setLanguage(newLanguage) {
     if (language == newLanguage) {
         return;
     }
 
-    var oldLanguage = language, lm = $("#lm").html();
-
     language = newLanguage;
-
-    if (selected !== "" || playerSelected) {
-        generateAll();
-    } else {
-        generateText();
-        generateShortNames();
-    }
-
     setCookie("lang", newLanguage);
-
-    if (language == "English") {
-        $("#lastupdate").html("LNNs are current as of <span id='lm'>" + translateEADate(lm, "DMY") + "</span>.");
-    } else if (language == "Japanese") {
-        $("#lastupdate").html("<span id='lm'>" + (oldLanguage == "English" ? translateDate(lm, "YMD") : lm) +
-        "</span>現在のLNN記録です。");
-    } else {
-        $("#lastupdate").html("LNN更新于<span id='lm'>" + (oldLanguage == "English" ? translateDate(lm, "YMD") : lm) +
-        "</span>。");
-    }
+    location.href = location.href.split('#')[0].split('?')[0];
 }
 function dark() {
     var style = document.createElement("link");
@@ -721,13 +604,9 @@ $(document).ready(function () {
         dark();
     }
 
-    if (location.protocol == "file:") {
-        var path = location.pathname.split('/').pop();
-
-        $("#nav a").attr("href", function (i, oldHref) {
-            return (oldHref == '/' ? location.href.replace(path, "index.html") + "" : oldHref + ".html");
-        });
-    }
+    $(".en").attr("href", "javascript:setLanguage(\"English\")");
+    $(".jp").attr("href", "javascript:setLanguage(\"Japanese\")");
+    $(".zh").attr("href", "javascript:setLanguage(\"Chinese\")");
 
     load();
 });
