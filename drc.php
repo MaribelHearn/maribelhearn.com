@@ -366,7 +366,7 @@
 		                <tbody>
 		                    <tr class='noborders'>
 		                        <td class='noborders'>
-		                            <a class='en' href='drc'><img src='assets/flags/uk.png' alt='<?php
+		                            <a class='en' href='drc?hl=en'><img src='assets/flags/uk.png' alt='<?php
 										if ($lang == 'English') { echo 'Flag of the United Kingdom'; }
 										else if ($lang == 'Japanese') { echo 'イギリスの国旗'; }
 										else { echo '英国旗'; }
