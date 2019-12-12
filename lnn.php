@@ -83,6 +83,7 @@
 				case 'Overall': return '合計';
 				case 'No. of LNNs': return 'LNN的数量';
 				case 'LNN Lists': return 'LNN列表';
+                case 'Overall Count': return '总数';
                 case 'Player Ranking': return '玩家排行';
                 case 'Acknowledgements': return '致谢';
                 case 'Touhou Lunatic No Miss No Bombs': return '东方LNN';
@@ -206,8 +207,8 @@
             <p id='conditions'><?php
 				if ($lang == 'English') {
 					echo 'Extra conditions are required for PCB, TD, HSiFS and WBaWC; these are No Border Breaks for PCB, ' .
-                    'No Trance for TD, No Release for HSiFS and No Berserk Roar No Roar Breaks for WBaWC.' .
-                    'LNN in these games is called LNNN or LNNNN, with extra Ns to denote the extra conditions.' .
+                    'No Trance for TD, No Release for HSiFS and No Berserk Roar No Roar Breaks for WBaWC. ' .
+                    'LNN in these games is called LNNN or LNNNN, with extra Ns to denote the extra conditions. ' .
                     'The extra condition in UFO, no UFO summons, is optional, as it is not considered to have a significant ' .
                     'impact on the difficulty of the run. As for IN, an LNN is assumed to capture all Last Spells and '.
                     'is referred to as LNNFS.';
