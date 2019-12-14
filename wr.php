@@ -5,11 +5,23 @@
     hit(basename(__FILE__));
     $json = file_get_contents('json/wrlist.json');
     $wr = json_decode($json, true);
-	if (isset($_COOKIE['lang'])) {
+    if (isset($_COOKIE['lang'])) {
 		$lang = str_replace('"', '', $_COOKIE['lang']);
-	} else {
+        $notation = str_replace('"', '', $_COOKIE['datenotation']);
+	}
+    if (empty($_GET['hl']) && !isset($_COOKIE['lang']) || $_GET['hl'] == 'en-gb') {
+		$lang = 'English';
+        $notation = 'DMY';
+    } else if ($_GET['hl'] == 'en-us') {
         $lang = 'English';
-    }
+        $notation = 'MDY';
+    } else if ($_GET['hl'] == 'jp') {
+		 $lang = 'Japanese';
+         $notation = 'YMD';
+	} else if ($_GET['hl'] == 'zh') {
+		$lang = 'Chinese';
+        $notation = 'YMD';
+	}
 	$overall = array(0);
 	$overall_player = array(0);
 	$overall_diff = array(0);
@@ -116,19 +128,80 @@
 	function replay_path($game, $diff, $shot) {
 	    return 'replays/th' . num($game) . '_ud' . substr($diff, 0, 2) . shot_abbr($shot) . '.rpy';
 	}
-    function date_tl($date) {
+    function date_tl($date, $notation) {
         $tmp = preg_split('/\//', $date);
         $day = $tmp[0];
         $month = $tmp[1];
         $year = $tmp[2];
-        return $year . '年' . $month . '月' . $day . '日';
-    }
-    function format_lm($lm, $lang) {
-        switch ($lang) {
-            case 'Japanese': return '<span id="lm">' . date_tl($lm) . '</span>現在の世界記録です。';
-            case 'Chinese': return '世界记录更新于<span id="lm">' . date_tl($lm) . '</span>。';
-            default: return 'World records are current as of <span id="lm">' . $lm . '</span>.';
+        if ($notation == 'MDY') {
+            return $month . '/' . $day . '/' . $year;
+        } else if ($notation == 'YMD') {
+            return $year . '年' . $month . '月' . $day . '日';
+        } else { // DMY
+            return $day . '/' . $month . '/' . $year;
         }
+    }
+    function format_lm($lm, $lang, $notation) {
+        if ($lang == 'Japanese') {
+            return '<span id="lm">' . date_tl($lm, 'YMD') . '</span>現在の世界記録です。';
+        } else if ($lang == 'Chinese') {
+            return '世界记录更新于<span id="lm">' . date_tl($lm, 'YMD') . '</span>。';
+        } else if ($lang == 'English') {
+            if ($notation == 'DMY') {
+                return 'World records are current as of <span id="lm">' . $lm . '</span>.';
+            } else {
+                return 'World records are current as of <span id="lm">' . date_tl($lm, 'MDY') . '</span>.';
+            }
+        }
+    }
+    function tl_term($term, $lang) {
+        if ($lang == 'Japanese') {
+	        $term = trim($term);
+			switch ($term) {
+				case 'Game': return 'ゲーム';
+				case 'Score': return 'スコア';
+                case 'Player': return 'プレイヤー';
+				case 'Difficulty': return '難易度';
+                case 'Shottype': return 'キャラ';
+                case 'Seasons': return '季節';
+				case 'Date': return '日付';
+				case 'Dates': return '日付';
+				case 'No. of WRs': return 'WR数';
+				case 'Different games': return 'ゲーム';
+				case 'Overall': return '合計';
+				case 'Overall Records': return '各作品世界記録一覧';
+                case 'World Records': return '世界記録';
+                case 'Player Ranking': return 'プレイヤーのランキング';
+                case 'Acknowledgements': return '謝辞';
+                case 'Touhou World Records': return '東方の世界記録';
+				case 'Back to Top': return '上に帰る';
+	            default: return $term;
+	        }
+		} else if ($lang == 'Chinese') {
+	        $term = trim($term);
+			switch ($term) {
+				case 'Game': return '游戏';
+				case 'Score': return '分数';
+                case 'Player': return '玩家';
+				case 'Difficulty': return '难度';
+                case 'Shottype': return '机体';
+                case 'Seasons': return '季节';
+				case 'Date': return '日期';
+				case 'Dates': return '日期';
+				case 'No. of WRs': return 'WR数量';
+				case 'Different games': return '游戏';
+				case 'Overall': return '合計';
+				case 'Overall Records': return '整体世界纪录';
+                case 'World Records': return '世界纪录';
+                case 'Player Ranking': return '玩家排行';
+                case 'Acknowledgements': return '致谢';
+                case 'Touhou World Records': return '东方世界纪录';
+				case 'Back to Top': return '回到顶部';
+	            default: return $term;
+	        }
+		} else {
+			return $term;
+		}
     }
 	foreach ($wr as $game => $value) {
 		$num = num($game);
@@ -170,7 +243,7 @@
 ?>
 
 	<head>
-		<title>Touhou World Records</title>
+		<title><?php echo tl_term('Touhou World Records', $lang); ?></title>
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
 		<meta name='description' content='List of Touhou shooting game world records.'>
@@ -204,45 +277,103 @@
 					<td id='emptytd' class='noborders' style='width:22%'></td>
 					<td id='languagestd' class='noborders' style='width:55%'> <table id='languages' class='noborders'>
 		                <tbody>
-		                    <tr class='noborders'>
+                            <tr class='noborders'>
 		                        <td class='noborders'>
-		                            <a href='javascript:setLanguage("English", "DMY")'><img src='assets/flags/uk.png' alt='Flag of the United Kingdom'></a>
+                                    <a class='en-gb' href='wr?hl=en-gb'><img src='assets/flags/uk.png' alt='<?php
+										if ($lang == 'English') { echo 'Flag of the United Kingdom'; }
+										else if ($lang == 'Japanese') { echo 'イギリスの国旗'; }
+										else { echo '英国旗'; }
+									?>'></a>
+		                        </td>
+    		                        <td class='noborders'>
+                                        <a class='en-us' href='wr?hl=en-us'><img src='assets/flags/us.png' alt='<?php
+    										if ($lang == 'English') { echo 'Flag of the United States'; }
+    										else if ($lang == 'Japanese') { echo 'アメリカ合衆国の国旗'; }
+    										else { echo '美国旗'; }
+    									?>'></a>
+    		                        </td>
+		                        <td class='noborders'>
+                                    <a class='jp' href='wr?hl=jp'><img src='assets/flags/japan.png' alt='<?php
+										if ($lang == 'English') { echo 'Flag of Japan'; }
+										else if ($lang == 'Japanese') { echo '日本の国旗'; }
+										else { echo '日本旗'; }
+									?>'></a>
 		                        </td>
 		                        <td class='noborders'>
-		                            <a href='javascript:setLanguage("English", "MDY")'><img src='assets/flags/us.png' alt='Flag of the United States'></a>
-		                        </td>
-		                        <td class='noborders'>
-		                            <a href='javascript:setLanguage("Japanese", "YMD")'><img src='assets/flags/japan.png' alt='Flag of Japan'></a>
-		                        </td>
-		                        <td class='noborders'>
-		                            <a href='javascript:setLanguage("Chinese", "YMD")'><img src='assets/flags/china.png' alt='Flag of the P.R.C.'></a>
+                                    <a class='zh' href='wr?hl=zh'><img src='assets/flags/china.png' alt='<?php
+										if ($lang == 'English') { echo 'Flag of the P.R.C.'; }
+										else if ($lang == 'Japanese') { echo '中華人民共和国の国旗'; }
+										else { echo '中国旗'; }
+									?>'></a>
 		                        </td>
 		                    </tr>
 		                    <tr class='noborders'>
-		                        <td class='noborders'><a href='javascript:setLanguage("English", "DMY")'>UK English</a></td>
-		                        <td class='noborders'><a href='javascript:setLanguage("English", "MDY")'>US English</a></td>
-		                        <td class='noborders'><a href='javascript:setLanguage("Japanese", "YMD")'>日本語</a></td>
-		                        <td class='noborders'><a href='javascript:setLanguage("Chinese", "YMD")'>简体中文</a></td>
+		                        <td class='noborders'><a class='en-gb' href='wr?hl=en-gb'>English (UK)</a></td>
+		                        <td class='noborders'><a class='en-us' href='wr?hl=en-us'>English (US)</a></td>
+		                        <td class='noborders'><a class='jp' href='wr?hl=jp'>日本語</a></td>
+		                        <td class='noborders'><a class='zh' href='wr?hl=zh'>简体中文</a></td>
 		                    </tr>
 		                </tbody>
 		            </table></td>
 					<td class='noborders' style='width:22%;text-align:right;vertical-align:top'><img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)'></td>
 				</tr>
 			</table>
-			<h1>Touhou World Records</h1>
-            <noscript><strong>Notice:</strong> this page cannot function properly with JavaScript disabled.</noscript>
-            <p id='description'>An accurate list of Touhou world records, updated every so often. Note that the player ranking at the bottom does not take into account
-			how strong specific records are, only numbers. The list does not include scene games as of now.</p>
-            <p id='clicktodl'>Click a score to download the corresponding replay, if there is one available. All of the table columns are sortable.</p>
-            <p id='noreup'>The replays provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.</p>
-            <p id='lastupdate'><?php echo format_lm($lm, $lang) ?></p>
-            <h2 id='contents_header'>Contents</h2>
+			<h1><?php echo tl_term('Touhou World Records', $lang); ?></h1>
+            <?php
+                if (!empty($_GET['redirect'])) {
+                    echo '<p>(Redirected from <em>' . $_GET['redirect'] . '</em>)</p>';
+                }
+            ?>
+            <p id='description'><?php
+                if ($lang == 'English') {
+                    echo 'An accurate list of Touhou world records, updated every so often. ' .
+                    'Note that the player ranking at the bottom does not take into account how strong specific records are, '.
+                    'only numbers. The list does not include scene games as of now.';
+                } else if ($lang == 'Japanese') {
+                    echo '東方原作STG各作品世界記録の正確なリストです。適宜頻繁に更新します。' .
+                    '下部に記載されているプレイヤーランキングは特定のスコアの高低を示すものではなく、あくまで世' .
+                    '界記録取得数を示したものですのでご留意ください。また今のところ文花帖のようなシーンを基準にするリストは作成しておりません。';
+                } else {
+                    echo '这个网页准确地记载所有「东方Project」的打分世界记录，时不时地更新。注意：页底的玩家排行榜只算玩家们得到的记录有多少，' .
+                    '并不算记录的强度。目前数据并不包括摄影游戏。';
+                }
+            ?></p>
+            <p id='clicktodl'><?php
+                if ($lang == 'English') {
+                    echo 'Click a score to download the corresponding replay, if there is one available. ' .
+                    'All of the table columns are sortable.';
+                } else if ($lang == 'Japanese') {
+                    echo '該当のリプレイファイルをダウンロードするにはスコアをクリックしてください。' .
+                    '各欄は並べ替え可能となっています。並べ替えには各表の最上段をクリックしてください。';
+                } else {
+                    echo '点击任何分数即可下载对应的rep。点击任何标题即可排序表格内容。';
+                }
+            ?></p>
+            <p id='noreup'><?php
+                if ($lang == 'English') {
+                    echo 'The replays provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.';
+                } else if ($lang == 'Japanese') {
+                    echo 'リプレイファイルの二次利用は禁止致します。';
+                } else {
+                    echo '请勿将rep上传到别的存rep网站。';
+                }
+            ?></p>
+            <p id='lastupdate'><?php echo format_lm($lm, $lang, $notation) ?></p>
+            <h2 id='contents_header'><?php
+				if ($lang == 'English') { echo 'Contents'; }
+				else if ($lang == 'Japanese') { echo '内容'; }
+				else { echo '内容'; }
+			?></h2>
             <table id='contents'>
-				<tr id='overall_link'><td><a href='#overall' class='overallrecords'>Overall Records</a></td></tr>
-				<tr id='overall_linkm'><td><a href='#overallm' class='overallrecords'>Overall Records</a></td></tr>
-				<tr><td><a href='#wrs' class='worldrecords'>World Records</a></td></tr>
-                <tr><td><a href='#players' class='playerranking'>Player Ranking</a></td></tr>
-                <tr><td><a href='#ack' class='ack'>Acknowledgements</a></td></tr>
+				<tr id='overall_link'><td><a href='#overall' class='overallrecords'>
+                    <?php echo tl_term('Overall Records', $lang); ?>
+                </a></td></tr>
+				<tr id='overall_linkm'><td><a href='#overallm' class='overallrecords'>
+                    <?php echo tl_term('Overall Records', $lang); ?>
+                </a></td></tr>
+				<tr><td><a href='#wrs' class='worldrecords'><?php echo tl_term('World Records', $lang); ?></a></td></tr>
+                <tr><td><a href='#players' class='playerranking'><?php echo tl_term('Player Ranking', $lang); ?></a></td></tr>
+				<tr><td><a href='#ack' class='ack'><?php echo tl_term('Acknowledgements', $lang); ?></a></td></tr>
             </table>
             <table id='checkboxes'>
                 <tr class='noborders'><td class='noborders'>
@@ -251,16 +382,16 @@
                 </td></tr>
             </table>
             <div id='overall'>
-                <h2 class='overallrecords'>Overall Records</h2>
+                <h2 class='overallrecords'><?php echo tl_term('Overall Records', $lang); ?></h2>
                 <table class='sortable'>
                     <tr>
                         <th>#</th>
-                        <th class='game'>Game</th>
-                        <th id='score' class='sorttable_numeric'>Score</th>
-                        <th class='player'>Player</th>
-                        <th class='difficulty'>Difficulty</th>
-                        <th class='shottype'>Shottype</th>
-                        <th class='date'>Date</th>
+                        <th class='game'><?php echo tl_term('Game', $lang); ?></th>
+                        <th id='score' class='sorttable_numeric'><?php echo tl_term('Score', $lang); ?></th>
+                        <th class='player'><?php echo tl_term('Player', $lang); ?></th>
+                        <th class='difficulty'><?php echo tl_term('Difficulty', $lang); ?></th>
+                        <th class='shottype'><?php echo tl_term('Shottype', $lang); ?></th>
+                        <th class='date'><?php echo tl_term('Date', $lang); ?></th>
                     </tr>
                     <?php
 						foreach ($wr as $game => $value) {
@@ -270,13 +401,13 @@
 							echo '<td id="' . $game . 'overall1">' . $overall_player[$num] . '</td>';
 							echo '<td id="' . $game . 'overall2">' . $overall_diff[$num] . '</td>';
 							echo '<td id="' . $game . 'overall3">' . $overall_shottype[$num] . '</td>';
-							echo '<td id="' . $game . 'overall4" class="datestring">' . $overall_date[$num] . '</td></tr>';
+							echo '<td id="' . $game . 'overall4" class="datestring">' . date_tl($overall_date[$num], $notation) . '</td></tr>';
 						}
 					?>
                 </table>
             </div>
             <div id='overallm'>
-                <h2 class='overallrecords'>Overall Records</h2>
+                <h2 class='overallrecords'><?php echo tl_term('Overall Records', $lang); ?></h2>
 				<?php
                     echo '<hr>';
 					foreach ($wr as $game => $value) {
@@ -286,12 +417,20 @@
 						echo '<span id="' . $game . 'overall2m">' . $overall_diff[$num] . '</span> ';
 						echo '<span id="' . $game . 'overall3m">' . $overall_shottype[$num] . '</span> by ';
 						echo '<span id="' . $game . 'overall1m"><em>' . $overall_player[$num] . '</em></span> ';
-						echo '<br><span id="' . $game . 'overall4m" class="datestring">' . $overall_date[$num] . '</span></p><hr>';
+						echo '<br><span id="' . $game . 'overall4m" class="datestring">' . date_tl($overall_date[$num], $notation) . '</span></p><hr>';
 					}
 				?>
             </div>
-            <h2 id='wrs' class='worldrecords'>World Records</h2>
-			<p id='clickgame'>Click a game cover to show its list of world records.</p>
+            <h2 id='wrs' class='worldrecords'><?php echo tl_term('World Records', $lang); ?></h2>
+			<p id='clickgame'><?php
+            if ($lang == 'English') {
+                echo 'Click a game cover to show its list of world records.';
+            } else if ($lang == 'Japanese') {
+                echo '世界記録リストはゲームをクリック。';
+            } else {
+                echo '单击游戏处查看世界纪录列表。';
+            }
+            ?></p>
 			<?php
 			    foreach ($wr as $game => $value) {
 			        echo '<img id="' . $game . '" src="games/' . strtolower($game) . '50x50.jpg" alt="' . $game . ' cover" onClick="display(this.id)">';
@@ -303,33 +442,42 @@
 				} else if ($lang == 'Japanese') {
 					echo '<p>JavaScriptなしではWRを示すできません。</p>';
 				} else {
-					echo '<p>没有JavaScript就WR无法显示。</p>';
+					echo '<p>不好意思，目前查看世界纪录必须开启JavaScript。</p>';
 				}
 			?></noscript>
 			<div id='list'>
 				<p id='fullname'></p>
 				<p id='seasontoggle'>
 					<input id='seasons' type='checkbox' onClick='toggleSeasons()'>
-					<label id='label_seasons' for='seasons'>Seasons</label>
+					<label id='label_seasons' for='seasons'><?php echo tl_term('Seasons', $lang); ?></label>
 				</p>
 				<table id='table' class='sortable'>
 					<thead id='list_thead'></thead>
                     <tbody id='list_tbody'></tbody>
 				</table>
-				<p id='cheat'>* This record is suspected of cheating. If it is found to have been cheated, the record will be 2,209,324,900 by ななまる.</p>
+				<p id='cheat'><?php
+                    if ($lang == 'English') {
+                        echo '* This record is suspected of cheating. If it is found to have been cheated, ' .
+                        'the record will be 2,209,324,900 by ななまる.';
+                    } else if ($lang == 'Japanese') {
+                        echo 'このスコアはチートの疑いがあります。不正が証明された場合、世界記録はななまるさんによる22.09億のスコアとなります。';
+                    } else {
+                        echo '* 这rep怀疑有作弊。若真有此事，世界纪录则归于ななまる，得分2,209,324,900。';
+                    }
+                ?></p>
                 <table>
                     <thead id='west_thead'></thead>
                     <tbody id='west_tbody'></tbody>
                 </table>
 			</div>
             <div id='players'>
-                <h2 class='playerranking'>Player Ranking</h2>
+                <h2 class='playerranking'><?php echo tl_term('Player Ranking', $lang); ?></h2>
                 <table id='ranking' class='sortable'>
                     <thead>
                         <tr>
-                            <th class='player'>Player</th>
-                            <th id='autosort' class='sorttable_numeric'>No. of WRs</th>
-                            <th id='differentgames'>Different games</th>
+                            <th class='player'><?php echo tl_term('Player', $lang); ?></th>
+                            <th id='autosort' class='sorttable_numeric'><?php echo tl_term('No. of WRs', $lang); ?></th>
+                            <th id='differentgames'><?php echo tl_term('Different games', $lang); ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -353,21 +501,51 @@
 					</tbody>
                 </table>
             </div>
-            <h2 id='ack' class='ack'>Acknowledgements</h2>
+            <h2 id='ack' class='ack'><?php echo tl_term('Acknowledgements', $lang); ?></h2>
             <table id='acks' class='noborders'>
                 <tbody>
 					<tr class='noborders'>
-						<td id='credit' class='noborders'>The background image was drawn by <a href='https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ'>Catboyjeremie</a>.</td>
+						<td id='credit' class='noborders'><?php
+                            if ($lang == 'English') {
+                                echo 'The background image was drawn by ' .
+                                '<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>.';
+                            } else if ($lang == 'Japanese') {
+                                echo '背景イメージは<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">' .
+                                'Catboyjeremie</a>さんのものを使用させていただいております。';
+                            } else {
+                                echo '背景画师：<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>。';
+                            }
+                        ?></td>
 					</tr>
                     <tr class='noborders'>
-                        <td id='jptlcredit' class='noborders'>The Japanese translation of the top text was done by <a href='https://twitter.com/toho_yumiya'>Yu-miya</a>.</td>
+                        <td id='jptlcredit' class='noborders'><?php
+                            if ($lang == 'English') {
+                                echo 'The Japanese translation of the top text was done by ' .
+                                '<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.';
+                            } else if ($lang == 'Japanese') {
+                                echo 'ページ上部のテキストは<a href="https://twitter.com/toho_yumiya">Yu-miya</a>' .
+                                'によって日本語に翻訳されました。';
+                            } else {
+                                echo '感谢<a href="https://twitter.com/toho_yumiya">Yu-miya</a>提供头部文字的日语翻译。';
+                            }
+                        ?></td>
                     </tr>
                     <tr class='noborders'>
-                        <td id='cntlcredit' class='noborders'>The Chinese translation of the top text was done by <a href='https://twitter.com/williewillus'>williewillus</a>.</td>
+                        <td id='cntlcredit' class='noborders'><?php
+                            if ($lang == 'English') {
+                                echo 'The Chinese translation of the top text was done by ' .
+                                '<a href="https://twitter.com/williewillus">williewillus</a>.';
+                            } else if ($lang == 'Japanese') {
+                                echo 'ページ上部のテキストは<a href="https://twitter.com/williewillus">williewillus</a>' .
+                                'によって中国語に翻訳されました。';
+                            } else {
+                                echo '感谢<a href="https://twitter.com/williewillus">williewillus</a>提供头部文字的中文翻译。';
+                            }
+                        ?></td>
                     </tr>
                 </tbody>
             </table>
-            <p id='back'><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
+            <p id='back'><strong><a id='backtotop' href='#nav'><?php echo tl_term('Back to Top', $lang); ?></a></strong></p>
 			<?php echo '<input id="missingReplays" type="hidden" value="' . implode($missing_replays, '') . '">'; ?>
 		</div>
     </body>
