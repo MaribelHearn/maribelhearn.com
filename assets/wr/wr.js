@@ -47,11 +47,11 @@ function load() {
     if (getCookie("lang") == "Japanese") {
         language = "Japanese";
         notation = "YMD";
-        generateText();
+        //generateText();
     } else if (getCookie("lang") == "Chinese") {
         language = "Chinese";
         notation = "YMD";
-        generateText();
+        //generateText();
     } else if (getCookie("datenotation") == "MDY") {
         notation = "MDY";
     }
@@ -60,12 +60,12 @@ function load() {
         disableDates();
     }
 
-    if (notation != "DMY") {
+    /*if (notation != "DMY") {
         datestrings = $(".datestring");
         for (i = 0; i < datestrings.length; i += 1) {
             $(datestrings[i]).html(translateDate($(datestrings[i]).html(), notation));
         }
-    }
+    }*/
 }
 function shotRoute(game) {
     return game == "HRtP" || game == "GFW" ? "Route" : "Shottype";
@@ -442,8 +442,6 @@ function generateText(oldLanguage, oldNotation) {
         $(".LoLK").html("LoLK");
         $(".HSiFS").html("HSiFS");
         $(".WBaWC").html("WBaWC");
-        $("title").html("Touhou World Records");
-        $("h1").html("Touhou World Records");
         $(".game").html("Game");
         $(".player").html("Player");
         $(".difficulty").html("Difficulty");
@@ -452,31 +450,9 @@ function generateText(oldLanguage, oldNotation) {
         $(".date").html("Date");
         $(".dates").html("Dates");
         $(".overall").html("Overall");
-        $(".overallrecords").html("Overall Records");
-        $(".worldrecords").html("World Records");
         $(".westernrecords").html("Western Records");
-        $(".playerranking").html("Player Ranking");
-        $(".ack").html("Acknowledgements");
-        $("#description").html("An accurate list of Touhou world records, updated every so often. " +
-        "Note that the player ranking at the bottom does not take into account how strong specific records are, only numbers. " +
-        "The list does not include scene games as of now.");
-        $("#clicktodl").html("Click a score to download the corresponding replay, if there is one available. " +
-        "All of the table columns are sortable.");
-        $("#noreup").html("The replays provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.");
-        $("#contents_header").html("Contents");
-        $("#clickgame").html("Click a game cover to show its list of world records.");
-        $("#cheat").html("* This record is suspected of cheating. If it is found to have been cheated, the record will be 2,209,324,900 by ななまる.");
         $("#score").html("Score");
         $("#label_all").html("All");
-        $("#autosort").html("No. of WRs");
-        $("#differentgames").html("Different games");
-        $("#credit").html("The background image was drawn by " +
-        "<a href='https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ'>Catboyjeremie</a>.");
-        $("#jptlcredit").html("The Japanese translation of the top text was done by " +
-        "<a href='https://twitter.com/toho_yumiya'>Yu-miya</a>.");
-        $("#cntlcredit").html("The Chinese translation of the top text was done by " +
-        "<a href='https://twitter.com/williewillus'>williewillus</a>.");
-        $("#backtotop").html("Back to Top");
     } else if (language == "Japanese") {
         $(".HRtP").html("靈");
         $(".SoEW").html("封");
@@ -496,8 +472,6 @@ function generateText(oldLanguage, oldNotation) {
         $(".LoLK").html("紺");
         $(".HSiFS").html("天");
         $(".WBaWC").html("鬼");
-        $("title").html("東方の世界記録");
-        $("h1").html("東方の世界記録");
         $(".game").html("ゲーム");
         $(".player").html("プレイヤー");
         $(".difficulty").html("難易度");
@@ -506,27 +480,9 @@ function generateText(oldLanguage, oldNotation) {
         $(".date").html("日付");
         $(".dates").html("日付");
         $(".overall").html("WR一覧");
-        $(".overallrecords").html("各作品世界記録一覧");
-        $(".worldrecords").html("世界記録");
         $(".westernrecords").html("海外記録");
-        $(".playerranking").html("プレイヤーのランキング");
-        $(".ack").html("謝辞");
-        $("#description").html("東方原作STG各作品世界記録の正確なリストです。適宜頻繁に更新します。下部に記載されているプレイヤーランキングは特定のスコアの高低を示すものではなく、あくまで世" +
-                "界記録取得数を示したものですのでご留意ください。また今のところ文花帖のようなシーンを基準にするリストは作成しておりません。");
-        $("#clicktodl").html("該当のリプレイファイルをダウンロードするにはスコアをクリックしてください。各欄は並べ替え可能となっています。並べ替えには各表の最上段をクリックしてください。");
-        $("#noreup").html("リプレイファイルの二次利用は禁止致します。");
-        $("#contents_header").html("内容");
-        $("#clickgame").html("世界記録リストはゲームをクリック。");
-        $("#cheat").html("* このスコアはチートの疑いがあります。不正が証明された場合、世界記録はななまるさんによる22.09億のスコアとなります。");
         $("#score").html("スコア");
         $("#label_all").html("全");
-        $("#autosort").html("WR数");
-        $("#differentgames").html("ゲーム");
-        $("#credit").html("背景イメージは" +
-        "<a href='https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ'>Catboyjeremie</a>さんのものを使用させていただいております。");
-        $("#jptlcredit").html("ページ上部のテキストは<a href='https://twitter.com/toho_yumiya'>Yu-miya</a>によって日本語に翻訳されました。");
-        $("#cntlcredit").html("ページ上部のテキストは<a href='https://twitter.com/williewillus'>williewillus</a>によって中国語に翻訳されました。");
-        $("#backtotop").html("上に帰る");
     } else {
         $(".HRtP").html("灵");
         $(".SoEW").html("封");
@@ -546,8 +502,6 @@ function generateText(oldLanguage, oldNotation) {
         $(".LoLK").html("绀");
         $(".HSiFS").html("天");
         $(".WBaWC").html("鬼");
-        $("title").html("东方世界纪录");
-        $("h1").html("东方世界纪录");
         $(".game").html("游戏");
         $(".player").html("玩家");
         $(".difficulty").html("难度");
@@ -556,27 +510,9 @@ function generateText(oldLanguage, oldNotation) {
         $(".date").html("日期");
         $(".dates").html("日期");
         $(".overall").html("整体");
-        $(".overallrecords").html("整体世界纪录");
-        $(".worldrecords").html("世界纪录");
         $(".westernrecords").html("西方纪录");
-        $(".playerranking").html("玩家排行");
-        $(".ack").html("致谢");
-        $("#description").html("这个网页准确地记载所有「东方Project」的打分世界记录，时不时地更新。注意：页底的玩家排行榜只算玩家们得到的记录有多少，并不算记录的强度。目前数据并不包括摄" +
-                "影游戏。");
-        $("#clicktodl").html("点击任何分数即可下载对应的rep。点击任何标题即可排序表格内容。");
-        $("#noreup").html("请勿将rep上传到别的存rep网站。");
-        $("#contents_header").html("内容");
-        $("#clickgame").html("单击游戏处查看世界纪录列表。");
-        $("#cheat").html("* This record is suspected of cheating. If it is found to have been cheated, the record will be 2,209,324,900 by ななまる.");
         $("#score").html("分数");
         $("#label_all").html("皆");
-        $("#autosort").html("WR数量");
-        $("#differentgames").html("游戏");
-        $("#credit").html("The background image was drawn by " +
-        "<a href='https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ'>Catboyjeremie</a>.");
-        $("#jptlcredit").html("感谢<a href='https://twitter.com/toho_yumiya'>Yu-miya</a>提供头部文字的日语翻译。");
-        $("#cntlcredit").html("感谢<a href='https://twitter.com/williewillus'>williewillus</a>提供头部文字的中文翻译。");
-        $("#backtotop").html("回到顶部");
     }
 }
 function generateTableText() {
@@ -675,7 +611,6 @@ function generateTableText() {
         $(".percentage").html("Percentage");
         $(".shottype").html("Shottype");
         $(".route").html("Route");
-        $("#label_seasons").html("Seasons");
     } else if (language == "Japanese") {
         $(".HRtPf").html("東方靈異伝　～ The Highly Responsive to Prayers");
         $(".SoEWf").html("東方封魔録　～ the Story of Eastern Wonderland");
@@ -771,7 +706,6 @@ function generateTableText() {
         $(".percentage").html("割合");
         $(".shottype").html("キャラ");
         $(".route").html("ルート");
-        $("#label_seasons").html("季節");
     } else {
         $(".HRtPf").html("东方灵异传　～ The Highly Responsive to Prayers");
         $(".SoEWf").html("东方封魔录　～ the Story of Eastern Wonderland");
@@ -867,7 +801,6 @@ function generateTableText() {
         $(".percentage").html("百分");
         $(".shottype").html("机体");
         $(".route").html("路线");
-        $("#label_seasons").html("季节");
     }
 }
 function generateDates(oldLanguage, oldNotation) {
@@ -932,10 +865,9 @@ function setLanguage(newLanguage, newNotation) {
     setCookie("lang", newLanguage);
     notation = newNotation;
     setCookie("datenotation", newNotation);
-    generateText();
-    generateDates(oldLanguage, oldNotation);
+    location.href = location.href.split('#')[0].split('?')[0];
 
-    if (selected !== "") {
+    /*if (selected !== "") {
         generateTableText();
     }
 
@@ -961,7 +893,7 @@ function setLanguage(newLanguage, newNotation) {
             $("#lastupdate").html("世界记录更新于<span id='lm'>" + (oldLanguage == "English" ? translateDate(lm, "YMD") : lm) +
             "</span>。");
         }
-    }
+    }*/
 }
 function dark() {
     var style = document.createElement("link");
@@ -989,6 +921,11 @@ $(document).ready(function () {
         $("#hy").attr("src", "assets/shared/y-bar.png");
         dark();
     }
+
+    $(".en-gb").attr("href", "javascript:setLanguage(\"English\", \"DMY\")");
+    $(".en-us").attr("href", "javascript:setLanguage(\"English\", \"MDY\")");
+    $(".jp").attr("href", "javascript:setLanguage(\"Japanese\", \"YMD\")");
+    $(".zh").attr("href", "javascript:setLanguage(\"Chinese\", \"YMD\")");
 
     $("#checkboxes").css("display", "table");
     seasonsEnabled = $("#seasons").is(":checked");
