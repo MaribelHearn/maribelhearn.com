@@ -397,6 +397,9 @@
 			<p><strong>Real Time DRC Points Displayer by <a href='https://twitter.com/CaoMinh_Touhou' target='_blank'>Cao Minh</a></strong></p>
 			<p>A tool that tracks in-game data such as misses, bombs, etc, thus calculating <a href='drc'>DRC</a> points for both survival and scoring during a Touhou run.</p>
 			<a href='https://github.com/hoangcaominh/RealTimeDRCPointsDisplayer/releases/latest' target='_blank'>Download</a>
+            <p><strong>MS Black Label by <a href='https://twitter.com/spaztron64' target='_blank'>Spaztron64</a></strong></p>
+            <p>Increases the graze cap from 999 to 65536.</p>
+            <a href='https://maribelhearn.com/MSBL.zip' target='_blank'>Download</a>
             <p><strong>EoSD Capture History Tracker by <a href='https://twitter.com/TrickOfHat' target='_blank'>TrickOfHat</a></strong></p>
             <p>Command-line tool that allows you to track how many times you captured spells in EoSD. Includes Stage 4 Books and Play Time tracking, as well as allowing for multiple save files.</p>
             <table>
