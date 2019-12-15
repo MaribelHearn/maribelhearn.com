@@ -87,9 +87,10 @@
             <!-- Scorefiles for Practice -->
             <hr>
             <h2 id='scorefiles'>Completed Scorefiles</h2>
-            <p>These are (mostly) complete <span class='code'>score.dat</span> files useful for practice combined with other tools, as they have unlocked every practice stage and spell in Spell Practice.</p>
-            <p>All official shooting games aside from WBaWC are included.</p>
-            <a href='https://mega.nz/#F!r8hWmCrD!oOkBNotI88acvlhlKUXZiA' target='_blank'>Downloads</a>
+            <p>These are (mostly) complete <span class='code'>score.dat</span> files useful for practice combined with other tools, as they have unlocked the Extra Stage, every practice stage and spell in Spell Practice for all shottypes.</p>
+            <p>All official shooting games aside from VD are included.</p>
+            <a href='https://maribelhearn.com/Practice%20Scorefiles.zip' target='_blank'>Download</a>
+			<!-- Old link without WBaWC: https://mega.nz/#F!r8hWmCrD!oOkBNotI88acvlhlKUXZiA -->
             <!-- SpoilerAL -->
             <hr>
             <h2 id='spoileral'>SpoilerAL</h2>
