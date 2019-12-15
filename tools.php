@@ -36,6 +36,11 @@
         <div id='wrap' class='wrap'>
             <img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
             <h1>Touhou Patches and Tools</h1>
+            <?php
+                if (!empty($_GET['redirect'])) {
+                    echo '<p>(Redirected from <em>' . $_GET['redirect'] . '</em>)</p>';
+                }
+            ?>
             <p>This page contains download links to all kinds of different patches or tools applicable to the official Touhou shooting games.</p>
 			<p>Some of the patches are also available at <a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers'>
 			<img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> Touhou Patch Center</a> and can be used through
@@ -64,7 +69,7 @@
             <h2 id='vpatch'>Vpatch</h2>
             <p>Removes input delay, allows you to increase in-game FPS (default is 60), optionally fixes several bugs (PCB cherry display, MoF MarisaB 3-power unfocus, UFO 2.147b score display).
             The input delay is mostly prevalent in the older games (EoSD to IN) and running them on Vpatch will significantly improve the gameplay experience.</p>
-            <p>Vpatch is applicable to all official shooting games bar DDC and HSiFS.</p>
+            <p>Vpatch is applicable to all official shooting games bar DDC, HSiFS and WBaWC.</p>
             <a href='http://www.mediafire.com/file/5uk43317q0ozjkj/VsyncPatch.zip' target='_blank'>Download</a>
             <!-- English Patches -->
             <hr>
@@ -72,7 +77,7 @@
             <p>Translation patches into English and many other languages, as well as countless modifications to gameplay,
 			graphics and more, plus the ability to make your own, are provided by the Touhou Community Reliant Automatic Patcher (THCRAP) for all Windows Touhou games.
 			The thpatch.net link also links to instructions on how to use the patcher.</p>
-            <a href='https://maribelhearn.com/thcrap_brliron.zip' target='_blank'>Download (maribelhearn.com mirror)</a>
+            <a href='https://maribelhearn.com/thcrap.zip' target='_blank'>Download (maribelhearn.com mirror)</a>
             <a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Download' target='_blank'>Download (thpatch.net)</a>
             <!-- Enbconvertor -->
             <hr>
@@ -83,7 +88,7 @@
             <hr>
             <h2 id='scorefiles'>Completed Scorefiles</h2>
             <p>These are (mostly) complete <span class='code'>score.dat</span> files useful for practice combined with other tools, as they have unlocked every practice stage and spell in Spell Practice.</p>
-            <p>All official shooting games are included.</p>
+            <p>All official shooting games aside from WBaWC are included.</p>
             <a href='https://mega.nz/#F!r8hWmCrD!oOkBNotI88acvlhlKUXZiA' target='_blank'>Downloads</a>
             <!-- SpoilerAL -->
             <hr>
@@ -231,7 +236,8 @@
             <a href='https://mega.nz/#!sIhRFD7b!EKKnhhxKX2NQQg0jGaT1t3eAS7x5pcISSKr0abINvgM' target='_blank'>Download</a>
             <p><strong>VoWG + PWG Practice for MoF by <a href='https://twitter.com/chirpeh13' target='_blank'>Chirpy</a></strong></p>
             <p>Makes Kanako skip to Virtue of Wind God (her final spell) and makes Aya skip to Peerless Wind God (her timeout spell), which will also repeat itself indefinitely.</p>
-            <a href='https://www.dropbox.com/s/2u2fam39uya0zil/th10vowg%2Bpwg.dat?dl=0' target='_blank'>Download</a>
+            <a href='https://maribelhearn.com/th10vowg_pwg.dat' target='_blank'>Download</a>
+			<!-- Dead link: https://www.dropbox.com/s/2u2fam39uya0zil/th10vowg%2Bpwg.dat?dl=0 -->
             <p><strong>IN Nonspell Practice</strong></p>
             <p>Patch that lets you practice nonspells in IN.</p>
             <a href='https://mega.nz/#!y9IwiD4A!aI-tS2lNbDWeu-FnA41lc76xtnkUjHNdYwyg4dyBkrs' target='_blank'>Download</a>
