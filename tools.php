@@ -195,13 +195,15 @@
                     <td><a href='https://mega.nz/#F!npwSGaJC!pNfJemXgehNGbif2L-d6zQ' target='_blank'>LoLK</a></td>
                 </tr>
                 <tr>
-                    <td><a href='https://mega.nz/#!60JyGaTB!HOQPcI7Pq6MiEMKqI-Ucv49CxoqJ8Sc1d3u5s4wNS94' target='_blank'>HSiFS (v1.00a)</a></td>
+                    <td><a href='https://maribelhearn.com/HSiFS%20Boss%20Rush%20v1.0' target='_blank'>HSiFS</a></td>
                 </tr>
+				<!--
+				Old link boss-rush: https://mega.nz/#!60JyGaTB!HOQPcI7Pq6MiEMKqI-Ucv49CxoqJ8Sc1d3u5s4wNS94
+				Old link boss-only: https://mega.nz/#!Ogh3hD5B!PT6aGiyqhGAS1r4Y0IfjLTP3hDtRKa1qGi3zi6XjaOA
+				Old link full pack: https://mega.nz/#F!i0I0BIaI!A3wHnQYX2xFUTKS1po1GDw
+				-->
                 <tr>
-                    <td><a href='https://mega.nz/#!Ogh3hD5B!PT6aGiyqhGAS1r4Y0IfjLTP3hDtRKa1qGi3zi6XjaOA' target='_blank'>HSiFS (v1.00a, boss-only)</a></td>
-                </tr>
-                <tr>
-                    <td><a href='https://mega.nz/#F!i0I0BIaI!A3wHnQYX2xFUTKS1po1GDw' target='_blank'>Full Pack (excl. HSiFS)</a></td>
+                    <td><a href='https://maribelhearn.com/Full%20Boss%20Rush.zip' target='_blank'>Full Pack</a></td>
                 </tr>
             </table>
             <p><strong>Boss Rush Patches by <a href='https://twitter.com/drakeirving' target='_blank'>Drake</a></strong></p>
