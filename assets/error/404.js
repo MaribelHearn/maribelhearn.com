@@ -51,7 +51,7 @@ if (isNaN(path) && path != "404.html") {
 
     loc = (loc.indexOf("file:///") > -1 ? loc.replace(path, maxPath) + ".html" : maxPath);
 
-    if (max > maxPath.length - 2) {
-        location.replace(loc.replace(path, maxPath));
+    if (max > maxPath.length - 2) { // redirect
+        location.replace(loc.replace(path, maxPath) + "?redirect=" + path);
     }
 }

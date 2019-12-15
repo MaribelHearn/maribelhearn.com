@@ -34,6 +34,11 @@
 		<div id='wrap' class='wrap'>
 			<img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)'>
 			<h1>Survival Progress Table Generator</h1>
+			<?php
+				if (!empty($_GET['redirect'])) {
+					echo '<p>(Redirected from <em>' . $_GET['redirect'] . '</em>)</p>';
+				}
+			?>
             <noscript><strong>Notice:</strong> this page cannot function properly with JavaScript disabled.</noscript>
 			<p>Fill in the best survivals you have pulled off in the table below. If you leave a dropdown menu on the N/A option, it will not be factored in.
             At the bottom of the page, three different sortable tables indicating your survival progress will be generated.</p>

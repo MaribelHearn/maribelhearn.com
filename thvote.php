@@ -38,6 +38,11 @@
         <div id='wrap' class='wrap'>
             <img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
             <h1>THWiki Popularity Poll 2019 Full Results</h1>
+            <?php
+                if (!empty($_GET['redirect'])) {
+                    echo '<p>(Redirected from <em>' . $_GET['redirect'] . '</em>)</p>';
+                }
+            ?>
             <p>An English translation of the full results of the 2019 incarnation of the annual THWiki Popularity Poll.</p>
             <p>All of the table columns for which sorting makes sense are sortable.</p>
             <p>Source: <a href='http://toho-vote.info/'>http://toho-vote.info/</a></p>

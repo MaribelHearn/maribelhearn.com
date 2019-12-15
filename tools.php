@@ -195,7 +195,7 @@
                     <td><a href='https://mega.nz/#F!npwSGaJC!pNfJemXgehNGbif2L-d6zQ' target='_blank'>LoLK</a></td>
                 </tr>
                 <tr>
-                    <td><a href='https://maribelhearn.com/HSiFS%20Boss%20Rush%20v1.0' target='_blank'>HSiFS</a></td>
+                    <td><a href='https://maribelhearn.com/HSiFS%20Boss%20Rush%20v1.0.zip' target='_blank'>HSiFS</a></td>
                 </tr>
 				<!--
 				Old link boss-rush: https://mega.nz/#!60JyGaTB!HOQPcI7Pq6MiEMKqI-Ucv49CxoqJ8Sc1d3u5s4wNS94

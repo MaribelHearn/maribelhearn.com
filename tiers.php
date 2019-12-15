@@ -32,6 +32,11 @@
     				?>
     			</nav>
                 <h1 id='title'>Touhou Tier List Creator</h1>
+                <?php
+                    if (!empty($_GET['redirect'])) {
+                        echo '<p>(Redirected from <em>' . $_GET['redirect'] . '</em>)</p>';
+                    }
+                ?>
                 <div id='sort_selection'>
                     Currently tiering: <select id='sort' onChange='switchSort()'>
                         <option value='characters'>Characters</option>

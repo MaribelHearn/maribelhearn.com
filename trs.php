@@ -36,6 +36,11 @@
         <div id='wrap' class='wrap'>
             <img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
             <h1>Touhou Replay Showcase Scheduling</h1>
+            <?php
+                if (!empty($_GET['redirect'])) {
+                    echo '<p>(Redirected from <em>' . $_GET['redirect'] . '</em>)</p>';
+                }
+            ?>
             <p>This page contains the schedules of the <a href='https://twitch.tv/touhou_replay_showcase'><img src='ext/twitch-icon-small.ico' alt='Twitch favicon'> Touhou
             Replay Showcase</a> stream from its 2018 reboot onward. The upcoming stream's schedule will be listed at the top once it becomes available.</p>
             <p><strong>Notice:</strong> The stream is currently being transferred to <a href='https://twitter.com/Gastari_'>Gastari</a> and several changes will be made. We will probably resume by November.</p>
