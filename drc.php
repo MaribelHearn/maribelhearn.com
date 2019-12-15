@@ -398,6 +398,11 @@
 				</tr>
 			</table>
 			<h1>Dodging Rain Competition</h1>
+			<?php
+				if (!empty($_GET['redirect'])) {
+					echo '<p>(Redirected from <em>' . $_GET['redirect'] . '</em>)</p>';
+				}
+			?>
             <p id='drcIntro'><?php
 				if ($lang == 'English') {
 					echo 'The <strong>Dodging Rain Competition (DRC)</strong> is a Touhou game competition that was invented by ' .

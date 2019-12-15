@@ -191,6 +191,11 @@
 				</tr>
 			</table>
 			<h1><?php echo tl_term('Touhou Lunatic No Miss No Bombs', $lang); ?></h1>
+            <?php
+                if (!empty($_GET['redirect'])) {
+                    echo '<p>(Redirected from <em>' . $_GET['redirect'] . '</em>)</p>';
+                }
+            ?>
             <p id='description'><?php
 				if ($lang == 'English') {
 					echo 'A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. ' .

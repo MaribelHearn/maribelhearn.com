@@ -73,6 +73,11 @@
         <div id='wrap' class='wrap'>
             <img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
             <h1>Gensokyo Replay Archive</h1>
+            <?php
+                if (!empty($_GET['redirect'])) {
+                    echo '<p>(Redirected from <em>' . $_GET['redirect'] . '</em>)</p>';
+                }
+            ?>
             <p>A complete archive of the Touhou replays from replays.gensokyo.org, with the same search functionality as said website.</p>
             <p>On 25 September 2019, gensokyo.org expired, and as of the 30th it is inaccessible.
             As such, this archive has been created to preserve all of its replays.
