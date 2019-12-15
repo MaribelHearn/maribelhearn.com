@@ -1,4 +1,4 @@
-var pages = ["scoring", "survival", "drc", "tools", "wr", "lnn", "poll", "jargon", "trs", "tiers"];
+var pages = ["scoring", "survival", "drc", "tools", "wr", "lnn", "poll", "jargon", "trs", "tiers", "gensokyo"];
 
 function similarity(a, b) {
     var m = a.length, n = b.length, C = [], i, j;
