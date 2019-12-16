@@ -136,7 +136,7 @@
 		<script src='assets/lnn/lnn.js' defer></script>
 		<script src='assets/shared/sorttable.js' defer></script>
         <script src='assets/shared/modernizr-custom.js' defer></script>
-        <script>document.documentElement.classList.remove("no-js");</script>
+        <script src='assets/shared/dark.js'></script>
 	</head>
 
 	<body>
@@ -154,8 +154,8 @@
         <div id='wrap' class='wrap'>
 			<table id='top' class='center noborders'>
 				<tr class='noborders'>
-					<td class='noborders' style='width:22%'></td>
-					<td class='noborders' style='width:55%'><table id='languages' class='noborders'>
+					<td id='emptytd' class='noborders'></td>
+					<td id='languagestd' class='noborders'><table id='languages' class='noborders'>
 		                <tbody>
 		                    <tr class='noborders'>
 		                        <td class='noborders'>
@@ -187,7 +187,9 @@
 		                    </tr>
 		                </tbody>
 		            </table></td>
-					<td class='noborders' style='width:22%;text-align:right;vertical-align:top'><img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)'></td>
+					<td id='bartd' class='noborders'>
+                        <img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
+                    </td>
 				</tr>
 			</table>
 			<h1><?php echo tl_term('Touhou Lunatic No Miss No Bombs', $lang); ?></h1>

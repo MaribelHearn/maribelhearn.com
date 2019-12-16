@@ -32,6 +32,10 @@ h2 {
 #dummy {
     display: none;
 }
+#dummysub {
+    width: 1000px;
+    height: 20px;
+}
 #survival {
     overflow: auto;
 }

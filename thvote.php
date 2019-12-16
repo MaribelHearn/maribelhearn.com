@@ -11,6 +11,7 @@
 		<link rel='stylesheet' type='text/css' href='assets/thvote/thvote.css'>
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='assets/thvote/thvote.ico'>
+        <!-- <script src='assets/thvote/thvote.js'></script> at bottom -->
         <script src='assets/shared/sorttable.js' defer></script>
         <script src='assets/shared/modernizr-custom.js' defer></script>
         <script src='assets/shared/dark.js'></script>
@@ -56,19 +57,19 @@
                 <tr><td>Works: 13,946 (in 2018: 18,470)</td></tr>
             </table>
             <h1 id='Characters'>Characters</h1>
-            <div id='chars_dummy'><div style='width:1000px;height:20px'></div></div>
+            <div id='chars_dummy' class='dummy'><div class='dummy_sub'></div></div>
             <div id='chars_container'>
                 <table id='chars_table' class='poll sortable'>
                     <colgroup>
-                        <col style='width:3em'>
-                        <col style='width:2.8em;background:#fee'>
-                        <col style='width:2.8em;background:#ffe'>
-                        <col style='width:2.8em;background:#fec'>
-                        <col style='background:#eef'>
-                        <col style='width:4.9em;background:#fee'>
-                        <col style='width:4.9em;background:#ffe'>
-                        <col style='width:4.9em;background:#fec'>
-                        <col style='width:5.5em;background:#eef'>
+                        <col class='col1'>
+                        <col class='col2game'>
+                        <col class='col3game'>
+                        <col class='col4game'>
+                        <col class='col5'>
+                        <col class='col6per'>
+                        <col class='col7per'>
+                        <col class='col8per'>
+                        <col class='col5 w55'>
                     </colgroup>
                     <thead>
                         <tr>
@@ -274,18 +275,18 @@
                 </table>
             </div>
             <h1 id='Music'>Music</h1>
-            <div id='music_dummy'><div style='width:1000px;height:20px'></div></div>
+            <div id='music_dummy' class='dummy'><div class='dummy_sub'></div></div>
             <div id='music_container'>
                 <table id='music_table' class='poll sortable'>
                     <colgroup>
-                        <col style='width:3em'>
-                        <col style='width:2.8em;background:#fee'>
-                        <col style='width:2.8em;background:#ffe'>
-                        <col style='width:2.8em;background:#fec'>
-                        <col style='background:#eef'>
-                        <col style='width:4.9em;background:#fee'>
-                        <col style='width:4.9em;background:#ffe'>
-                        <col style='width:4.9em;background:#fec'>
+                        <col class='col1'>
+                        <col class='col2game'>
+                        <col class='col3game'>
+                        <col class='col4game'>
+                        <col class='col5'>
+                        <col class='col6per'>
+                        <col class='col7per'>
+                        <col class='col8per'>
                     </colgroup>
                     <thead>
                         <tr>
@@ -834,18 +835,18 @@
                 </table>
             </div>
             <h1 id='Works'>Works</h1>
-            <div id='works_dummy'><div style='width:1000px;height:20px'></div></div>
+            <div id='works_dummy' class='dummy'><div class='dummy_sub'></div></div>
             <div id='works_container'>
                 <table id='works_table' class='poll sortable'>
                     <colgroup>
-                        <col style='width:3em'>
-                        <col style='width:2.8em;background:#fee'>
-                        <col style='width:2.8em;background:#ffe'>
-                        <col style='width:2.8em;background:#fec'>
-                        <col style='background:#eef'>
-                        <col style='width:4.9em;background:#fee'>
-                        <col style='width:4.9em;background:#ffe'>
-                        <col style='width:4.9em;background:#fec'>
+                        <col class='col1'>
+                        <col class='col2game'>
+                        <col class='col3game'>
+                        <col class='col4game'>
+                        <col class='col5'>
+                        <col class='col6per'>
+                        <col class='col7per'>
+                        <col class='col8per'>
                     </colgroup>
                     <thead>
                         <tr>
@@ -912,13 +913,13 @@
             </div>
             <h1 id='Questionnaire'>Questionnaire</h1>
 <h2>01. Age</h2>
-<div id="age_summary" style="display: block;">
-<p>Valid responses: 10,163　<button onclick="document.getElementById('age_detail').style.display='block';document.getElementById('age_summary').style.display='none'">Detailed view</button></p>
+<div id='age_summary'>
+<p>Valid responses: 10,163　<input type='button' onclick='toggle(true)' value='Detailed view'></p>
 <table class='poll sortable'>
     <colgroup>
-        <col style='width:8em;background:#fee'>
-        <col style='width:5em;background:#ffe'>
-        <col style='width:5em;background:#fec'>
+        <col class='col2 w8'>
+        <col class='col3q'>
+        <col class='col4q'>
     </colgroup>
 <tbody>
 <tr><th><u>Age</u></th><th><u>Responses</u></th><th><u>Percentage</u></th></tr>
@@ -934,13 +935,13 @@
 <tr><th>&gt;= 50</th><td>36</td><td>0.35%</td></tr>
 </tbody></table>
 </div>
-<div id="age_detail" style='display:none'>
-<p>Valid responses: 10,163　<button onclick="document.getElementById('age_summary').style.display='block';document.getElementById('age_detail').style.display='none'">Simple view</button></p>
+<div id='age_detail'>
+<p>Valid responses: 10,163　<input type='button' onclick='toggle(true)' value='Simple view'></p>
 <table class='poll sortable'>
     <colgroup>
-        <col style='width:8em;background:#fee'>
-        <col style='width:5em;background:#ffe'>
-        <col style='width:5em;background:#fec'>
+        <col class='col2 w8'>
+        <col class='col3q'>
+        <col class='col4q'>
     </colgroup>
 <tbody>
 <tr><th><u>Age</u></th><th><u>Responses</u></th><th><u>Percentage</u></th></tr>
@@ -1046,9 +1047,9 @@
 <p>Valid responses: 10,337</p>
 <table class='result'>
     <colgroup>
-        <col style='width:6em;background:#fee'>
-        <col style='width:5em;background:#ffe'>
-        <col style='width:5em;background:#fec'>
+        <col class='col2 w6'>
+        <col class='col3q'>
+        <col class='col4q'>
     </colgroup>
 <tbody><tr><th>Male</th><td>8,806</td><td>85.19%</td></tr>
 <tr><th>Female</th><td>1,531</td><td>14.81%</td></tr>
@@ -1057,9 +1058,9 @@
 <p>Valid responses: 9,981</p>
 <table class='poll sortable'>
     <colgroup>
-        <col style='width:20em;background:#fee'>
-        <col style='width:5em;background:#ffe'>
-        <col style='width:5em;background:#fec'>
+        <col class='col2q'>
+        <col class='col3q'>
+        <col class='col4q'>
     </colgroup>
 <tbody>
 <tr><th><u>Location</u></th><th><u>Responses</u></th><th><u>Percentage</u></th></tr>
@@ -1086,57 +1087,57 @@
 <tr><th>Oceania</th><td>28</td><td>0.28%</td></tr>
 </tbody></table>
 <h2>04. Difficulty level 1cc'd</h2>
-<div id='clear_dummy'><div style='width:1000px;height:20px'></div></div>
+<div id='clear_dummy' class='dummy'><div class='dummy_sub'></div></div>
 <div id='clear_container'>
     <table id='clear_table' class='result'>
         <colgroup>
-            <col style='width:7em;background:#fee'>
-            <col style='width:5em;background:#ffe'>
-            <col style='width:7em;background:#fec'>
-            <col style='width:7em;background:#eef'>
-            <col style='width:7em;background:#fee'>
-            <col style='width:7em;background:#ffe'>
-            <col style='width:7em;background:#fec'>
-            <col style='width:7em;background:#fee'>
+            <col class='col2 w7'>
+            <col class='col3q'>
+            <col class='col4 w7'>
+            <col class='col5 w7'>
+            <col class='col2 w7'>
+            <col class='col3 w7'>
+            <col class='col4 w7'>
+            <col class='col2 w7'>
         </colgroup>
     <tbody><tr><th><u>Game</u></th><th><u>Responses</u></th><th><u>Not played</u></th><th><u>Not cleared</u></th>
         <th><u>Easy 1cc</u></th><th><u>Normal 1cc</u></th><th><u>Hard 1cc</u></th><th><u>Lunatic 1cc</u></th></tr>
-    <tr><th rowspan="3">EoSD</th><td rowspan="3">8,891</td><td>2,000</td><td>920</td><td>1,507</td><td>2,902</td><td>890</td><td>672</td></tr>
+    <tr><th rowspan='3'>EoSD</th><td rowspan='3'>8,891</td><td>2,000</td><td>920</td><td>1,507</td><td>2,902</td><td>890</td><td>672</td></tr>
     <tr><td>－</td><td>13.35%</td><td>21.87%</td><td>42.11%</td><td>12.92%</td><td>9.75%</td></tr>
-    <tr><td>22.49%</td><td colspan="5" style="text-align:center;">77.51%</td></tr>
-    <tr><th rowspan="3">PCB</th><td rowspan="3">8,742</td><td>2,243</td><td>836</td><td>1,281</td><td>2,692</td><td>947</td><td>743</td></tr>
+    <tr><td>22.49%</td><td class='percentage' colspan='5'>77.51%</td></tr>
+    <tr><th rowspan='3'>PCB</th><td rowspan='3'>8,742</td><td>2,243</td><td>836</td><td>1,281</td><td>2,692</td><td>947</td><td>743</td></tr>
     <tr><td>－</td><td>12.86%</td><td>19.71%</td><td>41.42%</td><td>14.57%</td><td>11.43%</td></tr>
-    <tr><td>25.66%</td><td colspan="5" style="text-align:center;">74.34%</td></tr>
-    <tr><th rowspan="3">IN</th><td rowspan="3">8,704</td><td>2,162</td><td>611</td><td>1,335</td><td>2,815</td><td>963</td><td>818</td></tr>
+    <tr><td>25.66%</td><td class='percentage' colspan='5'>74.34%</td></tr>
+    <tr><th rowspan='3'>IN</th><td rowspan='3'>8,704</td><td>2,162</td><td>611</td><td>1,335</td><td>2,815</td><td>963</td><td>818</td></tr>
     <tr><td>－</td><td>9.34%</td><td>20.41%</td><td>43.03%</td><td>14.72%</td><td>12.5%</td></tr>
-    <tr><td>24.84%</td><td colspan="5" style="text-align:center;">75.16%</td></tr>
-    <tr><th rowspan="3">PoFV</th><td rowspan="3">8,413</td><td>3,384</td><td>650</td><td>1,227</td><td>2,095</td><td>429</td><td>628</td></tr>
+    <tr><td>24.84%</td><td class='percentage' colspan='5'>75.16%</td></tr>
+    <tr><th rowspan='3'>PoFV</th><td rowspan='3'>8,413</td><td>3,384</td><td>650</td><td>1,227</td><td>2,095</td><td>429</td><td>628</td></tr>
     <tr><td>－</td><td>12.93%</td><td>24.4%</td><td>41.66%</td><td>8.53%</td><td>12.49%</td></tr>
-    <tr><td>40.22%</td><td colspan="5" style="text-align:center;">59.78%</td></tr>
-    <tr><th rowspan="3">MoF</th><td rowspan="3">8,572</td><td>2,453</td><td>781</td><td>1,007</td><td>2,736</td><td>861</td><td>734</td></tr>
+    <tr><td>40.22%</td><td class='percentage' colspan='5'>59.78%</td></tr>
+    <tr><th rowspan='3'>MoF</th><td rowspan='3'>8,572</td><td>2,453</td><td>781</td><td>1,007</td><td>2,736</td><td>861</td><td>734</td></tr>
     <tr><td>－</td><td>12.76%</td><td>16.46%</td><td>44.71%</td><td>14.07%</td><td>12%</td></tr>
-    <tr><td>28.62%</td><td colspan="5" style="text-align:center;">71.38%</td></tr>
-    <tr><th rowspan="3">SA</th><td rowspan="3">8,458</td><td>2,735</td><td>1,077</td><td>1,385</td><td>2,131</td><td>597</td><td>533</td></tr>
+    <tr><td>28.62%</td><td class='percentage' colspan='5'>71.38%</td></tr>
+    <tr><th rowspan='3'>SA</th><td rowspan='3'>8,458</td><td>2,735</td><td>1,077</td><td>1,385</td><td>2,131</td><td>597</td><td>533</td></tr>
     <tr><td>－</td><td>18.82%</td><td>24.2%</td><td>37.24%</td><td>10.43%</td><td>9.31%</td></tr>
-    <tr><td>32.34%</td><td colspan="5" style="text-align:center;">67.66%</td></tr>
-    <tr><th rowspan="3">UFO</th><td rowspan="3">8,351</td><td>3,062</td><td>1,124</td><td>1,125</td><td>2,166</td><td>502</td><td>372</td></tr>
+    <tr><td>32.34%</td><td class='percentage' colspan='5'>67.66%</td></tr>
+    <tr><th rowspan='3'>UFO</th><td rowspan='3'>8,351</td><td>3,062</td><td>1,124</td><td>1,125</td><td>2,166</td><td>502</td><td>372</td></tr>
     <tr><td>－</td><td>21.25%</td><td>21.27%</td><td>40.95%</td><td>9.49%</td><td>7.03%</td></tr>
-    <tr><td>36.67%</td><td colspan="5" style="text-align:center;">63.33%</td></tr>
-    <tr><th rowspan="3">TD</th><td rowspan="3">8,389</td><td>3,126</td><td>784</td><td>995</td><td>2,325</td><td>647</td><td>512</td></tr>
+    <tr><td>36.67%</td><td class='percentage' colspan='5'>63.33%</td></tr>
+    <tr><th rowspan='3'>TD</th><td rowspan='3'>8,389</td><td>3,126</td><td>784</td><td>995</td><td>2,325</td><td>647</td><td>512</td></tr>
     <tr><td>－</td><td>14.9%</td><td>18.91%</td><td>44.18%</td><td>12.29%</td><td>9.73%</td></tr>
-    <tr><td>37.26%</td><td colspan="5" style="text-align:center;">62.74%</td></tr>
-    <tr><th rowspan="3">DDC</th><td rowspan="3">8,351</td><td>3,186</td><td>783</td><td>1,168</td><td>2,158</td><td>538</td><td>518</td></tr>
+    <tr><td>37.26%</td><td class='percentage' colspan='5'>62.74%</td></tr>
+    <tr><th rowspan='3'>DDC</th><td rowspan='3'>8,351</td><td>3,186</td><td>783</td><td>1,168</td><td>2,158</td><td>538</td><td>518</td></tr>
     <tr><td>－</td><td>15.16%</td><td>22.61%</td><td>41.78%</td><td>10.42%</td><td>10.03%</td></tr>
-    <tr><td>38.15%</td><td colspan="5" style="text-align:center;">61.85%</td></tr>
-    <tr><th rowspan="3">LoLK (Pointdevice)</th><td rowspan="3">8,361</td><td>3,255</td><td>940</td><td>1,159</td><td>2,021</td><td>411</td><td>575</td></tr>
+    <tr><td>38.15%</td><td class='percentage' colspan='5'>61.85%</td></tr>
+    <tr><th rowspan='3'>LoLK (Pointdevice)</th><td rowspan='3'>8,361</td><td>3,255</td><td>940</td><td>1,159</td><td>2,021</td><td>411</td><td>575</td></tr>
     <tr><td>－</td><td>18.41%</td><td>22.7%</td><td>39.58%</td><td>8.05%</td><td>11.26%</td></tr>
-    <tr><td>38.93%</td><td colspan="5" style="text-align:center;">61.07%</td></tr>
-    <tr><th rowspan="3">LoLK (Legacy)</th><td rowspan="3">8,082</td><td>3,318</td><td>2,189</td><td>822</td><td>1,071</td><td>272</td><td>410</td></tr>
+    <tr><td>38.93%</td><td class='percentage' colspan='5'>61.07%</td></tr>
+    <tr><th rowspan='3'>LoLK (Legacy)</th><td rowspan='3'>8,082</td><td>3,318</td><td>2,189</td><td>822</td><td>1,071</td><td>272</td><td>410</td></tr>
     <tr><td>－</td><td>45.95%</td><td>17.25%</td><td>22.48%</td><td>5.71%</td><td>8.61%</td></tr>
-    <tr><td>41.05%</td><td colspan="5" style="text-align:center;">58.95%</td></tr>
-    <tr><th rowspan="3">HSiFS</th><td rowspan="3">8,396</td><td>3,310</td><td>893</td><td>1,224</td><td>1,994</td><td>405</td><td>570</td></tr>
+    <tr><td>41.05%</td><td class='percentage' colspan='5'>58.95%</td></tr>
+    <tr><th rowspan='3'>HSiFS</th><td rowspan='3'>8,396</td><td>3,310</td><td>893</td><td>1,224</td><td>1,994</td><td>405</td><td>570</td></tr>
     <tr><td>－</td><td>17.56%</td><td>24.07%</td><td>39.21%</td><td>7.96%</td><td>11.21%</td></tr>
-    <tr><td>39.42%</td><td colspan="5" style="text-align:center;">60.58%</td></tr>
+    <tr><td>39.42%</td><td class='percentage' colspan='5'>60.58%</td></tr>
     </tbody></table>
 </div>
 <h2>05. Publications subscribed to</h2>
@@ -1144,9 +1145,9 @@
 <p>Valid responses: 8,667</p>
 <table class='result'>
     <colgroup>
-        <col style='width:20em;background:#fee'>
-        <col style='width:5em;background:#ffe'>
-        <col style='width:5em;background:#fec'>
+        <col class='col2q'>
+        <col class='col3q'>
+        <col class='col4q'>
     </colgroup>
 <tbody><tr><th>Not bought</th><td>3,454</td><td>39.85%</td></tr>
 <tr><th>Bought the tankobon volumes</th><td>4,946</td><td>57.07%</td></tr>
@@ -1156,9 +1157,9 @@
 <p>Valid responses: 8,421</p>
 <table class='result'>
     <colgroup>
-        <col style='width:20em;background:#fee'>
-        <col style='width:5em;background:#ffe'>
-        <col style='width:5em;background:#fec'>
+        <col class='col2q'>
+        <col class='col3q'>
+        <col class='col4q'>
     </colgroup>
 <tbody><tr><th>Not bought</th><td>4,113</td><td>48.84%</td></tr>
 <tr><th>Bought the tankobon volumes</th><td>4,006</td><td>47.57%</td></tr>
@@ -1168,9 +1169,9 @@
 <p>Valid responses: 8,253</p>
 <table class='result'>
     <colgroup>
-        <col style='width:20em;background:#fee'>
-        <col style='width:5em;background:#ffe'>
-        <col style='width:5em;background:#fec'>
+        <col class='col2q'>
+        <col class='col3q'>
+        <col class='col4q'>
     </colgroup>
 <tbody><tr><th>Not bought</th><td>5,029</td><td>60.94%</td></tr>
 <tr><th>Bought the serialization (Strange Creators of Outer World)</th><td>3,224</td><td>39.06%</td></tr>
@@ -1179,9 +1180,9 @@
 <p>Valid responses: 10,922</p>
 <table class='poll sortable'>
     <colgroup>
-        <col style='width:20em;background:#fee'>
-        <col style='width:5em;background:#ffe'>
-        <col style='width:5em;background:#fec'>
+        <col class='col2q'>
+        <col class='col3q'>
+        <col class='col4q'>
     </colgroup>
 <tbody>
 <tr><th><u>Aspect</u></th><th><u>Responses</u></th><th><u>Percentage</u></th>
@@ -1197,9 +1198,9 @@
 <p>Valid responses: 10,574</p>
 <table class='poll sortable'>
     <colgroup>
-        <col style='width:20em;background:#fee'>
-        <col style='width:5em;background:#ffe'>
-        <col style='width:5em;background:#fec'>
+        <col class='col2q'>
+        <col class='col3q'>
+        <col class='col4q'>
     </colgroup>
 <tbody>
 <tr><th><u>Time period</u></th><th><u>Responses</u></th><th><u>Percentage</u></th></tr>
@@ -1228,9 +1229,9 @@
 <p>Valid responses: 10,081</p>
 <table class='poll sortable'>
     <colgroup>
-        <col style='width:36em;background:#fee'>
-        <col style='width:5em;background:#ffe'>
-        <col style='width:5em;background:#fec'>
+        <col class='col2 w36'>
+        <col class='col3q'>
+        <col class='col4q'>
     </colgroup>
 <tbody>
 <tr><th><u>Means of discovery</u></th><th><u>Responses</u></th><th><u>Percentage</u></th></tr>
@@ -1249,24 +1250,24 @@
 <tr><th>When looking for interesting games</th><td>326</td><td>3.23%</td></tr>
 </tbody></table>
 <h2>08. Correlation between when and how people discovered Touhou</h2>
-<div id='corr_dummy'><div style='width:1000px;height:20px'></div></div>
+<div id='corr_dummy' class='dummy'><div class='dummy_sub'></div></div>
 <div id='corr_container'>
     <table id='corr_table' class='poll result'>
         <colgroup>
-            <col style='width:4em;background:#fee'>
-            <col style='width:4.2em;background:#ffe'>
-            <col style='width:4.2em;background:#fec'>
-            <col style='width:4.2em;background:#eef'>
-            <col style='width:4.2em;background:#fee'>
-            <col style='width:4.2em;background:#ffe'>
-            <col style='width:4.2em;background:#fec'>
-            <col style='width:4.2em;background:#eef'>
-            <col style='width:4.2em;background:#fee'>
-            <col style='width:4.2em;background:#ffe'>
-            <col style='width:4.2em;background:#fec'>
-            <col style='width:4.2em;background:#eef'>
-            <col style='width:4.2em;background:#fee'>
-            <col style='width:4.2em;background:#ffe'>
+            <col class='col2 w4'>
+            <col class='col3 w42'>
+            <col class='col4 w42'>
+            <col class='col5 w42'>
+            <col class='col2 w42'>
+            <col class='col3 w42'>
+            <col class='col4 w42'>
+            <col class='col5 w42'>
+            <col class='col2 w42'>
+            <col class='col3 w42'>
+            <col class='col4 w42'>
+            <col class='col5 w42'>
+            <col class='col2 w42'>
+            <col class='col3 w42'>
         </colgroup>
     <tbody><tr><th><u>Period</u></th><th><u>Offline</u></th><th><u>Online</u></th><th><u>Personal sites</u></th>
         <th><u>Image sites</u></th><th><u>Anon. boards</u></th><th><u>Nico</u></th><th><u>Other video sites</u></th>
@@ -1316,11 +1317,11 @@
 <p>Valid responses: 10,528</p>
 <table class='poll result'>
     <colgroup>
-        <col style='width:20em;background:#fee'>
-        <col style='width:5em;background:#ffe'>
-        <col style='width:5em;background:#fec'>
-        <col style='width:5em;background:#eef'>
-        <col style='width:5em;background:#fee'>
+        <col class='col2q'>
+        <col class='col3q'>
+        <col class='col4q'>
+        <col class='col5q'>
+        <col class='col2qs'>
     </colgroup>
 <tbody><tr><th>No participation</th><td>4,770</td><td>45.31%</td><td>－</td><td>－</td></tr>
 <tr><th>Bought official works</th><td rowspan='13'>5,758</td><td rowspan='13'>54.69%</td><td>2,842</td><td>49.36%</td></tr>
@@ -1341,9 +1342,9 @@
 <p>Valid responses: 10,822</p>
 <table class='poll result'>
 <colgroup>
-    <col style='width:20em;background:#fee'>
-    <col style='width:5em;background:#ffe'>
-    <col style='width:5em;background:#eef'>
+    <col class='col2q'>
+    <col class='col3q'>
+    <col class='col5q'>
 </colgroup>
 <tbody><tr><th>Never voted before</th><td>3,057</td><td>28.25%</td></tr>
 <tr><th>Voted 1 to 3 times</th><td>4,695</td><td>43.38%</td></tr>
@@ -1354,9 +1355,9 @@
                 of each Windows maingame (except Alice counts for PCB and Aya counts for PoFV), including Reimu and Marisa as a separate entity.</p>
             <table id='maingame_chars' class='poll sortable'>
                 <colgroup>
-                    <col style='width:2.8em;background:#fee'>
-                    <col style='background:#ffe'>
-                    <col style='width:4.9em;background:#eef'>
+                    <col class='col2game'>
+                    <col class='col3'>
+                    <col class='col5per'>
                 </colgroup>
                 <thead>
                     <tr><th><u>Rank</u></th><th><u>Name</u></th><th><u>Points</u></th></tr>
@@ -1380,9 +1381,9 @@
             (except PoFV, as it has many remixes; the IN Stage 4 boss themes count for IN; the Player's Score theme counts for MoF).</p>
             <table id='maingame_music' class='poll sortable'>
                 <colgroup>
-                    <col style='width:2.8em;background:#fee'>
-                    <col style='background:#ffe'>
-                    <col style='width:4.9em;background:#eef'>
+                    <col class='col2game'>
+                    <col class='col3'>
+                    <col class='col5per'>
                 </colgroup>
                 <thead>
                     <tr><th><u>Rank</u></th><th><u>Name</u></th><th><u>Points</u></th></tr>
@@ -1402,15 +1403,15 @@
             </table>
             <p>This table shows the highest and lowest ranked characters and Stage and Boss themes for each maingame (except PoFV themes, as that game has many remixes).
             Title, credits and ending are not included, because in that case the lowest scoring theme is the ending theme for every game.</p>
-            <div id='highlow_dummy'><div style='width:1000px;height:20px'></div></div>
+            <div id='highlow_dummy' class='dummy'><div class='dummy_sub'></div></div>
             <div id='highlow_container'>
                 <table id='maingame_highlow' class='poll result'>
                     <colgroup>
-                        <col style='width:2.8em;background:#fee'>
-                        <col style='width:10em;background:#ffe'>
-                        <col style='width:10em;background:#eef'>
-                        <col style='background:#fee'>
-                        <col style='background:#ffe'>
+                        <col class='col2game'>
+                        <col class='col3 w10'>
+                        <col class='col5 w10'>
+                        <col class='col2'>
+                        <col class='col3'>
                     </colgroup>
                     <thead>
                         <tr><th><u>Game</u></th><th><u>Highest Char</u></th><th><u>Lowest Char</u></th><th><u>Highest Theme</u></th><th><u>Lowest Theme</u></th></tr>
@@ -1432,18 +1433,18 @@
             </div>
             <h2 id='MusicByGame'>Music By Game</h2>
             <h3>EoSD</h3>
-            <div id='eosd_dummy'><div style='width:1000px;height:20px'></div></div>
+            <div id='eosd_dummy' class='dummy'><div class='dummy_sub'></div></div>
             <div id='eosd_container'>
                 <table id='eosd_table' class='poll sortable'>
                     <colgroup>
-                        <col style='width:3em'>
-                        <col style='width:2.8em;background:#fee'>
-                        <col style='width:2.8em;background:#ffe'>
-                        <col style='width:2.8em;background:#fec'>
-                        <col style='background:#eef'>
-                        <col style='width:4.9em;background:#fee'>
-                        <col style='width:4.9em;background:#ffe'>
-                        <col style='width:4.9em;background:#fec'>
+                        <col class='col1'>
+                        <col class='col2game'>
+                        <col class='col3game'>
+                        <col class='col4game'>
+                        <col class='col5'>
+                        <col class='col6per'>
+                        <col class='col7per'>
+                        <col class='col8per'>
                     </colgroup>
                     <thead>
                         <tr>
@@ -1479,18 +1480,18 @@
                 </table>
             </div>
             <h3>PCB</h3>
-            <div id='pcb_dummy'><div style='width:1000px;height:20px'></div></div>
+            <div id='pcb_dummy' class='dummy'><div class='dummy_sub'></div></div>
             <div id='pcb_container'>
                 <table id='pcb_table' class='poll sortable'>
                     <colgroup>
-                        <col style='width:3em'>
-                        <col style='width:2.8em;background:#fee'>
-                        <col style='width:2.8em;background:#ffe'>
-                        <col style='width:2.8em;background:#fec'>
-                        <col style='background:#eef'>
-                        <col style='width:4.9em;background:#fee'>
-                        <col style='width:4.9em;background:#ffe'>
-                        <col style='width:4.9em;background:#fec'>
+                        <col class='col1'>
+                        <col class='col2game'>
+                        <col class='col3game'>
+                        <col class='col4game'>
+                        <col class='col5'>
+                        <col class='col6per'>
+                        <col class='col7per'>
+                        <col class='col8per'>
                     </colgroup>
                     <thead>
                         <tr>
@@ -1529,18 +1530,18 @@
                 </table>
             </div>
             <h3>IN</h3>
-            <div id='in_dummy'><div style='width:1000px;height:20px'></div></div>
+            <div id='in_dummy' class='dummy'><div class='dummy_sub'></div></div>
             <div id='in_container'>
                 <table id='in_table' class='poll sortable'>
                     <colgroup>
-                        <col style='width:3em'>
-                        <col style='width:2.8em;background:#fee'>
-                        <col style='width:2.8em;background:#ffe'>
-                        <col style='width:2.8em;background:#fec'>
-                        <col style='background:#eef'>
-                        <col style='width:4.9em;background:#fee'>
-                        <col style='width:4.9em;background:#ffe'>
-                        <col style='width:4.9em;background:#fec'>
+                        <col class='col1'>
+                        <col class='col2game'>
+                        <col class='col3game'>
+                        <col class='col4game'>
+                        <col class='col5'>
+                        <col class='col6per'>
+                        <col class='col7per'>
+                        <col class='col8per'>
                     </colgroup>
                     <thead>
                         <tr>
@@ -1580,18 +1581,18 @@
                 </table>
             </div>
             <h3>MoF</h3>
-            <div id='mof_dummy'><div style='width:1000px;height:20px'></div></div>
+            <div id='mof_dummy' class='dummy'><div class='dummy_sub'></div></div>
             <div id='mof_container'>
                 <table id='mof_table' class='poll sortable'>
                     <colgroup>
-                        <col style='width:3em'>
-                        <col style='width:2.8em;background:#fee'>
-                        <col style='width:2.8em;background:#ffe'>
-                        <col style='width:2.8em;background:#fec'>
-                        <col style='background:#eef'>
-                        <col style='width:4.9em;background:#fee'>
-                        <col style='width:4.9em;background:#ffe'>
-                        <col style='width:4.9em;background:#fec'>
+                        <col class='col1'>
+                        <col class='col2game'>
+                        <col class='col3game'>
+                        <col class='col4game'>
+                        <col class='col5'>
+                        <col class='col6per'>
+                        <col class='col7per'>
+                        <col class='col8per'>
                     </colgroup>
                     <thead>
                         <tr>
@@ -1628,18 +1629,18 @@
                 </table>
             </div>
             <h3>SA</h3>
-            <div id='sa_dummy'><div style='width:1000px;height:20px'></div></div>
+            <div id='sa_dummy' class='dummy'><div class='dummy_sub'></div></div>
             <div id='sa_container'>
                 <table id='sa_table' class='poll sortable'>
                     <colgroup>
-                        <col style='width:3em'>
-                        <col style='width:2.8em;background:#fee'>
-                        <col style='width:2.8em;background:#ffe'>
-                        <col style='width:2.8em;background:#fec'>
-                        <col style='background:#eef'>
-                        <col style='width:4.9em;background:#fee'>
-                        <col style='width:4.9em;background:#ffe'>
-                        <col style='width:4.9em;background:#fec'>
+                        <col class='col1'>
+                        <col class='col2game'>
+                        <col class='col3game'>
+                        <col class='col4game'>
+                        <col class='col5'>
+                        <col class='col6per'>
+                        <col class='col7per'>
+                        <col class='col8per'>
                     </colgroup>
                     <thead>
                         <tr>
@@ -1675,18 +1676,18 @@
                 </table>
             </div>
             <h3>UFO</h3>
-            <div id='ufo_dummy'><div style='width:1000px;height:20px'></div></div>
+            <div id='ufo_dummy' class='dummy'><div class='dummy_sub'></div></div>
             <div id='ufo_container'>
                 <table id='ufo_table' class='poll sortable'>
                     <colgroup>
-                        <col style='width:3em'>
-                        <col style='width:2.8em;background:#fee'>
-                        <col style='width:2.8em;background:#ffe'>
-                        <col style='width:2.8em;background:#fec'>
-                        <col style='background:#eef'>
-                        <col style='width:4.9em;background:#fee'>
-                        <col style='width:4.9em;background:#ffe'>
-                        <col style='width:4.9em;background:#fec'>
+                        <col class='col1'>
+                        <col class='col2game'>
+                        <col class='col3game'>
+                        <col class='col4game'>
+                        <col class='col5'>
+                        <col class='col6per'>
+                        <col class='col7per'>
+                        <col class='col8per'>
                     </colgroup>
                     <thead>
                         <tr>
@@ -1721,18 +1722,18 @@
                 </table>
             </div>
             <h3>TD</h3>
-            <div id='td_dummy'><div style='width:1000px;height:20px'></div></div>
+            <div id='td_dummy' class='dummy'><div class='dummy_sub'></div></div>
             <div id='td_container'>
                 <table id='td_table' class='poll sortable'>
                     <colgroup>
-                        <col style='width:3em'>
-                        <col style='width:2.8em;background:#fee'>
-                        <col style='width:2.8em;background:#ffe'>
-                        <col style='width:2.8em;background:#fec'>
-                        <col style='background:#eef'>
-                        <col style='width:4.9em;background:#fee'>
-                        <col style='width:4.9em;background:#ffe'>
-                        <col style='width:4.9em;background:#fec'>
+                        <col class='col1'>
+                        <col class='col2game'>
+                        <col class='col3game'>
+                        <col class='col4game'>
+                        <col class='col5'>
+                        <col class='col6per'>
+                        <col class='col7per'>
+                        <col class='col8per'>
                     </colgroup>
                     <thead>
                         <tr>
@@ -1768,18 +1769,18 @@
                 </table>
             </div>
             <h3>DDC</h3>
-            <div id='ddc_dummy'><div style='width:1000px;height:20px'></div></div>
+            <div id='ddc_dummy' class='dummy'><div class='dummy_sub'></div></div>
             <div id='ddc_container'>
                 <table id='ddc_table' class='poll sortable'>
                     <colgroup>
-                        <col style='width:3em'>
-                        <col style='width:2.8em;background:#fee'>
-                        <col style='width:2.8em;background:#ffe'>
-                        <col style='width:2.8em;background:#fec'>
-                        <col style='background:#eef'>
-                        <col style='width:4.9em;background:#fee'>
-                        <col style='width:4.9em;background:#ffe'>
-                        <col style='width:4.9em;background:#fec'>
+                        <col class='col1'>
+                        <col class='col2game'>
+                        <col class='col3game'>
+                        <col class='col4game'>
+                        <col class='col5'>
+                        <col class='col6per'>
+                        <col class='col7per'>
+                        <col class='col8per'>
                     </colgroup>
                     <thead>
                         <tr>
@@ -1815,18 +1816,18 @@
                 </table>
             </div>
             <h3>LoLK</h3>
-            <div id='lolk_dummy'><div style='width:1000px;height:20px'></div></div>
+            <div id='lolk_dummy' class='dummy'><div class='dummy_sub'></div></div>
             <div id='lolk_container'>
                 <table id='lolk_table' class='poll sortable'>
                     <colgroup>
-                        <col style='width:3em'>
-                        <col style='width:2.8em;background:#fee'>
-                        <col style='width:2.8em;background:#ffe'>
-                        <col style='width:2.8em;background:#fec'>
-                        <col style='background:#eef'>
-                        <col style='width:4.9em;background:#fee'>
-                        <col style='width:4.9em;background:#ffe'>
-                        <col style='width:4.9em;background:#fec'>
+                        <col class='col1'>
+                        <col class='col2game'>
+                        <col class='col3game'>
+                        <col class='col4game'>
+                        <col class='col5'>
+                        <col class='col6per'>
+                        <col class='col7per'>
+                        <col class='col8per'>
                     </colgroup>
                     <thead>
                         <tr>
@@ -1862,18 +1863,18 @@
                 </table>
             </div>
             <h3>HSiFS</h3>
-            <div id='hsifs_dummy'><div style='width:1000px;height:20px'></div></div>
+            <div id='hsifs_dummy' class='dummy'><div class='dummy_sub'></div></div>
             <div id='hsifs_container'>
                 <table id='hsifs_table' class='poll sortable'>
                     <colgroup>
-                        <col style='width:3em'>
-                        <col style='width:2.8em;background:#fee'>
-                        <col style='width:2.8em;background:#ffe'>
-                        <col style='width:2.8em;background:#fec'>
-                        <col style='background:#eef'>
-                        <col style='width:4.9em;background:#fee'>
-                        <col style='width:4.9em;background:#ffe'>
-                        <col style='width:4.9em;background:#fec'>
+                        <col class='col1'>
+                        <col class='col2game'>
+                        <col class='col3game'>
+                        <col class='col4game'>
+                        <col class='col5'>
+                        <col class='col6per'>
+                        <col class='col7per'>
+                        <col class='col8per'>
                     </colgroup>
                     <thead>
                         <tr>
@@ -1912,38 +1913,6 @@
 			was drawn by <a href='https://www.pixiv.net/member.php?id=2025430'>Yakumo_Stocking</a>.</p>
             <p id='back'><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
         </div>
-        <script>if(navigator.userAgent.indexOf("Mobile")>-1||navigator.userAgent.indexOf("Tablet")>-1){
-        w1=document.getElementById("chars_dummy");w2=document.getElementById("chars_container");
-        w1.onscroll=function(){w2.scrollLeft=w1.scrollLeft;};w2.onscroll=function(){w1.scrollLeft=w2.scrollLeft;}
-        w3=document.getElementById("music_dummy");w4=document.getElementById("music_container");
-        w3.onscroll=function(){w4.scrollLeft=w3.scrollLeft;};w4.onscroll=function(){w3.scrollLeft=w4.scrollLeft;}
-        w5=document.getElementById("works_dummy");w6=document.getElementById("works_container");
-        w5.onscroll=function(){w6.scrollLeft=w5.scrollLeft;};w6.onscroll=function(){w5.scrollLeft=w6.scrollLeft;}
-        w7=document.getElementById("clear_dummy");w8=document.getElementById("clear_container");
-        w7.onscroll=function(){w8.scrollLeft=w7.scrollLeft;};w8.onscroll=function(){w7.scrollLeft=w8.scrollLeft;}
-        w9=document.getElementById("corr_dummy");w0=document.getElementById("corr_container");
-        w9.onscroll=function(){w0.scrollLeft=w9.scrollLeft;};w0.onscroll=function(){w9.scrollLeft=w0.scrollLeft;}
-        wa=document.getElementById("highlow_dummy");wb=document.getElementById("highlow_container");
-        wa.onscroll=function(){wb.scrollLeft=wa.scrollLeft;};wb.onscroll=function(){wa.scrollLeft=wb.scrollLeft;}
-        wc=document.getElementById("eosd_dummy");wd=document.getElementById("eosd_container");
-        wc.onscroll=function(){wd.scrollLeft=wc.scrollLeft;};wd.onscroll=function(){wc.scrollLeft=wd.scrollLeft;}
-        we=document.getElementById("pcb_dummy");wf=document.getElementById("pcb_container");
-        we.onscroll=function(){wf.scrollLeft=we.scrollLeft;};wf.onscroll=function(){we.scrollLeft=wf.scrollLeft;}
-        wg=document.getElementById("in_dummy");wh=document.getElementById("in_container");
-        wg.onscroll=function(){wh.scrollLeft=wg.scrollLeft;};wh.onscroll=function(){wg.scrollLeft=wh.scrollLeft;}
-        wi=document.getElementById("mof_dummy");wj=document.getElementById("mof_container");
-        wi.onscroll=function(){wj.scrollLeft=wi.scrollLeft;};wj.onscroll=function(){wi.scrollLeft=wj.scrollLeft;}
-        wk=document.getElementById("sa_dummy");wl=document.getElementById("sa_container");
-        wk.onscroll=function(){wl.scrollLeft=wk.scrollLeft;};wl.onscroll=function(){wk.scrollLeft=wl.scrollLeft;}
-        wm=document.getElementById("ufo_dummy");wn=document.getElementById("ufo_container");
-        wm.onscroll=function(){wn.scrollLeft=wm.scrollLeft;};wn.onscroll=function(){wm.scrollLeft=wn.scrollLeft;}
-        wo=document.getElementById("td_dummy");wp=document.getElementById("td_container");
-        wo.onscroll=function(){wp.scrollLeft=wo.scrollLeft;};wp.onscroll=function(){wo.scrollLeft=wp.scrollLeft;}
-        wq=document.getElementById("ddc_dummy");wr=document.getElementById("ddc_container");
-        wq.onscroll=function(){wr.scrollLeft=wq.scrollLeft;};wr.onscroll=function(){wq.scrollLeft=wr.scrollLeft;}
-        ws=document.getElementById("lolk_dummy");wt=document.getElementById("lolk_container");
-        ws.onscroll=function(){wt.scrollLeft=ws.scrollLeft;};wt.onscroll=function(){ws.scrollLeft=wt.scrollLeft;}
-        wu=document.getElementById("hsifs_dummy");wv=document.getElementById("hsifs_container");
-        wu.onscroll=function(){wv.scrollLeft=wu.scrollLeft;};wv.onscroll=function(){wu.scrollLeft=wv.scrollLeft;}}</script>
+        <script src='assets/thvote/thvote.js'></script>
     </body>
 </html>

@@ -47,11 +47,9 @@ function load() {
     if (getCookie("lang") == "Japanese") {
         language = "Japanese";
         notation = "YMD";
-        //generateText();
     } else if (getCookie("lang") == "Chinese") {
         language = "Chinese";
         notation = "YMD";
-        //generateText();
     } else if (getCookie("datenotation") == "MDY") {
         notation = "MDY";
     }
@@ -59,13 +57,6 @@ function load() {
     if (!datesEnabled) {
         disableDates();
     }
-
-    /*if (notation != "DMY") {
-        datestrings = $(".datestring");
-        for (i = 0; i < datestrings.length; i += 1) {
-            $(datestrings[i]).html(translateDate($(datestrings[i]).html(), notation));
-        }
-    }*/
 }
 function shotRoute(game) {
     return game == "HRtP" || game == "GFW" ? "Route" : "Shottype";
@@ -866,62 +857,8 @@ function setLanguage(newLanguage, newNotation) {
     notation = newNotation;
     setCookie("datenotation", newNotation);
     location.href = location.href.split('#')[0].split('?')[0];
-
-    /*if (selected !== "") {
-        generateTableText();
-    }
-
-    if (language == "English") {
-        if (oldLanguage == "English" && oldNotation == "DMY") {
-            $("#lastupdate").html("World records are current as of <span id='lm'>" + translateDate(lm, newNotation) + "</span>.");
-        } else if (oldLanguage == "English" && oldNotation == "MDY") {
-            $("#lastupdate").html("World records are current as of <span id='lm'>" + translateUSDate(lm, newNotation) + "</span>.");
-        } else if (oldLanguage != "English") {
-            $("#lastupdate").html("World records are current as of <span id='lm'>" + translateEADate(lm, newNotation) + "</span>.");
-        }
-    } else if (language == "Japanese") {
-        if (oldNotation == "MDY") {
-            $("#lastupdate").html("<span id='lm'>" + translateUSDate(lm, "YMD") + "</span>現在の世界記録です。");
-        } else {
-            $("#lastupdate").html("<span id='lm'>" + (oldLanguage == "English" ? translateDate(lm, "YMD") : lm) +
-            "</span>現在の世界記録です。");
-        }
-    } else {
-        if (oldNotation == "MDY") {
-            $("#lastupdate").html("世界记录更新于<span id='lm'>" + translateUSDate(lm, "YMD") + "</span>。");
-        } else {
-            $("#lastupdate").html("世界记录更新于<span id='lm'>" + (oldLanguage == "English" ? translateDate(lm, "YMD") : lm) +
-            "</span>。");
-        }
-    }*/
-}
-function dark() {
-    var style = document.createElement("link");
-    style.id = "dark";
-    style.href = "assets/shared/dark.css";
-    style.type = "text/css";
-    style.rel = "stylesheet";
-    $("head").append(style);
-    $("#hy").attr("title", "Youkai Mode");
-}
-function theme(e) {
-    if (e.src.indexOf("y") < 0) {
-        e.src = "assets/shared/y-bar.png";
-        localStorage.theme = "dark";
-        dark();
-    } else {
-        e.src = "assets/shared/h-bar.png";
-        $("head").children("#dark").remove();
-        $("#hy").attr("title", "Human Mode");
-        localStorage.theme = "light";
-    }
 }
 $(document).ready(function () {
-    if (localStorage.theme == "dark") {
-        $("#hy").attr("src", "assets/shared/y-bar.png");
-        dark();
-    }
-
     $(".en-gb").attr("href", "javascript:setLanguage(\"English\", \"DMY\")");
     $(".en-us").attr("href", "javascript:setLanguage(\"English\", \"MDY\")");
     $(".jp").attr("href", "javascript:setLanguage(\"Japanese\", \"YMD\")");
