@@ -359,7 +359,7 @@
 			</nav>
 		</div>
 		<div id='wrap' class='wrap'>
-			<table id='top' class='center noborders'>
+			<table id='top' class='nomargin noborders'>
 				<tr class='noborders'>
 					<td id='emptytd' class='noborders' style='width:22%'></td>
 					<td id='languagestd' class='noborders' style='width:55%'><table id='languages' class='noborders'>
@@ -620,7 +620,7 @@
 						else { echo '对抗新闻采用单独的计分方式。<a href="#doubleSpoiler">单击此处</a>以获取系统介绍。'; }
 					?></li>
                 </ul>
-				<table class='center'>
+				<table class='nomargin'>
 					<thead>
 						<tr>
 							<td colspan='3'><strong id='scoring1'><?php echo tl_term('Scoring', $lang) ?></strong><br>
@@ -657,7 +657,7 @@
 					else if ($lang == 'Japanese') { echo '下記のものは、本来のWRの代わりに仮のWRを設定をしたものの表です。'; }
 					else { echo '下列表中的项目将参考以下虚构的世界纪录。'; }
 				?></p>
-				<table class='center'>
+				<table class='nomargin'>
 					<tbody id='fictionalWRtable'>
 					<?php
 						foreach ($Rubrics['SCORE'] as $game => $value) {
@@ -687,7 +687,7 @@
 					else if ($lang == 'Japanese') { echo '表には、WRとして採用したショットタイプを紹介しています。'; }
 					else { echo '以下表中的项目将独立于其他机体来计算。'; }
 				?></p>
-				<table class='center'>
+				<table class='nomargin'>
 					<tbody id='WRdefinitionTable'>
 					<?php
 						foreach ($Rubrics['SCORE'] as $game => $value) {
@@ -717,7 +717,7 @@
 					else { echo '对于每个难度和机体有六个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅取决于你的游戏内得分。' .
 					'Easy最大值是375。Lunatic最大值是500。'; }
 				?></p>
-                <table class='center'>
+                <table class='nomargin'>
                     <tbody id='mofTable'>
 					<?php
 						foreach ($Rubrics['MOF_THRESHOLDS'] as $diff => $value) {
@@ -787,7 +787,7 @@
 					'その後、あなたのスコアがどれだけ閾値より高いかに基づき増分します。'; }
 					else { echo '对于每个场景和机体有三个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅取决于你的游戏内得分。'; }
 				?></p>
-                <table class='center'>
+                <table class='nomargin'>
                     <tbody id='dsTable'>
 					<?php
 						echo '<tr><th>' . tl_term('Scene', $lang) . '</th><th class="basePoints">' . tl_term('Base points', $lang) .
@@ -869,7 +869,7 @@
 						else { echo '对于东方天空璋，初次季节解放则n+2，之后的季节释放n+0.5，0.4，0.3，0.2，0.1。'; }
 					?></li>
                 </ul>
-		        <table class='center'>
+		        <table class='nomargin'>
 		        	<thead>
 						<tr>
 							<td colspan='6'><strong id='survival1'><?php echo tl_term('Survival', $lang) ?></strong><br>
@@ -918,7 +918,7 @@
 					else { echo '在以下公式中，东方梦时空的最大残机数为5，东方花映塚故事模式为7，EX为8。' .
 					'NB奖分依难度而定。东方梦时空为NB奖分，东方花映塚为NC奖分。'; }
 				?></p>
-                <table class='center'>
+                <table class='nomargin'>
                     <thead><tr><td id='pofvFormula' colspan='4'><?php
 						if ($lang == 'English') { echo '||Max - ((Max - Min) / MaxLives * RoundsLost)|| + NoBombBonus'; }
 						else if ($lang == 'Japanese') { echo '||最大点 - ((最大点 - 最小点) / 最大残機 * 敗北数)|| + ノーボムボーナス'; }
@@ -958,7 +958,7 @@
 					'Extraでは適用されません。解放を使用した天空璋のプレイにも適用されません。ここに載っていない機体のキャラ倍率は１となります。'; }
 					else { echo '该要素仅适用于生存项目的计算公式，不适用于EX和使用了季节解放的天空璋。未列出的机体，系数均为1。'; }
 				?></p>
-                <table class='center'>
+                <table class='nomargin'>
                     <tbody id='shottypeMultipliersTable'>
 					<?php
 						foreach ($Rubrics['SURV'] as $game => $value) {

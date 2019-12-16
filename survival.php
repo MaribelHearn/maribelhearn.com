@@ -92,7 +92,7 @@
             </p>
 			<div id='dummy'><div style='width:1000px;height:20px'></div></div>
 			<div id='container'>
-	            <table id='survival' class='center'>
+	            <table id='survival' class='nomargin'>
 	                <tr>
 	                    <th>Game</th>
 	                    <th>Easy</th>

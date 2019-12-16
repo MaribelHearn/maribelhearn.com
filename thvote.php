@@ -13,14 +13,7 @@
 		<link rel='icon' type='image/x-icon' href='assets/thvote/thvote.ico'>
         <script src='assets/shared/sorttable.js' defer></script>
         <script src='assets/shared/modernizr-custom.js' defer></script>
-        <script>document.documentElement.classList.remove("no-js");head=document.getElementsByTagName("head")[0];done=false;
-		function dark(){style=document.createElement("link");style.id="dark";style.href="assets/shared/dark-tables.css";
-		style.type="text/css";style.rel="stylesheet";head.append(style)}
-        function ready(){if(done){return}done=true;hy=document.getElementById("hy");
-        if(localStorage.theme=="dark"){hy.src="assets/shared/y-bar.png";hy.title="Youkai Mode";dark()}}
-		function theme(e){if(e.src.indexOf("y")<0){e.src="assets/shared/y-bar.png";e.title="Youkai Mode";localStorage.theme="dark";
-		dark()}else{e.src="assets/shared/h-bar.png";e.title="Human Mode";head.removeChild(head.lastChild);localStorage.theme="light"}}
-		</script>
+        <script src='assets/shared/dark.js'></script>
     </head>
 
     <body>
@@ -65,7 +58,7 @@
             <h1 id='Characters'>Characters</h1>
             <div id='chars_dummy'><div style='width:1000px;height:20px'></div></div>
             <div id='chars_container'>
-                <table id='chars_table' class='sortable'>
+                <table id='chars_table' class='poll sortable'>
                     <colgroup>
                         <col style='width:3em'>
                         <col style='width:2.8em;background:#fee'>
@@ -79,7 +72,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='chars_head'></th>
+                            <th id='chars_head' class='noborders'></th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -283,7 +276,7 @@
             <h1 id='Music'>Music</h1>
             <div id='music_dummy'><div style='width:1000px;height:20px'></div></div>
             <div id='music_container'>
-                <table id='music_table' class='sortable'>
+                <table id='music_table' class='poll sortable'>
                     <colgroup>
                         <col style='width:3em'>
                         <col style='width:2.8em;background:#fee'>
@@ -296,7 +289,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='music_head'></th>
+                            <th id='music_head' class='noborders'></th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -843,7 +836,7 @@
             <h1 id='Works'>Works</h1>
             <div id='works_dummy'><div style='width:1000px;height:20px'></div></div>
             <div id='works_container'>
-                <table id='works_table' class='sortable'>
+                <table id='works_table' class='poll sortable'>
                     <colgroup>
                         <col style='width:3em'>
                         <col style='width:2.8em;background:#fee'>
@@ -856,7 +849,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='works_head'></th>
+                            <th id='works_head' class='noborders'></th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -921,7 +914,7 @@
 <h2>01. Age</h2>
 <div id="age_summary" style="display: block;">
 <p>Valid responses: 10,163　<button onclick="document.getElementById('age_detail').style.display='block';document.getElementById('age_summary').style.display='none'">Detailed view</button></p>
-<table class="sortable">
+<table class='poll sortable'>
     <colgroup>
         <col style='width:8em;background:#fee'>
         <col style='width:5em;background:#ffe'>
@@ -943,7 +936,7 @@
 </div>
 <div id="age_detail" style='display:none'>
 <p>Valid responses: 10,163　<button onclick="document.getElementById('age_summary').style.display='block';document.getElementById('age_detail').style.display='none'">Simple view</button></p>
-<table class="sortable">
+<table class='poll sortable'>
     <colgroup>
         <col style='width:8em;background:#fee'>
         <col style='width:5em;background:#ffe'>
@@ -1062,7 +1055,7 @@
 </tbody></table>
 <h2>03. Location</h2>
 <p>Valid responses: 9,981</p>
-<table class="sortable">
+<table class='poll sortable'>
     <colgroup>
         <col style='width:20em;background:#fee'>
         <col style='width:5em;background:#ffe'>
@@ -1184,7 +1177,7 @@
 </tbody></table>
 <h2>06. What do you like about Touhou? (Multiple answers possible)</h2>
 <p>Valid responses: 10,922</p>
-<table class="sortable">
+<table class='poll sortable'>
     <colgroup>
         <col style='width:20em;background:#fee'>
         <col style='width:5em;background:#ffe'>
@@ -1202,7 +1195,7 @@
 </tbody></table>
 <h2>07. When did you discover Touhou?</h2>
 <p>Valid responses: 10,574</p>
-<table class="sortable">
+<table class='poll sortable'>
     <colgroup>
         <col style='width:20em;background:#fee'>
         <col style='width:5em;background:#ffe'>
@@ -1233,7 +1226,7 @@
 </tbody></table>
 <h2>08. How did you discover Touhou?</h2>
 <p>Valid responses: 10,081</p>
-<table class="sortable">
+<table class='poll sortable'>
     <colgroup>
         <col style='width:36em;background:#fee'>
         <col style='width:5em;background:#ffe'>
@@ -1258,7 +1251,7 @@
 <h2>08. Correlation between when and how people discovered Touhou</h2>
 <div id='corr_dummy'><div style='width:1000px;height:20px'></div></div>
 <div id='corr_container'>
-    <table id='corr_table' class='result'>
+    <table id='corr_table' class='poll result'>
         <colgroup>
             <col style='width:4em;background:#fee'>
             <col style='width:4.2em;background:#ffe'>
@@ -1321,7 +1314,7 @@
 </div>
 <h2>09. Participation in doujin events such as Comiket and Reitaisai (multiple answers possible)</h2>
 <p>Valid responses: 10,528</p>
-<table class='result'>
+<table class='poll result'>
     <colgroup>
         <col style='width:20em;background:#fee'>
         <col style='width:5em;background:#ffe'>
@@ -1346,7 +1339,7 @@
 </tbody></table>
 <h2>10. Have you voted on the Touhou Popularity Poll before?</h2>
 <p>Valid responses: 10,822</p>
-<table class='result'>
+<table class='poll result'>
 <colgroup>
     <col style='width:20em;background:#fee'>
     <col style='width:5em;background:#ffe'>
@@ -1359,7 +1352,7 @@
             <h1 id='Extra'>Extra Statistics</h1>
             <p>The following table shows the total number of points for all the newly introduced Stage bosses and midbosses
                 of each Windows maingame (except Alice counts for PCB and Aya counts for PoFV), including Reimu and Marisa as a separate entity.</p>
-            <table id='maingame_chars' class='sortable'>
+            <table id='maingame_chars' class='poll sortable'>
                 <colgroup>
                     <col style='width:2.8em;background:#fee'>
                     <col style='background:#ffe'>
@@ -1385,7 +1378,7 @@
             </table>
             <p>This table shows the total number of points for all newly introduced soundtracks of each Windows maingame
             (except PoFV, as it has many remixes; the IN Stage 4 boss themes count for IN; the Player's Score theme counts for MoF).</p>
-            <table id='maingame_music' class='sortable'>
+            <table id='maingame_music' class='poll sortable'>
                 <colgroup>
                     <col style='width:2.8em;background:#fee'>
                     <col style='background:#ffe'>
@@ -1411,7 +1404,7 @@
             Title, credits and ending are not included, because in that case the lowest scoring theme is the ending theme for every game.</p>
             <div id='highlow_dummy'><div style='width:1000px;height:20px'></div></div>
             <div id='highlow_container'>
-                <table id='maingame_highlow' class='result'>
+                <table id='maingame_highlow' class='poll result'>
                     <colgroup>
                         <col style='width:2.8em;background:#fee'>
                         <col style='width:10em;background:#ffe'>
@@ -1441,7 +1434,7 @@
             <h3>EoSD</h3>
             <div id='eosd_dummy'><div style='width:1000px;height:20px'></div></div>
             <div id='eosd_container'>
-                <table id='eosd_table' class='sortable'>
+                <table id='eosd_table' class='poll sortable'>
                     <colgroup>
                         <col style='width:3em'>
                         <col style='width:2.8em;background:#fee'>
@@ -1454,7 +1447,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='eosd_head'></th>
+                            <th id='eosd_head' class='noborders'></th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -1488,7 +1481,7 @@
             <h3>PCB</h3>
             <div id='pcb_dummy'><div style='width:1000px;height:20px'></div></div>
             <div id='pcb_container'>
-                <table id='pcb_table' class='sortable'>
+                <table id='pcb_table' class='poll sortable'>
                     <colgroup>
                         <col style='width:3em'>
                         <col style='width:2.8em;background:#fee'>
@@ -1501,7 +1494,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='pcb_head'></th>
+                            <th id='pcb_head' class='noborders'></th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -1538,7 +1531,7 @@
             <h3>IN</h3>
             <div id='in_dummy'><div style='width:1000px;height:20px'></div></div>
             <div id='in_container'>
-                <table id='in_table' class='sortable'>
+                <table id='in_table' class='poll sortable'>
                     <colgroup>
                         <col style='width:3em'>
                         <col style='width:2.8em;background:#fee'>
@@ -1551,7 +1544,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='in_head'></th>
+                            <th id='in_head' class='noborders'></th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -1589,7 +1582,7 @@
             <h3>MoF</h3>
             <div id='mof_dummy'><div style='width:1000px;height:20px'></div></div>
             <div id='mof_container'>
-                <table id='mof_table' class='sortable'>
+                <table id='mof_table' class='poll sortable'>
                     <colgroup>
                         <col style='width:3em'>
                         <col style='width:2.8em;background:#fee'>
@@ -1602,7 +1595,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='mof_head'></th>
+                            <th id='mof_head' class='noborders'></th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -1637,7 +1630,7 @@
             <h3>SA</h3>
             <div id='sa_dummy'><div style='width:1000px;height:20px'></div></div>
             <div id='sa_container'>
-                <table id='sa_table' class='sortable'>
+                <table id='sa_table' class='poll sortable'>
                     <colgroup>
                         <col style='width:3em'>
                         <col style='width:2.8em;background:#fee'>
@@ -1650,7 +1643,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='sa_head'></th>
+                            <th id='sa_head' class='noborders'></th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -1684,7 +1677,7 @@
             <h3>UFO</h3>
             <div id='ufo_dummy'><div style='width:1000px;height:20px'></div></div>
             <div id='ufo_container'>
-                <table id='ufo_table' class='sortable'>
+                <table id='ufo_table' class='poll sortable'>
                     <colgroup>
                         <col style='width:3em'>
                         <col style='width:2.8em;background:#fee'>
@@ -1697,7 +1690,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='ufo_head'></th>
+                            <th id='ufo_head' class='noborders'></th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -1730,7 +1723,7 @@
             <h3>TD</h3>
             <div id='td_dummy'><div style='width:1000px;height:20px'></div></div>
             <div id='td_container'>
-                <table id='td_table' class='sortable'>
+                <table id='td_table' class='poll sortable'>
                     <colgroup>
                         <col style='width:3em'>
                         <col style='width:2.8em;background:#fee'>
@@ -1743,7 +1736,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='td_head'></th>
+                            <th id='td_head' class='noborders'></th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -1777,7 +1770,7 @@
             <h3>DDC</h3>
             <div id='ddc_dummy'><div style='width:1000px;height:20px'></div></div>
             <div id='ddc_container'>
-                <table id='ddc_table' class='sortable'>
+                <table id='ddc_table' class='poll sortable'>
                     <colgroup>
                         <col style='width:3em'>
                         <col style='width:2.8em;background:#fee'>
@@ -1790,7 +1783,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='ddc_head'></th>
+                            <th id='ddc_head' class='noborders'></th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -1824,7 +1817,7 @@
             <h3>LoLK</h3>
             <div id='lolk_dummy'><div style='width:1000px;height:20px'></div></div>
             <div id='lolk_container'>
-                <table id='lolk_table' class='sortable'>
+                <table id='lolk_table' class='poll sortable'>
                     <colgroup>
                         <col style='width:3em'>
                         <col style='width:2.8em;background:#fee'>
@@ -1837,7 +1830,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='lolk_head'></th>
+                            <th id='lolk_head' class='noborders'></th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -1871,7 +1864,7 @@
             <h3>HSiFS</h3>
             <div id='hsifs_dummy'><div style='width:1000px;height:20px'></div></div>
             <div id='hsifs_container'>
-                <table id='hsifs_table' class='sortable'>
+                <table id='hsifs_table' class='poll sortable'>
                     <colgroup>
                         <col style='width:3em'>
                         <col style='width:2.8em;background:#fee'>
@@ -1884,7 +1877,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='hsifs_head'></th>
+                            <th id='hsifs_head' class='noborders'></th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>

@@ -39,7 +39,7 @@ $(document).ready(function () {
 function dark() {
     var style = document.createElement("link");
     style.id = "dark";
-    style.href = "assets/shared/dark-tables.css";
+    style.href = "assets/shared/dark.css";
     style.type = "text/css";
     style.rel = "stylesheet";
     $("head").append(style);
