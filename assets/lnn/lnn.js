@@ -580,7 +580,7 @@ function setLanguage(newLanguage) {
 function dark() {
     var style = document.createElement("link");
     style.id = "dark";
-    style.href = "assets/shared/dark-wr.css";
+    style.href = "assets/shared/dark.css";
     style.type = "text/css";
     style.rel = "stylesheet";
     $("head").append(style);

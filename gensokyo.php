@@ -49,7 +49,7 @@
         <script src='assets/shared/sorttable.js' defer></script>
         <script src='assets/shared/modernizr-custom.js' defer></script>
         <script>document.documentElement.classList.remove("no-js");head=document.getElementsByTagName("head")[0];done=false;
-		function dark(){style=document.createElement("link");style.id="dark";style.href="assets/shared/dark-wr.css";
+		function dark(){style=document.createElement("link");style.id="dark";style.href="assets/shared/dark.css";
 		style.type="text/css";style.rel="stylesheet";head.append(style)}
         function ready(){if(done){return}done=true;hy=document.getElementById("hy");
         if(localStorage.theme=="dark"){hy.src="assets/shared/y-bar.png";hy.title="Youkai Mode";dark()}}
