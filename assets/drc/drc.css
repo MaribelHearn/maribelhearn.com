@@ -23,7 +23,7 @@ h2 {
 input[type=number] {
     height: 20px;
 }
-.center {
+.nomargin {
     margin-left: auto;
     margin-right: auto;
 }

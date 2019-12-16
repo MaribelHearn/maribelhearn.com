@@ -48,7 +48,7 @@ h2 {
     padding-right: 15px;
     font: 14px verdana,sans-serif;
 }
-.center {
+.nomargin {
     margin-left: auto;
     margin-right: auto;
 }
