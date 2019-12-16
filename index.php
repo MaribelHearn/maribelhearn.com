@@ -31,12 +31,20 @@
             <table class='center'>
                 <tr>
                     <td><table class='sub'>
-                        <tr><td><a href='scoring'><img src='assets/scoring/scoring.ico' alt='Spell Card icon'> High Score Storage</a></td></tr>
-                        <tr><td><em>Allows you to save your Touhou game scores, as well as calculate how they compare to the world records.</em></td></tr>
+                        <tr>
+                            <td><a href='scoring'><img src='assets/scoring/scoring.ico' alt='Spell Card icon'> High Score Storage</a></td>
+                        </tr>
+                        <tr>
+                            <td><em>Allows you to save your Touhou game scores, as well as calculate how they compare to the world records.</em></td>
+                        </tr>
                     </table></td>
                     <td><table class='sub'>
-                        <tr><td><a href='survival'><img src='assets/survival/survival.ico' alt='1up Item icon'> Survival Progress Table Generator</a></td></tr>
-                        <tr><td><em>Tool that lets you generate a table that summarises your Touhou survival progress.</em></td></tr>
+                        <tr>
+                            <td><a href='survival'><img src='assets/survival/survival.ico' alt='1up Item icon'> Survival Progress Table Generator</a></td>
+                        </tr>
+                        <tr>
+                            <td><em>Tool that lets you generate a table that summarises your Touhou survival progress.</em></td>
+                        </tr>
                     </table></td>
                 </tr>
                 <tr>
@@ -52,11 +60,17 @@
                             <source srcset='assets/flags/china16x16.png'>
                             <img src='assets/flags/china16x16.png' alt='Flag of the P.R.C.'>
                         </picture>
-                        <tr><td><em>Webpage intended for use by the Dodging Rain Competition (see page for explanation).</em></td></tr>
+                        <tr>
+                            <td><em>Webpage intended for use by the Dodging Rain Competition (see page for explanation).</em></td>
+                        </tr>
                     </table></td>
                     <td><table class='sub'>
-                        <tr><td><a href='tools'><img src='assets/tools/tools.ico' alt='UFO icon'> Touhou Patches and Tools</a></td></tr>
-                        <tr><td><em>A collection of helpful patches and tools for the Touhou shooting games, many of which for efficient practicing.</em></td></tr>
+                        <tr>
+                            <td><a href='tools'><img src='assets/tools/tools.ico' alt='UFO icon'> Touhou Patches and Tools</a></td>
+                        </tr>
+                        <tr>
+                            <td><em>A collection of helpful patches and tools for the Touhou shooting games, many of which for efficient practicing.</em></td>
+                        </tr>
                     </table></td>
                 </tr>
                 <tr>
@@ -75,44 +89,68 @@
                         <tr><td><em>The world records for all Touhou shooting games except for the scene games.</em></td></tr>
                     </table></td>
                     <td><table class='sub'>
-                        <tr><td><a href='lnn'><img src='assets/lnn/lnn.ico' alt='Full Power icon'> Touhou Lunatic No Miss No Bombs</a>
-                        <picture>
-                            <source srcset='assets/flags/japan16x16.webp' type='image/webp'>
-                            <source srcset='assets/flags/japan16x16.png'>
-                            <img src='assets/flags/japan16x16.png' alt='Flag of Japan'>
-                        </picture>
-                        <picture>
-                            <source srcset='assets/flags/china16x16.webp' type='image/webp'>
-                            <source srcset='assets/flags/china16x16.png'>
-                            <img src='assets/flags/china16x16.png' alt='Flag of the P.R.C.'>
-                        </picture>
-                        <tr><td><em>Players who have done Lunatic No Miss No Bomb (LNN) runs of the Touhou shooting games are listed here.</em></td></tr>
+                        <tr>
+                            <td><a href='lnn'><img src='assets/lnn/lnn.ico' alt='Full Power icon'> Touhou Lunatic No Miss No Bombs</a>
+                            <picture>
+                                <source srcset='assets/flags/japan16x16.webp' type='image/webp'>
+                                <source srcset='assets/flags/japan16x16.png'>
+                                <img src='assets/flags/japan16x16.png' alt='Flag of Japan'>
+                            </picture>
+                            <picture>
+                                <source srcset='assets/flags/china16x16.webp' type='image/webp'>
+                                <source srcset='assets/flags/china16x16.png'>
+                                <img src='assets/flags/china16x16.png' alt='Flag of the P.R.C.'>
+                            </picture>
+                        </tr>
+                        <tr>
+                            <td><em>Players who have done Lunatic No Miss No Bomb (LNN) runs of the Touhou shooting games are listed here.</em></td>
+                        </tr>
                     </table></td>
                 </tr>
                 <tr>
                     <td><table class='sub'>
-                        <tr><td><a href='thvote'><img src='assets/thvote/thvote.ico' alt='Tou kanji icon'> THWiki Popularity Poll 2019 Results Translation</a></td></tr>
-                        <tr><td><em>Complete English translation of the full results of the THWiki Popularity Poll held in 2019.</em></td></tr>
+                        <tr>
+                            <td><a href='thvote'><img src='assets/thvote/thvote.ico' alt='Tou kanji icon'> THWiki Popularity Poll 2019 Results Translation</a></td>
+                        </tr>
+                        <tr>
+                            <td><em>Complete English translation of the full results of the THWiki Popularity Poll held in 2019.</em></td>
+                        </tr>
                     </table></td>
                     <td><table class='sub'>
-                        <tr><td><a href='jargon'><img src='assets/jargon/jargon.ico' alt='Bomb icon'> Touhou Community Jargon</a></td></tr>
-                        <tr><td><em>List of terminology used by the Touhou community, including but not limited to common acronyms for Spell Cards.</em></td></tr>
+                        <tr>
+                            <td><a href='jargon'><img src='assets/jargon/jargon.ico' alt='Bomb icon'> Touhou Community Jargon</a></td>
+                        </tr>
+                        <tr>
+                            <td><em>List of terminology used by the Touhou community, including but not limited to common acronyms for Spell Cards.</em></td>
+                        </tr>
                     </table></td>
                 </tr>
                 <tr>
                     <td><table class='sub'>
-                        <tr><td><a href='trs'><img src='assets/trs/trs.ico' alt='Shinto shrine icon'> Touhou Replay Showcase Scheduling</a></td></tr>
-                        <tr><td><em>Schedules for the weekly Touhou Replay Showcase Twitch streams.</em></td></tr>
+                        <tr>
+                            <td><a href='trs'><img src='assets/trs/trs.ico' alt='Shinto shrine icon'> Touhou Replay Showcase Scheduling</a></td>
+                        </tr>
+                        <tr>
+                            <td><em>Schedules for the weekly Touhou Replay Showcase Twitch streams.</em></td>
+                        </tr>
                     </table></td>
                     <td><table class='sub'>
-                        <tr><td><a href='tiers'><img src='assets/tiers/tiers.ico' alt='Japanese castle icon'> Touhou Tier List Creator</a></td></tr>
-                        <tr><td><em>Custom Touhou tier lists can be created here.</em></td></tr>
+                        <tr>
+                            <td><a href='tiers'><img src='assets/tiers/tiers.ico' alt='Japanese castle icon'> Touhou Tier List Creator</a></td>
+                        </tr>
+                        <tr>
+                            <td><em>Custom Touhou tier lists can be created here.</em></td>
+                        </tr>
                     </table></td>
                 </tr>
                 <tr>
                     <td colspan='2'><table class='sub'>
-                        <tr><td><a href='gensokyo'><img src='assets/gensokyo/gensokyo.ico' alt='Gensokyo.org icon'> Gensokyo Replay Archive</a></td></tr>
-                        <tr><td><em>A complete archive of the replays from replays.gensokyo.org.</em></td></tr>
+                        <tr>
+                            <td><a href='gensokyo'><img src='assets/gensokyo/gensokyo.ico' alt='Gensokyo.org icon'> Gensokyo Replay Archive</a></td>
+                        </tr>
+                        <tr>
+                            <td><em>A complete archive of the replays from replays.gensokyo.org.</em></td>
+                        </tr>
                     </table></td>
                 </tr>
             </table>

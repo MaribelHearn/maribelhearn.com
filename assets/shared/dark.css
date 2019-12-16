@@ -1,18 +1,36 @@
 body {
     color: white;
 }
-div {
+#results, div {
     background-color: #202020;
 }
-a:link {
+a:link:not(.replay) {
     color: #1e90ff;
 }
-a:active {
+a:active:not(.replay) {
     color: red;
 }
-a:visited {
+a:visited:not(.replay) {
     color: #ff69b4;
 }
-#checkboxes, #checkboxes td, #gameTable, #gameTable th, #gameTable td, #table, #table th, #table td, .border, table#contents {
+#checkboxes, #checkboxes td:not(.noborders), #gameTable, #gameTable th, #gameTable td, #table, #table th, #table td, .border,
+table#contents, table:not(#jargontable):not(#bullettable):not(#spelltable):not(.noborders):not(.center):not(.sub), tr:not(.noborders),
+th:not(.noborders), td:not(.noborders) {
     border: 1px solid #808080;
+}
+.GFWt th, .LLSt th, .MoFt th, .PCBt th, .PoDDt th {
+    color: black;
+}
+.GFWt td, .LLSt td, .MoFt td, .PCBt td, .PoDDt td {
+    color: white;
+}
+.does_even_score {
+    color: dodgerblue;
+}
+.dimgrey {
+    color: #999999;
+}
+#contents tr, #contents th, #contents td, #responses tr, #responses th, #responses td, #jargontable th, #jargontable td,
+#spelltable th, #spelltable td, #bullettable th, #bullettable td, .center th, .center td, .sub td {
+    border: none;
 }

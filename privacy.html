@@ -9,11 +9,19 @@
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='favicon.ico'>
         <script src='assets/shared/modernizr-custom.js' defer></script>
-        <script>document.documentElement.classList.remove("no-js");</script>
+        <script>document.documentElement.classList.remove("no-js");head=document.getElementsByTagName("head")[0];done=false;
+		function dark(){style=document.createElement("link");style.id="dark";style.href="assets/shared/dark.css";
+		style.type="text/css";style.rel="stylesheet";head.append(style)}
+        function ready(){if(done){return}done=true;hy=document.getElementById("hy");
+        if(localStorage.theme=="dark"){hy.src="assets/shared/y-bar.png";hy.title="Youkai Mode";dark()}}
+		function theme(e){if(e.src.indexOf("y")<0){e.src="assets/shared/y-bar.png";e.title="Youkai Mode";localStorage.theme="dark";
+		dark()}else{e.src="assets/shared/h-bar.png";e.title="Human Mode";head.removeChild(head.lastChild);localStorage.theme="light"}}
+		</script>
     </head>
 
     <body>
         <div id='wrap'>
+            <img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
             <h1>Privacy Policy</h1>
             <p><strong>Effective date:</strong> 16 December 2019</p>
             <p>Maribel Hearn's Web Portal ("us", "we", or "our") operates the <a href='/'>https://maribelhearn.com</a>
@@ -67,7 +75,7 @@
             <ul>
                 <li>By email: maribelhearn42@gmail.com</li>
             </ul>
-            
+
             <p><a href='/'>Back to Main Page</a></p>
         </div>
     </body>

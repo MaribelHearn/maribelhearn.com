@@ -43,7 +43,7 @@
 			?>
             <p>This list contains explanations for terms and acronyms used in the community of Touhou players. It also contains general gaming and shoot 'em up terms that are relevant to Touhou.</p>
             <h2>Contents</h2>
-            <table class='border'>
+            <table id='contents' class='border'>
                 <tr><td><a href='#spells'>Spell Card / Pattern Acronyms</a></td></tr>
                 <tr><td><a href='#bullets'>Bullet Type Names</a></td></tr>
             </table>
@@ -677,6 +677,5 @@
             </table>
             <p id='back'><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
         </div>
-		<script>if(location.protocol=="file:"){var path=location.pathname.split('/').pop(),length=document.links.length,href;for(var i=0;i<length;i+=1){href=document.links[i].href;if(document.links[i].protocol=="file:"&&href.indexOf('#')==-1){document.links[i].href=(href=="file:///"?location.href.replace(path,"index.html"):href+".html")}}}</script>
     </body>
 </html>

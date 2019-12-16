@@ -110,7 +110,7 @@
                         </td><td>
                             <input id='GFWc' type='checkbox' onClick='checkGame("GFW")' checked>
                             <label for='GFWc'>GFW</label>
-                        </td><td class='noborders'>
+                        </td><td>
                             <input id='WBaWCc' type='checkbox' onClick='checkGame("WBaWC")' checked>
                             <label for='WBaWCc'>WBaWC</label>
                         </td>
