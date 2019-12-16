@@ -23,6 +23,7 @@
 
     <body>
         <div id='wrap'>
+            <a id='privacy' href='privacy'>Privacy Policy</a>
             <img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
             <h1>Maribel Hearn's Web Portal</h1>
             <p class='thin'>A collection of convenience webpages for the Touhou community.</p>
