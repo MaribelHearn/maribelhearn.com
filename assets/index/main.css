@@ -48,6 +48,9 @@ td {
     opacity: 0.8;
     font: 14px verdana,sans-serif;
 }
+#privacy {
+    float: left;
+}
 #hy {
     float: right;
 }
