@@ -148,7 +148,7 @@
                     $comment = str_replace('<', '&lt;', $rep['comment']);
                     $comment = str_replace('>', '&gt;', $comment);
                     $backlink = explode('&id', $_SERVER['REQUEST_URI']);
-                    echo '<table class="center sortable"><tbody>';
+                    echo '<table class="sortable"><tbody>';
                     echo '<tr><th>Player</th><td>' . $rep['player'] . '</td></tr>';
                     echo '<tr><th>Category</th><td>' . $rep['category'] . '</td></tr>';
                     echo '<tr><th>Game Version</th><td>' . $rep['ver'] . '</td></tr>';

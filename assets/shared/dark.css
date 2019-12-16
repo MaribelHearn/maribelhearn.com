@@ -1,21 +1,21 @@
 body {
     color: white;
 }
-#results, div {
+div {
     background-color: #202020;
 }
-a:link:not(.replay) {
+a:link:not(.replay):not(.i) {
     color: #1e90ff;
 }
-a:active:not(.replay) {
+a:active:not(.replay):not(.i) {
     color: red;
 }
-a:visited:not(.replay) {
+a:visited:not(.replay):not(.i) {
     color: #ff69b4;
 }
 #checkboxes, #checkboxes td:not(.noborders), #gameTable, #gameTable th, #gameTable td, #table, #table th, #table td, .border,
-table#contents, table:not(#jargontable):not(#bullettable):not(#spelltable):not(.noborders):not(.center):not(.sub), tr:not(.noborders),
-th:not(.noborders), td:not(.noborders) {
+table:not(#jargontable):not(#bullettable):not(#spelltable):not(#searchtable):not(.noborders):not(.result):not(.center):not(.poll):not(.sub),
+table#contents,  tr:not(.noborders), th:not(.noborders), td:not(.noborders) {
     border: 1px solid #808080;
 }
 .GFWt th, .LLSt th, .MoFt th, .PCBt th, .PoDDt th {
@@ -30,7 +30,13 @@ th:not(.noborders), td:not(.noborders) {
 .dimgrey {
     color: #999999;
 }
+.poll {
+    color: black;
+}
+::before {
+    color: white;
+}
 #contents tr, #contents th, #contents td, #responses tr, #responses th, #responses td, #jargontable th, #jargontable td,
-#spelltable th, #spelltable td, #bullettable th, #bullettable td, .center th, .center td, .sub td {
+#spelltable th, #spelltable td, #bullettable th, #bullettable td, .border td, .center th, .center td, .sub td {
     border: none;
 }

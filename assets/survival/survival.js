@@ -428,7 +428,7 @@ function allowData() {
 function dark() {
     var style = document.createElement("link");
     style.id = "dark";
-    style.href = "assets/shared/dark-tables.css";
+    style.href = "assets/shared/dark.css";
     style.type = "text/css";
     style.rel = "stylesheet";
     $("head").append(style);
@@ -462,13 +462,6 @@ $(document).ready(function () {
     if (getCookie("saveCookies")) {
         localStorage.setItem("saveData", getCookie("saveCookies"));
         deleteCookie("saveCookies");
-    }
-
-    if (location.protocol == "file:") {
-        var path = location.pathname.split('/').pop();
-        $("#nav a").attr("href", function (i, oldHref) {
-            return (oldHref == '/' ? location.href.replace(path, "index.html") + "" : oldHref + ".html");
-        });
     }
 
     try {
