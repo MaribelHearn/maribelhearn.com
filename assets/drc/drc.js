@@ -15,11 +15,6 @@ var WRs, Rubrics, step, global = this, phantasm = true, noExtra = true, noShotty
     SURV_RUBRICS = "#survivalRubrics", SCORE_RUBRICS = "#scoringRubrics";
 
 $(document).ready(function () {
-    if (localStorage.theme == "dark") {
-        $("#hy").attr("src", "assets/shared/y-bar.png");
-        dark();
-    }
-
     if (getCookie("lang") == "Japanese" || location.href.contains("jp")) {
         language = "Japanese";
     } else if (getCookie("lang") == "Chinese" || location.href.contains("zh")) {
@@ -36,27 +31,6 @@ $(document).ready(function () {
     step = setInterval(updateCountdown, 1000);
     updateCountdown();
 });
-function dark() {
-    var style = document.createElement("link");
-    style.id = "dark";
-    style.href = "assets/shared/dark.css";
-    style.type = "text/css";
-    style.rel = "stylesheet";
-    $("head").append(style);
-    $("#hy").attr("title", "Youkai Mode");
-}
-function theme(e) {
-    if (e.src.indexOf("y") < 0) {
-        e.src = "assets/shared/y-bar.png";
-        localStorage.theme = "dark";
-        dark();
-    } else {
-        e.src = "assets/shared/h-bar.png";
-        $("head").children("#dark").remove();
-        $("#hy").attr("title", "Human Mode");
-        localStorage.theme = "light";
-    }
-}
 function updateCountdown() {
     var countdownDate, now, distance, days, hours, minutes, seconds;
 

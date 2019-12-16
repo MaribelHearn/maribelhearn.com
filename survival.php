@@ -16,7 +16,7 @@
 		<script src='assets/survival/survival.js' defer></script>
         <script src='assets/shared/sorttable.js' defer></script>
         <script src='assets/shared/modernizr-custom.js' defer></script>
-        <script>document.documentElement.classList.remove("no-js");</script>
+        <script src='assets/shared/dark.js'></script>
 	</head>
 
 	<body>
@@ -32,7 +32,7 @@
 			</nav>
 		</div>
 		<div id='wrap' class='wrap'>
-			<img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)'>
+			<img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
 			<h1>Survival Progress Table Generator</h1>
 			<?php
 				if (!empty($_GET['redirect'])) {
@@ -90,7 +90,7 @@
                 <br>
                 <input type='button' onClick='javascript:fillAll($("#fillGameDifficulty").val(), $("#fillAchievement").val())' value='Fill All'>
             </p>
-			<div id='dummy'><div style='width:1000px;height:20px'></div></div>
+			<div id='dummy'><div id='dummy_sub'></div></div>
 			<div id='container'>
 	            <table id='survival' class='nomargin'>
 	                <tr>

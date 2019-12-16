@@ -64,6 +64,17 @@ table, th, td {
 #fullname, .count {
     text-decoration: underline;
 }
+#emptytd {
+     width: 22%;
+}
+#languagestd {
+     width: 55%;
+}
+#bartd {
+     width: 22%;
+     text-align: right;
+     vertical-align: top;
+}
 .wrap {
     border: 1px solid #000;
     text-align: center;

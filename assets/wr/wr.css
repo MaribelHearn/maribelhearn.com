@@ -69,6 +69,17 @@ table, th, td {
 #fullname, .count {
     text-decoration: underline;
 }
+#emptytd {
+     width: 22%;
+}
+#languagestd {
+     width: 55%;
+}
+#bartd {
+     width: 22%;
+     text-align: right;
+     vertical-align: top;
+}
 .HRtPt th {
     background-color: #b6423c;
 }

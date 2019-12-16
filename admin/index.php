@@ -20,9 +20,7 @@
 		<link rel='icon' type='image/x-icon' href='../favicon.ico'>
         <script src='../assets/shared/utils.js' defer></script>
         <script src='../assets/shared/modernizr-custom.js' defer></script>
-        <script>document.documentElement.classList.remove("no-js");
-        function set(){setCookie("token",<?php echo file_get_contents('../.stats/token') ?>);
-        document.getElementById("set").style="display:block"}</script>
+        <script src='admin.js'></script>
     </head>
 
     <body>
@@ -42,6 +40,7 @@
             ?>
             <p><a href='/'>Back to Main Page</a></p>
         </div>
+        <?php echo '<input id="token" type="hidden" value=' . file_get_contents('../.stats/token') . '>'; ?>
     </body>
 
 </html>

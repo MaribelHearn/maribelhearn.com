@@ -577,33 +577,7 @@ function setLanguage(newLanguage) {
     setCookie("lang", newLanguage);
     location.href = location.href.split('#')[0].split('?')[0];
 }
-function dark() {
-    var style = document.createElement("link");
-    style.id = "dark";
-    style.href = "assets/shared/dark.css";
-    style.type = "text/css";
-    style.rel = "stylesheet";
-    $("head").append(style);
-    $("#hy").attr("title", "Youkai Mode");
-}
-function theme(e) {
-    if (e.src.indexOf("y") < 0) {
-        e.src = "assets/shared/y-bar.png";
-        localStorage.theme = "dark";
-        dark();
-    } else {
-        e.src = "assets/shared/h-bar.png";
-        $("head").children("#dark").remove();
-        $("#hy").attr("title", "Human Mode");
-        localStorage.theme = "light";
-    }
-}
 $(document).ready(function () {
-    if (localStorage.theme == "dark") {
-        $("#hy").attr("src", "assets/shared/y-bar.png");
-        dark();
-    }
-
     $(".en").attr("href", "javascript:setLanguage(\"English\")");
     $(".jp").attr("href", "javascript:setLanguage(\"Japanese\")");
     $(".zh").attr("href", "javascript:setLanguage(\"Chinese\")");

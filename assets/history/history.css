@@ -46,6 +46,9 @@ h3 {
 #contents td, #contents th, #contents tr {
     border: none;
 }
+#notice {
+    display: none;
+}
 .hidden {
     border: none;
     text-align: left;

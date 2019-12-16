@@ -16,7 +16,7 @@
 		<script src='assets/tiers/tiers.js' defer></script>
         <script src='assets/tiers/rgbcolor.js' defer></script>
         <script src='assets/shared/modernizr-custom.js' defer></script>
-        <script>document.documentElement.classList.remove("no-js");</script>
+        <script src='assets/shared/dark.js'></script><!-- to remove no-js -->
     </head>
 
     <body onClick='closeModal(event)' onKeyPress='closeModal(event)'>

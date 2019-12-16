@@ -16,7 +16,7 @@
 		<script src='assets/scoring/scoring.js' defer></script>
         <script src='assets/shared/sorttable.js' defer></script>
 		<script src='assets/shared/modernizr-custom.js' defer></script>
-		<script>document.documentElement.classList.remove("no-js");</script>
+        <script src='assets/shared/dark.js'></script>
 	</head>
 
 	<body>
@@ -32,7 +32,7 @@
 			</nav>
 		</div>
 		<div id='wrap' class='wrap'>
-			<img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)'>
+			<img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
 			<h1>High Score Storage</h1>
 			<?php
 				if (!empty($_GET['redirect'])) {
@@ -884,7 +884,7 @@
                         <td><input type='text' id='GFWLunaticC2'></td>
                     </tr><tr>
                         <td>Extra</td>
-                        <td colspan='4' style='text-align:left'><input type='text' id='GFWExtra-'></td>
+                        <td id='GFWExtra' colspan='4'><input type='text' id='GFWExtra-'></td>
                     </tr>
                 </table>
             </div>

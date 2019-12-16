@@ -64,8 +64,19 @@ input[type=number] {
     margin-left: auto;
     margin-right: auto;
 }
-#season, #calculator, #scoringButton, #survivalButton {
+#route, #season, #calculator, #scoringButton, #survivalButton {
     display: none;
+}
+#emptytd {
+     width: 22%;
+}
+#languagestd {
+     width: 55%;
+}
+#bartd {
+     width: 22%;
+     text-align: right;
+     vertical-align: top;
 }
 @media only screen and (max-width: 1400px) {
     .wrap {

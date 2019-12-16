@@ -38,7 +38,105 @@ table {
     opacity: 0.8;
     font: 14px verdana,sans-serif;
 }
-.hidden {
+.dummy_sub {
+    width: 1000px;
+    height: 20px;
+}
+.percentage {
+    text-align: center;
+}
+.col1 {
+    width: 3em;
+}
+.col2 {
+    background: #fee;
+}
+.col2game {
+    width: 2.8em;
+    background: #fee;
+}
+.col2q {
+    width: 20em;
+    background: #fee;
+}
+.col2qs {
+    width: 5em;
+    background: #fee;
+}
+.w36 {
+    width: 36em;
+}
+.w4 {
+    width: 4em;
+}
+.w42 {
+    width: 4.2em;
+}
+.w6 {
+    width: 6em;
+}
+.w7 {
+    width: 7em;
+}
+.w8 {
+    width: 8em;
+}
+.col3 {
+    background: #ffe;
+}
+.col3game {
+    width: 2.8em;
+    background: #ffe;
+}
+.col3q {
+    width: 5em;
+    background: #ffe;
+}
+.w10 {
+    width: 10em;
+}
+.col4 {
+    background: #fec;
+}
+.col4game {
+    width: 2.8em;
+    background: #fec;
+}
+.col4q {
+    width: 5em;
+    background: #fec;
+}
+.col5 {
+    background: #eef;
+}
+.col5per {
+    width: 4.9em;
+    background: #eef;
+}
+.col5q {
+    width: 5em;
+    background: #eef;
+}
+.w55 {
+    width: 5.5em;
+}
+.col6per {
+    width: 4.9em;
+    background: #fee;
+}
+.col7per {
+    width: 4.9em;
+    background: #ffe;
+}
+.col8per {
+    width: 4.9em;
+    background: #fec;
+}
+.col9per {
+    width: 4.9em;
+    background: #eef;
+}
+#age_detail, .hidden, .dummy {
     display: none;
 }
 #nav {
@@ -56,10 +154,6 @@ table {
 #chars_table, #music_table, #chars_table, #clear_table, #corr_table, #maingame_highlow, #eosd_table, #pcb_table,
 #in_table, #mof_table, #sa_table, #ufo_table, #td_table, #ddc_table, #lolk_table, #hsifs_table {
     overflow: auto;
-}
-#chars_dummy, #music_dummy, #chars_dummy, #clear_dummy, #corr_dummy, #highlow_dummy, #eosd_dummy, #pcb_dummy,
-#in_dummy, #mof_dummy, #sa_dummy, #ufo_dummy, #td_dummy, #ddc_dummy, #lolk_dummy, #hsifs_dummy {
-    display: none;
 }
 #chars_table.sortable tbody, #ddc_table.sortable tbody, #eosd_table.sortable tbody, #hsifs_table.sortable tbody,
 #in_table.sortable tbody, #lolk_table.sortable tbody, #mof_table.sortable tbody, #music_table.sortable tbody,
@@ -81,6 +175,9 @@ table {
     counter-increment: sortabletablescope;
     display: table-cell;
     vertical-align: middle;
+}
+#age_summary {
+    display: block;
 }
 @media only screen and (min-width:1500px) and (max-width:1850px) {
     .wrap {

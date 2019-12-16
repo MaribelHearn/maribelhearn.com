@@ -75,6 +75,9 @@ input[type=button] {
 #hy {
     float: right;
 }
+#GFWExtra {
+     text-align: left;
+}
 .wrap {
     border: 1px solid #000;
     text-align: center;
