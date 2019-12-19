@@ -63,7 +63,7 @@ form {
     padding-top: 5px;
     padding-bottom: 5px;
 }
-#replays {
+#replays, #replay {
     margin-left: auto;
     margin-right: auto;
 }
