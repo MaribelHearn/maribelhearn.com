@@ -1,12 +1,5 @@
 var LNNs, language = "English", selected = "", playerSelected = false, playergameLNNs;
 
-function load() {
-    if (getCookie("lang") == "Japanese") {
-        language = "Japanese";
-    } else if (getCookie("lang") == "Chinese") {
-        language = "Chinese";
-    }
-}
 function restrictions(game) {
     return ({
         "PCB": "n",
@@ -21,6 +14,10 @@ function shotRoute(game) {
     return game == "HRtP" || game == "GFW" ? "Route" : "Shottype";
 }
 function show(game) {
+    if (typeof game == "object") {
+        game = this.id; // if event listener fired
+    }
+
     if (!LNNs) {
         $.get("json/lnnlist.json", function (data) {
             LNNs = data;
@@ -31,9 +28,7 @@ function show(game) {
 
     if (game == selected) {
         $("#list").css("display", "none");
-        $("#" + game).css("border", $("#" + game).hasClass("cover98")
-            ? "1px solid black"
-            : "none");
+        $("#" + game).css("border", $("#" + game).hasClass("cover98") ? "1px solid black" : "none");
         $("#fullname, #listhead, #listbody, #listfoot").html("");
         $("#fullname").removeClass(game + "f");
         selected = "";
@@ -119,6 +114,10 @@ function show(game) {
     generateFullNames();
 }
 function getPlayerLNNs(player) {
+    if (typeof player == "object") {
+        player = this.value; // if event listener fired
+    }
+
     if (!LNNs) {
         $.get("json/lnnlist.json", function (data) {
             LNNs = data;
@@ -568,7 +567,9 @@ function generateShortNames() {
         $(".WBaWC").html("鬼");
     }
 }
-function setLanguage(newLanguage) {
+function setLanguage(event) {
+    var newLanguage = event.data.language;
+
     if (language == newLanguage) {
         return;
     }
@@ -578,9 +579,16 @@ function setLanguage(newLanguage) {
     location.href = location.href.split('#')[0].split('?')[0];
 }
 $(document).ready(function () {
-    $(".en").attr("href", "javascript:setLanguage(\"English\")");
-    $(".jp").attr("href", "javascript:setLanguage(\"Japanese\")");
-    $(".zh").attr("href", "javascript:setLanguage(\"Chinese\")");
+    $("#player").on("change", getPlayerLNNs);
+    $(".en, .jp, .zh").attr("href", "");
+    $(".en").on("click", {language: "English"}, setLanguage);
+    $(".jp").on("click", {language: "Japanese"}, setLanguage);
+    $(".zh").on("click", {language: "Chinese"}, setLanguage);
+    $(".game").on("click", show);
 
-    load();
+    if (getCookie("lang") == "Japanese" || location.href.contains("jp")) {
+        language = "Japanese";
+    } else if (getCookie("lang") == "Chinese" || location.href.contains("zh")) {
+        language = "Chinese";
+    }
 });

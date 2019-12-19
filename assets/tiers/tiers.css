@@ -64,6 +64,18 @@ input[type=number] {
 .colour {
     margin-bottom: 10px;
 }
+.confirmation {
+    color: green;
+}
+.error {
+    color: orange;
+}
+.mobile_button {
+    margin: 10px;
+}
+.left {
+    text-align: left;
+}
 #buttons, #characters, #show, #wrap {
     background-color: #1b232e;
     font: 14px verdana, sans-serif;
@@ -156,6 +168,15 @@ input[type=number] {
 }
 #artist_form, #settings_table {
     margin: 15px auto;
+}
+#toggle_instructions {
+    color: #1e90ff;
+    text-decoration: underline;
+}
+#mobile_addtotier {
+     min-width: 25px;
+     height: 25px;
+     margin: 10px;
 }
 @media screen and (max-width: 1100px) and (max-height: 800px) {
     .no-js body, .no-webp body, .webp body {

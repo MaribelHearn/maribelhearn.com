@@ -41,6 +41,9 @@ input[type=number] {
     opacity: 0.8;
     font: 14px verdana, sans-serif;
 }
+.error {
+    color: red;
+}
 #nav {
     margin-bottom: 5px;
 }

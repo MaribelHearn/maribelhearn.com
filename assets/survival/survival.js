@@ -131,8 +131,8 @@ function isTripleNGame(game) {
 function getPercentage(game) {
     return 100 / Object.keys(vals[game]).length;
 }
-function setProgress(category, val) {
-    var game, difficulty, tmp;
+function setProgress() {
+    var category = this.id, val = this.value, game, difficulty, tmp;
 
     difficulty = category.match(/Easy|Normal|Hard|Lunatic|Extra|Phantasm/);
     game = category.replace(difficulty, "");
@@ -155,8 +155,9 @@ function gameSpecific(game, achievement) {
         return ({"NB+": "NB", "NMNB": "NMNB"}[achievement]);
     }
 }
-function fillAll(value, achievement) {
-    var difficulty;
+function fillAll() {
+    var value = $("#fillGameDifficulty").val(), achievement = $("#fillAchievement").val(), difficulty;
+
     if (vals.hasOwnProperty(value)) {
         for (difficulty in vals[value]) {
             tmp = achievement;
@@ -473,4 +474,10 @@ $(document).ready(function () {
             $("#dummy").scrollLeft($("#container").scrollLeft());
         });
     }
+
+    $("#fillAll").on("click", fillAll);
+    $("#toggleData").on("click", allowData);
+    $("#apply").on("click", apply);
+    $("#reset").on("click", reset);
+    $(".category").on("change", setProgress);
 });

@@ -19,7 +19,7 @@
         <script src='assets/shared/dark.js'></script><!-- to remove no-js -->
     </head>
 
-    <body onClick='closeModal(event)' onKeyPress='closeModal(event)'>
+    <body>
         <div id='wrap'>
             <div id='init'>
     			<nav id='nav'>
@@ -38,11 +38,11 @@
                     }
                 ?>
                 <div id='sort_selection'>
-                    Currently tiering: <select id='sort' onChange='switchSort()'>
+                    Currently tiering: <select id='sort'>
                         <option value='characters'>Characters</option>
                         <option value='works'>Works</option>
                     </select>
-                    Change view: <input id='toggle_view' class='button' type='button' value='Tier List View' onClick='toggleTierView()'>
+                    Change view: <input id='toggle_view' class='button' type='button' value='Tier List View'>
                 </div>
                 <div id='instructions'>
                     <p id='instructions_text'>This page allows you to create your own Touhou character tier list. Usage instructions are listed below.</p>
@@ -66,15 +66,15 @@
                         or add all remaining characters to it.</li>
                     </ul>
                 </div>
-                <p id='toggle'><a href='javascript:toggleInstructions()'>Click here to show the instructions.</a></p>
+                <p id='toggle'><span id='toggle_instructions'>Click here to show the instructions.</span></p>
             </div>
             <div id='tier_list_container'>
                 <table id='tier_list_table'>
                     <thead id='tier_list_thead'>
                         <tr id='add_tier_box_mobile'>
                             <td colspan='2'>
-                                <input id='tier_name_mobile' type='text' value='' onKeyUp='detectAddTierEnter(event)'>
-                                <input id='add_tier_mobile' type='button' value='Add Tier' onClick='addTier($("#tier_name_mobile").val())'>
+                                <input id='tier_name_mobile' type='text' value=''>
+                                <input id='add_tier_mobile' type='button' value='Add Tier'>
                             </td>
                         </tr>
                     </thead>
@@ -82,8 +82,8 @@
                     <tfoot id='tier_list_tfoot'>
                         <tr>
                             <td>
-                                <input id='tier_name' type='text' value='' onKeyUp='detectAddTierEnter(event)'>
-                                <input id='add_tier' type='button' value='Add Tier' onClick='addTier($("#tier_name").val())'>
+                                <input id='tier_name' type='text' value=''>
+                                <input id='add_tier' type='button' value='Add Tier'>
                             </td>
                         </tr>
                     </tfoot>
@@ -102,26 +102,26 @@
                 <a href='https://twitter.com/TheDukeofBooms' target='_blank'>ZXNova</a> for the Dairi face crops.</p>
             </div>
             <div id='menu'>
-                <input type='button' class='button' value='Save Tiers' onClick='saveTiers()'>
-                <input type='button' class='button' value='Import' onClick='importText()'>
-                <input type='button' class='button' value='Export' onClick='exportText()'>
+                <input id='save_button' type='button' class='button' value='Save Tiers'>
+                <input id='import_button' type='button' class='button' value='Import'>
+                <input id='export_button' type='button' class='button' value='Export'>
                 <br id='button_split'>
-                <input type='button' class='button' value='Customise Tiers' onClick='customiseMenu()'>
-                <input type='button' class='button' value='Settings' onClick='settingsMenu()'>
-                <input type='button' class='button' value='Changelog' onClick='changeLog()'>
-                <input type='button' class='button' value='Reset' onClick='eraseAll()'>
+                <input id='customise_button' type='button' class='button' value='Customise Tiers'>
+                <input id='settings_button' type='button' class='button' value='Settings'>
+                <input id='changelog_button' type='button' class='button' value='Changelog'>
+                <input id='reset_button' type='button' class='button' value='Reset'>
             </div>
-            <input id='information_button' class='button' type='button' value='Information' onClick='modalInformation()'>
-            <input id='view_button' class='button' type='button' value='Tier List View' onClick='toggleTierView()'>
+            <input id='information_button' class='button' type='button' value='Information'>
+            <input id='view_button' class='button' type='button' value='Tier List View'>
             <br id='mobile_button_split'>
-            <input id='menu_button' class='button' type='button' value='Menu' onClick='menu()'>
-            <input id='switch_button' class='button' type='button' value='Switch Mode' onClick='switchSort()'>
+            <input id='menu_button' class='button' type='button' value='Menu'>
+            <input id='switch_button' class='button' type='button' value='Switch Mode'>
             <p id='msg_container'></p>
         </div>
         <div id='modal'>
             <div id='modal_inner'></div>
         </div>
-        <div id='characters' onDragOver='allowDrop(event)' onDrop='drop(event)'></div>
+        <div id='characters'></div>
         <?php
             $json = file_get_contents('json/chars.json');
             $chars = json_decode($json, true);

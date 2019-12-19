@@ -814,11 +814,13 @@ function hide(game) {
         $("#" + game + "c").prop("checked", false);
     }
 }
-function checkGame(arg) {
-    if ($("#" + arg + "c").is(":checked")) {
-        show(arg);
+function checkGame() {
+    var checkbox = "#" + this.id, element = this.id.slice(0, -1);
+
+    if ($(checkbox).is(":checked")) {
+        show(element);
     } else {
-        hide(arg);
+        hide(element);
     }
 }
 function checkTracked() {
@@ -859,7 +861,7 @@ function calc() {
         precision = parseInt($("#precision").val());
 
     if (isNaN(precision) || precision < 0 || precision > 5) {
-        $("#error").html("<b style='color:red'>Invalid precision; minimum is 0, maximum is 5.</b>");
+        $("#error").html("<strong class='error'>Invalid precision; minimum is 0, maximum is 5.</strong>");
         return;
     } else {
         $("#error").html("");
@@ -883,8 +885,8 @@ function calc() {
                 }
 
                 if (isNaN(score)) {
-                    $("#error").html("<b style='color:red'>You entered one or more invalid scores. " +
-                    "Please use only digits, dots, commas and spaces.</b>");
+                    $("#error").html("<strong class='error'>You entered one or more invalid scores. " +
+                    "Please use only digits, dots, commas and spaces.</strong>");
                     return;
                 }
 
@@ -933,7 +935,7 @@ function calc() {
     topList += "</tbody></table>";
 
     if (highest === 0) {
-        $("#error").html("<b style='color:red'>You have no significant scores! Try to score some more!</b>");
+        $("#error").html("<strong class='error'>You have no significant scores! Try to score some more!</strong>");
         $("#topList").html("");
         return;
     }
@@ -1028,14 +1030,6 @@ $(document).ready(function () {
         deleteCookie(game);
     }
 
-    if (location.protocol == "file:") {
-        var path = location.pathname.split('/').pop();
-
-        $("#nav a").attr("href", function (i, oldHref) {
-            return (oldHref == '/' ? location.href.replace(path, "index.html") + "" : oldHref + ".html");
-        })
-    }
-
     try {
         loadScores();
         checkShown();
@@ -1049,6 +1043,14 @@ $(document).ready(function () {
     if (navigator.userAgent.contains("Mobile") || navigator.userAgent.contains("Tablet")) {
         $("#notice").css("display", "block");
     }
+
+    $("#toggleData").on("click", allowData);
+    $("#calc").on("click", calc);
+    $("#reset").on("click", reset);
+    $("#tracked").on("click", checkTracked);
+    $("#untracked").on("click", checkUntracked);
+    $("#all").on("click", checkAll);
+    $(".check").on("click", checkGame);
 
     $.get("json/wrlist.json", function (data) {
         WRs = data;

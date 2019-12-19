@@ -256,10 +256,9 @@
 		<script src='assets/wr/wr.js' defer></script>
 		<script src='assets/shared/sorttable.js' defer></script>
         <script src='assets/shared/modernizr-custom.js' defer></script>
-        <script src='assets/shared/dark.js'></script>
 	</head>
 
-	<body onResize='updateOrientation()'>
+	<body>
 		<div id='nav' class='wrap'>
 			<nav>
                 <?php
@@ -316,7 +315,7 @@
 		                </tbody>
 		            </table></td>
 					<td id='bartd' class='noborders'>
-                        <img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
+                        <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
                     </td>
 				</tr>
 			</table>
@@ -379,7 +378,7 @@
             </table>
             <table id='checkboxes'>
                 <tr class='noborders'><td class='noborders'>
-                    <input id='dates' type='checkbox' onClick='toggleDates()'>
+                    <input id='dates' type='checkbox'>
 			        <label id='label_dates' for='dates' class='dates'>Dates</label>
                 </td></tr>
             </table>
@@ -435,7 +434,7 @@
             ?></p>
 			<?php
 			    foreach ($wr as $game => $value) {
-			        echo '<img id="' . $game . '" src="games/' . strtolower($game) . '50x50.jpg" alt="' . $game . ' cover" onClick="display(this.id)">';
+			        echo '<img id="' . $game . '" class="game" src="games/' . strtolower($game) . '50x50.jpg" alt="' . $game . ' cover">';
 			    }
 			?>
 			<noscript><?php
@@ -450,7 +449,7 @@
 			<div id='list'>
 				<p id='fullname'></p>
 				<p id='seasontoggle'>
-					<input id='seasons' type='checkbox' onClick='toggleSeasons()'>
+					<input id='seasons' type='checkbox'>
 					<label id='label_seasons' for='seasons'><?php echo tl_term('Seasons', $lang); ?></label>
 				</p>
 				<table id='table' class='sortable'>
@@ -550,5 +549,6 @@
             <p id='back'><strong><a id='backtotop' href='#nav'><?php echo tl_term('Back to Top', $lang); ?></a></strong></p>
 			<?php echo '<input id="missingReplays" type="hidden" value="' . implode($missing_replays, '') . '">'; ?>
 		</div>
+        <script src='assets/shared/dark.js'></script>
     </body>
 </html>

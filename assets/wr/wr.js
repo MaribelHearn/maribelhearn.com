@@ -16,10 +16,10 @@ function isPortrait() {
 }
 function toggleSeasons() {
     seasonsEnabled = !seasonsEnabled;
-    display("HSiFS", true);
+    display({data: {game: "HSiFS", seasonSwitch: true}});
 }
-function toggleDates(alreadyDisabled) {
-    var i;
+function toggleDates(event) {
+    var alreadyDisabled = event.data.alreadyDisabled, i;
 
     if (!alreadyDisabled) {
         datesEnabled = !datesEnabled;
@@ -37,26 +37,7 @@ function toggleDates(alreadyDisabled) {
     $(".datestring, .datestring_game").css("display", datesEnabled ? "inline" : "none");
 }
 function disableDates() {
-    toggleDates(true);
-}
-function load() {
-    var datestrings, i;
-
-    missingReplays = $("#missingReplays").val();
-
-    if (getCookie("lang") == "Japanese") {
-        language = "Japanese";
-        notation = "YMD";
-    } else if (getCookie("lang") == "Chinese") {
-        language = "Chinese";
-        notation = "YMD";
-    } else if (getCookie("datenotation") == "MDY") {
-        notation = "MDY";
-    }
-
-    if (!datesEnabled) {
-        disableDates();
-    }
+    toggleDates({data: {alreadyDisabled: true}});
 }
 function shotRoute(game) {
     return game == "HRtP" || game == "GFW" ? "Route" : "Shottype";
@@ -184,13 +165,15 @@ function percentageClass(percentage) {
         return "does_even_score_well";
     }
 }
-function display(game, seasonSwitch) {
+function display(event) {
+    var game = event.data.game ? event.data.game : this.id, seasonSwitch = event.data.seasonSwitch;
+
     if (!WRs || !westScores) {
         $.get("json/wrlist.json", function (data1) {
             $.get("json/bestinthewest.json", function (data2) {
                 WRs = data1;
                 westScores = data2;
-                display(game, seasonSwitch);
+                display({data: {game: game, seasonSwitch: seasonSwitch}});
             }, "json");
         }, "json");
         return;
@@ -407,8 +390,9 @@ function updateOrientation() {
     if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) {
         if (selected !== "") {
             var tmp = selected;
-            display(tmp);
-            display(tmp);
+
+            display({data: {game: tmp, seasonSwitch: false}});
+            display({data: {game: tmp, seasonSwitch: false}});
         }
     }
 }
@@ -845,7 +829,9 @@ function generateDates(oldLanguage, oldNotation) {
         }
     }
 }
-function setLanguage(newLanguage, newNotation) {
+function setLanguage(event) {
+    var newLanguage = event.data.language, newNotation = event.data.notation;
+
     if (language == newLanguage && notation == newNotation) {
         return;
     }
@@ -859,13 +845,32 @@ function setLanguage(newLanguage, newNotation) {
     location.href = location.href.split('#')[0].split('?')[0];
 }
 $(document).ready(function () {
-    $(".en-gb").attr("href", "javascript:setLanguage(\"English\", \"DMY\")");
-    $(".en-us").attr("href", "javascript:setLanguage(\"English\", \"MDY\")");
-    $(".jp").attr("href", "javascript:setLanguage(\"Japanese\", \"YMD\")");
-    $(".zh").attr("href", "javascript:setLanguage(\"Chinese\", \"YMD\")");
-
+    var datestrings, i;
+    $("body").on("resize", updateOrientation);
+    $("#dates").on("click", {alreadyDisabled: false}, toggleDates);
+    $("#seasons").on("click", toggleSeasons);
+    $(".en-gb, .en-us, .jp, .zh").attr("href", "");
+    $(".en-gb").on("click", {language: "English", notation: "DMY"}, setLanguage);
+    $(".en-us").on("click", {language: "English", notation: "MDY"}, setLanguage);
+    $(".jp").on("click", {language: "Japanese", notation: "YMD"}, setLanguage);
+    $(".zh").on("click", {language: "Chinese", notation: "YMD"}, setLanguage);
+    $(".game").on("click", {seasonSwitch: false}, display);
     $("#checkboxes").css("display", "table");
     seasonsEnabled = $("#seasons").is(":checked");
     datesEnabled = $("#dates").is(":checked");
-    load();
+    missingReplays = $("#missingReplays").val();
+
+    if (getCookie("lang") == "Japanese" || location.href.contains("jp")) {
+        language = "Japanese";
+        notation = "YMD";
+    } else if (getCookie("lang") == "Chinese" || location.href.contains("zh")) {
+        language = "Chinese";
+        notation = "YMD";
+    } else if (getCookie("datenotation") == "MDY" || location.href.contains("en-us")) {
+        notation = "MDY";
+    }
+
+    if (!datesEnabled) {
+        disableDates();
+    }
 });

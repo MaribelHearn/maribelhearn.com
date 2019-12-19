@@ -20,14 +20,12 @@
 		<link rel='icon' type='image/x-icon' href='../favicon.ico'>
         <script src='../assets/shared/utils.js' defer></script>
         <script src='../assets/shared/modernizr-custom.js' defer></script>
-        <script src='admin.js'></script>
     </head>
 
     <body>
         <div id='wrap'>
             <h1>Admin Panel</h1>
-            <p><input type='button' value='Set Blocking Cookie' onClick='set()'></p>
-            <p id='set' style='display:none'>Blocking cookie set!</p>
+            <p><input id='setcookie' type='button' value='Set Blocking Cookie'></p>
             <?php
                 if ($hitcount === false) {
                     echo '<p>No stats for today yet.</p>';
@@ -41,6 +39,7 @@
             <p><a href='/'>Back to Main Page</a></p>
         </div>
         <?php echo '<input id="token" type="hidden" value=' . file_get_contents('../.stats/token') . '>'; ?>
+        <script src='admin.js'></script>
     </body>
 
 </html>

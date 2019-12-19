@@ -21,13 +21,22 @@ $(document).ready(function () {
         language = "Chinese";
     }
 
+    $("#calculate").on("click", drcPoints);
+    $("#scoringButton").on("click", {challenge: "Scoring"}, showRubrics);
+    $("#survivalButton").on("click", {challenge: "Survival"}, showRubrics);
+    $("#game").on("change", {changePerf: true, changeShots: true}, checkValues);
+    $("#difficulty").on("change", changeDifficulty);
+    $("#challenge").on("change", {changePerf: true, changeShots: false}, checkValues);
+    $("#challenge").on("change", {alwaysChange: false}, checkShottypes);
+    $("#shottype").on("change", {changePerf: false, changeShots: false}, checkValues);
     $("#calculator").css("display", "block");
     $("#scoringButton, #survivalButton").css("display", "inline");
     $("#scoringRubrics, #survivalRubrics").css("display", "none");
-    $(".en").attr("href", "javascript:setLanguage(\"English\")");
-    $(".jp").attr("href", "javascript:setLanguage(\"Japanese\")");
-    $(".zh").attr("href", "javascript:setLanguage(\"Chinese\")");
-    checkValues(true, true, true);
+    $(".en, .jp, .zh").attr("href", "");
+    $(".en").on("click", {language: "English"}, setLanguage);
+    $(".jp").on("click", {language: "Japanese"}, setLanguage);
+    $(".zh").on("click", {language: "Chinese"}, setLanguage);
+    checkValues({data: {changePerf: true, changeShots: true}});
     step = setInterval(updateCountdown, 1000);
     updateCountdown();
 });
@@ -305,8 +314,18 @@ function translate(arg) {
         }[arg]);
     }
 }
-function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
-    var game = $(GAME).val(), difficulty = $(DIFFICULTY).val(), challenge = $(CHALLENGE).val(), shottype = $(SHOTTYPE).val();
+function changeDifficulty() {
+    if ($(GAME).val() == "GFW") {
+        checkShottypes({data: {alwaysChange: true}});
+    }
+
+    if ($(GAME).val() == "IN" || $(GAME).val() == "HSiFS") {
+        checkValues({data: {changePerf: true, changeShots: false}});
+    }
+}
+function checkValues(event) {
+    var changePerformance = event.data.changePerf, changeShottypes = event.data.changeShots,
+        game = $(GAME).val(), difficulty = $(DIFFICULTY).val(), challenge = $(CHALLENGE).val(), shottype = $(SHOTTYPE).val();
 
     if (challenge == "Survival") {
         var notifyText = "<b id='impNot'>" + translate("Important Notice:") + "</b> ";
@@ -404,10 +423,10 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
         } else {
             if (game == "DS") {
                 $(PERFORMANCE).html("<label for='scene'>Scene</label><select id='scene'><option>2-5</option><option>5" +
-                        "-3</option><option>7-3</option><option>8-1</option><option>8-5</option><option>1" +
-                        "1-8</option></select><br>" + SCORE_OPTIONS)
+                "-3</option><option>7-3</option><option>8-1</option><option>8-5</option><option>1" +
+                "1-8</option></select><br>" + SCORE_OPTIONS);
             } else {
-                $(PERFORMANCE).html(SCORE_OPTIONS)
+                $(PERFORMANCE).html(SCORE_OPTIONS);
             }
 
             $(SCORE_LABEL).html(translate("Score"));
@@ -415,15 +434,17 @@ function checkValues(changePerformance, changeShottypes, doubleSpoilerCheck) {
         }
     }
     if (changeShottypes) {
-        checkShottypes(true);
+        checkShottypes({data: {alwaysChange: true}});
     }
 }
-function checkShottypes(alwaysChange) {
-    var shots = JSON.parse($("#shots").val()), game = $(GAME).val(), challenge = $(CHALLENGE).val(),
-        difficulty = $(DIFFICULTY).val(), shottypes = shots[game], shottypeList = "", shottype, i;
+function checkShottypes(event) {
+    var alwaysChange = event.data.alwaysChange, shots = JSON.parse($("#shots").val()), game = $(GAME).val(),
+        challenge = $(CHALLENGE).val(), difficulty = $(DIFFICULTY).val(), shottypes = shots[game], shottypeList = "", shottype, i;
 
     if (game == "HSiFS") {
         shottypes = ["Reimu", "Cirno", "Aya", "Marisa"];
+    } else if (game == "DS") {
+        shottypes = ["Aya", "Hatate"];
     }
 
     for (i = 0; i < shottypes.length; i += 1) {
@@ -466,8 +487,8 @@ function drcPoints() {
 
     if (challenge == "Survival") {
         if (!Rubrics.SURV[game]) {
-            $(ERROR).html("<strong style='color:red'>" + translate("Error: ") + translate("the survival rubrics for this game are undetermined as of now.") + "</strong>");
-            $(DRCPOINTS).html(translate("Your DRC points for this run: ") + " <strong>0</strong>!");
+            $(ERROR).html("<strong class='error'>" + translate("Error: ") + translate("the survival rubrics for this game are undetermined as of now.") + "</strong>");
+            $(DRCPOINTS).html("");
             return;
         } else {
             $(ERROR).html("");
@@ -485,7 +506,7 @@ function drcPoints() {
         points = (isPhantasmagoria(game) ? phantasmagoria(rubric, game, difficulty, shottypeMultiplier) : survivalPoints(rubric, game, difficulty, shottypeMultiplier));
     } else {
         if (!(game == "MoF" && (difficulty == "Easy" || difficulty == "Lunatic" || difficulty == "Extra")) && game != "DS" && !Rubrics.SCORE[game]) {
-            $(ERROR).html("<strong style='color:red'>" + translate("Error: ") + translate("the scoring rubrics for this game are undetermined as of now.") + "</strong>");
+            $(ERROR).html("<strong class='error'>" + translate("Error: ") + translate("the scoring rubrics for this game are undetermined as of now.") + "</strong>");
             $(DRCPOINTS).html(translate("Your DRC points for this run: ") + " <strong>0</strong>!");
             return
         } else {
@@ -516,11 +537,11 @@ function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
 
     if (roundsLost > rubric.lives) {
         if (language == "English") {
-            $(ERROR).html("<strong style='color:red'>Error: the number of rounds lost cannot exceed " + rubric.lives + "</strong>");
+            $(ERROR).html("<strong class='error'>Error: the number of rounds lost cannot exceed " + rubric.lives + "</strong>");
         } else if (language == "Japanese") {
-            $(ERROR).html("<strong style='color:red'>エラー: 敗北数が" + rubric.lives + "を超えてはいけません。</strong>");
+            $(ERROR).html("<strong class='error'>エラー: 敗北数が" + rubric.lives + "を超えてはいけません。</strong>");
         } else {
-            $(ERROR).html("<strong style='color:red'>错误：败北数不能超过" + rubric.lives + "。</strong>");
+            $(ERROR).html("<strong class='error'>错误：败北数不能超过" + rubric.lives + "。</strong>");
         }
         return 0;
     } else {
@@ -586,13 +607,13 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
 
             if (lastSpells > Rubrics.MAX_LAST_SPELLS[difficulty][route]) {
                 if (language == "English") {
-                    $(ERROR).html("<strong style='color:red'>Error: the number of Last Spells captured in a " + route +
+                    $(ERROR).html("<strong class='error'>Error: the number of Last Spells captured in a " + route +
                     " clear on " + difficulty + " cannot exceed " + Rubrics.MAX_LAST_SPELLS[difficulty][route] + "</strong>");
                 } else if (language == "Japanese") {
-                    $(ERROR).html("<strong style='color:red'>エラー: ラストスペルが" + Rubrics.MAX_LAST_SPELLS[difficulty][route] +
+                    $(ERROR).html("<strong class='error'>エラー: ラストスペルが" + Rubrics.MAX_LAST_SPELLS[difficulty][route] +
                     "を超えてはいけません。</strong>");
                 } else {
-                    $(ERROR).html("<strong style='color:red'>错误：" + route + "路线" + difficulty +
+                    $(ERROR).html("<strong class='error'>错误：" + route + "路线" + difficulty +
                     "难度中的LSC收取数不能超过" + Rubrics.MAX_LAST_SPELLS[difficulty][route] + "。");
                 }
                 return 0;
@@ -613,10 +634,10 @@ function mofFormula(difficulty, shottype) {
         drcpoints = 0, originalScore = score, thresholds, increment, step, i;
 
     if (difficulty != "Easy" && difficulty != "Lunatic" && difficulty != "Extra") {
-        $(ERROR).html("<strong style='color:red'>" + translate("Error: ") + translate("the scoring rubrics for this difficulty are undetermined as of now.") + "</strong>");
+        $(ERROR).html("<strong class='error'>" + translate("Error: ") + translate("the scoring rubrics for this difficulty are undetermined as of now.") + "</strong>");
         return drcpoints;
     } else if (difficulty == "Lunatic" && shottype != "ReimuB" && shottype != "MarisaC" || difficulty == "Extra" && shottype != "ReimuB") {
-        $(ERROR).html("<strong style='color:red'>" + translate("Error: ") + translate("the scoring rubrics for this shottype are undetermined as of now.") + "</strong>");
+        $(ERROR).html("<strong class='error'>" + translate("Error: ") + translate("the scoring rubrics for this shottype are undetermined as of now.") + "</strong>");
         return drcpoints;
     }
 
@@ -690,7 +711,7 @@ function scoringPoints(rubric, game, difficulty, shottype) {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), wr, wrshottype, exp;
 
     if (isNaN(score)) {
-        $(ERROR).html("<strong style='color:red'>" + translate("Error: ") + translate("invalid score.") + "</strong>");
+        $(ERROR).html("<strong class='error'>" + translate("Error: ") + translate("invalid score.") + "</strong>");
         return 0;
     } else {
         $(ERROR).html("");
@@ -711,17 +732,21 @@ function scoringPoints(rubric, game, difficulty, shottype) {
 
     return (score >= wr ? rubric.base : Math.round(rubric.base * Math.pow((score / wr), exp)));
 }
-function showRubrics(challenge) {
+function showRubrics(event) {
+    challenge = event.data.challenge;
     $(challenge == "Survival" ? SURV_RUBRICS : SCORE_RUBRICS).css("display", "block");
-    $(challenge == "Survival" ? SURV_BUTTON : SCORE_BUTTON).attr("onClick", "hideRubrics('" + challenge + "')");
+    $(challenge == "Survival" ? SURV_BUTTON : SCORE_BUTTON).on("click", {challenge: challenge}, hideRubrics);
     $(challenge == "Survival" ? SURV_BUTTON : SCORE_BUTTON).val(translate("Hide " + challenge + " Rubrics"));
 }
-function hideRubrics(challenge) {
+function hideRubrics(event) {
+    challenge = event.data.challenge;
     $(challenge == "Survival" ? SURV_RUBRICS : SCORE_RUBRICS).css("display", "none");
-    $(challenge == "Survival" ? SURV_BUTTON : SCORE_BUTTON).attr("onClick", "showRubrics('" + challenge + "')");
+    $(challenge == "Survival" ? SURV_BUTTON : SCORE_BUTTON).on("click", {challenge: challenge}, showRubrics);
     $(challenge == "Survival" ? SURV_BUTTON : SCORE_BUTTON).val(translate("Show " + challenge + " Rubrics"));
 }
-function setLanguage(newLanguage) {
+function setLanguage(event) {
+    newLanguage = event.data.language;
+
     if (language == newLanguage) {
         return;
     }

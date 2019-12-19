@@ -14,7 +14,6 @@
         <!-- <script src='assets/thvote/thvote.js'></script> at bottom -->
         <script src='assets/shared/sorttable.js' defer></script>
         <script src='assets/shared/modernizr-custom.js' defer></script>
-        <script src='assets/shared/dark.js'></script>
     </head>
 
     <body>
@@ -30,7 +29,7 @@
 			</nav>
 		</div>
         <div id='wrap' class='wrap'>
-            <img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
+            <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
             <h1>THWiki Popularity Poll 2019 Full Results</h1>
             <?php
                 if (!empty($_GET['redirect'])) {
@@ -914,7 +913,7 @@
             <h1 id='Questionnaire'>Questionnaire</h1>
 <h2>01. Age</h2>
 <div id='age_summary'>
-<p>Valid responses: 10,163　<input type='button' onclick='toggle(true)' value='Detailed view'></p>
+<p>Valid responses: 10,163　<input type='button' value='Detailed view'></p>
 <table class='poll sortable'>
     <colgroup>
         <col class='col2 w8'>
@@ -936,7 +935,7 @@
 </tbody></table>
 </div>
 <div id='age_detail'>
-<p>Valid responses: 10,163　<input type='button' onclick='toggle(true)' value='Simple view'></p>
+<p>Valid responses: 10,163　<input type='button' value='Simple view'></p>
 <table class='poll sortable'>
     <colgroup>
         <col class='col2 w8'>
@@ -1045,7 +1044,7 @@
 </div>
 <h2>02. Gender</h2>
 <p>Valid responses: 10,337</p>
-<table class='result'>
+<table class='poll result'>
     <colgroup>
         <col class='col2 w6'>
         <col class='col3q'>
@@ -1089,7 +1088,7 @@
 <h2>04. Difficulty level 1cc'd</h2>
 <div id='clear_dummy' class='dummy'><div class='dummy_sub'></div></div>
 <div id='clear_container'>
-    <table id='clear_table' class='result'>
+    <table id='clear_table' class='poll result'>
         <colgroup>
             <col class='col2 w7'>
             <col class='col3q'>
@@ -1143,7 +1142,7 @@
 <h2>05. Publications subscribed to</h2>
 <h3>Wild and Horned Hermit</h3>
 <p>Valid responses: 8,667</p>
-<table class='result'>
+<table class='poll result'>
     <colgroup>
         <col class='col2q'>
         <col class='col3q'>
@@ -1155,7 +1154,7 @@
 </tbody></table>
 <h3>Touhou Sangetsusei</h3>
 <p>Valid responses: 8,421</p>
-<table class='result'>
+<table class='poll result'>
     <colgroup>
         <col class='col2q'>
         <col class='col3q'>
@@ -1167,7 +1166,7 @@
 </tbody></table>
 <h3>Strange Creators of Outer World</h3>
 <p>Valid responses: 8,253</p>
-<table class='result'>
+<table class='poll result'>
     <colgroup>
         <col class='col2q'>
         <col class='col3q'>
@@ -1914,5 +1913,6 @@
             <p id='back'><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
         </div>
         <script src='assets/thvote/thvote.js'></script>
+        <script src='assets/shared/dark.js'></script>
     </body>
 </html>

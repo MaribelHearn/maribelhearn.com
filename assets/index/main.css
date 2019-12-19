@@ -51,6 +51,10 @@ td {
 #privacy {
     float: left;
 }
+#admin {
+    float: left;
+    margin-top: 20px;
+}
 #hy {
     float: right;
 }
