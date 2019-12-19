@@ -145,7 +145,7 @@ function reloadTiers() {
                 }
 
                 if (isMobile()) {
-                    $("#" + item).off("onClick");
+                    $("#" + item).off("click");
                 }
 
                 $("#" + item).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
@@ -356,27 +356,45 @@ function changeToTier(character, tierNum) {
         }
     }
 }
+function modalRemove(event) {
+    removeFromTier(event.data.character, event.data.tierNum);
+    emptyModal();
+}
+function modalUp(event) {
+    var above = tierOrder[tierOrder.indexOf(tierNum) - 1];
+
+    changeToTier(event.data.character, above);
+    emptyModal();
+}
+function modalDown(event) {
+    var below = tierOrder[tierOrder.indexOf(event.data.tierNum) + 1];
+
+    changeToTier(event.data.character, below);
+    emptyModal();
+}
+function modalBack(event) {
+    moveToBack(event.data.character, event.data.tierNum);
+    emptyModal();
+}
 function modalChar(character, tierNum) {
     var tierOrder = (settings.sort == "characters" ? order : gameOrder), above, below;
 
     emptyModal();
-    $("#modal_inner").html("<h3>" + character + "</h3><input class='mobile_button' type='button' value='Remove' onClick='removeFromTier(\"" + character +
-    "\", " + tierNum + "); emptyModal()'>");
+    $("#modal_inner").html("<h3>" + character + "</h3><input id='remove_button' class='mobile_button' type='button' value='Remove'>");
+    $("#remove_button").on("click", {character: character, tierNum: tierNum}, modalRemove); // event
 
     if (tierOrder.indexOf(tierNum) !== 0) {
-        above = tierOrder[tierOrder.indexOf(tierNum) - 1];
-        $("#modal_inner").append("<input class='mobile_button' type='button' value='Move Up' onClick='changeToTier(\"" + character +
-        "\", " + above + "); emptyModal()'>");
+        $("#modal_inner").append("<input id='up_button' class='mobile_button' type='button' value='Move Up'>");
+        $("#up_button").on("click", {character: character, tierNum: tierNum}, modalUp);
     }
 
     if (tierOrder.indexOf(tierNum) != order.length - 1) {
-        below = tierOrder[tierOrder.indexOf(tierNum) + 1];
-        $("#modal_inner").append("<input class='mobile_button' type='button' value='Move Down' onClick='changeToTier(\"" + character +
-        "\", " + below + "); emptyModal()'>");
+        $("#modal_inner").append("<input id='down_button' class='mobile_button' type='button' value='Move Down'>");
+        $("#down_button").on("click", {character: character, tierNum: tierNum}, modalDown);
     }
 
-    $("#modal_inner").append("<input class='mobile_button' type='button' value='Move to Back' onClick='moveToBack(\"" + character +
-    "\", " + tierNum + "); emptyModal()'>");
+    $("#modal_inner").append("<input id='back_button' class='mobile_button' type='button' value='Move to Back'>");
+    $("#back_button").on("click", {character: character, tierNum: tierNum}, modalBack);
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
 }
@@ -611,14 +629,29 @@ function emptyTier(tierNum) {
         removeCharacters(tierNum);
     }
 }
+function modalRemoveTier(event) {
+     removeTier(event.data.tierNum);
+     emptyModal();
+}
+function modalQuickadd(event) {
+     quickAdd(tierNum);
+     emptyModal();
+}
+function modalRemoveAll(event) {
+    emptyTier(tierNum);
+    emptyModal();
+}
 function modalTier(tierNum) {
     var tierList = (settings.sort == "characters" ? tiers : gameTiers);
 
     emptyModal();
     $("#modal_inner").html("<h3>" + tierList[tierNum].name + "</h3>");
-    $("#modal_inner").append("<p><input type='button' class='tier_button' value='Remove' onClick='removeTier(" + tierNum + "); emptyModal()'></p>");
-    $("#modal_inner").append("<p><input type='button' class='tier_button' value='Add All Characters' onClick='quickAdd(" + tierNum + "); emptyModal()'></p>");
-    $("#modal_inner").append("<p><input type='button' class='tier_button' value='Remove All Characters' onClick='emptyTier(" + tierNum + "); emptyModal()'></p>");
+    $("#modal_inner").append("<p><input id='remove_tier_button' type='button' class='tier_button' value='Remove'></p>");
+    $("#remove_tier_button").on("click", {tierNum: tierNum}, modalRemoveTier);
+    $("#modal_inner").append("<p><input id='quickadd_button' type='button' class='tier_button' value='Add All Characters'></p>");
+    $("#quickadd_button").on("click", {tierNum: tierNum}, modalQuickadd);
+    $("#modal_inner").append("<p><input id='removeall_button' type='button' class='tier_button' value='Remove All Characters'></p>");
+    $("#removeall_button").on("click", {tierNum: tierNum}, modalRemoveAll);
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
 }
@@ -696,7 +729,8 @@ function saveSettingsPre() {
         emptyModal();
         $("#modal_inner").html("<h3>Save Settings</h3><p>This will store data in your browser's Web Storage, " +
         "which functions like a cookie. Do you allow this?</p>");
-        $("#modal_inner").append("<input class='mobile_button' type='button' value='Yes' onClick='saveSettingsData()'>");
+        $("#modal_inner").append("<input id='save_settings_pre' class='mobile_button' type='button' value='Yes'>");
+        $("#save_settings_pre").on("click", saveSettingsData);
         $("#modal_inner").append("<input id='empty_modal' class='mobile_button' type='button' value='No'>");
         $("#empty_modal").on("click", emptyModal);
         $("#modal_inner").css("display", "block");
@@ -836,7 +870,7 @@ function exportText() {
 
     emptyModal();
     $("#modal_inner").html("<h2>Export to Text</h2><p id='text'></p>");
-    $("#modal_inner").append("<p><id='copy_to_clipboard' input type='button' value='Copy to Clipboard'></p>");
+    $("#modal_inner").append("<p><input id='copy_to_clipboard' type='button' value='Copy to Clipboard'></p>");
     $("#copy_to_clipboard").on("click", copyToClipboard);
 
     for (i = 0; i < tierOrder.length; i += 1) {
@@ -1235,15 +1269,18 @@ function eraseAllConfirmed() {
     $("#msg_container").html("<strong class='confirmation'>Reset the tier list and settings to their default states!</strong>");
     window.onbeforeunload = undefined;
 }
+function modalEraseAll() {
+    eraseAllConfirmed();
+    emptyModal();
+}
 function eraseAll() {
     var confirmation;
 
     if (isMobile()) {
         emptyModal();
-        $("#modal_inner").html("<h3>Reset</h3><p>Are you sure you want to reset your tier list and settings to t" +
-                "he defaults?</p>");
-        $("#modal_inner").append("<input type='button' value='Yes' onClick='eraseAllConfirmed(); emptyModal()' sty" +
-                "le='margin: 10px'>");
+        $("#modal_inner").html("<h3>Reset</h3><p>Are you sure you want to reset your tier list and settings to the defaults?</p>");
+        $("#modal_inner").append("<input id='erase_all_button' type='button' value='Yes'>");
+        $("#erase_all_button").on("click", modalEraseAll);
         $("#modal_inner").append("<input id='empty_modal' class='mobile_button' type='button' value='No'>");
         $("#empty_modal").on("click", emptyModal);
         $("#modal_inner").css("display", "block");

@@ -178,6 +178,9 @@ input[type=number] {
      height: 25px;
      margin: 10px;
 }
+#erase_all_button {
+    margin: 10px;
+}
 @media screen and (max-width: 1100px) and (max-height: 800px) {
     .no-js body, .no-webp body, .webp body {
         background: #1b232e;
