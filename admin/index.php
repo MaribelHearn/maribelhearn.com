@@ -24,6 +24,7 @@
 
     <body>
         <div id='wrap'>
+            <img id='hy' src='../assets/shared/h-bar.png' title='Human Mode'>
             <h1>Admin Panel</h1>
             <p><input id='setcookie' type='button' value='Set Blocking Cookie'></p>
             <?php
