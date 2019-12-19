@@ -16,7 +16,6 @@
 		<script src='assets/survival/survival.js' defer></script>
         <script src='assets/shared/sorttable.js' defer></script>
         <script src='assets/shared/modernizr-custom.js' defer></script>
-        <script src='assets/shared/dark.js'></script>
 	</head>
 
 	<body>
@@ -32,7 +31,7 @@
 			</nav>
 		</div>
 		<div id='wrap' class='wrap'>
-			<img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
+			<img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
 			<h1>Survival Progress Table Generator</h1>
 			<?php
 				if (!empty($_GET['redirect'])) {
@@ -88,7 +87,7 @@
                     <option>NMNB</option>
                 </select>
                 <br>
-                <input type='button' onClick='javascript:fillAll($("#fillGameDifficulty").val(), $("#fillAchievement").val())' value='Fill All'>
+                <input id='fillAll' type='button' value='Fill All'>
             </p>
 			<div id='dummy'><div id='dummy_sub'></div></div>
 			<div id='container'>
@@ -105,7 +104,7 @@
 	                <tr>
 	                    <td>HRtP</td>
 	                    <td>
-	                        <select id='HRtPEasy' onChange='setProgress(this.id, this.value)'>
+	                        <select id='HRtPEasy' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -115,7 +114,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='HRtPNormal' onChange='setProgress(this.id, this.value)'>
+	                        <select id='HRtPNormal' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -125,7 +124,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='HRtPHard' onChange='setProgress(this.id, this.value)'>
+	                        <select id='HRtPHard' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -135,7 +134,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='HRtPLunatic' onChange='setProgress(this.id, this.value)'>
+	                        <select id='HRtPLunatic' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -150,7 +149,7 @@
 	                <tr>
 	                    <td>SoEW</td>
 	                    <td>
-	                        <select id='SoEWEasy' onChange='setProgress(this.id, this.value)'>
+	                        <select id='SoEWEasy' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -160,7 +159,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='SoEWNormal' onChange='setProgress(this.id, this.value)'>
+	                        <select id='SoEWNormal' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -170,7 +169,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='SoEWHard' onChange='setProgress(this.id, this.value)'>
+	                        <select id='SoEWHard' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -180,7 +179,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='SoEWLunatic' onChange='setProgress(this.id, this.value)'>
+	                        <select id='SoEWLunatic' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -190,7 +189,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='SoEWExtra' onChange='setProgress(this.id, this.value)'>
+	                        <select id='SoEWExtra' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -204,7 +203,7 @@
 	                <tr>
 	                    <td>PoDD</td>
 	                    <td>
-	                        <select id='PoDDEasy' onChange='setProgress(this.id, this.value)'>
+	                        <select id='PoDDEasy' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -214,7 +213,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='PoDDNormal' onChange='setProgress(this.id, this.value)'>
+	                        <select id='PoDDNormal' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -224,7 +223,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='PoDDHard' onChange='setProgress(this.id, this.value)'>
+	                        <select id='PoDDHard' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -234,7 +233,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='PoDDLunatic' onChange='setProgress(this.id, this.value)'>
+	                        <select id='PoDDLunatic' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -249,7 +248,7 @@
 	                <tr>
 	                    <td>LLS</td>
 	                    <td>
-	                        <select id='LLSEasy' onChange='setProgress(this.id, this.value)'>
+	                        <select id='LLSEasy' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -259,7 +258,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='LLSNormal' onChange='setProgress(this.id, this.value)'>
+	                        <select id='LLSNormal' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -269,7 +268,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='LLSHard' onChange='setProgress(this.id, this.value)'>
+	                        <select id='LLSHard' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -279,7 +278,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='LLSLunatic' onChange='setProgress(this.id, this.value)'>
+	                        <select id='LLSLunatic' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -289,7 +288,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='LLSExtra' onChange='setProgress(this.id, this.value)'>
+	                        <select id='LLSExtra' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -303,7 +302,7 @@
 	                <tr>
 	                    <td>MS</td>
 	                    <td>
-	                        <select id='MSEasy' onChange='setProgress(this.id, this.value)'>
+	                        <select id='MSEasy' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -313,7 +312,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='MSNormal' onChange='setProgress(this.id, this.value)'>
+	                        <select id='MSNormal' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -323,7 +322,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='MSHard' onChange='setProgress(this.id, this.value)'>
+	                        <select id='MSHard' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -333,7 +332,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='MSLunatic' onChange='setProgress(this.id, this.value)'>
+	                        <select id='MSLunatic' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -343,7 +342,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='MSExtra' onChange='setProgress(this.id, this.value)'>
+	                        <select id='MSExtra' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -357,7 +356,7 @@
 	                <tr>
 	                    <td>EoSD</td>
 	                    <td>
-	                        <select id='EoSDEasy' onChange='setProgress(this.id, this.value)'>
+	                        <select id='EoSDEasy' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -367,7 +366,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='EoSDNormal' onChange='setProgress(this.id, this.value)'>
+	                        <select id='EoSDNormal' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -377,7 +376,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='EoSDHard' onChange='setProgress(this.id, this.value)'>
+	                        <select id='EoSDHard' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -387,7 +386,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='EoSDLunatic' onChange='setProgress(this.id, this.value)'>
+	                        <select id='EoSDLunatic' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -397,7 +396,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='EoSDExtra' onChange='setProgress(this.id, this.value)'>
+	                        <select id='EoSDExtra' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -411,7 +410,7 @@
 	                <tr>
 	                    <td>PCB</td>
 	                    <td>
-	                        <select id='PCBEasy' onChange='setProgress(this.id, this.value)'>
+	                        <select id='PCBEasy' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -422,7 +421,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='PCBNormal' onChange='setProgress(this.id, this.value)'>
+	                        <select id='PCBNormal' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -433,7 +432,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='PCBHard' onChange='setProgress(this.id, this.value)'>
+	                        <select id='PCBHard' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -444,7 +443,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='PCBLunatic' onChange='setProgress(this.id, this.value)'>
+	                        <select id='PCBLunatic' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -455,7 +454,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='PCBExtra' onChange='setProgress(this.id, this.value)'>
+	                        <select id='PCBExtra' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -466,7 +465,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='PCBPhantasm' onChange='setProgress(this.id, this.value)'>
+	                        <select id='PCBPhantasm' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -480,7 +479,7 @@
 	                <tr>
 	                    <td>IN</td>
 	                    <td>
-	                        <select id='INEasy' onChange='setProgress(this.id, this.value)'>
+	                        <select id='INEasy' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -490,7 +489,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='INNormal' onChange='setProgress(this.id, this.value)'>
+	                        <select id='INNormal' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -500,7 +499,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='INHard' onChange='setProgress(this.id, this.value)'>
+	                        <select id='INHard' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -510,7 +509,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='INLunatic' onChange='setProgress(this.id, this.value)'>
+	                        <select id='INLunatic' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -520,7 +519,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='INExtra' onChange='setProgress(this.id, this.value)'>
+	                        <select id='INExtra' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -534,7 +533,7 @@
 	                <tr>
 	                    <td>PoFV</td>
 	                    <td>
-	                        <select id='PoFVEasy' onChange='setProgress(this.id, this.value)'>
+	                        <select id='PoFVEasy' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -544,7 +543,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='PoFVNormal' onChange='setProgress(this.id, this.value)'>
+	                        <select id='PoFVNormal' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -554,7 +553,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='PoFVHard' onChange='setProgress(this.id, this.value)'>
+	                        <select id='PoFVHard' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -564,7 +563,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='PoFVLunatic' onChange='setProgress(this.id, this.value)'>
+	                        <select id='PoFVLunatic' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -574,7 +573,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='PoFVExtra' onChange='setProgress(this.id, this.value)'>
+	                        <select id='PoFVExtra' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -588,7 +587,7 @@
 	                <tr>
 	                    <td>MoF</td>
 	                    <td>
-	                        <select id='MoFEasy' onChange='setProgress(this.id, this.value)'>
+	                        <select id='MoFEasy' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -598,7 +597,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='MoFNormal' onChange='setProgress(this.id, this.value)'>
+	                        <select id='MoFNormal' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -608,7 +607,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='MoFHard' onChange='setProgress(this.id, this.value)'>
+	                        <select id='MoFHard' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -618,7 +617,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='MoFLunatic' onChange='setProgress(this.id, this.value)'>
+	                        <select id='MoFLunatic' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -628,7 +627,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='MoFExtra' onChange='setProgress(this.id, this.value)'>
+	                        <select id='MoFExtra' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -642,7 +641,7 @@
 	                <tr>
 	                    <td>SA</td>
 	                    <td>
-	                        <select id='SAEasy' onChange='setProgress(this.id, this.value)'>
+	                        <select id='SAEasy' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -652,7 +651,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='SANormal' onChange='setProgress(this.id, this.value)'>
+	                        <select id='SANormal' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -662,7 +661,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='SAHard' onChange='setProgress(this.id, this.value)'>
+	                        <select id='SAHard' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -672,7 +671,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='SALunatic' onChange='setProgress(this.id, this.value)'>
+	                        <select id='SALunatic' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -682,7 +681,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='SAExtra' onChange='setProgress(this.id, this.value)'>
+	                        <select id='SAExtra' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -696,7 +695,7 @@
 	                <tr>
 	                    <td>UFO</td>
 	                    <td>
-	                        <select id='UFOEasy' onChange='setProgress(this.id, this.value)'>
+	                        <select id='UFOEasy' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -707,7 +706,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='UFONormal' onChange='setProgress(this.id, this.value)'>
+	                        <select id='UFONormal' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -718,7 +717,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='UFOHard' onChange='setProgress(this.id, this.value)'>
+	                        <select id='UFOHard' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -729,7 +728,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='UFOLunatic' onChange='setProgress(this.id, this.value)'>
+	                        <select id='UFOLunatic' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -740,7 +739,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='UFOExtra' onChange='setProgress(this.id, this.value)'>
+	                        <select id='UFOExtra' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -755,7 +754,7 @@
 	                <tr>
 	                    <td>GFW</td>
 	                    <td>
-	                        <select id='GFWEasy' onChange='setProgress(this.id, this.value)'>
+	                        <select id='GFWEasy' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -765,7 +764,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='GFWNormal' onChange='setProgress(this.id, this.value)'>
+	                        <select id='GFWNormal' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -775,7 +774,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='GFWHard' onChange='setProgress(this.id, this.value)'>
+	                        <select id='GFWHard' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -785,7 +784,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='GFWLunatic' onChange='setProgress(this.id, this.value)'>
+	                        <select id='GFWLunatic' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -795,7 +794,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='GFWExtra' onChange='setProgress(this.id, this.value)'>
+	                        <select id='GFWExtra' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -809,7 +808,7 @@
 	                <tr>
 	                    <td>TD</td>
 	                    <td>
-	                        <select id='TDEasy' onChange='setProgress(this.id, this.value)'>
+	                        <select id='TDEasy' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -820,7 +819,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='TDNormal' onChange='setProgress(this.id, this.value)'>
+	                        <select id='TDNormal' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -831,7 +830,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='TDHard' onChange='setProgress(this.id, this.value)'>
+	                        <select id='TDHard' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -842,7 +841,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='TDLunatic' onChange='setProgress(this.id, this.value)'>
+	                        <select id='TDLunatic' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -853,7 +852,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='TDExtra' onChange='setProgress(this.id, this.value)'>
+	                        <select id='TDExtra' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -868,7 +867,7 @@
 	                <tr>
 	                    <td>DDC</td>
 	                    <td>
-	                        <select id='DDCEasy' onChange='setProgress(this.id, this.value)'>
+	                        <select id='DDCEasy' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -878,7 +877,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='DDCNormal' onChange='setProgress(this.id, this.value)'>
+	                        <select id='DDCNormal' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -888,7 +887,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='DDCHard' onChange='setProgress(this.id, this.value)'>
+	                        <select id='DDCHard' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -898,7 +897,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='DDCLunatic' onChange='setProgress(this.id, this.value)'>
+	                        <select id='DDCLunatic' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -908,7 +907,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='DDCExtra' onChange='setProgress(this.id, this.value)'>
+	                        <select id='DDCExtra' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -922,7 +921,7 @@
 	                <tr>
 	                    <td>LoLK</td>
 	                    <td>
-	                        <select id='LoLKEasy' onChange='setProgress(this.id, this.value)'>
+	                        <select id='LoLKEasy' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -932,7 +931,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='LoLKNormal' onChange='setProgress(this.id, this.value)'>
+	                        <select id='LoLKNormal' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -942,7 +941,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='LoLKHard' onChange='setProgress(this.id, this.value)'>
+	                        <select id='LoLKHard' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -952,7 +951,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='LoLKLunatic' onChange='setProgress(this.id, this.value)'>
+	                        <select id='LoLKLunatic' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -962,7 +961,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='LoLKExtra' onChange='setProgress(this.id, this.value)'>
+	                        <select id='LoLKExtra' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -976,7 +975,7 @@
 	                <tr>
 	                    <td>HSiFS</td>
 	                    <td>
-	                        <select id='HSiFSEasy' onChange='setProgress(this.id, this.value)'>
+	                        <select id='HSiFSEasy' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -987,7 +986,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='HSiFSNormal' onChange='setProgress(this.id, this.value)'>
+	                        <select id='HSiFSNormal' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -998,7 +997,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='HSiFSHard' onChange='setProgress(this.id, this.value)'>
+	                        <select id='HSiFSHard' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -1009,7 +1008,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='HSiFSLunatic' onChange='setProgress(this.id, this.value)'>
+	                        <select id='HSiFSLunatic' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -1020,7 +1019,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='HSiFSExtra' onChange='setProgress(this.id, this.value)'>
+	                        <select id='HSiFSExtra' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -1035,7 +1034,7 @@
 	                <tr>
 	                    <td>WBaWC</td>
 	                    <td>
-	                        <select id='WBaWCEasy' onChange='setProgress(this.id, this.value)'>
+	                        <select id='WBaWCEasy' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -1046,7 +1045,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='WBaWCNormal' onChange='setProgress(this.id, this.value)'>
+	                        <select id='WBaWCNormal' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -1057,7 +1056,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='WBaWCHard' onChange='setProgress(this.id, this.value)'>
+	                        <select id='WBaWCHard' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -1068,7 +1067,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='WBaWCLunatic' onChange='setProgress(this.id, this.value)'>
+	                        <select id='WBaWCLunatic' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -1079,7 +1078,7 @@
 	                        </select>
 	                    </td>
 	                    <td>
-	                        <select id='WBaWCExtra' onChange='setProgress(this.id, this.value)'>
+	                        <select id='WBaWCExtra' class='category'>
 	                            <option>N/A</option>
 	                            <option>Not cleared</option>
 	                            <option>1cc</option>
@@ -1094,13 +1093,14 @@
 	            </table>
 			</div>
             <br>
-            <p><label for='toggleData'>Save Data</label><input id='toggleData' type='checkbox' onClick='allowData()'></p>
-			<p><input type='button' onClick='apply()' value='Apply'><input type='button' onClick='reset()' value='Reset'></p>
+            <p><label for='toggleData'>Save Data</label><input id='toggleData' type='checkbox'></p>
+			<p><input id='apply' type='button' value='Apply'><input id='reset' type='button' value='Reset'></p>
 			<div id='results'></div>
 			<h2 id='ack'>Acknowledgements</h2>
 			<p id='credit'>The background image
 			was drawn by <a href='https://www.pixiv.net/member.php?id=759506'>windtalker</a>.</p>
 		</div>
+        <script src='assets/shared/dark.js'></script>
 	</body>
 
 </html>

@@ -12,13 +12,12 @@
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='favicon.ico'>
         <script src='assets/shared/modernizr-custom.js' defer></script>
-        <script src='assets/shared/dark.js'></script>
     </head>
 
     <body>
         <div id='wrap'>
             <a id='privacy' href='privacy'>Privacy Policy</a>
-            <img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
+            <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
             <h1>Maribel Hearn's Web Portal</h1>
             <p class='thin'>A collection of convenience webpages for the Touhou community.</p>
             <h2>Page Links</h2>
@@ -152,12 +151,20 @@
             <table class='center'>
                 <tr>
                     <td><table class='sub'>
-                        <tr><td><a href='history'><img src='assets/history/history.ico' alt='Maribel icon'> Shmup Achievement History</a></td></tr>
-                        <tr><td><em>Documentation of my history as a shmup player.</em></td></tr>
+                        <tr>
+                            <td><a href='history'><img src='assets/history/history.ico' alt='Maribel icon'> Shmup Achievement History</a></td>
+                        </tr>
+                        <tr>
+                            <td><em>Documentation of my history as a shmup player.</em></td>
+                        </tr>
                     </table></td>
                     <td><table class='sub'>
-                        <tr><td><a href='c67'><img src='assets/c67/c67.ico' alt='Banshiryuu icon'> Seihou Banshiryuu C67</a></td></tr>
-                        <tr><td><em>Explanation of scoring in Banshiryuu C67, the earlier version of the third Seihou game (unfinished).</em></td></tr>
+                        <tr>
+                            <td><a href='c67'><img src='assets/c67/c67.ico' alt='Banshiryuu icon'> Seihou Banshiryuu C67</a></td>
+                        </tr>
+                        <tr>
+                            <td><em>Explanation of scoring in Banshiryuu C67, the earlier version of the third Seihou game (unfinished).</em></td>
+                        </tr>
                     </table></td>
                 </tr>
             </table>
@@ -167,8 +174,14 @@
             <a href='https://twitch.tv/maribel_hearn'><img src='ext/twitch-icon-small.ico' alt='Twitch favicon'>Twitch</a>
             <a href='https://steamcommunity.com/id/maribelhearn42'><img src='ext/steam-icon-small.ico' alt='Steam favicon'>Steam</a>
             <a href='https://github.com/MaribelHearn'><img src='ext/github-icon.ico' alt='GitHub favicon'>GitHub</a></p>
+            <?php
+                if (isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents('.stats/token'))) {
+                    echo '<a id="admin" href="admin">Admin Panel</a>';
+                }
+            ?>
             <p>Partners: <a href='http://replay.lunarcast.net'><img src='ext/favicon-lunarcast.ico' alt='Lunarcast favicon'>Lunarcast Replay Database</a></p>
         </div>
+        <script src='assets/shared/dark.js'></script>
     </body>
 
 </html>

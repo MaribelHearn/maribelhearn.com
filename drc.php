@@ -343,7 +343,6 @@
         <script src='assets/drc/drc.js' defer></script>
         <script src='assets/shared/sorttable.js' defer></script>
         <script src='assets/shared/modernizr-custom.js' defer></script>
-        <script src='assets/shared/dark.js'></script>
 	</head>
 
 	<body>
@@ -395,7 +394,7 @@
 		                </tbody>
 		            </table></td>
 					<td id='bartd' class='noborders'>
-						<img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
+						<img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
 					</td>
 				</tr>
 			</table>
@@ -459,7 +458,7 @@
 				} else if ($lang == 'Japanese') {
 					echo 'JavaScriptなしではDRCポイントを計算できません。';
 				} else {
-					echo '没有JavaScript就DRC分无法计算。';
+					echo '不好意思，目前计算DRC分必须开启JavaScript。';
 				}
 			?></noscript>
 			<div id='calculator'>
@@ -476,7 +475,7 @@
 				?></p>
 	            <p id='notify'></p>
 	            <label id='category' for='game'><?php echo tl_term('Category', $lang) ?></label>
-	            <select id='game' onChange='checkValues(true, true, true);'>
+	            <select id='game'>
 	                <option id='hrtp' value='HRtP'><?php echo tl_game('HRtP', $lang) ?></option>
 	                <option id='soew' value='SoEW'><?php echo tl_game('SoEW', $lang) ?></option>
 	                <option id='podd' value='PoDD'><?php echo tl_game('PoDD', $lang) ?></option>
@@ -497,7 +496,7 @@
 	                <option id='hsifs' value='HSiFS'><?php echo tl_game('HSiFS', $lang) ?></option>
 	                <option id='wbawc' value='WBaWC'><?php echo tl_game('WBaWC', $lang) ?></option>
 	            </select>
-	            <select id='difficulty' onChange='if ($(GAME).val() == "GFW") { checkShottypes(true); } if ($(GAME).val() == "IN" || $(GAME).val() == "HSiFS") { checkValues(true, false, false); }'>
+	            <select id='difficulty'>
 	                <option>Easy</option>
 	                <option>Normal</option>
 	                <option>Hard</option>
@@ -508,13 +507,13 @@
 	                <option id='finala' value='FinalA'><?php echo tl_term('FinalA', $lang) ?></option>
 	                <option id='finalb' value='FinalB'><?php echo tl_term('FinalB', $lang) ?></option>
 	            </select>
-	            <select id='challenge' onChange='checkValues(true, false, false); checkShottypes(false);'>
+	            <select id='challenge'>
 	                <option id='scoring0' value='Scoring'><?php echo tl_term('Scoring', $lang) ?></option>
 	                <option id='survival0' value='Survival'><?php echo tl_term('Survival', $lang) ?></option>
 	            </select>
 	            <div id='performance'></div>
 	            <label id='shottypeLabel' for='shottype'></label>
-				<select id='shottype' onChange='checkValues(false, false, false)'></select>
+				<select id='shottype'></select>
 	            <select id='season'>
 	                <option id='spring' value='Spring'><?php echo tl_char('Spring', $lang) ?></option>
 	                <option id='summer' value='Summer'><?php echo tl_char('Summer', $lang) ?></option>
@@ -523,7 +522,7 @@
 	            </select>
 				<div id='drcpoints'></div>
 	            <div id='error'></div>
-				<p><input id='calculate' type='button' onClick='drcPoints()' value='<?php
+				<p><input id='calculate' type='button' value='<?php
 					if ($lang == 'English') { echo 'Calculate'; } else if ($lang == 'Japanese') { echo '計算する'; } else { echo '计算'; }
 				?>'></p>
 			</div>
@@ -564,12 +563,12 @@
 					echo '计算公式将计算出你所完成项目的分数。如果你想知道分数是如何计算的，请点击下方按钮展开。';
 				}
 			?></p>
-            <input id='scoringButton' type='button' onClick='showRubrics("Scoring")' value='<?php
+            <input id='scoringButton' type='button' value='<?php
 				if ($lang == 'English') { echo 'Show Scoring Rubrics'; }
 				else if ($lang == 'Japanese') { echo '稼ぎのルーブリックを見せて'; }
 				else { echo '显示打分计算公式'; }
 			?>'>
-            <input id='survivalButton' type='button' onClick='showRubrics("Survival")' value='<?php
+            <input id='survivalButton' type='button' value='<?php
 				if ($lang == 'English') { echo 'Show Survival Rubrics'; }
 				else if ($lang == 'Japanese') { echo 'クリア重視のルーブリックを見せて'; }
 				else { echo '显示生存计算公式'; }
@@ -1038,6 +1037,7 @@
 				echo substr($shots, 0, -1) . '}';
 			?>'>
 		</div>
+        <script src='assets/shared/dark.js'></script>
 	</body>
 
 </html>

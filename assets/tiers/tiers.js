@@ -55,10 +55,12 @@ function isCategory(category) {
 }
 function isTiered(item) {
     var tierList = (settings.sort == "characters" ? tiers : gameTiers);
+
+    if (!item) {
+        return false;
+    }
+
     return item !== "" && JSON.stringify(tierList).contains(item.removeSpaces());
-}
-function tierHeaderHeight() {
-    return isMobile() ? 60 : 120;
 }
 function allTiered(categoryName) {
     var cats = (settings.sort == "characters" ? categories : gameCategories);
@@ -87,6 +89,9 @@ function getTierNumOf(item) {
 function getPositionOf(item) {
     return Number($("#" + item).parent().attr("id").split("_")[1]);
 }
+function getItemAt(tierNum, pos) {
+    return tiers[tierNum].chars[pos];
+}
 function getCategoryOf(item) {
     var cats = (settings.sort == "characters" ? categories : gameCategories), categoryName;
 
@@ -114,14 +119,23 @@ function reloadTiers() {
 
     for (tierNum in tierList) {
         tierNum = Number(tierNum);
+
         if (!tierList[tierNum].flag) {
             $("#tier_list_tbody").append("<tr id='tr" + tierNum +
-            "' onDragOver='allowDrop(event)' onDrop='drop(event)'><th id='th" + tierNum +
-            "' class='tier_header' onClick='detectLeftCtrlCombo(event, " + tierNum +
-            ")' onContextMenu='detectRightCtrlCombo(event, " + tierNum +
-            "); return false;' style='color: " + tierList[tierNum].colour +
-            "; background-color: " + tierList[tierNum].bg + ";'>" + tierList[tierNum].name +
-            "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr>");
+            "' class='tier'><th id='th" + tierNum +
+            "' class='tier_header'>" + tierList[tierNum].name + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr>");
+            $("#tr" + tierNum).on("dragover", allowDrop); // event
+            $("#tr" + tierNum).on("drop", drop); // event
+            $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo); // event
+            $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo); // event
+            $("#th" + tierNum).css("background-color", tierList[tierNum].bg);
+            $("#th" + tierNum).css("color", tierList[tierNum].colour);
+            $("#th" + tierNum).css("max-width", settings.tierHeaderWidth + "px");
+            $("#th" + tierNum).css("width", settings.tierHeaderWidth + "px");
+
+            if (isMobile()) {
+                $("#th" + tierNum).css("height", "60px");
+            }
 
             for (i = 0; i < tierList[tierNum].chars.length; i += 1) {
                 item = tierList[tierNum].chars[i];
@@ -131,12 +145,10 @@ function reloadTiers() {
                 }
 
                 if (isMobile()) {
-                    $("#" + item).attr("onClick", "");
-                    $("#" + item).attr("onContextMenu", "modalChar('" + item + "', " + tierNum + "); return false;");
-                } else {
-                    $("#" + item).attr("onContextMenu", "removeFromTier('" + item + "', " + tierNum + "); return false;");
+                    $("#" + item).off("onClick");
                 }
 
+                $("#" + item).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
                 $("#" + item).removeClass("list");
                 $("#" + item).addClass("tiered");
                 id = "tier" + tierNum + "_" + i;
@@ -153,13 +165,14 @@ function reloadTiers() {
     }
 }
 function initialise() {
-    var noDisplay = true, tmp;
-    addTier("S");
-    addTier("A");
+    var tmp;
+
+    addTier({data: {tierName: "S"}});
+    addTier({data: {tierName: "A"}});
     tmp = settings.sort;
     settings.sort = (settings.sort == "characters" ? "works" : "characters");
-    addTier("S", noDisplay);
-    addTier("A", noDisplay);
+    addTier({data: {tierName: "S", noDisplay: true}});
+    addTier({data: {tierName: "S", noDisplay: true}});
     settings.sort = tmp;
     $(isMobile() ? "#tier_name_mobile" : "#tier_name").val("B");
 }
@@ -171,25 +184,22 @@ function switchSort() {
     loadItems();
     reloadTiers();
     saveSettingsPre();
-    $("#msg_container").html("<strong style='color:green'>Switched to " + settings.sort + "!</strong>");
+    $("#msg_container").html("<strong class='confirmation'>Switched to " + settings.sort + "!</strong>");
 }
-function updateArrays() {
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers),
-        tierNum, id, i;
+function tieredContextMenu(event) {
+    var character = this.id, tierNum = event.data.tierNum;
 
-    for (tierNum in tierList) {
-        id = "#tier" + tierNum + "_";
-
-        for (i = 0; i < tierList[tierNum].chars.length; i += 1) {
-            if ($(id + i).children().length > 0) {
-                tierList[tierNum].chars[i] = $(id + i).children()[0].id;
-            }
-        }
+    if (isMobile()) {
+        modalChar(character, tierNum);
+    } else {
+        removeFromTier(character, tierNum);
     }
+
+    return false;
 }
-var addToTier = function (character, tierNum, pos, noDisplay) {
+function addToTier(character, tierNum, pos, noDisplay) {
     var cats = (settings.sort == "characters" ? categories : gameCategories),
-        tierList = (settings.sort == "characters" ? tiers : gameTiers), categoryName = getCategoryOf(character), id, i;
+        tierList = (settings.sort == "characters" ? tiers : gameTiers), categoryName = getCategoryOf(character), counter;
 
     if (isTiered(character)) {
         return;
@@ -198,33 +208,33 @@ var addToTier = function (character, tierNum, pos, noDisplay) {
     $("#msg_container").html("");
     $("#" + character).removeClass("list");
     $("#" + character).addClass("tiered");
+    $("#" + character).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
 
-    if (isMobile()) {
-        $("#" + character).attr("onContextMenu", "modalChar('" + character + "', " + tierNum + "); return false;");
-    } else {
-        $("#" + character).attr("onContextMenu", "removeFromTier('" + character + "', " + tierNum + "); return false;");
-    }
-
-    if (typeof pos == "number") {
-        id = "tier" + tierNum + "_";
-
+    if (typeof pos == "number" && pos < tierList[tierNum].chars.length - 1) {
         if (!noDisplay) {
             $("#tier" + tierNum).append("<span id='" + id + tierList[tierNum].chars.length + "'></span>");
 
-            for (i = tierList[tierNum].chars.length; i > (pos + 1); i -= 1) {
-                $("#" + id + i).html($("#" + id + (i - 1)).html());
+            for (counter = tierList[tierNum].chars.length - 1; counter >= (pos + 1); counter -= 1) {
+                tmp = getItemAt(tierNum, counter);
+                $("#tier" + tierNum + "_" + counter).remove("#" + tmp);
+
+                if ((counter + 1) == tierList[tierNum].chars.length) {
+                    $("#tier" + tierNum).append("<span id='tier" + tierNum + "_" + (counter + 1) + "'></span>");
+                }
+
+                $("#tier" + tierNum + "_" + (counter + 1)).append($("#" + tmp));
+                tiers[tierNum].chars[counter + 1] = tmp;
             }
 
-            $("#" + id + (pos + 1)).html($("#" + character));
+            $("#tier" + tierNum + "_" + (pos + 1)).append($("#" + character));
+            tiers[tierNum].chars[pos + 1] = character;
         }
-        tierList[tierNum].chars.pushStrict(character);
-        updateArrays();
     } else {
         id = "tier" + tierNum + "_" + tierList[tierNum].chars.length;
 
         if (!noDisplay) {
             $("#tier" + tierNum).append("<span id='" + id + "'></span>");
-            $("#" + id).html($("#" + character));
+            $("#" + id).append($("#" + character));
         }
 
         tierList[tierNum].chars.pushStrict(character);
@@ -241,23 +251,26 @@ var addToTier = function (character, tierNum, pos, noDisplay) {
     }
 
     $("#" + categoryName).css("display", "none");
-};
-function addToMostRecent(character) {
+}
+function addToMostRecent() {
+    var item = this.id;
+
     if (mostRecentTiers[settings.sort] >= 0) {
-        addToTier(character, mostRecentTiers[settings.sort]);
+        addToTier(item, mostRecentTiers[settings.sort]);
     }
 }
-function addToTierMobile(character, tierNum) {
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers);
-    $("#" + character.removeSpaces()).attr("onClick", "");
+function addToTierMobile(event) {
+    var character = event.data.character, tierNum = event.data.tierNum,
+        tierList = (settings.sort == "characters" ? tiers : gameTiers);
+
+    $("#" + character.removeSpaces()).off("click");
     addToTier(character.removeSpaces(), tierNum);
     emptyModal();
-    $("#msg_container").html("<strong style='color:green'>Added " + character + " to " + tierList[tierNum].name + "!</strong>");
+    $("#msg_container").html("<strong class='confirmation'>Added " + character + " to " + tierList[tierNum].name + "!</strong>");
 }
-function addMenu(character) {
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers),
-        tierOrder = (settings.sort == "characters" ? order : gameOrder),
-        tierNum, i;
+function addMenu() {
+    var character = $(this).attr("alt"), tierList = (settings.sort == "characters" ? tiers : gameTiers),
+        tierOrder = (settings.sort == "characters" ? order : gameOrder), tierNum, i;
 
     emptyModal();
     $("#modal_inner").html("<h3>" + character + "</h3><p>Add to tier:</p>");
@@ -266,9 +279,8 @@ function addMenu(character) {
         tierNum = tierOrder[i];
 
         if (!tierList[tierNum].flag) {
-            $("#modal_inner").append("<input type='button' value='" + tierList[tierNum].name +
-            "' onClick='addToTierMobile(\"" + character + "\", " + tierNum +
-            ")' style='min-width: 25px; height: 25px; margin: 10px'>");
+            $("#modal_inner").append("<input id='mobile_addtotier' type='button' value='" + tierList[tierNum].name + "'>");
+            $("#mobile_addtotier").on("click", {character: character, tierNum: tierNum}, addToTierMobile);
         }
     }
     $("#modal_inner").css("display", "block");
@@ -277,20 +289,20 @@ function addMenu(character) {
 function moveToBack(character, tierNum) {
     var tierList = (settings.sort == "characters" ? tiers : gameTiers), help = $("#" + character);
 
-    for (counter = getPositionOf(character); counter + 1 < tierList[tierNum].chars.length; counter += 1) {
-        $("#tier" + tierNum + "_" + counter).html($("#tier" + tierNum + "_" + (counter + 1)).html());
+    if (getPositionOf(character) === tiers[tierNum].chars.length - 1) {
+        return;
     }
 
+    removeFromTier(character, tierNum);
+    addToTier(character, tierNum);
     $("#msg_container").html("");
-    $("#tier" + tierNum + "_" + (tierList[tierNum].chars.length - 1)).html(help);
-    updateArrays();
 
     window.onbeforeunload = function () {
         return confirm();
     }
 }
 function removeFromTier(character, tierNum) {
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers), pos, counter;
+    var tierList = (settings.sort == "characters" ? tiers : gameTiers), pos, counter, tmp;
 
     if (character === "") {
         return;
@@ -299,10 +311,10 @@ function removeFromTier(character, tierNum) {
     $("#msg_container").html("");
     $("#" + character).removeClass("tiered");
     $("#" + character).addClass("list");
-    $("#" + character).attr("onContextMenu", "");
+    $("#" + character).off("contextmenu");
 
     if (isMobile()) {
-        $("#" + character).attr("onClick", "addMenu('" + $("#" + character).attr("alt") + "')");
+        $("#" + character).on("click", addMenu);
     }
 
     pos = getPositionOf(character);
@@ -311,7 +323,9 @@ function removeFromTier(character, tierNum) {
 
     if (tierNum !== false) {
         for (counter = pos + 1; counter < tierList[tierNum].chars.length; counter += 1) {
-            $("#tier" + tierNum + "_" + (counter - 1)).html($("#tier" + tierNum + "_" + counter).html());
+            tmp = getItemAt(tierNum, counter);
+            $("#tier" + tierNum + "_" + counter).remove("#" + tmp);
+            $("#tier" + tierNum + "_" + (counter - 1)).append($("#" + tmp));
         }
 
         $("#tier" + tierNum + "_" + (tierList[tierNum].chars.length - 1)).remove();
@@ -319,7 +333,7 @@ function removeFromTier(character, tierNum) {
     }
 
     if (isMobile()) {
-        $("#msg_container").html("<strong style='color:green'>Removed " + $("#" + character).attr("alt") +
+        $("#msg_container").html("<strong class='confirmation'>Removed " + $("#" + character).attr("alt") +
         " from " + tierList[tierNum].name + "!</strong>");
     }
 
@@ -336,7 +350,7 @@ function changeToTier(character, tierNum) {
         removeFromTier(character, oldTierNum);
 
         if (isMobile()) {
-            addToTierMobile(character, tierNum);
+            addToTierMobile({data: {character: character, tierNum: tierNum}});
         } else {
             addToTier(character, tierNum);
         }
@@ -346,31 +360,32 @@ function modalChar(character, tierNum) {
     var tierOrder = (settings.sort == "characters" ? order : gameOrder), above, below;
 
     emptyModal();
-    $("#modal_inner").html("<h3>" + character + "</h3><input type='button' value='Remove' onClick='removeFromTier(\"" + character +
-    "\", " + tierNum + "); emptyModal()' style='margin:10px'>");
+    $("#modal_inner").html("<h3>" + character + "</h3><input class='mobile_button' type='button' value='Remove' onClick='removeFromTier(\"" + character +
+    "\", " + tierNum + "); emptyModal()'>");
 
     if (tierOrder.indexOf(tierNum) !== 0) {
         above = tierOrder[tierOrder.indexOf(tierNum) - 1];
-        $("#modal_inner").append("<input type='button' value='Move Up' onClick='changeToTier(\"" + character +
-        "\", " + above + "); emptyModal()' style='margin:10px'>");
+        $("#modal_inner").append("<input class='mobile_button' type='button' value='Move Up' onClick='changeToTier(\"" + character +
+        "\", " + above + "); emptyModal()'>");
     }
 
     if (tierOrder.indexOf(tierNum) != order.length - 1) {
         below = tierOrder[tierOrder.indexOf(tierNum) + 1];
-        $("#modal_inner").append("<input type='button' value='Move Down' onClick='changeToTier(\"" + character +
-        "\", " + below + "); emptyModal()' style='margin:10px'>");
+        $("#modal_inner").append("<input class='mobile_button' type='button' value='Move Down' onClick='changeToTier(\"" + character +
+        "\", " + below + "); emptyModal()'>");
     }
 
-    $("#modal_inner").append("<input type='button' value='Move to Back' onClick='moveToBack(\"" + character +
-    "\", " + tierNum + "); emptyModal()' style='margin:10px'>");
+    $("#modal_inner").append("<input class='mobile_button' type='button' value='Move to Back' onClick='moveToBack(\"" + character +
+    "\", " + tierNum + "); emptyModal()'>");
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
-};
+}
 function validateTierName(tierName) {
     return tierName.length <= maxNameLength;
 }
-function addTier(tierName, noDisplay) {
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers),
+function addTier(event) {
+    var tierName = event.data.tierName, noDisplay = event.data.noDisplay,
+        tierList = (settings.sort == "characters" ? tiers : gameTiers),
         tierOrder = (settings.sort == "characters" ? order : gameOrder),
         tierNum = 0, otherTierNum;
 
@@ -381,7 +396,7 @@ function addTier(tierName, noDisplay) {
     }
 
     if (tierNum >= maxTiers) {
-        $("#msg_container").html("<strong style='color:orange'>Error: the number of tiers may not exceed " + maxTiers + ".</strong>");
+        $("#msg_container").html("<strong class='error'>Error: the number of tiers may not exceed " + maxTiers + ".</strong>");
         return;
     }
 
@@ -393,18 +408,25 @@ function addTier(tierName, noDisplay) {
     }
 
     if (!validateTierName(tierName)) {
-        $("#msg_container").html("<strong style='color:orange'>Error: tier names may not exceed " + maxNameLength +
+        $("#msg_container").html("<strong class='error'>Error: tier names may not exceed " + maxNameLength +
         " characters.</strong>");
         return;
     }
 
     if (!noDisplay) {
-        $("#tier_list_tbody").append("<tr id='tr" + tierNum + "' onDragOver='allowDrop(event)' onDrop='drop(event)'>" +
-        "<th id='th" + tierNum + "' class='tier_header' onClick='detectLeftCtrlCombo(event, " + tierNum +
-        ")' onContextMenu='detectRightCtrlCombo(event, " + tierNum + "); return false;' " +
-        "style='max-width:" + settings.tierHeaderWidth + "px;width:" + settings.tierHeaderWidth +
-        "px" + (isMobile() ? ";height:60px" : "") + "'>" + tierName + "</th><td id='tier" + tierNum +
-        "' class='tier_content'></td></tr><hr>");
+        $("#tier_list_tbody").append("<tr id='tr" + tierNum + "' class='tier'>" +
+        "<th id='th" + tierNum + "' class='tier_header'>" + tierName +
+        "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr><hr>");
+        $("#tr" + tierNum).on("dragover", allowDrop); // event
+        $("#tr" + tierNum).on("drop", drop); // event
+        $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo); // event
+        $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo); // event
+        $("#th" + tierNum).css("max-width", settings.tierHeaderWidth + "px");
+        $("#th" + tierNum).css("width", settings.tierHeaderWidth + "px");
+
+        if (isMobile()) {
+            $("#th" + tierNum).css("height", "60px");
+        }
     }
 
     tierList[tierNum] = {};
@@ -417,7 +439,8 @@ function addTier(tierName, noDisplay) {
     mostRecentTiers[settings.sort] = tierNum;
 
     if (swapOngoing >= 0) {
-        $("#th" + tierNum).attr("onClick", "swapTiers(" + swapOngoing + ", " + tierNum + ")");
+        $("#th" + tierNum).off("click");
+        $("#th" + tierNum).on("click", {tier1: swapOngoing, tier2: tierNum}, swapTiers);
     }
 
     window.onbeforeunload = function () {
@@ -438,20 +461,20 @@ function startTierSwap(tierNum) {
     swapOngoing = tierNum;
 
     for (otherTierNum in tierList) {
-        $("#th" + otherTierNum).attr("onClick", "swapTiers(" + tierNum + ", " + otherTierNum + ")");
+        $("#th" + otherTierNum).off("click");
+        $("#th" + otherTierNum).on("click", {tier1: tierNum, tier2: otherTierNum}, swapTiers);
     }
 }
-function swapTiers(tierNum1, tierNum2) {
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers);
+function swapTiers(event) {
+    var tierNum1 = event.data.tier1, tierNum2 = event.data.tier2,
+        tierList = (settings.sort == "characters" ? tiers : gameTiers);
 
     var tmp = tierList[tierNum1], tierNum;
 
-    $("#th" + tierNum1).attr("style", "color: " + tierList[tierNum2].colour +
-    "; background-color: " + tierList[tierNum2].bg + "; max-width: " + settings.tierHeaderWidth +
-    "px; width: " + settings.tierHeaderWidth + "px; height: " + tierHeaderHeight() + "px;");
-    $("#th" + tierNum2).attr("style", "color: " + tierList[tierNum1].colour +
-    "; background-color: " + tierList[tierNum1].bg + "; max-width: " + settings.tierHeaderWidth +
-    "px; width: " + settings.tierHeaderWidth + "px; height: " + tierHeaderHeight() + "px;");
+    $("#th" + tierNum1).css("color", tierList[tierNum2].colour);
+    $("#th" + tierNum1).css("background-color", tierList[tierNum2].bg);
+    $("#th" + tierNum2).css("color", tierList[tierNum1].colour);
+    $("#th" + tierNum2).css("background-color", tierList[tierNum1].bg);
     tierList[tierNum1] = tierList[tierNum2];
     tierList[tierNum2] = tmp;
     tmp = $("#th" + tierNum1).html();
@@ -463,7 +486,8 @@ function swapTiers(tierNum1, tierNum2) {
     swapOngoing = -1;
 
     for (tierNum in tierList) {
-        $("#th" + tierNum).attr("onClick", "detectLeftCtrlCombo(event, " + tierNum + ")");
+        $("#th" + tierNum).off("click");
+        $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
     }
 
     window.onbeforeunload = function () {
@@ -474,15 +498,17 @@ function removeCharacters(tierNum) {
     var tierList = (settings.sort == "characters" ? tiers : gameTiers);
 
     while (tierList[tierNum].chars.length > 0) {
-        removeFromTier(tierList[tierNum].chars[0], tierNum);
+        removeFromTier(tierList[tierNum].chars[tierList[tierNum].chars.length - 1], tierNum);
     }
+
+    $("#tier" + tierNum).html(""); // temporary measure against sudden double digit spans
 }
 function cancelOngoingSwap() {
     var tierList = (settings.sort == "characters" ? tiers : gameTiers), tierNum;
 
     if (swapOngoing >= 0) {
         for (tierNum in tierList) {
-            $("#th" + tierNum).attr("onClick", "detectLeftCtrlCombo(event, " + tierNum + ")");
+            $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
         }
         swapOngoing = -1;
     }
@@ -497,7 +523,7 @@ function removeTier(tierNum, skipConfirmation) {
     }
 
     if (!skipConfirmation) {
-        confirmation = confirm("Are you sure you want to remove this tier? Removal may take a moment with many characters inside.");
+        confirmation = confirm("Are you sure you want to remove this tier? This will return all characters in it to the picker.");
     }
 
     if (confirmation) {
@@ -514,25 +540,23 @@ function removeTier(tierNum, skipConfirmation) {
     window.onbeforeunload = function () {
         return confirm();
     }
+
+    return false;
 }
-function swapCharacters(character1, character2) {
-    var parent1 = $("#" + character1).parent(), parent2 = $("#" + character2).parent(), backup = $("#" + character1);
-
-    $(parent1).html($("#" + character2));
-    $(parent2).html(backup);
-    updateArrays();
-
-    if (isMobile()) {
-        $("#" + character1).attr("onContextMenu", "modalChar('" + character1 +
-        "', " + getTierNumOf(character1) + "); return false;");
-        $("#" + character2).attr("onContextMenu", "modalChar('" + character2 +
-        "', " + getTierNumOf(character2) + "); return false;")
-    } else {
-        $("#" + character1).attr("onContextMenu", "removeFromTier('" + character1 +
-        "', " + getTierNumOf(character1) + "); return false;");
-        $("#" + character2).attr("onContextMenu", "removeFromTier('" + character2 +
-        "', " + getTierNumOf(character2) + "); return false;")
+function swapItems(item1, item2) {
+    if (item1 == item2) {
+        return;
     }
+
+    var tierNum1 = getTierNumOf(item1), tierNum2 = getTierNumOf(item2),
+        pos1 = getPositionOf(item1), pos2 = getPositionOf(item2), tmp;
+
+    $("#tier" + tierNum1 + "_" + pos1).remove("#" + item1);
+    $("#tier" + tierNum2 + "_" + pos2).remove("#" + item2);
+    $("#tier" + tierNum1 + "_" + pos1).append($("#" + item2));
+    $("#tier" + tierNum2 + "_" + pos2).append($("#" + item1));
+    tiers[tierNum1].chars[pos1] = item2;
+    tiers[tierNum2].chars[pos2] = item1;
 
     window.onbeforeunload = function () {
         return confirm();
@@ -541,7 +565,7 @@ function swapCharacters(character1, character2) {
 function emptyModal() {
     $("#modal_inner").html("");
     $("#modal_inner").css("display", "none");
-    $("#modal").css("display", "none")
+    $("#modal").css("display", "none");
 }
 function closeModal(event) {
     var modal = document.getElementById("modal");
@@ -565,7 +589,9 @@ function quickAdd(tierNum) {
         }
     }
 }
-function detectLeftCtrlCombo(event, tierNum) {
+function detectLeftCtrlCombo(event) {
+    var tierNum = event.data.tierNum;
+
     if (event.ctrlKey) {
         quickAdd(tierNum);
     } else {
@@ -579,7 +605,7 @@ function emptyTier(tierNum) {
         removeCharacters(tierNum);
     }
 
-    confirmation = confirm("Are you sure you want to empty this tier? Emptying may take a moment with many characters inside.");
+    confirmation = confirm("Are you sure you want to empty this tier? This will return all characters in it to the picker.");
 
     if (confirmation) {
         removeCharacters(tierNum);
@@ -597,6 +623,8 @@ function modalTier(tierNum) {
     $("#modal").css("display", "block");
 }
 function detectRightCtrlCombo(event, tierNum) {
+    var tierNum = event.data.tierNum;
+
     if (event.ctrlKey) {
         emptyTier(tierNum);
     } else {
@@ -606,15 +634,14 @@ function detectRightCtrlCombo(event, tierNum) {
             removeTier(tierNum);
         }
     }
-}
-function detectAddTierEnter(event) {
-    if (event.keyCode == 13) {
-        addTier($(isMobile() ? "#tier_name_mobile" : "#tier_name").val());
-    }
+
+    return false;
 }
 function toggleInstructions() {
     $("#instructions").css("display", $("#instructions").css("display") == "none" ? "block" : "none");
-    $("#toggle").html("<a href='javascript:toggleInstructions()'>Click here to " + ($(".instructions").css("display") == "none" ? "show" : "hide") + " the instructions.</a>");
+    $("#toggle").html("<span id='toggle_instructions'>Click here" +
+    " to " + ($("#instructions").css("display") == "none" ? "show" : "hide") + " the instructions.</span>");
+    $("#toggle_instructions").on("click", toggleInstructions);
 }
 function allowData() {
     if (localStorage.length <= 2) {
@@ -632,7 +659,7 @@ function saveTiersData() {
     localStorage.setItem("order", JSON.stringify(order));
     localStorage.setItem("gameTiers", JSON.stringify(gameTiers));
     localStorage.setItem("gameOrder", JSON.stringify(gameOrder));
-    $("#msg_container").html("<strong style='color:green'>Tier list(s) saved!</strong>");
+    $("#msg_container").html("<strong class='confirmation'>Tier list(s) saved!</strong>");
     window.onbeforeunload = undefined;
 }
 function saveTiers() {
@@ -640,8 +667,10 @@ function saveTiers() {
         emptyModal();
         $("#modal_inner").html("<h3>Save Tiers</h3><p>This will store data in your browser's Web Storage, which " +
                 "functions like a cookie. Do you allow this?</p>");
-        $("#modal_inner").append("<input type='button' value='Yes' onClick='saveTiersData()' style='margin: 10px'>");
-        $("#modal_inner").append("<input type='button' value='No' onClick='emptyModal()' style='margin: 10px'>");
+        $("#modal_inner").append("<input id='save_tiers_data' class='mobile_button' type='button' value='Yes'>");
+        $("#modal_inner").append("<input id='empty_modal' class='mobile_button' type='button' value='No'>");
+        $("#save_tiers_data").on("click", saveTiersData);
+        $("#empty_modal").on("click", emptyModal);
         $("#modal_inner").css("display", "block");
         $("#modal").css("display", "block");
         return;
@@ -659,17 +688,17 @@ function saveSettingsData() {
     }
 
     localStorage.setItem("settings", JSON.stringify(settings));
-    $("#msg_container").html("<strong style='color:green'>Settings saved!</strong>");
+    $("#msg_container").html("<strong class='confirmation'>Settings saved!</strong>");
     window.onbeforeunload = undefined;
 }
 function saveSettingsPre() {
     if (isMobile() && localStorage.length <= 2) {
         emptyModal();
-        $("#modal_inner").html("<h3>Save Settings</h3><p>This will store data in your browser's Web Storage, whi" +
-                "ch functions like a cookie. Do you allow this?</p>");
-        $("#modal_inner").append("<input type='button' value='Yes' onClick='saveSettingsData()' style='margin: 10p" +
-                "x'>");
-        $("#modal_inner").append("<input type='button' value='No' onClick='emptyModal()' style='margin: 10px'>");
+        $("#modal_inner").html("<h3>Save Settings</h3><p>This will store data in your browser's Web Storage, " +
+        "which functions like a cookie. Do you allow this?</p>");
+        $("#modal_inner").append("<input class='mobile_button' type='button' value='Yes' onClick='saveSettingsData()'>");
+        $("#modal_inner").append("<input id='empty_modal' class='mobile_button' type='button' value='No'>");
+        $("#empty_modal").on("click", emptyModal);
         $("#modal_inner").css("display", "block");
         $("#modal").css("display", "block");
         return;
@@ -695,6 +724,10 @@ function menu() {
     $("#modal").css("display", "block");
 }
 function checkSort(text) {
+    if (text.join('\n').trim() === "") {
+        return false;
+    }
+
     var i, j, characters;
 
     for (i = 0; i < text.length; i += 1) {
@@ -724,15 +757,16 @@ function load() {
 
     tierSort = checkSort(text);
 
-    if (tierSort != settings.sort) {
+    if (!tierSort || tierSort != settings.sort) {
         $("#modal_inner").html("");
         $("#modal").css("display", "none");
         $("#modal_inner").css("display", "none");
-        $("#msg_container").html("<strong style='color:orange'>Cannot import characters into works or vice versa!</strong>");
+        $("#msg_container").html("<strong class='error'>Cannot import " + (!tierSort ? "an empty list!" : "characters " +
+        "into works or vice versa!") + "</strong>");
         return;
     }
 
-    $("#import_msg_container").html("<strong style='color:orange'>Please watch warmly as your tier list is imported...</strong>");
+    $("#import_msg_container").html("<strong class='error'>Please watch warmly as your tier list is imported...</strong>");
     tierList = (settings.sort == "characters" ? tiers : gameTiers);
 
     for (tierNum in tierList) {
@@ -747,7 +781,7 @@ function load() {
 
     for (i = 0; i < text.length; i += 1) {
         if (text[i].contains(':')) {
-            addTier(text[i].replace(':', ""));
+            addTier({data: {tierName: text[i].replace(':', "")}});
             counter += 1;
             i += 1;
         }
@@ -775,7 +809,7 @@ function load() {
     $("#modal_inner").html("");
     $("#modal").css("display", "none");
     $("#modal_inner").css("display", "none");
-    $("#msg_container").html("<strong style='color:green'>Tier list successfully imported!</strong>");
+    $("#msg_container").html("<strong class='confirmation'>Tier list successfully imported!</strong>");
 }
 function importText() {
     var tierNum, character, i;
@@ -783,7 +817,8 @@ function importText() {
     emptyModal();
     $("#modal_inner").html("<h2>Import from Text</h2><p>Note that the format should be the same as the exported text.</p>");
     $("#modal_inner").append("<p><strong>Warning:</strong> Importing will overwrite your current tier list!");
-    $("#modal_inner").append("<textarea id='import'></textarea><p><input type='button' value='Import' onClick='load()'></p>");
+    $("#modal_inner").append("<textarea id='import'></textarea><p><input id='load_button' type='button' value='Import'></p>");
+    $("#load_button").on("click", load);
     $("#modal_inner").append("<p id='import_msg_container'></p>");
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
@@ -791,7 +826,7 @@ function importText() {
 function copyToClipboard() {
     navigator.clipboard.writeText($("#text").html().replace(/<\/p><p>/g, "\n").strip());
     emptyModal();
-    $("#msg_container").html("<strong style='color:green'>Copied to clipboard!</strong>");
+    $("#msg_container").html("<strong class='confirmation'>Copied to clipboard!</strong>");
     window.onbeforeunload = undefined;
 }
 function exportText() {
@@ -801,7 +836,8 @@ function exportText() {
 
     emptyModal();
     $("#modal_inner").html("<h2>Export to Text</h2><p id='text'></p>");
-    $("#modal_inner").append("<p><input type='button' value='Copy to Clipboard' onClick='copyToClipboard()'></p>");
+    $("#modal_inner").append("<p><id='copy_to_clipboard' input type='button' value='Copy to Clipboard'></p>");
+    $("#copy_to_clipboard").on("click", copyToClipboard);
 
     for (i = 0; i < tierOrder.length; i += 1) {
         tierNum = tierOrder[i];
@@ -820,13 +856,13 @@ function exportText() {
     }
 
     if ($("#text").html() === "") {
-        $("#msg_container").html("<strong style='color:orange'>Error: there are no tiers to export.</strong>");
+        $("#msg_container").html("<strong class='error'>Error: there are no tiers to export.</strong>");
         $("#modal_inner").html("");
         return;
     }
 
     $("#modal_inner").css("display", "block");
-    $("#modal").css("display", "block")
+    $("#modal").css("display", "block");
 }
 function customiseMenu() {
     var tierList = (settings.sort == "characters" ? tiers : gameTiers),
@@ -852,13 +888,14 @@ function customiseMenu() {
     }
 
     if ($("#custom_tier_container").html() === "") {
-        $("#msg_container").html("<strong style='color:orange'>Error: there are no tiers to customise.</strong>");
+        $("#msg_container").html("<strong class='error'>Error: there are no tiers to customise.</strong>");
         $("#modal_inner").html("");
         return;
     }
 
-    $("#modal_inner").append("</div><div><p><input type='button' value='Save Changes' onClick='saveCustom()'></p>" +
+    $("#modal_inner").append("</div><div><p><input id='save_custom' type='button' value='Save Changes'></p>" +
     "<p id='custom_msg_container'></p></div>");
+    $("#save_custom").on("click", saveCustom);
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block")
 }
@@ -874,7 +911,7 @@ function saveCustom() {
             tierColour = $("#custom_colour_tier" + tierNum).val();
 
             if (!validateTierName(tierName)) {
-                $("#custom_msg_container").html("<strong style='color:orange'>Error: tier names may not exceed " + maxNameLength + " characters.</strong>");
+                $("#custom_msg_container").html("<strong class='error'>Error: tier names may not exceed " + maxNameLength + " characters.</strong>");
                 return;
             }
 
@@ -903,7 +940,7 @@ function settingsMenuChars() {
     "type='radio'" + (settings.artist == "Ruu" ? " checked" : "") + ">");
     $("#modal_inner").append("Include characters in the following works of first appearance:" +
     "<table id='settings_table'><tbody><tr id='settings_tr0'>");
-    $("#artist_form").attr("onClick", "toggleArtist()");
+    $("#artist_form").on("click", toggleArtist);
 
     for (categoryName in categories) {
         if (counter > 0 && counter % 5 === 0) {
@@ -920,19 +957,22 @@ function settingsMenuChars() {
     }
 
     $("#modal_inner").append("</tr></tbody></table>");
-    $("#modal_inner").append("<p><label for='pc-98'>PC-98</label><input id='pc98' type='checkbox' " +
-    "onClick='togglePC98()'" + (settings.pc98Enabled ? " checked" : "") +
-    " " + (settings.artist == "Ruu" ? "disabled=true" : "") + "></p>");
-    $("#modal_inner").append("<p><label for='windows'>Windows</label><input id='windows' type='checkbox' " +
-    "onClick='toggleWindows()'" + (settings.windowsEnabled ? " checked" : "") + "></p>");
-    $("#modal_inner").append("<p><label for='male'>Male Characters</label><input id='male' type='checkbox' " +
-    "onClick='toggleMale()'" + (settings.maleEnabled ? " checked" : "") +
-    " " + (settings.artist == "Ruu" ? "disabled=true" : "") + "></p>");
-    $("#modal_inner").append("<div>Other settings:<p><label for='tierHeaderWidth'>Max tier header width</label><input id='tierHeaderWidth' type='number' value=" + settings.tierHeaderWidth + " min=" + defaultWidth + "></p></div>");
-    $("#modal_inner").append("<div><p><input type='button' value='Save Changes' onClick='saveSettings()'></p>" +
+    $("#modal_inner").append("<p><label for='pc-98'>PC-98</label><input id='pc98' type='checkbox'" +
+    " " + (settings.pc98Enabled ? " checked" : "") + " " + (settings.artist == "Ruu" ? "disabled=true" : "") + "></p>");
+    $("#pc98").on("click", togglePC98);
+    $("#modal_inner").append("<p><label for='windows'>Windows</label><input id='windows' type='checkbox'" +
+    " " + (settings.windowsEnabled ? " checked" : "") + "></p>");
+    $("#windows").on("click", toggleWindows);
+    $("#modal_inner").append("<p><label for='male'>Male Characters</label><input id='male' type='checkbox'" +
+    " " + (settings.maleEnabled ? " checked" : "") + " " + (settings.artist == "Ruu" ? "disabled=true" : "") + "></p>");
+    $("#pc98").on("click", toggleMale);
+    $("#modal_inner").append("<div>Other settings:<p><label for='tierHeaderWidth'>Max tier header width</label>" +
+    "<input id='tierHeaderWidth' type='number' value=" + settings.tierHeaderWidth + " min=" + defaultWidth + "></p></div>");
+    $("#modal_inner").append("<div><p><input id='save_settings' type='button' value='Save Changes'></p>" +
     "<p id='settings_msg_container'></p></div>");
+    $("#save_settings").on("click", saveSettings);
     $("#modal_inner").css("display", "block");
-    $("#modal").css("display", "block")
+    $("#modal").css("display", "block");
 }
 function settingsMenuWorks() {
     var categoryName, current = 0, counter = 0;
@@ -956,8 +996,9 @@ function settingsMenuWorks() {
     $("#modal_inner").append("</tr></tbody></table>");
     $("#modal_inner").append("<div>Other settings:<p><label for='tierHeaderWidth'>Max tier header width</label>" +
     "<input id='tierHeaderWidth' type='number' value=" + settings.tierHeaderWidth + " min=" + defaultWidth + "></p></div>");
-    $("#modal_inner").append("<div><p><input type='button' value='Save Changes' onClick='saveSettings()'></p>" +
+    $("#modal_inner").append("<div><p><input id='save_settings' type='button' value='Save Changes'></p>" +
     "<p id='settings_msg_container'></p></div>");
+    $("#save_settings").on("click", saveSettings);
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
 }
@@ -971,7 +1012,7 @@ function settingsMenu() {
 function massRemoval(removedCategories) {
     var cats = (settings.sort == "characters" ? categories : gameCategories), categoryName, character, i, j;
 
-    $("#settings_msg_container").html("<strong style='color:orange'>Girls are being removed, please wait warmly...</strong>");
+    $("#settings_msg_container").html("<strong class='error'>Girls are being removed, please wait warmly...</strong>");
 
     for (i = 0; i < removedCategories.length; i += 1) {
         categoryName = removedCategories[i];
@@ -1135,11 +1176,12 @@ function toggleTierView() {
 }
 function changeLog() {
     emptyModal();
-    $("#modal_inner").html("<h2>Changelog</h2><ul style='text-align:left'><li>05/12/2018: Initial release</li>" +
+    $("#modal_inner").html("<h2>Changelog</h2><ul class='left'><li>05/12/2018: Initial release</li>" +
     "<li>05/12/2018: Dairi art added and made the default; PC-98 and male characters added</li>" +
     "<li>21/01/2019: Mobile version</li><li>24/04/2019: Works added</li><li>18/08/2019: Migrated to maribelhearn.com</li>" +
     "<li>17/09/2019: Mobile version bugs fixed and speed increased; changelog added</li>" +
-    "<li>04/10/2019: WBaWC characters added</li></ul>");
+    "<li>04/10/2019: WBaWC characters added</li>" +
+    "<li>19/12/2019: Fixed character disappearance bug and related issues</li></ul>"); // put in correct publishing date
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
 }
@@ -1190,7 +1232,7 @@ function eraseAllConfirmed() {
     localStorage.removeItem("gameTiers");
     localStorage.removeItem("settings");
     initialise();
-    $("#msg_container").html("<strong style='color:green'>Reset the tier list and settings to their default states!</strong>");
+    $("#msg_container").html("<strong class='confirmation'>Reset the tier list and settings to their default states!</strong>");
     window.onbeforeunload = undefined;
 }
 function eraseAll() {
@@ -1202,7 +1244,8 @@ function eraseAll() {
                 "he defaults?</p>");
         $("#modal_inner").append("<input type='button' value='Yes' onClick='eraseAllConfirmed(); emptyModal()' sty" +
                 "le='margin: 10px'>");
-        $("#modal_inner").append("<input type='button' value='No' onClick='emptyModal()' style='margin: 10px'>");
+        $("#modal_inner").append("<input id='empty_modal' class='mobile_button' type='button' value='No'>");
+        $("#empty_modal").on("click", emptyModal);
         $("#modal_inner").css("display", "block");
         $("#modal").css("display", "block");
         return;
@@ -1235,7 +1278,7 @@ function drop(event) {
         }
     } else if (isTiered(event.target.id)) {
         if (isTiered(following)) {
-            swapCharacters(following, event.target.id);
+            swapItems(following, event.target.id);
         } else {
             addToTier(following, getTierNumOf(event.target.id), getPositionOf(event.target.id));
         }
@@ -1244,6 +1287,54 @@ function drop(event) {
     }
 
     following = "";
+}
+
+function deleteLegacyCookies() {
+    if (getCookie("settings")) {
+        localStorage.setItem("settings", getCookie("settings"));
+        deleteCookie("settings");
+    }
+
+    if (getCookie("tiers")) {
+        localStorage.setItem("tiers", getCookie("tiers"));
+        deleteCookie("tiers");
+    }
+
+    if (getCookie("order")) {
+        localStorage.setItem("order", getCookie("order"));
+        deleteCookie("order");
+    }
+
+    if (getCookie("gameTiers")) {
+        localStorage.setItem("gameTiers", getCookie("gameTiers"));
+        deleteCookie("gameTiers");
+    }
+
+    if (getCookie("gameOrder")) {
+        localStorage.setItem("gameOrder", getCookie("gameOrder"));
+        deleteCookie("gameOrder");
+    }
+}
+function loadCategories() {
+    var chars = $("#chars_load").children(), works = $("#works_load").children(), val, i, j;
+
+    for (i = 0; i < chars.length; i++) {
+        val = chars[i].value.split(',');
+        categories[chars[i].id] = {"chars": []};
+
+        for (j = 0; j < val.length; j++) {
+            categories[chars[i].id].chars.push(val[j]);
+        }
+    }
+
+    for (i = 0; i < works.length; i++) {
+        val = works[i].value.split(',');
+        gameCategories[works[i].id] = {"chars": []};
+
+        for (j = 0; j < val.length; j++) {
+            gameCategories[works[i].id].chars.push(val[j]);
+        }
+    }
 }
 function loadTier(tiersData, tierNum, tierSort) {
     var tierList = (tierSort == "characters" ? tiers : gameTiers), character;
@@ -1258,12 +1349,20 @@ function loadTier(tiersData, tierNum, tierSort) {
     if (!tierList[tierNum].flag) {
         if (tierSort == settings.sort) {
             $("#tier_list_tbody").append("<tr id='tr" + tierNum +
-            "' onDragOver='allowDrop(event)' onDrop='drop(event)'><th id='th" + tierNum +
-            "' class='tier_header' onClick='detectLeftCtrlCombo(event, " + tierNum +
-            ")' onContextMenu='detectRightCtrlCombo(event, " + tierNum +
-            "); return false;' style='color: " + tierList[tierNum].colour +
-            "; background-color: " + tierList[tierNum].bg + ";'>" + tiersData[tierNum].name +
-            "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr>");
+            "' class='tier'><th id='th" + tierNum +
+            "' class='tier_header'>" + tiersData[tierNum].name + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr>");
+            $("#tr" + tierNum).on("dragover", allowDrop); // event
+            $("#tr" + tierNum).on("drop", drop); // event
+            $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo); // event
+            $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo); // event
+            $("#th" + tierNum).css("background-color", tierList[tierNum].bg);
+            $("#th" + tierNum).css("color", tierList[tierNum].colour);
+            $("#th" + tierNum).css("max-width", settings.tierHeaderWidth + "px");
+            $("#th" + tierNum).css("width", settings.tierHeaderWidth + "px");
+
+            if (isMobile()) {
+                $("#th" + tierNum).css("height", "60px");
+            }
 
             for (i = 0; i < tiersData[tierNum].chars.length; i += 1) {
                 character = tiersData[tierNum].chars[i];
@@ -1273,7 +1372,7 @@ function loadTier(tiersData, tierNum, tierSort) {
                 }
 
                 if (isMobile()) {
-                    $("#" + character).attr("onClick", "");
+                    $("#" + character).off("click");
                 }
 
                 addToTier(character, tierNum);
@@ -1287,7 +1386,7 @@ function loadTier(tiersData, tierNum, tierSort) {
                 }
 
                 if (isMobile()) {
-                    $("#" + character).attr("onClick", "");
+                    $("#" + character).off("click");
                 }
 
                 tierList[tierNum].chars.pushStrict(character);
@@ -1343,15 +1442,17 @@ function loadCharacters() {
 
             if (isMobile()) {
                 $("#" + categoryName).append("<span id='" + character.removeSpaces() +
-                "C'><img id='" + character.removeSpaces() + "' class='list' onClick='addMenu(\"" + character +
-                "\")' src='art/" + settings.artist + "/" + categoryName + "/" + character.removeSpaces() +
+                "C'><img id='" + character.removeSpaces() +
+                "' class='list' src='art/" + settings.artist + "/" + categoryName + "/" + character.removeSpaces() +
                 "." + (settings.artist == "Dairi" ? "png" : "jpg") + "' alt='" + character + "'>");
+                $("#" + character.removeSpaces()).on("click", addMenu);
             } else {
                 $("#" + categoryName).append("<span id='" + character.removeSpaces() +
-                "C'><img id='" + character.removeSpaces() + "' class='list' " +
-                "onDblClick='addToMostRecent(\"" + character.removeSpaces() + "\")' draggable='true' onDragStart='drag(event)' " +
+                "C'><img id='" + character.removeSpaces() + "' class='list' draggable='true' " +
                 "src='art/" + settings.artist + "/" + categoryName + "/" + character.removeSpaces() +
                 "." + (settings.artist == "Dairi" ? "png" : "jpg") + "' alt='" + character + "' title='" + character + "'>");
+                $("#" + character.removeSpaces()).on("dblclick", addToMostRecent);
+                $("#" + character.removeSpaces()).on("dragstart", drag); // event
             }
 
             if (maleCharacters.contains(character.removeSpaces()) && !settings.maleEnabled) {
@@ -1394,13 +1495,15 @@ function loadWorks() {
 
             if (isMobile()) {
                 $("#" + categoryName).append("<span id='" + game.removeSpaces() +
-                "C'><img id='" + game.removeSpaces() + "' class='list' onClick='addMenu(\"" + game +
-                "\")' src='games/" + acronym(game) + "120x120.jpg' alt='" + game + "'>");
+                "C'><img id='" + game.removeSpaces() +
+                "' class='list' src='games/" + acronym(game) + "120x120.jpg' alt='" + game + "'>");
+                $("#" + game.removeSpaces()).on("click", addMenu);
             } else {
                 $("#" + categoryName).append("<span id='" + game.removeSpaces() +
-                "C'><img id='" + game.removeSpaces() + "' class='list'  onDblClick='addToMostRecent(\"" + game.removeSpaces() +
-                "\")' draggable='true' onDragStart='drag(event)' src='games/" + acronym(game) +
-                "120x120.jpg' alt='" + game + "' title='" + game + "'>");
+                "C'><img id='" + game.removeSpaces() + "' class='list' draggable='true' " +
+                "src='games/" + acronym(game) + "120x120.jpg' alt='" + game + "' title='" + game + "'>");
+                $("#" + game.removeSpaces()).on("dblclick", addToMostRecent);
+                $("#" + game.removeSpaces()).on("dragstart", drag); // event
             }
         }
 
@@ -1449,64 +1552,48 @@ function loadSettingsFromStorage() {
         }
     }
 }
+function setAddTierListeners() {
+    $("#add_tier, #add_tier_mobile").off("click");
+    $("#add_tier").on("click", {tierName: $("#tier_name").val()}, addTier); // event
+    $("#add_tier_mobile").on("click", {tierName: $("#tier_name_mobile").val()}, addTier); // event
+}
+function detectAddTierEnter(event) {
+    if (event.keyCode == 13) {
+        addTier({data: {tierName: $(isMobile() ? "#tier_name_mobile" : "#tier_name").val()}});
+    } else {
+        setAddTierListeners();
+    }
+}
+function setEventListeners() {
+    setAddTierListeners();
+    $("body").on("click", closeModal); // event
+    $("body").on("keypress", closeModal); // event
+    $("#sort").on("change", switchSort);
+    $("#toggle_view").on("click", toggleTierView);
+    $("#toggle_instructions").on("click", toggleInstructions);
+    $("#tier_name, #tier_name_mobile").on("keyup", detectAddTierEnter); // event
+    $("#save_button").on("click", saveTiers);
+    $("#import_button").on("click", importText);
+    $("#export_button").on("click", exportText);
+    $("#customise_button").on("click", customiseMenu);
+    $("#settings_button").on("click", settingsMenu);
+    $("#changelog_button").on("click", changeLog);
+    $("#reset_button").on("click", eraseAll);
+    $("#information_button").on("click", modalInformation);
+    $("#view_button").on("click", toggleTierView);
+    $("#menu_button").on("click", menu);
+    $("#switch_button").on("click", switchSort);
+    $("#characters").on("dragover", allowDrop); // event
+    $("#characters").on("drop", drop); // event
+}
 $(document).ready(function () {
-    var chars = $("#chars_load").children(), works = $("#works_load").children(), val, i, j;
-
-    if (getCookie("settings")) {
-        localStorage.setItem("settings", getCookie("settings"));
-        deleteCookie("settings");
-    }
-
-    if (getCookie("tiers")) {
-        localStorage.setItem("tiers", getCookie("tiers"));
-        deleteCookie("tiers");
-    }
-
-    if (getCookie("order")) {
-        localStorage.setItem("order", getCookie("order"));
-        deleteCookie("order");
-    }
-
-    if (getCookie("gameTiers")) {
-        localStorage.setItem("gameTiers", getCookie("gameTiers"));
-        deleteCookie("gameTiers");
-    }
-
-    if (getCookie("gameOrder")) {
-        localStorage.setItem("gameOrder", getCookie("gameOrder"));
-        deleteCookie("gameOrder");
-    }
-
-    if (location.protocol == "file:") {
-        var path = location.pathname.split('/').pop();
-
-        $("#nav a").attr("href", function (i, oldHref) {
-            return (oldHref == '/' ? location.href.replace(path, "index.html") + "" : oldHref + ".html");
-        });
-    }
-
-    for (i = 0; i < chars.length; i++) {
-        val = chars[i].value.split(',');
-        categories[chars[i].id] = {"chars": []};
-
-        for (j = 0; j < val.length; j++) {
-            categories[chars[i].id].chars.push(val[j]);
-        }
-    }
-
-    for (i = 0; i < works.length; i++) {
-        val = works[i].value.split(',');
-        gameCategories[works[i].id] = {"chars": []};
-
-        for (j = 0; j < val.length; j++) {
-            gameCategories[works[i].id].chars.push(val[j]);
-        }
-    }
+    deleteLegacyCookies();
 
     if (localStorage.settings) {
         loadSettingsFromStorage();
     }
 
+    loadCategories();
     $("#chars_load, #works_load").remove();
     $("#sort").val(settings.sort);
     loadItems();
@@ -1519,5 +1606,6 @@ $(document).ready(function () {
         initialise();
     }
 
+    setEventListeners();
     window.onbeforeunload = undefined;
 });

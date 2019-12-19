@@ -12,7 +12,6 @@
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='assets/tools/tools.ico'>
         <script src='assets/shared/modernizr-custom.js' defer></script>
-        <script src='assets/shared/dark.js'></script>
 	</head>
 
 	<body>
@@ -28,7 +27,7 @@
 			</nav>
 		</div>
         <div id='wrap' class='wrap'>
-            <img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
+            <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
             <h1>Touhou Patches and Tools</h1>
             <?php
                 if (!empty($_GET['redirect'])) {
@@ -445,5 +444,6 @@
 			<hr>
             <p id='back'><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
         </div>
+        <script src='assets/shared/dark.js'></script>
     </body>
 </html>

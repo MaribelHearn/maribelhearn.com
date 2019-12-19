@@ -1,38 +1,34 @@
 var minAge = "Thu, 01 Jan 1970 00:00:00 UTC", maxAge = "Fri, 31 Dec 9999 23:59:59 UTC";
 
 String.prototype.contains = function (string) {
-    return this.indexOf(string) > -1
+    return this.indexOf(string) > -1;
 };
 
 String.prototype.cap = function () {
-    return this
-        .charAt(0)
-        .toUpperCase() + this
-        .slice(1)
-        .toLowerCase()
+    return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
 };
 
 String.prototype.removeSpaces = function () {
-    return this.replace(/ /g, "")
+    return this.replace(/ /g, "");
 };
 
 String.prototype.strip = function () {
-    return this.replace(/<\/?[^>]*>/g, "")
+    return this.replace(/<\/?[^>]*>/g, "");
 };
 
 String.prototype.insertAt = function (index, string) {
-    return this.substr(0, index) + string + this.substr(index)
+    return this.substr(0, index) + string + this.substr(index);
 };
 
 String.prototype.removeAt = function (index) {
-    return this.substr(0, index) + this.substr(index + 1)
+    return this.substr(0, index) + this.substr(index + 1);
 };
 
 Object.defineProperty(Array.prototype, "contains", {
     configurable: true,
     enumerable: false,
     value: function (value) {
-        return this.indexOf(value) > -1
+        return this.indexOf(value) > -1;
     }
 });
 
@@ -41,7 +37,7 @@ Object.defineProperty(Array.prototype, "pushStrict", {
     enumerable: false,
     value: function (value) {
         if (!this.contains(value)) {
-            this.push(value)
+            this.push(value);
         }
     }
 });
@@ -51,7 +47,7 @@ Object.defineProperty(Array.prototype, "remove", {
     enumerable: false,
     value: function (value) {
         if (this.contains(value)) {
-            this.splice(this.indexOf(value), 1)
+            this.splice(this.indexOf(value), 1);
         }
     }
 });
@@ -61,7 +57,7 @@ Object.defineProperty(Array.prototype, "append", {
     enumerable: false,
     value: function (array) {
         for (var i = 0; i < array.length; i += 1) {
-            this.push(array[i])
+            this.push(array[i]);
         }
     }
 });
@@ -70,9 +66,7 @@ Object.defineProperty(Object.prototype, "isEmpty", {
     configurable: true,
     enumerable: false,
     value: function () {
-        return Object
-            .keys(this)
-            .length === 0
+        return Object.keys(this).length === 0;
     }
 });
 

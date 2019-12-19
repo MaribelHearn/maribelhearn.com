@@ -136,7 +136,6 @@
 		<script src='assets/lnn/lnn.js' defer></script>
 		<script src='assets/shared/sorttable.js' defer></script>
         <script src='assets/shared/modernizr-custom.js' defer></script>
-        <script src='assets/shared/dark.js'></script>
 	</head>
 
 	<body>
@@ -188,7 +187,7 @@
 		                </tbody>
 		            </table></td>
 					<td id='bartd' class='noborders'>
-                        <img id='hy' src='assets/shared/h-bar.png' title='Human Mode' onClick='theme(this)' onLoad='ready()'>
+                        <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
                     </td>
 				</tr>
 			</table>
@@ -257,7 +256,7 @@
 			        if ($game == 'LM') {
 			            continue;
 		            }
-			        echo '<img id="' . $game . '" src="games/' . strtolower($game) . '50x50.jpg" alt="' . $game . ' cover" onClick="show(this.id)">';
+			        echo '<img id="' . $game . '" class="game" src="games/' . strtolower($game) . '50x50.jpg" alt="' . $game . ' cover">';
 			    }
 			?>
 			<noscript><?php
@@ -283,7 +282,7 @@
                 else { echo '在以下的菜单选择玩家的名字则可查看其LNN。'; }
 			?></p>
 			<label for='player' class='player'><?php echo tl_term('Player', $lang); ?></label>
-			<select id='player' onChange='getPlayerLNNs(this.value)'>
+			<select id='player'>
 			    <option>...</option>
 			    <?php
 			        asort($pl);
@@ -435,5 +434,6 @@
 			</div>
             <p id='back'><strong><a id='backtotop' href='#nav'><?php echo tl_term('Back to Top', $lang); ?></a></strong></p>
 		</div>
+        <script src='assets/shared/dark.js'></script>
     </body>
 </html>

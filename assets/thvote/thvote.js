@@ -1,3 +1,11 @@
+function toggle(detail) {
+    document.getElementById("age_summary").style.display = (detail ? "none" : "block");
+    document.getElementById("age_detail").style.display = (detail ? "block" : "none");
+}
+
+document.getElementById("age_summary").addEventListener("click", function wrap() { toggle(true); });
+document.getElementById("age_detail").addEventListener("click", function wrap() { toggle(false); });
+
 if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) {
     w1 = document.getElementById("chars_dummy");
     w2 = document.getElementById("chars_container");
@@ -127,9 +135,4 @@ if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("T
     wv.onscroll = function() {
         wu.scrollLeft = wv.scrollLeft;
     }
-}
-
-function toggle(detail) {
-    document.getElementById("age_summary").style.display = (detail ? "none" : "block");
-    document.getElementById("age_detail").style.display = (detail ? "block" : "none");
 }
