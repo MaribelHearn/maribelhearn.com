@@ -172,7 +172,7 @@ function initialise() {
     tmp = settings.sort;
     settings.sort = (settings.sort == "characters" ? "works" : "characters");
     addTier({data: {tierName: "S", noDisplay: true}});
-    addTier({data: {tierName: "S", noDisplay: true}});
+    addTier({data: {tierName: "A", noDisplay: true}});
     settings.sort = tmp;
     $(isMobile() ? "#tier_name_mobile" : "#tier_name").val("B");
 }
@@ -584,6 +584,10 @@ function emptyModal() {
     $("#modal_inner").html("");
     $("#modal_inner").css("display", "none");
     $("#modal").css("display", "none");
+
+    if (isMobile()) {
+        $(".menu").off("click");
+    }
 }
 function closeModal(event) {
     var modal = document.getElementById("modal");
@@ -676,8 +680,11 @@ function toggleInstructions() {
     " to " + ($("#instructions").css("display") == "none" ? "show" : "hide") + " the instructions.</span>");
     $("#toggle_instructions").on("click", toggleInstructions);
 }
+function storageUsed() {
+    return localStorage.hasOwnProperty("settings") || localStorage.hasOwnProperty("tiers") || localStorage.hasOwnProperty("gameTiers");
+}
 function allowData() {
-    if (localStorage.length <= 2) {
+    if (!storageUsed()) {
         return confirm("This will store data in your browser's Web Storage, which functions like a cookie. Do you allow this?");
     } else {
         return true;
@@ -696,7 +703,7 @@ function saveTiersData() {
     window.onbeforeunload = undefined;
 }
 function saveTiers() {
-    if (isMobile() && localStorage.length <= 2) {
+    if (isMobile() && !storageUsed()) {
         emptyModal();
         $("#modal_inner").html("<h3>Save Tiers</h3><p>This will store data in your browser's Web Storage, which " +
                 "functions like a cookie. Do you allow this?</p>");
@@ -725,7 +732,7 @@ function saveSettingsData() {
     window.onbeforeunload = undefined;
 }
 function saveSettingsPre() {
-    if (isMobile() && localStorage.length <= 2) {
+    if (isMobile() && !storageUsed()) {
         emptyModal();
         $("#modal_inner").html("<h3>Save Settings</h3><p>This will store data in your browser's Web Storage, " +
         "which functions like a cookie. Do you allow this?</p>");
@@ -753,9 +760,17 @@ function modalInformation() {
 }
 function menu() {
     emptyModal();
-    $("#modal_inner").html("<h3>Menu</h3>" + $("#menu").html() + "<h3>Navigation</h3>" + $("#nav").html());
+    $("#modal_inner").html("<h3>Menu</h3>" + $("#menu").html().replace(/_button/g, "_button_m") +
+    "<h3>Navigation</h3>" + $("#nav").html());
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
+    $("#save_button_m").on("click", saveTiers);
+    $("#import_button_m").on("click", importText);
+    $("#export_button_m").on("click", exportText);
+    $("#customise_button_m").on("click", customiseMenu);
+    $("#settings_button_m").on("click", settingsMenu);
+    $("#changelog_button_m").on("click", changeLog);
+    $("#reset_button_m").on("click", eraseAll);
 }
 function checkSort(text) {
     if (text.join('\n').trim() === "") {
