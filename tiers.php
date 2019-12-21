@@ -102,14 +102,14 @@
                 <a href='https://twitter.com/TheDukeofBooms' target='_blank'>ZXNova</a> for the Dairi face crops.</p>
             </div>
             <div id='menu'>
-                <input id='save_button' type='button' class='button' value='Save Tiers'>
-                <input id='import_button' type='button' class='button' value='Import'>
-                <input id='export_button' type='button' class='button' value='Export'>
+                <input id='save_button' type='button' class='button menu' value='Save Tiers'>
+                <input id='import_button' type='button' class='button menu' value='Import'>
+                <input id='export_button' type='button' class='button menu' value='Export'>
                 <br id='button_split'>
-                <input id='customise_button' type='button' class='button' value='Customise Tiers'>
-                <input id='settings_button' type='button' class='button' value='Settings'>
-                <input id='changelog_button' type='button' class='button' value='Changelog'>
-                <input id='reset_button' type='button' class='button' value='Reset'>
+                <input id='customise_button' type='button' class='button menu' value='Customise Tiers'>
+                <input id='settings_button' type='button' class='button menu' value='Settings'>
+                <input id='changelog_button' type='button' class='button menu' value='Changelog'>
+                <input id='reset_button' type='button' class='button menu' value='Reset'>
             </div>
             <input id='information_button' class='button' type='button' value='Information'>
             <input id='view_button' class='button' type='button' value='Tier List View'>
