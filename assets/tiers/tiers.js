@@ -279,8 +279,8 @@ function addMenu() {
         tierNum = tierOrder[i];
 
         if (!tierList[tierNum].flag) {
-            $("#modal_inner").append("<input id='mobile_addtotier' type='button' value='" + tierList[tierNum].name + "'>");
-            $("#mobile_addtotier").on("click", {character: character, tierNum: tierNum}, addToTierMobile);
+            $("#modal_inner").append("<input id='mobile_addtotier_" + i + "' type='button' value='" + tierList[tierNum].name + "'>");
+            $("#mobile_addtotier_" + i).on("click", {character: character, tierNum: tierNum}, addToTierMobile);
         }
     }
     $("#modal_inner").css("display", "block");
