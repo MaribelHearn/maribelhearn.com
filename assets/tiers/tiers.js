@@ -244,7 +244,7 @@ function addToTier(character, tierNum, pos, noDisplay) {
         return confirm();
     };
 
-    for (i in cats[categoryName].chars) {
+    for (i = 0; i < cats[categoryName].chars.length; i++) {
         if (!isTiered(cats[categoryName].chars[i])) {
             return;
         }
@@ -1126,7 +1126,7 @@ function saveSettings() {
         }
 
         if (!$("#checkbox_" + categoryName).is(":checked")) {
-            for (i in cats[categoryName].chars) {
+            for (i = 0; i < cats[categoryName].chars.length; i++) {
                 item = cats[categoryName].chars[i].removeSpaces();
 
                 if (isTiered(item)) {
