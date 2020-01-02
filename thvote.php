@@ -1087,7 +1087,7 @@
 <h2>04. Difficulty level 1cc'd</h2>
 <div id='clear_dummy' class='dummy'><div class='dummy_sub'></div></div>
 <div id='clear_container' class='container'>
-    <table id='clear_table' class='poll table result'>
+    <table id='clear_table' class='poll result'>
         <colgroup>
             <col class='col2 w7'>
             <col class='col3q'>
@@ -1250,7 +1250,7 @@
 <h2>08. Correlation between when and how people discovered Touhou</h2>
 <div id='corr_dummy' class='dummy'><div class='dummy_sub'></div></div>
 <div id='corr_container' class='container'>
-    <table id='corr_table' class='poll table result'>
+    <table id='corr_table' class='poll result'>
         <colgroup>
             <col class='col2 w4'>
             <col class='col3 w42'>
