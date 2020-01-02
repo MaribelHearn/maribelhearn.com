@@ -1230,7 +1230,11 @@ function changeLog() {
     "<li>21/01/2019: Mobile version</li><li>24/04/2019: Works added</li><li>18/08/2019: Migrated to maribelhearn.com</li>" +
     "<li>17/09/2019: Mobile version bugs fixed and speed increased; changelog added</li>" +
     "<li>04/10/2019: WBaWC characters added</li>" +
+<<<<<<< HEAD
     "<li>19/12/2019: Fixed character disappearance bug and related issues</li>" +
+=======
+    "<li>19/12/2019: Fixed character disappearance bug and related issues</li></ul>" +
+>>>>>>> c39df8fd07f96987721ac6ef127ab169c7d159c8
     "<li>02/01/2020: Fixed tier list loading bug</li></ul>");
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
