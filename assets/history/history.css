@@ -74,6 +74,21 @@ h3 {
 .nmnb {
     background-color: purple;
 }
+.attempted_text {
+    color: orange;
+}
+.clear_text {
+    color: green;
+}
+.nm_text {
+    color: brown;
+}
+.nb_text {
+    color: blue;
+}
+.nmnb_text {
+    color: purple;
+}
 .g {
     color: green;
     font-weight: bold;
