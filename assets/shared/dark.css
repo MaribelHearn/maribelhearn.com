@@ -14,7 +14,7 @@ a:visited:not(.replay):not(.i) {
     color: #ff69b4;
 }
 #checkboxes, #checkboxes td:not(.noborders), #gameTable, #gameTable th, #gameTable td, #table, #table th, #table td, .border,
-table:not(#jargontable):not(#bullettable):not(#spelltable):not(#searchtable):not(.noborders):not(.result):not(.center):not(.poll):not(.sub),
+table:not(#jargontable):not(#bullettable):not(#spelltable):not(#searchtable):not(.noborders):not(.result):not(.center):not(.poll),
 table#contents,  tr:not(.noborders), th:not(.noborders), td:not(.noborders) {
     border: 1px solid #808080;
 }
@@ -37,6 +37,6 @@ table#contents,  tr:not(.noborders), th:not(.noborders), td:not(.noborders) {
     color: white;
 }
 #contents tr, #contents th, #contents td, #responses tr, #responses th, #responses td, #jargontable th, #jargontable td,
-#spelltable th, #spelltable td, #bullettable th, #bullettable td, .border td, .center th, .center td, .sub td {
+#spelltable th, #spelltable td, #bullettable th, #bullettable td, .border td, .center th, .center td {
     border: none;
 }

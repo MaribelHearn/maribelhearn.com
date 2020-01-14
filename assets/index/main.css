@@ -8,6 +8,8 @@
 }
 div {
     background-color: #fff;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 h1 {
     font-family: 'Felipa';
@@ -17,25 +19,26 @@ h2 {
     font-family: 'Felipa';
     font-size: 36px;
     margin: 20px;
+    clear: both;
 }
 p {
-    margin: 10px;
-}
-td {
-    width: 1%;
-}
-.thin {
     margin: 2px;
+}
+.wide {
+    margin: 10px;
 }
 .center {
     margin-left: auto;
     margin-right: auto;
+    float: none;
 }
-.sub {
-    width: 100%;
+.left {
+    float: left;
+    width: 50%;
 }
-.border {
-    border-bottom: 1px solid black;
+.right {
+    float: right;
+    width: 50%;
 }
 #wrap {
     border: 1px solid #000;

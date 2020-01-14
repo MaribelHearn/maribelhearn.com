@@ -29,11 +29,11 @@
             <p><input id='setcookie' type='button' value='Set Blocking Cookie'></p>
             <?php
                 if ($hitcount === false) {
-                    echo '<p>No stats for today yet.</p>';
+                    echo '<p class="wide">No stats for today yet.</p>';
                 } else {
                     echo '<h2>Page Hits</h2>';
                     foreach ($stats as $key => $value) {
-                        echo '<strong>' . $key . '</strong> ' . $value . '<br>';
+                        echo '<p><strong>' . $key . '</strong> ' . $value . '</p>';
                     }
                 }
             ?>
