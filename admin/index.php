@@ -37,7 +37,7 @@
                     }
                 }
             ?>
-            <p><a href='/'>Back to Main Page</a></p>
+            <p class='wide'><a href='/'>Back to Main Page</a></p>
         </div>
         <?php echo '<input id="token" type="hidden" value=' . file_get_contents('../.stats/token') . '>'; ?>
         <script src='admin.js'></script>
