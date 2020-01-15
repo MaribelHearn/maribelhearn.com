@@ -379,7 +379,7 @@
             <table id='checkboxes'>
                 <tr class='noborders'><td class='noborders'>
                     <input id='dates' type='checkbox'>
-			        <label id='label_dates' for='dates' class='dates'>Dates</label>
+			        <label id='label_dates' for='dates' class='dates'><?php echo tl_term('Dates', $lang); ?></label>
                 </td></tr>
             </table>
             <div id='overall'>
