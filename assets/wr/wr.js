@@ -34,7 +34,7 @@ function toggleDates(event) {
     }
 
     $(".date").css("display", datesEnabled ? "table-cell" : "none");
-    $(".datestring, .datestring_game").css("display", datesEnabled ? "inline" : "none");
+    $(".datestring, .datestring_game").css("display", datesEnabled ? "table-cell" : "none");
 }
 function disableDates() {
     toggleDates({data: {alreadyDisabled: true}});
@@ -308,41 +308,31 @@ function display(event) {
             }
 
             text = (replay === "" ? sep(score) : "<a class='replay' href='" + replay + "'>" + sep(score) + "</a>") +
-            "<br>by <em>" + player + "</em>" + (date ? "<span class='dimgrey'><br><span class='datestring_game'>" + date +
-            "</span></span>" : "");
+            "<br>by <em>" + player + "</em>" + (date && datesEnabled ? "<span class='dimgrey'><br>" +
+            "<span class='datestring_game'>" + date + "</span></span>" : "");
             $("#" + game + difficulty + shottype).html(score > 0 ? text : '-');
             seasonless = shottype.removeSeason();
 
             if (game == "HSiFS" && shottype.removeChar() == bestSeason(difficulty, seasonless)) {
-                $("#" + game + difficulty + seasonless + (difficulty == "Extra"
-                    ? "Small"
-                    : "")).html(text + (difficulty != "Extra"
-                    ? " (" + bestSeason(difficulty, seasonless) + ")"
-                    : ""));
+                $("#" + game + difficulty + seasonless + (difficulty == "Extra" ? "Small" : "")).html(text + (difficulty != "Extra" ? " (" + bestSeason(difficulty, seasonless) +
+                ")" : ""));
             }
         }
 
         if (bestshotmax > 0) {
-            $(bestshot).html((bestshotreplay === ""
-                ? "<u>" + sep(bestshotmax) + "</u>"
-                : "<u><a class='replay' href='" + bestshotreplay + "'>" + sep(bestshotmax) + "</a></u>") + "<br>by <em>" + bestshotplayer + "</em>" + (bestshotdate
-                ? "<span class='dimgrey'><br><span class='datestring_game'>" + bestshotdate + "</span></span>"
-                : ""));
+            $(bestshot).html((bestshotreplay === "" ? "<u>" + sep(bestshotmax) + "</u>" : "<u><a class='replay' href='" + bestshotreplay +
+            "'>" + sep(bestshotmax) + "</a></u>") + "<br>by <em>" + bestshotplayer +
+            "</em>" + (bestshotdate && datesEnabled ? "<span class='dimgrey'><br><span class='datestring_game'>" + bestshotdate + "</span></span>" : ""));
             compareWRs[difficulty] = [
                 bestshotmax, bestshotplayer, bestshot.replace("#" + game + difficulty, "")
             ];
         }
 
         if (game == "HSiFS") {
-            $(bestshot.removeSeason() + (difficulty == "Extra"
-                ? "Small"
-                : "")).html((bestshotreplay === ""
-                ? "<u>" + sep(bestshotmax) + "</u>"
-                : "<u><a class='replay' href='" + bestshotreplay + "'>" + sep(bestshotmax) + "</a></u>") + "<br>by <em>" + bestshotplayer + "</em>" + (game == "HSiFS" && difficulty != "Extra"
-                ? " (" + bestshotseason + ")"
-                : "") + (bestshotdate
-                ? "<span class='dimgrey'><br><span class='datestring_game'>" + bestshotdate + "</span></span>"
-                : ""));
+            $(bestshot.removeSeason() + (difficulty == "Extra" ? "Small" : "")).html((bestshotreplay === "" ? "<u>" + sep(bestshotmax) +
+            "</u>" : "<u><a class='replay' href='" + bestshotreplay + "'>" + sep(bestshotmax) + "</a></u>") + "<br>by <em>" + bestshotplayer +
+            "</em>" + (game == "HSiFS" && difficulty != "Extra" ? " (" + bestshotseason + ")" : "") + (bestshotdate && datesEnabled ? "<span class='dimgrey'><br>" +
+            "<span class='datestring_game'>" + bestshotdate + "</span></span>" : ""));
         }
     }
 
