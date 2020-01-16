@@ -138,7 +138,10 @@
             <hr>
             <h2 id='practools'>General Practice Tools</h2>
             <p>Patches intended for efficient practice in one or more games, allowing the player to skip to patterns or changing power and such.</p>
-            <p><strong>Practice Tools by <a href='https://twitter.com/Ririanly'>Riri</a></strong></p>
+			<p><strong>Universal Practice Tool by ACK</strong></p>
+			<p>Single practice tool that works on all of the official Touhou shoot 'em up games, allowing you to change settings or skip to patterns at will.</p>
+			<a href='https://maribelhearn.com/thprac_v1.0.exe'>Download</a>
+			<p><strong>Practice Tools by <a href='https://twitter.com/Ririanly'>Riri</a></strong></p>
             <p>Tools that allow you to skip to specific patterns in SA, UFO and LoLK, also allowing for other settings like your current power.
             The UFO and LoLK tools are external programs while the SA tool is a modification of the program. The LoLK one was made for v1.00a but mostly functions properly on v1.00b as well.</p>
             <table>
