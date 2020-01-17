@@ -355,10 +355,10 @@
                     <thead>
                         <tr>
                             <th class='player'><?php echo tl_term('Player', $lang); ?></th>
-                            <th id='autosort1' class='sorttable_numeric'>
+                            <th id='autosort3' class='sorttable_numeric'>
                                 <span class='nooflnns'><?php echo tl_term('No. of LNNs', $lang); ?></span>
                             </th>
-                            <th id='autosort2' class='sorttable_numeric'>
+                            <th id='autosort4' class='sorttable_numeric'>
                                 <span class='games'><?php echo tl_term('Games LNN\'d', $lang); ?></span>
                             </th>
                         </tr>
