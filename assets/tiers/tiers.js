@@ -1585,7 +1585,7 @@ function loadSettingsFromStorage() {
         if (settingsData.hasOwnProperty("gameCategories")) {
             for (category in settingsData.gameCategories) {
                 if (category == "Manga") { // fix legacy manga
-                    settings.categories["Mangas"] = settingsData.categories[category];
+                    settings.gameCategories["Mangas"] = settingsData.gameCategories[category];
                     continue;
                 }
 
