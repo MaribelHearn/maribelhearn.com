@@ -6,7 +6,7 @@ function hit($page) {
             return;
         }
         $token = trim(file_get_contents('.stats/token'));
-        if ($_SERVER['SERVER_NAME'] !== 'localhost' && $_COOKIE['token'] !== $token && $bot === false) {
+        if ($_SERVER['SERVER_NAME'] !== 'localhost' && $_COOKIE['token'] !== $token) {
             $page = str_replace('.php', '', $page);
             $hitcount = '.stats/' . date('d-m-Y') . '.json';
             if (file_exists($hitcount)) {
