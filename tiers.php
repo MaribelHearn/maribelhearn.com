@@ -72,7 +72,7 @@
                 <table id='tier_list_table'>
                     <thead id='tier_list_thead'>
                         <tr id='add_tier_box_mobile'>
-                            <td colspan='2'>
+                            <td>
                                 <input id='tier_name_mobile' type='text' value=''>
                                 <input id='add_tier_mobile' type='button' value='Add Tier'>
                             </td>
@@ -81,7 +81,7 @@
                     <tbody id='tier_list_tbody'></tbody>
                     <tfoot id='tier_list_tfoot'>
                         <tr>
-                            <td>
+                            <td id='add_tier_desktop'>
                                 <input id='tier_name' type='text' value=''>
                                 <input id='add_tier' type='button' value='Add Tier'>
                             </td>

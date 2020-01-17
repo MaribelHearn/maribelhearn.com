@@ -13,7 +13,7 @@ var categories = {},
         },
         "gameCategories": {
             "PC-98": { enabled: true }, "Classic": { enabled: true }, "Modern1": { enabled: true }, "Modern2": { enabled: true },
-            "Manga": { enabled: true }, "Books": { enabled: true }, "CDs": { enabled: true }
+            "Mangas": { enabled: true }, "Books": { enabled: true }, "CDs": { enabled: true }
         },
         "pc98Enabled": true,
         "windowsEnabled": true,
@@ -124,10 +124,10 @@ function reloadTiers() {
             $("#tier_list_tbody").append("<tr id='tr" + tierNum +
             "' class='tier'><th id='th" + tierNum +
             "' class='tier_header'>" + tierList[tierNum].name + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr>");
-            $("#tr" + tierNum).on("dragover", allowDrop); // event
-            $("#tr" + tierNum).on("drop", drop); // event
-            $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo); // event
-            $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo); // event
+            $("#tr" + tierNum).on("dragover", allowDrop);
+            $("#tr" + tierNum).on("drop", drop);
+            $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
+            $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
             $("#th" + tierNum).css("background-color", tierList[tierNum].bg);
             $("#th" + tierNum).css("color", tierList[tierNum].colour);
             $("#th" + tierNum).css("max-width", settings.tierHeaderWidth + "px");
@@ -381,7 +381,7 @@ function modalChar(character, tierNum) {
 
     emptyModal();
     $("#modal_inner").html("<h3>" + character + "</h3><input id='remove_button' class='mobile_button' type='button' value='Remove'>");
-    $("#remove_button").on("click", {character: character, tierNum: tierNum}, modalRemove); // event
+    $("#remove_button").on("click", {character: character, tierNum: tierNum}, modalRemove);
 
     if (tierOrder.indexOf(tierNum) !== 0) {
         $("#modal_inner").append("<input id='up_button' class='mobile_button' type='button' value='Move Up'>");
@@ -435,10 +435,10 @@ function addTier(event) {
         $("#tier_list_tbody").append("<tr id='tr" + tierNum + "' class='tier'>" +
         "<th id='th" + tierNum + "' class='tier_header'>" + tierName +
         "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr><hr>");
-        $("#tr" + tierNum).on("dragover", allowDrop); // event
-        $("#tr" + tierNum).on("drop", drop); // event
-        $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo); // event
-        $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo); // event
+        $("#tr" + tierNum).on("dragover", allowDrop);
+        $("#tr" + tierNum).on("drop", drop);
+        $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
+        $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
         $("#th" + tierNum).css("max-width", settings.tierHeaderWidth + "px");
         $("#th" + tierNum).css("width", settings.tierHeaderWidth + "px");
 
@@ -1267,7 +1267,7 @@ function eraseAllConfirmed() {
         },
         "gameCategories": {
             "PC-98": { enabled: true }, "Classic": { enabled: true }, "Modern1": { enabled: true }, "Modern2": { enabled: true },
-            "Manga": { enabled: true }, "Books": { enabled: true }, "CDs": { enabled: true }
+            "Mangas": { enabled: true }, "Books": { enabled: true }, "CDs": { enabled: true }
         },
         "pc98Enabled": true,
         "windowsEnabled": true,
@@ -1404,10 +1404,10 @@ function loadTier(tiersData, tierNum, tierSort) {
             $("#tier_list_tbody").append("<tr id='tr" + tierNum +
             "' class='tier'><th id='th" + tierNum +
             "' class='tier_header'>" + tiersData[tierNum].name + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr>");
-            $("#tr" + tierNum).on("dragover", allowDrop); // event
-            $("#tr" + tierNum).on("drop", drop); // event
-            $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo); // event
-            $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo); // event
+            $("#tr" + tierNum).on("dragover", allowDrop);
+            $("#tr" + tierNum).on("drop", drop);
+            $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
+            $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
             $("#th" + tierNum).css("background-color", tierList[tierNum].bg);
             $("#th" + tierNum).css("color", tierList[tierNum].colour);
             $("#th" + tierNum).css("max-width", settings.tierHeaderWidth + "px");
@@ -1505,7 +1505,7 @@ function loadCharacters() {
                 "src='art/" + settings.artist + "/" + categoryName + "/" + character.removeSpaces() +
                 "." + (settings.artist == "Dairi" ? "png" : "jpg") + "' alt='" + character + "' title='" + character + "'>");
                 $("#" + character.removeSpaces()).on("dblclick", addToMostRecent);
-                $("#" + character.removeSpaces()).on("dragstart", drag); // event
+                $("#" + character.removeSpaces()).on("dragstart", drag);
             }
 
             if (maleCharacters.contains(character.removeSpaces()) && !settings.maleEnabled) {
@@ -1556,7 +1556,7 @@ function loadWorks() {
                 "C'><img id='" + game.removeSpaces() + "' class='list' draggable='true' " +
                 "src='games/" + acronym(game) + "120x120.jpg' alt='" + game + "' title='" + game + "'>");
                 $("#" + game.removeSpaces()).on("dblclick", addToMostRecent);
-                $("#" + game.removeSpaces()).on("dragstart", drag); // event
+                $("#" + game.removeSpaces()).on("dragstart", drag);
             }
         }
 
@@ -1584,6 +1584,11 @@ function loadSettingsFromStorage() {
 
         if (settingsData.hasOwnProperty("gameCategories")) {
             for (category in settingsData.gameCategories) {
+                if (category == "Manga") { // fix legacy manga
+                    settings.categories["Mangas"] = settingsData.categories[category];
+                    continue;
+                }
+
                 settings.gameCategories[category].enabled = settingsData.gameCategories[category].enabled;
             }
         }
@@ -1607,8 +1612,8 @@ function loadSettingsFromStorage() {
 }
 function setAddTierListeners() {
     $("#add_tier, #add_tier_mobile").off("click");
-    $("#add_tier").on("click", {tierName: $("#tier_name").val()}, addTier); // event
-    $("#add_tier_mobile").on("click", {tierName: $("#tier_name_mobile").val()}, addTier); // event
+    $("#add_tier").on("click", {tierName: $("#tier_name").val()}, addTier);
+    $("#add_tier_mobile").on("click", {tierName: $("#tier_name_mobile").val()}, addTier);
 }
 function detectAddTierEnter(event) {
     if (event.keyCode == 13) {
@@ -1619,12 +1624,12 @@ function detectAddTierEnter(event) {
 }
 function setEventListeners() {
     setAddTierListeners();
-    $("body").on("click", closeModal); // event
-    $("body").on("keypress", closeModal); // event
+    $("body").on("click", closeModal);
+    $("body").on("keypress", closeModal);
     $("#sort").on("change", switchSort);
     $("#toggle_view").on("click", toggleTierView);
     $("#toggle_instructions").on("click", toggleInstructions);
-    $("#tier_name, #tier_name_mobile").on("keyup", detectAddTierEnter); // event
+    $("#tier_name, #tier_name_mobile").on("keyup", detectAddTierEnter);
     $("#save_button").on("click", saveTiers);
     $("#import_button").on("click", importText);
     $("#export_button").on("click", exportText);
@@ -1636,8 +1641,8 @@ function setEventListeners() {
     $("#view_button").on("click", toggleTierView);
     $("#menu_button").on("click", menu);
     $("#switch_button").on("click", switchSort);
-    $("#characters").on("dragover", allowDrop); // event
-    $("#characters").on("drop", drop); // event
+    $("#characters").on("dragover", allowDrop);
+    $("#characters").on("drop", drop);
 }
 $(document).ready(function () {
     deleteLegacyCookies();
