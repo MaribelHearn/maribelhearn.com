@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang='en' class='no-js'>
+<?php $empty = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC'; ?>
 
     <head>
         <title>Seihou Banshiryuu C67</title>
@@ -19,11 +20,9 @@
             <p>This page covers the scoring system and mechanics of the Comiket 67 release of Seihou Banshiryuu.</p>
 			<p><a id='backtomain' href='/'>Back to Main Page</a></p>
             <picture>
-                <source data-srcset='assets/c67/boxart.webp' type='image/webp'>
-                <source data-srcset='assets/c67/boxart.jpg'>
-                <img id='boxart' class='lazy' data-src='assets/c67/boxart.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Banshiryuu Cover'>
+                <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/boxart.webp' type='image/webp'>
+                <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/boxart.jpg'>
+                <img id='boxart' class='lazy' data-src='assets/c67/boxart.jpg' src='<?php echo $empty; ?>' alt='Banshiryuu Cover'>
             </picture>
             <hr>
             <h2>Contents</h2>
@@ -45,11 +44,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <hr>
             <h2 id='items'>Items</h2>
             <picture>
-                <source data-srcset='assets/c67/item_rank.webp' type='image/webp'>
-                <source data-srcset='assets/c67/item_rank.jpg'>
-                <img class='lazy' data-src='assets/c67/item_rank.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Items'>
+                <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/item_rank.webp' type='image/webp'>
+                <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/item_rank.jpg'>
+                <img class='lazy' data-src='assets/c67/item_rank.jpg' src='<?php echo $empty; ?>' alt='Items'>
             </picture>
             <p>Items will be automatically collected when an enemy is killed in close proximity. As you collect more of the same item,
             the item rank will gradually increase, also changing what the items look like. The points awarded per item on each rank are as follows:</p>
@@ -60,11 +57,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <hr>
             <h2 id='grazing'>Grazing</h2>
             <picture>
-                <source data-srcset='assets/c67/grazing.webp' type='image/webp'>
-                <source data-srcset='assets/c67/grazing.png'>
-                <img id='graze' class='lazy' data-src='assets/c67/grazing.png' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Grazing'>
+                <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/grazing.webp' type='image/webp'>
+                <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/grazing.png'>
+                <img id='graze' class='lazy' data-src='assets/c67/grazing.png' src='<?php echo $empty; ?>' alt='Grazing'>
             </picture>
             <br>
             <em class='description'>A counter appears as you perform continuous grazing,
@@ -77,11 +72,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <hr>
             <h2 id='se'>Special Equipment (SE)</h2>
             <picture>
-                <source data-srcset='assets/c67/normal_se.webp' type='image/webp'>
-                <source data-srcset='assets/c67/normal_se.jpg'>
-                <img class='lazy' data-src='assets/c67/normal_se.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='SE-attack'>
+                <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/normal_se.webp' type='image/webp'>
+                <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/normal_se.jpg'>
+                <img class='lazy' data-src='assets/c67/normal_se.jpg' src='<?php echo $empty; ?>' alt='SE-attack'>
             </picture>
             <p>Bosses and midbosses may use <em>SE attacks</em>. They have a set duration and the boss is invincible during one,
             as denoted by the text "-- ABSOLUTE DEFEND --" displayed on their health bar. During an SE, you should
@@ -89,11 +82,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             is multiplied by 100 and added to your score. The damage dealt to the boss during an SE is displayed
             on the right of the screen, below your current score.</p>
             <picture>
-                <source data-srcset='assets/c67/se.webp' type='image/webp'>
-                <source data-srcset='assets/c67/se.jpg'>
-                <img class='lazy' data-src='assets/c67/se.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Damage dealt to SE'>
+                <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/se.webp' type='image/webp'>
+                <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/se.jpg'>
+                <img class='lazy' data-src='assets/c67/se.jpg' src='<?php echo $empty; ?>' alt='Damage dealt to SE'>
             </picture>
             <br>
             <em class='description'>The bottom number is the current damage dealt to the boss during an SE.</em>
@@ -105,11 +96,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             their regular pattern finishes. This is the most notable in the battle against VIVIT when using
             Hirano, due to VIVIT's low health.</p>
             <picture>
-                <source data-srcset='assets/c67/final_se.webp' type='image/webp'>
-                <source data-srcset='assets/c67/final_se.jpg'>
-                <img class='lazy' data-src='assets/c67/final_se.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Final SE-attack'>
+                <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/final_se.webp' type='image/webp'>
+                <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/final_se.jpg'>
+                <img class='lazy' data-src='assets/c67/final_se.jpg' src='' alt='Final SE-attack'>
             </picture>
             <br>
             <em class='description'>The stage 1 midboss' final (and in this case, only) SE begins.</em>
@@ -158,11 +147,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
                 </tr>
             </table>
             <picture>
-                <source data-srcset='assets/c67/yuitia.webp' type='image/webp'>
-                <source data-srcset='assets/c67/yuitia.png'>
-                <img id='yuitia' class='lazy' data-src='assets/c67/yuitia.png' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Yuitia (final boss)'>
+                <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/yuitia.webp' type='image/webp'>
+                <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/yuitia.png'>
+                <img id='yuitia' class='lazy' data-src='assets/c67/yuitia.png' src='<?php echo $empty; ?>' alt='Yuitia (final boss)'>
             </picture>
             <br>
             <em class='description'>Yuitia, the stage 6 (final) boss of the game.</em>
@@ -181,11 +168,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <p>Note that for every shottype, the regular shot can only hit enemies in front of you, and the focused shot automatically aims at enemies.</p>
             <h3 id='vivitw'>VIVIT-W</h3>
             <picture>
-                <source data-srcset='assets/c67/vivitw.webp' type='image/webp'>
-                <source data-srcset='assets/c67/vivitw.jpg'>
-                <img class='lazy shotinfo' class='lazy' data-src='assets/c67/vivitw.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='VIVIT-W Shottype Info'>
+                <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/vivitw.webp' type='image/webp'>
+                <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/vivitw.jpg'>
+                <img class='lazy shotinfo' class='lazy' data-src='assets/c67/vivitw.jpg' src='<?php echo $empty; ?>' alt='VIVIT-W Shottype Info'>
             </picture>
             <br>
             <p>A shottype with slow movement speed and medium powered shots. Her regular shot covers a wide area and is inconsistent,
@@ -202,11 +187,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             of the game. Her bomb duration can also help her last out through patterns, having far more I-frames than other bombs.</p>
             <h3 id='vivita'>VIVIT-A</h3>
             <picture>
-                <source data-srcset='assets/c67/vivita.webp' type='image/webp'>
-                <source data-srcset='assets/c67/vivita.jpg'>
-                <img class='lazy shotinfo' class='lazy' data-src='assets/c67/vivita.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='VIVIT-A Shottype Info'>
+                <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/vivita.webp' type='image/webp'>
+                <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/vivita.jpg'>
+                <img class='lazy shotinfo' class='lazy' data-src='assets/c67/vivita.jpg' src='<?php echo $empty; ?>' alt='VIVIT-A Shottype Info'>
             </picture>
             <br>
             <p>The faster VIVIT, boasting the second fastest movement speed, the second most powerful regular shot and second weakest
@@ -222,11 +205,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             want to deal damage to. Avoid focusing as much as possible and limit it to when it is needed for survival.</p>
             <h3 id='hiranos'>HiranoS</h3>
             <picture>
-                <source data-srcset='assets/c67/hiranos.webp' type='image/webp'>
-                <source data-srcset='assets/c67/hiranos.jpg'>
-                <img class='lazy shotinfo' class='lazy' data-src='assets/c67/hiranos.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='HiranoS Shottype Info'>
+                <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/hiranos.webp' type='image/webp'>
+                <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/hiranos.jpg'>
+                <img class='lazy shotinfo' class='lazy' data-src='assets/c67/hiranos.jpg' src='<?php echo $empty; ?>' alt='HiranoS Shottype Info'>
             </picture>
             <br>
             <p>Arguably the best shottype in the game. Her regular shot is the most powerful shot in the game, beating not just all
@@ -242,11 +223,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             damage and achieve very high scores; her amazing damage combined with her speed is what makes her the best shottype to use overall.</p>
             <h3 id='hiranoo'>HiranoO</h3>
             <picture>
-                <source data-srcset='assets/c67/hiranoo.webp' type='image/webp'>
-                <source data-srcset='assets/c67/hiranoo.jpg'>
-                <img class='lazy shotinfo' data-src='assets/c67/hiranoo.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='HiranoO Shottype Info'>
+                <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/hiranoo.webp' type='image/webp'>
+                <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/hiranoo.jpg'>
+                <img class='lazy shotinfo' data-src='assets/c67/hiranoo.jpg' src='<?php echo $empty; ?>' alt='HiranoO Shottype Info'>
             </picture>
             <br>
             <p>HiranoO is a gimmicky shottype. Her regular shot is the third strongest, being twice as powerful as VIVIT-W's one but weaker

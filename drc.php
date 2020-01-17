@@ -725,27 +725,27 @@
 							echo '<tr><th colspan="3">' . $diff . '</th></tr>';
 							if ($diff == 'Easy') {
 								if ($lang == 'English') {
-									echo '<tr><td colspan="12">If score &lt; 1st threshold, then: ||220*(Score/T1)^2||</td></tr>';
+									echo '<tr><td colspan="3">If score &lt; 1st threshold, then: ||220*(Score/T1)^2||</td></tr>';
 								} else if ($lang == 'Japanese') {
-									echo '<tr><td colspan="12">スコアが第一閾値よりも小さければ、||220*(スコア/第一閾値)^2||</td></tr>';
+									echo '<tr><td colspan="3">スコアが第一閾値よりも小さければ、||220*(スコア/第一閾値)^2||</td></tr>';
 								} else {
-									echo '<tr><td colspan="12">若分数小于第一阈值，||220*(分数/第一阈值)^2||</td></tr>';
+									echo '<tr><td colspan="3">若分数小于第一阈值，||220*(分数/第一阈值)^2||</td></tr>';
 								}
 							} else if ($diff == 'Lunatic') {
 								if ($lang == 'English') {
-									echo '<tr><td colspan="12">If score &lt; 2b, then: ||200*(Score/2b)^2||</td></tr>';
+									echo '<tr><td colspan="3">If score &lt; 2b, then: ||200*(Score/2b)^2||</td></tr>';
 								} else if ($lang == 'Japanese') {
-									echo '<tr><td colspan="12">スコアが20億よりも小さければ、||200*(スコア/20億)^2||</td></tr>';
+									echo '<tr><td colspan="3">スコアが20億よりも小さければ、||200*(スコア/20億)^2||</td></tr>';
 								} else {
-									echo '<tr><td colspan="12">若分数小于20亿，||200*(分数/20亿)^2||</td></tr>';
+									echo '<tr><td colspan="3">若分数小于20亿，||200*(分数/20亿)^2||</td></tr>';
 								}
 							} else if ($diff == 'Extra') {
 								if ($lang == 'English') {
-									echo '<tr><td colspan="12">If score &lt; 900m, then: ||100*(Score/900m)^2||</td></tr>';
+									echo '<tr><td colspan="3">If score &lt; 900m, then: ||100*(Score/900m)^2||</td></tr>';
 								} else if ($lang == 'Japanese') {
-									echo '<tr><td colspan="12">スコアが9億よりも小さければ、||100*(スコア/9億)^2||</td></tr>';
+									echo '<tr><td colspan="3">スコアが9億よりも小さければ、||100*(スコア/9億)^2||</td></tr>';
 								} else {
-									echo '<tr><td colspan="12">若分数小于9亿，||100*(分数/9亿)^2||</td></tr>';
+									echo '<tr><td colspan="3">若分数小于9亿，||100*(分数/9亿)^2||</td></tr>';
 								}
 							}
 							foreach ($value as $shot => $thresholds) {
