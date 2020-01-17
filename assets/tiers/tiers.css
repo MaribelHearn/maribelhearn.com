@@ -181,6 +181,9 @@ input[type=number] {
 #erase_all_button {
     margin: 10px;
 }
+#add_tier_desktop {
+    float: left;
+}
 @media screen and (max-width: 1100px) and (max-height: 800px) {
     .no-js body, .no-webp body, .webp body {
         background: #1b232e;
