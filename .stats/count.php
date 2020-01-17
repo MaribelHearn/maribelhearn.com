@@ -2,7 +2,7 @@
 function hit($page) {
     if (file_exists('.stats/token')) {
         //$bot = strpos($usr, 'bot') || strpos($usr, 'Google') || strpos($usr, 'W3C') || strpos($_SERVER['HTTP_REFERER'], 'developers.google');
-        if (!empty($_SERVER['HTTP_USER_AGENT']) && preg_match('~(bot|crawl|slurp|spider|w3c)~i', $_SERVER['HTTP_USER_AGENT'])) {
+        if (!empty($_SERVER['HTTP_USER_AGENT']) && preg_match('~(bot|crawl|slurp|spider|archiver|facebook|lighthouse|jigsaw|validator|w3c)~i', $_SERVER['HTTP_USER_AGENT'])) {
             return;
         }
         $token = trim(file_get_contents('.stats/token'));
