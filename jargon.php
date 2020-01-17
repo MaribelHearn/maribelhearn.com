@@ -335,7 +335,7 @@
                     </tr>
                     <tr id='term_underflow'>
                         <th>Underflow</th>
-                        <td>When a negative number is converted to a format that does not have negative numbers, causing a very high positive number. Notoriously occurs in <a href='#term_ddc'>DDC</a>
+                        <td>When a negative number is converted to a format that does not have negative numbers, causing a very high positive number. Notoriously occurs in DDC
                         and ISC, in which the Spell Card Bonus can be made negative, which, if the score becomes negative when the bonus is added, increases the score to 9,999,999,990,
                         a <a href='#term_counterstop'>counterstop</a>. Not to be confused with <a href='#term_overflow'>overflow</a>.</td>
                     </tr>
@@ -346,7 +346,7 @@
                 </tbody>
             </table>
             <h1 id='spells'>Spell Card / Pattern Acronyms</h1>
-            <p>These acronyms for particularly infamous patterns usually refer to the Lunatic difficulty version of the abbreviated <a href='#term_spellcard'>Spell Card</a> or pattern.</p>
+            <p>These acronyms for particularly infamous patterns usually refer to the Lunatic difficulty version of the abbreviated Spell Card or pattern.</p>
             <table id='spelltable'>
                 <thead>
                     <tr>

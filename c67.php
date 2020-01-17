@@ -98,7 +98,7 @@
             <picture>
                 <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/final_se.webp' type='image/webp'>
                 <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/final_se.jpg'>
-                <img class='lazy' data-src='assets/c67/final_se.jpg' src='' alt='Final SE-attack'>
+                <img class='lazy' data-src='assets/c67/final_se.jpg' src='<?php echo $empty; ?>' alt='Final SE-attack'>
             </picture>
             <br>
             <em class='description'>The stage 1 midboss' final (and in this case, only) SE begins.</em>
@@ -170,7 +170,7 @@
             <picture>
                 <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/vivitw.webp' type='image/webp'>
                 <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/vivitw.jpg'>
-                <img class='lazy shotinfo' class='lazy' data-src='assets/c67/vivitw.jpg' src='<?php echo $empty; ?>' alt='VIVIT-W Shottype Info'>
+                <img class='lazy shotinfo' data-src='assets/c67/vivitw.jpg' src='<?php echo $empty; ?>' alt='VIVIT-W Shottype Info'>
             </picture>
             <br>
             <p>A shottype with slow movement speed and medium powered shots. Her regular shot covers a wide area and is inconsistent,
@@ -189,7 +189,7 @@
             <picture>
                 <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/vivita.webp' type='image/webp'>
                 <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/vivita.jpg'>
-                <img class='lazy shotinfo' class='lazy' data-src='assets/c67/vivita.jpg' src='<?php echo $empty; ?>' alt='VIVIT-A Shottype Info'>
+                <img class='lazy shotinfo' data-src='assets/c67/vivita.jpg' src='<?php echo $empty; ?>' alt='VIVIT-A Shottype Info'>
             </picture>
             <br>
             <p>The faster VIVIT, boasting the second fastest movement speed, the second most powerful regular shot and second weakest
@@ -207,7 +207,7 @@
             <picture>
                 <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/hiranos.webp' type='image/webp'>
                 <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/hiranos.jpg'>
-                <img class='lazy shotinfo' class='lazy' data-src='assets/c67/hiranos.jpg' src='<?php echo $empty; ?>' alt='HiranoS Shottype Info'>
+                <img class='lazy shotinfo' data-src='assets/c67/hiranos.jpg' src='<?php echo $empty; ?>' alt='HiranoS Shottype Info'>
             </picture>
             <br>
             <p>Arguably the best shottype in the game. Her regular shot is the most powerful shot in the game, beating not just all
