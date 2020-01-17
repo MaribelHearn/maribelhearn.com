@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang='en' class='no-js'>
+<?php $empty = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC'; ?>
 
 	<head>
 		<title>Maribel's Achievement History</title>
@@ -18,7 +19,7 @@
             <h1>Maribel's Achievement History</h1>
             <noscript><strong>Notice:</strong> this page cannot function properly with JavaScript disabled.</noscript>
             <p id='notice'><strong>Notice:</strong> this page is best viewed on mobile using landscape mode.</p>
-            <p>I am a bullet hell player who mostly plays for score. So far I have seriously scored Touhou 13: Ten Desires and Touhou 16: Hidden Star in Four Seasons.</p>
+            <p>I am a bullet hell player who mostly plays for score and mains Touhou 13: Ten Desires. I have also scored Touhou 16: Hidden Star in Four Seasons, Seihou Banshiryuu C67 and Samidare.</p>
 			<p><a id='backtomain' href='/'>Back to Main Page</a></p>
             <hr>
             <h2>Contents</h2>
@@ -550,11 +551,9 @@
             <div id='SoEW'>
                 <h2>TH02 - Story of Eastern Wonderland</h2>
 				<picture>
-					<source data-srcset='games/soew250x250.webp' type='image/webp'>
-					<source data-srcset='games/soew250x250.jpg'>
-					<img class='lazy' data-src='games/soew250x250.jpg' src='data:image/png;base64,
-					iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-					wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='SoEW'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/soew250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/soew250x250.jpg'>
+					<img class='lazy' data-src='games/soew250x250.jpg' src='<?php echo $empty; ?>' alt='SoEW'>
 				</picture>
                 <br>Obtained: March 28, 2012
                 <h3>Survival</h3>
@@ -603,11 +602,9 @@
             <div id='PoDD'>
                 <h2>TH03 - Phantasmagoria of Dim.Dream</h2>
 				<picture>
-					<source data-srcset='games/podd250x250.webp' type='image/webp'>
-					<source data-srcset='games/podd250x250.jpg'>
-					<img class='lazy' data-src='games/podd250x250.jpg' src='data:image/png;base64,
-					iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-					wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='PoDD'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/podd250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/podd250x250.jpg'>
+					<img class='lazy' data-src='games/podd250x250.jpg' src='<?php echo $empty; ?>' alt='PoDD'>
 				</picture>
                 <br>Obtained: March 28, 2012
                 <h3>Survival</h3>
@@ -647,11 +644,9 @@
             <div id='LLS'>
                 <h2>TH04 - Lotus Land Story</h2>
 				<picture>
-					<source data-srcset='games/lls250x250.webp' type='image/webp'>
-					<source data-srcset='games/lls250x250.jpg'>
-					<img class='lazy' data-src='games/lls250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='LLS'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/lls250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/lls250x250.jpg'>
+					<img class='lazy' data-src='games/lls250x250.jpg' src='<?php echo $empty; ?>' alt='LLS'>
 				</picture>
                 <br>Obtained: March 28, 2012
                 <h3>Survival</h3>
@@ -712,11 +707,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='MS'>
                 <h2>TH05 - Mystic Square</h2>
 				<picture>
-					<source data-srcset='games/ms250x250.webp' type='image/webp'>
-					<source data-srcset='games/ms250x250.jpg'>
-					<img class='lazy' data-src='games/ms250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='MS'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/ms250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/ms250x250.jpg'>
+					<img class='lazy' data-src='games/ms250x250.jpg' src='<?php echo $empty; ?>' alt='MS'>
 				</picture>
                 <br>Obtained: March 28, 2012
                 <h3>Survival</h3>
@@ -777,11 +770,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='EoSD'>
                 <h2>TH06 - The Embodiment of Scarlet Devil</h2>
 				<picture>
-					<source data-srcset='games/eosd250x250.webp' type='image/webp'>
-					<source data-srcset='games/eosd250x250.jpg'>
-					<img class='lazy' data-src='games/eosd250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='EoSD'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/eosd250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/eosd250x250.jpg'>
+					<img class='lazy' data-src='games/eosd250x250.jpg' src='<?php echo $empty; ?>' alt='EoSD'>
 				</picture>
                 <br>Obtained: September 28, 2011
                 <h3>Scoring</h3>
@@ -921,11 +912,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='PCB'>
                 <h2>TH07 - Perfect Cherry Blossom</h2>
 				<picture>
-					<source data-srcset='games/pcb250x250.webp' type='image/webp'>
-					<source data-srcset='games/pcb250x250.jpg'>
-					<img class='lazy' data-src='games/pcb250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='PCB'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/pcb250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/pcb250x250.jpg'>
+					<img class='lazy' data-src='games/pcb250x250.jpg' src='<?php echo $empty; ?>' alt='PCB'>
 				</picture>
 <br>Obtained: November 2, 2011
                 <h3>Survival</h3>
@@ -1019,11 +1008,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='IN'>
                 <h2>TH08 - Imperishable Night</h2>
 				<picture>
-					<source data-srcset='games/in250x250.webp' type='image/webp'>
-					<source data-srcset='games/in250x250.jpg'>
-					<img class='lazy' data-src='games/in250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='IN'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/in250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/in250x250.jpg'>
+					<img class='lazy' data-src='games/in250x250.jpg' src='<?php echo $empty; ?>' alt='IN'>
 				</picture>
                 <br>Obtained: November 2, 2011
                 <h3>Survival</h3>
@@ -1155,11 +1142,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='PoFV'>
                 <h2>TH09 - Phantasmagoria of Flower View</h2>
 				<picture>
-					<source data-srcset='games/pofv250x250.webp' type='image/webp'>
-					<source data-srcset='games/pofv250x250.jpg'>
-					<img class='lazy' data-src='games/pofv250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='PoFV'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/pofv250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/pofv250x250.jpg'>
+					<img class='lazy' data-src='games/pofv250x250.jpg' src='<?php echo $empty; ?>' alt='PoFV'>
 				</picture>
                 <br>Obtained: November 2, 2011
                 <h3>Survival</h3>
@@ -1220,11 +1205,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='StB'>
                 <h2>TH9.5 Shoot the Bullet</h2>
 				<picture>
-					<source data-srcset='games/stb250x250.webp' type='image/webp'>
-					<source data-srcset='games/stb250x250.jpg'>
-					<img class='lazy' data-src='games/stb250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='StB'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/stb250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/stb250x250.jpg'>
+					<img class='lazy' data-src='games/stb250x250.jpg' src='<?php echo $empty; ?>' alt='StB'>
 				</picture>
                 <br>Obtained: April 14, 2012
                 <h3>Survival</h3>
@@ -1392,11 +1375,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='MoF'>
                 <h2>TH10 - Mountain of Faith</h2>
 				<picture>
-					<source data-srcset='games/mof250x250.webp' type='image/webp'>
-					<source data-srcset='games/mof250x250.jpg'>
-					<img class='lazy' data-src='games/mof250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='MoF'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/mof250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/mof250x250.jpg'>
+					<img class='lazy' data-src='games/mof250x250.jpg' src='<?php echo $empty; ?>' alt='MoF'>
 				</picture>
                 <br>Obtained: December 10, 2011 (est.)
                 <h3>Survival</h3>
@@ -1474,11 +1455,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='SA'>
                 <h2>TH11 - Subterranean Animism</h2>
 				<picture>
-					<source data-srcset='games/sa250x250.webp' type='image/webp'>
-					<source data-srcset='games/sa250x250.jpg'>
-					<img class='lazy' data-src='games/sa250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='SA'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/sa250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/sa250x250.jpg'>
+					<img class='lazy' data-src='games/sa250x250.jpg' src='<?php echo $empty; ?>' alt='SA'>
 				</picture>
                 <br>Obtained: November 16, 2011 (est.)
                 <h3>Survival</h3>
@@ -1540,11 +1519,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='UFO'>
                 <h2>TH12 - Undefined Fantastic Object</h2>
 				<picture>
-					<source data-srcset='games/ufo250x250.webp' type='image/webp'>
-					<source data-srcset='games/ufo250x250.jpg'>
-					<img class='lazy' data-src='games/ufo250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='UFO'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/ufo250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/ufo250x250.jpg'>
+					<img class='lazy' data-src='games/ufo250x250.jpg' src='<?php echo $empty; ?>' alt='UFO'>
 				</picture>
                 <br>Obtained: December 14, 2011 (demo by mistake, est.); December 21, 2011 (est.)
                 <h3>Survival</h3>
@@ -1606,11 +1583,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='DS'>
                 <h2>TH12.5 Double Spoiler</h2>
 				<picture>
-					<source data-srcset='games/ds250x250.webp' type='image/webp'>
-					<source data-srcset='games/ds250x250.jpg'>
-					<img class='lazy' data-src='games/ds250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='DS'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/ds250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/ds250x250.jpg'>
+					<img class='lazy' data-src='games/ds250x250.jpg' src='<?php echo $empty; ?>' alt='DS'>
 				</picture>
                 <br>Obtained: April 14, 2012
                 <h3>Survival</h3>
@@ -1999,11 +1974,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='GFW'>
                 <h2>TH12.8 - Great Fairy Wars</h2>
 				<picture>
-					<source data-srcset='games/gfw250x250.webp' type='image/webp'>
-					<source data-srcset='games/gfw250x250.jpg'>
-					<img class='lazy' data-src='games/gfw250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='GFW'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/gfw250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/gfw250x250.jpg'>
+					<img class='lazy' data-src='games/gfw250x250.jpg' src='<?php echo $empty; ?>' alt='GFW'>
 				</picture>
                 <br>Obtained: April 14, 2012
                 <h3>Survival</h3>
@@ -2118,11 +2091,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='TD'>
                 <h2>TH13 - Ten Desires</h2>
 				<picture>
-					<source data-srcset='games/td250x250.webp' type='image/webp'>
-					<source data-srcset='games/td250x250.jpg'>
-					<img class='lazy' data-src='games/td250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='TD'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/td250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/td250x250.jpg'>
+					<img class='lazy' data-src='games/td250x250.jpg' src='<?php echo $empty; ?>' alt='TD'>
 				</picture>
                 <br>Obtained: February 3, 2012 (est.)
                 <h3>Scoring</h3>
@@ -2248,11 +2219,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='DDC'>
                 <h2>TH14 - Double Dealing Character</h2>
 				<picture>
-					<source data-srcset='games/ddc250x250.webp' type='image/webp'>
-					<source data-srcset='games/ddc250x250.jpg'>
-					<img class='lazy' data-src='games/ddc250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='DDC'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/ddc250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/ddc250x250.jpg'>
+					<img class='lazy' data-src='games/ddc250x250.jpg' src='<?php echo $empty; ?>' alt='DDC'>
 				</picture>
                 <br>Obtained: August 12, 2013
                 <h3>Survival</h3>
@@ -2351,11 +2320,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='ISC'>
                 <h2>TH14.3 - Impossible Spell Card</h2>
 				<picture>
-					<source data-srcset='games/isc250x250.webp' type='image/webp'>
-					<source data-srcset='games/isc250x250.jpg'>
-					<img class='lazy' data-src='games/isc250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='ISC'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/isc250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/isc250x250.jpg'>
+					<img class='lazy' data-src='games/isc250x250.jpg' src='<?php echo $empty; ?>' alt='ISC'>
 				</picture>
                 <br>Obtained: May 11, 2014
                 <h3>Survival</h3>
@@ -2525,11 +2492,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='LoLK'>
                 <h2>TH15 - Legacy of Lunatic Kingdom</h2>
 				<picture>
-					<source data-srcset='games/lolk250x250.webp' type='image/webp'>
-					<source data-srcset='games/lolk250x250.jpg'>
-					<img class='lazy' data-src='games/lolk250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='LoLK'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/lolk250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/lolk250x250.jpg'>
+					<img class='lazy' data-src='games/lolk250x250.jpg' src='<?php echo $empty; ?>' alt='LoLK'>
 				</picture>
                 <br>Obtained: August 14, 2015
                 <h3>Survival</h3>
@@ -2623,11 +2588,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='HSiFS'>
                 <h2>TH16 - Hidden Star in Four Seasons</h2>
 				<picture>
-					<source data-srcset='games/hsifs250x250.webp' type='image/webp'>
-					<source data-srcset='games/hsifs250x250.jpg'>
-					<img class='lazy' data-src='games/hsifs250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='HSiFS'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/hsifs250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/hsifs250x250.jpg'>
+					<img class='lazy' data-src='games/hsifs250x250.jpg' src='<?php echo $empty; ?>' alt='HSiFS'>
 				</picture>
                 <br>Obtained: August 11, 2017
                 <h3>Scoring</h3>
@@ -2709,11 +2672,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='VD'>
                 <h2>TH16.5 - Violet Detector</h2>
 				<picture>
-					<source data-srcset='games/vd250x250.webp' type='image/webp'>
-					<source data-srcset='games/vd250x250.jpg'>
-					<img class='lazy' data-src='games/vd250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='VD'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/vd250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/vd250x250.jpg'>
+					<img class='lazy' data-src='games/vd250x250.jpg' src='<?php echo $empty; ?>' alt='VD'>
 				</picture>
                 <br>Obtained: August 29, 2018
                 <h3>Survival</h3>
@@ -2967,11 +2928,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='WBaWC'>
                 <h2>TH17 - Wily Beast and Weakest Creature</h2>
 				<picture>
-					<source data-srcset='games/wbawc250x250.webp' type='image/webp'>
-					<source data-srcset='games/wbawc250x250.jpg'>
-					<img class='lazy' data-src='games/wbawc250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='WBaWC'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/wbawc250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/wbawc250x250.jpg'>
+					<img class='lazy' data-src='games/wbawc250x250.jpg' src='<?php echo $empty; ?>' alt='WBaWC'>
 				</picture>
                 <br>Obtained: August 12, 2019
                 <h3>Survival</h3>
@@ -3032,11 +2991,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='SSS'>
                 <h2>Shining Shooting Star</h2>
 				<picture>
-					<source data-srcset='games/sss250x250.webp' type='image/webp'>
-					<source data-srcset='games/sss250x250.jpg'>
-					<img class='lazy' data-src='games/sss250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='SSS'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/sss250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/sss250x250.jpg'>
+					<img class='lazy' data-src='games/sss250x250.jpg' src='<?php echo $empty; ?>' alt='SSS'>
 				</picture>
                 <br>Obtained: April 27, 2017
                 <h3>Scoring</h3>
@@ -3124,11 +3081,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='eX1'>
                 <h2>eXceed - Gun Bullet Children</h2>
 				<picture>
-					<source data-srcset='games/ex1250x250.webp' type='image/webp'>
-					<source data-srcset='games/ex1250x250.jpg'>
-					<img class='lazy' data-src='games/ex1250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='eXceed Gun Bullet Children'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/ex1250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/ex1250x250.jpg'>
+					<img class='lazy' data-src='games/ex1250x250.jpg' src='<?php echo $empty; ?>' alt='eXceed Gun Bullet Children'>
 				</picture>
                 <br>Obtained: December 27, 2015 (Steam)
                 <h3>Survival</h3>
@@ -3162,11 +3117,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='eX2'>
                 <h2>eXceed 2nd - Vampire REX</h2>
 				<picture>
-					<source data-srcset='games/ex2250x250.webp' type='image/webp'>
-					<source data-srcset='games/ex2250x250.jpg'>
-					<img class='lazy' data-src='games/ex2250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='eXceed 2nd Vampire REX'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/ex2250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/ex2250x250.jpg'>
+					<img class='lazy' data-src='games/ex2250x250.jpg' src='<?php echo $empty; ?>' alt='eXceed 2nd Vampire REX'>
 				</picture>
                 <br>Obtained: December 27, 2015 (Steam)
                 <h3>Survival</h3>
@@ -3206,11 +3159,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='eX3'>
                 <h2>eXceed 3rd - Jade Penetrate Black Package</h2>
 				<picture>
-					<source data-srcset='games/ex3250x250.webp' type='image/webp'>
-					<source data-srcset='games/ex3250x250.jpg'>
-					<img class='lazy' data-src='games/ex3250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='eXceed 3rd Jade Penetrate Black Package'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/ex3250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/ex3250x250.jpg'>
+					<img class='lazy' data-src='games/ex3250x250.jpg' src='<?php echo $empty; ?>' alt='eXceed 3rd Jade Penetrate Black Package'>
 				</picture>
                 <br>Obtained: December 27, 2015 (Steam)
                 <h3>Survival</h3>
@@ -3274,11 +3225,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='SG'>
                 <h2>SH01 - Shuusou Gyoku</h2>
 				<picture>
-					<source data-srcset='games/sg250x250.webp' type='image/webp'>
-					<source data-srcset='games/sg250x250.jpg'>
-					<img class='lazy' data-src='games/sg250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Shuusou Gyoku'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/sg250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/sg250x250.jpg'>
+					<img class='lazy' data-src='games/sg250x250.jpg' src='<?php echo $empty; ?>' alt='Shuusou Gyoku'>
 				</picture>
                 <br>Obtained: November 30, 2012
                 <h3>Survival</h3>
@@ -3327,11 +3276,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='BSR'>
                 <h2>SH03 - Banshiryuu (C67)</h2>
 				<picture>
-					<source data-srcset='games/bsr250x250.webp' type='image/webp'>
-					<source data-srcset='games/bsr250x250.jpg'>
-					<img class='lazy' data-src='games/bsr250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Banshiryuu C67'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/bsr250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/bsr250x250.jpg'>
+					<img class='lazy' data-src='games/bsr250x250.jpg' src='<?php echo $empty; ?>' alt='Banshiryuu C67'>
 				</picture>
                 <br>Obtained: September 7, 2012
                 <h3>Scoring</h3>
@@ -3519,11 +3466,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='SMD'>
                 <h2>Samidare</h2>
 				<picture>
-					<source data-srcset='games/smd250x250.webp' type='image/webp'>
-					<source data-srcset='games/smd250x250.jpg'>
-					<img class='lazy' data-src='games/smd250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Samidare'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/smd250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/smd250x250.jpg'>
+					<img class='lazy' data-src='games/smd250x250.jpg' src='<?php echo $empty; ?>' alt='Samidare'>
 				</picture>
                 <br>Obtained: October 10, 2012
                 <h3>Scoring</h3>
@@ -3581,11 +3526,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='MRS'>
                 <h2>Mrs. Estacion</h2>
 				<picture>
-					<source data-srcset='games/mrs250x250.webp' type='image/webp'>
-					<source data-srcset='games/mrs250x250.jpg'>
-					<img class='lazy' data-src='games/mrs250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Mrs. Estacion'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/mrs250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/mrs250x250.jpg'>
+					<img class='lazy' data-src='games/mrs250x250.jpg' src='<?php echo $empty; ?>' alt='Mrs. Estacion'>
 				</picture>
                 <br>Obtained: February 23, 2013
                 <h3>Scoring</h3>
@@ -3670,11 +3613,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='DP'>
                 <h2>Donpachi</h2>
 				<picture>
-					<source data-srcset='games/dp250x250.webp' type='image/webp'>
-					<source data-srcset='games/dp250x250.jpg'>
-					<img class='lazy' data-src='games/dp250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Donpachi'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/dp250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/dp250x250.jpg'>
+					<img class='lazy' data-src='games/dp250x250.jpg' src='<?php echo $empty; ?>' alt='Donpachi'>
 				</picture>
                 <br>Obtained: March 18, 2014
                 <h3>Survival</h3>
@@ -3702,11 +3643,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='DDP'>
                 <h2>Dodonpachi</h2>
 				<picture>
-					<source data-srcset='games/ddp250x250.webp' type='image/webp'>
-					<source data-srcset='games/ddp250x250.jpg'>
-					<img class='lazy' data-src='games/ddp250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Dodonpachi'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/ddp250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/ddp250x250.jpg'>
+					<img class='lazy' data-src='games/ddp250x250.jpg' src='<?php echo $empty; ?>' alt='Dodonpachi'>
 				</picture>
                 <br>Obtained: March 18, 2014
                 <h3>Survival</h3>
@@ -3734,11 +3673,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='DOJ'>
                 <h2>Dodonpachi Daioujou</h2>
 				<picture>
-					<source data-srcset='games/doj250x250.webp' type='image/webp'>
-					<source data-srcset='games/doj250x250.jpg'>
-					<img class='lazy' data-src='games/doj250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Dodonpachi Daioujou'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/doj250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/doj250x250.jpg'>
+					<img class='lazy' data-src='games/doj250x250.jpg' src='<?php echo $empty; ?>' alt='Dodonpachi Daioujou'>
 				</picture>
                 <br>Obtained: November 3, 2012
                 <h3>Survival</h3>
@@ -3778,11 +3715,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='DFK'>
                 <h2>Dodonpachi Daifukkatsu</h2>
 				<picture>
-					<source data-srcset='games/dfk250x250.webp' type='image/webp'>
-					<source data-srcset='games/dfk250x250.jpg'>
-					<img class='lazy' data-src='games/dfk250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Dodonpachi Daifukkatsu'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/dfk250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/dfk250x250.jpg'>
+					<img class='lazy' data-src='games/dfk250x250.jpg' src='<?php echo $empty; ?>' alt='Dodonpachi Daifukkatsu'>
 				</picture>
                 <br>Obtained: October 8, 2013 (X360), October 14, 2016 (Steam)
                 <h3>Survival</h3>
@@ -3910,11 +3845,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='SDOJ'>
                 <h2>Dodonpachi Saidaioujou</h2>
 				<picture>
-					<source data-srcset='games/sdoj250x250.webp' type='image/webp'>
-					<source data-srcset='games/sdoj250x250.jpg'>
-					<img class='lazy' data-src='games/sdoj250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Dodonpachi Saidaioujou'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/sdoj250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/sdoj250x250.jpg'>
+					<img class='lazy' data-src='games/sdoj250x250.jpg' src='<?php echo $empty; ?>' alt='Dodonpachi Saidaioujou'>
 				</picture>
                 <br>Obtained: October 29, 2013
                 <h3>Survival</h3>
@@ -3954,11 +3887,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='Batsugun'>
                 <h2>Batsugun Special Version</h2>
 				<picture>
-					<source data-srcset='games/batsugunsp250x250.webp' type='image/webp'>
-					<source data-srcset='games/batsugunsp250x250.jpg'>
-					<img class='lazy' data-src='games/batsugunsp250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Batsugun Special Version'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/batsugunsp250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/batsugunsp250x250.jpg'>
+					<img class='lazy' data-src='games/batsugunsp250x250.jpg' src='<?php echo $empty; ?>' alt='Batsugun Special Version'>
 				</picture>
                 <br>Obtained: March 2, 2016
                 <h3>Survival</h3>
@@ -3998,11 +3929,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='ESP'>
                 <h2>ESP Ra.De.</h2>
 				<picture>
-					<source data-srcset='games/esp250x250.webp' type='image/webp'>
-					<source data-srcset='games/esp250x250.jpg'>
-					<img class='lazy' data-src='games/esp250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='ESP Ra.De.'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/esp250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/esp250x250.jpg'>
+					<img class='lazy' data-src='games/esp250x250.jpg' src='<?php echo $empty; ?>' alt='ESP Ra.De.'>
 				</picture>
                 <br>Obtained: March 28, 2014
                 <h3>Survival</h3>
@@ -4024,11 +3953,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='ESPg'>
                 <h2>Espgaluda</h2>
 				<picture>
-					<source data-srcset='games/espg250x250.webp' type='image/webp'>
-					<source data-srcset='games/espg250x250.jpg'>
-					<img class='lazy' data-src='games/espg250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Espgaluda cover'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/espg250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/espg250x250.jpg'>
+					<img class='lazy' data-src='games/espg250x250.jpg' src='<?php echo $empty; ?>' alt='Espgaluda cover'>
 				</picture>
                 <br>Obtained: March 28, 2014
                 <h3>Survival</h3>
@@ -4050,11 +3977,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='Ketsui'>
                 <h2>Ketsui ~Kizuna Jigoku Tachi~</h2>
 				<picture>
-					<source data-srcset='games/ket250x250.webp' type='image/webp'>
-					<source data-srcset='games/ket250x250.jpg'>
-					<img class='lazy' data-src='games/ket250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Ketsui'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/ket250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/ket250x250.jpg'>
+					<img class='lazy' data-src='games/ket250x250.jpg' src='<?php echo $empty; ?>' alt='Ketsui'>
 				</picture>
                 <br>Obtained: December 1, 2012
                 <h3>Survival</h3>
@@ -4088,11 +4013,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='MSm'>
                 <h2>Mushihime-sama</h2>
 				<picture>
-					<source data-srcset='games/msm250x250.webp' type='image/webp'>
-					<source data-srcset='games/msm250x250.jpg'>
-					<img class='lazy' data-src='games/msm250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Mushihime-sama cover'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/msm250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/msm250x250.jpg'>
+					<img class='lazy' data-src='games/msm250x250.jpg' src='<?php echo $empty; ?>' alt='Mushihime-sama cover'>
 				</picture>
                 <br>Obtained: November 6, 2015 (Steam)
                 <h3>Survival</h3>
@@ -4168,11 +4091,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='MSF'>
                 <h2>Mushihime-sama Futari</h2>
 				<picture>
-					<source data-srcset='games/msf250x250.webp' type='image/webp'>
-					<source data-srcset='games/msf250x250.jpg'>
-					<img class='lazy' data-src='games/msf250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Mushihime-sama Futari'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/msf250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/msf250x250.jpg'>
+					<img class='lazy' data-src='games/msf250x250.jpg' src='<?php echo $empty; ?>' alt='Mushihime-sama Futari'>
 				</picture>
                 <br>Obtained: October 29, 2013
                 <h3>Survival</h3>
@@ -4260,11 +4181,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='DSm'>
                 <h2>Deathsmiles</h2>
 				<picture>
-					<source data-srcset='games/dsm250x250.webp' type='image/webp'>
-					<source data-srcset='games/dsm250x250.jpg'>
-					<img class='lazy' data-src='games/dsm250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Deathsmiles'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/dsm250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/dsm250x250.jpg'>
+					<img class='lazy' data-src='games/dsm250x250.jpg' src='<?php echo $empty; ?>' alt='Deathsmiles'>
 				</picture>
                 <br>Obtained: October 8, 2013 (X360); March 11, 2016 (Steam)
                 <h3>Survival</h3>
@@ -4331,11 +4250,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='Ikaruga'>
                 <h2>Ikaruga</h2>
 				<picture>
-					<source data-srcset='games/ikaruga250x250.webp' type='image/webp'>
-					<source data-srcset='games/ikaruga250x250.jpg'>
-					<img class='lazy' data-src='games/ikaruga250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Ikaruga'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/ikaruga250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/ikaruga250x250.jpg'>
+					<img class='lazy' data-src='games/ikaruga250x250.jpg' src='<?php echo $empty; ?>' alt='Ikaruga'>
 				</picture>
                 <br>Obtained: December 5, 2015 (Steam)
                 <h3>Survival</h3>
@@ -4369,11 +4286,9 @@ wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQ
             <div id='CCWI'>
                 <h2>Crimzon Clover</h2>
 				<picture>
-					<source data-srcset='games/ccwi250x250.webp' type='image/webp'>
-					<source data-srcset='games/ccwi250x250.jpg'>
-					<img class='lazy' data-src='games/ccwi250x250.jpg' src='data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxj
-wv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC' alt='Crimzon Clover World Ignition'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/ccwi250x250.webp' type='image/webp'>
+					<source srcset='<?php echo $empty; ?>' data-srcset='games/ccwi250x250.jpg'>
+					<img class='lazy' data-src='games/ccwi250x250.jpg' src='<?php echo $empty; ?>' alt='Crimzon Clover World Ignition'>
 				</picture>
                 <br>Obtained: December 5, 2015 (Steam)
                 <h3>Survival</h3>
