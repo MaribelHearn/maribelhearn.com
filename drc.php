@@ -887,11 +887,13 @@
 							if (is_phantasmagoria($game)) {
 								continue;
 							}
-							echo '<tr>' . ($game == 'HRtP' ? '<th id="game2">' . tl_term('Game', $lang) .
-							'</th><th id="maxPoints1">' . tl_term('Game', $lang) .
-							'</th><th id="base0">' . tl_term('Base', $lang) .
-							'</th><th id="lostLife">Lost life (n)</th><th id="firstBomb">First bomb (n)</th>' .
-							'<th id="further">Further bombs (n)</th>' : '') . '</tr>';
+							if ($game == 'HRtP') {
+								echo '<tr><th id="game2">' . tl_term('Game', $lang) .
+								'</th><th id="maxPoints1">' . tl_term('Game', $lang) .
+								'</th><th id="base0">' . tl_term('Base', $lang) .
+								'</th><th id="lostLife">Lost life (n)</th><th id="firstBomb">First bomb (n)</th>' .
+								'<th id="further">Further bombs (n)</th></tr>';
+							}
 							foreach ($value as $diff => $rubric) {
 								if ($diff == 'multiplier' || $diff == 'seasonMultiplier') {
 									continue;
@@ -929,10 +931,12 @@
 					<?php
 						foreach ($Rubrics['SURV'] as $game => $value) {
 							if (is_phantasmagoria($game)) {
-								echo '<tr>' . ($game == 'PoDD' ? '<th id="game1">' . tl_term('Game', $lang) .
-								'</th><th id="maxPoints2">' . tl_term('Max points', $lang) .
-								'</th><th id="minPoints">' . tl_term('Min points', $lang) .
-								'</th><th id="nbBonus">' . tl_term('No Bomb bonus', $lang) . '</th>' : '') . '</tr>';
+								if ($game == 'PoDD') {
+									echo '<tr><th id="game1">' . tl_term('Game', $lang) .
+									'</th><th id="maxPoints2">' . tl_term('Max points', $lang) .
+									'</th><th id="minPoints">' . tl_term('Min points', $lang) .
+									'</th><th id="nbBonus">' . tl_term('No Bomb bonus', $lang) . '</th></tr>';
+								}
 								foreach ($value as $diff => $rubric) {
 									if ($diff == 'multiplier' || $diff == 'seasonMultiplier') {
 										continue;

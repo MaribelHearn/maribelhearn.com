@@ -38,7 +38,8 @@
                     }
                 ?>
                 <div id='sort_selection'>
-                    Currently tiering: <select id='sort'>
+                    <label for='sort'>Currently tiering:</label>
+                    <select id='sort'>
                         <option value='characters'>Characters</option>
                         <option value='works'>Works</option>
                     </select>

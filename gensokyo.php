@@ -77,60 +77,56 @@
             <p>The table resulting from search can be sorted by date (note that this might be slow depending on the size),
             and the player name can be clicked to view the corresponding replay in detail.</p>
             <form>
-                <table id='searchtable'>
-                    <thead><tr><td>
-                        <label for='player'>Player</label>
-                        <input id='player' name='player' type='text' value='<?php echo !empty($player) ? $player : '' ?>'>
-                        <label for='game'>Game</label>
-                        <select id='game' name='game'>
-                            <option value='-'>...</option>
-                            <?php
-                                foreach ($games as $key => $value) {
-                                    echo '<option' . (!empty($game) && $game == $value ? ' selected' : '') . '>' . $value . '</option>';
-                                }
-                            ?>
-                        </select>
-                        <label for='shot'>Shottype</label>
-                        <input id='shot' name='shot' type='text' value='<?php echo !empty($shot) ? $shot : '' ?>'>
-                        <label for='type'>Type of Run</label>
-                        <select id='type' name='type'>
-                            <option value='-'>...</option>
-                            <option value='Normal'<?php echo !empty($type) && $type == 'Normal' ? ' selected' : ''?>>Full Game</option>
-                            <option<?php echo !empty($type) && $type == 'Practice' ? ' selected' : ''?>>Practice</option>
-                            <option value='Spell'<?php echo !empty($type) && $type == 'Spell' ? ' selected' : ''?>>Spell Card</option>
-                        </select>
-                        <label for='diff'>Difficulty</label>
-                        <select id='diff' name='diff'>
-                            <option value='-'>...</option>
-                            <?php
-                                foreach ($diffs as $key => $value) {
-                                    echo '<option' . (!empty($diff) && $diff == $value ? ' selected' : '') . '>' . $value . '</option>';
-                                }
-                            ?>
-                        </select>
-                    </td></tr></thead>
-                    <tbody><tr><td>
-                        <label for='nd'><img src='assets/gensokyo/nd.gif' title='No Deaths'></label>
-                        <input id='nd' name='nd' type='checkbox'<?php echo $_GET['nd'] == 'on' ? ' checked' : '' ?>>
-                        <label for='nb'><img src='assets/gensokyo/nb.gif' title='No Bomb Usage'></label>
-                        <input id='nb' name='nb' type='checkbox'<?php echo $_GET['nb'] == 'on' ? ' checked' : '' ?>>
-                        <label for='nf'><img src='assets/gensokyo/nf.gif' title='No Focused Movement'></label>
-                        <input id='nf' name='nf' type='checkbox'<?php echo $_GET['nf'] == 'on' ? ' checked' : '' ?>>
-                        <label for='nv'><img src='assets/gensokyo/nv.gif' title='No Vertical Movement'></label>
-                        <input id='nv' name='nv' type='checkbox'<?php echo $_GET['nv'] == 'on' ? ' checked' : '' ?>>
-                        <label for='tas'><img src='assets/gensokyo/tas.gif' title='Tool-Assisted Replay'></label>
-                        <input id='tas' name='tas' type='checkbox'<?php echo $_GET['tas'] == 'on' ? ' checked' : '' ?>>
-                        <label for='chz'><img src='assets/gensokyo/chz.gif' title='Tool-Assisted Replay (not marked by original uploader)'></label>
-                        <input id='chz' name='chz' type='checkbox'<?php echo $_GET['chz'] == 'on' ? ' checked' : '' ?>>
-                        <label for='pa'><img src='assets/gensokyo/pa.gif' title='Pacifist'></label>
-                        <input id='pa' name='pa' type='checkbox'<?php echo $_GET['pa'] == 'on' ? ' checked' : '' ?>>
-                        <label for='co'><img src='assets/gensokyo/co.gif' title='Other Condition'></label>
-                        <input id='co' name='co' type='checkbox'<?php echo $_GET['co'] == 'on' ? ' checked' : '' ?>>
-                    </td></tr></tbody>
-                    <tfoot><tr><td>
-                        <input type='submit' value='Search'>
-                    </td></tr></tfoot>
-                </table>
+                <p>
+                    <label for='player'>Player</label>
+                    <input id='player' name='player' type='text' value='<?php echo !empty($player) ? $player : '' ?>'>
+                    <label for='game'>Game</label>
+                    <select id='game' name='game'>
+                        <option value='-'>...</option>
+                        <?php
+                            foreach ($games as $key => $value) {
+                                echo '<option' . (!empty($game) && $game == $value ? ' selected' : '') . '>' . $value . '</option>';
+                            }
+                        ?>
+                    </select>
+                    <label for='shot'>Shottype</label>
+                    <input id='shot' name='shot' type='text' value='<?php echo !empty($shot) ? $shot : '' ?>'>
+                    <label for='type'>Type of Run</label>
+                    <select id='type' name='type'>
+                        <option value='-'>...</option>
+                        <option value='Normal'<?php echo !empty($type) && $type == 'Normal' ? ' selected' : ''?>>Full Game</option>
+                        <option<?php echo !empty($type) && $type == 'Practice' ? ' selected' : ''?>>Practice</option>
+                        <option value='Spell'<?php echo !empty($type) && $type == 'Spell' ? ' selected' : ''?>>Spell Card</option>
+                    </select>
+                    <label for='diff'>Difficulty</label>
+                    <select id='diff' name='diff'>
+                        <option value='-'>...</option>
+                        <?php
+                            foreach ($diffs as $key => $value) {
+                                echo '<option' . (!empty($diff) && $diff == $value ? ' selected' : '') . '>' . $value . '</option>';
+                            }
+                        ?>
+                    </select>
+                </p>
+                <p>
+                    <label for='nd'><img src='assets/gensokyo/nd.gif' title='No Deaths' alt='No Deaths icon'></label>
+                    <input id='nd' name='nd' type='checkbox'<?php echo $_GET['nd'] == 'on' ? ' checked' : '' ?>>
+                    <label for='nb'><img src='assets/gensokyo/nb.gif' title='No Bomb Usage' alt='No Bombs icon'></label>
+                    <input id='nb' name='nb' type='checkbox'<?php echo $_GET['nb'] == 'on' ? ' checked' : '' ?>>
+                    <label for='nf'><img src='assets/gensokyo/nf.gif' title='No Focused Movement' alt='No Focus icon'></label>
+                    <input id='nf' name='nf' type='checkbox'<?php echo $_GET['nf'] == 'on' ? ' checked' : '' ?>>
+                    <label for='nv'><img src='assets/gensokyo/nv.gif' title='No Vertical Movement' alt='No Vertical icon'></label>
+                    <input id='nv' name='nv' type='checkbox'<?php echo $_GET['nv'] == 'on' ? ' checked' : '' ?>>
+                    <label for='tas'><img src='assets/gensokyo/tas.gif' title='Tool-Assisted Replay' alt='TAS icon'></label>
+                    <input id='tas' name='tas' type='checkbox'<?php echo $_GET['tas'] == 'on' ? ' checked' : '' ?>>
+                    <label for='chz'><img src='assets/gensokyo/chz.gif' title='Tool-Assisted Replay (not marked by original uploader)' alt='Cheater icon'></label>
+                    <input id='chz' name='chz' type='checkbox'<?php echo $_GET['chz'] == 'on' ? ' checked' : '' ?>>
+                    <label for='pa'><img src='assets/gensokyo/pa.gif' title='Pacifist' alt='Pacifist icon'></label>
+                    <input id='pa' name='pa' type='checkbox'<?php echo $_GET['pa'] == 'on' ? ' checked' : '' ?>>
+                    <label for='co'><img src='assets/gensokyo/co.gif' title='Other Condition' alt='Other icon'></label>
+                    <input id='co' name='co' type='checkbox'<?php echo $_GET['co'] == 'on' ? ' checked' : '' ?>>
+                </p>
+                <p><input type='submit' value='Search'></p>
             </form>
             <?php
                 $tmp = explode('?', $_SERVER['REQUEST_URI']);
