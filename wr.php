@@ -494,9 +494,9 @@
 								if ($pl[$key] === '') {
 									continue;
 								}
-								echo '<tr id="' . $pl_wr[$key][0] . '"><td>' . $pl_wr[$key][0] . '</td>';
-								echo '<td id="' . $pl_wr[$key][0] . 'n">' . $pl_wr[$key][1] . '</td>';
-                                echo '<td id="' . $pl_wr[$key][0] . 'g">' . $pl_wr[$key][2] . '</td></tr>';
+								echo '<tr><td>' . $pl_wr[$key][0] . '</td>';
+								echo '<td>' . $pl_wr[$key][1] . '</td>';
+                                echo '<td>' . $pl_wr[$key][2] . '</td></tr>';
 							}
 						?>
 					</tbody>

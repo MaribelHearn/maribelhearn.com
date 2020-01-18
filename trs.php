@@ -34,9 +34,9 @@
                     echo '<p>(Redirected from <em>' . $_GET['redirect'] . '</em>)</p>';
                 }
             ?>
-            <p>This page contains the schedules of the <a href='https://twitch.tv/touhou_replay_showcase'><img src='ext/twitch-icon-small.ico' alt='Twitch favicon'> Touhou
-            Replay Showcase</a> stream from its 2018 reboot onward. The upcoming stream's schedule will be listed at the top once it becomes available.</p>
-            <p><strong>Notice:</strong> The stream is currently being transferred to <a href='https://twitter.com/Gastari_'>Gastari</a> and several changes will be made. We will probably resume by November.</p>
+            <p>This page contains the schedules of the 2018-2019 reboot of the <a href='https://twitch.tv/touhou_replay_showcase'><img src='ext/twitch-icon-small.ico' alt='Twitch favicon'> Touhou
+            Replay Showcase</a> stream. As of November 2019, the stream has been transferred to <a href='https://twitter.com/Gastari_'>Gastari</a> and several changes have been made.</p>
+            <h2>Schedules</h2>
             <h3>Saturday, 5 October 2019 (September runs)</h3>
             <ul>
                 <li>ZPS UFO Lunatic SanaeB Scoring</li>
