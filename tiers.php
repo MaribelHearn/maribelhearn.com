@@ -16,7 +16,6 @@
 		<script src='assets/tiers/tiers.js' defer></script>
         <script src='assets/tiers/rgbcolor.js' defer></script>
         <script src='assets/shared/modernizr-custom.js' defer></script>
-        <script src='assets/shared/dark.js'></script><!-- to remove no-js -->
     </head>
 
     <body>
@@ -67,13 +66,13 @@
                         or add all remaining characters to it.</li>
                     </ul>
                 </div>
-                <p id='toggle'><span id='toggle_instructions'>Click here to show the instructions.</span></p>
+                <p id='toggle'><a id='toggle_instructions'>Click here to show the instructions.</a></p>
             </div>
             <div id='tier_list_container'>
                 <table id='tier_list_table'>
                     <thead id='tier_list_thead'>
                         <tr id='add_tier_box_mobile'>
-                            <td>
+                            <td id='add_tier_cell_mobile'>
                                 <input id='tier_name_mobile' type='text' value=''>
                                 <input id='add_tier_mobile' type='button' value='Add Tier'>
                             </td>

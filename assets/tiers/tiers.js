@@ -1,3 +1,5 @@
+document.documentElement.classList.remove("no-js");
+
 var categories = {},
     gameCategories = {},
     defaultWidth = (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) ? 60 : 120,
@@ -175,6 +177,10 @@ function initialise() {
     addTier({data: {tierName: "A", noDisplay: true}});
     settings.sort = tmp;
     $(isMobile() ? "#tier_name_mobile" : "#tier_name").val("B");
+
+    if (isMobile()) {
+        $("#add_tier_cell_mobile").attr("colspan", 2);
+    }
 }
 function switchSort() {
     cancelOngoingSwap();
@@ -676,8 +682,8 @@ function detectRightCtrlCombo(event, tierNum) {
 }
 function toggleInstructions() {
     $("#instructions").css("display", $("#instructions").css("display") == "none" ? "block" : "none");
-    $("#toggle").html("<span id='toggle_instructions'>Click here" +
-    " to " + ($("#instructions").css("display") == "none" ? "show" : "hide") + " the instructions.</span>");
+    $("#toggle").html("<a id='toggle_instructions'>Click here" +
+    " to " + ($("#instructions").css("display") == "none" ? "show" : "hide") + " the instructions.</a>");
     $("#toggle_instructions").on("click", toggleInstructions);
 }
 function storageUsed() {

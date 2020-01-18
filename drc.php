@@ -581,7 +581,7 @@
 				?></strong></p>
 				<ul>
 					<li id='WRpage'><?php
-						if ($lang == 'English') { echo 'The WRs are taken from <a href="wr">this page</a>.'; }
+						if ($lang == 'English') { echo 'The World Records are taken from <a href="wr">the WR page</a>.'; }
 						else if ($lang == 'Japanese') { echo 'WRのリストは<a href="wr">こちら</a>です。'; }
 						else { echo '世界纪录参考自<a href="wr">此网页</a>。'; }
 					?></li>

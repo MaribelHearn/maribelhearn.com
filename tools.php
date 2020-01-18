@@ -41,22 +41,22 @@
 			which can also be downloaded using our mirror below (see THCRAP section).
 			These patches will have the favicon of their site next to them.</p>
             <h2 id='contents'>Contents</h2>
-            <table class='border'>
-                <tr><td><a href='#vpatch'>Vpatch</a></td></tr>
-                <tr><td><a href='#thcrap'>THCRAP (Translation patches / Modding tool)</a></td></tr>
-                <tr><td><a href='#enbconvertor'><strong>For Windows 10:</strong> DX8 to DX9</a></td></tr>
-                <tr><td><a href='#scorefiles'>Completed Scorefiles</a></td></tr>
-                <tr><td><a href='#spoileral'>SpoilerAL</a></td></tr>
-                <tr><td><a href='#practools'>General Practice Tools</a></td></tr>
-                <tr><td><a href='#bossrush'>Boss Rush Patches</a></td></tr>
-                <tr><td><a href='#specific'>Specific Pattern Practice</a></td></tr>
-                <tr><td><a href='#shottypes'>Shottype Modifications</a></td></tr>
-                <tr><td><a href='#hardultra'>Hard Mode / Ultra Patches</a></td></tr>
-                <tr><td><a href='#graphical'>Graphical Patches</a></td></tr>
-                <tr><td><a href='#emulators'>PC-98 Emulators</a></td></tr>
-                <tr><td><a href='#miscellaneous'>Miscellaneous</a></td></tr>
-				<tr><td><a href='#ack'>Acknowledgements</a></td></tr>
-            </table>
+            <div class='border'>
+                <p><a href='#vpatch'>Vpatch</a></p>
+                <p><a href='#thcrap'>THCRAP (Translation patches / Modding tool)</a></p>
+                <p><a href='#enbconvertor'><strong>For Windows 10:</strong> DX8 to DX9</a></p>
+                <p><a href='#scorefiles'>Completed Scorefiles</a></p>
+                <p><a href='#spoileral'>SpoilerAL</a></p>
+                <p><a href='#practools'>General Practice Tools</a></p>
+                <p><a href='#bossrush'>Boss Rush Patches</a></p>
+                <p><a href='#specific'>Specific Pattern Practice</a></p>
+                <p><a href='#shottypes'>Shottype Modifications</a></p>
+                <p><a href='#hardultra'>Hard Mode / Ultra Patches</a></p>
+                <p><a href='#graphical'>Graphical Patches</a></p>
+                <p><a href='#emulators'>PC-98 Emulators</a></p>
+                <p><a href='#miscellaneous'>Miscellaneous</a></p>
+				<p><a href='#ack'>Acknowledgements</a></p>
+            </div>
             <!-- Vpatch -->
             <hr>
             <h2 id='vpatch'>Vpatch</h2>
@@ -93,47 +93,21 @@
             for efficient practice in that game specifically, a separate GFW SSG, as well as a TD SSG specifically designed for efficient scoring practice,
             made by <a href='https://twitter.com/remilia_kawai' target='_blank'>Leo</a>, a DDC SSG and a LoLK Chapter Practice SSG by <a href='https://twitter.com/32th__System' target='_blank'>32th System</a>
             and separate HSiFS SSGs with cheat options. Be wary of an occasional menu bug that causes an SSG to duplicate itself and make other SSGs invisible.</p>
-            <table>
-                <tr>
-                    <td><a href='http://wcs.main.jp/index/software/spal/' target='_blank'>Main Program</a></td>
-                </tr>
-                <tr>
-                    <td><a href='https://mega.nz/#F!W0gDSYqR!HIKFxSUI0B6Ra2ePpEHdxg' target='_blank'>SSGs (4.6, English translated)</a></td>
-                </tr>
-                <tr>
-                    <td><a href='https://mega.nz/#!OpxFSSJB!2eUH91vJAF_ejq7S5r3x5Jx7GYCP67LSSo4BuXhoDa4' target='_blank'>SSGs (niL, Japanese)</a></td>
-                </tr>
-                <tr>
-                    <td><a href='http://www.mediafire.com/file/a4g4awdp4ll5a4n/SSG.zip' target='_blank'>SSGs (niL, English translated)</a></td>
-                </tr>
-                <tr>
-                    <td><a href='https://mega.nz/#!QUBTEB5J!idRbiOfr_BKFpMBy9e5qU5Ow1xPkxplVbR72G6Ud0KI' target='_blank'>MoF SSG by Akaldar</a></td>
-                </tr>
-                <tr>
-                    <td><a href='https://mega.nz/#!BJwhwYRB!5Zgr6redSWbA2v2vco0b7k00XH-BIeTAPUnW28gI-20' target='_blank'>GFW SSG (English translated)</a></td>
-                </tr>
-                <tr>
-                    <td><a href='https://drive.google.com/open?id=1Qs4jOBkDH3dN7tI5X2cJRzd_awZFf80d' target='_blank'>TD Scoring SSG by Leo (English translated)</a></td>
-                </tr>
-                <tr>
-                    <td><a href='https://gitlab.com/32th/th14ssg' target='_blank'>DDC SSG by 32th System</a></td>
-                </tr>
-				<tr>
-					<td><a href='https://mega.nz/#!cAwknKTB!3PCN0me2Q3uTXwo4VgfBIouOqf5W0spBEhZwwR2uNfA' target='_blank'>LoLK SSG by CreepyNinja</a></td>
-				</tr>
-                <tr>
-                    <td><a href='https://gitlab.com/32th/th15ssg' target='_blank'>LoLK Chapter Practice SSG by 32th System</a></td>
-                </tr>
-                <tr>
-                    <td><a href='http://www7b.biglobe.ne.jp/~chibimi/th16-toggle.zip'>HSiFS SSG</a></td>
-                </tr>
-                <tr>
-                    <td><a href='https://drive.google.com/open?id=1YqL8QSrnvDepMnkKUNPIBJVaJ2XWwZhP' target='_blank'>HSiFS SSG (English translated)</a></td>
-                </tr>
-                <tr>
-                    <td><a href='https://drive.google.com/open?id=1R8YcGWBE1c4jLy2RGfjuqtrpZzR26XA-' target='_blank'>Alternative HSiFS SSG (English translated) </a></td>
-                </tr>
-            </table>
+            <div>
+                <p><a href='http://wcs.main.jp/index/software/spal/' target='_blank'>Main Program</a></p>
+                <p><a href='https://mega.nz/#F!W0gDSYqR!HIKFxSUI0B6Ra2ePpEHdxg' target='_blank'>SSGs (4.6, English translated)</a></p>
+                <p><a href='https://mega.nz/#!OpxFSSJB!2eUH91vJAF_ejq7S5r3x5Jx7GYCP67LSSo4BuXhoDa4' target='_blank'>SSGs (niL, Japanese)</a></p>
+                <p><a href='http://www.mediafire.com/file/a4g4awdp4ll5a4n/SSG.zip' target='_blank'>SSGs (niL, English translated)</a></p>
+                <p><a href='https://mega.nz/#!QUBTEB5J!idRbiOfr_BKFpMBy9e5qU5Ow1xPkxplVbR72G6Ud0KI' target='_blank'>MoF SSG by Akaldar</a></p>
+                <p><a href='https://mega.nz/#!BJwhwYRB!5Zgr6redSWbA2v2vco0b7k00XH-BIeTAPUnW28gI-20' target='_blank'>GFW SSG (English translated)</a></p>
+                <p><a href='https://drive.google.com/open?id=1Qs4jOBkDH3dN7tI5X2cJRzd_awZFf80d' target='_blank'>TD Scoring SSG by Leo (English translated)</a></p>
+                <p><a href='https://gitlab.com/32th/th14ssg' target='_blank'>DDC SSG by 32th System</a></p>
+				<p><a href='https://mega.nz/#!cAwknKTB!3PCN0me2Q3uTXwo4VgfBIouOqf5W0spBEhZwwR2uNfA' target='_blank'>LoLK SSG by CreepyNinja</a></p>
+                <p><a href='https://gitlab.com/32th/th15ssg' target='_blank'>LoLK Chapter Practice SSG by 32th System</a></p>
+                <p><a href='http://www7b.biglobe.ne.jp/~chibimi/th16-toggle.zip'>HSiFS SSG</a></p>
+                <p><a href='https://drive.google.com/open?id=1YqL8QSrnvDepMnkKUNPIBJVaJ2XWwZhP' target='_blank'>HSiFS SSG (English translated)</a></p>
+                <p><a href='https://drive.google.com/open?id=1R8YcGWBE1c4jLy2RGfjuqtrpZzR26XA-' target='_blank'>Alternative HSiFS SSG (English translated) </a></p>
+            </div>
             <!-- General Practice Tools -->
             <hr>
             <h2 id='practools'>General Practice Tools</h2>
@@ -144,17 +118,11 @@
 			<p><strong>Practice Tools by <a href='https://twitter.com/Ririanly'>Riri</a></strong></p>
             <p>Tools that allow you to skip to specific patterns in SA, UFO and LoLK, also allowing for other settings like your current power.
             The UFO and LoLK tools are external programs while the SA tool is a modification of the program. The LoLK one was made for v1.00a but mostly functions properly on v1.00b as well.</p>
-            <table>
-                <tr>
-                    <td><a href='https://drive.google.com/file/d/0BwqJeqvy1nDpRGRBUy1nX0dNWVU/view' target='_blank'>SA</a></td>
-                </tr>
-                <tr>
-                    <td><a href='https://drive.google.com/file/d/0BwqJeqvy1nDpQ1FQaUc5dDlpUEk/view' target='_blank'>UFO</a></td>
-                </tr>
-                <tr>
-                    <td><a href='http://www.mediafire.com/download/88ncjlua3hjrma2/th15_assist_2.2.rar' target='_blank'>LoLK</a></td>
-                </tr>
-            </table>
+            <div>
+                <p><a href='https://drive.google.com/file/d/0BwqJeqvy1nDpRGRBUy1nX0dNWVU/view' target='_blank'>SA</a></p>
+                <p><a href='https://drive.google.com/file/d/0BwqJeqvy1nDpQ1FQaUc5dDlpUEk/view' target='_blank'>UFO</a></p>
+                <p><a href='http://www.mediafire.com/download/88ncjlua3hjrma2/th15_assist_2.2.rar' target='_blank'>LoLK</a></p>
+            </div>
 			<p><strong>WBaWC Practice by <a href='https://twitter.com/Priweejt'>Priw8</a></strong></p>
 			<p>Allows skipping to any part of the game, similar to Riri's practice tools, using an in-game menu.</p>
 			<a href='https://priw8.github.io/#s=patches/prac' target='_blank'>Download</a>
@@ -169,51 +137,29 @@
             The skipping applies to both full runs and practice runs.</p>
             <p><strong>Boss Rush Patches by <a href='https://twitter.com/ReformedSmol' target='_blank'>Martin</a></strong></p>
             <p>All midbosses and bosses are included, everything else being kept the same. There are also 'boss-only' versions that do skip the midbosses.</p>
-            <table>
-                <tr>
-                    <td><a href='https://mega.nz/#F!rswTmICb!lnVEolHezNbe4pZPopSqwA' target='_blank'>MoF</a></td>
-                </tr>
-                <tr>
-                    <td><a href='https://mega.nz/#F!a4BCTACS!Z3gA684Me36gZK_i4y_5Dg' target='_blank'>SA</a></td>
-                </tr>
-                <tr>
-                    <td><a href='https://mega.nz/#F!rswTmICb!lnVEolHezNbe4pZPopSqwA' target='_blank'>UFO</a></td>
-                </tr>
-                <tr>
-                    <td><a href='https://mega.nz/#F!TlwUwBTb!hT-vr7hhft3dwt3slrhCEQ' target='_blank'>GFW</a></td>
-                </tr>
-                <tr>
-                    <td><a href='https://mega.nz/#F!axJSDILb!FPNSYOddqDosZ1I1Y-9UBQ' target='_blank'>TD</a></td>
-                </tr>
-                <tr>
-                    <td><a href='https://mega.nz/#F!K1AByK5I!7NrTie_DHQBrH5OKnIXfEg' target='_blank'>DDC</a></td>
-                </tr>
-                <tr>
-                    <td><a href='https://mega.nz/#F!npwSGaJC!pNfJemXgehNGbif2L-d6zQ' target='_blank'>LoLK</a></td>
-                </tr>
-                <tr>
-                    <td><a href='https://maribelhearn.com/HSiFS%20Boss%20Rush%20v1.0.zip' target='_blank'>HSiFS</a></td>
-                </tr>
+            <div>
+                <p><a href='https://mega.nz/#F!rswTmICb!lnVEolHezNbe4pZPopSqwA' target='_blank'>MoF</a></p>
+                <p><a href='https://mega.nz/#F!a4BCTACS!Z3gA684Me36gZK_i4y_5Dg' target='_blank'>SA</a></p>
+                <p><a href='https://mega.nz/#F!rswTmICb!lnVEolHezNbe4pZPopSqwA' target='_blank'>UFO</a></p>
+                <p><a href='https://mega.nz/#F!TlwUwBTb!hT-vr7hhft3dwt3slrhCEQ' target='_blank'>GFW</a></p>
+                <p><a href='https://mega.nz/#F!axJSDILb!FPNSYOddqDosZ1I1Y-9UBQ' target='_blank'>TD</a></p>
+                <p><a href='https://mega.nz/#F!K1AByK5I!7NrTie_DHQBrH5OKnIXfEg' target='_blank'>DDC</a></p>
+                <p><a href='https://mega.nz/#F!npwSGaJC!pNfJemXgehNGbif2L-d6zQ' target='_blank'>LoLK</a></p>
+                <p><a href='https://maribelhearn.com/HSiFS%20Boss%20Rush%20v1.0.zip' target='_blank'>HSiFS</a></p>
 				<!--
 				Old link boss-rush: https://mega.nz/#!60JyGaTB!HOQPcI7Pq6MiEMKqI-Ucv49CxoqJ8Sc1d3u5s4wNS94
 				Old link boss-only: https://mega.nz/#!Ogh3hD5B!PT6aGiyqhGAS1r4Y0IfjLTP3hDtRKa1qGi3zi6XjaOA
 				Old link full pack: https://mega.nz/#F!i0I0BIaI!A3wHnQYX2xFUTKS1po1GDw
 				-->
-                <tr>
-                    <td><a href='https://maribelhearn.com/Full%20Boss%20Rush.zip' target='_blank'>Full Pack</a></td>
-                </tr>
-            </table>
+                <p><a href='https://maribelhearn.com/Full%20Boss%20Rush.zip' target='_blank'>Full Pack</a></p>
+            </div>
             <p><strong>Boss Rush Patches by <a href='https://twitter.com/drakeirving' target='_blank'>Drake</a></strong></p>
             <p>Patches for SA and UFO that not only remove stage portions, but also bombs. The SA one includes turning Stage 4 into 'Satori Rush',
             where you fight every single one of her Spell Cards. Note that the safe areas on Border of Wave and Particle and Utsuho's 3rd spell are removed in this patch.</p>
-            <table>
-                <tr>
-                    <td><a href='https://mega.nz/#!85MACTBK!wBZpEyv5rWp7_qwHTQCqa7F_4hFNF5JOpjh4JS5iSGY' target='_blank'>SA</a></td>
-                </tr>
-                <tr>
-                    <td><a href='https://mega.nz/#!lskyiIzZ!yJB6HLwRQnXs4wO9BmHNxkVtrKrdoKhM-GmMEBRy0ro' target='_blank'>UFO</a></td>
-                </tr>
-            </table>
+            <div>
+                <p><a href='https://mega.nz/#!85MACTBK!wBZpEyv5rWp7_qwHTQCqa7F_4hFNF5JOpjh4JS5iSGY' target='_blank'>SA</a></p>
+                <p><a href='https://mega.nz/#!lskyiIzZ!yJB6HLwRQnXs4wO9BmHNxkVtrKrdoKhM-GmMEBRy0ro' target='_blank'>UFO</a></p>
+            </div>
             <p><strong>EoSD Boss Rush by divisionarytuning</strong></p>
             <p>A boss rush patch for EoSD, including 'Patchouli Rush', where you fight all of Patchouli's Spell Cards in a single battle.</p>
             <a href='https://comfy.moe/lxaupo.zip' target='_blank'>Download</a>
@@ -242,14 +188,10 @@
             <a href='https://mega.nz/#!y9IwiD4A!aI-tS2lNbDWeu-FnA41lc76xtnkUjHNdYwyg4dyBkrs' target='_blank'>Download</a>
             <p><strong>Timeout Phase Collection by <a href='https://twitter.com/ReformedSmol' target='_blank'>Martin</a></strong></p>
             <p>Patches for practicing the timeout phases of the final spells on Lunatic and Extra from MoF to HSiFS, plus Devil's Recitation, but not including GFW Stage 3 final spells.</p>
-            <table>
-                <tr>
-                    <td><a href='https://mega.nz/#F!yhwiWaTD!4AE7YYzsfixx1yXIGFcbdg' target='_blank'>MoF to LoLK</a></td>
-                </tr>
-                <tr>
-                    <td><a href='https://mega.nz/#!a4x2VIxa!zwwwT0PXDjKgjt8wfhp6n3mbrOH9N7OsNZ8MkgH7v_c' target='_blank'>HSiFS season finals and Extra final</a></td>
-                </tr>
-            </table>
+            <div>
+                <p><a href='https://mega.nz/#F!yhwiWaTD!4AE7YYzsfixx1yXIGFcbdg' target='_blank'>MoF to LoLK</a></p>
+                <p><a href='https://mega.nz/#!a4x2VIxa!zwwwT0PXDjKgjt8wfhp6n3mbrOH9N7OsNZ8MkgH7v_c' target='_blank'>HSiFS season finals and Extra final</a></p>
+            </div>
             <!-- Shottype Modifications -->
             <hr>
             <h2 id='shottypes'>Shottype Modifications</h2>
@@ -289,24 +231,16 @@
             <h2 id='hardultra'>Hard Mode / Ultra Patches</h2>
             <p>Patches that increase the bullet density and speed throughout the game, while giving you autobombs to compensate for it. The Hard Mode patches also change the actual patterns.
             The main Ultra patch collection includes the games up to ISC.</p>
-            <table>
-                <tr>
-                    <td><a href='http://cheater.seesaa.net/category/9478192-1.html' target='_blank'>Main Ultra Patches</a></td>
-                </tr>
-                <tr>
-                    <td><a href='https://www.axfc.net/u/785101' target='_blank'>Alternate EoSD Ultra</a></td>
-                </tr>
-            </table>
+            <div>
+                <p><a href='http://cheater.seesaa.net/category/9478192-1.html' target='_blank'>Main Ultra Patches</a></p>
+                <p><a href='https://www.axfc.net/u/785101' target='_blank'>Alternate EoSD Ultra</a></p>
+            </div>
             <p><strong>Hard Mode patches by <a href='https://twitter.com/chirpeh13' target='_blank'>Chirpy</a></strong></p>
             <p>Patches for UFO and DDC that modify patterns, besides simply making them harder.</p>
-            <table>
-                <tr>
-                    <td><a href='https://www.mediafire.com/file/e3sx5g9jtbell33/th12.dat' target='_blank'>HardUFO</a></td>
-                </tr>
-                <tr>
-                    <td><a href='http://www.mediafire.com/file/usbud0rr385z2nn/th14.dat' target='_blank'>HarDDC</a></td>
-                </tr>
-            </table>
+            <div>
+                <p><a href='https://www.mediafire.com/file/e3sx5g9jtbell33/th12.dat' target='_blank'>HardUFO</a></p>
+                <p><a href='http://www.mediafire.com/file/usbud0rr385z2nn/th14.dat' target='_blank'>HarDDC</a></p>
+            </div>
 			<p><strong>RNG patches by <a href='https://www.twitch.tv/thedaikarasu' target='_blank'>Daikarasu</a></strong>
 			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> RNG</a></p>
 			<p>A collection of modified <span class='code'>.dat</span> files that randomise the patterns in the game.</p>
@@ -316,14 +250,10 @@
             <a href='https://pan.baidu.com/s/1pJDYEsr' target='_blank'>Download (Baidu)</a>
             <p><strong>IN Double Stage 4/6</strong></p>
             <p>Allows you to play 4A, 4B, 6A and 6B in a single run. Optionally also includes Extra at the end.</p>
-            <table>
-                <tr>
-                    <td><a href='http://www.mediafire.com/file/a0nd1a6asqpy2de/th08_8stages.rar' target='_blank'>Without Extra</a></td>
-                </tr>
-                <tr>
-                    <td><a href='http://www.mediafire.com/file/sb7hzvb4fmwrwvb/th08_9stages.rar' target='_blank'>With Extra</a></td>
-                </tr>
-            </table>
+            <div>
+                <p><a href='http://www.mediafire.com/file/a0nd1a6asqpy2de/th08_8stages.rar' target='_blank'>Without Extra</a></p>
+                <p><a href='http://www.mediafire.com/file/sb7hzvb4fmwrwvb/th08_9stages.rar' target='_blank'>With Extra</a></p>
+            </div>
             <p><strong>HSiFS UltraB by <a href='https://twitter.com/mdude33' target='_blank'>Dass</a></strong></p>
             <p>An alternate HSiFS Ultra patch that also increases density.</p>
             <a href='https://mega.nz/#!LxNAQbyB!a2qOOOgYQ8-NwTWvLSgcykBXsEmhgy6IDpdEdxlG-90' target='_blank'>Download</a>
@@ -343,20 +273,12 @@
             <p>Modifications to the main <span class='code'>.dat</span> files of the games that change the way the game looks.</p>
             <p><strong>Graphical Patches by <a href='https://twitter.com/Gastari_' target='_blank'>Gastari</a></strong></p>
             <p>Includes PCB and HSiFS in MS Paint style, an emoji-themed version of UFO and a Christmas-themed version of LoLK.</p>
-            <table>
-                <tr>
-                    <td><a href='http://www.mediafire.com/file/17gq2hnxtmtnrp9/Paint+Cherry+Blossom+GOTY+ver+1.0.zip' target='_blank'>Paint Cherry Blossom</a></td>
-                </tr>
-                <tr>
-                    <td><a href='http://www.mediafire.com/file/zark2co2d9637z4/Painting+Stars+in+Four+Seasons+%28Full+game+patch%29.rar' target='_blank'>Painting Stars in Four Seasons</a></td>
-                </tr>
-                <tr>
-                    <td><a href='http://www.mediafire.com/file/yinp1p2rxh04phd/Undefined+Fantastic+Emoji+patch.zip' target='_blank'>Undefined Fantastic Emoji</a></td>
-                </tr>
-                <tr>
-                    <td><a href='http://www.mediafire.com/file/apaks0mcs351ylr/Legacy+of+Lunatic+Christmas.zip' target='_blank'>Legacy of Lunatic Christmas</a></td>
-                </tr>
-            </table>
+            <div>
+                <p><a href='http://www.mediafire.com/file/17gq2hnxtmtnrp9/Paint+Cherry+Blossom+GOTY+ver+1.0.zip' target='_blank'>Paint Cherry Blossom</a></p>
+                <p><a href='http://www.mediafire.com/file/zark2co2d9637z4/Painting+Stars+in+Four+Seasons+%28Full+game+patch%29.rar' target='_blank'>Painting Stars in Four Seasons</a></p>
+                <p><a href='http://www.mediafire.com/file/yinp1p2rxh04phd/Undefined+Fantastic+Emoji+patch.zip' target='_blank'>Undefined Fantastic Emoji</a></p>
+                <p><a href='http://www.mediafire.com/file/apaks0mcs351ylr/Legacy+of+Lunatic+Christmas.zip' target='_blank'>Legacy of Lunatic Christmas</a></p>
+            </div>
 			<p><strong>Vertical Play Patches by <a href='http://bygzam.seesaa.net/'>niisaka</a></strong></p>
 			<p>Makes MoF, SA, UFO and TD play in the arcade-style vertical (TATE) resolution.</p>
 			<a href='https://bygzam.up.seesaa.net/zip/th_pivot_dx9-110924.zip' target='_blank'>Download</a>
@@ -375,14 +297,10 @@
 			<p>This emulator has low system requirements and can run even on very old computers.
 			However, the graphics are mediocre and the sound emulation requires proper configuration to be accurate.
 			Allows for 8 savestates and requires a separate font file, linked below.</p>
-			<table>
-				<tr>
-					<td><a href='https://www.zophar.net/download_file/2133'>Download</a></td>
-				</tr>
-				<tr>
-					<td><a href='https://www.zophar.net/download_file/2134'>Font</a></td>
-				</tr>
-			</table>
+			<div>
+				<p><a href='https://www.zophar.net/download_file/2133'>Download</a></p>
+				<p><a href='https://www.zophar.net/download_file/2134'>Font</a></p>
+			</div>
 			<p><strong>DOSBox-X</strong></p>
 			<p>A fork of the DOSBox project that has support for PC-98. It is the only emulator to run natively under not only Windows, but also Mac and Linux.
 			A list of downloads for each system can be found via the link below.</p>
@@ -398,14 +316,10 @@
             <a href='https://maribelhearn.com/MSBL.zip' target='_blank'>Download</a>
             <p><strong>EoSD Capture History Tracker by <a href='https://twitter.com/TrickOfHat' target='_blank'>TrickOfHat</a></strong></p>
             <p>Command-line tool that allows you to track how many times you captured spells in EoSD. Includes Stage 4 Books and Play Time tracking, as well as allowing for multiple save files.</p>
-            <table>
-                <tr>
-                    <td><a href='https://mega.nz/#!pUpF3KQR!ULjC-e38liPB7DHpZDCvVWCbOmvt5UvCr7JpYiLDf-0' target='_blank'>Download</a></td>
-                </tr>
-                <tr>
-                    <td><a href='https://cdn.discordapp.com/attachments/414701108854915072/435727033725878272/EoSD_History_Recorder.rar'>Source code</a></td>
-                </tr>
-            </table>
+            <div>
+                <p><a href='https://mega.nz/#!pUpF3KQR!ULjC-e38liPB7DHpZDCvVWCbOmvt5UvCr7JpYiLDf-0' target='_blank'>Download</a></p>
+                <p><a href='https://cdn.discordapp.com/attachments/414701108854915072/435727033725878272/EoSD_History_Recorder.rar'>Source code</a></p>
+            </div>
             <p><strong>PoFV Play Time Recorder by <a href='https://twitter.com/TrickOfHat' target='_blank'>TrickOfHat</a></strong></p>
             <p>Keeps track of your play time in PoFV.</p>
             <a href='https://mega.nz/#!JB4jHJhb!zXa3s_SsAv5P7A1Ua65bGyAJVc76n6iq0KEXWpwJxJE' target='_blank'>Download</a>
@@ -414,14 +328,10 @@
             <a href='https://pan.baidu.com/share/link?shareid=3349324077&uk=1627698914' target='_blank'>Download (Baidu)</a>
             <p><strong>TD Arrange Patch by <a href='https://twitter.com/qu_ark' target='_blank'>Nereid</a></strong></p>
             <p>Modification of TD that removes the invincibility from trances, instead allowing you to use them starting at 1/3 full gauge.</p>
-            <table>
-                <tr>
-                    <td><a href='http://kawashi.ro/th13arr.zip'>Download</a></td>
-                </tr>
-                <tr>
-                    <td><a href='https://pastebin.com/1jD5GZRe' target='_blank'>Readme</a></td>
-                </tr>
-            </table>
+            <div>
+                <p><a href='http://kawashi.ro/th13arr.zip'>Download</a></p>
+                <p><a href='https://pastebin.com/1jD5GZRe' target='_blank'>Readme</a></p>
+            </div>
             <p><strong>HSiFS Max Season Start by <a href='https://twitter.com/ReformedSmol' target='_blank'>Martin</a></strong></p>
             <p>Lets you start with your season level at 6.</p>
             <a href='https://mega.nz/#!HxJRQKKR!MCaZzfVoamBmhvCkVmITQy7nI7WYX8M3FLEYncXNsxs' target='_blank'>Download</a>
