@@ -456,16 +456,6 @@
 					<thead id='list_thead'></thead>
                     <tbody id='list_tbody'></tbody>
 				</table>
-				<p id='cheat'><?php
-                    if ($lang == 'English') {
-                        echo '* This record is suspected of cheating. If it is found to have been cheated, ' .
-                        'the record will be 2,209,324,900 by ななまる.';
-                    } else if ($lang == 'Japanese') {
-                        echo 'このスコアはチートの疑いがあります。不正が証明された場合、世界記録はななまるさんによる22.09億のスコアとなります。';
-                    } else {
-                        echo '* 这rep怀疑有作弊。若真有此事，世界纪录则归于ななまる，得分2,209,324,900。';
-                    }
-                ?></p>
                 <table>
                     <thead id='west_thead'></thead>
                     <tbody id='west_tbody'></tbody>

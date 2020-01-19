@@ -371,7 +371,6 @@ function display(event) {
     }
 
     $("#list").css("display", "block");
-    $("#cheat").css("display", game == "MoF" ? "block" : "none");
     $("#seasontoggle").css("display", game == "HSiFS" ? "block" : "none");
     generateTableText();
     generateDates();
