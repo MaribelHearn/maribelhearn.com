@@ -342,10 +342,6 @@ function display(event) {
         $(overall.removeSeason()).html($(overall.removeSeason()).html().replace("<u>", "<u><strong>").replace("</u>", "</strong></u>"));
     }
 
-    if (game == "MoF") {
-        $(overall).html($(overall).html().replace("</strong>", "*</strong>"));
-    }
-
     $("#west_tbody").html("");
     $("#west_thead").html("<tr><th class='world'>World</th><th class='west'>West</th><th class='percentage'>Percentage</th></tr>");
 

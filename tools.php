@@ -317,7 +317,7 @@
             <p><strong>EoSD Capture History Tracker by <a href='https://twitter.com/TrickOfHat' target='_blank'>TrickOfHat</a></strong></p>
             <p>Command-line tool that allows you to track how many times you captured spells in EoSD. Includes Stage 4 Books and Play Time tracking, as well as allowing for multiple save files.</p>
             <div>
-                <p><a href='https://mega.nz/#!pUpF3KQR!ULjC-e38liPB7DHpZDCvVWCbOmvt5UvCr7JpYiLDf-0' target='_blank'>Download</a></p>
+                <p><a href='https://mega.nz/#!URxkUSAa!bmKsMnqX8XZxovn9TY1njoa0-2nnC57Sl15KJWs_iy0' target='_blank'>Download</a></p>
                 <p><a href='https://cdn.discordapp.com/attachments/414701108854915072/435727033725878272/EoSD_History_Recorder.rar'>Source code</a></p>
             </div>
             <p><strong>PoFV Play Time Recorder by <a href='https://twitter.com/TrickOfHat' target='_blank'>TrickOfHat</a></strong></p>
