@@ -334,8 +334,8 @@ function apply() {
             if (val == "N/A") {
                 na[game] += getPercentage(game);
             } else if (val == "Not cleared") {
-                numbers[difficulty]["Not cleared"] += 1;
-                numbers["Total"]["Not cleared"] += 1
+                numbers[difficulty == "Phantasm" ? "Extra" : difficulty]["Not cleared"] += 1;
+                numbers["Total"]["Not cleared"] += 1;
             } else {
                 completions[game] += getPercentage(game);
                 if (val.substr(0, 2) == "NB" && val.length > 2) {
