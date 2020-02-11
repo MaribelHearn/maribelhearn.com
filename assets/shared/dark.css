@@ -1,7 +1,7 @@
 body {
     color: white;
 }
-div {
+div, #results {
     background-color: #202020;
 }
 a:link:not(.replay):not(.i) {
