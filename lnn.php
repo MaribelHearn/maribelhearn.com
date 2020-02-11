@@ -96,7 +96,7 @@
 		}
 	}
     foreach ($lnn as $game => $data1) {
-        if (num($game) < 6 || $game == 'LM') {
+        if ($game == 'LM') {
             continue;
         }
         $sum = 0;
@@ -321,7 +321,7 @@
                     <tbody>
                         <?php
                             foreach ($lnn as $game => $data1) {
-                                if (num($game) < 6 || $game == 'LM') {
+                                if ($game == 'LM') {
                                     continue;
                                 }
                                 echo '<tr><td>' . num($game) . '</td><td class="' . $game . '">' . $game . '</td>';
