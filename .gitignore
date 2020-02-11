@@ -2,6 +2,6 @@ bestinthewest.json
 gensokyo.json
 lnnlist.json
 wrlist.json
-.stats/token
 .htaccess
+.stats/*
 *.txt
