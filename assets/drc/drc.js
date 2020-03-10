@@ -724,7 +724,7 @@ function scoringPoints(rubric, game, difficulty, shottype) {
     } else if (Rubrics.SCORE[game][difficulty].wr && typeof Rubrics.SCORE[game][difficulty].wr != "object") {
         wr = Rubrics.SCORE[game][difficulty].wr;
     } else {
-        wrshottype = (game == "HSiFS" && difficulty != "Easy" ? removeSeason(shottype) + bestSeason(difficulty, shottype) : shottype);
+        wrshottype = (game == "HSiFS" ? removeSeason(shottype) + bestSeason(difficulty, shottype) : shottype);
         wr = WRs[game][difficulty][wrshottype][0];
     }
 
