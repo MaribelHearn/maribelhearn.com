@@ -2,6 +2,7 @@ document.documentElement.classList.remove("no-js");
 
 var categories = {},
     gameCategories = {},
+    tieredItems = [],
     defaultWidth = (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) ? 60 : 120,
     settings = {
         "categories": {
@@ -62,7 +63,7 @@ function isTiered(item) {
         return false;
     }
 
-    return item !== "" && JSON.stringify(tierList).contains(item.removeSpaces());
+    return item !== "" && $("#" + item).hasClass("tiered");
 }
 function allTiered(categoryName) {
     var cats = (settings.sort == "characters" ? categories : gameCategories);
@@ -244,6 +245,7 @@ function addToTier(character, tierNum, pos, noDisplay) {
         }
 
         tierList[tierNum].chars.pushStrict(character);
+        tieredItems.push(character);
     }
 
     window.onbeforeunload = function () {
@@ -336,6 +338,7 @@ function removeFromTier(character, tierNum) {
 
         $("#tier" + tierNum + "_" + (tierList[tierNum].chars.length - 1)).remove();
         tierList[tierNum].chars.remove(character);
+        tieredItems.remove(character);
     }
 
     if (isMobile()) {
@@ -493,7 +496,7 @@ function swapTiers(event) {
     var tierNum1 = event.data.tier1, tierNum2 = event.data.tier2,
         tierList = (settings.sort == "characters" ? tiers : gameTiers);
 
-    var tmp = tierList[tierNum1], tierNum;
+    var tmp = tierList[tierNum1], tierNum, item, i;
 
     $("#th" + tierNum1).css("color", tierList[tierNum2].colour);
     $("#th" + tierNum1).css("background-color", tierList[tierNum2].bg);
@@ -505,13 +508,25 @@ function swapTiers(event) {
     $("#th" + tierNum1).html($("#th" + tierNum2).html());
     $("#th" + tierNum2).html(tmp);
     tmp = $("#tier" + tierNum1).html();
-    $("#tier" + tierNum1).html($("#tier" + tierNum2).html());
-    $("#tier" + tierNum2).html(tmp);
+    $("#tier" + tierNum1).html($("#tier" + tierNum2).html().replace("tier" + tierNum2 + "_", "tier" + tierNum1 + "_"));
+    $("#tier" + tierNum2).html(tmp.replace("tier" + tierNum1 + "_", "tier" + tierNum2 + "_"));
     swapOngoing = -1;
 
     for (tierNum in tierList) {
         $("#th" + tierNum).off("click");
         $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
+
+        for (i in tierList[tierNum].chars) {
+            item = tierList[tierNum].chars[i];
+            $("#" + item).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
+
+            if (isMobile()) {
+                $("#" + item).on("click", addMenu);
+            } else {
+                $("#" + item).on("dblclick", addToMostRecent);
+                $("#" + item).on("dragstart", drag);
+            }
+        }
     }
 
     window.onbeforeunload = function () {
@@ -1237,7 +1252,8 @@ function changeLog() {
     "<li>17/09/2019: Mobile version bugs fixed and speed increased; changelog added</li>" +
     "<li>04/10/2019: WBaWC characters added</li>" +
     "<li>19/12/2019: Fixed character disappearance bug and related issues</li>" +
-    "<li>02/01/2020: Fixed tier list loading bug</li></ul>");//
+    "<li>02/01/2020: Fixed tier list loading bug</li>" +
+    "<li>13/03/2020: Fixed bug caused by swapping tiers as well as a bug caused by naming a tier after a character.</li></ul>");
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
 }
