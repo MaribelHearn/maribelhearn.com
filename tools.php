@@ -95,7 +95,7 @@
             and separate HSiFS SSGs with cheat options. Be wary of an occasional menu bug that causes an SSG to duplicate itself and make other SSGs invisible.</p>
             <div>
                 <p><a href='http://wcs.main.jp/index/software/spal/' target='_blank'>Main Program</a></p>
-                <p><a href='https://mega.nz/#F!W0gDSYqR!HIKFxSUI0B6Ra2ePpEHdxg' target='_blank'>SSGs (4.6, English translated)</a></p>
+                <p><a href='https://maribelhearn.com/English_SSGs.zip' target='_blank'>SSGs (4.6, English translated)</a></p>
                 <p><a href='https://mega.nz/#!OpxFSSJB!2eUH91vJAF_ejq7S5r3x5Jx7GYCP67LSSo4BuXhoDa4' target='_blank'>SSGs (niL, Japanese)</a></p>
                 <p><a href='http://www.mediafire.com/file/a4g4awdp4ll5a4n/SSG.zip' target='_blank'>SSGs (niL, English translated)</a></p>
                 <p><a href='https://mega.nz/#!QUBTEB5J!idRbiOfr_BKFpMBy9e5qU5Ow1xPkxplVbR72G6Ud0KI' target='_blank'>MoF SSG by Akaldar</a></p>
@@ -114,7 +114,7 @@
             <p>Patches intended for efficient practice in one or more games, allowing the player to skip to patterns or changing power and such.</p>
 			<p><strong>Universal Practice Tool by ACK</strong></p>
 			<p>Single practice tool that works on all of the official Touhou shoot 'em up games, allowing you to change settings or skip to patterns at will.</p>
-			<a href='https://maribelhearn.com/thprac_v1.0.exe'>Download</a>
+			<a href='https://maribelhearn.com/thprac_v1.1.zip'>Download</a>
 			<p><strong>Practice Tools by <a href='https://twitter.com/Ririanly'>Riri</a></strong></p>
             <p>Tools that allow you to skip to specific patterns in SA, UFO and LoLK, also allowing for other settings like your current power.
             The UFO and LoLK tools are external programs while the SA tool is a modification of the program. The LoLK one was made for v1.00a but mostly functions properly on v1.00b as well.</p>
