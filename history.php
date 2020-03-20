@@ -95,10 +95,10 @@
                     <tbody>
                         <tr>
                             <td>TD Lunatic</td>
-                            <td>3,244,858,300</td>
+                            <td>3,405,595,060</td>
                             <td>Marisa</td>
-                            <td>January 5, 2019</td>
-                            <td><strong><a href='https://www.twitch.tv/videos/328580781'>Old link (Twitch)</a></strong></td>
+                            <td>February 29, 2020</td>
+                            <td><strong><a href='https://www.youtube.com/watch?v=a-vejcZEMnQ'>Link (YouTube)</a></strong></td>
                         </tr>
                         <tr>
                             <td>TD Hard</td>
@@ -113,6 +113,20 @@
                             <td>Marisa</td>
                             <td>September 8, 2018</td>
                             <td><strong><a href='https://www.twitch.tv/videos/312223855?t=16m40s'>Link (Twitch)</a></strong></td>
+                        </tr>
+                        <tr>
+                            <td>TD Easy</td>
+                            <td>917,219,120</td>
+                            <td>Marisa</td>
+                            <td>September 26, 2019</td>
+                            <td><strong><a href='https://www.twitch.tv/videos/486728072?t=14m1s'>Old link (Twitch)</a></strong></td>
+                        </tr>
+                        <tr>
+                            <td>TD Extra</td>
+                            <td>537,659,780</td>
+                            <td>Marisa</td>
+                            <td>December 21, 2019</td>
+                            <td><strong><a href='https://www.youtube.com/watch?v=LPy7CNA1zRY&t=181s'>Link (YouTube)</a></strong></td>
                         </tr>
 						<tr>
 							<td>HSiFS Lunatic</td>
@@ -137,10 +151,10 @@
                         </tr>
                         <tr>
                             <td><abbr title='Banshiryuu (C67)'>BSR</abbr> Easy</td>
-                            <td>193,423,440 (<abbr title='Highest known score'>HKS</abbr>)</td>
+                            <td>206,254,030 (<abbr title='Highest known score'>HKS</abbr>)</td>
                             <td>HiranoS</td>
-                            <td>December 23, 2017</td>
-                            <td><strong><a href='https://www.youtube.com/watch?v=DDgG9-Ai0Jo'>Link (YouTube)</a></strong></td>
+                            <td>October 21, 2019</td>
+                            <td><strong><a href='https://www.youtube.com/watch?v=r-xKFTUhNP8'>Link (YouTube)</a></strong></td>
                         </tr>
                         <tr>
                             <td><abbr title='Samidare'>SMD</abbr></td>
@@ -2109,10 +2123,10 @@
                 <tr>
                     <td>Lunatic</td>
                     <td>Marisa</td>
-                    <td>3,244,858,300</td>
+                    <td>3,405,595,060</td>
                     <td class='g'>Yes</td>
-                    <td>January 5, 2019</td>
-                    <td><strong><a href='https://www.twitch.tv/videos/328580781'>Old link (Twitch)</a></strong></td>
+                    <td>February 29, 2020</td>
+                    <td><strong><a href='https://www.youtube.com/watch?v=a-vejcZEMnQ'>Link (YouTube)</a></strong></td>
                 </tr>
                 <tr>
                     <td>Hard</td>
@@ -2130,6 +2144,22 @@
                     <td>September 8, 2018</td>
                     <td><strong><a href='https://www.twitch.tv/videos/312223855?t=16m40s'>Link (Twitch)</a></strong></td>
                 </tr>
+				<tr>
+					<td>Easy</td>
+					<td>Marisa</td>
+					<td>917,219,120</td>
+                    <td class='g'>Yes</td>
+					<td>September 26, 2019</td>
+					<td><strong><a href='https://www.twitch.tv/videos/486728072?t=14m1s'>Old link (Twitch)</a></strong></td>
+				</tr>
+				<tr>
+					<td>Extra</td>
+					<td>Marisa</td>
+					<td>537,659,780</td>
+                    <td class='g'>Yes</td>
+					<td>December 21, 2019</td>
+					<td><strong><a href='https://www.youtube.com/watch?v=LPy7CNA1zRY&t=181s'>Link (YouTube)</a></strong></td>
+				</tr>
                 </table>
                 <h3>Survival</h3>
                 <table>
@@ -3310,10 +3340,10 @@
                 <tr>
                     <td><strong>Easy</strong></td>
                     <td>HiranoS</td>
-                    <td>193,423,440 (<abbr title='Highest known score'>HKS</abbr>)</td>
+                    <td>206,254,030 (<abbr title='Highest known score'>HKS</abbr>)</td>
                     <td class='g'>Yes</td>
-                    <td>December 23, 2017</td>
-                    <td><strong><a href='https://www.youtube.com/watch?v=DDgG9-Ai0Jo'>Link</a></strong></td>
+                    <td>October 21, 2019</td>
+                    <td><strong><a href='https://www.youtube.com/watch?v=r-xKFTUhNP8'>Link</a></strong></td>
                 </tr>
                 <tr>
                     <td><strong>Easy</strong></td>
