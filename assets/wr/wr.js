@@ -193,7 +193,7 @@ function display(event) {
 
     var shottypes = [], compareWRs = {}, max = 0, difficulty, bestshotmax, shottype, wr, score, player, replay, overall,
         overallplayer, overalldifficulty, overallshottype, overallseason, overalldate, bestshot, bestshotplayer, bestshotseason,
-        bestshotdate, text, count, seasonless, extrashots, west, world, percentage, i;
+        bestshotdate, text, count, seasonless, extrashots, west, world, percentage, sepScore, i;
 
     for (shottype in WRs[game]["Easy"]) {
         shottypes.pushStrict(seasonsEnabled ? shottype : shottype.removeSeason());
@@ -307,7 +307,8 @@ function display(event) {
                 bestshotdate = date;
             }
 
-            text = (replay === "" ? sep(score) : "<a class='replay' href='" + replay + "'>" + sep(score) + "</a>") +
+            sepScore = (game == "WBaWC" && score > 9999999990 ? "<abbr title='" + sep(score) + "'>9,999,999,990</abbr>" : sep(score));
+            text = (replay === "" ? sepScore : "<a class='replay' href='" + replay + "'>" + sepScore +"</a>") +
             "<br>by <em>" + player + "</em>" + (date && datesEnabled ? "<span class='dimgrey'><br>" +
             "<span class='datestring_game'>" + date + "</span></span>" : "");
             $("#" + game + difficulty + shottype).html(score > 0 ? text : '-');
@@ -320,8 +321,9 @@ function display(event) {
         }
 
         if (bestshotmax > 0) {
-            $(bestshot).html((bestshotreplay === "" ? "<u>" + sep(bestshotmax) + "</u>" : "<u><a class='replay' href='" + bestshotreplay +
-            "'>" + sep(bestshotmax) + "</a></u>") + "<br>by <em>" + bestshotplayer +
+            sepScore = (game == "WBaWC" && score > 9999999990 ? "<abbr title='" + sep(bestshotmax) + "'>9,999,999,990</abbr>" : sep(bestshotmax));
+            $(bestshot).html((bestshotreplay === "" ? "<u>" + sepScore + "</u>" : "<u><a class='replay' href='" + bestshotreplay +
+            "'>" + sepScore + "</a></u>") + "<br>by <em>" + bestshotplayer +
             "</em>" + (bestshotdate && datesEnabled ? "<span class='dimgrey'><br><span class='datestring_game'>" + bestshotdate + "</span></span>" : ""));
             compareWRs[difficulty] = [
                 bestshotmax, bestshotplayer, bestshot.replace("#" + game + difficulty, "")
