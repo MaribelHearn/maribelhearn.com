@@ -5,6 +5,8 @@
     hit(basename(__FILE__));
     $json = file_get_contents('json/wrlist.json');
     $wr = json_decode($json, true);
+    $json = file_get_contents('json/counterstops.json');
+    $cs = json_decode($json, true);
     if (isset($_COOKIE['lang'])) {
 		$lang = str_replace('"', '', $_COOKIE['lang']);
         $notation = str_replace('"', '', $_COOKIE['datenotation']);
@@ -398,14 +400,23 @@
 						foreach ($wr as $game => $value) {
 							$num = num($game);
 							echo '<tr id="' . $game . 'o"><td>' . $num . '</td><td class="' . $game . '">' . $game . '</td>';
-							echo '<td id="' . $game . 'overall0">' . number_format($overall[$num], 0, '.', ',') . '</td>';
-							echo '<td id="' . $game . 'overall1">' . $overall_player[$num] . '</td>';
+							echo '<td id="' . $game . 'overall0">' . ($game == 'WBaWC' ? '<abbr ' .
+                            'title="' . number_format($overall[$num], 0, '.', ',') . '">9,999,999,990' .
+                            '</abbr>' : number_format($overall[$num], 0, '.', ',')) . '</td>';
+                            echo '<td id="' . $game . 'overall1">' . $overall_player[$num] . ($game == 'WBaWC' ? '*' : '') . '</td>';
 							echo '<td id="' . $game . 'overall2">' . $overall_diff[$num] . '</td>';
 							echo '<td id="' . $game . 'overall3">' . $overall_shottype[$num] . '</td>';
 							echo '<td id="' . $game . 'overall4" class="datestring">' . date_tl($overall_date[$num], $notation) . '</td></tr>';
 						}
 					?>
                 </table>
+                <p>* Other players that have scored 9,999,999,990:
+                    <?php
+                        foreach ($cs as $player => $value) {
+                            echo '<abbr title="' . $value . '">' . $player . '</abbr>';
+                        }
+                    ?>.
+                </p>
             </div>
             <div id='overallm'>
                 <h2 class='overallrecords'><?php echo tl_term('Overall Records', $lang); ?></h2>
@@ -414,12 +425,18 @@
 					foreach ($wr as $game => $value) {
 						$num = num($game);
 						echo '<p class="' . $game . ' count">' . $game . '</p><p>';
-						echo '<span id="' . $game . 'overall0m">' . number_format($overall[$num], 0, '.', ',') . '</span> ';
+                        echo '<span id="' . $game . 'overall0m">' . ($game == 'WBaWC' ? '<abbr ' .
+                        'title="' . number_format($overall[$num], 0, '.', ',') . '">9,999,999,990' .
+                        '</abbr>' : number_format($overall[$num], 0, '.', ',')) . '</span>';
 						echo '<span id="' . $game . 'overall2m">' . $overall_diff[$num] . '</span> ';
 						echo '<span id="' . $game . 'overall3m">' . $overall_shottype[$num] . '</span> by ';
-						echo '<span id="' . $game . 'overall1m"><em>' . $overall_player[$num] . '</em></span> ';
+						echo '<span id="' . $game . 'overall1m"><em>' . $overall_player[$num] . ($game == 'WBaWC' ? '*' : '') . '</em></span> ';
 						echo '<br><span id="' . $game . 'overall4m" class="datestring">' . date_tl($overall_date[$num], $notation) . '</span></p><hr>';
 					}
+                    echo '* Other players that have scored 9,999,999,990:';
+                    foreach ($cs as $player => $value) {
+                        echo '<abbr title="' . $value . '">' . $player . '</abbr>';
+                    }
 				?>
             </div>
             <h2 id='wrs' class='worldrecords'><?php echo tl_term('World Records', $lang); ?></h2>
