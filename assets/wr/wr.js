@@ -276,6 +276,7 @@ function display(event) {
             season = shottype.removeChar();
             wr = WRs[game][difficulty][shottype];
             score = wr[0];
+            if (game == "WBaWC" && difficulty == "Lunatic" && shottype == "MarisaOtter") score = 10137217660;
             player = wr[1];
             date = wr[2];
             if (wr[3]) {
@@ -307,8 +308,8 @@ function display(event) {
                 bestshotdate = date;
             }
 
-            sepScore = (game == "WBaWC" && score > 9999999990 ? "<abbr title='" + sep(score) + "'>9,999,999,990</abbr>" : sep(score));
-            text = (replay === "" ? sepScore : "<a class='replay' href='" + replay + "'>" + sepScore +"</a>") +
+            sepScore = (game == "WBaWC" && score > 9999999990 ? "<abbr title='" + sep(score) + "'>9,999,999,990*</abbr>" : sep(score));
+            text = (replay === "" ? sepScore : "<a class='replay' href='" + replay + "'>" + sepScore + "</a>") +
             "<br>by <em>" + player + "</em>" + (date && datesEnabled ? "<span class='dimgrey'><br>" +
             "<span class='datestring_game'>" + date + "</span></span>" : "");
             $("#" + game + difficulty + shottype).html(score > 0 ? text : '-');
@@ -321,12 +322,12 @@ function display(event) {
         }
 
         if (bestshotmax > 0) {
-            sepScore = (game == "WBaWC" && score > 9999999990 ? "<abbr title='" + sep(bestshotmax) + "'>9,999,999,990</abbr>" : sep(bestshotmax));
+            sepScore = (game == "WBaWC" && bestshotmax > 9999999990 ? "<abbr title='" + sep(bestshotmax) + "'>9,999,999,990*</abbr>" : sep(bestshotmax));
             $(bestshot).html((bestshotreplay === "" ? "<u>" + sepScore + "</u>" : "<u><a class='replay' href='" + bestshotreplay +
             "'>" + sepScore + "</a></u>") + "<br>by <em>" + bestshotplayer +
             "</em>" + (bestshotdate && datesEnabled ? "<span class='dimgrey'><br><span class='datestring_game'>" + bestshotdate + "</span></span>" : ""));
             compareWRs[difficulty] = [
-                bestshotmax, bestshotplayer, bestshot.replace("#" + game + difficulty, "")
+                Math.min(bestshotmax, 9999999990), bestshotplayer, bestshot.replace("#" + game + difficulty, "")
             ];
         }
 
