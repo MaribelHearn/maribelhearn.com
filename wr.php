@@ -413,7 +413,7 @@
                 <p>* Other players that have scored 9,999,999,990:
                     <?php
                         foreach ($cs as $player => $value) {
-                            echo '<abbr title="' . $value . '">' . $player . '</abbr>';
+                            echo '<abbr title="' . $value[0] . '">' . $player . '</abbr>';
                         }
                     ?>.
                 </p>
@@ -435,7 +435,7 @@
 					}
                     echo '* Other players that have scored 9,999,999,990:';
                     foreach ($cs as $player => $value) {
-                        echo '<abbr title="' . $value . '">' . $player . '</abbr>';
+                        echo '<abbr title="' . $value[0] . '">' . $player . '</abbr>';
                     }
 				?>
             </div>
