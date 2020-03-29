@@ -412,9 +412,11 @@
                 </table>
                 <p>* Other players that have scored 9,999,999,990:
                     <?php
+                        $str = '';
                         foreach ($cs as $player => $value) {
-                            echo '<abbr title="' . $value[0] . '">' . $player . '</abbr>';
+                            $str .= ', <abbr title="' . $value[0] . '">' . $player . '</abbr>';
                         }
+                        echo substr($str, 2);
                     ?>.
                 </p>
             </div>
