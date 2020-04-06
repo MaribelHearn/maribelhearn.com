@@ -4,6 +4,7 @@ var categories = {},
     gameCategories = {},
     tieredItems = [],
     defaultWidth = (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) ? 60 : 120,
+    defaultSize = 32,
     settings = {
         "categories": {
             "Main": { enabled: true }, "HRtP": { enabled: true }, "SoEW": { enabled: true }, "PoDD": { enabled: true },
@@ -22,6 +23,7 @@ var categories = {},
         "windowsEnabled": true,
         "maleEnabled": true,
         "tierHeaderWidth": defaultWidth,
+        "tierHeaderFontSize": defaultSize,
         "artist": "Dairi",
         "sort": "characters"
     },
@@ -450,6 +452,7 @@ function addTier(event) {
         $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
         $("#th" + tierNum).css("max-width", settings.tierHeaderWidth + "px");
         $("#th" + tierNum).css("width", settings.tierHeaderWidth + "px");
+        $("#th" + tierNum).css("font-size", settings.tierHeaderFontSize + "px");
 
         if (isMobile()) {
             $("#th" + tierNum).css("height", "60px");
@@ -1036,8 +1039,10 @@ function settingsMenuChars() {
     $("#modal_inner").append("<p><label for='male'>Male Characters</label><input id='male' type='checkbox'" +
     " " + (settings.maleEnabled ? " checked" : "") + " " + (settings.artist == "Ruu" ? "disabled=true" : "") + "></p>");
     $("#pc98").on("click", toggleMale);
-    $("#modal_inner").append("<div>Other settings:<p><label for='tierHeaderWidth'>Max tier header width</label>" +
-    "<input id='tierHeaderWidth' type='number' value=" + settings.tierHeaderWidth + " min=" + defaultWidth + "></p></div>");
+    $("#modal_inner").append("<div>Other settings:<p><label for='tierHeaderWidth'>Tier header width</label>" +
+    "<input id='tierHeaderWidth' type='number' value=" + settings.tierHeaderWidth + " min=" + defaultWidth + "></p>" +
+    "<p><label for='tierHeaderWidth'>Tier header font size</label>" +
+    "<input id='tierHeaderFontSize' type='number' value=" + settings.tierHeaderFontSize + " min=" + defaultSize + "></p></div>");
     $("#modal_inner").append("<div><p><input id='save_settings' type='button' value='Save Changes'></p>" +
     "<p id='settings_msg_container'></p></div>");
     $("#save_settings").on("click", saveSettings);
@@ -1064,8 +1069,10 @@ function settingsMenuWorks() {
         counter += 1;
     }
     $("#modal_inner").append("</tr></tbody></table>");
-    $("#modal_inner").append("<div>Other settings:<p><label for='tierHeaderWidth'>Max tier header width</label>" +
-    "<input id='tierHeaderWidth' type='number' value=" + settings.tierHeaderWidth + " min=" + defaultWidth + "></p></div>");
+    $("#modal_inner").append("<div>Other settings:<p><label for='tierHeaderWidth'>Tier header width</label>" +
+    "<input id='tierHeaderWidth' type='number' value=" + settings.tierHeaderWidth + " min=" + defaultWidth + "></p>" +
+    "<p><label for='tierHeaderWidth'>Tier header font size</label>" +
+    "<input id='tierHeaderFontSize' type='number' value=" + settings.tierHeaderFontSize + " min=" + defaultSize + "></p></div>");
     $("#modal_inner").append("<div><p><input id='save_settings' type='button' value='Save Changes'></p>" +
     "<p id='settings_msg_container'></p></div>");
     $("#save_settings").on("click", saveSettings);
@@ -1220,7 +1227,10 @@ function saveSettings() {
     }
 
     settings.tierHeaderWidth = $("#tierHeaderWidth").val() > defaultWidth ? $("#tierHeaderWidth").val() : defaultWidth;
+    settings.tierHeaderFontSize = $("#tierHeaderFontSize").val() != defaultSize ? $("#tierHeaderFontSize").val() : defaultSize;
+    $(".tier_header").css("width", settings.tierHeaderWidth + "px");
     $(".tier_header").css("max-width", settings.tierHeaderWidth + "px");
+    $(".tier_header").css("font-size", settings.tierHeaderFontSize + "px");
     $("#modal_inner").html("");
     $("#modal_inner").css("display", "none");
     $("#modal").css("display", "none");
@@ -1253,7 +1263,8 @@ function changeLog() {
     "<li>04/10/2019: WBaWC characters added</li>" +
     "<li>19/12/2019: Fixed character disappearance bug and related issues</li>" +
     "<li>02/01/2020: Fixed tier list loading bug</li>" +
-    "<li>13/03/2020: Fixed bug caused by swapping tiers as well as a bug caused by naming a tier after a character.</li></ul>");
+    "<li>13/03/2020: Fixed bug caused by swapping tiers as well as a bug caused by naming a tier after a character.</li>" +
+    "<li>06/04/2020: Added ability to change the tier header font size and made tier header width changes apply immediately</li></ul>");
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
 }
@@ -1295,6 +1306,7 @@ function eraseAllConfirmed() {
         "windowsEnabled": true,
         "maleEnabled": true,
         "tierHeaderWidth": defaultWidth,
+        "tierHeaderFontSize": defaultSize,
         "artist": "Dairi",
         "sort": tmp
     };
@@ -1619,6 +1631,7 @@ function loadSettingsFromStorage() {
         settings.windowsEnabled = settingsData.windowsEnabled;
         settings.maleEnabled = settingsData.maleEnabled;
         settings.tierHeaderWidth = (settingsData.tierHeaderWidth ? settingsData.tierHeaderWidth : defaultWidth);
+        settings.tierHeaderFontSize = (settingsData.tierHeaderFontSize ? settingsData.tierHeaderFontSize : defaultSize);
         settings.artist = settingsData.artist;
         settings.sort = settingsData.sort;
     } else {
