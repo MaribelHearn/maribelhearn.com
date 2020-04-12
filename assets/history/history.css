@@ -49,6 +49,9 @@ h3 {
 #notice {
     display: none;
 }
+#routes {
+    margin-top: 15px;
+}
 .hidden {
     border: none;
     text-align: left;
@@ -149,6 +152,10 @@ h3 {
     }
     .list {
         width: 100%;
+    }
+    .container {
+        overflow-x: scroll;
+        overflow-y: hidden;
     }
     h1 {
         font-size: 36px;
