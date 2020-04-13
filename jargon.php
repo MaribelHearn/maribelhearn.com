@@ -36,10 +36,10 @@
 			?>
             <p>This list contains explanations for terms and acronyms used in the community of Touhou players. It also contains general gaming and shoot 'em up terms that are relevant to Touhou.</p>
             <h2>Contents</h2>
-            <table id='contents' class='border'>
-                <tr><td><a href='#spells'>Spell Card / Pattern Acronyms</a></td></tr>
-                <tr><td><a href='#bullets'>Bullet Type Names</a></td></tr>
-            </table>
+            <div id='contents' class='border'>
+                <p><a href='#spells'>Spell Card / Pattern Acronyms</a></p>
+                <p><a href='#bullets'>Bullet Type Names</a></p>
+            </div>
             <h2 id='main'>Gameplay Related Terms</h2>
             <table id='jargontable'>
                 <thead>
@@ -313,7 +313,7 @@
                     </tr>
                     <tr id='term_stg'>
                         <th>STG</th>
-                        <td><u>S</u>hoo<u>t</u>ing <u>G</u>ame; an acronym used to refer to shoot 'em up games, just as <a href='#term_shmup'>shmup</a> does. Used primarily by Japanese players.</td>
+                        <td><strong>S</strong>hoo<strong>t</strong>ing <strong>G</strong>ame; an acronym used to refer to shoot 'em up games, just as <a href='#term_shmup'>shmup</a> does. Used primarily by Japanese players.</td>
                     </tr>
                     <tr id='term_timeout'>
                         <th>Timeout</th>
@@ -556,11 +556,11 @@
                 <tbody>
 					<tr id='term_amulet'>
 						<th>Amulet</th>
-						<td><img src='bullets/amulet.png' alt='Amulet'></td>
+						<td><img src='bullets/amulet.png' alt='Amulet bullet'></td>
 					</tr>
                     <tr id='term_arrow'>
                         <th>Arrow</th>
-                        <td><img src='bullets/arrow.png' alt='Arrow'></td>
+                        <td><img src='bullets/arrow.png' alt='Arrow bullet'></td>
                     </tr>
                     <tr id='term_arrowhead'>
                         <th>Arrowhead</th>
@@ -584,7 +584,7 @@
                     </tr>
                     <tr id='term_bullet'>
                         <th>Bullet</th>
-                        <td><img src='bullets/bullet.png' alt='Bullet'></td>
+                        <td><img src='bullets/bullet.png' alt='OG bullet'></td>
                     </tr>
                     <tr id='term_butterfly'>
                         <th>Butterfly</th>

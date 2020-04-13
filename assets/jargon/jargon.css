@@ -9,6 +9,9 @@
 div {
     background-color: #fff;
 }
+div > div > p {
+    margin: 4px;
+}
 h1 {
     font-family: 'Felipa';
     font-size: 48px;
@@ -22,6 +25,9 @@ h2 {
 }
 #wrap {
     padding-bottom: 15px;
+}
+#wrap > div {
+    display: inline-block;
 }
 #hy {
     float: right;

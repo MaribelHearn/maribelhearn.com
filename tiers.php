@@ -74,7 +74,10 @@
                         <tr id='add_tier_box_mobile'>
                             <td id='add_tier_cell_mobile'>
                                 <input id='tier_name_mobile' type='text' value=''>
-                                <input id='add_tier_mobile' type='button' value='Add Tier'>
+                                <label for='tier_name_mobile'>
+                                    <span class='hidden'>.</span>
+                                    <input id='add_tier_mobile' type='button' value='Add Tier'>
+                                </label>
                             </td>
                         </tr>
                     </thead>
@@ -83,7 +86,10 @@
                         <tr>
                             <td id='add_tier_desktop'>
                                 <input id='tier_name' type='text' value=''>
-                                <input id='add_tier' type='button' value='Add Tier'>
+                                <label for='tier_name'>
+                                    <span class='hidden'>.</span>
+                                    <input id='add_tier' type='button' value='Add Tier'>
+                                </label>
                             </td>
                         </tr>
                     </tfoot>

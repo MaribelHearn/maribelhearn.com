@@ -71,7 +71,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='chars_head' class='head noborders'></th>
+                            <th id='chars_head' class='head noborders'>#</th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -288,7 +288,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='music_head' class='head noborders'></th>
+                            <th id='music_head' class='head noborders'>#</th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -848,7 +848,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='works_head' class='head noborders'></th>
+                            <th id='works_head' class='head noborders'>#</th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -1446,7 +1446,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='eosd_head' class='head noborders'></th>
+                            <th id='eosd_head' class='head noborders'>#</th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -1493,7 +1493,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='pcb_head' class='head noborders'></th>
+                            <th id='pcb_head' class='head noborders'>#</th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -1543,7 +1543,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='in_head' class='head noborders'></th>
+                            <th id='in_head' class='head noborders'>#</th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -1594,7 +1594,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='mof_head' class='head noborders'></th>
+                            <th id='mof_head' class='head noborders'>#</th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -1642,7 +1642,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='sa_head' class='head noborders'></th>
+                            <th id='sa_head' class='head noborders'>#</th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -1689,7 +1689,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='ufo_head' class='head noborders'></th>
+                            <th id='ufo_head' class='head noborders'>#</th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -1735,7 +1735,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='td_head' class='head noborders'></th>
+                            <th id='td_head' class='head noborders'>#</th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -1782,7 +1782,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='ddc_head' class='head noborders'></th>
+                            <th id='ddc_head' class='head noborders'>#</th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -1829,7 +1829,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='lolk_head' class='head noborders'></th>
+                            <th id='lolk_head' class='head noborders'>#</th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
@@ -1876,7 +1876,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='hsifs_head' class='head noborders'></th>
+                            <th id='hsifs_head' class='head noborders'>#</th>
                             <th>Rank</th>
                             <th>2018 rank</th>
                             <th>2017 rank</th>
