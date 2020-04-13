@@ -635,10 +635,11 @@
 					<tbody id='scoringTable'>
 					<?php
 						foreach ($Rubrics['SCORE'] as $game => $value) {
-							echo '<tr>' . ($game == "HRtP" ? '<th id="game0">' . tl_term('Game', $lang) .
-							'</th><th id="maxPoints0">' . tl_term('Max points', $lang) .
-							'</th><th id="exp0">' . tl_term('Exponent', $lang) .
-							'</th>' : '<th></th><td></td><td></td>') . '</tr>';
+							if ($game == 'HRtP') {
+								echo '<tr><th id="game0">' . tl_term('Game', $lang) .
+								'</th><th id="maxPoints0">' . tl_term('Max points', $lang) .
+								'</th><th id="exp0">' . tl_term('Exponent', $lang) . '</th></tr>';
+							}
 							foreach ($Rubrics['SCORE'][$game] as $diff => $rubric) {
 								echo '<tr><th>' . tl_game($game . ' ', $lang) . $diff .
 								'</th><td>' . $rubric['base'] . '</td><td>' . $rubric['exp'] . '</td></tr>';
