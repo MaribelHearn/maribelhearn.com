@@ -29,6 +29,9 @@ h3 {
     font-family: 'Felipa';
     font-size: 24px;
 }
+caption {
+    margin-bottom: 10px;
+}
 #wrap {
     border: 1px solid black;
     text-align: center;
@@ -61,6 +64,9 @@ h3 {
 }
 .overview {
     width: 80px;
+}
+.legend {
+    margin: 0px;
 }
 .attempted {
     background-color: orange;
@@ -98,6 +104,7 @@ h3 {
 }
 .y {
     background-color: green;
+    color: white;
 }
 .r {
     background-color: red;
@@ -106,7 +113,7 @@ h3 {
     font-weight: bold;
 }
 .i {
-    color: black;
+    color: white;
 }
 .calendar-box {
     display: none;

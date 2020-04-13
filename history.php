@@ -219,12 +219,37 @@
 	                </table>
 				</div>
                 <h2 id='survival'>Survival</h2>
-                <p>Legend:<br>
-                <b class='nmnb_text'>No Miss No Bomb (NMNB)</b><br>
-                <b class='nb_text'>No Bomb (NB)</b><br>
-                <b class='nm_text'><abbr title='Without dying'>No Miss (NM)</abbr></b><br>
-                <b class='clear_text'>1cc</b><br>
-                <b class='attempted_text'>Attempted</b></p>
+				<table>
+					<caption>Legend:</caption>
+					<thead>
+						<tr>
+							<th>Colour</th>
+							<th>Meaning</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class='overview nmnb'></td>
+							<td>No Miss No Bomb (NMNB)</td>
+						</tr>
+							<tr>
+								<td class='overview nb'></td>
+								<td>No Bomb (NB)</td>
+							</tr>
+							<tr>
+								<td class='overview nm'></td>
+								<td><abbr title='Without dying'>No Miss (NM)</abbr></td>
+							</tr>
+							<tr>
+								<td class='overview clear'></td>
+								<td>1cc</td>
+							</tr>
+							<tr>
+								<td class='overview attempted'></td>
+								<td>Attempted</td>
+							</tr>
+					</tbody>
+				</table>
                 <p>An empty cell means that the difficulty or achievement has not been tried (yet),<br>and an 'X' means the difficulty or achievement does not exist in the game.</p>
                 <h3>Touhou</h3>
                 <table>
@@ -500,7 +525,7 @@
                             <td id='nuMSF' class='nm'></td>
                         </tr>
 						<tr>
-                            <th class='overview'></th>
+                            <th class='overview'>Game</th>
 							<th class='overview'>Original</th>
 							<th class='overview'>Maniac</th>
 							<th class='overview'>Ultra</th>
@@ -518,7 +543,7 @@
 							<td id='uMSF'></td>
 						</tr>
 						<tr>
-                            <th class='overview'></th>
+                            <th class='overview'>Game</th>
 							<th class='overview'>Original (BL)</th>
 							<th class='overview'>Maniac (BL)</th>
 							<th class='overview'>God</th>
@@ -1254,7 +1279,7 @@
                     <td><strong>Aya</strong></td>
                     <td class='g'>85/85</td>
                     <td>November 12, 2016</td>
-                    <td>Possibly upcoming</td>
+                    <td>No</td>
                 </tr>
                 </table>
                 <h3>Progress</h3>
@@ -1638,378 +1663,374 @@
                     <td><strong>Aya</strong></td>
                     <td class='g'>108/108</td>
                     <td>November 13, 2016</td>
-                    <td>Possibly upcoming</td>
+                    <td>No</td>
                 </tr>
                 <tr>
                     <td><strong>Hatate</strong></td>
                     <td class='g'>99/99</td>
                     <td>November 15, 2016</td>
-                    <td>Possibly upcoming</td>
+                    <td>No</td>
                 </tr>
                 </table>
-				<div class='container'>
-	                <table class='hidden'>
-	                    <tr class='hidden'>
-	                        <td class='hidden'>
-	                            <h3>Aya's Progress</h3>
-	                            <table>
-	                                <tr>
-	                                    <th>Stage</th>
-	                                    <th>1</th>
-	                                    <th>2</th>
-	                                    <th>3</th>
-	                                    <th>4</th>
-	                                    <th>5</th>
-	                                    <th>6</th>
-	                                    <th>7</th>
-	                                    <th>8</th>
-	                                    <th>9</th>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>1</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                    <td>-</td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>2</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                    <td>-</td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>3</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>4</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>5</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>6</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>7</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>8</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>9</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong><a class='i' href='https://www.youtube.com/watch?v=HrXrgEaFcgU'>Y</a></strong></td>
-	                                    <td class='y'><strong><a class='i' href='https://www.youtube.com/watch?v=Y5X4WXHTghU'>Y</a></strong></td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>10</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>11</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>12</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong><a class='i' href='https://www.youtube.com/watch?v=eeEr5maRrYY'>Y</a></strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>EX</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>Spoiler</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong><a class='i' href='https://www.youtube.com/watch?v=N57I335uJ3w'>Y</a></strong></td>
-	                                </tr>
-	                            </table>
-	                        </td>
-	                        <td class='hidden'>
-	                            <h3>Hatate's Progress</h3>
-	                            <table>
-	                                <tr>
-	                                    <th>Stage</th>
-	                                    <th>1</th>
-	                                    <th>2</th>
-	                                    <th>3</th>
-	                                    <th>4</th>
-	                                    <th>5</th>
-	                                    <th>6</th>
-	                                    <th>7</th>
-	                                    <th>8</th>
-	                                    <th>9</th>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>1</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                    <td>-</td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>2</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                    <td>-</td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>3</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>4</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>5</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>6</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>7</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>8</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>9</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>10</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>11</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>12</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td>-</td>
-	                                </tr>
-	                                <tr>
-	                                    <td><strong>EX</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                    <td class='y'><strong>Y</strong></td>
-	                                </tr>
-	                            </table>
-	                        </td>
-	                    </tr>
-	                </table>
+				<div id='ds_scenes'>
+	                <div id='ds_aya'>
+	                    <h3>Aya's Progress</h3>
+	                    <table>
+	                        <tr>
+	                            <th>Stage</th>
+	                            <th>1</th>
+	                            <th>2</th>
+	                            <th>3</th>
+	                            <th>4</th>
+	                            <th>5</th>
+	                            <th>6</th>
+	                            <th>7</th>
+	                            <th>8</th>
+	                            <th>9</th>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>1</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                            <td>-</td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>2</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                            <td>-</td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>3</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>4</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>5</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>6</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>7</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>8</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>9</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong><a class='i' href='https://www.youtube.com/watch?v=HrXrgEaFcgU'>Y</a></strong></td>
+	                            <td class='y'><strong><a class='i' href='https://www.youtube.com/watch?v=Y5X4WXHTghU'>Y</a></strong></td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>10</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>11</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>12</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong><a class='i' href='https://www.youtube.com/watch?v=eeEr5maRrYY'>Y</a></strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>EX</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>Spoiler</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong><a class='i' href='https://www.youtube.com/watch?v=N57I335uJ3w'>Y</a></strong></td>
+	                        </tr>
+	                    </table>
+	                </div>
+					<div id='ds_hatate'>
+	                    <h3>Hatate's Progress</h3>
+	                    <table>
+	                        <tr>
+	                            <th>Stage</th>
+	                            <th>1</th>
+	                            <th>2</th>
+	                            <th>3</th>
+	                            <th>4</th>
+	                            <th>5</th>
+	                            <th>6</th>
+	                            <th>7</th>
+	                            <th>8</th>
+	                            <th>9</th>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>1</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                            <td>-</td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>2</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                            <td>-</td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>3</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>4</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>5</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>6</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>7</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>8</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>9</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>10</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>11</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>12</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td>-</td>
+	                        </tr>
+	                        <tr>
+	                            <td><strong>EX</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                            <td class='y'><strong>Y</strong></td>
+	                        </tr>
+	                    </table>
+	                </div>
 				</div>
             </div>
             <div id='GFW'>
