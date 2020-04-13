@@ -17,7 +17,6 @@
 		<div id='wrap'>
             <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
             <h1>Maribel's Achievement History</h1>
-            <noscript><strong>Notice:</strong> this page cannot function properly with JavaScript disabled.</noscript>
             <p id='notice'><strong>Notice:</strong> this page is best viewed on mobile using landscape mode.</p>
             <p>I am a bullet hell player who mostly plays for score and mains Touhou 13: Ten Desires. I have also scored Touhou 16: Hidden Star in Four Seasons, Seihou Banshiryuu C67 and Samidare.</p>
 			<p><a id='backtomain' href='/'>Back to Main Page</a></p>
