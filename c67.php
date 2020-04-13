@@ -25,13 +25,12 @@
                 <img id='boxart' class='lazy' data-src='assets/c67/boxart.jpg' src='<?php echo $empty; ?>' alt='Banshiryuu Cover'>
             </picture>
             <hr>
-            <h2>Contents</h2>
-            <table id='contents' class='center'>
-                <tr><td>1. <a href='#items'>Items</a></td></tr>
-                <tr><td>2. <a href='#grazing'>Grazing</a></td></tr>
-                <tr><td>3. <a href='#se'>Special Equipment</a></td></tr>
-                <tr><td>
-                    4. <a href='#shottypes'>Shottypes</a>
+            <h2 id='contents'>Contents</h2>
+            <ol id='ol'>
+                <li><a href='#items'>Items</a></li>
+                <li><a href='#grazing'>Grazing</a></li>
+                <li><a href='#se'>Special Equipment</a></li>
+                <li><a href='#shottypes'>Shottypes</a>
                     <ol type='I'>
                         <li><a href='#vivitw'>VIVIT-W</a></li>
                         <li><a href='#vivita'>VIVIT-A</a></li>
@@ -39,8 +38,8 @@
                         <li><a href='#hiranoo'>HiranoO</a></li>
                         <li><a href='#comparison'>Comparison</a></li>
                     </ol>
-                </td></tr>
-            </table>
+                </li>
+            </ol>
             <hr>
             <h2 id='items'>Items</h2>
             <picture>
@@ -241,9 +240,9 @@
             having the strongest focused shot in the game, which is the second strongest shot overall, only beaten by Hirano-S's regular shot.</p>
             <h3 id='comparison'>Comparison</h3>
             <div id='container'>
-                <table id='table'>
+                <table>
                     <tr>
-                        <th></th>
+                        <th>Shottype</th>
                         <th>Regular shot power</th>
                         <th>Regular shot range</th>
                         <th>Focused shot power</th>

@@ -24,8 +24,19 @@ h3 {
 p {
     font: 14px verdana,sans-serif;
 }
-table, tr, th, td {
+ol {
+    margin: 10px;
+    padding-right: 25px;
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+table, tr, th, td, #ol {
     border: 1px solid #000;
+}
+#wrap > ol {
+    display: inline-block;
 }
 #wrap {
     border: 1px solid #000;
@@ -43,10 +54,6 @@ table, tr, th, td {
 }
 #contents td, #contents th {
     border: none;
-}
-#table, .center {
-    margin-left: auto;
-    margin-right: auto;
 }
 .description {
     font-size: 12px;
