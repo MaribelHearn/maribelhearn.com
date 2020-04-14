@@ -45,9 +45,6 @@ var categories = {},
 function isMobile() {
     return navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1;
 }
-function isLandscape() {
-    return window.orientation == -90 || window.orientation == 90 || screen.width > screen.height;
-}
 function isCharacter(character) {
     return character !== "" && JSON.stringify(categories).removeSpaces().contains(character);
 }
@@ -1263,7 +1260,7 @@ function changeLog() {
     "<li>04/10/2019: WBaWC characters added</li>" +
     "<li>19/12/2019: Fixed character disappearance bug and related issues</li>" +
     "<li>02/01/2020: Fixed tier list loading bug</li>" +
-    "<li>13/03/2020: Fixed bug caused by swapping tiers as well as a bug caused by naming a tier after a character.</li>" +
+    "<li>13/03/2020: Fixed bug caused by swapping tiers as well as a bug caused by naming a tier after a character</li>" +
     "<li>06/04/2020: Added ability to change the tier header font size and made tier header width changes apply immediately</li></ul>");
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
@@ -1446,6 +1443,7 @@ function loadTier(tiersData, tierNum, tierSort) {
             $("#th" + tierNum).css("color", tierList[tierNum].colour);
             $("#th" + tierNum).css("max-width", settings.tierHeaderWidth + "px");
             $("#th" + tierNum).css("width", settings.tierHeaderWidth + "px");
+            $("#th" + tierNum).css("font-size", settings.tierHeaderFontSize + "px");
 
             if (isMobile()) {
                 $("#th" + tierNum).css("height", "60px");

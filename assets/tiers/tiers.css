@@ -76,6 +76,9 @@ input[type=number] {
 .left {
     text-align: left;
 }
+.hidden {
+    display: none;
+}
 #buttons, #characters, #show, #wrap {
     background-color: #1b232e;
     font: 14px verdana, sans-serif;
@@ -295,7 +298,7 @@ input[type=number] {
         padding-top: 2%;
     }
 }
-@media only screen and (max-height: 320px) {
+@media only screen and (max-height: 250px) {
     #information_button, #view_button, #mobile_button_split, #menu_button, #switch_button {
         display: inline;
     }
