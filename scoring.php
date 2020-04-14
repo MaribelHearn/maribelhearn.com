@@ -69,7 +69,7 @@
             <h2>Customize</h2>
             <table id='checkboxes' class='center'>
                 <tbody>
-                    <tr>
+                    <tr class='noborders'>
                         <td>
                             <input id='HRtPc' type='checkbox' class='check' checked>
                             <label for='HRtPc'>HRtP</label>
@@ -84,7 +84,7 @@
                             <label for='LoLKc'>LoLK</label>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class='noborders'>
                         <td>
                             <input id='SoEWc' type='checkbox' class='check' checked>
                             <label for='SoEWc'>SoEW</label>
@@ -99,7 +99,7 @@
                             <label for='HSiFSc'>HSiFS</label>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class='noborders'>
                         <td>
                             <input id='PoDDc' type='checkbox' class='check' checked>
                             <label for='PoDDc'>PoDD</label>
@@ -114,7 +114,7 @@
                             <label for='WBaWCc'>WBaWC</label>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class='noborders'>
                         <td>
                             <input id='LLSc' type='checkbox' class='check' checked>
                             <label for='LLSc'>LLS</label>
@@ -126,7 +126,7 @@
                             <label for='TDc'>TD</label>
                         </td><td class='noborders'></td>
                     </tr>
-                    <tr>
+                    <tr class='noborders'>
                         <td>
                             <input id='MSc' type='checkbox' class='check' checked>
                             <label for='MSc'>MS</label>
@@ -140,7 +140,7 @@
                     </tr>
                 </tbody>
                 <tfoot>
-                    <tr>
+                    <tr class='noborders'>
                         <td>
                             <input id='tracked' type='checkbox' checked>
                             <label for='tracked'>Tracked</label>
