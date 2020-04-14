@@ -2079,7 +2079,7 @@
 							<input id='GFWLunaticC2' type='text'>
 						</td>
                     </tr><tr>
-                        <td>Extra</td>
+                        <td><label for='GFWExtra-'>Extra</label></td>
                         <td id='GFWExtra' colspan='4'><input id='GFWExtra-' type='text'></td>
                     </tr>
                 </table>
@@ -2972,7 +2972,7 @@
                 </table>
             </div>
 			<div id='topList'></div>
-            <p>Number of decimals: <input id='precision' type='number' value='0' min='0' max='5' step='1'></p>
+            <p><label for='precision'>Number of decimals:</label> <input id='precision' type='number' value='0' min='0' max='5' step='1'></p>
             <p id='error'></p>
 			<p><label for='toggleData'>Save Data</label><input id='toggleData' type='checkbox'></p>
 			<p><input id='calc' type='button' value='Calculate'><input id='reset' type='button' value='Reset'></p>
