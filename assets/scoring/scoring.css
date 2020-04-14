@@ -104,6 +104,9 @@ input[type=button] {
 .error {
     color: red;
 }
+.label {
+    display: none;
+}
 @media only screen and (min-width:1200px) and (max-width:1600px) {
     .wrap {
         margin-left: 15%;
@@ -134,6 +137,10 @@ input[type=button] {
         margin-right: 0;
         font-size: 11px;
     }
+    .label {
+        display: inline;
+        font-weight: bold;
+    }
     h1 {
         font-size: 36px;
     }
@@ -146,6 +153,15 @@ input[type=button] {
     input[type=text] {
         width: 65px;
         height: 10px;
+    }
+    tr {
+        display: block;
+    }
+    th {
+        display: none;
+    }
+    td.break {
+        float: left;
     }
 }
 @media only screen and (min-device-width:480px) and (max-device-width:640px) and (orientation:landscape) {
@@ -154,6 +170,10 @@ input[type=button] {
         margin-right: 0;
         font-size: 11px;
     }
+    .label {
+        display: inline;
+        font-weight: bold;
+    }
     h1 {
         font-size: 36px;
     }
@@ -166,5 +186,14 @@ input[type=button] {
     input[type=text] {
         width: 65px;
         height: 10px;
+    }
+    tr {
+        display: block;
+    }
+    th {
+        display: none;
+    }
+    td.break {
+        float: left;
     }
 }
