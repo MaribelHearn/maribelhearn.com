@@ -273,7 +273,7 @@ function addToTierMobile(event) {
     $("#" + character.removeSpaces()).off("click");
     addToTier(character.removeSpaces(), tierNum);
     emptyModal();
-    $("#msg_container").html("<strong class='confirmation'>Added " + character + " to " + tierList[tierNum].name + "!</strong>");
+    $("#msg_container").html("<strong class='confirmation'>Added " + $("#" + character).attr("alt") + " to " + tierList[tierNum].name + "!</strong>");
 }
 function addMenu() {
     var character = $(this).attr("alt"), tierList = (settings.sort == "characters" ? tiers : gameTiers),
@@ -369,13 +369,13 @@ function modalRemove(event) {
     emptyModal();
 }
 function modalUp(event) {
-    var above = tierOrder[tierOrder.indexOf(tierNum) - 1];
+    var above = event.data.tierOrder[event.data.tierOrder.indexOf(event.data.tierNum) - 1];
 
     changeToTier(event.data.character, above);
     emptyModal();
 }
 function modalDown(event) {
-    var below = tierOrder[tierOrder.indexOf(event.data.tierNum) + 1];
+    var below = event.data.tierOrder[event.data.tierOrder.indexOf(event.data.tierNum) + 1];
 
     changeToTier(event.data.character, below);
     emptyModal();
@@ -393,12 +393,12 @@ function modalChar(character, tierNum) {
 
     if (tierOrder.indexOf(tierNum) !== 0) {
         $("#modal_inner").append("<input id='up_button' class='mobile_button' type='button' value='Move Up'>");
-        $("#up_button").on("click", {character: character, tierNum: tierNum}, modalUp);
+        $("#up_button").on("click", {character: character, tierNum: tierNum, tierOrder: tierOrder}, modalUp);
     }
 
     if (tierOrder.indexOf(tierNum) != order.length - 1) {
         $("#modal_inner").append("<input id='down_button' class='mobile_button' type='button' value='Move Down'>");
-        $("#down_button").on("click", {character: character, tierNum: tierNum}, modalDown);
+        $("#down_button").on("click", {character: character, tierNum: tierNum, tierOrder: tierOrder}, modalDown);
     }
 
     $("#modal_inner").append("<input id='back_button' class='mobile_button' type='button' value='Move to Back'>");
