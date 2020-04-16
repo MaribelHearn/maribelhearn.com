@@ -414,7 +414,7 @@
                     <?php
                         $str = '';
                         foreach ($cs as $player => $value) {
-                            $str .= ', <abbr title="' . $value[0] . '">' . $player . '</abbr>';
+                            $str .= ', <abbr title="' . $value[2] . ' ' . $value[0] . ' on ' . date_tl($value[1], $notation) . '">' . $player . '</abbr>';
                         }
                         echo substr($str, 2);
                     ?>.
