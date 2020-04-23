@@ -21,6 +21,9 @@ h2 {
     margin: 20px;
     clear: both;
 }
+hr {
+    clear: both;
+}
 p {
     margin: 2px;
 }
@@ -31,6 +34,7 @@ p {
     margin-left: auto;
     margin-right: auto;
     float: none;
+    clear: both;
 }
 .left {
     float: left;
