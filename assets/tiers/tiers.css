@@ -298,7 +298,7 @@ input[type=number] {
         padding-top: 2%;
     }
 }
-@media only screen and (max-height: 250px) {
+@media only screen and (max-height: 350px) {
     #information_button, #view_button, #mobile_button_split, #menu_button, #switch_button {
         display: inline;
     }
