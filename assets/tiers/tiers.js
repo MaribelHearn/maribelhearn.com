@@ -273,7 +273,7 @@ function addToTierMobile(event) {
     $("#" + character.removeSpaces()).off("click");
     addToTier(character.removeSpaces(), tierNum);
     emptyModal();
-    $("#msg_container").html("<strong class='confirmation'>Added " + $("#" + character).attr("alt") + " to " + tierList[tierNum].name + "!</strong>");
+    $("#msg_container").html("<strong class='confirmation'>Added " + $("#" + character.removeSpaces()).attr("alt") + " to " + tierList[tierNum].name + "!</strong>");
 }
 function addMenu() {
     var character = $(this).attr("alt"), tierList = (settings.sort == "characters" ? tiers : gameTiers),

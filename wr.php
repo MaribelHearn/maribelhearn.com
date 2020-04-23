@@ -429,16 +429,18 @@
 						echo '<p class="' . $game . ' count">' . $game . '</p><p>';
                         echo '<span id="' . $game . 'overall0m">' . ($game == 'WBaWC' ? '<abbr ' .
                         'title="' . number_format($overall[$num], 0, '.', ',') . '">9,999,999,990' .
-                        '</abbr>' : number_format($overall[$num], 0, '.', ',')) . '</span>';
+                        '</abbr> ' : number_format($overall[$num], 0, '.', ',')) . '</span> ';
 						echo '<span id="' . $game . 'overall2m">' . $overall_diff[$num] . '</span> ';
 						echo '<span id="' . $game . 'overall3m">' . $overall_shottype[$num] . '</span> by ';
 						echo '<span id="' . $game . 'overall1m"><em>' . $overall_player[$num] . ($game == 'WBaWC' ? '*' : '') . '</em></span> ';
 						echo '<br><span id="' . $game . 'overall4m" class="datestring">' . date_tl($overall_date[$num], $notation) . '</span></p><hr>';
 					}
                     echo '* Other players that have scored 9,999,999,990:';
+                    $str = '';
                     foreach ($cs as $player => $value) {
-                        echo '<abbr title="' . $value[0] . '">' . $player . '</abbr>';
+                        $str .= ', <abbr title="' . $value[2] . ' ' . $value[0] . ' on ' . date_tl($value[1], $notation) . '">' . $player . '</abbr>';
                     }
+                    echo substr($str, 2);
 				?>
             </div>
             <h2 id='wrs' class='worldrecords'><?php echo tl_term('World Records', $lang); ?></h2>

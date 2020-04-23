@@ -201,6 +201,7 @@ ol > li {
     }
     table.stats {
         table-layout: fixed;
+        width: 200px;
     }
     table.stats > td {
         width: 100px;
@@ -244,9 +245,10 @@ ol > li {
     }
     table.stats {
         table-layout: fixed;
+        width: 400px;
     }
     table.stats > td {
-        width: 100px;
+        width: 200px;
     }
     h1 {
         font-size: 36px;
