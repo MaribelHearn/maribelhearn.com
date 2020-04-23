@@ -1,0 +1,266 @@
+.webp body {
+    background: url('pofv.webp') center no-repeat fixed;
+    background-size: cover;
+}
+.no-js body, .no-webp body {
+    background: url('pofv.jpg') center no-repeat fixed;
+    background-size: cover;
+}
+div {
+    background-color: #fff;
+}
+div > div > p {
+    margin: 4px;
+}
+h1 {
+    font-family: 'Felipa';
+    font-size: 48px;
+}
+h2 {
+    font-family: 'Felipa';
+    font-size: 36px;
+}
+h3 {
+    font-family: 'Felipa';
+    font-size: 24px;
+}
+table {
+     margin-left: auto;
+     margin-right: auto;
+}
+th {
+    font-size: 32px;
+    width: 120px;
+    height: 120px;
+    border: 1px solid black;
+}
+abbr > img {
+    width: 120px;
+    height: 120px;
+}
+ol {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+ol > li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#nav {
+    margin-bottom: 5px;
+}
+#wrap {
+    padding-bottom: 15px;
+}
+#hy {
+    float: right;
+}
+#wrap > div {
+    display: inline-block;
+}
+#modal {
+    font: 14px verdana, sans-serif;
+    text-align: center;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 3%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    background-color: rgba(0,0,0,.4);
+    color: #000;
+}
+#modal_inner {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    max-height: 80%;
+    display: none;
+    overflow-y: auto;
+}
+#s {
+    background: radial-gradient(#8B0000, #C54500, #FF8C00);
+}
+#a {
+    background: radial-gradient(#FF8C00, #FFA500, #FFFF00);
+}
+#b {
+    background: radial-gradient(#FFFF00, #D6FF18, #ADFF2F);
+}
+#c {
+    background: radial-gradient(#ADFF2F, #57A818, #008000);
+}
+#d {
+    background: radial-gradient(#008080, #00BFBF, #00FFFF);
+}
+.S {
+    color: #8B0000;
+}
+.A {
+    color: #FF8C00;
+}
+.B {
+    color: #D6C218;
+}
+.C {
+    color: #57A818;
+}
+.D {
+    color: #008080;
+}
+.wrap {
+    border: 1px solid #000;
+    text-align: center;
+    margin-left: 23%;
+    margin-right: 23%;
+    padding-left: 15px;
+    padding-right: 15px;
+    opacity: 0.8;
+    font: 14px verdana,sans-serif;
+}
+.art {
+    border: 1px solid black;
+}
+.scope {
+    height: 300px;
+    width: 187px;
+}
+.border {
+    border: 1px solid black;
+    margin-bottom: 15px;
+}
+.noborders {
+    border: none;
+}
+.code {
+    font-family: 'courier new';
+}
+.stats {
+    text-align: left;
+}
+.char {
+    cursor: pointer;
+}
+@media only screen and (min-width:1500px) and (max-width:1800px) {
+    #modal_inner {
+        width: 55%;
+    }
+}
+@media only screen and (min-width:1000px) and (max-width:1500px) {
+    .wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    #modal_inner {
+        width: 65%;
+    }
+}
+@media only screen and (max-width:1000px) {
+    .wrap {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .wrap, #modal_inner {
+        font-size: 11px;
+    }
+    #modal_inner {
+        width: 90%;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+}
+@media only screen and (min-device-width:320px) and (max-device-width:800px) and (orientation:portrait) {
+    .wrap {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .wrap, #modal_inner {
+        font-size: 11px;
+    }
+    #modal_inner {
+        height: 80%;
+    }
+    .guide {
+        width: 90%;
+    }
+    .char {
+        width: 50px;
+        height: 50px;
+    }
+    .art {
+        display: none;
+    }
+    table.stats {
+        table-layout: fixed;
+    }
+    table.stats > td {
+        width: 100px;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    th {
+        font-size: 24px;
+        width: 50px;
+        height: 50px;
+    }
+    ol {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+@media only screen and (min-device-width:480px) and (max-device-width:640px) and (orientation:landscape) {
+    .wrap {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .wrap, #modal_inner {
+        font-size: 11px;
+    }
+    #modal_inner {
+        height: 70%;
+    }
+    .guide {
+        width: 90%;
+    }
+    .char {
+        width: 75px;
+        height: 75px;
+    }
+    .art {
+        display: none;
+    }
+    table.stats {
+        table-layout: fixed;
+    }
+    table.stats > td {
+        width: 100px;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    th {
+        font-size: 24px;
+        width: 75px;
+        height: 75px;
+    }
+    ol {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}

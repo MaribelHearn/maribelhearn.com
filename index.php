@@ -99,17 +99,23 @@
             </div>
             <div class='center'>
                 <div class='left'>
-                    <p><a href='trs'><img src='assets/trs/trs.ico' alt='Shinto shrine icon'> Touhou Replay Showcase Scheduling</a></p>
-                    <p><em>Schedules for the weekly Touhou Replay Showcase Twitch streams.</em></p>
+                    <p><a href='trs'><img src='assets/trs/trs.ico' alt='Shinto shrine icon'> Touhou Replay Showcase</a></p>
+                    <p><em>(U.C.) Submit your replays, read the schedules, and watch the Touhou Replay Showcase Twitch streams.</em></p>
                 </div>
                 <div class='right'>
                     <p><a href='tiers'><img src='assets/tiers/tiers.ico' alt='Japanese castle icon'> Touhou Tier List Creator</a></p>
-                    <p><em>Custom Touhou tier lists can be created here.</em><p>
+                    <p><em>Custom Touhou tier lists can be created here, both characters and official works.</em><p>
                 </div>
             </div>
             <div class='center'>
-                <p><a href='gensokyo'><img src='assets/gensokyo/gensokyo.ico' alt='Gensokyo.org icon'> Gensokyo Replay Archive</a></p>
-                <p><em>A complete archive of the replays from replays.gensokyo.org.</em></p>
+                <div class='left'>
+                    <p><a href='gensokyo'><img src='assets/gensokyo/gensokyo.ico' alt='Gensokyo.org icon'> Gensokyo Replay Archive</a></p>
+                    <p><em>A complete archive of the replays from replays.gensokyo.org.</em></p>
+                </div>
+                <div class='right'>
+                    <p><a href='pofv'><img src='assets/pofv/pofv.ico' alt='PoFV icon'> Phantasmagoria of Flower View</a></p>
+                    <p><em>Portal for competitive PoFV play, featuring info about its metagame and tournaments and links to relevant resources.</em></p>
+                </div>
             </div>
             <hr>
             <div class='center'>
