@@ -178,7 +178,7 @@
                 This disrupts seeding, both for the current tournament and future ones, and causes inaccurate results.</li>
             </ol>
             <h2 id='links'>Useful Links</h2>
-            <p><a href='https://docs.google.com/document/d/1IHtZb8-LbbDEK526JR7u9_HykrwxTcDI/edit'><img src='ext/docs-icon-small.png' alt='Google Docs favicon'> Beginner's Tips</a></p>
+            <p><a href='https://docs.google.com/document/d/1IHtZb8-LbbDEK526JR7u9_HykrwxTcDI/edit'><img src='ext/docs-icon-small.png' alt='Google Docs favicon'> Fundamentals of PoFV Gameplay</a></p>
             <p><a href='https://docs.google.com/spreadsheets/d/1_MikJ3MH_H3L9czPUl5oGC5xmIVN8EH4t5yIfvoRE0o/edit?usp=sharing'><img src='ext/spreadsheets-icon-small.png' alt='Google Spreadsheets favicon'> Tournament Archive</a></p>
             <p><a href='https://cerise.moe/pofv.html'><img src='assets/flags/france16x16.png' alt='Flag of France'> French Guide</a></p>
             <h2 id='ack'>Acknowledgements</h2>
