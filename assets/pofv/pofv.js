@@ -375,7 +375,7 @@ function charInfo() {
         "<tr><td class='noborders'>Charge Delay</td><td class='noborders'>" + STATS[char].delay + " frames</td></tr>" +
         "<tr><td class='noborders'>Special Ability</td><td class='noborders'>" + ABILITY[char] + "</td></tr>" +
         "<tr><td class='noborders'>Scope</td><td class='noborders'>" + SCOPE[char] + "</td></tr></table>" +
-        "</td></tr></table><img class='scope' src='art/PoFV/Scopes/" + char + ".png'><p>" + DESCRIPTION[char] + "</p>");
+        "</td></tr></table><img class='scope' src='art/PoFV/Scopes/" + char + ".jpg'><p>" + DESCRIPTION[char] + "</p>");
     } else {
         $("#modal_inner").html("<h2>" + this.alt + "</h2><table class='noborders'><tr>" +
         "<td class='noborders'><img class='art' src='art/PoFV/" + char + ".png' alt='" + this.alt + "'></td>" +
