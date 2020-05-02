@@ -18,7 +18,7 @@ table:not(#jargontable):not(#bullettable):not(#spelltable):not(#searchtable):not
 table#contents,  tr:not(.noborders), th:not(.noborders), td:not(.noborders) {
     border: 1px solid #808080;
 }
-.GFWt th, .LLSt th, .MoFt th, .PCBt th, .PoDDt th, .tier {
+.GFWt th, .LLSt th, .MoFt th, .PCBt th, .PoDDt th, .tier th, .tier {
     color: black;
 }
 .GFWt td, .LLSt td, .MoFt td, .PCBt td, .PoDDt td {
