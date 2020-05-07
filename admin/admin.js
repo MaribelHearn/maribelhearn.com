@@ -37,8 +37,13 @@ function theme() {
     }
 }
 
+var ua = detect.parse(navigator.userAgent);
+
 document.getElementById("setcookie").addEventListener("click", set);
 document.documentElement.classList.remove("no-js");
+document.getElementById("device").innerHTML = ua.device.name;
+document.getElementById("os").innerHTML = ua.os.name;
+document.getElementById("browser").innerHTML = ua.browser.name;
 head = document.getElementsByTagName("head")[0];
 window.addEventListener("load", ready);
 hy = document.getElementById("hy");
