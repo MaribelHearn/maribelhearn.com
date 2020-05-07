@@ -37,7 +37,7 @@
                     }
                 }
             ?>
-            <p>You are visiting this page on <strong id='device'></strong>.</p>
+            <p class='wide-top'>You are visiting this page on <strong id='device'></strong>.</p>
             <p>You are visiting this page using <strong id='os'></strong>.</p>
             <p>You are visiting this page using <strong id='browser'></strong>.</p>
             <p class='wide'><a href='/'>Back to Main Page</a></p>
