@@ -37,13 +37,13 @@
                     }
                 }
             ?>
-            <p>You are visiting this page on a <strong id='device'></strong>.</p>
+            <p>You are visiting this page on <strong id='device'></strong>.</p>
             <p>You are visiting this page using <strong id='os'></strong>.</p>
             <p>You are visiting this page using <strong id='browser'></strong>.</p>
             <p class='wide'><a href='/'>Back to Main Page</a></p>
         </div>
         <?php echo '<input id="token" type="hidden" value=' . file_get_contents('../.stats/token') . '>'; ?>
-        <script src='https://raw.githubusercontent.com/darcyclarke/Detect.js/master/detect.min.js'></script>
+        <script src='detect.js'></script>
         <script src='admin.js'></script>
     </body>
 

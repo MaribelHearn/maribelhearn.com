@@ -41,9 +41,9 @@ var ua = detect.parse(navigator.userAgent);
 
 document.getElementById("setcookie").addEventListener("click", set);
 document.documentElement.classList.remove("no-js");
-document.getElementById("device").innerHTML = ua.device.name;
-document.getElementById("os").innerHTML = ua.os.name;
-document.getElementById("browser").innerHTML = ua.browser.name;
+document.getElementById("device").innerHTML = (ua.device.name ? "a " + ua.device.name : "an unknown device");
+document.getElementById("os").innerHTML = "<img src='" + ua.os.name + ".png'>" + ua.os.name;
+document.getElementById("browser").innerHTML = "<img src='" + ua.browser.family + ".png'>" + ua.browser.name;
 head = document.getElementsByTagName("head")[0];
 window.addEventListener("load", ready);
 hy = document.getElementById("hy");
