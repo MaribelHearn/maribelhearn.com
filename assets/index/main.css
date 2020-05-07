@@ -30,6 +30,9 @@ p {
 .wide {
     margin: 10px;
 }
+.wide-top {
+    margin-top: 10px;
+}
 .center {
     margin-left: auto;
     margin-right: auto;
