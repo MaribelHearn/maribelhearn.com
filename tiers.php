@@ -72,7 +72,7 @@
                 <table id='tier_list_table'>
                     <thead id='tier_list_thead'>
                         <tr id='add_tier_box_mobile'>
-                            <td id='add_tier_cell_mobile'>
+                            <td id='add_tier_cell_mobile' colspan='2'>
                                 <input id='tier_name_mobile' type='text' value=''>
                                 <label for='tier_name_mobile'>
                                     <span class='hidden'>.</span>
