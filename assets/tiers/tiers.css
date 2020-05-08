@@ -192,8 +192,8 @@ input[type=number] {
         background: #1b232e;
     }
 }
-@media only screen and (((min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait)) or
-((min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape))) {
+@media only screen and (((max-device-width: 800px) and (orientation: portrait)) or
+((max-device-width: 640px) and (orientation: landscape))) {
     .no-js body, .no-webp body, .webp body {
         background: #1b232e;
     }
@@ -256,7 +256,7 @@ input[type=number] {
         font-size: 28px;
     }
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
+@media only screen and (max-device-width: 800px) and (orientation: portrait) {
     #characters {
         width: auto;
         top: 50px;
@@ -276,8 +276,12 @@ input[type=number] {
     #modal_inner {
         max-height: 75%;
     }
+    h1 {
+        margin: 5px;
+        font-size: 28px;
+    }
 }
-@media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
+@media only screen and (max-device-width: 640px) and (orientation: landscape) {
     #title {
         display: none;
     }
@@ -302,7 +306,7 @@ input[type=number] {
     #information_button, #view_button, #mobile_button_split, #menu_button, #switch_button {
         display: inline;
     }
-    #menu, #credits, #characters, #tier_list_tfoot, #init, #buttons {
+    #menu, #credits, #characters, #tier_list_tfoot, #nav, #sort_selection, #instructions_text, #instructions_list, #toggle {
         display: none;
     }
     #tier_list_container, #instructions, #instructions_mobile {
@@ -337,5 +341,19 @@ input[type=number] {
     .tier_header, .list, .tiered {
         width: 60px;
         height: 60px;
+    }
+    h1 {
+        margin: 5px;
+        font-size: 28px;
+    }
+}
+@media only screen and (max-height: 250px) {
+    #buttons {
+        display: none;
+    }
+}
+@media only screen and (max-height: 150px) {
+    #title {
+        display: none;
     }
 }
