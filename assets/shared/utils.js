@@ -71,7 +71,7 @@ Object.defineProperty(Object.prototype, "isEmpty", {
 });
 
 function setCookie(name, value) {
-    document.cookie = name + "=" + JSON.stringify(value) + ";expires=" + maxAge + ";path=/;";
+    document.cookie = name + "=" + JSON.stringify(value) + ";expires=" + maxAge + ";path=/;sameSite=Strict;Secure;";
 }
 
 function getCookie(name) {
