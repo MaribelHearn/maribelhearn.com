@@ -182,7 +182,9 @@
             <p><a href='https://docs.google.com/spreadsheets/d/1_MikJ3MH_H3L9czPUl5oGC5xmIVN8EH4t5yIfvoRE0o/edit?usp=sharing'><img src='ext/spreadsheets-icon-small.png' alt='Google Spreadsheets favicon'> Tournament Archive</a></p>
             <p><a href='https://cerise.moe/pofv.html'><img src='assets/flags/france16x16.png' alt='Flag of France'> French Guide</a></p>
             <h2 id='ack'>Acknowledgements</h2>
+            <p>The netplay guide and tournament rules were written by <a href='https://twitter.com/SnortNails'>Knirgesh</a>.</p>
             <p>The character descriptions were written by <a href='https://twitter.com/UndreamtBoss'>Zil</a>.</p>
+            <p>The averaged tier list was done by <a href='https://twitter.com/homoiconicbully'>Lesbeas</a>.</p>
             <p>The artworks used for this page are original work by <a href='https://twitter.com/korindo'>ZUN</a>.</p>
             <p>The background image was drawn by <a href='http://www.pixiv.net/member.php?id=21613'>Kong Xian</a>.</p>
             <p id='back'><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
