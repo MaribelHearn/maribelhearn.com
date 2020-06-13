@@ -89,8 +89,8 @@
             </div>
             <div class='center'>
                 <div class='left'>
-                    <p><a href='thvote'><img src='assets/thvote/thvote.ico' alt='Tou kanji icon'> THWiki Popularity Poll 2019 Results Translation</a></p>
-                    <p><em>Complete English translation of the full results of the THWiki Popularity Poll held in 2019.</em></p>
+                    <p><a href='thvote'><img src='assets/thvote/thvote.ico' alt='Tou kanji icon'> THWiki Popularity Poll 2020 Results Translation</a></p>
+                    <p><em>Complete English translation of the full results of the THWiki Popularity Poll held in 2020.</em></p>
                 </div>
                 <div class='right'>
                     <p><a href='jargon'><img src='assets/jargon/jargon.ico' alt='Bomb icon'> Touhou Community Jargon</a></p>
