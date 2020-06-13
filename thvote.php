@@ -59,7 +59,7 @@
             <div id='chars_container' class='container'>
                 <table id='chars_table' class='poll table sortable'>
                     <colgroup>
-                        <col class="col1">
+                        <!--<col class="col1">-->
                         <col class="col2game">
                         <col class="col3game">
                         <col class="col4game">
@@ -71,15 +71,15 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='chars_head' class='head noborders'>#</th>
-                            <th>Rank</th>
-                            <th>2019 rank</th>
-                            <th>2018 rank</th>
+                            <!--<th id='chars_head' class='head noborders sorttable_numeric'>#</th>-->
+                            <th class='sorttable_numeric'>Rank</th>
+                            <th class='sorttable_numeric'>2019 rank</th>
+                            <th class='sorttable_numeric' class='sorttable_numeric'>2018 rank</th>
                             <th>Name</th>
-                            <th>Points</th>
-                            <th>No. 1 Votes</th>
-                            <th>Comments</th>
-                            <th>Supportive fanworks submitted</th>
+                            <th class='sorttable_numeric'>Points</th>
+                            <th class='sorttable_numeric'>No. 1 Votes</th>
+                            <th class='sorttable_numeric'>Comments</th>
+                            <th class='sorttable_numeric'>Supportive fanworks submitted</th>
                         </tr>
                     </thead>
 <tbody>
@@ -282,14 +282,14 @@
 <tr><td>196</td><td>179</td><td>180</td><td class="left">Kutsutsura</td><td>4</td><td>0</td><td>0</td><td>0</td><td class='hidden'></td></tr>
 <tr><td>198</td><td>173</td><td>186</td><td class="left">Mizue no Uranoshimako</td><td>2</td><td>0</td><td>0</td><td>0</td><td class='hidden'></td></tr>
 </tbody>
-</table>
+        </table>
             </div>
             <h1 id='Music'>Music</h1>
             <div id='music_dummy' class='dummy'><div class='dummy_sub'></div></div>
             <div id='music_container' class='container'>
                 <table id='music_table' class='poll table sortable'>
                     <colgroup>
-                        <col class="col1">
+                        <!--<col class="col1">-->
                         <col class="col2game">
                         <col class="col3game">
                         <col class="col4game">
@@ -300,14 +300,14 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='music_head' class='head noborders'>#</th>
-                            <th>Rank</th>
-                            <th>2019 rank</th>
-                            <th>2018 rank</th>
+                            <!--<th id='music_head' class='head noborders sorttable_numeric'>#</th>-->
+                            <th class='sorttable_numeric'>Rank</th>
+                            <th class='sorttable_numeric'>2019 rank</th>
+                            <th class='sorttable_numeric'>2018 rank</th>
                             <th>Name</th>
-                            <th>Points</th>
-                            <th>No. 1 Votes</th>
-                            <th>Comments</th>
+                            <th class='sorttable_numeric'>Points</th>
+                            <th class='sorttable_numeric'>No. 1 Votes</th>
+                            <th class='sorttable_numeric'>Comments</th>
                         </tr>
                     </thead>
 <tbody>
@@ -863,7 +863,7 @@
             <div id='works_container' class='container'>
                 <table id='works_table' class='poll table sortable'>
                     <colgroup>
-                        <col class="col1">
+                        <!--<col class="col1">-->
                         <col class="col2game">
                         <col class="col3game">
                         <col class="col4game">
@@ -874,14 +874,14 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th id='works_head' class='head noborders'>#</th>
-                            <th>Rank</th>
-                            <th>2019 rank</th>
-                            <th>2018 rank</th>
+                            <!--<th id='works_head' class='head noborders sorttable_numeric'>#</th>-->
+                            <th class='sorttable_numeric'>Rank</th>
+                            <th class='sorttable_numeric'>2019 rank</th>
+                            <th class='sorttable_numeric'>2018 rank</th>
                             <th>Name</th>
-                            <th>Points</th>
-                            <th>No. 1 Votes</th>
-                            <th>Comments</th>
+                            <th class='sorttable_numeric'>Points</th>
+                            <th class='sorttable_numeric'>No. 1 Votes</th>
+                            <th class='sorttable_numeric'>Comments</th>
                         </tr>
                     </thead>
 <tbody>
