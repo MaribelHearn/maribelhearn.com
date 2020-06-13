@@ -69,9 +69,19 @@
                         <col class="col8per">
                         <col class="col5 w55">
                     </colgroup>
-<thead>
-<tr><th id='chars_head' class='head noborders'>#</th><th>Rank</th><th>2019 rank</th><th>2018 rank</th><th>Name</th><th>Points</th><th>No. 1 Votes</th><th>Comments</th><th>Supportive fanworks submitted</th></tr>
-</thead>
+                    <thead>
+                        <tr>
+                            <th id='chars_head' class='head noborders'>#</th>
+                            <th>Rank</th>
+                            <th>2019 rank</th>
+                            <th>2018 rank</th>
+                            <th>Name</th>
+                            <th>Points</th>
+                            <th>No. 1 Votes</th>
+                            <th>Comments</th>
+                            <th>Supportive fanworks submitted</th>
+                        </tr>
+                    </thead>
 <tbody>
 <tr><td>1</td><td>3</td><td>4</td><td class="left">Youmu Konpaku</td><td>9,841</td><td>2,290</td><td>1,360</td><td>35</td><td class='hidden'></td></tr>
 <tr><td>2</td><td>1</td><td>1</td><td class="left">Reimu Hakurei</td><td>8,913</td><td>1,777</td><td>1,224</td><td>21</td><td class='hidden'></td></tr>
@@ -288,9 +298,18 @@
                         <col class="col7per">
                         <col class="col8per">
                     </colgroup>
-<thead>
-<tr><th id='music_head' class='head noborders'>#</th><th>Rank</th><th>2019 rank</th><th>2018 rank</th><th>Name</th><th>Points</th><th>No. 1 Votes</th><th>Comments</th></tr>
-</thead>
+                    <thead>
+                        <tr>
+                            <th id='music_head' class='head noborders'>#</th>
+                            <th>Rank</th>
+                            <th>2019 rank</th>
+                            <th>2018 rank</th>
+                            <th>Name</th>
+                            <th>Points</th>
+                            <th>No. 1 Votes</th>
+                            <th>Comments</th>
+                        </tr>
+                    </thead>
 <tbody>
 <tr><td>1</td><td>2</td><td>1</td><td class="left">U.N. Owen Was Her?</td><td>8,568</td><td>1,771</td><td>661</td><td class='hidden'></td></tr>
 <tr><td>2</td><td>1</td><td>2</td><td class="left">Septette for a Dead Princess</td><td>8,239</td><td>1,664</td><td>574</td><td class='hidden'></td></tr>
@@ -854,8 +873,17 @@
                         <col class="col8per">
                     </colgroup>
                     <thead>
-<tr><th id='works_head' class='head noborders'>#</th><th>Rank</th><th>2017 rank</th><th>2,016 rank</th><th>Name</th><th>Points</th><th>No. 1 Votes</th><th>Comments</th></tr>
-</thead>
+                        <tr>
+                            <th id='works_head' class='head noborders'>#</th>
+                            <th>Rank</th>
+                            <th>2019 rank</th>
+                            <th>2018 rank</th>
+                            <th>Name</th>
+                            <th>Points</th>
+                            <th>No. 1 Votes</th>
+                            <th>Comments</th>
+                        </tr>
+                    </thead>
 <tbody>
 <tr><td>1</td><td>1</td><td>1</td><td class="left">EoSD</td><td>11,403</td><td>3,615</td><td>737</td><td class='hidden'></td></tr>
 <tr><td>2</td><td>2</td><td>2</td><td class="left">IN</td><td>9,964</td><td>2,312</td><td>693</td><td class='hidden'></td></tr>
