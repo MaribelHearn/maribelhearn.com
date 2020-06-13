@@ -160,9 +160,6 @@
                 <p><a href='https://mega.nz/#!85MACTBK!wBZpEyv5rWp7_qwHTQCqa7F_4hFNF5JOpjh4JS5iSGY' target='_blank'>SA</a></p>
                 <p><a href='https://mega.nz/#!lskyiIzZ!yJB6HLwRQnXs4wO9BmHNxkVtrKrdoKhM-GmMEBRy0ro' target='_blank'>UFO</a></p>
             </div>
-            <p><strong>EoSD Boss Rush by divisionarytuning</strong></p>
-            <p>A boss rush patch for EoSD, including 'Patchouli Rush', where you fight all of Patchouli's Spell Cards in a single battle.</p>
-            <a href='https://comfy.moe/lxaupo.zip' target='_blank'>Download</a>
             <p><strong>EoSD Boss Rush by <a href='https://twitter.com/mdude33' target='_blank'>Dass</a></strong></p>
             <p>Another boss rush patch for EoSD, also including 'Patchouli Rush'.</p>
             <a href='https://mega.nz/#!r88gwA7C!I2xVHGBbyh9KVVn3h_aiKDfPhl8fC9ajZscqzES7UFY' target='_blank'>Download</a>
