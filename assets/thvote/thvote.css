@@ -139,7 +139,7 @@ table {
 .table {
     overflow: auto;
 }
-.table tbody {
+/*.table tbody {
     counter-reset: sortabletablescope;
 }
 .head {
@@ -151,7 +151,7 @@ table {
     counter-increment: sortabletablescope;
     display: table-cell;
     vertical-align: middle;
-}
+}*/
 .hidden, .dummy, #age_detail {
     display: none;
 }
