@@ -50,9 +50,9 @@
             </table>
             <h2>Valid responses</h2>
             <table id='responses'>
-                <tr><td>Characters: 31,654 (in 2019: 23,883; in 2018: 32,062)</td></tr>
-                <tr><td>Music: 23,629 (in 2019: 17,951; in 2018: 23,648)</td></tr>
-                <tr><td>Works: 17,646 (in 2019: 13,946; in 2018: 18,470)</td></tr>
+                <tr><td>Characters: 34,573 (in 2019: 23,883; in 2018: 32,062)</td></tr>
+                <tr><td>Music: 25,919 (in 2019: 17,951; in 2018: 23,648)</td></tr>
+                <tr><td>Works: 19,274 (in 2019: 13,946; in 2018: 18,470)</td></tr>
             </table>
             <h1 id='Characters'>Characters</h1>
             <div id='chars_dummy' class='dummy'><div class='dummy_sub'></div></div>
