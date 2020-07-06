@@ -114,7 +114,7 @@
             <p>Patches intended for efficient practice in one or more games, allowing the player to skip to patterns or changing power and such.</p>
 			<p><strong>Universal Practice Tool by ACK</strong></p>
 			<p>Single practice tool that works on all of the official Touhou shoot 'em up games, allowing you to change settings or skip to patterns at will.</p>
-			<a href='https://maribelhearn.com/thprac.zip'>Download</a>
+			<a href='https://github.com/ack7139/thprac/releases'>Download</a>
 			<p><strong>Practice Tools by <a href='https://twitter.com/Ririanly'>Riri</a></strong></p>
             <p>Tools that allow you to skip to specific patterns in SA, UFO and LoLK, also allowing for other settings like your current power.
             The UFO and LoLK tools are external programs while the SA tool is a modification of the program. The LoLK one was made for v1.00a but mostly functions properly on v1.00b as well.</p>
@@ -263,7 +263,7 @@
 			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> BraviOCOkina</a></p>
 			<p>Remastered version of Stage 6 and harder version of Extra in HSiFS, including an original character replacing Okina and alternate story along with pattern,
 			bullet type, stage music and graphical changes. There is another patch with the same OC replacement and pattern modding for VD on the Okina scenes on the same download page.</p>
-			<a href='https://mega.nz/file/1qgB3SzJ#e3Ov8z3mB8SGDJon5gTkcTQkA_Sofn4WwqtyWAlFpck' target='_blank'>Downloads</a>
+			<a href='https://mega.nz/file/8j5VBIIQ#sj2_W4xvSzsLLb3b2hSQxtQR1sjQMzJXfb6A8Jem6VM' target='_blank'>Downloads</a>
             <!-- Graphical Patches -->
             <hr>
             <h2 id='graphical'>Graphical Patches</h2>
