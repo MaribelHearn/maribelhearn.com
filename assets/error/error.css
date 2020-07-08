@@ -1,8 +1,8 @@
-.webp body {
+body.webp {
     background: url('https://maribelhearn.com/assets/index/index.webp') center no-repeat fixed;
     background-size: cover;
 }
-.no-js body, .no-webp body {
+body.no-webp {
     background: url('https://maribelhearn.com/assets/index/index.jpg') center no-repeat fixed;
     background-size: cover;
 }

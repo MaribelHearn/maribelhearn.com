@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en' class='no-js'>
+<html lang='en'>
 <?php include '.stats/count.php'; hit(basename(__FILE__)); ?>
 
     <head>
@@ -8,13 +8,12 @@
 		<meta name='viewport' content='width=device-width'>
         <meta name='description' content='World records, Lunatic no miss no bombs and more. A collection of convenience webpages for the Touhou gaming community.'>
         <meta name='keywords' content='touhou, touhou project, 東方, 东方, wrs, world records, lnns, lunatic, popularity poll, tiers, tier list, sorter, creator, tools, practice, vpatch, spoileral, drc, dodging rain competition'>
-		<link rel='stylesheet' type='text/css' href='assets/index/main.css'>
+        <link rel='stylesheet' type='text/css' href='assets/index/main.css'>
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='favicon.ico'>
-        <script src='assets/shared/modernizr-custom.js' defer></script>
     </head>
 
-    <body>
+    <body class='<?php echo check_webp() ?>'>
         <div id='wrap'>
             <a id='privacy' href='privacy'>Privacy Policy</a>
             <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>

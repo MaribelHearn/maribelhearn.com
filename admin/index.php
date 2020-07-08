@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang='en' class='no-js'>
+<html lang='en'>
 <?php
+    include '../.stats/count.php';
     $hitcount = '../.stats/' . date('d-m-Y') . '.json';
     if (file_exists($hitcount)) {
         $json = file_get_contents($hitcount);
@@ -19,10 +20,9 @@
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='../favicon.ico'>
         <script src='../assets/shared/utils.js' defer></script>
-        <script src='../assets/shared/modernizr-custom.js' defer></script>
     </head>
 
-    <body>
+    <body class='<?php echo check_webp() ?>'>
         <div id='wrap'>
             <img id='hy' src='../assets/shared/h-bar.png' title='Human Mode'>
             <h1>Admin Panel</h1>

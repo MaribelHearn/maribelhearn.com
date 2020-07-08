@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang='en' class='no-js'>
+<html lang='en'>
 <?php
 	include '.stats/count.php';
 	hit(basename(__FILE__));
@@ -342,10 +342,9 @@
 		<script src='assets/shared/utils.js' defer></script>
         <script src='assets/drc/drc.js' defer></script>
         <script src='assets/shared/sorttable.js' defer></script>
-        <script src='assets/shared/modernizr-custom.js' defer></script>
 	</head>
 
-	<body>
+    <body class='<?php echo check_webp() ?>'>
 		<div id='nav' class='wrap'>
 			<nav>
 				<?php

@@ -1,8 +1,8 @@
-.webp body {
+body.webp {
     background: url('index.webp') center no-repeat fixed;
     background-size: cover;
 }
-.no-js body, .no-webp body {
+body.no-webp {
     background: url('index.jpg') center no-repeat fixed;
     background-size: cover;
 }
@@ -23,6 +23,12 @@ h2 {
 }
 hr {
     clear: both;
+}
+ul {
+    margin: 0px 10% 0px;
+}
+li {
+    margin: 3px;
 }
 p {
     margin: 2px;
@@ -47,6 +53,9 @@ p {
     float: right;
     width: 50%;
 }
+.map {
+    width: 53%;
+}
 #wrap {
     border: 1px solid #000;
     text-align: center;
@@ -58,7 +67,7 @@ p {
     opacity: 0.8;
     font: 14px verdana,sans-serif;
 }
-#privacy {
+#privacy, #about {
     float: left;
 }
 #admin {

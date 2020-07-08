@@ -1,8 +1,8 @@
-.webp body {
+body.webp {
     background: url('history.webp') top no-repeat fixed;
     background-size: cover;
 }
-.no-js body, .no-webp body {
+body.no-webp {
     background: url('history.jpg') top no-repeat fixed;
     background-size: cover;
 }

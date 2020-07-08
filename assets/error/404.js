@@ -32,12 +32,6 @@ function similarity(a, b) {
     }(m, n)).length;
 }
 
-function load() {
-    if (isNaN(path) && path != "404.html" && max <= maxPath.length - 2) {
-        document.getElementById("didyoumean").innerHTML = ", did you mean <a href='/" + loc + "'>" + maxPath + "</a>?";
-    }
-}
-
 var path = location.pathname.split('/').pop(), loc = location.toString(), max = 0, maxPath, sim, i;
 
 if (isNaN(path) && path != "404.html") {
@@ -54,4 +48,8 @@ if (isNaN(path) && path != "404.html") {
     if (max > maxPath.length - 2) { // redirect
         location.replace(loc.replace(path, maxPath) + "?redirect=" + path);
     }
+}
+
+if (isNaN(path) && path != "404.html" && max <= maxPath.length - 2) {
+    document.getElementById("didyoumean").innerHTML = ", did you mean <a href='/" + loc + "'>" + maxPath + "</a>?";
 }

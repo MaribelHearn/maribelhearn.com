@@ -1,8 +1,8 @@
-.webp body {
+body.webp {
     background: url('tiers.webp') center no-repeat fixed;
     background-size: cover;
 }
-.no-js body, .no-webp body {
+body.no-webp {
     background: url('tiers.jpg') center no-repeat fixed;
     background-size: cover;
 }
@@ -188,13 +188,13 @@ input[type=number] {
     float: left;
 }
 @media screen and (max-width: 1100px) and (max-height: 800px) {
-    .no-js body, .no-webp body, .webp body {
+    body.no-webp, body.webp {
         background: #1b232e;
     }
 }
 @media only screen and (((max-device-width: 800px) and (orientation: portrait)) or
 ((max-device-width: 640px) and (orientation: landscape))) {
-    .no-js body, .no-webp body, .webp body {
+    body.no-webp, body.webp {
         background: #1b232e;
     }
     #information_button, #view_button, #mobile_button_split, #menu_button, #switch_button {

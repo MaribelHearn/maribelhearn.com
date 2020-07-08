@@ -2,6 +2,8 @@ bestinthewest.json
 gensokyo.json
 lnnlist.json
 wrlist.json
-.htaccess
+admin/detect.js
+admin/*.png
 .stats/*
 *.txt
+.htaccess
