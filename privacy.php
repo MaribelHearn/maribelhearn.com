@@ -8,10 +8,9 @@
         <link rel='stylesheet' type='text/css' href='assets/index/main.css'>
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='favicon.ico'>
-        <script src='assets/shared/modernizr-custom.js' defer></script>
     </head>
 
-    <body>
+    <body class='<?php echo check_webp() ?>'>
         <div id='wrap'>
             <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
             <h1>Privacy Policy</h1>

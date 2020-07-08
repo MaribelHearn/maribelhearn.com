@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
-<html lang='en' class='no-js'>
-<?php $empty = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC'; ?>
+<html lang='en'>
+<?php include '.stats/count.php'; $empty = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC'; ?>
 
 	<head>
 		<title>Maribel's Achievement History</title>
@@ -9,11 +9,10 @@
 		<link rel='stylesheet' type='text/css' href='assets/history/history.css'>
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='assets/history/history.ico'>
-        <script src='assets/shared/modernizr-custom.js' defer></script>
         <script src='assets/shared/yall.js'></script>
 	</head>
 
-	<body>
+    <body class='<?php echo check_webp() ?>'>
 		<div id='wrap'>
             <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
             <h1>Maribel's Achievement History</h1>

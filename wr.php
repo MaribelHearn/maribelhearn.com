@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en' class='no-js'>
+<html lang='en'>
 <?php
     include '.stats/count.php';
     hit(basename(__FILE__));
@@ -205,6 +205,9 @@
 			return $term;
 		}
     }
+    function shotRoute($game) {
+        return $game == 'HRtP' || $game == 'GFW' ? 'Route' : 'Shottype';
+    }
 	foreach ($wr as $game => $value) {
 		$num = num($game);
 		$overall[$num] = 0;
@@ -257,10 +260,9 @@
 		<script src='assets/shared/utils.js' defer></script>
 		<script src='assets/wr/wr.js' defer></script>
 		<script src='assets/shared/sorttable.js' defer></script>
-        <script src='assets/shared/modernizr-custom.js' defer></script>
 	</head>
 
-	<body>
+    <body class='<?php echo check_webp() ?>'>
 		<div id='nav' class='wrap'>
 			<nav>
                 <?php
@@ -444,29 +446,44 @@
 				?>
             </div>
             <h2 id='wrs' class='worldrecords'><?php echo tl_term('World Records', $lang); ?></h2>
-			<p id='clickgame'><?php
-            if ($lang == 'English') {
-                echo 'Click a game cover to show its list of world records.';
-            } else if ($lang == 'Japanese') {
-                echo '世界記録リストはゲームをクリック。';
-            } else {
-                echo '单击游戏处查看世界纪录列表。';
-            }
-            ?></p>
+            <noscript>
+                <?php
+                    // With JS disabled, show classic all games layout
+                    foreach ($wr as $game => $obj) {
+                        echo '<div id="' . $game . '">';
+                        echo '<p>' . $game . '</p>';
+                        echo '<table id="' . $game . '_table" class="' . $game . 't sortable"><tr><th>' . shotRoute($game) . '</th>';
+                        foreach ($obj as $diff => $shots) {
+                            echo '<th>' . $diff . '</th>';
+                        }
+                        echo '</tr>';
+                        foreach ($obj as $diff => $shots) {
+                            foreach ($shots as $shot => $array) {
+                                echo '<tr><td>' . $shot . '</td></tr>';
+                            }
+                            //<td>' . number_format($array[0], 0, '.', ',') .'<br>by <em>' . $array[1] . '</em></td>
+                        }
+                        echo '</table>';
+                    }
+                ?>
+            </noscript>
 			<?php
-			    foreach ($wr as $game => $value) {
-			        echo '<img id="' . $game . '" class="game" src="games/' . strtolower($game) . '50x50.jpg" alt="' . $game . ' cover">';
-			    }
+                // With old layout disabled, use game image layout
+                if (!isset($_COOKIE['old_layout'])) {
+                    echo '<p id="clickgame">';
+                    if ($lang == 'English') {
+                        echo 'Click a game cover to show its list of world records.';
+                    } else if ($lang == 'Japanese') {
+                        echo '世界記録リストはゲームをクリック。';
+                    } else {
+                        echo '单击游戏处查看世界纪录列表。';
+                    }
+                    echo '</p>';
+    			    foreach ($wr as $game => $value) {
+    			        echo '<img id="' . $game . '" class="game" src="games/' . strtolower($game) . '50x50.jpg" alt="' . $game . ' cover">';
+    			    }
+                }
 			?>
-			<noscript><?php
-				if ($lang == 'English') {
-					echo '<p><em>Sorry, you cannot show the game world records with JavaScript disabled as of now.</em></p>';
-				} else if ($lang == 'Japanese') {
-					echo '<p>JavaScriptなしではWRを示すできません。</p>';
-				} else {
-					echo '<p>不好意思，目前查看世界纪录必须开启JavaScript。</p>';
-				}
-			?></noscript>
 			<div id='list'>
 				<p id='fullname'></p>
 				<p id='seasontoggle'>

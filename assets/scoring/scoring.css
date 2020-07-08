@@ -1,8 +1,8 @@
-.webp body {
+body.webp {
     background: url('scoring.webp') bottom no-repeat fixed;
     background-size: cover;
 }
-.no-js body, .no-webp body {
+body.no-webp {
     background: url('scoring.jpg') bottom no-repeat fixed;
     background-size: cover;
 }

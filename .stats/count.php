@@ -1,4 +1,10 @@
 <?php
+function check_webp() {
+    if ( strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' ) !== false ) {
+        return 'webp';
+    }
+    return 'no-webp';
+}
 function hit($page) {
     if (file_exists('.stats/token')) {
         if (!empty($_SERVER['HTTP_USER_AGENT']) && preg_match('~(bot|crawl|slurp|spider|archiver|facebook|lighthouse|jigsaw|validator|w3c|hexometer)~i', $_SERVER['HTTP_USER_AGENT'])) {

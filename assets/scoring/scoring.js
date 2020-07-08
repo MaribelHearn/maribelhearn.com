@@ -1022,12 +1022,14 @@ function allowData() {
 $(document).ready(function () {
     var game;
 
-    deleteCookie("saveCookies");
-    deleteCookie("precision");
-    deleteCookie("shown");
+    if (getCookie("saveCookies")) {
+        deleteCookie("saveCookies");
+        deleteCookie("precision");
+        deleteCookie("shown");
 
-    for (game in scores) {
-        deleteCookie(game);
+        for (game in scores) {
+            deleteCookie(game);
+        }
     }
 
     try {
