@@ -1,9 +1,9 @@
 body.webp {
-    background: url('survival.webp')top no-repeat fixed;
+    background: url('survival.webp') top no-repeat fixed;
     background-size: cover;
 }
 body.no-webp {
-    background: url('survival.jpg')top no-repeat fixed;
+    background: url('survival.jpg') top no-repeat fixed;
     background-size: cover;
 }
 table, tr, th, td {
