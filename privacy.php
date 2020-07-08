@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en' class='no-js'>
+<html lang='en'>
 
     <head>
 		<title>Privacy Policy</title>
@@ -10,7 +10,7 @@
 		<link rel='icon' type='image/x-icon' href='favicon.ico'>
     </head>
 
-    <body class='<?php echo check_webp() ?>'>
+    <body class='<?php include '.stats/count.php'; echo check_webp() ?>'>
         <div id='wrap'>
             <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
             <h1>Privacy Policy</h1>
