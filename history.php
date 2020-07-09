@@ -6,8 +6,9 @@
 		<title>Maribel's Achievement History</title>
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
-		<link rel='stylesheet' type='text/css' href='assets/history/history.css'>
+		<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
+		<link rel='stylesheet' type='text/css' href='assets/history/history.css'>
 		<link rel='icon' type='image/x-icon' href='assets/history/history.ico'>
         <script src='assets/shared/yall.js'></script>
 	</head>

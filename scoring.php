@@ -8,8 +8,9 @@
 		<meta name='viewport' content='width=device-width'>
 		<meta name='description' content='Save your Touhou game scores and calculate how they compare to the world records.'>
         <meta name='keywords' content='touhou, touhou project, score, high score, storage, scoring, wr, wrs, world record, world records'>
+		<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&text=HighScoretaCnsumzAkwld&display=swap'>
 		<link rel='stylesheet' type='text/css' href='assets/scoring/scoring.css'>
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='assets/scoring/scoring.ico'>
         <script src='assets/shared/jquery.js' defer></script>
 		<script src='assets/shared/utils.js' defer></script>
