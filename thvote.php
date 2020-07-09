@@ -8,8 +8,9 @@
 		<meta name='viewport' content='width=device-width'>
         <meta name='description' content='Complete English translation of the preliminary results of the THWiki Popularity Poll.'>
         <meta name='keywords' content='touhou, touhou project, thwiki, popularity, poll, vote, contest, thpoll, thvote'>
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&text=THWikPopulartyemnRsCVdhcMAwg20&display=swap'>
 		<link rel='stylesheet' type='text/css' href='assets/thvote/thvote.css'>
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='assets/thvote/thvote.ico'>
         <script src='assets/shared/sorttable.js' defer></script>
     </head>

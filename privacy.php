@@ -5,8 +5,9 @@
 		<title>Privacy Policy</title>
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&text=PrivacyolDefntsImCdUSuLkO%27hgT&display=swap'>
         <link rel='stylesheet' type='text/css' href='assets/index/main.css'>
-		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&display=swap'>
 		<link rel='icon' type='image/x-icon' href='favicon.ico'>
     </head>
 
