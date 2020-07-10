@@ -2,8 +2,7 @@ body.webp {
     background: url('trs.webp') center no-repeat fixed;
     background-size: cover;
 }
-.no-js body,
-.no-webp body {
+body.no-webp {
     background: url('trs.jpg') center no-repeat fixed;
     background-size: cover;
 }
