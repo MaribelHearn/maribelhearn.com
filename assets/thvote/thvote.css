@@ -202,6 +202,12 @@ table {
         overflow-x: scroll;
         overflow-y: hidden;
     }
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
 }
 @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
     .wrap {
@@ -213,5 +219,11 @@ table {
         overflow-x: scroll;
         overflow-y: hidden;
         display: block;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
     }
 }
