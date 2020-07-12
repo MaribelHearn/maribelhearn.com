@@ -1,5 +1,6 @@
 @font-face {
   font-family: Felipa;
+  font-display: swap;
   src: url('../shared/Felipa-Regular.ttf');
 }
 body.webp {
