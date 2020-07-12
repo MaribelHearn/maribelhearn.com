@@ -8,8 +8,6 @@
 		<meta name='viewport' content='width=device-width'>
 		<meta name='description' content='Generate a table that summarises your Touhou survival progress.'>
         <meta name='keywords' content='touhou, touhou project, survival, 1cc, 1ccs, clear, clears, progress, progress table'>
-		<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&text=SurvialPogesTbGntAckwdm&display=swap'>
 		<link rel='stylesheet' type='text/css' href='assets/survival/survival.css'>
 		<link rel='icon' type='image/x-icon' href='assets/survival/survival.ico'>
 		<script src='assets/shared/jquery.js' defer></script>

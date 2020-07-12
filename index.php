@@ -8,8 +8,6 @@
 		<meta name='viewport' content='width=device-width'>
         <meta name='description' content='World records, Lunatic no miss no bombs and more. A collection of convenience webpages for the Touhou gaming community.'>
         <meta name='keywords' content='touhou, touhou project, 東方, 东方, wrs, world records, lnns, lunatic, popularity poll, tiers, tier list, sorter, creator, tools, practice, vpatch, spoileral, drc, dodging rain competition'>
-        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&text=MaribelHn%27sWPotgLkEx&display=swap'>
         <link rel='stylesheet' type='text/css' href='assets/index/main.css'>
 		<link rel='icon' type='image/x-icon' href='favicon.ico'>
     </head>

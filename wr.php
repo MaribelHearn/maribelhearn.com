@@ -253,8 +253,6 @@
 		<meta name='viewport' content='width=device-width'>
 		<meta name='description' content='List of Touhou shooting game world records.'>
         <meta name='keywords' content='touhou, touhou project, 東方, 东方, wr, wrs, world record, world records, scores, high scores, scoring'>
-        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&text=TouhWrldRecsCntOvaPykigAwm&display=swap'>
         <link rel='stylesheet' type='text/css' href='assets/wr/wr.css'>
 		<link rel='icon' type='image/x-icon' href='assets/wr/wr.ico'>
 		<script src='assets/shared/jquery.js' defer></script>

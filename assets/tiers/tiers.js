@@ -706,7 +706,7 @@ function storageUsed() {
 }
 function allowData() {
     if (!storageUsed()) {
-        return confirm("This will store data in your browser's Web Storage, which functions like a cookie. Do you allow this?");
+        return confirm("This will store data in your browser's local storage. Do you allow this?");
     } else {
         return true;
     }
@@ -726,8 +726,7 @@ function saveTiersData() {
 function saveTiers() {
     if (isMobile() && !storageUsed()) {
         emptyModal();
-        $("#modal_inner").html("<h3>Save Tiers</h3><p>This will store data in your browser's Web Storage, which " +
-                "functions like a cookie. Do you allow this?</p>");
+        $("#modal_inner").html("<h3>Save Tiers</h3><p>This will store data in your browser's local storage. Do you allow this?</p>");
         $("#modal_inner").append("<input id='save_tiers_data' class='mobile_button' type='button' value='Yes'>");
         $("#modal_inner").append("<input id='empty_modal' class='mobile_button' type='button' value='No'>");
         $("#save_tiers_data").on("click", saveTiersData);
@@ -755,8 +754,7 @@ function saveSettingsData() {
 function saveSettingsPre() {
     if (isMobile() && !storageUsed()) {
         emptyModal();
-        $("#modal_inner").html("<h3>Save Settings</h3><p>This will store data in your browser's Web Storage, " +
-        "which functions like a cookie. Do you allow this?</p>");
+        $("#modal_inner").html("<h3>Save Settings</h3><p>This will store data in your browser's local storage. Do you allow this?</p>");
         $("#modal_inner").append("<input id='save_settings_pre' class='mobile_button' type='button' value='Yes'>");
         $("#save_settings_pre").on("click", saveSettingsData);
         $("#modal_inner").append("<input id='empty_modal' class='mobile_button' type='button' value='No'>");

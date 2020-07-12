@@ -8,8 +8,6 @@
 		<meta name='viewport' content='width=device-width'>
         <meta name='description' content='Create your own Touhou tier lists!'>
         <meta name='keywords' content='touhou, touhou project, 東方, 东方, tier list, tiers, sorter, sort, sorting, creator'>
-        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&text=TouhierLstCatImpfxEnSglAckwdMNv&display=swap'>
 		<link rel='stylesheet' type='text/css' href='assets/tiers/tiers.css'>
 		<link rel='icon' type='image/x-icon' href='assets/tiers/tiers.ico'>
 		<script src='assets/shared/utils.js' defer></script>
