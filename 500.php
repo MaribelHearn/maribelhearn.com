@@ -5,8 +5,6 @@
 		<title>500 Internal Server Error</title>
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
-        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&text=50&display=swap'>
         <link rel='stylesheet' type='text/css' href='https://maribelhearn.com/assets/error/error.css'>
 		<link rel='icon' type='image/x-icon' href='https://maribelhearn.com/favicon.ico'>
     </head>

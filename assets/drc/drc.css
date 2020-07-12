@@ -1,3 +1,7 @@
+@font-face {
+  font-family: Felipa;
+  src: url('../shared/Felipa-Regular.ttf');
+}
 body.webp {
     background: url('drc.webp') top no-repeat fixed;
     background-size: cover;

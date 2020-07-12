@@ -8,8 +8,6 @@
 		<meta name='viewport' content='width=device-width'>
 		<meta name='description' content='Explanations of Touhou gameplay community jargon, such as achievements and Spell Card acronyms.'>
         <meta name='keywords' content='touhou, touhou project, community, jargon, terms, terminology, acronyms, abbreviations'>
-		<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&text=TouhCmnityJargesGplRdS/PAcBN&display=swap'>
 		<link rel='stylesheet' type='text/css' href='assets/jargon/jargon.css'>
 		<link rel='icon' type='image/x-icon' href='assets/jargon/jargon.ico'>
 	</head>
