@@ -33,7 +33,6 @@ function theme() {
     }
 }
 
-document.documentElement.classList.remove("no-js");
 head = document.getElementsByTagName("head")[0];
 window.addEventListener("load", ready);
 hy = document.getElementById("hy");

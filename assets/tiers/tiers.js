@@ -1,5 +1,3 @@
-document.documentElement.classList.remove("no-js");
-
 var categories = {},
     gameCategories = {},
     tieredItems = [],
