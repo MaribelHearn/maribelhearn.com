@@ -4,7 +4,7 @@ function dark() {
     style.href = "assets/shared/dark.css";
     style.type = "text/css";
     style.rel = "stylesheet";
-    head.append(style);
+    head.appendChild(style);
 }
 function ready() {
     if (done) {
