@@ -554,115 +554,115 @@
                 <tbody>
 					<tr id='term_amulet'>
 						<th>Amulet</th>
-						<td><img src='bullets/amulet.png' alt='Amulet bullet'></td>
+						<td><img src='assets/bullets/amulet.png' alt='Amulet bullet'></td>
 					</tr>
                     <tr id='term_arrow'>
                         <th>Arrow</th>
-                        <td><img src='bullets/arrow.png' alt='Arrow bullet'></td>
+                        <td><img src='assets/bullets/arrow.png' alt='Arrow bullet'></td>
                     </tr>
                     <tr id='term_arrowhead'>
                         <th>Arrowhead</th>
-                        <td><img src='bullets/arrowhead.png' alt='Arrowhead'></td>
+                        <td><img src='assets/bullets/arrowhead.png' alt='Arrowhead'></td>
                     </tr>
                     <tr id='term_bacteria'>
                         <th>Bacteria, dark rice</th>
-                        <td><img src='bullets/bacteria.png' alt='Bacteria'></td>
+                        <td><img src='assets/bullets/bacteria.png' alt='Bacteria'></td>
                     </tr>
                     <tr id='term_ball'>
                         <th>Ball</th>
-                        <td><img src='bullets/ball.png' alt='Ball'></td>
+                        <td><img src='assets/bullets/ball.png' alt='Ball'></td>
                     </tr>
                     <tr id='term_balloutline'>
                         <th>Ball (outlined)</th>
-                        <td><img src='bullets/balloutline.png' alt='Ball (outlined)'></td>
+                        <td><img src='assets/bullets/balloutline.png' alt='Ball (outlined)'></td>
                     </tr>
                     <tr id='term_bubble'>
                         <th>Bubble</th>
-                        <td><img src='bullets/bubble.png' alt='Bubble'></td>
+                        <td><img src='assets/bullets/bubble.png' alt='Bubble'></td>
                     </tr>
                     <tr id='term_bullet'>
                         <th>Bullet</th>
-                        <td><img src='bullets/bullet.png' alt='OG bullet'></td>
+                        <td><img src='assets/bullets/bullet.png' alt='OG bullet'></td>
                     </tr>
                     <tr id='term_butterfly'>
                         <th>Butterfly</th>
-                        <td><img src='bullets/butterfly.png' alt='Butterfly'></td>
+                        <td><img src='assets/bullets/butterfly.png' alt='Butterfly'></td>
                     </tr>
                     <tr id='term_coin'>
                         <th>Coin</th>
-                        <td><img src='bullets/coin.png' alt='Coin'></td>
+                        <td><img src='assets/bullets/coin.png' alt='Coin'></td>
                     </tr>
                     <tr id='term_fireball'>
                         <th>Fireball</th>
-                        <td><img src='bullets/fireball.png' alt='Fireball'></td>
+                        <td><img src='assets/bullets/fireball.png' alt='Fireball'></td>
                     </tr>
                     <tr id='term_glowshit'>
                         <th>Fireball (glowy)</th>
-                        <td><img src='bullets/glowshit.png' alt='Fireball (glowy)'></td>
+                        <td><img src='assets/bullets/glowshit.png' alt='Fireball (glowy)'></td>
                     </tr>
                     <tr id='term_heart'>
                         <th>Heart</th>
-                        <td><img src='bullets/heart.png' alt='Heart'></td>
+                        <td><img src='assets/bullets/heart.png' alt='Heart'></td>
                     </tr>
                     <tr id='term_jellybean'>
                         <th>Jellybean</th>
-                        <td><img src='bullets/jellybean.png' alt='Jellybean'></td>
+                        <td><img src='assets/bullets/jellybean.png' alt='Jellybean'></td>
                     </tr>
                     <tr id='term_knife'>
                         <th>Knife</th>
-                        <td><img src='bullets/knife.png' alt='Knife'></td>
+                        <td><img src='assets/bullets/knife.png' alt='Knife'></td>
                     </tr>
                     <tr id='term_kunai'>
                         <th>Kunai</th>
-                        <td><img src='bullets/kunai.png' alt='Kunai'></td>
+                        <td><img src='assets/bullets/kunai.png' alt='Kunai'></td>
                     </tr>
                     <tr id='term_mentos'>
                         <th>Mentos</th>
-                        <td><img src='bullets/mentos.png' alt='Mentos'></td>
+                        <td><img src='assets/bullets/mentos.png' alt='Mentos'></td>
                     </tr>
                     <tr id='term_note'>
                         <th>Note</th>
-                        <td><img src='bullets/note.png' alt='Note'></td>
+                        <td><img src='assets/bullets/note.png' alt='Note'></td>
                     </tr>
                     <tr id='term_orb'>
                         <th>Orb</th>
-                        <td><img src='bullets/orb.png' alt='Orb'></td>
+                        <td><img src='assets/bullets/orb.png' alt='Orb'></td>
                     </tr>
                     <tr id='term_pellet'>
                         <th>Pellet</th>
-                        <td><img src='bullets/pellet.png' alt='Pellet'></td>
+                        <td><img src='assets/bullets/pellet.png' alt='Pellet'></td>
                     </tr>
                     <tr id='term_popcorn'>
                         <th>Popcorn</th>
-                        <td><img src='bullets/popcorn.png' alt='Popcorn'></td>
+                        <td><img src='assets/bullets/popcorn.png' alt='Popcorn'></td>
                     </tr>
                     <tr id='term_raindrop'>
                         <th>Raindrop, droplet</th>
-                        <td><img src='bullets/raindrop.png' alt='Raindrop'></td>
+                        <td><img src='assets/bullets/raindrop.png' alt='Raindrop'></td>
                     </tr>
                     <tr id='term_rest'>
                         <th>Rest</th>
-                        <td><img src='bullets/rest.png' alt='Rest'></td>
+                        <td><img src='assets/bullets/rest.png' alt='Rest'></td>
                     </tr>
                     <tr id='term_rice'>
                         <th>Rice</th>
-                        <td><img src='bullets/rice.png' alt='Rice'></td>
+                        <td><img src='assets/bullets/rice.png' alt='Rice'></td>
                     </tr>
                     <tr id='term_rose'>
                         <th>Rose</th>
-                        <td><img src='bullets/rose.png' alt='Rose'></td>
+                        <td><img src='assets/bullets/rose.png' alt='Rose'></td>
                     </tr>
                     <tr id='term_shard'>
                         <th>Shard, icicle</th>
-                        <td><img src='bullets/shard.png' alt='Shard'></td>
+                        <td><img src='assets/bullets/shard.png' alt='Shard'></td>
                     </tr>
                     <tr id='term_star'>
                         <th>Star (big)</th>
-                        <td><img src='bullets/star.png' alt='Star (big)'></td>
+                        <td><img src='assets/bullets/star.png' alt='Star (big)'></td>
                     </tr>
                     <tr id='term_stars'>
                         <th>Star (small)</th>
-                        <td><img src='bullets/starsmall.png' alt='Star (small)'></td>
+                        <td><img src='assets/bullets/starsmall.png' alt='Star (small)'></td>
                     </tr>
                 </tbody>
             </table>
