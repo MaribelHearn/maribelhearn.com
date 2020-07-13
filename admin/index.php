@@ -16,9 +16,7 @@
 		<title>Admin Panel</title>
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
-        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Felipa&text=AdminPaelgHts&display=swap'>
-        <link rel='stylesheet' type='text/css' href='../assets/index/main.css'>
+        <link rel='stylesheet' type='text/css' href='admin.css'>
 		<link rel='icon' type='image/x-icon' href='../favicon.ico'>
         <script src='../assets/shared/utils.js' defer></script>
     </head>
@@ -38,8 +36,7 @@
                     }
                 }
             ?>
-            <p class='wide-top'>You are visiting this page on <strong id='device'></strong>.</p>
-            <p>You are visiting this page using <strong id='os'></strong>.</p>
+            <p class='wide-top'>You are visiting this page using <strong id='os'></strong>.</p>
             <p>You are visiting this page using <strong id='browser'></strong>.</p>
             <p class='wide'><a href='/'>Back to Main Page</a></p>
         </div>
