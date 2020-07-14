@@ -21,6 +21,12 @@ h1 {
     font-family: 'Felipa';
     font-size: 48px;
 }
+h2 {
+    font-family: 'Felipa';
+    font-size: 36px;
+    margin: 20px;
+    clear: both;
+}
 p {
     margin: 2px;
 }
@@ -65,6 +71,9 @@ p {
     h1 {
         font-size: 36px;
     }
+    h2 {
+        font-size: 24px;
+    }
 }
 @media only screen and (min-device-width:480px) and (max-device-width:640px) and (orientation:landscape) {
     #wrap {
@@ -74,5 +83,8 @@ p {
     }
     h1 {
         font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
     }
 }
