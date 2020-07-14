@@ -195,176 +195,7 @@ input[type=number] {
 #add_tier_desktop {
     float: left;
 }
-@media screen and (max-width: 1100px) and (max-height: 800px) {
-    body.no-webp, body.webp {
-        background: #1b232e;
-    }
-}
-@media only screen and (((max-device-width: 800px) and (orientation: portrait)) or
-((max-device-width: 640px) and (orientation: landscape))) {
-    body.no-webp, body.webp {
-        background: #1b232e;
-    }
-    #information_button, #view_button, #mobile_button_split, #menu_button, #switch_button {
-        display: inline;
-    }
-    #nav, #menu, #credits, #instructions, #tier_list_container, #tier_list_tfoot,
-    #sort_selection, #toggle, #instructions_list {
-        display: none;
-    }
-    #instructions, #instructions_mobile {
-        display: block;
-    }
-    #add_tier_box_mobile {
-        display: table-row;
-    }
-    #wrap {
-        top: 5px;
-        bottom: 5px;
-        right: 5px;
-        left: 5px;
-        width: auto;
-        height: 100%;
-        max-height: 100%;
-    }
-    #tier_list_container {
-        bottom: 100px;
-        max-height: 71%;
-        overflow-y: auto;
-        border: 1px solid black;
-    }
-    #wrap, #buttons, #msg_container, #show, #characters {
-        font: 12px verdana, sans-serif;
-    }
-    #add_tier_mobile {
-        width: auto;
-        height: 25px;
-        font-size: 12px;
-    }
-    .button {
-        width: 48%;
-        height: 25px;
-        font-size: 12px;
-    }
-    .tier_header, .list, .tiered {
-        width: 60px;
-        height: 60px;
-    }
-    .instructions {
-        display: block;
-    }
-    p {
-        margin: 2px;
-    }
-    h1 {
-        margin: 5px;
-        font-size: 28px;
-    }
-    h2 {
-        font-size: 28px;
-    }
-}
-@media only screen and (max-device-width: 800px) and (orientation: portrait) {
-    #characters {
-        width: auto;
-        top: 50px;
-        right: 5px;
-        bottom: 18%;
-    }
-    #buttons {
-        max-width: 98%;
-        padding-top: 5px;
-        left: 5px;
-        height: 16%;
-        min-height: 50px;
-    }
-    #modal {
-        padding-top: 10%;
-    }
-    #modal_inner {
-        max-height: 75%;
-    }
-    h1 {
-        margin: 5px;
-        font-size: 28px;
-    }
-}
-@media only screen and (max-device-width: 640px) and (orientation: landscape) {
-    #title {
-        display: none;
-    }
-    #characters {
-        width: auto;
-        top: 2%;
-        right: 5px;
-        bottom: 25%;
-    }
-    #buttons {
-        max-width: 98%;
-        padding-top: 5px;
-        left: 5px;
-        height: 22%;
-        min-height: 50px;
-    }
-    #modal {
-        padding-top: 2%;
-    }
-}
-@media only screen and (max-height: 350px) {
-    #information_button, #view_button, #mobile_button_split, #menu_button, #switch_button {
-        display: inline;
-    }
-    #menu, #credits, #characters, #tier_list_tfoot, #nav, #sort_selection, #instructions_text, #instructions_list, #toggle {
-        display: none;
-    }
-    #tier_list_container, #instructions, #instructions_mobile {
-        display: block;
-    }
-    #add_tier_box_mobile {
-        display: table-row;
-    }
-    #wrap {
-        top: 5px;
-        bottom: 5px;
-        right: 5px;
-        left: 5px;
-        width: auto;
-        height: 100%;
-        max-height: 100%;
-    }
-    #tier_list_container {
-        bottom: 100px;
-        max-height: 71%;
-        overflow-y: auto;
-        border: 1px solid black;
-    }
-    #wrap, #buttons, #msg_container, #show, #characters {
-        font: 12px verdana, sans-serif;
-    }
-    #add_tier_mobile {
-        width: auto;
-        height: 25px;
-        font-size: 12px;
-    }
-    .tier_header, .list, .tiered {
-        width: 60px;
-        height: 60px;
-    }
-    h1 {
-        margin: 5px;
-        font-size: 28px;
-    }
-}
-@media only screen and (max-height: 250px) {
-    #buttons {
-        display: none;
-    }
-}
-@media only screen and (max-height: 150px) {
-    #title {
-        display: none;
-    }
-}
+/* Characters */
 /* Characters */
 #MarisaKirisame {
     object-position: 0 0;
@@ -1274,4 +1105,628 @@ input[type=number] {
 }
 #RenkoUsami.tiered {
     object-position: -18240px 0;
+}
+@media screen and (max-width: 1100px) and (max-height: 800px) {
+    body.no-webp, body.webp {
+        background: #1b232e;
+    }
+}
+@media only screen and (((max-device-width: 800px) and (orientation: portrait)) or
+((max-device-width: 640px) and (orientation: landscape))) {
+    body.no-webp, body.webp {
+        background: #1b232e;
+    }
+    #information_button, #view_button, #mobile_button_split, #menu_button, #switch_button {
+        display: inline;
+    }
+    #nav, #menu, #credits, #instructions, #tier_list_container, #tier_list_tfoot,
+    #sort_selection, #toggle, #instructions_list {
+        display: none;
+    }
+    #instructions, #instructions_mobile {
+        display: block;
+    }
+    #add_tier_box_mobile {
+        display: table-row;
+    }
+    #wrap {
+        top: 5px;
+        bottom: 5px;
+        right: 5px;
+        left: 5px;
+        width: auto;
+        height: 100%;
+        max-height: 100%;
+    }
+    #tier_list_container {
+        bottom: 100px;
+        max-height: 71%;
+        overflow-y: auto;
+        border: 1px solid black;
+    }
+    #wrap, #buttons, #msg_container, #show, #characters {
+        font: 12px verdana, sans-serif;
+    }
+    #add_tier_mobile {
+        width: auto;
+        height: 25px;
+        font-size: 12px;
+    }
+    .button {
+        width: 48%;
+        height: 25px;
+        font-size: 12px;
+    }
+    .tier_header {
+        width: 60px;
+        height: 60px;
+    }
+    .list, .tiered {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+    }
+    .instructions {
+        display: block;
+    }
+    p {
+        margin: 2px;
+    }
+    h1 {
+        margin: 5px;
+        font-size: 28px;
+    }
+    h2 {
+        font-size: 28px;
+    }
+    #ReimuHakurei.list, #ReimuHakurei.tiered {
+        object-position: -60px 0;
+    }
+    #Elis.list, #Elis.tiered {
+        object-position: -120px 0;
+    }
+    #Kikuri.list, #Kikuri.tiered {
+        object-position: -180px 0;
+    }
+    #Konngara.list, #Konngara.tiered {
+        object-position: -240px 0;
+    }
+    #Mima.list, #Mima.tiered {
+        object-position: -300px 0;
+    }
+    #ReimuPC-98.list, #ReimuPC-98.tiered {
+        object-position: -360px 0;
+    }
+    #Sariel.list, #Sariel.tiered {
+        object-position: -420px 0;
+    }
+    #SinGyokuF.list, #SinGyokuF.tiered {
+        object-position: -480px 0;
+    }
+    #SinGyokuM.list, #SinGyokuM.tiered {
+        object-position: -540px 0;
+    }
+    #YuugenMagan.list, #YuugenMagan.tiered {
+        object-position: -600px 0;
+    }
+    #EvilEyeSigma.list, #EvilEyeSigma.tiered {
+        object-position: -660px 0;
+    }
+    #Genjii.list, #Genjii.tiered {
+        object-position: -720px 0;
+    }
+    #MarisaPC-98.list, #MarisaPC-98.tiered {
+        object-position: -780px 0;
+    }
+    #Meira.list, #Meira.tiered {
+        object-position: -840px 0;
+    }
+    #Rika.list, #Rika.tiered {
+        object-position: -900px 0;
+    }
+    #ChiyuriKitashirakawa.list, #ChiyuriKitashirakawa.tiered {
+        object-position: -960px 0;
+    }
+    #Ellen.list, #Ellen.tiered {
+        object-position: -1020px 0;
+    }
+    #KanaAnaberal.list, #KanaAnaberal.tiered {
+        object-position: -1080px 0;
+    }
+    #Kotohime.list, #Kotohime.tiered {
+        object-position: -1140px 0;
+    }
+    #Mimi-chan.list, #Mimi-chan.tiered {
+        object-position: -1200px 0;
+    }
+    #RikakoAsakura.list, #RikakoAsakura.tiered {
+        object-position: -1260px 0;
+    }
+    #Ruukoto.list, #Ruukoto.tiered {
+        object-position: -1320px 0;
+    }
+    #YumemiOkazaki.list, #YumemiOkazaki.tiered {
+        object-position: -1380px 0;
+    }
+    #Elly.list, #Elly.tiered {
+        object-position: -1440px 0;
+    }
+    #Gengetsu.list, #Gengetsu.tiered {
+        object-position: -1500px 0;
+    }
+    #Kurumi.list, #Kurumi.tiered {
+        object-position: -1560px 0;
+    }
+    #Mugetsu.list, #Mugetsu.tiered {
+        object-position: -1620px 0;
+    }
+    #Orange.list, #Orange.tiered {
+        object-position: -1680px 0;
+    }
+    #YuukaPC-98.list, #YuukaPC-98.tiered {
+        object-position: -1740px 0;
+    }
+    #AlicePC-98.list, #AlicePC-98.tiered {
+        object-position: -1800px 0;
+    }
+    #Luize.list, #Luize.tiered {
+        object-position: -1860px 0;
+    }
+    #MaiPC-98.list, #MaiPC-98.tiered {
+        object-position: -1920px 0;
+    }
+    #Sara.list, #Sara.tiered {
+        object-position: -1980px 0;
+    }
+    #Shinki.list, #Shinki.tiered {
+        object-position: -2040px 0;
+    }
+    #Yuki.list, #Yuki.tiered {
+        object-position: -2100px 0;
+    }
+    #Yumeko.list, #Yumeko.tiered {
+        object-position: -2160px 0;
+    }
+    #Cirno.list, #Cirno.tiered {
+        object-position: -2220px 0;
+    }
+    #Daiyousei.list, #Daiyousei.tiered {
+        object-position: -2280px 0;
+    }
+    #FlandreScarlet.list, #FlandreScarlet.tiered {
+        object-position: -2340px 0;
+    }
+    #HongMeiling.list, #HongMeiling.tiered {
+        object-position: -2400px 0;
+    }
+    #Koakuma.list, #Koakuma.tiered {
+        object-position: -2460px 0;
+    }
+    #PatchouliKnowledge.list, #PatchouliKnowledge.tiered {
+        object-position: -2520px 0;
+    }
+    #RemiliaScarlet.list, #RemiliaScarlet.tiered {
+        object-position: -2580px 0;
+    }
+    #Rumia.list, #Rumia.tiered {
+        object-position: -2640px 0;
+    }
+    #SakuyaIzayoi.list, #SakuyaIzayoi.tiered {
+        object-position: -2700px 0;
+    }
+    #AliceMargatroid.list, #AliceMargatroid.tiered {
+        object-position: -2760px 0;
+    }
+    #Chen.list, #Chen.tiered {
+        object-position: -2820px 0;
+    }
+    #LettyWhiterock.list, #LettyWhiterock.tiered {
+        object-position: -2880px 0;
+    }
+    #LilyWhite.list, #LilyWhite.tiered {
+        object-position: -2940px 0;
+    }
+    #LunasaPrismriver.list, #LunasaPrismriver.tiered {
+        object-position: -3000px 0;
+    }
+    #LyricaPrismriver.list, #LyricaPrismriver.tiered {
+        object-position: -3060px 0;
+    }
+    #MerlinPrismriver.list, #MerlinPrismriver.tiered {
+        object-position: -3120px 0;
+    }
+    #RanYakumo.list, #RanYakumo.tiered {
+        object-position: -3180px 0;
+    }
+    #YoumuKonpaku.list, #YoumuKonpaku.tiered {
+        object-position: -3240px 0;
+    }
+    #YukariYakumo.list, #YukariYakumo.tiered {
+        object-position: -3300px 0;
+    }
+    #YuyukoSaigyouji.list, #YuyukoSaigyouji.tiered {
+        object-position: -3360px 0;
+    }
+    #SuikaIbuki.list, #SuikaIbuki.tiered {
+        object-position: -3420px 0;
+    }
+    #EirinYagokoro.list, #EirinYagokoro.tiered {
+        object-position: -3480px 0;
+    }
+    #FujiwaranoMokou.list, #FujiwaranoMokou.tiered {
+        object-position: -3540px 0;
+    }
+    #KaguyaHouraisan.list, #KaguyaHouraisan.tiered {
+        object-position: -3600px 0;
+    }
+    #KeineKamishirasawa.list, #KeineKamishirasawa.tiered {
+        object-position: -3660px 0;
+    }
+    #MystiaLorelei.list, #MystiaLorelei.tiered {
+        object-position: -3720px 0;
+    }
+    #ReisenUdongeinInaba.list, #ReisenUdongeinInaba.tiered {
+        object-position: -3780px 0;
+    }
+    #TewiInaba.list, #TewiInaba.tiered {
+        object-position: -3840px 0;
+    }
+    #WriggleNightbug.list, #WriggleNightbug.tiered {
+        object-position: -3900px 0;
+    }
+    #AyaShameimaru.list, #AyaShameimaru.tiered {
+        object-position: -3960px 0;
+    }
+    #EikiShikiYamaxanadu.list, #EikiShikiYamaxanadu.tiered {
+        object-position: -4020px 0;
+    }
+    #KomachiOnozuka.list, #KomachiOnozuka.tiered {
+        object-position: -4080px 0;
+    }
+    #MedicineMelancholy.list, #MedicineMelancholy.tiered {
+        object-position: -4140px 0;
+    }
+    #YuukaKazami.list, #YuukaKazami.tiered {
+        object-position: -4200px 0;
+    }
+    #HinaKagiyama.list, #HinaKagiyama.tiered {
+        object-position: -4260px 0;
+    }
+    #KanakoYasaka.list, #KanakoYasaka.tiered {
+        object-position: -4320px 0;
+    }
+    #MinorikoAki.list, #MinorikoAki.tiered {
+        object-position: -4380px 0;
+    }
+    #MomijiInubashiri.list, #MomijiInubashiri.tiered {
+        object-position: -4440px 0;
+    }
+    #NitoriKawashiro.list, #NitoriKawashiro.tiered {
+        object-position: -4500px 0;
+    }
+    #ShizuhaAki.list, #ShizuhaAki.tiered {
+        object-position: -4620px 0;
+    }
+    #SuwakoMoriya.list, #SuwakoMoriya.tiered {
+        object-position: -4680px 0;
+    }
+    #IkuNagae.list, #IkuNagae.tiered {
+        object-position: -4740px 0;
+    }
+    #TenshiHinanawi.list, #TenshiHinanawi.tiered {
+        object-position: -4800px 0;
+    }
+    #Kisume.list, #Kisume.tiered {
+        object-position: -4860px 0;
+    }
+    #KoishiKomeiji.list, #KoishiKomeiji.tiered {
+        object-position: -4920px 0;
+    }
+    #ParseeMizuhashi.list, #ParseeMizuhashi.tiered {
+        object-position: -4980px 0;
+    }
+    #RinKaenbyou.list, #RinKaenbyou.tiered {
+        object-position: -5040px 0;
+    }
+    #SatoriKomeiji.list, #SatoriKomeiji.tiered {
+        object-position: -5100px 0;
+    }
+    #UtsuhoReiuji.list, #UtsuhoReiuji.tiered {
+        object-position: -5160px 0;
+    }
+    #YamameKurodani.list, #YamameKurodani.tiered {
+        object-position: -5220px 0;
+    }
+    #YuugiHoshiguma.list, #YuugiHoshiguma.tiered {
+        object-position: -5280px 0;
+    }
+    #ByakurenHijiri.list, #ByakurenHijiri.tiered {
+        object-position: -5340px 0;
+    }
+    #IchirinKumoi.list, #IchirinKumoi.tiered {
+        object-position: -5400px 0;
+    }
+    #KogasaTatara.list, #KogasaTatara.tiered {
+        object-position: -5460px 0;
+    }
+    #MinamitsuMurasa.list, #MinamitsuMurasa.tiered {
+        object-position: -5520px 0;
+    }
+    #Nazrin.list, #Nazrin.tiered {
+        object-position: -5580px 0;
+    }
+    #NueHoujuu.list, #NueHoujuu.tiered {
+        object-position: -5640px 0;
+    }
+    #ShouToramaru.list, #ShouToramaru.tiered {
+        object-position: -5700px 0;
+    }
+    #Unzan.list, #Unzan.tiered {
+        object-position: -5760px 0;
+    }
+    #Hisoutensoku.list, #Hisoutensoku.tiered {
+        object-position: -5820px 0;
+    }
+    #HatateHimekaidou.list, #HatateHimekaidou.tiered {
+        object-position: -5880px 0;
+    }
+    #LunaChild.list, #LunaChild.tiered {
+        object-position: -5940px 0;
+    }
+    #StarSapphire.list, #StarSapphire.tiered {
+        object-position: -6000px 0;
+    }
+    #SunnyMilk.list, #SunnyMilk.tiered {
+        object-position: -6060px 0;
+    }
+    #KyoukoKasodani.list, #KyoukoKasodani.tiered {
+        object-position: -6120px 0;
+    }
+    #MamizouFutatsuiwa.list, #MamizouFutatsuiwa.tiered {
+        object-position: -6180px 0;
+    }
+    #MononobenoFuto.list, #MononobenoFuto.tiered {
+        object-position: -6240px 0;
+    }
+    #SeigaKaku.list, #SeigaKaku.tiered {
+        object-position: -6300px 0;
+    }
+    #SoganoTojiko.list, #SoganoTojiko.tiered {
+        object-position: -6360px 0;
+    }
+    #ToyosatomiminoMiko.list, #ToyosatomiminoMiko.tiered {
+        object-position: -6420px 0;
+    }
+    #YoshikaMiyako.list, #YoshikaMiyako.tiered {
+        object-position: -6480px 0;
+    }
+    #HatanoKokoro.list, #HatanoKokoro.tiered {
+        object-position: -6540px 0;
+    }
+    #Clownpiece.list, #Clownpiece.tiered {
+        object-position: -6600px 0;
+    }
+    #DoremySweet.list, #DoremySweet.tiered {
+        object-position: -6660px 0;
+    }
+    #HecatiaLapislazuli.list, #HecatiaLapislazuli.tiered {
+        object-position: -6720px 0;
+    }
+    #Junko.list, #Junko.tiered {
+        object-position: -6780px 0;
+    }
+    #Ringo.list, #Ringo.tiered {
+        object-position: -6840px 0;
+    }
+    #SagumeKishin.list, #SagumeKishin.tiered {
+        object-position: -6900px 0;
+    }
+    #Seiran.list, #Seiran.tiered {
+        object-position: -6960px 0;
+    }
+    #BenbenTsukumo.list, #BenbenTsukumo.tiered {
+        object-position: -7020px 0;
+    }
+    #KagerouImaizumi.list, #KagerouImaizumi.tiered {
+        object-position: -7080px 0;
+    }
+    #RaikoHorikawa.list, #RaikoHorikawa.tiered {
+        object-position: -7140px 0;
+    }
+    #SeijaKijin.list, #SeijaKijin.tiered {
+        object-position: -7200px 0;
+    }
+    #Sekibanki.list, #Sekibanki.tiered {
+        object-position: -7260px 0;
+    }
+    #ShinmyoumaruSukuna.list, #ShinmyoumaruSukuna.tiered {
+        object-position: -7320px 0;
+    }
+    #Wakasagihime.list, #Wakasagihime.tiered {
+        object-position: -7380px 0;
+    }
+    #YatsuhashiTsukumo.list, #YatsuhashiTsukumo.tiered {
+        object-position: -7440px 0;
+    }
+    #SumirekoUsami.list, #SumirekoUsami.tiered {
+        object-position: -7500px 0;
+    }
+    #JoonYorigami.list, #JoonYorigami.tiered {
+        object-position: -7560px 0;
+    }
+    #ShionYorigami.list, #ShionYorigami.tiered {
+        object-position: -7620px 0;
+    }
+    #AunnKomano.list, #AunnKomano.tiered {
+        object-position: -7680px 0;
+    }
+    #EternityLarva.list, #EternityLarva.tiered {
+        object-position: -7740px 0;
+    }
+    #MaiTeireida.list, #MaiTeireida.tiered {
+        object-position: -7800px 0;
+    }
+    #NarumiYatadera.list, #NarumiYatadera.tiered {
+        object-position: -7860px 0;
+    }
+    #NemunoSakata.list, #NemunoSakata.tiered {
+        object-position: -7920px 0;
+    }
+    #OkinaMatara.list, #OkinaMatara.tiered {
+        object-position: -7980px 0;
+    }
+    #SatonoNishida.list, #SatonoNishida.tiered {
+        object-position: -8040px 0;
+    }
+    #EikaEbisu.list, #EikaEbisu.tiered {
+        object-position: -8100px 0;
+    }
+    #KeikiHaniyasushin.list, #KeikiHaniyasushin.tiered {
+        object-position: -8160px 0;
+    }
+    #KutakaNiwatari.list, #KutakaNiwatari.tiered {
+        object-position: -8220px 0;
+    }
+    #MayumiJoutouguu.list, #MayumiJoutouguu.tiered {
+        object-position: -8280px 0;
+    }
+    #SakiKurokoma.list, #SakiKurokoma.tiered {
+        object-position: -8340px 0;
+    }
+    #UrumiUshizaki.list, #UrumiUshizaki.tiered {
+        object-position: -8400px 0;
+    }
+    #YachieKicchou.list, #YachieKicchou.tiered {
+        object-position: -8460px 0;
+    }
+    #FortuneTeller.list, #FortuneTeller.tiered {
+        object-position: -8520px 0;
+    }
+    #HiedanoAkyuu.list, #HiedanoAkyuu.tiered {
+        object-position: -8580px 0;
+    }
+    #KasenIbaraki.list, #KasenIbaraki.tiered {
+        object-position: -8640px 0;
+    }
+    #KosuzuMotoori.list, #KosuzuMotoori.tiered {
+        object-position: -8700px 0;
+    }
+    #ReisenII.list, #ReisenII.tiered {
+        object-position: -8760px 0;
+    }
+    #RinnosukeMorichika.list, #RinnosukeMorichika.tiered {
+        object-position: -8820px 0;
+    }
+    #Tokiko.list, #Tokiko.tiered {
+        object-position: -8880px 0;
+    }
+    #WatatsukinoToyohime.list, #WatatsukinoToyohime.tiered {
+        object-position: -8940px 0;
+    }
+    #WatatsukinoYorihime.list, #WatatsukinoYorihime.tiered {
+        object-position: -9000px 0;
+    }
+    #MaribelHearn.list, #MaribelHearn.tiered {
+        object-position: -9060px 0;
+    }
+    #RenkoUsami.list, #RenkoUsami.tiered {
+        object-position: -9120px 0;
+    }
+}
+@media only screen and (max-device-width: 800px) and (orientation: portrait) {
+    #characters {
+        width: auto;
+        top: 50px;
+        right: 5px;
+        bottom: 18%;
+    }
+    #buttons {
+        max-width: 98%;
+        padding-top: 5px;
+        left: 5px;
+        height: 16%;
+        min-height: 50px;
+    }
+    #modal {
+        padding-top: 10%;
+    }
+    #modal_inner {
+        max-height: 75%;
+    }
+    h1 {
+        margin: 5px;
+        font-size: 28px;
+    }
+}
+@media only screen and (max-device-width: 640px) and (orientation: landscape) {
+    #title {
+        display: none;
+    }
+    #characters {
+        width: auto;
+        top: 2%;
+        right: 5px;
+        bottom: 25%;
+    }
+    #buttons {
+        max-width: 98%;
+        padding-top: 5px;
+        left: 5px;
+        height: 22%;
+        min-height: 50px;
+    }
+    #modal {
+        padding-top: 2%;
+    }
+}
+@media only screen and (max-height: 350px) {
+    #information_button, #view_button, #mobile_button_split, #menu_button, #switch_button {
+        display: inline;
+    }
+    #menu, #credits, #characters, #tier_list_tfoot, #nav, #sort_selection, #instructions_text, #instructions_list, #toggle {
+        display: none;
+    }
+    #tier_list_container, #instructions, #instructions_mobile {
+        display: block;
+    }
+    #add_tier_box_mobile {
+        display: table-row;
+    }
+    #wrap {
+        top: 5px;
+        bottom: 5px;
+        right: 5px;
+        left: 5px;
+        width: auto;
+        height: 100%;
+        max-height: 100%;
+    }
+    #tier_list_container {
+        bottom: 100px;
+        max-height: 71%;
+        overflow-y: auto;
+        border: 1px solid black;
+    }
+    #wrap, #buttons, #msg_container, #show, #characters {
+        font: 12px verdana, sans-serif;
+    }
+    #add_tier_mobile {
+        width: auto;
+        height: 25px;
+        font-size: 12px;
+    }
+    h1 {
+        margin: 5px;
+        font-size: 28px;
+    }
+}
+@media only screen and (max-height: 250px) {
+    #buttons {
+        display: none;
+    }
+}
+@media only screen and (max-height: 150px) {
+    #title {
+        display: none;
+    }
 }
