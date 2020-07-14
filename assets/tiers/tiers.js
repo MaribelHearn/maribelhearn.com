@@ -999,14 +999,8 @@ function settingsMenuChars() {
     var categoryName, current = 0, counter = 0;
 
     emptyModal();
-    $("#modal_inner").html("<h2>Settings</h2><div>Use the following art set:<form id='artist_form'></form></div>");
-    $("#artist_form").append("<label for='dairi'>Dairi</label><input id='dairi' name='artist' " +
-    "type='radio'" + (settings.artist == "Dairi" ? " checked" : "") + ">");
-    $("#artist_form").append("<label for='ruu'>るう</label><input id='ruu' name='artist' " +
-    "type='radio'" + (settings.artist == "Ruu" ? " checked" : "") + ">");
-    $("#modal_inner").append("Include characters in the following works of first appearance:" +
+    $("#modal_inner").append("<h2>Settings</h2>Include characters in the following works of first appearance:" +
     "<table id='settings_table'><tbody><tr id='settings_tr0'>");
-    $("#artist_form").on("click", toggleArtist);
 
     for (categoryName in categories) {
         if (counter > 0 && counter % 5 === 0) {
@@ -1017,20 +1011,20 @@ function settingsMenuChars() {
 
         $("#settings_tr" + current).append("<td><input id='checkbox_" + categoryName +
         "' type='checkbox'" + (settings.categories[categoryName].enabled ? " checked" : "") +
-        " " + ((pc98.contains(categoryName) || categoryName == "Soku") && settings.artist == "Ruu" ? "disabled=true" : "") +
+        " " + (pc98.contains(categoryName) || categoryName == "Soku" ? "disabled=true" : "") +
         "><label for='" + categoryName + "'>" + categoryName + "</label></td>");
         counter += 1;
     }
 
     $("#modal_inner").append("</tr></tbody></table>");
     $("#modal_inner").append("<p><label for='pc-98'>PC-98</label><input id='pc98' type='checkbox'" +
-    " " + (settings.pc98Enabled ? " checked" : "") + " " + (settings.artist == "Ruu" ? "disabled=true" : "") + "></p>");
+    " " + (settings.pc98Enabled ? " checked" : "") + " " + "></p>");
     $("#pc98").on("click", togglePC98);
     $("#modal_inner").append("<p><label for='windows'>Windows</label><input id='windows' type='checkbox'" +
     " " + (settings.windowsEnabled ? " checked" : "") + "></p>");
     $("#windows").on("click", toggleWindows);
     $("#modal_inner").append("<p><label for='male'>Male Characters</label><input id='male' type='checkbox'" +
-    " " + (settings.maleEnabled ? " checked" : "") + " " + (settings.artist == "Ruu" ? "disabled=true" : "") + "></p>");
+    " " + (settings.maleEnabled ? " checked" : "") + " " + "></p>");
     $("#pc98").on("click", toggleMale);
     $("#modal_inner").append("<div>Other settings:<p><label for='tierHeaderWidth'>Tier header width</label>" +
     "<input id='tierHeaderWidth' type='number' value=" + settings.tierHeaderWidth + " min=" + defaultWidth + "></p>" +
@@ -1114,27 +1108,6 @@ function toggleWindows() {
 function toggleMale() {
     $("#checkbox_Soku").prop("checked", $("#male").is(":checked") ? true : false);
 }
-function toggleArtist() {
-    var i;
-
-    $("#pc98").attr("disabled", $("#ruu").is(":checked"));
-    $("#male").attr("disabled", $("#ruu").is(":checked"));
-    $("#checkbox_Soku").attr("disabled", $("#ruu").is(":checked"));
-
-    for (i = 0; i < pc98.length; i += 1) {
-        if ($("#ruu").is(":checked")) {
-            $("#checkbox_" + pc98[i]).prop("checked", false);
-        }
-
-        $("#checkbox_" + pc98[i]).attr("disabled", $("#ruu").is(":checked"));
-    }
-
-    if ($("#ruu").is(":checked")) {
-        $("#pc98").prop("checked", false);
-        $("#male").prop("checked", false);
-        $("#checkbox_Soku").prop("checked", false);
-    }
-}
 function saveSettings() {
     var cats = (settings.sort == "characters" ? categories : gameCategories),
         removedCategories = [], categoryName, item, confirmation, i;
@@ -1197,23 +1170,7 @@ function saveSettings() {
             }
         }
 
-        if ($("#dairi").is(":checked") && settings.artist != "Dairi") {
-            for (categoryName in categories) {
-                for (i in categories[categoryName].chars) {
-                    character = categories[categoryName].chars[i].removeSpaces();
-                    $("#" + character).attr("src", $("#" + character).attr("src").replace("Ruu", "Dairi").replace("jpg", "png"));
-                }
-            }
-        } else if ($("#ruu").is(":checked") && settings.artist != "Ruu") {
-            for (categoryName in categories) {
-                for (i in categories[categoryName].chars) {
-                    character = categories[categoryName].chars[i].removeSpaces();
-                    $("#" + character).attr("src", $("#" + character).attr("src").replace("Dairi", "Ruu").replace("png", "jpg"));
-                }
-            }
-        }
-
-        settings.artist = $("#dairi").is(":checked") ? "Dairi" : "Ruu";
+        settings.artist = "Dairi";
         settings.pc98Enabled = $("#pc98").is(":checked");
         settings.windowsEnabled = $("#windows").is(":checked");
         settings.maleEnabled = $("#male").is(":checked");
@@ -1524,14 +1481,12 @@ function loadCharacters() {
             if (isMobile()) {
                 $("#" + categoryName).append("<span id='" + character.removeSpaces() +
                 "C'><img id='" + character.removeSpaces() +
-                "' class='list' src='art/" + settings.artist + "/" + categoryName + "/" + character.removeSpaces() +
-                "." + (settings.artist == "Dairi" ? "png" : "jpg") + "' alt='" + character + "'>");
+                "' class='list' src='assets/tiers/spritesheet.png' alt='" + character + "'>");
                 $("#" + character.removeSpaces()).on("click", addMenu);
             } else {
                 $("#" + categoryName).append("<span id='" + character.removeSpaces() +
                 "C'><img id='" + character.removeSpaces() + "' class='list' draggable='true' " +
-                "src='art/" + settings.artist + "/" + categoryName + "/" + character.removeSpaces() +
-                "." + (settings.artist == "Dairi" ? "png" : "jpg") + "' alt='" + character + "' title='" + character + "'>");
+                "src='assets/tiers/spritesheet.png' alt='" + character + "' title='" + character + "'>");
                 $("#" + character.removeSpaces()).on("dblclick", addToMostRecent);
                 $("#" + character.removeSpaces()).on("dragstart", drag);
             }
