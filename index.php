@@ -17,11 +17,7 @@
             <span id='links'>
             <?php
                 if (isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents('.stats/token'))) {
-<<<<<<< HEAD
                     echo '<a href="admin">Admin Panel</a> || ';
-=======
-                    echo '<a id="admin" href="admin">Admin Panel</a> || ';
->>>>>>> 31f32f3407b05b044e0bde8cfc79a70b4c249050
                 }
             ?>
             <a href='about'>About Me</a> || <a href='privacy'>Privacy Policy</a></span>
