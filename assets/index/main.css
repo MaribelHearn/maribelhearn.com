@@ -73,12 +73,8 @@ p {
     opacity: 0.8;
     font: 14px verdana,sans-serif;
 }
-#privacy, #about {
+#links {
     float: left;
-}
-#admin {
-    float: left;
-    margin-top: 20px;
 }
 #hy {
     float: right;

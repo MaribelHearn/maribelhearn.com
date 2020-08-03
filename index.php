@@ -14,7 +14,13 @@
 
     <body class='<?php echo check_webp() ?>'>
         <div id='wrap'>
-            <a id='privacy' href='privacy'>Privacy Policy</a>
+            <span id='links'>
+            <?php
+                if (isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents('.stats/token'))) {
+                    echo '<a href="admin">Admin Panel</a> || ';
+                }
+            ?>
+            <a href='about'>About Me</a> || <a href='privacy'>Privacy Policy</a></span>
             <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
             <h1>Maribel Hearn's Web Portal</h1>
             <p class='thin'>A collection of convenience webpages for the Touhou community.</p>
@@ -133,11 +139,6 @@
                 <a href='https://twitch.tv/maribel_hearn'><img src='ext/twitch-icon-small.ico' alt='Twitch favicon'>Twitch</a>
                 <a href='https://steamcommunity.com/id/maribelhearn42'><img src='ext/steam-icon-small.ico' alt='Steam favicon'>Steam</a>
                 <a href='https://github.com/MaribelHearn'><img src='ext/github-icon.ico' alt='GitHub favicon'>GitHub</a></p>
-                <?php
-                    if (isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents('.stats/token'))) {
-                        echo '<a id="admin" href="admin">Admin Panel</a>';
-                    }
-                ?>
                 <p class='wide'>Partners: <a href='http://replay.lunarcast.net'><img src='ext/favicon-lunarcast.ico' alt='Lunarcast favicon'>Lunarcast Replay Database</a></p>
             </div>
         </div>
