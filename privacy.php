@@ -67,7 +67,7 @@
                 <li>By email: maribelhearn42@gmail.com</li>
             </ul>
 
-            <p><strong><a href='#nav'>Back to Top</a></strong></p>
+            <p><strong><a href='#wrap'>Back to Top</a></strong></p>
         </div>
         <script src='assets/shared/dark.js'></script>
     </body>
