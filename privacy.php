@@ -11,6 +11,7 @@
 
     <body class='<?php include '.stats/count.php'; echo check_webp() ?>'>
         <div id='wrap'>
+            <span id='links'><a href='/'>Back to Main Page</a></span>
             <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
             <h1>Privacy Policy</h1>
             <p><strong>Effective date:</strong> 16 December 2019</p>
@@ -66,7 +67,7 @@
                 <li>By email: maribelhearn42@gmail.com</li>
             </ul>
 
-            <p><a href='/'>Back to Main Page</a></p>
+            <p><strong><a href='#nav'>Back to Top</a></strong></p>
         </div>
         <script src='assets/shared/dark.js'></script>
     </body>

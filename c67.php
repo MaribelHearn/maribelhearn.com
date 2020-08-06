@@ -282,6 +282,7 @@
                 </table>
             </div>
             <p>* Much higher than any other bomb in practice (if used on top of an enemy or boss)</p>
+            <p><strong><a href='#wrap'>Back to Top</a></strong></p>
         </div>
         <script src='assets/shared/dark.js'></script>
     </body>

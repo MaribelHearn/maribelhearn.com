@@ -21,6 +21,7 @@
 
     <body class='<?php echo check_webp() ?>'>
         <div id='wrap'>
+            <span id='links'><a href='/'>Back to Main Page</a></span>
             <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
             <h1>About Me</h1>
             <p>Hello, I am Mari, a <?php echo getAge('1995-07-29'); ?> year old Dutch guy who
@@ -43,20 +44,155 @@
                 <li>Super Smash Bros. series</li>
                 <li>Labyrinth of Touhou</li>
             </ul>
+            <p class='wide'>My favourite Touhou characters are Maribel, Narumi, Kaguya, Yuyuko, Star Sapphire, Lily White,
+            as well as Reimu and Marisa.</p>
+            <h2>Music</h2>
             <p class='wide'>I also absolutely love to listen to video game OST, especially that of many shoot 'em up games.
             My favourite composers to listen to themes of are the following:</p>
             <ul>
                 <li>ZUN (Touhou series, Seihou Shuusou Gyoku)</li>
                 <li>Manabu Namiki (many CAVE shoot 'em up titles)</li>
                 <li>Rengoku Teien (their music as used in Labyrinth of Touhou)</li>
-                <li>Saitama Saisyu Heiki (most notably eXceed 3rd)</li>
+                <li>Saitama Saisyu Heiki (aka S.S.H, most notably eXceed 3rd)</li>
             </ul>
             <p class='wide'>OST makes up more than 90% of all of my time spent listening to music. My favourite OSTs to listen to
             include Labyrinth of Touhou, Seihou Shuusou Gyoku, Samidare, Dodonpachi Saidaioujou, Mushihime-sama as well as Futari,
             Great Fairy Wars, Subterranean Animism, Shining Shooting Star, Mrs. Estacion, eXceed 3rd, Guwange and Ikaruga;
-            many more follow suit.</p>
-            <p class='wide'>My favourite Touhou characters are Maribel, Narumi, Kaguya, Yuyuko, Star Sapphire, Lily White,
-            as well as Reimu and Marisa.</p>
+            many more follow suit. Some of my favourite themes are listed in the table below.</p>
+            <table class='center'>
+                <thead>
+                    <tr>
+                        <th>Link</th>
+                        <th>Origin</th>
+                        <th>Composer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=pw2WQjqKpVM'>Flight of the Bamboo Cutter ~ Lunatic Princess</a></td>
+                        <td>Touhou 8: Imperishable Night, Final Boss</td>
+                        <td>ZUN</td>
+                    </tr>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=PitDLZPaVhA'>The Primal Scene of Japan The Girl Watched</a></td>
+                        <td>Touhou 10: Mountain of Faith, Stage 5</td>
+                        <td>ZUN</td>
+                    </tr>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=7wEHo_uUgZ0'>Hartmann's Youkai Girl</a></td>
+                        <td>Touhou 11: Subterranean Animism, Extra Stage Boss</td>
+                        <td>ZUN</td>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=yHlbViNW-eI'>The Refrain of the Lovely Great War</a></td>
+                        <td>Touhou 12.8: Great Fairy Wars, Stage 1</td>
+                        <td>ZUN</td>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=IUKsMBN7dS4&t=54s'>The Hall of Dreams' Great Mausoleum</a></td>
+                        <td>Touhou 13: Ten Desires, Stage 5</td>
+                        <td>ZUN</td>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=0o8xTL_W-9I'>Illusionary White Traveler</a></td>
+                        <td>Touhou 16: Hidden Star in Four Seasons, Stage 4</td>
+                        <td>ZUN</td>
+                    </tr>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=sxpRSGm-2ao#t=13m22s'>Illusory Imperial Capital</a></td>
+                        <td>Seihou Shuusou Gyoku, Stage 2</td>
+                        <td>ZUN</td>
+                    </tr>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=sxpRSGm-2ao#t=22m11s'>Illusion of Flowers, Air of Scarlet Dream</a></td>
+                        <td>Seihou Shuusou Gyoku, Stage 3</td>
+                        <td>ZUN</td>
+                    </tr>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=gJuIRucytTc'>Trans--</a></td>
+                        <td>Seihou Banshiryuu C67, Final Boss</td>
+                        <td>halt, Doku Den P</td>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=OfH1FrSlDws'>Broken Strawberry Shortcake</a></td>
+                        <td>Samidare, Extra Stage Second Boss</td>
+                        <td>Ryu-Lighter</td>
+                    </tr>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=nAPXKiYenE0'>Setting Off ~ Departure Dream</a></td>
+                        <td>Mrs. Estacion, Stage 2</td>
+                        <td>Misora</td>
+                    </tr>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=L_aUBbZ2rJQ'>Eternal Stars in Memories</a></td>
+                        <td>Touhou Shining Shooting Star, Stage 5</td>
+                        <td>Shihenwx</td>
+                    </tr>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=8ym2uK-nm7k'>Reality</a></td>
+                        <td>Ikaruga, Stage 4</td>
+                        <td>Hiroshi Iuchi</td>
+                    </tr>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=MipAMcUWQfI'>Ai</a></td>
+                        <td>Dodonpachi Saidaioujou, Stage 3</td>
+                        <td>Manabu Namiki</td>
+                    </tr>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=m6wbfQkUI7I'>The Battle Was Just "To Continue That Future"</a></td>
+                        <td>Dodonpachi Daifukkatsu, Stage 5</td>
+                        <td>Manabu Namiki</td>
+                    </tr>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=SimTGe2xYno'>Vertigo</a></td>
+                        <td>Dodonpachi Daifukkatsu Black Label, Stage 5</td>
+                        <td>Manabu Namiki</td>
+                    </tr>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=XqNZL6Vp-w8'>Like the Night of the Falling Stars</a></td>
+                        <td>Mushihimesama, Stage 4</td>
+                        <td>Manabu Namiki</td>
+                    </tr>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=PMSs_2f2iOE'>The Black Shell Beast King</a></td>
+                        <td>Mushihimesama Futari, Stage 4</td>
+                        <td>Manabu Namiki</td>
+                    </tr>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=OpUf3aaY1hQ'>Underworld Cherry Blossoms</a></td>
+                        <td>Guwange, Stage 3</td>
+                        <td>Manabu Namiki</td>
+                    </tr>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=C4OIyerQUWU'>Maid to Order</a></td>
+                        <td>eXceed 3rd JADE PENETRATE, Stage 4</td>
+                        <td>Saitama Saisyu Heiki (S.S.H)</td>
+                    </tr>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=wBudg5ekli0'>Maid to Order (Arranged)</a></td>
+                        <td>eXceed 3rd JADE PENETRATE Black Package, Stage 4</td>
+                        <td>Saitama Saisyu Heiki (S.S.H)</td>
+                    </tr>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=UzCNF-ZQVfs'>Deceitful Wings (Arranged)</a></td>
+                        <td>Atelier Iris: Eternal Mana, Final Boss</td>
+                        <td>Saitama Saisyu Heiki (S.S.H)</td>
+                    </tr>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=nvowdGnQjXY'>Road to the Globe</a></td>
+                        <td>Labyrinth of Touhou, Dungeon (floors 7F, 13F, 22F, 24F)*</td>
+                        <td>Rengoku Teien</td>
+                    </tr>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=Q441gfsvzKM'>Dark a Liar</a></td>
+                        <td>Labyrinth of Touhou, Final Boss*</td>
+                        <td>Rengoku Teien</td>
+                    </tr>
+                    <tr>
+                        <td><a href='https://www.youtube.com/watch?v=llnXhrCn9Yo'>Battle! Elite Four</a></td>
+                        <td>Pokemon Black and White, Elite Four</td>
+                        <td>Junichi Masuda</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class='wide-top'>* Rengoku Teien is a group of composers that produces royalty-free music; Labyrinth of Touhou simply uses it, among music by other composers.</p>
+            <p class='wide-top'>Vertigo is possibly my favourite piece of music of all time.</p>
             <h2>Trivia</h2>
             <img src='assets/index/maribelb.png'>
             <ul>
@@ -72,7 +208,7 @@
                 <li>I cannot stand the smell of oranges. I also tend to dislike anything citrus, but only if the taste is too prevalent;
                 lemon tea, for instance, is fine.</li>
             </ul>
-            <p class='wide'><a href='/'>Back to Main Page</a></p>
+            <p class='wide-top'><strong><a href='#nav'>Back to Top</a></strong></p>
         </div>
         <script src='assets/shared/dark.js'></script>
     </body>
