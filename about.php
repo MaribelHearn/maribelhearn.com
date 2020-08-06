@@ -46,7 +46,7 @@
             </ul>
             <p class='wide'>My favourite Touhou characters are Maribel, Narumi, Kaguya, Yuyuko, Star Sapphire, Lily White,
             as well as Reimu and Marisa.</p>
-            <h2>Music</h2>
+            <h2 id='music'>Music</h2>
             <p class='wide'>I also absolutely love to listen to video game OST, especially that of many shoot 'em up games.
             My favourite composers to listen to themes of are the following:</p>
             <ul>
@@ -193,7 +193,7 @@
             </table>
             <p class='wide-top'>* Rengoku Teien is a group of composers that produces royalty-free music; Labyrinth of Touhou simply uses it, among music by other composers.</p>
             <p class='wide-top'>Vertigo is possibly my favourite piece of music of all time.</p>
-            <h2>Trivia</h2>
+            <h2 id='trivia'>Trivia</h2>
             <img src='assets/index/maribelb.png'>
             <ul>
                 <li>My current avatar (shown above) is a non-canon depiction of Maribel
