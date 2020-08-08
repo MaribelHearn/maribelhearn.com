@@ -23,6 +23,7 @@
 
     <body class='<?php echo check_webp() ?>'>
         <div id='wrap'>
+            <span id='links'><a href='/'>Back to Main Page</a></span>
             <img id='hy' src='../assets/shared/h-bar.png' title='Human Mode'>
             <h1>Admin Panel</h1>
             <p><input id='setcookie' type='button' value='Set Blocking Cookie'></p>
@@ -38,7 +39,6 @@
             ?>
             <p class='wide-top'>You are visiting this page using <strong id='os'></strong>.</p>
             <p>You are visiting this page using <strong id='browser'></strong>.</p>
-            <p class='wide'><a href='/'>Back to Main Page</a></p>
         </div>
         <?php echo '<input id="token" type="hidden" value=' . file_get_contents('../.stats/token') . '>'; ?>
         <script src='detect.js'></script>

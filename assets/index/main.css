@@ -59,9 +59,6 @@ p {
     float: right;
     width: 50%;
 }
-.map {
-    width: 53%;
-}
 #wrap {
     border: 1px solid #000;
     text-align: center;
@@ -78,6 +75,12 @@ p {
 }
 #hy {
     float: right;
+}
+#map {
+    width: 53%;
+}
+#tiers {
+    width: 68%;
 }
 @media only screen and (min-width:800px) and (max-width:1400px) {
     #wrap {

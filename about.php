@@ -27,11 +27,11 @@
             <p>Hello, I am Mari, a <?php echo getAge('1995-07-29'); ?> year old Dutch guy who
             likes to play shoot 'em up games seriously.</p>
             <p class='wide'>I am a nerdy person that studies Computer Science and takes keen interests in countries, travel,
-            geography, history, and public transportation. I have visited 24 different countries so far in my life, including
-            my home country of the Netherlands, and one of my life goals is to visit every country in Europe, as well as at least
-            one country per continent.</p>
+            geography, history, and public transportation. Travelling is my absolute favourite activity in life. I have
+            visited 24 different countries so far, including my home country of the Netherlands, and one of my life goals is to
+            visit every country in Europe, as well as at least one country per continent.</p>
             <figure>
-                <img class='map' src='assets/index/countries.png'>
+                <img id='map' src='assets/index/countries.png'>
                 <figcaption><em>Countries visited as of 2020</em></figcaption>
             </figure>
             <p class='wide'>Other than shoot 'em ups, there's a good number of games I value highly, as I loved playing them (still do) and they had
@@ -44,8 +44,7 @@
                 <li>Super Smash Bros. series</li>
                 <li>Labyrinth of Touhou</li>
             </ul>
-            <p class='wide'>My favourite Touhou characters are Maribel, Narumi, Kaguya, Yuyuko, Star Sapphire, Lily White,
-            as well as Reimu and Marisa.</p>
+            <p class='wide'>See <a href='#touhou'>the bottom of this page</a> for my favourite Touhou characters.</p>
             <h2 id='music'>Music</h2>
             <p class='wide'>I also absolutely love to listen to video game OST, especially that of many shoot 'em up games.
             My favourite composers to listen to themes of are the following:</p>
@@ -208,6 +207,11 @@
                 <li>I cannot stand the smell of oranges. I also tend to dislike anything citrus, but only if the taste is too prevalent;
                 lemon tea, for instance, is fine.</li>
             </ul>
+            <h2 id='touhou'>Touhou Taste</h2>
+            <figure>
+                <img id='tiers' src='assets/index/tiers.png'>
+                <figcaption><em>Touhou character tier list as of 7 August 2020</em></figcaption>
+            </figure>
             <p class='wide-top'><strong><a href='#wrap'>Back to Top</a></strong></p>
         </div>
         <script src='assets/shared/dark.js'></script>
