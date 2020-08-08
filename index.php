@@ -23,7 +23,10 @@
             <a href='about'>About Me</a> || <a href='privacy'>Privacy Policy</a></span>
             <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
             <h1>Maribel Hearn's Web Portal</h1>
-            <p class='thin'>A collection of convenience webpages for the Touhou community.</p>
+            <p class='thin'>A privacy-friendly collection of convenience webpages for the Touhou community.</p>
+            <p class='thin'>Join my personal Matrix chat:
+            <a href='https://app.element.io/#/room/!CaeuayIpkuGmPeXdBD:matrix.maribelhearn.com?via=matrix.maribelhearn.com'>
+            <img src='ext/element-icon-small.png'>#portal:matrix.maribelhearn.com</a></p>
             <h2>Page Links</h2>
             <div class='center'>
                 <div class='left'>

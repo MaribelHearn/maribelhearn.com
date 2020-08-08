@@ -47,6 +47,9 @@ p {
     opacity: 0.8;
     font: 14px verdana,sans-serif;
 }
+#links {
+    float: left;
+}
 #hy {
     float: right;
 }
