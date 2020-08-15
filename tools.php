@@ -93,17 +93,22 @@
             and separate HSiFS SSGs with cheat options. Be wary of an occasional menu bug that causes an SSG to duplicate itself and make other SSGs invisible.</p>
             <div>
                 <p><a href='http://wcs.main.jp/index/software/spal/' target='_blank'>Main Program</a></p>
-                <p><a href='https://maribelhearn.com/English_SSGs.zip' target='_blank'>SSGs (4.6, English translated)</a></p>
-                <p><a href='https://mega.nz/#!OpxFSSJB!2eUH91vJAF_ejq7S5r3x5Jx7GYCP67LSSo4BuXhoDa4' target='_blank'>SSGs (niL, Japanese)</a></p>
+                <p><a href='http://thusagi.starfree.jp/ssg/th06ssg.zip' target='_blank'>EoSD SSG (4.6)</a></p>
+                <p><a href='http://thusagi.starfree.jp/ssg/th07ssg.zip' target='_blank'>PCB SSG (4.6)</a></p>
+                <p><a href='http://thusagi.starfree.jp/ssg/th08ssg.zip' target='_blank'>IN SSG (4.6)</a></p>
+                <p><a href='http://thusagi.starfree.jp/ssg/th12ssg.zip' target='_blank'>UFO SSG (4.6)</a></p>
+                <p><a href='http://thusagi.starfree.jp/ssg/th16ssg.zip' target='_blank'>HSiFS SSG (4.6)</a></p>
+				<p><a href='https://mega.nz/#!OpxFSSJB!2eUH91vJAF_ejq7S5r3x5Jx7GYCP67LSSo4BuXhoDa4' target='_blank'>SSGs (niL)</a></p>
+                <p><a href='https://cdn.wikiwiki.jp/to/w/let/etc/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%81%AA%E3%81%A9/SpoilerAL%E7%94%A8%E3%81%AESSG%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/::attach/th_ssg20080502.zip?rev=8b2466505ba323da7fc610fad805213f&t=20120111011846'>SSGs (LET)</a></p>
                 <p><a href='http://www.mediafire.com/file/a4g4awdp4ll5a4n/SSG.zip' target='_blank'>SSGs (niL, English translated)</a></p>
                 <p><a href='https://mega.nz/#!QUBTEB5J!idRbiOfr_BKFpMBy9e5qU5Ow1xPkxplVbR72G6Ud0KI' target='_blank'>MoF SSG by Akaldar</a></p>
                 <p><a href='https://mega.nz/#!BJwhwYRB!5Zgr6redSWbA2v2vco0b7k00XH-BIeTAPUnW28gI-20' target='_blank'>GFW SSG (English translated)</a></p>
                 <p><a href='https://drive.google.com/open?id=1Qs4jOBkDH3dN7tI5X2cJRzd_awZFf80d' target='_blank'>TD Scoring SSG by Leo (English translated)</a></p>
+				<p><a href='https://maribelhearn.com/th16_score.ssg' target='_blank'>HSiFS Scoring SSG by Sonitsuku</a></p>
                 <p><a href='https://gitlab.com/32th/th14ssg' target='_blank'>DDC SSG by 32th System</a></p>
 				<p><a href='https://mega.nz/#!cAwknKTB!3PCN0me2Q3uTXwo4VgfBIouOqf5W0spBEhZwwR2uNfA' target='_blank'>LoLK SSG by CreepyNinja</a></p>
                 <p><a href='https://gitlab.com/32th/th15ssg' target='_blank'>LoLK Chapter Practice SSG by 32th System</a></p>
-                <p><a href='http://www7b.biglobe.ne.jp/~chibimi/th16-toggle.zip'>HSiFS SSG</a></p>
-                <p><a href='https://drive.google.com/open?id=1YqL8QSrnvDepMnkKUNPIBJVaJ2XWwZhP' target='_blank'>HSiFS SSG (English translated)</a></p>
+                <p><a href='https://drive.google.com/open?id=1YqL8QSrnvDepMnkKUNPIBJVaJ2XWwZhP' target='_blank'>HSiFS SSG (cheats, English translated)</a></p>
                 <p><a href='https://drive.google.com/open?id=1R8YcGWBE1c4jLy2RGfjuqtrpZzR26XA-' target='_blank'>Alternative HSiFS SSG (English translated) </a></p>
             </div>
             <!-- General Practice Tools -->
