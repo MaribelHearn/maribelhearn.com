@@ -60,8 +60,8 @@
             <h2 id='vpatch'>Vpatch</h2>
             <p>Removes input delay, allows you to increase in-game FPS (default is 60), optionally fixes several bugs (PCB cherry display, MoF MarisaB 3-power unfocus, UFO 2.147b score display).
             The input delay is mostly prevalent in the older games (EoSD to IN) and running them on Vpatch will significantly improve the gameplay experience.</p>
-            <p>Vpatch is applicable to all official shooting games bar DDC, HSiFS and WBaWC.</p>
-            <a href='http://www.mediafire.com/file/5uk43317q0ozjkj/VsyncPatch.zip' target='_blank'>Download</a>
+            <p>Vpatch is applicable to all official shooting games bar HSiFS and WBaWC.</p>
+            <a href='https://maribelhearn.com/VsyncPatch.zip' target='_blank'>Download</a>
             <!-- English Patches -->
             <hr>
             <h2 id='thcrap'>THCRAP (Translation patches / Modding tool) <a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'></a></h2>
