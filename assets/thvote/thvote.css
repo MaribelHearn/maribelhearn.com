@@ -61,8 +61,16 @@ table {
     width: 2.8em;
     background: #fee;
 }
+.col2ql {
+    width: 36em;
+    background: #fee;
+}
 .col2q {
     width: 20em;
+    background: #fee;
+}
+.col2qm {
+    width: 8em;
     background: #fee;
 }
 .col2qs {
