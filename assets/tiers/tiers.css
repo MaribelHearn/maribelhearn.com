@@ -1106,6 +1106,12 @@ input[type=number] {
 #RenkoUsami.tiered {
     object-position: -18240px 0;
 }
+#MiyoiOkunoda.list {
+    object-position: -12240px 0;
+}
+#MiyoiOkunoda.tiered {
+    object-position: -18360px 0;
+}
 @media screen and (max-width: 1100px) and (max-height: 800px) {
     body.no-webp, body.webp {
         background: #1b232e;
@@ -1631,6 +1637,9 @@ input[type=number] {
     }
     #RenkoUsami.list, #RenkoUsami.tiered {
         object-position: -9120px 0;
+    }
+    #MiyoiOkunoda.list, #MiyoiOkunoda.tiered {
+        object-position: -9180px 0;
     }
 }
 @media only screen and (max-device-width: 800px) and (orientation: portrait) {
