@@ -1215,7 +1215,7 @@ function changeLog() {
     "<li>02/01/2020: Fixed tier list loading bug</li>" +
     "<li>13/03/2020: Fixed bug caused by swapping tiers as well as a bug caused by naming a tier after a character</li>" +
     "<li>06/04/2020: Added ability to change the tier header font size and made tier header width changes apply immediately</li>" +
-    "<li>06/09/2019: Miyoi Okunoda added</li></ul>");
+    "<li>06/09/2020: Miyoi Okunoda added</li></ul>");
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
 }
