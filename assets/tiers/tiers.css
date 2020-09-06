@@ -650,6 +650,12 @@ input[type=number] {
 #NitoriKawashiro.tiered {
     object-position: -9000px 0;
 }
+#SanaeKochiya.list {
+    object-position: -6080px 0;
+}
+#SanaeKochiya.tiered {
+    object-position: -9120px 0;
+}
 #ShizuhaAki.list {
     object-position: -6160px 0;
 }
@@ -1409,6 +1415,9 @@ input[type=number] {
     }
     #NitoriKawashiro.list, #NitoriKawashiro.tiered {
         object-position: -4500px 0;
+    }
+    #SanaeKochiya.list, #SanaeKochiya.tiered {
+        object-position: -4560px 0;
     }
     #ShizuhaAki.list, #ShizuhaAki.tiered {
         object-position: -4620px 0;
