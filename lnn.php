@@ -276,7 +276,7 @@
 			</div>
 			<p id='playerlnns'><?php
 				if ($lang == 'English') { echo 'Choose a player name from the menu below to show their LNNs.'; }
-                else if ($lang == 'Japanese') { echo '個人のLNN(s)を表示するには、下記のメニューからプレイヤー名を選んでください。'; }
+                else if ($lang == 'Japanese') { echo '個人のLNNを表示するには、下記のメニューからプレイヤー名を選んでください。'; }
                 else { echo '在以下的菜单选择玩家的名字则可查看其LNN。'; }
 			?></p>
 			<label for='player' class='player'><?php echo tl_term('Player', $lang); ?></label>
@@ -290,7 +290,7 @@
 			    ?>
 		    </select>
 			<div id='playerlist'>
-				<table>
+				<table class='sortable'>
 					<thead id='playerlisthead'><tr>
                         <th class='game'><?php echo tl_term('Game', $lang) ; ?></th>
                         <th class='shottype'><?php echo tl_term('Shottype', $lang); ?></th>

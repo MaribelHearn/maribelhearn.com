@@ -163,6 +163,7 @@
 				case 'Game': return 'ゲーム';
 				case 'Score': return 'スコア';
                 case 'Player': return 'プレイヤー';
+				case 'Category': return 'カテゴリー';
 				case 'Difficulty': return '難易度';
                 case 'Shottype': return 'キャラ';
                 case 'Seasons': return '季節';
@@ -185,6 +186,7 @@
 				case 'Game': return '游戏';
 				case 'Score': return '分数';
                 case 'Player': return '玩家';
+				case 'Category': return '项目';
 				case 'Difficulty': return '难度';
                 case 'Shottype': return '机体';
                 case 'Seasons': return '季节';
@@ -497,6 +499,32 @@
                     <thead id='west_thead'></thead>
                     <tbody id='west_tbody'></tbody>
                 </table>
+			</div>
+			<p id='playerwrs'><?php
+				if ($lang == 'English') { echo 'Choose a player name from the menu below to show their WRs.'; }
+                else if ($lang == 'Japanese') { echo '個人のWRを表示するには、下記のメニューからプレイヤー名を選んでください。'; }
+                else { echo '在以下的菜单选择玩家的名字则可查看其WR。'; }
+			?></p>
+			<label for='player' class='player'><?php echo tl_term('Player', $lang); ?></label>
+			<select id='player'>
+			    <option>...</option>
+			    <?php
+			        asort($pl);
+			        foreach ($pl as $key => $player) {
+			            echo '<option>' . $player . '</option>';
+			        }
+			    ?>
+		    </select>
+			<div id='playerlist'>
+				<table class='sortable'>
+					<thead id='playerlisthead'><tr>
+                        <th class='category'><?php echo tl_term('Category', $lang) ; ?></th>
+                        <th class='score'><?php echo tl_term('Score', $lang); ?></th>
+                        <th class='datestring'><?php echo tl_term('Date', $lang); ?></th>
+                    </tr></thead>
+					<tbody id='playerlistbody'></tbody>
+					<tfoot id='playerlistfoot'></tfoot>
+				</table>
 			</div>
             <div id='players'>
                 <h2 class='playerranking'><?php echo tl_term('Player Ranking', $lang); ?></h2>

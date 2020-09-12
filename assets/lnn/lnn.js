@@ -149,7 +149,7 @@ function getPlayerLNNs(player) {
             if (LNNs[game][shottype].contains(player)) {
                 if (!games.contains(game)) {
                     $("#playerlistbody").append("<tr><td class='" + game + "'>" + game + "</td><td id='" + game + "s'></td></tr>");
-                    games.push(game)
+                    games.push(game);
                 }
                 character = shottype.replace(/(FinalA|FinalB|UFOs)/g, "");
                 type = shottype.replace(character, "");

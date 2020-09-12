@@ -1,5 +1,5 @@
 var WRs, westScores, missingReplays, seasonsEnabled, datesEnabled,
-    notation = "DMY", language = "English", selected = "", skips = [],
+    notation = "DMY", language = "English", selected = "", playerSelected = false, skips = [],
     all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN",
     "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC"],
     windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC"],
@@ -33,7 +33,8 @@ function toggleDates(event) {
         $("#" + all[i] + "overall4, #" + all[i] + "overallm").css("display", datesEnabled ? "table-cell" : "none");
     }
 
-    $(".date").css("display", datesEnabled ? "table-cell" : "none");
+    $(".datestring_player").css("display", datesEnabled ? "inline" : "none");
+    $(".date, .date_empty").css("display", datesEnabled ? "table-cell" : "none");
     $(".datestring, .datestring_game").css("display", datesEnabled ? "table-cell" : "none");
 }
 function disableDates() {
@@ -374,6 +375,66 @@ function display(event) {
     generateTableText();
     generateDates();
 }
+function getPlayerWRs(player) {
+    if (typeof player == "object") {
+        player = this.value; // if event listener fired
+    }
+
+    if (!WRs) {
+        $.get("json/wrlist.json", function (data) {
+            WRs = data;
+            getPlayerWRs(player);
+        }, "json");
+    }
+
+    if (player == "...") {
+        $("#playerlist").css("display", "none");
+        $("#playerlistbody, #playerlistfoot").html("");
+        playerSelected = false;
+        return;
+    }
+
+    var cats = [], scoreArray = [], dateArray = [], sum = 0, game, gamesum, difficulty, shottype, i;
+
+    playerSelected = true;
+    $("#playerlistbody").html("");
+
+    for (game in WRs) {
+        gamesum = 0;
+
+        for (difficulty in WRs[game]) {
+            for (shottype in WRs[game][difficulty]) {
+                if (WRs[game][difficulty][shottype].contains(player)) {
+                    if (!cats.contains(game + difficulty)) {
+                        $("#playerlistbody").append("<tr><td><span class='" + game + "'>" + game +
+                        "</span>" + (language == "English" ? " " : "") + "<span class='" + difficulty + "'>" + difficulty +
+                        "</span></td><td id='" + game + difficulty +
+                        "s'></td><td id='" + game + difficulty + "d' class='date_empty'></td></tr>");
+                        cats.push(game + difficulty);
+                        scoreArray = [];
+                        dateArray = [];
+                    }
+                    score = sep(WRs[game][difficulty][shottype][0]);
+                    date = WRs[game][difficulty][shottype][2];
+                    scoreArray.push(score + (shottype === "" ? "": " (<span class='" + shottype + "'>" + shottype + "</span>)"));
+                    dateArray.push("<span class='datestring_player'>" + date + "</span>");
+                    gamesum += 1;
+                    sum += 1;
+                }
+            }
+            $("#" + game + difficulty + "s").html(scoreArray.join("<br>"));
+            $("#" + game + difficulty + "d").html(dateArray.join("<br>"));
+        }
+    }
+
+    $(".date_empty").css("display", datesEnabled ? "table-cell" : "none");
+    $(".datestring_player").css("display", datesEnabled ? "inline" : "none");
+    $("#playerlistfoot").html("<tr><td colspan='3'></td></tr><tr><td class='total'>Total</td><td colspan='2'>" + sum + "</td></tr>");
+    $("#playerlist").css("display", "block");
+    generateTableText();
+    generateDates(false, false, playerSelected);
+    generateText();
+}
 function updateOrientation() {
     if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) {
         if (selected !== "") {
@@ -574,6 +635,7 @@ function generateTableText() {
         $(".percentage").html("Percentage");
         $(".shottype").html("Shottype");
         $(".route").html("Route");
+        $(".total").html("Total");
     } else if (language == "Japanese") {
         $(".HRtPf").html("東方靈異伝　～ The Highly Responsive to Prayers");
         $(".SoEWf").html("東方封魔録　～ the Story of Eastern Wonderland");
@@ -669,6 +731,7 @@ function generateTableText() {
         $(".percentage").html("割合");
         $(".shottype").html("キャラ");
         $(".route").html("ルート");
+        $(".total").html("合計");
     } else {
         $(".HRtPf").html("东方灵异传　～ The Highly Responsive to Prayers");
         $(".SoEWf").html("东方封魔录　～ the Story of Eastern Wonderland");
@@ -764,13 +827,15 @@ function generateTableText() {
         $(".percentage").html("百分");
         $(".shottype").html("机体");
         $(".route").html("路线");
+        $(".total").html("合計");
     }
 }
-function generateDates(oldLanguage, oldNotation) {
+function generateDates(oldLanguage, oldNotation, playerSelected) {
     var datestrings, date, i;
 
     if (oldLanguage) {
         datestrings = $(".datestring");
+        alert(JSON.stringify(datestrings));
 
         for (i = 0; i < datestrings.length; i += 1) {
             date = $(datestrings[i]).html();
@@ -797,8 +862,8 @@ function generateDates(oldLanguage, oldNotation) {
         }
     }
 
-    if (selected !== "") {
-        datestrings = $(".datestring_game");
+    if (selected !== "" || playerSelected) {
+        datestrings = $(playerSelected ? ".datestring_player" : ".datestring_game");
 
         if (!oldNotation) {
             for (i = 0; i < datestrings.length; i += 1) {
@@ -834,6 +899,7 @@ function setLanguage(event) {
 }
 $(document).ready(function () {
     var datestrings, i;
+    $("#player").on("change", getPlayerWRs);
     $("body").on("resize", updateOrientation);
     $("#dates").on("click", {alreadyDisabled: false}, toggleDates);
     $("#seasons").on("click", toggleSeasons);
