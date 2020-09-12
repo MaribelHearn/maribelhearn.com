@@ -373,8 +373,8 @@ function display(event) {
         $("#west_tbody").append("<tr><td>" + sep(world) + "<br>by <em>" + worldPlayer +
         "</em>" + (worldShottype != '-' ? "<br>(<span class='" + worldShottype + "'>" + worldShottype + "</span>)" : "") +
         "</td><td>" + sep(west) + "<br>by <em>" + westPlayer + "</em>" + (westShottype != '-' ? "<br>(<span class='" + westShottype +
-        "'>" + westShottype + "</span>)" : "") + "</td><th class='" + percentageClass(percentage) +
-        "'>(" + (parseInt(percentage) == 100 ? 100 : percentage) + "%)</th></tr>");
+        "'>" + westShottype + "</span>)" : "") + "</td><td class='" + percentageClass(percentage) +
+        "'>(" + (parseInt(percentage) == 100 ? 100 : percentage) + "%)</td></tr>");
     }
 
     $("#list").css("display", "block");
@@ -908,6 +908,7 @@ $(document).ready(function () {
     var datestrings, i;
     $("#newlayout").css("display", "block");
     $("#playersearch").css("display", "block");
+    $("#westernlink").css("display", "table-row");
     $("#playersearchlink").css("display", "table-row");
     $("#layouttoggle").on("click", toggleLayout);
     $("#player").on("change", getPlayerWRs);
