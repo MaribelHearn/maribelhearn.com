@@ -611,7 +611,7 @@ function emptyModal() {
 function closeModal(event) {
     var modal = document.getElementById("modal");
 
-    if ((event.target && event.target == modal) || (event.keyCode && event.keyCode == 27)) {
+    if ((event.target && event.target == modal) || (event.key && event.key == "Escape")) {
         emptyModal();
     }
 }
@@ -1610,7 +1610,7 @@ function detectAddTierEnter(event) {
 function setEventListeners() {
     setAddTierListeners();
     $("body").on("click", closeModal);
-    $("body").on("keypress", closeModal);
+    $("body").on("keyup", closeModal);
     $("#sort").on("change", switchSort);
     $("#toggle_view").on("click", toggleTierView);
     $("#toggle_instructions").on("click", toggleInstructions);
