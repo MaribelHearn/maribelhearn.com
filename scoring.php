@@ -32,7 +32,7 @@
         }
     }
 	function no_extra($game) {
-		return in_array($game, ['HRtP', 'PoDD']);
+		return in_array($game, ['HRtP', 'PoDD', 'GFW']);
 	}
 ?>
 
