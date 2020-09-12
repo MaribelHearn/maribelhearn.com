@@ -18,6 +18,13 @@ function toggleSeasons() {
     seasonsEnabled = !seasonsEnabled;
     display({data: {game: "HSiFS", seasonSwitch: true}});
 }
+function toggleLayout() {
+    if (getCookie("wr_old_layout")) {
+        deleteCookie("wr_old_layout");
+    } else {
+        setCookie("wr_old_layout", true);
+    }
+}
 function toggleDates(event) {
     var alreadyDisabled = event.data.alreadyDisabled, i;
 
@@ -899,11 +906,15 @@ function setLanguage(event) {
 }
 $(document).ready(function () {
     var datestrings, i;
+    $("#newlayout").css("display", "block");
+    $("#playersearch").css("display", "block");
+    $("#playersearchlink").css("display", "table-row");
+    $("#layouttoggle").on("click", toggleLayout);
     $("#player").on("change", getPlayerWRs);
     $("body").on("resize", updateOrientation);
     $("#dates").on("click", {alreadyDisabled: false}, toggleDates);
     $("#seasons").on("click", toggleSeasons);
-    $(".en-gb, .en-us, .jp, .zh").attr("href", "");
+    $(".en-gb, .en-us, .jp, .zh").attr("href", "wr");
     $(".en-gb").on("click", {language: "English", notation: "DMY"}, setLanguage);
     $(".en-us").on("click", {language: "English", notation: "MDY"}, setLanguage);
     $(".jp").on("click", {language: "Japanese", notation: "YMD"}, setLanguage);
@@ -926,5 +937,9 @@ $(document).ready(function () {
 
     if (!datesEnabled) {
         disableDates();
+    }
+
+    if (navigator.userAgent.indexOf("Mobile") == -1 && navigator.userAgent.indexOf("Tablet") == -1) {
+        $("#layouttoggle").css("display", "inline");
     }
 });

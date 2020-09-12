@@ -24,6 +24,7 @@
 		$lang = 'Chinese';
         $notation = 'YMD';
 	}
+    $layout = (isset($_COOKIE['wr_old_layout']) ? 'Old' : 'New');
 	$overall = array(0);
 	$overall_player = array(0);
 	$overall_diff = array(0);
@@ -55,6 +56,75 @@
             case 'HSiFS': return 16;
             case 'WBaWC': return 17;
             default: return 0;
+        }
+    }
+    function full_name($game, $lang) {
+        if ($lang == 'English') {
+            switch ($game) {
+    			case 'HRtP': return 'Touhou 1 - The Highly Responsive to Prayers';
+                case 'SoEW': return 'Touhou 2 - The Story of Eastern Wonderland';
+                case 'PoDD': return 'Touhou 3 - Phantasmagoria of Dim.Dream';
+                case 'LLS': return 'Touhou 4 - Lotus Land Story';
+                case 'MS': return 'Touhou 5 - Mystic Square';
+                case 'EoSD': return 'Touhou 6 - The Embodiment of Scarlet Devil';
+                case 'PCB': return 'Touhou 7 - Perfect Cherry Blossom';
+                case 'IN': return 'Touhou 8 - Imperishable Night';
+                case 'PoFV': return 'Touhou 9 - Phantasmagoria of Flower View';
+                case 'MoF': return 'Touhou 10 - Mountain of Faith';
+                case 'SA': return 'Touhou 11 - Subterranean Animism';
+                case 'UFO': return 'Touhou 12 - Undefined Fantastic Object';
+                case 'GFW': return 'Touhou 12.8 - Great Fairy Wars';
+                case 'TD': return 'Touhou 13 - Ten Desires';
+                case 'DDC': return 'Touhou 14 - Double Dealing Character';
+                case 'LoLK': return 'Touhou 15 - Legacy of Lunatic Kingdom';
+                case 'HSiFS': return 'Touhou 16 - Hidden Star in Four Seasons';
+                case 'WBaWC': return 'Touhou 17 - Wily Beast and Weakest Creature';
+                default: return 'Unknown';
+            }
+        } else if ($lang == 'Japanese') {
+            switch ($game) {
+                case 'HRtP': return '東方靈異伝　～ The Highly Responsive to Prayers';
+                case 'SoEW': return '東方封魔録　～ the Story of Eastern Wonderland';
+                case 'PoDD': return '東方夢時空　～ Phantasmagoria of Dim.Dream';
+                case 'LLS': return '東方幻想郷　～ Lotus Land Story';
+                case 'MS': return '東方怪綺談　～ Mystic Square';
+                case 'EoSD': return '東方紅魔郷　～ the Embodiment of Scarlet Devil';
+                case 'PCB': return '東方妖々夢　～ Perfect Cherry Blossom';
+                case 'IN': return '東方永夜抄　～ Imperishable Night';
+                case 'PoFV': return '東方花映塚　～ Phantasmagoria of Flower View';
+                case 'MoF': return '東方風神録　～ Mountain of Faith';
+                case 'SA': return '東方地霊殿　～ Subterranean Animism';
+                case 'UFO': return '東方星蓮船　～ Undefined Fantastic Object';
+                case 'GFW': return '妖精大戦争　～ 東方三月精';
+                case 'TD': return '東方神霊廟　～ Ten Desires';
+                case 'DDC': return '東方輝針城　～ Double Dealing Character';
+                case 'LoLK': return '東方紺珠伝　～ Legacy of Lunatic Kingdom';
+                case 'HSiFS': return '東方天空璋　～ Hidden Star in Four Seasons';
+                case 'WBaWC': return '東方鬼形獣　～ Wily Beast and Weakest Creature';
+                default: return 'Unknown';
+            }
+        } else {
+            switch ($game) {
+                case 'HRtP': return '东方灵异传　～ The Highly Responsive to Prayers';
+                case 'SoEW': return '东方封魔录　～ the Story of Eastern Wonderland';
+                case 'PoDD': return '东方梦时空　～ Phantasmagoria of Dim.Dream';
+                case 'LLS': return '东方幻想乡　～ Lotus Land Story';
+                case 'MS': return '东方怪绮谈　～ Mystic Square';
+                case 'EoSD': return '东方红魔乡　～ the Embodiment of Scarlet Devil';
+                case 'PCB': return '东方妖妖梦　～ Perfect Cherry Blossom';
+                case 'IN': return '东方永夜抄　～ Imperishable Night';
+                case 'PoFV': return '东方花映塚　～ Phantasmagoria of Flower View';
+                case 'MoF': return '东方风神录　～ Mountain of Faith';
+                case 'SA': return '东方地灵殿　～ Subterranean Animism';
+                case 'UFO': return '东方星莲船　～ Undefined Fantastic Object';
+                case 'GFW': return '妖精大战争　～ 东方三月精';
+                case 'TD': return '东方神灵庙　～ Ten Desires';
+                case 'DDC': return '东方辉针城　～ Double Dealing Character';
+                case 'LoLK': return '东方绀珠传　～ Legacy of Lunatic Kingdom';
+                case 'HSiFS': return '东方天空璋　～ Hidden Star in Four Seasons';
+                case 'WBaWC': return '东方鬼形獣　～ Wily Beast and Weakest Creature';
+                default: return 'Unknown';
+            }
         }
     }
 	function shot_abbr($shot) {
@@ -166,6 +236,7 @@
 				case 'Category': return 'カテゴリー';
 				case 'Difficulty': return '難易度';
                 case 'Shottype': return 'キャラ';
+                case 'Route': return 'ルート';
                 case 'Seasons': return '季節';
 				case 'Date': return '日付';
 				case 'Dates': return '日付';
@@ -174,6 +245,7 @@
 				case 'Overall': return '合計';
 				case 'Overall Records': return '各作品世界記録一覧';
                 case 'World Records': return '世界記録';
+                case 'Player Search': return '個人のWR';
                 case 'Player Ranking': return 'プレイヤーのランキング';
                 case 'Acknowledgements': return '謝辞';
                 case 'Touhou World Records': return '東方の世界記録';
@@ -189,6 +261,7 @@
 				case 'Category': return '项目';
 				case 'Difficulty': return '难度';
                 case 'Shottype': return '机体';
+                case 'Route': return '路线';
                 case 'Seasons': return '季节';
 				case 'Date': return '日期';
 				case 'Dates': return '日期';
@@ -197,6 +270,7 @@
 				case 'Overall': return '合計';
 				case 'Overall Records': return '整体世界纪录';
                 case 'World Records': return '世界纪录';
+                case 'Player Search': return '玩家WR';
                 case 'Player Ranking': return '玩家排行';
                 case 'Acknowledgements': return '致谢';
                 case 'Touhou World Records': return '东方世界纪录';
@@ -206,6 +280,208 @@
 		} else {
 			return $term;
 		}
+    }
+    function game_tl($game, $lang) {
+        if ($lang == 'Japanese') {
+            switch ($game) {
+    			case 'HRtP': return '靈';
+                case 'SoEW': return '封';
+                case 'PoDD': return '夢';
+                case 'LLS': return '幻';
+                case 'MS': return '怪';
+                case 'EoSD': return '紅';
+                case 'PCB': return '妖';
+                case 'IN': return '永';
+                case 'PoFV': return '花';
+                case 'MoF': return '風';
+                case 'SA': return '地';
+                case 'UFO': return '星';
+                case 'GFW': return '大';
+                case 'TD': return '神';
+                case 'DDC': return '輝';
+                case 'LoLK': return '紺';
+                case 'HSiFS': return '天';
+                case 'WBaWC': return '鬼';
+                default: return $game;
+            }
+        } else if ($lang == 'Chinese') {
+            switch ($game) {
+    			case 'HRtP': return '灵';
+                case 'SoEW': return '封';
+                case 'PoDD': return '梦';
+                case 'LLS': return '幻';
+                case 'MS': return '怪';
+                case 'EoSD': return '红';
+                case 'PCB': return '妖';
+                case 'IN': return '永';
+                case 'PoFV': return '花';
+                case 'MoF': return '风';
+                case 'SA': return '地';
+                case 'UFO': return '星';
+                case 'GFW': return '大';
+                case 'TD': return '神';
+                case 'DDC': return '辉';
+                case 'LoLK': return '绀';
+                case 'HSiFS': return '天';
+                case 'WBaWC': return '鬼';
+                default: return $game;
+            }
+        }
+        return $game;
+    }
+    function shot_tl($shot, $lang) {
+        if ($lang == 'Japanese') {
+            switch ($shot) {
+                case 'Makai': return '魔界';
+                case 'Jigoku': return '地獄';
+                case 'ReimuA': return '霊夢A';
+                case 'ReimuB': return '霊夢B';
+                case 'ReimuC': return '霊夢C';
+                case 'Reimu': return '霊夢';
+                case 'Mima': return '魅魔';
+                case 'Marisa': return '魔理沙';
+                case 'Ellen': return 'エレン';
+                case 'Kotohime': return '小兎姫';
+                case 'Kana': return 'カナ';
+                case 'Rikako': return '理香子';
+                case 'Chiyuri': return 'ちゆり';
+                case 'Yumemi': return '夢美';
+                case 'Yuuka': return '幽香';
+                case 'MarisaA': return '魔理沙A';
+                case 'MarisaB': return '魔理沙B';
+                case 'SakuyaA': return '咲夜A';
+                case 'SakuyaB': return '咲夜B';
+                case 'BorderTeam': return '霊夢＆紫';
+                case 'MagicTeam': return '魔理沙＆アリス';
+                case 'ScarletTeam': return '咲夜＆レミリア';
+                case 'GhostTeam': return '妖夢＆幽々子';
+                case 'Yukari': return '紫';
+                case 'Alice': return 'アリス';
+                case 'Sakuya': return '咲夜';
+                case 'Remilia': return 'レミリア';
+                case 'Youmu': return '妖夢';
+                case 'Yuyuko': return '幽々子';
+                case 'Reisen': return '鈴仙';
+                case 'Cirno': return 'チルノ';
+                case 'Lyrica': return 'リリカ';
+                case 'Mystia': return 'ミスティア';
+                case 'Tewi': return 'てゐ';
+                case 'Aya': return '文';
+                case 'Medicine': return 'メディスン';
+                case 'Komachi': return '小町';
+                case 'Eiki': return '映姫';
+                case 'MarisaC': return '魔理沙C';
+                case 'SanaeA': return '早苗A';
+                case 'SanaeB': return '早苗B';
+                case 'Sanae': return '早苗';
+                case 'Spring': return '春';
+                case 'Summer': return '夏';
+                case 'Autumn': return '秋';
+                case 'Winter': return '冬';
+                case 'ReimuSpring': return '霊夢春';
+                case 'CirnoSpring': return 'チルノ春';
+                case 'AyaSpring': return '文春';
+                case 'MarisaSpring': return '魔理沙春';
+                case 'ReimuSummer': return '霊夢夏';
+                case 'CirnoSummer': return 'チルノ夏';
+                case 'AyaSummer': return '文夏';
+                case 'MarisaSummer': return '魔理沙夏';
+                case 'ReimuAutumn': return '霊夢秋';
+                case 'CirnoAutumn': return 'チルノ秋';
+                case 'AyaAutumn': return '文秋';
+                case 'MarisaAutumn': return '魔理沙秋';
+                case 'ReimuWinter': return '霊夢冬';
+                case 'CirnoWinter': return 'チルノ冬';
+                case 'AyaWinter': return '文冬';
+                case 'MarisaWinter': return '魔理沙冬';
+                case 'ReimuWolf': return '霊夢狼';
+                case 'ReimuOtter': return '霊夢獺';
+                case 'ReimuEagle': return '霊夢鷲';
+                case 'MarisaWolf': return '魔理沙狼';
+                case 'MarisaOtter': return '魔理沙獺';
+                case 'MarisaEagle': return '魔理沙鷲';
+                case 'YoumuWolf': return '妖夢狼';
+                case 'YoumuOtter': return '妖夢獺';
+                case 'YoumuEagle': return '妖夢鷲';
+                default: return $shot;
+            }
+        } else if ($lang == 'Chinese') {
+            switch($shot) {
+                case 'Makai': return '魔界';
+                case 'Jigoku': return '地狱';
+                case 'ReimuA': return '灵梦A';
+                case 'ReimuB': return '灵梦B';
+                case 'ReimuC': return '灵梦C';
+                case 'Reimu': return '灵梦';
+                case 'Mima': return '魅魔';
+                case 'Marisa': return '魔理沙';
+                case 'Ellen': return '爱莲';
+                case 'Kotohime': return '小兔姬';
+                case 'Kana': return '卡娜';
+                case 'Rikako': return '理香子';
+                case 'Chiyuri': return '千百合';
+                case 'Yumemi': return '梦美';
+                case 'Yuuka': return '幽香';
+                case 'MarisaA': return '魔理沙A';
+                case 'MarisaB': return '魔理沙B';
+                case 'SakuyaA': return '咲夜A';
+                case 'SakuyaB': return '咲夜B';
+                case 'BorderTeam': return '结界组';
+                case 'MagicTeam': return '咏唱组';
+                case 'ScarletTeam': return '红魔组';
+                case 'GhostTeam': return '幽冥组';
+                case 'Yukari': return '紫';
+                case 'Alice': return '爱丽丝';
+                case 'Sakuya': return '咲夜';
+                case 'Remilia': return '蕾米莉亚';
+                case 'Youmu': return '妖梦';
+                case 'Yuyuko': return '幽幽子';
+                case 'Reisen': return '铃仙';
+                case 'Cirno': return '琪露诺';
+                case 'Lyrica': return '莉莉卡';
+                case 'Mystia': return '米丝蒂亚';
+                case 'Tewi': return '帝';
+                case 'Aya': return '文';
+                case 'Medicine': return '梅蒂薪';
+                case 'Komachi': return '小町';
+                case 'Eiki': return '映姬';
+                case 'MarisaC': return '魔理沙C';
+                case 'SanaeA': return '早苗A';
+                case 'SanaeB': return '早苗B';
+                case 'Sanae': return '早苗';
+                case 'Spring': return '春';
+                case 'Summer': return '夏';
+                case 'Autumn': return '秋';
+                case 'Winter': return '冬';
+                case 'ReimuSpring': return '灵梦春';
+                case 'CirnoSpring': return '琪露诺春';
+                case 'AyaSpring': return '文春';
+                case 'MarisaSpring': return '魔理沙春';
+                case 'ReimuSummer': return '灵梦夏';
+                case 'CirnoSummer': return '琪露诺夏';
+                case 'AyaSummer': return '文夏';
+                case 'MarisaSummer': return '魔理沙夏';
+                case 'ReimuAutumn': return '灵梦秋';
+                case 'CirnoAutumn': return '琪露诺秋';
+                case 'AyaAutumn': return '文秋';
+                case 'MarisaAutumn': return '魔理沙秋';
+                case 'ReimuWinter': return '灵梦冬';
+                case 'CirnoWinter': return '琪露诺冬';
+                case 'AyaWinter': return '文冬';
+                case 'MarisaWinter': return '魔理沙冬';
+                case 'ReimuWolf': return '灵梦狼';
+                case 'ReimuOtter': return '灵梦獭';
+                case 'ReimuEagle': return '灵梦鹰';
+                case 'MarisaWolf': return '魔理沙狼';
+                case 'MarisaOtter': return '魔理沙獭';
+                case 'MarisaEagle': return '魔理沙鹰';
+                case 'YoumuWolf': return '妖梦狼';
+                case 'YoumuOtter': return '妖梦獭';
+                case 'YoumuEagle': return '妖梦鹰';
+                default: return $shot;
+            }
+        }
+        return $shot;
     }
     function shotRoute($game) {
         return $game == 'HRtP' || $game == 'GFW' ? 'Route' : 'Shottype';
@@ -278,7 +554,12 @@
         <div id='wrap' class='wrap'>
 			<table id='top' class='center noborders'>
 				<tr class='noborders'>
-					<td id='emptytd' class='noborders'></td>
+					<td id='toggletd' class='noborders'>
+                        <?php
+                            $other = ($layout == 'New' ? 'Old' : 'New');
+                            echo '<a id="layouttoggle" href="wr">' . $other . ' layout</a>';
+                        ?>
+                    </td>
 					<td id='languagestd' class='noborders'> <table id='languages' class='noborders'>
 		                <tbody>
                             <tr class='noborders'>
@@ -378,6 +659,19 @@
                     <?php echo tl_term('Overall Records', $lang); ?>
                 </a></td></tr>
 				<tr><td><a href='#wrs' class='worldrecords'><?php echo tl_term('World Records', $lang); ?></a></td></tr>
+                <?php
+                    // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
+                    if ($layout == 'New') {
+                        echo '<noscript>';
+                    }
+                    foreach ($wr as $game => $value) {
+                        echo '<tr><td><a href="#' . $game . '">' . full_name($game, $lang) . '</a></td></tr>';
+                    }
+                    echo '<tr id="playersearchlink"><td><a href="#playerwrs">' . tl_term('Player Search', $lang) . '</a></td></tr>';
+                    if ($layout == 'New') {
+                        echo '</noscript>';
+                    }
+                ?>
                 <tr><td><a href='#players' class='playerranking'><?php echo tl_term('Player Ranking', $lang); ?></a></td></tr>
 				<tr><td><a href='#ack' class='ack'><?php echo tl_term('Acknowledgements', $lang); ?></a></td></tr>
             </table>
@@ -402,13 +696,13 @@
                     <?php
 						foreach ($wr as $game => $value) {
 							$num = num($game);
-							echo '<tr id="' . $game . 'o"><td>' . $num . '</td><td class="' . $game . '">' . $game . '</td>';
+							echo '<tr id="' . $game . 'o"><td>' . $num . '</td><td class="' . $game . '">' . game_tl($game, $lang) . '</td>';
 							echo '<td id="' . $game . 'overall0">' . ($game == 'WBaWC' ? '<abbr ' .
                             'title="' . number_format($overall[$num], 0, '.', ',') . '">9,999,999,990' .
                             '</abbr>' : number_format($overall[$num], 0, '.', ',')) . '</td>';
                             echo '<td id="' . $game . 'overall1">' . $overall_player[$num] . ($game == 'WBaWC' ? '*' : '') . '</td>';
 							echo '<td id="' . $game . 'overall2">' . $overall_diff[$num] . '</td>';
-							echo '<td id="' . $game . 'overall3">' . $overall_shottype[$num] . '</td>';
+							echo '<td id="' . $game . 'overall3">' . shot_tl($overall_shottype[$num], $lang) . '</td>';
 							echo '<td id="' . $game . 'overall4" class="datestring">' . date_tl($overall_date[$num], $notation) . '</td></tr>';
 						}
 					?>
@@ -439,49 +733,100 @@
                     echo '<hr>';
 					foreach ($wr as $game => $value) {
 						$num = num($game);
-						echo '<p class="' . $game . ' count">' . $game . '</p><p>';
+						echo '<p class="' . $game . ' count">' . game_tl($game, $lang) . '</p><p>';
                         echo '<span id="' . $game . 'overall0m">' . ($game == 'WBaWC' ? '<abbr ' .
                         'title="' . number_format($overall[$num], 0, '.', ',') . '">9,999,999,990' .
                         '</abbr> ' : number_format($overall[$num], 0, '.', ',')) . '</span> ';
 						echo '<span id="' . $game . 'overall2m">' . $overall_diff[$num] . '</span> ';
-						echo '<span id="' . $game . 'overall3m">' . $overall_shottype[$num] . '</span> by ';
+						echo '<span id="' . $game . 'overall3m">' . shot_tl($overall_shottype[$num], $lang) . '</span> by ';
 						echo '<span id="' . $game . 'overall1m"><em>' . $overall_player[$num] . ($game == 'WBaWC' ? '*' : '') . '</em></span> ';
 						echo '<br><span id="' . $game . 'overall4m" class="datestring">' . date_tl($overall_date[$num], $notation) . '</span></p><hr>';
 					}
-                    echo '* Other players that have scored 9,999,999,990:';
+                    echo '* Players that have scored 9,999,999,990: ';
                     $str = '';
                     foreach ($cs as $player => $value) {
-                        $str .= ', <abbr title="' . $value[2] . ' ' . $value[0] . ' on ' . date_tl($value[1], $notation) . '">' . $player . '</abbr>';
+                        $str .= ', <abbr title="';
+                        if (gettype($value[0]) == 'array') {
+                            $substr = '';
+                            foreach ($value as $key => $val) {
+                                $substr .= ', ' . $val[2] . ' ' . $val[0] . ' on ' . date_tl($val[1], $notation);
+                            }
+                            $str .= substr($substr, 2);
+                        } else {
+                            $str .= $value[2] . ' ' . $value[0] . ' on ' . date_tl($value[1], $notation);
+                        }
+                        $str .= '">' . $player . '</abbr>';
                     }
                     echo substr($str, 2);
 				?>
             </div>
             <h2 id='wrs' class='worldrecords'><?php echo tl_term('World Records', $lang); ?></h2>
-            <noscript>
-                <?php
-                    // With JS disabled, show classic all games layout
-                    foreach ($wr as $game => $obj) {
-                        echo '<div id="' . $game . '">';
-                        echo '<p>' . $game . '</p>';
-                        echo '<table id="' . $game . '_table" class="' . $game . 't sortable"><tr><th>' . shotRoute($game) . '</th>';
-                        foreach ($obj as $diff => $shots) {
+            <?php
+                // With JavaScript disabled OR wr_old_layout cookie set, show classic all games layout
+                if ($layout == 'New') {
+                    echo '<noscript>';
+                }
+                foreach ($wr as $game => $obj) {
+                    echo '<div id="' . $game . '">';
+                    echo '<p><img' . (num($game) <= 5 ? ' class="cover98"' : '') . ' src="games/' . strtolower($game) .
+                    '50x50.jpg" alt="' . $game . ' cover"> <u>' . full_name($game, $lang) . '</u></p>';
+                    echo '<table id="' . $game . '_table" class="' . $game .
+                    't sortable"><tr><th>' . tl_term(shotRoute($game), $lang) . '</th>';
+                    foreach ($obj as $diff => $shots) {
+                        if ($game != 'GFW' || $diff != 'Extra') { // skip GFW Extra
                             echo '<th>' . $diff . '</th>';
                         }
-                        echo '</tr>';
-                        foreach ($obj as $diff => $shots) {
-                            foreach ($shots as $shot => $array) {
-                                echo '<tr><td>' . $shot . '</td></tr>';
-                            }
-                            //<td>' . number_format($array[0], 0, '.', ',') .'<br>by <em>' . $array[1] . '</em></td>
-                        }
-                        echo '</table>';
                     }
-                ?>
-            </noscript>
+                    echo '</tr>';
+                    for ($i = 0; $i < sizeof($obj['Easy']); $i++) {
+                        $shot = array_keys($obj['Easy'])[$i];
+                        echo '<tr><td>' . shot_tl($shot, $lang) . '</td>';
+                        for ($j = 0; $j < sizeof($obj); $j++) {
+                            if ($game == 'GFW' && $j == 4) { // skip GFW Extra
+                                break;
+                            }
+                            $shots = $obj[array_keys($obj)[$j]];
+                            $score = number_format($shots[$shot][0], 0, '.', ',');
+                            if (file_exists(replay_path($game, $diff, $shot))) {
+                                $score = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score . '</a>';
+                            }
+                            if ($game == 'HSiFS' && $j % 4 == 0 && $j > 0) { // rowspan HSiFS Extra
+                                if (strpos($shot, 'Spring')) {
+                                    $shot = substr($shot, 0, -6);
+                                    $score = number_format($shots[$shot][0], 0, '.', ',');
+                                    if (file_exists(replay_path($game, $diff, $shot))) {
+                                        $score = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score . '</a>';
+                                    }
+                                    echo '<td rowspan="4">' . $score . '</a><br>by <em>' . $shots[$shot][1] .
+                                    '</em><span class="dimgrey"><br><span class="datestring_game"' .
+                                    '>' . date_tl($shots[$shot][2], $notation) . '</span></span></td>';
+                                }
+                            } else {
+                                echo '<td>' . $score . '</a><br>by <em>' . $shots[$shot][1] . '</em><span class="dimgrey"><br>' .
+                                '<span class="datestring_game">' . date_tl($shots[$shot][2], $notation) . '</span></span></td>';
+                            }
+                        }
+                        echo '</tr>';
+                    }
+                    if ($game == 'GFW') { // GFW Extra at bottom
+                        $score = number_format($obj['Extra']['-'][0], 0, '.', ',');
+                        if (file_exists(replay_path($game, $diff, $shot))) {
+                            $score = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score . '</a>';
+                        }
+                        echo '<tr><td>Extra</td><td colspan="4">' . $score . '<br>by <em>' . $obj['Extra']['-'][1] .
+                        '</em><span class="dimgrey"><br><span class="datestring_game">' . date_tl($obj['Extra']['-'][2], $notation) .
+                        '</span></span></td></tr>';
+                    }
+                    echo '</table>';
+                }
+                if ($layout == 'New') {
+                    echo '</noscript>';
+                }
+            ?>
 			<?php
-                // With old layout disabled, use game image layout
-                if (!isset($_COOKIE['old_layout'])) {
-                    echo '<p id="clickgame">';
+                // With wr_old_layout cookie NOT set, show game image layout (CSS hides it with JavaScript disabled)
+                if ($layout == 'New') {
+                    echo '<div id="newlayout"><p id="clickgame">';
                     if ($lang == 'English') {
                         echo 'Click a game cover to show its list of world records.';
                     } else if ($lang == 'Japanese') {
@@ -492,7 +837,8 @@
                     echo '</p>';
     			    foreach ($wr as $game => $value) {
     			        echo '<img id="' . $game . '" class="game" src="games/' . strtolower($game) . '50x50.jpg" alt="' . $game . ' cover">';
-    			    }
+                    }
+                    echo '</div>';
                 }
 			?>
 			<div id='list'>
@@ -510,21 +856,26 @@
                     <tbody id='west_tbody'></tbody>
                 </table>
 			</div>
-			<p id='playerwrs'><?php
-				if ($lang == 'English') { echo 'Choose a player name from the menu below to show their WRs.'; }
-                else if ($lang == 'Japanese') { echo '個人のWRを表示するには、下記のメニューからプレイヤー名を選んでください。'; }
-                else { echo '在以下的菜单选择玩家的名字则可查看其WR。'; }
-			?></p>
-			<label for='player' class='player'><?php echo tl_term('Player', $lang); ?></label>
-			<select id='player'>
-			    <option>...</option>
-			    <?php
-			        asort($pl);
-			        foreach ($pl as $key => $player) {
-			            echo '<option>' . $player . '</option>';
-			        }
-			    ?>
-		    </select>
+            <div id='playersearch'>
+    			<p id='playerwrs'><?php
+                    if ($layout == 'Old') { // if wr_old_layout is set, show header
+                        echo '<h2>' . tl_term('Player Search', $lang) . '</h2>';
+                    }
+    				if ($lang == 'English') { echo 'Choose a player name from the menu below to show their WRs.'; }
+                    else if ($lang == 'Japanese') { echo '個人のWRを表示するには、下記のメニューからプレイヤー名を選んでください。'; }
+                    else { echo '在以下的菜单选择玩家的名字则可查看其WR。'; }
+    			?></p>
+    			<label for='player' class='player'><?php echo tl_term('Player', $lang); ?></label>
+    			<select id='player'>
+    			    <option>...</option>
+    			    <?php
+    			        asort($pl);
+    			        foreach ($pl as $key => $player) {
+    			            echo '<option>' . $player . '</option>';
+    			        }
+    			    ?>
+    		    </select>
+            </div>
 			<div id='playerlist'>
 				<table class='sortable'>
 					<thead id='playerlisthead'><tr>
