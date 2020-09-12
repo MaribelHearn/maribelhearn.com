@@ -97,6 +97,9 @@ table, th, td {
 .cover98 {
     border: 1px solid #000;
 }
+.game {
+    cursor: pointer;
+}
 @media only screen and (min-width:800px) and (max-width:1400px) {
     .wrap {
         margin-left: 15%;
