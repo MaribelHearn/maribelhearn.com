@@ -51,8 +51,11 @@ table, th, td {
 #overall_linkm, #overallm {
     display: none;
 }
-#list, #seasontoggle {
+#list, #seasontoggle, #playerlist {
     display: none;
+}
+#list, #playerlist {
+    margin-top: 10px;
 }
 #table {
     margin-bottom: 15px;
