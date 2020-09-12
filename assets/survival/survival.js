@@ -215,6 +215,11 @@ function format(achievement) {
         "1cc": "clear",
         "NM": "nm",
         "NB": "nb",
+        "NBB": "np",
+        "NV": "np",
+        "NT": "np",
+        "NR": "np",
+        "NHNRB": "np",
         "NBNBB": "nbp",
         "NBNV": "nbp",
         "NBNT": "nbp",
@@ -227,6 +232,14 @@ function format(achievement) {
         "NMNBNR": "nmnb",
         "NNNN": "nmnb"
     })[achievement];
+}
+function save() {
+    if ($("#toggleData").is(":checked")) {
+        localStorage.setItem("saveData", true);
+        localStorage.setItem("vals", JSON.stringify(vals));
+    } else {
+        localStorage.removeItem("saveData");
+    }
 }
 function apply() {
     var numbers = {
@@ -330,7 +343,7 @@ function apply() {
         for (difficulty in vals[game]) {
             val = vals[game][difficulty];
             results += "<td class='" + format(val) + "'" + (difficulty == "Extra" && game != "PCB" ? " colspan='2'" : "") +
-            ">" + (format(val) == "nbp" ? val : "") + "</td>";
+            ">" + (format(val) == "nbp" || format(val) == "np" ? val : "") + "</td>";
             if (val == "N/A") {
                 na[game] += getPercentage(game);
             } else if (val == "Not cleared") {
@@ -345,6 +358,7 @@ function apply() {
                     numbers[difficulty == "Phantasm" ? "Extra" : difficulty]["NMNB"] += 1;
                     numbers["Total"]["NMNB"] += 1;
                 } else {
+                    val = (format(val) == "np" ? "1cc" : val);
                     numbers[difficulty == "Phantasm" ? "Extra" : difficulty][val] += 1;
                     numbers["Total"][val] += 1;
                 }
@@ -387,20 +401,18 @@ function apply() {
         results += "<tr><td>" + game + "</td><td>" + Math.round(completions[game]) + "%</td></tr>";
     }
 
-    results += "</tbody></table><br>";
-    $("#results").html(results);
+    results += "</tbody></table><input id='close' type='button' value='Close'>";
+    $("#modal_inner").html(results);
+    $("#modal_inner").css("display", "block");
+    $("#results").css("display", "block");
+    $("#gameTable, #close").css("margin-bottom", "15px");
     $("#table").attr("align", "center");
     $("#gameTable").attr("align", "center");
     $("#overview").attr("align", "center");
+    $("#close").on("click", emptyModal);
     sorttable.makeSortable(table);
     sorttable.makeSortable(gameTable);
-
-    if ($("#toggleData").is(":checked")) {
-        localStorage.setItem("saveData", true);
-        localStorage.setItem("vals", JSON.stringify(vals));
-    } else {
-        localStorage.removeItem("saveData");
-    }
+    save();
 }
 function reset() {
     var confirmation = confirm("Are you sure you want to reset your progress table?"), game, difficulty;
@@ -424,6 +436,18 @@ function allowData() {
         if (!allowed) {
             $("#toggleData").prop("checked", false);
         }
+    }
+}
+function emptyModal() {
+    $("#modal_inner").html("");
+    $("#modal_inner").css("display", "none");
+    $("#results").css("display", "none");
+}
+function closeModal(event) {
+    var modal = document.getElementById("results");
+
+    if ((event.target && event.target == modal) || (event.keyCode && event.key == "Escape")) {
+        emptyModal();
     }
 }
 $(document).ready(function () {
@@ -475,6 +499,9 @@ $(document).ready(function () {
         });
     }
 
+    $("body").on("click", closeModal);
+    $("body").on("keyup", closeModal);
+    $("select").on("click", save);
     $("#fillAll").on("click", fillAll);
     $("#toggleData").on("click", allowData);
     $("#apply").on("click", apply);
