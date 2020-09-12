@@ -412,6 +412,8 @@ function generateFullNames() {
 }
 function generateShottypes() {
     if (language == "English") {
+        $(".Makai").html("Makai");
+        $(".Jigoku").html("Jigoku");
         $(".ReimuA").html("ReimuA");
         $(".ReimuB").html("ReimuB");
         $(".ReimuC").html("ReimuC");
@@ -484,6 +486,8 @@ function generateShottypes() {
         $(".YoumuOtter").html("YoumuOtter");
         $(".YoumuEagle").html("YoumuEagle");
     } else if (language == "Japanese") {
+        $(".Makai").html("魔界");
+        $(".Jigoku").html("地獄");
         $(".ReimuA").html("霊夢A");
         $(".ReimuB").html("霊夢B");
         $(".ReimuC").html("霊夢C");
@@ -556,6 +560,8 @@ function generateShottypes() {
         $(".YoumuOtter").html("妖夢獺");
         $(".YoumuEagle").html("妖夢鷲");
     } else {
+        $(".Makai").html("魔界");
+        $(".Jigoku").html("地狱");
         $(".ReimuA").html("灵梦A");
         $(".ReimuB").html("灵梦B");
         $(".ReimuC").html("灵梦C");
