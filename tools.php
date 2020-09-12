@@ -350,6 +350,10 @@
 			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> th16ufos</a></p>
 			<p>Adds UFOs to HSiFS.</p>
 			<a href='https://priw8.github.io/#s=patches/uffs' target='_blank'>Download</a>
+			<p><strong>WBaWC score cap mod by <a href='https://twitter.com/32th__System' target='_blank'>32th System</a></strong>
+			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> score_uncap</a></p>
+			<p>Allows the in-game score counter to exceed 9,999,999,990 points.</p>
+			<a href='https://maribelhearn.com/th17_score_uncap.zip' target='_blank'>Download</a>
 			<hr>
 			<h2 id='ack'>Acknowledgements</h2>
 			<p id='credit' class='noborders'>The background image
