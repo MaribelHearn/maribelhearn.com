@@ -170,6 +170,9 @@ table, th, td {
 .cover98 {
     border: 1px solid #000;
 }
+.game {
+    cursor: pointer;
+}
 .noborders {
     border: none;
 }
