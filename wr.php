@@ -773,7 +773,7 @@
                     echo '<table id="' . $game . '_table" class="' . $game .
                     't sortable"><tr><th>' . tl_term(shotRoute($game), $lang) . '</th>';
                     foreach ($obj as $diff => $shots) {
-                        if ($game != 'GFW' || $diff != 'Extra') { // skip GFW Extra
+                        if ($game != 'GFW' || $diff != 'Extra') {
                             echo '<th>' . $diff . '</th>';
                         }
                     }
@@ -782,7 +782,8 @@
                         $shot = array_keys($obj['Easy'])[$i];
                         echo '<tr><td>' . shot_tl($shot, $lang) . '</td>';
                         for ($j = 0; $j < sizeof($obj); $j++) {
-                            if ($game == 'GFW' && $j == 4) { // skip GFW Extra
+                            $diff = array_keys($obj)[$j];
+                            if ($game == 'GFW' && $diff == 'Extra') {
                                 break;
                             }
                             $shots = $obj[array_keys($obj)[$j]];
@@ -790,7 +791,7 @@
                             if (file_exists(replay_path($game, $diff, $shot))) {
                                 $score = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score . '</a>';
                             }
-                            if ($game == 'HSiFS' && $j % 4 == 0 && $j > 0) { // rowspan HSiFS Extra
+                            if ($game == 'HSiFS' && $diff == 'Extra') {
                                 if (strpos($shot, 'Spring')) {
                                     $shot = substr($shot, 0, -6);
                                     $score = number_format($shots[$shot][0], 0, '.', ',');
@@ -808,7 +809,7 @@
                         }
                         echo '</tr>';
                     }
-                    if ($game == 'GFW') { // GFW Extra at bottom
+                    if ($game == 'GFW') {
                         $score = number_format($obj['Extra']['-'][0], 0, '.', ',');
                         if (file_exists(replay_path($game, $diff, $shot))) {
                             $score = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score . '</a>';
