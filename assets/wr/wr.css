@@ -48,10 +48,8 @@ table, th, td {
 #top {
     width: 100%;
 }
-#overall_linkm, #overallm {
-    display: none;
-}
-#list, #seasontoggle, #playerlist {
+#overall_linkm, #overallm, #list, #playerlist, #playersearch,
+#seasontoggle, #layouttoggle, #newlayout, #playersearchlink {
     display: none;
 }
 #list, #playerlist {
@@ -78,8 +76,10 @@ table, th, td {
 #fullname, .count {
     text-decoration: underline;
 }
-#emptytd {
+#toggletd {
      width: 22%;
+     text-align: left;
+     vertical-align: top;
 }
 #languagestd {
      width: 55%;
