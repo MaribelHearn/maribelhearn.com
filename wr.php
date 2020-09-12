@@ -413,11 +413,21 @@
 						}
 					?>
                 </table>
-                <p>* Other players that have scored 9,999,999,990:
+                <p>* Players that have scored 9,999,999,990:
                     <?php
                         $str = '';
                         foreach ($cs as $player => $value) {
-                            $str .= ', <abbr title="' . $value[2] . ' ' . $value[0] . ' on ' . date_tl($value[1], $notation) . '">' . $player . '</abbr>';
+                            $str .= ', <abbr title="';
+                            if (gettype($value[0]) == 'array') {
+                                $substr = '';
+                                foreach ($value as $key => $val) {
+                                    $substr .= ', ' . $val[2] . ' ' . $val[0] . ' on ' . date_tl($val[1], $notation);
+                                }
+                                $str .= substr($substr, 2);
+                            } else {
+                                $str .= $value[2] . ' ' . $value[0] . ' on ' . date_tl($value[1], $notation);
+                            }
+                            $str .= '">' . $player . '</abbr>';
                         }
                         echo substr($str, 2);
                     ?>.
