@@ -187,18 +187,23 @@ table, th, td {
 }
 .does_not_even_score {
     color: red;
+    font-weight: bold;
 }
 .barely_even_scores {
     color: #ff8c00;
+    font-weight: bold;
 }
 .moderately_even_scores {
     color: green;
+    font-weight: bold;
 }
 .does_even_score {
     color: #00008b;
+    font-weight: bold;
 }
 .does_even_score_well {
     color: #e768c3;
+    font-weight: bold;
 }
 @media only screen and (min-width:1400px) and (max-width:1600px) {
     .wrap {

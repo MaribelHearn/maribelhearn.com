@@ -3,8 +3,11 @@
 <?php
     include '.stats/count.php';
     hit(basename(__FILE__));
+    $MAX_SCORE = 9999999990;
     $json = file_get_contents('json/wrlist.json');
     $wr = json_decode($json, true);
+    $json = file_get_contents('json/bestinthewest.json');
+    $west = json_decode($json, true);
     $json = file_get_contents('json/counterstops.json');
     $cs = json_decode($json, true);
     if (isset($_COOKIE['lang'])) {
@@ -35,6 +38,19 @@
 	$pl_wr = array();
 	$flag = array();
 	$lm = '0/0/0';
+    function pc_class($pc) {
+        if ($pc < 50) {
+            return 'does_not_even_score';
+        } else if ($pc < 75) {
+            return 'barely_even_scores';
+        } else if ($pc < 90) {
+            return 'moderately_even_scores';
+        } else if ($pc < 100) {
+            return 'does_even_score';
+        } else {
+            return 'does_even_score_well';
+        }
+    }
     function num($game) {
         switch ($game) {
 			case 'HRtP': return 1;
@@ -242,9 +258,13 @@
 				case 'Dates': return '日付';
 				case 'No. of WRs': return 'WR数';
 				case 'Different games': return 'ゲーム';
+                case 'World': return '世界';
+                case 'West': return '海外';
+                case 'Percentage': return '割合';
 				case 'Overall': return '合計';
 				case 'Overall Records': return '各作品世界記録一覧';
                 case 'World Records': return '世界記録';
+                case 'Western Records': return '海外記録';
                 case 'Player Search': return '個人のWR';
                 case 'Player Ranking': return 'プレイヤーのランキング';
                 case 'Acknowledgements': return '謝辞';
@@ -267,9 +287,13 @@
 				case 'Dates': return '日期';
 				case 'No. of WRs': return 'WR数量';
 				case 'Different games': return '游戏';
+                case 'World': return '世界';
+                case 'West': return '西方';
+                case 'Percentage': return '百分';
 				case 'Overall': return '合計';
 				case 'Overall Records': return '整体世界纪录';
                 case 'World Records': return '世界纪录';
+                case 'Western Records': return '西方纪录';
                 case 'Player Search': return '玩家WR';
                 case 'Player Ranking': return '玩家排行';
                 case 'Acknowledgements': return '致谢';
@@ -667,6 +691,7 @@
                     foreach ($wr as $game => $value) {
                         echo '<tr><td><a href="#' . $game . '">' . full_name($game, $lang) . '</a></td></tr>';
                     }
+                    echo '<tr id="westernlink"><td><a href="#western">' . tl_term('Western Records', $lang) . '</a></td></tr>';
                     echo '<tr id="playersearchlink"><td><a href="#playerwrs">' . tl_term('Player Search', $lang) . '</a></td></tr>';
                     if ($layout == 'New') {
                         echo '</noscript>';
@@ -766,7 +791,18 @@
                 if ($layout == 'New') {
                     echo '<noscript>';
                 }
+                $diff_max = array();
+                $game_max = array();
                 foreach ($wr as $game => $obj) {
+                    $game_max[$game] = 0;
+                    $diff_max[$game] = [
+                        'Easy' => [0, '', ''],
+                        'Normal' => [0, '', ''],
+                        'Hard' => [0, '', ''],
+                        'Lunatic' => [0, '', ''],
+                        'Extra' => [0, '', ''],
+                        'Phantasm' => [0, '', '']
+                    ];
                     echo '<div id="' . $game . '">';
                     echo '<p><img' . (num($game) <= 5 ? ' class="cover98"' : '') . ' src="games/' . strtolower($game) .
                     '50x50.jpg" alt="' . $game . ' cover"> <u>' . full_name($game, $lang) . '</u></p>';
@@ -783,13 +819,23 @@
                         echo '<tr><td>' . shot_tl($shot, $lang) . '</td>';
                         for ($j = 0; $j < sizeof($obj); $j++) {
                             $diff = array_keys($obj)[$j];
-                            if ($game == 'GFW' && $diff == 'Extra') {
-                                break;
-                            }
                             $shots = $obj[array_keys($obj)[$j]];
-                            $score = number_format($shots[$shot][0], 0, '.', ',');
-                            if (file_exists(replay_path($game, $diff, $shot))) {
-                                $score = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score . '</a>';
+                            $score = $shots[$shot][0];
+                            $player = $shots[$shot][1];
+                            $game_max[$game] = max($game_max[$game], $score);
+                            if ($game == 'HSiFS' && $diff == 'Extra') {
+                                if (strpos($shot, 'Spring')) {
+                                    $tmp = substr($shot, 0, -6);
+                                    if ($shots[$tmp][0] > $diff_max['HSiFS']['Extra'][0]) {
+                                        $diff_max['HSiFS']['Extra'] = [$shots[$tmp][0], $shots[$tmp][1], $tmp];
+                                    }
+                                }
+                            } else if ($score > $diff_max[$game][$diff][0]) {
+                                $diff_max[$game][$diff] = [min($score, $MAX_SCORE), $player, $shot];
+                            }
+                            if ($game == 'GFW' && $diff == 'Extra') {
+                                $diff_max['GFW']['Extra'] = [$wr['GFW']['Extra']['-'][0], $wr['GFW']['Extra']['-'][1], '-'];
+                                break;
                             }
                             if ($game == 'HSiFS' && $diff == 'Extra') {
                                 if (strpos($shot, 'Spring')) {
@@ -803,7 +849,11 @@
                                     '>' . date_tl($shots[$shot][2], $notation) . '</span></span></td>';
                                 }
                             } else {
-                                echo '<td>' . $score . '</a><br>by <em>' . $shots[$shot][1] . '</em><span class="dimgrey"><br>' .
+                                $score = number_format($score, 0, '.', ',');
+                                if (file_exists(replay_path($game, $diff, $shot))) {
+                                    $score = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score . '</a>';
+                                }
+                                echo '<td>' . $score . '</a><br>by <em>' . $player . '</em><span class="dimgrey"><br>' .
                                 '<span class="datestring_game">' . date_tl($shots[$shot][2], $notation) . '</span></span></td>';
                             }
                         }
@@ -817,6 +867,29 @@
                         echo '<tr><td>Extra</td><td colspan="4">' . $score . '<br>by <em>' . $obj['Extra']['-'][1] .
                         '</em><span class="dimgrey"><br><span class="datestring_game">' . date_tl($obj['Extra']['-'][2], $notation) .
                         '</span></span></td></tr>';
+                    }
+                    echo '</table>';
+                }
+                // Old layout western records
+                echo '<h2 id="western">' . tl_term('Western Records', $lang) . '</h2>';
+                foreach ($west as $game => $obj) {
+                    echo '<table class="' . $game . 't"><tr><th colspan="3">' . game_tl($game, $lang) .
+                    '</th></tr><tr><th>' . tl_term('World', $lang) .
+                    '</th><th>' . tl_term('West', $lang) . '</th><th>' . tl_term('Percentage', $lang) . '</th></tr>';
+                    foreach ($obj as $diff => $shots) {
+                        $westt = $west[$game][$diff];
+                        $world = $diff_max[$game][$diff];
+                        if ($westt[0] == $world[0]) {
+                            $percentage = 100;
+                        } else {
+                            $percentage = number_format((float) $westt[0] / $world[0] * 100, 2, '.', ',');
+                        }
+                        echo '<tr><td colspan="3"><u>' . tl_term($diff, $lang) . '</u></td></tr>' .
+                        '<tr><td>' . number_format($world[0], 0, '.', ',') .
+                        '<br>by <em>' . $world[1] . '</em><br>(' . shot_tl($world[2], $lang) .
+                        ')</td><td>' . number_format($westt[0], 0, '.', ',') .
+                        '<br>by <em>' . $westt[1] . '</em><br>(' . shot_tl($westt[2], $lang) .
+                        ')</td><td class="' . pc_class($percentage) . '">(' . $percentage . '%)</td></tr>';
                     }
                     echo '</table>';
                 }
