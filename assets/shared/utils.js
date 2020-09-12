@@ -371,7 +371,7 @@ function generateFullNames() {
         $(".HSiFSf").html("Touhou 16 - Hidden Star in Four Seasons");
         $(".WBaWCf").html("Touhou 17 - Wily Beast and Weakest Creature");
     } else if (language == "Japanese") {
-        $(".HRtPf").html("Touhou 1 - Highly Responsive to Prayers");
+        $(".HRtPf").html("東方靈異伝　～ Highly Responsive to Prayers");
         $(".SoEWf").html("東方封魔録　～ the Story of Eastern Wonderland");
         $(".PoDDf").html("東方夢時空　～ Phantasmagoria of Dim.Dream");
         $(".LLSf").html("東方幻想郷　～ Lotus Land Story");
@@ -379,7 +379,7 @@ function generateFullNames() {
         $(".EoSDf").html("東方紅魔郷　～ the Embodiment of Scarlet Devil");
         $(".PCBf").html("東方妖々夢　～ Perfect Cherry Blossom");
         $(".INf").html("東方永夜抄　～ Imperishable Night");
-        $(".PoFVf").html("Touhou 9 - Phantasmagoria of Flower View");
+        $(".PoFVf").html("東方花映塚　～ Phantasmagoria of Flower View");
         $(".MoFf").html("東方風神録　～ Mountain of Faith");
         $(".SAf").html("東方地霊殿　～ Subterranean Animism");
         $(".UFOf").html("東方星蓮船　～ Undefined Fantastic Object");
@@ -390,7 +390,7 @@ function generateFullNames() {
         $(".HSiFSf").html("東方天空璋　～ Hidden Star in Four Seasons");
         $(".WBaWCf").html("東方鬼形獣　～ Wily Beast and Weakest Creature");
     } else {
-        $(".HRtPf").html("Touhou 1 - Highly Responsive to Prayers");
+        $(".HRtPf").html("东方灵异传　～ Highly Responsive to Prayers");
         $(".SoEWf").html("东方封魔录　～ the Story of Eastern Wonderland");
         $(".PoDDf").html("东方梦时空　～ Phantasmagoria of Dim.Dream");
         $(".LLSf").html("东方幻想乡　～ Lotus Land Story");
@@ -398,7 +398,7 @@ function generateFullNames() {
         $(".EoSDf").html("东方红魔乡　～ the Embodiment of Scarlet Devil");
         $(".PCBf").html("东方妖妖梦　～ Perfect Cherry Blossom");
         $(".INf").html("东方永夜抄　～ Imperishable Night");
-        $(".PoFVf").html("Touhou 9 - Phantasmagoria of Flower View");
+        $(".PoFVf").html("东方花映塚　～ Phantasmagoria of Flower View");
         $(".MoFf").html("东方风神录　～ Mountain of Faith");
         $(".SAf").html("东方地灵殿　～ Subterranean Animism");
         $(".UFOf").html("东方星莲船　～ Undefined Fantastic Object");
