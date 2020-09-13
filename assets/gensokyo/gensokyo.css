@@ -56,7 +56,10 @@ form {
 #wrap {
     padding-bottom: 15px;
 }
-#hy {
+#previous {
+    float: left;
+}
+#hy, #next {
     float: right;
 }
 #player {
