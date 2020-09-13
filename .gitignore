@@ -4,6 +4,7 @@ lnnlist.json
 wrlist.json
 admin/detect.js
 admin/*.png
+replays/*
 .stats/*
 *.txt
 .htaccess
