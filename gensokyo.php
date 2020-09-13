@@ -33,6 +33,16 @@
                 $diff = '-';
             }
         }
+        if (!empty($_GET['pl'])) {
+            $PAGE_LENGTH = (int) $_GET['pl'];
+        } else {
+            $PAGE_LENGTH = 25;
+        }
+        if (!empty($_GET['page'])) {
+            $p = $_GET['page'] * $PAGE_LENGTH - $PAGE_LENGTH;
+        } else {
+            $p = 0;
+        }
     }
 ?>
 
@@ -123,6 +133,10 @@
                     <label for='co'><img src='assets/gensokyo/co.gif' title='Other Condition' alt='Other icon'></label>
                     <input id='co' name='co' type='checkbox'<?php echo $_GET['co'] == 'on' ? ' checked' : '' ?>>
                 </p>
+                <p>
+                    <label for='pl'>Page length</label>
+                    <input id='pl' name='pl' type='number' value='<?php echo $_GET['pl'] ? ((int) $_GET['pl']) : 25 ?>' min='1'>
+                </p>
                 <p><input type='submit' value='Search'></p>
             </form>
             <?php
@@ -150,7 +164,8 @@
                     }
                     echo '</tbody><tfoot><tr><th id="back" colspan="2"><a href="' . $backlink[0] . '">Back</a></th></tr></tfoot></table>';
                 } else if ($searched) {
-                    $found = false;
+                    $i = -1;
+                    $found = 0;
                     foreach ($reps as $key => $rep) {
                         if (!empty($player) && stripos($rep['player'], $player) !== 0) {
                             continue;
@@ -204,29 +219,52 @@
                         if ($_GET['co'] == 'on' && strpos($rep['conditions'], 'Other Condition') === false) {
                             continue;
                         }
+                        $i += 1;
+                        if ($i < $p) {
+                            continue;
+                        } else if ($i == $p + $PAGE_LENGTH) {
+                            break;
+                        }
                         foreach (glob('replays/gensokyo/' . $key . '/*.rpy') as $file) {
-                            if (!$found) {
+                            if ($found === 0) {
                                 echo '<table id="replays" class="sortable"><thead><tr><th>Player</th><th>Category</th><th>Score</th>' .
                                 '<th class="sorttable_mmdd">Date added</th><th>Type</th><th>Conditions</th><th>Download</th></tr></thead><tbody>';
-                                $found = true;
                             }
                             $replay = explode('/', $file);
                             echo '<tr><td><a href="' . $_SERVER['REQUEST_URI'] . '&id=' . $key . '">' . $rep['player'] . '</a></td><td>' . $rep['category'] .
                             '<br>' . $rep['shottype'] . '</td><td>' . $rep['score'] .
                             '</td><td>' . str_replace(' ', '<br>', $rep['date']) . '</td><td>' . $rep['type'] .
                             '</td><td>' . $rep['conditions'] . '</td><td><a href="' . $file . '">' . $replay[3] . '</a></td></tr>';
+                            $found += 1;
                         }
                     }
-                    if ($found) {
+                    if ($found > 0) {
                         echo '</tbody></table>';
+                        if ($p > 0) {
+                            $url = substr($_SERVER[REQUEST_URI], 0, -1);
+                            echo '<a id="previous" href="' . $url . ($p / $PAGE_LENGTH) . '">&lt;= Previous</a>';
+                        }
+                        if ($found >= $PAGE_LENGTH) {
+                            $url = $_SERVER[REQUEST_URI];
+                            if (!strpos($url, '&page=')) {
+                                echo '<a id="next" href="' . $url . '&page=2">Next =&gt;</a>';
+                            } else {
+                                echo '<a id="next" href="' . substr($url, 0, -1) . (($p / $PAGE_LENGTH) + 2) . '">Next =&gt;</a>';
+                            }
+                        }
                     } else {
                         echo 'No replays found.';
+                        $url = $_SERVER[REQUEST_URI];
+                        if (strpos($url, '&page=')) {
+                            echo '<p><a id="previous" href="' . substr($url, 0, -1) . ($p / $PAGE_LENGTH) .
+                            '">&lt;= Previous</a></p>';
+                        }
                     }
                 }
             ?>
             <h2 id='ack'>Acknowledgements</h2>
             <p id='credit'>The background image was drawn by <a href='http://h-yde.deviantart.com/'>h-yde</a>.</p>
-            <p id='back'><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
+            <p><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
         </div>
         <script src='assets/shared/dark.js'></script>
     </body>
