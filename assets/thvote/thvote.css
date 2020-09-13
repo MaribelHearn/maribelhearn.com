@@ -31,6 +31,13 @@ table {
     margin-left: auto;
     margin-right: auto;
 }
+.border p {
+    margin: 4px;
+}
+.border {
+    border: 1px solid black;
+    display: inline-block;
+}
 .left {
     text-align: left;
 }
@@ -181,7 +188,7 @@ table {
 #hy {
     float: right;
 }
-#contents, #responses {
+#responses {
     border: 1px solid #000;
 }
 @media only screen and (min-width:1500px) and (max-width:1850px) {
