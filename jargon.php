@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang='en'>
+<html id='top' lang='en'>
 <?php include '.stats/count.php'; hit(basename(__FILE__)); ?>
 
 	<head>
@@ -666,7 +666,7 @@
                     </tr>
                 </tbody>
             </table>
-            <p id='back'><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
+            <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
         </div>
         <script src='assets/shared/dark.js'></script>
     </body>

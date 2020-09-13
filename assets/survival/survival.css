@@ -112,6 +112,9 @@ h2 {
 .result {
     margin-bottom: 5px;
 }
+.noborders {
+    border: none;
+}
 @media only screen and (min-width: 800px) and (max-width: 1400px) {
     .wrap {
         margin-left: 15%;

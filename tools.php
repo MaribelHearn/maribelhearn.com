@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html id='top' lang='en'>
 <?php include '.stats/count.php'; hit(basename(__FILE__)); ?>
 
 	<head>
@@ -359,7 +359,7 @@
 			<p id='credit' class='noborders'>The background image
 			was drawn by <a href='https://www.pixiv.net/member.php?id=66609'>青葉</a>.</p>
 			<hr>
-            <p id='back'><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
+            <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
         </div>
         <script src='assets/shared/dark.js'></script>
     </body>

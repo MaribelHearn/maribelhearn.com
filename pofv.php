@@ -58,6 +58,7 @@
                     <td class='noborders'>
                         <abbr title='Reimu Hakurei'><img class='char' src='assets/pofv/characters/reimu-cropped.png' alt='Reimu Hakurei'></abbr>
                     </td>
+                    <td class='hidden'></td>
                 </tr>
                 <tr>
                     <th id='a' class='tier'>A</th>
@@ -70,6 +71,7 @@
                     <td class='noborders'>
                         <abbr title='Lyrica Prismriver'><img class='char' src='assets/pofv/characters/lyrica-cropped.png' alt='Lyrica Prismriver'></abbr>
                     </td>
+                    <td class='hidden'></td>
                 <tr>
                     <th id='b' class='tier'>B</th>
                     <td class='noborders'>
@@ -81,6 +83,7 @@
                     <td class='noborders'>
                         <abbr title='Reisen Udongein Inaba'><img class='char' src='assets/pofv/characters/reisen-cropped.png' alt='Reisen Udongein Inaba'></abbr>
                     </td>
+                    <td class='hidden'></td>
                 </tr>
                 <tr>
                     <th id='c' class='tier'>C</th>
@@ -93,6 +96,7 @@
                     <td class='noborders'>
                         <abbr title='Merlin Prismriver'><img class='char' src='assets/pofv/characters/merlin-cropped.png' alt='Merlin Prismriver'></abbr>
                     </td>
+                    <td class='hidden'></td>
                 </tr>
                 <tr>
                     <th id='d' class='tier'>D</th>

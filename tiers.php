@@ -76,7 +76,7 @@
                                     <span class='hidden'>.</span>
                                     <input id='add_tier_mobile' type='button' value='Add Tier'>
                                 </label>
-                            </td>
+                            </td><td class='hidden'></td>
                         </tr>
                     </thead>
                     <tbody id='tier_list_tbody'></tbody>
@@ -88,7 +88,7 @@
                                     <span class='hidden'>.</span>
                                     <input id='add_tier' type='button' value='Add Tier'>
                                 </label>
-                            </td>
+                            </td><td class='hidden'></td>
                         </tr>
                     </tfoot>
                 </table>

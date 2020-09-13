@@ -526,6 +526,7 @@ $(document).ready(function () {
     var datestrings, i;
     $("#newlayout").css("display", "block");
     $("#playersearch").css("display", "block");
+    $("#contents_new").css("display", "table");
     $("#westernlink").css("display", "table-row");
     $("#playersearchlink").css("display", "table-row");
     $("#layouttoggle").on("click", toggleLayout);

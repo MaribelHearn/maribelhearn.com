@@ -10,13 +10,15 @@
     </head>
 
     <body class='<?php include '.stats/count.php'; echo check_webp() ?>'>
-        <div id='wrap'>
-            <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
-            <h1>401</h1>
-            <p><strong>Unauthorized</strong></p>
-            <p>You got only 401 points? That's not a very good score. I would suggest you go for at least 1 billion!</p>
-            <p><a id='backtomain' href='/'>Back to Main Page</a></p>
-        </div>
+        <main>
+            <div id='wrap'>
+                <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
+                <h1>401</h1>
+                <p><strong>Unauthorized</strong></p>
+                <p>You got only 401 points? That's not a very good score. I would suggest you go for at least 1 billion!</p>
+                <p><a id='backtomain' href='/'>Back to Main Page</a></p>
+            </div>
+        </main>
         <script src='assets/shared/dark.js'></script>
     </body>
 

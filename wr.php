@@ -675,31 +675,33 @@
 				else if ($lang == 'Japanese') { echo '内容'; }
 				else { echo '内容'; }
 			?></h2>
-            <table id='contents'>
-				<tr id='overall_link'><td><a href='#overall' class='overallrecords'>
-                    <?php echo tl_term('Overall Records', $lang); ?>
-                </a></td></tr>
-				<tr id='overall_linkm'><td><a href='#overallm' class='overallrecords'>
-                    <?php echo tl_term('Overall Records', $lang); ?>
-                </a></td></tr>
-				<tr><td><a href='#wrs' class='worldrecords'><?php echo tl_term('World Records', $lang); ?></a></td></tr>
-                <?php
-                    // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
-                    if ($layout == 'New') {
-                        echo '<noscript>';
-                    }
-                    foreach ($wr as $game => $value) {
-                        echo '<tr><td><a href="#' . $game . '">' . full_name($game, $lang) . '</a></td></tr>';
-                    }
-                    echo '<tr id="westernlink"><td><a href="#western">' . tl_term('Western Records', $lang) . '</a></td></tr>';
-                    echo '<tr id="playersearchlink"><td><a href="#playerwrs">' . tl_term('Player Search', $lang) . '</a></td></tr>';
-                    if ($layout == 'New') {
-                        echo '</noscript>';
-                    }
-                ?>
-                <tr><td><a href='#players' class='playerranking'><?php echo tl_term('Player Ranking', $lang); ?></a></td></tr>
-				<tr><td><a href='#ack' class='ack'><?php echo tl_term('Acknowledgements', $lang); ?></a></td></tr>
-            </table>
+            <?php
+                // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
+                if ($layout == 'New') {
+                    echo '<table id="contents_new"><tr id="overall_link"><td><a href="#overall" ' .
+                    'class="overallrecords">' . tl_term('Overall Records', $lang) . '</a></td></tr>' .
+                    '<tr id="overall_linkm"><td><a href="#overallm" class="overallrecords">' . tl_term('Overall Records', $lang) .
+                    '</a></td></tr><tr><td><a href="#wrs" class="worldrecords">' . tl_term('World Records', $lang) . '
+                    </a></td></tr><tr><td><a href="#players" class="playerranking">' . tl_term('Player Ranking', $lang) .
+                    '</a></td></tr><tr><td><a href="#ack" class="ack">' . tl_term('Acknowledgements', $lang) .
+                    '</a></td></tr></table><noscript>';
+                }
+                echo '<table id="contents"><tr id="overall_link"><td><a href="#overall" ' .
+                'class="overallrecords">' . tl_term('Overall Records', $lang) . '</a></td></tr>' .
+                '<tr id="overall_linkm"><td><a href="#overallm" class="overallrecords">' . tl_term('Overall Records', $lang) .
+                '</a></td></tr><tr><td><a href="#wrs" class="worldrecords">' . tl_term('World Records', $lang) . '
+                </a></td></tr>';
+                foreach ($wr as $game => $value) {
+                    echo '<tr><td><a href="#' . $game . '">' . full_name($game, $lang) . '</a></td></tr>';
+                }
+                echo '<tr id="westernlink"><td><a href="#western">' . tl_term('Western Records', $lang) . '</a></td></tr>';
+                echo '<tr id="playersearchlink"><td><a href="#playerwrs">' . tl_term('Player Search', $lang) . '</a></td></tr>';
+                echo '<tr><td><a href="#players" class="playerranking">' . tl_term('Player Ranking', $lang) . '</a></td></tr>';
+                echo '<tr><td><a href="#ack" class="ack">' . tl_term('Acknowledgements', $lang) . '</a></td></tr></table>';
+                if ($layout == 'New') {
+                    echo '</noscript>';
+                }
+            ?>
             <table id='checkboxes'>
                 <tr class='noborders'><td class='noborders'>
                     <input id='dates' type='checkbox'>

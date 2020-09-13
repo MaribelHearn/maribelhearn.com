@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang='en'>
+<html id='top' lang='en'>
 <?php
 	include '.stats/count.php';
 	hit(basename(__FILE__));
@@ -824,7 +824,7 @@
 					</tbody>
                 </table>
                 <br>
-                <p><strong><a class='backToTop' href='#nav'><?php echo tl_term('Back to Top', $lang) ?></a></strong></p>
+                <p><strong><a class='backToTop' href='#top'><?php echo tl_term('Back to Top', $lang) ?></a></strong></p>
 			</div>
 			<div id='survivalRubrics'>
                 <p><strong id='survivalNotes'><?php
@@ -983,7 +983,7 @@
 					</tbody>
                 </table>
                 <br>
-                <p><strong><a class='backToTop' href='#nav'><?php echo tl_term('Back to Top', $lang) ?></a></strong></p>
+                <p><strong><a class='backToTop' href='#top'><?php echo tl_term('Back to Top', $lang) ?></a></strong></p>
             </div>
             <h2 id='ackText'><?php
 				if ($lang == 'English') { echo 'Acknowledgements'; }

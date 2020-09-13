@@ -1,7 +1,7 @@
 body {
     color: white;
 }
-div, #results {
+div {
     background-color: #202020;
 }
 a:link:not(.replay):not(.i) {
@@ -35,6 +35,12 @@ table#contents,  tr:not(.noborders), th:not(.noborders), td:not(.noborders) {
 }
 ::before {
     color: white;
+}
+.g {
+    color: lime;
+}
+.r {
+    color: black;
 }
 #contents tr, #contents th, #contents td, #responses tr, #responses th, #responses td, #jargontable th, #jargontable td,
 #spelltable th, #spelltable td, #bullettable th, #bullettable td, .border td, .center th, .center td {

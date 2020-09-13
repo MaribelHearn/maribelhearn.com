@@ -44,7 +44,7 @@ h2 {
     border: 1px solid black;
 }
 #bullettable, #jargontable, #spelltable {
-    text-align: justify;
+    text-align: left;
 }
 #bullettable {
     margin-left: auto;

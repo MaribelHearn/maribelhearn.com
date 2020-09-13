@@ -944,7 +944,7 @@
             <h2>01. Age</h2>
             <div id='age_summary'>
             <caption>Valid responses: 13,370　<button id='age_summary_button'>Detailed view</button></caption>
-            <table class='table sortable'>
+            <table class='poll table sortable'>
                 <colgroup>
                     <col class='col2qm'>
                     <col class='col3q'>
@@ -969,7 +969,7 @@
             </div>
             <div id='age_detail'>
             <caption>Valid responses: 13,370　<button id='age_detail_button'>Simple view</button></caption>
-            <table class='table sortable'>
+            <table class='poll sortable'>
                 <colgroup>
                     <col class='col2qm'>
                     <col class='col3q'>
@@ -1038,7 +1038,7 @@
             </div>
             <h2>02. Gender</h2>
             <caption>Valid responses: 13,416</caption>
-            <table class='table sortable'>
+            <table class='poll sortable'>
                 <colgroup>
                     <col class='col2qm'>
                     <col class='col3q'>
@@ -1054,7 +1054,7 @@
             </table>
             <h2>03. Location</h2>
             <caption>Valid responses: 13,034</caption>
-            <table class='table sortable'>
+            <table class='poll sortable'>
                 <colgroup>
                     <col class='col2q'>
                     <col class='col3q'>
@@ -1090,7 +1090,7 @@
             <h2>04. Difficulty level 1cc'd</h2>
             <div id='clear_dummy' class='dummy'><div class='dummy_sub'></div></div>
             <div id='clear_container' class='container'>
-                <table class='table'>
+                <table class='poll'>
                     <colgroup>
                         <col class='col2 w7'>
                         <col class='col3q'>
@@ -1148,7 +1148,7 @@
             <h2>05. Publications subscribed to</h2>
             <h3>Curiosities of Lotus Asia</h3>
             <caption>Valid responses: 10,102</caption>
-            <table class='table'>
+            <table class='poll'>
                 <colgroup>
                     <col class='col2q'>
                     <col class='col3q'>
@@ -1161,7 +1161,7 @@
             </table>
             <h3>Foul Detective Satori</h3>
             <caption>Valid responses: 9,999</caption>
-            <table class='table'>
+            <table class='poll'>
                 <colgroup>
                     <col class='col2q'>
                     <col class='col3q'>
@@ -1176,7 +1176,7 @@
             </table>
             <h3>Lotus Eaters</h3>
             <caption>Valid responses: 9,589</caption>
-            <table class='table'>
+            <table class='poll'>
                 <colgroup>
                     <col class='col2q'>
                     <col class='col3q'>
@@ -1189,7 +1189,7 @@
             </table>
             <h2>06. What do you like about Touhou? (Multiple answers possible)</h2>
             <caption>Valid responses: 14,324</caption>
-            <table class='table sortable'>
+            <table class='poll sortable'>
                 <colgroup>
                     <col class='col2q'>
                     <col class='col3q'>
@@ -1210,7 +1210,7 @@
             </table>
             <h2>07. When did you discover Touhou?</h2>
             <caption>Valid responses: 13,834</caption>
-            <table class='table sortable'>
+            <table class='poll sortable'>
                 <colgroup>
                     <col class='col2q'>
                     <col class='col3q'>
@@ -1245,7 +1245,7 @@
             </table>
             <h2>08. How did you discover Touhou?</h2>
             <caption>Valid responses: 13,475</caption>
-            <table class='table sortable'>
+            <table class='poll sortable'>
                 <colgroup>
                     <col class='col2ql'>
                     <col class='col3q'>
@@ -1274,7 +1274,7 @@
             <h2>08. Correlation between when and how people discovered Touhou</h2>
             <div id='corr_dummy' class='dummy'><div class='dummy_sub'></div></div>
             <div id='corr_container' class='container'>
-                <table class='table'>
+                <table class='poll'>
                     <colgroup>
                         <col class='col2 w7'>
                         <col class='col3q'>
@@ -1386,7 +1386,7 @@
             </table>
             <h2>10. Have you voted on the Touhou Popularity Poll before?</h2>
             <caption>Valid responses: 14,151</caption>
-            <table class='table sortable'>
+            <table class='poll sortable'>
                 <colgroup>
                     <col class='col2q'>
                     <col class='col3q'>

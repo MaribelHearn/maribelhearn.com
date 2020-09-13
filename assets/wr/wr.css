@@ -30,10 +30,7 @@ table {
 table, th, td {
     border: 1px solid #000;
 }
-#checkboxes {
-    display: none;
-}
-#checkboxes th, #checkboxes td, #contents th, #contents td {
+#checkboxes th, #checkboxes td, #contents th, #contents td, #contents_new th, #contents_new td {
     border: none;
 }
 #nav {
@@ -48,8 +45,8 @@ table, th, td {
 #top {
     width: 100%;
 }
-#overall_linkm, #overallm, #list, #playerlist, #playersearch,
-#seasontoggle, #layouttoggle, #newlayout, #playersearchlink {
+#overall_linkm, #overallm, #list, #playerlist, #playersearch, #checkboxes,
+#seasontoggle, #layouttoggle, #newlayout, #playersearchlink, #contents_new {
     display: none;
 }
 #list, #playerlist {
