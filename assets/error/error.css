@@ -1,8 +1,8 @@
 @font-face {
   font-family: Felipa;
   font-display: swap;
-  src: url('../shared/Felipa-Regular.woff2') format('woff2'),
-       url('../shared/Felipa-Regular.woff') format('woff');
+  src: url('https://maribelhearn.com/assets/shared/Felipa-Regular.woff2') format('woff2'),
+       url('https://maribelhearn.com/assets/shared/Felipa-Regular.woff') format('woff');
 }
 body.webp {
     background: url('https://maribelhearn.com/assets/index/index.webp') center no-repeat fixed;

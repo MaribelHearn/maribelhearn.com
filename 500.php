@@ -10,14 +10,16 @@
     </head>
 
     <body class='<?php include '.stats/count.php'; echo check_webp() ?>'>
-        <div id='wrap'>
-            <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
-            <h1>500</h1>
-            <p><strong>Internal Server Error</strong></p>
-            <p>The server encountered an internal error or misconfiguration and was unable to complete your request.</p>
-            <p><a id='backtomain' href='/'>Back to Main Page</a></p>
-            <script src='assets/shared/dark.js'></script>
-        </div>
+        <main>
+            <div id='wrap'>
+                <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
+                <h1>500</h1>
+                <p><strong>Internal Server Error</strong></p>
+                <p>The server encountered an internal error or misconfiguration and was unable to complete your request.</p>
+                <p><a id='backtomain' href='/'>Back to Main Page</a></p>
+                <script src='assets/shared/dark.js'></script>
+            </div>
+        </main>
     </body>
 
 </html>

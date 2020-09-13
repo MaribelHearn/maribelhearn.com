@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang='en'>
+<html id='top' lang='en'>
 <?php
 	include '.stats/count.php';
 	hit(basename(__FILE__));
@@ -76,17 +76,17 @@
             page, sortable tables will be generated to tell you how your scores compare to the world records.</p>
             <p>Your scores should not include any characters other than digits, dots, commas and spaces.</p>
             <h2>Contents</h2>
-            <table id='contents' class='center'>
+            <div id='contents' class='border'>
 				<?php
 					foreach ($games as $key => $game) {
-						echo '<tr><td><a href="#' . $game . '">' . full_name($game) . '</a></td></tr>';
+						echo '<p><a href="#' . $game . '">' . full_name($game) . '</a></p>';
 						if ($game == 'MS') {
-							echo '<tr><td><br></td></tr>';
+							echo '<p><br></p>';
 						}
 					}
 				?>
-                <tr><td><a href='#ack'>Acknowledgements</a></td></tr>
-            </table>
+                <p><a href='#ack'>Acknowledgements</a></p>
+            </div>
             <h2>Customize</h2>
             <table id='checkboxes' class='center'>
                 <tbody>
@@ -177,9 +177,9 @@
             </table>
 			<?php
 				foreach ($games as $key => $game) {
-					echo '<div id="' . $game . '"><p><img src="games/' . strtolower($game) .
+					echo '<div id="' . $game . '"><caption><img src="games/' . strtolower($game) .
 					'50x50.jpg" ' . ($key < 5 ? 'class="cover98" ' : '') . 'alt="' . $game .
-					' cover"><u>' . full_name($game) . '</u></p><table class="center"><tr><th>Route</th>';
+					' cover"><u>' . full_name($game) . '</u></caption><table class="center"><tr><th>Route</th>';
 					foreach ($diffs as $key => $diff) {
 						if (no_extra($game) && $diff == 'Extra') {
 							break;
@@ -196,6 +196,7 @@
 								break;
 							}
 							if ($game == 'HSiFS' && $diff == 'Extra' && substr($shot, -6) != 'Spring') {
+								echo '<td></td>';
 								continue;
 							} else if ($game == 'HSiFS' && $diff == 'Extra') {
 								$shot = substr($shot, 0, -6);
@@ -226,7 +227,7 @@
 			<h2 id='ack'>Acknowledgements</h2>
 			<p id='credit'>The background image
 			was drawn by <a href='https://www.pixiv.net/member.php?id=87950'>りすたる</a>.</p>
-            <p id='back'><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
+            <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
 		</div>
         <script src='assets/shared/dark.js'></script>
 	</body>

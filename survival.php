@@ -110,6 +110,7 @@
 							echo '<tr><td>' . $game . '</td>';
 							foreach ($diffs as $key => $diff) {
 								if (no_extra($game, $diff) && $diff == 'Extra') {
+									echo '<td class="noborders"></td><td class="noborders"></td>';
 									continue;
 								}
 								echo '<td><select id="' . $game . $diff . '" class="category">';
@@ -123,6 +124,8 @@
 										echo '<option>' . $achiev . '</option>';
 									}
 									echo '</select></td>';
+								} else if ($game != 'PCB' && $diff == 'Extra') {
+									echo '<td class="noborders"></td>';
 								}
 							}
 							echo '</tr>';

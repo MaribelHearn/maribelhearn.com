@@ -189,7 +189,7 @@ function setLanguage(event) {
 }
 $(document).ready(function () {
     $("#player").on("change", getPlayerLNNs);
-    $(".en, .jp, .zh").attr("href", "");
+    $(".en, .jp, .zh").attr("href", "lnn");
     $(".en").on("click", {language: "English"}, setLanguage);
     $(".jp").on("click", {language: "Japanese"}, setLanguage);
     $(".zh").on("click", {language: "Chinese"}, setLanguage);

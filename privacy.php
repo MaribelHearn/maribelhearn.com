@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html id='top' lang='en'>
 
     <head>
 		<title>Privacy Policy - Maribel Hearn's Web Portal</title>
@@ -14,7 +14,7 @@
             <span id='links'><a href='/'>Back to Main Page</a></span>
             <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
             <h1>Privacy Policy</h1>
-            <p><strong>Effective date:</strong> 16 December 2019</p>
+            <p class='wide'><strong>Effective date:</strong> 16 December 2019</p>
             <p>Maribel Hearn's Web Portal ("us", "we", or "our") operates the <a href='/'>https://maribelhearn.com</a>
             website (hereinafter referred to as the "Service").</p>
             <p>This page informs you of our policies regarding the collection, use,
@@ -26,7 +26,7 @@
 
             <h2>Definitions</h2>
             <p><strong>Service</strong></p>
-            <p>Service is the <a href='/'>https://maribelhearn.com</a> website operated by Maribel Hearn's Web Portal</p>
+            <p>Service is the https://maribelhearn.com website operated by Maribel Hearn's Web Portal</p>
             <p><strong>Personal Data</strong></p>
             <p>Personal Data means data about a living individual who can be identified from those data (or from those and other information either in our possession or likely to come into our possession).</p>
             <p><strong>Usage Data</strong></p>
@@ -67,7 +67,7 @@
                 <li>By email: maribelhearn42@gmail.com</li>
             </ul>
 
-            <p><strong><a href='#wrap'>Back to Top</a></strong></p>
+            <p><strong><a href='#top'>Back to Top</a></strong></p>
         </div>
         <script src='assets/shared/dark.js'></script>
     </body>

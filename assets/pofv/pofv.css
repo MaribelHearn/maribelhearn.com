@@ -155,6 +155,9 @@ ol > li {
 .char {
     cursor: pointer;
 }
+.hidden {
+    display: none;
+}
 @media only screen and (min-width:1500px) and (max-width:1800px) {
     #modal_inner {
         width: 55%;

@@ -28,6 +28,7 @@ h3 {
     font-size: 24px;
 }
 table {
+    overflow: auto;
     margin-left: auto;
     margin-right: auto;
 }
@@ -156,9 +157,6 @@ table {
 .col9per {
     width: 4.9em;
     background: #eef;
-}
-.table {
-    overflow: auto;
 }
 /*.table tbody {
     counter-reset: sortabletablescope;

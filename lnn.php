@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html id='top' lang='en'>
 <?php
     include '.stats/count.php';
     hit(basename(__FILE__));
@@ -237,12 +237,12 @@
 				else if ($lang == 'Japanese') { echo '内容'; }
 				else { echo '内容'; }
 			?></h2>
-            <table id='contents'>
-                <tr><td><a href='#lnns' class='lnns'><?php echo tl_term('LNN Lists', $lang); ?></a></td></tr>
-                <tr><td><a href='#overall' class='overallcount'><?php echo tl_term('Overall Count', $lang); ?></a></td></tr>
-                <tr><td><a href='#players' class='playerranking'><?php echo tl_term('Player Ranking', $lang); ?></a></td></tr>
-				<tr><td><a href='#ack' class='ack'><?php echo tl_term('Acknowledgements', $lang); ?></a></td></tr>
-            </table>
+            <div id='contents' class='border'>
+                <p><a href='#lnns' class='lnns'><?php echo tl_term('LNN Lists', $lang); ?></a></p>
+                <p><a href='#overall' class='overallcount'><?php echo tl_term('Overall Count', $lang); ?></a></p>
+                <p><a href='#players' class='playerranking'><?php echo tl_term('Player Ranking', $lang); ?></a></p>
+				<p><a href='#ack' class='ack'><?php echo tl_term('Acknowledgements', $lang); ?></a></p>
+            </div>
 			<h2 id='lnns' class='lnns'><?php echo tl_term('LNN Lists', $lang); ?></h2>
 			<p id='clickgame'><?php
 				if ($lang == 'English') { echo 'Click a game cover to show its list of LNNs.'; }
@@ -380,9 +380,9 @@
             </div>
 			<div id='ack'>
             	<h2 class='ack'><?php echo tl_term('Acknowledgements', $lang); ?></h2>
-	            <table class='noborders'>
-					<tr class='noborders'>
-						<td id='credit' class='noborders'><?php
+	            <div id='ack_container'>
+					<p id='credit'>
+                        <?php
                             if ($lang == 'English') {
                                 echo 'The background image was drawn by ' .
                                 '<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>.';
@@ -394,10 +394,10 @@
                             else {
                                 echo '背景画师：<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>。';
                             }
-                        ?></td>
-					</tr>
-                    <tr class='noborders'>
-                        <td id='jptlcredit' class='noborders'><?php
+                        ?>
+                    </p>
+					</p id='jptlcredit' class='noborders'>
+                        <?php
                             if ($lang == 'English') {
                                 echo 'The Japanese translation of the top text was done by ' .
                                 '<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.';
@@ -410,10 +410,10 @@
                                 echo '感谢<a href="https://twitter.com/toho_yumiya">Yu-miya</a>' .
                                 '提供头部文字的日语翻译。';
                             }
-                        ?></td>
-                    </tr>
-                    <tr class='noborders'>
-                        <td id='cntlcredit' class='noborders'><?php
+                        ?>
+                    </p>
+                    <p id='cntlcredit' class='noborders'>
+                        <?php
                             if ($lang == 'English') {
                                 echo 'The Chinese translation of the top text was done by ' .
                                 '<a href="https://twitter.com/williewillus">williewillus</a>.';
@@ -426,11 +426,11 @@
                                 echo '感谢<a href="https://twitter.com/williewillus">williewillus</a>' .
                                 '提供头部文字的中文翻译。';
                             }
-                        ?></td>
-                    </tr>
+                        ?>
+                    </p>
 	            </table>
 			</div>
-            <p id='back'><strong><a id='backtotop' href='#nav'><?php echo tl_term('Back to Top', $lang); ?></a></strong></p>
+            <p id='back'><strong><a id='backtotop' href='#top'><?php echo tl_term('Back to Top', $lang); ?></a></strong></p>
 		</div>
         <script src='assets/shared/dark.js'></script>
     </body>
