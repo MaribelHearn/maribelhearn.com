@@ -82,16 +82,28 @@ p {
 #tiers {
     width: 68%;
 }
-@media only screen and (min-width:800px) and (max-width:1400px) {
+@media only screen and (min-width:1000px) and (max-width:1400px) {
     #wrap {
         margin-left: 15%;
         margin-right: 15%;
+    }
+}
+@media only screen and (min-width:800px) and (max-width:1000px) {
+    #wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    #avatar {
+        width: 95%;
     }
 }
 @media only screen and (max-width:800px) {
     #wrap {
         margin-left: 0;
         margin-right: 0;
+    }
+    #avatar {
+        width: 95%;
     }
 }
 @media only screen and (min-device-width:320px) and (max-device-width:800px) and (orientation:portrait) {
@@ -100,11 +112,20 @@ p {
         margin-right: 0;
         font-size: 11px;
     }
+    #avatar, #map, #tiers {
+        width: 95%;
+    }
     h1 {
         font-size: 36px;
     }
     h2 {
         font-size: 24px;
+    }
+    ul {
+        margin: 0px 0% 0px;
+    }
+    li {
+        margin: 0px;
     }
 }
 @media only screen and (min-device-width:480px) and (max-device-width:640px) and (orientation:landscape) {
@@ -113,10 +134,19 @@ p {
         margin-right: 0;
         font-size: 11px;
     }
+    #avatar, #map, #tiers {
+        width: 95%;
+    }
     h1 {
         font-size: 36px;
     }
     h2 {
         font-size: 24px;
+    }
+    ul {
+        margin: 0px 0% 0px;
+    }
+    li {
+        margin: 0px;
     }
 }
