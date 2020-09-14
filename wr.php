@@ -151,69 +151,6 @@
             }
         }
     }
-    function tl_term($term, $lang) {
-        if ($lang == 'Japanese') {
-	        $term = trim($term);
-			switch ($term) {
-				case 'Game': return 'ゲーム';
-				case 'Score': return 'スコア';
-                case 'Player': return 'プレイヤー';
-				case 'Category': return 'カテゴリー';
-				case 'Difficulty': return '難易度';
-                case 'Shottype': return 'キャラ';
-                case 'Route': return 'ルート';
-                case 'Seasons': return '季節';
-				case 'Date': return '日付';
-				case 'Dates': return '日付';
-				case 'No. of WRs': return 'WR数';
-				case 'Different games': return 'ゲーム';
-                case 'World': return '世界';
-                case 'West': return '海外';
-                case 'Percentage': return '割合';
-				case 'Overall': return '合計';
-				case 'Overall Records': return '各作品世界記録一覧';
-                case 'World Records': return '世界記録';
-                case 'Western Records': return '海外記録';
-                case 'Player Search': return '個人のWR';
-                case 'Player Ranking': return 'プレイヤーのランキング';
-                case 'Acknowledgements': return '謝辞';
-                case 'Touhou World Records': return '東方の世界記録';
-				case 'Back to Top': return '上に帰る';
-	            default: return $term;
-	        }
-		} else if ($lang == 'Chinese') {
-	        $term = trim($term);
-			switch ($term) {
-				case 'Game': return '游戏';
-				case 'Score': return '分数';
-                case 'Player': return '玩家';
-				case 'Category': return '项目';
-				case 'Difficulty': return '难度';
-                case 'Shottype': return '机体';
-                case 'Route': return '路线';
-                case 'Seasons': return '季节';
-				case 'Date': return '日期';
-				case 'Dates': return '日期';
-				case 'No. of WRs': return 'WR数量';
-				case 'Different games': return '游戏';
-                case 'World': return '世界';
-                case 'West': return '西方';
-                case 'Percentage': return '百分';
-				case 'Overall': return '合計';
-				case 'Overall Records': return '整体世界纪录';
-                case 'World Records': return '世界纪录';
-                case 'Western Records': return '西方纪录';
-                case 'Player Search': return '玩家WR';
-                case 'Player Ranking': return '玩家排行';
-                case 'Acknowledgements': return '致谢';
-                case 'Touhou World Records': return '东方世界纪录';
-				case 'Back to Top': return '回到顶部';
-	            default: return $term;
-	        }
-		} else {
-			return $term;
-		}
-    }
     function game_tl($game, $lang) {
         if ($lang == 'Japanese') {
             switch ($game) {
@@ -261,6 +198,15 @@
             }
         }
         return $game;
+    }
+    function player_search($lang) {
+        if ($lang == 'English') {
+            return 'Player Search';
+        } else if ($lang == 'Japanese') {
+            return '個人のWR';
+        } else {
+            return '玩家WR';
+        }
     }
 	foreach ($wr as $game => $value) {
 		$num = num($game);
@@ -447,7 +393,7 @@
                     echo '<tr><td><a href="#' . $game . '">' . full_name($game, $lang) . '</a></td></tr>';
                 }
                 echo '<tr id="westernlink"><td><a href="#western">' . tl_term('Western Records', $lang) . '</a></td></tr>';
-                echo '<tr id="playersearchlink"><td><a href="#playerwrs">' . tl_term('Player Search', $lang) . '</a></td></tr>';
+                echo '<tr id="playersearchlink"><td><a href="#playerwrs">' . player_search($lang) . '</a></td></tr>';
                 echo '<tr><td><a href="#players" class="playerranking">' . tl_term('Player Ranking', $lang) . '</a></td></tr>';
                 echo '<tr><td><a href="#ack" class="ack">' . tl_term('Acknowledgements', $lang) . '</a></td></tr></table>';
                 if ($layout == 'New') {
@@ -570,7 +516,7 @@
                     echo '</tr>';
                     for ($i = 0; $i < sizeof($obj['Easy']); $i++) {
                         $shot = array_keys($obj['Easy'])[$i];
-                        echo '<tr><td>' . tl_shot($shot, $lang) . '</td>';
+                        echo '<tr><td>' . format_shot($game, $shot, $lang) . '</td>';
                         for ($j = 0; $j < sizeof($obj); $j++) {
                             $diff = array_keys($obj)[$j];
                             $shots = $obj[array_keys($obj)[$j]];
@@ -685,7 +631,7 @@
             <div id='playersearch'>
     			<p id='playerwrs'><?php
                     if ($layout == 'Old') { // if wr_old_layout is set, show header
-                        echo '<h2>' . tl_term('Player Search', $lang) . '</h2>';
+                        echo '<h2>' . player_search($lang) . '</h2>';
                     }
     				if ($lang == 'English') { echo 'Choose a player name from the menu below to show their WRs.'; }
                     else if ($lang == 'Japanese') { echo '個人のWRを表示するには、下記のメニューからプレイヤー名を選んでください。'; }
