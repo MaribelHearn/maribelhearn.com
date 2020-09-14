@@ -2,6 +2,7 @@
 <html id='top' lang='en'>
 <?php
     include '.stats/count.php';
+    include 'assets/shared/tl.php';
     hit(basename(__FILE__));
     $json = file_get_contents('json/lnnlist.json');
     $lnn = json_decode($json, true);
@@ -15,29 +16,42 @@
 	} else if ($_GET['hl'] == 'zh') {
 		$lang = 'Chinese';
 	}
+    $layout = (isset($_COOKIE['lnn_old_layout']) ? 'Old' : 'New');
     $pl = array();
     $pl_lnn = array();
     $flag = array();
     $gt = 0;
-    function num($game) {
-        switch ($game) {
-            case 'SoEW': return '2';
-            case 'PoDD': return '3';
-            case 'LLS': return '4';
-            case 'MS': return '5';
-            case 'EoSD': return '6';
-            case 'PCB': return '7';
-            case 'IN': return '8';
-            case 'MoF': return '10';
-            case 'SA': return '11';
-            case 'UFO': return '12';
-            case 'GFW': return '12.8';
-            case 'TD': return '13';
-            case 'DDC': return '14';
-            case 'LoLK': return '15';
-            case 'HSiFS': return '16';
-            case 'WBaWC': return '17';
-            default: return '1';
+    function lnn_type($game, $lang) {
+        if ($lang == 'English') {
+            switch ($game) {
+                case 'PCB': return 'No. of LNNNs';
+                case 'IN': return 'No. of LNNFSs';
+                case 'UFO': return 'No. of LNN(N)s';
+                case 'TD': return 'No. of LNNNs';
+                case 'HSiFS': return 'No. of LNNNs';
+                case 'WBaWC': return 'No of LNNNNs';
+                default: return 'No. of LNNs';
+            }
+        } else if ($lang == 'Japanese') {
+            switch ($game) {
+                case 'PCB': return 'LNNNの数';
+                case 'IN': return 'LNNFSの数';
+                case 'UFO': return 'LNNの数';
+                case 'TD': return 'LNNNの数';
+                case 'HSiFS': return 'LNNNの数';
+                case 'WBaWC': return 'LNNNNの数';
+                default: return 'LNNの数';
+            }
+        } else {
+            switch ($game) {
+                case 'PCB': return 'LNNN的数量';
+                case 'IN': return 'LNNFS的数量';
+                case 'UFO': return 'LNN的数量';
+                case 'TD': return 'LNNN的数量';
+                case 'HSiFS': return 'LNNN的数量';
+                case 'WBaWC': return 'LNNNN的数量';
+                default: return 'LNN的数量';
+            }
         }
     }
     function date_tl($date) {
@@ -61,16 +75,25 @@
 				case 'Game': return 'ゲーム';
                 case 'Games LNN\'d': return 'ゲーム';
                 case 'Player': return 'プレイヤー';
+                case 'Players': return 'プレイヤー';
                 case 'Shottype': return 'キャラ';
 				case 'Overall': return '合計';
 				case 'No. of LNNs': return 'LNNの数';
 				case 'LNN Lists': return 'LNNリスト';
                 case 'Overall Count': return '総数';
                 case 'Player Ranking': return 'プレイヤーのランキング';
+                case 'Player Search': return '個人のLNN';
                 case 'Acknowledgements': return '謝辞';
                 case 'Touhou Lunatic No Miss No Bombs': return '東方Lunaticノーミスノーボム';
+                case '(Different players)': return '（プレイヤー）';
                 case '(All)': return '（全）';
 				case 'Back to Top': return '上に帰る';
+                case '(FinalA)': return '<br>Aルート';
+                case '(FinalB)': return '<br>Bルート';
+                case 'Spring': return '春';
+                case 'Summer': return '夏';
+                case 'Autumn': return '秋';
+                case 'Winter': return '冬';
 	            default: return $term;
 	        }
 		} else if ($lang == 'Chinese') {
@@ -79,22 +102,50 @@
 				case 'Game': return '游戏';
                 case 'Games LNN\'d': return '游戏';
                 case 'Player': return '玩家';
+                case 'Players': return '玩家';
                 case 'Shottype': return '机体';
 				case 'Overall': return '合計';
 				case 'No. of LNNs': return 'LNN的数量';
 				case 'LNN Lists': return 'LNN列表';
                 case 'Overall Count': return '总数';
                 case 'Player Ranking': return '玩家排行';
+                case 'Player Search': return '玩家LNN';
                 case 'Acknowledgements': return '致谢';
                 case 'Touhou Lunatic No Miss No Bombs': return '东方LNN';
+                case '(Different players)': return '（玩家）';
                 case '(All)': return '（全）';
 				case 'Back to Top': return '回到顶部';
+                case '(FinalA)': return '<br>路线A';
+                case '(FinalB)': return '<br>路线B';
+                case 'Spring': return '春';
+                case 'Summer': return '夏';
+                case 'Autumn': return '秋';
+                case 'Winter': return '冬';
 	            default: return $term;
 	        }
 		} else {
 			return $term;
 		}
 	}
+    function format_shot($game, $shot, $lang) {
+        if ($game == 'IN') {
+            $tmp = str_replace('FinalA', '', $shot);
+            $tmp = str_replace('FinalB', '', $tmp);
+            $shot = str_replace($tmp, '', $shot);
+            return tl_shot($tmp, $lang) . '<span class="in_route">' . tl_term('(' . $shot . ')', $lang) . '</span>';
+        } else if ($game == 'HSiFS') {
+            $tmp = str_replace('Spring', '', $shot);
+            $tmp = str_replace('Summer', '', $tmp);
+            $tmp = str_replace('Autumn', '', $tmp);
+            $tmp = str_replace('Winter', '', $tmp);
+            $shot = str_replace('Spring', '<span class="Spring">' . tl_term('Spring', $lang) . '</span>', $shot);
+            $shot = str_replace('Summer', '<span class="Summer">' . tl_term('Summer', $lang) . '</span>', $shot);
+            $shot = str_replace('Autumn', '<span class="Autumn">' . tl_term('Autumn', $lang) . '</span>', $shot);
+            $shot = str_replace('Winter', '<span class="Winter">' . tl_term('Winter', $lang) . '</span>', $shot);
+            return tl_shot($tmp, $lang) . str_replace($tmp, '', $shot);
+        }
+        return tl_shot($shot, $lang);
+    }
     foreach ($lnn as $game => $data1) {
         if ($game == 'LM') {
             continue;
@@ -151,7 +202,12 @@
         <div id='wrap' class='wrap'>
 			<table id='top' class='center noborders'>
 				<tr class='noborders'>
-					<td id='emptytd' class='noborders'></td>
+					<td id='toggletd' class='noborders'>
+                        <?php
+                            $other = ($layout == 'New' ? 'Old' : 'New');
+                            echo '<a id="layouttoggle" href="lnn">' . $other . ' layout</a>';
+                        ?>
+                    </td>
 					<td id='languagestd' class='noborders'><table id='languages' class='noborders'>
 		                <tbody>
 		                    <tr class='noborders'>
@@ -237,58 +293,127 @@
 				else if ($lang == 'Japanese') { echo '内容'; }
 				else { echo '内容'; }
 			?></h2>
-            <div id='contents' class='border'>
-                <p><a href='#lnns' class='lnns'><?php echo tl_term('LNN Lists', $lang); ?></a></p>
-                <p><a href='#overall' class='overallcount'><?php echo tl_term('Overall Count', $lang); ?></a></p>
-                <p><a href='#players' class='playerranking'><?php echo tl_term('Player Ranking', $lang); ?></a></p>
-				<p><a href='#ack' class='ack'><?php echo tl_term('Acknowledgements', $lang); ?></a></p>
+
+            <?php
+                // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
+                if ($layout == 'New') {
+                    echo '<div id="contents" class="border"><p><a href="#lnns" class="lnns">' . tl_term('LNN Lists', $lang) .
+                    '</a></p><p><a href="#overall" class="overallcount">' . tl_term('Overall Count', $lang) .
+                    '</a></p><p><a href="#players" class="playerranking">' . tl_term('Player Ranking', $lang) .
+                    '</a></p><p><a href="#ack" class="ack">' . tl_term('Acknowledgements', $lang) . '</a></p></div><noscript>';
+                }
+                echo '<div id="contents" class="border"><p><a href="#lnns" class="lnns">' . tl_term('LNN Lists', $lang) . '</a></p>';
+                foreach ($lnn as $game => $obj) {
+                    if ($game == 'LM') {
+                        continue;
+                    }
+                    echo '<p><a href="#' . $game . '">' . full_name($game, $lang) . '</a></p>';
+                }
+                echo '<p><a href="#playersearch">' . tl_term('Player Search', $lang) .
+                '</a></p><p><a href="#overall" class="overallcount">' . tl_term('Overall Count', $lang) .
+                '</a></p><p><a href="#players" class="playerranking">' . tl_term('Player Ranking', $lang) .
+                '</a></p><p><a href="#ack" class="ack">' . tl_term('Acknowledgements', $lang) . '</a></p></div>';
+                if ($layout == 'New') {
+                    echo '</noscript>';
+                }
+            ?>
+            <h2 id='lnns' class='lnns'><?php echo tl_term('LNN Lists', $lang) ?></h2>
+            <?php
+                // With JavaScript disabled OR lnn_old_layout cookie set, show classic all games layout
+                if ($layout == 'New') {
+                    echo '<noscript>';
+                }
+                foreach ($lnn as $game => $obj) {
+                    if ($game == 'LM') {
+                        continue;
+                    }
+                    $sum = 0;
+                    $all = array();
+                    echo '<div id="' . $game . '"><p><img src="games/' . strtolower($game) .
+                    '50x50.jpg"' . (num($game) <= 5 ? ' class="cover98"' : '') .
+                    ' alt="' . $game . ' cover"> <u>' . full_name($game, $lang) . '</u></p>' .
+                    '<table class="sortable"><thead><tr><th>' . tl_term(shot_route($game), $lang) . '</th>' .
+                    '<th class="sorttable_numeric">' . lnn_type($game, $lang) .
+                    '<br>' . tl_term('(Different players)', $lang) . '</th><th>' . tl_term('Players', $lang) .
+                    '</tr></thead><tbody>';
+                    foreach ($obj as $shot => $players) {
+                        if (strpos($shot, 'UFOs')) {
+                            continue;
+                        }
+                        $count = sizeof($players);
+                        $sum += $count;
+                        $all = array_merge($all, $players);
+                        if ($game == 'UFO') {
+                            $count += sizeof($obj[$shot . 'UFOs']);
+                        }
+                        sort($players);
+                        $tl_shot = format_shot($game, $shot, $lang);
+                        echo '<tr><td>' . $tl_shot . '</td><td>' . $count . '</td><td>' . implode(', ', $players);
+                        if ($game == 'UFO') {
+                            $players = $obj[$shot . 'UFOs'];
+                            $sum += sizeof($players);
+                            $all = array_merge($all, $players);
+                            for ($i = 0; $i < sizeof($players); $i++) {
+                                $players[$i] .= ' (UFOs)';
+                            }
+                            sort($players);
+                            echo (sizeof($players) > 0 ? ', ' : '') . implode(', ', $players);
+                        }
+                        echo '</td></tr>';
+                    }
+                    $all = array_unique($all);
+                    sort($all);
+                    echo '</tbody><tfoot><tr><td colspan="3"></td></tr><tr><td><u>' . tl_term('Overall', $lang) .
+                    '</u></td><td><u>' . $sum . ' (' . sizeof($all) . ')</u></td><td>' . implode(', ', $all) .
+                    '</td></tr></tfoot></table></div>';
+                }
+                if ($layout == 'New') {
+                    echo '</noscript>';
+                }
+                // With lnn_old_layout cookie NOT set, show game image layout (CSS hides it with JavaScript disabled)
+                if ($layout == 'New') {
+                    echo '<div id="newlayout"><p id="clickgame">';
+    				if ($lang == 'English') {
+                        echo 'Click a game cover to show its list of LNNs.';
+                    } else if ($lang == 'Japanese') {
+                        echo 'LNNリストはゲームをクリック。';
+                    } else {
+                        echo '单击游戏处查看LNN列表。';
+                    }
+			        echo '</p>';
+    			    foreach ($lnn as $game => $value) {
+    			        if ($game == 'LM') {
+    			            continue;
+    		            }
+    			        echo '<img id="' . $game . '" class="game" src="games/' . strtolower($game) .
+                        '50x50.jpg" alt="' . $game . ' cover">';
+    			    }
+                    echo '<div id="list"><p id="fullname"></p><table class="sortable"><thead id="listhead"></thead>' .
+                    '<tbody id="listbody"></tbody><tfoot id="listfoot"></tfoot></table></div></div>';
+                }
+            ?>
+            <div id='playersearch'>
+                <?php
+                    if ($layout == 'Old') { // if wr_old_layout is set, show header
+                        echo '<h2>' . tl_term('Player Search', $lang) . '</h2>';
+                    }
+                ?>
+    			<p id='playerlnns'><?php
+    				if ($lang == 'English') { echo 'Choose a player name from the menu below to show their LNNs.'; }
+                    else if ($lang == 'Japanese') { echo '個人のLNNを表示するには、下記のメニューからプレイヤー名を選んでください。'; }
+                    else { echo '在以下的菜单选择玩家的名字则可查看其LNN。'; }
+    			?></p>
+    			<label for='player' class='player'><?php echo tl_term('Player', $lang); ?></label>
+    			<select id='player'>
+    			    <option>...</option>
+    			    <?php
+    			        asort($pl);
+    			        foreach ($pl as $key => $player) {
+    			            echo '<option>' . $player . '</option>';
+    			        }
+    			    ?>
+    		    </select>
             </div>
-			<h2 id='lnns' class='lnns'><?php echo tl_term('LNN Lists', $lang); ?></h2>
-			<p id='clickgame'><?php
-				if ($lang == 'English') { echo 'Click a game cover to show its list of LNNs.'; }
-                else if ($lang == 'Japanese') { echo 'LNNリストはゲームをクリック。'; }
-                else { echo '单击游戏处查看LNN列表。'; }
-			?></p>
-			<?php
-			    foreach ($lnn as $game => $value) {
-			        if ($game == 'LM') {
-			            continue;
-		            }
-			        echo '<img id="' . $game . '" class="game" src="games/' . strtolower($game) . '50x50.jpg" alt="' . $game . ' cover">';
-			    }
-			?>
-			<noscript><?php
-				if ($lang == 'English') {
-					echo '<p><em>Sorry, you cannot show the game LNNs with JavaScript disabled as of now.</em></p>';
-				} else if ($lang == 'Japanese') {
-					echo '<p>JavaScriptなしではLNNを示すできません。</p>';
-				} else {
-					echo '<p>不好意思，目前查看LNN必须开启JavaScript。</p>';
-				}
-			?></noscript>
-            <div id='list'>
-				<p id='fullname'></p>
-				<table class='sortable'>
-					<thead id='listhead'></thead>
-                    <tbody id='listbody'></tbody>
-                    <tfoot id='listfoot'></tfoot>
-				</table>
-			</div>
-			<p id='playerlnns'><?php
-				if ($lang == 'English') { echo 'Choose a player name from the menu below to show their LNNs.'; }
-                else if ($lang == 'Japanese') { echo '個人のLNNを表示するには、下記のメニューからプレイヤー名を選んでください。'; }
-                else { echo '在以下的菜单选择玩家的名字则可查看其LNN。'; }
-			?></p>
-			<label for='player' class='player'><?php echo tl_term('Player', $lang); ?></label>
-			<select id='player'>
-			    <option>...</option>
-			    <?php
-			        asort($pl);
-			        foreach ($pl as $key => $player) {
-			            echo '<option>' . $player . '</option>';
-			        }
-			    ?>
-		    </select>
 			<div id='playerlist'>
 				<table class='sortable'>
 					<thead id='playerlisthead'><tr>

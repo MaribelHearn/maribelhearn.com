@@ -1,5 +1,12 @@
 var LNNs, language = "English", selected = "", playerSelected = false, playergameLNNs;
 
+function toggleLayout() {
+    if (getCookie("lnn_old_layout")) {
+        deleteCookie("lnn_old_layout");
+    } else {
+        setCookie("lnn_old_layout", true);
+    }
+}
 function restrictions(game) {
     return ({
         "PCB": "n",
@@ -189,6 +196,8 @@ function setLanguage(event) {
 }
 $(document).ready(function () {
     $("#player").on("change", getPlayerLNNs);
+    $("#layouttoggle").on("click", toggleLayout);
+    $("#playersearch").css("display", "block");
     $(".en, .jp, .zh").attr("href", "lnn");
     $(".en").on("click", {language: "English"}, setLanguage);
     $(".jp").on("click", {language: "Japanese"}, setLanguage);
