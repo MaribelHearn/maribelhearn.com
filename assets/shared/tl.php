@@ -177,7 +177,7 @@ function tl_shot($shot, $lang) {
             default: return $shot;
         }
     }
-    return $shot;
+    return str_replace('Team', ' Team', $shot);
 }
 function full_name($game, $lang) {
     if ($lang == 'English') {

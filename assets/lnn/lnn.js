@@ -43,7 +43,7 @@ function show(game) {
     }
 
     var playergameLNNs = {}, overallplayers = [], players = [], typeString = "", gamecount = 0,
-        shottype, shotplayers, shotplayersIN, shotcount, character, type, player, i;
+        shottype, shotplayers, shotcount, character, type, player, season, i;
 
     if (selected !== "") {
         $("#" + selected).css("border", $("#" + selected).hasClass("cover98") ? "1px solid black" : "none");
@@ -65,16 +65,22 @@ function show(game) {
     $("#listbody").html("");
 
     for (shottype in LNNs[game]) {
-        if (game != "IN" && game != "UFO" && game != "HSiFS" || (game == "IN" && shottype.contains("FinalA")) || (game == "UFO" && !shottype.contains("UFOs")) || (game == "HSiFS" && shottype.contains("Spring"))) {
+        if (game != "UFO" || (game == "UFO" && !shottype.contains("UFOs"))) {
             shotplayers = [];
-            shotplayersIN = [];
             shotcount = 0;
-            character = shottype.replace(/Spring|Summer|Autumn|Winter|FinalA|FinalB|UFOs/, "");
-            $("#listbody").append("<tr><td class='" + character + "'>" + character +
-            "</td><td id='" + character + "n'></td><td id='" + character + "'></td>");
+            character = shottype.replace(/UFOs/, "");
+            if (game == "IN" || game == "HSiFS") {
+                season = shottype.substr(-6);
+                $("#listbody").append("<tr><td class='nowrap'><span class='" + shottype.slice(0, -6) + "'>" + shottype.slice(0, -6) +
+                "</span><span class='" + season + "'>" + season + "</span></td><td id='" + shottype +
+                "n'></td><td id='" + shottype + "'></td>");
+            } else {
+                $("#listbody").append("<tr><td class='nowrap " + character + "'>" + character +
+                "</td><td id='" + character + "n'></td><td id='" + character + "'></td>");
+            }
         }
 
-        if (game == "IN" || game == "UFO" || game == "HSiFS") {
+        if (game == "UFO") {
             type = shottype.replace(character, "");
             typeString = (type !== "" ? " (<span class='" + type + "'>" + type + "</span>)" : "");
         }
@@ -82,18 +88,16 @@ function show(game) {
         for (i in LNNs[game][shottype]) {
             player = LNNs[game][shottype][i];
             shotplayers.push(player + (game == "IN" || game == "UFO" || game == "HSiFS" ? typeString : ""));
-            shotplayersIN.pushStrict(player);
             players.pushStrict(player);
             shotcount += 1;
             gamecount += 1;
         }
 
-        if (!(game == "IN" && type != "FinalB") && !(game == "UFO" && type != "UFOs") && !(game == "HSiFS" && type != "Winter")) {
+        if (!(game == "UFO" && type != "UFOs")) {
             shotplayers.sort();
-            $("#" + character + "n").html(shotcount + (game == "IN" ? " (" + shotplayersIN.length + ")" : ""));
+            $("#" + character + "n").html(shotcount);
 
             if (shotcount === 0) {
-                $("#" + character).html('-');
                 continue;
             }
 
@@ -197,6 +201,7 @@ function setLanguage(event) {
 $(document).ready(function () {
     $("#player").on("change", getPlayerLNNs);
     $("#layouttoggle").on("click", toggleLayout);
+    $("#layouttoggle").css("display", "inline");
     $("#playersearch").css("display", "block");
     $(".en, .jp, .zh").attr("href", "lnn");
     $(".en").on("click", {language: "English"}, setLanguage);
