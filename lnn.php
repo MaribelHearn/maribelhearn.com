@@ -228,7 +228,7 @@
             <?php
                 // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
                 if ($layout == 'New') {
-                    echo '<div id="contents" class="border"><p><a href="#lnns" class="lnns">' . tl_term('LNN Lists', $lang) .
+                    echo '<div id="contents_new" class="border"><p><a href="#lnns" class="lnns">' . tl_term('LNN Lists', $lang) .
                     '</a></p><p><a href="#overall" class="overallcount">' . tl_term('Overall Count', $lang) .
                     '</a></p><p><a href="#players" class="playerranking">' . tl_term('Player Ranking', $lang) .
                     '</a></p><p><a href="#ack" class="ack">' . tl_term('Acknowledgements', $lang) . '</a></p></div><noscript>';
@@ -240,7 +240,7 @@
                     }
                     echo '<p><a href="#' . $game . '">' . full_name($game, $lang) . '</a></p>';
                 }
-                echo '<p><a href="#playersearch">' . player_search($lang) .
+                echo '<p id="playersearchlink"><a href="#playersearch">' . player_search($lang) .
                 '</a></p><p><a href="#overall" class="overallcount">' . tl_term('Overall Count', $lang) .
                 '</a></p><p><a href="#players" class="playerranking">' . tl_term('Player Ranking', $lang) .
                 '</a></p><p><a href="#ack" class="ack">' . tl_term('Acknowledgements', $lang) . '</a></p></div>';

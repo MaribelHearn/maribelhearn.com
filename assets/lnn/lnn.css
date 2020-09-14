@@ -30,10 +30,10 @@ table {
 table, th, td {
     border: 1px solid #000;
 }
-#layouttoggle {
+#layouttoggle, #newlayout, #playersearch, #playersearchlink, #contents_new {
     display: none;
 }
-#contents td, #contents th {
+#contents td, #contents th, #contents_new td, #contents_new th {
     border: none;
 }
 #checkboxes tbody:after {
@@ -86,7 +86,7 @@ table, th, td {
      text-align: right;
      vertical-align: top;
 }
-#contents > p, #ack_container > p {
+#contents > p, #contents_new > p, #ack_container > p {
     margin: 4px;
 }
 .wrap {
