@@ -68,83 +68,14 @@
             default: return 'LNNs are current as of <span id="lm">' . $lm . '</span>.';
         }
     }
-    function tl_term($term, $lang) {
-	    if ($lang == 'Japanese') {
-	        $term = trim($term);
-			switch ($term) {
-				case 'Game': return 'ゲーム';
-                case 'Games LNN\'d': return 'ゲーム';
-                case 'Player': return 'プレイヤー';
-                case 'Players': return 'プレイヤー';
-                case 'Shottype': return 'キャラ';
-				case 'Overall': return '合計';
-				case 'No. of LNNs': return 'LNNの数';
-				case 'LNN Lists': return 'LNNリスト';
-                case 'Overall Count': return '総数';
-                case 'Player Ranking': return 'プレイヤーのランキング';
-                case 'Player Search': return '個人のLNN';
-                case 'Acknowledgements': return '謝辞';
-                case 'Touhou Lunatic No Miss No Bombs': return '東方Lunaticノーミスノーボム';
-                case '(Different players)': return '（プレイヤー）';
-                case '(All)': return '（全）';
-				case 'Back to Top': return '上に帰る';
-                case 'FinalA': return 'Aルート';
-                case 'FinalB': return 'Bルート';
-                case 'Spring': return '春';
-                case 'Summer': return '夏';
-                case 'Autumn': return '秋';
-                case 'Winter': return '冬';
-	            default: return $term;
-	        }
-		} else if ($lang == 'Chinese') {
-	        $term = trim($term);
-			switch ($term) {
-				case 'Game': return '游戏';
-                case 'Games LNN\'d': return '游戏';
-                case 'Player': return '玩家';
-                case 'Players': return '玩家';
-                case 'Shottype': return '机体';
-				case 'Overall': return '合計';
-				case 'No. of LNNs': return 'LNN的数量';
-				case 'LNN Lists': return 'LNN列表';
-                case 'Overall Count': return '总数';
-                case 'Player Ranking': return '玩家排行';
-                case 'Player Search': return '玩家LNN';
-                case 'Acknowledgements': return '致谢';
-                case 'Touhou Lunatic No Miss No Bombs': return '东方LNN';
-                case '(Different players)': return '（玩家）';
-                case '(All)': return '（全）';
-				case 'Back to Top': return '回到顶部';
-                case 'FinalA': return '路线A';
-                case 'FinalB': return '路线B';
-                case 'Spring': return '春';
-                case 'Summer': return '夏';
-                case 'Autumn': return '秋';
-                case 'Winter': return '冬';
-	            default: return $term;
-	        }
-		} else {
-			return $term;
-		}
-	}
-    function format_shot($game, $shot, $lang) {
-        if ($game == 'IN') {
-            $tmp = str_replace('FinalA', '', $shot);
-            $tmp = str_replace('FinalB', '', $tmp);
-            $shot = str_replace($tmp, '', $shot);
-            return tl_shot($tmp, $lang) . '<span class="in_route">' . tl_term($shot, $lang) . '</span>';
-        } else if ($game == 'HSiFS') {
-            $tmp = str_replace('Spring', '', $shot);
-            $tmp = str_replace('Summer', '', $tmp);
-            $tmp = str_replace('Autumn', '', $tmp);
-            $tmp = str_replace('Winter', '', $tmp);
-            $shot = str_replace('Spring', '<span class="Spring">' . tl_term('Spring', $lang) . '</span>', $shot);
-            $shot = str_replace('Summer', '<span class="Summer">' . tl_term('Summer', $lang) . '</span>', $shot);
-            $shot = str_replace('Autumn', '<span class="Autumn">' . tl_term('Autumn', $lang) . '</span>', $shot);
-            $shot = str_replace('Winter', '<span class="Winter">' . tl_term('Winter', $lang) . '</span>', $shot);
-            return tl_shot($tmp, $lang) . str_replace($tmp, '', $shot);
+    function player_search($lang) {
+        if ($lang == 'English') {
+            return 'Player Search';
+        } else if ($lang == 'Japanese') {
+            return '個人のLNN';
+        } else {
+            return '玩家LNN';
         }
-        return tl_shot($shot, $lang);
     }
     foreach ($lnn as $game => $data1) {
         if ($game == 'LM') {
@@ -309,7 +240,7 @@
                     }
                     echo '<p><a href="#' . $game . '">' . full_name($game, $lang) . '</a></p>';
                 }
-                echo '<p><a href="#playersearch">' . tl_term('Player Search', $lang) .
+                echo '<p><a href="#playersearch">' . player_search($lang) .
                 '</a></p><p><a href="#overall" class="overallcount">' . tl_term('Overall Count', $lang) .
                 '</a></p><p><a href="#players" class="playerranking">' . tl_term('Player Ranking', $lang) .
                 '</a></p><p><a href="#ack" class="ack">' . tl_term('Acknowledgements', $lang) . '</a></p></div>';
@@ -395,7 +326,7 @@
             <div id='playersearch'>
                 <?php
                     if ($layout == 'Old') { // if wr_old_layout is set, show header
-                        echo '<h2>' . tl_term('Player Search', $lang) . '</h2>';
+                        echo '<h2>' . player_search($lang) . '</h2>';
                     }
                 ?>
     			<p id='playerlnns'><?php

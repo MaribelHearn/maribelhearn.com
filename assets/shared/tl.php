@@ -248,4 +248,112 @@ function full_name($game, $lang) {
         }
     }
 }
+function tl_term($term, $lang) {
+    if ($lang == 'Japanese') {
+        $term = trim($term);
+        switch ($term) {
+            case 'Game': return 'ゲーム';
+            case 'Games LNN\'d': return 'ゲーム';
+            case 'Score': return 'スコア';
+            case 'Player': return 'プレイヤー';
+            case 'Players': return 'プレイヤー';
+            case 'Category': return 'カテゴリー';
+            case 'Difficulty': return '難易度';
+            case 'Shottype': return 'キャラ';
+            case 'Route': return 'ルート';
+            case 'Seasons': return '季節';
+            case 'Date': return '日付';
+            case 'Dates': return '日付';
+            case 'No. of WRs': return 'WR数';
+            case 'Different games': return 'ゲーム';
+            case 'World': return '世界';
+            case 'West': return '海外';
+            case 'Percentage': return '割合';
+            case 'Overall': return '合計';
+            case 'Overall Count': return '総数';
+            case 'Overall Records': return '各作品世界記録一覧';
+            case 'World Records': return '世界記録';
+            case 'Western Records': return '海外記録';
+            case 'Player Ranking': return 'プレイヤーのランキング';
+            case 'Acknowledgements': return '謝辞';
+            case 'Touhou World Records': return '東方の世界記録';
+            case 'Touhou Lunatic No Miss No Bombs': return '東方Lunaticノーミスノーボム';
+            case 'No. of LNNs': return 'LNNの数';
+            case 'LNN Lists': return 'LNNリスト';
+            case '(Different players)': return '（プレイヤー）';
+            case '(All)': return '（全）';
+            case 'Back to Top': return '上に帰る';
+            case 'FinalA': return 'Aルート';
+            case 'FinalB': return 'Bルート';
+            case 'Spring': return '春';
+            case 'Summer': return '夏';
+            case 'Autumn': return '秋';
+            case 'Winter': return '冬';
+            default: return $term;
+        }
+    } else if ($lang == 'Chinese') {
+        $term = trim($term);
+        switch ($term) {
+            case 'Game': return '游戏';
+            case 'Games LNN\'d': return '游戏';
+            case 'Score': return '分数';
+            case 'Player': return '玩家';
+            case 'Players': return '玩家';
+            case 'Category': return '项目';
+            case 'Difficulty': return '难度';
+            case 'Shottype': return '机体';
+            case 'Route': return '路线';
+            case 'Seasons': return '季节';
+            case 'Date': return '日期';
+            case 'Dates': return '日期';
+            case 'No. of WRs': return 'WR数量';
+            case 'Different games': return '游戏';
+            case 'World': return '世界';
+            case 'West': return '西方';
+            case 'Percentage': return '百分';
+            case 'Overall': return '合計';
+            case 'Overall Count': return '总数';
+            case 'Overall Records': return '整体世界纪录';
+            case 'World Records': return '世界纪录';
+            case 'Western Records': return '西方纪录';
+            case 'Player Ranking': return '玩家排行';
+            case 'Acknowledgements': return '致谢';
+            case 'Touhou World Records': return '东方世界纪录';
+            case 'Touhou Lunatic No Miss No Bombs': return '东方LNN';
+            case 'No. of LNNs': return 'LNN的数量';
+            case 'LNN Lists': return 'LNN列表';
+            case '(Different players)': return '（玩家）';
+            case '(All)': return '（全）';
+            case 'Back to Top': return '回到顶部';
+            case 'FinalA': return '路线A';
+            case 'FinalB': return '路线B';
+            case 'Spring': return '春';
+            case 'Summer': return '夏';
+            case 'Autumn': return '秋';
+            case 'Winter': return '冬';
+            default: return $term;
+        }
+    } else {
+        return $term;
+    }
+}
+function format_shot($game, $shot, $lang) {
+    if ($game == 'IN') {
+        $tmp = str_replace('FinalA', '', $shot);
+        $tmp = str_replace('FinalB', '', $tmp);
+        $shot = str_replace($tmp, '', $shot);
+        return tl_shot($tmp, $lang) . '<span class="in_route">' . tl_term($shot, $lang) . '</span>';
+    } else if ($game == 'HSiFS') {
+        $tmp = str_replace('Spring', '', $shot);
+        $tmp = str_replace('Summer', '', $tmp);
+        $tmp = str_replace('Autumn', '', $tmp);
+        $tmp = str_replace('Winter', '', $tmp);
+        $shot = str_replace('Spring', '<span class="Spring">' . tl_term('Spring', $lang) . '</span>', $shot);
+        $shot = str_replace('Summer', '<span class="Summer">' . tl_term('Summer', $lang) . '</span>', $shot);
+        $shot = str_replace('Autumn', '<span class="Autumn">' . tl_term('Autumn', $lang) . '</span>', $shot);
+        $shot = str_replace('Winter', '<span class="Winter">' . tl_term('Winter', $lang) . '</span>', $shot);
+        return tl_shot($tmp, $lang) . str_replace($tmp, '', $shot);
+    }
+    return tl_shot($shot, $lang);
+}
 ?>
