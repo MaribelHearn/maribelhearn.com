@@ -88,8 +88,8 @@
                 case '(Different players)': return '（プレイヤー）';
                 case '(All)': return '（全）';
 				case 'Back to Top': return '上に帰る';
-                case '(FinalA)': return '<br>Aルート';
-                case '(FinalB)': return '<br>Bルート';
+                case 'FinalA': return 'Aルート';
+                case 'FinalB': return 'Bルート';
                 case 'Spring': return '春';
                 case 'Summer': return '夏';
                 case 'Autumn': return '秋';
@@ -115,8 +115,8 @@
                 case '(Different players)': return '（玩家）';
                 case '(All)': return '（全）';
 				case 'Back to Top': return '回到顶部';
-                case '(FinalA)': return '<br>路线A';
-                case '(FinalB)': return '<br>路线B';
+                case 'FinalA': return '路线A';
+                case 'FinalB': return '路线B';
                 case 'Spring': return '春';
                 case 'Summer': return '夏';
                 case 'Autumn': return '秋';
@@ -132,7 +132,7 @@
             $tmp = str_replace('FinalA', '', $shot);
             $tmp = str_replace('FinalB', '', $tmp);
             $shot = str_replace($tmp, '', $shot);
-            return tl_shot($tmp, $lang) . '<span class="in_route">' . tl_term('(' . $shot . ')', $lang) . '</span>';
+            return tl_shot($tmp, $lang) . '<span class="in_route">' . tl_term($shot, $lang) . '</span>';
         } else if ($game == 'HSiFS') {
             $tmp = str_replace('Spring', '', $shot);
             $tmp = str_replace('Summer', '', $tmp);
@@ -348,7 +348,7 @@
                         }
                         sort($players);
                         $tl_shot = format_shot($game, $shot, $lang);
-                        echo '<tr><td>' . $tl_shot . '</td><td>' . $count . '</td><td>' . implode(', ', $players);
+                        echo '<tr><td class="nowrap">' . $tl_shot . '</td><td>' . $count . '</td><td>' . implode(', ', $players);
                         if ($game == 'UFO') {
                             $players = $obj[$shot . 'UFOs'];
                             $sum += sizeof($players);

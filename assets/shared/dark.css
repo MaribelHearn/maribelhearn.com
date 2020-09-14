@@ -21,7 +21,7 @@ table#contents,  tr:not(.noborders), th:not(.noborders), td:not(.noborders) {
 .GFWt th, .LLSt th, .MoFt th, .PCBt th, .PoDDt th, .tier th, .tier {
     color: black;
 }
-.Winter, .in_route {
+.Winter, .FinalA, .FinalB, .in_route {
     color: cyan;
 }
 .does_even_score {

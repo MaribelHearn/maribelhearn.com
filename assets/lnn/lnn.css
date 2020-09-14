@@ -30,6 +30,9 @@ table {
 table, th, td {
     border: 1px solid #000;
 }
+#layouttoggle {
+    display: none;
+}
 #contents td, #contents th {
     border: none;
 }
@@ -104,13 +107,16 @@ table, th, td {
 .noborders {
     border: none;
 }
+.nowrap {
+    white-space: nowrap;
+}
 .cover98 {
     border: 1px solid #000;
 }
 .game {
     cursor: pointer;
 }
-.in_route {
+.FinalA, .FinalB, .in_route {
     font-size: 12px;
     color: #339;
 }
