@@ -194,7 +194,7 @@
                 <p class='wide-top'>* Rengoku Teien is a group of composers that produces royalty-free music; Labyrinth of Touhou simply uses it, among music by other composers.</p>
                 <p class='wide-top'>Vertigo is possibly my favourite piece of music of all time.</p>
                 <h2 id='trivia'>Trivia</h2>
-                <img src='assets/index/maribelb.png' alt='Maribel&#39;s avatar'>
+                <img id='avatar' src='assets/index/maribelb.png' alt='Maribel&#39;s avatar'>
                 <ul>
                     <li>My current avatar (shown above) is a non-canon depiction of Maribel
                     having gone berserk due to her powers overflowing, which is the final boss of Labyrinth of Touhou.</li>
