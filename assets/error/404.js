@@ -47,16 +47,15 @@ if (isNaN(path) && path != "404.php") {
 
     if (max > maxPath.length - 2) { // redirect
         location.replace(loc.replace(path, maxPath) + "?redirect=" + path);
-        return;
-    }
-
-    $.get("admin/admin.json", function (data) {
-        for (i in data) {
-            if (path == i) {
-                location.replace(data[i]);
+    } else {
+        $.get("admin/admin.json", function (data) {
+            for (i in data) {
+                if (path == i) {
+                    location.replace(data[i]);
+                }
             }
-        }
-    }, "json");
+        }, "json");
+    }
 }
 
 if (isNaN(path) && path != "404.php" && max <= maxPath.length - 2) {
