@@ -34,8 +34,8 @@ function similarity(a, b) {
 
 function get(url, callback) {
     var xhr = new XMLHttpRequest();
-    xhr.setRequestHeader("X-AJAX", "XMLHttpRequest");
     xhr.open("GET", url, true);
+    xhr.setRequestHeader("X-AJAX", "XMLHttpRequest");
     xhr.responseType = "JSON";
     xhr.onload = function () {
         var status = xhr.status;
