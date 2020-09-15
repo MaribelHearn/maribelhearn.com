@@ -63,7 +63,7 @@ if (isNaN(path) && path != "404.php") {
             if (status == 200) {
                 data = JSON.parse(data);
                 if (data.hasOwnProperty(path)) {
-                    location.replace(data[i]);
+                    location.replace(data[path]);
                 }
             }
             if (isNaN(path) && path != "404.php" && max <= maxPath.length - 2) {
