@@ -30,9 +30,6 @@ table {
 table, th, td {
     border: 1px solid #000;
 }
-#checkboxes th, #checkboxes td, #contents th, #contents td, #contents_new th, #contents_new td {
-    border: none;
-}
 #nav {
     margin-bottom: 5px;
 }
@@ -85,6 +82,13 @@ table, th, td {
      width: 22%;
      text-align: right;
      vertical-align: top;
+}
+#dates {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#contents > p, #contents_new > p, #ack_container > p {
+    margin: 4px;
 }
 .HRtPt th {
     background-color: #b6423c;
@@ -153,6 +157,13 @@ table, th, td {
     padding-right: 15px;
     opacity: 0.8;
     font: 14px verdana,sans-serif;
+}
+.border {
+    border: 1px solid black;
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .noborders {
     border: none;

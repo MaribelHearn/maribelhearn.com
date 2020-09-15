@@ -20,6 +20,7 @@
     $pl = array();
     $pl_lnn = array();
     $flag = array();
+    $missing_replays = array();
     $gt = 0;
     function lnn_type($game, $lang) {
         if ($lang == 'English') {
@@ -77,21 +78,28 @@
             return '玩家LNN';
         }
     }
+	function replay_path($game, $player, $shot) {
+	    return 'replays/lnn/' . $player . '/th' . num($game) . '_ud' . $player[0] . $player[strlen($player) - 1] . shot_abbr($shot) . '.rpy';
+	}
     foreach ($lnn as $game => $data1) {
         if ($game == 'LM') {
             continue;
         }
         $sum = 0;
         $flag = array_fill(0, sizeof($flag), true);
-        foreach ($lnn[$game] as $shottype => $data2) {
-            $sum += sizeof($lnn[$game][$shottype]);
-            foreach ($lnn[$game][$shottype] as $player => $data3) {
-                if (!in_array($data3, $pl)) {
-                    array_push($pl, $data3);
-                    array_push($pl_lnn, array($data3, 1, 1));
+        foreach ($data1 as $shottype => $data2) {
+            $sum += sizeof($data2);
+            foreach ($data2 as $key => $player) {
+                $nospaces = str_replace(' ', '', $player);
+				if (!file_exists(replay_path($game, $nospaces, $shottype)) && num($game) > 5) {
+					array_push($missing_replays, ($game . $nospaces . $shottype));
+				}
+                if (!in_array($player, $pl)) {
+                    array_push($pl, $player);
+                    array_push($pl_lnn, array($player, 1, 1));
                     array_push($flag, false);
                 } else {
-                    $key = array_search($data3, $pl);
+                    $key = array_search($player, $pl);
                     $pl_lnn[$key][1] += 1;
                     if ($flag[$key]) {
                         $pl_lnn[$key][2] += 1;
@@ -143,25 +151,19 @@
 		                <tbody>
 		                    <tr class='noborders'>
 		                        <td class='noborders'>
-                                    <a class='en' href='lnn?hl=en'><img src='assets/flags/uk.png' alt='<?php
-										if ($lang == 'English') { echo 'Flag of the United Kingdom'; }
-										else if ($lang == 'Japanese') { echo 'イギリスの国旗'; }
-										else { echo '英国旗'; }
-									?>'></a>
+                                    <a class='en' href='lnn?hl=en'>
+                                        <img src='assets/flags/uk.png' alt='<?php echo tl_term('Flag of the United Kingdom', $lang) ?>'>
+                                    </a>
 		                        </td>
 		                        <td class='noborders'>
-                                    <a class='jp' href='lnn?hl=jp'><img src='assets/flags/japan.png' alt='<?php
-										if ($lang == 'English') { echo 'Flag of Japan'; }
-										else if ($lang == 'Japanese') { echo '日本の国旗'; }
-										else { echo '日本旗'; }
-									?>'></a>
+                                    <a class='jp' href='lnn?hl=jp'>
+                                        <img src='assets/flags/japan.png' alt='<?php echo tl_term('Flag of Japan', $lang) ?>'>
+                                    </a>
 		                        </td>
 		                        <td class='noborders'>
-                                    <a class='zh' href='lnn?hl=zh'><img src='assets/flags/china.png' alt='<?php
-										if ($lang == 'English') { echo 'Flag of the P.R.C.'; }
-										else if ($lang == 'Japanese') { echo '中華人民共和国の国旗'; }
-										else { echo '中国旗'; }
-									?>'></a>
+                                    <a class='zh' href='lnn?hl=zh'>
+                                        <img src='assets/flags/china.png' alt='<?php echo tl_term('Flag of the P.R.C.', $lang) ?>'>
+                                    </a>
 		                        </td>
 		                    </tr>
 		                    <tr class='noborders'>
@@ -350,6 +352,7 @@
 					<thead id='playerlisthead'><tr>
                         <th class='game'><?php echo tl_term('Game', $lang) ; ?></th>
                         <th class='shottype'><?php echo tl_term('Shottype', $lang); ?></th>
+                        <th class='replay'><?php echo tl_term('Replay', $lang); ?></th>
                     </tr></thead>
 					<tbody id='playerlistbody'></tbody>
 					<tfoot id='playerlistfoot'></tfoot>
@@ -434,59 +437,58 @@
                     </tbody>
                 </table>
             </div>
-			<div id='ack'>
-            	<h2 class='ack'><?php echo tl_term('Acknowledgements', $lang); ?></h2>
-	            <div id='ack_container'>
-					<p id='credit'>
-                        <?php
-                            if ($lang == 'English') {
-                                echo 'The background image was drawn by ' .
-                                '<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>.';
-                            }
-                            else if ($lang == 'Japanese') {
-                                echo '背景イメージは<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>' .
-                                'さんのものを使用させていただいております。';
-                            }
-                            else {
-                                echo '背景画师：<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>。';
-                            }
-                        ?>
-                    </p>
-					</p id='jptlcredit' class='noborders'>
-                        <?php
-                            if ($lang == 'English') {
-                                echo 'The Japanese translation of the top text was done by ' .
-                                '<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.';
-                            }
-                            else if ($lang == 'Japanese') {
-                                echo 'ページ上部のテキストは<a href="https://twitter.com/toho_yumiya">Yu-miya</a>' .
-                                'によって日本語に翻訳されました。';
-                            }
-                            else {
-                                echo '感谢<a href="https://twitter.com/toho_yumiya">Yu-miya</a>' .
-                                '提供头部文字的日语翻译。';
-                            }
-                        ?>
-                    </p>
-                    <p id='cntlcredit' class='noborders'>
-                        <?php
-                            if ($lang == 'English') {
-                                echo 'The Chinese translation of the top text was done by ' .
-                                '<a href="https://twitter.com/williewillus">williewillus</a>.';
-                            }
-                            else if ($lang == 'Japanese') {
-                                echo 'ページ上部のテキストは<a href="https://twitter.com/williewillus">williewillus</a>' .
-                                'によって中国語に翻訳されました。';
-                            }
-                            else {
-                                echo '感谢<a href="https://twitter.com/williewillus">williewillus</a>' .
-                                '提供头部文字的中文翻译。';
-                            }
-                        ?>
-                    </p>
-	            </table>
-			</div>
+			<h2 id='ack' class='ack'><?php echo tl_term('Acknowledgements', $lang); ?></h2>
+            <div id='ack_container'>
+				<p id='credit'>
+                    <?php
+                        if ($lang == 'English') {
+                            echo 'The background image was drawn by ' .
+                            '<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>.';
+                        }
+                        else if ($lang == 'Japanese') {
+                            echo '背景イメージは<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>' .
+                            'さんのものを使用させていただいております。';
+                        }
+                        else {
+                            echo '背景画师：<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>。';
+                        }
+                    ?>
+                </p>
+				</p id='jptlcredit' class='noborders'>
+                    <?php
+                        if ($lang == 'English') {
+                            echo 'The Japanese translation of the top text was done by ' .
+                            '<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.';
+                        }
+                        else if ($lang == 'Japanese') {
+                            echo 'ページ上部のテキストは<a href="https://twitter.com/toho_yumiya">Yu-miya</a>' .
+                            'によって日本語に翻訳されました。';
+                        }
+                        else {
+                            echo '感谢<a href="https://twitter.com/toho_yumiya">Yu-miya</a>' .
+                            '提供头部文字的日语翻译。';
+                        }
+                    ?>
+                </p>
+                <p id='cntlcredit' class='noborders'>
+                    <?php
+                        if ($lang == 'English') {
+                            echo 'The Chinese translation of the top text was done by ' .
+                            '<a href="https://twitter.com/williewillus">williewillus</a>.';
+                        }
+                        else if ($lang == 'Japanese') {
+                            echo 'ページ上部のテキストは<a href="https://twitter.com/williewillus">williewillus</a>' .
+                            'によって中国語に翻訳されました。';
+                        }
+                        else {
+                            echo '感谢<a href="https://twitter.com/williewillus">williewillus</a>' .
+                            '提供头部文字的中文翻译。';
+                        }
+                    ?>
+                </p>
+            </div>
             <p id='back'><strong><a id='backtotop' href='#top'><?php echo tl_term('Back to Top', $lang); ?></a></strong></p>
+			<?php echo '<input id="missingReplays" type="hidden" value="' . implode($missing_replays, '') . '">' ?>
 		</div>
         <script src='assets/shared/dark.js'></script>
     </body>
