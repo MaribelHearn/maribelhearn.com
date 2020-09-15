@@ -10,7 +10,7 @@
 		<script src='https://maribelhearn.com/assets/error/404.js' defer></script>
     </head>
 
-    <body class='<?php include 'https://maribelhearn.com/.stats/count.php'; echo check_webp() ?>'>
+    <body class='<?php include '.stats/count.php'; echo check_webp() ?>'>
         <main>
             <div id='wrap'>
                 <img id='hy' src='https://maribelhearn.com/assets/shared/h-bar.png' title='Human Mode'>
