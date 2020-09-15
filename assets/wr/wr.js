@@ -193,7 +193,6 @@ function display(event) {
             season = shottype.removeChar();
             wr = WRs[game][difficulty][shottype];
             score = wr[0];
-            if (game == "WBaWC" && difficulty == "Lunatic" && shottype == "MarisaOtter") score = 10137217660;
             player = wr[1];
             date = wr[2];
             if (wr[3]) {
@@ -312,7 +311,7 @@ function getPlayerWRs(player) {
         return;
     }
 
-    var cats = [], scoreArray = [], dateArray = [], sum = 0, game, gamesum, difficulty, shottype, i;
+    var cats = [], scoreArray = [], dateArray = [], replayArray = [], sum = 0, game, gamesum, difficulty, shottype, replay, i;
 
     playerSelected = true;
     $("#playerlistbody").html("");
@@ -327,27 +326,41 @@ function getPlayerWRs(player) {
                         $("#playerlistbody").append("<tr><td><span class='" + game + "'>" + game +
                         "</span>" + (language == "English" ? " " : "") + "<span class='" + difficulty + "'>" + difficulty +
                         "</span></td><td id='" + game + difficulty +
-                        "s'></td><td id='" + game + difficulty + "d' class='date_empty'></td></tr>");
+                        "s'></td><td id=" + game + difficulty + "r></td>" +
+                        "<td id='" + game + difficulty + "d' class='date_empty'></td></tr>");
                         cats.push(game + difficulty);
                         scoreArray = [];
                         dateArray = [];
+                        replayArray = [];
                     }
                     score = sep(WRs[game][difficulty][shottype][0]);
                     date = WRs[game][difficulty][shottype][2];
+                    replay = WRs[game][difficulty][shottype][3];
                     scoreArray.push(score + (shottype === "" ? "": " (<span class='" + shottype + "'>" + shottype + "</span>)"));
                     dateArray.push("<span class='datestring_player'>" + date + "</span>");
+                    if (replay) {
+                        replayArray.push("<a href='" + replay + "'>" + replay + "</a>");
+                    } else if (gameAbbr(game) < 6 || missingReplays.contains(game + difficulty + shottype)) {
+                        replayArray.push('-');
+                    } else {
+                        replay = replayPath(game, difficulty, shottype);
+                        tmp = replay.split('/');
+                        replayArray.push("<a href='" + location.origin +
+                        "/" + replay + "'>" + tmp[tmp.length - 1] + "</a>");
+                    }
                     gamesum += 1;
                     sum += 1;
                 }
             }
             $("#" + game + difficulty + "s").html(scoreArray.join("<br>"));
+            $("#" + game + difficulty + "r").html(replayArray.join("<br>"));
             $("#" + game + difficulty + "d").html(dateArray.join("<br>"));
         }
     }
 
     $(".date_empty").css("display", datesEnabled ? "table-cell" : "none");
     $(".datestring_player").css("display", datesEnabled ? "inline" : "none");
-    $("#playerlistfoot").html("<tr><td colspan='3'></td></tr><tr><td class='total'>Total</td><td colspan='2'>" + sum + "</td></tr>");
+    $("#playerlistfoot").html("<tr><td colspan='4'></td></tr><tr><td class='total'>Total</td><td colspan='3'>" + sum + "</td></tr>");
     $("#playerlist").css("display", "block");
     generateTableText("wr");
     generateShortNames();

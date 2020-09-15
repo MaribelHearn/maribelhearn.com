@@ -334,6 +334,7 @@ function tl_term($term, $lang) {
             case 'Seasons': return '季節';
             case 'Date': return '日付';
             case 'Dates': return '日付';
+            case 'Replay': return 'リプレイ';
             case 'No. of WRs': return 'WR数';
             case 'Different games': return 'ゲーム';
             case 'World': return '世界';
@@ -380,6 +381,7 @@ function tl_term($term, $lang) {
             case 'Seasons': return '季节';
             case 'Date': return '日期';
             case 'Dates': return '日期';
+            case 'Replay': return 'Rep';
             case 'No. of WRs': return 'WR数量';
             case 'Different games': return '游戏';
             case 'World': return '世界';
