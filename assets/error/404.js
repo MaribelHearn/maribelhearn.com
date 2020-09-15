@@ -34,6 +34,7 @@ function similarity(a, b) {
 
 function get(url, callback) {
     var xhr = new XMLHttpRequest();
+    xhr.setRequestHeader("X-AJAX", "XMLHttpRequest");
     xhr.open("GET", url, true);
     xhr.responseType = "JSON";
     xhr.onload = function () {
@@ -59,16 +60,18 @@ if (isNaN(path) && path != "404.php") {
     if (max > maxPath.length - 2) { // redirect
         location.replace(loc.replace(path, maxPath) + "?redirect=" + path);
     } else {
-        get("https://maribelhearn.com/json/admin.json", function (status, data) {
-            if (status == 200) {
-                data = JSON.parse(data);
-                if (data.hasOwnProperty(path)) {
-                    location.replace(data[path]);
+        if (location.pathname.indexOf('/') === location.pathname.lastIndexOf('/')) {
+            get("json/admin.json", function (status, data) {
+                if (status == 200) {
+                    data = JSON.parse(data);
+                    if (data.hasOwnProperty(path)) {
+                        location.replace(data[path]);
+                    }
                 }
-            }
-            if (isNaN(path) && path != "404.php" && max <= maxPath.length - 2) {
-                document.getElementById("didyoumean").innerHTML = ", did you mean <a href='/" + loc + "'>" + maxPath + "</a>?";
-            }
-        }, "json");
+            }, "json");
+        }
+        if (isNaN(path) && path != "404.php" && max <= maxPath.length - 2) {
+            document.getElementById("didyoumean").innerHTML = ", did you mean <a href='/" + loc + "'>" + maxPath + "</a>?";
+        }
     }
 }
