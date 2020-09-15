@@ -34,7 +34,7 @@ function similarity(a, b) {
 
 var path = location.pathname.split('/').pop(), loc = location.toString(), max = 0, maxPath, sim, i;
 
-if (isNaN(path) && path != "404.html") {
+if (isNaN(path) && path != "404.php") {
     for (i = 0; i < pages.length; i += 1) {
         sim = similarity(path, pages[i]);
         if (sim > max) {
@@ -47,9 +47,18 @@ if (isNaN(path) && path != "404.html") {
 
     if (max > maxPath.length - 2) { // redirect
         location.replace(loc.replace(path, maxPath) + "?redirect=" + path);
+        return;
     }
+
+    $.get("admin/admin.json", function (data) {
+        for (i in data) {
+            if (path == i) {
+                location.replace(data[i]);
+            }
+        }
+    }, "json");
 }
 
-if (isNaN(path) && path != "404.html" && max <= maxPath.length - 2) {
+if (isNaN(path) && path != "404.php" && max <= maxPath.length - 2) {
     document.getElementById("didyoumean").innerHTML = ", did you mean <a href='/" + loc + "'>" + maxPath + "</a>?";
 }
