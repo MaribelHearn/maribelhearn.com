@@ -575,6 +575,7 @@
 					<thead id='playerlisthead'><tr>
                         <th class='category'><?php echo tl_term('Category', $lang) ; ?></th>
                         <th class='score'><?php echo tl_term('Score', $lang); ?></th>
+                        <th class='replay'><?php echo tl_term('Replay', $lang); ?></th>
                         <th class='datestring'><?php echo tl_term('Date', $lang); ?></th>
                     </tr></thead>
 					<tbody id='playerlistbody'></tbody>
