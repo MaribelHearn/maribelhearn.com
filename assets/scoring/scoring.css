@@ -42,9 +42,6 @@ table.center {
 #notice {
     display: none;
 }
-#contents {
-    border: 1px solid #000;
-}
 #checkboxes, #checkboxes td:not(.noborders) {
     border: 1px solid #000;
 }

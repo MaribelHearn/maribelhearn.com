@@ -235,10 +235,10 @@ function format(achievement) {
 }
 function save() {
     if ($("#toggleData").is(":checked")) {
-        localStorage.setItem("saveData", true);
+        localStorage.setItem("saveSurvivalData", true);
         localStorage.setItem("vals", JSON.stringify(vals));
     } else {
-        localStorage.removeItem("saveData");
+        localStorage.removeItem("saveSurvivalData");
     }
 }
 function apply() {
@@ -420,21 +420,12 @@ function reset() {
     if (confirmation) {
         $("#toggleData").prop("checked", false);
         localStorage.removeItem("vals");
-        localStorage.removeItem("saveData");
     }
 
     for (var game in vals) {
         for (difficulty in vals[game]) {
             vals[game][difficulty] = "N/A";
             $("#" + game + difficulty).val("N/A");
-        }
-    }
-}
-function allowData() {
-    if (localStorage.length <= 2) {
-        var allowed = confirm("This will store data in your browser's Web Storage, which functions like a cookie. Do you allow this?");
-        if (!allowed) {
-            $("#toggleData").prop("checked", false);
         }
     }
 }
@@ -459,13 +450,13 @@ $(document).ready(function () {
     }
 
     if (getCookie("saveCookies")) {
-        localStorage.setItem("saveData", getCookie("saveCookies"));
+        localStorage.setItem("saveSurvivalData", getCookie("saveCookies"));
         deleteCookie("saveCookies");
     }
 
     try {
-        if (localStorage.saveData) {
-            $("#toggleData").prop("checked", Boolean(localStorage.saveData));
+        if (localStorage.hasOwnProperty("saveSurvivalData") || localStorage.hasOwnProperty("saveData")) {
+            $("#toggleData").prop("checked", true);
         }
     } catch (err) {}
 
@@ -503,7 +494,7 @@ $(document).ready(function () {
     $("body").on("keyup", closeModal);
     $("select").on("click", save);
     $("#fillAll").on("click", fillAll);
-    $("#toggleData").on("click", allowData);
+    $("#toggleData").on("click", save);
     $("#apply").on("click", apply);
     $("#reset").on("click", reset);
     $(".category").on("change", setProgress);

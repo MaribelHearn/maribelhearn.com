@@ -16,6 +16,7 @@ function isPortrait() {
 }
 function toggleSeasons() {
     seasonsEnabled = !seasonsEnabled;
+    seasonsEnabled ? localStorage.setItem("seasonsEnabled", true) : localStorage.removeItem("seasonsEnabled");
     display({data: {game: "HSiFS", seasonSwitch: true}});
 }
 function toggleLayout() {
@@ -30,6 +31,7 @@ function toggleDates(event) {
 
     if (!alreadyDisabled) {
         datesEnabled = !datesEnabled;
+        datesEnabled ? localStorage.setItem("datesEnabled", true) : localStorage.removeItem("datesEnabled");
     }
 
     for (i in all) {
@@ -98,9 +100,7 @@ function display(event) {
 
     if (game == selected && !seasonSwitch) {
         $("#list").css("display", "none");
-        $("#" + game).css("border", $("#" + game).hasClass("cover98")
-            ? "1px solid black"
-            : "none");
+        $("#" + game).css("border", $("#" + game).hasClass("cover98") ? "1px solid black" : "none");
         $("#fullname, #list_thead, #list_tbody, #west_thead, #west_tbody").html("");
         $("#fullname").removeClass(game + "f");
         $("#table").removeClass(game + "t");
@@ -287,6 +287,7 @@ function display(event) {
 
     $("#list").css("display", "block");
     $("#seasontoggle").css("display", game == "HSiFS" ? "block" : "none");
+    $("#seasons").prop("checked", seasonsEnabled);
     generateTableText("wr");
     generateFullNames();
     generateShottypes();
@@ -463,9 +464,9 @@ $(document).ready(function () {
     $(".zh").on("click", {language: "Chinese", notation: "YMD"}, setLanguage);
     $(".game").on("click", {seasonSwitch: false}, display);
     $("#checkboxes").css("display", "table");
-    seasonsEnabled = $("#seasons").is(":checked");
-    datesEnabled = $("#dates").is(":checked");
     missingReplays = $("#missingReplays").val();
+    datesEnabled = localStorage.getItem("datesEnabled");
+    seasonsEnabled = localStorage.getItem("seasonsEnabled");
 
     if (getCookie("lang") == "Japanese" || location.href.contains("jp")) {
         language = "Japanese";
@@ -479,6 +480,8 @@ $(document).ready(function () {
 
     if (!datesEnabled) {
         disableDates();
+    } else {
+        $("#dates").prop("checked", true);
     }
 
     if (navigator.userAgent.indexOf("Mobile") == -1 && navigator.userAgent.indexOf("Tablet") == -1) {

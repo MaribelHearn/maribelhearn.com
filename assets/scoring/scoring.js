@@ -943,10 +943,9 @@ function calc() {
     $("#topList").html(topList);
     sorttable.makeSortable(document.getElementById("table"));
     sorttable.makeSortable(document.getElementById("gameTable"));
-
     if ($("#toggleData").is(":checked")) {
+        localStorage.setItem("saveScoringData", true);
         localStorage.setItem("precision", precision);
-        localStorage.setItem("saveData", true);
 
         for (game in scores) {
             shown[game] = $("#" + game + "c").is(":checked");
@@ -954,17 +953,22 @@ function calc() {
             localStorage.setItem(game, JSON.stringify(scores[game]));
         }
     } else {
-        localStorage.removeItem("saveData");
+        localStorage.removeItem("saveScoringData");
+    }
+}
+function save() {
+    if ($("#toggleData").is(":checked")) {
+        localStorage.setItem("saveScoringData", true);
+    } else {
+        localStorage.removeItem("saveScoringData");
     }
 }
 function reset() {
     var confirmation = confirm("Are you sure you want to erase all your scores?"), game, difficulty, shottype;
 
     if (confirmation) {
-        $("#toggleData").prop("checked", false);
         localStorage.removeItem("shown");
         localStorage.removeItem("precision");
-        localStorage.removeItem("saveData");
         for (game in scores) {
             localStorage.removeItem(game);
 
@@ -1009,16 +1013,6 @@ function checkShown() {
         }
     }
 }
-function allowData() {
-    if (localStorage.length <= 2) {
-        var allowed = confirm("This will store data in your browser's Web Storage, " +
-        "which functions like a cookie. Do you allow this?");
-
-        if (!allowed) {
-            $("#toggleData").prop("checked", false);
-        }
-    }
-}
 $(document).ready(function () {
     var game;
 
@@ -1037,8 +1031,8 @@ $(document).ready(function () {
         checkShown();
         $("#precision").val(localStorage.precision ? Number(localStorage.precision) : 0);
 
-        if (localStorage.saveData) {
-            $("#toggleData").prop("checked", Boolean(localStorage.saveData));
+        if (localStorage.hasOwnProperty("saveScoringData") || localStorage.hasOwnProperty("saveData")) {
+            $("#toggleData").prop("checked", true);
         }
     } catch (err) {}
 
@@ -1046,13 +1040,13 @@ $(document).ready(function () {
         $("#notice").css("display", "block");
     }
 
-    $("#toggleData").on("click", allowData);
     $("#calc").on("click", calc);
     $("#reset").on("click", reset);
     $("#tracked").on("click", checkTracked);
     $("#untracked").on("click", checkUntracked);
     $("#all").on("click", checkAll);
     $(".check").on("click", checkGame);
+    $("#toggleData").on("click", save);
 
     $.get("json/wrlist.json", function (data) {
         WRs = data;
