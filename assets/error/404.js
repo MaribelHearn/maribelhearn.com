@@ -32,6 +32,17 @@ function similarity(a, b) {
     }(m, n)).length;
 }
 
+function get(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.responseType = "JSON";
+    xhr.onload = function () {
+        var status = xhr.status;
+        callback(status, xhr.response);
+    };
+    xhr.send();
+};
+
 var path = location.pathname.split('/').pop(), loc = location.toString(), max = 0, maxPath, sim, i;
 
 if (isNaN(path) && path != "404.php") {
@@ -47,14 +58,16 @@ if (isNaN(path) && path != "404.php") {
 
     if (max > maxPath.length - 2) { // redirect
         location.replace(loc.replace(path, maxPath) + "?redirect=" + path);
-    } else if (isNaN(path) && path != "404.php" && max <= maxPath.length - 2) {
-        document.getElementById("didyoumean").innerHTML = ", did you mean <a href='/" + loc + "'>" + maxPath + "</a>?";
     } else {
-        $.get("https://maribelhearn.com/admin/admin.json", function (data) {
-            for (i in data) {
-                if (path == i) {
+        get("https://maribelhearn.com/admin/admin.json", function (status, data) {
+            if (status == 200) {
+                data = JSON.parse(data);
+                for (data.hasOwnProperty(path)) {
                     location.replace(data[i]);
                 }
+            }
+            if (isNaN(path) && path != "404.php" && max <= maxPath.length - 2) {
+                document.getElementById("didyoumean").innerHTML = ", did you mean <a href='/" + loc + "'>" + maxPath + "</a>?";
             }
         }, "json");
     }
