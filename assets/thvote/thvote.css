@@ -186,9 +186,6 @@ table {
 #hy {
     float: right;
 }
-#responses {
-    border: 1px solid #000;
-}
 @media only screen and (min-width:1500px) and (max-width:1850px) {
     .wrap {
         margin-left: 15%;

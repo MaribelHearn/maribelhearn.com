@@ -35,6 +35,7 @@
 	$overall_shottype = array(0);
 	$overall_date = array(0);
 	$missing_replays = array();
+    $diff_max = array();
     $pl = array();
 	$pl_wr = array();
 	$flag = array();
@@ -142,7 +143,9 @@
 		$num = num($game);
 		$overall[$num] = 0;
         $flag = array_fill(0, sizeof($flag), true);
+        $diff_max[$game] = array();
 		foreach ($wr[$game] as $diff => $value) {
+            $diff_max[$game][$diff] = [0, '', ''];
 			foreach ($wr[$game][$diff] as $shot => $array) {
 				if ($array[0] > $overall[$num]) {
 					$overall[$num] = $array[0];
@@ -151,6 +154,9 @@
 					$overall_player[$num] = $array[1];
 					$overall_date[$num] = $array[2];
 				}
+                if ($array[0] > $diff_max[$game][$diff][0]) {
+                    $diff_max[$game][$diff] = [$array[0], $array[1], $shot];
+                }
 				if (!file_exists(replay_path($game, $diff, $shot)) && $num > 5) {
 					array_push($missing_replays, ($game . $diff . $shot));
 				}
@@ -413,18 +419,7 @@
                 if ($layout == 'New') {
                     echo '<noscript>';
                 }
-                $diff_max = array();
-                $game_max = array();
                 foreach ($wr as $game => $obj) {
-                    $game_max[$game] = 0;
-                    $diff_max[$game] = [
-                        'Easy' => [0, '', ''],
-                        'Normal' => [0, '', ''],
-                        'Hard' => [0, '', ''],
-                        'Lunatic' => [0, '', ''],
-                        'Extra' => [0, '', ''],
-                        'Phantasm' => [0, '', '']
-                    ];
                     echo '<div id="' . $game . '">';
                     echo '<p><img' . (num($game) <= 5 ? ' class="cover98"' : '') . ' src="games/' . strtolower($game) .
                     '50x50.jpg" alt="' . $game . ' cover"> <u>' . full_name($game, $lang) . '</u></p>';
@@ -444,22 +439,9 @@
                             $shots = $obj[array_keys($obj)[$j]];
                             $score = $shots[$shot][0];
                             $player = $shots[$shot][1];
-                            $game_max[$game] = max($game_max[$game], $score);
-                            if ($game == 'HSiFS' && $diff == 'Extra') {
-                                if (strpos($shot, 'Spring')) {
-                                    $tmp = substr($shot, 0, -6);
-                                    if ($shots[$tmp][0] > $diff_max['HSiFS']['Extra'][0]) {
-                                        $diff_max['HSiFS']['Extra'] = [$shots[$tmp][0], $shots[$tmp][1], $tmp];
-                                    }
-                                }
-                            } else if ($score > $diff_max[$game][$diff][0]) {
-                                $diff_max[$game][$diff] = [min($score, $MAX_SCORE), $player, $shot];
-                            }
                             if ($game == 'GFW' && $diff == 'Extra') {
-                                $diff_max['GFW']['Extra'] = [$wr['GFW']['Extra']['-'][0], $wr['GFW']['Extra']['-'][1], '-'];
                                 break;
-                            }
-                            if ($game == 'HSiFS' && $diff == 'Extra') {
+                            } else if ($game == 'HSiFS' && $diff == 'Extra') {
                                 if (strpos($shot, 'Spring')) {
                                     $shot = substr($shot, 0, -6);
                                     $score = number_format($shots[$shot][0], 0, '.', ',');
@@ -471,11 +453,22 @@
                                     '>' . date_tl($shots[$shot][2], $notation) . '</span></span></td>';
                                 }
                             } else {
-                                $score = number_format($score, 0, '.', ',');
-                                if (file_exists(replay_path($game, $diff, $shot))) {
-                                    $score = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score . '</a>';
+                                if ($score >= $MAX_SCORE) {
+                                    $score_text = '<abbr title="' . number_format($score, 0, '.', ',') .
+                                    '">' . number_format($MAX_SCORE, 0, '.', ',') . '</abbr>';
+                                } else {
+                                    $score_text = number_format($score, 0, '.', ',');
                                 }
-                                echo '<td>' . $score . '</a><br>by <em>' . $player . '</em><span class="dimgrey"><br>' .
+                                if (file_exists(replay_path($game, $diff, $shot))) {
+                                    $score_text = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score_text . '</a>';
+                                }
+                                if ($score == $overall[num($game)]) {
+                                    $score_text = '<strong>' . $score_text . '</strong>';
+                                }
+                                if ($score == $diff_max[$game][$diff][0]) {
+                                    $score_text = '<u>' . $score_text . '</u>';
+                                }
+                                echo '<td>' . $score_text . '</a><br>by <em>' . $player . '</em><span class="dimgrey"><br>' .
                                 '<span class="datestring_game">' . date_tl($shots[$shot][2], $notation) . '</span></span></td>';
                             }
                         }
@@ -506,8 +499,14 @@
                         } else {
                             $percentage = number_format((float) $westt[0] / $world[0] * 100, 2, '.', ',');
                         }
+                        if ($world[0] >= $MAX_SCORE) {
+                            $world_text = '<abbr title="' . number_format($world[0], 0, '.', ',') .
+                            '">' . number_format($MAX_SCORE, 0, '.', ',') . '</abbr>';
+                        } else {
+                            $world_text = number_format($world[0], 0, '.', ',');
+                        }
                         echo '<tr><td colspan="3"><u>' . tl_term($diff, $lang) . '</u></td></tr>' .
-                        '<tr><td>' . number_format($world[0], 0, '.', ',') .
+                        '<tr><td>' . $world_text .
                         '<br>by <em>' . $world[1] . '</em><br>(' . tl_shot($world[2], $lang) .
                         ')</td><td>' . number_format($westt[0], 0, '.', ',') .
                         '<br>by <em>' . $westt[1] . '</em><br>(' . tl_shot($westt[2], $lang) .
