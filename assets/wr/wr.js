@@ -50,97 +50,6 @@ function disableDates() {
 function shotRoute(game) {
     return game == "HRtP" || game == "GFW" ? "Route" : "Shottype";
 }
-function gameAbbr(game) {
-    return ({
-        "HRtP": 1,
-        "SoEW": 2,
-        "PoDD": 3,
-        "LLS": 4,
-        "MS": 5,
-        "EoSD": 6,
-        "PCB": 7,
-        "IN": 8,
-        "PoFV": 9,
-        "MoF": 10,
-        "SA": 11,
-        "UFO": 12,
-        "GFW": 128,
-        "TD": 13,
-        "DDC": 14,
-        "LoLK": 15,
-        "HSiFS": 16,
-        "WBaWC": 17
-    })[game];
-}
-function shottypeAbbr(shottype) {
-    return ({
-        "Reimu": "Re",
-        "ReimuA": "RA",
-        "ReimuB": "RB",
-        "ReimuC": "RC",
-        "Marisa": "Ma",
-        "MarisaA": "MA",
-        "MarisaB": "MB",
-        "MarisaC": "MC",
-        "Sakuya": "Sa",
-        "SakuyaA": "SA",
-        "SakuyaB": "SB",
-        "Sanae": "Sa",
-        "SanaeA": "SA",
-        "SanaeB": "SB",
-        "BorderTeam": "BT",
-        "MagicTeam": "MT",
-        "ScarletTeam": "ST",
-        "GhostTeam": "GT",
-        "Yukari": "Yu",
-        "Alice": "Al",
-        "Remilia": "Rr",
-        "Youmu": "Yo",
-        "Yuyuko": "Yy",
-        "Reisen": "Ud",
-        "Cirno": "Ci",
-        "Lyrica": "Ly",
-        "Mystia": "My",
-        "Tewi": "Te",
-        "Aya": "Ay",
-        "Medicine": "Me",
-        "Yuuka": "Yu",
-        "Komachi": "Ko",
-        "Eiki": "Ei",
-        "A1": "A1",
-        "A2": "A2",
-        "B1": "B1",
-        "B2": "B2",
-        "C1": "C1",
-        "C2": "C2",
-        "-": "tr",
-        "ReimuSpring": "RS",
-        "ReimuSummer": "RU",
-        "ReimuAutumn": "RA",
-        "ReimuWinter": "RW",
-        "CirnoSpring": "CS",
-        "CirnoSummer": "CU",
-        "CirnoAutumn": "CA",
-        "CirnoWinter": "CW",
-        "AyaSpring": "AS",
-        "AyaSummer": "AU",
-        "AyaAutumn": "AA",
-        "AyaWinter": "AW",
-        "MarisaSpring": "MS",
-        "MarisaSummer": "MU",
-        "MarisaAutumn": "MA",
-        "MarisaWinter": "MW",
-        "ReimuWolf": "RW",
-        "ReimuOtter": "RO",
-        "ReimuEagle": "RE",
-        "MarisaWolf": "MW",
-        "MarisaOtter": "MO",
-        "MarisaEagle": "ME",
-        "YoumuWolf": "YW",
-        "YoumuOtter": "YO",
-        "YoumuEagle": "YE"
-    })[shottype];
-}
 function replayPath(game, difficulty, shottype) {
     return "replays/th" + gameAbbr(game) + "_ud" + difficulty.substr(0, 2) + shottypeAbbr(shottype) + ".rpy";
 }
@@ -527,8 +436,8 @@ $(document).ready(function () {
     $("#newlayout").css("display", "block");
     $("#playersearch").css("display", "block");
     $("#contents_new").css("display", "table");
-    $("#westernlink").css("display", "table-row");
-    $("#playersearchlink").css("display", "table-row");
+    $("#westernlink").css("display", "block");
+    $("#playersearchlink").css("display", "block");
     $("#layouttoggle").on("click", toggleLayout);
     $("#player").on("change", getPlayerWRs);
     $("body").on("resize", updateOrientation);

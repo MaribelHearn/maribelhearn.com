@@ -25,6 +25,76 @@ function num($game) {
         default: return 0;
     }
 }
+function shot_abbr($shot) {
+    switch ($shot) {
+        case 'Reimu': return 'Re';
+        case 'ReimuA': return 'RA';
+        case 'ReimuB': return 'RB';
+        case 'ReimuC': return 'RC';
+        case 'Marisa': return 'Ma';
+        case 'MarisaA': return 'MA';
+        case 'MarisaB': return 'MB';
+        case 'MarisaC': return 'MC';
+        case 'Sakuya': return 'Sa';
+        case 'SakuyaA': return 'SA';
+        case 'SakuyaB': return 'SB';
+        case 'Sanae': return 'Sa';
+        case 'SanaeA': return 'SA';
+        case 'SanaeB': return 'SB';
+        case 'BorderTeam': return 'BT';
+        case 'MagicTeam': return 'MT';
+        case 'ScarletTeam': return 'ST';
+        case 'GhostTeam': return 'GT';
+        case 'Yukari': return 'Yu';
+        case 'Alice': return 'Al';
+        case 'Remilia': return 'Rr';
+        case 'Youmu': return 'Yo';
+        case 'Yuyuko': return 'Yy';
+        case 'Reisen': return 'Ud';
+        case 'Cirno': return 'Ci';
+        case 'Lyrica': return 'Ly';
+        case 'Mystia': return 'My';
+        case 'Tewi': return 'Te';
+        case 'Aya': return 'Ay';
+        case 'Medicine': return 'Me';
+        case 'Yuuka': return 'Yu';
+        case 'Komachi': return 'Ko';
+        case 'Eiki': return 'Ei';
+        case 'A1': return 'A1';
+        case 'A2': return 'A2';
+        case 'B1': return 'B1';
+        case 'B2': return 'B2';
+        case 'C1': return 'C1';
+        case 'C2': return 'C2';
+        case '-': return 'tr';
+        case 'ReimuSpring': return 'RS';
+        case 'ReimuSummer': return 'RU';
+        case 'ReimuAutumn': return 'RA';
+        case 'ReimuWinter': return 'RW';
+        case 'CirnoSpring': return 'CS';
+        case 'CirnoSummer': return 'CU';
+        case 'CirnoAutumn': return 'CA';
+        case 'CirnoWinter': return 'CW';
+        case 'AyaSpring': return 'AS';
+        case 'AyaSummer': return 'AU';
+        case 'AyaAutumn': return 'AA';
+        case 'AyaWinter': return 'AW';
+        case 'MarisaSpring': return 'MS';
+        case 'MarisaSummer': return 'MU';
+        case 'MarisaAutumn': return 'MA';
+        case 'MarisaWinter': return 'MW';
+        case 'ReimuWolf': return 'RW';
+        case 'ReimuOtter': return 'RO';
+        case 'ReimuEagle': return 'RE';
+        case 'MarisaWolf': return 'MW';
+        case 'MarisaOtter': return 'MO';
+        case 'MarisaEagle': return 'ME';
+        case 'YoumuWolf': return 'YW';
+        case 'YoumuOtter': return 'YO';
+        case 'YoumuEagle': return 'YE';
+        default: return '';
+    }
+}
 function tl_shot($shot, $lang) {
     if ($lang == 'Japanese') {
         switch ($shot) {
@@ -289,6 +359,10 @@ function tl_term($term, $lang) {
             case 'Summer': return '夏';
             case 'Autumn': return '秋';
             case 'Winter': return '冬';
+            case 'Flag of the United Kingdom': return 'イギリスの国旗';
+            case 'Flag of the United States': return 'アメリカ合衆国の国旗';
+            case 'Flag of Japan': return '日本の国旗';
+            case 'Flag of the P.R.C.': return '中華人民共和国の国旗';
             default: return $term;
         }
     } else if ($lang == 'Chinese') {
@@ -331,6 +405,10 @@ function tl_term($term, $lang) {
             case 'Summer': return '夏';
             case 'Autumn': return '秋';
             case 'Winter': return '冬';
+            case 'Flag of the United Kingdom': return '英国旗';
+            case 'Flag of the United States': return '美国旗';
+            case 'Flag of Japan': return '日本旗';
+            case 'Flag of the P.R.C.': return '中国旗';
             default: return $term;
         }
     } else {

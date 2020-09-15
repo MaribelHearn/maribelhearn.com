@@ -33,15 +33,6 @@ table, th, td {
 #layouttoggle, #newlayout, #playersearch, #playersearchlink, #contents_new {
     display: none;
 }
-#contents td, #contents th, #contents_new td, #contents_new th {
-    border: none;
-}
-#checkboxes tbody:after {
-    content: "\200C";
-    display: block;
-    line-height: 1em;
-    color: #000;
-}
 #list, #playerlist {
     margin-top: 10px;
     display: none;

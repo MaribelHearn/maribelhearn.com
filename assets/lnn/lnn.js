@@ -1,4 +1,4 @@
-var LNNs, language = "English", selected = "", playerSelected = false, playergameLNNs;
+var LNNs, language = "English", selected = "", playerSelected = false, missingReplays, playergameLNNs;
 
 function toggleLayout() {
     if (getCookie("lnn_old_layout")) {
@@ -19,6 +19,10 @@ function restrictions(game) {
 }
 function shotRoute(game) {
     return game == "HRtP" || game == "GFW" ? "Route" : "Shottype";
+}
+function replayPath(game, player, shottype) {
+    return "replays/lnn/" + player.removeSpaces() + "/th" + gameAbbr(game) +
+    "_ud" + player.charAt(0) + player.charAt(player.length - 1) + shottypeAbbr(shottype) + ".rpy";
 }
 function show(game) {
     if (typeof game == "object") {
@@ -143,7 +147,7 @@ function getPlayerLNNs(player) {
         return;
     }
 
-    var games = [], sum = 0, game, array, gamesum, shottype, character, type, list, i;
+    var games = [], sum = 0, game, array, replays, gamesum, shottype, character, type, list, replay, tmp, i;
 
     playerSelected = true;
     $("#playerlistbody").html("");
@@ -154,25 +158,37 @@ function getPlayerLNNs(player) {
         }
 
         array = [];
+        replays = [];
         gamesum = 0;
 
         for (shottype in LNNs[game]) {
             if (LNNs[game][shottype].contains(player)) {
                 if (!games.contains(game)) {
-                    $("#playerlistbody").append("<tr><td class='" + game + "'>" + game + "</td><td id='" + game + "s'></td></tr>");
+                    $("#playerlistbody").append("<tr><td class='" + game + "'>" + game + "</td><td id='" + game +
+                    "s'></td><td id='" + game + "r'></td></tr>");
                     games.push(game);
                 }
                 character = shottype.replace(/(FinalA|FinalB|UFOs)/g, "");
                 type = shottype.replace(character, "");
                 array.push("<span class='" + character + "'>" + character +
                 "</span>" + (type === "" ? "": " (<span class='" + type + "'>" + type + "</span>)"));
+                if (gameAbbr(game) < 6 || missingReplays.contains(game + player.removeSpaces() + shottype)) {
+                    replays.push('-');
+                } else {
+                    replay = replayPath(game, player, shottype);
+                    tmp = replay.split('/');
+                    replays.push("<a href='" + location.origin +
+                    "/" + replay + "'>" + tmp[tmp.length - 1] + "</a>");
+                }
                 gamesum += 1;
                 sum += 1;
             }
         }
 
-        list = array.join(", ");
+        list = array.join("<br>");
         $("#" + game + "s").html(list);
+        list = replays.join("<br>");
+        $("#" + game + "r").html(list);
 
         if (game == "UFO" && list.contains("ReimuA") && list.contains("ReimuB") && list.contains("MarisaA") && list.contains("MarisaB") && list.contains("SanaeA") && list.contains("SanaeB")) {
             $("#UFOs").append(" <strong class='all'>(All)</strong>");
@@ -181,7 +197,7 @@ function getPlayerLNNs(player) {
         }
     }
 
-    $("#playerlistfoot").html("<tr><td colspan='2'></td></tr><tr><td class='total'>Total</td><td>" + sum + "</td></tr>");
+    $("#playerlistfoot").html("<tr><td colspan='3'></td></tr><tr><td class='total'>Total</td><td colspan='2'>" + sum + "</td></tr>");
     $("#playerlist").css("display", "block");
     generateTableText("lnn");
     generateShortNames();
@@ -211,6 +227,7 @@ $(document).ready(function () {
     $(".jp").on("click", {language: "Japanese"}, setLanguage);
     $(".zh").on("click", {language: "Chinese"}, setLanguage);
     $(".game").on("click", show);
+    missingReplays = $("#missingReplays").val();
 
     if (getCookie("lang") == "Japanese" || location.href.contains("jp")) {
         language = "Japanese";

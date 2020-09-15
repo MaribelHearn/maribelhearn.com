@@ -52,76 +52,6 @@
             return 'does_even_score_well';
         }
     }
-	function shot_abbr($shot) {
-	    switch ($shot) {
-	        case 'Reimu': return 'Re';
-	        case 'ReimuA': return 'RA';
-	        case 'ReimuB': return 'RB';
-	        case 'ReimuC': return 'RC';
-	        case 'Marisa': return 'Ma';
-	        case 'MarisaA': return 'MA';
-	        case 'MarisaB': return 'MB';
-	        case 'MarisaC': return 'MC';
-	        case 'Sakuya': return 'Sa';
-	        case 'SakuyaA': return 'SA';
-	        case 'SakuyaB': return 'SB';
-	        case 'Sanae': return 'Sa';
-	        case 'SanaeA': return 'SA';
-	        case 'SanaeB': return 'SB';
-	        case 'BorderTeam': return 'BT';
-	        case 'MagicTeam': return 'MT';
-	        case 'ScarletTeam': return 'ST';
-	        case 'GhostTeam': return 'GT';
-	        case 'Yukari': return 'Yu';
-	        case 'Alice': return 'Al';
-	        case 'Remilia': return 'Rr';
-	        case 'Youmu': return 'Yo';
-	        case 'Yuyuko': return 'Yy';
-	        case 'Reisen': return 'Ud';
-	        case 'Cirno': return 'Ci';
-	        case 'Lyrica': return 'Ly';
-	        case 'Mystia': return 'My';
-	        case 'Tewi': return 'Te';
-	        case 'Aya': return 'Ay';
-	        case 'Medicine': return 'Me';
-	        case 'Yuuka': return 'Yu';
-	        case 'Komachi': return 'Ko';
-	        case 'Eiki': return 'Ei';
-	        case 'A1': return 'A1';
-	        case 'A2': return 'A2';
-	        case 'B1': return 'B1';
-	        case 'B2': return 'B2';
-	        case 'C1': return 'C1';
-	        case 'C2': return 'C2';
-	        case '-': return 'tr';
-	        case 'ReimuSpring': return 'RS';
-	        case 'ReimuSummer': return 'RU';
-	        case 'ReimuAutumn': return 'RA';
-	        case 'ReimuWinter': return 'RW';
-	        case 'CirnoSpring': return 'CS';
-	        case 'CirnoSummer': return 'CU';
-	        case 'CirnoAutumn': return 'CA';
-	        case 'CirnoWinter': return 'CW';
-	        case 'AyaSpring': return 'AS';
-	        case 'AyaSummer': return 'AU';
-	        case 'AyaAutumn': return 'AA';
-	        case 'AyaWinter': return 'AW';
-	        case 'MarisaSpring': return 'MS';
-	        case 'MarisaSummer': return 'MU';
-	        case 'MarisaAutumn': return 'MA';
-	        case 'MarisaWinter': return 'MW';
-	        case 'ReimuWolf': return 'RW';
-	        case 'ReimuOtter': return 'RO';
-	        case 'ReimuEagle': return 'RE';
-	        case 'MarisaWolf': return 'MW';
-	        case 'MarisaOtter': return 'MO';
-	        case 'MarisaEagle': return 'ME';
-	        case 'YoumuWolf': return 'YW';
-	        case 'YoumuOtter': return 'YO';
-	        case 'YoumuEagle': return 'YE';
-			default: return '';
-	    }
-	}
 	function replay_path($game, $diff, $shot) {
 	    return 'replays/th' . num($game) . '_ud' . substr($diff, 0, 2) . shot_abbr($shot) . '.rpy';
 	}
@@ -286,32 +216,24 @@
 		                <tbody>
                             <tr class='noborders'>
 		                        <td class='noborders'>
-                                    <a class='en-gb' href='wr?hl=en-gb'><img src='assets/flags/uk.png' alt='<?php
-										if ($lang == 'English') { echo 'Flag of the United Kingdom'; }
-										else if ($lang == 'Japanese') { echo 'イギリスの国旗'; }
-										else { echo '英国旗'; }
-									?>'></a>
+                                    <a class='en-gb' href='lnn?hl=en-gb'>
+                                        <img src='assets/flags/uk.png' alt='<?php echo tl_term('Flag of the United Kingdom', $lang) ?>'>
+                                    </a>
 		                        </td>
     		                        <td class='noborders'>
-                                        <a class='en-us' href='wr?hl=en-us'><img src='assets/flags/us.png' alt='<?php
-    										if ($lang == 'English') { echo 'Flag of the United States'; }
-    										else if ($lang == 'Japanese') { echo 'アメリカ合衆国の国旗'; }
-    										else { echo '美国旗'; }
-    									?>'></a>
+                                        <a class='en-us' href='lnn?hl=en-us'>
+                                            <img src='assets/flags/us.png' alt='<?php echo tl_term('Flag of the United States', $lang) ?>'>
+                                        </a>
     		                        </td>
 		                        <td class='noborders'>
-                                    <a class='jp' href='wr?hl=jp'><img src='assets/flags/japan.png' alt='<?php
-										if ($lang == 'English') { echo 'Flag of Japan'; }
-										else if ($lang == 'Japanese') { echo '日本の国旗'; }
-										else { echo '日本旗'; }
-									?>'></a>
+                                    <a class='jp' href='lnn?hl=jp'>
+                                        <img src='assets/flags/japan.png' alt='<?php echo tl_term('Flag of Japan', $lang) ?>'>
+                                    </a>
 		                        </td>
 		                        <td class='noborders'>
-                                    <a class='zh' href='wr?hl=zh'><img src='assets/flags/china.png' alt='<?php
-										if ($lang == 'English') { echo 'Flag of the P.R.C.'; }
-										else if ($lang == 'Japanese') { echo '中華人民共和国の国旗'; }
-										else { echo '中国旗'; }
-									?>'></a>
+                                    <a class='zh' href='lnn?hl=zh'>
+                                        <img src='assets/flags/china.png' alt='<?php echo tl_term('Flag of the P.R.C.', $lang) ?>'>
+                                    </a>
 		                        </td>
 		                    </tr>
 		                    <tr class='noborders'>
@@ -376,36 +298,36 @@
             <?php
                 // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
                 if ($layout == 'New') {
-                    echo '<table id="contents_new"><tr id="overall_link"><td><a href="#overall" ' .
-                    'class="overallrecords">' . tl_term('Overall Records', $lang) . '</a></td></tr>' .
-                    '<tr id="overall_linkm"><td><a href="#overallm" class="overallrecords">' . tl_term('Overall Records', $lang) .
-                    '</a></td></tr><tr><td><a href="#wrs" class="worldrecords">' . tl_term('World Records', $lang) . '
-                    </a></td></tr><tr><td><a href="#players" class="playerranking">' . tl_term('Player Ranking', $lang) .
-                    '</a></td></tr><tr><td><a href="#ack" class="ack">' . tl_term('Acknowledgements', $lang) .
-                    '</a></td></tr></table><noscript>';
+                    echo '<div id="contents_new" class="border"><p id="overall_link"><a href="#overall" ' .
+                    'class="overallrecords">' . tl_term('Overall Records', $lang) . '</a></p>' .
+                    '<p id="overall_linkm"><a href="#overallm" class="overallrecords">' . tl_term('Overall Records', $lang) .
+                    '</a></p><p><a href="#wrs" class="worldrecords">' . tl_term('World Records', $lang) . '
+                    </a></p><p><a href="#players" class="playerranking">' . tl_term('Player Ranking', $lang) .
+                    '</a></p><p><a href="#ack" class="ack">' . tl_term('Acknowledgements', $lang) .
+                    '</a></p></div><noscript>';
                 }
-                echo '<table id="contents"><tr id="overall_link"><td><a href="#overall" ' .
-                'class="overallrecords">' . tl_term('Overall Records', $lang) . '</a></td></tr>' .
-                '<tr id="overall_linkm"><td><a href="#overallm" class="overallrecords">' . tl_term('Overall Records', $lang) .
-                '</a></td></tr><tr><td><a href="#wrs" class="worldrecords">' . tl_term('World Records', $lang) . '
-                </a></td></tr>';
+                echo '<div id="contents" class="border"><p id="overall_link"><a href="#overall" ' .
+                'class="overallrecords">' . tl_term('Overall Records', $lang) . '</a></p>' .
+                '<p id="overall_linkm"><a href="#overallm" class="overallrecords">' . tl_term('Overall Records', $lang) .
+                '</a></p><p><a href="#wrs" class="worldrecords">' . tl_term('World Records', $lang) . '
+                </a></p>';
                 foreach ($wr as $game => $value) {
-                    echo '<tr><td><a href="#' . $game . '">' . full_name($game, $lang) . '</a></td></tr>';
+                    echo '<p><a href="#' . $game . '">' . full_name($game, $lang) . '</a></p>';
                 }
-                echo '<tr id="westernlink"><td><a href="#western">' . tl_term('Western Records', $lang) . '</a></td></tr>';
-                echo '<tr id="playersearchlink"><td><a href="#playerwrs">' . player_search($lang) . '</a></td></tr>';
-                echo '<tr><td><a href="#players" class="playerranking">' . tl_term('Player Ranking', $lang) . '</a></td></tr>';
-                echo '<tr><td><a href="#ack" class="ack">' . tl_term('Acknowledgements', $lang) . '</a></td></tr></table>';
+                echo '<p id="westernlink"><a href="#western">' . tl_term('Western Records', $lang) . '</a></p>';
+                echo '<p id="playersearchlink"><a href="#playerwrs">' . player_search($lang) . '</a></p>';
+                echo '<p><a href="#players" class="playerranking">' . tl_term('Player Ranking', $lang) . '</a></p>';
+                echo '<p><a href="#ack" class="ack">' . tl_term('Acknowledgements', $lang) . '</a></p></div>';
                 if ($layout == 'New') {
                     echo '</noscript>';
                 }
             ?>
-            <table id='checkboxes'>
-                <tr class='noborders'><td class='noborders'>
+            <div id='checkboxes' class='border'>
+                <p>
                     <input id='dates' type='checkbox'>
 			        <label id='label_dates' for='dates' class='dates'><?php echo tl_term('Dates', $lang); ?></label>
-                </td></tr>
-            </table>
+                </p>
+            </div>
             <div id='overall'>
                 <h2 class='overallrecords'><?php echo tl_term('Overall Records', $lang); ?></h2>
                 <table class='sortable'>
@@ -691,51 +613,48 @@
                 </table>
             </div>
             <h2 id='ack' class='ack'><?php echo tl_term('Acknowledgements', $lang); ?></h2>
-            <table id='acks' class='noborders'>
-                <tbody>
-					<tr class='noborders'>
-						<td id='credit' class='noborders'><?php
-                            if ($lang == 'English') {
-                                echo 'The background image was drawn by ' .
-                                '<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>.';
-                            } else if ($lang == 'Japanese') {
-                                echo '背景イメージは<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">' .
-                                'Catboyjeremie</a>さんのものを使用させていただいております。';
-                            } else {
-                                echo '背景画师：<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>。';
-                            }
-                        ?></td>
-					</tr>
-                    <tr class='noborders'>
-                        <td id='jptlcredit' class='noborders'><?php
-                            if ($lang == 'English') {
-                                echo 'The Japanese translation of the top text was done by ' .
-                                '<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.';
-                            } else if ($lang == 'Japanese') {
-                                echo 'ページ上部のテキストは<a href="https://twitter.com/toho_yumiya">Yu-miya</a>' .
-                                'によって日本語に翻訳されました。';
-                            } else {
-                                echo '感谢<a href="https://twitter.com/toho_yumiya">Yu-miya</a>提供头部文字的日语翻译。';
-                            }
-                        ?></td>
-                    </tr>
-                    <tr class='noborders'>
-                        <td id='cntlcredit' class='noborders'><?php
-                            if ($lang == 'English') {
-                                echo 'The Chinese translation of the top text was done by ' .
-                                '<a href="https://twitter.com/williewillus">williewillus</a>.';
-                            } else if ($lang == 'Japanese') {
-                                echo 'ページ上部のテキストは<a href="https://twitter.com/williewillus">williewillus</a>' .
-                                'によって中国語に翻訳されました。';
-                            } else {
-                                echo '感谢<a href="https://twitter.com/williewillus">williewillus</a>提供头部文字的中文翻译。';
-                            }
-                        ?></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div id='ack_container'>
+				<p id='credit'><?php
+                        if ($lang == 'English') {
+                            echo 'The background image was drawn by ' .
+                            '<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>.';
+                        } else if ($lang == 'Japanese') {
+                            echo '背景イメージは<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">' .
+                            'Catboyjeremie</a>さんのものを使用させていただいております。';
+                        } else {
+                            echo '背景画师：<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>。';
+                        }
+                    ?>
+				</p>
+                <p id='jptlcredit'>
+                    <?php
+                        if ($lang == 'English') {
+                            echo 'The Japanese translation of the top text was done by ' .
+                            '<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.';
+                        } else if ($lang == 'Japanese') {
+                            echo 'ページ上部のテキストは<a href="https://twitter.com/toho_yumiya">Yu-miya</a>' .
+                            'によって日本語に翻訳されました。';
+                        } else {
+                            echo '感谢<a href="https://twitter.com/toho_yumiya">Yu-miya</a>提供头部文字的日语翻译。';
+                        }
+                    ?>
+                </p>
+                <p id='cntlcredit'>
+                    <?php
+                        if ($lang == 'English') {
+                            echo 'The Chinese translation of the top text was done by ' .
+                            '<a href="https://twitter.com/williewillus">williewillus</a>.';
+                        } else if ($lang == 'Japanese') {
+                            echo 'ページ上部のテキストは<a href="https://twitter.com/williewillus">williewillus</a>' .
+                            'によって中国語に翻訳されました。';
+                        } else {
+                            echo '感谢<a href="https://twitter.com/williewillus">williewillus</a>提供头部文字的中文翻译。';
+                        }
+                    ?>
+                </p>
+            </div>
             <p id='back'><strong><a id='backtotop' href='#top'><?php echo tl_term('Back to Top', $lang); ?></a></strong></p>
-			<?php echo '<input id="missingReplays" type="hidden" value="' . implode($missing_replays, '') . '">'; ?>
+			<?php echo '<input id="missingReplays" type="hidden" value="' . implode($missing_replays, '') . '">' ?>
 		</div>
         <script src='assets/shared/dark.js'></script>
     </body>
