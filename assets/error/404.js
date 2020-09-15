@@ -59,7 +59,7 @@ if (isNaN(path) && path != "404.php") {
     if (max > maxPath.length - 2) { // redirect
         location.replace(loc.replace(path, maxPath) + "?redirect=" + path);
     } else {
-        get("https://maribelhearn.com/admin/admin.json", function (status, data) {
+        get("https://maribelhearn.com/json/admin.json", function (status, data) {
             if (status == 200) {
                 data = JSON.parse(data);
                 if (data.hasOwnProperty(path)) {
