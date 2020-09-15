@@ -62,7 +62,7 @@ if (isNaN(path) && path != "404.php") {
         get("https://maribelhearn.com/admin/admin.json", function (status, data) {
             if (status == 200) {
                 data = JSON.parse(data);
-                for (data.hasOwnProperty(path)) {
+                if (data.hasOwnProperty(path)) {
                     location.replace(data[i]);
                 }
             }
