@@ -1,4 +1,5 @@
-var LNNs, language = "English", selected = "", playerSelected = false, missingReplays, playergameLNNs;
+var LNNs, alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
+    language = "English", selected = "", playerSelected = false, missingReplays, playergameLNNs;
 
 function toggleLayout() {
     if (getCookie("lnn_old_layout")) {
@@ -20,9 +21,26 @@ function restrictions(game) {
 function shotRoute(game) {
     return game == "HRtP" || game == "GFW" ? "Route" : "Shottype";
 }
-function replayPath(game, player, shottype) {
-    return "replays/lnn/" + player.removeSpaces() + "/th" + gameAbbr(game) +
-    "_ud" + player.charAt(0) + player.charAt(player.length - 1) + shottypeAbbr(shottype) + ".rpy";
+function replayPath(game, player, character, type) {
+    var folder = player, first = player.charAt(0), last = player.charAt(player.length - 1);
+
+    player = player.replace(/[^0-9a-z]/gi, "");
+
+    if (!/[0-9a-z]/gi.test(player)) {
+        if (first == last) {
+            first = alphaNums.charAt(folder.length - 1);
+            last = first;
+        } else {
+            first = alphaNums.charAt(folder.length - 1);
+            last = alphaNums.charAt(folder.length);
+        }
+    } else {
+        first = player.charAt(0);
+        last = (type !== "" ? type.charAt(type.length - 1) : player.charAt(player.length - 1));
+    }
+
+    return "replays/lnn/" + folder + "/th" + gameAbbr(game) +
+    "_ud" + first + last + shottypeAbbr(character) + ".rpy";
 }
 function show(game) {
     if (typeof game == "object") {
@@ -175,7 +193,7 @@ function getPlayerLNNs(player) {
                 if (gameAbbr(game) < 6 || missingReplays.contains(game + player.removeSpaces() + shottype)) {
                     replays.push('-');
                 } else {
-                    replay = replayPath(game, player, shottype);
+                    replay = replayPath(game, player, character, type);
                     tmp = replay.split('/');
                     replays.push("<a href='" + location.origin +
                     "/" + replay + "'>" + tmp[tmp.length - 1] + "</a>");
