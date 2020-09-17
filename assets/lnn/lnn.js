@@ -22,7 +22,7 @@ function shotRoute(game) {
     return game == "HRtP" || game == "GFW" ? "Route" : "Shottype";
 }
 function replayPath(game, player, character, type) {
-    var folder = player, first = player.charAt(0), last = player.charAt(player.length - 1);
+    var folder = player.removeSpaces(), first = player.charAt(0), last = player.charAt(player.length - 1);
 
     player = player.replace(/[^0-9a-z]/gi, "");
 

@@ -82,7 +82,7 @@
         $ALPHA_NUMS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         $char = preg_replace('/(FinalA|FinalB|UFOs)/i', '', $shot);
         $type = str_replace($char, '', $shot);
-        $folder = $player;
+        $folder = str_replace(' ', '', $player);
         $first = $player[0];
         $last = $player[strlen($player) - 1];
         $player = preg_replace('/[^a-z\d ]/i', '', $player);
