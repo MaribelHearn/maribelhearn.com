@@ -79,7 +79,26 @@
         }
     }
 	function replay_path($game, $player, $shot) {
-	    return 'replays/lnn/' . $player . '/th' . num($game) . '_ud' . $player[0] . $player[strlen($player) - 1] . shot_abbr($shot) . '.rpy';
+        $ALPHA_NUMS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        $char = preg_replace('/(FinalA|FinalB|UFOs)/i', '', $shot);
+        $type = str_replace($char, '', $shot);
+        $folder = $player;
+        $first = $player[0];
+        $last = $player[strlen($player) - 1];
+        $player = preg_replace('/[^a-z\d ]/i', '', $player);
+        if (!preg_match('/[a-z\d ]/i', $player)) {
+            if ($first == $last) {
+                $first = $ALPHA_NUMS[mb_strlen($folder) - 1];
+                $last = $first;
+            } else {
+                $first = $ALPHA_NUMS[mb_strlen($folder) - 1];
+                $last = $ALPHA_NUMS[mb_strlen($folder)];
+            }
+        } else {
+            $first = $player[0];
+            $last = ($type !== "" ? $type[strlen($type) - 1] : $player[strlen($player) - 1]);
+        }
+	    return 'replays/lnn/' . $folder . '/th' . num($game) . '_ud' . $first . $last . shot_abbr($char) . '.rpy';
 	}
     foreach ($lnn as $game => $data1) {
         if ($game == 'LM') {
