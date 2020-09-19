@@ -224,7 +224,7 @@ function display(event) {
                 bestshotdate = date;
             }
 
-            sepScore = (game == "WBaWC" && score > 9999999990 ? "<abbr title='" + sep(score) + "'>9,999,999,990</abbr>" : sep(score));
+            sepScore = (game == "WBaWC" && score > MAX_SCORE ? "<abbr title='" + sep(score) + "'>9,999,999,990</abbr>" : sep(score));
             text = (replay === "" ? sepScore : "<a class='replay' href='" + replay + "'>" + sepScore + "</a>") +
             "<br>by <em>" + player + "</em>" + (date && datesEnabled ? "<span class='dimgrey'><br>" +
             "<span class='datestring_game'>" + date + "</span></span>" : "");
@@ -238,12 +238,12 @@ function display(event) {
         }
 
         if (bestshotmax > 0) {
-            sepScore = (game == "WBaWC" && bestshotmax > 9999999990 ? "<abbr title='" + sep(bestshotmax) + "'>9,999,999,990</abbr>" : sep(bestshotmax));
+            sepScore = (game == "WBaWC" && bestshotmax > MAX_SCORE ? "<abbr title='" + sep(bestshotmax) + "'>9,999,999,990</abbr>" : sep(bestshotmax));
             $(bestshot).html((bestshotreplay === "" ? "<u>" + sepScore + "</u>" : "<u><a class='replay' href='" + bestshotreplay +
             "'>" + sepScore + "</a></u>") + "<br>by <em>" + bestshotplayer +
             "</em>" + (bestshotdate && datesEnabled ? "<span class='dimgrey'><br><span class='datestring_game'>" + bestshotdate + "</span></span>" : ""));
             compareWRs[difficulty] = [
-                Math.min(bestshotmax, 9999999990), bestshotplayer, bestshot.replace("#" + game + difficulty, "")
+                Math.min(bestshotmax, MAX_SCORE), bestshotplayer, bestshot.replace("#" + game + difficulty, "")
             ];
         }
 

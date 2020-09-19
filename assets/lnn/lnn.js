@@ -165,7 +165,7 @@ function getPlayerLNNs(player) {
         return;
     }
 
-    var games = [], sum = 0, game, array, replays, gamesum, shottype, character, type, list, replay, tmp, i;
+    var games = [], sum = 0, max, game, array, replays, shottype, character, type, list, replay, tmp, i;
 
     playerSelected = true;
     $("#playerlistbody").html("");
@@ -177,13 +177,14 @@ function getPlayerLNNs(player) {
 
         array = [];
         replays = [];
-        gamesum = 0;
+        gameshots = [];
+        max = (game == "UFO" ? 6 : Object.keys(LNNs[game]).length);
 
         for (shottype in LNNs[game]) {
             if (LNNs[game][shottype].contains(player)) {
                 if (!games.contains(game)) {
-                    $("#playerlistbody").append("<tr><td class='" + game + "'>" + game + "</td><td id='" + game +
-                    "s'></td><td id='" + game + "r'></td></tr>");
+                    $("#playerlistbody").append("<tr><td id='" + game + "l'><span class='" + game + "'>" + game +
+                    "</span></td><td id='" + game + "s'></td><td id='" + game + "r'></td></tr>");
                     games.push(game);
                 }
                 character = shottype.replace(/(FinalA|FinalB|UFOs)/g, "");
@@ -198,7 +199,7 @@ function getPlayerLNNs(player) {
                     replays.push("<a href='" + location.origin +
                     "/" + replay + "'>" + tmp[tmp.length - 1] + "</a>");
                 }
-                gamesum += 1;
+                gameshots.pushStrict(shottype.replace("UFOs", ""));
                 sum += 1;
             }
         }
@@ -208,10 +209,8 @@ function getPlayerLNNs(player) {
         list = replays.join("<br>");
         $("#" + game + "r").html(list);
 
-        if (game == "UFO" && list.contains("ReimuA") && list.contains("ReimuB") && list.contains("MarisaA") && list.contains("MarisaB") && list.contains("SanaeA") && list.contains("SanaeB")) {
-            $("#UFOs").append(" <strong class='all'>(All)</strong>");
-        } else if (game != "UFO" && gamesum == Object.keys(LNNs[game]).length) {
-            $("#" + game + "s").append(" <strong class='all'>(All)</strong>");
+        if (gameshots.length == max) {
+            $("#" + game + "l").append("<br><strong class='all'>(All)</strong>");
         }
     }
 
