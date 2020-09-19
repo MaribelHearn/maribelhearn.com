@@ -1,4 +1,4 @@
-var minAge = "Thu, 01 Jan 1970 00:00:00 UTC", maxAge = "Fri, 31 Dec 9999 23:59:59 UTC";
+var MAX_SCORE = 9999999990, minAge = "Thu, 01 Jan 1970 00:00:00 UTC", maxAge = "Fri, 31 Dec 9999 23:59:59 UTC";
 
 String.prototype.contains = function (string) {
     return this.indexOf(string) > -1;
@@ -399,6 +399,7 @@ function generateShortNames() {
         $(".PCB").html("PCB");
         $(".IN").html("IN");
         $(".MoF").html("MoF");
+        $(".PoFV").html("PoFV");
         $(".SA").html("SA");
         $(".UFO").html("UFO");
         $(".DS").html("DS");
@@ -409,6 +410,7 @@ function generateShortNames() {
         $(".HSiFS").html("HSiFS");
         $(".WBaWC").html("WBaWC");
     } else if (language == "Japanese") {
+        $(".HRtP").html("靈");
         $(".SoEW").html("封");
         $(".PoDD").html("夢");
         $(".LLS").html("幻");
@@ -416,6 +418,7 @@ function generateShortNames() {
         $(".EoSD").html("紅");
         $(".PCB").html("妖");
         $(".IN").html("永");
+        $(".PoFV").html("花");
         $(".MoF").html("風");
         $(".SA").html("地");
         $(".UFO").html("星");
@@ -426,6 +429,7 @@ function generateShortNames() {
         $(".HSiFS").html("天");
         $(".WBaWC").html("鬼");
     } else {
+        $(".HRtP").html("灵");
         $(".SoEW").html("封");
         $(".PoDD").html("梦");
         $(".LLS").html("幻");
@@ -433,6 +437,7 @@ function generateShortNames() {
         $(".EoSD").html("红");
         $(".PCB").html("妖");
         $(".IN").html("永");
+        $(".PoFV").html("花");
         $(".MoF").html("风");
         $(".SA").html("地");
         $(".UFO").html("星");
