@@ -25,7 +25,7 @@
                 </picture>
                 <hr>
                 <h2 id='contents'>Contents</h2>
-                <ol id='ol'>
+                <ol id='toc' class='border'>
                     <li><a href='#items'>Items</a></li>
                     <li><a href='#grazing'>Grazing</a></li>
                     <li><a href='#se'>Special Equipment</a></li>
@@ -107,7 +107,7 @@
                 the boss will fly off-screen and will not drop any item, nor award the SE bonus. Most of the bosses
                 drop bomb items, exceptions being the stage 2 and 6 midbosses, which drop 1up items instead. They also
                 award a fixed number of points for being defeated; these values are listed in the table below.</p>
-                <table class='center'>
+                <table>
                     <tr>
                         <th>Boss of</th>
                         <th>Name</th>
