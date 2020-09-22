@@ -593,9 +593,9 @@
 	            <div id='SoEW'>
 	                <h2>TH02 - Story of Eastern Wonderland</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/soew250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/soew250x250.jpg'>
-						<img class='lazy' data-src='games/soew250x250.jpg' src='<?php echo $empty; ?>' alt='SoEW'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/soew250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/soew250x250.jpg'>
+						<img class='lazy' data-src='assets/games/soew250x250.jpg' src='<?php echo $empty; ?>' alt='SoEW'>
 					</picture>
 	                <p>Obtained: March 28, 2012</p>
 	                <h3>Survival</h3>
@@ -644,9 +644,9 @@
 	            <div id='PoDD'>
 	                <h2>TH03 - Phantasmagoria of Dim.Dream</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/podd250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/podd250x250.jpg'>
-						<img class='lazy' data-src='games/podd250x250.jpg' src='<?php echo $empty; ?>' alt='PoDD'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/podd250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/podd250x250.jpg'>
+						<img class='lazy' data-src='assets/games/podd250x250.jpg' src='<?php echo $empty; ?>' alt='PoDD'>
 					</picture>
 	                <p>Obtained: March 28, 2012</p>
 	                <h3>Survival</h3>
@@ -687,9 +687,9 @@
 	            <div id='LLS'>
 	                <h2>TH04 - Lotus Land Story</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/lls250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/lls250x250.jpg'>
-						<img class='lazy' data-src='games/lls250x250.jpg' src='<?php echo $empty; ?>' alt='LLS'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/lls250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/lls250x250.jpg'>
+						<img class='lazy' data-src='assets/games/lls250x250.jpg' src='<?php echo $empty; ?>' alt='LLS'>
 					</picture>
 	                <p>Obtained: March 28, 2012</p>
 	                <h3>Survival</h3>
@@ -752,9 +752,9 @@
 	            <div id='MS'>
 	                <h2>TH05 - Mystic Square</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/ms250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/ms250x250.jpg'>
-						<img class='lazy' data-src='games/ms250x250.jpg' src='<?php echo $empty; ?>' alt='MS'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/ms250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/ms250x250.jpg'>
+						<img class='lazy' data-src='assets/games/ms250x250.jpg' src='<?php echo $empty; ?>' alt='MS'>
 					</picture>
 	                <p>Obtained: March 28, 2012</p>
 	                <h3>Survival</h3>
@@ -817,9 +817,9 @@
 	            <div id='EoSD'>
 	                <h2>TH06 - The Embodiment of Scarlet Devil</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/eosd250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/eosd250x250.jpg'>
-						<img class='lazy' data-src='games/eosd250x250.jpg' src='<?php echo $empty; ?>' alt='EoSD'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/eosd250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/eosd250x250.jpg'>
+						<img class='lazy' data-src='assets/games/eosd250x250.jpg' src='<?php echo $empty; ?>' alt='EoSD'>
 					</picture>
 	                <p>Obtained: September 28, 2011</p>
 	                <h3>Scoring</h3>
@@ -963,9 +963,9 @@
 	            <div id='PCB'>
 	                <h2>TH07 - Perfect Cherry Blossom</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/pcb250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/pcb250x250.jpg'>
-						<img class='lazy' data-src='games/pcb250x250.jpg' src='<?php echo $empty; ?>' alt='PCB'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/pcb250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/pcb250x250.jpg'>
+						<img class='lazy' data-src='assets/games/pcb250x250.jpg' src='<?php echo $empty; ?>' alt='PCB'>
 					</picture>
 					<p>Obtained: November 2, 2011</p></p>
 	                <h3>Survival</h3>
@@ -1061,9 +1061,9 @@
 	            <div id='IN'>
 	                <h2>TH08 - Imperishable Night</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/in250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/in250x250.jpg'>
-						<img class='lazy' data-src='games/in250x250.jpg' src='<?php echo $empty; ?>' alt='IN'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/in250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/in250x250.jpg'>
+						<img class='lazy' data-src='assets/games/in250x250.jpg' src='<?php echo $empty; ?>' alt='IN'>
 					</picture>
 	                <p>Obtained: November 2, 2011</p>
 	                <h3>Survival</h3>
@@ -1197,9 +1197,9 @@
 	            <div id='PoFV'>
 	                <h2>TH09 - Phantasmagoria of Flower View</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/pofv250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/pofv250x250.jpg'>
-						<img class='lazy' data-src='games/pofv250x250.jpg' src='<?php echo $empty; ?>' alt='PoFV'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/pofv250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/pofv250x250.jpg'>
+						<img class='lazy' data-src='assets/games/pofv250x250.jpg' src='<?php echo $empty; ?>' alt='PoFV'>
 					</picture>
 	                <p>Obtained: November 2, 2011</p>
 	                <h3>Survival</h3>
@@ -1262,9 +1262,9 @@
 	            <div id='StB'>
 	                <h2>TH9.5 Shoot the Bullet</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/stb250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/stb250x250.jpg'>
-						<img class='lazy' data-src='games/stb250x250.jpg' src='<?php echo $empty; ?>' alt='StB'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/stb250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/stb250x250.jpg'>
+						<img class='lazy' data-src='assets/games/stb250x250.jpg' src='<?php echo $empty; ?>' alt='StB'>
 					</picture>
 	                <p>Obtained: April 14, 2012</p>
 	                <h3>Survival</h3>
@@ -1432,9 +1432,9 @@
 	            <div id='MoF'>
 	                <h2>TH10 - Mountain of Faith</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/mof250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/mof250x250.jpg'>
-						<img class='lazy' data-src='games/mof250x250.jpg' src='<?php echo $empty; ?>' alt='MoF'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/mof250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/mof250x250.jpg'>
+						<img class='lazy' data-src='assets/games/mof250x250.jpg' src='<?php echo $empty; ?>' alt='MoF'>
 					</picture>
 	                <p>Obtained: December 10, 2011 (est.)</p>
 	                <h3>Survival</h3>
@@ -1514,9 +1514,9 @@
 	            <div id='SA'>
 	                <h2>TH11 - Subterranean Animism</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/sa250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/sa250x250.jpg'>
-						<img class='lazy' data-src='games/sa250x250.jpg' src='<?php echo $empty; ?>' alt='SA'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/sa250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/sa250x250.jpg'>
+						<img class='lazy' data-src='assets/games/sa250x250.jpg' src='<?php echo $empty; ?>' alt='SA'>
 					</picture>
 	                <p>Obtained: November 16, 2011 (est.)</p>
 					<div class='container'>
@@ -1580,9 +1580,9 @@
 	            <div id='UFO'>
 	                <h2>TH12 - Undefined Fantastic Object</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/ufo250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/ufo250x250.jpg'>
-						<img class='lazy' data-src='games/ufo250x250.jpg' src='<?php echo $empty; ?>' alt='UFO'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/ufo250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/ufo250x250.jpg'>
+						<img class='lazy' data-src='assets/games/ufo250x250.jpg' src='<?php echo $empty; ?>' alt='UFO'>
 					</picture>
 	                <p>Obtained: December 14, 2011 (demo by mistake, est.); December 21, 2011 (est.)</p>
 	                <h3>Survival</h3>
@@ -1646,9 +1646,9 @@
 	            <div id='DS'>
 	                <h2>TH12.5 Double Spoiler</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/ds250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/ds250x250.jpg'>
-						<img class='lazy' data-src='games/ds250x250.jpg' src='<?php echo $empty; ?>' alt='DS'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/ds250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/ds250x250.jpg'>
+						<img class='lazy' data-src='assets/games/ds250x250.jpg' src='<?php echo $empty; ?>' alt='DS'>
 					</picture>
 	                <p>Obtained: April 14, 2012</p>
 	                <h3>Survival</h3>
@@ -2035,9 +2035,9 @@
 	            <div id='GFW'>
 	                <h2>TH12.8 - Great Fairy Wars</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/gfw250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/gfw250x250.jpg'>
-						<img class='lazy' data-src='games/gfw250x250.jpg' src='<?php echo $empty; ?>' alt='GFW'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/gfw250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/gfw250x250.jpg'>
+						<img class='lazy' data-src='assets/games/gfw250x250.jpg' src='<?php echo $empty; ?>' alt='GFW'>
 					</picture>
 	                <p>Obtained: April 14, 2012</p>
 	                <h3>Survival</h3>
@@ -2155,9 +2155,9 @@
 	            <div id='TD'>
 	                <h2>TH13 - Ten Desires</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/td250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/td250x250.jpg'>
-						<img class='lazy' data-src='games/td250x250.jpg' src='<?php echo $empty; ?>' alt='TD'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/td250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/td250x250.jpg'>
+						<img class='lazy' data-src='assets/games/td250x250.jpg' src='<?php echo $empty; ?>' alt='TD'>
 					</picture>
 	                <p>Obtained: February 3, 2012 (est.)</p>
 	                <h3>Scoring</h3>
@@ -2303,9 +2303,9 @@
 	            <div id='DDC'>
 	                <h2>TH14 - Double Dealing Character</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/ddc250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/ddc250x250.jpg'>
-						<img class='lazy' data-src='games/ddc250x250.jpg' src='<?php echo $empty; ?>' alt='DDC'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/ddc250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/ddc250x250.jpg'>
+						<img class='lazy' data-src='assets/games/ddc250x250.jpg' src='<?php echo $empty; ?>' alt='DDC'>
 					</picture>
 	                <p>Obtained: August 12, 2013</p>
 	                <h3>Survival</h3>
@@ -2406,9 +2406,9 @@
 	            <div id='ISC'>
 	                <h2>TH14.3 - Impossible Spell Card</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/isc250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/isc250x250.jpg'>
-						<img class='lazy' data-src='games/isc250x250.jpg' src='<?php echo $empty; ?>' alt='ISC'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/isc250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/isc250x250.jpg'>
+						<img class='lazy' data-src='assets/games/isc250x250.jpg' src='<?php echo $empty; ?>' alt='ISC'>
 					</picture>
 	                <p>Obtained: May 11, 2014</p>
 	                <h3>Survival</h3>
@@ -2578,9 +2578,9 @@
 	            <div id='LoLK'>
 	                <h2>TH15 - Legacy of Lunatic Kingdom</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/lolk250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/lolk250x250.jpg'>
-						<img class='lazy' data-src='games/lolk250x250.jpg' src='<?php echo $empty; ?>' alt='LoLK'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/lolk250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/lolk250x250.jpg'>
+						<img class='lazy' data-src='assets/games/lolk250x250.jpg' src='<?php echo $empty; ?>' alt='LoLK'>
 					</picture>
 	                <p>Obtained: August 14, 2015</p>
 	                <h3>Survival</h3>
@@ -2676,9 +2676,9 @@
 	            <div id='HSiFS'>
 	                <h2>TH16 - Hidden Star in Four Seasons</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/hsifs250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/hsifs250x250.jpg'>
-						<img class='lazy' data-src='games/hsifs250x250.jpg' src='<?php echo $empty; ?>' alt='HSiFS'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/hsifs250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/hsifs250x250.jpg'>
+						<img class='lazy' data-src='assets/games/hsifs250x250.jpg' src='<?php echo $empty; ?>' alt='HSiFS'>
 					</picture>
 	                <p>Obtained: August 11, 2017</p>
 	                <h3>Scoring</h3>
@@ -2764,9 +2764,9 @@
 	            <div id='VD'>
 	                <h2>TH16.5 - Violet Detector</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/vd250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/vd250x250.jpg'>
-						<img class='lazy' data-src='games/vd250x250.jpg' src='<?php echo $empty; ?>' alt='VD'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/vd250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/vd250x250.jpg'>
+						<img class='lazy' data-src='assets/games/vd250x250.jpg' src='<?php echo $empty; ?>' alt='VD'>
 					</picture>
 	                <p>Obtained: August 29, 2018</p>
 	                <h3>Survival</h3>
@@ -3020,9 +3020,9 @@
 	            <div id='WBaWC'>
 	                <h2>TH17 - Wily Beast and Weakest Creature</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/wbawc250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/wbawc250x250.jpg'>
-						<img class='lazy' data-src='games/wbawc250x250.jpg' src='<?php echo $empty; ?>' alt='WBaWC'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/wbawc250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/wbawc250x250.jpg'>
+						<img class='lazy' data-src='assets/games/wbawc250x250.jpg' src='<?php echo $empty; ?>' alt='WBaWC'>
 					</picture>
 	                <p>Obtained: August 12, 2019</p>
 	                <h3>Survival</h3>
@@ -3085,9 +3085,9 @@
 	            <div id='SSS'>
 	                <h2>Shining Shooting Star</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/sss250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/sss250x250.jpg'>
-						<img class='lazy' data-src='games/sss250x250.jpg' src='<?php echo $empty; ?>' alt='SSS'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/sss250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/sss250x250.jpg'>
+						<img class='lazy' data-src='assets/games/sss250x250.jpg' src='<?php echo $empty; ?>' alt='SSS'>
 					</picture>
 	                <p>Obtained: April 27, 2017</p>
 	                <h3>Scoring</h3>
@@ -3179,9 +3179,9 @@
 	            <div id='eX1'>
 	                <h2>eXceed - Gun Bullet Children</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/ex1250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/ex1250x250.jpg'>
-						<img class='lazy' data-src='games/ex1250x250.jpg' src='<?php echo $empty; ?>' alt='eXceed Gun Bullet Children'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/ex1250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/ex1250x250.jpg'>
+						<img class='lazy' data-src='assets/games/ex1250x250.jpg' src='<?php echo $empty; ?>' alt='eXceed Gun Bullet Children'>
 					</picture>
 	                <p>Obtained: December 27, 2015 (Steam)</p>
 	                <h3>Survival</h3>
@@ -3215,9 +3215,9 @@
 	            <div id='eX2'>
 	                <h2>eXceed 2nd - Vampire REX</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/ex2250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/ex2250x250.jpg'>
-						<img class='lazy' data-src='games/ex2250x250.jpg' src='<?php echo $empty; ?>' alt='eXceed 2nd Vampire REX'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/ex2250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/ex2250x250.jpg'>
+						<img class='lazy' data-src='assets/games/ex2250x250.jpg' src='<?php echo $empty; ?>' alt='eXceed 2nd Vampire REX'>
 					</picture>
 	                <p>Obtained: December 27, 2015 (Steam)</p>
 	                <h3>Survival</h3>
@@ -3257,9 +3257,9 @@
 	            <div id='eX3'>
 	                <h2>eXceed 3rd - Jade Penetrate Black Package</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/ex3250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/ex3250x250.jpg'>
-						<img class='lazy' data-src='games/ex3250x250.jpg' src='<?php echo $empty; ?>' alt='eXceed 3rd Jade Penetrate Black Package'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/ex3250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/ex3250x250.jpg'>
+						<img class='lazy' data-src='assets/games/ex3250x250.jpg' src='<?php echo $empty; ?>' alt='eXceed 3rd Jade Penetrate Black Package'>
 					</picture>
 	                <p>Obtained: December 27, 2015 (Steam)</p>
 	                <h3>Survival</h3>
@@ -3323,9 +3323,9 @@
 	            <div id='SG'>
 	                <h2>SH01 - Shuusou Gyoku</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/sg250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/sg250x250.jpg'>
-						<img class='lazy' data-src='games/sg250x250.jpg' src='<?php echo $empty; ?>' alt='Shuusou Gyoku'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/sg250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/sg250x250.jpg'>
+						<img class='lazy' data-src='assets/games/sg250x250.jpg' src='<?php echo $empty; ?>' alt='Shuusou Gyoku'>
 					</picture>
 	                <p>Obtained: November 30, 2012</p>
 	                <h3>Survival</h3>
@@ -3374,9 +3374,9 @@
 	            <div id='BSR'>
 	                <h2>SH03 - Banshiryuu (C67)</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/bsr250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/bsr250x250.jpg'>
-						<img class='lazy' data-src='games/bsr250x250.jpg' src='<?php echo $empty; ?>' alt='Banshiryuu C67'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/bsr250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/bsr250x250.jpg'>
+						<img class='lazy' data-src='assets/games/bsr250x250.jpg' src='<?php echo $empty; ?>' alt='Banshiryuu C67'>
 					</picture>
 	                <p>Obtained: September 7, 2012</p>
 	                <h3>Scoring</h3>
@@ -3566,9 +3566,9 @@
 	            <div id='SMD'>
 	                <h2>Samidare</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/smd250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/smd250x250.jpg'>
-						<img class='lazy' data-src='games/smd250x250.jpg' src='<?php echo $empty; ?>' alt='Samidare'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/smd250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/smd250x250.jpg'>
+						<img class='lazy' data-src='assets/games/smd250x250.jpg' src='<?php echo $empty; ?>' alt='Samidare'>
 					</picture>
 	                <p>Obtained: October 10, 2012</p>
 	                <h3>Scoring</h3>
@@ -3630,9 +3630,9 @@
 	            <div id='MRS'>
 	                <h2>Mrs. Estacion</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/mrs250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/mrs250x250.jpg'>
-						<img class='lazy' data-src='games/mrs250x250.jpg' src='<?php echo $empty; ?>' alt='Mrs. Estacion'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/mrs250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/mrs250x250.jpg'>
+						<img class='lazy' data-src='assets/games/mrs250x250.jpg' src='<?php echo $empty; ?>' alt='Mrs. Estacion'>
 					</picture>
 	                <p>Obtained: February 23, 2013</p>
 	                <h3>Scoring</h3>
@@ -3719,9 +3719,9 @@
 	            <div id='DP'>
 	                <h2>Donpachi</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/dp250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/dp250x250.jpg'>
-						<img class='lazy' data-src='games/dp250x250.jpg' src='<?php echo $empty; ?>' alt='Donpachi'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/dp250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/dp250x250.jpg'>
+						<img class='lazy' data-src='assets/games/dp250x250.jpg' src='<?php echo $empty; ?>' alt='Donpachi'>
 					</picture>
 	                <p>Obtained: March 18, 2014</p>
 	                <h3>Survival</h3>
@@ -3749,9 +3749,9 @@
 	            <div id='DDP'>
 	                <h2>Dodonpachi</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/ddp250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/ddp250x250.jpg'>
-						<img class='lazy' data-src='games/ddp250x250.jpg' src='<?php echo $empty; ?>' alt='Dodonpachi'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/ddp250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/ddp250x250.jpg'>
+						<img class='lazy' data-src='assets/games/ddp250x250.jpg' src='<?php echo $empty; ?>' alt='Dodonpachi'>
 					</picture>
 	                <p>Obtained: March 18, 2014</p>
 	                <h3>Survival</h3>
@@ -3779,9 +3779,9 @@
 	            <div id='DOJ'>
 	                <h2>Dodonpachi Daioujou</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/doj250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/doj250x250.jpg'>
-						<img class='lazy' data-src='games/doj250x250.jpg' src='<?php echo $empty; ?>' alt='Dodonpachi Daioujou'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/doj250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/doj250x250.jpg'>
+						<img class='lazy' data-src='assets/games/doj250x250.jpg' src='<?php echo $empty; ?>' alt='Dodonpachi Daioujou'>
 					</picture>
 	                <p>Obtained: November 3, 2012</p>
 	                <h3>Survival</h3>
@@ -3821,9 +3821,9 @@
 	            <div id='DFK'>
 	                <h2>Dodonpachi Daifukkatsu</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/dfk250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/dfk250x250.jpg'>
-						<img class='lazy' data-src='games/dfk250x250.jpg' src='<?php echo $empty; ?>' alt='Dodonpachi Daifukkatsu'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/dfk250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/dfk250x250.jpg'>
+						<img class='lazy' data-src='assets/games/dfk250x250.jpg' src='<?php echo $empty; ?>' alt='Dodonpachi Daifukkatsu'>
 					</picture>
 	                <p>Obtained: October 8, 2013 (X360), October 14, 2016 (Steam)</p>
 	                <h3>Survival</h3>
@@ -3951,9 +3951,9 @@
 	            <div id='SDOJ'>
 	                <h2>Dodonpachi Saidaioujou</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/sdoj250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/sdoj250x250.jpg'>
-						<img class='lazy' data-src='games/sdoj250x250.jpg' src='<?php echo $empty; ?>' alt='Dodonpachi Saidaioujou'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/sdoj250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/sdoj250x250.jpg'>
+						<img class='lazy' data-src='assets/games/sdoj250x250.jpg' src='<?php echo $empty; ?>' alt='Dodonpachi Saidaioujou'>
 					</picture>
 	                <p>Obtained: October 29, 2013</p>
 	                <h3>Survival</h3>
@@ -3993,9 +3993,9 @@
 	            <div id='Batsugun'>
 	                <h2>Batsugun Special Version</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/batsugunsp250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/batsugunsp250x250.jpg'>
-						<img class='lazy' data-src='games/batsugunsp250x250.jpg' src='<?php echo $empty; ?>' alt='Batsugun Special Version'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/batsugunsp250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/batsugunsp250x250.jpg'>
+						<img class='lazy' data-src='assets/games/batsugunsp250x250.jpg' src='<?php echo $empty; ?>' alt='Batsugun Special Version'>
 					</picture>
 	                <p>Obtained: March 2, 2016</p>
 	                <h3>Survival</h3>
@@ -4035,9 +4035,9 @@
 	            <div id='ESP'>
 	                <h2>ESP Ra.De.</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/esp250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/esp250x250.jpg'>
-						<img class='lazy' data-src='games/esp250x250.jpg' src='<?php echo $empty; ?>' alt='ESP Ra.De.'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/esp250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/esp250x250.jpg'>
+						<img class='lazy' data-src='assets/games/esp250x250.jpg' src='<?php echo $empty; ?>' alt='ESP Ra.De.'>
 					</picture>
 	                <p>Obtained: March 28, 2014</p>
 	                <h3>Survival</h3>
@@ -4059,9 +4059,9 @@
 	            <div id='ESPg'>
 	                <h2>Espgaluda</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/espg250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/espg250x250.jpg'>
-						<img class='lazy' data-src='games/espg250x250.jpg' src='<?php echo $empty; ?>' alt='Espgaluda cover'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/espg250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/espg250x250.jpg'>
+						<img class='lazy' data-src='assets/games/espg250x250.jpg' src='<?php echo $empty; ?>' alt='Espgaluda cover'>
 					</picture>
 	                <p>Obtained: March 28, 2014</p>
 	                <h3>Survival</h3>
@@ -4083,9 +4083,9 @@
 	            <div id='Ketsui'>
 	                <h2>Ketsui ~Kizuna Jigoku Tachi~</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/ket250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/ket250x250.jpg'>
-						<img class='lazy' data-src='games/ket250x250.jpg' src='<?php echo $empty; ?>' alt='Ketsui'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/ket250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/ket250x250.jpg'>
+						<img class='lazy' data-src='assets/games/ket250x250.jpg' src='<?php echo $empty; ?>' alt='Ketsui'>
 					</picture>
 	                <p>Obtained: December 1, 2012</p>
 	                <h3>Survival</h3>
@@ -4119,9 +4119,9 @@
 	            <div id='MSm'>
 	                <h2>Mushihime-sama</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/msm250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/msm250x250.jpg'>
-						<img class='lazy' data-src='games/msm250x250.jpg' src='<?php echo $empty; ?>' alt='Mushihime-sama cover'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/msm250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/msm250x250.jpg'>
+						<img class='lazy' data-src='assets/games/msm250x250.jpg' src='<?php echo $empty; ?>' alt='Mushihime-sama cover'>
 					</picture>
 	                <p>Obtained: November 6, 2015 (Steam)</p>
 	                <h3>Survival</h3>
@@ -4197,9 +4197,9 @@
 	            <div id='MSF'>
 	                <h2>Mushihime-sama Futari</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/msf250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/msf250x250.jpg'>
-						<img class='lazy' data-src='games/msf250x250.jpg' src='<?php echo $empty; ?>' alt='Mushihime-sama Futari'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/msf250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/msf250x250.jpg'>
+						<img class='lazy' data-src='assets/games/msf250x250.jpg' src='<?php echo $empty; ?>' alt='Mushihime-sama Futari'>
 					</picture>
 	                <p>Obtained: October 29, 2013</p>
 	                <h3>Survival</h3>
@@ -4287,9 +4287,9 @@
 	            <div id='DSm'>
 	                <h2>Deathsmiles</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/dsm250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/dsm250x250.jpg'>
-						<img class='lazy' data-src='games/dsm250x250.jpg' src='<?php echo $empty; ?>' alt='Deathsmiles'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/dsm250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/dsm250x250.jpg'>
+						<img class='lazy' data-src='assets/games/dsm250x250.jpg' src='<?php echo $empty; ?>' alt='Deathsmiles'>
 					</picture>
 	                <p>Obtained: October 8, 2013 (X360); March 11, 2016 (Steam)</p>
 	                <h3>Survival</h3>
@@ -4356,9 +4356,9 @@
 	            <div id='Ikaruga'>
 	                <h2>Ikaruga</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/ikaruga250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/ikaruga250x250.jpg'>
-						<img class='lazy' data-src='games/ikaruga250x250.jpg' src='<?php echo $empty; ?>' alt='Ikaruga'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/ikaruga250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/ikaruga250x250.jpg'>
+						<img class='lazy' data-src='assets/games/ikaruga250x250.jpg' src='<?php echo $empty; ?>' alt='Ikaruga'>
 					</picture>
 	                <p>Obtained: December 5, 2015 (Steam)</p>
 	                <h3>Survival</h3>
@@ -4392,9 +4392,9 @@
 	            <div id='CCWI'>
 	                <h2>Crimzon Clover</h2>
 					<picture>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/ccwi250x250.webp' type='image/webp'>
-						<source srcset='<?php echo $empty; ?>' data-srcset='games/ccwi250x250.jpg'>
-						<img class='lazy' data-src='games/ccwi250x250.jpg' src='<?php echo $empty; ?>' alt='Crimzon Clover World Ignition'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/ccwi250x250.webp' type='image/webp'>
+						<source srcset='<?php echo $empty; ?>' data-srcset='assets/games/ccwi250x250.jpg'>
+						<img class='lazy' data-src='assets/games/ccwi250x250.jpg' src='<?php echo $empty; ?>' alt='Crimzon Clover World Ignition'>
 					</picture>
 	                <p>Obtained: December 5, 2015 (Steam)</p>
 	                <h3>Survival</h3>

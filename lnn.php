@@ -281,7 +281,7 @@
                     }
                     $sum = 0;
                     $all = array();
-                    echo '<div id="' . $game . '"><p><img src="games/' . strtolower($game) .
+                    echo '<div id="' . $game . '"><p><img src="assets/games/' . strtolower($game) .
                     '50x50.jpg"' . (num($game) <= 5 ? ' class="cover98"' : '') .
                     ' alt="' . $game . ' cover"> <u>' . full_name($game, $lang) . '</u></p>' .
                     '<table class="sortable"><thead><tr><th>' . tl_term(shot_route($game), $lang) . '</th>' .
@@ -337,7 +337,7 @@
     			        if ($game == 'LM') {
     			            continue;
     		            }
-    			        echo '<img id="' . $game . '" class="game" src="games/' . strtolower($game) .
+    			        echo '<img id="' . $game . '" class="game" src="assets/games/' . strtolower($game) .
                         '50x50.jpg" alt="' . $game . ' cover">';
     			    }
                     echo '<div id="list"><p id="fullname"></p><table class="sortable"><thead id="listhead"></thead>' .

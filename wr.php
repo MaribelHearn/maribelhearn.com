@@ -421,7 +421,7 @@
                 }
                 foreach ($wr as $game => $obj) {
                     echo '<div id="' . $game . '">';
-                    echo '<p><img' . (num($game) <= 5 ? ' class="cover98"' : '') . ' src="games/' . strtolower($game) .
+                    echo '<p><img' . (num($game) <= 5 ? ' class="cover98"' : '') . ' src="assets/games/' . strtolower($game) .
                     '50x50.jpg" alt="' . $game . ' cover"> <u>' . full_name($game, $lang) . '</u></p>';
                     echo '<table id="' . $game . '_table" class="' . $game .
                     't sortable"><tr><th>' . tl_term(shot_route($game), $lang) . '</th>';
@@ -529,7 +529,7 @@
                     }
                     echo '</p>';
     			    foreach ($wr as $game => $value) {
-    			        echo '<img id="' . $game . '" class="game" src="games/' . strtolower($game) . '50x50.jpg" alt="' . $game . ' cover">';
+    			        echo '<img id="' . $game . '" class="game" src="assets/games/' . strtolower($game) . '50x50.jpg" alt="' . $game . ' cover">';
                     }
                     echo '</div>';
                 }

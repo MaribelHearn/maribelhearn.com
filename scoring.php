@@ -177,7 +177,7 @@
             </table>
 			<?php
 				foreach ($games as $key => $game) {
-					echo '<div id="' . $game . '"><caption><img src="games/' . strtolower($game) .
+					echo '<div id="' . $game . '"><caption><img src="assets/games/' . strtolower($game) .
 					'50x50.jpg" ' . ($key < 5 ? 'class="cover98" ' : '') . 'alt="' . $game .
 					' cover"><u>' . full_name($game) . '</u></caption><table class="center"><tr><th>Route</th>';
 					foreach ($diffs as $key => $diff) {

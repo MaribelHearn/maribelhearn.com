@@ -1533,12 +1533,12 @@ function loadWorks() {
             if (isMobile()) {
                 $("#" + categoryName).append("<span id='" + game.removeSpaces() +
                 "C'><img id='" + game.removeSpaces() +
-                "' class='list' src='games/" + acronym(game) + "120x120.jpg' alt='" + game + "'>");
+                "' class='list' src='assets/games/" + acronym(game) + "120x120.jpg' alt='" + game + "'>");
                 $("#" + game.removeSpaces()).on("click", addMenu);
             } else {
                 $("#" + categoryName).append("<span id='" + game.removeSpaces() +
                 "C'><img id='" + game.removeSpaces() + "' class='list' draggable='true' " +
-                "src='games/" + acronym(game) + "120x120.jpg' alt='" + game + "' title='" + game + "'>");
+                "src='assets/games/" + acronym(game) + "120x120.jpg' alt='" + game + "' title='" + game + "'>");
                 $("#" + game.removeSpaces()).on("dblclick", addToMostRecent);
                 $("#" + game.removeSpaces()).on("dragstart", drag);
             }
