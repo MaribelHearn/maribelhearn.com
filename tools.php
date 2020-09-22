@@ -34,7 +34,7 @@
             ?>
             <p>This page contains download links to all kinds of different patches or tools applicable to the official Touhou shooting games.</p>
 			<p>Some of the patches are also available at <a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers'>
-			<img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> Touhou Patch Center</a> and can be used through
+			<img src='assets/ext/thcrap-icon-small.ico' alt='THCRAP favicon'> Touhou Patch Center</a> and can be used through
 			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Download'>their automatic translation patcher and modding tool</a>,
 			which can also be downloaded using our mirror below (see THCRAP section).
 			These patches will have the favicon of their site next to them.</p>
@@ -64,7 +64,7 @@
             <a href='https://maribelhearn.com/VsyncPatch.zip' target='_blank'>Download</a>
             <!-- English Patches -->
             <hr>
-            <h2 id='thcrap'>THCRAP (Translation patches / Modding tool) <a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'></a></h2>
+            <h2 id='thcrap'>THCRAP (Translation patches / Modding tool) <a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page' target='_blank'><img src='assets/ext/thcrap-icon-small.ico' alt='THCRAP favicon'></a></h2>
             <p>Translation patches into English and many other languages, as well as countless modifications to gameplay,
 			graphics and more, plus the ability to make your own, are provided by the Touhou Community Reliant Automatic Patcher (THCRAP) for all Windows Touhou games.
 			The thpatch.net link also links to instructions on how to use the patcher.</p>
@@ -199,19 +199,19 @@
 			<p>Replaces ReimuC with Reisen in MoF.</p>
 			<a href='https://mega.nz/#!SXYHzIAL!ybiykqvDKGJ-WB99fd1NzsXWh_F5l9N0VZN6IVyvZ8o' target='_blank'>Download</a>
 			<p><strong>UFO Tsubakura mod by <a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> th12tsuba</a></p>
+			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='assets/ext/thcrap-icon-small.ico' alt='THCRAP favicon'> th12tsuba</a></p>
 			<p>Replaces both Reimu shottypes in UFO with Tsubakura shottypes, a character from the Len'en series. Also changes the dialogues and endings.</p>
 			<a href='https://mega.nz/#!10JzTKBC!GLi2MJZADsRPqdn1b9knvLfJknXepM69vHJ01-XjJ7s'>Download</a>
 			<p><strong>DDC Sanae by <a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> th14sanae</a></p>
+			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='assets/ext/thcrap-icon-small.ico' alt='THCRAP favicon'> th14sanae</a></p>
 			<p>Replaces ReimuB with Sanae in DDC.</p>
 			<a href='https://mega.nz/#!oh4lBA4C!Fq7UV5LfQulUaCAubGRk_LMLOeR4nfE9CdMa0OQZryA'>Download</a>
 			<p><strong>HSiFS Sanae by <a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> th16sanae</a></p>
+			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='assets/ext/thcrap-icon-small.ico' alt='THCRAP favicon'> th16sanae</a></p>
 			<p>Replaces Marisa with Sanae in HSiFS.</p>
 			<a href='https://mega.nz/#!lsBQxSwB!X-YB1uwIN1u8CRYjU-2HZnjhb7zrFE5WvQFZru-CXr8'>Download</a>
 			<p><strong>LoLK Sakuya by <a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> th15sakuya</a></p>
+			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='assets/ext/thcrap-icon-small.ico' alt='THCRAP favicon'> th15sakuya</a></p>
 			<p>Replaces Reisen with Sakuya in LoLK.</p>
 			<a href='https://mega.nz/#!1s5GHIqI!sSPZm0FZCxE_EL0jzGqC4oheH5Xs7-MmlbjARxqbzQY' target='_blank'>Download</a>
 			<p><strong>TD Yuuka by Gamer251</strong></p>
@@ -242,7 +242,7 @@
                 <p><a href='http://www.mediafire.com/file/usbud0rr385z2nn/th14.dat' target='_blank'>HarDDC</a></p>
             </div>
 			<p><strong>RNG patches by <a href='https://www.twitch.tv/thedaikarasu' target='_blank'>Daikarasu</a></strong>
-			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> RNG</a></p>
+			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='assets/ext/thcrap-icon-small.ico' alt='THCRAP favicon'> RNG</a></p>
 			<p>A collection of modified <span class='code'>.dat</span> files that randomise the patterns in the game.</p>
 			<a href='https://drive.google.com/file/d/14PGGkoxHTH-bHKfzSt3OGarZp_APq7KB/view' target='_blank'>Download</a>
             <p><strong>LoLK Black Label</strong></p>
@@ -258,12 +258,12 @@
             <p>An alternate HSiFS Ultra patch that also increases density.</p>
             <a href='https://mega.nz/#!LxNAQbyB!a2qOOOgYQ8-NwTWvLSgcykBXsEmhgy6IDpdEdxlG-90' target='_blank'>Download</a>
 			<p><strong>"LoDDK" by <a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> LoDDK</a></p>
+			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='assets/ext/thcrap-icon-small.ico' alt='THCRAP favicon'> LoDDK</a></p>
 			<p>Combines LoLK with DDC, making each boss fight a dual boss fight against the bosses of both games.
 			It removes all stage portions, effectively making it a boss rush, and also combines the HUDs of both games.</p>
 			<a href='https://priw8.github.io/#s=patches/loddk' target='_blank'>Download</a>
 			<p><strong>OC Patches by Bravi</strong>
-			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> BraviOCOkina</a></p>
+			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='assets/ext/thcrap-icon-small.ico' alt='THCRAP favicon'> BraviOCOkina</a></p>
 			<p>Remastered version of Stage 6 and harder version of Extra in HSiFS, including an original character replacing Okina and alternate story along with pattern,
 			bullet type, stage music and graphical changes. There is another patch with the same OC replacement and pattern modding for VD on the Okina scenes on the same download page.</p>
 			<a href='https://mega.nz/file/8j5VBIIQ#sj2_W4xvSzsLLb3b2hSQxtQR1sjQMzJXfb6A8Jem6VM' target='_blank'>Downloads</a>
@@ -347,11 +347,11 @@
             <p>Disables the 0.01 power loss mechanic of Pointdevice Mode in LoLK, making sure you never lose power upon restarting a chapter.</p>
             <a href='https://drive.google.com/file/d/1VibcZoC-V0VI6cRw7r507dfimP9Dif1d' target='_blank'>Download</a>
 			<p><strong>HSiFS UFO mod by <a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> th16ufos</a></p>
+			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='assets/ext/thcrap-icon-small.ico' alt='THCRAP favicon'> th16ufos</a></p>
 			<p>Adds UFOs to HSiFS.</p>
 			<a href='https://priw8.github.io/#s=patches/uffs' target='_blank'>Download</a>
 			<p><strong>WBaWC score cap mod by <a href='https://twitter.com/32th__System' target='_blank'>32th System</a></strong>
-			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='ext/thcrap-icon-small.ico' alt='THCRAP favicon'> score_uncap</a></p>
+			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='assets/ext/thcrap-icon-small.ico' alt='THCRAP favicon'> score_uncap</a></p>
 			<p>Allows the in-game score counter to exceed 9,999,999,990 points.</p>
 			<a href='https://maribelhearn.com/th17_score_uncap.zip' target='_blank'>Download</a>
 			<hr>

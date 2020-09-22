@@ -135,12 +135,12 @@
                 </div>
                 <div>
         			<h2>External Links</h2>
-        			<p class='wide'>Find me at: <a href='https://www.youtube.com/c/MaribelHearn'><img src='ext/youtube-icon-small.png' alt='Youtube favicon'>YouTube</a>
-        			<a href='https://twitter.com/MaribelHearn42'><img src='ext/twitter-icon-small.png' alt='Twitter favicon'>Twitter</a>
-                    <a href='https://twitch.tv/maribel_hearn'><img src='ext/twitch-icon-small.ico' alt='Twitch favicon'>Twitch</a>
-                    <a href='https://steamcommunity.com/id/maribelhearn42'><img src='ext/steam-icon-small.ico' alt='Steam favicon'>Steam</a>
-                    <a href='https://github.com/MaribelHearn'><img src='ext/github-icon.ico' alt='GitHub favicon'>GitHub</a></p>
-                    <p class='wide'>Partners: <a href='http://replay.lunarcast.net'><img src='ext/favicon-lunarcast.ico' alt='Lunarcast favicon'>Lunarcast Replay Database</a></p>
+        			<p class='wide'>Find me at: <a href='https://www.youtube.com/c/MaribelHearn'><img src='assets/ext/youtube-icon-small.png' alt='Youtube favicon'>YouTube</a>
+        			<a href='https://twitter.com/MaribelHearn42'><img src='assets/ext/twitter-icon-small.png' alt='Twitter favicon'>Twitter</a>
+                    <a href='https://twitch.tv/maribel_hearn'><img src='assets/ext/twitch-icon-small.ico' alt='Twitch favicon'>Twitch</a>
+                    <a href='https://steamcommunity.com/id/maribelhearn42'><img src='assets/ext/steam-icon-small.ico' alt='Steam favicon'>Steam</a>
+                    <a href='https://github.com/MaribelHearn'><img src='assets/ext/github-icon.ico' alt='GitHub favicon'>GitHub</a></p>
+                    <p class='wide'>Partners: <a href='http://replay.lunarcast.net'><img src='assets/ext/favicon-lunarcast.ico' alt='Lunarcast favicon'>Lunarcast Replay Database</a></p>
                 </div>
             </div>
         </main>

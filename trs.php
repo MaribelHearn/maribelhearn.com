@@ -33,7 +33,7 @@
                     echo '<p>(Redirected from <em>' . $_GET['redirect'] . '</em>)</p>';
                 }
             ?>
-            <p>This page allows you to watch the <a href='https://twitch.tv/touhou_replay_showcase'><img src='ext/twitch-icon-small.ico' alt='Twitch favicon'> Touhou
+            <p>This page allows you to watch the <a href='https://twitch.tv/touhou_replay_showcase'><img src='assets/ext/twitch-icon-small.ico' alt='Twitch favicon'> Touhou
             Replay Showcase</a> stream, read the current schedule, and submit a replay for it.</p>
             <div id='twitch-embed'></div>
             <input id='watch' type='button' value='Click here to watch the stream'>
