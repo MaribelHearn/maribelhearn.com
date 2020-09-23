@@ -949,7 +949,6 @@ function takeScreenshot() {
 
     emptyModal();
     html2canvas(document.body, {
-        "backgroundColor": "#1b232e",
         "height": $("#tier_list_tbody").height() + 15,
         "windowHeight": Math.max(400, $("#tier_list_tbody").height() + 15)
     }).then(function(canvas) {
