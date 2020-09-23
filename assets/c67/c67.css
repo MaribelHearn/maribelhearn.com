@@ -34,6 +34,9 @@ ol {
     margin: 10px;
     padding-right: 25px;
 }
+li {
+    list-style-position: inside;
+}
 table {
     margin-left: auto;
     margin-right: auto;
