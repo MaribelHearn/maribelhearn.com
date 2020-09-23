@@ -196,6 +196,10 @@ li {
      height: 25px;
      margin: 10px;
 }
+#screenshot_base64 {
+    width: 95%;
+    height: 50%;
+}
 #erase_all_button {
     margin: 10px;
 }
@@ -1133,10 +1137,6 @@ li {
 ((max-device-width: 640px) and (orientation: landscape))) {
     body.no-webp, body.webp {
         background: #1b232e;
-    }
-    #screenshot_base64 {
-        width: 95%;
-        height: 50%;
     }
     #information_button, #view_button, #mobile_button_split, #menu_button, #switch_button {
         display: inline;
