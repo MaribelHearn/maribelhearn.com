@@ -949,8 +949,9 @@ function takeScreenshot() {
 
     emptyModal();
     html2canvas(document.body, {
-        "height": $("#tier_list_tbody").height() + 15,
-        "windowHeight": Math.max(400, $("#tier_list_tbody").height() + 15)
+        "backgroundColor": "#1b232e",
+        "height": ($("#tier_list_tbody").height() + 15),
+        "windowHeight": Math.max(400, ($("#tier_list_tbody").height() + 15))
     }).then(function(canvas) {
         var base64image = canvas.toDataURL("image/png"), link;
 
@@ -960,8 +961,9 @@ function takeScreenshot() {
 
         $("#modal_inner").append("<h2>Screenshot</h2><p>");
         $("#modal_inner").append("<a href='" + base64image + "' download='" + fileName() + "'>" +
-        "<input type='button' class='screenshot_button' value='Save to Device'></a>" +
-        "<img id='screenshot_base64' src='" + base64image + "' alt='Tier list screenshot'></p>");
+        "<input type='button' class='screenshot_button' value='Save to Device'></a></p>" +
+        "<p>This feature currently does not work on Linux when using Chromium-based browsers. If the tier list is large, it also does not work on Android.</p>" +
+        "<p><img id='screenshot_base64' src='" + base64image + "' alt='Tier list screenshot'></p>");
         $("#modal_inner").css("display", "block");
         $("#modal").css("display", "block");
     });
