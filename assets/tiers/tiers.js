@@ -928,36 +928,6 @@ function exportText() {
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
 }
-function saveCustom() {
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers), tierNum, tierName, tierColour;
-
-    cancelOngoingSwap();
-
-    for (tierNum in tierList) {
-        if (!tierList[tierNum].flag) {
-            tierName = $("#custom_name_tier" + tierNum).val().strip().replace(/'/g, "");
-            tierBg = $("#custom_bg_tier" + tierNum).val();
-            tierColour = $("#custom_colour_tier" + tierNum).val();
-
-            if (!validateTierName(tierName)) {
-                $("#custom_msg_container").html("<strong class='error'>Error: tier names may not exceed " + maxNameLength + " characters.</strong>");
-                return;
-            }
-
-            $("#th" + tierNum).html(tierName);
-            $("#th" + tierNum).css("background-color", tierBg);
-            $("#th" + tierNum).css("color", tierColour);
-            tierList[tierNum].name = tierName;
-            tierList[tierNum].bg = tierBg;
-            tierList[tierNum].colour = tierColour;
-        }
-    }
-
-    $("#modal_inner").html("");
-    $("#modal_inner").css("display", "none");
-    $("#modal").css("display", "none");
-    saveTiers();
-}
 function fileName() {
     var date = new Date(),
         month = (date.getMonth() + 1).toLocaleString("en-US", {minimumIntegerDigits: 2}),
@@ -997,10 +967,29 @@ function takeScreenshot() {
         $("#modal").css("display", "block");
     });
 }
-function settingsMenuChars() {
+function customisationMenu() {
     var tierList = (settings.sort == "characters" ? tiers : gameTiers),
-        tierOrder = (settings.sort == "characters" ? order : gameOrder),
-        tierNum, categoryName, current = 0, counter = 0, i;
+        tierOrder = (settings.sort == "characters" ? order : gameOrder), tierNum;
+
+    $("#modal_inner").append("<h2>Tier Customisation</h2><div id='custom_tier_container'>");
+
+    for (i = 0; i < tierOrder.length; i += 1) {
+        tierNum = tierOrder[i];
+
+        if (!tierList[tierNum].flag) {
+            $("#custom_tier_container").append("<p><strong>" + tierList[tierNum].name + "</strong></p>");
+            $("#custom_tier_container").append("<p class='name'><label for='custom_name_tier" + tierNum +
+            "'>Name</label><input id='custom_name_tier" + tierNum + "' type='text' value='" + tierList[tierNum].name + "'></p>");
+            $("#custom_tier_container").append("<p class='colour'><label for='custom_bg_tier" + tierNum +
+            "'>Background Colour</label><input id='custom_bg_tier" + tierNum + "' type='color' value='" + tierList[tierNum].bg + "'>");
+            $("#custom_tier_container").append("<label for='custom_colour_tier" + tierNum +
+            "'>Text Colour</label><input id='custom_colour_tier" + tierNum +
+            "' type='color' value='" + tierList[tierNum].colour + "'></p>");
+        }
+    }
+}
+function settingsMenuChars() {
+    var categoryName, current = 0, counter = 0, i;
 
     emptyModal();
     $("#modal_inner").append("<h2>Settings</h2><div>Include characters in the following works of first appearance:" +
@@ -1034,23 +1023,7 @@ function settingsMenuChars() {
     "<input id='tierHeaderWidth' type='number' value=" + settings.tierHeaderWidth + " min=" + defaultWidth + "></p>" +
     "<p><label for='tierHeaderWidth'>Tier header font size</label>" +
     "<input id='tierHeaderFontSize' type='number' value=" + settings.tierHeaderFontSize + " min=" + defaultSize + "></p></div>");
-    $("#modal_inner").append("<h2>Tier Customisation</h2><div id='custom_tier_container'>");
-
-    for (i = 0; i < tierOrder.length; i += 1) {
-        tierNum = tierOrder[i];
-
-        if (!tierList[tierNum].flag) {
-            $("#custom_tier_container").append("<p><strong>" + tierList[tierNum].name + "</strong></p>");
-            $("#custom_tier_container").append("<p class='name'><label for='custom_name_tier" + tierNum +
-            "'>Name</label><input id='custom_name_tier" + tierNum + "' type='text' value='" + tierList[tierNum].name + "'></p>");
-            $("#custom_tier_container").append("<p class='colour'><label for='custom_bg_tier" + tierNum +
-            "'>Background Colour</label><input id='custom_bg_tier" + tierNum + "' type='color' value='" + tierList[tierNum].bg + "'>");
-            $("#custom_tier_container").append("<label for='custom_colour_tier" + tierNum +
-            "'>Text Colour</label><input id='custom_colour_tier" + tierNum +
-            "' type='color' value='" + tierList[tierNum].colour + "'></p>");
-        }
-    }
-
+    customisationMenu();
     $("#modal_inner").append("<div><p><input id='save_settings' type='button' value='Save Changes'></p>" +
     "<p id='settings_msg_container'></p></div>");
     $("#save_settings").on("click", saveSettings);
@@ -1081,6 +1054,7 @@ function settingsMenuWorks() {
     "<input id='tierHeaderWidth' type='number' value=" + settings.tierHeaderWidth + " min=" + defaultWidth + "></p>" +
     "<p><label for='tierHeaderWidth'>Tier header font size</label>" +
     "<input id='tierHeaderFontSize' type='number' value=" + settings.tierHeaderFontSize + " min=" + defaultSize + "></p></div>");
+    customisationMenu();
     $("#modal_inner").append("<div><p><input id='save_settings' type='button' value='Save Changes'></p>" +
     "<p id='settings_msg_container'></p></div>");
     $("#save_settings").on("click", saveSettings);
@@ -1131,7 +1105,33 @@ function toggleMale() {
 }
 function saveSettings() {
     var cats = (settings.sort == "characters" ? categories : gameCategories),
-        removedCategories = [], categoryName, item, confirmation, i;
+        tierList = (settings.sort == "characters" ? tiers : gameTiers),
+        removedCategories = [], categoryName, item, tierNum,
+        tierName, tierColour, confirmation, i;
+
+    cancelOngoingSwap();
+
+    for (tierNum in tierList) {
+        if (!tierList[tierNum].flag) {
+            tierName = $("#custom_name_tier" + tierNum).val().strip().replace(/'/g, "");
+            tierBg = $("#custom_bg_tier" + tierNum).val();
+            tierColour = $("#custom_colour_tier" + tierNum).val();
+
+            if (!validateTierName(tierName)) {
+                $("#settings_msg_container").html("<strong class='error'>Error: tier names may not exceed " + maxNameLength + " characters.</strong>");
+                return;
+            }
+
+            $("#th" + tierNum).html(tierName);
+            $("#th" + tierNum).css("background-color", tierBg);
+            $("#th" + tierNum).css("color", tierColour);
+            tierList[tierNum].name = tierName;
+            tierList[tierNum].bg = tierBg;
+            tierList[tierNum].colour = tierColour;
+        }
+    }
+
+    saveTiers();
 
     for (categoryName in cats) {
         if (settings.sort == "characters") {
