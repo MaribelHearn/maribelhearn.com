@@ -43,6 +43,9 @@ a:visited {
 input[type=number] {
     height: 20px;
 }
+li {
+    list-style-position: inside;
+}
 .tier_header {
     font-size: 32px;
     width: 120px;
@@ -59,12 +62,14 @@ input[type=number] {
 .list {
     width: 80px;
     height: 80px;
-    object-fit: cover;
+    display: inline-block;
+    background-image: url('../shared/spritesheet80x80.png');
 }
 .tiered {
     width: 120px;
     height: 120px;
-    object-fit: none;
+    display: inline-block;
+    background-image: url('../shared/spritesheet.png');
 }
 .name {
     margin-top: 10px;
@@ -73,7 +78,7 @@ input[type=number] {
     margin-bottom: 10px;
 }
 .confirmation {
-    color: green;
+    color: #00A000;
 }
 .error {
     color: orange;
@@ -86,6 +91,12 @@ input[type=number] {
 }
 .hidden {
     display: none;
+}
+.screenshot_button, .mobile_add {
+    margin: 10px;
+}
+.tierview_screenshot_button {
+    margin-left: 10px;
 }
 #buttons, #characters, #show, #wrap {
     background-color: #1b232e;
@@ -180,10 +191,6 @@ input[type=number] {
 #artist_form, #settings_table {
     margin: 15px auto;
 }
-#toggle_instructions {
-    color: #1e90ff;
-    text-decoration: underline;
-}
 #mobile_addtotier {
      min-width: 25px;
      height: 25px;
@@ -196,927 +203,926 @@ input[type=number] {
     float: left;
 }
 /* Characters */
-/* Characters */
 #MarisaKirisame {
-    object-position: 0 0;
+    background-position: 0 0;
 }
 #ReimuHakurei.list {
-    object-position: -80px 0;
+    background-position: -80px 0;
 }
 #ReimuHakurei.tiered {
-    object-position: -120px 0;
+    background-position: -120px 0;
 }
 #Elis.list {
-    object-position: -160px 0;
+    background-position: -160px 0;
 }
 #Elis.tiered {
-    object-position: -240px 0;
+    background-position: -240px 0;
 }
 #Kikuri.list {
-    object-position: -240px 0;
+    background-position: -240px 0;
 }
 #Kikuri.tiered {
-    object-position: -360px 0;
+    background-position: -360px 0;
 }
 #Konngara.list {
-    object-position: -320px 0;
+    background-position: -320px 0;
 }
 #Konngara.tiered {
-    object-position: -480px 0;
+    background-position: -480px 0;
 }
 #Mima.list {
-    object-position: -400px 0;
+    background-position: -400px 0;
 }
 #Mima.tiered {
-    object-position: -600px 0;
+    background-position: -600px 0;
 }
 #ReimuPC-98.list {
-    object-position: -480px 0;
+    background-position: -480px 0;
 }
 #ReimuPC-98.tiered {
-    object-position: -720px 0;
+    background-position: -720px 0;
 }
 #Sariel.list {
-    object-position: -560px 0;
+    background-position: -560px 0;
 }
 #Sariel.tiered {
-    object-position: -840px 0;
+    background-position: -840px 0;
 }
 #SinGyokuF.list {
-    object-position: -640px 0;
+    background-position: -640px 0;
 }
 #SinGyokuF.tiered {
-    object-position: -960px 0;
+    background-position: -960px 0;
 }
 #SinGyokuM.list {
-    object-position: -720px 0;
+    background-position: -720px 0;
 }
 #SinGyokuM.tiered {
-    object-position: -1080px 0;
+    background-position: -1080px 0;
 }
 #YuugenMagan.list {
-    object-position: -800px 0;
+    background-position: -800px 0;
 }
 #YuugenMagan.tiered {
-    object-position: -1200px 0;
+    background-position: -1200px 0;
 }
 #EvilEyeSigma.list {
-    object-position: -880px 0;
+    background-position: -880px 0;
 }
 #EvilEyeSigma.tiered {
-    object-position: -1320px 0;
+    background-position: -1320px 0;
 }
 #Genjii.list {
-    object-position: -960px 0;
+    background-position: -960px 0;
 }
 #Genjii.tiered {
-    object-position: -1440px 0;
+    background-position: -1440px 0;
 }
 #MarisaPC-98.list {
-    object-position: -1040px 0;
+    background-position: -1040px 0;
 }
 #MarisaPC-98.tiered {
-    object-position: -1560px 0;
+    background-position: -1560px 0;
 }
 #Meira.list {
-    object-position: -1120px 0;
+    background-position: -1120px 0;
 }
 #Meira.tiered {
-    object-position: -1680px 0;
+    background-position: -1680px 0;
 }
 #Rika.list {
-    object-position: -1200px 0;
+    background-position: -1200px 0;
 }
 #Rika.tiered {
-    object-position: -1800px 0;
+    background-position: -1800px 0;
 }
 #ChiyuriKitashirakawa.list {
-    object-position: -1280px 0;
+    background-position: -1280px 0;
 }
 #ChiyuriKitashirakawa.tiered {
-    object-position: -1920px 0;
+    background-position: -1920px 0;
 }
 #Ellen.list {
-    object-position: -1360px 0;
+    background-position: -1360px 0;
 }
 #Ellen.tiered {
-    object-position: -2040px 0;
+    background-position: -2040px 0;
 }
 #KanaAnaberal.list {
-    object-position: -1440px 0;
+    background-position: -1440px 0;
 }
 #KanaAnaberal.tiered {
-    object-position: -2160px 0;
+    background-position: -2160px 0;
 }
 #Kotohime.list {
-    object-position: -1520px 0;
+    background-position: -1520px 0;
 }
 #Kotohime.tiered {
-    object-position: -2280px 0;
+    background-position: -2280px 0;
 }
 #Mimi-chan.list {
-    object-position: -1600px 0;
+    background-position: -1600px 0;
 }
 #Mimi-chan.tiered {
-    object-position: -2400px 0;
+    background-position: -2400px 0;
 }
 #RikakoAsakura.list {
-    object-position: -1680px 0;
+    background-position: -1680px 0;
 }
 #RikakoAsakura.tiered {
-    object-position: -2520px 0;
+    background-position: -2520px 0;
 }
 #Ruukoto.list {
-    object-position: -1760px 0;
+    background-position: -1760px 0;
 }
 #Ruukoto.tiered {
-    object-position: -2640px 0;
+    background-position: -2640px 0;
 }
 #YumemiOkazaki.list {
-    object-position: -1840px 0;
+    background-position: -1840px 0;
 }
 #YumemiOkazaki.tiered {
-    object-position: -2760px 0;
+    background-position: -2760px 0;
 }
 #Elly.list {
-    object-position: -1920px 0;
+    background-position: -1920px 0;
 }
 #Elly.tiered {
-    object-position: -2880px 0;
+    background-position: -2880px 0;
 }
 #Gengetsu.list {
-    object-position: -2000px 0;
+    background-position: -2000px 0;
 }
 #Gengetsu.tiered {
-    object-position: -3000px 0;
+    background-position: -3000px 0;
 }
 #Kurumi.list {
-    object-position: -2080px 0;
+    background-position: -2080px 0;
 }
 #Kurumi.tiered {
-    object-position: -3120px 0;
+    background-position: -3120px 0;
 }
 #Mugetsu.list {
-    object-position: -2160px 0;
+    background-position: -2160px 0;
 }
 #Mugetsu.tiered {
-    object-position: -3240px 0;
+    background-position: -3240px 0;
 }
 #Orange.list {
-    object-position: -2240px 0;
+    background-position: -2240px 0;
 }
 #Orange.tiered {
-    object-position: -3360px 0;
+    background-position: -3360px 0;
 }
 #YuukaPC-98.list {
-    object-position: -2320px 0;
+    background-position: -2320px 0;
 }
 #YuukaPC-98.tiered {
-    object-position: -3480px 0;
+    background-position: -3480px 0;
 }
 #AlicePC-98.list {
-    object-position: -2400px 0;
+    background-position: -2400px 0;
 }
 #AlicePC-98.tiered {
-    object-position: -3600px 0;
+    background-position: -3600px 0;
 }
 #Luize.list {
-    object-position: -2480px 0;
+    background-position: -2480px 0;
 }
 #Luize.tiered {
-    object-position: -3720px 0;
+    background-position: -3720px 0;
 }
 #MaiPC-98.list {
-    object-position: -2560px 0;
+    background-position: -2560px 0;
 }
 #MaiPC-98.tiered {
-    object-position: -3840px 0;
+    background-position: -3840px 0;
 }
 #Sara.list {
-    object-position: -2640px 0;
+    background-position: -2640px 0;
 }
 #Sara.tiered {
-    object-position: -3960px 0;
+    background-position: -3960px 0;
 }
 #Shinki.list {
-    object-position: -2720px 0;
+    background-position: -2720px 0;
 }
 #Shinki.tiered {
-    object-position: -4080px 0;
+    background-position: -4080px 0;
 }
 #Yuki.list {
-    object-position: -2800px 0;
+    background-position: -2800px 0;
 }
 #Yuki.tiered {
-    object-position: -4200px 0;
+    background-position: -4200px 0;
 }
 #Yumeko.list {
-    object-position: -2880px 0;
+    background-position: -2880px 0;
 }
 #Yumeko.tiered {
-    object-position: -4320px 0;
+    background-position: -4320px 0;
 }
 #Cirno.list {
-    object-position: -2960px 0;
+    background-position: -2960px 0;
 }
 #Cirno.tiered {
-    object-position: -4440px 0;
+    background-position: -4440px 0;
 }
 #Daiyousei.list {
-    object-position: -3040px 0;
+    background-position: -3040px 0;
 }
 #Daiyousei.tiered {
-    object-position: -4560px 0;
+    background-position: -4560px 0;
 }
 #FlandreScarlet.list {
-    object-position: -3120px 0;
+    background-position: -3120px 0;
 }
 #FlandreScarlet.tiered {
-    object-position: -4680px 0;
+    background-position: -4680px 0;
 }
 #HongMeiling.list {
-    object-position: -3200px 0;
+    background-position: -3200px 0;
 }
 #HongMeiling.tiered {
-    object-position: -4800px 0;
+    background-position: -4800px 0;
 }
 #Koakuma.list {
-    object-position: -3280px 0;
+    background-position: -3280px 0;
 }
 #Koakuma.tiered {
-    object-position: -4920px 0;
+    background-position: -4920px 0;
 }
 #PatchouliKnowledge.list {
-    object-position: -3360px 0;
+    background-position: -3360px 0;
 }
 #PatchouliKnowledge.tiered {
-    object-position: -5040px 0;
+    background-position: -5040px 0;
 }
 #RemiliaScarlet.list {
-    object-position: -3440px 0;
+    background-position: -3440px 0;
 }
 #RemiliaScarlet.tiered {
-    object-position: -5160px 0;
+    background-position: -5160px 0;
 }
 #Rumia.list {
-    object-position: -3520px 0;
+    background-position: -3520px 0;
 }
 #Rumia.tiered {
-    object-position: -5280px 0;
+    background-position: -5280px 0;
 }
 #SakuyaIzayoi.list {
-    object-position: -3600px 0;
+    background-position: -3600px 0;
 }
 #SakuyaIzayoi.tiered {
-    object-position: -5400px 0;
+    background-position: -5400px 0;
 }
 #AliceMargatroid.list {
-    object-position: -3680px 0;
+    background-position: -3680px 0;
 }
 #AliceMargatroid.tiered {
-    object-position: -5520px 0;
+    background-position: -5520px 0;
 }
 #Chen.list {
-    object-position: -3760px 0;
+    background-position: -3760px 0;
 }
 #Chen.tiered {
-    object-position: -5640px 0;
+    background-position: -5640px 0;
 }
 #LettyWhiterock.list {
-    object-position: -3840px 0;
+    background-position: -3840px 0;
 }
 #LettyWhiterock.tiered {
-    object-position: -5760px 0;
+    background-position: -5760px 0;
 }
 #LilyWhite.list {
-    object-position: -3920px 0;
+    background-position: -3920px 0;
 }
 #LilyWhite.tiered {
-    object-position: -5880px 0;
+    background-position: -5880px 0;
 }
 #LunasaPrismriver.list {
-    object-position: -4000px 0;
+    background-position: -4000px 0;
 }
 #LunasaPrismriver.tiered {
-    object-position: -6000px 0;
+    background-position: -6000px 0;
 }
 #LyricaPrismriver.list {
-    object-position: -4080px 0;
+    background-position: -4080px 0;
 }
 #LyricaPrismriver.tiered {
-    object-position: -6120px 0;
+    background-position: -6120px 0;
 }
 #MerlinPrismriver.list {
-    object-position: -4160px 0;
+    background-position: -4160px 0;
 }
 #MerlinPrismriver.tiered {
-    object-position: -6240px 0;
+    background-position: -6240px 0;
 }
 #RanYakumo.list {
-    object-position: -4240px 0;
+    background-position: -4240px 0;
 }
 #RanYakumo.tiered {
-    object-position: -6360px 0;
+    background-position: -6360px 0;
 }
 #YoumuKonpaku.list {
-    object-position: -4320px 0;
+    background-position: -4320px 0;
 }
 #YoumuKonpaku.tiered {
-    object-position: -6480px 0;
+    background-position: -6480px 0;
 }
 #YukariYakumo.list {
-    object-position: -4400px 0;
+    background-position: -4400px 0;
 }
 #YukariYakumo.tiered {
-    object-position: -6600px 0;
+    background-position: -6600px 0;
 }
 #YuyukoSaigyouji.list {
-    object-position: -4480px 0;
+    background-position: -4480px 0;
 }
 #YuyukoSaigyouji.tiered {
-    object-position: -6720px 0;
+    background-position: -6720px 0;
 }
 #SuikaIbuki.list {
-    object-position: -4560px 0;
+    background-position: -4560px 0;
 }
 #SuikaIbuki.tiered {
-    object-position: -6840px 0;
+    background-position: -6840px 0;
 }
 #EirinYagokoro.list {
-    object-position: -4640px 0;
+    background-position: -4640px 0;
 }
 #EirinYagokoro.tiered {
-    object-position: -6960px 0;
+    background-position: -6960px 0;
 }
 #FujiwaranoMokou.list {
-    object-position: -4720px 0;
+    background-position: -4720px 0;
 }
 #FujiwaranoMokou.tiered {
-    object-position: -7080px 0;
+    background-position: -7080px 0;
 }
 #KaguyaHouraisan.list {
-    object-position: -4800px 0;
+    background-position: -4800px 0;
 }
 #KaguyaHouraisan.tiered {
-    object-position: -7200px 0;
+    background-position: -7200px 0;
 }
 #KeineKamishirasawa.list {
-    object-position: -4880px 0;
+    background-position: -4880px 0;
 }
 #KeineKamishirasawa.tiered {
-    object-position: -7320px 0;
+    background-position: -7320px 0;
 }
 #MystiaLorelei.list {
-    object-position: -4960px 0;
+    background-position: -4960px 0;
 }
 #MystiaLorelei.tiered {
-    object-position: -7440px 0;
+    background-position: -7440px 0;
 }
 #ReisenUdongeinInaba.list {
-    object-position: -5040px 0;
+    background-position: -5040px 0;
 }
 #ReisenUdongeinInaba.tiered {
-    object-position: -7560px 0;
+    background-position: -7560px 0;
 }
 #TewiInaba.list {
-    object-position: -5120px 0;
+    background-position: -5120px 0;
 }
 #TewiInaba.tiered {
-    object-position: -7680px 0;
+    background-position: -7680px 0;
 }
 #WriggleNightbug.list {
-    object-position: -5200px 0;
+    background-position: -5200px 0;
 }
 #WriggleNightbug.tiered {
-    object-position: -7800px 0;
+    background-position: -7800px 0;
 }
 #AyaShameimaru.list {
-    object-position: -5280px 0;
+    background-position: -5280px 0;
 }
 #AyaShameimaru.tiered {
-    object-position: -7920px 0;
+    background-position: -7920px 0;
 }
 #EikiShikiYamaxanadu.list {
-    object-position: -5360px 0;
+    background-position: -5360px 0;
 }
 #EikiShikiYamaxanadu.tiered {
-    object-position: -8040px 0;
+    background-position: -8040px 0;
 }
 #KomachiOnozuka.list {
-    object-position: -5440px 0;
+    background-position: -5440px 0;
 }
 #KomachiOnozuka.tiered {
-    object-position: -8160px 0;
+    background-position: -8160px 0;
 }
 #MedicineMelancholy.list {
-    object-position: -5520px 0;
+    background-position: -5520px 0;
 }
 #MedicineMelancholy.tiered {
-    object-position: -8280px 0;
+    background-position: -8280px 0;
 }
 #YuukaKazami.list {
-    object-position: -5600px 0;
+    background-position: -5600px 0;
 }
 #YuukaKazami.tiered {
-    object-position: -8400px 0;
+    background-position: -8400px 0;
 }
 #HinaKagiyama.list {
-    object-position: -5680px 0;
+    background-position: -5680px 0;
 }
 #HinaKagiyama.tiered {
-    object-position: -8520px 0;
+    background-position: -8520px 0;
 }
 #KanakoYasaka.list {
-    object-position: -5760px 0;
+    background-position: -5760px 0;
 }
 #KanakoYasaka.tiered {
-    object-position: -8640px 0;
+    background-position: -8640px 0;
 }
 #MinorikoAki.list {
-    object-position: -5840px 0;
+    background-position: -5840px 0;
 }
 #MinorikoAki.tiered {
-    object-position: -8760px 0;
+    background-position: -8760px 0;
 }
 #MomijiInubashiri.list {
-    object-position: -5920px 0;
+    background-position: -5920px 0;
 }
 #MomijiInubashiri.tiered {
-    object-position: -8880px 0;
+    background-position: -8880px 0;
 }
 #NitoriKawashiro.list {
-    object-position: -6000px 0;
+    background-position: -6000px 0;
 }
 #NitoriKawashiro.tiered {
-    object-position: -9000px 0;
+    background-position: -9000px 0;
 }
 #SanaeKochiya.list {
-    object-position: -6080px 0;
+    background-position: -6080px 0;
 }
 #SanaeKochiya.tiered {
-    object-position: -9120px 0;
+    background-position: -9120px 0;
 }
 #ShizuhaAki.list {
-    object-position: -6160px 0;
+    background-position: -6160px 0;
 }
 #ShizuhaAki.tiered {
-    object-position: -9240px 0;
+    background-position: -9240px 0;
 }
 #SuwakoMoriya.list {
-    object-position: -6240px 0;
+    background-position: -6240px 0;
 }
 #SuwakoMoriya.tiered {
-    object-position: -9360px 0;
+    background-position: -9360px 0;
 }
 #IkuNagae.list {
-    object-position: -6320px 0;
+    background-position: -6320px 0;
 }
 #IkuNagae.tiered {
-    object-position: -9480px 0;
+    background-position: -9480px 0;
 }
 #TenshiHinanawi.list {
-    object-position: -6400px 0;
+    background-position: -6400px 0;
 }
 #TenshiHinanawi.tiered {
-    object-position: -9600px 0;
+    background-position: -9600px 0;
 }
 #Kisume.list {
-    object-position: -6480px 0;
+    background-position: -6480px 0;
 }
 #Kisume.tiered {
-    object-position: -9720px 0;
+    background-position: -9720px 0;
 }
 #KoishiKomeiji.list {
-    object-position: -6560px 0;
+    background-position: -6560px 0;
 }
 #KoishiKomeiji.tiered {
-    object-position: -9840px 0;
+    background-position: -9840px 0;
 }
 #ParseeMizuhashi.list {
-    object-position: -6640px 0;
+    background-position: -6640px 0;
 }
 #ParseeMizuhashi.tiered {
-    object-position: -9960px 0;
+    background-position: -9960px 0;
 }
 #RinKaenbyou.list {
-    object-position: -6720px 0;
+    background-position: -6720px 0;
 }
 #RinKaenbyou.tiered {
-    object-position: -10080px 0;
+    background-position: -10080px 0;
 }
 #SatoriKomeiji.list {
-    object-position: -6800px 0;
+    background-position: -6800px 0;
 }
 #SatoriKomeiji.tiered {
-    object-position: -10200px 0;
+    background-position: -10200px 0;
 }
 #UtsuhoReiuji.list {
-    object-position: -6880px 0;
+    background-position: -6880px 0;
 }
 #UtsuhoReiuji.tiered {
-    object-position: -10320px 0;
+    background-position: -10320px 0;
 }
 #YamameKurodani.list {
-    object-position: -6960px 0;
+    background-position: -6960px 0;
 }
 #YamameKurodani.tiered {
-    object-position: -10440px 0;
+    background-position: -10440px 0;
 }
 #YuugiHoshiguma.list {
-    object-position: -7040px 0;
+    background-position: -7040px 0;
 }
 #YuugiHoshiguma.tiered {
-    object-position: -10560px 0;
+    background-position: -10560px 0;
 }
 #ByakurenHijiri.list {
-    object-position: -7120px 0;
+    background-position: -7120px 0;
 }
 #ByakurenHijiri.tiered {
-    object-position: -10680px 0;
+    background-position: -10680px 0;
 }
 #IchirinKumoi.list {
-    object-position: -7200px 0;
+    background-position: -7200px 0;
 }
 #IchirinKumoi.tiered {
-    object-position: -10800px 0;
+    background-position: -10800px 0;
 }
 #KogasaTatara.list {
-    object-position: -7280px 0;
+    background-position: -7280px 0;
 }
 #KogasaTatara.tiered {
-    object-position: -10920px 0;
+    background-position: -10920px 0;
 }
 #MinamitsuMurasa.list {
-    object-position: -7360px 0;
+    background-position: -7360px 0;
 }
 #MinamitsuMurasa.tiered {
-    object-position: -11040px 0;
+    background-position: -11040px 0;
 }
 #Nazrin.list {
-    object-position: -7440px 0;
+    background-position: -7440px 0;
 }
 #Nazrin.tiered {
-    object-position: -11160px 0;
+    background-position: -11160px 0;
 }
 #NueHoujuu.list {
-    object-position: -7520px 0;
+    background-position: -7520px 0;
 }
 #NueHoujuu.tiered {
-    object-position: -11280px 0;
+    background-position: -11280px 0;
 }
 #ShouToramaru.list {
-    object-position: -7600px 0;
+    background-position: -7600px 0;
 }
 #ShouToramaru.tiered {
-    object-position: -11400px 0;
+    background-position: -11400px 0;
 }
 #Unzan.list {
-    object-position: -7680px 0;
+    background-position: -7680px 0;
 }
 #Unzan.tiered {
-    object-position: -11520px 0;
+    background-position: -11520px 0;
 }
 #Hisoutensoku.list {
-    object-position: -7760px 0;
+    background-position: -7760px 0;
 }
 #Hisoutensoku.tiered {
-    object-position: -11640px 0;
+    background-position: -11640px 0;
 }
 #HatateHimekaidou.list {
-    object-position: -7840px 0;
+    background-position: -7840px 0;
 }
 #HatateHimekaidou.tiered {
-    object-position: -11760px 0;
+    background-position: -11760px 0;
 }
 #LunaChild.list {
-    object-position: -7920px 0;
+    background-position: -7920px 0;
 }
 #LunaChild.tiered {
-    object-position: -11880px 0;
+    background-position: -11880px 0;
 }
 #StarSapphire.list {
-    object-position: -8000px 0;
+    background-position: -8000px 0;
 }
 #StarSapphire.tiered {
-    object-position: -12000px 0;
+    background-position: -12000px 0;
 }
 #SunnyMilk.list {
-    object-position: -8080px 0;
+    background-position: -8080px 0;
 }
 #SunnyMilk.tiered {
-    object-position: -12120px 0;
+    background-position: -12120px 0;
 }
 #KyoukoKasodani.list {
-    object-position: -8160px 0;
+    background-position: -8160px 0;
 }
 #KyoukoKasodani.tiered {
-    object-position: -12240px 0;
+    background-position: -12240px 0;
 }
 #MamizouFutatsuiwa.list {
-    object-position: -8240px 0;
+    background-position: -8240px 0;
 }
 #MamizouFutatsuiwa.tiered {
-    object-position: -12360px 0;
+    background-position: -12360px 0;
 }
 #MononobenoFuto.list {
-    object-position: -8320px 0;
+    background-position: -8320px 0;
 }
 #MononobenoFuto.tiered {
-    object-position: -12480px 0;
+    background-position: -12480px 0;
 }
 #SeigaKaku.list {
-    object-position: -8400px 0;
+    background-position: -8400px 0;
 }
 #SeigaKaku.tiered {
-    object-position: -12600px 0;
+    background-position: -12600px 0;
 }
 #SoganoTojiko.list {
-    object-position: -8480px 0;
+    background-position: -8480px 0;
 }
 #SoganoTojiko.tiered {
-    object-position: -12720px 0;
+    background-position: -12720px 0;
 }
 #ToyosatomiminoMiko.list {
-    object-position: -8560px 0;
+    background-position: -8560px 0;
 }
 #ToyosatomiminoMiko.tiered {
-    object-position: -12840px 0;
+    background-position: -12840px 0;
 }
 #YoshikaMiyako.list {
-    object-position: -8640px 0;
+    background-position: -8640px 0;
 }
 #YoshikaMiyako.tiered {
-    object-position: -12960px 0;
+    background-position: -12960px 0;
 }
 #HatanoKokoro.list {
-    object-position: -8720px 0;
+    background-position: -8720px 0;
 }
 #HatanoKokoro.tiered {
-    object-position: -13080px 0;
+    background-position: -13080px 0;
 }
 #Clownpiece.list {
-    object-position: -8800px 0;
+    background-position: -8800px 0;
 }
 #Clownpiece.tiered {
-    object-position: -13200px 0;
+    background-position: -13200px 0;
 }
 #DoremySweet.list {
-    object-position: -8880px 0;
+    background-position: -8880px 0;
 }
 #DoremySweet.tiered {
-    object-position: -13320px 0;
+    background-position: -13320px 0;
 }
 #HecatiaLapislazuli.list {
-    object-position: -8960px 0;
+    background-position: -8960px 0;
 }
 #HecatiaLapislazuli.tiered {
-    object-position: -13440px 0;
+    background-position: -13440px 0;
 }
 #Junko.list {
-    object-position: -9040px 0;
+    background-position: -9040px 0;
 }
 #Junko.tiered {
-    object-position: -13560px 0;
+    background-position: -13560px 0;
 }
 #Ringo.list {
-    object-position: -9120px 0;
+    background-position: -9120px 0;
 }
 #Ringo.tiered {
-    object-position: -13680px 0;
+    background-position: -13680px 0;
 }
 #SagumeKishin.list {
-    object-position: -9200px 0;
+    background-position: -9200px 0;
 }
 #SagumeKishin.tiered {
-    object-position: -13800px 0;
+    background-position: -13800px 0;
 }
 #Seiran.list {
-    object-position: -9280px 0;
+    background-position: -9280px 0;
 }
 #Seiran.tiered {
-    object-position: -13920px 0;
+    background-position: -13920px 0;
 }
 #BenbenTsukumo.list {
-    object-position: -9360px 0;
+    background-position: -9360px 0;
 }
 #BenbenTsukumo.tiered {
-    object-position: -14040px 0;
+    background-position: -14040px 0;
 }
 #KagerouImaizumi.list {
-    object-position: -9440px 0;
+    background-position: -9440px 0;
 }
 #KagerouImaizumi.tiered {
-    object-position: -14160px 0;
+    background-position: -14160px 0;
 }
 #RaikoHorikawa.list {
-    object-position: -9520px 0;
+    background-position: -9520px 0;
 }
 #RaikoHorikawa.tiered {
-    object-position: -14280px 0;
+    background-position: -14280px 0;
 }
 #SeijaKijin.list {
-    object-position: -9600px 0;
+    background-position: -9600px 0;
 }
 #SeijaKijin.tiered {
-    object-position: -14400px 0;
+    background-position: -14400px 0;
 }
 #Sekibanki.list {
-    object-position: -9680px 0;
+    background-position: -9680px 0;
 }
 #Sekibanki.tiered {
-    object-position: -14520px 0;
+    background-position: -14520px 0;
 }
 #ShinmyoumaruSukuna.list {
-    object-position: -9760px 0;
+    background-position: -9760px 0;
 }
 #ShinmyoumaruSukuna.tiered {
-    object-position: -14640px 0;
+    background-position: -14640px 0;
 }
 #Wakasagihime.list {
-    object-position: -9840px 0;
+    background-position: -9840px 0;
 }
 #Wakasagihime.tiered {
-    object-position: -14760px 0;
+    background-position: -14760px 0;
 }
 #YatsuhashiTsukumo.list {
-    object-position: -9920px 0;
+    background-position: -9920px 0;
 }
 #YatsuhashiTsukumo.tiered {
-    object-position: -14880px 0;
+    background-position: -14880px 0;
 }
 #SumirekoUsami.list {
-    object-position: -10000px 0;
+    background-position: -10000px 0;
 }
 #SumirekoUsami.tiered {
-    object-position: -15000px 0;
+    background-position: -15000px 0;
 }
 #JoonYorigami.list {
-    object-position: -10080px 0;
+    background-position: -10080px 0;
 }
 #JoonYorigami.tiered {
-    object-position: -15120px 0;
+    background-position: -15120px 0;
 }
 #ShionYorigami.list {
-    object-position: -10160px 0;
+    background-position: -10160px 0;
 }
 #ShionYorigami.tiered {
-    object-position: -15240px 0;
+    background-position: -15240px 0;
 }
 #AunnKomano.list {
-    object-position: -10240px 0;
+    background-position: -10240px 0;
 }
 #AunnKomano.tiered {
-    object-position: -15360px 0;
+    background-position: -15360px 0;
 }
 #EternityLarva.list {
-    object-position: -10320px 0;
+    background-position: -10320px 0;
 }
 #EternityLarva.tiered {
-    object-position: -15480px 0;
+    background-position: -15480px 0;
 }
 #MaiTeireida.list {
-    object-position: -10400px 0;
+    background-position: -10400px 0;
 }
 #MaiTeireida.tiered {
-    object-position: -15600px 0;
+    background-position: -15600px 0;
 }
 #NarumiYatadera.list {
-    object-position: -10480px 0;
+    background-position: -10480px 0;
 }
 #NarumiYatadera.tiered {
-    object-position: -15720px 0;
+    background-position: -15720px 0;
 }
 #NemunoSakata.list {
-    object-position: -10560px 0;
+    background-position: -10560px 0;
 }
 #NemunoSakata.tiered {
-    object-position: -15840px 0;
+    background-position: -15840px 0;
 }
 #OkinaMatara.list {
-    object-position: -10640px 0;
+    background-position: -10640px 0;
 }
 #OkinaMatara.tiered {
-    object-position: -15960px 0;
+    background-position: -15960px 0;
 }
 #SatonoNishida.list {
-    object-position: -10720px 0;
+    background-position: -10720px 0;
 }
 #SatonoNishida.tiered {
-    object-position: -16080px 0;
+    background-position: -16080px 0;
 }
 #EikaEbisu.list {
-    object-position: -10800px 0;
+    background-position: -10800px 0;
 }
 #EikaEbisu.tiered {
-    object-position: -16200px 0;
+    background-position: -16200px 0;
 }
 #KeikiHaniyasushin.list {
-    object-position: -10880px 0;
+    background-position: -10880px 0;
 }
 #KeikiHaniyasushin.tiered {
-    object-position: -16320px 0;
+    background-position: -16320px 0;
 }
 #KutakaNiwatari.list {
-    object-position: -10960px 0;
+    background-position: -10960px 0;
 }
 #KutakaNiwatari.tiered {
-    object-position: -16440px 0;
+    background-position: -16440px 0;
 }
 #MayumiJoutouguu.list {
-    object-position: -11040px 0;
+    background-position: -11040px 0;
 }
 #MayumiJoutouguu.tiered {
-    object-position: -16560px 0;
+    background-position: -16560px 0;
 }
 #SakiKurokoma.list {
-    object-position: -11120px 0;
+    background-position: -11120px 0;
 }
 #SakiKurokoma.tiered {
-    object-position: -16680px 0;
+    background-position: -16680px 0;
 }
 #UrumiUshizaki.list {
-    object-position: -11200px 0;
+    background-position: -11200px 0;
 }
 #UrumiUshizaki.tiered {
-    object-position: -16800px 0;
+    background-position: -16800px 0;
 }
 #YachieKicchou.list {
-    object-position: -11280px 0;
+    background-position: -11280px 0;
 }
 #YachieKicchou.tiered {
-    object-position: -16920px 0;
+    background-position: -16920px 0;
 }
 #FortuneTeller.list {
-    object-position: -11360px 0;
+    background-position: -11360px 0;
 }
 #FortuneTeller.tiered {
-    object-position: -17040px 0;
+    background-position: -17040px 0;
 }
 #HiedanoAkyuu.list {
-    object-position: -11440px 0;
+    background-position: -11440px 0;
 }
 #HiedanoAkyuu.tiered {
-    object-position: -17160px 0;
+    background-position: -17160px 0;
 }
 #KasenIbaraki.list {
-    object-position: -11520px 0;
+    background-position: -11520px 0;
 }
 #KasenIbaraki.tiered {
-    object-position: -17280px 0;
+    background-position: -17280px 0;
 }
 #KosuzuMotoori.list {
-    object-position: -11600px 0;
+    background-position: -11600px 0;
 }
 #KosuzuMotoori.tiered {
-    object-position: -17400px 0;
+    background-position: -17400px 0;
 }
 #ReisenII.list {
-    object-position: -11680px 0;
+    background-position: -11680px 0;
 }
 #ReisenII.tiered {
-    object-position: -17520px 0;
+    background-position: -17520px 0;
 }
 #RinnosukeMorichika.list {
-    object-position: -11760px 0;
+    background-position: -11760px 0;
 }
 #RinnosukeMorichika.tiered {
-    object-position: -17640px 0;
+    background-position: -17640px 0;
 }
 #Tokiko.list {
-    object-position: -11840px 0;
+    background-position: -11840px 0;
 }
 #Tokiko.tiered {
-    object-position: -17760px 0;
+    background-position: -17760px 0;
 }
 #WatatsukinoToyohime.list {
-    object-position: -11920px 0;
+    background-position: -11920px 0;
 }
 #WatatsukinoToyohime.tiered {
-    object-position: -17880px 0;
+    background-position: -17880px 0;
 }
 #WatatsukinoYorihime.list {
-    object-position: -12000px 0;
+    background-position: -12000px 0;
 }
 #WatatsukinoYorihime.tiered {
-    object-position: -18000px 0;
+    background-position: -18000px 0;
 }
 #MaribelHearn.list {
-    object-position: -12080px 0;
+    background-position: -12080px 0;
 }
 #MaribelHearn.tiered {
-    object-position: -18120px 0;
+    background-position: -18120px 0;
 }
 #RenkoUsami.list {
-    object-position: -12160px 0;
+    background-position: -12160px 0;
 }
 #RenkoUsami.tiered {
-    object-position: -18240px 0;
+    background-position: -18240px 0;
 }
 #MiyoiOkunoda.list {
-    object-position: -12240px 0;
+    background-position: -12240px 0;
 }
 #MiyoiOkunoda.tiered {
-    object-position: -18360px 0;
+    background-position: -18360px 0;
 }
 @media screen and (max-width: 1100px) and (max-height: 800px) {
     body.no-webp, body.webp {
@@ -1127,6 +1133,10 @@ input[type=number] {
 ((max-device-width: 640px) and (orientation: landscape))) {
     body.no-webp, body.webp {
         background: #1b232e;
+    }
+    #screenshot_base64 {
+        width: 95%;
+        height: 50%;
     }
     #information_button, #view_button, #mobile_button_split, #menu_button, #switch_button {
         display: inline;
@@ -1192,463 +1202,463 @@ input[type=number] {
         font-size: 28px;
     }
     #ReimuHakurei.list, #ReimuHakurei.tiered {
-        object-position: -60px 0;
+        background-position: -60px 0;
     }
     #Elis.list, #Elis.tiered {
-        object-position: -120px 0;
+        background-position: -120px 0;
     }
     #Kikuri.list, #Kikuri.tiered {
-        object-position: -180px 0;
+        background-position: -180px 0;
     }
     #Konngara.list, #Konngara.tiered {
-        object-position: -240px 0;
+        background-position: -240px 0;
     }
     #Mima.list, #Mima.tiered {
-        object-position: -300px 0;
+        background-position: -300px 0;
     }
     #ReimuPC-98.list, #ReimuPC-98.tiered {
-        object-position: -360px 0;
+        background-position: -360px 0;
     }
     #Sariel.list, #Sariel.tiered {
-        object-position: -420px 0;
+        background-position: -420px 0;
     }
     #SinGyokuF.list, #SinGyokuF.tiered {
-        object-position: -480px 0;
+        background-position: -480px 0;
     }
     #SinGyokuM.list, #SinGyokuM.tiered {
-        object-position: -540px 0;
+        background-position: -540px 0;
     }
     #YuugenMagan.list, #YuugenMagan.tiered {
-        object-position: -600px 0;
+        background-position: -600px 0;
     }
     #EvilEyeSigma.list, #EvilEyeSigma.tiered {
-        object-position: -660px 0;
+        background-position: -660px 0;
     }
     #Genjii.list, #Genjii.tiered {
-        object-position: -720px 0;
+        background-position: -720px 0;
     }
     #MarisaPC-98.list, #MarisaPC-98.tiered {
-        object-position: -780px 0;
+        background-position: -780px 0;
     }
     #Meira.list, #Meira.tiered {
-        object-position: -840px 0;
+        background-position: -840px 0;
     }
     #Rika.list, #Rika.tiered {
-        object-position: -900px 0;
+        background-position: -900px 0;
     }
     #ChiyuriKitashirakawa.list, #ChiyuriKitashirakawa.tiered {
-        object-position: -960px 0;
+        background-position: -960px 0;
     }
     #Ellen.list, #Ellen.tiered {
-        object-position: -1020px 0;
+        background-position: -1020px 0;
     }
     #KanaAnaberal.list, #KanaAnaberal.tiered {
-        object-position: -1080px 0;
+        background-position: -1080px 0;
     }
     #Kotohime.list, #Kotohime.tiered {
-        object-position: -1140px 0;
+        background-position: -1140px 0;
     }
     #Mimi-chan.list, #Mimi-chan.tiered {
-        object-position: -1200px 0;
+        background-position: -1200px 0;
     }
     #RikakoAsakura.list, #RikakoAsakura.tiered {
-        object-position: -1260px 0;
+        background-position: -1260px 0;
     }
     #Ruukoto.list, #Ruukoto.tiered {
-        object-position: -1320px 0;
+        background-position: -1320px 0;
     }
     #YumemiOkazaki.list, #YumemiOkazaki.tiered {
-        object-position: -1380px 0;
+        background-position: -1380px 0;
     }
     #Elly.list, #Elly.tiered {
-        object-position: -1440px 0;
+        background-position: -1440px 0;
     }
     #Gengetsu.list, #Gengetsu.tiered {
-        object-position: -1500px 0;
+        background-position: -1500px 0;
     }
     #Kurumi.list, #Kurumi.tiered {
-        object-position: -1560px 0;
+        background-position: -1560px 0;
     }
     #Mugetsu.list, #Mugetsu.tiered {
-        object-position: -1620px 0;
+        background-position: -1620px 0;
     }
     #Orange.list, #Orange.tiered {
-        object-position: -1680px 0;
+        background-position: -1680px 0;
     }
     #YuukaPC-98.list, #YuukaPC-98.tiered {
-        object-position: -1740px 0;
+        background-position: -1740px 0;
     }
     #AlicePC-98.list, #AlicePC-98.tiered {
-        object-position: -1800px 0;
+        background-position: -1800px 0;
     }
     #Luize.list, #Luize.tiered {
-        object-position: -1860px 0;
+        background-position: -1860px 0;
     }
     #MaiPC-98.list, #MaiPC-98.tiered {
-        object-position: -1920px 0;
+        background-position: -1920px 0;
     }
     #Sara.list, #Sara.tiered {
-        object-position: -1980px 0;
+        background-position: -1980px 0;
     }
     #Shinki.list, #Shinki.tiered {
-        object-position: -2040px 0;
+        background-position: -2040px 0;
     }
     #Yuki.list, #Yuki.tiered {
-        object-position: -2100px 0;
+        background-position: -2100px 0;
     }
     #Yumeko.list, #Yumeko.tiered {
-        object-position: -2160px 0;
+        background-position: -2160px 0;
     }
     #Cirno.list, #Cirno.tiered {
-        object-position: -2220px 0;
+        background-position: -2220px 0;
     }
     #Daiyousei.list, #Daiyousei.tiered {
-        object-position: -2280px 0;
+        background-position: -2280px 0;
     }
     #FlandreScarlet.list, #FlandreScarlet.tiered {
-        object-position: -2340px 0;
+        background-position: -2340px 0;
     }
     #HongMeiling.list, #HongMeiling.tiered {
-        object-position: -2400px 0;
+        background-position: -2400px 0;
     }
     #Koakuma.list, #Koakuma.tiered {
-        object-position: -2460px 0;
+        background-position: -2460px 0;
     }
     #PatchouliKnowledge.list, #PatchouliKnowledge.tiered {
-        object-position: -2520px 0;
+        background-position: -2520px 0;
     }
     #RemiliaScarlet.list, #RemiliaScarlet.tiered {
-        object-position: -2580px 0;
+        background-position: -2580px 0;
     }
     #Rumia.list, #Rumia.tiered {
-        object-position: -2640px 0;
+        background-position: -2640px 0;
     }
     #SakuyaIzayoi.list, #SakuyaIzayoi.tiered {
-        object-position: -2700px 0;
+        background-position: -2700px 0;
     }
     #AliceMargatroid.list, #AliceMargatroid.tiered {
-        object-position: -2760px 0;
+        background-position: -2760px 0;
     }
     #Chen.list, #Chen.tiered {
-        object-position: -2820px 0;
+        background-position: -2820px 0;
     }
     #LettyWhiterock.list, #LettyWhiterock.tiered {
-        object-position: -2880px 0;
+        background-position: -2880px 0;
     }
     #LilyWhite.list, #LilyWhite.tiered {
-        object-position: -2940px 0;
+        background-position: -2940px 0;
     }
     #LunasaPrismriver.list, #LunasaPrismriver.tiered {
-        object-position: -3000px 0;
+        background-position: -3000px 0;
     }
     #LyricaPrismriver.list, #LyricaPrismriver.tiered {
-        object-position: -3060px 0;
+        background-position: -3060px 0;
     }
     #MerlinPrismriver.list, #MerlinPrismriver.tiered {
-        object-position: -3120px 0;
+        background-position: -3120px 0;
     }
     #RanYakumo.list, #RanYakumo.tiered {
-        object-position: -3180px 0;
+        background-position: -3180px 0;
     }
     #YoumuKonpaku.list, #YoumuKonpaku.tiered {
-        object-position: -3240px 0;
+        background-position: -3240px 0;
     }
     #YukariYakumo.list, #YukariYakumo.tiered {
-        object-position: -3300px 0;
+        background-position: -3300px 0;
     }
     #YuyukoSaigyouji.list, #YuyukoSaigyouji.tiered {
-        object-position: -3360px 0;
+        background-position: -3360px 0;
     }
     #SuikaIbuki.list, #SuikaIbuki.tiered {
-        object-position: -3420px 0;
+        background-position: -3420px 0;
     }
     #EirinYagokoro.list, #EirinYagokoro.tiered {
-        object-position: -3480px 0;
+        background-position: -3480px 0;
     }
     #FujiwaranoMokou.list, #FujiwaranoMokou.tiered {
-        object-position: -3540px 0;
+        background-position: -3540px 0;
     }
     #KaguyaHouraisan.list, #KaguyaHouraisan.tiered {
-        object-position: -3600px 0;
+        background-position: -3600px 0;
     }
     #KeineKamishirasawa.list, #KeineKamishirasawa.tiered {
-        object-position: -3660px 0;
+        background-position: -3660px 0;
     }
     #MystiaLorelei.list, #MystiaLorelei.tiered {
-        object-position: -3720px 0;
+        background-position: -3720px 0;
     }
     #ReisenUdongeinInaba.list, #ReisenUdongeinInaba.tiered {
-        object-position: -3780px 0;
+        background-position: -3780px 0;
     }
     #TewiInaba.list, #TewiInaba.tiered {
-        object-position: -3840px 0;
+        background-position: -3840px 0;
     }
     #WriggleNightbug.list, #WriggleNightbug.tiered {
-        object-position: -3900px 0;
+        background-position: -3900px 0;
     }
     #AyaShameimaru.list, #AyaShameimaru.tiered {
-        object-position: -3960px 0;
+        background-position: -3960px 0;
     }
     #EikiShikiYamaxanadu.list, #EikiShikiYamaxanadu.tiered {
-        object-position: -4020px 0;
+        background-position: -4020px 0;
     }
     #KomachiOnozuka.list, #KomachiOnozuka.tiered {
-        object-position: -4080px 0;
+        background-position: -4080px 0;
     }
     #MedicineMelancholy.list, #MedicineMelancholy.tiered {
-        object-position: -4140px 0;
+        background-position: -4140px 0;
     }
     #YuukaKazami.list, #YuukaKazami.tiered {
-        object-position: -4200px 0;
+        background-position: -4200px 0;
     }
     #HinaKagiyama.list, #HinaKagiyama.tiered {
-        object-position: -4260px 0;
+        background-position: -4260px 0;
     }
     #KanakoYasaka.list, #KanakoYasaka.tiered {
-        object-position: -4320px 0;
+        background-position: -4320px 0;
     }
     #MinorikoAki.list, #MinorikoAki.tiered {
-        object-position: -4380px 0;
+        background-position: -4380px 0;
     }
     #MomijiInubashiri.list, #MomijiInubashiri.tiered {
-        object-position: -4440px 0;
+        background-position: -4440px 0;
     }
     #NitoriKawashiro.list, #NitoriKawashiro.tiered {
-        object-position: -4500px 0;
+        background-position: -4500px 0;
     }
     #SanaeKochiya.list, #SanaeKochiya.tiered {
-        object-position: -4560px 0;
+        background-position: -4560px 0;
     }
     #ShizuhaAki.list, #ShizuhaAki.tiered {
-        object-position: -4620px 0;
+        background-position: -4620px 0;
     }
     #SuwakoMoriya.list, #SuwakoMoriya.tiered {
-        object-position: -4680px 0;
+        background-position: -4680px 0;
     }
     #IkuNagae.list, #IkuNagae.tiered {
-        object-position: -4740px 0;
+        background-position: -4740px 0;
     }
     #TenshiHinanawi.list, #TenshiHinanawi.tiered {
-        object-position: -4800px 0;
+        background-position: -4800px 0;
     }
     #Kisume.list, #Kisume.tiered {
-        object-position: -4860px 0;
+        background-position: -4860px 0;
     }
     #KoishiKomeiji.list, #KoishiKomeiji.tiered {
-        object-position: -4920px 0;
+        background-position: -4920px 0;
     }
     #ParseeMizuhashi.list, #ParseeMizuhashi.tiered {
-        object-position: -4980px 0;
+        background-position: -4980px 0;
     }
     #RinKaenbyou.list, #RinKaenbyou.tiered {
-        object-position: -5040px 0;
+        background-position: -5040px 0;
     }
     #SatoriKomeiji.list, #SatoriKomeiji.tiered {
-        object-position: -5100px 0;
+        background-position: -5100px 0;
     }
     #UtsuhoReiuji.list, #UtsuhoReiuji.tiered {
-        object-position: -5160px 0;
+        background-position: -5160px 0;
     }
     #YamameKurodani.list, #YamameKurodani.tiered {
-        object-position: -5220px 0;
+        background-position: -5220px 0;
     }
     #YuugiHoshiguma.list, #YuugiHoshiguma.tiered {
-        object-position: -5280px 0;
+        background-position: -5280px 0;
     }
     #ByakurenHijiri.list, #ByakurenHijiri.tiered {
-        object-position: -5340px 0;
+        background-position: -5340px 0;
     }
     #IchirinKumoi.list, #IchirinKumoi.tiered {
-        object-position: -5400px 0;
+        background-position: -5400px 0;
     }
     #KogasaTatara.list, #KogasaTatara.tiered {
-        object-position: -5460px 0;
+        background-position: -5460px 0;
     }
     #MinamitsuMurasa.list, #MinamitsuMurasa.tiered {
-        object-position: -5520px 0;
+        background-position: -5520px 0;
     }
     #Nazrin.list, #Nazrin.tiered {
-        object-position: -5580px 0;
+        background-position: -5580px 0;
     }
     #NueHoujuu.list, #NueHoujuu.tiered {
-        object-position: -5640px 0;
+        background-position: -5640px 0;
     }
     #ShouToramaru.list, #ShouToramaru.tiered {
-        object-position: -5700px 0;
+        background-position: -5700px 0;
     }
     #Unzan.list, #Unzan.tiered {
-        object-position: -5760px 0;
+        background-position: -5760px 0;
     }
     #Hisoutensoku.list, #Hisoutensoku.tiered {
-        object-position: -5820px 0;
+        background-position: -5820px 0;
     }
     #HatateHimekaidou.list, #HatateHimekaidou.tiered {
-        object-position: -5880px 0;
+        background-position: -5880px 0;
     }
     #LunaChild.list, #LunaChild.tiered {
-        object-position: -5940px 0;
+        background-position: -5940px 0;
     }
     #StarSapphire.list, #StarSapphire.tiered {
-        object-position: -6000px 0;
+        background-position: -6000px 0;
     }
     #SunnyMilk.list, #SunnyMilk.tiered {
-        object-position: -6060px 0;
+        background-position: -6060px 0;
     }
     #KyoukoKasodani.list, #KyoukoKasodani.tiered {
-        object-position: -6120px 0;
+        background-position: -6120px 0;
     }
     #MamizouFutatsuiwa.list, #MamizouFutatsuiwa.tiered {
-        object-position: -6180px 0;
+        background-position: -6180px 0;
     }
     #MononobenoFuto.list, #MononobenoFuto.tiered {
-        object-position: -6240px 0;
+        background-position: -6240px 0;
     }
     #SeigaKaku.list, #SeigaKaku.tiered {
-        object-position: -6300px 0;
+        background-position: -6300px 0;
     }
     #SoganoTojiko.list, #SoganoTojiko.tiered {
-        object-position: -6360px 0;
+        background-position: -6360px 0;
     }
     #ToyosatomiminoMiko.list, #ToyosatomiminoMiko.tiered {
-        object-position: -6420px 0;
+        background-position: -6420px 0;
     }
     #YoshikaMiyako.list, #YoshikaMiyako.tiered {
-        object-position: -6480px 0;
+        background-position: -6480px 0;
     }
     #HatanoKokoro.list, #HatanoKokoro.tiered {
-        object-position: -6540px 0;
+        background-position: -6540px 0;
     }
     #Clownpiece.list, #Clownpiece.tiered {
-        object-position: -6600px 0;
+        background-position: -6600px 0;
     }
     #DoremySweet.list, #DoremySweet.tiered {
-        object-position: -6660px 0;
+        background-position: -6660px 0;
     }
     #HecatiaLapislazuli.list, #HecatiaLapislazuli.tiered {
-        object-position: -6720px 0;
+        background-position: -6720px 0;
     }
     #Junko.list, #Junko.tiered {
-        object-position: -6780px 0;
+        background-position: -6780px 0;
     }
     #Ringo.list, #Ringo.tiered {
-        object-position: -6840px 0;
+        background-position: -6840px 0;
     }
     #SagumeKishin.list, #SagumeKishin.tiered {
-        object-position: -6900px 0;
+        background-position: -6900px 0;
     }
     #Seiran.list, #Seiran.tiered {
-        object-position: -6960px 0;
+        background-position: -6960px 0;
     }
     #BenbenTsukumo.list, #BenbenTsukumo.tiered {
-        object-position: -7020px 0;
+        background-position: -7020px 0;
     }
     #KagerouImaizumi.list, #KagerouImaizumi.tiered {
-        object-position: -7080px 0;
+        background-position: -7080px 0;
     }
     #RaikoHorikawa.list, #RaikoHorikawa.tiered {
-        object-position: -7140px 0;
+        background-position: -7140px 0;
     }
     #SeijaKijin.list, #SeijaKijin.tiered {
-        object-position: -7200px 0;
+        background-position: -7200px 0;
     }
     #Sekibanki.list, #Sekibanki.tiered {
-        object-position: -7260px 0;
+        background-position: -7260px 0;
     }
     #ShinmyoumaruSukuna.list, #ShinmyoumaruSukuna.tiered {
-        object-position: -7320px 0;
+        background-position: -7320px 0;
     }
     #Wakasagihime.list, #Wakasagihime.tiered {
-        object-position: -7380px 0;
+        background-position: -7380px 0;
     }
     #YatsuhashiTsukumo.list, #YatsuhashiTsukumo.tiered {
-        object-position: -7440px 0;
+        background-position: -7440px 0;
     }
     #SumirekoUsami.list, #SumirekoUsami.tiered {
-        object-position: -7500px 0;
+        background-position: -7500px 0;
     }
     #JoonYorigami.list, #JoonYorigami.tiered {
-        object-position: -7560px 0;
+        background-position: -7560px 0;
     }
     #ShionYorigami.list, #ShionYorigami.tiered {
-        object-position: -7620px 0;
+        background-position: -7620px 0;
     }
     #AunnKomano.list, #AunnKomano.tiered {
-        object-position: -7680px 0;
+        background-position: -7680px 0;
     }
     #EternityLarva.list, #EternityLarva.tiered {
-        object-position: -7740px 0;
+        background-position: -7740px 0;
     }
     #MaiTeireida.list, #MaiTeireida.tiered {
-        object-position: -7800px 0;
+        background-position: -7800px 0;
     }
     #NarumiYatadera.list, #NarumiYatadera.tiered {
-        object-position: -7860px 0;
+        background-position: -7860px 0;
     }
     #NemunoSakata.list, #NemunoSakata.tiered {
-        object-position: -7920px 0;
+        background-position: -7920px 0;
     }
     #OkinaMatara.list, #OkinaMatara.tiered {
-        object-position: -7980px 0;
+        background-position: -7980px 0;
     }
     #SatonoNishida.list, #SatonoNishida.tiered {
-        object-position: -8040px 0;
+        background-position: -8040px 0;
     }
     #EikaEbisu.list, #EikaEbisu.tiered {
-        object-position: -8100px 0;
+        background-position: -8100px 0;
     }
     #KeikiHaniyasushin.list, #KeikiHaniyasushin.tiered {
-        object-position: -8160px 0;
+        background-position: -8160px 0;
     }
     #KutakaNiwatari.list, #KutakaNiwatari.tiered {
-        object-position: -8220px 0;
+        background-position: -8220px 0;
     }
     #MayumiJoutouguu.list, #MayumiJoutouguu.tiered {
-        object-position: -8280px 0;
+        background-position: -8280px 0;
     }
     #SakiKurokoma.list, #SakiKurokoma.tiered {
-        object-position: -8340px 0;
+        background-position: -8340px 0;
     }
     #UrumiUshizaki.list, #UrumiUshizaki.tiered {
-        object-position: -8400px 0;
+        background-position: -8400px 0;
     }
     #YachieKicchou.list, #YachieKicchou.tiered {
-        object-position: -8460px 0;
+        background-position: -8460px 0;
     }
     #FortuneTeller.list, #FortuneTeller.tiered {
-        object-position: -8520px 0;
+        background-position: -8520px 0;
     }
     #HiedanoAkyuu.list, #HiedanoAkyuu.tiered {
-        object-position: -8580px 0;
+        background-position: -8580px 0;
     }
     #KasenIbaraki.list, #KasenIbaraki.tiered {
-        object-position: -8640px 0;
+        background-position: -8640px 0;
     }
     #KosuzuMotoori.list, #KosuzuMotoori.tiered {
-        object-position: -8700px 0;
+        background-position: -8700px 0;
     }
     #ReisenII.list, #ReisenII.tiered {
-        object-position: -8760px 0;
+        background-position: -8760px 0;
     }
     #RinnosukeMorichika.list, #RinnosukeMorichika.tiered {
-        object-position: -8820px 0;
+        background-position: -8820px 0;
     }
     #Tokiko.list, #Tokiko.tiered {
-        object-position: -8880px 0;
+        background-position: -8880px 0;
     }
     #WatatsukinoToyohime.list, #WatatsukinoToyohime.tiered {
-        object-position: -8940px 0;
+        background-position: -8940px 0;
     }
     #WatatsukinoYorihime.list, #WatatsukinoYorihime.tiered {
-        object-position: -9000px 0;
+        background-position: -9000px 0;
     }
     #MaribelHearn.list, #MaribelHearn.tiered {
-        object-position: -9060px 0;
+        background-position: -9060px 0;
     }
     #RenkoUsami.list, #RenkoUsami.tiered {
-        object-position: -9120px 0;
+        background-position: -9120px 0;
     }
     #MiyoiOkunoda.list, #MiyoiOkunoda.tiered {
-        object-position: -9180px 0;
+        background-position: -9180px 0;
     }
 }
 @media only screen and (max-device-width: 800px) and (orientation: portrait) {

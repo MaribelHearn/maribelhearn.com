@@ -12,13 +12,14 @@
 		<link rel='icon' type='image/x-icon' href='assets/tiers/tiers.ico'>
 		<script src='assets/shared/utils.js' defer></script>
 		<script src='assets/shared/jquery.js' defer></script>
+		<script src='assets/shared/html2canvas.js' defer></script>
 		<script src='assets/tiers/tiers.js' defer></script>
         <script src='assets/tiers/rgbcolor.js' defer></script>
     </head>
 
     <body class='<?php echo check_webp() ?>'>
         <div id='wrap'>
-            <div id='init'>
+            <div id='init' data-html2canvas-ignore>
     			<nav id='nav'>
     				<?php
     					$nav = file_get_contents('nav.html');
@@ -40,7 +41,8 @@
                         <option value='characters'>Characters</option>
                         <option value='works'>Works</option>
                     </select>
-                    Change view: <input id='toggle_view' class='button' type='button' value='Tier List View'>
+                    <label for='toggle_view'>Change view:</label>
+                    <input id='toggle_view' class='button' type='button' value='Tier List View'>
                 </div>
                 <div id='instructions'>
                     <p id='instructions_text'>This page allows you to create your own Touhou character tier list. Usage instructions are listed below.</p>
@@ -64,11 +66,14 @@
                         or add all remaining characters to it.</li>
                     </ul>
                 </div>
-                <p id='toggle'><a id='toggle_instructions'>Click here to show the instructions.</a></p>
+                <p id='toggle'>
+                    <input id='toggle_instructions' type='button' value='Show Instructions'>
+                    <span id='screenshot_button_tierview'></span>
+                </p>
             </div>
             <div id='tier_list_container'>
                 <table id='tier_list_table'>
-                    <thead id='tier_list_thead'>
+                    <thead id='tier_list_thead' data-html2canvas-ignore>
                         <tr id='add_tier_box_mobile'>
                             <td id='add_tier_cell_mobile' colspan='2'>
                                 <input id='tier_name_mobile' type='text' value=''>
@@ -80,7 +85,7 @@
                         </tr>
                     </thead>
                     <tbody id='tier_list_tbody'></tbody>
-                    <tfoot id='tier_list_tfoot'>
+                    <tfoot id='tier_list_tfoot' data-html2canvas-ignore>
                         <tr>
                             <td id='add_tier_desktop'>
                                 <input id='tier_name' type='text' value=''>
@@ -110,7 +115,9 @@
                 <input id='import_button' type='button' class='button menu' value='Import'>
                 <input id='export_button' type='button' class='button menu' value='Export'>
                 <br id='button_split'>
-                <input id='customise_button' type='button' class='button menu' value='Customise Tiers'>
+                <span id='screenshot_button_container'>
+                    <input id='screenshot_button' type='button' class='button menu' value='Take Screenshot'>
+                </span>
                 <input id='settings_button' type='button' class='button menu' value='Settings'>
                 <input id='changelog_button' type='button' class='button menu' value='Changelog'>
                 <input id='reset_button' type='button' class='button menu' value='Reset'>
