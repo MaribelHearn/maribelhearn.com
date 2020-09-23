@@ -26,6 +26,9 @@ h2 {
     font-family: 'Felipa';
     font-size: 36px;
 }
+input[type=button] {
+    margin: 5px 5px 0 5px;
+}
 #nav {
     margin-bottom: 5px;
 }
