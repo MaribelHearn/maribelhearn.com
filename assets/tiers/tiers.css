@@ -1133,8 +1133,7 @@ li {
         background: #1b232e;
     }
 }
-@media only screen and (((max-width: 800px) and (orientation: portrait)) or
-((max-width: 640px) and (orientation: landscape))) {
+@media only screen and (((max-width: 800px) and (orientation: portrait)) or ((max-width: 640px) and (orientation: landscape))) {
     body.no-webp, body.webp {
         background: #1b232e;
     }
