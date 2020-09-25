@@ -105,8 +105,7 @@ input[type=number] {
         margin-right: 0;
     }
 }
-@media only screen and (((min-width:320px) and (max-width:800px) and (orientation:portrait)) or
-((min-width:480px) and (max-width:640px) and (orientation:landscape))) {
+@media only screen and (((min-width:320px) and (max-width:800px) and (orientation:portrait)) or ((min-width:480px) and (max-width:640px) and (orientation:landscape))) {
     #hy_container {
         float: none;
         right: 3;
