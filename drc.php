@@ -356,46 +356,25 @@
 			</nav>
 		</div>
 		<div id='wrap' class='wrap'>
-			<table id='top' class='nomargin noborders'>
-				<tr class='noborders'>
-					<td id='emptytd' class='noborders'></td>
-					<td id='languagestd' class='noborders'><table id='languages' class='noborders'>
-		                <tbody>
-		                    <tr class='noborders'>
-		                        <td class='noborders'>
-		                            <a class='en' href='drc?hl=en'><img src='assets/flags/uk.png' alt='<?php
-										if ($lang == 'English') { echo 'Flag of the United Kingdom'; }
-										else if ($lang == 'Japanese') { echo 'イギリスの国旗'; }
-										else { echo '英国旗'; }
-									?>'></a>
-		                        </td>
-		                        <td class='noborders'>
-		                            <a class='jp' href='drc?hl=jp'><img src='assets/flags/japan.png' alt='<?php
-										if ($lang == 'English') { echo 'Flag of Japan'; }
-										else if ($lang == 'Japanese') { echo '日本の国旗'; }
-										else { echo '日本旗'; }
-									?>'></a>
-		                        </td>
-		                        <td class='noborders'>
-		                            <a class='zh' href='drc?hl=zh'><img src='assets/flags/china.png' alt='<?php
-										if ($lang == 'English') { echo 'Flag of the P.R.C.'; }
-										else if ($lang == 'Japanese') { echo '中華人民共和国の国旗'; }
-										else { echo '中国旗'; }
-									?>'></a>
-		                        </td>
-		                    </tr>
-		                    <tr class='noborders'>
-		                        <td class='noborders'><a class='en' href='drc?hl=en'>English</a></td>
-		                        <td class='noborders'><a class='jp' href='drc?hl=jp'>日本語</a></td>
-		                        <td class='noborders'><a class='zh' href='drc?hl=zh'>简体中文</a></td>
-		                    </tr>
-		                </tbody>
-		            </table></td>
-					<td id='bartd' class='noborders'>
-						<img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
-					</td>
-				</tr>
-			</table>
+            <div id='topbar'>
+				<span id='hy_container'>
+                    <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
+                </span>
+				<div id='languages'>
+                    <a id='en' class='flag' href='drc?hl=en'>
+                        <img class='flag_en' src='assets/flags/uk.png' alt='<?php echo tl_term('Flag of the United Kingdom', $lang) ?>'>
+                        <p class='language'>English</p>
+                    </a>
+                    <a id='jp' class='flag' href='drc?hl=jp'>
+                        <img src='assets/flags/japan.png' alt='<?php echo tl_term('Flag of Japan', $lang) ?>'>
+                        <p class='language'>日本語</p>
+                    </a>
+                    <a id='zh' class='flag' href='drc?hl=zh'>
+                        <img src='assets/flags/china.png' alt='<?php echo tl_term('Flag of the P.R.C.', $lang) ?>'>
+                        <p class='language'>简体中文</p>
+                    </a>
+	            </div>
+			</div>
 			<h1>Dodging Rain Competition</h1>
 			<?php
 				if (!empty($_GET['redirect'])) {
@@ -990,44 +969,43 @@
 				else if ($lang == 'Japanese') { echo '謝辞'; }
 				else { echo '致谢'; }
 			?></h2>
-			<table id='acks' class='noborders'>
-                <tbody>
-					<tr class='noborders'>
-						<td id='credit' class='noborders'><?php
-							if ($lang == 'English') { echo 'The background image was drawn by ' .
-							'<a href="https://www.pixiv.net/member.php?id=161300">ウータン</a>.'; }
-							else if ($lang == 'Japanese') { echo '背景イメージは' .
-							'<a href="https://www.pixiv.net/member.php?id=161300">ウータン</a>さんのものを使用させていただいております。'; }
-							else { echo 'The background image was drawn by ' .
-							'<a href="https://www.pixiv.net/member.php?id=161300">ウータン</a>.'; }
-						?></td>
-                    </tr><tr class='noborders'>
-                        <td id='jptlcredit' class='noborders'><?php
-							if ($lang == 'English') { echo 'The Japanese translation was done by ' .
-							'<a href="https://twitter.com/7bitm">7bitm</a> and ' .
-							'<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.'; }
-							else if ($lang == 'Japanese') { echo '<a href="https://twitter.com/7bitm">7bitm</a>と' .
-							'<a href="https://twitter.com/toho_yumiya">ゆーみや</a>によって日本語に翻訳されました。'; }
-							else { echo '本页面由<a href="https://twitter.com/7bitm">7bitm</a>，' .
-							'<a href="https://twitter.com/toho_yumiya">ゆーみや</a>日语翻译。'; }
-						?></td>
-                    </tr>
-                    <tr class='noborders'>
-                        <td id='cntlcredit' class='noborders'><?php
-							if ($lang == 'English') { echo 'The Simplified Chinese translation was done by ' .
-							'<a href="https://twitter.com/IzayoiMeirin">Cero</a>, ' .
-							'<a href="https://twitter.com/CrestedPeak9">CrestedPeak9</a> and ' .
-							'<a href="https://twitter.com/Cerasis_th">Cerasis</a>.'; }
-							else if ($lang == 'Japanese') { echo '<a href="https://twitter.com/IzayoiMeirin">Cero</a>と' .
-							'<a href="https://twitter.com/CrestedPeak9">CrestedPeak9</a>と' .
-							'<a href="https://twitter.com/Cerasis_th">Cerasis</a>によって中国語に翻訳されました。'; }
-							else { echo '本页面由<a href="https://twitter.com/IzayoiMeirin">Cero</a>，' .
-							'<a href="https://twitter.com/CrestedPeak9">CrestedPeak9</a>，' .
-							'<a href="https://twitter.com/Cerasis_th">Cerasis</a>中文翻译。'; }
-						?></td>
-                    </tr>
-                </tbody>
-            </table>
+			<div id='ack_container' class='noborders'>
+                <p id='credit'>
+					<?php
+						if ($lang == 'English') { echo 'The background image was drawn by ' .
+						'<a href="https://www.pixiv.net/member.php?id=161300">ウータン</a>.'; }
+						else if ($lang == 'Japanese') { echo '背景イメージは' .
+						'<a href="https://www.pixiv.net/member.php?id=161300">ウータン</a>さんのものを使用させていただいております。'; }
+						else { echo 'The background image was drawn by ' .
+						'<a href="https://www.pixiv.net/member.php?id=161300">ウータン</a>.'; }
+					?>
+				</p><p id='jptlcredit'>
+					<?php
+						if ($lang == 'English') { echo 'The Japanese translation was done by ' .
+						'<a href="https://twitter.com/7bitm">7bitm</a> and ' .
+						'<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.'; }
+						else if ($lang == 'Japanese') { echo '<a href="https://twitter.com/7bitm">7bitm</a>と' .
+						'<a href="https://twitter.com/toho_yumiya">ゆーみや</a>によって日本語に翻訳されました。'; }
+						else { echo '本页面由<a href="https://twitter.com/7bitm">7bitm</a>，' .
+						'<a href="https://twitter.com/toho_yumiya">ゆーみや</a>日语翻译。'; }
+					?>
+				</p>
+				<p id='cntlcredit'>
+					<?php
+						if ($lang == 'English') { echo 'The Simplified Chinese translation was done by ' .
+						'<a href="https://twitter.com/IzayoiMeirin">Cero</a>, ' .
+						'<a href="https://twitter.com/CrestedPeak9">CrestedPeak9</a> and ' .
+						'<a href="https://twitter.com/Cerasis_th">Cerasis</a>.'; }
+						else if ($lang == 'Japanese') { echo '<a href="https://twitter.com/IzayoiMeirin">Cero</a>と' .
+						'<a href="https://twitter.com/CrestedPeak9">CrestedPeak9</a>と' .
+						'<a href="https://twitter.com/Cerasis_th">Cerasis</a>によって中国語に翻訳されました。'; }
+						else { echo '本页面由<a href="https://twitter.com/IzayoiMeirin">Cero</a>，' .
+						'<a href="https://twitter.com/CrestedPeak9">CrestedPeak9</a>，' .
+						'<a href="https://twitter.com/Cerasis_th">Cerasis</a>中文翻译。'; }
+					?>
+				</p>
+            </div>
+			<p id='back'><strong><a id='backtotop' href='#top'><?php echo tl_term('Back to Top', $lang); ?></a></strong></p>
 			<input id='shots' type='hidden' value='<?php
 				$shots = '{';
 				foreach ($WRs as $game => $value) {

@@ -18,23 +18,41 @@ table:not(#jargontable):not(#bullettable):not(#spelltable):not(#searchtable):not
 table#contents,  tr:not(.noborders), th:not(.noborders), td:not(.noborders) {
     border: 1px solid #808080;
 }
-.GFWt th, .LLSt th, .MoFt th, .PCBt th, .PoDDt th, .tier th, .tier {
+.PoDDt th, .LLSt th, .EoSDt th, .PCBt th, .PoFVt th, .MoFt th, .GFWt th, .TDt th, .DDCt th, .tier th, .tier {
     color: black;
 }
 .Winter, .FinalA, .FinalB, .in_route {
     color: cyan;
 }
+.does_not_even_score {
+    color: gold;
+}
+.barely_even_scores {
+    color: #FF8C00;
+}
+.moderately_even_scores {
+    color: #00A000;
+}
 .does_even_score {
     color: dodgerblue;
 }
+.does_even_score_well {
+    color: #E768C3;
+}
 .dimgrey {
     color: #999999;
+}
+.Spring {
+    color: fuchsia;
 }
 .Summer {
     color: lime;
 }
 .Autumn {
     color: orange;
+}
+.Winter {
+    color: cyan;
 }
 .poll {
     color: black;

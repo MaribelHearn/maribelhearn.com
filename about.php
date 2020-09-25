@@ -23,7 +23,7 @@
         <main>
             <div id='wrap'>
                 <span id='links'><a href='/'>Back to Main Page</a></span>
-                <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
+                <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
                 <h1>About Me</h1>
                 <p>Hello, I am Mari, a <?php echo getAge('1995-07-29'); ?> year old Dutch guy who
                 likes to play shoot 'em up games seriously.</p>

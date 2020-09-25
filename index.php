@@ -22,7 +22,7 @@
                     }
                 ?>
                 <a href='about'>About Me</a> || <a href='privacy'>Privacy Policy</a></span>
-                <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
+                <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
                 <h1>Maribel Hearn's Web Portal</h1>
                 <p class='thin'>A privacy-friendly collection of convenience webpages for the Touhou community.</p>
                 <h2>Page Links</h2>

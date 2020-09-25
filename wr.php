@@ -210,51 +210,35 @@
 			</nav>
 		</div>
         <div id='wrap' class='wrap'>
-			<table id='top' class='center noborders'>
-				<tr class='noborders'>
-					<td id='toggletd' class='noborders'>
-                        <?php
-                            $other = ($layout == 'New' ? 'Old' : 'New');
-                            echo '<a id="layouttoggle" href="wr">' . $other . ' layout</a>';
-                        ?>
-                    </td>
-					<td id='languagestd' class='noborders'> <table id='languages' class='noborders'>
-		                <tbody>
-                            <tr class='noborders'>
-		                        <td class='noborders'>
-                                    <a class='en-gb' href='lnn?hl=en-gb'>
-                                        <img src='assets/flags/uk.png' alt='<?php echo tl_term('Flag of the United Kingdom', $lang) ?>'>
-                                    </a>
-		                        </td>
-    		                        <td class='noborders'>
-                                        <a class='en-us' href='lnn?hl=en-us'>
-                                            <img src='assets/flags/us.png' alt='<?php echo tl_term('Flag of the United States', $lang) ?>'>
-                                        </a>
-    		                        </td>
-		                        <td class='noborders'>
-                                    <a class='jp' href='lnn?hl=jp'>
-                                        <img src='assets/flags/japan.png' alt='<?php echo tl_term('Flag of Japan', $lang) ?>'>
-                                    </a>
-		                        </td>
-		                        <td class='noborders'>
-                                    <a class='zh' href='lnn?hl=zh'>
-                                        <img src='assets/flags/china.png' alt='<?php echo tl_term('Flag of the P.R.C.', $lang) ?>'>
-                                    </a>
-		                        </td>
-		                    </tr>
-		                    <tr class='noborders'>
-		                        <td class='noborders'><a class='en-gb' href='wr?hl=en-gb'>English (UK)</a></td>
-		                        <td class='noborders'><a class='en-us' href='wr?hl=en-us'>English (US)</a></td>
-		                        <td class='noborders'><a class='jp' href='wr?hl=jp'>日本語</a></td>
-		                        <td class='noborders'><a class='zh' href='wr?hl=zh'>简体中文</a></td>
-		                    </tr>
-		                </tbody>
-		            </table></td>
-					<td id='bartd' class='noborders'>
-                        <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
-                    </td>
-				</tr>
-			</table>
+			<div id='topbar'>
+				<span id='toggle'>
+                    <?php
+                        $other = ($layout == 'New' ? 'Old' : 'New');
+                        echo '<a id="layouttoggle" href="wr">' . $other . ' layout</a>';
+                    ?>
+                </span>
+				<span id='hy_container'>
+                    <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
+                </span>
+				<div id='languages'>
+                    <a id='en-gb' class='flag' href='wr?hl=en-gb'>
+                        <img class='flag_en' src='assets/flags/uk.png' alt='<?php echo tl_term('Flag of the United Kingdom', $lang) ?>'>
+                        <p class='language'>English (UK)</p>
+                    </a>
+                    <a id='en-us' class='flag' href='wr?hl=en-us'>
+                        <img class='flag_en' src='assets/flags/us.png' alt='<?php echo tl_term('Flag of the United States', $lang) ?>'>
+                        <p class='language'>English (US)</p>
+                    </a>
+                    <a id='jp' class='flag' href='wr?hl=jp'>
+                        <img src='assets/flags/japan.png' alt='<?php echo tl_term('Flag of Japan', $lang) ?>'>
+                        <p class='language'>日本語</p>
+                    </a>
+                    <a id='zh' class='flag' href='wr?hl=zh'>
+                        <img src='assets/flags/china.png' alt='<?php echo tl_term('Flag of the P.R.C.', $lang) ?>'>
+                        <p class='language'>简体中文</p>
+                    </a>
+	            </div>
+			</div>
 			<h1><?php echo tl_term('Touhou World Records', $lang); ?></h1>
             <?php
                 if (!empty($_GET['redirect'])) {
@@ -421,10 +405,11 @@
                 }
                 foreach ($wr as $game => $obj) {
                     echo '<div id="' . $game . '">';
-                    echo '<p><img' . (num($game) <= 5 ? ' class="cover98"' : '') . ' src="assets/games/' . strtolower($game) .
-                    '50x50.jpg" alt="' . $game . ' cover"> <u>' . full_name($game, $lang) . '</u></p>';
                     echo '<table id="' . $game . '_table" class="' . $game .
-                    't sortable"><tr><th>' . tl_term(shot_route($game), $lang) . '</th>';
+                    't sortable"><caption><p><img' . (num($game) <= 5 ? ' class="cover98"' : '') .
+                    ' src="assets/games/' . strtolower($game) . '50x50.jpg" alt="' . $game .
+                    ' cover"> ' . full_name($game, $lang) .
+                    '</p></caption></p><tr><th>' . tl_term(shot_route($game), $lang) . '</th>';
                     foreach ($obj as $diff => $shots) {
                         if ($game != 'GFW' || $diff != 'Extra') {
                             echo '<th>' . $diff . '</th>';
@@ -505,7 +490,7 @@
                         } else {
                             $world_text = number_format($world[0], 0, '.', ',');
                         }
-                        echo '<tr><td colspan="3"><u>' . tl_term($diff, $lang) . '</u></td></tr>' .
+                        echo '<tr><td colspan="3">' . tl_term($diff, $lang) . '</td></tr>' .
                         '<tr><td>' . $world_text .
                         '<br>by <em>' . $world[1] . '</em><br>(' . tl_shot($world[2], $lang) .
                         ')</td><td>' . number_format($westt[0], 0, '.', ',') .
@@ -535,19 +520,6 @@
                 }
 			?>
 			<div id='list'>
-				<p id='fullname'></p>
-				<p id='seasontoggle'>
-					<input id='seasons' type='checkbox'>
-					<label id='label_seasons' for='seasons'><?php echo tl_term('Seasons', $lang); ?></label>
-				</p>
-				<table id='table' class='sortable'>
-					<thead id='list_thead'></thead>
-                    <tbody id='list_tbody'></tbody>
-				</table>
-                <table>
-                    <thead id='west_thead'></thead>
-                    <tbody id='west_tbody'></tbody>
-                </table>
 			</div>
             <div id='playersearch'>
     			<p id='playerwrs'><?php

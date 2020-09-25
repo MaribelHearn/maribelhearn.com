@@ -33,6 +33,7 @@ var categories = {},
     gameTiers = {},
     order = [],
     gameOrder = [],
+    multiSelection = [],
     maxTiers = 20,
     maxNameLength = 30,
     following = "",
@@ -272,6 +273,9 @@ function addToTierMobile(event) {
     addToTier(character.removeSpaces(), tierNum);
     emptyModal();
     $("#msg_container").html("<strong class='confirmation'>Added " + $("#" + character.removeSpaces()).attr("title") + " to " + tierList[tierNum].name + "!</strong>");
+}
+function addToMulti() {
+    multiSelection.push(this.id);
 }
 function addMenu(event) {
     var character = event.data.name, tierList = (settings.sort == "characters" ? tiers : gameTiers),
@@ -899,8 +903,8 @@ function exportText() {
     tierNum, character, i, j;
 
     emptyModal();
-    $("#modal_inner").html("<h2>Export to Text</h2><p id='text'></p>");
-    $("#modal_inner").append("<p><input id='copy_to_clipboard' type='button' value='Copy to Clipboard'></p>");
+    $("#modal_inner").html("<h2>Export to Text</h2><p><input id='copy_to_clipboard' " +
+    "type='button' value='Copy to Clipboard'></p><p id='text'></p>");
     $("#copy_to_clipboard").on("click", copyToClipboard);
 
     for (i = 0; i < tierOrder.length; i += 1) {
@@ -949,7 +953,6 @@ function takeScreenshot() {
 
     emptyModal();
     html2canvas(document.body, {
-        "backgroundColor": "#1b232e",
         "height": ($("#tier_list_tbody").height() + 15),
         "windowHeight": Math.max(400, ($("#tier_list_tbody").height() + 15))
     }).then(function(canvas) {
@@ -1522,6 +1525,7 @@ function loadCharacters() {
                 "C'><span id='" + character.removeSpaces() + "' class='list' draggable='true' title='" + character + "'>");
                 $("#" + character.removeSpaces()).on("dblclick", addToMostRecent);
                 $("#" + character.removeSpaces()).on("dragstart", drag);
+                $("#" + character.removeSpaces()).on("click", addToMulti);
             }
 
             if (maleCharacters.contains(character.removeSpaces()) && !settings.maleEnabled) {

@@ -1,7 +1,7 @@
 function dark() {
     style = document.createElement("link");
     style.id = "dark";
-    style.href = "https://maribelhearn.com/assets/shared/dark.css";
+    style.href = (location.host != "localhost" ? "https://maribelhearn.com/" : "") + "assets/shared/dark.css";
     style.type = "text/css";
     style.rel = "stylesheet";
     head.appendChild(style);

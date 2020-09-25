@@ -14,7 +14,7 @@
     <body class='<?php echo check_webp() ?>'>
 		<main>
 			<div id='wrap'>
-	            <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
+	            <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
 	            <h1>Maribel's Achievement History</h1>
 	            <p id='notice'><strong>Notice:</strong> this page is best viewed on mobile using landscape mode.</p>
 	            <p>I am a bullet hell player who mostly plays for score and mains Touhou 13: Ten Desires.

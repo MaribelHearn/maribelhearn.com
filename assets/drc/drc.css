@@ -26,6 +26,9 @@ h2 {
     font-family: 'Felipa';
     font-size: 36px;
 }
+li {
+    list-style-position: inside;
+}
 input[type=number] {
     height: 20px;
 }
@@ -39,13 +42,18 @@ input[type=number] {
 .wrap {
     border: 1px solid black;
     text-align: center;
-    list-style-position: inside;
     margin-left: 22%;
     margin-right: 22%;
     padding-left: 15px;
     padding-right: 15px;
     opacity: 0.8;
     font: 14px verdana, sans-serif;
+}
+.flag {
+    display: inline-block;
+}
+.language {
+    margin-top: 0px;
 }
 .error {
     color: red;
@@ -56,17 +64,9 @@ input[type=number] {
 #wrap {
     padding-bottom: 15px;
 }
-#top {
-    width: 100%;
-}
 #countdown {
     font-size: 16px;
     font-weight: bold;
-}
-#acks, #languages {
-    text-decoration: none;
-    margin-left: auto;
-    margin-right: auto;
 }
 #noborders {
     border: none;
@@ -76,16 +76,16 @@ input[type=number] {
 #route, #season, #calculator, #scoringButton, #survivalButton {
     display: none;
 }
-#emptytd {
-     width: 22%;
+#languages {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
-#languagestd {
-     width: 55%;
+#hy_container {
+    float: right;
 }
-#bartd {
-     width: 22%;
-     text-align: right;
-     vertical-align: top;
+#ack_container > p {
+    margin: 4px;
 }
 @media only screen and (max-width: 1400px) {
     .wrap {
@@ -105,13 +105,18 @@ input[type=number] {
         margin-right: 0;
     }
 }
-@media only screen and (min-device-width:320px) and (max-device-width:800px) and (orientation: portrait) {
-    #emptytd {
-        display: none;
+@media only screen and (((min-width:320px) and (max-width:800px) and (orientation:portrait)) or
+((min-width:480px) and (max-width:640px) and (orientation:landscape))) {
+    #hy_container {
+        float: none;
+        right: 3;
     }
-    #languagestd {
-        width: 77%;
+    #languages {
+        margin-top: 10px;
+        width: 100%;
     }
+}
+@media only screen and (min-width:320px) and (max-width:800px) and (orientation: portrait) {
     #scoringRubrics {
         overflow-x: scroll;
     }
@@ -127,7 +132,7 @@ input[type=number] {
         font-size: 24px;
     }
 }
-@media only screen and (min-device-width:480px) and (max-device-width:640px) and (orientation: landscape) {
+@media only screen and (min-width:480px) and (max-width:640px) and (orientation: landscape) {
     .wrap {
         margin-left: 0;
         margin-right: 0;

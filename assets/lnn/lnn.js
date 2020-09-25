@@ -234,15 +234,14 @@ function setLanguage(event) {
 $(document).ready(function () {
     $("#player").on("change", getPlayerLNNs);
     $("#layouttoggle").on("click", toggleLayout);
-    $("#layouttoggle").css("display", "inline");
     $("#contents_new").css("display", "inline-block");
     $("#playersearch").css("display", "block");
     $("#playersearchlink").css("display", "block");
     $("#newlayout").css("display", "block");
-    $(".en, .jp, .zh").attr("href", "lnn");
-    $(".en").on("click", {language: "English"}, setLanguage);
-    $(".jp").on("click", {language: "Japanese"}, setLanguage);
-    $(".zh").on("click", {language: "Chinese"}, setLanguage);
+    $(".flag").attr("href", "");
+    $("#en").on("click", {language: "English"}, setLanguage);
+    $("#jp").on("click", {language: "Japanese"}, setLanguage);
+    $("#zh").on("click", {language: "Chinese"}, setLanguage);
     $(".game").on("click", show);
     missingReplays = $("#missingReplays").val();
 
@@ -250,9 +249,5 @@ $(document).ready(function () {
         language = "Japanese";
     } else if (getCookie("lang") == "Chinese" || location.href.contains("zh")) {
         language = "Chinese";
-    }
-
-    if (navigator.userAgent.indexOf("Mobile") == -1 && navigator.userAgent.indexOf("Tablet") == -1) {
-        $("#layouttoggle").css("display", "inline");
     }
 });

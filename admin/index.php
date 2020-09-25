@@ -25,7 +25,7 @@
         <main>
             <div id='wrap'>
                 <span id='links'><a href='/'>Back to Main Page</a></span>
-                <img id='hy' src='../assets/shared/h-bar.png' title='Human Mode'>
+                <img id='hy' src='../assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
                 <h1>Admin Panel</h1>
                 <p><input id='setcookie' type='button' value='Set Blocking Cookie'></p>
                 <?php
