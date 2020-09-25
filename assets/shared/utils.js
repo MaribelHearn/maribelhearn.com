@@ -559,6 +559,7 @@ function generateShottypes() {
         $(".Summer").html("Summer");
         $(".Autumn").html("Autumn");
         $(".Winter").html("Winter");
+        $(".Seasons").html("Seasons");
         $(".ReimuSpring").html("ReimuSpring");
         $(".CirnoSpring").html("CirnoSpring");
         $(".AyaSpring").html("AyaSpring");
@@ -633,6 +634,7 @@ function generateShottypes() {
         $(".Summer").html("夏");
         $(".Autumn").html("秋");
         $(".Winter").html("冬");
+        $(".Seasons").html("時期");
         $(".ReimuSpring").html("霊夢春");
         $(".CirnoSpring").html("チルノ春");
         $(".AyaSpring").html("文春");
@@ -707,6 +709,7 @@ function generateShottypes() {
         $(".Summer").html("夏");
         $(".Autumn").html("秋");
         $(".Winter").html("冬");
+        $(".Seasons").html("季節");
         $(".ReimuSpring").html("灵梦春");
         $(".CirnoSpring").html("琪露诺春");
         $(".AyaSpring").html("文春");

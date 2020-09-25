@@ -39,11 +39,8 @@ table, th, td {
     line-height: 1em;
     color: #000;
 }
-#top {
-    width: 100%;
-}
 #overall_linkm, #overallm, #list, #playerlist, #playersearch, #checkboxes,
-#seasontoggle, #layouttoggle, #newlayout, #playersearchlink, #contents_new {
+#seasontoggle, #newlayout, #playersearchlink, #contents_new {
     display: none;
 }
 #list, #playerlist {
@@ -67,21 +64,16 @@ table, th, td {
     counter-increment: sortabletablescope;
     display: table-cell;
 }
-#fullname, .count {
-    text-decoration: underline;
+#toggle {
+    float: left;
 }
-#toggletd {
-     width: 22%;
-     text-align: left;
-     vertical-align: top;
+#languages {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
-#languagestd {
-     width: 55%;
-}
-#bartd {
-     width: 22%;
-     text-align: right;
-     vertical-align: top;
+#hy_container {
+    float: right;
 }
 #dates {
     margin-top: 0px;
@@ -91,10 +83,11 @@ table, th, td {
     margin: 4px;
 }
 .HRtPt th {
+    color: white;
     background-color: #b6423c;
 }
 .SoEWt th {
-    color: #fff;
+    color: white;
     background-color: #7d3884;
 }
 .PoDDt th {
@@ -104,6 +97,7 @@ table, th, td {
     background-color: #90ee90;
 }
 .MSt th {
+    color: white;
     background-color: #ae11d5;
 }
 .EoSDt th {
@@ -113,7 +107,7 @@ table, th, td {
     background-color: #ff8ed2;
 }
 .INt th {
-    color: #fff;
+    color: white;
     background-color: #339;
 }
 .PoFVt th {
@@ -123,10 +117,11 @@ table, th, td {
     background-color: #96b300;
 }
 .SAt th {
-    color: #fff;
+    color: white;
     background-color: #591400;
 }
 .UFOt th {
+    color: white;
     background-color: #4169e1;
 }
 .GFWt th {
@@ -139,14 +134,16 @@ table, th, td {
     background-color: #a77;
 }
 .LoLKt th {
+    color: white;
     background-color: #6a47be;
 }
 .HSiFSsmallt th, .HSiFSt th {
+    color: white;
     background-color: #176e0e;
 }
 .WBaWCt th {
-    background-color: #190e0e;
     color: white;
+    background-color: #190e0e;
 }
 .wrap {
     border: 1px solid #000;
@@ -168,6 +165,9 @@ table, th, td {
 .noborders {
     border: none;
 }
+.count {
+    text-decoration: underline;
+}
 .dimgrey {
     color: #696969;
 }
@@ -184,24 +184,30 @@ table, th, td {
 .noborders {
     border: none;
 }
+.flag {
+    display: inline-block;
+}
+.language {
+    margin-top: 0px;
+}
 .Spring {
-    color: #f0f;
+    color: #990099;
 }
 .Summer {
     color: green;
 }
 .Autumn {
-    color: #d2691e;
+    color: #8D4500;
 }
 .Winter {
-    color: #00f;
+    color: blue;
 }
 .does_not_even_score {
-    color: red;
+    color: #B60000;
     font-weight: bold;
 }
 .barely_even_scores {
-    color: #ff8c00;
+    color: #894800;
     font-weight: bold;
 }
 .moderately_even_scores {
@@ -209,11 +215,11 @@ table, th, td {
     font-weight: bold;
 }
 .does_even_score {
-    color: #00008b;
+    color: #00008B;
     font-weight: bold;
 }
 .does_even_score_well {
-    color: #e768c3;
+    color: #990099;
     font-weight: bold;
 }
 @media only screen and (min-width:1400px) and (max-width:1600px) {
@@ -240,13 +246,21 @@ table, th, td {
         margin-right: 0;
     }
 }
-@media only screen and (min-device-width:320px) and (max-device-width:800px) and (orientation:portrait) {
-    #emptytd {
+@media only screen and (((min-width:320px) and (max-width:800px) and (orientation:portrait)) or
+((min-width:480px) and (max-width:640px) and (orientation:landscape))) {
+    #layouttoggle {
         display: none;
     }
-    #languagestd {
-        width: 77%;
+    #hy_container {
+        float: none;
+        right: 3;
     }
+    #languages {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+@media only screen and (min-width:320px) and (max-width:800px) and (orientation:portrait) {
     #overall {
         display: none;
     }
@@ -277,7 +291,7 @@ table, th, td {
         font-size: 24px;
     }
 }
-@media only screen and (min-device-width:480px) and (max-device-width:640px) and (orientation:landscape) {
+@media only screen and (min-width:480px) and (max-width:640px) and (orientation:landscape) {
     #overall_link {
         display: table-row;
     }

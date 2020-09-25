@@ -99,11 +99,8 @@ function display(event) {
     }
 
     if (game == selected && !seasonSwitch) {
-        $("#list").css("display", "none");
+        $("#list").html("");
         $("#" + game).css("border", $("#" + game).hasClass("cover98") ? "1px solid black" : "none");
-        $("#fullname, #list_thead, #list_tbody, #west_thead, #west_tbody").html("");
-        $("#fullname").removeClass(game + "f");
-        $("#table").removeClass(game + "t");
         selected = "";
         return;
     }
@@ -111,6 +108,11 @@ function display(event) {
     var shottypes = [], compareWRs = {}, max = 0, difficulty, bestshotmax, shottype, wr, score, player, replay, overall,
         overallplayer, overalldifficulty, overallshottype, overallseason, overalldate, bestshot, bestshotplayer, bestshotseason,
         bestshotdate, text, count, seasonless, extrashots, west, world, percentage, sepScore, i;
+
+    $("#list").html("<p id='fullname'></p><p id='seasontoggle'><input id='seasons' type='checkbox'>" +
+    "<label id='label_seasons' class='Seasons' for='seasons'></label>" +
+    "</p><table id='table' class='sortable'><thead id='list_thead'></thead><tbody id='list_tbody'></tbody></table>" +
+    "<table><thead id='west_thead'></thead><tbody id='west_tbody'></tbody></table>");
 
     for (shottype in WRs[game]["Easy"]) {
         shottypes.pushStrict(seasonsEnabled ? shottype : shottype.removeSeason());
@@ -277,7 +279,7 @@ function display(event) {
         worldPlayer = compareWRs[difficulty][1];
         worldShottype = compareWRs[difficulty][2];
         percentage = (west / world * 100).toFixed(2);
-        $("#west_tbody").append("<tr><td colspan='3'><u>" + difficulty + "</u></td></tr>");
+        $("#west_tbody").append("<tr><td colspan='3'>" + difficulty + "</td></tr>");
         $("#west_tbody").append("<tr><td>" + sep(world) + "<br>by <em>" + worldPlayer +
         "</em>" + (worldShottype != '-' ? "<br>(<span class='" + worldShottype + "'>" + worldShottype + "</span>)" : "") +
         "</td><td>" + sep(west) + "<br>by <em>" + westPlayer + "</em>" + (westShottype != '-' ? "<br>(<span class='" + westShottype +
@@ -457,11 +459,11 @@ $(document).ready(function () {
     $("body").on("resize", updateOrientation);
     $("#dates").on("click", {alreadyDisabled: false}, toggleDates);
     $("#seasons").on("click", toggleSeasons);
-    $(".en-gb, .en-us, .jp, .zh").attr("href", "wr");
-    $(".en-gb").on("click", {language: "English", notation: "DMY"}, setLanguage);
-    $(".en-us").on("click", {language: "English", notation: "MDY"}, setLanguage);
-    $(".jp").on("click", {language: "Japanese", notation: "YMD"}, setLanguage);
-    $(".zh").on("click", {language: "Chinese", notation: "YMD"}, setLanguage);
+    $(".flag").attr("href", "");
+    $("#en-gb").on("click", {language: "English", notation: "DMY"}, setLanguage);
+    $("#en-us").on("click", {language: "English", notation: "MDY"}, setLanguage);
+    $("#jp").on("click", {language: "Japanese", notation: "YMD"}, setLanguage);
+    $("#zh").on("click", {language: "Chinese", notation: "YMD"}, setLanguage);
     $(".game").on("click", {seasonSwitch: false}, display);
     $("#checkboxes").css("display", "table");
     missingReplays = $("#missingReplays").val();
@@ -482,9 +484,5 @@ $(document).ready(function () {
         disableDates();
     } else {
         $("#dates").prop("checked", true);
-    }
-
-    if (navigator.userAgent.indexOf("Mobile") == -1 && navigator.userAgent.indexOf("Tablet") == -1) {
-        $("#layouttoggle").css("display", "inline");
     }
 });

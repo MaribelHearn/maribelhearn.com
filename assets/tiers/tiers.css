@@ -1133,8 +1133,8 @@ li {
         background: #1b232e;
     }
 }
-@media only screen and (((max-device-width: 800px) and (orientation: portrait)) or
-((max-device-width: 640px) and (orientation: landscape))) {
+@media only screen and (((max-width: 800px) and (orientation: portrait)) or
+((max-width: 640px) and (orientation: landscape))) {
     body.no-webp, body.webp {
         background: #1b232e;
     }
@@ -1661,7 +1661,7 @@ li {
         background-position: -9180px 0;
     }
 }
-@media only screen and (max-device-width: 800px) and (orientation: portrait) {
+@media only screen and (max-width: 800px) and (orientation: portrait) {
     #characters {
         width: auto;
         top: 50px;
@@ -1686,7 +1686,7 @@ li {
         font-size: 28px;
     }
 }
-@media only screen and (max-device-width: 640px) and (orientation: landscape) {
+@media only screen and (max-width: 640px) and (orientation: landscape) {
     #title {
         display: none;
     }

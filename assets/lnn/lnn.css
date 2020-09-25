@@ -30,7 +30,7 @@ table {
 table, th, td {
     border: 1px solid #000;
 }
-#layouttoggle, #newlayout, #playersearch, #playersearchlink, #contents_new {
+#newlayout, #playersearch, #playersearchlink, #contents_new {
     display: none;
 }
 #list, #playerlist {
@@ -46,9 +46,6 @@ table, th, td {
     line-height: 1em;
     color: #000;
 }
-#top {
-    width: 100%;
-}
 #ranking.sortable tbody {
     counter-reset: sortabletablescope;
 }
@@ -61,21 +58,19 @@ table, th, td {
     counter-increment: sortabletablescope;
     display: table-cell;
 }
-#fullname, .count {
-    text-decoration: underline;
+#toggle {
+    float: left;
 }
-#toggletd {
-     width: 22%;
-     text-align: left;
-     vertical-align: top;
+#languages {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
-#languagestd {
-     width: 55%;
+#hy_container {
+    float: right;
 }
-#bartd {
-     width: 22%;
-     text-align: right;
-     vertical-align: top;
+#HRtPt, #SoEWt {
+    width: 400px;
 }
 #contents > p, #contents_new > p, #ack_container > p {
     margin: 4px;
@@ -107,21 +102,27 @@ table, th, td {
 .game {
     cursor: pointer;
 }
+.flag {
+    display: inline-block;
+}
+.language {
+    margin-top: 0px;
+}
 .FinalA, .FinalB, .in_route {
     font-size: 12px;
     color: #339;
 }
 .Spring {
-    color: #f0f;
+    color: #990099;
 }
 .Summer {
     color: green;
 }
 .Autumn {
-    color: #d2691e;
+    color: #8D4500;
 }
 .Winter {
-    color: #00f;
+    color: blue;
 }
 .border p {
     margin: 4px;
@@ -138,7 +139,21 @@ table, th, td {
         margin-right: 0;
     }
 }
-@media only screen and (min-device-width:320px) and (max-device-width:800px) and (orientation:portrait) {
+@media only screen and (((min-width:320px) and (max-width:800px) and (orientation:portrait)) or
+((min-width:480px) and (max-width:640px) and (orientation:landscape))) {
+    #layouttoggle {
+        display: none;
+    }
+    #hy_container {
+        float: none;
+        right: 3;
+    }
+    #languages {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+@media only screen and (min-width:320px) and (max-width:800px) and (orientation:portrait) {
     .wrap {
         margin-left: 0;
         margin-right: 0;
@@ -151,7 +166,7 @@ table, th, td {
         font-size: 24px;
     }
 }
-@media only screen and (min-device-width:480px) and (max-device-width:640px) and (orientation:landscape) {
+@media only screen and (min-width:480px) and (max-width:640px) and (orientation:landscape) {
     .wrap {
         margin-left: 0;
         margin-right: 0;

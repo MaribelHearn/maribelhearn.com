@@ -157,7 +157,7 @@ caption {
     margin-left: -5px;
     background-color: #c9ff8b;
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
+@media only screen and (min-width: 320px) and (max-width: 800px) and (orientation: portrait) {
     #wrap {
         margin-left: 0;
         margin-right: 0;
@@ -177,7 +177,7 @@ caption {
         font-size: 24px;
     }
 }
-@media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
+@media only screen and (min-width: 480px) and (max-width: 640px) and (orientation: landscape) {
     #wrap {
         margin-left: 0;
         margin-right: 0;

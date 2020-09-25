@@ -76,20 +76,26 @@
                     <thead id='tier_list_thead' data-html2canvas-ignore>
                         <tr id='add_tier_box_mobile'>
                             <td id='add_tier_cell_mobile' colspan='2'>
-                                <input id='tier_name_mobile' type='text' value=''>
                                 <label for='tier_name_mobile'>
+                                    <span class='hidden'>.</span>
+                                    <input id='tier_name_mobile' type='text' value=''>
+                                </label>
+                                <label for='add_tier_mobile'>
                                     <span class='hidden'>.</span>
                                     <input id='add_tier_mobile' type='button' value='Add Tier'>
                                 </label>
-                            </td><td class='hidden'></td>
+                            </td>
                         </tr>
                     </thead>
                     <tbody id='tier_list_tbody'></tbody>
                     <tfoot id='tier_list_tfoot' data-html2canvas-ignore>
                         <tr>
                             <td id='add_tier_desktop'>
-                                <input id='tier_name' type='text' value=''>
                                 <label for='tier_name'>
+                                    <span class='hidden'>.</span>
+                                    <input id='tier_name' type='text' value=''>
+                                </label>
+                                <label for='add_tier'>
                                     <span class='hidden'>.</span>
                                     <input id='add_tier' type='button' value='Add Tier'>
                                 </label>

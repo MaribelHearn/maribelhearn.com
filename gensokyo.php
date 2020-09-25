@@ -70,7 +70,7 @@
 			</nav>
 		</div>
         <div id='wrap' class='wrap'>
-            <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
+            <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
             <h1>Gensokyo Replay Archive</h1>
             <?php
                 if (!empty($_GET['redirect'])) {

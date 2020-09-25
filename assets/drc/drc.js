@@ -32,10 +32,10 @@ $(document).ready(function () {
     $("#calculator").css("display", "block");
     $("#scoringButton, #survivalButton").css("display", "inline");
     $("#scoringRubrics, #survivalRubrics").css("display", "none");
-    $(".en, .jp, .zh").attr("href", "");
-    $(".en").on("click", {language: "English"}, setLanguage);
-    $(".jp").on("click", {language: "Japanese"}, setLanguage);
-    $(".zh").on("click", {language: "Chinese"}, setLanguage);
+    $(".flag").attr("href", "");
+    $("#en").on("click", {language: "English"}, setLanguage);
+    $("#jp").on("click", {language: "Japanese"}, setLanguage);
+    $("#zh").on("click", {language: "Chinese"}, setLanguage);
     checkValues({data: {changePerf: true, changeShots: true}});
     step = setInterval(updateCountdown, 1000);
     updateCountdown();

@@ -27,7 +27,7 @@
 			</nav>
 		</div>
         <div id='wrap' class='wrap'>
-            <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
+            <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
             <h1>Phantasmagoria of Flower View</h1>
             <p>This is a portal for competitive PoFV play, featuring the current tier list, a guide to help you get started with
             netplay, and links to relevant resources as well as the rules of tournaments for the game, held at the

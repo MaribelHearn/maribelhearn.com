@@ -63,7 +63,7 @@
 			</nav>
 		</div>
 		<div id='wrap' class='wrap'>
-			<img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
+			<img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
 			<h1>High Score Storage</h1>
 			<?php
 				if (!empty($_GET['redirect'])) {
@@ -177,9 +177,9 @@
             </table>
 			<?php
 				foreach ($games as $key => $game) {
-					echo '<div id="' . $game . '"><caption><img src="assets/games/' . strtolower($game) .
+					echo '<div id="' . $game . '"><table class="center"><caption><p><img src="assets/games/' . strtolower($game) .
 					'50x50.jpg" ' . ($key < 5 ? 'class="cover98" ' : '') . 'alt="' . $game .
-					' cover"><u>' . full_name($game) . '</u></caption><table class="center"><tr><th>Route</th>';
+					' cover"> ' . full_name($game) . '</p></caption><tr><th>Route</th>';
 					foreach ($diffs as $key => $diff) {
 						if (no_extra($game) && $diff == 'Extra') {
 							break;

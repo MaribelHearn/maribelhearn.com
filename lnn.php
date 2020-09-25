@@ -158,45 +158,31 @@
 			</nav>
 		</div>
         <div id='wrap' class='wrap'>
-			<table id='top' class='center noborders'>
-				<tr class='noborders'>
-					<td id='toggletd' class='noborders'>
-                        <?php
-                            $other = ($layout == 'New' ? 'Old' : 'New');
-                            echo '<a id="layouttoggle" href="lnn">' . $other . ' layout</a>';
-                        ?>
-                    </td>
-					<td id='languagestd' class='noborders'><table id='languages' class='noborders'>
-		                <tbody>
-		                    <tr class='noborders'>
-		                        <td class='noborders'>
-                                    <a class='en' href='lnn?hl=en'>
-                                        <img src='assets/flags/uk.png' alt='<?php echo tl_term('Flag of the United Kingdom', $lang) ?>'>
-                                    </a>
-		                        </td>
-		                        <td class='noborders'>
-                                    <a class='jp' href='lnn?hl=jp'>
-                                        <img src='assets/flags/japan.png' alt='<?php echo tl_term('Flag of Japan', $lang) ?>'>
-                                    </a>
-		                        </td>
-		                        <td class='noborders'>
-                                    <a class='zh' href='lnn?hl=zh'>
-                                        <img src='assets/flags/china.png' alt='<?php echo tl_term('Flag of the P.R.C.', $lang) ?>'>
-                                    </a>
-		                        </td>
-		                    </tr>
-		                    <tr class='noborders'>
-		                        <td class='noborders'><a class='en' href='lnn?hl=en'>English</a></td>
-		                        <td class='noborders'><a class='jp' href='lnn?hl=jp'>日本語</a></td>
-		                        <td class='noborders'><a class='zh' href='lnn?hl=zh'>简体中文</a></td>
-		                    </tr>
-		                </tbody>
-		            </table></td>
-					<td id='bartd' class='noborders'>
-                        <img id='hy' src='assets/shared/h-bar.png' title='Human Mode'>
-                    </td>
-				</tr>
-			</table>
+            <div id='topbar'>
+				<span id='toggle'>
+                    <?php
+                        $other = ($layout == 'New' ? 'Old' : 'New');
+                        echo '<a id="layouttoggle" href="lnn">' . $other . ' layout</a>';
+                    ?>
+                </span>
+				<span id='hy_container'>
+                    <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
+                </span>
+				<div id='languages'>
+                    <a id='en' class='flag' href='lnn?hl=en'>
+                        <img class='flag_en' src='assets/flags/uk.png' alt='<?php echo tl_term('Flag of the United Kingdom', $lang) ?>'>
+                        <p class='language'>English</p>
+                    </a>
+                    <a id='jp' class='flag' href='lnn?hl=jp'>
+                        <img src='assets/flags/japan.png' alt='<?php echo tl_term('Flag of Japan', $lang) ?>'>
+                        <p class='language'>日本語</p>
+                    </a>
+                    <a id='zh' class='flag' href='lnn?hl=zh'>
+                        <img src='assets/flags/china.png' alt='<?php echo tl_term('Flag of the P.R.C.', $lang) ?>'>
+                        <p class='language'>简体中文</p>
+                    </a>
+	            </div>
+			</div>
 			<h1><?php echo tl_term('Touhou Lunatic No Miss No Bombs', $lang); ?></h1>
             <?php
                 if (!empty($_GET['redirect'])) {
@@ -281,10 +267,11 @@
                     }
                     $sum = 0;
                     $all = array();
-                    echo '<div id="' . $game . '"><p><img src="assets/games/' . strtolower($game) .
+                    echo '<div id="' . $game . '"><p>' .
+                    '<table id="' . $game . 't" class="sortable"><caption><p><img src="assets/games/' . strtolower($game) .
                     '50x50.jpg"' . (num($game) <= 5 ? ' class="cover98"' : '') .
-                    ' alt="' . $game . ' cover"> <u>' . full_name($game, $lang) . '</u></p>' .
-                    '<table class="sortable"><thead><tr><th>' . tl_term(shot_route($game), $lang) . '</th>' .
+                    ' alt="' . $game . ' cover"> ' . full_name($game, $lang) .
+                    '</p></caption><thead><tr><th>' . tl_term(shot_route($game), $lang) . '</th>' .
                     '<th class="sorttable_numeric">' . lnn_type($game, $lang) .
                     '<br>' . tl_term('(Different players)', $lang) . '</th><th>' . tl_term('Players', $lang) .
                     '</tr></thead><tbody>';
@@ -315,8 +302,8 @@
                     }
                     $all = array_unique($all);
                     sort($all);
-                    echo '</tbody><tfoot><tr><td colspan="3"></td></tr><tr><td><u>' . tl_term('Overall', $lang) .
-                    '</u></td><td><u>' . $sum . ' (' . sizeof($all) . ')</u></td><td>' . implode(', ', $all) .
+                    echo '</tbody><tfoot><tr><td colspan="3"></td></tr><tr><td>' . tl_term('Overall', $lang) .
+                    '</td><td>' . $sum . ' (' . sizeof($all) . ')</td><td>' . implode(', ', $all) .
                     '</td></tr></tfoot></table></div>';
                 }
                 if ($layout == 'New') {
@@ -418,9 +405,9 @@
                     <tfoot>
                         <tr><td colspan='4'></td></tr>
                         <tr>
-                            <td colspan='2' class='count'><span class='overall'><?php echo tl_term('Overall', $lang); ?></span></td>
-                            <td class='count'><?php echo $gt ?></td>
-                            <td class='count'><?php echo sizeof($pl_lnn) ?></td>
+                            <td colspan='2'><span class='overall'><?php echo tl_term('Overall', $lang); ?></span></td>
+                            <td><?php echo $gt ?></td>
+                            <td><?php echo sizeof($pl_lnn) ?></td>
                         </tr>
                     </tfoot>
                 </table>
