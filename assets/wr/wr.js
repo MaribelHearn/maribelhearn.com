@@ -85,7 +85,7 @@ function percentageClass(percentage) {
     }
 }
 function display(event) {
-    var game = event.data.game ? event.data.game : this.id.replace('i', ""), seasonSwitch = event.data.seasonSwitch;
+    var game = event.data.game ? event.data.game : this.id.slice(0, -1), seasonSwitch = event.data.seasonSwitch;
 
     if (!WRs || !westScores) {
         $.get("json/wrlist.json", function (data1) {
