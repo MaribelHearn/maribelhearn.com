@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html id='top' lang='en'>
+<html id='top' lang='<?php
+    if (empty($_GET['hl'])) {
+        echo 'en';
+    } else {
+        $iso = preg_split('/-/', $_GET['hl'])[0];
+        $iso = str_replace('jp', 'ja', $iso);
+        echo $iso;
+    }
+?>'>
 <?php
     include '.stats/count.php';
     include 'assets/shared/tl.php';
     hit(basename(__FILE__));
     $MAX_SCORE = 9999999990;
-    $json = file_get_contents('json/wrlist.json');
+    $json = file_get_contents('assets/json/wrlist.json');
     $wr = json_decode($json, true);
-    $json = file_get_contents('json/bestinthewest.json');
+    $json = file_get_contents('assets/json/bestinthewest.json');
     $west = json_decode($json, true);
-    $json = file_get_contents('json/counterstops.json');
+    $json = file_get_contents('assets/json/counterstops.json');
     $cs = json_decode($json, true);
     if (isset($_COOKIE['lang'])) {
 		$lang = str_replace('"', '', $_COOKIE['lang']);

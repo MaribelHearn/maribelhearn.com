@@ -21,6 +21,7 @@ $(document).ready(function () {
         language = "Chinese";
     }
 
+    $("#top").attr("lang", langCode(language, false));
     $("#calculate").on("click", drcPoints);
     $("#scoringButton").on("click", {challenge: "Scoring"}, showRubrics);
     $("#survivalButton").on("click", {challenge: "Survival"}, showRubrics);
@@ -475,7 +476,7 @@ function isPhantasmagoria(game) {
 }
 function drcPoints() {
     if (!Rubrics) {
-        $.get("json/rubrics.json", function (data) {
+        $.get("assets/json/rubrics.json", function (data) {
             Rubrics = data;
             drcPoints();
         }, "json");
@@ -519,7 +520,7 @@ function drcPoints() {
             points = mofFormula(difficulty, shottype);
         } else {
             if (!WRs) {
-                $.get("json/wrlist.json", function (data) {
+                $.get("assets/json/wrlist.json", function (data) {
                     WRs = data;
                     drcPoints();
                 }, "json");

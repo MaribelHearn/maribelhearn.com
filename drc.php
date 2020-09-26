@@ -1,11 +1,11 @@
 ﻿<!DOCTYPE html>
-<html id='top' lang='en'>
+<html id='top' lang='<?php if (empty($_GET['hl'])) { echo 'en'; } else { echo str_replace('jp', 'ja', $_GET['hl']); } ?>'>
 <?php
 	include '.stats/count.php';
 	hit(basename(__FILE__));
 	$id = 0;
-	$wrlist_json = file_get_contents('json/wrlist.json');
-	$rubrics_json = file_get_contents('json/rubrics.json');
+	$wrlist_json = file_get_contents('assets/json/wrlist.json');
+	$rubrics_json = file_get_contents('assets/json/rubrics.json');
 	$WRs = json_decode($wrlist_json, true);
 	$Rubrics = json_decode($rubrics_json, true);
 	if (isset($_COOKIE['lang'])) {

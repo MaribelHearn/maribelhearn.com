@@ -3,7 +3,7 @@
 <?php
     include '.stats/count.php';
     hit(basename(__FILE__));
-    $json = file_get_contents('json/gensokyo.json');
+    $json = file_get_contents('assets/json/gensokyo.json');
     $reps = json_decode($json, true);
     $games = Array('EoSD', 'PCB', 'IN', 'PoFV', 'StB', 'MoF', 'SA', 'UFO', 'DS', 'GFW', 'TD');
     $diffs = Array('Easy', 'Normal', 'Hard', 'Lunatic', 'Extra', 'Phantasm', 'Last Word');

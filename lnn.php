@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html id='top' lang='en'>
+<html id='top' lang='<?php if (empty($_GET['hl'])) { echo 'en'; } else { echo str_replace('jp', 'ja', $_GET['hl']); } ?>'>
 <?php
     include '.stats/count.php';
     include 'assets/shared/tl.php';
     hit(basename(__FILE__));
-    $json = file_get_contents('json/lnnlist.json');
+    $json = file_get_contents('assets/json/lnnlist.json');
     $lnn = json_decode($json, true);
 	if (isset($_COOKIE['lang'])) {
 		$lang = str_replace('"', '', $_COOKIE['lang']);

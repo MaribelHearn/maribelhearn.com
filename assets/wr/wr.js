@@ -88,8 +88,8 @@ function display(event) {
     var game = event.data.game ? event.data.game : this.id.slice(0, -1), seasonSwitch = event.data.seasonSwitch;
 
     if (!WRs || !westScores) {
-        $.get("json/wrlist.json", function (data1) {
-            $.get("json/bestinthewest.json", function (data2) {
+        $.get("assets/json/wrlist.json", function (data1) {
+            $.get("assets/json/bestinthewest.json", function (data2) {
                 WRs = data1;
                 westScores = data2;
                 display({data: {game: game, seasonSwitch: seasonSwitch}});
@@ -301,7 +301,7 @@ function getPlayerWRs(player) {
     }
 
     if (!WRs) {
-        $.get("json/wrlist.json", function (data) {
+        $.get("assets/json/wrlist.json", function (data) {
             WRs = data;
             getPlayerWRs(player);
         }, "json");
@@ -479,6 +479,8 @@ $(document).ready(function () {
     } else if (getCookie("datenotation") == "MDY" || location.href.contains("en-us")) {
         notation = "MDY";
     }
+
+    $("#top").attr("lang", langCode(language, notation));
 
     if (!datesEnabled) {
         disableDates();

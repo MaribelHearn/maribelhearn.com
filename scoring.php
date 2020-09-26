@@ -3,7 +3,7 @@
 <?php
 	include '.stats/count.php';
 	hit(basename(__FILE__));
-    $json = file_get_contents('json/wrlist.json');
+    $json = file_get_contents('assets/json/wrlist.json');
     $wr = json_decode($json, true);
 	$games = ['HRtP', 'SoEW', 'PoDD', 'LLS', 'MS', 'EoSD', 'PCB', 'IN', 'PoFV',
 	'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC'];
