@@ -49,9 +49,9 @@
             </div>
             <h2>Valid responses</h2>
             <div id='responses' class='border'>
-                <p>Characters: 34,573 (in 2019: 23,883; in 2018: 32,062)</p>
-                <p>Music: 25,919 (in 2019: 17,951; in 2018: 23,648)</p>
-                <p>Works: 19,274 (in 2019: 13,946; in 2018: 18,470)</p>
+                <p>Characters: 34,573 <small>(in 2019: 23,883; in 2018: 32,062)</small></p>
+                <p>Music: 25,919 <small>(in 2019: 17,951; in 2018: 23,648)</small></p>
+                <p>Works: 19,274 <small>(in 2019: 13,946; in 2018: 18,470)</small></p>
             </div>
             <h1 id='Characters'>Characters</h1>
             <div id='chars_dummy' class='dummy'><div class='dummy_sub'></div></div>
@@ -73,7 +73,7 @@
                             <!--<th id='chars_head' class='head noborders sorttable_numeric'>#</th>-->
                             <th class='sorttable_numeric'>Rank</th>
                             <th class='sorttable_numeric'>2019 rank</th>
-                            <th class='sorttable_numeric' class='sorttable_numeric'>2018 rank</th>
+                            <th class='sorttable_numeric'>2018 rank</th>
                             <th>Name</th>
                             <th class='sorttable_numeric'>Points</th>
                             <th class='sorttable_numeric'>No. 1 Votes</th>
@@ -943,8 +943,8 @@
             <h1 id='Questionnaire'>Questionnaire</h1>
             <h2>01. Age</h2>
             <div id='age_summary'>
-            <caption>Valid responses: 13,370　<button id='age_summary_button'>Detailed view</button></caption>
             <table class='poll table sortable'>
+                <caption><p>Valid responses: 13,370　<input id='age_summary_button' type='button' value='Detailed view'></p></caption>
                 <colgroup>
                     <col class='col2qm'>
                     <col class='col3q'>
@@ -968,8 +968,8 @@
             </table>
             </div>
             <div id='age_detail'>
-            <caption>Valid responses: 13,370　<button id='age_detail_button'>Simple view</button></caption>
             <table class='poll sortable'>
+                <caption><p>Valid responses: 13,370　<input id='age_detail_button' type='button' value='Simple view'></p></caption>
                 <colgroup>
                     <col class='col2qm'>
                     <col class='col3q'>
@@ -1037,8 +1037,8 @@
             </table>
             </div>
             <h2>02. Gender</h2>
-            <caption>Valid responses: 13,416</caption>
             <table class='poll sortable'>
+                <caption><p>Valid responses: 13,416</p></caption>
                 <colgroup>
                     <col class='col2qm'>
                     <col class='col3q'>
@@ -1053,8 +1053,8 @@
                 </tbody>
             </table>
             <h2>03. Location</h2>
-            <caption>Valid responses: 13,034</caption>
             <table class='poll sortable'>
+                <caption><p>Valid responses: 13,034</p></caption>
                 <colgroup>
                     <col class='col2q'>
                     <col class='col3q'>
@@ -1147,8 +1147,8 @@
             </div>
             <h2>05. Publications subscribed to</h2>
             <h3>Curiosities of Lotus Asia</h3>
-            <caption>Valid responses: 10,102</caption>
             <table class='poll'>
+                <caption><p>Valid responses: 10,102</p></caption>
                 <colgroup>
                     <col class='col2q'>
                     <col class='col3q'>
@@ -1160,8 +1160,8 @@
                 </tbody>
             </table>
             <h3>Foul Detective Satori</h3>
-            <caption>Valid responses: 9,999</caption>
             <table class='poll'>
+                <caption><p>Valid responses: 9,999</p></caption>
                 <colgroup>
                     <col class='col2q'>
                     <col class='col3q'>
@@ -1175,8 +1175,8 @@
                 </tbody>
             </table>
             <h3>Lotus Eaters</h3>
-            <caption>Valid responses: 9,589</caption>
             <table class='poll'>
+                <caption><p>Valid responses: 9,589</p></caption>
                 <colgroup>
                     <col class='col2q'>
                     <col class='col3q'>
@@ -1188,8 +1188,8 @@
                 </tbody>
             </table>
             <h2>06. What do you like about Touhou? (Multiple answers possible)</h2>
-            <caption>Valid responses: 14,324</caption>
             <table class='poll sortable'>
+                <caption><p>Valid responses: 14,324</p></caption>
                 <colgroup>
                     <col class='col2q'>
                     <col class='col3q'>
@@ -1209,8 +1209,8 @@
                 </tbody>
             </table>
             <h2>07. When did you discover Touhou?</h2>
-            <caption>Valid responses: 13,834</caption>
             <table class='poll sortable'>
+                <caption><p>Valid responses: 13,834</p></caption>
                 <colgroup>
                     <col class='col2q'>
                     <col class='col3q'>
@@ -1244,8 +1244,8 @@
                 </tbody>
             </table>
             <h2>08. How did you discover Touhou?</h2>
-            <caption>Valid responses: 13,475</caption>
             <table class='poll sortable'>
+                <caption><p>Valid responses: 13,475</p></caption>
                 <colgroup>
                     <col class='col2ql'>
                     <col class='col3q'>
@@ -1358,8 +1358,8 @@
                 </table>
             </div>
             <h2>09. Participation in doujin events such as Comiket and Reitaisai (multiple answers possible)</h2>
-            <caption>Valid responses: 13,685</caption>
             <table class='poll'>
+                <caption><p>Valid responses: 13,685</p></caption>
                 <colgroup>
                     <col class='col2q'>
                     <col class='col3q'>
@@ -1385,15 +1385,15 @@
                 </tbody>
             </table>
             <h2>10. Have you voted on the Touhou Popularity Poll before?</h2>
-            <caption>Valid responses: 14,151</caption>
             <table class='poll sortable'>
+                <caption><p>Valid responses: 14,151</p></caption>
                 <colgroup>
                     <col class='col2q'>
                     <col class='col3q'>
                     <col class='col4q'>
                 </colgroup>
                 <thead>
-                    <tr><th>Times voted</th><th>Responses</th><th>Percentage</u></th></tr>
+                    <tr><th>Times voted</th><th>Responses</th><th>Percentage</th></tr>
                 <tbody>
                     <tr><th>Never voted before</th><td>6,145</td><td>43.42%</td></tr>
                     <tr><th>Voted 1 to 3 times</th><td>4,664</td><td>32.96%</td></tr>

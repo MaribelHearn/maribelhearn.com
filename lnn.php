@@ -324,7 +324,7 @@
     			        if ($game == 'LM') {
     			            continue;
     		            }
-    			        echo '<img id="' . $game . '" class="game" src="assets/games/' . strtolower($game) .
+    			        echo '<img id="' . $game . 'i" class="game" src="assets/games/' . strtolower($game) .
                         '50x50.jpg" alt="' . $game . ' cover">';
     			    }
                     echo '<div id="list"><p id="fullname"></p><table class="sortable"><thead id="listhead"></thead>' .
@@ -460,7 +460,7 @@
                         }
                     ?>
                 </p>
-				</p id='jptlcredit' class='noborders'>
+				<p id='jptlcredit'>
                     <?php
                         if ($lang == 'English') {
                             echo 'The Japanese translation of the top text was done by ' .
@@ -476,7 +476,7 @@
                         }
                     ?>
                 </p>
-                <p id='cntlcredit' class='noborders'>
+                <p id='cntlcredit'>
                     <?php
                         if ($lang == 'English') {
                             echo 'The Chinese translation of the top text was done by ' .
