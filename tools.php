@@ -61,14 +61,14 @@
             <p>Removes input delay, allows you to increase in-game FPS (default is 60), optionally fixes several bugs (PCB cherry display, MoF MarisaB 3-power unfocus, UFO 2.147b score display).
             The input delay is mostly prevalent in the older games (EoSD to IN) and running them on Vpatch will significantly improve the gameplay experience.</p>
             <p>Vpatch is applicable to all official shooting games bar HSiFS and WBaWC.</p>
-            <a href='https://maribelhearn.com/VsyncPatch.zip' target='_blank'>Download</a>
+            <a href='https://maribelhearn.com/mirror/VsyncPatch.zip' target='_blank'>Download</a>
             <!-- English Patches -->
             <hr>
             <h2 id='thcrap'>THCRAP (Translation patches / Modding tool) <a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page' target='_blank'><img src='assets/ext/thcrap-icon-small.ico' alt='THCRAP favicon'></a></h2>
             <p>Translation patches into English and many other languages, as well as countless modifications to gameplay,
 			graphics and more, plus the ability to make your own, are provided by the Touhou Community Reliant Automatic Patcher (THCRAP) for all Windows Touhou games.
 			The thpatch.net link also links to instructions on how to use the patcher.</p>
-            <a href='https://maribelhearn.com/thcrap.zip' target='_blank'>Download (maribelhearn.com mirror)</a>
+            <a href='https://maribelhearn.com/mirror/thcrap.zip' target='_blank'>Download (maribelhearn.com mirror)</a>
             <a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Download' target='_blank'>Download (thpatch.net)</a>
             <!-- Enbconvertor -->
             <hr>
@@ -80,7 +80,7 @@
             <h2 id='scorefiles'>Completed Scorefiles</h2>
             <p>These are (mostly) complete <span class='code'>score.dat</span> files useful for practice combined with other tools, as they have unlocked the Extra Stage, every practice stage and spell in Spell Practice for all shottypes.</p>
             <p>All official shooting games aside from VD are included.</p>
-            <a href='https://maribelhearn.com/Practice%20Scorefiles.zip' target='_blank'>Download</a>
+            <a href='https://maribelhearn.com/mirror/Practice%20Scorefiles.zip' target='_blank'>Download</a>
 			<!-- Old link without WBaWC: https://mega.nz/#F!r8hWmCrD!oOkBNotI88acvlhlKUXZiA -->
             <!-- SpoilerAL -->
             <hr>
@@ -104,7 +104,7 @@
                 <p><a href='https://mega.nz/#!QUBTEB5J!idRbiOfr_BKFpMBy9e5qU5Ow1xPkxplVbR72G6Ud0KI' target='_blank'>MoF SSG by Akaldar</a></p>
                 <p><a href='https://mega.nz/#!BJwhwYRB!5Zgr6redSWbA2v2vco0b7k00XH-BIeTAPUnW28gI-20' target='_blank'>GFW SSG (English translated)</a></p>
                 <p><a href='https://drive.google.com/open?id=1Qs4jOBkDH3dN7tI5X2cJRzd_awZFf80d' target='_blank'>TD Scoring SSG by Leo (English translated)</a></p>
-				<p><a href='https://maribelhearn.com/th16_score.ssg' target='_blank'>HSiFS Scoring SSG by Sonitsuku</a></p>
+				<p><a href='https://maribelhearn.com/mirror/th16_score.ssg' target='_blank'>HSiFS Scoring SSG by Sonitsuku</a></p>
                 <p><a href='https://gitlab.com/32th/th14ssg' target='_blank'>DDC SSG by 32th System</a></p>
 				<p><a href='https://mega.nz/#!cAwknKTB!3PCN0me2Q3uTXwo4VgfBIouOqf5W0spBEhZwwR2uNfA' target='_blank'>LoLK SSG by CreepyNinja</a></p>
                 <p><a href='https://gitlab.com/32th/th15ssg' target='_blank'>LoLK Chapter Practice SSG by 32th System</a></p>
@@ -148,13 +148,13 @@
                 <p><a href='https://mega.nz/#F!axJSDILb!FPNSYOddqDosZ1I1Y-9UBQ' target='_blank'>TD</a></p>
                 <p><a href='https://mega.nz/#F!K1AByK5I!7NrTie_DHQBrH5OKnIXfEg' target='_blank'>DDC</a></p>
                 <p><a href='https://mega.nz/#F!npwSGaJC!pNfJemXgehNGbif2L-d6zQ' target='_blank'>LoLK</a></p>
-                <p><a href='https://maribelhearn.com/HSiFS%20Boss%20Rush%20v1.0.zip' target='_blank'>HSiFS</a></p>
+                <p><a href='https://maribelhearn.com/mirror/HSiFS%20Boss%20Rush%20v1.0.zip' target='_blank'>HSiFS</a></p>
 				<!--
 				Old link boss-rush: https://mega.nz/#!60JyGaTB!HOQPcI7Pq6MiEMKqI-Ucv49CxoqJ8Sc1d3u5s4wNS94
 				Old link boss-only: https://mega.nz/#!Ogh3hD5B!PT6aGiyqhGAS1r4Y0IfjLTP3hDtRKa1qGi3zi6XjaOA
 				Old link full pack: https://mega.nz/#F!i0I0BIaI!A3wHnQYX2xFUTKS1po1GDw
 				-->
-                <p><a href='https://maribelhearn.com/Full%20Boss%20Rush.zip' target='_blank'>Full Pack</a></p>
+                <p><a href='https://maribelhearn.com/mirror/Full%20Boss%20Rush.zip' target='_blank'>Full Pack</a></p>
             </div>
             <p><strong>Boss Rush Patches by <a href='https://twitter.com/drakeirving' target='_blank'>Drake</a></strong></p>
             <p>Patches for SA and UFO that not only remove stage portions, but also bombs. The SA one includes turning Stage 4 into 'Satori Rush',
@@ -181,7 +181,7 @@
             <a href='https://mega.nz/#!sIhRFD7b!EKKnhhxKX2NQQg0jGaT1t3eAS7x5pcISSKr0abINvgM' target='_blank'>Download</a>
             <p><strong>VoWG + PWG Practice for MoF by <a href='https://twitter.com/chirpeh13' target='_blank'>Chirpy</a></strong></p>
             <p>Makes Kanako skip to Virtue of Wind God (her final spell) and makes Aya skip to Peerless Wind God (her timeout spell), which will also repeat itself indefinitely.</p>
-            <a href='https://maribelhearn.com/th10vowg_pwg.dat' target='_blank'>Download</a>
+            <a href='https://maribelhearn.com/mirror/th10vowg_pwg.dat' target='_blank'>Download</a>
 			<!-- Dead link: https://www.dropbox.com/s/2u2fam39uya0zil/th10vowg%2Bpwg.dat?dl=0 -->
             <p><strong>IN Nonspell Practice</strong></p>
             <p>Patch that lets you practice nonspells in IN.</p>
@@ -313,7 +313,7 @@
 			<a href='https://github.com/hoangcaominh/RealTimeDRCPointsDisplayer/releases/latest' target='_blank'>Download</a>
             <p><strong>MS Black Label by <a href='https://twitter.com/spaztron64' target='_blank'>Spaztron64</a></strong></p>
             <p>Increases the graze cap from 999 to 65536.</p>
-            <a href='https://maribelhearn.com/MSBL.zip' target='_blank'>Download</a>
+            <a href='https://maribelhearn.com/mirror/MSBL.zip' target='_blank'>Download</a>
             <p><strong>EoSD Capture History Tracker by <a href='https://twitter.com/TrickOfHat' target='_blank'>TrickOfHat</a></strong></p>
             <p>Command-line tool that allows you to track how many times you captured spells in EoSD. Includes Stage 4 Books and Play Time tracking, as well as allowing for multiple save files.</p>
             <div>
@@ -353,7 +353,7 @@
 			<p><strong>WBaWC score cap mod by <a href='https://twitter.com/32th__System' target='_blank'>32th System</a></strong>
 			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='assets/ext/thcrap-icon-small.ico' alt='THCRAP favicon'> score_uncap</a></p>
 			<p>Allows the in-game score counter to exceed 9,999,999,990 points.</p>
-			<a href='https://maribelhearn.com/th17_score_uncap.zip' target='_blank'>Download</a>
+			<a href='https://maribelhearn.com/mirror/th17_score_uncap.zip' target='_blank'>Download</a>
 			<hr>
 			<h2 id='ack'>Acknowledgements</h2>
 			<p id='credit' class='noborders'>The background image
