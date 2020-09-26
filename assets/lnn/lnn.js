@@ -68,7 +68,7 @@ function show(game) {
         shottype, shotplayers, shotcount, character, type, player, season, i;
 
     if (selected !== "") {
-        $("#" + selected).css("border", $("#" + selected).hasClass("cover98") ? "1px solid black" : "none");
+        $("#" + selected + "i").css("border", $("#" + selected + "i").hasClass("cover98") ? "1px solid black" : "none");
     }
 
     if ($("#fullname").hasClass(selected + "f")) {
