@@ -149,15 +149,16 @@
                     $backlink = explode('&id', $_SERVER['REQUEST_URI']);
                     echo '<table id="replay" class="sortable"><tbody>';
                     echo '<tr><th>Player</th><td>' . $rep['player'] . '</td></tr>';
-                    echo '<tr><th>Category</th><td>' . $rep['category'] . '</td></tr>';
-                    echo '<tr><th>Game Version</th><td>' . $rep['ver'] . '</td></tr>';
-                    echo '<tr><th>Upload Date</th><td>' . $rep['date'] . '</td></tr>';
-                    echo '<tr><th>Type</th><td>' . $rep['type'] . '</td></tr>';
-                    echo '<tr><th>Score</th><td>' . $rep['score'] . '</td></tr>';
-                    echo '<tr><th>Slowdown</th><td>' . $rep['slowdown'] . '</td></tr>';
-                    echo '<tr><th>Shottype</th><td>' . $rep['shottype'] . '</td></tr>';
-                    echo '<tr><th>Conditions</th><td>' . $rep['conditions'] . '</td></tr>';
-                    echo '<tr><th>Comment</th><td>' . $comment . '</td></tr>';
+                    echo '<tr><th>Category</th><td>' . $rep['category'] . ($rep['category'] == 'DS' ? ' ' . $rep['slowdown'] : '') .
+                    '</td></tr>';
+                    echo '<tr><th>Game Version</th><td>' . ($rep['category'] == 'DS' ? '' : $rep['ver']) . '</td></tr>';
+                    echo '<tr><th>Upload Date</th><td>' . ($rep['category'] == 'DS' ? $rep['ver'] : $rep['date']) . '</td></tr>';
+                    echo '<tr><th>Type</th><td>' . ($rep['category'] == 'DS' ? $rep['date'] : $rep['type']) . '</td></tr>';
+                    echo '<tr><th>Score</th><td>' . ($rep['category'] == 'DS' ? number_format($rep['type'], 0, '.', ',') : $rep['score']) . '</td></tr>';
+                    echo '<tr><th>Slowdown</th><td>' . ($rep['category'] == 'DS' ? '-' : $rep['slowdown']) . '</td></tr>';
+                    echo '<tr><th>Shottype</th><td>' . ($rep['category'] == 'DS' ? $rep['slowdown'] : $rep['shottype']) . '</td></tr>';
+                    echo '<tr><th>Conditions</th><td>' . ($rep['category'] == 'DS' ? '' : $rep['conditions']) . '</td></tr>';
+                    echo '<tr><th>Comment</th><td>' . ($rep['category'] == 'DS' ? $rep['conditions'] : $comment) . '</td></tr>';
                     foreach (glob('replays/gensokyo/' . $_GET['id'] . '/*.rpy') as $file) {
                         $replay = explode('/', $file);
                         echo '<tr><th>Download</th><td><a href="' . $file . '">' . $replay[3] . '</a></td></tr>';
@@ -231,10 +232,19 @@
                                 '<th class="sorttable_mmdd">Date added</th><th>Type</th><th>Conditions</th><th>Download</th></tr></thead><tbody>';
                             }
                             $replay = explode('/', $file);
-                            echo '<tr><td><a href="' . $_SERVER['REQUEST_URI'] . '&id=' . $key . '">' . $rep['player'] . '</a></td><td>' . $rep['category'] .
-                            '<br>' . $rep['shottype'] . '</td><td>' . $rep['score'] .
-                            '</td><td>' . str_replace(' ', '<br>', $rep['date']) . '</td><td>' . $rep['type'] .
-                            '</td><td>' . $rep['conditions'] . '</td><td><a href="' . $file . '">' . $replay[3] . '</a></td></tr>';
+                            if ($rep['category'] == 'DS') {
+                                echo '<tr><td><a href="' . $_SERVER['REQUEST_URI'] . '&id=' . $key . '">' . $rep['player'] .
+                                '</a></td><td>' . $rep['category'] . '<br>' . $rep['slowdown'] . // shottype
+                                '</td><td>' . number_format($rep['type'], 0, '.', ',') . // score
+                                '</td><td>' . substr($rep['ver'], 0, 10) . '<br>' . substr($rep['ver'], 10) . // date
+                                '</td><td>' . $rep['date'] . '</td><td></td><td><a href="' . $file . '">' . $replay[3] .
+                                '</a></td></tr>'; // date = type, conditions empty
+                            } else {
+                                echo '<tr><td><a href="' . $_SERVER['REQUEST_URI'] . '&id=' . $key . '">' . $rep['player'] .
+                                '</a></td><td>' . $rep['category'] . '<br>' . $rep['shottype'] . '</td><td>' . $rep['score'] .
+                                '</td><td>' . str_replace(' ', '<br>', $rep['date']) . '</td><td>' . $rep['type'] .
+                                '</td><td>' . $rep['conditions'] . '</td><td><a href="' . $file . '">' . $replay[3] . '</a></td></tr>';
+                            }
                             $found += 1;
                         }
                     }
