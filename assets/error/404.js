@@ -47,7 +47,7 @@ if (isNaN(path) && path != "404.php") {
 
     if (max > maxPath.length - 2) { // redirect
         location.replace(loc.replace(path, maxPath) + "?redirect=" + path);
-    } else if (isNaN(path) && path != "404.php" && max <= maxPath.length - 2) {
+    } else if (isNaN(path) && path != "404.php" && max >= maxPath.length - 3) {
         document.getElementById("didyoumean").innerHTML = ", did you mean <a href='/" + loc + "'>" + maxPath + "</a>?";
     }
 }
