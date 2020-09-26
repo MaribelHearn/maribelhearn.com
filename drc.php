@@ -979,7 +979,8 @@
 						else { echo 'The background image was drawn by ' .
 						'<a href="https://www.pixiv.net/member.php?id=161300">ウータン</a>.'; }
 					?>
-				</p><p id='jptlcredit'>
+				</p>
+				<p id='jptlcredit'>
 					<?php
 						if ($lang == 'English') { echo 'The Japanese translation was done by ' .
 						'<a href="https://twitter.com/7bitm">7bitm</a> and ' .

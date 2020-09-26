@@ -44,7 +44,7 @@ function replayPath(game, player, character, type) {
 }
 function show(game) {
     if (typeof game == "object") {
-        game = this.id; // if event listener fired
+        game = this.id.replace('i', ""); // if event listener fired
     }
 
     if (!LNNs) {
