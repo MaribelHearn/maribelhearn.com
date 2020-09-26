@@ -497,7 +497,7 @@
                         '<br>by <em>' . $westt[1] . '</em><br>(' . tl_shot($westt[2], $lang) .
                         ')</td><td class="' . pc_class($percentage) . '">(' . $percentage . '%)</td></tr>';
                     }
-                    echo '</table>';
+                    echo '</table></div>';
                 }
                 if ($layout == 'New') {
                     echo '</noscript>';
