@@ -433,7 +433,7 @@
                                     if (file_exists(replay_path($game, $diff, $shot))) {
                                         $score = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score . '</a>';
                                     }
-                                    echo '<td rowspan="4">' . $score . '</a><br>by <em>' . $shots[$shot][1] .
+                                    echo '<td rowspan="4">' . $score . '<br>by <em>' . $shots[$shot][1] .
                                     '</em><span class="dimgrey"><br><span class="datestring_game"' .
                                     '>' . date_tl($shots[$shot][2], $notation) . '</span></span></td>';
                                 }
