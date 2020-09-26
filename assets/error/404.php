@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang='en'>
 <?php
-    $json = file_get_contents('json/admin.json');
+    $json = file_get_contents('../../json/admin.json');
     $data = json_decode($json, true);
     $url = substr($_SERVER['REQUEST_URI'], 1);
     if (isset($data[$url])) {
@@ -19,7 +19,7 @@
 		<script src='https://maribelhearn.com/assets/error/404.js' defer></script>
     </head>
 
-    <body class='<?php include '.stats/count.php'; echo check_webp() ?>'>
+    <body class='<?php include '../../.stats/count.php'; echo check_webp() ?>'>
         <main>
             <div id='wrap'>
                 <img id='hy' src='https://maribelhearn.com/assets/shared/h-bar.png' title='Human Mode'>
