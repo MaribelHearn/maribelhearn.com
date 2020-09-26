@@ -48,7 +48,7 @@ function show(game) {
     }
 
     if (!LNNs) {
-        $.get("json/lnnlist.json", function (data) {
+        $.get("assets/json/lnnlist.json", function (data) {
             LNNs = data;
             show(game);
         }, "json");
@@ -152,7 +152,7 @@ function getPlayerLNNs(player) {
     }
 
     if (!LNNs) {
-        $.get("json/lnnlist.json", function (data) {
+        $.get("assets/json/lnnlist.json", function (data) {
             LNNs = data;
             getPlayerLNNs(player);
         }, "json");
@@ -250,4 +250,6 @@ $(document).ready(function () {
     } else if (getCookie("lang") == "Chinese" || location.href.contains("zh")) {
         language = "Chinese";
     }
+
+    $("#top").attr("lang", langCode(language, false));
 });

@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang='en'>
 <?php
-    $json = file_get_contents('../../json/admin.json');
+    $json = file_get_contents('../json/admin.json');
     $data = json_decode($json, true);
     $url = substr($_SERVER['REQUEST_URI'], 1);
     if (isset($data[$url])) {

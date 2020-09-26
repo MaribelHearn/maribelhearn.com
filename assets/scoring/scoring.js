@@ -1048,7 +1048,7 @@ $(document).ready(function () {
     $(".check").on("click", checkGame);
     $("#toggleData").on("click", save);
 
-    $.get("json/wrlist.json", function (data) {
+    $.get("assets/json/wrlist.json", function (data) {
         WRs = data;
     }, "json");
 });

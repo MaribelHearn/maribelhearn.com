@@ -145,6 +145,20 @@ function monthToNumber(month) {
     }[month];
 }
 
+function langCode(language, notation) {
+    if (language == "English") {
+        if (notation && notation == "MDY") {
+            return "en-us";
+        } else {
+            return (notation ? "en-gb" : "en");
+        }
+    } else if (language == "Japanese") {
+        return "ja";
+    } else { // language == "Chinese"
+        return "zh";
+    }
+}
+
 function translateDate(date, notation) {
     var tmp = date.split('/');
 
