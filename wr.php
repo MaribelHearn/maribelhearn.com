@@ -468,7 +468,7 @@
                         '</em><span class="dimgrey"><br><span class="datestring_game">' . date_tl($obj['Extra']['-'][2], $notation) .
                         '</span></span></td></tr>';
                     }
-                    echo '</table>';
+                    echo '</table></div>';
                 }
                 // Old layout western records
                 echo '<h2 id="western">' . tl_term('Western Records', $lang) . '</h2>';
@@ -497,7 +497,7 @@
                         '<br>by <em>' . $westt[1] . '</em><br>(' . tl_shot($westt[2], $lang) .
                         ')</td><td class="' . pc_class($percentage) . '">(' . $percentage . '%)</td></tr>';
                     }
-                    echo '</table></div>';
+                    echo '</table>';
                 }
                 if ($layout == 'New') {
                     echo '</noscript>';
