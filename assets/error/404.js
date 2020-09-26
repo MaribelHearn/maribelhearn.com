@@ -32,7 +32,7 @@ function similarity(a, b) {
     }(m, n)).length;
 }
 
-var path = location.pathname.split('/').pop(), loc = location.toString(), max = 0, maxPath, sim, i;
+var path = location.pathname.split('/').pop(), loc = location.toString(), max = 0, maxPath, testPath, sim, i;
 
 if (isNaN(path) && path != "404.php") {
     for (i = 0; i < pages.length; i += 1) {
@@ -43,11 +43,9 @@ if (isNaN(path) && path != "404.php") {
         }
     }
 
-    loc = (loc.indexOf("file:///") > -1 ? loc.replace(path, maxPath) + ".html" : maxPath);
-
     if (max > maxPath.length - 2) { // redirect
-        location.replace(loc.replace(path, maxPath) + "?redirect=" + path);
+        location.replace(loc.replace(location.pathname.slice(1), maxPath) + "?redirect=" + path);
     } else if (isNaN(path) && path != "404.php" && max >= maxPath.length - 3) {
-        document.getElementById("didyoumean").innerHTML = ", did you mean <a href='/" + loc + "'>" + maxPath + "</a>?";
+        document.getElementById("didyoumean").innerHTML = ", did you mean <a href='/" + maxPath + "'>" + maxPath + "</a>?";
     }
 }
