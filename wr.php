@@ -296,9 +296,9 @@
                     '</a></p><p><a href="#ack" class="ack">' . tl_term('Acknowledgements', $lang) .
                     '</a></p></div><noscript>';
                 }
-                echo '<div id="contents" class="border"><p id="overall_link"><a href="#overall" ' .
+                echo '<div id="contents" class="border"><p id="overall_linkn"><a href="#overall" ' .
                 'class="overallrecords">' . tl_term('Overall Records', $lang) . '</a></p>' .
-                '<p id="overall_linkm"><a href="#overallm" class="overallrecords">' . tl_term('Overall Records', $lang) .
+                '<p id="overall_linkmn"><a href="#overallm" class="overallrecords">' . tl_term('Overall Records', $lang) .
                 '</a></p><p><a href="#wrs" class="worldrecords">' . tl_term('World Records', $lang) . '
                 </a></p>';
                 foreach ($wr as $game => $value) {
@@ -409,7 +409,7 @@
                     't sortable"><caption><p><img' . (num($game) <= 5 ? ' class="cover98"' : '') .
                     ' src="assets/games/' . strtolower($game) . '50x50.jpg" alt="' . $game .
                     ' cover"> ' . full_name($game, $lang) .
-                    '</p></caption></p><tr><th>' . tl_term(shot_route($game), $lang) . '</th>';
+                    '</p></caption><tr><th>' . tl_term(shot_route($game), $lang) . '</th>';
                     foreach ($obj as $diff => $shots) {
                         if ($game != 'GFW' || $diff != 'Extra') {
                             echo '<th>' . $diff . '</th>';
@@ -514,7 +514,8 @@
                     }
                     echo '</p>';
     			    foreach ($wr as $game => $value) {
-    			        echo '<img id="' . $game . '" class="game" src="assets/games/' . strtolower($game) . '50x50.jpg" alt="' . $game . ' cover">';
+    			        echo '<img id="' . $game . 'i" class="game" src="assets/games/' . strtolower($game) .
+                        '50x50.jpg" alt="' . $game . ' cover">';
                     }
                     echo '</div>';
                 }
@@ -586,7 +587,8 @@
             </div>
             <h2 id='ack' class='ack'><?php echo tl_term('Acknowledgements', $lang); ?></h2>
             <div id='ack_container'>
-				<p id='credit'><?php
+				<p id='credit'>
+                    <?php
                         if ($lang == 'English') {
                             echo 'The background image was drawn by ' .
                             '<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>.';

@@ -57,7 +57,7 @@ function show(game) {
 
     if (game == selected) {
         $("#list").css("display", "none");
-        $("#" + game).css("border", $("#" + game).hasClass("cover98") ? "1px solid black" : "none");
+        $("#" + game + "i").css("border", $("#" + game + "i").hasClass("cover98") ? "1px solid black" : "none");
         $("#fullname, #listhead, #listbody, #listfoot").html("");
         $("#fullname").removeClass(game + "f");
         selected = "";
@@ -75,7 +75,7 @@ function show(game) {
         $("#fullname").removeClass(selected + "f");
     }
 
-    $("#" + game).css("border", "3px solid gold");
+    $("#" + game + "i").css("border", "3px solid gold");
     selected = game;
     $("#fullname").addClass(game + "f");
     $("#fullname").html(fullNameNumber(game));

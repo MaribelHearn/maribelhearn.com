@@ -100,7 +100,7 @@ function display(event) {
 
     if (game == selected && !seasonSwitch) {
         $("#list").html("");
-        $("#" + game).css("border", $("#" + game).hasClass("cover98") ? "1px solid black" : "none");
+        $("#" + game + "i").css("border", $("#" + game + "i").hasClass("cover98") ? "1px solid black" : "none");
         selected = "";
         return;
     }
@@ -130,7 +130,7 @@ function display(event) {
         $("#table").removeClass(selected + "t");
     }
 
-    $("#" + game).css("border", "3px solid gold");
+    $("#" + game + "i").css("border", "3px solid gold");
     selected = game;
     $("#fullname").addClass(game + "f");
     $("#fullname").html(fullNameNumber(game));

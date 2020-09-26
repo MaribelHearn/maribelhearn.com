@@ -39,7 +39,7 @@ table, th, td {
     line-height: 1em;
     color: #000;
 }
-#overall_linkm, #overallm, #list, #playerlist, #playersearch, #checkboxes,
+#overall_linkm, #overall_linkmn, #overallm, #list, #playerlist, #playersearch, #checkboxes,
 #seasontoggle, #newlayout, #playersearchlink, #contents_new {
     display: none;
 }
@@ -252,7 +252,6 @@ table, th, td {
     }
     #hy_container {
         float: none;
-        right: 3;
     }
     #languages {
         margin-top: 10px;
@@ -269,10 +268,10 @@ table, th, td {
     #overallm p {
         margin: 2px;
     }
-    #overall_link {
+    #overall_link, #overall_linkn {
         display: none;
     }
-    #overall_linkm {
+    #overall_linkm, #overall_linkmn {
         display: table-row;
     }
     .wrap {
@@ -291,10 +290,10 @@ table, th, td {
     }
 }
 @media only screen and (min-width:480px) and (max-width:640px) and (orientation:landscape) {
-    #overall_link {
+    #overall_link, #overall_linkn {
         display: table-row;
     }
-    #overall_linkm {
+    #overall_linkm, #overall_linkmn {
         display: none;
     }
     .wrap {
