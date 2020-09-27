@@ -44,33 +44,26 @@ table, th, td {
     font: 14px verdana,sans-serif;
 }
 .slot {
-    width: 115px;
-    height: 115px;
-}
-.slot {
     background-repeat: no-repeat;
-    background-clip: content-box;
+    width: 100px;
+    height: 100px;
 }
 .charslot {
     background-image: url('../shared/spritesheet.png');
     background-position: -18480px 0;
+    vertical-align: bottom;
 }
 .locslot {
     background-image: url('locations.png');
     background-position: -3720px 0;
+    vertical-align: bottom;
 }
 .name {
-    position: relative;
     font-size: 9px;
-}
-.charname {
-    bottom: -45%;
-}
-.locname {
-    bottom: -40%;
 }
 .title {
     cursor: pointer;
+    width: 100px;
 }
 #modal {
     font: 14px verdana, sans-serif;

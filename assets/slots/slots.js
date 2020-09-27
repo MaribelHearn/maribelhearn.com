@@ -4,7 +4,7 @@ var SPECIES = ["Human", "Magician", "Devil", "Ghost", "Yuki-onna", "Night sparro
     "Zashiki-warashi", "Hobgoblin", "Enenra", "Mermaid", "Rokurokubi", "Amanojaku", "Baku", "Yamanba"],
     NUMBERS = ["None", "1", "2", "3", "4", "5+"],
     NUMBER_OF_CHARS = 154,
-    NUMBER_OF_LOCATIONS = 31,
+    NUMBER_OF_LOCATIONS = 33,
     WIDTH = 120,
     BREAK_WORD = 24,
     NUMBER_OF_SLOTS = 9,
@@ -17,6 +17,10 @@ var SPECIES = ["Human", "Magician", "Devil", "Ghost", "Yuki-onna", "Night sparro
     speed = 100,
     running;
 
+String.prototype.escapeHTML = function () {
+    return this.replace('<', "&lt;").replace('>', "&gt;").replace('&', "&amp;");
+}
+
 function randomiseImage(max, slot, previous) {
     slots[slot] = Math.floor(Math.random() * (max - 1)) * WIDTH;
 
@@ -27,9 +31,9 @@ function randomiseImage(max, slot, previous) {
     $("#slot" + slot).css("background-position", "-" + slots[slot] + "px 0");
 
     if (max == NUMBER_OF_CHARS) {
-        $("#slot" + slot).html("<div class='name charname'>" + chars[slots[slot]] + "</div>");
+        $("#slot" + slot).html("<div id='text" + slot + "' class='name'>" + chars[slots[slot]] + "</div>");
     } else {
-        $("#slot" + slot).html("<div class='name locname'>" + locs[slots[slot]] + "</div>");
+        $("#slot" + slot).html("<div id='text" + slot + "' class='name'>" + locs[slots[slot]] + "</div>");
         $(".locname").css("bottom", locs[slots[slot]].length > BREAK_WORD ? "-40%" : "-45%");
     }
 }
@@ -98,13 +102,16 @@ function fileName() {
 
 function takeScreenshot() {
     emptyModal();
-    html2canvas(document.getElementById("table"), { "backgroundColor": backgroundColour() }).then(function(canvas) {
+    html2canvas(document.getElementById("table"), {
+        backgroundColor: backgroundColour(),
+        width: $("#table").width()
+    }).then(function(canvas) {
         var base64image = canvas.toDataURL("image/png"), link;
 
         $("#modal_inner").html("<h2>Screenshot</h2><p>");
         $("#modal_inner").append("<a href='" + base64image + "' download='" + fileName() + "'>" +
         "<input type='button' class='screenshot_button' value='Save to Device'></a></p>" +
-        "<p>This feature currently does not work on Linux when using Chromium-based browsers.</p>" +
+        "<p>This feature currently does not work on Chromium-based browsers.</p>" +
         "<p><img id='screenshot_base64' src='" + base64image + "' alt='Slot machine screenshot'></p>");
         $("#modal_inner").css("display", "block");
         $("#modal").css("display", "block");
@@ -136,10 +143,6 @@ function setEventListeners() {
     $("#reset").on("click", reset);
     $("body").on("click", closeModal);
     $("body").on("keyup", closeModal);
-}
-
-String.prototype.escapeHTML = function () {
-    return this.replace('<', "&lt;").replace('>', "&gt;").replace('&', "&amp;");
 }
 
 function changeTitle(event, id) {
