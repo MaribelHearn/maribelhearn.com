@@ -332,11 +332,7 @@
                 }
             ?>
             <div id='playersearch'>
-                <?php
-                    if ($layout == 'Old') { // if wr_old_layout is set, show header
-                        echo '<h2>' . player_search($lang) . '</h2>';
-                    }
-                ?>
+                <h2><?php echo player_search($lang); ?></h2>
     			<p id='playerlnns'><?php
     				if ($lang == 'English') { echo 'Choose a player name from the menu below to show their LNNs.'; }
                     else if ($lang == 'Japanese') { echo '個人のLNNを表示するには、下記のメニューからプレイヤー名を選んでください。'; }

@@ -532,9 +532,7 @@
 			</div>
             <div id='playersearch'>
     			<p id='playerwrs'><?php
-                    if ($layout == 'Old') { // if wr_old_layout is set, show header
-                        echo '<h2>' . player_search($lang) . '</h2>';
-                    }
+                    echo '<h2>' . player_search($lang) . '</h2>';
     				if ($lang == 'English') { echo 'Choose a player name from the menu below to show their WRs.'; }
                     else if ($lang == 'Japanese') { echo '個人のWRを表示するには、下記のメニューからプレイヤー名を選んでください。'; }
                     else { echo '在以下的菜单选择玩家的名字则可查看其WR。'; }
