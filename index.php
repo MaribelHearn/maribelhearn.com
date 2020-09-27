@@ -13,8 +13,17 @@
     </head>
 
     <body class='<?php echo check_webp() ?>'>
+		<!--<nav>
+    		<div id='nav' class='wrap'>
+                <?php
+                    //$nav = file_get_contents('nav.html');
+                    //$nav = str_replace('<a href="/">', '<strong>', $nav);
+                    //echo str_ireplace('Index</a>', 'Index</strong>', $nav);
+                ?>
+    		</div>
+		</nav>-->
         <main>
-            <div id='wrap'>
+            <div id='wrap' class='wrap'>
                 <span id='links'>
                 <?php
                     if (isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents('.stats/token'))) {
@@ -104,8 +113,8 @@
                 </div>
                 <div class='center'>
                     <div class='left'>
-                        <p><a href='trs'><img src='assets/trs/trs.ico' alt='Shinto shrine icon'> Touhou Replay Showcase</a></p>
-                        <p><em>(U.C.) Submit your replays, read the schedules, and watch the Touhou Replay Showcase Twitch streams.</em></p>
+                        <p><a href='slots'><img src='assets/slots/slots.ico' alt='Heart icon'> Touhou Slot Machine</a></p>
+                        <p><em>Have fun randomizing Touhou characters and locations in a customizable way.</em></p>
                     </div>
                     <div class='right'>
                         <p><a href='tiers'><img src='assets/tiers/tiers.ico' alt='Japanese castle icon'> Touhou Tier List Creator</a></p>
