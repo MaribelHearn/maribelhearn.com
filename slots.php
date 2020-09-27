@@ -40,8 +40,8 @@
             <table id='table'>
                 <tr>
                     <td id='title0' class='title'>You are a ...</td>
-                    <td id='title1' class='title'>Best friend</td>
-                    <td id='title2' class='title'>Hates you</td>
+                    <td id='title1' class='title' valign='bottom'>Best friend</td>
+                    <td id='title2' class='title' valign='bottom'>Hates you</td>
                 </tr>
                 <tr>
                     <td id='slot0'></td>
