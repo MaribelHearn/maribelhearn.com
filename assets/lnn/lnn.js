@@ -1,5 +1,5 @@
 var LNNs, alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
-    language = "English", selected = "", playerSelected = false, missingReplays, playergameLNNs;
+    language = "English", selected = "", playerSelected = false, missingReplays;
 
 function toggleLayout() {
     if (getCookie("lnn_old_layout")) {
@@ -64,7 +64,7 @@ function show(game) {
         return;
     }
 
-    var playergameLNNs = {}, overallplayers = [], players = [], typeString = "", gamecount = 0,
+    var overallplayers = [], players = [], typeString = "", gamecount = 0,
         shottype, shotplayers, shotcount, character, type, player, season, i;
 
     if (selected !== "") {
@@ -158,9 +158,7 @@ function getPlayerLNNs(player) {
         }, "json");
     }
 
-    if (player == "...") {
-        $("#playerlist").css("display", "none");
-        $("#playerlistbody, #playerlistfoot").html("");
+    if (player === "") {
         playerSelected = false;
         return;
     }
@@ -214,6 +212,12 @@ function getPlayerLNNs(player) {
         }
     }
 
+    if (sum === 0) {
+        $("#playerlist").css("display", "none");
+        playerSelected = false;
+        return;
+    }
+
     $("#playerlistfoot").html("<tr><td colspan='3'></td></tr><tr><td class='total'>Total</td><td colspan='2'>" + sum + "</td></tr>");
     $("#playerlist").css("display", "block");
     generateTableText("lnn");
@@ -233,6 +237,7 @@ function setLanguage(event) {
 }
 $(document).ready(function () {
     $("#player").on("change", getPlayerLNNs);
+    $("#player").on("select", getPlayerLNNs);
     $("#layouttoggle").on("click", toggleLayout);
     $("#contents_new").css("display", "inline-block");
     $("#playersearch").css("display", "block");
