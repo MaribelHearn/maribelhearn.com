@@ -30,6 +30,11 @@
         <div id='wrap' class='wrap'>
             <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
             <h1>Touhou Slot Machine</h1>
+			<?php
+				if (!empty($_GET['redirect'])) {
+					echo '<p>(Redirected from <em>' . $_GET['redirect'] . '</em>)</p>';
+				}
+			?>
             <p>Click any of the slot title texts to change what it says.</p>
             <p>
                 <input id='start' type='button' value='Insert Coin'>
