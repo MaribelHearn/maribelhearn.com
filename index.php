@@ -114,7 +114,7 @@
                 <div class='center'>
                     <div class='left'>
                         <p><a href='slots'><img src='assets/slots/slots.ico' alt='Heart icon'> Touhou Slot Machine</a></p>
-                        <p><em>Have fun randomizing Touhou characters and locations in a customizable way.</em></p>
+                        <p><em>Touhou randomizer based on Touhou Click and Drag Game, with customisation options.</em></p>
                     </div>
                     <div class='right'>
                         <p><a href='tiers'><img src='assets/tiers/tiers.ico' alt='Japanese castle icon'> Touhou Tier List Creator</a></p>

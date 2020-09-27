@@ -6,7 +6,7 @@
 		<title>Touhou Slot Machine</title>
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
-        <meta name='description' content=''>
+        <meta name='description' content='Touhou randomizer based on Touhou Click and Drag Game, with customisation options.'>
         <meta name='keywords' content='touhou, touhou project, slots, slot machine, waifu'>
 		<link rel='stylesheet' type='text/css' href='assets/slots/slots.css'>
 		<link rel='icon' type='image/x-icon' href='assets/slots/slots.ico'>
