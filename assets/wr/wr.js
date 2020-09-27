@@ -113,6 +113,7 @@ function display(event) {
     "<label id='label_seasons' class='Seasons' for='seasons'></label>" +
     "</p><table id='table' class='sortable'><thead id='list_thead'></thead><tbody id='list_tbody'></tbody></table>" +
     "<table><thead id='west_thead'></thead><tbody id='west_tbody'></tbody></table>");
+    $("#seasons").on("click", toggleSeasons);
 
     for (shottype in WRs[game]["Easy"]) {
         shottypes.pushStrict(seasonsEnabled ? shottype : shottype.removeSeason());
@@ -458,7 +459,6 @@ $(document).ready(function () {
     $("#player").on("change", getPlayerWRs);
     $("body").on("resize", updateOrientation);
     $("#dates").on("click", {alreadyDisabled: false}, toggleDates);
-    $("#seasons").on("click", toggleSeasons);
     $(".flag").attr("href", "");
     $("#en-gb").on("click", {language: "English", notation: "DMY"}, setLanguage);
     $("#en-us").on("click", {language: "English", notation: "MDY"}, setLanguage);
