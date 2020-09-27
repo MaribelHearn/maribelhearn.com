@@ -108,8 +108,7 @@
         <div id='buttons'>
             <div id='credits'>
                 <p>The artworks used for this page are drawn by
-                <a href='https://www.pixiv.net/member.php?id=4920496' target='_blank'>Dairi</a>,
-                <a href='https://www.pixiv.net/member.php?id=10349996' target='_blank'>るう</a> and
+                <a href='https://www.pixiv.net/member.php?id=4920496' target='_blank'>Dairi</a> and
                 <a href='http://www.pixiv.net/member.php?id=4678572' target='_blank'>ETERSIARUM</a>.
                 Special thanks go to <a href='https://www.youtube.com/channel/UCI1HPxKRky4Zm_mrRUH415Q' target='_blank'>Plus</a> for the original idea as well as testing,
                 <a href='https://twitter.com/pienyan_' target='_blank'>pienyan</a> for testing,
