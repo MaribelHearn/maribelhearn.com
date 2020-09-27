@@ -34,7 +34,6 @@ function randomiseImage(max, slot, previous) {
         $("#slot" + slot).html("<div id='text" + slot + "' class='name'>" + chars[slots[slot]] + "</div>");
     } else {
         $("#slot" + slot).html("<div id='text" + slot + "' class='name'>" + locs[slots[slot]] + "</div>");
-        $(".locname").css("bottom", locs[slots[slot]].length > BREAK_WORD ? "-40%" : "-45%");
     }
 }
 
@@ -176,7 +175,7 @@ function loadCharsLocs() {
         locs[i] = tempLocs[i / WIDTH].value;
     }
 
-    $("#locs_load").remove();
+    $("#chars_load, #locs_load").remove();
 }
 
 $(document).ready(function () {
