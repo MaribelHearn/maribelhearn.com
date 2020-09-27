@@ -343,15 +343,15 @@
                     else { echo '在以下的菜单选择玩家的名字则可查看其LNN。'; }
     			?></p>
     			<label for='player' class='player'><?php echo tl_term('Player', $lang); ?></label>
-    			<select id='player'>
-    			    <option>...</option>
+    			<input id='player' list='autocomplete' type='text'>
+                <datalist id='autocomplete'>
     			    <?php
     			        asort($pl);
     			        foreach ($pl as $key => $player) {
-    			            echo '<option>' . $player . '</option>';
+    			            echo '<option value="' . $player . '">';
     			        }
     			    ?>
-    		    </select>
+    		    </datalist>
             </div>
 			<div id='playerlist'>
 				<table class='sortable'>

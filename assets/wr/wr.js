@@ -308,9 +308,7 @@ function getPlayerWRs(player) {
         }, "json");
     }
 
-    if (player == "...") {
-        $("#playerlist").css("display", "none");
-        $("#playerlistbody, #playerlistfoot").html("");
+    if (player === "") {
         playerSelected = false;
         return;
     }
@@ -360,6 +358,12 @@ function getPlayerWRs(player) {
             $("#" + game + difficulty + "r").html(replayArray.join("<br>"));
             $("#" + game + difficulty + "d").html(dateArray.join("<br>"));
         }
+    }
+
+    if (sum === 0) {
+        $("#playerlist").css("display", "none");
+        playerSelected = false;
+        return;
     }
 
     $(".date_empty").css("display", datesEnabled ? "table-cell" : "none");
@@ -457,6 +461,7 @@ $(document).ready(function () {
     $("#playersearchlink").css("display", "block");
     $("#layouttoggle").on("click", toggleLayout);
     $("#player").on("change", getPlayerWRs);
+    $("#player").on("select", getPlayerWRs);
     $("body").on("resize", updateOrientation);
     $("#dates").on("click", {alreadyDisabled: false}, toggleDates);
     $(".flag").attr("href", "");
