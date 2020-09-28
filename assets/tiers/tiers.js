@@ -202,48 +202,46 @@ function tieredContextMenu(event) {
 
     return false;
 }
+function insertAt(character, tierNum, pos, chars) {
+    var counter, id, next;
+
+    $("#tier" + tierNum + "_" + (pos)).append($("#" + character));
+
+    for (counter = chars.length - 1; counter >= pos; counter -= 1) {
+        id = getItemAt(tierNum, counter);
+        next = "tier" + tierNum + "_" + (counter + 1);
+        $("#" + next).append($("#" + id));
+        chars[counter + 1] = id;
+    }
+
+    chars[pos] = character;
+}
 function addToTier(character, tierNum, pos, noDisplay) {
     var cats = (settings.sort == "characters" ? categories : gameCategories),
-        tierList = (settings.sort == "characters" ? tiers : gameTiers), categoryName = getCategoryOf(character), counter;
+        tierList = (settings.sort == "characters" ? tiers : gameTiers), categoryName = getCategoryOf(character);
 
     if (isTiered(character)) {
         return;
     }
 
     $("#msg_container").html("");
+    $("#" + character).removeClass("outline");
     $("#" + character).removeClass("list");
     $("#" + character).addClass("tiered");
+    $("#" + character).off("click");
     $("#" + character).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
+    id = "tier" + tierNum + "_" + tierList[tierNum].chars.length;
+    $("#tier" + tierNum).append("<span id='" + id + "'></span>");
+    tieredItems.push(character);
 
-    if (typeof pos == "number" && pos < tierList[tierNum].chars.length - 1) {
-        if (!noDisplay) {
-            $("#tier" + tierNum).append("<span id='" + id + tierList[tierNum].chars.length + "'></span>");
-
-            for (counter = tierList[tierNum].chars.length - 1; counter >= (pos + 1); counter -= 1) {
-                tmp = getItemAt(tierNum, counter);
-                $("#tier" + tierNum + "_" + counter).remove("#" + tmp);
-
-                if ((counter + 1) == tierList[tierNum].chars.length) {
-                    $("#tier" + tierNum).append("<span id='tier" + tierNum + "_" + (counter + 1) + "'></span>");
-                }
-
-                $("#tier" + tierNum + "_" + (counter + 1)).append($("#" + tmp));
-                tiers[tierNum].chars[counter + 1] = tmp;
-            }
-
-            $("#tier" + tierNum + "_" + (pos + 1)).append($("#" + character));
-            tiers[tierNum].chars[pos + 1] = character;
-        }
+    if (typeof pos == "number" && pos < tierList[tierNum].chars.length - 1 && !noDisplay) {
+        insertAt(character, tierNum, pos, tierList[tierNum].chars);
     } else {
-        id = "tier" + tierNum + "_" + tierList[tierNum].chars.length;
-
         if (!noDisplay) {
-            $("#tier" + tierNum).append("<span id='" + id + "'></span>");
             $("#" + id).append($("#" + character));
         }
 
         tierList[tierNum].chars.pushStrict(character);
-        tieredItems.push(character);
     }
 
     window.onbeforeunload = function () {
@@ -274,8 +272,15 @@ function addToTierMobile(event) {
     emptyModal();
     $("#msg_container").html("<strong class='confirmation'>Added " + $("#" + character.removeSpaces()).attr("title") + " to " + tierList[tierNum].name + "!</strong>");
 }
-function addToMulti() {
+function toggleMulti() {
+    if (multiSelection.contains(this.id)) {
+        multiSelection.remove(this.id);
+        $("#" + this.id).removeClass("outline");
+        return;
+    }
+
     multiSelection.push(this.id);
+    $("#" + this.id).addClass("outline");
 }
 function addMenu(event) {
     var character = event.data.name, tierList = (settings.sort == "characters" ? tiers : gameTiers),
@@ -321,6 +326,7 @@ function removeFromTier(character, tierNum) {
     $("#" + character).removeClass("tiered");
     $("#" + character).addClass("list");
     $("#" + character).off("contextmenu");
+    $("#" + character).on("click", toggleMulti);
 
     if (isMobile()) {
         $("#" + character).on("click", {name: $("#" + character).attr("title")}, addMenu);
@@ -1244,7 +1250,9 @@ function changeLog() {
     emptyModal();
     $("#modal_inner").html("<h2>Changelog</h2><ul class='left'><li>05/12/2018: Initial release</li>" +
     "<li>05/12/2018: Dairi art added and made the default; PC-98 and male characters added</li>" +
-    "<li>21/01/2019: Mobile version</li><li>24/04/2019: Works added</li><li>18/08/2019: Migrated to maribelhearn.com</li>" +
+    "<li>21/01/2019: Mobile version</li>" +
+    "<li>24/04/2019: Works added</li>" +
+    "<li>18/08/2019: Migrated to maribelhearn.com</li>" +
     "<li>17/09/2019: Mobile version bugs fixed and speed increased; changelog added</li>" +
     "<li>04/10/2019: WBaWC characters added</li>" +
     "<li>19/12/2019: Fixed character disappearance bug and related issues</li>" +
@@ -1339,18 +1347,26 @@ function allowDrop(event) {
     event.preventDefault();
 }
 function drop(event) {
-    var tierNum;
+    var tierNum, pos;
 
     event.preventDefault();
 
     if (event.target.id.substring(0, 2) == "th" || event.target.id.substring(0, 4) == "tier") {
         tierNum = Number(event.target.id.replace("th", "").replace("tier", "").replace(/_\d+/, ""));
 
-        if (isTiered(following)) {
-            changeToTier(following, tierNum);
+        if (multiSelection.length > 1) {
+            for (var i = 0; i < multiSelection.length; i++) {
+                addToTier(multiSelection[i], tierNum);
+            }
         } else {
-            addToTier(following, tierNum);
+            if (isTiered(following)) {
+                changeToTier(following, tierNum);
+            } else {
+                addToTier(following, tierNum);
+            }
         }
+
+        multiSelection = [];
     } else if (isTiered(event.target.id)) {
         if (isTiered(following)) {
             swapItems(following, event.target.id);
@@ -1525,7 +1541,7 @@ function loadCharacters() {
                 "C'><span id='" + character.removeSpaces() + "' class='list' draggable='true' title='" + character + "'>");
                 $("#" + character.removeSpaces()).on("dblclick", addToMostRecent);
                 $("#" + character.removeSpaces()).on("dragstart", drag);
-                $("#" + character.removeSpaces()).on("click", addToMulti);
+                $("#" + character.removeSpaces()).on("click", toggleMulti);
             }
 
             if (maleCharacters.contains(character.removeSpaces()) && !settings.maleEnabled) {
