@@ -98,6 +98,9 @@ li {
 .tierview_screenshot_button {
     margin-left: 10px;
 }
+.outline {
+    border: 2px solid #ddd;
+}
 #buttons, #characters, #show, #wrap {
     background-color: #1b232e;
     font: 14px verdana, sans-serif;
