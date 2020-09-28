@@ -1355,8 +1355,17 @@ function drop(event) {
         tierNum = Number(event.target.id.replace("th", "").replace("tier", "").replace(/_\d+/, ""));
 
         if (multiSelection.length > 1) {
-            for (var i = 0; i < multiSelection.length; i++) {
-                addToTier(multiSelection[i], tierNum);
+            if (multiSelection.contains(following)) {
+                for (var i = 0; i < multiSelection.length; i++) {
+                    addToTier(multiSelection[i], tierNum);
+                }
+            } else {
+                for (i = 0; i < multiSelection.length; i++) {
+                    $("#" + multiSelection[i]).removeClass("outline");
+                }
+
+                multiSelection = [];
+                addToTier(following, tierNum);
             }
         } else {
             if (isTiered(following)) {
