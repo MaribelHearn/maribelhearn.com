@@ -121,7 +121,7 @@
             </table>
             <h2 id='guide'>Netplay Guide</h2>
             <p>First of all, you need to use the following link to download and install a package of necessary netplay tools:</p>
-            <p><a href='https://maribelhearn.com/PoFV-Adonis-VPatch-Goodies.zip' target='_blank'>PoFV-Adonis-VPatch-Goodies.zip</a></p>
+            <p><a href='https://maribelhearn.com/mirror/PoFV-Adonis-VPatch-Goodies.zip' target='_blank'>PoFV-Adonis-VPatch-Goodies.zip</a></p>
             <p>After that, you want to extract all of the content of the <span class='code'>.zip</span> file to your PoFV game folder,
             i.e. the one that contains <span class='code'>th09.exe</span>. Your folder should look like this:</p>
             <img class='guide' src='assets/pofv/folder.png' alt='PoFV folder'>
