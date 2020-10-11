@@ -21,7 +21,7 @@
 
     <body class='<?php echo check_webp() ?>'>
         <main>
-            <div id='wrap'>
+            <div id='wrap' class='wrap'>
                 <span id='links'><a href='/'>Back to Main Page</a></span>
                 <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
                 <h1>About Me</h1>
@@ -201,7 +201,8 @@
                     <li>I use the default keyboard that came with my PC to play, making me one of the
                     rare serious keyboard players <em>not</em> to use a mechanical keyboard.</li>
                     <li>Linux distributions are my preferred operating systems. I have used them on my laptop since late 2014 and
-                    on my main PC since late 2018. Firefox is my preferred browser and has been for a long time.</li>
+                    on my main PC since late 2018.</li>
+                    <li>Pale Moon is my preferred browser, which I switched to from Firefox after maining it for many years.</li>
                     <li>As of my most recent measurement, I am 1.934 meters tall, or 6' 4'' in feet and inches.</li>
                     <li>I have my smartphone hanging around my neck. It's very convenient, allows me to immediately grab it when I need it,
                     yet I have yet to meet even a single other person that does this.</li>
