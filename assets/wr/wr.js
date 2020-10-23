@@ -276,13 +276,13 @@ function showWRs(event) {
         if (game == "HSiFS") {
             $(removeSeason(bestShot.id) + (difficulty == "Extra" ? "Small" : "")).html((bestShot.replay === "" ? "<u>" + sep(bestShotMax) +
             "</u>" : "<u><a class='replay' href='" + bestShot.replay + "'>" + sep(bestShotMax) + "</a></u>") + "<br>by <em>" + bestShot.player +
-            "</em>" + (game == "HSiFS" && difficulty != "Extra" ? " (" + bestshotseason + ")" : "") + (bestShot.date && datesEnabled ? "<span class='dimgrey'><br>" +
+            "</em>" + (game == "HSiFS" && difficulty != "Extra" ? " (" + bestShot.season + ")" : "") + (bestShot.date && datesEnabled ? "<span class='dimgrey'><br>" +
             "<span class='datestring_game'>" + bestShot.date + "</span></span>" : ""));
         }
     }
 
     if (game == "HSiFS" && seasonsEnabled) {
-        $(overall).html($(overall).html().replace("<u>", "<u><strong>").replace("</u>", "</strong></u>"));
+        $(overall.id).html($(overall.id).html().replace("<u>", "<u><strong>").replace("</u>", "</strong></u>"));
     } else {
         $(removeSeason(overall.id)).html($(removeSeason(overall.id)).html().replace("<u>", "<u><strong>").replace("</u>", "</strong></u>"));
     }
