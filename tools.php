@@ -41,7 +41,7 @@
             <h2 id='contents'>Contents</h2>
             <div class='border'>
                 <p><a href='#vpatch'>Vpatch</a></p>
-                <p><a href='#thcrap'>THCRAP (Translation patches / Modding tool)</a></p>
+                <p><a href='#thcrap'>THCRAP</a></p>
                 <p><a href='#enbconvertor'><strong>For Windows 10:</strong> DX8 to DX9</a></p>
                 <p><a href='#scorefiles'>Completed Scorefiles</a></p>
                 <p><a href='#spoileral'>SpoilerAL</a></p>
@@ -68,8 +68,10 @@
             <p>Translation patches into English and many other languages, as well as countless modifications to gameplay,
 			graphics and more, plus the ability to make your own, are provided by the Touhou Community Reliant Automatic Patcher (THCRAP) for all Windows Touhou games.
 			The thpatch.net link also links to instructions on how to use the patcher.</p>
-            <a href='https://maribelhearn.com/mirror/thcrap.zip' target='_blank'>Download (maribelhearn.com mirror)</a>
-            <a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Download' target='_blank'>Download (thpatch.net)</a>
+			<div>
+            	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Download' target='_blank'>Download (thpatch.net)</a></p>
+            	<p><a href='https://maribelhearn.com/mirror/thcrap.zip' target='_blank'>Download (maribelhearn.com mirror)</a></p>
+			</div>
             <!-- Enbconvertor -->
             <hr>
             <h2 id='enbconvertor'>DX8 to DX9 converter</h2>
@@ -93,14 +95,15 @@
             and separate HSiFS SSGs with cheat options. Be wary of an occasional menu bug that causes an SSG to duplicate itself and make other SSGs invisible.</p>
             <div>
                 <p><a href='http://wcs.main.jp/index/software/spal/' target='_blank'>Main Program</a></p>
-                <p><a href='http://thusagi.starfree.jp/ssg/th06ssg.zip' target='_blank'>EoSD SSG (4.6)</a></p>
-                <p><a href='http://thusagi.starfree.jp/ssg/th07ssg.zip' target='_blank'>PCB SSG (4.6)</a></p>
-                <p><a href='http://thusagi.starfree.jp/ssg/th08ssg.zip' target='_blank'>IN SSG (4.6)</a></p>
-                <p><a href='http://thusagi.starfree.jp/ssg/th12ssg.zip' target='_blank'>UFO SSG (4.6)</a></p>
-                <p><a href='http://thusagi.starfree.jp/ssg/th16ssg.zip' target='_blank'>HSiFS SSG (4.6)</a></p>
-				<p><a href='https://mega.nz/#!OpxFSSJB!2eUH91vJAF_ejq7S5r3x5Jx7GYCP67LSSo4BuXhoDa4' target='_blank'>SSGs (niL)</a></p>
-                <p><a href='https://cdn.wikiwiki.jp/to/w/let/etc/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%81%AA%E3%81%A9/SpoilerAL%E7%94%A8%E3%81%AESSG%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/::attach/th_ssg20080502.zip?rev=8b2466505ba323da7fc610fad805213f&t=20120111011846'>SSGs (LET)</a></p>
-                <p><a href='http://www.mediafire.com/file/a4g4awdp4ll5a4n/SSG.zip' target='_blank'>SSGs (niL, English translated)</a></p>
+				<p class='wide-top'><a href='https://maribelhearn.com/mirror/4.6_SSGs.zip' target='_blank'>SSG Pack (4.6)</a></p>
+                <p class='wide-bottom'><a href='http://thusagi.starfree.jp/ssg/th06ssg.zip' target='_blank'>EoSD</a> |
+                <a href='http://thusagi.starfree.jp/ssg/th07ssg.zip' target='_blank'>PCB</a> |
+                <a href='http://thusagi.starfree.jp/ssg/th08ssg.zip' target='_blank'>IN</a> |
+                <a href='http://thusagi.starfree.jp/ssg/th12ssg.zip' target='_blank'>UFO</a> |
+                <a href='http://thusagi.starfree.jp/ssg/th16ssg.zip' target='_blank'>HSiFS</a></p>
+				<p><a href='https://mega.nz/#!OpxFSSJB!2eUH91vJAF_ejq7S5r3x5Jx7GYCP67LSSo4BuXhoDa4' target='_blank'>SSG Pack (niL)</a></p>
+                <p><a href='https://cdn.wikiwiki.jp/to/w/let/etc/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%81%AA%E3%81%A9/SpoilerAL%E7%94%A8%E3%81%AESSG%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/::attach/th_ssg20080502.zip?rev=8b2466505ba323da7fc610fad805213f&t=20120111011846'>SSG Pack (LET)</a></p>
+                <p class='wide-bottom'><a href='http://www.mediafire.com/file/a4g4awdp4ll5a4n/SSG.zip' target='_blank'>SSG Pack (niL, English translated)</a></p>
                 <p><a href='https://mega.nz/#!QUBTEB5J!idRbiOfr_BKFpMBy9e5qU5Ow1xPkxplVbR72G6Ud0KI' target='_blank'>MoF SSG by Akaldar</a></p>
                 <p><a href='https://mega.nz/#!BJwhwYRB!5Zgr6redSWbA2v2vco0b7k00XH-BIeTAPUnW28gI-20' target='_blank'>GFW SSG (English translated)</a></p>
                 <p><a href='https://drive.google.com/open?id=1Qs4jOBkDH3dN7tI5X2cJRzd_awZFf80d' target='_blank'>TD Scoring SSG by Leo (English translated)</a></p>
@@ -122,9 +125,9 @@
             <p>Tools that allow you to skip to specific patterns in SA, UFO and LoLK, also allowing for other settings like your current power.
             The UFO and LoLK tools are external programs while the SA tool is a modification of the program. The LoLK one was made for v1.00a but mostly functions properly on v1.00b as well.</p>
             <div>
-                <p><a href='https://drive.google.com/file/d/0BwqJeqvy1nDpRGRBUy1nX0dNWVU/view' target='_blank'>SA</a></p>
-                <p><a href='https://drive.google.com/file/d/0BwqJeqvy1nDpQ1FQaUc5dDlpUEk/view' target='_blank'>UFO</a></p>
-                <p><a href='http://www.mediafire.com/download/88ncjlua3hjrma2/th15_assist_2.2.rar' target='_blank'>LoLK</a></p>
+                <p><a href='https://drive.google.com/file/d/0BwqJeqvy1nDpRGRBUy1nX0dNWVU/view' target='_blank'>SA</a> |
+                <a href='https://drive.google.com/file/d/0BwqJeqvy1nDpQ1FQaUc5dDlpUEk/view' target='_blank'>UFO</a> |
+                <a href='http://www.mediafire.com/download/88ncjlua3hjrma2/th15_assist_2.2.rar' target='_blank'>LoLK</a></p>
             </div>
 			<p><strong>WBaWC Practice by <a href='https://twitter.com/Priweejt'>Priw8</a></strong></p>
 			<p>Allows skipping to any part of the game, similar to Riri's practice tools, using an in-game menu.</p>
@@ -141,27 +144,27 @@
             <p><strong>Boss Rush Patches by <a href='https://twitter.com/ReformedSmol' target='_blank'>Martin</a></strong></p>
             <p>All midbosses and bosses are included, everything else being kept the same. There are also 'boss-only' versions that do skip the midbosses.</p>
             <div>
-                <p><a href='https://mega.nz/#F!rswTmICb!lnVEolHezNbe4pZPopSqwA' target='_blank'>MoF</a></p>
-                <p><a href='https://mega.nz/#F!a4BCTACS!Z3gA684Me36gZK_i4y_5Dg' target='_blank'>SA</a></p>
-                <p><a href='https://mega.nz/#F!rswTmICb!lnVEolHezNbe4pZPopSqwA' target='_blank'>UFO</a></p>
-                <p><a href='https://mega.nz/#F!TlwUwBTb!hT-vr7hhft3dwt3slrhCEQ' target='_blank'>GFW</a></p>
-                <p><a href='https://mega.nz/#F!axJSDILb!FPNSYOddqDosZ1I1Y-9UBQ' target='_blank'>TD</a></p>
-                <p><a href='https://mega.nz/#F!K1AByK5I!7NrTie_DHQBrH5OKnIXfEg' target='_blank'>DDC</a></p>
-                <p><a href='https://mega.nz/#F!npwSGaJC!pNfJemXgehNGbif2L-d6zQ' target='_blank'>LoLK</a></p>
-                <p><a href='https://maribelhearn.com/mirror/HSiFS%20Boss%20Rush%20v1.0.zip' target='_blank'>HSiFS</a></p>
+				<p><a href='https://maribelhearn.com/mirror/Full%20Boss%20Rush.zip' target='_blank'>Full Pack</a></p>
+                <p><a href='https://mega.nz/#F!rswTmICb!lnVEolHezNbe4pZPopSqwA' target='_blank'>MoF</a> |
+                <a href='https://mega.nz/#F!a4BCTACS!Z3gA684Me36gZK_i4y_5Dg' target='_blank'>SA</a> |
+                <a href='https://mega.nz/#F!rswTmICb!lnVEolHezNbe4pZPopSqwA' target='_blank'>UFO</a> |
+                <a href='https://mega.nz/#F!TlwUwBTb!hT-vr7hhft3dwt3slrhCEQ' target='_blank'>GFW</a> |
+                <a href='https://mega.nz/#F!axJSDILb!FPNSYOddqDosZ1I1Y-9UBQ' target='_blank'>TD</a> | |
+                <a href='https://mega.nz/#F!K1AByK5I!7NrTie_DHQBrH5OKnIXfEg' target='_blank'>DDC</a> |
+                <a href='https://mega.nz/#F!npwSGaJC!pNfJemXgehNGbif2L-d6zQ' target='_blank'>LoLK</a> |
+                <a href='https://maribelhearn.com/mirror/HSiFS%20Boss%20Rush%20v1.0.zip' target='_blank'>HSiFS</a></p>
 				<!--
 				Old link boss-rush: https://mega.nz/#!60JyGaTB!HOQPcI7Pq6MiEMKqI-Ucv49CxoqJ8Sc1d3u5s4wNS94
 				Old link boss-only: https://mega.nz/#!Ogh3hD5B!PT6aGiyqhGAS1r4Y0IfjLTP3hDtRKa1qGi3zi6XjaOA
 				Old link full pack: https://mega.nz/#F!i0I0BIaI!A3wHnQYX2xFUTKS1po1GDw
 				-->
-                <p><a href='https://maribelhearn.com/mirror/Full%20Boss%20Rush.zip' target='_blank'>Full Pack</a></p>
             </div>
             <p><strong>Boss Rush Patches by <a href='https://twitter.com/drakeirving' target='_blank'>Drake</a></strong></p>
             <p>Patches for SA and UFO that not only remove stage portions, but also bombs. The SA one includes turning Stage 4 into 'Satori Rush',
             where you fight every single one of her Spell Cards. Note that the safe areas on Border of Wave and Particle and Utsuho's 3rd spell are removed in this patch.</p>
             <div>
-                <p><a href='https://mega.nz/#!85MACTBK!wBZpEyv5rWp7_qwHTQCqa7F_4hFNF5JOpjh4JS5iSGY' target='_blank'>SA</a></p>
-                <p><a href='https://mega.nz/#!lskyiIzZ!yJB6HLwRQnXs4wO9BmHNxkVtrKrdoKhM-GmMEBRy0ro' target='_blank'>UFO</a></p>
+                <p><a href='https://mega.nz/#!85MACTBK!wBZpEyv5rWp7_qwHTQCqa7F_4hFNF5JOpjh4JS5iSGY' target='_blank'>SA</a> |
+                <a href='https://mega.nz/#!lskyiIzZ!yJB6HLwRQnXs4wO9BmHNxkVtrKrdoKhM-GmMEBRy0ro' target='_blank'>UFO</a></p>
             </div>
             <p><strong>EoSD Boss Rush by <a href='https://twitter.com/mdude33' target='_blank'>Dass</a></strong></p>
             <p>Another boss rush patch for EoSD, also including 'Patchouli Rush'.</p>
@@ -238,8 +241,8 @@
             <p><strong>Hard Mode patches by <a href='https://twitter.com/chirpeh13' target='_blank'>Chirpy</a></strong></p>
             <p>Patches for UFO and DDC that modify patterns, besides simply making them harder.</p>
             <div>
-                <p><a href='https://www.mediafire.com/file/e3sx5g9jtbell33/th12.dat' target='_blank'>HardUFO</a></p>
-                <p><a href='http://www.mediafire.com/file/usbud0rr385z2nn/th14.dat' target='_blank'>HarDDC</a></p>
+                <p><a href='https://www.mediafire.com/file/e3sx5g9jtbell33/th12.dat' target='_blank'>HardUFO</a> |
+                <a href='http://www.mediafire.com/file/usbud0rr385z2nn/th14.dat' target='_blank'>HarDDC</a></p>
             </div>
 			<p><strong>RNG patches by <a href='https://www.twitch.tv/thedaikarasu' target='_blank'>Daikarasu</a></strong>
 			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img src='assets/ext/thcrap-icon-small.ico' alt='THCRAP favicon'> RNG</a></p>
@@ -251,8 +254,8 @@
             <p><strong>IN Double Stage 4/6</strong></p>
             <p>Allows you to play 4A, 4B, 6A and 6B in a single run. Optionally also includes Extra at the end.</p>
             <div>
-                <p><a href='http://www.mediafire.com/file/a0nd1a6asqpy2de/th08_8stages.rar' target='_blank'>Without Extra</a></p>
-                <p><a href='http://www.mediafire.com/file/sb7hzvb4fmwrwvb/th08_9stages.rar' target='_blank'>With Extra</a></p>
+                <p><a href='http://www.mediafire.com/file/a0nd1a6asqpy2de/th08_8stages.rar' target='_blank'>Without Extra</a> |
+                <a href='http://www.mediafire.com/file/sb7hzvb4fmwrwvb/th08_9stages.rar' target='_blank'>With Extra</a></p>
             </div>
             <p><strong>HSiFS UltraB by <a href='https://twitter.com/mdude33' target='_blank'>Dass</a></strong></p>
             <p>An alternate HSiFS Ultra patch that also increases density.</p>
@@ -280,7 +283,7 @@
                 <p><a href='http://www.mediafire.com/file/apaks0mcs351ylr/Legacy+of+Lunatic+Christmas.zip' target='_blank'>Legacy of Lunatic Christmas</a></p>
             </div>
 			<p><strong>Vertical Play Patches by <a href='http://bygzam.seesaa.net/'>niisaka</a></strong></p>
-			<p>Makes MoF, SA, UFO and TD play in the arcade-style vertical (TATE) resolution.</p>
+			<p>Makes MoF, SA, UFO and TD play in the arcade-style vertical resolution, also known as TATE.</p>
 			<a href='https://bygzam.up.seesaa.net/zip/th_pivot_dx9-110924.zip' target='_blank'>Download</a>
             <!-- Emulators -->
             <hr>
