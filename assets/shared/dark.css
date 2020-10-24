@@ -39,6 +39,10 @@ table#contents,  tr:not(.noborders), th:not(.noborders), td:not(.noborders) {
 .does_even_score_well {
     color: #E768C3;
 }
+.page_table {
+    background-color: #333;
+    border: 3px solid #aaa;
+}
 .dimgrey {
     color: #999999;
 }

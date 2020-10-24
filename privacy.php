@@ -2,7 +2,7 @@
 <html id='top' lang='en'>
 
     <head>
-		<title>Privacy Policy - Maribel Hearn's Web Portal</title>
+		<title>Privacy Policy - Maribel Hearn's Touhou Portal</title>
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
         <link rel='stylesheet' type='text/css' href='assets/index/main.css'>
@@ -11,23 +11,23 @@
 
     <body class='<?php include '.stats/count.php'; echo check_webp() ?>'>
         <main>
-            <div id='wrap'>
+            <div id='wrap' class='wrap'>
                 <span id='links'><a href='/'>Back to Main Page</a></span>
                 <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
                 <h1>Privacy Policy</h1>
                 <p class='wide'><strong>Effective date:</strong> 16 December 2019</p>
-                <p>Maribel Hearn's Web Portal ("us", "we", or "our") operates the maribelhearn.com
+                <p>Maribel Hearn's Touhou Portal ("us", "we", or "our") operates the maribelhearn.com
                 website (hereinafter referred to as the "Service").</p>
                 <p>This page informs you of our policies regarding the collection, use,
                 and disclosure of personal data when you use our Service and the choices you have associated with that data.
-                The Privacy Policy  for Maribel Hearn's Web Portal has been created with the help of
+                The Privacy Policy  for Maribel Hearn's Touhou Portal has been created with the help of
                 <a href='https://www.termsfeed.com/privacy-policy-generator/'>Privacy Policy Generator</a>.</p>
                 <p>We use your data to provide and improve the Service. By using the Service,
                 you agree to the collection and use of information in accordance with this policy.</p>
 
                 <h2>Definitions</h2>
                 <p><strong>Service</strong></p>
-                <p>Service is the maribelhearn.com website operated by Maribel Hearn's Web Portal</p>
+                <p>Service is the maribelhearn.com website operated by Maribel Hearn's Touhou Portal</p>
                 <p><strong>Personal Data</strong></p>
                 <p>Personal Data means data about a living individual who can be identified from those data (or from those and other information either in our possession or likely to come into our possession).</p>
                 <p><strong>Usage Data</strong></p>
