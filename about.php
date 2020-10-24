@@ -12,7 +12,7 @@
 ?>
 
     <head>
-		<title>About Me - Maribel Hearn's Web Portal</title>
+		<title>About Me - Maribel Hearn's Touhou Portal</title>
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
         <link rel='stylesheet' type='text/css' href='assets/index/main.css'>
