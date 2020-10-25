@@ -264,9 +264,9 @@ function drawOverview() {
     html2canvas(document.getElementById("overview_container"), {
         y: $("#overview").offset().top - (innerHeight - window.innerHeight) - 75,
         windowWidth: $("#overview").width() + 200,
+        height: $("#overview").height() + 30,
         width: $("#overview").width() + 200,
         backgroundColor: "white",
-        height: 550,
         x: 0
     }).then(function(canvas) {
         var base64image = canvas.toDataURL("image/png");
