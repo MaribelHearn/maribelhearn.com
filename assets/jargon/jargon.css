@@ -63,7 +63,7 @@ h2 {
 .jargon {
     width: 150px;
 }
-@media only screen and (min-width:800px) and (max-width:1400px) {
+@media only screen and (min-width: 1100px) and (max-width: 1400px) {
     .wrap {
         margin-left: 15%;
         margin-right: 15%;
@@ -72,10 +72,39 @@ h2 {
         width: auto;
     }
 }
-@media only screen and (max-width:800px) {
+@media only screen and (min-width: 800px) and (max-width: 1100px) {
+    h1 {
+        margin-bottom: 15px;
+        font-size: 44px;
+    }
+    h2 {
+        margin-bottom: 15px;
+        margin-top: 10px;
+        font-size: 32px;
+    }
+    .wrap {
+        margin-left: 10%;
+        margin-right: 10%;
+        font-size: 11px;
+    }
+    .jargon {
+        width: auto;
+    }
+}
+@media only screen and (max-width: 800px) {
+    h1 {
+        margin-bottom: 15px;
+        font-size: 44px;
+    }
+    h2 {
+        margin-bottom: 15px;
+        margin-top: 10px;
+        font-size: 32px;
+    }
     .wrap {
         margin-left: 0;
         margin-right: 0;
+        font-size: 11px;
     }
     .jargon {
         width: auto;

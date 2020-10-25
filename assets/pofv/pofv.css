@@ -158,12 +158,12 @@ ol > li {
 .hidden {
     display: none;
 }
-@media only screen and (min-width:1500px) and (max-width:1800px) {
+@media only screen and (min-width: 1500px) and (max-width: 1800px) {
     #modal_inner {
         width: 55%;
     }
 }
-@media only screen and (min-width:1000px) and (max-width:1500px) {
+@media only screen and (min-width: 1100px) and (max-width: 1500px) {
     .wrap {
         margin-left: 15%;
         margin-right: 15%;
@@ -172,7 +172,17 @@ ol > li {
         width: 65%;
     }
 }
-@media only screen and (max-width:1000px) {
+@media only screen and (max-width: 1100px) {
+    h1 {
+        font-size: 44px;
+    }
+    h2 {
+        font-size: 32px;
+    }
+    p {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
     .wrap {
         margin-left: 0px;
         margin-right: 0px;
@@ -183,14 +193,8 @@ ol > li {
     #modal_inner {
         width: 90%;
     }
-    h1 {
-        font-size: 36px;
-    }
-    h2 {
-        font-size: 24px;
-    }
 }
-@media only screen and (min-width:320px) and (max-width:800px) and (orientation:portrait) {
+@media only screen and (min-width: 320px) and (max-width: 800px) and (orientation: portrait) {
     .wrap {
         margin-left: 0px;
         margin-right: 0px;
@@ -234,7 +238,7 @@ ol > li {
         margin-right: 0px;
     }
 }
-@media only screen and (min-width:480px) and (max-width:640px) and (orientation:landscape) {
+@media only screen and (min-width: 480px) and (max-width: 640px) and (orientation: landscape) {
     .wrap {
         margin-left: 0px;
         margin-right: 0px;

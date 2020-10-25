@@ -12,8 +12,11 @@
     </head>
 
     <body class='<?php echo check_webp() ?>'>
+        <nav>
+            <div id='nav' class='wrap'><?php echo file_get_contents('nav.html'); ?></div>
+        </nav>
         <main>
-            <div id='wrap'>
+            <div id='wrap' class='wrap'>
                 <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
                 <h1>Seihou Banshiryuu C67</h1>
                 <p>This page covers the scoring system and mechanics of the Comiket 67 release of Seihou Banshiryuu.</p>

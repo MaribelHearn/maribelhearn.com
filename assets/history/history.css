@@ -38,17 +38,6 @@ h3 {
 caption {
     margin-bottom: 10px;
 }
-#wrap {
-    border: 1px solid black;
-    text-align: center;
-    margin-left: 25%;
-    margin-right: 25%;
-    padding-left: 15px;
-    padding-right: 15px;
-    opacity: 0.8;
-    font: 14px verdana, sans-serif;
-    padding-bottom: 10px;
-}
 #hy {
     float: right;
 }
@@ -60,6 +49,22 @@ caption {
 }
 #routes {
     margin-top: 15px;
+}
+#nav {
+    margin-bottom: 5px;
+}
+#wrap {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+}
+.wrap {
+    border: 1px solid black;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    opacity: 0.8;
+    font: 14px verdana, sans-serif;
 }
 .hidden {
     border: none;
@@ -157,8 +162,34 @@ caption {
     margin-left: -5px;
     background-color: #c9ff8b;
 }
+@media only screen and (min-width: 800px) and (max-width: 1100px) {
+    h1 {
+        font-size: 44px;
+    }
+    h2 {
+        font-size: 32px;
+    }
+    .wrap {
+        margin-left: 13%;
+        margin-right: 13%;
+        font-size: 11px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    h1 {
+        font-size: 44px;
+    }
+    h2 {
+        font-size: 32px;
+    }
+    .wrap {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 11px;
+    }
+}
 @media only screen and (min-width: 320px) and (max-width: 800px) and (orientation: portrait) {
-    #wrap {
+    .wrap {
         margin-left: 0;
         margin-right: 0;
         font-size: 11px;
@@ -178,7 +209,7 @@ caption {
     }
 }
 @media only screen and (min-width: 480px) and (max-width: 640px) and (orientation: landscape) {
-    #wrap {
+    .wrap {
         margin-left: 0;
         margin-right: 0;
         font-size: 11px;
@@ -194,13 +225,13 @@ caption {
     }
 }
 @media only screen and (max-width: 800px) {
-    #wrap {
+    .wrap {
         margin-left: 0;
         margin-right: 0;
     }
 }
 @media only screen and (min-width: 800px) and (max-width: 1400px) {
-    #wrap {
+    .wrap {
         margin-left: 15%;
         margin-right: 15%;
     }
