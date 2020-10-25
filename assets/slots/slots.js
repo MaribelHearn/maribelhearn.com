@@ -108,8 +108,8 @@ function takeScreenshot() {
         var base64image = canvas.toDataURL("image/png"), link;
 
         $("#modal_inner").html("<h2>Screenshot</h2><p>");
-        $("#modal_inner").append("<a href='" + base64image + "' download='" + fileName() + "'>" +
-        "<input type='button' class='screenshot_button' value='Save to Device'></a></p>" +
+        $("#modal_inner").append("<a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
+        "<input type='button' value='Save to Device'></a></p>" +
         "<p>This feature currently does not work on Chromium-based browsers.</p>" +
         "<p><img id='screenshot_base64' src='" + base64image + "' alt='Slot machine screenshot'></p>");
         $("#modal_inner").css("display", "block");
@@ -193,6 +193,10 @@ $(document).ready(function () {
         if (localStorage.hasOwnProperty("slotTitles")) {
             $("#title" + i).html(slotTitles[i]);
         }
+    }
+
+    if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) {
+        $("#screenshot").css("display", "none");
     }
 
     loadCharsLocs();
