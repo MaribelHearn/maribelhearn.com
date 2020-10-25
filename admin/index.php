@@ -23,7 +23,13 @@
 
     <body class='<?php echo check_webp() ?>'>
         <nav>
-            <div id='nav' class='wrap'><?php echo file_get_contents('nav.html'); ?></div>
+            <div id='nav' class='wrap'>
+                <?php
+                    $nav = file_get_contents('../nav.html');
+                    $nav = str_ireplace('assets', '../assets', $nav);
+                    echo str_ireplace('favicon', '../favicon', $nav);
+                ?>
+            </div>
         </nav>
         <main>
             <div id='wrap' class='wrap'>
