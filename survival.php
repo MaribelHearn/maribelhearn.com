@@ -34,6 +34,7 @@
 		<script src='assets/shared/utils.js' defer></script>
 		<script src='assets/survival/survival.js' defer></script>
         <script src='assets/shared/sorttable.js' defer></script>
+        <script src='assets/shared/html2canvas.js' defer></script>
 	</head>
 
     <body class='<?php echo check_webp() ?>'>
@@ -58,14 +59,13 @@
 			?>
             <noscript><strong>Notice:</strong> this page will not function properly with JavaScript disabled.</noscript>
 			<p>Fill in the best survivals you have pulled off in the table below. If you leave a dropdown menu on the N/A option, it will not be factored in.
-            At the bottom of the page, three different sortable tables indicating your survival progress will be generated.</p>
+            When you click Apply, three different tables indicating your survival progress will be generated.</p>
+			<p>The main survival progress table is an image and can be copied or saved to your device.</p>
             <p>NM = No Miss (no deaths), NB = No Bomb, NMNB = No Miss No Bomb. There can also be a third restriction, depending on the game.
             In PCB this restriction is NBB (No Border Breaks), in UFO it is NV (No UFO Summons),
 			in TD it is NT (No Trance), in HSiFS it is NR (No Releases) and in WBaWC it is NHNRB (No Berserk Roar No Roar Breaks).
             The Phantasm Stage counts as another Extra Stage.</p>
             <p>Use the below selectors to fill up many achievements at once. Normal, Hard and Lunatic will also fill the difficulties below them.</p>
-            <p>To allow for proper screenshots, the background for the tables is not transparent.</p>
-            <p>Legend: purple = NN (with third restriction, if any), blue = NB, brown = NM, green = 1cc.</p>
             <p>
                 <label for='fillGameDifficulty'>Game / Difficulty</label>
                 <select id='fillGameDifficulty'>
@@ -141,7 +141,58 @@
 			was drawn by <a href='https://www.pixiv.net/member.php?id=759506'>windtalker</a>.</p>
 		</div>
 		<div id='results'>
-			<div id='modal_inner'></div>
+			<div id='modal_inner'>
+				<h2>Progress Table</h2>
+				<p id='rendering_message'>Rendering image...</p>
+				<span id='overview_container'>
+					<table id='overview'>
+						<caption>
+							<div class='legend clear'></div> 1cc
+							<div class='legend nm'></div> NM
+							<div class='legend nb'></div> NB
+							<div class='legend nmnb'></div> NMNB
+						</caption>
+						<thead>
+							<tr>
+								<th class='overview'>Game</th>
+								<th class='overview'>Easy</th>
+								<th class='overview'>Normal</th>
+								<th class='overview'>Hard</th>
+								<th class='overview'>Lunatic</th>
+								<th class='overview' colspan='2'>Extra</th>
+							</tr>
+						</thead>
+						<tbody id='overview_tbody'></tbody>
+					</table>
+				</span>
+				<span id='screenshot'></span>
+		        <h2>Numbers of Achievements</h2>
+				<table id='number_table' class='sortable'>
+		        	<thead>
+						<tr>
+							<th>Difficulty</th>
+							<th>Not cleared</th>
+							<th>1cc</th>
+							<th>NM</th>
+			        		<th>NB</th>
+							<th>NB+</th>
+							<th>NMNB</th>
+						</tr>
+					</thead>
+					<tbody id='number_table_tbody'></tbody>
+				</table>
+		        <h2>Clear Completions</h2>
+				<table id='completion_table' class='sortable'>
+		        	<thead>
+						<tr>
+							<th>Game</th>
+							<th>Clear Completion</th>
+						</tr>
+					</thead>
+					<tbody id='completion_table_tbody'></tbody>
+				</table>
+		        <input id='close' type='button' value='Close'>
+			</div>
 		</div>
         <script src='assets/shared/dark.js'></script>
 	</body>
