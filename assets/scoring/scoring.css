@@ -121,31 +121,41 @@ table.center {
 .border p {
     margin: 4px;
 }
-@media only screen and (min-width:1200px) and (max-width:1600px) {
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
     .wrap {
         margin-left: 15%;
         margin-right: 15%;
     }
 }
-@media only screen and (min-width:1100px) and (max-width:1200px) {
+@media only screen and (min-width: 1100px) and (max-width: 1200px) {
     .wrap {
         margin-left: 10%;
         margin-right: 10%;
     }
 }
-@media only screen and (min-width:910px) and (max-width:1100px) {
+@media only screen and (min-width: 910px) and (max-width: 1100px) {
+    h1 {
+        margin-bottom: 15px;
+        font-size: 44px;
+    }
     .wrap {
-        margin-left: 5%;
-        margin-right: 5%;
+        margin-left: 8%;
+        margin-right: 8%;
+        font-size: 11px;
     }
 }
-@media only screen and (max-width:910px) {
+@media only screen and (max-width: 910px) {
+    h1 {
+        margin-bottom: 15px;
+        font-size: 44px;
+    }
     .wrap {
         margin-left: 0;
         margin-right: 0;
+        font-size: 11px;
     }
 }
-@media only screen and (max-width:820px) and (orientation:portrait) {
+@media only screen and (max-width: 820px) and (orientation: portrait) {
     .wrap {
         margin-left: 0;
         margin-right: 0;
@@ -178,7 +188,7 @@ table.center {
         float: left;
     }
 }
-@media only screen and (max-width:820px) and (orientation:landscape) {
+@media only screen and (max-width: 820px) and (orientation: landscape) {
     .wrap {
         margin-left: 0;
         margin-right: 0;

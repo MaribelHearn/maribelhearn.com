@@ -10,6 +10,9 @@
     </head>
 
     <body class='<?php include '.stats/count.php'; echo check_webp() ?>'>
+        <nav>
+            <div id='nav' class='wrap'><?php echo file_get_contents('nav.html'); ?></div>
+        </nav>
         <main>
             <div id='wrap' class='wrap'>
                 <span id='links'><a href='/'>Back to Main Page</a></span>

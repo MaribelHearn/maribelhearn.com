@@ -36,16 +36,21 @@ p {
 .wide-top {
     margin-top: 10px;
 }
-#wrap {
+.wrap {
     border: 1px solid #000;
     text-align: center;
     margin-left: 23%;
     margin-right: 23%;
+    opacity: 0.8;
+    font: 14px verdana,sans-serif;
+}
+#wrap {
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 15px;
-    opacity: 0.8;
-    font: 14px verdana,sans-serif;
+}
+#nav {
+    margin-bottom: 5px;
 }
 #links {
     float: left;
@@ -53,41 +58,61 @@ p {
 #hy {
     float: right;
 }
-@media only screen and (min-width:800px) and (max-width:1400px) {
-    #wrap {
+@media only screen and (min-width: 1100px) and (max-width: 1400px) {
+    .wrap {
         margin-left: 15%;
         margin-right: 15%;
     }
 }
-@media only screen and (max-width:800px) {
-    #wrap {
-        margin-left: 0;
-        margin-right: 0;
+@media only screen and (min-width: 800px) and (max-width: 1100px) {
+    h1 {
+        font-size: 44px;
+    }
+    h2 {
+        font-size: 32px;
+    }
+    .wrap {
+        margin-left: 13%;
+        margin-right: 13%;
+        font-size: 11px;
     }
 }
-@media only screen and (min-width:320px) and (max-width:800px) and (orientation:portrait) {
-    #wrap {
+@media only screen and (max-width: 800px) {
+    h1 {
+        font-size: 44px;
+    }
+    h2 {
+        font-size: 32px;
+    }
+    .wrap {
         margin-left: 0;
         margin-right: 0;
         font-size: 11px;
     }
+}
+@media only screen and (min-width: 320px) and (max-width: 800px) and (orientation: portrait) {
     h1 {
         font-size: 36px;
     }
     h2 {
         font-size: 24px;
     }
-}
-@media only screen and (min-width:480px) and (max-width:640px) and (orientation:landscape) {
-    #wrap {
+    .wrap {
         margin-left: 0;
         margin-right: 0;
         font-size: 11px;
     }
+}
+@media only screen and (min-width: 480px) and (max-width: 640px) and (orientation: landscape) {
     h1 {
         font-size: 36px;
     }
     h2 {
         font-size: 24px;
+    }
+    .wrap {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 11px;
     }
 }

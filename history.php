@@ -12,8 +12,11 @@
 	</head>
 
     <body class='<?php echo check_webp() ?>'>
+        <nav>
+			<div id='nav' class='wrap'><?php echo file_get_contents('nav.html'); ?></div>
+        </nav>
 		<main>
-			<div id='wrap'>
+			<div id='wrap' class='wrap'>
 	            <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
 	            <h1>Maribel's Achievement History</h1>
 	            <p id='notice'><strong>Notice:</strong> this page is best viewed on mobile using landscape mode.</p>
@@ -306,7 +309,7 @@
 	                        <tr id='oEoSD'>
 	                            <th>EoSD</th>
 	                            <td id='eEoSD' class='nmnb'></td>
-	                            <td id='nEoSD' class='nb'></td>
+	                            <td id='nEoSD' class='nmnb'></td>
 	                            <td id='hEoSD' class='nb'></td>
 	                            <td id='lEoSD' class='nb'></td>
 	                            <td id='xEoSD' class='nmnb' colspan='2'></td>
@@ -875,7 +878,7 @@
 		                    <td class='g'>Completed</td>
 		                    <td>December 9, 2011</td>
 		                    <td>January 2, 2016</td>
-		                    <td>-</td>
+		                    <td>October 22, 2020</td>
 		                    <td>No</td>
 		                </tr>
 		                <tr>

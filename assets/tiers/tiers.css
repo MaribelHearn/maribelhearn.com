@@ -92,7 +92,7 @@ li {
 .hidden {
     display: none;
 }
-.screenshot_button, .mobile_add {
+.mobile_add {
     margin: 10px;
 }
 .tierview_screenshot_button {
@@ -208,6 +208,10 @@ li {
 }
 #add_tier_desktop {
     float: left;
+}
+#save_link {
+    text-decoration: none;
+    margin: 5px;
 }
 /* Characters */
 #MarisaKirisame {
@@ -1135,6 +1139,9 @@ li {
     body.no-webp, body.webp {
         background: #1b232e;
     }
+    #wrap, #buttons, #msg_container, #show, #characters, #modal_inner {
+        font-size: 12px;
+    }
 }
 @media only screen and (((max-width: 800px) and (orientation: portrait)) or ((max-width: 640px) and (orientation: landscape))) {
     body.no-webp, body.webp {
@@ -1737,8 +1744,8 @@ li {
         overflow-y: auto;
         border: 1px solid black;
     }
-    #wrap, #buttons, #msg_container, #show, #characters {
-        font: 12px verdana, sans-serif;
+    #wrap, #buttons, #msg_container, #show, #characters, #modal_inner {
+        font-size: 12px;
     }
     #add_tier_mobile {
         width: auto;

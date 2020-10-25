@@ -35,7 +35,7 @@
                 <h1>Maribel Hearn's Touhou Portal</h1>
                 <p id='intro'>A privacy-friendly collection of convenient webpages for the Touhou community.</p>
                 <p>Hover your cursor over a link for a description of that page. Flags show available translations.</p>
-                <h2>Page Links</h2>
+                <h2 id='pagelinks'>Page Links</h2>
                 <div id='pages'>
                     <div id='pages_left'>
                         <h3>Games</h3>

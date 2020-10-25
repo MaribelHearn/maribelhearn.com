@@ -15,7 +15,7 @@
                 <img id='hy' src='https://maribelhearn.com/assets/shared/h-bar.png' title='Human Mode'>
                 <h1>403</h1>
                 <p><strong>Forbidden</strong></p>
-                <p>You got only 403 points? That's not a very good score. I would suggest you go for at least 1 billion!</p>
+                <p>You do not have permission to access this resource.</p>
                 <p><a id='backtomain' href='/'>Back to Main Page</a></p>
             </div>
         </main>
