@@ -12,6 +12,10 @@ body.no-webp {
     background: url('survival.jpg') top no-repeat fixed;
     background-size: cover;
 }
+table {
+    margin-right: auto;
+    margin-left: auto;
+}
 table, tr, th, td {
     border: 1px solid black;
 }
@@ -38,8 +42,14 @@ input[type=button] {
 #hy {
     float: right;
 }
-#dummy {
+#rendering_message, #overview_container, #dummy {
     display: none;
+}
+#completion_table, #close {
+    margin-bottom: 15px;
+}
+#save_link {
+    text-decoration: none;
 }
 #dummysub {
     width: 1000px;
@@ -47,6 +57,11 @@ input[type=button] {
 }
 #survival {
     overflow: auto;
+}
+#base64 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 #results { /* modal */
     font: 14px verdana, sans-serif;
@@ -76,8 +91,8 @@ input[type=button] {
 .wrap {
     border: 1px solid black;
     text-align: center;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: 24%;
+    margin-right: 24%;
     padding-left: 15px;
     padding-right: 15px;
     opacity: 0.8;
@@ -89,6 +104,11 @@ input[type=button] {
 }
 .overview {
     width: 80px;
+}
+.legend {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
 }
 .clear {
     background-color: green;
