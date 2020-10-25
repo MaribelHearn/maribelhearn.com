@@ -1,4 +1,4 @@
-var games = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC"],
+ var games = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC"],
     innerHeight = window.innerHeight, vals = {}, completions, na, i;
 
 for (i = 0; i < games.length; i++) {
@@ -16,10 +16,6 @@ for (i = 0; i < games.length; i++) {
     if (games[i] == "PCB") {
         vals.PCB.Phantasm = "N/A";
     }
-}
-
-function isTripleNGame(game) {
-    return game == "PCB" || game == "UFO" || game == "TD" || game == "HSiFS" || game == "WBaWC";
 }
 
 function getPercentage(game) {
@@ -259,6 +255,10 @@ function fileName() {
     "_" + day + "_" + hours + "_" + minutes + "_" + seconds + ".png";
 }
 
+function isMobile() {
+    return navigator.userAgent.contains("Mobile") || navigator.userAgent.contains("Tablet");
+}
+
 function drawOverview() {
     $("#rendering_message, #overview_container").css("display", "block");
     html2canvas(document.getElementById("overview_container"), {
@@ -297,8 +297,13 @@ function apply() {
     fillCompletionTable();
     $("#modal_inner").css("display", "block");
     $("#results").css("display", "block");
-    drawOverview();
     save();
+
+    if (!isMobile()) {
+        drawOverview();
+    } else {
+        $("#overview_container").css("display", "block");
+    }
 }
 
 function emptyModal() {
@@ -394,7 +399,7 @@ function setProgress() {
     vals[game][difficulty] = val;
 }
 
-function addEventListeners() {
+function setEventListeners() {
     $("body").on("click", closeModal);
     $("body").on("keyup", closeModal);
     $("select").on("click", save);
@@ -407,7 +412,7 @@ function addEventListeners() {
 }
 
 function addMobileScrollbars() {
-    if (navigator.userAgent.contains("Mobile") || navigator.userAgent.contains("Tablet")) {
+    if (isMobile()) {
         $("#dummy").scroll(function(){
             $("#container").scrollLeft($("#dummy").scrollLeft());
         });
@@ -421,6 +426,6 @@ $(document).ready(function () {
     deleteLegacyCookies();
     readLocalStorage();
     init();
-    addEventListeners();
+    setEventListeners();
     addMobileScrollbars();
 });

@@ -150,16 +150,22 @@ input[type=button] {
         margin-right: 0;
     }
 }
-@media only screen and (min-width: 320px) and (max-width: 800px) and (orientation: portrait) {
+@media only screen and (min-width: 320px) and (max-width: 640px) and (orientation: portrait) {
     .wrap {
         margin-left: 0;
         margin-right: 0;
         font-size: 11px;
     }
+    .overview {
+        width: 40px;
+    }
     #container, #dummy {
         overflow-x: scroll;
         overflow-y: hidden;
         display: block;
+    }
+    #results {
+        font-size: 11px;
     }
     h1 {
         font-size: 36px;
@@ -167,12 +173,7 @@ input[type=button] {
     h2 {
         font-size: 24px;
     }
-    select {
-        height: 15px;
-        width: 90px;
-        font-size: 11px;
-    }
-    input {
+    input, table {
         font-size: 11px;
     }
 }
@@ -187,18 +188,16 @@ input[type=button] {
         overflow-y: hidden;
         display: block;
     }
+    #results {
+        font-size: 11px;
+    }
     h1 {
         font-size: 36px;
     }
     h2 {
         font-size: 24px;
     }
-    select {
-        height: 15px;
-        width: 90px;
-        font-size: 11px;
-    }
-    input {
+    input, table {
         font-size: 11px;
     }
 }

@@ -102,6 +102,9 @@ table, th, td {
 #hy {
     float: right;
 }
+#save_link {
+    text-decoration: none;
+}
 #slot0 {
     font-size: 16px;
 }
