@@ -44,14 +44,19 @@
                     <label for='toggle_view'>Change view:</label>
                     <input id='toggle_view' class='button' type='button' value='Tier List View'>
                 </div>
+                <p id='toggle'>
+                    <input id='toggle_instructions' type='button' value='Show Instructions'>
+                    <span id='screenshot_button_tierview'></span>
+                </p>
                 <div id='instructions'>
                     <p id='instructions_text'>This page allows you to create your own Touhou character tier list. Usage instructions are listed below.</p>
                     <ul id='instructions_list'>
                         <li>Drag a character onto a tier box to add that character to it.</li>
                         <li>Drag a character from the picker onto a tiered character to insert them to the left of them.</li>
                         <li>Drag a tiered character onto another tiered character to swap their positions.</li>
-                        <li>Click characters to select them for dragging them together, adding them to a tier in your clicking order.</li>
-                        <li>Double click a character to add them to the most recently added tier (not remembered after closure).</li>
+                        <li>Click multiple characters to drag them together, adding them to a tier in your clicking order.</li>
+                        <li>Alternatively, press Enter to add a selection of multiple characters to a tier.</li>
+                        <li>Double click a character to add them to a tier using a menu instead of by dragging.</li>
                         <li>Right click a character in a tier, or drag them onto the picker, to remove them from that tier.</li>
                         <li>Click a tier and then another tier to swap their positions.</li>
                         <li>Ctrl+Click a tier to add all remaining characters to it, and Ctrl+Right Click a tier to empty it.</li>
@@ -67,10 +72,6 @@
                         or add all remaining characters to it.</li>
                     </ul>
                 </div>
-                <p id='toggle'>
-                    <input id='toggle_instructions' type='button' value='Show Instructions'>
-                    <span id='screenshot_button_tierview'></span>
-                </p>
             </div>
             <div id='tier_list_container'>
                 <table id='tier_list_table'>
