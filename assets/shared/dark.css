@@ -1,4 +1,4 @@
-body:not(#ack) {
+body {
     color: white;
 }
 div:not(.dropdown):not(.dropdown_content) {
@@ -12,6 +12,9 @@ a:active:not(.replay):not(.i):not(.dropdown_button) {
 }
 a:visited:not(.replay):not(.i):not(.dropdown_button) {
     color: #ff69b4;
+}
+#ack {
+    color: initial;
 }
 #checkboxes, #checkboxes td:not(.noborders), #gameTable, #gameTable th, #gameTable td, #table, #table th, #table td, .border,
 table:not(#jargontable):not(#bullettable):not(#spelltable):not(#searchtable):not(.noborders):not(.result):not(.center):not(.poll),
