@@ -12,8 +12,16 @@ body.no-webp {
     background: url('slots.jpg') top no-repeat fixed;
     background-size: cover;
 }
-div {
-	background-color: #fff;
+div:not(.dropdown):not(.dropdown_content) {
+    background-color: #fff;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+a:link.dropdown_button {
+    color: black;
+}
+a:visited.dropdown_button {
+    color: black;
 }
 h1 {
 	font-family: 'Felipa';
@@ -32,16 +40,6 @@ table {
 }
 table, th, td {
     border: 1px solid #000;
-}
-.wrap {
-    border: 1px solid #000;
-    text-align: center;
-    margin-left: 24%;
-    margin-right: 24%;
-    padding-left: 10px;
-    padding-right: 10px;
-    opacity: 0.8;
-    font: 14px verdana,sans-serif;
 }
 .slot {
     background-repeat: no-repeat;
@@ -64,6 +62,87 @@ table, th, td {
 .title {
     cursor: pointer;
     width: 100px;
+}
+.dropdowns {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown_button {
+    text-decoration: none;
+    cursor: default;
+}
+.dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #000;
+    min-width: 120px;
+    opacity: 1.0;
+    z-index: 1;
+}
+.dropdown_content > p {
+    margin: 4px;
+}
+.dropdown_right {
+    right: 0;
+}
+.dropdown:hover .dropdown_content {
+    display: block;
+}
+.dropdown_content:hover .dropdown_content {
+    display: block;
+}
+.nav_left {
+    float: left;
+    margin-left: 4px;
+}
+.nav_right {
+    float: right;
+    margin-top: 4px;
+    margin-right: 4px;
+}
+.wrap {
+    border: 1px solid #000;
+    text-align: center;
+    margin-left: 24%;
+    margin-right: 24%;
+    font: 14px verdana,sans-serif;
+}
+#wrap {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+    opacity: 0.8;
+}
+#nav {
+    margin-bottom: 5px;
+}
+#ext_mobile {
+    display: none;
+}
+#hy {
+    float: right;
+}
+#slots, #slots tr, #slots td {
+    border: 1px solid black;
+}
+#save_link {
+    text-decoration: none;
+}
+#slot0 {
+    font-size: 16px;
+}
+#slot7 {
+    font-size: 42px;
+}
+#message {
+    color: orangered;
+    font-weight: bold;
 }
 #modal {
     font: 14px verdana, sans-serif;
@@ -90,31 +169,6 @@ table, th, td {
     display: none;
     overflow-y: auto;
 }
-#slots, #slots tr, #slots td {
-    border: 1px solid black;
-}
-#nav {
-    margin-bottom: 5px;
-}
-#wrap {
-    padding-bottom: 15px;
-}
-#hy {
-    float: right;
-}
-#save_link {
-    text-decoration: none;
-}
-#slot0 {
-    font-size: 16px;
-}
-#slot7 {
-    font-size: 42px;
-}
-#message {
-    color: orangered;
-    font-weight: bold;
-}
 @media only screen and (min-width: 1100px) and (max-width: 1400px) {
     .wrap {
         margin-left: 15%;
@@ -139,48 +193,43 @@ table, th, td {
         margin-bottom: 15px;
         font-size: 44px;
     }
+    .dropdowns {
+        width: 100%;
+    }
+    .nav_left {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .nav_right {
+        display: none;
+    }
     .wrap {
         margin-left: 0;
         margin-right: 0;
     }
-    .wrap, #modal_inner {
+    #wrap, #modal_inner {
         font-size: 11px;
+    }
+    #ext_mobile {
+        display: inline-block;
     }
 }
 @media only screen and (min-width: 320px) and (max-width: 800px) and (orientation: portrait) {
-    h1 {
-        font-size: 36px;
-    }
-    h2 {
-        font-size: 24px;
-    }
-	.wrap {
-        margin-left: 0;
-        margin-right: 0;
-    }
-    .wrap, #modal_inner {
-        font-size: 11px;
-    }
-    #modal {
-        padding-top: 10%;
-    }
     #modal_inner {
         max-height: 75%;
     }
 }
-@media only screen and (min-width: 480px) and (max-width: 640px) and (orientation: landscape) {
+@media only screen and (((min-width: 320px) and (max-width: 800px) and (orientation: portrait)) or ((min-width: 480px) and (max-width: 640px) and (orientation: landscape))) {
     h1 {
         font-size: 36px;
     }
     h2 {
         font-size: 24px;
     }
-	.wrap {
-        margin-left: 0;
-        margin-right: 0;
-    }
-    .wrap, #modal_inner {
-        font-size: 11px;
+    #hy {
+        float: none;
     }
     #modal {
         padding-top: 10%;

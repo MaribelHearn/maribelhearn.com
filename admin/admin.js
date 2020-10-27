@@ -40,8 +40,8 @@ function theme() {
 var ua = detect.parse(navigator.userAgent);
 
 document.getElementById("setcookie").addEventListener("click", set);
-document.getElementById("os").innerHTML = "<img src='" + ua.os.name + ".png' alt='" + ua.os.name + " icon'>" + ua.os.name;
-document.getElementById("browser").innerHTML = "<img src='" + ua.browser.family +
+document.getElementById("os").innerHTML = "<img src='icons/" + ua.os.name + ".png' alt='" + ua.os.name + " icon'>" + ua.os.name;
+document.getElementById("browser").innerHTML = "<img src='icons/" + ua.browser.family +
 ".png' alt='" + ua.browser.name + " icon'>" + ua.browser.name;
 head = document.getElementsByTagName("head")[0];
 window.addEventListener("load", ready);

@@ -1,6 +1,11 @@
 <!DOCTYPE html>
-<html lang='en'>
-<?php include '.stats/count.php'; hit(basename(__FILE__)); ?>
+<html id='top' lang='en'>
+<?php
+    include 'assets/shared/navbar.php';
+    include '.stats/count.php';
+    hit(basename(__FILE__));
+	$page = str_replace('.php', '', basename(__FILE__));
+?>
 
     <head>
 		<title>Phantasmagoria of Flower View</title>
@@ -15,18 +20,12 @@
     </head>
 
     <body class='<?php echo check_webp() ?>'>
-		<div id='nav' class='wrap'>
-			<nav>
-				<?php
-					$nav = file_get_contents('nav.html');
-					$page = str_replace('.php', '', basename(__FILE__));
-					$nav = str_replace('<a href="' . $page . '">', '<strong>', $nav);
-					$cap = strlen($page) < 4 ? strtoupper($page) : ucfirst($page);
-					echo str_ireplace($page . '</a>', 'PoFV</strong>', $nav);
-				?>
-			</nav>
-		</div>
+		<nav>
+			<div id='nav' class='wrap'><?php echo navbar($page) ?></div>
+		</nav>
         <div id='wrap' class='wrap'>
+            <p id='ack'>This background image was<br id='ack_br'>
+            drawn by <a href='http://www.pixiv.net/member.php?id=21613'>Kong Xian</a></p>
             <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
             <h1>Phantasmagoria of Flower View</h1>
 			<?php
@@ -45,7 +44,7 @@
                 <p><a href='#trouble'>Troubleshooting</a></p>
                 <p><a href='#rules'>Tournament Rules</a></p>
                 <p><a href='#links'>Useful Links</a></p>
-				<p><a href='#ack'>Acknowledgements</a></p>
+				<p><a href='#acks'>Acknowledgements</a></p>
             </div>
             <h2 id='tiers'>Tier List</h2>
             <p>This tier list is an average of the opinions of competitive players in the English-speaking community.
@@ -188,13 +187,13 @@
             <p><a href='https://docs.google.com/document/d/1IHtZb8-LbbDEK526JR7u9_HykrwxTcDI/edit'><img src='assets/ext/docs-icon-small.png' alt='Google Docs favicon'> Fundamentals of PoFV Gameplay</a></p>
             <p><a href='https://docs.google.com/spreadsheets/d/1_MikJ3MH_H3L9czPUl5oGC5xmIVN8EH4t5yIfvoRE0o/edit?usp=sharing'><img src='assets/ext/spreadsheets-icon-small.png' alt='Google Spreadsheets favicon'> Tournament Archive</a></p>
             <p><a href='https://cerise.moe/pofv.html'><img src='assets/flags/france16x16.png' alt='Flag of France'> French Guide</a></p>
-            <h2 id='ack'>Acknowledgements</h2>
+            <h2 id='acks'>Acknowledgements</h2>
             <p>The netplay guide and tournament rules were written by <a href='https://twitter.com/SnortNails'>Knirgesh</a>.</p>
             <p>The character descriptions were written by <a href='https://twitter.com/UndreamtBoss'>Zil</a>.</p>
             <p>The averaged tier list was done by <a href='https://twitter.com/homoiconicbully'>Lesbea</a>.</p>
             <p>The artworks used for this page are original work by <a href='https://twitter.com/korindo'>ZUN</a>.</p>
-            <p>The background image was drawn by <a href='http://www.pixiv.net/member.php?id=21613'>Kong Xian</a>.</p>
-            <p id='back'><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
+            <p id='ack_mobile'>The background image was drawn by <a href='http://www.pixiv.net/member.php?id=21613'>Kong Xian</a>.</p>
+            <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
         </div>
         <div id='modal'>
             <div id='modal_inner'></div>

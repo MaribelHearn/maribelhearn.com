@@ -884,10 +884,26 @@ function modalInformation() {
     $("#modal").css("display", "block");
 }
 
+function nav() {
+    return "<h3>Navigation</h3>" +
+    "<p><a href='scoring'><img src='assets/scoring/scoring.ico' alt='Spell Card icon'> High Score Storage</a></p>" +
+    "<p><a href='survival'><img src='assets/survival/survival.ico' alt='1up Item icon'> Survival Progress Table Generator</a></p>" +
+    "<p><a href='drc'><img src='assets/drc/drc.ico' alt='Power icon'> Dodging Rain Competition</a></p>" +
+    "<p><a href='tools'><img src='assets/tools/tools.ico' alt='UFO icon'> Touhou Patches and Tools</a></p>" +
+    "<p><a href='wr'><img src='assets/wr/wr.ico' alt='Point Item icon'> Touhou World Records</a></p>" +
+    "<p><a href='lnn'><img src='assets/lnn/lnn.ico' alt='Full Power icon'> Touhou Lunatic No Miss No Bombs</a></p>" +
+    "<p><a href='jargon'><img src='assets/jargon/jargon.ico' alt='Bomb icon'> Touhou Community Jargon</a></p>" +
+    "<p><a href='gensokyo'><img src='assets/gensokyo/gensokyo.ico' alt='Gensokyo.org icon'> Gensokyo Replay Archive</a></p>" +
+    "<p><a href='pofv'><img src='assets/pofv/pofv.ico' alt='PoFV icon'> Phantasmagoria of Flower View</a></p>" +
+    "<p><a href='thvote'><img src='assets/thvote/thvote.ico' alt='Tou kanji icon'> THWiki Popularity Poll 2020 Results Translation</a></p>" +
+    "<p><a href='slots'><img src='assets/slots/slots.ico' alt='Heart icon'> Touhou Slot Machine</a></p>" +
+    "<p><a href='history'><img src='assets/history/history.ico' alt='Maribel icon'> Shmup Achievement History</a></p>" +
+    "<p><a href='c67'><img src='assets/c67/c67.ico' alt='Banshiryuu icon'> Seihou Banshiryuu C67</a></p>";
+}
+
 function menu() {
     emptyModal();
-    $("#modal_inner").html("<h3>Menu</h3>" + $("#menu").html().replace(/_button/g, "_button_m") +
-    "<h3>Navigation</h3>" + $("#nav").html());
+    $("#modal_inner").html("<h3>Menu</h3>" + $("#menu").html().replace(/_button/g, "_button_m") + nav());
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
     $("#save_button_m").on("click", saveTiers);

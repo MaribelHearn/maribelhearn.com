@@ -1,8 +1,10 @@
 ﻿<!DOCTYPE html>
 <html id='top' lang='en'>
 <?php
+    include 'assets/shared/navbar.php';
 	include '.stats/count.php';
 	hit(basename(__FILE__));
+	$page = str_replace('.php', '', basename(__FILE__));
     $json = file_get_contents('assets/json/wrlist.json');
     $wr = json_decode($json, true);
 	$games = ['HRtP', 'SoEW', 'PoDD', 'LLS', 'MS', 'EoSD', 'PCB', 'IN', 'PoFV',
@@ -51,18 +53,12 @@
 	</head>
 
     <body class='<?php echo check_webp() ?>'>
-		<div id='nav' class='wrap'>
-			<nav>
-				<?php
-					$nav = file_get_contents('nav.html');
-					$page = str_replace('.php', '', basename(__FILE__));
-					$nav = str_replace('<a href="' . $page . '">', '<strong>', $nav);
-					$cap = strlen($page) < 4 ? strtoupper($page) : ucfirst($page);
-					echo str_ireplace($page . '</a>', $cap . '</strong>', $nav);
-				?>
-			</nav>
-		</div>
+		<nav>
+			<div id='nav' class='wrap'><?php echo navbar($page) ?></div>
+		</nav>
 		<div id='wrap' class='wrap'>
+			<p id='ack'>This background image <br id='ack_br'>was drawn by
+			<a href='https://www.pixiv.net/member.php?id=87950'>りすたる</a></p>
 			<img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
 			<h1>High Score Storage</h1>
 			<?php
@@ -81,11 +77,10 @@
 					foreach ($games as $key => $game) {
 						echo '<p><a href="#' . $game . '">' . full_name($game) . '</a></p>';
 						if ($game == 'MS') {
-							echo '<p><br></p>';
+							echo '<p class="wide"> </p>';
 						}
 					}
 				?>
-                <p><a href='#ack'>Acknowledgements</a></p>
             </div>
             <h2>Customize</h2>
             <table id='checkboxes' class='center'>
@@ -224,9 +219,7 @@
             <p id='error'></p>
 			<p><label for='toggleData'>Save Data</label><input id='toggleData' type='checkbox'></p>
 			<p><input id='calc' type='button' value='Calculate'><input id='reset' type='button' value='Reset'></p>
-			<h2 id='ack'>Acknowledgements</h2>
-			<p id='credit'>The background image
-			was drawn by <a href='https://www.pixiv.net/member.php?id=87950'>りすたる</a>.</p>
+            <div id='ack_mobile'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=87950'>りすたる</a>.</div>
             <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
 		</div>
         <script src='assets/shared/dark.js'></script>

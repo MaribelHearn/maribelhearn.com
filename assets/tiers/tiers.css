@@ -12,6 +12,21 @@ body.no-webp {
     background: url('tiers.jpg') center no-repeat fixed;
     background-size: cover;
 }
+a:link.dropdown_button {
+    color: #a0a0a0;
+}
+a:visited.dropdown_button {
+    color: #a0a0a0;
+}
+a:link {
+    color: #1e90ff;
+}
+a:active {
+    color: red;
+}
+a:visited {
+    color: #ff69b4;
+}
 h1 {
     font-family: 'Felipa';
     font-size: 48px;
@@ -30,15 +45,6 @@ p {
 }
 label {
     padding-right: 5px;
-}
-a:link {
-    color: #1e90ff;
-}
-a:active {
-    color: red;
-}
-a:visited {
-    color: #ff69b4;
 }
 input[type=number] {
     height: 20px;
@@ -101,13 +107,49 @@ li {
 .outline {
     border: 2px solid #ddd;
 }
-#buttons, #characters, #show, #wrap {
+.dropdowns {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2px;
+    width: 50%;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown_button {
+    text-decoration: none;
+    cursor: default;
+}
+.dropdown_content {
+    display: none;
+    position: absolute;
     background-color: #1b232e;
-    font: 14px verdana, sans-serif;
     border: 1px solid #000;
-    text-align: center;
-    position: fixed;
-    color: #a0a0a0;
+    min-width: 120px;
+    opacity: 1.0;
+    z-index: 1;
+}
+.dropdown_content p {
+    margin: 4px;
+}
+.dropdown_right {
+    right: 0;
+}
+.dropdown:hover .dropdown_content {
+    display: block;
+}
+.dropdown_content:hover .dropdown_content {
+    display: block;
+}
+.nav_left {
+    float: left;
+    margin-left: 4px;
+}
+.nav_right {
+    float: right;
+    margin-top: 4px;
+    margin-right: 4px;
 }
 #wrap {
     max-height: 77%;
@@ -118,6 +160,17 @@ li {
     width: 48%;
     right: 5px;
     top: 5px;
+}
+#ext_mobile {
+    display: none;
+}
+#buttons, #characters, #show, #wrap {
+    background-color: #1b232e;
+    font: 14px verdana, sans-serif;
+    border: 1px solid #000;
+    text-align: center;
+    position: fixed;
+    color: #a0a0a0;
 }
 #tier_list_container_mobile {
     overflow-y: auto;
@@ -1135,6 +1188,23 @@ li {
 #MiyoiOkunoda.tiered {
     background-position: -18360px 0;
 }
+@media screen and (max-width: 1300px) {
+    .dropdowns {
+        width: 100%;
+    }
+    .nav_left {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .nav_right {
+        display: none;
+    }
+    #ext_mobile {
+        display: inline-block;
+    }
+}
 @media screen and (max-width: 1100px) and (max-height: 800px) {
     body.no-webp, body.webp {
         background: #1b232e;
@@ -1147,41 +1217,15 @@ li {
     body.no-webp, body.webp {
         background: #1b232e;
     }
-    #information_button, #view_button, #mobile_button_split, #menu_button, #switch_button {
-        display: inline;
+    h1 {
+        margin: 5px;
+        font-size: 28px;
     }
-    #nav, #menu, #credits, #instructions, #tier_list_container, #tier_list_tfoot,
-    #sort_selection, #toggle, #instructions_list {
-        display: none;
+    h2 {
+        font-size: 28px;
     }
-    #instructions, #instructions_mobile {
-        display: block;
-    }
-    #add_tier_box_mobile {
-        display: table-row;
-    }
-    #wrap {
-        top: 5px;
-        bottom: 5px;
-        right: 5px;
-        left: 5px;
-        width: auto;
-        height: 100%;
-        max-height: 100%;
-    }
-    #tier_list_container {
-        bottom: 100px;
-        max-height: 71%;
-        overflow-y: auto;
-        border: 1px solid black;
-    }
-    #wrap, #buttons, #msg_container, #show, #characters {
-        font: 12px verdana, sans-serif;
-    }
-    #add_tier_mobile {
-        width: auto;
-        height: 25px;
-        font-size: 12px;
+    p {
+        margin: 2px;
     }
     .button {
         width: 48%;
@@ -1200,15 +1244,55 @@ li {
     .instructions {
         display: block;
     }
-    p {
-        margin: 2px;
+    .dropdowns {
+        width: 100%;
     }
-    h1 {
-        margin: 5px;
-        font-size: 28px;
+    .nav_left {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
     }
-    h2 {
-        font-size: 28px;
+    .nav_right {
+        display: none;
+    }
+    #wrap {
+        top: 5px;
+        bottom: 5px;
+        right: 5px;
+        left: 5px;
+        width: auto;
+        height: 100%;
+        max-height: 100%;
+    }
+    #ext_mobile {
+        display: inline-block;
+    }
+    #information_button, #view_button, #mobile_button_split, #menu_button, #switch_button {
+        display: inline;
+    }
+    #nav, #menu, #credits, #instructions, #tier_list_container, #tier_list_tfoot,
+    #sort_selection, #toggle, #instructions_list {
+        display: none;
+    }
+    #instructions, #instructions_mobile {
+        display: block;
+    }
+    #add_tier_box_mobile {
+        display: table-row;
+    }
+    #tier_list_container {
+        bottom: 100px;
+        max-height: 71%;
+        overflow-y: auto;
+        border: 1px solid black;
+    }
+    #wrap, #buttons, #msg_container, #show, #characters {
+        font: 12px verdana, sans-serif;
+    }
+    #add_tier_mobile {
+        width: auto;
+        height: 25px;
+        font-size: 12px;
     }
     #ReimuHakurei.list, #ReimuHakurei.tiered {
         background-position: -60px 0;

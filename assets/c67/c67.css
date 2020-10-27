@@ -12,8 +12,16 @@ body.no-webp {
     background: url('title.jpg') top no-repeat fixed;
     background-size: cover;
 }
-div {
+div:not(.dropdown):not(.dropdown_content) {
     background-color: #fff;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+a:link.dropdown_button {
+    color: black;
+}
+a:visited.dropdown_button {
+    color: black;
 }
 h1 {
     font-family: 'Felipa';
@@ -44,31 +52,6 @@ table {
 table, tr, th, td {
     border: 1px solid #000;
 }
-#hy {
-    float: right;
-}
-#nav {
-    margin-bottom: 5px;
-}
-#wrap {
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
-}
-#wrap > ol {
-    display: inline-block;
-}
-#contents td, #contents th {
-    border: none;
-}
-.wrap {
-    border: 1px solid #000;
-    text-align: center;
-    margin-left: 23%;
-    margin-right: 23%;
-    opacity: 0.8;
-    font: 14px verdana,sans-serif;
-}
 .description {
     font-size: 12px;
 }
@@ -78,10 +61,91 @@ table, tr, th, td {
 .border {
     border: 1px solid black;
 }
+.dropdowns {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown_button {
+    text-decoration: none;
+    cursor: default;
+}
+.dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #000;
+    min-width: 120px;
+    opacity: 1.0;
+    z-index: 1;
+}
+.dropdown_content > p {
+    margin: 4px;
+}
+.dropdown_right {
+    right: 0;
+}
+.dropdown:hover .dropdown_content {
+    display: block;
+}
+.dropdown_content:hover .dropdown_content {
+    display: block;
+}
+.nav_left {
+    float: left;
+    margin-left: 4px;
+}
+.nav_right {
+    float: right;
+    margin-top: 4px;
+    margin-right: 4px;
+}
+.wrap {
+    border: 1px solid #000;
+    text-align: center;
+    margin-left: 23%;
+    margin-right: 23%;
+    font: 14px verdana,sans-serif;
+}
+#wrap {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    opacity: 0.8;
+}
+#wrap > ol {
+    display: inline-block;
+}
+#nav {
+    margin-bottom: 5px;
+}
+#ext_mobile {
+    display: none;
+}
+#contents td, #contents th {
+    border: none;
+}
+#hy {
+    float: right;
+}
 @media only screen and (min-width: 1100px) and (max-width: 1400px) {
     .wrap {
         margin-left: 15%;
         margin-right: 15%;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    .shotinfo {
+        width: 213px;
+        height: 160px;
+    }
+    #yuitia {
+        width: 117px;
+        height: 228px;
     }
 }
 @media only screen and (min-width: 800px) and (max-width: 1100px) {
@@ -91,9 +155,14 @@ table, tr, th, td {
     h2 {
         font-size: 32px;
     }
-    p, .wrap {
+    .dropdown_content p {
+        font-size: 14px;
+    }
+    .wrap {
         margin-left: 13%;
         margin-right: 13%;
+    }
+    #wrap, #wrap p {
         font-size: 11px;
     }
 }
@@ -104,21 +173,30 @@ table, tr, th, td {
     h2 {
         font-size: 32px;
     }
-    p, .wrap {
-        margin-left: 0;
-        margin-right: 0;
-        font-size: 11px;
+    .dropdowns {
+        width: 100%;
     }
-}
-@media only screen and (min-width: 320px) and (max-width: 800px) and (orientation: portrait) {
+    .dropdown_content p {
+        font-size: 14px;
+    }
+    .nav_left {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .nav_right {
+        display: none;
+    }
     .wrap {
         margin-left: 0;
         margin-right: 0;
+    }
+    #wrap, #wrap p {
         font-size: 11px;
     }
-    .shotinfo {
-        width: 213px;
-        height: 160px;
+    #ext_mobile {
+        display: inline-block;
     }
     #boxart {
         width: 140px;
@@ -128,47 +206,28 @@ table, tr, th, td {
         width: 175px;
         height: 72px;
     }
-    #yuitia {
-        width: 117px;
-        height: 228px;
-    }
     #container {
         overflow-x: scroll;
     }
     #table {
         font-size: 11px;
     }
-    em, p {
-        font-size: 11px;
-    }
-    h1 {
-        font-size: 36px;
-    }
-    h2 {
-        font-size: 24px;
-    }
 }
-@media only screen and (min-width: 480px) and (max-width: 640px) and (orientation: landscape) {
-    .wrap {
-        margin-left: 0;
-        margin-right: 0;
-        font-size: 11px;
-    }
-    .shotinfo {
-        width: 213px;
-        height: 160px;
-    }
-    #yuitia {
-        width: 117px;
-        height: 228px;
-    }
-    em, p {
-        font-size: 11px;
-    }
+@media only screen and (((min-width: 320px) and (max-width: 800px) and (orientation: portrait)) or ((min-width: 480px) and (max-width: 640px) and (orientation: landscape))) {
     h1 {
+        margin-top: 15px;
         font-size: 36px;
     }
     h2 {
         font-size: 24px;
+    }
+    .dropdown_content p {
+        font-size: 14px;
+    }
+    #wrap p, em {
+        font-size: 11px;
+    }
+    #hy {
+        float: none;
     }
 }

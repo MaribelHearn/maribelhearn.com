@@ -12,8 +12,16 @@ body.no-webp {
     background: url('thvote.jpg') center no-repeat fixed;
     background-size: cover;
 }
-div {
+div:not(.dropdown):not(.dropdown_content) {
     background-color: #fff;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+a:link.dropdown_button {
+    color: black;
+}
+a:visited.dropdown_button {
+    color: black;
 }
 h1 {
     font-family: 'Felipa';
@@ -41,16 +49,6 @@ table {
 }
 .left {
     text-align: left;
-}
-.wrap {
-    border: 1px solid #000;
-    text-align: center;
-    margin-left: 23%;
-    margin-right: 23%;
-    padding-left: 15px;
-    padding-right: 15px;
-    opacity: 0.8;
-    font: 14px verdana,sans-serif;
 }
 .dummy_sub {
     width: 1000px;
@@ -174,34 +172,123 @@ table {
 .hidden, .dummy, #age_detail {
     display: none;
 }
-#age_summary {
+.dropdowns {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown_button {
+    text-decoration: none;
+    cursor: default;
+}
+.dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #000;
+    min-width: 120px;
+    opacity: 1.0;
+    z-index: 1;
+}
+.dropdown_content > p {
+    margin: 4px;
+}
+.dropdown_right {
+    right: 0;
+}
+.dropdown:hover .dropdown_content {
     display: block;
+}
+.dropdown_content:hover .dropdown_content {
+    display: block;
+}
+.nav_left {
+    float: left;
+    margin-left: 4px;
+}
+.nav_right {
+    float: right;
+    margin-top: 4px;
+    margin-right: 4px;
+}
+.wrap {
+    border: 1px solid #000;
+    text-align: center;
+    margin-left: 23%;
+    margin-right: 23%;
+    font: 14px verdana,sans-serif;
+}
+#wrap {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    opacity: 0.8;
 }
 #nav {
     margin-bottom: 5px;
 }
-#wrap {
-    padding-bottom: 15px;
+#ext_mobile {
+    display: none;
+}
+#age_summary {
+    display: block;
 }
 #hy {
     float: right;
+}
+#ack {
+    font: 11px verdana,sans-serif;
+    text-align: right;
+    background: none;
+    position: fixed;
+    color: white;
+    bottom: 5px;
+    right: 5px;
+}
+#ack_br {
+    display: none;
+}
+#ack > a:link {
+    color: #1e90ff;
+}
+#ack > a:active {
+    color: red;
+}
+#ack > a:visited {
+    color: #ff69b4;
 }
 @media only screen and (min-width: 1500px) and (max-width: 1850px) {
     .wrap {
         margin-left: 15%;
         margin-right: 15%;
     }
+    #ack_br {
+        display: inline;
+    }
 }
 @media only screen and (min-width: 1100px) and (max-width: 1500px) {
+    h1 {
+        clear: both;
+    }
     .wrap {
         margin-left: 0;
         margin-right: 0;
     }
+    #ack {
+        position: relative;
+        color: black;
+        float: left;
+    }
 }
-@media only screen and (max-width: 1100px) {
+@media only screen and (min-width: 800px) and (max-width: 1100px) {
     h1 {
         margin-bottom: 15px;
         font-size: 44px;
+        clear: both;
     }
     h2 {
         margin-bottom: 15px;
@@ -211,15 +298,53 @@ table {
     .wrap {
         margin-left: 0;
         margin-right: 0;
+    }
+    #wrap {
         font-size: 11px;
     }
+    #ack {
+        position: relative;
+        color: black;
+        float: left;
+    }
 }
-@media only screen and (min-width: 320px) and (max-width: 800px) and (orientation: portrait) {
+@media only screen and (max-width: 800px) {
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    .dropdowns {
+        width: 100%;
+    }
+    .nav_left {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .nav_right {
+        display: none;
+    }
     .wrap {
         margin-left: 0;
         margin-right: 0;
+    }
+    #wrap {
         font-size: 11px;
     }
+    #ext_mobile {
+        display: inline-block;
+    }
+    #ack {
+        display: none;
+    }
+    #ack_mobile {
+        display: block;
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 800px) and (orientation: portrait) {
     .dummy {
         display: block;
     }
@@ -227,28 +352,17 @@ table {
         overflow-x: scroll;
         overflow-y: hidden;
     }
-    h1 {
-        font-size: 36px;
-    }
-    h2 {
-        font-size: 24px;
+    #hy {
+        float: none;
     }
 }
 @media only screen and (min-width: 480px) and (max-width: 640px) and (orientation: landscape) {
-    .wrap {
-        margin-left: 0;
-        margin-right: 0;
-        font-size: 11px;
+    #hy {
+        float: none;
     }
     #corr_dummy, #corr_container {
         overflow-x: scroll;
         overflow-y: hidden;
         display: block;
-    }
-    h1 {
-        font-size: 36px;
-    }
-    h2 {
-        font-size: 24px;
     }
 }

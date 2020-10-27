@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html id='top' lang='en'>
 <?php
-    include '.stats/count.php'; hit(basename(__FILE__));
+    include 'assets/shared/navbar.php';
+    include '.stats/count.php';
+    hit(basename(__FILE__));
+	$page = str_replace('.php', '', basename(__FILE__));
     function getAge($then) {
         $then_ts = strtotime($then);
         $then_year = date('Y', $then_ts);
@@ -21,11 +24,12 @@
 
     <body class='<?php echo check_webp() ?>'>
         <nav>
-            <div id='nav' class='wrap'><?php echo file_get_contents('nav.html'); ?></div>
+            <div id='nav' class='wrap'><?php echo navbar($page) ?></div>
         </nav>
         <main>
             <div id='wrap' class='wrap'>
-                <span id='links'><a href='/'>Back to Main Page</a></span>
+                <p id='ack'>This background image<br id='ack_br'>
+                was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a>.</p>
                 <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
                 <h1>About Me</h1>
                 <p>Hello, I am Mari, a <?php echo getAge('1995-07-29'); ?> year old Dutch guy who
@@ -207,8 +211,6 @@
                     on my main PC since late 2018.</li>
                     <li>Pale Moon is my preferred browser, which I switched to from Firefox after maining it for many years.</li>
                     <li>As of my most recent measurement, I am 1.934 meters tall, or 6' 4'' in feet and inches.</li>
-                    <li>I have my smartphone hanging around my neck. It's very convenient, allows me to immediately grab it when I need it,
-                    yet I have yet to meet even a single other person that does this.</li>
                     <li>I cannot stand the smell of oranges. I also tend to dislike anything citrus, but only if the taste is too prevalent;
                     lemon tea, for instance, is fine.</li>
                     <li>My favourite movie series is Back to the Future, no contest.</li>

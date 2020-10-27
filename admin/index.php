@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
 <?php
+    include '../assets/shared/navbar.php';
     include '../.stats/count.php';
     $hitcount = '../.stats/' . date('d-m-Y') . '.json';
     if (file_exists($hitcount)) {
@@ -16,24 +17,19 @@
 		<title>Admin Panel - Maribel Hearn's Touhou Portal</title>
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
-        <link rel='stylesheet' type='text/css' href='admin.css'>
+        <link rel='stylesheet' type='text/css' href='../assets/index/main.css'>
 		<link rel='icon' type='image/x-icon' href='../favicon.ico'>
         <script src='../assets/shared/utils.js' defer></script>
     </head>
 
     <body class='<?php echo check_webp() ?>'>
-        <nav>
-            <div id='nav' class='wrap'>
-                <?php
-                    $nav = file_get_contents('../nav.html');
-                    $nav = str_ireplace('assets', '../assets', $nav);
-                    echo str_ireplace('favicon', '../favicon', $nav);
-                ?>
-            </div>
-        </nav>
+		<nav>
+            <div id='nav' class='wrap'><?php echo navbar('admin') ?></div>
+		</nav>
         <main>
             <div id='wrap' class='wrap'>
-                <span id='links'><a href='/'>Back to Main Page</a></span>
+                <p id='ack_admin'>This background image<br id='ack_br'>
+                was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a></p>
                 <img id='hy' src='../assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
                 <h1>Admin Panel</h1>
                 <p><input id='setcookie' type='button' value='Set Blocking Cookie'></p>
@@ -49,6 +45,7 @@
                 ?>
                 <p class='wide-top'>You are visiting this page using <strong id='os'></strong>.</p>
                 <p>You are visiting this page using <strong id='browser'></strong>.</p>
+                <div id='ack_mobile'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a>.</div>
             </div>
         </main>
         <?php echo '<input id="token" type="hidden" value=' . file_get_contents('../.stats/token') . '>'; ?>

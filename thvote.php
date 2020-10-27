@@ -1,6 +1,11 @@
 ﻿<!DOCTYPE html>
 <html id='top' lang='en'>
-<?php include '.stats/count.php'; hit(basename(__FILE__)); ?>
+<?php
+    include 'assets/shared/navbar.php';
+	include '.stats/count.php';
+	hit(basename(__FILE__));
+	$page = str_replace('.php', '', basename(__FILE__));
+?>
 
     <head>
         <title>THWiki Popularity Poll 2020 Results</title>
@@ -14,18 +19,12 @@
     </head>
 
     <body class='<?php echo check_webp() ?>'>
-		<div id='nav' class='wrap'>
-			<nav>
-                <?php
-                    $nav = file_get_contents('nav.html');
-                    $page = str_replace('.php', '', basename(__FILE__));
-                    $nav = str_replace('<a href="' . $page . '">', '<strong>', $nav);
-                    $cap = strlen($page) < 4 ? strtoupper($page) : ucfirst($page);
-                    echo str_ireplace('Poll</a>', 'Poll</strong>', $nav);
-                ?>
-			</nav>
-		</div>
+		<nav>
+			<div id='nav' class='wrap'><?php echo navbar($page) ?></div>
+		</nav>
         <div id='wrap' class='wrap'>
+            <p id='ack' class='noborders'>This background image<br id='ack_br'>
+            was drawn by <a href='https://www.pixiv.net/member.php?id=2025430'>Yakumo_Stocking</a></p>
             <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
             <h1>THWiki Popularity Poll 2020 Results</h1>
             <?php
@@ -41,11 +40,10 @@
             <p>Source: <a href='http://toho-vote.info/'>http://toho-vote.info/</a></p>
             <h2>Contents</h2>
             <div id='contents' class='border'>
-                <p><a href='#Characters'>Characters</a></p>
-                <p><a href='#Music'>Music</a></p>
-                <p><a href='#Works'>Works</a></p>
-                <p><a href='#Questionnaire'>Questionnaire</a></p>
-                <p><a href='#Ack'>Acknowledgements</a></p>
+                <p><a href='#characters'>Characters</a></p>
+                <p><a href='#music'>Music</a></p>
+                <p><a href='#works'>Works</a></p>
+                <p><a href='#questionnaire'>Questionnaire</a></p>
             </div>
             <h2>Valid responses</h2>
             <div id='responses' class='border'>
@@ -53,7 +51,7 @@
                 <p>Music: 25,919 <small>(in 2019: 17,951; in 2018: 23,648)</small></p>
                 <p>Works: 19,274 <small>(in 2019: 13,946; in 2018: 18,470)</small></p>
             </div>
-            <h1 id='Characters'>Characters</h1>
+            <h1 id='characters'>Characters</h1>
             <div id='chars_dummy' class='dummy'><div class='dummy_sub'></div></div>
             <div id='chars_container' class='container'>
                 <table id='chars_table' class='poll table sortable'>
@@ -283,7 +281,7 @@
                     </tbody>
                 </table>
             </div>
-            <h1 id='Music'>Music</h1>
+            <h1 id='music'>Music</h1>
             <div id='music_dummy' class='dummy'><div class='dummy_sub'></div></div>
             <div id='music_container' class='container'>
                 <table id='music_table' class='poll table sortable'>
@@ -857,7 +855,7 @@
                     </tbody>
                 </table>
             </div>
-            <h1 id='Works'>Works</h1>
+            <h1 id='works'>Works</h1>
             <div id='works_dummy' class='dummy'><div class='dummy_sub'></div></div>
             <div id='works_container' class='container'>
                 <table id='works_table' class='poll table sortable'>
@@ -940,7 +938,7 @@
 </tbody>
 </table>
             </div>
-            <h1 id='Questionnaire'>Questionnaire</h1>
+            <h1 id='questionnaire'>Questionnaire</h1>
             <h2>01. Age</h2>
             <div id='age_summary'>
             <table class='poll table sortable'>
@@ -1400,9 +1398,7 @@
                     <tr><th>Voted 4 or more times</th><td>3,342</td><td>23.62%</td></tr>
                 </tbody>
             </table>
-            <h2 id='Ack'>Acknowledgements</h2>
-			<p id='credit' class='noborders'>The background image
-			was drawn by <a href='https://www.pixiv.net/member.php?id=2025430'>Yakumo_Stocking</a>.</p>
+            <p id='ack_mobile' class='noborders'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=2025430'>Yakumo_Stocking</a>.</p>
             <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
         </div>
         <script src='assets/thvote/thvote.js'></script>

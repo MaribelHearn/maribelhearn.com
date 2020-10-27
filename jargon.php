@@ -1,6 +1,11 @@
 ﻿<!DOCTYPE html>
 <html id='top' lang='en'>
-<?php include '.stats/count.php'; hit(basename(__FILE__)); ?>
+<?php
+    include 'assets/shared/navbar.php';
+	include '.stats/count.php';
+	hit(basename(__FILE__));
+	$page = str_replace('.php', '', basename(__FILE__));
+?>
 
 	<head>
 		<title>Touhou Community Jargon</title>
@@ -13,17 +18,9 @@
 	</head>
 
     <body class='<?php echo check_webp() ?>'>
-		<div id='nav' class='wrap'>
-			<nav>
-				<?php
-					$nav = file_get_contents('nav.html');
-					$page = str_replace('.php', '', basename(__FILE__));
-					$nav = str_replace('<a href="' . $page . '">', '<strong>', $nav);
-					$cap = strlen($page) < 4 ? strtoupper($page) : ucfirst($page);
-					echo str_ireplace($page . '</a>', $cap . '</strong>', $nav);
-				?>
-			</nav>
-		</div>
+		<nav>
+			<div id='nav' class='wrap'><?php echo navbar($page) ?></div>
+		</nav>
         <div id='wrap' class='wrap'>
             <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
             <h1>Touhou Community Jargon</h1>

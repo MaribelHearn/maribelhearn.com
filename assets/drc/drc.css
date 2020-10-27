@@ -12,11 +12,19 @@ body.no-webp {
     background: url('drc.jpg') top no-repeat fixed;
     background-size: cover;
 }
+div:not(.dropdown):not(.dropdown_content) {
+    background-color: #fff;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+a:link.dropdown_button {
+    color: black;
+}
+a:visited.dropdown_button {
+    color: black;
+}
 table, td, th, tr {
     border: 1px solid black;
-}
-div {
-    background-color: #FFFFFF;
 }
 h1 {
     font-family: 'Felipa';
@@ -39,16 +47,6 @@ input[type=number] {
 .noborders {
     border: none;
 }
-.wrap {
-    border: 1px solid black;
-    text-align: center;
-    margin-left: 22%;
-    margin-right: 22%;
-    padding-left: 15px;
-    padding-right: 15px;
-    opacity: 0.8;
-    font: 14px verdana, sans-serif;
-}
 .flag {
     display: inline-block;
 }
@@ -58,11 +56,67 @@ input[type=number] {
 .error {
     color: red;
 }
+.dropdowns {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown_button {
+    text-decoration: none;
+    cursor: default;
+}
+.dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #000;
+    min-width: 120px;
+    opacity: 1.0;
+    z-index: 1;
+}
+.dropdown_content p {
+    margin: 4px;
+}
+.dropdown_right {
+    right: 0;
+}
+.dropdown:hover .dropdown_content {
+    display: block;
+}
+.dropdown_content:hover .dropdown_content {
+    display: block;
+}
+.nav_left {
+    float: left;
+    margin-left: 4px;
+}
+.nav_right {
+    float: right;
+    margin-top: 4px;
+    margin-right: 4px;
+}
+.wrap {
+    border: 1px solid black;
+    text-align: center;
+    margin-left: 22%;
+    margin-right: 22%;
+    font: 14px verdana, sans-serif;
+}
+#wrap {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    opacity: 0.8;
+}
 #nav {
     margin-bottom: 5px;
 }
-#wrap {
-    padding-bottom: 15px;
+#ext_mobile {
+    display: none;
 }
 #countdown {
     font-size: 16px;
@@ -84,6 +138,27 @@ input[type=number] {
 #hy_container {
     float: right;
 }
+#ack {
+    font: 11px verdana,sans-serif;
+    text-align: right;
+    background: none;
+    position: fixed;
+    color: white;
+    bottom: 5px;
+    right: 5px;
+}
+#ack_br {
+    display: none;
+}
+#ack > a:link {
+    color: #1e90ff;
+}
+#ack > a:active {
+    color: red;
+}
+#ack > a:visited {
+    color: #ff69b4;
+}
 #ack_container > p {
     margin: 4px;
 }
@@ -97,6 +172,17 @@ input[type=number] {
     .wrap {
         margin-left: 15%;
         margin-right: 15%;
+    }
+    #ack_br {
+        display: inline;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    #ack {
+        display: none;
+    }
+    #ack_mobile {
+        display: block;
     }
 }
 @media only screen and (min-width: 800px) and (max-width: 1100px) {
@@ -113,6 +199,8 @@ input[type=number] {
     .wrap {
         margin-left: 8%;
         margin-right: 8%;
+    }
+    #wrap {
         font-size: 11px;
     }
 }
@@ -127,13 +215,36 @@ input[type=number] {
         margin-top: 5px;
         font-size: 32px;
     }
+    .dropdowns {
+        width: 100%;
+    }
+    .nav_left {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .nav_right {
+        display: none;
+    }
     .wrap {
         margin-left: 0;
         margin-right: 0;
+    }
+    #wrap {
         font-size: 11px;
     }
+    #ext_mobile {
+        display: inline-block;
+    }
 }
-@media only screen and (((min-width:320px) and (max-width:800px) and (orientation:portrait)) or ((min-width:480px) and (max-width:640px) and (orientation:landscape))) {
+@media only screen and (((min-width: 320px) and (max-width: 800px) and (orientation: portrait)) or ((min-width: 480px) and (max-width: 640px) and (orientation: landscape))) {
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
     #hy_container {
         float: none;
     }
@@ -142,32 +253,8 @@ input[type=number] {
         width: 100%;
     }
 }
-@media only screen and (min-width:320px) and (max-width:800px) and (orientation: portrait) {
+@media only screen and (min-width: 320px) and (max-width: 800px) and (orientation: portrait) {
     #scoringRubrics {
         overflow-x: scroll;
-    }
-    .wrap {
-        margin-left: 0;
-        margin-right: 0;
-        font-size: 11px;
-    }
-    h1 {
-        font-size: 36px;
-    }
-    h2 {
-        font-size: 24px;
-    }
-}
-@media only screen and (min-width:480px) and (max-width:640px) and (orientation: landscape) {
-    .wrap {
-        margin-left: 0;
-        margin-right: 0;
-        font-size: 11px;
-    }
-    h1 {
-        font-size: 36px;
-    }
-    h2 {
-        font-size: 24px;
     }
 }

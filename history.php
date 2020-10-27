@@ -1,6 +1,14 @@
 ﻿<!DOCTYPE html>
 <html id='top' lang='en'>
-<?php include '.stats/count.php'; hit(basename(__FILE__)); $empty = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC'; ?>
+<?php
+    include 'assets/shared/navbar.php';
+    include '.stats/count.php';
+    hit(basename(__FILE__));
+	$page = str_replace('.php', '', basename(__FILE__));
+    $empty = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJ' .
+    'AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAA' .
+    'NSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC';
+?>
 
 	<head>
 		<title>Maribel's Achievement History</title>
@@ -13,16 +21,17 @@
 
     <body class='<?php echo check_webp() ?>'>
         <nav>
-			<div id='nav' class='wrap'><?php echo file_get_contents('nav.html'); ?></div>
+            <div id='nav' class='wrap'><?php echo navbar($page) ?></div>
         </nav>
 		<main>
 			<div id='wrap' class='wrap'>
+				<p id='ack' class='noborders'>This background image<br id='ack_br'>
+				was drawn by <a href='https://www.pixiv.net/member.php?id=2263353'>RAT_Huang</a></p>
 	            <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
 	            <h1>Maribel's Achievement History</h1>
 	            <p id='notice'><strong>Notice:</strong> this page is best viewed on mobile using landscape mode.</p>
 	            <p>I am a bullet hell player who mostly plays for score and mains Touhou 13: Ten Desires.
 				I have also scored Touhou 16: Hidden Star in Four Seasons, Seihou Banshiryuu C67 and Samidare.</p>
-				<p><a id='backtomain' href='/'>Back to Main Page</a></p>
 	            <hr>
 	            <h2>Contents</h2>
 	            <table id='contents'>
@@ -77,8 +86,6 @@
 	                <tr><td><a href='#MSF'>Mushihime-sama Futari</a></td></tr>
 	                <tr><td><a href='#DSm'>Deathsmiles</a></td></tr>
 	                <tr><td><a href='#Ikaruga'>Ikaruga</a></td></tr>
-					<tr><th>Acknowledgements</th></tr>
-	                <tr><td><a href='#ack'>Acknowledgements</a></td></tr>
 	            </table>
 	            <div id='overview'>
 	                <h2>High Scores</h2>
@@ -4449,10 +4456,7 @@
 	                </tr>
 	                </table>
 	            </div>
-				<br><hr>
-				<h2 id='ack'>Acknowledgements</h2>
-				<p id='credit' class='noborders'>The background image
-				was drawn by <a href='https://www.pixiv.net/member.php?id=2263353'>RAT_Huang</a>.</p>
+				<p id='ack_mobile' class='noborders'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=2263353'>RAT_Huang</a>.</p>
 	            <p><strong><a href='#top'>Back to Top</a></strong></p>
 	        </div>
 		</main>

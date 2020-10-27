@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html id='top' lang='en'>
+<?php
+    include 'assets/shared/navbar.php';
+    include '.stats/count.php';
+    hit(basename(__FILE__));
+	$page = str_replace('.php', '', basename(__FILE__));
+?>
 
     <head>
 		<title>Privacy Policy - Maribel Hearn's Touhou Portal</title>
@@ -9,13 +15,14 @@
 		<link rel='icon' type='image/x-icon' href='favicon.ico'>
     </head>
 
-    <body class='<?php include '.stats/count.php'; echo check_webp() ?>'>
+    <body class='<?php echo check_webp() ?>'>
         <nav>
-            <div id='nav' class='wrap'><?php echo file_get_contents('nav.html'); ?></div>
+            <div id='nav' class='wrap'><?php echo navbar($page) ?></div>
         </nav>
         <main>
             <div id='wrap' class='wrap'>
-                <span id='links'><a href='/'>Back to Main Page</a></span>
+                <p id='ack'>This background image<br id='ack_br'>
+                was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a>.</p>
                 <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
                 <h1>Privacy Policy</h1>
                 <p class='wide'><strong>Effective date:</strong> 16 December 2019</p>
@@ -71,7 +78,7 @@
                     <li>By email: maribelhearn42@gmail.com</li>
                 </ul>
 
-                <p><strong><a href='#top'>Back to Top</a></strong></p>
+                <p class='wide-top'><strong><a href='#top'>Back to Top</a></strong></p>
             </div>
         </main>
         <script src='assets/shared/dark.js'></script>

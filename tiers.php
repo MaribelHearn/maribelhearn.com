@@ -1,6 +1,11 @@
 ﻿<!DOCTYPE html>
 <html lang='en'>
-<?php include '.stats/count.php'; hit(basename(__FILE__)); ?>
+<?php
+    include 'assets/shared/navbar.php';
+	include '.stats/count.php';
+	hit(basename(__FILE__));
+	$page = str_replace('.php', '', basename(__FILE__));
+?>
 
     <head>
 		<title>Touhou Tier List Creator</title>
@@ -20,15 +25,9 @@
     <body class='<?php echo check_webp() ?>'>
         <div id='wrap'>
             <div id='init' data-html2canvas-ignore>
-    			<nav id='nav'>
-    				<?php
-    					$nav = file_get_contents('nav.html');
-    					$page = str_replace('.php', '', basename(__FILE__));
-    					$nav = str_replace('<a href="' . $page . '">', '<strong>', $nav);
-    					$cap = strlen($page) < 4 ? strtoupper($page) : ucfirst($page);
-    					echo str_ireplace($page . '</a>', $cap . '</strong>', $nav);
-    				?>
-    			</nav>
+        		<nav>
+        			<div id='nav'><?php echo navbar($page) ?></div>
+        		</nav>
                 <h1 id='title'>Touhou Tier List Creator</h1>
                 <?php
                     if (!empty($_GET['redirect'])) {
