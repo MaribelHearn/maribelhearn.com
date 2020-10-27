@@ -1,10 +1,11 @@
 <?php
 function navbar($page) {
+    $TOKEN_PATH = ($page == 'admin' ? '../.stats/token' : '.stats/token');
     $navbar = '<span class="nav_left">';
     $navbar .= '<a href="/"><img src="favicon.ico" alt="Cherry blossom icon"> Index</a> | ';
 
-    if (isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents('.stats/token'))) {
-        $navbar .= '<a href="admin">Admin Panel</a> | ';
+    if (isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents($TOKEN_PATH))) {
+        $navbar .= '<a href="admin">Admin</a> | ';
     }
 
     $navbar .= '<a href="about">About Me</a> | <a href="privacy">Privacy Policy</a> ';
@@ -115,7 +116,7 @@ function navbar($page) {
     } else if ($page == 'pofv') {
         $cap = 'PoFV';
     } else if ($page == 'admin') {
-        $cap = 'Admin Panel';
+        $cap = 'Admin';
     } else if ($page == 'about') {
         $cap = 'About Me';
     } else if ($page == 'privacy') {
@@ -125,6 +126,8 @@ function navbar($page) {
     $navbar = str_ireplace($cap . '</a>', $cap . '</strong>', $navbar);
 
     if ($page == 'admin') {
+        $navbar = str_replace('href="', 'href="../', $navbar);
+        $navbar = str_replace('../http', 'http', $navbar);
         $navbar = str_replace('assets', '../assets', $navbar);
         $navbar = str_replace('fav', '../fav', $navbar);
     } else if ($page == 'error') {
