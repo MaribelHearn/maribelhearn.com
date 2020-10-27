@@ -1,4 +1,4 @@
-body {
+body:not(#ack) {
     color: white;
 }
 div:not(.dropdown):not(.dropdown_content) {
