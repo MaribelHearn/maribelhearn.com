@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html id='top' lang='en'>
-<?php include '.stats/count.php'; hit(basename(__FILE__)); $empty = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC'; ?>
+<?php
+    include 'assets/shared/navbar.php';
+    include '.stats/count.php';
+    hit(basename(__FILE__));
+	$page = str_replace('.php', '', basename(__FILE__));
+    $empty = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJ' .
+    'AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAA' .
+    'NSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC';
+?>
 
     <head>
         <title>Seihou Banshiryuu C67</title>
@@ -13,14 +21,13 @@
 
     <body class='<?php echo check_webp() ?>'>
         <nav>
-            <div id='nav' class='wrap'><?php echo file_get_contents('nav.html'); ?></div>
+            <div id='nav' class='wrap'><?php echo navbar($page) ?></div>
         </nav>
         <main>
             <div id='wrap' class='wrap'>
                 <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
                 <h1>Seihou Banshiryuu C67</h1>
                 <p>This page covers the scoring system and mechanics of the Comiket 67 release of Seihou Banshiryuu.</p>
-    			<p><a id='backtomain' href='/'>Back to Main Page</a></p>
                 <picture>
                     <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/boxart.webp' type='image/webp'>
                     <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/boxart.jpg'>

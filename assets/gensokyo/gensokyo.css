@@ -12,8 +12,16 @@ body.no-webp {
     background: url('gensokyo.jpg') center no-repeat fixed;
     background-size: cover;
 }
-div {
+div:not(.dropdown):not(.dropdown_content) {
     background-color: #fff;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+a:link.dropdown_button {
+    color: black;
+}
+a:visited.dropdown_button {
+    color: black;
 }
 h1 {
     font-family: 'Felipa';
@@ -32,15 +40,67 @@ table, th, td {
 form {
     margin-bottom: 10px;
 }
+.dropdowns {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown_button {
+    text-decoration: none;
+    cursor: default;
+}
+.dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #000;
+    min-width: 120px;
+    opacity: 1.0;
+    z-index: 1;
+}
+.dropdown_content > p {
+    margin: 4px;
+}
+.dropdown_right {
+    right: 0;
+}
+.dropdown:hover .dropdown_content {
+    display: block;
+}
+.dropdown_content:hover .dropdown_content {
+    display: block;
+}
+.nav_left {
+    float: left;
+    margin-left: 4px;
+}
+.nav_right {
+    float: right;
+    margin-top: 4px;
+    margin-right: 4px;
+}
 .wrap {
     border: 1px solid #000;
     text-align: center;
     margin-left: 24%;
     margin-right: 24%;
+    font: 14px verdana,sans-serif;
+}
+#wrap {
     padding-left: 10px;
     padding-right: 10px;
+    padding-bottom: 15px;
     opacity: 0.8;
-    font: 14px verdana,sans-serif;
+}
+#nav {
+    margin-bottom: 5px;
+}
+#ext_mobile {
+    display: none;
 }
 #searchtable {
     border: none;
@@ -49,12 +109,6 @@ form {
 }
 #searchtable td {
     border: none;
-}
-#nav {
-    margin-bottom: 5px;
-}
-#wrap {
-    padding-bottom: 15px;
 }
 #previous {
     float: left;
@@ -76,6 +130,27 @@ form {
     margin-left: auto;
     margin-right: auto;
 }
+#ack {
+    font: 11px verdana,sans-serif;
+    text-align: right;
+    background: none;
+    position: fixed;
+    color: white;
+    bottom: 0px;
+    right: 5px;
+}
+#ack > a:link {
+    color: #1e90ff;
+}
+#ack > a:active {
+    color: red;
+}
+#ack > a:visited {
+    color: #ff69b4;
+}
+#ack_br, #ack_mobile {
+    display: none;
+}
 @media only screen and (min-width: 1100px) and (max-width: 1400px) {
     .wrap {
         margin-left: 15%;
@@ -95,12 +170,15 @@ form {
     .wrap {
         margin-left: 13%;
         margin-right: 13%;
+    }
+    #wrap {
         font-size: 11px;
     }
 }
 @media only screen and (max-width: 800px) {
     h1 {
         margin-bottom: 15px;
+        margin-top: 15px;
         font-size: 44px;
     }
     h2 {
@@ -108,44 +186,59 @@ form {
         margin-top: 10px;
         font-size: 32px;
     }
+    .dropdowns {
+        width: 100%;
+    }
+    .nav_left {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .nav_right {
+        display: none;
+    }
     .wrap {
         margin-left: 0;
         margin-right: 0;
+    }
+    #wrap {
         font-size: 11px;
+    }
+    #ext_mobile {
+        display: inline-block;
     }
     #replays {
         overflow-x: scroll;
     }
 }
-@media only screen and (min-width: 320px) and (max-width: 800px) and (orientation: portrait) {
-    .wrap {
-        margin-left: 0;
-        margin-right: 0;
-        font-size: 11px;
-    }
-    #replays {
-        overflow-x: scroll;
-    }
+@media only screen and (((min-width: 320px) and (max-width: 800px) and (orientation: portrait)) or ((min-width: 480px) and (max-width: 640px) and (orientation: landscape))) {
     h1 {
         font-size: 36px;
     }
     h2 {
         font-size: 24px;
     }
-}
-@media only screen and (min-width: 480px) and (max-width: 640px) and (orientation: landscape) {
-    .wrap {
-        margin-left: 0%;
-        margin-right: 0%;
-        font-size: 11px;
+    #hy {
+        float: none;
     }
     #replays {
         overflow-x: scroll;
     }
-    h1 {
-        font-size: 36px;
+}
+@media only screen and (max-width: 500px) {
+    #ack {
+        display: none;
     }
-    h2 {
-        font-size: 24px;
+    #ack_mobile {
+        display: block;
+    }
+}
+@media only screen and (max-height: 600px) {
+    #ack {
+        display: none;
+    }
+    #ack_mobile {
+        display: block;
     }
 }

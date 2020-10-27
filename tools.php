@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html id='top' lang='en'>
-<?php include '.stats/count.php'; hit(basename(__FILE__)); ?>
+<?php
+    include 'assets/shared/navbar.php';
+	include '.stats/count.php';
+	hit(basename(__FILE__));
+	$page = str_replace('.php', '', basename(__FILE__));
+?>
 
 	<head>
 		<title>Touhou Patches and Tools</title>
@@ -13,18 +18,12 @@
 	</head>
 
     <body class='<?php echo check_webp() ?>'>
-		<div id='nav' class='wrap'>
-			<nav>
-				<?php
-					$nav = file_get_contents('nav.html');
-					$page = str_replace('.php', '', basename(__FILE__));
-					$nav = str_replace('<a href="' . $page . '">', '<strong>', $nav);
-					$cap = strlen($page) < 4 ? strtoupper($page) : ucfirst($page);
-					echo str_ireplace($page . '</a>', $cap . '</strong>', $nav);
-				?>
-			</nav>
-		</div>
+		<nav>
+			<div id='nav' class='wrap'><?php echo navbar($page) ?></div>
+		</nav>
         <div id='wrap' class='wrap'>
+			<p id='ack' class='noborders'>This background image<br id='ack_br'>
+			was drawn by <a href='https://www.pixiv.net/member.php?id=66609'>青葉</a></p>
             <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
             <h1>Touhou Patches and Tools</h1>
             <?php
@@ -53,7 +52,6 @@
                 <p><a href='#graphical'>Graphical Patches</a></p>
                 <p><a href='#emulators'>PC-98 Emulators</a></p>
                 <p><a href='#miscellaneous'>Miscellaneous</a></p>
-				<p><a href='#ack'>Acknowledgements</a></p>
             </div>
             <!-- Vpatch -->
             <hr>
@@ -358,10 +356,7 @@
 			<p>Allows the in-game score counter to exceed 9,999,999,990 points.</p>
 			<a href='https://maribelhearn.com/mirror/th17_score_uncap.zip' target='_blank'>Download</a>
 			<hr>
-			<h2 id='ack'>Acknowledgements</h2>
-			<p id='credit' class='noborders'>The background image
-			was drawn by <a href='https://www.pixiv.net/member.php?id=66609'>青葉</a>.</p>
-			<hr>
+			<div id='ack_mobile' class='noborders'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=66609'>青葉</a>.</div>
             <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
         </div>
         <script src='assets/shared/dark.js'></script>

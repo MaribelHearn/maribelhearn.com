@@ -12,8 +12,16 @@ body.no-webp {
     background: url('jargon.jpg') top no-repeat fixed;
     background-size: cover;
 }
-div {
+div:not(.dropdown):not(.dropdown_content) {
     background-color: #fff;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+a:link.dropdown_button {
+    color: black;
+}
+a:visited.dropdown_button {
+    color: black;
 }
 div > div > p {
     margin: 4px;
@@ -26,11 +34,72 @@ h2 {
     font-family: 'Felipa';
     font-size: 36px;
 }
+.border {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+}
+.jargon {
+    width: 150px;
+}
+.dropdowns {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown_button {
+    text-decoration: none;
+    cursor: default;
+}
+.dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #000;
+    min-width: 120px;
+    opacity: 1.0;
+    z-index: 1;
+}
+.dropdown_right {
+    right: 0;
+}
+.dropdown:hover .dropdown_content {
+    display: block;
+}
+.dropdown_content:hover .dropdown_content {
+    display: block;
+}
+.nav_left {
+    float: left;
+    margin-left: 4px;
+}
+.nav_right {
+    float: right;
+    margin-top: 4px;
+    margin-right: 4px;
+}
+.wrap {
+    border: 1px solid #000;
+    text-align: center;
+    margin-left: 23%;
+    margin-right: 23%;
+    font: 14px verdana,sans-serif;
+}
+#wrap {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    opacity: 0.8;
+}
 #nav {
     margin-bottom: 5px;
 }
-#wrap {
-    padding-bottom: 15px;
+#ext_mobile {
+    display: none;
 }
 #wrap > div {
     display: inline-block;
@@ -38,30 +107,12 @@ h2 {
 #hy {
     float: right;
 }
-.border {
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid black;
-}
 #bullettable, #jargontable, #spelltable {
     text-align: left;
 }
 #bullettable {
     margin-left: auto;
     margin-right: auto;
-}
-.wrap {
-    border: 1px solid #000;
-    text-align: center;
-    margin-left: 23%;
-    margin-right: 23%;
-    padding-left: 15px;
-    padding-right: 15px;
-    opacity: 0.8;
-    font: 14px verdana,sans-serif;
-}
-.jargon {
-    width: 150px;
 }
 @media only screen and (min-width: 1100px) and (max-width: 1400px) {
     .wrap {
@@ -85,6 +136,8 @@ h2 {
     .wrap {
         margin-left: 10%;
         margin-right: 10%;
+    }
+    #wrap {
         font-size: 11px;
     }
     .jargon {
@@ -101,48 +154,45 @@ h2 {
         margin-top: 10px;
         font-size: 32px;
     }
+    .jargon {
+        width: auto;
+    }
+    .dropdowns {
+        width: 100%;
+    }
+    .nav_left {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .nav_right {
+        display: none;
+    }
     .wrap {
         margin-left: 0;
         margin-right: 0;
+    }
+    #wrap {
         font-size: 11px;
     }
-    .jargon {
-        width: auto;
+    #ext_mobile {
+        display: inline-block;
     }
 }
-@media only screen and (min-width:320px) and (max-width:800px) and (orientation:portrait) {
-    .wrap {
-        margin-left: 0;
-        margin-right: 0;
-        font-size: 11px;
-    }
-    .jargon {
-        width: auto;
-    }
+@media only screen and (((min-width: 320px) and (max-width: 800px) and (orientation: portrait)) or ((min-width: 480px) and (max-width: 640px) and (orientation: landscape))) {
     h1 {
+        margin-top: 10px;
         font-size: 36px;
     }
     h2 {
         font-size: 24px;
     }
-    #jargontable, #spelltable {
-        text-align: initial;
-    }
-}
-@media only screen and (min-width:480px) and (max-width:640px) and (orientation:landscape) {
-    .wrap {
-        margin-left: 0;
-        margin-right: 0;
-        font-size: 11px;
-    }
     .jargon {
         width: auto;
     }
-    h1 {
-        font-size: 36px;
-    }
-    h2 {
-        font-size: 24px;
+    #hy {
+        float: none;
     }
     #jargontable, #spelltable {
         text-align: initial;

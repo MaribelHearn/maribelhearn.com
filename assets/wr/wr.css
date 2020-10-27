@@ -12,8 +12,16 @@ body.no-webp {
     background: url('wr.jpg') bottom no-repeat fixed;
     background-size: cover;
 }
-div {
+div:not(.dropdown):not(.dropdown_content) {
     background-color: #fff;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+a:link.dropdown_button {
+    color: black;
+}
+a:visited.dropdown_button {
+    color: black;
 }
 h1 {
     font-family: 'Felipa';
@@ -29,58 +37,6 @@ table {
 }
 table, th, td {
     border: 1px solid #000;
-}
-#nav {
-    margin-bottom: 5px;
-}
-#wrap:after {
-    content: '\200C';
-    display: block;
-    line-height: 1em;
-    color: #000;
-}
-#overall_linkm, #overall_linkmn, #overallm, #list, #playerlist, #playersearch, #checkboxes,
-#seasontoggle, #newlayout, #playersearchlink, #contents_new {
-    display: none;
-}
-#list, #playerlist {
-    margin-top: 10px;
-}
-#table {
-    margin-bottom: 15px;
-}
-#checkboxes, #ranking {
-    margin-top: 15px;
-}
-#ranking.sortable tbody {
-    counter-reset: sortabletablescope;
-}
-#ranking.sortable thead tr::before {
-    content: '';
-    display: table-cell;
-}
-#ranking.sortable tbody tr::before {
-    content: counter(sortabletablescope);
-    counter-increment: sortabletablescope;
-    display: table-cell;
-}
-#toggle {
-    float: left;
-}
-#languages {
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-#hy_container {
-    float: right;
-}
-#dates {
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-#contents > p, #contents_new > p, #ack_container > p {
-    margin: 4px;
 }
 .HRtPt th {
     color: white;
@@ -144,16 +100,6 @@ table, th, td {
 .WBaWCt th {
     color: white;
     background-color: #190e0e;
-}
-.wrap {
-    border: 1px solid #000;
-    text-align: center;
-    margin-left: 25%;
-    margin-right: 25%;
-    padding-left: 15px;
-    padding-right: 15px;
-    opacity: 0.8;
-    font: 14px verdana,sans-serif;
 }
 .border {
     border: 1px solid black;
@@ -222,19 +168,151 @@ table, th, td {
     color: #990099;
     font-weight: bold;
 }
-@media only screen and (min-width: 1400px) and (max-width: 1600px) {
+.dropdowns {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown_button {
+    text-decoration: none;
+    cursor: default;
+}
+.dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #000;
+    min-width: 120px;
+    opacity: 1.0;
+    z-index: 1;
+}
+.dropdown_content > p {
+    margin: 4px;
+}
+.dropdown_right {
+    right: 0;
+}
+.dropdown:hover .dropdown_content {
+    display: block;
+}
+.dropdown_content:hover .dropdown_content {
+    display: block;
+}
+.nav_left {
+    float: left;
+    margin-left: 4px;
+}
+.nav_right {
+    float: right;
+    margin-top: 4px;
+    margin-right: 4px;
+}
+.wrap {
+    border: 1px solid #000;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    font: 14px verdana,sans-serif;
+}
+#wrap {
+    padding-left: 15px;
+    padding-right: 15px;
+    opacity: 0.8;
+}
+#wrap:after {
+    content: '\200C';
+    display: block;
+    line-height: 1em;
+    color: #000;
+}
+#nav {
+    margin-bottom: 5px;
+}
+#ext_mobile {
+    display: none;
+}
+#overall_linkm, #overall_linkmn, #overallm, #list, #playerlist, #playersearch, #checkboxes,
+#seasontoggle, #newlayout, #playersearchlink, #contents_new {
+    display: none;
+}
+#list, #playerlist {
+    margin-top: 10px;
+}
+#table {
+    margin-bottom: 15px;
+}
+#checkboxes, #ranking {
+    margin-top: 15px;
+}
+#ranking.sortable tbody {
+    counter-reset: sortabletablescope;
+}
+#ranking.sortable thead tr::before {
+    content: '';
+    display: table-cell;
+}
+#ranking.sortable tbody tr::before {
+    content: counter(sortabletablescope);
+    counter-increment: sortabletablescope;
+    display: table-cell;
+}
+#toggle {
+    float: left;
+}
+#languages {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#hy_container {
+    float: right;
+}
+#dates {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#contents > p, #contents_new > p, #ack_container > p {
+    margin: 4px;
+}
+#ack {
+    font: 11px verdana,sans-serif;
+    text-align: right;
+    background: none;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+}
+#ack_br {
+    display: none;
+}
+@media only screen and (min-width: 1550px) and (max-width: 1750px) {
     .wrap {
         margin-left: 20%;
         margin-right: 20%;
     }
 }
-@media only screen and (min-width: 1100px) and (max-width: 1400px) {
+@media only screen and (min-width: 1150px) and (max-width: 1550px) {
     .wrap {
         margin-left: 15%;
         margin-right: 15%;
     }
+    #ack_br {
+        display: inline;
+    }
 }
-@media only screen and (min-width: 800px) and (max-width: 1100px) {
+@media only screen and (max-width: 1150px) {
+    #ack {
+        display: none;
+    }
+    #ack_mobile {
+        display: block;
+    }
+}
+@media only screen and (min-width: 800px) and (max-width: 1150px) {
     h1 {
         margin-bottom: 15px;
         margin-top: 0px;
@@ -246,8 +324,10 @@ table, th, td {
         font-size: 32px;
     }
     .wrap {
-        margin-left: 0%;
-        margin-right: 0%;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    #wrap {
         font-size: 11px;
     }
     #description {
@@ -266,10 +346,27 @@ table, th, td {
         margin-top: 5px;
         font-size: 32px;
     }
+    .dropdowns {
+        width: 100%;
+    }
+    .nav_left {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .nav_right {
+        display: none;
+    }
     .wrap {
         margin-left: 0;
         margin-right: 0;
+    }
+    #wrap {
         font-size: 11px;
+    }
+    #ext_mobile {
+        display: inline-block;
     }
     #description {
         padding-left: 25px;
@@ -289,6 +386,15 @@ table, th, td {
     }
 }
 @media only screen and (min-width: 320px) and (max-width: 800px) and (orientation: portrait) {
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    .player {
+        font-style: italic;
+    }
     #overall {
         display: none;
     }
@@ -304,40 +410,21 @@ table, th, td {
     #overall_linkm, #overall_linkmn {
         display: table-row;
     }
-    .wrap {
-        margin-left: 0;
-        margin-right: 0;
-        font-size: 11px;
-    }
-    .player {
-        font-style: italic;
-    }
+}
+@media only screen and (min-width: 480px) and (max-width: 640px) and (orientation: landscape) {
     h1 {
         font-size: 36px;
     }
     h2 {
         font-size: 24px;
     }
-}
-@media only screen and (min-width: 480px) and (max-width: 640px) and (orientation: landscape) {
+    .PCBt {
+        font-size: 9px;
+    }
     #overall_link, #overall_linkn {
         display: table-row;
     }
     #overall_linkm, #overall_linkmn {
         display: none;
-    }
-    .wrap {
-        margin-left: 0;
-        margin-right: 0;
-        font-size: 11px;
-    }
-    .PCBt {
-        font-size: 9px;
-    }
-    h1 {
-        font-size: 36px;
-    }
-    h2 {
-        font-size: 24px;
     }
 }

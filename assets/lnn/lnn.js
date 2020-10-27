@@ -42,7 +42,7 @@ function replayPath(game, player, character, type) {
     return "replays/lnn/" + folder + "/th" + gameAbbr(game) +
     "_ud" + first + last + shottypeAbbr(character) + ".rpy";
 }
-function show(game) {
+function showLNNs(game) {
     if (typeof game == "object") {
         game = this.id.slice(0, -1); // if event listener fired
     }
@@ -50,7 +50,7 @@ function show(game) {
     if (!LNNs) {
         $.get("assets/json/lnnlist.json", function (data) {
             LNNs = data;
-            show(game);
+            showLNNs(game);
         }, "json");
         return;
     }
@@ -146,7 +146,7 @@ function show(game) {
     generateFullNames();
     generateShottypes();
 }
-function getPlayerLNNs(player) {
+function showPlayerLNNs(player) {
     if (typeof player == "object") {
         player = this.value; // if event listener fired
     }
@@ -154,7 +154,7 @@ function getPlayerLNNs(player) {
     if (!LNNs) {
         $.get("assets/json/lnnlist.json", function (data) {
             LNNs = data;
-            getPlayerLNNs(player);
+            showPlayerLNNs(player);
         }, "json");
     }
 
@@ -236,8 +236,8 @@ function setLanguage(event) {
     location.href = location.href.split('#')[0].split('?')[0];
 }
 $(document).ready(function () {
-    $("#player").on("change", getPlayerLNNs);
-    $("#player").on("select", getPlayerLNNs);
+    $("#player").on("change", showPlayerLNNs);
+    $("#player").on("select", showPlayerLNNs);
     $("#layouttoggle").on("click", toggleLayout);
     $("#contents_new").css("display", "inline-block");
     $("#playersearch").css("display", "block");
@@ -247,7 +247,7 @@ $(document).ready(function () {
     $("#en").on("click", {language: "English"}, setLanguage);
     $("#jp").on("click", {language: "Japanese"}, setLanguage);
     $("#zh").on("click", {language: "Chinese"}, setLanguage);
-    $(".game").on("click", show);
+    $(".game").on("click", showLNNs);
     missingReplays = $("#missingReplays").val();
 
     if (getCookie("lang") == "Japanese" || location.href.contains("jp")) {

@@ -12,8 +12,16 @@ body.no-webp {
     background: url('pofv.jpg') center no-repeat fixed;
     background-size: cover;
 }
-div {
+div:not(.dropdown):not(.dropdown_content) {
     background-color: #fff;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+a:link.dropdown_button {
+    color: black;
+}
+a:visited.dropdown_button {
+    color: black;
 }
 div > div > p {
     margin: 4px;
@@ -52,17 +60,111 @@ ol > li {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-#nav {
-    margin-bottom: 5px;
+.S {
+    color: #8B0000;
+}
+.A {
+    color: #FF8C00;
+}
+.B {
+    color: #D6C218;
+}
+.C {
+    color: #57A818;
+}
+.D {
+    color: #008080;
+}
+.art {
+    border: 1px solid black;
+}
+.scope {
+    height: 300px;
+    width: 187px;
+}
+.border {
+    border: 1px solid black;
+    margin-bottom: 15px;
+}
+.noborders {
+    border: none;
+}
+.code {
+    font-family: 'courier new';
+}
+.stats {
+    text-align: left;
+}
+.char {
+    cursor: pointer;
+}
+.hidden {
+    display: none;
+}
+.dropdowns {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown_button {
+    text-decoration: none;
+    cursor: default;
+}
+.dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #000;
+    min-width: 120px;
+    opacity: 1.0;
+    z-index: 1;
+}
+.dropdown_content > p {
+    margin: 4px;
+}
+.dropdown_right {
+    right: 0;
+}
+.dropdown:hover .dropdown_content {
+    display: block;
+}
+.nav_left {
+    float: left;
+    margin-left: 4px;
+}
+.nav_right {
+    float: right;
+    margin-top: 4px;
+    margin-right: 4px;
+}
+.wrap {
+    border: 1px solid #000;
+    text-align: center;
+    margin-left: 23%;
+    margin-right: 23%;
+    font: 14px verdana,sans-serif;
 }
 #wrap {
+    padding-left: 15px;
+    padding-right: 15px;
     padding-bottom: 15px;
-}
-#hy {
-    float: right;
+    opacity: 0.8;
 }
 #wrap > div {
     display: inline-block;
+}
+#nav {
+    margin-bottom: 5px;
+}
+#ext_mobile {
+    display: none;
+}
+#hy {
+    float: right;
 }
 #modal {
     font: 14px verdana, sans-serif;
@@ -107,56 +209,26 @@ ol > li {
 #d {
     background: radial-gradient(#008080, #00BFBF, #00FFFF);
 }
-.S {
-    color: #8B0000;
+#ack {
+    font: 11px verdana,sans-serif;
+    text-align: right;
+    background: none;
+    position: fixed;
+    color: white;
+    bottom: 5px;
+    right: 5px;
 }
-.A {
-    color: #FF8C00;
-}
-.B {
-    color: #D6C218;
-}
-.C {
-    color: #57A818;
-}
-.D {
-    color: #008080;
-}
-.wrap {
-    border: 1px solid #000;
-    text-align: center;
-    margin-left: 23%;
-    margin-right: 23%;
-    padding-left: 15px;
-    padding-right: 15px;
-    opacity: 0.8;
-    font: 14px verdana,sans-serif;
-}
-.art {
-    border: 1px solid black;
-}
-.scope {
-    height: 300px;
-    width: 187px;
-}
-.border {
-    border: 1px solid black;
-    margin-bottom: 15px;
-}
-.noborders {
-    border: none;
-}
-.code {
-    font-family: 'courier new';
-}
-.stats {
-    text-align: left;
-}
-.char {
-    cursor: pointer;
-}
-.hidden {
+#ack_br, #ack_mobile {
     display: none;
+}
+#ack > a:link {
+    color: #1e90ff;
+}
+#ack > a:active {
+    color: red;
+}
+#ack > a:visited {
+    color: #ff69b4;
 }
 @media only screen and (min-width: 1500px) and (max-width: 1800px) {
     #modal_inner {
@@ -171,50 +243,85 @@ ol > li {
     #modal_inner {
         width: 65%;
     }
+    #ack_br {
+        display: inline;
+    }
 }
 @media only screen and (max-width: 1100px) {
     h1 {
+        margin-top: 15px;
         font-size: 44px;
     }
     h2 {
         font-size: 32px;
     }
-    p {
+    th {
+        font-size: 24px;
+        width: 75px;
+        height: 75px;
+    }
+    .char {
+        width: 75px;
+        height: 75px;
+    }
+    .wrap {
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    #wrap, #modal_inner {
+        font-size: 11px;
+    }
+    #modal_inner {
+        width: 75%;
+    }
+    #wrap p:not(#ack) {
         padding-left: 50px;
         padding-right: 50px;
     }
-    .wrap {
-        margin-left: 0px;
-        margin-right: 0px;
+}
+@media only screen and (min-width: 800px) and (max-width: 1100px) {
+    h1 {
+        clear: both;
     }
-    .wrap, #modal_inner {
-        font-size: 11px;
-    }
-    #modal_inner {
-        width: 90%;
+    #ack {
+        position: relative;
+        padding-left: 0px;
+        color: black;
+        float: left;
     }
 }
-@media only screen and (min-width: 320px) and (max-width: 800px) and (orientation: portrait) {
-    .wrap {
-        margin-left: 0px;
-        margin-right: 0px;
+@media only screen and (max-width: 800px) {
+    .dropdowns {
+        width: 100%;
     }
-    .wrap, #modal_inner {
-        font-size: 11px;
+    .nav_left {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .nav_right {
+        display: none;
+    }
+    .wrap {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #ext_mobile {
+        display: inline-block;
     }
     #modal_inner {
         height: 80%;
-    }
-    .guide {
         width: 90%;
     }
-    .char {
-        width: 50px;
-        height: 50px;
-    }
-    .art {
+    #ack {
         display: none;
     }
+    #ack_mobile {
+        display: block;
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 800px) and (orientation: portrait) {
     table.stats {
         table-layout: fixed;
         width: 200px;
@@ -229,7 +336,6 @@ ol > li {
         font-size: 24px;
     }
     th {
-        font-size: 24px;
         width: 50px;
         height: 50px;
     }
@@ -237,28 +343,21 @@ ol > li {
         margin-left: 0px;
         margin-right: 0px;
     }
-}
-@media only screen and (min-width: 480px) and (max-width: 640px) and (orientation: landscape) {
-    .wrap {
-        margin-left: 0px;
-        margin-right: 0px;
-    }
-    .wrap, #modal_inner {
-        font-size: 11px;
-    }
-    #modal_inner {
-        height: 70%;
-    }
     .guide {
         width: 90%;
     }
     .char {
-        width: 75px;
-        height: 75px;
+        width: 50px;
+        height: 50px;
     }
     .art {
         display: none;
     }
+    #hy {
+        float: none;
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 640px) and (orientation: landscape) {
     table.stats {
         table-layout: fixed;
         width: 400px;
@@ -280,5 +379,14 @@ ol > li {
     ol {
         margin-left: 0px;
         margin-right: 0px;
+    }
+    .guide {
+        width: 90%;
+    }
+    .art {
+        display: none;
+    }
+    #hy {
+        float: none;
     }
 }

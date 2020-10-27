@@ -12,30 +12,34 @@ body.no-webp {
     background: url('index.jpg') center no-repeat fixed;
     background-size: cover;
 }
-div {
+div:not(.dropdown):not(.dropdown_content) {
     background-color: #fff;
-    margin-top: 5px;
     margin-bottom: 5px;
+    margin-top: 5px;
+}
+a:link.dropdown_button {
+    color: black;
+}
+a:visited.dropdown_button {
+    color: black;
 }
 h1 {
     font-family: 'Felipa';
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-size: 48px;
 }
 h2 {
     font-family: 'Felipa';
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    margin-top: 15px;
     font-size: 36px;
     clear: both;
 }
 h3 {
     font-family: 'Felipa';
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     margin-top: 15px;
     font-size: 24px;
-}
-hr {
-    clear: both;
 }
 ul {
     margin: 0px 10% 0px;
@@ -47,21 +51,22 @@ li {
 p {
     margin: 4px;
 }
+span {
+    margin: 0 0 0 0;
+}
 .wide {
     margin: 10px;
 }
 .wide-top {
     margin-top: 10px;
 }
-.wrap {
-    border: 1px solid #000;
-    text-align: center;
-    margin-left: 24%;
-    margin-right: 24%;
-    padding-left: 15px;
-    padding-right: 15px;
-    opacity: 0.8;
-    font: 14px verdana,sans-serif;
+.pages_left {
+    float: left;
+    width: 50%;
+}
+.pages_right {
+    float: right;
+    width: 50%;
 }
 .page_table {
     background-color: #ddd;
@@ -70,34 +75,96 @@ p {
     margin-right: 15px;
     margin-left: 15px;
 }
+.link {
+    position: relative;
+}
+.link .tooltip {
+    width: 300px;
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 80%;
+    margin-left: -60px;
+}
+.link:hover .tooltip {
+    visibility: visible;
+}
+.tooltip_link:link {
+    color: #1e90ff;
+}
+.tooltip_link:active {
+    color: red;
+}
+.tooltip_link:visited {
+    color: #ff69b4;
+}
+.dropdowns {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown_button {
+    text-decoration: none;
+    cursor: default;
+}
+.dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #000;
+    min-width: 120px;
+    opacity: 1.0;
+    z-index: 1;
+}
+.dropdown_right {
+    right: 0;
+}
+.dropdown:hover .dropdown_content {
+    display: block;
+}
+.dropdown_content:hover .dropdown_content {
+    display: block;
+}
+.nav_left {
+    float: left;
+    margin-left: 4px;
+}
+.nav_right {
+    float: right;
+    margin-top: 4px;
+    margin-right: 4px;
+}
+.wrap {
+    border: 1px solid #000;
+    text-align: center;
+    margin-left: 24%;
+    margin-right: 24%;
+    font: 14px verdana,sans-serif;
+}
+#wrap {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    opacity: 0.8;
+}
 #nav {
     margin-bottom: 5px;
 }
-#links {
-    float: left;
+#ext_mobile {
+    display: none;
 }
 #hy {
     float: right;
-}
-#wrap {
-    padding-bottom: 5px;
-}
-#intro {
-    margin: 4px;
-}
-#pages {
-    margin-left: auto;
-    margin-right: auto;
-    float: none;
-    clear: both;
-}
-#pages_left {
-    float: left;
-    width: 50%;
-}
-#pages_right {
-    float: right;
-    width: 50%;
 }
 #map {
     width: 53%;
@@ -105,14 +172,48 @@ p {
 #tiers {
     width: 68%;
 }
-#pagelinks {
-    margin-top: 15px;
-    margin-bottom: 0px;
+#bottom {
+    clear: both;
+}
+#ack, #ack_admin {
+    font: 11px verdana,sans-serif;
+    background: none;
+    position: fixed;
+    color: white;
+    bottom: 5px;
+    right: 5px;
+}
+#ack > a:link, #ack_admin > a:link {
+    color: #1e90ff;
+}
+#ack > a:active, #ack_admin > a:active {
+    color: red;
+}
+#ack > a:visited, #ack_admin > a:visited {
+    color: #ff69b4;
+}
+#ack_br, #ack_mobile {
+    display: none;
 }
 @media only screen and (min-width: 1100px) and (max-width: 1400px) {
     .wrap {
         margin-left: 15%;
         margin-right: 15%;
+    }
+    #ack #ack_br {
+        display: inline;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    #ack {
+        position: relative;
+        color: black;
+        float: left;
+    }
+    .page_table > .link > .tooltip {
+        width: 200px;
+        top: 100%;
+        left: 30%;
     }
 }
 @media only screen and (min-width: 800px) and (max-width: 1100px) {
@@ -125,6 +226,8 @@ p {
     .wrap {
         margin-left: 10%;
         margin-right: 10%;
+    }
+    #wrap {
         font-size: 11px;
     }
     #avatar {
@@ -138,16 +241,45 @@ p {
     h2 {
         font-size: 32px;
     }
+    .dropdowns {
+        width: 100%;
+    }
+    .nav_left {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .nav_right {
+        display: none;
+    }
     .wrap {
         margin-left: 0;
         margin-right: 0;
+    }
+    #wrap {
+        font-size: 11px;
+    }
+    #ext_mobile {
+        display: inline-block;
+    }
+    #page_links {
+        display: none;
     }
     #avatar {
         width: 95%;
     }
+    #ack, #ack_admin {
+        display: none;
+    }
+    #ack_mobile {
+        display: block;
+        clear: both;
+    }
 }
-@media only screen and (min-width: 320px) and (max-width: 800px) and (orientation: portrait) {
+@media only screen and (((min-width: 320px) and (max-width: 800px) and (orientation: portrait)) or ((min-width: 480px) and (max-width: 640px) and (orientation: landscape))) {
     h1 {
+        margin-top: 10px;
         font-size: 36px;
     }
     h2 {
@@ -159,34 +291,30 @@ p {
     li {
         margin: 0px;
     }
-    .wrap {
-        margin-left: 0;
-        margin-right: 0;
-        font-size: 11px;
+    .pages_left, .pages_right {
+        float: none;
+        width: 100%;
+    }
+    #hy {
+        float: none;
     }
     #avatar, #map, #tiers {
         width: 95%;
+    }
+    #desktop_hover {
+        display: none;
+    }
+    #ack_mobile {
+        margin-top: 15px;
     }
 }
-@media only screen and (min-width: 480px) and (max-width: 640px) and (orientation: landscape) {
+@media only screen and (max-height: 550px) {
     h1 {
-        font-size: 36px;
+        clear: both;
     }
-    h2 {
-        font-size: 24px;
-    }
-    ul {
-        margin: 0px 0% 0px;
-    }
-    li {
-        margin: 0px;
-    }
-    .wrap {
-        margin-left: 0;
-        margin-right: 0;
-        font-size: 11px;
-    }
-    #avatar, #map, #tiers {
-        width: 95%;
+    #ack, #ack_admin {
+        position: relative;
+        color: black;
+        float: left;
     }
 }
