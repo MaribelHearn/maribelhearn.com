@@ -193,13 +193,13 @@
                                 foreach ($value as $key => $val) {
                                     $substr .= tl_shot($val[2], $lang) . ($lang == 'English' ? ' ' : '') . $val[0] .
                                     ($lang == 'English' ? ' (' : '（') . date_tl($val[1], $notation) .
-                                    ($lang == 'English' ? ' )' : '）') . '<br>';
+                                    ($lang == 'English' ? ')' : '）') . '<br>';
                                 }
                                 $str .= $substr;
                             } else {
                                 $str .= tl_shot($value[2], $lang) . ($lang == 'English' ? ' ' : '') . $value[0] .
                                 ($lang == 'English' ? ' (' : '（') . date_tl($value[1], $notation) .
-                                ($lang == 'English' ? ' )' : '）') . '<br>';
+                                ($lang == 'English' ? ')' : '）') . '<br>';
                             }
                             $str .= '</span></span>';
                         }

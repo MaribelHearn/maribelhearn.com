@@ -76,6 +76,9 @@ a:visited.dropdown_button {
 ::before {
     color: white;
 }
+.cs {
+    border-bottom: 1px dotted white;
+}
 .g {
     color: lime;
 }
