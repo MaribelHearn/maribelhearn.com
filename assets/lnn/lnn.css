@@ -192,7 +192,7 @@ table, th, td {
     bottom: 0px;
     right: 5px;
 }
-#ack_br {
+#ack_br, #ack_mobile {
     display: none;
 }
 #ack > a:link {

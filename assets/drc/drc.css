@@ -147,7 +147,7 @@ input[type=number] {
     bottom: 5px;
     right: 5px;
 }
-#ack_br {
+#ack_br, #ack_mobile {
     display: none;
 }
 #ack > a:link {

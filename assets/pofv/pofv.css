@@ -194,6 +194,9 @@ ol > li {
 #modal_inner > p {
     margin-bottom: 15px;
 }
+#discord {
+    white-space: nowrap;
+}
 #s {
     background: radial-gradient(#8B0000, #C54500, #FF8C00);
 }

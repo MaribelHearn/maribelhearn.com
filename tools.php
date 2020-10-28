@@ -356,7 +356,7 @@
 			<p>Allows the in-game score counter to exceed 9,999,999,990 points.</p>
 			<a href='https://maribelhearn.com/mirror/th17_score_uncap.zip' target='_blank'>Download</a>
 			<hr>
-			<div id='ack_mobile' class='noborders'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=66609'>青葉</a>.</div>
+			<p id='ack_mobile' class='noborders'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=66609'>青葉</a>.</p>
             <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
         </div>
         <script src='assets/shared/dark.js'></script>

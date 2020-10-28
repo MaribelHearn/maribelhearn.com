@@ -238,8 +238,8 @@ input[type=button] {
         clear: both;
     }
     .wrap {
-        margin-left: 0;
-        margin-right: 0;
+        margin-left: 8%;
+        margin-right: 8%;
     }
     #wrap, #modal_inner {
         font-size: 11px;
