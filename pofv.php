@@ -35,7 +35,7 @@
 			?>
             <p>This is a portal for competitive PoFV play, featuring the current tier list, a guide to help you get started with
             netplay, and links to relevant resources as well as the rules of tournaments for the game, held at the
-            <a href='https://discord.gg/2QPPPpE'><img src='assets/ext/discord-icon-small.ico' alt='Discord icon'>
+            <a id='discord' href='https://discord.gg/2QPPPpE'><img src='assets/ext/discord-icon-small.ico' alt='Discord icon'>
             Phantasmagoria Netplay Discord server</a>.</p>
             <h2>Contents</h2>
             <div class='border'>

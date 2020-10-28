@@ -315,7 +315,7 @@ table, th, td {
     bottom: 5px;
     right: 5px;
 }
-#ack_br {
+#ack_br, #ack_mobile {
     display: none;
 }
 @media only screen and (min-width: 1550px) and (max-width: 1750px) {
