@@ -22,9 +22,14 @@
         <main>
             <div id='wrap' class='wrap'>
                 <p id='ack'>This background image<br id='ack_br'>
-                was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a>.</p>
+                was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a></p>
                 <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
                 <h1>Privacy Policy</h1>
+    			<?php
+    				if (!empty($_GET['redirect'])) {
+    					echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
+    				}
+    			?>
                 <p class='wide'><strong>Effective date:</strong> 16 December 2019</p>
                 <p>Maribel Hearn's Touhou Portal ("us", "we", or "our") operates the maribelhearn.com
                 website (hereinafter referred to as the "Service").</p>
@@ -79,9 +84,9 @@
                 </ul>
 
                 <p class='wide-top'><strong><a href='#top'>Back to Top</a></strong></p>
+                <script src='assets/shared/dark.js'></script>
             </div>
         </main>
-        <script src='assets/shared/dark.js'></script>
     </body>
 
 </html>

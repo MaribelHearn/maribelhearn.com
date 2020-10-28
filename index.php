@@ -208,9 +208,9 @@
                 </div>-->
                 <div id='ack_mobile'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a>.</div>
                 <div id='bottom'></div>
+                <script src='assets/shared/dark.js'></script>
             </div>
         </main>
-        <script src='assets/shared/dark.js'></script>
     </body>
 
 </html>

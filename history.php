@@ -29,6 +29,11 @@
 				was drawn by <a href='https://www.pixiv.net/member.php?id=2263353'>RAT_Huang</a></p>
 	            <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
 	            <h1>Maribel's Achievement History</h1>
+    			<?php
+    				if (!empty($_GET['redirect'])) {
+    					echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
+    				}
+    			?>
 	            <p id='notice'><strong>Notice:</strong> this page is best viewed on mobile using landscape mode.</p>
 	            <p>I am a bullet hell player who mostly plays for score and mains Touhou 13: Ten Desires.
 				I have also scored Touhou 16: Hidden Star in Four Seasons, Seihou Banshiryuu C67 and Samidare.</p>
@@ -4458,9 +4463,9 @@
 	            </div>
 				<p id='ack_mobile' class='noborders'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=2263353'>RAT_Huang</a>.</p>
 	            <p><strong><a href='#top'>Back to Top</a></strong></p>
+                <script src='assets/shared/dark.js'></script>
 	        </div>
 		</main>
-        <script src='assets/shared/dark.js'></script>
 	</body>
 
 </html>
