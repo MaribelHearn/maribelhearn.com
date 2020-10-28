@@ -173,9 +173,9 @@
 						foreach ($wr as $game => $value) {
 							$num = num($game);
 							echo '<tr id="' . $game . 'o"><td>' . $num . '</td><td class="' . $game . '">' . game_tl($game, $lang) . '</td>';
-							echo '<td id="' . $game . 'overall0">' . ($game == 'WBaWC' ? '<abbr ' .
-                            'title="' . number_format($overall[$num], 0, '.', ',') . '">9,999,999,990' .
-                            '</abbr>' : number_format($overall[$num], 0, '.', ',')) . '</td>';
+							echo '<td id="' . $game . 'overall0">' . ($game == 'WBaWC' ? '<span class="cs">9,999,999,990' .
+                            '<span class="tooltip truescore">' . number_format($overall[$num], 0, '.', ',') .
+                            '</span></span> ' : number_format($overall[$num], 0, '.', ',')) . '</td>';
                             echo '<td id="' . $game . 'overall1">' . $overall_player[$num] . ($game == 'WBaWC' ? '*' : '') . '</td>';
 							echo '<td id="' . $game . 'overall2">' . $overall_diff[$num] . '</td>';
 							echo '<td id="' . $game . 'overall3">' . tl_shot($overall_shottype[$num], $lang) . '</td>';
@@ -187,17 +187,21 @@
                     <?php
                         $str = '';
                         foreach ($cs as $player => $value) {
-                            $str .= ', <abbr title="';
+                            $str .= ', <span class="cs">' . $player . '<span class="tooltip truescores">';
                             if (gettype($value[0]) == 'array') {
                                 $substr = '';
                                 foreach ($value as $key => $val) {
-                                    $substr .= ', ' . $val[2] . ' ' . $val[0] . ' on ' . date_tl($val[1], $notation);
+                                    $substr .= tl_shot($val[2], $lang) . ($lang == 'English' ? ' ' : '') . $val[0] .
+                                    ($lang == 'English' ? ' (' : '（') . date_tl($val[1], $notation) .
+                                    ($lang == 'English' ? ' )' : '）') . '<br>';
                                 }
-                                $str .= substr($substr, 2);
+                                $str .= $substr;
                             } else {
-                                $str .= $value[2] . ' ' . $value[0] . ' on ' . date_tl($value[1], $notation);
+                                $str .= tl_shot($value[2], $lang) . ($lang == 'English' ? ' ' : '') . $value[0] .
+                                ($lang == 'English' ? ' (' : '（') . date_tl($value[1], $notation) .
+                                ($lang == 'English' ? ' )' : '）') . '<br>';
                             }
-                            $str .= '">' . $player . '</abbr>';
+                            $str .= '</span></span>';
                         }
                         echo substr($str, 2);
                     ?>.
@@ -210,9 +214,9 @@
 					foreach ($wr as $game => $value) {
 						$num = num($game);
 						echo '<p class="' . $game . ' count">' . game_tl($game, $lang) . '</p><p>';
-                        echo '<span id="' . $game . 'overall0m">' . ($game == 'WBaWC' ? '<abbr ' .
-                        'title="' . number_format($overall[$num], 0, '.', ',') . '">9,999,999,990' .
-                        '</abbr> ' : number_format($overall[$num], 0, '.', ',')) . '</span> ';
+                        echo '<span id="' . $game . 'overall0m">' . ($game == 'WBaWC' ? '<span class="cs">9,999,999,990' .
+                        '<span class="tooltip truescore">' . number_format($overall[$num], 0, '.', ',') .
+                        '</span></span> ' : number_format($overall[$num], 0, '.', ',')) . '</span> ';
 						echo '<span id="' . $game . 'overall2m">' . $overall_diff[$num] . '</span> ';
 						echo '<span id="' . $game . 'overall3m">' . tl_shot($overall_shottype[$num], $lang) . '</span> by ';
 						echo '<span id="' . $game . 'overall1m"><em>' . $overall_player[$num] . ($game == 'WBaWC' ? '*' : '') . '</em></span> ';
@@ -278,8 +282,8 @@
                                 }
                             } else {
                                 if ($score >= $MAX_SCORE) {
-                                    $score_text = '<abbr title="' . number_format($score, 0, '.', ',') .
-                                    '">' . number_format($MAX_SCORE, 0, '.', ',') . '</abbr>';
+                                    $score_text = '<span class="cs">' . number_format($MAX_SCORE, 0, '.', ',') .
+                                    '<span class="tooltip">' . number_format($score, 0, '.', ',') . '</span></span>';
                                 } else {
                                     $score_text = number_format($score, 0, '.', ',');
                                 }

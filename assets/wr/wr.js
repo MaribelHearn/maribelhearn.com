@@ -7,18 +7,22 @@ var WRs, westScores, missingReplays, seasonsEnabled, datesEnabled,
 
 function removeChar(string) {
     return string.replace("Reimu", "").replace("Cirno", "").replace("Aya", "").replace("Marisa", "");
-};
+}
+
 function removeSeason(string) {
     return string.replace("Spring", "").replace("Summer", "").replace("Autumn", "").replace("Winter", "");
-};
+}
+
 function isPortrait() {
     return window.innerHeight > window.innerWidth && (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1);
 }
+
 function toggleSeasons() {
     seasonsEnabled = !seasonsEnabled;
     seasonsEnabled ? localStorage.setItem("seasonsEnabled", true) : localStorage.removeItem("seasonsEnabled");
     showWRs({data: {game: "HSiFS", seasonSwitch: true}});
 }
+
 function toggleLayout() {
     if (getCookie("wr_old_layout")) {
         deleteCookie("wr_old_layout");
@@ -26,6 +30,7 @@ function toggleLayout() {
         setCookie("wr_old_layout", true);
     }
 }
+
 function toggleDates(event) {
     var alreadyDisabled = event.data.alreadyDisabled, i;
 
@@ -46,15 +51,19 @@ function toggleDates(event) {
     $(".date, .date_empty").css("display", datesEnabled ? "table-cell" : "none");
     $(".datestring, .datestring_game").css("display", datesEnabled ? "table-cell" : "none");
 }
+
 function disableDates() {
     toggleDates({data: {alreadyDisabled: true}});
 }
+
 function shotRoute(game) {
     return game == "HRtP" || game == "GFW" ? "Route" : "Shottype";
 }
+
 function replayPath(game, difficulty, shottype) {
     return "replays/th" + gameAbbr(game) + "_ud" + difficulty.substr(0, 2) + shottypeAbbr(shottype) + ".rpy";
 }
+
 function bestSeason(difficulty, shottype) {
     var shottypes = WRs.HSiFS[difficulty], max = 0, season, i;
 
@@ -71,6 +80,7 @@ function bestSeason(difficulty, shottype) {
 
     return season;
 }
+
 function percentageClass(percentage) {
     if (percentage < 50) {
         return "does_not_even_score";
@@ -84,6 +94,7 @@ function percentageClass(percentage) {
         return "does_even_score_well";
     }
 }
+
 function showWesternRecords(compareWRs, game) {
     var difficulty, percentage, west, westPlayer, westShottype, world, worldPlayer, worldShottype;
 
@@ -111,6 +122,7 @@ function showWesternRecords(compareWRs, game) {
         "'>(" + (parseInt(percentage) == 100 ? 100 : percentage) + "%)</td></tr>");
     }
 }
+
 function appendShottypeHeaders(game, shottypes) {
     $("#list_tbody").html("");
 
@@ -142,6 +154,7 @@ function appendShottypeHeaders(game, shottypes) {
         }
     }
 }
+
 function appendDifficultyHeaders(game, difficulty, shottypes) {
     var extraShots = ["Reimu", "Cirno", "Aya", "Marisa"], i;
 
@@ -165,6 +178,7 @@ function appendDifficultyHeaders(game, difficulty, shottypes) {
         }
     }
 }
+
 function showWRs(event) {
     var game = event.data.game ? event.data.game : this.id.slice(0, -1), seasonSwitch = event.data.seasonSwitch;
 
@@ -253,7 +267,8 @@ function showWRs(event) {
                 bestShotMax = score;
             }
 
-            sepScore = (game == "WBaWC" && score > MAX_SCORE ? "<abbr title='" + sep(score) + "'>9,999,999,990</abbr>" : sep(score));
+            sepScore = (game == "WBaWC" && score > MAX_SCORE ? "<span class='cs'>9,999,999,990" +
+            "<span class='tooltip truescore'>" + sep(score) + "</span></span>" : sep(score));
             text = (replay === "" ? sepScore : "<a class='replay' href='" + replay + "'>" + sepScore + "</a>") +
             "<br>by <em>" + player + "</em>" + (date && datesEnabled ? "<span class='dimgrey'><br>" +
             "<span class='datestring_game'>" + date + "</span></span>" : "");
@@ -266,7 +281,8 @@ function showWRs(event) {
         }
 
         if (bestShotMax > 0) {
-            sepScore = (game == "WBaWC" && bestShotMax > MAX_SCORE ? "<abbr title='" + sep(bestShotMax) + "'>9,999,999,990</abbr>" : sep(bestShotMax));
+            sepScore = (game == "WBaWC" && bestShotMax > MAX_SCORE ? "<span class='cs'>9,999,999,990" +
+            "<span class='tooltip truescore'>" + sep(bestShotMax) + "</span></span>" : sep(bestShotMax));
             $(bestShot.id).html((bestShot.replay === "" ? "<u>" + sepScore + "</u>" : "<u><a class='replay' href='" + bestShot.replay +
             "'>" + sepScore + "</a></u>") + "<br>by <em>" + bestShot.player +
             "</em>" + (bestShot.date && datesEnabled ? "<span class='dimgrey'><br><span class='datestring_game'>" + bestShot.date + "</span></span>" : ""));
@@ -296,6 +312,7 @@ function showWRs(event) {
     $("#seasontoggle").css("display", game == "HSiFS" ? "block" : "none");
     $("#seasons").prop("checked", seasonsEnabled);
 }
+
 function showPlayerWRs(player) {
     if (typeof player == "object") {
         player = this.value; // if event listener fired
@@ -375,6 +392,7 @@ function showPlayerWRs(player) {
     generateShottypes();
     generateDates(false, false, playerSelected);
 }
+
 function updateOrientation() {
     if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) {
         if (selected !== "") {
@@ -385,6 +403,7 @@ function updateOrientation() {
         }
     }
 }
+
 function generateDates(oldLanguage, oldNotation, playerSelected) {
     var datestrings, date, i;
 
@@ -437,6 +456,7 @@ function generateDates(oldLanguage, oldNotation, playerSelected) {
         }
     }
 }
+
 function setLanguage(event) {
     var newLanguage = event.data.language, newNotation = event.data.notation;
 
@@ -452,6 +472,7 @@ function setLanguage(event) {
     setCookie("datenotation", newNotation);
     location.href = location.href.split('#')[0].split('?')[0];
 }
+
 function setEventListeners() {
     $("#layouttoggle").on("click", toggleLayout);
     $("#player").on("change", showPlayerWRs);
@@ -464,6 +485,7 @@ function setEventListeners() {
     $("#zh").on("click", {language: "Chinese", notation: "YMD"}, setLanguage);
     $(".game").on("click", {seasonSwitch: false}, showWRs);
 }
+
 function setAttributes() {
     $("#newlayout").css("display", "block");
     $("#playersearch").css("display", "block");
@@ -473,6 +495,7 @@ function setAttributes() {
     $("#checkboxes").css("display", "table");
     $(".flag").attr("href", "");
 }
+
 $(document).ready(function () {
     missingReplays = $("#missingReplays").val();
     datesEnabled = localStorage.getItem("datesEnabled");
