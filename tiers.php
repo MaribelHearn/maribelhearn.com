@@ -31,7 +31,7 @@
                 <h1 id='title'>Touhou Tier List Creator</h1>
                 <?php
                     if (!empty($_GET['redirect'])) {
-                        echo '<p>(Redirected from <em>' . $_GET['redirect'] . '</em>)</p>';
+                        echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
                     }
                 ?>
                 <div id='sort_selection'>

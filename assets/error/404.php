@@ -1,17 +1,31 @@
 ﻿<!DOCTYPE html>
 <html lang='en'>
 <?php
-    include '../shared/navbar.php';
-    include '../../.stats/count.php';
-    hit(basename(__FILE__));
-	$page = str_replace('.php', '', basename(__FILE__));
+    $max_sim = 0;
+    $url = substr($_SERVER['REQUEST_URI'], 1);
+    foreach (glob('../../*') as $file) {
+        if (strpos($file, '.php')) {
+            $page = substr($file, 6, -4);
+            $max_sim = max(similar_text($url, $page), $max_sim);
+            echo '<p>' . $page . ': ' . similar_text($url, $page) . '</p>';
+            if (similar_text($url, $page) >= $max_sim) {
+                $max_page = $page;
+            }
+        }
+    }
+    $len = strlen($max_page) - 3;
+    if ($max_sim > $len) {
+        header('Location: https://maribelhearn.com/' . $max_page . '?redirect=' . $url);
+    }
     $json = file_get_contents('../json/admin.json');
     $data = json_decode($json, true);
-    $url = substr($_SERVER['REQUEST_URI'], 1);
     if (isset($data[$url])) {
         header('Location: ' . $data[$url]);
         exit();
     }
+    include '../shared/navbar.php';
+    include '../../.stats/count.php';
+    hit(basename(__FILE__));
 ?>
 
     <head>
@@ -20,7 +34,6 @@
 		<meta name='viewport' content='width=device-width'>
         <link rel='stylesheet' type='text/css' href='https://maribelhearn.com/assets/error/error.css'>
 		<link rel='icon' type='image/x-icon' href='https://maribelhearn.com/favicon.ico'>
-		<script src='https://maribelhearn.com/assets/error/404.js' defer></script>
     </head>
 
     <body class='<?php echo check_webp() ?>'>
@@ -33,7 +46,11 @@
                 was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a>.</p>
                 <img id='hy' src='https://maribelhearn.com/assets/shared/h-bar.png' title='Human Mode'>
                 <h1>404</h1>
-                <p><strong>File not found<span id='didyoumean'></span></strong></p>
+                <p><strong>File not found<?php
+                    if ($max_sim > $len - 2) {
+                        echo ' - did you mean <a href="https://maribelhearn.com/' . $max_page . '">' . $max_page . '</a>?';
+                    }
+                ?></strong></p>
                 <p>You got only 404 points? That's not a very good score. I would suggest you go for at least 1 billion!</p>
                 <script src='https://maribelhearn.com/assets/shared/dark.js'></script>
             </div>

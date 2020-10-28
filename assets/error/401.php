@@ -4,7 +4,6 @@
     include '../shared/navbar.php';
     include '../../.stats/count.php';
     hit(basename(__FILE__));
-	$page = str_replace('.php', '', basename(__FILE__));
 ?>
 
     <head>

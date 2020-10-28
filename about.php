@@ -29,9 +29,14 @@
         <main>
             <div id='wrap' class='wrap'>
                 <p id='ack'>This background image<br id='ack_br'>
-                was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a>.</p>
+                was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a></p>
                 <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
                 <h1>About Me</h1>
+    			<?php
+    				if (!empty($_GET['redirect'])) {
+    					echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
+    				}
+    			?>
                 <p>Hello, I am Mari, a <?php echo getAge('1995-07-29'); ?> year old Dutch guy who
                 likes to play shoot 'em up games seriously.</p>
                 <p class='wide'>I am a nerdy person that studies Computer Science and takes keen interests in countries, travel,
@@ -221,9 +226,9 @@
                     <figcaption><em>Touhou character tier list as of 7 August 2020</em></figcaption>
                 </figure>
                 <p class='wide-top'><strong><a href='#top'>Back to Top</a></strong></p>
+                <script src='assets/shared/dark.js'></script>
             </div>
         </main>
-        <script src='assets/shared/dark.js'></script>
     </body>
 
 </html>

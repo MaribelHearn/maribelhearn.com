@@ -27,6 +27,11 @@
             <div id='wrap' class='wrap'>
                 <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
                 <h1>Seihou Banshiryuu C67</h1>
+    			<?php
+    				if (!empty($_GET['redirect'])) {
+    					echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
+    				}
+    			?>
                 <p>This page covers the scoring system and mechanics of the Comiket 67 release of Seihou Banshiryuu.</p>
                 <picture>
                     <source srcset='<?php echo $empty; ?>' data-srcset='assets/c67/boxart.webp' type='image/webp'>
@@ -294,9 +299,9 @@
                 </div>
                 <p>* Much higher than any other bomb in practice (if used on top of an enemy or boss)</p>
                 <p><strong><a href='#top'>Back to Top</a></strong></p>
+                <script src='assets/shared/dark.js'></script>
             </div>
         </main>
-        <script src='assets/shared/dark.js'></script>
     </body>
 
 </html>
