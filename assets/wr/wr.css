@@ -168,6 +168,35 @@ table, th, td {
     color: #990099;
     font-weight: bold;
 }
+.cs {
+    position: relative;
+    border-bottom: 1px dotted black;
+}
+.tooltip {
+    font-weight: initial;
+}
+.cs .tooltip {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 80%;
+    margin-left: -60px;
+}
+.truescore {
+    width: 150px;
+}
+.truescores {
+    width: 300px;
+}
+.cs:hover .tooltip {
+    visibility: visible;
+}
 .dropdowns {
     margin-left: auto;
     margin-right: auto;
