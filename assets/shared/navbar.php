@@ -130,6 +130,7 @@ function navbar($page) {
         $navbar = str_replace('../http', 'http', $navbar);
         $navbar = str_replace('assets', '../assets', $navbar);
         $navbar = str_replace('fav', '../fav', $navbar);
+        $navbar = str_replace('..//', '../', $navbar);
     } else if ($page == 'error') {
         $navbar = str_replace('assets', 'https://maribelhearn.com/assets', $navbar);
         $navbar = str_replace('fav', 'https://maribelhearn.com/fav', $navbar);
