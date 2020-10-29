@@ -19,7 +19,7 @@ table {
 table, tr, th, td {
     border: 1px solid black;
 }
-div:not(.dropdown):not(.dropdown_content) {
+div:not(.dropdown):not(.dropdown_content):not(.legend) {
     background-color: #fff;
     margin-bottom: 5px;
     margin-top: 5px;
@@ -52,6 +52,9 @@ input[type=button] {
     display: inline-block;
     height: 15px;
     width: 15px;
+}
+.bold {
+    font-weight: bold;
 }
 .clear {
     background-color: green;
@@ -140,7 +143,7 @@ input[type=button] {
 #nav {
     margin-bottom: 5px;
 }
-#ext_mobile {
+#ext_mobile, #legend {
     display: none;
 }
 #hy {

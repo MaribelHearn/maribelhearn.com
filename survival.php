@@ -45,123 +45,115 @@
 		</nav>
         <main>
     		<div id='wrap' class='wrap'>
-    			<p id='ack'>This background image<br id='ack_br'>
-    			was drawn by <a href='https://www.pixiv.net/member.php?id=759506'>windtalker</a></p>
-    			<img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
-    			<h1>Survival Progress Table Generator</h1>
-    			<?php
-    				if (!empty($_GET['redirect'])) {
-    					echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
-    				}
-    			?>
-                <noscript><strong>Notice:</strong> this page will not function properly with JavaScript disabled.</noscript>
-    			<p>Fill in the best survivals you have pulled off in the table below. If you leave a dropdown menu on the N/A option, it will not be factored in.
-                When you click Apply, three different tables indicating your survival progress will be generated.</p>
-    			<p>The main survival progress table is an image and can be copied or saved to your device.</p>
-                <p>NM = No Miss (no deaths), NB = No Bomb, NMNB = No Miss No Bomb. There can also be a third restriction, depending on the game.
-                In PCB this restriction is NBB (No Border Breaks), in UFO it is NV (No UFO Summons),
-    			in TD it is NT (No Trance), in HSiFS it is NR (No Releases) and in WBaWC it is NHNRB (No Berserk Roar No Roar Breaks).
-                The Phantasm Stage counts as another Extra Stage.</p>
-                <p>Use the below selectors to fill up many achievements at once. Normal, Hard and Lunatic will also fill the difficulties below them.</p>
-                <p>
-                    <label for='fillGameDifficulty'>Game / Difficulty</label>
-                    <select id='fillGameDifficulty'>
-    					<?php
-    						foreach ($games as $key => $game) {
-    							echo '<option>' . $game . '</option>';
-    						}
-    						foreach ($diffs as $key => $diff) {
-    							echo '<option>' . $diff . '</option>';
-    						}
-    					?>
-                    </select>
-                    <br>
-                    <label for='fillAchievement'>Achievement</label>
-                    <select id='fillAchievement'>
-                        <option>N/A</option>
-                        <option>Not cleared</option>
-                        <option>1cc</option>
-                        <option>NM</option>
-                        <option>NB</option>
-                        <option>NB+</option>
-                        <option>NMNB</option>
-                    </select>
-                    <br>
-                    <input id='fillAll' type='button' value='Fill All'>
-                </p>
+                <p id='ack'>This background image<br id='ack_br'>
+                was drawn by <a href='https://www.pixiv.net/member.php?id=759506'>windtalker</a></p>
+                <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
+                <div id='content'>
+        			<h1>Survival Progress Table Generator</h1>
+        			<?php
+        				if (!empty($_GET['redirect'])) {
+        					echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
+        				}
+        			?>
+                    <noscript><strong>Notice:</strong> this page will not function properly with JavaScript disabled.</noscript>
+        			<p>Fill in the best survivals you have pulled off in the table below. If you leave a dropdown menu on the N/A option, it will not be factored in.
+                    When you click Apply, three different tables indicating your survival progress will be generated.</p>
+        			<p>The main survival progress table is an image and can be copied or saved to your device.</p>
+                    <p>NM = No Miss (no deaths), NB = No Bomb, NMNB = No Miss No Bomb. There can also be a third restriction, depending on the game.
+                    In PCB this restriction is NBB (No Border Breaks), in UFO it is NV (No UFO Summons),
+        			in TD it is NT (No Trance), in HSiFS it is NR (No Releases) and in WBaWC it is NHNRB (No Berserk Roar No Roar Breaks).
+                    The Phantasm Stage counts as another Extra Stage.</p>
+                    <p>Use the below selectors to fill up many achievements at once. Normal, Hard and Lunatic will also fill the difficulties below them.</p>
+                    <p>
+                        <label for='fillGameDifficulty'>Game / Difficulty</label>
+                        <select id='fillGameDifficulty'>
+        					<?php
+        						foreach ($games as $key => $game) {
+        							echo '<option>' . $game . '</option>';
+        						}
+        						foreach ($diffs as $key => $diff) {
+        							echo '<option>' . $diff . '</option>';
+        						}
+        					?>
+                        </select>
+                        <br>
+                        <label for='fillAchievement'>Achievement</label>
+                        <select id='fillAchievement'>
+                            <option>N/A</option>
+                            <option>Not cleared</option>
+                            <option>1cc</option>
+                            <option>NM</option>
+                            <option>NB</option>
+                            <option>NB+</option>
+                            <option>NMNB</option>
+                        </select>
+                        <br>
+                        <input id='fillAll' type='button' value='Fill All'>
+                    </p>
+                </div>
     			<div id='dummy'><div id='dummy_sub'></div></div>
     			<div id='container'>
     	            <table id='survival' class='nomargin'>
-    	                <tr>
-    	                    <th>Game</th>
-    						<?php
-    							foreach ($diffs as $key => $diff) {
-    								echo '<th>' . $diff . '</th>';
-    							}
-    						?>
-    	                    <th>Phantasm</th>
-    	                </tr>
-    					<?php
-    						foreach ($games as $key => $game) {
-    							$achievs = achievs($game);
-    							echo '<tr><td>' . $game . '</td>';
-    							foreach ($diffs as $key => $diff) {
-    								if (no_extra($game, $diff) && $diff == 'Extra') {
-    									echo '<td class="noborders"></td><td class="noborders"></td>';
-    									continue;
-    								}
-    								echo '<td><select id="' . $game . $diff . '" class="category">';
-    								foreach ($achievs as $key => $achiev) {
-    									echo '<option>' . $achiev . '</option>';
-    								}
-    								echo '</select></td>';
-    								if ($game == 'PCB' && $diff == 'Extra') {
-    									echo '<td><select id="PCBPhantasm" class="category">';
-    									foreach ($achievs as $key => $achiev) {
-    										echo '<option>' . $achiev . '</option>';
-    									}
-    									echo '</select></td>';
-    								} else if ($game != 'PCB' && $diff == 'Extra') {
-    									echo '<td class="noborders"></td>';
-    								}
-    							}
-    							echo '</tr>';
-    						}
-    					?>
+                        <caption id='legend'>
+							<div class='legend clear'></div> 1cc
+							<div class='legend nm'></div> NM
+							<div class='legend nb'></div> NB
+							<div class='legend nmnb'></div> NMNB
+						</caption>
+                        <thead>
+        	                <tr>
+        	                    <th>Game</th>
+        						<?php
+        							foreach ($diffs as $key => $diff) {
+        								echo '<th>' . $diff . '</th>';
+        							}
+        						?>
+        	                    <th>Phantasm</th>
+        	                </tr>
+                        </thead>
+                        <tbody>
+        					<?php
+        						foreach ($games as $key => $game) {
+        							$achievs = achievs($game);
+        							echo '<tr><td id="' . $game . '">' . $game . '</td>';
+        							foreach ($diffs as $key => $diff) {
+        								if (no_extra($game, $diff) && $diff == 'Extra') {
+        									echo '<td class="noborders"></td><td class="noborders"></td>';
+        									continue;
+        								}
+        								echo '<td><select id="' . $game . $diff . '" class="category">';
+        								foreach ($achievs as $key => $achiev) {
+        									echo '<option>' . $achiev . '</option>';
+        								}
+        								echo '</select></td>';
+        								if ($game == 'PCB' && $diff == 'Extra') {
+        									echo '<td><select id="PCBPhantasm" class="category">';
+        									foreach ($achievs as $key => $achiev) {
+        										echo '<option>' . $achiev . '</option>';
+        									}
+        									echo '</select></td>';
+        								} else if ($game != 'PCB' && $diff == 'Extra') {
+        									echo '<td class="noborders"></td>';
+        								}
+        							}
+        							echo '</tr>';
+        						}
+        					?>
+                        </tbody>
     	        	</table>
     			</div>
-                <br>
-                <p><label for='toggleData'>Save Data</label><input id='toggleData' type='checkbox'></p>
-    			<p><input id='apply' type='button' value='Apply'><input id='reset' type='button' value='Reset'></p>
-                <p id='ack_mobile'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=759506'>windtalker</a>.</p>
-                <script src='assets/shared/dark.js'></script>
+                <div id='bottom'>
+                    <p><label for='toggleData'>Save Data</label><input id='toggleData' type='checkbox'></p>
+        			<p><input id='apply' type='button' value='Apply'><input id='reset' type='button' value='Reset'></p>
+                    <p id='ack_mobile'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=759506'>windtalker</a>.</p>
+                    <script src='assets/shared/dark.js'></script>
+                </div>
     		</div>
-    		<div id='results'>
+            <div id='results'>
     			<div id='modal_inner'>
     				<h2>Progress Table</h2>
     				<p id='rendering_message'>Rendering image...</p>
-    				<span id='overview_container'>
-    					<table id='overview'>
-    						<caption>
-    							<div class='legend clear'></div> 1cc
-    							<div class='legend nm'></div> NM
-    							<div class='legend nb'></div> NB
-    							<div class='legend nmnb'></div> NMNB
-    						</caption>
-    						<thead>
-    							<tr>
-    								<th class='overview'>Game</th>
-    								<th class='overview'>Easy</th>
-    								<th class='overview'>Normal</th>
-    								<th class='overview'>Hard</th>
-    								<th class='overview'>Lunatic</th>
-    								<th class='overview' colspan='2'>Extra</th>
-    							</tr>
-    						</thead>
-    						<tbody id='overview_tbody'></tbody>
-    					</table>
-    				</span>
-    				<span id='screenshot'></span>
+    				<div id='screenshot'></div>
     		        <h2>Numbers of Achievements</h2>
     				<table id='number_table' class='sortable'>
     		        	<thead>
