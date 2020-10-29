@@ -105,7 +105,7 @@
         	                    <th>Game</th>
         						<?php
         							foreach ($diffs as $key => $diff) {
-        								echo '<th>' . $diff . '</th>';
+        								echo '<th id="' . $diff . '">' . $diff . '</th>';
         							}
         						?>
         	                    <th>Phantasm</th>

@@ -259,20 +259,42 @@ function isMobile() {
     return navigator.userAgent.contains("Mobile") || navigator.userAgent.contains("Tablet");
 }
 
+function applyColours() {
+    var id;
+
+    $("select").each(function () {
+        id = $(this).attr("id");
+
+        if (id.substr(0, 4) != "fill") {
+            if (id.contains("Extra") && !id.contains("PCB")) {
+                $(this).parent().attr("colspan", 2);
+                $(this).parent().addClass("overview");
+            } else if (id == "PCBExtra") {
+                $(this).parent().addClass("overview_half");
+            } else if (id == "PCBPhantasm") {
+                $(this).parent().addClass("overview_half");
+            } else {
+                $(this).parent().addClass("overview");
+            }
+
+            $(this).parent().addClass(format($(this).val()));
+            $(this).parent().html(format($(this).val()) == "nbp" ? $(this).val() : "");
+        }
+    });
+}
+
 function prepareRendering() {
+    $("#Extra").attr("colspan", 2);
+    $("#survival").addClass("rendering");
     $("#survival, .wrap").css("margin-left", "0");
     $("#nav, #ack, #hy, #content, #bottom").css("display", "none");
     $("#rendering_message").css("display", "block");
     $("#legend").css("display", "table-caption");
-    $(".noborders").addClass("overview temp");
-    $(".noborders").removeClass("noborders");
-    $("select").each(function () {
-        if ($(this).attr("id").substr(0, 4) != "fill") {
-            $(this).parent().addClass(format($(this).val()));
-            $(this).parent().addClass("overview");
-            $(this).parent().html("");
-        }
-    });
+    $(".noborders").addClass("overview no_extra");
+    $(".no_extra").attr("colspan", 2);
+    $(".no_extra").html("X");
+    $(".no_extra").removeClass("noborders");
+    applyColours();
 
     for (var i = 0; i < games.length; i++) {
         $("#" + games[i]).addClass("bold");
@@ -280,13 +302,9 @@ function prepareRendering() {
 }
 
 function cleanupRendering(originalContent) {
-    $("#survival").css("margin-left", "auto");
+    $("#container").html(originalContent);
     $("#rendering_message, #legend").css("display", "none");
     $("#nav, #ack, #hy, #content, #bottom").css("display", "block");
-    $("#container").html(originalContent);
-    $(".temp").addClass("noborders");
-    $(".temp").removeClass("overview");
-    $(".temp").removeClass("temp");
     $(".wrap").css("margin-left", "24%");
     init();
 }
