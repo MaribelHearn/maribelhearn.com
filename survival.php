@@ -95,10 +95,10 @@
     			<div id='container'>
     	            <table id='survival' class='nomargin'>
                         <caption id='legend'>
-							<div class='legend clear'></div> 1cc
-							<div class='legend nm'></div> NM
-							<div class='legend nb'></div> NB
-							<div class='legend nmnb'></div> NMNB
+							<span class='legend clear'></span> 1cc
+							<span class='legend nm'></span> NM
+							<span class='legend nb'></span> NB
+							<span class='legend nmnb'></span> NMNB
 						</caption>
                         <thead>
         	                <tr>
@@ -153,7 +153,7 @@
     			<div id='modal_inner'>
     				<h2>Progress Table</h2>
     				<p id='rendering_message'>Rendering image...</p>
-    				<div id='screenshot'></div>
+    				<span id='screenshot'></span>
     		        <h2>Numbers of Achievements</h2>
     				<table id='number_table' class='sortable'>
     		        	<thead>

@@ -77,10 +77,6 @@ function stop() {
     running = undefined;
 }
 
-function backgroundColour() {
-    return localStorage.theme && localStorage.theme == "dark" ? "#202020" : "white";
-}
-
 function emptyModal() {
     $("#modal_inner").html("");
     $("#modal_inner").css("display", "none");
@@ -99,21 +95,31 @@ function fileName() {
     "_" + day + "_" + hours + "_" + minutes + "_" + seconds + ".png";
 }
 
+function isMobile() {
+    return navigator.userAgent.contains("Mobile") || navigator.userAgent.contains("Tablet");
+}
+
+function backgroundColour() {
+    return localStorage.theme && localStorage.theme == "dark" ? "#202020" : "white";
+}
+
 function takeScreenshot() {
     emptyModal();
+    $("#content").css("display", "none");
     html2canvas(document.getElementById("table"), {
-        backgroundColor: backgroundColour(),
-        width: $("#table").width()
+        backgroundColor: backgroundColour()
     }).then(function(canvas) {
         var base64image = canvas.toDataURL("image/png"), link;
 
-        $("#modal_inner").html("<h2>Screenshot</h2><p>");
-        $("#modal_inner").append("<a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
+        $("#modal_inner").html("<h2>Screenshot</h2>");
+        $("#modal_inner").append("<p><a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
         "<input type='button' value='Save to Device'></a></p>" +
         "<p>This feature currently does not work on Chromium-based browsers.</p>" +
-        "<p><img id='screenshot_base64' src='" + base64image + "' alt='Slot machine screenshot'></p>");
-        $("#modal_inner").css("display", "block");
-        $("#modal").css("display", "block");
+        "<p><img id='base64' src='" + base64image + "' alt='Slot machine screenshot'></p>");
+        $("#modal_inner, #modal").css("display", "block");
+        $("#content").css("display", "inline");
+        $("#base64").css("max-width", screen.width);
+        $("#base64").css("max-height", screen.width);
     });
 }
 
@@ -193,10 +199,6 @@ $(document).ready(function () {
         if (localStorage.hasOwnProperty("slotTitles")) {
             $("#title" + i).html(slotTitles[i]);
         }
-    }
-
-    if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) {
-        $("#screenshot").css("display", "none");
     }
 
     loadCharsLocs();
