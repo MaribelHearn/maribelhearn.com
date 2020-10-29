@@ -208,7 +208,7 @@
                 </div>-->
                 <div id='ack_mobile'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a>.</div>
                 <div id='bottom'>
-                    <p id='last_modified'>Last updated at <?php echo date ("d F Y H:i:s", filemtime('.git/FETCH_HEAD')) ?> UTC</p>
+                    <p id='last_modified'>Last updated at <?php echo date('Y-m-d H:i:s', filemtime('.git/FETCH_HEAD')) . ' ' . date('T') ?></p>
                 </div>
                 <script src='assets/shared/dark.js'></script>
             </div>
