@@ -34,7 +34,7 @@
                 <h1>About Me</h1>
     			<?php
     				if (!empty($_GET['redirect'])) {
-    					echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
+    					echo '<p class="wide">(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
     				}
     			?>
                 <p>Hello, I am Mari, a <?php echo getAge('1995-07-29'); ?> year old Dutch guy who
