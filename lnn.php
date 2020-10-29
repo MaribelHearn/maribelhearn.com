@@ -4,7 +4,7 @@
     include 'assets/shared/navbar.php';
     include 'assets/shared/tl.php';
     include 'assets/lnn/lnn.php';
-    include '.stats/count.php';
+    include 'assets/shared/count.php';
     hit(basename(__FILE__));
 	$page = str_replace('.php', '', basename(__FILE__));
 ?>
