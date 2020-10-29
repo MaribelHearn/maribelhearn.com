@@ -2,7 +2,7 @@
 <html id='top' lang='en'>
 <?php
     include 'assets/shared/navbar.php';
-	include '.stats/count.php';
+	include 'assets/shared/count.php';
 	hit(basename(__FILE__));
 	$page = str_replace('.php', '', basename(__FILE__));
     $json = file_get_contents('assets/json/wrlist.json');

@@ -2,7 +2,7 @@
 <html lang='en'>
 <?php
     include '../shared/navbar.php';
-    include '../../.stats/count.php';
+    include '../shared/count.php';
     hit(basename(__FILE__));
 ?>
 
