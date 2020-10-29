@@ -259,22 +259,51 @@ function isMobile() {
     return navigator.userAgent.contains("Mobile") || navigator.userAgent.contains("Tablet");
 }
 
+function prepareRendering() {
+    $("#survival, .wrap").css("margin-left", "0");
+    $("#nav, #ack, #hy, #content, #bottom").css("display", "none");
+    $("#rendering_message").css("display", "block");
+    $("#legend").css("display", "table-caption");
+    $(".noborders").addClass("overview temp");
+    $(".noborders").removeClass("noborders");
+    $("select").each(function () {
+        if ($(this).attr("id").substr(0, 4) != "fill") {
+            $(this).parent().addClass(format($(this).val()));
+            $(this).parent().addClass("overview");
+            $(this).parent().html("");
+        }
+    });
+
+    for (var i = 0; i < games.length; i++) {
+        $("#" + games[i]).addClass("bold");
+    }
+}
+
+function cleanupRendering(originalContent) {
+    $("#survival").css("margin-left", "auto");
+    $("#rendering_message, #legend").css("display", "none");
+    $("#nav, #ack, #hy, #content, #bottom").css("display", "block");
+    $("#container").html(originalContent);
+    $(".temp").addClass("noborders");
+    $(".temp").removeClass("overview");
+    $(".temp").removeClass("temp");
+    $(".wrap").css("margin-left", "24%");
+    init();
+}
+
 function drawOverview() {
-    $("#rendering_message, #overview_container").css("display", "block");
-    html2canvas(document.getElementById("overview_container"), {
-        y: $("#overview").offset().top - (innerHeight - window.innerHeight) - 75,
-        windowWidth: $("#overview").width() + 200,
-        height: $("#overview").height() + 30,
-        width: $("#overview").width() + 200,
-        backgroundColor: "white",
-        x: 0
+    var originalContent = $("#container").html();
+
+    prepareRendering();
+    html2canvas(document.getElementById("survival"), {
+        backgroundColor: "white"
     }).then(function(canvas) {
         var base64image = canvas.toDataURL("image/png");
 
         $("#screenshot").html("<a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
         "<input type='button' value='Save to Device'></a></p>" +
         "<p><img id='base64' src='" + base64image + "' alt='Survival progress table'></p>");
-        $("#rendering_message, #overview_container").css("display", "none");
+        cleanupRendering(originalContent);
     });
 }
 
@@ -301,8 +330,6 @@ function apply() {
 
     if (!isMobile()) {
         drawOverview();
-    } else {
-        $("#overview_container").css("display", "block");
     }
 }
 
