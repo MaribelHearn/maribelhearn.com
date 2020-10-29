@@ -7,14 +7,13 @@
         if (strpos($file, '.php')) {
             $page = substr($file, 6, -4);
             $max_sim = max(similar_text($url, $page), $max_sim);
-            echo '<p>' . $page . ': ' . similar_text($url, $page) . '</p>';
             if (similar_text($url, $page) >= $max_sim) {
                 $max_page = $page;
             }
         }
     }
     $len = strlen($max_page) - 3;
-    if ($max_sim > $len) {
+    if ($max_sim > 0 && $max_sim > $len) {
         header('Location: https://maribelhearn.com/' . $max_page . '?redirect=' . $url);
     }
     $json = file_get_contents('../json/admin.json');
@@ -47,7 +46,7 @@
                 <img id='hy' src='https://maribelhearn.com/assets/shared/h-bar.png' title='Human Mode'>
                 <h1>404</h1>
                 <p><strong>File not found<?php
-                    if ($max_sim > $len - 2) {
+                    if ($max_sim > 0 && $max_sim > $len - 2) {
                         echo ' - did you mean <a href="https://maribelhearn.com/' . $max_page . '">' . $max_page . '</a>?';
                     }
                 ?></strong></p>
