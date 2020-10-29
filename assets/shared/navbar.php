@@ -1,10 +1,11 @@
 <?php
 function navbar($page) {
-    $TOKEN_PATH = ($page == 'admin' ? '../.stats/token' : '.stats/token');
+    $token_path = ($page == 'admin' ? '../.stats/token' : '.stats/token');
+    $token_path = ($page == 'error' ? '../' . $token_path : $token_path);
     $navbar = '<span class="nav_left">';
     $navbar .= '<a href="/"><img src="favicon.ico" alt="Cherry blossom icon"> Index</a> | ';
 
-    if (isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents($TOKEN_PATH))) {
+    if (isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents($token_path))) {
         $navbar .= '<a href="admin">Admin</a> | ';
     }
 
