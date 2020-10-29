@@ -1,7 +1,7 @@
 <?php
 function navbar($page) {
     $token_path = ($page == 'admin' ? '../.stats/token' : '.stats/token');
-    $token_path = ($page == 'error' ? '../' . $token_path : $token_path);
+    $token_path = ($page == 'error' ? '../../' . $token_path : $token_path);
     $navbar = '<span class="nav_left">';
     $navbar .= '<a href="/"><img src="favicon.ico" alt="Cherry blossom icon"> Index</a> | ';
 
