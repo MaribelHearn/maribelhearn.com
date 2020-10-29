@@ -25,7 +25,7 @@
                 <img id='hy' src='https://maribelhearn.com/assets/shared/h-bar.png' title='Human Mode'>
                 <h1>401</h1>
                 <p><strong>Unauthorized</strong></p>
-                <p>You got only 401 points? That's not a very good score. I would suggest you go for at least 1 billion!</p>
+                <p>You are not authorized to access this resource.</p>
                 <script src='https://maribelhearn.com/assets/shared/dark.js'></script>
             </div>
         </main>
