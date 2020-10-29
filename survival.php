@@ -2,7 +2,7 @@
 <html lang='en'>
 <?php
     include 'assets/shared/navbar.php';
-	include '.stats/count.php';
+	include 'assets/shared/count.php';
 	hit(basename(__FILE__));
 	$page = str_replace('.php', '', basename(__FILE__));
 	$games = ['HRtP', 'SoEW', 'PoDD', 'LLS', 'MS', 'EoSD', 'PCB', 'IN', 'PoFV',

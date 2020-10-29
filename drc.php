@@ -3,7 +3,7 @@
 <?php
 	include 'assets/shared/navbar.php';
 	include 'assets/drc/drc.php';
-	include '.stats/count.php';
+	include 'assets/shared/count.php';
 	hit(basename(__FILE__));
 	$page = str_replace('.php', '', basename(__FILE__));
 ?>

@@ -23,8 +23,8 @@
         exit();
     }
     include '../shared/navbar.php';
-    include '../../.stats/count.php';
-    hit(basename(__FILE__));
+    include '../shared/count.php';
+    hit('404');
 ?>
 
     <head>
