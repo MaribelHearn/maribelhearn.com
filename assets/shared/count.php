@@ -1,4 +1,5 @@
 <?php
+$errors = ['401', '403', '404', '500'];
 function check_webp() {
     if ( strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' ) !== false ) {
         return 'webp';
@@ -6,7 +7,8 @@ function check_webp() {
     return 'no-webp';
 }
 function hit($page) {
-    if (file_exists('.stats/token')) {
+    $path = (in_array($page, $errors) ? '../../.stats/token' : '.stats/token');
+    if (file_exists($path)) {
         if (!empty($_SERVER['HTTP_USER_AGENT']) && preg_match('~(bot|crawl|slurp|spider|archiver|facebook|lighthouse|jigsaw|validator|w3c|hexometer)~i', $_SERVER['HTTP_USER_AGENT'])) {
             return;
         }
