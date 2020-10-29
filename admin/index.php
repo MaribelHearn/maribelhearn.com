@@ -2,7 +2,7 @@
 <html lang='en'>
 <?php
     include '../assets/shared/navbar.php';
-    include '../.stats/count.php';
+    include '../assets/shared/count.php';
     $hitcount = '../.stats/' . date('d-m-Y') . '.json';
     if (file_exists($hitcount)) {
         $json = file_get_contents($hitcount);
