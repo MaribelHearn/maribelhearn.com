@@ -286,7 +286,8 @@ function applyColours() {
 function prepareRendering() {
     $("#Extra").attr("colspan", 2);
     $("#survival").addClass("rendering");
-    $("#survival, .wrap").css("margin-left", "0");
+    $("#survival, #wrap").css("margin-left", "0");
+    $("#container, #wrap").css("background-color", "white");
     $("#nav, #ack, #hy, #content, #bottom").css("display", "none");
     $("#rendering_message").css("display", "block");
     $("#legend").css("display", "table-caption");
@@ -301,11 +302,39 @@ function prepareRendering() {
     }
 }
 
+function marginLeft() {
+    if (screen.width < 800) {
+        return "0";
+    } else if (screen.width < 1100) {
+        return "8%";
+    } else if (screen.width < 1300) {
+        return "10%";
+    } else if (screen.width < 1500) {
+        return "15%";
+    } else if (screen.width < 1700) {
+        return "20%";
+    } else {
+        return "24%";
+    }
+}
+
+function backgroundColour() {
+    return localStorage.theme && localStorage.theme == "dark" ? "#202020" : "white";
+}
+
 function cleanupRendering(originalContent) {
+    if (screen.width > 800) {
+        $("#ack").css("display", "block");
+    }
+
+    $("#base64").css("max-width", screen.width);
+    $("#base64").css("max-height", screen.width);
     $("#container").html(originalContent);
     $("#rendering_message, #legend").css("display", "none");
-    $("#nav, #ack, #hy, #content, #bottom").css("display", "block");
-    $(".wrap").css("margin-left", "24%");
+    $("#nav, #content, #bottom").css("display", "block");
+    $("#hy").css("display", "inline");
+    $("#wrap").css("margin-left", marginLeft());
+    $("#container, #wrap").removeAttr("style");
     init();
 }
 
@@ -345,10 +374,7 @@ function apply() {
     $("#modal_inner").css("display", "block");
     $("#results").css("display", "block");
     save();
-
-    if (!isMobile()) {
-        drawOverview();
-    }
+    drawOverview();
 }
 
 function emptyModal() {

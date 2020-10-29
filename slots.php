@@ -26,20 +26,22 @@
 		</nav>
         <main>
             <div id='wrap' class='wrap'>
-                <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
-                <h1>Touhou Slot Machine</h1>
-    			<?php
-    				if (!empty($_GET['redirect'])) {
-    					echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
-    				}
-    			?>
-                <p>Click any of the slot title texts to change what it says.</p>
-                <p>
-                    <input id='start' type='button' value='Insert Coin'>
-                    <input id='stop' type='button' value='Stop'>
-                    <input id='screenshot' type='button' value='Screenshot'>
-                    <input id='reset' type='button' value='Reset Titles'>
-                </p>
+                <span id='content'>
+                    <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
+                    <h1>Touhou Slot Machine</h1>
+        			<?php
+        				if (!empty($_GET['redirect'])) {
+        					echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
+        				}
+        			?>
+                    <p>Click any of the slot title texts to change what it says.</p>
+                    <p>
+                        <input id='start' type='button' value='Insert Coin'>
+                        <input id='stop' type='button' value='Stop'>
+                        <input id='screenshot' type='button' value='Screenshot'>
+                        <input id='reset' type='button' value='Reset Titles'>
+                    </p>
+                </span>
                 <table id='table'>
                     <tr>
                         <td id='title0' class='title'>You are a ...</td>

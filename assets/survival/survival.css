@@ -19,7 +19,7 @@ table {
 table, tr, th, td {
     border: 1px solid black;
 }
-div:not(.dropdown):not(.dropdown_content):not(.legend) {
+div:not(.dropdown):not(.dropdown_content) {
     background-color: #fff;
     margin-bottom: 5px;
     margin-top: 5px;
@@ -43,6 +43,10 @@ input[type=button] {
 }
 .rendering td:last-child:not(.overview_half), .rendering th:last-child:not(.overview_half) {
     display: none;
+}
+.rendering {
+    background-color: white;
+    color: black;
 }
 .nomargin {
     margin-left: auto;
