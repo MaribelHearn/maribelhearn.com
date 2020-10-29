@@ -175,6 +175,11 @@ span {
 #bottom {
     clear: both;
 }
+#last_modified {
+    padding-top: 25px;
+    font-size: 11px;
+    color: grey;
+}
 #ack, #ack_admin {
     font: 11px verdana,sans-serif;
     background: none;

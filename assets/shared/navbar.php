@@ -41,6 +41,8 @@ function navbar($page) {
                 '<img src="assets/ext/steam-icon-small.ico" alt="Steam favicon">Steam</a></p>';
                 $navbar .= '<p><a href="https://github.com/MaribelHearn">' .
                 '<img src="assets/ext/github-icon.ico" alt="GitHub favicon">GitHub</a></p>';
+                $navbar .= '<p><a href="https://github.com/MaribelHearn/maribelhearn.com">' .
+                '<img src="assets/ext/source-code.png" alt="Code brackets icon">Source</a></p>';
             $navbar .= '</div>';
         $navbar .= '</div>';
     $navbar .= '</span>';
