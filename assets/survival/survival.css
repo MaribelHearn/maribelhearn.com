@@ -41,12 +41,18 @@ h2 {
 input[type=button] {
     margin: 5px 5px 0 5px;
 }
+.rendering td:last-child:not(.overview_half), .rendering th:last-child:not(.overview_half) {
+    display: none;
+}
 .nomargin {
     margin-left: auto;
     margin-right: auto;
 }
 .overview {
     width: 80px;
+}
+.overview_half {
+    width: 40px;
 }
 .legend {
     display: inline-block;
