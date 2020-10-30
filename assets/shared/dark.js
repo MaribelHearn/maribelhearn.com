@@ -24,7 +24,10 @@ function ready() {
 
 function theme() {
     if (document.head.contains(document.getElementById("dark_theme")) || hy.title.indexOf('H') < 0) {
-        head.removeChild(document.getElementById("dark_theme"));
+        if (document.head.contains(document.getElementById("dark_theme"))) {
+            head.removeChild(document.getElementById("dark_theme"));
+        }
+
         document.cookie = "theme=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;sameSite=Strict;Secure;";
         document.getElementById("hy_tooltip").innerHTML = "Human Mode";
     } else {
