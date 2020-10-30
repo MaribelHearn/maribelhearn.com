@@ -17,8 +17,8 @@
 		<script src='assets/shared/utils.js' defer></script>
 		<script src='assets/shared/jquery.js' defer></script>
 		<script src='assets/shared/html2canvas.js' defer></script>
+        <script src='assets/shared/rgbcolor.js' defer></script>
 		<script src='assets/tiers/tiers.js' defer></script>
-        <script src='assets/tiers/rgbcolor.js' defer></script>
     </head>
 
     <body class='<?php echo check_webp() ?>'>
