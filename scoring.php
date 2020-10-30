@@ -16,7 +16,6 @@
 		<link rel='stylesheet' type='text/css' href='assets/scoring/scoring.css'>
 		<link rel='icon' type='image/x-icon' href='assets/scoring/scoring.ico'>
         <script src='assets/shared/jquery.js' defer></script>
-		<script src='assets/shared/utils.js' defer></script>
 		<script src='assets/scoring/scoring.js' defer></script>
         <script src='assets/shared/sorttable.js' defer></script>
         <?php echo dark_theme() ?>

@@ -807,6 +807,7 @@ function show(game) {
         $("#" + game + "c").prop("checked", true);
     }
 }
+
 function hide(game) {
     $("#" + game).css("display", "none");
 
@@ -814,6 +815,7 @@ function hide(game) {
         $("#" + game + "c").prop("checked", false);
     }
 }
+
 function checkGame() {
     var checkbox = "#" + this.id, element = this.id.slice(0, -1);
 
@@ -823,6 +825,7 @@ function checkGame() {
         hide(element);
     }
 }
+
 function checkTracked() {
     var checked = $("#tracked").is(":checked"), key;
 
@@ -834,6 +837,7 @@ function checkTracked() {
         }
     }
 }
+
 function checkUntracked() {
     var checked = $("#untracked").is(":checked"), key;
 
@@ -845,6 +849,7 @@ function checkUntracked() {
         }
     }
 }
+
 function checkAll() {
     var checked = $("#all").is(":checked");
 
@@ -853,6 +858,15 @@ function checkAll() {
     checkTracked();
     checkUntracked();
 }
+
+function sep(number) {
+    if (isNaN(number)) {
+        return '-';
+    }
+
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
 function calc() {
     var top = {}, averages = {}, shown = {}, total = 0, categories = 0, highest = 0, game, difficulty,
         id, span, score, shottype, wr, percentage, wrText, average, table, gameTable,
@@ -956,6 +970,7 @@ function calc() {
         localStorage.removeItem("saveScoringData");
     }
 }
+
 function save() {
     if ($("#toggleData").is(":checked")) {
         localStorage.setItem("saveScoringData", true);
@@ -963,6 +978,7 @@ function save() {
         localStorage.removeItem("saveScoringData");
     }
 }
+
 function reset() {
     var confirmation = confirm("Are you sure you want to erase all your scores?"), game, difficulty, shottype;
 
@@ -981,6 +997,7 @@ function reset() {
         }
     }
 }
+
 function loadScores() {
     var game, data, difficulty, shottype;
 
@@ -1000,6 +1017,7 @@ function loadScores() {
         }
     }
 }
+
 function checkShown() {
     var shownData = localStorage.getItem("shown"), game;
 
@@ -1013,6 +1031,29 @@ function checkShown() {
         }
     }
 }
+
+function getCookie(name) {
+    var decodedCookies, cookieArray, cookie;
+
+    decodedCookies = decodeURIComponent(document.cookie);
+    cookieArray = decodedCookies.split(';');
+    name += '=';
+
+    for (var i = 0; i < cookieArray.length; i += 1) {
+        cookie = cookieArray[i];
+
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1);
+        }
+
+        if (cookie.indexOf(name) === 0) {
+            return JSON.parse(cookie.substring(name.length, cookie.length));
+        }
+    }
+
+    return "";
+}
+
 $(document).ready(function () {
     var game;
 
@@ -1035,10 +1076,6 @@ $(document).ready(function () {
             $("#toggleData").prop("checked", true);
         }
     } catch (err) {}
-
-    if (navigator.userAgent.contains("Mobile") || navigator.userAgent.contains("Tablet")) {
-        $("#notice").css("display", "block");
-    }
 
     $("#calc").on("click", calc);
     $("#reset").on("click", reset);
