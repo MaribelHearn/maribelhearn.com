@@ -1,27 +1,10 @@
 ﻿<!DOCTYPE html>
 <html lang='en'>
 <?php
-    include 'assets/shared/navbar.php';
-	include 'assets/shared/count.php';
+	include 'assets/shared/shared.php';
+	include 'assets/survival/survival.php';
 	hit(basename(__FILE__));
 	$page = str_replace('.php', '', basename(__FILE__));
-	$games = ['HRtP', 'SoEW', 'PoDD', 'LLS', 'MS', 'EoSD', 'PCB', 'IN', 'PoFV',
-	'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC'];
-	$diffs = ['Easy', 'Normal', 'Hard', 'Lunatic', 'Extra'];
-	function achievs($game) {
-		$achievs = ['N/A', 'Not cleared', '1cc', 'NM', 'NB'];
-		switch ($game) {
-			case 'PCB': return array_merge($achievs, ['NBB', 'NBNBB', 'NMNBNBB']);
-			case 'UFO': return array_merge($achievs, ['NV', 'NBNV', 'NMNB(NV)']);
-			case 'TD': return array_merge($achievs, ['NT', 'NBNT', 'NMNBNT']);
-			case 'HSiFS': return array_merge($achievs, ['NR', 'NBNR', 'NMNBNR']);
-			case 'WBaWC': return array_merge($achievs, ['NHNRB', 'NBNHNRB', 'NNNN']);
-			default: return array_merge($achievs, ['NMNB']);
-		}
-	}
-	function no_extra($game) {
-		return in_array($game, ['HRtP', 'PoDD']);
-	}
 ?>
 
 	<head>
@@ -37,6 +20,7 @@
 		<script src='assets/survival/survival.js' defer></script>
         <script src='assets/shared/sorttable.js' defer></script>
         <script src='assets/shared/html2canvas.js' defer></script>
+        <?php echo dark_theme() ?>
 	</head>
 
     <body class='<?php echo check_webp() ?>'>
@@ -47,7 +31,9 @@
     		<div id='wrap' class='wrap'>
                 <p id='ack'>This background image<br id='ack_br'>
                 was drawn by <a href='https://www.pixiv.net/member.php?id=759506'>windtalker</a></p>
-                <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
+                <span id='hy_container'><img id='hy' src='../assets/shared/icon_sheet.png' alt='Human-youkai gauge'>
+	            	<span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
+        		</span>
                 <div id='content'>
         			<h1>Survival Progress Table Generator</h1>
         			<?php

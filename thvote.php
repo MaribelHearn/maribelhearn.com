@@ -1,8 +1,7 @@
 ﻿<!DOCTYPE html>
 <html id='top' lang='en'>
 <?php
-    include 'assets/shared/navbar.php';
-	include 'assets/shared/count.php';
+	include 'assets/shared/shared.php';
 	hit(basename(__FILE__));
 	$page = str_replace('.php', '', basename(__FILE__));
 ?>
@@ -16,6 +15,7 @@
 		<link rel='stylesheet' type='text/css' href='assets/thvote/thvote.css'>
 		<link rel='icon' type='image/x-icon' href='assets/thvote/thvote.ico'>
         <script src='assets/shared/sorttable.js' defer></script>
+        <?php echo dark_theme() ?>
     </head>
 
     <body class='<?php echo check_webp() ?>'>
@@ -26,7 +26,9 @@
             <div id='wrap' class='wrap'>
                 <p id='ack' class='noborders'>This background image<br id='ack_br'>
                 was drawn by <a href='https://www.pixiv.net/member.php?id=2025430'>Yakumo_Stocking</a></p>
-                <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
+                <span id='hy_container'><img id='hy' src='../assets/shared/icon_sheet.png' alt='Human-youkai gauge'>
+		            <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
+		        </span>
                 <h1>THWiki Popularity Poll 2020 Results</h1>
                 <?php
                     if (!empty($_GET['redirect'])) {

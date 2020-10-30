@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html id='top' lang='<?php if (empty($_GET['hl'])) { echo 'en'; } else { echo str_replace('jp', 'ja', $_GET['hl']); } ?>'>
 <?php
-    include 'assets/shared/navbar.php';
+    include 'assets/shared/shared.php';
     include 'assets/shared/tl.php';
     include 'assets/lnn/lnn.php';
-    include 'assets/shared/count.php';
     hit(basename(__FILE__));
 	$page = str_replace('.php', '', basename(__FILE__));
 ?>
@@ -21,6 +20,7 @@
 		<script src='assets/shared/utils.js' defer></script>
 		<script src='assets/lnn/lnn.js' defer></script>
 		<script src='assets/shared/sorttable.js' defer></script>
+        <?php echo dark_theme() ?>
 	</head>
 
     <body class='<?php echo check_webp() ?>'>
@@ -52,7 +52,8 @@
                         ?>
                     </span>
     				<span id='hy_container'>
-                        <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
+                        <img id='hy' src='../assets/shared/icon_sheet.png' alt='Human-youkai gauge'>
+                        <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
                     </span>
     				<div id='languages'>
                         <a id='en' class='flag' href='lnn?hl=en'>

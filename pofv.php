@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html id='top' lang='en'>
 <?php
-    include 'assets/shared/navbar.php';
-    include 'assets/shared/count.php';
+    include 'assets/shared/shared.php';
     hit(basename(__FILE__));
 	$page = str_replace('.php', '', basename(__FILE__));
 ?>
@@ -17,6 +16,7 @@
 		<link rel='icon' type='image/x-icon' href='assets/pofv/pofv.ico'>
         <script src='assets/shared/jquery.js' defer></script>
         <script src='assets/pofv/pofv.js' defer></script>
+        <?php echo dark_theme() ?>
     </head>
 
     <body class='<?php echo check_webp() ?>'>
@@ -27,7 +27,9 @@
             <div id='wrap' class='wrap'>
                 <p id='ack'>This background image was<br id='ack_br'>
                 drawn by <a href='http://www.pixiv.net/member.php?id=21613'>Kong Xian</a></p>
-                <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
+                <span id='hy_container'><img id='hy' src='../assets/shared/icon_sheet.png' alt='Human-youkai gauge'>
+                    <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
+                </span>
                 <h1>Phantasmagoria of Flower View</h1>
     			<?php
     				if (!empty($_GET['redirect'])) {
@@ -36,8 +38,10 @@
     			?>
                 <p>This is a portal for competitive PoFV play, featuring the current tier list, a guide to help you get started with
                 netplay, and links to relevant resources as well as the rules of tournaments for the game, held at the
-                <a id='discord' href='https://discord.gg/2QPPPpE'><img src='assets/ext/discord-icon-small.ico' alt='Discord icon'>
-                Phantasmagoria Netplay Discord server</a>.</p>
+                <a id='discord' href='https://discord.gg/2QPPPpE'>
+                    <img class='icon discord_icon' src='assets/shared/icon_sheet.png' alt='Discord icon'>
+                    Phantasmagoria Netplay Discord server
+                </a>.</p>
                 <h2>Contents</h2>
                 <div class='border'>
                     <p><a href='#tiers'>Tier List</a></p>
@@ -130,7 +134,9 @@
                 This is what it looks like in Adonis2, the current standard tool used by the PoFV netplay community:</p>
                 <img class='guide' src='assets/pofv/connect.png' alt='Connection in Adonis2'>
                 <p>To be able to host, you need to either <a href='https://portforward.com'>port forward</a> or use
-                <a href='https://zerotier.com/download'><img src='assets/ext/zerotier-icon-small.png' alt='Zerotier favicon'> Zerotier</a>
+                <a href='https://zerotier.com/download'>
+                    <img class='icon zerotier_icon' src='assets/shared/icon_sheet.png' alt='Zerotier favicon'> Zerotier
+                </a>
                 (Hamachi works as well, but is not used but the PoFV netplay community). This is what it looks like in Adonis2:</p>
                 <img class='guide' src='assets/pofv/host.png' alt='Hosting in Adonis2'>
                 <h2 id='trouble'>Troubleshooting</h2>
@@ -155,7 +161,7 @@
                 <h2 id='rules'>Tournament Rules</h2>
                 <ol>
                     <li>Players must be in the <a href='https://discord.gg/2QPPPpE'>
-                    <img src='assets/ext/discord-icon-small.ico' alt='Discord icon'> Phantasmagoria Netplay Discord server</a>
+                    <img class='icon discord_icon' src='assets/shared/icon_sheet.png' alt='Discord icon'> Phantasmagoria Netplay Discord server</a>
                     in order to submit replays and receive important communications about the tournament.</li>
                     <li>Participants will use the <strong>Adonis 2</strong> netplay tool, and will need a stable connection.
                     Players will need port forwarding set up or ZeroTier installed to ensure
@@ -185,9 +191,15 @@
                     This disrupts seeding, both for the current tournament and future ones, and causes inaccurate results.</li>
                 </ol>
                 <h2 id='links'>Useful Links</h2>
-                <p><a href='https://docs.google.com/document/d/1IHtZb8-LbbDEK526JR7u9_HykrwxTcDI/edit'><img src='assets/ext/docs-icon-small.png' alt='Google Docs favicon'> Fundamentals of PoFV Gameplay</a></p>
-                <p><a href='https://docs.google.com/spreadsheets/d/1_MikJ3MH_H3L9czPUl5oGC5xmIVN8EH4t5yIfvoRE0o/edit?usp=sharing'><img src='assets/ext/spreadsheets-icon-small.png' alt='Google Spreadsheets favicon'> Tournament Archive</a></p>
-                <p><a href='https://cerise.moe/pofv.html'><img src='assets/flags/france16x16.png' alt='Flag of France'> French Guide</a></p>
+                <p><a href='https://docs.google.com/document/d/1IHtZb8-LbbDEK526JR7u9_HykrwxTcDI/edit'>
+                    <img class='icon docs_icon' src='assets/shared/icon_sheet.png' alt='Google Docs favicon'> Fundamentals of PoFV Gameplay
+                </a></p>
+                <p><a href='https://docs.google.com/spreadsheets/d/1_MikJ3MH_H3L9czPUl5oGC5xmIVN8EH4t5yIfvoRE0o/edit?usp=sharing'>
+                    <img class='icon sheets_icon' src='assets/shared/icon_sheet.png' alt='Google Spreadsheets favicon'> Tournament Archive</a>
+                </p>
+                <p><a href='https://cerise.moe/pofv.html'>
+                    <img src='assets/flags/france16x16.png' alt='Flag of France'> French Guide
+                </a></p>
                 <h2 id='acks'>Acknowledgements</h2>
                 <p>The netplay guide and tournament rules were written by <a href='https://twitter.com/SnortNails'>Knirgesh</a>.</p>
                 <p>The character descriptions were written by <a href='https://twitter.com/UndreamtBoss'>Zil</a>.</p>
