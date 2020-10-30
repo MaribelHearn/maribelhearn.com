@@ -23,7 +23,7 @@ function ready() {
 }
 
 function theme() {
-    if (document.head.contains(document.getElementById("dark_theme")) || hy.title.indexOf('H') < 0) {
+    if (document.head.contains(document.getElementById("dark_theme")) || localStorage.theme == "dark") {
         if (document.head.contains(document.getElementById("dark_theme"))) {
             head.removeChild(document.getElementById("dark_theme"));
         }
