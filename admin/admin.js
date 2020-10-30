@@ -34,10 +34,10 @@ function theme() {
         }
 
         head.removeChild(document.getElementById("dark_theme"));
-        document.cookie = "theme=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;sameSite=Strict;Secure;";
+        document.cookie = "theme=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
         document.getElementById("hy_tooltip").innerHTML = "Human Mode";
     } else {
-        document.cookie = "theme=dark;expires=Fri, 31 Dec 9999 23:59:59 UTC;path=/;sameSite=Strict;Secure;";
+        document.cookie = "theme=" + JSON.stringify("dark") + ";expires=Fri, 31 Dec 9999 23:59:59 UTC;path=/;sameSite=Strict;Secure;";
         document.getElementById("hy_tooltip").innerHTML = "Youkai Mode";
         dark();
     }
