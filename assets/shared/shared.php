@@ -34,6 +34,9 @@ function hit($page) {
 }
 function dark_theme($page = 'other') {
     if (isset($_COOKIE['theme'])) {
+        if ($page == 'error') {
+            return '<link id="dark_theme" rel="stylesheet" type="text/css" href="https://maribelhearn.com/assets/shared/dark.css">';
+        }
         return '<link id="dark_theme" rel="stylesheet" type="text/css" ' .
         'href="' . ($page == 'admin' ? '../' : '') . 'assets/shared/dark.css">';
     }
