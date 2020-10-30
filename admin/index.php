@@ -19,6 +19,8 @@
         <link rel='stylesheet' type='text/css' href='../assets/index/main.css'>
 		<link rel='icon' type='image/x-icon' href='../favicon.ico'>
         <script src='../assets/shared/utils.js' defer></script>
+        <script src='https://maribelhearn.com/admin/detect.js' defer></script>
+        <script src='https://maribelhearn.com/admin/admin.js' defer></script>
         <?php echo dark_theme('admin') ?>
     </head>
 
@@ -51,8 +53,6 @@
             </div>
         </main>
         <?php echo '<input id="token" type="hidden" value=' . file_get_contents('../.stats/token') . '>'; ?>
-        <script src='detect.js'></script>
-        <script src='admin.js'></script>
     </body>
 
 </html>
