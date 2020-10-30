@@ -16,7 +16,6 @@
 		<link rel='stylesheet' type='text/css' href='assets/survival/survival.css'>
 		<link rel='icon' type='image/x-icon' href='assets/survival/survival.ico'>
 		<script src='assets/shared/jquery.js' defer></script>
-		<script src='assets/shared/utils.js' defer></script>
 		<script src='assets/survival/survival.js' defer></script>
         <script src='assets/shared/sorttable.js' defer></script>
         <script src='assets/shared/html2canvas.js' defer></script>
