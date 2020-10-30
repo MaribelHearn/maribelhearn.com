@@ -11,7 +11,7 @@
 		<meta name='viewport' content='width=device-width'>
         <link rel='stylesheet' type='text/css' href='https://maribelhearn.com/assets/index/main.css'>
 		<link rel='icon' type='image/x-icon' href='https://maribelhearn.com/favicon.ico'>
-        <?php echo dark_theme() ?>
+        <?php echo dark_theme('error') ?>
     </head>
 
     <body class='<?php echo check_webp() ?>'>

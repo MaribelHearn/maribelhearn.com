@@ -33,7 +33,6 @@ function theme() {
             head.removeChild(document.getElementById("dark_theme"));
         }
 
-        head.removeChild(document.getElementById("dark_theme"));
         document.cookie = "theme=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
         document.getElementById("hy_tooltip").innerHTML = "Human Mode";
     } else {
