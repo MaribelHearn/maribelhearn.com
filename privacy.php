@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html id='top' lang='en'>
 <?php
-    include 'assets/shared/navbar.php';
-    include 'assets/shared/count.php';
+    include 'assets/shared/shared.php';
     hit(basename(__FILE__));
 	$page = str_replace('.php', '', basename(__FILE__));
 ?>
@@ -13,6 +12,7 @@
 		<meta name='viewport' content='width=device-width'>
         <link rel='stylesheet' type='text/css' href='assets/index/main.css'>
 		<link rel='icon' type='image/x-icon' href='favicon.ico'>
+        <?php echo dark_theme() ?>
     </head>
 
     <body class='<?php echo check_webp() ?>'>
@@ -23,7 +23,9 @@
             <div id='wrap' class='wrap'>
                 <p id='ack'>This background image<br id='ack_br'>
                 was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a></p>
-                <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
+                <span id='hy_container'><img id='hy' src='../assets/shared/icon_sheet.png' alt='Human-youkai gauge'>
+                    <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
+                </span>
                 <h1>Privacy Policy</h1>
     			<?php
     				if (!empty($_GET['redirect'])) {

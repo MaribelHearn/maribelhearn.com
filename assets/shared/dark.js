@@ -1,11 +1,12 @@
 function dark() {
     style = document.createElement("link");
-    style.id = "dark";
+    style.id = "dark_theme";
     style.href = (location.host != "localhost" ? "https://maribelhearn.com/" : "") + "assets/shared/dark.css";
     style.type = "text/css";
     style.rel = "stylesheet";
     head.appendChild(style);
 }
+
 function ready() {
     if (done) {
         return;
@@ -13,23 +14,27 @@ function ready() {
 
     done = true;
 
-    if (localStorage.theme == "dark") {
-        hy.src = "https://maribelhearn.com/assets/shared/y-bar.png";
-        hy.title = "Youkai Mode";
+    if (localStorage.theme == "dark") { // legacy
+        document.cookie = "theme=dark;expires=Fri, 31 Dec 9999 23:59:59 UTC;path=/;sameSite=Strict;Secure;";
+        localStorage.removeItem("theme");
+        document.getElementById("hy_tooltip").innerHTML = "Youkai Mode";
         dark();
     }
 }
+
 function theme() {
-    if (hy.src.indexOf("y") < 0) {
-        hy.src = "https://maribelhearn.com/assets/shared/y-bar.png";
-        hy.title = "Youkai Mode";
-        localStorage.theme = "dark";
-        dark();
+    if (document.head.contains(document.getElementById("dark_theme")) || hy.title.indexOf('H') < 0) {
+        head.removeChild(document.getElementById("dark_theme"));
+        document.cookie = "theme=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;sameSite=Strict;Secure;";
+        document.getElementById("hy_tooltip").innerHTML = "Human Mode";
     } else {
-        hy.src = "https://maribelhearn.com/assets/shared/h-bar.png";
-        hy.title = "Human Mode";
-        head.removeChild(head.lastChild);
-        localStorage.theme = "light";
+        document.cookie = "theme=dark;expires=Fri, 31 Dec 9999 23:59:59 UTC;path=/;sameSite=Strict;Secure;";
+        document.getElementById("hy_tooltip").innerHTML = "Youkai Mode";
+        dark();
+    }
+
+    if (localStorage.theme) { // legacy
+        localStorage.removeItem("theme");
     }
 }
 

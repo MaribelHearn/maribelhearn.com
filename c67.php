@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html id='top' lang='en'>
 <?php
-    include 'assets/shared/navbar.php';
-    include 'assets/shared/count.php';
+    include 'assets/shared/shared.php';
     hit(basename(__FILE__));
 	$page = str_replace('.php', '', basename(__FILE__));
     $empty = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJ' .
@@ -17,6 +16,7 @@
         <link rel='stylesheet' type='text/css' href='assets/c67/c67.css'>
 		<link rel='icon' type='image/x-icon' href='assets/c67/c67.ico'>
         <script src='assets/shared/yall.js'></script>
+        <?php echo dark_theme() ?>
     </head>
 
     <body class='<?php echo check_webp() ?>'>
@@ -25,7 +25,9 @@
         </nav>
         <main>
             <div id='wrap' class='wrap'>
-                <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
+                <span id='hy_container'><img id='hy' src='../assets/shared/icon_sheet.png' alt='Human-youkai gauge'>
+                    <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
+                </span>
                 <h1>Seihou Banshiryuu C67</h1>
     			<?php
     				if (!empty($_GET['redirect'])) {

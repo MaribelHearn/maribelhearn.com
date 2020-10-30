@@ -1,8 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang='en'>
 <?php
-    include 'assets/shared/navbar.php';
-	include 'assets/shared/count.php';
+	include 'assets/shared/shared.php';
 	hit(basename(__FILE__));
 	$page = str_replace('.php', '', basename(__FILE__));
 ?>

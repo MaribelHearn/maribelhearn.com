@@ -9,10 +9,9 @@
     }
 ?>'>
 <?php
-    include 'assets/shared/navbar.php';
+    include 'assets/shared/shared.php';
     include 'assets/shared/tl.php';
     include 'assets/wr/wr.php';
-    include 'assets/shared/count.php';
     hit(basename(__FILE__));
     $page = str_replace('.php', '', basename(__FILE__));
 ?>
@@ -29,6 +28,7 @@
 		<script src='assets/shared/utils.js' defer></script>
 		<script src='assets/wr/wr.js' defer></script>
 		<script src='assets/shared/sorttable.js' defer></script>
+        <?php echo dark_theme() ?>
 	</head>
 
     <body class='<?php echo check_webp() ?>'>
@@ -58,7 +58,8 @@
                         ?>
                     </span>
     				<span id='hy_container'>
-                        <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
+                        <img id='hy' src='../assets/shared/icon_sheet.png' alt='Human-youkai gauge'>
+                        <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
                     </span>
     				<div id='languages'>
                         <a id='en-gb' class='flag' href='wr?hl=en-gb'>

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
 <?php
-    include 'assets/shared/navbar.php';
-    include 'assets/shared/count.php';
+    include 'assets/shared/shared.php';
     hit(basename(__FILE__));
 	$page = str_replace('.php', '', basename(__FILE__));
 ?>
@@ -18,6 +17,7 @@
 		<script src='assets/shared/html2canvas.js' defer></script>
 		<script src='assets/shared/jquery.js' defer></script>
 		<script src='assets/slots/slots.js' defer></script>
+        <?php echo dark_theme() ?>
     </head>
 
     <body class='<?php echo check_webp() ?>'>
@@ -27,7 +27,9 @@
         <main>
             <div id='wrap' class='wrap'>
                 <span id='content'>
-                    <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
+                    <span id='hy_container'><img id='hy' src='../assets/shared/icon_sheet.png' alt='Human-youkai gauge'>
+                    <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
+                </span>
                     <h1>Touhou Slot Machine</h1>
         			<?php
         				if (!empty($_GET['redirect'])) {

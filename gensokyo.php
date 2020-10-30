@@ -1,51 +1,10 @@
 <!DOCTYPE html>
 <html lang='en'>
 <?php
-    include 'assets/shared/navbar.php';
-    include 'assets/shared/count.php';
+    include 'assets/shared/shared.php';
+    include 'assets/gensokyo/gensokyo.php';
     hit(basename(__FILE__));
-	$page = str_replace('.php', '', basename(__FILE__));
-    $json = file_get_contents('assets/json/gensokyo.json');
-    $reps = json_decode($json, true);
-    $games = Array('EoSD', 'PCB', 'IN', 'PoFV', 'StB', 'MoF', 'SA', 'UFO', 'DS', 'GFW', 'TD');
-    $diffs = Array('Easy', 'Normal', 'Hard', 'Lunatic', 'Extra', 'Phantasm', 'Last Word');
-    $types = Array('Normal', 'Practice', 'Spell');
-    if (empty($_GET['id'])) {
-        if (!empty($_GET['player'])) {
-            $player = $_GET['player'];
-        }
-        if (!empty($_GET['game']) && $_GET['game'] !== '-' && in_array($_GET['game'], $games)) {
-            $game = $_GET['game'];
-        }
-        if (!empty($_GET['shot'])) {
-            $shot = $_GET['shot'];
-        }
-        if (!empty($_GET['type']) && in_array($_GET['type'], $types)) {
-            $type = $_GET['type'];
-        }
-        if (!empty($_GET['diff']) && $_GET['diff'] !== '-' && in_array($_GET['diff'], $diffs)) {
-            $diff = $_GET['diff'];
-            if ($game == 'StB' || $game == 'DS') {
-                $diff = '-';
-            }
-            if ($game != 'PCB' && $diff == 'Phantasm') {
-                $diff = 'Extra';
-            }
-            if ($game != 'IN' && $diff == 'Last Word') {
-                $diff = '-';
-            }
-        }
-        if (!empty($_GET['pl'])) {
-            $PAGE_LENGTH = (int) $_GET['pl'];
-        } else {
-            $PAGE_LENGTH = 25;
-        }
-        if (!empty($_GET['page'])) {
-            $p = $_GET['page'] * $PAGE_LENGTH - $PAGE_LENGTH;
-        } else {
-            $p = 0;
-        }
-    }
+    $page = str_replace('.php', '', basename(__FILE__));
 ?>
 
     <head>
@@ -57,6 +16,7 @@
         <link rel='stylesheet' type='text/css' href='assets/gensokyo/gensokyo.css'>
 		<link rel='icon' type='image/x-icon' href='assets/gensokyo/gensokyo.ico'>
         <script src='assets/shared/sorttable.js' defer></script>
+        <?php echo dark_theme() ?>
     </head>
 
     <body class='<?php echo check_webp() ?>'>
@@ -67,7 +27,9 @@
             <div id='wrap' class='wrap'>
                 <p id='ack'>This background image<br id='ack_br'>
                 was drawn by <a href='http://h-yde.deviantart.com/'>h-yde</a></p>
-                <img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
+                <span id='hy_container'><img id='hy' src='../assets/shared/icon_sheet.png' alt='Human-youkai gauge'>
+                    <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
+                </span>
                 <h1>Gensokyo Replay Archive</h1>
     			<?php
     				if (!empty($_GET['redirect'])) {

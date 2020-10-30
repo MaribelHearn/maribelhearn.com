@@ -1,41 +1,10 @@
 ﻿<!DOCTYPE html>
 <html id='top' lang='en'>
 <?php
-    include 'assets/shared/navbar.php';
-	include 'assets/shared/count.php';
+	include 'assets/shared/shared.php';
+	include 'assets/scoring/scoring.php';
 	hit(basename(__FILE__));
 	$page = str_replace('.php', '', basename(__FILE__));
-    $json = file_get_contents('assets/json/wrlist.json');
-    $wr = json_decode($json, true);
-	$games = ['HRtP', 'SoEW', 'PoDD', 'LLS', 'MS', 'EoSD', 'PCB', 'IN', 'PoFV',
-	'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC'];
-	$diffs = ['Easy', 'Normal', 'Hard', 'Lunatic', 'Extra'];
-    function full_name($game) {
-        switch ($game) {
-			case 'HRtP': return 'Touhou 1 - The Highly Responsive to Prayers';
-            case 'SoEW': return 'Touhou 2 - The Story of Eastern Wonderland';
-            case 'PoDD': return 'Touhou 3 - Phantasmagoria of Dim.Dream';
-            case 'LLS': return 'Touhou 4 - Lotus Land Story';
-            case 'MS': return 'Touhou 5 - Mystic Square';
-            case 'EoSD': return 'Touhou 6 - The Embodiment of Scarlet Devil';
-            case 'PCB': return 'Touhou 7 - Perfect Cherry Blossom';
-            case 'IN': return 'Touhou 8 - Imperishable Night';
-            case 'PoFV': return 'Touhou 9 - Phantasmagoria of Flower View';
-            case 'MoF': return 'Touhou 10 - Mountain of Faith';
-            case 'SA': return 'Touhou 11 - Subterranean Animism';
-            case 'UFO': return 'Touhou 12 - Undefined Fantastic Object';
-            case 'GFW': return 'Touhou 12.8 - Great Fairy Wars';
-            case 'TD': return 'Touhou 13 - Ten Desires';
-            case 'DDC': return 'Touhou 14 - Double Dealing Character';
-            case 'LoLK': return 'Touhou 15 - Legacy of Lunatic Kingdom';
-            case 'HSiFS': return 'Touhou 16 - Hidden Star in Four Seasons';
-            case 'WBaWC': return 'Touhou 17 - Wily Beast and Weakest Creature';
-            default: return 'Unknown';
-        }
-    }
-	function no_extra($game) {
-		return in_array($game, ['HRtP', 'PoDD', 'GFW']);
-	}
 ?>
 
 	<head>
@@ -50,6 +19,7 @@
 		<script src='assets/shared/utils.js' defer></script>
 		<script src='assets/scoring/scoring.js' defer></script>
         <script src='assets/shared/sorttable.js' defer></script>
+        <?php echo dark_theme() ?>
 	</head>
 
     <body class='<?php echo check_webp() ?>'>
@@ -60,7 +30,9 @@
     		<div id='wrap' class='wrap'>
     			<p id='ack'>This background image <br id='ack_br'>was drawn by
     			<a href='https://www.pixiv.net/member.php?id=87950'>りすたる</a></p>
-    			<img id='hy' src='assets/shared/h-bar.png' alt='Human-youkai gauge' title='Human Mode'>
+    			<span id='hy_container'><img id='hy' src='../assets/shared/icon_sheet.png' alt='Human-youkai gauge'>
+		            <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
+		        </span>
     			<h1>High Score Storage</h1>
     			<?php
     				if (!empty($_GET['redirect'])) {
