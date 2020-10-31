@@ -180,7 +180,7 @@ function appendDifficultyHeaders(game, difficulty, shottypes) {
 }
 
 function showWRs(event) {
-    var game = event.data.game ? event.data.game : this.id.slice(0, -1), seasonSwitch = event.data.seasonSwitch;
+    var game = event.data.game ? event.data.game : this.id.replace("_image", ""), seasonSwitch = event.data.seasonSwitch;
 
     if (!WRs || !westScores) {
         $.get("assets/json/wrlist.json", function (data1) {
@@ -195,7 +195,7 @@ function showWRs(event) {
 
     if (game == selected && !seasonSwitch) {
         $("#list").html("");
-        $("#" + game + "i").css("border", $("#" + game + "i").hasClass("cover98") ? "1px solid black" : "none");
+        $("#" + game + "_image").css("border", $("#" + game + "_image").hasClass("cover98") ? "1px solid black" : "none");
         selected = "";
         return;
     }
@@ -214,12 +214,12 @@ function showWRs(event) {
     }
 
     if (selected !== "") {
-        $("#" + selected + "i").css("border", $("#" + selected + "i").hasClass("cover98") ? "1px solid black" : "none");
+        $("#" + selected + "_image").css("border", $("#" + selected + "_image").hasClass("cover98") ? "1px solid black" : "none");
     }
 
     $("#fullname").removeClass(selected + "f");
     $("#table").removeClass(selected + "t");
-    $("#" + game + "i").css("border", "3px solid gold");
+    $("#" + game + "_image").css("border", "3px solid gold");
     selected = game;
     $("#fullname").addClass(game + "f");
     $("#fullname").html(fullNameNumber(game));

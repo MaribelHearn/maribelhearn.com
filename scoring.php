@@ -144,8 +144,8 @@
                 </table>
     			<?php
     				foreach ($games as $key => $game) {
-    					echo '<div id="' . $game . '"><table class="center"><caption><p><img src="assets/games/' . strtolower($game) .
-    					'50x50.jpg" ' . ($key < 5 ? 'class="cover98" ' : '') . 'alt="' . $game .
+    					echo '<div id="' . $game . '"><table class="center"><caption><p><img id="' . $game . '_image" ' .
+						'src="assets/shared/game_sheet50x50.png" class="cover ' . ($key < 5 ? ' cover98' : '') . '" alt="' . $game .
     					' cover"> ' . full_name($game) . '</p></caption><tr><th>Route</th>';
     					foreach ($diffs as $key => $diff) {
     						if (no_extra($game) && $diff == 'Extra') {

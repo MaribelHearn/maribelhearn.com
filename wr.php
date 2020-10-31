@@ -28,6 +28,7 @@
 		<script src='assets/shared/utils.js' defer></script>
 		<script src='assets/wr/wr.js' defer></script>
 		<script src='assets/shared/sorttable.js' defer></script>
+        <script src='assets/shared/dark.js' defer></script>
         <?php echo dark_theme() ?>
 	</head>
 
@@ -251,8 +252,9 @@
                     foreach ($wr as $game => $obj) {
                         echo '<div id="' . $game . '">';
                         echo '<table id="' . $game . '_table" class="' . $game .
-                        't sortable"><caption><p><img' . (num($game) <= 5 ? ' class="cover98"' : '') .
-                        ' src="assets/games/' . strtolower($game) . '50x50.jpg" alt="' . $game .
+                        't sortable"><caption><p><img id="' . $game . '_image_old" ' .
+                        'class="cover ' . (num($game) <= 5 ? ' cover98' : '') .
+                        '" src="assets/shared/game_sheet50x50.png" alt="' . $game .
                         ' cover"> ' . full_name($game, $lang) .
                         '</p></caption><tr><th>' . tl_term(shot_route($game), $lang) . '</th>';
                         foreach ($obj as $diff => $shots) {
@@ -359,8 +361,9 @@
                         }
                         echo '</p>';
         			    foreach ($wr as $game => $value) {
-        			        echo '<img id="' . $game . 'i" class="game" src="assets/games/' . strtolower($game) .
-                            '50x50.jpg" alt="' . $game . ' cover">';
+        			        echo '<span class="game_image"><img id="' . $game . '_image" class="game" src="assets/shared/' .
+                            'game_sheet50x50.png" alt="' . $game . ' cover"><span class="full_name tooltip">' . full_name($game, $lang) .
+                            '</span></span>';
                         }
                         echo '</div>';
                     }
@@ -472,7 +475,6 @@
                 </div>
                 <p id='back'><strong><a id='backtotop' href='#top'><?php echo tl_term('Back to Top', $lang); ?></a></strong></p>
     			<?php echo '<input id="missingReplays" type="hidden" value="' . implode($missing_replays, '') . '">' ?>
-                <script src='assets/shared/dark.js'></script>
     		</div>
         </main>
     </body>

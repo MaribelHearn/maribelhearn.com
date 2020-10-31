@@ -57,6 +57,11 @@ table.center {
 .wr {
     color: #00e;
 }
+.cover {
+    object-fit: none;
+    height: 50px;
+    width: 50px;
+}
 .cover98 {
     border: 1px solid #000;
 }
@@ -291,6 +296,60 @@ table.center {
 #hy_container:hover .tooltip {
     visibility: visible;
 }
+#HRtP_image {
+    object-position: 0px 0px;
+}
+#SoEW_image {
+    object-position: -50px 0px;
+}
+#PoDD_image {
+    object-position: -100px 0px;
+}
+#LLS_image {
+    object-position: -150px 0px;
+}
+#MS_image {
+    object-position: -200px 0px;
+}
+#EoSD_image {
+    object-position: -250px 0px;
+}
+#PCB_image {
+    object-position: -300px 0px;
+}
+#IN_image {
+    object-position: -350px 0px;
+}
+#PoFV_image {
+    object-position: -400px 0px;
+}
+#MoF_image {
+    object-position: -450px 0px;
+}
+#SA_image {
+    object-position: -500px 0px;
+}
+#UFO_image {
+    object-position: -550px 0px;
+}
+#GFW_image {
+    object-position: -600px 0px;
+}
+#TD_image {
+    object-position: -650px 0px;
+}
+#DDC_image {
+    object-position: -700px 0px;
+}
+#LoLK_image {
+    object-position: -750px 0px;
+}
+#HSiFS_image {
+    object-position: -800px 0px;
+}
+#WBaWC_image {
+    object-position: -850px 0px;
+}
 #ack {
     font: 11px verdana,sans-serif;
     text-align: right;
@@ -410,7 +469,7 @@ table.center {
         display: inline;
         font-weight: bold;
     }
-    #hy {
+    #hy_container {
         float: none;
     }
 }
