@@ -49,6 +49,11 @@ table, th, td {
 .nowrap {
     white-space: nowrap;
 }
+.cover, .game {
+    object-fit: none;
+    height: 50px;
+    width: 50px;
+}
 .cover98 {
     border: 1px solid #000;
 }
@@ -80,7 +85,15 @@ table, th, td {
 .border p {
     margin: 4px;
 }
+.game_image {
+    position: relative;
+}
+.game_image .tooltip {
+    left: 0%;
+    margin-left: -60px;
+}
 .tooltip {
+    font-weight: initial;
     visibility: hidden;
     background-color: black;
     color: #fff;
@@ -90,6 +103,12 @@ table, th, td {
     position: absolute;
     z-index: 1;
     top: 100%;
+}
+.game_image:hover .tooltip {
+    visibility: visible;
+}
+.full_name {
+    width: 300px;
 }
 .icon {
     object-fit: none;
@@ -294,6 +313,60 @@ table, th, td {
 #contents > p, #contents_new > p, #ack_container > p {
     margin: 4px;
 }
+#HRtP_image, #HRtP_image_old {
+    object-position: 0px 0px;
+}
+#SoEW_image, #SoEW_image_old {
+    object-position: -50px 0px;
+}
+#PoDD_image, #PoDD_image_old {
+    object-position: -100px 0px;
+}
+#LLS_image, #LLS_image_old {
+    object-position: -150px 0px;
+}
+#MS_image, #MS_image_old {
+    object-position: -200px 0px;
+}
+#EoSD_image, #EoSD_image_old {
+    object-position: -250px 0px;
+}
+#PCB_image, #PCB_image_old {
+    object-position: -300px 0px;
+}
+#IN_image, #IN_image_old {
+    object-position: -350px 0px;
+}
+#PoFV_image, #PoFV_image_old {
+    object-position: -400px 0px;
+}
+#MoF_image, #MoF_image_old {
+    object-position: -450px 0px;
+}
+#SA_image, #SA_image_old {
+    object-position: -500px 0px;
+}
+#UFO_image, #UFO_image_old {
+    object-position: -550px 0px;
+}
+#GFW_image, #GFW_image_old {
+    object-position: -600px 0px;
+}
+#TD_image, #TD_image_old {
+    object-position: -650px 0px;
+}
+#DDC_image, #DDC_image_old {
+    object-position: -700px 0px;
+}
+#LoLK_image, #LoLK_image_old {
+    object-position: -750px 0px;
+}
+#HSiFS_image, #HSiFS_image_old {
+    object-position: -800px 0px;
+}
+#WBaWC_image, #WBaWC_image_old {
+    object-position: -850px 0px;
+}
 #ack {
     font: 11px verdana,sans-serif;
     text-align: right;
@@ -388,6 +461,9 @@ table, th, td {
     }
     h2 {
         font-size: 24px;
+    }
+    .full_name {
+        display: none;
     }
     #layouttoggle {
         display: none;

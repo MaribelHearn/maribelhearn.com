@@ -8,6 +8,7 @@ function toggleLayout() {
         setCookie("lnn_old_layout", true);
     }
 }
+
 function restrictions(game) {
     return ({
         "PCB": "n",
@@ -18,9 +19,11 @@ function restrictions(game) {
         "WBaWC": "nn"
     }[game]);
 }
+
 function shotRoute(game) {
     return game == "HRtP" || game == "GFW" ? "Route" : "Shottype";
 }
+
 function replayPath(game, player, character, type) {
     var folder = player.removeSpaces(), first = player.charAt(0), last = player.charAt(player.length - 1);
 
@@ -42,9 +45,10 @@ function replayPath(game, player, character, type) {
     return "replays/lnn/" + folder + "/th" + gameAbbr(game) +
     "_ud" + first + last + shottypeAbbr(character) + ".rpy";
 }
+
 function showLNNs(game) {
     if (typeof game == "object") {
-        game = this.id.slice(0, -1); // if event listener fired
+        game = this.id.replace("_image", ""); // if event listener fired
     }
 
     if (!LNNs) {
@@ -57,7 +61,7 @@ function showLNNs(game) {
 
     if (game == selected) {
         $("#list").css("display", "none");
-        $("#" + game + "i").css("border", $("#" + game + "i").hasClass("cover98") ? "1px solid black" : "none");
+        $("#" + game + "_image").css("border", $("#" + game + "_image").hasClass("cover98") ? "1px solid black" : "none");
         $("#fullname, #listhead, #listbody, #listfoot").html("");
         $("#fullname").removeClass(game + "f");
         selected = "";
@@ -68,14 +72,14 @@ function showLNNs(game) {
         shottype, shotplayers, shotcount, character, type, player, season, i;
 
     if (selected !== "") {
-        $("#" + selected + "i").css("border", $("#" + selected + "i").hasClass("cover98") ? "1px solid black" : "none");
+        $("#" + selected + "_image").css("border", $("#" + selected + "_image").hasClass("cover98") ? "1px solid black" : "none");
     }
 
     if ($("#fullname").hasClass(selected + "f")) {
         $("#fullname").removeClass(selected + "f");
     }
 
-    $("#" + game + "i").css("border", "3px solid gold");
+    $("#" + game + "_image").css("border", "3px solid gold");
     selected = game;
     $("#fullname").addClass(game + "f");
     $("#fullname").html(fullNameNumber(game));
@@ -146,6 +150,7 @@ function showLNNs(game) {
     generateFullNames();
     generateShottypes();
 }
+
 function showPlayerLNNs(player) {
     if (typeof player == "object") {
         player = this.value; // if event listener fired
@@ -224,6 +229,7 @@ function showPlayerLNNs(player) {
     generateShortNames();
     generateShottypes();
 }
+
 function setLanguage(event) {
     var newLanguage = event.data.language;
 
@@ -235,6 +241,7 @@ function setLanguage(event) {
     setCookie("lang", newLanguage);
     location.href = location.href.split('#')[0].split('?')[0];
 }
+
 $(document).ready(function () {
     $("#player").on("change", showPlayerLNNs);
     $("#player").on("select", showPlayerLNNs);
