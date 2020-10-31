@@ -27,6 +27,7 @@ h1 {
     font-family: 'Felipa';
     margin-bottom: 15px;
     font-size: 48px;
+    clear: both;
 }
 h2 {
     font-family: 'Felipa';
@@ -399,7 +400,7 @@ p {
         float: none;
         width: 100%;
     }
-    #hy {
+    #hy_container {
         float: none;
     }
     #avatar, #map, #tiers {
@@ -413,9 +414,6 @@ p {
     }
 }
 @media only screen and (max-height: 550px) {
-    h1 {
-        clear: both;
-    }
     #ack, #ack_admin, #ack_error {
         position: relative;
         color: black;
