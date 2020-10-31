@@ -338,7 +338,7 @@ table, tr, th, td {
     #wrap p, em {
         font-size: 11px;
     }
-    #hy {
+    #hy_container {
         float: none;
     }
 }
