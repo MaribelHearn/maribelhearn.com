@@ -48,7 +48,7 @@ function theme_name() {
 function navbar($page) {
     $token_path = ($page == 'admin' ? '../.stats/token' : '.stats/token');
     $token_path = ($page == 'error' ? '../../' . $token_path : $token_path);
-    $navbar = '<span class="nav_left">';
+    $navbar = '<div class="dropdown nav_left">';
     $navbar .= '<a href="/"><img class="icon index_icon" src="assets/shared/icon_sheet.png" alt="Cherry blossom icon"> Index</a> | ';
 
     if (isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents($token_path))) {
@@ -56,7 +56,7 @@ function navbar($page) {
     }
 
     $navbar .= '<a href="about">About Me</a> | <a href="privacy">Privacy Policy</a> ';
-    $navbar .= '</span><span class="nav_right">';
+    $navbar .= '</div><div class="dropdown nav_right">';
         $navbar .= '<div class="dropdown">';
             $navbar .= '<a href="#" class="dropdown_button">Touhou Sites&#x25BF;</a>';
             $navbar .= '<div class="dropdown_content dropdown_right">';
@@ -91,7 +91,7 @@ function navbar($page) {
                 '<img class="icon source_icon" src="assets/shared/icon_sheet.png" alt="Code brackets icon">Source</a></p>';
             $navbar .= '</div>';
         $navbar .= '</div>';
-    $navbar .= '</span>';
+    $navbar .= '</div>';
     $navbar .= '<div class="dropdowns">';
         $navbar .= '<div class="dropdown">';
             $navbar .= '<a href="#" class="dropdown_button">Games&#x25BF;</a>';

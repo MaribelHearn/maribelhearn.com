@@ -339,7 +339,7 @@ table, th, td {
     h2 {
         font-size: 24px;
     }
-    #hy {
+    #hy_container {
         float: none;
     }
     #modal {

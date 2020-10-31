@@ -430,7 +430,7 @@ input[type=button] {
     input, table {
         font-size: 11px;
     }
-    #hy {
+    #hy_container {
         float: none;
     }
     #container, #dummy {

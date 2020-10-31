@@ -27,7 +27,7 @@
             <div id='wrap' class='wrap'>
                 <p id='ack'>This background image was<br id='ack_br'>
                 drawn by <a href='http://www.pixiv.net/member.php?id=21613'>Kong Xian</a></p>
-                <span id='hy_container'><img id='hy' src='../assets/shared/icon_sheet.png' alt='Human-youkai gauge'>
+                <span id='hy_container'><img id='hy' src='assets/shared/icon_sheet.png' alt='Human-youkai gauge'>
                     <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
                 </span>
                 <h1>Phantasmagoria of Flower View</h1>

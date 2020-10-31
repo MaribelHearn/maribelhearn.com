@@ -463,7 +463,7 @@ table {
         overflow-x: scroll;
         overflow-y: hidden;
     }
-    #hy {
+    #hy_container {
         float: none;
     }
 }

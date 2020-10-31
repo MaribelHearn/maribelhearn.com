@@ -302,7 +302,7 @@ h2 {
     .jargon {
         width: auto;
     }
-    #hy {
+    #hy_container {
         float: none;
     }
     #jargontable, #spelltable {

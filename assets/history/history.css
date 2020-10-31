@@ -438,7 +438,7 @@ caption {
     .list {
         width: 100%;
     }
-    #hy {
+    #hy_container {
         float: none;
     }
 }

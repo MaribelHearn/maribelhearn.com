@@ -479,7 +479,7 @@ ol > li {
     .art {
         display: none;
     }
-    #hy {
+    #hy_container {
         float: none;
     }
 }
@@ -512,7 +512,7 @@ ol > li {
     .art {
         display: none;
     }
-    #hy {
+    #hy_container {
         float: none;
     }
 }
