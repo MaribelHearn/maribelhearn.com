@@ -300,7 +300,7 @@
                                     if ($score == $diff_max[$game][$diff][0]) {
                                         $score_text = '<u>' . $score_text . '</u>';
                                     }
-                                    echo '<td>' . $score_text . '</a><br>by <em>' . $player . '</em><span class="dimgrey"><br>' .
+                                    echo '<td>' . $score_text . '<br>by <em>' . $player . '</em><span class="dimgrey"><br>' .
                                     '<span class="datestring_game">' . date_tl($shots[$shot][2], $notation) . '</span></span></td>';
                                 }
                             }
@@ -371,8 +371,8 @@
     			<div id='list'>
     			</div>
                 <div id='playersearch'>
-        			<p id='playerwrs'><?php
-                        echo '<h2>' . player_search($lang) . '</h2>';
+        			<?php
+                        echo '<h2>' . player_search($lang) . '</h2><p id="playerwrs">';
         				if ($lang == 'English') { echo 'Choose a player name from the menu below to show their WRs.'; }
                         else if ($lang == 'Japanese') { echo '個人のWRを表示するには、下記のメニューからプレイヤー名を選んでください。'; }
                         else { echo '在以下的菜单选择玩家的名字则可查看其WR。'; }
