@@ -56,7 +56,7 @@ function navbar($page) {
     }
 
     $navbar .= '<a href="about">About Me</a> | <a href="privacy">Privacy Policy</a> ';
-    $navbar .= '</div><div class="dropdown nav_right">';
+    $navbar .= '</div><div class="nav_right">';
         $navbar .= '<div class="dropdown">';
             $navbar .= '<a href="#" class="dropdown_button">Touhou Sites&#x25BF;</a>';
             $navbar .= '<div class="dropdown_content dropdown_right">';
