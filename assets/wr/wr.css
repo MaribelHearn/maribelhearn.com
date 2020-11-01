@@ -12,7 +12,7 @@ body.no-webp {
     background: url('wr.jpg') bottom no-repeat fixed;
     background-size: cover;
 }
-div:not(.dropdown):not(.dropdown_content) {
+div:not(.dropdown):not(.dropdown_content):not(.nav_right) {
     background-color: #fff;
     margin-bottom: 5px;
     margin-top: 5px;

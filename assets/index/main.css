@@ -12,7 +12,7 @@ body.no-webp {
     background: url('index.jpg') center no-repeat fixed;
     background-size: cover;
 }
-div:not(.dropdown):not(.dropdown_content) {
+div:not(.dropdown):not(.dropdown_content):not(.nav_right) {
     background-color: #fff;
     margin-bottom: 5px;
     margin-top: 5px;
@@ -216,9 +216,6 @@ p {
     right: 0;
 }
 .dropdown:hover .dropdown_content {
-    display: block;
-}
-.dropdown_content:hover .dropdown_content {
     display: block;
 }
 .nav_left {
