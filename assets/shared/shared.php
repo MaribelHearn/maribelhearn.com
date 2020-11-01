@@ -43,7 +43,7 @@ function dark_theme($page = 'other') {
     return '';
 }
 function theme_name() {
-    return isset($_COOKIE['theme']) ? 'Youkai Mode' : 'Human Mode';
+    return isset($_COOKIE['theme']) ? 'Youkai Mode (click to toggle)' : 'Human Mode (click to toggle)';
 }
 function navbar($page) {
     $token_path = ($page == 'admin' ? '../.stats/token' : '.stats/token');
