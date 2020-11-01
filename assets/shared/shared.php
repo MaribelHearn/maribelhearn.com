@@ -70,7 +70,7 @@ function navbar($page) {
                 '<img class="icon pndsng_icon" src="assets/shared/icon_sheet.png" alt="Pndsng favicon">PND List</a></p>';
                 $navbar .= '<p><a href="https://priw8.github.io">' .
                 '<img class="icon priw8_icon" src="assets/shared/icon_sheet.png" alt="Priw8 favicon">Priw8\'s Site</a></p>';
-                $navbar .= '<p><a href="https://exphp.github.io/thpages">' .
+                $navbar .= '<p><a href="https://exphp.github.io/thpages/">' .
                 '<img class="icon exphp_icon" src="assets/shared/icon_sheet.png" alt="ExpHP favicon">ExpHP\'s Site</a></p>';
             $navbar .= '</div>';
         $navbar .= '</div> ';
@@ -81,7 +81,7 @@ function navbar($page) {
                 '<img class="icon youtube_icon" src="assets/shared/icon_sheet.png" alt="Youtube favicon">YouTube</a></p>';
                 $navbar .= '<p><a href="https://twitter.com/MaribelHearn42">' .
                 '<img class="icon twitter_icon" src="assets/shared/icon_sheet.png" alt="Twitter favicon">Twitter</a></p>';
-                $navbar .= '<p><a href="https://twitch.tv/maribel_hearn">' .
+                $navbar .= '<p><a href="https://www.twitch.tv/maribel_hearn">' .
                 '<img class="icon twitch_icon" src="assets/shared/icon_sheet.png" alt="Twitch favicon">Twitch</a></p>';
                 $navbar .= '<p><a href="https://steamcommunity.com/id/maribelhearn42">' .
                 '<img class="icon steam_icon" src="assets/shared/icon_sheet.png" alt="Steam favicon">Steam</a></p>';
@@ -147,7 +147,7 @@ function navbar($page) {
                     '<img class="icon youtube_icon" src="assets/shared/icon_sheet.png" alt="Youtube favicon">YouTube</a></p>';
                     $navbar .= '<p><a href="https://twitter.com/MaribelHearn42">' .
                     '<img class="icon twitter_icon" src="assets/shared/icon_sheet.png" alt="Twitter favicon">Twitter</a></p>';
-                    $navbar .= '<p><a href="https://twitch.tv/maribel_hearn">' .
+                    $navbar .= '<p><a href="https://www.twitch.tv/maribel_hearn">' .
                     '<img class="icon twitch_icon" src="assets/shared/icon_sheet.png" alt="Twitch favicon">Twitch</a></p>';
                     $navbar .= '<p><a href="https://steamcommunity.com/id/maribelhearn42">' .
                     '<img class="icon steam_icon" src="assets/shared/icon_sheet.png" alt="Steam favicon">Steam</a></p>';
