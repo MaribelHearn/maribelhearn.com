@@ -1,5 +1,5 @@
 function set() {
-    document.cookie = "token=" + document.getElementById("token").value + ";expires=Fri, 31 Dec 9999 23:59:59 UTC;path=/;sameSite=Strict;Secure;";
+    document.cookie = "token=" + JSON.stringify(document.getElementById("token").value) + ";expires=Fri, 31 Dec 9999 23:59:59 UTC;path=/;sameSite=Strict;Secure;";
     alert("Blocking cookie set!");
 }
 
