@@ -200,7 +200,7 @@
                 <h3 id='vivita'>VIVIT-A</h3>
                 <picture>
                     <source srcset='assets/c67/vivita.webp' type='image/webp'>
-                    <source loading='lazy' loading='lazy' src='assets/c67/vivita.jpg'>
+                    <source src='assets/c67/vivita.jpg'>
                     <img loading='lazy' class='shotinfo' src='assets/c67/vivita.jpg' alt='VIVIT-A Shottype Info' width='640' height='480'>
                 </picture>
                 <br>
