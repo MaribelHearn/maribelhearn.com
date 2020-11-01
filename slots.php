@@ -26,11 +26,11 @@
 		</nav>
         <main>
             <div id='wrap' class='wrap'>
-                <span id='content'>
-                    <span id='hy_container'><img id='hy' src='assets/shared/icon_sheet.png' alt='Human-youkai gauge'>
+                <span id='hy_container'><img id='hy' src='assets/shared/icon_sheet.png' alt='Human-youkai gauge'>
                     <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
                 </span>
-                    <h1>Touhou Slot Machine</h1>
+                <h1>Touhou Slot Machine</h1>
+                <div id='content'>
         			<?php
         				if (!empty($_GET['redirect'])) {
         					echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
@@ -43,7 +43,7 @@
                         <input id='screenshot' type='button' value='Screenshot'>
                         <input id='reset' type='button' value='Reset Titles'>
                     </p>
-                </span>
+                </div>
                 <table id='table'>
                     <tr>
                         <td id='title0' class='title'>You are a ...</td>

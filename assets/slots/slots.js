@@ -105,7 +105,7 @@ function backgroundColour() {
 
 function takeScreenshot() {
     emptyModal();
-    $("#content").css("display", "none");
+    $("#content, #hy_container, h1").css("display", "none");
     html2canvas(document.getElementById("table"), {
         backgroundColor: backgroundColour()
     }).then(function(canvas) {
@@ -116,8 +116,8 @@ function takeScreenshot() {
         "<input type='button' value='Save to Device'></a></p>" +
         "<p>This feature currently does not work on Chromium-based browsers.</p>" +
         "<p><img id='base64' src='" + base64image + "' alt='Slot machine screenshot'></p>");
-        $("#modal_inner, #modal").css("display", "block");
-        $("#content").css("display", "inline");
+        $("#modal_inner, #modal, #content, h1").css("display", "block");
+        $("#hy_container").css("display", "inline");
         $("#base64").css("max-width", screen.width);
         $("#base64").css("max-height", screen.width);
     });
