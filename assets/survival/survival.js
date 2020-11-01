@@ -1,5 +1,5 @@
  var games = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC"],
-    innerHeight = window.innerHeight, vals = {}, completions, na, i;
+    innerHeight = window.innerHeight, vals = {}, originalContent, completions, na, i;
 
 for (i = 0; i < games.length; i++) {
     vals[games[i]] = {
@@ -17,6 +17,10 @@ for (i = 0; i < games.length; i++) {
         vals.PCB.Phantasm = "N/A";
     }
 }
+
+String.prototype.contains = function (string) {
+    return this.indexOf(string) > -1;
+};
 
 function getPercentage(game) {
     return 100 / Object.keys(vals[game]).length;
@@ -322,7 +326,7 @@ function backgroundColour() {
     return localStorage.theme && localStorage.theme == "dark" ? "#202020" : "white";
 }
 
-function cleanupRendering(originalContent) {
+function cleanupRendering() {
     if (screen.width > 800) {
         $("#ack").css("display", "block");
     }
@@ -339,7 +343,7 @@ function cleanupRendering(originalContent) {
 }
 
 function drawOverview() {
-    var originalContent = $("#container").html();
+    originalContent = $("#container").html();
 
     prepareRendering();
     html2canvas(document.getElementById("survival"), {
@@ -381,6 +385,7 @@ function emptyModal() {
     $("#modal_inner").css("display", "none");
     $("#results").css("display", "none");
     $("#overview_container").css("display", "inline");
+    cleanupRendering();
 }
 
 function getCookie(name) {
