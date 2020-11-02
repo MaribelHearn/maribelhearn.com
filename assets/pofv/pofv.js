@@ -342,6 +342,7 @@ function emptyModal() {
     $("#modal_inner").css("display", "none");
     $("#modal").css("display", "none");
 }
+
 function closeModal(event) {
     var modal = document.getElementById("modal");
 
@@ -349,9 +350,11 @@ function closeModal(event) {
         emptyModal();
     }
 }
+
 function isMobile() {
     return navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1;
 }
+
 function charInfo() {
     var char = this.alt.split(' ')[0].toLowerCase();
 
@@ -375,7 +378,7 @@ function charInfo() {
         "<tr><td class='noborders'>Charge Delay</td><td class='noborders'>" + STATS[char].delay + " frames</td></tr>" +
         "<tr><td class='noborders'>Special Ability</td><td class='noborders'>" + ABILITY[char] + "</td></tr>" +
         "<tr><td class='noborders'>Scope</td><td class='noborders'>" + SCOPE[char] + "</td></tr></table>" +
-        "</td></tr></table><img class='scope' src='assets/pofv/scopes/" + char + ".jpg'><p>" + DESCRIPTION[char] + "</p>");
+        "</td></tr></table><img class='scope' src='assets/pofv/scopes/" + char + ".jpg'><p class='descr'>" + DESCRIPTION[char] + "</p>");
     } else {
         $("#modal_inner").html("<h2>" + this.alt + "</h2><table class='noborders'><tr>" +
         "<td class='noborders'><img class='art' src='assets/pofv/characters/" + char + ".png' alt='" + this.alt + "'></td>" +
@@ -390,13 +393,14 @@ function charInfo() {
         "<tr><td class='noborders'>Special Ability</td><td class='noborders'>" + ABILITY[char] + "</td></tr>" +
         "<tr><td class='noborders'>Scope</td><td class='noborders'>" + SCOPE[char] + "</td></tr></table></td>" +
         "<td class='noborders'><img class='scope' src='assets/pofv/scopes/" + char + ".jpg'></td></tr></table>" +
-        "<p>" + DESCRIPTION[char] + "</p>");
+        "<p class='descr'>" + DESCRIPTION[char] + "</p>");
     }
 
     $("#modal_inner").append();
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
 }
+
 $(document).ready(function () {
     $("body").on("click", closeModal);
     $("body").on("keypress", closeModal);

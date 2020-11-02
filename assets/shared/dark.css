@@ -1,5 +1,11 @@
-body:not(#ack) {
+/*h1, h2, h3, label, th, td, div, p:not(#ack) {
     color: white;
+}*/
+h1, h2, h3, h4, th, td, label, li, figcaption, p:not(.language):not(.descr):not(#ack), caption:not(#legend), #nav {
+    color: white;
+}
+#modal_inner h1, #modal_inner h2, #modal_inner th, #modal_inner td, .rendering th, .rendering td {
+    color: black;
 }
 body.webp, body.no-webp, div:not(.dropdown):not(.dropdown_content):not(.nav_right) {
     background-color: #202020;
@@ -72,6 +78,9 @@ a:visited.dropdown_button {
 }
 .poll {
     color: black;
+}
+.replay {
+    color: white;
 }
 ::before {
     color: white;
