@@ -274,7 +274,7 @@
     			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img class='icon thcrap_icon' src='assets/shared/icon_sheet.png' alt='THCRAP favicon'> BraviOCOkina</a></p>
     			<p>Remastered version of Stage 6 and harder version of Extra in HSiFS, including an original character replacing Okina and alternate story along with pattern,
     			bullet type, stage music and graphical changes. There is another patch with the same OC replacement and pattern modding for VD on the Okina scenes on the same download page.</p>
-    			<a href='https://mega.nz/file/8j5VBIIQ#sj2_W4xvSzsLLb3b2hSQxtQR1sjQMzJXfb6A8Jem6VM' target='_blank'>Downloads</a>
+    			<a href='https://mega.nz/file/NighRI5Q#-1iSHYWUcEQl9gPAL11rhScYdMSv2bfJ-9b-SmQ32KI' target='_blank'>Downloads</a>
                 <!-- Graphical Patches -->
                 <hr>
                 <h2 id='graphical'>Graphical Patches</h2>
