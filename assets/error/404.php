@@ -1,20 +1,22 @@
 ﻿<!DOCTYPE html>
 <html lang='en'>
 <?php
-    $max_sim = 0;
     $url = substr($_SERVER['REQUEST_URI'], 1);
-    foreach (glob('../../*') as $file) {
-        if (strpos($file, '.php')) {
-            $page = substr($file, 6, -4);
-            $max_sim = max(similar_text($url, $page), $max_sim);
-            if (similar_text($url, $page) >= $max_sim) {
-                $max_page = $page;
+    if (!strpos($url, '/')) {
+        $max_sim = 0;
+        foreach (glob('../../*') as $file) {
+            if (strpos($file, '.php')) {
+                $page = substr($file, 6, -4);
+                $max_sim = max(similar_text($url, $page), $max_sim);
+                if (similar_text($url, $page) >= $max_sim) {
+                    $max_page = $page;
+                }
             }
         }
-    }
-    $len = strlen($max_page) - 3;
-    if ($max_sim > 0 && $max_sim > $len) {
-        header('Location: https://maribelhearn.com/' . $max_page . '?redirect=' . $url);
+        $len = strlen($max_page) - 3;
+        if ($max_sim > 0 && $max_sim > $len) {
+            header('Location: https://maribelhearn.com/' . $max_page . '?redirect=' . $url);
+        }
     }
     $json = file_get_contents('../json/admin.json');
     $data = json_decode($json, true);
