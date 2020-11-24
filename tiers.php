@@ -73,6 +73,7 @@
             </div>
             <div id='tier_list_container'>
                 <table id='tier_list_table'>
+					<caption id='tier_list_caption'></caption>
                     <thead id='tier_list_thead' data-html2canvas-ignore>
                         <tr id='add_tier_box_mobile'>
                             <td id='add_tier_cell_mobile' colspan='2'>
