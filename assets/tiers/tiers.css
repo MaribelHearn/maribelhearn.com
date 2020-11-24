@@ -359,6 +359,9 @@ li {
 #add_tier_desktop {
     float: left;
 }
+#save_settings {
+    margin-top: 15px;
+}
 #save_link {
     text-decoration: none;
     margin: 5px;

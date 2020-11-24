@@ -703,7 +703,7 @@ function closeModal(event) {
 }
 
 function detectKey(event) {
-    if (event.key && event.key == "Enter") {
+    if (event.key && event.key == "Enter" && multiSelection.length > 0) {
         addMenu({ data: { name: multiSelection } });
     } else if (event.key && event.key == "Escape") {
         emptyModal();
@@ -1155,16 +1155,6 @@ function settingsMenuChars() {
     $("#modal_inner").append("<p><label for='male'>Male Characters</label><input id='male' type='checkbox'" +
     " " + (settings.maleEnabled ? " checked" : "") + " " + "></p></div>");
     $("#pc98").on("click", toggleMale);
-    $("#modal_inner").append("<div>Other settings:<p><label for='tierHeaderWidth'>Tier header width</label>" +
-    "<input id='tierHeaderWidth' type='number' value=" + settings.tierHeaderWidth + " min=" + defaultWidth + "></p>" +
-    "<p><label for='tierHeaderWidth'>Tier header font size</label>" +
-    "<input id='tierHeaderFontSize' type='number' value=" + settings.tierHeaderFontSize + " min=" + defaultSize + "></p></div>");
-    customisationMenu();
-    $("#modal_inner").append("<div><p><input id='save_settings' type='button' value='Save Changes'></p>" +
-    "<p id='settings_msg_container'></p></div>");
-    $("#save_settings").on("click", saveSettings);
-    $("#modal_inner").css("display", "block");
-    $("#modal").css("display", "block");
 }
 
 function settingsMenuWorks() {
@@ -1187,16 +1177,6 @@ function settingsMenuWorks() {
         counter += 1;
     }
     $("#modal_inner").append("</tr></tbody></table>");
-    $("#modal_inner").append("<div>Other settings:<p><label for='tierHeaderWidth'>Tier header width</label>" +
-    "<input id='tierHeaderWidth' type='number' value=" + settings.tierHeaderWidth + " min=" + defaultWidth + "></p>" +
-    "<p><label for='tierHeaderWidth'>Tier header font size</label>" +
-    "<input id='tierHeaderFontSize' type='number' value=" + settings.tierHeaderFontSize + " min=" + defaultSize + "></p></div>");
-    customisationMenu();
-    $("#modal_inner").append("<div><p><input id='save_settings' type='button' value='Save Changes'></p>" +
-    "<p id='settings_msg_container'></p></div>");
-    $("#save_settings").on("click", saveSettings);
-    $("#modal_inner").css("display", "block");
-    $("#modal").css("display", "block");
 }
 
 function settingsMenu() {
@@ -1205,6 +1185,18 @@ function settingsMenu() {
     } else {
         settingsMenuWorks();
     }
+
+    $("#modal_inner").append("<div>Other settings:<p><label for='tier_header_width'>Tier header width</label>" +
+    "<input id='tier_header_width' type='number' value=" + settings.tierHeaderWidth + " min=" + defaultWidth + "></p>" +
+    "<p><label for='tier_header_font_size'>Tier header font size</label>" +
+    "<input id='tier_header_font_size' type='number' value=" + settings.tierHeaderFontSize + "></p></div>");
+    customisationMenu();
+    $("#modal_inner").append("<div><p><input id='save_settings' type='button' value='Save Changes'></p>" +
+    "<p id='settings_msg_container'></p></div>");
+    $("#modal_inner").css("display", "block");
+    $("#modal").css("display", "block");
+    $("#save_settings").on("click", saveSettings);
+    $("#tier_header_width, #tier_header_font_size").on("keyup", detectSettingsEnter);
 }
 
 function massRemoval(removedCategories) {
@@ -1344,8 +1336,8 @@ function saveSettings() {
         settings.maleEnabled = $("#male").is(":checked");
     }
 
-    settings.tierHeaderWidth = $("#tierHeaderWidth").val() > defaultWidth ? $("#tierHeaderWidth").val() : defaultWidth;
-    settings.tierHeaderFontSize = $("#tierHeaderFontSize").val() != defaultSize ? $("#tierHeaderFontSize").val() : defaultSize;
+    settings.tierHeaderWidth = $("#tier_header_width").val() > defaultWidth ? $("#tier_header_width").val() : defaultWidth;
+    settings.tierHeaderFontSize = $("#tier_header_font_size").val() != defaultSize ? $("#tier_header_font_size").val() : defaultSize;
     $(".tier_header").css("width", settings.tierHeaderWidth + "px");
     $(".tier_header").css("max-width", settings.tierHeaderWidth + "px");
     $(".tier_header").css("font-size", settings.tierHeaderFontSize + "px");
@@ -1810,10 +1802,16 @@ function setAddTierListeners() {
 }
 
 function detectAddTierEnter(event) {
-    if (event.keyCode == 13) {
+    if (event.key && event.key == "Enter") {
         addTier({data: {tierName: $(isMobile() ? "#tier_name_mobile" : "#tier_name").val()}});
     } else {
         setAddTierListeners();
+    }
+}
+
+function detectSettingsEnter(event) {
+    if (event.key && event.key == "Enter") {
+        saveSettings();
     }
 }
 
