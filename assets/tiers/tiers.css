@@ -36,7 +36,7 @@ h2 {
     font-family: 'Felipa';
     font-size: 36px;
 }
-h3 {
+h3, caption {
     font-family: 'Felipa';
     font-size: 28px;
 }
@@ -1323,6 +1323,9 @@ li {
     }
     h2 {
         font-size: 28px;
+    }
+    h3, caption {
+        font-size: 20px;
     }
     p {
         margin: 2px;

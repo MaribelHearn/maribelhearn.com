@@ -21,6 +21,7 @@ var MAX_NAME_LENGTH = 30,
         "pc98Enabled": true,
         "windowsEnabled": true,
         "maleEnabled": true,
+        "tierListName": "",
         "tierHeaderWidth": defaultWidth,
         "tierHeaderFontSize": defaultSize,
         "artist": "Dairi",
@@ -127,6 +128,8 @@ function reloadTiers() {
         return;
     }
 
+    $("#tier_list_caption").html(settings.tierListName);
+
     for (tierNum in tierList) {
         tierNum = Number(tierNum);
 
@@ -186,6 +189,7 @@ function initialise() {
     addTier({data: {tierName: "A", noDisplay: true}});
     settings.sort = tmp;
     $(isMobile() ? "#tier_name_mobile" : "#tier_name").val("B");
+    $("#tier_list_caption").html(settings.tierListName);
 
     if (isMobile()) {
         $("#add_tier_cell_mobile").attr("colspan", 2);
@@ -1083,8 +1087,8 @@ function takeScreenshot() {
 
     emptyModal();
     html2canvas(document.body, {
-        "height": ($("#tier_list_tbody").height() + 15),
-        "windowHeight": Math.max(400, ($("#tier_list_tbody").height() + 15))
+        "height": ($("#tier_list_tbody").height() + 50),
+        "windowHeight": Math.max(400, ($("#tier_list_tbody").height() + 50))
     }).then(function(canvas) {
         var base64image = canvas.toDataURL("image/png"), link;
 
@@ -1100,28 +1104,6 @@ function takeScreenshot() {
         $("#modal_inner").css("display", "block");
         $("#modal").css("display", "block");
     });
-}
-
-function customisationMenu() {
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers),
-        tierOrder = (settings.sort == "characters" ? order : gameOrder), tierNum;
-
-    $("#modal_inner").append("<h2>Tier Customisation</h2><div id='custom_tier_container'>");
-
-    for (i = 0; i < tierOrder.length; i += 1) {
-        tierNum = tierOrder[i];
-
-        if (!tierList[tierNum].flag) {
-            $("#custom_tier_container").append("<p><strong>" + tierList[tierNum].name + "</strong></p>");
-            $("#custom_tier_container").append("<p class='name'><label for='custom_name_tier" + tierNum +
-            "'>Name</label><input id='custom_name_tier" + tierNum + "' type='text' value='" + tierList[tierNum].name + "'></p>");
-            $("#custom_tier_container").append("<p class='colour'><label for='custom_bg_tier" + tierNum +
-            "'>Background Colour</label><input id='custom_bg_tier" + tierNum + "' type='color' value='" + tierList[tierNum].bg + "'>");
-            $("#custom_tier_container").append("<label for='custom_colour_tier" + tierNum +
-            "'>Text Colour</label><input id='custom_colour_tier" + tierNum +
-            "' type='color' value='" + tierList[tierNum].colour + "'></p>");
-        }
-    }
 }
 
 function settingsMenuChars() {
@@ -1179,6 +1161,28 @@ function settingsMenuWorks() {
     $("#modal_inner").append("</tr></tbody></table>");
 }
 
+function customisationMenu() {
+    var tierList = (settings.sort == "characters" ? tiers : gameTiers),
+        tierOrder = (settings.sort == "characters" ? order : gameOrder), tierNum;
+
+    $("#modal_inner").append("<h2>Tier Customisation</h2><div id='custom_tier_container'>");
+
+    for (i = 0; i < tierOrder.length; i += 1) {
+        tierNum = tierOrder[i];
+
+        if (!tierList[tierNum].flag) {
+            $("#custom_tier_container").append("<p><strong>" + tierList[tierNum].name + "</strong></p>");
+            $("#custom_tier_container").append("<p class='name'><label for='custom_name_tier" + tierNum +
+            "'>Name</label><input id='custom_name_tier" + tierNum + "' type='text' value='" + tierList[tierNum].name + "'></p>");
+            $("#custom_tier_container").append("<p class='colour'><label for='custom_bg_tier" + tierNum +
+            "'>Background Colour</label><input id='custom_bg_tier" + tierNum + "' type='color' value='" + tierList[tierNum].bg + "'>");
+            $("#custom_tier_container").append("<label for='custom_colour_tier" + tierNum +
+            "'>Text Colour</label><input id='custom_colour_tier" + tierNum +
+            "' type='color' value='" + tierList[tierNum].colour + "'></p>");
+        }
+    }
+}
+
 function settingsMenu() {
     if (settings.sort == "characters") {
         settingsMenuChars();
@@ -1186,17 +1190,19 @@ function settingsMenu() {
         settingsMenuWorks();
     }
 
-    $("#modal_inner").append("<div>Other settings:<p><label for='tier_header_width'>Tier header width</label>" +
-    "<input id='tier_header_width' type='number' value=" + settings.tierHeaderWidth + " min=" + defaultWidth + "></p>" +
+    $("#modal_inner").append("<div>Other settings:<p><label for='tier_list_name'>Tier list name (optional)</label>" +
+    "<input id='tier_list_name' class='settings_input' type='text' value='" + settings.tierListName + "'></p>" +
+    "<label for='tier_header_width'>Tier header width</label>" +
+    "<input id='tier_header_width' class='settings_input' type='number' value=" + settings.tierHeaderWidth + " min=" + defaultWidth + "></p>" +
     "<p><label for='tier_header_font_size'>Tier header font size</label>" +
-    "<input id='tier_header_font_size' type='number' value=" + settings.tierHeaderFontSize + "></p></div>");
+    "<input id='tier_header_font_size' class='settings_input' type='number' value=" + settings.tierHeaderFontSize + "></p></div>");
     customisationMenu();
     $("#modal_inner").append("<div><p><input id='save_settings' type='button' value='Save Changes'></p>" +
     "<p id='settings_msg_container'></p></div>");
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
     $("#save_settings").on("click", saveSettings);
-    $("#tier_header_width, #tier_header_font_size").on("keyup", detectSettingsEnter);
+    $(".settings_input").on("keyup", detectSettingsEnter);
 }
 
 function massRemoval(removedCategories) {
@@ -1322,25 +1328,23 @@ function saveSettings() {
     }
 
     if (settings.sort == "characters") {
-        for (i in maleCharacters) {
-            if ($("#male").is(":checked") && !isTiered(maleCharacters[i])) {
-                $("#" + maleCharacters[i]).css("display", "inline");
-            } else {
-                $("#" + maleCharacters[i]).css("display", "none");
-            }
-        }
-
         settings.artist = "Dairi";
         settings.pc98Enabled = $("#pc98").is(":checked");
         settings.windowsEnabled = $("#windows").is(":checked");
         settings.maleEnabled = $("#male").is(":checked");
+
+        for (i in maleCharacters) {
+            $("#" + maleCharacters[i]).css("display", settings.maleEnabled ? "inline-block" : "none");
+        }
     }
 
+    settings.tierListName = $("#tier_list_name").val();
     settings.tierHeaderWidth = $("#tier_header_width").val() > defaultWidth ? $("#tier_header_width").val() : defaultWidth;
     settings.tierHeaderFontSize = $("#tier_header_font_size").val() != defaultSize ? $("#tier_header_font_size").val() : defaultSize;
     $(".tier_header").css("width", settings.tierHeaderWidth + "px");
     $(".tier_header").css("max-width", settings.tierHeaderWidth + "px");
     $(".tier_header").css("font-size", settings.tierHeaderFontSize + "px");
+    $("#tier_list_caption").html(settings.tierListName);
     $("#modal_inner").html("");
     $("#modal_inner").css("display", "none");
     $("#modal").css("display", "none");
@@ -1433,6 +1437,7 @@ function eraseAllConfirmed() {
         "pc98Enabled": true,
         "windowsEnabled": true,
         "maleEnabled": true,
+        "tierListName": "",
         "tierHeaderWidth": defaultWidth,
         "tierHeaderFontSize": defaultSize,
         "artist": "Dairi",
@@ -1779,6 +1784,7 @@ function loadSettingsFromStorage() {
         settings.pc98Enabled = settingsData.pc98Enabled;
         settings.windowsEnabled = settingsData.windowsEnabled;
         settings.maleEnabled = settingsData.maleEnabled;
+        settings.tierListName = (settingsData.tierListName ? settingsData.tierListName : "");
         settings.tierHeaderWidth = (settingsData.tierHeaderWidth ? settingsData.tierHeaderWidth : defaultWidth);
         settings.tierHeaderFontSize = (settingsData.tierHeaderFontSize ? settingsData.tierHeaderFontSize : defaultSize);
         settings.artist = settingsData.artist;
