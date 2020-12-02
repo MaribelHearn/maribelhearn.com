@@ -1214,8 +1214,8 @@ function massRemoval(removedCategories) {
         categoryName = removedCategories[i];
 
         if (isCategory(categoryName)) {
-            for (j in categories[categoryName].chars) {
-                character = categories[categoryName].chars[j].removeSpaces();
+            for (j in cats[categoryName].chars) {
+                character = cats[categoryName].chars[j].removeSpaces();
 
                 if (isTiered(character)) {
                     removeFromTier(character, getTierNumOf(character));
