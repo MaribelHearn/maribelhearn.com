@@ -50,8 +50,8 @@
             </div>
         </main>
         <?php echo '<input id="token" type="hidden" value=' . file_get_contents('../.stats/token') . '>'; ?>
-        <script src='detect.js' defer></script>
-        <script src='admin.js' defer></script>
+        <script src='detect.js'></script>
+        <script src='admin.js'></script>
     </body>
 
 </html>
