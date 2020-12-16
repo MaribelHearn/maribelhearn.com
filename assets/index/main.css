@@ -262,6 +262,9 @@ p {
 #map {
     width: 53%;
 }
+#tiers {
+    width: 68%;
+}
 #bottom {
     clear: both;
 }
@@ -300,9 +303,6 @@ p {
     }
 }
 @media only screen and (max-width: 1100px) {
-    #tiers {
-        width: 68%;
-    }
     #ack {
         position: relative;
         color: black;
