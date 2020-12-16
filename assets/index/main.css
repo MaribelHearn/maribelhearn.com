@@ -4,11 +4,7 @@
   src: url('../shared/Felipa-Regular.woff2') format('woff2'),
        url('../shared/Felipa-Regular.woff') format('woff');
 }
-body.webp {
-    background: url('index.webp') center no-repeat fixed;
-    background-size: cover;
-}
-body.no-webp {
+body {
     background: url('index.jpg') center no-repeat fixed;
     background-size: cover;
 }
@@ -266,9 +262,6 @@ p {
 #map {
     width: 53%;
 }
-#tiers {
-    width: 68%;
-}
 #bottom {
     clear: both;
 }
@@ -307,6 +300,9 @@ p {
     }
 }
 @media only screen and (max-width: 1100px) {
+    #tiers {
+        width: 68%;
+    }
     #ack {
         position: relative;
         color: black;

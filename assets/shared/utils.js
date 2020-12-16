@@ -95,6 +95,7 @@ function getCookie(name) {
 
     return "";
 }
+
 function deleteCookie(name) {
     document.cookie = name + "=;expires=" + minAge + ";path=/;";
 }
@@ -241,7 +242,6 @@ function fullNameNumber(game) {
     }[game]);
 }
 
-
 function shottypeAbbr(shottype) {
     return ({
         "Reimu": "Re",
@@ -336,6 +336,7 @@ function generateText() {
         $(".westernrecords").html("西方纪录");
     }
 }
+
 function generateTableText(page) {
     if (language == "English") {
         $(".game").html("Game");

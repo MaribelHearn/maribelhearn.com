@@ -14,10 +14,11 @@
         <meta name='keywords' content='touhou, touhou project, 東方, 东方, wrs, world records, lnns, lunatic, popularity poll, tiers, tier list, sorter, creator, tools, practice, vpatch, spoileral, drc, dodging rain competition'>
         <link rel='stylesheet' type='text/css' href='assets/index/main.css'>
 		<link rel='icon' type='image/x-icon' href='favicon.ico'>
+        <script src='assets/shared/dark.js' defer></script>
         <?php echo dark_theme() ?>
     </head>
 
-    <body class='<?php echo check_webp() ?>'>
+    <body>
 		<nav>
             <div id='nav' class='wrap'><?php echo navbar($page) ?></div>
 		</nav>
@@ -134,7 +135,6 @@
                 <div id='bottom'>
                     <p id='last_modified'>Last updated at <?php echo date('Y-m-d H:i:s', filemtime('.git/FETCH_HEAD')) . ' ' . date('T') ?></p>
                 </div>
-                <script src='assets/shared/dark.js'></script>
             </div>
         </main>
     </body>

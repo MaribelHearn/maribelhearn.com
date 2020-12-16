@@ -15,10 +15,12 @@
 		<link rel='stylesheet' type='text/css' href='assets/thvote/thvote.css'>
 		<link rel='icon' type='image/x-icon' href='assets/thvote/thvote.ico'>
         <script src='assets/shared/sorttable.js' defer></script>
+		<script src='assets/thvote/thvote.js' defer></script>
+		<script src='assets/shared/dark.js' defer></script>
         <?php echo dark_theme() ?>
     </head>
 
-    <body class='<?php echo check_webp() ?>'>
+    <body>
 		<nav>
 			<div id='nav' class='wrap'><?php echo navbar($page) ?></div>
 		</nav>
@@ -1403,8 +1405,6 @@
                 </table>
                 <p id='ack_mobile' class='noborders'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=2025430'>Yakumo_Stocking</a>.</p>
                 <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
-                <script src='assets/thvote/thvote.js'></script>
-                <script src='assets/shared/dark.js'></script>
             </div>
         </main>
     </body>

@@ -4,11 +4,7 @@
   src: url('../shared/Felipa-Regular.woff2') format('woff2'),
        url('../shared/Felipa-Regular.woff') format('woff');
 }
-body.webp {
-    background: url('gensokyo.webp') center no-repeat fixed;
-    background-size: cover;
-}
-body.no-webp {
+body {
     background: url('gensokyo.jpg') center no-repeat fixed;
     background-size: cover;
 }

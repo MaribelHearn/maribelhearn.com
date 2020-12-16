@@ -21,7 +21,7 @@
 		<script src='assets/tiers/tiers.js' defer></script>
     </head>
 
-    <body class='<?php echo check_webp() ?>'>
+    <body>
         <div id='wrap'>
             <div id='init' data-html2canvas-ignore>
         		<nav>

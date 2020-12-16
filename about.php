@@ -22,7 +22,7 @@
         <?php echo dark_theme() ?>
     </head>
 
-    <body class='<?php echo check_webp() ?>'>
+    <body>
         <nav>
             <div id='nav' class='wrap'><?php echo navbar($page) ?></div>
         </nav>
@@ -208,7 +208,7 @@
                 <p class='wide-top'>* Rengoku Teien is a group of composers that produces royalty-free music; Labyrinth of Touhou simply uses it, among music by other composers.</p>
                 <p class='wide-top'>Vertigo is possibly my favourite piece of music of all time.</p>
                 <h2 id='trivia'>Trivia</h2>
-                <img id='avatar' src='assets/index/maribelb.png' alt='One of Maribel&#39;s avatars'>
+                <img id='avatar' src='assets/index/maribelb.jpg' alt='One of Maribel&#39;s avatars'>
                 <ul>
                     <li>One of my most commonly used avatars (shown above) is a non-canon depiction of Maribel
                     having gone berserk due to her powers overflowing, which is the final boss of Labyrinth of Touhou.</li>
@@ -224,7 +224,7 @@
                 </ul>
                 <h2 id='touhou'>Touhou Taste</h2>
                 <figure>
-                    <img id='tiers' src='assets/index/tiers.png' alt='Maribel&#39;s Touhou character tier list'>
+                    <img id='tiers' src='assets/index/tiers.jpg' alt='Maribel&#39;s Touhou character tier list'>
                     <figcaption><em>Touhou character tier list as of 7 August 2020</em></figcaption>
                 </figure>
                 <p class='wide-top'><strong><a href='#top'>Back to Top</a></strong></p>

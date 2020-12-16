@@ -1368,8 +1368,7 @@ function toggleTierView() {
         $("#wrap").css("bottom", tierView ? "5px" : "");
         $("#wrap").css("left", tierView ? "5px" : "");
         $("#wrap").css("border", tierView ? "none" : "1px solid #000");
-        $(".webp").css("background", tierView ? "#1b232e" : "url('assets/tiers/tiers.webp') center no-repeat fixed");
-        $(".no-webp").css("background", tierView ? "#1b232e" : "url('assets/tiers/tiers.jpg') center no-repeat fixed");
+        $("body").css("background", tierView ? "#1b232e" : "url('assets/tiers/tiers.jpg') center no-repeat fixed");
 
         if (tierView) {
             $("#screenshot_button_tierview").html($("#screenshot_button"));

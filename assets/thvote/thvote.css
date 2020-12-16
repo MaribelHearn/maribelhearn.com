@@ -4,11 +4,7 @@
   src: url('../shared/Felipa-Regular.woff2') format('woff2'),
        url('../shared/Felipa-Regular.woff') format('woff');
 }
-body.webp {
-    background: url('thvote.webp') center no-repeat fixed;
-    background-size: cover;
-}
-body.no-webp {
+body {
     background: url('thvote.jpg') center no-repeat fixed;
     background-size: cover;
 }
@@ -360,7 +356,7 @@ table {
     bottom: 5px;
     right: 5px;
 }
-#ack_br {
+#ack_br, #ack_mobile {
     display: none;
 }
 #ack > a:link {
