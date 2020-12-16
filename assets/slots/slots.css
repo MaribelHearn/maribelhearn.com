@@ -2,13 +2,9 @@
   font-family: Felipa;
   font-display: swap;
   src: url('../shared/Felipa-Regular.woff2') format('woff2'),
-      url('../shared/Felipa-Regular.woff') format('woff');
+       url('../shared/Felipa-Regular.woff') format('woff');
 }
-body.webp {
-    background: url('slots.webp') top no-repeat fixed;
-    background-size: cover;
-}
-body.no-webp {
+body {
     background: url('slots.jpg') top no-repeat fixed;
     background-size: cover;
 }

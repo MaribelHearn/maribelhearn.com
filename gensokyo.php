@@ -19,7 +19,7 @@
         <?php echo dark_theme() ?>
     </head>
 
-    <body class='<?php echo check_webp() ?>'>
+    <body>
         <nav>
     		<div id='nav' class='wrap'><?php echo navbar($page) ?></div>
         </nav>

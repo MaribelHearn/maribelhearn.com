@@ -1,11 +1,5 @@
 <?php
 $errors = ['401', '403', '404', '500'];
-function check_webp() {
-    if (strpos($_SERVER['HTTP_ACCEPT'], 'image/webp') !== false) {
-        return 'webp';
-    }
-    return 'no-webp';
-}
 function hit($page) {
     $path = (in_array($page, $errors) ? '../../.stats/token' : '.stats/token');
     if (file_exists($path)) {

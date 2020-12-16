@@ -18,12 +18,10 @@
 		<meta name='viewport' content='width=device-width'>
         <link rel='stylesheet' type='text/css' href='../assets/index/main.css'>
 		<link rel='icon' type='image/x-icon' href='../favicon.ico'>
-        <script src='https://maribelhearn.com/admin/detect.js' defer></script>
-        <script src='https://maribelhearn.com/admin/admin.js' defer></script>
         <?php echo dark_theme('admin') ?>
     </head>
 
-    <body class='<?php echo check_webp() ?>'>
+    <body>
 		<nav>
             <div id='nav' class='wrap'><?php echo navbar('admin') ?></div>
 		</nav>
@@ -52,6 +50,8 @@
             </div>
         </main>
         <?php echo '<input id="token" type="hidden" value=' . file_get_contents('../.stats/token') . '>'; ?>
+        <script src='detect.js' defer></script>
+        <script src='admin.js' defer></script>
     </body>
 
 </html>

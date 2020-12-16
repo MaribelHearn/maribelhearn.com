@@ -37,7 +37,7 @@
         <?php echo dark_theme('error') ?>
     </head>
 
-    <body class='<?php echo check_webp() ?>'>
+    <body>
 		<nav>
             <div id='nav' class='wrap'><?php echo navbar('error') ?></div>
 		</nav>

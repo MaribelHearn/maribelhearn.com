@@ -16,10 +16,11 @@
 		<link rel='icon' type='image/x-icon' href='assets/pofv/pofv.ico'>
         <script src='assets/shared/jquery.js' defer></script>
         <script src='assets/pofv/pofv.js' defer></script>
+        <script src='assets/shared/dark.js' defer></script>
         <?php echo dark_theme() ?>
     </head>
 
-    <body class='<?php echo check_webp() ?>'>
+    <body>
 		<nav>
 			<div id='nav' class='wrap'><?php echo navbar($page) ?></div>
 		</nav>
@@ -207,7 +208,6 @@
                 <p>The artworks used for this page are original work by <a href='https://twitter.com/korindo'>ZUN</a>.</p>
                 <p id='ack_mobile'>The background image was drawn by <a href='http://www.pixiv.net/member.php?id=21613'>Kong Xian</a>.</p>
                 <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
-                <script src='assets/shared/dark.js'></script>
             </div>
             <div id='modal'>
                 <div id='modal_inner'></div>

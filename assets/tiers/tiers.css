@@ -4,11 +4,7 @@
   src: url('../shared/Felipa-Regular.woff2') format('woff2'),
        url('../shared/Felipa-Regular.woff') format('woff');
 }
-body.webp {
-    background: url('tiers.webp') center no-repeat fixed;
-    background-size: cover;
-}
-body.no-webp {
+body {
     background: url('tiers.jpg') center no-repeat fixed;
     background-size: cover;
 }
@@ -1306,7 +1302,7 @@ li {
     }
 }
 @media screen and (max-width: 1100px) and (max-height: 800px) {
-    body.no-webp, body.webp {
+    body {
         background: #1b232e;
     }
     #wrap, #buttons, #msg_container, #show, #characters, #modal_inner {
@@ -1314,7 +1310,7 @@ li {
     }
 }
 @media only screen and (((max-width: 800px) and (orientation: portrait)) or ((max-width: 640px) and (orientation: landscape))) {
-    body.no-webp, body.webp {
+    body {
         background: #1b232e;
     }
     h1 {
