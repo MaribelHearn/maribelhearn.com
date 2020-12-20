@@ -5,7 +5,7 @@
        url('../shared/Felipa-Regular.woff') format('woff');
 }
 body {
-    background: url('survival.jpg') top no-repeat fixed;
+    background: url('../survival/survival.jpg') top no-repeat fixed;
     background-size: cover;
 }
 table {
@@ -14,17 +14,6 @@ table {
 }
 table, tr, th, td {
     border: 1px solid black;
-}
-div:not(.dropdown):not(.dropdown_content):not(.nav_right) {
-    background-color: #fff;
-    margin-bottom: 5px;
-    margin-top: 5px;
-}
-a:link.dropdown_button {
-    color: black;
-}
-a:visited.dropdown_button {
-    color: black;
 }
 h1 {
     font-family: 'Felipa';
@@ -101,134 +90,11 @@ input[type=button] {
     z-index: 1;
     top: 100%;
 }
-.icon {
-    object-fit: none;
-    width: 16px;
-    height: 16px;
-}
-.index_icon {
-    object-position: 0px 0px;
-}
-.c67_icon {
-    object-position: -16px 0px;
-}
-.drc_icon {
-    object-position: -32px 0px;
-}
-.gensokyo_icon {
-    object-position: -48px 0px;
-}
-.history_icon {
-    object-position: -64px 0px;
-}
-.jargon_icon {
-    object-position: -80px 0px;
-}
-.lnn_icon {
-    object-position: -96px 0px;
-}
-.pofv_icon {
-    object-position: -112px 0px;
-}
-.scoring_icon {
-    object-position: -128px 0px;
-}
-.slots_icon {
-    object-position: -144px 0px;
-}
-.survival_icon {
-    object-position: -160px 0px;
-}
-.thvote_icon {
-    object-position: -176px 0px;
-}
-.tiers_icon {
-    object-position: -192px 0px;
-}
-.tools_icon {
-    object-position: -208px 0px;
-}
-.wr_icon {
-    object-position: -224px 0px;
-}
-.exphp_icon {
-    object-position: -288px 0px;
-}
-.github_icon {
-    object-position: -304px 0px;
-}
-.lunarcast_icon {
-    object-position: -320px 0px;
-}
-.pndsng_icon {
-    object-position: -336px 0px;
-}
-.priw8_icon {
-    object-position: -352px 0px;
-}
-.royalflare_icon {
-    object-position: -368px 0px;
-}
-.source_icon {
-    object-position: -384px 0px;
-}
-.steam_icon {
-    object-position: -416px 0px;
-}
-.thcrap_icon {
-    object-position: -432px 0px;
-}
-.twitch_icon {
-    object-position: -448px 0px;
-}
-.twitter_icon {
-    object-position: -464px 0px;
-}
-.youtube_icon {
-    object-position: -480px 0px;
-}
-.dropdowns {
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-.dropdown_button {
-    text-decoration: none;
-    cursor: default;
-}
-.dropdown_content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    border: 1px solid #000;
-    min-width: 120px;
-    opacity: 1.0;
-    z-index: 1;
-}
 .dropdown_content > p {
     margin: 4px;
 }
-.dropdown_right {
-    right: 0;
-}
-.dropdown:hover .dropdown_content {
-    display: block;
-}
 .dropdown_content:hover .dropdown_content {
     display: block;
-}
-.nav_left {
-    float: left;
-    margin-left: 4px;
-}
-.nav_right {
-    float: right;
-    margin-top: 4px;
-    margin-right: 4px;
 }
 .wrap {
     border: 1px solid #000;
@@ -246,7 +112,7 @@ input[type=button] {
 #nav {
     margin-bottom: 5px;
 }
-#ext_mobile, #legend {
+#legend {
     display: none;
 }
 #hy {

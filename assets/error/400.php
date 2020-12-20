@@ -9,7 +9,7 @@
 		<title>400 Bad Request</title>
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
-        <link rel='stylesheet' type='text/css' href='https://maribelhearn.com/assets/index/main.css'>
+        <link rel='stylesheet' type='text/css' href='https://maribelhearn.com/assets/shared/css_concat.php?page=index'>
 		<link rel='icon' type='image/x-icon' href='https://maribelhearn.com/favicon.ico'>
         <?php echo dark_theme('error') ?>
     </head>

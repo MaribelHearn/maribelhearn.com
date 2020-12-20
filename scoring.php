@@ -13,7 +13,7 @@
 		<meta name='viewport' content='width=device-width'>
 		<meta name='description' content='Save your Touhou game scores and calculate how they compare to the world records.'>
         <meta name='keywords' content='touhou, touhou project, score, high score, storage, scoring, wr, wrs, world record, world records'>
-		<link rel='stylesheet' type='text/css' href='assets/scoring/scoring.css'>
+        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=scoring'>
 		<link rel='icon' type='image/x-icon' href='assets/scoring/scoring.ico'>
         <script src='assets/shared/jquery.js' defer></script>
 		<script src='assets/scoring/scoring.js' defer></script>

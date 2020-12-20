@@ -1670,7 +1670,7 @@ function loadCharacters() {
     var categoryName, character, i;
 
     for (categoryName in categories) {
-        $("#characters").append("<div id='" + categoryName + "'>");
+        $("#characters").append("<div id='" + categoryName + "' class='dark_bg'>");
 
         for (i in categories[categoryName].chars) {
             character = categories[categoryName].chars[i];
@@ -1726,7 +1726,7 @@ function loadWorks() {
     var categoryName, game, i;
 
     for (categoryName in gameCategories) {
-        $("#characters").append("<div id='" + categoryName + "'>");
+        $("#characters").append("<div id='" + categoryName + "' class='dark_bg'>");
 
         for (i in gameCategories[categoryName].chars) {
             game = gameCategories[categoryName].chars[i].replace("'", "");

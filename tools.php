@@ -12,7 +12,7 @@
 		<meta name='viewport' content='width=device-width'>
 		<meta name='description' content='Download links for Touhou patches and tools, including Vpatch, SpoilerAL, boss rushes and other practice utilities.'>
         <meta name='keywords' content='touhou, touhou project, 東方, 东方, tool, tools, patch, patches, scorefile, score file, scorefiles, score files, practice, spoileral, boss rush, bossrush, ultra, vpatch'>
-		<link rel='stylesheet' type='text/css' href='assets/tools/tools.css'>
+        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=tools'>
 		<link rel='icon' type='image/x-icon' href='assets/tools/tools.ico'>
 		<script src='assets/shared/dark.js' defer></script>
         <?php echo dark_theme() ?>
