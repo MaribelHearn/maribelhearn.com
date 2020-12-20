@@ -53,7 +53,7 @@ function navbar($page) {
     $navbar .= '</div><div class="nav_right">';
         $navbar .= '<div class="dropdown">';
             $navbar .= '<a href="#" class="dropdown_button">Touhou Sites&#x25BF;</a>';
-            $navbar .= '<div class="dropdown_content dropdown_right">';
+            $navbar .= '<div class="dropdown_content dropdown_right' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
                 $navbar .= '<p><a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page">' .
                 '<img class="icon thcrap_icon" src="assets/shared/icon_sheet.png" alt="Thpatch favicon">THPatch</a></p>';
                 $navbar .= '<p><a href="http://replay.lunarcast.net">' .
@@ -70,7 +70,7 @@ function navbar($page) {
         $navbar .= '</div> ';
         $navbar .= '<div class="dropdown">';
             $navbar .= '<a href="#" class="dropdown_button">Links&#x25BF;</a>';
-            $navbar .= '<div class="dropdown_content dropdown_right">';
+            $navbar .= '<div class="dropdown_content dropdown_right' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
                 $navbar .= '<p><a href="https://www.youtube.com/c/MaribelHearn">' .
                 '<img class="icon youtube_icon" src="assets/shared/icon_sheet.png" alt="Youtube favicon">YouTube</a></p>';
                 $navbar .= '<p><a href="https://twitter.com/MaribelHearn42">' .
@@ -86,10 +86,10 @@ function navbar($page) {
             $navbar .= '</div>';
         $navbar .= '</div>';
     $navbar .= '</div>';
-    $navbar .= '<div class="dropdowns">';
+    $navbar .= '<div class="dropdowns' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
         $navbar .= '<div class="dropdown">';
             $navbar .= '<a href="#" class="dropdown_button">Games&#x25BF;</a>';
-            $navbar .= '<div class="dropdown_content">';
+            $navbar .= '<div class="dropdown_content' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
                 $navbar .= '<p><a href="scoring"><img class="icon scoring_icon" src="assets/shared/icon_sheet.png" alt="Spell Card icon"> Scoring</a></p>';
                 $navbar .= '<p><a href="survival"><img class="icon survival_icon" src="assets/shared/icon_sheet.png" alt="1up item icon"> Survival</a></p>';
                 $navbar .= '<p><a href="drc"><img class="icon drc_icon" src="assets/shared/icon_sheet.png" alt="Power item icon"> DRC</a></p>';
@@ -99,11 +99,12 @@ function navbar($page) {
                 $navbar .= '<p><a href="jargon"><img class="icon jargon_icon" src="assets/shared/icon_sheet.png" alt="Bomb icon"> Jargon</a></p>';
                 $navbar .= '<p><a href="gensokyo"><img class="icon gensokyo_icon" src="assets/shared/icon_sheet.png" alt="Gensokyo.org icon"> Archive</a></p>';
                 $navbar .= '<p><a href="pofv"><img class="icon pofv_icon" src="assets/shared/icon_sheet.png" alt="PoFV icon"> PoFV</a></p>';
+                //$navbar .= '<p><a href="twc"><img class="icon twc_icon" src="assets/shared/icon_sheet.png" alt="Touhou World Cup icon"> TWC</a></p>';
             $navbar .= '</div>';
         $navbar .= '</div> ';
         $navbar .= '<div class="dropdown">';
             $navbar .= '<a href="#" class="dropdown_button">Other&#x25BF;</a>';
-            $navbar .= '<div class="dropdown_content">';
+            $navbar .= '<div class="dropdown_content' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
                 $navbar .= '<p><a href="thvote"><img class="icon thvote_icon" src="assets/shared/icon_sheet.png" alt="Tou kanji icon"> Poll</a></p>';
                 $navbar .= '<p><a href="tiers"><img class="icon tiers_icon" src="assets/shared/icon_sheet.png" alt="Japanese castle icon"> Tiers</a></p>';
                 $navbar .= '<p><a href="slots"><img class="icon slots_icon" src="assets/shared/icon_sheet.png" alt="Heart icon"> Slots</a></p>';
@@ -111,7 +112,7 @@ function navbar($page) {
         $navbar .= '</div> ';
         $navbar .= '<div class="dropdown">';
             $navbar .= '<a href="#" class="dropdown_button">Personal&#x25BF;</a>';
-            $navbar .= '<div class="dropdown_content">';
+            $navbar .= '<div class="dropdown_content' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
                 $navbar .= '<p><a href="history"><img class="icon history_icon" src="assets/shared/icon_sheet.png" alt="Maribel icon"> History</a></p>';
                 $navbar .= '<p><a href="c67"><img class="icon c67_icon" src="assets/shared/icon_sheet.png" alt="Banshiryuu C67 icon"> C67</a></p>';
             $navbar .= '</div>';
@@ -119,7 +120,7 @@ function navbar($page) {
         $navbar .= '<div id="ext_mobile">';
             $navbar .= '<div class="dropdown">';
                 $navbar .= '<a href="#" class="dropdown_button">Touhou Sites&#x25BF;</a>';
-                $navbar .= '<div class="dropdown_content dropdown_right">';
+                $navbar .= '<div class="dropdown_content dropdown_right' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
                     $navbar .= '<p><a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page">' .
                     '<img class="icon thcrap_icon" src="assets/shared/icon_sheet.png" alt="Thpatch favicon">THPatch</a></p>';
                     $navbar .= '<p><a href="http://replay.lunarcast.net">' .
@@ -136,7 +137,7 @@ function navbar($page) {
             $navbar .= '</div> ';
             $navbar .= '<div class="dropdown">';
                 $navbar .= '<a href="#" class="dropdown_button">Links&#x25BF;</a>';
-                $navbar .= '<div class="dropdown_content dropdown_right">';
+                $navbar .= '<div class="dropdown_content dropdown_right' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
                     $navbar .= '<p><a href="https://www.youtube.com/c/MaribelHearn">' .
                     '<img class="icon youtube_icon" src="assets/shared/icon_sheet.png" alt="Youtube favicon">YouTube</a></p>';
                     $navbar .= '<p><a href="https://twitter.com/MaribelHearn42">' .

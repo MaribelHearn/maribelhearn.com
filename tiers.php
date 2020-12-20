@@ -12,7 +12,7 @@
 		<meta name='viewport' content='width=device-width'>
         <meta name='description' content='Create your own Touhou tier lists!'>
         <meta name='keywords' content='touhou, touhou project, 東方, 东方, tier list, tiers, sorter, sort, sorting, creator'>
-		<link rel='stylesheet' type='text/css' href='assets/tiers/tiers.css'>
+        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=tiers'>
 		<link rel='icon' type='image/x-icon' href='assets/tiers/tiers.ico'>
 		<script src='assets/shared/utils.js' defer></script>
 		<script src='assets/shared/jquery.js' defer></script>
@@ -22,10 +22,10 @@
     </head>
 
     <body>
-        <div id='wrap'>
-            <div id='init' data-html2canvas-ignore>
+        <div id='wrap' class='dark_bg'>
+            <div id='init' class='dark_bg' data-html2canvas-ignore>
         		<nav>
-        			<div id='nav'><?php echo navbar($page) ?></div>
+        			<div id='nav' class='dark_bg'><?php echo navbar($page) ?></div>
         		</nav>
                 <h1 id='title'>Touhou Tier List Creator</h1>
                 <?php
@@ -33,7 +33,7 @@
                         echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
                     }
                 ?>
-                <div id='sort_selection'>
+                <div id='sort_selection' class='dark_bg'>
                     <label for='sort'>Currently tiering:</label>
                     <select id='sort'>
                         <option value='characters'>Characters</option>
@@ -46,7 +46,7 @@
                     <input id='toggle_instructions' type='button' value='Show Instructions'>
                     <span id='screenshot_button_tierview'></span>
                 </p>
-                <div id='instructions'>
+                <div id='instructions' class='dark_bg'>
                     <p id='instructions_text'>This page allows you to create your own Touhou character tier list. Usage instructions are listed below.</p>
                     <ul id='instructions_list'>
                         <li>Drag a character onto a tier box to add that character to it.</li>
@@ -71,7 +71,7 @@
                     </ul>
                 </div>
             </div>
-            <div id='tier_list_container'>
+            <div id='tier_list_container' class='dark_bg'>
                 <table id='tier_list_table'>
 					<caption id='tier_list_caption'></caption>
                     <thead id='tier_list_thead' data-html2canvas-ignore>
@@ -106,8 +106,8 @@
                 </table>
             </div>
         </div>
-        <div id='buttons'>
-            <div id='credits'>
+        <div id='buttons' class='dark_bg'>
+            <div id='credits' class='dark_bg'>
                 <p>The artworks used for this page are drawn by
                 <a href='https://www.pixiv.net/member.php?id=4920496' target='_blank'>Dairi</a> and
                 <a href='http://www.pixiv.net/member.php?id=4678572' target='_blank'>ETERSIARUM</a>.
@@ -116,7 +116,7 @@
                 <a href='https://twitter.com/Doroshii_Sweet' target='_blank'>Dorothy Sweet</a> for design improvements and
                 <a href='https://twitter.com/TheDukeofBooms' target='_blank'>ZXNova</a> for the Dairi face crops.</p>
             </div>
-            <div id='menu'>
+            <div id='menu' class='dark_bg'>
                 <input id='save_button' type='button' class='button menu' value='Save Tiers'>
                 <input id='import_button' type='button' class='button menu' value='Import'>
                 <input id='export_button' type='button' class='button menu' value='Export'>
@@ -138,19 +138,19 @@
         <div id='modal'>
             <div id='modal_inner'></div>
         </div>
-        <div id='characters'></div>
+        <div id='characters' class='dark_bg'></div>
         <?php
             $json = file_get_contents('assets/json/chars.json');
             $chars = json_decode($json, true);
             $json = file_get_contents('assets/json/works.json');
             $works = json_decode($json, true);
-            echo '<div id="chars_load">';
+            echo '<div id="chars_load" class="dark_bg">';
             foreach ($chars as $category => $value) {
                 foreach ($chars[$category] as $key => $value) {
                     echo '<input id="' . $category . '" type="hidden" value="' . implode($value, ',') . '">';
                 }
             }
-            echo '</div><div id="works_load">';
+            echo '</div><div id="works_load" class="dark_bg">';
             foreach ($works as $category => $value) {
                 foreach ($works[$category] as $key => $value) {
                     echo '<input id="' . $category . '" type="hidden" value="' . implode($value, ',') . '">';

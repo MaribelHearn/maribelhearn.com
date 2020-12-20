@@ -13,7 +13,7 @@
 		<meta name='viewport' content='width=device-width'>
         <meta name='description' content='Complete archive of the Touhou replays from replays.gensokyo.org.'>
         <meta name='keywords' content='touhou, touhou project, 東方, 东方, replay, replays, gensokyo, gensokyo.org, replays.gensokyo, replays.gensokyo.org'>
-        <link rel='stylesheet' type='text/css' href='assets/gensokyo/gensokyo.css'>
+        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=gensokyo'>
 		<link rel='icon' type='image/x-icon' href='assets/gensokyo/gensokyo.ico'>
         <script src='assets/shared/sorttable.js' defer></script>
         <?php echo dark_theme() ?>

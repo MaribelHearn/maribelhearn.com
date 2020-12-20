@@ -12,7 +12,7 @@
 		<meta name='viewport' content='width=device-width'>
         <meta name='description' content='Complete English translation of the full results of the THWiki Popularity Poll.'>
         <meta name='keywords' content='touhou, touhou project, thwiki, popularity, poll, vote, contest, thpoll, thvote'>
-		<link rel='stylesheet' type='text/css' href='assets/thvote/thvote.css'>
+        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=thvote'>
 		<link rel='icon' type='image/x-icon' href='assets/thvote/thvote.ico'>
         <script src='assets/shared/sorttable.js' defer></script>
 		<script src='assets/thvote/thvote.js' defer></script>

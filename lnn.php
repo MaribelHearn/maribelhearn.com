@@ -14,7 +14,7 @@
 		<meta name='viewport' content='width=device-width'>
 		<meta name='description' content='List of Touhou Lunatic no miss no bomb (LNN) runs, clears that never die or bomb.'>
         <meta name='keywords' content='touhou, touhou project, 東方, 东方, lunatic, nmnb, lnn, lnns, no miss no bomb, no deaths no bombs'>
-        <link rel='stylesheet' type='text/css' href='assets/lnn/lnn.css'>
+        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=lnn'>
 		<link rel='icon' type='image/x-icon' href='assets/lnn/lnn.ico'>
 		<script src='assets/shared/jquery.js' defer></script>
 		<script src='assets/shared/utils.js' defer></script>

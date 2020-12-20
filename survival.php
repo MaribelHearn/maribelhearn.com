@@ -13,7 +13,7 @@
 		<meta name='viewport' content='width=device-width'>
 		<meta name='description' content='Generate a table that summarises your Touhou survival progress.'>
         <meta name='keywords' content='touhou, touhou project, survival, 1cc, 1ccs, clear, clears, progress, progress table'>
-		<link rel='stylesheet' type='text/css' href='assets/survival/survival.css'>
+        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=survival'>
 		<link rel='icon' type='image/x-icon' href='assets/survival/survival.ico'>
 		<script src='assets/shared/jquery.js' defer></script>
 		<script src='assets/survival/survival.js' defer></script>

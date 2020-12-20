@@ -12,7 +12,7 @@
 		<meta name='viewport' content='width=device-width'>
         <meta name='description' content='Touhou randomizer based on Touhou Click and Drag Game, with customisation options.'>
         <meta name='keywords' content='touhou, touhou project, slots, slot machine, waifu'>
-		<link rel='stylesheet' type='text/css' href='assets/slots/slots.css'>
+        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=slots'>
 		<link rel='icon' type='image/x-icon' href='assets/slots/slots.ico'>
 		<script src='assets/shared/html2canvas.js' defer></script>
 		<script src='assets/shared/jquery.js' defer></script>

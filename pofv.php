@@ -12,7 +12,7 @@
 		<meta name='viewport' content='width=device-width'>
         <meta name='description' content='Portal for competitive PoFV play, featuring info about its metagame and tournaments and links to relevant resources.'>
         <meta name='keywords' content='touhou, touhou project, 東方, 东方, th9, th09, touhou 9, pofv, phantasmagoria of flower view, phantasmagoria, flower view, competitive, metagame, tiers, tier list, adonis'>
-        <link rel='stylesheet' type='text/css' href='assets/pofv/pofv.css'>
+        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=pofv'>
 		<link rel='icon' type='image/x-icon' href='assets/pofv/pofv.ico'>
         <script src='assets/shared/jquery.js' defer></script>
         <script src='assets/pofv/pofv.js' defer></script>
