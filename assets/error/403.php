@@ -12,6 +12,7 @@
         <link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='https://maribelhearn.com/assets/shared/css_concat.php?page=index'>
 		<link rel='icon' type='image/x-icon' href='https://maribelhearn.com/favicon.ico'>
+        <script src='assets/shared/js_concat.php?page=error' defer></script>
         <?php echo dark_theme('error') ?>
     </head>
 
@@ -30,7 +31,6 @@
                 <p><strong>Forbidden</strong></p>
                 <p class='wide'>You do not have permission to access this resource.</p>
                 <p id='ack_mobile'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a>.</p>
-                <script src='https://maribelhearn.com/assets/shared/dark.js'></script>
             </div>
         </main>
     </body>

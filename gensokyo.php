@@ -16,7 +16,7 @@
         <link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=gensokyo'>
 		<link rel='icon' type='image/x-icon' href='assets/gensokyo/gensokyo.ico'>
-        <script src='assets/shared/sorttable.js' defer></script>
+        <script src='assets/shared/js_concat.php?page=gensokyo' defer></script>
         <?php echo dark_theme() ?>
     </head>
 
@@ -234,7 +234,6 @@
                 ?>
                 <p id='ack_mobile'>The background image was drawn by <a href='http://h-yde.deviantart.com/'>h-yde</a>.</p>
                 <p><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
-                <script src='assets/shared/dark.js'></script>
             </div>
         </main>
     </body>

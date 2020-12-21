@@ -15,6 +15,7 @@
 		<link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=jargon'>
 		<link rel='icon' type='image/x-icon' href='assets/jargon/jargon.ico'>
+        <script src='assets/shared/js_concat.php' defer></script>
         <?php echo dark_theme() ?>
 	</head>
 
@@ -668,7 +669,6 @@
                     </tbody>
                 </table>
                 <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
-                <script src='assets/shared/dark.js'></script>
             </div>
         </main>
     </body>

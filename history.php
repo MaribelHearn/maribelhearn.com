@@ -13,7 +13,7 @@
         <link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=history'>
 		<link rel='icon' type='image/x-icon' href='assets/history/history.ico'>
-        <script src='assets/shared/dark.js' defer></script>
+        <script src='assets/shared/js_concat.php' defer></script>
         <?php echo dark_theme() ?>
 	</head>
 

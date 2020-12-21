@@ -15,9 +15,7 @@
         <link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=slots'>
 		<link rel='icon' type='image/x-icon' href='assets/slots/slots.ico'>
-		<script src='assets/shared/html2canvas.js' defer></script>
-		<script src='assets/shared/jquery.js' defer></script>
-		<script src='assets/slots/slots.js' defer></script>
+        <script src='assets/shared/js_concat.php?page=slots' defer></script>
         <?php echo dark_theme() ?>
     </head>
 
@@ -96,7 +94,6 @@
                     }
                     echo '</div>';
                 ?>
-                <script src='assets/shared/dark.js'></script>
             </div>
             <div id='modal'>
                 <div id='modal_inner'></div>

@@ -15,9 +15,7 @@
 		<link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=thvote'>
 		<link rel='icon' type='image/x-icon' href='assets/thvote/thvote.ico'>
-        <script src='assets/shared/sorttable.js' defer></script>
-		<script src='assets/thvote/thvote.js' defer></script>
-		<script src='assets/shared/dark.js' defer></script>
+        <script src='assets/shared/js_concat.php?page=thvote' defer></script>
         <?php echo dark_theme() ?>
     </head>
 

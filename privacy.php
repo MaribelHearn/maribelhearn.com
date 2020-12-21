@@ -13,6 +13,7 @@
         <link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=index'>
 		<link rel='icon' type='image/x-icon' href='favicon.ico'>
+        <script src='assets/shared/js_concat.php' defer></script>
         <?php echo dark_theme() ?>
     </head>
 
@@ -87,7 +88,6 @@
                 </ul>
 
                 <p class='wide-top'><strong><a href='#top'>Back to Top</a></strong></p>
-                <script src='assets/shared/dark.js'></script>
             </div>
         </main>
     </body>
