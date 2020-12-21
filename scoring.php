@@ -16,9 +16,7 @@
 		<link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=scoring'>
 		<link rel='icon' type='image/x-icon' href='assets/scoring/scoring.ico'>
-        <script src='assets/shared/jquery.js' defer></script>
-		<script src='assets/scoring/scoring.js' defer></script>
-        <script src='assets/shared/sorttable.js' defer></script>
+        <script src='assets/shared/js_concat.php?page=scoring' defer></script>
         <?php echo dark_theme() ?>
 	</head>
 
@@ -194,7 +192,6 @@
     			<p><input id='calc' type='button' value='Calculate'><input id='reset' type='button' value='Reset'></p>
                 <div id='ack_mobile'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=87950'>りすたる</a>.</div>
                 <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
-                <script src='assets/shared/dark.js'></script>
     		</div>
         </main>
 	</body>

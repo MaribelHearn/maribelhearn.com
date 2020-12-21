@@ -15,11 +15,7 @@
 		<link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=tiers'>
 		<link rel='icon' type='image/x-icon' href='assets/tiers/tiers.ico'>
-		<script src='assets/shared/utils.js' defer></script>
-		<script src='assets/shared/jquery.js' defer></script>
-		<script src='assets/shared/html2canvas.js' defer></script>
-        <script src='assets/shared/rgbcolor.js' defer></script>
-		<script src='assets/tiers/tiers.js' defer></script>
+        <script src='assets/shared/js_concat.php?page=tiers' defer></script>
     </head>
 
     <body>

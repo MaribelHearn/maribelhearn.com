@@ -16,10 +16,7 @@
 		<link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=survival'>
 		<link rel='icon' type='image/x-icon' href='assets/survival/survival.ico'>
-		<script src='assets/shared/jquery.js' defer></script>
-		<script src='assets/survival/survival.js' defer></script>
-        <script src='assets/shared/sorttable.js' defer></script>
-        <script src='assets/shared/html2canvas.js' defer></script>
+        <script src='assets/shared/js_concat.php?page=survival' defer></script>
         <?php echo dark_theme() ?>
 	</head>
 
@@ -132,7 +129,6 @@
                     <p><label for='toggleData'>Save Data</label><input id='toggleData' type='checkbox'></p>
         			<p><input id='apply' type='button' value='Apply'><input id='reset' type='button' value='Reset'></p>
                     <p id='ack_mobile'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=759506'>windtalker</a>.</p>
-                    <script src='assets/shared/dark.js'></script>
                 </div>
     		</div>
             <div id='results'>

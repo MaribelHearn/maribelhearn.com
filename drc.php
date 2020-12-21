@@ -16,10 +16,7 @@
 		<link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=drc'>
 		<link rel='icon' type='x/icon' href='assets/drc/drc.ico'>
-		<script src='assets/shared/jquery.js' defer></script>
-		<script src='assets/shared/utils.js' defer></script>
-        <script src='assets/drc/drc.js' defer></script>
-        <script src='assets/shared/sorttable.js' defer></script>
+		<script src='assets/shared/js_concat.php?page=drc' defer></script>
         <?php echo dark_theme() ?>
 	</head>
 
@@ -702,7 +699,6 @@
 					}
 					echo substr($shots, 0, -1) . '}';
 				?>'>
-		        <script src='assets/shared/dark.js'></script>
 			</div>
 		</main>
 	</body>

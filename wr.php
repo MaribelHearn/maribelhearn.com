@@ -25,11 +25,7 @@
         <link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=wr'>
 		<link rel='icon' type='image/x-icon' href='assets/wr/wr.ico'>
-		<script src='assets/shared/jquery.js' defer></script>
-		<script src='assets/shared/utils.js' defer></script>
-		<script src='assets/wr/wr.js' defer></script>
-		<script src='assets/shared/sorttable.js' defer></script>
-        <script src='assets/shared/dark.js' defer></script>
+        <script src='assets/shared/js_concat.php?page=wr' defer></script>
         <?php echo dark_theme() ?>
 	</head>
 
