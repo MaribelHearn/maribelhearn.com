@@ -22,6 +22,7 @@
 		<meta name='viewport' content='width=device-width'>
 		<meta name='description' content='List of Touhou shooting game world records.'>
         <meta name='keywords' content='touhou, touhou project, 東方, 东方, wr, wrs, world record, world records, scores, high scores, scoring'>
+        <link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=wr'>
 		<link rel='icon' type='image/x-icon' href='assets/wr/wr.ico'>
 		<script src='assets/shared/jquery.js' defer></script>
