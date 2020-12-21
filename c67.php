@@ -10,6 +10,7 @@
         <title>Seihou Banshiryuu C67</title>
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
+        <link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=c67'>
 		<link rel='icon' type='image/x-icon' href='assets/c67/c67.ico'>
         <script src='assets/shared/dark.js' defer></script>

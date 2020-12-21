@@ -10,7 +10,8 @@
 		<title>Maribel's Achievement History</title>
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
-		<link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=history'>
+        <link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
+        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=history'>
 		<link rel='icon' type='image/x-icon' href='assets/history/history.ico'>
         <script src='assets/shared/dark.js' defer></script>
         <?php echo dark_theme() ?>

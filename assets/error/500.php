@@ -9,6 +9,7 @@
 		<title>500 Internal Server Error</title>
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
+        <link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='https://maribelhearn.com/assets/shared/css_concat.php?page=index'>
 		<link rel='icon' type='image/x-icon' href='https://maribelhearn.com/favicon.ico'>
         <?php echo dark_theme('error') ?>

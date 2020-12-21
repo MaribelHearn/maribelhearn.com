@@ -13,6 +13,7 @@
 		<meta name='viewport' content='width=device-width'>
 		<meta name='description' content='Webpage intended for the Dodging Rain Competition (DRC), a Touhou Project shooting game competition.'>
 		<meta name='keywords' content='touhou, touhou project, 東方, 东方, drc, shooting game, shoot em up, shmup, stg, dodging, rain, competition'>
+		<link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=drc'>
 		<link rel='icon' type='x/icon' href='assets/drc/drc.ico'>
 		<script src='assets/shared/jquery.js' defer></script>

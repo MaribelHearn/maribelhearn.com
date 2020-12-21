@@ -12,6 +12,7 @@
 		<meta name='viewport' content='width=device-width'>
         <meta name='description' content='Create your own Touhou tier lists!'>
         <meta name='keywords' content='touhou, touhou project, 東方, 东方, tier list, tiers, sorter, sort, sorting, creator'>
+		<link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=tiers'>
 		<link rel='icon' type='image/x-icon' href='assets/tiers/tiers.ico'>
 		<script src='assets/shared/utils.js' defer></script>
