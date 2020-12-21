@@ -1,5 +1,10 @@
 <?php
 header('Content-type: text/javascript');
+if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')) {
+    ob_start('ob_gzhandler');
+} else {
+    ob_start();
+}
 $jquery = array('drc', 'lnn', 'pofv', 'scoring', 'slots', 'survival', 'tiers', 'wr');
 $sorttable = array('drc', 'gensokyo', 'lnn', 'scoring'. 'survival', 'thvote', 'wr');
 $canvas = array('slots', 'survival', 'tiers');
