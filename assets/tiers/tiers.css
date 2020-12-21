@@ -1,9 +1,3 @@
-@font-face {
-  font-family: Felipa;
-  font-display: swap;
-  src: url('../shared/Felipa-Regular.woff2') format('woff2'),
-       url('../shared/Felipa-Regular.woff') format('woff');
-}
 body {
     background: url('../tiers/tiers.jpg') center no-repeat fixed;
     background-size: cover;
