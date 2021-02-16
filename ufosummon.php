@@ -32,11 +32,11 @@
 				<option value='rainbow' <?php echo $_GET['color'] && $_GET['color'] == 'rainbow' ? 'selected' : '' ?>>Rainbow</option>
 			</select>
 			<label for='piv'>PIV</label>
-			<input name='piv' type='number' <?php echo $_GET['piv'] ? 'value=\'' . $_GET['piv']  . '\'' : '' ?>>
+			<input name='piv' type='number' min='0' <?php echo 'value=\'' . $_GET['piv']  . '\'' ?>>
 			<label for='point'>Point Items</label>
-			<input name='point' type='number' <?php echo $_GET['point'] ? 'value=\'' . $_GET['point']  . '\'' : '' ?>>
+			<input name='point' type='number' min='0' <?php echo 'value=\'' . $_GET['point']  . '\'' ?>>
 			<label for='power'>Power Items</label>
-			<input name='power' type='number' <?php echo $_GET['power'] ? 'value=\'' . $_GET['power']  . '\'' : '' ?>>
+			<input name='power' type='number' min='0' <?php echo 'value=\'' . $_GET['power']  . '\'' ?>>
 			<label for='stage'>Stage</label>
 			<select name='stage'>
 				<option value='0' <?php echo $_GET['stage'] && $_GET['stage'] == '0' ? 'selected' : '' ?>>1</option>
@@ -52,12 +52,22 @@
 			<input type='submit' value='Calculate'>
 			</form>
 			<?php
-				$itemreqs = [34, 36, 39, 42, 46, 51, 56];
+				function item_reqs(int $stage) {
+					switch ($stage) {
+						case 1: return 36;
+						case 2: return 39;
+						case 3: return 42;
+						case 4: return 46;
+						case 5: return 51;
+						case 6: return 56;
+						default: return 34;
+					}
+				}
 				function multiplier(bool $full_ufo, bool $full_power, string $color) {
 					if ($color == 'red') {
 						return $full_power ? 2 : 1;
 					}
-					if ($full_ufo) {
+					if ($full_ufo == TRUE) {
 						switch ($color) {
 							case 'blue': return 8;
 							case 'rainbow': return 4;
@@ -79,7 +89,7 @@
 					$stage = (int) $_GET['stage'];
 					$full_power = $_GET['full_power'] == 'on';
 					$items = $point + $power;
-					$full_ufo = $items >= $itemreqs[$stage];
+					$full_ufo = $items >= item_reqs($stage);
 					$multiplier = multiplier($full_ufo, $full_power, $color);
 					$result = $piv * $multiplier;
 					if ($color == 'red') {
@@ -96,7 +106,7 @@
 			if ($_GET['color']) {
 				$ufo_value = ufo_value();
 				$message = 'The score for this summon is ' . number_format(ufo_value(), 0, '.', ',') . ' points.';
-				if ($ufo_value >= 1000000000) {
+				if ($ufo_value >= 1000000000 || is_infinite($ufo_value)) {
 					$message .= ' A summon of this value would crash the game!';
 				}
 				echo $message;
