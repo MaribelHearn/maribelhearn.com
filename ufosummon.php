@@ -48,7 +48,7 @@
 				<option value='6' <?php echo $_GET['stage'] && $_GET['stage'] == '6' ? 'selected' : '' ?>>Extra</option>
 			</select>
 			<label for='full_power'>Full power?</label>
-			<input name='full_power' type='checkbox' class='check' checked>
+			<input name='full_power' type='checkbox' class='check' <?php echo $_GET['full_power'] && $_GET['full_power'] == 'on' ? 'checked' : '' ?>>
 			<input type='submit' value='Calculate'>
 			</form>
 			<?php
