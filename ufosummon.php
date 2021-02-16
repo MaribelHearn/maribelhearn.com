@@ -22,7 +22,7 @@
 	</br>
 	<center>
 		<font face="Arial">
-			Made with help from Maribel Hearn</br></br>
+			Made with help from Maribel Hearn, temporarily hosted on maribelhearn.com</br></br>
 			<form>
 			<label name='colorLabel' for='color'>Color</label>
 			<select name='color'>
