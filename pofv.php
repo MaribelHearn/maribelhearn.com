@@ -59,13 +59,13 @@
                     <tr>
                         <th id='s' class='tier'>S</th>
                         <td class='noborders'>
-                            <abbr title='Youmu Konpaku'><img class='char' src='assets/pofv/characters/youmu-cropped.png' alt='Youmu Konpaku'></abbr>
-                        </td>
-                        <td class='noborders'>
                             <abbr title='Marisa Kirisame'><img class='char' src='assets/pofv/characters/marisa-cropped.png' alt='Marisa Kirisame'></abbr>
                         </td>
                         <td class='noborders'>
                             <abbr title='Reimu Hakurei'><img class='char' src='assets/pofv/characters/reimu-cropped.png' alt='Reimu Hakurei'></abbr>
+                        </td>
+                        <td class='noborders'>
+                            <abbr title='Youmu Konpaku'><img class='char' src='assets/pofv/characters/youmu-cropped.png' alt='Youmu Konpaku'></abbr>
                         </td>
                         <td class='hidden'></td>
                     </tr>
@@ -77,17 +77,14 @@
                         <td class='noborders'>
                             <abbr title='Eiki Shiki Yamaxanadu'><img class='char' src='assets/pofv/characters/eiki-cropped.png' alt='Eiki Shiki Yamaxanadu'></abbr>
                         </td>
-                        <td class='noborders'>
-                            <abbr title='Lyrica Prismriver'><img class='char' src='assets/pofv/characters/lyrica-cropped.png' alt='Lyrica Prismriver'></abbr>
-                        </td>
                         <td class='hidden'></td>
                     <tr>
                         <th id='b' class='tier'>B</th>
                         <td class='noborders'>
-                            <abbr title='Medicine Melancholy'><img class='char' src='assets/pofv/characters/medicine-cropped.png' alt='Medicine Melancholy'></abbr>
+                            <abbr title='Lyrica Prismriver'><img class='char' src='assets/pofv/characters/lyrica-cropped.png' alt='Lyrica Prismriver'></abbr>
                         </td>
                         <td class='noborders'>
-                            <abbr title='Yuuka Kazami'><img class='char' src='assets/pofv/characters/yuuka-cropped.png' alt='Yuuka Kazami'></abbr>
+                            <abbr title='Medicine Melancholy'><img class='char' src='assets/pofv/characters/medicine-cropped.png' alt='Medicine Melancholy'></abbr>
                         </td>
                         <td class='noborders'>
                             <abbr title='Reisen Udongein Inaba'><img class='char' src='assets/pofv/characters/reisen-cropped.png' alt='Reisen Udongein Inaba'></abbr>
@@ -96,9 +93,6 @@
                     </tr>
                     <tr>
                         <th id='c' class='tier'>C</th>
-                        <td class='noborders'>
-                            <abbr title='Sakuya Izayoi'><img class='char' src='assets/pofv/characters/sakuya-cropped.png' alt='Sakuya Izayoi'></abbr>
-                        </td>
                         <td class='noborders'>
                             <abbr title='Lunasa Prismriver'><img class='char' src='assets/pofv/characters/lunasa-cropped.png' alt='Lunasa Prismriver'></abbr>
                         </td>
@@ -110,16 +104,25 @@
                     <tr>
                         <th id='d' class='tier'>D</th>
                         <td class='noborders'>
+                            <abbr title='Yuuka Kazami'><img class='char' src='assets/pofv/characters/yuuka-cropped.png' alt='Yuuka Kazami'></abbr>
+                        </td>
+                        <td class='noborders'>
+                            <abbr title='Sakuya Izayoi'><img class='char' src='assets/pofv/characters/sakuya-cropped.png' alt='Sakuya Izayoi'></abbr>
+                        </td>
+                        <td class='noborders'>
                             <abbr title='Aya Shameimaru'><img class='char' src='assets/pofv/characters/aya-cropped.png' alt='Aya Shameimaru'></abbr>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th id='e' class='tier'>E</th>
+                        <td class='noborders'>
+                            <abbr title='Tewi Inaba'><img class='char' src='assets/pofv/characters/tewi-cropped.png' alt='Tewi Inaba'></abbr>
                         </td>
                         <td class='noborders'>
                             <abbr title='Mystia Lorelei'><img class='char' src='assets/pofv/characters/mystia-cropped.png' alt='Mystia Lorelei'></abbr>
                         </td>
                         <td class='noborders'>
                             <abbr title='Cirno'><img class='char' src='assets/pofv/characters/cirno-cropped.png' alt='Cirno'></abbr>
-                        </td>
-                        <td class='noborders'>
-                            <abbr title='Tewi Inaba'><img class='char' src='assets/pofv/characters/tewi-cropped.png' alt='Tewi Inaba'></abbr>
                         </td>
                     </tr>
                 </table>

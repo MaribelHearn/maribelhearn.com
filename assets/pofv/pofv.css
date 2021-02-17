@@ -54,6 +54,9 @@ ol > li {
 .D {
     color: #008080;
 }
+.E {
+    color: #00D0D0;
+}
 .art {
     border: 1px solid black;
 }
@@ -174,6 +177,9 @@ ol > li {
     background: radial-gradient(#ADFF2F, #57A818, #008000);
 }
 #d {
+    background: radial-gradient(#004040, #006060, #008080);
+}
+#e {
     background: radial-gradient(#008080, #00BFBF, #00FFFF);
 }
 #ack {

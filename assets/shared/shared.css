@@ -66,6 +66,12 @@ a:visited.dropdown_button {
 .wr_icon {
     object-position: -224px 0px;
 }
+.discord_icon {
+    object-position: -240px 0px;
+}
+.docs_icon {
+    object-position: -256px 0px;
+}
 .exphp_icon {
     object-position: -288px 0px;
 }
@@ -87,6 +93,9 @@ a:visited.dropdown_button {
 .source_icon {
     object-position: -384px 0px;
 }
+.sheets_icon {
+    object-position: -400px 0px;
+}
 .steam_icon {
     object-position: -416px 0px;
 }
@@ -101,6 +110,12 @@ a:visited.dropdown_button {
 }
 .youtube_icon {
     object-position: -480px 0px;
+}
+.zerotier_icon {
+    object-position: -496px 0px;
+}
+.twc_icon {
+    object-position: -752px 0px;
 }
 .dropdowns {
     margin-left: auto;
