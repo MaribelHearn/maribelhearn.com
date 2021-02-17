@@ -113,22 +113,22 @@ var STATS = {
         }
     },
     TIER = {
-        "youmu": "S",
         "marisa": "S",
         "reimu": "S",
+        "youmu": "S",
         "komachi": "A",
         "eiki": "A",
-        "lyrica": "A",
+        "lyrica": "B",
         "medicine": "B",
-        "yuuka": "B",
         "reisen": "B",
-        "sakuya": "C",
         "lunasa": "C",
         "merlin": "C",
+        "yuuka": "D",
+        "sakuya": "D",
         "aya": "D",
-        "mystia": "D",
-        "cirno": "D",
-        "tewi": "D"
+        "tewi": "E",
+        "mystia": "E",
+        "cirno": "E"
     },
     ABILITY = {
         "youmu": "Bullet-cancelling sword",

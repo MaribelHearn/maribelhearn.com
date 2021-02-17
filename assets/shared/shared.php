@@ -1,7 +1,7 @@
 <?php
-$errors = ['401', '403', '404', '500'];
 function hit($page) {
-    $path = (in_array($page, $errors) ? '../../.stats/token' : '.stats/token');
+    $errors = ['401.php', '403.php', '404.php', '500.php'];
+    $path = in_array($page, $errors) ? '../../.stats/token' : '.stats/token';
     if (file_exists($path)) {
         if (!empty($_SERVER['HTTP_USER_AGENT']) && preg_match('~(bot|crawl|slurp|spider|archiver|facebook|lighthouse|jigsaw|validator|w3c|hexometer)~i', $_SERVER['HTTP_USER_AGENT'])) {
             return;
