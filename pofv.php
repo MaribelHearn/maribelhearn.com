@@ -94,10 +94,10 @@
                     <tr>
                         <th id='c' class='tier'>C</th>
                         <td class='noborders'>
-                            <abbr title='Lunasa Prismriver'><img class='char' src='assets/pofv/characters/lunasa-cropped.png' alt='Lunasa Prismriver'></abbr>
+                            <abbr title='Merlin Prismriver'><img class='char' src='assets/pofv/characters/merlin-cropped.png' alt='Merlin Prismriver'></abbr>
                         </td>
                         <td class='noborders'>
-                            <abbr title='Merlin Prismriver'><img class='char' src='assets/pofv/characters/merlin-cropped.png' alt='Merlin Prismriver'></abbr>
+                            <abbr title='Lunasa Prismriver'><img class='char' src='assets/pofv/characters/lunasa-cropped.png' alt='Lunasa Prismriver'></abbr>
                         </td>
                         <td class='hidden'></td>
                     </tr>
