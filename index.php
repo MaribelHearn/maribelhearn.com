@@ -94,11 +94,11 @@
                                 Phantasmagoria of Flower View</a>
                                 <span class='tooltip'>Portal for competitive PoFV play, featuring info about its metagame and tournaments and links to relevant resources.</span>
                             </p>
-                            <p class='link'>
+                            <!--<p class='link'>
                                 <a href='twc'><img class='icon twc_icon' src='assets/shared/icon_sheet.png' alt='Touhou World Cup icon'>
                                 Touhou World Cup</a>
                                 <span class='tooltip'>Main webpage for Touhou World Cup, containing the schedule, rules and other relevant information.</span>
-                            </p>
+                            </p>-->
                         </div>
                     </div>
                     <div class='pages_right'>
