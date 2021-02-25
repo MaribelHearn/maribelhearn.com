@@ -14,7 +14,7 @@ if (empty($_GET['hl']) && !isset($_COOKIE['lang']) || $_GET['hl'] == 'en') {
 } else if ($_GET['hl'] == 'zh') {
     $lang = 'Chinese';
 }
-function tl_game($game, $lang) {
+function tl_game(string $game, string $lang) {
     if ($lang == 'Japanese') {
         $game = trim($game);
         switch ($game) {
@@ -66,7 +66,7 @@ function tl_game($game, $lang) {
         return $game;
     }
 }
-function tl_char($char, $lang) {
+function tl_char(string $char, string $lang) {
     if ($lang == 'Japanese') {
         switch ($char) {
             case 'Makai': return '魔界';
@@ -215,7 +215,7 @@ function tl_char($char, $lang) {
         return $char;
     }
 }
-function tl_term($term, $lang) {
+function tl_term(string $term, string $lang) {
     if ($lang == 'Japanese') {
         $term = trim($term);
         switch ($term) {
@@ -272,7 +272,7 @@ function tl_term($term, $lang) {
         return $term;
     }
 }
-function manoku($str, $len, $offset, $lang) {
+function manoku(string $str, int $len, int $offset, string $lang) {
     if ($str[$len-$offset] != '0') {
         $str = substr($str, 0, $len-$offset) . '.' . substr($str, $len-$offset, $len-1);
         $len += 1;
@@ -286,7 +286,7 @@ function manoku($str, $len, $offset, $lang) {
     $char = ($lang == 'Japanese' ? '億' : '亿');
     return $str . ($offset == 4 ? '万' : $char);
 }
-function illion($str, $len, $offset, $lang) {
+function illion(string $str, int $len, int $offset, string $lang) {
     if ($str[$len-$offset] != '0') {
         $str = substr($str, 0, $len-$offset) . '.' . substr($str, $len-$offset, $len-1);
         $len += 1;
@@ -299,10 +299,10 @@ function illion($str, $len, $offset, $lang) {
     }
     return $str . ($offset == 6 ? 'm' : 'b');
 }
-function sep($num) {
+function sep(int $num) {
     return number_format($num, 0, '.', ',');
 }
-function abbreviate($num, $lang) {
+function abbreviate(int $num, string $lang) {
     $str = strval($num);
     if ($lang == 'Japanese' || $lang == 'Chinese') {
         if (!strpos($str, '0') || strlen($str) <= 4) {
@@ -320,7 +320,7 @@ function abbreviate($num, $lang) {
         }
     }
 }
-function is_phantasmagoria($game) {
+function is_phantasmagoria(string $game) {
     return $game == 'PoDD' || $game == 'PoFV';
 }
 ?>

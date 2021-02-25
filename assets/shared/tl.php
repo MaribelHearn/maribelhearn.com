@@ -1,8 +1,8 @@
 <?php
-function shot_route($game) {
+function shot_route(string $game) {
     return $game == 'HRtP' || $game == 'GFW' ? 'Route' : 'Shottype';
 }
-function num($game) {
+function num(string $game) {
     switch ($game) {
         case 'HRtP': return 1;
         case 'SoEW': return 2;
@@ -25,7 +25,7 @@ function num($game) {
         default: return 0;
     }
 }
-function shot_abbr($shot) {
+function shot_abbr(string $shot) {
     switch ($shot) {
         case 'Reimu': return 'Re';
         case 'ReimuA': return 'RA';
@@ -95,7 +95,7 @@ function shot_abbr($shot) {
         default: return '';
     }
 }
-function tl_shot($shot, $lang) {
+function tl_shot(string $shot, string $lang) {
     if ($lang == 'Japanese') {
         switch ($shot) {
             case 'Makai': return '魔界';
@@ -249,7 +249,7 @@ function tl_shot($shot, $lang) {
     }
     return str_replace('Team', ' Team', $shot);
 }
-function full_name($game, $lang) {
+function full_name(string $game, string $lang) {
     if ($lang == 'English') {
         switch ($game) {
             case 'HRtP': return 'Touhou 1 - The Highly Responsive to Prayers';
@@ -318,7 +318,7 @@ function full_name($game, $lang) {
         }
     }
 }
-function tl_term($term, $lang) {
+function tl_term(string $term, string $lang) {
     if ($lang == 'Japanese') {
         $term = trim($term);
         switch ($term) {
@@ -417,7 +417,7 @@ function tl_term($term, $lang) {
         return $term;
     }
 }
-function format_shot($game, $shot, $lang) {
+function format_shot(string $game, string $shot, string $lang) {
     if ($game == 'IN') {
         $tmp = str_replace('FinalA', '', $shot);
         $tmp = str_replace('FinalB', '', $tmp);

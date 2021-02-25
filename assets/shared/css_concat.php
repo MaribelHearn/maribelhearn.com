@@ -1,6 +1,6 @@
 <?php
 header('Content-type: text/css');
-function is_localhost($addr) {
+function is_localhost(string $addr) {
     return $addr == '::1' || $addr == '127.0.0.1' || substr($addr, 0, 8) == '192.168.';
 }
 $min = (!is_localhost($_SERVER['REMOTE_ADDR']) ? '-min' : '');

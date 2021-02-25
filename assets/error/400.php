@@ -12,7 +12,7 @@
         <link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='https://maribelhearn.com/assets/shared/css_concat.php?page=index'>
 		<link rel='icon' type='image/x-icon' href='https://maribelhearn.com/favicon.ico'>
-        <script src='assets/shared/js_concat.php?page=error' defer></script>
+        <script src='https://maribelhearn.com/assets/shared/js_concat.php?page=error' defer></script>
         <?php echo dark_theme('error') ?>
     </head>
 

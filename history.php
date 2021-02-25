@@ -329,7 +329,7 @@
 	                        <tr id='oPCB'>
 	                            <th>PCB</th>
 	                            <td id='ePCB' class='nmnb'></td>
-	                            <td id='nPCB' class='nb'></td>
+	                            <td id='nPCB' class='nmnb'></td>
 	                            <td id='hPCB' class='nb'></td>
 	                            <td id='lPCB' class='nb'></td>
 	                            <td id='xPCB' class='nmnb'></td>
@@ -1008,7 +1008,7 @@
 		                    <td class='g'>Completed</td>
 		                    <td>January 15, 2012</td>
 		                    <td>February 5, 2016</td>
-		                    <td>-</td>
+		                    <td>January 25, 2021</td>
 		                    <td>No</td>
 		                </tr>
 		                <tr>

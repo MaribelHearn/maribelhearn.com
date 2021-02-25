@@ -1,7 +1,7 @@
 function dark() {
     style = document.createElement("link");
     style.id = "dark_theme";
-    style.href = (location.host != "localhost" ? "https://maribelhearn.com/" : "") + "assets/shared/dark.css";
+    style.href = (location.host != "localhost" || location.pathname.indexOf("error") > -1 ? "https://maribelhearn.com/" : "") + "assets/shared/dark.css";
     style.type = "text/css";
     style.rel = "stylesheet";
     head.appendChild(style);
@@ -28,10 +28,17 @@ function theme() {
             head.removeChild(document.getElementById("dark_theme"));
         }
 
-        document.cookie = "theme=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
+        document.cookie = "theme=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;" +
+        "sameSite=Strict;" + (location.protocol == "https:" ? "Secure;" : "");
         document.getElementById("hy_tooltip").innerHTML = "Human Mode";
     } else {
-        document.cookie = "theme=" + JSON.stringify("dark") + ";expires=Fri, 31 Dec 9999 23:59:59 UTC;path=/;sameSite=Strict;Secure;";
+        var cookieString = ";expires=Fri, 31 Dec 9999 23:59:59 UTC;path=/;sameSite=Strict;";
+
+        if (location.protocol == "https:") {
+            cookieString += "Secure;";
+        }
+
+        document.cookie = "theme=" + JSON.stringify("dark") + cookieString;
         document.getElementById("hy_tooltip").innerHTML = "Youkai Mode";
         dark();
     }
