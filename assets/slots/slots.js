@@ -99,8 +99,31 @@ function isMobile() {
     return navigator.userAgent.contains("Mobile") || navigator.userAgent.contains("Tablet");
 }
 
+function getCookie(name) {
+    var decodedCookies, cookieArray, cookie;
+
+    decodedCookies = decodeURIComponent(document.cookie);
+    cookieArray = decodedCookies.split(';');
+    name += '=';
+
+    for (var i = 0; i < cookieArray.length; i += 1) {
+        cookie = cookieArray[i];
+
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1);
+        }
+
+        if (cookie.indexOf(name) === 0) {
+            return JSON.parse(cookie.substring(name.length, cookie.length));
+        }
+    }
+
+    return "";
+}
+
+
 function backgroundColour() {
-    return localStorage.theme && localStorage.theme == "dark" ? "#202020" : "white";
+    return getCookie("theme") == "dark" ? "#202020" : "white";
 }
 
 function takeScreenshot() {
@@ -114,7 +137,7 @@ function takeScreenshot() {
         $("#modal_inner").html("<h2>Screenshot</h2>");
         $("#modal_inner").append("<p><a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
         "<input type='button' value='Save to Device'></a></p>" +
-        "<p>This feature currently does not work on Chromium-based browsers.</p>" +
+        "<p class='descr'>This feature currently does not work on Chromium-based browsers.</p>" +
         "<p><img id='base64' src='" + base64image + "' alt='Slot machine screenshot'></p>");
         $("#modal_inner, #modal, #content, h1").css("display", "block");
         $("#hy_container").css("display", "inline");
