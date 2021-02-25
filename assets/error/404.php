@@ -3,7 +3,7 @@
 <?php
     include 'redirect.php';
     include '../shared/shared.php';
-    hit('404');
+    hit('404.php');
 ?>
 
     <head>
