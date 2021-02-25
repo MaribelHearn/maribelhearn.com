@@ -41,7 +41,7 @@
                 <p>On 25 September 2019, gensokyo.org expired, and as of the 30th it is inaccessible.
                 As such, this archive has been created to preserve all of its replays.
                 Unlike the original website, these replays cannot be deleted.</p>
-                <p>The table resulting from search can be sorted by date (note that this might be slow depending on the size),
+                <p>The table resulting from search can be sorted by score, date etc. (note that this might be slow depending on the size),
                 and the player name can be clicked to view the corresponding replay in detail.</p>
                 <form>
                     <p>
@@ -211,11 +211,11 @@
                         if ($found > 0) {
                             echo '</tbody></table>';
                             if ($p > 0) {
-                                $url = substr($_SERVER[REQUEST_URI], 0, -1);
+                                $url = substr($_SERVER['REQUEST_URI'], 0, -1);
                                 echo '<a id="previous" href="' . $url . ($p / $PAGE_LENGTH) . '">&lt;= Previous</a>';
                             }
                             if ($found >= $PAGE_LENGTH) {
-                                $url = $_SERVER[REQUEST_URI];
+                                $url = $_SERVER['REQUEST_URI'];
                                 if (!strpos($url, '&page=')) {
                                     echo '<a id="next" href="' . $url . '&page=2">Next =&gt;</a>';
                                 } else {
@@ -224,7 +224,7 @@
                             }
                         } else {
                             echo 'No replays found.';
-                            $url = $_SERVER[REQUEST_URI];
+                            $url = $_SERVER['REQUEST_URI'];
                             if (strpos($url, '&page=')) {
                                 echo '<p><a id="previous" href="' . substr($url, 0, -1) . ($p / $PAGE_LENGTH) .
                                 '">&lt;= Previous</a></p>';

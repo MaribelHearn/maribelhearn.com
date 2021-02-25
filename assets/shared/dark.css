@@ -1,7 +1,7 @@
 /*h1, h2, h3, label, th, td, div, p:not(#ack) {
     color: white;
 }*/
-h1, h2, h3, h4, th, td, label, li, figcaption, p:not(.language):not(.descr):not(#ack), caption:not(#legend), #nav {
+h1, h2, h3, h4, table:not(.poll), label, li, figcaption, p:not(.language):not(.descr):not(#ack), caption:not(#legend), #nav {
     color: white;
 }
 #modal_inner h1, #modal_inner h2, #modal_inner th, #modal_inner td, .rendering th, .rendering td {
@@ -76,9 +76,6 @@ a:visited.dropdown_button {
 .Winter {
     color: cyan;
 }
-.poll {
-    color: black;
-}
 .replay {
     color: white;
 }
@@ -95,6 +92,7 @@ a:visited.dropdown_button {
     color: black;
 }
 #contents tr, #contents th, #contents td, #responses tr, #responses th, #responses td, #jargontable th, #jargontable td,
-#spelltable th, #spelltable td, #bullettable th, #bullettable td, .border td, .center th, .center td {
+#spelltable th, #spelltable td, #bullettable th, #bullettable td, #schedule_table th, #schedule_table td, #results_2020 th,
+#results_2020 td, .border td, .center th, .center td {
     border: none;
 }

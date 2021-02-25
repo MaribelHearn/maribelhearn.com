@@ -1,29 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang='en'>
 <?php
-    $url = substr($_SERVER['REQUEST_URI'], 1);
-    if (!strpos($url, '/')) {
-        $max_sim = 0;
-        foreach (glob('../../*') as $file) {
-            if (strpos($file, '.php')) {
-                $page = substr($file, 6, -4);
-                $max_sim = max(similar_text($url, $page), $max_sim);
-                if (similar_text($url, $page) >= $max_sim) {
-                    $max_page = $page;
-                }
-            }
-        }
-        $len = strlen($max_page) - 3;
-        if ($max_sim > 0 && $max_sim > $len) {
-            header('Location: https://maribelhearn.com/' . $max_page . '?redirect=' . $url);
-        }
-    }
-    $json = file_get_contents('../json/admin.json');
-    $data = json_decode($json, true);
-    if (isset($data[$url])) {
-        header('Location: ' . $data[$url]);
-        exit();
-    }
+    include 'redirect.php';
     include '../shared/shared.php';
     hit('404');
 ?>
@@ -32,10 +10,10 @@
 		<title>404 Not Found</title>
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
-        <link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
+        <link rel='preload' type='font/woff2' href='https://maribelhearn.com/assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='https://maribelhearn.com/assets/shared/css_concat.php?page=index'>
 		<link rel='icon' type='image/x-icon' href='https://maribelhearn.com/favicon.ico'>
-        <script src='assets/shared/js_concat.php?page=error' defer></script>
+        <script src='https://maribelhearn.com/assets/shared/js_concat.php?page=error' defer></script>
         <?php echo dark_theme('error') ?>
     </head>
 

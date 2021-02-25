@@ -4,7 +4,7 @@ $wr = json_decode($json, true);
 $games = ['HRtP', 'SoEW', 'PoDD', 'LLS', 'MS', 'EoSD', 'PCB', 'IN', 'PoFV',
 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC'];
 $diffs = ['Easy', 'Normal', 'Hard', 'Lunatic', 'Extra'];
-function full_name($game) {
+function full_name(string $game) {
     switch ($game) {
         case 'HRtP': return 'Touhou 1 - The Highly Responsive to Prayers';
         case 'SoEW': return 'Touhou 2 - The Story of Eastern Wonderland';
@@ -27,7 +27,7 @@ function full_name($game) {
         default: return 'Unknown';
     }
 }
-function no_extra($game) {
+function no_extra(string $game) {
     return in_array($game, ['HRtP', 'PoDD', 'GFW']);
 }
 ?>

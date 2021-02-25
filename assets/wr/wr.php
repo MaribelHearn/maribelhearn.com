@@ -35,7 +35,7 @@ $pl = array();
 $pl_wr = array();
 $flag = array();
 $lm = '0/0/0';
-function pc_class($pc) {
+function pc_class(int $pc) {
     if ($pc < 50) {
         return 'does_not_even_score';
     } else if ($pc < 75) {
@@ -48,10 +48,10 @@ function pc_class($pc) {
         return 'does_even_score_well';
     }
 }
-function replay_path($game, $diff, $shot) {
+function replay_path(string $game, string $diff, string $shot) {
     return 'replays/th' . num($game) . '_ud' . substr($diff, 0, 2) . shot_abbr($shot) . '.rpy';
 }
-function date_tl($date, $notation) {
+function date_tl(string $date, string $notation) {
     $tmp = preg_split('/\//', $date);
     $day = $tmp[0];
     $month = $tmp[1];
@@ -64,7 +64,7 @@ function date_tl($date, $notation) {
         return $day . '/' . $month . '/' . $year;
     }
 }
-function format_lm($lm, $lang, $notation) {
+function format_lm(string $lm, string $lang, string $notation) {
     if ($lang == 'Japanese') {
         return '<span id="lm">' . date_tl($lm, 'YMD') . '</span>現在の世界記録です。';
     } else if ($lang == 'Chinese') {
@@ -77,7 +77,7 @@ function format_lm($lm, $lang, $notation) {
         }
     }
 }
-function game_tl($game, $lang) {
+function game_tl(string $game, string $lang) {
     if ($lang == 'Japanese') {
         switch ($game) {
             case 'HRtP': return '靈';
@@ -125,7 +125,7 @@ function game_tl($game, $lang) {
     }
     return $game;
 }
-function player_search($lang) {
+function player_search(string $lang) {
     if ($lang == 'English') {
         return 'Player Search';
     } else if ($lang == 'Japanese') {

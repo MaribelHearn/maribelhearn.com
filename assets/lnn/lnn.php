@@ -17,7 +17,7 @@ $pl_lnn = array();
 $flag = array();
 $missing_replays = array();
 $gt = 0;
-function lnn_type($game, $lang) {
+function lnn_type(string $game, string $lang) {
     if ($lang == 'English') {
         switch ($game) {
             case 'PCB': return 'No. of LNNNs';
@@ -50,21 +50,21 @@ function lnn_type($game, $lang) {
         }
     }
 }
-function date_tl($date) {
+function date_tl(string $date) {
     $tmp = preg_split('/\//', $date);
     $day = $tmp[0];
     $month = $tmp[1];
     $year = $tmp[2];
     return $year . '年' . $month . '月' . $day . '日';
 }
-function format_lm($lm, $lang) {
+function format_lm(string $lm, string $lang) {
     switch ($lang) {
         case 'Japanese': return '<span id="lm">' . date_tl($lm) . '</span>現在のLNN記録です。';
         case 'Chinese': return 'LNN更新于<span id="lm">' . date_tl($lm) . '</span>。';
         default: return 'LNNs are current as of <span id="lm">' . $lm . '</span>.';
     }
 }
-function player_search($lang) {
+function player_search(string $lang) {
     if ($lang == 'English') {
         return 'Player Search';
     } else if ($lang == 'Japanese') {
@@ -73,7 +73,7 @@ function player_search($lang) {
         return '玩家LNN';
     }
 }
-function replay_path($game, $player, $shot) {
+function replay_path(string $game, string $player, string $shot) {
     $ALPHA_NUMS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     $char = preg_replace('/(FinalA|FinalB|UFOs)/i', '', $shot);
     $type = str_replace($char, '', $shot);

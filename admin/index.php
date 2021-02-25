@@ -18,6 +18,7 @@
 		<meta name='viewport' content='width=device-width'>
         <link rel='stylesheet' type='text/css' href='../assets/shared/css_concat.php?page=index'>
 		<link rel='icon' type='image/x-icon' href='../favicon.ico'>
+        <script src='../assets/shared/js_concat.php?page=admin' defer></script>
         <?php echo dark_theme('admin') ?>
     </head>
 
@@ -50,8 +51,6 @@
             </div>
         </main>
         <?php echo '<input id="token" type="hidden" value=' . file_get_contents('../.stats/token') . '>'; ?>
-        <script src='admin/detect.js'></script>
-        <script src='admin/admin.js'></script>
     </body>
 
 </html>

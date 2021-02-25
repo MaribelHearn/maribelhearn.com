@@ -1,15 +1,18 @@
 <?php
-function hit($page) {
+function is_localhost(string $addr) {
+    return $addr == '::1' || $addr == '127.0.0.1' || substr($addr, 0, 8) == '192.168.';
+}
+function hit(string $page) {
     $errors = ['401.php', '403.php', '404.php', '500.php'];
-    $path = in_array($page, $errors) ? '../../.stats/token' : '.stats/token';
+    $path = in_array($page, $errors) ? '../../.stats/' : '.stats/';
     if (file_exists($path)) {
         if (!empty($_SERVER['HTTP_USER_AGENT']) && preg_match('~(bot|crawl|slurp|spider|archiver|facebook|lighthouse|jigsaw|validator|w3c|hexometer)~i', $_SERVER['HTTP_USER_AGENT'])) {
             return;
         }
-        $token = trim(file_get_contents('.stats/token'));
-        if ($_SERVER['SERVER_NAME'] !== 'localhost' && $_COOKIE['token'] !== $token) {
+        $token = trim(file_get_contents($path . 'token'));
+        if (!is_localhost($_SERVER['REMOTE_ADDR']) && !isset($_COOKIE['token']) || $_COOKIE['token'] !== $token) {
             $page = str_replace('.php', '', $page);
-            $hitcount = '.stats/' . date('d-m-Y') . '.json';
+            $hitcount = $path . date('d-m-Y') . '.json';
             if (file_exists($hitcount)) {
                 $json = file_get_contents($hitcount);
                 $stats = json_decode($json, true);
@@ -39,7 +42,7 @@ function dark_theme($page = 'other') {
 function theme_name() {
     return isset($_COOKIE['theme']) ? 'Youkai Mode (click to toggle)' : 'Human Mode (click to toggle)';
 }
-function navbar($page) {
+function navbar(string $page) {
     $token_path = ($page == 'admin' ? '../.stats/token' : '.stats/token');
     $token_path = ($page == 'error' ? '../../' . $token_path : $token_path);
     $navbar = '<div class="dropdown nav_left">';
@@ -62,6 +65,8 @@ function navbar($page) {
                 '<img class="icon royalflare_icon" src="assets/shared/icon_sheet.png" alt="Royalflare favicon">Royalflare</a></p>';
                 $navbar .= '<p><a href="https://thscore.pndsng.com/index.php">' .
                 '<img class="icon pndsng_icon" src="assets/shared/icon_sheet.png" alt="Pndsng favicon">PND List</a></p>';
+                //$navbar .= '<p><a href="https://zps-stg.github.io">' .
+                //'<img class="icon exphp_icon" src="assets/shared/icon_sheet.png" alt="ZPS favicon">ZPS\'s Site</a></p>';
                 $navbar .= '<p><a href="https://priw8.github.io">' .
                 '<img class="icon priw8_icon" src="assets/shared/icon_sheet.png" alt="Priw8 favicon">Priw8\'s Site</a></p>';
                 $navbar .= '<p><a href="https://exphp.github.io/thpages/">' .
@@ -129,6 +134,8 @@ function navbar($page) {
                     '<img class="icon royalflare_icon" src="assets/shared/icon_sheet.png" alt="Royalflare favicon">Royalflare</a></p>';
                     $navbar .= '<p><a href="https://thscore.pndsng.com/index.php">' .
                     '<img class="icon pndsng_icon" src="assets/shared/icon_sheet.png" alt="Pndsng favicon">PND List</a></p>';
+                    //$navbar .= '<p><a href="https://zps-stg.github.io">' .
+                    //'<img class="icon exphp_icon" src="assets/shared/icon_sheet.png" alt="ZPS favicon">ZPS\'s Site</a></p>';
                     $navbar .= '<p><a href="https://priw8.github.io">' .
                     '<img class="icon priw8_icon" src="assets/shared/icon_sheet.png" alt="Priw8 favicon">Priw8\'s Site</a></p>';
                     $navbar .= '<p><a href="https://exphp.github.io/thpages">' .
@@ -156,7 +163,6 @@ function navbar($page) {
     $navbar .= '</div>';
     $navbar = str_replace('<a href="' . ($page == 'index' ? '/' : $page) . '">', '<strong>', $navbar);
     $cap = strlen($page) < 4 ? strtoupper($page) : ucfirst($page);
-
     if ($page == 'gensokyo') {
         $cap = 'Archive';
     } else if ($page == 'thvote') {
@@ -170,9 +176,7 @@ function navbar($page) {
     } else if ($page == 'privacy') {
         $cap = 'Privacy Policy';
     }
-
     $navbar = str_ireplace($cap . '</a>', $cap . '</strong>', $navbar);
-
     if ($page == 'admin') {
         $navbar = str_replace('href="', 'href="../', $navbar);
         $navbar = str_replace('../http', 'http', $navbar);
@@ -181,7 +185,6 @@ function navbar($page) {
     } else if ($page == 'error') {
         $navbar = str_replace('assets', 'https://maribelhearn.com/assets', $navbar);
     }
-
     return $navbar;
 }
 ?>
