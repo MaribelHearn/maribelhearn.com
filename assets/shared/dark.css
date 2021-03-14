@@ -96,3 +96,6 @@ a:visited.dropdown_button {
 #results_2020 td, .border td, .center th, .center td {
     border: none;
 }
+#results_2020 td, #schedule_table td {
+    border-top: 1px solid white;
+}
