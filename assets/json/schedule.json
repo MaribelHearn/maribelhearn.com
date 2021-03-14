@@ -2,141 +2,169 @@
     "1616223600": {
         "category": "TH10 Lunatic Survival",
         "players": ["Kayo", "Aelita", "Rory"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 60
     },
     "1616238000": {
         "category": "TH17 Lunatic Scoring",
         "players": ["Borealis", "Seiko", "Kiti"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 115
     },
     "1616848200": {
         "category": "TH13 Lunatic Survival",
         "players": ["Cao Minh", "Alex", "kkgk"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 75
     },
     "1616857200": {
         "category": "TH06 Lunatic Survival",
         "players": ["LorennaRose", "ZJM", "Alshie"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 75
     },
     "1616914800": {
         "category": "TH09 Lunatic Scoring",
         "players": ["Dagoth2hu", "-", "Atsumori"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 105
     },
     "1616940000": {
         "category": "TH07 Lunatic Scoring",
         "players": ["sp0thss", "-", "ゆーすけ (Yu-suke)"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 135
     },
     "1617451200": {
         "category": "TH17 Lunatic Survival",
         "players": ["BeheeyemBREAK", "Asahi", "Buchiwashi"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 75
     },
     "1617460200": {
         "category": "TH12 Lunatic Survival",
         "players": ["Mino", "HAN", "yuki"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 85
     },
     "1617523200": {
         "category": "TH07 Lunatic Survival",
         "players": ["Ghost", "ULK", "Guroniga"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 80
     },
     "1617537600": {
         "category": "TH08 Lunatic Scoring",
         "players": ["Levea", "-", "Zetsu"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 115
     },
     "1618056000": {
         "category": "TH13 Extra Scoring",
         "players": ["morth", "XBH", "idtn"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 40
     },
     "1618061400": {
         "category": "TH11 Lunatic Survival",
         "players": ["ness", "Cero", "kamoneko"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 75
     },
     "1618124400": {
         "category": "TH10 Lunatic Scoring",
         "players": ["-", "zxxsmart", "ryusei"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 75
     },
     "1618142400": {
         "category": "TH06 Lunatic Scoring",
         "players": ["kana0603", "-", "9☆Y"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 95
     },
     "1618642800": {
         "category": "TH128 Lunatic Scoring",
         "players": ["-", "Cerasis", "gyouch"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 70
     },
     "1618660800": {
         "category": "TH13 Lunatic Scoring",
         "players": ["Maribel Hearn", "Lyrica", "ns"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 70
     },
     "1618727400": {
         "category": "TH14 Extra Scoring",
         "players": ["thk573", "feng", "YDH"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 55
     },
     "1618732800": {
         "category": "TH12 Lunatic Scoring",
         "players": ["ZPS", "17", "K・G"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 90
     },
     "1619262000": {
         "category": "TH16 Lunatic Scoring",
         "players": ["Ray", "ZKY", "Hiro"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 100
     },
     "1619271000": {
         "category": "TH08 Lunatic Survival",
         "players": ["Jovial", "CWC", "ふすま (fusuma)"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 80
     },
     "1619334000": {
         "category": "TH16 Lunatic Survival",
         "players": ["Haki", "BENREN", "SOC"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 80
     },
     "1619352000": {
         "category": "TH06 Extra Scoring",
         "players": ["TrickOfHat", "-", "OOSAKA"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 50
     },
     "1619870400": {
         "category": "TH128 Lunatic Survival",
         "players": ["yeashie", "ATM", "Febryu"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 45
     },
     "1619875800": {
         "category": "TH11 Lunatic Scoring",
         "players": ["Scarlet Moose", "ling", "STI"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 100
     },
     "1619938800": {
         "category": "TH14 Lunatic Scoring",
         "players": ["-", "ISN", "Dean"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 100
     },
     "1619956800": {
         "category": "TH08 Extra Scoring",
         "players": ["Sakurei", "-", "pingval"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 70
     },
     "1620457200": {
         "category": "TH14 Lunatic Survival",
         "players": ["Yatsuzume", "SMT", "Taruha"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 85
     },
     "1620475200": {
         "category": "TH15 Lunatic Survival",
         "players": ["CreepyNinja", "Nagisa", "SNT"],
-        "countries": ["we", "cn", "jp"]
+        "countries": ["we", "cn", "jp"],
+        "reset": 105
     }
 }

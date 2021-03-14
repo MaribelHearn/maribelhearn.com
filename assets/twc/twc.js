@@ -23,7 +23,8 @@ function printSchedule(schedule) {
         $("#schedule_tbody").append("<tr id='" + unix + "'></tr>");
         $("#" + unix).html("<td class='noborders'>" + toDateString(unix) +
         "</td><th class='" + match.category.split(' ')[0] + " noborders'>" + match.category + "</th>" +
-        "<td id='" + id + "_players' class='noborders'></td>");
+        "<td id='" + id + "_players' class='noborders'></td><td id='" + id +
+        "_reset' class='noborders'>" + match.reset + "</td>");
 
         for (var i = 0; i < match.players.length; i++) {
             if (match.countries[i] == "cn") {
