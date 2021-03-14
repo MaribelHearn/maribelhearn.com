@@ -104,7 +104,7 @@ function navbar(string $page) {
                 $navbar .= '<p><a href="jargon"><img class="icon jargon_icon" src="assets/shared/icon_sheet.png" alt="Bomb icon"> Jargon</a></p>';
                 $navbar .= '<p><a href="gensokyo"><img class="icon gensokyo_icon" src="assets/shared/icon_sheet.png" alt="Gensokyo.org icon"> Archive</a></p>';
                 $navbar .= '<p><a href="pofv"><img class="icon pofv_icon" src="assets/shared/icon_sheet.png" alt="PoFV icon"> PoFV</a></p>';
-                //$navbar .= '<p><a href="twc"><img class="icon twc_icon" src="assets/shared/icon_sheet.png" alt="Touhou World Cup icon"> TWC</a></p>';
+                $navbar .= '<p><a href="twc"><img class="icon twc_icon" src="assets/shared/icon_sheet.png" alt="Touhou World Cup icon"> TWC</a></p>';
             $navbar .= '</div>';
         $navbar .= '</div> ';
         $navbar .= '<div class="dropdown">';

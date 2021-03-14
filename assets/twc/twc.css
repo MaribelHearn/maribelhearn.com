@@ -1,0 +1,206 @@
+body {
+    background: url('../twc/twc.jpg') center no-repeat fixed;
+    background-size: cover;
+}
+div > div > p {
+    margin: 4px;
+}
+h1 {
+    font-family: 'Felipa';
+    font-size: 48px;
+}
+h2 {
+    font-family: 'Felipa';
+    font-size: 36px;
+    margin: 20px;
+    clear: both;
+}
+h3 {
+    font-family: 'Felipa';
+    margin-bottom: 0px;
+    margin-top: 15px;
+    font-size: 24px;
+}
+hr {
+    clear: both;
+}
+ul {
+    margin: 0px 10% 0px;
+}
+li {
+    margin: 3px;
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+}
+.TH06 {
+    background-color: #ff2400;
+}
+.TH07 {
+    background-color: #ff8ed2;
+}
+.TH08 {
+    color: white;
+    background-color: #339;
+}
+.TH09 {
+    background-color: #009973;
+}
+.TH10 {
+    background-color: #96b300;
+}
+.TH11 {
+    color: white;
+    background-color: #591400;
+}
+.TH12 {
+    color: white;
+    background-color: #4169e1;
+}
+.TH128 {
+    background-color: #00c8c8;
+}
+.TH13 {
+    background-color: #4a808c;
+}
+.TH14 {
+    background-color: #a77;
+}
+.TH15 {
+    color: white;
+    background-color: #6a47be;
+}
+.TH16 {
+    color: white;
+    background-color: #176e0e;
+}
+.TH17 {
+    color: white;
+    background-color: #190e0e;
+}
+.border {
+    border: 1px solid black;
+    margin-bottom: 15px;
+}
+.tooltip {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+}
+.dropdown_content > p {
+    margin: 4px;
+}
+.dropdown_content:hover .dropdown_content {
+    display: block;
+}
+.wrap {
+    border: 1px solid #000;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    font: 14px verdana,sans-serif;
+}
+#wrap {
+    padding-left: 15px;
+    padding-right: 15px;
+    opacity: 0.8;
+}
+#contents_div {
+    display: inline-block;
+}
+#nav {
+    margin-bottom: 5px;
+}
+#hy_container {
+    float: right;
+}
+#hy {
+    object-position: -512px 0px;
+    object-fit: none;
+    width: 120px;
+    height: 16px;
+}
+#hy_container {
+    position: relative;
+    float: right;
+}
+#hy_container .tooltip {
+    width: 150px;
+    left: 0%;
+}
+#hy_container:hover .tooltip {
+    visibility: visible;
+}
+#timezone {
+    font-weight: bold;
+}
+#ack {
+    font: 11px verdana,sans-serif;
+    text-align: right;
+    background: none;
+    position: fixed;
+    color: white;
+    bottom: 5px;
+    right: 5px;
+}
+#ack_br, #ack_mobile, #route, #season {
+    display: none;
+}
+#ack > a:link {
+    color: #1e90ff;
+}
+#ack > a:active {
+    color: red;
+}
+#ack > a:visited {
+    color: #ff69b4;
+}
+#results_2020 td, #schedule_table td {
+    border-top: 1px solid black;
+}
+@media only screen and (min-width:800px) and (max-width:1400px) {
+    #wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
+@media only screen and (max-width:800px) {
+    #wrap {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+@media only screen and (min-width:320px) and (max-width:800px) and (orientation:portrait) {
+    #wrap {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 11px;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+}
+@media only screen and (min-width:480px) and (max-width:640px) and (orientation:landscape) {
+    #wrap {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 11px;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+}
