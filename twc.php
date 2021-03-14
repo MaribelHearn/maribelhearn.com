@@ -56,7 +56,7 @@
 					</p>
 					<p>
 						<img src='assets/flags/jp16x16.png' alt='Flag of Japan'>
-						Japanese commentary stream (coming soon)
+						<a href='https://www.youtube.com/channel/UCfF3O4wo0YxppTZGmtTGDwg'>Japanese commentary stream (YouTube)</a>
 					</p>
 					<p>
 						<img src='assets/flags/ru16x16.png' alt='Flag of the Russian Federation'>
