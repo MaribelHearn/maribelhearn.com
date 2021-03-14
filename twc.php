@@ -77,6 +77,7 @@
 							<th rowspan='3'>Date/Time</th>
 							<th rowspan='3'>Category</th>
 							<th rowspan='3'>Players</th>
+							<th rowspan='3'>Reset Time<br>(minutes)</th>
 						</tr>
 					</thead>
 					<tbody id='schedule_tbody'>
