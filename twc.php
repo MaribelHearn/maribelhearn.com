@@ -106,8 +106,9 @@
 				<h4>Touhou 7</h4>
 				<p>A border break is considered a death in survival runs.</p>
 				<h4>Touhou 8</h4>
-				<p>Getting hit during a Last Spell is not considered a death in survival runs.
-				However, ISCORE gives a higher base value in this game to runs that capture all spells AND do not die/bomb
+				<p>Getting hit during a Last Spell is <strong>not</strong> considered a death in survival runs.
+				However, ISCORE gives a higher base value in this game to runs that capture all spells
+				(which includes unlocking and capturing <strong>every</strong> Last Spell) AND do not die/bomb (NN + Full-SC).
 				(NN + Full-SC).</p>
 				<h4>Touhou 12</h4>
 				<p>Summoning a UFO is considered a death in survival runs.
