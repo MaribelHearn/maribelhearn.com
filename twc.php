@@ -52,7 +52,9 @@
 					</p>
 					<p>
 						<img src='assets/flags/cn16x16.png' alt='Flag of the P.R.C.'>
-						Chinese commentary stream (coming soon)
+						<a href='https://live.bilibili.com/22478102?share_source=copy_link'>Chinese commentary stream 1 (Bilibili)</a><br>
+						<img src='assets/flags/cn16x16.png' alt='Flag of the P.R.C.'>
+						<a href='https://live.bilibili.com/14315174?share_source=copy_link'>Chinese commentary stream 2 (Bilibili)</a>
 					</p>
 					<p>
 						<img src='assets/flags/jp16x16.png' alt='Flag of Japan'>
