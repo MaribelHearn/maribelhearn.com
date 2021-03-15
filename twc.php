@@ -35,7 +35,7 @@
 				first held in 2020, organised by the Chinese gameplay community.
 				This time around, in 2021, it is organised by the Western gameplay community.</p>
 				<p>Three teams, a Western community team, a Chinese team, and a Japanese team, duke it out
-				on Lunatic and Extra mode, playing both for high score and survival.</p>
+				on Lunatic and Extra mode, playing on live streams and playing both high score and survival.</p>
 				<p>See below for official communication channels, live streams with commentary, the schedule, and the rules the players play by.</p>
 				<div id='links'>
 					<p>
