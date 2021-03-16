@@ -85,7 +85,7 @@
 					<tbody id='schedule_tbody'>
 					</tbody>
 				</table>
-				<h2>Rules</h2>
+				<h2 id='rules'>Rules</h2>
 				<h3>Format</h3>
 				<p>For every match, each team can earn points. Ranking is based on whoever has the most points:</p>
 				<ul>
