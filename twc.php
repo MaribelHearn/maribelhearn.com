@@ -72,7 +72,7 @@
                 </div>
 				<h2 id='schedule'>Schedule</h2>
 				<p>Your time zone was detected as <span id='timezone'></span>.</p>
-				<p>Note that if your country starts Daylight Saving Time (also known as Summer Time or DST) during the competition, the matches after that point will be shifted by 1 hour for you.</p>
+				<p>Daylight Saving Time (also known as Summer Time or DST) is taken into account automatically.</p>
 				<table id='schedule_table'>
 					<thead>
 						<tr>
@@ -94,6 +94,8 @@
 					<li>3rd place - 0 pts</li>
 				</ul>
 				<p>In 2-team matches, the first place gets 2 points, and 2nd place gets 1 point.</p>
+				<p>If multiple players have the exact same amount of ISCORE, their points will be split equally.
+				This also means that, if multiple players have the highest ISCORE, the match ends in a tie.</p>
 				<p>At the end of the World Cup, the teams will be ranked based on has the most points.</p>
 				<h3>Calculating Points</h3>
 				<p>The points are based on the <a href='https://www.isndes.com/jf'>ISCORE calculator</a>.</p>
@@ -108,7 +110,7 @@
 				<h4>Touhou 8</h4>
 				<p>Getting hit during a Last Spell is <strong>not</strong> considered a death in survival runs.
 				However, ISCORE gives a higher base value in this game to runs that capture all spells
-				(which includes unlocking and capturing <strong>every</strong> Last Spell) AND do not die/bomb (NN + Full-SC).</p>
+				(which includes unlocking and capturing <strong>every</strong> Last Spell) AND do not die/bomb (NN + Full-SC).same </p>
 				<h4>Touhou 12</h4>
 				<p>Summoning a UFO is considered a death in survival runs.
 				However, collecting tokens does not affect the score in survival runs.</p>
