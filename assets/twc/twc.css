@@ -84,6 +84,12 @@ table {
     border: 1px solid black;
     margin-bottom: 15px;
 }
+.flag {
+    display: inline-block;
+}
+.language {
+    margin-top: 0px;
+}
 .tooltip {
     visibility: hidden;
     background-color: black;
@@ -119,8 +125,10 @@ table {
 #nav {
     margin-bottom: 5px;
 }
-#hy_container {
-    float: right;
+#languages {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 #hy {
     object-position: -512px 0px;

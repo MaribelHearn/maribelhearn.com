@@ -9,58 +9,6 @@ if (empty($_GET['hl']) && !isset($_COOKIE['lang']) || $_GET['hl'] == 'en') {
 } else if ($_GET['hl'] == 'zh') {
     $lang = 'Chinese';
 }
-function tl_game(string $game, string $lang) {
-    if ($lang == 'Japanese') {
-        $game = trim($game);
-        switch ($game) {
-            case 'HRtP': return '靈';
-            case 'SoEW': return '封';
-            case 'PoDD': return '夢';
-            case 'LLS': return '幻';
-            case 'MS': return '怪';
-            case 'EoSD': return '紅';
-            case 'PCB': return '妖';
-            case 'IN': return '永';
-            case 'PoFV': return '花';
-            case 'MoF': return '風';
-            case 'SA': return '地';
-            case 'UFO': return '星';
-            case 'DS': return 'DS';
-            case 'GFW': return '大';
-            case 'TD': return '神';
-            case 'DDC': return '輝';
-            case 'LoLK': return '紺';
-            case 'HSiFS': return '天';
-            case 'WBaWC': return '鬼';
-            default: return $game;
-        }
-    } else if ($lang == 'Chinese') {
-        $game = trim($game);
-        switch ($game) {
-            case 'HRtP': return '灵';
-            case 'SoEW': return '封';
-            case 'PoDD': return '梦';
-            case 'LLS': return '幻';
-            case 'MS': return '怪';
-            case 'EoSD': return '红';
-            case 'PCB': return '妖';
-            case 'IN': return '永';
-            case 'PoFV': return '花';
-            case 'MoF': return '风';
-            case 'SA': return '地';
-            case 'UFO': return '星';
-            case 'GFW': return '大';
-            case 'TD': return '神';
-            case 'DDC': return '辉';
-            case 'LoLK': return '绀';
-            case 'HSiFS': return '天';
-            case 'WBaWC': return '鬼';
-            default: return $game;
-        }
-    } else {
-        return $game;
-    }
-}
 function tl_char(string $char, string $lang) {
     if ($lang == 'Japanese') {
         switch ($char) {
