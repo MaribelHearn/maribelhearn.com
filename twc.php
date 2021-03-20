@@ -130,9 +130,6 @@
 				<h3>Use of Third Party Software &amp; Material</h3>
 				<p>Vsync patch is allowed. Practice patches (such as thprac) are allowed,
 				but all practice cheats have to be disabled for the runs.</p>
-				<p>Score players are encouraged use the counterstop patch to show their "actual" score.
-				This is especially relevant in Touhou 12 and 17. This makes the job easier for the main broadcaster,
-				and easier to understand for the viewers.</p>
 				<p>Visual patches (e.g. hitbox patch) are prohibited. Translation patches are allowed but discouraged.
 				Audio patches/background music is allowed but no copyrighted material.</p>
 				<h3>Other Rules</h3>
