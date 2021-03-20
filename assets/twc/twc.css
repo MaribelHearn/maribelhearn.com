@@ -25,7 +25,7 @@ hr {
     clear: both;
 }
 ul {
-    margin: 0px 10% 0px;
+    margin: 0px 0px 25px 0px;
 }
 li {
     margin: 3px;
@@ -170,6 +170,9 @@ table {
 }
 #ack > a:visited {
     color: #ff69b4;
+}
+#ack_container > p {
+    margin: 4px;
 }
 #results_2020 td, #schedule_table td {
     border-top: 1px solid black;

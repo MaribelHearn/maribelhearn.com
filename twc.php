@@ -490,7 +490,7 @@
 					<?php
 						if ($lang != 'Japanese') {
 							echo '<li>Runs only count from the moment the timer has started.</li>' .
-							'<li>Players can start as many runs as they want during the match.' .
+							'<li>Players can start as many runs as they want during the match. ' .
 							'When the timer has finished on stream, no new runs can be started anymore.</li>' .
 							'<li>The players have to stream their gameplay. Just stream game footage: ' .
 							'no overlay that shapes/crops the stream.</li>' .
@@ -510,16 +510,27 @@
 						}
 					?>
 				</ul>
-                <p id='ack_mobile'>
-					<?php
-						if ($lang == 'English') { echo 'The background image was drawn by ' .
-						'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>.'; }
-						else if ($lang == 'Japanese') { echo '背景イメージは' .
-						'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>さんのものを使用させていただいております。'; }
-						else { echo 'The background image was drawn by ' .
-						'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>.'; }
-					?>
-				</p>
+				<div id='ack_container'>
+					<p id='jptlcredit'>
+						<?php
+							if ($lang == 'English') { echo 'The Japanese translation was done by ' .
+							'<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.'; }
+							else if ($lang == 'Japanese') { echo '<a href="https://twitter.com/toho_yumiya">ゆーみや</a>' .
+							'によって日本語に翻訳されました。'; }
+							else { echo '本页面由<a href="https://twitter.com/toho_yumiya">ゆーみや</a>日语翻译。'; }
+						?>
+					</p>
+	                <p id='ack_mobile'>
+						<?php
+							if ($lang == 'English') { echo 'The background image was drawn by ' .
+							'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>.'; }
+							else if ($lang == 'Japanese') { echo '背景イメージは' .
+							'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>さんのものを使用させていただいております。'; }
+							else { echo 'The background image was drawn by ' .
+							'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>.'; }
+						?>
+					</p>
+				</div>
                 <p id='back'><strong><a id='backtotop' href='#top'><?php
 					if ($lang == 'English') { echo 'Back to Top'; }
 					else if ($lang == 'Japanese') { echo '上に帰る'; }
