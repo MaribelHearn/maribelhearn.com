@@ -45,34 +45,35 @@ function getClientTimeZone() {
     return timezone;
 }
 
-function calcISCORE() {
-    var challenge = $("#challenge").val();
+function setLanguage(event) {
+    newLanguage = event.data.language;
 
-    if (challenge == "Survival") {
-
-    } else { // Scoring
-
+    if (language == newLanguage) {
+        return;
     }
 
-    $("#iscore").html("ISCORE: " + " <strong>" + points + "</strong>!");
+    language = newLanguage;
+    setCookie("lang", newLanguage);
+    location.href = location.href.split('#')[0].split('?')[0];
 }
 
 $(document).ready(function () {
+    if (getCookie("lang") == "Japanese" || location.href.contains("jp")) {
+        language = "Japanese";
+    }
+    /*else if (getCookie("lang") == "Chinese" || location.href.contains("zh")) {
+        language = "Chinese";
+    }*/
+
     $.get("assets/json/schedule.json", function (data) {
         printSchedule(data);
     }, "json");
 
-    if (getCookie("lang") == "Japanese" || location.href.contains("jp")) {
-        language = "Japanese";
-        notation = "YMD";
-    } else if (getCookie("lang") == "Chinese" || location.href.contains("zh")) {
-        language = "Chinese";
-        notation = "YMD";
-    } else if (getCookie("datenotation") == "MDY" || location.href.contains("en-us")) {
-        notation = "MDY";
-    }
-
-    $("#top").attr("lang", langCode(language, notation));
+    $("#top").attr("lang", langCode(language, false));
     $("#timezone").html(getClientTimeZone());
     $("#calculate").on("click", calcISCORE);
+    $(".flag").attr("href", "");
+    $("#en").on("click", {language: "English"}, setLanguage);
+    $("#jp").on("click", {language: "Japanese"}, setLanguage);
+    //$("#zh").on("click", {language: "Chinese"}, setLanguage);
 });
