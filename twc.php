@@ -268,7 +268,7 @@
 				<p><?php
 					if ($lang == 'English') {
 						echo 'The points are based on the ' .
-						'<a href="https://www.isndes.com/jf">ISCORE calculator</a> (see the "About ISCORE" link' .
+						'<a href="https://www.isndes.com/jf">ISCORE calculator</a> (see the "About ISCORE" link ' .
 						'in the top right after changing to English via the language icon, fourth from the right).';
 					}
 					else if ($lang == 'Japanese') {
@@ -277,7 +277,7 @@
 					}
 					else {
 						echo 'The points are based on the ' .
-						'<a href="https://www.isndes.com/jf">ISCORE calculator</a> (see the "About ISCORE" link' .
+						'<a href="https://www.isndes.com/jf">ISCORE calculator</a> (see the "About ISCORE" link ' .
 						'in the top right after changing to English via the language icon, fourth from the right).';
 					}
 				?></p>
@@ -470,14 +470,14 @@
 				?></p>
 				<p><?php
 					if ($lang == 'English') {
-						echo 'Visual patches (e.g. hitbox patch) are prohibited. Translation patches are allowed but discouraged.' .
+						echo 'Visual patches (e.g. hitbox patch) are prohibited. Translation patches are allowed but discouraged. ' .
 						'Audio patches/background music is allowed but no copyrighted material.';
 					} else if ($lang == 'Japanese') {
 						echo '視覚面の変更を行うパッチ（当たり判定表示パッチなど）の使用は禁止されています。' .
 						'翻訳パッチの使用は許可されていますが、非推奨です。オーディオパッチ（BGMの差し替え）' .
 						'の使用は許可されていますが、ゲーム中もしくは著作権フリー以外の音楽の使用は禁止されています。';
 					} else {
-						echo 'Visual patches (e.g. hitbox patch) are prohibited. Translation patches are allowed but discouraged.' .
+						echo 'Visual patches (e.g. hitbox patch) are prohibited. Translation patches are allowed but discouraged. ' .
 						'Audio patches/background music is allowed but no copyrighted material.';
 					}
 				?></p>
