@@ -60,10 +60,9 @@ function setLanguage(event) {
 $(document).ready(function () {
     if (getCookie("lang") == "Japanese" || location.href.contains("jp")) {
         language = "Japanese";
-    }
-    /*else if (getCookie("lang") == "Chinese" || location.href.contains("zh")) {
+    } else if (getCookie("lang") == "Chinese" || location.href.contains("zh")) {
         language = "Chinese";
-    }*/
+    }
 
     $.get("assets/json/schedule.json", function (data) {
         printSchedule(data);
@@ -75,5 +74,5 @@ $(document).ready(function () {
     $(".flag").attr("href", "");
     $("#en").on("click", {language: "English"}, setLanguage);
     $("#jp").on("click", {language: "Japanese"}, setLanguage);
-    //$("#zh").on("click", {language: "Chinese"}, setLanguage);
+    $("#zh").on("click", {language: "Chinese"}, setLanguage);
 });
