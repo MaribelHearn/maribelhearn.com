@@ -1,13 +1,14 @@
 <?php
 if (isset($_COOKIE['lang'])) {
     $lang = str_replace('"', '', $_COOKIE['lang']);
-}
-if (empty($_GET['hl']) && !isset($_COOKIE['lang']) || $_GET['hl'] == 'en') {
-    $lang = 'English';
-} else if ($_GET['hl'] == 'jp') {
-    $lang = 'Japanese';
-} else if ($_GET['hl'] == 'zh') {
-    $lang = 'Chinese';
+} else {
+    if (empty($_GET['hl']) && !isset($_COOKIE['lang']) || $_GET['hl'] == 'en') {
+        $lang = 'English';
+    } else if ($_GET['hl'] == 'jp') {
+        $lang = 'Japanese';
+    } else if ($_GET['hl'] == 'zh') {
+        $lang = 'Chinese';
+    }
 }
 function tl_char(string $char, string $lang) {
     if ($lang == 'Japanese') {

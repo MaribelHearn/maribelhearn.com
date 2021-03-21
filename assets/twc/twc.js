@@ -70,7 +70,6 @@ $(document).ready(function () {
 
     $("#top").attr("lang", langCode(language, false));
     $("#timezone").html(getClientTimeZone());
-    $("#calculate").on("click", calcISCORE);
     $(".flag").attr("href", "");
     $("#en").on("click", {language: "English"}, setLanguage);
     $("#jp").on("click", {language: "Japanese"}, setLanguage);
