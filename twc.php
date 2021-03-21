@@ -279,7 +279,7 @@
 						echo '积分使用<a href="https://www.isndes.com/jf">甜品站积分计</a>' .
 						'算器计算，计算公式可上甜品站查看，大战争避弹除外（后述）。';
 					} else if ($lang == 'Japanese') {
-						echo '各試合で獲得するISCOREはISCORE Calculatorにより定められます。' .
+						echo '各試合で獲得するISCOREは<a href="https://www.isndes.com/jf">ISCORE Calculator</a>により定められます。' .
 						'(画面右上、右から4番目の「A文」と書かれたマークからEnglishに変更後、画面右上のAbout ISCOREの欄を参照)';
 					} else {
 						echo 'The points are based on the ' .
