@@ -97,6 +97,9 @@
                             <p class='link'>
                                 <a href='twc'><img class='icon twc_icon' src='assets/shared/icon_sheet.png' alt='Touhou World Cup icon'>
                                 Touhou World Cup</a>
+                                <img src='assets/flags/jp16x16.png' width='16' height='16' alt='Flag of Japan' title='Japanese'>
+                                <img src='assets/flags/cn16x16.png' width='16' height='16' alt='Flag of the P.R.C.' title='Chinese (Simplified)'>
+                                <img src='assets/flags/ru16x16.png' width='16' height='16' alt='Flag of the Russian Federation' title='Russian'>
                                 <span class='tooltip'>Main webpage for Touhou World Cup, containing the schedule, rules and other relevant information.</span>
                             </p>
                         </div>

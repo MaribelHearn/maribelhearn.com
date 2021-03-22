@@ -65,12 +65,12 @@ function format_lm(string $lm, string $lang) {
     }
 }
 function player_search(string $lang) {
-    if ($lang == 'English') {
-        return 'Player Search';
+    if ($lang == 'Chinese') {
+        return '玩家LNN';
     } else if ($lang == 'Japanese') {
         return '個人のLNN';
     } else {
-        return '玩家LNN';
+        return 'Player Search';
     }
 }
 function replay_path(string $game, string $player, string $shot) {

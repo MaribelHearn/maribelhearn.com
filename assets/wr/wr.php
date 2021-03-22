@@ -69,7 +69,7 @@ function format_lm(string $lm, string $lang, string $notation) {
         return '<span id="lm">' . date_tl($lm, 'YMD') . '</span>現在の世界記録です。';
     } else if ($lang == 'Chinese') {
         return '世界记录更新于<span id="lm">' . date_tl($lm, 'YMD') . '</span>。';
-    } else if ($lang == 'English') {
+    } else {
         if ($notation == 'DMY') {
             return 'World records are current as of <span id="lm">' . $lm . '</span>.';
         } else {
@@ -126,12 +126,12 @@ function game_tl(string $game, string $lang) {
     return $game;
 }
 function player_search(string $lang) {
-    if ($lang == 'English') {
-        return 'Player Search';
+    if ($lang == 'Chinese') {
+        return '玩家WR';
     } else if ($lang == 'Japanese') {
         return '個人のWR';
     } else {
-        return '玩家WR';
+        return 'Player Search';
     }
 }
 foreach ($wr as $game => $value) {

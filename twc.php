@@ -12,7 +12,7 @@
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
         <meta name='description' content='Main webpage for Touhou World Cup, containing the schedule, rules and other relevant information.'>
-        <meta name='keywords' content='touhou, touhou project, 東方, 东方, world cup, touhou world cup, twc, 2020, 2021, competition, scoring, survival, tournament'>
+        <meta name='keywords' content='touhou, touhou project, 東方, 东方, Тохо, world cup, touhou world cup, twc, 2020, 2021, competition, scoring, survival, tournament'>
 		<link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=twc'>
 		<link rel='icon' type='image/x-icon' href='assets/twc/twc.ico'>
@@ -33,6 +33,8 @@
 							'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>'; }
 							else if ($lang == 'Japanese') { echo '背景イメージは' .
 							'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>さんのものを使用させていただいております'; }
+							else if ($lang == 'Russian') { echo 'Иллюстрацию на фоне нарисовал(а) ' .
+							'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>'; }
 							else { echo '背景画师：' .
 							'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>'; }
 						?>
@@ -54,6 +56,10 @@
 	                        <img src='assets/flags/china.png' alt='<?php echo tl_term('Flag of the P.R.C.', $lang) ?>'>
 	                        <p class='language'>简体中文</p>
 	                    </a>
+	                    <a id='ru' class='flag' href='twc?hl=ru'>
+	                        <img src='assets/flags/russia.png' alt='<?php echo tl_term('Flag of the Russian Federation', $lang) ?>'>
+	                        <p class='language'>Русский</p>
+	                    </a>
 		            </div>
 				</div>
                 <p id='ack'></p>
@@ -70,12 +76,19 @@
 						'第2回となる2021年は西洋の東方コミュニティ主催により開催されます。</p>' .
 						'<p>各試合は中国、日本、西洋3チームのオンライン同時並走により行われ、難易度Lunatic、' .
 						'Extraのスコアアタック部門やサバイバル部門で競い合います。</p>' .
-						'<p>公式ツイッター及びYouTubeチャンネル、各言語による解説音声付き配信チャンネル、スケジュール、プレイヤー一覧は以下をご覧ください。</p>';
+						'<p>公式ツイッター及びYouTubeチャンネル、各言語による解説音声付き配信チャンネル、' .
+						'スケジュール、プレイヤー一覧は以下をご覧ください。</p>';
+					} else if ($lang == 'Russian') {
+						echo '<p><strong>Touhou World Cup (TWC)</strong> - ежегодное международное состязание по шмапам Тохо, ' .
+						'впервые проведено в 2020 году китайским сообществом. В этот раз, в 2021, ивент организовывает западное ' .
+						'сообщество.</p><p>Три команды, Запад, Китай, и Япония сражаются в режимах Лунатика и Экстры, ' .
+						'и играют вживую на стримах, как на очки, так и на выживание. ' .
+						'официальные каналы, стримы, расписание и правила.</p>';
 					} else {
-						echo '<strong>Touhou World Cup (TWC)</strong> is an annual international Touhou shooting game competition,' .
-						'first held in 2020, organised by the Chinese gameplay community.' .
+						echo '<strong>Touhou World Cup (TWC)</strong> is an annual international Touhou shooting game competition, ' .
+						'first held in 2020, organised by the Chinese gameplay community. ' .
 						'This time around, in 2021, it is organised by the Western gameplay community.</p>' .
-						'<p>Three teams, a Western community team, a Chinese team, and a Japanese team, duke it out' .
+						'<p>Three teams, a Western community team, a Chinese team, and a Japanese team, duke it out ' .
 						'on Lunatic and Extra mode, playing on live streams and playing both high score and survival.</p>' .
 						'<p>See below for official communication channels, live streams with commentary, the schedule, ' .
 						'and the rules the players play by.</p>';
@@ -86,78 +99,86 @@
 						echo '<p><img class="icon twitter_icon" src="assets/shared/icon_sheet.png" alt="Twitter icon">';
 						if ($lang == 'Chinese') { echo '<a href="https://twitter.com/touhouworldcup">TWC的官方推特</a>'; }
 						else if ($lang == 'Japanese') { echo '<a href="https://twitter.com/touhouworldcup">公式ツイッター</a>'; }
+						else if ($lang == 'Russian') { echo '<a href="https://twitter.com/touhouworldcup">Оффициальный Твиттер TWC</a>'; }
 						else { echo '<a href="https://twitter.com/touhouworldcup">Official TWC Twitter</a>'; }
-						echo '</p><p><img class="icon youtube_icon" src="assets/shared/icon_sheet.png" alt="YouTube icon">';
+						echo '</p><p><img class="icon youtube_icon" src="assets/shared/icon_sheet.png" alt="YouTube icon">' .
+						'<a href="https://www.youtube.com/channel/UCk8o-jk-Zpn4CEmLUIkui0A">';
+						if ($lang == 'Chinese') { echo 'TWC的官方YouTube频道'; }
+						else if ($lang == 'Japanese') { echo '公式YouTubeチャンネル'; }
+						else if ($lang == 'Russian') { echo 'Оффициальный канал TWC на Youtube'; }
+						else { echo 'Official TWC YouTube Channel'; }
+						echo '</a></p><p><img src="assets/flags/uk16x16.png" alt="Flag of the United Kingdom">' .
+						'<a href="https://www.twitch.tv/touhou_replay_showcase">';
+						if ($lang == 'Chinese') { echo '英文流解说（Twitch）'; }
+						else if ($lang == 'Japanese') { echo '英語解説付き配信チャンネル(Twitch)'; }
+						else if ($lang == 'Russian') { echo 'Английский стрим (Twitch)'; }
+						else { echo 'English commentary stream (Twitch)'; }
+						echo '</a></p><p><img src="assets/flags/cn16x16.png" alt="Flag of the P.R.C.">' .
+						'<a href="https://live.bilibili.com/22478102?share_source=copy_link">';
+						if ($lang == 'Chinese') { echo '一号中文流解说（Bilibili)'; }
+						else if ($lang == 'Japanese') { echo '中国語解説付き配信チャンネル１(Bilibili)'; }
+						else if ($lang == 'Russian') { echo 'Китайский стрим 1 (Bilibili)'; }
+						else { echo 'Chinese commentary stream 1 (Bilibili)'; }
+						echo '</a><br><img src="assets/flags/cn16x16.png" alt="Flag of the P.R.C.">' .
+						'<a href="https://live.bilibili.com/14315174?share_source=copy_link">';
 						if ($lang == 'Chinese') {
-							echo '<a href="https://www.youtube.com/channel/UCk8o-jk-Zpn4CEmLUIkui0A">TWC的官方YouTube频道</a>';
+							echo '二号中文流解说（Bilibili)';
 						} else if ($lang == 'Japanese') {
-							echo '<a href="https://www.youtube.com/channel/UCk8o-jk-Zpn4CEmLUIkui0A">公式YouTubeチャンネル</a>';
+							echo '中国語解説付き配信チャンネル２(Bilibili)';
+						} else if ($lang == 'Russian') {
+							echo 'Китайский стрим 2 (Bilibili)';
 						} else {
-							echo '<a href="https://www.youtube.com/channel/UCk8o-jk-Zpn4CEmLUIkui0A">Official TWC YouTube Channel</a>';
+							echo 'Chinese commentary stream 2 (Bilibili)';
 						}
-						echo '</p><p><img src="assets/flags/uk16x16.png" alt="Flag of the United Kingdom">';
+						echo '</a></p><p><img src="assets/flags/jp16x16.png" alt="Flag of Japan">' .
+						'<a href="https://www.youtube.com/channel/UCfF3O4wo0YxppTZGmtTGDwg">';
 						if ($lang == 'Chinese') {
-							echo '<a href="https://www.twitch.tv/touhou_replay_showcase">英文流解说（Twitch）</a>';
+							echo '日文流解说（YouTube）';
 						} else if ($lang == 'Japanese') {
-							echo '<a href="https://www.twitch.tv/touhou_replay_showcase">英語解説付き配信チャンネル(Twitch)</a>';
+							echo '日本語解説付き配信チャンネル';
+						} else if ($lang == 'Russian') {
+							echo 'Японский стрим (Youtube)';
 						} else {
-							echo '<a href="https://www.twitch.tv/touhou_replay_showcase">English commentary stream (Twitch)</a>';
+							echo 'Japanese commentary stream (YouTube)';
 						}
-						echo '</p><p><img src="assets/flags/cn16x16.png" alt="Flag of the P.R.C.">';
+						echo '</a></p><p><img src="assets/flags/ru16x16.png" alt="Flag of the Russian Federation">' .
+						'<a href="https://www.twitch.tv/touhou_russian_kolkhoz">';
 						if ($lang == 'Chinese') {
-							echo '<a href="https://live.bilibili.com/22478102?share_source=copy_link">一号中文流解说（Bilibili)</a><br>';
+							echo '俄文流解说（Twitch）';
 						} else if ($lang == 'Japanese') {
-							echo '<a href="https://live.bilibili.com/22478102?share_source=copy_link">中国語解説付き配信チャンネル１(Bilibili)</a><br>';
+							echo 'ロシア語解説付き配信チャンネル';
+						} else if ($lang == 'Russian') {
+							echo 'Русский стрим (Twitch)';
 						} else {
-							echo '<a href="https://live.bilibili.com/22478102?share_source=copy_link">Chinese commentary stream 1 (Bilibili)</a><br>';
+							echo 'Russian commentary stream (Twitch)';
 						}
-						echo '<img src="assets/flags/cn16x16.png" alt="Flag of the P.R.C.">';
-						if ($lang == 'Chinese') {
-							echo '<a href="https://live.bilibili.com/14315174?share_source=copy_link">二号中文流解说（Bilibili)</a>';
-						} else if ($lang == 'Japanese') {
-							echo '<a href="https://live.bilibili.com/14315174?share_source=copy_link">中国語解説付き配信チャンネル２(Bilibili)</a>';
-						} else {
-							echo '<a href="https://live.bilibili.com/14315174?share_source=copy_link">Chinese commentary stream 2 (Bilibili)</a>';
-						}
-						echo '</p><p><img src="assets/flags/jp16x16.png" alt="Flag of Japan">';
-						if ($lang == 'Chinese') {
-							echo '<a href="https://www.youtube.com/channel/UCfF3O4wo0YxppTZGmtTGDwg">日文流解说（YouTube）</a>';
-						} else if ($lang == 'Japanese') {
-							echo '<a href="https://www.youtube.com/channel/UCfF3O4wo0YxppTZGmtTGDwg">日本語解説付き配信チャンネル</a>';
-						} else {
-							echo '<a href="https://www.youtube.com/channel/UCfF3O4wo0YxppTZGmtTGDwg">Japanese commentary stream (YouTube)</a>';
-						}
-						echo '</p><p><img src="assets/flags/ru16x16.png" alt="Flag of the Russian Federation">';
-						if ($lang == 'Chinese') {
-							echo '<a href="https://www.twitch.tv/touhou_russian_kolkhoz">俄文流解说（Twitch）</a>';
-						} else if ($lang == 'Japanese') {
-							echo '<a href="https://www.twitch.tv/touhou_russian_kolkhoz">ロシア語解説付き配信チャンネル</a>';
-						} else {
-							echo '<a href="https://www.twitch.tv/touhou_russian_kolkhoz">Russian commentary stream (Twitch)</a>';
-						}
-						echo '</p>';
+						echo '</a></p>';
 					?>
 				</div>
                 <h2 id='contents'><?php
 					if ($lang == 'Chinese') { echo '目录'; }
 					else if ($lang == 'Japanese') { echo 'コンテンツ'; }
+					else if ($lang == 'Russian') { echo 'Содержание'; }
 					else { echo 'Contents'; }
 				?></h2>
                 <div id='contents_div' class='border'>
                     <p><a href='#schedule'><?php
 						if ($lang == 'Chinese') { echo '时间表'; }
 						else if ($lang == 'Japanese') { echo 'スケジュール'; }
+						else if ($lang == 'Russian') { echo 'Расписание'; }
 						else { echo 'Schedule'; }
 					?></a></p>
                     <p><a href='#rules'><?php
 						if ($lang == 'Chinese') { echo '规则'; }
 						else if ($lang == 'Japanese') { echo 'ルール'; }
+						else if ($lang == 'Russian') { echo 'Правила'; }
 						else { echo 'Rules'; }
 					?></a></p>
                 </div>
 				<h2 id='schedule'><?php
 					if ($lang == 'Chinese') { echo '时间表'; }
 					else if ($lang == 'Japanese') { echo 'スケジュール'; }
+					else if ($lang == 'Russian') { echo 'Расписание'; }
 					else { echo 'Schedule'; }
 				?></h2>
 				<p><?php
@@ -165,6 +186,8 @@
 						echo '我们检测到您的时区是<span id="timezone"></span>。';
 					} else if ($lang == 'Japanese') {
 						echo '表示されているタイムゾーンは<span id="timezone"></span>です。';
+					} else if ($lang == 'Russian') {
+						echo 'Ваш часовой пояс: <span id="timezone"></span>.';
 					} else {
 						echo 'Your time zone was detected as <span id="timezone"></span>.';
 					}
@@ -172,6 +195,8 @@
 				<p><?php
 					if ($lang == 'English') {
 						echo 'Daylight Saving Time (also known as Summer Time or DST) is taken into account automatically.';
+					} else if ($lang == 'Russian') {
+						echo 'Переход на летнее время также учитан автоматически.';
 					}
 				?></p>
 				<table id='schedule_table'>
@@ -180,21 +205,25 @@
 							<th rowspan='3'><?php
 								if ($lang == 'Chinese') { echo '日期/时间'; }
 								else if ($lang == 'Japanese') { echo '日付と時間'; }
+								else if ($lang == 'Russian') { echo 'Дата/Время'; }
 								else { echo 'Date/Time'; }
 							?></th>
 							<th rowspan='3'><?php
 								if ($lang == 'Chinese') { echo '项目'; }
 								else if ($lang == 'Japanese') { echo 'カテゴリー'; }
+								else if ($lang == 'Russian') { echo 'Категория'; }
 								else { echo 'Category'; }
 							?></th>
 							<th rowspan='3'><?php
 								if ($lang == 'Chinese') { echo '玩家'; }
 								else if ($lang == 'Japanese') { echo 'プレイヤー'; }
+								else if ($lang == 'Russian') { echo 'Игроки'; }
 								else { echo 'Players'; }
 							?></th>
 							<th rowspan='3'><?php
 								if ($lang == 'Chinese') { echo 'Reset Time<br>（分钟）'; }
 								else if ($lang == 'Japanese') { echo 'リセットのタイマー（分）'; }
+								else if ($lang == 'Russian') { echo 'Время на рестарт<br>(минуты)'; }
 								else { echo 'Reset Time<br>(minutes)'; }
 							?></th>
 						</tr>
@@ -205,11 +234,13 @@
 				<h2 id='rules'><?php
 					if ($lang == 'Chinese') { echo '规则'; }
 					else if ($lang == 'Japanese') { echo 'ルール'; }
+					else if ($lang == 'Russian') { echo 'Правила'; }
 					else { echo 'Rules'; }
 				?></h2>
 				<h3><?php
 					if ($lang == 'Chinese') { echo '比赛形式'; }
 					else if ($lang == 'Japanese') { echo '概要'; }
+					else if ($lang == 'Russian') { echo 'Формат'; }
 					else { echo 'Format'; }
 				?></h3>
 				<p><?php
@@ -218,6 +249,9 @@
 					} else if ($lang == 'Japanese') {
 						echo '各試合の順位によって各チームはポイントを獲得します。各試合の順位はISCORE（ISCOREについての欄を参照）' .
 						'の高い順に決定されます。獲得ポイントは以下の通りです。';
+					} else if ($lang == 'Russian') {
+						echo 'В каждом матче, каждая команда может набрать очки. ' .
+						'Рейтинг основан на том, у какой команды больше всего очков:';
 					} else {
 						echo 'For every match, each team can earn points. Ranking is based on whoever has the most points:';
 					}
@@ -226,16 +260,19 @@
 					<li><?php
 						if ($lang == 'Chinese') { echo '冠军：2总分(避免负分歧义)'; }
 						else if ($lang == 'Japanese') { echo '１位　２ポイント'; }
+						else if ($lang == 'Russian') { echo 'Первое место - 2 очка'; }
 						else { echo '1st place - 2 pts'; }
 					?></li>
 					<li><?php
 						if ($lang == 'Chinese') { echo '亚军：1总分'; }
 						else if ($lang == 'Japanese') { echo '２位　１ポイント'; }
+						else if ($lang == 'Russian') { echo 'Второе место - 1 очко'; }
 						else { echo '2nd place - 1 pt'; }
 					?></li>
 					<li><?php
 						if ($lang == 'Chinese') { echo '季军：0总分'; }
 						else if ($lang == 'Japanese') { echo '３位　０ポイント'; }
+						else if ($lang == 'Russian') { echo 'Третье место - 0 очков'; }
 						else { echo '3rd place - 0 pts'; }
 					?></li>
 				</ul>
@@ -244,6 +281,8 @@
 						echo '即使是二人战，双方也按照以上描述得分，不参与队伍算季军。';
 					} else if ($lang == 'Japanese') {
 						echo 'なお２チームのみが出場する試合においては、１位が２ポイント、２位が１ポイントの獲得となります。';
+					} else if ($lang == 'Russian') {
+						echo 'В матчах с двумя командами, первое место получает 2 очка, второе место получает 1.';
 					} else {
 						echo 'In 2-team matches, the first place gets 2 points, and 2nd place gets 1 point.';
 					}
@@ -255,6 +294,9 @@
 					} else if ($lang == 'Japanese') {
 						echo 'また、複数のチームが同じISCOREを獲得した場合は、チームへの獲得ポイントを分け合います' .
 						'（例：２チームが同じISCOREを獲得し１位となった場合、トータル３ポイントを分け合い1.5ポイントずつを獲得します）';
+					} else if ($lang == 'Russian') {
+						echo 'Если несколько игроков получают одинаковое количество ISCORE, их очки будут разделены пополам. ' .
+						'Это также означает что если у всех игроков получается одинаковый ISCORE, матч заканчивается ничьёй.';
 					} else {
 						echo 'If multiple players have the exact same amount of ISCORE, their points will be split equally. ' .
 						'This also means that, if multiple players have the highest ISCORE, the match ends in a tie.';
@@ -265,6 +307,8 @@
 						echo '在世界杯结束的时候，队伍将会按照积分排名。';
 					} else if ($lang == 'Japanese') {
 						echo '全試合終了後、獲得ポイントの多い順に順位が決定されます。';
+					} else if ($lang == 'Russian') {
+						echo 'В конце Touhou World Cup будет создан рейтинг команд по заработанным очкам.';
 					} else {
 						echo 'At the end of the World Cup, the teams will be ranked based on has the most points.';
 					}
@@ -272,6 +316,7 @@
 				<h3><?php
 					if ($lang == 'Chinese') { echo '计算积分'; }
 					else if ($lang == 'Japanese') { echo 'ISCOREについて'; }
+					else if ($lang == 'Russian') { echo 'Расчёт очков'; }
 					else { echo 'Calculating Points'; }
 				?></h3>
 				<p><?php
@@ -281,6 +326,9 @@
 					} else if ($lang == 'Japanese') {
 						echo '各試合で獲得するISCOREは<a href="https://www.isndes.com/jf">ISCORE Calculator</a>により定められます。' .
 						'(画面右上、右から4番目の「A文」と書かれたマークからEnglishに変更後、画面右上のAbout ISCOREの欄を参照)';
+					} else if ($lang == 'Russian') {
+						echo 'Очки основаны на <a href="https://www.isndes.com/jf">ISCORE калькуляторе</a> ' .
+						'(поменяйте язык на английский в правом верхнем углу и нажмите на About ISCORE).';
 					} else {
 						echo 'The points are based on the ' .
 						'<a href="https://www.isndes.com/jf">ISCORE calculator</a> (see the "About ISCORE" link ' .
@@ -294,16 +342,21 @@
 					} else if ($lang == 'English') {
 						echo 'Score matches are calculated based on the ISCORE formula. ' .
 						'Survival matches (except for GFW) are calculated as follows:';
+					} else if ($lang == 'Russian') {
+						echo 'Матчи скоринга расчитаны по калькулятору ISCORE. ' .
+						'Матчи на выживание (кроме Тохо 12.8) расчитаны так:';
 					}
 				?></p>
 				<p><tt><?php
 					if ($lang == 'Chinese') { echo '（甜品站积分 NMNB分数）*0.5^（死亡数）'; }
 					else if ($lang == 'Japanese') { echo '(ISCORE表内のNNの値)*0.5^(被弾数)'; }
+					else if ($lang == 'Russian') { echo '(ISCORE NN Score)*0.5^(смерти)'; }
 					else { echo '(ISCORE No Miss No Bomb Score)*0.5^(deaths)'; }
 				?></tt></p>
 				<p><?php
 					if ($lang == 'Chinese') { echo '全作避弹项目中，丢雷算2 miss。'; }
 					else if ($lang == 'Japanese') { echo 'サバイバルマッチではボムの使用は２被弾としてカウントされます。'; }
+					else if ($lang == 'Russian') { echo 'В матчах на выживание, бомбы считаются как 2 смерти.'; }
 					else { echo 'In survival runs, bombs are counted as 2 deaths.'; }
 				?></p>
 				<p><?php
@@ -312,6 +365,10 @@
 					} else if ($lang == 'Japanese') {
 						echo 'ISCOREはショットタイプによる性能の差を補完するために開発された評価手法です。'.
 						'計算方法は上記のAbout ISCOREからご覧いただけます。';
+					} else if ($lang == 'Russian') {
+						echo 'ISCORE это система измерения очков, которая создана для компенсации разницы между ' .
+						'сложностями разных типов стрельбы и категорий. Формулы можно найти в рубрике про ISCORE ' .
+						'с калькулятором по ссылке выше.';
 					} else {
 						echo 'ISCORE is a scoring metric that compensates for the differences in performance ' .
 						'between shot types and categories. The formulas used can be found in the ISCORE rubric ' .
@@ -321,6 +378,7 @@
 				<h3><?php
 					if ($lang == 'Chinese') { echo '额外提醒'; }
 					else if ($lang == 'Japanese') { echo '作品固有のルール'; }
+					else if ($lang == 'Russian') { echo 'Правила для определенных игр'; }
 					else { echo 'Game-specific Concerns'; }
 				?></h3>
 				<h4><?php
@@ -331,6 +389,7 @@
 				<p><?php
 					if ($lang == 'Chinese') { echo '灵击，无论主动还是被动，都算1 miss。'; }
 					else if ($lang == 'Japanese') { echo 'サバイバルマッチにおいて霊撃は被弾として扱われます。'; }
+					else if ($lang == 'Russian') { echo 'Разрыв бордера считается как смерть в матчах на выживание.'; }
 					else { echo 'A border break is considered a death in survival runs.'; }
 				?></p>
 				<h4><?php
@@ -341,13 +400,15 @@
 				<p><?php
 					if ($lang == 'Chinese') {
 						echo 'LSC被弹不算1 miss。积分只在LNN的情况下才考虑全卡，LNNFS会获得额外积分。';
-					}
-					else if ($lang == 'Japanese') {
+					} else if ($lang == 'Japanese') {
 						echo 'サバイバルマッチにおいて、ラストスペルでの被弾はISCOREに影響を与えません。'.
 						'ただし、全てのラストスペルを出現させ取得し、かつ、ノーミスノーボムを達成した場合にのみ、' .
 						'より高いISCOREが与えられます（ISCORE CalculatorのFull-SC欄を参照）。';
-					}
-					else {
+					} else if ($lang == 'Russian') {
+						echo 'Получение урона во время бонусных спеллов не считается смерть в матчах на выживание. ' .
+						'Однако ISCORE дает большее количество очков за забеги, в которых были захвачены все бонусные ' .
+						'спеллы И ОДНОВРЕМЕННО без бомб и смертей.';
+					} else {
 						echo 'Getting hit during a Last Spell is <strong>not</strong> considered a death in survival runs. '.
 						'However, ISCORE gives a higher base value in this game to runs that capture all spells ' .
 						'(which includes unlocking and capturing <strong>every</strong> Last Spell) AND do not die/bomb ' .
@@ -366,6 +427,8 @@
 						echo '开碟算1 miss。收碟碎片不影响miss数。';
 					} else if ($lang == 'Japanese') {
 						echo 'サバイバルマッチではUFOの召喚を被弾として扱います。ただし、ベントラーの取得はISCOREに影響を与えません。';
+					} else if ($lang == 'Russian') {
+						echo 'Призыв НЛО считается смертью в матчах на выживание. Однако, сбор НЛО-предметов не влияет на очки.';
 					} else {
 						echo 'Summoning a UFO is considered a death in survival runs. ' .
 						'However, collecting tokens does not affect the score in survival runs.';
@@ -380,6 +443,8 @@
 				<p><?php
 					if ($lang == 'Chinese') { echo '使用冰冻技能不算miss。避弹公式是（金牌数*1.5）-（miss数）。'; }
 					else if ($lang == 'Japanese') { echo 'この作品でのサバイバルマッチでの計算式は以下です。(金メダル獲得数*1.5)-(被弾数)'; }
+					else if ($lang == 'Russian') { echo 'Формула для выживания в этой игре считается следующим образом: ' .
+					'(золотые медали*1.5)-(смерти)'; }
 					else { echo 'The survival formula for this game is (gold medals*1.5)-(deaths).'; }
 				?></p>
 				<h4><?php
@@ -393,6 +458,10 @@
 					} else if ($lang == 'Japanese') {
 						echo '任意トランスはサバイバルマッチでは２被弾として扱われます。また、全スペルカードを取得し、' .
 						'かつ、ノーミスノーボムを達成した場合にのみ、より高いISCOREが与えられます（ISCORE CalculatorのFull-SC欄を参照）。';
+					} else if ($lang == 'Russian') {
+						echo 'Намеренный транс считается как 2 смерти в матчах на выживание. ' .
+						'ISCORE дает большее количество очков за забеги, в которых были захвачены все ' .
+						'спеллы И ОДНОВРЕМЕННО без бомб и смертей.';
 					} else {
 						echo 'A manual trance is considered 2 deaths in survival runs.' .
 						'ISCORE gives a higher base value in this game to runs that capture all spells AND does not die/bomb ' .
@@ -406,7 +475,9 @@
 				?></h4>
 				<p><?php
 					if ($lang == 'Chinese') { echo '避弹打分都必须使用传统模式。'; }
-					else if ($lang == 'Japanese') { echo 'サバイバルマッチ、スコアアタックマッチともに完全無欠モードでプレイすることは禁止されています。'; }
+					else if ($lang == 'Japanese') { echo 'サバイバルマッチ、' .
+					'スコアアタックマッチともに完全無欠モードでプレイすることは禁止されています。'; }
+					else if ($lang == 'Russian') { echo 'Все забеги должны быть выполнены в режиме Legacy.'; }
 					else { echo 'All runs in both survival/score have to be done in Legacy Mode.'; }
 				?></p>
 				<h4><?php
@@ -417,6 +488,7 @@
 				<p><?php
 					if ($lang == 'Chinese') { echo '季节释放算2 miss。'; }
 					else if ($lang == 'Japanese') { echo 'サバイバルマッチにおいて、季節解放は２被弾として扱われます。'; }
+					else if ($lang == 'Russian') { echo 'Высвобождение сезона считается как 2 смерти в матчах на выживание.'; }
 					else { echo 'Releasing your season gauge is considered 2 deaths in survival runs.'; }
 				?></p>
 				<h4><?php
@@ -430,6 +502,9 @@
 					} else if ($lang == 'Japanese') {
 						echo '同種の動物霊を３個以上集めることで発動する暴走ロアリングはサバイバルマッチでは２被弾として扱われます。' .
 						'また、ロアリング中の霊撃（ボムボタン押下または被弾によるもの）はサバイバルマッチでは１被弾として扱われます。';
+					} else if ($lang == 'Russian') {
+						echo 'Гипер берсерка (сбор 3 или более животных токенов для гипера) считается как 2 смерти в ' .
+						'матчах на выживание. Получение урона во время гипера считается как смерть в в матчах на выживание.';
 					} else {
 						echo 'Channeling a berserk roar (3 or more of the same animal tokens during roar mode) ' .
 						'is considered 2 deaths in survival runs. Breaking your roar ' .
@@ -439,6 +514,7 @@
 				<h3><?php
 					if ($lang == 'Chinese') { echo '使用额外软件'; }
 					else if ($lang == 'Japanese') { echo 'ツールやパッチの使用について'; }
+					else if ($lang == 'Russian') { echo 'Использование сторонного ПО.'; }
 					else { echo 'Use of Third Party Software &amp; Material'; }
 				?></h3>
 				<p><?php
@@ -447,6 +523,9 @@
 					} else if ($lang == 'Japanese') {
 						echo 'パッチの使用は許可されています。試合中の練習のためにプラクティスツール（thprac等）を使用することは許可されていますが、' .
 						'プラクティスツールを用いたプレイは無効とします。';
+					} else if ($lang == 'Russian') {
+						echo 'Vsync патч разрешен. Патчи для практики (например thprac) можно использовать, ' .
+						'но читы должны быть отключены во время забегов.';
 					} else {
 						echo 'Vsync patch is allowed. Practice patches (such as thprac) are allowed, ' .
 						'but all practice cheats have to be disabled for the runs.';
@@ -460,6 +539,9 @@
 						echo '視覚面の変更を行うパッチ（当たり判定表示パッチなど）の使用は禁止されています。' .
 						'翻訳パッチの使用は許可されていますが、非推奨です。オーディオパッチ（BGMの差し替え）' .
 						'の使用は許可されていますが、ゲーム中もしくは著作権フリー以外の音楽の使用は禁止されています。';
+					} else if ($lang == 'Russian') {
+						echo 'Визуальные патчи (например для показа хитбокса) запрещены. Патчи на перевод разрешены, ' .
+						'но нежелательны. Патчи на изменение аудио/музыки разрешены если они не нарушают авторских прав.';
 					} else {
 						echo 'Visual patches (e.g. hitbox patch) are prohibited. Translation patches are allowed but discouraged. ' .
 						'Audio patches/background music is allowed but no copyrighted material.';
@@ -468,6 +550,7 @@
 				<h3><?php
 					if ($lang == 'Chinese') { echo '其他规则'; }
 					else if ($lang == 'Japanese') { echo 'その他のルール'; }
+					else if ($lang == 'Russian') { echo 'Другие правила'; }
 					else { echo 'Other Rules'; }
 				?></h3>
 				<ul>
@@ -491,6 +574,15 @@
 							'その場合はゲーム内の各種情報を覆わないようにしてください。</li>' .
 							'<li>クリア後は必ずリプレイを保存してください。</li>' .
 							'<li>クリア後のエンディングは必ず隠してください。</li>';
+						} else if ($lang == 'Russian') {
+							echo '<li>Считаются только забеги которые начались после старта таймера.</li>' .
+							'<li>Игроки могут начать столько забегов, сколько захотят. Когда на стриме таймер остановлен, ' .
+							'начинать новый забег нельзя.</li><li>Игроки должны стримить свои забеги. Только стрим своей игры: ' .
+							'нельзя использовать оверлеи которые каким-то образом обрезают стрим</li>' .
+							'<li>Стримерам разрешено использовать оверлеи (такие как картинки, дисплей нажатых ' .
+							'клавиш, вебкамеры и т.д.) в своих стримах, но окно геймплея и всю информацию в интерфейсе ' .
+							'игры скрывать нельзя.</li><li>Законченные забеги должны быть сохранены в качестве реплея.</li>' .
+							'<li>Нельзя показывать концовку игры после забега.</li>';
 						} else {
 							echo '<li>Runs only count from the moment the timer has started.</li>' .
 							'<li>Players can start as many runs as they want during the match. ' .
@@ -511,7 +603,9 @@
 							'<a href="https://twitter.com/toho_yumiya">Yu-miya</a>日语翻译。'; }
 							else if ($lang == 'Japanese') { echo '<a href="https://twitter.com/toho_yumiya">ゆーみや</a>' .
 							'によって日本語に翻訳されました。'; }
-							else { echo 'The Japanese translation was done by <a href="https://twitter.com/toho_yumiya">ゆーみや</a>.'; }
+							else if ($lang == 'Russian') { echo 'Японский перевод сделал ' .
+							'<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.'; }
+							else { echo 'The Japanese translation was done by <a href="https://twitter.com/toho_yumiya">Yu-miya</a>.'; }
 						?>
 					</p>
 					<p id='cntlcredit'>
@@ -520,8 +614,22 @@
 							'<a href="https://space.bilibili.com/107846194">Komeiji Compiler</a>中文翻译。'; }
 							else if ($lang == 'Japanese') { echo '<a href="https://space.bilibili.com/107846194">' .
 							'Komeiji Compiler</a>によって中国語に翻訳されました。'; }
+							else if ($lang == 'Russian') { echo 'Китайский перевод сделал ' .
+							'<a href="https://space.bilibili.com/107846194">Komeiji Compiler</a>.'; }
 							else { echo 'The Simplified Chinese translation was done by ' .
 							'<a href="https://space.bilibili.com/107846194">Komeiji Compiler</a>.'; }
+						?>
+					</p>
+					<p id='rutlcredit'>
+						<?php
+							if ($lang == 'Chinese') { echo '本页面由' .
+							'<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>俄语翻译。'; }
+							else if ($lang == 'Japanese') { echo '<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>' .
+							'によってロシア語に翻訳されました。'; }
+							else if ($lang == 'Russian') { echo 'Русский перевод сделал ' .
+							'<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>.'; }
+							else { echo 'The Russian translation was done by ' .
+							'<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>.'; }
 						?>
 					</p>
 	                <p id='ack_mobile'>
@@ -530,6 +638,8 @@
 							'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>。'; }
 							else if ($lang == 'Japanese') { echo '背景イメージは' .
 							'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>さんのものを使用させていただいております。'; }
+							else if ($lang == 'Russian') { echo 'Иллюстрацию на фоне нарисовал(а) ' .
+							'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>.'; }
 							else { echo 'The background image was drawn by ' .
 							'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>.'; }
 						?>
