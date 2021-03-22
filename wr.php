@@ -38,14 +38,14 @@
     			<div id='topbar'>
     				<p id='ack'>
                         <?php
-                            if ($lang == 'English') {
-                                echo 'This background image was<br id="ack_br"> drawn by ' .
-                                '<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>';
+                            if ($lang == 'Chinese') {
+                                echo '背景画师：<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>';
                             } else if ($lang == 'Japanese') {
                                 echo '背景イメージは<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">' .
                                 'Catboyjeremie</a>さんのものを使用させていただいております';
                             } else {
-                                echo '背景画师：<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>';
+                                echo 'This background image was<br id="ack_br"> drawn by ' .
+                                '<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>';
                             }
                         ?>
     				</p>
@@ -85,44 +85,44 @@
                     }
                 ?>
                 <p id='description'><?php
-                    if ($lang == 'English') {
-                        echo 'An accurate list of Touhou world records, updated every so often. ' .
-                        'Note that the player ranking at the bottom does not take into account how strong specific records are, '.
-                        'only numbers. The list does not include scene games as of now.';
+                    if ($lang == 'Chinese') {
+                        echo '这个网页准确地记载所有「东方Project」的打分世界记录，时不时地更新。注意：页底的玩家排行榜只算玩家们得到的记录有多少，' .
+                        '并不算记录的强度。目前数据并不包括摄影游戏。';
                     } else if ($lang == 'Japanese') {
                         echo '東方原作STG各作品世界記録の正確なリストです。適宜頻繁に更新します。' .
                         '下部に記載されているプレイヤーランキングは特定のスコアの高低を示すものではなく、あくまで世' .
                         '界記録取得数を示したものですのでご留意ください。また今のところ文花帖のようなシーンを基準にするリストは作成しておりません。';
                     } else {
-                        echo '这个网页准确地记载所有「东方Project」的打分世界记录，时不时地更新。注意：页底的玩家排行榜只算玩家们得到的记录有多少，' .
-                        '并不算记录的强度。目前数据并不包括摄影游戏。';
+                        echo 'An accurate list of Touhou world records, updated every so often. ' .
+                        'Note that the player ranking at the bottom does not take into account how strong specific records are, '.
+                        'only numbers. The list does not include scene games as of now.';
                     }
                 ?></p>
                 <p id='clicktodl'><?php
-                    if ($lang == 'English') {
-                        echo 'Click a score to download the corresponding replay, if there is one available. ' .
-                        'All of the table columns are sortable.';
+                    if ($lang == 'Chinese') {
+                        echo '点击任何分数即可下载对应的rep。点击任何标题即可排序表格内容。';
                     } else if ($lang == 'Japanese') {
                         echo '該当のリプレイファイルをダウンロードするにはスコアをクリックしてください。' .
                         '各欄は並べ替え可能となっています。並べ替えには各表の最上段をクリックしてください。';
                     } else {
-                        echo '点击任何分数即可下载对应的rep。点击任何标题即可排序表格内容。';
+                        echo 'Click a score to download the corresponding replay, if there is one available. ' .
+                        'All of the table columns are sortable.';
                     }
                 ?></p>
                 <p id='noreup'><?php
-                    if ($lang == 'English') {
-                        echo 'The replays provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.';
+                    if ($lang == 'Chinese') {
+                        echo '请勿将rep上传到别的存rep网站。';
                     } else if ($lang == 'Japanese') {
                         echo 'リプレイファイルの二次利用は禁止致します。';
                     } else {
-                        echo '请勿将rep上传到别的存rep网站。';
+                        echo 'The replays provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.';
                     }
                 ?></p>
                 <p id='lastupdate'><?php echo format_lm($lm, $lang, $notation) ?></p>
                 <h2 id='contents_header'><?php
-    				if ($lang == 'English') { echo 'Contents'; }
+    				if ($lang == 'Chinese') { echo '内容'; }
     				else if ($lang == 'Japanese') { echo '内容'; }
-    				else { echo '内容'; }
+    				else { echo 'Contents'; }
     			?></h2>
                 <?php
                     // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
@@ -349,13 +349,9 @@
                     // With wr_old_layout cookie NOT set, show game image layout (CSS hides it with JavaScript disabled)
                     if ($layout == 'New') {
                         echo '<div id="newlayout"><p id="clickgame">';
-                        if ($lang == 'English') {
-                            echo 'Click a game cover to show its list of world records.';
-                        } else if ($lang == 'Japanese') {
-                            echo '世界記録リストはゲームをクリック。';
-                        } else {
-                            echo '单击游戏处查看世界纪录列表。';
-                        }
+                        if ($lang == 'Chinese') { echo '单击游戏处查看世界纪录列表。'; }
+                        else if ($lang == 'Japanese') { echo '世界記録リストはゲームをクリック。'; }
+                        else { echo 'Click a game cover to show its list of world records.'; }
                         echo '</p>';
         			    foreach ($wr as $game => $value) {
         			        echo '<span class="game_image"><img id="' . $game . '_image" class="game" src="assets/shared/' .
@@ -370,9 +366,9 @@
                 <div id='playersearch'>
         			<?php
                         echo '<h2>' . player_search($lang) . '</h2><p id="playerwrs">';
-        				if ($lang == 'English') { echo 'Choose a player name from the menu below to show their WRs.'; }
+        				if ($lang == 'Chinese') { echo '在以下的菜单选择玩家的名字则可查看其WR。'; }
                         else if ($lang == 'Japanese') { echo '個人のWRを表示するには、下記のメニューからプレイヤー名を選んでください。'; }
-                        else { echo '在以下的菜单选择玩家的名字则可查看其WR。'; }
+                        else { echo 'Choose a player name from the menu below to show their WRs.'; }
         			?></p>
         			<label for='player' class='player'><?php echo tl_term('Player', $lang); ?></label>
         			<input id='player' list='autocomplete' type='text'>
@@ -432,46 +428,46 @@
                 <div id='ack_container'>
                     <p id='jptlcredit'>
                         <?php
-                            if ($lang == 'English') {
-                                echo 'The Japanese translation of the top text was done by ' .
-                                '<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.';
+                            if ($lang == 'Chinese') {
+                                echo '感谢<a href="https://twitter.com/toho_yumiya">Yu-miya</a>提供头部文字的日语翻译。';
                             } else if ($lang == 'Japanese') {
-                                echo 'ページ上部のテキストは<a href="https://twitter.com/toho_yumiya">Yu-miya</a>' .
+                                echo 'ページ上部のテキストは<a href="https://twitter.com/toho_yumiya">ゆーみや</a>' .
                                 'によって日本語に翻訳されました。';
                             } else {
-                                echo '感谢<a href="https://twitter.com/toho_yumiya">Yu-miya</a>提供头部文字的日语翻译。';
+                                echo 'The Japanese translation of the top text was done by ' .
+                                '<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.';
                             }
                         ?>
                     </p>
                     <p id='cntlcredit'>
                         <?php
-                            if ($lang == 'English') {
-                                echo 'The Chinese translation of the top text was done by ' .
-                                '<a href="https://twitter.com/williewillus">williewillus</a>.';
+                            if ($lang == 'Chinese') {
+                                echo '感谢<a href="https://twitter.com/williewillus">williewillus</a>提供头部文字的中文翻译。';
                             } else if ($lang == 'Japanese') {
                                 echo 'ページ上部のテキストは<a href="https://twitter.com/williewillus">williewillus</a>' .
                                 'によって中国語に翻訳されました。';
                             } else {
-                                echo '感谢<a href="https://twitter.com/williewillus">williewillus</a>提供头部文字的中文翻译。';
+                                echo 'The Chinese translation of the top text was done by ' .
+                                '<a href="https://twitter.com/williewillus">williewillus</a>.';
                             }
                         ?>
                     </p>
     				<p id='ack_mobile'>
                         <?php
-                            if ($lang == 'English') {
-                                echo 'The background image was drawn by ' .
-                                '<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>.';
+                            if ($lang == 'Chinese') {
+                                echo '背景画师：<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>。';
                             } else if ($lang == 'Japanese') {
                                 echo '背景イメージは<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">' .
                                 'Catboyjeremie</a>さんのものを使用させていただいております。';
                             } else {
-                                echo '背景画师：<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>。';
+                                echo 'The background image was drawn by ' .
+                                '<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>.';
                             }
                         ?>
     				</p>
                 </div>
                 <p id='back'><strong><a id='backtotop' href='#top'><?php echo tl_term('Back to Top', $lang); ?></a></strong></p>
-    			<?php echo '<input id="missingReplays" type="hidden" value="' . implode($missing_replays, '') . '">' ?>
+    			<?php echo '<input id="missingReplays" type="hidden" value="' . implode('', $missing_replays) . '">' ?>
     		</div>
         </main>
     </body>

@@ -8,6 +8,8 @@ if (isset($_COOKIE['lang'])) {
         $lang = 'Japanese';
     } else if ($_GET['hl'] == 'zh') {
         $lang = 'Chinese';
+    } else if ($_GET['hl'] == 'ru') {
+        $lang = 'Russian';
     }
 }
 function tl_char(string $char, string $lang) {
@@ -211,6 +213,11 @@ function tl_term(string $term, string $lang) {
             case 'FinalB': return '路线B';
             case 'Back to Top': return '回到顶部';
             default: return $term;
+        }
+    } else if ($lang == 'Russian') {
+        $term = trim($term);
+        switch ($term) {
+            case 'Back to Top': return 'Наверх';
         }
     } else {
         return $term;
