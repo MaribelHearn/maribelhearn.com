@@ -85,7 +85,7 @@
 						'и играют вживую на стримах, как на очки, так и на выживание.</p><p>Снизу можете увидеть ссылки на ' .
 						'официальные каналы, стримы, расписание и правила.</p>';
 					} else {
-						echo '<strong>Touhou World Cup (TWC)</strong> is an annual international Touhou shooting game competition, ' .
+						echo '<p><strong>Touhou World Cup (TWC)</strong> is an annual international Touhou shooting game competition, ' .
 						'first held in 2020, organised by the Chinese gameplay community. ' .
 						'This time around, in 2021, it is organised by the Western gameplay community.</p>' .
 						'<p>Three teams, a Western community team, a Chinese team, and a Japanese team, duke it out ' .
