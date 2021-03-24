@@ -29,13 +29,13 @@
 				<div id='topbar'>
 					<p id='ack'>
 						<?php
-							if ($lang == 'Chinese') { echo 'This background image <br id="ack_br">was drawn by ' .
+							if ($lang == 'Chinese') { echo '背景画师：' .
 							'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>'; }
 							else if ($lang == 'Japanese') { echo '背景イメージは' .
 							'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>さんのものを使用させていただいております'; }
 							else if ($lang == 'Russian') { echo 'Иллюстрацию на фоне нарисовал(а) ' .
 							'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>'; }
-							else { echo '背景画师：' .
+							else { echo 'This background image <br id="ack_br">was drawn by ' .
 							'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>'; }
 						?>
 					</p>
@@ -62,7 +62,6 @@
 	                    </a>
 		            </div>
 				</div>
-                <p id='ack'></p>
                 <h1>Touhou World Cup</h1>
 				<?php
 					if ($lang == 'Chinese') {
