@@ -82,7 +82,7 @@
 						echo '<p><strong>Touhou World Cup (TWC)</strong> - ежегодное международное состязание по шмапам Тохо, ' .
 						'впервые проведено в 2020 году китайским сообществом. В этот раз, в 2021, ивент организовывает западное ' .
 						'сообщество.</p><p>Три команды, Запад, Китай, и Япония сражаются в режимах Лунатика и Экстры, ' .
-						'и играют вживую на стримах, как на очки, так и на выживание. ' .
+						'и играют вживую на стримах, как на очки, так и на выживание.</p><p>Снизу можете увидеть ссылки на ' .
 						'официальные каналы, стримы, расписание и правила.</p>';
 					} else {
 						echo '<strong>Touhou World Cup (TWC)</strong> is an annual international Touhou shooting game competition, ' .
@@ -99,13 +99,13 @@
 						echo '<p><img class="icon twitter_icon" src="assets/shared/icon_sheet.png" alt="Twitter icon">';
 						if ($lang == 'Chinese') { echo '<a href="https://twitter.com/touhouworldcup">TWC的官方推特</a>'; }
 						else if ($lang == 'Japanese') { echo '<a href="https://twitter.com/touhouworldcup">公式ツイッター</a>'; }
-						else if ($lang == 'Russian') { echo '<a href="https://twitter.com/touhouworldcup">Оффициальный Твиттер TWC</a>'; }
+						else if ($lang == 'Russian') { echo '<a href="https://twitter.com/touhouworldcup">Официальный Твиттер TWC</a>'; }
 						else { echo '<a href="https://twitter.com/touhouworldcup">Official TWC Twitter</a>'; }
 						echo '</p><p><img class="icon youtube_icon" src="assets/shared/icon_sheet.png" alt="YouTube icon">' .
 						'<a href="https://www.youtube.com/channel/UCk8o-jk-Zpn4CEmLUIkui0A">';
 						if ($lang == 'Chinese') { echo 'TWC的官方YouTube频道'; }
 						else if ($lang == 'Japanese') { echo '公式YouTubeチャンネル'; }
-						else if ($lang == 'Russian') { echo 'Оффициальный канал TWC на Youtube'; }
+						else if ($lang == 'Russian') { echo 'Официальный канал TWC на Youtube'; }
 						else { echo 'Official TWC YouTube Channel'; }
 						echo '</a></p><p><img src="assets/flags/uk16x16.png" alt="Flag of the United Kingdom">' .
 						'<a href="https://www.twitch.tv/touhou_replay_showcase">';
@@ -405,7 +405,7 @@
 						'ただし、全てのラストスペルを出現させ取得し、かつ、ノーミスノーボムを達成した場合にのみ、' .
 						'より高いISCOREが与えられます（ISCORE CalculatorのFull-SC欄を参照）。';
 					} else if ($lang == 'Russian') {
-						echo 'Получение урона во время бонусных спеллов не считается смерть в матчах на выживание. ' .
+						echo 'Получение урона во время бонусных спеллов не считается смертью в матчах на выживание. ' .
 						'Однако ISCORE дает большее количество очков за забеги, в которых были захвачены все бонусные ' .
 						'спеллы И ОДНОВРЕМЕННО без бомб и смертей.';
 					} else {
@@ -503,8 +503,8 @@
 						echo '同種の動物霊を３個以上集めることで発動する暴走ロアリングはサバイバルマッチでは２被弾として扱われます。' .
 						'また、ロアリング中の霊撃（ボムボタン押下または被弾によるもの）はサバイバルマッチでは１被弾として扱われます。';
 					} else if ($lang == 'Russian') {
-						echo 'Гипер берсерка (сбор 3 или более животных токенов для гипера) считается как 2 смерти в ' .
-						'матчах на выживание. Получение урона во время гипера считается как смерть в в матчах на выживание.';
+						echo 'Гипер берсерка (сбор 3 или более животных токенов для гипера) считается как 2 смерти ' .
+						'в матчах на выживание. Получение урона во время гипера считается как смерть в матчах на выживание.';
 					} else {
 						echo 'Channeling a berserk roar (3 or more of the same animal tokens during roar mode) ' .
 						'is considered 2 deaths in survival runs. Breaking your roar ' .
@@ -514,7 +514,7 @@
 				<h3><?php
 					if ($lang == 'Chinese') { echo '使用额外软件'; }
 					else if ($lang == 'Japanese') { echo 'ツールやパッチの使用について'; }
-					else if ($lang == 'Russian') { echo 'Использование сторонного ПО.'; }
+					else if ($lang == 'Russian') { echo 'Использование стороннего ПО'; }
 					else { echo 'Use of Third Party Software &amp; Material'; }
 				?></h3>
 				<p><?php
