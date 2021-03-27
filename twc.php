@@ -462,7 +462,7 @@
 						'ISCORE дает большее количество очков за забеги, в которых были захвачены все ' .
 						'спеллы И ОДНОВРЕМЕННО без бомб и смертей.';
 					} else {
-						echo 'A manual trance is considered 2 deaths in survival runs.' .
+						echo 'A manual trance is considered 2 deaths in survival runs. ' .
 						'ISCORE gives a higher base value in this game to runs that capture all spells AND does not die/bomb ' .
 						'(NN + Full-SC).';
 					}
