@@ -249,4 +249,8 @@ table {
     #hy_container {
         float: none;
     }
+    #languages {
+        margin-top: 10px;
+        width: 100%;
+    }
 }
