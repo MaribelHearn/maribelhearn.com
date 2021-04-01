@@ -183,8 +183,8 @@ function showWRs(event) {
     var game = event.data.game ? event.data.game : this.id.replace("_image", ""), seasonSwitch = event.data.seasonSwitch;
 
     if (!WRs || !westScores) {
-        $.get("assets/json/wrlist.json", function (data1) {
-            $.get("assets/json/bestinthewest.json", function (data2) {
+        $.get("assets/json/wrlist-new.json", function (data1) {
+            $.get("assets/json/bestinthewest-new.json", function (data2) {
                 WRs = data1;
                 westScores = data2;
                 showWRs({data: {game: game, seasonSwitch: seasonSwitch}});
