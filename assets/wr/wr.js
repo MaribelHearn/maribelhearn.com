@@ -107,9 +107,9 @@ function showWesternRecords(compareWRs, game) {
             continue;
         }
 
-        west = westScores[game][difficulty][0];
-        westPlayer = westScores[game][difficulty][1];
-        westShottype = westScores[game][difficulty][2];
+        west = compareWRs[difficulty][0];
+        westPlayer = compareWRs[difficulty][1];
+        westShottype = compareWRs[difficulty][2];
         world = compareWRs[difficulty][0];
         worldPlayer = compareWRs[difficulty][1];
         worldShottype = compareWRs[difficulty][2];
