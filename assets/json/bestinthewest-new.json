@@ -1,0 +1,483 @@
+{
+  "HRtP": {
+    "Easy": [
+      13117240,
+      "The Challenge",
+      "Jigoku"
+    ],
+    "Normal": [
+      11992340,
+      "The Challenge",
+      "Makai"
+    ],
+    "Hard": [
+      11831570,
+      "The Challenge",
+      "Makai"
+    ],
+    "Lunatic": [
+      14380250,
+      "The Challenge",
+      "Jigoku"
+    ]
+  },
+  "SoEW": {
+    "Easy": [
+      24025500,
+      "The Challenge",
+      "ReimuA"
+    ],
+    "Normal": [
+      23007770,
+      "The Challenge",
+      "ReimuB"
+    ],
+    "Hard": [
+      30858690,
+      "The Challenge",
+      "ReimuB"
+    ],
+    "Lunatic": [
+      42942800,
+      "The Challenge",
+      "ReimuA"
+    ],
+    "Extra": [
+      42603800,
+      "The Challenge",
+      "ReimuA"
+    ]
+  },
+  "PoDD": {
+    "Easy": [
+      69133270,
+      "The Challenge",
+      "Marisa"
+    ],
+    "Normal": [
+      77513540,
+      "The Challenge",
+      "Kana"
+    ],
+    "Hard": [
+      97800520,
+      "The Challenge",
+      "Chiyuri"
+    ],
+    "Lunatic": [
+      133650750,
+      "The Challenge",
+      "Mima"
+    ]
+  },
+  "LLS": {
+    "Easy": [
+      71657220,
+      "The Challenge",
+      "ReimuA"
+    ],
+    "Normal": [
+      128477620,
+      "The Challenge",
+      "ReimuB"
+    ],
+    "Hard": [
+      151686610,
+      "The Challenge",
+      "ReimuB"
+    ],
+    "Lunatic": [
+      123322470,
+      "The Challenge",
+      "MarisaA"
+    ],
+    "Extra": [
+      80901730,
+      "The Challenge",
+      "ReimuB"
+    ]
+  },
+  "MS": {
+    "Easy": [
+      88328310,
+      "The Challenge",
+      "Mima"
+    ],
+    "Normal": [
+      139776270,
+      "The Challenge",
+      "Mima"
+    ],
+    "Hard": [
+      163109770,
+      "The Challenge",
+      "Mima"
+    ],
+    "Lunatic": [
+      196037280,
+      "The Challenge",
+      "Mima"
+    ],
+    "Extra": [
+      214560970,
+      "The Challenge",
+      "Mima"
+    ]
+  },
+  "EoSD": {
+    "Easy": [
+      146624750,
+      "The Challenge",
+      "ReimuB"
+    ],
+    "Normal": [
+      334480220,
+      "The Challenge",
+      "ReimuB"
+    ],
+    "Hard": [
+      445405780,
+      "The Challenge",
+      "ReimuB"
+    ],
+    "Lunatic": [
+      668659080,
+      "The Challenge",
+      "ReimuB"
+    ],
+    "Extra": [
+      615234480,
+      "The Challenge",
+      "ReimuB"
+    ]
+  },
+  "PCB": {
+    "Easy": [
+      1607014890,
+      "The Challenge",
+      "ReimuB"
+    ],
+    "Normal": [
+      2043591550,
+      "The Challenge",
+      "ReimuB"
+    ],
+    "Hard": [
+      2180502180,
+      "The Challenge",
+      "SakuyaB"
+    ],
+    "Lunatic": [
+      3698238870,
+      "The Challenge",
+      "SakuyaB"
+    ],
+    "Extra": [
+      1421550150,
+      "The Challenge",
+      "ReimuB"
+    ],
+    "Phantasm": [
+      1502658090,
+      "The Challenge",
+      "ReimuB"
+    ]
+  },
+  "IN": {
+    "Easy": [
+      3046909920,
+      "The Challenge",
+      "Youmu"
+    ],
+    "Normal": [
+      4084750610,
+      "The Challenge",
+      "Youmu"
+    ],
+    "Hard": [
+      4919552750,
+      "The Challenge",
+      "Youmu"
+    ],
+    "Lunatic": [
+      6531823120,
+      "The Challenge",
+      "GhostTeam"
+    ],
+    "Extra": [
+      3159508570,
+      "The Challenge",
+      "Youmu"
+    ]
+  },
+  "PoFV": {
+    "Easy": [
+      174712460,
+      "The Challenge",
+      "Cirno"
+    ],
+    "Normal": [
+      426203120,
+      "The Challenge",
+      "Eiki"
+    ],
+    "Hard": [
+      412752980,
+      "The Challenge",
+      "Eiki"
+    ],
+    "Lunatic": [
+      610554360,
+      "The Challenge",
+      "Eiki"
+    ],
+    "Extra": [
+      235114260,
+      "The Challenge",
+      "Eiki"
+    ]
+  },
+  "MoF": {
+    "Easy": [
+      1524966210,
+      "The Challenge",
+      "ReimuA"
+    ],
+    "Normal": [
+      1683628660,
+      "The Challenge",
+      "MarisaC"
+    ],
+    "Hard": [
+      2038649790,
+      "The Challenge",
+      "ReimuB"
+    ],
+    "Lunatic": [
+      2205203970,
+      "The Challenge",
+      "MarisaC"
+    ],
+    "Extra": [
+      1002420580,
+      "The Challenge",
+      "MarisaC"
+    ]
+  },
+  "SA": {
+    "Easy": [
+      713931860,
+      "The Challenge",
+      "MarisaB"
+    ],
+    "Normal": [
+      986061410,
+      "The Challenge",
+      "ReimuA"
+    ],
+    "Hard": [
+      1405329480,
+      "The Challenge",
+      "MarisaA"
+    ],
+    "Lunatic": [
+      4074591200,
+      "The Challenge",
+      "ReimuA"
+    ],
+    "Extra": [
+      1087441060,
+      "The Challenge",
+      "ReimuA"
+    ]
+  },
+  "UFO": {
+    "Easy": [
+      1781411480,
+      "The Challenge",
+      "SanaeB"
+    ],
+    "Normal": [
+      2370885090,
+      "The Challenge",
+      "MarisaA"
+    ],
+    "Hard": [
+      2476761410,
+      "The Challenge",
+      "SanaeB"
+    ],
+    "Lunatic": [
+      2825916910,
+      "The Challenge",
+      "SanaeB"
+    ],
+    "Extra": [
+      687806130,
+      "The Challenge",
+      "SanaeB"
+    ]
+  },
+  "GFW": {
+    "Easy": [
+      43016820,
+      "The Challenge",
+      "A2"
+    ],
+    "Normal": [
+      72022590,
+      "The Challenge",
+      "A2"
+    ],
+    "Hard": [
+      89236060,
+      "The Challenge",
+      "A2"
+    ],
+    "Lunatic": [
+      129733420,
+      "The Challenge",
+      "A2"
+    ],
+    "Extra": [
+      98888170,
+      "The Challenge",
+      "-"
+    ]
+  },
+  "TD": {
+    "Easy": [
+      917219120,
+      "The Challenge",
+      "Marisa"
+    ],
+    "Normal": [
+      1722391740,
+      "The Challenge",
+      "Marisa"
+    ],
+    "Hard": [
+      3116809310,
+      "The Challenge",
+      "Marisa"
+    ],
+    "Lunatic": [
+      3898871030,
+      "The Challenge",
+      "Youmu"
+    ],
+    "Extra": [
+      640828790,
+      "The Challenge",
+      "Marisa"
+    ]
+  },
+  "DDC": {
+    "Easy": [
+      1035101770,
+      "The Challenge",
+      "SakuyaB"
+    ],
+    "Normal": [
+      1515166210,
+      "The Challenge",
+      "SakuyaB"
+    ],
+    "Hard": [
+      1569341070,
+      "The Challenge",
+      "SakuyaB"
+    ],
+    "Lunatic": [
+      1906106220,
+      "The Challenge",
+      "SakuyaB"
+    ],
+    "Extra": [
+      1101562070,
+      "The Challenge",
+      "MarisaB"
+    ]
+  },
+  "LoLK": {
+    "Easy": [
+      1763600700,
+      "The Challenge",
+      "Reisen"
+    ],
+    "Normal": [
+      2834319980,
+      "The Challenge",
+      "Reisen"
+    ],
+    "Hard": [
+      2866722150,
+      "The Challenge",
+      "Reisen"
+    ],
+    "Lunatic": [
+      3412999390,
+      "The Challenge",
+      "Reisen"
+    ],
+    "Extra": [
+      752661110,
+      "The Challenge",
+      "Reisen"
+    ]
+  },
+  "HSiFS": {
+    "Easy": [
+      1525391280,
+      "The Challenge",
+      "CirnoWinter"
+    ],
+    "Normal": [
+      3250792980,
+      "The Challenge",
+      "ayaspring"
+    ],
+    "Hard": [
+      4170088940,
+      "The Challenge",
+      "AyaAutumn"
+    ],
+    "Lunatic": [
+      7040149600,
+      "The Challenge",
+      "AyaAutumn"
+    ],
+    "Extra": [
+      1542160320,
+      "The Challenge",
+      "reimu"
+    ]
+  },
+  "WBaWC": {
+    "Easy": [
+      4034928250,
+      "The Challenge",
+      "MarisaOtter"
+    ],
+    "Normal": [
+      6677876810,
+      "The Challenge",
+      "MarisaOtter"
+    ],
+    "Hard": [
+      9701430280,
+      "The Challenge",
+      "MarisaOtter"
+    ],
+    "Lunatic": [
+      9999999990,
+      "The Challenge",
+      "MarisaOtter"
+    ],
+    "Extra": [
+      2017900710,
+      "The Challenge",
+      "MarisaOtter"
+    ]
+  }
+}
