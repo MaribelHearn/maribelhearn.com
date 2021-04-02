@@ -321,7 +321,7 @@
                         '</th></tr><tr><th>' . tl_term('World', $lang) .
                         '</th><th>' . tl_term('West', $lang) . '</th><th>' . tl_term('Percentage', $lang) . '</th></tr>';
                         foreach ($obj as $diff => $shots) {
-                            $westt = $diff_max[$game][$diff];
+                            $westt = $west[$game][$diff];
                             $world = $diff_max[$game][$diff];
                             if ($westt[0] == $world[0]) {
                                 $percentage = 100;
