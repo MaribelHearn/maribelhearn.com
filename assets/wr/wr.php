@@ -1,10 +1,10 @@
 <?php
 $MAX_SCORE = 9999999990;
-$json = file_get_contents('assets/json/wrlist-new.json');
+$json = file_get_contents('assets/json/wrlist.json');
 $wr = json_decode($json, true);
-$json = file_get_contents('assets/json/bestinthewest-new.json');
+$json = file_get_contents('assets/json/bestinthewest.json');
 $west = json_decode($json, true);
-$json = file_get_contents('assets/json/counterstops-new.json');
+$json = file_get_contents('assets/json/counterstops.json');
 $cs = json_decode($json, true);
 if (isset($_COOKIE['lang'])) {
     $lang = str_replace('"', '', $_COOKIE['lang']);
