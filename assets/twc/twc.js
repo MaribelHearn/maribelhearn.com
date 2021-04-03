@@ -15,7 +15,7 @@ function toDateString(unix) {
 }
 
 function printSchedule(schedule) {
-    var match, id, team;
+    var highlight = false, match, id, team;
 
     for (var unix in schedule) {
         match = schedule[unix];
@@ -25,6 +25,11 @@ function printSchedule(schedule) {
         "</td><th class='" + match.category.split(' ')[0] + " noborders'>" + match.category + "</th>" +
         "<td id='" + id + "_players' class='noborders'></td><td id='" + id +
         "_reset' class='noborders'>" + match.reset + "</td>");
+
+        if (!highlight && unix >= new Date().getTime() / 1000) {
+            $("#" + unix).addClass("highlight");
+            highlight = true;
+        }
 
         for (var i = 0; i < match.players.length; i++) {
             if (match.countries[i] == "cn") {
