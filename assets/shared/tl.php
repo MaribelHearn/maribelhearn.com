@@ -353,6 +353,7 @@ function tl_term(string $term, string $lang) {
             case 'LNN Lists': return 'LNNリスト';
             case '(Different players)': return '（プレイヤー）';
             case '(All)': return '（全）';
+            case '(All Windows)': return '（全Windows）';
             case 'Back to Top': return '上に帰る';
             case 'FinalA': return 'Aルート';
             case 'FinalB': return 'Bルート';
@@ -400,6 +401,7 @@ function tl_term(string $term, string $lang) {
             case 'LNN Lists': return 'LNN列表';
             case '(Different players)': return '（玩家）';
             case '(All)': return '（全）';
+            case '(All Windows)': return '（全Windows）';
             case 'Back to Top': return '回到顶部';
             case 'FinalA': return '路线A';
             case 'FinalB': return '路线B';
