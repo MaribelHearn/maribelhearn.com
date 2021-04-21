@@ -110,10 +110,10 @@
 		                    <tbody>
 		                        <tr>
 		                            <td>TD Lunatic</td>
-		                            <td>3,405,595,060</td>
+		                            <td>3,475,825,090</td>
 		                            <td>Marisa</td>
-		                            <td>February 29, 2020</td>
-		                            <td><strong><a href='https://www.youtube.com/watch?v=a-vejcZEMnQ'>Link (YouTube)</a></strong></td>
+		                            <td>April 18, 2021</td>
+		                            <td><strong><a href='https://www.youtube.com/watch?v=a-vejcZEMnQ'>Old link (YouTube)</a></strong></td>
 		                        </tr>
 		                        <tr>
 		                            <td>TD Hard</td>
@@ -2190,10 +2190,10 @@
 		                <tr>
 		                    <td>Lunatic</td>
 		                    <td>Marisa</td>
-		                    <td>3,405,595,060</td>
+		                    <td>3,475,825,090</td>
 		                    <td class='g'>Yes</td>
-		                    <td>February 29, 2020</td>
-		                    <td><strong><a href='https://www.youtube.com/watch?v=a-vejcZEMnQ'>Link (YouTube)</a></strong></td>
+		                    <td>April 18, 2021</td>
+		                    <td><strong><a href='https://www.youtube.com/watch?v=a-vejcZEMnQ'>Old link (YouTube)</a></strong></td>
 		                </tr>
 		                <tr>
 		                    <td>Hard</td>
