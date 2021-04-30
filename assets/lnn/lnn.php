@@ -61,6 +61,7 @@ function format_lm(string $lm, string $lang) {
     switch ($lang) {
         case 'Japanese': return '<span id="lm">' . date_tl($lm) . '</span>現在のLNN記録です。';
         case 'Chinese': return 'LNN更新于<span id="lm">' . date_tl($lm) . '</span>。';
+        case 'Russian': return 'Список LNN\'ов актуален на ' . $lm . '</span>.';
         default: return 'LNNs are current as of <span id="lm">' . $lm . '</span>.';
     }
 }
@@ -69,6 +70,8 @@ function player_search(string $lang) {
         return '玩家LNN';
     } else if ($lang == 'Japanese') {
         return '個人のLNN';
+    } else if ($lang == 'Russian') {
+        return 'Поиск игроков';
     } else {
         return 'Player Search';
     }
