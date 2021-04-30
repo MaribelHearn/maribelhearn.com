@@ -250,29 +250,7 @@ function tl_shot(string $shot, string $lang) {
     return str_replace('Team', ' Team', $shot);
 }
 function full_name(string $game, string $lang) {
-    if ($lang == 'English') {
-        switch ($game) {
-            case 'HRtP': return 'Touhou 1 - The Highly Responsive to Prayers';
-            case 'SoEW': return 'Touhou 2 - The Story of Eastern Wonderland';
-            case 'PoDD': return 'Touhou 3 - Phantasmagoria of Dim.Dream';
-            case 'LLS': return 'Touhou 4 - Lotus Land Story';
-            case 'MS': return 'Touhou 5 - Mystic Square';
-            case 'EoSD': return 'Touhou 6 - The Embodiment of Scarlet Devil';
-            case 'PCB': return 'Touhou 7 - Perfect Cherry Blossom';
-            case 'IN': return 'Touhou 8 - Imperishable Night';
-            case 'PoFV': return 'Touhou 9 - Phantasmagoria of Flower View';
-            case 'MoF': return 'Touhou 10 - Mountain of Faith';
-            case 'SA': return 'Touhou 11 - Subterranean Animism';
-            case 'UFO': return 'Touhou 12 - Undefined Fantastic Object';
-            case 'GFW': return 'Touhou 12.8 - Great Fairy Wars';
-            case 'TD': return 'Touhou 13 - Ten Desires';
-            case 'DDC': return 'Touhou 14 - Double Dealing Character';
-            case 'LoLK': return 'Touhou 15 - Legacy of Lunatic Kingdom';
-            case 'HSiFS': return 'Touhou 16 - Hidden Star in Four Seasons';
-            case 'WBaWC': return 'Touhou 17 - Wily Beast and Weakest Creature';
-            default: return 'Unknown';
-        }
-    } else if ($lang == 'Japanese') {
+    if ($lang == 'Japanese') {
         switch ($game) {
             case 'HRtP': return '東方靈異伝　～ The Highly Responsive to Prayers';
             case 'SoEW': return '東方封魔録　～ the Story of Eastern Wonderland';
@@ -294,7 +272,7 @@ function full_name(string $game, string $lang) {
             case 'WBaWC': return '東方鬼形獣　～ Wily Beast and Weakest Creature';
             default: return 'Unknown';
         }
-    } else {
+    } else if ($lang == 'Chinese') {
         switch ($game) {
             case 'HRtP': return '东方灵异传　～ The Highly Responsive to Prayers';
             case 'SoEW': return '东方封魔录　～ the Story of Eastern Wonderland';
@@ -314,6 +292,30 @@ function full_name(string $game, string $lang) {
             case 'LoLK': return '东方绀珠传　～ Legacy of Lunatic Kingdom';
             case 'HSiFS': return '东方天空璋　～ Hidden Star in Four Seasons';
             case 'WBaWC': return '东方鬼形獣　～ Wily Beast and Weakest Creature';
+            default: return 'Unknown';
+        }
+    } else {
+        switch ($game) {
+            case 'HRtP': return 'Touhou 1 - The Highly Responsive to Prayers';
+            case 'SoEW': return 'Touhou 2 - The Story of Eastern Wonderland';
+            case 'PoDD': return 'Touhou 3 - Phantasmagoria of Dim.Dream';
+            case 'LLS': return 'Touhou 4 - Lotus Land Story';
+            case 'MS': return 'Touhou 5 - Mystic Square';
+            case 'EoSD': return 'Touhou 6 - The Embodiment of Scarlet Devil';
+            case 'PCB': return 'Touhou 7 - Perfect Cherry Blossom';
+            case 'IN': return 'Touhou 8 - Imperishable Night';
+            case 'PoFV': return 'Touhou 9 - Phantasmagoria of Flower View';
+            case 'StB': return 'Touhou 9.5 - Shoot the Bullet';
+            case 'MoF': return 'Touhou 10 - Mountain of Faith';
+            case 'SA': return 'Touhou 11 - Subterranean Animism';
+            case 'UFO': return 'Touhou 12 - Undefined Fantastic Object';
+            case 'DS': return 'Touhou 12.5 - Double Spoiler';
+            case 'GFW': return 'Touhou 12.8 - Great Fairy Wars';
+            case 'TD': return 'Touhou 13 - Ten Desires';
+            case 'DDC': return 'Touhou 14 - Double Dealing Character';
+            case 'LoLK': return 'Touhou 15 - Legacy of Lunatic Kingdom';
+            case 'HSiFS': return 'Touhou 16 - Hidden Star in Four Seasons';
+            case 'WBaWC': return 'Touhou 17 - Wily Beast and Weakest Creature';
             default: return 'Unknown';
         }
     }
@@ -365,6 +367,7 @@ function tl_term(string $term, string $lang) {
             case 'Flag of the United States': return 'アメリカ合衆国の国旗';
             case 'Flag of Japan': return '日本の国旗';
             case 'Flag of the P.R.C.': return '中華人民共和国の国旗';
+            case 'Flag of Russia': return 'ロシアの国旗';
             default: return $term;
         }
     } else if ($lang == 'Chinese') {
@@ -413,7 +416,18 @@ function tl_term(string $term, string $lang) {
             case 'Flag of the United States': return '美国旗';
             case 'Flag of Japan': return '日本旗';
             case 'Flag of the P.R.C.': return '中国旗';
+            case 'Flag of Russia': return '俄羅斯國旗';
             default: return $term;
+        }
+    } else if ($lang == 'Russian') {
+        $term = trim($term);
+        switch ($term) {
+            case 'Flag of the United Kingdom': return 'флаг Великобритании';
+            case 'Flag of the United States': return 'флаг США';
+            case 'Flag of Japan': return 'флаг Японии';
+            case 'Flag of the P.R.C.': return 'флаг Китая';
+            case 'Flag of Russia': return 'флаг России';
+            case 'Back to Top': return 'Наверх';
         }
     } else {
         return $term;
