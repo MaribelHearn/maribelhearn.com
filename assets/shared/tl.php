@@ -422,12 +422,18 @@ function tl_term(string $term, string $lang) {
     } else if ($lang == 'Russian') {
         $term = trim($term);
         switch ($term) {
+            case 'Player': return 'Игрок';
+            case 'LNN Lists': return 'Списки LNN';
+            case 'Overall Count': return 'Общее количество';
+            case 'Player Ranking': return 'Рейтинг игроков';
+            case 'Acknowledgements': return 'Примечания';
             case 'Flag of the United Kingdom': return 'флаг Великобритании';
             case 'Flag of the United States': return 'флаг США';
             case 'Flag of Japan': return 'флаг Японии';
             case 'Flag of the P.R.C.': return 'флаг Китая';
             case 'Flag of Russia': return 'флаг России';
             case 'Back to Top': return 'Наверх';
+            default: return $term;
         }
     } else {
         return $term;

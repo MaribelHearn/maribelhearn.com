@@ -254,6 +254,7 @@ $(document).ready(function () {
     $("#en").on("click", {language: "English"}, setLanguage);
     $("#jp").on("click", {language: "Japanese"}, setLanguage);
     $("#zh").on("click", {language: "Chinese"}, setLanguage);
+    $("#ru").on("click", {language: "Russian"}, setLanguage);
     $(".game").on("click", showLNNs);
     missingReplays = $("#missingReplays").val();
 
@@ -261,6 +262,8 @@ $(document).ready(function () {
         language = "Japanese";
     } else if (getCookie("lang") == "Chinese" || location.href.contains("zh")) {
         language = "Chinese";
+    } else if (getCookie("lang") == "Russian" || location.href.contains("ru")) {
+        language = "Russian";
     }
 
     $("#top").attr("lang", langCode(language, false));

@@ -37,6 +37,10 @@
                                 echo '背景イメージは<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>' .
                                 'さんのものを使用させていただいております';
                             }
+							else if ($lang == 'Russian') {
+                                echo 'Иллюстрацию на фоне нарисовал(а) ' .
+							    '<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>';
+                            }
                             else {
                                 echo 'This background image<br id="ack_br"> was drawn by ' .
                                 '<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>';
@@ -66,6 +70,10 @@
                             <img src='assets/flags/china.png' alt='<?php echo tl_term('Flag of the P.R.C.', $lang) ?>'>
                             <p class='language'>简体中文</p>
                         </a>
+	                    <a id='ru' class='flag' href='lnn?hl=ru'>
+	                        <img src='assets/flags/russia.png' alt='<?php echo tl_term('Flag of Russia', $lang) ?>'>
+	                        <p class='language'>Русский</p>
+	                    </a>
     	            </div>
     			</div>
     			<h1><?php echo tl_term('Touhou Lunatic No Miss No Bombs', $lang); ?></h1>
@@ -81,7 +89,11 @@
     				} else if ($lang == 'Japanese') {
     					echo '東方原作STG各作品の難易度Lunaticのノーミスノーボム（LNN）リストです。適宜頻繁に更新します。各作品の表とも、' .
                         '各機体において誰が達成したかを記載しています。特定の作品、ショットタイプで複数回のLNNを達成している場合でも１回とカウントされます。';
-    				} else {
+    				} else if ($lang == 'Russian') {
+                        echo 'Регулярно обновляющийся список Lunatic No Miss No Bombs (LNN) забегов. ' .
+                        'Таблицы показывают список игроков, которые сделали LNN на том или ином шоттипе. ' .
+                        'Если у игрока есть несколько LNN за один и тот же шоттип, они не будут учтены.';
+                    } else {
                         echo 'A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. ' .
                         'For every shottype in a game, tables will tell you which players have done an LNN with it, if any. ' .
                         'If a player has multiple LNNs for one particular shottype, those are not factored in.';
@@ -96,6 +108,12 @@
                         '暴走ロアリング無しが条件となります。この４作品では追加条件によってNが追加され、LNNN又はLNNNNと呼称します。' .
                         'また星蓮船ではUFO招喚無しも考慮されますが、難易度が劇的に変化するわけではないため必須条件とはなっていません。' .
                         '永夜抄ではラストスペル取得を含めLNNFSが条件となります。';
+                    } else if ($lang == 'Russian') {
+                        echo 'Для PCB, TD, HSiFS и WBaWC также необходимы следующий условия: No Border Breaks для PCB, ' .
+                        'No Trance для TD, No Release для HSiFS и No Berserk Roar No Roar Breaks для WBaWC. ' .
+                        'Для этих игр LNN обычно назвают LNNN или LNNNN, с дополнительными N для индикации доп. условий. ' .
+                        'Дополнительное условие в UFO, no UFO summons, не требуется, так как считается, что они не имеют ' .
+                        'сильное влияние на сложность забега. В LNN IN\'а, впрочем, нужно захватить все Ласт Спеллы и называется LNNFS.';
     				} else {
                         echo 'Extra conditions are required for PCB, TD, HSiFS and WBaWC; these are No Border Breaks for PCB, ' .
                         'No Trance for TD, No Release for HSiFS and No Berserk Roar No Roar Breaks for WBaWC. ' .
@@ -108,12 +126,14 @@
                 <p id='tables'><?php
     				if ($lang == 'Chinese') { echo '点击任何标题即可排序表格内容。'; }
                     else if ($lang == 'Japanese') { echo '各欄は並べ替え可能となっています。並べ替えには各表の最上段をクリックしてください'; }
+                    else if ($lang == 'Russian') { echo 'Все столбцы таблицы можно отсортировать.'; }
                     else { echo 'All of the table columns are sortable.'; }
     			?></p>
                 <p id='lastupdate'><?php echo format_lm($lnn['LM'], $lang) ?></p>
                 <h2 id='contents_header'><?php
     				if ($lang == 'Chinese') { echo '内容'; }
     				else if ($lang == 'Japanese') { echo '内容'; }
+                    else if ($lang == 'Russian') { echo 'Содержание'; }
     				else { echo 'Contents'; }
     			?></h2>
 
@@ -201,6 +221,8 @@
                             echo '单击游戏处查看LNN列表。';
                         } else if ($lang == 'Japanese') {
                             echo 'LNNリストはゲームをクリック。';
+                        } else if ($lang == 'Russian') {
+                            echo 'Нажмите на обложку игры для получения ее списка LNN.';
                         } else {
                             echo 'Click a game cover to show its list of LNNs.';
                         }
@@ -221,6 +243,7 @@
         			<p id='playerlnns'><?php
         				if ($lang == 'Chinese') { echo '在以下的菜单选择玩家的名字则可查看其LNN。'; }
                         else if ($lang == 'Japanese') { echo '個人のLNNを表示するには、下記のメニューからプレイヤー名を選んでください。'; }
+                        else if ($lang == 'Russian') { echo 'Выберите имя игрока из меню ниже чтобы получить список его LNN.'; }
                         else { echo 'Choose a player name from the menu below to show their LNNs.'; }
         			?></p>
         			<label for='player' class='player'><?php echo tl_term('Player', $lang); ?></label>
@@ -327,47 +350,62 @@
                 </div>
     			<h2 id='acks' class='ack'><?php echo tl_term('Acknowledgements', $lang); ?></h2>
                 <div id='ack_container'>
-    				<p id='jptlcredit'>
-                        <?php
-                            if ($lang == 'Chinese') {
-                                echo '感谢<a href="https://twitter.com/toho_yumiya">Yu-miya</a>' .
-                                '提供头部文字的日语翻译。';
-                            } else if ($lang == 'Japanese') {
-                                echo 'ページ上部のテキストは<a href="https://twitter.com/toho_yumiya">ゆーみや</a>' .
-                                'によって日本語に翻訳されました。';
-                            } else {
-                                echo 'The Japanese translation of the top text was done by ' .
-                                '<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.';
-                            }
-                        ?>
-                    </p>
-                    <p id='cntlcredit'>
-                        <?php
-                            if ($lang == 'Chinese') {
-                                echo '感谢<a href="https://twitter.com/williewillus">williewillus</a>' .
-                                '提供头部文字的中文翻译。';
-                            } else if ($lang == 'Japanese') {
-                                echo 'ページ上部のテキストは<a href="https://twitter.com/williewillus">williewillus</a>' .
-                                'によって中国語に翻訳されました。';
-                            } else {
-                                echo 'The Chinese translation of the top text was done by ' .
-                                '<a href="https://twitter.com/williewillus">williewillus</a>.';
-                            }
-                        ?>
-                    </p>
-    				<p id='ack_mobile'>
-                        <?php
-                            if ($lang == 'Chinese') {
-                                echo '背景画师：<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>。';
-                            } else if ($lang == 'Japanese') {
-                                echo '背景イメージは<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>' .
-                                'さんのものを使用させていただいております。';
-                            } else {
-                                echo 'The background image was drawn by ' .
-                                '<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>.';
-                            }
-                        ?>
-                    </p>
+    				<p id='jptlcredit'><?php
+                        if ($lang == 'Chinese') {
+                            echo '感谢<a href="https://twitter.com/toho_yumiya">Yu-miya</a>' .
+                            '提供头部文字的日语翻译。';
+                        } else if ($lang == 'Japanese') {
+                            echo 'ページ上部のテキストは<a href="https://twitter.com/toho_yumiya">ゆーみや</a>' .
+                            'によって日本語に翻訳されました。';
+						} else if ($lang == 'Russian') {
+                            echo 'Японский перевод сделал ' .
+                            '<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.';
+                        } else {
+                            echo 'The Japanese translation of the top text was done by ' .
+                            '<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.';
+                        }
+                    ?></p>
+                    <p id='cntlcredit'><?php
+                        if ($lang == 'Chinese') {
+                            echo '感谢<a href="https://twitter.com/williewillus">williewillus</a>' .
+                            '提供头部文字的中文翻译。';
+                        } else if ($lang == 'Japanese') {
+                            echo 'ページ上部のテキストは<a href="https://twitter.com/williewillus">williewillus</a>' .
+                            'によって中国語に翻訳されました。';
+                        } else if ($lang == 'Russian') {
+                            echo 'Китайский перевод сделал ' .
+                            '<a href="https://twitter.com/williewillus">williewillus</a>.';
+                        } else {
+                            echo 'The Chinese translation of the top text was done by ' .
+                            '<a href="https://twitter.com/williewillus">williewillus</a>.';
+                        }
+                    ?></p>
+                    <p id='rutlcredit'><?php
+                        if ($lang == 'Chinese') {
+                            echo '感谢<a href="https://twitter.com/williewillus">williewillus</a>' .
+                            '提供头部文字的中文翻译。';
+                        } else if ($lang == 'Japanese') {
+                            echo 'ページ上部のテキストは<a href="https://twitter.com/williewillus">williewillus</a>' .
+                            'によって中国語に翻訳されました。';
+                        } else if ($lang == 'Russian') {
+                           echo 'Русский перевод сделал ' .
+                           '<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>.';
+                        } else {
+                            echo 'The Chinese translation of the top text was done by ' .
+                            '<a href="https://twitter.com/williewillus">williewillus</a>.';
+                        }
+                    ?></p>
+    				<p id='ack_mobile'><?php
+                        if ($lang == 'Chinese') {
+                            echo '背景画师：<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>。';
+                        } else if ($lang == 'Japanese') {
+                            echo '背景イメージは<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>' .
+                            'さんのものを使用させていただいております。';
+                        } else {
+                            echo 'The background image was drawn by ' .
+                            '<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>.';
+                        }
+                    ?></p>
                 </div>
                 <p id='back'><strong><a id='backtotop' href='#top'><?php echo tl_term('Back to Top', $lang); ?></a></strong></p>
     			<?php echo '<input id="missingReplays" type="hidden" value="' . implode($missing_replays, '') . '">' ?>
