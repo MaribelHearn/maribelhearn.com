@@ -80,8 +80,11 @@ table {
     color: white;
     background-color: #190e0e;
 }
+.TH18, .Extra {
+    background-color: #ff00ff;
+}
 .highlight {
-    background: rgba(128, 128, 0, 0.5); 
+    background: rgba(128, 128, 0, 0.5);
 }
 .border {
     border: 1px solid black;

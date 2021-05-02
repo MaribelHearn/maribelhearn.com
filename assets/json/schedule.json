@@ -166,5 +166,17 @@
         "players": ["CreepyNinja", "-", "SNT"],
         "countries": ["we", "cn", "jp"],
         "reset": 105
+    },
+    "1620511200": {
+        "category": "TH18 Lunatic Survival",
+        "players": ["???", "???", "???"],
+        "countries": ["we", "cn", "jp"],
+        "reset": 0
+    },
+    "1620511201": {
+        "category": "Extra Marathon",
+        "players": ["???", "???", "???"],
+        "countries": ["we", "cn", "jp"],
+        "reset": 0
     }
 }
