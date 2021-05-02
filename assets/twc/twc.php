@@ -165,58 +165,33 @@ function tl_term(string $term, string $lang) {
     if ($lang == 'Japanese') {
         $term = trim($term);
         switch ($term) {
-            case 'Game': return 'ゲーム';
-            case 'Category': return 'カテゴリー';
-            case 'Shottype': return 'キャラ';
-            case 'Multiplier': return '倍率';
-            case 'Base': return '底';
-            case 'Base points': return '素点';
-            case 'Exponent': return '冪指数';
-            case 'Max points': return '最大点';
-            case 'Min points': return '最小点';
-            case 'No Bomb bonus': return 'ノーボムボーナス';
-            case 'Increments': return '増加';
-            case 'Threshold': return '閾値';
-            case 'Threshold 1': return '閾値1';
-            case 'Threshold 2': return '閾値2';
-            case 'Threshold 3': return '閾値3';
-            case 'Scene': return '撮影対象';
-            case 'Scoring': return '稼ぎ';
-            case 'Survival': return 'クリア重視';
-            case 'FinalA': return 'Aルート';
-            case 'FinalB': return 'Bルート';
+            case 'Flag of the United Kingdom': return 'イギリスの国旗';
+            case 'Flag of the United States': return 'アメリカ合衆国の国旗';
+            case 'Flag of Japan': return '日本の国旗';
+            case 'Flag of the P.R.C.': return '中華人民共和国の国旗';
+            case 'Flag of Russia': return 'ロシアの国旗';
             case 'Back to Top': return '上に帰る';
             default: return $term;
         }
     } else if ($lang == 'Chinese') {
         $term = trim($term);
         switch ($term) {
-            case 'Game': return '游戏';
-            case 'Category': return '项目';
-            case 'Shottype': return '机体';
-            case 'Multiplier': return '系数';
-            case 'Base': return '基数';
-            case 'Base points': return '基数分';
-            case 'Exponent': return '指数';
-            case 'Max points': return '最大值';
-            case 'Min points': return '最小值';
-            case 'No Bomb bonus': return 'NB奖分';
-            case 'Increments': return '增幅';
-            case 'Threshold': return '阈值';
-            case 'Threshold 1': return '第一阈值';
-            case 'Threshold 2': return '第二阈值';
-            case 'Threshold 3': return '第三阈值';
-            case 'Scene': return '场景';
-            case 'Scoring': return '打分';
-            case 'Survival': return '生存';
-            case 'FinalA': return '路线A';
-            case 'FinalB': return '路线B';
+            case 'Flag of the United Kingdom': return '英国旗';
+            case 'Flag of the United States': return '美国旗';
+            case 'Flag of Japan': return '日本旗';
+            case 'Flag of the P.R.C.': return '中国旗';
+            case 'Flag of Russia': return '俄羅斯國旗';
             case 'Back to Top': return '回到顶部';
             default: return $term;
         }
     } else if ($lang == 'Russian') {
         $term = trim($term);
         switch ($term) {
+            case 'Flag of the United Kingdom': return 'флаг Великобритании';
+            case 'Flag of the United States': return 'флаг США';
+            case 'Flag of Japan': return 'флаг Японии';
+            case 'Flag of the P.R.C.': return 'флаг Китая';
+            case 'Flag of Russia': return 'флаг России';
             case 'Back to Top': return 'Наверх';
         }
     } else {
