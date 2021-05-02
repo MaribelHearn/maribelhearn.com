@@ -99,7 +99,9 @@ function getPositionOf(item) {
 }
 
 function getItemAt(tierNum, pos) {
-    return tiers[tierNum].chars[pos];
+    var tierList = (settings.sort == "characters" ? tiers : gameTiers);
+
+    return tierList[tierNum].chars[pos];
 }
 
 function getCategoryOf(item) {
@@ -673,15 +675,16 @@ function swapItems(item1, item2) {
         return;
     }
 
-    var tierNum1 = getTierNumOf(item1), tierNum2 = getTierNumOf(item2),
+    var tierList = (settings.sort == "characters" ? tiers : gameTiers),
+        tierNum1 = getTierNumOf(item1), tierNum2 = getTierNumOf(item2),
         pos1 = getPositionOf(item1), pos2 = getPositionOf(item2), tmp;
 
     $("#tier" + tierNum1 + "_" + pos1).remove("#" + item1);
     $("#tier" + tierNum2 + "_" + pos2).remove("#" + item2);
     $("#tier" + tierNum1 + "_" + pos1).append($("#" + item2));
     $("#tier" + tierNum2 + "_" + pos2).append($("#" + item1));
-    tiers[tierNum1].chars[pos1] = item2;
-    tiers[tierNum2].chars[pos2] = item1;
+    tierList[tierNum1].chars[pos1] = item2;
+    tierList[tierNum2].chars[pos2] = item1;
 
     window.onbeforeunload = function () {
         return confirm();
