@@ -57,7 +57,7 @@
 	                        <p class='language'>简体中文</p>
 	                    </a>
 	                    <a id='ru' class='flag' href='twc?hl=ru'>
-	                        <img src='assets/flags/russia.png' alt='<?php echo tl_term('Flag of the Russian Federation', $lang) ?>'>
+	                        <img src='assets/flags/russia.png' alt='<?php echo tl_term('Flag of Russia', $lang) ?>'>
 	                        <p class='language'>Русский</p>
 	                    </a>
 		            </div>

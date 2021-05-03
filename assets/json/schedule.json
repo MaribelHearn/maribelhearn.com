@@ -177,6 +177,6 @@
         "category": "Extra Marathon",
         "players": ["???", "???", "???"],
         "countries": ["we", "cn", "jp"],
-        "reset": 0
+        "reset": -1
     }
 }
