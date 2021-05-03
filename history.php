@@ -64,6 +64,7 @@
 	                <tr><td><a href='#HSiFS'>Touhou 16 - Hidden Star in Four Seasons</a></td></tr>
 	                <tr><td><a href='#VD'>Touhou 16.5 - Violet Detector</a></td></tr>
 	                <tr><td><a href='#WBaWC'>Touhou 17 - Wily Beast and Weakest Creature</a></td></tr>
+	                <tr><td><a href='#UM'>Touhou 18 - Unconnected Marketeers</a></td></tr>
 	                <tr><th>Touhou Fangames</th></tr>
 	                <tr><td><a href='#SSS'>Shining Shooting Star</a></td></tr>
 	                <tr><th>eXceed Shmups</th></tr>
@@ -422,6 +423,14 @@
 	                            <td id='hWBaWC' class='clear'></td>
 	                            <td id='lWBaWC' class='clear'></td>
 	                            <td id='xWBaWC' class='nb' colspan='2'></td>
+	                        </tr>
+	                        <tr id='oUM'>
+	                            <th>UM</th>
+	                            <td id='eUM'></td>
+	                            <td id='nUM'></td>
+	                            <td id='hUM'></td>
+	                            <td id='lUM'></td>
+	                            <td id='xUM' colspan='2'></td>
 	                        </tr>
 	                    </tbody>
 	                </table>
@@ -3094,6 +3103,71 @@
 		                    <td>August 12, 2019</td>
 		                    <td>-</td>
 		                    <td><strong><a href='https://www.youtube.com/watch?v=z4sM9kPtRsk'>1cc</a></strong></td>
+		                </tr>
+		                </table>
+					</div>
+	            </div>
+	            <div id='UM'>
+	                <h2>TH18 - Unconnected Marketeers</h2>
+					<picture>
+						<source srcset='assets/games/um250x250.webp' type='image/webp'>
+						<source srcset='assets/games/um250x250.jpg'>
+						<img loading='lazy' src='assets/games/um250x250.jpg' alt='UM'>
+					</picture>
+	                <p>Obtained: May 3, 2021</p>
+	                <h3>Survival</h3>
+					<div class='container'>
+		                <table>
+		                <tr>
+		                    <th>Difficulty</th>
+		                    <th>Progress</th>
+		                    <th>Date of first 1cc</th>
+		                    <th>Date of first <abbr title='No Bomb'>NB</abbr></th>
+		                    <th>Date of first <abbr title='No Miss No Bomb'>NMNB</abbr></th>
+		                    <th>Video</th>
+		                </tr>
+		                <tr>
+		                    <td><strong>Easy</strong></td>
+		                    <td>Not yet tried</td>
+		                    <td>-</td>
+		                    <td>-</td>
+		                    <td>-</td>
+		                    <td>No</td>
+		                </tr>
+		                <tr>
+		                    <td><strong>Normal</strong></td>
+		                    <td>Not yet tried</td>
+		                    <td>-</td>
+		                    <td>-</td>
+		                    <td>-</td>
+		                    <td>No</td>
+		                </tr>
+		                <tr>
+		                    <td><strong>Hard</strong></td>
+		                    <td>Not yet tried</td>
+		                    <td>-</td>
+		                    <td>-</td>
+		                    <td>-</td>
+		                    <td>No</td>
+		                </tr>
+		                <tr>
+		                    <td><strong>Lunatic</strong></td>
+		                    <td>Not yet tried</td>
+		                    <td>-</td>
+		                    <td>-</td>
+		                    <td>-</td>
+		                    <td>No</td>
+		                </tr>
+		                <tr>
+		                    <td colspan='6'></td>
+		                </tr>
+		                <tr>
+		                    <td><strong>Extra</strong></td>
+		                    <td>Not yet tried</td>
+		                    <td>-</td>
+		                    <td>-</td>
+		                    <td>-</td>
+		                    <td>No</td>
 		                </tr>
 		                </table>
 					</div>
