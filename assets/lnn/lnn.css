@@ -220,6 +220,9 @@ table, th, td {
 #WBaWC_image, #WBaWC_image_old {
     object-position: -850px 0px;
 }
+#UM_image, #UM_image_old {
+    object-position: -900px 0px;
+}
 #ack {
     font: 11px verdana,sans-serif;
     text-align: right;

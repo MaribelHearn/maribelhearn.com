@@ -111,7 +111,10 @@
                             </td><td>
                                 <input id='TDc' type='checkbox' class='check' checked>
                                 <label for='TDc'>TD</label>
-                            </td><td class='noborders'></td>
+                            </td><td>
+								<input id='UMc' type='checkbox' class='check' checked>
+								<label for='UMc'>UM</label>
+							</td>
                         </tr>
                         <tr class='noborders'>
                             <td>

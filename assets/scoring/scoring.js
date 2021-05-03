@@ -797,6 +797,38 @@ var WRs,
                 "YoumuOtter": 0,
                 "YoumuEagle": 0
             }
+        },
+        "UM": {
+            "Easy": {
+                "Reimu": 0,
+                "Marisa": 0,
+                "Sanae": 0,
+                "Sakuya": 0
+            },
+            "Normal": {
+                "Reimu": 0,
+                "Marisa": 0,
+                "Sanae": 0,
+                "Sakuya": 0
+            },
+            "Hard": {
+                "Reimu": 0,
+                "Marisa": 0,
+                "Sanae": 0,
+                "Sakuya": 0
+            },
+            "Lunatic": {
+                "Reimu": 0,
+                "Marisa": 0,
+                "Sanae": 0,
+                "Sakuya": 0
+            },
+            "Extra": {
+                "Reimu": 0,
+                "Marisa": 0,
+                "Sanae": 0,
+                "Sakuya": 0
+            }
         }
     };
 
@@ -870,7 +902,7 @@ function sep(number) {
 function calc() {
     var top = {}, averages = {}, shown = {}, total = 0, categories = 0, highest = 0, game, difficulty,
         id, span, score, shottype, wr, percentage, wrText, average, table, gameTable,
-        topList = "<table id='table' class='sortable'><thead><tr><th>Game + Difficulty</th><th>Shottype / Route</th>" +
+        topList = "<table id='table'><thead><tr><th>Game + Difficulty</th><th>Shottype / Route</th>" +
         "<th class='sorttable_numeric'>Score</th><th>WR Percentage</th><th>Progress Bar</th><th>WR</th></tr></thead><tbody>",
         precision = parseInt($("#precision").val());
 
@@ -940,7 +972,7 @@ function calc() {
         }
     }
 
-    topList += "</tbody></table><br><table id='gameTable' class='sortable'><thead><tr><th>Game</th><th>Average Percentage</th></tr></thead><tbody>";
+    topList += "</tbody></table><br><table id='gameTable'><thead><tr><th>Game</th><th>Average Percentage</th></tr></thead><tbody>";
 
     for (game in averages) {
         topList += "<tr><td>" + game + "</td><td>" + averages[game] + "%</td></tr>";
@@ -955,6 +987,8 @@ function calc() {
     }
 
     $("#topList").html(topList);
+    sorttable.makeSortable(document.getElementById("table"));
+    sorttable.makeSortable(document.getElementById("gameTable"));
     if ($("#toggleData").is(":checked")) {
         localStorage.setItem("saveScoringData", true);
         localStorage.setItem("precision", precision);
