@@ -215,7 +215,8 @@ function gameAbbr(game) {
         "DDC": 14,
         "LoLK": 15,
         "HSiFS": 16,
-        "WBaWC": 17
+        "WBaWC": 17,
+        "UM": 18
     })[game];
 }
 
@@ -238,7 +239,8 @@ function fullNameNumber(game) {
         "DDC": "Touhou 14 - Double Dealing Character",
         "LoLK": "Touhou 15 - Legacy of Lunatic Kingdom",
         "HSiFS": "Touhou 16 - Hidden Star in Four Seasons",
-        "WBaWC": "Touhou 17 - Wily Beast and Weakest Creature"
+        "WBaWC": "Touhou 17 - Wily Beast and Weakest Creature",
+        "UM": "Touhou 18 - Unconnected Marketeers"
     }[game]);
 }
 
@@ -424,6 +426,7 @@ function generateShortNames() {
         $(".LoLK").html("绀");
         $(".HSiFS").html("天");
         $(".WBaWC").html("鬼");
+        $(".UM").html("虹");
     } else if (language == "Japanese") {
         $(".HRtP").html("靈");
         $(".SoEW").html("封");
@@ -443,6 +446,7 @@ function generateShortNames() {
         $(".LoLK").html("紺");
         $(".HSiFS").html("天");
         $(".WBaWC").html("鬼");
+        $(".UM").html("虹");
     } else {
         $(".SoEW").html("SoEW");
         $(".PoDD").html("PoDD");
@@ -462,6 +466,7 @@ function generateShortNames() {
         $(".LoLK").html("LoLK");
         $(".HSiFS").html("HSiFS");
         $(".WBaWC").html("WBaWC");
+        $(".UM").html("UM");
     }
 }
 function generateFullNames() {
@@ -484,6 +489,7 @@ function generateFullNames() {
         $(".LoLKf").html("东方绀珠传　～ Legacy of Lunatic Kingdom");
         $(".HSiFSf").html("东方天空璋　～ Hidden Star in Four Seasons");
         $(".WBaWCf").html("东方鬼形獣　～ Wily Beast and Weakest Creature");
+        $(".UMf").html("东方虹龙洞　～ Unconnected Marketeers");
     } else if (language == "Japanese") {
         $(".HRtPf").html("東方靈異伝　～ Highly Responsive to Prayers");
         $(".SoEWf").html("東方封魔録　～ the Story of Eastern Wonderland");
@@ -503,6 +509,7 @@ function generateFullNames() {
         $(".LoLKf").html("東方紺珠伝　～ Legacy of Lunatic Kingdom");
         $(".HSiFSf").html("東方天空璋　～ Hidden Star in Four Seasons");
         $(".WBaWCf").html("東方鬼形獣　～ Wily Beast and Weakest Creature");
+        $(".UMf").html("東方虹龍洞　～ Unconnected Marketeers");
     } else {
         $(".HRtPf").html("Touhou 1 - Highly Responsive to Prayers");
         $(".SoEWf").html("Touhou 2 - The Story of Eastern Wonderland");
@@ -522,6 +529,7 @@ function generateFullNames() {
         $(".LoLKf").html("Touhou 15 - Legacy of Lunatic Kingdom");
         $(".HSiFSf").html("Touhou 16 - Hidden Star in Four Seasons");
         $(".WBaWCf").html("Touhou 17 - Wily Beast and Weakest Creature");
+        $(".UMf").html("Touhou 18 - Unconnected Marketeers");
     }
 }
 function generateShottypes() {
