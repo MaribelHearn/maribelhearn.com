@@ -22,6 +22,7 @@ function num(string $game) {
         case 'LoLK': return 15;
         case 'HSiFS': return 16;
         case 'WBaWC': return 17;
+        case 'UM': return 18;
         default: return 0;
     }
 }
@@ -270,6 +271,7 @@ function full_name(string $game, string $lang) {
             case 'LoLK': return '東方紺珠伝　～ Legacy of Lunatic Kingdom';
             case 'HSiFS': return '東方天空璋　～ Hidden Star in Four Seasons';
             case 'WBaWC': return '東方鬼形獣　～ Wily Beast and Weakest Creature';
+            case 'UM': return '東方虹龍洞　～ Unconnected Marketeers';
             default: return 'Unknown';
         }
     } else if ($lang == 'Chinese') {
@@ -292,6 +294,7 @@ function full_name(string $game, string $lang) {
             case 'LoLK': return '东方绀珠传　～ Legacy of Lunatic Kingdom';
             case 'HSiFS': return '东方天空璋　～ Hidden Star in Four Seasons';
             case 'WBaWC': return '东方鬼形獣　～ Wily Beast and Weakest Creature';
+            case 'UM': return '东方虹龙洞　～ Unconnected Marketeers';
             default: return 'Unknown';
         }
     } else {
@@ -316,6 +319,7 @@ function full_name(string $game, string $lang) {
             case 'LoLK': return 'Touhou 15 - Legacy of Lunatic Kingdom';
             case 'HSiFS': return 'Touhou 16 - Hidden Star in Four Seasons';
             case 'WBaWC': return 'Touhou 17 - Wily Beast and Weakest Creature';
+            case 'UM': return 'Touhou 18 - Unconnected Marketeers';
             default: return 'Unknown';
         }
     }
@@ -347,6 +351,7 @@ function tl_term(string $term, string $lang) {
             case 'Overall Records': return '各作品世界記録一覧';
             case 'World Records': return '世界記録';
             case 'Western Records': return '海外記録';
+            case 'Recent Records': return '最近の世界記録';
             case 'Player Ranking': return 'プレイヤーのランキング';
             case 'Acknowledgements': return '謝辞';
             case 'Touhou World Records': return '東方の世界記録';
@@ -396,6 +401,7 @@ function tl_term(string $term, string $lang) {
             case 'Overall Records': return '整体世界纪录';
             case 'World Records': return '世界纪录';
             case 'Western Records': return '西方纪录';
+            case 'Recent Records': return '最近世界纪录';
             case 'Player Ranking': return '玩家排行';
             case 'Acknowledgements': return '致谢';
             case 'Touhou World Records': return '东方世界纪录';
@@ -426,6 +432,7 @@ function tl_term(string $term, string $lang) {
             case 'LNN Lists': return 'Списки LNN';
             case 'Overall Count': return 'Общее количество';
             case 'Player Ranking': return 'Рейтинг игроков';
+            case 'Recent Records': return 'Последние Мировые Рекорды';
             case 'Acknowledgements': return 'Примечания';
             case 'Flag of the United Kingdom': return 'флаг Великобритании';
             case 'Flag of the United States': return 'флаг США';

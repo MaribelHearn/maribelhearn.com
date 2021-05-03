@@ -202,6 +202,9 @@ table.center {
 #WBaWC_image {
     object-position: -850px 0px;
 }
+#UM_image {
+    object-position: -900px 0px;
+}
 #ack {
     font: 11px verdana,sans-serif;
     text-align: right;

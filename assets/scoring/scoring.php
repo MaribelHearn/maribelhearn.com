@@ -2,7 +2,7 @@
 $json = file_get_contents('assets/json/wrlist.json');
 $wr = json_decode($json, true);
 $games = ['HRtP', 'SoEW', 'PoDD', 'LLS', 'MS', 'EoSD', 'PCB', 'IN', 'PoFV',
-'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC'];
+'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC', 'UM'];
 $diffs = ['Easy', 'Normal', 'Hard', 'Lunatic', 'Extra'];
 function full_name(string $game) {
     switch ($game) {
@@ -24,6 +24,7 @@ function full_name(string $game) {
         case 'LoLK': return 'Touhou 15 - Legacy of Lunatic Kingdom';
         case 'HSiFS': return 'Touhou 16 - Hidden Star in Four Seasons';
         case 'WBaWC': return 'Touhou 17 - Wily Beast and Weakest Creature';
+        case 'UM': return 'Touhou 18 - Unconnected Marketeers';
         default: return 'Unknown';
     }
 }

@@ -340,8 +340,8 @@
                                     return $val;
                                 });
                                 foreach ($pl_lnn as $key => $value) {
-                                    $shot_lnns = $pl_lnn[$key][1] == 97 ? $pl_lnn[$key][1] . tl_term(' (All Windows)', $lang) : $pl_lnn[$key][1];
-                                    $game_lnns = $pl_lnn[$key][2] == 12 ? $pl_lnn[$key][2] . tl_term(' (All Windows)', $lang) : $pl_lnn[$key][2];
+                                    $shot_lnns = $pl_lnn[$key][1] == $ALL_LNN ? $pl_lnn[$key][1] . tl_term(' (All Windows)', $lang) : $pl_lnn[$key][1];
+                                    $game_lnns = $pl_lnn[$key][2] == $ALL_GAME_LNN ? $pl_lnn[$key][2] . tl_term(' (All Windows)', $lang) : $pl_lnn[$key][2];
                                     echo '<tr><td>' . $pl_lnn[$key][0] . '</td><td>' . $shot_lnns . '</td><td>' . $game_lnns . '</td></tr>';
                                 }
                             ?>

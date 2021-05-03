@@ -1,4 +1,6 @@
 <?php
+$ALL_LNN = 101;
+$ALL_GAME_LNN = 13;
 $json = file_get_contents('assets/json/lnnlist.json');
 $lnn = json_decode($json, true);
 if (isset($_COOKIE['lang'])) {
