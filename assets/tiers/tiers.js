@@ -12,7 +12,8 @@ var MAX_NAME_LENGTH = 30,
             "SWR": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true }, "Soku": { enabled: true },
             "DS": { enabled: true }, "GFW": { enabled: true }, "TD": { enabled: true }, "HM": { enabled: true },
             "DDC": { enabled: true }, "ULiL": { enabled: true }, "LoLK": { enabled: true }, "AoCF": { enabled: true },
-            "HSiFS": { enabled: true }, "WBaWC": { enabled: true }, "Manga": { enabled: true }, "CD": { enabled: true }
+            "HSiFS": { enabled: true }, "WBaWC": { enabled: true }, "UM": { enabled: true }, "Manga": { enabled: true },
+            "CD": { enabled: true }
         },
         "gameCategories": {
             "PC-98": { enabled: true }, "Classic": { enabled: true }, "Modern1": { enabled: true }, "Modern2": { enabled: true },
