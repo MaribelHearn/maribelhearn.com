@@ -17,66 +17,66 @@ table {
 table, th, td {
     border: 1px solid #000;
 }
-.HRtPt th {
+.HRtPt th, .HRtPp {
     color: white;
     background-color: #b6423c;
 }
-.SoEWt th {
+.SoEWt th, .SoEWp {
     color: white;
     background-color: #7d3884;
 }
-.PoDDt th {
+.PoDDt th, .PoDDp {
     background-color: gold;
 }
-.LLSt th {
+.LLSt th, .LLSp {
     background-color: #90ee90;
 }
-.MSt th {
+.MSt th, .MSp {
     color: white;
     background-color: #ae11d5;
 }
-.EoSDt th {
+.EoSDt th, .EoSDp {
     background-color: #ff2400;
 }
-.PCBt th {
+.PCBt th, .PCBp {
     background-color: #ff8ed2;
 }
-.INt th {
+.INt th, .INp {
     color: white;
     background-color: #339;
 }
-.PoFVt th {
+.PoFVt th, .PoFVp {
     background-color: #009973;
 }
-.MoFt th {
+.MoFt th, .MoFp {
     background-color: #96b300;
 }
-.SAt th {
+.SAt th, .SAp {
     color: white;
     background-color: #591400;
 }
-.UFOt th {
+.UFOt th, .UFOp {
     color: white;
     background-color: #4169e1;
 }
-.GFWt th {
+.GFWt th, .GFWp {
     background-color: #00c8c8;
 }
-.TDt th {
+.TDt th, .TDp {
     background-color: #4a808c;
 }
-.DDCt th {
+.DDCt th, .DDCp {
     background-color: #a77;
 }
-.LoLKt th {
+.LoLKt th, .LoLKp {
     color: white;
     background-color: #6a47be;
 }
-.HSiFSsmallt th, .HSiFSt th {
+.HSiFSsmallt th, .HSiFSt th, .HSiFSp {
     color: white;
     background-color: #176e0e;
 }
-.WBaWCt th {
+.WBaWCt th, .WBaWCp {
     color: white;
     background-color: #190e0e;
 }
@@ -220,7 +220,7 @@ table, th, td {
     margin-bottom: 5px;
 }
 #overall_linkm, #overall_linkmn, #overallm, #list, #playerlist, #playersearch, #checkboxes,
-#seasontoggle, #newlayout, #playersearchlink, #contents_new {
+#seasontoggle, #newlayout, #playersearchlink, #contents_new, #recent_linkm, #recentm {
     display: none;
 }
 #list, #playerlist {
@@ -306,32 +306,41 @@ table, th, td {
 #PoFV_image, #PoFV_image_old {
     object-position: -400px 0px;
 }
-#MoF_image, #MoF_image_old {
+#StB_image, #StB_image_old {
     object-position: -450px 0px;
 }
+#MoF_image, #MoF_image_old {
+    object-position: 0px 0px;
+}
 #SA_image, #SA_image_old {
-    object-position: -500px 0px;
+    object-position: -50px 0px;
 }
 #UFO_image, #UFO_image_old {
-    object-position: -550px 0px;
+    object-position: -100px 0px;
+}
+#DS_image, #DS_image_old {
+    object-position: -150px 0px;
 }
 #GFW_image, #GFW_image_old {
-    object-position: -600px 0px;
+    object-position: -200px 0px;
 }
 #TD_image, #TD_image_old {
-    object-position: -650px 0px;
+    object-position: -250px 0px;
 }
 #DDC_image, #DDC_image_old {
-    object-position: -700px 0px;
+    object-position: -300px 0px;
 }
 #LoLK_image, #LoLK_image_old {
-    object-position: -750px 0px;
+    object-position: -350px 0px;
 }
 #HSiFS_image, #HSiFS_image_old {
-    object-position: -800px 0px;
+    object-position: -400px 0px;
 }
 #WBaWC_image, #WBaWC_image_old {
-    object-position: -850px 0px;
+    object-position: -450px 0px;
+}
+#UM_image, #UM_image_old {
+    object-position: -500px 0px;
 }
 #ack {
     font: 11px verdana,sans-serif;
@@ -453,19 +462,19 @@ table, th, td {
     .player {
         font-style: italic;
     }
-    #overall {
+    #overall, #recent {
         display: none;
     }
-    #overallm {
+    #overallm, #recentm {
         display: block;
     }
     #overallm p {
         margin: 2px;
     }
-    #overall_link, #overall_linkn {
+    #overall_link, #overall_linkn, #recent_link, #recent_linkn {
         display: none;
     }
-    #overall_linkm, #overall_linkmn {
+    #overall_linkm, #overall_linkmn, #recent_linkm, #recent_linkmn {
         display: table-row;
     }
 }
@@ -479,10 +488,10 @@ table, th, td {
     .PCBt {
         font-size: 9px;
     }
-    #overall_link, #overall_linkn {
+    #overall_link, #overall_linkn, #recent_link, #recent_linkn {
         display: table-row;
     }
-    #overall_linkm, #overall_linkmn {
+    #overall_linkm, #overall_linkmn, #recent_linkm, #recent_linkmn {
         display: none;
     }
 }

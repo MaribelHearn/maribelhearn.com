@@ -342,7 +342,7 @@ function showPlayerWRs(player) {
             for (shottype in WRs[game][difficulty]) {
                 if (WRs[game][difficulty][shottype].contains(player)) {
                     if (!cats.contains(game + difficulty)) {
-                        $("#playerlistbody").append("<tr><td><span class='" + game + "'>" + game +
+                        $("#playerlistbody").append("<tr><td class='" + game + "p'><span class='" + game + "'>" + game +
                         "</span>" + (language == "English" ? " " : "") + "<span class='" + difficulty + "'>" + difficulty +
                         "</span></td><td id='" + game + difficulty +
                         "s'></td><td id=" + game + difficulty + "r></td>" +

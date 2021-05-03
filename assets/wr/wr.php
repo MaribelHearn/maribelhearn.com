@@ -1,5 +1,6 @@
 <?php
 $MAX_SCORE = 9999999990;
+$RECENT_LIMIT = 10;
 $json = file_get_contents('assets/json/wrlist.json');
 $wr = json_decode($json, true);
 $json = file_get_contents('assets/json/bestinthewest.json');
@@ -34,6 +35,7 @@ $diff_max = array();
 $pl = array();
 $pl_wr = array();
 $flag = array();
+$recent = array();
 $lm = '0/0/0';
 function pc_class(int $pc) {
     if ($pc < 50) {
@@ -52,6 +54,9 @@ function replay_path(string $game, string $diff, string $shot) {
     return 'replays/th' . num($game) . '_ud' . substr($diff, 0, 2) . shot_abbr($shot) . '.rpy';
 }
 function date_tl(string $date, string $notation) {
+    if ($date == '') {
+        return '';
+    }
     $tmp = preg_split('/\//', $date);
     $day = $tmp[0];
     $month = $tmp[1];
@@ -79,6 +84,7 @@ function format_lm(string $lm, string $lang, string $notation) {
 }
 function game_tl(string $game, string $lang) {
     if ($lang == 'Japanese') {
+        $game = trim($game);
         switch ($game) {
             case 'HRtP': return '靈';
             case 'SoEW': return '封';
@@ -98,9 +104,11 @@ function game_tl(string $game, string $lang) {
             case 'LoLK': return '紺';
             case 'HSiFS': return '天';
             case 'WBaWC': return '鬼';
+            case 'UM': return '虹';
             default: return $game;
         }
     } else if ($lang == 'Chinese') {
+        $game = trim($game);
         switch ($game) {
             case 'HRtP': return '灵';
             case 'SoEW': return '封';
@@ -120,6 +128,7 @@ function game_tl(string $game, string $lang) {
             case 'LoLK': return '绀';
             case 'HSiFS': return '天';
             case 'WBaWC': return '鬼';
+            case 'UM': return '虹';
             default: return $game;
         }
     }
@@ -134,6 +143,21 @@ function player_search(string $lang) {
         return 'Player Search';
     }
 }
+function is_later_date(string $date1, string $date2) {
+    $date1 = preg_split('/\//', $date1);
+    $date2 = preg_split('/\//', $date2);
+    $year = $date1[2]; $month = $date1[1]; $day = $date1[0];
+    return $year > $date2[2] || $year == $date2[2] && $month > $date2[1] || $year == $date2[2] && $month == $date2[1] && $day > $date2[0];
+}
+function category_sep(string $lang) {
+    if ($lang == 'Chinese') {
+        return '';
+    } else if ($lang == 'Japanese') {
+        return 'の';
+    } else {
+        return ' ';
+    }
+}
 foreach ($wr as $game => $value) {
     $num = num($game);
     $overall[$num] = 0;
@@ -142,22 +166,25 @@ foreach ($wr as $game => $value) {
     foreach ($wr[$game] as $diff => $value) {
         $diff_max[$game][$diff] = [0, '', ''];
         foreach ($wr[$game][$diff] as $shot => $array) {
-            if ($array[0] > $overall[$num]) {
-                $overall[$num] = $array[0];
+            $score = $array[0];
+            $player = $array[1];
+            $date = $array[2];
+            if ($score >= $overall[$num]) {
+                $overall[$num] = $score;
                 $overall_diff[$num] = $diff;
                 $overall_shottype[$num] = $shot;
-                $overall_player[$num] = $array[1];
-                $overall_date[$num] = $array[2];
+                $overall_player[$num] = $player;
+                $overall_date[$num] = $date;
             }
-            if ($array[0] > $diff_max[$game][$diff][0]) {
-                $diff_max[$game][$diff] = [$array[0], $array[1], $shot];
+            if ($score > $diff_max[$game][$diff][0]) {
+                $diff_max[$game][$diff] = [$score, $player, $shot];
             }
             if (!file_exists(replay_path($game, $diff, $shot)) && $num > 5) {
                 array_push($missing_replays, ($game . $diff . $shot));
             }
-            if (!in_array($array[1], $pl)) {
-                array_push($pl, $array[1]);
-                array_push($pl_wr, array($array[1], 1, 1));
+            if (!in_array($player, $pl)) {
+                array_push($pl, $player);
+                array_push($pl_wr, array($player, 1, 1));
                 array_push($flag, false);
             } else {
                 $key = array_search($array[1], $pl);
@@ -167,11 +194,37 @@ foreach ($wr as $game => $value) {
                     $flag[$key] = false;
                 }
             }
-            $date = preg_split('/\//', $array[2]);
-            $tmp = preg_split('/\//', $lm);
-            $year = $date[2]; $month = $date[1]; $day = $date[0];
-            if ($year > $tmp[2] || $year == $tmp[2] && $month > $tmp[1] || $year == $tmp[2] && $month == $tmp[1] && $day > $tmp[0]) {
-                $lm = $array[2];
+            if (is_later_date($date, $lm)) {
+                $lm = $date;
+            }
+            if (sizeof($recent) == 0) {
+                $new_obj = (object) [
+                    'game' => $game,
+                    'diff' => $diff,
+                    'shot' => $shot,
+                    'score' => $score,
+                    'player' => $player,
+                    'date' => $date,
+                ];
+                array_push($recent, $new_obj);
+            }
+            foreach ($recent as $key => $obj) {
+                if (is_later_date($date, $obj->date)) {
+                    $new_obj = (object) [
+                        'game' => $game,
+                        'diff' => $diff,
+                        'shot' => $shot,
+                        'score' => $score,
+                        'player' => $player,
+                        'date' => $date,
+                    ];
+                    if (sizeof($recent) == $RECENT_LIMIT) {
+                        $recent[$key] = $new_obj;
+                    } else {
+                        array_push($recent, $new_obj);
+                    }
+                    break;
+                }
             }
         }
     }
