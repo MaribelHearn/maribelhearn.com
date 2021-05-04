@@ -254,7 +254,7 @@ function shottypeAbbr(shottype) {
         "MarisaA": "MA",
         "MarisaB": "MB",
         "MarisaC": "MC",
-        "Sakuya": "Sa",
+        "Sakuya": "Sk",
         "SakuyaA": "SA",
         "SakuyaB": "SB",
         "Sanae": "Sa",

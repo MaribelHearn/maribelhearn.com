@@ -36,7 +36,7 @@ function shot_abbr(string $shot) {
         case 'MarisaA': return 'MA';
         case 'MarisaB': return 'MB';
         case 'MarisaC': return 'MC';
-        case 'Sakuya': return 'Sa';
+        case 'Sakuya': return 'Sk';
         case 'SakuyaA': return 'SA';
         case 'SakuyaB': return 'SB';
         case 'Sanae': return 'Sa';
