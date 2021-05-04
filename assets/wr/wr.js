@@ -289,6 +289,10 @@ function showWRs(event) {
             compareWRs[difficulty] = [Math.min(bestShotMax, MAX_SCORE), bestShot.player, bestShot.shottype];
         }
 
+        if (!compareWRs[difficulty]) {
+            compareWRs[difficulty] = [0, "", ""];
+        }
+
         if (game == "HSiFS") {
             $(removeSeason(bestShot.id) + (difficulty == "Extra" ? "Small" : "")).html((bestShot.replay === "" ? "<u>" + sep(bestShotMax) +
             "</u>" : "<u><a class='replay' href='" + bestShot.replay + "'>" + sep(bestShotMax) + "</a></u>") + "<br>by <em>" + bestShot.player +
