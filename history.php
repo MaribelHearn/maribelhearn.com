@@ -426,11 +426,11 @@
 	                        </tr>
 	                        <tr id='oUM'>
 	                            <th>UM</th>
-	                            <td id='eUM'></td>
-	                            <td id='nUM'></td>
-	                            <td id='hUM'></td>
-	                            <td id='lUM'></td>
-	                            <td id='xUM' colspan='2'></td>
+	                            <td id='eUM' class='clear'></td>
+	                            <td id='nUM' class='clear'></td>
+	                            <td id='hUM' class='clear'></td>
+	                            <td id='lUM' class='clear'></td>
+	                            <td id='xUM' class='clear' colspan='2'></td>
 	                        </tr>
 	                    </tbody>
 	                </table>
@@ -3129,7 +3129,7 @@
 		                <tr>
 		                    <td><strong>Easy</strong></td>
 		                    <td>Not yet tried</td>
-		                    <td>-</td>
+		                    <td>May 4, 2021</td>
 		                    <td>-</td>
 		                    <td>-</td>
 		                    <td>No</td>
@@ -3137,7 +3137,7 @@
 		                <tr>
 		                    <td><strong>Normal</strong></td>
 		                    <td>Not yet tried</td>
-		                    <td>-</td>
+		                    <td>May 4, 2021</td>
 		                    <td>-</td>
 		                    <td>-</td>
 		                    <td>No</td>
@@ -3145,7 +3145,7 @@
 		                <tr>
 		                    <td><strong>Hard</strong></td>
 		                    <td>Not yet tried</td>
-		                    <td>-</td>
+		                    <td>May 4, 2021</td>
 		                    <td>-</td>
 		                    <td>-</td>
 		                    <td>No</td>
@@ -3153,10 +3153,10 @@
 		                <tr>
 		                    <td><strong>Lunatic</strong></td>
 		                    <td>Not yet tried</td>
+		                    <td>May 4, 2021</td>
 		                    <td>-</td>
 		                    <td>-</td>
-		                    <td>-</td>
-		                    <td>No</td>
+		                    <td><strong><a href='https://www.youtube.com/watch?v=g45Xs21hDr0'>1cc</a></strong></td>
 		                </tr>
 		                <tr>
 		                    <td colspan='6'></td>
@@ -3164,10 +3164,10 @@
 		                <tr>
 		                    <td><strong>Extra</strong></td>
 		                    <td>Not yet tried</td>
+		                    <td>May 4, 2021</td>
 		                    <td>-</td>
 		                    <td>-</td>
-		                    <td>-</td>
-		                    <td>No</td>
+		                    <td><strong><a href='https://www.youtube.com/watch?v=5jh5vc97NxE'>1cc</a></strong></td>
 		                </tr>
 		                </table>
 					</div>
