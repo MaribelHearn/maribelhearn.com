@@ -80,7 +80,10 @@ table {
     color: white;
     background-color: #190e0e;
 }
-.TH18, .Extra {
+.TH18 {
+    background-color: #23fcb1;
+}
+.Extra {
     background-color: #ff00ff;
 }
 .highlight {

@@ -163,20 +163,20 @@
     },
     "1620475200": {
         "category": "TH15 Lunatic Survival",
-        "players": ["CreepyNinja", "-", "SNT"],
+        "players": ["CreepyNinja", "COMMON", "SNT"],
         "countries": ["we", "cn", "jp"],
         "reset": 105
     },
-    "1620511200": {
+    "1620558000": {
         "category": "TH18 Lunatic Survival",
-        "players": ["???", "???", "???"],
+        "players": ["Mino", "XCF", "SOC"],
+        "countries": ["we", "cn", "jp"],
+        "reset": 100
+    },
+    "1620567000": {
+        "category": "Extra Marathon",
+        "players": ["Maribel Hearn", "ULK", "Norbis"],
         "countries": ["we", "cn", "jp"],
         "reset": 0
-    },
-    "1620511201": {
-        "category": "Extra Marathon",
-        "players": ["???", "???", "???"],
-        "countries": ["we", "cn", "jp"],
-        "reset": -1
     }
 }

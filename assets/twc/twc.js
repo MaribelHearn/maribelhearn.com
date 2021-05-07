@@ -15,19 +15,17 @@ function toDateString(unix) {
 }
 
 function printSchedule(schedule) {
-    var highlight = false, match, id, team;
+    var highlight = false, match, id, dateString, team;
 
     for (var unix in schedule) {
         match = schedule[unix];
         id = match.category.replace(/ /g, '_');
         $("#schedule_tbody").append("<tr id='" + unix + "'></tr>");
-
-        dateString =(unix >= 1620511200 ? "Sunday, 9 May 2021, ??:??:??" : toDateString(unix));
-
+        dateString = toDateString(unix);
         $("#" + unix).html("<td class='noborders'>" + dateString +
         "</td><th class='" + match.category.split(' ')[0] + " noborders'>" + match.category + "</th>" +
         "<td id='" + id + "_players' class='noborders'></td><td id='" + id +
-        "_reset' class='noborders'>" + (match.reset === 0 ? "???" : (match.reset == -1 ? "N/A" : match.reset)) + "</td>");
+        "_reset' class='noborders'>" + (match.reset === 0 ? "N/A" : match.reset) + "</td>");
 
         if (!highlight && unix >= new Date().getTime() / 1000) {
             $("#" + unix).addClass("highlight");
