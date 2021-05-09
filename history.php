@@ -405,7 +405,7 @@
 	                            <td id='eLoLK' class='nb'></td>
 	                            <td id='nLoLK' class='clear'></td>
 	                            <td id='hLoLK' class='clear'></td>
-	                            <td id='lLoLK' class='clear'></td>
+	                            <td id='lLoLK' class='nb'></td>
 	                            <td id='xLoLK' class='clear' colspan='2'></td>
 	                        </tr>
 	                        <tr id='oHSiFS'>
@@ -2658,9 +2658,10 @@
 		                    <td><strong>Extra</strong></td>
 		                    <td class='g'>Completed</td>
 		                    <td>August 15, 2015</td>
+		                    <td>May 9, 2021</td>
 		                    <td>-</td>
-		                    <td>-</td>
-		                    <td><strong><a href='https://www.youtube.com/watch?v=3simoF6ESfU'>1cc</a></strong></td>
+		                    <td><strong><a href='https://www.youtube.com/watch?v=3simoF6ESfU'>1cc</a>
+                            <a href='https://www.youtube.com/watch?v=H9w_cv4ZouI'>NB</a></strong></td>
 		                </tr>
 		                </table>
 					</div>
@@ -3128,7 +3129,7 @@
 		                </tr>
 		                <tr>
 		                    <td><strong>Easy</strong></td>
-		                    <td>Not yet tried</td>
+		                    <td class='g'>Completed</td>
 		                    <td>May 4, 2021</td>
 		                    <td>-</td>
 		                    <td>-</td>
@@ -3136,7 +3137,7 @@
 		                </tr>
 		                <tr>
 		                    <td><strong>Normal</strong></td>
-		                    <td>Not yet tried</td>
+		                    <td class='g'>Completed</td>
 		                    <td>May 4, 2021</td>
 		                    <td>-</td>
 		                    <td>-</td>
@@ -3144,7 +3145,7 @@
 		                </tr>
 		                <tr>
 		                    <td><strong>Hard</strong></td>
-		                    <td>Not yet tried</td>
+		                    <td class='g'>Completed</td>
 		                    <td>May 4, 2021</td>
 		                    <td>-</td>
 		                    <td>-</td>
@@ -3152,7 +3153,7 @@
 		                </tr>
 		                <tr>
 		                    <td><strong>Lunatic</strong></td>
-		                    <td>Not yet tried</td>
+		                    <td class='g'>Completed</td>
 		                    <td>May 4, 2021</td>
 		                    <td>-</td>
 		                    <td>-</td>
@@ -3163,7 +3164,7 @@
 		                </tr>
 		                <tr>
 		                    <td><strong>Extra</strong></td>
-		                    <td>Not yet tried</td>
+		                    <td class='g'>Completed</td>
 		                    <td>May 4, 2021</td>
 		                    <td>-</td>
 		                    <td>-</td>
