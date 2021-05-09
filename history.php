@@ -405,8 +405,8 @@
 	                            <td id='eLoLK' class='nb'></td>
 	                            <td id='nLoLK' class='clear'></td>
 	                            <td id='hLoLK' class='clear'></td>
-	                            <td id='lLoLK' class='nb'></td>
-	                            <td id='xLoLK' class='clear' colspan='2'></td>
+	                            <td id='lLoLK' class='clear'></td>
+	                            <td id='xLoLK' class='nb' colspan='2'></td>
 	                        </tr>
 	                        <tr id='oHSiFS'>
 	                            <th>HSiFS</th>
