@@ -398,7 +398,7 @@
 	                            <td id='nDDC' class='nb'></td>
 	                            <td id='hDDC' class='clear'></td>
 	                            <td id='lDDC' class='clear'></td>
-	                            <td id='xDDC' class='nb' colspan='2'></td>
+	                            <td id='xDDC' class='nmnb' colspan='2'></td>
 	                        </tr>
 	                        <tr id='oLoLK'>
 	                            <th>LoLK</th>
@@ -2384,9 +2384,10 @@
 		                    <td class='g'>Completed</td>
 		                    <td>February 10, 2014</td>
 		                    <td>June 18, 2016</td>
-		                    <td>-</td>
+		                    <td>May 10, 2021</td>
 		                    <td><strong><a href='https://www.youtube.com/watch?v=wpb8yCgnYyc'>1cc</a>
-		                    <a href='https://www.youtube.com/watch?v=SZWY1JGXPS4'>NB</a></strong></td>
+		                    <a href='https://www.youtube.com/watch?v=SZWY1JGXPS4'>NB</a>
+                            <a href='https://www.youtube.com/watch?v=MtKJsKdXW5Q'>NMNB</a></strong></td>
 		                </tr>
 		                </table>
 					</div>
