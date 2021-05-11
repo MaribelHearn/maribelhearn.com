@@ -422,7 +422,7 @@
 	                            <td id='nWBaWC' class='nb'></td>
 	                            <td id='hWBaWC' class='clear'></td>
 	                            <td id='lWBaWC' class='clear'></td>
-	                            <td id='xWBaWC' class='nb' colspan='2'></td>
+	                            <td id='xWBaWC' class='nmnb' colspan='2'></td>
 	                        </tr>
 	                        <tr id='oUM'>
 	                            <th>UM</th>
@@ -3103,8 +3103,9 @@
 		                    <td class='g'>Completed</td>
 		                    <td>August 12, 2019</td>
 		                    <td>August 12, 2019</td>
-		                    <td>-</td>
-		                    <td><strong><a href='https://www.youtube.com/watch?v=z4sM9kPtRsk'>1cc</a></strong></td>
+		                    <td>May 12, 2021</td>
+		                    <td><strong><a href='https://www.youtube.com/watch?v=z4sM9kPtRsk'>1cc</a>
+                            <a href='https://www.youtube.com/watch?v=xXFRbyoqECk'>NNNN</a></strong></td>
 		                </tr>
 		                </table>
 					</div>
