@@ -150,6 +150,10 @@ function player_search(string $lang) {
     }
 }
 function is_later_date(string $date1, string $date2) {
+    if (strpos($date1, '?')) {
+        return false;
+    }
+
     $date1 = preg_split('/\//', $date1);
     $date2 = preg_split('/\//', $date2);
     $year = $date1[2]; $month = $date1[1]; $day = $date1[0];
