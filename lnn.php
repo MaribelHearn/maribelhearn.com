@@ -382,17 +382,17 @@
                     ?></p>
                     <p id='rutlcredit'><?php
                         if ($lang == 'Chinese') {
-                            echo '感谢<a href="https://twitter.com/williewillus">williewillus</a>' .
-                            '提供头部文字的中文翻译。';
+                            echo '感谢<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>' .
+                            '提供头部文字的俄语翻译。';
                         } else if ($lang == 'Japanese') {
-                            echo 'ページ上部のテキストは<a href="https://twitter.com/williewillus">williewillus</a>' .
-                            'によって中国語に翻訳されました。';
+                            echo 'ページ上部のテキストは<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>' .
+                            'によってロシア語に翻訳されました。';
                         } else if ($lang == 'Russian') {
                            echo 'Русский перевод сделал ' .
                            '<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>.';
                         } else {
-                            echo 'The Chinese translation of the top text was done by ' .
-                            '<a href="https://twitter.com/williewillus">williewillus</a>.';
+                            echo 'The Russian translation of the top text was done by ' .
+                            '<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>.';
                         }
                     ?></p>
     				<p id='ack_mobile'><?php
