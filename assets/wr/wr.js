@@ -418,7 +418,7 @@ function generateDates(oldLanguage, oldNotation, playerSelected) {
         for (i = 0; i < datestrings.length; i += 1) {
             date = $(datestrings[i]).html();
 
-            if (language == "English") {
+            if (language == "English" || language == "Russian") {
                 if (oldLanguage == "English") {
                     if (notation == "DMY") {
                         $(datestrings[i]).html(translateUSDate(date, "DMY"));
@@ -429,7 +429,7 @@ function generateDates(oldLanguage, oldNotation, playerSelected) {
                     $(datestrings[i]).html(translateEADate(date, notation));
                 }
             } else if (language == "Japanese" || language == "Chinese") {
-                if (oldLanguage == "English") {
+                if (oldLanguage == "English" || oldLanguage == "Russian") {
                     if (oldNotation == "DMY") {
                         $(datestrings[i]).html(translateDate(date, "YMD"));
                     } else if (oldNotation == "MDY") {
@@ -487,6 +487,7 @@ function setEventListeners() {
     $("#en-us").on("click", {language: "English", notation: "MDY"}, setLanguage);
     $("#jp").on("click", {language: "Japanese", notation: "YMD"}, setLanguage);
     $("#zh").on("click", {language: "Chinese", notation: "YMD"}, setLanguage);
+    $("#ru").on("click", {language: "Russian", notation: "DMY"}, setLanguage);
     $(".game").on("click", {seasonSwitch: false}, showWRs);
 }
 
@@ -513,6 +514,8 @@ $(document).ready(function () {
     } else if (getCookie("lang") == "Chinese" || location.href.contains("zh")) {
         language = "Chinese";
         notation = "YMD";
+    } else if (getCookie("lang") == "Russian") {
+        language = "Russian";
     } else if (getCookie("datenotation") == "MDY" || location.href.contains("en-us")) {
         notation = "MDY";
     }
