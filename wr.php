@@ -76,6 +76,10 @@
                             <img src='assets/flags/china.png' alt='<?php echo tl_term('Flag of the P.R.C.', $lang) ?>'>
                             <p class='language'>简体中文</p>
                         </a>
+                        <a id='ru' class='flag' href='wr?hl=ru'>
+                            <img src='assets/flags/russia.png' alt='<?php echo tl_term('Flag of Russia', $lang) ?>'>
+                            <p class='language'>Русский</p>
+                        </a>
     	            </div>
     			</div>
     			<h1><?php echo tl_term('Touhou World Records', $lang); ?></h1>
@@ -92,6 +96,10 @@
                         echo '東方原作STG各作品世界記録の正確なリストです。適宜頻繁に更新します。' .
                         '下部に記載されているプレイヤーランキングは特定のスコアの高低を示すものではなく、あくまで世' .
                         '界記録取得数を示したものですのでご留意ください。また今のところ文花帖のようなシーンを基準にするリストは作成しておりません。';
+                    } else if ($lang == 'Russian') {
+                        echo 'Регулярно обновяющийся список всех мировых рекордов по Тохо. Замечание: рейтинг игроков снизу не ' .
+                        'учитывает насколько их рекорды сложно побить, это всего лишь числа. Список на данный момент не включает ' .
+                        'в себя фотошутеры.';
                     } else {
                         echo 'An accurate list of Touhou world records, updated every so often. ' .
                         'Note that the player ranking at the bottom does not take into account how strong specific records are, '.
@@ -104,6 +112,9 @@
                     } else if ($lang == 'Japanese') {
                         echo '該当のリプレイファイルをダウンロードするにはスコアをクリックしてください。' .
                         '各欄は並べ替え可能となっています。並べ替えには各表の最上段をクリックしてください。';
+                    } else if ($lang == 'Russian') {
+                        echo 'Вы можете нажать на скор чтобы скачать реплей, если он доступен. Все столбцы таблицы ' .
+                        'можно отсортировать.';
                     } else {
                         echo 'Click a score to download the corresponding replay, if there is one available. ' .
                         'All of the table columns are sortable.';
@@ -114,6 +125,8 @@
                         echo '请勿将rep上传到别的存rep网站。';
                     } else if ($lang == 'Japanese') {
                         echo 'リプレイファイルの二次利用は禁止致します。';
+                    } else if ($lang == 'Russian') {
+                        echo 'Предоставленные здесь реплеи <strong>запрещается</strong> публиковать на сторонних ресурсах.';
                     } else {
                         echo 'The replays provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.';
                     }
@@ -122,6 +135,7 @@
                 <h2 id='contents_header'><?php
     				if ($lang == 'Chinese') { echo '内容'; }
     				else if ($lang == 'Japanese') { echo '内容'; }
+                    else if ($lang == 'Russian') { echo 'Содержание'; }
     				else { echo 'Contents'; }
     			?></h2>
                 <?php
@@ -371,6 +385,7 @@
                         echo '<div id="newlayout"><p id="clickgame">';
                         if ($lang == 'Chinese') { echo '单击游戏处查看世界纪录列表。'; }
                         else if ($lang == 'Japanese') { echo '世界記録リストはゲームをクリック。'; }
+                        else if ($lang == 'Russian') { echo 'Нажмите на обложку игры для получения ее списка рекордов.'; }
                         else { echo 'Click a game cover to show its list of world records.'; }
                         echo '</p>';
                         $second_row = false;
@@ -399,6 +414,7 @@
                         echo '<h2>' . player_search($lang) . '</h2><p id="playerwrs">';
         				if ($lang == 'Chinese') { echo '在以下的菜单选择玩家的名字则可查看其WR。'; }
                         else if ($lang == 'Japanese') { echo '個人のWRを表示するには、下記のメニューからプレイヤー名を選んでください。'; }
+                        else if ($lang == 'Russian') { echo 'Выберите имя игрока из меню ниже чтобы получить список его мировых рекордов.'; }
                         else { echo 'Choose a player name from the menu below to show their WRs.'; }
         			?></p>
         			<label for='player' class='player'><?php echo tl_term('Player', $lang); ?></label>
@@ -507,6 +523,8 @@
                             } else if ($lang == 'Japanese') {
                                 echo 'ページ上部のテキストは<a href="https://twitter.com/toho_yumiya">ゆーみや</a>' .
                                 'によって日本語に翻訳されました。';
+                            } else if ($lang == 'Russian') {
+                                echo 'Японский перевод сделал <a href="https://twitter.com/toho_yumiya">Yu-miya</a>.';
                             } else {
                                 echo 'The Japanese translation of the top text was done by ' .
                                 '<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.';
@@ -520,9 +538,26 @@
                             } else if ($lang == 'Japanese') {
                                 echo 'ページ上部のテキストは<a href="https://twitter.com/williewillus">williewillus</a>' .
                                 'によって中国語に翻訳されました。';
+                            } else if ($lang == 'Russian') {
+                                echo 'Китайский перевод сделал <a href="https://twitter.com/williewillus">williewillus</a>.';
                             } else {
                                 echo 'The Chinese translation of the top text was done by ' .
                                 '<a href="https://twitter.com/williewillus">williewillus</a>.';
+                            }
+                        ?>
+                    </p>
+                    <p id='rutlcredit'>
+                        <?php
+                            if ($lang == 'Chinese') {
+                                echo '感谢<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>提供头部文字的俄语翻译。';
+                            } else if ($lang == 'Japanese') {
+                                echo 'ページ上部のテキストは<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>' .
+                                'によってロシア語に翻訳されました。';
+                            } else if ($lang == 'Russian') {
+                                echo 'Русский перевод сделал <a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>.';
+                            } else {
+                                echo 'The Russian translation of the top text was done by ' .
+                                '<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>.';
                             }
                         ?>
                     </p>

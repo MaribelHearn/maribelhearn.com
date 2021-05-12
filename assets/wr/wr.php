@@ -76,7 +76,11 @@ function format_lm(string $lm, string $lang, string $notation) {
         return '世界记录更新于<span id="lm">' . date_tl($lm, 'YMD') . '</span>。';
     } else {
         if ($notation == 'DMY') {
-            return 'World records are current as of <span id="lm">' . $lm . '</span>.';
+            if ($lang == 'Russian') {
+                return 'Рекорды актуальны на <span id="lm">' . $lm . '</span>.';
+            } else {
+                return 'World records are current as of <span id="lm">' . $lm . '</span>.';
+            }
         } else {
             return 'World records are current as of <span id="lm">' . date_tl($lm, 'MDY') . '</span>.';
         }
@@ -139,6 +143,8 @@ function player_search(string $lang) {
         return '玩家WR';
     } else if ($lang == 'Japanese') {
         return '個人のWR';
+    } else if ($lang == 'Russian') {
+        return 'Поиск игроков';
     } else {
         return 'Player Search';
     }

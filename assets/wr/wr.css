@@ -17,68 +17,71 @@ table {
 table, th, td {
     border: 1px solid #000;
 }
-.HRtPt th, .HRtPp {
+.HRtPt th, .HRtPp, .HRtP {
     color: white;
     background-color: #b6423c;
 }
-.SoEWt th, .SoEWp {
+.SoEWt th, .SoEWp, .SoEW {
     color: white;
     background-color: #7d3884;
 }
-.PoDDt th, .PoDDp {
+.PoDDt th, .PoDDp, .PoDD {
     background-color: gold;
 }
-.LLSt th, .LLSp {
+.LLSt th, .LLSp, .LLS {
     background-color: #90ee90;
 }
-.MSt th, .MSp {
+.MSt th, .MSp, .MS {
     color: white;
     background-color: #ae11d5;
 }
-.EoSDt th, .EoSDp {
+.EoSDt th, .EoSDp, .EoSD {
     background-color: #ff2400;
 }
-.PCBt th, .PCBp {
+.PCBt th, .PCBp, .PCB {
     background-color: #ff8ed2;
 }
-.INt th, .INp {
+.INt th, .INp, .IN {
     color: white;
     background-color: #339;
 }
-.PoFVt th, .PoFVp {
+.PoFVt th, .PoFVp, .PoFV {
     background-color: #009973;
 }
-.MoFt th, .MoFp {
+.MoFt th, .MoFp, .MoF {
     background-color: #96b300;
 }
-.SAt th, .SAp {
+.SAt th, .SAp, .SA {
     color: white;
     background-color: #591400;
 }
-.UFOt th, .UFOp {
+.UFOt th, .UFOp, .UFO {
     color: white;
     background-color: #4169e1;
 }
-.GFWt th, .GFWp {
+.GFWt th, .GFWp, .GFW {
     background-color: #00c8c8;
 }
-.TDt th, .TDp {
+.TDt th, .TDp, .TD {
     background-color: #4a808c;
 }
-.DDCt th, .DDCp {
+.DDCt th, .DDCp, .DDC {
     background-color: #a77;
 }
-.LoLKt th, .LoLKp {
+.LoLKt th, .LoLKp, .LoLK {
     color: white;
     background-color: #6a47be;
 }
-.HSiFSsmallt th, .HSiFSt th, .HSiFSp {
+.HSiFSsmallt th, .HSiFSt th, .HSiFSp, .HSiFS {
     color: white;
     background-color: #176e0e;
 }
-.WBaWCt th, .WBaWCp {
+.WBaWCt th, .WBaWCp, .WBaWC {
     color: white;
     background-color: #190e0e;
+}
+.UMt th, .UMp, .UM {
+    background-color: #23fcb1;
 }
 .border {
     border: 1px solid black;

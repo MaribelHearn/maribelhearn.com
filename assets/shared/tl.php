@@ -428,9 +428,11 @@ function tl_term(string $term, string $lang) {
     } else if ($lang == 'Russian') {
         $term = trim($term);
         switch ($term) {
-            case 'Player': return 'Игрок';
+            case 'Dates': return 'Даты';
             case 'LNN Lists': return 'Списки LNN';
             case 'Overall Count': return 'Общее количество';
+            case 'Overall Records': return 'Общие рекорды';
+            case 'World Records': return 'Мировые рекорды';
             case 'Player Ranking': return 'Рейтинг игроков';
             case 'Recent Records': return 'Последние Мировые Рекорды';
             case 'Acknowledgements': return 'Примечания';
