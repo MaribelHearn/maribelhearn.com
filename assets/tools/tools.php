@@ -5,6 +5,8 @@ if ($_GET['hl'] == 'en') {
     $lang = 'Russian';
 } else if (isset($_COOKIE['lang'])) {
     $lang = str_replace('"', '', $_COOKIE['lang']);
+} else {
+    $lang = 'English';
 }
 function tl_term(string $term, string $lang) {
     if ($lang == 'Japanese') {
