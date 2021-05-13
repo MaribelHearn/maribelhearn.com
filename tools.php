@@ -548,8 +548,8 @@
 				?></p>
     			<a href='https://mega.nz/#!oh4lBA4C!Fq7UV5LfQulUaCAubGRk_LMLOeR4nfE9CdMa0OQZryA'><?php echo tl_term('Download', $lang) ?></a>
     			<p><strong><?php
-					if ($lang == 'Russian') { echo 'a'; } else { echo 'b'; }
-				?>HSiFS Sanae by <a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
+					if ($lang == 'Russian') { echo 'HSiFS Санаэ от '; } else { echo 'HSiFS Sanae by '; }
+				?><a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
     			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img class='icon thcrap_icon' src='assets/shared/icon_sheet.png' alt='THCRAP favicon'> th16sanae</a></p>
     			<p><?php
 					if ($lang == 'Russian') { echo 'Заменяет Марису на Санаэ в HSiFS.'; }
@@ -632,8 +632,8 @@
                     <a href='http://www.mediafire.com/file/usbud0rr385z2nn/th14.dat' target='_blank'>HarDDC</a></p>
                 </div>
     			<p><strong><?php
-					if ($lang == 'Russian') { echo 'a'; } else { echo 'b'; }
-				?>RNG patches by <a href='https://www.twitch.tv/thedaikarasu' target='_blank'>Daikarasu</a></strong>
+					if ($lang == 'Russian') { echo 'RNG патчи от '; } else { echo 'RNG patches by '; }
+				?><a href='https://www.twitch.tv/thedaikarasu' target='_blank'>Daikarasu</a></strong>
     			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img class='icon thcrap_icon' src='assets/shared/icon_sheet.png' alt='THCRAP favicon'> RNG</a></p>
     			<p><?php
 					if ($lang == 'Russian') {
@@ -820,7 +820,7 @@
 				?></p>
     			<a href='https://github.com/hoangcaominh/RealTimeDRCPointsDisplayer/releases/latest' target='_blank'><?php echo tl_term('Download', $lang) ?></a>
                 <p><strong><?php
-					if ($lang == 'Russian') { echo 'MS Black Label от '; } else { echo 'MS Black Label by ous'; }
+					if ($lang == 'Russian') { echo 'MS Black Label от '; } else { echo 'MS Black Label by '; }
 				?><a href='https://twitter.com/spaztron64' target='_blank'>Spaztron64</a></strong></p>
                 <p><?php
 					if ($lang == 'Russian') { echo 'Увеличивает потолок грейза с 999 до 65536.'; }
