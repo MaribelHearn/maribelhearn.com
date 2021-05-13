@@ -13,6 +13,11 @@ h2 {
     font-family: 'Felipa';
     font-size: 36px;
 }
+h3 {
+    font-family: 'Felipa';
+    font-size: 24px;
+    margin-top: 0px;
+}
 table {
     margin-left: auto;
     margin-right: auto;
@@ -32,6 +37,12 @@ table, tr, th, td {
 }
 .wide-bottom {
     margin-bottom: 10px;
+}
+.flag {
+    display: inline-block;
+}
+.language {
+    margin-top: 0px;
 }
 .tooltip {
     visibility: hidden;
@@ -60,11 +71,13 @@ table, tr, th, td {
     padding-bottom: 15px;
     opacity: 0.8;
 }
-#wrap > div {
+#wrap > div:not(#topbar) {
     display: inline-block;
 }
-#nav {
-    margin-bottom: 5px;
+#languages {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 #hy {
     object-position: -512px 0px;
@@ -88,11 +101,24 @@ table, tr, th, td {
     text-align: right;
     background: none;
     position: fixed;
+    color: white;
     bottom: 5px;
     right: 5px;
 }
 #ack_br, #ack_mobile {
     display: none;
+}
+#ack > a:link {
+    color: #1e90ff;
+}
+#ack > a:active {
+    color: red;
+}
+#ack > a:visited {
+    color: #ff69b4;
+}
+#ack_container > p {
+    margin: 4px;
 }
 @media only screen and (min-width: 1100px) and (max-width: 1400px) {
     .wrap {
@@ -165,5 +191,9 @@ table, tr, th, td {
     }
     #hy_container {
         float: none;
+    }
+    #languages {
+        margin-top: 10px;
+        width: 100%;
     }
 }
