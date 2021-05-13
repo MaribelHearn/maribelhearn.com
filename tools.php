@@ -175,7 +175,7 @@
     			</div>
                 <!-- Enbconvertor -->
                 <hr>
-                <h2 id='enbconvertor'><?php if ($lang == 'Russian') { echo 'Конвертер DX8 to DX9 [DX8 to DX9 converter]'; }
+                <h2 id='enbconvertor'><?php if ($lang == 'Russian') { echo 'Конвертер DX8 to DX9'; }
 				else { echo 'DX8 to DX9 converter'; } ?></h2>
                 <p><?php
 					if ($lang == 'Russian') {
