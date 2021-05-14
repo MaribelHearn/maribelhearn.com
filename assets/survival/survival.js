@@ -1,4 +1,5 @@
- var games = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC"],
+var games = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "INFinalA",
+    "INFinalB", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"],
     innerHeight = window.innerHeight, vals = {}, originalContent, completions, na, i;
 
 for (i = 0; i < games.length; i++) {
@@ -9,7 +10,7 @@ for (i = 0; i < games.length; i++) {
         "Lunatic": "N/A"
     };
 
-    if (games[i] != "HRtP" && games[i] != "PoDD") {
+    if (games[i] != "HRtP" && games[i] != "PoDD" && games[i] != "INFinalB") {
         vals[games[i]].Extra = "N/A";
     }
 
@@ -23,6 +24,10 @@ String.prototype.contains = function (string) {
 };
 
 function getPercentage(game) {
+    if (game.contains("IN")) {
+        return 100 / (Object.keys(vals["INFinalA"]).length + Object.keys(vals["INFinalB"]).length);
+    }
+
     return 100 / Object.keys(vals[game]).length;
 }
 
@@ -39,6 +44,8 @@ function gameSpecific(game, achievement) {
         return ({"NB+": "NBNR", "NMNB": "NMNBNR"}[achievement]);
     } else if (game == "WBaWC") {
         return ({"NB+": "NBNHNRB", "NMNB": "NNNN"}[achievement]);
+    } else if (game == "UM") {
+        return ({"NB+": "NBNC", "NMNB": "NMNBNC"}[achievement]);
     } else {
         return ({"NB+": "NB", "NMNB": "NMNB"}[achievement]);
     }
@@ -130,7 +137,8 @@ function initGameCounts() {
         "DDC": 0,
         "LoLK": 0,
         "HSiFS": 0,
-        "WBaWC": 0
+        "WBaWC": 0,
+        "UM": 0
     };
 }
 
@@ -146,17 +154,20 @@ function format(achievement) {
         "NT": "np",
         "NR": "np",
         "NHNRB": "np",
+        "NC": "np",
         "NBNBB": "nbp",
         "NBNV": "nbp",
         "NBNT": "nbp",
         "NBNR": "nbp",
         "NBNHNRB": "nbp",
+        "NBNC": "nbp",
         "NMNB": "nmnb",
         "NMNBNBB": "nmnb",
         "NMNB(NV)": "nmnb",
         "NMNBNT": "nmnb",
         "NMNBNR": "nmnb",
-        "NNNN": "nmnb"
+        "NNNN": "nmnb",
+        "NMNBNC": "nmnb"
     })[achievement];
 }
 
@@ -174,7 +185,7 @@ function fillOverviewGame(game, numbers) {
             numbers[difficulty == "Phantasm" ? "Extra" : difficulty]["Not cleared"] += 1;
             numbers["Total"]["Not cleared"] += 1;
         } else {
-            completions[game] += getPercentage(game);
+            completions[game.contains("IN") ? "IN" : game] += getPercentage(game.contains("IN") ? "IN" : game);
             if (value.substr(0, 2) == "NB" && value.length > 2) {
                 numbers[difficulty == "Phantasm" ? "Extra" : difficulty]["NB+"] += 1;
                 numbers["Total"]["NB+"] += 1;
@@ -243,7 +254,13 @@ function fillCompletionTable() {
             continue;
         }
 
-        $(id).append("<tr><td>" + game + "</td><td>" + Math.round(completions[game]) + "%</td></tr>");
+        if (game == "INFinalA") {
+            $(id).append("<tr><td>IN</td><td>" + Math.round(completions["IN"]) + "%</td></tr>");
+        } else if (game == "INFinalB") {
+            continue;
+        } else {
+            $(id).append("<tr><td>" + game + "</td><td>" + Math.round(completions[game]) + "%</td></tr>");
+        }
     }
 }
 
@@ -264,18 +281,18 @@ function isMobile() {
 }
 
 function applyColours() {
-    var id;
+    var id, tmp;
 
     $("select").each(function () {
         id = $(this).attr("id");
 
         if (id.substr(0, 4) != "fill") {
-            if (id.contains("Extra") && !id.contains("PCB")) {
+            if (id.contains("Extra") && !id.contains("PCB") || !id.contains("IN") && !id.contains("Extra")) {
                 $(this).parent().attr("colspan", 2);
                 $(this).parent().addClass("overview");
-            } else if (id == "PCBExtra") {
+            } else if (id == "PCBExtra" || id == "PCBPhantasm") {
                 $(this).parent().addClass("overview_half");
-            } else if (id == "PCBPhantasm") {
+            } else if (id.contains("IN") && !id.contains("Extra")) {
                 $(this).parent().addClass("overview_half");
             } else {
                 $(this).parent().addClass("overview");
@@ -283,12 +300,23 @@ function applyColours() {
 
             $(this).parent().addClass(format($(this).val()));
             $(this).parent().html(format($(this).val()) == "nbp" ? $(this).val() : "");
+
+            if ($(this).attr("id").contains("INFinalB")) {
+                tmp = $(this).attr("id").replace("INFinal", "");
+                $("#" + tmp).addClass(format($(this).val()));
+                $("#" + tmp).html(format($(this).val()) == "nbp" ? $(this).val() : "");
+            }
         }
     });
 }
 
 function prepareRendering() {
+    $("#Easy").attr("colspan", 2);
+    $("#Normal").attr("colspan", 2);
+    $("#Hard").attr("colspan", 2);
+    $("#Lunatic").attr("colspan", 2);
     $("#Extra").attr("colspan", 2);
+    $("#INFinalA").addClass("bold");
     $("#survival").addClass("rendering");
     $("#survival, #wrap").css("margin-left", "0");
     $("#container, #wrap").css("background-color", "white");
@@ -299,7 +327,12 @@ function prepareRendering() {
     $(".no_extra").attr("colspan", 2);
     $(".no_extra").html("X");
     $(".no_extra").removeClass("noborders");
+    $(".in_route").remove();
+    $(".hidden").addClass("overview_half");
+    $(".hidden").css("display", "table-cell");
     applyColours();
+    $(".overview").attr("rowspan", 1);
+    $("#INFinalBtr").remove();
 
     for (var i = 0; i < games.length; i++) {
         $("#" + games[i]).addClass("bold");
@@ -432,6 +465,7 @@ function readLocalStorage() {
 
         if (data) {
             vals = JSON.parse(data);
+
             if (!vals.hasOwnProperty("WBaWC")) {
                 vals.WBaWC = {
                     "Easy": "N/A",
@@ -439,7 +473,28 @@ function readLocalStorage() {
                     "Hard": "N/A",
                     "Lunatic": "N/A",
                     "Extra": "N/A"
-                }
+                };
+            }
+
+            if (!vals.hasOwnProperty("UM")) {
+                vals.UM = {
+                    "Easy": "N/A",
+                    "Normal": "N/A",
+                    "Hard": "N/A",
+                    "Lunatic": "N/A",
+                    "Extra": "N/A"
+                };
+            }
+
+            if (vals.hasOwnProperty("IN")) {
+                vals.INFinalA = vals.IN;
+                vals.INFinalB = {
+                    "Easy": "N/A",
+                    "Normal": "N/A",
+                    "Hard": "N/A",
+                    "Lunatic": "N/A"
+                };
+                delete vals.IN;
             }
         }
     } catch (err) {

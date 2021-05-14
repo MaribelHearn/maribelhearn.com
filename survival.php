@@ -44,7 +44,8 @@
         			<p>The main survival progress table is an image and can be copied or saved to your device.</p>
                     <p>NM = No Miss (no deaths), NB = No Bomb, NMNB = No Miss No Bomb. There can also be a third restriction, depending on the game.
                     In PCB this restriction is NBB (No Border Breaks), in UFO it is NV (No UFO Summons),
-        			in TD it is NT (No Trance), in HSiFS it is NR (No Releases) and in WBaWC it is NHNRB (No Berserk Roar No Roar Breaks).
+        			in TD it is NT (No Trance), in HSiFS it is NR (No Releases), in WBaWC it is NHNRB (No Berserk Roar No Roar Breaks)
+					and in UM it is NC (No Cards, that is, no cards that affect survival play).
                     The Phantasm Stage counts as another Extra Stage.</p>
                     <p>Use the below selectors to fill up many achievements at once. Normal, Hard and Lunatic will also fill the difficulties below them.</p>
                     <p>
@@ -98,13 +99,17 @@
         					<?php
         						foreach ($games as $key => $game) {
         							$achievs = achievs($game);
-        							echo '<tr><td id="' . $game . '">' . $game . '</td>';
+        							echo '<tr id="' . $game . 'tr"><td id="' . $game . '">' . display_name($game) . '</td>';
         							foreach ($diffs as $key => $diff) {
         								if (no_extra($game, $diff) && $diff == 'Extra') {
-        									echo '<td class="noborders"></td><td class="noborders"></td>';
+											if ($game != 'INFinalB') {
+												echo '<td class="noborders"></td><td class="noborders"></td>';
+											}
+
         									continue;
         								}
-        								echo '<td><select id="' . $game . $diff . '" class="category">';
+										echo ($game == 'INFinalA' && $diff == 'Extra' ? '<td rowspan="2">' : '<td>');
+        								echo '<select id="' . $game . $diff . '" class="category">';
         								foreach ($achievs as $key => $achiev) {
         									echo '<option>' . $achiev . '</option>';
         								}
@@ -118,6 +123,9 @@
         								} else if ($game != 'PCB' && $diff == 'Extra') {
         									echo '<td class="noborders"></td>';
         								}
+										if ($game == 'INFinalA' && $diff != 'Extra') {
+											echo '<td id="B' . $diff . '" class="hidden">';
+										}
         							}
         							echo '</tr>';
         						}
