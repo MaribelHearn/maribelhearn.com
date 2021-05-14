@@ -20,7 +20,7 @@ h2 {
 input[type=button] {
     margin: 5px 5px 0 5px;
 }
-.rendering td:last-child:not(.overview_half), .rendering th:last-child:not(.overview_half) {
+.rendering td:last-child:not(.overview_half), .rendering th:last-child:not(.overview_half), .hidden {
     display: none;
 }
 .rendering {
@@ -66,6 +66,10 @@ input[type=button] {
 }
 .nmnb {
     background-color: purple;
+}
+.in_route {
+    font-size: 12px;
+    color: #339;
 }
 .result {
     margin-bottom: 5px;
