@@ -12,6 +12,8 @@ if (empty($_GET['hl']) && !isset($_COOKIE['lang']) || $_GET['hl'] == 'en') {
      $lang = 'Japanese';
 } else if ($_GET['hl'] == 'zh') {
     $lang = 'Chinese';
+} else if ($_GET['hl'] == 'ru') {
+    $lang = 'Russian';
 }
 $layout = (isset($_COOKIE['lnn_old_layout']) ? 'Old' : 'New');
 $pl = array();
@@ -20,15 +22,16 @@ $flag = array();
 $missing_replays = array();
 $gt = 0;
 function lnn_type(string $game, string $lang) {
-    if ($lang == 'English') {
+    if ($lang == 'Chinese') {
         switch ($game) {
-            case 'PCB': return 'No. of LNNNs';
-            case 'IN': return 'No. of LNNFSs';
-            case 'UFO': return 'No. of LNN(N)s';
-            case 'TD': return 'No. of LNNNs';
-            case 'HSiFS': return 'No. of LNNNs';
-            case 'WBaWC': return 'No of LNNNNs';
-            default: return 'No. of LNNs';
+            case 'PCB': return 'LNNN的数量';
+            case 'IN': return 'LNNFS的数量';
+            case 'UFO': return 'LNN的数量';
+            case 'TD': return 'LNNN的数量';
+            case 'HSiFS': return 'LNNN的数量';
+            case 'WBaWC': return 'LNNNN的数量';
+            case 'UM': return 'LNNN的数量';
+            default: return 'LNN的数量';
         }
     } else if ($lang == 'Japanese') {
         switch ($game) {
@@ -38,17 +41,19 @@ function lnn_type(string $game, string $lang) {
             case 'TD': return 'LNNNの数';
             case 'HSiFS': return 'LNNNの数';
             case 'WBaWC': return 'LNNNNの数';
+            case 'UM': return 'LNNNの数';
             default: return 'LNNの数';
         }
-    } else {
+    } else { // English or Russian
         switch ($game) {
-            case 'PCB': return 'LNNN的数量';
-            case 'IN': return 'LNNFS的数量';
-            case 'UFO': return 'LNN的数量';
-            case 'TD': return 'LNNN的数量';
-            case 'HSiFS': return 'LNNN的数量';
-            case 'WBaWC': return 'LNNNN的数量';
-            default: return 'LNN的数量';
+            case 'PCB': return 'No. of LNNNs';
+            case 'IN': return 'No. of LNNFSs';
+            case 'UFO': return 'No. of LNN(N)s';
+            case 'TD': return 'No. of LNNNs';
+            case 'HSiFS': return 'No. of LNNNs';
+            case 'WBaWC': return 'No. of LNNNNs';
+            case 'UM': return 'No. of LNNNs';
+            default: return 'No. of LNNs';
         }
     }
 }
