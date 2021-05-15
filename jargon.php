@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html id='top' lang='en'>
 <?php
 	include 'assets/shared/shared.php';
@@ -56,7 +56,7 @@
                         </tr>
                         <tr id='term_10D'>
                             <th>10D</th>
-                            <td>If you use this, please switch to using 'TD' for that game now.</td>
+                            <td>If you use this, please switch to using <a href='#term_td'>TD</a> for that game now.</td>
                         </tr>
                         <tr id='term_1cc'>
                             <th>1cc</th>
@@ -86,9 +86,21 @@
                             <td>The point at which the score counter stops increasing; the score limit of a game. Sometimes this is reachable, but most of the time it is not.
                             Not to be confused with <a href='#term_overflow'>overflow</a> or <a href='#term_underflow'>underflow</a>.</td>
                         </tr>
+						<tr id='term_cs'>
+							<th>CS</th>
+							<td>See <a href='#term_counterstop'>counterstop</a>.</td>
+						</tr>
                         <tr id='term_db'>
                             <th>DB</th>
                             <td>Deathbomb; a bomb within a few frames after getting hit, which saves you from dying.</td>
+                        </tr>
+                        <tr id='term_ds'>
+                            <th>DS</th>
+                            <td>Touhou 12.5: Double Spoiler.</td>
+                        </tr>
+                        <tr id='term_eosd'>
+                            <th>EoSD</th>
+                            <td>Touhou 6: the Embodiment of Scarlet Devil.</td>
                         </tr>
                         <tr id='term_exnn'>
                             <th>ExNN</th>
@@ -98,9 +110,17 @@
                             <th>FS</th>
                             <td>Full Spell; a run that captures all Spell Cards.</td>
                         </tr>
+						<tr id='term_fw'>
+							<th>FW</th>
+							<td>See <a href='#term_gfw'>GFW</a>.</td>
+						</tr>
+						<tr id='term_gfw'>
+							<th>GFW</th>
+							<td>Touhou 12.8: Great Fairy Wars.</td>
+						</tr>
                         <tr id='term_gameover'>
                             <th>GO</th>
-                            <td>Game over. Not to be confused with <a href='#term_go'>"Good Omen"</a>, a Spell Card.</td>
+                            <td>(Uncommon) Game over. Not to be confused with <a href='#term_go'>"Good Omen"</a>, a Spell Card.</td>
                         <tr id='term_graze'>
                             <th>Graze</th>
                             <td>Having a bullet come very close to your hitbox, which means it touches your 'grazebox', a hitbox larger than your main hitbox that is used to detect grazing.</td>
@@ -110,10 +130,26 @@
                             <td>The part of a sprite that is used for collision detection; that is, the part of the player character or an enemy that can get hit, and the part of a bullet that kills you when touched.
                             In Touhou, hitboxes of a sprite are smaller than the full size of the sprite.</td>
                         </tr>
+						<tr id='term_hsifs'>
+							<th>HSiFS</th>
+							<td>Touhou 16: Hidden Star in Four Seasons.</td>
+						</tr>
                         <tr id='term_iframes'>
                             <th>I-frames</th>
                             <td>Invincibility frames; frames during which something does not take any hits. Your player character has a number of I-frames after a death, as well as during a bomb.
                             Under certain circumstances, some enemy characters can also have I-frames.</td>
+                        </tr>
+                        <tr id='term_isc'>
+                            <th>ISC</th>
+                            <td>Touhou 14.3: Impossible Spell Card.</td>
+                        </tr>
+						<tr id='term_in'>
+							<th>IN</th>
+							<td>Touhou 8: Imperishable Night.</td>
+						</tr>
+                        <tr id='term_lolk'>
+                            <th>LoLK</th>
+                            <td>Touhou 15: Legacy of Lunatic Kingdom.</td>
                         </tr>
                         <tr id='term_lnb'>
                             <th>LNB</th>
@@ -125,11 +161,11 @@
                         </tr>
                         <tr id='term_ls'>
                             <th>LS</th>
-                            <td>Last Spell; a spell used at the end of an IN boss fight when the time requirement is met. It does not cost a life to die to it.</td>
+                            <td>Last Spell; a spell used at the end of an <a href='#term_in'>IN</a> boss fight when the time requirement is met. It does not cost a life to die to it.</td>
                         </tr>
                         <tr id='term_lw'>
                             <th>LW</th>
-                            <td>Last Word; a special spell (and the difficulty of such a spell) used by an IN boss, which is only available in Spell Practice mode.</td>
+                            <td>Last Word; a special spell (and the difficulty of such a spell) used by an <a href='#term_in'>IN</a> boss, which is only available in Spell Practice mode.</td>
                         </tr>
                         <tr id='term_macrododging'>
                             <th>Macrododging</th>
@@ -138,7 +174,10 @@
                         </tr>
     					<tr id='term_maingames'>
     						<th>Maingames</th>
-    						<td><em>Disputed.</em> Generally means integer games, but the status of PC-98 games and PoFV as maingames is not agreed upon. The integer games from EoSD to HSiFS, excluding PoFV, are always included.</td>
+    						<td><em>Disputed.</em> Generally means integer games, but the status of PC-98 games
+							and <a href='#term_pofv'>PoFV</a> as maingames is not agreed upon. The integer games
+							from <a href='#term_eosd'>EoSD</a> to <a href='#term_hsifs'>HSiFS</a>,
+							excluding <a href='#term_pofv'>PoFV</a>, are always included.</td>
     					</tr>
                         <tr id='term_memo'>
                             <th>Memo</th>
@@ -150,7 +189,8 @@
                         </tr>
                         <tr id='term_milking'>
                             <th>Milking</th>
-                            <td>Stalling a pattern for as long as possible to maximise the value of something, which is mostly graze. In GFW, players milk freezes instead.</td>
+                            <td>Stalling a pattern for as long as possible to maximise the value of something, which is mostly graze.
+							In <a href='#term_gfw'>GFW</a>, players milk freezes instead.</td>
                         </tr>
                         <tr id='term_misdirection'>
                             <th>Misdirection</th>
@@ -160,6 +200,10 @@
                             <th>Miss</th>
                             <td>Losing a life. This term came from the Japanese transliteration of "mistake", ミステイク misuteiku, which has as abbreviation ミス misu, i.e. "miss".</td>
                         </tr>
+						<tr id='term_mof'>
+							<th>MoF</th>
+							<td>Touhou 10: Mountain of Faith.</td>
+						</tr>
                         <tr id='term_nonspell'>
                             <th>Non</th>
                             <td>Nonspell; a boss attack that is not a Spell Card.</td>
@@ -170,7 +214,7 @@
                         </tr>
                         <tr id='term_nbb'>
                             <th>NBB</th>
-                            <td>No Border Breaks; used in PCB to mean a clear without breaking Supernatural Borders, whether it be by getting hit during one or by pressing the X key.</td>
+                            <td>No Border Breaks; used in <a href='#term_pcb'>PCB</a> to mean a clear without breaking Supernatural Borders, whether it be by getting hit during one or by pressing the X key.</td>
                         </tr>
                         <tr id='term_nf'>
                             <th>NF</th>
@@ -191,25 +235,40 @@
                         <tr id='term_nnn'>
                             <th>NNN</th>
                             <td><a href='#term_nmnb'>NMNB</a>, plus a game-specific third restriction, which is
-                            <a href='#term_nbb'>NBB</a> for PCB, <a href='#term_nv'>NV</a> for UFO, <a href='#term_nt'>NT</a> for TD and <a href='#term_nr'>NR</a> for HSiFS. Also known as <a href='#term_perfect'>Perfect</a>
-                            or a more comprehensive version of the acronym, such as 'NMNBNT' for TD.</td>
+                            <a href='#term_nbb'>NBB</a> for <a href='#term_pcb'>PCB</a>, <a href='#term_nv'>NV</a> for <a href='#term_ufo'>UFO</a>, <a href='#term_nt'>NT</a>
+							for <a href='#term_td'>TD</a>, <a href='#term_nr'>NR</a> for HSiFS and <a href='#term_nc'>NC</a> for <a href='#term_um'>UM</a>. Also known
+							as <a href='#term_perfect'>Perfect</a> or a more comprehensive version of the acronym,
+							such as 'NMNBNT' for <a href='#term_td'>TD</a>.</td>
+                        </tr>
+                        <tr id='term_nnnn'>
+                            <th>NNNN</th>
+                            <td>Used in WBaWC to mean <a href='#term_nmnb'>NMNB</a>, plus two game-specific restrictions,
+							which are No Berserk Roars (No Hypers) and No Roar Breaks (No Hyper Breaks).
+							Also known as <a href='#term_perfect'>Perfect</a>.</td>
+                        </tr>
+                        <tr id='term_nc'>
+                            <th>NC</th>
+                            <td>No Cards; used in <a href='#term_um'>UM</a> to mean a clear without using any active, equipment or
+							passive cards. Cards that do not affect <a href='#term_nmnb'>NMNB</a> play, such as the life card,
+							the bomb card and the money card, are exempt from this.</td>
                         </tr>
                         <tr id='term_nr'>
                             <th>NR</th>
-                            <td>No Release; used in HSiFS to mean a clear without using releases; that is, without pressing the C key. In Japan, this is also used in PCB, to mean <a href='#term_nbb'>NBB</a>.</td>
+                            <td>No Release; used in HSiFS to mean a clear without using releases; that is, without pressing the C key. In Japan, this is also used in <a href='#term_pcb'>PCB</a>, to mean <a href='#term_nbb'>NBB</a>.</td>
                         </tr>
                         <tr id='term_nt'>
                             <th>NT</th>
-                            <td>No Trance; used in TD to mean a clear without using manual trances; that is, without pressing the C key.</td>
+                            <td>No Trance; used in <a href='#term_td'>TD</a> to mean a clear without using manual trances; that is, without pressing the C key.</td>
                         </tr>
                         <tr id='term_nufo'>
                             <th>NUFO</th>
-                            <td>No UFO summons; used in UFO to mean a clear without summoning UFOs.
+                            <td>(Uncommon) No UFO summons; used in <a href='#term_ufo'>UFO</a> to mean a clear without summoning UFOs.
                             Because of the length of the acronym, <a href='#term_nv'>NV</a> is often used instead.</td>
                         </tr>
                         <tr id='term_nv'>
                             <th>NV</th>
-                            <td>No Ventora (Japanese for UFO summons); used in UFO to mean a clear without summoning UFOs.</td>
+                            <td>No Ventora (Japanese for UFO summons); used in <a href='#term_ufo'>UFO</a> to mean a clear without summoning UFOs.
+							In Japanese, this also means not picking up any tokens at all.</td>
                         </tr>
                         <tr id='term_opener'>
                             <th>Opener</th>
@@ -217,13 +276,13 @@
                         </tr>
                         <tr id='term_overflow'>
                             <th>Overflow</th>
-                            <td>When a number becomes higher than its maximum value, causing strange behaviour. Notoriously occurs in UFO,
+                            <td>When a number becomes higher than its maximum value, causing strange behaviour. Notoriously occurs in <a href='#term_ufo'>UFO</a>,
                             in which the score will be displayed wrongly once it reaches higher than 2,147,483,647. It loops back to 0 again once it reaches 4,294,967,295.
                             Not to be confused with <a href='#term_counterstop'>counterstop</a> or <a href='#term_underflow'>underflow</a>.</td>
                         </tr>
                         <tr id='term_od'>
                             <th>OD</th>
-                            <td>Overdrive; the difficulty above Lunatic that is used for a select few unlockable Spell Cards in TD.</td>
+                            <td>Overdrive; the difficulty above Lunatic that is used for a select few unlockable Spell Cards in <a href='#term_td'>TD</a>.</td>
                         </tr>
                         <tr id='term_perfect'>
                             <th>Perfect</th>
@@ -239,15 +298,29 @@
                         </tr>
                         <tr id='term_poc'>
                             <th>PoC</th>
-                            <td>Point of Collection; this is the area at the top of the screen that, when entered, makes your character automatically collect all items on screen. In TD, this does not work on spirits.</td>
+                            <td>Point of Collection; this is the area at the top of the screen that, when entered,
+							makes your character automatically collect all items on screen. In <a href='#term_td'>TD</a>,
+							this does not work on spirits. Also used as a verb, e.g. 'poccing', to mean collecting
+							items this way.</td>
                         </tr>
+						<tr id='term_pofv'>
+							<th>PoFV</th>
+							<td>Touhou 9: Phantasmagoria of Flower View.</td>
+						</tr>
                         <tr id='term_pb'>
                             <th>PB</th>
                             <td>Personal Best; someone's highest score or best survival in a specific category.</td>
                         </tr>
+						<tr id='term_pcb'>
+							<th>PCB</th>
+							<td>Touhou 7: Perfect Cherry Blossom.</td>
+						</tr>
                         <tr id='term_piv'>
                             <th>PIV</th>
-                            <td>Point Item Value; the number of points awarded for collecting a point item (blue item). The higher up on the screen you are, the higher the value is, with the maximum value at the <a href='#term_poc'>POC</a>. Most games have a system that allows the player to increase this value in some way.</td>
+                            <td>Point Item Value; the number of points awarded for collecting a point item (blue item).
+							The higher up on the screen you are, the higher the value is, with the maximum value at
+							the <a href='#term_poc'>PoC</a>. Most games have a system that allows the player to increase
+							this value in some way.</td>
                         </tr>
                         <tr id='term_resources'>
                             <th>Resources</th>
@@ -277,7 +350,7 @@
                         </tr>
                         <tr id='term_shotgunning'>
                             <th>Shotgunning</th>
-                            <td>Being right under the boss to deal as much damage as possible. Also known as <a href='#term_pointblanking'>pointblanking</a>.</td>
+                            <td>Shooting an enemy up close. Typically done with a spreadshot to deal as much damage as possible, as most or all of the shots will hit. Also known as <a href='#term_pointblanking'>pointblanking</a>.</td>
                         </tr>
                         <!--<tr id='term_spellcard'>
                             <th>Spell Card</th>
@@ -297,9 +370,14 @@
                             <td>Tapping into a certain direction to dodge aimed bullets, making them move behind you in a stream-like fashion. This can be done either horizontally or vertically.
                             If a player comes close to either edge of the screen while doing this, they will want to <a href='#term_restreaming'>restream</a> the pattern.</td>
                         </tr>
+						<tr id='term_stb'>
+							<th>StB</th>
+							<td>Touhou 9.5: Shoot the Bullet.</td>
+						</tr>
                         <tr id='term_suicidebullets'>
                             <th>Suicide bullets</th>
-                            <td>Extra bullets fired by an enemy when it dies, usually aimed at the player. On Hard or Lunatic difficulty in GFW, all enemies fire these.</td>
+                            <td>Extra bullets fired by an enemy when it dies, usually aimed at the player.
+							On Hard or Lunatic difficulty in <a href='#term_gfw'>GFW</a>, all enemies fire these.</td>
                         </tr>
                         <tr id='term_survivalspell'>
                             <th>Survival spell</th>
@@ -307,6 +385,10 @@
                             forcing the player to survive until the time is up, which is referred to as a <a href='#term_timeout'>timeout</a>.
                             Because of this, such a spell is also known as a 'timeout spell'.</td>
                         </tr>
+						<tr id='term_sa'>
+							<th>SA</th>
+							<td>Touhou 11: Subterranean Animism.</td>
+						</tr>
                         <tr id='term_scb'>
                             <th>SCB</th>
                             <td>Spell Card Bonus; the score awarded from <a href='#term_capture'>capturing</a> a Spell Card.</td>
@@ -322,26 +404,46 @@
                         </tr>
                         <tr id='term_token'>
                             <th>Token</th>
-                            <td>Refers to either a small UFO or a beast in WBaWC, both of which float around the screen.</td>
+                            <td>Refers to either a small <a href='#term_ufo'>UFO</a> or a beast in WBaWC, both of which float around the screen.</td>
                         </tr>
                         <tr id='term_tas'>
                             <th>TAS</th>
                             <td>Tool-Assisted Speedrun; used to refer not to speedruns, but to runs that used cheats, such as slowing down the game, using savestates and <a href='#term_pausebuffering'>pause buffering</a>,
                             which is often done to see what is theoretically possible in a game.</td>
                         </tr>
+                        <tr id='term_td'>
+                            <th>TD</th>
+                            <td>Touhou 13: Ten Desires.</td>
+                        </tr>
                         <tr id='term_to'>
                             <th>TO</th>
-                            <td>See <a href='#term_timeout'>timeout</a>.</td>
+                            <td>(Uncommon) see <a href='#term_timeout'>timeout</a>.</td>
                         </tr>
                         <tr id='term_underflow'>
                             <th>Underflow</th>
-                            <td>When a negative number is converted to a format that does not have negative numbers, causing a very high positive number. Notoriously occurs in DDC
-                            and ISC, in which the Spell Card Bonus can be made negative, which, if the score becomes negative when the bonus is added, increases the score to 9,999,999,990,
+                            <td>When a negative number is converted to a format that does not have negative numbers, causing a very high positive number. Notoriously occurs in <a href='#term_ddc'>DDC</a>
+                            and  <a href='#term_isc'>ISC</a>, in which the Spell Card Bonus can be made negative, which, if the score becomes negative when the bonus is added, increases the score to 9,999,999,990,
                             a <a href='#term_counterstop'>counterstop</a>. Not to be confused with <a href='#term_overflow'>overflow</a>.</td>
+                        </tr>
+						<tr id='term_ufo'>
+							<th>UFO</th>
+							<td>Touhou 12: Undefined Fantastic Object.</td>
+						</tr>
+                        <tr id='term_um'>
+                            <th>UM</th>
+                            <td>Touhou 18: Unconnected Marketeers.</td>
                         </tr>
                         <tr id='term_wall'>
                             <th>Wall</th>
                             <td>A cluster of bullets with no space that a hitbox can pass through in between them, although it can also refer to a cluster of bullets that <em>looks</em> like that.</td>
+                        </tr>
+						<tr id='term_vd'>
+							<th>VD</th>
+							<td>Touhou 16.5: Violet Detector.</td>
+						</tr>
+                        <tr id='term_wbawc'>
+                            <th>WBaWC</th>
+                            <td>Touhou 17: Wily Beast and Weakest Creature.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -357,19 +459,19 @@
                     <tbody>
                         <tr id='term_aoj'>
                             <th>AoJ</th>
-                            <td>"Aura of Justice", Shou's second spell in UFO.</td>
+                            <td>"Aura of Justice", Shou's second spell in <a href='#term_ufo'>UFO</a>.</td>
                         </tr>
                         <tr id='term_books'>
                             <th>Books</th>
-                            <td>The section of EoSD Stage 4 where books spawn in random locations and shoot series of green bullets.</td>
+                            <td>The section of <a href='#term_eosd'>EoSD</a> Stage 4 where books spawn in random locations and shoot series of green bullets.</td>
                         </tr>
                         <tr id='term_bolad'>
                             <th>BoLaD</th>
-                            <td>"Border of Life and Death", Yukari's semifinal Spell Card in PCB.</td>
+                            <td>"Border of Life and Death", Yukari's semifinal Spell Card in <a href='#term_pcb'>PCB</a>.</td>
                         </tr>
                         <tr id='term_bowap'>
                             <th>BoWaP</th>
-                            <td>"Border of Wave and Particle", Satori's final Spell Card if you use ReimuA in SA.</td>
+                            <td>"Border of Wave and Particle", Satori's final Spell Card if you use ReimuA in <a href='#term_sa'>SA</a>.</td>
                         </tr>
                         <tr id='term_bcb'>
                             <th>BCB</th>
@@ -377,23 +479,23 @@
                         </tr>
                         <tr id='term_bd'>
                             <th>BD</th>
-                            <td>"Buddhist Diamond", Kaguya's second Spell Card in IN.</td>
+                            <td>"Buddhist Diamond", Kaguya's second Spell Card in <a href='#term_in'>IN</a>.</td>
                         </tr>
                         <tr id='term_bdb'>
                             <th>BDB</th>
-                            <td>"Brilliant Dragon Bullet", Kaguya's first Spell Card in IN.</td>
+                            <td>"Brilliant Dragon Bullet", Kaguya's first Spell Card in <a href='#term_in'>IN</a>.</td>
                         </tr>
                         <tr id='term_bls'>
                             <th>BLS</th>
-                            <td>"Blue Lady Show", Raiko's <a href='#term_survivalspell'>survival Spell Card</a> in DDC.</td>
+                            <td>"Blue Lady Show", Raiko's <a href='#term_survivalspell'>survival Spell Card</a> in <a href='#term_ddc'>DDC</a>.</td>
                         </tr>
                         <tr id='term_catswalk'>
                             <th>Cats Walk</th>
-                            <td>"Vengeful Cat Spirit's Erratic Step", Rin's midboss Spell Card in SA Stage 5. This is the name on Easy and Normal only, but it's used for Lunatic regardless.</td>
+                            <td>"Vengeful Cat Spirit's Erratic Step", Rin's midboss Spell Card in <a href='#term_sa'>SA</a> Stage 5. This is the name on Easy and Normal only, but it's used for Lunatic regardless.</td>
                         </tr>
                         <tr id='term_cc'>
                             <th>CC</th>
-                            <td>"Complete Clarification", Shou's final Spell Card in UFO.</td>
+                            <td>"Complete Clarification", Shou's final Spell Card in <a href='#term_ufo'>UFO</a>.</td>
                         </tr>
                         <tr id='term_cfw'>
                             <th>CFW</th>
@@ -401,11 +503,11 @@
                         </tr>
                         <tr id='term_dbdb'>
                             <th>DBDB</th>
-                            <td>"Double Black Death Butterfly", Satori's first ReimuA-specific Spell Card in SA.</td>
+                            <td>"Double Black Death Butterfly", Satori's first ReimuA-specific Spell Card in <a href='#term_sa'>SA</a>.</td>
                         </tr>
                         <tr id='term_dr'>
                             <th>DR</th>
-                            <td>"Devil's Recitation", Byakuren's fourth Spell Card in UFO.</td>
+                            <td>"Devil's Recitation", Byakuren's fourth Spell Card in <a href='#term_ufo'>UFO</a>.</td>
                         </tr>
                         <tr id='term_ew'>
                             <th>EW</th>
@@ -413,11 +515,11 @@
                         </tr>
                         <tr id='term_fin'>
                             <th>FIN</th>
-                            <td>"Flying Insect's Nest", Satori's second ReimuA-specific Spell Card in SA.</td>
+                            <td>"Flying Insect's Nest", Satori's second ReimuA-specific Spell Card in <a href='#term_sa'>SA</a>.</td>
                         </tr>
                         <tr id='term_ghostwheels'>
                             <th>Ghost Wheels</th>
-                            <td>"The Needles of Yore and the Vengeful Spirits in Pain", Rin's third Spell Card in SA. Also known as 'needles' or just 'wheels'.</td>
+                            <td>"The Needles of Yore and the Vengeful Spirits in Pain", Rin's third Spell Card in <a href='#term_sa'>SA</a>. Also known as 'needles' or just 'wheels'.</td>
                         </tr>
                         <tr id='term_gc'>
                             <th>GC</th>
@@ -425,23 +527,23 @@
                         </tr>
                         <tr id='term_go'>
                             <th>GO</th>
-                            <td>"Good Omen", Byakuren's first Spell Card in UFO. Not to be confused with <a href='#term_gameover'>game over</a>.</td>
+                            <td>"Good Omen", Byakuren's first Spell Card in <a href='#term_ufo'>UFO</a>. Not to be confused with <a href='#term_gameover'>game over</a>.</td>
                         </tr>
                         <tr id='term_gt'>
                             <th>GT</th>
-                            <td>"Greatest Treasure", Nazrin's midboss Spell Card in UFO Stage 5.</td>
+                            <td>"Greatest Treasure", Nazrin's midboss Spell Card in <a href='#term_ufo'>UFO</a> Stage 5.</td>
                         </tr>
                         <tr id='term_hgs'>
                             <th>HGS</th>
-                            <td>"Hell God Sword", Youmu's first Spell Card in PCB.</td>
+                            <td>"Hell God Sword", Youmu's first Spell Card in <a href='#term_pcb'>PCB</a>.</td>
                         </tr>
                         <tr id='term_hj'>
                             <th>HJ</th>
-                            <td>"Hourai Jewel", Kaguya's final Spell Card that is not a <a href='#term_ls'>Last Spell</a> in IN.</td>
+                            <td>"Hourai Jewel", Kaguya's final Spell Card that is not a <a href='#term_ls'>Last Spell</a> in <a href='#term_in'>IN</a>.</td>
                         </tr>
                         <tr id='term_hmd'>
                             <th>HMD</th>
-                            <td>"Honest Man's Death", Mokou's fifth Spell Card in IN.</td>
+                            <td>"Honest Man's Death", Mokou's fifth Spell Card in <a href='#term_in'>IN</a>.</td>
                         </tr>
                         <tr id='term_id'>
                             <th>ID</th>
@@ -449,35 +551,39 @@
                         </tr>
                         <tr id='term_is'>
                             <th>IS</th>
-                            <td>"Imperishable Shooting", Mokou's final Spell Card in IN.</td>
+                            <td>"Imperishable Shooting", Mokou's final Spell Card in <a href='#term_in'>IN</a>.</td>
                         </tr>
                         <tr id='term_kd'>
                             <th>KD</th>
-                            <td>"Killing Doll", Sakuya's final Spell Card in EoSD.</td>
+                            <td>"Killing Doll", Sakuya's final Spell Card in <a href='#term_eosd'>EoSD</a>.</td>
                         </tr>
                         <tr id='term_kks'>
                             <th>KKS</th>
-                            <td>"King Kraken Strike", Ichirin's first Spell Card in UFO.</td>
+                            <td>"King Kraken Strike", Ichirin's first Spell Card in <a href='#term_ufo'>UFO</a>.</td>
+                        </tr>
+                        <tr id='term_lc'>
+                            <th>LC</th>
+                            <td>"Linear Creature", Keiki's third Spell Card in WBaWC.</td>
                         </tr>
                         <tr id='term_lfs'>
                             <th>LFS</th>
-                            <td>"Legendary Flying Saucer", Byakuren's final Spell Card in UFO.</td>
+                            <td>"Legendary Flying Saucer", Byakuren's final Spell Card in <a href='#term_ufo'>UFO</a>.</td>
                         </tr>
                         <tr id='term_mdsw'>
                             <th>MDSW</th>
-                            <td>"Modern Divine Spirit World", Junko's third Spell Card in LoLK.</td>
+                            <td>"Modern Divine Spirit World", Junko's third Spell Card in <a href='#term_ddc'>LoLK</a>.</td>
                         </tr>
                         <tr id='term_nds'>
                             <th>NDS</th>
-                            <td>"Newborn Divine Spirit", Miko's final Spell Card in TD.</td>
+                            <td>"Newborn Divine Spirit", Miko's final Spell Card in <a href='#term_td'>TD</a>.</td>
                         </tr>
                         <tr id='term_peta'>
                             <th>Peta</th>
-                            <td>"Peta Flare", Utsuho's second Spell Card in SA.</td>
+                            <td>"Peta Flare", Utsuho's second Spell Card in <a href='#term_sa'>SA</a>.</td>
                         </tr>
                         <tr id='term_pdh'>
                             <th>PDH</th>
-                            <td>"Pristine Danmaku Hell", Junko's final Spell Card in LoLK.</td>
+                            <td>"Pristine Danmaku Hell", Junko's final Spell Card in <a href='#term_ddc'>LoLK</a>.</td>
                         </tr>
                         <tr id='term_psi'>
                             <th>PSI</th>
@@ -485,63 +591,63 @@
                         </tr>
                         <tr id='term_pwg'>
                             <th>PWG</th>
-                            <td>"Peerless Wind God", Aya's <a href='#term_survivalspell'>survival Spell Card</a> in MoF.</td>
+                            <td>"Peerless Wind God", Aya's <a href='#term_survivalspell'>survival Spell Card</a> in <a href='#term_mof'>MoF</a>.</td>
                         </tr>
                         <tr id='term_qed'>
                             <th>QED</th>
-                            <td>QED "Ripples of 495 Years", Flandre's final Spell Card in EoSD.</td>
+                            <td>QED "Ripples of 495 Years", Flandre's final Spell Card in <a href='#term_eosd'>EoSD</a>.</td>
                         </tr>
                         <tr id='term_rings'>
                             <th>Rings</th>
-                            <td>Mokou's final non in IN. Also commonly called 'Rings of Death'.</td>
+                            <td>Mokou's final non in <a href='#term_in'>IN</a>. Also commonly called 'Rings of Death'.</td>
                         </tr>
                         <tr id='term_rb'>
                             <th>RB</th>
-                            <td>"Resurrection Butterfly", Yuyuko's final Spell Card in PCB.</td>
+                            <td>"Resurrection Butterfly", Yuyuko's final Spell Card in <a href='#term_pcb'>PCB</a>.</td>
                         </tr>
                         <tr id='term_rtg'>
                             <th>RTG</th>
-                            <td>"Radiant Treasure Gun", Shou's first Spell Card in UFO.</td>
+                            <td>"Radiant Treasure Gun", Shou's first Spell Card in <a href='#term_ufo'>UFO</a>.</td>
                         </tr>
                         <tr id='term_rw'>
                             <th>RW</th>
-                            <td>"Rising World", Kaguya's final <a href='#term_ls'>Last Spell</a> in IN.</td>
+                            <td>"Rising World", Kaguya's final <a href='#term_ls'>Last Spell</a> in <a href='#term_in'>IN</a>.</td>
                         </tr>
                         <tr id='term_sfn'>
                             <th>SFN</th>
-                            <td>"Saigyouji Flawless Nirvana", Yuyuko's <a href='#term_lw'>Last Word</a> in IN.</td>
+                            <td>"Saigyouji Flawless Nirvana", Yuyuko's <a href='#term_lw'>Last Word</a> in <a href='#term_in'>IN</a>.</td>
                         </tr>
                         <tr id='term_sg'>
                             <th>SG</th>
-                            <td>"Scarlet Gensokyo", Remilia's final Spell Card in EoSD. Also commonly called 'Gensokyo'.</td>
+                            <td>"Scarlet Gensokyo", Remilia's final Spell Card in <a href='#term_eosd'>EoSD</a>. Also commonly called 'Gensokyo'.</td>
                         </tr>
                         <tr id='term_sm'>
                             <th>SM</th>
-                            <td>"Scarlet Meister", Remilia's semifinal Spell Card in EoSD. Also commonly called 'Meister'.</td>
+                            <td>"Scarlet Meister", Remilia's semifinal Spell Card in <a href='#term_eosd'>EoSD</a>. Also commonly called 'Meister'.</td>
                         </tr>
                         <tr id='term_subsun'>
                             <th>Subsun</th>
-                            <td>"Subterranean Sun", Utsuho's final Spell Card in SA.</td>
+                            <td>"Subterranean Sun", Utsuho's final Spell Card in <a href='#term_sa'>SA</a>.</td>
                         </tr>
                         <tr id='term_unr'>
                             <th>UNR</th>
-                            <td>"Uncontainable Nuclear Reaction", Utsuho's first Spell Card in SA.</td>
+                            <td>"Uncontainable Nuclear Reaction", Utsuho's first Spell Card in <a href='#term_sa'>SA</a>.</td>
                         </tr>
                         <tr id='term_vi'>
                             <th>VI</th>
-                            <td>"Vampire Illusion", Remilia's third Spell Card in EoSD.</td>
+                            <td>"Vampire Illusion", Remilia's third Spell Card in <a href='#term_eosd'>EoSD</a>.</td>
                         </tr>
                         <tr id='term_vowg'>
                             <th>VoWG</th>
-                            <td>"Virtue of Wind God", Kanako's final Spell Card in MoF. Occasionally it will be called 'DVoWG' (D for Divine), because of the older English translation patch.</td>
+                            <td>"Virtue of Wind God", Kanako's final Spell Card in <a href='#term_mof'>MoF</a>. Occasionally it will be called 'DVoWG' (D for Divine), because of the older English translation patch.</td>
                         </tr>
                         <tr id='term_ydl'>
                             <th>YDL</th>
-                            <td>"Young Demon Lord", Remilia's first Spell Card in EoSD.</td>
+                            <td>"Young Demon Lord", Remilia's first Spell Card in <a href='#term_eosd'>EoSD</a>.</td>
                         </tr>
                         <tr id='term_ygb'>
                             <th>YGB</th>
-                            <td>"You Grow Bigger!", Shinmyoumaru's <a href='#term_survivalspell'>survival Spell Card</a> in DDC.</td>
+                            <td>"You Grow Bigger!", Shinmyoumaru's <a href='#term_survivalspell'>survival Spell Card</a> in <a href='#term_ddc'>DDC</a>.</td>
                         </tr>
                     </tbody>
                 </table>
