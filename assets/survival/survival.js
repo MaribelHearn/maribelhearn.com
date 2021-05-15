@@ -287,7 +287,7 @@ function applyColours() {
         id = $(this).attr("id");
 
         if (id.substr(0, 4) != "fill") {
-            if (id.contains("Extra") && !id.contains("PCB") || !id.contains("IN") && !id.contains("Extra")) {
+            if (id.contains("Extra") && !id.contains("PCB") || !id.contains("Extra") && id != "PCBPhantasm" && !id.contains("IN")) {
                 $(this).parent().attr("colspan", 2);
                 $(this).parent().addClass("overview");
             } else if (id == "PCBExtra" || id == "PCBPhantasm") {
