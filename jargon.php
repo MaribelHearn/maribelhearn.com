@@ -176,7 +176,7 @@
     						<th>Maingames</th>
     						<td><em>Disputed.</em> Generally means integer games, but the status of PC-98 games
 							and <a href='#term_pofv'>PoFV</a> as maingames is not agreed upon. The integer games
-							from <a href='#term_eosd'>EoSD</a> to <a href='#term_hsifs'>HSiFS</a>,
+							from <a href='#term_eosd'>EoSD</a> to <a href='#term_um'>UM</a>,
 							excluding <a href='#term_pofv'>PoFV</a>, are always included.</td>
     					</tr>
                         <tr id='term_memo'>
