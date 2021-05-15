@@ -1,7 +1,7 @@
 /*h1, h2, h3, label, th, td, div, p:not(#ack) {
     color: white;
 }*/
-h1, h2, h3, h4, table:not(.poll), label, li, figcaption, p:not(.language):not(.descr):not(#ack), caption:not(#legend), #nav {
+h1, h2, h3, h4, table:not(.poll):not(.rendering), label, li, figcaption, p:not(.language):not(.descr):not(#ack), caption:not(#legend), #nav {
     color: white;
 }
 #modal_inner h1, #modal_inner h2, #modal_inner th, #modal_inner td, .rendering th, .rendering td:not(.overview) {
