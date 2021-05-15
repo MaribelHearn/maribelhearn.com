@@ -4,7 +4,7 @@
 h1, h2, h3, h4, table:not(.poll), label, li, figcaption, p:not(.language):not(.descr):not(#ack), caption:not(#legend), #nav {
     color: white;
 }
-#modal_inner h1, #modal_inner h2, #modal_inner th, #modal_inner td, .rendering th, .rendering td {
+#modal_inner h1, #modal_inner h2, #modal_inner th, #modal_inner td, .rendering th, .rendering td:not(.overview) {
     color: black;
 }
 body, div:not(.dropdown):not(.dropdown_content):not(.nav_right):not(.dark_bg) {
