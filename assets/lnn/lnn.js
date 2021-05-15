@@ -16,7 +16,8 @@ function restrictions(game) {
         "UFO": "u",
         "TD": "n",
         "HSiFS": "n",
-        "WBaWC": "nn"
+        "WBaWC": "nn",
+        "UM": "n"
     }[game]);
 }
 

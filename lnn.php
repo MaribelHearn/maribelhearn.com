@@ -101,22 +101,22 @@
     			?></p>
                 <p id='conditions'><?php
     				if ($lang == 'Chinese') {
-    					echo '妖妖梦、神灵庙、天空璋打NN时有附加条件，即是不爆结界、不开灵界、不使用季节解放。此三作LNN被称为LNNN，' .
-                        '以第三个N代表着附加的条件。星莲船的附加条件（不开飞碟）由于对难度没有大量的影响，可以自选。永夜抄的LNN必须收取所有LSC，称做LNNFS。';
+    					echo '妖妖梦、神灵庙、天空璋、鬼形獣、虹龙洞打NN时有附加条件，即是不爆结界、不开灵界、不使用季节解放、不撞咆哮、不开暴走、不卡。此三作LNN被称为LNNN' .
+                        '或LNNNN，以第三个N代表着附加的条件。星莲船的附加条件（不开飞碟）由于对难度没有大量的影响，可以自选。永夜抄的LNN必须收取所有LSC，称做LNNFS。';
     				} else if ($lang == 'Japanese') {
     					echo 'また妖々夢では霊撃無し、神霊廟ではトランス無し、天空璋では開放無し、鬼形獣では霊撃無し、' .
-                        '暴走ロアリング無しが条件となります。この４作品では追加条件によってNが追加され、LNNN又はLNNNNと呼称します。' .
+                        '暴走ロアリング無し、虹龍洞ではカード無しが条件となります。この５作品では追加条件によってNが追加され、LNNN又はLNNNNと呼称します。' .
                         'また星蓮船ではUFO招喚無しも考慮されますが、難易度が劇的に変化するわけではないため必須条件とはなっていません。' .
                         '永夜抄ではラストスペル取得を含めLNNFSが条件となります。';
                     } else if ($lang == 'Russian') {
                         echo 'Для PCB, TD, HSiFS и WBaWC также необходимы следующий условия: No Border Breaks для PCB, ' .
-                        'No Trance для TD, No Release для HSiFS и No Berserk Roar No Roar Breaks для WBaWC. ' .
+                        'No Trance для TD, No Release для HSiFS, No Berserk Roar No Roar Breaks для WBaWC и No Cards для UM. ' .
                         'Для этих игр LNN обычно назвают LNNN или LNNNN, с дополнительными N для индикации доп. условий. ' .
                         'Дополнительное условие в UFO, no UFO summons, не требуется, так как считается, что они не имеют ' .
                         'сильное влияние на сложность забега. В LNN IN\'а, впрочем, нужно захватить все Ласт Спеллы и называется LNNFS.';
     				} else {
-                        echo 'Extra conditions are required for PCB, TD, HSiFS and WBaWC; these are No Border Breaks for PCB, ' .
-                        'No Trance for TD, No Release for HSiFS and No Berserk Roar No Roar Breaks for WBaWC. ' .
+                        echo 'Extra conditions are required for PCB, TD, HSiFS, WBaWC and UM; these are No Border Breaks for PCB, ' .
+                        'No Trance for TD, No Release for HSiFS, No Berserk Roar No Roar Breaks for WBaWC and No Cards for UM. ' .
                         'LNN in these games is called LNNN or LNNNN, with extra Ns to denote the extra conditions. ' .
                         'The extra condition in UFO, no UFO summons, is optional, as it is not considered to have a significant ' .
                         'impact on the difficulty of the run. As for IN, an LNN is assumed to capture all Last Spells and '.
