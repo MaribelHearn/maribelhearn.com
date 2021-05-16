@@ -973,8 +973,7 @@ function calc() {
         }
     }
 
-    topList += "</tbody></table><br><table
-                "Sakuya": 0id='gameTable'><thead><tr><th>Game</th><th>Average Percentage</th></tr></thead><tbody>";
+    topList += "</tbody></table><br><table id='gameTable'><thead><tr><th>Game</th><th>Average Percentage</th></tr></thead><tbody>";
 
     for (game in averages) {
         topList += "<tr><td>" + game + "</td><td>" + averages[game] + "%</td></tr>";
