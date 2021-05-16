@@ -1,5 +1,5 @@
 var WRs,
-    tracked = ["EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC"],
+    tracked = ["EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"],
     untracked = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "PoFV"],
     scores = {
         "HRtP": {
@@ -802,32 +802,32 @@ var WRs,
             "Easy": {
                 "Reimu": 0,
                 "Marisa": 0,
-                "Sanae": 0,
-                "Sakuya": 0
+                "Sakuya": 0,
+                "Sanae": 0
             },
             "Normal": {
                 "Reimu": 0,
                 "Marisa": 0,
-                "Sanae": 0,
-                "Sakuya": 0
+                "Sakuya": 0,
+                "Sanae": 0
             },
             "Hard": {
                 "Reimu": 0,
                 "Marisa": 0,
-                "Sanae": 0,
-                "Sakuya": 0
+                "Sakuya": 0,
+                "Sanae": 0
             },
             "Lunatic": {
                 "Reimu": 0,
                 "Marisa": 0,
-                "Sanae": 0,
-                "Sakuya": 0
+                "Sakuya": 0,
+                "Sanae": 0
             },
             "Extra": {
                 "Reimu": 0,
                 "Marisa": 0,
-                "Sanae": 0,
-                "Sakuya": 0
+                "Sakuya": 0,
+                "Sanae": 0
             }
         }
     };
@@ -926,6 +926,7 @@ function calc() {
                 score = $(id).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "");
 
                 if (score === "") {
+                    scores[game][difficulty][shottype] = 0;
                     $("#error").html("");
                     continue;
                 }
