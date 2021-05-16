@@ -2,16 +2,15 @@
 function is_localhost(string $addr) {
     return $addr == '::1' || $addr == '127.0.0.1' || substr($addr, 0, 8) == '192.168.';
 }
-function hit(string $page) {
-    $errors = ['401.php', '403.php', '404.php', '500.php'];
-    $path = in_array($page, $errors) ? '../../.stats/' : '.stats/';
+function hit(string $filename) {
+    $path = $filename == 'error.php' ? '../../.stats/' : '.stats/';
     if (file_exists($path)) {
         if (!empty($_SERVER['HTTP_USER_AGENT']) && preg_match('~(bot|crawl|slurp|spider|archiver|facebook|lighthouse|jigsaw|validator|w3c|hexometer)~i', $_SERVER['HTTP_USER_AGENT'])) {
             return;
         }
         $token = trim(file_get_contents($path . 'token'));
         if (!is_localhost($_SERVER['REMOTE_ADDR']) && !isset($_COOKIE['token']) || $_COOKIE['token'] !== $token) {
-            $page = str_replace('.php', '', $page);
+            $page = str_replace('.php', '', $filename);
             $hitcount = $path . date('d-m-Y') . '.json';
             if (file_exists($hitcount)) {
                 $json = file_get_contents($hitcount);

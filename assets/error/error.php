@@ -3,7 +3,8 @@
 <?php
     include 'redirect.php';
     include '../shared/shared.php';
-    hit('404.php');
+	hit(basename(__FILE__));
+	$page = str_replace('.php', '', basename(__FILE__));
 ?>
 
     <head>
@@ -19,7 +20,7 @@
 
     <body>
 		<nav>
-            <div id='nav' class='wrap'><?php echo navbar('error') ?></div>
+            <div id='nav' class='wrap'><?php echo navbar($page) ?></div>
 		</nav>
         <main>
             <div id='wrap' class='wrap'>
