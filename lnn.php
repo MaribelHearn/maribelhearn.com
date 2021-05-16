@@ -407,6 +407,9 @@
                         } else if ($lang == 'Japanese') {
                             echo '背景イメージは<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>' .
                             'さんのものを使用させていただいております。';
+                        } else if ($lang == 'Russian') {
+                            echo 'Иллюстрацию на фоне нарисовал(а) ' .
+                            '<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>.';
                         } else {
                             echo 'The background image was drawn by ' .
                             '<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>.';

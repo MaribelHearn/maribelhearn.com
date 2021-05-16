@@ -571,7 +571,10 @@
                             } else if ($lang == 'Japanese') {
                                 echo '背景イメージは<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">' .
                                 'Catboyjeremie</a>さんのものを使用させていただいております。';
-                            } else {
+                            } else if ($lang == 'Russian') {
+								echo 'Иллюстрацию на фоне нарисовал(а) ' .
+								'<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>.';
+							} else {
                                 echo 'The background image was drawn by ' .
                                 '<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>.';
                             }

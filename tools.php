@@ -1264,20 +1264,21 @@
                 <div id='ack_container'>
 					<p id='jptlcredit'>
 						<?php
-							if ($lang == 'Chinese') { echo '本页面由' .
-							'<a href="https://twitter.com/toho_yumiya">Yu-miya</a>日语翻译。'; }
-							else if ($lang == 'Japanese') { echo '<a href="https://twitter.com/toho_yumiya">ゆーみや</a>' .
-							'によって日本語に翻訳されました。'; }
-							else if ($lang == 'Russian') { echo 'Японский перевод сделал ' .
-							'<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.'; }
-							else { echo 'The Japanese translation was done by <a href="https://twitter.com/toho_yumiya">Yu-miya</a>.'; }
+							if ($lang == 'Japanese') {
+                                echo '<a href="https://twitter.com/toho_yumiya">ゆーみや</a>' .
+							    'によって日本語に翻訳されました。';
+                            } else if ($lang == 'Russian') {
+                                echo 'Японский перевод сделал ' .
+							    '<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.';
+                            } else {
+                                echo 'The Japanese translation was done by ' .
+                                '<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.';
+                            }
 						?>
 					</p>
 					<p id='rutlcredit'>
 					<?php
-						if ($lang == 'Chinese') {
-							echo '本页面由<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>俄语翻译。';
-						} else if ($lang == 'Japanese') {
+						if ($lang == 'Japanese') {
 							echo '<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>' .
 							'によってロシア語に翻訳されました。';
 						} else if ($lang == 'Russian') {
