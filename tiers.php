@@ -144,13 +144,13 @@
             echo '<div id="chars_load" class="dark_bg">';
             foreach ($chars as $category => $value) {
                 foreach ($chars[$category] as $key => $value) {
-                    echo '<input id="' . $category . '" type="hidden" value="' . implode($value, ',') . '">';
+                    echo '<input id="' . $category . '" type="hidden" value="' . implode(',', $value) . '">';
                 }
             }
             echo '</div><div id="works_load" class="dark_bg">';
             foreach ($works as $category => $value) {
                 foreach ($works[$category] as $key => $value) {
-                    echo '<input id="' . $category . '" type="hidden" value="' . implode($value, ',') . '">';
+                    echo '<input id="' . $category . '" type="hidden" value="' . implode(',', $value) . '">';
                 }
             }
             echo '</div>';
