@@ -1,14 +1,14 @@
 ﻿<!DOCTYPE html>
 <html lang='en'>
 <?php
-    include 'redirect.php';
     include '../shared/shared.php';
+    include 'functions.php';
 	hit(basename(__FILE__));
 	$page = str_replace('.php', '', basename(__FILE__));
 ?>
 
     <head>
-		<title>404 Not Found</title>
+		<title><?php echo error_title() ?></title>
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
         <link rel='preload' type='font/woff2' href='https://maribelhearn.com/assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
@@ -29,13 +29,9 @@
                 <span id='hy_container'><img id='hy' src='https://maribelhearn.com/assets/shared/icon_sheet.png' alt='Human-youkai gauge'>
                     <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
                 </span>
-                <h1>404</h1>
-                <p><strong>File not found<?php
-                    if ($max_sim > 0 && $max_sim > $len - 2) {
-                        echo ' - did you mean <a href="https://maribelhearn.com/' . $max_page . '">' . $max_page . '</a>?';
-                    }
-                ?></strong></p>
-                <p class='wide'>You got only 404 points? That's not a very good score. I would suggest you go for at least 1 billion!</p>
+                <h1><?php echo empty($_GET['error']) ? '404' : $_GET['error'] ?></h1>
+                <p><strong><?php echo error_description() ?></strong></p>
+                <p class='wide'><?php echo error_text() ?></p>
                 <p id='ack_mobile'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a>.</p>
             </div>
         </main>
