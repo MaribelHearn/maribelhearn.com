@@ -815,7 +815,7 @@ var WRs,
                 "Reimu": 0,
                 "Marisa": 0,
                 "Sakuya": 0,
-                "Sanae": 0,
+                "Sanae": 0
             },
             "Lunatic": {
                 "Reimu": 0,
