@@ -1,5 +1,14 @@
 <!DOCTYPE html>
-<html id='top' lang='<?php if (empty($_GET['hl'])) { echo 'en'; } else { echo str_replace('jp', 'ja', $_GET['hl']); } ?>'>
+<html id='top' lang='<?php
+    if (empty($_GET['hl'])) {
+        echo 'en';
+    } else {
+        $iso = preg_split('/-/', $_GET['hl'])[0];
+        $iso = str_replace('jp', 'ja', $iso);
+        $iso = str_replace('ru', 'zh', $iso);
+        echo $iso;
+    }
+?>'>
 <?php
     include 'assets/shared/shared.php';
     include 'assets/shared/tl.php';
