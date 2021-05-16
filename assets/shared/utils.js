@@ -89,7 +89,11 @@ function getCookie(name) {
         }
 
         if (cookie.indexOf(name) === 0) {
-            return JSON.parse(cookie.substring(name.length, cookie.length));
+            try {
+                return JSON.parse(cookie.substring(name.length, cookie.length));
+            } catch (err) {
+                return JSON.parse("\"" + cookie.substring(name.length, cookie.length) + "\"");
+            }
         }
     }
 
