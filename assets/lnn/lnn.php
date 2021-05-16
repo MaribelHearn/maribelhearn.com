@@ -5,15 +5,18 @@ $json = file_get_contents('assets/json/lnnlist.json');
 $lnn = json_decode($json, true);
 if (isset($_COOKIE['lang'])) {
     $lang = str_replace('"', '', $_COOKIE['lang']);
-}
-if (empty($_GET['hl']) && !isset($_COOKIE['lang']) || $_GET['hl'] == 'en') {
-    $lang = 'English';
-} else if ($_GET['hl'] == 'jp') {
-     $lang = 'Japanese';
-} else if ($_GET['hl'] == 'zh') {
-    $lang = 'Chinese';
-} else if ($_GET['hl'] == 'ru') {
-    $lang = 'Russian';
+} else {
+    if (empty($_GET['hl']) || $_GET['hl'] == 'en') {
+        $lang = 'English';
+    } else if ($_GET['hl'] == 'jp') {
+         $lang = 'Japanese';
+    } else if ($_GET['hl'] == 'zh') {
+        $lang = 'Chinese';
+    } else if ($_GET['hl'] == 'ru') {
+        $lang = 'Russian';
+    } else {
+        $lang = 'English';
+    }
 }
 $layout = (isset($_COOKIE['lnn_old_layout']) ? 'Old' : 'New');
 $pl = array();
