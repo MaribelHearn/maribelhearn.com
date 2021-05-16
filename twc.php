@@ -38,14 +38,18 @@
 				<div id='topbar'>
 					<p id='ack'>
 						<?php
-							if ($lang == 'Chinese') { echo '背景画师：' .
-							'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>'; }
-							else if ($lang == 'Japanese') { echo '背景イメージは' .
-							'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>さんのものを使用させていただいております'; }
-							else if ($lang == 'Russian') { echo 'Иллюстрацию на фоне нарисовал(а) ' .
-							'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>'; }
-							else { echo 'This background image <br id="ack_br">was drawn by ' .
-							'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>'; }
+							if ($lang == 'Chinese') {
+								echo '背景画师：<a href="https://www.pixiv.net/en/users/186860">宇文風</a>';
+							} else if ($lang == 'Japanese') {
+								echo '背景イメージは<a href="https://www.pixiv.net/en/users/186860">宇文風</a>' .
+								'さんの<br id="ack_br">ものを使用させていただいております';
+							} else if ($lang == 'Russian') {
+								echo 'Иллюстрацию на фоне <br id="ack_br">нарисовал(а) ' .
+								'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>';
+							} else {
+								echo 'This background image <br id="ack_br">was drawn by ' .
+								'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>';
+							}
 						?>
 					</p>
 					<span id='hy_container'>

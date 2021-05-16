@@ -42,8 +42,11 @@
                                 echo '背景画师：<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>';
                             } else if ($lang == 'Japanese') {
                                 echo '背景イメージは<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">' .
-                                'Catboyjeremie</a>さんのものを使用させていただいております';
-                            } else {
+                                'Catboyjeremie</a>さんの<br id="ack_br">ものを使用させていただいております';
+                            } else if ($lang == 'Russian') {
+								echo 'Иллюстрацию на фоне <br id="ack_br">нарисовал(а) ' .
+								'<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>';
+							} else {
                                 echo 'This background image was<br id="ack_br"> drawn by ' .
                                 '<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>';
                             }
