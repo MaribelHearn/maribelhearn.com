@@ -41,16 +41,13 @@
                         <?php
                             if ($lang == 'Chinese') {
                                 echo '背景画师：<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>';
-                            }
-                            else if ($lang == 'Japanese') {
+                            } else if ($lang == 'Japanese') {
                                 echo '背景イメージは<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>' .
-                                'さんのものを使用させていただいております';
-                            }
-							else if ($lang == 'Russian') {
-                                echo 'Иллюстрацию на фоне нарисовал(а) ' .
+                                'さんの<br id="ack_br">ものを使用させていただいております';
+                            } else if ($lang == 'Russian') {
+                                echo 'Иллюстрацию на фоне <br id="ack_br">нарисовал(а) ' .
 							    '<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>';
-                            }
-                            else {
+                            } else {
                                 echo 'This background image<br id="ack_br"> was drawn by ' .
                                 '<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>';
                             }

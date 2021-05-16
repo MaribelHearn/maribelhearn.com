@@ -29,12 +29,15 @@
 	            <div id='topbar'>
 					<p id='ack'>
 						<?php
-							if ($lang == 'Chinese') { echo '背景画师：' .
-							'<a href="https://www.pixiv.net/member.php?id=161300">ウータン</a>'; }
-							else if ($lang == 'Japanese') { echo '背景イメージは' .
-							'<a href="https://www.pixiv.net/member.php?id=161300">ウータン</a>さんのものを使用させていただいております'; }
-							else { echo 'This background image <br id="ack_br">was drawn by ' .
-							'<a href="https://www.pixiv.net/member.php?id=161300">ウータン</a>'; }
+							if ($lang == 'Chinese') {
+								echo '背景画师：<a href="https://www.pixiv.net/member.php?id=161300">ウータン</a>';
+							} else if ($lang == 'Japanese') {
+								echo '背景イメージは<a href="https://www.pixiv.net/member.php?id=161300">ウータン</a>' .
+								'さんの<br id="ack_br">ものを使用させていただいております';
+							} else {
+								echo 'This background image <br id="ack_br">was drawn by ' .
+								'<a href="https://www.pixiv.net/member.php?id=161300">ウータン</a>';
+							}
 						?>
 					</p>
 					<span id='hy_container'>
