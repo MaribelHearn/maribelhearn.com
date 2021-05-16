@@ -1,13 +1,4 @@
 <?php
-if ($_GET['hl'] == 'en') {
-    $lang = 'English';
-} else if ($_GET['hl'] == 'ru') {
-    $lang = 'Russian';
-} else if (isset($_COOKIE['lang'])) {
-    $lang = str_replace('"', '', $_COOKIE['lang']);
-} else {
-    $lang = 'English';
-}
 function tl_term(string $term, string $lang) {
     if ($lang == 'Japanese') {
         $term = trim($term);
@@ -17,7 +8,11 @@ function tl_term(string $term, string $lang) {
             case 'Flag of Japan': return '日本の国旗';
             case 'Flag of the P.R.C.': return '中華人民共和国の国旗';
             case 'Flag of Russia': return 'ロシアの国旗';
+            case 'Acknowledgements': return '謝辞';
             case 'Back to Top': return '上に帰る';
+            case 'Downloads': return 'ダウンロード';
+            case 'Download': return 'ダウンロード';
+            case 'Font': return 'フォント';
             default: return $term;
         }
     } else if ($lang == 'Chinese') {
@@ -49,5 +44,27 @@ function tl_term(string $term, string $lang) {
     } else {
         return $term;
     }
+}
+function set_lang_cookie(string $value) {
+    setcookie('lang', $value, array(
+        'expires' => 2147483647,
+        'path' => '/',
+        'secure' => true,
+        'samesite' => 'Strict'
+    ));
+}
+if ($_GET['hl'] == 'en') {
+    $lang = 'English';
+    set_lang_cookie($lang);
+} else if ($_GET['hl'] == 'ru') {
+    $lang = 'Russian';
+    set_lang_cookie($lang);
+} else if ($_GET['hl'] == 'jp') {
+    $lang = 'Japanese';
+    set_lang_cookie($lang);
+} else if (isset($_COOKIE['lang'])) {
+    $lang = str_replace('"', '', $_COOKIE['lang']);
+} else {
+    $lang = 'English';
 }
 ?>

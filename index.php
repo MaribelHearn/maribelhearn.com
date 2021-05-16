@@ -61,6 +61,7 @@
                             <p class='link'>
                                 <a href='tools'><img class='icon tools_icon' src='assets/shared/icon_sheet.png' alt='UFO icon'>
                                 Touhou Patches and Tools</a>
+                                <img src='assets/flags/jp16x16.png' width='16' height='16' alt='Flag of Japan' title='Japanese'>
                                 <img src='assets/flags/ru16x16.png' width='16' height='16' alt='Flag of Russia' title='Russian'>
                                 <span class='tooltip'>A collection of helpful patches and tools for
                                 the Touhou shooting games, many of which for efficient practicing.</span>
