@@ -19,6 +19,8 @@ $(document).ready(function () {
         language = "Japanese";
     } else if (getCookie("lang") == "Chinese" || location.href.contains("zh")) {
         language = "Chinese";
+    } else if (getCookie("lang") == "Russian" || location.href.contains("ru")) {
+        language = "Russian";
     }
 
     $("#top").attr("lang", langCode(language, false));
@@ -60,8 +62,83 @@ function updateCountdown() {
     }
 }
 function translateCharName(charName) {
-    if (language == "English") {
-        return charName.replace("Team", " Team");
+    if (language == "Chinese") {
+        return ({
+            "Makai": "魔界",
+            "Jigoku": "地狱",
+            "ReimuA": "灵梦A",
+            "ReimuB": "灵梦B",
+            "ReimuC": "灵梦C",
+            "Reimu": "灵梦",
+            "Mima": "魅魔",
+            "Marisa": "魔理沙",
+            "Ellen": "爱莲",
+            "Kotohime": "小兔姬",
+            "Kana": "卡娜",
+            "Rikako": "理香子",
+            "Chiyuri": "千百合",
+            "Yumemi": "梦美",
+            "Yuuka": "幽香",
+            "MarisaA": "魔理沙A",
+            "MarisaB": "魔理沙B",
+            "SakuyaA": "咲夜A",
+            "SakuyaB": "咲夜B",
+            "BorderTeam": "结界组",
+            "MagicTeam": "咏唱组",
+            "ScarletTeam": "红魔组",
+            "GhostTeam": "幽冥组",
+            "Yukari": "紫",
+            "Alice": "爱丽丝",
+            "Sakuya": "咲夜",
+            "Remilia": "蕾米莉亚",
+            "Youmu": "妖梦",
+            "Yuyuko": "幽幽子",
+            "Reisen": "铃仙",
+            "Cirno": "琪露诺",
+            "Lyrica": "莉莉卡",
+            "Mystia": "米丝蒂亚",
+            "Tewi": "帝",
+            "Aya": "文",
+            "Medicine": "梅蒂薪",
+            "Komachi": "小町",
+            "Eiki": "映姬",
+            "MarisaC": "魔理沙C",
+            "SanaeA": "早苗A",
+            "SanaeB": "早苗B",
+            "A1": "A1",
+            "A2": "A2",
+            "B1": "B1",
+            "B2": "B2",
+            "C1": "C1",
+            "C2": "C2",
+            "Sanae": "早苗",
+            "Spring": "春",
+            "Summer": "夏",
+            "Autumn": "秋",
+            "Winter": "冬",
+            "ReimuSpring": "灵梦春",
+            "CirnoSpring": "琪露诺春",
+            "AyaSpring": "文春",
+            "MarisaSpring": "魔理沙春",
+            "ReimuSummer": "灵梦夏",
+            "CirnoSummer": "琪露诺夏",
+            "AyaSummer": "文夏",
+            "MarisaSummer": "魔理沙夏",
+            "CirnoAutumn": "琪露诺秋",
+            "AyaAutumn": "文秋",
+            "MarisaAutumn": "魔理沙秋",
+            "CirnoWinter": "琪露诺冬",
+            "AyaWinter": "文冬",
+            "ReimuWolf": "灵梦狼",
+            "ReimuOtter": "灵梦獺",
+            "ReimuEagle": "灵梦鹰",
+            "MarisaWolf": "魔理沙狼",
+            "MarisaOtter": "魔理沙獺",
+            "MarisaEagle": "魔理沙鹰",
+            "YoumuWolf": "妖梦狼",
+            "YoumuOtter": "妖梦獺",
+            "YoumuEagle": "妖梦鹰"
+        }[charName]);
     } else if (language == "Japanese") {
         return ({
             "Makai": "魔界",
@@ -139,88 +216,57 @@ function translateCharName(charName) {
             "YoumuOtter": "妖夢獺",
             "YoumuEagle": "妖夢鷲"
         }[charName]);
-    } else {
-        return ({
-            "Makai": "魔界",
-            "Jigoku": "地狱",
-            "ReimuA": "灵梦A",
-            "ReimuB": "灵梦B",
-            "ReimuC": "灵梦C",
-            "Reimu": "灵梦",
-            "Mima": "魅魔",
-            "Marisa": "魔理沙",
-            "Ellen": "爱莲",
-            "Kotohime": "小兔姬",
-            "Kana": "卡娜",
-            "Rikako": "理香子",
-            "Chiyuri": "千百合",
-            "Yumemi": "梦美",
-            "Yuuka": "幽香",
-            "MarisaA": "魔理沙A",
-            "MarisaB": "魔理沙B",
-            "SakuyaA": "咲夜A",
-            "SakuyaB": "咲夜B",
-            "BorderTeam": "结界组",
-            "MagicTeam": "咏唱组",
-            "ScarletTeam": "红魔组",
-            "GhostTeam": "幽冥组",
-            "Yukari": "紫",
-            "Alice": "爱丽丝",
-            "Sakuya": "咲夜",
-            "Remilia": "蕾米莉亚",
-            "Youmu": "妖梦",
-            "Yuyuko": "幽幽子",
-            "Reisen": "铃仙",
-            "Cirno": "琪露诺",
-            "Lyrica": "莉莉卡",
-            "Mystia": "米丝蒂亚",
-            "Tewi": "帝",
-            "Aya": "文",
-            "Medicine": "梅蒂薪",
-            "Komachi": "小町",
-            "Eiki": "映姬",
-            "MarisaC": "魔理沙C",
-            "SanaeA": "早苗A",
-            "SanaeB": "早苗B",
-            "A1": "A1",
-            "A2": "A2",
-            "B1": "B1",
-            "B2": "B2",
-            "C1": "C1",
-            "C2": "C2",
-            "Sanae": "早苗",
-            "Spring": "春",
-            "Summer": "夏",
-            "Autumn": "秋",
-            "Winter": "冬",
-            "ReimuSpring": "灵梦春",
-            "CirnoSpring": "琪露诺春",
-            "AyaSpring": "文春",
-            "MarisaSpring": "魔理沙春",
-            "ReimuSummer": "灵梦夏",
-            "CirnoSummer": "琪露诺夏",
-            "AyaSummer": "文夏",
-            "MarisaSummer": "魔理沙夏",
-            "CirnoAutumn": "琪露诺秋",
-            "AyaAutumn": "文秋",
-            "MarisaAutumn": "魔理沙秋",
-            "CirnoWinter": "琪露诺冬",
-            "AyaWinter": "文冬",
-            "ReimuWolf": "灵梦狼",
-            "ReimuOtter": "灵梦獺",
-            "ReimuEagle": "灵梦鹰",
-            "MarisaWolf": "魔理沙狼",
-            "MarisaOtter": "魔理沙獺",
-            "MarisaEagle": "魔理沙鹰",
-            "YoumuWolf": "妖梦狼",
-            "YoumuOtter": "妖梦獺",
-            "YoumuEagle": "妖梦鹰"
-        }[charName]);
+    } else { // English
+        return charName.replace("Team", " Team");
     }
 }
 function translate(arg) {
-    if (language == "English") {
-        return arg
+    if (language == "Chinese") {
+        return ({
+            "Route": "路线",
+            "Shottype": "机体",
+            "Important Notice:": "重要提示：",
+            "usage of the MarisaB damage bug is BANNED in survival.": "生存向 弑神炮禁止。",
+            "<em>manual</em> trances count as bombs (that is, trances from pressing C).": "主动灵界视作扔雷。",
+            "border breaks count as bombs <em>even if they are accidental</em>.": "灵击视作扔雷，无论是否被弹灵击。",
+            "Your DRC points for this run: ": "本轮DRC得分：",
+            "Error: ": "错误：",
+            "the survival rubrics for this game are undetermined as of now.": "此游戏的生存向计算公式现在仍未决定。",
+            "the scoring rubrics for this game are undetermined as of now.": "此游戏的打分向计算公式现在仍未决定。",
+            "the scoring rubrics for this difficulty are undetermined as of now.": "此难度的打分向计算公式现在仍未决定。",
+            "the scoring rubrics for this shottype are undetermined as of now.": "此机体的打分向计算公式现在仍未决定。",
+            "invalid score.": "无效分数。",
+            "||Max * (Score/WR)^Exp||": "||最大值 * (得分 / WR) ^ 指数||",
+            "||Max * (Base^-n)||": "||最大值 * (基数 ^ -n)||",
+            "Category": "项目",
+            "WR based on": "机体",
+            "Scoring": "打分",
+            "Survival": "生存",
+            "Hide Survival Rubrics": "隐藏生存计算公式",
+            "Show Survival Rubrics": "显示生存计算公式",
+            "Hide Scoring Rubrics": "隐藏打分计算公式",
+            "Show Scoring Rubrics": "显示打分计算公式",
+            "No Bomb": "禁雷",
+            "Misses": "被弹数",
+            "Rounds lost": "败北数",
+            "No Charge Attacks": "NC",
+            "Border Breaks": "灵击数",
+            "Bombs / Trances": "扔雷数/灵界数",
+            "Bombs": "扔雷数",
+            "Imperishable Shooting Captured": "【不朽的弹幕】收取",
+            "Last Spells Captured": "LSC收取数",
+            "Releases": "季节解放数",
+            "Score": "分数",
+            "Scene": "场景",
+            "Threshold 1": "第一阈值",
+            "Threshold 2": "第二阈值",
+            "Threshold 3": "第三阈值",
+            "Base points": "基数分",
+            "d ": "日",
+            "h ": "时",
+            "m ": "分",
+            "s": "秒"
+        }[arg]);
     } else if (language == "Japanese") {
         return ({
             "Route": "ルート",
@@ -267,52 +313,8 @@ function translate(arg) {
             "m ": "分",
             "s": "秒"
         }[arg]);
-    } else {
-        return ({
-            "Route": "路线",
-            "Shottype": "机体",
-            "Important Notice:": "重要提示：",
-            "usage of the MarisaB damage bug is BANNED in survival.": "生存向 弑神炮禁止。",
-            "<em>manual</em> trances count as bombs (that is, trances from pressing C).": "主动灵界视作扔雷。",
-            "border breaks count as bombs <em>even if they are accidental</em>.": "灵击视作扔雷，无论是否被弹灵击。",
-            "Your DRC points for this run: ": "本轮DRC得分：",
-            "Error: ": "错误：",
-            "the survival rubrics for this game are undetermined as of now.": "此游戏的生存向计算公式现在仍未决定。",
-            "the scoring rubrics for this game are undetermined as of now.": "此游戏的打分向计算公式现在仍未决定。",
-            "the scoring rubrics for this difficulty are undetermined as of now.": "此难度的打分向计算公式现在仍未决定。",
-            "the scoring rubrics for this shottype are undetermined as of now.": "此机体的打分向计算公式现在仍未决定。",
-            "invalid score.": "无效分数。",
-            "||Max * (Score/WR)^Exp||": "||最大值 * (得分 / WR) ^ 指数||",
-            "||Max * (Base^-n)||": "||最大值 * (基数 ^ -n)||",
-            "Category": "项目",
-            "WR based on": "机体",
-            "Scoring": "打分",
-            "Survival": "生存",
-            "Hide Survival Rubrics": "隐藏生存计算公式",
-            "Show Survival Rubrics": "显示生存计算公式",
-            "Hide Scoring Rubrics": "隐藏打分计算公式",
-            "Show Scoring Rubrics": "显示打分计算公式",
-            "No Bomb": "禁雷",
-            "Misses": "被弹数",
-            "Rounds lost": "败北数",
-            "No Charge Attacks": "NC",
-            "Border Breaks": "灵击数",
-            "Bombs / Trances": "扔雷数/灵界数",
-            "Bombs": "扔雷数",
-            "Imperishable Shooting Captured": "【不朽的弹幕】收取",
-            "Last Spells Captured": "LSC收取数",
-            "Releases": "季节解放数",
-            "Score": "分数",
-            "Scene": "场景",
-            "Threshold 1": "第一阈值",
-            "Threshold 2": "第二阈值",
-            "Threshold 3": "第三阈值",
-            "Base points": "基数分",
-            "d ": "日",
-            "h ": "时",
-            "m ": "分",
-            "s": "秒"
-        }[arg]);
+    } else { // English
+        return arg;
     }
 }
 function changeDifficulty() {
@@ -537,12 +539,12 @@ function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
     var roundsLost = Number($(MISSES).val()), bonus;
 
     if (roundsLost > rubric.lives) {
-        if (language == "English") {
-            $(ERROR).html("<strong class='error'>Error: the number of rounds lost cannot exceed " + rubric.lives + "</strong>");
+        if (language == "Chinese") {
+            $(ERROR).html("<strong class='error'>错误：败北数不能超过" + rubric.lives + "。</strong>");
         } else if (language == "Japanese") {
             $(ERROR).html("<strong class='error'>エラー: 敗北数が" + rubric.lives + "を超えてはいけません。</strong>");
-        } else {
-            $(ERROR).html("<strong class='error'>错误：败北数不能超过" + rubric.lives + "。</strong>");
+        } else { // English
+            $(ERROR).html("<strong class='error'>Error: the number of rounds lost cannot exceed " + rubric.lives + "</strong>");
         }
         return 0;
     } else {
@@ -607,15 +609,15 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
             lastSpells = $(LS).val();
 
             if (lastSpells > Rubrics.MAX_LAST_SPELLS[difficulty][route]) {
-                if (language == "English") {
-                    $(ERROR).html("<strong class='error'>Error: the number of Last Spells captured in a " + route +
-                    " clear on " + difficulty + " cannot exceed " + Rubrics.MAX_LAST_SPELLS[difficulty][route] + "</strong>");
+                if (language == "Chinese") {
+                    $(ERROR).html("<strong class='error'>错误：" + route + "路线" + difficulty +
+                    "难度中的LSC收取数不能超过" + Rubrics.MAX_LAST_SPELLS[difficulty][route] + "。");
                 } else if (language == "Japanese") {
                     $(ERROR).html("<strong class='error'>エラー: ラストスペルが" + Rubrics.MAX_LAST_SPELLS[difficulty][route] +
                     "を超えてはいけません。</strong>");
-                } else {
-                    $(ERROR).html("<strong class='error'>错误：" + route + "路线" + difficulty +
-                    "难度中的LSC收取数不能超过" + Rubrics.MAX_LAST_SPELLS[difficulty][route] + "。");
+                } else { // English
+                    $(ERROR).html("<strong class='error'>Error: the number of Last Spells captured in a " + route +
+                    " clear on " + difficulty + " cannot exceed " + Rubrics.MAX_LAST_SPELLS[difficulty][route] + "</strong>");
                 }
                 return 0;
             }
