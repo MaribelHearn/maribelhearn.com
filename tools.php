@@ -95,13 +95,16 @@
     			<p><?php
 					if ($lang == 'Russian') {
 						echo 'Некоторые из патчей также доступны в <a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers">' .
-						'<img class="icon thcrap_icon" src="assets/shared/icon_sheet.png" alt="THCRAP favicon"> Touhou Patch Center</a> ' .
+						'<img class="icon thcrap_icon" src="assets/shared/icon_sheet.png" alt="Favicon THCRAP"> Touhou Patch Center</a> ' .
 						'и могут быть установлены при помощи их <a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Download">' .
 						'автоматического патчера и инструмента для моддинга,</a> который можно скачать по ссылке ниже (см. THCRAP). ' .
 						'У этих патчей будет показана иконка их сайта.';
 					} else if ($lang == 'Japanese') {
-						echo 'いくつかのパッチはTHCRAP東方パッチセンターを通じて自動翻訳パッチや改変ツールとともに利用できます。' .
-						'またそれらは本サイトのミラーからもダウンロード可能で、それらにはfaviconを併記してあります。(THCRAPの項目を参照)。';
+						echo 'いくつかのパッチは<a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers">' .
+                        '<img class="icon thcrap_icon" src="assets/shared/icon_sheet.png" alt="THCRAP favicon"> ' .
+                        'THCRAP東方パッチセンター</a>を通じて自動<a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Download">' .
+                        '翻訳パッチや改変ツール</a>とともに利用できます。またそれらは本サイトのミラーからもダウンロード可能で、' .
+                        'それらにはfaviconを併記してあります。(THCRAPの項目を参照)。';
 					} else {
 						echo 'Some of the patches are also available at <a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers">' .
 						'<img class="icon thcrap_icon" src="assets/shared/icon_sheet.png" alt="THCRAP favicon"> Touhou Patch Center</a> ' .
