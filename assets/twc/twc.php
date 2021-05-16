@@ -2,7 +2,7 @@
 if (isset($_COOKIE['lang'])) {
     $lang = str_replace('"', '', $_COOKIE['lang']);
 } else {
-    if (empty($_GET['hl']) && !isset($_COOKIE['lang']) || $_GET['hl'] == 'en') {
+    if (empty($_GET['hl']) || $_GET['hl'] == 'en') {
         $lang = 'English';
     } else if ($_GET['hl'] == 'jp') {
         $lang = 'Japanese';
@@ -10,6 +10,8 @@ if (isset($_COOKIE['lang'])) {
         $lang = 'Chinese';
     } else if ($_GET['hl'] == 'ru') {
         $lang = 'Russian';
+    } else {
+        $lang = 'English';
     }
 }
 function tl_char(string $char, string $lang) {

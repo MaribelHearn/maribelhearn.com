@@ -10,19 +10,23 @@ $cs = json_decode($json, true);
 if (isset($_COOKIE['lang'])) {
     $lang = str_replace('"', '', $_COOKIE['lang']);
     $notation = str_replace('"', '', $_COOKIE['datenotation']);
-}
-if (empty($_GET['hl']) && !isset($_COOKIE['lang']) || $_GET['hl'] == 'en-gb') {
-    $lang = 'English';
-    $notation = 'DMY';
-} else if ($_GET['hl'] == 'en-us') {
-    $lang = 'English';
-    $notation = 'MDY';
-} else if ($_GET['hl'] == 'jp') {
-     $lang = 'Japanese';
-     $notation = 'YMD';
-} else if ($_GET['hl'] == 'zh') {
-    $lang = 'Chinese';
-    $notation = 'YMD';
+} else {
+    if (empty($_GET['hl']) || $_GET['hl'] == 'en-gb') {
+        $lang = 'English';
+        $notation = 'DMY';
+    } else if ($_GET['hl'] == 'en-us') {
+        $lang = 'English';
+        $notation = 'MDY';
+    } else if ($_GET['hl'] == 'jp') {
+        $lang = 'Japanese';
+        $notation = 'YMD';
+    } else if ($_GET['hl'] == 'zh') {
+        $lang = 'Chinese';
+        $notation = 'YMD';
+    } else {
+        $lang = 'English';
+        $notation = 'DMY';
+    }
 }
 $layout = (isset($_COOKIE['wr_old_layout']) ? 'Old' : 'New');
 $overall = array(0);

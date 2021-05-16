@@ -53,18 +53,22 @@ function set_lang_cookie(string $value) {
         'samesite' => 'Strict'
     ));
 }
-if ($_GET['hl'] == 'en') {
-    $lang = 'English';
-    set_lang_cookie($lang);
-} else if ($_GET['hl'] == 'ru') {
-    $lang = 'Russian';
-    set_lang_cookie($lang);
-} else if ($_GET['hl'] == 'jp') {
-    $lang = 'Japanese';
-    set_lang_cookie($lang);
-} else if (isset($_COOKIE['lang'])) {
+if (isset($_COOKIE['lang'])) {
     $lang = str_replace('"', '', $_COOKIE['lang']);
 } else {
-    $lang = 'English';
+    if (empty($_GET['hl'])) {
+        $lang = 'English';
+    } else if ($_GET['hl'] == 'en') {
+        $lang = 'English';
+        set_lang_cookie($lang);
+    } else if ($_GET['hl'] == 'ru') {
+        $lang = 'Russian';
+        set_lang_cookie($lang);
+    } else if ($_GET['hl'] == 'jp') {
+        $lang = 'Japanese';
+        set_lang_cookie($lang);
+    } else {
+        $lang = 'English';
+    }
 }
 ?>
