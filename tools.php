@@ -604,7 +604,7 @@
     			<p><strong><?php
 					if ($lang == 'Russian') { echo 'Боссраш WBaWC от '; }
 					else if ($lang == 'Japanese') { echo '鬼形獣ボスラッシュ by '; }
-					else { 'WBaWC Boss Rush by '; }
+					else { echo 'WBaWC Boss Rush by '; }
 				?>Plus</strong></p>
                 <p><?php
 					if ($lang == 'Russian') { echo 'Боссраш патч для WBaWC.'; }
