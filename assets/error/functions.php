@@ -1,4 +1,5 @@
 <?php
+$url = substr($_SERVER['REQUEST_URI'], 1);
 if (empty($_GET['error']) || $_GET['error'] == '404') {
     $json = file_get_contents('../json/admin.json');
     $data = json_decode($json, true);
@@ -21,7 +22,6 @@ function error_title() {
 }
 function error_description_sub() {
     $description = '404 Not Found';
-    $url = substr($_SERVER['REQUEST_URI'], 1);
     if (!strpos($url, '/')) {
         $max_sim = 0;
         foreach (glob('../../*') as $file) {
