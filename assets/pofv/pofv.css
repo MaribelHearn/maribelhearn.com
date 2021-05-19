@@ -57,6 +57,12 @@ ol > li {
 .E {
     color: #00D0D0;
 }
+.flag {
+    display: inline-block;
+}
+.language {
+    margin-top: 0px;
+}
 .art {
     border: 1px solid black;
 }
@@ -110,28 +116,16 @@ ol > li {
     padding-bottom: 15px;
     opacity: 0.8;
 }
-#wrap > div {
+#wrap > div:not(#topbar) {
     display: inline-block;
 }
 #nav {
     margin-bottom: 5px;
 }
-#hy {
-    object-position: -512px 0px;
-    object-fit: none;
-    width: 120px;
-    height: 16px;
-}
-#hy_container {
-    position: relative;
-    float: right;
-}
-#hy_container .tooltip {
-    width: 150px;
-    left: 0%;
-}
-#hy_container:hover .tooltip {
-    visibility: visible;
+#languages {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 #modal {
     font: 14px verdana, sans-serif;

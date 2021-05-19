@@ -11,7 +11,7 @@ function is_localhost(string $addr) {
 $min = (!is_localhost($_SERVER['REMOTE_ADDR']) ? '-min' : '');
 $jquery = array('drc', 'lnn', 'pofv', 'scoring', 'slots', 'survival', 'tiers', 'twc', 'wr');
 $sorttable = array('drc', 'gensokyo', 'lnn', 'scoring', 'survival', 'thvote', 'wr');
-$utils = array('drc', 'lnn', 'tiers', 'twc', 'wr');
+$utils = array('drc', 'lnn', 'pofv', 'tiers', 'twc', 'wr');
 $canvas = array('slots', 'survival', 'tiers');
 $page = $_GET['page'];
 $js = array();

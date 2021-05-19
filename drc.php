@@ -41,7 +41,7 @@
 						?>
 					</p>
 					<span id='hy_container'>
-	                    <img id='hy' src='assets/shared/icon_sheet.png' alt='Human-youkai gauge'>
+	                    <span id='hy'></span>
 				        <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
 	                </span>
 					<div id='languages'>

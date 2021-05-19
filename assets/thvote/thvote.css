@@ -187,23 +187,6 @@ table {
 #age_summary {
     display: block;
 }
-#hy {
-    object-position: -512px 0px;
-    object-fit: none;
-    width: 120px;
-    height: 16px;
-}
-#hy_container {
-    position: relative;
-    float: right;
-}
-#hy_container .tooltip {
-    width: 150px;
-    left: 0%;
-}
-#hy_container:hover .tooltip {
-    visibility: visible;
-}
 #ack {
     font: 11px verdana,sans-serif;
     text-align: right;

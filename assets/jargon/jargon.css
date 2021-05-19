@@ -54,23 +54,6 @@ h2 {
 #wrap > div {
     display: inline-block;
 }
-#hy {
-    object-position: -512px 0px;
-    object-fit: none;
-    width: 120px;
-    height: 16px;
-}
-#hy_container {
-    position: relative;
-    float: right;
-}
-#hy_container .tooltip {
-    width: 150px;
-    left: 0%;
-}
-#hy_container:hover .tooltip {
-    visibility: visible;
-}
 #bullettable, #jargontable, #spelltable {
     text-align: left;
 }

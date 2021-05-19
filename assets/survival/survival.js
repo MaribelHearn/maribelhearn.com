@@ -321,6 +321,7 @@ function prepareRendering() {
     $("#survival, #wrap").css("margin-left", "0");
     $("#container, #wrap").css("background-color", "white");
     $("#nav, #ack, #hy, #content, #bottom").css("display", "none");
+    $("#rendering_message").html("Rendering image...");
     $("#rendering_message").css("display", "block");
     $("#legend").css("display", "table-caption");
     $(".noborders").addClass("overview no_extra");
@@ -379,16 +380,21 @@ function drawOverview() {
     originalContent = $("#container").html();
 
     prepareRendering();
-    html2canvas(document.getElementById("survival"), {
-        backgroundColor: "white"
-    }).then(function(canvas) {
-        var base64image = canvas.toDataURL("image/png");
+    try {
+        html2canvas(document.getElementById("survival"), {
+            backgroundColor: "white"
+        }).then(function(canvas) {
+            var base64image = canvas.toDataURL("image/png");
 
-        $("#screenshot").html("<a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
-        "<input type='button' value='Save to Device'></a></p>" +
-        "<p><img id='base64' src='" + base64image + "' alt='Survival progress table'></p>");
-        cleanupRendering(originalContent);
-    });
+            $("#screenshot").html("<a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
+            "<input type='button' value='Save to Device'></a></p>" +
+            "<p><img id='base64' src='" + base64image + "' alt='Survival progress table'></p>");
+            cleanupRendering(originalContent);
+        });
+    } catch (err) {
+        $("#rendering_message").html("Your browser is outdated. Use a different browser to " +
+        "generate an image of your survival progress table.");
+    }
 }
 
 function save() {

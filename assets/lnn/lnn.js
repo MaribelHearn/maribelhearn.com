@@ -256,7 +256,7 @@ $(document).ready(function () {
     $("#jp").on("click", {language: "Japanese"}, setLanguage);
     $("#zh").on("click", {language: "Chinese"}, setLanguage);
     $("#ru").on("click", {language: "Russian"}, setLanguage);
-    $(".game").on("click", showLNNs);
+    $(".game_img").on("click", showLNNs);
     missingReplays = $("#missingReplays").val();
 
     if (getCookie("lang") == "Japanese" || location.href.contains("jp")) {
