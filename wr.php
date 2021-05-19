@@ -59,7 +59,7 @@
                         ?>
                     </span>
     				<span id='hy_container'>
-                        <img id='hy' src='assets/shared/icon_sheet.png' alt='Human-youkai gauge'>
+                        <span id='hy'></span>
                         <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
                     </span>
     				<div id='languages'>
@@ -286,11 +286,10 @@
                         }
                         echo '<div id="' . $game . '">';
                         echo '<table id="' . $game . '_table" class="' . $game .
-                        't sortable"><caption><p><img id="' . $game . '_image_old" ' .
+                        't sortable"><caption><p><span id="' . $game . '_image_old" ' .
                         'class="cover ' . (num($game) <= 5 ? ' cover98' : '') .
-                        '" src="assets/shared/game_sheet50x50' . $sheet . '.png" alt="' . $game .
-                        ' cover"> ' . full_name($game, $lang) .
-                        '</p></caption><tr><th>' . tl_term(shot_route($game), $lang) . '</th>';
+                        '"></span> ' . full_name($game, $lang) . '</p></caption>' .
+                        '<tr><th>' . tl_term(shot_route($game), $lang) . '</th>';
                         foreach ($obj as $diff => $shots) {
                             if ($game != 'GFW' || $diff != 'Extra') {
                                 echo '<th>' . $diff . '</th>';
@@ -398,12 +397,10 @@
                                 echo '<br>';
                             }
                             if (!$second_row) {
-                                echo '<span class="game_image"><img id="' . $game . '_image" class="game" src="assets/shared/' .
-                                'game_sheet50x50_1.png" alt="' . $game . ' cover">' .
+                                echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet1"></span>' .
                                 '<span class="full_name tooltip">' . full_name($game, $lang) . '</span></span>';
                             } else {
-                                echo '<span class="game_image"><img id="' . $game . '_image" class="game" src="assets/shared/' .
-                                'game_sheet50x50_2.png" alt="' . $game . ' cover">' .
+                                echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet2"></span>' .
                                 '<span class="full_name tooltip">' . full_name($game, $lang) . '</span></span>';
                             }
                         }

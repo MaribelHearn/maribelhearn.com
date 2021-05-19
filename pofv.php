@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id='top' lang='en'>
+<html id='top' lang='<?php if (empty($_GET['hl'])) { echo 'en'; } else { echo $_GET['hl']; } ?>'>
 <?php
     include 'assets/shared/shared.php';
     hit(basename(__FILE__));
@@ -25,11 +25,31 @@
 		</nav>
         <main>
             <div id='wrap' class='wrap'>
-                <p id='ack'>This background image was<br id='ack_br'>
-                drawn by <a href='http://www.pixiv.net/member.php?id=21613'>Kong Xian</a></p>
-                <span id='hy_container'><img id='hy' src='assets/shared/icon_sheet.png' alt='Human-youkai gauge'>
-                    <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
-                </span>
+    	            <div id='topbar'>
+    					<p id='ack'><?php
+							if ($lang == 'Chinese') {
+                                echo '背景画师：' .
+    							'<a href="https://www.pixiv.net/member.php?id=21613">Kong Xian</a>';
+                            } else {
+                                echo 'This background image <br id="ack_br">was drawn by ' .
+							    '<a href="https://www.pixiv.net/member.php?id=21613">Kong Xian</a>';
+                            }
+    					?></p>
+    					<span id='hy_container'>
+    	                    <span id='hy'></span>
+    				        <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
+    	                </span>
+    					<div id='languages'>
+    	                    <a id='en' class='flag' href='pofv?hl=en'>
+    	                        <img class='flag_en' src='assets/flags/uk.png' alt='<?php echo 'Flag of the United Kingdom' ?>'>
+    	                        <p class='language'>English</p>
+    	                    </a>
+    	                    <a id='zh' class='flag' href='pofv?hl=zh'>
+    	                        <img src='assets/flags/china.png' alt='<?php echo 'Flag of the P.R.C.' ?>'>
+    	                        <p class='language'>简体中文</p>
+    	                    </a>
+    		            </div>
+    				</div>
                 <h1>Phantasmagoria of Flower View</h1>
     			<?php
     				if (!empty($_GET['redirect'])) {
@@ -39,7 +59,7 @@
                 <p>This is a portal for competitive PoFV play, featuring the current tier list, a guide to help you get started with
                 netplay, and links to relevant resources as well as the rules of tournaments for the game, held at the
                 <a id='discord' href='https://discord.gg/2QPPPpE'>
-                    <img class='icon discord_icon' src='assets/shared/icon_sheet.png' alt='Discord icon'>
+                    <span class='icon discord_icon'></span>
                     Phantasmagoria Netplay Discord server
                 </a>.</p>
                 <h2>Contents</h2>
@@ -59,13 +79,19 @@
                     <tr>
                         <th id='s' class='tier'>S</th>
                         <td class='noborders'>
-                            <abbr title='Marisa Kirisame'><img class='char' src='assets/pofv/characters/marisa-cropped.png' alt='Marisa Kirisame'></abbr>
+                            <abbr title='Marisa Kirisame'>
+                                <img class='char' src='assets/pofv/characters/marisa-cropped.png' alt='Marisa Kirisame'>
+                            </abbr>
                         </td>
                         <td class='noborders'>
-                            <abbr title='Reimu Hakurei'><img class='char' src='assets/pofv/characters/reimu-cropped.png' alt='Reimu Hakurei'></abbr>
+                            <abbr title='Reimu Hakurei'>
+                                <img class='char' src='assets/pofv/characters/reimu-cropped.png' alt='Reimu Hakurei'>
+                            </abbr>
                         </td>
                         <td class='noborders'>
-                            <abbr title='Youmu Konpaku'><img class='char' src='assets/pofv/characters/youmu-cropped.png' alt='Youmu Konpaku'></abbr>
+                            <abbr title='Youmu Konpaku'>
+                                <img class='char' src='assets/pofv/characters/youmu-cropped.png' alt='Youmu Konpaku'>
+                            </abbr>
                         </td>
                         <td class='hidden'></td>
                     </tr>
@@ -138,7 +164,7 @@
                 <img class='guide' src='assets/pofv/connect.png' alt='Connection in Adonis2'>
                 <p>To be able to host, you need to either <a href='https://portforward.com'>port forward</a> or use
                 <a href='https://zerotier.com/download'>
-                    <img class='icon zerotier_icon' src='assets/shared/icon_sheet.png' alt='Zerotier favicon'> Zerotier
+                    <span class='icon zerotier_icon'></span> Zerotier
                 </a>
                 (Hamachi works as well, but is not used but the PoFV netplay community). This is what it looks like in Adonis2:</p>
                 <img class='guide' src='assets/pofv/host.png' alt='Hosting in Adonis2'>
@@ -164,7 +190,7 @@
                 <h2 id='rules'>Tournament Rules</h2>
                 <ol>
                     <li>Players must be in the <a href='https://discord.gg/2QPPPpE'>
-                    <img class='icon discord_icon' src='assets/shared/icon_sheet.png' alt='Discord icon'> Phantasmagoria Netplay Discord server</a>
+                    <span class='icon discord_icon'></span> Phantasmagoria Netplay Discord server</a>
                     in order to submit replays and receive important communications about the tournament.</li>
                     <li>Participants will use the <strong>Adonis 2</strong> netplay tool, and will need a stable connection.
                     Players will need port forwarding set up or ZeroTier installed to ensure
@@ -195,10 +221,10 @@
                 </ol>
                 <h2 id='links'>Useful Links</h2>
                 <p><a href='https://docs.google.com/document/d/1IHtZb8-LbbDEK526JR7u9_HykrwxTcDI/edit'>
-                    <img class='icon docs_icon' src='assets/shared/icon_sheet.png' alt='Google Docs favicon'> Fundamentals of PoFV Gameplay
+                    <span class='icon docs_icon'></span> Fundamentals of PoFV Gameplay
                 </a></p>
                 <p><a href='https://docs.google.com/spreadsheets/d/1_MikJ3MH_H3L9czPUl5oGC5xmIVN8EH4t5yIfvoRE0o/edit?usp=sharing'>
-                    <img class='icon sheets_icon' src='assets/shared/icon_sheet.png' alt='Google Spreadsheets favicon'> Tournament Archive</a>
+                    <span class='icon sheets_icon'></span> Tournament Archive</a>
                 </p>
                 <p><a href='https://cerise.moe/pofv.html'>
                     <img src='assets/flags/france16x16.png' alt='Flag of France'> French Guide
@@ -208,7 +234,15 @@
                 <p>The character descriptions were written by <a href='https://twitter.com/UndreamtBoss'>Zil</a>.</p>
                 <p>The averaged tier list was done by <a href='https://twitter.com/homoiconicbully'>Lesbea</a>.</p>
                 <p>The artworks used for this page are original work by <a href='https://twitter.com/korindo'>ZUN</a>.</p>
-                <p id='ack_mobile'>The background image was drawn by <a href='http://www.pixiv.net/member.php?id=21613'>Kong Xian</a>.</p>
+                <p id='ack_mobile'><?php
+                    if ($lang == 'Chinese') {
+                        echo '背景画师：' .
+                        '<a href="https://www.pixiv.net/member.php?id=21613">Kong Xian</a>。';
+                    } else {
+                        echo 'The background image was drawn by ' .
+                        '<a href="https://www.pixiv.net/member.php?id=21613">Kong Xian</a>.';
+                    }
+                ?></p>
                 <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
             </div>
             <div id='modal'>

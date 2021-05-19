@@ -53,7 +53,7 @@
 						?>
 					</p>
 					<span id='hy_container'>
-	                    <img id='hy' src='assets/shared/icon_sheet.png' alt='Human-youkai gauge'>
+	                    <span id='hy'></span>
 				        <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
 	                </span>
 					<div id='languages'>
@@ -108,12 +108,12 @@
 				?>
 				<div id='links'>
 					<?php
-						echo '<p><img class="icon twitter_icon" src="assets/shared/icon_sheet.png" alt="Twitter icon">';
+						echo '<p><span class="icon twitter_icon"></span>';
 						if ($lang == 'Chinese') { echo '<a href="https://twitter.com/touhouworldcup">TWC的官方推特</a>'; }
 						else if ($lang == 'Japanese') { echo '<a href="https://twitter.com/touhouworldcup">公式ツイッター</a>'; }
 						else if ($lang == 'Russian') { echo '<a href="https://twitter.com/touhouworldcup">Официальный Твиттер TWC</a>'; }
 						else { echo '<a href="https://twitter.com/touhouworldcup">Official TWC Twitter</a>'; }
-						echo '</p><p><img class="icon youtube_icon" src="assets/shared/icon_sheet.png" alt="YouTube icon">' .
+						echo '</p><p><span class="icon youtube_icon"></span>' .
 						'<a href="https://www.youtube.com/channel/UCk8o-jk-Zpn4CEmLUIkui0A">';
 						if ($lang == 'Chinese') { echo 'TWC的官方YouTube频道'; }
 						else if ($lang == 'Japanese') { echo '公式YouTubeチャンネル'; }

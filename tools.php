@@ -59,7 +59,7 @@
 						?>
 					</p>
 					<span id='hy_container'>
-	                    <img id='hy' src='assets/shared/icon_sheet.png' alt='Human-youkai gauge'>
+	                    <span id='hy'></span>
 				        <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
 	                </span>
 					<div id='languages'>
@@ -95,19 +95,19 @@
     			<p><?php
 					if ($lang == 'Russian') {
 						echo 'Некоторые из патчей также доступны в <a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers">' .
-						'<img class="icon thcrap_icon" src="assets/shared/icon_sheet.png" alt="Favicon THCRAP"> Touhou Patch Center</a> ' .
+						'<span class="icon thcrap_icon"></span> Touhou Patch Center</a> ' .
 						'и могут быть установлены при помощи их <a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Download">' .
 						'автоматического патчера и инструмента для моддинга,</a> который можно скачать по ссылке ниже (см. THCRAP). ' .
 						'У этих патчей будет показана иконка их сайта.';
 					} else if ($lang == 'Japanese') {
 						echo 'いくつかのパッチは<a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers">' .
-                        '<img class="icon thcrap_icon" src="assets/shared/icon_sheet.png" alt="THCRAP favicon"> ' .
+                        '<span class="icon thcrap_icon"></span> ' .
                         'THCRAP東方パッチセンター</a>を通じて自動<a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Download">' .
                         '翻訳パッチや改変ツール</a>とともに利用できます。またそれらは本サイトのミラーからもダウンロード可能で、' .
                         'それらにはfaviconを併記してあります。(THCRAPの項目を参照)。';
 					} else {
 						echo 'Some of the patches are also available at <a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers">' .
-						'<img class="icon thcrap_icon" src="assets/shared/icon_sheet.png" alt="THCRAP favicon"> Touhou Patch Center</a> ' .
+						'<span class="icon thcrap_icon"></span> Touhou Patch Center</a> ' .
 						'and can be used through <a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Download">their automatic ' .
 						'translation patcher and modding tool</a>, which can also be downloaded using our mirror below ' .
 						'(see THCRAP section). These patches will have the favicon of their site next to them.';
@@ -203,16 +203,15 @@
                 <?php
 					if ($lang == 'Russian') {
 						echo '<h2 id="thcrap">THCRAP <a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page" ' .
-						'target="_blank"><img class="icon thcrap_icon" src="assets/shared/icon_sheet.png" ' .
-						'alt="THCRAP favicon"></a></h2><h3>(Патчи с переводом / Инструмент для моддинга)</h3>';
+						'target="_blank"><span class="icon thcrap_icon"></span></a></h2>' .
+                        '<h3>(Патчи с переводом / Инструмент для моддинга)</h3>';
 					} else if ($lang == 'Japanese') {
 						echo '<h2 id="thcrap">THCRAP <a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page" ' .
-						'target="_blank"><img class="icon thcrap_icon" src="assets/shared/icon_sheet.png" ' .
-						'alt="THCRAP favicon"></a></h2><h3>(翻訳パッチ / 改変ツール)</h3>';
+						'target="_blank"><span class="icon thcrap_icon"></span></a></h2><h3>(翻訳パッチ / 改変ツール)</h3>';
 					} else {
 						echo '<h2 id="thcrap">THCRAP (Translation patches / Modding tool) ' .
 						'<a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page" target="_blank">' .
-						'<img class="icon thcrap_icon" src="assets/shared/icon_sheet.png" alt="THCRAP favicon"></a></h2>';
+						'<span class="icon thcrap_icon"></span></a></h2>';
 					}
 				?>
 				</h2>
@@ -720,7 +719,7 @@
 					else if ($lang == 'Japanese') { echo '星蓮船ツバクラ改変パッチ by '; }
 					else { echo 'UFO Tsubakura mod by '; }
 				?><a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-    			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img class='icon thcrap_icon' src='assets/shared/icon_sheet.png' alt='THCRAP favicon'> th12tsuba</a></p>
+    			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th12tsuba</a></p>
     			<p><?php
 					if ($lang == 'Russian') {
 						echo 'Заменяет Рейму в UFO на Цубакуру из Len\'en. Также изменены диалоги и концовки.';
@@ -737,7 +736,7 @@
 					else if ($lang == 'Japanese') { echo '輝針城早苗パッチ by '; }
 					else { echo 'DDC Sanae by '; }
 				?><a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-    			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img class='icon thcrap_icon' src='assets/shared/icon_sheet.png' alt='THCRAP favicon'> th14sanae</a></p>
+    			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th14sanae</a></p>
     			<p><?php
 					if ($lang == 'Russian') { echo 'Заменяет РеймуБ на Санаэ в DDC.'; }
 					else if ($lang == 'Japanese') { echo 'a'; }
@@ -749,7 +748,7 @@
 					else if ($lang == 'Japanese') { echo '天空璋早苗パッチ by '; }
 					else { echo 'HSiFS Sanae by '; }
 				?><a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-    			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img class='icon thcrap_icon' src='assets/shared/icon_sheet.png' alt='THCRAP favicon'> th16sanae</a></p>
+    			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th16sanae</a></p>
     			<p><?php
 					if ($lang == 'Russian') { echo 'Заменяет Марису на Санаэ в HSiFS.'; }
 					else if ($lang == 'Japanese') { echo '天空璋魔理沙を早苗に差し替えます。'; }
@@ -761,7 +760,7 @@
 					else if ($lang == 'Japanese') { echo '紺珠伝咲夜パッチ by '; }
 					else { echo 'LoLK Sakuya by '; }
 				?><a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-    			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img class='icon thcrap_icon' src='assets/shared/icon_sheet.png' alt='THCRAP favicon'> th15sakuya</a></p>
+    			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th15sakuya</a></p>
     			<p><?php
 					if ($lang == 'Russian') { echo 'Заменяет Рейсен на Сакую в LoLK.'; }
 					else if ($lang == 'Japanese') { echo '紺珠伝鈴仙を咲夜に差し替えます。'; }
@@ -863,7 +862,7 @@
 					else if ($lang == 'Japanese') { echo 'ランダムパッチ by '; }
 					else { echo 'RNG patches by '; }
 				?><a href='https://www.twitch.tv/thedaikarasu' target='_blank'>Daikarasu</a></strong>
-    			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img class='icon thcrap_icon' src='assets/shared/icon_sheet.png' alt='THCRAP favicon'> RNG</a></p>
+    			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> RNG</a></p>
     			<p><?php
 					if ($lang == 'Russian') {
 						echo 'Коллекция <span class="code">.dat</span> файлов которые добавляют рандом в паттерны.';
@@ -916,7 +915,7 @@
 				?></p>
                 <a href='https://mega.nz/#!LxNAQbyB!a2qOOOgYQ8-NwTWvLSgcykBXsEmhgy6IDpdEdxlG-90' target='_blank'><?php echo tl_term('Download', $lang) ?></a>
     			<p><strong>"LoDDK" by <a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-    			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img class='icon thcrap_icon' src='assets/shared/icon_sheet.png' alt='THCRAP favicon'> LoDDK</a></p>
+    			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> LoDDK</a></p>
     			<p><?php
 					if ($lang == 'Russian') {
 						echo 'Совмещает вместе LoLK и DDC, каждая битва с боссом превращается в двойной боссфайт из обеих игр. ' .
@@ -935,7 +934,7 @@
 					else if ($lang == 'Japanese') { echo 'OCパッチ by '; }
 					else { echo 'OC Patches by '; }
 				?>Bravi</strong>
-    			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img class='icon thcrap_icon' src='assets/shared/icon_sheet.png' alt='THCRAP favicon'> BraviOCOkina</a></p>
+    			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> BraviOCOkina</a></p>
     			<p><?php
 					if ($lang == 'Russian') {
 						echo 'Переделанная версия шестого стейджа и более сложная Экстра в HSiFS, включая в себя оригинального ' .
@@ -1240,7 +1239,7 @@
 					else if ($lang == 'Japanese') { echo '天空璋UFOモッド by '; }
 					else { echo 'HSiFS UFO mod by '; }
 				?><a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-    			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img class='icon thcrap_icon' src='assets/shared/icon_sheet.png' alt='THCRAP favicon'> th16ufos</a></p>
+    			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th16ufos</a></p>
     			<p><?php
 					if ($lang == 'Russian') { echo 'Добавляет НЛО в HSiFS.'; }
 					else if ($lang == 'Japanese') { echo '天空璋に星蓮船のUFOシステムを移植するツールです。'; }
@@ -1252,7 +1251,7 @@
 					else if ($lang == 'Japanese') { echo '鬼形獣スコアカンスト解除モッド by '; }
 					else { echo 'WBaWC score cap mod by '; }
 				?><a href='https://twitter.com/32th__System' target='_blank'>32th System</a></strong>
-    			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><img class='icon thcrap_icon' src='assets/shared/icon_sheet.png' alt='THCRAP favicon'> score_uncap</a></p>
+    			<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> score_uncap</a></p>
     			<p><?php
 					if ($lang == 'Russian') { echo 'Позволяет счетчику очков превышать 9.999.999.990 очков.'; }
 					else if ($lang == 'Japanese') { echo 'ゲーム内の9,999,999,990を突破しているスコアを実際のスコアで表示するツールです。'; }

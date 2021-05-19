@@ -79,23 +79,6 @@ table, tr, th, td {
 #contents td, #contents th {
     border: none;
 }
-#hy {
-    object-position: -512px 0px;
-    object-fit: none;
-    width: 120px;
-    height: 16px;
-}
-#hy_container {
-    position: relative;
-    float: right;
-}
-#hy_container .tooltip {
-    width: 150px;
-    left: 0%;
-}
-#hy_container:hover .tooltip {
-    visibility: visible;
-}
 @media only screen and (min-width: 1100px) and (max-width: 1400px) {
     .wrap {
         margin-left: 15%;

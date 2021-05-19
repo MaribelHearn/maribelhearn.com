@@ -103,16 +103,23 @@ table, th, td {
     color: inherit;
     text-decoration: none;
 }
-.cover, .game {
-    object-fit: none;
+.cover, .game_img {
+    background-image: url('game_sheet50x50.png');
+    display: inline-block;
     height: 50px;
     width: 50px;
 }
+.game_img {
+    cursor: pointer;
+}
+.sheet1 {
+    background-image: url('game_sheet50x50_1.png');
+}
+.sheet2 {
+    background-image: url('game_sheet50x50_2.png');
+}
 .cover98 {
     border: 1px solid #000;
-}
-.game {
-    cursor: pointer;
 }
 .noborders {
     border: none;
@@ -255,26 +262,6 @@ table, th, td {
     margin-right: auto;
     width: 50%;
 }
-#hy_container {
-    float: right;
-}
-#hy {
-    object-position: -512px 0px;
-    object-fit: none;
-    width: 120px;
-    height: 16px;
-}
-#hy_container {
-    position: relative;
-    float: right;
-}
-#hy_container .tooltip {
-    width: 150px;
-    left: 0%;
-}
-#hy_container:hover .tooltip {
-    visibility: visible;
-}
 #dates {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -283,67 +270,67 @@ table, th, td {
     margin: 4px;
 }
 #HRtP_image, #HRtP_image_old {
-    object-position: 0px 0px;
+    background-position: 0px 0px;
 }
 #SoEW_image, #SoEW_image_old {
-    object-position: -50px 0px;
+    background-position: -50px 0px;
 }
 #PoDD_image, #PoDD_image_old {
-    object-position: -100px 0px;
+    background-position: -100px 0px;
 }
 #LLS_image, #LLS_image_old {
-    object-position: -150px 0px;
+    background-position: -150px 0px;
 }
 #MS_image, #MS_image_old {
-    object-position: -200px 0px;
+    background-position: -200px 0px;
 }
 #EoSD_image, #EoSD_image_old {
-    object-position: -250px 0px;
+    background-position: -250px 0px;
 }
 #PCB_image, #PCB_image_old {
-    object-position: -300px 0px;
+    background-position: -300px 0px;
 }
 #IN_image, #IN_image_old {
-    object-position: -350px 0px;
+    background-position: -350px 0px;
 }
 #PoFV_image, #PoFV_image_old {
-    object-position: -400px 0px;
+    background-position: -400px 0px;
 }
 #StB_image, #StB_image_old {
-    object-position: -450px 0px;
+    background-position: -450px 0px;
 }
 #MoF_image, #MoF_image_old {
-    object-position: 0px 0px;
+    background-position: 0px 0px;
 }
 #SA_image, #SA_image_old {
-    object-position: -50px 0px;
+    background-position: -50px 0px;
 }
 #UFO_image, #UFO_image_old {
-    object-position: -100px 0px;
+    background-position: -100px 0px;
 }
 #DS_image, #DS_image_old {
-    object-position: -150px 0px;
+    background-position: -150px 0px;
 }
 #GFW_image, #GFW_image_old {
-    object-position: -200px 0px;
+    background-position: -200px 0px;
 }
 #TD_image, #TD_image_old {
-    object-position: -250px 0px;
+    background-position: -250px 0px;
 }
 #DDC_image, #DDC_image_old {
-    object-position: -300px 0px;
+    background-position: -300px 0px;
 }
 #LoLK_image, #LoLK_image_old {
-    object-position: -350px 0px;
+    background-position: -350px 0px;
 }
 #HSiFS_image, #HSiFS_image_old {
-    object-position: -400px 0px;
+    background-position: -400px 0px;
 }
 #WBaWC_image, #WBaWC_image_old {
-    object-position: -450px 0px;
+    background-position: -450px 0px;
 }
 #UM_image, #UM_image_old {
-    object-position: -500px 0px;
+    background-position: -500px 0px;
 }
 #ack {
     font: 11px verdana,sans-serif;

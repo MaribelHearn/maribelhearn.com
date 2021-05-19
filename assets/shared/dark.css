@@ -20,7 +20,7 @@ a:visited:not(.replay):not(.i):not(.dropdown_button) {
     color: #ff69b4;
 }
 #hy {
-    object-position: -632px 0px;
+    background-position: -632px 0px;
 }
 #checkboxes, #checkboxes td:not(.noborders), #gameTable, #gameTable th, #gameTable td, #table, #table th, #table td, .border,
 table:not(#jargontable):not(#bullettable):not(#spelltable):not(#searchtable):not(.noborders):not(.result):not(.center):not(.poll),

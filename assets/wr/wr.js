@@ -488,7 +488,7 @@ function setEventListeners() {
     $("#jp").on("click", {language: "Japanese", notation: "YMD"}, setLanguage);
     $("#zh").on("click", {language: "Chinese", notation: "YMD"}, setLanguage);
     $("#ru").on("click", {language: "Russian", notation: "DMY"}, setLanguage);
-    $(".game").on("click", {seasonSwitch: false}, showWRs);
+    $(".game_img").on("click", {seasonSwitch: false}, showWRs);
 }
 
 function setAttributes() {

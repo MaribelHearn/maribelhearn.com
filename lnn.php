@@ -60,7 +60,7 @@
                         ?>
                     </span>
     				<span id='hy_container'>
-                        <img id='hy' src='../assets/shared/icon_sheet.png' alt='Human-youkai gauge'>
+                        <span id='hy'></span>
                         <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
                     </span>
     				<div id='languages'>
@@ -179,9 +179,8 @@
                         $sum = 0;
                         $all = array();
                         echo '<div id="' . $game . '"><p>' .
-                        '<table id="' . $game . 't" class="sortable"><caption><p><img id="' . $game . '_image_old" ' .
-                        'class="cover ' . (num($game) <= 5 ? 'cover98' : '') .
-                        '" src="assets/shared/game_sheet50x50.png" alt="' . $game . ' cover"> ' . full_name($game, $lang) .
+                        '<table id="' . $game . 't" class="sortable"><caption><p><span id="' . $game . '_image_old" ' .
+                        'class="cover ' . (num($game) <= 5 ? 'cover98' : '') . '"></span> ' . full_name($game, $lang) .
                         '</p></caption><thead><tr><th>' . tl_term(shot_route($game), $lang) . '</th>' .
                         '<th class="sorttable_numeric">' . lnn_type($game, $lang) .
                         '<br>' . tl_term('(Different players)', $lang) . '</th><th>' . tl_term('Players', $lang) .
@@ -237,8 +236,8 @@
         			        if ($game == 'LM') {
         			            continue;
         		            }
-        			        echo '<span class="game_image"><img id="' . $game . '_image" class="game" src="assets/shared/game_sheet50x50.png" ' .
-                            'alt="' . $game . ' cover"><span class="full_name tooltip">' . full_name($game, $lang) . '</span></span>';
+        			        echo '<span class="game_image"><span id="' . $game . '_image" class="game_img"></span>' .
+                            '<span class="full_name tooltip">' . full_name($game, $lang) . '</span></span>';
         			    }
                         echo '<div id="list"><p id="fullname"></p><table class="sortable"><thead id="listhead"></thead>' .
                         '<tbody id="listbody"></tbody><tfoot id="listfoot"></tfoot></table></div></div>';
@@ -417,7 +416,7 @@
                     ?></p>
                 </div>
                 <p id='back'><strong><a id='backtotop' href='#top'><?php echo tl_term('Back to Top', $lang); ?></a></strong></p>
-    			<?php echo '<input id="missingReplays" type="hidden" value="' . implode($missing_replays, '') . '">' ?>
+    			<?php echo '<input id="missingReplays" type="hidden" value="' . implode('', $missing_replays) . '">' ?>
     		</div>
         </main>
     </body>
