@@ -104,7 +104,6 @@ table, th, td {
     text-decoration: none;
 }
 .cover, .game_img {
-    background-image: url('game_sheet50x50.png');
     display: inline-block;
     height: 50px;
     width: 50px;
@@ -112,10 +111,10 @@ table, th, td {
 .game_img {
     cursor: pointer;
 }
-.sheet1 {
+.sheet_1 {
     background-image: url('game_sheet50x50_1.png');
 }
-.sheet2 {
+.sheet_2 {
     background-image: url('game_sheet50x50_2.png');
 }
 .cover98 {
