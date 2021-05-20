@@ -1051,8 +1051,8 @@
 						'Требует правильной настройки для эмуляции звука и обладает средней по качеству графикой. ' .
 						'Также нужен файл со шрифтами, ссылка на скачивание ниже.';
 					} else {
-						echo 'This emulator has low system requirements and can run even on very old computers.' .
-		    			'However, the graphics are mediocre and the sound emulation requires proper configuration to be accurate.' .
+						echo 'This emulator has low system requirements and can run even on very old computers. ' .
+		    			'However, the graphics are mediocre and the sound emulation requires proper configuration to be accurate. ' .
 		    			'Allows for 8 savestates and requires a separate font file, linked below.';
 					}
 				?></p>

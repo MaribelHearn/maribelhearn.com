@@ -104,7 +104,8 @@
                         </tr>
                         <tr id='term_exnn'>
                             <th>ExNN</th>
-                            <td>Extra No Miss No Bomb; a <a href='#term_1cc'>1cc</a> of some Extra Stage without dying or using bombs. A third 'N' is appended if there is a game-specific third restriction.</td>
+                            <td>Extra No Miss No Bomb; a <a href='#term_1cc'>1cc</a> of some Extra Stage without dying or using bombs.
+							A third 'N' is appended if there is a game-specific third restriction.</td>
                         </tr>
                         <tr id='term_fs'>
                             <th>FS</th>
@@ -157,19 +158,23 @@
                         </tr>
                         <tr id='term_lnn'>
                             <th>LNN</th>
-                            <td>Lunatic No Miss No Bomb; a <a href='#term_1cc'>1cc</a> of some game on Lunatic difficulty without dying or using bombs. A third 'N' is appended if there is a game-specific third restriction.</td>
+                            <td>Lunatic No Miss No Bomb; a <a href='#term_1cc'>1cc</a> of some game on Lunatic difficulty without dying or using bombs.
+							A third 'N' is appended if there is a game-specific third restriction.</td>
                         </tr>
                         <tr id='term_ls'>
                             <th>LS</th>
-                            <td>Last Spell; a spell used at the end of an <a href='#term_in'>IN</a> boss fight when the time requirement is met. It does not cost a life to die to it.</td>
+                            <td>Last Spell; a spell used at the end of an <a href='#term_in'>IN</a> boss fight when the time requirement is met.
+							It does not cost a life to die to it.</td>
                         </tr>
                         <tr id='term_lw'>
                             <th>LW</th>
-                            <td>Last Word; a special spell (and the difficulty of such a spell) used by an <a href='#term_in'>IN</a> boss, which is only available in Spell Practice mode.</td>
+                            <td>Last Word; a special spell (and the difficulty of such a spell) used by an <a href='#term_in'>IN</a> boss,
+							which is only available in Spell Practice mode.</td>
                         </tr>
                         <tr id='term_macrododging'>
                             <th>Macrododging</th>
-                            <td>Dodging waves of bullets by going around them rather than through them, which may or may not be to avoid having to <a href='#term_micrododging'>micrododge</a>.
+                            <td>Dodging waves of bullets by going around them rather than through them,
+							which may or may not be to avoid having to <a href='#term_micrododging'>micrododge</a>.
                             Often abbreviated to 'macro'.</td>
                         </tr>
     					<tr id='term_maingames'>
@@ -185,7 +190,8 @@
                         </tr>
                         <tr id='term_micrododging'>
                             <th>Micrododging</th>
-                            <td>Dodging dense waves of bullets by navigating through them, usually using small taps to get safely through. Often abbreviated to 'micro'.</td>
+                            <td>Dodging dense waves of bullets by navigating through them, usually using small taps to get safely through.
+							Often abbreviated to 'micro'.</td>
                         </tr>
                         <tr id='term_milking'>
                             <th>Milking</th>
@@ -198,7 +204,8 @@
                         </tr>
                         <tr id='term_miss'>
                             <th>Miss</th>
-                            <td>Losing a life. This term came from the Japanese transliteration of "mistake", ミステイク misuteiku, which has as abbreviation ミス misu, i.e. "miss".</td>
+                            <td>Losing a life. This term came from the Japanese transliteration of "mistake", ミステイク misuteiku,
+							which has as abbreviation ミス misu, i.e. "miss".</td>
                         </tr>
 						<tr id='term_mof'>
 							<th>MoF</th>
@@ -214,7 +221,8 @@
                         </tr>
                         <tr id='term_nbb'>
                             <th>NBB</th>
-                            <td>No Border Breaks; used in <a href='#term_pcb'>PCB</a> to mean a clear without breaking Supernatural Borders, whether it be by getting hit during one or by pressing the X key.</td>
+                            <td>No Border Breaks; used in <a href='#term_pcb'>PCB</a> to mean a clear without breaking Supernatural Borders,
+							whether it be by getting hit during one or by pressing the X key.</td>
                         </tr>
                         <tr id='term_nf'>
                             <th>NF</th>
@@ -226,7 +234,8 @@
                         </tr>
                         <tr id='term_nmnb'>
                             <th>NMNB</th>
-                            <td>No Miss No Bomb; a clear without dying or bombing. Also known as <a href='#term_perfect'>Perfect</a> or the even shorter acronym <a href='#term_nn'>NN</a>.</td>
+                            <td>No Miss No Bomb; a clear without dying or bombing. Also known as <a href='#term_perfect'>Perfect</a>
+							or the even shorter acronym <a href='#term_nn'>NN</a>.</td>
                         </tr>
                         <tr id='term_nn'>
                             <th>NN</th>
@@ -235,16 +244,18 @@
                         <tr id='term_nnn'>
                             <th>NNN</th>
                             <td><a href='#term_nmnb'>NMNB</a>, plus a game-specific third restriction, which is
-                            <a href='#term_nbb'>NBB</a> for <a href='#term_pcb'>PCB</a>, <a href='#term_nv'>NV</a> for <a href='#term_ufo'>UFO</a>, <a href='#term_nt'>NT</a>
-							for <a href='#term_td'>TD</a>, <a href='#term_nr'>NR</a> for HSiFS and <a href='#term_nc'>NC</a> for <a href='#term_um'>UM</a>. Also known
+                            <a href='#term_nbb'>NBB</a> for <a href='#term_pcb'>PCB</a>, <a href='#term_nv'>NV</a>
+							for <a href='#term_ufo'>UFO</a>, <a href='#term_nt'>NT</a>
+							for <a href='#term_td'>TD</a>, <a href='#term_nr'>NR</a> for <a href='#term_hsifs'>HSiFS</a>
+							and <a href='#term_nc'>NC</a> for <a href='#term_um'>UM</a>. Also known
 							as <a href='#term_perfect'>Perfect</a> or a more comprehensive version of the acronym,
 							such as 'NMNBNT' for <a href='#term_td'>TD</a>.</td>
                         </tr>
                         <tr id='term_nnnn'>
                             <th>NNNN</th>
-                            <td>Used in WBaWC to mean <a href='#term_nmnb'>NMNB</a>, plus two game-specific restrictions,
-							which are No Berserk Roars (No Hypers) and No Roar Breaks (No Hyper Breaks).
-							Also known as <a href='#term_perfect'>Perfect</a>.</td>
+                            <td>Used in <a href='#term_wbawc'>WBaWC</a> to mean <a href='#term_nmnb'>NMNB</a>,
+							plus two game-specific restrictions, which are No Berserk Roars (No Hypers)
+							and No Roar Breaks (No Hyper Breaks). Also known as <a href='#term_perfect'>Perfect</a>.</td>
                         </tr>
                         <tr id='term_nc'>
                             <th>NC</th>
@@ -254,7 +265,7 @@
                         </tr>
                         <tr id='term_nr'>
                             <th>NR</th>
-                            <td>No Release; used in HSiFS to mean a clear without using releases; that is, without pressing the C key. In Japan, this is also used in <a href='#term_pcb'>PCB</a>, to mean <a href='#term_nbb'>NBB</a>.</td>
+                            <td>No Release; used in <a href='#term_hsifs'>HSiFS</a> to mean a clear without using releases; that is, without pressing the C key. In Japan, this is also used in <a href='#term_pcb'>PCB</a>, to mean <a href='#term_nbb'>NBB</a>.</td>
                         </tr>
                         <tr id='term_nt'>
                             <th>NT</th>
@@ -404,7 +415,8 @@
                         </tr>
                         <tr id='term_token'>
                             <th>Token</th>
-                            <td>Refers to either a small <a href='#term_ufo'>UFO</a> or a beast in WBaWC, both of which float around the screen.</td>
+                            <td>Refers to either a small <a href='#term_ufo'>UFO</a> or a beast
+							in <a href='#term_wbawc'>WBaWC</a>, both of which float around the screen.</td>
                         </tr>
                         <tr id='term_tas'>
                             <th>TAS</th>
@@ -475,7 +487,7 @@
                         </tr>
                         <tr id='term_bcb'>
                             <th>BCB</th>
-                            <td>"Hidden Breezy Cherry Blossom", Okina's final Spell Card if you use the Spring season in HSiFS. Also known as 'HBCB'.</td>
+                            <td>"Hidden Breezy Cherry Blossom", Okina's final Spell Card if you use the Spring season in <a href='#term_hsifs'>HSiFS</a>. Also known as 'HBCB'.</td>
                         </tr>
                         <tr id='term_bd'>
                             <th>BD</th>
@@ -499,7 +511,7 @@
                         </tr>
                         <tr id='term_cfw'>
                             <th>CFW</th>
-                            <td>"Hidden Crazy Fall Wind", Okina's final Spell Card if you use the Autumn season in HSiFS. Also known as 'HCFW'.</td>
+                            <td>"Hidden Crazy Fall Wind", Okina's final Spell Card if you use the Autumn season in <a href='#term_hsifs'>HSiFS</a>. Also known as 'HCFW'.</td>
                         </tr>
                         <tr id='term_dbdb'>
                             <th>DBDB</th>
@@ -511,7 +523,7 @@
                         </tr>
                         <tr id='term_ew'>
                             <th>EW</th>
-                            <td>"Hidden Extreme Winter", Okina's final Spell Card if you use the Winter season in HSiFS. Also known as 'HEW'.</td>
+                            <td>"Hidden Extreme Winter", Okina's final Spell Card if you use the Winter season in <a href='#term_hsifs'>HSiFS</a>. Also known as 'HEW'.</td>
                         </tr>
                         <tr id='term_fin'>
                             <th>FIN</th>
@@ -523,7 +535,7 @@
                         </tr>
                         <tr id='term_gc'>
                             <th>GC</th>
-                            <td>"Geometric Creature", Keiki's penultimate Spell Card in WBaWC.</td>
+                            <td>"Geometric Creature", Keiki's penultimate Spell Card in <a href='#term_wbawc'>WBaWC</a>.</td>
                         </tr>
                         <tr id='term_go'>
                             <th>GO</th>
@@ -547,7 +559,7 @@
                         </tr>
                         <tr id='term_id'>
                             <th>ID</th>
-                            <td>"Idola Diabolus", Keiki's final Spell Card in WBaWC.</td>
+                            <td>"Idola Diabolus", Keiki's final Spell Card in <a href='#term_wbawc'>WBaWC</a>.</td>
                         </tr>
                         <tr id='term_is'>
                             <th>IS</th>
@@ -563,7 +575,7 @@
                         </tr>
                         <tr id='term_lc'>
                             <th>LC</th>
-                            <td>"Linear Creature", Keiki's third Spell Card in WBaWC.</td>
+                            <td>"Linear Creature", Keiki's third Spell Card in <a href='#term_wbawc'>WBaWC</a>.</td>
                         </tr>
                         <tr id='term_lfs'>
                             <th>LFS</th>
@@ -587,11 +599,13 @@
                         </tr>
                         <tr id='term_psi'>
                             <th>PSI</th>
-                            <td>"Hidden Perfect Summer Ice", Okina's final Spell Card if you use the Summer season in HSiFS. Also known as 'HPSI'.</td>
+                            <td>"Hidden Perfect Summer Ice", Okina's final Spell Card if you use the Summer season
+							in <a href='#term_hsifs'>HSiFS</a>. Also known as 'HPSI'.</td>
                         </tr>
                         <tr id='term_pwg'>
                             <th>PWG</th>
-                            <td>"Peerless Wind God", Aya's <a href='#term_survivalspell'>survival Spell Card</a> in <a href='#term_mof'>MoF</a>.</td>
+                            <td>"Peerless Wind God", Aya's <a href='#term_survivalspell'>survival Spell Card</a>
+							in <a href='#term_mof'>MoF</a>.</td>
                         </tr>
                         <tr id='term_qed'>
                             <th>QED</th>
@@ -619,11 +633,13 @@
                         </tr>
                         <tr id='term_sg'>
                             <th>SG</th>
-                            <td>"Scarlet Gensokyo", Remilia's final Spell Card in <a href='#term_eosd'>EoSD</a>. Also commonly called 'Gensokyo'.</td>
+                            <td>"Scarlet Gensokyo", Remilia's final Spell Card in <a href='#term_eosd'>EoSD</a>.
+							Also commonly called 'Gensokyo'.</td>
                         </tr>
                         <tr id='term_sm'>
                             <th>SM</th>
-                            <td>"Scarlet Meister", Remilia's semifinal Spell Card in <a href='#term_eosd'>EoSD</a>. Also commonly called 'Meister'.</td>
+                            <td>"Scarlet Meister", Remilia's semifinal Spell Card in <a href='#term_eosd'>EoSD</a>.
+							Also commonly called 'Meister'.</td>
                         </tr>
                         <tr id='term_subsun'>
                             <th>Subsun</th>
@@ -639,7 +655,8 @@
                         </tr>
                         <tr id='term_vowg'>
                             <th>VoWG</th>
-                            <td>"Virtue of Wind God", Kanako's final Spell Card in <a href='#term_mof'>MoF</a>. Occasionally it will be called 'DVoWG' (D for Divine), because of the older English translation patch.</td>
+                            <td>"Virtue of Wind God", Kanako's final Spell Card in <a href='#term_mof'>MoF</a>.
+							Occasionally it will be called 'DVoWG' (D for Divine), because of the older English translation patch.</td>
                         </tr>
                         <tr id='term_ydl'>
                             <th>YDL</th>
@@ -647,7 +664,8 @@
                         </tr>
                         <tr id='term_ygb'>
                             <th>YGB</th>
-                            <td>"You Grow Bigger!", Shinmyoumaru's <a href='#term_survivalspell'>survival Spell Card</a> in <a href='#term_ddc'>DDC</a>.</td>
+                            <td>"You Grow Bigger!", Shinmyoumaru's <a href='#term_survivalspell'>survival Spell Card</a>
+							in <a href='#term_ddc'>DDC</a>.</td>
                         </tr>
                     </tbody>
                 </table>

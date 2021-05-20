@@ -37,7 +37,8 @@ table.center {
     color: #00e;
 }
 .cover {
-    object-fit: none;
+    background-image: url('game_sheet50x50.png');
+    display: inline-block;
     height: 50px;
     width: 50px;
 }
@@ -132,61 +133,61 @@ table.center {
     display: table-cell;
 }
 #HRtP_image {
-    object-position: 0px 0px;
+    background-position: 0px 0px;
 }
 #SoEW_image {
-    object-position: -50px 0px;
+    background-position: -50px 0px;
 }
 #PoDD_image {
-    object-position: -100px 0px;
+    background-position: -100px 0px;
 }
 #LLS_image {
-    object-position: -150px 0px;
+    background-position: -150px 0px;
 }
 #MS_image {
-    object-position: -200px 0px;
+    background-position: -200px 0px;
 }
 #EoSD_image {
-    object-position: -250px 0px;
+    background-position: -250px 0px;
 }
 #PCB_image {
-    object-position: -300px 0px;
+    background-position: -300px 0px;
 }
 #IN_image {
-    object-position: -350px 0px;
+    background-position: -350px 0px;
 }
 #PoFV_image {
-    object-position: -400px 0px;
+    background-position: -400px 0px;
 }
 #MoF_image {
-    object-position: -450px 0px;
+    background-position: -450px 0px;
 }
 #SA_image {
-    object-position: -500px 0px;
+    background-position: -500px 0px;
 }
 #UFO_image {
-    object-position: -550px 0px;
+    background-position: -550px 0px;
 }
 #GFW_image {
-    object-position: -600px 0px;
+    background-position: -600px 0px;
 }
 #TD_image {
-    object-position: -650px 0px;
+    background-position: -650px 0px;
 }
 #DDC_image {
-    object-position: -700px 0px;
+    background-position: -700px 0px;
 }
 #LoLK_image {
-    object-position: -750px 0px;
+    background-position: -750px 0px;
 }
 #HSiFS_image {
-    object-position: -800px 0px;
+    background-position: -800px 0px;
 }
 #WBaWC_image {
-    object-position: -850px 0px;
+    background-position: -850px 0px;
 }
 #UM_image {
-    object-position: -900px 0px;
+    background-position: -900px 0px;
 }
 #ack {
     font: 11px verdana,sans-serif;
