@@ -1090,24 +1090,33 @@ function takeScreenshot() {
     }
 
     emptyModal();
-    html2canvas(document.body, {
-        "height": ($("#tier_list_tbody").height() + 50),
-        "windowHeight": Math.max(400, ($("#tier_list_tbody").height() + 50))
-    }).then(function(canvas) {
-        var base64image = canvas.toDataURL("image/png"), link;
+    try {
+        html2canvas(document.body, {
+            "height": ($("#tier_list_tbody").height() + 50),
+            "windowHeight": Math.max(400, ($("#tier_list_tbody").height() + 50))
+        }).then(function(canvas) {
+            var base64image = canvas.toDataURL("image/png"), link;
 
+            if (tempTierView) {
+                toggleTierView();
+            }
+
+            $("#modal_inner").append("<h2>Screenshot</h2><p>");
+            $("#modal_inner").append("<a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
+            "<input type='button' value='Save to Device'></a></p>" +
+            "<p>This feature currently does not work on Linux when using Chromium-based browsers. If the tier list is large, it also does not work on Android.</p>" +
+            "<p><img id='screenshot_base64' src='" + base64image + "' alt='Tier list screenshot'></p>");
+            $("#modal_inner").css("display", "block");
+            $("#modal").css("display", "block");
+        });
+    } catch (err) {
         if (tempTierView) {
             toggleTierView();
         }
 
-        $("#modal_inner").append("<h2>Screenshot</h2><p>");
-        $("#modal_inner").append("<a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
-        "<input type='button' value='Save to Device'></a></p>" +
-        "<p>This feature currently does not work on Linux when using Chromium-based browsers. If the tier list is large, it also does not work on Android.</p>" +
-        "<p><img id='screenshot_base64' src='" + base64image + "' alt='Tier list screenshot'></p>");
-        $("#modal_inner").css("display", "block");
-        $("#modal").css("display", "block");
-    });
+        $("#msg_container").html("<strong class='error'>Error: your browser is outdated. Use a different browser " +
+        "to screenshot your tier list.</strong>");
+    }
 }
 
 function settingsMenuChars() {
@@ -1431,7 +1440,8 @@ function eraseAllConfirmed() {
             "SWR": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true }, "Soku": { enabled: true },
             "DS": { enabled: true }, "GFW": { enabled: true }, "TD": { enabled: true }, "HM": { enabled: true },
             "DDC": { enabled: true }, "ULiL": { enabled: true }, "LoLK": { enabled: true }, "AoCF": { enabled: true },
-            "HSiFS": { enabled: true }, "WBaWC": { enabled : true }, "Manga": { enabled: true }, "CD": { enabled: true }
+            "HSiFS": { enabled: true }, "WBaWC": { enabled : true }, "UM": { enabled: true }, "Manga": { enabled: true },
+            "CD": { enabled: true }
         },
         "gameCategories": {
             "PC-98": { enabled: true }, "Classic": { enabled: true }, "Modern1": { enabled: true }, "Modern2": { enabled: true },

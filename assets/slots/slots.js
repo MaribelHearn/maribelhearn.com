@@ -129,21 +129,27 @@ function backgroundColour() {
 function takeScreenshot() {
     emptyModal();
     $("#content, #hy_container, h1").css("display", "none");
-    html2canvas(document.getElementById("table"), {
-        backgroundColor: backgroundColour()
-    }).then(function(canvas) {
-        var base64image = canvas.toDataURL("image/png"), link;
+    try {
+        html2canvas(document.getElementById("table"), {
+            backgroundColor: backgroundColour()
+        }).then(function(canvas) {
+            var base64image = canvas.toDataURL("image/png"), link;
 
-        $("#modal_inner").html("<h2>Screenshot</h2>");
-        $("#modal_inner").append("<p><a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
-        "<input type='button' value='Save to Device'></a></p>" +
-        "<p class='descr'>This feature currently does not work on Chromium-based browsers.</p>" +
-        "<p><img id='base64' src='" + base64image + "' alt='Slot machine screenshot'></p>");
-        $("#modal_inner, #modal, #content, h1").css("display", "block");
-        $("#hy_container").css("display", "inline");
-        $("#base64").css("max-width", screen.width);
-        $("#base64").css("max-height", screen.width);
-    });
+            $("#modal_inner").html("<h2>Screenshot</h2>");
+            $("#modal_inner").append("<p><a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
+            "<input type='button' value='Save to Device'></a></p>" +
+            "<p class='descr'>This feature currently does not work on Chromium-based browsers.</p>" +
+            "<p><img id='base64' src='" + base64image + "' alt='Slot machine screenshot'></p>");
+            $("#modal_inner, #modal, #content, h1").css("display", "block");
+            $("#hy_container").css("display", "inline");
+            $("#base64").css("max-width", screen.width);
+            $("#base64").css("max-height", screen.width);
+        });
+    } catch (err) {
+        $("#content, #hy_container, h1").css("display", "block");
+        alert("Your browser is outdated. Use a different browser to " +
+        "screenshot your slot machine.");
+    }
 }
 
 function reset() {
