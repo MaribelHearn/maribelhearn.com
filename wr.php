@@ -287,7 +287,7 @@
                         echo '<div id="' . $game . '">';
                         echo '<table id="' . $game . '_table" class="' . $game .
                         't sortable"><caption><p><span id="' . $game . '_image_old" ' .
-                        'class="cover ' . (num($game) <= 5 ? ' cover98' : '') .
+                        'class="cover sheet' . $sheet . (num($game) <= 5 ? ' cover98' : '') .
                         '"></span> ' . full_name($game, $lang) . '</p></caption>' .
                         '<tr><th>' . tl_term(shot_route($game), $lang) . '</th>';
                         foreach ($obj as $diff => $shots) {
@@ -397,10 +397,10 @@
                                 echo '<br>';
                             }
                             if (!$second_row) {
-                                echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet1"></span>' .
+                                echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_1"></span>' .
                                 '<span class="full_name tooltip">' . full_name($game, $lang) . '</span></span>';
                             } else {
-                                echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet2"></span>' .
+                                echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_2"></span>' .
                                 '<span class="full_name tooltip">' . full_name($game, $lang) . '</span></span>';
                             }
                         }
