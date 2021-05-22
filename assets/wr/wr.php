@@ -55,6 +55,12 @@ function pc_class(int $pc) {
     }
 }
 function replay_path(string $game, string $diff, string $shot) {
+    if ($game == 'StB') {
+        $shot = '0' . $shot;
+        if (strlen($diff) == 1) {
+            $diff = '0' . $diff;
+        }
+    }
     return 'replays/th' . num($game) . '_ud' . substr($diff, 0, 2) . shot_abbr($shot) . '.rpy';
 }
 function date_tl(string $date, string $notation) {
@@ -103,6 +109,7 @@ function game_tl(string $game, string $lang) {
             case 'PCB': return '妖';
             case 'IN': return '永';
             case 'PoFV': return '花';
+            case 'StB': return '文';
             case 'MoF': return '風';
             case 'SA': return '地';
             case 'UFO': return '星';
@@ -127,6 +134,7 @@ function game_tl(string $game, string $lang) {
             case 'PCB': return '妖';
             case 'IN': return '永';
             case 'PoFV': return '花';
+            case 'StB': return '文';
             case 'MoF': return '风';
             case 'SA': return '地';
             case 'UFO': return '星';
