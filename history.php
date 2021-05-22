@@ -426,11 +426,11 @@
 	                        </tr>
 	                        <tr id='oUM'>
 	                            <th>UM</th>
-	                            <td id='eUM' class='clear'></td>
-	                            <td id='nUM' class='clear'></td>
-	                            <td id='hUM' class='clear'></td>
-	                            <td id='lUM' class='clear'></td>
-	                            <td id='xUM' class='clear' colspan='2'></td>
+	                            <td id='eUM' class='nb'></td>
+	                            <td id='nUM' class='nb'></td>
+	                            <td id='hUM' class='nb'></td>
+	                            <td id='lUM' class='nb'></td>
+	                            <td id='xUM' class='nb' colspan='2'></td>
 	                        </tr>
 	                    </tbody>
 	                </table>
@@ -3135,7 +3135,7 @@
 		                    <td><strong>Easy</strong></td>
 		                    <td class='g'>Completed</td>
 		                    <td>May 4, 2021</td>
-		                    <td>-</td>
+		                    <td>May 21, 2021</td>
 		                    <td>-</td>
 		                    <td>No</td>
 		                </tr>
@@ -3143,7 +3143,7 @@
 		                    <td><strong>Normal</strong></td>
 		                    <td class='g'>Completed</td>
 		                    <td>May 4, 2021</td>
-		                    <td>-</td>
+		                    <td>May 21, 2021</td>
 		                    <td>-</td>
 		                    <td>No</td>
 		                </tr>
@@ -3151,7 +3151,7 @@
 		                    <td><strong>Hard</strong></td>
 		                    <td class='g'>Completed</td>
 		                    <td>May 4, 2021</td>
-		                    <td>-</td>
+		                    <td>May 21, 2021</td>
 		                    <td>-</td>
 		                    <td>No</td>
 		                </tr>
@@ -3159,7 +3159,7 @@
 		                    <td><strong>Lunatic</strong></td>
 		                    <td class='g'>Completed</td>
 		                    <td>May 4, 2021</td>
-		                    <td>-</td>
+		                    <td>May 21, 2021</td>
 		                    <td>-</td>
 		                    <td><strong><a href='https://www.youtube.com/watch?v=g45Xs21hDr0'>1cc</a></strong></td>
 		                </tr>
@@ -3170,7 +3170,7 @@
 		                    <td><strong>Extra</strong></td>
 		                    <td class='g'>Completed</td>
 		                    <td>May 4, 2021</td>
-		                    <td>-</td>
+		                    <td>May 17, 2021</td>
 		                    <td>-</td>
 		                    <td><strong><a href='https://www.youtube.com/watch?v=5jh5vc97NxE'>1cc</a></strong></td>
 		                </tr>
