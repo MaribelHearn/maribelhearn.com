@@ -192,8 +192,10 @@ table {
         font-size: 11px;
     }
     #ack {
-        position: relative;
-        float: left;
+        display: none;
+    }
+    #ack_mobile {
+        display: block;
     }
 }
 @media only screen and (max-width: 800px) {

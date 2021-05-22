@@ -241,20 +241,20 @@ ol > li {
     #modal_inner {
         width: 75%;
     }
-    #wrap p:not(#ack) {
+    #wrap p:not(#ack):not(.language) {
         padding-left: 50px;
         padding-right: 50px;
+    }
+    #ack {
+        display: none;
+    }
+    #ack_mobile {
+        display: block;
     }
 }
 @media only screen and (min-width: 800px) and (max-width: 1100px) {
     h1 {
         clear: both;
-    }
-    #ack {
-        position: relative;
-        padding-left: 0px;
-        color: black;
-        float: left;
     }
 }
 @media only screen and (max-width: 800px) {
@@ -280,12 +280,6 @@ ol > li {
     #modal_inner {
         height: 80%;
         width: 90%;
-    }
-    #ack {
-        display: none;
-    }
-    #ack_mobile {
-        display: block;
     }
 }
 @media only screen and (min-width: 320px) and (max-width: 800px) and (orientation: portrait) {
