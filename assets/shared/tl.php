@@ -13,9 +13,11 @@ function num(string $game) {
         case 'PCB': return 7;
         case 'IN': return 8;
         case 'PoFV': return 9;
+        case 'StB': return 95;
         case 'MoF': return 10;
         case 'SA': return 11;
         case 'UFO': return 12;
+        case 'DS': return 125;
         case 'GFW': return 128;
         case 'TD': return 13;
         case 'DDC': return 14;
@@ -61,6 +63,7 @@ function shot_abbr(string $shot) {
         case 'Yuuka': return 'Yu';
         case 'Komachi': return 'Ko';
         case 'Eiki': return 'Ei';
+        case 'Hatate': return 'Ha';
         case 'A1': return 'A1';
         case 'A2': return 'A2';
         case 'B1': return 'B1';
@@ -137,6 +140,7 @@ function tl_shot(string $shot, string $lang) {
             case 'Medicine': return 'メディスン';
             case 'Komachi': return '小町';
             case 'Eiki': return '映姫';
+            case 'Hatate': return 'はたて';
             case 'MarisaC': return '魔理沙C';
             case 'SanaeA': return '早苗A';
             case 'SanaeB': return '早苗B';
@@ -212,6 +216,7 @@ function tl_shot(string $shot, string $lang) {
             case 'Medicine': return '梅蒂薪';
             case 'Komachi': return '小町';
             case 'Eiki': return '映姬';
+            case 'Hatate': return '羽立';
             case 'MarisaC': return '魔理沙C';
             case 'SanaeA': return '早苗A';
             case 'SanaeB': return '早苗B';
@@ -262,9 +267,11 @@ function full_name(string $game, string $lang) {
             case 'PCB': return '東方妖々夢　～ Perfect Cherry Blossom';
             case 'IN': return '東方永夜抄　～ Imperishable Night';
             case 'PoFV': return '東方花映塚　～ Phantasmagoria of Flower View';
+            case 'StB': return '東方文花帖　～ Shoot the Bullet';
             case 'MoF': return '東方風神録　～ Mountain of Faith';
             case 'SA': return '東方地霊殿　～ Subterranean Animism';
             case 'UFO': return '東方星蓮船　～ Undefined Fantastic Object';
+            case 'DS': return 'ダブルスポイラー　～ 東方文花帖';
             case 'GFW': return '妖精大戦争　～ 東方三月精';
             case 'TD': return '東方神霊廟　～ Ten Desires';
             case 'DDC': return '東方輝針城　～ Double Dealing Character';
@@ -285,9 +292,11 @@ function full_name(string $game, string $lang) {
             case 'PCB': return '东方妖妖梦　～ Perfect Cherry Blossom';
             case 'IN': return '东方永夜抄　～ Imperishable Night';
             case 'PoFV': return '东方花映塚　～ Phantasmagoria of Flower View';
+            case 'StB': return '东方文花帖　～ Shoot the Bullet';
             case 'MoF': return '东方风神录　～ Mountain of Faith';
             case 'SA': return '东方地灵殿　～ Subterranean Animism';
             case 'UFO': return '东方星莲船　～ Undefined Fantastic Object';
+            case 'DS': return '对抗新闻　～ 东方文花帖';
             case 'GFW': return '妖精大战争　～ 东方三月精';
             case 'TD': return '东方神灵庙　～ Ten Desires';
             case 'DDC': return '东方辉针城　～ Double Dealing Character';

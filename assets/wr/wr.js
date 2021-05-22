@@ -61,6 +61,11 @@ function shotRoute(game) {
 }
 
 function replayPath(game, difficulty, shottype) {
+    if (game == "StB") {
+        difficulty = difficulty.padStart(2, 0);
+        shottype = shottype.padStart(2, 0);
+    }
+
     return "replays/th" + gameAbbr(game) + "_ud" + difficulty.substr(0, 2) + shottypeAbbr(shottype) + ".rpy";
 }
 
@@ -97,6 +102,10 @@ function percentageClass(percentage) {
 
 function showWesternRecords(compareWRs, game) {
     var difficulty, percentage, west, westPlayer, westShottype, world, worldPlayer, worldShottype;
+
+    if (game == "StB" || game == "DS") {
+        return;
+    }
 
     $("#west_tbody").html("");
     $("#west_thead").html("<tr><th class='world'>World</th><th class='west'>West</th><th class='percentage'>Percentage</th></tr>");
@@ -200,8 +209,8 @@ function showWRs(event) {
         return;
     }
 
-    var overall = {}, bestShot = {}, compareWRs = {}, shottypes = [], max = 0, difficulty, shottype,
-        char, season, wr, score, player, replay, text, count, seasonless, sepScore, bestShotMax;
+    var overall = {}, bestShot = {}, compareWRs = {}, shottypes = [], max = 0, diffKey = "Easy", difficulty,
+    shottype, char, season, wr, score, player, replay, text, count, seasonless, sepScore, bestShotMax;
 
     $("#list").html("<p id='fullname'></p><p id='seasontoggle'><input id='seasons' type='checkbox'>" +
     "<label id='label_seasons' class='Seasons' for='seasons'></label>" +
@@ -209,7 +218,11 @@ function showWRs(event) {
     "<table><thead id='west_thead'></thead><tbody id='west_tbody'></tbody></table>");
     $("#seasons").on("click", toggleSeasons);
 
-    for (shottype in WRs[game]["Easy"]) {
+    if (game == 'StB' || game == 'DS') {
+        diffKey = '1';
+    }
+
+    for (shottype in WRs[game][diffKey]) {
         shottypes.pushStrict(seasonsEnabled ? shottype : removeSeason(shottype));
     }
 
@@ -303,7 +316,7 @@ function showWRs(event) {
 
     if (game == "HSiFS" && seasonsEnabled) {
         $(overall.id).html($(overall.id).html().replace("<u>", "<u><strong>").replace("</u>", "</strong></u>"));
-    } else {
+    } else if (overall.id) {
         $(removeSeason(overall.id)).html($(removeSeason(overall.id)).html().replace("<u>", "<u><strong>").replace("</u>", "</strong></u>"));
     }
 

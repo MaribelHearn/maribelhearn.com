@@ -235,9 +235,11 @@ function fullNameNumber(game) {
         "PCB": "Touhou 7 - Perfect Cherry Blossom",
         "IN": "Touhou 8 - Imperishable Night",
         "PoFV": "Touhou 9 - Phantasmagoria of Flower View",
+        "StB": "Touhou 9.5 - Shoot the Bullet",
         "MoF": "Touhou 10 - Mountain of Faith",
         "SA": "Touhou 11 - Subterranean Animism",
         "UFO": "Touhou 12 - Undefined Fantastic Object",
+        "DS": "Touhou 12.5 - Double Spoiler",
         "GFW": "Touhou 12.8 - Great Fairy Wars",
         "TD": "Touhou 13 - Ten Desires",
         "DDC": "Touhou 14 - Double Dealing Character",
@@ -283,6 +285,7 @@ function shottypeAbbr(shottype) {
         "Yuuka": "Yu",
         "Komachi": "Ko",
         "Eiki": "Ei",
+        "Hatate": "Ha",
         "A1": "A1",
         "A2": "A2",
         "B1": "B1",
@@ -421,6 +424,7 @@ function generateShortNames() {
         $(".PCB").html("妖");
         $(".IN").html("永");
         $(".PoFV").html("花");
+        $(".StB").html("文");
         $(".MoF").html("风");
         $(".SA").html("地");
         $(".UFO").html("星");
@@ -441,6 +445,7 @@ function generateShortNames() {
         $(".PCB").html("妖");
         $(".IN").html("永");
         $(".PoFV").html("花");
+        $(".StB").html("文");
         $(".MoF").html("風");
         $(".SA").html("地");
         $(".UFO").html("星");
@@ -461,6 +466,7 @@ function generateShortNames() {
         $(".IN").html("IN");
         $(".MoF").html("MoF");
         $(".PoFV").html("PoFV");
+        $(".StB").html("StB");
         $(".SA").html("SA");
         $(".UFO").html("UFO");
         $(".DS").html("DS");
@@ -484,9 +490,11 @@ function generateFullNames() {
         $(".PCBf").html("东方妖妖梦　～ Perfect Cherry Blossom");
         $(".INf").html("东方永夜抄　～ Imperishable Night");
         $(".PoFVf").html("东方花映塚　～ Phantasmagoria of Flower View");
+        $(".StBf").html("东方文花帖　～ Shoot the Bullet");
         $(".MoFf").html("东方风神录　～ Mountain of Faith");
         $(".SAf").html("东方地灵殿　～ Subterranean Animism");
         $(".UFOf").html("东方星莲船　～ Undefined Fantastic Object");
+        $(".DSf").html("对抗新闻　～ 东方文花帖");
         $(".GFWf").html("妖精大战争　～ 东方三月精");
         $(".TDf").html("东方神灵庙　～ Ten Desires");
         $(".DDCf").html("东方辉针城　～ Double Dealing Character");
@@ -504,9 +512,11 @@ function generateFullNames() {
         $(".PCBf").html("東方妖々夢　～ Perfect Cherry Blossom");
         $(".INf").html("東方永夜抄　～ Imperishable Night");
         $(".PoFVf").html("東方花映塚　～ Phantasmagoria of Flower View");
+        $(".StBf").html("東方文花帖　～ Shoot the Bullet");
         $(".MoFf").html("東方風神録　～ Mountain of Faith");
         $(".SAf").html("東方地霊殿　～ Subterranean Animism");
         $(".UFOf").html("東方星蓮船　～ Undefined Fantastic Object");
+        $(".DSf").html("ダブルスポイラー　～ 東方文花帖");
         $(".GFWf").html("妖精大戦争　～ 東方三月精");
         $(".TDf").html("東方神霊廟　～ Ten Desires");
         $(".DDCf").html("東方輝針城　～ Double Dealing Character");
@@ -524,9 +534,11 @@ function generateFullNames() {
         $(".PCBf").html("Touhou 7 - Perfect Cherry Blossom");
         $(".INf").html("Touhou 8 - Imperishable Night");
         $(".PoFVf").html("Touhou 9 - Phantasmagoria of Flower View");
+        $(".StBf").html("Touhou 9.5 - Shoot the Bullet");
         $(".MoFf").html("Touhou 10 - Mountain of Faith");
         $(".SAf").html("Touhou 11 - Subterranean Animism");
         $(".UFOf").html("Touhou 12 - Undefined Fantastic Object");
+        $(".DSf").html("Touhou 12.5 - Double Spoiler");
         $(".GFWf").html("Touhou 12.8 - Great Fairy Wars");
         $(".TDf").html("Touhou 13 - Ten Desires");
         $(".DDCf").html("Touhou 14 - Double Dealing Character");
@@ -578,6 +590,7 @@ function generateShottypes() {
         $(".Medicine").html("梅蒂薪");
         $(".Komachi").html("小町");
         $(".Eiki").html("映姬");
+        $(".Hatate").html("羽立");
         $(".MarisaC").html("魔理沙C");
         $(".SanaeA").html("早苗A");
         $(".SanaeB").html("早苗B");
@@ -653,6 +666,7 @@ function generateShottypes() {
         $(".Medicine").html("メディスン");
         $(".Komachi").html("小町");
         $(".Eiki").html("映姫");
+        $(".Hatate").html("はたて");
         $(".MarisaC").html("魔理沙C");
         $(".SanaeA").html("早苗A");
         $(".SanaeB").html("早苗B");
@@ -728,6 +742,7 @@ function generateShottypes() {
         $(".Medicine").html("Medicine");
         $(".Komachi").html("Komachi");
         $(".Eiki").html("Eiki");
+        $(".Hatate").html("Hatate");
         $(".MarisaC").html("MarisaC");
         $(".SanaeA").html("SanaeA");
         $(".SanaeB").html("SanaeB");

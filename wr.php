@@ -302,8 +302,15 @@
                             for ($j = 0; $j < sizeof($obj); $j++) {
                                 $diff = array_keys($obj)[$j];
                                 $shots = $obj[array_keys($obj)[$j]];
-                                $score = $shots[$shot][0];
-                                $player = $shots[$shot][1];
+                                if (isset($shots[$shot])) {
+                                    $score = $shots[$shot][0];
+                                    $player = $shots[$shot][1];
+                                    $date = $shots[$shot][2];
+                                } else {
+                                    $score = 0;
+                                    $player = '';
+                                    $date = '';
+                                }
                                 if ($game == 'GFW' && $diff == 'Extra') {
                                     break;
                                 } else if ($game == 'HSiFS' && $diff == 'Extra') {
@@ -315,7 +322,7 @@
                                         }
                                         echo '<td rowspan="4">' . $score . '<br>by <em>' . $shots[$shot][1] .
                                         '</em><span class="dimgrey"><br><span class="datestring_game"' .
-                                        '>' . date_tl($shots[$shot][2], $notation) . '</span></span></td>';
+                                        '>' . date_tl($date, $notation) . '</span></span></td>';
                                     }
                                 } else {
                                     if ($score >= $MAX_SCORE) {
@@ -327,14 +334,18 @@
                                     if (file_exists(replay_path($game, $diff, $shot))) {
                                         $score_text = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score_text . '</a>';
                                     }
-                                    if ($score == $overall[num($game)]) {
+                                    if ($score == $overall[num($game)] && $game != 'StB' && $game != 'DS') {
                                         $score_text = '<strong>' . $score_text . '</strong>';
                                     }
-                                    if ($score == $diff_max[$game][$diff][0]) {
+                                    if ($score == $diff_max[$game][$diff][0] && $game != 'StB' && $game != 'DS') {
                                         $score_text = '<u>' . $score_text . '</u>';
                                     }
-                                    echo '<td>' . $score_text . '<br>by <em>' . $player . '</em><span class="dimgrey"><br>' .
-                                    '<span class="datestring_game">' . date_tl($shots[$shot][2], $notation) . '</span></span></td>';
+                                    if ($score == 0) {
+                                        echo '<td></td>';
+                                    } else {
+                                        echo '<td>' . $score_text . '<br>by <em>' . $player . '</em><span class="dimgrey"><br>' .
+                                        '<span class="datestring_game">' . date_tl($date, $notation) . '</span></span></td>';
+                                    }
                                 }
                             }
                             echo '</tr>';
