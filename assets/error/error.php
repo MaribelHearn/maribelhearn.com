@@ -26,7 +26,7 @@
             <div id='wrap' class='wrap'>
                 <p id='ack_admin'>This background image<br id='ack_br'>
                 was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a></p>
-                <span id='hy_container'><img id='hy' src='https://maribelhearn.com/assets/shared/icon_sheet.png' alt='Human-youkai gauge'>
+                <span id='hy_container'><span id='hy'></span>
                     <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
                 </span>
                 <h1><?php echo empty($_GET['error']) ? '404' : $_GET['error'] ?></h1>
