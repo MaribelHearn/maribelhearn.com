@@ -7,21 +7,6 @@ if (empty($_GET['error']) || $_GET['error'] == '404') {
         header('Location: ' . $data[$url]);
         exit();
     }
-}
-function error_title() {
-    if (empty($_GET['error']) || $_GET['error'] == '404') {
-        return '404 Not Found';
-    }
-    switch ($_GET['error']) {
-        case '400': return '400 Bad Request';
-        case '401': return '401 Unauthorized';
-        case '403': return '403 Forbidden';
-        case '500': return '500 Internal Server Error';
-        default: return '404 Not Found';
-    }
-}
-function error_description_sub() {
-    $description = '404 Not Found';
     if (!strpos($url, '/')) {
         $max_sim = 0;
         foreach (glob('../../*') as $file) {
@@ -33,25 +18,20 @@ function error_description_sub() {
                 }
             }
         }
-        $len = strlen($max_page) - 3;
+        $len = strlen($max_page) - 2;
         if ($max_sim > 0 && $max_sim > $len) {
             $location = $_SERVER['SERVER_NAME'] !== 'localhost' ? 'https://maribelhearn.com/' : 'http://localhost/';
             header('Location: ' . $location . $max_page . '?redirect=' . $url);
         }
     }
-    if ($max_sim > 0 && $max_sim > $len - 2) {
-        $description .= ' - did you mean <a href="https://maribelhearn.com/' . $max_page . '">' . $max_page . '</a>?';
-    }
-    return $description;
 }
-function error_description() {
-    $supported_errors = ['400', '401', '403', '500'];
-    if (empty($_GET['error']) || $_GET['error'] == '404') {
-        return error_description_sub();
-    } else if (in_array($_GET['error'], $supported_errors)) {
-        return error_title();
-    } else {
-        return error_description_sub();
+function error_title() {
+    switch ($_GET['error']) {
+        case '400': return '400 Bad Request';
+        case '401': return '401 Unauthorized';
+        case '403': return '403 Forbidden';
+        case '500': return '500 Internal Server Error';
+        default: return '404 Not Found';
     }
 }
 function error_text() {
