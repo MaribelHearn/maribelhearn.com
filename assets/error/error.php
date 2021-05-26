@@ -30,7 +30,18 @@
                     <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
                 </span>
                 <h1><?php echo empty($_GET['error']) ? '404' : $_GET['error'] ?></h1>
-                <p><strong><?php echo error_description() ?></strong></p>
+                <p><strong><?php
+                    $supported_errors = ['400', '401', '403', '500'];
+                    if (empty($_GET['error']) || $_GET['error'] == '404' || !in_array($_GET['error'], $supported_errors)) {
+                        $description = '404 Not Found';
+                        if ($max_sim > 0 && $max_sim > $len - 2) {
+                            $description .= ' - did you mean <a href="https://maribelhearn.com/' . $max_page . '">' . $max_page . '</a>?';
+                        }
+                        echo $description;
+                    } else {
+                        echo error_title();
+                    }
+                ?></strong></p>
                 <p class='wide'><?php echo error_text() ?></p>
                 <p id='ack_mobile'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a>.</p>
             </div>
