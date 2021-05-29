@@ -27,7 +27,7 @@ function hit(string $filename) {
                         $stats[$page] = 1;
                     }
                     fwrite($file, json_encode($stats));
-                    flock($fp, LOCK_UN);
+                    flock($file, LOCK_UN);
                 }
             }
             fclose($file);
