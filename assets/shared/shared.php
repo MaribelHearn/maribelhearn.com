@@ -17,7 +17,7 @@ function hit(string $filename) {
                 $file = fopen($hitcount, 'w');
                 fwrite($file, json_encode($stats));
             } else {
-                $file = fopen($hitcount, 'w+');
+                $file = fopen($hitcount, 'r+');
                 if (flock($file, LOCK_EX)) {
                     $json = fread($file, filesize($hitcount));
                     $stats = json_decode($json, true);
@@ -26,7 +26,9 @@ function hit(string $filename) {
                     } else {
                         $stats[$page] = 1;
                     }
+                    ftruncate($file, 0);
                     fwrite($file, json_encode($stats));
+                    fflush($file);
                     flock($file, LOCK_UN);
                 }
             }
