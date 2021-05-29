@@ -11,7 +11,7 @@
         }
         fclose($file);
         $stats = json_decode($json, true);
-        if (isset($stats) {
+        if (isset($stats)) {
             arsort($stats);
         } else {
             $hitcount = 'error';
