@@ -18,7 +18,7 @@ function hit(string $filename) {
                 fwrite($file, json_encode($stats));
             } else {
                 $file = fopen($hitcount, 'w');
-                if (flock($file, LOCK_EX)) {
+                if (flock($file, LOCK_EX)) { // exclusive lock
                     $json = file_get_contents($hitcount);
                     $stats = json_decode($json, true);
                     if (isset($stats[$page])) {
