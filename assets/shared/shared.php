@@ -24,7 +24,15 @@ function hit(string $filename) {
                 $stats = array($page => 1);
             }
             $file = fopen($hitcount, 'w');
-            fwrite($file, json_encode($stats));
+            $written = false;
+            while (!$written) {
+                if (flock($file, LOCK_EX)) {
+                    fwrite($file, json_encode($stats));
+                    flock($fp, LOCK_UN);
+                    $written = true;
+                }
+            }
+            fclose($file);
         }
     }
 }
