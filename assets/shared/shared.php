@@ -28,7 +28,6 @@ function hit(string $filename) {
                     }
                     ftruncate($file, 0);
                     fwrite($file, json_encode($stats));
-                    fflush($file);
                     flock($file, LOCK_UN);
                 }
             }
