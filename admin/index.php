@@ -4,7 +4,11 @@
     include '../assets/shared/shared.php';
     $hitcount = '../.stats/' . date('d-m-Y') . '.json';
     if (file_exists($hitcount)) {
-        $json = file_get_contents($hitcount);
+        $file = fopen($hitcount, 'r');
+        if (flock($file, LOCK_SH)) {
+            $json = fread($file, filesize($hitcount));
+        }
+        fclose($file);
         $stats = json_decode($json, true);
         arsort($stats);
     } else {
