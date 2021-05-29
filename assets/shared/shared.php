@@ -17,28 +17,25 @@ function hit(string $filename) {
                 $stats = array($page => 1);
                 $file = fopen($hitcount, 'w');
                 fwrite($file, json_encode($stats));
-                fclose($file);
             } else {
                 $file = fopen($hitcount, 'r');
                 if (flock($file, LOCK_SH)) {
                     $json = fread($file, filesize($hitcount));
-                    flock($file, LOCK_UN);
+                    $json = trim($json);
+                    $stats = json_decode($json, true);
+                    if (isset($stats[$page])) {
+                        $stats[$page] += 1;
+                    } else {
+                        $stats[$page] = 1;
+                    }
+                    $file = fopen($hitcount, 'w');
+                    if (flock($file, LOCK_EX)) {
+                        fwrite($file, json_encode($stats));
+                        flock($file, LOCK_UN);
+                    }
                 }
-                fclose($file);
-                $json = trim($json);
-                $stats = json_decode($json, true);
-                if (isset($stats[$page])) {
-                    $stats[$page] += 1;
-                } else {
-                    $stats[$page] = 1;
-                }
-                $file = fopen($hitcount, 'w');
-                if (flock($file, LOCK_EX)) {
-                    fwrite($file, json_encode($stats));
-                    flock($file, LOCK_UN);
-                }
-                fclose($file);
             }
+            fclose($file);
         }
     }
 }
