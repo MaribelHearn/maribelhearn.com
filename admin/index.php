@@ -7,6 +7,7 @@
         $file = fopen($hitcount, 'r');
         if (flock($file, LOCK_SH)) {
             $json = fread($file, filesize($hitcount));
+            flock($file, LOCK_UN);
         }
         fclose($file);
         $stats = json_decode($json, true);
