@@ -15,7 +15,10 @@ function hit(string $filename) {
             if (!file_exists($hitcount)) {
                 $stats = array($page => 1);
                 $file = fopen($hitcount, 'w');
-                fwrite($file, json_encode($stats));
+                if (flock($file, LOCK_EX)) {
+                    fwrite($file, json_encode($stats));
+                    flock($file, LOCK_UN);
+                }
             } else {
                 $file = fopen($hitcount, 'r');
                 if (flock($file, LOCK_SH)) {
