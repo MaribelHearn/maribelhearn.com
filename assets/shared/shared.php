@@ -12,24 +12,22 @@ function hit(string $filename) {
         if (!is_localhost($_SERVER['REMOTE_ADDR']) && !isset($_COOKIE['token']) || $_COOKIE['token'] !== $token) {
             $page = str_replace('.php', '', $filename);
             $hitcount = $path . date('d-m-Y') . '.json';
-            if (file_exists($hitcount)) {
-                $json = file_get_contents($hitcount);
-                $stats = json_decode($json, true);
-                if (isset($stats[$page])) {
-                    $stats[$page] += 1;
-                } else {
-                    $stats[$page] = 1;
-                }
-            } else {
+            if (!file_exists($hitcount)) {
                 $stats = array($page => 1);
-            }
-            $file = fopen($hitcount, 'w');
-            $written = false;
-            while (!$written) {
+                $file = fopen($hitcount, 'w');
+                fwrite($file, json_encode($stats));
+            } else {
+                $file = fopen($hitcount, 'w');
                 if (flock($file, LOCK_EX)) {
+                    $json = file_get_contents($hitcount);
+                    $stats = json_decode($json, true);
+                    if (isset($stats[$page])) {
+                        $stats[$page] += 1;
+                    } else {
+                        $stats[$page] = 1;
+                    }
                     fwrite($file, json_encode($stats));
                     flock($fp, LOCK_UN);
-                    $written = true;
                 }
             }
             fclose($file);
