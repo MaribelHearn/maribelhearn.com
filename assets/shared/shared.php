@@ -9,8 +9,7 @@ function hit(string $filename) {
             return;
         }
         $token = trim(file_get_contents($path . 'token'));
-        // !is_localhost($_SERVER['REMOTE_ADDR']) &&!isset($_COOKIE['token']) ||
-        if ($_COOKIE['token'] !== $token) {
+        if (!is_localhost($_SERVER['REMOTE_ADDR']) &&!isset($_COOKIE['token']) ||$_COOKIE['token'] !== $token) {
             $page = str_replace('.php', '', $filename);
             $hitcount = $path . date('d-m-Y') . '.json';
             if (!file_exists($hitcount)) {
