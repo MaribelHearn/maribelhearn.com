@@ -11,9 +11,13 @@
         }
         fclose($file);
         $stats = json_decode($json, true);
-        arsort($stats);
+        if (isset($stats) {
+            arsort($stats);
+        } else {
+            $hitcount = 'error';
+        }
     } else {
-        $hitcount = false;
+        $hitcount = 'empty';
     }
 ?>
 
@@ -41,7 +45,9 @@
                 <h1>Admin Panel</h1>
                 <p><input id='setcookie' type='button' value='Set Blocking Cookie'></p>
                 <?php
-                    if ($hitcount === false) {
+                    if ($hitcount == 'error') {
+                        echo '<p class="wide">An error occurred while reading the stats.</p>';
+                    } else if ($hitcount == 'empty') {
                         echo '<p class="wide">No stats for today yet.</p>';
                     } else {
                         echo '<h2>Page Hits</h2>';
