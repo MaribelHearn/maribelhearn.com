@@ -9,29 +9,36 @@ function hit(string $filename) {
             return;
         }
         $token = trim(file_get_contents($path . 'token'));
-        if (!is_localhost($_SERVER['REMOTE_ADDR']) && !isset($_COOKIE['token']) || $_COOKIE['token'] !== $token) {
+        // !is_localhost($_SERVER['REMOTE_ADDR']) &&!isset($_COOKIE['token']) ||
+        if ($_COOKIE['token'] !== $token) {
             $page = str_replace('.php', '', $filename);
             $hitcount = $path . date('d-m-Y') . '.json';
             if (!file_exists($hitcount)) {
                 $stats = array($page => 1);
                 $file = fopen($hitcount, 'w');
                 fwrite($file, json_encode($stats));
+                fclose($file);
             } else {
-                $file = fopen($hitcount, 'r+');
-                if (flock($file, LOCK_EX)) {
+                $file = fopen($hitcount, 'r');
+                if (flock($file, LOCK_SH)) {
                     $json = fread($file, filesize($hitcount));
-                    $stats = json_decode($json, true);
-                    if (isset($stats[$page])) {
-                        $stats[$page] += 1;
-                    } else {
-                        $stats[$page] = 1;
-                    }
-                    ftruncate($file, 0);
+                    flock($file, LOCK_UN);
+                }
+                fclose($file);
+                $json = trim($json);
+                $stats = json_decode($json, true);
+                if (isset($stats[$page])) {
+                    $stats[$page] += 1;
+                } else {
+                    $stats[$page] = 1;
+                }
+                $file = fopen($hitcount, 'w');
+                if (flock($file, LOCK_EX)) {
                     fwrite($file, json_encode($stats));
                     flock($file, LOCK_UN);
                 }
+                fclose($file);
             }
-            fclose($file);
         }
     }
 }
