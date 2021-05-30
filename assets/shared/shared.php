@@ -20,7 +20,7 @@ function hit(string $filename) {
                     flock($file, LOCK_UN);
                 }
             } else {
-                $file = fopen($hitcount, 'r');
+                $file = fopen($hitcount, 'r+');
                 if (flock($file, LOCK_EX)) {
                     $json = fread($file, filesize($hitcount));
                     $json = trim($json);
