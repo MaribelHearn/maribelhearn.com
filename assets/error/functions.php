@@ -8,20 +8,22 @@ if (empty($_GET['error']) || $_GET['error'] == '404') {
         exit();
     }
     if (!strpos($url, '/')) {
-        $max_sim = 0;
+        $min_distance = PHP_INT_MAX;
         foreach (glob('../../*') as $file) {
             if (strpos($file, '.php')) {
                 $page = substr($file, 6, -4);
-                $max_sim = max(similar_text($url, $page), $max_sim);
-                if (similar_text($url, $page) >= $max_sim) {
-                    $max_page = $page;
+                $min_distance = min(levenshtein($url, $page), $min_distance);
+                if (levenshtein($url, $page) <= $min_distance) {
+                    $min_page = $page;
                 }
             }
         }
-        $len = strlen($max_page) - 2;
-        if ($max_sim > 0 && $max_sim > $len) {
-            $location = $_SERVER['SERVER_NAME'] !== 'localhost' ? 'https://maribelhearn.com/' : 'http://localhost/';
-            header('Location: ' . $location . $max_page . '?redirect=' . $url);
+        if ($min_distance < 3 && $min_distance >= 0) {
+            echo 'Redirect triggered.';
+            var_dump($min_page);
+            var_dump($min_distance);
+            //$location = $_SERVER['SERVER_NAME'] !== 'localhost' ? 'https://maribelhearn.com/' : 'http://localhost/';
+            //header('Location: ' . $location . $min_page . '?redirect=' . $url);
         }
     }
 }

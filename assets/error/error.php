@@ -34,8 +34,8 @@
                     $supported_errors = ['400', '401', '403', '500'];
                     if (empty($_GET['error']) || $_GET['error'] == '404' || !in_array($_GET['error'], $supported_errors)) {
                         $description = '404 Not Found';
-                        if ($max_sim > 0 && $max_sim > $len - 2) {
-                            $description .= ' - did you mean <a href="https://maribelhearn.com/' . $max_page . '">' . $max_page . '</a>?';
+                        if ($min_distance < 5 && $min_distance >= 0) {
+                            $description .= ' - did you mean <a href="https://maribelhearn.com/' . $min_page . '">' . $min_page . '</a>?';
                         }
                         echo $description;
                     } else {
