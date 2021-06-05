@@ -22,8 +22,8 @@ if (empty($_GET['error']) || $_GET['error'] == '404') {
             echo 'Redirect triggered.';
             var_dump($min_page);
             var_dump($min_distance);
-            //$location = $_SERVER['SERVER_NAME'] !== 'localhost' ? 'https://maribelhearn.com/' : 'http://localhost/';
-            //header('Location: ' . $location . $min_page . '?redirect=' . $url);
+            $location = $_SERVER['SERVER_NAME'] !== 'localhost' ? 'https://maribelhearn.com/' : 'http://localhost/';
+            header('Location: ' . $location . $min_page . '?redirect=' . $url);
         }
     }
 }
