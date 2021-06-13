@@ -169,7 +169,10 @@ function is_later_date(string $date1, string $date2) {
     $date1 = preg_split('/\//', $date1);
     $date2 = preg_split('/\//', $date2);
     $year = $date1[2]; $month = $date1[1]; $day = $date1[0];
-    return $year > $date2[2] || $year == $date2[2] && $month > $date2[1] || $year == $date2[2] && $month == $date2[1] && $day > $date2[0];
+    $cond1 = $year > $date2[2];
+    $cond2 = $year == $date2[2] && $month > $date2[1];
+    $cond3 = $year == $date2[2] && $month == $date2[1] && $day >= $date2[0];
+    return $cond1 || $cond2 || $cond3;
 }
 function category_sep(string $lang) {
     if ($lang == 'Chinese') {
@@ -219,7 +222,7 @@ foreach ($wr as $game => $value) {
             if (is_later_date($date, $lm)) {
                 $lm = $date;
             }
-            if (sizeof($recent) == 0) {
+            if (count($recent) < $RECENT_LIMIT) {
                 $new_obj = (object) [
                     'game' => $game,
                     'diff' => $diff,
@@ -229,23 +232,23 @@ foreach ($wr as $game => $value) {
                     'date' => $date,
                 ];
                 array_push($recent, $new_obj);
-            }
-            foreach ($recent as $key => $obj) {
-                if (is_later_date($date, $obj->date)) {
-                    $new_obj = (object) [
-                        'game' => $game,
-                        'diff' => $diff,
-                        'shot' => $shot,
-                        'score' => $score,
-                        'player' => $player,
-                        'date' => $date,
-                    ];
-                    if (sizeof($recent) == $RECENT_LIMIT) {
+            } else {
+                foreach ($recent as $key => $obj) {
+                    if (is_later_date($date, $obj->date)) {
+                        $new_obj = (object) [
+                            'game' => $game,
+                            'diff' => $diff,
+                            'shot' => $shot,
+                            'score' => $score,
+                            'player' => $player,
+                            'date' => $date,
+                        ];
+                        for ($i = $RECENT_LIMIT - 1; $i > $key; $i--) {
+                            $recent[$i] = $recent[$i - 1];
+                        }
                         $recent[$key] = $new_obj;
-                    } else {
-                        array_push($recent, $new_obj);
+                        break;
                     }
-                    break;
                 }
             }
         }
