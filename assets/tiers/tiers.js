@@ -290,9 +290,10 @@ function addMultiSelection(tierNum) {
             $("#" + multiSelection[i]).removeClass("outline");
         }
 
-        multiSelection = [];
         addToTier(following, tierNum);
     }
+
+    multiSelection = [];
 }
 
 function toggleMulti() {
@@ -1518,8 +1519,6 @@ function drop(event) {
                 addToTier(following, tierNum);
             }
         }
-
-        multiSelection = [];
     } else if (isTiered(event.target.id)) {
         if (isTiered(following)) {
             swapItems(following, event.target.id);
