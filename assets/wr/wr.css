@@ -229,7 +229,7 @@ table, th, td {
     margin-bottom: 5px;
 }
 #overall_linkm, #overall_linkmn, #overallm, #list, #playerlist, #playersearch, #checkboxes,
-#seasontoggle, #newlayout, #playersearchlink, #contents_new, #recent_linkm, #recentm {
+#seasontoggle, #newlayout, #playersearchlink, #contents_new, #recent_linkm, #recent_linkmn, #recentm {
     display: none;
 }
 #list, #playerlist {
