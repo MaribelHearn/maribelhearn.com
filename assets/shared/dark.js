@@ -14,7 +14,7 @@ function ready() {
 
     done = true;
 
-    if (localStorage.theme == "dark") { // legacy
+    if (localStorage.theme) { // legacy
         document.cookie = "theme=dark;expires=Fri, 31 Dec 9999 23:59:59 UTC;path=/;sameSite=Strict;Secure;";
         localStorage.removeItem("theme");
         document.getElementById("hy_tooltip").innerHTML = "Youkai Mode";
@@ -22,8 +22,34 @@ function ready() {
     }
 }
 
+function getCookie(name) {
+    var decodedCookies, cookieArray, cookie;
+
+    decodedCookies = decodeURIComponent(document.cookie);
+    cookieArray = decodedCookies.split(';');
+    name += '=';
+
+    for (var i = 0; i < cookieArray.length; i += 1) {
+        cookie = cookieArray[i];
+
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1);
+        }
+
+        if (cookie.indexOf(name) === 0) {
+            try {
+                return JSON.parse(cookie.substring(name.length, cookie.length));
+            } catch (err) {
+                return JSON.parse("\"" + cookie.substring(name.length, cookie.length) + "\"");
+            }
+        }
+    }
+
+    return "";
+}
+
 function theme() {
-    if (document.head.contains(document.getElementById("dark_theme")) || localStorage.theme == "dark") {
+    if (getCookie("theme") == "dark") {
         document.cookie = "theme=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;" +
         "sameSite=Strict;" + (location.protocol == "https:" ? "Secure;" : "");
         document.getElementById("hy_tooltip").innerHTML = "Human Mode";
