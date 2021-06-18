@@ -62,9 +62,10 @@ function theme() {
 var ua = detect.parse(navigator.userAgent);
 
 document.getElementById("setcookie").addEventListener("click", set);
-document.getElementById("os").innerHTML = "<img src='" + (location.host == "maribelhearn.com" ? "https://maribelhearn.com/" : "") + "admin/icons/" + ua.os.name + ".png' alt='" + ua.os.name + " icon'>" + ua.os.name;
-document.getElementById("browser").innerHTML = "<img src='" + (location.host == "maribelhearn.com" ? "https://maribelhearn.com/" : "") + "admin/icons/" + ua.browser.family +
-".png' alt='" + ua.browser.name + " icon'>" + ua.browser.name;
+document.getElementById("os").innerHTML = "<img src='" + (location.host == "maribelhearn.com" ? "https://maribelhearn.com/" : "") +
+"admin/icons/" + ua.os.name + ".png' alt='" + ua.os.name + " icon'> " + ua.os.name;
+document.getElementById("browser").innerHTML = "<img src='" + (location.host == "maribelhearn.com" ? "https://maribelhearn.com/" : "") +
+"admin/icons/" + ua.browser.family + ".png' alt='" + ua.browser.name + " icon'> " + ua.browser.name;
 head = document.getElementsByTagName("head")[0];
 window.addEventListener("load", ready);
 hy = document.getElementById("hy");

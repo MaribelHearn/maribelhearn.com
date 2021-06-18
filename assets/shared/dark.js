@@ -24,13 +24,15 @@ function ready() {
 
 function theme() {
     if (document.head.contains(document.getElementById("dark_theme")) || localStorage.theme == "dark") {
-        if (document.head.contains(document.getElementById("dark_theme"))) {
-            head.removeChild(document.getElementById("dark_theme"));
-        }
-
         document.cookie = "theme=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;" +
         "sameSite=Strict;" + (location.protocol == "https:" ? "Secure;" : "");
         document.getElementById("hy_tooltip").innerHTML = "Human Mode";
+
+        if (document.head.contains(document.getElementById("dark_theme"))) {
+            head.removeChild(document.getElementById("dark_theme"));
+        } else {
+            window.location.reload(false);
+        }
     } else {
         var cookieString = ";expires=Fri, 31 Dec 9999 23:59:59 UTC;path=/;sameSite=Strict;";
 
