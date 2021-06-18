@@ -17,7 +17,6 @@
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=scoring'>
 		<link rel='icon' type='image/x-icon' href='assets/scoring/scoring.ico'>
         <script src='assets/shared/js_concat.php?page=scoring' defer></script>
-        <?php echo dark_theme() ?>
 	</head>
 
     <body>

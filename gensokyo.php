@@ -17,7 +17,6 @@
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=gensokyo'>
 		<link rel='icon' type='image/x-icon' href='assets/gensokyo/gensokyo.ico'>
         <script src='assets/shared/js_concat.php?page=gensokyo' defer></script>
-        <?php echo dark_theme() ?>
     </head>
 
     <body>

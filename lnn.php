@@ -27,7 +27,6 @@
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=lnn'>
 		<link rel='icon' type='image/x-icon' href='assets/lnn/lnn.ico'>
         <script src='assets/shared/js_concat.php?page=lnn' defer></script>
-        <?php echo dark_theme() ?>
 	</head>
 
     <body>

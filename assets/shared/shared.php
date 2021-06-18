@@ -40,16 +40,6 @@ function hit(string $filename) {
         }
     }
 }
-function dark_theme($page = 'other') {
-    if (isset($_COOKIE['theme'])) {
-        if ($page == 'error') {
-            return '<link id="dark_theme" rel="stylesheet" type="text/css" href="https://maribelhearn.com/assets/shared/dark.css">';
-        }
-        return '<link id="dark_theme" rel="stylesheet" type="text/css" ' .
-        'href="' . ($page == 'admin' ? '../' : '') . 'assets/shared/dark.css">';
-    }
-    return '';
-}
 function theme_name() {
     return isset($_COOKIE['theme']) ? 'Youkai Mode (click to toggle)' : 'Human Mode (click to toggle)';
 }
@@ -59,7 +49,7 @@ function navbar(string $page) {
     $navbar = '<div class="dropdown nav_left">';
     $navbar .= '<a href="/"><span class="icon index_icon"></span> Index</a> | ';
 
-    if (isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents($token_path))) {
+    if (is_localhost($_SERVER['REMOTE_ADDR']) || isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents($token_path))) {
         $navbar .= '<a href="admin">Admin</a> | ';
     }
 
@@ -77,11 +67,13 @@ function navbar(string $page) {
                 $navbar .= '<p><a href="https://thscore.pndsng.com/index.php">' .
                 '<span class="icon pndsng_icon"></span>PND List</a></p>';
                 //$navbar .= '<p><a href="https://zps-stg.github.io">' .
-                //'<span class="icon exphp_icon"></span>ZPS\'s Site</a></p>';
+                //'<span class="icon zps_icon"></span>ZPS\'s Site</a></p>';
                 $navbar .= '<p><a href="https://priw8.github.io">' .
                 '<span class="icon priw8_icon"></span>Priw8\'s Site</a></p>';
                 $navbar .= '<p><a href="https://exphp.github.io/thpages/">' .
                 '<span class="icon exphp_icon"></span>ExpHP\'s Site</a></p>';
+                $navbar .= '<p><a href="https://wikiwiki.jp/thscorekg/">' .
+                '<span class="icon kg_icon"></span>KG\'s Site</a></p>';
             $navbar .= '</div>';
         $navbar .= '</div> ';
         $navbar .= '<div class="dropdown">';
@@ -146,11 +138,13 @@ function navbar(string $page) {
                     $navbar .= '<p><a href="https://thscore.pndsng.com/index.php">' .
                     '<span class="icon pndsng_icon"></span>PND List</a></p>';
                     //$navbar .= '<p><a href="https://zps-stg.github.io">' .
-                    //'<span class="icon exphp_icon"></span>ZPS\'s Site</a></p>';
+                    //'<span class="icon zps_icon"></span>ZPS\'s Site</a></p>';
                     $navbar .= '<p><a href="https://priw8.github.io">' .
                     '<span class="icon priw8_icon"></span>Priw8\'s Site</a></p>';
                     $navbar .= '<p><a href="https://exphp.github.io/thpages">' .
                     '<span class="icon exphp_icon"></span>ExpHP\'s Site</a></p>';
+                    $navbar .= '<p><a href="https://wikiwiki.jp/thscorekg/">' .
+                    '<span class="icon kg_icon"></span>KG\'s Site</a></p>';
                 $navbar .= '</div>';
             $navbar .= '</div> ';
             $navbar .= '<div class="dropdown">';

@@ -17,7 +17,6 @@
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=survival'>
 		<link rel='icon' type='image/x-icon' href='assets/survival/survival.ico'>
         <script src='assets/shared/js_concat.php?page=survival' defer></script>
-        <?php echo dark_theme() ?>
 	</head>
 
     <body>

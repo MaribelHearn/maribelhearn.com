@@ -9,6 +9,13 @@ $css = array(
     'shared' . $min . '.css',
     '../' . $page . '/' . ($page == 'index' ? 'main' : $page) . $min . '.css'
 );
+if (isset($_COOKIE['theme'])) {
+    if ($page == 'error') {
+        array_push($css, 'https://maribelhearn.com/assets/shared/dark' . $min . '.css');
+    } else {
+        array_push($css, 'dark' . $min . '.css');
+    }
+}
 foreach ($css as $css_file) {
     $css_content = file_get_contents($css_file);
     echo $css_content;

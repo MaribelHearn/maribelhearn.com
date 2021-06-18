@@ -16,7 +16,6 @@
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=pofv'>
 		<link rel='icon' type='image/x-icon' href='assets/pofv/pofv.ico'>
         <script src='assets/shared/js_concat.php?page=pofv' defer></script>
-        <?php echo dark_theme() ?>
     </head>
 
     <body>

@@ -34,7 +34,6 @@
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=tools'>
 		<link rel='icon' type='image/x-icon' href='assets/tools/tools.ico'>
         <script src='assets/shared/js_concat.php?page=tools' defer></script>
-        <?php echo dark_theme() ?>
 	</head>
 
     <body>

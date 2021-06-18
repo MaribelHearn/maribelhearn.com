@@ -14,7 +14,6 @@
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=c67'>
 		<link rel='icon' type='image/x-icon' href='assets/c67/c67.ico'>
         <script src='assets/shared/js_concat.php' defer></script>
-        <?php echo dark_theme() ?>
     </head>
 
     <body>

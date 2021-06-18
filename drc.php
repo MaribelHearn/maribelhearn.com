@@ -17,7 +17,6 @@
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=drc'>
 		<link rel='icon' type='x/icon' href='assets/drc/drc.ico'>
 		<script src='assets/shared/js_concat.php?page=drc' defer></script>
-        <?php echo dark_theme() ?>
 	</head>
 
     <body>

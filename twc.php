@@ -26,7 +26,6 @@
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=twc'>
 		<link rel='icon' type='image/x-icon' href='assets/twc/twc.ico'>
         <script src='assets/shared/js_concat.php?page=twc' defer></script>
-        <?php echo dark_theme() ?>
     </head>
 
     <body>

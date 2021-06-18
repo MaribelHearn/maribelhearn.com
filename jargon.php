@@ -16,7 +16,6 @@
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=jargon'>
 		<link rel='icon' type='image/x-icon' href='assets/jargon/jargon.ico'>
         <script src='assets/shared/js_concat.php' defer></script>
-        <?php echo dark_theme() ?>
 	</head>
 
     <body>
