@@ -16,7 +16,6 @@
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=thvote'>
 		<link rel='icon' type='image/x-icon' href='assets/thvote/thvote.ico'>
         <script src='assets/shared/js_concat.php?page=thvote' defer></script>
-        <?php echo dark_theme() ?>
     </head>
 
     <body>

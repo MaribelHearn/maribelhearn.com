@@ -26,7 +26,6 @@
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=wr'>
 		<link rel='icon' type='image/x-icon' href='assets/wr/wr.ico'>
         <script src='assets/shared/js_concat.php?page=wr' defer></script>
-        <?php echo dark_theme() ?>
 	</head>
 
     <body>

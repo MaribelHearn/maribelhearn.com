@@ -16,7 +16,6 @@
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=slots'>
 		<link rel='icon' type='image/x-icon' href='assets/slots/slots.ico'>
         <script src='assets/shared/js_concat.php?page=slots' defer></script>
-        <?php echo dark_theme() ?>
     </head>
 
     <body>
