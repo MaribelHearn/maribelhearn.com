@@ -9,7 +9,7 @@ $css = array(
     'shared' . $min . '.css',
     '../' . $page . '/' . ($page == 'index' ? 'main' : $page) . $min . '.css'
 );
-if (isset($_COOKIE['theme'])) {
+if (isset($_COOKIE['theme']) && $page != 'tiers') {
     if ($page == 'error') {
         array_push($css, 'https://maribelhearn.com/assets/shared/dark' . $min . '.css');
     } else {
