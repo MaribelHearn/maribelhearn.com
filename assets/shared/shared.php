@@ -66,14 +66,14 @@ function navbar(string $page) {
                 '<span class="icon royalflare_icon"></span>Royalflare</a></p>';
                 $navbar .= '<p><a href="https://thscore.pndsng.com/index.php">' .
                 '<span class="icon pndsng_icon"></span>PND List</a></p>';
-                //$navbar .= '<p><a href="https://zps-stg.github.io">' .
-                //'<span class="icon zps_icon"></span>ZPS\'s Site</a></p>';
                 $navbar .= '<p><a href="https://priw8.github.io">' .
                 '<span class="icon priw8_icon"></span>Priw8\'s Site</a></p>';
                 $navbar .= '<p><a href="https://exphp.github.io/thpages/">' .
                 '<span class="icon exphp_icon"></span>ExpHP\'s Site</a></p>';
                 $navbar .= '<p><a href="https://wikiwiki.jp/thscorekg/">' .
                 '<span class="icon kg_icon"></span>KG\'s Site</a></p>';
+                //$navbar .= '<p><a href="https://zps-stg.github.io">' .
+                //'<span class="icon unknown_icon"></span>ZPS\'s Site</a></p>';
             $navbar .= '</div>';
         $navbar .= '</div> ';
         $navbar .= '<div class="dropdown">';
@@ -137,14 +137,14 @@ function navbar(string $page) {
                     '<span class="icon royalflare_icon"></span>Royalflare</a></p>';
                     $navbar .= '<p><a href="https://thscore.pndsng.com/index.php">' .
                     '<span class="icon pndsng_icon"></span>PND List</a></p>';
-                    //$navbar .= '<p><a href="https://zps-stg.github.io">' .
-                    //'<span class="icon zps_icon"></span>ZPS\'s Site</a></p>';
                     $navbar .= '<p><a href="https://priw8.github.io">' .
                     '<span class="icon priw8_icon"></span>Priw8\'s Site</a></p>';
                     $navbar .= '<p><a href="https://exphp.github.io/thpages">' .
                     '<span class="icon exphp_icon"></span>ExpHP\'s Site</a></p>';
                     $navbar .= '<p><a href="https://wikiwiki.jp/thscorekg/">' .
                     '<span class="icon kg_icon"></span>KG\'s Site</a></p>';
+                    //$navbar .= '<p><a href="https://zps-stg.github.io">' .
+                    //'<span class="icon zps_icon"></span>ZPS\'s Site</a></p>';
                 $navbar .= '</div>';
             $navbar .= '</div> ';
             $navbar .= '<div class="dropdown">';

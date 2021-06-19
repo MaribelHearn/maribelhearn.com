@@ -118,6 +118,12 @@ a:visited.dropdown_button {
 .twc_icon {
     background-position: -752px 0px;
 }
+.kg_icon {
+    background-position: -768px 0px;
+}
+.unknown_icon {
+    background-position: -784px 0px;
+}
 .dropdowns {
     margin-left: auto;
     margin-right: auto;
