@@ -106,6 +106,11 @@
                                 <img src='assets/flags/ru16x16.png' width='16' height='16' alt='Flag of Russia' title='Russian'>
                                 <span class='tooltip'>Main webpage for Touhou World Cup, containing the schedule, rules and other relevant information.</span>
                             </p>
+                            <p class='link'>
+                                <a href='trs'><span class='icon trs_icon'></span>
+                                Touhou Replay Showcase</a>
+                                <span class='tooltip'>Read about the weekly Touhou Replay Showcase Twitch streams.</span>
+                            </p>
                         </div>
                     </div>
                     <div class='pages_right'>
