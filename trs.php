@@ -11,7 +11,7 @@
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
         <link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
-        <meta name='description' content='Submit to the Touhou Replay Showcase Twitch stream and see the schedules.'>
+        <meta name='description' content='Read about the weekly Touhou Replay Showcase Twitch streams.'>
         <meta name='keywords' content='touhou, touhou project, replay, showcase, trs, twitch, stream, submit, submitting, submission, schedule, schedules'>
 		<link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=trs'>
 		<link rel='icon' type='image/x-icon' href='assets/trs/trs.png'>
