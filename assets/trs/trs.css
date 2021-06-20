@@ -1,0 +1,173 @@
+body {
+    background: url('../trs/trs.jpg') center no-repeat fixed;
+    background-size: cover;
+}
+h1 {
+    font-family: 'Felipa';
+    font-size: 48px;
+}
+h2 {
+    font-family: 'Felipa';
+    font-size: 36px;
+}
+p {
+    margin: 10px;
+}
+input {
+    margin-left: auto;
+    margin-right: auto;
+}
+textarea {
+    width: 50%;
+    height: 100px;
+    resize: none;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.section {
+    display: block;
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+.input {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: block;
+}
+.error {
+    font-weight: bold;
+    color: red;
+}
+.required {
+    color: red;
+}
+.tooltip {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+}
+.dropdown_content > p {
+    margin: 4px;
+}
+.wrap {
+    border: 1px solid #000;
+    text-align: center;
+    margin-left: 23%;
+    margin-right: 23%;
+    font: 14px verdana,sans-serif;
+}
+#wrap {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    opacity: 0.8;
+}
+#hy {
+    float: right;
+}
+#twitch-embed {
+    display: none;
+}
+#game_other_p, #video {
+    display: none;
+}
+#ack {
+    font: 11px verdana,sans-serif;
+    text-align: right;
+    background: none;
+    position: fixed;
+    color: white;
+    bottom: 5px;
+    right: 5px;
+}
+#ack_br, #ack_mobile {
+    display: none;
+}
+#ack > a:link {
+    color: #1e90ff;
+}
+#ack > a:active {
+    color: red;
+}
+#ack > a:visited {
+    color: #ff69b4;
+}
+#ack_container > p {
+    margin: 4px;
+}
+@media only screen and (min-width: 1100px) and (max-width: 1400px) {
+    .wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    #ack_br {
+        display: inline;
+    }
+}
+@media only screen and (min-width: 800px) and (max-width: 1100px) {
+    .wrap {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    #ack {
+        display: none;
+    }
+    #ack_mobile {
+        display: block;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .wrap {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #ack {
+        display: none;
+    }
+    #ack_mobile {
+        display: block;
+    }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
+    .wrap {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 11px;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+}
+@media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
+    .wrap {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 11px;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+}

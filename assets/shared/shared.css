@@ -124,6 +124,12 @@ a:visited.dropdown_button {
 .unknown_icon {
     background-position: -784px 0px;
 }
+.forms_icon {
+    background-position: -800px 0px;
+}
+.trs_icon {
+    background-position: -816px 0px;
+}
 .dropdowns {
     margin-left: auto;
     margin-right: auto;

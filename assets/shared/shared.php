@@ -108,6 +108,7 @@ function navbar(string $page) {
                 $navbar .= '<p><a href="gensokyo"><span class="icon gensokyo_icon"></span> Archive</a></p>';
                 $navbar .= '<p><a href="pofv"><span class="icon pofv_icon"></span> PoFV</a></p>';
                 $navbar .= '<p><a href="twc"><span class="icon twc_icon"></span> TWC</a></p>';
+                $navbar .= '<p><a href="trs"><span class="icon trs_icon"></span> TRS</a></p>';
             $navbar .= '</div>';
         $navbar .= '</div> ';
         $navbar .= '<div class="dropdown">';
