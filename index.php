@@ -15,7 +15,7 @@
         <link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=index'>
 		<link rel='icon' type='image/x-icon' href='favicon.ico'>
-        <script src='assets/shared/js_concat.php' defer></script>
+        <script src='assets/shared/js_concat.php?page=index' defer></script>
     </head>
 
     <body>
@@ -88,6 +88,11 @@
                                 including but not limited to common acronyms for Spell Cards.</span>
                             </p>
                             <p class='link'>
+                                <a href='trs'><span class='icon trs_icon'></span>
+                                Touhou Replay Showcase</a>
+                                <span class='tooltip'>Read about the weekly Touhou Replay Showcase Twitch streams.</span>
+                            </p>
+                            <p class='link'>
                                 <a href='gensokyo'><span class='icon gensokyo_icon'></span>
                                 Gensokyo Replay Archive</a>
                                 <span class='tooltip'>A complete archive of the replays from replays.gensokyo.org.</span>
@@ -107,9 +112,9 @@
                                 <span class='tooltip'>Main webpage for Touhou World Cup, containing the schedule, rules and other relevant information.</span>
                             </p>
                             <p class='link'>
-                                <a href='trs'><span class='icon trs_icon'></span>
-                                Touhou Replay Showcase</a>
-                                <span class='tooltip'>Read about the weekly Touhou Replay Showcase Twitch streams.</span>
+                                <a href='fangame'><span class='icon fangame_icon'></span>
+                                Fangame Accomplishments</a>
+                                <span class='tooltip'>Notable accomplishments in Touhou fangames and Touhou-related games, including both LNNs and score runs.</span>
                             </p>
                         </div>
                     </div>
