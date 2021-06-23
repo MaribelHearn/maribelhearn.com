@@ -712,7 +712,7 @@
 	                    <td>VIVIT-C</td>
 	                    <td><strong><u>614,467,900</u></strong><br>by <em>Starshine</em></td>
 	                    <td>13 September 2019</td>
-	                    <td><a href='https://cdn.discordapp.com/attachments/345311803393310721/622179719093288960/Screenshot_2019-09-13_15-19-49.png'>Screenshot</a></td>
+	                    <td><a href='https://www.youtube.com/watch?v=QuC_XwimX7A'>Video</a></td>
 	                </tr><tr>
 	                    <td>Lunatic</td>
 	                    <td>VIVIT-C</td>
@@ -734,11 +734,36 @@
 						<td>27 October 2019</td>
 						<td><a href='https://www.youtube.com/watch?v=_knC-Mn9Onw'>Video</a></td>
 					</tr><tr>
+						<td>VIVIT</td>
+						<td><u>11,910,350</u><br>by <em>Senora Papaya</em></td>
+						<td>6 March 2021</td>
+						<td><a href='https://www.youtube.com/watch?v=wGP0jzm_Xm0'>Video</a></td>
+					</tr><tr>
 	                    <td>VIVIT</td>
-	                    <td><u>8,074,490</u><br>by <em>Zigzagwolf</em></td>
+	                    <td>8,074,490<br>by <em>Zigzagwolf</em></td>
 	                    <td>1 October 2016</td>
 	                    <td><a href='https://www.youtube.com/watch?v=dhlwHyF8yqY'>Video</a></td>
-	                </tr>
+	                </tr><tr>
+	                    <td>Gates</td>
+	                    <td><u>9,463,930</u><br>by <em>Senora Papaya</em></td>
+	                    <td>11 August 2020</td>
+						<td><a href='https://www.youtube.com/watch?v=cMikTTjYmTg'>Video</a></td>
+					</tr><tr>
+	                    <td>Mei and Mai</td>
+	                    <td><u>9,084,670</u><br>by <em>Senora Papaya</em></td>
+	                    <td>9 October 2020</td>
+						<td><a href='https://www.youtube.com/watch?v=v4GKuPz7vHU'>Video</a></td>
+					</tr><tr>
+	                    <td>Marie</td>
+	                    <td><u>8,444,670</u><br>by <em>Senora Papaya</em></td>
+	                    <td>3 January 2021</td>
+						<td><a href='https://www.youtube.com/watch?v=7QFytfKP7r8'>Video</a></td>
+					</tr><tr>
+	                    <td>Muse</td>
+	                    <td><u>7,369,000</u><br>by <em>Senora Papaya</em></td>
+	                    <td>11 October 2020</td>
+						<td><a href='https://www.youtube.com/watch?v=t5yqWKTT2Os'>Video</a></td>
+					</tr>
 	            </table>
 	        	<p><span class='fangame bsr'></span> Seihou 3 - Banshiryuu (C67 version)</p>
 	            <table class='sortable'>
