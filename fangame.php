@@ -610,7 +610,7 @@
 						<td><a href='https://www.youtube.com/watch?v=GAYmbKeVZE8'>Video</a></td>
 					</tr>
 				</table>
-				<p><span class='fangame eios'></span> Elegant Impertinence of Sakura</p>
+				<p><span class='fangame eios'></span> Elegant Impermanence of Sakura</p>
 				<table class='sortable'>
 					<tr>
 	                    <th class='difficulty'>Difficulty</th>
