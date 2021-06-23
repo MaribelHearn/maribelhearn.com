@@ -11,7 +11,7 @@
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
 		<meta name='description' content='List of accomplishments for fanmade Touhou shooting games as well as Touhou-related or Touhou-inspired ones. Includes both notable score runs as well as LNNs (no miss no bomb).'>
-        <meta name='keywords' content='touhou, touhou project, 東方, 东方, fangame, fangames, fanmade, seihou, 西方, scores, high scores, scoring'>
+        <meta name='keywords' content='touhou, touhou project, 東方, 东方, fangame, fangames, fanmade, lnn, seihou, 西方, scores, high scores, scoring'>
 		<link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=fangame'>
 		<link rel='icon' type='image/x-icon' href='assets/fangame/fangame.png'>
