@@ -130,6 +130,12 @@ a:visited.dropdown_button {
 .trs_icon {
     background-position: -816px 0px;
 }
+.fangame_icon {
+    background-position: -832px 0px;
+}
+.wiki_icon {
+    background-position: -848px 0px;
+}
 .dropdowns {
     margin-left: auto;
     margin-right: auto;

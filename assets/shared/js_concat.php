@@ -9,8 +9,8 @@ function is_localhost(string $addr) {
     return $addr == '::1' || $addr == '127.0.0.1' || substr($addr, 0, 8) == '192.168.';
 }
 $min = (!is_localhost($_SERVER['REMOTE_ADDR']) ? '-min' : '');
+$sorttable = array('drc', 'fangame', 'gensokyo', 'lnn', 'scoring', 'survival', 'thvote', 'wr');
 $jquery = array('drc', 'lnn', 'pofv', 'scoring', 'slots', 'survival', 'tiers', 'twc', 'wr');
-$sorttable = array('drc', 'gensokyo', 'lnn', 'scoring', 'survival', 'thvote', 'wr');
 $utils = array('drc', 'lnn', 'pofv', 'tiers', 'twc', 'wr');
 $canvas = array('slots', 'survival', 'tiers');
 $page = $_GET['page'];

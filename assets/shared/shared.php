@@ -58,6 +58,8 @@ function navbar(string $page) {
         $navbar .= '<div class="dropdown">';
             $navbar .= '<a href="#" class="dropdown_button">Touhou Sites&#x25BF;</a>';
             $navbar .= '<div class="dropdown_content dropdown_right' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
+                $navbar .= '<p><a href="https://en.touhouwiki.net">' .
+                '<span class="icon wiki_icon"></span>Touhou Wiki</a></p>';
                 $navbar .= '<p><a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page">' .
                 '<span class="icon thcrap_icon"></span>THPatch</a></p>';
                 $navbar .= '<p><a href="http://replay.lunarcast.net">' .
@@ -105,10 +107,11 @@ function navbar(string $page) {
                 $navbar .= '<p><a href="wr"><span class="icon wr_icon"></span> WR</a></p>';
                 $navbar .= '<p><a href="lnn"><span class="icon lnn_icon"></span> LNN</a></p>';
                 $navbar .= '<p><a href="jargon"><span class="icon jargon_icon"></span> Jargon</a></p>';
+                $navbar .= '<p><a href="trs"><span class="icon trs_icon"></span> TRS</a></p>';
                 $navbar .= '<p><a href="gensokyo"><span class="icon gensokyo_icon"></span> Archive</a></p>';
                 $navbar .= '<p><a href="pofv"><span class="icon pofv_icon"></span> PoFV</a></p>';
                 $navbar .= '<p><a href="twc"><span class="icon twc_icon"></span> TWC</a></p>';
-                $navbar .= '<p><a href="trs"><span class="icon trs_icon"></span> TRS</a></p>';
+                $navbar .= '<p><a href="fangame"><span class="icon fangame_icon"></span> Fangame</a></p>';
             $navbar .= '</div>';
         $navbar .= '</div> ';
         $navbar .= '<div class="dropdown">';
@@ -130,6 +133,8 @@ function navbar(string $page) {
             $navbar .= '<div class="dropdown">';
                 $navbar .= '<a href="#" class="dropdown_button">Touhou Sites&#x25BF;</a>';
                 $navbar .= '<div class="dropdown_content dropdown_right' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
+                    $navbar .= '<p><a href="https://en.touhouwiki.net">' .
+                    '<span class="icon wiki_icon"></span>Touhou Wiki</a></p>';
                     $navbar .= '<p><a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page">' .
                     '<span class="icon thcrap_icon"></span>THPatch</a></p>';
                     $navbar .= '<p><a href="http://replay.lunarcast.net">' .
