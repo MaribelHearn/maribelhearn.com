@@ -69,7 +69,7 @@
 						<td>DarkPermafrost</td>
 						<td>Sanae</td>
 						<td>3,995,013,640</td>
-						<td>1 January 2019</td>
+						<td>30 January 2019</td>
 						<td><a href='https://cdn.discordapp.com/attachments/175267714904883200/540134437212520458/thSSS_24.rpy'>Replay</a><br>
 						<a href='https://www.youtube.com/watch?v=Po8j8fqmsQY'>Video</a></td>
 					</tr><tr>
@@ -177,7 +177,8 @@
 						<td>1.05</td>
 						<td>1,633,333,410</td>
 						<td>6 February 2019</td>
-						<td><a href='https://www.youtube.com/watch?v=9GvQe8pdhVg'>Video</a></td>
+						<td><a href='https://cdn.discordapp.com/attachments/229569755344928768/857279171978068028/thmhj_10.rpy'>Replay<br>
+						<a href='https://www.youtube.com/watch?v=9GvQe8pdhVg'>Video</a></td>
 					</tr><tr>
 						<td>CreepyNinja</td>
 						<td>Marisa</td>
@@ -334,7 +335,8 @@
 						<td>ReimuB</td>
 						<td>20,724,198,480</td>
 						<td>5 November 2019</td>
-						<td><a href='https://www.youtube.com/watch?v=WDx-WbUOFO4&t=0s'>Video</a></td>
+						<td><a href='https://cdn.discordapp.com/attachments/229569755344928768/857279695740338225/Main_replay70.dat'>Replay</a><br>
+						<a href='https://www.youtube.com/watch?v=WDx-WbUOFO4&t=0s'>Video</a></td>
 					</tr>
 				</table>
 				<p><span class='fangame gods'></span> Glory of Deep Skies (No Elemental Burst, Full Spell)</p>
@@ -350,7 +352,8 @@
 						<td>ReimuB</td>
 						<td>457,145,370</td>
 						<td>10 October 2019</td>
-						<td><a href='https://www.youtube.com/watch?v=nz4ZpqsyoKM'>Video</a></td>
+						<td><a href='https://cdn.discordapp.com/attachments/229569755344928768/857279863279190016/Package_replay10.dat'>Replay</a><br>
+						<a href='https://www.youtube.com/watch?v=nz4ZpqsyoKM'>Video</a></td>
 					</tr>
 				</table>
 				<p><span class='fangame rss'></span> Riverbed Soul Saver (No Hyper)</p>
@@ -366,7 +369,8 @@
 						<td>FutoB</td>
 						<td>10,340,653,140</td>
 						<td>23 February 2020</td>
-						<td><a href='https://www.youtube.com/watch?v=GikbAJLP0UM'>Video</a></td>
+						<td><a href='https://cdn.discordapp.com/attachments/229569755344928768/857280067289874432/Package_replay14.dat'>Replay</a><br>
+						<a href='https://www.youtube.com/watch?v=GikbAJLP0UM'>Video</a></td>
 					</tr>
 				</table>
 				<p><span class='fangame rss'></span> Riverbed Soul Saver Overdrive (No Hyper)</p>
@@ -405,6 +409,22 @@
 						<td>3,422,339,570</td>
 						<td>5 October 2020</td>
 						<td><a href='https://www.youtube.com/watch?v=3-l_gWYCakA'>Video</a></td>
+					</tr>
+				</table>
+				<p><span class='fangame bm'></span> Barrage Musical</p>
+				<table class='sortable'>
+					<tr>
+						<th class='player'>Player</th>
+						<th class='shottype'>Shottype</th>
+						<th class='sorttable_numeric'>Score</th>
+						<th class='date'>Date</th>
+						<th class='source'>Source</th>
+					</tr><tr>
+						<td>HNY</td>
+						<td>MistyB</td>
+						<td>19,206,981,440</td>
+						<td>22 September 2017</td>
+						<td><a href='https://www.bilibili.com/video/BV1xx411u7Yz'>Video</a></td>
 					</tr>
 				</table>
 				<h2 id='scores'>Notable Scores</h2>
@@ -486,6 +506,24 @@
 	                    <th class='date'>Date</th>
 	                    <th class='source'>Source</th>
 	                </tr><tr>
+						<td>Easy</td>
+						<td>Reimu</td>
+						<td><u>21,372,820,800</u><br>by <em>LYX</em></td>
+						<td>22 November 2019</td>
+						<td><a href='https://www.bilibili.com/video/BV18J41117VQ'>Video</a></td>
+					</tr><tr>
+						<td>Normal</td>
+						<td>Marisa</td>
+						<td><u>29,279,007,010</u><br>by <em>LYX</em></td>
+						<td>22 November 2019</td>
+						<td><a href='https://www.bilibili.com/video/BV1HJ41117Rm'>Video</a></td>
+					</tr><tr>
+						<td>Hard</td>
+						<td>Sanae</td>
+						<td><u>35,987,665,340</u><br>by <em>LYX</em></td>
+						<td>22 November 2019</td>
+						<td><a href='https://www.bilibili.com/video/BV1sJ41117sC'>Video</a></td>
+					</tr><tr>
 						<td>Lunatic</td>
 						<td>Reimu</td>
 						<td><u><strong>42,733,440,570</strong></u><br>by <em>sogo omiya</em></td>
@@ -510,35 +548,17 @@
 						<td>7 September 2019</td>
 						<td><a href='https://www.bilibili.com/video/BV1r4411k7JM'>Video</a></td>
 					</tr><tr>
-						<td>Hard</td>
-						<td>Sanae</td>
-						<td><u>35,987,665,340</u><br>by <em>LYX</em></td>
-						<td>22 November 2019</td>
-						<td><a href='https://www.bilibili.com/video/BV1sJ41117sC'>Video</a></td>
-					</tr><tr>
-						<td>Normal</td>
+						<td>Extra</td>
 						<td>Marisa</td>
-						<td><u>29,279,007,010</u><br>by <em>LYX</em></td>
-						<td>22 November 2019</td>
-						<td><a href='https://www.bilibili.com/video/BV1HJ41117Rm'>Video</a></td>
-					</tr><tr>
-						<td>Easy</td>
-						<td>Reimu</td>
-						<td><u>21,372,820,800</u><br>by <em>LYX</em></td>
-						<td>22 November 2019</td>
-						<td><a href='https://www.bilibili.com/video/BV18J41117VQ'>Video</a></td>
+						<td><u>8,360,481,850</u><br>by <em>LYX</em></td>
+						<td>21 August 2019</td>
+						<td><a href='https://www.bilibili.com/video/BV1t441197Rb'>Video</a></td>
 					</tr><tr>
 						<td>Phantasm</td>
 						<td>Youmu</td>
 						<td><u>9,000,906,610</u><br>by <em>LYX</em></td>
 						<td>21 August 2019</td>
 						<td><a href='https://www.bilibili.com/video/BV14441197Hi'>Video</a></td>
-					</tr><tr>
-						<td>Extra</td>
-						<td>Marisa</td>
-						<td><u>8,360,481,850</u><br>by <em>LYX</em></td>
-						<td>21 August 2019</td>
-						<td><a href='https://www.bilibili.com/video/BV1t441197Rb'>Video</a></td>
 					</tr>
 				</table>
 				<p><span class='fangame hsob'></span> Hollow Song of Birds</p>
@@ -551,7 +571,7 @@
 	                    <th class='source'>Source</th>
 	                </tr><tr>
 						<td>Lunatic</td>
-						<td>SakuyaBlue</td>
+						<td>SakuyaPurple</td>
 						<td><u><strong>55,169,742,690</strong></u><br>by <em>LIDERA</em></td>
 						<td>3 March 2019</td>
 						<td><a href='https://www.nicovideo.jp/watch/sm34720492'>Video</a></td>
@@ -619,17 +639,11 @@
 	                    <th class='date'>Date</th>
 	                    <th class='source'>Source</th>
 	                </tr><tr>
-						<td>Lunatic</td>
-						<td>Mokou &amp; Keine</td>
-						<td><u><strong>29,569,674,680</strong></u><br>by <em>LYX</em></td>
-						<td>29 August 2020</td>
-						<td><a href='https://www.bilibili.com/video/BV1xh411R7HK'>Video</a></td>
-					</tr><tr>
-						<td>Hard</td>
-						<td>Mokou &amp; Keine</td>
-						<td><u>23,332,866,690</u><br>by <em>LYX</em></td>
-						<td>2 July 2020</td>
-						<td><a href='https://www.bilibili.com/video/BV1Zk4y1z731'>Video</a></td>
+						<td>Easy</td>
+						<td>Marisa &amp; Yuyuko</td>
+						<td><u>16,446,817,420</u><br>by <em>LYX</em></td>
+						<td>2 June 2020</td>
+						<td><a href='https://www.bilibili.com/video/BV1Sg4y1i77d'>Video</a></td>
 					</tr><tr>
 						<td>Normal</td>
 						<td>Mokou &amp; Keine</td>
@@ -637,11 +651,17 @@
 						<td>16 June 2020</td>
 						<td><a href='https://www.bilibili.com/video/BV1Xt4y1X72f'>Video</a></td>
 					</tr><tr>
-						<td>Easy</td>
-						<td>Marisa &amp; Yuyuko</td>
-						<td><u>16,446,817,420</u><br>by <em>LYX</em></td>
-						<td>2 June 2020</td>
-						<td><a href='https://www.bilibili.com/video/BV1Sg4y1i77d'>Video</a></td>
+						<td>Hard</td>
+						<td>Mokou &amp; Keine</td>
+						<td><u>23,332,866,690</u><br>by <em>LYX</em></td>
+						<td>2 July 2020</td>
+						<td><a href='https://www.bilibili.com/video/BV1Zk4y1z731'>Video</a></td>
+					</tr><tr>
+						<td>Lunatic</td>
+						<td>Mokou &amp; Keine</td>
+						<td><u><strong>29,569,674,680</strong></u><br>by <em>LYX</em></td>
+						<td>29 August 2020</td>
+						<td><a href='https://www.bilibili.com/video/BV1xh411R7HK'>Video</a></td>
 					</tr><tr>
 						<td>Extra</td>
 						<td>Mokou &amp; Keine</td>
@@ -750,6 +770,16 @@
 	                    <th class='date'>Date</th>
 	                    <th class='source'>Source</th>
 	                </tr><tr>
+						<td>Maingame</td>
+						<td><u>49,426,402</u><br>by <em>nonokuro</em></td>
+						<td>4 January 2006</td>
+						<td><a href='https://www.youtube.com/watch?v=XB4AuLZAmEk'>Video</td>
+					</tr><tr>
+						<td>Maingame</td>
+						<td>46,815,936<br>by <em>Maribel Hearn</em></td>
+						<td>9 December 2017</td>
+						<td><a href='https://www.youtube.com/watch?v=V0-Vb1TX7V8'>Video</a></td>
+					</tr><tr>
 	                    <td>Extra</td>
 	                    <td><strong><u>294,204,460</u></strong><br>by <em>Maribel Hearn</em></td>
 						<td>17 November 2017</td>
@@ -779,16 +809,6 @@
 						<td>244,718,310<br>by <em>NULLPO</em></td>
 						<td>1 February 2005</td>
 	                    <td>-</td>
-					</tr><tr>
-						<td>Maingame</td>
-						<td><u>49,426,402</u><br>by <em>nonokuro</em></td>
-						<td>4 January 2006</td>
-						<td><a href='https://www.youtube.com/watch?v=XB4AuLZAmEk'>Video</td>
-					</tr><tr>
-						<td>Maingame</td>
-						<td>46,815,936<br>by <em>Maribel Hearn</em></td>
-						<td>9 December 2017</td>
-						<td><a href='https://www.youtube.com/watch?v=V0-Vb1TX7V8'>Video</a></td>
 					</tr>
 	            </table>
 	        	<p><span class='fangame mrs'></span> Mrs. Estacion</p>
@@ -800,18 +820,18 @@
 	                    <th class='date'>Date</th>
 	                    <th class='source'>Source</th>
 	                </tr><tr>
-						<td>Normal</td>
-						<td>HimekaB</td>
-	                    <td><strong><u>813,055,575,838</u></strong><br>by <em>Tabris</em></td>
-						<td>27 July 2010</td>
-	                    <td><a href='http://www.nicovideo.jp/watch/sm11528998'>Video</a></td>
-					</tr><tr>
 	                    <td>Easy</td>
 	                    <td>HimekaB</td>
 	                    <td><u>348,933,504,628</u><br>by <em>Maribel Hearn</em></td>
 						<td>11 January 2018</td>
 	                    <td><a href='https://www.youtube.com/watch?v=9gCZ_RilU40'>Video</a></td>
 	                </tr><tr>
+						<td>Normal</td>
+						<td>HimekaB</td>
+	                    <td><strong><u>813,055,575,838</u></strong><br>by <em>Tabris</em></td>
+						<td>27 July 2010</td>
+	                    <td><a href='http://www.nicovideo.jp/watch/sm11528998'>Video</a></td>
+					</tr><tr>
 						<td>Special</td>
 						<td>HimekaB</td>
 						<td><u>114,994,208,403</u><br>by <em>Maribel Hearn</em></td>
