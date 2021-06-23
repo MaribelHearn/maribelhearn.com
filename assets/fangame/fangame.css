@@ -210,6 +210,11 @@ table, th, td {
         margin-right: 0;
     }
 }
+@media only screen and (max-width: 800px) and (orientation: portrait) {
+    table {
+        font-size: 8px;
+    }
+}
 @media only screen and (((min-width: 320px) and (max-width: 800px) and (orientation: portrait)) or ((min-width: 480px) and (max-width: 640px) and (orientation: landscape))) {
     h1 {
         font-size: 36px;
