@@ -230,6 +230,18 @@
 						<td>16,410,120,970</td>
 						<td>6 May 2019</td>
 						<td><a href='https://www.bilibili.com/video/av51649165'>Video</a></td>
+					</tr><tr>
+						<td>Seiko</td>
+						<td>Youmu</td>
+						<td>15,896,422,930</td>
+						<td>-</td>
+						<td><a href='https://www.bilibili.com/video/av74628342' class='dead'>Video</a></td>
+					</tr><tr>
+						<td>DarkPermafrost</td>
+						<td>Youmu</td>
+						<td>13,460,164,050</td>
+						<td>6 March 2020</td>
+						<td><a href='https://www.youtube.com/watch?v=vCxVc8SxGC8'>Video</a></td>
 					</tr>
 				</table>
 				<p><span class='fangame tfs'></span> The Flower Shooter</p>
