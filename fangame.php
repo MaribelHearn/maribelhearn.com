@@ -73,7 +73,7 @@
 						<td><a href='https://cdn.discordapp.com/attachments/175267714904883200/540134437212520458/thSSS_24.rpy'>Replay</a><br>
 						<a href='https://www.youtube.com/watch?v=Po8j8fqmsQY'>Video</a></td>
 					</tr><tr>
-						<td>4411022</td>
+						<td>411022</td>
 						<td>Sanae</td>
 						<td>3,532,814,310</td>
 						<td>8 July 2020</td>
@@ -115,7 +115,7 @@
 						<td>ReimuA</td>
 						<td>342,936,850</td>
 						<td>9 May 2018</td>
-						<td><a href='https://www.bilibili.com/video/av18002342'>Video (Lap 2)</a></td>
+						<td><a href='https://www.bilibili.com/video/av23202659'>Video (Lap 2)</a></td>
 					</tr>
 				</table>
 				<p><span class='fangame fos'></span> Fairies of Sorcery (No Burst)</p>
@@ -131,7 +131,7 @@
 						<td>MarisaD</td>
 						<td>1,283,711,976</td>
 						<td>29 April 2018</td>
-						<td><a href='https://www.bilibili.com/video/av18002342'>Video</a></td>
+						<td><a href='https://www.bilibili.com/video/av22709326'>Video</a></td>
 					</tr>
 				</table>
 				<p><span class='fangame fdf'></span> Fantastic Danmaku Festival</p>
@@ -286,7 +286,8 @@
 						<td>KaguyaBlue</td>
 						<td>5,525,596,490</td>
 						<td>21 March 2020</td>
-						<td><a href='https://www.youtube.com/watch?v=0XhWfIpLLkQ'>Video</a></td>
+						<td><a href='https://cdn.discordapp.com/attachments/704137913654444042/857385919492784148/LNNN.dat'>Replay</a><br>
+						<a href='https://www.youtube.com/watch?v=0XhWfIpLLkQ'>Video</a></td>
 					</tr>
 				</table>
 				<p><span class='fangame mpp'></span> Mystical Power Plant</p>
@@ -389,7 +390,7 @@
 						<td><a href='https://www.bilibili.com/video/av2400519'>Video</a></td>
 					</tr>
 				</table>
-				<p><span class='fangame ibp'></span> Infinite Blade Pavilion</p>
+				<p><span class='fangame ibp'></span> Infinite Blade Pavilion (No Special Attack)</p>
 				<table class='sortable'>
 					<tr>
 						<th class='player'>Player</th>
@@ -408,9 +409,11 @@
 						<td>YoumuA</td>
 						<td>3,422,339,570</td>
 						<td>5 October 2020</td>
-						<td><a href='https://www.youtube.com/watch?v=3-l_gWYCakA'>Video</a></td>
+						<td><a href='https://cdn.discordapp.com/attachments/704137913654444042/857376310337732608/Th_IBP_replay02.dat'>Replay</a><br>
+						<a href='https://www.youtube.com/watch?v=3-l_gWYCakA'>Video</a></td>
 					</tr>
 				</table>
+				<h3 class='related'>Related Games</h3>
 				<p><span class='fangame bm'></span> Barrage Musical</p>
 				<table class='sortable'>
 					<tr>
@@ -555,8 +558,14 @@
 						<td><a href='https://www.bilibili.com/video/BV1t441197Rb'>Video</a></td>
 					</tr><tr>
 						<td>Phantasm</td>
+						<td>Sanae</td>
+						<td><u>9,751,569,330</u><br>by <em>411022</em></td>
+						<td>7 September 2019</td>
+						<td><a href='https://www.bilibili.com/video/BV1d4411k7Uq'>Video</a></td>
+					</tr><tr>
+						<td>Phantasm</td>
 						<td>Youmu</td>
-						<td><u>9,000,906,610</u><br>by <em>LYX</em></td>
+						<td>9,000,906,610<br>by <em>LYX</em></td>
 						<td>21 August 2019</td>
 						<td><a href='https://www.bilibili.com/video/BV14441197Hi'>Video</a></td>
 					</tr>
