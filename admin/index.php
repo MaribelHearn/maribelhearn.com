@@ -30,7 +30,7 @@
         $cache = (object) array();
     }
     $flag_url = 'https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/16/';
-    $key = str_replace(array("\r", "\n"), '', file_get_contents('../stats/key'));
+    $key = str_replace(array("\r", "\n"), '', file_get_contents('../.stats/key'));
 ?>
 
     <head>
@@ -67,7 +67,9 @@
                             echo '<p><strong>' . $page . '</strong> ' . $obj->hits . '</p>';
                             foreach ($obj->ips as $ip => $count) {
                                 if (!property_exists($cache, $ip)) {
-                                    $json = file_get_contents('http://api.ipinfodb.com/v3/ip-city/?key=' . $key . '&ip=' . $ip . '&format=json');
+                                    $url = 'http://api.ipinfodb.com/v3/ip-city/?key=' . $key . '&ip=' . $ip . '&format=json';
+                                    var_dump($url);
+                                    $json = file_get_contents($url);
                                     $data = json_decode($json, true);
                                     $data = (object) $data;
                                     $cache->{$ip} = $data->countryName;
@@ -91,8 +93,12 @@
                             }
                         }
                         foreach ($countries as $country => $count) {
-                            echo '<p><strong><img src="' . $flag_url . $country . '-Flag-icon.png" alt="Flag of ' . $country .
-                            '"> ' . $country . '</strong> ' . $count . '</p>';
+                            if ($country == '-') {
+                                echo '<p><strong>local</strong> ' . $count . '</p>';
+                            } else {
+                                echo '<p><strong><img src="' . $flag_url . $country . '-Flag-icon.png" alt="Flag of ' . $country .
+                                '"> ' . $country . '</strong> ' . $count . '</p>';
+                            }
                         }
                         foreach ($new_entries as $key => $entry) {
                             echo '<p>Cached ' . $entry . '</p>';
