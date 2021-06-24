@@ -30,6 +30,7 @@
         $cache = (object) array();
     }
     $flag_url = 'https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/16/';
+    $key = file_get_contents('../stats/key');
 ?>
 
     <head>
