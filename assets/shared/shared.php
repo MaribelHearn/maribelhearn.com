@@ -8,12 +8,16 @@ function hit(string $filename) {
         if (!empty($_SERVER['HTTP_USER_AGENT']) && preg_match('~(bot|crawl|slurp|spider|archiver|facebook|lighthouse|jigsaw|validator|w3c|hexometer)~i', $_SERVER['HTTP_USER_AGENT'])) {
             return;
         }
+        $ip = $_SERVER['REMOTE_ADDR'];
         $token = trim(file_get_contents($path . 'token'));
-        if (!is_localhost($_SERVER['REMOTE_ADDR']) &&!isset($_COOKIE['token']) ||$_COOKIE['token'] !== $token) {
+        if (is_localhost($ip) || !isset($_COOKIE['token']) || $_COOKIE['token'] !== $token) {
             $page = str_replace('.php', '', $filename);
             $hitcount = $path . date('d-m-Y') . '.json';
             if (!file_exists($hitcount)) {
-                $stats = array($page => 1);
+                $stats = array($page => (object) array());
+                $stats[$page]->hits = 1;
+                $stats[$page]->ips = (object) array();
+                $stats[$page]->ips->{$ip} = 1;
                 $file = fopen($hitcount, 'w');
                 if (flock($file, LOCK_EX)) {
                     fwrite($file, json_encode($stats));
@@ -26,9 +30,19 @@ function hit(string $filename) {
                     $json = trim($json);
                     $stats = json_decode($json, true);
                     if (isset($stats[$page])) {
-                        $stats[$page] += 1;
+                        $stats[$page] = (object) $stats[$page];
+                        $stats[$page]->hits += 1;
+                        $stats[$page]->ips = (object) $stats[$page]->ips;
+                        if (property_exists($stats[$page]->ips, $ip)) {
+                            $stats[$page]->ips->{$ip} += 1;
+                        } else {
+                            $stats[$page]->ips->{$ip} = 1;
+                        }
                     } else {
-                        $stats[$page] = 1;
+                        $stats[$page] = (object) array();
+                        $stats[$page]->hits = 1;
+                        $stats[$page]->ips = (object) array();
+                        $stats[$page]->ips->{$ip} = 1;
                     }
                     ftruncate($file, 0);
                     rewind($file);
