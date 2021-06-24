@@ -31,6 +31,17 @@
     }
     $flag_url = 'https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/16/';
     $key = str_replace(array("\r", "\n"), '', file_get_contents('../.stats/key'));
+    function format_country(string $country) {
+        switch ($country) {
+            case 'United States of America':
+                $country = 'United States';
+                break;
+            case 'United Kingdom of Great Britain and Northern ':
+                $country = 'United Kingdom';
+                break;
+        }
+        return str_replace(' ', '-', $country);
+    }
 ?>
 
     <head>
@@ -72,7 +83,7 @@
                                     $json = file_get_contents($url);
                                     $data = json_decode($json, true);
                                     $data = (object) $data;
-                                    $cache->{$ip} = $data->countryName;
+                                    $cache->{$ip} = format_country($data->countryName);
                                     $file = fopen($cache_file, 'w');
                                     fwrite($file, json_encode($cache));
                                     array_push($new_entries, $ip);
