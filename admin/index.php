@@ -106,8 +106,9 @@
                                 echo '<p><strong><picture><source srcset="' . $flag_url . str_replace(' ', '-', $country) .
                                 '-Flag-icon.png" alt="Flag of ' . $country .
                                 '"><source srcset="' . $flag_url . str_replace(' ', '-', $country) .
-                                '-flag-icon.png" alt="Flag of ' . $country . '"></picture> ' . $country .
-                                '</strong> ' . $count . '</p>';
+                                '-flag-icon.png" alt="Flag of ' . $country .
+                                '"><img src="' . $flag_url . str_replace(' ', '-', $country) .
+                                '-Flag-icon.png"></picture> ' . $country . '</strong> ' . $count . '</p>';
                             }
                         }
                         foreach ($new_entries as $key => $entry) {
