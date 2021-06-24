@@ -33,14 +33,10 @@
     $key = str_replace(array("\r", "\n"), '', file_get_contents('../.stats/key'));
     function format_country(string $country) {
         switch ($country) {
-            case 'United States of America':
-                $country = 'United States';
-                break;
-            case 'United Kingdom of Great Britain and Northern ':
-                $country = 'United Kingdom';
-                break;
+            case 'United States of America': return 'United States';
+            case 'United Kingdom of Great Britain and Northern ': return 'United Kingdom';
+            default: return $country;
         }
-        return str_replace(' ', '-', $country);
     }
 ?>
 
@@ -107,8 +103,8 @@
                             if ($country == '-') {
                                 echo '<p><strong>local</strong> ' . $count . '</p>';
                             } else {
-                                echo '<p><strong><img src="' . $flag_url . $country . '-Flag-icon.png" alt="Flag of ' . $country .
-                                '"> ' . $country . '</strong> ' . $count . '</p>';
+                                echo '<p><strong><img src="' . $flag_url . str_replace(' ', '-', $country) .
+                                '-Flag-icon.png" alt="Flag of ' . $country . '"> ' . $country . '</strong> ' . $count . '</p>';
                             }
                         }
                         foreach ($new_entries as $key => $entry) {
