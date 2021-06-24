@@ -30,7 +30,7 @@
         $cache = (object) array();
     }
     $flag_url = 'https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/16/';
-    $key = file_get_contents('../stats/key');
+    $key = str_replace(array("\r", "\n"), '', file_get_contents('../stats/key'));
 ?>
 
     <head>
@@ -92,7 +92,7 @@
                         }
                         foreach ($countries as $country => $count) {
                             echo '<p><strong><img src="' . $flag_url . $country . '-Flag-icon.png" alt="Flag of ' . $country .
-                            '">' . $country . '</strong> ' . $count . '</p>';
+                            '"> ' . $country . '</strong> ' . $count . '</p>';
                         }
                         foreach ($new_entries as $key => $entry) {
                             echo '<p>Cached ' . $entry . '</p>';
