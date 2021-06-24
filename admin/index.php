@@ -19,6 +19,17 @@
     } else {
         $hitcount = 'empty';
     }
+    $new_entries = array();
+    $ip_count = (object) array();
+    $countries = (object) array();
+    $cache_file = '../.stats/cache';
+    if (file_exists($cache_file)) {
+        $json = file_get_contents($cache_file);
+        $cache = (object) json_decode($json, true);
+    } else {
+        $cache = (object) array();
+    }
+    $key = 'bf3c53647915de953d6124875a4c485de54a29a7b62acdccb1043ad828b55113';
 ?>
 
     <head>
@@ -50,8 +61,39 @@
                         echo '<p class="wide">No stats for today yet.</p>';
                     } else {
                         echo '<h2>Page Hits</h2>';
-                        foreach ($stats as $key => $value) {
-                            echo '<p><strong>' . $key . '</strong> ' . $value . '</p>';
+                        foreach ($stats as $page => $obj) {
+                            $obj = (object) $obj;
+                            echo '<p><strong>' . $page . '</strong> ' . $obj->hits . '</p>';
+                            foreach ($obj->ips as $ip => $count) {
+                                if (!property_exists($cache, $ip)) {
+                                    $json = file_get_contents('http://api.ipinfodb.com/v3/ip-city/?key=' . $key . '&ip=' . $ip . '&format=json');
+                                    $data = json_decode($json, true);
+                                    $data = (object) $data;
+                                    $cache->{$ip} = $data->countryCode;
+                                    $file = fopen($cache_file, 'w');
+                                    fwrite($file, json_encode($cache));
+                                    array_push($new_entries, $ip);
+                                } else if (!property_exists($ip_count, $ip)) {
+                                    $ip_count->{$ip} = $count;
+                                } else {
+                                    $ip_count->{$ip} += $count;
+                                }
+                            }
+                        }
+                        echo '<h2>Countries</h2>';
+                        foreach ($ip_count as $ip => $count) {
+                            $country = $cache->{$ip};
+                            if (!property_exists($countries, $country)) {
+                                $countries->{$country} = $count;
+                            } else {
+                                $countries->{$country} += $count;
+                            }
+                        }
+                        foreach ($countries as $country => $count) {
+                            echo '<p><strong>' . $country . '</strong> ' . $count . '</p>';
+                        }
+                        foreach ($new_entries as $key => $entry) {
+                            echo '<p>Cached ' . $entry . '</p>';
                         }
                     }
                 ?>
