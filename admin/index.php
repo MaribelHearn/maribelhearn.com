@@ -103,8 +103,11 @@
                             if ($country == '-') {
                                 echo '<p><strong>local</strong> ' . $count . '</p>';
                             } else {
-                                echo '<p><strong><img src="' . $flag_url . str_replace(' ', '-', $country) .
-                                '-Flag-icon.png" alt="Flag of ' . $country . '"> ' . $country . '</strong> ' . $count . '</p>';
+                                echo '<p><strong><picture><source srcset="' . $flag_url . str_replace(' ', '-', $country) .
+                                '-Flag-icon.png" alt="Flag of ' . $country .
+                                '"><source srcset="' . $flag_url . str_replace(' ', '-', $country) .
+                                '-flag-icon.png" alt="Flag of ' . $country . '"></picture> ' . $country .
+                                '</strong> ' . $count . '</p>';
                             }
                         }
                         foreach ($new_entries as $key => $entry) {
