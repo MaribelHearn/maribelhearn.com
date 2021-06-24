@@ -29,7 +29,7 @@
     } else {
         $cache = (object) array();
     }
-    $key = 'bf3c53647915de953d6124875a4c485de54a29a7b62acdccb1043ad828b55113';
+    $flag_url = 'https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/16/';
 ?>
 
     <head>
@@ -90,7 +90,8 @@
                             }
                         }
                         foreach ($countries as $country => $count) {
-                            echo '<p><strong>' . $country . '</strong> ' . $count . '</p>';
+                            echo '<p><strong><img src="' . $flag_url . $country . '-Flag-icon.png" alt="Flag of ' . $country .
+                            '">' . $country . '</strong> ' . $count . '</p>';
                         }
                         foreach ($new_entries as $key => $entry) {
                             echo '<p>Cached ' . $entry . '</p>';
