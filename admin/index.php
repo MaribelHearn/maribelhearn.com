@@ -38,6 +38,12 @@
             default: return $country;
         }
     }
+    function format_image(string $country) {
+        switch ($country) {
+            case 'United Kingdom': return 'f';
+            default: return 'F';
+        }
+    }
 ?>
 
     <head>
@@ -75,7 +81,6 @@
                             foreach ($obj->ips as $ip => $count) {
                                 if (!property_exists($cache, $ip)) {
                                     $url = 'http://api.ipinfodb.com/v3/ip-city/?key=' . $key . '&ip=' . $ip . '&format=json';
-                                    var_dump($url);
                                     $json = file_get_contents($url);
                                     $data = json_decode($json, true);
                                     $data = (object) $data;
@@ -103,12 +108,9 @@
                             if ($country == '-') {
                                 echo '<p><strong>local</strong> ' . $count . '</p>';
                             } else {
-                                echo '<p><strong><picture><source srcset="' . $flag_url . str_replace(' ', '-', $country) .
-                                '-Flag-icon.png" alt="Flag of ' . $country .
-                                '"><source srcset="' . $flag_url . str_replace(' ', '-', $country) .
-                                '-flag-icon.png" alt="Flag of ' . $country .
-                                '"><img src="' . $flag_url . str_replace(' ', '-', $country) .
-                                '-Flag-icon.png"></picture> ' . $country . '</strong> ' . $count . '</p>';
+                                echo '<p><strong><img src="' . $flag_url . str_replace(' ', '-', $country) .
+                                '-' . format_image($country) . 'lag-icon.png" alt="Flag of ' . $country .
+                                '"> ' . $country . '</strong> ' . $count . '</p>';
                             }
                         }
                         foreach ($new_entries as $key => $entry) {
