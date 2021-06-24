@@ -69,7 +69,7 @@
                                     $json = file_get_contents('http://api.ipinfodb.com/v3/ip-city/?key=' . $key . '&ip=' . $ip . '&format=json');
                                     $data = json_decode($json, true);
                                     $data = (object) $data;
-                                    $cache->{$ip} = $data->countryCode;
+                                    $cache->{$ip} = $data->countryName;
                                     $file = fopen($cache_file, 'w');
                                     fwrite($file, json_encode($cache));
                                     array_push($new_entries, $ip);
