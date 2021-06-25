@@ -33,15 +33,21 @@
     $key = str_replace(array("\r", "\n"), '', file_get_contents('../.stats/key'));
     function format_country(string $country) {
         switch ($country) {
+            case 'Viet Nam': return 'Vietnam';
+            case 'Russian Federation': return 'Russia';
+            case 'Korea (Republic of)': return 'Korea';
+            case 'Taiwan (Province of China)': return 'Taiwan';
             case 'United States of America': return 'United States';
+            case 'Venezuela (Bolivarian Republic of)': return 'Venezuela';
             case 'United Kingdom of Great Britain and Northern ': return 'United Kingdom';
             default: return $country;
         }
     }
     function format_image(string $country) {
         switch ($country) {
-            case 'United Kingdom': return 'f';
-            default: return 'F';
+            case 'United Kingdom': return 'flag-';
+            case 'Estonia': return '';
+            default: return 'Flag-';
         }
     }
     function cmp($a, $b) {
@@ -113,8 +119,9 @@
                             if ($country == '-') {
                                 echo '<p><strong>local</strong> ' . $count . '</p>';
                             } else {
-                                echo '<p><strong><img src="' . $flag_url . str_replace(' ', '-', $country) .
-                                '-' . format_image($country) . 'lag-icon.png" alt="Flag of ' . $country .
+                                $url_country = ($country == 'Croatia' ? 'Croatian' : str_replace(' ', '-', $country));
+                                echo '<p><strong><img src="' . $flag_url . $url_country .
+                                '-' . format_image($country) . 'icon.png" alt="Flag of ' . $country .
                                 '"> ' . $country . '</strong> ' . $count . '</p>';
                             }
                         }
