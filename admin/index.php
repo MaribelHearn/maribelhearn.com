@@ -44,6 +44,9 @@
             default: return 'F';
         }
     }
+    function cmp($a, $b) {
+        return $a->count >= $b->count;
+    }
 ?>
 
     <head>
@@ -84,10 +87,12 @@
                                     $json = file_get_contents($url);
                                     $data = json_decode($json, true);
                                     $data = (object) $data;
-                                    $cache->{$ip} = format_country($data->countryName);
-                                    $file = fopen($cache_file, 'w');
-                                    fwrite($file, json_encode($cache));
-                                    array_push($new_entries, $ip);
+                                    if ($data->statusCode == 'OK') {
+                                        $cache->{$ip} = format_country($data->countryName);
+                                        $file = fopen($cache_file, 'w');
+                                        fwrite($file, json_encode($cache));
+                                        array_push($new_entries, $ip);
+                                    }
                                 } else if (!property_exists($ip_count, $ip)) {
                                     $ip_count->{$ip} = $count;
                                 } else {
