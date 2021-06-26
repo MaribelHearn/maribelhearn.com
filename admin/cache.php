@@ -19,13 +19,7 @@ function download_content(string $url) {
 
 function format_country(string $country) {
     switch ($country) {
-        case 'Viet Nam': return 'Vietnam';
-        case 'Russian Federation': return 'Russia';
-        case 'Korea (Republic of)': return 'Korea';
-        case 'Taiwan (Province of China)': return 'Taiwan';
-        case 'United States of America': return 'United States';
-        case 'Venezuela (Bolivarian Republic of)': return 'Venezuela';
-        case 'United Kingdom of Great Britain and Northern ': return 'United Kingdom';
+        case 'South Korea': return 'Korea';
         default: return $country;
     }
 }
