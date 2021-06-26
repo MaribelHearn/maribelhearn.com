@@ -31,6 +31,10 @@ li {
 p {
     margin: 4px;
 }
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
 .wide {
     margin: 10px;
 }

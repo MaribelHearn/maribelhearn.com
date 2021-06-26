@@ -124,7 +124,7 @@
                                 if ($country == 'Kosovo') {
                                     echo '<tr><td><img src="https://icons.iconarchive.com/icons/wikipedia/flags/' .
                                     '16/XK-Kosovo-Flag-icon.png" alt="Flag of ' . $country . '"></td><th>' . $country .
-                                    '</th><td>' . $count . '</td><progress value="' . $count . '" max="' . $max .
+                                    '</th><td>' . $count . '</td><td><progress value="' . $count . '" max="' . $max .
                                     '"></progress></td></tr>';
                                 } else {
                                     echo '<tr><td><img src="' . $flag_url . $url_country .
