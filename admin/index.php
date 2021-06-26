@@ -2,7 +2,7 @@
 <html lang='en'>
 <?php
     include '../assets/shared/shared.php';
-    $NEW_ENTRY_LIMIT = 10;
+    $NEW_ENTRY_LIMIT = 45;
     $hitcount = '../.stats/' . date('d-m-Y') . '.json';
     if (file_exists($hitcount)) {
         $file = fopen($hitcount, 'r');
