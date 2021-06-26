@@ -707,6 +707,22 @@
 						<td><a href='https://www.youtube.com/watch?v=zNTMsiprIGA'>Video</a></td>
 					</tr>
 				</table>
+				<p><span class='fangame msd'></span> Magical Singular Day -Absolution-</p>
+				<table class='sortable'>
+					<tr>
+	                    <th class='difficulty'>Difficulty</th>
+	                    <th class='shottype'>Shottype</th>
+	                    <th class='sorttable_numeric'>Score</th>
+	                    <th class='date'>Date</th>
+	                    <th class='source'>Source</th>
+	                </tr><tr>
+						<td>Revelation</td>
+						<td>MarisaB</td>
+						<td><u><strong>1,538,566,399,296</strong></u><br>by <em>Diamenciory</em></td>
+						<td>5 April 2021</td>
+						<td><a href='https://www.youtube.com/watch?v=Fp4XKTHGLZ8'>Video</a></td>
+					</tr>
+				</table>
 				<h3 class='related'>Related Games</h3>
 	            <p><span class='fangame sg'></span> Seihou 1 - Shuusou Gyoku</p>
 	            <table class='sortable'>

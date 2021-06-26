@@ -98,6 +98,9 @@ table, th, td {
 .bm {
     background-position: -1050px 0px;
 }
+.msd {
+    background-position: -1100px 0px;
+}
 .border {
     border: 1px solid black;
     margin-bottom: 15px;
