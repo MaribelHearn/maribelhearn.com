@@ -2,6 +2,7 @@
 <html lang='en'>
 <?php
     include '../assets/shared/shared.php';
+    $DISPLAY_LIMIT = 5;
     $NEW_ENTRY_LIMIT = 45;
     $hitcount = '../.stats/' . date('d-m-Y') . '.json';
     if (file_exists($hitcount)) {
@@ -121,7 +122,11 @@
                                 $max = $count;
                             }
                         }
+                        $total = 0;
                         foreach ($countries as $country => $count) {
+                            if ($total == $DISPLAY_LIMIT) {
+                                echo '<div id="country_list">';
+                            }
                             if ($country == 'new') {
                                 echo '<tr><td></td><th>new</th><td>' . $count . '</td><td><progress value="' . $count .
                                 '" max="' . $max . '"></progress></td></tr>';
@@ -142,10 +147,15 @@
                                     '" max="' . $max . '"></progress></td></tr>';
                                 }
                             }
+                            $total += 1;
+                        }
+                        if ($total >= $DISPLAY_LIMIT) {
+                            echo '</div>';
                         }
                         echo '</table>';
                     }
                 ?>
+                <input id='expand' type='button' value='Expand'>
                 <p class='wide-top'>You are visiting this page using <strong id='os'></strong>.</p>
                 <p>You are visiting this page using <strong id='browser'></strong>.</p>
                 <p id='ack_mobile'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a>.</p>

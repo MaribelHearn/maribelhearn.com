@@ -1,3 +1,8 @@
+function expandCountries() {
+    document.getElementById("country_list").style = "display: block";
+    document.getElementById("expand").style = "display: none";
+}
+
 function set() {
     var cookieString = ";expires=Fri, 31 Dec 9999 23:59:59 UTC;path=/;sameSite=Strict;";
 
@@ -75,6 +80,7 @@ function userAgent() {
 }
 
 function addEventListeners() {
+    document.getElementById("expand").addEventListener("click", expandCountries);
     document.getElementById("setcookie").addEventListener("click", set);
     head = document.getElementsByTagName("head")[0];
     window.addEventListener("load", ready);
