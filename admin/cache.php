@@ -17,20 +17,13 @@ function download_content(string $url) {
     return $data;
 }
 
-function format_country(string $country) {
-    switch ($country) {
-        case 'South Korea': return 'Korea';
-        default: return $country;
-    }
-}
-
 function fetch_country(string $ip) {
     $url = 'http://ip-api.com/json/' . $ip;
     $json = download_content($url);
     if ($json !== false) {
         $data = json_decode($json, false);
         if ($data->status == 'success') {
-            $country = format_country($data->country);
+            $country = $data->country;
             echo 'Cached ' . $ip . '<br>';
             return $country;
         } else {
@@ -48,7 +41,7 @@ function add_cache_entries(string $path, object $cache, string $entries) {
             continue;
         }
         $cache->{$entry} = fetch_country($entry);
-        sleep($switch);
+        sleep($delay);
         $delay = ($delay == 1 ? 2 : 1);
     }
     $file = fopen($path, 'w');

@@ -38,6 +38,15 @@
         return ($a > $b) ? -1 : 1;
     }
 
+    function format_country(string $country) {
+        switch ($country) {
+            case 'Czechia': return 'Czech-Republic';
+            case 'South Korea': return 'Korea';
+            case 'Croatia': return 'Croatian';
+            default: return str_replace(' ', '-', $country);
+        }
+    }
+
     function format_image(string $country) {
         switch ($country) {
             case 'United Kingdom': return 'flag-';
@@ -120,7 +129,7 @@
                                 echo '<tr><td></td><th>local</th><td>' . $count . '</td><td><progress value="' . $count .
                                 '" max="' . $max . '"></progress></td></tr>';
                             } else {
-                                $url_country = ($country == 'Croatia' ? 'Croatian' : str_replace(' ', '-', $country));
+                                $url_country = format_country($country);
                                 if ($country == 'Kosovo') {
                                     echo '<tr><td><img src="https://icons.iconarchive.com/icons/wikipedia/flags/' .
                                     '16/XK-Kosovo-Flag-icon.png" alt="Flag of ' . $country . '"></td><th>' . $country .
