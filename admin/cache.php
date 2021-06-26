@@ -28,11 +28,9 @@ function format_country(string $country) {
 }
 
 function fetch_country(string $ip) {
-    $API_KEY = trim(str_replace(array('\r', '\n'), '', file_get_contents('../.stats/key')));
-    $URL = 'https://api.ipinfodb.com/v3/ip-city/?key=' . $API_KEY . '&ip=%i&format=json';
-    $fetch_url = str_replace('%i', $ip, $URL);
+    $URL = 'http://ip-api.com/json/' . $ip;
     $json = download_content($fetch_url);
-    if ($json) {
+    if ($json !== false) {
         $data = json_decode($json, false);
         if ($data->statusCode == 'OK') {
             $country = format_country($data->countryName);
