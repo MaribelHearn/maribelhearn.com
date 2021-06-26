@@ -27,8 +27,8 @@ table, th, td {
     height: 100px;
 }
 .charslot {
-    background-image: url('spritesheet.png');
-    background-position: -18480px 0;
+    background-image: url('../spritesheet/spritesheet.png');
+    background-position: -19440px 0;
     vertical-align: bottom;
 }
 .locslot {

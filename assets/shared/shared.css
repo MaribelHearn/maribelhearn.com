@@ -17,7 +17,7 @@ a:visited.dropdown_button {
     color: black;
 }
 .icon {
-    background-image: url('icon_sheet.png');
+    background-image: url('../spritesheet/icon_sheet.png');
     display: inline-block;
     width: 16px;
     height: 16px;
@@ -182,7 +182,7 @@ a:visited.dropdown_button {
     display: none;
 }
 #hy {
-    background-image: url('icon_sheet.png');
+    background-image: url('../spritesheet/icon_sheet.png');
     background-position: -512px 0px;
     display: inline-block;
     width: 120px;
