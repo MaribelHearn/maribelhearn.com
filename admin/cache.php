@@ -28,8 +28,8 @@ function format_country(string $country) {
 }
 
 function fetch_country(string $ip) {
-    $URL = 'http://ip-api.com/json/' . $ip;
-    $json = download_content($fetch_url);
+    $url = 'http://ip-api.com/json/' . $ip;
+    $json = download_content($url);
     if ($json !== false) {
         $data = json_decode($json, false);
         if ($data->statusCode == 'OK') {
