@@ -28,13 +28,17 @@ if ($_GET['entries']) {
     foreach ($entries as $key => $entry) {
         $current_url = str_replace('%i', $entry, $URL);
         $json = file_get_contents($current_url);
-        $data = json_decode($json, true);
-        $data = (object) $data;
-        if ($data->statusCode == 'OK') {
-            $cache->{$entry} = format_country($data->countryName);
-            echo 'Cached ' . $entry . '<br>';
+        if ($json) {
+            $data = json_decode($json, true);
+            $data = (object) $data;
+            if ($data->statusCode == 'OK') {
+                $cache->{$entry} = format_country($data->countryName);
+                echo 'Cached ' . $entry . '<br>';
+            } else {
+                echo 'Error while caching ' . $entry . '<br>';
+            }
         } else {
-            echo 'Error while caching ' . $entry . '<br>';
+            echo 'Error while fetching country for ' . $entry . '<br>';
         }
     }
     $file = fopen($CACHE_FILE, 'w');
