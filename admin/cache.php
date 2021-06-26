@@ -1,7 +1,20 @@
 <?php
 $CACHE_FILE = '../.stats/cache';
 $API_KEY = trim(str_replace(array('\r', '\n'), '', file_get_contents('../.stats/key')));
-$URL = 'http://api.ipinfodb.com/v3/ip-city/?key=' . $API_KEY . '&ip=%i&format=json';
+$URL = 'https://api.ipinfodb.com/v3/ip-city/?key=' . $API_KEY . '&ip=%i&format=json';
+
+function download_content($url) {
+    $ch = curl_init();
+    $timeout = 5;
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+    curl_setopt($ch, CURLOPT_USERAGENT, 'Firefox 78.0');
+    $data = curl_exec($ch);
+    curl_close($ch);
+    return $data;
+}
 
 function format_country(string $country) {
     switch ($country) {
@@ -33,7 +46,7 @@ if ($_GET['entries']) {
             continue;
         }
         $current_url = str_replace('%i', $entry, $URL);
-        $json = file_get_contents($current_url);
+        $json = download_content($current_url);
         if ($json) {
             $data = json_decode($json, true);
             $data = (object) $data;
