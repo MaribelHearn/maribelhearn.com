@@ -55,9 +55,6 @@ table, tr, th, td {
     z-index: 1;
     top: 100%;
 }
-.dropdown_content > p {
-    margin: 4px;
-}
 .wrap {
     border: 1px solid #000;
     text-align: center;
