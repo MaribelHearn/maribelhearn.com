@@ -40,6 +40,7 @@ function fetch_country(string $ip) {
 }
 
 function add_cache_entries(string $path, object $cache, string $entries) {
+    $delay = 1;
     $entries = preg_split('/,/', $entries);
     foreach ($entries as $key => $entry) {
         if (property_exists($cache, $entry)) {
@@ -47,7 +48,8 @@ function add_cache_entries(string $path, object $cache, string $entries) {
             continue;
         }
         $cache->{$entry} = fetch_country($entry);
-        usleep(1334); // avoid rate limit
+        sleep($switch);
+        $delay = ($delay == 1 ? 2 : 1);
     }
     $file = fopen($path, 'w');
     fwrite($file, json_encode($cache));
