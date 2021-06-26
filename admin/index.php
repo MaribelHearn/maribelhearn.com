@@ -83,8 +83,10 @@
                         }
                         echo '<h2>Countries</h2>';
                         foreach ($ip_count as $ip => $count) {
-                            if (is_localhost($ip)) {
-                                $country = '-';
+                            if (!property_exists($cache, $ip)) {
+                                $country = 'new';
+                            } else if (is_localhost($ip)) {
+                                $country = 'local';
                             } else {
                                 $country = $cache->{$ip};
                             }
@@ -95,9 +97,9 @@
                             }
                         }
                         foreach ($countries as $country => $count) {
-                            if ($country == '') {
+                            if ($country == 'new') {
                                 echo '<p><strong>new</strong> ' . $count . '</p>';
-                            } else if ($country == '-') {
+                            } else if ($country == 'local') {
                                 echo '<p><strong>local</strong> ' . $count . '</p>';
                             } else {
                                 $url_country = ($country == 'Croatia' ? 'Croatian' : str_replace(' ', '-', $country));
