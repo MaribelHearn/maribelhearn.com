@@ -104,12 +104,14 @@
                             } else {
                                 $url_country = ($country == 'Croatia' ? 'Croatian' : str_replace(' ', '-', $country));
                                 if ($country == 'Kosovo') {
-                                    $flag_url = 'https://icons.iconarchive.com/icons/wikipedia/flags/16/';
-                                    $url_country = 'XK_Kosovo';
+                                    echo '<p><strong><img src="https://icons.iconarchive.com/icons/wikipedia/flags/' .
+                                    '16/XK-Kosovo-Flag-icon.png" alt="Flag of ' . $country . '"> ' . $country .
+                                    '</strong> ' . $count . '</p>';
+                                } else {
+                                    echo '<p><strong><img src="' . $flag_url . $url_country .
+                                    '-' . format_image($country) . 'icon.png" alt="Flag of ' . $country .
+                                    '"> ' . $country . '</strong> ' . $count . '</p>';
                                 }
-                                echo '<p><strong><img src="' . $flag_url . $url_country .
-                                '-' . format_image($country) . 'icon.png" alt="Flag of ' . $country .
-                                '"> ' . $country . '</strong> ' . $count . '</p>';
                             }
                         }
                     }
