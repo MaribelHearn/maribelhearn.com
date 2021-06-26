@@ -47,7 +47,7 @@ function add_cache_entries(string $path, object $cache, string $entries) {
             continue;
         }
         $cache->{$entry} = fetch_country($entry);
-        sleep(2); // avoid rate limit
+        usleep(1334); // avoid rate limit
     }
     $file = fopen($path, 'w');
     fwrite($file, json_encode($cache));
