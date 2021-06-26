@@ -2,7 +2,7 @@ function expandCountries() {
     var elements = document.getElementsByTagName('*'), i;
 
     for (i in elements) {
-        if ((" " + elements[i].className + " ").indexOf(" " + elements + " ") > -1) {
+        if (elements[i].className && elements[i].className == "hidden") {
             elements[i].style = "display: table-row";
         }
     }
