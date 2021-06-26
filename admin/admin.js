@@ -1,5 +1,12 @@
 function expandCountries() {
-    document.getElementById("country_list").style = "display: block";
+    var elements = document.getElementsByTagName('*'), i;
+
+    for (i in elements) {
+        if ((" " + elements[i].className + " ").indexOf(" " + elements + " ") > -1) {
+            elements[i].style = "display: table-row";
+        }
+    }
+
     document.getElementById("expand").style = "display: none";
 }
 
