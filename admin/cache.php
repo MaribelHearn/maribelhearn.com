@@ -24,8 +24,14 @@ if (file_exists($CACHE_FILE)) {
 }
 
 if ($_GET['entries']) {
+    var_dump($_GET['entries']);
+    echo '<br>';
     $entries = preg_split('/,/', $_GET['entries']);
     foreach ($entries as $key => $entry) {
+        if (property_exists($cache, $entry)) {
+            echo 'Already cached ' . $entry . '<br>';
+            continue;
+        }
         $current_url = str_replace('%i', $entry, $URL);
         $json = file_get_contents($current_url);
         if ($json) {
