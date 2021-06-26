@@ -59,18 +59,43 @@ function theme() {
     }
 }
 
-var ua = detect.parse(navigator.userAgent);
+function url(ip) {
+    var key = document.getElementById("key").value;
 
-document.getElementById("setcookie").addEventListener("click", set);
-document.getElementById("os").innerHTML = "<img src='" + (location.host == "maribelhearn.com" ? "https://maribelhearn.com/" : "") +
-"admin/icons/" + ua.os.name + ".png' alt='" + ua.os.name + " icon'> " + ua.os.name;
-document.getElementById("browser").innerHTML = "<img src='" + (location.host == "maribelhearn.com" ? "https://maribelhearn.com/" : "") +
-"admin/icons/" + ua.browser.family + ".png' alt='" + ua.browser.name + " icon'> " + ua.browser.name;
-head = document.getElementsByTagName("head")[0];
-window.addEventListener("load", ready);
-hy = document.getElementById("hy");
-done = false;
-
-if (hy) {
-    hy.addEventListener("click", theme);
+    return "http://api.ipinfodb.com/v3/ip-city/?key=" + key  + "&ip=" + ip + "&format=json";
 }
+
+function userAgent() {
+    var ua = detect.parse(navigator.userAgent);
+
+    document.getElementById("os").innerHTML = "<img src='" + (location.host == "maribelhearn.com" ? "https://maribelhearn.com/" : "") +
+    "admin/icons/" + ua.os.name + ".png' alt='" + ua.os.name + " icon'> " + ua.os.name;
+    document.getElementById("browser").innerHTML = "<img src='" + (location.host == "maribelhearn.com" ? "https://maribelhearn.com/" : "") +
+    "admin/icons/" + ua.browser.family + ".png' alt='" + ua.browser.name + " icon'> " + ua.browser.name;
+}
+
+function addEventListeners() {
+    document.getElementById("setcookie").addEventListener("click", set);
+    head = document.getElementsByTagName("head")[0];
+    window.addEventListener("load", ready);
+    hy = document.getElementById("hy");
+    done = false;
+
+    if (hy) {
+        hy.addEventListener("click", theme);
+    }
+}
+
+function addCacheEntries() {
+    var entries = document.getElementById("new_cache_entries").value, xhr = new XMLHttpRequest();
+
+    xhr.open("POST", "/admin/cache.php?entries=" + entries);
+    xhr.onload = function () {
+        document.getElementById("response").innerHTML = this.response;
+    };
+    xhr.send();
+}
+
+userAgent();
+addEventListeners();
+addCacheEntries();

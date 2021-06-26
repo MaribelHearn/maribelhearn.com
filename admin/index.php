@@ -19,7 +19,6 @@
     } else {
         $hitcount = 'empty';
     }
-    $new_entries = array();
     $ip_count = (object) array();
     $countries = (object) array();
     $cache_file = '../.stats/cache';
@@ -30,28 +29,13 @@
         $cache = (object) array();
     }
     $flag_url = 'https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/16/';
-    $key = str_replace(array("\r", "\n"), '', file_get_contents('../.stats/key'));
-    function format_country(string $country) {
-        switch ($country) {
-            case 'Viet Nam': return 'Vietnam';
-            case 'Russian Federation': return 'Russia';
-            case 'Korea (Republic of)': return 'Korea';
-            case 'Taiwan (Province of China)': return 'Taiwan';
-            case 'United States of America': return 'United States';
-            case 'Venezuela (Bolivarian Republic of)': return 'Venezuela';
-            case 'United Kingdom of Great Britain and Northern ': return 'United Kingdom';
-            default: return $country;
-        }
-    }
+
     function format_image(string $country) {
         switch ($country) {
             case 'United Kingdom': return 'flag-';
             case 'Estonia': return '';
             default: return 'Flag-';
         }
-    }
-    function cmp($a, $b) {
-        return $a->count >= $b->count;
     }
 ?>
 
@@ -77,6 +61,7 @@
                 </span>
                 <h1>Admin Panel</h1>
                 <p><input id='setcookie' type='button' value='Set Blocking Cookie'></p>
+                <p id='response' class='wide-top'>Caching new entries...</p>
                 <?php
                     if ($hitcount == 'error') {
                         echo '<p class="wide">An error occurred while reading the stats.</p>';
@@ -88,18 +73,7 @@
                             $obj = (object) $obj;
                             echo '<p><strong>' . $page . '</strong> ' . $obj->hits . '</p>';
                             foreach ($obj->ips as $ip => $count) {
-                                if (!property_exists($cache, $ip)) {
-                                    $url = 'http://api.ipinfodb.com/v3/ip-city/?key=' . $key . '&ip=' . $ip . '&format=json';
-                                    $json = file_get_contents($url);
-                                    $data = json_decode($json, true);
-                                    $data = (object) $data;
-                                    if ($data->statusCode == 'OK') {
-                                        $cache->{$ip} = format_country($data->countryName);
-                                        $file = fopen($cache_file, 'w');
-                                        fwrite($file, json_encode($cache));
-                                        array_push($new_entries, $ip);
-                                    }
-                                } else if (!property_exists($ip_count, $ip)) {
+                                if (!property_exists($ip_count, $ip)) {
                                     $ip_count->{$ip} = $count;
                                 } else {
                                     $ip_count->{$ip} += $count;
@@ -108,7 +82,11 @@
                         }
                         echo '<h2>Countries</h2>';
                         foreach ($ip_count as $ip => $count) {
-                            $country = $cache->{$ip};
+                            if (is_localhost($ip)) {
+                                $country = '-';
+                            } else {
+                                $country = $cache->{$ip};
+                            }
                             if (!property_exists($countries, $country)) {
                                 $countries->{$country} = $count;
                             } else {
@@ -116,7 +94,9 @@
                             }
                         }
                         foreach ($countries as $country => $count) {
-                            if ($country == '-') {
+                            if ($country == '') {
+                                echo '<p><strong>new</strong> ' . $count . '</p>';
+                            } else if ($country == '-') {
                                 echo '<p><strong>local</strong> ' . $count . '</p>';
                             } else {
                                 $url_country = ($country == 'Croatia' ? 'Croatian' : str_replace(' ', '-', $country));
@@ -125,9 +105,6 @@
                                 '"> ' . $country . '</strong> ' . $count . '</p>';
                             }
                         }
-                        foreach ($new_entries as $key => $entry) {
-                            echo '<p>Cached ' . $entry . '</p>';
-                        }
                     }
                 ?>
                 <p class='wide-top'>You are visiting this page using <strong id='os'></strong>.</p>
@@ -135,7 +112,20 @@
                 <p id='ack_mobile'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a>.</p>
             </div>
         </main>
-        <?php echo '<input id="token" type="hidden" value=' . file_get_contents('../.stats/token') . '>'; ?>
+        <?php
+            echo '<input id="token" type="hidden" value=' . file_get_contents('../.stats/token') . '>';
+            echo '<input id="new_cache_entries" type="hidden" value="';
+            $new_entries = array();
+            foreach ($stats as $page => $obj) {
+                $obj = (object) $obj;
+                foreach ($obj->ips as $ip => $count) {
+                    if (!property_exists($cache, $ip) && !in_array($ip, $new_entries) && !is_localhost($ip)) {
+                        array_push($new_entries, $ip);
+                    }
+                }
+            }
+            echo implode(',', $new_entries) . '">';
+        ?>
     </body>
 
 </html>
