@@ -97,10 +97,12 @@
                             } else {
                                 $country = 'new';
                             }
-                            if (!$countries->offsetExists($country)) {
-                                $countries[$country] = $count;
-                            } else {
-                                $countries[$country] += $count;
+                            if (gettype($country) == 'string') {
+                                if (!$countries->offsetExists($country)) {
+                                    $countries[$country] = $count;
+                                } else {
+                                    $countries[$country] += $count;
+                                }
                             }
                         }
                         $countries->uasort('cmp');
