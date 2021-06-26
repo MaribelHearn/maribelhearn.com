@@ -21,7 +21,7 @@
         $hitcount = 'empty';
     }
     $ip_count = (object) array();
-    $countries = (object) array();
+    $countries = new ArrayObject();
     $cache_file = '../.stats/cache';
     if (file_exists($cache_file)) {
         $json = file_get_contents($cache_file);
@@ -30,6 +30,13 @@
         $cache = (object) array();
     }
     $flag_url = 'https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/16/';
+
+    function cmp(int $a, int $b) {
+        if ($a == $b) {
+            return 0;
+        }
+        return ($a > $b) ? -1 : 1;
+    }
 
     function format_image(string $country) {
         switch ($country) {
@@ -91,11 +98,12 @@
                                 $country = 'new';
                             }
                             if (!property_exists($countries, $country)) {
-                                $countries->{$country} = $count;
+                                $countries[$country] = $count;
                             } else {
-                                $countries->{$country} += $count;
+                                $countries[$country] += $count;
                             }
                         }
+                        $countries->uasort('cmp');
                         foreach ($countries as $country => $count) {
                             if ($country == 'new') {
                                 echo '<p><strong>new</strong> ' . $count . '</p>';
