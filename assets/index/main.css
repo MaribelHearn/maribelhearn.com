@@ -134,7 +134,7 @@ table {
 #ack > a:visited, #ack_admin > a:visited {
     color: #ff69b4;
 }
-#ack_br, #ack_mobile {
+#ack_br, #ack_mobile, #country_list {
     display: none;
 }
 @media only screen and (min-width: 1100px) and (max-width: 1400px) {
