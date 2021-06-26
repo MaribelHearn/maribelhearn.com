@@ -124,33 +124,25 @@
                         }
                         $total = 0;
                         foreach ($countries as $country => $count) {
-                            if ($total == $DISPLAY_LIMIT) {
-                                echo '<div id="country_list">';
-                            }
-                            if ($country == 'new') {
-                                echo '<tr><td></td><th>new</th><td>' . $count . '</td><td><progress value="' . $count .
-                                '" max="' . $max . '"></progress></td></tr>';
-                            } else if ($country == 'local') {
-                                echo '<tr><td></td><th>local</th><td>' . $count . '</td><td><progress value="' . $count .
+                            echo '<tr' . ($total >= $DISPLAY_LIMIT ? ' class="hidden"' : '') . '>';
+                            if ($country == 'new' || $country == 'local') {
+                                echo '><td></td><th>' . $country . '</th><td>' . $count . '</td><td><progress value="' . $count .
                                 '" max="' . $max . '"></progress></td></tr>';
                             } else {
                                 $url_country = format_country($country);
                                 if ($country == 'Kosovo') {
-                                    echo '<tr><td><img src="https://icons.iconarchive.com/icons/wikipedia/flags/' .
+                                    echo '><td><img src="https://icons.iconarchive.com/icons/wikipedia/flags/' .
                                     '16/XK-Kosovo-Flag-icon.png" alt="Flag of ' . $country . '"></td><th>' . $country .
                                     '</th><td>' . $count . '</td><td><progress value="' . $count . '" max="' . $max .
                                     '"></progress></td></tr>';
                                 } else {
-                                    echo '<tr><td><img src="' . $flag_url . $url_country .
+                                    echo '><td><img src="' . $flag_url . $url_country .
                                     '-' . format_image($country) . 'icon.png" alt="Flag of ' . $country .
                                     '"></td><th>' . $country . '</th><td>' . $count . '</td><td><progress value="' . $count .
                                     '" max="' . $max . '"></progress></td></tr>';
                                 }
                             }
                             $total += 1;
-                        }
-                        if ($total >= $DISPLAY_LIMIT) {
-                            echo '</div>';
                         }
                         echo '</table>';
                     }
