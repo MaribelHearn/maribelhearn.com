@@ -2,7 +2,7 @@
 <html lang='en'>
 <?php
     include '../assets/shared/shared.php';
-    $NEW_ENTRY_LIMIT = 45;
+    $NEW_ENTRY_LIMIT = 10;
     $hitcount = '../.stats/' . date('d-m-Y') . '.json';
     if (file_exists($hitcount)) {
         $file = fopen($hitcount, 'r');
@@ -83,12 +83,12 @@
                         }
                         echo '<h2>Countries</h2>';
                         foreach ($ip_count as $ip => $count) {
-                            if (!property_exists($cache, $ip)) {
-                                $country = 'new';
+                            if (property_exists($cache, $ip)) {
+                                $country = $cache->{$ip};
                             } else if (is_localhost($ip)) {
                                 $country = 'local';
                             } else {
-                                $country = $cache->{$ip};
+                                $country = 'new';
                             }
                             if (!property_exists($countries, $country)) {
                                 $countries->{$country} = $count;
