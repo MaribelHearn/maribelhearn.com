@@ -88,7 +88,7 @@
                                 }
                             }
                         }
-                        echo '<h2>Countries</h2>';
+                        echo '<h2>Countries</h2><table><tr><th>Flag</th><th>Country</th><th>Hits</th><th>Bar</th></tr>';
                         foreach ($ip_count as $ip => $count) {
                             if (property_exists($cache, $ip)) {
                                 $country = $cache->{$ip};
@@ -106,24 +106,35 @@
                             }
                         }
                         $countries->uasort('cmp');
+                        $max = 1;
+                        foreach ($countries as $country => $count) {
+                            if ($count > $max) {
+                                $max = $count;
+                            }
+                        }
                         foreach ($countries as $country => $count) {
                             if ($country == 'new') {
-                                echo '<p><strong>new</strong> ' . $count . '</p>';
+                                echo '<tr><td></td><th>new</th><td>' . $count . '</td><td><progress value="' . $count .
+                                '" max="' . $max . '"></progress></td></tr>';
                             } else if ($country == 'local') {
-                                echo '<p><strong>local</strong> ' . $count . '</p>';
+                                echo '<tr><td></td><th>local</th><td>' . $count . '</td><td><progress value="' . $count .
+                                '" max="' . $max . '"></progress></td></tr>';
                             } else {
                                 $url_country = ($country == 'Croatia' ? 'Croatian' : str_replace(' ', '-', $country));
                                 if ($country == 'Kosovo') {
-                                    echo '<p><strong><img src="https://icons.iconarchive.com/icons/wikipedia/flags/' .
-                                    '16/XK-Kosovo-Flag-icon.png" alt="Flag of ' . $country . '"> ' . $country .
-                                    '</strong> ' . $count . '</p>';
+                                    echo '<tr><td><img src="https://icons.iconarchive.com/icons/wikipedia/flags/' .
+                                    '16/XK-Kosovo-Flag-icon.png" alt="Flag of ' . $country . '"></td><th>' . $country .
+                                    '</th><td>' . $count . '</td><progress value="' . $count . '" max="' . $max .
+                                    '"></progress></td></tr>';
                                 } else {
-                                    echo '<p><strong><img src="' . $flag_url . $url_country .
+                                    echo '<tr><td><img src="' . $flag_url . $url_country .
                                     '-' . format_image($country) . 'icon.png" alt="Flag of ' . $country .
-                                    '"> ' . $country . '</strong> ' . $count . '</p>';
+                                    '"></td><th>' . $country . '</th><td>' . $count . '</td><td><progress value="' . $count .
+                                    '" max="' . $max . '"></progress></td></tr>';
                                 }
                             }
                         }
+                        echo '</table>';
                     }
                 ?>
                 <p class='wide-top'>You are visiting this page using <strong id='os'></strong>.</p>
