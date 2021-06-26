@@ -2,6 +2,7 @@
 <html lang='en'>
 <?php
     include '../assets/shared/shared.php';
+    $NEW_ENTRY_LIMIT = 10;
     $hitcount = '../.stats/' . date('d-m-Y') . '.json';
     if (file_exists($hitcount)) {
         $file = fopen($hitcount, 'r');
@@ -122,6 +123,12 @@
                     if (!property_exists($cache, $ip) && !in_array($ip, $new_entries) && !is_localhost($ip)) {
                         array_push($new_entries, $ip);
                     }
+                    if (count($new_entries) > $NEW_ENTRY_LIMIT) {
+                        break;
+                    }
+                }
+                if (count($new_entries) > $NEW_ENTRY_LIMIT) {
+                    break;
                 }
             }
             echo implode(',', $new_entries) . '">';
