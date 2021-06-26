@@ -1408,7 +1408,8 @@ function changeLog() {
     "<li>13/03/2020: Fixed bug caused by swapping tiers as well as a bug caused by naming a tier after a character</li>" +
     "<li>06/04/2020: Added ability to change the tier header font size and made tier header width changes apply immediately</li>" +
     "<li>06/09/2020: Miyoi Okunoda added</li>" +
-    "<li>23/09/2020: Screenshotting added</li></ul>");
+    "<li>23/09/2020: Screenshotting added</li>" +
+    "<li>26/06/2021: UM characters added</li></ul>");
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
 }
@@ -1713,7 +1714,7 @@ function loadCharacters() {
     }
 
     if (isMobile()) {
-        $(".list, .tiered").css("background-image", "url('assets/shared/spritesheet60x60.png')");
+        $(".list, .tiered").css("background-image", "url('assets/spritesheet/spritesheet60x60.png')");
     }
 }
 

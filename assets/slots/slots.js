@@ -3,7 +3,7 @@ var SPECIES = ["Human", "Magician", "Devil", "Ghost", "Yuki-onna", "Night sparro
     "Nue", "Daidarabotchi", "Yamabiko", "Zombie", "Gashadokuro", "Kirin", "Wanyuudou", "Katawa-guruma",
     "Zashiki-warashi", "Hobgoblin", "Enenra", "Mermaid", "Rokurokubi", "Amanojaku", "Baku", "Yamanba"],
     NUMBERS = ["None", "1", "2", "3", "4", "5+"],
-    NUMBER_OF_CHARS = 154,
+    NUMBER_OF_CHARS = 162,
     NUMBER_OF_LOCATIONS = 33,
     WIDTH = 120,
     BREAK_WORD = 24,

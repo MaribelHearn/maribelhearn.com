@@ -112,10 +112,10 @@ table, th, td {
     cursor: pointer;
 }
 .sheet_1 {
-    background-image: url('game_sheet50x50_1.png');
+    background-image: url('../spritesheet/game_sheet50x50_1.png');
 }
 .sheet_2 {
-    background-image: url('game_sheet50x50_2.png');
+    background-image: url('../spritesheet/game_sheet50x50_2.png');
 }
 .cover98 {
     border: 1px solid #000;

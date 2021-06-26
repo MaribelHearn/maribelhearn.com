@@ -59,13 +59,13 @@ li {
     width: 80px;
     height: 80px;
     display: inline-block;
-    background-image: url('spritesheet80x80.png');
+    background-image: url('../spritesheet/spritesheet80x80.png');
 }
 .tiered {
     width: 120px;
     height: 120px;
     display: inline-block;
-    background-image: url('spritesheet.png');
+    background-image: url('../spritesheet/spritesheet.png');
 }
 .name {
     margin-top: 10px;
@@ -1151,6 +1151,54 @@ li {
 #MiyoiOkunoda.tiered {
     background-position: -18360px 0;
 }
+#MikeGoutokuji.list {
+    background-position: -12320px 0;
+}
+#MikeGoutokuji.tiered {
+    background-position: -18480px 0;
+}
+#TakaneYamashiro.list {
+    background-position: -12400px 0;
+}
+#TakaneYamashiro.tiered {
+    background-position: -18600px 0;
+}
+#SannyoKomakusa.list {
+    background-position: -12480px 0;
+}
+#SannyoKomakusa.tiered {
+    background-position: -18720px 0;
+}
+#MisumaruTamatsukuri.list {
+    background-position: -12560px 0;
+}
+#MisumaruTamatsukuri.tiered {
+    background-position: -18840px 0;
+}
+#TsukasaKudamaki.list {
+    background-position: -12640px 0;
+}
+#TsukasaKudamaki.tiered {
+    background-position: -18960px 0;
+}
+#MegumuIizunamaru.list {
+    background-position: -12720px 0;
+}
+#MegumuIizunamaru.tiered {
+    background-position: -19080px 0;
+}
+#ChimataTenkyuu.list {
+    background-position: -12800px 0;
+}
+#ChimataTenkyuu.tiered {
+    background-position: -19200px 0;
+}
+#MomoyoHimemushi.list {
+    background-position: -12880px 0;
+}
+#MomoyoHimemushi.tiered {
+    background-position: -19320px 0;
+}
 @media screen and (max-width: 1300px) {
     .dropdowns {
         width: 100%;
@@ -1718,6 +1766,30 @@ li {
     }
     #MiyoiOkunoda.list, #MiyoiOkunoda.tiered {
         background-position: -9180px 0;
+    }
+    #MikeGoutokuji.list, #MikeGoutokuji.tiered {
+        background-position: -9240px 0;
+    }
+    #TakaneYamashiro.list, #TakaneYamashiro.list {
+        background-position: -9300px 0;
+    }
+    #SannyoKomakusa.list, #SannyoKomakusa.list {
+        background-position: -9360px 0;
+    }
+    #MisumaruTamatsukuri.list, #MisumaruTamatsukuri.list {
+        background-position: -9420px 0;
+    }
+    #TsukasaKudamaki.list, #TsukasaKudamaki.list {
+        background-position: -9480px 0;
+    }
+    #MegumuIizunamaru.list, #MegumuIizunamaru.list {
+        background-position: -9540px 0;
+    }
+    #ChimataTenkyuu.list, #ChimataTenkyuu.list {
+        background-position: -9600px 0;
+    }
+    #MomoyoHimemushi.list, #MomoyoHimemushi.tiered {
+        background-position: -9660px 0;
     }
 }
 @media only screen and (max-width: 800px) and (orientation: portrait) {
