@@ -3,7 +3,16 @@ $CACHE_FILE = '../.stats/cache';
 
 function download_content(string $url) {
     $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $data = curl_exec($ch);
+    $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    if ($data === false) {
+        echo 'Failed to use cURL to fetch country for ' . $ip . '<br>';
+        return false;
+    } else if ($status != 200) {
+        echo 'Error ' . $status . ' while fetching country for ' . $ip . '<br>';
+        return false;
+    }
     curl_close($ch);
     return $data;
 }
@@ -26,15 +35,13 @@ function fetch_country(string $ip) {
     $json = download_content($url);
     if ($json !== false) {
         $data = json_decode($json, false);
-        if ($data->statusCode == 'OK') {
-            $country = format_country($data->countryName);
+        if ($data->status == 'success') {
+            $country = format_country($data->country);
             echo 'Cached ' . $ip . '<br>';
             return $country;
         } else {
             echo 'Error while caching ' . $ip . '<br>';
         }
-    } else {
-        echo 'Error while fetching country for ' . $ip . '<br>';
     }
 }
 
