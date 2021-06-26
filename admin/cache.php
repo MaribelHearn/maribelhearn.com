@@ -2,13 +2,7 @@
 $CACHE_FILE = '../.stats/cache';
 
 function download_content(string $url) {
-    $ch = curl_init();
-    $timeout = 5;
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-    curl_setopt($ch, CURLOPT_USERAGENT, 'Firefox 78.0');
+    $ch = curl_init($url);
     $data = curl_exec($ch);
     curl_close($ch);
     return $data;
