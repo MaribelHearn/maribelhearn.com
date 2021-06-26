@@ -97,7 +97,7 @@
                             } else {
                                 $country = 'new';
                             }
-                            if (!property_exists($countries, $country)) {
+                            if (!$countries->offsetExists($country)) {
                                 $countries[$country] = $count;
                             } else {
                                 $countries[$country] += $count;
