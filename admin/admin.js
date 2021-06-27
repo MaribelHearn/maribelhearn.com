@@ -87,12 +87,16 @@ function userAgent() {
 }
 
 function addEventListeners() {
-    document.getElementById("expand").addEventListener("click", expandCountries);
     document.getElementById("setcookie").addEventListener("click", set);
     head = document.getElementsByTagName("head")[0];
     window.addEventListener("load", ready);
+    expand = document.getElementById("expand");
     hy = document.getElementById("hy");
     done = false;
+
+    if (expand) {
+        expand.addEventListener("click", expandCountries);
+    }
 
     if (hy) {
         hy.addEventListener("click", theme);
@@ -100,13 +104,17 @@ function addEventListeners() {
 }
 
 function addCacheEntries() {
-    var entries = document.getElementById("new_cache_entries").value, xhr = new XMLHttpRequest();
+    var entries = document.getElementById("new_cache_entries"), xhr = new XMLHttpRequest();
 
-    xhr.open("POST", "/admin/cache.php?entries=" + entries);
-    xhr.onload = function () {
-        document.getElementById("response").innerHTML = this.response;
-    };
-    xhr.send();
+    if (!entries) {
+        document.getElementById("response").innerHTML = "No new cache entries.";
+    } else {
+        xhr.open("POST", "/admin/cache.php?entries=" + entries.value);
+        xhr.onload = function () {
+            document.getElementById("response").innerHTML = this.response;
+        };
+        xhr.send();
+    }
 }
 
 userAgent();
