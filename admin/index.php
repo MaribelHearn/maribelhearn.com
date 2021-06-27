@@ -144,10 +144,9 @@
                             }
                             $total += 1;
                         }
-                        echo '</table>';
+                        echo '</table><input id="expand" type="button" value="Expand">';
                     }
                 ?>
-                <input id='expand' type='button' value='Expand'>
                 <p class='wide-top'>You are visiting this page using <strong id='os'></strong>.</p>
                 <p>You are visiting this page using <strong id='browser'></strong>.</p>
                 <p id='ack_mobile'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a>.</p>
@@ -156,22 +155,24 @@
         <?php
             echo '<input id="token" type="hidden" value=' . file_get_contents('../.stats/token') . '>';
             echo '<input id="new_cache_entries" type="hidden" value="';
-            $new_entries = array();
-            foreach ($stats as $page => $obj) {
-                $obj = (object) $obj;
-                foreach ($obj->ips as $ip => $count) {
-                    if (!property_exists($cache, $ip) && !in_array($ip, $new_entries) && !is_localhost($ip)) {
-                        array_push($new_entries, $ip);
+            if (isset($stats)) {
+                $new_entries = array();
+                foreach ($stats as $page => $obj) {
+                    $obj = (object) $obj;
+                    foreach ($obj->ips as $ip => $count) {
+                        if (!property_exists($cache, $ip) && !in_array($ip, $new_entries) && !is_localhost($ip)) {
+                            array_push($new_entries, $ip);
+                        }
+                        if (count($new_entries) > $NEW_ENTRY_LIMIT) {
+                            break;
+                        }
                     }
                     if (count($new_entries) > $NEW_ENTRY_LIMIT) {
                         break;
                     }
                 }
-                if (count($new_entries) > $NEW_ENTRY_LIMIT) {
-                    break;
-                }
+                echo implode(',', $new_entries) . '">';
             }
-            echo implode(',', $new_entries) . '">';
         ?>
     </body>
 
