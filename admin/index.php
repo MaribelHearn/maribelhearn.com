@@ -51,6 +51,7 @@
 
     function format_image(string $country) {
         switch ($country) {
+            case 'United Arab Emirates': return '';
             case 'United Kingdom': return 'flag-';
             case 'Estonia': return '';
             default: return 'Flag-';
