@@ -44,6 +44,7 @@
             case 'Bosnia and Herzegovina': return 'Bosnian';
             case 'Czechia': return 'Czech-Republic';
             case 'South Korea': return 'Korea';
+            case 'Guadeloupe': return 'France';
             case 'Croatia': return 'Croatian';
             default: return str_replace(' ', '-', $country);
         }
