@@ -43,6 +43,7 @@
         switch ($country) {
             case 'Bosnia and Herzegovina': return 'Bosnian';
             case 'Czechia': return 'Czech-Republic';
+            case 'Palestine': return 'Palestinian-Territory';
             case 'South Korea': return 'Korea';
             case 'Guadeloupe': return 'France';
             case 'Croatia': return 'Croatian';
@@ -54,6 +55,7 @@
         switch ($country) {
             case 'United Arab Emirates': return '';
             case 'United Kingdom': return 'flag-';
+            case 'Palestine': return '';
             case 'Estonia': return '';
             default: return 'Flag-';
         }
