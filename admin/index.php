@@ -58,6 +58,7 @@
             case 'United Kingdom': return 'flag-';
             case 'Palestine': return '';
             case 'Estonia': return '';
+            case 'Reunion': return '';
             default: return 'Flag-';
         }
     }
