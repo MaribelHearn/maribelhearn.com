@@ -41,9 +41,10 @@
 
     function format_country(string $country) {
         switch ($country) {
-            case 'Bosnia and Herzegovina': return 'Bosnian';
-            case 'Czechia': return 'Czech-Republic';
             case 'Palestine': return 'Palestinian-Territory';
+            case 'Bosnia and Herzegovina': return 'Bosnian';
+            case 'North Macedonia': return 'Macedonia';
+            case 'Czechia': return 'Czech-Republic';
             case 'South Korea': return 'Korea';
             case 'Guadeloupe': return 'France';
             case 'Croatia': return 'Croatian';
