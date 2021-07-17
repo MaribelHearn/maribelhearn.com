@@ -1249,6 +1249,7 @@ li {
     .tier_header {
         width: 60px;
         height: 60px;
+        cursor: pointer;
     }
     .list, .tiered {
         width: 60px;

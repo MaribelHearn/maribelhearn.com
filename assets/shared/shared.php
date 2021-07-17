@@ -143,7 +143,7 @@ function navbar(string $page) {
                 $navbar .= '<p><a href="c67"><span class="icon c67_icon"></span> C67</a></p>';
             $navbar .= '</div>';
         $navbar .= '</div> ';
-        $navbar .= '<div id="ext_mobile">';
+        $navbar .= '<div id="ext_mobile"' . ($page == 'tiers' ? ' class="dark_bg"' : '') . '>';
             $navbar .= '<div class="dropdown">';
                 $navbar .= '<a href="#" class="dropdown_button">Touhou Sites&#x25BF;</a>';
                 $navbar .= '<div class="dropdown_content dropdown_right' . ($page == 'tiers' ? ' dark_bg' : '') . '">';

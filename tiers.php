@@ -53,7 +53,8 @@
                         <li>Alternatively, press Enter to add a selection of multiple characters to a tier.</li>
                         <li>Double click a character to add them to a tier using a menu instead of by dragging.</li>
                         <li>Right click a character in a tier, or drag them onto the picker, to remove them from that tier.</li>
-                        <li>Click a tier and then another tier to swap their positions.</li>
+                        <li>Click a tier to change that tier, such as its name, background colour or position.</li>
+                        <li>Drag a tier onto another tier to swap their positions.</li>
                         <li>Ctrl+Click a tier to add all remaining characters to it, and Ctrl+Right Click a tier to empty it.</li>
                         <li>Right click a tier to remove that tier and all of its contents.</li>
                         <li>Hover your cursor above a character to see their name.</li>
@@ -62,7 +63,7 @@
                         <li>Tap a character to add them to a tier.</li>
                         <li>Long press a character in a tier to either remove them from that tier,
                         move them to the back of the tier, or move them a tier up or down.</li>
-                        <li>Tap a tier and then another tier to swap their positions.</li>
+                        <li>Tap a tier to change that tier, such as its name, background colour or position.</li>
                         <li>Long press a tier to either remove it, remove all its characters,
                         or add all remaining characters to it.</li>
                     </ul>
