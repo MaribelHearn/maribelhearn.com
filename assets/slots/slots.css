@@ -26,9 +26,14 @@ table, th, td {
     width: 100px;
     height: 100px;
 }
-.charslot {
-    background-image: url('../spritesheet/spritesheet.png');
-    background-position: -19440px 0;
+.charslot_1 {
+    background-image: url('../spritesheet/spritesheet_1.png');
+    background-position: -9720px 0;
+    vertical-align: bottom;
+}
+.charslot_2 {
+    background-image: url('../spritesheet/spritesheet_2.png');
+    background-position: -9720px 0;
     vertical-align: bottom;
 }
 .locslot {
