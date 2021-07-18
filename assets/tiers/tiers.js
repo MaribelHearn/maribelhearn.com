@@ -23,11 +23,11 @@ var MAX_NAME_LENGTH = 30,
         "tierListName": "",
         "tierHeaderWidth": defaultWidth,
         "tierHeaderFontSize": defaultSize,
-        "artist": "Dairi",
         "sort": "characters"
     },
     windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "Spinoff"],
     secondSheet = ["SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "Spinoff", "Manga", "CD"],
+    spinoffs = ["IaMP", "SWR", "Soku", "DS", "GFW", "HM", "ULiL", "AoCF"],
     exceptions = ["SuikaIbuki", "IkuNagae", "TenshiHinanawi"],
     maleCharacters = ["SinGyokuM", "Genjii", "Unzan", "RinnosukeMorichika", "FortuneTeller"],
     pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"],
@@ -982,7 +982,7 @@ function checkSort(text) {
     var i, j, characters;
 
     for (i = 0; i < text.length; i += 1) {
-        if (text[i].contains(':')) {
+        if (text[i].contains(':') || text[i].contains(';')) {
             continue;
         }
 
@@ -1032,6 +1032,14 @@ function load() {
     }
 
     for (i = 0; i < text.length; i += 1) {
+        if (text[i].contains(';')) {
+            tmp = text[i].split(';');
+            settings.tierListName = tmp[0].replace('-', "");
+            settings.tierHeaderWidth = tmp[1];
+            settings.tierHeaderFontSize = tmp[2];
+            i += 1;
+        }
+
         if (text[i].contains(':')) {
             addTier({data: {tierName: text[i].replace(':', "")}});
             counter += 1;
@@ -1053,6 +1061,7 @@ function load() {
                 if (characters[j] == "Mai") {
                     characters[j] = "Mai PC-98";
                 }
+
                 addToTier(characters[j].removeSpaces(), counter);
             }
         }
@@ -1061,6 +1070,7 @@ function load() {
     $("#modal_inner").html("");
     $("#modal").css("display", "none");
     $("#modal_inner").css("display", "none");
+    $("#tier_list_caption").html(settings.tierListName);
     $("#msg_container").html("<strong class='confirmation'>Tier list successfully imported!</strong>");
 }
 
@@ -1086,13 +1096,15 @@ function copyToClipboard() {
 
 function exportText() {
     var tierList = (settings.sort == "characters" ? tiers : gameTiers),
-    tierOrder = (settings.sort == "characters" ? order : gameOrder),
-    tierNum, character, i, j;
+        tierOrder = (settings.sort == "characters" ? order : gameOrder),
+        tierNum, character, i, j;
 
     emptyModal();
     $("#modal_inner").html("<h2>Export to Text</h2><p><input id='copy_to_clipboard' " +
     "type='button' value='Copy to Clipboard'></p><p id='text'></p>");
     $("#copy_to_clipboard").on("click", copyToClipboard);
+    $("#text").append((settings.tierListName ? settings.tierListName : "-") + ";" + settings.tierHeaderWidth +
+    ";" + settings.tierHeaderFontSize);
 
     for (i = 0; i < tierOrder.length; i += 1) {
         tierNum = tierOrder[i];
@@ -1149,6 +1161,10 @@ function takeScreenshot() {
         }).then(function(canvas) {
             var base64image = canvas.toDataURL("image/png"), link;
 
+            if (tempTierView) {
+                toggleTierView();
+            }
+
             $("#modal_inner").append("<h2>Screenshot</h2><p>");
             $("#modal_inner").append("<a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
             "<input type='button' value='Save to Device'></a></p>" +
@@ -1158,12 +1174,12 @@ function takeScreenshot() {
             $("#modal").css("display", "block");
         });
     } catch (err) {
-        $("#msg_container").html("<strong class='error'>Error: your browser is outdated. Use a different browser " +
-        "to screenshot your tier list.</strong>");
-    } finally {
         if (tempTierView) {
             toggleTierView();
         }
+
+        $("#msg_container").html("<strong class='error'>Error: your browser is outdated. Use a different browser " +
+        "to screenshot your tier list.</strong>");
     }
 }
 
@@ -1365,7 +1381,6 @@ function saveSettings() {
     }
 
     if (settings.sort == "characters") {
-        settings.artist = "Dairi";
         settings.pc98Enabled = $("#pc98").is(":checked");
         settings.windowsEnabled = $("#windows").is(":checked");
         settings.maleEnabled = $("#male").is(":checked");
@@ -1375,7 +1390,7 @@ function saveSettings() {
         }
     }
 
-    settings.tierListName = $("#tier_list_name").val();
+    settings.tierListName = $("#tier_list_name").val().replace(/[^a-zA-Z0-9|!|\?|,|\.|\+|-|\*@#$%\^&\(\)]/g, "");
     settings.tierHeaderWidth = $("#tier_header_width").val() > defaultWidth ? $("#tier_header_width").val() : defaultWidth;
     settings.tierHeaderFontSize = $("#tier_header_font_size").val() != defaultSize ? $("#tier_header_font_size").val() : defaultSize;
     $(".tier_header").css("width", settings.tierHeaderWidth + "px");
@@ -1462,12 +1477,10 @@ function eraseAllConfirmed() {
         "categories": {
             "Main": { enabled: true }, "HRtP": { enabled: true }, "SoEW": { enabled: true }, "PoDD": { enabled: true },
             "LLS": { enabled: true }, "MS": { enabled: true }, "EoSD": { enabled: true }, "PCB": { enabled: true },
-            "IaMP": { enabled: true }, "IN": { enabled: true }, "PoFV": { enabled: true }, "MoF": { enabled: true },
-            "SWR": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true }, "Soku": { enabled: true },
-            "DS": { enabled: true }, "GFW": { enabled: true }, "TD": { enabled: true }, "HM": { enabled: true },
-            "DDC": { enabled: true }, "ULiL": { enabled: true }, "LoLK": { enabled: true }, "AoCF": { enabled: true },
-            "HSiFS": { enabled: true }, "WBaWC": { enabled : true }, "UM": { enabled: true }, "Manga": { enabled: true },
-            "CD": { enabled: true }
+            "IN": { enabled: true }, "PoFV": { enabled: true }, "MoF": { enabled: true }, "SA": { enabled: true },
+            "UFO": { enabled: true }, "TD": { enabled: true }, "DDC": { enabled: true }, "LoLK": { enabled: true },
+            "HSiFS": { enabled: true }, "WBaWC": { enabled: true }, "UM": { enabled: true }, "Spinoff": { enabled : true },
+            "Manga": { enabled: true }, "CD": { enabled: true }
         },
         "gameCategories": {
             "PC-98": { enabled: true }, "Classic": { enabled: true }, "Modern1": { enabled: true }, "Modern2": { enabled: true },
@@ -1479,7 +1492,6 @@ function eraseAllConfirmed() {
         "tierListName": "",
         "tierHeaderWidth": defaultWidth,
         "tierHeaderFontSize": defaultSize,
-        "artist": "Dairi",
         "sort": tmp
     };
     localStorage.removeItem("order");
@@ -1816,7 +1828,7 @@ function loadSettingsFromStorage() {
 
     if (settingsData.hasOwnProperty("categories")) {
         for (category in settingsData.categories) {
-            if (["IaMP", "SWR", "Soku", "DS", "GFW", "HM", "ULiL", "AoCF"].contains(category)) {
+            if (spinoffs.contains(category)) {
                 settings.categories["Spinoff"].enabled = settingsData.categories[category].enabled;
             } else {
                 settings.categories[category].enabled = settingsData.categories[category].enabled;
@@ -1840,7 +1852,6 @@ function loadSettingsFromStorage() {
         settings.tierListName = (settingsData.tierListName ? settingsData.tierListName : "");
         settings.tierHeaderWidth = (settingsData.tierHeaderWidth ? settingsData.tierHeaderWidth : defaultWidth);
         settings.tierHeaderFontSize = (settingsData.tierHeaderFontSize ? settingsData.tierHeaderFontSize : defaultSize);
-        settings.artist = settingsData.artist;
         settings.sort = settingsData.sort;
     } else {
         for (category in settingsData) {
