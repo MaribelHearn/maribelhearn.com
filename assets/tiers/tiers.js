@@ -429,8 +429,6 @@ function removeFromTier(item, tierNum) {
     $("#" + item + "C").append($("#" + item));
     $("#" + getCategoryOf(item)).css("display", "block");
 
-    alert(tierNum);
-
     if (tierNum !== false) {
         for (counter = pos + 1; counter < tierList[tierNum].chars.length; counter += 1) {
             tmp = getItemAt(tierNum, counter);
