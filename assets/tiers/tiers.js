@@ -660,8 +660,6 @@ function swapItems(item1, item2) {
         tierNum1 = getTierNumOf(item1), tierNum2 = getTierNumOf(item2),
         pos1 = getPositionOf(item1), pos2 = getPositionOf(item2), tmp;
 
-    alert("Swapping " + item1 + " from tier " + tierNum1 + "," + pos1 + " with " + item2 + " from tier " + tierNum2 + "," + pos2);
-
     $("#tier" + tierNum1 + "_" + pos1).remove("#" + item1);
     $("#tier" + tierNum2 + "_" + pos2).remove("#" + item2);
     $("#tier" + tierNum1 + "_" + pos1).append($("#" + item2));
