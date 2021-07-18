@@ -115,12 +115,14 @@ function getCategoryOf(item) {
     return false;
 }
 
-function getSpritesheetOf(item) {
+function getSpritesheetOf(item, category) {
     if (settings.sort != "characters") {
         return "";
     }
 
-    var category = getCategoryOf(item);
+    if (!category) {
+        category = getCategoryOf(item);
+    }
 
     if (secondSheet.contains(category) && !exceptions.contains(item.removeSpaces())) {
         return 2;
@@ -251,7 +253,7 @@ function insertAt(character, tierNum, pos, chars) {
 
 function addToTier(item, tierNum, pos, noDisplay) {
     var cats = (settings.sort == "characters" ? categories : gameCategories),
-        tierList = (settings.sort == "characters" ? tiers : gameTiers), categoryName = getCategoryOf(item);
+        tierList = (settings.sort == "characters" ? tiers : gameTiers), categoryName = getCategoryOf(item), i;
 
     if (isTiered(item)) {
         return;
@@ -259,8 +261,8 @@ function addToTier(item, tierNum, pos, noDisplay) {
 
     $("#msg_container").html("");
     $("#" + item).removeClass("outline");
-    $("#" + item).removeClass("list_" + settings.sort + getSpritesheetOf(item));
-    $("#" + item).addClass("tiered_" + settings.sort + getSpritesheetOf(item));
+    $("#" + item).removeClass("list_" + settings.sort + getSpritesheetOf(item, categoryName));
+    $("#" + item).addClass("tiered_" + settings.sort + getSpritesheetOf(item, categoryName));
     $("#" + item).off("click");
     $("#" + item).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
     id = "tier" + tierNum + "_" + tierList[tierNum].chars.length;
@@ -1640,7 +1642,7 @@ function loadTier(tiersData, tierNum, tierSort) {
                 $("#th" + tierNum).css("height", "60px");
             }
 
-            for (i = 0; i < tiersData[tierNum].chars.length; i += 1) {
+            for (i = 0; i < tiersData[tierNum].chars.length; i++) {
                 character = tiersData[tierNum].chars[i];
 
                 if (character == "Mai") {
@@ -1654,7 +1656,7 @@ function loadTier(tiersData, tierNum, tierSort) {
                 addToTier(character, tierNum);
             }
         } else {
-            for (i = 0; i < tiersData[tierNum].chars.length; i += 1) {
+            for (i = 0; i < tiersData[tierNum].chars.length; i++) {
                 character = tiersData[tierNum].chars[i];
 
                 if (character == "Mai") {
@@ -1744,7 +1746,7 @@ function loadCharacters() {
     }
 
     if (isMobile()) {
-        $(".list_characters, .tiered_characters").css("background-image", "url('assets/spritesheet/spritesheet60x60.png')");
+        $(".list_characters1, .list_characters2, .tiered_characters1, .tiered_characters2").css("background-image", "url('assets/spritesheet/spritesheet60x60.png')");
     }
 }
 
