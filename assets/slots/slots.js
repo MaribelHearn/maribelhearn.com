@@ -159,7 +159,6 @@ function takeScreenshot() {
             $("#modal_inner").html("<h2>Screenshot</h2>");
             $("#modal_inner").append("<p><a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
             "<input type='button' value='Save to Device'></a></p>" +
-            "<p class='descr'>This feature currently does not work on Chromium-based browsers.</p>" +
             "<p><img id='base64' src='" + base64image + "' alt='Slot machine screenshot'></p>");
             $("#modal_inner, #modal, #content, h1").css("display", "block");
             $("#hy_container").css("display", "inline");
