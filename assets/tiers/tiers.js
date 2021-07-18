@@ -1139,6 +1139,7 @@ function takeScreenshot() {
         toggleTierView();
         tempTierView = true;
     }
+
     emptyModal();
 
     try {
@@ -1151,7 +1152,7 @@ function takeScreenshot() {
             $("#modal_inner").append("<h2>Screenshot</h2><p>");
             $("#modal_inner").append("<a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
             "<input type='button' value='Save to Device'></a></p>" +
-            "<p>If the tier list is large, this feature currently does not work on Android.</p>" +
+            "<p>If the tier list is large, this feature currently does not work properly on Android.</p>" +
             "<p><img id='screenshot_base64' src='" + base64image + "' alt='Tier list screenshot'></p>");
             $("#modal_inner").css("display", "block");
             $("#modal").css("display", "block");
@@ -1312,7 +1313,6 @@ function saveSettings() {
     var cats = (settings.sort == "characters" ? categories : gameCategories),
         removedCategories = [], categoryName, item, confirmation, i;
 
-    saveTierSettings();
     saveTiers();
 
     for (categoryName in cats) {
@@ -1905,6 +1905,7 @@ $(document).ready(function () {
     }
 
     loadCategories();
+    $("#tier_list_caption").html(settings.tierListName);
     $("#chars_load, #works_load").remove();
     $("#sort").val(settings.sort);
     loadItems();
