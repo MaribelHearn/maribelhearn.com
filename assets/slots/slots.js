@@ -21,11 +21,32 @@ String.prototype.escapeHTML = function () {
     return this.replace('<', "&lt;").replace('>', "&gt;").replace('&', "&amp;");
 }
 
+function isOnSecondSheet(slot) {
+    var charNum = slots[slot] / WIDTH;
+
+    if (charNum >= NUMBER_OF_CHARS / 2) {
+        $("#slot" + slot).addClass("charslot_2");
+        $("#slot" + slot).removeClass("charslot_1");
+        return true;
+    } else {
+        $("#slot" + slot).addClass("charslot_1");
+        $("#slot" + slot).removeClass("charslot_2");
+        return false;
+    }
+}
+
 function randomiseImage(max, slot, previous) {
+    var secondSheet;
+
     slots[slot] = Math.floor(Math.random() * (max - 1)) * WIDTH;
+    secondSheet = isOnSecondSheet(slot);
 
     if (slots[slot] == previous) {
         slots[slot] += (slots[slot] == WIDTH * (max - 1) ? -1 * WIDTH : WIDTH);
+    }
+
+    if (max == NUMBER_OF_CHARS && secondSheet) {
+        slots[slot] -= NUMBER_OF_CHARS * WIDTH / 2;
     }
 
     $("#slot" + slot).css("background-position", "-" + slots[slot] + "px 0");

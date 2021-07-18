@@ -50,8 +50,8 @@
                     </tr>
                     <tr>
                         <td id='slot0'></td>
-                        <td id='slot1' class='slot charslot'></td>
-                        <td id='slot2' class='slot charslot'></td>
+                        <td id='slot1' class='slot charslot_1'></td>
+                        <td id='slot2' class='slot charslot_1'></td>
                     </tr>
                     <tr>
                         <td id='title3' class='title'>First kiss</td>
@@ -59,9 +59,9 @@
                         <td id='title5' class='title'>Married to</td>
                     </tr>
                     <tr>
-                        <td id='slot3' class='slot charslot'></td>
-                        <td id='slot4' class='slot charslot'></td>
-                        <td id='slot5' class='slot charslot'></td>
+                        <td id='slot3' class='slot charslot_1'></td>
+                        <td id='slot4' class='slot charslot_1'></td>
+                        <td id='slot5' class='slot charslot_1'></td>
                     </tr>
                     <tr>
                         <td id='title6' class='title'>Honeymoon location</td>
@@ -71,7 +71,7 @@
                     <tr>
                         <td id='slot6' class='slot locslot'></td>
                         <td id='slot7'></td>
-                        <td id='slot8' class='slot charslot'></td>
+                        <td id='slot8' class='slot charslot_1'></td>
                     </tr>
                 </table>
                 <p>The artworks used for this page are drawn by
