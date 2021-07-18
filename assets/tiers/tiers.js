@@ -90,8 +90,8 @@ function getTierNumOf(item) {
     var tierList = (settings.sort == "characters" ? tiers : gameTiers), tierNum, i;
 
     for (tierNum in tierList) {
-        for (i = 0; i < tierList[tierNum].chars.length; i += 1) {
-            if (tierList[tierNum].chars[i] == item) {
+        for (i = 0; i < tierList[tierNum].chars.length; i++) {
+            if (tierList[tierNum].chars[i] == item.removeSpaces()) {
                 return Number(tierNum);
             }
         }
@@ -429,6 +429,8 @@ function removeFromTier(item, tierNum) {
     $("#" + item + "C").append($("#" + item));
     $("#" + getCategoryOf(item)).css("display", "block");
 
+    alert(tierNum);
+
     if (tierNum !== false) {
         for (counter = pos + 1; counter < tierList[tierNum].chars.length; counter += 1) {
             tmp = getItemAt(tierNum, counter);
@@ -660,10 +662,16 @@ function swapItems(item1, item2) {
         tierNum1 = getTierNumOf(item1), tierNum2 = getTierNumOf(item2),
         pos1 = getPositionOf(item1), pos2 = getPositionOf(item2), tmp;
 
+    alert("Swapping " + item1 + " from tier " + tierNum1 + "," + pos1 + " with " + item2 + " from tier " + tierNum2 + "," + pos2);
+
     $("#tier" + tierNum1 + "_" + pos1).remove("#" + item1);
     $("#tier" + tierNum2 + "_" + pos2).remove("#" + item2);
     $("#tier" + tierNum1 + "_" + pos1).append($("#" + item2));
     $("#tier" + tierNum2 + "_" + pos2).append($("#" + item1));
+    $("#" + item2).off("contextmenu");
+    $("#" + item1).off("contextmenu");
+    $("#" + item2).on("contextmenu", {tierNum: tierNum1}, tieredContextMenu);
+    $("#" + item1).on("contextmenu", {tierNum: tierNum2}, tieredContextMenu);
     tierList[tierNum1].chars[pos1] = item2;
     tierList[tierNum2].chars[pos2] = item1;
 
@@ -1569,7 +1577,7 @@ function drop(event) {
                 }
             }
         }
-    } else if (isTiered(event.target.id)) {
+    } else if (isTiered(event.target.id) && following.substring(0, 2) != "th") {
         if (isTiered(following)) {
             swapItems(following, event.target.id);
         } else {
