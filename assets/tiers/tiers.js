@@ -65,7 +65,7 @@ function isTiered(item) {
         return false;
     }
 
-    return item !== "" && $("#" + item).hasClass("tiered");
+    return item !== "" && ($("#" + item).hasClass("tiered_characters") || $("#" + item).hasClass("tiered_works"));
 }
 
 function allTiered(categoryName) {
@@ -165,14 +165,14 @@ function reloadTiers() {
                 }
 
                 $("#" + item).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
-                $("#" + item).removeClass("list");
-                $("#" + item).addClass("tiered");
+                $("#" + item).removeClass("list_" + settings.sort);
+                $("#" + item).addClass("tiered_" + settings.sort);
                 id = "tier" + tierNum + "_" + i;
                 $("#tier" + tierNum).append("<span id='" + id + "'></span>");
                 $("#" + id).html($("#" + item));
 
                 for (j in cats) {
-                    if (!$("#" + j).html().contains("list")) {
+                    if (!$("#" + j).html().contains("list_" + settings.sort)) {
                         $("#" + j).css("display", "none");
                     }
                 }
@@ -246,8 +246,8 @@ function addToTier(character, tierNum, pos, noDisplay) {
 
     $("#msg_container").html("");
     $("#" + character).removeClass("outline");
-    $("#" + character).removeClass("list");
-    $("#" + character).addClass("tiered");
+    $("#" + character).removeClass("list_" + settings.sort);
+    $("#" + character).addClass("tiered_" + settings.sort);
     $("#" + character).off("click");
     $("#" + character).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
     id = "tier" + tierNum + "_" + tierList[tierNum].chars.length;
@@ -394,8 +394,8 @@ function removeFromTier(character, tierNum) {
     }
 
     $("#msg_container").html("");
-    $("#" + character).removeClass("tiered");
-    $("#" + character).addClass("list");
+    $("#" + character).removeClass("tiered_" + settings.sort);
+    $("#" + character).addClass("list_" + settings.sort);
     $("#" + character).off("contextmenu");
     $("#" + character).on("click", toggleMulti);
 
@@ -1710,11 +1710,11 @@ function loadCharacters() {
 
             if (isMobile()) {
                 $("#" + categoryName).append("<span id='" + character.removeSpaces() +
-                "C'><span id='" + character.removeSpaces() + "' class='list' title='" + character + "'>");
+                "C'><span id='" + character.removeSpaces() + "' class='item list_characters' title='" + character + "'>");
                 $("#" + character.removeSpaces()).on("click", {name: $("#" + character.removeSpaces()).attr("title")}, addMenu);
             } else {
-                $("#" + categoryName).append("<span id='" + character.removeSpaces() +
-                "C'><span id='" + character.removeSpaces() + "' class='list' draggable='true' title='" + character + "'>");
+                $("#" + categoryName).append("<span id='" + character.removeSpaces() + "C'><span id='" + character.removeSpaces() +
+                "' class='item list_characters' draggable='true' title='" + character + "'>");
                 $("#" + character.removeSpaces()).on("dblclick", {name: $("#" + character.removeSpaces()).attr("title")}, addMenu);
                 $("#" + character.removeSpaces()).on("dragstart", drag);
                 $("#" + character.removeSpaces()).on("click", toggleMulti);
@@ -1733,7 +1733,7 @@ function loadCharacters() {
     }
 
     if (isMobile()) {
-        $(".list, .tiered").css("background-image", "url('assets/spritesheet/spritesheet60x60.png')");
+        $(".list_characters, .tiered_characters").css("background-image", "url('assets/spritesheet/spritesheet60x60.png')");
     }
 }
 
@@ -1766,13 +1766,13 @@ function loadWorks() {
 
             if (isMobile()) {
                 $("#" + categoryName).append("<span id='" + game.removeSpaces() +
-                "C'><img id='" + game.removeSpaces() +
-                "' class='list' src='assets/games/" + acronym(game) + "120x120.jpg' title='" + game + "'>");
+                "C'><span id='" + game.removeSpaces() +
+                "' class='item list_works' title='" + game + "'>");
                 $("#" + game.removeSpaces()).on("click", {name: $("#" + game.removeSpaces()).attr("title")}, addMenu);
             } else {
                 $("#" + categoryName).append("<span id='" + game.removeSpaces() +
-                "C'><img id='" + game.removeSpaces() + "' class='list' draggable='true' " +
-                "src='assets/games/" + acronym(game) + "120x120.jpg' alt='" + game + "' title='" + game + "'>");
+                "C'><span id='" + game.removeSpaces() + "' class='item list_works' draggable='true' " +
+                "alt='" + game + "' title='" + game + "'>");
                 $("#" + game.removeSpaces()).on("dblclick", {name: $("#" + game.removeSpaces()).attr("title")}, addMenu);
                 $("#" + game.removeSpaces()).on("dragstart", drag);
             }
@@ -1783,6 +1783,10 @@ function loadWorks() {
         if (!settings.gameCategories[categoryName].enabled) {
             $("#" + categoryName).css("display", "none");
         }
+    }
+
+    if (isMobile()) {
+        $(".list_works, .tiered_works").css("background-image", "url('assets/spritesheet/work_sheet60x60.png')");
     }
 }
 
