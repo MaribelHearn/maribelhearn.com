@@ -83,9 +83,11 @@
                     $chars = json_decode($json, true);
                     $json = file_get_contents('assets/json/locs.json');
                     $locs = json_decode($json, true);
-                    echo '<div id="chars_load">';
-                    foreach ($chars as $key => $name) {
-                        echo '<input id="' . $key . '" type="hidden" value="' . $name . '">';
+                    foreach ($chars as $key => $array) {
+                        echo '<div id="chars' . $key . '_load">';
+                        foreach ($array as $key => $name) {
+                            echo '<input id="' . $key . '" type="hidden" value="' . $name . '">';
+                        }
                     }
                     echo '</div><div id="locs_load">';
                     foreach ($locs as $key => $name) {
