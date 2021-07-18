@@ -31,6 +31,7 @@ var MAX_NAME_LENGTH = 30,
     exceptions = ["SuikaIbuki", "IkuNagae", "TenshiHinanawi"],
     maleCharacters = ["SinGyokuM", "Genjii", "Unzan", "RinnosukeMorichika", "FortuneTeller"],
     pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"],
+    tieredClasses = ["tiered_characters1", "tiered_characters2", "tiered_works"],
     tiers = {},
     gameTiers = {},
     order = [],
@@ -58,13 +59,19 @@ function isCategory(category) {
 }
 
 function isTiered(item) {
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers);
+    var tierList = (settings.sort == "characters" ? tiers : gameTiers), i;
 
     if (!item) {
         return false;
     }
 
-    return item !== "" && ($("#" + item).hasClass("tiered_characters") || $("#" + item).hasClass("tiered_works"));
+    for (i = 0; i < tieredClasses.length; i++) {
+        if ($("#" + item).hasClass(tieredClasses[i])) {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 function allTiered(categoryName) {
