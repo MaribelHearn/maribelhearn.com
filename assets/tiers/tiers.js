@@ -1210,7 +1210,6 @@ function settingsMenuChars() {
 
         $("#settings_tr" + current).append("<td><input id='checkbox_" + categoryName +
         "' type='checkbox'" + (settings.categories[categoryName].enabled ? " checked" : "") +
-        " " + (pc98.contains(categoryName) || categoryName == "Soku" ? "disabled=true" : "") +
         "><label for='" + categoryName + "'>" + categoryName + "</label></td>");
         counter += 1;
     }
