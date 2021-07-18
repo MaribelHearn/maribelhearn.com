@@ -11,7 +11,7 @@ var SPECIES = ["Human", "Magician", "Devil", "Ghost", "Yuki-onna", "Night sparro
     MAX_NUMBER = 5,
     slotTitles = ["You are a ...", "Best friend", "Hates you", "First kiss", "Has a crush on you",
     "Married to", "Honeymoon location", "No. of children", "Cockblocked by"],
-    chars = {},
+    chars = {'1': {}, '2': {}},
     locs = {},
     slots = [],
     speed = 100,
@@ -21,38 +21,38 @@ String.prototype.escapeHTML = function () {
     return this.replace('<', "&lt;").replace('>', "&gt;").replace('&', "&amp;");
 }
 
-function isOnSecondSheet(slot) {
+function checkSpritesheet(max, slot) {
     var charNum = slots[slot] / WIDTH;
 
     if (charNum >= NUMBER_OF_CHARS / 2) {
         $("#slot" + slot).addClass("charslot_2");
         $("#slot" + slot).removeClass("charslot_1");
-        return true;
+        slots[slot] -= NUMBER_OF_CHARS * WIDTH / 2;
+        return 2;
     } else {
         $("#slot" + slot).addClass("charslot_1");
         $("#slot" + slot).removeClass("charslot_2");
-        return false;
+        return 1;
     }
 }
 
 function randomiseImage(max, slot, previous) {
-    var secondSheet;
+    var spritesheet;
 
     slots[slot] = Math.floor(Math.random() * (max - 1)) * WIDTH;
-    secondSheet = isOnSecondSheet(slot);
 
     if (slots[slot] == previous) {
         slots[slot] += (slots[slot] == WIDTH * (max - 1) ? -1 * WIDTH : WIDTH);
     }
 
-    if (max == NUMBER_OF_CHARS && secondSheet) {
-        slots[slot] -= NUMBER_OF_CHARS * WIDTH / 2;
+    if (max == NUMBER_OF_CHARS) {
+        spritesheet = checkSpritesheet(max, slot);
     }
 
     $("#slot" + slot).css("background-position", "-" + slots[slot] + "px 0");
 
     if (max == NUMBER_OF_CHARS) {
-        $("#slot" + slot).html("<div id='text" + slot + "' class='name'>" + chars[slots[slot]] + "</div>");
+        $("#slot" + slot).html("<div id='text" + slot + "' class='name'>" + chars[spritesheet][slots[slot]] + "</div>");
     } else {
         $("#slot" + slot).html("<div id='text" + slot + "' class='name'>" + locs[slots[slot]] + "</div>");
     }
@@ -220,17 +220,22 @@ function titleMenu(event, id) {
 }
 
 function loadCharsLocs() {
-    var tempChars = $("#chars_load").children(), tempLocs = $("#locs_load").children(), i;
+    var tempChars1 = $("#chars1_load").children(), tempChars2 = $("#chars2_load").children(),
+        tempLocs = $("#locs_load").children(), i;
 
-    for (i = 0; i < tempChars.length * WIDTH; i += WIDTH) {
-        chars[i] = tempChars[i / WIDTH].value;
+    for (i = 0; i < tempChars1.length * WIDTH; i += WIDTH) {
+        chars['1'][i] = tempChars1[i / WIDTH].value;
+    }
+
+    for (i = 0; i < tempChars2.length * WIDTH; i += WIDTH) {
+        chars['2'][i] = tempChars2[i / WIDTH].value;
     }
 
     for (i = 0; i < tempLocs.length * WIDTH; i += WIDTH) {
         locs[i] = tempLocs[i / WIDTH].value;
     }
 
-    $("#chars_load, #locs_load").remove();
+    $("#chars1_load, #chars2_load, #locs_load").remove();
 }
 
 $(document).ready(function () {
