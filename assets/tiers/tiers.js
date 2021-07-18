@@ -8,12 +8,10 @@ var MAX_NAME_LENGTH = 30,
         "categories": {
             "Main": { enabled: true }, "HRtP": { enabled: true }, "SoEW": { enabled: true }, "PoDD": { enabled: true },
             "LLS": { enabled: true }, "MS": { enabled: true }, "EoSD": { enabled: true }, "PCB": { enabled: true },
-            "IaMP": { enabled: true }, "IN": { enabled: true }, "PoFV": { enabled: true }, "MoF": { enabled: true },
-            "SWR": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true }, "Soku": { enabled: true },
-            "DS": { enabled: true }, "GFW": { enabled: true }, "TD": { enabled: true }, "HM": { enabled: true },
-            "DDC": { enabled: true }, "ULiL": { enabled: true }, "LoLK": { enabled: true }, "AoCF": { enabled: true },
-            "HSiFS": { enabled: true }, "WBaWC": { enabled: true }, "UM": { enabled: true }, "Manga": { enabled: true },
-            "CD": { enabled: true }
+            "IN": { enabled: true }, "PoFV": { enabled: true }, "MoF": { enabled: true }, "SA": { enabled: true },
+            "UFO": { enabled: true }, "TD": { enabled: true }, "DDC": { enabled: true }, "LoLK": { enabled: true },
+            "HSiFS": { enabled: true }, "WBaWC": { enabled: true }, "UM": { enabled: true }, "Spinoff": { enabled : true },
+            "Manga": { enabled: true }, "CD": { enabled: true }
         },
         "gameCategories": {
             "PC-98": { enabled: true }, "Classic": { enabled: true }, "Modern1": { enabled: true }, "Modern2": { enabled: true },
@@ -28,8 +26,9 @@ var MAX_NAME_LENGTH = 30,
         "artist": "Dairi",
         "sort": "characters"
     },
-    windows = ["EoSD", "PCB", "IaMP", "IN", "PoFV", "MoF", "SWR", "SA", "UFO", "Soku",
-    "DS", "GFW", "TD", "HM", "DDC", "ULiL", "LoLK", "AoCF", "HSiFS", "WBaWC", "UM"],
+    windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "Spinoff"],
+    secondSheet = ["SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "Spinoff", "Manga", "CD"],
+    exceptions = ["SuikaIbuki", "IkuNagae", "TenshiHinanawi"],
     maleCharacters = ["SinGyokuM", "Genjii", "Unzan", "RinnosukeMorichika", "FortuneTeller"],
     pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"],
     tiers = {},
@@ -108,12 +107,26 @@ function getCategoryOf(item) {
     var cats = (settings.sort == "characters" ? categories : gameCategories), categoryName;
 
     for (categoryName in cats) {
-        if (JSON.stringify(cats[categoryName].chars).removeSpaces().contains(item)) {
+        if (JSON.stringify(cats[categoryName].chars).removeSpaces().contains(item.removeSpaces())) {
             return categoryName;
         }
     }
 
     return false;
+}
+
+function getSpritesheetOf(item) {
+    if (settings.sort != "characters") {
+        return "";
+    }
+
+    var category = getCategoryOf(item);
+
+    if (secondSheet.contains(category) && !exceptions.contains(item.removeSpaces())) {
+        return 2;
+    } else {
+        return 1;
+    }
 }
 
 function reloadTiers() {
@@ -165,8 +178,8 @@ function reloadTiers() {
                 }
 
                 $("#" + item).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
-                $("#" + item).removeClass("list_" + settings.sort);
-                $("#" + item).addClass("tiered_" + settings.sort);
+                $("#" + item).removeClass("list_" + settings.sort + getSpritesheetOf(item));
+                $("#" + item).addClass("tiered_" + settings.sort + getSpritesheetOf(item));
                 id = "tier" + tierNum + "_" + i;
                 $("#tier" + tierNum).append("<span id='" + id + "'></span>");
                 $("#" + id).html($("#" + item));
@@ -236,32 +249,32 @@ function insertAt(character, tierNum, pos, chars) {
     chars[pos] = character;
 }
 
-function addToTier(character, tierNum, pos, noDisplay) {
+function addToTier(item, tierNum, pos, noDisplay) {
     var cats = (settings.sort == "characters" ? categories : gameCategories),
-        tierList = (settings.sort == "characters" ? tiers : gameTiers), categoryName = getCategoryOf(character);
+        tierList = (settings.sort == "characters" ? tiers : gameTiers), categoryName = getCategoryOf(item);
 
-    if (isTiered(character)) {
+    if (isTiered(item)) {
         return;
     }
 
     $("#msg_container").html("");
-    $("#" + character).removeClass("outline");
-    $("#" + character).removeClass("list_" + settings.sort);
-    $("#" + character).addClass("tiered_" + settings.sort);
-    $("#" + character).off("click");
-    $("#" + character).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
+    $("#" + item).removeClass("outline");
+    $("#" + item).removeClass("list_" + settings.sort + getSpritesheetOf(item));
+    $("#" + item).addClass("tiered_" + settings.sort + getSpritesheetOf(item));
+    $("#" + item).off("click");
+    $("#" + item).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
     id = "tier" + tierNum + "_" + tierList[tierNum].chars.length;
     $("#tier" + tierNum).append("<span id='" + id + "'></span>");
-    tieredItems.push(character);
+    tieredItems.push(item);
 
     if (typeof pos == "number" && pos < tierList[tierNum].chars.length - 1 && !noDisplay) {
-        insertAt(character, tierNum, pos, tierList[tierNum].chars);
+        insertAt(item, tierNum, pos, tierList[tierNum].chars);
     } else {
         if (!noDisplay) {
-            $("#" + id).append($("#" + character));
+            $("#" + id).append($("#" + item));
         }
 
-        tierList[tierNum].chars.pushStrict(character);
+        tierList[tierNum].chars.pushStrict(item);
     }
 
     window.onbeforeunload = function () {
@@ -386,26 +399,26 @@ function moveToBack(character, tierNum) {
     }
 }
 
-function removeFromTier(character, tierNum) {
+function removeFromTier(item, tierNum) {
     var tierList = (settings.sort == "characters" ? tiers : gameTiers), pos, counter, tmp;
 
-    if (character === "") {
+    if (item === "") {
         return;
     }
 
     $("#msg_container").html("");
-    $("#" + character).removeClass("tiered_" + settings.sort);
-    $("#" + character).addClass("list_" + settings.sort);
-    $("#" + character).off("contextmenu");
-    $("#" + character).on("click", toggleMulti);
+    $("#" + item).removeClass("tiered_" + settings.sort + getSpritesheetOf(item));
+    $("#" + item).addClass("list_" + settings.sort + getSpritesheetOf(item));
+    $("#" + item).off("contextmenu");
+    $("#" + item).on("click", toggleMulti);
 
     if (isMobile()) {
-        $("#" + character).on("click", {name: $("#" + character).attr("title")}, addMenu);
+        $("#" + item).on("click", {name: $("#" + item).attr("title")}, addMenu);
     }
 
-    pos = getPositionOf(character);
-    $("#" + character + "C").append($("#" + character));
-    $("#" + getCategoryOf(character)).css("display", "block");
+    pos = getPositionOf(item);
+    $("#" + item + "C").append($("#" + item));
+    $("#" + getCategoryOf(item)).css("display", "block");
 
     if (tierNum !== false) {
         for (counter = pos + 1; counter < tierList[tierNum].chars.length; counter += 1) {
@@ -415,12 +428,12 @@ function removeFromTier(character, tierNum) {
         }
 
         $("#tier" + tierNum + "_" + (tierList[tierNum].chars.length - 1)).remove();
-        tierList[tierNum].chars.remove(character);
-        tieredItems.remove(character);
+        tierList[tierNum].chars.remove(item);
+        tieredItems.remove(item);
     }
 
     if (isMobile()) {
-        $("#msg_container").html("<strong class='confirmation'>Removed " + $("#" + character).attr("title") +
+        $("#msg_container").html("<strong class='confirmation'>Removed " + $("#" + item).attr("title") +
         " from " + tierList[tierNum].name + "!</strong>");
     }
 
@@ -429,18 +442,18 @@ function removeFromTier(character, tierNum) {
     }
 }
 
-function changeToTier(character, tierNum) {
-    var oldTierNum = getTierNumOf(character), help, id;
+function changeToTier(item, tierNum) {
+    var oldTierNum = getTierNumOf(item), help, id;
 
     if (oldTierNum === tierNum) {
-        moveToBack(character, tierNum);
+        moveToBack(item, tierNum);
     } else {
-        removeFromTier(character, oldTierNum);
+        removeFromTier(item, oldTierNum);
 
         if (isMobile()) {
-            addToTierMobile({data: {character: character, tierNum: tierNum}});
+            addToTierMobile({data: {character: item, tierNum: tierNum}});
         } else {
-            addToTier(character, tierNum);
+            addToTier(item, tierNum);
         }
     }
 }
@@ -1124,8 +1137,8 @@ function takeScreenshot() {
         toggleTierView();
         tempTierView = true;
     }
-
     emptyModal();
+
     try {
         html2canvas(document.body, {
             "height": ($("#tier_list_tbody").height() + 50),
@@ -1133,25 +1146,21 @@ function takeScreenshot() {
         }).then(function(canvas) {
             var base64image = canvas.toDataURL("image/png"), link;
 
-            if (tempTierView) {
-                toggleTierView();
-            }
-
             $("#modal_inner").append("<h2>Screenshot</h2><p>");
             $("#modal_inner").append("<a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
             "<input type='button' value='Save to Device'></a></p>" +
-            "<p>This feature currently does not work when using Chromium-based browsers. If the tier list is large, it also does not work on Android.</p>" +
+            "<p>If the tier list is large, this feature currently does not work on Android.</p>" +
             "<p><img id='screenshot_base64' src='" + base64image + "' alt='Tier list screenshot'></p>");
             $("#modal_inner").css("display", "block");
             $("#modal").css("display", "block");
         });
     } catch (err) {
+        $("#msg_container").html("<strong class='error'>Error: your browser is outdated. Use a different browser " +
+        "to screenshot your tier list.</strong>");
+    } finally {
         if (tempTierView) {
             toggleTierView();
         }
-
-        $("#msg_container").html("<strong class='error'>Error: your browser is outdated. Use a different browser " +
-        "to screenshot your tier list.</strong>");
     }
 }
 
@@ -1390,7 +1399,7 @@ function toggleTierView() {
         tierView = !tierView;
         $("#toggle_view").val(tierView ? "Normal View" : "Tier List View");
         $("#wrap").css("max-height", tierView ? "100%" : "77%");
-        $("#wrap").css("width", tierView ? "auto" : "48%");
+        $("#wrap").css("width", tierView ? "auto" : "45%");
         $("#wrap").css("bottom", tierView ? "5px" : "");
         $("#wrap").css("left", tierView ? "5px" : "");
         $("#wrap").css("border", tierView ? "none" : "1px solid #000");
@@ -1420,8 +1429,9 @@ function changeLog() {
     "<li>13/03/2020: Fixed bug caused by swapping tiers as well as a bug caused by naming a tier after a character</li>" +
     "<li>06/04/2020: Added ability to change the tier header font size and made tier header width changes apply immediately</li>" +
     "<li>06/09/2020: Miyoi Okunoda added</li>" +
-    "<li>23/09/2020: Screenshotting added</li>" +
-    "<li>26/06/2021: UM characters added</li></ul>");
+    "<li>23/09/2020: Screenshotting added, only working on Firefox</li>" +
+    "<li>26/06/2021: UM characters added</li>" +
+    "<li>18/07/2021: Screenshotting fixed, works on all modern browsers</li></ul>");
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
 }
@@ -1710,11 +1720,12 @@ function loadCharacters() {
 
             if (isMobile()) {
                 $("#" + categoryName).append("<span id='" + character.removeSpaces() +
-                "C'><span id='" + character.removeSpaces() + "' class='item list_characters' title='" + character + "'>");
+                "C'><span id='" + character.removeSpaces() + "' class='item list_characters" + getSpritesheetOf(character) +
+                "' title='" + character + "'>");
                 $("#" + character.removeSpaces()).on("click", {name: $("#" + character.removeSpaces()).attr("title")}, addMenu);
             } else {
                 $("#" + categoryName).append("<span id='" + character.removeSpaces() + "C'><span id='" + character.removeSpaces() +
-                "' class='item list_characters' draggable='true' title='" + character + "'>");
+                "' class='item list_characters" + getSpritesheetOf(character) + "' draggable='true' title='" + character + "'>");
                 $("#" + character.removeSpaces()).on("dblclick", {name: $("#" + character.removeSpaces()).attr("title")}, addMenu);
                 $("#" + character.removeSpaces()).on("dragstart", drag);
                 $("#" + character.removeSpaces()).on("click", toggleMulti);
@@ -1803,7 +1814,11 @@ function loadSettingsFromStorage() {
 
     if (settingsData.hasOwnProperty("categories")) {
         for (category in settingsData.categories) {
-            settings.categories[category].enabled = settingsData.categories[category].enabled;
+            if (["IaMP", "SWR", "Soku", "DS", "GFW", "HM", "ULiL", "AoCF"].contains(category)) {
+                settings.categories["Spinoff"].enabled = settingsData.categories[category].enabled;
+            } else {
+                settings.categories[category].enabled = settingsData.categories[category].enabled;
+            }
         }
 
         if (settingsData.hasOwnProperty("gameCategories")) {

@@ -58,15 +58,25 @@ li {
 .item {
     display: inline-block;
 }
-.list_characters {
+.list_characters1 {
     width: 80px;
     height: 80px;
-    background-image: url('../spritesheet/spritesheet80x80.png');
+    background-image: url('../spritesheet/spritesheet80x80_1.png');
 }
-.tiered_characters {
+.list_characters2 {
+    width: 80px;
+    height: 80px;
+    background-image: url('../spritesheet/spritesheet80x80_2.png');
+}
+.tiered_characters1 {
     width: 120px;
     height: 120px;
-    background-image: url('../spritesheet/spritesheet.png');
+    background-image: url('../spritesheet/spritesheet_1.png');
+}
+.tiered_characters2 {
+    width: 120px;
+    height: 120px;
+    background-image: url('../spritesheet/spritesheet_2.png');
 }
 .list_works {
     width: 80px;
@@ -131,7 +141,7 @@ li {
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
-    width: 48%;
+    width: 45%;
     right: 5px;
     top: 5px;
 }
@@ -160,7 +170,7 @@ li {
     overflow-y: auto;
     max-height: 98%;
     min-height: 10%;
-    width: 48%;
+    width: 51%;
     left: 5px;
     top: 5px;
 }
@@ -172,7 +182,7 @@ li {
     padding-right: 10px;
     padding-top: 10px;
     max-height: 25%;
-    max-width: 48%;
+    max-width: 45%;
     bottom: 5px;
     right: 5px;
 }
@@ -244,970 +254,970 @@ li {
 #MarisaKirisame {
     background-position: 0 0;
 }
-#ReimuHakurei.list_characters {
+#ReimuHakurei.list_characters1 {
     background-position: -80px 0;
 }
-#ReimuHakurei.tiered_characters {
+#ReimuHakurei.tiered_characters1 {
     background-position: -120px 0;
 }
-#Elis.list_characters {
+#Elis.list_characters1 {
     background-position: -160px 0;
 }
-#Elis.tiered_characters {
+#Elis.tiered_characters1 {
     background-position: -240px 0;
 }
-#Kikuri.list_characters {
+#Kikuri.list_characters1 {
     background-position: -240px 0;
 }
-#Kikuri.tiered_characters {
+#Kikuri.tiered_characters1 {
     background-position: -360px 0;
 }
-#Konngara.list_characters {
+#Konngara.list_characters1 {
     background-position: -320px 0;
 }
-#Konngara.tiered_characters {
+#Konngara.tiered_characters1 {
     background-position: -480px 0;
 }
-#Mima.list_characters {
+#Mima.list_characters1 {
     background-position: -400px 0;
 }
-#Mima.tiered_characters {
+#Mima.tiered_characters1 {
     background-position: -600px 0;
 }
-#ReimuPC-98.list_characters {
+#ReimuPC-98.list_characters1 {
     background-position: -480px 0;
 }
-#ReimuPC-98.tiered_characters {
+#ReimuPC-98.tiered_characters1 {
     background-position: -720px 0;
 }
-#Sariel.list_characters {
+#Sariel.list_characters1 {
     background-position: -560px 0;
 }
-#Sariel.tiered_characters {
+#Sariel.tiered_characters1 {
     background-position: -840px 0;
 }
-#SinGyokuF.list_characters {
+#SinGyokuF.list_characters1 {
     background-position: -640px 0;
 }
-#SinGyokuF.tiered_characters {
+#SinGyokuF.tiered_characters1 {
     background-position: -960px 0;
 }
-#SinGyokuM.list_characters {
+#SinGyokuM.list_characters1 {
     background-position: -720px 0;
 }
-#SinGyokuM.tiered_characters {
+#SinGyokuM.tiered_characters1 {
     background-position: -1080px 0;
 }
-#YuugenMagan.list_characters {
+#YuugenMagan.list_characters1 {
     background-position: -800px 0;
 }
-#YuugenMagan.tiered_characters {
+#YuugenMagan.tiered_characters1 {
     background-position: -1200px 0;
 }
-#EvilEyeSigma.list_characters {
+#EvilEyeSigma.list_characters1 {
     background-position: -880px 0;
 }
-#EvilEyeSigma.tiered_characters {
+#EvilEyeSigma.tiered_characters1 {
     background-position: -1320px 0;
 }
-#Genjii.list_characters {
+#Genjii.list_characters1 {
     background-position: -960px 0;
 }
-#Genjii.tiered_characters {
+#Genjii.tiered_characters1 {
     background-position: -1440px 0;
 }
-#MarisaPC-98.list_characters {
+#MarisaPC-98.list_characters1 {
     background-position: -1040px 0;
 }
-#MarisaPC-98.tiered_characters {
+#MarisaPC-98.tiered_characters1 {
     background-position: -1560px 0;
 }
-#Meira.list_characters {
+#Meira.list_characters1 {
     background-position: -1120px 0;
 }
-#Meira.tiered_characters {
+#Meira.tiered_characters1 {
     background-position: -1680px 0;
 }
-#Rika.list_characters {
+#Rika.list_characters1 {
     background-position: -1200px 0;
 }
-#Rika.tiered_characters {
+#Rika.tiered_characters1 {
     background-position: -1800px 0;
 }
-#ChiyuriKitashirakawa.list_characters {
+#ChiyuriKitashirakawa.list_characters1 {
     background-position: -1280px 0;
 }
-#ChiyuriKitashirakawa.tiered_characters {
+#ChiyuriKitashirakawa.tiered_characters1 {
     background-position: -1920px 0;
 }
-#Ellen.list_characters {
+#Ellen.list_characters1 {
     background-position: -1360px 0;
 }
-#Ellen.tiered_characters {
+#Ellen.tiered_characters1 {
     background-position: -2040px 0;
 }
-#KanaAnaberal.list_characters {
+#KanaAnaberal.list_characters1 {
     background-position: -1440px 0;
 }
-#KanaAnaberal.tiered_characters {
+#KanaAnaberal.tiered_characters1 {
     background-position: -2160px 0;
 }
-#Kotohime.list_characters {
+#Kotohime.list_characters1 {
     background-position: -1520px 0;
 }
-#Kotohime.tiered_characters {
+#Kotohime.tiered_characters1 {
     background-position: -2280px 0;
 }
-#Mimi-chan.list_characters {
+#Mimi-chan.list_characters1 {
     background-position: -1600px 0;
 }
-#Mimi-chan.tiered_characters {
+#Mimi-chan.tiered_characters1 {
     background-position: -2400px 0;
 }
-#RikakoAsakura.list_characters {
+#RikakoAsakura.list_characters1 {
     background-position: -1680px 0;
 }
-#RikakoAsakura.tiered_characters {
+#RikakoAsakura.tiered_characters1 {
     background-position: -2520px 0;
 }
-#Ruukoto.list_characters {
+#Ruukoto.list_characters1 {
     background-position: -1760px 0;
 }
-#Ruukoto.tiered_characters {
+#Ruukoto.tiered_characters1 {
     background-position: -2640px 0;
 }
-#YumemiOkazaki.list_characters {
+#YumemiOkazaki.list_characters1 {
     background-position: -1840px 0;
 }
-#YumemiOkazaki.tiered_characters {
+#YumemiOkazaki.tiered_characters1 {
     background-position: -2760px 0;
 }
-#Elly.list_characters {
+#Elly.list_characters1 {
     background-position: -1920px 0;
 }
-#Elly.tiered_characters {
+#Elly.tiered_characters1 {
     background-position: -2880px 0;
 }
-#Gengetsu.list_characters {
+#Gengetsu.list_characters1 {
     background-position: -2000px 0;
 }
-#Gengetsu.tiered_characters {
+#Gengetsu.tiered_characters1 {
     background-position: -3000px 0;
 }
-#Kurumi.list_characters {
+#Kurumi.list_characters1 {
     background-position: -2080px 0;
 }
-#Kurumi.tiered_characters {
+#Kurumi.tiered_characters1 {
     background-position: -3120px 0;
 }
-#Mugetsu.list_characters {
+#Mugetsu.list_characters1 {
     background-position: -2160px 0;
 }
-#Mugetsu.tiered_characters {
+#Mugetsu.tiered_characters1 {
     background-position: -3240px 0;
 }
-#Orange.list_characters {
+#Orange.list_characters1 {
     background-position: -2240px 0;
 }
-#Orange.tiered_characters {
+#Orange.tiered_characters1 {
     background-position: -3360px 0;
 }
-#YuukaPC-98.list_characters {
+#YuukaPC-98.list_characters1 {
     background-position: -2320px 0;
 }
-#YuukaPC-98.tiered_characters {
+#YuukaPC-98.tiered_characters1 {
     background-position: -3480px 0;
 }
-#AlicePC-98.list_characters {
+#AlicePC-98.list_characters1 {
     background-position: -2400px 0;
 }
-#AlicePC-98.tiered_characters {
+#AlicePC-98.tiered_characters1 {
     background-position: -3600px 0;
 }
-#Luize.list_characters {
+#Luize.list_characters1 {
     background-position: -2480px 0;
 }
-#Luize.tiered_characters {
+#Luize.tiered_characters1 {
     background-position: -3720px 0;
 }
-#MaiPC-98.list_characters {
+#MaiPC-98.list_characters1 {
     background-position: -2560px 0;
 }
-#MaiPC-98.tiered_characters {
+#MaiPC-98.tiered_characters1 {
     background-position: -3840px 0;
 }
-#Sara.list_characters {
+#Sara.list_characters1 {
     background-position: -2640px 0;
 }
-#Sara.tiered_characters {
+#Sara.tiered_characters1 {
     background-position: -3960px 0;
 }
-#Shinki.list_characters {
+#Shinki.list_characters1 {
     background-position: -2720px 0;
 }
-#Shinki.tiered_characters {
+#Shinki.tiered_characters1 {
     background-position: -4080px 0;
 }
-#Yuki.list_characters {
+#Yuki.list_characters1 {
     background-position: -2800px 0;
 }
-#Yuki.tiered_characters {
+#Yuki.tiered_characters1 {
     background-position: -4200px 0;
 }
-#Yumeko.list_characters {
+#Yumeko.list_characters1 {
     background-position: -2880px 0;
 }
-#Yumeko.tiered_characters {
+#Yumeko.tiered_characters1 {
     background-position: -4320px 0;
 }
-#Cirno.list_characters {
+#Cirno.list_characters1 {
     background-position: -2960px 0;
 }
-#Cirno.tiered_characters {
+#Cirno.tiered_characters1 {
     background-position: -4440px 0;
 }
-#Daiyousei.list_characters {
+#Daiyousei.list_characters1 {
     background-position: -3040px 0;
 }
-#Daiyousei.tiered_characters {
+#Daiyousei.tiered_characters1 {
     background-position: -4560px 0;
 }
-#FlandreScarlet.list_characters {
+#FlandreScarlet.list_characters1 {
     background-position: -3120px 0;
 }
-#FlandreScarlet.tiered_characters {
+#FlandreScarlet.tiered_characters1 {
     background-position: -4680px 0;
 }
-#HongMeiling.list_characters {
+#HongMeiling.list_characters1 {
     background-position: -3200px 0;
 }
-#HongMeiling.tiered_characters {
+#HongMeiling.tiered_characters1 {
     background-position: -4800px 0;
 }
-#Koakuma.list_characters {
+#Koakuma.list_characters1 {
     background-position: -3280px 0;
 }
-#Koakuma.tiered_characters {
+#Koakuma.tiered_characters1 {
     background-position: -4920px 0;
 }
-#PatchouliKnowledge.list_characters {
+#PatchouliKnowledge.list_characters1 {
     background-position: -3360px 0;
 }
-#PatchouliKnowledge.tiered_characters {
+#PatchouliKnowledge.tiered_characters1 {
     background-position: -5040px 0;
 }
-#RemiliaScarlet.list_characters {
+#RemiliaScarlet.list_characters1 {
     background-position: -3440px 0;
 }
-#RemiliaScarlet.tiered_characters {
+#RemiliaScarlet.tiered_characters1 {
     background-position: -5160px 0;
 }
-#Rumia.list_characters {
+#Rumia.list_characters1 {
     background-position: -3520px 0;
 }
-#Rumia.tiered_characters {
+#Rumia.tiered_characters1 {
     background-position: -5280px 0;
 }
-#SakuyaIzayoi.list_characters {
+#SakuyaIzayoi.list_characters1 {
     background-position: -3600px 0;
 }
-#SakuyaIzayoi.tiered_characters {
+#SakuyaIzayoi.tiered_characters1 {
     background-position: -5400px 0;
 }
-#AliceMargatroid.list_characters {
+#AliceMargatroid.list_characters1 {
     background-position: -3680px 0;
 }
-#AliceMargatroid.tiered_characters {
+#AliceMargatroid.tiered_characters1 {
     background-position: -5520px 0;
 }
-#Chen.list_characters {
+#Chen.list_characters1 {
     background-position: -3760px 0;
 }
-#Chen.tiered_characters {
+#Chen.tiered_characters1 {
     background-position: -5640px 0;
 }
-#LettyWhiterock.list_characters {
+#LettyWhiterock.list_characters1 {
     background-position: -3840px 0;
 }
-#LettyWhiterock.tiered_characters {
+#LettyWhiterock.tiered_characters1 {
     background-position: -5760px 0;
 }
-#LilyWhite.list_characters {
+#LilyWhite.list_characters1 {
     background-position: -3920px 0;
 }
-#LilyWhite.tiered_characters {
+#LilyWhite.tiered_characters1 {
     background-position: -5880px 0;
 }
-#LunasaPrismriver.list_characters {
+#LunasaPrismriver.list_characters1 {
     background-position: -4000px 0;
 }
-#LunasaPrismriver.tiered_characters {
+#LunasaPrismriver.tiered_characters1 {
     background-position: -6000px 0;
 }
-#LyricaPrismriver.list_characters {
+#LyricaPrismriver.list_characters1 {
     background-position: -4080px 0;
 }
-#LyricaPrismriver.tiered_characters {
+#LyricaPrismriver.tiered_characters1 {
     background-position: -6120px 0;
 }
-#MerlinPrismriver.list_characters {
+#MerlinPrismriver.list_characters1 {
     background-position: -4160px 0;
 }
-#MerlinPrismriver.tiered_characters {
+#MerlinPrismriver.tiered_characters1 {
     background-position: -6240px 0;
 }
-#RanYakumo.list_characters {
+#RanYakumo.list_characters1 {
     background-position: -4240px 0;
 }
-#RanYakumo.tiered_characters {
+#RanYakumo.tiered_characters1 {
     background-position: -6360px 0;
 }
-#YoumuKonpaku.list_characters {
+#YoumuKonpaku.list_characters1 {
     background-position: -4320px 0;
 }
-#YoumuKonpaku.tiered_characters {
+#YoumuKonpaku.tiered_characters1 {
     background-position: -6480px 0;
 }
-#YukariYakumo.list_characters {
+#YukariYakumo.list_characters1 {
     background-position: -4400px 0;
 }
-#YukariYakumo.tiered_characters {
+#YukariYakumo.tiered_characters1 {
     background-position: -6600px 0;
 }
-#YuyukoSaigyouji.list_characters {
+#YuyukoSaigyouji.list_characters1 {
     background-position: -4480px 0;
 }
-#YuyukoSaigyouji.tiered_characters {
+#YuyukoSaigyouji.tiered_characters1 {
     background-position: -6720px 0;
 }
-#SuikaIbuki.list_characters {
+#SuikaIbuki.list_characters1 {
     background-position: -4560px 0;
 }
-#SuikaIbuki.tiered_characters {
+#SuikaIbuki.tiered_characters1 {
     background-position: -6840px 0;
 }
-#EirinYagokoro.list_characters {
+#EirinYagokoro.list_characters1 {
     background-position: -4640px 0;
 }
-#EirinYagokoro.tiered_characters {
+#EirinYagokoro.tiered_characters1 {
     background-position: -6960px 0;
 }
-#FujiwaranoMokou.list_characters {
+#FujiwaranoMokou.list_characters1 {
     background-position: -4720px 0;
 }
-#FujiwaranoMokou.tiered_characters {
+#FujiwaranoMokou.tiered_characters1 {
     background-position: -7080px 0;
 }
-#KaguyaHouraisan.list_characters {
+#KaguyaHouraisan.list_characters1 {
     background-position: -4800px 0;
 }
-#KaguyaHouraisan.tiered_characters {
+#KaguyaHouraisan.tiered_characters1 {
     background-position: -7200px 0;
 }
-#KeineKamishirasawa.list_characters {
+#KeineKamishirasawa.list_characters1 {
     background-position: -4880px 0;
 }
-#KeineKamishirasawa.tiered_characters {
+#KeineKamishirasawa.tiered_characters1 {
     background-position: -7320px 0;
 }
-#MystiaLorelei.list_characters {
+#MystiaLorelei.list_characters1 {
     background-position: -4960px 0;
 }
-#MystiaLorelei.tiered_characters {
+#MystiaLorelei.tiered_characters1 {
     background-position: -7440px 0;
 }
-#ReisenUdongeinInaba.list_characters {
+#ReisenUdongeinInaba.list_characters1 {
     background-position: -5040px 0;
 }
-#ReisenUdongeinInaba.tiered_characters {
+#ReisenUdongeinInaba.tiered_characters1 {
     background-position: -7560px 0;
 }
-#TewiInaba.list_characters {
+#TewiInaba.list_characters1 {
     background-position: -5120px 0;
 }
-#TewiInaba.tiered_characters {
+#TewiInaba.tiered_characters1 {
     background-position: -7680px 0;
 }
-#WriggleNightbug.list_characters {
+#WriggleNightbug.list_characters1 {
     background-position: -5200px 0;
 }
-#WriggleNightbug.tiered_characters {
+#WriggleNightbug.tiered_characters1 {
     background-position: -7800px 0;
 }
-#AyaShameimaru.list_characters {
+#AyaShameimaru.list_characters1 {
     background-position: -5280px 0;
 }
-#AyaShameimaru.tiered_characters {
+#AyaShameimaru.tiered_characters1 {
     background-position: -7920px 0;
 }
-#EikiShikiYamaxanadu.list_characters {
+#EikiShikiYamaxanadu.list_characters1 {
     background-position: -5360px 0;
 }
-#EikiShikiYamaxanadu.tiered_characters {
+#EikiShikiYamaxanadu.tiered_characters1 {
     background-position: -8040px 0;
 }
-#KomachiOnozuka.list_characters {
+#KomachiOnozuka.list_characters1 {
     background-position: -5440px 0;
 }
-#KomachiOnozuka.tiered_characters {
+#KomachiOnozuka.tiered_characters1 {
     background-position: -8160px 0;
 }
-#MedicineMelancholy.list_characters {
+#MedicineMelancholy.list_characters1 {
     background-position: -5520px 0;
 }
-#MedicineMelancholy.tiered_characters {
+#MedicineMelancholy.tiered_characters1 {
     background-position: -8280px 0;
 }
-#YuukaKazami.list_characters {
+#YuukaKazami.list_characters1 {
     background-position: -5600px 0;
 }
-#YuukaKazami.tiered_characters {
+#YuukaKazami.tiered_characters1 {
     background-position: -8400px 0;
 }
-#HinaKagiyama.list_characters {
+#HinaKagiyama.list_characters1 {
     background-position: -5680px 0;
 }
-#HinaKagiyama.tiered_characters {
+#HinaKagiyama.tiered_characters1 {
     background-position: -8520px 0;
 }
-#KanakoYasaka.list_characters {
+#KanakoYasaka.list_characters1 {
     background-position: -5760px 0;
 }
-#KanakoYasaka.tiered_characters {
+#KanakoYasaka.tiered_characters1 {
     background-position: -8640px 0;
 }
-#MinorikoAki.list_characters {
+#MinorikoAki.list_characters1 {
     background-position: -5840px 0;
 }
-#MinorikoAki.tiered_characters {
+#MinorikoAki.tiered_characters1 {
     background-position: -8760px 0;
 }
-#MomijiInubashiri.list_characters {
+#MomijiInubashiri.list_characters1 {
     background-position: -5920px 0;
 }
-#MomijiInubashiri.tiered_characters {
+#MomijiInubashiri.tiered_characters1 {
     background-position: -8880px 0;
 }
-#NitoriKawashiro.list_characters {
+#NitoriKawashiro.list_characters1 {
     background-position: -6000px 0;
 }
-#NitoriKawashiro.tiered_characters {
+#NitoriKawashiro.tiered_characters1 {
     background-position: -9000px 0;
 }
-#SanaeKochiya.list_characters {
+#SanaeKochiya.list_characters1 {
     background-position: -6080px 0;
 }
-#SanaeKochiya.tiered_characters {
+#SanaeKochiya.tiered_characters1 {
     background-position: -9120px 0;
 }
-#ShizuhaAki.list_characters {
+#ShizuhaAki.list_characters1 {
     background-position: -6160px 0;
 }
-#ShizuhaAki.tiered_characters {
+#ShizuhaAki.tiered_characters1 {
     background-position: -9240px 0;
 }
-#SuwakoMoriya.list_characters {
+#SuwakoMoriya.list_characters1 {
     background-position: -6240px 0;
 }
-#SuwakoMoriya.tiered_characters {
+#SuwakoMoriya.tiered_characters1 {
     background-position: -9360px 0;
 }
-#IkuNagae.list_characters {
+#IkuNagae.list_characters1 {
     background-position: -6320px 0;
 }
-#IkuNagae.tiered_characters {
+#IkuNagae.tiered_characters1 {
     background-position: -9480px 0;
 }
-#TenshiHinanawi.list_characters {
+#TenshiHinanawi.list_characters1 {
     background-position: -6400px 0;
 }
-#TenshiHinanawi.tiered_characters {
+#TenshiHinanawi.tiered_characters1 {
     background-position: -9600px 0;
 }
-#Kisume.list_characters {
+#Kisume.list_characters2 {
     background-position: -6480px 0;
 }
-#Kisume.tiered_characters {
+#Kisume.tiered_characters2 {
     background-position: -9720px 0;
 }
-#KoishiKomeiji.list_characters {
+#KoishiKomeiji.list_characters2 {
     background-position: -6560px 0;
 }
-#KoishiKomeiji.tiered_characters {
+#KoishiKomeiji.tiered_characters2 {
     background-position: -9840px 0;
 }
-#ParseeMizuhashi.list_characters {
+#ParseeMizuhashi.list_characters2 {
     background-position: -6640px 0;
 }
-#ParseeMizuhashi.tiered_characters {
+#ParseeMizuhashi.tiered_characters2 {
     background-position: -9960px 0;
 }
-#RinKaenbyou.list_characters {
+#RinKaenbyou.list_characters2 {
     background-position: -6720px 0;
 }
-#RinKaenbyou.tiered_characters {
+#RinKaenbyou.tiered_characters2 {
     background-position: -10080px 0;
 }
-#SatoriKomeiji.list_characters {
+#SatoriKomeiji.list_characters2 {
     background-position: -6800px 0;
 }
-#SatoriKomeiji.tiered_characters {
+#SatoriKomeiji.tiered_characters2 {
     background-position: -10200px 0;
 }
-#UtsuhoReiuji.list_characters {
+#UtsuhoReiuji.list_characters2 {
     background-position: -6880px 0;
 }
-#UtsuhoReiuji.tiered_characters {
+#UtsuhoReiuji.tiered_characters2 {
     background-position: -10320px 0;
 }
-#YamameKurodani.list_characters {
+#YamameKurodani.list_characters2 {
     background-position: -6960px 0;
 }
-#YamameKurodani.tiered_characters {
+#YamameKurodani.tiered_characters2 {
     background-position: -10440px 0;
 }
-#YuugiHoshiguma.list_characters {
+#YuugiHoshiguma.list_characters2 {
     background-position: -7040px 0;
 }
-#YuugiHoshiguma.tiered_characters {
+#YuugiHoshiguma.tiered_characters2 {
     background-position: -10560px 0;
 }
-#ByakurenHijiri.list_characters {
+#ByakurenHijiri.list_characters2 {
     background-position: -7120px 0;
 }
-#ByakurenHijiri.tiered_characters {
+#ByakurenHijiri.tiered_characters2 {
     background-position: -10680px 0;
 }
-#IchirinKumoi.list_characters {
+#IchirinKumoi.list_characters2 {
     background-position: -7200px 0;
 }
-#IchirinKumoi.tiered_characters {
+#IchirinKumoi.tiered_characters2 {
     background-position: -10800px 0;
 }
-#KogasaTatara.list_characters {
+#KogasaTatara.list_characters2 {
     background-position: -7280px 0;
 }
-#KogasaTatara.tiered_characters {
+#KogasaTatara.tiered_characters2 {
     background-position: -10920px 0;
 }
-#MinamitsuMurasa.list_characters {
+#MinamitsuMurasa.list_characters2 {
     background-position: -7360px 0;
 }
-#MinamitsuMurasa.tiered_characters {
+#MinamitsuMurasa.tiered_characters2 {
     background-position: -11040px 0;
 }
-#Nazrin.list_characters {
+#Nazrin.list_characters2 {
     background-position: -7440px 0;
 }
-#Nazrin.tiered_characters {
+#Nazrin.tiered_characters2 {
     background-position: -11160px 0;
 }
-#NueHoujuu.list_characters {
+#NueHoujuu.list_characters2 {
     background-position: -7520px 0;
 }
-#NueHoujuu.tiered_characters {
+#NueHoujuu.tiered_characters2 {
     background-position: -11280px 0;
 }
-#ShouToramaru.list_characters {
+#ShouToramaru.list_characters2 {
     background-position: -7600px 0;
 }
-#ShouToramaru.tiered_characters {
+#ShouToramaru.tiered_characters2 {
     background-position: -11400px 0;
 }
-#Unzan.list_characters {
+#Unzan.list_characters2 {
     background-position: -7680px 0;
 }
-#Unzan.tiered_characters {
+#Unzan.tiered_characters2 {
     background-position: -11520px 0;
 }
-#Hisoutensoku.list_characters {
+#Hisoutensoku.list_characters2 {
     background-position: -7760px 0;
 }
-#Hisoutensoku.tiered_characters {
+#Hisoutensoku.tiered_characters2 {
     background-position: -11640px 0;
 }
-#HatateHimekaidou.list_characters {
+#HatateHimekaidou.list_characters2 {
     background-position: -7840px 0;
 }
-#HatateHimekaidou.tiered_characters {
+#HatateHimekaidou.tiered_characters2 {
     background-position: -11760px 0;
 }
-#LunaChild.list_characters {
+#LunaChild.list_characters2 {
     background-position: -7920px 0;
 }
-#LunaChild.tiered_characters {
+#LunaChild.tiered_characters2 {
     background-position: -11880px 0;
 }
-#StarSapphire.list_characters {
+#StarSapphire.list_characters2 {
     background-position: -8000px 0;
 }
-#StarSapphire.tiered_characters {
+#StarSapphire.tiered_characters2 {
     background-position: -12000px 0;
 }
-#SunnyMilk.list_characters {
+#SunnyMilk.list_characters2 {
     background-position: -8080px 0;
 }
-#SunnyMilk.tiered_characters {
+#SunnyMilk.tiered_characters2 {
     background-position: -12120px 0;
 }
-#KyoukoKasodani.list_characters {
+#KyoukoKasodani.list_characters2 {
     background-position: -8160px 0;
 }
-#KyoukoKasodani.tiered_characters {
+#KyoukoKasodani.tiered_characters2 {
     background-position: -12240px 0;
 }
-#MamizouFutatsuiwa.list_characters {
+#MamizouFutatsuiwa.list_characters2 {
     background-position: -8240px 0;
 }
-#MamizouFutatsuiwa.tiered_characters {
+#MamizouFutatsuiwa.tiered_characters2 {
     background-position: -12360px 0;
 }
-#MononobenoFuto.list_characters {
+#MononobenoFuto.list_characters2 {
     background-position: -8320px 0;
 }
-#MononobenoFuto.tiered_characters {
+#MononobenoFuto.tiered_characters2 {
     background-position: -12480px 0;
 }
-#SeigaKaku.list_characters {
+#SeigaKaku.list_characters2 {
     background-position: -8400px 0;
 }
-#SeigaKaku.tiered_characters {
+#SeigaKaku.tiered_characters2 {
     background-position: -12600px 0;
 }
-#SoganoTojiko.list_characters {
+#SoganoTojiko.list_characters2 {
     background-position: -8480px 0;
 }
-#SoganoTojiko.tiered_characters {
+#SoganoTojiko.tiered_characters2 {
     background-position: -12720px 0;
 }
-#ToyosatomiminoMiko.list_characters {
+#ToyosatomiminoMiko.list_characters2 {
     background-position: -8560px 0;
 }
-#ToyosatomiminoMiko.tiered_characters {
+#ToyosatomiminoMiko.tiered_characters2 {
     background-position: -12840px 0;
 }
-#YoshikaMiyako.list_characters {
+#YoshikaMiyako.list_characters2 {
     background-position: -8640px 0;
 }
-#YoshikaMiyako.tiered_characters {
+#YoshikaMiyako.tiered_characters2 {
     background-position: -12960px 0;
 }
-#HatanoKokoro.list_characters {
+#HatanoKokoro.list_characters2 {
     background-position: -8720px 0;
 }
-#HatanoKokoro.tiered_characters {
+#HatanoKokoro.tiered_characters2 {
     background-position: -13080px 0;
 }
-#Clownpiece.list_characters {
+#Clownpiece.list_characters2 {
     background-position: -8800px 0;
 }
-#Clownpiece.tiered_characters {
+#Clownpiece.tiered_characters2 {
     background-position: -13200px 0;
 }
-#DoremySweet.list_characters {
+#DoremySweet.list_characters2 {
     background-position: -8880px 0;
 }
-#DoremySweet.tiered_characters {
+#DoremySweet.tiered_characters2 {
     background-position: -13320px 0;
 }
-#HecatiaLapislazuli.list_characters {
+#HecatiaLapislazuli.list_characters2 {
     background-position: -8960px 0;
 }
-#HecatiaLapislazuli.tiered_characters {
+#HecatiaLapislazuli.tiered_characters2 {
     background-position: -13440px 0;
 }
-#Junko.list_characters {
+#Junko.list_characters2 {
     background-position: -9040px 0;
 }
-#Junko.tiered_characters {
+#Junko.tiered_characters2 {
     background-position: -13560px 0;
 }
-#Ringo.list_characters {
+#Ringo.list_characters2 {
     background-position: -9120px 0;
 }
-#Ringo.tiered_characters {
+#Ringo.tiered_characters2 {
     background-position: -13680px 0;
 }
-#SagumeKishin.list_characters {
+#SagumeKishin.list_characters2 {
     background-position: -9200px 0;
 }
-#SagumeKishin.tiered_characters {
+#SagumeKishin.tiered_characters2 {
     background-position: -13800px 0;
 }
-#Seiran.list_characters {
+#Seiran.list_characters2 {
     background-position: -9280px 0;
 }
-#Seiran.tiered_characters {
+#Seiran.tiered_characters2 {
     background-position: -13920px 0;
 }
-#BenbenTsukumo.list_characters {
+#BenbenTsukumo.list_characters2 {
     background-position: -9360px 0;
 }
-#BenbenTsukumo.tiered_characters {
+#BenbenTsukumo.tiered_characters2 {
     background-position: -14040px 0;
 }
-#KagerouImaizumi.list_characters {
+#KagerouImaizumi.list_characters2 {
     background-position: -9440px 0;
 }
-#KagerouImaizumi.tiered_characters {
+#KagerouImaizumi.tiered_characters2 {
     background-position: -14160px 0;
 }
-#RaikoHorikawa.list_characters {
+#RaikoHorikawa.list_characters2 {
     background-position: -9520px 0;
 }
-#RaikoHorikawa.tiered_characters {
+#RaikoHorikawa.tiered_characters2 {
     background-position: -14280px 0;
 }
-#SeijaKijin.list_characters {
+#SeijaKijin.list_characters2 {
     background-position: -9600px 0;
 }
-#SeijaKijin.tiered_characters {
+#SeijaKijin.tiered_characters2 {
     background-position: -14400px 0;
 }
-#Sekibanki.list_characters {
+#Sekibanki.list_characters2 {
     background-position: -9680px 0;
 }
-#Sekibanki.tiered_characters {
+#Sekibanki.tiered_characters2 {
     background-position: -14520px 0;
 }
-#ShinmyoumaruSukuna.list_characters {
+#ShinmyoumaruSukuna.list_characters2 {
     background-position: -9760px 0;
 }
-#ShinmyoumaruSukuna.tiered_characters {
+#ShinmyoumaruSukuna.tiered_characters2 {
     background-position: -14640px 0;
 }
-#Wakasagihime.list_characters {
+#Wakasagihime.list_characters2 {
     background-position: -9840px 0;
 }
-#Wakasagihime.tiered_characters {
+#Wakasagihime.tiered_characters2 {
     background-position: -14760px 0;
 }
-#YatsuhashiTsukumo.list_characters {
+#YatsuhashiTsukumo.list_characters2 {
     background-position: -9920px 0;
 }
-#YatsuhashiTsukumo.tiered_characters {
+#YatsuhashiTsukumo.tiered_characters2 {
     background-position: -14880px 0;
 }
-#SumirekoUsami.list_characters {
+#SumirekoUsami.list_characters2 {
     background-position: -10000px 0;
 }
-#SumirekoUsami.tiered_characters {
+#SumirekoUsami.tiered_characters2 {
     background-position: -15000px 0;
 }
-#JoonYorigami.list_characters {
+#JoonYorigami.list_characters2 {
     background-position: -10080px 0;
 }
-#JoonYorigami.tiered_characters {
+#JoonYorigami.tiered_characters2 {
     background-position: -15120px 0;
 }
-#ShionYorigami.list_characters {
+#ShionYorigami.list_characters2 {
     background-position: -10160px 0;
 }
-#ShionYorigami.tiered_characters {
+#ShionYorigami.tiered_characters2 {
     background-position: -15240px 0;
 }
-#AunnKomano.list_characters {
+#AunnKomano.list_characters2 {
     background-position: -10240px 0;
 }
-#AunnKomano.tiered_characters {
+#AunnKomano.tiered_characters2 {
     background-position: -15360px 0;
 }
-#EternityLarva.list_characters {
+#EternityLarva.list_characters2 {
     background-position: -10320px 0;
 }
-#EternityLarva.tiered_characters {
+#EternityLarva.tiered_characters2 {
     background-position: -15480px 0;
 }
-#MaiTeireida.list_characters {
+#MaiTeireida.list_characters2 {
     background-position: -10400px 0;
 }
-#MaiTeireida.tiered_characters {
+#MaiTeireida.tiered_characters2 {
     background-position: -15600px 0;
 }
-#NarumiYatadera.list_characters {
+#NarumiYatadera.list_characters2 {
     background-position: -10480px 0;
 }
-#NarumiYatadera.tiered_characters {
+#NarumiYatadera.tiered_characters2 {
     background-position: -15720px 0;
 }
-#NemunoSakata.list_characters {
+#NemunoSakata.list_characters2 {
     background-position: -10560px 0;
 }
-#NemunoSakata.tiered_characters {
+#NemunoSakata.tiered_characters2 {
     background-position: -15840px 0;
 }
-#OkinaMatara.list_characters {
+#OkinaMatara.list_characters2 {
     background-position: -10640px 0;
 }
-#OkinaMatara.tiered_characters {
+#OkinaMatara.tiered_characters2 {
     background-position: -15960px 0;
 }
-#SatonoNishida.list_characters {
+#SatonoNishida.list_characters2 {
     background-position: -10720px 0;
 }
-#SatonoNishida.tiered_characters {
+#SatonoNishida.tiered_characters2 {
     background-position: -16080px 0;
 }
-#EikaEbisu.list_characters {
+#EikaEbisu.list_characters2 {
     background-position: -10800px 0;
 }
-#EikaEbisu.tiered_characters {
+#EikaEbisu.tiered_characters2 {
     background-position: -16200px 0;
 }
-#KeikiHaniyasushin.list_characters {
+#KeikiHaniyasushin.list_characters2 {
     background-position: -10880px 0;
 }
-#KeikiHaniyasushin.tiered_characters {
+#KeikiHaniyasushin.tiered_characters2 {
     background-position: -16320px 0;
 }
-#KutakaNiwatari.list_characters {
+#KutakaNiwatari.list_characters2 {
     background-position: -10960px 0;
 }
-#KutakaNiwatari.tiered_characters {
+#KutakaNiwatari.tiered_characters2 {
     background-position: -16440px 0;
 }
-#MayumiJoutouguu.list_characters {
+#MayumiJoutouguu.list_characters2 {
     background-position: -11040px 0;
 }
-#MayumiJoutouguu.tiered_characters {
+#MayumiJoutouguu.tiered_characters2 {
     background-position: -16560px 0;
 }
-#SakiKurokoma.list_characters {
+#SakiKurokoma.list_characters2 {
     background-position: -11120px 0;
 }
-#SakiKurokoma.tiered_characters {
+#SakiKurokoma.tiered_characters2 {
     background-position: -16680px 0;
 }
-#UrumiUshizaki.list_characters {
+#UrumiUshizaki.list_characters2 {
     background-position: -11200px 0;
 }
-#UrumiUshizaki.tiered_characters {
+#UrumiUshizaki.tiered_characters2 {
     background-position: -16800px 0;
 }
-#YachieKicchou.list_characters {
+#YachieKicchou.list_characters2 {
     background-position: -11280px 0;
 }
-#YachieKicchou.tiered_characters {
+#YachieKicchou.tiered_characters2 {
     background-position: -16920px 0;
 }
-#FortuneTeller.list_characters {
+#FortuneTeller.list_characters2 {
     background-position: -11360px 0;
 }
-#FortuneTeller.tiered_characters {
+#FortuneTeller.tiered_characters2 {
     background-position: -17040px 0;
 }
-#HiedanoAkyuu.list_characters {
+#HiedanoAkyuu.list_characters2 {
     background-position: -11440px 0;
 }
-#HiedanoAkyuu.tiered_characters {
+#HiedanoAkyuu.tiered_characters2 {
     background-position: -17160px 0;
 }
-#KasenIbaraki.list_characters {
+#KasenIbaraki.list_characters2 {
     background-position: -11520px 0;
 }
-#KasenIbaraki.tiered_characters {
+#KasenIbaraki.tiered_characters2 {
     background-position: -17280px 0;
 }
-#KosuzuMotoori.list_characters {
+#KosuzuMotoori.list_characters2 {
     background-position: -11600px 0;
 }
-#KosuzuMotoori.tiered_characters {
+#KosuzuMotoori.tiered_characters2 {
     background-position: -17400px 0;
 }
-#ReisenII.list_characters {
+#ReisenII.list_characters2 {
     background-position: -11680px 0;
 }
-#ReisenII.tiered_characters {
+#ReisenII.tiered_characters2 {
     background-position: -17520px 0;
 }
-#RinnosukeMorichika.list_characters {
+#RinnosukeMorichika.list_characters2 {
     background-position: -11760px 0;
 }
-#RinnosukeMorichika.tiered_characters {
+#RinnosukeMorichika.tiered_characters2 {
     background-position: -17640px 0;
 }
-#Tokiko.list_characters {
+#Tokiko.list_characters2 {
     background-position: -11840px 0;
 }
-#Tokiko.tiered_characters {
+#Tokiko.tiered_characters2 {
     background-position: -17760px 0;
 }
-#WatatsukinoToyohime.list_characters {
+#WatatsukinoToyohime.list_characters2 {
     background-position: -11920px 0;
 }
-#WatatsukinoToyohime.tiered_characters {
+#WatatsukinoToyohime.tiered_characters2 {
     background-position: -17880px 0;
 }
-#WatatsukinoYorihime.list_characters {
+#WatatsukinoYorihime.list_characters2 {
     background-position: -12000px 0;
 }
-#WatatsukinoYorihime.tiered_characters {
+#WatatsukinoYorihime.tiered_characters2 {
     background-position: -18000px 0;
 }
-#MaribelHearn.list_characters {
+#MaribelHearn.list_characters2 {
     background-position: -12080px 0;
 }
-#MaribelHearn.tiered_characters {
+#MaribelHearn.tiered_characters2 {
     background-position: -18120px 0;
 }
-#RenkoUsami.list_characters {
+#RenkoUsami.list_characters2 {
     background-position: -12160px 0;
 }
-#RenkoUsami.tiered_characters {
+#RenkoUsami.tiered_characters2 {
     background-position: -18240px 0;
 }
-#MiyoiOkunoda.list_characters {
+#MiyoiOkunoda.list_characters2 {
     background-position: -12240px 0;
 }
-#MiyoiOkunoda.tiered_characters {
+#MiyoiOkunoda.tiered_characters2 {
     background-position: -18360px 0;
 }
-#MikeGoutokuji.list_characters {
+#MikeGoutokuji.list_characters2 {
     background-position: -12320px 0;
 }
-#MikeGoutokuji.tiered_characters {
+#MikeGoutokuji.tiered_characters2 {
     background-position: -18480px 0;
 }
-#TakaneYamashiro.list_characters {
+#TakaneYamashiro.list_characters2 {
     background-position: -12400px 0;
 }
-#TakaneYamashiro.tiered_characters {
+#TakaneYamashiro.tiered_characters2 {
     background-position: -18600px 0;
 }
-#SannyoKomakusa.list_characters {
+#SannyoKomakusa.list_characters2 {
     background-position: -12480px 0;
 }
-#SannyoKomakusa.tiered_characters {
+#SannyoKomakusa.tiered_characters2 {
     background-position: -18720px 0;
 }
-#MisumaruTamatsukuri.list_characters {
+#MisumaruTamatsukuri.list_characters2 {
     background-position: -12560px 0;
 }
-#MisumaruTamatsukuri.tiered_characters {
+#MisumaruTamatsukuri.tiered_characters2 {
     background-position: -18840px 0;
 }
-#TsukasaKudamaki.list_characters {
+#TsukasaKudamaki.list_characters2 {
     background-position: -12640px 0;
 }
-#TsukasaKudamaki.tiered_characters {
+#TsukasaKudamaki.tiered_characters2 {
     background-position: -18960px 0;
 }
-#MegumuIizunamaru.list_characters {
+#MegumuIizunamaru.list_characters2 {
     background-position: -12720px 0;
 }
-#MegumuIizunamaru.tiered_characters {
+#MegumuIizunamaru.tiered_characters2 {
     background-position: -19080px 0;
 }
-#ChimataTenkyuu.list_characters {
+#ChimataTenkyuu.list_characters2 {
     background-position: -12800px 0;
 }
-#ChimataTenkyuu.tiered_characters {
+#ChimataTenkyuu.tiered_characters2 {
     background-position: -19200px 0;
 }
-#MomoyoHimemushi.list_characters {
+#MomoyoHimemushi.list_characters2 {
     background-position: -12880px 0;
 }
-#MomoyoHimemushi.tiered_characters {
+#MomoyoHimemushi.tiered_characters2 {
     background-position: -19320px 0;
 }
 #StoryofEasternWonderland.list_works {
@@ -1580,7 +1590,7 @@ li {
         height: 60px;
         cursor: pointer;
     }
-    .list_characters, .tiered_characters {
+    .list_characters1, .list_characters2, .tiered_characters1, .tiered_characters2 {
         width: 60px;
         height: 60px;
         object-fit: cover;
@@ -1638,487 +1648,487 @@ li {
         height: 25px;
         font-size: 12px;
     }
-    #ReimuHakurei.list_characters, #ReimuHakurei.tiered_characters {
+    #ReimuHakurei.list_characters1, #ReimuHakurei.tiered_characters1 {
         background-position: -60px 0;
     }
-    #Elis.list_characters, #Elis.tiered_characters {
+    #Elis.list_characters1, #Elis.tiered_characters1 {
         background-position: -120px 0;
     }
-    #Kikuri.list_characters, #Kikuri.tiered_characters {
+    #Kikuri.list_characters1, #Kikuri.tiered_characters1 {
         background-position: -180px 0;
     }
-    #Konngara.list_characters, #Konngara.tiered_characters {
+    #Konngara.list_characters1, #Konngara.tiered_characters1 {
         background-position: -240px 0;
     }
-    #Mima.list_characters, #Mima.tiered_characters {
+    #Mima.list_characters1, #Mima.tiered_characters1 {
         background-position: -300px 0;
     }
-    #ReimuPC-98.list_characters, #ReimuPC-98.tiered_characters {
+    #ReimuPC-98.list_characters1, #ReimuPC-98.tiered_characters1 {
         background-position: -360px 0;
     }
-    #Sariel.list_characters, #Sariel.tiered_characters {
+    #Sariel.list_characters1, #Sariel.tiered_characters1 {
         background-position: -420px 0;
     }
-    #SinGyokuF.list_characters, #SinGyokuF.tiered_characters {
+    #SinGyokuF.list_characters1, #SinGyokuF.tiered_characters1 {
         background-position: -480px 0;
     }
-    #SinGyokuM.list_characters, #SinGyokuM.tiered_characters {
+    #SinGyokuM.list_characters1, #SinGyokuM.tiered_characters1 {
         background-position: -540px 0;
     }
-    #YuugenMagan.list_characters, #YuugenMagan.tiered_characters {
+    #YuugenMagan.list_characters1, #YuugenMagan.tiered_characters1 {
         background-position: -600px 0;
     }
-    #EvilEyeSigma.list_characters, #EvilEyeSigma.tiered_characters {
+    #EvilEyeSigma.list_characters1, #EvilEyeSigma.tiered_characters1 {
         background-position: -660px 0;
     }
-    #Genjii.list_characters, #Genjii.tiered_characters {
+    #Genjii.list_characters1, #Genjii.tiered_characters1 {
         background-position: -720px 0;
     }
-    #MarisaPC-98.list_characters, #MarisaPC-98.tiered_characters {
+    #MarisaPC-98.list_characters1, #MarisaPC-98.tiered_characters1 {
         background-position: -780px 0;
     }
-    #Meira.list_characters, #Meira.tiered_characters {
+    #Meira.list_characters1, #Meira.tiered_characters1 {
         background-position: -840px 0;
     }
-    #Rika.list_characters, #Rika.tiered_characters {
+    #Rika.list_characters1, #Rika.tiered_characters1 {
         background-position: -900px 0;
     }
-    #ChiyuriKitashirakawa.list_characters, #ChiyuriKitashirakawa.tiered_characters {
+    #ChiyuriKitashirakawa.list_characters1, #ChiyuriKitashirakawa.tiered_characters1 {
         background-position: -960px 0;
     }
-    #Ellen.list_characters, #Ellen.tiered_characters {
+    #Ellen.list_characters1, #Ellen.tiered_characters1 {
         background-position: -1020px 0;
     }
-    #KanaAnaberal.list_characters, #KanaAnaberal.tiered_characters {
+    #KanaAnaberal.list_characters1, #KanaAnaberal.tiered_characters1 {
         background-position: -1080px 0;
     }
-    #Kotohime.list_characters, #Kotohime.tiered_characters {
+    #Kotohime.list_characters1, #Kotohime.tiered_characters1 {
         background-position: -1140px 0;
     }
-    #Mimi-chan.list_characters, #Mimi-chan.tiered_characters {
+    #Mimi-chan.list_characters1, #Mimi-chan.tiered_characters1 {
         background-position: -1200px 0;
     }
-    #RikakoAsakura.list_characters, #RikakoAsakura.tiered_characters {
+    #RikakoAsakura.list_characters1, #RikakoAsakura.tiered_characters1 {
         background-position: -1260px 0;
     }
-    #Ruukoto.list_characters, #Ruukoto.tiered_characters {
+    #Ruukoto.list_characters1, #Ruukoto.tiered_characters1 {
         background-position: -1320px 0;
     }
-    #YumemiOkazaki.list_characters, #YumemiOkazaki.tiered_characters {
+    #YumemiOkazaki.list_characters1, #YumemiOkazaki.tiered_characters1 {
         background-position: -1380px 0;
     }
-    #Elly.list_characters, #Elly.tiered_characters {
+    #Elly.list_characters1, #Elly.tiered_characters1 {
         background-position: -1440px 0;
     }
-    #Gengetsu.list_characters, #Gengetsu.tiered_characters {
+    #Gengetsu.list_characters1, #Gengetsu.tiered_characters1 {
         background-position: -1500px 0;
     }
-    #Kurumi.list_characters, #Kurumi.tiered_characters {
+    #Kurumi.list_characters1, #Kurumi.tiered_characters1 {
         background-position: -1560px 0;
     }
-    #Mugetsu.list_characters, #Mugetsu.tiered_characters {
+    #Mugetsu.list_characters1, #Mugetsu.tiered_characters1 {
         background-position: -1620px 0;
     }
-    #Orange.list_characters, #Orange.tiered_characters {
+    #Orange.list_characters1, #Orange.tiered_characters1 {
         background-position: -1680px 0;
     }
-    #YuukaPC-98.list_characters, #YuukaPC-98.tiered_characters {
+    #YuukaPC-98.list_characters1, #YuukaPC-98.tiered_characters1 {
         background-position: -1740px 0;
     }
-    #AlicePC-98.list_characters, #AlicePC-98.tiered_characters {
+    #AlicePC-98.list_characters1, #AlicePC-98.tiered_characters1 {
         background-position: -1800px 0;
     }
-    #Luize.list_characters, #Luize.tiered_characters {
+    #Luize.list_characters1, #Luize.tiered_characters1 {
         background-position: -1860px 0;
     }
-    #MaiPC-98.list_characters, #MaiPC-98.tiered_characters {
+    #MaiPC-98.list_characters1, #MaiPC-98.tiered_characters1 {
         background-position: -1920px 0;
     }
-    #Sara.list_characters, #Sara.tiered_characters {
+    #Sara.list_characters1, #Sara.tiered_characters1 {
         background-position: -1980px 0;
     }
-    #Shinki.list_characters, #Shinki.tiered_characters {
+    #Shinki.list_characters1, #Shinki.tiered_characters1 {
         background-position: -2040px 0;
     }
-    #Yuki.list_characters, #Yuki.tiered_characters {
+    #Yuki.list_characters1, #Yuki.tiered_characters1 {
         background-position: -2100px 0;
     }
-    #Yumeko.list_characters, #Yumeko.tiered_characters {
+    #Yumeko.list_characters1, #Yumeko.tiered_characters1 {
         background-position: -2160px 0;
     }
-    #Cirno.list_characters, #Cirno.tiered_characters {
+    #Cirno.list_characters1, #Cirno.tiered_characters1 {
         background-position: -2220px 0;
     }
-    #Daiyousei.list_characters, #Daiyousei.tiered_characters {
+    #Daiyousei.list_characters1, #Daiyousei.tiered_characters1 {
         background-position: -2280px 0;
     }
-    #FlandreScarlet.list_characters, #FlandreScarlet.tiered_characters {
+    #FlandreScarlet.list_characters1, #FlandreScarlet.tiered_characters1 {
         background-position: -2340px 0;
     }
-    #HongMeiling.list_characters, #HongMeiling.tiered_characters {
+    #HongMeiling.list_characters1, #HongMeiling.tiered_characters1 {
         background-position: -2400px 0;
     }
-    #Koakuma.list_characters, #Koakuma.tiered_characters {
+    #Koakuma.list_characters1, #Koakuma.tiered_characters1 {
         background-position: -2460px 0;
     }
-    #PatchouliKnowledge.list_characters, #PatchouliKnowledge.tiered_characters {
+    #PatchouliKnowledge.list_characters1, #PatchouliKnowledge.tiered_characters1 {
         background-position: -2520px 0;
     }
-    #RemiliaScarlet.list_characters, #RemiliaScarlet.tiered_characters {
+    #RemiliaScarlet.list_characters1, #RemiliaScarlet.tiered_characters1 {
         background-position: -2580px 0;
     }
-    #Rumia.list_characters, #Rumia.tiered_characters {
+    #Rumia.list_characters1, #Rumia.tiered_characters1 {
         background-position: -2640px 0;
     }
-    #SakuyaIzayoi.list_characters, #SakuyaIzayoi.tiered_characters {
+    #SakuyaIzayoi.list_characters1, #SakuyaIzayoi.tiered_characters1 {
         background-position: -2700px 0;
     }
-    #AliceMargatroid.list_characters, #AliceMargatroid.tiered_characters {
+    #AliceMargatroid.list_characters1, #AliceMargatroid.tiered_characters1 {
         background-position: -2760px 0;
     }
-    #Chen.list_characters, #Chen.tiered_characters {
+    #Chen.list_characters1, #Chen.tiered_characters1 {
         background-position: -2820px 0;
     }
-    #LettyWhiterock.list_characters, #LettyWhiterock.tiered_characters {
+    #LettyWhiterock.list_characters1, #LettyWhiterock.tiered_characters1 {
         background-position: -2880px 0;
     }
-    #LilyWhite.list_characters, #LilyWhite.tiered_characters {
+    #LilyWhite.list_characters1, #LilyWhite.tiered_characters1 {
         background-position: -2940px 0;
     }
-    #LunasaPrismriver.list_characters, #LunasaPrismriver.tiered_characters {
+    #LunasaPrismriver.list_characters1, #LunasaPrismriver.tiered_characters1 {
         background-position: -3000px 0;
     }
-    #LyricaPrismriver.list_characters, #LyricaPrismriver.tiered_characters {
+    #LyricaPrismriver.list_characters1, #LyricaPrismriver.tiered_characters1 {
         background-position: -3060px 0;
     }
-    #MerlinPrismriver.list_characters, #MerlinPrismriver.tiered_characters {
+    #MerlinPrismriver.list_characters1, #MerlinPrismriver.tiered_characters1 {
         background-position: -3120px 0;
     }
-    #RanYakumo.list_characters, #RanYakumo.tiered_characters {
+    #RanYakumo.list_characters1, #RanYakumo.tiered_characters1 {
         background-position: -3180px 0;
     }
-    #YoumuKonpaku.list_characters, #YoumuKonpaku.tiered_characters {
+    #YoumuKonpaku.list_characters1, #YoumuKonpaku.tiered_characters1 {
         background-position: -3240px 0;
     }
-    #YukariYakumo.list_characters, #YukariYakumo.tiered_characters {
+    #YukariYakumo.list_characters1, #YukariYakumo.tiered_characters1 {
         background-position: -3300px 0;
     }
-    #YuyukoSaigyouji.list_characters, #YuyukoSaigyouji.tiered_characters {
+    #YuyukoSaigyouji.list_characters1, #YuyukoSaigyouji.tiered_characters1 {
         background-position: -3360px 0;
     }
-    #SuikaIbuki.list_characters, #SuikaIbuki.tiered_characters {
+    #SuikaIbuki.list_characters1, #SuikaIbuki.tiered_characters1 {
         background-position: -3420px 0;
     }
-    #EirinYagokoro.list_characters, #EirinYagokoro.tiered_characters {
+    #EirinYagokoro.list_characters1, #EirinYagokoro.tiered_characters1 {
         background-position: -3480px 0;
     }
-    #FujiwaranoMokou.list_characters, #FujiwaranoMokou.tiered_characters {
+    #FujiwaranoMokou.list_characters1, #FujiwaranoMokou.tiered_characters1 {
         background-position: -3540px 0;
     }
-    #KaguyaHouraisan.list_characters, #KaguyaHouraisan.tiered_characters {
+    #KaguyaHouraisan.list_characters1, #KaguyaHouraisan.tiered_characters1 {
         background-position: -3600px 0;
     }
-    #KeineKamishirasawa.list_characters, #KeineKamishirasawa.tiered_characters {
+    #KeineKamishirasawa.list_characters1, #KeineKamishirasawa.tiered_characters1 {
         background-position: -3660px 0;
     }
-    #MystiaLorelei.list_characters, #MystiaLorelei.tiered_characters {
+    #MystiaLorelei.list_characters1, #MystiaLorelei.tiered_characters1 {
         background-position: -3720px 0;
     }
-    #ReisenUdongeinInaba.list_characters, #ReisenUdongeinInaba.tiered_characters {
+    #ReisenUdongeinInaba.list_characters1, #ReisenUdongeinInaba.tiered_characters1 {
         background-position: -3780px 0;
     }
-    #TewiInaba.list_characters, #TewiInaba.tiered_characters {
+    #TewiInaba.list_characters1, #TewiInaba.tiered_characters1 {
         background-position: -3840px 0;
     }
-    #WriggleNightbug.list_characters, #WriggleNightbug.tiered_characters {
+    #WriggleNightbug.list_characters1, #WriggleNightbug.tiered_characters1 {
         background-position: -3900px 0;
     }
-    #AyaShameimaru.list_characters, #AyaShameimaru.tiered_characters {
+    #AyaShameimaru.list_characters1, #AyaShameimaru.tiered_characters1 {
         background-position: -3960px 0;
     }
-    #EikiShikiYamaxanadu.list_characters, #EikiShikiYamaxanadu.tiered_characters {
+    #EikiShikiYamaxanadu.list_characters1, #EikiShikiYamaxanadu.tiered_characters1 {
         background-position: -4020px 0;
     }
-    #KomachiOnozuka.list_characters, #KomachiOnozuka.tiered_characters {
+    #KomachiOnozuka.list_characters1, #KomachiOnozuka.tiered_characters1 {
         background-position: -4080px 0;
     }
-    #MedicineMelancholy.list_characters, #MedicineMelancholy.tiered_characters {
+    #MedicineMelancholy.list_characters1, #MedicineMelancholy.tiered_characters1 {
         background-position: -4140px 0;
     }
-    #YuukaKazami.list_characters, #YuukaKazami.tiered_characters {
+    #YuukaKazami.list_characters1, #YuukaKazami.tiered_characters1 {
         background-position: -4200px 0;
     }
-    #HinaKagiyama.list_characters, #HinaKagiyama.tiered_characters {
+    #HinaKagiyama.list_characters1, #HinaKagiyama.tiered_characters1 {
         background-position: -4260px 0;
     }
-    #KanakoYasaka.list_characters, #KanakoYasaka.tiered_characters {
+    #KanakoYasaka.list_characters1, #KanakoYasaka.tiered_characters1 {
         background-position: -4320px 0;
     }
-    #MinorikoAki.list_characters, #MinorikoAki.tiered_characters {
+    #MinorikoAki.list_characters1, #MinorikoAki.tiered_characters1 {
         background-position: -4380px 0;
     }
-    #MomijiInubashiri.list_characters, #MomijiInubashiri.tiered_characters {
+    #MomijiInubashiri.list_characters1, #MomijiInubashiri.tiered_characters1 {
         background-position: -4440px 0;
     }
-    #NitoriKawashiro.list_characters, #NitoriKawashiro.tiered_characters {
+    #NitoriKawashiro.list_characters1, #NitoriKawashiro.tiered_characters1 {
         background-position: -4500px 0;
     }
-    #SanaeKochiya.list_characters, #SanaeKochiya.tiered_characters {
+    #SanaeKochiya.list_characters1, #SanaeKochiya.tiered_characters1 {
         background-position: -4560px 0;
     }
-    #ShizuhaAki.list_characters, #ShizuhaAki.tiered_characters {
+    #ShizuhaAki.list_characters1, #ShizuhaAki.tiered_characters1 {
         background-position: -4620px 0;
     }
-    #SuwakoMoriya.list_characters, #SuwakoMoriya.tiered_characters {
+    #SuwakoMoriya.list_characters1, #SuwakoMoriya.tiered_characters1 {
         background-position: -4680px 0;
     }
-    #IkuNagae.list_characters, #IkuNagae.tiered_characters {
+    #IkuNagae.list_characters1, #IkuNagae.tiered_characters1 {
         background-position: -4740px 0;
     }
-    #TenshiHinanawi.list_characters, #TenshiHinanawi.tiered_characters {
+    #TenshiHinanawi.list_characters1, #TenshiHinanawi.tiered_characters1 {
         background-position: -4800px 0;
     }
-    #Kisume.list_characters, #Kisume.tiered_characters {
+    #Kisume.list_characters2, #Kisume.tiered_characters2 {
         background-position: -4860px 0;
     }
-    #KoishiKomeiji.list_characters, #KoishiKomeiji.tiered_characters {
+    #KoishiKomeiji.list_characters2, #KoishiKomeiji.tiered_characters2 {
         background-position: -4920px 0;
     }
-    #ParseeMizuhashi.list_characters, #ParseeMizuhashi.tiered_characters {
+    #ParseeMizuhashi.list_characters2, #ParseeMizuhashi.tiered_characters2 {
         background-position: -4980px 0;
     }
-    #RinKaenbyou.list_characters, #RinKaenbyou.tiered_characters {
+    #RinKaenbyou.list_characters2, #RinKaenbyou.tiered_characters2 {
         background-position: -5040px 0;
     }
-    #SatoriKomeiji.list_characters, #SatoriKomeiji.tiered_characters {
+    #SatoriKomeiji.list_characters2, #SatoriKomeiji.tiered_characters2 {
         background-position: -5100px 0;
     }
-    #UtsuhoReiuji.list_characters, #UtsuhoReiuji.tiered_characters {
+    #UtsuhoReiuji.list_characters2, #UtsuhoReiuji.tiered_characters2 {
         background-position: -5160px 0;
     }
-    #YamameKurodani.list_characters, #YamameKurodani.tiered_characters {
+    #YamameKurodani.list_characters2, #YamameKurodani.tiered_characters2 {
         background-position: -5220px 0;
     }
-    #YuugiHoshiguma.list_characters, #YuugiHoshiguma.tiered_characters {
+    #YuugiHoshiguma.list_characters2, #YuugiHoshiguma.tiered_characters2 {
         background-position: -5280px 0;
     }
-    #ByakurenHijiri.list_characters, #ByakurenHijiri.tiered_characters {
+    #ByakurenHijiri.list_characters2, #ByakurenHijiri.tiered_characters2 {
         background-position: -5340px 0;
     }
-    #IchirinKumoi.list_characters, #IchirinKumoi.tiered_characters {
+    #IchirinKumoi.list_characters2, #IchirinKumoi.tiered_characters2 {
         background-position: -5400px 0;
     }
-    #KogasaTatara.list_characters, #KogasaTatara.tiered_characters {
+    #KogasaTatara.list_characters2, #KogasaTatara.tiered_characters2 {
         background-position: -5460px 0;
     }
-    #MinamitsuMurasa.list_characters, #MinamitsuMurasa.tiered_characters {
+    #MinamitsuMurasa.list_characters2, #MinamitsuMurasa.tiered_characters2 {
         background-position: -5520px 0;
     }
-    #Nazrin.list_characters, #Nazrin.tiered_characters {
+    #Nazrin.list_characters2, #Nazrin.tiered_characters2 {
         background-position: -5580px 0;
     }
-    #NueHoujuu.list_characters, #NueHoujuu.tiered_characters {
+    #NueHoujuu.list_characters2, #NueHoujuu.tiered_characters2 {
         background-position: -5640px 0;
     }
-    #ShouToramaru.list_characters, #ShouToramaru.tiered_characters {
+    #ShouToramaru.list_characters2, #ShouToramaru.tiered_characters2 {
         background-position: -5700px 0;
     }
-    #Unzan.list_characters, #Unzan.tiered_characters {
+    #Unzan.list_characters2, #Unzan.tiered_characters2 {
         background-position: -5760px 0;
     }
-    #Hisoutensoku.list_characters, #Hisoutensoku.tiered_characters {
+    #Hisoutensoku.list_characters2, #Hisoutensoku.tiered_characters2 {
         background-position: -5820px 0;
     }
-    #HatateHimekaidou.list_characters, #HatateHimekaidou.tiered_characters {
+    #HatateHimekaidou.list_characters2, #HatateHimekaidou.tiered_characters2 {
         background-position: -5880px 0;
     }
-    #LunaChild.list_characters, #LunaChild.tiered_characters {
+    #LunaChild.list_characters2, #LunaChild.tiered_characters2 {
         background-position: -5940px 0;
     }
-    #StarSapphire.list_characters, #StarSapphire.tiered_characters {
+    #StarSapphire.list_characters2, #StarSapphire.tiered_characters2 {
         background-position: -6000px 0;
     }
-    #SunnyMilk.list_characters, #SunnyMilk.tiered_characters {
+    #SunnyMilk.list_characters2, #SunnyMilk.tiered_characters2 {
         background-position: -6060px 0;
     }
-    #KyoukoKasodani.list_characters, #KyoukoKasodani.tiered_characters {
+    #KyoukoKasodani.list_characters2, #KyoukoKasodani.tiered_characters2 {
         background-position: -6120px 0;
     }
-    #MamizouFutatsuiwa.list_characters, #MamizouFutatsuiwa.tiered_characters {
+    #MamizouFutatsuiwa.list_characters2, #MamizouFutatsuiwa.tiered_characters2 {
         background-position: -6180px 0;
     }
-    #MononobenoFuto.list_characters, #MononobenoFuto.tiered_characters {
+    #MononobenoFuto.list_characters2, #MononobenoFuto.tiered_characters2 {
         background-position: -6240px 0;
     }
-    #SeigaKaku.list_characters, #SeigaKaku.tiered_characters {
+    #SeigaKaku.list_characters2, #SeigaKaku.tiered_characters2 {
         background-position: -6300px 0;
     }
-    #SoganoTojiko.list_characters, #SoganoTojiko.tiered_characters {
+    #SoganoTojiko.list_characters2, #SoganoTojiko.tiered_characters2 {
         background-position: -6360px 0;
     }
-    #ToyosatomiminoMiko.list_characters, #ToyosatomiminoMiko.tiered_characters {
+    #ToyosatomiminoMiko.list_characters2, #ToyosatomiminoMiko.tiered_characters2 {
         background-position: -6420px 0;
     }
-    #YoshikaMiyako.list_characters, #YoshikaMiyako.tiered_characters {
+    #YoshikaMiyako.list_characters2, #YoshikaMiyako.tiered_characters2 {
         background-position: -6480px 0;
     }
-    #HatanoKokoro.list_characters, #HatanoKokoro.tiered_characters {
+    #HatanoKokoro.list_characters2, #HatanoKokoro.tiered_characters2 {
         background-position: -6540px 0;
     }
-    #Clownpiece.list_characters, #Clownpiece.tiered_characters {
+    #Clownpiece.list_characters2, #Clownpiece.tiered_characters2 {
         background-position: -6600px 0;
     }
-    #DoremySweet.list_characters, #DoremySweet.tiered_characters {
+    #DoremySweet.list_characters2, #DoremySweet.tiered_characters2 {
         background-position: -6660px 0;
     }
-    #HecatiaLapislazuli.list_characters, #HecatiaLapislazuli.tiered_characters {
+    #HecatiaLapislazuli.list_characters2, #HecatiaLapislazuli.tiered_characters2 {
         background-position: -6720px 0;
     }
-    #Junko.list_characters, #Junko.tiered_characters {
+    #Junko.list_characters2, #Junko.tiered_characters2 {
         background-position: -6780px 0;
     }
-    #Ringo.list_characters, #Ringo.tiered_characters {
+    #Ringo.list_characters2, #Ringo.tiered_characters2 {
         background-position: -6840px 0;
     }
-    #SagumeKishin.list_characters, #SagumeKishin.tiered_characters {
+    #SagumeKishin.list_characters2, #SagumeKishin.tiered_characters2 {
         background-position: -6900px 0;
     }
-    #Seiran.list_characters, #Seiran.tiered_characters {
+    #Seiran.list_characters2, #Seiran.tiered_characters2 {
         background-position: -6960px 0;
     }
-    #BenbenTsukumo.list_characters, #BenbenTsukumo.tiered_characters {
+    #BenbenTsukumo.list_characters2, #BenbenTsukumo.tiered_characters2 {
         background-position: -7020px 0;
     }
-    #KagerouImaizumi.list_characters, #KagerouImaizumi.tiered_characters {
+    #KagerouImaizumi.list_characters2, #KagerouImaizumi.tiered_characters2 {
         background-position: -7080px 0;
     }
-    #RaikoHorikawa.list_characters, #RaikoHorikawa.tiered_characters {
+    #RaikoHorikawa.list_characters2, #RaikoHorikawa.tiered_characters2 {
         background-position: -7140px 0;
     }
-    #SeijaKijin.list_characters, #SeijaKijin.tiered_characters {
+    #SeijaKijin.list_characters2, #SeijaKijin.tiered_characters2 {
         background-position: -7200px 0;
     }
-    #Sekibanki.list_characters, #Sekibanki.tiered_characters {
+    #Sekibanki.list_characters2, #Sekibanki.tiered_characters2 {
         background-position: -7260px 0;
     }
-    #ShinmyoumaruSukuna.list_characters, #ShinmyoumaruSukuna.tiered_characters {
+    #ShinmyoumaruSukuna.list_characters2, #ShinmyoumaruSukuna.tiered_characters2 {
         background-position: -7320px 0;
     }
-    #Wakasagihime.list_characters, #Wakasagihime.tiered_characters {
+    #Wakasagihime.list_characters2, #Wakasagihime.tiered_characters2 {
         background-position: -7380px 0;
     }
-    #YatsuhashiTsukumo.list_characters, #YatsuhashiTsukumo.tiered_characters {
+    #YatsuhashiTsukumo.list_characters2, #YatsuhashiTsukumo.tiered_characters2 {
         background-position: -7440px 0;
     }
-    #SumirekoUsami.list_characters, #SumirekoUsami.tiered_characters {
+    #SumirekoUsami.list_characters2, #SumirekoUsami.tiered_characters2 {
         background-position: -7500px 0;
     }
-    #JoonYorigami.list_characters, #JoonYorigami.tiered_characters {
+    #JoonYorigami.list_characters2, #JoonYorigami.tiered_characters2 {
         background-position: -7560px 0;
     }
-    #ShionYorigami.list_characters, #ShionYorigami.tiered_characters {
+    #ShionYorigami.list_characters2, #ShionYorigami.tiered_characters2 {
         background-position: -7620px 0;
     }
-    #AunnKomano.list_characters, #AunnKomano.tiered_characters {
+    #AunnKomano.list_characters2, #AunnKomano.tiered_characters2 {
         background-position: -7680px 0;
     }
-    #EternityLarva.list_characters, #EternityLarva.tiered_characters {
+    #EternityLarva.list_characters2, #EternityLarva.tiered_characters2 {
         background-position: -7740px 0;
     }
-    #MaiTeireida.list_characters, #MaiTeireida.tiered_characters {
+    #MaiTeireida.list_characters2, #MaiTeireida.tiered_characters2 {
         background-position: -7800px 0;
     }
-    #NarumiYatadera.list_characters, #NarumiYatadera.tiered_characters {
+    #NarumiYatadera.list_characters2, #NarumiYatadera.tiered_characters2 {
         background-position: -7860px 0;
     }
-    #NemunoSakata.list_characters, #NemunoSakata.tiered_characters {
+    #NemunoSakata.list_characters2, #NemunoSakata.tiered_characters2 {
         background-position: -7920px 0;
     }
-    #OkinaMatara.list_characters, #OkinaMatara.tiered_characters {
+    #OkinaMatara.list_characters2, #OkinaMatara.tiered_characters2 {
         background-position: -7980px 0;
     }
-    #SatonoNishida.list_characters, #SatonoNishida.tiered_characters {
+    #SatonoNishida.list_characters2, #SatonoNishida.tiered_characters2 {
         background-position: -8040px 0;
     }
-    #EikaEbisu.list_characters, #EikaEbisu.tiered_characters {
+    #EikaEbisu.list_characters2, #EikaEbisu.tiered_characters2 {
         background-position: -8100px 0;
     }
-    #KeikiHaniyasushin.list_characters, #KeikiHaniyasushin.tiered_characters {
+    #KeikiHaniyasushin.list_characters2, #KeikiHaniyasushin.tiered_characters2 {
         background-position: -8160px 0;
     }
-    #KutakaNiwatari.list_characters, #KutakaNiwatari.tiered_characters {
+    #KutakaNiwatari.list_characters2, #KutakaNiwatari.tiered_characters2 {
         background-position: -8220px 0;
     }
-    #MayumiJoutouguu.list_characters, #MayumiJoutouguu.tiered_characters {
+    #MayumiJoutouguu.list_characters2, #MayumiJoutouguu.tiered_characters2 {
         background-position: -8280px 0;
     }
-    #SakiKurokoma.list_characters, #SakiKurokoma.tiered_characters {
+    #SakiKurokoma.list_characters2, #SakiKurokoma.tiered_characters2 {
         background-position: -8340px 0;
     }
-    #UrumiUshizaki.list_characters, #UrumiUshizaki.tiered_characters {
+    #UrumiUshizaki.list_characters2, #UrumiUshizaki.tiered_characters2 {
         background-position: -8400px 0;
     }
-    #YachieKicchou.list_characters, #YachieKicchou.tiered_characters {
+    #YachieKicchou.list_characters2, #YachieKicchou.tiered_characters2 {
         background-position: -8460px 0;
     }
-    #FortuneTeller.list_characters, #FortuneTeller.tiered_characters {
+    #FortuneTeller.list_characters2, #FortuneTeller.tiered_characters2 {
         background-position: -8520px 0;
     }
-    #HiedanoAkyuu.list_characters, #HiedanoAkyuu.tiered_characters {
+    #HiedanoAkyuu.list_characters2, #HiedanoAkyuu.tiered_characters2 {
         background-position: -8580px 0;
     }
-    #KasenIbaraki.list_characters, #KasenIbaraki.tiered_characters {
+    #KasenIbaraki.list_characters2, #KasenIbaraki.tiered_characters2 {
         background-position: -8640px 0;
     }
-    #KosuzuMotoori.list_characters, #KosuzuMotoori.tiered_characters {
+    #KosuzuMotoori.list_characters2, #KosuzuMotoori.tiered_characters2 {
         background-position: -8700px 0;
     }
-    #ReisenII.list_characters, #ReisenII.tiered_characters {
+    #ReisenII.list_characters2, #ReisenII.tiered_characters2 {
         background-position: -8760px 0;
     }
-    #RinnosukeMorichika.list_characters, #RinnosukeMorichika.tiered_characters {
+    #RinnosukeMorichika.list_characters2, #RinnosukeMorichika.tiered_characters2 {
         background-position: -8820px 0;
     }
-    #Tokiko.list_characters, #Tokiko.tiered_characters {
+    #Tokiko.list_characters2, #Tokiko.tiered_characters2 {
         background-position: -8880px 0;
     }
-    #WatatsukinoToyohime.list_characters, #WatatsukinoToyohime.tiered_characters {
+    #WatatsukinoToyohime.list_characters2, #WatatsukinoToyohime.tiered_characters2 {
         background-position: -8940px 0;
     }
-    #WatatsukinoYorihime.list_characters, #WatatsukinoYorihime.tiered_characters {
+    #WatatsukinoYorihime.list_characters2, #WatatsukinoYorihime.tiered_characters2 {
         background-position: -9000px 0;
     }
-    #MaribelHearn.list_characters, #MaribelHearn.tiered_characters {
+    #MaribelHearn.list_characters2, #MaribelHearn.tiered_characters2 {
         background-position: -9060px 0;
     }
-    #RenkoUsami.list_characters, #RenkoUsami.tiered_characters {
+    #RenkoUsami.list_characters2, #RenkoUsami.tiered_characters2 {
         background-position: -9120px 0;
     }
-    #MiyoiOkunoda.list_characters, #MiyoiOkunoda.tiered_characters {
+    #MiyoiOkunoda.list_characters2, #MiyoiOkunoda.tiered_characters2 {
         background-position: -9180px 0;
     }
-    #MikeGoutokuji.list_characters, #MikeGoutokuji.tiered_characters {
+    #MikeGoutokuji.list_characters2, #MikeGoutokuji.tiered_characters2 {
         background-position: -9240px 0;
     }
-    #TakaneYamashiro.list_characters, #TakaneYamashiro.list_characters {
+    #TakaneYamashiro.list_characters2, #TakaneYamashiro.list_characters2 {
         background-position: -9300px 0;
     }
-    #SannyoKomakusa.list_characters, #SannyoKomakusa.list_characters {
+    #SannyoKomakusa.list_characters2, #SannyoKomakusa.list_characters2 {
         background-position: -9360px 0;
     }
-    #MisumaruTamatsukuri.list_characters, #MisumaruTamatsukuri.list_characters {
+    #MisumaruTamatsukuri.list_characters2, #MisumaruTamatsukuri.list_characters2 {
         background-position: -9420px 0;
     }
-    #TsukasaKudamaki.list_characters, #TsukasaKudamaki.list_characters {
+    #TsukasaKudamaki.list_characters2, #TsukasaKudamaki.list_characters2 {
         background-position: -9480px 0;
     }
-    #MegumuIizunamaru.list_characters, #MegumuIizunamaru.list_characters {
+    #MegumuIizunamaru.list_characters2, #MegumuIizunamaru.list_characters2 {
         background-position: -9540px 0;
     }
-    #ChimataTenkyuu.list_characters, #ChimataTenkyuu.list_characters {
+    #ChimataTenkyuu.list_characters2, #ChimataTenkyuu.list_characters2 {
         background-position: -9600px 0;
     }
-    #MomoyoHimemushi.list_characters, #MomoyoHimemushi.tiered_characters {
+    #MomoyoHimemushi.list_characters2, #MomoyoHimemushi.tiered_characters2 {
         background-position: -9660px 0;
     }
     #StoryofEasternWonderland.list_works, #StoryofEasternWonderland.tiered_works {
