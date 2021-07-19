@@ -21,11 +21,10 @@ var MAX_NAME_LENGTH = 30,
             "Mangas": { enabled: true }, "Books": { enabled: true }, "CDs": { enabled: true }
         },
         "shotCategories": {
-            "SoEW": { enabled: true }, "PoDD": { enabled: true }, "LLS": { enabled: true }, "MS": { enabled: true },
             "EoSD": { enabled: true }, "PCB": { enabled: true }, "IN": { enabled: true }, "PoFV": { enabled: true },
             "MoF": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true }, "TD": { enabled: true },
             "DDC": { enabled: true }, "LoLK": { enabled: true }, "HSiFS": { enabled: true }, "WBaWC": { enabled: true },
-            "UM": { enabled: true }, "Spinoff": { enabled : true }
+            "UM": { enabled: true }
         },
         "characters": {
             "tierListName": "",
@@ -56,7 +55,7 @@ var MAX_NAME_LENGTH = 30,
     exceptions = ["SuikaIbuki", "IkuNagae", "TenshiHinanawi"],
     maleCharacters = ["SinGyokuM", "Genjii", "Unzan", "RinnosukeMorichika", "FortuneTeller"],
     pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"],
-    tieredClasses = ["tiered_characters1", "tiered_characters2", "tiered_works"],
+    tieredClasses = ["tiered_characters1", "tiered_characters2", "tiered_works", "tiered_shots"],
     tiers = {},
     gameTiers = {},
     shotTiers = {},
@@ -127,6 +126,16 @@ function getCurrentCategories() {
         return gameCategories;
     } else { // settings.sort == "shots"
         return shotCategories;
+    }
+}
+
+function getCurrentCategorySettings() {
+    if (settings.sort == "characters") {
+        return settings.categories;
+    } else if (settings.sort == "works") {
+        return settings.gameCategories;
+    } else { // settings.sort == "shots"
+        return settings.shotCategories;
     }
 }
 
@@ -1315,13 +1324,13 @@ function settingsMenuChars() {
 }
 
 function settingsMenuWorks() {
-    var categoryName, current = 0, counter = 0;
+    var cats = getCurrentCategories(), categoryName, current = 0, counter = 0;
 
     emptyModal();
-    $("#modal_inner").html("<h2>Settings</h2>Include works in the following categories:" +
+    $("#modal_inner").html("<h2>Settings</h2>Include " + settings.sort + " in the following categories:" +
     "<table id='settings_table'><tbody><tr id='settings_tr0'>");
 
-    for (categoryName in gameCategories) {
+    for (categoryName in cats) {
         if (counter > 0 && counter % 5 === 0) {
             counter = 0;
             current += 1;
@@ -1329,7 +1338,7 @@ function settingsMenuWorks() {
         }
 
         $("#settings_tr" + current).append("<td><input id='checkbox_" + categoryName +
-        "' type='checkbox'" + (settings.gameCategories[categoryName].enabled ? " checked" : "") +
+        "' type='checkbox'" + (getCurrentCategorySettings()[categoryName].enabled ? " checked" : "") +
         "><label for='" + categoryName + "'>" + categoryName + "</label></td>");
         counter += 1;
     }
@@ -1339,7 +1348,9 @@ function settingsMenuWorks() {
 function settingsMenu() {
     if (settings.sort == "characters") {
         settingsMenuChars();
-    } else {
+    } else if (settings.sort == "works") {
+        settingsMenuWorks();
+    } else { // settings.sort == "shots"
         settingsMenuWorks();
     }
 
@@ -1550,7 +1561,8 @@ function changeLog() {
     "<li>06/09/2020: Miyoi Okunoda added</li>" +
     "<li>23/09/2020: Screenshotting added, only working on Firefox</li>" +
     "<li>26/06/2021: UM characters added</li>" +
-    "<li>18/07/2021: Screenshotting fixed, works on all modern browsers</li></ul>");
+    "<li>18/07/2021: Screenshotting fixed, works on all modern browsers</li>" +
+    "<li>20/07/2021: Shottypes added</li></ul>");
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
 }
@@ -1583,11 +1595,10 @@ function eraseAllConfirmed() {
             "Mangas": { enabled: true }, "Books": { enabled: true }, "CDs": { enabled: true }
         },
         "shotCategories": {
-            "SoEW": { enabled: true }, "PoDD": { enabled: true }, "LLS": { enabled: true }, "MS": { enabled: true },
             "EoSD": { enabled: true }, "PCB": { enabled: true }, "IN": { enabled: true }, "PoFV": { enabled: true },
             "MoF": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true }, "TD": { enabled: true },
             "DDC": { enabled: true }, "LoLK": { enabled: true }, "HSiFS": { enabled: true }, "WBaWC": { enabled: true },
-            "UM": { enabled: true }, "Spinoff": { enabled : true }
+            "UM": { enabled: true }
         },
         "characters": {
             "tierListName": "",
@@ -1723,7 +1734,8 @@ function deleteLegacyCookies() {
 }
 
 function loadCategories() {
-    var chars = $("#chars_load").children(), works = $("#works_load").children(), val, i, j;
+    var chars = $("#chars_load").children(), works = $("#works_load").children(), shots = $("#shots_load").children(),
+        val, i, j;
 
     for (i = 0; i < chars.length; i++) {
         val = chars[i].value.split(',');
@@ -1740,6 +1752,15 @@ function loadCategories() {
 
         for (j = 0; j < val.length; j++) {
             gameCategories[works[i].id].chars.push(val[j]);
+        }
+    }
+
+    for (i = 0; i < shots.length; i++) {
+        val = shots[i].value.split(',');
+        shotCategories[shots[i].id] = {"chars": []};
+
+        for (j = 0; j < val.length; j++) {
+            shotCategories[shots[i].id].chars.push(val[j]);
         }
     }
 }
@@ -2041,7 +2062,7 @@ $(document).ready(function () {
 
     loadCategories();
     $("#tier_list_caption").html(settings[settings.sort].tierListName);
-    $("#chars_load, #works_load").remove();
+    //$("#chars_load, #works_load, #shots_load").remove();
     $("#sort").val(settings.sort);
     loadItems();
 
