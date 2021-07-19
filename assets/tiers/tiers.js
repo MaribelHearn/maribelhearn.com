@@ -1981,6 +1981,10 @@ function loadSettingsFromStorage() {
 
         if (settingsData.hasOwnProperty("shotCategories")) {
             for (category in settingsData.shotCategories) {
+                if (!settings.shotCategories[category]) {
+                    settings.shotCategories[category] = { enabled: true };
+                }
+
                 settings.shotCategories[category].enabled = settingsData.shotCategories[category].enabled;
             }
         }
