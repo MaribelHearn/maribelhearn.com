@@ -2176,10 +2176,10 @@ li {
         height: 60px;
         cursor: pointer;
     }
-    .list_characters1, .list_characters2, .tiered_characters1, .tiered_characters2 {
+    .list_characters1, .list_characters2, .tiered_characters1, .tiered_characters2,
+    .list_works, .tiered_works, .list_shots, .tiered_shots {
         width: 60px;
         height: 60px;
-        object-fit: cover;
     }
     .instructions {
         display: block;

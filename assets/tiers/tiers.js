@@ -1966,7 +1966,7 @@ function loadItems() {
             $(".list_characters2, .tiered_characters2").css("background-image", "" +
             "url('assets/spritesheet/characters_sheet60x60_2.png')");
         } else {
-            $(".list_" + settings.sort, ".tiered_" + settings.sort).css("background-image", "" +
+            $(".list_" + settings.sort + ", .tiered_" + settings.sort).css("background-image", "" +
             "url('assets/spritesheet/" + settings.sort + "_sheet60x60.png')");
         }
     }
