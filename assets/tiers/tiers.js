@@ -1,7 +1,10 @@
 var MAX_NAME_LENGTH = 30,
     categories = {},
     gameCategories = {},
+    shotCategories = {},
     tieredItems = [],
+    sorts = ["characters", "works", "shots"],
+    defaultColour = "#1b232e",
     defaultWidth = (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) ? 60 : 120,
     defaultSize = 32,
     settings = {
@@ -17,12 +20,34 @@ var MAX_NAME_LENGTH = 30,
             "PC-98": { enabled: true }, "Classic": { enabled: true }, "Modern1": { enabled: true }, "Modern2": { enabled: true },
             "Mangas": { enabled: true }, "Books": { enabled: true }, "CDs": { enabled: true }
         },
+        "shotCategories": {
+            "SoEW": { enabled: true }, "PoDD": { enabled: true }, "LLS": { enabled: true }, "MS": { enabled: true },
+            "EoSD": { enabled: true }, "PCB": { enabled: true }, "IN": { enabled: true }, "PoFV": { enabled: true },
+            "MoF": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true }, "TD": { enabled: true },
+            "DDC": { enabled: true }, "LoLK": { enabled: true }, "HSiFS": { enabled: true }, "WBaWC": { enabled: true },
+            "UM": { enabled: true }, "Spinoff": { enabled : true }
+        },
+        "characters": {
+            "tierListName": "",
+            "tierListColour": defaultColour,
+            "tierHeaderWidth": defaultWidth,
+            "tierHeaderFontSize": defaultSize,
+        },
+        "works": {
+            "tierListName": "",
+            "tierListColour": defaultColour,
+            "tierHeaderWidth": defaultWidth,
+            "tierHeaderFontSize": defaultSize,
+        },
+        "shots": {
+            "tierListName": "",
+            "tierListColour": defaultColour,
+            "tierHeaderWidth": defaultWidth,
+            "tierHeaderFontSize": defaultSize,
+        },
         "pc98Enabled": true,
         "windowsEnabled": true,
         "maleEnabled": true,
-        "tierListName": "",
-        "tierHeaderWidth": defaultWidth,
-        "tierHeaderFontSize": defaultSize,
         "sort": "characters"
     },
     windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "Spinoff"],
@@ -34,60 +59,17 @@ var MAX_NAME_LENGTH = 30,
     tieredClasses = ["tiered_characters1", "tiered_characters2", "tiered_works"],
     tiers = {},
     gameTiers = {},
+    shotTiers = {},
     order = [],
     gameOrder = [],
+    shotOrder = [],
     multiSelection = [],
     maxTiers = 20,
     following = "",
     tierView = false;
 
-function isMobile() {
-    return navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1;
-}
-
-function isCharacter(character) {
-    return character !== "" && JSON.stringify(categories).removeSpaces().contains(character);
-}
-
-function isItem(item) {
-    var cats = (settings.sort == "characters" ? categories : gameCategories);
-    return item !== "" && JSON.stringify(cats).removeSpaces().contains(item);
-}
-
-function isCategory(category) {
-    return category !== "" && (Object.keys(categories).contains(category) || Object.keys(gameCategories).contains(category));
-}
-
-function isTiered(item) {
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers), i;
-
-    if (!item) {
-        return false;
-    }
-
-    for (i = 0; i < tieredClasses.length; i++) {
-        if ($("#" + item).hasClass(tieredClasses[i])) {
-            return true;
-        }
-    }
-
-    return false;
-}
-
-function allTiered(categoryName) {
-    var cats = (settings.sort == "characters" ? categories : gameCategories);
-
-    for (var i = 0; i < cats[categoryName].chars.length; i += 1) {
-        if (!isTiered(cats[categoryName].chars[i].removeSpaces())) {
-            return false;
-        }
-    }
-
-    return true;
-}
-
 function getTierNumOf(item) {
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers), tierNum, i;
+    var tierList = getCurrentTierList(), tierNum, i;
 
     for (tierNum in tierList) {
         for (i = 0; i < tierList[tierNum].chars.length; i++) {
@@ -105,13 +87,13 @@ function getPositionOf(item) {
 }
 
 function getItemAt(tierNum, pos) {
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers);
+    var tierList = getCurrentTierList();
 
     return tierList[tierNum].chars[pos];
 }
 
 function getCategoryOf(item) {
-    var cats = (settings.sort == "characters" ? categories : gameCategories), categoryName;
+    var cats = getCurrentCategories(), categoryName;
 
     for (categoryName in cats) {
         if (JSON.stringify(cats[categoryName].chars).removeSpaces().contains(item.removeSpaces())) {
@@ -138,11 +120,92 @@ function getSpritesheetOf(item, category) {
     }
 }
 
+function getCurrentCategories() {
+    if (settings.sort == "characters") {
+        return categories;
+    } else if (settings.sort == "works") {
+        return gameCategories;
+    } else { // settings.sort == "shots"
+        return shotCategories;
+    }
+}
+
+function getCurrentTierList(sort) {
+    if (!sort) {
+        sort = settings.sort;
+    }
+
+    if (sort == "characters") {
+        return tiers;
+    } else if (sort == "works") {
+        return gameTiers;
+    } else { // settings.sort == "shots"
+        return shotTiers;
+    }
+}
+
+function getCurrentTierOrder() {
+    if (settings.sort == "characters") {
+        return order;
+    } else if (settings.sort == "works") {
+        return gameOrder;
+    } else { // settings.sort == "shots"
+        return shotOrder;
+    }
+}
+
+function isMobile() {
+    return navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1;
+}
+
+function isCharacter(character) {
+    return character !== "" && JSON.stringify(categories).removeSpaces().contains(character);
+}
+
+function isWork(work) {
+    return work !== "" && JSON.stringify(gameCategories).removeSpaces().contains(work);
+}
+
+function isItem(item) {
+    var cats = getCurrentCategories();
+
+    return item !== "" && JSON.stringify(cats).removeSpaces().contains(item);
+}
+
+function isCategory(category) {
+    return category !== "" && (Object.keys(categories).contains(category) || Object.keys(gameCategories).contains(category));
+}
+
+function isTiered(item) {
+    var tierList = getCurrentTierList(), i;
+
+    if (!item) {
+        return false;
+    }
+
+    for (i = 0; i < tieredClasses.length; i++) {
+        if ($("#" + item).hasClass(tieredClasses[i])) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function allTiered(categoryName) {
+    var cats = getCurrentCategories();
+
+    for (var i = 0; i < cats[categoryName].chars.length; i += 1) {
+        if (!isTiered(cats[categoryName].chars[i].removeSpaces())) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
 function reloadTiers() {
-    var cats = (settings.sort == "characters" ? categories : gameCategories),
-        tierList = (settings.sort == "characters" ? tiers : gameTiers),
-        tierOrder = (settings.sort == "characters" ? order : gameOrder),
-        i, item, id, j;
+    var cats = getCurrentCategories(), tierList = getCurrentTierList(), tierOrder = getCurrentTierOrder(), i, item, id, j;
 
     for (i = 0; i < Object.keys(tiers).length; i += 1) {
         $("#tier" + i).html("");
@@ -152,7 +215,7 @@ function reloadTiers() {
         return;
     }
 
-    $("#tier_list_caption").html(settings.tierListName);
+    $("#tier_list_caption").html(settings[settings.sort].tierListName);
 
     for (tierNum in tierList) {
         tierNum = Number(tierNum);
@@ -163,13 +226,15 @@ function reloadTiers() {
             "' class='tier_header' draggable='true'>" + tierList[tierNum].name + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr>");
             $("#tr" + tierNum).on("dragover", allowDrop);
             $("#tr" + tierNum).on("drop", drop);
+            $("#tr" + tierNum).on("dragstart", drag);
+            $("#tr" + tierNum).css("background-color", settings[settings.sort].tierListColour);
             $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
             $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
-            $("#tr" + tierNum).on("dragstart", drag);
             $("#th" + tierNum).css("background-color", tierList[tierNum].bg);
             $("#th" + tierNum).css("color", tierList[tierNum].colour);
-            $("#th" + tierNum).css("max-width", settings.tierHeaderWidth + "px");
-            $("#th" + tierNum).css("width", settings.tierHeaderWidth + "px");
+            $("#th" + tierNum).css("max-width", settings[settings.sort].tierHeaderWidth + "px");
+            $("#th" + tierNum).css("width", settings[settings.sort].tierHeaderWidth + "px");
+            $("#th" + tierNum).css("font-size", settings[settings.sort].tierHeaderFontSize + "px");
 
             if (isMobile()) {
                 $("#th" + tierNum).css("height", "60px");
@@ -203,18 +268,25 @@ function reloadTiers() {
     }
 }
 
-function initialise() {
-    var tmp;
-
+function addDefaultTiers(sort) {
     addTier({data: {tierName: "S"}});
     addTier({data: {tierName: "A"}});
-    tmp = settings.sort;
-    settings.sort = (settings.sort == "characters" ? "works" : "characters");
-    addTier({data: {tierName: "S", noDisplay: true}});
-    addTier({data: {tierName: "A", noDisplay: true}});
-    settings.sort = tmp;
+
+    for (var i = 0; i < sorts.length; i++) {
+        if (sorts[i] != sort) {
+            settings.sort = sorts[i];
+            addTier({data: {tierName: "S", noDisplay: true}});
+            addTier({data: {tierName: "A", noDisplay: true}});
+        }
+    }
+
+    settings.sort = sort;
+}
+
+function initialise() {
+    addDefaultTiers(settings.sort);
     $(isMobile() ? "#tier_name_mobile" : "#tier_name").val("B");
-    $("#tier_list_caption").html(settings.tierListName);
+    $("#tier_list_caption").html(settings[settings.sort].tierListName);
 
     if (isMobile()) {
         $("#add_tier_cell_mobile").attr("colspan", 2);
@@ -224,7 +296,7 @@ function initialise() {
 function switchSort() {
     $("#characters").html("");
     $("#tier_list_tbody").html("");
-    settings.sort = (settings.sort == "characters" ? "works" : "characters");
+    settings.sort = $("#sort").val();
     loadItems();
     reloadTiers();
     saveSettingsPre();
@@ -259,8 +331,7 @@ function insertAt(character, tierNum, pos, chars) {
 }
 
 function addToTier(item, tierNum, pos, noDisplay) {
-    var cats = (settings.sort == "characters" ? categories : gameCategories),
-        tierList = (settings.sort == "characters" ? tiers : gameTiers), categoryName = getCategoryOf(item), i;
+    var cats = getCurrentCategories(), tierList = getCurrentTierList(), categoryName = getCategoryOf(item), i;
 
     if (isTiered(item)) {
         return;
@@ -339,8 +410,7 @@ function multiSelectionToText() {
 }
 
 function addToTierMobile(event) {
-    var character = event.data.character, tierNum = event.data.tierNum,
-        tierList = (settings.sort == "characters" ? tiers : gameTiers), chars, char;
+    var character = event.data.character, tierNum = event.data.tierNum, tierList = getCurrentTierList(), chars, char;
 
     $("#" + char).off("click");
 
@@ -367,8 +437,7 @@ function addToTierMobile(event) {
 }
 
 function addMenu(event) {
-    var character = event.data.name, tierList = (settings.sort == "characters" ? tiers : gameTiers),
-        tierOrder = (settings.sort == "characters" ? order : gameOrder), tierNum, i;
+    var character = event.data.name, tierList = getCurrentTierList(), tierOrder = getCurrentTierOrder(), tierNum, i;
 
     emptyModal();
 
@@ -393,7 +462,7 @@ function addMenu(event) {
 }
 
 function moveToBack(character, tierNum) {
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers), help = $("#" + character);
+    var tierList = getCurrentTierList(), help = $("#" + character);
 
     if (getPositionOf(character) === tiers[tierNum].chars.length - 1) {
         return;
@@ -409,7 +478,7 @@ function moveToBack(character, tierNum) {
 }
 
 function removeFromTier(item, tierNum) {
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers), pos, counter, tmp;
+    var tierList = getCurrentTierList(), pos, counter, tmp;
 
     if (item === "") {
         return;
@@ -492,7 +561,7 @@ function modalBack(event) {
 }
 
 function modalChar(character, name, tierNum) {
-    var tierOrder = (settings.sort == "characters" ? order : gameOrder), above, below;
+    var tierOrder = getCurrentTierOrder(), above, below;
 
     emptyModal();
     $("#modal_inner").html("<h3>" + name + "</h3><input id='remove_button' class='mobile_button' type='button' value='Remove'>");
@@ -519,10 +588,8 @@ function validateTierName(tierName) {
 }
 
 function addTier(event) {
-    var tierName = event.data.tierName, noDisplay = event.data.noDisplay,
-        tierList = (settings.sort == "characters" ? tiers : gameTiers),
-        tierOrder = (settings.sort == "characters" ? order : gameOrder),
-        tierNum = 0, otherTierNum;
+    var tierName = event.data.tierName, noDisplay = event.data.noDisplay, tierList = getCurrentTierList(),
+        tierOrder = getCurrentTierOrder(), tierNum = 0, otherTierNum;
 
     $("#msg_container").html("");
 
@@ -557,9 +624,9 @@ function addTier(event) {
         $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
         $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
         $("#th" + tierNum).on("dragstart", drag);
-        $("#th" + tierNum).css("max-width", settings.tierHeaderWidth + "px");
-        $("#th" + tierNum).css("width", settings.tierHeaderWidth + "px");
-        $("#th" + tierNum).css("font-size", settings.tierHeaderFontSize + "px");
+        $("#th" + tierNum).css("max-width", settings[settings.sort].tierHeaderWidth + "px");
+        $("#th" + tierNum).css("width", settings[settings.sort].tierHeaderWidth + "px");
+        $("#th" + tierNum).css("font-size", settings[settings.sort].tierHeaderFontSize + "px");
 
         if (isMobile()) {
             $("#th" + tierNum).css("height", "60px");
@@ -580,7 +647,7 @@ function addTier(event) {
 }
 
 function swapTiers(tierNum1, tierNum2) {
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers), tmp = tierList[tierNum1], tierNum, item, i;
+    var tierList = getCurrentTierList(), tmp = tierList[tierNum1], tierNum, item, i;
 
     $("#th" + tierNum1).css("color", tierList[tierNum2].colour);
     $("#th" + tierNum1).css("background-color", tierList[tierNum2].bg);
@@ -615,7 +682,7 @@ function swapTiers(tierNum1, tierNum2) {
 }
 
 function removeCharacters(tierNum) {
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers);
+    var tierList = getCurrentTierList();
 
     while (tierList[tierNum].chars.length > 0) {
         removeFromTier(tierList[tierNum].chars[tierList[tierNum].chars.length - 1], tierNum);
@@ -625,9 +692,8 @@ function removeCharacters(tierNum) {
 }
 
 function removeTier(tierNum, skipConfirmation) {
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers),
-        tierOrder = (settings.sort == "characters" ? order : gameOrder);
-    var length = tierList[tierNum].chars.length, confirmation = true, otherTierNum, i;
+    var tierList = getCurrentTierList(), tierOrder = getCurrentTierOrder(), length = tierList[tierNum].chars.length,
+        confirmation = true, otherTierNum, i;
 
     if (isMobile()) {
         skipConfirmation = true;
@@ -656,8 +722,7 @@ function swapItems(item1, item2) {
         return;
     }
 
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers),
-        tierNum1 = getTierNumOf(item1), tierNum2 = getTierNumOf(item2),
+    var tierList = getCurrentTierList(), tierNum1 = getTierNumOf(item1), tierNum2 = getTierNumOf(item2),
         pos1 = getPositionOf(item1), pos2 = getPositionOf(item2), tmp;
 
     $("#tier" + tierNum1 + "_" + pos1).remove("#" + item1);
@@ -703,7 +768,7 @@ function detectKey(event) {
 }
 
 function quickAdd(tierNum) {
-    var cats = (settings.sort == "characters" ? categories : gameCategories), categoryName, character, i;
+    var cats = getCurrentCategories(), categoryName, character, i;
 
     for (categoryName in cats) {
         if (settings.sort == "characters" && settings.categories[categoryName].enabled || settings.sort == "works" && settings.gameCategories[categoryName].enabled) {
@@ -719,9 +784,8 @@ function quickAdd(tierNum) {
 }
 
 function saveSingleTierSettings(event) {
-    var tierNum = event.data.tierNum;
-
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers),
+    var tierNum = event.data.tierNum,
+        tierList = getCurrentTierList(),
         tierName = $("#custom_name_tier" + tierNum).val().strip().replace(/'/g, ""),
         tierBg = $("#custom_bg_tier" + tierNum).val(),
         tierColour = $("#custom_colour_tier" + tierNum).val(),
@@ -739,13 +803,15 @@ function saveSingleTierSettings(event) {
     tierList[tierNum].name = tierName;
     tierList[tierNum].bg = tierBg;
     tierList[tierNum].colour = tierColour;
-    settings.tierListName = $("#tier_list_name").val();
-    settings.tierHeaderWidth = $("#tier_header_width").val() > defaultWidth ? $("#tier_header_width").val() : defaultWidth;
-    settings.tierHeaderFontSize = $("#tier_header_font_size").val() != defaultSize ? $("#tier_header_font_size").val() : defaultSize;
-    $(".tier_header").css("width", settings.tierHeaderWidth + "px");
-    $(".tier_header").css("max-width", settings.tierHeaderWidth + "px");
-    $(".tier_header").css("font-size", settings.tierHeaderFontSize + "px");
-    $("#tier_list_caption").html(settings.tierListName);
+    settings[settings.sort].tierListName = $("#tier_list_name").val();
+    settings[settings.sort].tierListColour = $("#tier_list_colour").val();
+    settings[settings.sort].tierHeaderWidth = $("#tier_header_width").val() > defaultWidth ? $("#tier_header_width").val() : defaultWidth;
+    settings[settings.sort].tierHeaderFontSize = $("#tier_header_font_size").val() != defaultSize ? $("#tier_header_font_size").val() : defaultSize;
+    $(".tier_content").css("background-color", settings[settings.sort].tierListColour);
+    $(".tier_header").css("width", settings[settings.sort].tierHeaderWidth + "px");
+    $(".tier_header").css("max-width", settings[settings.sort].tierHeaderWidth + "px");
+    $(".tier_header").css("font-size", settings[settings.sort].tierHeaderFontSize + "px");
+    $("#tier_list_caption").html(settings[settings.sort].tierListName);
     $("#modal_inner").html("");
     $("#modal_inner").css("display", "none");
     $("#modal").css("display", "none");
@@ -759,7 +825,7 @@ function saveSingleTierSettings(event) {
 }
 
 function tierMenu(tierNum) {
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers);
+    var tierList = getCurrentTierList();
 
     emptyModal();
     $("#modal_inner").append("<h2>Customise Tier '" + tierList[tierNum].name + "'</h2>");
@@ -772,11 +838,13 @@ function tierMenu(tierNum) {
     "' type='color' value='" + tierList[tierNum].colour + "'></p>" +
     "<p>Swap positions with: <select id='tier_dropdown'><option>-</option></select></p><hr>");
     $("#modal_inner").append("<div>Other settings (apply to all tiers):<p><label for='tier_list_name'>Tier list name (optional)</label>" +
-    "<input id='tier_list_name' class='settings_input' type='text' value='" + settings.tierListName + "'></p>" +
+    "<input id='tier_list_name' class='settings_input' type='text' value='" + settings[settings.sort].tierListName + "'></p>" +
+    "<p><label for='tier_list_colour'>Tier list colour</label>" +
+    "<input id='tier_list_colour' class='settings_input' type='color' value='" + settings[settings.sort].tierListColour + "'></p>" +
     "<label for='tier_header_width'>Tier header width</label>" +
-    "<input id='tier_header_width' class='settings_input' type='number' value=" + settings.tierHeaderWidth + " min=" + defaultWidth + "></p>" +
+    "<input id='tier_header_width' class='settings_input' type='number' value=" + settings[settings.sort].tierHeaderWidth + " min=" + defaultWidth + "></p>" +
     "<p><label for='tier_header_font_size'>Tier header font size</label>" +
-    "<input id='tier_header_font_size' class='settings_input' type='number' value=" + settings.tierHeaderFontSize + "></p></div>");
+    "<input id='tier_header_font_size' class='settings_input' type='number' value=" + settings[settings.sort].tierHeaderFontSize + "></p></div>");
     $("#modal_inner").append("<div><p><input id='save_tier_settings' type='button' value='Save Changes'></p>" +
     "<p id='settings_msg_container'></p></div>");
     $("#modal_inner").css("display", "block");
@@ -833,7 +901,7 @@ function modalRemoveAll(event) {
 }
 
 function modalTier(tierNum) {
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers);
+    var tierList = getCurrentTierList();
 
     emptyModal();
     $("#modal_inner").html("<h3>" + tierList[tierNum].name + "</h3>");
@@ -889,6 +957,8 @@ function saveTiersData() {
     localStorage.setItem("order", JSON.stringify(order));
     localStorage.setItem("gameTiers", JSON.stringify(gameTiers));
     localStorage.setItem("gameOrder", JSON.stringify(gameOrder));
+    localStorage.setItem("shotTiers", JSON.stringify(shotTiers));
+    localStorage.setItem("shotOrder", JSON.stringify(shotOrder));
     $("#msg_container").html("<strong class='confirmation'>Tier list(s) saved!</strong>");
     window.onbeforeunload = undefined;
 }
@@ -1007,12 +1077,16 @@ function checkSort(text) {
             for (j = 0; j < characters.length; j += 1) {
                 if (isCharacter(characters[j].removeSpaces())) {
                     return "characters";
-                } else {
+                } else if (isWork(characters[j].removeSpaces())) {
                     return "works";
+                } else { // isShot()
+                    return "shots";
                 }
             }
         }
     }
+
+    return false;
 }
 
 function load() {
@@ -1030,7 +1104,7 @@ function load() {
     }
 
     $("#import_msg_container").html("<strong class='error'>Please watch warmly as your tier list is imported...</strong>");
-    tierList = (settings.sort == "characters" ? tiers : gameTiers);
+    tierList = getCurrentTierList();
 
     for (tierNum in tierList) {
         removeTier(tierNum, true);
@@ -1045,9 +1119,17 @@ function load() {
     for (i = 0; i < text.length; i += 1) {
         if (text[i].contains(';')) {
             tmp = text[i].split(';');
-            settings.tierListName = tmp[0].replace('-', "");
-            settings.tierHeaderWidth = tmp[1];
-            settings.tierHeaderFontSize = tmp[2];
+
+            if (tmp.length == 3) {
+                settings[settings.sort].tierListName = tmp[0].replace('-', "");
+                settings[settings.sort].tierHeaderWidth = tmp[1];
+                settings[settings.sort].tierHeaderFontSize = tmp[2];
+            } else {
+                settings[settings.sort].tierListName = tmp[0].replace('-', "");
+                settings[settings.sort].tierListColour = tmp[1];
+                settings[settings.sort].tierHeaderWidth = tmp[2];
+                settings[settings.sort].tierHeaderFontSize = tmp[3];
+            }
             i += 1;
         }
 
@@ -1073,7 +1155,11 @@ function load() {
                     characters[j] = "Mai PC-98";
                 }
 
-                addToTier(characters[j].removeSpaces(), counter);
+                try {
+                    addToTier(characters[j].removeSpaces(), counter);
+                } catch (e) {
+                    tierList[counter].chars.remove(characters[j].removeSpaces());
+                }
             }
         }
     }
@@ -1081,7 +1167,8 @@ function load() {
     $("#modal_inner").html("");
     $("#modal").css("display", "none");
     $("#modal_inner").css("display", "none");
-    $("#tier_list_caption").html(settings.tierListName);
+    $("#tier_list_caption").html(settings[settings.sort].tierListName);
+    $(".tier_content").css("background-color", settings[settings.sort].tierListColour);
     $("#msg_container").html("<strong class='confirmation'>Tier list successfully imported!</strong>");
 }
 
@@ -1106,16 +1193,15 @@ function copyToClipboard() {
 }
 
 function exportText() {
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers),
-        tierOrder = (settings.sort == "characters" ? order : gameOrder),
-        tierNum, character, i, j;
+    var tierList = getCurrentTierList(), tierOrder = getCurrentTierOrder(), tierNum, character, i, j;
 
     emptyModal();
     $("#modal_inner").html("<h2>Export to Text</h2><p><input id='copy_to_clipboard' " +
     "type='button' value='Copy to Clipboard'></p><p id='text'></p>");
     $("#copy_to_clipboard").on("click", copyToClipboard);
-    $("#text").append((settings.tierListName ? settings.tierListName : "-") + ";" + settings.tierHeaderWidth +
-    ";" + settings.tierHeaderFontSize);
+    $("#text").append((settings[settings.sort].tierListName ? settings[settings.sort].tierListName : "-") +
+    ";" + settings[settings.sort].tierListColour + ";" + settings[settings.sort].tierHeaderWidth +
+    ";" + settings[settings.sort].tierHeaderFontSize);
 
     for (i = 0; i < tierOrder.length; i += 1) {
         tierNum = tierOrder[i];
@@ -1256,12 +1342,14 @@ function settingsMenu() {
     }
 
     $("#modal_inner").append("<div>Other settings:<p><label for='tier_list_name'>Tier list name (optional)</label>" +
-    "<input id='tier_list_name' class='settings_input' type='text' value='" + settings.tierListName + "'></p>" +
+    "<input id='tier_list_name' class='settings_input' type='text' value='" + settings[settings.sort].tierListName + "'></p>" +
+    "<p><label for='tier_list_colour'>Tier list colour</label>" +
+    "<input id='tier_list_colour' class='settings_input' type='color' value='" + settings[settings.sort].tierListColour + "'></p>" +
     "<label for='tier_header_width'>Tier header width</label>" +
-    "<input id='tier_header_width' class='settings_input' type='number' value=" + settings.tierHeaderWidth + " min=" + defaultWidth + "></p>" +
-    "<p><label for='tier_header_font_size'>Tier header font size</label>" +
-    "<input id='tier_header_font_size' class='settings_input' type='number' value=" + settings.tierHeaderFontSize + "></p>" +
-    "<p>To customise a tier's name and colour, click it in your tier list.</p></div>");
+    "<input id='tier_header_width' class='settings_input' type='number' value=" + settings[settings.sort].tierHeaderWidth +
+    " min=" + defaultWidth + "></p><p><label for='tier_header_font_size'>Tier header font size</label>" +
+    "<input id='tier_header_font_size' class='settings_input' type='number' value=" + settings[settings.sort].tierHeaderFontSize +
+    "></p><p>To customise a tier's name and colour, click it in your tier list.</p></div>");
     $("#modal_inner").append("<div><p><input id='save_settings' type='button' value='Save Changes'></p>" +
     "<p id='settings_msg_container'></p></div>");
     $("#modal_inner").css("display", "block");
@@ -1271,7 +1359,7 @@ function settingsMenu() {
 }
 
 function massRemoval(removedCategories) {
-    var cats = (settings.sort == "characters" ? categories : gameCategories), categoryName, character, i, j;
+    var cats = getCurrentCategories(), categoryName, character, i, j;
 
     $("#settings_msg_container").html("<strong class='error'>Girls are being removed, please wait warmly...</strong>");
 
@@ -1310,8 +1398,7 @@ function toggleMale() {
 }
 
 function saveTierSettings() {
-    var tierList = (settings.sort == "characters" ? tiers : gameTiers),
-        tierNum, tierName, tierBg, tierColour;
+    var tierList = getCurrentTierList(), tierNum, tierName, tierBg, tierColour;
 
     for (tierNum in tierList) {
         if (!tierList[tierNum].flag) {
@@ -1336,16 +1423,17 @@ function saveTierSettings() {
 }
 
 function saveSettings() {
-    var cats = (settings.sort == "characters" ? categories : gameCategories),
-        removedCategories = [], categoryName, item, confirmation, i;
+    var cats = getCurrentCategories(), removedCategories = [], categoryName, item, confirmation, i;
 
     saveTiers();
 
     for (categoryName in cats) {
         if (settings.sort == "characters") {
             settings.categories[categoryName].enabled = $("#checkbox_" + categoryName).is(":checked");
-        } else {
+        } else if (settings.sort == "works") {
             settings.gameCategories[categoryName].enabled = $("#checkbox_" + categoryName).is(":checked");
+        } else { // settings.sort == "shots"
+            settings.shotCategories[categoryName].enabled = $("#checkbox_" + categoryName).is(":checked");
         }
 
         if (!$("#checkbox_" + categoryName).is(":checked")) {
@@ -1400,13 +1488,15 @@ function saveSettings() {
         }
     }
 
-    settings.tierListName = $("#tier_list_name").val().replace(/[^a-zA-Z0-9|!|\?|,|\.|\+|-|\*@#$%\^&\(\)]/g, "");
-    settings.tierHeaderWidth = $("#tier_header_width").val() > defaultWidth ? $("#tier_header_width").val() : defaultWidth;
-    settings.tierHeaderFontSize = $("#tier_header_font_size").val() != defaultSize ? $("#tier_header_font_size").val() : defaultSize;
-    $(".tier_header").css("width", settings.tierHeaderWidth + "px");
-    $(".tier_header").css("max-width", settings.tierHeaderWidth + "px");
-    $(".tier_header").css("font-size", settings.tierHeaderFontSize + "px");
-    $("#tier_list_caption").html(settings.tierListName);
+    settings[settings.sort].tierListName = $("#tier_list_name").val().replace(/[^a-zA-Z0-9|!|\?|,|\.|\+|-|\*@#$%\^&\(\)]/g, "");
+    settings[settings.sort].tierListColour = $("#tier_list_colour").val();
+    settings[settings.sort].tierHeaderWidth = $("#tier_header_width").val() > defaultWidth ? $("#tier_header_width").val() : defaultWidth;
+    settings[settings.sort].tierHeaderFontSize = $("#tier_header_font_size").val() != defaultSize ? $("#tier_header_font_size").val() : defaultSize;
+    $(".tier_header").css("width", settings[settings.sort].tierHeaderWidth + "px");
+    $(".tier_header").css("max-width", settings[settings.sort].tierHeaderWidth + "px");
+    $(".tier_header").css("font-size", settings[settings.sort].tierHeaderFontSize + "px");
+    $(".tier_content").css("background-color", settings[settings.sort].tierListColour);
+    $("#tier_list_caption").html(settings[settings.sort].tierListName);
     $("#modal_inner").html("");
     $("#modal_inner").css("display", "none");
     $("#modal").css("display", "none");
@@ -1464,24 +1554,18 @@ function changeLog() {
 }
 
 function eraseAllConfirmed() {
-    var tierNum;
+    var tierList = getCurrentTierList(), tierNum;
 
-    if (settings.sort == "characters") {
-        for (tierNum in tiers) {
-            removeTier(tierNum, true);
-        }
-    }
-
-    if (settings.sort == "works") {
-        for (tierNum in gameTiers) {
-            removeTier(tierNum, true);
-        }
+    for (tierNum in tierList) {
+        removeTier(tierNum, true);
     }
 
     order = [];
     tiers = {};
     gameOrder = [];
     gameTiers = {};
+    shotOrder = [];
+    shotTiers = {};
     tmp = settings.sort;
     settings = {
         "categories": {
@@ -1496,18 +1580,42 @@ function eraseAllConfirmed() {
             "PC-98": { enabled: true }, "Classic": { enabled: true }, "Modern1": { enabled: true }, "Modern2": { enabled: true },
             "Mangas": { enabled: true }, "Books": { enabled: true }, "CDs": { enabled: true }
         },
+        "shotCategories": {
+            "SoEW": { enabled: true }, "PoDD": { enabled: true }, "LLS": { enabled: true }, "MS": { enabled: true },
+            "EoSD": { enabled: true }, "PCB": { enabled: true }, "IN": { enabled: true }, "PoFV": { enabled: true },
+            "MoF": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true }, "TD": { enabled: true },
+            "DDC": { enabled: true }, "LoLK": { enabled: true }, "HSiFS": { enabled: true }, "WBaWC": { enabled: true },
+            "UM": { enabled: true }, "Spinoff": { enabled : true }
+        },
+        "characters": {
+            "tierListName": "",
+            "tierListColour": defaultColour,
+            "tierHeaderWidth": defaultWidth,
+            "tierHeaderFontSize": defaultSize
+        },
+        "works": {
+            "tierListName": "",
+            "tierListColour": defaultColour,
+            "tierHeaderWidth": defaultWidth,
+            "tierHeaderFontSize": defaultSize
+        },
+        "shots": {
+            "tierListName": "",
+            "tierListColour": defaultColour,
+            "tierHeaderWidth": defaultWidth,
+            "tierHeaderFontSize": defaultSize
+        },
         "pc98Enabled": true,
         "windowsEnabled": true,
         "maleEnabled": true,
-        "tierListName": "",
-        "tierHeaderWidth": defaultWidth,
-        "tierHeaderFontSize": defaultSize,
         "sort": tmp
     };
     localStorage.removeItem("order");
     localStorage.removeItem("tiers");
     localStorage.removeItem("gameOrder");
     localStorage.removeItem("gameTiers");
+    localStorage.removeItem("shotOrder");
+    localStorage.removeItem("shotTiers");
     localStorage.removeItem("settings");
     initialise();
     $("#msg_container").html("<strong class='confirmation'>Reset the tier list and settings to their default states!</strong>");
@@ -1635,7 +1743,7 @@ function loadCategories() {
 }
 
 function loadTier(tiersData, tierNum, tierSort) {
-    var tierList = (tierSort == "characters" ? tiers : gameTiers), character;
+    var tierList = getCurrentTierList(tierSort), item;
 
     tierList[tierNum] = {};
     tierList[tierNum].name = tiersData[tierNum].name;
@@ -1656,40 +1764,40 @@ function loadTier(tiersData, tierNum, tierSort) {
             $("#th" + tierNum).on("dragstart", drag);
             $("#th" + tierNum).css("background-color", tierList[tierNum].bg);
             $("#th" + tierNum).css("color", tierList[tierNum].colour);
-            $("#th" + tierNum).css("max-width", settings.tierHeaderWidth + "px");
-            $("#th" + tierNum).css("width", settings.tierHeaderWidth + "px");
-            $("#th" + tierNum).css("font-size", settings.tierHeaderFontSize + "px");
+            $("#th" + tierNum).css("max-width", settings[settings.sort].tierHeaderWidth + "px");
+            $("#th" + tierNum).css("width", settings[settings.sort].tierHeaderWidth + "px");
+            $("#th" + tierNum).css("font-size", settings[settings.sort].tierHeaderFontSize + "px");
 
             if (isMobile()) {
                 $("#th" + tierNum).css("height", "60px");
             }
 
             for (i = 0; i < tiersData[tierNum].chars.length; i++) {
-                character = tiersData[tierNum].chars[i];
+                item = tiersData[tierNum].chars[i];
 
-                if (character == "Mai") {
-                    character = "Mai PC-98";
+                if (item == "Mai") {
+                    item = "Mai PC-98";
                 }
 
                 if (isMobile()) {
-                    $("#" + character).off("click");
+                    $("#" + item).off("click");
                 }
 
-                addToTier(character, tierNum);
+                addToTier(item, tierNum);
             }
         } else {
             for (i = 0; i < tiersData[tierNum].chars.length; i++) {
-                character = tiersData[tierNum].chars[i];
+                item = tiersData[tierNum].chars[i];
 
-                if (character == "Mai") {
-                    character = "Mai PC-98";
+                if (item == "Mai") {
+                    item = "Mai PC-98";
                 }
 
                 if (isMobile()) {
-                    $("#" + character).off("click");
+                    $("#" + item).off("click");
                 }
 
-                tierList[tierNum].chars.pushStrict(character);
+                tierList[tierNum].chars.pushStrict(item);
             }
         }
     }
@@ -1700,6 +1808,8 @@ function loadTiersFromStorage() {
         tiersData = JSON.parse(localStorage.getItem("tiers")),
         gameOrderData = JSON.parse(localStorage.getItem("gameOrder")),
         gameTiersData = JSON.parse(localStorage.getItem("gameTiers")),
+        shotOrderData = JSON.parse(localStorage.getItem("shotOrder")),
+        shotTiersData = JSON.parse(localStorage.getItem("shotTiers")),
         tierNum, i;
 
     if (orderData) {
@@ -1709,12 +1819,15 @@ function loadTiersFromStorage() {
             tierNum = order[i];
             loadTier(tiersData, tierNum, "characters");
         }
-    } else {
+    } else if (!tiersData.isEmpty()) {
         for (tierNum in tiersData) {
             tierNum = Number(tierNum);
             loadTier(tiersData, tierNum, "characters");
             order.push(tierNum);
         }
+    } else {
+        addTier({data: {tierName: "S", noDisplay: settings.sort != "characters"}});
+        addTier({data: {tierName: "A", noDisplay: settings.sort != "characters"}});
     }
 
     if (gameOrderData) {
@@ -1724,53 +1837,37 @@ function loadTiersFromStorage() {
             tierNum = gameOrder[i];
             loadTier(gameTiersData, tierNum, "works");
         }
-    } else {
+    } else if (!gameTiersData.isEmpty()) {
         for (tierNum in gameTiersData) {
             tierNum = Number(tierNum);
             loadTier(gameTiersData, tierNum, "works");
             gameOrder.push(tierNum);
         }
+    } else {
+        addTier({data: {tierName: "S", noDisplay: settings.sort != "works"}});
+        addTier({data: {tierName: "A", noDisplay: settings.sort != "works"}});
+    }
+
+    if (shotOrderData) {
+        shotOrder = shotOrderData;
+
+        for (i = 0; i < shotOrder.length; i += 1) {
+            tierNum = shotOrder[i];
+            loadTier(shotTiersData, tierNum, "shots");
+        }
+    } else if (!shotTiersData.isEmpty()) {
+        for (tierNum in shotTiersData) {
+            tierNum = Number(tierNum);
+            loadTier(shotTiersData, tierNum, "shots");
+            shotOrder.push(tierNum);
+        }
+    } else {
+        addTier({data: {tierName: "S", noDisplay: settings.sort != "shots"}});
+        addTier({data: {tierName: "A", noDisplay: settings.sort != "shots"}});
     }
 }
 
-function loadCharacters() {
-    var categoryName, character, i;
 
-    for (categoryName in categories) {
-        $("#characters").append("<div id='" + categoryName + "' class='dark_bg'>");
-
-        for (i in categories[categoryName].chars) {
-            character = categories[categoryName].chars[i];
-
-            if (isMobile()) {
-                $("#" + categoryName).append("<span id='" + character.removeSpaces() +
-                "C'><span id='" + character.removeSpaces() + "' class='item list_characters" + getSpritesheetOf(character) +
-                "' title='" + character + "'>");
-                $("#" + character.removeSpaces()).on("click", {name: $("#" + character.removeSpaces()).attr("title")}, addMenu);
-            } else {
-                $("#" + categoryName).append("<span id='" + character.removeSpaces() + "C'><span id='" + character.removeSpaces() +
-                "' class='item list_characters" + getSpritesheetOf(character) + "' draggable='true' title='" + character + "'>");
-                $("#" + character.removeSpaces()).on("dblclick", {name: $("#" + character.removeSpaces()).attr("title")}, addMenu);
-                $("#" + character.removeSpaces()).on("dragstart", drag);
-                $("#" + character.removeSpaces()).on("click", toggleMulti);
-            }
-
-            if (maleCharacters.contains(character.removeSpaces()) && !settings.maleEnabled) {
-                $("#" + character.removeSpaces()).css("display", "none");
-            }
-        }
-
-        $("#characters").append("</div>");
-
-        if (!settings.categories[categoryName].enabled) {
-            $("#" + categoryName).css("display", "none");
-        }
-    }
-
-    if (isMobile()) {
-        $(".list_characters1, .list_characters2, .tiered_characters1, .tiered_characters2").css("background-image", "url('assets/spritesheet/spritesheet60x60.png')");
-    }
-}
 
 function acronym(game) {
     var acronym = "", array = game.split(/[ -\.]/);
@@ -1790,51 +1887,53 @@ function acronym(game) {
     return acronym.toLowerCase();
 }
 
-function loadWorks() {
-    var categoryName, game, i;
+function loadItems() {
+    var cats = getCurrentCategories(), categoryName, item, i;
 
-    for (categoryName in gameCategories) {
+    for (categoryName in cats) {
         $("#characters").append("<div id='" + categoryName + "' class='dark_bg'>");
 
-        for (i in gameCategories[categoryName].chars) {
-            game = gameCategories[categoryName].chars[i].replace("'", "");
+        for (i in cats[categoryName].chars) {
+            item = cats[categoryName].chars[i].replace("'", "");
 
             if (isMobile()) {
-                $("#" + categoryName).append("<span id='" + game.removeSpaces() +
-                "C'><span id='" + game.removeSpaces() +
-                "' class='item list_works' title='" + game + "'>");
-                $("#" + game.removeSpaces()).on("click", {name: $("#" + game.removeSpaces()).attr("title")}, addMenu);
+                $("#" + categoryName).append("<span id='" + shot.removeSpaces() +
+                "C'><span id='" + item.removeSpaces() +
+                "' class='item list_" + settings.sort + getSpritesheetOf(item, categoryName) + "' title='" + item + "'>");
+                $("#" + item.removeSpaces()).on("click", {name: $("#" + item.removeSpaces()).attr("title")}, addMenu);
             } else {
-                $("#" + categoryName).append("<span id='" + game.removeSpaces() +
-                "C'><span id='" + game.removeSpaces() + "' class='item list_works' draggable='true' " +
-                "alt='" + game + "' title='" + game + "'>");
-                $("#" + game.removeSpaces()).on("dblclick", {name: $("#" + game.removeSpaces()).attr("title")}, addMenu);
-                $("#" + game.removeSpaces()).on("dragstart", drag);
+                $("#" + categoryName).append("<span id='" + item.removeSpaces() +
+                "C'><span id='" + item.removeSpaces() + "' class='item list_" + settings.sort + getSpritesheetOf(item, categoryName) +
+                "' draggable='true' " + "alt='" + item + "' title='" + item + "'>");
+                $("#" + item.removeSpaces()).on("dblclick", {name: $("#" + item.removeSpaces()).attr("title")}, addMenu);
+                $("#" + item.removeSpaces()).on("dragstart", drag);
             }
         }
 
         $("#characters").append("</div>");
 
-        if (!settings.gameCategories[categoryName].enabled) {
+        if (settings.sort == "characters" && !settings.categories[categoryName].enabled) {
+            $("#" + categoryName).css("display", "none");
+        } else if (settings.sort == "works" && !settings.gameCategories[categoryName].enabled) {
+            $("#" + categoryName).css("display", "none");
+        } else if (settings.sort == "shots" && !settings.shotCategories[categoryName].enabled) {
             $("#" + categoryName).css("display", "none");
         }
     }
 
     if (isMobile()) {
-        $(".list_works, .tiered_works").css("background-image", "url('assets/spritesheet/work_sheet60x60.png')");
-    }
-}
-
-function loadItems() {
-    if (settings.sort == "characters") {
-        loadCharacters();
-    } else {
-        loadWorks();
+        if (settings.sort == "characters") {
+            $(".list_characters1, .list_characters2, .tiered_characters1, .tiered_characters2").css("background-image", "" +
+            "url('assets/spritesheet/characters_sheet60x60.png')");
+        } else {
+            $(".list_" + settings.sort, ".tiered_" + settings.sort).css("background-image", "url('assets/spritesheet/" + settings.sort +
+            "_sheet60x60.png')");
+        }
     }
 }
 
 function loadSettingsFromStorage() {
-    var settingsData = JSON.parse(localStorage.getItem("settings")), category;
+    var settingsData = JSON.parse(localStorage.getItem("settings")), category, sort, i;
 
     if (settingsData.hasOwnProperty("categories")) {
         for (category in settingsData.categories) {
@@ -1856,12 +1955,24 @@ function loadSettingsFromStorage() {
             }
         }
 
+        if (settingsData.hasOwnProperty("shotCategories")) {
+            for (category in settingsData.shotCategories) {
+                settings.shotCategories[category].enabled = settingsData.shotCategories[category].enabled;
+            }
+        }
+
         settings.pc98Enabled = settingsData.pc98Enabled;
         settings.windowsEnabled = settingsData.windowsEnabled;
         settings.maleEnabled = settingsData.maleEnabled;
-        settings.tierListName = (settingsData.tierListName ? settingsData.tierListName : "");
-        settings.tierHeaderWidth = (settingsData.tierHeaderWidth ? settingsData.tierHeaderWidth : defaultWidth);
-        settings.tierHeaderFontSize = (settingsData.tierHeaderFontSize ? settingsData.tierHeaderFontSize : defaultSize);
+
+        for (i = 0; i < sorts.length; i++) {
+            sort = sorts[i];
+            settings[sort].tierListName = (settingsData[sort] && settingsData[sort].tierListName ? settingsData[sort].tierListName : "");
+            settings[sort].tierListColour = (settingsData[sort] && settingsData[sort].tierListColour ? settingsData[sort].tierListColour : defaultColour);
+            settings[sort].tierHeaderWidth = (settingsData[sort] && settingsData[sort].tierHeaderWidth ? settingsData[sort].tierHeaderWidth : defaultWidth);
+            settings[sort].tierHeaderFontSize = (settingsData[sort] && settingsData[sort].tierHeaderFontSize ? settingsData[sort].tierHeaderFontSize : defaultSize);
+        }
+
         settings.sort = settingsData.sort;
     } else {
         for (category in settingsData) {
@@ -1926,17 +2037,18 @@ $(document).ready(function () {
     }
 
     loadCategories();
-    $("#tier_list_caption").html(settings.tierListName);
+    $("#tier_list_caption").html(settings[settings.sort].tierListName);
     $("#chars_load, #works_load").remove();
     $("#sort").val(settings.sort);
     loadItems();
 
-    if (localStorage.tiers || localStorage.gameTiers) {
+    if (localStorage.tiers || localStorage.gameTiers || localStorage.shotTiers) {
         loadTiersFromStorage();
     } else {
         initialise();
     }
 
+    $(".tier_content").css("background-color", settings[settings.sort].tierListColour);
     setEventListeners();
     window.onbeforeunload = undefined;
 });

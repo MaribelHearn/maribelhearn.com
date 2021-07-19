@@ -149,7 +149,7 @@ function backgroundColour() {
 
 function takeScreenshot() {
     emptyModal();
-    $("#content, #hy_container, h1").css("display", "none");
+
     try {
         html2canvas(document.getElementById("table"), {
             backgroundColor: backgroundColour()
