@@ -488,6 +488,7 @@ function removeFromTier(item, tierNum) {
     $("#" + item).removeClass("tiered_" + settings.sort + getSpritesheetOf(item));
     $("#" + item).addClass("list_" + settings.sort + getSpritesheetOf(item));
     $("#" + item).off("contextmenu");
+    $("#" + item).off("click");
     $("#" + item).on("click", toggleMulti);
 
     if (isMobile()) {
@@ -980,6 +981,7 @@ function saveTiers() {
         return;
     }
 
+    saveSettingsData();
     saveTiersData();
 }
 
@@ -1907,6 +1909,7 @@ function loadItems() {
                 "' draggable='true' " + "alt='" + item + "' title='" + item + "'>");
                 $("#" + item.removeSpaces()).on("dblclick", {name: $("#" + item.removeSpaces()).attr("title")}, addMenu);
                 $("#" + item.removeSpaces()).on("dragstart", drag);
+                $("#" + item.removeSpaces()).on("click", toggleMulti);
             }
         }
 
