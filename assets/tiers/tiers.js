@@ -312,6 +312,16 @@ function switchSort() {
     $("#msg_container").html("<strong class='confirmation'>Switched to " + settings.sort + "!</strong>");
 }
 
+function switchSortMobile() {
+    $("#characters").html("");
+    $("#tier_list_tbody").html("");
+    settings.sort = sorts[(sorts.indexOf(settings.sort) + 1) % 3];
+    loadItems();
+    reloadTiers();
+    saveSettingsPre();
+    $("#msg_container").html("<strong class='confirmation'>Switched to " + settings.sort + "!</strong>");
+}
+
 function tieredContextMenu(event) {
     var character = this.id, name = this.title, tierNum = event.data.tierNum;
 
@@ -1924,7 +1934,7 @@ function loadItems() {
             item = cats[categoryName].chars[i].replace("'", "");
 
             if (isMobile()) {
-                $("#" + categoryName).append("<span id='" + shot.removeSpaces() +
+                $("#" + categoryName).append("<span id='" + item.removeSpaces() +
                 "C'><span id='" + item.removeSpaces() +
                 "' class='item list_" + settings.sort + getSpritesheetOf(item, categoryName) + "' title='" + item + "'>");
                 $("#" + item.removeSpaces()).on("click", {name: $("#" + item.removeSpaces()).attr("title")}, addMenu);
@@ -1951,8 +1961,10 @@ function loadItems() {
 
     if (isMobile()) {
         if (settings.sort == "characters") {
-            $(".list_characters1, .list_characters2, .tiered_characters1, .tiered_characters2").css("background-image", "" +
-            "url('assets/spritesheet/characters_sheet60x60.png')");
+            $(".list_characters1, .tiered_characters1").css("background-image", "" +
+            "url('assets/spritesheet/characters_sheet60x60_1.png')");
+            $(".list_characters2, .tiered_characters2").css("background-image", "" +
+            "url('assets/spritesheet/characters_sheet60x60_2.png')");
         } else {
             $(".list_" + settings.sort, ".tiered_" + settings.sort).css("background-image", "url('assets/spritesheet/" + settings.sort +
             "_sheet60x60.png')");
@@ -2056,7 +2068,7 @@ function setEventListeners() {
     $("#information_button").on("click", modalInformation);
     $("#view_button").on("click", toggleTierView);
     $("#menu_button").on("click", menu);
-    $("#switch_button").on("click", switchSort);
+    $("#switch_button").on("click", switchSortMobile);
     $("#characters").on("dragover", allowDrop);
     $("#characters").on("drop", drop);
 }
