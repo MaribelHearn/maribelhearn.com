@@ -27,17 +27,17 @@ table, th, td {
     height: 100px;
 }
 .charslot_1 {
-    background-image: url('../spritesheet/spritesheet_1.png');
+    background-image: url('../spritesheet/characters_sheet_1.png');
     background-position: -9720px 0;
     vertical-align: bottom;
 }
 .charslot_2 {
-    background-image: url('../spritesheet/spritesheet_2.png');
+    background-image: url('../spritesheet/characters_sheet_2.png');
     background-position: -9720px 0;
     vertical-align: bottom;
 }
 .locslot {
-    background-image: url('../slots/locations.png');
+    background-image: url('../slots/locations_sheet.png');
     background-position: -3960px 0;
     vertical-align: bottom;
 }

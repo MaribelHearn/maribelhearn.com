@@ -61,32 +61,42 @@ li {
 .list_characters1 {
     width: 80px;
     height: 80px;
-    background-image: url('../spritesheet/spritesheet80x80_1.png');
+    background-image: url('../spritesheet/characters_sheet80x80_1.png');
 }
 .list_characters2 {
     width: 80px;
     height: 80px;
-    background-image: url('../spritesheet/spritesheet80x80_2.png');
+    background-image: url('../spritesheet/characters_sheet80x80_2.png');
 }
 .tiered_characters1 {
     width: 120px;
     height: 120px;
-    background-image: url('../spritesheet/spritesheet_1.png');
+    background-image: url('../spritesheet/characters_sheet_1.png');
 }
 .tiered_characters2 {
     width: 120px;
     height: 120px;
-    background-image: url('../spritesheet/spritesheet_2.png');
+    background-image: url('../spritesheet/characters_sheet_2.png');
 }
 .list_works {
     width: 80px;
     height: 80px;
-    background-image: url('../spritesheet/work_sheet80x80.png');
+    background-image: url('../spritesheet/works_sheet80x80.png');
 }
 .tiered_works {
     width: 120px;
     height: 120px;
-    background-image: url('../spritesheet/work_sheet.png');
+    background-image: url('../spritesheet/works_sheet.png');
+}
+.list_shots {
+    width: 80px;
+    height: 80px;
+    background-image: url('../spritesheet/shots_sheet80x80.png');
+}
+.tiered_shots {
+    width: 120px;
+    height: 120px;
+    background-image: url('../spritesheet/shots_sheet.png');
 }
 .name {
     margin-top: 10px;
@@ -1449,7 +1459,7 @@ li {
     background-position: -2760px 0;
 }
 #AntinomyofCommonFlowers.tiered_works {
-    background-position: -2840px 0;
+    background-position: -2880px 0;
 }
 #HiddenStarinFourSeasons.tiered_works {
     background-position: -3000px 0;
