@@ -695,7 +695,7 @@ function removeTier(tierNum, skipConfirmation) {
     var tierList = getCurrentTierList(), tierOrder = getCurrentTierOrder(), length = tierList[tierNum].chars.length,
         confirmation = true, otherTierNum, i;
 
-    if (isMobile()) {
+    if (isMobile() || tierList[tierNum].chars.length === 0) {
         skipConfirmation = true;
     }
 
