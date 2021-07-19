@@ -49,6 +49,7 @@ li {
     max-width: 120px;
     border: 1px solid #606060;
     word-wrap: break-word;
+    cursor: pointer;
 }
 .tier_content {
     text-align: left;
@@ -56,6 +57,7 @@ li {
     border-bottom: 1px solid #606060;
 }
 .item {
+    cursor: pointer;
     display: inline-block;
 }
 .list_characters1 {
