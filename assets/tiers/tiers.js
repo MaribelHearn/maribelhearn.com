@@ -1187,6 +1187,7 @@ function importText() {
     var tierNum, character, i;
 
     emptyModal();
+    $("#msg_container").html("");
     $("#modal_inner").html("<h2>Import from Text</h2><p>Note that the format should be the same as the exported text.</p>");
     $("#modal_inner").append("<p><strong>Warning:</strong> Importing will overwrite your current tier list!");
     $("#modal_inner").append("<textarea id='import'></textarea><p><input id='load_button' type='button' value='Import'></p>");
@@ -1207,6 +1208,7 @@ function exportText() {
     var tierList = getCurrentTierList(), tierOrder = getCurrentTierOrder(), tierNum, character, i, j;
 
     emptyModal();
+    $("#msg_container").html("");
     $("#modal_inner").html("<h2>Export to Text</h2><p><input id='copy_to_clipboard' " +
     "type='button' value='Copy to Clipboard'></p><p id='text'></p>");
     $("#copy_to_clipboard").on("click", copyToClipboard);
@@ -1354,6 +1356,7 @@ function settingsMenu() {
         settingsMenuWorks();
     }
 
+    $("#msg_container").html("");
     $("#modal_inner").append("<div>Other settings:<p><label for='tier_list_name'>Tier list name (optional)</label>" +
     "<input id='tier_list_name' class='settings_input' type='text' value='" + settings[settings.sort].tierListName + "'></p>" +
     "<p><label for='tier_list_colour'>Tier list colour</label>" +
@@ -1547,6 +1550,7 @@ function toggleTierView() {
 
 function changeLog() {
     emptyModal();
+    $("#msg_container").html("");
     $("#modal_inner").html("<h2>Changelog</h2><ul class='left'><li>05/12/2018: Initial release</li>" +
     "<li>05/12/2018: Dairi art added and made the default; PC-98 and male characters added</li>" +
     "<li>21/01/2019: Mobile version</li>" +
