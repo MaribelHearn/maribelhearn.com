@@ -2876,6 +2876,294 @@ li {
     #DatelessBarOldAdam.list_works, #DatelessBarOldAdam.tiered_works {
         background-position: -3180px 0;
     }
+    #EoSDReimuB.list_shots, #EoSDReimuB.tiered_shots {
+        background-position: -60px 0;
+    }
+    #EoSDMarisaA.list_shots, #EoSDMarisaA.tiered_shots {
+        background-position: -120px 0;
+    }
+    #EoSDMarisaB.list_shots, #EoSDMarisaB.tiered_shots {
+        background-position: -180px 0;
+    }
+    #PCBReimuA.list_shots, #PCBReimuA.tiered_shots {
+        background-position: -240px 0;
+    }
+    #PCBReimuB.list_shots, #PCBReimuB.tiered_shots {
+        background-position: -300px 0;
+    }
+    #PCBMarisaA.list_shots, #PCBMarisaA.tiered_shots {
+        background-position: -360px 0;
+    }
+    #PCBMarisaB.list_shots, #PCBMarisaB.tiered_shots {
+        background-position: -420px 0;
+    }
+    #PCBSakuyaA.list_shots, #PCBSakuyaA.tiered_shots {
+        background-position: -480px 0;
+    }
+    #PCBSakuyaB.list_shots, #PCBSakuyaB.tiered_shots {
+        background-position: -540px 0;
+    }
+    #INBorderTeam.list_shots, #INBorderTeam.tiered_shots {
+        background-position: -600px 0;
+    }
+    #INMagicTeam.list_shots, #INMagicTeam.tiered_shots {
+        background-position: -660px 0;
+    }
+    #INScarletTeam.list_shots, #INScarletTeam.tiered_shots {
+        background-position: -720px 0;
+    }
+    #INGhostTeam.list_shots, #INGhostTeam.tiered_shots {
+        background-position: -780px 0;
+    }
+    #INReimu.list_shots, #INReimu.tiered_shots {
+        background-position: -840px 0;
+    }
+    #INYukari.list_shots, #INYukari.tiered_shots {
+        background-position: -900px 0;
+    }
+    #INMarisa.list_shots, #INMarisa.tiered_shots {
+        background-position: -960px 0;
+    }
+    #INAlice.list_shots, #INAlice.tiered_shots {
+        background-position: -1020px 0;
+    }
+    #INSakuya.list_shots, #INSakuya.tiered_shots {
+        background-position: -1080px 0;
+    }
+    #INRemilia.list_shots, #INRemilia.tiered_shots {
+        background-position: -1140px 0;
+    }
+    #INYoumu.list_shots, #INYoumu.tiered_shots {
+        background-position: -1200px 0;
+    }
+    #INYuyuko.list_shots, #INYuyuko.tiered_shots {
+        background-position: -1260px 0;
+    }
+    #PoFVReimu.list_shots, #PoFVReimu.tiered_shots {
+        background-position: -1320px 0;
+    }
+    #PoFVMarisa.list_shots, #PoFVMarisa.tiered_shots {
+        background-position: -1380px 0;
+    }
+    #PoFVSakuya.list_shots, #PoFVSakuya.tiered_shots {
+        background-position: -1440px 0;
+    }
+    #PoFVYoumu.list_shots, #PoFVYoumu.tiered_shots {
+        background-position: -1500px 0;
+    }
+    #PoFVReisen.list_shots, #PoFVReisen.tiered_shots {
+        background-position: -1560px 0;
+    }
+    #PoFVCirno.list_shots, #PoFVCirno.tiered_shots {
+        background-position: -1620px 0;
+    }
+    #PoFVLyrica.list_shots, #PoFVLyrica.tiered_shots {
+        background-position: -1680px 0;
+    }
+    #PoFVMystia.list_shots, #PoFVMystia.tiered_shots {
+        background-position: -1740px 0;
+    }
+    #PoFVTewi.list_shots, #PoFVTewi.tiered_shots {
+        background-position: -1800px 0;
+    }
+    #PoFVAya.list_shots, #PoFVAya.tiered_shots {
+        background-position: -1860px 0;
+    }
+    #PoFVMedicine.list_shots, #PoFVMedicine.tiered_shots {
+        background-position: -1920px 0;
+    }
+    #PoFVYuuka.list_shots, #PoFVYuuka.tiered_shots {
+        background-position: -1980px 0;
+    }
+    #PoFVKomachi.list_shots, #PoFVKomachi.tiered_shots {
+        background-position: -2040px 0;
+    }
+    #PoFVEiki.list_shots, #PoFVEiki.tiered_shots {
+        background-position: -2100px 0;
+    }
+    #MoFReimuA.list_shots, #MoFReimuA.tiered_shots {
+        background-position: -2160px 0;
+    }
+    #MoFReimuB.list_shots, #MoFReimuB.tiered_shots {
+        background-position: -2220px 0;
+    }
+    #MoFReimuC.list_shots, #MoFReimuC.tiered_shots {
+        background-position: -2280px 0;
+    }
+    #MoFMarisaA.list_shots, #MoFMarisaA.tiered_shots {
+        background-position: -2340px 0;
+    }
+    #MoFMarisaB.list_shots, #MoFMarisaB.tiered_shots {
+        background-position: -2400px 0;
+    }
+    #MoFMarisaC.list_shots, #MoFMarisaC.tiered_shots {
+        background-position: -2460px 0;
+    }
+    #SAReimuA.list_shots, #SAReimuA.tiered_shots {
+        background-position: -2520px 0;
+    }
+    #SAReimuB.list_shots, #SAReimuB.tiered_shots {
+        background-position: -2580px 0;
+    }
+    #SAReimuC.list_shots, #SAReimuC.tiered_shots {
+        background-position: -2640px 0;
+    }
+    #SAMarisaA.list_shots, #SAMarisaA.tiered_shots {
+        background-position: -2700px 0;
+    }
+    #SAMarisaB.list_shots, #SAMarisaB.tiered_shots {
+        background-position: -2760px 0;
+    }
+    #SAMarisaC.list_shots, #SAMarisaC.tiered_shots {
+        background-position: -2820px 0;
+    }
+    #UFOReimuA.list_shots, #UFOReimuA.tiered_shots {
+        background-position: -2880px 0;
+    }
+    #UFOReimuB.list_shots, #UFOReimuB.tiered_shots {
+        background-position: -2940px 0;
+    }
+    #UFOMarisaA.list_shots, #UFOMarisaA.tiered_shots {
+        background-position: -3000px 0;
+    }
+    #UFOMarisaB.list_shots, #UFOMarisaB.tiered_shots {
+        background-position: -3060px 0;
+    }
+    #UFOSanaeA.list_shots, #UFOSanaeA.tiered_shots {
+        background-position: -3120px 0;
+    }
+    #UFOSanaeB.list_shots, #UFOSanaeB.tiered_shots {
+        background-position: -3180px 0;
+    }
+    #TDReimu.list_shots, #TDReimu.tiered_shots {
+        background-position: -3240px 0;
+    }
+    #TDMarisa.list_shots, #TDMarisa.tiered_shots {
+        background-position: -3300px 0;
+    }
+    #TDSanae.list_shots, #TDSanae.tiered_shots {
+        background-position: -3360px 0;
+    }
+    #TDYoumu.list_shots, #TDYoumu.tiered_shots {
+        background-position: -3420px 0;
+    }
+    #DDCReimuA.list_shots, #DDCReimuA.tiered_shots {
+        background-position: -3480px 0;
+    }
+    #DDCReimuB.list_shots, #DDCReimuB.tiered_shots {
+        background-position: -3540px 0;
+    }
+    #DDCMarisaA.list_shots, #DDCMarisaA.tiered_shots {
+        background-position: -3600px 0;
+    }
+    #DDCMarisaB.list_shots, #DDCMarisaB.tiered_shots {
+        background-position: -3660px 0;
+    }
+    #DDCSakuyaA.list_shots, #DDCSakuyaA.tiered_shots {
+        background-position: -3720px 0;
+    }
+    #DDCSakuyaB.list_shots, #DDCSakuyaB.tiered_shots {
+        background-position: -3780px 0;
+    }
+    #LoLKReimu.list_shots, #LoLKReimu.tiered_shots {
+        background-position: -3840px 0;
+    }
+    #LoLKMarisa.list_shots, #LoLKMarisa.tiered_shots {
+        background-position: -3900px 0;
+    }
+    #LoLKSanae.list_shots, #LoLKSanae.tiered_shots {
+        background-position: -3960px 0;
+    }
+    #LoLKReisen.list_shots, #LoLKReisen.tiered_shots {
+        background-position: -4020px 0;
+    }
+    #HSiFSReimuSpring.list_shots, #HSiFSReimuSpring.tiered_shots {
+        background-position: -4080px 0;
+    }
+    #HSiFSReimuSummer.list_shots, #HSiFSReimuSummer.tiered_shots {
+        background-position: -4140px 0;
+    }
+    #HSiFSReimuAutumn.list_shots, #HSiFSReimuAutumn.tiered_shots {
+        background-position: -4200px 0;
+    }
+    #HSiFSReimuWinter.list_shots, #HSiFSReimuWinter.tiered_shots {
+        background-position: -4260px 0;
+    }
+    #HSiFSCirnoSpring.list_shots, #HSiFSCirnoSpring.tiered_shots {
+        background-position: -4320px 0;
+    }
+    #HSiFSCirnoSummer.list_shots, #HSiFSCirnoSummer.tiered_shots {
+        background-position: -4380px 0;
+    }
+    #HSiFSCirnoAutumn.list_shots, #HSiFSCirnoAutumn.tiered_shots {
+        background-position: -4440px 0;
+    }
+    #HSiFSCirnoWinter.list_shots, #HSiFSCirnoWinter.tiered_shots {
+        background-position: -4500px 0;
+    }
+    #HSiFSAyaSpring.list_shots, #HSiFSAyaSpring.tiered_shots {
+        background-position: -4560px 0;
+    }
+    #HSiFSAyaSummer.list_shots, #HSiFSAyaSummer.tiered_shots {
+        background-position: -4620px 0;
+    }
+    #HSiFSAyaAutumn.list_shots, #HSiFSAyaAutumn.tiered_shots {
+        background-position: -4680px 0;
+    }
+    #HSiFSAyaWinter.list_shots, #HSiFSAyaWinter.tiered_shots {
+        background-position: -4740px 0;
+    }
+    #HSiFSMarisaSpring.list_shots, #HSiFSMarisaSpring.tiered_shots {
+        background-position: -4800px 0;
+    }
+    #HSiFSMarisaSummer.list_shots, #HSiFSMarisaSummer.tiered_shots {
+        background-position: -4860px 0;
+    }
+    #HSiFSMarisaAutumn.list_shots, #HSiFSMarisaAutumn.tiered_shots {
+        background-position: -4920px 0;
+    }
+    #HSiFSMarisaWinter.list_shots, #HSiFSMarisaWinter.tiered_shots {
+        background-position: -4980px 0;
+    }
+    #WBaWCReimuWolf.list_shots, #WBaWCReimuWolf.tiered_shots {
+        background-position: -5040px 0;
+    }
+    #WBaWCReimuOtter.list_shots, #WBaWCReimuOtter.tiered_shots {
+        background-position: -5100px 0;
+    }
+    #WBaWCReimuEagle.list_shots, #WBaWCReimuEagle.tiered_shots {
+        background-position: -5160px 0;
+    }
+    #WBaWCMarisaWolf.list_shots, #WBaWCMarisaWolf.tiered_shots {
+        background-position: -5220px 0;
+    }
+    #WBaWCMarisaOtter.list_shots, #WBaWCMarisaOtter.tiered_shots {
+        background-position: -5280px 0;
+    }
+    #WBaWCMarisaEagle.list_shots, #WBaWCMarisaEagle.tiered_shots {
+        background-position: -5340px 0;
+    }
+    #WBaWCYoumuWolf.list_shots, #WBaWCYoumuWolf.tiered_shots {
+        background-position: -5400px 0;
+    }
+    #WBaWCYoumuOtter.list_shots, #WBaWCYoumuOtter.tiered_shots {
+        background-position: -5460px 0;
+    }
+    #WBaWCYoumuEagle.list_shots, #WBaWCYoumuEagle.tiered_shots {
+        background-position: -5520px 0;
+    }
+    #UMReimu.list_shots, #UMReimu.tiered_shots {
+        background-position: -5580px 0;
+    }
+    #UMMarisa.list_shots, #UMMarisa.tiered_shots {
+        background-position: -5640px 0;
+    }
+    #UMSakuya.list_shots, #UMSakuya.tiered_shots {
+        background-position: -5700px 0;
+    }
+    #UMSanae.list_shots, #UMSanae.tiered_shots {
+        background-position: -5760px 0;
+    }
 }
 @media only screen and (max-width: 800px) and (orientation: portrait) {
     #characters {
