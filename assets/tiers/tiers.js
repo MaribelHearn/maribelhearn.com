@@ -1819,7 +1819,7 @@ function loadTiersFromStorage() {
             tierNum = order[i];
             loadTier(tiersData, tierNum, "characters");
         }
-    } else if (!tiersData.isEmpty()) {
+    } else if (tiersData && !tiersData.isEmpty()) {
         for (tierNum in tiersData) {
             tierNum = Number(tierNum);
             loadTier(tiersData, tierNum, "characters");
@@ -1837,7 +1837,7 @@ function loadTiersFromStorage() {
             tierNum = gameOrder[i];
             loadTier(gameTiersData, tierNum, "works");
         }
-    } else if (!gameTiersData.isEmpty()) {
+    } else if (gameTiersData && !gameTiersData.isEmpty()) {
         for (tierNum in gameTiersData) {
             tierNum = Number(tierNum);
             loadTier(gameTiersData, tierNum, "works");
@@ -1855,7 +1855,7 @@ function loadTiersFromStorage() {
             tierNum = shotOrder[i];
             loadTier(shotTiersData, tierNum, "shots");
         }
-    } else if (!shotTiersData.isEmpty()) {
+    } else if (shotTiersData && !shotTiersData.isEmpty()) {
         for (tierNum in shotTiersData) {
             tierNum = Number(tierNum);
             loadTier(shotTiersData, tierNum, "shots");
