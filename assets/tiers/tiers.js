@@ -361,6 +361,14 @@ function addToTier(item, tierNum, pos, noDisplay) {
         return;
     }
 
+    if (!tierList[tierNum].chars) { // temporary fix for undefined ".chars" for shottypes
+        tierList[tierNum].name = tierName;
+        tierList[tierNum].bg = "#1b232e";
+        tierList[tierNum].colour = "#a0a0a0";
+        tierList[tierNum].chars = [];
+        tierList[tierNum].flag = false;
+    }
+
     $("#msg_container").html("");
     $("#" + item).removeClass("outline");
     $("#" + item).removeClass("list_" + settings.sort + getSpritesheetOf(item, categoryName));
