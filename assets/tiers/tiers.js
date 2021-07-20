@@ -4,6 +4,7 @@ var MAX_NAME_LENGTH = 30,
     shotCategories = {},
     tieredItems = [],
     sorts = ["characters", "works", "shots"],
+    defaultTiers = ["S", "A", "B", "C"],
     defaultColour = "#1b232e",
     defaultWidth = (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) ? 60 : 120,
     defaultSize = 32,
@@ -278,14 +279,19 @@ function reloadTiers() {
 }
 
 function addDefaultTiers(sort) {
-    addTier({data: {tierName: "S"}});
-    addTier({data: {tierName: "A"}});
+    var i;
+
+    for (i = 0; i < defaultTiers.length; i++) {
+        addTier({data: {tierName: defaultTiers[i]}});
+    }
 
     for (var i = 0; i < sorts.length; i++) {
         if (sorts[i] != sort) {
             settings.sort = sorts[i];
-            addTier({data: {tierName: "S", noDisplay: true}});
-            addTier({data: {tierName: "A", noDisplay: true}});
+
+            for (i = 0; i < defaultTiers.length; i++) {
+                addTier({data: {tierName: defaultTiers[i], noDisplay: true}});
+            }
         }
     }
 
@@ -294,7 +300,6 @@ function addDefaultTiers(sort) {
 
 function initialise() {
     addDefaultTiers(settings.sort);
-    $(isMobile() ? "#tier_name_mobile" : "#tier_name").val("B");
     $("#tier_list_caption").html(settings[settings.sort].tierListName);
 
     if (isMobile()) {
@@ -1863,8 +1868,9 @@ function loadTiersFromStorage() {
             order.push(tierNum);
         }
     } else {
-        addTier({data: {tierName: "S", noDisplay: settings.sort != "characters"}});
-        addTier({data: {tierName: "A", noDisplay: settings.sort != "characters"}});
+        for (i = 0; i < defaultTiers.length; i++) {
+            addTier({data: {tierName: defaultTiers[i], noDisplay: settings.sort != "characters"}});
+        }
     }
 
     if (gameOrderData) {
@@ -1881,8 +1887,9 @@ function loadTiersFromStorage() {
             gameOrder.push(tierNum);
         }
     } else {
-        addTier({data: {tierName: "S", noDisplay: settings.sort != "works"}});
-        addTier({data: {tierName: "A", noDisplay: settings.sort != "works"}});
+        for (i = 0; i < defaultTiers.length; i++) {
+            addTier({data: {tierName: defaultTiers[i], noDisplay: settings.sort != "works"}});
+        }
     }
 
     if (shotOrderData) {
@@ -1899,8 +1906,9 @@ function loadTiersFromStorage() {
             shotOrder.push(tierNum);
         }
     } else {
-        addTier({data: {tierName: "S", noDisplay: settings.sort != "shots"}});
-        addTier({data: {tierName: "A", noDisplay: settings.sort != "shots"}});
+        for (i = 0; i < defaultTiers.length; i++) {
+            addTier({data: {tierName: defaultTiers[i], noDisplay: settings.sort != "shots"}});
+        }
     }
 }
 
