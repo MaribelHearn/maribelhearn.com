@@ -165,6 +165,9 @@ li {
     position: fixed;
     color: #a0a0a0;
 }
+#currently_tiering {
+    color: white;
+}
 #tier_list_container_mobile {
     overflow-y: auto;
     top: 50px;
@@ -194,13 +197,16 @@ li {
     padding-right: 10px;
     padding-top: 10px;
     max-height: 25%;
-    max-width: 45%;
+    width: 45%;
     bottom: 5px;
     right: 5px;
 }
-#instructions, #instructions_mobile, #button_split, #information_button,
+#instructions, #button_split, #information_button,
 #view_button, #mobile_button_split, #menu_button, #switch_button, #add_tier_box_mobile {
     display: none;
+}
+#instructions_list, #instructions_mobile {
+    text-align: left;
 }
 #show {
     display: none;
@@ -2216,10 +2222,10 @@ li {
         display: inline;
     }
     #nav, #menu, #credits, #instructions, #tier_list_container, #tier_list_tfoot,
-    #sort_selection, #toggle, #instructions_list {
+    #sort_selection, #toggle, #instructions_list, #toggle_picker {
         display: none;
     }
-    #instructions, #instructions_mobile {
+    #instructions {
         display: block;
     }
     #add_tier_box_mobile {
@@ -3178,6 +3184,7 @@ li {
         bottom: 18%;
     }
     #buttons {
+        width: auto;
         max-width: 98%;
         padding-top: 5px;
         left: 5px;
@@ -3226,7 +3233,7 @@ li {
     #menu, #credits, #characters, #tier_list_tfoot, #nav, #sort_selection, #instructions_text, #instructions_list, #toggle {
         display: none;
     }
-    #tier_list_container, #instructions, #instructions_mobile {
+    #tier_list_container, #instructions {
         display: block;
     }
     #add_tier_box_mobile {

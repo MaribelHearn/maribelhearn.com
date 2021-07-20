@@ -67,7 +67,8 @@ var MAX_NAME_LENGTH = 30,
     multiSelection = [],
     maxTiers = 20,
     following = "",
-    tierView = false;
+    tierView = false,
+    smallPicker = false;
 
 function getTierNumOf(item) {
     var tierList = getCurrentTierList(), tierNum, i;
@@ -1003,11 +1004,6 @@ function detectRightCtrlCombo(event, tierNum) {
     return false;
 }
 
-function toggleInstructions() {
-    $("#instructions").css("display", $("#instructions").css("display") == "none" ? "block" : "none");
-    $("#toggle_instructions").attr("value", ($("#instructions").css("display") == "none" ? "Show" : "Hide") + " Instructions");
-}
-
 function storageUsed() {
     return localStorage.hasOwnProperty("settings") || localStorage.hasOwnProperty("tiers") || localStorage.hasOwnProperty("gameTiers");
 }
@@ -1089,7 +1085,12 @@ function saveSettingsPre() {
 function modalInformation() {
     emptyModal();
     $("#modal_inner").html("<h3>Acknowledgements</h3>" + $("#credits").html() +
-    "<h3>Instructions</h3>" + $("#instructions_mobile").html() + "<br>");
+    "<h3>Instructions</h3><ul id='instructions_mobile'><li>Tap a character to add them to a tier.</li>" +
+    "<li>Long press a character in a tier to either remove them from that tier, " +
+    "move them to the back of the tier, or move them a tier up or down.</li>" +
+    "<li>Tap a tier to change that tier, such as its name, background colour or position.</li>" +
+    "<li>Long press a tier to either remove it, remove all its characters, "+
+    "or add all remaining characters to it.</li></ul><br>");
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
 }
@@ -1594,12 +1595,12 @@ function toggleTierView() {
         $("#view_button").val(tierView ? "Picker View" : "Tier List View");
     } else {
         $("#msg_container").html("");
-        $("#characters").css("display", tierView ? "block" : "none");
-        $("#buttons").css("display", tierView ? "block" : "none");
+        $("#characters, #buttons").css("display", tierView ? "block" : "none");
+        $("#toggle_picker").css("display", tierView ? "inline" : "none");
         tierView = !tierView;
         $("#toggle_view").val(tierView ? "Normal View" : "Tier List View");
         $("#wrap").css("max-height", tierView ? "100%" : "77%");
-        $("#wrap").css("width", tierView ? "auto" : "45%");
+        $("#wrap").css("width", tierView ? "auto" : (smallPicker ? "65%" : "45%"));
         $("#wrap").css("bottom", tierView ? "5px" : "");
         $("#wrap").css("left", tierView ? "5px" : "");
         $("#wrap").css("border", tierView ? "none" : "1px solid #000");
@@ -1622,6 +1623,22 @@ function toggleTierView() {
             }
         }
     }
+}
+
+function togglePickerSize() {
+    smallPicker = !smallPicker;
+    $("#wrap, #buttons").css("width", smallPicker ? "65%" : "45%");
+    $("#characters").css("width", smallPicker ? "31%" : "51%");
+    $("#toggle_picker").val(smallPicker ? "Large Picker" : "Small Picker");
+
+    if (smallPicker) {
+        settings.picker = "small";
+    } else {
+        delete settings.picker;
+    }
+
+    saveSettingsPre();
+    $("#msg_container").html("");
 }
 
 function changeLog() {
@@ -1725,7 +1742,8 @@ function eraseAll() {
 
     if (isMobile()) {
         emptyModal();
-        $("#modal_inner").html("<h3>Reset</h3><p>Are you sure you want to reset your tier list and settings to the defaults?</p>");
+        $("#modal_inner").html("<h3>Reset</h3><p>Are you sure you want to reset your tier lists and settings to the defaults? " +
+        "This will permanently erase all of your currently loaded tier lists and settings.</p>");
         $("#modal_inner").append("<input id='erase_all_button' type='button' value='Yes'>");
         $("#erase_all_button").on("click", modalEraseAll);
         $("#modal_inner").append("<input id='empty_modal' class='mobile_button' type='button' value='No'>");
@@ -1735,7 +1753,8 @@ function eraseAll() {
         return;
     }
 
-    confirmation = confirm("Are you sure you want to reset your tier list and settings to the defaults?");
+    confirmation = confirm("Are you sure you want to reset your tier lists and settings to the defaults? " +
+    "This will permanently erase all of your currently loaded tier lists and settings.");
 
     if (confirmation) {
         eraseAllConfirmed();
@@ -1788,6 +1807,34 @@ function drop(event) {
     }
 
     following = "";
+}
+
+function showInstructions() {
+    emptyModal();
+    $("#msg_container").html("");
+    $("#modal_inner").html("<h2>Welcome!</h2>");
+    $("#modal_inner").append("<p id='instructions_text'>This page allows you to create your own Touhou tier lists. " +
+    "Currently, you can sort characters, works, and shottypes. Usage instructions are listed below.</p>" +
+    "<ul id='instructions_list'><li><strong>Adding Items:</strong> Drag an item onto a tier box, or the field, " +
+    "to add that item to it. You can also double click an item to add it to a tier, using a popup menu.</li>" +
+    "<li><strong>Moving Items:</strong> Drag an item onto another item to move that item to its location.</li>" +
+    "<li><strong>Multi Selection:</strong> Click multiple items to drag them together, adding them to a tier " +
+    "in your clicking order. Alternatively, press Enter to add a selection of multiple characters to a tier, " +
+    "using a popup menu.</li><li><strong>Removing Items:</strong> Right click an item in a tier, or drag it " +
+    "onto the picker, to remove it from that tier.</li><li><strong>Add All Remaining:</strong> Ctrl+Click a " +
+    "tier to add all remaining items to it.</li><li><strong>Adding Tiers:</strong> Use the Add Tier text field " +
+    "and button at the bottom of the tier list to add a new tier, or press Enter while in the text field.</li>" +
+    "<li><strong>Moving Tiers:</strong> Drag a tier onto another tier to move it to its position.</li>" +
+    "<li><strong>Editing Tiers:</strong> Click a tier to edit that tier, such as its name or background colour.</li>" +
+    "<li><strong>Removing Tiers:</strong> Right click a tier to remove that tier and all of its contents. " +
+    "Asks for confirmation if there are items in it.</li><li><strong>Emptying Tiers:</strong> Ctrl+Right Click a " +
+    "tier to empty it. Asks for confirmation.</li></ul>");
+    $("#modal_inner").append("<p>Use the buttons at the bottom of the screen to save your tier lists, " +
+    "import/export to text, take a screenshot, change the tier list settings, view the changelog, " +
+    "or reset for a new start.</p>");
+    $("#modal_inner").append("<p>Click outside the window, or press Esc, to close popup windows like this one.</p>");
+    $("#modal_inner").css("display", "block");
+    $("#modal").css("display", "block");
 }
 
 function deleteLegacyCookies() {
@@ -2078,10 +2125,6 @@ function loadSettingsFromStorage() {
             }
         }
 
-        settings.pc98Enabled = settingsData.pc98Enabled;
-        settings.windowsEnabled = settingsData.windowsEnabled;
-        settings.maleEnabled = settingsData.maleEnabled;
-
         for (i = 0; i < sorts.length; i++) {
             sort = sorts[i];
             settings[sort].tierListName = (settingsData[sort] && settingsData[sort].tierListName ? settingsData[sort].tierListName : "");
@@ -2090,6 +2133,13 @@ function loadSettingsFromStorage() {
             settings[sort].tierHeaderFontSize = (settingsData[sort] && settingsData[sort].tierHeaderFontSize ? settingsData[sort].tierHeaderFontSize : defaultSize);
         }
 
+        if (settingsData.picker && settingsData.picker == "small") {
+            togglePickerSize();
+        }
+
+        settings.pc98Enabled = settingsData.pc98Enabled;
+        settings.windowsEnabled = settingsData.windowsEnabled;
+        settings.maleEnabled = settingsData.maleEnabled;
         settings.sort = settingsData.sort;
     } else {
         for (category in settingsData) {
@@ -2135,7 +2185,8 @@ function setEventListeners() {
     $("body").on("keyup", detectKey);
     $("#sort").on("change", switchSort);
     $("#toggle_view").on("click", toggleTierView);
-    $("#toggle_instructions").on("click", toggleInstructions);
+    $("#toggle_picker").on("click", togglePickerSize);
+    $("#toggle_instructions").on("click", showInstructions);
     $("#tier_name, #tier_name_mobile").on("keyup", detectAddTierEnter);
     $("#save_button").on("click", saveTiers);
     $("#import_button").on("click", importText);
@@ -2157,6 +2208,8 @@ $(document).ready(function () {
 
     if (localStorage.settings) {
         loadSettingsFromStorage();
+    } else if (!localStorage.tiers && !localStorage.gameTiers && !localStorage.shotTiers) {
+        showInstructions();
     }
 
     loadCategories();
