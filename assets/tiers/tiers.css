@@ -262,6 +262,9 @@ li {
     text-decoration: none;
     margin: 5px;
 }
+#indicator {
+    opacity: 0.5;
+}
 /* Characters */
 #MarisaKirisame {
     background-position: 0 0;

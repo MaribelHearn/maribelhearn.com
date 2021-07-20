@@ -47,11 +47,10 @@
                 <div id='instructions' class='dark_bg'>
                     <p id='instructions_text'>This page allows you to create your own Touhou character tier list. Usage instructions are listed below.</p>
                     <ul id='instructions_list'>
-                        <li>Drag a character onto a tier box to add that character to it.</li>
-                        <li>Drag a character from the picker onto a tiered character to insert them to the left of them.</li>
-                        <li>Drag a tiered character onto another tiered character to swap their positions.</li>
-                        <li>Click multiple characters to drag them together, adding them to a tier in your clicking order.</li>
-                        <li>Alternatively, press Enter to add a selection of multiple characters to a tier.</li>
+                        <li>Drag a character onto a tier box, or the field, to add that character to it.</li>
+                        <li>Drag a character onto a tiered character to insert them to the left of them.</li>
+                        <li>Click multiple characters to drag them together, adding them to a tier in your clicking order.
+						Alternatively, press Enter to add a selection of multiple characters to a tier.</li>
                         <li>Double click a character to add them to a tier using a menu instead of by dragging.</li>
                         <li>Right click a character in a tier, or drag them onto the picker, to remove them from that tier.</li>
                         <li>Click a tier to change that tier, such as its name, background colour or position.</li>

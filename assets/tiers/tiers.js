@@ -3,6 +3,7 @@ var MAX_NAME_LENGTH = 30,
     gameCategories = {},
     shotCategories = {},
     tieredItems = [],
+    currentPos = "none",
     sorts = ["characters", "works", "shots"],
     defaultTiers = ["S", "A", "B", "C"],
     defaultColour = "#1b232e",
@@ -83,6 +84,10 @@ function getTierNumOf(item) {
 }
 
 function getPositionOf(item) {
+    if (!item || !isItem(item)) {
+        return -1;
+    }
+
     return Number($("#" + item).parent().attr("id").split("_")[1]);
 }
 
@@ -361,25 +366,18 @@ function addToTier(item, tierNum, pos, noDisplay) {
         return;
     }
 
-    if (!tierList[tierNum].chars) { // temporary fix for undefined ".chars" for shottypes
-        tierList[tierNum].name = tierName;
-        tierList[tierNum].bg = "#1b232e";
-        tierList[tierNum].colour = "#a0a0a0";
-        tierList[tierNum].chars = [];
-        tierList[tierNum].flag = false;
-    }
-
     $("#msg_container").html("");
     $("#" + item).removeClass("outline");
     $("#" + item).removeClass("list_" + settings.sort + getSpritesheetOf(item, categoryName));
     $("#" + item).addClass("tiered_" + settings.sort + getSpritesheetOf(item, categoryName));
     $("#" + item).off("click");
     $("#" + item).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
+    $("#" + item).on("dragover", allowDrop);
     id = "tier" + tierNum + "_" + tierList[tierNum].chars.length;
     $("#tier" + tierNum).append("<span id='" + id + "'></span>");
     tieredItems.push(item);
 
-    if (typeof pos == "number" && pos < tierList[tierNum].chars.length - 1 && !noDisplay) {
+    if (typeof pos == "number" && pos < tierList[tierNum].chars.length && !noDisplay) {
         insertAt(item, tierNum, pos, tierList[tierNum].chars);
     } else {
         if (!noDisplay) {
@@ -553,19 +551,31 @@ function removeFromTier(item, tierNum) {
     }
 }
 
-function changeToTier(item, tierNum) {
+function removeIntoAdd(item, oldTierNum, tierNum, pos) {
+    var oldPos = getPositionOf(item);
+
+    removeFromTier(item, oldTierNum);
+
+    if (isMobile()) {
+        addToTierMobile({data: {character: item, tierNum: tierNum}});
+    } else {
+        addToTier(item, tierNum, pos);
+    }
+}
+
+function changeToTier(item, tierNum, pos) {
     var oldTierNum = getTierNumOf(item), help, id;
 
     if (oldTierNum === tierNum) {
-        moveToBack(item, tierNum);
-    } else {
-        removeFromTier(item, oldTierNum);
-
-        if (isMobile()) {
-            addToTierMobile({data: {character: item, tierNum: tierNum}});
+        if (pos && pos === getPositionOf(following)) {
+            return;
+        } else if (!pos && pos !== 0) {
+            moveToBack(item, tierNum);
         } else {
-            addToTier(item, tierNum);
+            removeIntoAdd(item, oldTierNum, tierNum, pos);
         }
+    } else {
+        removeIntoAdd(item, oldTierNum, tierNum, pos);
     }
 }
 
@@ -1721,7 +1731,7 @@ function drop(event) {
         }
     } else if (isTiered(event.target.id) && following.substring(0, 2) != "th") {
         if (isTiered(following)) {
-            swapItems(following, event.target.id);
+            changeToTier(following, getTierNumOf(event.target.id), getPositionOf(event.target.id));
         } else {
             addToTier(following, getTierNumOf(event.target.id), getPositionOf(event.target.id));
         }
