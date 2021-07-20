@@ -1585,6 +1585,8 @@ function saveSettings() {
 }
 
 function toggleTierView() {
+    var buttons, button;
+
     if (isMobile()) {
         tierView = !tierView;
         $("#tier_list_container").css("display", tierView ? "block" : "none");
@@ -1602,13 +1604,22 @@ function toggleTierView() {
         $("#wrap").css("left", tierView ? "5px" : "");
         $("#wrap").css("border", tierView ? "none" : "1px solid #000");
         $("body").css("background", tierView ? "#1b232e" : "url('assets/tiers/tiers.jpg') center no-repeat fixed");
+        buttons = $(tierView ? "#menu" : "#toggle").children();
 
-        if (tierView) {
-            $("#screenshot_button_tierview").html($("#screenshot_button"));
-            $("#screenshot_button").addClass("tierview_screenshot_button");
-        } else {
-            $("#screenshot_button").removeClass("tierview_screenshot_button");
-            $("#screenshot_button_container").html($("#screenshot_button"));
+        for (i = 0; i < buttons.length; i++) {
+            button = buttons[i];
+
+            if (button.id == "button_split" || button.id == "toggle_instructions") {
+                continue;
+            }
+
+            if (tierView) {
+                $("#" + button.id.replace("_container", "_tierview")).html($("#" + button.id.replace("_container", "")));
+                $("#" + button.id.replace("_container", "")).addClass("tierview_button");
+            } else {
+                $("#" + button.id.replace("_tierview", "")).removeClass("tierview_button");
+                $("#" + button.id.replace("_tierview", "_container")).html($("#" + button.id.replace("_tierview", "")));
+            }
         }
     }
 }

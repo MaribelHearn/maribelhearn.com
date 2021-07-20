@@ -42,7 +42,12 @@
                 </div>
                 <p id='toggle'>
                     <input id='toggle_instructions' type='button' value='Show Instructions'>
+                    <span id='import_button_tierview'></span>
+                    <span id='export_button_tierview'></span>
                     <span id='screenshot_button_tierview'></span>
+                    <span id='settings_button_tierview'></span>
+                    <span id='changelog_button_tierview'></span>
+                    <span id='reset_button_tierview'></span>
                 </p>
                 <div id='instructions' class='dark_bg'>
                     <p id='instructions_text'>This page allows you to create your own Touhou character tier list. Usage instructions are listed below.</p>
@@ -118,16 +123,28 @@
 				<a href='https://twitter.com/CuprianLycoris'>Cuprian Lycoris</a> for crops.</p>
             </div>
             <div id='menu' class='dark_bg'>
-                <input id='save_button' type='button' class='button menu' value='Save Tiers'>
-                <input id='import_button' type='button' class='button menu' value='Import'>
-                <input id='export_button' type='button' class='button menu' value='Export'>
+				<span id='save_button_container'>
+	                <input id='save_button' type='button' class='button menu' value='Save Tiers'>
+                </span>
+                <span id='import_button_container'>
+                	<input id='import_button' type='button' class='button menu' value='Import'>
+                </span>
+                <span id='export_button_container'>
+                	<input id='export_button' type='button' class='button menu' value='Export'>
+                </span>
                 <br id='button_split'>
                 <span id='screenshot_button_container'>
                     <input id='screenshot_button' type='button' class='button menu' value='Take Screenshot'>
                 </span>
-                <input id='settings_button' type='button' class='button menu' value='Settings'>
-                <input id='changelog_button' type='button' class='button menu' value='Changelog'>
-                <input id='reset_button' type='button' class='button menu' value='Reset'>
+                <span id='settings_button_container'>
+                	<input id='settings_button' type='button' class='button menu' value='Settings'>
+				</span>
+                <span id='changelog_button_container'>
+	                <input id='changelog_button' type='button' class='button menu' value='Changelog'>
+				</span>
+                <span id='reset_button_container'>
+	                <input id='reset_button' type='button' class='button menu' value='Reset'>
+				</span>
             </div>
             <input id='information_button' class='button' type='button' value='Information'>
             <input id='view_button' class='button' type='button' value='Tier List View'>
