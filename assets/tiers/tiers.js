@@ -279,18 +279,18 @@ function reloadTiers() {
 }
 
 function addDefaultTiers(sort) {
-    var i;
+    var i, j;
 
     for (i = 0; i < defaultTiers.length; i++) {
         addTier({data: {tierName: defaultTiers[i]}});
     }
 
-    for (var i = 0; i < sorts.length; i++) {
+    for (i = 0; i < sorts.length; i++) {
         if (sorts[i] != sort) {
             settings.sort = sorts[i];
 
-            for (i = 0; i < defaultTiers.length; i++) {
-                addTier({data: {tierName: defaultTiers[i], noDisplay: true}});
+            for (j = 0; j < defaultTiers.length; j++) {
+                addTier({data: {tierName: defaultTiers[j], noDisplay: true}});
             }
         }
     }
