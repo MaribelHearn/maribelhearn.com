@@ -1667,7 +1667,7 @@ function changeLog() {
 function eraseAllConfirmed() {
     var tierList = getCurrentTierList(), tierNum;
 
-    for (tierNum in tierList) {
+    for (tierNum = 0; tierNum < Object.keys(tierList).length; tierNum++) {
         removeTier(tierNum, true);
     }
 
