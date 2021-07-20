@@ -863,12 +863,11 @@ function tierMenu(tierNum) {
     emptyModal();
     $("#modal_inner").append("<h2>Customise Tier '" + tierList[tierNum].name + "'</h2>");
     $("#modal_inner").append("<p class='name'><label for='custom_name_tier" + tierNum +
-    "'>Name</label><input id='custom_name_tier" + tierNum + "' type='text' value='" + tierList[tierNum].name + "'></p>");
-    $("#modal_inner").append("<p class='colour'><label for='custom_bg_tier" + tierNum +
+    "'>Name</label><input id='custom_name_tier" + tierNum + "' class='settings_input' type='text' value='" + tierList[tierNum].name +
+    "'></p><p class='colour'><label for='custom_bg_tier" + tierNum +
     "'>Background Colour</label><input id='custom_bg_tier" + tierNum + "' type='color' value='" + tierList[tierNum].bg + "'>");
     $("#modal_inner").append("<label for='custom_colour_tier" + tierNum +
-    "'>Text Colour</label><input id='custom_colour_tier" + tierNum +
-    "' type='color' value='" + tierList[tierNum].colour + "'></p>" +
+    "'>Text Colour</label><input id='custom_colour_tier" + tierNum + "' type='color' value='" + tierList[tierNum].colour + "'></p>" +
     "<p>Swap positions with: <select id='tier_dropdown'><option>-</option></select></p><hr>");
     $("#modal_inner").append("<div>Other settings (apply to all tiers):<p><label for='tier_list_name'>Tier list name (optional)</label>" +
     "<input id='tier_list_name' class='settings_input' type='text' value='" + settings[settings.sort].tierListName + "'></p>" +
@@ -883,7 +882,7 @@ function tierMenu(tierNum) {
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
     $("#save_tier_settings").on("click", {tierNum: tierNum}, saveSingleTierSettings);
-    $(".settings_input").on("keyup", detectSettingsEnter);
+    $(".settings_input").on("keyup", detectTiersEnter);
 
     for (otherTierNum in tierList) {
         if (otherTierNum == tierNum) {
@@ -2063,6 +2062,12 @@ function detectAddTierEnter(event) {
 function detectSettingsEnter(event) {
     if (event.key && event.key == "Enter") {
         saveSettings();
+    }
+}
+
+function detectTiersEnter(event) {
+    if (event.key && event.key == "Enter") {
+        saveSingleTierSettings();
     }
 }
 
