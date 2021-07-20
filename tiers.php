@@ -31,7 +31,7 @@
                     }
                 ?>
                 <div id='sort_selection' class='dark_bg'>
-                    <label for='sort'>Currently tiering:</label>
+                    <label id='currently_tiering' for='sort'>Currently tiering:</label>
                     <select id='sort'>
                         <option value='characters'>Characters</option>
                         <option value='works'>Works</option>
@@ -39,6 +39,7 @@
                     </select>
                     <label for='toggle_view'>Change view:</label>
                     <input id='toggle_view' class='button' type='button' value='Tier List View'>
+                    <input id='toggle_picker' class='button' type='button' value='Small Picker'>
                 </div>
                 <p id='toggle'>
                     <input id='toggle_instructions' type='button' value='Show Instructions'>
@@ -49,30 +50,6 @@
                     <span id='changelog_button_tierview'></span>
                     <span id='reset_button_tierview'></span>
                 </p>
-                <div id='instructions' class='dark_bg'>
-                    <p id='instructions_text'>This page allows you to create your own Touhou character tier list. Usage instructions are listed below.</p>
-                    <ul id='instructions_list'>
-                        <li>Drag a character onto a tier box, or the field, to add that character to it.</li>
-                        <li>Drag a character onto a tiered character to insert them to the left of them.</li>
-                        <li>Click multiple characters to drag them together, adding them to a tier in your clicking order.
-						Alternatively, press Enter to add a selection of multiple characters to a tier.</li>
-                        <li>Double click a character to add them to a tier using a menu instead of by dragging.</li>
-                        <li>Right click a character in a tier, or drag them onto the picker, to remove them from that tier.</li>
-                        <li>Click a tier to change that tier, such as its name, background colour or position.</li>
-                        <li>Drag a tier onto another tier to move that tier to it.</li>
-                        <li>Ctrl+Click a tier to add all remaining characters to it, and Ctrl+Right Click a tier to empty it.</li>
-                        <li>Right click a tier to remove that tier and all of its contents.</li>
-                        <li>Hover your cursor above a character to see their name.</li>
-                    </ul>
-                    <ul id='instructions_mobile'>
-                        <li>Tap a character to add them to a tier.</li>
-                        <li>Long press a character in a tier to either remove them from that tier,
-                        move them to the back of the tier, or move them a tier up or down.</li>
-                        <li>Tap a tier to change that tier, such as its name, background colour or position.</li>
-                        <li>Long press a tier to either remove it, remove all its characters,
-                        or add all remaining characters to it.</li>
-                    </ul>
-                </div>
             </div>
             <div id='tier_list_container' class='dark_bg'>
                 <table id='tier_list_table'>
