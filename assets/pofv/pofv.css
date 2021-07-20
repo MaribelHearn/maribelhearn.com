@@ -84,7 +84,11 @@ ol > li {
     text-align: left;
 }
 .char {
+    width: 120px;
+    height: 120px;
     cursor: pointer;
+    display: inline-block;
+    background-image: url('../pofv/faces.png');
 }
 .hidden {
     display: none;
@@ -176,6 +180,51 @@ ol > li {
 #e {
     background: radial-gradient(#008080, #00BFBF, #00FFFF);
 }
+#marisa {
+    background-position: -120px 0px;
+}
+#sakuya {
+    background-position: -240px 0px;
+}
+#youmu {
+    background-position: -360px 0px;
+}
+#reisen {
+    background-position: -480px 0px;
+}
+#cirno {
+    background-position: -600px 0px;
+}
+#lyrica {
+    background-position: -720px 0px;
+}
+#merlin {
+    background-position: -840px 0px;
+}
+#lunasa {
+    background-position: -960px 0px;
+}
+#mystia {
+    background-position: -1080px 0px;
+}
+#tewi {
+    background-position: -1200px 0px;
+}
+#aya {
+    background-position: -1320px 0px;
+}
+#medicine {
+    background-position: -1440px 0px;
+}
+#yuuka {
+    background-position: -1560px 0px;
+}
+#komachi {
+    background-position: -1680px 0px;
+}
+#eiki {
+    background-position: -1800px 0px;
+}
 #ack {
     font: 11px verdana,sans-serif;
     text-align: right;
@@ -224,12 +273,13 @@ ol > li {
     }
     th {
         font-size: 24px;
-        width: 75px;
-        height: 75px;
+        width: 80px;
+        height: 80px;
     }
     .char {
-        width: 75px;
-        height: 75px;
+        width: 80px;
+        height: 80px;
+        background-image: url('../pofv/faces80x80.png');
     }
     .wrap {
         margin-left: 8%;
@@ -244,6 +294,51 @@ ol > li {
     #wrap p:not(#ack):not(.language) {
         padding-left: 50px;
         padding-right: 50px;
+    }
+    #marisa {
+        background-position: -80px 0px;
+    }
+    #sakuya {
+        background-position: -160px 0px;
+    }
+    #youmu {
+        background-position: -240px 0px;
+    }
+    #reisen {
+        background-position: -320px 0px;
+    }
+    #cirno {
+        background-position: -400px 0px;
+    }
+    #lyrica {
+        background-position: -480px 0px;
+    }
+    #merlin {
+        background-position: -560px 0px;
+    }
+    #lunasa {
+        background-position: -640px 0px;
+    }
+    #mystia {
+        background-position: -720px 0px;
+    }
+    #tewi {
+        background-position: -800px 0px;
+    }
+    #aya {
+        background-position: -880px 0px;
+    }
+    #medicine {
+        background-position: -960px 0px;
+    }
+    #yuuka {
+        background-position: -1040px 0px;
+    }
+    #komachi {
+        background-position: -1120px 0px;
+    }
+    #eiki {
+        background-position: -1200px 0px;
     }
     #ack {
         display: none;
@@ -297,8 +392,8 @@ ol > li {
         font-size: 24px;
     }
     th {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
     }
     ol {
         margin-left: 0px;
@@ -308,14 +403,60 @@ ol > li {
         width: 90%;
     }
     .char {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
+        background-image: url('../pofv/faces60x60.png');
     }
     .art {
         display: none;
     }
     #hy_container {
         float: none;
+    }
+    #marisa {
+        background-position: -60px 0px;
+    }
+    #sakuya {
+        background-position: -120px 0px;
+    }
+    #youmu {
+        background-position: -180px 0px;
+    }
+    #reisen {
+        background-position: -240px 0px;
+    }
+    #cirno {
+        background-position: -300px 0px;
+    }
+    #lyrica {
+        background-position: -360px 0px;
+    }
+    #merlin {
+        background-position: -420px 0px;
+    }
+    #lunasa {
+        background-position: -480px 0px;
+    }
+    #mystia {
+        background-position: -540px 0px;
+    }
+    #tewi {
+        background-position: -600px 0px;
+    }
+    #aya {
+        background-position: -660px 0px;
+    }
+    #medicine {
+        background-position: -720px 0px;
+    }
+    #yuuka {
+        background-position: -780px 0px;
+    }
+    #komachi {
+        background-position: -840px 0px;
+    }
+    #eiki {
+        background-position: -900px 0px;
     }
 }
 @media only screen and (min-width: 480px) and (max-width: 640px) and (orientation: landscape) {

@@ -445,7 +445,7 @@ function isMobile() {
 }
 
 function charInfo() {
-    var char = this.alt.split(' ')[0].toLowerCase();
+    var char = this.title.split(' ')[0].toLowerCase();
 
     var speed = minSpeed - STATS[char].speed,
         focus = Math.max(minSpeed - STATS[char].focus, 1.5),
@@ -455,8 +455,8 @@ function charInfo() {
     emptyModal();
 
     if (isMobile()) {
-        $("#modal_inner").html("<h2>" + this.alt + "</h2><table class='noborders'><tr>" +
-        "<td class='noborders'><img class='art' src='assets/pofv/characters/" + char + ".png' alt='" + this.alt + "'></td>" +
+        $("#modal_inner").html("<h2>" + this.title + "</h2><table class='noborders'><tr>" +
+        "<td class='noborders'><img class='art' src='assets/pofv/characters/" + char + ".png' alt='" + this.title + "'></td>" +
         "<td class='noborders'><table class='stats noborders'>" +
         "<tr><td class='noborders'>Tier</td>" +
         "<td class='noborders'><strong class='" + TIER[char] + "'>" + TIER[char] + "</strong></td></tr>" +
@@ -469,8 +469,8 @@ function charInfo() {
         "</td></tr></table><img class='scope' src='assets/pofv/scopes/" + char +
         ".jpg'><p class='descr'>" + DESCRIPTION[char][language] + "</p>");
     } else {
-        $("#modal_inner").html("<h2>" + this.alt + "</h2><table class='noborders'><tr>" +
-        "<td class='noborders'><img class='art' src='assets/pofv/characters/" + char + ".png' alt='" + this.alt + "'></td>" +
+        $("#modal_inner").html("<h2>" + this.title + "</h2><table class='noborders'><tr>" +
+        "<td class='noborders'><img class='art' src='assets/pofv/characters/" + char + ".png' alt='" + this.title + "'></td>" +
         "<td class='noborders'><table class='stats noborders'>" +
         "<tr><td class='noborders'>Tier</td>" +
         "<td class='noborders'><strong class='" + TIER[char] + "'>" + TIER[char] + "</strong></td></tr>" +
