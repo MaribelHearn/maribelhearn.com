@@ -2098,7 +2098,7 @@ $(document).ready(function () {
 
     loadCategories();
     $("#tier_list_caption").html(settings[settings.sort].tierListName);
-    //$("#chars_load, #works_load, #shots_load").remove();
+    $("#chars_load, #works_load, #shots_load").remove();
     $("#sort").val(settings.sort);
     loadItems();
 
