@@ -106,7 +106,7 @@
                                 }
                             }
                         }
-                        echo '<h2>Countries</h2><table><tr><th>Flag</th><th>Country</th><th>Hits</th><th>Bar</th></tr>';
+                        echo '<h2>Countries</h2><table id="countries"><tr><th>Flag</th><th>Country</th><th>Hits</th><th>Bar</th></tr>';
                         foreach ($ip_count as $ip => $count) {
                             if (property_exists($cache, $ip)) {
                                 $country = $cache->{$ip};
