@@ -23,6 +23,7 @@ var MAX_NAME_LENGTH = 30,
             "Mangas": { enabled: true }, "Books": { enabled: true }, "CDs": { enabled: true }
         },
         "shotCategories": {
+            "SoEW": { enabled : true }, "PoDD": { enabled : true }, "LLS": { enabled : true }, "MS": { enabled : true },
             "EoSD": { enabled: true }, "PCB": { enabled: true }, "IN": { enabled: true }, "PoFV": { enabled: true },
             "MoF": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true }, "TD": { enabled: true },
             "DDC": { enabled: true }, "LoLK": { enabled: true }, "HSiFS": { enabled: true }, "WBaWC": { enabled: true },
@@ -1692,6 +1693,7 @@ function eraseAllConfirmed() {
             "Mangas": { enabled: true }, "Books": { enabled: true }, "CDs": { enabled: true }
         },
         "shotCategories": {
+            "SoEW": { enabled : true }, "PoDD": { enabled : true }, "LLS": { enabled : true }, "MS": { enabled : true },
             "EoSD": { enabled: true }, "PCB": { enabled: true }, "IN": { enabled: true }, "PoFV": { enabled: true },
             "MoF": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true }, "TD": { enabled: true },
             "DDC": { enabled: true }, "LoLK": { enabled: true }, "HSiFS": { enabled: true }, "WBaWC": { enabled: true },
@@ -2118,7 +2120,7 @@ function loadSettingsFromStorage() {
         if (settingsData.hasOwnProperty("shotCategories")) {
             for (category in settingsData.shotCategories) {
                 if (!settings.shotCategories[category]) {
-                    settings.shotCategories[category] = { enabled: true };
+                    settings.shotCategories[category] = { enabled : true };
                 }
 
                 settings.shotCategories[category].enabled = settingsData.shotCategories[category].enabled;
@@ -2214,7 +2216,7 @@ $(document).ready(function () {
 
     loadCategories();
     $("#tier_list_caption").html(settings[settings.sort].tierListName);
-    $("#chars_load, #works_load, #shots_load").remove();
+    //$("#chars_load, #works_load, #shots_load").remove();
     $("#sort").val(settings.sort);
     loadItems();
 

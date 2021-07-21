@@ -1847,6 +1847,84 @@ li {
 #UMSanae.list_shots {
     background-position: -7680px 0;
 }
+#SoEWReimuA.list_shots {
+    background-position: -7760px 0;
+}
+#SoEWReimuB.list_shots {
+    background-position: -7840px 0;
+}
+#SoEWReimuC.list_shots {
+    background-position: -7920px 0;
+}
+#PoDDReimu.list_shots {
+    background-position: -8000px 0;
+}
+#PoDDMima.list_shots {
+    background-position: -8080px 0;
+}
+#PoDDMarisa.list_shots {
+    background-position: -8160px 0;
+}
+#PoDDEllen.list_shots {
+    background-position: -8240px 0;
+}
+#PoDDKotohime.list_shots {
+    background-position: -8320px 0;
+}
+#PoDDKana.list_shots {
+    background-position: -8400px 0;
+}
+#PoDDRikako.list_shots {
+    background-position: -8480px 0;
+}
+#PoDDChiyuri.list_shots {
+    background-position: -8560px 0;
+}
+#PoDDYumemi.list_shots {
+    background-position: -8640px 0;
+}
+#LLSReimuA.list_shots {
+    background-position: -8720px 0;
+}
+#LLSReimuB.list_shots {
+    background-position: -8800px 0;
+}
+#LLSMarisaA.list_shots {
+    background-position: -8880px 0;
+}
+#LLSMarisaB.list_shots {
+    background-position: -8960px 0;
+}
+#MSReimu.list_shots {
+    background-position: -9040px 0;
+}
+#MSMarisa.list_shots {
+    background-position: -9120px 0;
+}
+#MSMima.list_shots {
+    background-position: -9200px 0;
+}
+#MSYuuka.list_shots {
+    background-position: -9280px 0;
+}
+#PoFVMerlin.list_shots {
+    background-position: -9360px 0;
+}
+#PoFVLunasa.list_shots {
+    background-position: -9440px 0;
+}
+#HSiFSReimuExtra.list_shots {
+    background-position: -9520px 0;
+}
+#HSiFSCirnoExtra.list_shots {
+    background-position: -9600px 0;
+}
+#HSiFSAyaExtra.list_shots {
+    background-position: -9680px 0;
+}
+#HSiFSMarisaExtra.list_shots {
+    background-position: -9760px 0;
+}
 #EoSDReimuB.tiered_shots {
     background-position: -120px 0;
 }
@@ -2134,6 +2212,84 @@ li {
 }
 #UMSanae.tiered_shots {
     background-position: -11520px 0;
+}
+#SoEWReimuA.tiered_shots {
+    background-position: -11640px 0;
+}
+#SoEWReimuB.tiered_shots {
+    background-position: -11760px 0;
+}
+#SoEWReimuC.tiered_shots {
+    background-position: -11880px 0;
+}
+#PoDDReimu.tiered_shots {
+    background-position: -12000px 0;
+}
+#PoDDMima.tiered_shots {
+    background-position: -12120px 0;
+}
+#PoDDMarisa.tiered_shots {
+    background-position: -12240px 0;
+}
+#PoDDEllen.tiered_shots {
+    background-position: -12360px 0;
+}
+#PoDDKotohime.tiered_shots {
+    background-position: -12480px 0;
+}
+#PoDDKana.tiered_shots {
+    background-position: -12600px 0;
+}
+#PoDDRikako.tiered_shots {
+    background-position: -12720px 0;
+}
+#PoDDChiyuri.tiered_shots {
+    background-position: -12840px 0;
+}
+#PoDDYumemi.tiered_shots {
+    background-position: -12960px 0;
+}
+#LLSReimuA.tiered_shots {
+    background-position: -13080px 0;
+}
+#LLSReimuB.tiered_shots {
+    background-position: -13200px 0;
+}
+#LLSMarisaA.tiered_shots {
+    background-position: -13320px 0;
+}
+#LLSMarisaB.tiered_shots {
+    background-position: -13440px 0;
+}
+#MSReimu.tiered_shots {
+    background-position: -13560px 0;
+}
+#MSMarisa.tiered_shots {
+    background-position: -13680px 0;
+}
+#MSMima.tiered_shots {
+    background-position: -13800px 0;
+}
+#MSYuuka.tiered_shots {
+    background-position: -13920px 0;
+}
+#PoFVMerlin.tiered_shots {
+    background-position: -14040px 0;
+}
+#PoFVLunasa.tiered_shots {
+    background-position: -14160px 0;
+}
+#HSiFSReimuExtra.tiered_shots {
+    background-position: -14280px 0;
+}
+#HSiFSCirnoExtra.tiered_shots {
+    background-position: -14400px 0;
+}
+#HSiFSAyaExtra.tiered_shots {
+    background-position: -14520px 0;
+}
+#HSiFSMarisaExtra.tiered_shots {
+    background-position: -14640px 0;
 }
 @media screen and (max-width: 1300px) {
     .dropdowns {
@@ -3174,6 +3330,84 @@ li {
     }
     #UMSanae.list_shots, #UMSanae.tiered_shots {
         background-position: -5760px 0;
+    }
+    #SoEWReimuA.list_shots, #SoEWReimuA.tiered_shots {
+        background-position: -5820px 0;
+    }
+    #SoEWReimuB.list_shots, #SoEWReimuB.tiered_shots {
+        background-position: -5880px 0;
+    }
+    #SoEWReimuC.list_shots, #SoEWReimuC.tiered_shots {
+        background-position: -5940px 0;
+    }
+    #PoDDReimu.list_shots, #PoDDReimu.tiered_shots {
+        background-position: -6000px 0;
+    }
+    #PoDDMima.list_shots, #PoDDMima.tiered_shots {
+        background-position: -6060px 0;
+    }
+    #PoDDMarisa.list_shots, #PoDDMarisa.tiered_shots {
+        background-position: -6120px 0;
+    }
+    #PoDDEllen.list_shots, #PoDDEllen.tiered_shots {
+        background-position: -6180px 0;
+    }
+    #PoDDKotohime.list_shots, #PoDDKotohime.tiered_shots {
+        background-position: -6240px 0;
+    }
+    #PoDDKana.list_shots, #PoDDKana.tiered_shots {
+        background-position: -6300px 0;
+    }
+    #PoDDRikako.list_shots, #PoDDRikako.tiered_shots {
+        background-position: -6360px 0;
+    }
+    #PoDDChiyuri.list_shots, #PoDDChiyuri.tiered_shots {
+        background-position: -6420px 0;
+    }
+    #PoDDYumemi.list_shots, #PoDDYumemi.tiered_shots {
+        background-position: -6480px 0;
+    }
+    #LLSReimuA.list_shots, #LLSReimuA.tiered_shots {
+        background-position: -6540px 0;
+    }
+    #LLSReimuB.list_shots, #LLSReimuB.tiered_shots {
+        background-position: -6600px 0;
+    }
+    #LLSMarisaA.list_shots, #LLSMarisaA.tiered_shots {
+        background-position: -6660px 0;
+    }
+    #LLSMarisaB.list_shots, #LLSMarisaB.tiered_shots {
+        background-position: -6720px 0;
+    }
+    #MSReimu.list_shots, #MSReimu.tiered_shots {
+        background-position: -6780px 0;
+    }
+    #MSMarisa.list_shots, #MSMarisa.tiered_shots {
+        background-position: -6840px 0;
+    }
+    #MSMima.list_shots, #MSMima.tiered_shots {
+        background-position: -6900px 0;
+    }
+    #MSYuuka.list_shots, #MSYuuka.tiered_shots {
+        background-position: -6960px 0;
+    }
+    #PoFVMerlin.list_shots, #PoFVMerlin.tiered_shots {
+        background-position: -7020px 0;
+    }
+    #PoFVLunasa.list_shots, #PoFVLunasa.tiered_shots {
+        background-position: -7080px 0;
+    }
+    #HSiFSReimuExtra.list_shots, #HSiFSReimuExtra.tiered_shots {
+        background-position: -7140px 0;
+    }
+    #HSiFSCirnoExtra.list_shots, #HSiFSCirnoExtra.tiered_shots {
+        background-position: -7200px 0;
+    }
+    #HSiFSAyaExtra.list_shots, #HSiFSAyaExtra.tiered_shots {
+        background-position: -7260px 0;
+    }
+    #HSiFSMarisaExtra.list_shots, #HSiFSMarisaExtra.tiered_shots {
+        background-position: -7320px 0;
     }
 }
 @media only screen and (max-width: 800px) and (orientation: portrait) {
