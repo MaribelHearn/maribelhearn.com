@@ -318,6 +318,7 @@ function switchSort() {
     $("#characters").html("");
     $("#tier_list_tbody").html("");
     settings.sort = $("#sort").val();
+
     loadItems();
     reloadTiers();
     saveSettingsPre();
@@ -369,10 +370,9 @@ function addToTier(item, tierNum, pos, noDisplay) {
     }
 
     $("#msg_container").html("");
-    $("#" + item).removeClass("outline");
+    $("#" + item).removeClass("selected");
     $("#" + item).removeClass("list_" + settings.sort + getSpritesheetOf(item, categoryName));
     $("#" + item).addClass("tiered_" + settings.sort + getSpritesheetOf(item, categoryName));
-    $("#" + item).off("click");
     $("#" + item).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
     $("#" + item).on("dragover", allowDrop);
     id = "tier" + tierNum + "_" + tierList[tierNum].chars.length;
@@ -407,11 +407,19 @@ function addMultiSelection(tierNum) {
 
     if (multiSelection.contains(following)) {
         for (i = 0; i < multiSelection.length; i++) {
+            if (isTiered(multiSelection[i])) {
+                removeFromTier(multiSelection[i], getTierNumOf(multiSelection[i]));
+            }
+
             addToTier(multiSelection[i], tierNum);
         }
     } else {
         for (i = 0; i < multiSelection.length; i++) {
-            $("#" + multiSelection[i]).removeClass("outline");
+            $("#" + multiSelection[i]).removeClass("selected");
+        }
+
+        if (isTiered(following)) {
+            removeFromTier(following, getTierNumOf(following));
         }
 
         addToTier(following, tierNum);
@@ -420,15 +428,34 @@ function addMultiSelection(tierNum) {
     multiSelection = [];
 }
 
+function removeMultiSelection() {
+    var i;
+
+    if (multiSelection.contains(following)) {
+        for (i = 0; i < multiSelection.length; i++) {
+            $("#" + multiSelection[i]).removeClass("selected");
+            removeFromTier(multiSelection[i], getTierNumOf(multiSelection[i]));
+        }
+    } else {
+        for (i = 0; i < multiSelection.length; i++) {
+            $("#" + multiSelection[i]).removeClass("selected");
+        }
+
+        removeFromTier(following, getTierNumOf(following));
+    }
+
+    multiSelection = [];
+}
+
 function toggleMulti() {
     if (multiSelection.contains(this.id)) {
         multiSelection.remove(this.id);
-        $("#" + this.id).removeClass("outline");
+        $("#" + this.id).removeClass("selected");
         return;
     }
 
     multiSelection.push(this.id);
-    $("#" + this.id).addClass("outline");
+    $("#" + this.id).addClass("selected");
 }
 
 function multiSelectionToText() {
@@ -509,9 +536,9 @@ function moveToBack(character, tierNum) {
     }
 }
 
-function moveItemTo(sourceItem, targetItem, tierNum) {
+function moveItemTo(sourceItem, targetItem) {
     var tierList = getCurrentTierList(), sourcePos = getPositionOf(sourceItem), targetPos = getPositionOf(targetItem),
-        tmp = $("#tier" + tierNum + "_" + sourcePos).html(), prevPos, nextPos, i;
+        tierNum = getTierNumOf(targetItem), tmp = $("#tier" + tierNum + "_" + sourcePos).html(), prevPos, nextPos, i;
 
     if (targetPos == tierList[tierNum].chars.length - 1) {
         moveToBack(sourceItem, tierNum);
@@ -551,6 +578,17 @@ function moveItemTo(sourceItem, targetItem, tierNum) {
     }
 }
 
+function moveMultiSelectionTo(targetItem) {
+    var tierNum = getTierNumOf(targetItem), i;
+
+    for (i = 0; i < multiSelection.length; i++) {
+        $("#" + multiSelection[i]).removeClass("selected");
+        moveItemTo(multiSelection[i], targetItem, tierNum);
+    }
+
+    multiSelection = [];
+}
+
 function removeFromTier(item, tierNum) {
     var tierList = getCurrentTierList(), pos, counter, tmp;
 
@@ -562,8 +600,6 @@ function removeFromTier(item, tierNum) {
     $("#" + item).removeClass("tiered_" + settings.sort + getSpritesheetOf(item));
     $("#" + item).addClass("list_" + settings.sort + getSpritesheetOf(item));
     $("#" + item).off("contextmenu");
-    $("#" + item).off("click");
-    $("#" + item).on("click", toggleMulti);
 
     if (isMobile()) {
         $("#" + item).on("click", {name: $("#" + item).attr("title")}, addMenu);
@@ -762,17 +798,19 @@ function moveTierTo(sourceTierNum, targetTierNum) {
     }
 }
 
-function removeCharacters(tierNum) {
+function removeCharacters(tierNum, noDisplay) {
     var tierList = getCurrentTierList();
 
     while (tierList[tierNum].chars.length > 0) {
         removeFromTier(tierList[tierNum].chars[tierList[tierNum].chars.length - 1], tierNum);
     }
 
-    $("#tier" + tierNum).html(""); // temporary measure against sudden double digit spans
+    if (!noDisplay) {
+        $("#tier" + tierNum).html(""); // temporary measure against sudden double digit spans
+    }
 }
 
-function removeTier(tierNum, skipConfirmation) {
+function removeTier(tierNum, skipConfirmation, noDisplay) {
     var tierList = getCurrentTierList(), tierOrder = getCurrentTierOrder(), length = tierList[tierNum].chars.length,
         confirmation = true, otherTierNum, i;
 
@@ -785,8 +823,12 @@ function removeTier(tierNum, skipConfirmation) {
     }
 
     if (confirmation) {
-        removeCharacters(tierNum);
-        $("#tr" + tierNum).remove();
+        removeCharacters(tierNum, noDisplay);
+
+        if (!noDisplay) {
+            $("#tr" + tierNum).remove();
+        }
+
         tierList[tierNum].flag = true;
         tierOrder.remove(tierNum);
     }
@@ -1164,51 +1206,51 @@ function checkSort(text) {
     return false;
 }
 
-function load() {
-    var text = $("#import").val().split('\n'), noDisplay = true, counter = -1, tierList = getCurrentTierList(),
-        tierSort = checkSort(text), tierNum, characters, i, j;
+function clearTiers(tierList, sort, tmpSort) {
+    var skipConfirmation = true, noDisplay = (sort == tmpSort ? false : true);
 
-    if (!tierSort || tierSort != settings.sort) {
-        $("#modal_inner").html("");
-        $("#modal").css("display", "none");
-        $("#modal_inner").css("display", "none");
-        $("#msg_container").html("<strong class='error'>Cannot import " + (!tierSort ? "an empty list!" : "characters " +
-        "into works or vice versa!") + "</strong>");
-        return;
+    for (var tierNum in tierList) {
+        removeTier(tierNum, skipConfirmation, noDisplay);
     }
 
+    if (sort == "characters") {
+        order = [];
+    } else if (sort == "works") {
+        gameOrder = [];
+    } else { // sort == "shots"
+        shotOrder = [];
+    }
+}
+
+function parseSettings(string, sort) {
+    var settingsArray = string.split(';');
+
+    if (settingsArray.length == 3) {
+        settings[sort].tierListName = settingsArray[0].replace('-', "");
+        settings[sort].tierHeaderWidth = settingsArray[1];
+        settings[sort].tierHeaderFontSize = settingsArray[2];
+    } else {
+        settings[sort].tierListName = settingsArray[0].replace('-', "");
+        settings[sort].tierListColour = settingsArray[1];
+        settings[sort].tierHeaderWidth = settingsArray[2];
+        settings[sort].tierHeaderFontSize = settingsArray[3];
+    }
+}
+
+function parseImport(text, tierList, sort, tmpSort) {
+    var counter = -1, noDisplay = (sort == tmpSort ? false : true), characters, i, j;
+
     try {
-        for (tierNum in tierList) {
-            removeTier(tierNum, true);
-        }
+        clearTiers(tierList, sort, tmpSort);
 
-        if (settings.sort == "characters") {
-            order = [];
-        } else if (settings.sort == "works") {
-            gameOrder = [];
-        } else { // settings.sort == "shots"
-            shotOrder = [];
-        }
-
-        for (i = 0; i < text.length; i += 1) {
+        for (i = 0; i < text.length; i++) {
             if (text[i].contains(';')) {
-                tmp = text[i].split(';');
-
-                if (tmp.length == 3) {
-                    settings[settings.sort].tierListName = tmp[0].replace('-', "");
-                    settings[settings.sort].tierHeaderWidth = tmp[1];
-                    settings[settings.sort].tierHeaderFontSize = tmp[2];
-                } else {
-                    settings[settings.sort].tierListName = tmp[0].replace('-', "");
-                    settings[settings.sort].tierListColour = tmp[1];
-                    settings[settings.sort].tierHeaderWidth = tmp[2];
-                    settings[settings.sort].tierHeaderFontSize = tmp[3];
-                }
+                parseSettings(text[i], sort);
                 i += 1;
             }
 
             if (text[i].contains(':')) {
-                addTier({data: {tierName: text[i].replace(':', "")}});
+                addTier({data: {tierName: text[i].replace(':', ""), noDisplay: noDisplay}});
                 counter += 1;
                 i += 1;
             }
@@ -1216,8 +1258,6 @@ function load() {
             if (text[i].charAt(0) == '#') {
                 tierList[counter].bg = text[i].split(' ')[0];
                 tierList[counter].colour = text[i].split(' ')[1];
-                $("#th" + counter).css("background-color", tierList[counter].bg);
-                $("#th" + counter).css("color", tierList[counter].colour);
                 i += 1;
             }
 
@@ -1230,7 +1270,7 @@ function load() {
                     }
 
                     try {
-                        addToTier(characters[j].removeSpaces(), counter);
+                        addToTier(characters[j].removeSpaces(), counter, noDisplay);
                     } catch (e) {
                         tierList[counter].chars.remove(characters[j].removeSpaces());
                     }
@@ -1238,16 +1278,57 @@ function load() {
             }
         }
 
+        return true;
+    } catch (e) {
+        alert(e);
+        return false;
+    }
+}
+
+function applyImport(tierList) {
+    for (var tierNum in tierList) {
+        $("#th" + tierNum).css("background-color", tierList[tierNum].bg);
+        $("#th" + tierNum).css("color", tierList[tierNum].colour);
+    }
+
+    $("#modal_inner").html("");
+    $("#modal").css("display", "none");
+    $("#modal_inner").css("display", "none");
+    $("#tier_list_caption").html(settings[settings.sort].tierListName);
+    $(".tier_content").css("background-color", settings[settings.sort].tierListColour);
+}
+
+function doImport() {
+    var text = $("#import").val().split('\n'), tierSort = checkSort(text), tmpSort = settings.sort, tierList;
+
+    settings.sort = tierSort;
+    tierList = getCurrentTierList();
+
+    if (!tierSort || !parseImport(text, tierList, tierSort, tmpSort)) {
+        settings.sort = tmpSort;
         $("#modal_inner").html("");
         $("#modal").css("display", "none");
         $("#modal_inner").css("display", "none");
-        $("#tier_list_caption").html(settings[settings.sort].tierListName);
-        $(".tier_content").css("background-color", settings[settings.sort].tierListColour);
-        $("#msg_container").html("<strong class='confirmation'>Tier list successfully imported!</strong>");
-    } catch (e) {
-        $("#import_msg_container").html("<strong class='error'>Error: invalid tier list. Either there is a typo somewhere, " +
-        "or this is a bug. Please contact Maribel in case of the latter.</strong>");
+
+        if (!tierSort) {
+            $("#msg_container").html("<strong class='error'>Error: cannot import an empty list!</strong>");
+        } else {
+            $("#msg_container").html("<strong class='error'>Error: invalid tier list. Either there is a typo somewhere, " +
+            "or this is a bug. Please contact Maribel in case of the latter.</strong>");
+        }
+
+        return;
     }
+
+    if (tierSort == tmpSort) {
+        applyImport(tierList);
+    }
+
+    settings.sort = tmpSort;
+    $("#modal_inner").html("");
+    $("#modal").css("display", "none");
+    $("#modal_inner").css("display", "none");
+    $("#msg_container").html("<strong class='confirmation'>Tier list successfully imported!</strong>");
 }
 
 function importText() {
@@ -1258,8 +1339,7 @@ function importText() {
     $("#modal_inner").html("<h2>Import from Text</h2><p>Note that the format should be the same as the exported text.</p>");
     $("#modal_inner").append("<p><strong>Warning:</strong> Importing will overwrite your current tier list!");
     $("#modal_inner").append("<textarea id='import'></textarea><p><input id='load_button' type='button' value='Import'></p>");
-    $("#load_button").on("click", load);
-    $("#modal_inner").append("<p id='import_msg_container'></p>");
+    $("#load_button").on("click", doImport);
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
 }
@@ -1784,7 +1864,7 @@ function drop(event) {
                 moveTierTo(Number(following.replace("th", "")), tierNum);
             }
         } else { // dragging an item
-            if (multiSelection.length > 1) {
+            if (multiSelection.length > 0) {
                 addMultiSelection(tierNum);
             } else {
                 if (isTiered(following)) {
@@ -1797,7 +1877,11 @@ function drop(event) {
     } else if (isTiered(event.target.id) && following.substring(0, 2) != "th") {
         if (isTiered(following)) {
             if (getTierNumOf(following) === getTierNumOf(event.target.id)) {
-                moveItemTo(following, event.target.id, getTierNumOf(event.target.id));
+                if (multiSelection.length > 0) {
+                    moveMultiSelectionTo(event.target.id);
+                } else {
+                    moveItemTo(following, event.target.id);
+                }
             } else {
                 changeToTier(following, getTierNumOf(event.target.id), getPositionOf(event.target.id));
             }
@@ -1805,7 +1889,11 @@ function drop(event) {
             addToTier(following, getTierNumOf(event.target.id), getPositionOf(event.target.id));
         }
     } else if ((isItem(event.target.id) || isCategory(event.target.id) || event.target.id == "characters") && isTiered(following)) {
-        removeFromTier(following, getTierNumOf(following));
+        if (multiSelection.length > 0) {
+            removeMultiSelection();
+        } else {
+            removeFromTier(following, getTierNumOf(following));
+        }
     }
 
     following = "";
@@ -1819,7 +1907,8 @@ function showInstructions() {
     "Currently, you can sort characters, works, and shottypes. Usage instructions are listed below.</p>" +
     "<ul id='instructions_list'><li><strong>Adding Items:</strong> Drag an item onto a tier box, or the field, " +
     "to add that item to it. You can also double click an item to add it to a tier, using a popup menu.</li>" +
-    "<li><strong>Moving Items:</strong> Drag an item onto another item to move that item to its location.</li>" +
+    "<li><strong>Moving Items:</strong> Drag an item onto another item to move that item to its location. " +
+    "The same double click menu that can be used in the picker can also be used for this.</li>" +
     "<li><strong>Multi Selection:</strong> Click multiple items to drag them together, adding them to a tier " +
     "in your clicking order. Alternatively, press Enter to add a selection of multiple characters to a tier, " +
     "using a popup menu.</li><li><strong>Removing Items:</strong> Right click an item in a tier, or drag it " +

@@ -127,7 +127,7 @@ li {
 .tierview_button {
     margin-left: 10px;
 }
-.outline {
+.selected {
     border: 2px solid #ddd;
 }
 .tooltip {
