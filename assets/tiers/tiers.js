@@ -1400,7 +1400,7 @@ function fileName() {
 function takeScreenshot() {
     var tempTierView = false;
 
-    if (!tierView) {
+    if (!tierView && !isMobile()) {
         toggleTierView();
         tempTierView = true;
     }
