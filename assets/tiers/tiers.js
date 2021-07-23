@@ -1055,7 +1055,7 @@ function saveConfirmation(event) {
         return;
     }
 
-    if (!event) {
+    if (!event || !event.data) {
         saveSettingsData();
     } else if (event.data.noMenu) {
         localStorage.setItem("settings", JSON.stringify(settings));
