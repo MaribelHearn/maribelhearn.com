@@ -319,6 +319,7 @@ li {
         width: 48%;
         height: 25px;
         font-size: 12px;
+        margin-top: 4px;
     }
     .tier_header {
         width: 60px;
@@ -361,10 +362,7 @@ li {
         padding-top: 5px;
         min-height: 50px;
     }
-    #buttons_mobile input {
-        margin-top: 4px;
-    }
-    #customise_tier input, .button {
+    #customise_tier input {
         margin-top: 5px;
         margin-bottom: 3px;
     }

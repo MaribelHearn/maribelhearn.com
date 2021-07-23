@@ -1398,11 +1398,16 @@ function fileName() {
 }
 
 function takeScreenshot() {
-    var tempTierView = false;
+    var tempTierView = false, tempMobile = false;
 
     if (!tierView && !isMobile()) {
         toggleTierView();
         tempTierView = true;
+    } else if (isMobile()) {
+        $("#characters, #buttons_mobile").css("display", "none");
+        $("#tier_list_container").css("margin-left", "0px");
+        $("#tier_list_container").css("width", "98%");
+        tempMobile = true;
     }
 
     emptyModal();
@@ -1416,6 +1421,10 @@ function takeScreenshot() {
 
             if (tempTierView) {
                 toggleTierView();
+            } else if (tempMobile) {
+                $("#characters, #buttons_mobile").css("display", "block");
+                $("#tier_list_container").css("margin-left", window.innerWidth < window.innerHeight ? "64px" : "128px");
+                $("#tier_list_container").css("width", "default");
             }
 
             $("#modal_inner").append("<h2>Screenshot</h2><p>");
@@ -1426,9 +1435,12 @@ function takeScreenshot() {
             $("#modal_inner").css("display", "block");
             $("#modal").css("display", "block");
         });
-    } catch (err) {
+    } catch (e) {
         if (tempTierView) {
             toggleTierView();
+        } else if (tempMobile) {
+            $("#characters, #buttons_mobile").css("display", "block");
+            $("#tier_list_container").css("margin-left", window.innerWidth < window.innerHeight ? "64px" : "128px");
         }
 
         printMessage("<strong class='error'>Error: your browser is outdated. Use a different browser " +
