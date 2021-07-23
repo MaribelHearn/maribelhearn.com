@@ -226,6 +226,34 @@ function allTiered(categoryName) {
     return true;
 }
 
+function setPickerItemEvents(item) {
+    item = item.removeSpaces();
+    $("#" + item).off("dblclick");
+    $("#" + item).off("contextmenu");
+    $("#" + item).off("dragstart");
+    $("#" + item).off("dragover");
+    $("#" + item).off("click");
+    $("#" + item).on(isMobile() ? "contextmenu" : "dblclick", {name: $("#" + item).attr("title")}, addMenu);
+    $("#" + item).on("dragstart", drag);
+    $("#" + item).on("click", toggleMulti);
+}
+
+function setTieredItemEvents(item, tierNum) {
+    $("#" + item).off("dblclick");
+    $("#" + item).off("contextmenu");
+    $("#" + item).off("dragstart");
+    $("#" + item).off("dragover");
+    $("#" + item).off("click");
+    $("#" + item).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
+    $("#" + item).on("dragstart", drag);
+    $("#" + item).on("dragover", allowDrop);
+    $("#" + item).on("click", toggleMulti);
+
+    if (!isMobile()) {
+        $("#" + item).on("dblclick", {name: $("#" + item).attr("title")}, addMenu);
+    }
+}
+
 function reloadTiers() {
     var cats = getCurrentCategories(), tierList = getCurrentTierList(), tierOrder = getCurrentTierOrder(), i, item, id, j;
 
@@ -526,31 +554,6 @@ function moveToBack(character, tierNum) {
     addToTier(character, tierNum);
     printMessage("");
     unsavedChanges = true;
-}
-
-function setPickerItemEvents(item) {
-    item = item.removeSpaces();
-    $("#" + item).off("dblclick");
-    $("#" + item).off("contextmenu");
-    $("#" + item).off("dragstart");
-    $("#" + item).off("dragover");
-    $("#" + item).off("click");
-    $("#" + item).on(isMobile() ? "contextmenu" : "dblclick", {name: $("#" + item).attr("title")}, addMenu);
-    $("#" + item).on("dragstart", drag);
-    $("#" + item).on("click", toggleMulti);
-}
-
-function setTieredItemEvents(item, tierNum) {
-    $("#" + item).off("dblclick");
-    $("#" + item).off("contextmenu");
-    $("#" + item).off("dragstart");
-    $("#" + item).off("dragover");
-    $("#" + item).off("click");
-    $("#" + item).on("dblclick", {name: $("#" + item).attr("title")}, addMenu);
-    $("#" + item).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
-    $("#" + item).on("dragstart", drag);
-    $("#" + item).on("dragover", allowDrop);
-    $("#" + item).on("click", toggleMulti);
 }
 
 function moveItemTo(sourceItem, targetItem) {
