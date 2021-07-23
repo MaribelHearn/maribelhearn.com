@@ -1401,6 +1401,7 @@ function takeScreenshot() {
     emptyModal();
 
     try {
+        printMessage("<strong class='confirmation'>Girls are being screenshotted, please watch warmly...</strong>");
         html2canvas(document.body, {
             "onclone": function (doc) {
                 doc.getElementsByTagName("body")[0].style.backgroundImage = "none";
@@ -1426,10 +1427,11 @@ function takeScreenshot() {
             }
 
             $("#modal_inner").append("<p><a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
-            "<input type='button' value='Save to Device'></a></p>" +
+            "<input type='button' class='button' value='Save to Device'></a></p>" +
             "<p><img id='screenshot_base64' src='" + base64image + "' alt='Tier list screenshot'></p>");
             $("#modal_inner").css("display", "block");
             $("#modal").css("display", "block");
+            printMessage("");
         });
     } catch (e) {
         printMessage("<strong class='error'>Error: your browser is outdated. Use a different browser " +
