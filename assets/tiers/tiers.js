@@ -1700,7 +1700,7 @@ function togglePickerSize() {
         delete settings.picker;
     }
 
-    saveConfirmation();
+    saveConfirmation({data: {noMenu: true}});
     printMessage("");
 }
 
