@@ -340,12 +340,12 @@ function switchSortMobile() {
 }
 
 function tieredContextMenu(event) {
-    var character = this.id, name = this.title, tierNum = event.data.tierNum;
+    var item = this.id, name = this.title, tierNum = Number(event.data.tierNum);
 
     if (isMobile()) {
-        modalChar(character, name, tierNum);
+        modalChar(item, name, tierNum);
     } else {
-        removeFromTier(character, tierNum);
+        removeFromTier(item, tierNum);
     }
 
     return false;
