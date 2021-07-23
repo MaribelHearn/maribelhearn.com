@@ -69,7 +69,8 @@ var MAX_NAME_LENGTH = 30,
     maxTiers = 20,
     following = "",
     tierView = false,
-    smallPicker = false;
+    smallPicker = false,
+    unsavedChanges = false;
 
 function getTierNumOf(item) {
     var tierList = getCurrentTierList(), tierNum, i;
@@ -392,9 +393,7 @@ function addToTier(item, tierNum, pos, noDisplay) {
         tierList[tierNum].chars.pushStrict(item);
     }
 
-    window.onbeforeunload = function () {
-        return confirm();
-    };
+    unsavedChanges = true;
 
     for (i = 0; i < cats[categoryName].chars.length; i++) {
         if (!isTiered(cats[categoryName].chars[i])) {
@@ -535,10 +534,7 @@ function moveToBack(character, tierNum) {
     removeFromTier(character, tierNum);
     addToTier(character, tierNum);
     printMessage("");
-
-    window.onbeforeunload = function () {
-        return confirm();
-    }
+    unsavedChanges = true;
 }
 
 function moveItemTo(sourceItem, targetItem) {
@@ -578,9 +574,7 @@ function moveItemTo(sourceItem, targetItem) {
         $("#" + item).on("click", toggleMulti);
     }
 
-    window.onbeforeunload = function () {
-        return confirm();
-    }
+    unsavedChanges = true;
 }
 
 function moveMultiSelectionTo(targetItem) {
@@ -631,9 +625,7 @@ function removeFromTier(item, tierNum) {
         " from " + tierList[tierNum].name + "!</strong>");
     }
 
-    window.onbeforeunload = function () {
-        return confirm();
-    }
+    unsavedChanges = true;
 }
 
 function changeToTier(item, tierNum, pos) {
@@ -751,10 +743,7 @@ function addTier(event) {
     tierList[tierNum].chars = [];
     tierList[tierNum].flag = false;
     tierOrder.push(tierNum);
-
-    window.onbeforeunload = function () {
-        return confirm();
-    }
+    unsavedChanges = true;
 }
 
 function moveTierTo(sourceTierNum, targetTierNum) {
@@ -798,9 +787,7 @@ function moveTierTo(sourceTierNum, targetTierNum) {
         }
     }
 
-    window.onbeforeunload = function () {
-        return confirm();
-    }
+    unsavedChanges = true;
 }
 
 function removeCharacters(tierNum, noDisplay) {
@@ -838,10 +825,7 @@ function removeTier(tierNum, skipConfirmation, noDisplay) {
         tierOrder.remove(tierNum);
     }
 
-    window.onbeforeunload = function () {
-        return confirm();
-    }
-
+    unsavedChanges = true;
     return false;
 }
 
@@ -863,10 +847,7 @@ function removeTier(tierNum, skipConfirmation, noDisplay) {
     $("#" + item1).on("contextmenu", {tierNum: tierNum2}, tieredContextMenu);
     tierList[tierNum1].chars[pos1] = item2;
     tierList[tierNum2].chars[pos2] = item1;
-
-    window.onbeforeunload = function () {
-        return confirm();
-    }
+    unsavedChanges = true;
 }*/
 
 function emptyModal() {
@@ -1076,7 +1057,7 @@ function saveTiersData() {
     localStorage.setItem("shotTiers", JSON.stringify(shotTiers));
     localStorage.setItem("shotOrder", JSON.stringify(shotOrder));
     printMessage("<strong class='confirmation'>Tier list(s) saved!</strong>");
-    window.onbeforeunload = undefined;
+    unsavedChanges = false;
 }
 
 function saveTiers() {
@@ -1107,7 +1088,7 @@ function saveSettingsData() {
 
     localStorage.setItem("settings", JSON.stringify(settings));
     printMessage("<strong class='confirmation'>Settings saved!</strong>");
-    window.onbeforeunload = undefined;
+    unsavedChanges = false;
 }
 
 function saveSettingsPre() {
@@ -1391,7 +1372,6 @@ function copyToClipboard() {
     navigator.clipboard.writeText($("#text").html().replace(/<\/p><p>/g, "\n").strip());
     emptyModal();
     printMessage("<strong class='confirmation'>Copied to clipboard!</strong>");
-    window.onbeforeunload = undefined;
 }
 
 function exportText() {
@@ -1652,9 +1632,7 @@ function saveSettings() {
             }
         }
 
-        window.onbeforeunload = function () {
-            return confirm();
-        }
+        unsavedChanges = true;
     }
 
     if (settings.sort == "characters" && !$("#male").is(":checked")) {
@@ -1835,7 +1813,7 @@ function eraseAllConfirmed() {
     localStorage.removeItem("settings");
     initialise();
     printMessage("<strong class='confirmation'>Reset the tier list and settings to their default states!</strong>");
-    window.onbeforeunload = undefined;
+    unsavedChanges = false;
 }
 
 function modalEraseAll() {
@@ -2287,6 +2265,13 @@ function setEventListeners() {
     $("#switch_button").on("click", switchSortMobile);
     $("#characters").on("dragover", allowDrop);
     $("#characters").on("drop", drop);
+    window.onbeforeunload = function () {
+        if (unsavedChanges) {
+            return "";
+        }
+
+        return undefined;
+    }
 }
 
 $(document).ready(function () {
@@ -2312,5 +2297,5 @@ $(document).ready(function () {
 
     $(".tier_content").css("background-color", settings[settings.sort].tierListColour);
     setEventListeners();
-    window.onbeforeunload = undefined;
+    unsavedChanges = false;
 });
