@@ -110,10 +110,10 @@
             <div id='modal_inner'></div>
         </div>
 		<div id='buttons_mobile' class='dark_bg'>
-			<input id='information_button' class='button' type='button' value='Information'>
-			<input id='view_button' class='button' type='button' value='Tier List View'>
-			<br id='mobile_button_split'>
+			<input id='save_button_mobile' class='button' type='button' value='Save'>
 			<input id='menu_button' class='button' type='button' value='Menu'>
+			<br id='mobile_button_split'>
+			<input id='information_button' class='button' type='button' value='Information'>
 			<input id='switch_button' class='button' type='button' value='Switch Mode'>
 			<p id='msg_container_mobile'></p>
 		</div>

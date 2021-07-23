@@ -272,7 +272,7 @@ li {
     text-decoration: none;
     margin: 5px;
 }
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1500px) {
     .dropdowns {
         width: 100%;
     }
@@ -301,15 +301,16 @@ li {
     body {
         background: #1b232e;
     }
-    h1 {
-        margin: 5px;
-        font-size: 28px;
-    }
     h2 {
+        margin: 10px;
         font-size: 28px;
     }
-    h3, caption {
+    h3 {
+        margin: 10px;
         font-size: 20px;
+    }
+    ul {
+        padding-left: 0px;
     }
     p {
         margin: 2px;
@@ -329,19 +330,20 @@ li {
         width: 60px;
         height: 60px;
     }
+    .list_characters1, .tiered_characters1 {
+        background-image: url('../spritesheet/characters_sheet60x60_1.png');
+    }
+    .list_characters2, .tiered_characters2 {
+        background-image: url('../spritesheet/characters_sheet60x60_2.png');
+    }
+    .list_works, .tiered_works {
+        background-image: url('../spritesheet/works_sheet60x60.png');
+    }
+    .list_shots, .tiered_shots {
+        background-image: url('../spritesheet/shots_sheet60x60.png');
+    }
     .instructions {
         display: block;
-    }
-    .dropdowns {
-        width: 100%;
-    }
-    .nav_left {
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-    }
-    .nav_right {
-        display: none;
     }
     #wrap {
         top: 5px;
@@ -352,64 +354,71 @@ li {
         height: 100%;
         max-height: 100%;
     }
-    #ext_mobile {
-        display: inline-block;
+    #characters {
+        width: 62px;
     }
     #buttons_mobile {
         display: block;
+        position: absolute;
+        width: 98%;
+        padding-top: 5px;
+        min-height: 50px;
+    }
+    #buttons_mobile input, #customise_tier input {
+        margin-top: 5px;
+        margin-bottom: 3px;
     }
     #add_tier_box_mobile {
         display: table-row;
     }
-    #nav, #tier_list_container, #tier_list_tfoot, #sort_selection, #buttons, #toggle_picker {
+    #title, #nav, #tier_list_tfoot, #sort_selection, #buttons, #toggle_picker {
         display: none;
     }
     #tier_list_container {
-        bottom: 100px;
-        max-height: 71%;
         overflow-y: auto;
         border: 1px solid black;
+        margin-left: 64px;
     }
     #wrap, #show, #characters, #msg_container_mobile {
         font: 12px verdana, sans-serif;
     }
-    #msg_container_mobile {
-        text-align: center;
+    #tier_name_mobile {
+        width: 50%;
     }
     #add_tier_mobile {
         width: auto;
         height: 25px;
         font-size: 12px;
     }
+    #msg_container_mobile {
+        text-align: center;
+    }
     #modal_inner {
         max-height: 75%;
+        max-width: 65%;
     }
-}
-@media only screen and (max-width: 800px) and (orientation: portrait) {
-    #characters {
-        width: auto;
-        top: 50px;
-        right: 5px;
-        bottom: 18%;
-    }
-    #buttons_mobile {
-        position: absolute;
-        width: 98%;
-        padding-top: 5px;
-        height: 16%;
-        min-height: 50px;
-        top: 82%;
+    #import {
+        height: 270px;
     }
     #acknowledgements {
         width: auto;
         margin-left: 0px;
         margin-right: 0px;
     }
+}
+@media only screen and (max-width: 800px) and (orientation: portrait) {
+    #characters {
+        padding-right: 10px;
+        bottom: 15%;
+    }
+    #tier_list_container {
+        max-height: 83%;
+    }
+    #buttons_mobile {
+        top: 84%;
+    }
     #modal {
         padding-top: 10%;
-    }
-    .left {
-        text-align: default;
     }
     h1 {
         margin: 5px;
@@ -417,75 +426,24 @@ li {
     }
 }
 @media only screen and (max-width: 640px) and (orientation: landscape) {
-    #title {
-        display: none;
-    }
     #characters {
-        width: auto;
-        top: 2%;
-        right: 5px;
-        bottom: 25%;
+        padding-right: 10px;
+        width: 124px;
+        bottom: 23%;
+    }
+    #tier_list_container {
+        max-height: 74%;
+        margin-left: 128px;
     }
     #buttons_mobile {
-        position: absolute;
-        width: 98%;
-        padding-top: 5px;
-        height: 22%;
-        min-height: 50px;
         top: 75%;
     }
     #modal {
         padding-top: 2%;
     }
 }
-@media only screen and (max-height: 350px) {
-    #information_button, #view_button, #mobile_button_split, #menu_button, #switch_button {
-        display: inline;
-    }
-    #characters, #tier_list_tfoot, #nav, #sort_selection, #buttons {
-        display: none;
-    }
-    #buttons_mobile, #tier_list_container {
-        display: block;
-    }
-    #add_tier_box_mobile {
-        display: table-row;
-    }
-    #wrap {
-        top: 5px;
-        bottom: 5px;
-        right: 5px;
-        left: 5px;
-        width: auto;
-        height: 100%;
-        max-height: 100%;
-    }
-    #tier_list_container {
-        bottom: 100px;
-        max-height: 71%;
-        overflow-y: auto;
-        border: 1px solid black;
-    }
-    #wrap, #buttons_mobile, #show, #characters, #modal_inner {
-        font-size: 12px;
-    }
-    #add_tier_mobile {
-        width: auto;
-        height: 25px;
-        font-size: 12px;
-    }
-    h1 {
-        margin: 5px;
-        font-size: 28px;
-    }
-}
 @media only screen and (max-height: 250px) {
     #buttons_mobile {
-        display: none;
-    }
-}
-@media only screen and (max-height: 150px) {
-    #title {
         display: none;
     }
 }
