@@ -802,6 +802,7 @@ function moveTierTo(sourceTierNum, targetTierNum) {
     $("#th" + targetTierNum).css("background-color", tmp.bg);
     $("#th" + targetTierNum).html(tmpHtml);
     $("#tier" + targetTierNum).html(tmpChars);
+    $("#tier" + targetTierNum).html($("#tier" + targetTierNum).html().replace(new RegExp("tier" + sourceTierNum + "_", "g"), "tier" + targetTierNum + "_"));
     printMessage("");
 
     for (tierNum in tierList) {
@@ -815,7 +816,7 @@ function moveTierTo(sourceTierNum, targetTierNum) {
 }
 
 function removeCharacters(tierNum, noDisplay) {
-    var tierList = getCurrentTierList();
+    var tierList = getCurrentTierList(), lastIndex = tierList[tierNum].chars.length - 1;
 
     while (tierList[tierNum].chars.length > 0) {
         removeFromTier(tierList[tierNum].chars[tierList[tierNum].chars.length - 1], tierNum);
@@ -839,7 +840,7 @@ function removeTier(tierNum, skipConfirmation, noDisplay) {
     }
 
     if (confirmation) {
-        removeCharacters(tierNum, noDisplay);
+        removeCharacters(Number(tierNum), noDisplay);
 
         if (!noDisplay) {
             $("#tr" + tierNum).remove();
@@ -852,27 +853,6 @@ function removeTier(tierNum, skipConfirmation, noDisplay) {
     unsavedChanges = true;
     return false;
 }
-
-/*function swapItems(item1, item2) { // unused
-    if (item1 == item2) {
-        return;
-    }
-
-    var tierList = getCurrentTierList(), tierNum1 = getTierNumOf(item1), tierNum2 = getTierNumOf(item2),
-        pos1 = getPositionOf(item1), pos2 = getPositionOf(item2), tmp;
-
-    $("#tier" + tierNum1 + "_" + pos1).remove("#" + item1);
-    $("#tier" + tierNum2 + "_" + pos2).remove("#" + item2);
-    $("#tier" + tierNum1 + "_" + pos1).append($("#" + item2));
-    $("#tier" + tierNum2 + "_" + pos2).append($("#" + item1));
-    $("#" + item2).off("contextmenu");
-    $("#" + item1).off("contextmenu");
-    $("#" + item2).on("contextmenu", {tierNum: tierNum1}, tieredContextMenu);
-    $("#" + item1).on("contextmenu", {tierNum: tierNum2}, tieredContextMenu);
-    tierList[tierNum1].chars[pos1] = item2;
-    tierList[tierNum2].chars[pos2] = item1;
-    unsavedChanges = true;
-}*/
 
 function emptyModal() {
     $("#modal_inner").html("");
@@ -981,7 +961,7 @@ function tierMenu(tierNum) {
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
     $("#save_tier_settings").on("click", {tierNum: tierNum}, saveSingleTierSettings);
-    $(".settings_input").on("keyup", detectTiersEnter);
+    $(".settings_input").on("keyup", {tierNum: tierNum}, detectTiersEnter);
 
     for (otherTierNum in tierList) {
         if (otherTierNum == tierNum) {
@@ -2217,7 +2197,7 @@ function detectSettingsEnter(event) {
 
 function detectTiersEnter(event) {
     if (event.key && event.key == "Enter") {
-        saveSingleTierSettings();
+        saveSingleTierSettings(event);
     }
 }
 
