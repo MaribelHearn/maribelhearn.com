@@ -301,10 +301,6 @@ li {
     body {
         background: #1b232e;
     }
-    h2 {
-        margin: 10px;
-        font-size: 28px;
-    }
     h3 {
         margin: 10px;
         font-size: 20px;
@@ -354,13 +350,17 @@ li {
     }
     #characters {
         width: 62px;
+        margin-bottom: 77px;
     }
     #buttons_mobile {
         display: block;
         position: absolute;
-        width: 98%;
+        text-align: center;
+        width: 75%;
+        margin-left: 72px;
+        height: 75px;
         padding-top: 5px;
-        min-height: 50px;
+        bottom: 5px;
     }
     #customise_tier input {
         margin-top: 5px;
@@ -376,6 +376,7 @@ li {
         overflow-y: auto;
         border: 1px solid black;
         margin-left: 64px;
+        margin-bottom: 77px;
     }
     #wrap, #show, #characters, #msg_container_mobile {
         font: 12px verdana, sans-serif;
@@ -407,13 +408,9 @@ li {
 @media only screen and (max-width: 800px) and (orientation: portrait) {
     #characters {
         padding-right: 10px;
-        bottom: 16%;
     }
     #tier_list_container {
         max-height: 82%;
-    }
-    #buttons_mobile {
-        top: 83%;
     }
     #modal {
         padding-top: 10%;
@@ -427,14 +424,14 @@ li {
     #characters {
         padding-right: 10px;
         width: 124px;
-        bottom: 23%;
     }
     #tier_list_container {
         max-height: 74%;
         margin-left: 128px;
     }
     #buttons_mobile {
-        top: 75%;
+        margin-left: 130px;
+        padding-right: 15px;
     }
     #modal {
         padding-top: 2%;
