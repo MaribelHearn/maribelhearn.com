@@ -199,3 +199,8 @@ a:visited.dropdown_button {
 #hy_container:hover .tooltip {
     visibility: visible;
 }
+@media only screen and (((max-width: 800px) and (orientation: portrait)) or ((max-width: 640px) and (orientation: landscape))) {
+    .dropdown_content {
+        margin-top: 5px;
+    }
+}
