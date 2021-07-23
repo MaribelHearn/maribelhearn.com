@@ -297,7 +297,7 @@ li {
         font-size: 12px;
     }
 }
-@media only screen and (((min-width: 320px) and (max-width: 800px) and (orientation: portrait)) or ((min-width: 480px) and (max-width: 640px) and (orientation: landscape))) {
+@media only screen and (((max-width: 800px) and (orientation: portrait)) or ((max-width: 640px) and (orientation: landscape))) {
     body {
         background: #1b232e;
     }
@@ -342,9 +342,6 @@ li {
     .list_shots, .tiered_shots {
         background-image: url('../spritesheet/shots_sheet60x60.png');
     }
-    .instructions {
-        display: block;
-    }
     #wrap {
         top: 5px;
         bottom: 5px;
@@ -364,7 +361,10 @@ li {
         padding-top: 5px;
         min-height: 50px;
     }
-    #buttons_mobile input, #customise_tier input {
+    #buttons_mobile input {
+        margin-top: 4px;
+    }
+    #customise_tier input {
         margin-top: 5px;
         margin-bottom: 3px;
     }
@@ -409,13 +409,13 @@ li {
 @media only screen and (max-width: 800px) and (orientation: portrait) {
     #characters {
         padding-right: 10px;
-        bottom: 15%;
+        bottom: 16%;
     }
     #tier_list_container {
-        max-height: 83%;
+        max-height: 82%;
     }
     #buttons_mobile {
-        top: 84%;
+        top: 83%;
     }
     #modal {
         padding-top: 10%;
