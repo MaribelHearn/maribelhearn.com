@@ -41,15 +41,35 @@
                     <input id='toggle_view' class='button' type='button' value='Tier List View'>
                     <input id='toggle_picker' class='button' type='button' value='Small Picker'>
                 </div>
-                <p id='toggle'>
-                    <input id='toggle_instructions' type='button' value='Show Instructions'>
-                    <span id='import_button_tierview'></span>
-                    <span id='export_button_tierview'></span>
-                    <span id='screenshot_button_tierview'></span>
-                    <span id='settings_button_tierview'></span>
-                    <span id='changelog_button_tierview'></span>
-                    <span id='reset_button_tierview'></span>
-                </p>
+                <div id='buttons' class='dark_bg'>
+                    <input id='info_button' type='button' value='Information'>
+	                <input id='save_button' type='button' class='button menu' value='Save'>
+                	<input id='import_button' type='button' class='button menu' value='Import'>
+                	<input id='export_button' type='button' class='button menu' value='Export'>
+                    <input id='screenshot_button' type='button' class='button menu' value='Screenshot'>
+                	<input id='settings_button' type='button' class='button menu' value='Settings'>
+	                <input id='changelog_button' type='button' class='button menu' value='Changelog'>
+	                <input id='reset_button' type='button' class='button menu' value='Reset'>
+                </div>
+				<div id='credits_container'>
+		            <div id='acknowledgements'>
+		                <p class='thin'>The artworks used for this page are drawn by:</p>
+						<ul id='credits'>
+							<li><a href='https://www.pixiv.net/member.php?id=4920496' target='_blank'>Dairi:</a> Characters</li>
+							<li><a href='https://twitter.com/korindo' target='_blank'>ZUN:</a> Shottypes</li>
+							<li><a href='http://www.pixiv.net/member.php?id=4678572' target='_blank'>ETERSIARUM:</a> Background</li>
+		                </ul>
+						<p class='thin'>Special thanks go to:</p>
+						<ul id='special_thanks'>
+							<li><a href='https://www.youtube.com/channel/UCI1HPxKRky4Zm_mrRUH415Q' target='_blank'>Plus:</a> Original idea, testing</li>
+							<li><a href='https://twitter.com/Doroshii_Sweet' target='_blank'>Dorothy Sweet:</a> Design, testing</li>
+							<li><a href='https://twitter.com/pienyan_' target='_blank'>pienyan:</a> Testing</li>
+							<li><a href='https://twitter.com/TheDukeofBooms' target='_blank'>ZXNova:</a> Most Dairi face crops</li>
+							<li><a href='https://twitter.com/CuprianLycoris'>Cuprian Lycoris:</a> Most ZUN face crops</li>
+						</ul>
+		            </div>
+				</div>
+				<p id='msg_container'></p>
             </div>
             <div id='tier_list_container' class='dark_bg'>
                 <table id='tier_list_table'>
@@ -86,53 +106,17 @@
                 </table>
             </div>
         </div>
-        <div id='buttons' class='dark_bg'>
-            <div id='credits' class='dark_bg'>
-                <p>The artworks used for this page are drawn by:
-                <a href='https://www.pixiv.net/member.php?id=4920496' target='_blank'>Dairi</a>,
-				<a href='https://twitter.com/korindo'>ZUN</a>,
-                <a href='http://www.pixiv.net/member.php?id=4678572' target='_blank'>ETERSIARUM</a>.
-                Special thanks go to <a href='https://www.youtube.com/channel/UCI1HPxKRky4Zm_mrRUH415Q' target='_blank'>Plus</a>
-				for the original idea and testing,
-                <a href='https://twitter.com/pienyan_' target='_blank'>pienyan</a> for testing,
-                <a href='https://twitter.com/Doroshii_Sweet' target='_blank'>Dorothy Sweet</a> for design improvements and
-                <a href='https://twitter.com/TheDukeofBooms' target='_blank'>ZXNova</a> and
-				<a href='https://twitter.com/CuprianLycoris'>Cuprian Lycoris</a> for crops.</p>
-            </div>
-            <div id='menu' class='dark_bg'>
-				<span id='save_button_container'>
-	                <input id='save_button' type='button' class='button menu' value='Save Tiers'>
-                </span>
-                <span id='import_button_container'>
-                	<input id='import_button' type='button' class='button menu' value='Import'>
-                </span>
-                <span id='export_button_container'>
-                	<input id='export_button' type='button' class='button menu' value='Export'>
-                </span>
-                <br id='button_split'>
-                <span id='screenshot_button_container'>
-                    <input id='screenshot_button' type='button' class='button menu' value='Take Screenshot'>
-                </span>
-                <span id='settings_button_container'>
-                	<input id='settings_button' type='button' class='button menu' value='Settings'>
-				</span>
-                <span id='changelog_button_container'>
-	                <input id='changelog_button' type='button' class='button menu' value='Changelog'>
-				</span>
-                <span id='reset_button_container'>
-	                <input id='reset_button' type='button' class='button menu' value='Reset'>
-				</span>
-            </div>
-            <input id='information_button' class='button' type='button' value='Information'>
-            <input id='view_button' class='button' type='button' value='Tier List View'>
-            <br id='mobile_button_split'>
-            <input id='menu_button' class='button' type='button' value='Menu'>
-            <input id='switch_button' class='button' type='button' value='Switch Mode'>
-            <p id='msg_container'></p>
-        </div>
         <div id='modal'>
             <div id='modal_inner'></div>
         </div>
+		<div id='buttons_mobile' class='dark_bg'>
+			<input id='information_button' class='button' type='button' value='Information'>
+			<input id='view_button' class='button' type='button' value='Tier List View'>
+			<br id='mobile_button_split'>
+			<input id='menu_button' class='button' type='button' value='Menu'>
+			<input id='switch_button' class='button' type='button' value='Switch Mode'>
+			<p id='msg_container_mobile'></p>
+		</div>
         <div id='characters' class='dark_bg'></div>
         <?php
             $json = file_get_contents('assets/json/chars.json');
