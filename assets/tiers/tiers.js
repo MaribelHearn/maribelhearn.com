@@ -1398,51 +1398,40 @@ function fileName() {
 }
 
 function takeScreenshot() {
-    var tempTierView = false, tempMobile = false;
-
-    if (!tierView && !isMobile()) {
-        toggleTierView();
-        tempTierView = true;
-    } else if (isMobile()) {
-        $("#characters, #buttons_mobile").css("display", "none");
-        $("#tier_list_container").css("margin-left", "0px");
-        $("#tier_list_container").css("width", "98%");
-        tempMobile = true;
-    }
-
     emptyModal();
 
     try {
         html2canvas(document.body, {
-            "height": ($("#tier_list_tbody").height() + 50),
-            "windowHeight": Math.max(400, ($("#tier_list_tbody").height() + 50))
+            "onclone": function (doc) {
+                doc.getElementsByTagName("body")[0].style.backgroundImage = "none";
+                doc.getElementById("wrap").style.width = "98%";
+                doc.getElementById("wrap").style.height = "auto";
+                doc.getElementById("wrap").style.maxHeight = "none";
+                doc.getElementById("tier_list_container").style.width = "98%";
+                doc.getElementById("tier_list_container").style.height = "auto";
+                doc.getElementById("tier_list_container").style.maxHeight = "none";
+                doc.getElementById("tier_list_container").style.marginLeft = "0px";
+            },
+            "windowHeight": $("#tier_list_tbody").height() + $("#tier_list_caption").height() + 50,
+            "height": $("#tier_list_tbody").height() + $("#tier_list_caption").height() + 50,
+            "scrollX": 0,
+            "scrollY": 0
         }).then(function(canvas) {
             var base64image = canvas.toDataURL("image/png"), link;
 
-            if (tempTierView) {
-                toggleTierView();
-            } else if (tempMobile) {
-                $("#characters, #buttons_mobile").css("display", "block");
-                $("#tier_list_container").css("margin-left", window.innerWidth < window.innerHeight ? "64px" : "128px");
-                $("#tier_list_container").css("width", "default");
+            if (isMobile()) {
+                $("#modal_inner").append("<h3>Screenshot</h3>");
+            } else {
+                $("#modal_inner").append("<h2>Screenshot</h2>");
             }
 
-            $("#modal_inner").append("<h2>Screenshot</h2><p>");
-            $("#modal_inner").append("<a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
+            $("#modal_inner").append("<p><a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
             "<input type='button' value='Save to Device'></a></p>" +
-            "<p>If the tier list is large, this feature currently does not work properly on Android.</p>" +
             "<p><img id='screenshot_base64' src='" + base64image + "' alt='Tier list screenshot'></p>");
             $("#modal_inner").css("display", "block");
             $("#modal").css("display", "block");
         });
     } catch (e) {
-        if (tempTierView) {
-            toggleTierView();
-        } else if (tempMobile) {
-            $("#characters, #buttons_mobile").css("display", "block");
-            $("#tier_list_container").css("margin-left", window.innerWidth < window.innerHeight ? "64px" : "128px");
-        }
-
         printMessage("<strong class='error'>Error: your browser is outdated. Use a different browser " +
         "to screenshot your tier list.</strong>");
     }
