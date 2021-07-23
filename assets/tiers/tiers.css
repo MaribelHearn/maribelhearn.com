@@ -364,7 +364,7 @@ li {
     #buttons_mobile input {
         margin-top: 4px;
     }
-    #customise_tier input {
+    #customise_tier input, .button {
         margin-top: 5px;
         margin-bottom: 3px;
     }
