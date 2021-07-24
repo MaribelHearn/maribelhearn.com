@@ -1,3 +1,4 @@
+/*global $ setCookie getCookie langCode*/
 var notation = "DMY", language = "English", timezone;
 
 function toDateString(unix) {
@@ -52,7 +53,7 @@ function getClientTimeZone() {
 }
 
 function setLanguage(event) {
-    newLanguage = event.data.language;
+    var newLanguage = event.data.language;
 
     if (language == newLanguage) {
         return;

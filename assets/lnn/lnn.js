@@ -1,5 +1,7 @@
+/*global $ getCookie deleteCookie setCookie gameAbbr shottypeAbbr generateTableText
+generateFullNames generateShottypes fullNameNumber generateShortNames langCode*/
 var LNNs, alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
-    language = "English", selected = "", playerSelected = false, missingReplays;
+    language = "English", selected = "", missingReplays;
 
 function toggleLayout() {
     if (getCookie("lnn_old_layout")) {
@@ -69,7 +71,7 @@ function showLNNs(game) {
         return;
     }
 
-    var overallplayers = [], players = [], typeString = "", gamecount = 0,
+    var players = [], typeString = "", gamecount = 0,
         shottype, shotplayers, shotcount, character, type, player, season, i;
 
     if (selected !== "") {
@@ -165,13 +167,11 @@ function showPlayerLNNs(player) {
     }
 
     if (player === "") {
-        playerSelected = false;
         return;
     }
 
-    var games = [], sum = 0, max, game, array, replays, shottype, character, type, list, replay, tmp, i;
+    var games = [], sum = 0, max, game, array, replays, gameshots, shottype, character, type, list, replay, tmp;
 
-    playerSelected = true;
     $("#playerlistbody").html("");
 
     for (game in LNNs) {
@@ -220,7 +220,6 @@ function showPlayerLNNs(player) {
 
     if (sum === 0) {
         $("#playerlist").css("display", "none");
-        playerSelected = false;
         return;
     }
 

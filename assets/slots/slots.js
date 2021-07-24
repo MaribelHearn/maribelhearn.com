@@ -1,3 +1,4 @@
+/*global $ html2canvas*/
 var SPECIES = ["Human", "Magician", "Devil", "Ghost", "Yuki-onna", "Night sparrow", "Tengu", "Kappa",
     "Tsurube-otoshi", "Tsuchigumo", "Hashihime", "Satori", "Shuchuu", "Tsukumogami", "Nyuudou",
     "Nue", "Daidarabotchi", "Yamabiko", "Zombie", "Gashadokuro", "Kirin", "Wanyuudou", "Katawa-guruma",
@@ -6,9 +7,7 @@ var SPECIES = ["Human", "Magician", "Devil", "Ghost", "Yuki-onna", "Night sparro
     NUMBER_OF_CHARS = 162,
     NUMBER_OF_LOCATIONS = 33,
     WIDTH = 120,
-    BREAK_WORD = 24,
     NUMBER_OF_SLOTS = 9,
-    MAX_NUMBER = 5,
     slotTitles = ["You are a ...", "Best friend", "Hates you", "First kiss", "Has a crush on you",
     "Married to", "Honeymoon location", "No. of children", "Cockblocked by"],
     chars = {'1': {}, '2': {}},
@@ -69,7 +68,7 @@ function randomiseArray(array, slot, previous) {
 }
 
 function tick() {
-    var previous, species, slot;
+    var previous, slot;
 
     for (slot = 0; slot < NUMBER_OF_SLOTS; slot++) {
         previous = slots[slot];
@@ -116,10 +115,6 @@ function fileName() {
     "_" + day + "_" + hours + "_" + minutes + "_" + seconds + ".png";
 }
 
-function isMobile() {
-    return navigator.userAgent.contains("Mobile") || navigator.userAgent.contains("Tablet");
-}
-
 function getCookie(name) {
     var decodedCookies, cookieArray, cookie;
 
@@ -154,7 +149,7 @@ function takeScreenshot() {
         html2canvas(document.getElementById("table"), {
             backgroundColor: backgroundColour()
         }).then(function(canvas) {
-            var base64image = canvas.toDataURL("image/png"), link;
+            var base64image = canvas.toDataURL("image/png");
 
             $("#modal_inner").html("<h2>Screenshot</h2>");
             $("#modal_inner").append("<p><a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
@@ -199,7 +194,7 @@ function setEventListeners() {
     $("body").on("keyup", closeModal);
 }
 
-function changeTitle(event, id) {
+function changeTitle(event) {
     if ((event.key && event.key == "Enter") || event.type == "click") {
         $("#title" + event.data.id).html($("#custom_title").val().escapeHTML());
         slotTitles[event.data.id] = $("#custom_title").val();
@@ -208,7 +203,7 @@ function changeTitle(event, id) {
     }
 }
 
-function titleMenu(event, id) {
+function titleMenu(event) {
     emptyModal();
     $("#modal_inner").html("<h2>Change Title</h2><p><input id='custom_title' " +
     "type='text' value='" + $("#title" + event.data.id).html() + "'></p>" +
