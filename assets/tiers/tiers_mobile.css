@@ -18,6 +18,7 @@ input[type=button]:not(.button_bottom) {
     margin-bottom: 4px;
 }
 .button_bottom {
+    width: 48%;
     height: 25px;
     font-size: 12px;
 }
@@ -131,6 +132,7 @@ input[type=button]:not(.button_bottom) {
     }
     #buttons_mobile input {
         width: 20%;
+        margin-bottom: 0px;
     }
     #modal {
         padding-top: 2%;
