@@ -29,7 +29,7 @@ if (in_array($page, $sorttable)) {
 }
 if ($page == 'tiers') {
     array_push($js, 'rgbcolor' . $min . '.js');
-    array_push($js, 'polyfill' . $min . '.js');
+    array_push($js, 'polyfill_dragdrop' . $min . '.js');
 } else if ($page == 'error') {
     array_push($js, 'https://maribelhearn.com/assets/shared/dark' . $min . '.js');
 } else if ($page == 'admin') {
