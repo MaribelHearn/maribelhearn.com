@@ -10,7 +10,15 @@ $css = array(
     '../' . $page . '/' . ($page == 'index' ? 'main' : $page) . $min . '.css'
 );
 if ($page == 'tiers') {
-    array_push($css, '../tiers/sprites' . $min . '.css');
+    require_once 'mobile_detect.php';
+    $detect_device = new Mobile_Detect;
+    $is_mobile = $detect_device -> isMobile();
+    if ($is_mobile) {
+        array_push($css, '../tiers/tiers_mobile' . $min . '.css');
+        array_push($css, '../tiers/sprites_mobile' . $min . '.css');
+    } else {
+        array_push($css, '../tiers/sprites' . $min . '.css');
+    }
 }
 if (isset($_COOKIE['theme']) && $page != 'tiers') {
     if ($page == 'error') {
