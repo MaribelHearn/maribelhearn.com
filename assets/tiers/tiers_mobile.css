@@ -11,14 +11,15 @@ ul {
 p {
     margin: 2px;
 }
-input[type=button] {
+input[type=button]:not(.button_bottom) {
     width: 48%;
     height: 25px;
     font-size: 12px;
     margin-bottom: 4px;
 }
 .button_bottom {
-    margin-bottom: 0px;
+    height: 25px;
+    font-size: 12px;
 }
 .tier_header {
     width: 60px;
