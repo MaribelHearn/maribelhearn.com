@@ -1051,13 +1051,13 @@ function mobileInfo() {
     "<ul id='instructions_list'><li><strong>Adding Items:</strong> Tap an item, then tap a tier " +
     "in the resulting popup menu, to add it to that tier.</li>" +
     "<li><strong>Moving Items:</strong> Tap a tiered item and tap any of the 'Move' buttons to move it to another tier.</li>" +
-    "<li><strong>Multi Selection:</strong> Click multiple items to drag them together, adding them to a tier, in your clicking order.</li>" +
+    "<li><strong>Multi Selection:</strong> Tap multiple items to drag them together, adding them to a tier, in your clicking order.</li>" +
     "<li><strong>Removing Items:</strong> Long press a tiered item and tap 'Remove' to remove it from that tier. </li>" +
     "<li><strong>Adding Tiers:</strong> Use the Add Tier text field and button at " +
     "the top of the tier list to add a new tier, or press Enter while in the text field.</li>" +
     "<li><strong>Moving Tiers:</strong> Drag a tier onto another tier to move it to its position.</li>" +
     "<li><strong>Editing Tiers:</strong> Tap a tier to edit that tier, such as its name or background colour.</li>" +
-    "<li><strong>Removing Tiers:</strong> Long press a tier and tap 'Remove' to remove it and all of its contents. " +
+    "<li><strong>Removing Tiers:</strong> Long press a tier to remove it and all of its contents. " +
     "Asks for confirmation if there are items in it.</li></ul>");
     $("#modal_inner").append("<p>Use the buttons at the bottom of the screen to save your tier lists, " +
     "open the main menu, view these instructions, and switch between tiering characters, works, and shottypes (Switch Mode).</p>");
