@@ -17,8 +17,8 @@ input[type=button] {
     font-size: 12px;
     margin-bottom: 4px;
 }
-.button_top {
-    margin-bottom: 4px;
+.button_bottom {
+    margin-bottom: 0px;
 }
 .tier_header {
     width: 60px;
