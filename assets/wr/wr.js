@@ -1,9 +1,9 @@
+/*global $ MAX_SCORE getCookie setCookie deleteCookie gameAbbr shottypeAbbr sep fullNameNumber generateTableText
+generateFullNames generateShottypes generateShortNames translateUSDate translateDate translateEADate langCode*/
 var WRs, westScores, missingReplays, seasonsEnabled, datesEnabled,
-    notation = "DMY", language = "English", selected = "", playerSelected = false, skips = [],
+    notation = "DMY", language = "English", selected = "", playerSelected = false,
     all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN",
-    "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC"],
-    windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC"],
-    pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"];
+    "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC"];
 
 function removeChar(string) {
     return string.replace("Reimu", "").replace("Cirno", "").replace("Aya", "").replace("Marisa", "");
@@ -133,6 +133,8 @@ function showWesternRecords(compareWRs, game) {
 }
 
 function appendShottypeHeaders(game, shottypes) {
+    var i;
+
     $("#list_tbody").html("");
 
     if (isPortrait()) {
@@ -210,7 +212,7 @@ function showWRs(event) {
     }
 
     var overall = {}, bestShot = {}, compareWRs = {}, shottypes = [], max = 0, diffKey = "Easy", difficulty,
-    shottype, char, season, wr, score, player, replay, text, count, seasonless, sepScore, bestShotMax;
+    shottype, char, season, wr, score, player, replay, date, text, sepScore, bestShotMax;
 
     $("#list").html("<p id='fullname'></p><p id='seasontoggle'><input id='seasons' type='checkbox'>" +
     "<label id='label_seasons' class='Seasons' for='seasons'></label>" +
@@ -347,14 +349,12 @@ function showPlayerWRs(player) {
         return;
     }
 
-    var cats = [], scoreArray = [], dateArray = [], replayArray = [], sum = 0, game, gamesum, difficulty, shottype, replay, i;
+    var cats = [], scoreArray = [], dateArray = [], replayArray = [], sum = 0, game, score, date, difficulty, shottype, replay, tmp;
 
     playerSelected = true;
     $("#playerlistbody").html("");
 
     for (game in WRs) {
-        gamesum = 0;
-
         for (difficulty in WRs[game]) {
             for (shottype in WRs[game][difficulty]) {
                 if (WRs[game][difficulty][shottype].contains(player)) {
@@ -384,7 +384,6 @@ function showPlayerWRs(player) {
                         replayArray.push("<a href='" + location.origin +
                         "/" + replay + "'>" + tmp[tmp.length - 1] + "</a>");
                     }
-                    gamesum += 1;
                     sum += 1;
                 }
             }
@@ -480,8 +479,6 @@ function setLanguage(event) {
     if (language == newLanguage && notation == newNotation) {
         return;
     }
-
-    var oldLanguage = language, oldNotation = notation, lm = $("#lm").html();
 
     language = newLanguage;
     setCookie("lang", newLanguage);

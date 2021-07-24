@@ -1,16 +1,16 @@
-var WRs, Rubrics, step, global = this, phantasm = true, noExtra = true, noShottypes = true, dsActive = true, language = "English",
+/*global $ getCookie langCode setCookie*/
+var WRs, Rubrics, step, phantasm = true, noExtra = true, noShottypes = true, dsActive = true, language = "English",
     DIFFICULTY = "#difficulty", BOMBS = "#bombs", SCORE = "#score", PERFORMANCE = "#performance", DRCPOINTS = "#drcpoints",
     ERROR = "#error", SHOTTYPE = "#shottype", NOTIFY = "#notify", NB = "#nb", MISSES = "#misses", CHALLENGE = "#challenge",
     NO_EXTRA = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>",
-    SHOTTYPE_MULTIPLIERS = "#shottypeMultipliersTable", DIFF_OPTIONS = "<option>Easy</option>\n<option>Normal</option>\n" +
+    DIFF_OPTIONS = "<option>Easy</option>\n<option>Normal</option>\n" +
     "<option>Hard</option>\n<option>Lunatic</option>\n<option>Extra</option>", LS = "#ls", IS = "#is",
     PHANTASM = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>\n" +
     "<option>Extra</option><option>Phantasm</option>", RELEASES = "#releases", SEASON = "#season", MISSES_LABEL = "#missesLabel",
-    SHOTTYPE_LABEL = "#shottypeLabel", CLEARED = "#cleared", SCENE = "#scene", ROUTE = "#route", BOMBS_LABEL = "#bombsLabel",
+    SHOTTYPE_LABEL = "#shottypeLabel", SCENE = "#scene", ROUTE = "#route",
     MISSES_INPUT = "<label id='missesLabel' for='misses'>Misses</label><input id='misses' type='number' value=0 min=0 max=100>",
-    SCORE_OPTIONS = "<label id='scoreLabel' for='score'>Score</label><input id='score' type='text'>", NB_LABEL = "#nbLabel",
-    RELEASES_LABEL = "#releasesLabel", IS_LABEL = "#isLabel", LS_LABEL = "#lsLabel", SCORE_LABEL = "#scoreLabel",
-    BB_LABEL = "#bbLabel", COUNTDOWN = "#countdown", NO_CHARGE_LABEL = "#ncLabel", DS = "#ds", GAME = "#game", BB = "#bb",
+    SCORE_OPTIONS = "<label id='scoreLabel' for='score'>Score</label><input id='score' type='text'>", SCORE_LABEL = "#scoreLabel",
+    COUNTDOWN = "#countdown", GAME = "#game", BB = "#bb",
     SURV_BUTTON = "#survivalButton", SCORE_BUTTON = "#scoringButton",
     SURV_RUBRICS = "#survivalRubrics", SCORE_RUBRICS = "#scoringRubrics";
 
@@ -442,7 +442,7 @@ function checkValues(event) {
 }
 function checkShottypes(event) {
     var alwaysChange = event.data.alwaysChange, shots = JSON.parse($("#shots").val()), game = $(GAME).val(),
-        challenge = $(CHALLENGE).val(), difficulty = $(DIFFICULTY).val(), shottypes = shots[game], shottypeList = "", shottype, i;
+        difficulty = $(DIFFICULTY).val(), shottypes = shots[game], shottypeList = "", i;
 
     if (game == "HSiFS") {
         shottypes = ["Reimu", "Cirno", "Aya", "Marisa"];
@@ -486,7 +486,7 @@ function drcPoints() {
     }
 
     var game = $(GAME).val(), difficulty = $(DIFFICULTY).val(), challenge = $(CHALLENGE).val(),
-        shottype = $(SHOTTYPE).val(), rubric, season, points;
+        shottype = $(SHOTTYPE).val(), shottypeMultiplier, rubric, season, points;
 
     if (challenge == "Survival") {
         if (!Rubrics.SURV[game]) {
@@ -561,7 +561,7 @@ function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
 }
 function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
     var misses = Number($(MISSES).val()), bombs = Number($(BOMBS).val()), originalBombs = bombs,
-        n = 0, decrement = 0, borderBreaks, route, lastSpells, releases, season, i;
+        n = 0, decrement = 0, borderBreaks, route, lastSpells, releases, drcpoints, i;
 
     $(ERROR).html("");
     n += misses * rubric.miss;
@@ -634,7 +634,7 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
 }
 function mofFormula(difficulty, shottype) {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")),
-        drcpoints = 0, originalScore = score, thresholds, increment, step, i;
+        drcpoints = 0, thresholds, increment, step, i;
 
     if (difficulty != "Easy" && difficulty != "Lunatic" && difficulty != "Extra") {
         $(ERROR).html("<strong class='error'>" + translate("Error: ") + translate("the scoring rubrics for this difficulty are undetermined as of now.") + "</strong>");
@@ -736,19 +736,21 @@ function scoringPoints(rubric, game, difficulty, shottype) {
     return (score >= wr ? rubric.base : Math.round(rubric.base * Math.pow((score / wr), exp)));
 }
 function showRubrics(event) {
-    challenge = event.data.challenge;
+    var challenge = event.data.challenge;
+
     $(challenge == "Survival" ? SURV_RUBRICS : SCORE_RUBRICS).css("display", "block");
     $(challenge == "Survival" ? SURV_BUTTON : SCORE_BUTTON).on("click", {challenge: challenge}, hideRubrics);
     $(challenge == "Survival" ? SURV_BUTTON : SCORE_BUTTON).val(translate("Hide " + challenge + " Rubrics"));
 }
 function hideRubrics(event) {
-    challenge = event.data.challenge;
+    var challenge = event.data.challenge;
+
     $(challenge == "Survival" ? SURV_RUBRICS : SCORE_RUBRICS).css("display", "none");
     $(challenge == "Survival" ? SURV_BUTTON : SCORE_BUTTON).on("click", {challenge: challenge}, showRubrics);
     $(challenge == "Survival" ? SURV_BUTTON : SCORE_BUTTON).val(translate("Show " + challenge + " Rubrics"));
 }
 function setLanguage(event) {
-    newLanguage = event.data.language;
+    var newLanguage = event.data.language;
 
     if (language == newLanguage) {
         return;

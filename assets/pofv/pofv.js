@@ -1,3 +1,4 @@
+/*global $ setCookie getCookie*/
 var language = "English", STATS = {
         "reimu": {
             "speed": 68,
@@ -419,12 +420,8 @@ var language = "English", STATS = {
                 "使得她是游戏中最弱的角色之一。"
         },
     },
-    maxSpeed = 50,
-    minSpeed = 148,
-    maxCharge = 25,
-    minCharge = 45.5,
-    minDelay = 23,
-    maxDelay = 51;
+    MIN_SPEED = 148,
+    MIN_CHARGE = 45.5;
 
 function emptyModal() {
     $("#modal_inner").html("");
@@ -447,10 +444,10 @@ function isMobile() {
 function charInfo() {
     var char = this.title.split(' ')[0].toLowerCase();
 
-    var speed = minSpeed - STATS[char].speed,
-        focus = Math.max(minSpeed - STATS[char].focus, 1.5),
+    var speed = MIN_SPEED - STATS[char].speed,
+        focus = Math.max(MIN_SPEED - STATS[char].focus, 1.5),
         //scope = Math.max(minScope - STATS[char].scope, 3),
-        charge = Math.max(minCharge - STATS[char].charge, 0.3);
+        charge = Math.max(MIN_CHARGE - STATS[char].charge, 0.3);
 
     emptyModal();
 
@@ -490,7 +487,7 @@ function charInfo() {
 }
 
 function setLanguage(event) {
-    newLanguage = event.data.language;
+    var newLanguage = event.data.language;
 
     if (language == newLanguage) {
         return;

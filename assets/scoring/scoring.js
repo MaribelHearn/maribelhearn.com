@@ -1,3 +1,4 @@
+/*global $ sorttable deleteCookie*/
 var WRs,
     tracked = ["EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"],
     untracked = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "PoFV"],
@@ -900,8 +901,8 @@ function sep(number) {
 }
 
 function calc() {
-    var top = {}, averages = {}, shown = {}, total = 0, categories = 0, highest = 0, game, difficulty,
-        id, span, score, shottype, wr, percentage, wrText, average, table, gameTable,
+    var averages = {}, shown = {}, total = 0, categories = 0, highest = 0, game, difficulty,
+        id, score, shottype, wr, percentage, wrText, average,
         topList = "<table id='table'><thead><tr><th>Game + Difficulty</th><th>Shottype / Route</th>" +
         "<th class='sorttable_numeric'>Score</th><th>WR Percentage</th><th>Progress Bar</th><th>WR</th></tr></thead><tbody>",
         precision = parseInt($("#precision").val());
@@ -942,7 +943,6 @@ function calc() {
                 scores[game][difficulty][shottype] = score;
 
                 if (score == wr[0]) {
-                    hack = true;
                     score -= 1;
                 }
                 if (wr[0] === 0) {
@@ -1108,7 +1108,9 @@ $(document).ready(function () {
         if (localStorage.hasOwnProperty("saveScoringData") || localStorage.hasOwnProperty("saveData")) {
             $("#toggleData").prop("checked", true);
         }
-    } catch (err) {}
+    } catch (e) {
+        // do nothing
+    }
 
     $("#calc").on("click", calc);
     $("#reset").on("click", reset);

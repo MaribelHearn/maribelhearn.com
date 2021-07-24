@@ -1,6 +1,7 @@
+/*global $ html2canvas deleteCookie*/
 var games = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "INFinalA",
     "INFinalB", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"],
-    innerHeight = window.innerHeight, vals = {}, originalContent, completions, na, i;
+    vals = {}, originalContent, completions, na, i;
 
 for (i = 0; i < games.length; i++) {
     vals[games[i]] = {
@@ -356,10 +357,6 @@ function marginLeft() {
     }
 }
 
-function backgroundColour() {
-    return localStorage.theme && localStorage.theme == "dark" ? "#202020" : "white";
-}
-
 function cleanupRendering() {
     if (screen.width > 800) {
         $("#ack").css("display", "block");
@@ -551,7 +548,7 @@ function reset() {
 }
 
 function setProgress() {
-    var category = this.id, val = this.value, game, difficulty, tmp;
+    var category = this.id, val = this.value, game, difficulty;
 
     difficulty = category.match(/Easy|Normal|Hard|Lunatic|Extra|Phantasm/);
     game = category.replace(difficulty, "");
