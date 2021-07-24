@@ -1,4 +1,5 @@
-var MAX_NAME_LENGTH = 30,
+var MAX_NUMBER_OF_TIERS = 100,
+    MAX_NAME_LENGTH = 30,
     categories = {},
     gameCategories = {},
     shotCategories = {},
@@ -66,7 +67,6 @@ var MAX_NAME_LENGTH = 30,
     gameOrder = [],
     shotOrder = [],
     multiSelection = [],
-    maxTiers = 20,
     following = "",
     tierView = false,
     smallPicker = false,
@@ -726,8 +726,8 @@ function addTier(event) {
         tierNum += 1;
     }
 
-    if (tierNum >= maxTiers) {
-        printMessage("<strong class='error'>Error: the number of tiers may not exceed " + maxTiers + ".</strong>");
+    if (tierNum >= MAX_NUMBER_OF_TIERS) {
+        printMessage("<strong class='error'>Error: the number of tiers may not exceed " + MAX_NUMBER_OF_TIERS + ".</strong>");
         return;
     }
 
