@@ -1,3 +1,6 @@
+/*global detect*/
+var head = document.getElementsByTagName("head")[0], done = false;
+
 function expandCountries() {
     var elements = document.getElementsByTagName('*'), i;
 
@@ -22,7 +25,8 @@ function set() {
 }
 
 function dark() {
-    style = document.createElement("link");
+    var style = document.createElement("link");
+
     style.id = "dark_theme";
     style.href = (location.host == "maribelhearn.com" ? "https://maribelhearn.com/" : "") + "../assets/shared/dark.css";
     style.type = "text/css";
@@ -71,12 +75,6 @@ function theme() {
     }
 }
 
-function url(ip) {
-    var key = document.getElementById("key").value;
-
-    return "http://api.ipinfodb.com/v3/ip-city/?key=" + key  + "&ip=" + ip + "&format=json";
-}
-
 function userAgent() {
     var ua = detect.parse(navigator.userAgent);
 
@@ -87,11 +85,10 @@ function userAgent() {
 }
 
 function addEventListeners() {
+    var hy = document.getElementById("hy"), expand = document.getElementById("expand");
+
     document.getElementById("setcookie").addEventListener("click", set);
-    head = document.getElementsByTagName("head")[0];
     window.addEventListener("load", ready);
-    expand = document.getElementById("expand");
-    hy = document.getElementById("hy");
     done = false;
 
     if (expand) {
