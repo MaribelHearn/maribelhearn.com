@@ -48,6 +48,7 @@
             case 'South Korea': return 'Korea';
             case 'Guadeloupe': return 'France';
             case 'Croatia': return 'Croatian';
+            case 'Macao': return 'Macau';
             default: return str_replace(' ', '-', $country);
         }
     }
