@@ -1,4 +1,4 @@
-/*global $ html2canvas getCookie deleteCookie */
+/*global $ html2canvas getCookie deleteCookie*/
 var MAX_NUMBER_OF_TIERS = 100,
     MAX_NAME_LENGTH = 30,
     categories = {},
@@ -625,7 +625,7 @@ function changeMultiSelectionTo(tierNum, pos, multi) {
 function removeFromTier(item, tierNum, multi) {
     var tierList = getCurrentTierList(), pos, counter, tmp;
 
-    if (item === "" || getTierNumOf(item) !== tierNum) {
+    if (!item || getTierNumOf(item) !== tierNum) {
         return;
     }
 
@@ -776,10 +776,10 @@ function moveTierTo(sourceTierNum, targetTierNum) {
 }
 
 function removeCharacters(tierNum, noDisplay) {
-    var tierList = getCurrentTierList(), lastIndex = tierList[tierNum].chars.length - 1;
+    var tierList = getCurrentTierList();
 
     while (tierList[tierNum].chars.length > 0) {
-        removeFromTier(tierList[tierNum].chars[lastIndex], tierNum);
+        removeFromTier(tierList[tierNum].chars[tierList[tierNum].chars.length - 1], tierNum);
     }
 
     if (!noDisplay) {
