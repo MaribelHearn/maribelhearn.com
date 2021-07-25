@@ -10,10 +10,7 @@ $css = array(
     '../' . $page . '/' . ($page == 'index' ? 'main' : $page) . $min . '.css'
 );
 if ($page == 'tiers') {
-    require_once 'mobile_detect.php';
-    $detect_device = new Mobile_Detect;
-    $is_mobile = $detect_device -> isMobile();
-    if ($is_mobile) {
+    if ($_GET['mobile']) {
         array_push($css, '../tiers/tiers_mobile' . $min . '.css');
         array_push($css, '../tiers/sprites_mobile' . $min . '.css');
     } else {

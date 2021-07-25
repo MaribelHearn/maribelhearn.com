@@ -17,6 +17,7 @@ $page = $_GET['page'];
 $js = array();
 if (in_array($page, $canvas)) {
     array_push($js, 'html2canvas' . $min . '.js');
+    array_push($js, 'polyfill_promise' . $min . '.js');
 }
 if (in_array($page, $jquery)) {
     array_push($js, 'jquery' . $min . '.js');
@@ -27,8 +28,7 @@ if (in_array($page, $utils)) {
 if (in_array($page, $sorttable)) {
     array_push($js, 'sorttable' . $min . '.js');
 }
-if ($page == 'tiers') {
-    array_push($js, 'rgbcolor' . $min . '.js');
+if ($page == 'tiers' && $_GET['mobile']) {
     array_push($js, 'polyfill_dragdrop' . $min . '.js');
 } else if ($page == 'error') {
     array_push($js, 'https://maribelhearn.com/assets/shared/dark' . $min . '.js');
