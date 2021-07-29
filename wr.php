@@ -321,7 +321,7 @@
                                         }
                                         echo '<td rowspan="4">' . $score . '<br>by <em>' . $shots[$shot][1] .
                                         '</em><span class="dimgrey"><br><span class="datestring_game"' .
-                                        '>' . date_tl($date, $notation) . '</span></span></td>';
+                                        '>' . date_tl($shots[$shot][2], $notation) . '</span></span></td>';
                                     }
                                 } else {
                                     if ($score >= $MAX_SCORE) {
