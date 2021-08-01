@@ -1326,13 +1326,18 @@ function exportText() {
 
 function fileName() {
     var date = new Date(),
+        name = "touhou_tier_list",
         month = (date.getMonth() + 1).toLocaleString("en-US", {minimumIntegerDigits: 2}),
         day = (date.getDate()).toLocaleString("en-US", {minimumIntegerDigits: 2}),
         hours = (date.getHours()).toLocaleString("en-US", {minimumIntegerDigits: 2}),
         minutes = (date.getMinutes()).toLocaleString("en-US", {minimumIntegerDigits: 2}),
         seconds = (date.getSeconds()).toLocaleString("en-US", {minimumIntegerDigits: 2});
 
-    return "touhou_tier_list_" + date.getFullYear() + "_" + month +
+    if (settings[settings.sort].tierListName !== "") {
+        name = settings[settings.sort].tierListName.toLowerCase().replace(/\s/g, '_');
+    }
+
+    return name + "_" + date.getFullYear() + "_" + month +
     "_" + day + "_" + hours + "_" + minutes + "_" + seconds + ".png";
 }
 
