@@ -242,22 +242,6 @@ table {
     }
 }
 @media only screen and (max-width: 800px) {
-    .dropdowns {
-        width: 100%;
-    }
-    .nav_left {
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 10px;
-        width: 100%;
-    }
-    .nav_right {
-        display: none;
-    }
-    .wrap {
-        margin-left: 0;
-        margin-right: 0;
-    }
     #wrap {
         font-size: 11px;
     }

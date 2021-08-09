@@ -194,22 +194,6 @@ table {
         margin-bottom: 15px;
         margin-top: 15px;
     }
-    .dropdowns {
-        width: 100%;
-    }
-    .nav_left {
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 10px;
-        width: 100%;
-    }
-    .nav_right {
-        display: none;
-    }
-    .wrap {
-        margin-left: 0;
-        margin-right: 0;
-    }
     #wrap {
         font-size: 11px;
     }
