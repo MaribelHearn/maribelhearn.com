@@ -406,9 +406,6 @@ table, th, td {
     #wrap {
         font-size: 11px;
     }
-    #ext_mobile {
-        display: inline-block;
-    }
     #description {
         padding-left: 25px;
         padding-right: 25px;

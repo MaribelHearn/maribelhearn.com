@@ -356,9 +356,6 @@ ol > li {
         margin-left: 0;
         margin-right: 0;
     }
-    #ext_mobile {
-        display: inline-block;
-    }
     #modal_inner {
         height: 80%;
         width: 90%;

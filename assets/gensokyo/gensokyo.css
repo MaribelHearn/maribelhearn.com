@@ -143,9 +143,6 @@ form {
     #wrap {
         font-size: 11px;
     }
-    #ext_mobile {
-        display: inline-block;
-    }
     #replays {
         overflow-x: scroll;
     }
