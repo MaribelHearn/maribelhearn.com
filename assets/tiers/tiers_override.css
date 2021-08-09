@@ -1,3 +1,8 @@
 a:link.dropdown_button {
     color: #a0a0a0;
 }
+@media screen and (max-width: 1100px) {
+    #wrap {
+        font-size: 12px;
+    }
+}

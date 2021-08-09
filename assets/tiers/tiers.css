@@ -281,7 +281,7 @@ li {
     body {
         background: #1b232e;
     }
-    #wrap, #show, #characters, #modal_inner {
+    #show, #characters, #modal_inner {
         font-size: 12px;
     }
 }

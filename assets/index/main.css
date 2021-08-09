@@ -157,17 +157,11 @@ table {
         margin-left: 10%;
         margin-right: 10%;
     }
-    #wrap {
-        font-size: 11px;
-    }
     #avatar {
         width: 95%;
     }
 }
 @media only screen and (max-width: 800px) {
-    #wrap {
-        font-size: 11px;
-    }
     #page_links {
         display: none;
     }

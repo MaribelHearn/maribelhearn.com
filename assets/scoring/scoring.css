@@ -235,16 +235,10 @@ table.center {
         margin-left: 8%;
         margin-right: 8%;
     }
-    #wrap {
-        font-size: 11px;
-    }
 }
 @media only screen and (max-width: 910px) {
     h1 {
         margin-bottom: 15px;
-    }
-    #wrap {
-        font-size: 11px;
     }
     #ack {
         display: none;

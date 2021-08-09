@@ -370,9 +370,6 @@ table, th, td {
         margin-left: 8%;
         margin-right: 8%;
     }
-    #wrap {
-        font-size: 11px;
-    }
     #description {
         padding-left: 50px;
         padding-right: 50px;
@@ -386,9 +383,6 @@ table, th, td {
     h2 {
         margin-bottom: 10px;
         margin-top: 5px;
-    }
-    #wrap {
-        font-size: 11px;
     }
     #description {
         padding-left: 25px;

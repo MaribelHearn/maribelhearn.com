@@ -71,9 +71,6 @@ div > div > p {
         margin-left: 10%;
         margin-right: 10%;
     }
-    #wrap {
-        font-size: 11px;
-    }
     .jargon {
         width: auto;
     }
@@ -88,8 +85,5 @@ div > div > p {
     }
     .jargon {
         width: auto;
-    }
-    #wrap {
-        font-size: 11px;
     }
 }
