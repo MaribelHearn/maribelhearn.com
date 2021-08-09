@@ -27,6 +27,9 @@ if (isset($_COOKIE['theme']) && $page != 'tiers') {
         array_push($css, 'dark' . $min . '.css');
     }
 }
+if ($page == 'tiers') {
+    array_push($css, '../tiers/tiers_override.css');
+}
 foreach ($css as $css_file) {
     $css_content = file_get_contents($css_file);
     echo $css_content;
