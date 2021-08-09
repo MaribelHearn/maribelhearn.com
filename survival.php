@@ -3,8 +3,11 @@
 <?php
 	include 'assets/shared/shared.php';
 	include 'assets/survival/survival.php';
+    require_once 'assets/shared/mobile_detect.php';
 	hit(basename(__FILE__));
 	$page = str_replace('.php', '', basename(__FILE__));
+    $detect_device = new Mobile_Detect;
+    $is_mobile = $detect_device -> isMobile();
 ?>
 
 	<head>
@@ -14,23 +17,23 @@
 		<meta name='description' content='Generate a table that summarises your Touhou survival progress.'>
         <meta name='keywords' content='touhou, touhou project, survival, 1cc, 1ccs, clear, clears, progress, progress table'>
 		<link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
-        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=survival'>
+        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=<?php echo $page . '&mobile=' . $is_mobile ?>'>
 		<link rel='icon' type='image/x-icon' href='assets/survival/survival.ico'>
         <script src='assets/shared/js_concat.php?page=survival' defer></script>
 	</head>
 
     <body>
-		<nav>
+		<nav data-html2canvas-ignore>
 			<div id='nav' class='wrap'><?php echo navbar($page) ?></div>
 		</nav>
         <main>
     		<div id='wrap' class='wrap'>
-                <p id='ack'>This background image<br id='ack_br'>
+                <p id='ack' data-html2canvas-ignore>This background image<br id='ack_br'>
                 was drawn by <a href='https://www.pixiv.net/member.php?id=759506'>windtalker</a></p>
-                <span id='hy_container'><span id='hy'></span>
+                <span id='hy_container' data-html2canvas-ignore><span id='hy'></span>
 	            	<span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
         		</span>
-                <div id='content'>
+                <div id='content' data-html2canvas-ignore>
         			<h1>Survival Progress Table Generator</h1>
         			<?php
         				if (!empty($_GET['redirect'])) {
@@ -74,9 +77,9 @@
                         <input id='fillAll' type='button' value='Fill All'>
                     </p>
                 </div>
-    			<div id='dummy'><div id='dummy_sub'></div></div>
+    			<div id='dummy' data-html2canvas-ignore><div id='dummy_sub'></div></div>
     			<div id='container'>
-    	            <table id='survival' class='nomargin'>
+    	            <table id='survival'>
                         <caption id='legend'>
 							<span class='legend clear'></span> 1cc
 							<span class='legend nm'></span> NM
@@ -132,13 +135,13 @@
                         </tbody>
     	        	</table>
     			</div>
-                <div id='bottom'>
+                <div id='bottom' data-html2canvas-ignore>
                     <p><label for='toggleData'>Save Data</label><input id='toggleData' type='checkbox'></p>
         			<p><input id='apply' type='button' value='Apply'><input id='reset' type='button' value='Reset'></p>
                     <p id='ack_mobile'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=759506'>windtalker</a>.</p>
                 </div>
     		</div>
-            <div id='results'>
+            <div id='results' data-html2canvas-ignore>
     			<div id='modal_inner'>
     				<h2>Progress Table</h2>
     				<p id='rendering_message'>Rendering image...</p>

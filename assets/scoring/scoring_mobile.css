@@ -1,0 +1,30 @@
+h1 {
+    margin-top: 10px;
+    font-size: 36px;
+}
+h2 {
+    font-size: 24px;
+}
+input {
+    font-size: 11px;
+}
+input[type=text] {
+    width: 65px;
+    height: 10px;
+}
+tr {
+    display: block;
+}
+th {
+    display: none;
+}
+td.break {
+    float: left;
+}
+.label {
+    display: inline;
+    font-weight: bold;
+}
+#hy_container {
+    float: none;
+}

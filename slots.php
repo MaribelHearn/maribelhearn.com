@@ -2,8 +2,11 @@
 <html lang='en'>
 <?php
     include 'assets/shared/shared.php';
+    require_once 'assets/shared/mobile_detect.php';
     hit(basename(__FILE__));
 	$page = str_replace('.php', '', basename(__FILE__));
+    $detect_device = new Mobile_Detect;
+    $is_mobile = $detect_device -> isMobile();
 ?>
 
     <head>
@@ -13,7 +16,7 @@
         <meta name='description' content='Touhou randomizer based on Touhou Click and Drag Game, with customisation options.'>
         <meta name='keywords' content='touhou, touhou project, slots, slot machine, waifu'>
         <link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
-        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=slots'>
+        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=<?php echo $page . '&mobile=' . $is_mobile ?>'>
 		<link rel='icon' type='image/x-icon' href='assets/slots/slots.ico'>
         <script src='assets/shared/js_concat.php?page=slots' defer></script>
     </head>

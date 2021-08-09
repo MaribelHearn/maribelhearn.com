@@ -1,0 +1,29 @@
+h1 {
+    margin-top: 10px;
+    font-size: 36px;
+}
+h2 {
+    font-size: 24px;
+}
+ul {
+    margin: 0px 0% 0px;
+}
+li {
+    margin: 0px;
+}
+.pages_left, .pages_right {
+    float: none;
+    width: 100%;
+}
+#hy_container {
+    float: none;
+}
+#avatar, #map, #tiers {
+    width: 95%;
+}
+#desktop_hover {
+    display: none;
+}
+#ack_mobile {
+    margin-top: 15px;
+}

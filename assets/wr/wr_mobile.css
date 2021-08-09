@@ -1,0 +1,56 @@
+.full_name {
+    display: none;
+}
+#layouttoggle {
+    display: none;
+}
+#hy_container {
+    float: none;
+}
+#languages {
+    margin-top: 10px;
+    width: 100%;
+}
+@media only screen and (orientation: portrait) {
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    .player {
+        font-style: italic;
+    }
+    #overall, #recent {
+        display: none;
+    }
+    #overallm, #recentm {
+        display: block;
+    }
+    #overallm p {
+        margin: 2px;
+    }
+    #overall_link, #overall_linkn, #recent_link, #recent_linkn {
+        display: none;
+    }
+    #overall_linkm, #overall_linkmn, #recent_linkm, #recent_linkmn {
+        display: table-row;
+    }
+}
+@media only screen and (orientation: landscape) {
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    .PCBt {
+        font-size: 9px;
+    }
+    #overall_link, #overall_linkn, #recent_link, #recent_linkn {
+        display: table-row;
+    }
+    #overall_linkm, #overall_linkmn, #recent_linkm, #recent_linkmn {
+        display: none;
+    }
+}

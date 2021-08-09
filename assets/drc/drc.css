@@ -185,23 +185,3 @@ input[type=number] {
         display: inline-block;
     }
 }
-@media only screen and (((min-width: 320px) and (max-width: 800px) and (orientation: portrait)) or ((min-width: 480px) and (max-width: 640px) and (orientation: landscape))) {
-    h1 {
-        font-size: 36px;
-    }
-    h2 {
-        font-size: 24px;
-    }
-    #hy_container {
-        float: none;
-    }
-    #languages {
-        margin-top: 10px;
-        width: 100%;
-    }
-}
-@media only screen and (min-width: 320px) and (max-width: 800px) and (orientation: portrait) {
-    #scoringRubrics {
-        overflow-x: scroll;
-    }
-}

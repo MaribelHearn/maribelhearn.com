@@ -13,8 +13,11 @@
     include 'assets/shared/shared.php';
     include 'assets/shared/tl.php';
     include 'assets/lnn/lnn.php';
+    require_once 'assets/shared/mobile_detect.php';
     hit(basename(__FILE__));
 	$page = str_replace('.php', '', basename(__FILE__));
+    $detect_device = new Mobile_Detect;
+    $is_mobile = $detect_device -> isMobile();
 ?>
 
 	<head>
@@ -24,7 +27,7 @@
 		<meta name='description' content='List of Touhou Lunatic no miss no bomb (LNN) runs, clears that never die or bomb.'>
         <meta name='keywords' content='touhou, touhou project, 東方, 东方, lunatic, nmnb, lnn, lnns, no miss no bomb, no deaths no bombs'>
         <link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
-        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=lnn'>
+        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=<?php echo $page . '&mobile=' . $is_mobile ?>'>
 		<link rel='icon' type='image/x-icon' href='assets/lnn/lnn.ico'>
         <script src='assets/shared/js_concat.php?page=lnn' defer></script>
 	</head>

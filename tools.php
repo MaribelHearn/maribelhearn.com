@@ -20,8 +20,11 @@
 <?php
 	include 'assets/shared/shared.php';
 	include 'assets/tools/tools.php';
+    require_once 'assets/shared/mobile_detect.php';
 	hit(basename(__FILE__));
 	$page = str_replace('.php', '', basename(__FILE__));
+    $detect_device = new Mobile_Detect;
+    $is_mobile = $detect_device -> isMobile();
 ?>
 
 	<head>
@@ -31,7 +34,7 @@
 		<meta name='description' content='Download links for Touhou patches and tools, including Vpatch, SpoilerAL, boss rushes and other practice utilities.'>
         <meta name='keywords' content='touhou, touhou project, 東方, 东方, tool, tools, patch, patches, scorefile, score file, scorefiles, score files, practice, spoileral, boss rush, bossrush, ultra, vpatch'>
 		<link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
-        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=tools'>
+        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=<?php echo $page . '&mobile=' . $is_mobile ?>'>
 		<link rel='icon' type='image/x-icon' href='assets/tools/tools.ico'>
         <script src='assets/shared/js_concat.php?page=tools' defer></script>
 	</head>

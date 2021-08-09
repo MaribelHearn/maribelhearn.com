@@ -1,0 +1,17 @@
+h1 {
+    font-size: 36px;
+}
+h2 {
+    font-size: 24px;
+}
+#hy_container {
+    float: none;
+}
+#modal {
+    padding-top: 10%;
+}
+@media only screen and (orientation: portrait) {
+    #modal_inner {
+        max-height: 75%;
+    }
+}
