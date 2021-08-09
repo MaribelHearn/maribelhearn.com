@@ -130,9 +130,6 @@ table, tr, th, td {
     #wrap, #wrap p {
         font-size: 11px;
     }
-    #ext_mobile {
-        display: inline-block;
-    }
     #boxart {
         width: 140px;
         height: 140px;

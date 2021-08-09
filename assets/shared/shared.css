@@ -234,4 +234,7 @@ a:visited.dropdown_button {
         margin-top: 10px;
         width: 100%;
     }
+    #ext_mobile {
+        display: inline-block;
+    }
 }

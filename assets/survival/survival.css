@@ -223,9 +223,6 @@ input[type=button] {
     #wrap, #modal_inner {
         font-size: 11px;
     }
-    #ext_mobile {
-        display: inline-block;
-    }
     #container, #dummy {
         overflow-x: scroll;
         overflow-y: hidden;

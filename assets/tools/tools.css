@@ -142,9 +142,6 @@ table, tr, th, td {
     #wrap {
         font-size: 11px;
     }
-    #ext_mobile {
-        display: inline-block;
-    }
     #ack {
         display: none;
     }
