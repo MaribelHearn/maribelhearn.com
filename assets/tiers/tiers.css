@@ -18,15 +18,9 @@ a:visited {
     color: #ff69b4;
 }
 h1 {
-    font-family: 'Felipa';
-    font-size: 48px;
     margin: 15px;
 }
-h2 {
-    font-family: 'Felipa';
-    font-size: 36px;
-}
-h3, caption {
+caption {
     font-family: 'Felipa';
     font-size: 28px;
 }

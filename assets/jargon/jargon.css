@@ -5,14 +5,6 @@ body {
 div > div > p {
     margin: 4px;
 }
-h1 {
-    font-family: 'Felipa';
-    font-size: 48px;
-}
-h2 {
-    font-family: 'Felipa';
-    font-size: 36px;
-}
 .border {
     margin-left: auto;
     margin-right: auto;
@@ -70,12 +62,10 @@ h2 {
 @media only screen and (min-width: 800px) and (max-width: 1100px) {
     h1 {
         margin-bottom: 15px;
-        font-size: 44px;
     }
     h2 {
         margin-bottom: 15px;
         margin-top: 10px;
-        font-size: 32px;
     }
     .wrap {
         margin-left: 10%;
@@ -91,12 +81,10 @@ h2 {
 @media only screen and (max-width: 800px) {
     h1 {
         margin-bottom: 15px;
-        font-size: 44px;
     }
     h2 {
         margin-bottom: 15px;
         margin-top: 10px;
-        font-size: 32px;
     }
     .jargon {
         width: auto;

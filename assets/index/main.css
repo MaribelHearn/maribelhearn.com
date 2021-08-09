@@ -3,23 +3,17 @@ body {
     background-size: cover;
 }
 h1 {
-    font-family: 'Felipa';
     margin-bottom: 15px;
-    font-size: 48px;
     clear: both;
 }
 h2 {
-    font-family: 'Felipa';
     margin-bottom: 0px;
     margin-top: 15px;
-    font-size: 36px;
     clear: both;
 }
 h3 {
-    font-family: 'Felipa';
     margin-bottom: 0px;
     margin-top: 15px;
-    font-size: 24px;
 }
 ul {
     margin: 0px 10% 0px;
@@ -159,12 +153,6 @@ table {
     }
 }
 @media only screen and (min-width: 800px) and (max-width: 1100px) {
-    h1 {
-        font-size: 44px;
-    }
-    h2 {
-        font-size: 32px;
-    }
     .wrap {
         margin-left: 10%;
         margin-right: 10%;
@@ -177,12 +165,6 @@ table {
     }
 }
 @media only screen and (max-width: 800px) {
-    h1 {
-        font-size: 44px;
-    }
-    h2 {
-        font-size: 32px;
-    }
     .dropdowns {
         width: 100%;
     }

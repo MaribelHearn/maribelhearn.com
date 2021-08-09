@@ -5,6 +5,18 @@
        url('../fonts/Felipa-Regular.woff') format('woff'),
        url('../fonts/Felipa-Regular.ttf') format('ttf');
 }
+h1 {
+    font-family: Felipa;
+    font-size: 48px;
+}
+h2 {
+    font-family: Felipa;
+    font-size: 36px;
+}
+h3 {
+    font-family: Felipa;
+    font-size: 24px;
+}
 div:not(.dropdown):not(.dropdown_content):not(.nav_right):not(.dark_bg) {
     background-color: #fff;
     margin-bottom: 5px;
@@ -199,8 +211,27 @@ a:visited.dropdown_button {
 #hy_container:hover .tooltip {
     visibility: visible;
 }
-@media only screen and (((max-width: 800px) and (orientation: portrait)) or ((max-width: 640px) and (orientation: landscape))) {
-    .dropdown_content {
-        margin-top: 5px;
+@media only screen and (max-width: 800px) {
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    li {
+        text-align: left;
+    }
+    ul, ol {
+        padding-left: 0px;
+    }
+    #hy_container {
+        float: none;
+    }
+    #languages {
+        margin-top: 10px;
+        width: 100%;
     }
 }

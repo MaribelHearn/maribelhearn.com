@@ -2,14 +2,6 @@ body {
     background: url('../trs/trs.jpg') center no-repeat fixed;
     background-size: cover;
 }
-h1 {
-    font-family: 'Felipa';
-    font-size: 48px;
-}
-h2 {
-    font-family: 'Felipa';
-    font-size: 36px;
-}
 p {
     margin: 10px;
 }
@@ -146,6 +138,9 @@ textarea {
     .wrap {
         margin-left: 0;
         margin-right: 0;
+    }
+    #wrap {
+        font-size: 11px;
     }
     #ack {
         display: none;

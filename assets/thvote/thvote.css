@@ -2,18 +2,6 @@ body {
     background: url('../thvote/thvote.jpg') center no-repeat fixed;
     background-size: cover;
 }
-h1 {
-    font-family: 'Felipa';
-    font-size: 48px;
-}
-h2 {
-    font-family: 'Felipa';
-    font-size: 36px;
-}
-h3 {
-    font-family: 'Felipa';
-    font-size: 24px;
-}
 table {
     overflow: auto;
     margin-left: auto;
@@ -234,13 +222,11 @@ table {
 @media only screen and (min-width: 800px) and (max-width: 1100px) {
     h1 {
         margin-bottom: 15px;
-        font-size: 44px;
         clear: both;
     }
     h2 {
         margin-bottom: 15px;
         margin-top: 10px;
-        font-size: 32px;
     }
     .wrap {
         margin-left: 0;
@@ -256,12 +242,6 @@ table {
     }
 }
 @media only screen and (max-width: 800px) {
-    h1 {
-        font-size: 36px;
-    }
-    h2 {
-        font-size: 24px;
-    }
     .dropdowns {
         width: 100%;
     }
