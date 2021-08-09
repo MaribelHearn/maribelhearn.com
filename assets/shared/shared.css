@@ -227,6 +227,22 @@ a:visited.dropdown_button {
     ul, ol {
         padding-left: 0px;
     }
+    .dropdowns {
+        width: 100%;
+    }
+    .nav_left {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .nav_right {
+        display: none;
+    }
+    .wrap {
+        margin-left: 0;
+        margin-right: 0;
+    }
     #hy_container {
         float: none;
     }

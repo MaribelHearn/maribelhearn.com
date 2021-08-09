@@ -90,9 +90,6 @@ table, tr, th, td {
     h2 {
         font-size: 32px;
     }
-    .dropdown_content p {
-        font-size: 14px;
-    }
     .wrap {
         margin-left: 13%;
         margin-right: 13%;
@@ -107,25 +104,6 @@ table, tr, th, td {
     }
     h2 {
         font-size: 32px;
-    }
-    .dropdowns {
-        width: 100%;
-    }
-    .dropdown_content p {
-        font-size: 14px;
-    }
-    .nav_left {
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 10px;
-        width: 100%;
-    }
-    .nav_right {
-        display: none;
-    }
-    .wrap {
-        margin-left: 0;
-        margin-right: 0;
     }
     #wrap, #wrap p {
         font-size: 11px;

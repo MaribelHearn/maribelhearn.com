@@ -337,25 +337,6 @@ ol > li {
     }
 }
 @media only screen and (max-width: 800px) {
-    ol > li {
-        text-align: left;
-    }
-    .dropdowns {
-        width: 100%;
-    }
-    .nav_left {
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 10px;
-        width: 100%;
-    }
-    .nav_right {
-        display: none;
-    }
-    .wrap {
-        margin-left: 0;
-        margin-right: 0;
-    }
     #modal_inner {
         height: 80%;
         width: 90%;
