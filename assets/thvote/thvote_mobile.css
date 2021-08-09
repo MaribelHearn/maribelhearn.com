@@ -6,9 +6,6 @@
         overflow-x: scroll;
         overflow-y: hidden;
     }
-    #hy_container {
-        float: none;
-    }
 }
 @media only screen and (orientation: landscape) {
     #hy {

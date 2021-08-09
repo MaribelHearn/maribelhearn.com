@@ -12,11 +12,8 @@
 <?php
 	include 'assets/shared/shared.php';
 	include 'assets/twc/twc.php';
-    require_once 'assets/shared/mobile_detect.php';
 	hit(basename(__FILE__));
 	$page = str_replace('.php', '', basename(__FILE__));
-    $detect_device = new Mobile_Detect;
-    $is_mobile = $detect_device -> isMobile();
 ?>
 
     <head>
@@ -26,7 +23,7 @@
         <meta name='description' content='Main webpage for Touhou World Cup, containing the schedule, rules and other relevant information.'>
         <meta name='keywords' content='touhou, touhou project, 東方, 东方, Тохо, world cup, touhou world cup, twc, 2020, 2021, competition, scoring, survival, tournament'>
 		<link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
-        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=<?php echo $page . '&mobile=' . $is_mobile ?>'>
+        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=<?php echo $page ?>'>
 		<link rel='icon' type='image/x-icon' href='assets/twc/twc.ico'>
         <script src='assets/shared/js_concat.php?page=twc' defer></script>
     </head>

@@ -4,20 +4,7 @@
 #layouttoggle {
     display: none;
 }
-#hy_container {
-    float: none;
-}
-#languages {
-    margin-top: 10px;
-    width: 100%;
-}
 @media only screen and (orientation: portrait) {
-    h1 {
-        font-size: 36px;
-    }
-    h2 {
-        font-size: 24px;
-    }
     .player {
         font-style: italic;
     }
@@ -38,12 +25,6 @@
     }
 }
 @media only screen and (orientation: landscape) {
-    h1 {
-        font-size: 36px;
-    }
-    h2 {
-        font-size: 24px;
-    }
     .PCBt {
         font-size: 9px;
     }

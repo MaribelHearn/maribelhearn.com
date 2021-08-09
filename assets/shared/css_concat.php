@@ -10,6 +10,7 @@ $css = array(
     '../' . $page . '/' . ($page == 'index' ? 'main' : $page) . $min . '.css'
 );
 if ($_GET['mobile']) {
+    array_push($css, 'shared_mobile' . $min . '.css');
     array_push($css, '../' . $page . '/' . ($page == 'index' ? 'main' : $page) . '_mobile' . $min . '.css');
 }
 if ($page == 'tiers') {

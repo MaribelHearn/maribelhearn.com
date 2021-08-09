@@ -5,14 +5,6 @@ body {
 table, td, th, tr {
     border: 1px solid black;
 }
-h1 {
-    font-family: 'Felipa';
-    font-size: 48px;
-}
-h2 {
-    font-family: 'Felipa';
-    font-size: 36px;
-}
 li {
     list-style-position: inside;
 }
@@ -136,12 +128,10 @@ input[type=number] {
     h1 {
         margin-bottom: 15px;
         margin-top: 0px;
-        font-size: 44px;
     }
     h2 {
         margin-bottom: 10px;
         margin-top: 5px;
-        font-size: 32px;
     }
     .wrap {
         margin-left: 8%;
@@ -155,12 +145,10 @@ input[type=number] {
     h1 {
         margin-bottom: 15px;
         margin-top: 0px;
-        font-size: 44px;
     }
     h2 {
         margin-bottom: 10px;
         margin-top: 5px;
-        font-size: 32px;
     }
     .dropdowns {
         width: 100%;

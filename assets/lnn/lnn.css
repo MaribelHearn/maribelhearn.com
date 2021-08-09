@@ -2,14 +2,6 @@ body {
     background: url('../lnn/lnn.jpg') bottom no-repeat fixed;
     background-size: cover;
 }
-h1 {
-    font-family: 'Felipa';
-    font-size: 48px;
-}
-h2 {
-    font-family: 'Felipa';
-    font-size: 36px;
-}
 table {
     margin-left: auto;
     margin-right: auto;
@@ -248,10 +240,6 @@ table, th, td {
 @media only screen and (min-width: 800px) and (max-width: 1100px) {
     h1 {
         margin-top: 15px;
-        font-size: 44px;
-    }
-    h2 {
-        font-size: 32px;
     }
     .wrap {
         margin-left: 5%;
@@ -265,12 +253,10 @@ table, th, td {
     h1 {
         margin-bottom: 15px;
         margin-top: 0px;
-        font-size: 44px;
     }
     h2 {
         margin-bottom: 10px;
         margin-top: 5px;
-        font-size: 32px;
     }
     .dropdowns {
         width: 100%;

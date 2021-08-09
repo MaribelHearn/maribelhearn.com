@@ -6,12 +6,6 @@
     table.stats > td {
         width: 100px;
     }
-    h1 {
-        font-size: 36px;
-    }
-    h2 {
-        font-size: 24px;
-    }
     th {
         width: 60px;
         height: 60px;
@@ -30,9 +24,6 @@
     }
     .art {
         display: none;
-    }
-    #hy_container {
-        float: none;
     }
     #marisa {
         background-position: -60px 0px;
@@ -88,12 +79,6 @@
     table.stats > td {
         width: 200px;
     }
-    h1 {
-        font-size: 36px;
-    }
-    h2 {
-        font-size: 24px;
-    }
     th {
         font-size: 24px;
         width: 75px;
@@ -108,8 +93,5 @@
     }
     .art {
         display: none;
-    }
-    #hy_container {
-        float: none;
     }
 }

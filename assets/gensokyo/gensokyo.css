@@ -2,14 +2,6 @@ body {
     background: url('../gensokyo/gensokyo.jpg') center no-repeat fixed;
     background-size: cover;
 }
-h1 {
-    font-family: 'Felipa';
-    font-size: 48px;
-}
-h2 {
-    font-family: 'Felipa';
-    font-size: 36px;
-}
 p {
     margin: 10px;
 }
@@ -66,23 +58,6 @@ form {
 #next {
     float: right;
 }
-#hy {
-    object-position: -512px 0px;
-    object-fit: none;
-    width: 120px;
-    height: 16px;
-}
-#hy_container {
-    position: relative;
-    float: right;
-}
-#hy_container .tooltip {
-    width: 150px;
-    left: 0%;
-}
-#hy_container:hover .tooltip {
-    visibility: visible;
-}
 #player {
     width: 150px;
 }
@@ -127,12 +102,10 @@ form {
 @media only screen and (min-width: 800px) and (max-width: 1100px) {
     h1 {
         margin-bottom: 15px;
-        font-size: 44px;
     }
     h2 {
         margin-bottom: 15px;
         margin-top: 10px;
-        font-size: 32px;
     }
     .wrap {
         margin-left: 13%;
@@ -146,12 +119,10 @@ form {
     h1 {
         margin-bottom: 15px;
         margin-top: 15px;
-        font-size: 44px;
     }
     h2 {
         margin-bottom: 15px;
         margin-top: 10px;
-        font-size: 32px;
     }
     .dropdowns {
         width: 100%;

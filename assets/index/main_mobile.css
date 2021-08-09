@@ -1,9 +1,5 @@
 h1 {
     margin-top: 10px;
-    font-size: 36px;
-}
-h2 {
-    font-size: 24px;
 }
 ul {
     margin: 0px 0% 0px;
@@ -14,9 +10,6 @@ li {
 .pages_left, .pages_right {
     float: none;
     width: 100%;
-}
-#hy_container {
-    float: none;
 }
 #avatar, #map, #tiers {
     width: 95%;

@@ -3,13 +3,7 @@ body {
     background-size: cover;
 }
 h1 {
-    font-family: 'Felipa';
-    font-size: 48px;
     clear: both;
-}
-h2 {
-    font-family: 'Felipa';
-    font-size: 36px;
 }
 input[type=text] {
     width: 95px;
@@ -236,7 +230,6 @@ table.center {
 @media only screen and (min-width: 910px) and (max-width: 1100px) {
     h1 {
         margin-bottom: 15px;
-        font-size: 44px;
     }
     .wrap {
         margin-left: 8%;
@@ -249,7 +242,6 @@ table.center {
 @media only screen and (max-width: 910px) {
     h1 {
         margin-bottom: 15px;
-        font-size: 44px;
     }
     .dropdowns {
         width: 100%;

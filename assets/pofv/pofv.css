@@ -5,18 +5,6 @@ body {
 div > div > p {
     margin: 4px;
 }
-h1 {
-    font-family: 'Felipa';
-    font-size: 48px;
-}
-h2 {
-    font-family: 'Felipa';
-    font-size: 36px;
-}
-h3 {
-    font-family: 'Felipa';
-    font-size: 24px;
-}
 table {
      margin-left: auto;
      margin-right: auto;
@@ -266,10 +254,6 @@ ol > li {
 @media only screen and (max-width: 1100px) {
     h1 {
         margin-top: 15px;
-        font-size: 44px;
-    }
-    h2 {
-        font-size: 32px;
     }
     th {
         font-size: 24px;
