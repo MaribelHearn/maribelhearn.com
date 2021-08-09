@@ -6,8 +6,8 @@ function is_localhost(string $addr) {
 $min = (!is_localhost($_SERVER['REMOTE_ADDR']) ? '-min' : '');
 $page = $_GET['page'];
 $css = array(
-    'shared' . $min . '.css',
-    '../' . $page . '/' . ($page == 'index' ? 'main' : $page) . $min . '.css'
+    '../' . $page . '/' . ($page == 'index' ? 'main' : $page) . $min . '.css',
+    'shared' . $min . '.css'
 );
 if ($_GET['mobile']) {
     array_push($css, 'shared_mobile' . $min . '.css');
