@@ -2,8 +2,11 @@
 <html id='top' lang='<?php if (empty($_GET['hl'])) { echo 'en'; } else { echo $_GET['hl']; } ?>'>
 <?php
     include 'assets/shared/shared.php';
+    require_once 'assets/shared/mobile_detect.php';
     hit(basename(__FILE__));
 	$page = str_replace('.php', '', basename(__FILE__));
+    $detect_device = new Mobile_Detect;
+    $is_mobile = $detect_device -> isMobile();
 ?>
 
     <head>
@@ -13,7 +16,7 @@
         <meta name='description' content='Portal for competitive PoFV play, featuring info about its metagame and tournaments and links to relevant resources.'>
         <meta name='keywords' content='touhou, touhou project, 東方, 东方, th9, th09, touhou 9, pofv, phantasmagoria of flower view, phantasmagoria, flower view, competitive, metagame, tiers, tier list, adonis'>
         <link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
-        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=pofv'>
+        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=<?php echo $page . '&mobile=' . $is_mobile ?>'>
 		<link rel='icon' type='image/x-icon' href='assets/pofv/pofv.ico'>
         <script src='assets/shared/js_concat.php?page=pofv' defer></script>
     </head>

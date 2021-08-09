@@ -2,6 +2,9 @@
 <html lang='en'>
 <?php
     include '../assets/shared/shared.php';
+    require_once '../assets/shared/mobile_detect.php';
+    $detect_device = new Mobile_Detect;
+    $is_mobile = $detect_device -> isMobile();
     $DISPLAY_LIMIT = 5;
     $NEW_ENTRY_LIMIT = 45;
     $hitcount = '../.stats/' . date('d-m-Y') . '.json';
@@ -31,14 +34,12 @@
         $cache = (object) array();
     }
     $flag_url = 'https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/16/';
-
     function cmp(int $a, int $b) {
         if ($a == $b) {
             return 0;
         }
         return ($a > $b) ? -1 : 1;
     }
-
     function format_country(string $country) {
         switch ($country) {
             case 'Palestine': return 'Palestinian-Territory';
@@ -52,7 +53,6 @@
             default: return str_replace(' ', '-', $country);
         }
     }
-
     function format_image(string $country) {
         switch ($country) {
             case 'United Arab Emirates': return '';
@@ -70,7 +70,7 @@
 		<title>Admin Panel - Maribel Hearn's Touhou Portal</title>
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
-        <link rel='stylesheet' type='text/css' href='../assets/shared/css_concat.php?page=index'>
+        <link rel='stylesheet' type='text/css' href='../assets/shared/css_concat.php?page=index&mobile=<?php echo $is_mobile ?>'>
 		<link rel='icon' type='image/x-icon' href='../favicon.ico'>
         <script src='../assets/shared/js_concat.php?page=admin' defer></script>
     </head>

@@ -2,8 +2,11 @@
 <html id='top' lang='en'>
 <?php
     include 'assets/shared/shared.php';
+    require_once 'assets/shared/mobile_detect.php';
     hit(basename(__FILE__));
 	$page = str_replace('.php', '', basename(__FILE__));
+    $detect_device = new Mobile_Detect;
+    $is_mobile = $detect_device -> isMobile();
 ?>
 
     <head>
@@ -11,7 +14,7 @@
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
         <link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
-        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=index'>
+        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=index&mobile=<?php echo $is_mobile ?>'>
 		<link rel='icon' type='image/x-icon' href='favicon.ico'>
         <script src='assets/shared/js_concat.php' defer></script>
     </head>

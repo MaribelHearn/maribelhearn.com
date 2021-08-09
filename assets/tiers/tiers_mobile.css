@@ -58,6 +58,7 @@ input[type=button]:not(.button_bottom) {
 }
 #characters {
     width: 62px;
+    padding-right: 15px;
 }
 #buttons_mobile {
     display: block;
@@ -108,16 +109,12 @@ input[type=button]:not(.button_bottom) {
     margin-right: 0px;
 }
 @media only screen and (orientation: portrait) {
-    #characters {
-        padding-right: 10px;
-    }
     #modal {
         padding-top: 10%;
     }
 }
 @media only screen and (orientation: landscape) {
     #characters {
-        padding-right: 10px;
         width: 124px;
     }
     #tier_list_container {

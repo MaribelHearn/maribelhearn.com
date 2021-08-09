@@ -291,25 +291,3 @@ table {
         display: block;
     }
 }
-@media only screen and (min-width: 320px) and (max-width: 800px) and (orientation: portrait) {
-    .dummy {
-        display: block;
-    }
-    .dummy, .container {
-        overflow-x: scroll;
-        overflow-y: hidden;
-    }
-    #hy_container {
-        float: none;
-    }
-}
-@media only screen and (min-width: 480px) and (max-width: 640px) and (orientation: landscape) {
-    #hy {
-        float: none;
-    }
-    #corr_dummy, #corr_container {
-        overflow-x: scroll;
-        overflow-y: hidden;
-        display: block;
-    }
-}

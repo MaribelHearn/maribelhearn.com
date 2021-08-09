@@ -1,0 +1,20 @@
+h1 {
+    font-size: 36px;
+    clear: both;
+}
+h2 {
+    font-size: 24px;
+    clear: both;
+}
+.list {
+    width: 100%;
+}
+#hy_container {
+    float: none;
+}
+@media only screen and (orientation: portrait) {
+    .container {
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+}

@@ -256,25 +256,3 @@ caption {
         display: block;
     }
 }
-@media only screen and (min-width: 320px) and (max-width: 800px) and (orientation: portrait) {
-    .container {
-        overflow-x: scroll;
-        overflow-y: hidden;
-    }
-}
-@media only screen and (((min-width: 320px) and (max-width: 800px) and (orientation: portrait)) or ((min-width: 480px) and (max-width: 640px) and (orientation: landscape))) {
-    h1 {
-        font-size: 36px;
-        clear: both;
-    }
-    h2 {
-        font-size: 24px;
-        clear: both;
-    }
-    .list {
-        width: 100%;
-    }
-    #hy_container {
-        float: none;
-    }
-}

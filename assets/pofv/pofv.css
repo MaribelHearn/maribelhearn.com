@@ -353,6 +353,9 @@ ol > li {
     }
 }
 @media only screen and (max-width: 800px) {
+    ol > li {
+        text-align: left;
+    }
     .dropdowns {
         width: 100%;
     }
@@ -375,120 +378,5 @@ ol > li {
     #modal_inner {
         height: 80%;
         width: 90%;
-    }
-}
-@media only screen and (min-width: 320px) and (max-width: 800px) and (orientation: portrait) {
-    table.stats {
-        table-layout: fixed;
-        width: 200px;
-    }
-    table.stats > td {
-        width: 100px;
-    }
-    h1 {
-        font-size: 36px;
-    }
-    h2 {
-        font-size: 24px;
-    }
-    th {
-        width: 60px;
-        height: 60px;
-    }
-    ol {
-        margin-left: 0px;
-        margin-right: 0px;
-    }
-    .guide {
-        width: 90%;
-    }
-    .char {
-        width: 60px;
-        height: 60px;
-        background-image: url('../pofv/faces60x60.png');
-    }
-    .art {
-        display: none;
-    }
-    #hy_container {
-        float: none;
-    }
-    #marisa {
-        background-position: -60px 0px;
-    }
-    #sakuya {
-        background-position: -120px 0px;
-    }
-    #youmu {
-        background-position: -180px 0px;
-    }
-    #reisen {
-        background-position: -240px 0px;
-    }
-    #cirno {
-        background-position: -300px 0px;
-    }
-    #lyrica {
-        background-position: -360px 0px;
-    }
-    #merlin {
-        background-position: -420px 0px;
-    }
-    #lunasa {
-        background-position: -480px 0px;
-    }
-    #mystia {
-        background-position: -540px 0px;
-    }
-    #tewi {
-        background-position: -600px 0px;
-    }
-    #aya {
-        background-position: -660px 0px;
-    }
-    #medicine {
-        background-position: -720px 0px;
-    }
-    #yuuka {
-        background-position: -780px 0px;
-    }
-    #komachi {
-        background-position: -840px 0px;
-    }
-    #eiki {
-        background-position: -900px 0px;
-    }
-}
-@media only screen and (min-width: 480px) and (max-width: 640px) and (orientation: landscape) {
-    table.stats {
-        table-layout: fixed;
-        width: 400px;
-    }
-    table.stats > td {
-        width: 200px;
-    }
-    h1 {
-        font-size: 36px;
-    }
-    h2 {
-        font-size: 24px;
-    }
-    th {
-        font-size: 24px;
-        width: 75px;
-        height: 75px;
-    }
-    ol {
-        margin-left: 0px;
-        margin-right: 0px;
-    }
-    .guide {
-        width: 90%;
-    }
-    .art {
-        display: none;
-    }
-    #hy_container {
-        float: none;
     }
 }

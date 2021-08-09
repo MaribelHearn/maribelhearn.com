@@ -9,9 +9,11 @@ $css = array(
     'shared' . $min . '.css',
     '../' . $page . '/' . ($page == 'index' ? 'main' : $page) . $min . '.css'
 );
+if ($_GET['mobile']) {
+    array_push($css, '../' . $page . '/' . ($page == 'index' ? 'main' : $page) . '_mobile' . $min . '.css');
+}
 if ($page == 'tiers') {
     if ($_GET['mobile']) {
-        array_push($css, '../tiers/tiers_mobile' . $min . '.css');
         array_push($css, '../tiers/sprites_mobile' . $min . '.css');
     } else {
         array_push($css, '../tiers/sprites' . $min . '.css');

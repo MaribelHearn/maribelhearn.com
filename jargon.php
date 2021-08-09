@@ -2,8 +2,11 @@
 <html id='top' lang='en'>
 <?php
 	include 'assets/shared/shared.php';
+    require_once 'assets/shared/mobile_detect.php';
 	hit(basename(__FILE__));
 	$page = str_replace('.php', '', basename(__FILE__));
+    $detect_device = new Mobile_Detect;
+    $is_mobile = $detect_device -> isMobile();
 ?>
 
 	<head>
@@ -13,7 +16,7 @@
 		<meta name='description' content='Explanations of Touhou gameplay community jargon, such as achievements and Spell Card acronyms.'>
         <meta name='keywords' content='touhou, touhou project, community, jargon, terms, terminology, acronyms, abbreviations'>
 		<link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
-        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=jargon'>
+        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=<?php echo $page . '&mobile=' . $is_mobile ?>'>
 		<link rel='icon' type='image/x-icon' href='assets/jargon/jargon.ico'>
         <script src='assets/shared/js_concat.php' defer></script>
 	</head>
