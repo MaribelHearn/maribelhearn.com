@@ -3,11 +3,8 @@
 <?php
     include 'assets/shared/shared.php';
     include 'assets/gensokyo/gensokyo.php';
-    require_once 'assets/shared/mobile_detect.php';
     hit(basename(__FILE__));
     $page = str_replace('.php', '', basename(__FILE__));
-    $detect_device = new Mobile_Detect;
-    $is_mobile = $detect_device -> isMobile();
 ?>
 
     <head>
@@ -17,9 +14,9 @@
         <meta name='description' content='Complete archive of the Touhou replays from replays.gensokyo.org.'>
         <meta name='keywords' content='touhou, touhou project, 東方, 东方, replay, replays, gensokyo, gensokyo.org, replays.gensokyo, replays.gensokyo.org'>
         <link rel='preload' type='font/woff2' href='assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
-        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=<?php echo $page . '&mobile=' . $is_mobile ?>'>
+        <link rel='stylesheet' type='text/css' href='assets/shared/css_concat.php?page=<?php echo $page ?>'>
 		<link rel='icon' type='image/x-icon' href='assets/gensokyo/gensokyo.ico'>
-        <script src='assets/shared/js_concat.php?page=gensokyo' defer></script>
+        <script src='assets/shared/js_concat.php?page=<?php echo $page ?>' defer></script>
     </head>
 
     <body>
