@@ -111,9 +111,6 @@ form {
         margin-left: 13%;
         margin-right: 13%;
     }
-    #wrap {
-        font-size: 11px;
-    }
 }
 @media only screen and (max-width: 800px) {
     h1 {
@@ -123,9 +120,6 @@ form {
     h2 {
         margin-bottom: 15px;
         margin-top: 10px;
-    }
-    #wrap {
-        font-size: 11px;
     }
     #replays {
         overflow-x: scroll;

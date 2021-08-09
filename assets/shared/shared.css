@@ -211,6 +211,11 @@ a:visited.dropdown_button {
 #hy_container:hover .tooltip {
     visibility: visible;
 }
+@media only screen and (max-width: 1100px) {
+    #wrap {
+        font-size: 11px;
+    }
+}
 @media only screen and (max-width: 800px) {
     h1 {
         font-size: 36px;
@@ -259,5 +264,13 @@ a:visited.dropdown_button {
     }
     #ext_mobile {
         display: inline-block;
+    }
+}
+@media only screen and (max-width: 500px) {
+    h1 {
+        font-size: 28px;
+    }
+    h2 {
+        font-size: 22px;
     }
 }

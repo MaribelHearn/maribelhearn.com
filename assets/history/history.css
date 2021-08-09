@@ -192,9 +192,6 @@ caption {
         margin-left: 13%;
         margin-right: 13%;
     }
-    #wrap {
-        font-size: 11px;
-    }
     #ack {
         position: relative;
         color: black;
@@ -204,9 +201,6 @@ caption {
 @media only screen and (max-width: 800px) {
     h1, h2 {
         clear: both;
-    }
-    #wrap {
-        font-size: 11px;
     }
     #ack {
         display: none;

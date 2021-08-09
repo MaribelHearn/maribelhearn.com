@@ -269,10 +269,8 @@ ol > li {
         margin-left: 8%;
         margin-right: 8%;
     }
-    #wrap, #modal_inner {
-        font-size: 11px;
-    }
     #modal_inner {
+        font-size: 11px;
         width: 75%;
     }
     #wrap p:not(#ack):not(.language) {

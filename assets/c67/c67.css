@@ -84,30 +84,12 @@ table, tr, th, td {
     }
 }
 @media only screen and (min-width: 800px) and (max-width: 1100px) {
-    h1 {
-        font-size: 44px;
-    }
-    h2 {
-        font-size: 32px;
-    }
     .wrap {
         margin-left: 13%;
         margin-right: 13%;
     }
-    #wrap, #wrap p {
-        font-size: 11px;
-    }
 }
 @media only screen and (max-width: 800px) {
-    h1 {
-        font-size: 44px;
-    }
-    h2 {
-        font-size: 32px;
-    }
-    #wrap, #wrap p {
-        font-size: 11px;
-    }
     #boxart {
         width: 140px;
         height: 140px;

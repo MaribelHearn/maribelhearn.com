@@ -245,9 +245,6 @@ table, th, td {
         margin-left: 5%;
         margin-right: 5%;
     }
-    #wrap {
-        font-size: 11px;
-    }
 }
 @media only screen and (max-width: 800px) {
     h1 {
@@ -257,8 +254,5 @@ table, th, td {
     h2 {
         margin-bottom: 10px;
         margin-top: 5px;
-    }
-    #wrap {
-        font-size: 11px;
     }
 }

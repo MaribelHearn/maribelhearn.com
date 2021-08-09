@@ -108,9 +108,6 @@ table, tr, th, td {
         margin-left: 10%;
         margin-right: 10%;
     }
-    #wrap {
-        font-size: 11px;
-    }
     #ack {
         display: none;
     }
@@ -122,9 +119,6 @@ table, tr, th, td {
     h1 {
         margin-bottom: 15px;
         margin-top: 15px;
-    }
-    #wrap {
-        font-size: 11px;
     }
     #ack {
         display: none;

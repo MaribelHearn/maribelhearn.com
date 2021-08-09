@@ -232,9 +232,6 @@ table {
         margin-left: 0;
         margin-right: 0;
     }
-    #wrap {
-        font-size: 11px;
-    }
     #ack {
         position: relative;
         color: black;
@@ -242,9 +239,6 @@ table {
     }
 }
 @media only screen and (max-width: 800px) {
-    #wrap {
-        font-size: 11px;
-    }
     #ack {
         display: none;
     }

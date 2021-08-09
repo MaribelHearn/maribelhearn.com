@@ -8,9 +8,6 @@
     }
 }
 @media only screen and (orientation: landscape) {
-    #hy {
-        float: none;
-    }
     #corr_dummy, #corr_container {
         overflow-x: scroll;
         overflow-y: hidden;
