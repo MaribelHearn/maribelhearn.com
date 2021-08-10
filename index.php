@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <?php
-    include_once 'assets/shared/shared.php';
+    include 'assets/shared/shared.php';
 	$page = preg_split('/\?/', str_replace('/', '', $_SERVER['REQUEST_URI']))[0];
     if ($_SERVER['REQUEST_URI'] == '/') {
         $page = 'index';
     }
-    if (!file_exists('assets/' . $page . '/' . $page . '.php')) {
+    $page_path = 'assets/' . $page . '/' . $page . '.php';
+    if (!file_exists($page_path) && $page != 'index') {
         $page = 'error';
     }
     hit($page);
@@ -21,10 +22,8 @@
     } else {
         $is_mobile = false;
     }
-    $css_use_index = array('about', 'privacy', 'admin', 'error');
-    $js_use_index = array('about', 'privacy', 'error');
-    $css_file = in_array($page, $css_use_index) ? 'index' : $page;
-    $js_file = in_array($page, $js_use_index) ? 'index' : $page;
+    $use_index = array('about', 'privacy', 'error');
+    $css_js_file = in_array($page, $use_index) ? 'index' : $page;
     echo '<html lang="';
     if (empty($_GET['hl']) && !isset($_COOKIE['lang'])) {
         $lang_code = 'en';
@@ -54,16 +53,16 @@
         <meta name='description' content='<?php echo $data->description ?>'>
         <meta name='keywords' content='<?php echo $data->keywords ?>'>
         <link rel='preload' type='font/woff2' href='<?php echo $page == 'error' ? 'https://maribelhearn.com/' : '' ?>assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
-        <link rel='stylesheet' type='text/css' href='<?php echo $page == 'error' ? 'https://maribelhearn.com/' : '' ?>assets/shared/css_concat.php?page=<?php echo $css_file . '&mobile=' . $is_mobile ?>'>
+        <link rel='stylesheet' type='text/css' href='<?php echo $page == 'error' ? 'https://maribelhearn.com/' : '' ?>assets/shared/css_concat.php?page=<?php echo $css_js_file . '&mobile=' . $is_mobile ?>'>
 		<link rel='icon' type='image/x-icon' href='<?php echo ($page == 'error' ? 'https://maribelhearn.com/' : '') . (file_exists($favicon) ? $favicon : 'favicon.ico') ?>'>
-        <script src='<?php echo $page == 'error' ? 'https://maribelhearn.com/' : '' ?>assets/shared/js_concat.php?page=<?php echo $js_file . '&mobile=' . $is_mobile ?>' defer></script>
+        <script src='<?php echo $page == 'error' ? 'https://maribelhearn.com/' : '' ?>assets/shared/js_concat.php?page=<?php echo $css_js_file . '&mobile=' . $is_mobile ?>' defer></script>
     </head>
 
     <body>
         <nav data-html2canvas-ignore>
             <div id='nav' class='wrap'><?php echo navbar($page) ?></div>
         </nav>
-        <main><?php if ($page == 'error') { include_once 'assets/error/error.php'; } else { include_once 'assets/' . $page . '/' . $page . '.php'; } ?></main>
+        <main><?php if ($page == 'error') { include_once 'assets/error/error.php'; } else { include_once $page_path; } ?></main>
     </body>
 
 </html>
