@@ -28,14 +28,13 @@ if (in_array($page, $utils)) {
 if (in_array($page, $sorttable)) {
     array_push($js, 'sorttable' . $min . '.js');
 }
+if ($page == 'admin') {
+    array_push($js, 'detect' . $min . '.js');
+}
 if ($page == 'tiers' && $_GET['mobile']) {
     array_push($js, 'polyfill_dragdrop' . $min . '.js');
 } else if ($page == 'error') {
     array_push($js, 'https://maribelhearn.com/assets/shared/dark' . $min . '.js');
-} else if ($page == 'admin') {
-    array_push($js, '../../admin/detect.js');
-    array_push($js, '../../admin/admin.js');
-    array_push($js, 'dark' . $min . '.js');
 } else {
     array_push($js, 'dark' . $min . '.js');
 }
