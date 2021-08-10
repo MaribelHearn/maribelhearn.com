@@ -1,4 +1,7 @@
-﻿<?php include_once 'assets/error/error_code.php' ?>
+﻿<?php
+    if (file_exists('../shared/shared.php')) { include '../shared/shared.php'; } else { include 'assets/shared/shared.php'; }
+    if (file_exists('error_code.php')) { include_once 'error_code.php'; } else { include_once 'assets/error/error_code.php'; }
+?>
 <div id='wrap' class='wrap'>
     <p id='ack_admin'>This background image<br id='ack_br'>
     was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a></p>

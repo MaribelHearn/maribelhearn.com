@@ -79,9 +79,9 @@ function userAgent() {
     var ua = detect.parse(navigator.userAgent);
 
     document.getElementById("os").innerHTML = "<img src='" + (location.host == "maribelhearn.com" ? "https://maribelhearn.com/" : "") +
-    "assets/admin/icons/" + ua.os.name + ".png' alt='" + ua.os.name + " icon'> " + ua.os.name;
+    "admin/icons/" + ua.os.name + ".png' alt='" + ua.os.name + " icon'> " + ua.os.name;
     document.getElementById("browser").innerHTML = "<img src='" + (location.host == "maribelhearn.com" ? "https://maribelhearn.com/" : "") +
-    "assets/admin/icons/" + ua.browser.family + ".png' alt='" + ua.browser.name + " icon'> " + ua.browser.name;
+    "admin/icons/" + ua.browser.family + ".png' alt='" + ua.browser.name + " icon'> " + ua.browser.name;
 }
 
 function addEventListeners() {
@@ -106,7 +106,7 @@ function addCacheEntries() {
     if (!entries) {
         document.getElementById("response").innerHTML = "No new cache entries.";
     } else {
-        xhr.open("POST", "/assets/admin/cache.php?entries=" + entries.value);
+        xhr.open("POST", "/admin/cache.php?entries=" + entries.value);
         xhr.onload = function () {
             document.getElementById("response").innerHTML = this.response;
         };
