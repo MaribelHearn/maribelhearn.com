@@ -1,7 +1,11 @@
 <?php
 $url = substr($_SERVER['REQUEST_URI'], 1);
 if (empty($_GET['error']) || $_GET['error'] == '404') {
-    $json = file_get_contents('../json/admin.json');
+    if (file_exists('../json/admin.json')) {
+        $json = file_get_contents('../json/admin.json');
+    } else {
+        $json = file_get_contents('assets/json/admin.json');
+    }
     $data = json_decode($json, true);
     if (isset($data[$url])) {
         header('Location: ' . $data[$url]);

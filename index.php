@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <?php
-    include 'assets/shared/shared.php';
-	$page = preg_split('/\?/', str_replace('/', '', $_SERVER['REQUEST_URI']))[0];
+    include_once 'assets/shared/shared.php';
+    $url = substr($_SERVER['REQUEST_URI'], 1);
+	$page = preg_split('/\?/', $url)[0];
     if ($_SERVER['REQUEST_URI'] == '/') {
         $page = 'index';
     }
@@ -47,11 +48,11 @@
 ?>
 
     <head>
-		<title><?php echo property_exists($data, $lang_code) ? $data->{$lang_code} : $data->title ?></title>
+		<title><?php echo property_exists($data, $lang_code) ? $data->{$lang_code} : (property_exists($data, 'title') ? $data->title : '') ?></title>
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
-        <meta name='description' content='<?php echo $data->description ?>'>
-        <meta name='keywords' content='<?php echo $data->keywords ?>'>
+        <meta name='description' content='<?php echo property_exists($data, 'description') ? $data->description : '' ?>'>
+        <meta name='keywords' content='<?php echo property_exists($data, 'keywords') ? $data->keywords : '' ?>'>
         <link rel='preload' type='font/woff2' href='<?php echo $page == 'error' ? 'https://maribelhearn.com/' : '' ?>assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' type='text/css' href='<?php echo $page == 'error' ? 'https://maribelhearn.com/' : '' ?>assets/shared/css_concat.php?page=<?php echo $css_js_file . '&mobile=' . $is_mobile ?>'>
 		<link rel='icon' type='image/x-icon' href='<?php echo ($page == 'error' ? 'https://maribelhearn.com/' : '') . (file_exists($favicon) ? $favicon : 'favicon.ico') ?>'>
