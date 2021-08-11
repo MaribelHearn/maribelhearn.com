@@ -11,6 +11,7 @@
         $page = 'error';
     }
     hit($page);
+    $page = preg_replace('/\//', '', $page);
     $json = file_get_contents('assets/' . $page . '/' . $page . '.json');
     $data = (object) json_decode($json, true);
     $has_mobile_sheet = file_exists('assets/' . $page . '/' . $page . '_mobile.css');
