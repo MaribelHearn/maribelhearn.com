@@ -46,6 +46,7 @@
             case 'Bosnia and Herzegovina': return 'Bosnian';
             case 'North Macedonia': return 'Macedonia';
             case 'Czechia': return 'Czech-Republic';
+            case 'Curacao': return 'Netherlands';
             case 'South Korea': return 'Korea';
             case 'Guadeloupe': return 'France';
             case 'Croatia': return 'Croatian';
