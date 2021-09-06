@@ -908,7 +908,7 @@
 			'the same download page.';
 		}
 	?></p>
-	<a href='https://mega.nz/file/0r4kyAzQ#EKHEeGqedFvQ9qBB_wv8HYOD7qHqBEOzPqkTpEM7-LY' target='_blank'><?php echo tl_term('Downloads', $lang) ?></a>
+	<a href='https://mega.nz/file/1iQhyC5S#GLZTjEnQ1iKsN9fPGESJJK-xiyi7jqJMdC3gPH19LtM n' target='_blank'><?php echo tl_term('Downloads', $lang) ?></a>
     <!-- Graphical Patches -->
     <hr>
     <h2 id='graphical'><?php
