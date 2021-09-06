@@ -284,7 +284,7 @@ function showWRs(event) {
 
             sepScore = (game == "WBaWC" && score > MAX_SCORE ? "<span class='cs'>9,999,999,990" +
             "<span class='tooltip truescore'>" + sep(score) + "</span></span>" : sep(score));
-            text = (replay === "" ? sepScore : "<a class='replay' href='" + replay + "'>" + sepScore + "</a>") +
+            text = (replay === "" ? sepScore : "<a class='replay' href='" + replay + "'>" + sepScore + "<img src='assets/wr/dl.png' alt='Download icon'></a>") +
             "<br>by <em>" + player + "</em>" + (date && datesEnabled ? "<span class='dimgrey'><br>" +
             "<span class='datestring_game'>" + date + "</span></span>" : "");
             $("#" + game + difficulty + shottype).html(score > 0 ? text : '-');
@@ -299,7 +299,7 @@ function showWRs(event) {
             sepScore = (game == "WBaWC" && bestShotMax > MAX_SCORE ? "<span class='cs'>9,999,999,990" +
             "<span class='tooltip truescore'>" + sep(bestShotMax) + "</span></span>" : sep(bestShotMax));
             $(bestShot.id).html((bestShot.replay === "" ? "<u>" + sepScore + "</u>" : "<u><a class='replay' href='" + bestShot.replay +
-            "'>" + sepScore + "</a></u>") + "<br>by <em>" + bestShot.player +
+            "'>" + sepScore + "<img src='assets/wr/dl.png' alt='Download icon'></a></u>") + "<br>by <em>" + bestShot.player +
             "</em>" + (bestShot.date && datesEnabled ? "<span class='dimgrey'><br><span class='datestring_game'>" + bestShot.date + "</span></span>" : ""));
             compareWRs[difficulty] = [Math.min(bestShotMax, MAX_SCORE), bestShot.player, bestShot.shottype];
         }
@@ -310,7 +310,7 @@ function showWRs(event) {
 
         if (game == "HSiFS") {
             $(removeSeason(bestShot.id) + (difficulty == "Extra" ? "Small" : "")).html((bestShot.replay === "" ? "<u>" + sep(bestShotMax) +
-            "</u>" : "<u><a class='replay' href='" + bestShot.replay + "'>" + sep(bestShotMax) + "</a></u>") + "<br>by <em>" + bestShot.player +
+            "</u>" : "<u><a class='replay' href='" + bestShot.replay + "'>" + sep(bestShotMax) + "<img src='assets/wr/dl.png' alt='Download icon'></a></u>") + "<br>by <em>" + bestShot.player +
             "</em>" + (game == "HSiFS" && difficulty != "Extra" ? " (" + bestShot.season + ")" : "") + (bestShot.date && datesEnabled ? "<span class='dimgrey'><br>" +
             "<span class='datestring_game'>" + bestShot.date + "</span></span>" : ""));
         }
