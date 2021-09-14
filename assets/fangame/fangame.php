@@ -263,6 +263,12 @@
 			<td>21 March 2020</td>
 			<td><a href='https://cdn.discordapp.com/attachments/704137913654444042/857385919492784148/LNNN.dat'>Replay</a><br>
 			<a href='https://www.youtube.com/watch?v=0XhWfIpLLkQ'>Video</a></td>
+		</tr><tr>
+			<td>BUCHI</td>
+			<td>ReimuBlack</td>
+			<td>10,975,460,110</td>
+			<td>14 September 2021</td>
+			<td><a href='https://www.youtube.com/watch?v=nYDp-rIf-rg'>Video</a></td>
 		</tr>
 	</table>
 	<p><span class='fangame mpp'></span> Mystical Power Plant</p>
