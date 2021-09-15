@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
-    include_once '../shared/shared.php';
+    include_once 'assets/shared/shared.php';
+    include_once 'assets/error/error_code.php';
     $page = 'error';
     hit($page);
     $json = file_get_contents('error.json');
