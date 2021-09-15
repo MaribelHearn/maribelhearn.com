@@ -51,25 +51,25 @@
         </p>
         <p>
             <label for='nd'><img src='assets/gensokyo/nd.gif' title='No Deaths' alt='No Deaths icon'></label>
-            <input id='nd' name='nd' type='checkbox'<?php echo $_GET['nd'] == 'on' ? ' checked' : '' ?>>
+            <input id='nd' name='nd' type='checkbox'<?php echo !empty($_GET['nd']) && $_GET['nd'] == 'on' ? ' checked' : '' ?>>
             <label for='nb'><img src='assets/gensokyo/nb.gif' title='No Bomb Usage' alt='No Bombs icon'></label>
-            <input id='nb' name='nb' type='checkbox'<?php echo $_GET['nb'] == 'on' ? ' checked' : '' ?>>
+            <input id='nb' name='nb' type='checkbox'<?php echo !empty($_GET['nb']) && $_GET['nb'] == 'on' ? ' checked' : '' ?>>
             <label for='nf'><img src='assets/gensokyo/nf.gif' title='No Focused Movement' alt='No Focus icon'></label>
-            <input id='nf' name='nf' type='checkbox'<?php echo $_GET['nf'] == 'on' ? ' checked' : '' ?>>
+            <input id='nf' name='nf' type='checkbox'<?php echo !empty($_GET['nf']) && $_GET['nf'] == 'on' ? ' checked' : '' ?>>
             <label for='nv'><img src='assets/gensokyo/nv.gif' title='No Vertical Movement' alt='No Vertical icon'></label>
-            <input id='nv' name='nv' type='checkbox'<?php echo $_GET['nv'] == 'on' ? ' checked' : '' ?>>
+            <input id='nv' name='nv' type='checkbox'<?php echo !empty($_GET['nv']) && $_GET['nv'] == 'on' ? ' checked' : '' ?>>
             <label for='tas'><img src='assets/gensokyo/tas.gif' title='Tool-Assisted Replay' alt='TAS icon'></label>
-            <input id='tas' name='tas' type='checkbox'<?php echo $_GET['tas'] == 'on' ? ' checked' : '' ?>>
+            <input id='tas' name='tas' type='checkbox'<?php echo !empty($_GET['tas']) && $_GET['tas'] == 'on' ? ' checked' : '' ?>>
             <label for='chz'><img src='assets/gensokyo/chz.gif' title='Tool-Assisted Replay (not marked by original uploader)' alt='Cheater icon'></label>
-            <input id='chz' name='chz' type='checkbox'<?php echo $_GET['chz'] == 'on' ? ' checked' : '' ?>>
+            <input id='chz' name='chz' type='checkbox'<?php echo !empty($_GET['chz']) && $_GET['chz'] == 'on' ? ' checked' : '' ?>>
             <label for='pa'><img src='assets/gensokyo/pa.gif' title='Pacifist' alt='Pacifist icon'></label>
-            <input id='pa' name='pa' type='checkbox'<?php echo $_GET['pa'] == 'on' ? ' checked' : '' ?>>
+            <input id='pa' name='pa' type='checkbox'<?php echo !empty($_GET['pa']) && $_GET['pa'] == 'on' ? ' checked' : '' ?>>
             <label for='co'><img src='assets/gensokyo/co.gif' title='Other Condition' alt='Other icon'></label>
-            <input id='co' name='co' type='checkbox'<?php echo $_GET['co'] == 'on' ? ' checked' : '' ?>>
+            <input id='co' name='co' type='checkbox'<?php echo !empty($_GET['co']) && $_GET['co'] == 'on' ? ' checked' : '' ?>>
         </p>
         <p>
             <label for='pl'>Page length</label>
-            <input id='pl' name='pl' type='number' value='<?php echo $_GET['pl'] ? ((int) $_GET['pl']) : 25 ?>' min='1'>
+            <input id='pl' name='pl' type='number' value='<?php echo !empty($_GET['pl']) && $_GET['pl'] ? ((int) $_GET['pl']) : 25 ?>' min='1'>
         </p>
         <p><input type='submit' value='Search'></p>
     </form>
@@ -130,28 +130,28 @@
                         continue;
                     }
                 }
-                if ($_GET['nd'] == 'on' && strpos($rep['conditions'], 'No Deaths') === false) {
+                if (!empty($_GET['nd']) && $_GET['nd'] == 'on' && strpos($rep['conditions'], 'No Deaths') === false) {
                     continue;
                 }
-                if ($_GET['nb'] == 'on' && strpos($rep['conditions'], 'No Bomb Usage') === false) {
+                if (!empty($_GET['nb']) && $_GET['nb'] == 'on' && strpos($rep['conditions'], 'No Bomb Usage') === false) {
                     continue;
                 }
-                if ($_GET['nf'] == 'on' && strpos($rep['conditions'], 'No Focused Movement') === false) {
+                if (!empty($_GET['nf']) && $_GET['nf'] == 'on' && strpos($rep['conditions'], 'No Focused Movement') === false) {
                     continue;
                 }
-                if ($_GET['nv'] == 'on' && strpos($rep['conditions'], 'No Vertical Movement') === false) {
+                if (!empty($_GET['nv']) && $_GET['nv'] == 'on' && strpos($rep['conditions'], 'No Vertical Movement') === false) {
                     continue;
                 }
-                if ($_GET['tas'] == 'on' && strpos($rep['conditions'], 'Tool-Assisted Replay') === false) {
+                if (!empty($_GET['tas']) && $_GET['tas'] == 'on' && strpos($rep['conditions'], 'Tool-Assisted Replay') === false) {
                     continue;
                 }
-                if ($_GET['chz'] == 'on' && strpos($rep['conditions'], 'Tool-Assisted Replay (not marked by original uploader)') === false) {
+                if (!empty($_GET['chz']) && $_GET['chz'] == 'on' && strpos($rep['conditions'], 'Tool-Assisted Replay (not marked by original uploader)') === false) {
                     continue;
                 }
-                if ($_GET['pa'] == 'on' && strpos($rep['conditions'], 'Pacifist') === false) {
+                if (!empty($_GET['pa']) && $_GET['pa'] == 'on' && strpos($rep['conditions'], 'Pacifist') === false) {
                     continue;
                 }
-                if ($_GET['co'] == 'on' && strpos($rep['conditions'], 'Other Condition') === false) {
+                if (!empty($_GET['co']) && $_GET['co'] == 'on' && strpos($rep['conditions'], 'Other Condition') === false) {
                     continue;
                 }
                 $i += 1;
