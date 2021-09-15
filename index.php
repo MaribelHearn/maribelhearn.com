@@ -7,8 +7,32 @@
         $page = 'index';
     }
     $page_path = 'assets/' . $page . '/' . $page . '.php';
-    if (!file_exists($page_path) && $page != 'index') {
+    if (!file_exists($page_path) && $page != 'index' || !empty($_GET['error'])) {
         $page = 'error';
+        $error_code = $_GET['error'];
+        $url = substr($_SERVER['REQUEST_URI'], 1);
+        $json = file_get_contents('assets/json/admin.json');
+        $data = json_decode($json, true);
+        if (isset($data[$url])) {
+            header('Location: ' . $data[$url]);
+            exit();
+        }
+        if (!strpos($url, '/')) {
+            $min_distance = PHP_INT_MAX;
+            foreach (glob('*/*/*') as $file) {
+                if (strpos($file, '.php') && !strpos($file, '_') && $file != 'error.php') {
+                    $matching_page = substr(preg_split('/\//', $file)[2], 0, -4);
+                    $min_distance = min(levenshtein($url, $matching_page), $min_distance);
+                    if (levenshtein($url, $matching_page) <= $min_distance) {
+                        $min_page = $matching_page;
+                    }
+                }
+            }
+            if ($min_distance < 3 && $min_distance >= 0) {
+                $location = $_SERVER['SERVER_NAME'] !== 'localhost' ? 'https://maribelhearn.com/' : 'http://localhost/';
+                header('Location: ' . $location . $min_page . '?redirect=' . $url);
+            }
+        }
     }
     hit($page);
     $page = preg_replace('/\//', '', $page);
