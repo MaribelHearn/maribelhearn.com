@@ -59,7 +59,6 @@ function theme_name() {
 }
 function navbar(string $page) {
     $token_path = ($page == 'admin' ? '../.stats/token' : '.stats/token');
-    $token_path = ($page == 'error' ? '../../' . $token_path : $token_path);
     $navbar = '<div class="dropdown nav_left">';
     $navbar .= '<a href="/"><span class="icon index_icon"></span> Index</a> | ';
 
