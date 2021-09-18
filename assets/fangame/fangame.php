@@ -11,7 +11,7 @@
 	survival condition(s) are listed with the game titles.</p>
     <p id='tables'>All of the table columns are sortable.</p>
     <p id='noreup'>The replays or videos provided are <strong>not</strong> meant to be reuploaded anywhere.</p>
-    <p id='lastupdate'>Accomplishments are current as of 21 June 2021.</p>
+    <p id='lastupdate'>Accomplishments are current as of 14 September 2021.</p>
     <h2 id='contents_header'>Contents</h2>
     <div id='contents' class='border'>
 		<p><a href='#lnns'>LNN Clears</a></p>
@@ -262,7 +262,7 @@
 			<td>5,525,596,490</td>
 			<td>21 March 2020</td>
 			<td><a href='https://cdn.discordapp.com/attachments/704137913654444042/857385919492784148/LNNN.dat'>Replay</a><br>
-			<a href='https://www.youtube.com/watch?v=0XhWfIpLLkQ'>Video</a></td>
+			<a href='https://www.youtube.com/watch?v=t9Y5U2qCtZU'>Video</a></td>
 		</tr><tr>
 			<td>BUCHI</td>
 			<td>ReimuBlack</td>
@@ -391,7 +391,7 @@
 			<td>3,422,339,570</td>
 			<td>5 October 2020</td>
 			<td><a href='https://cdn.discordapp.com/attachments/704137913654444042/857376310337732608/Th_IBP_replay02.dat'>Replay</a><br>
-			<a href='https://www.youtube.com/watch?v=3-l_gWYCakA'>Video</a></td>
+			<a href='https://www.youtube.com/watch?v=OLprhFAYigk'>Video</a></td>
 		</tr>
 	</table>
 	<h3 class='related'>Related Games</h3>
