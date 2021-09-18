@@ -59,6 +59,7 @@
             case 'United Arab Emirates': return '';
             case 'Trinidad and Tobago': return '';
             case 'United Kingdom': return 'flag-';
+            case 'French Polynesia': return '';
             case 'Palestine': return '';
             case 'Estonia': return '';
             case 'Reunion': return '';
