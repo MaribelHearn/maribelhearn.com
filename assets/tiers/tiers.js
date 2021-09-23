@@ -63,9 +63,6 @@ var MAX_NUMBER_OF_TIERS = 100,
     tiers = {},
     gameTiers = {},
     shotTiers = {},
-    order = [],
-    gameOrder = [],
-    shotOrder = [],
     multiSelection = [],
     following = "",
     tierView = false,
@@ -172,18 +169,6 @@ function getCurrentTierList(sort) {
     return shotTiers;
 }
 
-function getCurrentTierOrder() {
-    if (settings.sort == "characters") {
-        return order;
-    }
-
-    if (settings.sort == "works") {
-        return gameOrder;
-    }
-
-    return shotOrder;
-}
-
 function isMobile() {
     return navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1;
 }
@@ -277,45 +262,42 @@ function reloadTiers() {
 
     for (tierNum in tierList) {
         tierNum = Number(tierNum);
+        $("#tier_list_tbody").append("<tr id='tr" + tierNum +
+        "' class='tier'><th id='th" + tierNum +
+        "' class='tier_header' draggable='true'>" + tierList[tierNum].name + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr>");
+        $("#tr" + tierNum).on("dragover", allowDrop);
+        $("#tr" + tierNum).on("drop", drop);
+        $("#tr" + tierNum).on("dragstart", drag);
+        $("#tr" + tierNum).css("background-color", settings[settings.sort].tierListColour);
+        $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
+        $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
+        $("#th" + tierNum).css("background-color", tierList[tierNum].bg);
+        $("#th" + tierNum).css("color", tierList[tierNum].colour);
+        $("#th" + tierNum).css("max-width", settings[settings.sort].tierHeaderWidth + "px");
+        $("#th" + tierNum).css("width", settings[settings.sort].tierHeaderWidth + "px");
+        $("#th" + tierNum).css("font-size", settings[settings.sort].tierHeaderFontSize + "px");
 
-        if (!tierList[tierNum].flag) {
-            $("#tier_list_tbody").append("<tr id='tr" + tierNum +
-            "' class='tier'><th id='th" + tierNum +
-            "' class='tier_header' draggable='true'>" + tierList[tierNum].name + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr>");
-            $("#tr" + tierNum).on("dragover", allowDrop);
-            $("#tr" + tierNum).on("drop", drop);
-            $("#tr" + tierNum).on("dragstart", drag);
-            $("#tr" + tierNum).css("background-color", settings[settings.sort].tierListColour);
-            $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
-            $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
-            $("#th" + tierNum).css("background-color", tierList[tierNum].bg);
-            $("#th" + tierNum).css("color", tierList[tierNum].colour);
-            $("#th" + tierNum).css("max-width", settings[settings.sort].tierHeaderWidth + "px");
-            $("#th" + tierNum).css("width", settings[settings.sort].tierHeaderWidth + "px");
-            $("#th" + tierNum).css("font-size", settings[settings.sort].tierHeaderFontSize + "px");
+        if (isMobile()) {
+            $("#th" + tierNum).css("height", "60px");
+        }
 
-            if (isMobile()) {
-                $("#th" + tierNum).css("height", "60px");
+        for (i = 0; i < tierList[tierNum].chars.length; i++) {
+            item = tierList[tierNum].chars[i];
+
+            if (item == "Mai") {
+                item = "Mai PC-98";
             }
 
-            for (i = 0; i < tierList[tierNum].chars.length; i++) {
-                item = tierList[tierNum].chars[i];
+            $("#" + item).removeClass("list_" + settings.sort + getSpritesheetOf(item));
+            $("#" + item).addClass("tiered_" + settings.sort + getSpritesheetOf(item));
+            id = "tier" + tierNum + "_" + i;
+            $("#tier" + tierNum).append("<span id='" + id + "'></span>");
+            $("#" + id).html($("#" + item));
+            setTieredItemEvents(item, tierNum);
 
-                if (item == "Mai") {
-                    item = "Mai PC-98";
-                }
-
-                $("#" + item).removeClass("list_" + settings.sort + getSpritesheetOf(item));
-                $("#" + item).addClass("tiered_" + settings.sort + getSpritesheetOf(item));
-                id = "tier" + tierNum + "_" + i;
-                $("#tier" + tierNum).append("<span id='" + id + "'></span>");
-                $("#" + id).html($("#" + item));
-                setTieredItemEvents(item, tierNum);
-
-                for (j in cats) {
-                    if (!$("#" + j).html().contains("list_" + settings.sort)) {
-                        $("#" + j).css("display", "none");
-                    }
+            for (j in cats) {
+                if (!$("#" + j).html().contains("list_" + settings.sort)) {
+                    $("#" + j).css("display", "none");
                 }
             }
         }
@@ -525,7 +507,7 @@ function addToTierMobile(event) {
 }
 
 function addMenu(event) {
-    var character = event.data.name, tierList = getCurrentTierList(), tierOrder = getCurrentTierOrder(), tierNum, i;
+    var character = event.data.name, tierList = getCurrentTierList(), tierNum, i;
 
     emptyModal();
     event.preventDefault();
@@ -537,14 +519,10 @@ function addMenu(event) {
         "</h3><p>" + (isTiered(character.removeSpaces()) ? "Change" : "Add") + " to tier:</p>");
     }
 
-    for (i = 0; i < tierOrder.length; i++) {
-        tierNum = tierOrder[i];
-
-        if (!tierList[tierNum].flag) {
-            $("#modal_inner").append("<input id='mobile_addtotier_" + i +
-            "' class='mobile_add' type='button' value='" + tierList[tierNum].name + "'>");
-            $("#mobile_addtotier_" + i).on("click", {character: character, tierNum: tierNum}, addToTierMobile);
-        }
+    for (tierNum = 0; tierNum < Object.keys(tierList).length; tierNum++) {
+        $("#modal_inner").append("<input id='mobile_addtotier_" + i +
+        "' class='mobile_add' type='button' value='" + tierList[tierNum].name + "'>");
+        $("#mobile_addtotier_" + i).on("click", {character: character, tierNum: tierNum}, addToTierMobile);
     }
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
@@ -676,27 +654,13 @@ function validateTierName(tierName) {
     return tierName.length <= MAX_NAME_LENGTH;
 }
 
-function highestTierNum() {
-    var tierList = getCurrentTierList(), highestTierNum = 0, tierNum;
-
-    for (tierNum in tierList) {
-        if (tierList[tierNum].flag) {
-            continue;
-        }
-
-        highestTierNum = tierNum;
-    }
-
-    return highestTierNum;
-}
-
 function addTier(event) {
     var tierName = event.data.tierName, noDisplay = event.data.noDisplay, tierList = getCurrentTierList(),
-        tierOrder = getCurrentTierOrder(), tierNum = 0;
+        tierNum = 0;
 
     printMessage("");
 
-    while (tierNum <= highestTierNum()) {
+    while (tierNum < Object.keys(tierList).length) {
         tierNum += 1;
     }
 
@@ -742,8 +706,6 @@ function addTier(event) {
     tierList[tierNum].bg = "#1b232e";
     tierList[tierNum].colour = "#a0a0a0";
     tierList[tierNum].chars = [];
-    tierList[tierNum].flag = false;
-    tierOrder.push(tierNum);
     unsavedChanges = true;
 }
 
@@ -801,8 +763,24 @@ function removeCharacters(tierNum, noDisplay) {
     }
 }
 
+function removeTierEvents(tierNum) {
+    $("#tr" + tierNum).off("dragover");
+    $("#tr" + tierNum).off("drop");
+    $("#th" + tierNum).off("click");
+    $("#th" + tierNum).off("contextmenu");
+    $("#th" + tierNum).off("dragstart");
+}
+
+function setTierEvents(tierNum) {
+    $("#tr" + tierNum).on("dragover", allowDrop);
+    $("#tr" + tierNum).on("drop", drop);
+    $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
+    $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
+    $("#th" + tierNum).on("dragstart", drag);
+}
+
 function removeTier(tierNum, skipConfirmation, noDisplay) {
-    var tierList = getCurrentTierList(), tierOrder = getCurrentTierOrder(), confirmation = true;
+    var tierList = getCurrentTierList(), confirmation = true, lastTierNum, i, j;
 
     if (tierList[tierNum].chars.length === 0) {
         skipConfirmation = true;
@@ -815,12 +793,26 @@ function removeTier(tierNum, skipConfirmation, noDisplay) {
     if (confirmation) {
         removeCharacters(Number(tierNum), noDisplay);
 
-        if (!noDisplay) {
-            $("#tr" + tierNum).remove();
+        for (i in tierList) {
+            if (i > tierNum) {
+                removeTierEvents(i - 1);
+                $("#tr" + (i - 1)).html($("#tr" + i).html().replace("th" + i, "th" + (i - 1)).replace("tier" + i, "tier" + (i - 1)));
+                $("#tier" + (i - 1)).html($("#tier" + (i - 1)).html().replace(new RegExp("tier" + i + "_", "g"), "tier" + (i - 1) + "_"));
+                tierList[i - 1] = tierList[i];
+                setTierEvents(i - 1);
+
+                for (j in tierList[i - 1].chars) {
+                    setTieredItemEvents(tierList[i - 1].chars[j], i - 1);
+                }
+            }
         }
 
-        tierList[tierNum].flag = true;
-        tierOrder.remove(tierNum);
+        lastTierNum = Object.keys(tierList).length - 1;
+        delete tierList[lastTierNum];
+
+        if (!noDisplay) {
+            $("#tr" + lastTierNum).remove();
+        }
     }
 
     unsavedChanges = true;
@@ -995,11 +987,8 @@ function allowData() {
 
 function saveTiersData() {
     localStorage.setItem("tiers", JSON.stringify(tiers));
-    localStorage.setItem("order", JSON.stringify(order));
     localStorage.setItem("gameTiers", JSON.stringify(gameTiers));
-    localStorage.setItem("gameOrder", JSON.stringify(gameOrder));
     localStorage.setItem("shotTiers", JSON.stringify(shotTiers));
-    localStorage.setItem("shotOrder", JSON.stringify(shotOrder));
     printMessage("<strong class='confirmation'>Tier list(s) saved!</strong>");
 }
 
@@ -1146,18 +1135,10 @@ function checkSort(text) {
 }
 
 function clearTiers(tierList, sort, tmpSort) {
-    var skipConfirmation = true, noDisplay = (sort == tmpSort ? false : true);
+    var skipConfirmation = true, noDisplay = (sort == tmpSort ? false : true), tierNum;
 
-    for (var tierNum in tierList) {
+    for (tierNum = Object.keys(tierList).length - 1; tierNum >= 0; tierNum--) {
         removeTier(tierNum, skipConfirmation, noDisplay);
-    }
-
-    if (sort == "characters") {
-        order = [];
-    } else if (sort == "works") {
-        gameOrder = [];
-    } else { // sort == "shots"
-        shotOrder = [];
     }
 }
 
@@ -1294,7 +1275,7 @@ function copyToClipboard() {
 }
 
 function exportText() {
-    var tierList = getCurrentTierList(), tierOrder = getCurrentTierOrder(), tierNum, character, i, j;
+    var tierList = getCurrentTierList(), tierNum, character, i;
 
     emptyModal();
     printMessage("");
@@ -1312,20 +1293,16 @@ function exportText() {
     ";" + settings[settings.sort].tierListColour + ";" + settings[settings.sort].tierHeaderWidth +
     ";" + settings[settings.sort].tierHeaderFontSize);
 
-    for (i = 0; i < tierOrder.length; i++) {
-        tierNum = tierOrder[i];
+    for (tierNum in tierList) {
+        $("#text").append("<p>" + tierList[tierNum].name + ":</p><p>" + tierList[tierNum].bg +
+        " " + tierList[tierNum].colour + "</p><p>");
 
-        if (!tierList[tierNum].flag) {
-            $("#text").append("<p>" + tierList[tierNum].name + ":</p><p>" + tierList[tierNum].bg +
-            " " + tierList[tierNum].colour + "</p><p>");
-
-            for (j = 0; j < tierList[tierNum].chars.length; j += 1) {
-                character = $("#" + tierList[tierNum].chars[j]).attr("title");
-                $("#text").append(character + (j == tierList[tierNum].chars.length - 1 ? "" : ", "));
-            }
-
-            $("#text").append("</p>");
+        for (i = 0; i < tierList[tierNum].chars.length; i += 1) {
+            character = $("#" + tierList[tierNum].chars[i]).attr("title");
+            $("#text").append(character + (i == tierList[tierNum].chars.length - 1 ? "" : ", "));
         }
+
+        $("#text").append("</p>");
     }
 
     if ($("#text").html() === "") {
@@ -1659,17 +1636,11 @@ function changeLog() {
 }
 
 function eraseAllConfirmed() {
-    var tierList = getCurrentTierList(), tierNum, tmp;
+    var tierList = getCurrentTierList(), tmp;
 
-    for (tierNum = 0; tierNum < Object.keys(tierList).length; tierNum++) {
-        removeTier(tierNum, true);
-    }
-
-    order = [];
+    clearTiers(tierList, settings.sort, settings.sort);
     tiers = {};
-    gameOrder = [];
     gameTiers = {};
-    shotOrder = [];
     shotTiers = {};
     tmp = settings.sort;
     settings = {
@@ -1715,11 +1686,8 @@ function eraseAllConfirmed() {
         "maleEnabled": true,
         "sort": tmp
     };
-    localStorage.removeItem("order");
     localStorage.removeItem("tiers");
-    localStorage.removeItem("gameOrder");
     localStorage.removeItem("gameTiers");
-    localStorage.removeItem("shotOrder");
     localStorage.removeItem("shotTiers");
     localStorage.removeItem("settings");
     initialise();
@@ -1859,6 +1827,10 @@ function deleteLegacyCookies() {
         localStorage.setItem("gameOrder", getCookie("gameOrder"));
         deleteCookie("gameOrder");
     }
+
+    localStorage.removeItem("order");
+    localStorage.removeItem("gameOrder");
+    localStorage.removeItem("shotOrder");
 }
 
 function loadCategories() {
@@ -1901,80 +1873,66 @@ function loadTier(tiersData, tierNum, tierSort) {
     tierList[tierNum].bg = tiersData[tierNum].bg;
     tierList[tierNum].colour = tiersData[tierNum].colour;
     tierList[tierNum].chars = [];
-    tierList[tierNum].flag = tiersData[tierNum].flag;
 
-    if (!tierList[tierNum].flag) {
-        if (tierSort == settings.sort) {
-            $("#tier_list_tbody").append("<tr id='tr" + tierNum + "' class='tier'><th id='th" + tierNum +
-            "' class='tier_header' draggable='true'>" + tiersData[tierNum].name + "</th><td id='tier" + tierNum +
-            "' class='tier_content'></td></tr>");
-            $("#tr" + tierNum).on("dragover", allowDrop);
-            $("#tr" + tierNum).on("drop", drop);
-            $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
-            $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
-            $("#th" + tierNum).on("dragstart", drag);
-            $("#th" + tierNum).css("background-color", tierList[tierNum].bg);
-            $("#th" + tierNum).css("color", tierList[tierNum].colour);
-            $("#th" + tierNum).css("max-width", settings[settings.sort].tierHeaderWidth + "px");
-            $("#th" + tierNum).css("width", settings[settings.sort].tierHeaderWidth + "px");
-            $("#th" + tierNum).css("font-size", settings[settings.sort].tierHeaderFontSize + "px");
+    if (tierSort == settings.sort) {
+        $("#tier_list_tbody").append("<tr id='tr" + tierNum + "' class='tier'><th id='th" + tierNum +
+        "' class='tier_header' draggable='true'>" + tiersData[tierNum].name + "</th><td id='tier" + tierNum +
+        "' class='tier_content'></td></tr>");
+        $("#tr" + tierNum).on("dragover", allowDrop);
+        $("#tr" + tierNum).on("drop", drop);
+        $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
+        $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
+        $("#th" + tierNum).on("dragstart", drag);
+        $("#th" + tierNum).css("background-color", tierList[tierNum].bg);
+        $("#th" + tierNum).css("color", tierList[tierNum].colour);
+        $("#th" + tierNum).css("max-width", settings[settings.sort].tierHeaderWidth + "px");
+        $("#th" + tierNum).css("width", settings[settings.sort].tierHeaderWidth + "px");
+        $("#th" + tierNum).css("font-size", settings[settings.sort].tierHeaderFontSize + "px");
+
+        if (isMobile()) {
+            $("#th" + tierNum).css("height", "60px");
+        }
+
+        for (i = 0; i < tiersData[tierNum].chars.length; i++) {
+            item = tiersData[tierNum].chars[i];
+
+            if (item == "Mai") {
+                item = "Mai PC-98";
+            }
 
             if (isMobile()) {
-                $("#th" + tierNum).css("height", "60px");
+                $("#" + item).off("click");
             }
 
-            for (i = 0; i < tiersData[tierNum].chars.length; i++) {
-                item = tiersData[tierNum].chars[i];
+            addToTier(item, tierNum);
+        }
+    } else {
+        for (i = 0; i < tiersData[tierNum].chars.length; i++) {
+            item = tiersData[tierNum].chars[i];
 
-                if (item == "Mai") {
-                    item = "Mai PC-98";
-                }
-
-                if (isMobile()) {
-                    $("#" + item).off("click");
-                }
-
-                addToTier(item, tierNum);
+            if (item == "Mai") {
+                item = "Mai PC-98";
             }
-        } else {
-            for (i = 0; i < tiersData[tierNum].chars.length; i++) {
-                item = tiersData[tierNum].chars[i];
 
-                if (item == "Mai") {
-                    item = "Mai PC-98";
-                }
-
-                if (isMobile()) {
-                    $("#" + item).off("click");
-                }
-
-                tierList[tierNum].chars.pushStrict(item);
+            if (isMobile()) {
+                $("#" + item).off("click");
             }
+
+            tierList[tierNum].chars.pushStrict(item);
         }
     }
 }
 
 function loadTiersFromStorage() {
-    var orderData = JSON.parse(localStorage.getItem("order")),
-        tiersData = JSON.parse(localStorage.getItem("tiers")),
-        gameOrderData = JSON.parse(localStorage.getItem("gameOrder")),
+    var tiersData = JSON.parse(localStorage.getItem("tiers")),
         gameTiersData = JSON.parse(localStorage.getItem("gameTiers")),
-        shotOrderData = JSON.parse(localStorage.getItem("shotOrder")),
         shotTiersData = JSON.parse(localStorage.getItem("shotTiers")),
         tierNum, i;
 
-    if (orderData) {
-        order = orderData;
-
-        for (i = 0; i < order.length; i++) {
-            tierNum = order[i];
-            loadTier(tiersData, tierNum, "characters");
-        }
-    } else if (tiersData && !tiersData.isEmpty()) {
+    if (tiersData && !tiersData.isEmpty()) {
         for (tierNum in tiersData) {
             tierNum = Number(tierNum);
             loadTier(tiersData, tierNum, "characters");
-            order.push(tierNum);
         }
     } else {
         for (i = 0; i < defaultTiers.length; i++) {
@@ -1982,18 +1940,10 @@ function loadTiersFromStorage() {
         }
     }
 
-    if (gameOrderData) {
-        gameOrder = gameOrderData;
-
-        for (i = 0; i < gameOrder.length; i++) {
-            tierNum = gameOrder[i];
-            loadTier(gameTiersData, tierNum, "works");
-        }
-    } else if (gameTiersData && !gameTiersData.isEmpty()) {
+    if (gameTiersData && !gameTiersData.isEmpty()) {
         for (tierNum in gameTiersData) {
             tierNum = Number(tierNum);
             loadTier(gameTiersData, tierNum, "works");
-            gameOrder.push(tierNum);
         }
     } else {
         for (i = 0; i < defaultTiers.length; i++) {
@@ -2001,18 +1951,10 @@ function loadTiersFromStorage() {
         }
     }
 
-    if (shotOrderData) {
-        shotOrder = shotOrderData;
-
-        for (i = 0; i < shotOrder.length; i++) {
-            tierNum = shotOrder[i];
-            loadTier(shotTiersData, tierNum, "shots");
-        }
-    } else if (shotTiersData && !shotTiersData.isEmpty()) {
+    if (shotTiersData && !shotTiersData.isEmpty()) {
         for (tierNum in shotTiersData) {
             tierNum = Number(tierNum);
             loadTier(shotTiersData, tierNum, "shots");
-            shotOrder.push(tierNum);
         }
     } else {
         for (i = 0; i < defaultTiers.length; i++) {
