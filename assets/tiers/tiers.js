@@ -676,13 +676,27 @@ function validateTierName(tierName) {
     return tierName.length <= MAX_NAME_LENGTH;
 }
 
+function highestTierNum() {
+    var tierList = getCurrentTierList(), highestTierNum = 0, tierNum;
+
+    for (tierNum in tierList) {
+        if (tierList[tierNum].flag) {
+            continue;
+        }
+
+        highestTierNum = tierNum;
+    }
+
+    return highestTierNum;
+}
+
 function addTier(event) {
     var tierName = event.data.tierName, noDisplay = event.data.noDisplay, tierList = getCurrentTierList(),
         tierOrder = getCurrentTierOrder(), tierNum = 0;
 
     printMessage("");
 
-    while (tierList[tierNum] && !tierList[tierNum].flag) {
+    while (tierNum <= highestTierNum()) {
         tierNum += 1;
     }
 
