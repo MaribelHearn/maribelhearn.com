@@ -64,6 +64,9 @@ a:visited.dropdown_button {
 .dimgrey {
     color: #999999;
 }
+.dl_icon {
+    background-image: url('../wr/dl_white.png');
+}
 .Spring {
     color: fuchsia;
 }
