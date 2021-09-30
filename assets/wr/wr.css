@@ -196,6 +196,7 @@ table, th, td {
 .dl_icon {
     width: 11px;
     height: 11px;
+    display: inline-block;
     background-image: url('../wr/dl.png');
 }
 .dropdown_content > p {
