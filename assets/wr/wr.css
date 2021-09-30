@@ -193,6 +193,11 @@ table, th, td {
 .game_image:hover .tooltip {
     visibility: visible;
 }
+.dl_icon {
+    width: 11px;
+    height: 11px;
+    background-image: url('../wr/dl.png');
+}
 .dropdown_content > p {
     margin: 4px;
 }
