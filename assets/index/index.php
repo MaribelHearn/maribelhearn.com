@@ -98,9 +98,9 @@
             <div class='page_table'>
                 <p class='link'>
                     <a href='thvote'><span class='icon thvote_icon'></span>
-                    THWiki Popularity Poll 2020 Results Translation</a>
-                    <span class='tooltip'>Complete English translation of the full
-                    results of the THWiki Popularity Poll held in 2020.</span>
+                    THWiki Popularity Poll 2021 Results Translation</a>
+                    <span class='tooltip'>Complete English translation of the
+                    results of the THWiki Popularity Poll held in 2021.</span>
                 </p>
                 <p class='link'>
                     <a href='tiers'><span class='icon tiers_icon'></span>
