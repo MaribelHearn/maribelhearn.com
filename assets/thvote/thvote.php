@@ -4,14 +4,14 @@
     <span id='hy_container'><span id='hy'></span>
         <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
     </span>
-    <h1>THWiki Popularity Poll 2020 Results</h1>
+    <h1>THWiki Popularity Poll 2021 Results</h1>
     <?php
         if (!empty($_GET['redirect'])) {
             echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
         }
     ?>
-    <p>An English translation of the results of the 2020 incarnation of the annual THWiki Popularity Poll.</p>
-    <p>As per usual, the questionnaire results are <strong>not released yet </strong>. They will follow at a later time.</p>
+    <p>An English translation of the results of the 2021 incarnation of the annual THWiki Popularity Poll.</p>
+    <p>As per usual, the questionnaire results are <strong>not released yet</strong>. They will follow at a later time.</p>
     <!--<p>Confusingly, "preliminary" simply means the full results without the questionnaire results.
     It does <strong>not</strong> mean the results are not final. The number of votes for the characters,
     music and works will <strong>not</strong> change when the full results are published.</p>-->
@@ -80,8 +80,8 @@
                 <tr>
                     <!--<th id='music_head' class='head noborders sorttable_numeric'>#</th>-->
                     <th class='sorttable_numeric'>Rank</th>
+                    <th class='sorttable_numeric'>2020 rank</th>
                     <th class='sorttable_numeric'>2019 rank</th>
-                    <th class='sorttable_numeric'>2018 rank</th>
                     <th>Name</th>
                     <th class='sorttable_numeric'>Points</th>
                     <th class='sorttable_numeric'>No. 1 Votes</th>
@@ -111,8 +111,8 @@
                 <tr>
                     <!--<th id='works_head' class='head noborders sorttable_numeric'>#</th>-->
                     <th class='sorttable_numeric'>Rank</th>
+                    <th class='sorttable_numeric'>2020 rank</th>
                     <th class='sorttable_numeric'>2019 rank</th>
-                    <th class='sorttable_numeric'>2018 rank</th>
                     <th>Name</th>
                     <th class='sorttable_numeric'>Points</th>
                     <th class='sorttable_numeric'>No. 1 Votes</th>
