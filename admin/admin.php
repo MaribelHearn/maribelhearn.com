@@ -50,6 +50,7 @@
             case 'South Korea': return 'Korea';
             case 'Guadeloupe': return 'France';
             case 'Croatia': return 'Croatian';
+            case 'Myanmar': return 'Burma';
             case 'Macao': return 'Macau';
             default: return str_replace(' ', '-', $country);
         }
@@ -57,6 +58,7 @@
     function format_image(string $country) {
         switch ($country) {
             case 'United Arab Emirates': return '';
+            case 'Antigua and Barbuda': return '';
             case 'Trinidad and Tobago': return '';
             case 'United Kingdom': return 'flag-';
             case 'French Polynesia': return '';
