@@ -65,6 +65,7 @@
             case 'Palestine': return '';
             case 'Estonia': return '';
             case 'Reunion': return '';
+            case 'Aruba': return '';
             default: return 'Flag-';
         }
     }
