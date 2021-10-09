@@ -55,7 +55,6 @@ input[type=button]:not(.button_bottom) {
 }
 #characters {
     width: 62px;
-    padding-right: 15px;
 }
 #buttons_mobile {
     display: block;
@@ -76,7 +75,7 @@ input[type=button]:not(.button_bottom) {
 #tier_list_container {
     overflow-y: auto;
     border: 1px solid black;
-    margin-left: 64px;
+    margin-left: 52px;
     max-height: 82%;
 }
 #wrap, #show, #characters, #msg_container_mobile {

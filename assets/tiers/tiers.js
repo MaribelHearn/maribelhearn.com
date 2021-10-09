@@ -1,7 +1,9 @@
 /*global $ html2canvas getCookie deleteCookie MobileDragDrop*/
-MobileDragDrop.polyfill({
-    holdToDrag: 200
-});
+if (typeof MobileDragDrop !== "undefined") {
+    MobileDragDrop.polyfill({
+        holdToDrag: 200
+    });
+}
 
 var MAX_NUMBER_OF_TIERS = 100,
     MAX_NAME_LENGTH = 30,
@@ -246,13 +248,15 @@ function setTieredItemEvents(item, tierNum) {
     $("#" + item).off("dragstart");
     $("#" + item).off("dragover dragenter");
     $("#" + item).off("click");
-    $("#" + item).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
     $("#" + item).on("dragstart", drag);
     $("#" + item).on("dragover dragenter", allowDrop);
     $("#" + item).on("click", toggleMulti);
 
     if (!isMobile()) {
         $("#" + item).on("dblclick", {name: $("#" + item).attr("title")}, addMenu);
+        $("#" + item).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
+    } else {
+        $("#" + item).on("contextmenu", allowDrop);
     }
 }
 
@@ -397,7 +401,11 @@ function addToTier(item, tierNum, pos, noDisplay) {
     $("#" + item).removeClass("list_" + settings.sort + getSpritesheetOf(item, categoryName));
     $("#" + item).addClass("tiered_" + settings.sort + getSpritesheetOf(item, categoryName));
     $("#" + item).off("contextmenu");
-    $("#" + item).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
+
+    if (!isMobile()) {
+        $("#" + item).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
+    }
+
     $("#" + item).on("dragover dragenter", allowDrop);
     id = "tier" + tierNum + "_" + tierList[tierNum].chars.length;
     $("#tier" + tierNum).append("<span id='" + id + "'></span>");
@@ -622,7 +630,7 @@ function removeFromTier(item, tierNum, multi) {
     $("#" + item).off("contextmenu");
 
     if (isMobile()) {
-        $("#" + item).on("contextmenu", {name: $("#" + item).attr("title")}, addMenu);
+        $("#" + item).on("contextmenu", allowDrop);
     }
 
     pos = getPositionOf(item);
