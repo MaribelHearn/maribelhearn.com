@@ -1,4 +1,8 @@
-/*global $ html2canvas getCookie deleteCookie*/
+/*global $ html2canvas getCookie deleteCookie MobileDragDrop*/
+MobileDragDrop.polyfill({
+    holdToDrag: 200
+});
+
 var MAX_NUMBER_OF_TIERS = 100,
     MAX_NAME_LENGTH = 30,
     categories = {},
@@ -224,22 +228,27 @@ function setPickerItemEvents(item) {
     $("#" + item).off("dblclick");
     $("#" + item).off("contextmenu");
     $("#" + item).off("dragstart");
-    $("#" + item).off("dragover");
+    $("#" + item).off("dragover dragenter");
     $("#" + item).off("click");
-    $("#" + item).on(isMobile() ? "contextmenu" : "dblclick", {name: $("#" + item).attr("title")}, addMenu);
     $("#" + item).on("dragstart", drag);
     $("#" + item).on("click", toggleMulti);
+
+    if (!isMobile()) {
+        $("#" + item).on("dblclick", {name: $("#" + item).attr("title")}, addMenu);
+    } else {
+        $("#" + item).on("contextmenu", allowDrop);
+    }
 }
 
 function setTieredItemEvents(item, tierNum) {
     $("#" + item).off("dblclick");
     $("#" + item).off("contextmenu");
     $("#" + item).off("dragstart");
-    $("#" + item).off("dragover");
+    $("#" + item).off("dragover dragenter");
     $("#" + item).off("click");
     $("#" + item).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
     $("#" + item).on("dragstart", drag);
-    $("#" + item).on("dragover", allowDrop);
+    $("#" + item).on("dragover dragenter", allowDrop);
     $("#" + item).on("click", toggleMulti);
 
     if (!isMobile()) {
@@ -265,7 +274,7 @@ function reloadTiers() {
         $("#tier_list_tbody").append("<tr id='tr" + tierNum +
         "' class='tier'><th id='th" + tierNum +
         "' class='tier_header' draggable='true'>" + tierList[tierNum].name + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr>");
-        $("#tr" + tierNum).on("dragover", allowDrop);
+        $("#tr" + tierNum).on("dragover dragenter", allowDrop);
         $("#tr" + tierNum).on("drop", drop);
         $("#tr" + tierNum).on("dragstart", drag);
         $("#tr" + tierNum).css("background-color", settings[settings.sort].tierListColour);
@@ -389,7 +398,7 @@ function addToTier(item, tierNum, pos, noDisplay) {
     $("#" + item).addClass("tiered_" + settings.sort + getSpritesheetOf(item, categoryName));
     $("#" + item).off("contextmenu");
     $("#" + item).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
-    $("#" + item).on("dragover", allowDrop);
+    $("#" + item).on("dragover dragenter", allowDrop);
     id = "tier" + tierNum + "_" + tierList[tierNum].chars.length;
     $("#tier" + tierNum).append("<span id='" + id + "'></span>");
     tieredItems.push(item);
@@ -686,7 +695,7 @@ function addTier(event) {
         $("#tier_list_tbody").append("<tr id='tr" + tierNum + "' class='tier'>" +
         "<th id='th" + tierNum + "' class='tier_header' draggable='true'>" + tierName +
         "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr><hr>");
-        $("#tr" + tierNum).on("dragover", allowDrop);
+        $("#tr" + tierNum).on("dragover dragenter", allowDrop);
         $("#tr" + tierNum).on("drop", drop);
         $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
         $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
@@ -764,7 +773,7 @@ function removeCharacters(tierNum, noDisplay) {
 }
 
 function removeTierEvents(tierNum) {
-    $("#tr" + tierNum).off("dragover");
+    $("#tr" + tierNum).off("dragover dragenter");
     $("#tr" + tierNum).off("drop");
     $("#th" + tierNum).off("click");
     $("#th" + tierNum).off("contextmenu");
@@ -772,7 +781,7 @@ function removeTierEvents(tierNum) {
 }
 
 function setTierEvents(tierNum) {
-    $("#tr" + tierNum).on("dragover", allowDrop);
+    $("#tr" + tierNum).on("dragover dragenter", allowDrop);
     $("#tr" + tierNum).on("drop", drop);
     $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
     $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
@@ -1725,6 +1734,8 @@ function eraseAll() {
 }
 
 function drag(event) {
+    event.dataTransfer = event.originalEvent.dataTransfer;
+    event.dataTransfer.setData("text/plain", event.target.id);
     following = event.target.id;
 }
 
@@ -1878,7 +1889,7 @@ function loadTier(tiersData, tierNum, tierSort) {
         $("#tier_list_tbody").append("<tr id='tr" + tierNum + "' class='tier'><th id='th" + tierNum +
         "' class='tier_header' draggable='true'>" + tiersData[tierNum].name + "</th><td id='tier" + tierNum +
         "' class='tier_content'></td></tr>");
-        $("#tr" + tierNum).on("dragover", allowDrop);
+        $("#tr" + tierNum).on("dragover dragenter", allowDrop);
         $("#tr" + tierNum).on("drop", drop);
         $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
         $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
@@ -2096,7 +2107,7 @@ function setEventListeners() {
     $("#save_button_mobile").on("click", {noMenu: true}, saveConfirmation);
     $("#menu_button").on("click", menu);
     $("#switch_button").on("click", switchSort);
-    $("#characters").on("dragover", allowDrop);
+    $("#characters").on("dragover dragenter", allowDrop);
     $("#characters").on("drop", drop);
     window.onbeforeunload = function () {
         if (unsavedChanges) {
