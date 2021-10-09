@@ -238,7 +238,7 @@ function setPickerItemEvents(item) {
     if (!isMobile()) {
         $("#" + item).on("dblclick", {name: $("#" + item).attr("title")}, addMenu);
     } else {
-        $("#" + item).on("contextmenu", allowDrop);
+        $("#" + item).on("contextmenu", preventContextMenu);
     }
 }
 
@@ -252,11 +252,11 @@ function setTieredItemEvents(item, tierNum) {
     $("#" + item).on("dragover dragenter", allowDrop);
     $("#" + item).on("click", toggleMulti);
 
-    if (!isMobile()) {
+    if (isMobile()) {
+        $("#" + item).on("contextmenu", preventContextMenu);
+    } else {
         $("#" + item).on("dblclick", {name: $("#" + item).attr("title")}, addMenu);
         $("#" + item).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
-    } else {
-        $("#" + item).on("contextmenu", allowDrop);
     }
 }
 
@@ -283,7 +283,6 @@ function reloadTiers() {
         $("#tr" + tierNum).on("dragstart", drag);
         $("#tr" + tierNum).css("background-color", settings[settings.sort].tierListColour);
         $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
-        $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
         $("#th" + tierNum).css("background-color", tierList[tierNum].bg);
         $("#th" + tierNum).css("color", tierList[tierNum].colour);
         $("#th" + tierNum).css("max-width", settings[settings.sort].tierHeaderWidth + "px");
@@ -292,6 +291,9 @@ function reloadTiers() {
 
         if (isMobile()) {
             $("#th" + tierNum).css("height", "60px");
+            $("#" + item).on("contextmenu", preventContextMenu);
+        } else {
+            $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
         }
 
         for (i = 0; i < tierList[tierNum].chars.length; i++) {
@@ -402,7 +404,9 @@ function addToTier(item, tierNum, pos, noDisplay) {
     $("#" + item).addClass("tiered_" + settings.sort + getSpritesheetOf(item, categoryName));
     $("#" + item).off("contextmenu");
 
-    if (!isMobile()) {
+    if (isMobile()) {
+        $("#" + item).on("contextmenu", preventContextMenu);
+    } else {
         $("#" + item).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
     }
 
@@ -630,7 +634,7 @@ function removeFromTier(item, tierNum, multi) {
     $("#" + item).off("contextmenu");
 
     if (isMobile()) {
-        $("#" + item).on("contextmenu", allowDrop);
+        $("#" + item).on("contextmenu", preventContextMenu);
     }
 
     pos = getPositionOf(item);
@@ -706,7 +710,6 @@ function addTier(event) {
         $("#tr" + tierNum).on("dragover dragenter", allowDrop);
         $("#tr" + tierNum).on("drop", drop);
         $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
-        $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
         $("#th" + tierNum).on("dragstart", drag);
         $("#th" + tierNum).css("max-width", settings[settings.sort].tierHeaderWidth + "px");
         $("#th" + tierNum).css("width", settings[settings.sort].tierHeaderWidth + "px");
@@ -715,6 +718,9 @@ function addTier(event) {
 
         if (isMobile()) {
             $("#th" + tierNum).css("height", "60px");
+            $("#th" + tierNum).on("contextmenu", preventContextMenu);
+        } else {
+            $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
         }
     }
 
@@ -792,8 +798,19 @@ function setTierEvents(tierNum) {
     $("#tr" + tierNum).on("dragover dragenter", allowDrop);
     $("#tr" + tierNum).on("drop", drop);
     $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
-    $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
     $("#th" + tierNum).on("dragstart", drag);
+
+    if (isMobile()) {
+        $("#th" + tierNum).on("contextmenu", preventContextMenu);
+    } else {
+        $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
+    }
+}
+
+function removeTierButton(event) {
+    printMessage("<strong class='confirmation'>" + tiers[event.data.tierNum].name + " tier removed!</strong>");
+    removeTier(event.data.tierNum);
+    emptyModal();
 }
 
 function removeTier(tierNum, skipConfirmation, noDisplay) {
@@ -939,10 +956,11 @@ function tierMenu(tierNum) {
     "<p><label for='tier_header_font_size'>Tier header font size</label>" +
     "<input id='tier_header_font_size' class='settings_input' type='number' value=" + settings[settings.sort].tierHeaderFontSize + "></p></div>");
     $("#modal_inner").append("<div><p><input id='save_tier_settings' type='button' value='Save Changes'></p>" +
-    "<p id='settings_msg_container'></p></div>");
+    "<p><input id='remove_tier' type='button' value='Remove This Tier'></p><p id='settings_msg_container'></p></div>");
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
     $("#save_tier_settings").on("click", {tierNum: tierNum}, saveSingleTierSettings);
+    $("#remove_tier").on("click", {tierNum: tierNum}, removeTierButton);
     $(".settings_input").on("keyup", {tierNum: tierNum}, detectTiersEnter);
 
     for (otherTierNum in tierList) {
@@ -1027,17 +1045,14 @@ function mobileInfo() {
     $("#modal_inner").html("<h3>Welcome!</h3>");
     $("#modal_inner").append("<p id='instructions_text'>This page allows you to create your own Touhou tier lists. " +
     "Currently, you can sort characters, works, and shottypes. Usage instructions are listed below.</p>" +
-    "<ul id='instructions_list'><li><strong>Adding Items:</strong> Tap an item, then tap a tier " +
-    "in the resulting popup menu, to add it to that tier.</li>" +
-    "<li><strong>Moving Items:</strong> Tap a tiered item and tap any of the 'Move' buttons to move it to another tier.</li>" +
+    "<ul id='instructions_list'><li><strong>Adding Items:</strong> Long press and drag an item into a tier box or the field.</li>" +
+    "<li><strong>Moving Items:</strong> Long press and drag an item onto another item to move that item to its location.</li>" +
     "<li><strong>Multi Selection:</strong> Tap multiple items to drag them together, adding them to a tier, in your clicking order.</li>" +
-    "<li><strong>Removing Items:</strong> Long press a tiered item and tap 'Remove' to remove it from that tier. </li>" +
-    "<li><strong>Adding Tiers:</strong> Use the Add Tier text field and button at " +
-    "the top of the tier list to add a new tier, or press Enter while in the text field.</li>" +
-    "<li><strong>Moving Tiers:</strong> Drag a tier onto another tier to move it to its position.</li>" +
+    "<li><strong>Removing Items:</strong> Long press and drag an item from a tier onto the picker to remove it from that tier.</li>" +
+    "<li><strong>Adding Tiers:</strong> Use the Add Tier text field and button at the top of the tier list to add a new tier.</li>" +
+    "<li><strong>Moving Tiers:</strong> Long press and drag a tier onto another tier to move it to its position.</li>" +
     "<li><strong>Editing Tiers:</strong> Tap a tier to edit that tier, such as its name or background colour.</li>" +
-    "<li><strong>Removing Tiers:</strong> Long press a tier to remove it and all of its contents. " +
-    "Asks for confirmation if there are items in it.</li></ul>");
+    "<li><strong>Removing Tiers:</strong> Tap a tier and click the Remove This Tier button to remove it and all of its contents.</li></ul>");
     $("#modal_inner").append("<p>Use the buttons at the bottom of the screen to save your tier lists, " +
     "open the main menu, view these instructions, and switch between tiering characters, works, and shottypes (Switch Mode).</p>");
     $("#modal_inner").append("<p>Tap outside the window to close popup windows like this one.</p>");
@@ -1751,6 +1766,10 @@ function allowDrop(event) {
     event.preventDefault();
 }
 
+function preventContextMenu(event) {
+    event.preventDefault();
+}
+
 function tierOntoTier(tierNum) {
     if (following.substring(0, 2) != tierNum) {
         moveTierTo(Number(following.replace("th", "")), tierNum);
@@ -1900,7 +1919,6 @@ function loadTier(tiersData, tierNum, tierSort) {
         $("#tr" + tierNum).on("dragover dragenter", allowDrop);
         $("#tr" + tierNum).on("drop", drop);
         $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
-        $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
         $("#th" + tierNum).on("dragstart", drag);
         $("#th" + tierNum).css("background-color", tierList[tierNum].bg);
         $("#th" + tierNum).css("color", tierList[tierNum].colour);
@@ -1910,6 +1928,9 @@ function loadTier(tiersData, tierNum, tierSort) {
 
         if (isMobile()) {
             $("#th" + tierNum).css("height", "60px");
+            $("#th" + tierNum).on("contextmenu", preventContextMenu);
+        } else {
+            $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
         }
 
         for (i = 0; i < tiersData[tierNum].chars.length; i++) {
