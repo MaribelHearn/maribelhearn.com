@@ -196,7 +196,7 @@
         rare serious keyboard players <em>not</em> to use a mechanical keyboard.</li>
         <li>Linux distributions are my preferred operating systems. I have used them on my laptop since late 2014 and
         on my main PC since late 2018.</li>
-        <li>Pale Moon is my preferred browser, which I switched to from Firefox after maining it for many years.</li>
+        <li>A heavily tweaked Firefox is my preferred browser (most tweaks being for privacy reasons). I also used Pale Moon for a while.</li>
         <li>As of my most recent measurement, I am 1.934 meters tall, or 6' 4'' in feet and inches.</li>
         <li>I cannot stand the smell of oranges. I also tend to dislike anything citrus, but only if the taste is too prevalent;
         lemon tea, for instance, is fine.</li>
