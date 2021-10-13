@@ -1,4 +1,4 @@
-﻿<div id='wrap' class='wrap'>
+<div id='wrap' class='wrap'>
     <p id='ack' class='noborders'>This background image<br id='ack_br'>
     was drawn by <a href='https://www.pixiv.net/member.php?id=2025430'>Yakumo_Stocking</a></p>
     <span id='hy_container'><span id='hy'></span>
