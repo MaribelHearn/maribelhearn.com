@@ -1,4 +1,4 @@
-﻿<?php include_once 'assets/survival/survival_code.php' ?>
+<?php include_once 'assets/survival/survival_code.php' ?>
 <div id='wrap' class='wrap'>
     <p id='ack' data-html2canvas-ignore>This background image<br id='ack_br'>
     was drawn by <a href='https://www.pixiv.net/member.php?id=759506'>windtalker</a></p>
@@ -7,7 +7,7 @@
 	</span>
     <div id='content' data-html2canvas-ignore>
 		<h1>Survival Progress Table Generator</h1>
-		<?php
+        <?php
 			if (!empty($_GET['redirect'])) {
 				echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
 			}
@@ -49,8 +49,8 @@
             <input id='fillAll' type='button' value='Fill All'>
         </p>
     </div>
-	<div id='dummy' data-html2canvas-ignore><div id='dummy_sub'></div></div>
-	<div id='container'>
+    <div id='dummy' data-html2canvas-ignore><div id='dummy_sub'></div></div>
+    <div id='container'>
         <table id='survival'>
             <caption id='legend'>
 				<span class='legend clear'></span> 1cc
