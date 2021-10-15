@@ -253,7 +253,7 @@ li {
 #add_tier_desktop {
     float: left;
 }
-#save_settings {
+#save_settings, #remove_tier {
     margin-top: 15px;
 }
 #save_link {
