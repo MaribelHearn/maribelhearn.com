@@ -808,7 +808,7 @@ function setTierEvents(tierNum) {
 }
 
 function removeTierButton(event) {
-    printMessage("<strong class='confirmation'>" + tiers[event.data.tierNum].name + " tier removed!</strong>");
+    printMessage("<strong class='confirmation'>" + getCurrentTierList()[event.data.tierNum].name + " tier removed!</strong>");
     removeTier(event.data.tierNum);
     emptyModal();
 }
