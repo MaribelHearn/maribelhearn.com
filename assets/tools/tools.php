@@ -88,7 +88,7 @@
 			else if ($lang == 'Japanese') { echo '全開放済みのスコアデータファイル'; }
 			else { echo 'Completed Scorefiles'; }
 		?></a></p>
-        <p><a href='#thprac'><strong>THprac</strong></a></p>
+        <p><a href='#thprac'><strong>Thprac</strong></a></p>
         <p><a href='#spoileral'>SpoilerAL</a></p>
         <p><a href='#practools'><?php
 			if ($lang == 'Russian') { echo 'Общие инструменты для практики'; }
@@ -150,7 +150,8 @@
 			echo 'Removes input delay, allows you to increase in-game FPS (default is 60), optionally fixes several bugs '
 			.'(PCB cherry display, MoF MarisaB 3-power unfocus, UFO 2.147b score display). The input delay is mostly ' .
 			'prevalent in the older games (EoSD to IN) and running them on Vpatch will significantly improve the gameplay ' .
-			'experience.</p><p>Vpatch is applicable to all official shooting games bar HSiFS, WBaWC and UM.';
+			'experience. It allows you to set a custom screen resolution as well.</p>' .
+			'<p>Vpatch is applicable to all official shooting games bar HSiFS, WBaWC and UM.';
 		}
 
 	?></p>
@@ -251,12 +252,12 @@
 	?></p>
     <a href='https://maribelhearn.com/mirror/Practice%20Scorefiles.zip' target='_blank'><?php echo tl_term('Download', $lang) ?></a>
 	<!-- Old link without WBaWC: https://mega.nz/#F!r8hWmCrD!oOkBNotI88acvlhlKUXZiA -->
-	<!-- THprac -->
+	<!-- Thprac -->
 	<hr>
 	<?php
-		if ($lang == 'Russian') { echo '<h2 id="thprac">THprac</h2><h3>(Универсальный инструмент для практики)</h3>'; }
-		else if ($lang == 'Japanese') { echo '<h2 id="thprac">THprac</h2><h3>(ユニバーサルプラクティスツール by ACK）</h3>'; }
-		else { echo '<h2 id="thprac">THprac (universal practice tool by ACK)</h2>'; }
+		if ($lang == 'Russian') { echo '<h2 id="thprac">Thprac</h2><h3>(Универсальный инструмент для практики)</h3>'; }
+		else if ($lang == 'Japanese') { echo '<h2 id="thprac">Thprac</h2><h3>(ユニバーサルプラクティスツール by ACK）</h3>'; }
+		else { echo '<h2 id="thprac">Thprac (universal practice tool by ACK)</h2>'; }
 	?>
 	<p><?php
 		if ($lang == 'Russian') {
