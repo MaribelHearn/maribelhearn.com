@@ -76,6 +76,10 @@
                 <th>EoSD</th>
                 <td>Touhou 6: the Embodiment of Scarlet Devil.</td>
             </tr>
+            <tr id='term_ex'>
+                <th>Ex</th>
+                <td>Extra; the Extra Stage.</td>
+            </tr>
             <tr id='term_exnn'>
                 <th>ExNN</th>
                 <td>Extra No Miss No Bomb; a <a href='#term_1cc'>1cc</a> of some Extra Stage without dying or using bombs.
@@ -96,9 +100,14 @@
             <tr id='term_gameover'>
                 <th>GO</th>
                 <td>(Uncommon) Game over. Not to be confused with <a href='#term_go'>"Good Omen"</a>, a Spell Card.</td>
+            </tr>
             <tr id='term_graze'>
                 <th>Graze</th>
                 <td>Having a bullet come very close to your hitbox, which means it touches your 'grazebox', a hitbox larger than your main hitbox that is used to detect grazing.</td>
+            </tr>
+            <tr id='term_hrtp'>
+                <th>HRtP</th>
+                <td>Touhou 1: Highly Responsive to Prayers.</td>
             </tr>
             <tr id='term_hitbox'>
                 <th>Hitbox</th>
@@ -122,6 +131,10 @@
 				<th>IN</th>
 				<td>Touhou 8: Imperishable Night.</td>
 			</tr>
+            <tr id='term_lls'>
+                <th>LLS</th>
+                <td>Touhou 4: Lotus Land Story.</td>
+            </tr>
             <tr id='term_lolk'>
                 <th>LoLK</th>
                 <td>Touhou 15: Legacy of Lunatic Kingdom.</td>
@@ -167,6 +180,14 @@
                 <td>Dodging dense waves of bullets by navigating through them, usually using small taps to get safely through.
 				Often abbreviated to 'micro'.</td>
             </tr>
+            <tr id='term_midnon'>
+                <th>Midnon</th>
+                <td>A <a href='term_nonspell'>nonspell</a> used by a midboss.</td>
+            </tr>
+            <tr id='term_midspell'>
+                <th>Midspell</th>
+                <td>A Spell Card used by a midboss.</td>
+            </tr>
             <tr id='term_milking'>
                 <th>Milking</th>
                 <td>Stalling a pattern for as long as possible to maximise the value of something, which is mostly graze.
@@ -185,6 +206,10 @@
 				<th>MoF</th>
 				<td>Touhou 10: Mountain of Faith.</td>
 			</tr>
+            <tr id='term_ms'>
+                <th>MS</th>
+                <td>Touhou 5: Mystic Square.</td>
+            </tr>
             <tr id='term_nonspell'>
                 <th>Non</th>
                 <td>Nonspell; a boss attack that is not a Spell Card.</td>
@@ -197,6 +222,12 @@
                 <th>NBB</th>
                 <td>No Border Breaks; used in <a href='#term_pcb'>PCB</a> to mean a clear without breaking Supernatural Borders,
 				whether it be by getting hit during one or by pressing the X key.</td>
+            </tr>
+            <tr id='term_nc'>
+                <th>NC</th>
+                <td>No Cards; used in <a href='#term_um'>UM</a> to mean a clear without using any active, equipment or
+				passive cards. Cards that do not affect <a href='#term_nmnb'>NMNB</a> play, such as the life card,
+				the bomb card and the money card, are exempt from this.</td>
             </tr>
             <tr id='term_nf'>
                 <th>NF</th>
@@ -230,12 +261,6 @@
                 <td>Used in <a href='#term_wbawc'>WBaWC</a> to mean <a href='#term_nmnb'>NMNB</a>,
 				plus two game-specific restrictions, which are No Berserk Roars (No Hypers)
 				and No Roar Breaks (No Hyper Breaks). Also known as <a href='#term_perfect'>Perfect</a>.</td>
-            </tr>
-            <tr id='term_nc'>
-                <th>NC</th>
-                <td>No Cards; used in <a href='#term_um'>UM</a> to mean a clear without using any active, equipment or
-				passive cards. Cards that do not affect <a href='#term_nmnb'>NMNB</a> play, such as the life card,
-				the bomb card and the money card, are exempt from this.</td>
             </tr>
             <tr id='term_nr'>
                 <th>NR</th>
@@ -276,6 +301,18 @@
             <tr id='term_pausebuffering'>
                 <th>Pause buffering</th>
                 <td>Repeatedly pausing the game in order to make reading and dodging a pattern easier. Doing this during a run is commonly considered cheating.</td>
+            </tr>
+            <tr id='term_penult'>
+                <th>Penult</th>
+                <td>The penultimate Spell Card of a boss fight.</td>
+            </tr>
+            <tr id='term_ph'>
+                <th>Ph</th>
+                <td>Phantasm; the Phantasm Stage in <a href='#term_pcb'>PCB</a>.</td>
+            </tr>
+            <tr id='term_podd'>
+                <th>PoDD</th>
+                <td>Touhou 3: Phantasmagoria of Dim.Dream.</td>
             </tr>
             <tr id='term_pointblanking'>
                 <th>Pointblanking</th>
@@ -337,6 +374,10 @@
                 <th>Shotgunning</th>
                 <td>Shooting an enemy up close. Typically done with a spreadshot to deal as much damage as possible, as most or all of the shots will hit. Also known as <a href='#term_pointblanking'>pointblanking</a>.</td>
             </tr>
+            <tr id='term_soew'>
+                <th>SoEW</th>
+                <td>Touhou 2: Story of Eastern Wonderland.</td>
+            </tr>
             <!--<tr id='term_spellcard'>
                 <th>Spell Card</th>
                 <td>A bullet pattern that has a name, which, when dodged perfectly, adds a Spell Card Bonus to your score. Dodging one perfectly, that is without dying or bombing,
@@ -381,6 +422,15 @@
             <tr id='term_stg'>
                 <th>STG</th>
                 <td><strong>S</strong>hoo<strong>t</strong>ing <strong>G</strong>ame; an acronym used to refer to shoot 'em up games, just as <a href='#term_shmup'>shmup</a> does. Used primarily by Japanese players.</td>
+            </tr>
+            <tr id='term_thcrap'>
+                <th>Thcrap</th>
+                <td><strong>T</strong>ou<strong>h</strong>ou <strong>C</strong>ommunity <strong>R</strong>eliant <strong>A</strong>utomatic <strong>P</strong>atcher, a translation and modding tool;
+                see <a href='tools#thcrap'>Touhou Patches and Tools</a> for more information. Not to be confused with <a href='#term_thprac'>thprac</a>.</td>
+            </tr>
+            <tr id='term_thprac'>
+                <th>Thprac</th>
+                <td>Universal practice tool; see <a href='tools#thprac'>Touhou Patches and Tools</a> for more information. Not to be confused with <a href='#term_thcrap'>thcrap</a>.</td>
             </tr>
             <tr id='term_timeout'>
                 <th>Timeout</th>
@@ -433,8 +483,8 @@
             </tr>
         </tbody>
     </table>
-    <h1 id='spells'>Spell Card / Pattern Acronyms</h1>
-    <p>These acronyms for particularly infamous patterns usually refer to the Lunatic difficulty version of the abbreviated Spell Card or pattern.</p>
+    <h1 id='spells'>Common Spell Card / Pattern Acronyms</h1>
+    <p>These acronyms for particular patterns usually refer to the Lunatic difficulty version of the abbreviated Spell Card or pattern.</p>
     <table id='spelltable'>
         <thead>
             <tr>
@@ -459,10 +509,6 @@
                 <th>BoWaP</th>
                 <td>"Border of Wave and Particle", Satori's final Spell Card if you use ReimuA in <a href='#term_sa'>SA</a>.</td>
             </tr>
-            <tr id='term_bcb'>
-                <th>BCB</th>
-                <td>"Hidden Breezy Cherry Blossom", Okina's final Spell Card if you use the Spring season in <a href='#term_hsifs'>HSiFS</a>. Also known as 'HBCB'.</td>
-            </tr>
             <tr id='term_bd'>
                 <th>BD</th>
                 <td>"Buddhist Diamond", Kaguya's second Spell Card in <a href='#term_in'>IN</a>.</td>
@@ -483,10 +529,6 @@
                 <th>CC</th>
                 <td>"Complete Clarification", Shou's final Spell Card in <a href='#term_ufo'>UFO</a>.</td>
             </tr>
-            <tr id='term_cfw'>
-                <th>CFW</th>
-                <td>"Hidden Crazy Fall Wind", Okina's final Spell Card if you use the Autumn season in <a href='#term_hsifs'>HSiFS</a>. Also known as 'HCFW'.</td>
-            </tr>
             <tr id='term_dbdb'>
                 <th>DBDB</th>
                 <td>"Double Black Death Butterfly", Satori's first ReimuA-specific Spell Card in <a href='#term_sa'>SA</a>.</td>
@@ -494,10 +536,6 @@
             <tr id='term_dr'>
                 <th>DR</th>
                 <td>"Devil's Recitation", Byakuren's fourth Spell Card in <a href='#term_ufo'>UFO</a>.</td>
-            </tr>
-            <tr id='term_ew'>
-                <th>EW</th>
-                <td>"Hidden Extreme Winter", Okina's final Spell Card if you use the Winter season in <a href='#term_hsifs'>HSiFS</a>. Also known as 'HEW'.</td>
             </tr>
             <tr id='term_fin'>
                 <th>FIN</th>
@@ -519,9 +557,26 @@
                 <th>GT</th>
                 <td>"Greatest Treasure", Nazrin's midboss Spell Card in <a href='#term_ufo'>UFO</a> Stage 5.</td>
             </tr>
+            <tr id='term_hbcb'>
+                <th>HBCB</th>
+                <td>"Hidden Breezy Cherry Blossom", Okina's final Spell Card if you use the Spring season in <a href='#term_hsifs'>HSiFS</a>. Also known as 'BCB'.</td>
+            </tr>
+            <tr id='term_hcfw'>
+                <th>HCFW</th>
+                <td>"Hidden Crazy Fall Wind", Okina's final Spell Card if you use the Autumn season in <a href='#term_hsifs'>HSiFS</a>. Also known as 'CFW'.</td>
+            </tr>
+            <tr id='term_hew'>
+                <th>HEW</th>
+                <td>"Hidden Extreme Winter", Okina's final Spell Card if you use the Winter season in <a href='#term_hsifs'>HSiFS</a>. Also known as 'EW'.</td>
+            </tr>
             <tr id='term_hgs'>
                 <th>HGS</th>
                 <td>"Hell God Sword", Youmu's first Spell Card in <a href='#term_pcb'>PCB</a>.</td>
+            </tr>
+            <tr id='term_hpsi'>
+                <th>HPSI</th>
+                <td>"Hidden Perfect Summer Ice", Okina's final Spell Card if you use the Summer season
+				in <a href='#term_hsifs'>HSiFS</a>. Also known as 'PSI'.</td>
             </tr>
             <tr id='term_hj'>
                 <th>HJ</th>
@@ -571,11 +626,6 @@
                 <th>PDH</th>
                 <td>"Pristine Danmaku Hell", Junko's final Spell Card in <a href='#term_ddc'>LoLK</a>.</td>
             </tr>
-            <tr id='term_psi'>
-                <th>PSI</th>
-                <td>"Hidden Perfect Summer Ice", Okina's final Spell Card if you use the Summer season
-				in <a href='#term_hsifs'>HSiFS</a>. Also known as 'HPSI'.</td>
-            </tr>
             <tr id='term_pwg'>
                 <th>PWG</th>
                 <td>"Peerless Wind God", Aya's <a href='#term_survivalspell'>survival Spell Card</a>
@@ -592,6 +642,10 @@
             <tr id='term_rb'>
                 <th>RB</th>
                 <td>"Resurrection Butterfly", Yuyuko's final Spell Card in <a href='#term_pcb'>PCB</a>.</td>
+            </tr>
+            <tr id='term_rrop'>
+                <th>RRoP</th>
+                <td>"Rainbow Ring of People", Chimata's survival Spell Card in <a href='#term_um'>UM</a>.</td>
             </tr>
             <tr id='term_rtg'>
                 <th>RTG</th>
