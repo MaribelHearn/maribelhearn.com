@@ -688,7 +688,7 @@
 			'Len\'en series. Also changes the dialogues and endings.';
 		}
 	?></p>
-	<a href='https://mega.nz/#!10JzTKBC!GLi2MJZADsRPqdn1b9knvLfJknXepM69vHJ01-XjJ7s'><?php echo tl_term('Download', $lang) ?></a>
+	<a href='https://mega.nz/#!10JzTKBC!GLi2MJZADsRPqdn1b9knvLfJknXepM69vHJ01-XjJ7s' target='_blank'><?php echo tl_term('Download', $lang) ?></a>
 	<p><strong><?php
 		if ($lang == 'Russian') { echo 'DDC Санаэ от '; }
 		else if ($lang == 'Japanese') { echo '輝針城早苗パッチ by '; }
@@ -700,7 +700,7 @@
 		else if ($lang == 'Japanese') { echo 'a'; }
 		else { echo 'Replaces ReimuB with Sanae in DDC.'; }
 	?></p>
-	<a href='https://mega.nz/#!oh4lBA4C!Fq7UV5LfQulUaCAubGRk_LMLOeR4nfE9CdMa0OQZryA'><?php echo tl_term('Download', $lang) ?></a>
+	<a href='https://mega.nz/#!oh4lBA4C!Fq7UV5LfQulUaCAubGRk_LMLOeR4nfE9CdMa0OQZryA' target='_blank'><?php echo tl_term('Download', $lang) ?></a>
 	<p><strong><?php
 		if ($lang == 'Russian') { echo 'HSiFS Санаэ от '; }
 		else if ($lang == 'Japanese') { echo '天空璋早苗パッチ by '; }
@@ -712,7 +712,7 @@
 		else if ($lang == 'Japanese') { echo '天空璋魔理沙を早苗に差し替えます。'; }
 		else { echo 'Replaces Marisa with Sanae in HSiFS.'; }
 	?></p>
-	<a href='https://mega.nz/#!lsBQxSwB!X-YB1uwIN1u8CRYjU-2HZnjhb7zrFE5WvQFZru-CXr8'><?php echo tl_term('Download', $lang) ?></a>
+	<a href='https://mega.nz/#!lsBQxSwB!X-YB1uwIN1u8CRYjU-2HZnjhb7zrFE5WvQFZru-CXr8' target='_blank'><?php echo tl_term('Download', $lang) ?></a>
 	<p><strong><?php
 		if ($lang == 'Russian') { echo 'LoLK Сакуя от '; }
 		else if ($lang == 'Japanese') { echo '紺珠伝咲夜パッチ by '; }
@@ -830,7 +830,7 @@
 			echo 'A collection of modified <span class="code">.dat</span> files that randomise the patterns in the game.';
 		}
 	?></p>
-	<a href='https://drive.google.com/file/d/14PGGkoxHTH-bHKfzSt3OGarZp_APq7KB/view' target='_blank'><?php echo tl_term('Download', $lang) ?></a>
+	<a href='https://mega.nz/folder/AY8iWQyZ#ItObpMjIGEfOXPZyCXAJfA/folder/lckTxKYa' target='_blank'><?php echo tl_term('Download', $lang) ?></a>
     <p><strong>LoLK Black Label</strong></p>
     <p><?php
 		if ($lang == 'Russian') {
@@ -909,7 +909,7 @@
 			'the same download page.';
 		}
 	?></p>
-	<a href='https://mega.nz/file/1iQhyC5S#GLZTjEnQ1iKsN9fPGESJJK-xiyi7jqJMdC3gPH19LtM n' target='_blank'><?php echo tl_term('Downloads', $lang) ?></a>
+	<a href='https://mega.nz/file/1iQhyC5S#GLZTjEnQ1iKsN9fPGESJJK-xiyi7jqJMdC3gPH19LtM' target='_blank'><?php echo tl_term('Downloads', $lang) ?></a>
     <!-- Graphical Patches -->
     <hr>
     <h2 id='graphical'><?php
