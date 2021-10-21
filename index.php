@@ -17,7 +17,7 @@
             header('Location: ' . $data[$url]);
             exit();
         }
-        if (!strpos($url, '/')) {
+        if (strpos($url, '/') === false) {
             $min_distance = PHP_INT_MAX;
             foreach (glob('*/*/*') as $file) {
                 if (strpos($file, '.php') && !strpos($file, '_') && $file != 'error.php') {
