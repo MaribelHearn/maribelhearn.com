@@ -13,9 +13,19 @@ table, tr, th, td {
 caption {
     margin-bottom: 10px;
 }
+div > div > p {
+    margin: 4px;
+}
 .hidden {
     border: none;
     text-align: left;
+}
+.separator {
+    margin-top: 16px;
+}
+.border {
+    border: 1px solid black;
+    margin-bottom: 15px;
 }
 .list {
     width: 250px;
@@ -138,6 +148,9 @@ caption {
     padding-right: 15px;
     padding-bottom: 10px;
     opacity: 0.8;
+}
+#wrap > div:not(#topbar) {
+    display: inline-block;
 }
 #nav {
     margin-bottom: 5px;

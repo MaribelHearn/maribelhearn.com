@@ -232,7 +232,7 @@ a:visited.dropdown_button {
     ul, ol {
         padding-left: 0px;
     }
-    table:not(#jargontable) {
+    table:not(#jargontable):not(#checkboxes) {
         overflow-x: scroll;
         font-size: 8px;
     }
