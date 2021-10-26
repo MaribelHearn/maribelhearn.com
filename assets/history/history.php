@@ -14,61 +14,60 @@
     <p>I am a bullet hell player who mostly plays for score and mains Touhou 13: Ten Desires.
 	I have also scored Touhou 16: Hidden Star in Four Seasons, Seihou Banshiryuu C67 and Samidare.</p>
     <hr>
-    <h2>Contents</h2>
-    <table id='contents'>
-        <tr><td><a href='#overview'>High Scores</a></td></tr>
-        <tr><td><a href='#survival'>Survival</a></td></tr>
-        <tr><th>Touhou Project Shmups</th></tr>
-        <tr><td><a href='#SoEW'>Touhou 2 - The Story of Eastern Wonderland</a></td></tr>
-        <tr><td><a href='#PoDD'>Touhou 3 - Phantasmagoria of Dim.Dream</a></td></tr>
-        <tr><td><a href='#LLS'>Touhou 4 - Lotus Land Story</a></td></tr>
-        <tr><td><a href='#MS'>Touhou 5 - Mystic Square</a></td></tr>
-        <tr><td></td></tr>
-        <tr><td><a href='#EoSD'>Touhou 6 - The Embodiment of Scarlet Devil</a></td></tr>
-        <tr><td><a href='#PCB'>Touhou 7 - Perfect Cherry Blossom</a></td></tr>
-        <tr><td><a href='#IN'>Touhou 8 - Imperishable Night</a></td></tr>
-        <tr><td><a href='#PoFV'>Touhou 9 - Phantasmagoria of Flower View</a></td></tr>
-        <tr><td><a href='#StB'>Touhou 9.5 - Shoot the Bullet</a></td></tr>
-        <tr><td><a href='#MoF'>Touhou 10 - Mountain of Faith</a></td></tr>
-        <tr><td><a href='#SA'>Touhou 11 - Subterranean Animism</a></td></tr>
-        <tr><td><a href='#UFO'>Touhou 12 - Undefined Fantastic Object</a></td></tr>
-        <tr><td><a href='#DS'>Touhou 12.5 - Double Spoiler</a></td></tr>
-        <tr><td><a href='#GFW'>Touhou 12.8 - Great Fairy Wars</a></td></tr>
-        <tr><td><a href='#TD'>Touhou 13 - Ten Desires</a></td></tr>
-        <tr><td><a href='#DDC'>Touhou 14 - Double Dealing Character</a></td></tr>
-        <tr><td><a href='#LoLK'>Touhou 15 - Legacy of Lunatic Kingdom</a></td></tr>
-        <tr><td><a href='#HSiFS'>Touhou 16 - Hidden Star in Four Seasons</a></td></tr>
-        <tr><td><a href='#VD'>Touhou 16.5 - Violet Detector</a></td></tr>
-        <tr><td><a href='#WBaWC'>Touhou 17 - Wily Beast and Weakest Creature</a></td></tr>
-        <tr><td><a href='#UM'>Touhou 18 - Unconnected Marketeers</a></td></tr>
-        <tr><th>Touhou Fangames</th></tr>
-        <tr><td><a href='#SSS'>Shining Shooting Star</a></td></tr>
-        <tr><th>eXceed Shmups</th></tr>
-        <tr><td><a href='#eX1'>eXceed - Gun Bullet Children</a></td></tr>
-        <tr><td><a href='#eX2'>eXceed 2nd - Vampire REX</a></td></tr>
-        <tr><td><a href='#eX3'>eXceed 3rd - Jade Penetrate Black Package</a></td></tr>
-        <tr><th>Other Doujin Shmups</th></tr>
-        <tr><td><a href='#SG'>Shuusou Gyoku</a></td></tr>
-        <tr><td><a href='#BSR'>Banshiryuu (C67)</a></td></tr>
-        <tr><td><a href='#SMD'>Samidare</a></td></tr>
-        <tr><td><a href='#MRS'>Mrs. Estacion</a></td></tr>
-        <tr><td><a href='#CCWI'>Crimzon Clover</a></td></tr>
-        <tr><th>Dodonpachi Shmups</th></tr>
-        <tr><td><a href='#DP'>DonPachi</a></td></tr>
-        <tr><td><a href='#DDP'>DoDonPachi</a></td></tr>
-        <tr><td><a href='#DOJ'>DoDonPachi Dai-Ou-Jou BL</a></td></tr>
-        <tr><td><a href='#DFK'>DoDonPachi Dai-Fukkatsu</a></td></tr>
-        <tr><td><a href='#SDOJ'>DoDonPachi Saidaioujou</a></td></tr>
-        <tr><th>Other Arcade Shmups</th></tr>
-        <tr><td><a href='#Batsugun'>Batsugun Special Version</a></td></tr>
-        <tr><td><a href='#ESP'>ESP Ra.De.</a></td></tr>
-        <tr><td><a href='#ESPg'>Espgaluda</a></td></tr>
-        <tr><td><a href='#Ketsui'>Ketsui ~Kizuna Jigoku Tachi~</a></td></tr>
-        <tr><td><a href='#MSm'>Mushihime-sama</a></td></tr>
-        <tr><td><a href='#MSF'>Mushihime-sama Futari</a></td></tr>
-        <tr><td><a href='#DSm'>Deathsmiles</a></td></tr>
-        <tr><td><a href='#Ikaruga'>Ikaruga</a></td></tr>
-    </table>
+    <h2 id='contents'>Contents</h2>
+    <div class='border'>
+        <p><a href='#overview'>High Scores</a></p>
+        <p><a href='#survival'>Survival</a></p>
+        <p><strong>Touhou Project Shmups</strong></p>
+        <p><a href='#SoEW'>Touhou 2 - The Story of Eastern Wonderland</a></p>
+        <p><a href='#PoDD'>Touhou 3 - Phantasmagoria of Dim.Dream</a></p>
+        <p><a href='#LLS'>Touhou 4 - Lotus Land Story</a></p>
+        <p><a href='#MS'>Touhou 5 - Mystic Square</a></p>
+        <p class='separator'><a href='#EoSD'>Touhou 6 - The Embodiment of Scarlet Devil</a></p>
+        <p><a href='#PCB'>Touhou 7 - Perfect Cherry Blossom</a></p>
+        <p><a href='#IN'>Touhou 8 - Imperishable Night</a></p>
+        <p><a href='#PoFV'>Touhou 9 - Phantasmagoria of Flower View</a></p>
+        <p><a href='#StB'>Touhou 9.5 - Shoot the Bullet</a></p>
+        <p><a href='#MoF'>Touhou 10 - Mountain of Faith</a></p>
+        <p><a href='#SA'>Touhou 11 - Subterranean Animism</a></p>
+        <p><a href='#UFO'>Touhou 12 - Undefined Fantastic Object</a></p>
+        <p><a href='#DS'>Touhou 12.5 - Double Spoiler</a></p>
+        <p><a href='#GFW'>Touhou 12.8 - Great Fairy Wars</a></p>
+        <p><a href='#TD'>Touhou 13 - Ten Desires</a></p>
+        <p><a href='#DDC'>Touhou 14 - Double Dealing Character</a></p>
+        <p><a href='#LoLK'>Touhou 15 - Legacy of Lunatic Kingdom</a></p>
+        <p><a href='#HSiFS'>Touhou 16 - Hidden Star in Four Seasons</a></p>
+        <p><a href='#VD'>Touhou 16.5 - Violet Detector</a></p>
+        <p><a href='#WBaWC'>Touhou 17 - Wily Beast and Weakest Creature</a></p>
+        <p><a href='#UM'>Touhou 18 - Unconnected Marketeers</a></p>
+        <p><strong>Touhou Fangames</strong></p>
+        <p><a href='#SSS'>Shining Shooting Star</a></p>
+        <p><strong>eXceed Shmups</strong></p>
+        <p><a href='#eX1'>eXceed - Gun Bullet Children</a></p>
+        <p><a href='#eX2'>eXceed 2nd - Vampire REX</a></p>
+        <p><a href='#eX3'>eXceed 3rd - Jade Penetrate Black Package</a></p>
+        <p><strong>Other Doujin Shmups</strong></p>
+        <p><a href='#SG'>Shuusou Gyoku</a></p>
+        <p><a href='#BSR'>Banshiryuu (C67)</a></p>
+        <p><a href='#SMD'>Samidare</a></p>
+        <p><a href='#MRS'>Mrs. Estacion</a></p>
+        <p><a href='#CCWI'>Crimzon Clover</a></p>
+        <p><strong>Dodonpachi Shmups</strong></p>
+        <p><a href='#DP'>DonPachi</a></p>
+        <p><a href='#DDP'>DoDonPachi</a></p>
+        <p><a href='#DOJ'>DoDonPachi Dai-Ou-Jou BL</a></p>
+        <p><a href='#DFK'>DoDonPachi Dai-Fukkatsu</a></p>
+        <p><a href='#SDOJ'>DoDonPachi Saidaioujou</a></p>
+        <p><strong>Other Arcade Shmups</strong></p>
+        <p><a href='#Batsugun'>Batsugun Special Version</a></p>
+        <p><a href='#ESP'>ESP Ra.De.</a></p>
+        <p><a href='#ESPg'>Espgaluda</a></p>
+        <p><a href='#Ketsui'>Ketsui ~Kizuna Jigoku Tachi~</a></p>
+        <p><a href='#MSm'>Mushihime-sama</a></p>
+        <p><a href='#MSF'>Mushihime-sama Futari</a></p>
+        <p><a href='#DSm'>Deathsmiles</a></p>
+        <p><a href='#Ikaruga'>Ikaruga</a></p>
+    </div>
     <div id='overview'>
         <h2>High Scores</h2>
         <p>The following tables list my current high scores in the categories I have scored, as well as, if I did not 1cc, which stage was reached.</p>

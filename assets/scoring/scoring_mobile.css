@@ -21,3 +21,7 @@ td.break {
     display: inline;
     font-weight: bold;
 }
+#checkboxes tr {
+    border-spacing: 10px;
+    border-collapse: separate;
+}
