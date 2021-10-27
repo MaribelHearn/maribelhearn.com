@@ -62,15 +62,15 @@ To get around this, simply run the game with vpatch first, then apply thprac by 
 <p>These are a few of the most common error messages, shown in both Japanese and mojibake. If you are getting an error message in mojibake,
 it means you are not running the program in Japanese locale, which may be your problem: see <a href='jplocale'>Japanese locale</a>.</p>
 <h4><span class='tt'>.dat</span> error</h4>
-<img src='assets/faq/eosd/eosd_error_dat.png' alt='EoSD .dat error message'>
+<img class='error' src='assets/faq/eosd/eosd_error_dat.png' alt='EoSD .dat error message'>
 <p>This error message shows when EoSD fails to load data from the <span class='tt'>.dat</span> files properly. Make sure your <span class='tt'>.dat</span> files are named
 as shown in the <a href='#files'>File names</a> section. Also, the mojibake version of this error message is what shows if you try to run the Japanese executable without Japanese locale.</p>
 <h4>Duplication error</h4>
-<img src='assets/faq/eosd/eosd_error_dup.png' alt='EoSD duplicate error message'>
+<img class='error' src='assets/faq/eosd/eosd_error_dup.png' alt='EoSD duplicate error message'>
 <p>This error message occurs when you try to open a second instance of EoSD. Make sure you have all EoSD processes closed before trying to run it again.</p>
 <p>If you seemingly have no EoSD processes open and are still getting this message, you likely have a "ghost process".
 This happens occasionally after you try to close the game - the game is still running in the background but isn't visible.
 Open Task Manager, and you should be able to find it in the "Processes" tab (likely in the "Background Processes" section when it's a ghost process) and right click -> "End Task".</p>
 <h4>vpatch error</h4>
-<img src='assets/faq/eosd/eosd_error_vpatch.png' alt='EoSD vpatch error message'>
+<img class='error' src='assets/faq/eosd/eosd_error_vpatch.png' alt='EoSD vpatch error message'>
 <p>A "game not found" error message given by vpatch. Make sure your EoSD executable is named <span class='code'>東方紅魔郷.exe</span>.</p>

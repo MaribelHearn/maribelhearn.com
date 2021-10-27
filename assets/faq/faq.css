@@ -71,7 +71,7 @@ ol {
 .shots {
     word-wrap: break-word;
 }
-.shots th, .shots td {
+.shots th, .shots td, .res th, .res td {
     white-space: normal;
 }
 .cover {

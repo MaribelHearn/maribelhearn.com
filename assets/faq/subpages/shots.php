@@ -336,7 +336,7 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
         <th>MarisaA<br>(Flamethrower)</th>
         <td><strong>Unfocus:</strong><br>Slight spreadshot.<br><strong>Focus:</strong><br><a href='jargon#term_shotgunning'>Shotgun</a> shot.</td>
         <td>Very high shot damage when used up close. Very strong bomb.</td>
-        <td>Focused shot has low damage if not in close range. It also doesn't even reach the top of the screen from the bottom. Harder stages.</td>
+        <td>Focused shot has low damage if not in close range. Harder stages.</td>
     </tr>
     <tr>
         <th>MarisaB<br>(Missile)</th>
