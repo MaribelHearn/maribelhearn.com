@@ -671,9 +671,9 @@
         </tr><tr>
 			<td>Lunatic</td>
 			<td>RyoukoB</td>
-			<td><u><strong>11,210,861,390</strong></u><br>by <em>XCF</em></td>
-			<td>22 January 2021</td>
-			<td><a href='https://www.bilibili.com/video/BV18y4y117aF'>Video</a></td>
+			<td><u><strong>12,029,498,600</strong></u><br>by <em>XCF</em></td>
+			<td>25 October 2021</td>
+			<td><a href='https://www.bilibili.com/video/BV1Wh4118785'>Video</a></td>
 		</tr><tr>
 			<td>Lunatic</td>
 			<td>RyoukoB</td>
