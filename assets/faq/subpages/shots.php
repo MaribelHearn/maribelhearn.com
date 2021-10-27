@@ -109,7 +109,7 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
         <td><strong>Unfocus:</strong><br>Homing shot.<br><strong>Focus:</strong><br>High damage homing option shot.</td>
         <td>Longer deathbomb window.</td>
         <td>Very high and reliable focused shot damage. Easier stages with homing.</td>
-        <td>Low unfocused shot damage. Focused bomb does almost no damage if placed far away from enemies.</td>
+        <td>Low unfocused shot damage, especially when blocked off by familiars. Focused bomb does almost no damage if placed far away from enemies.</td>
     </tr>
     <tr>
         <th>Magic Team<br>(Marisa &amp; Alice)</th>
@@ -123,7 +123,7 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
         <td><strong>Unfocus:</strong><br>Spreadshot.<br><strong>Focus:</strong><br>Locking shot, focusing locks your options in place so you can shoot from 2 places at once.</td>
         <td>Dying with bombs in stock awards an extra bomb item.</td>
         <td>Shooting from 2 places at once makes stages easier. Can damage the boss without being under the boss. High shot damage when your options are stacked with you.</td>
-        <td>Very low unfocused shot damage. Focused options need to be repositioned if the boss moves around.</td>
+        <td>Very low unfocused shot damage, especially when blocked off by familiars. Focused options need to be repositioned if the boss moves around.</td>
     </tr>
     <tr>
         <th>Ghost Team<br>(Youmu &amp; Yuyuko)</th>
