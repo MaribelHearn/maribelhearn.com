@@ -307,7 +307,7 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
     </tr>
     <tr>
         <th>Youmu<br>(Slash)</th>
-        <td><strong>Unfocus:</strong><br>Tracing shot, options follow your movement and lock when focusing.<br><strong>Focus:</strong><br>Charged melee "sword slashing" shot.</td>
+        <td><strong>Unfocus:</strong><br>Tracing shot, options follow your movement.<br><strong>Focus:</strong><br>Charged melee "sword slashing" shot.</td>
         <td>Very high shot damage. Very strong bomb and trance. Burst damage trivialises stages and some boss patterns.</td>
         <td>Hard to use for inexperienced players. Focused shot has limited vertical range, especially at low power. Unfocused dodging can be difficult.</td>
     </tr>
