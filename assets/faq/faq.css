@@ -1,0 +1,212 @@
+body {
+    background: url('../faq/faq.jpg') center no-repeat fixed;
+    background-size: cover;
+}
+div:not(.dropdown):not(.dropdown_content):not(.nav_right) {
+    background-color: #fff;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+a:link.dropdown_button {
+    color: black;
+}
+a:visited.dropdown_button {
+    color: black;
+}
+div > div > p {
+    margin: 4px;
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+    white-space: nowrap;
+}
+table, th, td {
+    border: 1px solid black;
+}
+ol {
+    text-align: left;
+    margin: 25px 0 25px 25px;
+}
+.tooltip {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+}
+.tt {
+    font-family: 'courier new';
+}
+.code {
+    font-family: 'courier new';
+    border: 2px solid #606060;
+    background-color: grey;
+    color: white;
+}
+.border {
+    border: 1px solid black;
+}
+.files, .files_text {
+    clear: both;
+}
+.green {
+    color: green;
+    font-weight: bold;
+}
+.red {
+    color: red;
+    font-weight: bold;
+}
+.gpu {
+    width: 75%;
+}
+.img_caption {
+    margin-top: 1px;
+}
+.shots {
+    word-wrap: break-word;
+}
+.shots th, .shots td {
+    white-space: normal;
+}
+.cover {
+    background-image: url('../spritesheet/game_sheet50x50.png');
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+.wrap {
+    border: 1px solid #000;
+    text-align: center;
+    margin-left: 23%;
+    margin-right: 23%;
+    font: 14px verdana,sans-serif;
+}
+#wrap {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    opacity: 0.8;
+}
+#wrap > div:not(#topbar):not(#ack_mobile) {
+    display: inline-block;
+}
+#nav {
+    margin-bottom: 5px;
+}
+#ack_mobile, #ack_br {
+    display: none;
+}
+#contents {
+    margin-left: auto;
+    margin-right: auto;
+}
+#eosd_files {
+    overflow: hidden;
+    width: 50%;
+}
+#backtomain, #files_mb {
+    float: left;
+}
+#files_jp {
+    float: right;
+}
+#EoSD_image {
+    background-position: -250px 0px;
+}
+#PCB_image {
+    background-position: -300px 0px;
+}
+#IN_image {
+    background-position: -350px 0px;
+}
+#PoFV_image {
+    background-position: -400px 0px;
+}
+#MoF_image {
+    background-position: -450px 0px;
+}
+#SA_image {
+    background-position: -500px 0px;
+}
+#UFO_image {
+    background-position: -550px 0px;
+}
+#GFW_image {
+    background-position: -600px 0px;
+}
+#TD_image {
+    background-position: -650px 0px;
+}
+#DDC_image {
+    background-position: -700px 0px;
+}
+#LoLK_image {
+    background-position: -750px 0px;
+}
+#HSiFS_image {
+    background-position: -800px 0px;
+}
+#WBaWC_image {
+    background-position: -850px 0px;
+}
+#UM_image {
+    background-position: -900px 0px;
+}
+#ack {
+    font: 11px verdana,sans-serif;
+    background: none;
+    position: fixed;
+    color: white;
+    bottom: 5px;
+    right: 5px;
+}
+@media only screen and (max-width: 1800px) {
+    #ack_br {
+        display: inline;
+    }
+}
+@media only screen and (min-width: 1400px) and (max-width: 1800px) {
+    .wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
+@media only screen and (max-width: 1400px) {
+    #ack {
+        display: none;
+    }
+    #ack_mobile {
+        display: block;
+    }
+}
+@media only screen and (min-width: 1225px) and (max-width: 1400px) {
+    .wrap {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1225px) {
+    .wrap {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .wrap {
+        font-size: 11px;
+    }
+}
+@media only screen and (((min-width: 320px) and (max-width: 800px) and (orientation: portrait)) or ((min-width: 480px) and (max-width: 640px) and (orientation: landscape))) {
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+}
