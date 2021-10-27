@@ -1,7 +1,7 @@
 <h2 id='shots'>Who is the best character / shottype?</h2>
 <p>This page lists the different shottypes that exist in each Windows mainline Touhou game, aside from PoFV (Touhou 9).
-Some basic information on the shottypes is provided and they are rated based on how good they are <em>for a first clear</em>.
-Keep in mind that these rankings do <em>not</em> necessarily translate to different types of goals, such as scoring or a No Bombs clear.</p>
+Some basic information on the shottypes is provided and they are evaluated based on how good they are <em>for a first clear</em>.
+Keep in mind that these evaluations do <em>not</em> necessarily translate to different types of goals, such as scoring or a No Bombs clear.</p>
 <p>In Touhou 7 to 15, Reimu has a smaller hitbox than other characters, as well as Yukari in IN (Touhou 8), but this is <em>almost irrelevant</em> for a first 1cc.</p>
 <div class='border'>
     <p><a href='#eosd'>Touhou 6: Embodiment of Scarlet Devil</a></p>
@@ -370,7 +370,7 @@ Keep in mind that these rankings do <em>not</em> necessarily translate to differ
         <th>Reimu<br>(Needle/Homing)</th>
         <td><strong>Unfocus:</strong><br>Homing shot.<br><strong>Focus:</strong><br>Forward focus shot.</td>
         <td>Easier stages. High shot damage for a homing shot unfocused.</td>
-        <td>Weak bomb. Bomb cancels bullets, making it difficult to graze during it to get more lives.</td>
+        <td>Weak bomb. Bomb cancels bullets, making it difficult to graze during it to get more lives. Small grazebox, which makes grazing harder on certain sections.</td>
     </tr>
     <tr>
         <th>Marisa<br>(Missile/Laser)</th>
