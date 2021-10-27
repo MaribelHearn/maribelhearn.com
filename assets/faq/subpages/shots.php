@@ -212,7 +212,7 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
     </tr>
     <tr>
         <th>MarisaA<br>(Alice)</th>
-        <td>Tracing shot, options follow your movement and lock when focusing.</td>
+        <td>Forward focus shot unfocused, spreadshot focused.</td>
         <td>Can hold up to 8 bombs and gets bombs faster.</td>
         <td>High shot damage. Good spread. Has more bombs. Bombs are strong when <a href='jargon#term_shotgunning'>up close</a>.</td>
         <td>Bomb needs to be used up close for good damage, loses more power after dying compared to other shots.</td>
