@@ -101,8 +101,11 @@ If this does not solve it, you are unfortunately a victim of a rare desync that 
 <h4 id='sa'>SA (Touhou 11)</h4>
 <p>You fast-forwarded a replay, or started it from Stage 6, and then repeatedly die to Utsuho's first nonspell. You can prevent this by starting from any stage before Stage 6,
 and <em>not</em> fast-forwarding after you defeat the Stage 5 boss. You can fast-forward again once the Stage 6 music plays.</p>
-<h4 id='sa'>TD (Touhou 13)</h4>
+<h4 id='td'>TD (Touhou 13)</h4>
 <p>If playing as Marisa, replays will desync if they are not started from Stage 1.</p>
+<h4 id='ddc'>DDC (Touhou 14)</h4>
+<p>Rarely, if playing as Marisa, one of the unfocused lasers may be angled diagonally, or gone entirely.
+Replays in which this bug occurred will unfortunately desync once the game is closed.</p>
 <h4 id='wbawc'>WBaWC (Touhou 17)</h4>
 <p>You restarted a run in the time after a hyper, but before the extra tokens spawned; two tokens will spawn at the start of the broken replay.
 To avoid this, either use <a href='tools#thprac'>thprac</a> or reset your run twice if you are resetting during a hyper.</p>
