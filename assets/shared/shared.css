@@ -148,6 +148,9 @@ a:visited.dropdown_button {
 .wiki_icon {
     background-position: -848px 0px;
 }
+.faq_icon {
+    background-position: -864px 0px;
+}
 .dropdowns {
     margin-left: auto;
     margin-right: auto;

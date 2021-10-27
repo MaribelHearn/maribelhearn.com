@@ -91,6 +91,11 @@
                     Fangame Accomplishments</a>
                     <span class='tooltip'>Notable accomplishments in Touhou fangames and Touhou-related games, including both LNNs and score runs.</span>
                 </p>
+                <p class='link'>
+                    <a href='faq'><span class='icon faq_icon'></span>
+                    Frequently Asked Questions</a>
+                    <span class='tooltip'>Answers to some of the most frequently asked questions about the Touhou shoot 'em up games by beginning players.</span>
+                </p>
             </div>
         </div>
         <div class='pages_right'>
