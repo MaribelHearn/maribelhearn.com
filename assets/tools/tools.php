@@ -283,7 +283,7 @@
 			'SSG для MoF от <a href="https://www.twitch.tv/akaldar" target="_blank">Akaldar</a> для эффективной ' .
 			'практики в MoF, отдельные SSG для GFW и TD для эффективной практики скоринга от ' .
 			'<a href="https://twitter.com/remilia_kawai" target="_blank">Leo</a>, SSG для DDC и LoLK от ' .
-			'<a href="https://twitter.com/32th__System" target="_blank">32th System</a> и отдельные SSG для HSiFS с ' .
+			'<a href="https://www.youtube.com/channel/UChyVpooBi31k3xPbWYsoq3w" target="_blank">32th System</a> и отдельные SSG для HSiFS с ' .
 			'читами. Учтите, что иногда появлятся баг в меню который дюпает SSG и делает другие SSG невидимыми.';
 		} else if ($lang == 'Japanese') {
 			echo '<span class="code">.ssg</span>ファイルをゲームの動作中に読み込み、プラクティスオプションの設定やチートの' .
@@ -297,7 +297,7 @@
 			'for efficient practice in that game specifically, a separate GFW SSG, as well as a TD SSG specifically ' .
 			'designed for efficient scoring practice, made by <a href="https://twitter.com/remilia_kawai" ' .
 			'target="_blank">Leo</a>, a DDC SSG and a LoLK Chapter Practice SSG by ' .
-			'<a href="https://twitter.com/32th__System" target="_blank">32th System</a> and separate HSiFS SSGs ' .
+			'<a href="https://www.youtube.com/channel/UChyVpooBi31k3xPbWYsoq3w" target="_blank">32th System</a> and separate HSiFS SSGs ' .
 			'with cheat options. Be wary of an occasional menu bug that causes an SSG to duplicate itself and ' .
 			'make other SSGs invisible.';
 		}
@@ -1180,7 +1180,7 @@
 		if ($lang == 'Russian') { echo 'LoLK Pointdevice без потери силы от '; }
 		else if ($lang == 'Japanese') { echo '紺珠伝完全無欠パワー低下無効パッチ by '; }
 		else { echo 'LoLK Pointdevice no power loss by '; }
-	?><a href='https://twitter.com/32th__System' target='_blank'>32th System</a></strong></p>
+	?><a href='https://www.youtube.com/channel/UChyVpooBi31k3xPbWYsoq3w' target='_blank'>32th System</a></strong></p>
     <p><?php
 		if ($lang == 'Russian') {
 			echo 'Убирает механику потери 0.01 силы режима Pointdevice.';
@@ -1208,7 +1208,7 @@
 		if ($lang == 'Russian') { echo 'Фикс каунтерстопа в WBaWC от '; }
 		else if ($lang == 'Japanese') { echo '鬼形獣スコアカンスト解除モッド by '; }
 		else { echo 'WBaWC score cap mod by '; }
-	?><a href='https://twitter.com/32th__System' target='_blank'>32th System</a></strong>
+	?><a href='https://www.youtube.com/channel/UChyVpooBi31k3xPbWYsoq3w' target='_blank'>32th System</a></strong>
 	<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> score_uncap</a></p>
 	<p><?php
 		if ($lang == 'Russian') { echo 'Позволяет счетчику очков превышать 9.999.999.990 очков.'; }
