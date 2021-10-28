@@ -1368,6 +1368,12 @@ function takeScreenshot() {
     emptyModal();
 
     try {
+        var temp = tierView;
+
+        if (!isMobile() && !temp) {
+            toggleTierView();
+        }
+
         printMessage("<strong class='confirmation'>Girls are being screenshotted, please watch warmly...</strong>");
         html2canvas(document.body, {
             "onclone": function (doc) {
@@ -1380,10 +1386,12 @@ function takeScreenshot() {
                 doc.getElementById("tier_list_container").style.maxHeight = "none";
                 doc.getElementById("tier_list_container").style.marginLeft = "0px";
             },
-            "windowHeight": $("#tier_list_tbody").height() + $("#tier_list_caption").height() + 50,
-            "height": $("#tier_list_tbody").height() + $("#tier_list_caption").height() + 50,
+            "windowHeight": $("#tier_list_tbody").height() + 15,
+            "height": $("#tier_list_tbody").height() + 15,
+            "logging": false,
             "scrollX": 0,
-            "scrollY": 0
+            "scrollY": 0,
+            "x": isMobile() ? 0 : -100
         }).then(function(canvas) {
             var base64image = canvas.toDataURL("image/png");
 
@@ -1391,6 +1399,10 @@ function takeScreenshot() {
                 $("#modal_inner").append("<h3>Screenshot</h3>");
             } else {
                 $("#modal_inner").append("<h2>Screenshot</h2>");
+
+                if (!temp) {
+                    toggleTierView();
+                }
             }
 
             $("#modal_inner").append("<p><a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
@@ -1619,6 +1631,7 @@ function toggleTierView() {
     $("#wrap").css("left", tierView ? "5px" : "");
     $("#wrap").css("border", tierView ? "none" : "1px solid #000");
     $("body").css("background", tierView ? "#1b232e" : "url('assets/tiers/tiers.jpg') center no-repeat fixed");
+    $("body").css("background-size", tierView ? "default" : "cover");
 }
 
 function togglePickerSize() {
