@@ -1390,8 +1390,7 @@ function takeScreenshot() {
             "height": $("#tier_list_tbody").height() + 15,
             "logging": false,
             "scrollX": 0,
-            "scrollY": 0,
-            "x": isMobile() ? 0 : -100
+            "scrollY": 0
         }).then(function(canvas) {
             var base64image = canvas.toDataURL("image/png");
 
