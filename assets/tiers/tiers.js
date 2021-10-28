@@ -1378,10 +1378,10 @@ function takeScreenshot() {
         html2canvas(document.body, {
             "onclone": function (doc) {
                 doc.getElementsByTagName("body")[0].style.backgroundImage = "none";
-                doc.getElementById("wrap").style.width = "98%";
+                doc.getElementById("wrap").style.width = "100%";
                 doc.getElementById("wrap").style.height = "auto";
                 doc.getElementById("wrap").style.maxHeight = "none";
-                doc.getElementById("tier_list_container").style.width = "98%";
+                doc.getElementById("tier_list_container").style.width = "100%";
                 doc.getElementById("tier_list_container").style.height = "auto";
                 doc.getElementById("tier_list_container").style.maxHeight = "none";
                 doc.getElementById("tier_list_container").style.marginLeft = "0px";
