@@ -1,6 +1,10 @@
 #modal {
     padding-top: 10%;
 }
+#screenshot_base64 {
+    width: 95%;
+    height: 50%;
+}
 @media only screen and (orientation: portrait) {
     #modal_inner {
         max-height: 75%;

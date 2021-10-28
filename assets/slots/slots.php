@@ -1,9 +1,9 @@
 <div id='wrap' class='wrap'>
-    <span id='hy_container'><span id='hy'></span>
+    <span id='hy_container' data-html2canvas-ignore><span id='hy'></span>
         <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
     </span>
-    <h1>Touhou Slot Machine</h1>
-    <div id='content'>
+    <h1 data-html2canvas-ignore>Touhou Slot Machine</h1>
+    <div id='content' data-html2canvas-ignore>
 		<?php
 			if (!empty($_GET['redirect'])) {
 				echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
@@ -49,28 +49,30 @@
             <td id='slot8' class='slot charslot_1'></td>
         </tr>
     </table>
-    <p>The artworks used for this page are drawn by
-    <a href='https://www.pixiv.net/member.php?id=4920496' target='_blank'>Dairi</a>.</p>
-    <p>Credit to an unknown original creator for the idea of this randomizer.</p>
-    <p>Originally known as Touhou Click and Drag Game.</p>
+    <div id='bottom' data-html2canvas-ignore>
+        <p>The artworks used for this page are drawn by
+        <a href='https://www.pixiv.net/member.php?id=4920496' target='_blank'>Dairi</a>.</p>
+        <p>Credit to an unknown original creator for the idea of this randomizer.</p>
+        <p>Originally known as Touhou Click and Drag Game.</p>
+    </div>
     <?php
         $json = file_get_contents('assets/json/charpos.json');
         $chars = json_decode($json, true);
         $json = file_get_contents('assets/json/locs.json');
         $locs = json_decode($json, true);
         foreach ($chars as $key => $array) {
-            echo '<div id="chars' . $key . '_load">';
+            echo '<div id="chars' . $key . '_load" data-html2canvas-ignore>';
             foreach ($array as $key => $name) {
                 echo '<input id="' . $key . '" type="hidden" value="' . $name . '">';
             }
         }
-        echo '</div><div id="locs_load">';
+        echo '</div><div id="locs_load" data-html2canvas-ignore>';
         foreach ($locs as $key => $name) {
             echo '<input id="' . $key . '" type="hidden" value="' . $name . '">';
         }
         echo '</div>';
     ?>
 </div>
-<div id='modal'>
+<div id='modal' data-html2canvas-ignore>
     <div id='modal_inner'></div>
 </div>

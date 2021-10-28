@@ -20,6 +20,10 @@ String.prototype.escapeHTML = function () {
     return this.replace('<', "&lt;").replace('>', "&gt;").replace('&', "&amp;");
 }
 
+function isMobile() {
+    return navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1;
+}
+
 function checkSpritesheet(max, slot) {
     var charNum = slots[slot] / WIDTH;
 
@@ -146,22 +150,27 @@ function takeScreenshot() {
     emptyModal();
 
     try {
-        html2canvas(document.getElementById("table"), {
-            backgroundColor: backgroundColour()
+        html2canvas(document.body, {
+            "onclone": function (doc) {
+                doc.getElementsByTagName("body")[0].style.backgroundImage = "none";
+                doc.getElementById("table").style.marginLeft = "0px";
+            },
+            "backgroundColor": backgroundColour(),
+            "windowWidth": $("#table").width() + 20,
+            "width": $("#table").width() + 20,
+            "windowHeight": $("#table").height() + (isMobile() ? 20 : 0),
+            "height": $("#table").height() + (isMobile() ? 35 : 0),
+            "logging": false
         }).then(function(canvas) {
             var base64image = canvas.toDataURL("image/png");
 
             $("#modal_inner").html("<h2>Screenshot</h2>");
             $("#modal_inner").append("<p><a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
             "<input type='button' value='Save to Device'></a></p>" +
-            "<p><img id='base64' src='" + base64image + "' alt='Slot machine screenshot'></p>");
-            $("#modal_inner, #modal, #content, h1").css("display", "block");
-            $("#hy_container").css("display", "inline");
-            $("#base64").css("max-width", screen.width);
-            $("#base64").css("max-height", screen.width);
+            "<p><img id='screenshot_base64' src='" + base64image + "' alt='Slot machine screenshot'></p>");
+            $("#modal_inner, #modal").css("display", "block");
         });
     } catch (err) {
-        $("#content, #hy_container, h1").css("display", "block");
         alert("Your browser is outdated. Use a different browser to " +
         "screenshot your slot machine.");
     }
