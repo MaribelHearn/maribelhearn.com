@@ -82,11 +82,9 @@
         <meta name='description' content='<?php echo property_exists($data, 'description') ? $data->description : '' ?>'>
         <meta name='keywords' content='<?php echo property_exists($data, 'keywords') ? $data->keywords : '' ?>'>
         <link rel='preload' type='font/woff2' href='<?php echo $page == 'error' ? 'https://maribelhearn.com/' : '' ?>assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
-        <link id='css' rel='preload' href='<?php echo $css_href ?>' as='style'>
-        <script nonce='<?php echo file_get_contents('.stats/nonce') ?>'>document.getElementById("css").rel="stylesheet"</script>
+        <link rel='stylesheet' type='text/css' href='<?php echo $css_href ?>'>
 		<link rel='icon' type='image/x-icon' href='<?php echo $favicon_href ?>'>
         <script src='<?php echo $js_href ?>' defer></script>
-        <noscript><link rel='stylesheet' type='text/css' href='<?php echo $css_href ?>'></noscript>
     </head>
 
     <body>
