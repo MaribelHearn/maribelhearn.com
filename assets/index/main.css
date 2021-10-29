@@ -109,7 +109,7 @@ table {
 #last_modified {
     padding-top: 25px;
     font-size: 11px;
-    color: grey;
+    color: #505050;
 }
 #ack, #ack_admin {
     font: 11px verdana,sans-serif;
