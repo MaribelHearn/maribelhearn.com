@@ -70,6 +70,9 @@
 		}
 	}
     echo $lang_code . '">';
+    $css_href = ($page == 'error' ? 'https://maribelhearn.com/' : '') . 'assets/shared/css_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile;
+    $favicon_href = ($page == 'error' ? 'https://maribelhearn.com/' : '') . (file_exists($favicon) ? $favicon : 'favicon.ico');
+    $js_href = ($page == 'error' ? 'https://maribelhearn.com/' : '') . 'assets/shared/js_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile;
 ?>
 
     <head>
@@ -79,9 +82,11 @@
         <meta name='description' content='<?php echo property_exists($data, 'description') ? $data->description : '' ?>'>
         <meta name='keywords' content='<?php echo property_exists($data, 'keywords') ? $data->keywords : '' ?>'>
         <link rel='preload' type='font/woff2' href='<?php echo $page == 'error' ? 'https://maribelhearn.com/' : '' ?>assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
-        <link rel='stylesheet' type='text/css' href='<?php echo $page == 'error' ? 'https://maribelhearn.com/' : '' ?>assets/shared/css_concat.php?page=<?php echo $css_js_file . '&mobile=' . $is_mobile ?>'>
-		<link rel='icon' type='image/x-icon' href='<?php echo ($page == 'error' ? 'https://maribelhearn.com/' : '') . (file_exists($favicon) ? $favicon : 'favicon.ico') ?>'>
-        <script src='<?php echo $page == 'error' ? 'https://maribelhearn.com/' : '' ?>assets/shared/js_concat.php?page=<?php echo $css_js_file . '&mobile=' . $is_mobile ?>' defer></script>
+        <link id='css' rel='preload' href='<?php echo $css_href ?>' as='style'>
+        <script nonce='<?php file_get_contents('.stats/nonce') ?>'>document.getElementById("css").rel="stylesheet"</script>
+		<link rel='icon' type='image/x-icon' href='<?php echo $favicon_href ?>'>
+        <script src='<?php echo $js_href ?>' defer></script>
+        <noscript><link rel='stylesheet' type='text/css' href='<?php echo $css_href ?>'></noscript>
     </head>
 
     <body>
