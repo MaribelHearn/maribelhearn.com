@@ -94,6 +94,9 @@ table, th, td {
 .dead {
     text-decoration: line-through;
 }
+.sortable {
+    margin-top: 25px;
+}
 .tooltip {
     visibility: hidden;
     background-color: black;

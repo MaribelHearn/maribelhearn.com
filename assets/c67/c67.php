@@ -35,7 +35,7 @@
     <picture>
         <source srcset='assets/c67/item_rank.webp' type='image/webp'>
         <source srcset='assets/c67/item_rank.jpg'>
-        <img loading='lazy' src='assets/c67/item_rank.jpg' alt='Items' width='219' height='38'>
+        <img loading='lazy' src='assets/c67/item_rank.jpg' alt='Point item sprites' width='219' height='38'>
     </picture>
     <p>Items will be automatically collected when an enemy is killed in close proximity. As you collect more of the same item,
     the item rank will gradually increase, also changing what the items look like. The points awarded per item on each rank are as follows:</p>
@@ -48,7 +48,7 @@
     <picture>
         <source srcset='assets/c67/grazing.webp' type='image/webp'>
         <source srcset='assets/c67/grazing.png'>
-        <img id='graze' loading='lazy' src='assets/c67/grazing.png' alt='Grazing' width='350' height='145'>
+        <img id='graze' loading='lazy' src='assets/c67/grazing.png' alt='VIVIT grazing lasers' width='350' height='145'>
     </picture>
     <br>
     <em class='description'>A counter appears as you perform continuous grazing,
