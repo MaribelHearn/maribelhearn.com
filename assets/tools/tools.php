@@ -160,16 +160,16 @@
     <hr>
     <?php
 		if ($lang == 'Russian') {
-			echo '<h2 id="thcrap">THCRAP <a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page" ' .
-			'target="_blank"><span class="icon thcrap_icon"></span></a></h2>' .
+			echo '<h2 id="thcrap">THCRAP <a id="thcrap_link" href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page" ' .
+			'target="_blank"><span class="icon thcrap_icon"></span> thcrap</a></h2>' .
             '<h3>(Патчи с переводом / Инструмент для моддинга)</h3>';
 		} else if ($lang == 'Japanese') {
-			echo '<h2 id="thcrap">THCRAP <a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page" ' .
-			'target="_blank"><span class="icon thcrap_icon"></span></a></h2><h3>(翻訳パッチ / 改変ツール)</h3>';
+			echo '<h2 id="thcrap">THCRAP <a id="thcrap_link" href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page" ' .
+			'target="_blank"><span class="icon thcrap_icon"></span> thcrap</a></h2><h3>(翻訳パッチ / 改変ツール)</h3>';
 		} else {
 			echo '<h2 id="thcrap">THCRAP (Translation patches / Modding tool) ' .
-			'<a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page" target="_blank">' .
-			'<span class="icon thcrap_icon"></span></a></h2>';
+			'<a id="thcrap_link" href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page" target="_blank">' .
+			'<span class="icon thcrap_icon"></span> thcrap</a></h2>';
 		}
 	?>
 	</h2>

@@ -48,7 +48,7 @@ If the dialog does not open, change it via <span class='tt'>custom.exe</span>. B
 or in English using <a href='tools#thcrap'>THCRAP</a>.</p>
 <h4 id='keys'>How do I remap my keys?</h4>
 <p>If you are playing UM (Touhou 18), you can do this in-game. Otherwise, use <a href='https://www.autohotkey.com/'>AutoHotKey</a>.
-For Mac or Linux, see <a href='https://en.touhouwiki.net/wiki/Running_in_Linux_and_Mac_OS_X/Misc_fixes#Remapping_Keys'>this page</a>.</p>
+For Mac or Linux, see <a href='https://en.touhouwiki.net/wiki/Running_in_Linux_and_Mac_OS_X/Misc_fixes#Remapping_Keys'>this Touhou Wiki page</a>.</p>
 <h4 id='maclinux'>I use Mac / Linux, can I play Touhou?</h4>
 <p>Yes. See the Touhou Wiki <a href='https://en.touhouwiki.net/wiki/Running_in_Linux_and_Mac_OS_X'>Running in Linux and Mac OS X</a> page for help.</p>
 <h4 id='misc'>My game still doesn't work even after applying aforementioned fixes</h4>
@@ -117,12 +117,8 @@ There are other causes as well, all of which are related to cards. Most of the d
 <p><a href='https://www.youtube.com/watch?v=8Yt2bSh32K8'>This video</a> provides a quick explanation.</p>
 <h4 id='fps'>Why is the game running at 5000 <abbr title='frames per second'>FPS</abbr>?</h4>
 <p>You have to run the game with <a href='tools#vpatch'>vpatch</a> to prevent this.</p>
-<h3 id='pcb'>Touhou 7: Perfect Cherry Blossom (PCB)</h3>
+<h4 id='pcb'>Touhou 7: Perfect Cherry Blossom (PCB)</h4>
 <h4 id='border'>What is a 'Supernatural Border'?</h4>
 <p>Commonly referred to simply as borders. For survival purposes, borders allow you to take one hit for free during their duration,
 on which all bullets on screen will be converted into small cherry items. Borders also grant some invincibility frames if you let it time out,
-though for 1cc you will want to break them manually instead. This can be done by pressing X during a border.</p>
-<h3 id='in'>Touhou 8: Imperishable Night (IN)</h3>
-[WIP]
-<h3 id='mof'>Touhou 10: Mountain of Faith (MoF)</h3>
-<h3 id='sa'>Touhou 11: Subterranean Animism (SA)</h3>-->
+though for 1cc you will want to break them manually instead. This can be done by pressing X during a border.</p>>-->

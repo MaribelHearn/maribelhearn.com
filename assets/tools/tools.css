@@ -62,6 +62,9 @@ table, tr, th, td {
     margin-right: auto;
     width: 50%;
 }
+#thcrap_link {
+    font: 14px verdana,sans-serif;
+}
 #ack {
     font: 11px verdana,sans-serif;
     text-align: right;

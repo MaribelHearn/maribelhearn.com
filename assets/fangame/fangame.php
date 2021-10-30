@@ -19,8 +19,8 @@
     </div>
 	<h2 id='lnns'>LNN Clears</h2>
 	<h3 class='fangames'>Fangames</h3>
-	<p><span class='fangame sss'></span> Shining Shooting Star (No Border Breaks, Full Spell)</p>
 	<table class='sortable'>
+		<caption><span class='fangame sss'></span> Shining Shooting Star (No Border Breaks, Full Spell</caption>
 		<tr>
 			<th class='player'>Player</th>
 			<th class='shottype'>Shottype</th>
@@ -61,8 +61,8 @@
 			<td><a href='https://pan.baidu.com/s/1jNRpFqsCPwC7sWiDdla1zA'>Replay</a></td>
 		</tr>
 	</table>
-	<p><span class='fangame mb'></span> Marine Benefit</p>
 	<table class='sortable'>
+		<caption><span class='fangame mb'></span> Marine Benefit</caption>
 		<tr>
 			<th class='player'>Player</th>
 			<th class='shottype'>Shottype</th>
@@ -77,8 +77,8 @@
 			<td><a href='https://www.bilibili.com/video/av18002342/'>Video</a></td>
 		</tr>
 	</table>
-	<p><span class='fangame wnsp'></span> White Names Spoiled Past</p>
 	<table class='sortable'>
+		<caption><span class='fangame wnsp'></span> White Names Spoiled Past</caption>
 		<tr>
 			<th class='player'>Player</th>
 			<th class='shottype'>Shottype</th>
@@ -93,8 +93,8 @@
 			<td><a href='https://www.bilibili.com/video/av23202659'>Video (Lap 2)</a></td>
 		</tr>
 	</table>
-	<p><span class='fangame fos'></span> Fairies of Sorcery (No Burst)</p>
 	<table class='sortable'>
+		<caption><span class='fangame fos'></span> Fairies of Sorcery (No Burst)</caption>
 		<tr>
 			<th class='player'>Player</th>
 			<th class='shottype'>Shottype</th>
@@ -109,8 +109,8 @@
 			<td><a href='https://www.bilibili.com/video/av22709326'>Video</a></td>
 		</tr>
 	</table>
-	<p><span class='fangame fdf'></span> Fantastic Danmaku Festival</p>
 	<table class='sortable'>
+		<caption><span class='fangame fdf'></span> Fantastic Danmaku Festival</caption>
 		<tr>
 			<th class='player'>Player</th>
 			<th class='shottype'>Shottype</th>
@@ -192,8 +192,8 @@
 			<td><a href='https://www.bilibili.com/video/av20483547'>Video</a></td>
 		</tr>
 	</table>
-	<p><span class='fangame fdf2'></span> Fantastic Danmaku Festival Part II (No Border Breaks)</p>
 	<table class='sortable'>
+		<caption><span class='fangame fdf2'></span> Fantastic Danmaku Festival Part II (No Border Breaks)</caption>
 		<tr>
 			<th class='player'>Player</th>
 			<th class='shottype'>Shottype</th>
@@ -220,8 +220,8 @@
 			<td><a href='https://www.youtube.com/watch?v=vCxVc8SxGC8'>Video</a></td>
 		</tr>
 	</table>
-	<p><span class='fangame tfs'></span> The Flower Shooter</p>
 	<table class='sortable'>
+		<caption><span class='fangame tfs'></span> The Flower Shooter</caption>
 		<tr>
 			<th class='player'>Player</th>
 			<th class='shottype'>Shottype</th>
@@ -236,8 +236,8 @@
 			<td><a href='https://www.bilibili.com/video/av18118720'>Video</a></td>
 		</tr>
 	</table>
-	<p><span class='fangame hsob'></span> Hollow Song of Birds (No Z-Spells, Full Spell)</p>
 	<table class='sortable'>
+		<caption><span class='fangame hsob'></span> Hollow Song of Birds (No Z-Spells, Full Spell)</caption>
 		<tr>
 			<th class='player'>Player</th>
 			<th class='shottype'>Shottype</th>
@@ -271,8 +271,8 @@
 			<td><a href='https://www.youtube.com/watch?v=nYDp-rIf-rg'>Video</a></td>
 		</tr>
 	</table>
-	<p><span class='fangame mpp'></span> Mystical Power Plant</p>
 	<table class='sortable'>
+		<caption><span class='fangame mpp'></span> Mystical Power Plant</caption>
 		<tr>
 			<th class='player'>Player</th>
 			<th class='shottype'>Shottype</th>
@@ -298,8 +298,8 @@
 			<a href='https://www.youtube.com/watch?v=C9endry0cno'>Video</a></td>
 		</tr>
 	</table>
-	<p><span class='fangame bosm'></span> Book of Star Mythology (Full Spell)</p>
 	<table class='sortable'>
+		<caption><span class='fangame bosm'></span> Book of Star Mythology (Full Spell)</caption>
 		<tr>
 			<th class='player'>Player</th>
 			<th class='shottype'>Shottype</th>
@@ -321,8 +321,8 @@
 			<a href='https://www.youtube.com/watch?v=WDx-WbUOFO4&t=0s'>Video</a></td>
 		</tr>
 	</table>
-	<p><span class='fangame gods'></span> Glory of Deep Skies (No Elemental Burst, Full Spell)</p>
 	<table class='sortable'>
+		<caption><span class='fangame gods'></span> Glory of Deep Skies (No Elemental Burst, Full Spell)</caption>
 		<tr>
 			<th class='player'>Player</th>
 			<th class='shottype'>Shottype</th>
@@ -338,8 +338,8 @@
 			<a href='https://www.youtube.com/watch?v=nz4ZpqsyoKM'>Video</a></td>
 		</tr>
 	</table>
-	<p><span class='fangame rss'></span> Riverbed Soul Saver (No Hyper)</p>
 	<table class='sortable'>
+		<caption><span class='fangame rss'></span> Riverbed Soul Saver (No Hyper)</caption>
 		<tr>
 			<th class='player'>Player</th>
 			<th class='shottype'>Shottype</th>
@@ -355,8 +355,8 @@
 			<a href='https://www.youtube.com/watch?v=GikbAJLP0UM'>Video</a></td>
 		</tr>
 	</table>
-	<p><span class='fangame rss'></span> Riverbed Soul Saver Overdrive (No Hyper)</p>
 	<table class='sortable'>
+		<caption><span class='fangame rss'></span> Riverbed Soul Saver Overdrive (No Hyper)</caption>
 		<tr>
 			<th class='player'>Player</th>
 			<th class='shottype'>Shottype</th>
@@ -371,8 +371,8 @@
 			<td><a href='https://www.bilibili.com/video/av2400519'>Video</a></td>
 		</tr>
 	</table>
-	<p><span class='fangame ibp'></span> Infinite Blade Pavilion (No Special Attack)</p>
 	<table class='sortable'>
+		<caption><span class='fangame ibp'></span> Infinite Blade Pavilion (No Special Attack)</caption>
 		<tr>
 			<th class='player'>Player</th>
 			<th class='shottype'>Shottype</th>
@@ -395,8 +395,8 @@
 		</tr>
 	</table>
 	<h3 class='related'>Related Games</h3>
-	<p><span class='fangame bm'></span> Barrage Musical</p>
 	<table class='sortable'>
+		<caption><span class='fangame bm'></span> Barrage Musical</caption>
 		<tr>
 			<th class='player'>Player</th>
 			<th class='shottype'>Shottype</th>
@@ -413,8 +413,8 @@
 	</table>
 	<h2 id='scores'>Notable Scores</h2>
 	<h3 class='fangames'>Fangames</h2>
-    <p><span class='fangame sss'></span> Shining Shooting Star</p>
     <table class='sortable'>
+    	<caption><span class='fangame sss'></span> Shining Shooting Star</caption>
         <tr>
             <th class='difficulty'>Difficulty</th>
             <th class='shottype'>Shottype</th>
@@ -447,8 +447,8 @@
             <td><a href='http://www.bilibili.com/video/av10443836'>Video</a></td>
         </tr>
     </table>
-	<p><span class='fangame bosm'></span> Book of Star Mythology</p>
 	<table class='sortable'>
+		<caption><span class='fangame bosm'></span> Book of Star Mythology</caption>
 		<tr>
             <th class='difficulty'>Difficulty</th>
             <th class='shottype'>Shottype</th>
@@ -481,8 +481,8 @@
             <td><a href='https://cdn.discordapp.com/attachments/229569755344928768/856824119134781440/Main_replay09.dat'>Replay</a></td>
         </tr>
 	</table>
-	<p><span class='fangame fdf2'></span> Fantastic Danmaku Festival Part II</p>
 	<table class='sortable'>
+		<caption><span class='fangame fdf2'></span> Fantastic Danmaku Festival Part II</caption>
 		<tr>
             <th class='difficulty'>Difficulty</th>
             <th class='shottype'>Shottype</th>
@@ -551,8 +551,8 @@
 			<td><a href='https://www.bilibili.com/video/BV14441197Hi'>Video</a></td>
 		</tr>
 	</table>
-	<p><span class='fangame hsob'></span> Hollow Song of Birds</p>
 	<table class='sortable'>
+		<caption><span class='fangame hsob'></span> Hollow Song of Birds</caption>
 		<tr>
             <th class='difficulty'>Difficulty</th>
             <th class='shottype'>Shottype</th>
@@ -567,8 +567,8 @@
 			<td><a href='https://www.nicovideo.jp/watch/sm34720492'>Video</a></td>
 		</tr>
 	</table>
-	<p><span class='fangame ibp'></span> Infinite Blade Pavilion</p>
 	<table class='sortable'>
+		<caption><span class='fangame ibp'></span> Infinite Blade Pavilion</caption>
 		<tr>
             <th class='difficulty'>Difficulty</th>
             <th class='shottype'>Shottype</th>
@@ -592,8 +592,8 @@
 			<td><a href='https://www.youtube.com/watch?v=vBmKScNyNmk'>Video</a></td>
 		</tr>
 	</table>
-	<p><span class='fangame pt'></span> Phantasmagoria Trues</p>
 	<table class='sortable'>
+		<caption><span class='fangame pt'></span> Phantasmagoria Trues</caption>
 		<tr>
             <th class='zone'>Zone</th>
             <th class='shottype'>Shottype</th>
@@ -620,8 +620,8 @@
 			<td><a href='https://www.youtube.com/watch?v=GAYmbKeVZE8'>Video</a></td>
 		</tr>
 	</table>
-	<p><span class='fangame eios'></span> Elegant Impermanence of Sakura</p>
 	<table class='sortable'>
+		<caption><span class='fangame eios'></span> Elegant Impermanence of Sakura</caption>
 		<tr>
             <th class='difficulty'>Difficulty</th>
             <th class='shottype'>Shottype</th>
@@ -660,8 +660,8 @@
 			<td><a href='https://www.bilibili.com/video/BV1zZ4y1s7ya'>Video</a></td>
 		</tr>
 	</table>
-	<p><span class='fangame sohw'></span> Servants of Harvest Wish</p>
 	<table class='sortable'>
+		<caption><span class='fangame sohw'></span> Servants of Harvest Wish</caption>
 		<tr>
             <th class='difficulty'>Difficulty</th>
             <th class='shottype'>Shottype</th>
@@ -688,8 +688,8 @@
 			<td><a href='https://www.youtube.com/watch?v=zNTMsiprIGA'>Video</a></td>
 		</tr>
 	</table>
-	<p><span class='fangame msd'></span> Magical Singular Day -Absolution-</p>
 	<table class='sortable'>
+		<caption><span class='fangame msd'></span> Magical Singular Day -Absolution-</caption>
 		<tr>
             <th class='difficulty'>Difficulty</th>
             <th class='shottype'>Shottype</th>
@@ -705,8 +705,8 @@
 		</tr>
 	</table>
 	<h3 class='related'>Related Games</h3>
-    <p><span class='fangame sg'></span> Seihou 1 - Shuusou Gyoku</p>
     <table class='sortable'>
+    	<caption><span class='fangame sg'></span> Seihou 1 - Shuusou Gyoku</caption>
         <tr>
             <th class='difficulty'>Difficulty</th>
             <th class='shottype'>Shottype</th>
@@ -727,8 +727,8 @@
             <td><a href='https://www.youtube.com/watch?v=yg1v4aqELyI'>Video</a></td>
         </tr>
     </table>
-	<p><span class='fangame kg'></span> Seihou 2 - Kioh Gyoku</p>
     <table class='sortable'>
+		<caption><span class='fangame kg'></span> Seihou 2 - Kioh Gyoku</caption>
         <tr>
             <th class='shottype'>Shottype</th>
             <th class='sorttable_numeric'>Score</th>
@@ -771,8 +771,8 @@
 			<td><a href='https://www.youtube.com/watch?v=t5yqWKTT2Os'>Video</a></td>
 		</tr>
     </table>
-	<p><span class='fangame bsr'></span> Seihou 3 - Banshiryuu (C67 version)</p>
     <table class='sortable'>
+		<caption><span class='fangame bsr'></span> Seihou 3 - Banshiryuu (C67 version)</caption>
         <tr>
             <th class='difficulty'>Difficulty</th>
             <th class='shottype'>Shottype</th>
@@ -793,8 +793,8 @@
 			<td><a href='https://www.youtube.com/watch?v=s-mv2j1jtao'>Video</a></td>
 		</tr>
     </table>
-	<p><span class='fangame smd'></span> Samidare</p>
     <table class='sortable'>
+		<caption><span class='fangame smd'></span> Samidare</caption>
         <tr>
             <th class='difficulty'>Difficulty</th>
             <th class='sorttable_numeric'>Score</th>
@@ -842,8 +842,8 @@
             <td>-</td>
 		</tr>
     </table>
-	<p><span class='fangame mrs'></span> Mrs. Estacion</p>
     <table class='sortable'>
+		<caption><span class='fangame mrs'></span> Mrs. Estacion</caption>
         <tr>
             <th class='difficulty'>Difficulty</th>
             <th class='shottype'>Shottype</th>
@@ -870,8 +870,8 @@
 			<td><a href='https://www.youtube.com/watch?v=hRM74eMjGuY'>Video</a></td>
 		</tr>
     </table>
-	<p><span class='fangame bm'></span> Barrage Musical</p>
 	<table class='sortable'>
+		<caption><span class='fangame bm'></span> Barrage Musical</caption>
         <tr>
             <th class='difficulty'>Difficulty</th>
             <th class='shottype'>Shottype</th>
