@@ -68,6 +68,10 @@
                 <th>DB</th>
                 <td>Deathbomb; a bomb within a few frames after getting hit, which saves you from dying.</td>
             </tr>
+            <tr id='term_ddc'>
+                <th>DDC</th>
+                <td>Touhou 14: Double Dealing Character.</td>
+            </tr>
             <tr id='term_ds'>
                 <th>DS</th>
                 <td>Touhou 12.5: Double Spoiler.</td>
