@@ -2,6 +2,35 @@
 function is_localhost(string $addr) {
     return $addr == '::1' || $addr == '127.0.0.1' || substr($addr, 0, 8) == '192.168.';
 }
+function redirect($page, $page_path, $request, $error) {
+    if (!file_exists($page_path) && $page != 'index' || !empty($error)) {
+        $page = 'error';
+        $url = substr($request, 1);
+        $json = file_get_contents('assets/json/admin.json');
+        $data = json_decode($json, true);
+        if (isset($data[$url])) {
+            header('Location: ' . $data[$url]);
+            exit();
+        }
+        if (strpos($url, '/') === false) {
+            $min_distance = PHP_INT_MAX;
+            foreach (glob('*/*/*') as $file) {
+                if (strpos($file, '.php') && !strpos($file, '_') && $file != 'error.php') {
+                    $matching_page = substr(preg_split('/\//', $file)[2], 0, -4);
+                    $min_distance = min(levenshtein($url, $matching_page), $min_distance);
+                    if (levenshtein($url, $matching_page) <= $min_distance) {
+                        $min_page = $matching_page;
+                    }
+                }
+            }
+            if ($min_distance < 3 && $min_distance >= 0) {
+                $location = $_SERVER['SERVER_NAME'] !== 'localhost' ? 'https://maribelhearn.com/' : 'http://localhost/';
+                header('Location: ' . $location . $min_page . '?redirect=' . $url);
+            }
+        }
+    }
+    return $page;
+}
 function hit(string $filename) {
     $path = $filename == 'error.php' ? '../../.stats/' : '.stats/';
     if (file_exists($path)) {
@@ -53,6 +82,26 @@ function hit(string $filename) {
             fclose($file);
         }
     }
+}
+function lang_code($lang, $hl) {
+    if (empty($_GET['hl']) && !isset($_COOKIE['lang'])) {
+        return 'en';
+    } else if (!empty($_GET['hl'])) {
+        $iso = preg_split('/-/', $_GET['hl'])[0];
+        $iso = str_replace('jp', 'ja', $iso);
+        $iso = str_replace('ru', 'zh', $iso);
+        return $iso;
+    } else if (isset($_COOKIE['lang'])) {
+		if (str_replace('"', '', $_COOKIE['lang']) == 'Russian') {
+			return 'zh';
+		} else if (str_replace('"', '', $_COOKIE['lang']) == 'Chinese') {
+			return 'zh';
+		} else if (str_replace('"', '', $_COOKIE['lang']) == 'Japanese') {
+			return 'ja';
+		} else {
+			return 'en';
+		}
+	}
 }
 function theme_name() {
     return isset($_COOKIE['theme']) ? 'Youkai Mode (click to toggle)' : 'Human Mode (click to toggle)';
