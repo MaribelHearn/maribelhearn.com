@@ -1,7 +1,3 @@
-body {
-    background: url('../drc/drc.jpg') top no-repeat fixed;
-    background-size: cover;
-}
 table, td, th, tr {
     border: 1px solid black;
 }

@@ -1,7 +1,3 @@
-body {
-    background: url('../tiers/tiers.jpg') center no-repeat fixed;
-    background-size: cover;
-}
 a:link.dropdown_button {
     color: #a0a0a0;
 }

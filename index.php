@@ -27,6 +27,7 @@
     $css_href = ($page == 'error' ? 'https://maribelhearn.com/' : '') . 'assets/shared/css_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile;
     $favicon_href = ($page == 'error' ? 'https://maribelhearn.com/' : '') . (file_exists($favicon) ? $favicon : 'favicon.ico');
     $js_href = ($page == 'error' ? 'https://maribelhearn.com/' : '') . 'assets/shared/js_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile;
+    $bg_pos = background_position($page);
     echo '<html id="top" lang="' . lang_code($_GET['lang'], $_GET['hl']) . '">';
 ?>
 
@@ -37,7 +38,7 @@
         <meta name='description' content='<?php echo property_exists($data, 'description') ? $data->description : '' ?>'>
         <meta name='keywords' content='<?php echo property_exists($data, 'keywords') ? $data->keywords : '' ?>'>
         <link rel='preload' type='font/woff2' href='<?php echo $page == 'error' ? 'https://maribelhearn.com/' : '' ?>assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
-        <link rel='stylesheet' type='text/css' href='<?php echo $css_href ?>'>
+        <link rel='stylesheet' href='<?php echo $css_href ?>'>
 		<link rel='icon' type='image/x-icon' href='<?php echo $favicon_href ?>'>
         <script src='<?php echo $js_href ?>' defer></script>
     </head>
@@ -47,6 +48,8 @@
             <div id='nav' class='wrap'><?php echo navbar($page) ?></div>
         </nav>
         <main><?php if ($page == 'error') { include_once 'assets/error/error.php'; } else { include_once $page_path; } ?></main>
+        <script nonce='<?php echo file_get_contents('.stats/nonce') ?>' defer>document.body.style.background="url('assets/<?php echo $css_js_file ?>/<?php echo $css_js_file ?>.jpg') <?php echo $bg_pos ?> no-repeat fixed";document.body.style.backgroundSize="cover"</script>
+        <noscript><link rel='stylesheet' href='assets/shared/noscript_bg.php?page=<?php echo $css_js_file ?>&pos=<?php echo $bg_pos ?>'></noscript>
     </body>
 
 </html>

@@ -103,6 +103,17 @@ function lang_code($lang, $hl) {
 		}
 	}
 }
+function background_position($page) {
+    $top = array('c67', 'drc', 'history', 'jargon', 'survival', 'slots', 'tools');
+    $bottom = array('fangame', 'lnn', 'scoring', 'wr');
+    if (in_array($page, $top)) {
+        return 'top';
+    } else if (in_array($page, $bottom)) {
+        return 'bottom';
+    } else {
+        return 'center';
+    }
+}
 function theme_name() {
     return isset($_COOKIE['theme']) ? 'Youkai Mode (click to toggle)' : 'Human Mode (click to toggle)';
 }
