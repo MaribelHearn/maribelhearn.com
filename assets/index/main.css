@@ -162,9 +162,6 @@ table {
     }
 }
 @media only screen and (max-width: 800px) {
-    #page_links {
-        display: none;
-    }
     #avatar {
         width: 95%;
     }
