@@ -48,8 +48,11 @@
             <div id='nav' class='wrap'><?php echo navbar($page) ?></div>
         </nav>
         <main><?php if ($page == 'error') { include_once 'assets/error/error.php'; } else { include_once $page_path; } ?></main>
-        <script nonce='<?php echo file_get_contents('.stats/nonce') ?>' defer>document.body.style.background="url('assets/<?php echo $css_js_file ?>/<?php echo $css_js_file ?>.jpg') <?php echo $bg_pos ?> no-repeat fixed";document.body.style.backgroundSize="cover"</script>
-        <noscript><link rel='stylesheet' href='assets/shared/noscript_bg.php?page=<?php echo $css_js_file ?>&pos=<?php echo $bg_pos ?>'></noscript>
+        <?php if (!$is_mobile || $page != 'tiers') {
+            echo '<script nonce="' . file_get_contents('.stats/nonce') . '" defer>document.body.style.background="url(\'assets/' . $css_js_file . '/' . $css_js_file . '.jpg\') ';
+            echo $bg_pos . ' no-repeat fixed";document.body.style.backgroundSize="cover"</script>';
+            echo '<noscript><link rel="stylesheet" href="assets/shared/noscript_bg.php?page=' . $css_js_file . '&pos=' . $bg_pos . '"></noscript>';
+        } ?>
     </body>
 
 </html>
