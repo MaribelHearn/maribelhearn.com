@@ -164,10 +164,10 @@
                     }
 					$num = num($game);
 					echo '<tr id="' . $game . 'o"><td>' . $num . '</td><td class="' . $game . '">' . game_tl($game, $lang) . '</td>';
-					echo '<td id="' . $game . 'overall0">' . ($num >= 17 ? '<span class="cs">9,999,999,990' .
+					echo '<td id="' . $game . 'overall0">' . ($game == 'WBaWC' || $game == 'UM' ? '<span class="cs">9,999,999,990' .
                     '<span class="tooltip truescore">' . number_format($overall[$num], 0, '.', ',') .
                     '</span></span> ' : number_format($overall[$num], 0, '.', ',')) . '</td>';
-                    echo '<td id="' . $game . 'overall1">' . ($overall[$num] == 0 ? '-' : $overall_player[$num]) . ($num >= 17 ? '*' : '') . '</td>';
+                    echo '<td id="' . $game . 'overall1">' . ($overall[$num] == 0 ? '-' : $overall_player[$num]) . ($game == 'WBaWC' || $game == 'UM' ? '*' : '') . '</td>';
 					echo '<td id="' . $game . 'overall2">' . ($overall[$num] == 0 ? '-' : $overall_diff[$num]) . '</td>';
 					echo '<td id="' . $game . 'overall3">' . ($overall[$num] == 0 ? '-' : tl_shot($overall_shottype[$num], $lang)) . '</td>';
 					echo '<td id="' . $game . 'overall4" class="datestring">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $notation)) . '</td></tr>';
@@ -208,12 +208,12 @@
                 }
 				$num = num($game);
 				echo '<p class="' . $game . ' count">' . game_tl($game, $lang) . '</p><p>';
-                echo '<span id="' . $game . 'overall0m">' . ($num >= 17 ? '<span class="cs">9,999,999,990' .
+                echo '<span id="' . $game . 'overall0m">' . ($game == 'WBaWC' || $game == 'UM' ? '<span class="cs">9,999,999,990' .
                 '<span class="tooltip truescore">' . number_format($overall[$num], 0, '.', ',') .
                 '</span></span> ' : number_format($overall[$num], 0, '.', ',')) . '</span> ';
 				echo '<span id="' . $game . 'overall2m">' . ($overall[$num] == 0 ? '-' : $overall_diff[$num]) . '</span> ';
 				echo '<span id="' . $game . 'overall3m">' . ($overall[$num] == 0 ? '-' : tl_shot($overall_shottype[$num], $lang)) . '</span> by ';
-				echo '<span id="' . $game . 'overall1m"><em>' . ($overall[$num] == 0 ? '-' : $overall_player[$num]) . ($num >= 17 ? '*' : '') . '</em></span> ';
+				echo '<span id="' . $game . 'overall1m"><em>' . ($overall[$num] == 0 ? '-' : $overall_player[$num]) . ($game == 'WBaWC' || $game == 'UM' ? '*' : '') . '</em></span> ';
 				echo '<br><span id="' . $game . 'overall4m" class="datestring">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $notation)) . '</span></p><hr>';
 			}
             echo '* Players that have scored 9,999,999,990: ';
