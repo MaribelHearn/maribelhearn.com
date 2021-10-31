@@ -3,7 +3,7 @@ generateFullNames generateShottypes generateShortNames translateUSDate translate
 var WRs, westScores, missingReplays, seasonsEnabled, datesEnabled,
     notation = "DMY", language = "English", selected = "", playerSelected = false,
     all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN",
-    "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC"];
+    "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
 
 function removeChar(string) {
     return string.replace("Reimu", "").replace("Cirno", "").replace("Aya", "").replace("Marisa", "");
@@ -282,7 +282,7 @@ function showWRs(event) {
                 bestShotMax = score;
             }
 
-            sepScore = (game == "WBaWC" && score > MAX_SCORE ? "<span class='cs'>9,999,999,990" +
+            sepScore = ((game == "WBaWC" || game == "UM") && score > MAX_SCORE ? "<span class='cs'>9,999,999,990" +
             "<span class='tooltip truescore'>" + sep(score) + "</span></span>" : sep(score));
             text = (replay === "" ? sepScore : "<a class='replay' href='" + replay + "'>" + sepScore + "<span class='dl_icon'></span></a>") +
             "<br>by <em>" + player + "</em>" + (date && datesEnabled ? "<span class='dimgrey'><br>" +
@@ -296,7 +296,7 @@ function showWRs(event) {
         }
 
         if (bestShotMax > 0) {
-            sepScore = (game == "WBaWC" && bestShotMax > MAX_SCORE ? "<span class='cs'>9,999,999,990" +
+            sepScore = ((game == "WBaWC" || game == "UM") && bestShotMax > MAX_SCORE ? "<span class='cs'>9,999,999,990" +
             "<span class='tooltip truescore'>" + sep(bestShotMax) + "</span></span>" : sep(bestShotMax));
             $(bestShot.id).html((bestShot.replay === "" ? "<u>" + sepScore + "</u>" : "<u><a class='replay' href='" + bestShot.replay +
             "'>" + sepScore + "<span class='dl_icon'></span></a></u>") + "<br>by <em>" + bestShot.player +
