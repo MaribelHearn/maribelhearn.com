@@ -3,12 +3,13 @@
     include_once 'assets/shared/shared.php';
     $url = substr($_SERVER['REQUEST_URI'], 1);
 	$page = preg_split('/\?/', $url)[0];
-    if ($_SERVER['REQUEST_URI'] == '/' || preg_match($_SERVER['REQUEST_URI'], '^[/]+$') == 1) {
+    if (str_starts_with($_SERVER['REQUEST_URI'], '/') && count(array_count_values(str_split($_SERVER['REQUEST_URI']))) == 1) {
         $page = 'index';
     }
     $page_path = 'assets/' . $page . '/' . $page . '.php';
-    $page = redirect($page, $page_path, $_SERVER['REQUEST_URI'], $_GET['error']);
-    hit($page);
+    $status_code = empty($_GET['error']) ? '' : $_GET['error'];
+    $page = redirect($page, $page_path, $_SERVER['REQUEST_URI'], $status_code);
+    hit($page, $status_code);
     $page = preg_replace('/\//', '', $page);
     $json = file_get_contents('assets/' . $page . '/' . $page . '.json');
     $data = (object) json_decode($json, true);
@@ -28,7 +29,8 @@
     $favicon_href = ($page == 'error' ? 'https://maribelhearn.com/' : '') . (file_exists($favicon) ? $favicon : 'favicon.ico');
     $js_href = ($page == 'error' ? 'https://maribelhearn.com/' : '') . 'assets/shared/js_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile;
     $bg_pos = background_position($page);
-    echo '<html id="top" lang="' . lang_code($_GET['lang'], $_GET['hl']) . '">';
+    $lang_code = lang_code();
+    echo '<html id="top" lang="' . $lang_code . '">';
 ?>
 
     <head>
