@@ -2,6 +2,30 @@
 function is_localhost(string $addr) {
     return $addr == '::1' || $addr == '127.0.0.1' || substr($addr, 0, 8) == '192.168.';
 }
+function closest_page($url) {
+    $min_distance = PHP_INT_MAX;
+    foreach (glob('*/*/*') as $file) {
+        if (strpos($file, '.php') && !strpos($file, '_') && $file != 'error.php') {
+            $matching_page = substr(preg_split('/\//', $file)[2], 0, -4);
+            $min_distance = min(levenshtein($url, $matching_page), $min_distance);
+            if (levenshtein($url, $matching_page) <= $min_distance) {
+                $min_page = $matching_page;
+            }
+        }
+    }
+    return array($min_page, $min_distance);
+}
+function redirect_to_closest($url) {
+    if (strpos($url, '/') === false) {
+        $closest_page = closest_page($url);
+        $min_page = $closest_page[0];
+        $min_distance = $closest_page[1];
+        if ($min_distance < 3 && $min_distance >= 0) {
+            $location = $_SERVER['SERVER_NAME'] !== 'localhost' ? 'https://maribelhearn.com/' : 'http://localhost/';
+            header('Location: ' . $location . $min_page . '?redirect=' . $url);
+        }
+    }
+}
 function redirect($page, $page_path, $request, $error) {
     if (!file_exists($page_path) && $page != 'index' || !empty($error)) {
         $page = 'error';
@@ -12,26 +36,11 @@ function redirect($page, $page_path, $request, $error) {
             header('Location: ' . $data[$url]);
             exit();
         }
-        if (strpos($url, '/') === false) {
-            $min_distance = PHP_INT_MAX;
-            foreach (glob('*/*/*') as $file) {
-                if (strpos($file, '.php') && !strpos($file, '_') && $file != 'error.php') {
-                    $matching_page = substr(preg_split('/\//', $file)[2], 0, -4);
-                    $min_distance = min(levenshtein($url, $matching_page), $min_distance);
-                    if (levenshtein($url, $matching_page) <= $min_distance) {
-                        $min_page = $matching_page;
-                    }
-                }
-            }
-            if ($min_distance < 3 && $min_distance >= 0) {
-                $location = $_SERVER['SERVER_NAME'] !== 'localhost' ? 'https://maribelhearn.com/' : 'http://localhost/';
-                header('Location: ' . $location . $min_page . '?redirect=' . $url);
-            }
-        }
+        redirect_to_closest($url);
     }
     return $page;
 }
-function hit(string $filename) {
+function hit(string $filename, string $status_code) {
     $path = $filename == 'error.php' ? '../../.stats/' : '.stats/';
     if (file_exists($path)) {
         if (!empty($_SERVER['HTTP_USER_AGENT']) && preg_match('~(bot|crawl|slurp|spider|archiver|facebook|lighthouse|jigsaw|validator|w3c|hexometer)~i', $_SERVER['HTTP_USER_AGENT'])) {
@@ -41,6 +50,9 @@ function hit(string $filename) {
         $token = trim(file_get_contents($path . 'token'));
         if (is_localhost($ip) || !isset($_COOKIE['token']) || $_COOKIE['token'] !== $token) {
             $page = str_replace('.php', '', $filename);
+            if (!empty($status_code)) {
+                $page .= ' ' . $status_code;
+            }
             $hitcount = $path . date('d-m-Y') . '.json';
             if (!file_exists($hitcount)) {
                 $stats = array($page => (object) array());
@@ -83,7 +95,7 @@ function hit(string $filename) {
         }
     }
 }
-function lang_code($lang, $hl) {
+function lang_code() {
     if (empty($_GET['hl']) && !isset($_COOKIE['lang'])) {
         return 'en';
     } else if (!empty($_GET['hl'])) {
