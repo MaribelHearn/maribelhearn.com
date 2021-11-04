@@ -129,6 +129,26 @@ function background_position($page) {
 function theme_name() {
     return isset($_COOKIE['theme']) ? 'Youkai Mode (click to toggle)' : 'Human Mode (click to toggle)';
 }
+function touhou_sites() {
+    return '<p><a href="https://en.touhouwiki.net">' .
+    '<span class="icon wiki_icon"></span>Touhou Wiki</a></p>' .
+    '<p><a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page">' .
+    '<span class="icon thcrap_icon"></span>THPatch</a></p>' .
+    '<p><a href="http://replay.lunarcast.net">' .
+    '<span class="icon lunarcast_icon"></span>Lunarcast</a></p>' .
+    '<p><a href="http://score.royalflare.net">' .
+    '<span class="icon royalflare_icon"></span>Royalflare</a></p>' .
+    '<p><a href="https://thscore.pndsng.com/index.php">' .
+    '<span class="icon pndsng_icon"></span>PND List</a></p>' .
+    '<p><a href="https://priw8.github.io">' .
+    '<span class="icon priw8_icon"></span>Priw8\'s Site</a></p>' .
+    '<p><a href="https://exphp.github.io/thpages">' .
+    '<span class="icon exphp_icon"></span>ExpHP\'s Site</a></p>' .
+    '<p><a href="https://wikiwiki.jp/thscorekg/">' .
+    '<span class="icon kg_icon"></span>KG\'s Site</a></p>';
+    //$navbar .= '<p><a href="https://zps-stg.github.io">' .
+    //'<span class="icon zps_icon"></span>ZPS\'s Site</a></p>';
+}
 function navbar(string $page) {
     $token_path = ($page == 'admin' ? '../.stats/token' : '.stats/token');
     $navbar = '<div class="dropdown nav_left">';
@@ -143,24 +163,7 @@ function navbar(string $page) {
         $navbar .= '<div class="dropdown">';
             $navbar .= '<a href="#" class="dropdown_button">Touhou Sites&#x25BF;</a>';
             $navbar .= '<div class="dropdown_content dropdown_right' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
-                $navbar .= '<p><a href="https://en.touhouwiki.net">' .
-                '<span class="icon wiki_icon"></span>Touhou Wiki</a></p>';
-                $navbar .= '<p><a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page">' .
-                '<span class="icon thcrap_icon"></span>THPatch</a></p>';
-                $navbar .= '<p><a href="http://replay.lunarcast.net">' .
-                '<span class="icon lunarcast_icon"></span>Lunarcast</a></p>';
-                $navbar .= '<p><a href="http://score.royalflare.net">' .
-                '<span class="icon royalflare_icon"></span>Royalflare</a></p>';
-                $navbar .= '<p><a href="https://thscore.pndsng.com/index.php">' .
-                '<span class="icon pndsng_icon"></span>PND List</a></p>';
-                $navbar .= '<p><a href="https://priw8.github.io">' .
-                '<span class="icon priw8_icon"></span>Priw8\'s Site</a></p>';
-                $navbar .= '<p><a href="https://exphp.github.io/thpages/">' .
-                '<span class="icon exphp_icon"></span>ExpHP\'s Site</a></p>';
-                $navbar .= '<p><a href="https://wikiwiki.jp/thscorekg/">' .
-                '<span class="icon kg_icon"></span>KG\'s Site</a></p>';
-                //$navbar .= '<p><a href="https://zps-stg.github.io">' .
-                //'<span class="icon unknown_icon"></span>ZPS\'s Site</a></p>';
+                $navbar .= touhou_sites();
             $navbar .= '</div>';
         $navbar .= '</div> ';
         $navbar .= '<div class="dropdown">';
@@ -219,24 +222,7 @@ function navbar(string $page) {
             $navbar .= '<div class="dropdown">';
                 $navbar .= '<a href="#" class="dropdown_button">Touhou Sites&#x25BF;</a>';
                 $navbar .= '<div class="dropdown_content dropdown_right' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
-                    $navbar .= '<p><a href="https://en.touhouwiki.net">' .
-                    '<span class="icon wiki_icon"></span>Touhou Wiki</a></p>';
-                    $navbar .= '<p><a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page">' .
-                    '<span class="icon thcrap_icon"></span>THPatch</a></p>';
-                    $navbar .= '<p><a href="http://replay.lunarcast.net">' .
-                    '<span class="icon lunarcast_icon"></span>Lunarcast</a></p>';
-                    $navbar .= '<p><a href="http://score.royalflare.net">' .
-                    '<span class="icon royalflare_icon"></span>Royalflare</a></p>';
-                    $navbar .= '<p><a href="https://thscore.pndsng.com/index.php">' .
-                    '<span class="icon pndsng_icon"></span>PND List</a></p>';
-                    $navbar .= '<p><a href="https://priw8.github.io">' .
-                    '<span class="icon priw8_icon"></span>Priw8\'s Site</a></p>';
-                    $navbar .= '<p><a href="https://exphp.github.io/thpages">' .
-                    '<span class="icon exphp_icon"></span>ExpHP\'s Site</a></p>';
-                    $navbar .= '<p><a href="https://wikiwiki.jp/thscorekg/">' .
-                    '<span class="icon kg_icon"></span>KG\'s Site</a></p>';
-                    //$navbar .= '<p><a href="https://zps-stg.github.io">' .
-                    //'<span class="icon zps_icon"></span>ZPS\'s Site</a></p>';
+                    $navbar .= touhou_sites();
                 $navbar .= '</div>';
             $navbar .= '</div> ';
             $navbar .= '<div class="dropdown">';
