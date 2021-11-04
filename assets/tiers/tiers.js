@@ -1979,7 +1979,7 @@ function loadTiersFromStorage() {
     var tiersData = JSON.parse(localStorage.getItem("tiers")),
         gameTiersData = JSON.parse(localStorage.getItem("gameTiers")),
         shotTiersData = JSON.parse(localStorage.getItem("shotTiers")),
-        tierNum, i;
+        tmp = settings.sort, tierNum, i;
 
     if (tiersData && !tiersData.isEmpty()) {
         for (tierNum in tiersData) {
@@ -1987,8 +1987,10 @@ function loadTiersFromStorage() {
             loadTier(tiersData, tierNum, "characters");
         }
     } else {
+        settings.sort = "characters";
+
         for (i = 0; i < defaultTiers.length; i++) {
-            addTier({data: {tierName: defaultTiers[i], noDisplay: settings.sort != "characters"}});
+            addTier({data: {tierName: defaultTiers[i], noDisplay: tmp != "characters"}});
         }
     }
 
@@ -1998,8 +2000,10 @@ function loadTiersFromStorage() {
             loadTier(gameTiersData, tierNum, "works");
         }
     } else {
+        settings.sort = "works";
+
         for (i = 0; i < defaultTiers.length; i++) {
-            addTier({data: {tierName: defaultTiers[i], noDisplay: settings.sort != "works"}});
+            addTier({data: {tierName: defaultTiers[i], noDisplay: tmp != "works"}});
         }
     }
 
@@ -2009,10 +2013,14 @@ function loadTiersFromStorage() {
             loadTier(shotTiersData, tierNum, "shots");
         }
     } else {
+        settings.sort = "shots";
+
         for (i = 0; i < defaultTiers.length; i++) {
-            addTier({data: {tierName: defaultTiers[i], noDisplay: settings.sort != "shots"}});
+            addTier({data: {tierName: defaultTiers[i], noDisplay: tmp != "shots"}});
         }
     }
+
+    settings.sort = tmp;
 }
 
 function loadItems() {
