@@ -43,10 +43,10 @@
         <meta name='theme-color' content='#ffffff'>
         <link rel='preload' type='font/woff2' href='<?php echo $page == 'error' ? 'https://maribelhearn.com/' : '' ?>assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' href='<?php echo $css_href ?>'>
-        <link rel='apple-touch-icon' sizes='180x180' href='<?php echo $favicon_dir ?>/apple-touch-icon.png'>
+        <link rel='apple-touch-icon' sizes='180x180' href='apple-touch-icon.png'>
         <?php if (!in_array($page, $use_index)) { echo '<link rel="icon" type="image/' . ($favicon_ext == '.ico' ? 'x-icon' : 'png') . '" href="' . $favicon_dir . '/' . $page . $favicon_ext . '">'; } ?>
-        <link rel='manifest' href='<?php echo $favicon_dir ?>/site.webmanifest'>
-        <link rel='mask-icon' href='<?php echo $favicon_dir ?>/safari-pinned-tab.svg' color='#5bbad5'>
+        <link rel='manifest' href='site.webmanifest'>
+        <link rel='mask-icon' href='safari-pinned-tab.svg' color='#5bbad5'>
         <script src='<?php echo $js_href ?>' defer></script>
     </head>
 
