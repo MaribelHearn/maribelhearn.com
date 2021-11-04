@@ -23,11 +23,11 @@
     } else {
         $is_mobile = false;
     }
-    $use_index = array('about', 'privacy', 'error');
+    $use_index = array('index', 'about', 'privacy', 'error');
     $css_js_file = in_array($page, $use_index) ? 'index' : $page;
     $css_href = ($page == 'error' ? 'https://maribelhearn.com/' : '') . 'assets/shared/css_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile;
-    $favicon_href = ($page == 'error' ? 'https://maribelhearn.com/' : '') . (file_exists($favicon) ? $favicon : 'favicon.ico');
     $js_href = ($page == 'error' ? 'https://maribelhearn.com/' : '') . 'assets/shared/js_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile;
+    $favicon_dir = ($page == 'error' ? 'https://maribelhearn.com/' : '') . (!in_array($page, $use_index) ? 'assets/' . $page : '');
     $bg_pos = background_position($page);
     $lang_code = lang_code();
 ?>
@@ -39,9 +39,14 @@
 		<meta name='viewport' content='width=device-width'>
         <meta name='description' content='<?php echo property_exists($data, 'description') ? $data->description : '' ?>'>
         <meta name='keywords' content='<?php echo property_exists($data, 'keywords') ? $data->keywords : '' ?>'>
+        <meta name='msapplication-TileColor' content='#da532c'>
+        <meta name='theme-color' content='#ffffff'>
         <link rel='preload' type='font/woff2' href='<?php echo $page == 'error' ? 'https://maribelhearn.com/' : '' ?>assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' href='<?php echo $css_href ?>'>
-		<link rel='icon' type='image/x-icon' href='<?php echo $favicon_href ?>'>
+        <link rel='apple-touch-icon' sizes='180x180' href='<?php echo $favicon_dir ?>/apple-touch-icon.png'>
+        <?php if (!in_array($page, $use_index)) { echo '<link rel="icon" type="image/' . ($favicon_ext == '.ico' ? 'x-icon' : 'png') . '" href="' . $favicon_dir . '/' . $page . $favicon_ext . '">'; } ?>
+        <link rel='manifest' href='<?php echo $favicon_dir ?>/site.webmanifest'>
+        <link rel='mask-icon' href='<?php echo $favicon_dir ?>/safari-pinned-tab.svg' color='#5bbad5'>
         <script src='<?php echo $js_href ?>' defer></script>
     </head>
 
