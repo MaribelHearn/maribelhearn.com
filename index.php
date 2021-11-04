@@ -30,8 +30,8 @@
     $js_href = ($page == 'error' ? 'https://maribelhearn.com/' : '') . 'assets/shared/js_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile;
     $bg_pos = background_position($page);
     $lang_code = lang_code();
-    echo '<html id="top" lang="' . $lang_code . '">';
 ?>
+<html id='top' lang='<?php echo $lang_code ?>'>
 
     <head>
 		<title><?php echo property_exists($data, $lang_code) ? $data->{$lang_code} : (property_exists($data, 'title') ? $data->title : '') ?></title>
