@@ -503,7 +503,7 @@
             </tr>
             <tr id='term_books'>
                 <th>Books</th>
-                <td>The section of <a href='#term_eosd'>EoSD</a> Stage 4 where books spawn in random locations and shoot series of green bullets.</td>
+                <td>The section of <a href='#term_eosd'>EoSD</a> Stage 4 where books spawn in random locations and repeatedly shoot green bullets.</td>
             </tr>
             <tr id='term_bolad'>
                 <th>BoLaD</th>
@@ -608,7 +608,7 @@
             </tr>
             <tr id='term_lc'>
                 <th>LC</th>
-                <td>"Linear Creature", Keiki's third Spell Card in <a href='#term_wbawc'>WBaWC</a>.</td>
+                <td>"Linear Creature", Keiki's third Spell Card in <a href='#term_wbawc'>WBaWC</a>. Also known as "lines".</td>
             </tr>
             <tr id='term_lfs'>
                 <th>LFS</th>
@@ -621,6 +621,10 @@
             <tr id='term_nds'>
                 <th>NDS</th>
                 <td>"Newborn Divine Spirit", Miko's final Spell Card in <a href='#term_td'>TD</a>.</td>
+            </tr>
+            <tr id='term_nueball'>
+                <th>Nueball</th>
+                <td>Refers to both the Stage 4 midboss and Stage 6 midboss in <a href='#term_ufo'>UFO</a>.</td>
             </tr>
             <tr id='term_peta'>
                 <th>Peta</th>
@@ -659,10 +663,6 @@
                 <th>RW</th>
                 <td>"Rising World", Kaguya's final <a href='#term_ls'>Last Spell</a> in <a href='#term_in'>IN</a>.</td>
             </tr>
-            <tr id='term_sfn'>
-                <th>SFN</th>
-                <td>"Saigyouji Flawless Nirvana", Yuyuko's <a href='#term_lw'>Last Word</a> in <a href='#term_in'>IN</a>.</td>
-            </tr>
             <tr id='term_sg'>
                 <th>SG</th>
                 <td>"Scarlet Gensokyo", Remilia's final Spell Card in <a href='#term_eosd'>EoSD</a>.
@@ -673,9 +673,21 @@
                 <td>"Scarlet Meister", Remilia's semifinal Spell Card in <a href='#term_eosd'>EoSD</a>.
 				Also commonly called 'Meister'.</td>
             </tr>
+            <tr id='term_spam'>
+                <th>Spam</th>
+                <td>If said without context, typically refers to the final section of Stage 6 in <a href='#term_pcb'>PCB</a>. It can also refer to any other "bullet spam" stage section, typically with added context (such as "HSiFS Stage 4 spam").</td>
+            </tr>
             <tr id='term_subsun'>
                 <th>Subsun</th>
                 <td>"Subterranean Sun", Utsuho's final Spell Card in <a href='#term_sa'>SA</a>.</td>
+            </tr>
+            <tr id='term_sumizome'>
+                <th>Sumizome</th>
+                <td>"Perfect Ink-Black Cherry Blossom -Bloom-", Yuyuko's penultimate Spell Card in <a href='#term_pcb'>PCB</a>. "Sumizome" comes from the old English translation patch.</td>
+            </tr>
+            <tr id='term_tss'>
+                <th>TSS</th>
+                <td>"Trembling Shivering Star", Junko's fourth Spell Card in <a href='#term_lolk'>LoLK</a>.</td>
             </tr>
             <tr id='term_unr'>
                 <th>UNR</th>
@@ -688,7 +700,7 @@
             <tr id='term_vowg'>
                 <th>VoWG</th>
                 <td>"Virtue of Wind God", Kanako's final Spell Card in <a href='#term_mof'>MoF</a>.
-				Occasionally it will be called 'DVoWG' (D for Divine), because of the older English translation patch.</td>
+				Occasionally it will be called 'DVoWG' (D for Divine), because of either the translation as of 2020 or the old English translation patch.</td>
             </tr>
             <tr id='term_ydl'>
                 <th>YDL</th>
