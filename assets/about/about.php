@@ -204,8 +204,8 @@
     </ul>
     <h2 id='touhou'>Touhou Taste</h2>
     <figure>
-        <img id='tiers' src='assets/index/tiers.jpg' alt='Maribel&#39;s Touhou character tier list'>
-        <figcaption><em>Touhou character tier list as of 7 August 2020</em></figcaption>
+        <img id='tiers' src='assets/index/tiers.png' alt='Maribel&#39;s Touhou character tier list'>
+        <figcaption><em>Touhou character tier list as of 6 November 2021</em></figcaption>
     </figure>
     <p class='wide-top'><strong><a href='#top'>Back to Top</a></strong></p>
 </div>
