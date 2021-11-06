@@ -4,7 +4,8 @@ var SPECIES = ["Human", "Magician", "Devil", "Ghost", "Yuki-onna", "Night sparro
     "Nue", "Daidarabotchi", "Yamabiko", "Zombie", "Gashadokuro", "Kirin", "Wanyuudou", "Katawa-guruma",
     "Zashiki-warashi", "Hobgoblin", "Enenra", "Mermaid", "Rokurokubi", "Amanojaku", "Baku", "Yamanba"],
     NUMBERS = ["None", "1", "2", "3", "4", "5+"],
-    NUMBER_OF_CHARS = 162,
+    NUMBER_OF_CHARS_FIRST = 81,
+    NUMBER_OF_CHARS = 164,
     NUMBER_OF_LOCATIONS = 33,
     WIDTH = 120,
     NUMBER_OF_SLOTS = 9,
@@ -27,10 +28,10 @@ function isMobile() {
 function checkSpritesheet(max, slot) {
     var charNum = slots[slot] / WIDTH;
 
-    if (charNum >= NUMBER_OF_CHARS / 2) {
+    if (charNum >= NUMBER_OF_CHARS_FIRST) {
         $("#slot" + slot).addClass("charslot_2");
         $("#slot" + slot).removeClass("charslot_1");
-        slots[slot] -= NUMBER_OF_CHARS * WIDTH / 2;
+        slots[slot] -= NUMBER_OF_CHARS_FIRST * WIDTH;
         return 2;
     } else {
         $("#slot" + slot).addClass("charslot_1");
@@ -89,14 +90,16 @@ function tick() {
 
     }
 }
-function start() {
+
+function startSlots() {
     if (running) {
         return;
     }
 
     running = setInterval(tick, speed);
 }
-function stop() {
+
+function stopSlots() {
     clearInterval(running);
     running = undefined;
 }
@@ -195,8 +198,8 @@ function closeModal(event) {
 }
 
 function setEventListeners() {
-    $("#start").on("click", start);
-    $("#stop").on("click", stop);
+    $("#start").on("click", startSlots);
+    $("#stop").on("click", stopSlots);
     $("#screenshot").on("click", takeScreenshot);
     $("#reset").on("click", reset);
     $("body").on("click", closeModal);
@@ -238,7 +241,6 @@ function loadCharsLocs() {
     for (i = 0; i < tempLocs.length * WIDTH; i += WIDTH) {
         locs[i] = tempLocs[i / WIDTH].value;
     }
-
     $("#chars1_load, #chars2_load, #locs_load").remove();
 }
 
