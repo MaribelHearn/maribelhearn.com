@@ -13,7 +13,9 @@
     $page = preg_replace('/\//', '', $page);
     $json = file_get_contents('assets/' . $page . '/' . $page . '.json');
     $data = (object) json_decode($json, true);
-    $has_mobile_sheet = file_exists('assets/' . $page . '/' . $page . '_mobile.css');
+    $use_index = array('index', 'about', 'privacy', 'error');
+    $css_js_file = in_array($page, $use_index) ? 'index' : $page;
+    $has_mobile_sheet = file_exists('assets/' . $css_js_file . '/' . (in_array($page, $use_index) ? 'main' : $page) . '_mobile.css');
     $favicon_ext = file_exists('assets/' . $page . '/'. $page . '.ico') ? '.ico' : '.png';
     $favicon = 'assets/' . $page . '/' . $page . $favicon_ext;
     if ($has_mobile_sheet) {
@@ -23,8 +25,6 @@
     } else {
         $is_mobile = false;
     }
-    $use_index = array('index', 'about', 'privacy', 'error');
-    $css_js_file = in_array($page, $use_index) ? 'index' : $page;
     $css_href = ($page == 'error' ? 'https://maribelhearn.com/' : '') . 'assets/shared/css_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile;
     $js_href = ($page == 'error' ? 'https://maribelhearn.com/' : '') . 'assets/shared/js_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile;
     $favicon_dir = ($page == 'error' ? 'https://maribelhearn.com/' : '') . (!in_array($page, $use_index) ? 'assets/' . $page : '');

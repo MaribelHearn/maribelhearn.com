@@ -1674,7 +1674,8 @@ function changeLog() {
     "<li>23/09/2020: Screenshotting added, only working on Firefox</li>" +
     "<li>26/06/2021: UM characters added</li>" +
     "<li>18/07/2021: Screenshotting fixed, works on all modern browsers</li>" +
-    "<li>20/07/2021: Shottypes added</li></ul>");
+    "<li>20/07/2021: Shottypes added</li>" +
+    "<li>06/11/2021: Yuuma Toutetsu added</li></ul>");
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
 }
