@@ -11,6 +11,16 @@ li {
     float: none;
     width: 100%;
 }
+.link {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.link:first-child {
+    margin-top: 4px;
+}
+.link:last-child {
+    margin-bottom: 4px;
+}
 #avatar, #map, #tiers {
     width: 95%;
 }
