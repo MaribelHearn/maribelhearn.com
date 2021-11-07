@@ -640,6 +640,9 @@
 #DatelessBarOldAdam.list_works, #DatelessBarOldAdam.tiered_works {
     background-position: -3180px 0;
 }
+#GouyokuIbun.list_works, #GouyokuIbun.tiered_works {
+    background-position: -3240px 0;
+}
 #EoSDReimuB.list_shots, #EoSDReimuB.tiered_shots {
     background-position: -60px 0;
 }
