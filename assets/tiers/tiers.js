@@ -1386,8 +1386,8 @@ function takeScreenshot() {
                 doc.getElementById("tier_list_container").style.maxHeight = "none";
                 doc.getElementById("tier_list_container").style.marginLeft = "0px";
             },
-            "windowHeight": $("#tier_list_tbody").height() + 15,
-            "height": $("#tier_list_tbody").height() + 15,
+            "windowHeight": $("#tier_list_tbody").height() + $("#tier_list_caption").height() + 15,
+            "height": $("#tier_list_tbody").height() + $("#tier_list_caption").height() + 15,
             "logging": false,
             "scrollX": 0,
             "scrollY": 0
