@@ -27,8 +27,8 @@ input[type=button]:not(.button_bottom) {
 .mobile_add, .mobile_button {
     margin: 10px;
 }
-.list_characters1, .list_characters2, .tiered_characters1, .tiered_characters2,
-.list_works, .tiered_works, .list_shots, .tiered_shots {
+.list_characters1, .list_characters2, .list_characters3, .tiered_characters1, .tiered_characters2,
+.tiered_characters3, .list_works, .tiered_works, .list_shots1, .tiered_shots1, .list_shots2, .tiered_shots2 {
     width: 60px;
     height: 60px;
 }
@@ -38,11 +38,17 @@ input[type=button]:not(.button_bottom) {
 .list_characters2, .tiered_characters2 {
     background-image: url('../spritesheet/characters_sheet60x60_2.png');
 }
+.list_characters3, .tiered_characters3 {
+    background-image: url('../spritesheet/characters_sheet60x60_3.png');
+}
 .list_works, .tiered_works {
     background-image: url('../spritesheet/works_sheet60x60.png');
 }
-.list_shots, .tiered_shots {
-    background-image: url('../spritesheet/shots_sheet60x60.png');
+.list_shots1, .tiered_shots1 {
+    background-image: url('../spritesheet/shots_sheet60x60_1.png');
+}
+.list_shots2, .tiered_shots2 {
+    background-image: url('../spritesheet/shots_sheet60x60_2.png');
 }
 #wrap {
     top: 5px;

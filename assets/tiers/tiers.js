@@ -61,8 +61,14 @@ var MAX_NUMBER_OF_TIERS = 100,
     },
     windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "Spinoff"],
     secondSheet = ["SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "Spinoff", "Manga", "CD"],
+    secondSheetMobile = ["IN", "PoFV", "MoF", "SA", "UFO", "TD"],
+    thirdSheet = ["DDC", "LoLK", "HSiFS", "WBaWC", "UM", "Manga", "CD"],
+    secondSheetShots = ["LoLK", "HSiFS", "WBaWC", "UM", "SoEW", "PoDD", "LLS", "MS"],
     spinoffs = ["IaMP", "SWR", "Soku", "DS", "GFW", "HM", "ULiL", "AoCF"],
     exceptions = ["SuikaIbuki", "IkuNagae", "TenshiHinanawi"],
+    exceptionsMobile = ["YukariYakumo", "YuyukoSaigyouji", "SuikaIbuki", "IkuNagae", "TenshiHinanawi", "Hisoutensoku", "HatateHimekaidou", "SunnyMilk", "LunaChild", "StarSapphire", "HatanoKokoro"],
+    exceptionsThird = ["SumirekoUsami", "JoonYorigami", "ShionYorigami", "YuumaToutetsu"],
+    exceptionsShots = ["DDCSakuyaA", "DDCSakuyaB", "PoFVMerlin", "PoFVLunasa"],
     maleCharacters = ["SinGyokuM", "Genjii", "Unzan", "RinnosukeMorichika", "FortuneTeller"],
     pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"],
     tieredClasses = ["tiered_characters1", "tiered_characters2", "tiered_works", "tiered_shots"],
@@ -120,7 +126,7 @@ function getCategoryOf(item) {
 }
 
 function getSpritesheetOf(item, category) {
-    if (settings.sort != "characters") {
+    if (settings.sort == "works" || settings.sort == "shots" && !isMobile()) {
         return "";
     }
 
@@ -128,7 +134,13 @@ function getSpritesheetOf(item, category) {
         category = getCategoryOf(item);
     }
 
-    if (secondSheet.contains(category) && !exceptions.contains(item.removeSpaces())) {
+    if (isMobile() && settings.sort == "characters" && (thirdSheet.contains(category) || exceptionsThird.contains(item.removeSpaces()))) {
+        return 3;
+    } else if (isMobile() && settings.sort == "characters" && (secondSheetMobile.contains(category) || exceptionsMobile.contains(item.removeSpaces()))) {
+        return 2;
+    } else if (settings.sort == "characters" && secondSheet.contains(category) && !exceptions.contains(item.removeSpaces())) {
+        return 2;
+    } else if (settings.sort == "shots" && (secondSheetShots.contains(category) || exceptionsShots.contains(item.removeSpaces()))) {
         return 2;
     }
 
@@ -1364,6 +1376,32 @@ function fileName() {
     "_" + day + "_" + hours + "_" + minutes + "_" + seconds + ".png";
 }
 
+/*function base64toBlob(dataURI) {
+    var byteString = atob(dataURI.split(',')[1]), ab = new ArrayBuffer(byteString.length), ia = new Uint8Array(ab), i;
+
+    for (i = 0; i < byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
+    }
+
+    return new Blob([ab], {type: "image/png"});
+}
+
+function imageToClipboard(event) {
+    try {
+        navigator.clipboard.write([
+            new ClipboardItem({
+                "image/png": base64toBlob(event.data.blob)
+            })
+        ]);
+    } catch (e) {
+        emptyModal();
+        alert("Your browser does not support image to clipboard functionality. On Firefox, go to about:config and set dom.events.asyncClipboard.clipboardItem to true.");
+        return;
+    }
+    emptyModal();
+    printMessage("<strong class='confirmation'>Copied to clipboard!</strong>");
+}*/
+
 function takeScreenshot() {
     emptyModal();
 
@@ -1406,7 +1444,9 @@ function takeScreenshot() {
 
             $("#modal_inner").append("<p><a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
             "<input type='button' class='button' value='Save to Device'></a></p>" +
+            //"<p><input id='clipboard' type='button' class='button' value='Copy to Clipboard'></p>" +
             "<p><img id='screenshot_base64' src='" + base64image + "' alt='Tier list screenshot'></p>");
+            //$("#clipboard").on("click", {blob: base64image}, imageToClipboard);
             $("#modal_inner").css("display", "block");
             $("#modal").css("display", "block");
             printMessage("");
