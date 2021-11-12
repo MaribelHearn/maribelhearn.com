@@ -432,7 +432,7 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
     </tr>
     <tr>
         <th>Summer subshot</th>
-        <td><strong>Shot:</strong><br>Forward focus shot.<br><strong>Release:</strong><br>Stationary, small release that only costs 1 level.</td>
+        <td><strong>Shot:</strong><br>Light spreadshot.<br><strong>Release:</strong><br>Stationary, small release that only costs 1 level.</td>
         <td>Release is spammable, can be used as an escape button while dodging. Release can also be put on top of the boss for a lot of damage.</td>
         <td>Very low shot damage. Has to fight Hidden Perfect Summer Ice (HPSI), one of Okina's extremely hard final spells.</td>
     </tr>
