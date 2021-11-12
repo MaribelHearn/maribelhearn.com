@@ -36,6 +36,7 @@
     <head>
 		<title><?php echo property_exists($data, $lang_code) ? $data->{$lang_code} : (property_exists($data, 'title') ? $data->title : '') ?></title>
 		<meta charset='UTF-8'>
+        <?php if ($page == 'privacy') { echo '<meta name="robots" content="noindex">'; } ?>
 		<meta name='viewport' content='width=device-width'>
         <meta name='description' content='<?php echo property_exists($data, 'description') ? $data->description : '' ?>'>
         <meta name='keywords' content='<?php echo property_exists($data, 'keywords') ? $data->keywords : '' ?>'>
