@@ -194,7 +194,7 @@ ol {
     }
 }
 @media only screen and (max-width: 1000px) {
-    .wrap {
+    #wrap {
         font-size: 11px;
     }
 }

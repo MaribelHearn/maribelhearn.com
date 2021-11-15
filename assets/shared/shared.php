@@ -150,7 +150,7 @@ function touhou_sites() {
     //'<span class="icon zps_icon"></span>ZPS\'s Site</a></p>';
 }
 function show_admin(string $token_path) {
-    return is_localhost($_SERVER['REMOTE_ADDR']) || isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents($token_path));
+    return isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents($token_path));
 }
 function navbar(string $page) {
     $token_path = ($page == 'admin' ? '../.stats/token' : '.stats/token');
@@ -164,7 +164,7 @@ function navbar(string $page) {
     $navbar .= '<a href="about">About Me</a> | <a href="privacy">Privacy Policy</a> ';
 
     if (!show_admin($token_path)) {
-        $navbar .= '| <strong><a href="https://ko-fi.com/maribelhearn42">Donate</a></strong> ';
+        $navbar .= '| <strong><a href="https://ko-fi.com/maribelhearn42">Buy me a coffee</a></strong> ';
     }
 
     $navbar .= '</div><div class="nav_right">';
