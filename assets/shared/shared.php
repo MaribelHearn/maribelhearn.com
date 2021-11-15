@@ -149,16 +149,24 @@ function touhou_sites() {
     //$navbar .= '<p><a href="https://zps-stg.github.io">' .
     //'<span class="icon zps_icon"></span>ZPS\'s Site</a></p>';
 }
+function show_admin(string $token_path) {
+    return is_localhost($_SERVER['REMOTE_ADDR']) || isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents($token_path));
+}
 function navbar(string $page) {
     $token_path = ($page == 'admin' ? '../.stats/token' : '.stats/token');
     $navbar = '<div class="dropdown nav_left">';
     $navbar .= '<a href="/"><span class="icon index_icon"></span> Index</a> | ';
 
-    if (is_localhost($_SERVER['REMOTE_ADDR']) || isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents($token_path))) {
+    if (show_admin($token_path)) {
         $navbar .= '<a href="admin">Admin</a> | ';
     }
 
     $navbar .= '<a href="about">About Me</a> | <a href="privacy">Privacy Policy</a> ';
+
+    if (!show_admin($token_path)) {
+        $navbar .= '| <strong><a href="https://ko-fi.com/maribelhearn42">Donate</a></strong> ';
+    }
+
     $navbar .= '</div><div class="nav_right">';
         $navbar .= '<div class="dropdown">';
             $navbar .= '<a href="#" class="dropdown_button">Touhou Sites&#x25BF;</a>';
