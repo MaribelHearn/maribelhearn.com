@@ -164,7 +164,7 @@ function navbar(string $page) {
     $navbar .= '<a href="about">About Me</a> | <a href="privacy">Privacy Policy</a> ';
 
     if (!show_admin($token_path)) {
-        $navbar .= '| <strong><a href="https://ko-fi.com/maribelhearn42">Buy me a coffee</a></strong> ';
+        $navbar .= '| <a href="https://ko-fi.com/maribelhearn42">Buy me a coffee</a>';
     }
 
     $navbar .= '</div><div class="nav_right">';
