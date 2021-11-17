@@ -725,7 +725,13 @@
             <td>512,626,640<br>by <em>Starshine</em></td>
             <td>20 September 2018</td>
             <td><a href='https://www.youtube.com/watch?v=yg1v4aqELyI'>Video</a></td>
-        </tr>
+        </tr><tr>
+			<td>Extra</td>
+			<td>VIVIT-B</td>
+			<td><u>503,342,740</u><br>by <em>時鳥_dara</em></td>
+			<td>5 October 2021</td>
+			<td><a href='https://www.youtube.com/watch?v=W4g90Mb6LnM'>Video</a></td>
+		</tr>
     </table>
     <table class='sortable'>
 		<caption><span class='fangame kg'></span> Seihou 2 - Kioh Gyoku</caption>
