@@ -282,6 +282,9 @@
                     <td><?php echo $gt ?></td>
                     <td><?php echo sizeof($pl_lnn) ?></td>
                 </tr>
+                <tr>
+                    <td colspan='2'><span class='replays'><?php echo tl_term('Replays', $lang); ?></span></td>
+                    <td colspan='2'><?php echo sizeof(glob('replays/lnn/*/*')) ?></td>
             </tfoot>
         </table>
     </div>
