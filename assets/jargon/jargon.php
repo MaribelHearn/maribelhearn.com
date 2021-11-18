@@ -186,7 +186,7 @@
             </tr>
             <tr id='term_midnon'>
                 <th>Midnon</th>
-                <td>A <a href='term_nonspell'>nonspell</a> used by a midboss.</td>
+                <td>A <a href='#term_nonspell'>nonspell</a> used by a midboss.</td>
             </tr>
             <tr id='term_midspell'>
                 <th>Midspell</th>
