@@ -2,7 +2,9 @@
 $ALL_LNN = 101;
 $ALL_GAME_LNN = 13;
 $json = file_get_contents('assets/json/lnnlist.json');
+$video_json = file_get_contents('assets/json/lnnvideos.json');
 $lnn = json_decode($json, true);
+$lnn_videos = json_decode($video_json, true);
 if (isset($_COOKIE['lang'])) {
     $lang = str_replace('"', '', $_COOKIE['lang']);
 } else {
@@ -23,6 +25,7 @@ $pl = array();
 $pl_lnn = array();
 $flag = array();
 $missing_replays = array();
+$video_lnns = array();
 $gt = 0;
 function lnn_type(string $game, string $lang) {
     if ($lang == 'Chinese') {
@@ -132,6 +135,9 @@ foreach ($lnn as $game => $data1) {
                     $pl_lnn[$key][2] += 1;
                     $flag[$key] = false;
                 }
+            }
+            if (!empty($lnn_videos[$game][$shottype][$player])) {
+                array_push($video_lnns, $game . $shottype . $player . ';' . $lnn_videos[$game][$shottype][$player]);
             }
         }
     }

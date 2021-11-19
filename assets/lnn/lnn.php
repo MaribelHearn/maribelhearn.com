@@ -384,4 +384,5 @@
     </div>
     <p id='back'><strong><a id='backtotop' href='#top'><?php echo tl_term('Back to Top', $lang); ?></a></strong></p>
 	<?php echo '<input id="missingReplays" type="hidden" value="' . implode('', $missing_replays) . '">' ?>
+	<?php echo '<input id="videos" type="hidden" value="' . implode(',', $video_lnns) . '">' ?>
 </div>
