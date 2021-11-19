@@ -284,7 +284,8 @@
                 </tr>
                 <tr>
                     <td colspan='2'><span class='replays'><?php echo tl_term('Replays', $lang); ?></span></td>
-                    <td colspan='2'><?php echo sizeof(glob('replays/lnn/*/*')) ?></td>
+                    <td colspan='2'><?php echo sizeof(glob('replays/lnn/*/*')) + sizeof($video_lnns) ?></td>
+                </tr>
             </tfoot>
         </table>
     </div>
