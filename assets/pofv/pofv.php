@@ -195,7 +195,7 @@
         <span class='icon sheets_icon'></span> Tournament Archive</a>
     </p>
     <p><a href='https://cerise.moe/pofv.html'>
-        <img src='assets/flags/france16x16.png' alt='Flag of France'> French Guide
+        <span class='icon flag_france'></span> French Guide
     </a></p>
     <h2 id='acks'>Acknowledgements</h2>
     <p>The netplay guide and tournament rules were written by <a href='https://twitter.com/SnortNails'>Knirgesh</a>.</p>

@@ -44,6 +44,9 @@ ol > li {
 .flag {
     display: inline-block;
 }
+.flag_france {
+    background-position: -896px 0px;
+}
 .language {
     margin-top: 0px;
 }
