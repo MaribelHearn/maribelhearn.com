@@ -27,33 +27,33 @@
                 <p class='link'>
                     <a href='drc'><span class='icon drc_icon'></span>
                     Dodging Rain Competition</a>
-                    <img src='assets/flags/jp16x16.png' width='16' height='16' alt='Flag of Japan' title='Japanese'>
-                    <img src='assets/flags/cn16x16.png' width='16' height='16' alt='Flag of the P.R.C.' title='Chinese (Simplified)'>
+                    <span class='icon flag_japan'></span>
+                    <span class='icon flag_china'></span>
                     <span class='tooltip'>Webpage intended for use by
                     the Dodging Rain Competition (see page for explanation).</span>
                 </p>
                 <p class='link'>
                     <a href='tools'><span class='icon tools_icon'></span>
                     Touhou Patches and Tools</a>
-                    <img src='assets/flags/jp16x16.png' width='16' height='16' alt='Flag of Japan' title='Japanese'>
-                    <img src='assets/flags/ru16x16.png' width='16' height='16' alt='Flag of Russia' title='Russian'>
+                    <span class='icon flag_japan'></span>
+                    <span class='icon flag_russia'></span>
                     <span class='tooltip'>A collection of helpful patches and tools for
                     the Touhou shooting games, many of which for efficient practicing.</span>
                 </p>
                 <p class='link'>
                     <a href='wr'><span class='icon wr_icon'></span>
                     Touhou World Records</a>
-                    <img src='assets/flags/jp16x16.png' width='16' height='16' alt='Flag of Japan' title='Japanese'>
-                    <img src='assets/flags/cn16x16.png' width='16' height='16' alt='Flag of the P.R.C.' title='Chinese (Simplified)'>
-                    <img src='assets/flags/ru16x16.png' width='16' height='16' alt='Flag of Russia' title='Russian'>
+                    <span class='icon flag_japan'></span>
+                    <span class='icon flag_china'></span>
+                    <span class='icon flag_russia'></span>
                     <span class='tooltip'>The world records for all Touhou shooting games except for the scene games.</span>
                 </p>
                 <p class='link'>
                     <a href='lnn'><span class='icon lnn_icon'></span>
                     Touhou Lunatic No Miss No Bombs</a>
-                    <img src='assets/flags/jp16x16.png' width='16' height='16' alt='Flag of Japan' title='Japanese'>
-                    <img src='assets/flags/cn16x16.png' width='16' height='16' alt='Flag of the P.R.C.' title='Chinese (Simplified)'>
-                    <img src='assets/flags/ru16x16.png' width='16' height='16' alt='Flag of Russia' title='Russian'>
+                    <span class='icon flag_japan'></span>
+                    <span class='icon flag_china'></span>
+                    <span class='icon flag_russia'></span>
                     <span class='tooltip'>Players who have done Lunatic No Miss No Bomb (LNN)
                     runs of the Touhou shooting games are listed here.</span>
                 </p>
@@ -75,15 +75,15 @@
                 <p class='link'>
                     <a href='pofv'><span class='icon pofv_icon'></span>
                     Phantasmagoria of Flower View</a>
-                    <img src='assets/flags/cn16x16.png' width='16' height='16' alt='Flag of the P.R.C.' title='Chinese (Simplified)'>
+                    <span class='icon flag_china'></span>
                     <span class='tooltip'>Portal for competitive PoFV play, featuring info about its metagame and tournaments and links to relevant resources.</span>
                 </p>
                 <p class='link'>
                     <a href='twc'><span class='icon twc_icon'></span>
                     Touhou World Cup</a>
-                    <img src='assets/flags/jp16x16.png' width='16' height='16' alt='Flag of Japan' title='Japanese'>
-                    <img src='assets/flags/cn16x16.png' width='16' height='16' alt='Flag of the P.R.C.' title='Chinese (Simplified)'>
-                    <img src='assets/flags/ru16x16.png' width='16' height='16' alt='Flag of Russia' title='Russian'>
+                    <span class='icon flag_japan'></span>
+                    <span class='icon flag_china'></span>
+                    <span class='icon flag_russia'></span>
                     <span class='tooltip'>Main webpage for Touhou World Cup, containing the schedule, rules and other relevant information.</span>
                 </p>
                 <p class='link'>

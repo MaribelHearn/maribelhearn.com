@@ -77,6 +77,21 @@ table {
     z-index: 1;
     top: 100%;
 }
+.flag_china {
+    background-position: -880px 0px;
+}
+.flag_japan {
+    background-position: -912px 0px;
+}
+.flag_russia {
+    background-position: -928px 0px;
+}
+.flag_uk {
+    background-position: -944px 0px;
+}
+.flag_us {
+    background-position: -960px 0px;
+}
 .wrap {
     border: 1px solid #000;
     text-align: center;
