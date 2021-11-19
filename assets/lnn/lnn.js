@@ -1,7 +1,6 @@
 /*global $ getCookie deleteCookie setCookie gameAbbr shottypeAbbr generateTableText
 generateFullNames generateShottypes fullNameNumber generateShortNames langCode*/
-var LNNs, alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
-    language = "English", selected = "", missingReplays;
+var LNNs, alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", language = "English", selected = "", missingReplays, videoLNNs;
 
 function toggleLayout() {
     if (getCookie("lnn_old_layout")) {
@@ -196,7 +195,11 @@ function showPlayerLNNs(player) {
                 array.push("<span class='" + character + "'>" + character +
                 "</span>" + (type === "" ? "": " (<span class='" + type + "'>" + type + "</span>)"));
                 if (gameAbbr(game) < 6 || missingReplays.contains(game + player.removeSpaces() + shottype)) {
-                    replays.push('-');
+                    if (videoLNNs.hasOwnProperty(game + shottype + player)) {
+                        replays.push("<a href='" + videoLNNs[game + shottype + player] + "'>" + videoLNNs[game + shottype + player] + "</a>");
+                    } else {
+                        replays.push('-');
+                    }
                 } else {
                     replay = replayPath(game, player, character, type);
                     tmp = replay.split('/');
@@ -242,6 +245,18 @@ function setLanguage(event) {
     location.href = location.href.split('#')[0].split('?')[0];
 }
 
+function parseVideos(videos) {
+    videoLNNs = {};
+    videos = videos.split(',');
+
+    for (var i = 0; i < videos.length; i++) {
+        videos[i] = videos[i].split(';');
+        videoLNNs[videos[i][0]] = videos[i][1];
+    }
+
+    return videoLNNs;
+}
+
 $(document).ready(function () {
     $("#player").on("change", showPlayerLNNs);
     $("#player").on("select", showPlayerLNNs);
@@ -257,6 +272,7 @@ $(document).ready(function () {
     $("#ru").on("click", {language: "Russian"}, setLanguage);
     $(".game_img").on("click", showLNNs);
     missingReplays = $("#missingReplays").val();
+    videoLNNs = parseVideos($("#videos").val());
 
     if (getCookie("lang") == "Japanese" || location.href.contains("jp")) {
         language = "Japanese";
