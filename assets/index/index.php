@@ -133,6 +133,11 @@
                 </p>
             </div>
         </div>
+        <div id='special_thanks'>
+            <h2>Special Thanks</h2>
+            <p class='wide'>Many thanks to my awesome supporters for covering server costs!</p>
+            <p>Taishisamaaa</p>
+        </div>
     </div>
     <div id='ack_mobile'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a>.</div>
     <div id='bottom'>
