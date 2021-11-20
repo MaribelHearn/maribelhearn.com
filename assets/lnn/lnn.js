@@ -34,10 +34,10 @@ function replayPath(game, player, character, type) {
     if (!/[0-9a-z]/gi.test(player)) {
         if (first == last) {
             first = alphaNums.charAt(folder.length - 1);
-            last = first;
+            last = (type !== "" ? type.charAt(type.length - 1) : alphaNums.charAt(folder.length - 1));
         } else {
             first = alphaNums.charAt(folder.length - 1);
-            last = alphaNums.charAt(folder.length);
+            last = (type !== "" ? type.charAt(type.length - 1) : alphaNums.charAt(folder.length));
         }
     } else {
         first = player.charAt(0);
