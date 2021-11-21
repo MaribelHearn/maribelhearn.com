@@ -194,6 +194,7 @@ foreach ($wr as $game => $value) {
             $score = $array[0];
             $player = $array[1];
             $date = $array[2];
+            $video = empty($array[3]) ? '' : $array[3];
             if ($score >= $overall[$num]) {
                 $overall[$num] = $score;
                 $overall_diff[$num] = $diff;
@@ -230,6 +231,7 @@ foreach ($wr as $game => $value) {
                     'score' => $score,
                     'player' => $player,
                     'date' => $date,
+                    'video' => $video,
                 ];
                 array_push($recent, $new_obj);
             } else {
@@ -242,6 +244,7 @@ foreach ($wr as $game => $value) {
                             'score' => $score,
                             'player' => $player,
                             'date' => $date,
+                            'video' => $video,
                         ];
                         for ($i = $RECENT_LIMIT - 1; $i > $key; $i--) {
                             $recent[$i] = $recent[$i - 1];

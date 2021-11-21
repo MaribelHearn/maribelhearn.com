@@ -431,7 +431,9 @@
                     if (file_exists(replay_path($obj->game, $obj->diff, $obj->shot))) {
                         $path = replay_path($obj->game, $obj->diff, $obj->shot);
                         $replay = '<a href="' . $path . '">' . substr($path, 8) . '</a>';
-                    } else {
+                    } else if (!empty($obj->video)) {
+						$replay = '<a href="' . $obj->video '">YouTube link</a>';
+					} else {
                         $replay = '-';
                     }
                     echo '<tr><td class="' . $obj->game . 'p">' . game_tl($obj->game . ' ', $lang) .
