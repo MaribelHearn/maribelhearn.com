@@ -84,19 +84,19 @@
 			else if ($lang == 'Japanese') { echo '公式YouTubeチャンネル'; }
 			else if ($lang == 'Russian') { echo 'Официальный канал TWC на Youtube'; }
 			else { echo 'Official TWC YouTube Channel'; }
-			echo '</a></p><p><img src="assets/flags/uk16x16.png" alt="Flag of the United Kingdom">' .
+			echo '</a></p><p><span class="icon flag_uk"></span>' .
 			'<a href="https://www.twitch.tv/touhou_replay_showcase">';
 			if ($lang == 'Chinese') { echo '英文流解说（Twitch）'; }
 			else if ($lang == 'Japanese') { echo '英語解説付き配信チャンネル(Twitch)'; }
 			else if ($lang == 'Russian') { echo 'Английский стрим (Twitch)'; }
 			else { echo 'English commentary stream (Twitch)'; }
-			echo '</a></p><p><img src="assets/flags/cn16x16.png" alt="Flag of the P.R.C.">' .
+			echo '</a></p><p><span class="icon flag_china"></span>' .
 			'<a href="https://live.bilibili.com/22478102?share_source=copy_link">';
 			if ($lang == 'Chinese') { echo '一号中文流解说（Bilibili)'; }
 			else if ($lang == 'Japanese') { echo '中国語解説付き配信チャンネル１(Bilibili)'; }
 			else if ($lang == 'Russian') { echo 'Китайский стрим 1 (Bilibili)'; }
 			else { echo 'Chinese commentary stream 1 (Bilibili)'; }
-			echo '</a><br><img src="assets/flags/cn16x16.png" alt="Flag of the P.R.C.">' .
+			echo '</a><br><span class="icon flag_china"></span>' .
 			'<a href="https://live.bilibili.com/14315174?share_source=copy_link">';
 			if ($lang == 'Chinese') {
 				echo '二号中文流解说（Bilibili)';
@@ -107,7 +107,7 @@
 			} else {
 				echo 'Chinese commentary stream 2 (Bilibili)';
 			}
-			echo '</a></p><p><img src="assets/flags/jp16x16.png" alt="Flag of Japan">' .
+			echo '</a></p><p><span class="icon flag_japan"></span>' .
 			'<a href="https://www.youtube.com/channel/UCfF3O4wo0YxppTZGmtTGDwg">';
 			if ($lang == 'Chinese') {
 				echo '日文流解说（YouTube）';
@@ -118,7 +118,7 @@
 			} else {
 				echo 'Japanese commentary stream (YouTube)';
 			}
-			echo '</a></p><p><img src="assets/flags/ru16x16.png" alt="Flag of the Russian Federation">' .
+			echo '</a></p><p><span class="icon flag_russia"></span>' .
 			'<a href="https://www.twitch.tv/touhou_russian_kolkhoz">';
 			if ($lang == 'Chinese') {
 				echo '俄文流解说（Twitch）';
