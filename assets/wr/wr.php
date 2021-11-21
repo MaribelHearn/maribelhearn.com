@@ -432,7 +432,7 @@
                         $path = replay_path($obj->game, $obj->diff, $obj->shot);
                         $replay = '<a href="' . $path . '">' . substr($path, 8) . '</a>';
                     } else if (!empty($obj->video)) {
-						$replay = '<a href="' . $obj->video '">YouTube link</a>';
+						$replay = '<a href="' . $obj->video . '">YouTube link</a>';
 					} else {
                         $replay = '-';
                     }
