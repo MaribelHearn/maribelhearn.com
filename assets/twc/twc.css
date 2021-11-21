@@ -84,6 +84,18 @@ table {
 .flag {
     display: inline-block;
 }
+.flag_china {
+    background-position: -880px 0px;
+}
+.flag_japan {
+    background-position: -912px 0px;
+}
+.flag_russia {
+    background-position: -928px 0px;
+}
+.flag_uk {
+    background-position: -944px 0px;
+}
 .language {
     margin-top: 0px;
 }
