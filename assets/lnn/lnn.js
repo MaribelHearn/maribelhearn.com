@@ -196,7 +196,7 @@ function showPlayerLNNs(player) {
                 "</span>" + (type === "" ? "": " (<span class='" + type + "'>" + type + "</span>)"));
                 if (gameAbbr(game) < 6 || missingReplays.contains(game + player.removeSpaces() + shottype)) {
                     if (videoLNNs.hasOwnProperty(game + shottype + player)) {
-                        replays.push("<a href='" + videoLNNs[game + shottype + player] + "'>" + videoLNNs[game + shottype + player] + "</a>");
+                        replays.push("<a href='" + videoLNNs[game + shottype + player] + "' target='_blank'>" + videoLNNs[game + shottype + player] + "</a>");
                     } else {
                         replays.push('-');
                     }
