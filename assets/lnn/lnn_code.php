@@ -100,10 +100,10 @@ function replay_path(string $game, string $player, string $shot) {
     if (!preg_match('/[a-z\d ]/i', $player)) {
         if ($first == $last) {
             $first = $ALPHA_NUMS[mb_strlen($folder) - 1];
-            $last = $first;
+            $last = ($type !== "" ? $type[mb_strlen($type) - 1] : $ALPHA_NUMS[mb_strlen($folder) - 1]);
         } else {
             $first = $ALPHA_NUMS[mb_strlen($folder) - 1];
-            $last = $ALPHA_NUMS[mb_strlen($folder)];
+            $last = ($type !== "" ? $type[mb_strlen($type) - 1] : $ALPHA_NUMS[mb_strlen($folder)]);
         }
     } else {
         $first = $player[0];
