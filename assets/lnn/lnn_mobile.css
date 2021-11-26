@@ -1,6 +1,9 @@
 .full_name {
     display: none;
 }
+.FinalA, .FinalB, .in_route {
+    font-size: 8px;
+}
 #layouttoggle {
     display: none;
 }
