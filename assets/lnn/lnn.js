@@ -1,6 +1,6 @@
 /*global $ getCookie deleteCookie setCookie gameAbbr shottypeAbbr generateTableText
 generateFullNames generateShottypes fullNameNumber generateShortNames langCode*/
-var LNNs, alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", language = "English", selected = "", missingReplays, videoLNNs;
+var LNNs, alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", language = "English", selected = "", missingReplays, videoLNNs, testing;
 
 function toggleLayout() {
     if (getCookie("lnn_old_layout")) {
@@ -46,6 +46,10 @@ function replayPath(game, player, character, type) {
 
     return "replays/lnn/" + folder + "/th" + gameAbbr(game) +
     "_ud" + first + last + shottypeAbbr(character) + ".rpy";
+}
+
+function hasReplay(game, player, shottype) {
+    return videoLNNs[game + shottype + player] || (gameAbbr(game) >= 6 && !missingReplays.contains(game + player.removeSpaces() + shottype));
 }
 
 function showLNNs(game) {
@@ -116,7 +120,7 @@ function showLNNs(game) {
         for (i in LNNs[game][shottype]) {
             player = LNNs[game][shottype][i];
             shotplayers.push(player + (game == "IN" || game == "UFO" || game == "HSiFS" ? typeString : ""));
-            players.pushStrict(player);
+            players.pushStrict(player + (testing && hasReplay(game, player, shottype) ? "<span class='dl_icon'></span>" : ""));
             shotcount += 1;
             gamecount += 1;
         }
@@ -142,7 +146,7 @@ function showLNNs(game) {
     players.sort();
 
     for (i in players) {
-        $("#total").append(", " + players[i])
+        $("#total").append(", " + players[i]);
     }
 
     $("#count").html(gamecount + " (" + players.length + ")");
@@ -273,6 +277,7 @@ $(document).ready(function () {
     $(".game_img").on("click", showLNNs);
     missingReplays = $("#missingReplays").val();
     videoLNNs = parseVideos($("#videos").val());
+    testing = Boolean($("#testing").val());
 
     if (getCookie("lang") == "Japanese" || location.href.contains("jp")) {
         language = "Japanese";
