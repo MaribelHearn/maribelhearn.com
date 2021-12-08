@@ -540,7 +540,7 @@ function addToTierMobile(event) {
 }
 
 function addMenu(event) {
-    var character = event.data.name, tierList = getCurrentTierList(), tierNum, i;
+    var character = event.data.name, tierList = getCurrentTierList(), tierNum;
 
     emptyModal();
     event.preventDefault();
@@ -553,9 +553,9 @@ function addMenu(event) {
     }
 
     for (tierNum = 0; tierNum < Object.keys(tierList).length; tierNum++) {
-        $("#modal_inner").append("<input id='mobile_addtotier_" + i +
+        $("#modal_inner").append("<input id='mobile_addtotier_" + tierNum +
         "' class='mobile_add' type='button' value='" + tierList[tierNum].name + "'>");
-        $("#mobile_addtotier_" + i).on("click", {character: character, tierNum: tierNum}, addToTierMobile);
+        $("#mobile_addtotier_" + tierNum).on("click", {character: character, tierNum: tierNum}, addToTierMobile);
     }
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
