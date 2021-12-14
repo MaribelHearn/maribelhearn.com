@@ -100,7 +100,7 @@ Unpausing using the Esc key instead of the Z key prevents the dialogue desync.</
 <p>You probably started a replay from Stage 4, which always desyncs in MoF. Start from another stage instead.
 If this does not solve it, you are unfortunately a victim of a rare desync that can happen in MoF. Save replays multiple times to help prevent it.</p>
 <h4 id='sa'>SA (Touhou 11)</h4>
-<p>You fast-forwarded a replay, or started it from Stage 6, and then repeatedly die to Utsuho's first nonspell. You can prevent this by starting from any stage before Stage 6,
+<p>You fast-forwarded a replay, or started it from Stage 6, and then repeatedly died to Utsuho's first nonspell. You can prevent this by starting from any stage before Stage 6,
 and <em>not</em> fast-forwarding after you defeat the Stage 5 boss. You can fast-forward again once the Stage 6 music plays.</p>
 <h4 id='td'>TD (Touhou 13)</h4>
 <p>If playing as Marisa, replays will desync if they are not started from Stage 1.</p>
