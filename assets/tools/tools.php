@@ -891,7 +891,7 @@
 		if ($lang == 'Russian') { echo 'OC патчи от '; }
 		else if ($lang == 'Japanese') { echo 'OCパッチ by '; }
 		else { echo 'OC Patches by '; }
-	?>Bravi</strong>
+	?><a href='https://www.twitch.tv/bravidunno'>Bravi</a></strong>
 	<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> BraviOCOkina</a></p>
 	<p><?php
 		if ($lang == 'Russian') {
