@@ -111,8 +111,8 @@ Replays in which this bug occurred will unfortunately desync once the game is cl
 <p>You restarted a run in the time after a hyper, but before the extra tokens spawned; two tokens will spawn at the start of the broken replay.
 To avoid this, either use <a href='tools#thprac'>thprac</a> or reset your run twice if you are resetting during a hyper.</p>
 <h4 id='um'>UM (Touhou 18)</h4>
-<p>Desyncs can have several causes. Replays will desync if you changed your active card <em>after</em> beating a boss, or if you are using Byakuren's Scroll or Momoyo's Centipede cards.
-There are other causes as well, all of which are related to cards. Most of the desync issues are fixed by <a href='tools#thprac'>thprac</a> (use the F12 menu).</p>
+<p>Desyncs can have several causes. Replays will desync if you changed your active card <em>after</em> beating a boss, or if you are using Momoyo's Centipede card.
+Starting the Extra Stage with Byakuren's Scroll card equipped will also desync your run. These issues are fixed by <a href='tools#thprac'>thprac</a> (use the F12 menu).</p>
 <!--<h4 id='cd'>How do I set up the game starting from the CD?</h4>
 <p><a href='https://www.youtube.com/watch?v=8Yt2bSh32K8'>This video</a> provides a quick explanation.</p>
 <h4 id='fps'>Why is the game running at 5000 <abbr title='frames per second'>FPS</abbr>?</h4>
