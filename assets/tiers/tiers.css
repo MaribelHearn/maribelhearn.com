@@ -227,10 +227,6 @@ li {
     display: none;
     overflow-y: auto;
 }
-#import {
-    width: 80%;
-    height: 400px;
-}
 #artist_form, #settings_table {
     margin: 15px auto;
 }

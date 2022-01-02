@@ -278,4 +278,42 @@ function navbar(string $page) {
     }
     return $navbar;
 }
+function handle_file_upload() {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (is_uploaded_file($_FILES['import']['tmp_name']) ) {
+            switch ($_FILES['import']['error']) {
+                case UPLOAD_ERR_OK:
+                    break;
+                case UPLOAD_ERR_NO_FILE:
+                    return '<strong class="error">Error: no file sent.</strong>';
+                default:
+                    return '<strong class="error">Error: the file upload failed for an unknown reason.</strong>';
+            }
+            $finfo = new finfo(FILEINFO_MIME_TYPE);
+            if (false === $ext = array_search(
+                $finfo->file($_FILES['import']['tmp_name']),
+                array(
+                    '' => 'text/plain',
+                    'txt' => 'text/plain',
+                ),
+                true
+            )) {
+                return '<strong class="error">Error: invalid file format; expected plain text.</strong>';
+            }
+            if ($_FILES['import']['size'] > 5000) {
+                return '<strong class="error">Error: the file exceeds the upload size limit.</strong>';
+            }
+            if (!empty($ext)) {
+                $ext = '.' . $ext;
+            }
+            $path = sprintf('./assets/tiers/uploads/%s%s', sha1_file($_FILES['import']['tmp_name']), $ext);
+            if (!move_uploaded_file($_FILES['import']['tmp_name'], $path)) {
+                return '<strong class="error">Error: failed to move uploaded file.</strong>';
+            }
+            return $path;
+        } else {
+            return '<strong class="error">Error: no file sent.</strong>';
+        }
+    }
+}
 ?>

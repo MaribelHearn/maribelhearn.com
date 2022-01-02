@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+    session_start();
     include_once 'assets/shared/shared.php';
     $url = substr($_SERVER['REQUEST_URI'], 1);
 	$page = preg_split('/\?/', $url)[0];
@@ -30,6 +31,13 @@
     $favicon_dir = ($page == 'error' ? 'https://maribelhearn.com/' : '') . (!in_array($page, $use_index) ? 'assets/' . $page : '');
     $bg_pos = background_position($page);
     $lang_code = lang_code();
+    $file_upload = handle_file_upload();
+    if (!empty($file_upload) && strpos($file_upload, '<') === false) {
+        $_SESSION['data'] = $file_upload;
+        unset($_POST);
+        header("Location: {$_SERVER['REQUEST_URI']}", true, 303);
+        exit();
+    }
 ?>
 <html id='top' lang='<?php echo $lang_code ?>'>
 
@@ -60,6 +68,16 @@
             echo '<script nonce="' . file_get_contents('.stats/nonce') . '" defer>document.body.style.background="url(\'' . ($page == 'error' ? 'https://maribelhearn.com/' : '') . 'assets/' . $css_js_file . '/' . $css_js_file . '.jpg\') ';
             echo $bg_pos . ' no-repeat fixed";document.body.style.backgroundSize="cover"</script>';
             echo '<noscript><link rel="stylesheet" href="assets/shared/noscript_bg.php?page=' . $css_js_file . '&pos=' . $bg_pos . '"></noscript>';
+        }
+        var_dump($_SESSION);
+        if (isset($_SESSION) && array_key_exists('data', $_SESSION)) {
+            if (strpos($_SESSION['data'], '<') === false) {
+                echo '<input id="import" type="hidden" value="' . file_get_contents($_SESSION['data']) . '">';
+                unlink($_SESSION['data']);
+                unset($_SESSION['data']);
+            } else if (strpos($_SESSION['data'], '<') !== false) {
+                echo '<input id="error" type="hidden" value="' . htmlentities($_SESSION['data']) . '">';
+            }
         } ?>
     </body>
 

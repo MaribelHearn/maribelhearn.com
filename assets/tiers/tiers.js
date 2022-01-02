@@ -633,7 +633,7 @@ function changeMultiSelectionTo(tierNum, pos, multi) {
     multiSelection = [];
 }
 
-function removeFromTier(item, tierNum, multi) {
+function removeFromTier(item, tierNum, multi, noDisplay) {
     var tierList = getCurrentTierList(), pos, counter, tmp;
 
     if (!item || getTierNumOf(item) !== tierNum) {
@@ -649,21 +649,24 @@ function removeFromTier(item, tierNum, multi) {
         $("#" + item).on("contextmenu", preventContextMenu);
     }
 
-    pos = getPositionOf(item);
-    $("#" + item + "C").append($("#" + item));
-    $("#" + getCategoryOf(item)).css("display", "block");
+    if (!noDisplay) {
+        pos = getPositionOf(item);
+        $("#" + item + "C").append($("#" + item));
+        $("#" + getCategoryOf(item)).css("display", "block");
 
-    if (tierNum !== false) {
-        for (counter = pos + 1; counter < tierList[tierNum].chars.length; counter += 1) {
-            tmp = getItemAt(tierNum, counter);
-            $("#tier" + tierNum + "_" + counter).remove("#" + tmp);
-            $("#tier" + tierNum + "_" + (counter - 1)).append($("#" + tmp));
+        if (tierNum !== false) {
+            for (counter = pos + 1; counter < tierList[tierNum].chars.length; counter += 1) {
+                tmp = getItemAt(tierNum, counter);
+                $("#tier" + tierNum + "_" + counter).remove("#" + tmp);
+                $("#tier" + tierNum + "_" + (counter - 1)).append($("#" + tmp));
+            }
+
+            $("#tier" + tierNum + "_" + (tierList[tierNum].chars.length - 1)).remove();
         }
-
-        $("#tier" + tierNum + "_" + (tierList[tierNum].chars.length - 1)).remove();
-        tierList[tierNum].chars.remove(item);
-        tieredItems.remove(item);
     }
+
+    tierList[tierNum].chars.remove(item);
+    tieredItems.remove(item);
 
     if (!multi && multiSelection.contains(item)) {
         $("#" + item).removeClass("selected");
@@ -790,7 +793,7 @@ function removeCharacters(tierNum, noDisplay) {
     var tierList = getCurrentTierList();
 
     while (tierList[tierNum].chars.length > 0) {
-        removeFromTier(tierList[tierNum].chars[tierList[tierNum].chars.length - 1], tierNum);
+        removeFromTier(tierList[tierNum].chars[tierList[tierNum].chars.length - 1], tierNum, false, noDisplay);
     }
 
     if (!noDisplay) {
@@ -1190,11 +1193,11 @@ function parseSettings(string, sort) {
     var settingsArray = string.split(';');
 
     if (settingsArray.length == 3) {
-        settings[sort].tierListName = settingsArray[0].replace('-', "");
+        settings[sort].tierListName = settingsArray[0].replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
         settings[sort].tierHeaderWidth = settingsArray[1];
         settings[sort].tierHeaderFontSize = settingsArray[2];
     } else {
-        settings[sort].tierListName = settingsArray[0].replace('-', "");
+        settings[sort].tierListName = settingsArray[0].replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
         settings[sort].tierListColour = settingsArray[1];
         settings[sort].tierHeaderWidth = settingsArray[2];
         settings[sort].tierHeaderFontSize = settingsArray[3];
@@ -1202,7 +1205,7 @@ function parseSettings(string, sort) {
 }
 
 function parseImport(text, tierList, sort, tmpSort) {
-    var counter = -1, noDisplay = (sort == tmpSort ? false : true), characters, i, j;
+    var alreadyAdded = [], counter = -1, noDisplay = (sort == tmpSort ? false : true), characters, i, j;
 
     try {
         clearTiers(tierList, sort, tmpSort);
@@ -1229,12 +1232,20 @@ function parseImport(text, tierList, sort, tmpSort) {
                 characters = text[i].split(',');
 
                 for (j = 0; j < characters.length; j += 1) {
+                    characters[j] = characters[j].trim();
+
                     if (characters[j] == "Mai") {
                         characters[j] = "Mai PC-98";
                     }
 
                     try {
                         addToTier(characters[j].removeSpaces(), counter, noDisplay);
+
+                        if (alreadyAdded.includes(characters[j])) {
+                            throw "Item already added";
+                        }
+
+                        alreadyAdded.push(characters[j]);
                     } catch (e) {
                         tierList[counter].chars.remove(characters[j].removeSpaces());
                     }
@@ -1244,6 +1255,7 @@ function parseImport(text, tierList, sort, tmpSort) {
 
         return true;
     } catch (e) {
+        console.log(e);
         return false;
     }
 }
@@ -1291,6 +1303,7 @@ function doImport() {
     $("#modal_inner").html("");
     $("#modal").css("display", "none");
     $("#modal_inner").css("display", "none");
+    saveTiersData();
     printMessage("<strong class='confirmation'>Tier list successfully imported!</strong>");
 }
 
@@ -1299,58 +1312,61 @@ function importText() {
     printMessage("");
 
     if (isMobile()) {
-        $("#modal_inner").html("<h3>Import from Text</h3>");
+        $("#modal_inner").html("<h3>Import from Text File</h3>");
     } else {
-        $("#modal_inner").html("<h2>Import from Text</h2>");
+        $("#modal_inner").html("<h2>Import from Text File</h2>");
     }
 
     $("#modal_inner").append("<p>Note that the format should be the same as the exported text.</p>");
-    $("#modal_inner").append("<p><strong>Warning:</strong> Importing will overwrite your current tier list!");
-    $("#modal_inner").append("<textarea id='import'></textarea><p><input id='load_button' type='button' value='Import'></p>");
-    $("#load_button").on("click", doImport);
+    $("#modal_inner").append("<p><strong>Warning:</strong> Importing can overwrite one of your current tier lists!");
+    $("#modal_inner").append("<form target='tiers.php' method='post' enctype='multipart/form-data' target='_self'><label for='import_button'>Upload file:</label> " +
+    "<input id='import_button' name='import' type='file'><p><input type='submit' value='Import'></p></form>");
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
 }
 
-function copyToClipboard() {
-    navigator.clipboard.writeText($("#text").html().replace(/<\/p><p>/g, "\n").strip());
+function copyToClipboard(event) {
+    navigator.clipboard.writeText(event.data.text.replace(/<\/p><p>/g, "\n").strip());
     emptyModal();
     printMessage("<strong class='confirmation'>Copied to clipboard!</strong>");
 }
 
 function exportText() {
-    var tierList = getCurrentTierList(), tierNum, character, i;
+    var tierList = getCurrentTierList(), textFile = "", totalChars = 0, tierNum, character, i;
 
     emptyModal();
     printMessage("");
 
     if (isMobile()) {
-        $("#modal_inner").html("<h3>Export to Text</h3>");
+        $("#modal_inner").html("<h3>Export to Text File</h3>");
     } else {
-        $("#modal_inner").html("<h2>Export to Text</h2>");
+        $("#modal_inner").html("<h2>Export to Text File</h2>");
     }
 
-    $("#modal_inner").append("<p><input id='copy_to_clipboard' " +
-    "type='button' value='Copy to Clipboard'></p><p id='text'></p>");
-    $("#copy_to_clipboard").on("click", copyToClipboard);
-    $("#text").append((settings[settings.sort].tierListName ? settings[settings.sort].tierListName : "-") +
+    textFile += (settings[settings.sort].tierListName ? settings[settings.sort].tierListName : "-") +
     ";" + settings[settings.sort].tierListColour + ";" + settings[settings.sort].tierHeaderWidth +
-    ";" + settings[settings.sort].tierHeaderFontSize);
+    ";" + settings[settings.sort].tierHeaderFontSize;
 
     for (tierNum in tierList) {
-        $("#text").append("<p>" + tierList[tierNum].name + ":</p><p>" + tierList[tierNum].bg +
-        " " + tierList[tierNum].colour + "</p><p>");
+        textFile += "\n" + tierList[tierNum].name + ":\n" + tierList[tierNum].bg +
+        " " + tierList[tierNum].colour + "\n";
 
         for (i = 0; i < tierList[tierNum].chars.length; i += 1) {
             character = $("#" + tierList[tierNum].chars[i]).attr("title");
-            $("#text").append(character + (i == tierList[tierNum].chars.length - 1 ? "" : ", "));
+            textFile += character + (i == tierList[tierNum].chars.length - 1 ? "" : ", ");
+            totalChars += 1;
         }
 
-        $("#text").append("</p>");
+        textFile += "\n";
     }
 
-    if ($("#text").html() === "") {
-        printMessage("<strong class='error'>Error: there are no tiers to export.</strong>");
+    $("#modal_inner").append("<p><input id='copy_to_clipboard' type='button' value='Copy to Clipboard'></p>");
+    $("#modal_inner").append("<p><a id='save_link' href='data:text/plain;charset=utf-8," + encodeURIComponent(textFile) + "' download='" + fileName("txt") + "'>" +
+    "<input type='button' class='button' value='Save to Device'></a></p>");
+    $("#copy_to_clipboard").on("click", {text: textFile}, copyToClipboard);
+
+    if (totalChars === 0) {
+        printMessage("<strong class='error'>Error: cannot export empty tiers.</strong>");
         $("#modal_inner").html("");
         return;
     }
@@ -1359,7 +1375,7 @@ function exportText() {
     $("#modal").css("display", "block");
 }
 
-function fileName() {
+function fileName(extension) {
     var date = new Date(),
         name = "touhou_tier_list",
         month = (date.getMonth() + 1).toLocaleString("en-US", {minimumIntegerDigits: 2}),
@@ -1373,7 +1389,7 @@ function fileName() {
     }
 
     return name + "_" + date.getFullYear() + "_" + month +
-    "_" + day + "_" + hours + "_" + minutes + "_" + seconds + ".png";
+    "_" + day + "_" + hours + "_" + minutes + "_" + seconds + "." + extension;
 }
 
 /*function base64toBlob(dataURI) {
@@ -1442,7 +1458,7 @@ function takeScreenshot() {
                 }
             }
 
-            $("#modal_inner").append("<p><a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
+            $("#modal_inner").append("<p><a id='save_link' href='" + base64image + "' download='" + fileName("png") + "'>" +
             "<input type='button' class='button' value='Save to Device'></a></p>" +
             //"<p><input id='clipboard' type='button' class='button' value='Copy to Clipboard'></p>" +
             "<p><img id='screenshot_base64' src='" + base64image + "' alt='Tier list screenshot'></p>");
@@ -2227,6 +2243,14 @@ $(document).ready(function () {
         loadTiersFromStorage();
     } else {
         initialise();
+    }
+
+    if ($("#import").length) {
+        doImport();
+        $("#import").remove();
+    } else if ($("#error").length) {
+        printMessage($("#error").val());
+        $("#error").remove();
     }
 
     $(".tier_content").css("background-color", settings[settings.sort].tierListColour);
