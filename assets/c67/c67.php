@@ -51,8 +51,8 @@
         <img id='graze' loading='lazy' src='assets/c67/grazing.png' alt='VIVIT grazing lasers' width='350' height='145'>
     </picture>
     <br>
-    <em class='description'>A counter appears as you perform continuous grazing,
-    showing your current continuous graze and total graze points on the stage.</em>
+    <p class='description'>A counter appears as you perform continuous grazing,
+    showing your current continuous graze and total graze points on the stage.</p>
     <p>It is possible to automatically collect all items on the screen by means of <em>grazing</em> bullets,
     which is having a bullet enter your 'grazebox', the area around your character in which a bullet is considered to be grazed.
     This area is larger when you are focused and focusing also makes the grazebox display on screen,
@@ -76,7 +76,7 @@
         <img loading='lazy' src='assets/c67/se.jpg' alt='Damage dealt to SE' width='208' height='64'>
     </picture>
     <br>
-    <em class='description'>The bottom number is the current damage dealt to the boss during an SE.</em>
+    <p class='description'>The bottom number is the current damage dealt to the boss during an SE.</p>
     <p>There are several different kinds of SE attacks. Every boss has an opening SE, which will always be used
     at the start of a boss battle. Bosses also have at least one SE that is always used when the boss reaches
     a specific amount of health, which will cause the SE to interrupt whatever pattern it was firing.
@@ -90,7 +90,7 @@
         <img loading='lazy' src='assets/c67/final_se.jpg' alt='Final SE-attack' width='209' height='280'>
     </picture>
     <br>
-    <em class='description'>The stage 1 midboss' final (and in this case, only) SE begins.</em>
+    <p class='description'>The stage 1 midboss' final (and in this case, only) SE begins.</p>
     <p>Every boss also has a single <em>final SE</em>, which cannot be skipped and is used once their health bar
     is empty. Their health bar will be refilled with a red color when the final SE begins. If this health
     bar is emptied, it will say "-- OVER KILL --". The boss will explode and drop an item when the SE ends during
@@ -141,7 +141,7 @@
         <img id='yuitia' loading='lazy' src='assets/c67/yuitia.png' alt='Yuitia (final boss)' width='235' height='457'>
     </picture>
     <br>
-    <em class='description'>Yuitia, the stage 6 (final) boss of the game.</em>
+    <p class='description'>Yuitia, the stage 6 (final) boss of the game.</p>
     <p>The final boss, Yuitia, has some unique properties; she does not drop any item once she explodes and cannot
     be damaged by bombs, which makes bombing them <em>bad</em> for scoring rather than good.
     This is referred to as Yuitia having a <em>bombshield</em>. Exceptions to this are the patterns that spawn missiles,

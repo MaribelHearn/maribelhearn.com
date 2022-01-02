@@ -69,7 +69,6 @@
             echo $bg_pos . ' no-repeat fixed";document.body.style.backgroundSize="cover"</script>';
             echo '<noscript><link rel="stylesheet" href="assets/shared/noscript_bg.php?page=' . $css_js_file . '&pos=' . $bg_pos . '"></noscript>';
         }
-        var_dump($_SESSION);
         if (isset($_SESSION) && array_key_exists('data', $_SESSION)) {
             if (strpos($_SESSION['data'], '<') === false) {
                 echo '<input id="import" type="hidden" value="' . file_get_contents($_SESSION['data']) . '">';

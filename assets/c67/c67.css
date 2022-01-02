@@ -24,6 +24,10 @@ table, tr, th, td {
 .border {
     border: 1px solid black;
 }
+.description {
+    margin: 2px;
+    font-style: italic;
+}
 .tooltip {
     visibility: hidden;
     background-color: black;
