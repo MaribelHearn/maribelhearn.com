@@ -1304,6 +1304,7 @@ function doImport() {
     $("#modal").css("display", "none");
     $("#modal_inner").css("display", "none");
     saveTiersData();
+    localStorage.setItem("settings", JSON.stringify(settings));
     printMessage("<strong class='confirmation'>Tier list successfully imported!</strong>");
 }
 
@@ -1319,7 +1320,7 @@ function importText() {
 
     $("#modal_inner").append("<p>Note that the format should be the same as the exported text.</p>");
     $("#modal_inner").append("<p><strong>Warning:</strong> Importing can overwrite one of your current tier lists!");
-    $("#modal_inner").append("<form target='tiers.php' method='post' enctype='multipart/form-data' target='_self'><label for='import_button'>Upload file:</label> " +
+    $("#modal_inner").append("<form target='_self' method='post' enctype='multipart/form-data'><label for='import_button'>Upload file:</label> " +
     "<input id='import_button' name='import' type='file'><p><input type='submit' value='Import'></p></form>");
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");

@@ -32,7 +32,7 @@
     $bg_pos = background_position($page);
     $lang_code = lang_code();
     $file_upload = handle_file_upload();
-    if (!empty($file_upload) && strpos($file_upload, '<') === false) {
+    if (!empty($file_upload)) {
         $_SESSION['data'] = $file_upload;
         unset($_POST);
         header("Location: {$_SERVER['REQUEST_URI']}", true, 303);
@@ -74,10 +74,10 @@
             if (strpos($_SESSION['data'], '<') === false) {
                 echo '<input id="import" type="hidden" value="' . file_get_contents($_SESSION['data']) . '">';
                 unlink($_SESSION['data']);
-                unset($_SESSION['data']);
             } else if (strpos($_SESSION['data'], '<') !== false) {
                 echo '<input id="error" type="hidden" value="' . htmlentities($_SESSION['data']) . '">';
             }
+            unset($_SESSION['data']);
         } ?>
     </body>
 
