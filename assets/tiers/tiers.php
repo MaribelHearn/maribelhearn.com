@@ -54,6 +54,12 @@
         <table id='tier_list_table'>
 			<caption id='tier_list_caption'></caption>
             <thead id='tier_list_thead' data-html2canvas-ignore>
+                <tr id='tier_list_name_tr'>
+                    <td id='tier_list_name_cell' colspan='2'>
+                        <label for='tier_list_name_input'>Tier list name: </label><input id='tier_list_name' type='text' maxlength='200'>
+                        <input id='add_tier_list_name' type='button' value='Apply'>
+                    </td>
+                </tr>
                 <tr id='add_tier_box_mobile'>
                     <td id='add_tier_cell_mobile' colspan='2'>
                         <label for='tier_name_mobile'>

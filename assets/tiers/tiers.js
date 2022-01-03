@@ -6,7 +6,7 @@ if (typeof MobileDragDrop !== "undefined") {
 }
 
 var MAX_NUMBER_OF_TIERS = 100,
-    MAX_NAME_LENGTH = 30,
+    MAX_NAME_LENGTH = 50,
     categories = {},
     gameCategories = {},
     shotCategories = {},
@@ -365,7 +365,6 @@ function printMessage(html) {
 }
 
 function switchSort() {
-    printMessage("");
     $("#characters").html("");
     $("#tier_list_tbody").html("");
 
@@ -378,7 +377,12 @@ function switchSort() {
     loadItems();
     reloadTiers();
     saveConfirmation({data: {noMenu: true}});
-    printMessage("<strong class='confirmation'>Switched to " + settings.sort + "!</strong>");
+
+    if (isMobile()) {
+        printMessage("<strong class='confirmation'>Switched to " + settings.sort + "!</strong>");
+    } else {
+        printMessage("");
+    }
 }
 
 function tieredContextMenu(event) {
@@ -684,6 +688,14 @@ function changeToTier(item, tierNum, pos, multi) {
     } else {
         addToTier(item, tierNum, pos);
     }
+}
+
+function tierListName(event) {
+    var name = event.data.tierListName;
+
+    settings[settings.sort].tierListName = name.replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
+    $("#tier_list_caption").html(settings[settings.sort].tierListName);
+    localStorage.setItem("settings", JSON.stringify(settings));
 }
 
 function validateTierName(tierName) {
@@ -1732,7 +1744,8 @@ function changeLog() {
     "<li>26/06/2021: UM characters added</li>" +
     "<li>18/07/2021: Screenshotting fixed, works on all modern browsers</li>" +
     "<li>20/07/2021: Shottypes added</li>" +
-    "<li>06/11/2021: Yuuma Toutetsu added</li></ul>");
+    "<li>06/11/2021: Yuuma Toutetsu added</li>" +
+    "<li>01/01/2022: Import and export to text now uses files</li></ul>");
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
 }
@@ -2169,9 +2182,19 @@ function loadSettingsFromStorage() {
 }
 
 function setAddTierListeners() {
-    $("#add_tier, #add_tier_mobile").off("click");
+    $("#add_tier, #add_tier_mobile, #add_tier_list_name").off("click");
     $("#add_tier").on("click", {tierName: $("#tier_name").val()}, addTier);
     $("#add_tier_mobile").on("click", {tierName: $("#tier_name_mobile").val()}, addTier);
+    $("#add_tier_mobile").on("click", {tierName: $("#tier_name_mobile").val()}, addTier);
+    $("#add_tier_list_name").on("click", {tierListName: $("#tier_list_name").val()}, tierListName);
+}
+
+function detectTierListNameEnter(event) {
+    if (event.key && event.key == "Enter") {
+        tierListName({data: {tierListName: $("#tier_list_name").val()}});
+    } else {
+        setAddTierListeners();
+    }
 }
 
 function detectAddTierEnter(event) {
@@ -2203,6 +2226,7 @@ function setEventListeners() {
     $("#toggle_picker").on("click", togglePickerSize);
     $("#info_button").on("click", showInformation);
     $("#tier_name, #tier_name_mobile").on("keyup", detectAddTierEnter);
+    $("#tier_list_name").on("keyup", detectTierListNameEnter);
     $("#save_button").on("click", {noMenu: true}, saveConfirmation);
     $("#import_button").on("click", importText);
     $("#export_button").on("click", exportText);
