@@ -60,7 +60,7 @@ To get around this, simply run the game with vpatch first, then apply thprac by 
 <p>thprac does not work with the static English patch.</p>
 <h3 id='errors'>Error messages</h3>
 <p>These are a few of the most common error messages, shown in both Japanese and mojibake. If you are getting an error message in mojibake,
-it means you are not running the program in Japanese locale, which may be your problem: see <a href='jplocale'>Japanese locale</a>.</p>
+it means you are not running the program in Japanese locale, which may be your problem: see <a href='#jplocale'>Japanese locale</a>.</p>
 <h4><span class='tt'>.dat</span> error</h4>
 <img class='error' src='assets/faq/eosd/eosd_error_dat.png' alt='EoSD .dat error message'>
 <p>This error message shows when EoSD fails to load data from the <span class='tt'>.dat</span> files properly. Make sure your <span class='tt'>.dat</span> files are named

@@ -605,13 +605,13 @@
 		<p id='rutlcredit'>
 			<?php
 				if ($lang == 'Chinese') { echo '本页面由' .
-				'<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>俄语翻译。'; }
+				'<a href="https://www.twitch.tv/kvs_stg">kvasovy</a>俄语翻译。'; }
 				else if ($lang == 'Japanese') { echo '<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>' .
 				'によってロシア語に翻訳されました。'; }
 				else if ($lang == 'Russian') { echo 'Русский перевод сделал ' .
-				'<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>.'; }
+				'<a href="https://www.twitch.tv/kvs_stg">kvasovy</a>.'; }
 				else { echo 'The Russian translation was done by ' .
-				'<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>.'; }
+				'<a href="https://www.twitch.tv/kvs_stg">kvasovy</a>.'; }
 			?>
 		</p>
         <p id='ack_mobile'>

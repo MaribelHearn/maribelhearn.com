@@ -27,7 +27,7 @@
     you can specify that in the form. For No Shooting or Pacifist runs large parts will be fast forwarded due to
     their long duration. For scene games a batch of at most 5 replays may be submitted at once
     (preferably in an archive format such as .zip).</p>
-    <p>If you have any questions about submitting and the rules of the stream,
+    <p>If you have any questions about submitting and about the rules of the stream,
     feel free to ask us in the TRS Discord server.</p>
     <h2>Links</h2>
     <p><a href='https://twitch.tv/touhou_replay_showcase'>
