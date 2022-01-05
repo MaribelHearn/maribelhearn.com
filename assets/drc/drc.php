@@ -41,14 +41,14 @@
 	?>
     <p id='drcIntro'><?php
 		if ($lang == 'Chinese') {
-			echo '<strong>Dodging Rain Competition(DRC)</strong>是由<a href="https://twitter.com/Zemuzu22">ZM</a>' .
+			echo '<strong>Dodging Rain Competition(DRC)</strong>是由<a href="https://www.youtube.com/user/mariomaster657">ZM</a>' .
 			'发起的东方比赛，举办地点：<a href="https://discord.gg/Ucae3Uf">DRC Discord</a>。两队进行不同项目的比赛。' .
 			'每位选手报名时写下想打的任意项目，根据偏好排序，可以是避弹向的生存，也可以是打分，任意作品、任意难度均可。' .
 			'列出的项目会与另一队进行匹配，相同项目的选手即匹配成功。分组与项目由DRC主办方决定。选手将会有二周时间报名。' .
 			'一旦开赛，有两周时间提交参赛录像，录像所获得分根据计算公式而定。未在两周内提交则视为无效。' .
 			'玩家提交的rep个数无限制，最终DRC得分将选取最高分录入。';
 		} else if ($lang == 'Japanese') {
-			echo '<strong>Dodging Rain Competition(DRC)</strong>は<a href="https://twitter.com/Zemuzu22">ZM</a>' .
+			echo '<strong>Dodging Rain Competition(DRC)</strong>は<a href="https://www.youtube.com/user/mariomaster657">ZM</a>' .
 			'により考案された<a href="https://discord.gg/Ucae3Uf">DRC Discord</a>で開かれる東方projectの定期大会です。' .
 			'２つのチームが幾つかのカテゴリーで競争します。各プレイヤーは希望順に並べたカテゴリーのリストを作ります。' .
 			'カテゴリーは東方STGゲームの任意の難易度での「クリア重視」と「スコアアタック（稼ぎ）」のどちらかを選ぶことができます。' .
@@ -58,8 +58,8 @@
 			'この２週間以外でのプレイは無効です。プレイヤーは無制限にリプレイを登録することが出来ますが、' .
 			'DRCポイントが最高であるリプレイのみが採用されます。';
 		} else {
-			echo 'The <strong>Dodging Rain Competition (DRC)</strong> is a Touhou game competition that was invented by ' .
-			'<a href="https://twitter.com/Zemuzu22">ZM</a> and is held on <a href="https://discord.gg/Ucae3Uf">' .
+			echo 'The <strong>Dodging Rain Competition (DRC)</strong> is a Touhou game competition that was devised by ' .
+			'<a href="https://www.youtube.com/user/mariomaster657">ZM</a> and is held on <a href="https://discord.gg/Ucae3Uf">' .
 			'the official DRC Discord</a>. Two teams go up against each other in several different categories. ' .
 			'Each player posts an arbitrarily long list of categories, ordered by preference, which can be either survival ' .
 			'or scoring of any Touhou shooting game and any difficulty. They will be matched up against a player from ' .
@@ -284,11 +284,11 @@
 			</tbody>
 		</table>
 		<br>
-		<strong id='fictionalWRtitle'><?php
+		<p id='fictionalWRtitle'><strong><?php
 			if ($lang == 'Chinese') { echo '虚构WR'; }
 			else if ($lang == 'Japanese') { echo '仮のWR'; }
 			else { echo 'Fictional WRs'; }
-		?></strong>
+		?></strong></p>
 		<p id='fictionalWRdesc'><?php
 			if ($lang == 'Chinese') { echo '下列表中的项目将参考以下虚构的世界纪录。'; }
 			else if ($lang == 'Japanese') { echo '下記のものは、本来のWRの代わりに仮のWRを設定をしたものの表です。'; }
@@ -314,11 +314,11 @@
 			</tbody>
 		</table>
 		<br>
-		<strong id='WRdefinitionTitle'><?php
+		<p id='WRdefinitionTitle'><strong><?php
 			if ($lang == 'Chinese') { echo 'WR的定义'; }
 			else if ($lang == 'Japanese') { echo 'WRの定義'; }
 			else { echo '\'WR\' definition'; }
-		?></strong>
+		?></strong></p>
 		<p id='WRdefinitionDesc'><?php
 			if ($lang == 'Chinese') { echo '以下表中的项目将独立于其他机体来计算。'; }
 			else if ($lang == 'Japanese') { echo '表には、WRとして採用したショットタイプを紹介しています。'; }
@@ -339,11 +339,11 @@
 			</tbody>
 		</table>
         <br>
-        <strong id='mountainOfFaith'><?php
+        <p id='mountainOfFaith'><strong><?php
 			if ($lang == 'Chinese') { echo '东方风神录打分'; }
 			else if ($lang == 'Japanese') { echo '東方風神録の稼ぎ'; }
 			else { echo 'MoF Scoring'; }
-		?></strong>
+		?></strong></p>
         <p id='mountainOfFaithDesc'><?php
 			if ($lang == 'Chinese') { echo '对于每个难度和机体有六个阈值，在每个阈值内有各自的得分系数且分数增量固定，' .
 			'仅取决于你的游戏内得分。Easy最大值是375。Lunatic最大值是500。'; }
@@ -411,11 +411,11 @@
 			</tbody>
         </table>
         <br>
-        <strong id='doubleSpoiler'><?php
+        <p id='doubleSpoiler'><strong><?php
 			if ($lang == 'Chinese') { echo '对抗新闻打分'; }
 			else if ($lang == 'Japanese') { echo 'ダブルスポイラーの稼ぎ'; }
 			else { echo 'DS Scoring'; }
-		?></strong>
+		?></strong></p>
         <p id='doubleSpoilerDesc'><?php
 			if ($lang == 'Chinese') { echo '对于每个场景和机体有三个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅取决于你的游戏内得分。'; }
 			else if ($lang == 'Japanese') { echo '各撮影対象各機体で3つの閾値があり、それぞれで点数を設定しています。' .
@@ -543,11 +543,11 @@
 			</tbody>
         </table>
 		<br>
-        <strong id='phantasmagoria'><?php
+        <p id='phantasmagoria'><strong><?php
 			if ($lang == 'Chinese') { echo '东方梦时空和东方花映塚生存'; }
 			else if ($lang == 'Japanese') { echo '東方夢時空と東方花映塚のクリア重視'; }
 			else { echo 'PoDD & PoFV Survival'; }
-		?></strong>
+		?></strong></p>
         <p id='phantasmagoriaDesc'><?php
 			if ($lang == 'Chinese') { echo '在以下公式中，东方梦时空的最大残机数为5，东方花映塚故事模式为7，EX为8。' .
 			'NB奖分依难度而定。东方梦时空为NB奖分，东方花映塚为NC奖分。'; }
@@ -586,11 +586,11 @@
 			</tbody>
         </table>
         <br>
-        <strong id='shottypeMultipliers'><?php
+        <p id='shottypeMultipliers'><strong><?php
 			if ($lang == 'Chinese') { echo '机体系数'; }
 			else if ($lang == 'Japanese') { echo 'キャラ倍率'; }
 			else { echo 'Shottype Multipliers'; }
-		?></strong>
+		?></strong></p>
         <p id='shotMultDesc'><?php
 			if ($lang == 'Chinese') { echo '该要素仅适用于生存项目的计算公式，不适用于EX和使用了季节解放的天空璋。未列出的机体，系数均为1。'; }
 			else if ($lang == 'Japanese') { echo 'これらは本編のクリア重視プレイの結果にのみ適用されます。' .
@@ -641,10 +641,10 @@
 		</p>
 		<p id='cntlcredit'>
 			<?php
-				if ($lang == 'Chinese') { echo '本页面由<a href="https://twitter.com/IzayoiMeirin">Cero</a>，' .
+				if ($lang == 'Chinese') { echo '本页面由Cero，' .
 				'<a href="https://twitter.com/CrestedPeak9">CrestedPeak9</a>，' .
 				'<a href="https://twitter.com/Cerasis_th">Cerasis</a>中文翻译。'; }
-				else if ($lang == 'Japanese') { echo '<a href="https://twitter.com/IzayoiMeirin">Cero</a>と' .
+				else if ($lang == 'Japanese') { echo 'Ceroと' .
 				'<a href="https://twitter.com/CrestedPeak9">CrestedPeak9</a>と' .
 				'<a href="https://twitter.com/Cerasis_th">Cerasis</a>によって中国語に翻訳されました。'; }
 				else { echo 'The Simplified Chinese translation was done by ' .

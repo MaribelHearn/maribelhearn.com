@@ -197,7 +197,7 @@
                     }
                 }
             } else {
-                echo 'No replays found.';
+                echo '<p>No replays found.</p>';
                 $url = $_SERVER['REQUEST_URI'];
                 if (strpos($url, '&page=')) {
                     echo '<p><a id="previous" href="' . substr($url, 0, -1) . ($p / $PAGE_LENGTH) .

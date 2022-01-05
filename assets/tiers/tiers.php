@@ -41,8 +41,8 @@
 				<p class='thin'>Special thanks go to:</p>
 				<ul id='special_thanks'>
 					<li><a href='https://www.youtube.com/channel/UCI1HPxKRky4Zm_mrRUH415Q' target='_blank'>Plus:</a> Original idea, testing</li>
-					<li><a href='https://twitter.com/Doroshii_Sweet' target='_blank'>Dorothy Sweet:</a> Design, testing</li>
-					<li><a href='https://twitter.com/pienyan_' target='_blank'>pienyan:</a> Testing</li>
+					<li><a href='https://twitter.com/puella_meiberu' target='_blank'>Dorothy Sweet:</a> Design, testing</li>
+					<li>pienyan: Testing</li>
 					<li><a href='https://twitter.com/TheDukeofBooms' target='_blank'>ZXNova:</a> Most Dairi face crops</li>
 					<li><a href='https://twitter.com/CuprianLycoris'>Cuprian Lycoris:</a> Most ZUN face crops</li>
 				</ul>

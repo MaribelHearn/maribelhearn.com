@@ -55,8 +55,8 @@
         <p><strong>Dodonpachi Shmups</strong></p>
         <p><a href='#DP'>DonPachi</a></p>
         <p><a href='#DDP'>DoDonPachi</a></p>
-        <p><a href='#DOJ'>DoDonPachi Dai-Ou-Jou BL</a></p>
-        <p><a href='#DFK'>DoDonPachi Dai-Fukkatsu</a></p>
+        <p><a href='#DOJ'>DoDonPachi Daioujou</a></p>
+        <p><a href='#DFK'>DoDonPachi Daifukkatsu</a></p>
         <p><a href='#SDOJ'>DoDonPachi Saidaioujou</a></p>
         <p><strong>Other Arcade Shmups</strong></p>
         <p><a href='#Batsugun'>Batsugun Special Version</a></p>

@@ -56,6 +56,9 @@ input[type=number] {
 #nav {
     margin-bottom: 5px;
 }
+#result {
+    margin: 4px;
+}
 #countdown {
     font-size: 16px;
     font-weight: bold;

@@ -510,7 +510,7 @@ function drcPoints() {
     } else {
         if (!(game == "MoF" && (difficulty == "Easy" || difficulty == "Lunatic" || difficulty == "Extra")) && game != "DS" && !Rubrics.SCORE[game]) {
             $(ERROR).html("<strong class='error'>" + translate("Error: ") + translate("the scoring rubrics for this game are undetermined as of now.") + "</strong>");
-            $(DRCPOINTS).html(translate("Your DRC points for this run: ") + " <strong>0</strong>!");
+            $(DRCPOINTS).html("<p id='result'>" + translate("Your DRC points for this run: ") + " <strong>0</strong>!</p>");
             return
         } else {
             $(ERROR).html("");
@@ -533,7 +533,7 @@ function drcPoints() {
             points = scoringPoints(rubric, game, difficulty, shottype);
         }
     }
-    $(DRCPOINTS).html(translate("Your DRC points for this run: ") + " <strong>" + points + "</strong>!");
+    $(DRCPOINTS).html("<p id='result'>" + translate("Your DRC points for this run: ") + " <strong>" + points + "</strong>!</p>");
 }
 function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
     var roundsLost = Number($(MISSES).val()), bonus;
