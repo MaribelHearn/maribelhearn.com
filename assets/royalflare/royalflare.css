@@ -200,14 +200,14 @@ a.scene {
         font-size: 12px;
     }
 }
-@media only screen and (min-width: 1400px) and (max-width: 1700px) {
+@media only screen and (min-width: 1400px) and (max-width: 1800px) {
     .wrap {
         margin-left: 5%;
         margin-right: 5%;
         font-size: 12px;
     }
 }
-@media only screen and (min-width: 1700px) and (max-width: 2100px) {
+@media only screen and (min-width: 1800px) and (max-width: 2150px) {
     .wrap {
         margin-left: 10%;
         margin-right: 10%;

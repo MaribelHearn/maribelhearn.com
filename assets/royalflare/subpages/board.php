@@ -32,7 +32,7 @@
                 '<th>プレイ日付<br>Play Date</th><th>名前<br>Player</th><th>コメント<br>Comment</th><th>リプレイ<br>Replay</th></tr>';
                 foreach ($board as $key => $entry) {
                     $slowdown_class = (check_slowdown($game, $entry['slowdown']) ? ' class="slowdown"' : '');
-                    if ($entry['difficulty'] == $diff && ($game != 'GFW' && $entry['chara'] == $shot)  || ($game == 'GFW' && $entry['route'] == $shot)) {
+                    if ($entry['difficulty'] == $diff && (($game != 'GFW' && $entry['chara'] == $shot) || ($game == 'GFW' && $entry['route'] == $shot))) {
                         echo '<tr><td class="hidden"></td><td>' . number_format($entry['score'], 0, '.', ',') . '</td>' .
                         '<td' . $slowdown_class . '>' . $entry['slowdown'] . '</td>' . ($game != 'GFW' ? '<td>' . $entry['chara'] . '</td>' : '') .
                         '<td>' . $entry['difficulty'] . '</td><td>' . $entry['date'] . '</td><td>' . $entry['player'] . '</td><td class="break">' . $entry['comment'] .
