@@ -1,5 +1,7 @@
+var done, head, hy;
+
 function dark() {
-    style = document.createElement("link");
+    var style = document.createElement("link");
     style.id = "dark_theme";
     style.href = (location.host != "localhost" || location.pathname.indexOf("error") > -1 ? "https://maribelhearn.com/" : "") + "assets/shared/dark.css";
     style.type = "text/css";
