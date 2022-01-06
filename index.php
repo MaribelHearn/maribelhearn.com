@@ -7,6 +7,19 @@
     if (str_starts_with($_SERVER['REQUEST_URI'], '/') && count(array_count_values(str_split($_SERVER['REQUEST_URI']))) == 1) {
         $page = 'index';
     }
+    if (strpos($page, '/') !== false) {
+        $tmp = preg_split('/\//', $page);
+        $subpage = $tmp[1];
+        $page = $tmp[0];
+        if ($page == 'royalflare') {
+            if (count($tmp) == 3) {
+                $subpage .= '/' . $tmp[2];
+            }
+            $_SESSION['subpage'] = $subpage;
+        }
+    } else {
+        unset($_SESSION['subpage']);
+    }
     $page_path = 'assets/' . $page . '/' . $page . '.php';
     $status_code = empty($_GET['error']) ? '' : $_GET['error'];
     $page = redirect($page, $page_path, $_SERVER['REQUEST_URI'], $status_code);
@@ -26,9 +39,9 @@
     } else {
         $is_mobile = false;
     }
-    $css_href = ($page == 'error' ? 'https://maribelhearn.com/' : '') . 'assets/shared/css_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile;
-    $js_href = ($page == 'error' ? 'https://maribelhearn.com/' : '') . 'assets/shared/js_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile;
-    $favicon_dir = ($page == 'error' ? 'https://maribelhearn.com/' : '') . (!in_array($page, $use_index) ? 'assets/' . $page : '');
+    $css_href = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/shared/css_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile;
+    $js_href = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/shared/js_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile;
+    $favicon_dir = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . (!in_array($page, $use_index) ? 'assets/' . $page : '');
     $bg_pos = background_position($page);
     $lang_code = lang_code();
     $file_upload = handle_file_upload();
@@ -50,12 +63,12 @@
         <meta name='keywords' content='<?php echo property_exists($data, 'keywords') ? $data->keywords : '' ?>'>
         <meta name='msapplication-TileColor' content='#da532c'>
         <meta name='theme-color' content='#ffffff'>
-        <link rel='preload' type='font/woff2' href='<?php echo $page == 'error' ? 'https://maribelhearn.com/' : '' ?>assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
+        <link rel='preload' type='font/woff2' href='<?php echo $page == 'error' ? 'https://maribelhearn.com/' : '/' ?>assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' href='<?php echo $css_href ?>'>
-        <link rel='apple-touch-icon' sizes='180x180' href='apple-touch-icon.png'>
+        <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png'>
         <?php if (!in_array($page, $use_index)) { echo '<link rel="icon" type="image/' . ($favicon_ext == '.ico' ? 'x-icon' : 'png') . '" href="' . $favicon_dir . '/' . $page . $favicon_ext . '">'; } ?>
-        <link rel='manifest' href='site.webmanifest'>
-        <link rel='mask-icon' href='safari-pinned-tab.svg' color='#5bbad5'>
+        <link rel='manifest' href='/site.webmanifest'>
+        <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5'>
         <script src='<?php echo $js_href ?>' defer></script>
     </head>
 
@@ -65,7 +78,7 @@
         </nav>
         <main><?php if ($page == 'error') { include_once 'assets/error/error.php'; } else { include_once $page_path; } ?></main>
         <?php if (!$is_mobile || $page != 'tiers') {
-            echo '<script nonce="' . file_get_contents('.stats/nonce') . '" defer>document.body.style.background="url(\'' . ($page == 'error' ? 'https://maribelhearn.com/' : '') . 'assets/' . $css_js_file . '/' . $css_js_file . '.jpg\') ';
+            echo '<script nonce="' . file_get_contents('.stats/nonce') . '" defer>document.body.style.background="url(\'' . ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/' . $css_js_file . '/' . $css_js_file . '.jpg\') ';
             echo $bg_pos . ' no-repeat fixed";document.body.style.backgroundSize="cover"</script>';
             echo '<noscript><link rel="stylesheet" href="assets/shared/noscript_bg.php?page=' . $css_js_file . '&pos=' . $bg_pos . '"></noscript>';
         }

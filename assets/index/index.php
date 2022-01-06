@@ -70,7 +70,7 @@
                 <p class='link'>
                     <a href='gensokyo'><span class='icon gensokyo_icon'></span>
                     Gensokyo Replay Archive</a>
-                    <span class='tooltip'>A complete archive of the replays from replays.gensokyo.org.</span>
+                    <span class='tooltip'>A complete and searchable archive of the replays from replays.gensokyo.org.</span>
                 </p>
                 <p class='link'>
                     <a href='pofv'><span class='icon pofv_icon'></span>
@@ -95,6 +95,11 @@
                     <a href='faq'><span class='icon faq_icon'></span>
                     Frequently Asked Questions</a>
                     <span class='tooltip'>Answers to some of the most frequently asked questions about the Touhou shoot 'em up games by beginning players.</span>
+                </p>
+                <p class='link'>
+                    <a href='royalflare'><span class='icon royalflare_icon'></span>
+                    Royalflare Archive</a>
+                    <span class='tooltip'>A complete and searchable archive of the replays, history and player rankings from score.royalflare.net.</span>
                 </p>
             </div>
         </div>

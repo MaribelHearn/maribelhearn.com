@@ -1,0 +1,244 @@
+p {
+    margin: 10px;
+}
+table, th, td {
+    border: 1px solid black;
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+table tbody:not(.ranking) {
+    counter-reset: sortabletablescope;
+}
+table tbody:not(.ranking) tr:before {
+    content: counter(sortabletablescope);
+    counter-increment: sortabletablescope;
+    display: table-cell;
+    vertical-align: middle;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+form {
+    margin-bottom: 10px;
+}
+ul {
+    list-style-position: inside;
+    list-style-type: circle;
+    display: inline-block;
+}
+li:not(.scene_li):first-child {
+    list-style-type: none;
+}
+li.scene_li {
+    margin: 4px 0 4px 0;
+}
+a.scene {
+    margin: 2px;
+}
+.tooltip {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+}
+.dropdown_content > p {
+    margin: 4px;
+}
+.dropdown_content:hover .dropdown_content {
+    display: block;
+}
+.head {
+    content: '';
+    display: table-cell;
+}
+.slowdown {
+    color: darkred;
+    font-weight: bold;
+}
+.hidden {
+    display: none;
+}
+.nowrap {
+    white-space: nowrap;
+}
+.break {
+    word-break: break-all;
+}
+.wide {
+    margin-top: 20px;
+}
+.nodata {
+    margin-bottom: 20px;
+}
+.shottype, .diff {
+    font-weight: bold;
+}
+.hatate {
+    margin-top: 15px;
+}
+.alcostg th {
+    background-color: #c89600;
+}
+.hellsinker th {
+    background-color: #eeeeee;
+}
+.search_header th {
+    background-color: #aaaaaa;
+}
+.EoSDt th, .EoSDp, .EoSD {
+    color: white;
+    background-color: #990000;
+}
+.PCBt th, .PCBp, .PCB {
+    background-color: #ff8ed2;
+}
+.INt th, .INp, .IN {
+    color: white;
+    background-color: #339;
+}
+.StBt th, .StBp, .StB {
+    background-color: #009973;
+}
+.MoFt th, .MoFp, .MoF {
+    background-color: #96b300;
+}
+.SAt th, .SAp, .SA {
+    color: white;
+    background-color: #591400;
+}
+.UFOt th, .UFOp, .UFO {
+    color: white;
+    background-color: #4169e1;
+}
+.DSt th, .DSp, .DS {
+    color: white;
+    background-color: #7D3884;
+}
+.GFWt th, .GFWp, .GFW {
+    background-color: #00c8c8;
+}
+.TDt th, .TDp, .TD {
+    color: white;
+    background-color: #4a808c;
+}
+.DDCt th, .DDCp, .DDC {
+    background-color: #a77;
+}
+.ISCt th, .ISCp, .ISC {
+    background-color: #B6423C;
+}
+.LoLKt th, .LoLKp, .LoLK {
+    color: white;
+    background-color: #6a47be;
+}
+.HSiFSsmallt th, .HSiFSt th, .HSiFSp, .HSiFS {
+    color: white;
+    background-color: #176e0e;
+}
+.VDt th, .VDp, .VD {
+    color: white;
+    background-color: #ae11d5;
+}
+.WBaWCt th, .WBaWCp, .WBaWC {
+    color: white;
+    background-color: #190e0e;
+}
+.UMt th, .UMp, .UM {
+    background-color: #23fcb1;
+}
+.wrap {
+    border: 1px solid #000;
+    text-align: center;
+    margin-left: 24%;
+    margin-right: 24%;
+    font: 14px verdana,sans-serif;
+}
+#wrap {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+    opacity: 0.8;
+}
+#nav {
+    margin-bottom: 5px;
+}
+#back {
+    float: left;
+}
+#ack {
+    font: 11px verdana,sans-serif;
+    text-align: right;
+    background: none;
+    position: fixed;
+    color: white;
+    bottom: 0px;
+    right: 5px;
+}
+#ack > a:link {
+    color: #1e90ff;
+}
+#ack > a:active {
+    color: red;
+}
+#ack > a:visited {
+    color: #ff69b4;
+}
+#ack_br, #ack_mobile {
+    display: none;
+}
+@media only screen and (min-width: 1100px) and (max-width: 1400px) {
+    .wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
+@media only screen and (min-width: 800px) and (max-width: 1100px) {
+    h1 {
+        margin-bottom: 15px;
+    }
+    h2 {
+        margin-bottom: 15px;
+        margin-top: 10px;
+    }
+    .wrap {
+        margin-left: 13%;
+        margin-right: 13%;
+    }
+}
+@media only screen and (max-width: 800px) {
+    h1 {
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+    h2 {
+        margin-bottom: 15px;
+        margin-top: 10px;
+    }
+    #replays {
+        overflow-x: scroll;
+    }
+
+}
+@media only screen and (max-width: 500px) {
+    #ack {
+        display: none;
+    }
+    #ack_mobile {
+        display: block;
+    }
+}
+@media only screen and (max-height: 600px) {
+    #ack {
+        display: none;
+    }
+    #ack_mobile {
+        display: block;
+    }
+}
