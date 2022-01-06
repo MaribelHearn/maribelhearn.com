@@ -89,7 +89,7 @@
         return $table;
     }
 
-    if ($game != '-' || $diff != '-' || !empty($player) && strlen($player) > 1 || !empty($shot)) {
+    if ($game != '-' || $diff != '-' || !empty($player) && strlen($player) > 1 || !empty($shot) && strlen($shot) > 1) {
         $count = 0;
         if ($game == '-') {
             $table = '<table id="results" class="search_header sortable"><thead><tr><th class="head">#</th><th>ゲーム<br>Game</th><th>スコア<br>Score</th><th>処理落率<br>Slowdown</th><th>使用キャラ<br>Shottype</th>' .
