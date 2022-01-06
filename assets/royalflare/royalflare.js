@@ -12,6 +12,11 @@ function init() {
 
     for (i = 0; i < tables.length; i++) {
         table = tables[i];
+
+        if (table.id == "results") {
+            continue;
+        }
+
         tr = table.getElementsByTagName("tr");
         td = tr[1].getElementsByTagName("td");
 
