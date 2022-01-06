@@ -43,13 +43,22 @@
             return false;
         }
         if ($game == 'GFW') {
-            if (!empty($shot) && $entry['route'] != $shot) {
-                return false;
+            if (substr($shot, 0, 1) == '"' && substr($shot, -1) == '"') {
+                $shot = substr($shot, 1, -1);
+                $shot_matches = $shot == $entry['route'];
+            } else {
+                $shot_matches = str_contains(strtolower($entry['route']), strtolower($shot));
             }
         } else {
-            if (!empty($shot) && $entry['chara'] != $shot) {
-                return false;
+            if (substr($shot, 0, 1) == '"' && substr($shot, -1) == '"') {
+                $shot = substr($shot, 1, -1);
+                $shot_matches = $shot == $entry['chara'];
+            } else {
+                $shot_matches = str_contains(strtolower($entry['chara']), strtolower($shot));
             }
+        }
+        if (!empty($shot) && !$shot_matches) {
+            return false;
         }
         return true;
     }
