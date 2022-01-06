@@ -15,7 +15,7 @@
         '<th>処理落率<br>Slowdown</th><th>使用キャラ<br>Shottype</th><th>プレイ日付<br>Play Date</th><th>名前<br>Player</th><th>コメント<br>Comment</th><th>リプレイ<br>Replay</th></tr>';
         foreach ($board as $key => $entry) {
             if ($entry['stage'] == format_stage('DS', $stage) . '-' . $scene && $entry['chara'] == $shottype) {
-                $slowdown_class = (check_slowdown($game, $entry['slowdown']) ? ' class="slowdown"' : '');
+                $slowdown_class = (check_slowdown('DS', $entry['slowdown']) ? ' class="slowdown"' : '');
                 echo '<tr><td class="hidden"></td><td>' . number_format($entry['score'], 0, '.', ',') . '</td><td' . $slowdown_class . '>' . $entry['slowdown'] . '</td>' .
                 '<td>' . $shottype . '</td><td>' . $entry['date'] . '</td><td>' . $entry['player'] . '</td><td class="break">' . $entry['comment'] .
                 '</td><td><a href="' . $entry['replay'] . '">' . array_slice(preg_split('/\//', $entry['replay']), -1)[0] . '</a></td></tr>';
