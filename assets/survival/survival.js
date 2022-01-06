@@ -33,10 +33,11 @@ function getPercentage(game) {
 }
 
 function gameSpecific(game, achievement) {
+    if (achievement != "NB+" && achievement != "NMNB") {
+        return achievement;
+    }
     if (game == "PCB") {
         return ({"NB+": "NBNBB", "NMNB": "NMNBNBB"}[achievement]);
-    } else if (game == "UFO") {
-        return ({"NB+": "NBNV", "NMNB": "NMNB(NV)"}[achievement]);
     } else if (game == "UFO") {
         return ({"NB+": "NBNV", "NMNB": "NMNB(NV)"}[achievement]);
     } else if (game == "TD") {
@@ -69,7 +70,7 @@ function fillGame(game, achievement) {
 }
 
 function fillDifficulty(difficulty, achievement) {
-    var game, tmp;
+    var game;
 
     if (difficulty == "Extra") {
         $("#PCBPhantasm").val(gameSpecific("PCB", achievement));
@@ -77,8 +78,6 @@ function fillDifficulty(difficulty, achievement) {
     }
 
     for (game in vals) {
-        tmp = achievement;
-
         if (achievement == "NB+" || achievement == "NMNB") {
             achievement = gameSpecific(game, achievement);
         }
@@ -104,7 +103,6 @@ function fillDifficulty(difficulty, achievement) {
 
         $("#" + game + difficulty).val(achievement);
         vals[game][difficulty] = achievement;
-        achievement = tmp;
     }
 }
 
@@ -321,7 +319,7 @@ function prepareRendering() {
     $("#survival").addClass("rendering");
     $("#survival, #wrap").css("margin-left", "0");
     $("#container, #wrap").css("background-color", "white");
-    $("#nav, #ack, #hy, #content, #bottom").css("display", "none");
+    $("#nav, #ack, #hy_container, #content, #bottom").css("display", "none");
     $("#rendering_message").html("Rendering image...");
     $("#rendering_message").css("display", "block");
     $("#legend").css("display", "table-caption");
@@ -367,7 +365,7 @@ function cleanupRendering() {
     $("#container").html(originalContent);
     $("#rendering_message, #legend").css("display", "none");
     $("#nav, #content, #bottom").css("display", "block");
-    $("#hy").css("display", "inline");
+    $("#hy_container").css("display", "block");
     $("#wrap").css("margin-left", marginLeft());
     $("#container, #wrap").removeAttr("style");
     init();
@@ -386,7 +384,7 @@ function drawOverview() {
             $("#screenshot").html("<a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
             "<input type='button' value='Save to Device'></a></p>" +
             "<p><img id='base64' src='" + base64image + "' alt='Survival progress table'></p>");
-            cleanupRendering(originalContent);
+            cleanupRendering();
         });
     } catch (err) {
         $("#rendering_message").html("Your browser is outdated. Use a different browser to " +
