@@ -334,7 +334,7 @@ function full_name(string $game, string $lang) {
     }
 }
 function tl_term(string $term, string $lang) {
-    if ($lang == 'Japanese') {
+    if ($lang == 'Japanese' || $lang == 'ja') {
         $term = trim($term);
         switch ($term) {
             case 'Game': return 'ゲーム';
@@ -385,7 +385,7 @@ function tl_term(string $term, string $lang) {
             case 'Flag of Russia': return 'ロシアの国旗';
             default: return $term;
         }
-    } else if ($lang == 'Chinese') {
+    } else if ($lang == 'Chinese' || $lang == 'zh') {
         $term = trim($term);
         switch ($term) {
             case 'Game': return '游戏';
@@ -436,7 +436,7 @@ function tl_term(string $term, string $lang) {
             case 'Flag of Russia': return '俄羅斯國旗';
             default: return $term;
         }
-    } else if ($lang == 'Russian') {
+    } else if ($lang == 'Russian' || $lang == 'ru') {
         $term = trim($term);
         switch ($term) {
             case 'Dates': return 'Даты';

@@ -132,6 +132,9 @@ function check_slowdown(string $game, string $sd) {
 if (!empty($_SESSION['subpage'])) {
     $subpage = $_SESSION['subpage'];
     if (substr($subpage, 0, 2) == 'th') {
+        if ($subpage == 'th08a') {
+            $subpage = 'th08';
+        }
         $game = game_to_abbr($subpage);
         $board = get_board($subpage);
         $shots = get_shots($game);
