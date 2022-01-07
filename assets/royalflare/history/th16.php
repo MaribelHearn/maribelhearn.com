@@ -1,6 +1,9 @@
 <p>Note that the original Royalflare leaderboard was not separated by season, so neither is this history.</p>
 <div><?php
     foreach ($diffs as $key => $diff) {
+        if ($diff == 'Phantasm') {
+            continue;
+        }
         echo '<ul><li class="diff"><a href="#' . $diff . '">' . $diff . '</a></li>';
         foreach ($shots as $key => $shot) {
             if (substr($shot, -6) != 'Spring' && $diff != 'Extra' || substr($shot, -5) != 'Extra' && $diff == 'Extra') {
