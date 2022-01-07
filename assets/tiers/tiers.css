@@ -239,7 +239,7 @@ li {
     width: 95%;
     height: 50%;
 }
-#erase_all_button {
+#erase_all_button, #erase_single_button, #cancel_button {
     margin: 10px;
 }
 #add_tier_desktop {
