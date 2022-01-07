@@ -33,6 +33,8 @@
             } else {
                 if ($subpage == 'search') {
                     include_once 'assets/royalflare/subpages/search.php';
+                } else if ($subpage == 'th08a') {
+                    include_once 'assets/royalflare/subpages/board.php';
                 } else if ($subpage == 'th16') {
                     include_once 'assets/royalflare/subpages/board_th16.php';
                 } else if ($subpage == 'th125') {
