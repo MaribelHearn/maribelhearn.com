@@ -2,6 +2,37 @@
 <p>On 3 January 2022, Royalflare stopped allowing replay uploads, and it will shut down at the end of the month.
 As such, this archive has been created to preserve all of its replays and history. Unlike the original website, these replays cannot be deleted.</p>
 <p>The table resulting from search can be sorted by score, date etc. (note that this might be slow depending on the size).</p>
+<h2>Search</h2>
+<form target='_self' action='/royalflare/search'>
+    <div>
+        <label for='player'>Player</label>
+        <input id='player' name='player' type='text' value='<?php echo !empty($player) ? $player : '' ?>'>
+        <label for='game'>Game</label>
+        <select id='game' name='game'>
+            <option value='-'>...</option>
+            <?php
+                foreach (glob('assets/royalflare/json/*.*') as $file) {
+                    if (strpos($file, 'alcostg') !== false || strpos($file, 'hellsinker') !== false) {
+                        continue;
+                    }
+                    echo '<option' . (!empty($game) && $game == format_game($file) ? ' selected' : '') . '>' . format_game($file) . '</option>';
+                }
+            ?>
+        </select>
+        <label for='shot'>Shottype</label>
+        <input id='shot' name='shot' type='text' value='<?php echo !empty($shot) ? $shot : '' ?>'>
+        <label for='diff'>Difficulty</label>
+        <select id='diff' name='diff'>
+            <option value='-'>...</option>
+            <?php
+                foreach ($diffs as $key => $value) {
+                    echo '<option' . (!empty($diff) && $diff == $value ? ' selected' : '') . '>' . $value . '</option>';
+                }
+            ?>
+        </select>
+    </div>
+    <p><input type='submit' value='Search'></p>
+</form>
 <h2>Games</h2>
 <dt>TH06</dt>
 <dd><a href='/royalflare/th06'>東方紅魔郷　～ The Embodiment of Scarlet Devil</a></dd>
@@ -42,34 +73,3 @@ As such, this archive has been created to preserve all of its replays and histor
 <dd><a href='/royalflare/alcostg'>黄昏酒場～Uwabami Breakers～</a></dd>
 <dt>HS</dt>
 <dd><a href='/royalflare/hellsinker'>Hellsinker.</a></dd>
-<h2>Search</h2>
-<form target='_self' action='/royalflare/search'>
-    <div>
-        <label for='player'>Player</label>
-        <input id='player' name='player' type='text' value='<?php echo !empty($player) ? $player : '' ?>'>
-        <label for='game'>Game</label>
-        <select id='game' name='game'>
-            <option value='-'>...</option>
-            <?php
-                foreach (glob('assets/royalflare/json/*.*') as $file) {
-                    if (strpos($file, 'alcostg') !== false || strpos($file, 'hellsinker') !== false) {
-                        continue;
-                    }
-                    echo '<option' . (!empty($game) && $game == format_game($file) ? ' selected' : '') . '>' . format_game($file) . '</option>';
-                }
-            ?>
-        </select>
-        <label for='shot'>Shottype</label>
-        <input id='shot' name='shot' type='text' value='<?php echo !empty($shot) ? $shot : '' ?>'>
-        <label for='diff'>Difficulty</label>
-        <select id='diff' name='diff'>
-            <option value='-'>...</option>
-            <?php
-                foreach ($diffs as $key => $value) {
-                    echo '<option' . (!empty($diff) && $diff == $value ? ' selected' : '') . '>' . $value . '</option>';
-                }
-            ?>
-        </select>
-    </div>
-    <p><input type='submit' value='Search'></p>
-</form>
