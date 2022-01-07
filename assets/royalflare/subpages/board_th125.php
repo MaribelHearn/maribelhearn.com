@@ -8,6 +8,7 @@
         echo '</li>';
     }
 ?></ul>
+<p class='right'><strong><a href='/royalflare/standings/th125'>ランキング - Player Standings</a></strong></p>
 <?php
     function ds_table(array $board, string $stage, string $scene, string $shottype, string $lang_code) {
         echo '<table id="' . $stage . '-' . $scene . 't" class="' . 'DS' . 't' . ($shottype == 'Hatate' ? ' hatate' : '') .
