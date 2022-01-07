@@ -10,10 +10,10 @@
                 if (($tmp[0] == 'history' || $tmp[0] == 'standings') && !empty(game_to_abbr($tmp[1]))) {
                     echo '<span id="back"><a href="/royalflare/' . $tmp[1] . '">&lt;= Back to ' . $tmp[1] . '</a></span>';
                 } else {
-                    echo '<span id="back"><a href="/royalflare">&lt;= Back to Main Page</a></span>';
+                    echo '<span id="back"><a href="/royalflare">&lt;= メインページに帰る - Back to Main Page</a></span>';
                 }
             } else {
-                echo '<span id="back"><a href="/royalflare">&lt;= Back to Main Page</a></span>';
+                echo '<span id="back"><a href="/royalflare">&lt;= メインページに帰る - Back to Main Page</a></span>';
             }
         }
     ?>
@@ -53,7 +53,7 @@
                 }
             }
             if ($exists && strpos($subpage, 'standings') === false) {
-                echo '<p><strong><a id="backtotop" href="#top">Back to Top</a></strong></p>';
+                echo '<p><strong><a id="backtotop" href="#top">上に帰る - Back to Top</a></strong></p>';
             }
         } else {
             include_once 'assets/royalflare/subpages/main_page.php';

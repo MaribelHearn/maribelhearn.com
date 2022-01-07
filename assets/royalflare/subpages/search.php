@@ -1,8 +1,8 @@
 <form target='_self' action='/royalflare/search'>
     <div>
-        <label for='player'>Player</label>
-        <input id='player' name='player' type='text' value='<?php echo !empty($player) ? $player : '' ?>'>
-        <label for='game'>Game</label>
+        <p><label for='player'>名前 Player</label>
+        <input id='player' name='player' type='text' value='<?php echo !empty($player) ? $player : '' ?>'></p>
+        <p><label for='game'>ゲーム Game</label>
         <select id='game' name='game'>
             <option value='-'>...</option>
             <?php
@@ -13,10 +13,10 @@
                     echo '<option' . (!empty($game) && $game == format_game($file) ? ' selected' : '') . '>' . format_game($file) . '</option>';
                 }
             ?>
-        </select>
-        <label for='shot'>Shottype</label>
-        <input id='shot' name='shot' type='text' value='<?php echo !empty($shot) ? $shot : '' ?>'>
-        <label for='diff'>Difficulty</label>
+        </select></p>
+        <p><label for='shot'>使用キャラ Shottype</label>
+        <input id='shot' name='shot' type='text' value='<?php echo !empty($shot) ? $shot : '' ?>'></p>
+        <p><label for='diff'>難易度 Difficulty</label>
         <select id='diff' name='diff'>
             <option value='-'>...</option>
             <?php
@@ -24,12 +24,14 @@
                     echo '<option' . (!empty($diff) && $diff == $value ? ' selected' : '') . '>' . $value . '</option>';
                 }
             ?>
-        </select>
+        </select></p>
+        <p><label for='comment'>コメント Comment</label>
+        <input id='comment' name='comment' type='text' value='<?php echo !empty($comment) ? $comment : '' ?>'></p>
     </div>
-    <p><input type='submit' value='Search'></p>
+    <p><input type='submit' value='検索 Search'></p>
 </form>
 <?php
-    function check_conditions(array $entry, string $player, string $game, string $diff, string $shot) {
+    function check_conditions(array $entry, string $player, string $game, string $diff, string $shot, string $comment) {
         if (substr($player, 0, 1) == '"' && substr($player, -1) == '"') {
             $player = substr($player, 1, -1);
             $player_matches = $player == $entry['player'];
@@ -60,14 +62,23 @@
         if (!empty($shot) && !$shot_matches) {
             return false;
         }
+        if (substr($comment, 0, 1) == '"' && substr($comment, -1) == '"') {
+            $comment = substr($comment, 1, -1);
+            $comment_matches = $comment == $entry['comment'];
+        } else {
+            $comment_matches = str_contains(strtolower($entry['comment']), strtolower($comment));
+        }
+        if (!empty($comment) && !$comment_matches) {
+            return false;
+        }
         return true;
     }
 
-    function results(string $player, string $game, string $diff, string $shot, bool $gamecol) {
+    function results(string $player, string $game, string $diff, string $shot, string $comment, bool $gamecol) {
         $table = '';
         $board = get_board($game);
         foreach ($board as $key => $entry) {
-            if (check_conditions($entry, $player, $game, $diff, $shot)) {
+            if (check_conditions($entry, $player, $game, $diff, $shot, $comment)) {
                 if (!empty($entry['chara'])) {
                     $tmp_shot = $entry['chara'];
                 } else if (!empty($entry['route'])) {
@@ -89,7 +100,7 @@
         return $table;
     }
 
-    if ($game != '-' || $diff != '-' || !empty($player) && strlen($player) > 1 || !empty($shot) && strlen($shot) > 1) {
+    if ($game != '-' || $diff != '-' || !empty($player) && strlen($player) > 1 || !empty($shot) && strlen($shot) > 1 || !empty($comment)) {
         $count = 0;
         if ($game == '-') {
             $table = '<table id="results" class="search_header sortable"><thead><tr><th class="head">#</th><th>ゲーム<br>Game</th><th>スコア<br>Score</th><th>処理落率<br>Slowdown</th><th>使用キャラ<br>Shottype</th>' .
@@ -98,7 +109,7 @@
                 if (strpos($file, 'alcostg') !== false || strpos($file, 'hellsinker') !== false) {
                     continue;
                 }
-                $results = results($player, format_game($file), $diff, $shot, true);
+                $results = results($player, format_game($file), $diff, $shot, $comment, true);
                 if (!empty($results)) {
                     $count += 1;
                     $table .= $results;
@@ -107,7 +118,7 @@
         } else {
             $table = '<table id="results" class="' . game_to_abbr($game) . 't search sortable"><thead><tr><th class="head">#</th><th>スコア<br>Score</th><th>処理落率<br>Slowdown</th><th>使用キャラ<br>' .
             'Shottype</th><th>難易度<br>Difficulty</th><th>プレイ日付<br>Play Date</th><th>名前<br>Player</th><th>コメント<br>Comment</th><th>リプレイ<br>Replay</th></tr></thead><tbody id="results_tbody">';
-            $results = results($player, $game, $diff, $shot, false);
+            $results = results($player, $game, $diff, $shot, $comment, false);
             if (!empty($results)) {
                 $count += 1;
                 $table .= $results;
