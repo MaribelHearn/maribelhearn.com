@@ -13,7 +13,7 @@ function init() {
     for (i = 0; i < tables.length; i++) {
         table = tables[i];
 
-        if (table.id == "results") {
+        if (table.id == "results" || table.classList.contains("hellsinker")) {
             continue;
         }
 
