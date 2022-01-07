@@ -98,7 +98,8 @@
                 </p>
                 <p class='link'>
                     <a href='royalflare'><span class='icon royalflare_icon'></span>
-                    Royalflare Archive</a>
+                    ロイヤルフレアの記録 Royalflare Archive</a>
+                    <span class='icon flag_japan'></span>
                     <span class='tooltip'>A complete and searchable archive of the replays, history and player rankings from score.royalflare.net.</span>
                 </p>
             </div>
