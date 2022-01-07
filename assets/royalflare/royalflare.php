@@ -8,7 +8,7 @@
             if (strpos($subpage, '/') !== false) {
                 $tmp = preg_split('/\//', $subpage);
                 if (($tmp[0] == 'history' || $tmp[0] == 'standings') && !empty(game_to_abbr($tmp[1]))) {
-                    echo '<span id="back"><a href="/royalflare/' . $tmp[1] . '">&lt;= Back to ' . $tmp[1] . '</a></span>';
+                    echo '<span id="back"><a href="/royalflare/' . $tmp[1] . '">&lt;= ' . $tmp[1] . 'に帰る - Back to ' . $tmp[1] . '</a></span>';
                 } else {
                     echo '<span id="back"><a href="/royalflare">&lt;= メインページに帰る - Back to Main Page</a></span>';
                 }
@@ -27,7 +27,7 @@
                 $tmp = preg_split('/\//', $subpage);
                 if (($tmp[0] == 'history' || $tmp[0] == 'standings') && !empty(game_to_abbr($tmp[1]))) {
                     include_once 'assets/royalflare/' . $tmp[0] . '/' . $tmp[1] . '.php';
-                    echo '<p><strong><a href="/royalflare/' . $tmp[1] . '">Back to ' . $tmp[1] . '</a></strong></p>';
+                    echo '<p><strong><a href="/royalflare/' . $tmp[1] . '">' . $tmp[1] . 'に帰る - Back to ' . $tmp[1] . '</a></strong></p>';
                 } else {
                     $exists = false;
                     echo '<p>No such page.</p>';

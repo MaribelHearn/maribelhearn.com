@@ -18,9 +18,6 @@
 <p class='right'><strong><a href='/royalflare/standings/th16'>ランキング - Player Standings</a></strong></p>
 <?php
     foreach ($diffs as $key => $diff) {
-        if ($diff == 'Phantasm') {
-            break;
-        }
         echo '<h2 id="' . $diff . '">' . $diff . '</h2>';
         foreach ($shots as $key => $shot) {
             if (substr($shot, -5) == 'Extra' && $diff != 'Extra' || substr($shot, -5) != 'Extra' && $diff == 'Extra') {

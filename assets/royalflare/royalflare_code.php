@@ -140,13 +140,16 @@ if (!empty($_SESSION['subpage'])) {
         $shots = get_shots($game);
     }
     if ($subpage == 'search') {
-        $player = $_GET['player'];
-        $game = $_GET['game'];
-        $diff = $_GET['diff'];
-        $shot = $_GET['shot'];
-        $comment = $_GET['comment'];
+        $player = (isset($_GET['player']) ? $_GET['player'] : '');
+        $game = (isset($_GET['game']) ? $_GET['game'] : '');
+        $diff = (isset($_GET['diff']) ? $_GET['diff'] : '');
+        $shot = (isset($_GET['shot']) ? $_GET['shot'] : '');
+        $comment = (isset($_GET['comment']) ? $_GET['comment'] : '');
         if ($game == 'th095' || $game == 'th125' || $game == 'th143' || $game == 'th165') {
             $diff = '-';
+        }
+        if ($game != 'th07' && $diff == 'Phantasm') {
+            $diff = 'Extra';
         }
     }
 } else {
