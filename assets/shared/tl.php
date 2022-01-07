@@ -100,7 +100,7 @@ function shot_abbr(string $shot) {
     }
 }
 function tl_shot(string $shot, string $lang) {
-    if ($lang == 'Japanese') {
+    if ($lang == 'Japanese' || $lang == 'ja') {
         switch ($shot) {
             case 'Makai': return '魔界';
             case 'Jigoku': return '地獄';
@@ -176,7 +176,7 @@ function tl_shot(string $shot, string $lang) {
             case 'YoumuEagle': return '妖夢E';
             default: return $shot;
         }
-    } else if ($lang == 'Chinese') {
+    } else if ($lang == 'Chinese' || $lang == 'zh') {
         switch($shot) {
             case 'Makai': return '魔界';
             case 'Jigoku': return '地狱';

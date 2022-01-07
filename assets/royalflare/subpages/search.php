@@ -74,7 +74,7 @@
         return true;
     }
 
-    function results(string $player, string $game, string $diff, string $shot, string $comment, bool $gamecol) {
+    function results(string $player, string $game, string $diff, string $shot, string $comment, string $lang_code, bool $gamecol) {
         $table = '';
         $board = get_board($game);
         foreach ($board as $key => $entry) {
@@ -92,7 +92,7 @@
                     $tmp_diff = (empty($entry['difficulty']) ? '-' : $entry['difficulty']);
                 }
                 $table .= '<tr><td class="hidden"></td>' . ($gamecol ? '<td class=' . game_to_abbr($game) . '>' . $game . '</td>' : '') .
-                '<td>' . number_format($entry['score'], 0, '.', ',') . '</td><td>' . $entry['slowdown'] . '</td><td>' . $tmp_shot . '</td>' .
+                '<td>' . number_format($entry['score'], 0, '.', ',') . '</td><td>' . $entry['slowdown'] . '</td><td>' . tl_shot($tmp_shot, $lang_code) . '</td>' .
                 '<td>' . $tmp_diff . '</td><td>' . $entry['date'] . '</td><td>' . $entry['player'] .
                 '</td><td class="break">' . $entry['comment'] . '</td><td><a href="' . $entry['replay'] . '">' . $entry['uploaded'] . '</a></td></tr>';
             }
@@ -103,22 +103,24 @@
     if ($game != '-' || $diff != '-' || !empty($player) && strlen($player) > 1 || !empty($shot) && strlen($shot) > 1 || !empty($comment) && strlen($comment) > 1) {
         $count = 0;
         if ($game == '-') {
-            $table = '<table id="results" class="search_header sortable"><thead><tr><th class="head">#</th><th>ゲーム<br>Game</th><th>スコア<br>Score</th><th>処理落率<br>Slowdown</th><th>使用キャラ<br>Shottype</th>' .
-            '<th>難易度<br>Difficulty</th><th>プレイ日付<br>Play Date</th><th>名前<br>Player</th><th>コメント<br>Comment</th><th>リプレイ<br>Replay</th></tr></thead><tbody id="results_tbody">';
+            $table = '<table id="results" class="search_header sortable"><thead><tr><th class="head">#</th><th>ゲーム<br>Game</th>' .
+            '<th>スコア<br>Score</th><th>処理落率<br>Slowdown</th><th><span class="nowrap">使用キャラ</span><br>Shottype</th><th>難易度<br>Difficulty</th>' .
+            '<th>プレイ日付<br>Play Date</th><th>名前<br>Player</th><th>コメント<br>Comment</th><th>リプレイ<br>Replay</th></tr></thead><tbody id="results_tbody">';
             foreach (glob('assets/royalflare/json/*.*') as $file) {
                 if (strpos($file, 'alcostg') !== false || strpos($file, 'hellsinker') !== false) {
                     continue;
                 }
-                $results = results($player, format_game($file), $diff, $shot, $comment, true);
+                $results = results($player, format_game($file), $diff, $shot, $comment, $lang_code, true);
                 if (!empty($results)) {
                     $count += 1;
                     $table .= $results;
                 }
             }
         } else {
-            $table = '<table id="results" class="' . game_to_abbr($game) . 't search sortable"><thead><tr><th class="head">#</th><th>スコア<br>Score</th><th>処理落率<br>Slowdown</th><th>使用キャラ<br>' .
-            'Shottype</th><th>難易度<br>Difficulty</th><th>プレイ日付<br>Play Date</th><th>名前<br>Player</th><th>コメント<br>Comment</th><th>リプレイ<br>Replay</th></tr></thead><tbody id="results_tbody">';
-            $results = results($player, $game, $diff, $shot, $comment, false);
+            $table = '<table id="results" class="' . game_to_abbr($game) . 't search sortable"><thead><tr><th class="head">#</th><th>スコア<br>Score</th>' .
+            '<th>処理落率<br>Slowdown</th><th><span class="nowrap">使用キャラ</span><br>Shottype</th><th>難易度<br>Difficulty</th><th>プレイ日付<br>Play Date</th>' .
+            '<th>名前<br>Player</th><th>コメント<br>Comment</th><th>リプレイ<br>Replay</th></tr></thead><tbody id="results_tbody">';
+            $results = results($player, $game, $diff, $shot, $comment, $lang_code, false);
             if (!empty($results)) {
                 $count += 1;
                 $table .= $results;
