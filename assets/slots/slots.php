@@ -1,7 +1,5 @@
 <div id='wrap' class='wrap'>
-    <span id='hy_container' data-html2canvas-ignore><span id='hy'></span>
-        <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
-    </span>
+    <?php echo wrap_top('', '', '', $lang_code) ?>
     <h1 data-html2canvas-ignore>Touhou Slot Machine</h1>
     <div id='content' data-html2canvas-ignore>
 		<?php

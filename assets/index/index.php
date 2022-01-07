@@ -1,9 +1,5 @@
 <div id='wrap' class='wrap'>
-    <p id='ack'>This background image<br id='ack_br'>
-    was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a></p>
-    <span id='hy_container'><span id='hy'></span>
-        <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
-    </span>
+    <?php echo wrap_top('https://www.pixiv.net/member.php?id=420928', '', 'LM7', $lang_code) ?>
     <h1>Maribel Hearn's Touhou Portal</h1>
     <p>A privacy-friendly collection of convenient webpages for the Touhou community.</p>
     <p id='desktop_hover'>Hover your cursor over a link for a description of that page. Flags show available translations.</p>

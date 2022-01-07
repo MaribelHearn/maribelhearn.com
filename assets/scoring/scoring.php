@@ -1,10 +1,6 @@
 <?php include_once 'assets/scoring/scoring_code.php' ?>
 <div id='wrap' class='wrap'>
-	<p id='ack'>This background image <br id='ack_br'>was drawn by
-	<a href='https://www.pixiv.net/member.php?id=87950'>りすたる</a></p>
-	<span id='hy_container'><span id='hy'></span>
-        <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
-    </span>
+    <?php echo wrap_top('https://www.pixiv.net/member.php?id=87950', '', 'りすたる', $lang_code) ?>
 	<h1>High Score Storage</h1>
 	<?php
 		if (!empty($_GET['redirect'])) {

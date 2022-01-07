@@ -1,8 +1,5 @@
 <div id='wrap' class='wrap'>
-    <p id='ack'>The background image was drawn by <a href='https://www.pixiv.net/en/users/20799'>白雪 睦月</a></p>
-    <span id='hy_container'><span id='hy'></span>
-        <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
-    </span>
+    <?php echo wrap_top('https://www.pixiv.net/en/users/20799', '', '白雪 睦月', $lang_code) ?>
     <h1>Touhou Replay Showcase</h1>
     <?php
         if (!empty($_GET['redirect'])) {

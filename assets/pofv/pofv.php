@@ -1,18 +1,6 @@
 <div id='wrap' class='wrap'>
     <div id='topbar'>
-		<p id='ack'><?php
-			if ($lang == 'Chinese') {
-                echo '背景画师：' .
-				'<a href="https://www.pixiv.net/member.php?id=21613">Kong Xian</a>';
-            } else {
-                echo 'This background image <br id="ack_br">was drawn by ' .
-			    '<a href="https://www.pixiv.net/member.php?id=21613">Kong Xian</a>';
-            }
-		?></p>
-		<span id='hy_container'>
-            <span id='hy'></span>
-	        <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
-        </span>
+	    <?php echo wrap_top('https://www.pixiv.net/member.php?id=21613', '', 'Kong Xian', $lang_code) ?>
 		<div id='languages'>
             <a id='en' class='flag' href='pofv?hl=en'>
                 <img class='flag_en' src='assets/flags/uk.png' alt='<?php echo 'Flag of the United Kingdom' ?>'>

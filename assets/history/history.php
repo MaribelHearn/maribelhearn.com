@@ -1,9 +1,5 @@
 <div id='wrap' class='wrap'>
-	<p id='ack' class='noborders'>This background image<br id='ack_br'>
-	was drawn by <a href='https://www.pixiv.net/member.php?id=2263353'>RAT_Huang</a></p>
-    <span id='hy_container'><span id='hy'></span>
-        <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
-    </span>
+    <?php echo wrap_top('', '', 'RAT_Huang', $lang_code) ?>
     <h1>Maribel's Achievement History</h1>
 	<?php
 		if (!empty($_GET['redirect'])) {

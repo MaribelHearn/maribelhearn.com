@@ -1,4 +1,4 @@
-var done, head, hy;
+var language, done, head, hy;
 
 function dark() {
     var style = document.createElement("link");
@@ -19,7 +19,7 @@ function ready() {
     if (localStorage.theme) { // legacy
         document.cookie = "theme=dark;expires=Fri, 31 Dec 9999 23:59:59 UTC;path=/;sameSite=Strict;Secure;";
         localStorage.removeItem("theme");
-        document.getElementById("hy_tooltip").innerHTML = "Youkai Mode";
+        document.getElementById("hy_text").innerHTML = (language == "Japanese" ? "妖怪モード（ダーク）" : "Youkai mode (Dark)");
         dark();
     }
 }
@@ -54,7 +54,7 @@ function theme() {
     if (getCookie("theme") == "dark") {
         document.cookie = "theme=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;" +
         "sameSite=Strict;" + (location.protocol == "https:" ? "Secure;" : "");
-        document.getElementById("hy_tooltip").innerHTML = "Human Mode";
+        document.getElementById("hy_text").innerHTML = (language == "Japanese" ? "人間モード（ライト）" : "Human mode (Light)");
 
         if (document.head.contains(document.getElementById("dark_theme"))) {
             head.removeChild(document.getElementById("dark_theme"));
@@ -69,11 +69,12 @@ function theme() {
         }
 
         document.cookie = "theme=" + JSON.stringify("dark") + cookieString;
-        document.getElementById("hy_tooltip").innerHTML = "Youkai Mode";
-        dark();
+        document.getElementById("hy_text").innerHTML = (language == "Japanese" ? "妖怪モード（ダーク）" : "Youkai mode (Dark)");
 
         if (location.pathname.includes("royalflare")) {
             window.location.reload(false);
+        } else {
+            dark();
         }
     }
 
@@ -84,8 +85,13 @@ function theme() {
 
 head = document.getElementsByTagName("head")[0];
 window.addEventListener("load", ready);
-hy = document.getElementById("hy");
+hy = document.getElementById("hy_container");
 done = false;
+language = "English";
+
+if (getCookie("lang") == "Japanese" || location.href.includes("jp")) {
+    language = "Japanese";
+}
 
 if (hy) {
     hy.addEventListener("click", theme);

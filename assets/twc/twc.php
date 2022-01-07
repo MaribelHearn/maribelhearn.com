@@ -1,26 +1,7 @@
 <?php include_once 'assets/twc/twc_code.php' ?>
 <div id='wrap' class='wrap'>
 	<div id='topbar'>
-		<p id='ack'>
-			<?php
-				if ($lang == 'Chinese') {
-					echo '背景画师：<a href="https://www.pixiv.net/en/users/186860">宇文風</a>';
-				} else if ($lang == 'Japanese') {
-					echo '背景イメージは<a href="https://www.pixiv.net/en/users/186860">宇文風</a>' .
-					'さんの<br id="ack_br">ものを使用させていただいております';
-				} else if ($lang == 'Russian') {
-					echo 'Иллюстрацию на фоне <br id="ack_br">нарисовал(а) ' .
-					'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>';
-				} else {
-					echo 'This background image <br id="ack_br">was drawn by ' .
-					'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>';
-				}
-			?>
-		</p>
-		<span id='hy_container'>
-            <span id='hy'></span>
-	        <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
-        </span>
+        <?php echo wrap_top('https://www.pixiv.net/en/users/1868609', '', '宇文風', $lang_code) ?>
 		<div id='languages'>
             <a id='en' class='flag' href='twc?hl=en'>
                 <img class='flag_en' src='assets/flags/uk.png' alt='<?php echo tl_term('Flag of the United Kingdom', $lang) ?>'>

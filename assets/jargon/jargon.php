@@ -1,7 +1,5 @@
 <div id='wrap' class='wrap'>
-    <span id='hy_container'><span id='hy'></span>
-        <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
-    </span>
+    <?php echo wrap_top('', '', '', $lang_code) ?>
     <h1>Touhou Community Jargon</h1>
 	<?php
 		if (!empty($_GET['redirect'])) {

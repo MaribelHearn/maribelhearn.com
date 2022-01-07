@@ -127,8 +127,18 @@ function background_position($page) {
         return 'center';
     }
 }
-function theme_name() {
-    return isset($_COOKIE['theme']) ? 'Youkai Mode (click to toggle)' : 'Human Mode (click to toggle)';
+function theme_name(string $lang_code) {
+    if (isset($_COOKIE['theme'])) {
+        switch ($lang_code) {
+            case 'ja': return '妖怪モード（ダーク）';
+            default: return 'Youkai mode (Dark)';
+        }
+    } else {
+        switch ($lang_code) {
+            case 'ja': return '人間モード（ライト）';
+            default: return 'Human mode (Light)';
+        }
+    }
 }
 function touhou_sites() {
     return '<p><a href="https://en.touhouwiki.net">' .
@@ -252,11 +262,9 @@ function navbar(string $page) {
             $navbar .= '</div>';
         $navbar .= '</div>';
     $navbar .= '</div>';
-    $navbar = str_replace('<a href="' . ($page == 'index' ? '/' : $page) . '">', '<strong>', $navbar);
+    $navbar = str_replace('<a href="' . ($page == 'index' ? '/' : '/' . $page) . '">', '<strong>', $navbar);
     $cap = strlen($page) < 4 ? strtoupper($page) : ucfirst($page);
-    if ($page == 'gensokyo') {
-        $cap = 'Gensokyo';
-    } else if ($page == 'thvote') {
+    if ($page == 'thvote') {
         $cap = 'Poll';
     } else if ($page == 'pofv') {
         $cap = 'PoFV';
@@ -277,6 +285,72 @@ function navbar(string $page) {
         $navbar = str_replace('assets', 'https://maribelhearn.com/assets', $navbar);
     }
     return $navbar;
+}
+function wrap_top_ja(string $art, string $sauce, string $artist) {
+    echo '<p id="ack" data-html2canvas-ignore>背景イメージは';
+    if (empty($art)) {
+        echo $artist . '</p>';
+    } else {
+        echo '<a href="' . $art . '">' . $artist . '</a>さんの<br id="ack_br">ものを使用させていただいております';
+        if (!empty($sauce)) {
+            echo '（<a href="' . $sauce . '">ソース </a>）</p>';
+        } else {
+            echo '</p>';
+        }
+    }
+}
+function wrap_top_zh(string $art, string $sauce, string $artist) {
+    echo '<p id="ack" data-html2canvas-ignore>背景画师：';
+    if (empty($art)) {
+        echo $artist . '</p>';
+    } else {
+        echo '<a href="' . $art . '">' . $artist . '</a>';
+        if (!empty($sauce)) {
+            echo '（<a href="' . $sauce . '">来源</a>）</p>';
+        } else {
+            echo '</p>';
+        }
+
+    }
+}
+function wrap_top_ru(string $art, string $sauce, string $artist) {
+    echo '<p id="ack" data-html2canvas-ignore>Иллюстрацию на фоне <br id="ack_br">нарисовал(а) ';
+    if (empty($art)) {
+        echo $artist . '</p>';
+    } else {
+        echo '<a href="' . $art . '">' . $artist . '</a>';
+        if (!empty($sauce)) {
+            echo ' (<a href="' . $sauce . '">источник</a>)</p>';
+        } else {
+            echo '</p>';
+        }
+    }
+}
+function wrap_top_en(string $art, string $sauce, string $artist) {
+    echo '<p id="ack" data-html2canvas-ignore>This background image';
+    if (empty($art)) {
+        echo '<br id="ack_br"> was drawn by ' . $artist . '</p>';
+    } else {
+        if (empty($sauce)) {
+            echo '<br id="ack_br"> was drawn by <a href="' . $art . '">' . $artist . '</a></p>';
+        } else {
+            echo ' was drawn by <a href="' . $art . '">' . $artist . '</a><br class="ack_br"> (<a href="' . $sauce . '">Source</a>)</p>';
+        }
+    }
+}
+function wrap_top(string $art, string $sauce, string $artist, string $lang_code) {
+    if (!empty($artist)) {
+        if ($lang_code == 'ja') {
+            wrap_top_ja($art, $sauce, $artist);
+        } else if ($lang_code == 'zh') {
+            wrap_top_zh($art, $sauce, $artist);
+        } else if ($lang_code == 'ru') {
+            wrap_top_ru($art, $sauce, $artist);
+        } else {
+            wrap_top_en($art, $sauce, $artist);
+        }
+    }
+    echo '<span id="hy_container" data-html2canvas-ignore><span id="hy"></span><p id="hy_text">' . theme_name($lang_code) . '</p></span>';
 }
 function handle_file_upload() {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {

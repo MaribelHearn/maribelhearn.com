@@ -1,8 +1,6 @@
 <?php include_once 'assets/shared/tl.php'; include_once 'assets/royalflare/royalflare_code.php' ?>
 <div id='wrap' class='wrap'>
-    <span id='hy_container'><span id='hy'></span>
-        <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
-    </span>
+    <?php echo wrap_top('', '', '', $lang_code) ?>
     <?php
         if (!empty($subpage)) {
             if (strpos($subpage, '/') !== false) {

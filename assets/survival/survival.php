@@ -1,10 +1,6 @@
 <?php include_once 'assets/survival/survival_code.php' ?>
 <div id='wrap' class='wrap'>
-    <p id='ack' data-html2canvas-ignore>This background image<br id='ack_br'>
-    was drawn by <a href='https://www.pixiv.net/member.php?id=759506'>windtalker</a></p>
-    <span id='hy_container' data-html2canvas-ignore><span id='hy'></span>
-    	<span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
-	</span>
+    <?php echo wrap_top('https://www.pixiv.net/member.php?id=759506', 'https://www.pixiv.net/en/artworks/12517505', 'windtalker', $lang_code) ?>
     <div id='content' data-html2canvas-ignore>
 		<h1>Survival Progress Table Generator</h1>
         <?php
