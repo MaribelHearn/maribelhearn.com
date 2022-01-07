@@ -71,6 +71,10 @@ function theme() {
         document.cookie = "theme=" + JSON.stringify("dark") + cookieString;
         document.getElementById("hy_tooltip").innerHTML = "Youkai Mode";
         dark();
+
+        if (location.pathname.includes("royalflare")) {
+            window.location.reload(false);
+        }
     }
 
     if (localStorage.theme) { // legacy
