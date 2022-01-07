@@ -51,7 +51,7 @@
             } else {
                 $shot_matches = str_contains(strtolower($entry['route']), strtolower($shot));
             }
-        } else {
+        } else if (isset($entry['chara'])) {
             if (substr($shot, 0, 1) == '"' && substr($shot, -1) == '"') {
                 $shot = substr($shot, 1, -1);
                 $shot_matches = $shot == $entry['chara'];
