@@ -144,6 +144,7 @@ if (!empty($_SESSION['subpage'])) {
         $game = $_GET['game'];
         $diff = $_GET['diff'];
         $shot = $_GET['shot'];
+        $comment = $_GET['comment'];
         if ($game == 'th095' || $game == 'th125' || $game == 'th143' || $game == 'th165') {
             $diff = '-';
         }

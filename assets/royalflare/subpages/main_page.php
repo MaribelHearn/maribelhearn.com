@@ -2,12 +2,12 @@
 <p>On 3 January 2022, Royalflare stopped allowing replay uploads, and it will shut down at the end of the month.
 As such, this archive has been created to preserve all of its replays and history. Unlike the original website, these replays cannot be deleted.</p>
 <p>The table resulting from search can be sorted by score, date etc. (note that this might be slow depending on the size).</p>
-<h2>Search</h2>
+<h2>検索 - Search</h2>
 <form target='_self' action='/royalflare/search'>
     <div>
-        <label for='player'>Player</label>
-        <input id='player' name='player' type='text' value='<?php echo !empty($player) ? $player : '' ?>'>
-        <label for='game'>Game</label>
+        <p><label for='player'>名前 Player</label>
+        <input id='player' name='player' type='text' value='<?php echo !empty($player) ? $player : '' ?>'></p>
+        <p><label for='game'>ゲーム Game</label>
         <select id='game' name='game'>
             <option value='-'>...</option>
             <?php
@@ -18,10 +18,10 @@ As such, this archive has been created to preserve all of its replays and histor
                     echo '<option' . (!empty($game) && $game == format_game($file) ? ' selected' : '') . '>' . format_game($file) . '</option>';
                 }
             ?>
-        </select>
-        <label for='shot'>Shottype</label>
-        <input id='shot' name='shot' type='text' value='<?php echo !empty($shot) ? $shot : '' ?>'>
-        <label for='diff'>Difficulty</label>
+        </select></p>
+        <p><label for='shot'>使用キャラ Shottype</label>
+        <input id='shot' name='shot' type='text' value='<?php echo !empty($shot) ? $shot : '' ?>'></p>
+        <p><label for='diff'>難易度 Difficulty</label>
         <select id='diff' name='diff'>
             <option value='-'>...</option>
             <?php
@@ -29,9 +29,11 @@ As such, this archive has been created to preserve all of its replays and histor
                     echo '<option' . (!empty($diff) && $diff == $value ? ' selected' : '') . '>' . $value . '</option>';
                 }
             ?>
-        </select>
+        </select></p>
+        <p><label for='comment'>コメント Comment</label>
+        <input id='comment' name='comment' type='text' value='<?php echo !empty($comment) ? $comment : '' ?>'></p>
     </div>
-    <p><input type='submit' value='Search'></p>
+    <p><input type='submit' value='検索 Search'></p>
 </form>
 <h2>Games</h2>
 <dt>TH06</dt>
