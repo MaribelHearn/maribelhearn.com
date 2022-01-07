@@ -30,8 +30,12 @@ As such, this archive has been created to preserve all of its replays and histor
                 }
             ?>
         </select></p>
-        <p><label for='comment'>コメント Comment</label>
-        <input id='comment' name='comment' type='text' value='<?php echo !empty($comment) ? $comment : '' ?>'></p>
+        <?php
+            if (!$is_mobile) {
+                echo '<p><label for="comment">コメント Comment</label>';
+                echo '<input id="comment" name="comment" type="text" value="' . (!empty($comment) ? $comment : '') . '"></p>';
+            }
+        ?>
     </div>
     <p><input type='submit' value='検索 Search'></p>
 </form>

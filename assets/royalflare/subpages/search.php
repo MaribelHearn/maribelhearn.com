@@ -25,8 +25,12 @@
                 }
             ?>
         </select></p>
-        <p><label for='comment'>コメント Comment</label>
-        <input id='comment' name='comment' type='text' value='<?php echo !empty($comment) ? $comment : '' ?>'></p>
+        <?php
+            if (!$is_mobile) {
+                echo '<p><label for="comment">コメント Comment</label>';
+                echo '<input id="comment" name="comment" type="text" value="' . (!empty($comment) ? $comment : '') . '"></p>';
+            }
+        ?>
     </div>
     <p><input type='submit' value='検索 Search'></p>
 </form>
@@ -74,7 +78,8 @@
         return true;
     }
 
-    function results(string $player, string $game, string $diff, string $shot, string $comment, string $lang_code, bool $gamecol) {
+    function results(string $player, string $game, string $diff, string $shot, string $comment, bool $gamecol) {
+        global $lang_code, $is_mobile;
         $table = '';
         $board = get_board($game);
         foreach ($board as $key => $entry) {
@@ -95,7 +100,7 @@
                 $table .= '<tr><td class="hidden"></td>' . ($gamecol ? '<td class=' . game_to_abbr($game) . '>' . $game . '</td>' : '') .
                 '<td>' . number_format($entry['score'], 0, '.', ',') . '</td><td' . $slowdown_class . '>' . $entry['slowdown'] . '</td>' .
                 '<td>' . tl_shot($tmp_shot, $lang_code) . '</td><td>' . $tmp_diff . ($game == 'th08' && $tmp_diff != 'Extra' ? '<br>' . tl_term($entry['route'], $lang_code) : '') . '</td>' .
-                '<td>' . $entry['date'] . '</td><td>' . $entry['player'] . '</td><td class="break">' . $entry['comment'] . '</td>' .
+                '<td>' . $entry['date'] . '</td><td>' . $entry['player'] . '</td>' . ($is_mobile ? '' : '<td class="break">' . $entry['comment'] . '</td>') .
                 '<td><a href="' . $entry['replay'] . '">' . (empty($entry['uploaded']) ? preg_split('/ /', $entry['date'])[0] : $entry['uploaded']) . '</a></td></tr>';
             }
         }
@@ -107,12 +112,12 @@
         if ($game == '-') {
             $table = '<table id="results" class="search_header sortable"><thead><tr><th class="head">#</th><th>ゲーム<br>Game</th>' .
             '<th>スコア<br>Score</th><th>処理落率<br>Slowdown</th><th><span class="nowrap">使用キャラ</span><br>Shottype</th><th>難易度<br>Difficulty</th>' .
-            '<th>プレイ日付<br>Play Date</th><th>名前<br>Player</th><th>コメント<br>Comment</th><th>リプレイ<br>Replay</th></tr></thead><tbody id="results_tbody">';
+            '<th>プレイ日付<br>Play Date</th><th>名前<br>Player</th>' . ($is_mobile ? '' : '<th>コメント<br>Comment</th>') . '<th>リプレイ<br>Replay</th></tr></thead><tbody id="results_tbody">';
             foreach (glob('assets/royalflare/json/*.*') as $file) {
                 if (strpos($file, 'alcostg') !== false || strpos($file, 'hellsinker') !== false) {
                     continue;
                 }
-                $results = results($player, format_game($file), $diff, $shot, $comment, $lang_code, true);
+                $results = results($player, format_game($file), $diff, $shot, $comment, true);
                 if (!empty($results)) {
                     $count += 1;
                     $table .= $results;
@@ -121,8 +126,8 @@
         } else {
             $table = '<table id="results" class="' . game_to_abbr($game) . 't search sortable"><thead><tr><th class="head">#</th><th>スコア<br>Score</th>' .
             '<th>処理落率<br>Slowdown</th><th><span class="nowrap">使用キャラ</span><br>Shottype</th><th>難易度<br>Difficulty</th><th>プレイ日付<br>Play Date</th>' .
-            '<th>名前<br>Player</th><th>コメント<br>Comment</th><th>リプレイ<br>Replay</th></tr></thead><tbody id="results_tbody">';
-            $results = results($player, $game, $diff, $shot, $comment, $lang_code, false);
+            '<th>名前<br>Player</th>' . ($is_mobile ? '' : '<th>コメント<br>Comment</th>') . '<th>リプレイ<br>Replay</th></tr></thead><tbody id="results_tbody">';
+            $results = results($player, $game, $diff, $shot, $comment, false);
             if (!empty($results)) {
                 $count += 1;
                 $table .= $results;
