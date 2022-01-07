@@ -18,12 +18,13 @@
             $count = 0;
             echo '<p id="' . $stage . '-' . $scene . '" class="wide shottype">' . ($game != 'VD' ? 'Scene ' : '') . format_stage($game, $stage) . '-' . $scene . '</p>';
             $table .= '<table id="' . $stage . '-' . $scene . 't" class="' . $game . 't sortable"><tr><th class="head">#</th><th id="' . $stage . '-' . $scene .
-            'score">スコア<br>Score</th><th>処理落率<br>Slowdown</th><th>プレイ日付<br>Play Date</th><th>名前<br>Player</th><th>コメント<br>Comment</th><th>リプレイ<br>Replay</th></tr>';
+            'score">スコア<br>Score</th><th>処理落率<br>Slowdown</th><th><span class="nowrap">撮影対象</span><br>Scene</th>' .
+            '<th>プレイ日付<br>Play Date</th><th>名前<br>Player</th><th>コメント<br>Comment</th><th>リプレイ<br>Replay</th></tr>';
             foreach ($board as $key => $entry) {
                 if ($entry['stage'] == format_stage($game, $stage) . '-' . $scene) {
                     $slowdown_class = (check_slowdown($game, $entry['slowdown']) ? ' class="slowdown"' : '');
                     $table .= '<tr><td class="hidden"></td><td>' . number_format($entry['score'], 0, '.', ',') . '</td><td' . $slowdown_class . '>' . $entry['slowdown'] . '</td>' .
-                    '<td>' . $entry['date'] . '</td><td>' . $entry['player'] . '</td><td class="break">' . $entry['comment'] .
+                    '<td>' . $entry['stage'] . '</td><td>' . $entry['date'] . '</td><td>' . $entry['player'] . '</td><td class="break">' . $entry['comment'] .
                     '</td><td><a href="' . $entry['replay'] . '">' . $entry['uploaded'] . '</a></td></tr>';
                     $count += 1;
                 }
