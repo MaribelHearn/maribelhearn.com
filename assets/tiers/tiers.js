@@ -1815,28 +1815,25 @@ function modalEraseAll() {
     emptyModal();
 }
 
+function modalEraseSingle() {
+    clearTiers(getCurrentTierList(), settings.sort, settings.sort);
+    addDefaultTiers(settings.sort);
+    emptyModal();
+}
+
 function eraseAll() {
-    var confirmation;
-
-    if (isMobile()) {
-        emptyModal();
-        $("#modal_inner").html("<h3>Reset</h3><p>Are you sure you want to reset your tier lists and settings to the defaults? " +
-        "This will permanently erase all of your currently loaded tier lists and settings.</p>");
-        $("#modal_inner").append("<input id='erase_all_button' type='button' value='Yes'>");
-        $("#erase_all_button").on("click", modalEraseAll);
-        $("#modal_inner").append("<input id='empty_modal' class='mobile_button' type='button' value='No'>");
-        $("#empty_modal").on("click", emptyModal);
-        $("#modal_inner").css("display", "block");
-        $("#modal").css("display", "block");
-        return;
-    }
-
-    confirmation = confirm("Are you sure you want to reset your tier lists and settings to the defaults? " +
-    "This will permanently erase all of your currently loaded tier lists and settings.");
-
-    if (confirmation) {
-        eraseAllConfirmed();
-    }
+    emptyModal();
+    $("#modal_inner").html("<h3>Reset</h3><p>Are you sure you want to reset your tier lists and settings to the defaults? " +
+    "<strong>Erase All</strong> will permanently erase all of your loaded tier lists and settings.</p>" +
+    "<p><strong>Erase Current Tier List</strong> will only erase the tier list that is currently open.</p>");
+    $("#modal_inner").append("<p><input id='erase_all_button' class='mobile_button' type='button' value='Erase All'></p>");
+    $("#modal_inner").append("<p><input id='erase_single_button' class='mobile_button' type='button' value='Erase Current Tier List'></p>");
+    $("#modal_inner").append("<p><input id='cancel_button' class='mobile_button' type='button' value='Cancel'></p>");
+    $("#erase_all_button").on("click", modalEraseAll);
+    $("#erase_single_button").on("click", modalEraseSingle);
+    $("#cancel_button").on("click", emptyModal);
+    $("#modal_inner").css("display", "block");
+    $("#modal").css("display", "block");
 }
 
 function drag(event) {
