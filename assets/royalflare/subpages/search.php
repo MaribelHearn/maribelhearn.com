@@ -91,10 +91,12 @@
                 } else {
                     $tmp_diff = (empty($entry['difficulty']) ? '-' : $entry['difficulty']);
                 }
+                $slowdown_class = (check_slowdown($game, $entry['slowdown']) ? ' class="slowdown"' : '');
                 $table .= '<tr><td class="hidden"></td>' . ($gamecol ? '<td class=' . game_to_abbr($game) . '>' . $game . '</td>' : '') .
-                '<td>' . number_format($entry['score'], 0, '.', ',') . '</td><td>' . $entry['slowdown'] . '</td><td>' . tl_shot($tmp_shot, $lang_code) . '</td>' .
-                '<td>' . $tmp_diff . '</td><td>' . $entry['date'] . '</td><td>' . $entry['player'] .
-                '</td><td class="break">' . $entry['comment'] . '</td><td><a href="' . $entry['replay'] . '">' . $entry['uploaded'] . '</a></td></tr>';
+                '<td>' . number_format($entry['score'], 0, '.', ',') . '</td><td' . $slowdown_class . '>' . $entry['slowdown'] . '</td>' .
+                '<td>' . tl_shot($tmp_shot, $lang_code) . '</td><td>' . $tmp_diff . ($game == 'th08' ? '<br>' . tl_term($entry['route'], $lang_code) : '') . '</td>' .
+                '<td>' . $entry['date'] . '</td><td>' . $entry['player'] . '</td><td class="break">' . $entry['comment'] . '</td>' .
+                '<td><a href="' . $entry['replay'] . '">' . (empty($entry['uploaded']) ? preg_split('/ /', $entry['date'])[0] : $entry['uploaded']) . '</a></td></tr>';
             }
         }
         return $table;
