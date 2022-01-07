@@ -1,31 +1,12 @@
 <?php include_once 'assets/shared/tl.php'; include_once 'assets/wr/wr_code.php' ?>
 <div id='wrap' class='wrap'>
 	<div id='topbar'>
-		<p id='ack'>
-            <?php
-                if ($lang == 'Chinese') {
-                    echo '背景画师：<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>';
-                } else if ($lang == 'Japanese') {
-                    echo '背景イメージは<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">' .
-                    'Catboyjeremie</a>さんの<br id="ack_br">ものを使用させていただいております';
-                } else if ($lang == 'Russian') {
-					echo 'Иллюстрацию на фоне <br id="ack_br">нарисовал(а) ' .
-					'<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>';
-				} else {
-                    echo 'This background image was<br id="ack_br"> drawn by ' .
-                    '<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>';
-                }
-            ?>
-		</p>
+	    <?php echo wrap_top('https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ', '', 'Catboyjeremie', $lang_code) ?>
 		<span id='toggle'>
             <?php
                 $other = ($layout == 'New' ? 'Old' : 'New');
                 echo '<a id="layouttoggle" href="wr">' . $other . ' layout</a>';
             ?>
-        </span>
-		<span id='hy_container'>
-            <span id='hy'></span>
-            <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
         </span>
 		<div id='languages'>
             <a id='en-gb' class='flag' href='wr?hl=en-gb'>

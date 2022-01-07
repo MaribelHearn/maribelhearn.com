@@ -89,11 +89,7 @@
 		</nav>
         <main>
             <div id='wrap' class='wrap'>
-                <p id='ack_admin'>This background image<br id='ack_br'>
-                was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a></p>
-                <span id='hy_container'><span id='hy'></span>
-                    <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
-                </span>
+                <?php echo wrap_top('https://www.pixiv.net/member.php?id=420928', '', 'LM7', 'en') ?>
                 <h1>Admin Panel</h1>
                 <p><input id='setcookie' type='button' value='Set Blocking Cookie'></p>
                 <p id='response' class='wide-top'>Caching new entries...</p>

@@ -1,13 +1,14 @@
 @font-face {
-  font-family: Felipa;
-  font-display: swap;
-  src: url('../fonts/Felipa-Regular.woff2') format('woff2'),
-       url('../fonts/Felipa-Regular.woff') format('woff'),
-       url('../fonts/Felipa-Regular.ttf') format('ttf');
+    font-family: Felipa;
+    font-display: swap;
+    src: url('../fonts/Felipa-Regular.woff2') format('woff2'),
+         url('../fonts/Felipa-Regular.woff') format('woff'),
+         url('../fonts/Felipa-Regular.ttf') format('ttf');
 }
 h1 {
     font-family: Felipa;
     font-size: 48px;
+    clear: both;
 }
 h2 {
     font-family: Felipa;
@@ -205,6 +206,7 @@ a:visited.dropdown_button {
 }
 #hy_container {
     position: relative;
+    cursor: pointer;
     float: right;
 }
 #hy_container .tooltip {
@@ -213,6 +215,9 @@ a:visited.dropdown_button {
 }
 #hy_container:hover .tooltip {
     visibility: visible;
+}
+#hy_text {
+    margin-top: 4px;
 }
 @media only screen and (max-width: 1100px) {
     #wrap {

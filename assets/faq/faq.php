@@ -1,8 +1,5 @@
 <div id='wrap' class='wrap'>
-	<p id='ack'>The background image was <br id='ack_br'>drawn by <a href='https://yande.re/pool/show/2697'>Asakura Masatoki</a>.</p>
-	<span id='hy_container'><span id='hy'></span>
-		<span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
-	</span>
+    <?php echo wrap_top('https://yande.re/pool/show/2697', '', 'Asakura Masatoki', $lang_code) ?>
 	<?php
 		if (!empty($_GET['redirect'])) {
 			echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';

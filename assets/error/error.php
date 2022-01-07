@@ -1,10 +1,6 @@
 <?php include_once 'assets/error/error_code.php' ?>
 <div id='wrap' class='wrap'>
-    <p id='ack_admin'>This background image<br id='ack_br'>
-    was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a></p>
-    <span id='hy_container'><span id='hy'></span>
-        <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
-    </span>
+    <?php echo wrap_top('https://www.pixiv.net/member.php?id=420928', '', 'LM7', $lang_code) ?>
     <h1><?php echo $error_code ?></h1>
     <p><strong><?php
         $supported_errors = ['400', '401', '403', '500'];

@@ -1,10 +1,6 @@
 <?php include_once 'assets/gensokyo/gensokyo_code.php' ?>
 <div id='wrap' class='wrap'>
-    <p id='ack'>This background image<br id='ack_br'>
-    was drawn by <a href='http://h-yde.deviantart.com/'>h-yde</a></p>
-    <span id='hy_container'><span id='hy'></span>
-        <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
-    </span>
+    <?php echo wrap_top('http://h-yde.deviantart.com/', '', 'h-yde', $lang_code) ?>
     <h1>Gensokyo Replay Archive</h1>
 	<?php
 		if (!empty($_GET['redirect'])) {

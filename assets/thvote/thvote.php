@@ -1,9 +1,5 @@
 <div id='wrap' class='wrap'>
-    <p id='ack' class='noborders'>This background image<br id='ack_br'>
-    was drawn by <a href='https://www.pixiv.net/member.php?id=2025430'>Yakumo_Stocking</a></p>
-    <span id='hy_container'><span id='hy'></span>
-        <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
-    </span>
+    <?php echo wrap_top('https://www.pixiv.net/member.php?id=2025430', '', 'Yakumo_Stocking', $lang_code) ?>
     <h1>THWiki Popularity Poll 2021 Results</h1>
     <?php
         if (!empty($_GET['redirect'])) {

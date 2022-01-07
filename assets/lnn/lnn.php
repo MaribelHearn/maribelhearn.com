@@ -1,31 +1,12 @@
 <?php include_once 'assets/shared/tl.php'; include_once 'assets/lnn/lnn_code.php' ?>
 <div id='wrap' class='wrap'>
     <div id='topbar'>
-        <p id='ack'>
-            <?php
-                if ($lang == 'Chinese') {
-                    echo '背景画师：<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>';
-                } else if ($lang == 'Japanese') {
-                    echo '背景イメージは<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>' .
-                    'さんの<br id="ack_br">ものを使用させていただいております';
-                } else if ($lang == 'Russian') {
-                    echo 'Иллюстрацию на фоне <br id="ack_br">нарисовал(а) ' .
-				    '<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>';
-                } else {
-                    echo 'This background image<br id="ack_br"> was drawn by ' .
-                    '<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>';
-                }
-            ?>
-        </p>
+	    <?php echo wrap_top('https://www.pixiv.net/member.php?id=1111435', '', 'C.Z', $lang_code) ?>
 		<span id='toggle'>
             <?php
                 $other = ($layout == 'New' ? 'Old' : 'New');
                 echo '<a id="layouttoggle" href="lnn">' . $other . ' layout</a>';
             ?>
-        </span>
-		<span id='hy_container'>
-            <span id='hy'></span>
-            <span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
         </span>
 		<div id='languages'>
             <a id='en' class='flag' href='lnn?hl=en'>

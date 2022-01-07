@@ -1,10 +1,5 @@
 <div id='wrap' class='wrap'>
-	<p id='ack'>This background image<br class='ack_br'>
-	was drawn by <a href='https://www.pixiv.net/en/users/4936550'>明ノ宮 飛鳥</a><br class='ack_br'>
-	(<a href='https://www.pixiv.net/en/artworks/75237542'>Source</a>)</p>
-	<span id='hy_container'><span id='hy'></span>
-		<span id='hy_tooltip' class='tooltip'><?php echo theme_name() ?></span>
-	</span>
+    <?php echo wrap_top('https://www.pixiv.net/en/users/4936550', 'https://www.pixiv.net/en/artworks/75237542', '明ノ宮 飛鳥', $lang_code) ?>
 	<h1>Touhou Fangame and Related Game Accomplishments</h1>
     <p id='description'>This page lists known Lunatic No Miss No Bomb (LNN) clears and
 	notable high scores for Touhou fangames, as well as Touhou-related games. For LNNs, any additional
