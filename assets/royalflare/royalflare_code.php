@@ -143,11 +143,11 @@ if (!empty($_SESSION['subpage'])) {
         $shots = get_shots($game);
     }
     if ($subpage == 'search') {
-        $player = (isset($_GET['player']) ? $_GET['player'] : '');
-        $game = (isset($_GET['game']) ? $_GET['game'] : '');
-        $diff = (isset($_GET['diff']) ? $_GET['diff'] : '');
-        $shot = (isset($_GET['shot']) ? $_GET['shot'] : '');
-        $comment = (isset($_GET['comment']) ? $_GET['comment'] : '');
+        $player = (isset($_GET['player']) ? htmlentities($_GET['player']) : '');
+        $game = (isset($_GET['game']) ? htmlentities($_GET['game']) : '');
+        $diff = (isset($_GET['diff']) ? htmlentities($_GET['diff']) : '');
+        $shot = (isset($_GET['shot']) ? htmlentities($_GET['shot']) : '');
+        $comment = (isset($_GET['comment']) ? htmlentities($_GET['comment']) : '');
         if ($game == 'th095' || $game == 'th125' || $game == 'th143' || $game == 'th165') {
             $diff = '-';
         }
