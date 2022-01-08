@@ -208,13 +208,13 @@ function setEventListeners() {
 }
 
 function updateTitle(event) {
-    var title = $("#custom_title").val().escapeHTML();
+    var title = $("#custom_title").val();
 
     if (title.length > MAX_TITLE_LENGTH) {
         return;
     }
 
-    $("#title" + event.data.id).html(title);
+    $("#title" + event.data.id).html(title.escapeHTML());
     slotTitles[event.data.id] = title;
     localStorage.setItem("slotTitles", JSON.stringify(slotTitles));
     emptyModal();
@@ -283,7 +283,7 @@ $(document).ready(function () {
         $("#title" + i).on("click", {id: i}, titleMenu);
 
         if (localStorage.hasOwnProperty("slotTitles")) {
-            $("#title" + i).html(slotTitles[i]);
+            $("#title" + i).html(slotTitles[i].escapeHTML());
         }
     }
 
