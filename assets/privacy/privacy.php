@@ -1,11 +1,5 @@
 <div id='wrap' class='wrap'>
-    <?php echo wrap_top('https://www.pixiv.net/member.php?id=420928', '', 'LM7', $lang_code) ?>
-    <h1>Privacy Policy</h1>
-	<?php
-		if (!empty($_GET['redirect'])) {
-			echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
-		}
-	?>
+    <?php echo wrap_top() ?>
     <p class='wide'><strong>Effective date:</strong> 16 December 2019</p>
     <p>Maribel Hearn's Touhou Portal ("us", "we", or "our") operates the maribelhearn.com
     website (hereinafter referred to as the "Service").</p>

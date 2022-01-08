@@ -1,42 +1,6 @@
 <?php include_once 'assets/shared/tl.php'; include_once 'assets/wr/wr_code.php' ?>
 <div id='wrap' class='wrap'>
-	<div id='topbar'>
-	    <?php echo wrap_top('https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ', '', 'Catboyjeremie', $lang_code) ?>
-		<span id='toggle'>
-            <?php
-                $other = ($layout == 'New' ? 'Old' : 'New');
-                echo '<a id="layouttoggle" href="wr">' . $other . ' layout</a>';
-            ?>
-        </span>
-		<div id='languages'>
-            <a id='en-gb' class='flag' href='wr?hl=en-gb'>
-                <img class='flag_en' src='assets/flags/uk.png' alt='<?php echo tl_term('Flag of the United Kingdom', $lang) ?>'>
-                <p class='language'>English (UK)</p>
-            </a>
-            <a id='en-us' class='flag' href='wr?hl=en-us'>
-                <img class='flag_en' src='assets/flags/us.png' alt='<?php echo tl_term('Flag of the United States', $lang) ?>'>
-                <p class='language'>English (US)</p>
-            </a>
-            <a id='jp' class='flag' href='wr?hl=jp'>
-                <img src='assets/flags/japan.png' alt='<?php echo tl_term('Flag of Japan', $lang) ?>'>
-                <p class='language'>日本語</p>
-            </a>
-            <a id='zh' class='flag' href='wr?hl=zh'>
-                <img src='assets/flags/china.png' alt='<?php echo tl_term('Flag of the P.R.C.', $lang) ?>'>
-                <p class='language'>简体中文</p>
-            </a>
-            <a id='ru' class='flag' href='wr?hl=ru'>
-                <img src='assets/flags/russia.png' alt='<?php echo tl_term('Flag of Russia', $lang) ?>'>
-                <p class='language'>Русский</p>
-            </a>
-        </div>
-	</div>
-	<h1><?php echo tl_term('Touhou World Records', $lang); ?></h1>
-    <?php
-        if (!empty($_GET['redirect'])) {
-            echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
-        }
-    ?>
+	<?php echo wrap_top() ?>
     <p id='description'><?php
         if ($lang == 'Chinese') {
             echo '这个网页准确地记载所有「东方Project」的打分世界记录，时不时地更新。注意：页底的玩家排行榜只算玩家们得到的记录有多少，' .
@@ -97,7 +61,6 @@
             </a></p><p id="recent_link"><a href="#recent" class="recentrecords">' . tl_term('Recent Records', $lang) .
             '</a></p><p id="recent_linkm"><a href="#recentm" class="recentrecords">' . tl_term('Recent Records', $lang) .
             '</a></p><p><a href="#players" class="playerranking">' . tl_term('Player Ranking', $lang) .
-            '</a></p><p><a href="#acks" class="ack">' . tl_term('Acknowledgements', $lang) .
             '</a></p></div><noscript>';
         }
         echo '<div id="contents" class="border"><p id="overall_linkn"><a href="#overall" ' .
@@ -114,8 +77,7 @@
         '</a></p>';
         echo '<p id="recent_linkmn"><a href="#recentm" class="recentrecords">' . tl_term('Recent Records', $lang) .
         '</a></p>';
-        echo '<p><a href="#players" class="playerranking">' . tl_term('Player Ranking', $lang) . '</a></p>';
-        echo '<p><a href="#acks" class="ack">' . tl_term('Acknowledgements', $lang) . '</a></p></div>';
+        echo '<p><a href="#players" class="playerranking">' . tl_term('Player Ranking', $lang) . '</a></p></div>';
         if ($layout == 'New') {
             echo '</noscript>';
         }
@@ -472,70 +434,6 @@
 				?>
 			</tbody>
         </table>
-    </div>
-    <h2 id='acks' class='ack'><?php echo tl_term('Acknowledgements', $lang); ?></h2>
-    <div id='ack_container'>
-        <p id='jptlcredit'>
-            <?php
-                if ($lang == 'Chinese') {
-                    echo '感谢<a href="https://twitter.com/toho_yumiya">Yu-miya</a>提供头部文字的日语翻译。';
-                } else if ($lang == 'Japanese') {
-                    echo 'ページ上部のテキストは<a href="https://twitter.com/toho_yumiya">ゆーみや</a>' .
-                    'によって日本語に翻訳されました。';
-                } else if ($lang == 'Russian') {
-                    echo 'Японский перевод сделал <a href="https://twitter.com/toho_yumiya">Yu-miya</a>.';
-                } else {
-                    echo 'The Japanese translation of the top text was done by ' .
-                    '<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.';
-                }
-            ?>
-        </p>
-        <p id='cntlcredit'>
-            <?php
-                if ($lang == 'Chinese') {
-                    echo '感谢<a href="https://twitter.com/williewillus">williewillus</a>提供头部文字的中文翻译。';
-                } else if ($lang == 'Japanese') {
-                    echo 'ページ上部のテキストは<a href="https://twitter.com/williewillus">williewillus</a>' .
-                    'によって中国語に翻訳されました。';
-                } else if ($lang == 'Russian') {
-                    echo 'Китайский перевод сделал <a href="https://twitter.com/williewillus">williewillus</a>.';
-                } else {
-                    echo 'The Chinese translation of the top text was done by ' .
-                    '<a href="https://twitter.com/williewillus">williewillus</a>.';
-                }
-            ?>
-        </p>
-        <p id='rutlcredit'>
-            <?php
-                if ($lang == 'Chinese') {
-                    echo '感谢<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>提供头部文字的俄语翻译。';
-                } else if ($lang == 'Japanese') {
-                    echo 'ページ上部のテキストは<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>' .
-                    'によってロシア語に翻訳されました。';
-                } else if ($lang == 'Russian') {
-                    echo 'Русский перевод сделал <a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>.';
-                } else {
-                    echo 'The Russian translation of the top text was done by ' .
-                    '<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>.';
-                }
-            ?>
-        </p>
-		<p id='ack_mobile'>
-            <?php
-                if ($lang == 'Chinese') {
-                    echo '背景画师：<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>。';
-                } else if ($lang == 'Japanese') {
-                    echo '背景イメージは<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">' .
-                    'Catboyjeremie</a>さんのものを使用させていただいております。';
-                } else if ($lang == 'Russian') {
-					echo 'Иллюстрацию на фоне нарисовал(а) ' .
-					'<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>.';
-				} else {
-                    echo 'The background image was drawn by ' .
-                    '<a href="https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ">Catboyjeremie</a>.';
-                }
-            ?>
-		</p>
     </div>
     <p id='back'><strong><a id='backtotop' href='#top'><?php echo tl_term('Back to Top', $lang); ?></a></strong></p>
 	<?php echo '<input id="missingReplays" type="hidden" value="' . implode('', $missing_replays) . '">' ?>

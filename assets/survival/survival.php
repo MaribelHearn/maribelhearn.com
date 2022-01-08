@@ -1,13 +1,6 @@
 <?php include_once 'assets/survival/survival_code.php' ?>
 <div id='wrap' class='wrap'>
-    <?php echo wrap_top('https://www.pixiv.net/member.php?id=759506', 'https://www.pixiv.net/en/artworks/12517505', 'windtalker', $lang_code) ?>
-    <div id='content' data-html2canvas-ignore>
-		<h1>Survival Progress Table Generator</h1>
-        <?php
-			if (!empty($_GET['redirect'])) {
-				echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
-			}
-		?>
+    <?php echo wrap_top() ?>
         <noscript><strong>Notice:</strong> this page will not function properly with JavaScript disabled.</noscript>
 		<p>Fill in the best survivals you have pulled off in the table below. If you leave a dropdown menu on the N/A option, it will not be factored in.
         When you click Apply, three different tables indicating your survival progress will be generated.</p>
@@ -106,7 +99,6 @@
     <div id='bottom' data-html2canvas-ignore>
         <p><label for='toggleData'>Save Data</label><input id='toggleData' type='checkbox'></p>
 		<p><input id='apply' type='button' value='Apply'><input id='reset' type='button' value='Reset'></p>
-        <p id='ack_mobile'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=759506'>windtalker</a>.</p>
     </div>
 </div>
 <div id='results' data-html2canvas-ignore>

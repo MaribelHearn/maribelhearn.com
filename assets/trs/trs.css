@@ -73,56 +73,15 @@ textarea {
 #game_other_p, #video {
     display: none;
 }
-#ack {
-    font: 11px verdana,sans-serif;
-    text-align: right;
-    background: none;
-    position: fixed;
-    color: white;
-    bottom: 5px;
-    right: 5px;
-}
-#ack_br, #ack_mobile {
-    display: none;
-}
-#ack > a:link {
-    color: #1e90ff;
-}
-#ack > a:active {
-    color: red;
-}
-#ack > a:visited {
-    color: #ff69b4;
-}
-#ack_container > p {
-    margin: 4px;
-}
 @media only screen and (min-width: 1100px) and (max-width: 1400px) {
     .wrap {
         margin-left: 15%;
         margin-right: 15%;
-    }
-    #ack_br {
-        display: inline;
     }
 }
 @media only screen and (min-width: 800px) and (max-width: 1100px) {
     .wrap {
         margin-left: 10%;
         margin-right: 10%;
-    }
-    #ack {
-        display: none;
-    }
-    #ack_mobile {
-        display: block;
-    }
-}
-@media only screen and (max-width: 800px) {
-    #ack {
-        display: none;
-    }
-    #ack_mobile {
-        display: block;
     }
 }

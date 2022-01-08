@@ -30,24 +30,6 @@
             <input id='changelog_button' type='button' class='button menu' value='Changelog'>
             <input id='reset_button' type='button' class='button menu' value='Reset'>
         </div>
-		<div id='credits_container'>
-            <div id='acknowledgements'>
-                <p class='thin'>The artworks used for this page are drawn by:</p>
-				<ul id='credits'>
-					<li><a href='https://www.pixiv.net/member.php?id=4920496' target='_blank'>Dairi:</a> Characters</li>
-					<li><a href='https://twitter.com/korindo' target='_blank'>ZUN:</a> Shottypes</li>
-					<li><a href='http://www.pixiv.net/member.php?id=4678572' target='_blank'>ETERSIARUM:</a> Background</li>
-                </ul>
-				<p class='thin'>Special thanks go to:</p>
-				<ul id='special_thanks'>
-					<li><a href='https://www.youtube.com/channel/UCI1HPxKRky4Zm_mrRUH415Q' target='_blank'>Plus:</a> Original idea, testing</li>
-					<li><a href='https://twitter.com/puella_meiberu' target='_blank'>Dorothy Sweet:</a> Design, testing</li>
-					<li>pienyan: Testing</li>
-					<li><a href='https://twitter.com/TheDukeofBooms' target='_blank'>ZXNova:</a> Most Dairi face crops</li>
-					<li><a href='https://twitter.com/CuprianLycoris'>Cuprian Lycoris:</a> Most ZUN face crops</li>
-				</ul>
-            </div>
-		</div>
 		<p id='msg_container'></p>
     </div>
     <div id='tier_list_container' class='dark_bg'>

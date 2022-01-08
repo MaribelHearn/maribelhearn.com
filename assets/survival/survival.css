@@ -118,17 +118,6 @@ input[type=button] {
     margin-left: auto;
     margin-right: auto;
 }
-#ack {
-    font: 11px verdana,sans-serif;
-    text-align: right;
-    background: none;
-    position: fixed;
-    bottom: 0px;
-    right: 5px;
-}
-#ack_br, #ack_mobile {
-    display: none;
-}
 #results { /* modal */
     font: 14px verdana, sans-serif;
     text-align: center;
@@ -165,16 +154,6 @@ input[type=button] {
         margin-left: 15%;
         margin-right: 15%;
     }
-    #ack_br {
-        display: inline;
-    }
-}
-@media only screen and (max-width: 1300px) {
-    #ack {
-        position: relative;
-        margin-top: 0px;
-        float: left;
-    }
 }
 @media only screen and (min-width: 1100px) and (max-width: 1300px) {
     .wrap {
@@ -210,11 +189,5 @@ input[type=button] {
     }
     #results {
         font-size: 11px;
-    }
-    #ack {
-        display: none;
-    }
-    #ack_mobile {
-        display: block;
     }
 }

@@ -1,11 +1,5 @@
 <div id='wrap' class='wrap'>
-    <?php echo wrap_top('', '', '', $lang_code) ?>
-    <h1>Seihou Banshiryuu C67</h1>
-	<?php
-		if (!empty($_GET['redirect'])) {
-			echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
-		}
-	?>
+    <?php echo wrap_top() ?>
     <p>This page covers the scoring system and mechanics of the Comiket 67 release of Seihou Banshiryuu.</p>
     <picture>
         <source srcset='assets/c67/images/boxart.webp' type='image/webp'>

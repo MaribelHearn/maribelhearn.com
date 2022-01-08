@@ -1,6 +1,5 @@
 <div id='wrap' class='wrap'>
-    <?php echo wrap_top('https://www.pixiv.net/en/users/4936550', 'https://www.pixiv.net/en/artworks/75237542', '明ノ宮 飛鳥', $lang_code) ?>
-	<h1>Touhou Fangame and Related Game Accomplishments</h1>
+    <?php echo wrap_top() ?>
     <p id='description'>This page lists known Lunatic No Miss No Bomb (LNN) clears and
 	notable high scores for Touhou fangames, as well as Touhou-related games. For LNNs, any additional
 	survival condition(s) are listed with the game titles.</p>
@@ -887,8 +886,5 @@
             <td><a href='https://www.youtube.com/watch?v=IZWDG7W67kI'>Video</a></td>
 		</tr>
 	</table>
-	<p id='ack_mobile'>This background image
-	was drawn by <a href='https://www.pixiv.net/en/users/4936550'>明ノ宮 飛鳥</a>
-	(<a href='https://www.pixiv.net/en/artworks/75237542'>Source</a>).</p>
     <p id='back'><strong><a href='#top'>Back to Top</a></strong></p>
 </div>

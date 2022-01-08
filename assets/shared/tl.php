@@ -363,7 +363,7 @@ function tl_term(string $term, string $lang) {
             case 'Western Records': return '海外記録';
             case 'Recent Records': return '最近の世界記録';
             case 'Player Ranking': return 'プレイヤーのランキング';
-            case 'Acknowledgements': return '謝辞';
+            case 'Credits': return '謝辞';
             case 'Touhou World Records': return '東方の世界記録';
             case 'Touhou Lunatic No Miss No Bombs': return '東方Lunaticノーミスノーボム';
             case 'No. of LNNs': return 'LNNの数';
@@ -383,6 +383,13 @@ function tl_term(string $term, string $lang) {
             case 'Flag of Japan': return '日本の国旗';
             case 'Flag of the P.R.C.': return '中華人民共和国の国旗';
             case 'Flag of Russia': return 'ロシアの国旗';
+            case 'Contributors': return '寄稿者';
+            case 'Translators': return 'トランスレーター';
+            case 'Japanese': return '日本語';
+            case 'Chinese': return '中国語';
+            case 'Russian': return 'ロシア語';
+            case 'Character Artists': return 'キャラのアーティスト';
+            case 'Background Artists': return '背景のアーティスト';
             default: return $term;
         }
     } else if ($lang == 'Chinese' || $lang == 'zh') {
@@ -414,7 +421,7 @@ function tl_term(string $term, string $lang) {
             case 'Western Records': return '西方纪录';
             case 'Recent Records': return '最近世界纪录';
             case 'Player Ranking': return '玩家排行';
-            case 'Acknowledgements': return '致谢';
+            case 'Credits': return '致谢';
             case 'Touhou World Records': return '东方世界纪录';
             case 'Touhou Lunatic No Miss No Bombs': return '东方LNN';
             case 'No. of LNNs': return 'LNN的数量';
@@ -434,6 +441,13 @@ function tl_term(string $term, string $lang) {
             case 'Flag of Japan': return '日本旗';
             case 'Flag of the P.R.C.': return '中国旗';
             case 'Flag of Russia': return '俄羅斯國旗';
+            case 'Contributors': return '合作者';
+            case 'Translators': return '翻译';
+            case 'Japanese': return '日语';
+            case 'Chinese': return '简体中文';
+            case 'Russian': return '俄语';
+            case 'Character Artists': return '角色艺术家';
+            case 'Background Artists': return '背景艺术家 ';
             default: return $term;
         }
     } else if ($lang == 'Russian' || $lang == 'ru') {
@@ -446,13 +460,20 @@ function tl_term(string $term, string $lang) {
             case 'World Records': return 'Мировые рекорды';
             case 'Player Ranking': return 'Рейтинг игроков';
             case 'Recent Records': return 'Последние Мировые Рекорды';
-            case 'Acknowledgements': return 'Примечания';
+            case 'Credits': return 'Примечания';
             case 'Flag of the United Kingdom': return 'флаг Великобритании';
             case 'Flag of the United States': return 'флаг США';
             case 'Flag of Japan': return 'флаг Японии';
             case 'Flag of the P.R.C.': return 'флаг Китая';
             case 'Flag of Russia': return 'флаг России';
             case 'Back to Top': return 'Наверх';
+            case 'Contributors': return 'Contributors';
+            case 'Translators': return 'Translators';//Переводчики
+            case 'Japanese': return 'Японский';
+            case 'Chinese': return 'Китайский';
+            case 'Russian': return 'Русский';
+            case 'Character Artists': return 'Character Artists';
+            case 'Background Artists': return 'Background Artists';
             default: return $term;
         }
     } else {

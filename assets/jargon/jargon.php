@@ -1,11 +1,5 @@
 <div id='wrap' class='wrap'>
-    <?php echo wrap_top('', '', '', $lang_code) ?>
-    <h1>Touhou Community Jargon</h1>
-	<?php
-		if (!empty($_GET['redirect'])) {
-			echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
-		}
-	?>
+    <?php echo wrap_top() ?>
     <p>This list contains explanations for terms and acronyms used in the community of Touhou players. It also contains general gaming and shoot 'em up terms that are relevant to Touhou.</p>
     <h2>Contents</h2>
     <div id='contents' class='border'>

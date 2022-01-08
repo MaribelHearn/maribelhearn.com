@@ -179,17 +179,6 @@ table.center {
 #UM_image {
     background-position: -900px 0px;
 }
-#ack {
-    font: 11px verdana,sans-serif;
-    text-align: right;
-    background: none;
-    position: fixed;
-    bottom: 5px;
-    right: 5px;
-}
-#ack_br, #ack_mobile {
-    display: none;
-}
 #GFWExtra {
      text-align: left;
 }
@@ -200,21 +189,9 @@ table.center {
     }
 }
 @media only screen and (min-width: 1300px) and (max-width: 1500px) {
-    #ack_br {
-        display: inline;
-    }
-}
-@media only screen and (min-width: 1300px) and (max-width: 1500px) {
     .wrap {
         margin-left: 15%;
         margin-right: 15%;
-    }
-}
-@media only screen and (max-width: 1300px) {
-    #ack {
-        position: relative;
-        margin-bottom: 0px;
-        float: left;
     }
 }
 @media only screen and (min-width: 1100px) and (max-width: 1300px) {
@@ -235,11 +212,5 @@ table.center {
 @media only screen and (max-width: 910px) {
     h1 {
         margin-bottom: 15px;
-    }
-    #ack {
-        display: none;
-    }
-    #ack_mobile {
-        display: block;
     }
 }

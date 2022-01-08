@@ -9,14 +9,17 @@
     <p><a href='#gfx'>Graphical issues</a></p>
     <p><a href='#gameplay'>Gameplay questions</a></p>
     <p><a href='#desync'>Why does my replay desync?</a></p>
-    <p><a href='#ack'>Acknowledgements</a></p>
 </div>
+<hr>
 <h2 id='getstarted'>Getting started</h2>
 <p>The Touhou Wiki <a href='https://en.touhouwiki.net/wiki/Getting_Started'>Getting Started</a> page contains general information about the Touhou series of shoot 'em up games,
-as well as what mindset to have when playing these games and gameplay tips. You will die a lot. Everyone dies all the time and this is normal. You will need to learn and practice and you will improve over time.</p>
+as well as what mindset to have when playing these games and gameplay tips. You will die a lot. Everyone dies all the time and this is normal.
+You will need to learn and practice and you will improve over time.</p>
 <h4 id='start'>What game should I start with?</h4>
 <p><em>See the <a href='faq?p=start'>Which game to start with</a> page for the full story.</em></p>
-<p>Tl;dr: PCB, IN, MoF and DDC (Touhou 7, 8, 10 and 14) for simple mechanics and a smooth learning curve. SA, UFO and LoLK (Touhou 11, 12 and 15) are not recommended, but perfectly fine if you are up to the challenge.</p>
+<p>Tl;dr: PCB, IN, MoF and DDC (Touhou 7, 8, 10 and 14) for simple mechanics and a smooth learning curve.
+SA, UFO and LoLK (Touhou 11, 12 and 15) are not recommended, but perfectly fine if you are up to the challenge.</p>
+<hr>
 <h2 id='where'>Where do I get the games?</h2>
 <h4 id='steam'>Steam</h4>
 <p>Steam is the most reliable way to purchase the official Touhou games. Shoot 'em up games from Shoot the Bullet (Touhou 9.5) onwards are all available on Steam. The mainline games cost $15 while spinoff games cost $11.
@@ -25,6 +28,7 @@ Go to <a href='https://hakureishrine.org'>hakureishrine.org</a> for all of the o
 <p>For games not on Steam, or if you do not want to use Steam, there are other places where you can buy the games legally. Amazon has physical copies of these games but for a higher price.
 This currently is the only legal way to obtain games EoSD (Touhou 6) to PoFV (Touhou 9). Other distributors such as DLSite, DMM and PLAYISM have some of the entries if you do not want to buy from Steam.
 Check out the Touhou Wiki <a href='https://en.touhouwiki.net/wiki/Purchasing_Guide'>Purchasing Guide</a> for help with this.</p>
+<hr>
 <h2 id='setup'>Setting up</h2>
 <p>After getting the game, <em>assuming you got the game legally</em>, you will most likely want to set up before playing. If you want to play in English or any other language you will need to download THCRAP.
 Many games will also require vpatch or the game will have input lag. EoSD (Touhou 6) is pretty stubborn and needs more setup, see the page <a href='faq?p=eosd'>Getting EoSD to work</a>.</p>
@@ -59,11 +63,14 @@ delete it and try again. Otherwise, try any of the following:</p>
     <li><a href='https://aka.ms/vs/16/release/vc_redist.x86.exe'>Visual C++ Redistributable (64-bit)</a></li>
     <li><a href='https://aka.ms/vs/16/release/vc_redist.x64.exe'>Visual C++ Redistributable (32-bit)</a></li>
 </ul>
+<hr>
 <h2 id='eosd'>Getting EoSD (Touhou 6) to work</h2>
 <p><em>See the page <a href='faq?p=eosd'>Getting EoSD to work</a> for how to run Touhou 6.</em></p>
+<hr>
 <h2 id='gfx'>Graphical issues</h2>
 <p><em>See the page <a href='faq?p=gfx'>Graphical issues</a>.</em></p>
 <p>If your game is wide, small, pixelated or otherwise not shown correctly on your screen, check out the page linked above.</em></p>
+<hr>
 <h2 id='gameplay'>Gameplay questions</h2>
 <h4 id='clear'>What is a '1cc'?</h4>
 <p>1cc stands for <strong>1 credit clear</strong> and is also regularly called "clear", verb "clearing". This means beating the game without using any continues.
@@ -92,6 +99,7 @@ Note that the spinoffs consist of three digits; for example, StB (Touhou 9.5) us
 <p>Screenshots made using the Home or P key are in the <span class='tt'>snapshot</span> subfolder in your game folder.</p>
 <h4 id='zip'>Why is the game not saving my progress?</h4>
 <p>You are playing inside a <span class='tt'>.zip</span> archive file. Right click the file and extract its contents into a folder, then play the game from that folder.</p>
+<hr>
 <h2 id='desync'>Why does my replay desync?</h2>
 <h4 id='classic'>EoSD to IN (Touhou 6-8)</h4>
 <p>You paused during boss dialogue, or the replay was played on a static English patch while you are watching it on the original game.
@@ -113,6 +121,7 @@ To avoid this, either use <a href='tools#thprac'>thprac</a> or reset your run tw
 <h4 id='um'>UM (Touhou 18)</h4>
 <p>Desyncs can have several causes. Replays will desync if you changed your active card <em>after</em> beating a boss, or if you are using Momoyo's Centipede card.
 Starting the Extra Stage with Byakuren's Scroll card equipped will also desync your run. These issues are fixed by <a href='tools#thprac'>thprac</a> (use the F12 menu).</p>
+<hr>
 <!--<h4 id='cd'>How do I set up the game starting from the CD?</h4>
 <p><a href='https://www.youtube.com/watch?v=8Yt2bSh32K8'>This video</a> provides a quick explanation.</p>
 <h4 id='fps'>Why is the game running at 5000 <abbr title='frames per second'>FPS</abbr>?</h4>

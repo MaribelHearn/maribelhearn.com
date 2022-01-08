@@ -1,11 +1,5 @@
 <div id='wrap' class='wrap'>
-    <?php echo wrap_top('https://www.pixiv.net/member.php?id=2025430', '', 'Yakumo_Stocking', $lang_code) ?>
-    <h1>THWiki Popularity Poll 2021 Results</h1>
-    <?php
-        if (!empty($_GET['redirect'])) {
-            echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
-        }
-    ?>
+    <?php echo wrap_top() ?>
     <p>An English translation of the results of the 2021 incarnation of the annual THWiki Popularity Poll.</p>
     <p>As per usual, the questionnaire results are <strong>not released yet</strong>. They will follow at a later time.</p>
     <!--<p>Confusingly, "preliminary" simply means the full results without the questionnaire results.
@@ -120,6 +114,5 @@
             </tbody>
         </table>
     </div>
-    <p id='ack_mobile' class='noborders'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=2025430'>Yakumo_Stocking</a>.</p>
     <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
 </div>

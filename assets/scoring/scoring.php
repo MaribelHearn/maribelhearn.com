@@ -1,6 +1,6 @@
 <?php include_once 'assets/scoring/scoring_code.php' ?>
 <div id='wrap' class='wrap'>
-    <?php echo wrap_top('https://www.pixiv.net/member.php?id=87950', '', 'りすたる', $lang_code) ?>
+    <?php echo wrap_top() ?>
 	<h1>High Score Storage</h1>
 	<?php
 		if (!empty($_GET['redirect'])) {
@@ -163,6 +163,5 @@
     <p id='error'></p>
 	<p><label for='toggleData'>Save Data</label><input id='toggleData' type='checkbox'></p>
 	<p><input id='calc' type='button' value='Calculate'><input id='reset' type='button' value='Reset'></p>
-    <div id='ack_mobile'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=87950'>りすたる</a>.</div>
     <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
 </div>

@@ -29,7 +29,16 @@ table {
     margin: 10px;
 }
 .wide-top {
-    margin-top: 10px;
+    margin-top: 25px;
+}
+.warning {
+    color: darkred;
+    font-weight: bold;
+}
+.credits {
+    text-align: left;
+    margin-left: 25%;
+    margin-top: 15px;
 }
 .pages_left {
     float: left;
@@ -122,24 +131,7 @@ table {
     font-size: 11px;
     color: #505050;
 }
-#ack, #ack_admin {
-    font: 11px verdana,sans-serif;
-    background: none;
-    position: fixed;
-    color: white;
-    bottom: 5px;
-    right: 5px;
-}
-#ack > a:link, #ack_admin > a:link {
-    color: #1e90ff;
-}
-#ack > a:active, #ack_admin > a:active {
-    color: red;
-}
-#ack > a:visited, #ack_admin > a:visited {
-    color: #ff69b4;
-}
-#ack_br, #ack_mobile, .hidden {
+.hidden {
     display: none;
 }
 @media only screen and (min-width: 1100px) and (max-width: 1400px) {
@@ -147,16 +139,8 @@ table {
         margin-left: 15%;
         margin-right: 15%;
     }
-    #ack #ack_br {
-        display: inline;
-    }
 }
 @media only screen and (max-width: 1100px) {
-    #ack {
-        position: relative;
-        color: black;
-        float: left;
-    }
     .page_table > .link > .tooltip {
         width: 200px;
         top: 100%;
@@ -175,19 +159,5 @@ table {
 @media only screen and (max-width: 800px) {
     #avatar {
         width: 95%;
-    }
-    #ack, #ack_admin {
-        display: none;
-    }
-    #ack_mobile {
-        display: block;
-        clear: both;
-    }
-}
-@media only screen and (max-height: 550px) {
-    #ack, #ack_admin, #ack_error {
-        position: relative;
-        color: black;
-        float: left;
     }
 }

@@ -185,16 +185,11 @@ li {
 #characters div:not(:nth-child(1)) {
     border-top: 1px solid #606060;
 }
-#buttons_mobile, #add_tier_box_mobile, #credits_container {
+#buttons_mobile, #add_tier_box_mobile {
     display: none;
 }
-#instructions_list, #instructions_mobile, #credits, #special_thanks {
+#instructions_list, #instructions_mobile {
     text-align: left;
-}
-#acknowledgements {
-    width: 400px;
-    margin-left: auto;
-    margin-right: auto;
 }
 #show {
     display: none;
