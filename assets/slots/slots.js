@@ -9,6 +9,7 @@ var SPECIES = ["Human", "Magician", "Devil", "Ghost", "Yuki-onna", "Night sparro
     NUMBER_OF_LOCATIONS = 33,
     WIDTH = 120,
     NUMBER_OF_SLOTS = 9,
+    MAX_TITLE_LENGTH = 30,
     slotTitles = ["You are a ...", "Best friend", "Hates you", "First kiss", "Has a crush on you",
     "Married to", "Honeymoon location", "No. of children", "Cockblocked by"],
     chars = {'1': {}, '2': {}},
@@ -18,7 +19,7 @@ var SPECIES = ["Human", "Magician", "Devil", "Ghost", "Yuki-onna", "Night sparro
     running;
 
 String.prototype.escapeHTML = function () {
-    return this.replace('<', "&lt;").replace('>', "&gt;").replace('&', "&amp;");
+    return this.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/&/g, "&amp;");
 }
 
 function isMobile() {
@@ -206,22 +207,47 @@ function setEventListeners() {
     $("body").on("keyup", closeModal);
 }
 
-function changeTitle(event) {
-    if ((event.key && event.key == "Enter") || event.type == "click") {
-        $("#title" + event.data.id).html($("#custom_title").val().escapeHTML());
-        slotTitles[event.data.id] = $("#custom_title").val();
-        localStorage.setItem("slotTitles", JSON.stringify(slotTitles));
-        emptyModal();
+function updateTitle(event) {
+    var title = $("#custom_title").val().escapeHTML();
+
+    if (title.length > MAX_TITLE_LENGTH) {
+        return;
+    }
+
+    $("#title" + event.data.id).html(title);
+    slotTitles[event.data.id] = title;
+    localStorage.setItem("slotTitles", JSON.stringify(slotTitles));
+    emptyModal();
+}
+
+function titleChanged(event) {
+    var length = $("#custom_title").val().length;
+
+    if (event.key || event.type == "click") {
+        if (event.key == "Enter" || event.type == "click") {
+            updateTitle(event);
+            return;
+        }
+
+        $("#title_length").html(length + "/" + MAX_TITLE_LENGTH);
+
+        if (length > MAX_TITLE_LENGTH) {
+            $("#title_length").css({"color": "red", "font-weight": "bold"});
+        } else {
+            $("#title_length").css({"color": "grey", "font-weight": "normal"});
+        }
     }
 }
 
 function titleMenu(event) {
     emptyModal();
     $("#modal_inner").html("<h2>Change Title</h2><p><input id='custom_title' " +
-    "type='text' value='" + $("#title" + event.data.id).html() + "'></p>" +
+    "type='text' value='" + $("#title" + event.data.id).html() +
+    "'><small id='title_length'>" + $("#title" + event.data.id).html().length +
+    "/" + MAX_TITLE_LENGTH + "</small></p>" +
     "<p><input id='change_title' type='button' value='Change'></p>");
-    $("#custom_title").on("keyup", {id: event.data.id}, changeTitle);
-    $("#change_title").on("click", {id: event.data.id}, changeTitle);
+    $("#custom_title").on("keyup", {id: event.data.id}, titleChanged);
+    $("#change_title").on("click", {id: event.data.id}, titleChanged);
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
 }
