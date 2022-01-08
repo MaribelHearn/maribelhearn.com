@@ -217,9 +217,9 @@
     slower than VIVIT-W, which does not help, and in addition to that, her regular shot is thin (like VIVIT-A's) and does
     not always seem to be at its full potential when firing at a bigger enemy. In contrary, HiranoO's bomb is the strongest bomb from afar,
     and it covers a wide area on the screen as well, making it an excellent way of getting rid of enemies instantly and damaging
-    bosses; regardless, however, she is the worst shottype in the game, due to her awkward shots and difficulty to control her
-    together with slow movement, that make her very poor at item collection, although her damage dealt to bosses is pretty good,
-    having the strongest focused shot in the game, which is the second strongest shot overall, only beaten by Hirano-S's regular shot.</p>
+    bosses. Regardless, however, she is the worst shottype in the game, due to her awkward shots and difficulty to control her
+    together with slow movement. These factors make her very poor at item collection. At least, her damage dealt to bosses is pretty good,
+    having the strongest focused shot in the game (second strongest shot overall), only beaten by HiranoS's regular shot.</p>
     <h3 id='comparison'>Comparison</h3>
     <div id='container'>
         <table>

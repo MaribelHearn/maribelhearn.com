@@ -18,7 +18,7 @@ You will need to learn and practice and you will improve over time.</p>
 <h4 id='start'>What game should I start with?</h4>
 <p><em>See the <a href='faq?p=start'>Which game to start with</a> page for the full story.</em></p>
 <p>Tl;dr: PCB, IN, MoF and DDC (Touhou 7, 8, 10 and 14) for simple mechanics and a smooth learning curve.
-SA, UFO and LoLK (Touhou 11, 12 and 15) are not recommended, but perfectly fine if you are up to the challenge.</p>
+SA, UFO and LoLK (Touhou 11, 12 and 15) are not recommended, but are perfectly fine if you are up to the challenge.</p>
 <hr>
 <h2 id='where'>Where do I get the games?</h2>
 <h4 id='steam'>Steam</h4>
@@ -91,7 +91,7 @@ while also leaving some room for unplanned bombs, so you can bomb when you mess 
 <h4 id='ud'>I ran out of space for replays. How do I add more?</h4>
 <p>You can add additional replays by naming them in the following format: <span class='code'>thX_udYYYY.rpy</span>. The "X" is the game number used for the replay files of the game,
 while "YYYY" is any 4 letters or digits. These files will be detected by the game if put in its replay folder. You can reach them by using the right arrow key on the Replay screen in-game.
-Note that the spinoffs consist of three digits; for example, StB (Touhou 9.5) uses <span class='code'>th95</span> and GFW (Touhou 12.8) uses <span class='code'>th128</span>.</p>
+Note that most spinoffs consist of three digits; for example, GFW (Touhou 12.8) uses <span class='code'>th128</span> and ISC (Touhou 14.3) uses <span class='code'>th143</span>.</p>
 <p><strong>Note:</strong> MoF (Touhou 10) does not read these extra replays, meaning you can only use the default slots.</p>
 <h4 id='replayfolder'>Where I can find my replays / screenshots?</h4>
 <p>For EoSD (Touhou 6) up to UFO (Touhou 12), replays are in the <span class='tt'>replay</span> subfolder in your game folder.
@@ -106,7 +106,7 @@ Note that the spinoffs consist of three digits; for example, StB (Touhou 9.5) us
 Unpausing using the Esc key instead of the Z key prevents the dialogue desync.</p>
 <h4 id='mof'>MoF (Touhou 10)</h4>
 <p>You probably started a replay from Stage 4, which always desyncs in MoF. Start from another stage instead.
-If this does not solve it, you are unfortunately a victim of a rare desync that can happen in MoF. Save replays multiple times to help prevent it.</p>
+If this does not solve it, you might have saved a replay more than once. In MoF, saving a replay more than once will cause every replay except the first to glitch out; it may have 0 FPS and may crash.</p>
 <h4 id='sa'>SA (Touhou 11)</h4>
 <p>You fast-forwarded a replay, or started it from Stage 6, and then repeatedly died to Utsuho's first nonspell. You can prevent this by starting from any stage before Stage 6,
 and <em>not</em> fast-forwarding after you defeat the Stage 5 boss. You can fast-forward again once the Stage 6 music plays.</p>

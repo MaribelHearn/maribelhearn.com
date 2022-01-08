@@ -116,7 +116,7 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
         <td><strong>Unfocus:</strong><br>Forward focus shot.<br><strong>Focus:</strong><br>Forward focus shot with piercing.</td>
         <td>Can <a href='jargon#term_poc'>PoC</a> at any power level.</td>
         <td>High shot damage for both unfocus and focus. Has the infamous "Malice Cannon" trick, where mashing shift deals crazy high damage.</td>
-        <td>Weak bomb with short invincibility. Alice has almost no range and Marisa also has limited range.</td>
+        <td>Weak bomb with short invincibility. Alice has almost no horizontal range and Marisa also has limited horizontal range.</td>
     </tr>
     <tr>
         <th>Scarlet Team<br>(Sakuya &amp; Remilia)</th>
@@ -267,7 +267,7 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
     </tr>
     <tr>
         <th>SanaeA<br>(Snake)</th>
-        <td>Horizontally homing shot.</td>
+        <td>Horizontal homing shot.</td>
         <td>Great bomb for UFO collection, screen clear is great. Homing helps on certain stage portions and boss patterns.</td>
         <td>Low shot damage, suffers especially lategame. Homing snakes can miss their target, lowering damage even more. Bomb is not always as good depending on which pattern it's used on.</td>
     </tr>
@@ -447,7 +447,7 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
         <th>Winter subshot</th>
         <td><strong>Shot:</strong><br>Forward focus shot.<br><strong>Release:</strong><br>Stationary release, duration scales with level, boosts shot damage.</td>
         <td>High shot damage. Release can be put on top of the boss for a lot of damage, especially at high level.
-        Has a bug where the shot damage increases even further per season level, until you either release or die.</td>
+        Has a bug where the shot damage increases even further per season level, until you either release, die or stop shooting.</td>
         <td>Release as an escape button is expensive with little reward, because you lose your season level and barely regenerate.</td>
     </tr>
 </table>

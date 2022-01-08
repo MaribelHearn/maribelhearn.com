@@ -41,7 +41,7 @@
         </tr>
     </table>
     <div id='bottom' data-html2canvas-ignore>
-        <p>Credit to an unknown original creator for the idea of this randomizer.</p>
+        <p>Credit to an unknown original creator for the idea of this randomiser.</p>
         <p>Originally known as Touhou Click and Drag Game.</p>
     </div>
     <?php
