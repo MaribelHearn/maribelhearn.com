@@ -242,8 +242,7 @@
 			'или определенного спелла, тогда как niL SSG содержат читы, такие как неуязвимость. Также есть отдельный ' .
 			'SSG для MoF от <a href="https://www.twitch.tv/akaldar" target="_blank">Akaldar</a> для эффективной ' .
 			'практики в MoF, отдельные SSG для GFW и TD для эффективной практики скоринга от ' .
-			'<a href="https://twitter.com/remilia_kawai" target="_blank">Leo</a>, SSG для DDC и LoLK от ' .
-			'<a href="https://www.youtube.com/channel/UChyVpooBi31k3xPbWYsoq3w" target="_blank">32th System</a> и отдельные SSG для HSiFS с ' .
+			'Leo, SSG для DDC и LoLK от <a href="https://www.youtube.com/channel/UChyVpooBi31k3xPbWYsoq3w" target="_blank">32th System</a> и отдельные SSG для HSiFS с ' .
 			'читами. Учтите, что иногда появлятся баг в меню который дюпает SSG и делает другие SSG невидимыми.';
 		} else if ($lang == 'Japanese') {
 			echo '<span class="code">.ssg</span>ファイルをゲームの動作中に読み込み、プラクティスオプションの設定やチートの' .
@@ -255,8 +254,7 @@
 			'frame of the game or a specific spell, while the niL SSGs have cheat options such as invincibility. ' .
 			'There is also a separate MoF SSG made by <a href="https://www.twitch.tv/akaldar" target="_blank">Akaldar</a> ' .
 			'for efficient practice in that game specifically, a separate GFW SSG, as well as a TD SSG specifically ' .
-			'designed for efficient scoring practice, made by <a href="https://twitter.com/remilia_kawai" ' .
-			'target="_blank">Leo</a>, a DDC SSG and a LoLK Chapter Practice SSG by ' .
+			'designed for efficient scoring practice, made by Leo, a DDC SSG and a LoLK Chapter Practice SSG by ' .
 			'<a href="https://www.youtube.com/channel/UChyVpooBi31k3xPbWYsoq3w" target="_blank">32th System</a> and separate HSiFS SSGs ' .
 			'with cheat options. Be wary of an occasional menu bug that causes an SSG to duplicate itself and ' .
 			'make other SSGs invisible.';
@@ -402,7 +400,7 @@
 		if ($lang == 'Russian') { echo 'GFW "Brown Label" от '; }
 		else if ($lang == 'Japanese') { echo '大戦争 "ブラウンレーベル" プラクティス by '; }
 		else { echo 'GFW "Brown Label" Practice by '; }
-	?><a href='https://twitter.com/givemeberserker'>MegaPulse</a></strong></p>
+	?><a href='https://twitter.com/eerokurkisuo'>MegaPulse</a></strong></p>
     <p><?php
 		if ($lang == 'Russian') {
 			echo 'Модифицированные <span class="code">.dat</span> файлы, которые позволяют практиковать определенные ' .
@@ -869,7 +867,7 @@
 			'the same download page.';
 		}
 	?></p>
-	<a href='https://mega.nz/file/1iQhyC5S#GLZTjEnQ1iKsN9fPGESJJK-xiyi7jqJMdC3gPH19LtM' target='_blank'><?php echo tl_term('Downloads', $lang) ?></a>
+	<a href='https://mega.nz/file/ouQEjJ7a#VpBj9EnbNbT3s1uba126AYZzggXz4Zb8jowSujitfdo' target='_blank'><?php echo tl_term('Downloads', $lang) ?></a>
     <!-- Graphical Patches -->
     <hr>
     <h2 id='graphical'><?php

@@ -907,6 +907,14 @@ function calc() {
         "<th class='sorttable_numeric'>Score</th><th>WR Percentage</th><th>Progress Bar</th><th>WR</th></tr></thead><tbody>",
         precision = parseInt($("#precision").val());
 
+    if (!WRs) {
+        $.get("assets/json/wrlist.json", function (data) {
+            WRs = data;
+            calc();
+        }, "json");
+        return;
+    }
+
     if (isNaN(precision) || precision < 0 || precision > 5) {
         $("#error").html("<strong class='error'>Invalid precision; minimum is 0, maximum is 5.</strong>");
         return;
@@ -926,7 +934,7 @@ function calc() {
                 id = "#" + game + difficulty + shottype;
                 score = $(id).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "");
 
-                if (score === "") {
+                if (score === "" || score < 0) {
                     scores[game][difficulty][shottype] = 0;
                     $("#error").html("");
                     continue;
@@ -1119,8 +1127,4 @@ $(document).ready(function () {
     $("#all").on("click", checkAll);
     $(".check").on("click", checkGame);
     $("#toggleData").on("click", save);
-
-    $.get("assets/json/wrlist.json", function (data) {
-        WRs = data;
-    }, "json");
 });

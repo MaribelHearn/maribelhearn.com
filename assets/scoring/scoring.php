@@ -1,12 +1,6 @@
 <?php include_once 'assets/scoring/scoring_code.php' ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
-	<h1>High Score Storage</h1>
-	<?php
-		if (!empty($_GET['redirect'])) {
-			echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
-		}
-	?>
     <noscript><strong>Notice:</strong> this page cannot function properly with JavaScript disabled.</noscript>
     <p>Enter your high scores. You can leave any high score empty. The scores you entered will be compared to the world records that
     were achieved with the same shottypes and percentages will be given. When you click the 'Calculate' button at the bottom of the
