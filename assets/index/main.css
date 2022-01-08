@@ -40,6 +40,9 @@ table {
     margin-left: 25%;
     margin-top: 15px;
 }
+.dead {
+    text-decoration: line-through;
+}
 .pages_left {
     float: left;
     width: 50%;
