@@ -12,15 +12,12 @@ var SPECIES = ["Human", "Magician", "Devil", "Ghost", "Yuki-onna", "Night sparro
     MAX_TITLE_LENGTH = 30,
     slotTitles = ["You are a ...", "Best friend", "Hates you", "First kiss", "Has a crush on you",
     "Married to", "Honeymoon location", "No. of children", "Cockblocked by"],
+    bannedChars = ['<', '>', '&'],
     chars = {'1': {}, '2': {}},
     locs = {},
     slots = [],
     speed = 100,
     running;
-
-String.prototype.escapeHTML = function () {
-    return this.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/&/g, "&amp;");
-}
 
 function isMobile() {
     return navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1;
@@ -214,7 +211,7 @@ function updateTitle(event) {
         return;
     }
 
-    $("#title" + event.data.id).html(title.escapeHTML());
+    $("#title" + event.data.id).html(title);
     slotTitles[event.data.id] = title;
     localStorage.setItem("slotTitles", JSON.stringify(slotTitles));
     emptyModal();
@@ -239,15 +236,23 @@ function titleChanged(event) {
     }
 }
 
+function checkBannedChars(event) {
+    if (event.key && bannedChars.includes(event.key)) {
+        event.preventDefault();
+        return;
+    }
+}
+
 function titleMenu(event) {
     emptyModal();
     $("#modal_inner").html("<h2>Change Title</h2><p><input id='custom_title' " +
-    "type='text' value='" + $("#title" + event.data.id).html() +
-    "'><small id='title_length'>" + $("#title" + event.data.id).html().length +
+    "type='text' value='" + slotTitles[event.data.id] +
+    "'><small id='title_length'>" + slotTitles[event.data.id].length +
     "/" + MAX_TITLE_LENGTH + "</small></p>" +
     "<p><input id='change_title' type='button' value='Change'></p>");
     $("#custom_title").on("keyup", {id: event.data.id}, titleChanged);
     $("#change_title").on("click", {id: event.data.id}, titleChanged);
+    $("#custom_title").on("keypress", checkBannedChars);
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
 }
@@ -283,7 +288,7 @@ $(document).ready(function () {
         $("#title" + i).on("click", {id: i}, titleMenu);
 
         if (localStorage.hasOwnProperty("slotTitles")) {
-            $("#title" + i).html(slotTitles[i].escapeHTML());
+            $("#title" + i).html(slotTitles[i]);
         }
     }
 
