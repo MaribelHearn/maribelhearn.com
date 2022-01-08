@@ -39,7 +39,7 @@
     <h2><?php echo tl_term('Background Artists', $lang_code) ?></h2>
     <ul class='credits'>
         <li><a href='https://www.pixiv.net/member.php?id=420928' target='_blank'>LM7</a>:
-        Index (<a href='https://www.pixiv.net/en/artworks/6957612' target='_blank'>Source</a>)</li>
+        Index, About, Credits, Privacy (<a href='https://www.pixiv.net/en/artworks/6957612' target='_blank'>Source</a>)</li>
         <li><a href='https://www.pixiv.net/member.php?id=161300' target='_blank'>ウータン</a>:
         DRC (<a href='https://www.pixiv.net/en/artworks/24983603' target='_blank'>Source</a>)</li>
         <li><a href='https://www.pixiv.net/en/users/4936550' target='_blank'>明ノ宮 飛鳥</a>:
@@ -70,5 +70,6 @@
         WR (<a href='https://pbs.twimg.com/media/AsicC9bCQAAzu-H?format=jpg' target='_blank'>Source</a>)</li>
         <li><a href='https://www.pixiv.net/member.php?id=4678572' target='_blank'>ETERSIARUM:</a>
         Tiers (<a class='dead' href='https://www.pixiv.net/member_illust.php?mode=medium&illust_id=41297499' target='_blank'>Source</a>)</li>
+        <li>Unknown source: Jargon, Royalflare, Slots</li>
     </ul>
 </div>
