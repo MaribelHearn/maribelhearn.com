@@ -332,7 +332,8 @@ function wrap_top() {
         return;
     }
     if (empty($error_code)) {
-        echo '<h1 data-html2canvas-ignore>' . (in_array($page, $tl_title) ? tl_term($data->title, $lang_code) : preg_split('/ - /', $data->title)[0]) . '</h1>';
+        $title = preg_split('/ - /', $data->title)[0];
+        echo '<h1 data-html2canvas-ignore>' . (in_array($page, $tl_title) ? tl_term($title, $lang_code) : $title) . '</h1>';
     } else {
         echo '<h1>' . $error_code . '</h1>';
     }
