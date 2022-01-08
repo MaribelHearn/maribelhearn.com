@@ -35,6 +35,8 @@ table, th, td {
     font-size: 9px;
 }
 .title {
+    word-wrap: break-word;
+    max-width: 100px;
     cursor: pointer;
     width: 100px;
 }
@@ -76,6 +78,10 @@ table, th, td {
 }
 #save_link {
     text-decoration: none;
+}
+#title_length {
+    margin-left: 4px;
+    color: grey;
 }
 #slot0 {
     font-size: 16px;
