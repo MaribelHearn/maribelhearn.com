@@ -253,7 +253,7 @@
 			'allowing for practice options as well as cheats. SpoilerAL SSGs require the <em>original Japanese ' .
 			'versions</em> of the games to work. The 4.6 SSGs have practice options such as skipping to a specific ' .
 			'frame of the game or a specific spell, while the niL SSGs have cheat options such as invincibility. ' .
-			'There is also a separate MoF SSG made by <a href="https://www.twitch.tv/akaldar" target="_blank">Akaldar</a>' .
+			'There is also a separate MoF SSG made by <a href="https://www.twitch.tv/akaldar" target="_blank">Akaldar</a> ' .
 			'for efficient practice in that game specifically, a separate GFW SSG, as well as a TD SSG specifically ' .
 			'designed for efficient scoring practice, made by <a href="https://twitter.com/remilia_kawai" ' .
 			'target="_blank">Leo</a>, a DDC SSG and a LoLK Chapter Practice SSG by ' .
@@ -517,7 +517,7 @@
 		else if ($lang == 'Japanese') { echo '妖々夢のボスラッシュパッチです。'; }
 		else { echo 'A boss rush patch for PCB.'; }
 	?></p>
-    <a href='http://www.mediafire.com/<?php echo tl_term('Download', $lang) ?>/vd08pz9ogjbhq8g/th07b.rar' target='_blank'><?php echo tl_term('Download', $lang) ?></a>
+    <a href='http://www.mediafire.com/download/vd08pz9ogjbhq8g/th07b.rar' target='_blank'><?php echo tl_term('Download', $lang) ?></a>
 	<p><strong><?php
 		if ($lang == 'Russian') { echo 'Боссраш WBaWC от '; }
 		else if ($lang == 'Japanese') { echo '鬼形獣ボスラッシュ by '; }
@@ -779,7 +779,7 @@
 		if ($lang == 'Russian') { echo 'RNG патчи от '; }
 		else if ($lang == 'Japanese') { echo 'ランダムパッチ by '; }
 		else { echo 'RNG patches by '; }
-	?><a href='https://www.twitch.tv/thedaikarasu' target='_blank'>Daikarasu</a></strong>
+	?><a href='https://www.twitch.tv/dai_th' target='_blank'>Daikarasu</a></strong>
 	<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> RNG</a></p>
 	<p><?php
 		if ($lang == 'Russian') {
