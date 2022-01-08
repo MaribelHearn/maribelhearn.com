@@ -23,7 +23,7 @@
         <li>Cero: DRC</li>
         <li><a href='https://twitter.com/CrestedPeak9' target='_blank'>CrestedPeak9</a>: DRC</li>
         <li><a href='https://twitter.com/Cerasis_th' target='_blank'>Cerasis</a>: DRC</li>
-        <li><a href='https://twitter.com/williewillus' target='_blank'>williewillus</a>: WR, LNN</li>
+        <li>williewillus: WR, LNN</li>
         <li>Jumbo: PoFV</li>
         <li><a href='https://space.bilibili.com/107846194' target='_blank'>Komeiji Compiler</a>: TWC</li>
     </ul>
