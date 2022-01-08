@@ -17,7 +17,7 @@ $lives = [
     'LoLK' => [15, 'Lifepieces', '<strong>Pointdevice Mode:</strong> -<br><strong>Legacy Mode:</strong> Gained by getting Chapter Bonuses, 3 per life*'],
     'HSiFS' => [16, 'Score', 'Maingame: 10m, 20m, 40m, 70m, 100m, 150m, 250m, 500m, 1b<br>Extra: 10m, 20m, 40m, 60m, 80m, 100m'],
     'WBaWC' => [17, 'Lifepieces', 'Dropped when ending Roaring Mode with a lifepiece spirit in stock, 3 per life'],
-    'UM' => [18, 'Shop', 'Lifepieces, extends, as well as other cards that award lives can be bought from the shop']
+    'UM' => [18, 'Cards', 'See bottom of page']
 ];
 $bombs = [
     'SoEW' => [2, 'Standard', '3**', 'Bomb items'],
@@ -36,8 +36,8 @@ $bombs = [
     'DDC' => [14, 'Standard', '3', 'Bombpieces dropped every bonus, unless a lifepiece is dropped; 8 per bomb'],
     'LoLK' => [15, 'Standard', '3', '<strong>Pointdevice Mode:</strong> Gained by getting Chapter Bonuses, 5 per bomb<br><strong>Legacy Mode:</strong> Dropped by Spell Cards in Extra only, 5 per bomb'],
     'HSiFS' => [16, 'Standard', '3', 'Bomb items, bombpieces dropped from capturing boss attacks and certain enemies'],
-    'WBaWC' => [17, 'Standard', '3', 'Dropped when ending Roaring Mode with a bombpiece spirit in stock, 3 per bomb'],
-    'UM' => [18, 'Standard', '3', 'Bombpieces, full bombs, as well as other cards that award bombs can be bought from the shop']
+    'WBaWC' => [17, 'Standard', '3*****', 'Dropped when ending Roaring Mode with a bombpiece spirit in stock, 3 per bomb'],
+    'UM' => [18, 'Standard', '3', 'See bottom of page']
 ];
 ?>
 <h2 id='resources'>How do I get more resources?</h2>
@@ -80,3 +80,12 @@ Furthermore, you are awarded a bomb if you get an extra life when you already ha
 <p>** In SoEW (Touhou 2), when you die and have 0 extra lives left, you will receive 2 bombs in addition to the stock. You start out with 1 bomb in Extra.</p>
 <p>*** In PCB (Touhou 7), Marisa and Sakuya have different bomb stocks. Marisa starts out with 2 bombs and Sakuya starts out with 4 bombs.</p>
 <p>**** In IN (Touhou 8), if playing as Ghost Team, you get an extra bomb when clearing a stage with less than 3 bombs left.</p>
+<p>***** In WBaWC (Touhou 17), if playing as an Otter shottype, you start out with 4 bombs.</p>
+<h4 id='cards'>Lives and bombs in UM (Touhou 18)</h4>
+<p>Lives can be gained by buying certain cards from the shop, as well as collecting fragment cards on stages. The Life Card will award a life. The Phoenix's Tail will award 3 lives.
+The Physical Enhancement Jizo will award a life, as well as awarding a fragment upon clearing each next stage. Using the Item Season card to summon Lily White, then defeating her,
+may cause her to drop a life fragment. The Fragmented Life Card will award a life fragment; that card is also dropped by certain stage enemies.</p>
+<p>Bombs can be gained by buying certain cards from the shop as well. The Spell Card (not to be confused with the boss attacks) will award a bomb. Princess Kaguya's Secret Stash
+will award a bomb whenever you get hit. Spell Before The Fall will award a bomb when bought and also award a bomb upon clearing each next stage. Great Tengu's Barley Rice will award a bomb
+fragment if used at full power. Using the Item Season card to summon Lily White, then defeating her, may cause her to drop a bomb fragment. The Fragmented Spell Card will
+award a bomb fragment; that card is also dropped by certain stage enemies.</p>

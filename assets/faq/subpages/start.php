@@ -50,4 +50,4 @@ Many players have gotten their first clears on Easy and have worked their way up
 </ul>
 <p>These are interesting games to try out once you find yourself situated and comfortable with playing Touhou, I recommend you give them a chance when possible.
 GFW is most similar to the mainline games in regards to having Easy, Normal, Hard, Lunatic, and Extra (there are only three stages in the main game, though).
-StB, DS, ISC, and VD are 'scene' games, as in the main content those games offer are individual patterns that players can experience rather than the usual stages to go through.</p>
+StB, DS, ISC, and VD are 'scene' games, which do not feature full stages, but instead offer individual patterns that players can experience.</p>
