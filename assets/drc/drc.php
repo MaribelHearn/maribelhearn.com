@@ -1,28 +1,6 @@
 <?php include_once 'assets/drc/drc_code.php' ?>
 <div id='wrap' class='wrap'>
-    <div id='topbar'>
-        <?php echo wrap_top('https://www.pixiv.net/member.php?id=161300', '', 'ウータン', $lang_code) ?>
-		<div id='languages'>
-            <a id='en' class='flag' href='drc?hl=en'>
-                <img class='flag_en' src='assets/flags/uk.png' alt='<?php echo tl_term('Flag of the United Kingdom', $lang) ?>'>
-                <p class='language'>English</p>
-            </a>
-            <a id='jp' class='flag' href='drc?hl=jp'>
-                <img src='assets/flags/japan.png' alt='<?php echo tl_term('Flag of Japan', $lang) ?>'>
-                <p class='language'>日本語</p>
-            </a>
-            <a id='zh' class='flag' href='drc?hl=zh'>
-                <img src='assets/flags/china.png' alt='<?php echo tl_term('Flag of the P.R.C.', $lang) ?>'>
-                <p class='language'>简体中文</p>
-            </a>
-        </div>
-	</div>
-	<h1>Dodging Rain Competition</h1>
-	<?php
-		if (!empty($_GET['redirect'])) {
-			echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
-		}
-	?>
+    <?php echo wrap_top() ?>
     <p id='drcIntro'><?php
 		if ($lang == 'Chinese') {
 			echo '<strong>Dodging Rain Competition(DRC)</strong>是由<a href="https://www.youtube.com/user/mariomaster657">ZM</a>' .
@@ -283,7 +261,7 @@
 			<?php
 				foreach ($Rubrics['SCORE'] as $game => $value) {
 					foreach ($Rubrics['SCORE'][$game] as $diff => $rubric) {
-						if (is_array($rubric['wr'])) {
+						if (!empty($rubric['wr']) && is_array($rubric['wr'])) {
 		                    foreach ($rubric['wr'] as $shot => $score) {
 		                        echo '<tr><th>' . tl_game($game . ' ', $lang) . $diff . ' ' . tl_char($shot, $lang) .
 								'</th><td>' . abbreviate($score, $lang) . '</td></tr>';
@@ -605,48 +583,6 @@
         </table>
         <br>
         <p><strong><a class='backToTop' href='#top'><?php echo tl_term('Back to Top', $lang) ?></a></strong></p>
-    </div>
-    <h2 id='ackText'><?php
-		if ($lang == 'Chinese') { echo '致谢'; }
-		else if ($lang == 'Japanese') { echo '謝辞'; }
-		else { echo 'Acknowledgements'; }
-	?></h2>
-	<div id='ack_container' class='noborders'>
-		<p id='jptlcredit'>
-			<?php
-				if ($lang == 'Chinese') { echo '本页面由<a href="https://twitter.com/7bitm">7bitm</a>，' .
-				'<a href="https://twitter.com/toho_yumiya">ゆーみや</a>日语翻译。'; }
-				else if ($lang == 'Japanese') { echo '<a href="https://twitter.com/7bitm">7bitm</a>と' .
-				'<a href="https://twitter.com/toho_yumiya">ゆーみや</a>によって日本語に翻訳されました。'; }
-				else { echo 'The Japanese translation was done by ' .
-				'<a href="https://twitter.com/7bitm">7bitm</a> and ' .
-				'<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.'; }
-			?>
-		</p>
-		<p id='cntlcredit'>
-			<?php
-				if ($lang == 'Chinese') { echo '本页面由Cero，' .
-				'<a href="https://twitter.com/CrestedPeak9">CrestedPeak9</a>，' .
-				'<a href="https://twitter.com/Cerasis_th">Cerasis</a>中文翻译。'; }
-				else if ($lang == 'Japanese') { echo 'Ceroと' .
-				'<a href="https://twitter.com/CrestedPeak9">CrestedPeak9</a>と' .
-				'<a href="https://twitter.com/Cerasis_th">Cerasis</a>によって中国語に翻訳されました。'; }
-				else { echo 'The Simplified Chinese translation was done by ' .
-				'<a href="https://twitter.com/IzayoiMeirin">Cero</a>, ' .
-				'<a href="https://twitter.com/CrestedPeak9">CrestedPeak9</a> and ' .
-				'<a href="https://twitter.com/Cerasis_th">Cerasis</a>.'; }
-			?>
-		</p>
-		<p id='ack_mobile'>
-			<?php
-				if ($lang == 'Chinese') { echo '背景画师：' .
-				'<a href="https://www.pixiv.net/member.php?id=161300">ウータン</a>。'; }
-				else if ($lang == 'Japanese') { echo '背景イメージは' .
-				'<a href="https://www.pixiv.net/member.php?id=161300">ウータン</a>さんのものを使用させていただいております。'; }
-				else { echo 'The background image was drawn by ' .
-				'<a href="https://www.pixiv.net/member.php?id=161300">ウータン</a>.'; }
-			?>
-		</p>
     </div>
 	<p id='back'><strong><a id='backtotop' href='#top'><?php echo tl_term('Back to Top', $lang); ?></a></strong></p>
 	<input id='shots' type='hidden' value='<?php

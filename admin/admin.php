@@ -34,6 +34,7 @@
         $cache = (object) array();
     }
     $flag_url = 'https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/16/';
+    $lang_code = 'en';
     function cmp(int $a, int $b) {
         if ($a == $b) {
             return 0;
@@ -89,7 +90,7 @@
 		</nav>
         <main>
             <div id='wrap' class='wrap'>
-                <?php echo wrap_top('https://www.pixiv.net/member.php?id=420928', '', 'LM7', 'en') ?>
+                <?php echo wrap_top() ?>
                 <h1>Admin Panel</h1>
                 <p><input id='setcookie' type='button' value='Set Blocking Cookie'></p>
                 <p id='response' class='wide-top'>Caching new entries...</p>
@@ -162,7 +163,6 @@
                 ?>
                 <p class='wide-top'>You are visiting this page using <strong id='os'></strong>.</p>
                 <p>You are visiting this page using <strong id='browser'></strong>.</p>
-                <p id='ack_mobile'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a>.</p>
             </div>
         </main>
         <?php

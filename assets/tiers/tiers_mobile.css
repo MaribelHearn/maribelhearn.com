@@ -105,11 +105,6 @@ input[type=button]:not(.button_bottom) {
 #import {
     height: 270px;
 }
-#acknowledgements {
-    width: auto;
-    margin-left: 0px;
-    margin-right: 0px;
-}
 @media only screen and (orientation: portrait) {
     #modal {
         padding-top: 10%;

@@ -1,12 +1,6 @@
 <?php include_once 'assets/gensokyo/gensokyo_code.php' ?>
 <div id='wrap' class='wrap'>
-    <?php echo wrap_top('http://h-yde.deviantart.com/', '', 'h-yde', $lang_code) ?>
-    <h1>Gensokyo Replay Archive</h1>
-	<?php
-		if (!empty($_GET['redirect'])) {
-			echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
-		}
-	?>
+    <?php echo wrap_top() ?>
     <p>A complete archive of the Touhou replays from replays.gensokyo.org, with the same search functionality as said website.</p>
     <p>On 25 September 2019, gensokyo.org expired, and as of the 30th it is inaccessible.
     As such, this archive has been created to preserve all of its replays.
@@ -202,6 +196,5 @@
             }
         }
     ?>
-    <p id='ack_mobile'>The background image was drawn by <a href='http://h-yde.deviantart.com/'>h-yde</a>.</p>
     <p><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
 </div>

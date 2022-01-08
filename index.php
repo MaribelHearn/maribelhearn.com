@@ -27,7 +27,7 @@
     $page = preg_replace('/\//', '', $page);
     $json = file_get_contents('assets/' . $page . '/' . $page . '.json');
     $data = (object) json_decode($json, true);
-    $use_index = array('index', 'about', 'privacy', 'error');
+    $use_index = array('index', 'about', 'credits', 'privacy', 'error');
     $css_js_file = in_array($page, $use_index) ? 'index' : $page;
     $has_mobile_sheet = file_exists('assets/' . $css_js_file . '/' . (in_array($page, $use_index) ? 'main' : $page) . '_mobile.css');
     $favicon_ext = file_exists('assets/' . $page . '/'. $page . '.ico') ? '.ico' : '.png';

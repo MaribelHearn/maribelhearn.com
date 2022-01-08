@@ -172,27 +172,6 @@ a.scene {
 #back {
     float: left;
 }
-#ack {
-    font: 11px verdana,sans-serif;
-    text-align: right;
-    background: none;
-    position: fixed;
-    color: white;
-    bottom: 0px;
-    right: 5px;
-}
-#ack > a:link {
-    color: #1e90ff;
-}
-#ack > a:active {
-    color: red;
-}
-#ack > a:visited {
-    color: #ff69b4;
-}
-#ack_br, #ack_mobile {
-    display: none;
-}
 @media only screen and (max-width: 1400px) {
     .wrap {
         margin-left: 0%;
@@ -235,20 +214,4 @@ a.scene {
         overflow-x: scroll;
     }
 
-}
-@media only screen and (max-width: 500px) {
-    #ack {
-        display: none;
-    }
-    #ack_mobile {
-        display: block;
-    }
-}
-@media only screen and (max-height: 600px) {
-    #ack {
-        display: none;
-    }
-    #ack_mobile {
-        display: block;
-    }
 }

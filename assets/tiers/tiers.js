@@ -1083,7 +1083,6 @@ function mobileInfo() {
     $("#modal_inner").append("<p>Use the buttons at the bottom of the screen to save your tier lists, " +
     "open the main menu, view these instructions, and switch between tiering characters, works, and shottypes (Switch Mode).</p>");
     $("#modal_inner").append("<p>Tap outside the window to close popup windows like this one.</p>");
-    $("#modal_inner").append("<h3>Credits</h3>" + $("#credits_container").html());
 }
 
 function desktopInfo() {
@@ -1108,7 +1107,6 @@ function desktopInfo() {
     $("#modal_inner").append("<p>Use the buttons at the top of the screen to save your tier lists, " +
     "import/export to text, take a screenshot, change the tier list settings, view the changelog, or reset for a new start.</p>");
     $("#modal_inner").append("<p>Click outside the window, or press Esc, to close popup windows like this one.</p>");
-    $("#modal_inner").append("<h2>Credits</h2>" + $("#credits_container").html());
 }
 
 function showInformation() {
@@ -1816,8 +1814,14 @@ function modalEraseAll() {
 }
 
 function modalEraseSingle() {
+    var i;
+
     clearTiers(getCurrentTierList(), settings.sort, settings.sort);
-    addDefaultTiers(settings.sort);
+
+    for (i = 0; i < defaultTiers.length; i++) {
+        addTier({data: {tierName: defaultTiers[i]}});
+    }
+
     emptyModal();
 }
 

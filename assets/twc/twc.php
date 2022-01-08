@@ -1,27 +1,6 @@
 <?php include_once 'assets/twc/twc_code.php' ?>
 <div id='wrap' class='wrap'>
-	<div id='topbar'>
-        <?php echo wrap_top('https://www.pixiv.net/en/users/1868609', '', '宇文風', $lang_code) ?>
-		<div id='languages'>
-            <a id='en' class='flag' href='twc?hl=en'>
-                <img class='flag_en' src='assets/flags/uk.png' alt='<?php echo tl_term('Flag of the United Kingdom', $lang) ?>'>
-                <p class='language'>English</p>
-            </a>
-            <a id='jp' class='flag' href='twc?hl=jp'>
-                <img src='assets/flags/japan.png' alt='<?php echo tl_term('Flag of Japan', $lang) ?>'>
-                <p class='language'>日本語</p>
-            </a>
-            <a id='zh' class='flag' href='twc?hl=zh'>
-                <img src='assets/flags/china.png' alt='<?php echo tl_term('Flag of the P.R.C.', $lang) ?>'>
-                <p class='language'>简体中文</p>
-            </a>
-            <a id='ru' class='flag' href='twc?hl=ru'>
-                <img src='assets/flags/russia.png' alt='<?php echo tl_term('Flag of Russia', $lang) ?>'>
-                <p class='language'>Русский</p>
-            </a>
-        </div>
-	</div>
-    <h1>Touhou World Cup</h1>
+    <?php echo wrap_top() ?>
 	<?php
 		if ($lang == 'Chinese') {
 			echo '<p><strong>Touhou World Cup (TWC)</strong>东方世界杯是一场每年一度的东方STG游戏比赛，' .
@@ -559,54 +538,6 @@
 			}
 		?>
 	</ul>
-	<div id='ack_container'>
-		<p id='jptlcredit'>
-			<?php
-				if ($lang == 'Chinese') { echo '本页面由' .
-				'<a href="https://twitter.com/toho_yumiya">Yu-miya</a>日语翻译。'; }
-				else if ($lang == 'Japanese') { echo '<a href="https://twitter.com/toho_yumiya">ゆーみや</a>' .
-				'によって日本語に翻訳されました。'; }
-				else if ($lang == 'Russian') { echo 'Японский перевод сделал ' .
-				'<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.'; }
-				else { echo 'The Japanese translation was done by <a href="https://twitter.com/toho_yumiya">Yu-miya</a>.'; }
-			?>
-		</p>
-		<p id='cntlcredit'>
-			<?php
-				if ($lang == 'Chinese') { echo '本页面由' .
-				'<a href="https://space.bilibili.com/107846194">Komeiji Compiler</a>中文翻译。'; }
-				else if ($lang == 'Japanese') { echo '<a href="https://space.bilibili.com/107846194">' .
-				'Komeiji Compiler</a>によって中国語に翻訳されました。'; }
-				else if ($lang == 'Russian') { echo 'Китайский перевод сделал ' .
-				'<a href="https://space.bilibili.com/107846194">Komeiji Compiler</a>.'; }
-				else { echo 'The Simplified Chinese translation was done by ' .
-				'<a href="https://space.bilibili.com/107846194">Komeiji Compiler</a>.'; }
-			?>
-		</p>
-		<p id='rutlcredit'>
-			<?php
-				if ($lang == 'Chinese') { echo '本页面由' .
-				'<a href="https://www.twitch.tv/kvs_stg">kvasovy</a>俄语翻译。'; }
-				else if ($lang == 'Japanese') { echo '<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>' .
-				'によってロシア語に翻訳されました。'; }
-				else if ($lang == 'Russian') { echo 'Русский перевод сделал ' .
-				'<a href="https://www.twitch.tv/kvs_stg">kvasovy</a>.'; }
-				else { echo 'The Russian translation was done by ' .
-				'<a href="https://www.twitch.tv/kvs_stg">kvasovy</a>.'; }
-			?>
-		</p>
-        <p id='ack_mobile'>
-			<?php
-				if ($lang == 'Chinese') { echo '背景画师：' .
-				'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>。'; }
-				else if ($lang == 'Japanese') { echo '背景イメージは' .
-				'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>さんのものを使用させていただいております。'; }
-				else if ($lang == 'Russian') { echo 'Иллюстрацию на фоне нарисовал(а) ' .
-				'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>.'; }
-				else { echo 'The background image was drawn by ' .
-				'<a href="https://www.pixiv.net/en/users/186860">宇文風</a>.'; }
-			?>
-		</p>
 	</div>
     <p id='back'><strong><a id='backtotop' href='#top'><?php echo tl_term('Back to Top', $lang); ?></a></strong></p>
 </div>

@@ -1,12 +1,5 @@
 <div id='wrap' class='wrap'>
-    <?php echo wrap_top('', '', '', $lang_code) ?>
-    <h1 data-html2canvas-ignore>Touhou Slot Machine</h1>
-    <div id='content' data-html2canvas-ignore>
-		<?php
-			if (!empty($_GET['redirect'])) {
-				echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
-			}
-		?>
+    <?php echo wrap_top() ?>
         <p>Click any of the slot title texts to change what it says.</p>
         <p>
             <input id='start' type='button' value='Insert Coin'>
@@ -48,8 +41,6 @@
         </tr>
     </table>
     <div id='bottom' data-html2canvas-ignore>
-        <p>The artworks used for this page are drawn by
-        <a href='https://www.pixiv.net/member.php?id=4920496' target='_blank'>Dairi</a>.</p>
         <p>Credit to an unknown original creator for the idea of this randomizer.</p>
         <p>Originally known as Touhou Click and Drag Game.</p>
     </div>

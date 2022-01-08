@@ -97,7 +97,7 @@ a:visited.dropdown_button {
 .hellsinker th {
     background-color: #333333;
 }
-.slowdown {
+.slowdown, .warning {
     color: red;
 }
 #contents tr, #contents th, #contents td, #responses tr, #responses th, #responses td, #jargontable th, #jargontable td,

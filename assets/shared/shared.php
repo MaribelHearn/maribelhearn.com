@@ -170,7 +170,7 @@ function navbar(string $page) {
         $navbar .= '<a href="/admin">Admin</a> | ';
     }
 
-    $navbar .= '<a href="/about">About Me</a> | <a href="/privacy">Privacy Policy</a> ';
+    $navbar .= '<a href="/about">About Me</a> | <a href="/credits">Credits</a> | <a href="/privacy">Privacy</a> ';
 
     if (!show_admin($token_path)) {
         $navbar .= '| <a href="https://ko-fi.com/maribelhearn42">Buy me a coffee</a>';
@@ -272,8 +272,6 @@ function navbar(string $page) {
         $cap = 'Admin';
     } else if ($page == 'about') {
         $cap = 'About Me';
-    } else if ($page == 'privacy') {
-        $cap = 'Privacy Policy';
     }
     $navbar = str_ireplace($cap . '</a>', $cap . '</strong>', $navbar);
     if ($page == 'admin') {
@@ -286,71 +284,61 @@ function navbar(string $page) {
     }
     return $navbar;
 }
-function wrap_top_ja(string $art, string $sauce, string $artist) {
-    echo '<p id="ack" data-html2canvas-ignore>背景イメージは';
-    if (empty($art)) {
-        echo $artist . '</p>';
-    } else {
-        echo '<a href="' . $art . '">' . $artist . '</a>さんの<br id="ack_br">ものを使用させていただいております';
-        if (!empty($sauce)) {
-            echo '（<a href="' . $sauce . '">ソース </a>）</p>';
-        } else {
-            echo '</p>';
-        }
-    }
-}
-function wrap_top_zh(string $art, string $sauce, string $artist) {
-    echo '<p id="ack" data-html2canvas-ignore>背景画师：';
-    if (empty($art)) {
-        echo $artist . '</p>';
-    } else {
-        echo '<a href="' . $art . '">' . $artist . '</a>';
-        if (!empty($sauce)) {
-            echo '（<a href="' . $sauce . '">来源</a>）</p>';
-        } else {
-            echo '</p>';
-        }
-
-    }
-}
-function wrap_top_ru(string $art, string $sauce, string $artist) {
-    echo '<p id="ack" data-html2canvas-ignore>Иллюстрацию на фоне <br id="ack_br">нарисовал(а) ';
-    if (empty($art)) {
-        echo $artist . '</p>';
-    } else {
-        echo '<a href="' . $art . '">' . $artist . '</a>';
-        if (!empty($sauce)) {
-            echo ' (<a href="' . $sauce . '">источник</a>)</p>';
-        } else {
-            echo '</p>';
-        }
-    }
-}
-function wrap_top_en(string $art, string $sauce, string $artist) {
-    echo '<p id="ack" data-html2canvas-ignore>This background image';
-    if (empty($art)) {
-        echo '<br id="ack_br"> was drawn by ' . $artist . '</p>';
-    } else {
-        if (empty($sauce)) {
-            echo '<br id="ack_br"> was drawn by <a href="' . $art . '">' . $artist . '</a></p>';
-        } else {
-            echo ' was drawn by <a href="' . $art . '">' . $artist . '</a><br class="ack_br"> (<a href="' . $sauce . '">Source</a>)</p>';
-        }
-    }
-}
-function wrap_top(string $art, string $sauce, string $artist, string $lang_code) {
-    if (!empty($artist)) {
-        if ($lang_code == 'ja') {
-            wrap_top_ja($art, $sauce, $artist);
-        } else if ($lang_code == 'zh') {
-            wrap_top_zh($art, $sauce, $artist);
-        } else if ($lang_code == 'ru') {
-            wrap_top_ru($art, $sauce, $artist);
-        } else {
-            wrap_top_en($art, $sauce, $artist);
-        }
+function wrap_top() {
+    global $page, $lang_code, $error_code;
+    $ja = Array('drc', 'lnn', 'tools', 'twc', 'wr');
+    $zh = Array('drc', 'lnn', 'pofv', 'twc', 'wr');
+    $ru = Array('lnn', 'tools', 'twc', 'wr');
+    $tl_title = Array('credits', 'lnn', 'wr');
+    $json = file_get_contents('assets/' . $page . '/' . $page . '.json');
+    $data = (object) json_decode($json, true);
+    if (in_array($page, $ja) || in_array($page, $zh) || in_array($page, $ru)) {
+        echo '<div id="topbar">';
     }
     echo '<span id="hy_container" data-html2canvas-ignore><span id="hy"></span><p id="hy_text">' . theme_name($lang_code) . '</p></span>';
+    if ($page == 'lnn' || $page == 'wr') {
+        echo '<span id="toggle"><a id="layouttoggle" href="wr">' . ($layout == 'New' ? 'Old' : 'New') . ' layout</a></span>';
+    }
+    if (in_array($page, $ja) || in_array($page, $zh) || in_array($page, $ru)) {
+        echo '<div id="languages">';
+        if ($page == 'wr') {
+            echo '<a id="en-gb" class="flag" href="wr?hl=en-gb">' .
+            '<img class="flag_en" src="assets/flags/uk.png" alt="' . tl_term('Flag of the United Kingdom', $lang_code) . '">' .
+            '<p class="language">English (UK)</p></a><a id="en-us" class="flag" href="wr?hl=en-us">' .
+            '<img class="flag_en" src="assets/flags/us.png" alt="' . tl_term('Flag of the United States', $lang_code) . '">' .
+            '<p class="language">English (US)</p></a> ';
+        } else {
+            echo '<a id="en" class="flag" href="' . $page . '?hl=en">' .
+            '<img class="flag_en" src="assets/flags/uk.png" alt="' . tl_term('Flag of the United Kingdom', $lang_code) . '"><p class="language">English</p></a> ';
+        }
+        if (in_array($page, $ja)) {
+            echo '<a id="jp" class="flag" href="' . $page . '?hl=jp">' .
+            '<img src="assets/flags/japan.png" alt="' . tl_term('Flag of Japan', $lang_code) . '"><p class="language">日本語</p></a> ';
+        }
+        if (in_array($page, $zh)) {
+            echo '<a id="zh" class="flag" href="' . $page . '?hl=zh">' .
+            '<img src="assets/flags/china.png" alt="' . tl_term('Flag of the P.R.C.', $lang_code) . '"><p class="language">简体中文</p></a> ';
+        }
+        if (in_array($page, $ru)) {
+            echo '<a id="ru" class="flag" href="' . $page . '?hl=ru">' .
+            '<img src="assets/flags/russia.png" alt="' . tl_term('Flag of Russia', $lang_code) . '"><p class="language">Русский</p></a>';
+        }
+        echo '</div>';
+    }
+    if ($page == 'survival' || $page == 'slots') {
+        echo '<div id="content" data-html2canvas-ignore="" style="display:block">';
+    }
+    if ($page == 'faq' || $page == 'royalflare') {
+        return;
+    }
+    if (empty($error_code)) {
+        echo '<h1 data-html2canvas-ignore>' . (in_array($page, $tl_title) ? tl_term($data->title, $lang_code) : preg_split('/ - /', $data->title)[0]) . '</h1>';
+    } else {
+        echo '<h1>' . $error_code . '</h1>';
+    }
+	if (!empty($_GET['redirect'])) {
+		echo '<p class="wide" data-html2canvas-ignore>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
+	}
 }
 function handle_file_upload() {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {

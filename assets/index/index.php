@@ -1,6 +1,5 @@
 <div id='wrap' class='wrap'>
-    <?php echo wrap_top('https://www.pixiv.net/member.php?id=420928', '', 'LM7', $lang_code) ?>
-    <h1>Maribel Hearn's Touhou Portal</h1>
+    <?php echo wrap_top() ?>
     <p>A privacy-friendly collection of convenient webpages for the Touhou community.</p>
     <p id='desktop_hover'>Hover your cursor over a link for a description of that page. Flags show available translations.</p>
     <h2 id='page_links'>Page Links</h2>
@@ -138,10 +137,9 @@
         <div id='special_thanks'>
             <h2>Special Thanks</h2>
             <p class='wide'>Many thanks to my awesome supporters for covering server costs!</p>
-            <p>Taishisamaaa</p>
+            <p>Taishisamaaa, Omega, MeFigaYoma, Sodamachine and anonymous supporters</p>
         </div>
     </div>
-    <div id='ack_mobile'><p>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=420928'>LM7</a>.</p></div>
     <div id='bottom'>
         <p id='last_modified'>Last updated at <?php echo date('Y-m-d H:i:s', filemtime('.git/FETCH_HEAD')) . ' ' . date('T') ?></p>
     </div>

@@ -1,11 +1,5 @@
 <div id='wrap' class='wrap'>
-    <?php echo wrap_top('', '', 'RAT_Huang', $lang_code) ?>
-    <h1>Maribel's Achievement History</h1>
-	<?php
-		if (!empty($_GET['redirect'])) {
-			echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
-		}
-	?>
+    <?php echo wrap_top() ?>
     <p id='notice'><strong>Notice:</strong> this page is best viewed on mobile using landscape mode.</p>
     <p>I am a bullet hell player who mostly plays for score and mains Touhou 13: Ten Desires.
 	I have also scored Touhou 16: Hidden Star in Four Seasons, Seihou Banshiryuu C67 and Samidare.</p>
@@ -4515,6 +4509,5 @@
         </tr>
         </table>
     </div>
-	<p id='ack_mobile' class='noborders'>The background image was drawn by <a href='https://www.pixiv.net/member.php?id=2263353'>RAT_Huang</a>.</p>
     <p><strong><a href='#top'>Back to Top</a></strong></p>
 </div>

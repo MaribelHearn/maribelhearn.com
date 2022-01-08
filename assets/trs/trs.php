@@ -1,11 +1,5 @@
 <div id='wrap' class='wrap'>
-    <?php echo wrap_top('https://www.pixiv.net/en/users/20799', '', '白雪 睦月', $lang_code) ?>
-    <h1>Touhou Replay Showcase</h1>
-    <?php
-        if (!empty($_GET['redirect'])) {
-            echo '<p>(Redirected from <em>' . $_GET['redirect'] . '</em>)</p>';
-        }
-    ?>
+    <?php echo wrap_top() ?>
     <p>Touhou Replay Showcase is a weekly community stream that is broadcast every weekend.
     Players can submit their Touhou replays to the stream, which will be showcased and commentated on in some future weekend.
     Any skill level or category is accepted. Currently, the stream is managed by
@@ -39,5 +33,4 @@
     <p><a href='https://docs.google.com/spreadsheets/d/1YJ644DfyjU02ECytPoySlz4FMWwoiJQMZEJxlChz7I0/edit?usp=sharing'>
         <span class='icon sheets_icon'></span> Current queue
     </a></p>
-    <p id='ack_mobile'>The background image was drawn by <a href='https://www.pixiv.net/en/users/20799'>白雪 睦月</a>.</p>
 </div>

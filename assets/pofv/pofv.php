@@ -1,29 +1,9 @@
+<?php include_once 'assets/shared/tl.php' ?>
 <div id='wrap' class='wrap'>
-    <div id='topbar'>
-	    <?php echo wrap_top('https://www.pixiv.net/member.php?id=21613', '', 'Kong Xian', $lang_code) ?>
-		<div id='languages'>
-            <a id='en' class='flag' href='pofv?hl=en'>
-                <img class='flag_en' src='assets/flags/uk.png' alt='<?php echo 'Flag of the United Kingdom' ?>'>
-                <p class='language'>English</p>
-            </a>
-            <a id='zh' class='flag' href='pofv?hl=zh'>
-                <img src='assets/flags/china.png' alt='<?php echo 'Flag of the P.R.C.' ?>'>
-                <p class='language'>简体中文</p>
-            </a>
-        </div>
-	</div>
-    <h1>Phantasmagoria of Flower View</h1>
-	<?php
-		if (!empty($_GET['redirect'])) {
-			echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
-		}
-	?>
+    <?php echo wrap_top() ?>
     <p>This is a portal for competitive PoFV play, featuring the current tier list, a guide to help you get started with
     netplay, and links to relevant resources as well as the rules of tournaments for the game, held at the
-    <a id='discord' href='https://discord.gg/2QPPPpE'>
-        <span class='icon discord_icon'></span>
-        Phantasmagoria Netplay Discord server
-    </a>.</p>
+    <a id='discord' href='https://discord.gg/2QPPPpE'><span class='icon discord_icon'></span> Phantasmagoria Netplay Discord server</a>.</p>
     <h2>Contents</h2>
     <div class='border'>
         <p><a href='#tiers'>Tier List</a></p>
@@ -31,7 +11,6 @@
         <p><a href='#trouble'>Troubleshooting</a></p>
         <p><a href='#rules'>Tournament Rules</a></p>
         <p><a href='#links'>Useful Links</a></p>
-		<p><a href='#acks'>Acknowledgements</a></p>
     </div>
     <h2 id='tiers'>Tier List</h2>
     <p>This tier list is an average of the opinions of competitive players in the English-speaking community.
@@ -185,20 +164,6 @@
     <p><a href='https://cerise.moe/pofv.html'>
         <span class='icon flag_france'></span> French Guide
     </a></p>
-    <h2 id='acks'>Acknowledgements</h2>
-    <p>The netplay guide and tournament rules were written by <a href='https://twitter.com/SnortNails'>Knirgesh</a>.</p>
-    <p>The character descriptions were written by <a href='https://twitter.com/UndreamtBoss'>Zil</a>.</p>
-    <p>The averaged tier list was done by <a href='https://twitter.com/homoiconicbully'>Lesbea</a>.</p>
-    <p>The artworks used for this page are original work by <a href='https://twitter.com/korindo'>ZUN</a>.</p>
-    <p id='ack_mobile'><?php
-        if ($lang == 'Chinese') {
-            echo '背景画师：' .
-            '<a href="https://www.pixiv.net/member.php?id=21613">Kong Xian</a>。';
-        } else {
-            echo 'The background image was drawn by ' .
-            '<a href="https://www.pixiv.net/member.php?id=21613">Kong Xian</a>.';
-        }
-    ?></p>
     <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
 </div>
 <div id='modal'>

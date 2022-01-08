@@ -8,19 +8,13 @@
     }
 ?>
 <div id='wrap' class='wrap'>
-    <?php echo wrap_top('https://www.pixiv.net/member.php?id=420928', '', 'LM7', $lang_code) ?>
-    <h1>About Me</h1>
-	<?php
-		if (!empty($_GET['redirect'])) {
-			echo '<p class="wide">(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
-		}
-	?>
+    <?php echo wrap_top() ?>
     <p>Hello, I am Mari, a <?php echo getAge('1995-07-29'); ?> year old Dutch guy who
     likes to play shoot 'em up games seriously.</p>
-    <p class='wide'>I am a nerdy person that studies Computer Science and takes keen interests in countries, travel,
-    geography, history, and public transportation. Travelling is my absolute favourite activity in life. I have
+    <p class='wide'>I am a nerdy person that studied Computer Science and takes keen interests in countries, travel,
+    geography, history, and public transportation. Traveling is my absolute favourite activity in life. I have
     visited 28 different countries so far, including my home country of the Netherlands, and one of my life goals is to
-    visit every country in Europe, as well as at least one country per continent.</p>
+    visit every country in Europe, as well as at least one country per continent. Of course, I also like Web development.</p>
     <figure>
         <img id='map' src='assets/index/countries.png' alt='Maribel&#39;s visited countries map'>
         <figcaption><em>Countries visited as of 2021</em></figcaption>
@@ -188,7 +182,7 @@
     <ul>
         <li>One of my most commonly used avatars (shown above) is a non-canon depiction of Maribel
         having gone berserk due to her powers overflowing, which is the final boss of Labyrinth of Touhou.</li>
-        <li>I use the default keyboard that came with my PC to play, making me one of the
+        <li>I use the default keyboard that came with my previous PC to play, making me one of the
         rare serious keyboard players <em>not</em> to use a mechanical keyboard.</li>
         <li>Linux distributions are my preferred operating systems. I have used them on my laptop since late 2014 and
         on my main PC since late 2018.</li>

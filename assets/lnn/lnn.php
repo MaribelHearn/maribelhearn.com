@@ -1,38 +1,6 @@
 <?php include_once 'assets/shared/tl.php'; include_once 'assets/lnn/lnn_code.php' ?>
 <div id='wrap' class='wrap'>
-    <div id='topbar'>
-	    <?php echo wrap_top('https://www.pixiv.net/member.php?id=1111435', '', 'C.Z', $lang_code) ?>
-		<span id='toggle'>
-            <?php
-                $other = ($layout == 'New' ? 'Old' : 'New');
-                echo '<a id="layouttoggle" href="lnn">' . $other . ' layout</a>';
-            ?>
-        </span>
-		<div id='languages'>
-            <a id='en' class='flag' href='lnn?hl=en'>
-                <img class='flag_en' src='assets/flags/uk.png' alt='<?php echo tl_term('Flag of the United Kingdom', $lang) ?>'>
-                <p class='language'>English</p>
-            </a>
-            <a id='jp' class='flag' href='lnn?hl=jp'>
-                <img src='assets/flags/japan.png' alt='<?php echo tl_term('Flag of Japan', $lang) ?>'>
-                <p class='language'>日本語</p>
-            </a>
-            <a id='zh' class='flag' href='lnn?hl=zh'>
-                <img src='assets/flags/china.png' alt='<?php echo tl_term('Flag of the P.R.C.', $lang) ?>'>
-                <p class='language'>简体中文</p>
-            </a>
-            <a id='ru' class='flag' href='lnn?hl=ru'>
-                <img src='assets/flags/russia.png' alt='<?php echo tl_term('Flag of Russia', $lang) ?>'>
-                <p class='language'>Русский</p>
-            </a>
-        </div>
-	</div>
-	<h1><?php echo tl_term('Touhou Lunatic No Miss No Bombs', $lang); ?></h1>
-    <?php
-        if (!empty($_GET['redirect'])) {
-            echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
-        }
-    ?>
+    <?php echo wrap_top() ?>
     <p id='description'><?php
 		if ($lang == 'Chinese') {
 			echo '这个网页记载所有「东方Project」的LNN（Lunatic No Miss No Bomb），时不时地更新。' .
@@ -94,7 +62,7 @@
             echo '<div id="contents_new" class="border"><p><a href="#lnns" class="lnns">' . tl_term('LNN Lists', $lang) .
             '</a></p><p><a href="#overall" class="overallcount">' . tl_term('Overall Count', $lang) .
             '</a></p><p><a href="#players" class="playerranking">' . tl_term('Player Ranking', $lang) .
-            '</a></p><p><a href="#acks" class="ack">' . tl_term('Acknowledgements', $lang) . '</a></p></div><noscript>';
+            '</a></p></div><noscript>';
         }
         echo '<div id="contents" class="border"><p><a href="#lnns" class="lnns">' . tl_term('LNN Lists', $lang) . '</a></p>';
         foreach ($lnn as $game => $obj) {
@@ -106,7 +74,7 @@
         echo '<p id="playersearchlink"><a href="#playersearch">' . player_search($lang) .
         '</a></p><p><a href="#overall" class="overallcount">' . tl_term('Overall Count', $lang) .
         '</a></p><p><a href="#players" class="playerranking">' . tl_term('Player Ranking', $lang) .
-        '</a></p><p><a href="#acks" class="ack">' . tl_term('Acknowledgements', $lang) . '</a></p></div>';
+        '</a></p></div>';
         if ($layout == 'New') {
             echo '</noscript>';
         }
@@ -301,68 +269,6 @@
                 ?>
             </tbody>
         </table>
-    </div>
-	<h2 id='acks' class='ack'><?php echo tl_term('Acknowledgements', $lang); ?></h2>
-    <div id='ack_container'>
-		<p id='jptlcredit'><?php
-            if ($lang == 'Chinese') {
-                echo '感谢<a href="https://twitter.com/toho_yumiya">Yu-miya</a>' .
-                '提供头部文字的日语翻译。';
-            } else if ($lang == 'Japanese') {
-                echo 'ページ上部のテキストは<a href="https://twitter.com/toho_yumiya">ゆーみや</a>' .
-                'によって日本語に翻訳されました。';
-			} else if ($lang == 'Russian') {
-                echo 'Японский перевод сделал ' .
-                '<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.';
-            } else {
-                echo 'The Japanese translation of the top text was done by ' .
-                '<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.';
-            }
-        ?></p>
-        <p id='cntlcredit'><?php
-            if ($lang == 'Chinese') {
-                echo '感谢<a href="https://twitter.com/williewillus">williewillus</a>' .
-                '提供头部文字的中文翻译。';
-            } else if ($lang == 'Japanese') {
-                echo 'ページ上部のテキストは<a href="https://twitter.com/williewillus">williewillus</a>' .
-                'によって中国語に翻訳されました。';
-            } else if ($lang == 'Russian') {
-                echo 'Китайский перевод сделал ' .
-                '<a href="https://twitter.com/williewillus">williewillus</a>.';
-            } else {
-                echo 'The Chinese translation of the top text was done by ' .
-                '<a href="https://twitter.com/williewillus">williewillus</a>.';
-            }
-        ?></p>
-        <p id='rutlcredit'><?php
-            if ($lang == 'Chinese') {
-                echo '感谢<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>' .
-                '提供头部文字的俄语翻译。';
-            } else if ($lang == 'Japanese') {
-                echo 'ページ上部のテキストは<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>' .
-                'によってロシア語に翻訳されました。';
-            } else if ($lang == 'Russian') {
-               echo 'Русский перевод сделал ' .
-               '<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>.';
-            } else {
-                echo 'The Russian translation of the top text was done by ' .
-                '<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>.';
-            }
-        ?></p>
-		<p id='ack_mobile'><?php
-            if ($lang == 'Chinese') {
-                echo '背景画师：<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>。';
-            } else if ($lang == 'Japanese') {
-                echo '背景イメージは<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>' .
-                'さんのものを使用させていただいております。';
-            } else if ($lang == 'Russian') {
-                echo 'Иллюстрацию на фоне нарисовал(а) ' .
-                '<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>.';
-            } else {
-                echo 'The background image was drawn by ' .
-                '<a href="https://www.pixiv.net/member.php?id=1111435">C.Z</a>.';
-            }
-        ?></p>
     </div>
     <p id='back'><strong><a id='backtotop' href='#top'><?php echo tl_term('Back to Top', $lang); ?></a></strong></p>
 	<?php echo '<input id="missingReplays" type="hidden" value="' . implode('', $missing_replays) . '">' ?>

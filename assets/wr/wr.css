@@ -259,7 +259,7 @@ table, th, td {
     margin-top: 0px;
     margin-bottom: 0px;
 }
-#contents > p, #contents_new > p, #ack_container > p {
+#contents > p, #contents_new > p {
     margin: 4px;
 }
 #HRtP_image, #HRtP_image_old {
@@ -325,17 +325,6 @@ table, th, td {
 #UM_image, #UM_image_old {
     background-position: -500px 0px;
 }
-#ack {
-    font: 11px verdana,sans-serif;
-    text-align: right;
-    background: none;
-    position: fixed;
-    bottom: 5px;
-    right: 5px;
-}
-#ack_br, #ack_mobile {
-    display: none;
-}
 @media only screen and (min-width: 1550px) and (max-width: 1750px) {
     .wrap {
         margin-left: 20%;
@@ -346,17 +335,6 @@ table, th, td {
     .wrap {
         margin-left: 15%;
         margin-right: 15%;
-    }
-    #ack_br {
-        display: inline;
-    }
-}
-@media only screen and (max-width: 1150px) {
-    #ack {
-        display: none;
-    }
-    #ack_mobile {
-        display: block;
     }
 }
 @media only screen and (min-width: 800px) and (max-width: 1150px) {

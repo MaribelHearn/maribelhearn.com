@@ -1,28 +1,6 @@
 <?php include_once 'assets/tools/tools_code.php' ?>
 <div id='wrap' class='wrap'>
-	<div id='topbar'>
-        <?php echo wrap_top('https://www.pixiv.net/member.php?id=66609', '', '青葉', $lang_code) ?>
-		<div id='languages'>
-            <a id='en' class='flag' href='tools?hl=en'>
-                <img class='flag_en' src='assets/flags/uk.png' alt='<?php echo tl_term('Flag of the United Kingdom', $lang) ?>'>
-                <p class='language'>English</p>
-            </a>
-            <a id='jp' class='flag' href='tools?hl=jp'>
-                <img src='assets/flags/japan.png' alt='<?php echo tl_term('Flag of Japan', $lang) ?>'>
-                <p class='language'>日本語</p>
-            </a>
-            <a id='ru' class='flag' href='tools?hl=ru'>
-                <img src='assets/flags/russia.png' alt='<?php echo tl_term('Flag of Russia', $lang) ?>'>
-                <p class='language'>Русский</p>
-            </a>
-        </div>
-	</div>
-    <h1>Touhou Patches and Tools</h1>
-    <?php
-        if (!empty($_GET['redirect'])) {
-            echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
-        }
-    ?>
+    <?php echo wrap_top() ?>
     <p><?php
 		if ($lang == 'Russian') {
 			echo 'Эта страница содержит ссылки на скачивание различных патчей и инструментов для официальных Тохо шмапов.';
@@ -113,7 +91,6 @@
 			else if ($lang == 'Japanese') { echo 'その他'; }
 			else { echo 'Miscellaneous'; }
 		?></a></p>
-        <p><a href='#ack'><?php echo tl_term('Acknowledgements', $lang) ?></a></p>
     </div>
     <!-- Vpatch -->
     <hr>
@@ -1200,45 +1177,5 @@
 	?></p>
 	<a href='https://maribelhearn.com/mirror/th17_score_uncap.zip' target='_blank'><?php echo tl_term('Download', $lang) ?></a>
 	<hr>
-    <h2 id='acks' class='ack'><?php echo tl_term('Acknowledgements', $lang); ?></h2>
-    <div id='ack_container'>
-		<p id='jptlcredit'>
-			<?php
-				if ($lang == 'Japanese') {
-                    echo '<a href="https://twitter.com/toho_yumiya">ゆーみや</a>' .
-				    'によって日本語に翻訳されました。';
-                } else if ($lang == 'Russian') {
-                    echo 'Японский перевод сделал ' .
-				    '<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.';
-                } else {
-                    echo 'The Japanese translation was done by ' .
-                    '<a href="https://twitter.com/toho_yumiya">Yu-miya</a>.';
-                }
-			?>
-		</p>
-		<p id='rutlcredit'>
-		<?php
-			if ($lang == 'Japanese') {
-				echo '<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>' .
-				'によってロシア語に翻訳されました。';
-			} else if ($lang == 'Russian') {
-				echo 'Русский перевод сделал <a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>.';
-			} else {
-				echo 'The Russian translation was done by ' .
-				'<a href="https://www.twitch.tv/kvasovy_stg">kvasovy</a>.';
-			}
-		?>
-		</p>
-		<p id='ack_mobile' class='noborders'><?php
-			if ($lang == 'Russian') {
-				echo 'Иллюстрацию на фоне нарисовал(а) <a href="https://www.pixiv.net/member.php?id=66609">青葉</a>.';
-			} else if ($lang == 'Japanese') {
-				echo '背景イメージは<a href="https://www.pixiv.net/member.php?id=66609">青葉</a>さんの' .
-				'ものを使用させていただいております。';
-			} else {
-				echo 'The background image was drawn by <a href="https://www.pixiv.net/member.php?id=66609">青葉</a>.';
-			}
-		?></p>
-	</div>
     <p id='back'><strong><a id='backtotop' href='#top'><?php echo tl_term('Back to Top', $lang) ?></a></strong></p>
 </div>

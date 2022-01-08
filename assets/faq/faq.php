@@ -1,11 +1,11 @@
 <div id='wrap' class='wrap'>
-    <?php echo wrap_top('https://yande.re/pool/show/2697', '', 'Asakura Masatoki', $lang_code) ?>
-	<?php
-		if (!empty($_GET['redirect'])) {
-			echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
-		}
+    <?php
+        echo wrap_top();
 		if (empty($_GET['p'])) {
 			echo '<h1>Frequently Asked Questions</h1>';
+    		if (!empty($_GET['redirect'])) {
+    			echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
+    		}
 			include_once 'assets/faq/subpages/main_page.php';
 		} else {
 			echo '<span id="backtomain"><a href="faq">&lt;= Back to Main Page</a></span><h1>Frequently Asked Questions</h1>';
@@ -24,10 +24,6 @@
 			}
 		}
 	?>
-	<div id='ack_mobile'>
-	    <h2>Acknowledgements</h2>
-	    <p>The background image was drawn by <a href='https://yande.re/pool/show/2697'>Asakura Masatoki</a>.</p>
-	</div>
 	<?php
 		if (empty($_GET['p'])) {
 			echo '<p id="back"><strong><a id="backtotop" href="#top">Back to Top</a></strong></p>';

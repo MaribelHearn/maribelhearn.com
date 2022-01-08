@@ -8,7 +8,6 @@ function tl_term(string $term, string $lang) {
             case 'Flag of Japan': return '日本の国旗';
             case 'Flag of the P.R.C.': return '中華人民共和国の国旗';
             case 'Flag of Russia': return 'ロシアの国旗';
-            case 'Acknowledgements': return '謝辞';
             case 'Back to Top': return '上に帰る';
             case 'Downloads': return 'ダウンロード';
             case 'Download': return 'ダウンロード';
@@ -34,7 +33,6 @@ function tl_term(string $term, string $lang) {
             case 'Flag of Japan': return 'флаг Японии';
             case 'Flag of the P.R.C.': return 'флаг Китая';
             case 'Flag of Russia': return 'флаг России';
-            case 'Acknowledgements': return 'Примечания';
             case 'Back to Top': return 'Наверх';
             case 'Downloads': return 'Скачать';
             case 'Download': return 'Скачать';

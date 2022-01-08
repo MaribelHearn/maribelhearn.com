@@ -60,6 +60,7 @@ ol > li {
 .border {
     border: 1px solid black;
     margin-bottom: 15px;
+    display: inline-block;
 }
 .noborders {
     border: none;
@@ -107,7 +108,7 @@ ol > li {
     padding-bottom: 15px;
     opacity: 0.8;
 }
-#wrap > div:not(#topbar) {
+#wrap > div:not(#topbar):not(#modal) {
     display: inline-block;
 }
 #nav {
@@ -212,27 +213,6 @@ ol > li {
 #eiki {
     background-position: -1800px 0px;
 }
-#ack {
-    font: 11px verdana,sans-serif;
-    text-align: right;
-    background: none;
-    position: fixed;
-    color: white;
-    bottom: 5px;
-    right: 5px;
-}
-#ack_br, #ack_mobile {
-    display: none;
-}
-#ack > a:link {
-    color: #1e90ff;
-}
-#ack > a:active {
-    color: red;
-}
-#ack > a:visited {
-    color: #ff69b4;
-}
 @media only screen and (min-width: 1500px) and (max-width: 1800px) {
     #modal_inner {
         width: 55%;
@@ -245,9 +225,6 @@ ol > li {
     }
     #modal_inner {
         width: 65%;
-    }
-    #ack_br {
-        display: inline;
     }
 }
 @media only screen and (max-width: 1100px) {
@@ -272,7 +249,7 @@ ol > li {
         font-size: 11px;
         width: 75%;
     }
-    #wrap p:not(#ack):not(.language) {
+    #wrap p:not(.language) {
         padding-left: 50px;
         padding-right: 50px;
     }
@@ -320,12 +297,6 @@ ol > li {
     }
     #eiki {
         background-position: -1200px 0px;
-    }
-    #ack {
-        display: none;
-    }
-    #ack_mobile {
-        display: block;
     }
 }
 @media only screen and (min-width: 800px) and (max-width: 1100px) {

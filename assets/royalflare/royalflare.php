@@ -1,7 +1,7 @@
 <?php include_once 'assets/shared/tl.php'; include_once 'assets/royalflare/royalflare_code.php' ?>
 <div id='wrap' class='wrap'>
-    <?php echo wrap_top('', '', '', $lang_code) ?>
     <?php
+        echo wrap_top();
         if (!empty($subpage)) {
             if (strpos($subpage, '/') !== false) {
                 $tmp = preg_split('/\//', $subpage);
