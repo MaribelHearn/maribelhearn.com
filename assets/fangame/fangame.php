@@ -14,7 +14,7 @@
 	<h2 id='lnns'>LNN Clears</h2>
 	<h3 class='fangames'>Fangames</h3>
 	<table class='sortable'>
-		<caption><span class='fangame sss'></span> Shining Shooting Star (No Border Breaks, Full Spell</caption>
+		<caption><span class='fangame sss'></span> Shining Shooting Star (No Border Breaks, Full Spell)</caption>
 		<tr>
 			<th class='player'>Player</th>
 			<th class='shottype'>Shottype</th>
@@ -27,6 +27,12 @@
 			<td>3,454,497,870</td>
 			<td>9 September 2016</td>
 			<td><a href='http://www.bilibili.com/video/av6213977'>Video</a></td>
+		</tr><tr>
+			<td>NME</td>
+			<td>Reimu</td>
+			<td>2,849,006,980</td>
+			<td>4 October 2021</td>
+			<td><a href='https://www.youtube.com/watch?v=KjLlLn340lk'>Video</a></td>
 		</tr><tr>
 			<td>CreepyNinja</td>
 			<td>Marisa</td>
