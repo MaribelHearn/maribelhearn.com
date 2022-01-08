@@ -99,6 +99,9 @@ table {
 .language {
     margin-top: 0px;
 }
+.dead {
+    text-decoration: line-through;
+}
 .tooltip {
     visibility: hidden;
     background-color: black;

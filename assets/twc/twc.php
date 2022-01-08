@@ -79,7 +79,7 @@
 				echo 'Japanese commentary stream (YouTube)';
 			}
 			echo '</a></p><p><span class="icon flag_russia"></span>' .
-			'<a href="https://www.twitch.tv/touhou_russian_kolkhoz">';
+			'<a class="dead" href="https://www.twitch.tv/touhou_russian_kolkhoz">';
 			if ($lang == 'Chinese') {
 				echo '俄文流解说（Twitch）';
 			} else if ($lang == 'Japanese') {
