@@ -38,21 +38,37 @@
     </ul>
     <h2><?php echo tl_term('Background Artists', $lang_code) ?></h2>
     <ul class='credits'>
-        <li><a href='https://www.pixiv.net/member.php?id=420928' target='_blank'>LM7</a>: Index (<a href='https://www.pixiv.net/en/artworks/6957612'>Source</a>)</li>
-        <li><a href='https://www.pixiv.net/member.php?id=161300' target='_blank'>ウータン</a>: DRC (<a href='https://www.pixiv.net/en/artworks/24983603'>Source</a>)</li>
-        <li><a href='https://www.pixiv.net/en/users/4936550' target='_blank'>明ノ宮 飛鳥</a>: Fangame (<a href='https://www.pixiv.net/en/artworks/75237542'>Source</a>)</li>
-        <li><a href='https://yande.re/pool/show/2697' target='_blank'>Asakura Masatoki</a>: FAQ</li>
-        <li><a href='http://h-yde.deviantart.com/' target='_blank'>h-yde</a>: Gensokyo</li>
-        <li><a href='https://www.pixiv.net/member.php?id=2263353' target='_blank'>RAT_Huang</a> <span class='warning'>(R-18)</span>: History</li>
-        <li><a href='https://www.pixiv.net/member.php?id=1111435' target='_blank'>C.Z</a>: LNN</li>
-        <li><a href='https://www.pixiv.net/member.php?id=21613' target='_blank'>Kong Xian</a>: PoFV</li>
-        <li><a href='https://www.pixiv.net/member.php?id=87950' target='_blank'>りすたる</a>: Scoring</li>
-        <li><a href='https://www.pixiv.net/member.php?id=759506' target='_blank'>windtalker</a>: Survival (<a href='https://www.pixiv.net/en/artworks/12517505'>Source</a>)</li>
-        <li><a href='https://www.pixiv.net/member.php?id=2025430' target='_blank'>Yakumo_Stocking</a>: Poll</li>
-        <li><a href='https://www.pixiv.net/member.php?id=66609' target='_blank'>青葉</a>: Tools</li>
-        <li><a href='https://www.pixiv.net/en/users/20799' target='_blank'>白雪 睦月</a>: TRS</li>
-        <li><a href='https://www.pixiv.net/en/users/1868609' target='_blank'>宇文風</a>: TWC</li>
-        <li><a href='https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ' target='_blank'>Catboyjeremie</a>: WR</li>
-        <li><a href='https://www.pixiv.net/member.php?id=4678572' target='_blank'>ETERSIARUM:</a> Tiers</li>
+        <li><a href='https://www.pixiv.net/member.php?id=420928' target='_blank'>LM7</a>:
+        Index (<a href='https://www.pixiv.net/en/artworks/6957612' target='_blank'>Source</a>)</li>
+        <li><a href='https://www.pixiv.net/member.php?id=161300' target='_blank'>ウータン</a>:
+        DRC (<a href='https://www.pixiv.net/en/artworks/24983603' target='_blank'>Source</a>)</li>
+        <li><a href='https://www.pixiv.net/en/users/4936550' target='_blank'>明ノ宮 飛鳥</a>:
+        Fangame (<a href='https://www.pixiv.net/en/artworks/75237542' target='_blank'>Source</a>)</li>
+        <li><a href='https://yande.re/pool/show/2697' target='_blank'>Asakura Masatoki</a>:
+        FAQ (<a class='dead' href='https://www.pixiv.net/en/artworks/58239009' target='_blank'>Source</a>)</li>
+        <li><a href='http://h-yde.deviantart.com/' target='_blank'>h-yde</a>:
+        Gensokyo (<a href='https://h-yde.deviantart.com/art/Saigyou-Ayakashi-Blooming-481057167' target='_blank'>Source</a>)</li>
+        <li><a href='https://www.pixiv.net/member.php?id=2263353' target='_blank'>RAT_Huang</a> <span class='warning'>(R-18)</span>:
+        History (<a href='https://www.pixiv.net/en/artworks/38716068' target='_blank'>Source</a>)</li>
+        <li><a href='https://www.pixiv.net/member.php?id=1111435' target='_blank'>C.Z</a>:
+        LNN (<a href='https://www.pixiv.net/en/artworks/26565744' target='_blank'>Source</a>)</li>
+        <li><a href='https://www.pixiv.net/member.php?id=21613' target='_blank'>Kong Xian</a>:
+        PoFV (<a href='https://www.deviantart.com/ramosfox/art/40423051-669167462' target='_blank'>Source</a>)</li>
+        <li><a href='https://www.pixiv.net/member.php?id=87950' target='_blank'>りすたる</a>:
+        Scoring (<a href='https://www.pixiv.net/en/artworks/40737278' target='_blank'>Source</a>)</li>
+        <li><a href='https://www.pixiv.net/member.php?id=759506' target='_blank'>windtalker</a>:
+        Survival (<a href='https://www.pixiv.net/en/artworks/12517505' target='_blank'>Source</a>)</li>
+        <li><a href='https://www.pixiv.net/member.php?id=2025430' target='_blank'>Yakumo_Stocking</a>:
+        Poll (<a href='https://www.pixiv.net/en/users/2025430' target='_blank'>Source</a>)</li>
+        <li><a href='https://www.pixiv.net/member.php?id=66609' target='_blank'>青葉</a>:
+        Tools (<a href='https://www.pixiv.net/en/artworks/19816763' target='_blank'>Source</a>)</li>
+        <li><a href='https://www.pixiv.net/en/users/20799' target='_blank'>白雪 睦月</a>:
+        TRS (<a href='https://www.pixiv.net/en/artworks/23271307' target='_blank'>Source</a>)</li>
+        <li><a href='https://www.pixiv.net/en/users/1868609' target='_blank'>宇文風</a>:
+        TWC (<a href='https://www.pixiv.net/en/artworks/40523714' target='_blank'>Source</a>)</li>
+        <li><a href='https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ' target='_blank'>Catboyjeremie</a>:
+        WR (<a href='https://pbs.twimg.com/media/AsicC9bCQAAzu-H?format=jpg' target='_blank'>Source</a>)</li>
+        <li><a href='https://www.pixiv.net/member.php?id=4678572' target='_blank'>ETERSIARUM:</a>
+        Tiers (<a class='dead' href='https://www.pixiv.net/member_illust.php?mode=medium&illust_id=41297499' target='_blank'>Source</a>)</li>
     </ul>
 </div>
