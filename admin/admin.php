@@ -93,7 +93,7 @@
                 <?php echo wrap_top() ?>
                 <h1>Admin Panel</h1>
                 <p><input id='setcookie' type='button' value='Set Blocking Cookie'></p>
-                <p id='response' class='wide-top'>Caching new entries...</p>
+                <p id='response' class='wide'>Caching new entries...</p>
                 <?php
                     if ($hitcount == 'error') {
                         echo '<p class="wide">An error occurred while reading the stats.</p>';
