@@ -38,8 +38,8 @@
     </ul>
     <h2><?php echo tl_term('Background Artists', $lang_code) ?></h2>
     <ul class='credits'>
-        <li><a href='https://www.pixiv.net/member.php?id=420928' target='_blank'>LM7</a>: Index</li>
-        <li><a href='https://www.pixiv.net/member.php?id=161300' target='_blank'>ウータン</a>: DRC</li>
+        <li><a href='https://www.pixiv.net/member.php?id=420928' target='_blank'>LM7</a>: Index (<a href='https://www.pixiv.net/en/artworks/6957612'>Source</a>)</li>
+        <li><a href='https://www.pixiv.net/member.php?id=161300' target='_blank'>ウータン</a>: DRC (<a href='https://www.pixiv.net/en/artworks/24983603'>Source</a>)</li>
         <li><a href='https://www.pixiv.net/en/users/4936550' target='_blank'>明ノ宮 飛鳥</a>: Fangame (<a href='https://www.pixiv.net/en/artworks/75237542'>Source</a>)</li>
         <li><a href='https://yande.re/pool/show/2697' target='_blank'>Asakura Masatoki</a>: FAQ</li>
         <li><a href='http://h-yde.deviantart.com/' target='_blank'>h-yde</a>: Gensokyo</li>

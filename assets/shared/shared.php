@@ -325,6 +325,9 @@ function wrap_top() {
         }
         echo '</div>';
     }
+    if (in_array($page, $ja) || in_array($page, $zh) || in_array($page, $ru)) {
+        echo '</div>';
+    }
     if ($page == 'survival' || $page == 'slots') {
         echo '<div id="content" data-html2canvas-ignore="" style="display:block">';
     }
