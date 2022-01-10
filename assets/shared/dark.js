@@ -1,12 +1,19 @@
 var language, done, head, hy;
 
 function dark() {
-    var style = document.createElement("link");
+    var style = document.createElement("link"), page = location.pathname.split('/')[1];
     style.id = "dark_theme";
     style.href = (location.host != "localhost" || location.pathname.indexOf("error") > -1 ? "https://maribelhearn.com/" : "/") + "assets/shared/dark.css";
     style.type = "text/css";
     style.rel = "stylesheet";
     head.appendChild(style);
+
+    if (["lnn", "royalflare", "wr"].includes(page)) {
+        style = document.createElement("style");
+        style.id = "dark_theme_table";
+        style.innerText = "tr:not(.west_tr):nth-child(even),tr.west_tr:nth-child(odd){background-color:#555555;}";
+        head.appendChild(style);
+    }
 }
 
 function ready() {
@@ -56,6 +63,10 @@ function theme() {
         "sameSite=Strict;" + (location.protocol == "https:" ? "Secure;" : "");
         document.getElementById("hy_text").innerHTML = (language == "Japanese" ? "人間モード（ライト）" : "Human mode (Light)");
 
+        if (document.head.contains(document.getElementById("dark_theme_table"))) {
+            head.removeChild(document.getElementById("dark_theme_table"));
+        }
+
         if (document.head.contains(document.getElementById("dark_theme"))) {
             head.removeChild(document.getElementById("dark_theme"));
         } else {
@@ -70,12 +81,7 @@ function theme() {
 
         document.cookie = "theme=" + JSON.stringify("dark") + cookieString;
         document.getElementById("hy_text").innerHTML = (language == "Japanese" ? "妖怪モード（ダーク）" : "Youkai mode (Dark)");
-
-        if (location.pathname.includes("royalflare")) {
-            window.location.reload(false);
-        } else {
-            dark();
-        }
+        dark();
     }
 
     if (localStorage.theme) { // legacy

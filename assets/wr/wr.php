@@ -92,13 +92,13 @@
         <h2 class='overallrecords'><?php echo tl_term('Overall Records', $lang); ?></h2>
         <table class='sortable'>
             <tr>
-                <th>#</th>
-                <th class='game'><?php echo tl_term('Game', $lang); ?></th>
-                <th id='score' class='sorttable_numeric'><?php echo tl_term('Score', $lang); ?></th>
-                <th class='player'><?php echo tl_term('Player', $lang); ?></th>
-                <th class='difficulty'><?php echo tl_term('Difficulty', $lang); ?></th>
-                <th class='shottype'><?php echo tl_term('Shottype', $lang); ?></th>
-                <th class='date'><?php echo tl_term('Date', $lang); ?></th>
+                <th class='general_header'>#</th>
+                <th class='general_header game'><?php echo tl_term('Game', $lang); ?></th>
+                <th id='score' class='general_header sorttable_numeric'><?php echo tl_term('Score', $lang); ?></th>
+                <th class='general_header player'><?php echo tl_term('Player', $lang); ?></th>
+                <th class='general_header difficulty'><?php echo tl_term('Difficulty', $lang); ?></th>
+                <th class='general_header shottype'><?php echo tl_term('Shottype', $lang); ?></th>
+                <th class='general_header date'><?php echo tl_term('Date', $lang); ?></th>
             </tr>
             <?php
 				foreach ($wr as $game => $value) {
@@ -150,7 +150,7 @@
                     continue;
                 }
 				$num = num($game);
-				echo '<p class="' . $game . ' count">' . game_tl($game, $lang) . '</p><p>';
+				echo '<p class="' . $game . '">' . game_tl($game, $lang) . '</p><p>';
                 echo '<span id="' . $game . 'overall0m">' . ($game == 'WBaWC' || $game == 'UM' ? '<span class="cs">9,999,999,990' .
                 '<span class="tooltip truescore">' . number_format($overall[$num], 0, '.', ',') .
                 '</span></span> ' : number_format($overall[$num], 0, '.', ',')) . '</span> ';
@@ -159,7 +159,7 @@
 				echo '<span id="' . $game . 'overall1m"><em>' . ($overall[$num] == 0 ? '-' : $overall_player[$num]) . ($game == 'WBaWC' || $game == 'UM' ? '*' : '') . '</em></span> ';
 				echo '<br><span id="' . $game . 'overall4m" class="datestring">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $notation)) . '</span></p><hr>';
 			}
-            echo '* Players that have scored 9,999,999,990: ';
+            echo '<p>* Players that have scored 9,999,999,990: ';
             $str = '';
             foreach ($cs as $player => $value) {
                 $str .= ', <abbr title="';
@@ -174,7 +174,7 @@
                 }
                 $str .= '">' . $player . '</abbr>';
             }
-            echo substr($str, 2);
+            echo substr($str, 2) . '</p>';
 		?>
     </div>
     <h2 id='wrs' class='worldrecords'><?php echo tl_term('World Records', $lang); ?></h2>
@@ -197,13 +197,13 @@
             't sortable"><caption><p><span id="' . $game . '_image_old" ' .
             'class="cover sheet' . $sheet . (num($game) <= 5 ? ' cover98' : '') .
             '"></span> ' . full_name($game, $lang) . '</p></caption>' .
-            '<tr><th>' . tl_term(shot_route($game), $lang) . '</th>';
+            '<thead><tr><th>' . tl_term(shot_route($game), $lang) . '</th>';
             foreach ($obj as $diff => $shots) {
                 if ($game != 'GFW' || $diff != 'Extra') {
                     echo '<th>' . $diff . '</th>';
                 }
             }
-            echo '</tr>';
+            echo '</tr></thead><tbody>';
             for ($i = 0; $i < sizeof($obj[$diff_key]); $i++) {
                 $shot = array_keys($obj[$diff_key])[$i];
                 echo '<tr><td>' . format_shot($game, $shot, $lang) . '</td>';
@@ -267,13 +267,13 @@
                 '</em><span class="dimgrey"><br><span class="datestring_game">' . date_tl($obj['Extra']['-'][2], $notation) .
                 '</span></span></td></tr>';
             }
-            echo '</table></div>';
+            echo '</tbody></table></div>';
         }
         // Old layout western records
         echo '<h2 id="western">' . tl_term('Western Records', $lang) . '</h2>';
         foreach ($west as $game => $obj) {
-            echo '<table class="' . $game . 't"><tr><th colspan="3">' . game_tl($game, $lang) .
-            '</th></tr><tr><th>' . tl_term('World', $lang) .
+            echo '<table class="' . $game . 't"><tr class="west_tr"><th colspan="3">' . game_tl($game, $lang) .
+            '</th></tr><tr class="west_tr"><th>' . tl_term('World', $lang) .
             '</th><th>' . tl_term('West', $lang) . '</th><th>' . tl_term('Percentage', $lang) . '</th></tr>';
             foreach ($obj as $diff => $shots) {
                 $westt = $west[$game][$diff];
@@ -289,8 +289,8 @@
                 } else {
                     $world_text = number_format($world[0], 0, '.', ',');
                 }
-                echo '<tr><td colspan="3">' . tl_term($diff, $lang) . '</td></tr>' .
-                '<tr><td>' . $world_text .
+                echo '<tr class="west_tr"><td colspan="3">' . tl_term($diff, $lang) . '</td></tr>' .
+                '<tr class="west_tr"><td>' . $world_text .
                 '<br>by <em>' . $world[1] . '</em><br>(' . tl_shot($world[2], $lang) .
                 ')</td><td>' . number_format($westt[0], 0, '.', ',') .
                 '<br>by <em>' . $westt[1] . '</em><br>(' . tl_shot($westt[2], $lang) .
@@ -363,11 +363,11 @@
         <h2><?php echo tl_term('Recent Records', $lang); ?></h2>
         <table class='sortable'>
             <thead id='recenthead'><tr>
-                <th class='category'><?php echo tl_term('Category', $lang) ; ?></th>
-                <th class='score'><?php echo tl_term('Score', $lang); ?></th>
-                <th class='player'><?php echo tl_term('Player', $lang); ?></th>
-                <th class='replay'><?php echo tl_term('Replay', $lang); ?></th>
-                <th class='datestring'><?php echo tl_term('Date', $lang); ?></th>
+                <th class='general_header category'><?php echo tl_term('Category', $lang) ; ?></th>
+                <th class='general_header score'><?php echo tl_term('Score', $lang); ?></th>
+                <th class='general_header player'><?php echo tl_term('Player', $lang); ?></th>
+                <th class='general_header replay'><?php echo tl_term('Replay', $lang); ?></th>
+                <th class='general_header datestring'><?php echo tl_term('Date', $lang); ?></th>
             </tr></thead>
             <tbody id='recentbody'><?php
                 foreach ($recent as $key => $obj) {
@@ -398,9 +398,9 @@
                 } else {
                     $replay = '-';
                 }
-                echo game_tl($obj->game . ' ', $lang) . ' ' . $obj->diff . category_sep($lang) .
-                '' . tl_shot($obj->shot, $lang) . '<br>' . number_format($obj->score, 0, '.', ',') .
-                ' by ' . $obj->player . ' on ' . date_tl($obj->date, $notation) . '';
+                echo '<p class="' . $obj->game . '">' . game_tl($obj->game . ' ', $lang) . ' ' . $obj->diff . category_sep($lang) .
+                '' . tl_shot($obj->shot, $lang) . '</p><p>' . number_format($obj->score, 0, '.', ',') .
+                ' by <em>' . $obj->player . '</em> on ' . date_tl($obj->date, $notation) . '</p>';
             }
         ?><hr>
     </div>
@@ -409,9 +409,10 @@
         <table id='ranking' class='sortable'>
             <thead>
                 <tr>
-                    <th class='player'><?php echo tl_term('Player', $lang); ?></th>
-                    <th id='autosort' class='sorttable_numeric'><?php echo tl_term('No. of WRs', $lang); ?></th>
-                    <th id='differentgames'><?php echo tl_term('Different games', $lang); ?></th>
+					<th class='general_header head'>#</th>
+                    <th class='general_header player'><?php echo tl_term('Player', $lang); ?></th>
+                    <th id='autosort' class='general_header sorttable_numeric'><?php echo tl_term('No. of WRs', $lang); ?></th>
+                    <th id='differentgames' class='general_header'><?php echo tl_term('Different games', $lang); ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -427,7 +428,7 @@
 						if ($pl[$key] === '') {
 							continue;
 						}
-						echo '<tr><td>' . $pl_wr[$key][0] . '</td>';
+						echo '<tr><td class="hidden"></td><td>' . $pl_wr[$key][0] . '</td>';
 						echo '<td>' . $pl_wr[$key][1] . '</td>';
                         echo '<td>' . $pl_wr[$key][2] . '</td></tr>';
 					}

@@ -285,7 +285,7 @@ function navbar(string $page) {
     return $navbar;
 }
 function wrap_top() {
-    global $page, $lang_code, $error_code;
+    global $page, $lang_code, $error_code, $layout;
     $ja = Array('drc', 'lnn', 'tools', 'twc', 'wr');
     $zh = Array('drc', 'lnn', 'pofv', 'twc', 'wr');
     $ru = Array('lnn', 'tools', 'twc', 'wr');
@@ -297,7 +297,7 @@ function wrap_top() {
     }
     echo '<span id="hy_container" data-html2canvas-ignore><span id="hy"></span><p id="hy_text">' . theme_name($lang_code) . '</p></span>';
     if ($page == 'lnn' || $page == 'wr') {
-        echo '<span id="toggle"><a id="layouttoggle" href="wr">' . ($layout == 'New' ? 'Old' : 'New') . ' layout</a></span>';
+        echo '<span id="toggle"><a id="layouttoggle" href="' . $page . '">' . ($layout == 'New' ? 'Old' : 'New') . ' layout</a></span>';
     }
     if (in_array($page, $ja) || in_array($page, $zh) || in_array($page, $ru)) {
         echo '<div id="languages">';

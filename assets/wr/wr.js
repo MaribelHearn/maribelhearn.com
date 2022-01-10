@@ -108,7 +108,7 @@ function showWesternRecords(compareWRs, game) {
     }
 
     $("#west_tbody").html("");
-    $("#west_thead").html("<tr><th class='world'>World</th><th class='west'>West</th><th class='percentage'>Percentage</th></tr>");
+    $("#west_thead").html("<tr class='west_tr'><th class='world'>World</th><th class='west'>West</th><th class='percentage'>Percentage</th></tr>");
 
     for (difficulty in westScores[game]) {
         if (westScores[game][difficulty].length === 0) {
@@ -123,8 +123,8 @@ function showWesternRecords(compareWRs, game) {
         worldPlayer = compareWRs[difficulty][1];
         worldShottype = compareWRs[difficulty][2];
         percentage = (west / world * 100).toFixed(2);
-        $("#west_tbody").append("<tr><td colspan='3'>" + difficulty + "</td></tr>");
-        $("#west_tbody").append("<tr><td>" + sep(world) + "<br>by <em>" + worldPlayer +
+        $("#west_tbody").append("<tr class='west_tr'><td colspan='3'>" + difficulty + "</td></tr>");
+        $("#west_tbody").append("<tr class='west_tr'><td>" + sep(world) + "<br>by <em>" + worldPlayer +
         "</em>" + (worldShottype != '-' ? "<br>(<span class='" + worldShottype + "'>" + worldShottype + "</span>)" : "") +
         "</td><td>" + sep(west) + "<br>by <em>" + westPlayer + "</em>" + (westShottype != '-' ? "<br>(<span class='" + westShottype +
         "'>" + westShottype + "</span>)" : "") + "</td><td class='" + percentageClass(percentage) +
