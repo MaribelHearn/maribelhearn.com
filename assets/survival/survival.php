@@ -97,8 +97,8 @@
     	</table>
 	</div>
     <div id='bottom' data-html2canvas-ignore>
-        <p><label for='toggleData'>Save Data</label><input id='toggleData' type='checkbox'></p>
-		<p><input id='apply' type='button' value='Apply'><input id='reset' type='button' value='Reset'></p>
+        <p><input id='save' type='button' value='Save'><input id='apply' type='button' value='Generate Tables'><input id='reset' type='button' value='Reset'></p>
+        <p id='message'></p>
     </div>
 </div>
 <div id='results' data-html2canvas-ignore>
@@ -131,6 +131,5 @@
 			</thead>
 			<tbody id='completion_table_tbody'></tbody>
 		</table>
-        <input id='close' type='button' value='Close'>
 	</div>
 </div>

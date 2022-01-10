@@ -1,7 +1,7 @@
 /*global $ html2canvas deleteCookie*/
 var games = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "INFinalA",
     "INFinalB", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"],
-    vals = {}, originalContent, completions, na, i;
+    vals = {}, unsavedChanges = false, originalContent, completions, na, i;
 
 for (i = 0; i < games.length; i++) {
     vals[games[i]] = {
@@ -67,32 +67,43 @@ function fillGame(game, achievement) {
         vals[game][difficulty] = achievement;
         achievement = tmp;
     }
+
+    if (game == "INFinalB") {
+        if (achievement == "NB+" ) {
+            achievement = "NB";
+        }
+
+        $("#INFinalAExtra").val(achievement);
+        vals["INFinalA"]["Extra"] = achievement;
+    }
 }
 
 function fillDifficulty(difficulty, achievement) {
-    var game;
+    var game, tmp;
 
     if (difficulty == "Extra") {
         $("#PCBPhantasm").val(gameSpecific("PCB", achievement));
-        vals.PCB.Phantasm = achievement;
+        vals.PCB.Phantasm = gameSpecific("PCB", achievement);
     }
 
     for (game in vals) {
         if (achievement == "NB+" || achievement == "NMNB") {
-            achievement = gameSpecific(game, achievement);
+            tmp = gameSpecific(game, achievement);
+        } else {
+            tmp = achievement;
         }
 
         if (difficulty == "Normal" || difficulty == "Hard" || difficulty == "Lunatic") {
-            $("#" + game + "Easy").val(achievement);
-            vals[game]["Easy"] = achievement;
+            $("#" + game + "Easy").val(tmp);
+            vals[game]["Easy"] = tmp;
 
             if (difficulty != "Normal") {
-                $("#" + game + "Normal").val(achievement);
-                vals[game]["Normal"] = achievement;
+                $("#" + game + "Normal").val(tmp);
+                vals[game]["Normal"] = tmp;
 
                 if (difficulty != "Hard") {
-                    $("#" + game + "Hard").val(achievement);
-                    vals[game]["Hard"] = achievement;
+                    $("#" + game + "Hard").val(tmp);
+                    vals[game]["Hard"] = tmp;
                 }
             }
         }
@@ -101,8 +112,8 @@ function fillDifficulty(difficulty, achievement) {
             continue;
         }
 
-        $("#" + game + difficulty).val(achievement);
-        vals[game][difficulty] = achievement;
+        $("#" + game + difficulty).val(tmp);
+        vals[game][difficulty] = tmp;
     }
 }
 
@@ -382,7 +393,7 @@ function drawOverview() {
             var base64image = canvas.toDataURL("image/png");
 
             $("#screenshot").html("<a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
-            "<input type='button' value='Save to Device'></a></p>" +
+            "<input type='button' value='Save to Device'></a> <input id='close' type='button' value='Close'></p>" +
             "<p><img id='base64' src='" + base64image + "' alt='Survival progress table'></p>");
             cleanupRendering();
         });
@@ -392,13 +403,15 @@ function drawOverview() {
     }
 }
 
+function printMessage(message) {
+    $("#message").html("<strong class='message'>" + message + "</strong>");
+}
+
 function save() {
-    if ($("#toggleData").is(":checked")) {
-        localStorage.setItem("saveSurvivalData", true);
-        localStorage.setItem("vals", JSON.stringify(vals));
-    } else {
-        localStorage.removeItem("saveSurvivalData");
-    }
+    localStorage.setItem("saveSurvivalData", true);
+    localStorage.setItem("vals", JSON.stringify(vals));
+    unsavedChanges = false;
+    printMessage("Survival table saved!");
 }
 
 function apply() {
@@ -413,6 +426,7 @@ function apply() {
     $("#results").css("display", "block");
     save();
     drawOverview();
+    printMessage("");
 }
 
 function emptyModal() {
@@ -519,6 +533,10 @@ function closeModal(event) {
     }
 }
 
+function changed() {
+    unsavedChanges = true;
+}
+
 function fillAll() {
     var value = $("#fillGameDifficulty").val(), achievement = $("#fillAchievement").val();
 
@@ -543,6 +561,9 @@ function reset() {
             $("#" + game + difficulty).val("N/A");
         }
     }
+
+    unsavedChanges = false;
+    printMessage("Reset the survival table to its default state!");
 }
 
 function setProgress() {
@@ -556,9 +577,9 @@ function setProgress() {
 function setEventListeners() {
     $("body").on("click", closeModal);
     $("body").on("keyup", closeModal);
-    $("select").on("click", save);
+    $("select").on("click", changed);
     $("#fillAll").on("click", fillAll);
-    $("#toggleData").on("click", save);
+    $("#save").on("click", save);
     $("#apply").on("click", apply);
     $("#reset").on("click", reset);
     $("#close").on("click", emptyModal);
@@ -582,4 +603,11 @@ $(document).ready(function () {
     init();
     setEventListeners();
     addMobileScrollbars();
+    window.onbeforeunload = function () {
+        if (unsavedChanges) {
+            return "";
+        }
+
+        return undefined;
+    }
 });

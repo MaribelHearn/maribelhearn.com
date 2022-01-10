@@ -29,6 +29,9 @@ input[type=button] {
 .bold {
     font-weight: bold;
 }
+.message {
+    color: green;
+}
 .clear {
     background-color: green;
 }
@@ -54,9 +57,6 @@ input[type=button] {
 .in_route {
     font-size: 12px;
     color: #339;
-}
-.result {
-    margin-bottom: 5px;
 }
 .noborders {
     border: none;
@@ -138,8 +138,8 @@ input[type=button] {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-    max-height: 80%;
+    width: 85%;
+    max-height: 85%;
     display: none;
     overflow-y: auto;
 }
