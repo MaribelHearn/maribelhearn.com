@@ -1,20 +1,14 @@
-.full_name {
-    display: none;
-}
 #layouttoggle {
     display: none;
 }
 @media only screen and (orientation: portrait) {
-    .player {
-        font-style: italic;
-    }
     #overall, #recent {
         display: none;
     }
     #overallm, #recentm {
         display: block;
     }
-    #overallm p {
+    #overallm p, #recentm p {
         margin: 2px;
     }
     #overall_link, #overall_linkn, #recent_link, #recent_linkn {

@@ -94,9 +94,9 @@
             echo '<div id="' . $game . '"><p>' .
             '<table id="' . $game . 't" class="sortable"><caption><p><span id="' . $game . '_image_old" ' .
             'class="cover ' . (num($game) <= 5 ? 'cover98' : '') . '"></span> ' . full_name($game, $lang) .
-            '</p></caption><thead><tr><th>' . tl_term(shot_route($game), $lang) . '</th>' .
-            '<th class="sorttable_numeric">' . lnn_type($game, $lang) .
-            '<br>' . tl_term('(Different players)', $lang) . '</th><th>' . tl_term('Players', $lang) .
+            '</p></caption><thead><tr><th class="general_header">' . tl_term(shot_route($game), $lang) . '</th>' .
+            '<th class="general_header sorttable_numeric">' . lnn_type($game, $lang) .
+            '<br>' . tl_term('(Different players)', $lang) . '</th><th class="general_header">' . tl_term('Players', $lang) .
             '</tr></thead><tbody>';
             foreach ($obj as $shot => $players) {
                 if (strpos($shot, 'UFOs')) {
@@ -125,8 +125,8 @@
             }
             $all = array_unique($all);
             sort($all);
-            echo '</tbody><tfoot><tr><td colspan="3"></td></tr><tr><td>' . tl_term('Overall', $lang) .
-            '</td><td>' . $sum . ' (' . sizeof($all) . ')</td><td>' . implode(', ', $all) .
+            echo '</tbody><tfoot><tr><td class="foot">' . tl_term('Overall', $lang) .
+            '</td><td class="foot">' . $sum . ' (' . sizeof($all) . ')</td><td class="foot">' . implode(', ', $all) .
             '</td></tr></tfoot></table></div>';
         }
         if ($layout == 'New') {
@@ -191,12 +191,12 @@
         <table class='sortable'>
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th class='game'><?php echo tl_term('Game', $lang); ?></th>
-                    <th id='autosort1' class='sorttable_numeric'>
+                    <th class='general_header head'>#</th>
+                    <th class='general_header game'><?php echo tl_term('Game', $lang); ?></th>
+                    <th id='autosort1' class='general_header sorttable_numeric'>
                         <span class='nooflnns'><?php echo tl_term('No. of LNNs', $lang); ?></span>
                     </th>
-                    <th id='autosort2' class='sorttable_numeric'><span class='differentn'><?php
+                    <th id='autosort2' class='general_header sorttable_numeric'><span class='differentn'><?php
         				if ($lang == 'Chinese') { echo '玩家'; }
                         else if ($lang == 'Japanese') { echo 'プレイヤー'; }
                         else { echo 'Different players'; }
@@ -225,11 +225,10 @@
                 ?>
             </tbody>
             <tfoot>
-                <tr><td colspan='4'></td></tr>
                 <tr>
-                    <td colspan='2'><span class='overall'><?php echo tl_term('Overall', $lang); ?></span></td>
-                    <td><?php echo $gt ?></td>
-                    <td><?php echo sizeof($pl_lnn) ?></td>
+                    <td class='foot' colspan='2'><span class='overall'><?php echo tl_term('Overall', $lang); ?></span></td>
+                    <td class='foot'><?php echo $gt ?></td>
+                    <td class='foot'><?php echo sizeof($pl_lnn) ?></td>
                 </tr>
                 <tr>
                     <td colspan='2'><span class='replays'><?php echo tl_term('Replays', $lang); ?></span></td>
@@ -243,11 +242,12 @@
         <table id='ranking' class='sortable'>
             <thead>
                 <tr>
-                    <th class='player'><?php echo tl_term('Player', $lang); ?></th>
-                    <th id='autosort3' class='sorttable_numeric'>
+                    <th class='general_header head'>#</th>
+                    <th class='general_header player'><?php echo tl_term('Player', $lang); ?></th>
+                    <th id='autosort3' class='general_header sorttable_numeric'>
                         <span class='nooflnns'><?php echo tl_term('No. of LNNs', $lang); ?></span>
                     </th>
-                    <th id='autosort4' class='sorttable_numeric'>
+                    <th id='autosort4' class='general_header sorttable_numeric'>
                         <span class='games'><?php echo tl_term('Games LNN\'d', $lang); ?></span>
                     </th>
                 </tr>

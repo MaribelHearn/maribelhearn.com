@@ -89,11 +89,11 @@ function showLNNs(game) {
     selected = game;
     $("#fullname").addClass(game + "f");
     $("#fullname").html(fullNameNumber(game));
-    $("#listhead").html("<tr><th class='" + shotRoute(game).toLowerCase() + "'>" + shotRoute(game) +
-    "</th><th class='sorttable_numeric'><span id='numeric' class='nooflnn" + (restrictions(game) ? restrictions(game) : "") +
-    "s'>No. of LNNs</span><br><span class='different'>(Different players)</span></th><th class='players'>Players</th></tr>");
-    $("#listfoot").html("<tr><td colspan='3'></td></tr><tr><td class='count'><span class='overall'>Overall</span></td>" +
-    "<td id='count' class='count'></td><td id='total'></td></tr>");
+    $("#listhead").html("<tr><th class='general_header " + shotRoute(game).toLowerCase() + "'>" + shotRoute(game) +
+    "</th><th class='general_header sorttable_numeric'><span id='numeric' class='nooflnn" + (restrictions(game) ? restrictions(game) : "") +
+    "s'>No. of LNNs</span><br><span class='different'>(Different players)</span></th><th class='general_header players'>Players</th></tr>");
+    $("#listfoot").html("<tr><td class='foot'><span class='overall'>Overall</span></td>" +
+    "<td id='count' class='foot'></td><td id='total' class='foot'></td></tr>");
     $("#listbody").html("");
 
     for (shottype in LNNs[game]) {

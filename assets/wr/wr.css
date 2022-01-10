@@ -5,6 +5,9 @@ table {
 table, th, td {
     border: 1px solid #000;
 }
+tr:not(.west_tr):nth-child(even), tr.west_tr:nth-child(odd) {
+    background-color: #dddddd;
+}
 .HRtPt th, .HRtPp, .HRtP {
     color: white;
     background-color: #b6423c;
@@ -81,15 +84,15 @@ table, th, td {
 .noborders {
     border: none;
 }
-.count {
-    text-decoration: underline;
-}
 .dimgrey {
     color: #696969;
 }
 .replay {
     color: inherit;
     text-decoration: none;
+}
+.general_header {
+    background-color: #aaaaaa;
 }
 .cover, .game_img {
     display: inline-block;
@@ -195,6 +198,14 @@ table, th, td {
     display: inline-block;
     background-image: url('../wr/dl.png');
 }
+.head {
+    content: '';
+    display: table-cell;
+}
+.hidden, #overall_linkm, #overall_linkmn, #overallm, #list, #playerlist, #playersearch, #checkboxes,
+#seasontoggle, #newlayout, #playersearchlink, #contents_new, #recent_linkm, #recent_linkmn, #recentm {
+    display: none;
+}
 .dropdown_content > p {
     margin: 4px;
 }
@@ -222,10 +233,6 @@ table, th, td {
 #nav {
     margin-bottom: 5px;
 }
-#overall_linkm, #overall_linkmn, #overallm, #list, #playerlist, #playersearch, #checkboxes,
-#seasontoggle, #newlayout, #playersearchlink, #contents_new, #recent_linkm, #recent_linkmn, #recentm {
-    display: none;
-}
 #list, #playerlist {
     margin-top: 10px;
 }
@@ -237,10 +244,6 @@ table, th, td {
 }
 #ranking.sortable tbody {
     counter-reset: sortabletablescope;
-}
-#ranking.sortable thead tr::before {
-    content: '';
-    display: table-cell;
 }
 #ranking.sortable tbody tr::before {
     content: counter(sortabletablescope);
