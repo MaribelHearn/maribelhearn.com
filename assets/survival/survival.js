@@ -93,21 +93,6 @@ function fillDifficulty(difficulty, achievement) {
             tmp = achievement;
         }
 
-        if (difficulty == "Normal" || difficulty == "Hard" || difficulty == "Lunatic") {
-            $("#" + game + "Easy").val(tmp);
-            vals[game]["Easy"] = tmp;
-
-            if (difficulty != "Normal") {
-                $("#" + game + "Normal").val(tmp);
-                vals[game]["Normal"] = tmp;
-
-                if (difficulty != "Hard") {
-                    $("#" + game + "Hard").val(tmp);
-                    vals[game]["Hard"] = tmp;
-                }
-            }
-        }
-
         if (difficulty == "Extra" && (game == "HRtP" || game == "PoDD")) {
             continue;
         }

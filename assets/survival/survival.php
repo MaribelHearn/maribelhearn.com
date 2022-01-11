@@ -10,7 +10,7 @@
 		in TD it is NT (No Trance), in HSiFS it is NR (No Releases), in WBaWC it is NHNRB (No Berserk Roar No Roar Breaks)
 		and in UM it is NC (No Cards, that is, no cards that affect survival play).
         The Phantasm Stage counts as another Extra Stage.</p>
-        <p>Use the below selectors to fill up many achievements at once. Normal, Hard and Lunatic will also fill the difficulties below them.</p>
+        <p>Use the below selectors to fill up many achievements at once, either by game or by difficulty.</p>
         <p>
             <label for='fillGameDifficulty'>Game / Difficulty</label>
             <select id='fillGameDifficulty'>
