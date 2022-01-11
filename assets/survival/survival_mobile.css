@@ -16,6 +16,9 @@ input, table {
 #results {
     font-size: 11px;
 }
+.in_route {
+    font-size: 9px;
+}
 @media only screen and (orientation: portrait) {
     .overview {
         width: 40px;
