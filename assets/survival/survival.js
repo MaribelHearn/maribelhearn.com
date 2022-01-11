@@ -395,6 +395,7 @@ function drawOverview() {
             $("#screenshot").html("<a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
             "<input type='button' value='Save to Device'></a> <input id='close' type='button' value='Close'></p>" +
             "<p><img id='base64' src='" + base64image + "' alt='Survival progress table'></p>");
+            $("#close").on("click", emptyModal);
             cleanupRendering();
         });
     } catch (err) {
@@ -582,7 +583,6 @@ function setEventListeners() {
     $("#save").on("click", save);
     $("#apply").on("click", apply);
     $("#reset").on("click", reset);
-    $("#close").on("click", emptyModal);
     $(".category").on("change", setProgress);
 }
 
