@@ -2,7 +2,7 @@
 function is_localhost(string $addr) {
     return $addr == '::1' || $addr == '127.0.0.1' || substr($addr, 0, 8) == '192.168.';
 }
-function closest_page($url) {
+function closest_page(string $url) {
     $min_distance = PHP_INT_MAX;
     foreach (glob('*/*/*') as $file) {
         if (strpos($file, '.php') && !strpos($file, '_') && $file != 'error.php') {
@@ -15,7 +15,7 @@ function closest_page($url) {
     }
     return array($min_page, $min_distance);
 }
-function redirect_to_closest($url) {
+function redirect_to_closest(string $url) {
     if (strpos($url, '/') === false) {
         $closest_page = closest_page($url);
         $min_page = $closest_page[0];
@@ -26,8 +26,14 @@ function redirect_to_closest($url) {
         }
     }
 }
-function redirect($page, $page_path, $request, $error) {
+function redirect(string $page, string $page_path, string $request, string $error) {
+    $aliases = (object) array('rf' => 'royalflare', 'surv' => 'survival', 'score' => 'scoring', 'poll' => 'thvote');
     $page_path = preg_split('/\?/', $page_path)[0];
+    if (property_exists($aliases, $page)) {
+        $location = $_SERVER['SERVER_NAME'] !== 'localhost' ? 'https://maribelhearn.com/' : 'http://localhost/';
+        header('Location: ' . $location . $aliases->{$page} . '?redirect=' . $page);
+        return $page;
+    }
     if (!file_exists($page_path) && $page != 'index' || !empty($error)) {
         $page = 'error';
         $url = substr($request, 1);
