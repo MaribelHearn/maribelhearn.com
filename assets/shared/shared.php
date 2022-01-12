@@ -37,7 +37,7 @@ function redirect(string $page, string $page_path, string $request, string $erro
     if (!file_exists($page_path) && $page != 'index' || !empty($error)) {
         $page = 'error';
         $url = substr($request, 1);
-        $json = file_get_contents('assets/json/admin.json');
+        $json = file_get_contents('assets/shared/json/admin.json');
         $data = json_decode($json, true);
         if (isset($data[$url])) {
             header('Location: ' . $data[$url]);
@@ -309,25 +309,25 @@ function wrap_top() {
         echo '<div id="languages">';
         if ($page == 'wr') {
             echo '<a id="en-gb" class="flag" href="wr?hl=en-gb">' .
-            '<img class="flag_en" src="assets/flags/uk.png" alt="' . tl_term('Flag of the United Kingdom', $lang_code) . '">' .
+            '<img class="flag_en" src="assets/shared/flags/uk.png" alt="' . tl_term('Flag of the United Kingdom', $lang_code) . '">' .
             '<p class="language">English (UK)</p></a><a id="en-us" class="flag" href="wr?hl=en-us">' .
-            '<img class="flag_en" src="assets/flags/us.png" alt="' . tl_term('Flag of the United States', $lang_code) . '">' .
+            '<img class="flag_en" src="assets/shared/flags/us.png" alt="' . tl_term('Flag of the United States', $lang_code) . '">' .
             '<p class="language">English (US)</p></a> ';
         } else {
             echo '<a id="en" class="flag" href="' . $page . '?hl=en">' .
-            '<img class="flag_en" src="assets/flags/uk.png" alt="' . tl_term('Flag of the United Kingdom', $lang_code) . '"><p class="language">English</p></a> ';
+            '<img class="flag_en" src="assets/shared/flags/uk.png" alt="' . tl_term('Flag of the United Kingdom', $lang_code) . '"><p class="language">English</p></a> ';
         }
         if (in_array($page, $ja)) {
             echo '<a id="jp" class="flag" href="' . $page . '?hl=jp">' .
-            '<img src="assets/flags/japan.png" alt="' . tl_term('Flag of Japan', $lang_code) . '"><p class="language">日本語</p></a> ';
+            '<img src="assets/shared/flags/japan.png" alt="' . tl_term('Flag of Japan', $lang_code) . '"><p class="language">日本語</p></a> ';
         }
         if (in_array($page, $zh)) {
             echo '<a id="zh" class="flag" href="' . $page . '?hl=zh">' .
-            '<img src="assets/flags/china.png" alt="' . tl_term('Flag of the P.R.C.', $lang_code) . '"><p class="language">简体中文</p></a> ';
+            '<img src="assets/shared/flags/china.png" alt="' . tl_term('Flag of the P.R.C.', $lang_code) . '"><p class="language">简体中文</p></a> ';
         }
         if (in_array($page, $ru)) {
             echo '<a id="ru" class="flag" href="' . $page . '?hl=ru">' .
-            '<img src="assets/flags/russia.png" alt="' . tl_term('Flag of Russia', $lang_code) . '"><p class="language">Русский</p></a>';
+            '<img src="assets/shared/flags/russia.png" alt="' . tl_term('Flag of Russia', $lang_code) . '"><p class="language">Русский</p></a>';
         }
         echo '</div>';
     }

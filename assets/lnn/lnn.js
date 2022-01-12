@@ -58,7 +58,7 @@ function showLNNs(game) {
     }
 
     if (!LNNs) {
-        $.get("assets/json/lnnlist.json", function (data) {
+        $.get("assets/shared/json/lnnlist.json", function (data) {
             LNNs = data;
             showLNNs(game);
         }, "json");
@@ -163,7 +163,7 @@ function showPlayerLNNs(player) {
     }
 
     if (!LNNs) {
-        $.get("assets/json/lnnlist.json", function (data) {
+        $.get("assets/shared/json/lnnlist.json", function (data) {
             LNNs = data;
             showPlayerLNNs(player);
         }, "json");
