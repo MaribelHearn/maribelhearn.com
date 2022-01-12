@@ -63,7 +63,7 @@
         <meta name='keywords' content='<?php echo property_exists($data, 'keywords') ? $data->keywords : '' ?>'>
         <meta name='msapplication-TileColor' content='#da532c'>
         <meta name='theme-color' content='#ffffff'>
-        <link rel='preload' type='font/woff2' href='<?php echo $page == 'error' ? 'https://maribelhearn.com/' : '/' ?>assets/fonts/Felipa-Regular.woff2' as='font' crossorigin>
+        <link rel='preload' type='font/woff2' href='<?php echo $page == 'error' ? 'https://maribelhearn.com/' : '/' ?>assets/shared/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' href='<?php echo $css_href ?>'>
         <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png'>
         <?php if (!in_array($page, $use_index)) { echo '<link rel="icon" type="image/' . ($favicon_ext == '.ico' ? 'x-icon' : 'png') . '" href="' . $favicon_dir . '/' . $page . $favicon_ext . '">'; } ?>
