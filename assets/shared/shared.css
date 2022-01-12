@@ -1,9 +1,9 @@
 @font-face {
     font-family: Felipa;
     font-display: swap;
-    src: url('../fonts/Felipa-Regular.woff2') format('woff2'),
-         url('../fonts/Felipa-Regular.woff') format('woff'),
-         url('../fonts/Felipa-Regular.ttf') format('ttf');
+    src: url('/assets/shared/fonts/Felipa-Regular.woff2') format('woff2'),
+         url('/assets/shared/fonts/Felipa-Regular.woff') format('woff'),
+         url('/assets/shared/fonts/Felipa-Regular.ttf') format('ttf');
 }
 h1 {
     font-family: Felipa;
@@ -30,7 +30,7 @@ a:visited.dropdown_button {
     color: black;
 }
 .icon {
-    background-image: url('../spritesheet/icon_sheet.png');
+    background-image: url('/assets/shared/spritesheets/icon_sheet.png');
     display: inline-block;
     width: 16px;
     height: 16px;
@@ -198,7 +198,7 @@ a:visited.dropdown_button {
     display: none;
 }
 #hy {
-    background-image: url('../spritesheet/icon_sheet.png');
+    background-image: url('/assets/shared/spritesheets/icon_sheet.png');
     background-position: -512px 0px;
     display: inline-block;
     width: 120px;

@@ -103,10 +103,10 @@ tr:not(.west_tr):nth-child(even), tr.west_tr:nth-child(odd) {
     cursor: pointer;
 }
 .sheet_1 {
-    background-image: url('../spritesheet/game_sheet50x50_1.png');
+    background-image: url('../shared/spritesheets/game_sheet50x50_1.png');
 }
 .sheet_2 {
-    background-image: url('../spritesheet/game_sheet50x50_2.png');
+    background-image: url('../shared/spritesheets/game_sheet50x50_2.png');
 }
 .cover98 {
     border: 1px solid #000;

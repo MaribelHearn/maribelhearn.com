@@ -45,9 +45,9 @@
         <p>Originally known as Touhou Click and Drag Game.</p>
     </div>
     <?php
-        $json = file_get_contents('assets/json/charpos.json');
+        $json = file_get_contents('assets/shared/json/charpos.json');
         $chars = json_decode($json, true);
-        $json = file_get_contents('assets/json/locs.json');
+        $json = file_get_contents('assets/shared/json/locs.json');
         $locs = json_decode($json, true);
         foreach ($chars as $key => $array) {
             echo '<div id="chars' . $key . '_load" data-html2canvas-ignore>';

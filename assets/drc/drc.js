@@ -478,7 +478,7 @@ function isPhantasmagoria(game) {
 }
 function drcPoints() {
     if (!Rubrics) {
-        $.get("assets/json/rubrics.json", function (data) {
+        $.get("assets/shared/json/rubrics.json", function (data) {
             Rubrics = data;
             drcPoints();
         }, "json");
@@ -522,7 +522,7 @@ function drcPoints() {
             points = mofFormula(difficulty, shottype);
         } else {
             if (!WRs) {
-                $.get("assets/json/wrlist.json", function (data) {
+                $.get("assets/shared/json/wrlist.json", function (data) {
                     WRs = data;
                     drcPoints();
                 }, "json");

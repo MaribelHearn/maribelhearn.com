@@ -85,11 +85,11 @@
 </div>
 <div id='characters' class='dark_bg' data-html2canvas-ignore></div>
 <?php
-    $json = file_get_contents('assets/json/chars.json');
+    $json = file_get_contents('assets/shared/json/chars.json');
     $chars = json_decode($json, true);
-    $json = file_get_contents('assets/json/works.json');
+    $json = file_get_contents('assets/shared/json/works.json');
     $works = json_decode($json, true);
-    $json = file_get_contents('assets/json/shots.json');
+    $json = file_get_contents('assets/shared/json/shots.json');
     $shots = json_decode($json, true);
     echo '<div id="chars_load" class="dark_bg" data-html2canvas-ignore>';
     foreach ($chars as $category => $value) {

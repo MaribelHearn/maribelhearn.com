@@ -908,7 +908,7 @@ function calc() {
         precision = parseInt($("#precision").val());
 
     if (!WRs) {
-        $.get("assets/json/wrlist.json", function (data) {
+        $.get("assets/shared/json/wrlist.json", function (data) {
             WRs = data;
             calc();
         }, "json");

@@ -73,7 +73,7 @@ $(document).ready(function () {
         language = "Russian";
     }
 
-    $.get("assets/json/schedule.json", function (data) {
+    $.get("assets/shared/json/schedule.json", function (data) {
         printSchedule(data);
     }, "json");
 

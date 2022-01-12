@@ -40,21 +40,21 @@
             </select>
         </p>
         <p>
-            <label for='nd'><img src='assets/gensokyo/nd.gif' title='No Deaths' alt='No Deaths icon'></label>
+            <label for='nd'><img src='assets/gensokyo/gif/nd.gif' title='No Deaths' alt='No Deaths icon'></label>
             <input id='nd' name='nd' type='checkbox'<?php echo !empty($_GET['nd']) && $_GET['nd'] == 'on' ? ' checked' : '' ?>>
-            <label for='nb'><img src='assets/gensokyo/nb.gif' title='No Bomb Usage' alt='No Bombs icon'></label>
+            <label for='nb'><img src='assets/gensokyo/gif/nb.gif' title='No Bomb Usage' alt='No Bombs icon'></label>
             <input id='nb' name='nb' type='checkbox'<?php echo !empty($_GET['nb']) && $_GET['nb'] == 'on' ? ' checked' : '' ?>>
-            <label for='nf'><img src='assets/gensokyo/nf.gif' title='No Focused Movement' alt='No Focus icon'></label>
+            <label for='nf'><img src='assets/gensokyo/gif/nf.gif' title='No Focused Movement' alt='No Focus icon'></label>
             <input id='nf' name='nf' type='checkbox'<?php echo !empty($_GET['nf']) && $_GET['nf'] == 'on' ? ' checked' : '' ?>>
-            <label for='nv'><img src='assets/gensokyo/nv.gif' title='No Vertical Movement' alt='No Vertical icon'></label>
+            <label for='nv'><img src='assets/gensokyo/gif/nv.gif' title='No Vertical Movement' alt='No Vertical icon'></label>
             <input id='nv' name='nv' type='checkbox'<?php echo !empty($_GET['nv']) && $_GET['nv'] == 'on' ? ' checked' : '' ?>>
-            <label for='tas'><img src='assets/gensokyo/tas.gif' title='Tool-Assisted Replay' alt='TAS icon'></label>
+            <label for='tas'><img src='assets/gensokyo/gif/tas.gif' title='Tool-Assisted Replay' alt='TAS icon'></label>
             <input id='tas' name='tas' type='checkbox'<?php echo !empty($_GET['tas']) && $_GET['tas'] == 'on' ? ' checked' : '' ?>>
-            <label for='chz'><img src='assets/gensokyo/chz.gif' title='Tool-Assisted Replay (not marked by original uploader)' alt='Cheater icon'></label>
+            <label for='chz'><img src='assets/gensokyo/gif/chz.gif' title='Tool-Assisted Replay (not marked by original uploader)' alt='Cheater icon'></label>
             <input id='chz' name='chz' type='checkbox'<?php echo !empty($_GET['chz']) && $_GET['chz'] == 'on' ? ' checked' : '' ?>>
-            <label for='pa'><img src='assets/gensokyo/pa.gif' title='Pacifist' alt='Pacifist icon'></label>
+            <label for='pa'><img src='assets/gensokyo/gif/pa.gif' title='Pacifist' alt='Pacifist icon'></label>
             <input id='pa' name='pa' type='checkbox'<?php echo !empty($_GET['pa']) && $_GET['pa'] == 'on' ? ' checked' : '' ?>>
-            <label for='co'><img src='assets/gensokyo/co.gif' title='Other Condition' alt='Other icon'></label>
+            <label for='co'><img src='assets/gensokyo/gif/co.gif' title='Other Condition' alt='Other icon'></label>
             <input id='co' name='co' type='checkbox'<?php echo !empty($_GET['co']) && $_GET['co'] == 'on' ? ' checked' : '' ?>>
         </p>
         <p>
