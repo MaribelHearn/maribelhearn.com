@@ -50,6 +50,7 @@
             case 'Czechia': return 'Czech-Republic';
             case 'Curacao': return 'Netherlands';
             case 'Dominica': return 'Dominicana';
+            case 'Eswatini': return 'Swaziland';
             case 'South Korea': return 'Korea';
             case 'Guadeloupe': return 'France';
             case 'Croatia': return 'Croatian';
