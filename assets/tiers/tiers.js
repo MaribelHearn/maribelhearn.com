@@ -519,9 +519,9 @@ function multiSelectionToText() {
 }
 
 function addToTierMobile(event) {
-    var item = event.data.character, tierNum = event.data.tierNum, tierList = getCurrentTierList(), chars, char;
+    var item = event.data.character, tierNum = event.data.tierNum, tierList = getCurrentTierList(), chars, character;
 
-    $("#" + char).off("click");
+    $("#" + character).off("click");
 
     if (typeof item == "object") { // multiselection
         following = item[0];
@@ -532,12 +532,12 @@ function addToTierMobile(event) {
         return;
     }
 
-    char = item.removeSpaces();
+    character = item.removeSpaces();
 
-    if (isTiered(char)) {
-        changeToTier(char, tierNum);
+    if (isTiered(character)) {
+        changeToTier(character, tierNum);
     } else {
-        addToTier(char, tierNum);
+        addToTier(character, tierNum);
     }
 
     emptyModal();
