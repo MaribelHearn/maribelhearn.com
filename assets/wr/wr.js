@@ -1,7 +1,7 @@
 /*global $ MAX_SCORE getCookie setCookie deleteCookie gameAbbr shottypeAbbr sep fullNameNumber generateTableText
 generateFullNames generateShottypes generateShortNames translateUSDate translateDate translateEADate langCode*/
 var WRs, westScores, missingReplays, seasonsEnabled, datesEnabled,
-    notation = "DMY", language = "English", selected = "", playerSelected = false,
+    notation = "DMY", language = "en_US", selected = "", playerSelected = false,
     all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN",
     "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
 
@@ -212,7 +212,7 @@ function showWRs(event) {
     }
 
     var overall = {}, bestShot = {}, compareWRs = {}, shottypes = [], max = 0, diffKey = "Easy", difficulty,
-    shottype, char, season, wr, score, player, replay, date, text, sepScore, bestShotMax;
+    shottype, character, season, wr, score, player, replay, date, text, sepScore, bestShotMax;
 
     $("#list").html("<p id='fullname'></p><p id='seasontoggle'><input id='seasons' type='checkbox'>" +
     "<label id='label_seasons' class='Seasons' for='seasons'></label>" +
@@ -246,7 +246,7 @@ function showWRs(event) {
         bestShotMax = 0;
 
         for (shottype in WRs[game][difficulty]) {
-            char = removeSeason(shottype);
+            character = removeSeason(shottype);
             season = removeChar(shottype);
             wr = WRs[game][difficulty][shottype];
             score = wr[0];
@@ -289,8 +289,8 @@ function showWRs(event) {
             "<span class='datestring_game'>" + date + "</span></span>" : "");
             $("#" + game + difficulty + shottype).html(score > 0 ? text : '-');
 
-            if (game == "HSiFS" && season == bestSeason(difficulty, char)) {
-                $("#" + game + difficulty + char + (difficulty == "Extra" ? "Small" : "")).html(text + (difficulty != "Extra" ? " (" + bestSeason(difficulty, char) +
+            if (game == "HSiFS" && season == bestSeason(difficulty, character)) {
+                $("#" + game + difficulty + character + (difficulty == "Extra" ? "Small" : "")).html(text + (difficulty != "Extra" ? " (" + bestSeason(difficulty, character) +
                 ")" : ""));
             }
         }
@@ -425,7 +425,6 @@ function generateDates(oldLanguage, oldNotation, playerSelected) {
 
     if (oldLanguage) {
         datestrings = $(".datestring");
-        alert(JSON.stringify(datestrings));
 
         for (i = 0; i < datestrings.length; i += 1) {
             date = $(datestrings[i]).html();
@@ -498,6 +497,11 @@ function setEventListeners() {
     $("#jp").on("click", {language: "Japanese", notation: "YMD"}, setLanguage);
     $("#zh").on("click", {language: "Chinese", notation: "YMD"}, setLanguage);
     $("#ru").on("click", {language: "Russian", notation: "DMY"}, setLanguage);
+    /*$("#en-gb").on("click", {language: "en_US", notation: "DMY"}, setLanguage);
+    $("#en-us").on("click", {language: "en_US", notation: "MDY"}, setLanguage);
+    $("#jp").on("click", {language: "ja_JP", notation: "YMD"}, setLanguage);
+    $("#zh").on("click", {language: "zh_CN", notation: "YMD"}, setLanguage);
+    $("#ru").on("click", {language: "ru_RU", notation: "DMY"}, setLanguage);*/
     $(".game_img").on("click", {seasonSwitch: false}, showWRs);
 }
 
@@ -530,7 +534,17 @@ $(document).ready(function () {
         notation = "MDY";
     }
 
-    $("#top").attr("lang", langCode(language, notation));
+    /*if (getCookie("lang") == "ja_JP" || location.href.contains("jp")) {
+        language = "Japanese";
+        notation = "YMD";
+    } else if (getCookie("lang") == "zh_CN" || location.href.contains("zh")) {
+        language = "Chinese";
+        notation = "YMD";
+    } else if (getCookie("lang") == "ru_RU") {
+        language = "Russian";
+    } else if (getCookie("datenotation") == "MDY" || location.href.contains("en-us")) {
+        notation = "MDY";
+    }*/
 
     if (!datesEnabled) {
         disableDates();
