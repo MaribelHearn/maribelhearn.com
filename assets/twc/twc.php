@@ -139,6 +139,5 @@
         'has to be visible at all times.</li><li>Finished runs need their replays saved.</li>' .
         '<li>Please hide the story ending when your run finishes.</li>');
     ?></ul>
-    </div>
     <p id='back'><strong><a id='backtotop' href='#top'><?php echo _('Back to Top') ?></a></strong></p>
 </div>

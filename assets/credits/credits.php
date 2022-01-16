@@ -16,7 +16,7 @@
     <h3><span class='icon flag_japan'></span> <?php echo _('Japanese') ?></h3>
     <ul class='credits'>
         <li><a href='https://twitter.com/7bitm' target='_blank'>7bitm</a>: DRC</li>
-        <li><a href='https://twitter.com/toho_yumiya' target='_blank'><?php echo ($lang_code == 'ja' ? 'ゆーみや' : 'Yu-miya') ?></a>: DRC, Tools, WR, LNN, TWC</li>
+        <li><a href='https://twitter.com/toho_yumiya' target='_blank'><?php echo ($lang == 'ja_JP' ? 'ゆーみや' : 'Yu-miya') ?></a>: DRC, Tools, WR, LNN, TWC</li>
     </ul>
     <h3><span class='icon flag_china'></span> <?php echo _('Chinese') ?></h3>
     <ul class='credits'>
