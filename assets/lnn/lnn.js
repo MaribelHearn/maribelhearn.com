@@ -190,7 +190,7 @@ function showPlayerLNNs(player) {
         for (shottype in LNNs[game]) {
             if (LNNs[game][shottype].contains(player)) {
                 if (!games.contains(game)) {
-                    $("#playerlistbody").append("<tr><td id='" + game + "l'><span class='" + game + "'>" + game +
+                    $("#playerlistbody").append("<tr><td class='" + game + "l'><span class='" + game + "'>" + game +
                     "</span></td><td id='" + game + "s'></td><td id='" + game + "r'></td></tr>");
                     games.push(game);
                 }
