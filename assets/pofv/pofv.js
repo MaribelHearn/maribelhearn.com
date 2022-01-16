@@ -442,43 +442,43 @@ function isMobile() {
 }
 
 function charInfo() {
-    var char = this.title.split(' ')[0].toLowerCase();
+    var chara = this.title.split(' ')[0].toLowerCase();
 
-    var speed = MIN_SPEED - STATS[char].speed,
-        focus = Math.max(MIN_SPEED - STATS[char].focus, 1.5),
+    var speed = MIN_SPEED - STATS[chara].speed,
+        focus = Math.max(MIN_SPEED - STATS[chara].focus, 1.5),
         //scope = Math.max(minScope - STATS[char].scope, 3),
-        charge = Math.max(MIN_CHARGE - STATS[char].charge, 0.3);
+        charge = Math.max(MIN_CHARGE - STATS[chara].charge, 0.3);
 
     emptyModal();
 
     if (isMobile()) {
         $("#modal_inner").html("<h2>" + this.title + "</h2><table class='noborders'><tr>" +
-        "<td class='noborders'><img class='art' src='assets/pofv/characters/" + char + ".png' alt='" + this.title + "'></td>" +
+        "<td class='noborders'><img class='art' src='assets/pofv/characters/" + chara + ".png' alt='" + this.title + "'></td>" +
         "<td class='noborders'><table class='stats noborders'>" +
         "<tr><td class='noborders'>Tier</td>" +
-        "<td class='noborders'><strong class='" + TIER[char] + "'>" + TIER[char] + "</strong></td></tr>" +
+        "<td class='noborders'><strong class='" + TIER[chara] + "'>" + TIER[chara] + "</strong></td></tr>" +
         "<tr><td class='noborders'>Normal Speed</td><td class='noborders'><progress value='" + speed + "' max='98'></td></tr>" +
         "<tr><td class='noborders'>Focused Speed</td><td class='noborders'><progress value='" + focus + "' max='98'></td></tr>" +
         "<tr><td class='noborders'>Charge Speed</td><td class='noborders'><progress value='" + charge + "' max='20.5'></td></tr>" +
-        "<tr><td class='noborders'>Charge Delay</td><td class='noborders'>" + STATS[char].delay + " frames</td></tr>" +
-        "<tr><td class='noborders'>Special Ability</td><td class='noborders'>" + ABILITY[char] + "</td></tr>" +
-        "<tr><td class='noborders'>Scope</td><td class='noborders'>" + SCOPE[char] + "</td></tr></table>" +
-        "</td></tr></table><img class='scope' src='assets/pofv/scopes/" + char +
-        ".jpg'><p class='descr'>" + DESCRIPTION[char][language] + "</p>");
+        "<tr><td class='noborders'>Charge Delay</td><td class='noborders'>" + STATS[chara].delay + " frames</td></tr>" +
+        "<tr><td class='noborders'>Special Ability</td><td class='noborders'>" + ABILITY[chara] + "</td></tr>" +
+        "<tr><td class='noborders'>Scope</td><td class='noborders'>" + SCOPE[chara] + "</td></tr></table>" +
+        "</td></tr></table><img class='scope' src='assets/pofv/scopes/" + chara +
+        ".jpg'><p class='descr'>" + DESCRIPTION[chara][language] + "</p>");
     } else {
         $("#modal_inner").html("<h2>" + this.title + "</h2><table class='noborders'><tr>" +
-        "<td class='noborders'><img class='art' src='assets/pofv/characters/" + char + ".png' alt='" + this.title + "'></td>" +
+        "<td class='noborders'><img class='art' src='assets/pofv/characters/" + chara + ".png' alt='" + this.title + "'></td>" +
         "<td class='noborders'><table class='stats noborders'>" +
         "<tr><td class='noborders'>Tier</td>" +
-        "<td class='noborders'><strong class='" + TIER[char] + "'>" + TIER[char] + "</strong></td></tr>" +
+        "<td class='noborders'><strong class='" + TIER[chara] + "'>" + TIER[chara] + "</strong></td></tr>" +
         "<tr><td class='noborders'>Normal Speed</td><td class='noborders'><progress value='" + speed + "' max='98'></td></tr>" +
         "<tr><td class='noborders'>Focused Speed</td><td class='noborders'><progress value='" + focus + "' max='98'></td></tr>" +
         "<tr><td class='noborders'>Charge Speed</td><td class='noborders'><progress value='" + charge + "' max='20.5'></td></tr>" +
-        "<tr><td class='noborders'>Charge Delay</td><td class='noborders'>" + STATS[char].delay + " frames</td></tr>" +
-        "<tr><td class='noborders'>Special Ability</td><td class='noborders'>" + ABILITY[char] + "</td></tr>" +
-        "<tr><td class='noborders'>Scope</td><td class='noborders'>" + SCOPE[char] + "</td></tr></table></td>" +
-        "<td class='noborders'><img class='scope' src='assets/pofv/scopes/" + char + ".jpg'></td></tr></table>" +
-        "<p class='descr'>" + DESCRIPTION[char][language] + "</p>");
+        "<tr><td class='noborders'>Charge Delay</td><td class='noborders'>" + STATS[chara].delay + " frames</td></tr>" +
+        "<tr><td class='noborders'>Special Ability</td><td class='noborders'>" + ABILITY[chara] + "</td></tr>" +
+        "<tr><td class='noborders'>Scope</td><td class='noborders'>" + SCOPE[chara] + "</td></tr></table></td>" +
+        "<td class='noborders'><img class='scope' src='assets/pofv/scopes/" + chara + ".jpg'></td></tr></table>" +
+        "<p class='descr'>" + DESCRIPTION[chara][language] + "</p>");
     }
 
     $("#modal_inner").append();
