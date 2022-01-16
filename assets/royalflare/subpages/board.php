@@ -38,10 +38,10 @@
                     if ($entry['difficulty'] == $diff && (($game != 'GFW' && $entry['chara'] == $shot) || ($game == 'GFW' && $entry['route'] == $shot))) {
                         if ($game != 'IN' || $diff == 'Extra' || $entry['route'] == ('Final' . $route)) {
                             echo '<tr><td class="hidden"></td><td>' . number_format($entry['score'], 0, '.', ',') . '</td><td' . $slowdown_class . '>' . $entry['slowdown'] .
-                            '</td>' . ($game != 'GFW' ? '<td>' . tl_shot($entry['chara'], $lang_code) . '</td>' : '<td>' . $entry['route'] . '</td>') .
-                            '<td>' . $entry['difficulty'] . ($game == 'IN' && $diff != 'Extra' ? '<br>' . (tl_term('Final' . $route, $lang_code)) : '') . '</td>' .
+                            '</td>' . ($game != 'GFW' ? '<td>' . tl_shot($entry['chara'], $lang) . '</td>' : '<td>' . $entry['route'] . '</td>') .
+                            '<td>' . $entry['difficulty'] . ($game == 'IN' && $diff != 'Extra' ? '<br>' . (tl_term('Final' . $route, $lang)) : '') . '</td>' .
                             '<td>' . $entry['date'] . '</td><td>' . $entry['player'] . '</td>' . ($is_mobile ? '' : '<td class="break">' . $entry['comment'] . '</td>') .
-                            '<td><a href="' . $entry['replay'] . '">' . $entry['uploaded'] . '</a></td></tr>';
+                            '<td><a href="' . $entry['replay'] . '">' . (empty($entry['uploaded']) ? $entry['date'] : $entry['uploaded']) . '</a></td></tr>';
                         }
                     }
                 }

@@ -79,7 +79,7 @@
     }
 
     function results(string $player, string $game, string $diff, string $shot, string $comment, bool $gamecol) {
-        global $lang_code, $is_mobile;
+        global $lang, $is_mobile;
         $table = '';
         $board = get_board($game);
         foreach ($board as $key => $entry) {
@@ -99,7 +99,7 @@
                 $slowdown_class = (check_slowdown($game, $entry['slowdown']) ? ' class="slowdown"' : '');
                 $table .= '<tr><td class="hidden"></td>' . ($gamecol ? '<td class=' . game_to_abbr($game) . '>' . $game . '</td>' : '') .
                 '<td>' . number_format($entry['score'], 0, '.', ',') . '</td><td' . $slowdown_class . '>' . $entry['slowdown'] . '</td>' .
-                '<td>' . tl_shot($tmp_shot, $lang_code) . '</td><td>' . $tmp_diff . ($game == 'th08' && $tmp_diff != 'Extra' ? '<br>' . tl_term($entry['route'], $lang_code) : '') . '</td>' .
+                '<td>' . tl_shot($tmp_shot, $lang) . '</td><td>' . $tmp_diff . ($game == 'th08' && $tmp_diff != 'Extra' ? '<br>' . tl_term($entry['route'], $lang) : '') . '</td>' .
                 '<td>' . $entry['date'] . '</td><td>' . $entry['player'] . '</td>' . ($is_mobile ? '' : '<td class="break">' . $entry['comment'] . '</td>') .
                 '<td><a href="' . $entry['replay'] . '">' . (empty($entry['uploaded']) ? preg_split('/ /', $entry['date'])[0] : $entry['uploaded']) . '</a></td></tr>';
             }

@@ -131,7 +131,7 @@ function check_slowdown(string $game, string $sd) {
 
 
 function tl_shot(string $shot, string $lang) {
-    if ($lang == 'ja_JP' || $lang == 'Japanese' || $lang == 'ja') {
+    if ($lang == 'ja_JP' || $lang == 'Japanese') {
         switch ($shot) {
             case 'Makai': return '魔界';
             case 'Jigoku': return '地獄';
@@ -213,7 +213,7 @@ function tl_shot(string $shot, string $lang) {
 
 
 function tl_term(string $term, string $lang) {
-    if ($lang == 'Japanese' || $lang == 'ja_JP' || $lang == 'ja') {
+    if ($lang == 'Japanese' || $lang == 'ja_JP') {
         $term = trim($term);
         switch ($term) {
             case 'Shottype': return 'キャラ';
