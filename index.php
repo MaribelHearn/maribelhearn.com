@@ -83,7 +83,7 @@
         <?php if (!$is_mobile || $page != 'tiers') {
             echo '<script nonce="' . file_get_contents('.stats/nonce') . '" defer>document.body.style.background="url(\'' . ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/' . $css_js_file . '/' . $css_js_file . '.jpg\') ';
             echo $bg_pos . ' no-repeat fixed";document.body.style.backgroundSize="cover"</script>';
-            echo '<noscript><link rel="stylesheet" href="assets/shared/noscript_bg.php?page=' . $css_js_file . '&pos=' . $bg_pos . '"></noscript>';
+            echo '<noscript><link rel="stylesheet" href="/assets/shared/noscript_bg.php?page=' . $css_js_file . '&pos=' . $bg_pos . '"></noscript>';
         }
         if (isset($_SESSION) && array_key_exists('data', $_SESSION)) {
             if (strpos($_SESSION['data'], '<') === false) {
