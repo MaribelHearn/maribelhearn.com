@@ -1,85 +1,47 @@
-<?php include_once 'assets/shared/tl.php'; include_once 'assets/lnn/lnn_code.php' ?>
+<?php include_once 'assets/shared/tl.php'; include_once 'assets/lnn/lnn_code.php'; setlocale(LC_ALL, $locale); bindtextdomain($lang, 'locale'); textdomain($lang) ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
     <p id='description'><?php
-		if ($lang == 'Chinese') {
-			echo '这个网页记载所有「东方Project」的LNN（Lunatic No Miss No Bomb），时不时地更新。' .
-            '每作游戏的每个机体有一行显示打出LNN的玩家。如果某一位玩家用一个机体打出多次LNN，只算一次，其余次数不算入统计。';
-		} else if ($lang == 'Japanese') {
-			echo '東方原作STG各作品の難易度Lunaticのノーミスノーボム（LNN）リストです。適宜頻繁に更新します。各作品の表とも、' .
-            '各機体において誰が達成したかを記載しています。特定の作品、ショットタイプで複数回のLNNを達成している場合でも１回とカウントされます。';
-		} else if ($lang == 'Russian') {
-            echo 'Регулярно обновляющийся список Lunatic No Miss No Bombs (LNN) забегов. ' .
-            'Таблицы показывают список игроков, которые сделали LNN на том или ином шоттипе. ' .
-            'Если у игрока есть несколько LNN за один и тот же шоттип, они не будут учтены.';
-        } else {
-            echo 'A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. ' .
-            'For every shottype in a game, tables will tell you which players have done an LNN with it, if any. ' .
-            'If a player has multiple LNNs for one particular shottype, those are not factored in.';
-		}
+        echo _('A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. ' .
+        'For every shottype in a game, tables will tell you which players have done an LNN with it, if any. ' .
+        'If a player has multiple LNNs for one particular shottype, those are not factored in.');
 	?></p>
     <p id='conditions'><?php
-		if ($lang == 'Chinese') {
-			echo '妖妖梦、神灵庙、天空璋、鬼形獣、虹龙洞打NN时有附加条件，即是不爆结界、不开灵界、不使用季节解放、不撞咆哮、不开暴走、不卡。此三作LNN被称为LNNN' .
-            '或LNNNN，以第三个N代表着附加的条件。星莲船的附加条件（不开飞碟）由于对难度没有大量的影响，可以自选。永夜抄的LNN必须收取所有LSC，称做LNNFS。';
-		} else if ($lang == 'Japanese') {
-			echo 'また妖々夢では霊撃無し、神霊廟ではトランス無し、天空璋では開放無し、鬼形獣では霊撃無し、' .
-            '暴走ロアリング無し、虹龍洞ではカード無しが条件となります。この５作品では追加条件によってNが追加され、LNNN又はLNNNNと呼称します。' .
-            'また星蓮船ではUFO招喚無しも考慮されますが、難易度が劇的に変化するわけではないため必須条件とはなっていません。' .
-            '永夜抄ではラストスペル取得を含めLNNFSが条件となります。';
-        } else if ($lang == 'Russian') {
-            echo 'Для PCB, TD, HSiFS и WBaWC также необходимы следующий условия: No Border Breaks для PCB, ' .
-            'No Trance для TD, No Release для HSiFS, No Berserk Roar No Roar Breaks для WBaWC и No Cards для UM. ' .
-            'Для этих игр LNN обычно назвают LNNN или LNNNN, с дополнительными N для индикации доп. условий. ' .
-            'Дополнительное условие в UFO, no UFO summons, не требуется, так как считается, что они не имеют ' .
-            'сильное влияние на сложность забега. В LNN IN\'а, впрочем, нужно захватить все Ласт Спеллы и называется LNNFS.';
-		} else {
-            echo 'Extra conditions are required for PCB, TD, HSiFS, WBaWC and UM; these are No Border Breaks for PCB, ' .
-            'No Trance for TD, No Release for HSiFS, No Berserk Roar No Roar Breaks for WBaWC and No Cards for UM. ' .
-            'LNN in these games is called LNNN or LNNNN, with extra Ns to denote the extra conditions. ' .
-            'The extra condition in UFO, no UFO summons, is optional, as it is not considered to have a significant ' .
-            'impact on the difficulty of the run. As for IN, an LNN is assumed to capture all Last Spells and '.
-            'is referred to as LNNFS.';
-		}
+        echo _('Extra conditions are required for PCB, TD, HSiFS, WBaWC and UM; these are No Border Breaks for PCB, ' .
+        'No Trance for TD, No Release for HSiFS, No Berserk Roar No Roar Breaks for WBaWC and No Cards for UM. ' .
+        'LNN in these games is called LNNN or LNNNN, with extra Ns to denote the extra conditions. ' .
+        'The extra condition in UFO, no UFO summons, is optional, as it is not considered to have a significant ' .
+        'impact on the difficulty of the run. As for IN, an LNN is assumed to capture all Last Spells and '.
+        'is referred to as LNNFS.');
 	?></p>
-    <p id='tables'><?php
-		if ($lang == 'Chinese') { echo '点击任何标题即可排序表格内容。'; }
-        else if ($lang == 'Japanese') { echo '各欄は並べ替え可能となっています。並べ替えには各表の最上段をクリックしてください'; }
-        else if ($lang == 'Russian') { echo 'Все столбцы таблицы можно отсортировать.'; }
-        else { echo 'All of the table columns are sortable.'; }
-	?></p>
+    <p id='tables'><?php echo _('All of the table columns are sortable.') ?></p>
     <p id='lastupdate'><?php echo format_lm($lnn['LM'], $lang) ?></p>
-    <h2 id='contents_header'><?php
-		if ($lang == 'Chinese') { echo '内容'; }
-		else if ($lang == 'Japanese') { echo '内容'; }
-        else if ($lang == 'Russian') { echo 'Содержание'; }
-		else { echo 'Contents'; }
-	?></h2>
+    <h2 id='contents_header'><?php echo _('Contents') ?></h2>
 
     <?php
         // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
         if ($layout == 'New') {
-            echo '<div id="contents_new" class="border"><p><a href="#lnns" class="lnns">' . tl_term('LNN Lists', $lang) .
-            '</a></p><p><a href="#overall" class="overallcount">' . tl_term('Overall Count', $lang) .
-            '</a></p><p><a href="#players" class="playerranking">' . tl_term('Player Ranking', $lang) .
+            echo '<div id="contents_new" class="border"><p><a href="#lnns" class="lnns">' . _('LNN Lists') .
+            '</a></p><p><a href="#overall" class="overallcount">' . _('Overall Count') .
+            '</a></p><p><a href="#players" class="playerranking">' . _('Player Ranking') .
             '</a></p></div><noscript>';
         }
-        echo '<div id="contents" class="border"><p><a href="#lnns" class="lnns">' . tl_term('LNN Lists', $lang) . '</a></p>';
+        echo '<div id="contents" class="border"><p><a href="#lnns" class="lnns">' . _('LNN Lists') . '</a></p>';
         foreach ($lnn as $game => $obj) {
             if ($game == 'LM') {
                 continue;
             }
-            echo '<p><a href="#' . $game . '">' . full_name($game, $lang) . '</a></p>';
+            echo '<p><a href="#' . $game . '">' . _(full_name($game)) . '</a></p>';
         }
-        echo '<p id="playersearchlink"><a href="#playersearch">' . player_search($lang) .
-        '</a></p><p><a href="#overall" class="overallcount">' . tl_term('Overall Count', $lang) .
-        '</a></p><p><a href="#players" class="playerranking">' . tl_term('Player Ranking', $lang) .
+        echo '<p id="playersearchlink"><a href="#playersearch">' . _('Player Search') .
+        '</a></p><p><a href="#overall" class="overallcount">' . _('Overall Count') .
+        '</a></p><p><a href="#players" class="playerranking">' . _('Player Ranking') .
         '</a></p></div>';
         if ($layout == 'New') {
             echo '</noscript>';
         }
     ?>
-    <h2 id='lnns' class='lnns'><?php echo tl_term('LNN Lists', $lang) ?></h2>
+    <h2 id='lnns' class='lnns'><?php echo _('LNN Lists') ?></h2>
     <?php
         // With JavaScript disabled OR lnn_old_layout cookie set, show classic all games layout
         if ($layout == 'New') {
@@ -93,10 +55,10 @@
             $all = array();
             echo '<div id="' . $game . '"><p>' .
             '<table id="' . $game . 't" class="sortable"><caption><p><span id="' . $game . '_image_old" ' .
-            'class="cover ' . (num($game) <= 5 ? 'cover98' : '') . '"></span> ' . full_name($game, $lang) .
-            '</p></caption><thead><tr><th class="general_header">' . tl_term(shot_route($game), $lang) . '</th>' .
+            'class="cover ' . (num($game) <= 5 ? 'cover98' : '') . '"></span> ' . _(full_name($game)) .
+            '</p></caption><thead><tr><th class="general_header">' . _(shot_route($game)) . '</th>' .
             '<th class="general_header sorttable_numeric">' . lnn_type($game, $lang) .
-            '<br>' . tl_term('(Different players)', $lang) . '</th><th class="general_header">' . tl_term('Players', $lang) .
+            '<br>' . _('(Different players)') . '</th><th class="general_header">' . _('Players') .
             '</tr></thead><tbody>';
             foreach ($obj as $shot => $players) {
                 if (strpos($shot, 'UFOs')) {
@@ -109,8 +71,7 @@
                     $count += sizeof($obj[$shot . 'UFOs']);
                 }
                 sort($players);
-                $tl_shot = format_shot($game, $shot, $lang);
-                echo '<tr><td class="nowrap">' . $tl_shot . '</td><td>' . $count . '</td><td>' . implode(', ', $players);
+                echo '<tr><td class="nowrap">' . format_shot($game, $shot) . '</td><td>' . $count . '</td><td>' . implode(', ', $players);
                 if ($game == 'UFO') {
                     $players = $obj[$shot . 'UFOs'];
                     $sum += sizeof($players);
@@ -125,7 +86,7 @@
             }
             $all = array_unique($all);
             sort($all);
-            echo '</tbody><tfoot><tr><td class="foot">' . tl_term('Overall', $lang) .
+            echo '</tbody><tfoot><tr><td class="foot">' . _('Overall') .
             '</td><td class="foot">' . $sum . ' (' . sizeof($all) . ')</td><td class="foot">' . implode(', ', $all) .
             '</td></tr></tfoot></table></div>';
         }
@@ -134,37 +95,22 @@
         }
         // With lnn_old_layout cookie NOT set, show game image layout (CSS hides it with JavaScript disabled)
         if ($layout == 'New') {
-            echo '<div id="newlayout"><p id="clickgame">';
-			if ($lang == 'Chinese') {
-                echo '单击游戏处查看LNN列表。';
-            } else if ($lang == 'Japanese') {
-                echo 'LNNリストはゲームをクリック。';
-            } else if ($lang == 'Russian') {
-                echo 'Нажмите на обложку игры для получения ее списка LNN.';
-            } else {
-                echo 'Click a game cover to show its list of LNNs.';
-            }
-	        echo '</p>';
+            echo '<div id="newlayout"><p id="clickgame">' . _('Click a game cover to show its list of LNNs.') . '</p>';
 		    foreach ($lnn as $game => $value) {
 		        if ($game == 'LM') {
 		            continue;
 	            }
 		        echo '<span class="game_image"><span id="' . $game . '_image" class="game_img"></span>' .
-                '<span class="full_name tooltip">' . full_name($game, $lang) . '</span></span>';
+                '<span class="full_name tooltip">' . _(full_name($game)) . '</span></span>';
 		    }
             echo '<div id="list"><p id="fullname"></p><table class="sortable"><thead id="listhead"></thead>' .
             '<tbody id="listbody"></tbody><tfoot id="listfoot"></tfoot></table></div></div>';
         }
     ?>
     <div id='playersearch'>
-        <h2><?php echo player_search($lang); ?></h2>
-		<p id='playerlnns'><?php
-			if ($lang == 'Chinese') { echo '在以下的菜单选择玩家的名字则可查看其LNN。'; }
-            else if ($lang == 'Japanese') { echo '個人のLNNを表示するには、下記のメニューからプレイヤー名を選んでください。'; }
-            else if ($lang == 'Russian') { echo 'Выберите имя игрока из меню ниже чтобы получить список его LNN.'; }
-            else { echo 'Choose a player name from the menu below to show their LNNs.'; }
-		?></p>
-		<label for='player' class='player'><?php echo tl_term('Player', $lang); ?></label>
+        <h2><?php echo _('Player Search'); ?></h2>
+		<p id='playerlnns'><?php echo _('Choose a player name from the menu below to show their LNNs.') ?></p>
+		<label for='player' class='player'><?php echo _('Player'); ?></label>
 		<input id='player' list='autocomplete' type='text'>
         <datalist id='autocomplete'>
 		    <?php
@@ -178,29 +124,25 @@
 	<div id='playerlist'>
 		<table class='sortable'>
 			<thead id='playerlisthead'><tr>
-                <th class='game'><?php echo tl_term('Game', $lang) ; ?></th>
-                <th class='shottype'><?php echo tl_term('Shottype', $lang); ?></th>
-                <th class='replay'><?php echo tl_term('Replay', $lang); ?></th>
+                <th class='game'><?php echo _('Game') ; ?></th>
+                <th class='shottype'><?php echo _('Shottype'); ?></th>
+                <th class='replay'><?php echo _('Replay'); ?></th>
             </tr></thead>
 			<tbody id='playerlistbody'></tbody>
 			<tfoot id='playerlistfoot'></tfoot>
 		</table>
 	</div>
     <div id='overall'>
-        <h2 class='overallcount'><?php echo tl_term('Overall Count', $lang); ?></h2>
+        <h2 class='overallcount'><?php echo _('Overall Count'); ?></h2>
         <table class='sortable'>
             <thead>
                 <tr>
                     <th class='general_header head'>#</th>
-                    <th class='general_header game'><?php echo tl_term('Game', $lang); ?></th>
+                    <th class='general_header game'><?php echo _('Game'); ?></th>
                     <th id='autosort1' class='general_header sorttable_numeric'>
-                        <span class='nooflnns'><?php echo tl_term('No. of LNNs', $lang); ?></span>
+                        <span class='nooflnns'><?php echo _('No. of LNNs'); ?></span>
                     </th>
-                    <th id='autosort2' class='general_header sorttable_numeric'><span class='differentn'><?php
-        				if ($lang == 'Chinese') { echo '玩家'; }
-                        else if ($lang == 'Japanese') { echo 'プレイヤー'; }
-                        else { echo 'Different players'; }
-        			?></span></th>
+                    <th id='autosort2' class='general_header sorttable_numeric'><span class='differentn'><?php echo _('Different players') ?></span></th>
                 </tr>
             </thead>
             <tbody>
@@ -209,7 +151,7 @@
                         if ($game == 'LM') {
                             continue;
                         }
-                        echo '<tr><td>' . num($game) . '</td><td class="' . $game . '">' . $game . '</td>';
+                        echo '<tr><td>' . num($game) . '</td><td class="' . $game . '">' . _($game) . '</td>';
                         $sum = 0;
                         $game_pl = array();
                         foreach ($lnn[$game] as $shottype => $data2) {
@@ -226,29 +168,29 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td class='foot' colspan='2'><span class='overall'><?php echo tl_term('Overall', $lang); ?></span></td>
+                    <td class='foot' colspan='2'><span class='overall'><?php echo _('Overall'); ?></span></td>
                     <td class='foot'><?php echo $gt ?></td>
                     <td class='foot'><?php echo sizeof($pl_lnn) ?></td>
                 </tr>
                 <tr>
-                    <td colspan='2'><span class='replays'><?php echo tl_term('Replays', $lang); ?></span></td>
+                    <td colspan='2'><span class='replays'><?php echo _('Replays'); ?></span></td>
                     <td colspan='2'><?php echo sizeof(glob('replays/lnn/*/*')) + sizeof($video_lnns) ?></td>
                 </tr>
             </tfoot>
         </table>
     </div>
     <div id='players'>
-        <h2 class='playerranking'><?php echo tl_term('Player Ranking', $lang); ?></h2>
+        <h2 class='playerranking'><?php echo _('Player Ranking'); ?></h2>
         <table id='ranking' class='sortable'>
             <thead>
                 <tr>
                     <th class='general_header head'>#</th>
-                    <th class='general_header player'><?php echo tl_term('Player', $lang); ?></th>
+                    <th class='general_header player'><?php echo _('Player'); ?></th>
                     <th id='autosort3' class='general_header sorttable_numeric'>
-                        <span class='nooflnns'><?php echo tl_term('No. of LNNs', $lang); ?></span>
+                        <span class='nooflnns'><?php echo _('No. of LNNs'); ?></span>
                     </th>
                     <th id='autosort4' class='general_header sorttable_numeric'>
-                        <span class='games'><?php echo tl_term('Games LNN\'d', $lang); ?></span>
+                        <span class='games'><?php echo _('Games LNN\'d'); ?></span>
                     </th>
                 </tr>
             </thead>
@@ -262,16 +204,16 @@
                         return $val;
                     });
                     foreach ($pl_lnn as $key => $value) {
-                        $shot_lnns = $pl_lnn[$key][1] == $ALL_LNN ? $pl_lnn[$key][1] . tl_term(' (All Windows)', $lang) : $pl_lnn[$key][1];
-                        $game_lnns = $pl_lnn[$key][2] == $ALL_GAME_LNN ? $pl_lnn[$key][2] . tl_term(' (All Windows)', $lang) : $pl_lnn[$key][2];
+                        $shot_lnns = $pl_lnn[$key][1] == $ALL_LNN ? $pl_lnn[$key][1] . _(' (All Windows)') : $pl_lnn[$key][1];
+                        $game_lnns = $pl_lnn[$key][2] == $ALL_GAME_LNN ? $pl_lnn[$key][2] . _(' (All Windows)') : $pl_lnn[$key][2];
                         echo '<tr><td>' . $pl_lnn[$key][0] . '</td><td>' . $shot_lnns . '</td><td>' . $game_lnns . '</td></tr>';
                     }
                 ?>
             </tbody>
         </table>
     </div>
-    <p id='back'><strong><a id='backtotop' href='#top'><?php echo tl_term('Back to Top', $lang); ?></a></strong></p>
+    <p id='back'><strong><a id='backtotop' href='#top'><?php echo _('Back to Top'); ?></a></strong></p>
 	<?php echo '<input id="missingReplays" type="hidden" value="' . implode('', $missing_replays) . '">' ?>
 	<?php echo '<input id="videos" type="hidden" value="' . implode(',', $video_lnns) . '">' ?>
-    <?php echo '<input id="testing" type="hidden" value="' . (is_localhost($_SERVER['REMOTE_ADDR']) || isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents('.stats/token'))) . '">' ?>
+    <!-- echo '<input id="testing" type="hidden" value="' . (is_localhost($_SERVER['REMOTE_ADDR']) || isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents('.stats/token'))) . '">' ?>-->
 </div>

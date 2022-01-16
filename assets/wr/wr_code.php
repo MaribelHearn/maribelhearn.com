@@ -7,27 +7,6 @@ $json = file_get_contents('assets/shared/json/bestinthewest.json');
 $west = json_decode($json, true);
 $json = file_get_contents('assets/shared/json/counterstops.json');
 $cs = json_decode($json, true);
-if (isset($_COOKIE['lang'])) {
-    $lang = str_replace('"', '', $_COOKIE['lang']);
-    $notation = str_replace('"', '', $_COOKIE['datenotation']);
-} else {
-    if (empty($_GET['hl']) || $_GET['hl'] == 'en-gb') {
-        $lang = 'English';
-        $notation = 'DMY';
-    } else if ($_GET['hl'] == 'en-us') {
-        $lang = 'English';
-        $notation = 'MDY';
-    } else if ($_GET['hl'] == 'jp') {
-        $lang = 'Japanese';
-        $notation = 'YMD';
-    } else if ($_GET['hl'] == 'zh') {
-        $lang = 'Chinese';
-        $notation = 'YMD';
-    } else {
-        $lang = 'English';
-        $notation = 'DMY';
-    }
-}
 $layout = (isset($_COOKIE['wr_old_layout']) ? 'Old' : 'New');
 $overall = array(0);
 $overall_player = array(0);
@@ -41,6 +20,7 @@ $pl_wr = array();
 $flag = array();
 $recent = array();
 $lm = '0/0/0';
+
 function pc_class(int $pc) {
     if ($pc < 50) {
         return 'does_not_even_score';
@@ -54,6 +34,7 @@ function pc_class(int $pc) {
         return 'does_even_score_well';
     }
 }
+
 function replay_path(string $game, string $diff, string $shot) {
     if ($game == 'StB') {
         $shot = '0' . $shot;
@@ -63,6 +44,7 @@ function replay_path(string $game, string $diff, string $shot) {
     }
     return 'replays/th' . num($game) . '_ud' . substr($diff, 0, 2) . shot_abbr($shot) . '.rpy';
 }
+
 function date_tl(string $date, string $notation) {
     if ($date == '') {
         return '';
@@ -79,14 +61,15 @@ function date_tl(string $date, string $notation) {
         return $day . '/' . $month . '/' . $year;
     }
 }
+
 function format_lm(string $lm, string $lang, string $notation) {
-    if ($lang == 'Japanese') {
+    if ($lang == 'ja_JP') {
         return '<span id="lm">' . date_tl($lm, 'YMD') . '</span>現在の世界記録です。';
-    } else if ($lang == 'Chinese') {
+    } else if ($lang == 'zh_CN') {
         return '世界记录更新于<span id="lm">' . date_tl($lm, 'YMD') . '</span>。';
     } else {
         if ($notation == 'DMY') {
-            if ($lang == 'Russian') {
+            if ($lang == 'ru_RU') {
                 return 'Рекорды актуальны на <span id="lm">' . $lm . '</span>.';
             } else {
                 return 'World records are current as of <span id="lm">' . $lm . '</span>.';
@@ -96,71 +79,7 @@ function format_lm(string $lm, string $lang, string $notation) {
         }
     }
 }
-function game_tl(string $game, string $lang) {
-    if ($lang == 'Japanese') {
-        $game = trim($game);
-        switch ($game) {
-            case 'HRtP': return '靈';
-            case 'SoEW': return '封';
-            case 'PoDD': return '夢';
-            case 'LLS': return '幻';
-            case 'MS': return '怪';
-            case 'EoSD': return '紅';
-            case 'PCB': return '妖';
-            case 'IN': return '永';
-            case 'PoFV': return '花';
-            case 'StB': return '文';
-            case 'MoF': return '風';
-            case 'SA': return '地';
-            case 'UFO': return '星';
-            case 'GFW': return '大';
-            case 'TD': return '神';
-            case 'DDC': return '輝';
-            case 'LoLK': return '紺';
-            case 'HSiFS': return '天';
-            case 'WBaWC': return '鬼';
-            case 'UM': return '虹';
-            default: return $game;
-        }
-    } else if ($lang == 'Chinese') {
-        $game = trim($game);
-        switch ($game) {
-            case 'HRtP': return '灵';
-            case 'SoEW': return '封';
-            case 'PoDD': return '梦';
-            case 'LLS': return '幻';
-            case 'MS': return '怪';
-            case 'EoSD': return '红';
-            case 'PCB': return '妖';
-            case 'IN': return '永';
-            case 'PoFV': return '花';
-            case 'StB': return '文';
-            case 'MoF': return '风';
-            case 'SA': return '地';
-            case 'UFO': return '星';
-            case 'GFW': return '大';
-            case 'TD': return '神';
-            case 'DDC': return '辉';
-            case 'LoLK': return '绀';
-            case 'HSiFS': return '天';
-            case 'WBaWC': return '鬼';
-            case 'UM': return '虹';
-            default: return $game;
-        }
-    }
-    return $game;
-}
-function player_search(string $lang) {
-    if ($lang == 'Chinese') {
-        return '玩家WR';
-    } else if ($lang == 'Japanese') {
-        return '個人のWR';
-    } else if ($lang == 'Russian') {
-        return 'Поиск игроков';
-    } else {
-        return 'Player Search';
-    }
-}
+
 function is_later_date(string $date1, string $date2) {
     if (strpos($date1, '?')) {
         return false;
@@ -174,15 +93,7 @@ function is_later_date(string $date1, string $date2) {
     $cond3 = $year == $date2[2] && $month == $date2[1] && $day >= $date2[0];
     return $cond1 || $cond2 || $cond3;
 }
-function category_sep(string $lang) {
-    if ($lang == 'Chinese') {
-        return '';
-    } else if ($lang == 'Japanese') {
-        return 'の';
-    } else {
-        return ' ';
-    }
-}
+
 foreach ($wr as $game => $value) {
     $num = num($game);
     $overall[$num] = 0;

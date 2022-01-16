@@ -102,25 +102,52 @@ function hit(string $filename, string $status_code) {
         }
     }
 }
+function set_lang_cookie() {
+    if (empty($_GET['hl']) || $_GET['hl'] == 'en-gb' || $_GET['hl'] == 'en') {
+        $lang = 'en_US';
+        $notation = 'DMY';
+    } else if ($_GET['hl'] == 'en-us') {
+        $lang = 'en_US';
+        $notation = 'MDY';
+    } else if ($_GET['hl'] == 'jp') {
+        $lang = 'ja_JP';
+        $notation = 'YMD';
+    } else if ($_GET['hl'] == 'zh') {
+        $lang = 'zh_CN';
+        $notation = 'YMD';
+    } else if ($_GET['hl'] == 'ru') {
+        $lang = 'ru_RU';
+        $notation = 'DMY';
+    } else {
+        $lang = 'en_US';
+        $notation = 'DMY';
+    }
+    if (!empty($_GET['hl'])) {
+        setcookie('lang', $lang, array(
+            'expires' => 2147483647,
+            'path' => '/',
+            'secure' => true,
+            'samesite' => 'Strict'
+        ));
+    } else {
+        if (isset($_COOKIE['lang'])) {
+            $lang = str_replace('"', '', $_COOKIE['lang']);
+        }
+        if (isset($_COOKIE['datenotation'])) {
+            $notation = str_replace('"', '', $_COOKIE['datenotation']);
+        }
+    }
+
+    return (object) array('lang' => $lang, 'notation' => $notation);
+}
 function lang_code() {
-    if (empty($_GET['hl']) && !isset($_COOKIE['lang'])) {
-        return 'en';
-    } else if (!empty($_GET['hl'])) {
-        $iso = preg_split('/-/', $_GET['hl'])[0];
-        $iso = str_replace('jp', 'ja', $iso);
-        $iso = str_replace('ru', 'zh', $iso);
-        return $iso;
-    } else if (isset($_COOKIE['lang'])) {
-		if (str_replace('"', '', $_COOKIE['lang']) == 'Russian') {
-			return 'zh';
-		} else if (str_replace('"', '', $_COOKIE['lang']) == 'Chinese') {
-			return 'zh';
-		} else if (str_replace('"', '', $_COOKIE['lang']) == 'Japanese') {
-			return 'ja';
-		} else {
-			return 'en';
-		}
-	}
+    global $lang;
+    switch ($lang) {
+        case 'en_US': return 'en';
+        case 'ja_JP': return 'ja';
+        case 'zh_CN': return 'zh';
+        case 'ru_RU': return 'zh';
+    }
 }
 function background_position($page) {
     $top = array('c67', 'drc', 'history', 'jargon', 'survival', 'slots', 'tools');
@@ -131,19 +158,6 @@ function background_position($page) {
         return 'bottom';
     } else {
         return 'center';
-    }
-}
-function theme_name(string $lang_code) {
-    if (isset($_COOKIE['theme'])) {
-        switch ($lang_code) {
-            case 'ja': return '妖怪モード（ダーク）';
-            default: return 'Youkai mode (Dark)';
-        }
-    } else {
-        switch ($lang_code) {
-            case 'ja': return '人間モード（ライト）';
-            default: return 'Human mode (Light)';
-        }
     }
 }
 function touhou_sites() {
@@ -291,7 +305,7 @@ function navbar(string $page) {
     return $navbar;
 }
 function wrap_top() {
-    global $page, $lang_code, $error_code, $layout;
+    global $page, $lang,  $error_code, $layout;
     $ja = Array('drc', 'lnn', 'tools', 'twc', 'wr');
     $zh = Array('drc', 'lnn', 'pofv', 'twc', 'wr');
     $ru = Array('lnn', 'tools', 'twc', 'wr');
@@ -301,7 +315,7 @@ function wrap_top() {
     if (in_array($page, $ja) || in_array($page, $zh) || in_array($page, $ru)) {
         echo '<div id="topbar">';
     }
-    echo '<span id="hy_container" data-html2canvas-ignore><span id="hy"></span><p id="hy_text">' . theme_name($lang_code) . '</p></span>';
+    echo '<span id="hy_container" data-html2canvas-ignore><span id="hy"></span><p id="hy_text">' . (isset($_COOKIE['theme']) ? _('Youkai mode (Dark)') : _('Human mode (Light)')) . '</p></span>';
     if ($page == 'lnn' || $page == 'wr') {
         echo '<span id="toggle"><a id="layouttoggle" href="' . $page . '">' . ($layout == 'New' ? 'Old' : 'New') . ' layout</a></span>';
     }
@@ -309,25 +323,25 @@ function wrap_top() {
         echo '<div id="languages">';
         if ($page == 'wr') {
             echo '<a id="en-gb" class="flag" href="wr?hl=en-gb">' .
-            '<img class="flag_en" src="assets/shared/flags/uk.png" alt="' . tl_term('Flag of the United Kingdom', $lang_code) . '">' .
+            '<img class="flag_en" src="assets/shared/flags/uk.png" alt="' . _('Flag of the United Kingdom') . '">' .
             '<p class="language">English (UK)</p></a><a id="en-us" class="flag" href="wr?hl=en-us">' .
-            '<img class="flag_en" src="assets/shared/flags/us.png" alt="' . tl_term('Flag of the United States', $lang_code) . '">' .
+            '<img class="flag_en" src="assets/shared/flags/us.png" alt="' . _('Flag of the United States') . '">' .
             '<p class="language">English (US)</p></a> ';
         } else {
             echo '<a id="en" class="flag" href="' . $page . '?hl=en">' .
-            '<img class="flag_en" src="assets/shared/flags/uk.png" alt="' . tl_term('Flag of the United Kingdom', $lang_code) . '"><p class="language">English</p></a> ';
+            '<img class="flag_en" src="assets/shared/flags/uk.png" alt="' . _('Flag of the United Kingdom') . '"><p class="language">English</p></a> ';
         }
         if (in_array($page, $ja)) {
             echo '<a id="jp" class="flag" href="' . $page . '?hl=jp">' .
-            '<img src="assets/shared/flags/japan.png" alt="' . tl_term('Flag of Japan', $lang_code) . '"><p class="language">日本語</p></a> ';
+            '<img src="assets/shared/flags/japan.png" alt="' . _('Flag of Japan') . '"><p class="language">日本語</p></a> ';
         }
         if (in_array($page, $zh)) {
             echo '<a id="zh" class="flag" href="' . $page . '?hl=zh">' .
-            '<img src="assets/shared/flags/china.png" alt="' . tl_term('Flag of the P.R.C.', $lang_code) . '"><p class="language">简体中文</p></a> ';
+            '<img src="assets/shared/flags/china.png" alt="' . _('Flag of the P.R.C.') . '"><p class="language">简体中文</p></a> ';
         }
         if (in_array($page, $ru)) {
             echo '<a id="ru" class="flag" href="' . $page . '?hl=ru">' .
-            '<img src="assets/shared/flags/russia.png" alt="' . tl_term('Flag of Russia', $lang_code) . '"><p class="language">Русский</p></a>';
+            '<img src="assets/shared/flags/russia.png" alt="' . _('Flag of Russia') . '"><p class="language">Русский</p></a>';
         }
         echo '</div>';
     }
@@ -342,7 +356,7 @@ function wrap_top() {
     }
     if (empty($error_code)) {
         $title = preg_split('/ - /', $data->title)[0];
-        echo '<h1 data-html2canvas-ignore>' . (in_array($page, $tl_title) ? tl_term($title, $lang_code) : $title) . '</h1>';
+        echo '<h1 data-html2canvas-ignore>' . _($title) . '</h1>';
     } else {
         echo '<h1>' . $error_code . '</h1>';
     }
@@ -352,7 +366,7 @@ function wrap_top() {
 }
 function handle_file_upload() {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if (is_uploaded_file($_FILES['import']['tmp_name']) ) {
+        if (property_exists($_FILES, 'import') && is_uploaded_file($_FILES['import']['tmp_name'])) {
             switch ($_FILES['import']['error']) {
                 case UPLOAD_ERR_OK:
                     break;

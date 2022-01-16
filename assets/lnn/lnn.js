@@ -1,6 +1,6 @@
 /*global $ getCookie deleteCookie setCookie gameAbbr shottypeAbbr generateTableText
 generateFullNames generateShottypes fullNameNumber generateShortNames langCode*/
-var LNNs, alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", language = "English", selected = "", missingReplays, videoLNNs, testing;
+var LNNs, alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", language = "en_US", selected = "", missingReplays, videoLNNs, testing;
 
 function toggleLayout() {
     if (getCookie("lnn_old_layout")) {
@@ -270,21 +270,21 @@ $(document).ready(function () {
     $("#playersearchlink").css("display", "block");
     $("#newlayout").css("display", "block");
     $(".flag").attr("href", "");
-    $("#en").on("click", {language: "English"}, setLanguage);
-    $("#jp").on("click", {language: "Japanese"}, setLanguage);
-    $("#zh").on("click", {language: "Chinese"}, setLanguage);
-    $("#ru").on("click", {language: "Russian"}, setLanguage);
+    $("#en").on("click", {language: "en_US"}, setLanguage);
+    $("#jp").on("click", {language: "ja_JP"}, setLanguage);
+    $("#zh").on("click", {language: "zh_CN"}, setLanguage);
+    $("#ru").on("click", {language: "ru_RU"}, setLanguage);
     $(".game_img").on("click", showLNNs);
     missingReplays = $("#missingReplays").val();
     videoLNNs = parseVideos($("#videos").val());
     testing = Boolean($("#testing").val());
 
-    if (getCookie("lang") == "Japanese" || location.href.contains("jp")) {
-        language = "Japanese";
-    } else if (getCookie("lang") == "Chinese" || location.href.contains("zh")) {
-        language = "Chinese";
-    } else if (getCookie("lang") == "Russian" || location.href.contains("ru")) {
-        language = "Russian";
+    if (getCookie("lang") == "ja_JP" || location.href.contains("jp")) {
+        language = "ja_JP";
+    } else if (getCookie("lang") == "zh_CN" || location.href.contains("zh")) {
+        language = "zh_CN";
+    } else if (getCookie("lang") == "ru_RU" || location.href.contains("ru")) {
+        language = "ru_RU";
     }
 
     $("#top").attr("lang", langCode(language, false));
