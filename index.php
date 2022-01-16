@@ -24,6 +24,10 @@
     $status_code = empty($_GET['error']) ? '' : $_GET['error'];
     $page = redirect($page, $page_path, $_SERVER['REQUEST_URI'], $status_code);
     hit($page, $status_code);
+    $lc_values = set_lang_cookie();
+    $lang = $lc_values->lang;
+    $notation = $lc_values->notation;
+    $locale = $lang . '.UTF-8';
     $page = preg_replace('/\//', '', $page);
     $json = file_get_contents('assets/' . $page . '/' . $page . '.json');
     $data = (object) json_decode($json, true);
@@ -43,7 +47,6 @@
     $js_href = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/shared/js_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile;
     $favicon_dir = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . (!in_array($page, $use_index) ? 'assets/' . $page : '');
     $bg_pos = background_position($page);
-    $lang_code = lang_code();
     $file_upload = handle_file_upload();
     if (!empty($file_upload)) {
         $_SESSION['data'] = $file_upload;
@@ -52,10 +55,10 @@
         exit();
     }
 ?>
-<html id='top' lang='<?php echo $lang_code ?>'>
+<html id='top' lang='<?php echo lang_code() ?>'>
 
     <head>
-		<title><?php echo property_exists($data, $lang_code) ? $data->{$lang_code} : (property_exists($data, 'title') ? $data->title : '') ?></title>
+		<title><?php echo _($data->title) ?></title>
 		<meta charset='UTF-8'>
         <?php if ($page == 'privacy') { echo '<meta name="robots" content="noindex">'; } ?>
 		<meta name='viewport' content='width=device-width'>

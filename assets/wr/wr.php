@@ -1,83 +1,47 @@
-<?php include_once 'assets/shared/tl.php'; include_once 'assets/wr/wr_code.php' ?>
+<?php include_once 'assets/shared/tl.php'; include_once 'assets/wr/wr_code.php'; setlocale(LC_ALL, $locale); bindtextdomain($lang, 'locale'); textdomain($lang) ?>
 <div id='wrap' class='wrap'>
 	<?php echo wrap_top() ?>
     <p id='description'><?php
-        if ($lang == 'Chinese') {
-            echo '这个网页准确地记载所有「东方Project」的打分世界记录，时不时地更新。注意：页底的玩家排行榜只算玩家们得到的记录有多少，' .
-            '并不算记录的强度。目前数据并不包括摄影游戏。';
-        } else if ($lang == 'Japanese') {
-            echo '東方原作STG各作品世界記録の正確なリストです。適宜頻繁に更新します。' .
-            '下部に記載されているプレイヤーランキングは特定のスコアの高低を示すものではなく、あくまで世' .
-            '界記録取得数を示したものですのでご留意ください。また今のところ文花帖のようなシーンを基準にするリストは作成しておりません。';
-        } else if ($lang == 'Russian') {
-            echo 'Регулярно обновяющийся список всех мировых рекордов по Тохо. Замечание: рейтинг игроков снизу не ' .
-            'учитывает насколько их рекорды сложно побить, это всего лишь числа. Список на данный момент не включает ' .
-            'в себя фотошутеры.';
-        } else {
-            echo 'An accurate list of Touhou world records, updated every so often. ' .
-            'Note that the player ranking at the bottom does not take into account how strong specific records are, '.
-            'only numbers. The list does not include scene games as of now.';
-        }
+        echo _('An accurate list of Touhou world records, updated every so often. ' .
+        'Note that the player ranking at the bottom does not take into account how strong specific records are, '.
+        'only numbers. The list does not include scene games as of now.');
     ?></p>
     <p id='clicktodl'><?php
-        if ($lang == 'Chinese') {
-            echo '点击任何分数即可下载对应的rep。点击任何标题即可排序表格内容。';
-        } else if ($lang == 'Japanese') {
-            echo '該当のリプレイファイルをダウンロードするにはスコアをクリックしてください。' .
-            '各欄は並べ替え可能となっています。並べ替えには各表の最上段をクリックしてください。';
-        } else if ($lang == 'Russian') {
-            echo 'Вы можете нажать на скор чтобы скачать реплей, если он доступен. Все столбцы таблицы ' .
-            'можно отсортировать.';
-        } else {
-            echo 'Click a score to download the corresponding replay, if there is one available. ' .
-            'All of the table columns are sortable.';
-        }
+        echo _('Click a score to download the corresponding replay, if there is one available. ') .
+        _('All of the table columns are sortable.');
     ?></p>
     <p id='noreup'><?php
-        if ($lang == 'Chinese') {
-            echo '请勿将rep上传到别的存rep网站。';
-        } else if ($lang == 'Japanese') {
-            echo 'リプレイファイルの二次利用は禁止致します。';
-        } else if ($lang == 'Russian') {
-            echo 'Предоставленные здесь реплеи <strong>запрещается</strong> публиковать на сторонних ресурсах.';
-        } else {
-            echo 'The replays provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.';
-        }
+        echo _('The replays provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.');
     ?></p>
     <p id='lastupdate'><?php echo format_lm($lm, $lang, $notation) ?></p>
-    <h2 id='contents_header'><?php
-		if ($lang == 'Chinese') { echo '内容'; }
-		else if ($lang == 'Japanese') { echo '内容'; }
-        else if ($lang == 'Russian') { echo 'Содержание'; }
-		else { echo 'Contents'; }
-	?></h2>
+    <h2 id='contents_header'><?php echo _('Contents') ?></h2>
     <?php
         // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
         if ($layout == 'New') {
             echo '<div id="contents_new" class="border"><p id="overall_link"><a href="#overall" ' .
-            'class="overallrecords">' . tl_term('Overall Records', $lang) . '</a></p>' .
-            '<p id="overall_linkm"><a href="#overallm" class="overallrecords">' . tl_term('Overall Records', $lang) .
-            '</a></p><p><a href="#wrs" class="worldrecords">' . tl_term('World Records', $lang) . '
-            </a></p><p id="recent_link"><a href="#recent" class="recentrecords">' . tl_term('Recent Records', $lang) .
-            '</a></p><p id="recent_linkm"><a href="#recentm" class="recentrecords">' . tl_term('Recent Records', $lang) .
-            '</a></p><p><a href="#players" class="playerranking">' . tl_term('Player Ranking', $lang) .
+            'class="overallrecords">' . _('Overall Records') . '</a></p>' .
+            '<p id="overall_linkm"><a href="#overallm" class="overallrecords">' . _('Overall Records') .
+            '</a></p><p><a href="#wrs" class="worldrecords">' . _('World Records') . '
+            </a></p><p id="recent_link"><a href="#recent" class="recentrecords">' . _('Recent Records') .
+            '</a></p><p id="recent_linkm"><a href="#recentm" class="recentrecords">' . _('Recent Records') .
+            '</a></p><p><a href="#players" class="playerranking">' . _('Player Ranking') .
             '</a></p></div><noscript>';
         }
         echo '<div id="contents" class="border"><p id="overall_linkn"><a href="#overall" ' .
-        'class="overallrecords">' . tl_term('Overall Records', $lang) . '</a></p>' .
-        '<p id="overall_linkmn"><a href="#overallm" class="overallrecords">' . tl_term('Overall Records', $lang) .
-        '</a></p><p><a href="#wrs" class="worldrecords">' . tl_term('World Records', $lang) . '
+        'class="overallrecords">' . _('Overall Records') . '</a></p>' .
+        '<p id="overall_linkmn"><a href="#overallm" class="overallrecords">' . _('Overall Records') .
+        '</a></p><p><a href="#wrs" class="worldrecords">' . _('World Records') . '
         </a></p>';
         foreach ($wr as $game => $value) {
-            echo '<p><a href="#' . $game . '">' . full_name($game, $lang) . '</a></p>';
+            echo '<p><a href="#' . $game . '">' . _(full_name($game)) . '</a></p>';
         }
-        echo '<p id="westernlink"><a href="#western">' . tl_term('Western Records', $lang) . '</a></p>';
-        echo '<p id="playersearchlink"><a href="#playerwrs">' . player_search($lang) . '</a></p>';
-        echo '<p id="recent_linkn"><a href="#recent" class="recentrecords">' . tl_term('Recent Records', $lang) .
+        echo '<p id="westernlink"><a href="#western">' . _('Western Records') . '</a></p>';
+        echo '<p id="playersearchlink"><a href="#playerwrs">' . _('Player Search') . '</a></p>';
+        echo '<p id="recent_linkn"><a href="#recent" class="recentrecords">' . _('Recent Records') .
         '</a></p>';
-        echo '<p id="recent_linkmn"><a href="#recentm" class="recentrecords">' . tl_term('Recent Records', $lang) .
+        echo '<p id="recent_linkmn"><a href="#recentm" class="recentrecords">' . _('Recent Records') .
         '</a></p>';
-        echo '<p><a href="#players" class="playerranking">' . tl_term('Player Ranking', $lang) . '</a></p></div>';
+        echo '<p><a href="#players" class="playerranking">' . _('Player Ranking') . '</a></p></div>';
         if ($layout == 'New') {
             echo '</noscript>';
         }
@@ -85,20 +49,20 @@
     <div id='checkboxes' class='border'>
         <p>
             <input id='dates' type='checkbox'>
-	        <label id='label_dates' for='dates' class='dates'><?php echo tl_term('Dates', $lang); ?></label>
+	        <label id='label_dates' for='dates' class='dates'><?php echo _('Dates') ?></label>
         </p>
     </div>
     <div id='overall'>
-        <h2 class='overallrecords'><?php echo tl_term('Overall Records', $lang); ?></h2>
+        <h2 class='overallrecords'><?php echo _('Overall Records') ?></h2>
         <table class='sortable'>
             <tr>
                 <th class='general_header'>#</th>
-                <th class='general_header game'><?php echo tl_term('Game', $lang); ?></th>
-                <th id='score' class='general_header sorttable_numeric'><?php echo tl_term('Score', $lang); ?></th>
-                <th class='general_header player'><?php echo tl_term('Player', $lang); ?></th>
-                <th class='general_header difficulty'><?php echo tl_term('Difficulty', $lang); ?></th>
-                <th class='general_header shottype'><?php echo tl_term('Shottype', $lang); ?></th>
-                <th class='general_header date'><?php echo tl_term('Date', $lang); ?></th>
+                <th class='general_header game'><?php echo _('Game') ?></th>
+                <th id='score' class='general_header sorttable_numeric'><?php echo _('Score') ?></th>
+                <th class='general_header player'><?php echo _('Player') ?></th>
+                <th class='general_header difficulty'><?php echo _('Difficulty') ?></th>
+                <th class='general_header shottype'><?php echo _('Shottype') ?></th>
+                <th class='general_header date'><?php echo _('Date') ?></th>
             </tr>
             <?php
 				foreach ($wr as $game => $value) {
@@ -106,13 +70,13 @@
                         continue;
                     }
 					$num = num($game);
-					echo '<tr id="' . $game . 'o"><td>' . $num . '</td><td class="' . $game . '">' . game_tl($game, $lang) . '</td>';
+					echo '<tr id="' . $game . 'o"><td>' . $num . '</td><td class="' . $game . '">' . _($game) . '</td>';
 					echo '<td id="' . $game . 'overall0">' . ($game == 'WBaWC' || $game == 'UM' ? '<span class="cs">9,999,999,990' .
                     '<span class="tooltip truescore">' . number_format($overall[$num], 0, '.', ',') .
                     '</span></span> ' : number_format($overall[$num], 0, '.', ',')) . '</td>';
                     echo '<td id="' . $game . 'overall1">' . ($overall[$num] == 0 ? '-' : $overall_player[$num]) . ($game == 'WBaWC' || $game == 'UM' ? '*' : '') . '</td>';
 					echo '<td id="' . $game . 'overall2">' . ($overall[$num] == 0 ? '-' : $overall_diff[$num]) . '</td>';
-					echo '<td id="' . $game . 'overall3">' . ($overall[$num] == 0 ? '-' : tl_shot($overall_shottype[$num], $lang)) . '</td>';
+					echo '<td id="' . $game . 'overall3">' . ($overall[$num] == 0 ? '-' : _($overall_shottype[$num])) . '</td>';
 					echo '<td id="' . $game . 'overall4" class="datestring">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $notation)) . '</td></tr>';
 				}
 			?>
@@ -125,15 +89,15 @@
                     if (gettype($value[0]) == 'array') {
                         $substr = '';
                         foreach ($value as $key => $val) {
-                            $substr .= tl_shot($val[2], $lang) . ($lang == 'English' ? ' ' : '') . $val[0] .
-                            ($lang == 'English' ? ' (' : '（') . date_tl($val[1], $notation) .
-                            ($lang == 'English' ? ')' : '）') . '<br>';
+                            $substr .= _($val[2]) . ($lang == 'en_US' ? ' ' : '') . $val[0] .
+                            ($lang == 'en_US' ? ' (' : '（') . date_tl($val[1], $notation) .
+                            ($lang == 'en_US' ? ')' : '）') . '<br>';
                         }
                         $str .= $substr;
                     } else {
-                        $str .= tl_shot($value[2], $lang) . ($lang == 'English' ? ' ' : '') . $value[0] .
-                        ($lang == 'English' ? ' (' : '（') . date_tl($value[1], $notation) .
-                        ($lang == 'English' ? ')' : '）') . '<br>';
+                        $str .= _($value[2]) . ($lang == 'en_US' ? ' ' : '') . $value[0] .
+                        ($lang == 'en_US' ? ' (' : '（') . date_tl($value[1], $notation) .
+                        ($lang == 'en_US' ? ')' : '）') . '<br>';
                     }
                     $str .= '</span></span>';
                 }
@@ -142,7 +106,7 @@
         </p>
     </div>
     <div id='overallm'>
-        <h2 class='overallrecords'><?php echo tl_term('Overall Records', $lang); ?></h2>
+        <h2 class='overallrecords'><?php echo _('Overall Records') ?></h2>
 		<?php
             echo '<hr>';
 			foreach ($wr as $game => $value) {
@@ -150,12 +114,12 @@
                     continue;
                 }
 				$num = num($game);
-				echo '<p class="' . $game . '">' . game_tl($game, $lang) . '</p><p>';
+				echo '<p class="' . $game . '">' . _($game) . '</p><p>';
                 echo '<span id="' . $game . 'overall0m">' . ($game == 'WBaWC' || $game == 'UM' ? '<span class="cs">9,999,999,990' .
                 '<span class="tooltip truescore">' . number_format($overall[$num], 0, '.', ',') .
                 '</span></span> ' : number_format($overall[$num], 0, '.', ',')) . '</span> ';
 				echo '<span id="' . $game . 'overall2m">' . ($overall[$num] == 0 ? '-' : $overall_diff[$num]) . '</span> ';
-				echo '<span id="' . $game . 'overall3m">' . ($overall[$num] == 0 ? '-' : tl_shot($overall_shottype[$num], $lang)) . '</span> by ';
+				echo '<span id="' . $game . 'overall3m">' . ($overall[$num] == 0 ? '-' : _($overall_shottype[$num])) . '</span> by ';
 				echo '<span id="' . $game . 'overall1m"><em>' . ($overall[$num] == 0 ? '-' : $overall_player[$num]) . ($game == 'WBaWC' || $game == 'UM' ? '*' : '') . '</em></span> ';
 				echo '<br><span id="' . $game . 'overall4m" class="datestring">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $notation)) . '</span></p><hr>';
 			}
@@ -177,7 +141,7 @@
             echo substr($str, 2) . '</p>';
 		?>
     </div>
-    <h2 id='wrs' class='worldrecords'><?php echo tl_term('World Records', $lang); ?></h2>
+    <h2 id='wrs' class='worldrecords'><?php echo _('World Records') ?></h2>
     <?php
         // With JavaScript disabled OR wr_old_layout cookie set, show classic all games layout
         if ($layout == 'New') {
@@ -196,8 +160,8 @@
             echo '<table id="' . $game . '_table" class="' . $game .
             't sortable"><caption><p><span id="' . $game . '_image_old" ' .
             'class="cover sheet' . $sheet . (num($game) <= 5 ? ' cover98' : '') .
-            '"></span> ' . full_name($game, $lang) . '</p></caption>' .
-            '<thead><tr><th>' . tl_term(shot_route($game), $lang) . '</th>';
+            '"></span> ' . _(full_name($game)) . '</p></caption>' .
+            '<thead><tr><th>' . _(shot_route($game)) . '</th>';
             foreach ($obj as $diff => $shots) {
                 if ($game != 'GFW' || $diff != 'Extra') {
                     echo '<th>' . $diff . '</th>';
@@ -206,7 +170,7 @@
             echo '</tr></thead><tbody>';
             for ($i = 0; $i < sizeof($obj[$diff_key]); $i++) {
                 $shot = array_keys($obj[$diff_key])[$i];
-                echo '<tr><td>' . format_shot($game, $shot, $lang) . '</td>';
+                echo '<tr><td>' . format_shot($game, $shot) . '</td>';
                 for ($j = 0; $j < sizeof($obj); $j++) {
                     $diff = array_keys($obj)[$j];
                     $shots = $obj[array_keys($obj)[$j]];
@@ -270,11 +234,11 @@
             echo '</tbody></table></div>';
         }
         // Old layout western records
-        echo '<h2 id="western">' . tl_term('Western Records', $lang) . '</h2>';
+        echo '<h2 id="western">' . _('Western Records') . '</h2>';
         foreach ($west as $game => $obj) {
-            echo '<table class="' . $game . 't"><tr class="west_tr"><th colspan="3">' . game_tl($game, $lang) .
-            '</th></tr><tr class="west_tr"><th>' . tl_term('World', $lang) .
-            '</th><th>' . tl_term('West', $lang) . '</th><th>' . tl_term('Percentage', $lang) . '</th></tr>';
+            echo '<table class="' . $game . 't"><tr class="west_tr"><th colspan="3">' . _($game) .
+            '</th></tr><tr class="west_tr"><th>' . _('World') .
+            '</th><th>' . _('West') . '</th><th>' . _('Percentage') . '</th></tr>';
             foreach ($obj as $diff => $shots) {
                 $westt = $west[$game][$diff];
                 $world = $diff_max[$game][$diff];
@@ -289,11 +253,11 @@
                 } else {
                     $world_text = number_format($world[0], 0, '.', ',');
                 }
-                echo '<tr class="west_tr"><td colspan="3">' . tl_term($diff, $lang) . '</td></tr>' .
+                echo '<tr class="west_tr"><td colspan="3">' . $diff . '</td></tr>' .
                 '<tr class="west_tr"><td>' . $world_text .
-                '<br>by <em>' . $world[1] . '</em><br>(' . tl_shot($world[2], $lang) .
+                '<br>by <em>' . $world[1] . '</em><br>(' . _($world[2]) .
                 ')</td><td>' . number_format($westt[0], 0, '.', ',') .
-                '<br>by <em>' . $westt[1] . '</em><br>(' . tl_shot($westt[2], $lang) .
+                '<br>by <em>' . $westt[1] . '</em><br>(' . (empty($westt[2]) ? $westt[2] : _($westt[2])) .
                 ')</td><td class="' . pc_class($percentage) . '">(' . $percentage . '%)</td></tr>';
             }
             echo '</table>';
@@ -303,12 +267,7 @@
         }
         // With wr_old_layout cookie NOT set, show game image layout (CSS hides it with JavaScript disabled)
         if ($layout == 'New') {
-            echo '<div id="newlayout"><p id="clickgame">';
-            if ($lang == 'Chinese') { echo '单击游戏处查看世界纪录列表。'; }
-            else if ($lang == 'Japanese') { echo '世界記録リストはゲームをクリック。'; }
-            else if ($lang == 'Russian') { echo 'Нажмите на обложку игры для получения ее списка рекордов.'; }
-            else { echo 'Click a game cover to show its list of world records.'; }
-            echo '</p>';
+            echo '<div id="newlayout"><p id="clickgame">' . _('Click a game cover to show its list of world records.') . '</p>';
             $second_row = false;
 		    foreach ($wr as $game => $value) {
                 if ($game == 'MoF') {
@@ -317,10 +276,10 @@
                 }
                 if (!$second_row) {
                     echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_1"></span>' .
-                    '<span class="full_name tooltip">' . full_name($game, $lang) . '</span></span>';
+                    '<span class="_ tooltip">' . _(full_name($game)) . '</span></span>';
                 } else {
                     echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_2"></span>' .
-                    '<span class="full_name tooltip">' . full_name($game, $lang) . '</span></span>';
+                    '<span class="_ tooltip">' . _(full_name($game)) . '</span></span>';
                 }
             }
             echo '</div>';
@@ -329,14 +288,8 @@
 	<div id='list'>
 	</div>
     <div id='playersearch'>
-		<?php
-            echo '<h2>' . player_search($lang) . '</h2><p id="playerwrs">';
-			if ($lang == 'Chinese') { echo '在以下的菜单选择玩家的名字则可查看其WR。'; }
-            else if ($lang == 'Japanese') { echo '個人のWRを表示するには、下記のメニューからプレイヤー名を選んでください。'; }
-            else if ($lang == 'Russian') { echo 'Выберите имя игрока из меню ниже чтобы получить список его мировых рекордов.'; }
-            else { echo 'Choose a player name from the menu below to show their WRs.'; }
-		?></p>
-		<label for='player' class='player'><?php echo tl_term('Player', $lang); ?></label>
+		<?php echo '<h2>' . _('Player Search') . '</h2><p id="playerwrs">' . _('Choose a player name from the menu below to show their WRs.') . '</p>' ?>
+		<label for='player' class='player'><?php echo _('Player') ?></label>
 		<input id='player' list='autocomplete' type='text'>
         <datalist id='autocomplete'>
 		    <?php
@@ -350,24 +303,24 @@
 	<div id='playerlist'>
 		<table class='sortable'>
 			<thead id='playerlisthead'><tr>
-                <th class='category'><?php echo tl_term('Category', $lang) ; ?></th>
-                <th class='score'><?php echo tl_term('Score', $lang); ?></th>
-                <th class='replay'><?php echo tl_term('Replay', $lang); ?></th>
-                <th class='datestring'><?php echo tl_term('Date', $lang); ?></th>
+                <th class='category'><?php echo _('Category')  ?></th>
+                <th class='score'><?php echo _('Score') ?></th>
+                <th class='replay'><?php echo _('Replay') ?></th>
+                <th class='datestring'><?php echo _('Date') ?></th>
             </tr></thead>
 			<tbody id='playerlistbody'></tbody>
 			<tfoot id='playerlistfoot'></tfoot>
 		</table>
 	</div>
     <div id='recent'>
-        <h2><?php echo tl_term('Recent Records', $lang); ?></h2>
+        <h2><?php echo _('Recent Records') ?></h2>
         <table class='sortable'>
             <thead id='recenthead'><tr>
-                <th class='general_header category'><?php echo tl_term('Category', $lang) ; ?></th>
-                <th class='general_header score'><?php echo tl_term('Score', $lang); ?></th>
-                <th class='general_header player'><?php echo tl_term('Player', $lang); ?></th>
-                <th class='general_header replay'><?php echo tl_term('Replay', $lang); ?></th>
-                <th class='general_header datestring'><?php echo tl_term('Date', $lang); ?></th>
+                <th class='general_header category'><?php echo _('Category')  ?></th>
+                <th class='general_header score'><?php echo _('Score') ?></th>
+                <th class='general_header player'><?php echo _('Player') ?></th>
+                <th class='general_header replay'><?php echo _('Replay') ?></th>
+                <th class='general_header datestring'><?php echo _('Date') ?></th>
             </tr></thead>
             <tbody id='recentbody'><?php
                 foreach ($recent as $key => $obj) {
@@ -379,16 +332,16 @@
 					} else {
                         $replay = '-';
                     }
-                    echo '<tr><td class="' . $obj->game . 'p">' . game_tl($obj->game . ' ', $lang) .
-                    '' . $obj->diff . category_sep($lang) . tl_shot($obj->shot, $lang) . '</td>' .
+                    echo '<tr><td class="' . $obj->game . 'p">' . _($obj->game) . ($lang == 'en_US' || $lang == 'ru_RU' ? ' ' : '') .
+					$obj->diff . ($lang == 'en_US' || $lang == 'ru_RU' ? ' ' : '') . _($obj->shot) . '</td>' .
                     '<td>' . number_format($obj->score, 0, '.', ',') . '</td><td>' . $obj->player . '</td>' .
-                    '<td>' . $replay . '</td><td>' . date_tl($obj->date, $notation) . '</td></tr>';
+                    '<td>' . $replay . '</td><td class="datestring">' . date_tl($obj->date, $notation) . '</td></tr>';
                 }
             ?></tbody>
         </table>
     </div>
     <div id='recentm'>
-        <h2><?php echo tl_term('Recent Records', $lang); ?></h2>
+        <h2><?php echo _('Recent Records') ?></h2>
         <?php
             foreach ($recent as $key => $obj) {
                 echo '<hr>';
@@ -398,21 +351,22 @@
                 } else {
                     $replay = '-';
                 }
-                echo '<p class="' . $obj->game . '">' . game_tl($obj->game . ' ', $lang) . ' ' . $obj->diff . category_sep($lang) .
-                '' . tl_shot($obj->shot, $lang) . '</p><p>' . number_format($obj->score, 0, '.', ',') .
+                echo '<p class="' . $obj->game . '">' . _($obj->game) . ($lang == 'en_US' || $lang == 'ru_RU' ? ' ' : '') .
+				$obj->diff . ($lang == 'en_US' || $lang == 'ru_RU' ? ' ' : '') .
+                '' . _($obj->shot) . '</p><p>' . number_format($obj->score, 0, '.', ',') .
                 ' by <em>' . $obj->player . '</em> on ' . date_tl($obj->date, $notation) . '</p>';
             }
         ?><hr>
     </div>
     <div id='players'>
-        <h2 class='playerranking'><?php echo tl_term('Player Ranking', $lang); ?></h2>
+        <h2 class='playerranking'><?php echo _('Player Ranking') ?></h2>
         <table id='ranking' class='sortable'>
             <thead>
                 <tr>
 					<th class='general_header head'>#</th>
-                    <th class='general_header player'><?php echo tl_term('Player', $lang); ?></th>
-                    <th id='autosort' class='general_header sorttable_numeric'><?php echo tl_term('No. of WRs', $lang); ?></th>
-                    <th id='differentgames' class='general_header'><?php echo tl_term('Different games', $lang); ?></th>
+                    <th class='general_header player'><?php echo _('Player') ?></th>
+                    <th id='autosort' class='general_header sorttable_numeric'><?php echo _('No. of WRs') ?></th>
+                    <th id='differentgames' class='general_header'><?php echo _('Different games') ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -436,6 +390,6 @@
 			</tbody>
         </table>
     </div>
-    <p id='back'><strong><a id='backtotop' href='#top'><?php echo tl_term('Back to Top', $lang); ?></a></strong></p>
+    <p id='back'><strong><a id='backtotop' href='#top'><?php echo _('Back to Top') ?></a></strong></p>
 	<?php echo '<input id="missingReplays" type="hidden" value="' . implode('', $missing_replays) . '">' ?>
 </div>

@@ -1,5 +1,5 @@
 /*global $ setCookie getCookie langCode*/
-var notation = "DMY", language = "English", timezone;
+var notation = "DMY", language = "en_US", timezone;
 
 function toDateString(unix) {
     var date = new Date(Number(unix) * 1000);
@@ -8,9 +8,9 @@ function toDateString(unix) {
         return date.toLocaleString("en-GB", {"dateStyle": "full"}) + ", " + date.toLocaleTimeString("en-GB");
     } else if (notation == "MDY") {
         return date.toLocaleString("en-US", {"dateStyle": "full"}) + ", " + date.toLocaleTimeString("en-US");
-    } else if (language == "Chinese") {
+    } else if (language == "zh_CN") {
         return date.toLocaleString("zh-CN", {"dateStyle": "full"}) + ", " + date.toLocaleTimeString("zh-CN");
-    } else { // language == "Japanese"
+    } else { // language == "ja_JP"
         return date.toLocaleString("ja-JP", {"dateStyle": "full"}) + ", " + date.toLocaleTimeString("ja-JP");
     }
 }
@@ -65,12 +65,12 @@ function setLanguage(event) {
 }
 
 $(document).ready(function () {
-    if (getCookie("lang") == "Japanese" || location.href.contains("jp")) {
-        language = "Japanese";
-    } else if (getCookie("lang") == "Chinese" || location.href.contains("zh")) {
-        language = "Chinese";
-    } else if (getCookie("lang") == "Russian" || location.href.contains("ru")) {
-        language = "Russian";
+    if (getCookie("lang") == "ja_JP" || location.href.contains("jp")) {
+        language = "ja_JP";
+    } else if (getCookie("lang") == "zh_CN" || location.href.contains("zh")) {
+        language = "zh_CN";
+    } else if (getCookie("lang") == "ru_RU" || location.href.contains("ru")) {
+        language = "ru_RU";
     }
 
     $.get("assets/shared/json/schedule.json", function (data) {
@@ -80,8 +80,8 @@ $(document).ready(function () {
     $("#top").attr("lang", langCode(language, false));
     $("#timezone").html(getClientTimeZone());
     $(".flag").attr("href", "");
-    $("#en").on("click", {language: "English"}, setLanguage);
-    $("#jp").on("click", {language: "Japanese"}, setLanguage);
-    $("#zh").on("click", {language: "Chinese"}, setLanguage);
-    $("#ru").on("click", {language: "Russian"}, setLanguage);
+    $("#en").on("click", {language: "en_US"}, setLanguage);
+    $("#jp").on("click", {language: "ja_JP"}, setLanguage);
+    $("#zh").on("click", {language: "zh_CN"}, setLanguage);
+    $("#ru").on("click", {language: "ru_RU"}, setLanguage);
 });

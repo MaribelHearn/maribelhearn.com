@@ -5,21 +5,6 @@ $json = file_get_contents('assets/shared/json/lnnlist.json');
 $video_json = file_get_contents('assets/shared/json/lnnvideos.json');
 $lnn = json_decode($json, true);
 $lnn_videos = json_decode($video_json, true);
-if (isset($_COOKIE['lang'])) {
-    $lang = str_replace('"', '', $_COOKIE['lang']);
-} else {
-    if (empty($_GET['hl']) || $_GET['hl'] == 'en') {
-        $lang = 'English';
-    } else if ($_GET['hl'] == 'jp') {
-         $lang = 'Japanese';
-    } else if ($_GET['hl'] == 'zh') {
-        $lang = 'Chinese';
-    } else if ($_GET['hl'] == 'ru') {
-        $lang = 'Russian';
-    } else {
-        $lang = 'English';
-    }
-}
 $layout = (isset($_COOKIE['lnn_old_layout']) ? 'Old' : 'New');
 $pl = array();
 $pl_lnn = array();
@@ -28,7 +13,7 @@ $missing_replays = array();
 $video_lnns = array();
 $gt = 0;
 function lnn_type(string $game, string $lang) {
-    if ($lang == 'Chinese') {
+    if ($lang == 'zh_CN') {
         switch ($game) {
             case 'PCB': return 'LNNN的数量';
             case 'IN': return 'LNNFS的数量';
@@ -39,7 +24,7 @@ function lnn_type(string $game, string $lang) {
             case 'UM': return 'LNNN的数量';
             default: return 'LNN的数量';
         }
-    } else if ($lang == 'Japanese') {
+    } else if ($lang == 'ja_JP') {
         switch ($game) {
             case 'PCB': return 'LNNNの数';
             case 'IN': return 'LNNFSの数';
@@ -72,21 +57,10 @@ function date_tl(string $date) {
 }
 function format_lm(string $lm, string $lang) {
     switch ($lang) {
-        case 'Japanese': return '<span id="lm">' . date_tl($lm) . '</span>現在のLNN記録です。';
-        case 'Chinese': return 'LNN更新于<span id="lm">' . date_tl($lm) . '</span>。';
-        case 'Russian': return 'Список LNN\'ов актуален на ' . $lm . '</span>.';
+        case 'ja_JP': return '<span id="lm">' . date_tl($lm) . '</span>現在のLNN記録です。';
+        case 'zh_CN': return 'LNN更新于<span id="lm">' . date_tl($lm) . '</span>。';
+        case 'ru_RU': return 'Список LNN\'ов актуален на ' . $lm . '</span>.';
         default: return 'LNNs are current as of <span id="lm">' . $lm . '</span>.';
-    }
-}
-function player_search(string $lang) {
-    if ($lang == 'Chinese') {
-        return '玩家LNN';
-    } else if ($lang == 'Japanese') {
-        return '個人のLNN';
-    } else if ($lang == 'Russian') {
-        return 'Поиск игроков';
-    } else {
-        return 'Player Search';
     }
 }
 function replay_path(string $game, string $player, string $shot) {

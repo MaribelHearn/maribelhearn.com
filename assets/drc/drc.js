@@ -1,5 +1,5 @@
 /*global $ getCookie langCode setCookie*/
-var WRs, Rubrics, step, phantasm = true, noExtra = true, noShottypes = true, dsActive = true, language = "English",
+var WRs, Rubrics, step, phantasm = true, noExtra = true, noShottypes = true, dsActive = true, language = "en_US",
     DIFFICULTY = "#difficulty", BOMBS = "#bombs", SCORE = "#score", PERFORMANCE = "#performance", DRCPOINTS = "#drcpoints",
     ERROR = "#error", SHOTTYPE = "#shottype", NOTIFY = "#notify", NB = "#nb", MISSES = "#misses", CHALLENGE = "#challenge",
     NO_EXTRA = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>",
@@ -15,12 +15,12 @@ var WRs, Rubrics, step, phantasm = true, noExtra = true, noShottypes = true, dsA
     SURV_RUBRICS = "#survivalRubrics", SCORE_RUBRICS = "#scoringRubrics";
 
 $(document).ready(function () {
-    if (getCookie("lang") == "Japanese" || location.href.contains("jp")) {
-        language = "Japanese";
-    } else if (getCookie("lang") == "Chinese" || location.href.contains("zh")) {
-        language = "Chinese";
-    } else if (getCookie("lang") == "Russian" || location.href.contains("ru")) {
-        language = "Russian";
+    if (getCookie("lang") == "ja_JP" || location.href.contains("jp")) {
+        language = "ja_JP";
+    } else if (getCookie("lang") == "zh_CN" || location.href.contains("zh")) {
+        language = "zh_CN";
+    } else if (getCookie("lang") == "ru_RU" || location.href.contains("ru")) {
+        language = "ru_RU";
     }
 
     $("#top").attr("lang", langCode(language, false));
@@ -36,9 +36,9 @@ $(document).ready(function () {
     $("#scoringButton, #survivalButton").css("display", "inline");
     $("#scoringRubrics, #survivalRubrics").css("display", "none");
     $(".flag").attr("href", "");
-    $("#en").on("click", {language: "English"}, setLanguage);
-    $("#jp").on("click", {language: "Japanese"}, setLanguage);
-    $("#zh").on("click", {language: "Chinese"}, setLanguage);
+    $("#en").on("click", {language: "en_US"}, setLanguage);
+    $("#jp").on("click", {language: "ja_JP"}, setLanguage);
+    $("#zh").on("click", {language: "zh_CN"}, setLanguage);
     checkValues({data: {changePerf: true, changeShots: true}});
     step = setInterval(updateCountdown, 1000);
     updateCountdown();
@@ -62,7 +62,7 @@ function updateCountdown() {
     }
 }
 function translateCharName(charName) {
-    if (language == "Chinese") {
+    if (language == "zh_CN") {
         return ({
             "Makai": "魔界",
             "Jigoku": "地狱",
@@ -139,7 +139,7 @@ function translateCharName(charName) {
             "YoumuOtter": "妖梦獺",
             "YoumuEagle": "妖梦鹰"
         }[charName]);
-    } else if (language == "Japanese") {
+    } else if (language == "ja_JP") {
         return ({
             "Makai": "魔界",
             "Jigoku": "地獄",
@@ -216,12 +216,12 @@ function translateCharName(charName) {
             "YoumuOtter": "妖夢獺",
             "YoumuEagle": "妖夢鷲"
         }[charName]);
-    } else { // English
+    } else { // en_US
         return charName.replace("Team", " Team");
     }
 }
 function translate(arg) {
-    if (language == "Chinese") {
+    if (language == "zh_CN") {
         return ({
             "Route": "路线",
             "Shottype": "机体",
@@ -267,7 +267,7 @@ function translate(arg) {
             "m ": "分",
             "s": "秒"
         }[arg]);
-    } else if (language == "Japanese") {
+    } else if (language == "ja_JP") {
         return ({
             "Route": "ルート",
             "Shottype": "キャラ",
@@ -313,7 +313,7 @@ function translate(arg) {
             "m ": "分",
             "s": "秒"
         }[arg]);
-    } else { // English
+    } else { // en_US
         return arg;
     }
 }
@@ -539,11 +539,11 @@ function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
     var roundsLost = Number($(MISSES).val()), bonus;
 
     if (roundsLost > rubric.lives) {
-        if (language == "Chinese") {
+        if (language == "zh_CN") {
             $(ERROR).html("<strong class='error'>错误：败北数不能超过" + rubric.lives + "。</strong>");
-        } else if (language == "Japanese") {
+        } else if (language == "ja_JP") {
             $(ERROR).html("<strong class='error'>エラー: 敗北数が" + rubric.lives + "を超えてはいけません。</strong>");
-        } else { // English
+        } else { // en_US
             $(ERROR).html("<strong class='error'>Error: the number of rounds lost cannot exceed " + rubric.lives + "</strong>");
         }
         return 0;
@@ -609,13 +609,13 @@ function survivalPoints(rubric, game, difficulty, shottypeMultiplier) {
             lastSpells = $(LS).val();
 
             if (lastSpells > Rubrics.MAX_LAST_SPELLS[difficulty][route]) {
-                if (language == "Chinese") {
+                if (language == "zh_CN") {
                     $(ERROR).html("<strong class='error'>错误：" + route + "路线" + difficulty +
                     "难度中的LSC收取数不能超过" + Rubrics.MAX_LAST_SPELLS[difficulty][route] + "。");
-                } else if (language == "Japanese") {
+                } else if (language == "ja_JP") {
                     $(ERROR).html("<strong class='error'>エラー: ラストスペルが" + Rubrics.MAX_LAST_SPELLS[difficulty][route] +
                     "を超えてはいけません。</strong>");
-                } else { // English
+                } else { // en_US
                     $(ERROR).html("<strong class='error'>Error: the number of Last Spells captured in a " + route +
                     " clear on " + difficulty + " cannot exceed " + Rubrics.MAX_LAST_SPELLS[difficulty][route] + "</strong>");
                 }

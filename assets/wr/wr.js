@@ -1,5 +1,5 @@
 /*global $ MAX_SCORE getCookie setCookie deleteCookie gameAbbr shottypeAbbr sep fullNameNumber generateTableText
-generateFullNames generateShottypes generateShortNames translateUSDate translateDate translateEADate langCode*/
+generateFullNames generateShottypes generateShortNames translateUSDate translateDate translateEADate*/
 var WRs, westScores, missingReplays, seasonsEnabled, datesEnabled,
     notation = "DMY", language = "en_US", selected = "", playerSelected = false,
     all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN",
@@ -360,7 +360,7 @@ function showPlayerWRs(player) {
                 if (WRs[game][difficulty][shottype].contains(player)) {
                     if (!cats.contains(game + difficulty)) {
                         $("#playerlistbody").append("<tr><td class='" + game + "p'><span class='" + game + "'>" + game +
-                        "</span>" + (language == "English" ? " " : "") + "<span class='" + difficulty + "'>" + difficulty +
+                        "</span>" + (language == "en_US" ? " " : "") + "<span class='" + difficulty + "'>" + difficulty +
                         "</span></td><td id='" + game + difficulty +
                         "s'></td><td id=" + game + difficulty + "r></td>" +
                         "<td id='" + game + difficulty + "d' class='date_empty'></td></tr>");
@@ -429,8 +429,8 @@ function generateDates(oldLanguage, oldNotation, playerSelected) {
         for (i = 0; i < datestrings.length; i += 1) {
             date = $(datestrings[i]).html();
 
-            if (language == "English" || language == "Russian") {
-                if (oldLanguage == "English") {
+            if (language == "en_US" || language == "ru_RU") {
+                if (oldLanguage == "en_US") {
                     if (notation == "DMY") {
                         $(datestrings[i]).html(translateUSDate(date, "DMY"));
                     } else if (notation == "MDY") {
@@ -439,8 +439,8 @@ function generateDates(oldLanguage, oldNotation, playerSelected) {
                 } else {
                     $(datestrings[i]).html(translateEADate(date, notation));
                 }
-            } else if (language == "Japanese" || language == "Chinese") {
-                if (oldLanguage == "English" || oldLanguage == "Russian") {
+            } else if (language == "ja_JP" || language == "zh_CN") {
+                if (oldLanguage == "en_US" || oldLanguage == "ru_RU") {
                     if (oldNotation == "DMY") {
                         $(datestrings[i]).html(translateDate(date, "YMD"));
                     } else if (oldNotation == "MDY") {
@@ -492,16 +492,11 @@ function setEventListeners() {
     $("#player").on("select", showPlayerWRs);
     $("body").on("resize", updateOrientation);
     $("#dates").on("click", {alreadyDisabled: false}, toggleDates);
-    $("#en-gb").on("click", {language: "English", notation: "DMY"}, setLanguage);
-    $("#en-us").on("click", {language: "English", notation: "MDY"}, setLanguage);
-    $("#jp").on("click", {language: "Japanese", notation: "YMD"}, setLanguage);
-    $("#zh").on("click", {language: "Chinese", notation: "YMD"}, setLanguage);
-    $("#ru").on("click", {language: "Russian", notation: "DMY"}, setLanguage);
-    /*$("#en-gb").on("click", {language: "en_US", notation: "DMY"}, setLanguage);
+    $("#en-gb").on("click", {language: "en_US", notation: "DMY"}, setLanguage);
     $("#en-us").on("click", {language: "en_US", notation: "MDY"}, setLanguage);
     $("#jp").on("click", {language: "ja_JP", notation: "YMD"}, setLanguage);
     $("#zh").on("click", {language: "zh_CN", notation: "YMD"}, setLanguage);
-    $("#ru").on("click", {language: "ru_RU", notation: "DMY"}, setLanguage);*/
+    $("#ru").on("click", {language: "ru_RU", notation: "DMY"}, setLanguage);
     $(".game_img").on("click", {seasonSwitch: false}, showWRs);
 }
 
@@ -522,29 +517,17 @@ $(document).ready(function () {
     setEventListeners();
     setAttributes();
 
-    if (getCookie("lang") == "Japanese" || location.href.contains("jp")) {
-        language = "Japanese";
+    if (getCookie("lang") == "ja_JP" || location.href.contains("jp")) {
+        language = "ja_JP";
         notation = "YMD";
-    } else if (getCookie("lang") == "Chinese" || location.href.contains("zh")) {
-        language = "Chinese";
+    } else if (getCookie("lang") == "zh_CN" || location.href.contains("zh")) {
+        language = "zh_CN";
         notation = "YMD";
-    } else if (getCookie("lang") == "Russian") {
-        language = "Russian";
+    } else if (getCookie("lang") == "ru_RU") {
+        language = "ru_RU";
     } else if (getCookie("datenotation") == "MDY" || location.href.contains("en-us")) {
         notation = "MDY";
     }
-
-    /*if (getCookie("lang") == "ja_JP" || location.href.contains("jp")) {
-        language = "Japanese";
-        notation = "YMD";
-    } else if (getCookie("lang") == "zh_CN" || location.href.contains("zh")) {
-        language = "Chinese";
-        notation = "YMD";
-    } else if (getCookie("lang") == "ru_RU") {
-        language = "Russian";
-    } else if (getCookie("datenotation") == "MDY" || location.href.contains("en-us")) {
-        notation = "MDY";
-    }*/
 
     if (!datesEnabled) {
         disableDates();

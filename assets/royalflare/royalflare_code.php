@@ -129,6 +129,104 @@ function check_slowdown(string $game, string $sd) {
     }
 }
 
+
+function tl_shot(string $shot, string $lang) {
+    if ($lang == 'ja_JP' || $lang == 'Japanese' || $lang == 'ja') {
+        switch ($shot) {
+            case 'Makai': return '魔界';
+            case 'Jigoku': return '地獄';
+            case 'ReimuA': return '霊夢A';
+            case 'ReimuB': return '霊夢B';
+            case 'ReimuC': return '霊夢C';
+            case 'Reimu': return '霊夢';
+            case 'Mima': return '魅魔';
+            case 'Marisa': return '魔理沙';
+            case 'Ellen': return 'エレン';
+            case 'Kotohime': return '小兎姫';
+            case 'Kana': return 'カナ';
+            case 'Rikako': return '理香子';
+            case 'Chiyuri': return 'ちゆり';
+            case 'Yumemi': return '夢美';
+            case 'Yuuka': return '幽香';
+            case 'MarisaA': return '魔理沙A';
+            case 'MarisaB': return '魔理沙B';
+            case 'SakuyaA': return '咲夜A';
+            case 'SakuyaB': return '咲夜B';
+            case 'BorderTeam': return '霊夢＆紫';
+            case 'MagicTeam': return '魔理沙＆アリス';
+            case 'ScarletTeam': return '咲夜＆レミリア';
+            case 'GhostTeam': return '妖夢＆幽々子';
+            case 'Yukari': return '紫';
+            case 'Alice': return 'アリス';
+            case 'Sakuya': return '咲夜';
+            case 'Remilia': return 'レミリア';
+            case 'Youmu': return '妖夢';
+            case 'Yuyuko': return '幽々子';
+            case 'Reisen': return '鈴仙';
+            case 'Cirno': return 'チルノ';
+            case 'Lyrica': return 'リリカ';
+            case 'Mystia': return 'ミスティア';
+            case 'Tewi': return 'てゐ';
+            case 'Aya': return '文';
+            case 'Medicine': return 'メディスン';
+            case 'Komachi': return '小町';
+            case 'Eiki': return '映姫';
+            case 'Hatate': return 'はたて';
+            case 'MarisaC': return '魔理沙C';
+            case 'SanaeA': return '早苗A';
+            case 'SanaeB': return '早苗B';
+            case 'Sanae': return '早苗';
+            case 'Spring': return '春';
+            case 'Summer': return '夏';
+            case 'Autumn': return '秋';
+            case 'Winter': return '冬';
+            case 'ReimuSpring': return '霊夢(春)';
+            case 'CirnoSpring': return 'チルノ(春)';
+            case 'AyaSpring': return '文(春)';
+            case 'MarisaSpring': return '魔理沙(春)';
+            case 'ReimuSummer': return '霊夢(夏)';
+            case 'CirnoSummer': return 'チルノ(夏)';
+            case 'AyaSummer': return '文(夏)';
+            case 'MarisaSummer': return '魔理沙(夏)';
+            case 'ReimuAutumn': return '霊夢(秋)';
+            case 'CirnoAutumn': return 'チルノ(秋)';
+            case 'AyaAutumn': return '文(秋)';
+            case 'MarisaAutumn': return '魔理沙(秋)';
+            case 'ReimuWinter': return '霊夢(冬)';
+            case 'CirnoWinter': return 'チルノ(冬)';
+            case 'AyaWinter': return '文(冬)';
+            case 'MarisaWinter': return '魔理沙(冬)';
+            case 'ReimuWolf': return '霊夢W';
+            case 'ReimuOtter': return '霊夢O';
+            case 'ReimuEagle': return '霊夢E';
+            case 'MarisaWolf': return '魔理沙W';
+            case 'MarisaOtter': return '魔理沙O';
+            case 'MarisaEagle': return '魔理沙E';
+            case 'YoumuWolf': return '妖夢W';
+            case 'YoumuOtter': return '妖夢O';
+            case 'YoumuEagle': return '妖夢E';
+            default: return $shot;
+        }
+    }
+    return str_replace('Team', ' Team', $shot);
+}
+
+
+function tl_term(string $term, string $lang) {
+    if ($lang == 'Japanese' || $lang == 'ja_JP' || $lang == 'ja') {
+        $term = trim($term);
+        switch ($term) {
+            case 'Shottype': return 'キャラ';
+            case 'Route': return 'ルート';
+            case 'FinalA': return 'Aルート';
+            case 'FinalB': return 'Bルート';
+            default: return $term;
+        }
+    } else {
+        return $term;
+    }
+}
+
 if (!empty($_SESSION['subpage'])) {
     $subpage = $_SESSION['subpage'];
     if (substr($subpage, 0, 2) == 'th') {

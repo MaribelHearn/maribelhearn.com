@@ -1,7 +1,7 @@
 <?php include_once 'assets/shared/tl.php' ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
-    <h2><?php echo tl_term('Contributors', $lang_code) ?></h2>
+    <h2><?php echo _('Contributors') ?></h2>
     <ul class='credits'>
         <li><a href='https://github.com/32th-System' target='_blank'>32th System</a>: Royalflare JSON data</li>
         <li><a href='https://github.com/hoangcaominh' target='_blank'>Hoàng Cao Minh</a>: DRC calculator integration</li>
@@ -12,13 +12,13 @@
         <li><a href='https://twitter.com/UndreamtBoss' target='_blank'>Zil</a>: PoFV character descriptions</li>
 		<li><a href='https://twitter.com/homoiconicbully' target='_blank'>Lesbea</a>: PoFV averaged tier list</li>
     </ul>
-    <h2><?php echo tl_term('Translators', $lang_code) ?></h2>
-    <h3><span class='icon flag_japan'></span> <?php echo tl_term('Japanese', $lang_code) ?></h3>
+    <h2><?php echo _('Translators') ?></h2>
+    <h3><span class='icon flag_japan'></span> <?php echo _('Japanese') ?></h3>
     <ul class='credits'>
         <li><a href='https://twitter.com/7bitm' target='_blank'>7bitm</a>: DRC</li>
         <li><a href='https://twitter.com/toho_yumiya' target='_blank'><?php echo ($lang_code == 'ja' ? 'ゆーみや' : 'Yu-miya') ?></a>: DRC, Tools, WR, LNN, TWC</li>
     </ul>
-    <h3><span class='icon flag_china'></span> <?php echo tl_term('Chinese', $lang_code) ?></h3>
+    <h3><span class='icon flag_china'></span> <?php echo _('Chinese') ?></h3>
     <ul class='credits'>
         <li>Cero: DRC</li>
         <li><a href='https://twitter.com/CrestedPeak9' target='_blank'>CrestedPeak9</a>: DRC</li>
@@ -27,16 +27,16 @@
         <li>Jumbo: PoFV</li>
         <li><a href='https://space.bilibili.com/107846194' target='_blank'>Komeiji Compiler</a>: TWC</li>
     </ul>
-    <h3><span class='icon flag_russia'></span> <?php echo tl_term('Russian', $lang_code) ?></h3>
+    <h3><span class='icon flag_russia'></span> <?php echo _('Russian') ?></h3>
     <ul class='credits'>
         <li><a href='https://www.youtube.com/channel/UC7QqmWFA-hAyrP5C1c2b-Iw'>KVS</a>: Tools, WR, LNN, TWC</li>
     </ul>
-    <h2><?php echo tl_term('Character Artists', $lang_code) ?></h2>
+    <h2><?php echo _('Character Artists') ?></h2>
     <ul class='credits'>
         <li><a href='https://www.pixiv.net/member.php?id=4920496' target='_blank'>Dairi:</a> Tiers, Slots</li>
         <li><a href='https://twitter.com/korindo' target='_blank'>ZUN:</a> PoFV, Tiers</li>
     </ul>
-    <h2><?php echo tl_term('Background Artists', $lang_code) ?></h2>
+    <h2><?php echo _('Background Artists') ?></h2>
     <ul class='credits'>
         <li><a href='https://www.pixiv.net/member.php?id=420928' target='_blank'>LM7</a>:
         Index, About, Credits, Privacy (<a href='https://www.pixiv.net/en/artworks/6957612' target='_blank'>Source</a>)</li>

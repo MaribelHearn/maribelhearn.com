@@ -151,15 +151,15 @@ function monthToNumber(month) {
 }
 
 function langCode(language, notation) {
-    if (language == "English") {
+    if (language == "en_US") {
         if (notation && notation == "MDY") {
             return "en-us";
         } else {
             return (notation ? "en-gb" : "en");
         }
-    } else if (language == "Japanese") {
+    } else if (language == "ja_JP") {
         return "ja";
-    } else { // language == "Chinese"
+    } else { // language == "zh_CN" || language == "ru_RU"
         return "zh";
     }
 }
@@ -322,14 +322,14 @@ function shottypeAbbr(shottype) {
 }
 
 function generateText() {
-    if (language == "Chinese") {
+    if (language == "zh_CN") {
         $(".ranking").html("排行");
         $(".difficulty").html("难度");
         $("#score").html("分数");
         $("#label_all").html("皆");
         $("#differentgames").html("游戏");
         $(".westernrecords").html("西方纪录");
-    } else if (language == "Japanese") {
+    } else if (language == "ja_JP") {
         $(".ranking").html("ランキング");
         $(".difficulty").html("難易度");
         $("#score").html("スコア");
@@ -347,7 +347,7 @@ function generateText() {
 }
 
 function generateTableText(page) {
-    if (language == "Chinese") {
+    if (language == "zh_CN") {
         $(".game").html("游戏");
         $(".player").html("玩家");
         $(".players").html("玩家");
@@ -368,7 +368,7 @@ function generateTableText(page) {
         $(".nooflnnnns").html("LNNNN的数量");
         $(".different").html("（玩家）");
         $(".all").html("（全）");
-    } else if (language == "Japanese") {
+    } else if (language == "ja_JP") {
         $(".game").html("ゲーム");
         $(".player").html("プレイヤー");
         $(".players").html("プレイヤー");
@@ -414,7 +414,7 @@ function generateTableText(page) {
 }
 
 function generateShortNames() {
-    if (language == "Chinese") {
+    if (language == "zh_CN") {
         $(".HRtP").html("灵");
         $(".SoEW").html("封");
         $(".PoDD").html("梦");
@@ -435,7 +435,7 @@ function generateShortNames() {
         $(".HSiFS").html("天");
         $(".WBaWC").html("鬼");
         $(".UM").html("虹");
-    } else if (language == "Japanese") {
+    } else if (language == "ja_JP") {
         $(".HRtP").html("靈");
         $(".SoEW").html("封");
         $(".PoDD").html("夢");
@@ -480,7 +480,7 @@ function generateShortNames() {
     }
 }
 function generateFullNames() {
-    if (language == "Chinese") {
+    if (language == "zh_CN") {
         $(".HRtPf").html("东方灵异传　～ Highly Responsive to Prayers");
         $(".SoEWf").html("东方封魔录　～ the Story of Eastern Wonderland");
         $(".PoDDf").html("东方梦时空　～ Phantasmagoria of Dim.Dream");
@@ -502,7 +502,7 @@ function generateFullNames() {
         $(".HSiFSf").html("东方天空璋　～ Hidden Star in Four Seasons");
         $(".WBaWCf").html("东方鬼形獣　～ Wily Beast and Weakest Creature");
         $(".UMf").html("东方虹龙洞　～ Unconnected Marketeers");
-    } else if (language == "Japanese") {
+    } else if (language == "ja_JP") {
         $(".HRtPf").html("東方靈異伝　～ Highly Responsive to Prayers");
         $(".SoEWf").html("東方封魔録　～ the Story of Eastern Wonderland");
         $(".PoDDf").html("東方夢時空　～ Phantasmagoria of Dim.Dream");
@@ -549,7 +549,7 @@ function generateFullNames() {
     }
 }
 function generateShottypes() {
-    if (language == "Chinese") {
+    if (language == "zh_CN") {
         $(".Makai").html("魔界");
         $(".Jigoku").html("地狱");
         $(".ReimuA").html("灵梦A");
@@ -625,7 +625,7 @@ function generateShottypes() {
         $(".YoumuWolf").html("妖梦狼");
         $(".YoumuOtter").html("妖梦獭");
         $(".YoumuEagle").html("妖梦鹰");
-    } else if (language == "Japanese") {
+    } else if (language == "ja_JP") {
         $(".Makai").html("魔界");
         $(".Jigoku").html("地獄");
         $(".ReimuA").html("霊夢A");
