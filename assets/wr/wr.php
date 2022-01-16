@@ -121,7 +121,7 @@
 				echo '<span id="' . $game . 'overall2m">' . ($overall[$num] == 0 ? '-' : $overall_diff[$num]) . '</span> ';
 				echo '<span id="' . $game . 'overall3m">' . ($overall[$num] == 0 ? '-' : _($overall_shottype[$num])) . '</span> by ';
 				echo '<span id="' . $game . 'overall1m"><em>' . ($overall[$num] == 0 ? '-' : $overall_player[$num]) . ($game == 'WBaWC' || $game == 'UM' ? '*' : '') . '</em></span> ';
-				echo '<br><span id="' . $game . 'overall4m" class="datestring">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $notation)) . '</span></p><hr>';
+				echo '<br><span id="' . $game . 'overall4m" class="datestring_player">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $notation)) . '</span></p><hr>';
 			}
             echo '<p>* Players that have scored 9,999,999,990: ';
             $str = '';
@@ -354,7 +354,7 @@
                 echo '<p class="' . $obj->game . '">' . _($obj->game) . ($lang == 'en_US' || $lang == 'ru_RU' ? ' ' : '') .
 				$obj->diff . ($lang == 'en_US' || $lang == 'ru_RU' ? ' ' : '') .
                 '' . _($obj->shot) . '</p><p>' . number_format($obj->score, 0, '.', ',') .
-                ' by <em>' . $obj->player . '</em> on ' . date_tl($obj->date, $notation) . '</p>';
+                ' by <em>' . $obj->player . '</em><br><span class="datestring_player">' . date_tl($obj->date, $notation) . '</span></p>';
             }
         ?><hr>
     </div>

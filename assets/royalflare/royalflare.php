@@ -1,4 +1,4 @@
-<?php include_once 'assets/shared/tl.php'; include_once 'assets/royalflare/royalflare_code.php' ?>
+<?php include_once 'assets/royalflare/royalflare_code.php' ?>
 <div id='wrap' class='wrap'>
     <?php
         echo wrap_top();
