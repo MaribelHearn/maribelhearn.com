@@ -1,4 +1,4 @@
-Touhou 15 - Legacy of Lunatic Kingdom (Legacy Mode)<div id='wrap' class='wrap'>
+<div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
     <p>An English translation of the full results of the 2021 incarnation of the annual THWiki Popularity Poll, held from 25 September 2021 to 3 October 2021.</p>
     <p>The full results, including the questionnaire, comments, and detailed statistics per character, were released on 17 January 2022.</p>
