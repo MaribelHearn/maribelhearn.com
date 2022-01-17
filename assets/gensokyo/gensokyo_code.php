@@ -56,7 +56,7 @@ function condition_name($cond_abbr) {
 
 function format_conditions($conditions, $category) {
     $result = '';
-    if ($category != 'DS') {
+    if ($category != 'DS' && !empty($conditions)) {
         $conditions = preg_split('/,/', $conditions);
         foreach ($conditions as $key => $cond) {
             $cond_name = condition_name($cond);
