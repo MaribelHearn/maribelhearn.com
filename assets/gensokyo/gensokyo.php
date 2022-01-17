@@ -93,13 +93,25 @@
             $i = -1;
             $found = 0;
             foreach ($reps as $key => $rep) {
-                if (!empty($player) && stripos($rep['player'], $player) !== 0) {
+                if (substr($player, 0, 1) == '"' && substr($player, -1) == '"') {
+                    $player = substr($player, 1, -1);
+                    $player_matches = $player == $entry['player'];
+                } else {
+                    $player_matches = stripos($rep['player'], $player) !== 0;
+                }
+                if (substr($shot, 0, 1) == '"' && substr($shot, -1) == '"') {
+                    $shot = substr($shot, 1, -1);
+                    $shot_matches = $shot == $entry['shottype'];
+                } else {
+                    $shot_matches = stripos($rep['shottype'], $shot) !== 0;
+                }
+                if (!empty($player) && $player_matches) {
                     continue;
                 }
                 if (!empty($game) && $game != '-' && strpos($rep['category'], $game) !== 0) {
                     continue;
                 }
-                if (!empty($shot) && $rep['shottype'] != $shot) {
+                if (!empty($shot) && $shot_matches) {
                     continue;
                 }
                 if (!empty($type) && $type != '-' && strpos($rep['type'], $type) === false) {
