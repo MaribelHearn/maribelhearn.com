@@ -71,6 +71,7 @@
             $comment = str_replace('<', '&lt;', $rep['comment']);
             $comment = str_replace('>', '&gt;', $comment);
             $backlink = explode('&id', $_SERVER['REQUEST_URI']);
+            $conditions = format_conditions($rep['conditions'], $rep['category']);
             echo '<table id="replay" class="sortable"><tbody>';
             echo '<tr><th>Player</th><td>' . $rep['player'] . '</td></tr>';
             echo '<tr><th>Category</th><td>' . $rep['category'] . ($rep['category'] == 'DS' ? ' ' . $rep['slowdown'] : '') .
@@ -81,7 +82,7 @@
             echo '<tr><th>Score</th><td>' . ($rep['category'] == 'DS' ? number_format($rep['type'], 0, '.', ',') : $rep['score']) . '</td></tr>';
             echo '<tr><th>Slowdown</th><td>' . ($rep['category'] == 'DS' ? '-' : $rep['slowdown']) . '</td></tr>';
             echo '<tr><th>Shottype</th><td>' . ($rep['category'] == 'DS' ? $rep['slowdown'] : $rep['shottype']) . '</td></tr>';
-            echo '<tr><th>Conditions</th><td>' . ($rep['category'] == 'DS' ? '' : $rep['conditions']) . '</td></tr>';
+            echo '<tr><th>Conditions</th><td>' . $conditions . '</td></tr>';
             echo '<tr><th>Comment</th><td>' . ($rep['category'] == 'DS' ? $rep['conditions'] : $comment) . '</td></tr>';
             foreach (glob('replays/gensokyo/' . $_GET['id'] . '/*.rpy') as $file) {
                 $replay = explode('/', $file);
@@ -164,10 +165,11 @@
                         '</td><td>' . $rep['date'] . '</td><td></td><td><a href="' . $file . '">' . $replay[3] .
                         '</a></td></tr>'; // date = type, conditions empty
                     } else {
+                        $conditions = format_conditions($rep['conditions']);
                         echo '<tr><td><a href="' . $_SERVER['REQUEST_URI'] . '&id=' . $key . '">' . $rep['player'] .
                         '</a></td><td>' . $rep['category'] . '<br>' . $rep['shottype'] . '</td><td>' . $rep['score'] .
                         '</td><td>' . str_replace(' ', '<br>', $rep['date']) . '</td><td>' . $rep['type'] .
-                        '</td><td>' . $rep['conditions'] . '</td><td><a href="' . $file . '">' . $replay[3] . '</a></td></tr>';
+                        '</td><td>' . $conditions . '</td><td><a href="' . $file . '">' . $replay[3] . '</a></td></tr>';
                     }
                     $found += 1;
                 }
