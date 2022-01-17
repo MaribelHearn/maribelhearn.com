@@ -1,10 +1,12 @@
 function toggle(detail) {
-    document.getElementById("age_summary").style.display = (detail ? "none" : "block");
-    document.getElementById("age_detail").style.display = (detail ? "block" : "none");
+    document.getElementById("age_summary").style.display = (detail ? "none" : "table");
+    document.getElementById("age_detail").style.display = (detail ? "table" : "none");
+    document.getElementById("age_detail_button").style.display = (detail ? "none" : "inline");
+    document.getElementById("age_summary_button").style.display = (detail ? "inline" : "none");
 }
 
-document.getElementById("age_summary_button").addEventListener("click", function wrap() { toggle(true); });
-document.getElementById("age_detail_button").addEventListener("click", function wrap() { toggle(false); });
+document.getElementById("age_detail_button").addEventListener("click", function wrap() { toggle(true); });
+document.getElementById("age_summary_button").addEventListener("click", function wrap() { toggle(false); });
 
 if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) {
     w1 = document.getElementById("chars_dummy");
