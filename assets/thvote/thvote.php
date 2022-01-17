@@ -25,15 +25,15 @@
     <div id='chars_container' class='container'>
         <table id='chars_table' class='poll table sortable'>
             <colgroup>
-                <!--<col class="col1">-->
-                <col class="col2game">
-                <col class="col3game">
-                <col class="col4game">
-                <col class="col5">
-                <col class="col6per">
-                <col class="col7per">
-                <col class="col8per">
-                <col class="col5 w55">
+                <!--<col class='col1'>-->
+                <col class='col2game'>
+                <col class='col3game'>
+                <col class='col4game'>
+                <col class='col5'>
+                <col class='col6per'>
+                <col class='col7per'>
+                <col class='col8per'>
+                <col class='col5 w55'>
             </colgroup>
             <thead>
                 <tr>
@@ -257,20 +257,21 @@
                 <tr><td>206</td><td>191</td><td>185</td><td>Zashiki-warashi</td><td>2</td><td>0</td><td>0</td><td>0</td></tr>
             </tbody>
         </table>
+        <p><strong><a href='#top'>Back to Top</a></strong></p>
     </div>
     <h1 id='music'>Music</h1>
     <div id='music_dummy' class='dummy'><div class='dummy_sub'></div></div>
     <div id='music_container' class='container'>
         <table id='music_table' class='poll table sortable'>
             <colgroup>
-                <!--<col class="col1">-->
-                <col class="col2game">
-                <col class="col3game">
-                <col class="col4game">
-                <col class="col5">
-                <col class="col6per">
-                <col class="col7per">
-                <col class="col8per">
+                <!--<col class='col1'>-->
+                <col class='col2game'>
+                <col class='col3game'>
+                <col class='col4game'>
+                <col class='col5'>
+                <col class='col6per'>
+                <col class='col7per'>
+                <col class='col8per'>
             </colgroup>
             <thead>
                 <tr>
@@ -854,20 +855,21 @@
                 <tr><td>566</td><td>536</td><td>505</td><td>Endless</a><td>1</td><td>0</td><td>0</td></tr>
             </tbody>
         </table>
+        <p><strong><a href='#top'>Back to Top</a></strong></p>
     </div>
     <h2 id='works'>Works</h2>
     <div id='works_dummy' class='dummy'><div class='dummy_sub'></div></div>
     <div id='works_container' class='container'>
         <table id='works_table' class='poll table sortable'>
             <colgroup>
-                <!--<col class="col1">-->
-                <col class="col2game">
-                <col class="col3game">
-                <col class="col4game">
-                <col class="col5">
-                <col class="col6per">
-                <col class="col7per">
-                <col class="col8per">
+                <!--<col class='col1'>-->
+                <col class='col2game'>
+                <col class='col3game'>
+                <col class='col4game'>
+                <col class='col5'>
+                <col class='col6per'>
+                <col class='col7per'>
+                <col class='col8per'>
             </colgroup>
             <thead>
                 <tr>
@@ -938,6 +940,7 @@
                 <tr><td>54</td><td>50</td><td>47</td><td>Akyuu's Untouched Score</td><td>217</td><td>19</td><td>33</td></tr>
             </tbody>
         </table>
+        <p><strong><a href='#top'>Back to Top</a></strong></p>
     </div>
     <h2 id='questionnaire'>Questionnaire</h2>
     <div>
@@ -1455,7 +1458,7 @@
             </table>
         </div><div>
             <h3>Touhou 15 - Legacy of Lunatic Kingdom (Pointdevice Mode)</h3>
-            <p>Valid responses: 8,349</p></div>
+            <p>Valid responses: 8,349</p>
             <table class='poll table sortable'>
                 <colgroup>
                     <col class='col2'>
@@ -1868,6 +1871,8 @@
                     <td>2,592</td>
                     <td>21.05%</td>
                 </tr>
-            </tbody></table>
-    <p><strong><a href='#top'>Back to Top</a></strong></p>
+            </tbody>
+        </table>
+        <p><strong><a href='#top'>Back to Top</a></strong></p>
+    </div>
 </div>
