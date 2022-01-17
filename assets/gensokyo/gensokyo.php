@@ -165,7 +165,7 @@
                         '</td><td>' . $rep['date'] . '</td><td></td><td><a href="' . $file . '">' . $replay[3] .
                         '</a></td></tr>'; // date = type, conditions empty
                     } else {
-                        $conditions = format_conditions($rep['conditions']);
+                        $conditions = format_conditions($rep['conditions'], $rep['category']);
                         echo '<tr><td><a href="' . $_SERVER['REQUEST_URI'] . '&id=' . $key . '">' . $rep['player'] .
                         '</a></td><td>' . $rep['category'] . '<br>' . $rep['shottype'] . '</td><td>' . $rep['score'] .
                         '</td><td>' . str_replace(' ', '<br>', $rep['date']) . '</td><td>' . $rep['type'] .
