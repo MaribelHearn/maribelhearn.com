@@ -105,13 +105,13 @@
                 } else {
                     $shot_matches = stripos($rep['shottype'], $shot) !== 0;
                 }
-                if (!empty($player) && $player_matches) {
+                if (!empty($player) && !$player_matches) {
                     continue;
                 }
                 if (!empty($game) && $game != '-' && strpos($rep['category'], $game) !== 0) {
                     continue;
                 }
-                if (!empty($shot) && $shot_matches) {
+                if (!empty($shot) && !$shot_matches) {
                     continue;
                 }
                 if (!empty($type) && $type != '-' && strpos($rep['type'], $type) === false) {
