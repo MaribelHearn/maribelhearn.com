@@ -81,29 +81,6 @@
 				}
 			?>
         </table>
-        <p>* Players that have scored 9,999,999,990:
-            <?php
-                $str = '';
-                foreach ($cs as $player => $value) {
-                    $str .= ', <span class="cs">' . $player . '<span class="tooltip truescores">';
-                    if (gettype($value[0]) == 'array') {
-                        $substr = '';
-                        foreach ($value as $key => $val) {
-                            $substr .= _($val[2]) . ($lang == 'en_US' ? ' ' : '') . $val[0] .
-                            ($lang == 'en_US' ? ' (' : '（') . date_tl($val[1], $notation) .
-                            ($lang == 'en_US' ? ')' : '）') . '<br>';
-                        }
-                        $str .= $substr;
-                    } else {
-                        $str .= _($value[2]) . ($lang == 'en_US' ? ' ' : '') . $value[0] .
-                        ($lang == 'en_US' ? ' (' : '（') . date_tl($value[1], $notation) .
-                        ($lang == 'en_US' ? ')' : '）') . '<br>';
-                    }
-                    $str .= '</span></span>';
-                }
-                echo substr($str, 2);
-            ?>.
-        </p>
     </div>
     <div id='overallm'>
         <h2 class='overallrecords'><?php echo _('Overall Records') ?></h2>
@@ -123,22 +100,6 @@
 				echo '<span id="' . $game . 'overall1m"><em>' . ($overall[$num] == 0 ? '-' : $overall_player[$num]) . ($game == 'WBaWC' || $game == 'UM' ? '*' : '') . '</em></span> ';
 				echo '<br><span id="' . $game . 'overall4m" class="datestring_player">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $notation)) . '</span></p><hr>';
 			}
-            echo '<p>* Players that have scored 9,999,999,990: ';
-            $str = '';
-            foreach ($cs as $player => $value) {
-                $str .= ', <abbr title="';
-                if (gettype($value[0]) == 'array') {
-                    $substr = '';
-                    foreach ($value as $key => $val) {
-                        $substr .= ', ' . $val[2] . ' ' . $val[0] . ' on ' . date_tl($val[1], $notation);
-                    }
-                    $str .= substr($substr, 2);
-                } else {
-                    $str .= $value[2] . ' ' . $value[0] . ' on ' . date_tl($value[1], $notation);
-                }
-                $str .= '">' . $player . '</abbr>';
-            }
-            echo substr($str, 2) . '</p>';
 		?>
     </div>
     <h2 id='wrs' class='worldrecords'><?php echo _('World Records') ?></h2>
