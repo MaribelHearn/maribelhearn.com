@@ -298,32 +298,109 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>Hokkaido</th>
+                    <td><strong>Hokkaido</strong></td>
                     <td>429</td>
                     <td>3.93%</td>
                 </tr><tr>
-                    <th><b>Northern Tohoku</b><br>(Aomori, Iwate, Akita)</th>
+                    <td><strong>Northern Tohoku</strong><br>(Aomori, Iwate, Akita)</th>
                     <td>212</td>
                     <td>1.94%</td>
-                </tr><tr><th><b>Southern Tohoku</b><br>(Miyagi, Yamagata, Fukushima)</th><td>394</td><td>3.61%</td></tr>
-                <tr><th><b>Northern Kanto</b><br>(Ibaraki, Tochigi, Gunma)</th><td>505</td><td>4.62%</td></tr>
-                <tr><th><b>Southern Kanto</b><br>(Saitama, Chiba, Tokyo, Kanagawa)</th><td>2,967</td><td>27.15%</td></tr>
-                <tr><th><b>Hokuriku</b><br>(Toyama, Ishikawa, Fukui)</th><td>188</td><td>1.72%</td></tr>
-                <tr><th><b>Koshinetsu</b><br>(Niigata, Yamanashi, Nagano)</th><td>383</td><td>3.50%</td></tr>
-                <tr><th><b>Tokai</b><br>(Aichi, Mie, Gifu, Shizuoka)</th><td>1,017</td><td>9.31%</td></tr>
-                <tr><th><b>Kansai</b><br>(Osaka, Kyoto, Hyogo, Nara, Shiga, Wakayama)</th><td>1,284</td><td>11.75%</td></tr>
-                <tr><th><b>Chugoku</b><br>(Tottori, Shimane, Okayama, Hiroshima, Yamaguchi)</th><td>435</td><td>3.98%</td></tr>
-                <tr><th><b>Shikoku</b><br>(Tokushima, Ehime, Kagawa, Kochi)</th><td>226</td><td>2.07%</td></tr>
-                <tr><th><b>Northern Kyushu</b><br>(Fukuoka, Saga, Nagasaki, Oita)</th><td>402</td><td>3.68%</td></tr>
-                <tr><th><b>Southern Kyushu</b><br>(Kumamoto, Miyazaki, Kagoshima, Okinawa)</th><td>240</td><td>2.20%</td></tr>
-                <tr><th><b>East Asia</b><br>(China, Taiwan, Korea, etc.)</th><td>1,169</td><td>10.70%</td></tr>
-                <tr><th>Southeast Asia</th><td>193</td><td>1.77%</td></tr>
-                <tr><th>South, Central, West Asia</th><td>37</td><td>0.34%</td></tr>
-                <tr><th>Europe</th><td>277</td><td>2.53%</td></tr>
-                <tr><th>Africa</th><td>19</td><td>0.17%</td></tr>
-                <tr><th>North America</th><td>380</td><td>3.48%</td></tr>
-                <tr><th>South America</th><td>135</td><td>1.24%</td></tr>
-                <tr><th>Oceania</th><td>36</td><td>0.33%</td></tr>
+                </tr>
+                <tr>
+                    <td><strong>Southern Tohoku</strong><br>(Miyagi, Yamagata, Fukushima)</td>
+                    <td>394</td>
+                    <td>3.61%</td>
+                </tr>
+                <tr>
+                    <td><strong>Northern Kanto</strong><br>(Ibaraki, Tochigi, Gunma)</td>
+                    <td>505</td>
+                    <td>4.62%</td>
+                </tr>
+                <tr>
+                    <td><strong>Southern Kanto</strong><br>(Saitama, Chiba, Tokyo, Kanagawa)</td>
+                    <td>2,967</td>
+                    <td>27.15%</td>
+                </tr>
+                <tr>
+                    <td><strong>Hokuriku</strong><br>(Toyama, Ishikawa, Fukui)</td>
+                    <td>188</td>
+                    <td>1.72%</td>
+                </tr>
+                <tr>
+                    <td><strong>Koshinetsu</strong><br>(Niigata, Yamanashi, Nagano)</td>
+                    <td>383</td>
+                    <td>3.50%</td>
+                </tr>
+                <tr>
+                    <td><strong>Tokai</strong><br>(Aichi, Mie, Gifu, Shizuoka)</td>
+                    <td>1,017</td>
+                    <td>9.31%</td>
+                </tr>
+                <tr>
+                    <td><strong>Kansai</strong><br>(Osaka, Kyoto, Hyogo, Nara, Shiga, Wakayama)</td>
+                    <td>1,284</td>
+                    <td>11.75%</td>
+                </tr>
+                <tr>
+                    <td><strong>Chugoku</strong><br>(Tottori, Shimane, Okayama, Hiroshima, Yamaguchi)</td>
+                    <td>435</td>
+                    <td>3.98%</td>
+                </tr>
+                <tr>
+                    <td><strong>Shikoku</strong><br>(Tokushima, Ehime, Kagawa, Kochi)</td>
+                    <td>226</td>
+                    <td>2.07%</td>
+                </tr>
+                <tr>
+                    <td><strong>Northern Kyushu</strong><br>(Fukuoka, Saga, Nagasaki, Oita)</td>
+                    <td>402</td>
+                    <td>3.68%</td>
+                </tr>
+                <tr>
+                    <td><strong>Southern Kyushu</strong><br>(Kumamoto, Miyazaki, Kagoshima, Okinawa)</td>
+                    <td>240</td>
+                    <td>2.20%</td>
+                </tr>
+                <tr>
+                    <td><strong>East Asia</strong><br>(China, Taiwan, Korea, etc.)</td>
+                    <td>1,169</td>
+                    <td>10.70%</td>
+                </tr>
+                <tr>
+                    <td><strong>Southeast Asia</strong></td>
+                    <td>193</td>
+                    <td>1.77%</td>
+                </tr>
+                <tr>
+                    <td><strong>South, Central, West Asia</strong></td>
+                    <td>37</td>
+                    <td>0.34%</td>
+                </tr>
+                <tr>
+                    <td><strong>Europe</strong></td>
+                    <td>277</td>
+                    <td>2.53%</td>
+                </tr>
+                <tr>
+                    <td><strong>Africa</strong></td>
+                    <td>19</td>
+                    <td>0.17%</td>
+                </tr>
+                <tr>
+                    <td><strong>North America</strong></td>
+                    <td>380</td>
+                    <td>3.48%</td>
+                </tr>
+                <tr>
+                    <td><strong>South America</strong></td>
+                    <td>135</td>
+                    <td>1.24%</td>
+                </tr>
+                <tr>
+                    <td><strong>Oceania</strong></td>
+                    <td>36</td>
+                    <td>0.33%</td>
+                </tr>
             </tbody>
         </table>
         <h2>04. Difficulty level 1cc'd</h2>
