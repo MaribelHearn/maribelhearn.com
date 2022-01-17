@@ -40,4 +40,29 @@ if (empty($_GET['id'])) {
         $p = 0;
     }
 }
+
+function condition_name(string $cond_abbr) {
+    switch ($cond_abbr) {
+        case 'nd': return 'No Deaths';
+        case 'nb': return 'No Bomb Usage';
+        case 'nf': return 'No Focused Movement';
+        case 'nv': return 'No Vertical Movement';
+        case 'tas': return 'Tool-Assisted Replay';
+        case 'chz': return 'Tool-Assisted Replay (not marked by original uploader)';
+        case 'pa': return 'Pacifist';
+        case 'co': return 'Other Condition';
+    }
+}
+
+function format_conditions(array $conditions, string $category) {
+    $result = '';
+    if ($category != 'DS') {
+        $conditions = preg_split('/,/', $conditions);
+        foreach ($conditions as $key => $cond) {
+            $cond_name = condition_name($cond);
+            $result .= '<img src="/assets/gensokyo/gif/' . $cond . '.gif" width="20" height="20" alt="' . $cond_name . '" title="' . $cond_name . '">';
+        }
+    }
+    return $result;
+}
 ?>
