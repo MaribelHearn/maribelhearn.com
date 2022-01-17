@@ -97,13 +97,13 @@
                     $player = substr($player, 1, -1);
                     $player_matches = $player == $entry['player'];
                 } else {
-                    $player_matches = stripos($rep['player'], $player) !== 0;
+                    $player_matches = stripos($rep['player'], $player) !== false;
                 }
                 if (substr($shot, 0, 1) == '"' && substr($shot, -1) == '"') {
                     $shot = substr($shot, 1, -1);
                     $shot_matches = $shot == $entry['shottype'];
                 } else {
-                    $shot_matches = stripos($rep['shottype'], $shot) !== 0;
+                    $shot_matches = stripos($rep['shottype'], $shot) !== false;
                 }
                 if (!empty($player) && !$player_matches) {
                     continue;
