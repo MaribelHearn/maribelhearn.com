@@ -5,7 +5,7 @@
     <!--<p>Confusingly, "preliminary" simply means the full results without the questionnaire results.
     It does not mean the results are not final. The number of votes for the characters,
     music and works will not change when the full results are published.</p>-->
-    <p>All of the table columns for which sorting makes sense are sortable.</p>
+    <p>All of the table columns are sortable.</p>
     <p>Source: <a href='http://toho-vote.info/'>http://toho-vote.info/</a></p>
     <h2>Contents</h2>
     <div id='contents' class='border'>
@@ -283,7 +283,7 @@
         </table>
         <h2>03. Location</h2>
         <p>Valid responses: 10,928</p>
-        <table class='poll table'>
+        <table class='poll table sortable'>
             <colgroup>
                 <col class='col2'>
                 <col class='col3'>
@@ -837,20 +837,61 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><th>No participation</th><td>6,989</td><td>59.00%</td></tr>
-                <tr><th>Interacted with circles and friends</th><td>1,522</td><td>12.85%</td></tr>
-                <tr><th>Cosplayed</th><td>398</td><td>3.36%</td></tr>
-                <tr><th>Viewed or photographed cosplay</th><td>983</td><td>8.30%</td></tr>
-                <tr><th>Corporate collab events (for rhythm games, etc)</th><td>770</td><td>6.50%</td></tr>
-                <tr><th>Performed live music</th><td>905</td><td>7.64%</td></tr>
-                <tr><th>Bought official works</th><td>3,041</td><td>25.67%</td></tr>
-                <tr><th>Bought doujinshi</th><td>4,009</td><td>33.84%</td></tr>
-                <tr><th>Bought doujin music</th><td>3,206</td><td>27.06%</td></tr>
-                <tr><th>Bought doujin games</th><td>1,941</td><td>16.39%</td></tr>
-                <tr><th>Bought doujin goods</th><td>2,826</td><td>23.86%</td></tr>
-                <tr><th>Bought corporate works</th><td>1,060</td><td>8.95%</td></tr>
-                <tr><th>Distributed works (as a circle)</th><td>888</td><td>7.50%</td></tr>
-                <tr><th>Staff</th><td>212</td><td>1.79%</td></tr>
+                <tr>
+                    <th>No participation</th>
+                    <td>6,989</td>
+                    <td>59.00%</td>
+                </tr><tr>
+                    <th>Interacted with circles and friends</th>
+                    <td>1,522</td>
+                    <td>12.85%</td>
+                </tr><tr>
+                    <th>Cosplayed</th>
+                    <td>398</td><td>3.36%</td>
+                </tr><tr>
+                    <th>Viewed or photographed cosplay</th>
+                    <td>983</td><td>8.30%</td>
+                </tr><tr>
+                    <th>Corporate collab events (for rhythm games, etc)</th>
+                    <td>770</td>
+                    <td>6.50%</td>
+                </tr><tr>
+                    <th>Performed live music</th>
+                    <td>905</td>
+                    <td>7.64%</td>
+                </tr><tr>
+                    <th>Bought official works</th>
+                    <td>3,041</td>
+                    <td>25.67%</td>
+                </tr><tr>
+                    <th>Bought doujinshi</th>
+                    <td>4,009</td>
+                    <td>33.84%</td>
+                </tr><tr>
+                    <th>Bought doujin music</th>
+                    <td>3,206</td>
+                    <td>27.06%</td>
+                </tr><tr>
+                    <th>Bought doujin games</th>
+                    <td>1,941</td>
+                    <td>16.39%</td>
+                </tr><tr>
+                    <th>Bought doujin goods</th>
+                    <td>2,826</td>
+                    <td>23.86%</td>
+                </tr><tr>
+                    <th>Bought corporate works</th>
+                    <td>1,060</td>
+                    <td>8.95%</td>
+                </tr><tr>
+                    <th>Distributed works (as a circle)</th>
+                    <td>888</td>
+                    <td>7.50%</td>
+                </tr><tr>
+                    <th>Staff</th>
+                    <td>212</td>
+                    <td>1.79%</td>
+                </tr>
             </tbody>
         </table>
         <h2>10. Have you participated in the Touhou Popularity Poll before?</h2>
