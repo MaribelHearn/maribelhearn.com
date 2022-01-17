@@ -857,7 +857,7 @@
                 <tr><th>GFW - TD<br>(August 2010 - August 2011)</th><td>582</td><td>4.95%</td></tr>
                 <tr><th>TD - SoPM<br>(August 2011 - April 2012)</th><td>681</td><td>5.79%</td></tr>
                 <tr><th>SoPM - DDC<br>(April 2012 - August 2013)</th><td>772</td><td>6.56%</td></tr>
-                <tr><th>PC-98 - ISC<br>(August 2013 - May 2014)</th><td>954</td><td>8.11%</td></tr>
+                <tr><th>DDC - ISC<br>(August 2013 - May 2014)</th><td>954</td><td>8.11%</td></tr>
                 <tr><th>ISC - LoLK<br>(May 2014 - August 2015)</th><td>1,075</td><td>9.14%</td></tr>
                 <tr><th>LoLK - DBOA<br>(August 2015 - August 2016)</th><td>1,019</td><td>8.66%</td></tr>
                 <tr><th>DBOA - HSiFS<br>(August 2016 - August 2017)</th><td>1,066</td><td>9.06%</td></tr>
