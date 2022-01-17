@@ -41,7 +41,7 @@ if (empty($_GET['id'])) {
     }
 }
 
-function condition_name(string $cond_abbr) {
+function condition_name($cond_abbr) {
     switch ($cond_abbr) {
         case 'nd': return 'No Deaths';
         case 'nb': return 'No Bomb Usage';
@@ -54,7 +54,7 @@ function condition_name(string $cond_abbr) {
     }
 }
 
-function format_conditions(array $conditions, string $category) {
+function format_conditions($conditions, $category) {
     $result = '';
     if ($category != 'DS') {
         $conditions = preg_split('/,/', $conditions);
