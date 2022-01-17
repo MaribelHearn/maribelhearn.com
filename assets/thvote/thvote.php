@@ -150,7 +150,7 @@
                     <td>2,718</td>
                     <td>23.88%</td>
                 </tr><tr>
-                    <th>20-29</th>
+                    <th>25-29</th>
                     <td>1,509</td>
                     <td>13.26%</td>
                 </tr><tr>
@@ -805,20 +805,62 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><th>Offline (School, club activities, family, etc.)</th><td>2,556</td><td>21.59%</td></tr>
-                <tr><th>Online games, online friends, chat (IRC, etc.)</th><td>503</td><td>4.25%</td></tr>
-                <tr><th>Personal sites, blogs, news sites, etc.</th><td>312</td><td>2.64%</td></tr>
-                <tr><th>Image sites (Pixiv, Nijie, TINAMI, SNS, etc.)</th><td>402</td><td>3.40%</td></tr>
-                <tr><th>Anonymous boards (2ch, Futaba, etc.)</th><td>167</td><td>1.41%</td></tr>
-                <tr><th>Niconico</th><td>1,984</td><td>16.76%</td></tr>
-                <tr><th>Twitter</th><td>68</td><td>0.57%</td></tr>
-                <tr><th>Magazine articles, TV programs, etc.</th><td>39</td><td>0.33%</td></tr>
-                <tr><th>Doujinshi (Comiket, etc.)</th><td>91</td><td>0.77%</td></tr>
-                <tr><th>Doujin stores, general bookstores, etc.</th><td>127</td><td>1.07%</td></tr>
-                <tr><th>When looking for interesting games</th><td>285</td><td>2.41%</td></tr>
-                <tr><th>Rhythm games that contain Touhou music</th><td>594</td><td>5.02%</td></tr>
-                <tr><th>Other video sites (YouTube, etc.)</th><td>4,499</td><td>38.00%</td></tr>
-                <tr><th>Mobile app fangames</th><td>212</td><td>1.79%</td></tr>
+                <tr>
+                    <th>Offline (School, club activities, family, etc.)</th>
+                    <td>2,556</td>
+                    <td>21.59%</td>
+                </tr><tr>
+                    <th>Online games, online friends, chat (IRC, etc.)</th>
+                    <td>503</td>
+                    <td>4.25%</td>
+                </tr><tr>
+                    <th>Personal sites, blogs, news sites, etc.</th>
+                    <td>312</td>
+                    <td>2.64%</td>
+                </tr><tr>
+                    <th>Image sites (Pixiv, Nijie, TINAMI, SNS, etc.)</th>
+                    <td>402</td>
+                    <td>3.40%</td>
+                </tr><tr>
+                    <th>Anonymous boards (2ch, Futaba, etc.)</th>
+                    <td>167</td><td>1.41%</td>
+                </tr><tr>
+                    <th>Niconico</th>
+                    <td>1,984</td>
+                    <td>16.76%</td>
+                </tr><tr>
+                    <th>Twitter</th>
+                    <td>68</td>
+                    <td>0.57%</td>
+                </tr><tr>
+                    <th>Magazine articles, TV programs, etc.</th>
+                    <td>39</td>
+                    <td>0.33%</td>
+                </tr><tr>
+                    <th>Doujinshi (Comiket, etc.)</th>
+                    <td>91</td>
+                    <td>0.77%</td>
+                </tr><tr>
+                    <th>Doujin stores, general bookstores, etc.</th>
+                    <td>127</td>
+                    <td>1.07%</td>
+                </tr><tr>
+                    <th>When looking for interesting games</th>
+                    <td>285</td>
+                    <td>2.41%</td>
+                </tr><tr>
+                    <th>Rhythm games that contain Touhou music</th>
+                    <td>594</td>
+                    <td>5.02%</td>
+                </tr><tr>
+                    <th>Other video sites (YouTube, etc.)</th>
+                    <td>4,499</td>
+                    <td>38.00%</td>
+                </tr><tr>
+                    <th>Mobile app fangames</th>
+                    <td>212</td>
+                    <td>1.79%</td>
+                </tr>
             </tbody>
         </table>
         <h2>09. Participation in doujin events such as Comiket and Reitaisai (multiple answers possible)</h2>
