@@ -20,6 +20,9 @@ table {
 .percentage {
     text-align: center;
 }
+.header {
+    border-bottom: 3px solid #000;
+}
 .col1 {
     width: 3em;
 }
@@ -132,7 +135,7 @@ table {
     display: table-cell;
     vertical-align: middle;
 }*/
-.hidden, .dummy, #age_detail {
+.hidden, .dummy, #age_detail, #age_summary_button {
     display: none;
 }
 .tooltip {
@@ -169,7 +172,7 @@ table {
     margin-bottom: 5px;
 }
 #age_summary {
-    display: block;
+    display: table;
 }
 @media only screen and (min-width: 1500px) and (max-width: 1850px) {
     .wrap {
