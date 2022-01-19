@@ -1669,28 +1669,28 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><th>PC-98 - Shuusou Gyoku<br>(October 1995 - December 2000)</th><td>68</td><td>0.58%</td></tr>
-                <tr><th>Shuusou Gyoku - EoSD<br>(December 2000 - August 2002)</th><td>119</td><td>1.01%</td></tr>
-                <tr><th>EoSD - PCB<br>(August 2002 - August 2003)</th><td>316</td><td>2.69%</td></tr>
-                <tr><th>PCB - IN<br>(August 2003 - August 2004)</th><td>215</td><td>1.83%</td></tr>
-                <tr><th>IN - IaMP<br>(August 2004 - December 2004)</th><td>124</td><td>1.05%</td></tr>
-                <tr><th>IaMP - PoFV<br>(December 2004 - August 2005)</th><td>88</td><td>0.75%</td></tr>
-                <tr><th>PoFV - StB<br>(August 2005 - December 2005)</th><td>92</td><td>0.78%</td></tr>
-                <tr><th>StB - PMiSS<br>(December 2005 - December 2006)</th><td>117</td><td>0.99%</td></tr>
-                <tr><th>PMiSS - MoF<br>(December 2006 - August 2007)</th><td>403</td><td>3.43%</td></tr>
-                <tr><th>MoF - SA<br>(August 2007 - August 2008)</th><td>794</td><td>6.75%</td></tr>
-                <tr><th>SA - UFO<br>(August 2008 - August 2009)</th><td>647</td><td>5.50%</td></tr>
-                <tr><th>UFO - GFW<br>(August 2009 - August 2010)</th><td>587</td><td>4.99%</td></tr>
-                <tr><th>GFW - TD<br>(August 2010 - August 2011)</th><td>582</td><td>4.95%</td></tr>
-                <tr><th>TD - SoPM<br>(August 2011 - April 2012)</th><td>681</td><td>5.79%</td></tr>
-                <tr><th>SoPM - DDC<br>(April 2012 - August 2013)</th><td>772</td><td>6.56%</td></tr>
-                <tr><th>DDC - ISC<br>(August 2013 - May 2014)</th><td>954</td><td>8.11%</td></tr>
-                <tr><th>ISC - LoLK<br>(May 2014 - August 2015)</th><td>1,075</td><td>9.14%</td></tr>
-                <tr><th>LoLK - DBOA<br>(August 2015 - August 2016)</th><td>1,019</td><td>8.66%</td></tr>
-                <tr><th>DBOA - HSiFS<br>(August 2016 - August 2017)</th><td>1,066</td><td>9.06%</td></tr>
-                <tr><th>HSiFS - WBaWC<br>(August 2017 - August 2019)</th><td>1,246</td><td>10.60%</td></tr>
-                <tr><th>WBaWC - UM Demo<br>(August 2019 - May 2021)</th><td>588</td><td>5.00%</td></tr>
-                <tr><th>UM Demo - now</th><td>207</td><td>1.76%</td></tr>
+                <tr><td><strong>PC-98 - Shuusou Gyoku</strong><br>(October 1995 - December 2000)</td><td>68</td><td>0.58%</td></tr>
+                <tr><td><strong>Shuusou Gyoku - EoSD</strong><br>(December 2000 - August 2002)</td><td>119</td><td>1.01%</td></tr>
+                <tr><td><strong>EoSD - PCB</strong><br>(August 2002 - August 2003)</td><td>316</td><td>2.69%</td></tr>
+                <tr><td><strong>PCB - IN</strong><br>(August 2003 - August 2004)</td><td>215</td><td>1.83%</td></tr>
+                <tr><td><strong>IN - IaMP</strong><br>(August 2004 - December 2004)</td><td>124</td><td>1.05%</td></tr>
+                <tr><td><strong>IaMP - PoFV</strong><br>(December 2004 - August 2005)</td><td>88</td><td>0.75%</td></tr>
+                <tr><td><strong>PoFV - StB</strong><br>(August 2005 - December 2005)</td><td>92</td><td>0.78%</td></tr>
+                <tr><td><strong>StB - PMiSS</strong><br>(December 2005 - December 2006)</td><td>117</td><td>0.99%</td></tr>
+                <tr><td><strong>PMiSS - MoF</strong><br>(December 2006 - August 2007)</td><td>403</td><td>3.43%</td></tr>
+                <tr><td><strong>MoF - SA</strong><br>(August 2007 - August 2008)</td><td>794</td><td>6.75%</td></tr>
+                <tr><td><strong>SA - UFO</strong><br>(August 2008 - August 2009)</td><td>647</td><td>5.50%</td></tr>
+                <tr><td><strong>UFO - GFW</strong><br>(August 2009 - August 2010)</td><td>587</td><td>4.99%</td></tr>
+                <tr><td><strong>GFW - TD</strong><br>(August 2010 - August 2011)</td><td>582</td><td>4.95%</td></tr>
+                <tr><td><strong>TD - SoPM</strong><br>(August 2011 - April 2012)</td><td>681</td><td>5.79%</td></tr>
+                <tr><td><strong>SoPM - DDC</strong><br>(April 2012 - August 2013)</td><td>772</td><td>6.56%</td></tr>
+                <tr><td><strong>DDC - ISC</strong><br>(August 2013 - May 2014)</td><td>954</td><td>8.11%</td></tr>
+                <tr><td><strong>ISC - LoLK</strong><br>(May 2014 - August 2015)</td><td>1,075</td><td>9.14%</td></tr>
+                <tr><td><strong>LoLK - DBOA</strong><br>(August 2015 - August 2016)</td><td>1,019</td><td>8.66%</td></tr>
+                <tr><td><strong>DBOA - HSiFS</strong><br>(August 2016 - August 2017)</td><td>1,066</td><td>9.06%</td></tr>
+                <tr><td><strong>HSiFS - WBaWC</strong><br>(August 2017 - August 2019)</td><td>1,246</td><td>10.60%</td></tr>
+                <tr><td><strong>WBaWC - UM Demo</strong><br>(August 2019 - May 2021)</td><td>588</td><td>5.00%</td></tr>
+                <tr><td><strong>UM Demo - now</strong></td><td>207</td><td>1.76%</td></tr>
             </tbody>
         </table>
         <h2>08. How did you discover Touhou?</h2>
