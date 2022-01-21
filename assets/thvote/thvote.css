@@ -20,9 +20,6 @@ table {
 .percentage {
     text-align: center;
 }
-.header {
-    border-bottom: 3px solid #000;
-}
 .col1 {
     width: 3em;
 }
@@ -135,6 +132,62 @@ table {
     display: table-cell;
     vertical-align: middle;
 }*/
+.zero {
+    color: green;
+}
+.one {
+    color: green;
+    font-weight: bold;
+    background-color: lightgreen;
+}
+.huge {
+    background-color: orange;
+}
+.mavg { /* 79.14 - 82.64 */
+    font-weight: bold;
+    background-color: #808080;
+}
+.favg { /* 79.14 - 82.64 */
+    color: white;
+    font-weight: bold;
+    background-color: #808080;
+}
+.mtilt { /* 82.64 - 84.39 */
+    font-weight: bold;
+    background-color: #A08060;
+}
+.ftilt { /* 77.39 - 79.14 */
+    color: white;
+    font-weight: bold;
+    background-color: #6080A0;
+}
+.mlean { /* 84.39 - 87.89 */
+    font-weight: bold;
+    background-color: #C08040;
+}
+.flean { /* 73.89 - 77.39 */
+    color: white;
+    font-weight: bold;
+    background-color: #4080C0;
+}
+.mstrong { /* 87.89 - 94.89 */
+    font-weight: bold;
+    background-color: #E08020;
+}
+.fstrong { /* 66.89 - 73.89 */
+    color: white;
+    font-weight: bold;
+    background-color: #2080E0;
+}
+.mextreme { /* > 94.89 */
+    font-weight: bold;
+    background-color: #FF8000;
+}
+.fextreme { /* < 66.89 */
+    color: white;
+    font-weight: bold;
+    background-color: #0080FF;
+}
 .hidden, .dummy, #age_detail, #age_summary_button {
     display: none;
 }
@@ -174,13 +227,26 @@ table {
 #age_summary {
     display: table;
 }
+#back {
+    float: left;
+}
+#contents_extra {
+    text-align: left;
+}
+#fraud_table th {
+    white-space: nowrap;
+}
+#fraud_table tr td:nth-child(8):not(.zero):not(.one), #fraud_table tr td:nth-child(9):not(.zero), #fraud_table tr td:nth-child(10):not(.zero) {
+    font-weight: bold;
+    color: darkred;
+}
 @media only screen and (min-width: 1500px) and (max-width: 1850px) {
     .wrap {
         margin-left: 15%;
         margin-right: 15%;
     }
 }
-@media only screen and (min-width: 1100px) and (max-width: 1500px) {
+@media only screen and (min-width: 1200px) and (max-width: 1500px) {
     h1 {
         clear: both;
     }
@@ -189,7 +255,7 @@ table {
         margin-right: 0;
     }
 }
-@media only screen and (min-width: 800px) and (max-width: 1100px) {
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
     h1 {
         margin-bottom: 15px;
         clear: both;
@@ -201,5 +267,6 @@ table {
     .wrap {
         margin-left: 0;
         margin-right: 0;
+        font-size: 11px;
     }
 }

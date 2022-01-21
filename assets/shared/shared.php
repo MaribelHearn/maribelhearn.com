@@ -351,7 +351,7 @@ function wrap_top() {
     if ($page == 'survival' || $page == 'slots') {
         echo '<div id="content" data-html2canvas-ignore="" style="display:block">';
     }
-    if ($page == 'faq' || $page == 'royalflare') {
+    if ($page == 'faq' || $page == 'royalflare' || $page == 'thvote') {
         return;
     }
     if (empty($error_code)) {
