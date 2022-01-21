@@ -1690,8 +1690,8 @@ music and works will not change when the full results are published.</p>-->
             <tr><td><strong>LoLK - DBOA</strong><br>(August 2015 - August 2016)</td><td>1,019</td><td>8.66%</td></tr>
             <tr><td><strong>DBOA - HSiFS</strong><br>(August 2016 - August 2017)</td><td>1,066</td><td>9.06%</td></tr>
             <tr><td><strong>HSiFS - WBaWC</strong><br>(August 2017 - August 2019)</td><td>1,246</td><td>10.60%</td></tr>
-            <tr><td><strong>WBaWC - UM Demo</strong><br>(August 2019 - May 2021)</td><td>588</td><td>5.00%</td></tr>
-            <tr><td><strong>UM Demo - now</strong></td><td>207</td><td>1.76%</td></tr>
+            <tr><td><strong>WBaWC - UM</strong><br>(August 2019 - May 2021)</td><td>588</td><td>5.00%</td></tr>
+            <tr><td><strong>UM - now</strong></td><td>207</td><td>1.76%</td></tr>
         </tbody>
     </table>
     <h3>08. How did you discover Touhou?</h3>
