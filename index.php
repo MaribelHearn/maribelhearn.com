@@ -11,7 +11,7 @@
         $tmp = preg_split('/\//', $page);
         $subpage = $tmp[1];
         $page = $tmp[0];
-        if ($page == 'royalflare') {
+        if ($page == 'royalflare' || $page == 'thvote') {
             if (count($tmp) == 3) {
                 $subpage .= '/' . $tmp[2];
             }
