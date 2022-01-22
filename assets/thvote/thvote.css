@@ -236,7 +236,7 @@ table {
 #fraud_table th {
     white-space: nowrap;
 }
-#fraud_table tr td:nth-child(8):not(.zero):not(.one), #fraud_table tr td:nth-child(9):not(.zero), #fraud_table tr td:nth-child(10):not(.zero) {
+#fraud_table tr td:nth-child(8):not(.zero):not(.one), #fraud_table tr td:nth-child(9):not(.zero), #fraud_table tr td:nth-child(10):not(.zero):not(.one) {
     font-weight: bold;
     color: darkred;
 }
