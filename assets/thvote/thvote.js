@@ -1,3 +1,5 @@
+var w1, w2, w3, w4, w5, w6, w7, w8, w9, w0, th, i;
+
 function toggle(detail) {
     document.getElementById("age_summary").style.display = (detail ? "none" : "table");
     document.getElementById("age_detail").style.display = (detail ? "table" : "none");
@@ -5,8 +7,23 @@ function toggle(detail) {
     document.getElementById("age_summary_button").style.display = (detail ? "inline" : "none");
 }
 
-document.getElementById("age_detail_button").addEventListener("click", function wrap() { toggle(true); });
-document.getElementById("age_summary_button").addEventListener("click", function wrap() { toggle(false); });
+if (document.getElementById("age_detail_button")) {
+    document.getElementById("age_detail_button").addEventListener("click", function wrap() { toggle(true); });
+    document.getElementById("age_summary_button").addEventListener("click", function wrap() { toggle(false); });
+}
+
+function init() {
+    if (document.getElementById("jumps")) {
+        th = document.getElementsByTagName("th");
+
+        for (i = 0; i < th.length; i++) {
+            if (th[i].id == "change") {
+                th[i].click();
+                th[i].click();
+            }
+        }
+    }
+}
 
 if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) {
     w1 = document.getElementById("chars_dummy");
@@ -50,3 +67,5 @@ if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("T
         w9.scrollLeft = w0.scrollLeft;
     }
 }
+
+window.addEventListener("DOMContentLoaded", init, false);

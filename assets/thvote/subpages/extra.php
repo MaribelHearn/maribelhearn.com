@@ -1,12 +1,13 @@
 <h2>Contents</h2>
 <div id='contents_extra' class='border'>
+    <p><a href='#jumps'>Biggest jumps</a></p>
     <p><a href='#mpg'>Music vote per maingame</a></p>
-    <ul><li><a href='#totals'>Totals per maingame</a></li><?php
+    <ul><li><a href='#mtotals'>Totals per maingame</a></li><?php
         foreach ($games as $key => $game) {
             if ($key < 5 || $game == 'GFW') {
                 continue;
             }
-            echo '<li><a href="#' . strtolower($game) . '">' . full_name($game) . '</a></li>';
+            echo '<li><a href="#m' . strtolower($game) . '">' . full_name($game) . '</a></li>';
         }
     ?></ul>
     <p><a href='#fraud'>Fraud correction</a></p>
@@ -16,10 +17,173 @@
         <li><a href='#works'>Works</a></li>
     </ul>
 </div>
+<h2 id='jumps'>Biggest jumps</h2>
+<p>This section lists the biggest jumps in ranking for characters (top 150 only). Click a column to sort the table by jumps, drops or whatever you like.</p>
+<table class='poll table sortable'>
+    <colgroup>
+        <col class='col2'>
+        <col class='col3'>
+    </colgroup>
+    <thead>
+        <tr><th>Character</th><th id='change' class='sorttable_numeric'>Change</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Youmu Konpaku</td><td class='stable'>0</td></tr>
+        <tr><td>Marisa Kirisame</td><td class='jump'>+2</td></tr>
+        <tr><td>Reimu Hakurei</td><td class='drop'>-1</td></tr>
+        <tr><td>Koishi Komeiji</td><td class='drop'>-1</td></tr>
+        <tr><td>Flandre Scarlet</td><td class='stable'>0</td></tr>
+        <tr><td>Sakuya Izayoi</td><td class='jump'>+1</td></tr>
+        <tr><td>Remilia Scarlet</td><td class='drop'>-1</td></tr>
+        <tr><td>Fujiwara no Mokou</td><td class='jump'>+1</td></tr>
+        <tr><td>Satori Komeiji</td><td class='drop'>-1</td></tr>
+        <tr><td>Yuyuko Saigyouji</td><td class='jump'>+3</td></tr>
+        <tr><td>Aya Shameimaru</td><td class='drop'>-1</td></tr>
+        <tr><td>Alice Margatroid</td><td class='drop'>-1</td></tr>
+        <tr><td>Sanae Kochiya</td><td class='drop'>-1</td></tr>
+        <tr><td>Reisen Udongein Inaba</td><td class='stable'>0</td></tr>
+        <tr><td>Tenshi Hinanawi</td><td class='jump'>+1</td></tr>
+        <tr><td>Yukari Yakumo</td><td class='drop'>-1</td></tr>
+        <tr><td>Hata no Kokoro</td><td class='stable'>0</td></tr>
+        <tr><td>Cirno</td><td class='jump'>+6</td></tr>
+        <tr><td>Patchouli Knowledge</td><td class='drop'>-1</td></tr>
+        <tr><td>Kogasa Tatara</td><td class='stable'>0</td></tr>
+        <tr><td>Rumia</td><td class='jump'>+2</td></tr>
+        <tr><td>Suwako Moriya</td><td class='drop'>-1</td></tr>
+        <tr><td>Eiki Shiki, Yamaxanadu</td><td class='drop'>-4</td></tr>
+        <tr><td>Yuuka Kazami</td><td class='jump'>+4</td></tr>
+        <tr><td>Hong Meiling</td><td class='stable'>0</td></tr>
+        <tr><td>Toyosatomimi no Miko</td><td class='jump'>+3</td></tr>
+        <tr><td>Momiji Inubashiri</td><td class='drop'>-5</td></tr>
+        <tr><td>Junko</td><td class='drop'>-2</td></tr>
+        <tr><td>Seija Kijin</td><td class='jump'>+3</td></tr>
+        <tr><td>Shion Yorigami</td><td class='stable'>0</td></tr>
+        <tr><td>Suika Ibuki</td><td class='stable'>0</td></tr>
+        <tr><td>Mononobe no Futo</td><td class='jump'>+7</td></tr>
+        <tr><td>Sagume Kishin</td><td class='jump'>+7</td></tr>
+        <tr><td>Hecatia Lapislazuli</td><td class='jump'>+8</td></tr>
+        <tr><td>Kaguya Houraisan</td><td class='jump'>+6</td></tr>
+        <tr><td>Nitori Kawashiro</td><td class='drop'>-3</td></tr>
+        <tr><td>Ran Yakumo</td><td class='stable'>0</td></tr>
+        <tr><td>Renko Usami</td><td class='drop'>-11</td></tr>
+        <tr><td>Utsuho Reiuji</td><td class='drop'>-1</td></tr>
+        <tr><td>Kasen Ibaraki</td><td class='drop'>-5</td></tr>
+        <tr><td>Parsee Mizuhashi</td><td class='drop'>-7</td></tr>
+        <tr><td>Okina Matara</td><td class='jump'>+1</td></tr>
+        <tr><td>Nue Houjuu</td><td class='jump'>+2</td></tr>
+        <tr><td>Chimata Tenkyuu</td><td class='stable'>New</td></tr>
+        <tr><td>Hina Kagiyama</td><td class='jump'>+5</td></tr>
+        <tr><td>Keiki Haniyasushin</td><td class='drop'>-10</td></tr>
+        <tr><td>Byakuren Hijiri</td><td class='drop'>-3</td></tr>
+        <tr><td>Eirin Yagokoro</td><td class='jump'>+10</td></tr>
+        <tr><td>Rin Kaenbyou</td><td class='drop'>-2</td></tr>
+        <tr><td>Doremy Sweet</td><td class='jump'>+1</td></tr>
+        <tr><td>Minamitsu Murasa</td><td class='jump'>+19</td></tr>
+        <tr><td>Clownpiece</td><td class='drop'>-4</td></tr>
+        <tr><td>Keine Kamishirasawa</td><td class='jump'>+4</td></tr>
+        <tr><td>Maribel Hearn</td><td class='drop'>-5</td></tr>
+        <tr><td>Tsukasa Kudamaki</td><td class='stable'>New</td></tr>
+        <tr><td>Sumireko Usami</td><td class='jump'>+6</td></tr>
+        <tr><td>Megumu Iizunamaru</td><td class='stable'>New</td></tr>
+        <tr><td>Yachie Kicchou</td><td class='drop'>-12</td></tr>
+        <tr><td>Seiga Kaku</td><td class='stable'>0</td></tr>
+        <tr><td>Daiyousei</td><td class='drop'>-6</td></tr>
+        <tr><td>Chen</td><td class='stable'>0</td></tr>
+        <tr><td>Momoyo Himemushi</td><td class='stable'>New</td></tr>
+        <tr><td>Nazrin</td><td class='drop'>-10</td></tr>
+        <tr><td>Tewi Inaba</td><td class='jump'>+10</td></tr>
+        <tr><td>Sekibanki</td><td class='jump'>+5</td></tr>
+        <tr><td>Kagerou Imaizumi</td><td class='drop'>-14</td></tr>
+        <tr><td>Koakuma</td><td class='jump'>+4</td></tr>
+        <tr><td>Kutaka Niwatari</td><td class='drop'>-12</td></tr>
+        <tr><td>Yuugi Hoshiguma</td><td class='jump'>+8</td></tr>
+        <tr><td>Kosuzu Motoori</td><td class='drop'>-9</td></tr>
+        <tr><td>Mystia Lorelei</td><td class='drop'>-7</td></tr>
+        <tr><td>Komachi Onozuka</td><td class='drop'>-7</td></tr>
+        <tr><td>Shinmyoumaru Sukuna</td><td class='drop'>-6</td></tr>
+        <tr><td>Hatate Himekaidou</td><td class='drop'>-1</td></tr>
+        <tr><td>Soga no Tojiko</td><td class='drop'>-8</td></tr>
+        <tr><td>Iku Nagae</td><td class='drop'>-13</td></tr>
+        <tr><td>Mayumi Joutouguu</td><td class='drop'>-9</td></tr>
+        <tr><td>Kanako Yasaka</td><td class='stable'>0</td></tr>
+        <tr><td>Rinnosuke Morichika</td><td class='drop'>-4</td></tr>
+        <tr><td>Joon Yorigami</td><td class='drop'>-25</td></tr>
+        <tr><td>Mamizou Futatsuiwa</td><td class='drop'>-2</td></tr>
+        <tr><td>Mima</td><td class='drop'>-1</td></tr>
+        <tr><td>Hieda no Akyuu</td><td class='drop'>-11</td></tr>
+        <tr><td>Lunasa Prismriver</td><td class='stable'>0</td></tr>
+        <tr><td>Wriggle Nightbug</td><td class='jump'>+9</td></tr>
+        <tr><td>Raiko Horikawa</td><td class='drop'>-6</td></tr>
+        <tr><td>Yoshika Miyako</td><td class='jump'>+2</td></tr>
+        <tr><td>Saki Kurokoma</td><td class='drop'>-12</td></tr>
+        <tr><td>Mike Goutokuji</td><td class='stable'>New</td></tr>
+        <tr><td>Watatsuki no Yorihime</td><td class='jump'>+8</td></tr>
+        <tr><td>Lily White</td><td class='drop'>-9</td></tr>
+        <tr><td>Miyoi Okunoda</td><td class='jump'>+1</td></tr>
+        <tr><td>Shizuha Aki</td><td class='jump'>+3</td></tr>
+        <tr><td>Minoriko Aki</td><td class='jump'>+3</td></tr>
+        <tr><td>Medicine Melancholy</td><td class='drop'>-9</td></tr>
+        <tr><td>Aunn Komano</td><td class='drop'>-13</td></tr>
+        <tr><td>Wakasagihime</td><td class='drop'>-8</td></tr>
+        <tr><td>Shinki</td><td class='drop'>-10</td></tr>
+        <tr><td>Shou Toramaru</td><td class='drop'>-14</td></tr>
+        <tr><td>Mai Teireida</td><td class='jump'>+8</td></tr>
+        <tr><td>Yumemi Okazaki</td><td class='drop'>-10</td></tr>
+        <tr><td>Kyouko Kasodani</td><td class='drop'>-15</td></tr>
+        <tr><td>Letty Whiterock</td><td class='drop'>-3</td></tr>
+        <tr><td>Yamame Kurodani</td><td class='drop'>-2</td></tr>
+        <tr><td>Satono Nishida</td><td class='jump'>+4</td></tr>
+        <tr><td>Misumaru Tamatsukuri</td><td class='stable'>New</td></tr>
+        <tr><td>Watatsuki no Toyohime</td><td class='jump'>+7</td></tr>
+        <tr><td>Seiran</td><td class='drop'>-13</td></tr>
+        <tr><td>Unnamed Jinyou (Fortune Teller)</td><td class='drop'>-17</td></tr>
+        <tr><td>Luna Child</td><td class='drop'>-11</td></tr>
+        <tr><td>Merlin Prismriver</td><td class='stable'>0</td></tr>
+        <tr><td>Ichirin Kumoi</td><td class='drop'>-7</td></tr>
+        <tr><td>Gengetsu</td><td class='drop'>-9</td></tr>
+        <tr><td>Star Sapphire</td><td class='drop'>-13</td></tr>
+        <tr><td>Benben Tsukumo</td><td class='drop'>-9</td></tr>
+        <tr><td>Alice's Dolls (Shanghai, Hourai, Ooedo, etc.)</td><td class='jump'>+1</td></tr>
+        <tr><td>Lyrica Prismriver</td><td class='drop'>-5</td></tr>
+        <tr><td>Unnamed Book-Reading Youkai (Tokiko)</td><td class='drop'>-3</td></tr>
+        <tr><td>Takane Yamashiro</td><td class='stable'>New</td></tr>
+        <tr><td>Sunny Milk</td><td class='drop'>-17</td></tr>
+        <tr><td>Eternity Larva</td><td class='drop'>-14</td></tr>
+        <tr><td>Ringo</td><td class='drop'>-10</td></tr>
+        <tr><td>Rei'sen</td><td class='drop'>-2</td></tr>
+        <tr><td>Yatsuhashi Tsukumo</td><td class='drop'>-1</td></tr>
+        <tr><td>Narumi Yatadera</td><td class='drop'>-15</td></tr>
+        <tr><td>Kana Anaberal</td><td class='drop'>-8</td></tr>
+        <tr><td>Mugetsu</td><td class='drop'>-8</td></tr>
+        <tr><td>Dolls in Pseudo Paradise CD Jacket Girl</td><td class='drop'>-9</td></tr>
+        <tr><td>Yumeko</td><td class='drop'>-1</td></tr>
+        <tr><td>Anxious Moustached Villager</td><td class='drop'>-3</td></tr>
+        <tr><td>Kurumi</td><td class='drop'>-1</td></tr>
+        <tr><td>Youki Konpaku</td><td class='jump'>+6</td></tr>
+        <tr><td>Sariel</td><td class='drop'>-9</td></tr>
+        <tr><td>Nemuno Sakata</td><td class='drop'>-3</td></tr>
+        <tr><td>Chiyuri Kitashirakawa</td><td class='drop'>-6</td></tr>
+        <tr><td>Urumi Ushizaki</td><td class='drop'>-15</td></tr>
+        <tr><td>Kisume</td><td class='drop'>-11</td></tr>
+        <tr><td>Sannyo Komakusa</td><td class='stable'>New</td></tr>
+        <tr><td>Unzan</td><td class='drop'>-5</td></tr>
+        <tr><td>Kedama</td><td class='drop'>-3</td></tr>
+        <tr><td>Ellen</td><td class='drop'>-8</td></tr>
+        <tr><td>Konngara</td><td class='drop'>-6</td></tr
+        <tr><td>Eika Ebisu</td><td class='drop'>-18</td></tr>
+        <tr><td>Elis</td><td class='drop'>-10</td></tr>
+        <tr><td>Mai</td><td class='drop'>-13</td></tr>
+        <tr><td>Elly</td><td class='drop'>-7</td></tr>
+        <tr><td>Yuki</td><td class='drop'>-5</td></tr>
+        <tr><td>Otter Spirit</td><td class='drop'>-32</td></tr>
+        <tr><td>Shadow Kasen (Ibaraki-Douji's Arm)</td><td class='drop'>-10</td></tr>
+        <tr><td>Giant Catfish</td><td class='drop'>-6</td></tr>
+    </tbody>
+</table>
 <h2 id='mpg'>Music vote per maingame</h2>
-<h3 id='totals'>Totals per maingame</h3>
+<h3 id='mtotals'>Totals per maingame</h3>
 <div>
-    <table id='totals' class='poll table sortable'>
+    <table class='poll table sortable'>
         <colgroup>
             <col class='col2game'>
             <col class='col3'>
@@ -54,7 +218,7 @@
         </tbody>
     </table>
 </div>
-<h3 id='eosd'>Touhou 6 - The Embodiment of Scarlet Devil</h3>
+<h3 id='meosd'>Touhou 6 - The Embodiment of Scarlet Devil</h3>
 <table class='poll table sortable'>
     <colgroup>
         <col class='col2game'>
@@ -98,7 +262,7 @@
         <tr><th colspan='3'>Total</th><td>49,317</td><td>7,997</td><td>4,490</td><td></td></tr>
     </tfoot>
 </table>
-<h3 id='pcb'>Touhou 7 - Perfect Cherry Blossom</h3>
+<h3 id='mpcb'>Touhou 7 - Perfect Cherry Blossom</h3>
 <table class='poll table sortable'>
     <colgroup>
         <col class='col2game'>
@@ -144,7 +308,7 @@
         <tr><th colspan='3'>Total</th><td>30,028</td><td>3,192</td><td>2,778</td></tr>
     </tfoot>
 </table>
-<h3 id='in'>Touhou 8 - Imperishable Night</h3>
+<h3 id='min'>Touhou 8 - Imperishable Night</h3>
 <table class='poll table sortable'>
     <colgroup>
         <col class='col2game'>
@@ -191,7 +355,7 @@
         <tr><th colspan='3'>Total</th><td>31,581</td><td>3,121</td><td>3,066</td></tr>
     </tfoot>
 </table>
-<h3 id='pofv'>Touhou 9 - Phantasmagoria of Flower View</h3>
+<h3 id='mpofv'>Touhou 9 - Phantasmagoria of Flower View</h3>
 <table class='poll table sortable'>
     <colgroup>
         <col class='col2game'>
@@ -230,7 +394,7 @@
         <tr><th colspan='3'>Total</th><td>7,562</td><td>679</td><td>735</td></tr>
     </tfoot>
 </table>
-<h3 id='mof'>Touhou 10 - Mountain of Faith</h3>
+<h3 id='mmof'>Touhou 10 - Mountain of Faith</h3>
 <table class='poll table sortable'>
     <colgroup>
         <col class='col2game'>
@@ -274,7 +438,7 @@
         <tr><th colspan='3'>Total</th><td>23,315</td><td>2,302</td><td>2,462</td></tr>
     </tfoot>
 </table>
-<h3 id='sa'>Touhou 11 - Subterranean Animism</h3>
+<h3 id='msa'>Touhou 11 - Subterranean Animism</h3>
 <table class='poll table sortable'>
     <colgroup>
         <col class='col2game'>
@@ -317,7 +481,7 @@
         <tr><th colspan='3'>Total</th><td>18,531</td><td>2,050</td><td>1,848</td></tr>
     </tfoot>
 </table>
-<h3 id='ufo'>Touhou 12 - Undefined Fantastic Object</h3>
+<h3 id='mufo'>Touhou 12 - Undefined Fantastic Object</h3>
 <table class='poll table sortable'>
     <colgroup>
         <col class='col2game'>
@@ -360,7 +524,7 @@
         <tr><th colspan='3'>Total</th><td>9,429</td><td>873</td><td>1,041</td></tr>
     </tfoot>
 </table>
-<h3 id='td'>Touhou 13 - Ten Desires</h3>
+<h3 id='mtd'>Touhou 13 - Ten Desires</h3>
 <table class='poll table sortable'>
     <colgroup>
         <col class='col2game'>
@@ -403,7 +567,7 @@
         <tr><th colspan='3'>Total</th><td>8,125</td><td>783</td><td>900</td></tr>
     </tfoot>
 </table>
-<h3 id='ddc'>Touhou 14 - Double Dealing Character</h3>
+<h3 id='mddc'>Touhou 14 - Double Dealing Character</h3>
 <table class='poll table sortable'>
     <colgroup>
         <col class='col2game'>
@@ -446,7 +610,7 @@
         <tr><th colspan='3'>Total</th><td>8,595</td><td>811</td><td>933</td></tr>
     </tfoot>
 </table>
-<h3 id='lolk'>Touhou 15 - Legacy of Lunatic Kingdom</h3>
+<h3 id='mlolk'>Touhou 15 - Legacy of Lunatic Kingdom</h3>
 <table class='poll table sortable'>
     <colgroup>
         <col class='col2game'>
@@ -489,7 +653,7 @@
         <tr><th colspan='3'>Total</th><td>13,339</td><td>1,333</td><td>1,601</td></tr>
     </tfoot>
 </table>
-<h3 id='hsifs'>Touhou 16 - Hidden Star in Four Seasons</h3>
+<h3 id='mhsifs'>Touhou 16 - Hidden Star in Four Seasons</h3>
 <table class='poll table sortable'>
     <colgroup>
         <col class='col2game'>
@@ -532,7 +696,7 @@
         <tr><th colspan='3'>Total</th><td>5,680</td><td>380</td><td>770</td></tr>
     </tfoot>
 </table>
-<h3 id='wbawc'>Touhou 17 - Wily Beast and Weakest Creature</h3>
+<h3 id='mwbawc'>Touhou 17 - Wily Beast and Weakest Creature</h3>
 <table class='poll table sortable'>
     <colgroup>
         <col class='col2game'>
@@ -575,7 +739,7 @@
         <tr><th colspan='3'>Total</th><td>10,867</td><td>1,487</td><td>1,333</td></tr>
     </tfoot>
 </table>
-<h3 id='um'>Touhou 18 - Unconnected Marketeers</h3>
+<h3 id='mum'>Touhou 18 - Unconnected Marketeers</h3>
 <table class='poll table sortable'>
     <colgroup>
         <col class='col2game'>
