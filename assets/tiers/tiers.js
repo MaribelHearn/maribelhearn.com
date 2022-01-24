@@ -945,7 +945,7 @@ function saveSingleTierSettings(event) {
     tierList[tierNum].name = tierName;
     tierList[tierNum].bg = tierBg;
     tierList[tierNum].colour = tierColour;
-    settings[settings.sort].tierListName = $("#tier_list_name").val().replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
+    settings[settings.sort].tierListName = $("#tier_list_name_menu").val().replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
     settings[settings.sort].tierListColour = $("#tier_list_colour").val();
     settings[settings.sort].tierHeaderWidth = $("#tier_header_width").val() > defaultWidth ? $("#tier_header_width").val() : defaultWidth;
     settings[settings.sort].tierHeaderFontSize = $("#tier_header_font_size").val() != defaultSize ? $("#tier_header_font_size").val() : defaultSize;
@@ -974,8 +974,8 @@ function tierMenu(tierNum) {
     "'>Text Colour</label><input id='custom_colour_tier" + tierNum + "' type='color' value='" + tierList[tierNum].colour +
     "'></p></div><hr>");
     $("#modal_inner").append("<div>Other settings (apply to all tiers):" +
-    "<p><label for='tier_list_name'>Tier list name (optional)</label>" +
-    "<input id='tier_list_name' class='settings_input' type='text' value='" + settings[settings.sort].tierListName + "'></p>" +
+    "<p><label for='tier_list_name_menu'>Tier list name (optional)</label>" +
+    "<input id='tier_list_name_menu' class='settings_input' type='text' value='" + settings[settings.sort].tierListName + "'></p>" +
     "<p><label for='tier_list_colour'>Tier list colour</label>" +
     "<input id='tier_list_colour' class='settings_input' type='color' value='" + settings[settings.sort].tierListColour + "'></p>" +
     "<label for='tier_header_width'>Tier header width</label>" +
@@ -1552,8 +1552,8 @@ function settingsMenu() {
     }
 
     printMessage("");
-    $("#modal_inner").append("<div>Other settings:<p><label for='tier_list_name'>Tier list name (optional)</label>" +
-    "<input id='tier_list_name' class='settings_input' type='text' value='" + settings[settings.sort].tierListName + "'></p>" +
+    $("#modal_inner").append("<div>Other settings:<p><label for='tier_list_name_menu'>Tier list name (optional)</label>" +
+    "<input id='tier_list_name_menu' class='settings_input' type='text' value='" + settings[settings.sort].tierListName + "'></p>" +
     "<p><label for='tier_list_colour'>Tier list colour</label>" +
     "<input id='tier_list_colour' class='settings_input' type='color' value='" + settings[settings.sort].tierListColour + "'></p>" +
     "<label for='tier_header_width'>Tier header width</label>" +
@@ -1670,7 +1670,7 @@ function saveSettingsData() {
         }
     }
 
-    settings[settings.sort].tierListName = $("#tier_list_name").val().replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
+    settings[settings.sort].tierListName = $("#tier_list_name_menu").val().replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
     settings[settings.sort].tierListColour = $("#tier_list_colour").val();
     settings[settings.sort].tierHeaderWidth = $("#tier_header_width").val() > defaultWidth ? $("#tier_header_width").val() : defaultWidth;
     settings[settings.sort].tierHeaderFontSize = $("#tier_header_font_size").val() != defaultSize ? $("#tier_header_font_size").val() : defaultSize;
