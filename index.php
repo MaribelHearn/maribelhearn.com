@@ -76,9 +76,7 @@
     </head>
 
     <body>
-        <nav data-html2canvas-ignore>
-            <div id='nav' class='wrap'><?php echo navbar($page) ?></div>
-        </nav>
+        <?php if ($page != 'tiers') { echo '<nav data-html2canvas-ignore><div id="nav" class="wrap">' . navbar($page) . '</div></nav>'; } ?>
         <main><?php if ($page == 'error') { include_once 'assets/error/error.php'; } else { include_once $page_path; } ?></main>
         <?php if (!$is_mobile || $page != 'tiers') {
             echo '<script nonce="' . file_get_contents('.stats/nonce') . '" defer>document.body.style.background="url(\'' . ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/' . $css_js_file . '/' . $css_js_file . '.jpg\') ';
