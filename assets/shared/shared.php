@@ -366,7 +366,7 @@ function wrap_top() {
 }
 function handle_file_upload() {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if (property_exists($_FILES, 'import') && is_uploaded_file($_FILES['import']['tmp_name'])) {
+        if (isset($_FILES['import']) && is_uploaded_file($_FILES['import']['tmp_name'])) {
             switch ($_FILES['import']['error']) {
                 case UPLOAD_ERR_OK:
                     break;
