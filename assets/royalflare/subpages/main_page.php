@@ -39,7 +39,7 @@ As such, this archive has been created to preserve all of its replays and histor
     </div>
     <p><input type='submit' value='検索 Search'></p>
 </form>
-<h2>Games</h2>
+<h2>ゲーム - Games</h2>
 <dt>TH06</dt>
 <dd><a href='/royalflare/th06'>東方紅魔郷　～ The Embodiment of Scarlet Devil</a></dd>
 <dt>TH07</dt>
