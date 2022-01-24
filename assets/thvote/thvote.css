@@ -136,7 +136,7 @@ table {
     color: green;
 }
 .one {
-    color: green;
+    color: darkgreen;
     font-weight: bold;
     background-color: lightgreen;
 }
@@ -187,6 +187,21 @@ table {
     color: white;
     font-weight: bold;
     background-color: #0080FF;
+}
+.stable {
+    color: blue;
+    font-weight: bold;
+    background-color: lightblue;
+}
+.drop {
+    color: darkred;
+    font-weight: bold;
+    background-color: orange;
+}
+.jump {
+    color: darkgreen;
+    font-weight: bold;
+    background-color: lightgreen;
 }
 .hidden, .dummy, #age_detail, #age_summary_button {
     display: none;
