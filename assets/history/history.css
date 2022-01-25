@@ -145,7 +145,7 @@ div > div > p {
     padding-bottom: 10px;
     opacity: 0.8;
 }
-#wrap > div:not(#topbar) {
+#wrap > div:not(#topbar):not(#overview) {
     display: inline-block;
 }
 #nav {

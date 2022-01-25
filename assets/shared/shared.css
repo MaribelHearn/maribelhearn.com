@@ -282,3 +282,15 @@ a:visited.dropdown_button {
         font-size: 22px;
     }
 }
+@media only screen and (max-width: 1080px) and (min-height: 1680px) {
+    .wrap {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+@media only screen and (max-width: 1440px) and (min-height: 2440px) {
+    .wrap {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
