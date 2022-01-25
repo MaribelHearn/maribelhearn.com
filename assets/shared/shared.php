@@ -174,9 +174,25 @@ function touhou_sites() {
     '<p><a href="https://exphp.github.io/thpages">' .
     '<span class="icon exphp_icon"></span>ExpHP\'s Site</a></p>' .
     '<p><a href="https://wikiwiki.jp/thscorekg/">' .
-    '<span class="icon kg_icon"></span>KG\'s Site</a></p>';
+    '<span class="icon kg_icon"></span>KG\'s Site</a></p>' .
+    '<p><a href="https://gensakudan.com/">' .
+    '<span class="icon gsd_icon"></span>Team Gaijin Alex</a></p>';
     //$navbar .= '<p><a href="https://zps-stg.github.io">' .
     //'<span class="icon zps_icon"></span>ZPS\'s Site</a></p>';
+}
+function own_sites() {
+    return '<p><a href="https://www.youtube.com/c/MaribelHearn">' .
+    '<span class="icon youtube_icon"></span>YouTube</a></p>' .
+    '<p><a href="https://twitter.com/MaribelHearn42">' .
+    '<span class="icon twitter_icon"></span>Twitter</a></p>' .
+    '<p><a href="https://www.twitch.tv/maribel_hearn">' .
+    '<span class="icon twitch_icon"></span>Twitch</a></p>' .
+    '<p><a href="https://steamcommunity.com/id/maribelhearn42">' .
+    '<span class="icon steam_icon"></span>Steam</a></p>' .
+    '<p><a href="https://github.com/MaribelHearn">' .
+    '<span class="icon github_icon"></span>GitHub</a></p>' .
+    '<p><a href="https://github.com/MaribelHearn/maribelhearn.com">' .
+    '<span class="icon source_icon"></span>Source</a></p>';
 }
 function show_admin(string $token_path) {
     return is_localhost($_SERVER['REMOTE_ADDR']) || isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents($token_path));
@@ -206,18 +222,7 @@ function navbar(string $page) {
         $navbar .= '<div class="dropdown">';
             $navbar .= '<a href="#" class="dropdown_button">Links&#x25BF;</a>';
             $navbar .= '<div class="dropdown_content dropdown_right' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
-                $navbar .= '<p><a href="https://www.youtube.com/c/MaribelHearn">' .
-                '<span class="icon youtube_icon"></span>YouTube</a></p>';
-                $navbar .= '<p><a href="https://twitter.com/MaribelHearn42">' .
-                '<span class="icon twitter_icon"></span>Twitter</a></p>';
-                $navbar .= '<p><a href="https://www.twitch.tv/maribel_hearn">' .
-                '<span class="icon twitch_icon"></span>Twitch</a></p>';
-                $navbar .= '<p><a href="https://steamcommunity.com/id/maribelhearn42">' .
-                '<span class="icon steam_icon"></span>Steam</a></p>';
-                $navbar .= '<p><a href="https://github.com/MaribelHearn">' .
-                '<span class="icon github_icon"></span>GitHub</a></p>';
-                $navbar .= '<p><a href="https://github.com/MaribelHearn/maribelhearn.com">' .
-                '<span class="icon source_icon"></span>Source</a></p>';
+                $navbar .= own_sites();
             $navbar .= '</div>';
         $navbar .= '</div>';
     $navbar .= '</div>';
@@ -266,18 +271,7 @@ function navbar(string $page) {
             $navbar .= '<div class="dropdown">';
                 $navbar .= '<a href="#" class="dropdown_button">Links&#x25BF;</a>';
                 $navbar .= '<div class="dropdown_content dropdown_right' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
-                    $navbar .= '<p><a href="https://www.youtube.com/c/MaribelHearn">' .
-                    '<span class="icon youtube_icon"></span>YouTube</a></p>';
-                    $navbar .= '<p><a href="https://twitter.com/MaribelHearn42">' .
-                    '<span class="icon twitter_icon"></span>Twitter</a></p>';
-                    $navbar .= '<p><a href="https://www.twitch.tv/maribel_hearn">' .
-                    '<span class="icon twitch_icon"></span>Twitch</a></p>';
-                    $navbar .= '<p><a href="https://steamcommunity.com/id/maribelhearn42">' .
-                    '<span class="icon steam_icon"></span>Steam</a></p>';
-                    $navbar .= '<p><a href="https://github.com/MaribelHearn">' .
-                    '<span class="icon github_icon"></span>GitHub</a></p>';
-                    $navbar .= '<p><a href="https://github.com/MaribelHearn/maribelhearn.com">' .
-                    '<span class="icon source_icon"></span>Source</a></p>';
+                    $navbar .= own_sites();
                 $navbar .= '</div>';
             $navbar .= '</div>';
         $navbar .= '</div>';
