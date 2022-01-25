@@ -304,6 +304,9 @@ function wrap_top() {
     $zh = Array('drc', 'lnn', 'pofv', 'twc', 'wr');
     $ru = Array('lnn', 'tools', 'twc', 'wr');
     $tl_title = Array('credits', 'lnn', 'wr');
+    if (empty($page)) {
+        $page = 'index';
+    }
     $json = file_get_contents('assets/' . $page . '/' . $page . '.json');
     $data = (object) json_decode($json, true);
     if (in_array($page, $ja) || in_array($page, $zh) || in_array($page, $ru)) {
