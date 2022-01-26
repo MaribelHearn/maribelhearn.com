@@ -111,11 +111,9 @@ a:visited.dropdown_button {
 #results_2020 td, #schedule_table td {
     border-top: 1px solid white;
 }
+#hy_link {
+    color: white;
+}
 .foot {
     border-top: 3px solid #fff;
-}
-@media only screen and (max-width: 1100px) {
-    #ack {
-        color: white;
-    }
 }

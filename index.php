@@ -4,7 +4,7 @@
     include_once 'assets/shared/shared.php';
     $url = substr($_SERVER['REQUEST_URI'], 1);
 	$page = preg_split('/\?/', $url)[0];
-    if (str_starts_with($_SERVER['REQUEST_URI'], '/') && count(array_count_values(str_split($_SERVER['REQUEST_URI']))) == 1) {
+    if (empty($page) || str_starts_with($_SERVER['REQUEST_URI'], '/') && count(array_count_values(str_split($_SERVER['REQUEST_URI']))) == 1) {
         $page = 'index';
     }
     if (strpos($page, '/') !== false) {
@@ -48,6 +48,12 @@
     $favicon_dir = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . (!in_array($page, $use_index) ? 'assets/' . $page : '');
     $bg_pos = background_position($page);
     $file_upload = handle_file_upload();
+    if (!empty($_GET['theme'])) {
+        set_theme_cookie($_GET['theme']);
+        $page = ($page == 'index' ? '/' : preg_split('/\?/', $_SERVER['REQUEST_URI'])[0]);
+        header("Location: {$page}", true, 303);
+        exit();
+    }
     if (!empty($file_upload)) {
         $_SESSION['data'] = $file_upload;
         unset($_POST);
