@@ -29,6 +29,10 @@ function ready() {
         document.getElementById("hy_text").innerHTML = (language == "Japanese" ? "妖怪モード（ダーク）" : "Youkai mode (Dark)");
         dark();
     }
+
+    if (document.getElementById("hy_link")) {
+        document.getElementById("hy_container").innerHTML = document.getElementById("hy_link").innerHTML;
+    }
 }
 
 function getCookie(name) {
@@ -90,7 +94,7 @@ function theme() {
 }
 
 head = document.getElementsByTagName("head")[0];
-window.addEventListener("load", ready);
+window.addEventListener("DOMContentLoaded", ready, false);
 hy = document.getElementById("hy_container");
 done = false;
 language = "English";

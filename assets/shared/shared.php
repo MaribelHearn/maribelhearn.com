@@ -102,6 +102,14 @@ function hit(string $filename, string $status_code) {
         }
     }
 }
+function set_theme_cookie() {
+    setcookie('theme', ($_GET['theme'] == 'dark' ? 'dark' : ''), array(
+        'expires' => 2147483647,
+        'path' => '/',
+        'secure' => true,
+        'samesite' => 'Strict'
+    ));
+}
 function set_lang_cookie() {
     if (empty($_GET['hl']) || $_GET['hl'] == 'en-gb' || $_GET['hl'] == 'en') {
         $lang = 'en_US';
@@ -312,7 +320,10 @@ function wrap_top() {
     if (in_array($page, $ja) || in_array($page, $zh) || in_array($page, $ru)) {
         echo '<div id="topbar">';
     }
-    echo '<span id="hy_container" data-html2canvas-ignore><span id="hy"></span><p id="hy_text">' . (isset($_COOKIE['theme']) ? _('Youkai mode (Dark)') : _('Human mode (Light)')) . '</p></span>';
+    if (isset($_COOKIE)) {
+        echo '<span id="hy_container" data-html2canvas-ignore><a id="hy_link" href="?theme=' . (isset($_COOKIE['theme']) ? 'light' : 'dark') .
+        '"><span id="hy"></span><p id="hy_text">' . (isset($_COOKIE['theme']) ? _('Youkai mode (Dark)') : _('Human mode (Light)')) . '</p></a></span>';
+    }
     if ($page == 'lnn' || $page == 'wr') {
         echo '<span id="toggle"><a id="layouttoggle" href="' . $page . '">' . ($layout == 'New' ? 'Old' : 'New') . ' layout</a></span>';
     }
