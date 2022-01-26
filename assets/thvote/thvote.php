@@ -9,6 +9,9 @@
         }
         echo wrap_top();
         echo '<h1>THWiki Popularity Poll 2021 Results' . (!empty($subpage) ? ' - Extra Statistics' : '') . '</h1>';
+        if (!empty($_GET['redirect'])) {
+            echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
+        }
         if (!empty($subpage)) {
             include_once 'assets/thvote/subpages/' . $subpage . '.php';
         } else {
