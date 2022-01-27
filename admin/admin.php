@@ -71,6 +71,7 @@
             case 'Dominica': return '';
             case 'Estonia': return '';
             case 'Reunion': return '';
+            case 'Bermuda': return '';
             case 'Aruba': return '';
             default: return 'Flag-';
         }
