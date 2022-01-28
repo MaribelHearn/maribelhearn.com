@@ -1,4 +1,4 @@
-/*global $ setCookie getCookie langCode*/
+/*global $ setCookie getCookie*/
 var notation = "DMY", language = "en_US", timezone;
 
 function toDateString(unix) {
@@ -53,35 +53,47 @@ function getClientTimeZone() {
 }
 
 function setLanguage(event) {
-    var newLanguage = event.data.language;
+    var newLanguage = event.data.language, newNotation = event.data.notation;
 
-    if (language == newLanguage) {
+    if (language == newLanguage && notation == newNotation) {
         return;
     }
 
     language = newLanguage;
     setCookie("lang", newLanguage);
+
+    if (newNotation == "DMY" && notation == "MDY") {
+        newNotation = "MDY";
+    }
+
+    notation = newNotation;
+    setCookie("datenotation", newNotation);
     location.href = location.href.split('#')[0].split('?')[0];
 }
 
 $(document).ready(function () {
     if (getCookie("lang") == "ja_JP" || location.href.contains("jp")) {
         language = "ja_JP";
+        notation = "YMD";
     } else if (getCookie("lang") == "zh_CN" || location.href.contains("zh")) {
         language = "zh_CN";
-    } else if (getCookie("lang") == "ru_RU" || location.href.contains("ru")) {
+        notation = "YMD";
+    } else if (getCookie("lang") == "ru_RU") {
         language = "ru_RU";
+    } else if (getCookie("datenotation") == "MDY" || location.href.contains("en-us")) {
+        notation = "MDY";
+    } else if (getCookie("datenotation") == "YMD") {
+        notation = "YMD";
     }
 
     $.get("assets/shared/json/schedule.json", function (data) {
         printSchedule(data);
     }, "json");
 
-    $("#top").attr("lang", langCode(language, false));
     $("#timezone").html(getClientTimeZone());
     $(".flag").attr("href", "");
-    $("#en").on("click", {language: "en_US"}, setLanguage);
-    $("#jp").on("click", {language: "ja_JP"}, setLanguage);
-    $("#zh").on("click", {language: "zh_CN"}, setLanguage);
-    $("#ru").on("click", {language: "ru_RU"}, setLanguage);
+    $("#en").on("click", {language: "en_US", notation: "DMY"}, setLanguage);
+    $("#jp").on("click", {language: "ja_JP", notation: "YMD"}, setLanguage);
+    $("#zh").on("click", {language: "zh_CN", notation: "YMD"}, setLanguage);
+    $("#ru").on("click", {language: "ru_RU", notation: "DMY"}, setLanguage);
 });
