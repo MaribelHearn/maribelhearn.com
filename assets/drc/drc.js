@@ -1,5 +1,5 @@
-/*global $ getCookie langCode setCookie*/
-var WRs, Rubrics, step, phantasm = true, noExtra = true, noShottypes = true, dsActive = true, language = "en_US",
+/*global $ getCookie setCookie*/
+var WRs, Rubrics, step, phantasm = true, noExtra = true, noShottypes = true, dsActive = true, language = "en_US", notation = "DMY",
     DIFFICULTY = "#difficulty", BOMBS = "#bombs", SCORE = "#score", PERFORMANCE = "#performance", DRCPOINTS = "#drcpoints",
     ERROR = "#error", SHOTTYPE = "#shottype", NOTIFY = "#notify", NB = "#nb", MISSES = "#misses", CHALLENGE = "#challenge",
     NO_EXTRA = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>",
@@ -17,13 +17,16 @@ var WRs, Rubrics, step, phantasm = true, noExtra = true, noShottypes = true, dsA
 $(document).ready(function () {
     if (getCookie("lang") == "ja_JP" || location.href.contains("jp")) {
         language = "ja_JP";
+        notation = "YMD";
     } else if (getCookie("lang") == "zh_CN" || location.href.contains("zh")) {
         language = "zh_CN";
-    } else if (getCookie("lang") == "ru_RU" || location.href.contains("ru")) {
-        language = "ru_RU";
+        notation = "YMD";
+    } else if (getCookie("datenotation") == "MDY" || location.href.contains("en-us")) {
+        notation = "MDY";
+    } else if (getCookie("datenotation") == "YMD") {
+        notation = "YMD";
     }
 
-    $("#top").attr("lang", langCode(language, false));
     $("#calculate").on("click", drcPoints);
     $("#scoringButton").on("click", {challenge: "Scoring"}, showRubrics);
     $("#survivalButton").on("click", {challenge: "Survival"}, showRubrics);
@@ -36,9 +39,9 @@ $(document).ready(function () {
     $("#scoringButton, #survivalButton").css("display", "inline");
     $("#scoringRubrics, #survivalRubrics").css("display", "none");
     $(".flag").attr("href", "");
-    $("#en").on("click", {language: "en_US"}, setLanguage);
-    $("#jp").on("click", {language: "ja_JP"}, setLanguage);
-    $("#zh").on("click", {language: "zh_CN"}, setLanguage);
+    $("#en").on("click", {language: "en_US", notation: "DMY"}, setLanguage);
+    $("#jp").on("click", {language: "ja_JP", notation: "YMD"}, setLanguage);
+    $("#zh").on("click", {language: "zh_CN", notation: "YMD"}, setLanguage);
     checkValues({data: {changePerf: true, changeShots: true}});
     step = setInterval(updateCountdown, 1000);
     updateCountdown();
@@ -750,13 +753,20 @@ function hideRubrics(event) {
     $(challenge == "Survival" ? SURV_BUTTON : SCORE_BUTTON).val(translate("Show " + challenge + " Rubrics"));
 }
 function setLanguage(event) {
-    var newLanguage = event.data.language;
+    var newLanguage = event.data.language, newNotation = event.data.notation;
 
-    if (language == newLanguage) {
+    if (language == newLanguage && notation == newNotation) {
         return;
     }
 
     language = newLanguage;
     setCookie("lang", newLanguage);
+
+    if (newNotation == "DMY" && notation == "MDY") {
+        newNotation = "MDY";
+    }
+
+    notation = newNotation;
+    setCookie("datenotation", newNotation);
     location.href = location.href.split('#')[0].split('?')[0];
 }

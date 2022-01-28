@@ -1,5 +1,5 @@
 /*global $ setCookie getCookie*/
-var language = "en_US", STATS = {
+var language = "en_US", notation = "DMY", STATS = {
         "reimu": {
             "speed": 68,
             "focus": 136,
@@ -487,26 +487,38 @@ function charInfo() {
 }
 
 function setLanguage(event) {
-    var newLanguage = event.data.language;
+    var newLanguage = event.data.language, newNotation = event.data.notation;
 
-    if (language == newLanguage) {
+    if (language == newLanguage && notation == newNotation) {
         return;
     }
 
     language = newLanguage;
     setCookie("lang", newLanguage);
+
+    if (newNotation == "DMY" && notation == "MDY") {
+        newNotation = "MDY";
+    }
+
+    notation = newNotation;
+    setCookie("datenotation", newNotation);
     location.href = location.href.split('#')[0].split('?')[0];
 }
 
 $(document).ready(function () {
     if (getCookie("lang") == "zh_CN" || location.href.contains("zh")) {
         language = "zh_CN";
+        notation = "YMD";
+    } else if (getCookie("datenotation") == "MDY" || location.href.contains("en-us")) {
+        notation = "MDY";
+    } else if (getCookie("datenotation") == "YMD") {
+        notation = "YMD";
     }
 
     $("body").on("click", closeModal);
     $("body").on("keypress", closeModal);
     $(".char").on("click", charInfo);
     $(".flag").attr("href", "");
-    $("#en").on("click", {language: "en_US"}, setLanguage);
-    $("#zh").on("click", {language: "zh_CN"}, setLanguage);
+    $("#en").on("click", {language: "en_US", notation: "DMY"}, setLanguage);
+    $("#zh").on("click", {language: "zh_CN", notation: "YMD"}, setLanguage);
 });

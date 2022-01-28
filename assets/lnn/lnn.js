@@ -1,6 +1,6 @@
 /*global $ getCookie deleteCookie setCookie gameAbbr shottypeAbbr generateTableText
-generateFullNames generateShottypes fullNameNumber generateShortNames langCode*/
-var LNNs, alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", language = "en_US", selected = "", missingReplays, videoLNNs, testing;
+generateFullNames generateShottypes fullNameNumber generateShortNames*/
+var LNNs, alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", language = "en_US", notation = "DMY", selected = "", missingReplays, videoLNNs, testing;
 
 function toggleLayout() {
     if (getCookie("lnn_old_layout")) {
@@ -238,14 +238,21 @@ function showPlayerLNNs(player) {
 }
 
 function setLanguage(event) {
-    var newLanguage = event.data.language;
+    var newLanguage = event.data.language, newNotation = event.data.notation;
 
-    if (language == newLanguage) {
+    if (language == newLanguage && notation == newNotation) {
         return;
     }
 
     language = newLanguage;
     setCookie("lang", newLanguage);
+
+    if (newNotation == "DMY" && notation == "MDY") {
+        newNotation = "MDY";
+    }
+
+    notation = newNotation;
+    setCookie("datenotation", newNotation);
     location.href = location.href.split('#')[0].split('?')[0];
 }
 
@@ -270,10 +277,10 @@ $(document).ready(function () {
     $("#playersearchlink").css("display", "block");
     $("#newlayout").css("display", "block");
     $(".flag").attr("href", "");
-    $("#en").on("click", {language: "en_US"}, setLanguage);
-    $("#jp").on("click", {language: "ja_JP"}, setLanguage);
-    $("#zh").on("click", {language: "zh_CN"}, setLanguage);
-    $("#ru").on("click", {language: "ru_RU"}, setLanguage);
+    $("#en").on("click", {language: "en_US", notation: "DMY"}, setLanguage);
+    $("#jp").on("click", {language: "ja_JP", notation: "YMD"}, setLanguage);
+    $("#zh").on("click", {language: "zh_CN", notation: "YMD"}, setLanguage);
+    $("#ru").on("click", {language: "ru_RU", notation: "DMY"}, setLanguage);
     $(".game_img").on("click", showLNNs);
     missingReplays = $("#missingReplays").val();
     videoLNNs = parseVideos($("#videos").val());
@@ -281,11 +288,15 @@ $(document).ready(function () {
 
     if (getCookie("lang") == "ja_JP" || location.href.contains("jp")) {
         language = "ja_JP";
+        notation = "YMD";
     } else if (getCookie("lang") == "zh_CN" || location.href.contains("zh")) {
         language = "zh_CN";
-    } else if (getCookie("lang") == "ru_RU" || location.href.contains("ru")) {
+        notation = "YMD";
+    } else if (getCookie("lang") == "ru_RU") {
         language = "ru_RU";
+    } else if (getCookie("datenotation") == "MDY" || location.href.contains("en-us")) {
+        notation = "MDY";
+    } else if (getCookie("datenotation") == "YMD") {
+        notation = "YMD";
     }
-
-    $("#top").attr("lang", langCode(language, false));
 });

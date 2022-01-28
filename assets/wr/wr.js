@@ -527,6 +527,8 @@ $(document).ready(function () {
         language = "ru_RU";
     } else if (getCookie("datenotation") == "MDY" || location.href.contains("en-us")) {
         notation = "MDY";
+    } else if (getCookie("datenotation") == "YMD") {
+        notation = "YMD";
     }
 
     if (!datesEnabled) {

@@ -131,7 +131,16 @@ function set_lang_cookie() {
         $notation = 'DMY';
     }
     if (!empty($_GET['hl'])) {
+        if (isset($_COOKIE['datenotation']) && strpos($_GET['hl'], 'en') !== false && $_COOKIE['datenotation'] == 'MDY') {
+            $notation = 'MDY';
+        }
         setcookie('lang', $lang, array(
+            'expires' => 2147483647,
+            'path' => '/',
+            'secure' => true,
+            'samesite' => 'Strict'
+        ));
+        setcookie('datenotation', $notation, array(
             'expires' => 2147483647,
             'path' => '/',
             'secure' => true,

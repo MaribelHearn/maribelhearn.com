@@ -150,20 +150,6 @@ function monthToNumber(month) {
     }[month];
 }
 
-function langCode(language, notation) {
-    if (language == "en_US") {
-        if (notation && notation == "MDY") {
-            return "en-us";
-        } else {
-            return (notation ? "en-gb" : "en");
-        }
-    } else if (language == "ja_JP") {
-        return "ja";
-    } else { // language == "zh_CN" || language == "ru_RU"
-        return "zh";
-    }
-}
-
 function translateDate(date, notation) {
     var tmp = date.split('/');
 
