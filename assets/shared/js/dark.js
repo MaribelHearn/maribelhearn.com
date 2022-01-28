@@ -26,7 +26,7 @@ function ready() {
     if (localStorage.theme) { // legacy
         document.cookie = "theme=dark;expires=Fri, 31 Dec 9999 23:59:59 UTC;path=/;sameSite=Strict;Secure;";
         localStorage.removeItem("theme");
-        document.getElementById("hy_text").innerHTML = (language == "Japanese" ? "妖怪モード（ダーク）" : "Youkai mode (Dark)");
+        document.getElementById("hy_text").innerHTML = (language == "ja_JP" ? "妖怪モード（ダーク）" : "Youkai mode (Dark)");
         dark();
     }
 
@@ -65,7 +65,7 @@ function theme() {
     if (getCookie("theme") == "dark") {
         document.cookie = "theme=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;" +
         "sameSite=Strict;" + (location.protocol == "https:" ? "Secure;" : "");
-        document.getElementById("hy_text").innerHTML = (language == "Japanese" ? "人間モード（ライト）" : "Human mode (Light)");
+        document.getElementById("hy_text").innerHTML = (language == "ja_JP" ? "人間モード（ライト）" : "Human mode (Light)");
 
         if (document.head.contains(document.getElementById("dark_theme_table"))) {
             head.removeChild(document.getElementById("dark_theme_table"));
@@ -83,8 +83,8 @@ function theme() {
             cookieString += "Secure;";
         }
 
-        document.cookie = "theme=" + JSON.stringify("dark") + cookieString;
-        document.getElementById("hy_text").innerHTML = (language == "Japanese" ? "妖怪モード（ダーク）" : "Youkai mode (Dark)");
+        document.cookie = "theme=dark" + cookieString;
+        document.getElementById("hy_text").innerHTML = (language == "ja_JP" ? "妖怪モード（ダーク）" : "Youkai mode (Dark)");
         dark();
     }
 
@@ -97,10 +97,10 @@ head = document.getElementsByTagName("head")[0];
 window.addEventListener("DOMContentLoaded", ready, false);
 hy = document.getElementById("hy_container");
 done = false;
-language = "English";
+language = "en_US";
 
-if (getCookie("lang") == "Japanese" || location.href.includes("jp")) {
-    language = "Japanese";
+if (getCookie("lang") == "ja_JP" || location.href.includes("jp")) {
+    language = "ja_JP";
 }
 
 if (hy) {
