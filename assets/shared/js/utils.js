@@ -1,3 +1,4 @@
+/*global $*/
 var MAX_SCORE = 9999999990, minAge = "Thu, 01 Jan 1970 00:00:00 UTC", maxAge = "Fri, 31 Dec 9999 23:59:59 UTC";
 
 String.prototype.contains = function (string) {
@@ -307,32 +308,7 @@ function shottypeAbbr(shottype) {
     })[shottype];
 }
 
-function generateText() {
-    if (language == "zh_CN") {
-        $(".ranking").html("排行");
-        $(".difficulty").html("难度");
-        $("#score").html("分数");
-        $("#label_all").html("皆");
-        $("#differentgames").html("游戏");
-        $(".westernrecords").html("西方纪录");
-    } else if (language == "ja_JP") {
-        $(".ranking").html("ランキング");
-        $(".difficulty").html("難易度");
-        $("#score").html("スコア");
-        $("#label_all").html("全");
-        $("#differentgames").html("ゲーム");
-        $(".westernrecords").html("海外記録");
-    } else {
-        $(".ranking").html("Ranking");
-        $(".difficulty").html("Difficulty");
-        $("#score").html("Score");
-        $("#label_all").html("All");
-        $("#differentgames").html("Different games");
-        $(".westernrecords").html("Western Records");
-    }
-}
-
-function generateTableText(page) {
+function generateTableText(page, language) {
     if (language == "zh_CN") {
         $(".game").html("游戏");
         $(".player").html("玩家");
@@ -375,6 +351,27 @@ function generateTableText(page) {
         $(".nooflnnnns").html("LNNNNの数");
         $(".different").html("（プレイヤー）");
         $(".all").html("（全）");
+    } else if (language == "de_DE") {
+        $(".game").html("Spiel");
+        $(".player").html("Spieler");
+        $(".players").html("Spieler");
+        $(".difficulty").html("Schwierigkeitsgrad");
+        $(".shottype").html("Shot Type");
+        $(".route").html("Route");
+        $(".date").html("Date");
+        $(".dates").html("Datum");
+        $(".total").html("Gesamt");
+        $(".overall").html("Gesamt");
+        $(".world").html("Weltweit");
+        $(".west").html("Westen");
+        $(".percentage").html("Prozent");
+        $(".nooflnns").html("Anzahl LNNs");
+        $(".nooflnnus").html("Anzahl LNN(N)s");
+        $(".nooflnnns").html("Anzahl LNNNs");
+        $(".nooflnnfss").html("Anzahl LNNFSs");
+        $(".nooflnnnns").html("Anzahl LNNNNs");
+        $(".different").html("(Verschiedene Spieler)");
+        $(".all").html("(Alle)");
     } else {
         $(".game").html("Game");
         $(".player").html("Player");
@@ -399,7 +396,7 @@ function generateTableText(page) {
     }
 }
 
-function generateShortNames() {
+function generateShortNames(language) {
     if (language == "zh_CN") {
         $(".HRtP").html("灵");
         $(".SoEW").html("封");
@@ -465,7 +462,7 @@ function generateShortNames() {
         $(".UM").html("UM");
     }
 }
-function generateFullNames() {
+function generateFullNames(language) {
     if (language == "zh_CN") {
         $(".HRtPf").html("东方灵异传　～ Highly Responsive to Prayers");
         $(".SoEWf").html("东方封魔录　～ the Story of Eastern Wonderland");
@@ -534,7 +531,7 @@ function generateFullNames() {
         $(".UMf").html("Touhou 18 - Unconnected Marketeers");
     }
 }
-function generateShottypes() {
+function generateShottypes(language) {
     if (language == "zh_CN") {
         $(".Makai").html("魔界");
         $(".Jigoku").html("地狱");
@@ -687,6 +684,82 @@ function generateShottypes() {
         $(".YoumuWolf").html("妖夢狼");
         $(".YoumuOtter").html("妖夢獺");
         $(".YoumuEagle").html("妖夢鷲");
+    } else if (language == "de_DE") {
+        $(".Makai").html("Makai");
+        $(".Jigoku").html("Jigoku");
+        $(".ReimuA").html("ReimuA");
+        $(".ReimuB").html("ReimuB");
+        $(".ReimuC").html("ReimuC");
+        $(".Reimu").html("Reimu");
+        $(".Mima").html("Mima");
+        $(".Marisa").html("Marisa");
+        $(".Ellen").html("Ellen");
+        $(".Kotohime").html("Kotohime");
+        $(".Kana").html("Kana");
+        $(".Rikako").html("Rikako");
+        $(".Chiyuri").html("Chiyuri");
+        $(".Yumemi").html("Yumemi");
+        $(".Yuuka").html("Yuuka");
+        $(".MarisaA").html("MarisaA");
+        $(".MarisaB").html("MarisaB");
+        $(".SakuyaA").html("SakuyaA");
+        $(".SakuyaB").html("SakuyaB");
+        $(".FinalA").html("FinalA");
+        $(".FinalB").html("FinalB");
+        $(".BorderTeam").html("Border Team");
+        $(".MagicTeam").html("Magic Team");
+        $(".ScarletTeam").html("Scarlet Team");
+        $(".GhostTeam").html("Ghost Team");
+        $(".Yukari").html("Yukari");
+        $(".Alice").html("Alice");
+        $(".Sakuya").html("Sakuya");
+        $(".Remilia").html("Remilia");
+        $(".Youmu").html("Youmu");
+        $(".Yuyuko").html("Yuyuko");
+        $(".Reisen").html("Reisen");
+        $(".Cirno").html("Cirno");
+        $(".Lyrica").html("Lyrica");
+        $(".Mystia").html("Mystia");
+        $(".Tewi").html("Tewi");
+        $(".Aya").html("Aya");
+        $(".Medicine").html("Medicine");
+        $(".Komachi").html("Komachi");
+        $(".Eiki").html("Eiki");
+        $(".Hatate").html("Hatate");
+        $(".MarisaC").html("MarisaC");
+        $(".SanaeA").html("SanaeA");
+        $(".SanaeB").html("SanaeB");
+        $(".Sanae").html("Sanae");
+        $(".Spring").html("Frühling");
+        $(".Summer").html("Sommer");
+        $(".Autumn").html("Herbst");
+        $(".Winter").html("Winter");
+        $(".Seasons").html("Seasons");
+        $(".ReimuSpring").html("ReimuFrühling");
+        $(".CirnoSpring").html("CirnoFrühling");
+        $(".AyaSpring").html("AyaFrühling");
+        $(".MarisaSpring").html("MarisaFrühling");
+        $(".ReimuSummer").html("ReimuSummer");
+        $(".CirnoSummer").html("CirnoSummer");
+        $(".AyaSummer").html("AyaSummer");
+        $(".MarisaSummer").html("MarisaSummer");
+        $(".ReimuAutumn").html("ReimuHerbst");
+        $(".CirnoAutumn").html("CirnoHerbst");
+        $(".AyaAutumn").html("AyaHerbst");
+        $(".MarisaAutumn").html("MarisaHerbst");
+        $(".ReimuWinter").html("ReimuWinter");
+        $(".CirnoWinter").html("CirnoWinter");
+        $(".AyaWinter").html("AyaWinter");
+        $(".MarisaWinter").html("MarisaWinter");
+        $(".ReimuWolf").html("ReimuWolf");
+        $(".ReimuOtter").html("ReimuOtter");
+        $(".ReimuEagle").html("ReimuAdler");
+        $(".MarisaWolf").html("MarisaWolf");
+        $(".MarisaOtter").html("MarisaOtter");
+        $(".MarisaEagle").html("MarisaAdler");
+        $(".YoumuWolf").html("YoumuWolf");
+        $(".YoumuOtter").html("YoumuOtter");
+        $(".YoumuEagle").html("YoumuAdler");
     } else {
         $(".Makai").html("Makai");
         $(".Jigoku").html("Jigoku");

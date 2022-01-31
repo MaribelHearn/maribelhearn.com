@@ -293,8 +293,8 @@
 					} else {
                         $replay = '-';
                     }
-                    echo '<tr><td class="' . $obj->game . 'p">' . _($obj->game) . ($lang == 'en_US' || $lang == 'ru_RU' ? ' ' : '') .
-					$obj->diff . ($lang == 'en_US' || $lang == 'ru_RU' ? ' ' : '') . _($obj->shot) . '</td>' .
+                    echo '<tr><td class="' . $obj->game . 'p">' . _($obj->game) . ($lang == 'en_US' || $lang == 'ru_RU' || $lang == 'de_DE' ? ' ' : '') .
+					$obj->diff . ($lang == 'en_US' || $lang == 'ru_RU' || $lang == 'de_DE' ? ' ' : '') . _($obj->shot) . '</td>' .
                     '<td>' . number_format($obj->score, 0, '.', ',') . '</td><td>' . $obj->player . '</td>' .
                     '<td>' . $replay . '</td><td class="datestring">' . date_tl($obj->date, $notation) . '</td></tr>';
                 }
@@ -312,8 +312,8 @@
                 } else {
                     $replay = '-';
                 }
-                echo '<p class="' . $obj->game . '">' . _($obj->game) . ($lang == 'en_US' || $lang == 'ru_RU' ? ' ' : '') .
-				$obj->diff . ($lang == 'en_US' || $lang == 'ru_RU' ? ' ' : '') .
+                echo '<p class="' . $obj->game . '">' . _($obj->game) . ($lang == 'en_US' || $lang == 'ru_RU' || $lang == 'de_DE' ? ' ' : '') .
+				$obj->diff . ($lang == 'en_US' || $lang == 'ru_RU' || $lang == 'de_DE' ? ' ' : '') .
                 '' . _($obj->shot) . '</p><p>' . number_format($obj->score, 0, '.', ',') .
                 ' by <em>' . $obj->player . '</em><br><span class="datestring_player">' . date_tl($obj->date, $notation) . '</span></p>';
             }

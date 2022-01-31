@@ -21,6 +21,8 @@ $(document).ready(function () {
     } else if (getCookie("lang") == "zh_CN" || location.href.contains("zh")) {
         language = "zh_CN";
         notation = "YMD";
+    } else if (getCookie("lang") == "de_DE" || location.href.contains("de")) {
+        language = "de_DE";
     } else if (getCookie("datenotation") == "MDY" || location.href.contains("en-us")) {
         notation = "MDY";
     } else if (getCookie("datenotation") == "YMD") {
@@ -42,6 +44,7 @@ $(document).ready(function () {
     $("#en").on("click", {language: "en_US", notation: "DMY"}, setLanguage);
     $("#jp").on("click", {language: "ja_JP", notation: "YMD"}, setLanguage);
     $("#zh").on("click", {language: "zh_CN", notation: "YMD"}, setLanguage);
+    $("#de").on("click", {language: "de_DE", notation: "DMY"}, setLanguage);
     checkValues({data: {changePerf: true, changeShots: true}});
     step = setInterval(updateCountdown, 1000);
     updateCountdown();

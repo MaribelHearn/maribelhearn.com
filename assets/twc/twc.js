@@ -10,6 +10,8 @@ function toDateString(unix) {
         return date.toLocaleString("en-US", {"dateStyle": "full"}) + ", " + date.toLocaleTimeString("en-US");
     } else if (language == "zh_CN") {
         return date.toLocaleString("zh-CN", {"dateStyle": "full"}) + ", " + date.toLocaleTimeString("zh-CN");
+    } else if (language == "de_DE") {
+        return date.toLocaleString("de-DE", {"dateStyle": "full"}) + ", " + date.toLocaleTimeString("de-DE");
     } else { // language == "ja_JP"
         return date.toLocaleString("ja-JP", {"dateStyle": "full"}) + ", " + date.toLocaleTimeString("ja-JP");
     }
@@ -80,6 +82,8 @@ $(document).ready(function () {
         notation = "YMD";
     } else if (getCookie("lang") == "ru_RU") {
         language = "ru_RU";
+    } else if (getCookie("lang") == "de_DE") {
+        language = "de_DE";
     } else if (getCookie("datenotation") == "MDY" || location.href.contains("en-us")) {
         notation = "MDY";
     } else if (getCookie("datenotation") == "YMD") {
@@ -96,4 +100,5 @@ $(document).ready(function () {
     $("#jp").on("click", {language: "ja_JP", notation: "YMD"}, setLanguage);
     $("#zh").on("click", {language: "zh_CN", notation: "YMD"}, setLanguage);
     $("#ru").on("click", {language: "ru_RU", notation: "DMY"}, setLanguage);
+    $("#de").on("click", {language: "de_DE", notation: "DMY"}, setLanguage);
 });

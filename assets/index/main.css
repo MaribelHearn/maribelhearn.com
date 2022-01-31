@@ -104,6 +104,9 @@ table {
 .flag_us {
     background-position: -960px 0px;
 }
+.flag_germany {
+    background-position: -1008px 0px;
+}
 .wrap {
     border: 1px solid #000;
     text-align: center;

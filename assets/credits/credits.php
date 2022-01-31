@@ -1,4 +1,3 @@
-<?php include_once 'assets/shared/tl.php' ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
     <h2><?php echo _('Contributors') ?></h2>
@@ -30,6 +29,10 @@
     <h3><span class='icon flag_russia'></span> <?php echo _('Russian') ?></h3>
     <ul class='credits'>
         <li><a href='https://www.youtube.com/channel/UC7QqmWFA-hAyrP5C1c2b-Iw'>KVS</a>: Tools, WR, LNN, TWC</li>
+    </ul>
+    <h3><span class='icon flag_germany'></span> <?php echo _('German') ?></h3>
+    <ul class='credits'>
+        <li><a href='https://twitter.com/Kawaii_Shadowii'>Kawaii_Shadowii</a>: DRC, Tools, WR, LNN, TWC</li>
     </ul>
     <h2><?php echo _('Character Artists') ?></h2>
     <ul class='credits'>
