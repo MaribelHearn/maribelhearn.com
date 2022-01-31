@@ -323,10 +323,10 @@ function showWRs(event) {
     }
 
     showWesternRecords(compareWRs, game);
-    generateTableText("wr");
-    generateFullNames();
-    generateShottypes();
-    generateDates();
+    generateTableText("wr", language);
+    generateFullNames(language);
+    generateShottypes(language);
+    generateDates(language);
     $("#list").css("display", "block");
     $("#seasontoggle").css("display", game == "HSiFS" ? "block" : "none");
     $("#seasons").prop("checked", seasonsEnabled);
@@ -403,9 +403,9 @@ function showPlayerWRs(player) {
     $(".datestring_player").css("display", datesEnabled ? "inline" : "none");
     $("#playerlistfoot").html("<tr><td colspan='4'></td></tr><tr><td class='total'>Total</td><td colspan='3'>" + sum + "</td></tr>");
     $("#playerlist").css("display", "block");
-    generateTableText("wr");
-    generateShortNames();
-    generateShottypes();
+    generateTableText("wr", language);
+    generateShortNames(language);
+    generateShottypes(language);
     generateDates(false, false, playerSelected);
 }
 
@@ -497,6 +497,7 @@ function setEventListeners() {
     $("#jp").on("click", {language: "ja_JP", notation: "YMD"}, setLanguage);
     $("#zh").on("click", {language: "zh_CN", notation: "YMD"}, setLanguage);
     $("#ru").on("click", {language: "ru_RU", notation: "DMY"}, setLanguage);
+    $("#de").on("click", {language: "de_DE", notation: "DMY"}, setLanguage);
     $(".game_img").on("click", {seasonSwitch: false}, showWRs);
 }
 
@@ -523,6 +524,8 @@ $(document).ready(function () {
     } else if (getCookie("lang") == "zh_CN" || location.href.contains("zh")) {
         language = "zh_CN";
         notation = "YMD";
+    } else if (getCookie("lang") == "de_DE" || location.href.contains("de")) {
+        language = "de_DE";
     } else if (getCookie("lang") == "ru_RU") {
         language = "ru_RU";
     } else if (getCookie("datenotation") == "MDY" || location.href.contains("en-us")) {

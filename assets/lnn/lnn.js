@@ -152,9 +152,9 @@ function showLNNs(game) {
     $("#count").html(gamecount + " (" + players.length + ")");
     $("#total").html($("#total").html().replace(", ", ""));
     $("#list").css("display", "block");
-    generateTableText("lnn");
-    generateFullNames();
-    generateShottypes();
+    generateTableText("lnn", language);
+    generateFullNames(language);
+    generateShottypes(language);
 }
 
 function showPlayerLNNs(player) {
@@ -232,8 +232,8 @@ function showPlayerLNNs(player) {
 
     $("#playerlistfoot").html("<tr><td colspan='3'></td></tr><tr><td class='total'>Total</td><td colspan='2'>" + sum + "</td></tr>");
     $("#playerlist").css("display", "block");
-    generateTableText("lnn");
-    generateShortNames();
+    generateTableText("lnn", language);
+    generateShortNames(language);
     generateShottypes();
 }
 
@@ -281,6 +281,7 @@ $(document).ready(function () {
     $("#jp").on("click", {language: "ja_JP", notation: "YMD"}, setLanguage);
     $("#zh").on("click", {language: "zh_CN", notation: "YMD"}, setLanguage);
     $("#ru").on("click", {language: "ru_RU", notation: "DMY"}, setLanguage);
+    $("#de").on("click", {language: "de_DE", notation: "DMY"}, setLanguage);
     $(".game_img").on("click", showLNNs);
     missingReplays = $("#missingReplays").val();
     videoLNNs = parseVideos($("#videos").val());
@@ -294,6 +295,8 @@ $(document).ready(function () {
         notation = "YMD";
     } else if (getCookie("lang") == "ru_RU") {
         language = "ru_RU";
+    } else if (getCookie("lang") == "de_DE") {
+        language = "de_DE";
     } else if (getCookie("datenotation") == "MDY" || location.href.contains("en-us")) {
         notation = "MDY";
     } else if (getCookie("datenotation") == "YMD") {

@@ -24,6 +24,7 @@
                     Dodging Rain Competition</a>
                     <span class='icon flag_japan'></span>
                     <span class='icon flag_china'></span>
+                    <span class='icon flag_germany'></span>
                     <span class='tooltip'>Webpage intended for use by
                     the Dodging Rain Competition (see page for explanation).</span>
                 </p>
@@ -32,6 +33,7 @@
                     Touhou Patches and Tools</a>
                     <span class='icon flag_japan'></span>
                     <span class='icon flag_russia'></span>
+                    <span class='icon flag_germany'></span>
                     <span class='tooltip'>A collection of helpful patches and tools for
                     the Touhou shooting games, many of which for efficient practicing.</span>
                 </p>
@@ -41,6 +43,7 @@
                     <span class='icon flag_japan'></span>
                     <span class='icon flag_china'></span>
                     <span class='icon flag_russia'></span>
+                    <span class='icon flag_germany'></span>
                     <span class='tooltip'>The world records for all Touhou shooting games except for the scene games.</span>
                 </p>
                 <p class='link'>
@@ -49,6 +52,7 @@
                     <span class='icon flag_japan'></span>
                     <span class='icon flag_china'></span>
                     <span class='icon flag_russia'></span>
+                    <span class='icon flag_germany'></span>
                     <span class='tooltip'>Players who have done Lunatic No Miss No Bomb (LNN)
                     runs of the Touhou shooting games are listed here.</span>
                 </p>
@@ -79,6 +83,7 @@
                     <span class='icon flag_japan'></span>
                     <span class='icon flag_china'></span>
                     <span class='icon flag_russia'></span>
+                    <span class='icon flag_germany'></span>
                     <span class='tooltip'>Main webpage for Touhou World Cup, containing the schedule, rules and other relevant information.</span>
                 </p>
                 <p class='link'>
@@ -137,7 +142,7 @@
         <div id='special_thanks'>
             <h2>Special Thanks</h2>
             <p class='wide'>Many thanks to my awesome supporters for covering server costs!</p>
-            <p>Taishisamaaa, Omega, MeFigaYoma, Sodamachine, guy, 32th System, Redaction and anonymous supporters</p>
+            <p>Taishisamaaa, Omega, MeFigaYoma, Sodamachine, guy, 32th System, Redaction, Kawaii_Shadowii and anonymous supporters</p>
         </div>
     </div>
     <div id='bottom'>

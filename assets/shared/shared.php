@@ -126,6 +126,9 @@ function set_lang_cookie() {
     } else if ($_GET['hl'] == 'ru') {
         $lang = 'ru_RU';
         $notation = 'DMY';
+    } else if ($_GET['hl'] == 'de') {
+        $lang = 'de_DE';
+        $notation = 'DMY';
     } else {
         $lang = 'en_US';
         $notation = 'DMY';
@@ -164,6 +167,7 @@ function lang_code() {
         case 'ja_JP': return 'ja';
         case 'zh_CN': return 'zh';
         case 'ru_RU': return 'zh';
+        case 'de_DE': return 'de';
     }
 }
 function background_position($page) {
@@ -322,13 +326,14 @@ function wrap_top() {
     $ja = Array('drc', 'lnn', 'tools', 'twc', 'wr');
     $zh = Array('drc', 'lnn', 'pofv', 'twc', 'wr');
     $ru = Array('lnn', 'tools', 'twc', 'wr');
+    $de = Array('drc', 'lnn', 'tools', 'twc', 'wr');
     $tl_title = Array('credits', 'lnn', 'wr');
     if (empty($page)) {
         $page = 'index';
     }
     $json = file_get_contents('assets/' . $page . '/' . $page . '.json');
     $data = (object) json_decode($json, true);
-    if (in_array($page, $ja) || in_array($page, $zh) || in_array($page, $ru)) {
+    if (in_array($page, $ja) || in_array($page, $zh) || in_array($page, $ru) || in_array($page, $de)) {
         echo '<div id="topbar">';
     }
     if (isset($_COOKIE)) {
@@ -338,7 +343,7 @@ function wrap_top() {
     if ($page == 'lnn' || $page == 'wr') {
         echo '<span id="toggle"><a id="layouttoggle" href="' . $page . '">' . ($layout == 'New' ? 'Old' : 'New') . ' layout</a></span>';
     }
-    if (in_array($page, $ja) || in_array($page, $zh) || in_array($page, $ru)) {
+    if (in_array($page, $ja) || in_array($page, $zh) || in_array($page, $ru) || in_array($page, $de)) {
         echo '<div id="languages">';
         if ($page == 'wr') {
             echo '<a id="en-gb" class="flag" href="wr?hl=en-gb">' .
@@ -362,9 +367,13 @@ function wrap_top() {
             echo '<a id="ru" class="flag" href="' . $page . '?hl=ru">' .
             '<img src="assets/shared/flags/russia.png" alt="' . _('Flag of Russia') . '"><p class="language">Русский</p></a>';
         }
+        if (in_array($page, $de)) {
+            echo '<a id="de" class="flag" href="' . $page . '?hl=de">' .
+            '<img src="assets/shared/flags/germany.png" alt="' . _('Flag of Germany') . '"><p class="language">Deutsch</p></a>';
+        }
         echo '</div>';
     }
-    if (in_array($page, $ja) || in_array($page, $zh) || in_array($page, $ru)) {
+    if (in_array($page, $ja) || in_array($page, $zh) || in_array($page, $ru) || in_array($page, $de)) {
         echo '</div>';
     }
     if ($page == 'survival' || $page == 'slots') {
