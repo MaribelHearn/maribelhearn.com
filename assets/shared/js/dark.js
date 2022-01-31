@@ -16,6 +16,22 @@ function dark() {
     }
 }
 
+function translate(string) {
+    if (string == "Youkai mode (Dark)") {
+        switch (language) {
+            case "ja_JP": return "妖怪モード（ダーク）";
+            case "de_DE": return "Youkai-Modus (Dunkel)";
+            default: return string;
+        }
+    } else {
+        switch (language) {
+            case "ja_JP": return "人間モード（ライト）";
+            case "de_DE": return "Menschen-Modus (Hell)";
+            default: return string;
+        }
+    }
+}
+
 function ready() {
     if (done) {
         return;
@@ -26,7 +42,7 @@ function ready() {
     if (localStorage.theme) { // legacy
         document.cookie = "theme=dark;expires=Fri, 31 Dec 9999 23:59:59 UTC;path=/;sameSite=Strict;Secure;";
         localStorage.removeItem("theme");
-        document.getElementById("hy_text").innerHTML = (language == "ja_JP" ? "妖怪モード（ダーク）" : "Youkai mode (Dark)");
+        document.getElementById("hy_text").innerHTML = translate("Youkai mode (Dark)");
         dark();
     }
 
@@ -65,7 +81,7 @@ function theme() {
     if (getCookie("theme") == "dark") {
         document.cookie = "theme=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;" +
         "sameSite=Strict;" + (location.protocol == "https:" ? "Secure;" : "");
-        document.getElementById("hy_text").innerHTML = (language == "ja_JP" ? "人間モード（ライト）" : "Human mode (Light)");
+        document.getElementById("hy_text").innerHTML = translate("Human mode (Light)");
 
         if (document.head.contains(document.getElementById("dark_theme_table"))) {
             head.removeChild(document.getElementById("dark_theme_table"));
@@ -84,7 +100,7 @@ function theme() {
         }
 
         document.cookie = "theme=dark" + cookieString;
-        document.getElementById("hy_text").innerHTML = (language == "ja_JP" ? "妖怪モード（ダーク）" : "Youkai mode (Dark)");
+        document.getElementById("hy_text").innerHTML = translate("Youkai mode (Dark)");
         dark();
     }
 
@@ -101,6 +117,8 @@ language = "en_US";
 
 if (getCookie("lang") == "ja_JP" || location.href.includes("jp")) {
     language = "ja_JP";
+} else if (getCookie("lang") == "de_DE" || location.href.includes("de")) {
+    language = "de_DE";
 }
 
 if (hy) {
