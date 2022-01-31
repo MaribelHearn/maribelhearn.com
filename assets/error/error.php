@@ -2,7 +2,7 @@
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
     <p><strong><?php
-        $supported_errors = ['400', '401', '403', '500'];
+        $supported_errors = ['400', '401', '403', '500', '503'];
         if ($error_code == '404' || !in_array($error_code, $supported_errors)) {
             $description = '404 Not Found';
             $url = substr($_SERVER['REQUEST_URI'], 1);
