@@ -82,8 +82,8 @@
     </ol>
     <h2 id='rubricsText'><?php echo _('Rubrics') ?></h2>
     <p id='rubricsExpl'><?php
-        echo _('The rubrics are the formulas and fixed values used to calculate the number of DRC points for a run.
-		If you are curious about how your points are being determined, click the button below to expand.');
+        echo _('The rubrics are the formulas and fixed values used to calculate the number of DRC points for a run. ' .
+        'If you are curious about how your points are being determined, click the button below to expand.');
     ?></p>
     <input id='scoringButton' type='button' value='<?php echo _('Show Scoring Rubrics') ?>'>
     <input id='survivalButton' type='button' value='<?php echo _('Show Survival Rubrics') ?>'>
