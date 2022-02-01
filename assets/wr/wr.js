@@ -326,7 +326,7 @@ function showWRs(event) {
     generateTableText("wr", language);
     generateFullNames(language);
     generateShottypes(language);
-    generateDates(language);
+    generateDates(false, false, false);
     $("#list").css("display", "block");
     $("#seasontoggle").css("display", game == "HSiFS" ? "block" : "none");
     $("#seasons").prop("checked", seasonsEnabled);
