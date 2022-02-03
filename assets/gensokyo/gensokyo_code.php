@@ -5,17 +5,17 @@ $games = Array('EoSD', 'PCB', 'IN', 'PoFV', 'StB', 'MoF', 'SA', 'UFO', 'DS', 'GF
 $diffs = Array('Easy', 'Normal', 'Hard', 'Lunatic', 'Extra', 'Phantasm', 'Last Word');
 $types = Array('Normal', 'Practice', 'Spell');
 if (empty($_GET['id'])) {
-    if (!empty($_GET['player'])) {
-        $player = $_GET['player'];
-    }
+    $player = empty($_GET['player']) ? '-' : $_GET['player'];
+    $shot = empty($_GET['shot']) ? '-' : $_GET['shot'];
     if (!empty($_GET['game']) && $_GET['game'] !== '-' && in_array($_GET['game'], $games)) {
         $game = $_GET['game'];
-    }
-    if (!empty($_GET['shot'])) {
-        $shot = $_GET['shot'];
+    } else {
+        $game = '-';
     }
     if (!empty($_GET['type']) && in_array($_GET['type'], $types)) {
-        $type = $_GET['type'];
+        $type = empty($_GET['type']) ? '-' : $_GET['type'];
+    } else {
+        $type = '-';
     }
     if (!empty($_GET['diff']) && $_GET['diff'] !== '-' && in_array($_GET['diff'], $diffs)) {
         $diff = $_GET['diff'];
@@ -28,6 +28,8 @@ if (empty($_GET['id'])) {
         if ($game != 'IN' && $diff == 'Last Word') {
             $diff = '-';
         }
+    } else {
+        $diff = '-';
     }
 }
 
@@ -78,5 +80,77 @@ function replay_table(array $rep) {
         echo '<tr><th class="general_header">Download</th><td><a href="' . $file . '">' . $replay[3] . '</a></td></tr>';
     }
     echo '</tbody><tfoot><tr><th id="back" colspan="2"><a href="' . $backlink[0] . '">Back</a></th></tr></tfoot></table>';
+}
+
+function check_conditions(array $rep, string $player, string $shot, string $game, string $type, string $diff) {
+    if (!empty($player) && $player != '-') {
+        if (substr($player, 0, 1) == '"' && substr($player, -1) == '"') {
+            $player = substr($player, 1, -1);
+            $player_matches = $player == $rep['player'];
+        } else {
+            $player_matches = stripos($rep['player'], $player) !== false;
+        }
+        if (!$player_matches) {
+            return false;
+        }
+    }
+    if (!empty($shot) && $shot != '-') {
+        if (substr($shot, 0, 1) == '"' && substr($shot, -1) == '"') {
+            $shot = substr($shot, 1, -1);
+            $shot_matches = $shot == $rep['shottype'];
+        } else {
+            $shot_matches = stripos($rep['shottype'], $shot) !== false;
+        }
+        if (!$shot_matches) {
+            return false;
+        }
+    }
+    if (!empty($game) && $game != '-' && strpos($rep['category'], $game) !== 0) {
+        return false;
+    }
+    if (!empty($type) && $type != '-' && strpos($rep['type'], $type) === false) {
+        return false;
+    }
+    if (!empty($diff) && $diff != '-') {
+        if ($diff == 'Last Word') {
+            $LWs = Array('206', '207', '208', '209', '210', '211', '212', '213', '214', '215', '216', '217', '218', '219', '220', '221', '222');
+            $isLW = false;
+            foreach ($LWs as $LW) {
+                if (strpos($type, $LW)) {
+                    $isLW = true;
+                }
+            }
+            if (!$isLW) {
+                return false;
+            }
+        } else if (strpos($rep['category'], $diff) === false) {
+            return false;
+        }
+    }
+    if (!empty($_GET['nd']) && $_GET['nd'] == 'on' && strpos($rep['conditions'], 'No Deaths') === false) {
+        return false;
+    }
+    if (!empty($_GET['nb']) && $_GET['nb'] == 'on' && strpos($rep['conditions'], 'No Bomb Usage') === false) {
+        return false;
+    }
+    if (!empty($_GET['nf']) && $_GET['nf'] == 'on' && strpos($rep['conditions'], 'No Focused Movement') === false) {
+        return false;
+    }
+    if (!empty($_GET['nv']) && $_GET['nv'] == 'on' && strpos($rep['conditions'], 'No Vertical Movement') === false) {
+        return false;
+    }
+    if (!empty($_GET['tas']) && $_GET['tas'] == 'on' && strpos($rep['conditions'], 'Tool-Assisted Replay') === false) {
+        return false;
+    }
+    if (!empty($_GET['chz']) && $_GET['chz'] == 'on' && strpos($rep['conditions'], 'Tool-Assisted Replay (not marked by original uploader)') === false) {
+        return false;
+    }
+    if (!empty($_GET['pa']) && $_GET['pa'] == 'on' && strpos($rep['conditions'], 'Pacifist') === false) {
+        return false;
+    }
+    if (!empty($_GET['co']) && $_GET['co'] == 'on' && strpos($rep['conditions'], 'Other Condition') === false) {
+        return false;
+    }
+    return true;
 }
 ?>
