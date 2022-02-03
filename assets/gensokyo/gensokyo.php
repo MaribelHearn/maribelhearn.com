@@ -1,4 +1,4 @@
-<?php include_once 'assets/gensokyo/gensokyo_code.php' ?>
+    <?php include_once 'assets/gensokyo/gensokyo_code.php' ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
     <p>A complete archive of the Touhou replays from replays.gensokyo.org, with the same search functionality as said website.</p>
@@ -67,72 +67,7 @@
         } else if ($searched) {
             $found = 0;
             foreach ($reps as $key => $rep) {
-                if (!empty($player)) {
-                    if (substr($player, 0, 1) == '"' && substr($player, -1) == '"') {
-                        $player = substr($player, 1, -1);
-                        $player_matches = $player == $entry['player'];
-                    } else {
-                        $player_matches = stripos($rep['player'], $player) !== false;
-                    }
-                    if (!$player_matches) {
-                        continue;
-                    }
-                }
-                if (!empty($shot)) {
-                    if (substr($shot, 0, 1) == '"' && substr($shot, -1) == '"') {
-                        $shot = substr($shot, 1, -1);
-                        $shot_matches = $shot == $entry['shottype'];
-                    } else {
-                        $shot_matches = stripos($rep['shottype'], $shot) !== false;
-                    }
-                    if (!$shot_matches) {
-                        continue;
-                    }
-                }
-                if (!empty($game) && $game != '-' && strpos($rep['category'], $game) !== 0) {
-                    continue;
-                }
-                if (!empty($type) && $type != '-' && strpos($rep['type'], $type) === false) {
-                    continue;
-                }
-                if (!empty($diff) && $diff != '-') {
-                    if ($diff == 'Last Word') {
-                        $LWs = Array('206', '207', '208', '209', '210', '211', '212', '213', '214', '215', '216', '217', '218', '219', '220', '221', '222');
-                        $isLW = false;
-                        foreach ($LWs as $LW) {
-                            if (strpos($type, $LW)) {
-                                $isLW = true;
-                            }
-                        }
-                        if (!$isLW) {
-                            continue;
-                        }
-                    } else if (strpos($rep['category'], $diff) === false) {
-                        continue;
-                    }
-                }
-                if (!empty($_GET['nd']) && $_GET['nd'] == 'on' && strpos($rep['conditions'], 'No Deaths') === false) {
-                    continue;
-                }
-                if (!empty($_GET['nb']) && $_GET['nb'] == 'on' && strpos($rep['conditions'], 'No Bomb Usage') === false) {
-                    continue;
-                }
-                if (!empty($_GET['nf']) && $_GET['nf'] == 'on' && strpos($rep['conditions'], 'No Focused Movement') === false) {
-                    continue;
-                }
-                if (!empty($_GET['nv']) && $_GET['nv'] == 'on' && strpos($rep['conditions'], 'No Vertical Movement') === false) {
-                    continue;
-                }
-                if (!empty($_GET['tas']) && $_GET['tas'] == 'on' && strpos($rep['conditions'], 'Tool-Assisted Replay') === false) {
-                    continue;
-                }
-                if (!empty($_GET['chz']) && $_GET['chz'] == 'on' && strpos($rep['conditions'], 'Tool-Assisted Replay (not marked by original uploader)') === false) {
-                    continue;
-                }
-                if (!empty($_GET['pa']) && $_GET['pa'] == 'on' && strpos($rep['conditions'], 'Pacifist') === false) {
-                    continue;
-                }
-                if (!empty($_GET['co']) && $_GET['co'] == 'on' && strpos($rep['conditions'], 'Other Condition') === false) {
+                if (!check_conditions($rep, $player, $shot, $game, $type, $diff)) {
                     continue;
                 }
                 foreach (glob('replays/gensokyo/' . $key . '/*.rpy') as $file) {
