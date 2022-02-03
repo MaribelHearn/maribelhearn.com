@@ -66,7 +66,7 @@
             replay_table($reps[$_GET['id']]);
         } else if ($searched) {
             $found = 0;
-            if (strlen($player) > 1 && strlen($shot) > 1) {
+            if (($player == '-' || strlen($player) > 1) && ($shot == '-' || strlen($shot) > 1)) {
                 foreach ($reps as $key => $rep) {
                     if (!check_conditions($rep, $player, $shot, $game, $type, $diff)) {
                         continue;
