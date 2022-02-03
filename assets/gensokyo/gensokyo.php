@@ -57,40 +57,14 @@
             <label for='co'><img src='assets/gensokyo/gif/co.gif' title='Other Condition' alt='Other icon'></label>
             <input id='co' name='co' type='checkbox'<?php echo !empty($_GET['co']) && $_GET['co'] == 'on' ? ' checked' : '' ?>>
         </p>
-        <p>
-            <label for='pl'>Page length</label>
-            <input id='pl' name='pl' type='number' value='<?php echo !empty($_GET['pl']) && $_GET['pl'] ? ((int) $_GET['pl']) : 25 ?>' min='1'>
-        </p>
         <p><input type='submit' value='Search'></p>
     </form>
     <?php
         $tmp = explode('?', $_SERVER['REQUEST_URI']);
         $searched = !empty($tmp[1]);
         if (!empty($_GET['id'])) {
-            $rep = $reps[$_GET['id']];
-            $comment = str_replace('<', '&lt;', $rep['comment']);
-            $comment = str_replace('>', '&gt;', $comment);
-            $backlink = explode('&id', $_SERVER['REQUEST_URI']);
-            $conditions = format_conditions($rep['conditions'], $rep['category']);
-            echo '<table id="replay" class="sortable"><tbody>';
-            echo '<tr><th>Player</th><td>' . $rep['player'] . '</td></tr>';
-            echo '<tr><th>Category</th><td>' . $rep['category'] . ($rep['category'] == 'DS' ? ' ' . $rep['slowdown'] : '') .
-            '</td></tr>';
-            echo '<tr><th>Game Version</th><td>' . ($rep['category'] == 'DS' ? '' : $rep['ver']) . '</td></tr>';
-            echo '<tr><th>Upload Date</th><td>' . ($rep['category'] == 'DS' ? $rep['ver'] : $rep['date']) . '</td></tr>';
-            echo '<tr><th>Type</th><td>' . ($rep['category'] == 'DS' ? $rep['date'] : $rep['type']) . '</td></tr>';
-            echo '<tr><th>Score</th><td>' . ($rep['category'] == 'DS' ? number_format($rep['type'], 0, '.', ',') : $rep['score']) . '</td></tr>';
-            echo '<tr><th>Slowdown</th><td>' . ($rep['category'] == 'DS' ? '-' : $rep['slowdown']) . '</td></tr>';
-            echo '<tr><th>Shottype</th><td>' . ($rep['category'] == 'DS' ? $rep['slowdown'] : $rep['shottype']) . '</td></tr>';
-            echo '<tr><th>Conditions</th><td>' . $conditions . '</td></tr>';
-            echo '<tr><th>Comment</th><td>' . ($rep['category'] == 'DS' ? $rep['conditions'] : $comment) . '</td></tr>';
-            foreach (glob('replays/gensokyo/' . $_GET['id'] . '/*.rpy') as $file) {
-                $replay = explode('/', $file);
-                echo '<tr><th>Download</th><td><a href="' . $file . '">' . $replay[3] . '</a></td></tr>';
-            }
-            echo '</tbody><tfoot><tr><th id="back" colspan="2"><a href="' . $backlink[0] . '">Back</a></th></tr></tfoot></table>';
+            replay_table($reps[$_GET['id']]);
         } else if ($searched) {
-            $i = -1;
             $found = 0;
             foreach ($reps as $key => $rep) {
                 if (!empty($player)) {
@@ -100,6 +74,9 @@
                     } else {
                         $player_matches = stripos($rep['player'], $player) !== false;
                     }
+                    if (!$player_matches) {
+                        continue;
+                    }
                 }
                 if (!empty($shot)) {
                     if (substr($shot, 0, 1) == '"' && substr($shot, -1) == '"') {
@@ -108,14 +85,11 @@
                     } else {
                         $shot_matches = stripos($rep['shottype'], $shot) !== false;
                     }
-                }
-                if (!empty($player) && !$player_matches) {
-                    continue;
+                    if (!$shot_matches) {
+                        continue;
+                    }
                 }
                 if (!empty($game) && $game != '-' && strpos($rep['category'], $game) !== 0) {
-                    continue;
-                }
-                if (!empty($shot) && !$shot_matches) {
                     continue;
                 }
                 if (!empty($type) && $type != '-' && strpos($rep['type'], $type) === false) {
@@ -161,12 +135,6 @@
                 if (!empty($_GET['co']) && $_GET['co'] == 'on' && strpos($rep['conditions'], 'Other Condition') === false) {
                     continue;
                 }
-                $i += 1;
-                if ($i < $p) {
-                    continue;
-                } else if ($i == $p + $PAGE_LENGTH) {
-                    break;
-                }
                 foreach (glob('replays/gensokyo/' . $key . '/*.rpy') as $file) {
                     if ($found === 0) {
                         echo '<table id="replays" class="sortable"><thead><tr><th>Player</th><th>Category</th><th>Score</th>' .
@@ -192,25 +160,8 @@
             }
             if ($found > 0) {
                 echo '</tbody></table>';
-                if ($p > 0) {
-                    $url = substr($_SERVER['REQUEST_URI'], 0, -1);
-                    echo '<a id="previous" href="' . $url . ($p / $PAGE_LENGTH) . '">&lt;= Previous</a>';
-                }
-                if ($found >= $PAGE_LENGTH) {
-                    $url = $_SERVER['REQUEST_URI'];
-                    if (!strpos($url, '&page=')) {
-                        echo '<a id="next" href="' . $url . '&page=2">Next =&gt;</a>';
-                    } else {
-                        echo '<a id="next" href="' . substr($url, 0, -1) . (($p / $PAGE_LENGTH) + 2) . '">Next =&gt;</a>';
-                    }
-                }
             } else {
                 echo '<p>No replays found.</p>';
-                $url = $_SERVER['REQUEST_URI'];
-                if (strpos($url, '&page=')) {
-                    echo '<p><a id="previous" href="' . substr($url, 0, -1) . ($p / $PAGE_LENGTH) .
-                    '">&lt;= Previous</a></p>';
-                }
             }
         }
     ?>
