@@ -328,7 +328,7 @@ function wrap_top() {
     $ru = Array('lnn', 'tools', 'twc', 'wr');
     $de = Array('drc', 'lnn', 'tools', 'twc', 'wr');
     $tl_title = Array('credits', 'lnn', 'wr');
-    if (empty($page)) {
+    if (empty($page) || $page == 'admin') {
         $page = 'index';
     }
     $json = file_get_contents(($page == 'admin' ? '../' : '') . 'assets/' . $page . '/' . $page . '.json');
