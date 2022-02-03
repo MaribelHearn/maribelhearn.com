@@ -9,9 +9,19 @@
             echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
         }
         if (!empty($subpage)) {
-            include_once 'assets/faq/' . ($subpage == 'eosd' ? 'eosd' : 'subpages') . '/' . $subpage . '.php';
+            $path = 'assets/faq/' . ($subpage == 'eosd' ? 'eosd' : 'subpages') . '/' . $subpage . '.php';
+            if (file_exists($path)) {
+                include_once $path;
+            } else {
+                echo '<p>No such page.</p>';
+            }
         } else if (!empty($_GET['p'])) {
-            include_once 'assets/faq/' . ($subpage == 'eosd' ? 'eosd' : 'subpages') . '/' . $_GET['p'] . '.php';
+            $path = 'assets/faq/' . ($subpage == 'eosd' ? 'eosd' : 'subpages') . '/' . $_GET['p'] . '.php';
+            if (file_exists($path)) {
+                include_once $path;
+            } else {
+                echo '<p>No such page.</p>';
+            }
         } else {
             include_once 'assets/faq/subpages/main_page.php';
         }
