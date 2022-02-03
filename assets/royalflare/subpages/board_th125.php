@@ -11,6 +11,7 @@
 <p class='right'><strong><a href='/royalflare/standings/th125'>ランキング - Player Standings</a></strong></p>
 <?php
     function ds_table(array $board, string $stage, string $scene, string $shottype, string $lang) {
+        global $is_mobile;
         echo '<table id="' . $stage . '-' . $scene . 't" class="' . 'DS' . 't' . ($shottype == 'Hatate' ? ' hatate' : '') .
         ' sortable"><tr><th class="head">#</th><th id="' . $stage . '-' . $scene . 'score">スコア<br>Score</th>' .
         '<th>処理落率<br>Slowdown</th><th><span class="nowrap">使用キャラ</span><br>Shottype</th><th><span class="nowrap">撮影対象</span><br>Scene</th>' .
