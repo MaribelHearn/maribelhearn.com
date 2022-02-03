@@ -81,7 +81,7 @@
                         if ($rep['category'] == 'DS') {
                             echo '<tr><td><a href="' . $_SERVER['REQUEST_URI'] . '&id=' . $key . '">' . $rep['player'] .
                             '</a></td><td>' . $rep['category'] . '<br>' . $rep['slowdown'] . // shottype
-                            '</td><td>' . number_format($rep['type'], 0, '.', ',') . // score
+                            '</td><td>' . $rep['type'] . // score
                             '</td><td>' . substr($rep['ver'], 0, 10) . '<br>' . substr($rep['ver'], 10) . // date
                             '</td><td>' . $rep['date'] . '</td><td></td><td><a href="' . $file . '">' . $replay[3] .
                             '</a></td></tr>'; // date = type, conditions empty
