@@ -137,8 +137,9 @@
                 }
                 foreach (glob('replays/gensokyo/' . $key . '/*.rpy') as $file) {
                     if ($found === 0) {
-                        echo '<table id="replays" class="sortable"><thead><tr><th>Player</th><th>Category</th><th>Score</th>' .
-                        '<th class="sorttable_mmdd">Date added</th><th>Type</th><th>Conditions</th><th>Download</th></tr></thead><tbody>';
+                        echo '<table id="replays" class="sortable"><thead><tr><th class="general_header">Player</th><th class="general_header">Category</th>' .
+                        '<th class="general_header">Score</th><th class="general_header sorttable_mmdd">Date added</th><th class="general_header">Type</th>' .
+                        '<th class="general_header">Conditions</th><th class="general_header">Download</th></tr></thead><tbody>';
                     }
                     $replay = explode('/', $file);
                     if ($rep['category'] == 'DS') {

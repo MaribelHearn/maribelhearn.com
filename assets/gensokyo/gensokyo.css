@@ -27,7 +27,7 @@ form {
 .dropdown_content:hover .dropdown_content {
     display: block;
 }
-.general_header:not(#back) {
+.general_header {
     background-color: #aaaaaa;
 }
 .wrap {
