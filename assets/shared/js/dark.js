@@ -8,7 +8,7 @@ function dark() {
     style.rel = "stylesheet";
     head.appendChild(style);
 
-    if (["lnn", "royalflare", "wr"].includes(page)) {
+    if (["lnn", "gensokyo", "royalflare", "wr"].includes(page)) {
         style = document.createElement("style");
         style.id = "dark_theme_table";
         style.innerText = "tr:not(.west_tr):nth-child(even),tr.west_tr:nth-child(odd){background-color:#555555;}";

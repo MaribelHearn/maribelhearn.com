@@ -34,7 +34,7 @@ foreach ($css as $css_file) {
     $css_content = file_get_contents($css_file);
     echo $css_content;
 }
-if (isset($_COOKIE['theme']) && ($page == 'lnn' || $page == 'royalflare' || $page == 'wr')) {
+if (isset($_COOKIE['theme']) && ($page == 'lnn' || $page == 'gensokyo' || $page == 'royalflare' || $page == 'wr')) {
     echo 'tr:not(.west_tr):nth-child(even),tr.west_tr:nth-child(odd){background-color:#555555;}';
 }
 ?>
