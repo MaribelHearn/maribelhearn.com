@@ -62,7 +62,7 @@ function replay_table(array $rep) {
     $backlink = explode('&id', $_SERVER['REQUEST_URI']);
     $conditions = format_conditions($rep['conditions'], $rep['category']);
     echo '<table id="replay" class="sortable"><tbody>';
-    echo '<tr><th>Player</th><td>' . $rep['player'] . '</td></tr>';
+    echo '<tr><th>Player</th><td id="player_td">' . $rep['player'] . '</td></tr>';
     echo '<tr><th>Category</th><td>' . $rep['category'] . ($rep['category'] == 'DS' ? ' ' . $rep['slowdown'] : '') .
     '</td></tr>';
     echo '<tr><th>Game Version</th><td>' . ($rep['category'] == 'DS' ? '' : $rep['ver']) . '</td></tr>';

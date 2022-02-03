@@ -110,9 +110,11 @@
     if ($game != '-' || $diff != '-' || !empty($player) && strlen($player) > 1 || !empty($shot) && strlen($shot) > 1 || !empty($comment) && strlen($comment) > 1) {
         $count = 0;
         if ($game == '-') {
-            $table = '<table id="results" class="search_header sortable"><thead><tr><th class="head">#</th><th>ゲーム<br>Game</th>' .
-            '<th>スコア<br>Score</th><th>処理落率<br>Slowdown</th><th><span class="nowrap">使用キャラ</span><br>Shottype</th><th>難易度<br>Difficulty</th>' .
-            '<th>プレイ日付<br>Play Date</th><th>名前<br>Player</th>' . ($is_mobile ? '' : '<th>コメント<br>Comment</th>') . '<th>リプレイ<br>Replay</th></tr></thead><tbody id="results_tbody">';
+            $table = '<table id="results" class="sortable"><thead><tr><th class="general_header head">#</th><th class="general_header">ゲーム<br>Game</th>' .
+            '<th class="general_header">スコア<br>Score</th><th class="general_header">処理落率<br>Slowdown</th><th class="general_header"><span class="nowrap">使用キャラ</span><br>Shottype</th>' .
+            '<th class="general_header">難易度<br>Difficulty</th><th class="general_header">プレイ日付<br>Play Date</th>' .
+            '<th class="general_header">名前<br>Player</th>' . ($is_mobile ? '' : '<th class="general_header">コメント<br>Comment</th>') .
+            '<th class="general_header">リプレイ<br>Replay</th></tr></thead><tbody id="results_tbody">';
             foreach (glob('assets/royalflare/json/*.*') as $file) {
                 if (strpos($file, 'alcostg') !== false || strpos($file, 'hellsinker') !== false) {
                     continue;

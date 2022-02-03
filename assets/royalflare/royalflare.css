@@ -83,6 +83,9 @@ a.scene {
 .hatate {
     margin-top: 15px;
 }
+.general_header {
+    background-color: #aaaaaa;
+}
 .alcostg th {
     background-color: #c89600;
 }
