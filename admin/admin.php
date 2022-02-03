@@ -95,7 +95,6 @@
         <main>
             <div id='wrap' class='wrap'>
                 <?php echo wrap_top() ?>
-                <h1>Admin Panel</h1>
                 <p><input id='setcookie' type='button' value='Set Blocking Cookie'></p>
                 <p id='response' class='wide'>Caching new entries...</p>
                 <?php
