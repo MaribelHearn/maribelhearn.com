@@ -328,10 +328,10 @@ function wrap_top() {
     $ru = Array('lnn', 'tools', 'twc', 'wr');
     $de = Array('drc', 'lnn', 'tools', 'twc', 'wr');
     $tl_title = Array('credits', 'lnn', 'wr');
-    if (empty($page) || $page == 'admin') {
+    if (empty($page)) {
         $page = 'index';
     }
-    $json = file_get_contents(($page == 'admin' ? '../' : '') . 'assets/' . $page . '/' . $page . '.json');
+    $json = file_get_contents($page == 'admin' ? '../assets/index/index.json' : 'assets/' . $page . '/' . $page . '.json');
     $data = (object) json_decode($json, true);
     if (in_array($page, $ja) || in_array($page, $zh) || in_array($page, $ru) || in_array($page, $de)) {
         echo '<div id="topbar">';
