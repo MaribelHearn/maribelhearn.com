@@ -1,4 +1,4 @@
-    <?php include_once 'assets/gensokyo/gensokyo_code.php' ?>
+<?php include_once 'assets/gensokyo/gensokyo_code.php' ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
     <p>A complete archive of the Touhou replays from replays.gensokyo.org, with the same search functionality as said website.</p>
@@ -10,7 +10,7 @@
     <form>
         <p>
             <label for='player'>Player</label>
-            <input id='player' name='player' type='text' value='<?php echo !empty($player) ? $player : '' ?>'>
+            <input id='player' name='player' type='text' value='<?php echo $player == '-' ? '' : $player ?>'>
             <label for='game'>Game</label>
             <select id='game' name='game'>
                 <option value='-'>...</option>
@@ -21,7 +21,7 @@
                 ?>
             </select>
             <label for='shot'>Shottype</label>
-            <input id='shot' name='shot' type='text' value='<?php echo !empty($shot) ? $shot : '' ?>'>
+            <input id='shot' name='shot' type='text' value='<?php echo $shot == '-' ? '' : $shot ?>'>
             <label for='type'>Type of Run</label>
             <select id='type' name='type'>
                 <option value='-'>...</option>
