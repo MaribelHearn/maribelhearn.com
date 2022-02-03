@@ -9,6 +9,8 @@ function get_shots($game) {
     $shots = json_decode($json, true);
     if ($game == 'GFW') {
         return Array('A-1', 'A-2', 'B-1', 'B-2', 'C-1', 'C-2');
+    } else if ($game == 'DS') {
+        return Array('Aya', 'Hatate');
     }
     return $shots[$game]['chars'];
 }
