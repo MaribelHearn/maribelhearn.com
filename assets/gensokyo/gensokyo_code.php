@@ -129,28 +129,28 @@ function check_conditions(array $rep, string $player, string $shot, string $game
             return false;
         }
     }
-    if (!empty($_GET['nd']) && $_GET['nd'] == 'on' && strpos($rep['conditions'], 'No Deaths') === false) {
+    if (!empty($_GET['nd']) && $_GET['nd'] == 'on' && strpos($rep['conditions'], 'nd') === false) {
         return false;
     }
-    if (!empty($_GET['nb']) && $_GET['nb'] == 'on' && strpos($rep['conditions'], 'No Bomb Usage') === false) {
+    if (!empty($_GET['nb']) && $_GET['nb'] == 'on' && strpos($rep['conditions'], 'nb') === false) {
         return false;
     }
-    if (!empty($_GET['nf']) && $_GET['nf'] == 'on' && strpos($rep['conditions'], 'No Focused Movement') === false) {
+    if (!empty($_GET['nf']) && $_GET['nf'] == 'on' && strpos($rep['conditions'], 'nf') === false) {
         return false;
     }
-    if (!empty($_GET['nv']) && $_GET['nv'] == 'on' && strpos($rep['conditions'], 'No Vertical Movement') === false) {
+    if (!empty($_GET['nv']) && $_GET['nv'] == 'on' && strpos($rep['conditions'], 'nv') === false) {
         return false;
     }
-    if (!empty($_GET['tas']) && $_GET['tas'] == 'on' && strpos($rep['conditions'], 'Tool-Assisted Replay') === false) {
+    if (!empty($_GET['tas']) && $_GET['tas'] == 'on' && strpos($rep['conditions'], 'tas') === false) {
         return false;
     }
-    if (!empty($_GET['chz']) && $_GET['chz'] == 'on' && strpos($rep['conditions'], 'Tool-Assisted Replay (not marked by original uploader)') === false) {
+    if (!empty($_GET['chz']) && $_GET['chz'] == 'on' && strpos($rep['conditions'], 'chz') === false) {
         return false;
     }
-    if (!empty($_GET['pa']) && $_GET['pa'] == 'on' && strpos($rep['conditions'], 'Pacifist') === false) {
+    if (!empty($_GET['pa']) && $_GET['pa'] == 'on' && strpos($rep['conditions'], 'pa') === false) {
         return false;
     }
-    if (!empty($_GET['co']) && $_GET['co'] == 'on' && strpos($rep['conditions'], 'Other Condition') === false) {
+    if (!empty($_GET['co']) && $_GET['co'] == 'on' && strpos($rep['conditions'], 'co') === false) {
         return false;
     }
     return true;
