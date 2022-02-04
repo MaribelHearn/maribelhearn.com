@@ -31,6 +31,8 @@ if (empty($_GET['id'])) {
     } else {
         $diff = '-';
     }
+} else {
+    $player = $game = $shot = $type = $diff = '-';
 }
 
 function condition_name(string $cond_abbr) {

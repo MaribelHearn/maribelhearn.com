@@ -64,7 +64,7 @@
 <html id='top' lang='<?php echo lang_code() ?>'>
 
     <head>
-		<title><?php echo _($data->title) ?></title>
+		<title><?php echo property_exists($data, 'title') ? _($data->title) : 'maribelhearn.com/' . $url ?></title>
 		<meta charset='UTF-8'>
         <?php if ($page == 'privacy') { echo '<meta name="robots" content="noindex">'; } ?>
 		<meta name='viewport' content='width=device-width'>
