@@ -122,6 +122,7 @@ To avoid this, either use <a href='/tools#thprac'>thprac</a> or reset your run t
 <p>Desyncs can have several causes. Replays will desync if you changed your active card <em>after</em> beating a boss, or if you are using Momoyo's Centipede card.
 Starting the Extra Stage with Byakuren's Scroll card equipped will also desync your run. These issues are fixed by <a href='/tools#thprac'>thprac</a> (use the F12 menu).</p>
 <hr>
+<?php?>
 <!--<h4 id='cd'>How do I set up the game starting from the CD?</h4>
 <p><a href='https://www.youtube.com/watch?v=8Yt2bSh32K8'>This video</a> provides a quick explanation.</p>
 <h4 id='fps'>Why is the game running at 5000 <abbr title='frames per second'>FPS</abbr>?</h4>
