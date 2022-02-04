@@ -38,3 +38,4 @@ Use this resolution when playing Touhou. Alternatively, you can play in a window
 <p>Edit the <span class='code'>vpatch.ini</span> file in your game folder. If you want to get a fullscreen-like experience when playing windowed, set <span class='tt'>TitleBar</span>
 to <span class='tt'>0</span> to hide the window title bar. Additionally, set <span class='tt'>AlwaysOnTop</span> to <span class='tt'>1</span> to make sure the Windows task bar does
 not obscure the bottom of your game. To change the window size, adjust the values for <span class='tt'>Width</span> and <span class='tt'>Height</span> to your liking.</p>
+<?php?>
