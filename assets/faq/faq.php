@@ -16,7 +16,7 @@
                 echo '<p>No such page.</p>';
             }
         } else if (!empty($_GET['p'])) {
-            $path = 'assets/faq/' . ($subpage == 'eosd' ? 'eosd' : 'subpages') . '/' . $_GET['p'] . '.php';
+            $path = 'assets/faq/' . ($_GET['p'] == 'eosd' ? 'eosd' : 'subpages') . '/' . $_GET['p'] . '.php';
             if (file_exists($path)) {
                 include_once $path;
             } else {
