@@ -66,7 +66,7 @@
             replay_table($reps[$_GET['id']]);
         } else if ($searched) {
             $found = 0;
-            if (($player == '-' || strlen($player) > 1) && ($shot == '-' || strlen($shot) > 1)) {
+            if (input_validity() == 2) {
                 foreach ($reps as $key => $rep) {
                     if (!check_conditions($rep, $player, $shot, $game, $type, $diff)) {
                         continue;
@@ -98,8 +98,12 @@
             }
             if ($found > 0) {
                 echo '</tbody></table>';
-            } else {
+            } else if (input_validity() == 2) {
                 echo '<p>No replays found.</p>';
+            } else if (input_validity() == 1) {
+                echo '<p>Invalid search. Please provide more than one character for the player name or shot name.</p>';
+            } else {
+                echo '<p>Invalid search. Please provide a search query.</p>';
             }
         }
     ?>
