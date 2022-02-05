@@ -84,6 +84,17 @@ function replay_table(array $rep) {
     echo '</tbody><tfoot><tr><th id="back" colspan="2"><a href="' . $backlink[0] . '">Back</a></th></tr></tfoot></table>';
 }
 
+function input_validity() {
+    global $player, $shot, $game, $type, $diff;
+    if ($player == '-' && $shot == '-' && $game == '-' && $type == '-' && $diff == '-') {
+        return 0;
+    }
+    if (($player != '-' && strlen($player) == 1) || ($shot != '-' && strlen($shot) == 1)) {
+        return 1;
+    }
+    return 2;
+}
+
 function check_conditions(array $rep, string $player, string $shot, string $game, string $type, string $diff) {
     if (!empty($player) && $player != '-') {
         if (substr($player, 0, 1) == '"' && substr($player, -1) == '"') {
