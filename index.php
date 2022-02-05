@@ -72,6 +72,12 @@
         <meta name='keywords' content='<?php echo property_exists($data, 'keywords') ? $data->keywords : '' ?>'>
         <meta name='msapplication-TileColor' content='#da532c'>
         <meta name='theme-color' content='#ffffff'>
+        <?php if (property_exists($data, 'description')) {
+            echo '<meta name="og:title" content="' . $data->title . '">' .
+            '<meta name="og:url" content="https://maribelhearn.com/' . $url . '">' .
+            '<meta name="og:description" content="' . $data->description . '">' .
+            '<meta name="og:image" content="https://maribelhearn.com/assets/' . $page . '/' . $page . '_og.jpg">';
+        } ?>
         <link rel='preload' type='font/woff2' href='<?php echo $page == 'error' ? 'https://maribelhearn.com/' : '/' ?>assets/shared/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' href='<?php echo $css_href ?>'>
         <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png'>
