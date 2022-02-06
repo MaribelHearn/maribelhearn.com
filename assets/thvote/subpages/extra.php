@@ -889,7 +889,7 @@
         <tr><td>Iku Nagae</td><td>1,095</td><td>94</td><td>191</td><td>1,070</td><td>94</td><td>191</td><td>-25</td><td class='zero'>0</td><td class='zero'>0</td></tr>
         <tr><td>Soga no Tojiko</td><td>1,087</td><td>113</td><td>187</td><td>1,072</td><td>112</td><td>187</td><td>-15</td><td>-1</td><td class='zero'>0</td></tr>
         <tr><td>Kanako Yasaka</td><td>1,082</td><td>97</td><td>161</td><td>1,015</td><td>97</td><td>161</td><td>-67</td><td class='zero'>0</td><td class='zero'>0</td></tr>
-        <tr><td>Shizuha Aki</td><td>1,080</td><td>202</td><td>127</td><td>722</td><td>67</td><td>127</td><td class='huge'>-358</td><td>-135</td><td class='zero'>0</td></tr>
+        <tr><td>Shizuha Aki</td><td>1,080</td><td>202</td><td>127</td><td>722</td><td>67</td><td>127</td><td class='huge'>-358</td><td class='huge'>-135</td><td class='zero'>0</td></tr>
         <tr><td>Hatate Himekaidou</td><td>1,079</td><td>84</td><td>186</td><td>1,072</td><td>84</td><td>186</td><td>-7</td><td class='zero'>0</td><td class='zero'>0</td></tr>
         <tr><td>Mayumi Joutouguu</td><td>1,077</td><td>80</td><td>225</td><td>1,030</td><td>78</td><td>191</td><td>-47</td><td>-2</td><td>-34</td></tr>
         <tr><td>Rinnosuke Morichika</td><td>1,011</td><td>99</td><td>223</td><td>1,003</td><td>97</td><td>223</td><td>-8</td><td>-2</td><td class='zero'>0</td></tr>
