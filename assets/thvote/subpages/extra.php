@@ -200,23 +200,22 @@
                 <th class='sorttable_numeric'>Points</th>
                 <th class='sorttable_numeric'>No. 1 Votes</th>
                 <th class='sorttable_numeric'>Comments</th>
-                <th>Point Chart</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td>1</td><td>EoSD</td><td>49,317</td><td>7,997</td><td>4,490</td><td><progress value='49317' max='49317'></progress></td></tr>
-            <tr><td>2</td><td>IN</td><td>31,581</td><td>3,121</td><td>3,066</td><td><progress value='31581' max='49317'></progress></td></tr>
-            <tr><td>3</td><td>PCB</td><td>30,028</td><td>3,192</td><td>2,778</td><td><progress value='30028' max='49317'></progress></td></tr>
-            <tr><td>4</td><td>MoF</td><td>23,315</td><td>2,302</td><td>2,462</td><td><progress value='23315' max='49317'></progress></td></tr>
-            <tr><td>5</td><td>SA</td><td>18,531</td><td>2,050</td><td>1,848</td><td><progress value='18531' max='49317'></progress></td></tr>
-            <tr><td>6</td><td>LoLK</td><td>13,339</td><td>1,333</td><td>1,601</td><td><progress value='13339' max='49317'></progress></td></tr>
-            <tr><td>7</td><td>WBaWC</td><td>10,867</td><td>1,487</td><td>1,333</td><td><progress value='10867' max='49317'></progress></td></tr>
-            <tr><td>8</td><td>UFO</td><td>9,429</td><td>873</td><td>1,041</td><td><progress value='9429' max='49317'></progress></td></tr>
-            <tr><td>9</td><td>DDC</td><td>8,595</td><td>811</td><td>933</td><td><progress value='8595' max='49317'></progress></td></tr>
-            <tr><td>10</td><td>UM</td><td>8,428</td><td>611</td><td>1,280</td><td><progress value='8428' max='49317'></progress></td></tr>
-            <tr><td>11</td><td>TD</td><td>8,125</td><td>783</td><td>900</td><td><progress value='8125' max='49317'></progress></td></tr>
-            <tr><td>12</td><td>PoFV</td><td>7,562</td><td>679</td><td>735</td><td><progress value='7562' max='49317'></progress></td></tr>
-            <tr><td>13</td><td>HSiFS</td><td>5,680</td><td>380</td><td>770</td><td><progress value='5680' max='49317'></progress></td></tr>
+            <tr><td>1</td><td>EoSD</td><td>49,317</td><td>7,997</td><td>4,490</td></tr>
+            <tr><td>2</td><td>IN</td><td>31,581</td><td>3,121</td><td>3,066</td></tr></tr>
+            <tr><td>3</td><td>PCB</td><td>30,028</td><td>3,192</td><td>2,778</td></tr>
+            <tr><td>4</td><td>MoF</td><td>23,315</td><td>2,302</td><td>2,462</td></tr>
+            <tr><td>5</td><td>SA</td><td>18,531</td><td>2,050</td><td>1,848</td></tr>
+            <tr><td>6</td><td>LoLK</td><td>13,339</td><td>1,333</td><td>1,601</td></tr>
+            <tr><td>7</td><td>WBaWC</td><td>10,867</td><td>1,487</td><td>1,333</td></tr>
+            <tr><td>8</td><td>UFO</td><td>9,429</td><td>873</td><td>1,041</td></tr>
+            <tr><td>9</td><td>DDC</td><td>8,595</td><td>811</td><td>933</td></tr>
+            <tr><td>10</td><td>UM</td><td>8,428</td><td>611</td><td>1,280</td></tr>
+            <tr><td>11</td><td>TD</td><td>8,125</td><td>783</td><td>900</td></tr>
+            <tr><td>12</td><td>PoFV</td><td>7,562</td><td>679</td><td>735</td></tr>
+            <tr><td>13</td><td>HSiFS</td><td>5,680</td><td>380</td><td>770</td></tr>
         </tbody>
     </table>
 </div>
@@ -238,27 +237,26 @@
             <th class='sorttable_numeric'>Points</th>
             <th class='sorttable_numeric'>No. 1 Votes</th>
             <th class='sorttable_numeric'>Comments</th>
-            <th>Point Chart</th>
         </tr>
     </thead>
     <tbody>
-        <tr><td>1</td><td>Extra Boss</td><td>U.N. Owen Was Her?</td><td>11,848</td><td>2,748</td><td>1,299</td><td><progress value='11848' max='11848'></progress></td></tr>
-        <tr><td>2</td><td>Stage 6 Boss</td><td>Septette for a Dead Princess</td><td>9,498</td><td>1,846</td><td>790</td><td><progress value='9498' max='11848'></progress></td></tr>
-        <tr><td>3</td><td>Stage 3</td><td>Shanghai Teahouse ~ Chinese Tea</td><td>5,431</td><td>834</td><td>458</td><td><progress value='5431' max='11848'></progress></td></tr>
-        <tr><td>4</td><td>Stage 5 Boss</td><td>Lunar Clock ~ Luna Dial</td><td>3,757</td><td>472</td><td>305</td><td><progress value='3757' max='11848'></progress></td></tr>
-        <tr><td>5</td><td>Stage 2 Boss</td><td>Tomboyish Girl in Love</td><td>3,485</td><td>421</td><td>360</td><td><progress value='3485' max='11848'></progress></td></tr>
-        <tr><td>6</td><td>Stage 3 Boss</td><td>Shanghai Alice of Meiji 17</td><td>2,249</td><td>268</td><td>192</td><td><progress value='2249' max='11848'></progress></td></tr>
-        <tr><td>7</td><td>Extra Stage</td><td>The Centennial Festival for Magical Girls</td><td>2,072</td><td>190</td><td>186</td><td><progress value='2072' max='11848'></progress></td></tr>
-        <tr><td>8</td><td>Stage 1 Boss</td><td>Apparitions Stalk the Night</td><td>1,926</td><td>262</td><td>177</td><td><progress value='1926' max='11848'></progress></td></tr>
-        <tr><td>9</td><td>Stage 5</td><td>The Maid and the Pocket Watch of Blood</td><td>1,709</td><td>176</td><td>124</td><td><progress value='1709' max='11848'></progress></td></tr>
-        <tr><td>10</td><td>Stage 4 Boss</td><td>Locked Girl ~ The Girl's Secret Room</td><td>1,544</td><td>169</td><td>106</td><td><progress value='1544' max='11848'></progress></td></tr>
-        <tr><td>11</td><td>Title</td><td>A Dream that Is More Scarlet than Red</td><td>1,168</td><td>162</td><td>91</td><td><progress value='1168' max='11848'></progress></td></tr>
-        <tr><td>12</td><td>Staff Roll/Credits</td><td>Crimson Tower ~ Eastern Dream...</td><td>1,082</td><td>110</td><td>105</td><td><progress value='1082' max='11848'></progress></td></tr>
-        <tr><td>13</td><td>Stage 1</td><td>A Soul as Red as a Ground Cherry</td><td>1,071</td><td>121</td><td>94</td><td><progress value='1071' max='11848'></progress></td></tr>
-        <tr><td>14</td><td>Stage 2</td><td>Lunate Elf</td><td>833</td><td>91</td><td>71</td><td><progress value='833' max='11848'></progress></td></tr>
-        <tr><td>15</td><td>Stage 4</td><td>Voile, the Magic Library</td><td>761</td><td>68</td><td>64</td><td><progress value='761' max='11848'></progress></td></tr>
-        <tr><td>16</td><td>Stage 6</td><td>The Young Descendant of Tepes</td><td>615</td><td>40</td><td>49</td><td><progress value='615' max='11848'></progress></td></tr>
-        <tr><td>17</td><td>Ending</td><td>An Eternity that Is More Transient than Scarlet</td><td>268</td><td>19</td><td>19</td><td><progress value='268' max='11848'></progress></td></tr>
+        <tr><td>1</td><td>Extra Boss</td><td>U.N. Owen Was Her?</td><td>11,848</td><td>2,748</td><td>1,299</td></tr>
+        <tr><td>2</td><td>Stage 6 Boss</td><td>Septette for a Dead Princess</td><td>9,498</td><td>1,846</td><td>790</td></tr>
+        <tr><td>3</td><td>Stage 3</td><td>Shanghai Teahouse ~ Chinese Tea</td><td>5,431</td><td>834</td><td>458</td></tr>
+        <tr><td>4</td><td>Stage 5 Boss</td><td>Lunar Clock ~ Luna Dial</td><td>3,757</td><td>472</td><td>305</td></tr>
+        <tr><td>5</td><td>Stage 2 Boss</td><td>Tomboyish Girl in Love</td><td>3,485</td><td>421</td><td>360</td></tr>
+        <tr><td>6</td><td>Stage 3 Boss</td><td>Shanghai Alice of Meiji 17</td><td>2,249</td><td>268</td><td>192</td></tr>
+        <tr><td>7</td><td>Extra Stage</td><td>The Centennial Festival for Magical Girls</td><td>2,072</td><td>190</td><td>186</td></tr>
+        <tr><td>8</td><td>Stage 1 Boss</td><td>Apparitions Stalk the Night</td><td>1,926</td><td>262</td><td>177</td></tr>
+        <tr><td>9</td><td>Stage 5</td><td>The Maid and the Pocket Watch of Blood</td><td>1,709</td><td>176</td><td>124</td></tr>
+        <tr><td>10</td><td>Stage 4 Boss</td><td>Locked Girl ~ The Girl's Secret Room</td><td>1,544</td><td>169</td><td>106</td></tr>
+        <tr><td>11</td><td>Title</td><td>A Dream that Is More Scarlet than Red</td><td>1,168</td><td>162</td><td>91</td></tr>
+        <tr><td>12</td><td>Staff Roll/Credits</td><td>Crimson Tower ~ Eastern Dream...</td><td>1,082</td><td>110</td><td>105</td></tr>
+        <tr><td>13</td><td>Stage 1</td><td>A Soul as Red as a Ground Cherry</td><td>1,071</td><td>121</td><td>94</td></tr>
+        <tr><td>14</td><td>Stage 2</td><td>Lunate Elf</td><td>833</td><td>91</td><td>71</td></tr>
+        <tr><td>15</td><td>Stage 4</td><td>Voile, the Magic Library</td><td>761</td><td>68</td><td>64</td></tr>
+        <tr><td>16</td><td>Stage 6</td><td>The Young Descendant of Tepes</td><td>615</td><td>40</td><td>49</td></tr>
+        <tr><td>17</td><td>Ending</td><td>An Eternity that Is More Transient than Scarlet</td><td>268</td><td>19</td><td>19</td></tr>
     </tbody>
     <tfoot>
         <tr><th colspan='3'>Total</th><td>49,317</td><td>7,997</td><td>4,490</td><td></td></tr>
@@ -282,6 +280,7 @@
             <th class='sorttable_numeric'>Points</th>
             <th class='sorttable_numeric'>No. 1 Votes</th>
             <th class='sorttable_numeric'>Comments</th>
+            <th>Point Chart</th>
         </tr>
     </thead>
     <tbody>
