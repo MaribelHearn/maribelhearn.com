@@ -76,7 +76,8 @@
             echo '<meta name="og:title" content="' . $data->title . '">' .
             '<meta name="og:url" content="https://maribelhearn.com/' . $url . '">' .
             '<meta name="og:description" content="' . $data->description . '">' .
-            '<meta name="og:image" content="https://maribelhearn.com/assets/' . $page . '/' . $page . '_og.jpg">';
+            '<meta name="og:image" content="https://maribelhearn.com/assets/' . $page . '/' . $page . '_og.jpg">' .
+            '<meta property="og:image:width" content="500"><meta property="og:image:height" content="256">';
         } ?>
         <link rel='preload' type='font/woff2' href='<?php echo $page == 'error' ? 'https://maribelhearn.com/' : '/' ?>assets/shared/fonts/Felipa-Regular.woff2' as='font' crossorigin>
         <link rel='stylesheet' href='<?php echo $css_href ?>'>
