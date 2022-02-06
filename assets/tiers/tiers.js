@@ -2186,7 +2186,6 @@ function setAddTierListeners() {
     $("#add_tier, #add_tier_mobile, #add_tier_list_name").off("click");
     $("#add_tier").on("click", {tierName: $("#tier_name").val()}, addTier);
     $("#add_tier_mobile").on("click", {tierName: $("#tier_name_mobile").val()}, addTier);
-    $("#add_tier_mobile").on("click", {tierName: $("#tier_name_mobile").val()}, addTier);
     $("#add_tier_list_name").on("click", {tierListName: $("#tier_list_name").val()}, tierListName);
 }
 
