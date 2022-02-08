@@ -57,6 +57,7 @@ var MAX_NUMBER_OF_TIERS = 100,
         "pc98Enabled": true,
         "windowsEnabled": true,
         "maleEnabled": true,
+        "themesEnabled": false,
         "sort": "characters"
     },
     windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "Spinoff"],
@@ -66,12 +67,15 @@ var MAX_NUMBER_OF_TIERS = 100,
     secondSheetShots = ["LoLK", "HSiFS", "WBaWC", "UM", "SoEW", "PoDD", "LLS", "MS"],
     spinoffs = ["IaMP", "SWR", "Soku", "DS", "GFW", "HM", "ULiL", "AoCF"],
     exceptions = ["SuikaIbuki", "IkuNagae", "TenshiHinanawi"],
-    exceptionsMobile = ["YukariYakumo", "YuyukoSaigyouji", "SuikaIbuki", "IkuNagae", "TenshiHinanawi", "Hisoutensoku", "HatateHimekaidou", "SunnyMilk", "LunaChild", "StarSapphire", "HatanoKokoro"],
+    exceptionsMobile = ["YukariYakumo", "YuyukoSaigyouji", "SuikaIbuki", "IkuNagae", "TenshiHinanawi", "Hisoutensoku",
+            "HatateHimekaidou", "SunnyMilk", "LunaChild", "StarSapphire", "HatanoKokoro"],
     exceptionsThird = ["SumirekoUsami", "JoonYorigami", "ShionYorigami", "YuumaToutetsu"],
     exceptionsShots = ["DDCSakuyaA", "DDCSakuyaB", "PoFVMerlin", "PoFVLunasa"],
     maleCharacters = ["SinGyokuM", "Genjii", "Unzan", "RinnosukeMorichika", "FortuneTeller"],
+    themeDuplicates = ["FiveMagicStones", "MarisaPC-98LLS", "YuukaPC-98Stage5", "YukiandMai", "AlicePC-98Extra", // iCiel Gotham Ultra 24
+            "YuyukoSaigyoujiResurrectionButterfly", "KaguyaHouraisanLastSpells", "YuyukoSaigyoujiTD", "OkinaMataraExtra"],
     pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"],
-    tieredClasses = ["tiered_characters1", "tiered_characters2", "tiered_works", "tiered_shots"],
+    tieredClasses = ["tiered_characters1", "tiered_characters2", "tiered_characters3", "tiered_works", "tiered_shots"],
     tiers = {},
     gameTiers = {},
     shotTiers = {},
@@ -134,7 +138,9 @@ function getSpritesheetOf(item, category) {
         category = getCategoryOf(item);
     }
 
-    if (isMobile() && settings.sort == "characters" && (thirdSheet.contains(category) || exceptionsThird.contains(item.removeSpaces()))) {
+    if (themeDuplicates.includes(item.removeSpaces())) {
+        return isMobile() ? 3 : 2;
+    } else if (isMobile() && settings.sort == "characters" && (thirdSheet.contains(category) || exceptionsThird.contains(item.removeSpaces()))) {
         return 3;
     } else if (isMobile() && settings.sort == "characters" && (secondSheetMobile.contains(category) || exceptionsMobile.contains(item.removeSpaces()))) {
         return 2;
@@ -1512,7 +1518,8 @@ function settingsMenuChars() {
     $("#windows").on("click", toggleWindows);
     $("#modal_inner").append("<p><label for='male'>Male Characters</label><input id='male' type='checkbox'" +
     " " + (settings.maleEnabled ? " checked" : "") + " " + "></p></div>");
-    $("#pc98").on("click", toggleMale);
+    $("#modal_inner").append("<p><label for='themes'>Boss Theme Duplicates</label><input id='themes' type='checkbox'" +
+    " " + (settings.themesEnabled ? " checked" : "") + " " + "></p></div>");
 }
 
 function settingsMenuOther() {
@@ -1605,7 +1612,15 @@ function toggleWindows() {
 }
 
 function toggleMale() {
-    $("#checkbox_Soku").prop("checked", $("#male").is(":checked") ? true : false);
+    for (var i in maleCharacters) {
+        $("#" + maleCharacters[i]).css("display", settings.maleEnabled ? "inline-block" : "none");
+    }
+}
+
+function toggleThemes() {
+    for (var i in themeDuplicates) {
+        $("#" + themeDuplicates[i]).css("display", settings.themesEnabled ? "inline-block" : "none");
+    }
 }
 
 function saveSettingsData() {
@@ -1664,10 +1679,9 @@ function saveSettingsData() {
         settings.pc98Enabled = $("#pc98").is(":checked");
         settings.windowsEnabled = $("#windows").is(":checked");
         settings.maleEnabled = $("#male").is(":checked");
-
-        for (i in maleCharacters) {
-            $("#" + maleCharacters[i]).css("display", settings.maleEnabled ? "inline-block" : "none");
-        }
+        settings.themesEnabled = $("#themes").is(":checked");
+        toggleMale();
+        toggleThemes();
     }
 
     settings[settings.sort].tierListName = $("#tier_list_name_menu").val().replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
@@ -1797,6 +1811,7 @@ function eraseAllConfirmed() {
         "pc98Enabled": true,
         "windowsEnabled": true,
         "maleEnabled": true,
+        "themesEnabled": false,
         "sort": tmp
     };
     localStorage.removeItem("tiers");
@@ -2118,6 +2133,9 @@ function loadItems() {
         } else if (settings.sort == "shots" && !settings.shotCategories[categoryName].enabled) {
             $("#" + categoryName).css("display", "none");
         }
+
+        toggleMale();
+        toggleThemes();
     }
 }
 
@@ -2169,6 +2187,7 @@ function loadSettingsFromStorage() {
         settings.pc98Enabled = settingsData.pc98Enabled;
         settings.windowsEnabled = settingsData.windowsEnabled;
         settings.maleEnabled = settingsData.maleEnabled;
+        settings.themesEnabled = (settingsData.themesEnabled ? settingsData.themesEnabled : false);
         settings.sort = settingsData.sort;
     } else {
         for (category in settingsData) {
