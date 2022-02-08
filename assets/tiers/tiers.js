@@ -1715,7 +1715,7 @@ function toggleTierView() {
 }
 
 function togglePickerSize(load) {
-    smallPicker = !smallPicker;
+    smallPicker = (load ? true : !smallPicker);
     $("#wrap").css("width", smallPicker ? "65%" : "45%");
     $("#characters").css("width", smallPicker ? "31%" : "51%");
     $("#toggle_picker").val(smallPicker ? "Large Picker" : "Small Picker");
@@ -1726,7 +1726,7 @@ function togglePickerSize(load) {
         delete settings.picker;
     }
 
-    if (onLoad) {
+    if (!load) {
         saveConfirmation({data: {noMenu: true}});
     }
 
