@@ -1714,7 +1714,7 @@ function toggleTierView() {
     $("body").css("background-size", tierView ? "default" : "cover");
 }
 
-function togglePickerSize() {
+function togglePickerSize(load) {
     smallPicker = !smallPicker;
     $("#wrap").css("width", smallPicker ? "65%" : "45%");
     $("#characters").css("width", smallPicker ? "31%" : "51%");
@@ -1726,7 +1726,10 @@ function togglePickerSize() {
         delete settings.picker;
     }
 
-    saveConfirmation({data: {noMenu: true}});
+    if (onLoad) {
+        saveConfirmation({data: {noMenu: true}});
+    }
+
     printMessage("");
 }
 
@@ -2181,7 +2184,7 @@ function loadSettingsFromStorage() {
         }
 
         if (settingsData.picker && settingsData.picker == "small") {
-            togglePickerSize();
+            togglePickerSize(true);
         }
 
         settings.pc98Enabled = settingsData.pc98Enabled;
