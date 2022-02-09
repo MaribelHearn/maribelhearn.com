@@ -1714,8 +1714,8 @@ function toggleTierView() {
     $("body").css("background-size", tierView ? "default" : "cover");
 }
 
-function togglePickerSize(load) {
-    smallPicker = (load ? true : !smallPicker);
+function togglePickerSize(event) {
+    smallPicker = (event && event.data && event.data.load ? true : !smallPicker);
     $("#wrap").css("width", smallPicker ? "65%" : "45%");
     $("#characters").css("width", smallPicker ? "31%" : "51%");
     $("#toggle_picker").val(smallPicker ? "Large Picker" : "Small Picker");
@@ -1726,7 +1726,7 @@ function togglePickerSize(load) {
         delete settings.picker;
     }
 
-    if (!load) {
+    if (!event || !event.data || !event.data.load) {
         saveConfirmation({data: {noMenu: true}});
     }
 
@@ -1840,6 +1840,18 @@ function modalEraseSingle() {
         addTier({data: {tierName: defaultTiers[i]}});
     }
 
+    settings[settings.sort].tierListName = "";
+    settings[settings.sort].tierListColour = defaultColour;
+    settings[settings.sort].tierHeaderWidth = defaultWidth;
+    settings[settings.sort].tierHeaderFontSize = defaultSize;
+    $("#tier_list_caption").html("");
+    $(".tier_content").css("background-color", defaultColour);
+    $(".tier_header").css("max-width", defaultWidth + "px");
+    $(".tier_header").css("font-size", defaultSize + "px");
+    $(".tier_header").css("width", defaultWidth + "px");
+    unsavedChanges = false;
+    saveTiersData();
+    printMessage("<strong class='confirmation'>Reset the current tier list and its settings to their default states!</strong>");
     emptyModal();
 }
 
@@ -2184,7 +2196,7 @@ function loadSettingsFromStorage() {
         }
 
         if (settingsData.picker && settingsData.picker == "small") {
-            togglePickerSize(true);
+            togglePickerSize({data: {load: true}});
         }
 
         settings.pc98Enabled = settingsData.pc98Enabled;
