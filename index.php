@@ -20,8 +20,8 @@
     } else {
         unset($_SESSION['subpage']);
     }
-    $page_path = 'assets/' . $page . '/' . $page . '.php';
     $status_code = empty($_GET['error']) ? '' : $_GET['error'];
+    $page_path = 'assets/%dir/' . $page . '/' . $page . '.php'; // without subdir
     $page = redirect($page, $page_path, $_SERVER['REQUEST_URI'], $status_code);
     hit($page, $status_code);
     $lc_values = set_lang_cookie();
@@ -29,12 +29,14 @@
     $notation = $lc_values->notation;
     $locale = $lang . '.UTF-8';
     $page = preg_replace('/\//', '', $page);
-    $json = file_get_contents('assets/' . $page . '/' . $page . '.json');
-    $data = (object) json_decode($json, true);
     $use_index = array('index', 'about', 'credits', 'privacy', 'error');
+    $dir = directory($page, $use_index);
+    $page_path = 'assets/' . $dir . '/' . $page . '/' . $page . '.php';
+    $json = file_get_contents(str_replace('.php', '.json', $page_path));
+    $data = (object) json_decode($json, true);
     $css_js_file = in_array($page, $use_index) ? 'index' : $page;
     $has_mobile_sheet = file_exists('assets/' . $css_js_file . '/' . (in_array($page, $use_index) ? 'main' : $page) . '_mobile.css');
-    $favicon_ext = file_exists('assets/' . $page . '/'. $page . '.ico') ? '.ico' : '.png';
+    $favicon_ext = file_exists('assets/' . $dir . '/' . $page . '/'. $page . '.ico') ? '.ico' : '.png';
     $favicon = 'assets/' . $page . '/' . $page . $favicon_ext;
     if ($has_mobile_sheet) {
         require_once 'assets/shared/mobile_detect.php';
@@ -45,7 +47,7 @@
     }
     $css_href = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/shared/css_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile;
     $js_href = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/shared/js_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile;
-    $favicon_dir = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . (!in_array($page, $use_index) ? 'assets/' . $page : '');
+    $favicon_dir = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . (!in_array($page, $use_index) ? 'assets/' . $dir . '/' . $page : '');
     $bg_pos = background_position($page);
     $file_upload = handle_file_upload();
     if (!empty($_GET['theme'])) {
@@ -76,7 +78,7 @@
             echo '<meta name="og:title" content="' . $data->title . '">' .
             '<meta name="og:url" content="https://maribelhearn.com/' . $url . '">' .
             '<meta name="og:description" content="' . $data->description . '">' .
-            '<meta name="og:image" content="https://maribelhearn.com/assets/' . $page . '/' . $page . '_og.jpg">' .
+            '<meta name="og:image" content="https://maribelhearn.com/assets/' . $dir . '/' . $page . '/' . $page . '_og.jpg">' .
             '<meta property="og:image:width" content="500"><meta property="og:image:height" content="256">';
         } ?>
         <link rel='preload' type='font/woff2' href='<?php echo $page == 'error' ? 'https://maribelhearn.com/' : '/' ?>assets/shared/fonts/Felipa-Regular.woff2' as='font' crossorigin>
@@ -90,9 +92,9 @@
 
     <body>
         <?php if ($page != 'tiers') { echo '<nav data-html2canvas-ignore><div id="nav" class="wrap">' . navbar($page) . '</div></nav>'; } ?>
-        <main><?php if ($page == 'error') { include_once 'assets/error/error.php'; } else { include_once $page_path; } ?></main>
+        <main><?php if ($page == 'error') { include_once 'assets/main/error/error.php'; } else { include_once $page_path; } ?></main>
         <?php if (!$is_mobile || $page != 'tiers') {
-            echo '<script nonce="' . file_get_contents('.stats/nonce') . '" defer>document.body.style.background="url(\'' . ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/' . $css_js_file . '/' . $css_js_file . '.jpg\') ';
+            echo '<script nonce="' . file_get_contents('.stats/nonce') . '" defer>document.body.style.background="url(\'' . ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/' . $dir . '/' . $css_js_file . '/' . $css_js_file . '.jpg\') ';
             echo $bg_pos . ' no-repeat fixed";document.body.style.backgroundSize="cover"</script>';
             echo '<noscript><link rel="stylesheet" href="/assets/shared/noscript_bg.php?page=' . $css_js_file . '&pos=' . $bg_pos . '"></noscript>';
         }
