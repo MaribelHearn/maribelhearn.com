@@ -62,13 +62,13 @@
     }
     function format_image(string $country) {
         switch ($country) {
+            case 'Palestinian-Territory': return '';
             case 'United Arab Emirates': return '';
             case 'Antigua and Barbuda': return '';
             case 'Trinidad and Tobago': return '';
             case 'United Kingdom': return 'flag-';
             case 'French Polynesia': return '';
             case 'Aland Islands': return '';
-            case 'Palestine': return '';
             case 'Dominica': return '';
             case 'Estonia': return '';
             case 'Reunion': return '';
