@@ -8,12 +8,26 @@ if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')) {
 function is_localhost(string $addr) {
     return $addr == '::1' || $addr == '127.0.0.1' || substr($addr, 0, 8) == '192.168.';
 }
+function directory(string $page) {
+    $main = array('index', 'admin', 'about', 'credits', 'privacy', 'error');
+    $other = array('thvote', 'tiers', 'slots');
+    $personal = array('history', 'c67');
+    if (in_array($page, $main)) {
+        return 'main';
+    } else if (in_array($page, $other)) {
+        return 'other';
+    } else if (in_array($page, $personal)) {
+        return 'personal';
+    }
+    return 'games';
+}
 $min = (!is_localhost($_SERVER['REMOTE_ADDR']) ? '-min' : '');
 $sorttable = array('drc', 'fangame', 'gensokyo', 'lnn', 'royalflare', 'scoring', 'survival', 'thvote', 'wr');
 $jquery = array('drc', 'lnn', 'pofv', 'royalflare', 'scoring', 'slots', 'survival', 'tiers', 'twc', 'wr');
 $utils = array('drc', 'lnn', 'pofv', 'tiers', 'twc', 'wr');
 $canvas = array('slots', 'survival', 'tiers');
 $page = $_GET['page'];
+$dir = directory($page);
 $js = array();
 if (in_array($page, $canvas)) {
     array_push($js, 'js/html2canvas' . $min . '.js');
@@ -39,8 +53,8 @@ if ($page == 'tiers' && $_GET['mobile']) {
 } else {
     array_push($js, 'js/dark' . $min . '.js');
 }
-if (file_exists('../' . $page . '/' . $page . $min . '.js')) {
-    array_push($js, '../' . $page . '/' . $page . $min . '.js');
+if (file_exists('../' . $dir . '/' . $page . '/' . $page . $min . '.js')) {
+    array_push($js, '../' . $dir . '/' . $page . '/' . $page . $min . '.js');
 }
 foreach ($js as $js_file) {
     $js_content = file_get_contents($js_file);

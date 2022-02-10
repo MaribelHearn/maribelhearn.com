@@ -2,6 +2,18 @@
 function is_localhost(string $addr) {
     return $addr == '::1' || $addr == '127.0.0.1' || substr($addr, 0, 8) == '192.168.';
 }
+function directory(string $page, array $main) {
+    $other = array('thvote', 'tiers', 'slots');
+    $personal = array('history', 'c67');
+    if (in_array($page, $main)) {
+        return 'main';
+    } else if (in_array($page, $other)) {
+        return 'other';
+    } else if (in_array($page, $personal)) {
+        return 'personal';
+    }
+    return 'games';
+}
 function closest_page(string $url) {
     $min_distance = PHP_INT_MAX;
     foreach (glob('*/*/*') as $file) {
@@ -26,6 +38,13 @@ function redirect_to_closest(string $url) {
         }
     }
 }
+function page_exists(string $page_path) {
+    $main = str_replace('%dir', 'main', $page_path);
+    $games = str_replace('%dir', 'games', $page_path);
+    $other = str_replace('%dir', 'other', $page_path);
+    $personal = str_replace('%dir', 'personal', $page_path);
+    return file_exists($main) || file_exists($games) || file_exists($other) || file_exists($personal);
+}
 function redirect(string $page, string $page_path, string $request, string $error) {
     $aliases = (object) array('rf' => 'royalflare', 'surv' => 'survival', 'score' => 'scoring', 'poll' => 'thvote');
     $page_path = preg_split('/\?/', $page_path)[0];
@@ -34,7 +53,7 @@ function redirect(string $page, string $page_path, string $request, string $erro
         header('Location: ' . $location . $aliases->{$page} . '?redirect=' . $page);
         return $page;
     }
-    if (!file_exists($page_path) && $page != 'index' || !empty($error)) {
+    if (!page_exists($page_path) && $page != 'index' || !empty($error)) {
         $page = 'error';
         $url = substr($request, 1);
         $json = file_get_contents('assets/shared/json/admin.json');
@@ -331,7 +350,9 @@ function wrap_top() {
     if (empty($page)) {
         $page = 'index';
     }
-    $json = file_get_contents($page == 'admin' ? 'admin.json' : 'assets/' . $page . '/' . $page . '.json');
+    $use_index = array('index', 'about', 'credits', 'privacy', 'error');
+    $dir = directory($page, $use_index);
+    $json = file_get_contents($page == 'admin' ? 'admin.json' : 'assets/' . $dir . '/' . $page . '/' . $page . '.json');
     $data = (object) json_decode($json, true);
     if (in_array($page, $ja) || in_array($page, $zh) || in_array($page, $ru) || in_array($page, $de)) {
         echo '<div id="topbar">';
