@@ -196,7 +196,7 @@ tr:not(.west_tr):nth-child(even), tr.west_tr:nth-child(odd) {
     width: 11px;
     height: 11px;
     display: inline-block;
-    background-image: url('../wr/dl.png');
+    background-image: url('../games/wr/dl.png');
 }
 .head {
     content: '';
