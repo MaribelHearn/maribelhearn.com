@@ -2,14 +2,14 @@
 $extras = [
     'SoEW' => [2, 'Easy 1cc with all shottypes'],
     'LLS' => [4, 'Normal 1cc'],
-    'MS' => [5, 'Normal 1cc'],
+    'MS' => [5, 'Easy 1cc'],
     'EoSD' => [6, 'Normal 1cc'],
     'PCB (Extra)' => [7, 'Easy 1cc'],
     'PCB (Phantasm)' => [7, 'Extra 1cc <strong>AND</strong> 60 Spell Cards captured across all shottypes'],
     'IN' => [8, 'Easy FinalA clear <strong>AND</strong> Easy FinalB 1cc'],
     'PoFV' => [9, 'Easy 1cc with all characters'],
     'MoF' => [10, 'Normal 1cc'],
-    'SA' => [11, 'Normal 1cc'],
+    'SA' => [11, 'Normal 1cc*'],
     'UFO' => [12, 'Normal 1cc'],
     'GFW' => [12.8, 'Easy 1cc all routes'],
     'TD' => [13, 'Normal 1cc'],
@@ -35,3 +35,4 @@ $extras = [
         }
     ?>
 </table>
+<p>* SA (Touhou 11) has a bug where Extra is <em>locked</em> if you 1cc the game on Easy. This forces you to 1cc on Normal or higher again.</p>
