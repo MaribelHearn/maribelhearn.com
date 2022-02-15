@@ -62,6 +62,7 @@
     }
     function format_image(string $country) {
         switch ($country) {
+            case 'Saint Kitts and Nevis': return '';
             case 'Palestinian-Territory': return '';
             case 'United Arab Emirates': return '';
             case 'Antigua and Barbuda': return '';
