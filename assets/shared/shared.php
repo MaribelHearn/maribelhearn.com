@@ -216,7 +216,7 @@ function touhou_sites() {
     '<p><a href="https://wikiwiki.jp/thscorekg/">' .
     '<span class="icon kg_icon"></span>KG\'s Site</a></p>' .
     '<p><a href="https://gensakudan.com/">' .
-    '<span class="icon gsd_icon"></span>Team Gaijin Alex</a></p>' .
+    '<span class="icon gsd_icon"></span>Retrograde Road</a></p>' .
     '<p><a href="https://www.thspotify.moe/">' .
     '<span class="icon thspotify_icon"></span>Touhou Spotify Music</a></p>';
     //$navbar .= '<p><a href="https://zps-stg.github.io">' .
