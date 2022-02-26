@@ -4,59 +4,42 @@ var SPECIES = ["Human", "Magician", "Devil", "Ghost", "Yuki-onna", "Night sparro
     "Nue", "Daidarabotchi", "Yamabiko", "Zombie", "Gashadokuro", "Kirin", "Wanyuudou", "Katawa-guruma",
     "Zashiki-warashi", "Hobgoblin", "Enenra", "Mermaid", "Rokurokubi", "Amanojaku", "Baku", "Yamanba"],
     NUMBERS = ["None", "1", "2", "3", "4", "5+"],
-    NUMBER_OF_CHARS_FIRST = 81,
-    NUMBER_OF_CHARS = 164,
-    NUMBER_OF_LOCATIONS = 33,
-    WIDTH = 120,
+    OFFSET = -120,
+    ROW_SIZE = 9,
     NUMBER_OF_SLOTS = 9,
     MAX_TITLE_LENGTH = 30,
     slotTitles = ["You are a ...", "Best friend", "Hates you", "First kiss", "Has a crush on you",
     "Married to", "Honeymoon location", "No. of children", "Cockblocked by"],
     bannedChars = ['<', '>', '&'],
-    chars = {'1': {}, '2': {}},
-    locs = {},
     slots = [],
+    chars = [],
+    locations = [],
     speed = 100,
+    numberOfChars,
+    numberOfLocations,
     running;
 
 function isMobile() {
     return navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1;
 }
 
-function checkSpritesheet(max, slot) {
-    var charNum = slots[slot] / WIDTH;
-
-    if (charNum >= NUMBER_OF_CHARS_FIRST) {
-        $("#slot" + slot).addClass("charslot_2");
-        $("#slot" + slot).removeClass("charslot_1");
-        slots[slot] -= NUMBER_OF_CHARS_FIRST * WIDTH;
-        return 2;
-    } else {
-        $("#slot" + slot).addClass("charslot_1");
-        $("#slot" + slot).removeClass("charslot_2");
-        return 1;
-    }
-}
-
 function randomiseImage(max, slot, previous) {
-    var spritesheet;
+    var x, y;
 
-    slots[slot] = Math.floor(Math.random() * (max - 1)) * WIDTH;
+    slots[slot] = Math.floor(Math.random() * (max - 1));
 
     if (slots[slot] == previous) {
-        slots[slot] += (slots[slot] == WIDTH * (max - 1) ? -1 * WIDTH : WIDTH);
+        slots[slot] = (slots[slot] + 1) % max;
     }
 
-    if (max == NUMBER_OF_CHARS) {
-        spritesheet = checkSpritesheet(max, slot);
-    }
+    x = (slots[slot] % ROW_SIZE) * OFFSET;
+    y = Math.floor(slots[slot] / ROW_SIZE) * OFFSET;
+    $("#slot" + slot).css("background-position", x + "px " + y + "px");
 
-    $("#slot" + slot).css("background-position", "-" + slots[slot] + "px 0");
-
-    if (max == NUMBER_OF_CHARS) {
-        $("#slot" + slot).html("<div id='text" + slot + "' class='name'>" + chars[spritesheet][slots[slot]] + "</div>");
+    if (max == numberOfChars) {
+        $("#slot" + slot).html("<div id='text" + slot + "' class='name'>" + chars[slots[slot]] + "</div>");
     } else {
-        $("#slot" + slot).html("<div id='text" + slot + "' class='name'>" + locs[slots[slot]] + "</div>");
+        $("#slot" + slot).html("<div id='text" + slot + "' class='name'>" + locations[slots[slot]] + "</div>");
     }
 }
 
@@ -79,11 +62,11 @@ function tick() {
         if (slot === 0) {
             randomiseArray(SPECIES, slot, previous);
         } else if (slot == 6) {
-            randomiseImage(NUMBER_OF_LOCATIONS, slot, previous);
+            randomiseImage(numberOfLocations, slot, previous);
         } else if (slot == 7) {
             randomiseArray(NUMBERS, slot, previous);
         } else {
-            randomiseImage(NUMBER_OF_CHARS, slot, previous);
+            randomiseImage(numberOfChars, slot, previous);
         }
 
     }
@@ -262,21 +245,11 @@ function titleMenu(event) {
 }
 
 function loadCharsLocs() {
-    var tempChars1 = $("#chars1_load").children(), tempChars2 = $("#chars2_load").children(),
-        tempLocs = $("#locs_load").children(), i;
-
-    for (i = 0; i < tempChars1.length * WIDTH; i += WIDTH) {
-        chars['1'][i] = tempChars1[i / WIDTH].value;
-    }
-
-    for (i = 0; i < tempChars2.length * WIDTH; i += WIDTH) {
-        chars['2'][i] = tempChars2[i / WIDTH].value;
-    }
-
-    for (i = 0; i < tempLocs.length * WIDTH; i += WIDTH) {
-        locs[i] = tempLocs[i / WIDTH].value;
-    }
-    $("#chars1_load, #chars2_load, #locs_load").remove();
+    chars = $("#chars_load").val().split(',');
+    locations = $("#locations_load").val().split(',');
+    numberOfChars = chars.length;
+    numberOfLocations = locations.length;
+    $("#chars_load, #locs_load").remove();
 }
 
 $(document).ready(function () {

@@ -16,8 +16,8 @@
         </tr>
         <tr>
             <td id='slot0'></td>
-            <td id='slot1' class='slot charslot_1'></td>
-            <td id='slot2' class='slot charslot_1'></td>
+            <td id='slot1' class='slot charslot'></td>
+            <td id='slot2' class='slot charslot'></td>
         </tr>
         <tr>
             <td id='title3' class='title'>First kiss</td>
@@ -25,9 +25,9 @@
             <td id='title5' class='title'>Married to</td>
         </tr>
         <tr>
-            <td id='slot3' class='slot charslot_1'></td>
-            <td id='slot4' class='slot charslot_1'></td>
-            <td id='slot5' class='slot charslot_1'></td>
+            <td id='slot3' class='slot charslot'></td>
+            <td id='slot4' class='slot charslot'></td>
+            <td id='slot5' class='slot charslot'></td>
         </tr>
         <tr>
             <td id='title6' class='title'>Honeymoon location</td>
@@ -37,7 +37,7 @@
         <tr>
             <td id='slot6' class='slot locslot'></td>
             <td id='slot7'></td>
-            <td id='slot8' class='slot charslot_1'></td>
+            <td id='slot8' class='slot charslot'></td>
         </tr>
     </table>
     <div id='bottom' data-html2canvas-ignore>
@@ -46,20 +46,11 @@
     </div>
     <?php
         $json = file_get_contents('assets/other/slots/json/charpos.json');
-        $chars = json_decode($json, true);
-        $json = file_get_contents('assets/other/slots/json/locs.json');
-        $locs = json_decode($json, true);
-        foreach ($chars as $key => $array) {
-            echo '<div id="chars' . $key . '_load" data-html2canvas-ignore>';
-            foreach ($array as $key => $name) {
-                echo '<input id="' . $key . '" type="hidden" value="' . $name . '">';
-            }
-        }
-        echo '</div><div id="locs_load" data-html2canvas-ignore>';
-        foreach ($locs as $key => $name) {
-            echo '<input id="' . $key . '" type="hidden" value="' . $name . '">';
-        }
-        echo '</div>';
+        $chars = implode(',', json_decode($json, true));
+        $json = file_get_contents('assets/other/slots/json/locations.json');
+        $locations = implode(',', json_decode($json, true));
+        echo '<input id="chars_load" type="hidden" value="' . $chars . '" data-html2canvas-ignore>';
+        echo '<input id="locations_load" type="hidden" value="' . $locations . '" data-html2canvas-ignore>';
     ?>
 </div>
 <div id='modal' data-html2canvas-ignore>
