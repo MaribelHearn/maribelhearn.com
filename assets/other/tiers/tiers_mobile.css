@@ -32,23 +32,14 @@ input[type=button]:not(.button_bottom) {
     width: 60px;
     height: 60px;
 }
-.list_characters1, .tiered_characters1 {
-    background-image: url('../shared/spritesheets/characters_sheet60x60_1.png');
-}
-.list_characters2, .tiered_characters2 {
-    background-image: url('../shared/spritesheets/characters_sheet60x60_2.png');
-}
-.list_characters3, .tiered_characters3 {
-    background-image: url('../shared/spritesheets/characters_sheet60x60_3.png');
+.list_characters, .tiered_characters {
+    background-image: url('../shared/spritesheets/characters_sheet60x60.png');
 }
 .list_works, .tiered_works {
     background-image: url('../shared/spritesheets/works_sheet60x60.png');
 }
-.list_shots1, .tiered_shots1 {
-    background-image: url('../shared/spritesheets/shots_sheet60x60_1.png');
-}
-.list_shots2, .tiered_shots2 {
-    background-image: url('../shared/spritesheets/shots_sheet60x60_2.png');
+.list_shots, .tiered_shots {
+    background-image: url('../shared/spritesheets/shots_sheet60x60.png');
 }
 #wrap {
     top: 5px;

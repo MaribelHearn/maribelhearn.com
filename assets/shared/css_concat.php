@@ -28,11 +28,7 @@ if ($_GET['mobile']) {
     array_push($css, '../' . $dir . '/' . $page . '/' . ($page == 'index' ? 'main' : $page) . '_mobile' . $min . '.css');
 }
 if ($page == 'tiers') {
-    if ($_GET['mobile']) {
-        array_push($css, '../other/tiers/sprites_mobile' . $min . '.css');
-    } else {
-        array_push($css, '../other/tiers/sprites' . $min . '.css');
-    }
+    include_once 'sprite_gen.php';
 }
 if (isset($_COOKIE['theme']) && $page != 'tiers') {
     if ($page == 'error') {

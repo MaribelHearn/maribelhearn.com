@@ -50,25 +50,15 @@ li {
     cursor: pointer;
     display: inline-block;
 }
-.list_characters1 {
+.list_characters {
     width: 80px;
     height: 80px;
-    background-image: url('../shared/spritesheets/characters_sheet80x80_1.png');
+    background-image: url('../shared/spritesheets/characters_sheet80x80.png');
 }
-.list_characters2 {
-    width: 80px;
-    height: 80px;
-    background-image: url('../shared/spritesheets/characters_sheet80x80_2.png');
-}
-.tiered_characters1 {
+.tiered_characters {
     width: 120px;
     height: 120px;
-    background-image: url('../shared/spritesheets/characters_sheet_1.png');
-}
-.tiered_characters2 {
-    width: 120px;
-    height: 120px;
-    background-image: url('../shared/spritesheets/characters_sheet_2.png');
+    background-image: url('../shared/spritesheets/characters_sheet.png');
 }
 .list_works {
     width: 80px;

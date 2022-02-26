@@ -61,21 +61,12 @@ var MAX_NUMBER_OF_TIERS = 100,
         "sort": "characters"
     },
     windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "Spinoff"],
-    secondSheet = ["SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "Spinoff", "Manga", "CD"],
-    secondSheetMobile = ["IN", "PoFV", "MoF", "SA", "UFO", "TD"],
-    thirdSheet = ["DDC", "LoLK", "HSiFS", "WBaWC", "UM", "Manga", "CD"],
-    secondSheetShots = ["LoLK", "HSiFS", "WBaWC", "UM", "SoEW", "PoDD", "LLS", "MS"],
     spinoffs = ["IaMP", "SWR", "Soku", "DS", "GFW", "HM", "ULiL", "AoCF"],
-    exceptions = ["SuikaIbuki", "IkuNagae", "TenshiHinanawi"],
-    exceptionsMobile = ["YukariYakumo", "YuyukoSaigyouji", "SuikaIbuki", "IkuNagae", "TenshiHinanawi", "Hisoutensoku",
-            "HatateHimekaidou", "SunnyMilk", "LunaChild", "StarSapphire", "HatanoKokoro"],
-    exceptionsThird = ["SumirekoUsami", "JoonYorigami", "ShionYorigami", "YuumaToutetsu"],
-    exceptionsShots = ["DDCSakuyaA", "DDCSakuyaB", "PoFVMerlin", "PoFVLunasa"],
     maleCharacters = ["SinGyokuM", "Genjii", "Unzan", "RinnosukeMorichika", "FortuneTeller"],
     themeDuplicates = ["FiveMagicStones", "MarisaPC-98LLS", "YuukaPC-98Stage5", "YukiandMai", "AlicePC-98Extra", // iCiel Gotham Ultra 24
-            "YuyukoSaigyoujiResurrectionButterfly", "KaguyaHouraisanLastSpells", "YuyukoSaigyoujiTD", "OkinaMataraExtra"],
+            "YuyukoSaigyoujiResurrectionButterfly", "KaguyaHouraisanLastSpells", "YuyukoSaigyoujiTD", "OkinaMataraExtra", "MarisaKirisameGFW"],
     pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"],
-    tieredClasses = ["tiered_characters1", "tiered_characters2", "tiered_characters3", "tiered_works", "tiered_shots"],
+    tieredClasses = ["tiered_characters", "tiered_works", "tiered_shots"],
     tiers = {},
     gameTiers = {},
     shotTiers = {},
@@ -127,30 +118,6 @@ function getCategoryOf(item) {
     }
 
     return false;
-}
-
-function getSpritesheetOf(item, category) {
-    if (settings.sort == "works" || settings.sort == "shots" && !isMobile()) {
-        return "";
-    }
-
-    if (!category) {
-        category = getCategoryOf(item);
-    }
-
-    if (themeDuplicates.includes(item.removeSpaces())) {
-        return isMobile() ? 3 : 2;
-    } else if (isMobile() && settings.sort == "characters" && (thirdSheet.contains(category) || exceptionsThird.contains(item.removeSpaces()))) {
-        return 3;
-    } else if (isMobile() && settings.sort == "characters" && (secondSheetMobile.contains(category) || exceptionsMobile.contains(item.removeSpaces()))) {
-        return 2;
-    } else if (settings.sort == "characters" && secondSheet.contains(category) && !exceptions.contains(item.removeSpaces())) {
-        return 2;
-    } else if (settings.sort == "shots" && (secondSheetShots.contains(category) || exceptionsShots.contains(item.removeSpaces()))) {
-        return 2;
-    }
-
-    return 1;
 }
 
 function getCurrentCategories() {
@@ -321,8 +288,8 @@ function reloadTiers() {
                 item = "Mai PC-98";
             }
 
-            $("#" + item).removeClass("list_" + settings.sort + getSpritesheetOf(item));
-            $("#" + item).addClass("tiered_" + settings.sort + getSpritesheetOf(item));
+            $("#" + item).removeClass("list_" + settings.sort);
+            $("#" + item).addClass("tiered_" + settings.sort);
             id = "tier" + tierNum + "_" + i;
             $("#tier" + tierNum).append("<span id='" + id + "'></span>");
             $("#" + id).html($("#" + item));
@@ -422,8 +389,8 @@ function addToTier(item, tierNum, pos, noDisplay) {
 
     printMessage("");
     $("#" + item).removeClass("selected");
-    $("#" + item).removeClass("list_" + settings.sort + getSpritesheetOf(item, categoryName));
-    $("#" + item).addClass("tiered_" + settings.sort + getSpritesheetOf(item, categoryName));
+    $("#" + item).removeClass("list_" + settings.sort);
+    $("#" + item).addClass("tiered_" + settings.sort);
     $("#" + item).off("contextmenu");
 
     if (isMobile()) {
@@ -651,8 +618,8 @@ function removeFromTier(item, tierNum, multi, noDisplay) {
     }
 
     printMessage("");
-    $("#" + item).removeClass("tiered_" + settings.sort + getSpritesheetOf(item));
-    $("#" + item).addClass("list_" + settings.sort + getSpritesheetOf(item));
+    $("#" + item).removeClass("tiered_" + settings.sort);
+    $("#" + item).addClass("list_" + settings.sort);
     $("#" + item).off("contextmenu");
 
     if (isMobile()) {
@@ -2134,7 +2101,7 @@ function loadItems() {
         for (i in cats[categoryName].chars) {
             item = cats[categoryName].chars[i].replace("'", "");
             $("#" + categoryName).append("<span id='" + item.removeSpaces() +
-            "C'><span id='" + item.removeSpaces() + "' class='item list_" + settings.sort + getSpritesheetOf(item, categoryName) +
+            "C'><span id='" + item.removeSpaces() + "' class='item list_" + settings.sort +
             "' draggable='true' " + "alt='" + item + "' title='" + item + "'>");
             setPickerItemEvents(item);
         }
