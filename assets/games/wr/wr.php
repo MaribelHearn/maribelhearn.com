@@ -152,8 +152,11 @@
                             $score = number_format($shots[$shot][0], 0, '.', ',');
                             if (file_exists(replay_path($game, $diff, $shot))) {
                                 $score = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score . '</a>';
+                                echo '<td rowspan="4">' . $score . '<span class="dl_icon"></span>';
+                            } else {
+                                echo '<td rowspan="4">' . $score;
                             }
-                            echo '<td rowspan="4">' . $score . '<br>by <em>' . $shots[$shot][1] .
+                            echo '<br>by <em>' . $shots[$shot][1] .
                             '</em><span class="dimgrey"><br><span class="datestring_game"' .
                             '>' . date_tl($shots[$shot][2], $notation) . '</span></span></td>';
                         }
@@ -165,7 +168,7 @@
                             $score_text = number_format($score, 0, '.', ',');
                         }
                         if (file_exists(replay_path($game, $diff, $shot))) {
-                            $score_text = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score_text . '</a>';
+                            $score_text = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score_text . '<span class="dl_icon"></span></a>';
                         }
                         if ($score == $overall[num($game)] && $game != 'StB' && $game != 'DS') {
                             $score_text = '<strong>' . $score_text . '</strong>';
@@ -186,7 +189,7 @@
             if ($game == 'GFW') {
                 $score = number_format($obj['Extra']['-'][0], 0, '.', ',');
                 if (file_exists(replay_path($game, $diff, $shot))) {
-                    $score = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score . '</a>';
+                    $score = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score . '<span class="dl_icon"></span></a>';
                 }
                 echo '<tr><td>Extra</td><td colspan="4">' . $score . '<br>by <em>' . $obj['Extra']['-'][1] .
                 '</em><span class="dimgrey"><br><span class="datestring_game">' . date_tl($obj['Extra']['-'][2], $notation) .
