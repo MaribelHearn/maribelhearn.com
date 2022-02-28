@@ -426,6 +426,7 @@ function showPlayerWRs(player) {
             $("#" + game + difficulty + "d").html(playerWRs.dates.join("<br>"));
             playerWRs.scores = [];
             playerWRs.replays = [];
+            playerWRs.dates = [];
         }
     }
 
