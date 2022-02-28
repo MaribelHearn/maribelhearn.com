@@ -11,6 +11,7 @@ $overall_player = array(0);
 $overall_diff = array(0);
 $overall_shottype = array(0);
 $overall_date = array(0);
+$overall_video = array(0);
 $missing_replays = array();
 $diff_max = array();
 $pl = array();
@@ -110,6 +111,7 @@ foreach ($wr as $game => $value) {
                 $overall_shottype[$num] = $shot;
                 $overall_player[$num] = $player;
                 $overall_date[$num] = $date;
+                $overall_video[$num] = $video;
             }
             if ($score > $diff_max[$game][$diff][0]) {
                 $diff_max[$game][$diff] = [$score, $player, $shot];

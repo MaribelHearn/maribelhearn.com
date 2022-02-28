@@ -51,10 +51,10 @@
             <input id='dates' type='checkbox'>
 	        <label id='label_dates' for='dates' class='dates'><?php echo _('Dates') ?></label>
         </p>
-        <!--<p>
+        <p>
             <input id='unverified' type='checkbox'>
 	        <label id='label_unverified' for='unverified' class='unverified'><?php echo _('Unverified Scores') ?></label>
-        </p>-->
+        </p>
     </div>
     <div id='overall'>
         <h2 class='overallrecords'><?php echo _('Overall Records') ?></h2>
@@ -67,6 +67,7 @@
                 <th class='general_header difficulty'><?php echo _('Difficulty') ?></th>
                 <th class='general_header shottype'><?php echo _('Shottype') ?></th>
                 <th class='general_header date'><?php echo _('Date') ?></th>
+                <th class='general_header replay'><?php echo _('Replay') ?></th>
             </tr>
             <?php
 				foreach ($wr as $game => $value) {
@@ -81,7 +82,16 @@
                     echo '<td id="' . $game . 'overall1">' . ($overall[$num] == 0 ? '-' : $overall_player[$num]) . ($game == 'WBaWC' || $game == 'UM' ? '*' : '') . '</td>';
 					echo '<td id="' . $game . 'overall2">' . ($overall[$num] == 0 ? '-' : $overall_diff[$num]) . '</td>';
 					echo '<td id="' . $game . 'overall3">' . ($overall[$num] == 0 ? '-' : _($overall_shottype[$num])) . '</td>';
-					echo '<td id="' . $game . 'overall4" class="datestring">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $notation)) . '</td></tr>';
+					echo '<td id="' . $game . 'overall4" class="datestring">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $notation)) . '</td>';
+                    if (file_exists(replay_path($game, $overall_diff[$num], $overall_shottype[$num]))) {
+                        $path = replay_path($game, $overall_diff[$num], $overall_shottype[$num]);
+                        $replay = '<a href="' . $path . '">' . substr($path, 8) . '</a>';
+                    } else if (!empty($overall[$video])) {
+						$replay = '<a href="' . $overall[$video] . '">YouTube link</a>';
+					} else {
+                        $replay = '-';
+                    }
+					echo '<td id="' . $game . 'overall5">' . $replay . '</td></tr>';
 				}
 			?>
         </table>
