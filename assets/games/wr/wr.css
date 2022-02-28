@@ -242,6 +242,9 @@ tr:not(.west_tr):nth-child(even), tr.west_tr:nth-child(odd) {
 #checkboxes, #ranking {
     margin-top: 15px;
 }
+#checkboxes {
+    padding-right: 3px;
+}
 #ranking.sortable tbody {
     counter-reset: sortabletablescope;
 }

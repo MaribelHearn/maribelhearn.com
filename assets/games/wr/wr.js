@@ -52,10 +52,11 @@ function toggleDates(event) {
     $(".datestring, .datestring_game").css("display", datesEnabled ? "table-cell" : "none");
 }
 
-/*function toggleUnverified() {
+function toggleUnverified() {
     unverifiedEnabled = !unverifiedEnabled;
     unverifiedEnabled ? localStorage.setItem("unverifiedEnabled", true) : localStorage.removeItem("unverifiedEnabled");
-}*/
+    reloadTable();
+}
 
 function disableDates() {
     toggleDates({data: {alreadyDisabled: true}});
@@ -105,7 +106,11 @@ function percentageClass(percentage) {
     }
 }
 
-function showWesternRecords(compareWRs, game) {
+function formatUnverified(score) {
+    return "<span class='unver_container'><span class='unver'>" + score + "</span><span class='tooltip'>Unverified</span></span>";
+}
+
+function showWesternRecords(compareWRs, unverifiedObj, game) {
     var difficulty, percentage, west, westPlayer, westShottype, world, worldPlayer, worldShottype;
 
     if (game == "StB" || game == "DS") {
@@ -129,7 +134,7 @@ function showWesternRecords(compareWRs, game) {
         worldShottype = compareWRs[difficulty][2];
         percentage = (west / world * 100).toFixed(2);
         $("#west_tbody").append("<tr class='west_tr'><td colspan='3'>" + difficulty + "</td></tr>");
-        $("#west_tbody").append("<tr class='west_tr'><td>" + sep(world) + "<br>by <em>" + worldPlayer +
+        $("#west_tbody").append("<tr class='west_tr'><td>" + (unverifiedObj.hasOwnProperty(game + difficulty + worldShottype) ? formatUnverified(sep(world)) : sep(world)) + "<br>by <em>" + worldPlayer +
         "</em>" + (worldShottype != '-' ? "<br>(<span class='" + worldShottype + "'>" + worldShottype + "</span>)" : "") +
         "</td><td>" + sep(west) + "<br>by <em>" + westPlayer + "</em>" + (westShottype != '-' ? "<br>(<span class='" + westShottype +
         "'>" + westShottype + "</span>)" : "") + "</td><td class='" + percentageClass(percentage) +
@@ -218,6 +223,14 @@ function showWRs(event) {
         return;
     }
 
+    if (unverifiedEnabled && !unverifiedScores) {
+        $.get("assets/shared/json/unverified.json", function (data) {
+            unverifiedScores = data;
+            showWRs({data: {game: game, seasonSwitch: seasonSwitch}});
+        }, "json");
+        return;
+    }
+
     if (game == selected && !seasonSwitch) {
         $("#list").html("");
         $("#" + game + "_image").css("border", $("#" + game + "_image").hasClass("cover98") ? "1px solid black" : "none");
@@ -225,8 +238,8 @@ function showWRs(event) {
         return;
     }
 
-    var overall = {}, bestShot = {}, compareWRs = {}, shottypes = [], max = 0, diffKey = "Easy", difficulty,
-    shottype, character, season, wr, score, player, replay, date, text, sepScore, bestShotMax;
+    var overall = {}, bestShot = {}, compareWRs = {}, unverifiedObj = {}, shottypes = [], max = 0, diffKey = "Easy", difficulty,
+    shottype, character, season, wr, score, player, replay, date, text, sepScore, bestShotMax, unverifiedScore;
 
     $("#list").html("<p id='fullname'></p><p id='seasontoggle'><input id='seasons' type='checkbox'>" +
     "<label id='label_seasons' class='Seasons' for='seasons'></label>" +
@@ -276,15 +289,6 @@ function showWRs(event) {
                 }
             }
 
-            if (score > max) {
-                overall.id = "#" + game + difficulty + shottype;
-                overall.player = player;
-                overall.difficulty = difficulty;
-                overall.season = season;
-                overall.date = date;
-                max = score;
-            }
-
             if (score > bestShotMax) {
                 bestShot.id = "#" + game + difficulty + shottype;
                 bestShot.player = player;
@@ -294,12 +298,61 @@ function showWRs(event) {
                 bestShot.replay = replay;
                 bestShot.date = date;
                 bestShotMax = score;
+
+                if (unverifiedEnabled && unverifiedScores[game][difficulty][shottype][0] > score) {
+                    unverifiedObj[game + difficulty + shottype] = unverifiedScores[game][difficulty][shottype];
+                    unverifiedScore = unverifiedObj[game + difficulty + shottype];
+                    score = unverifiedScore[0];
+                    player = unverifiedScore[1];
+                    date = unverifiedScore[2];
+                    bestShot.player = player;
+                    bestShot.max = score;
+                    bestShot.date = date;
+                    bestShot.replay = "";
+                    bestShotMax = score;
+                }
+            }
+
+            if (score > max) {
+                overall.id = "#" + game + difficulty + shottype;
+                overall.player = player;
+                overall.difficulty = difficulty;
+                overall.season = season;
+                overall.date = date;
+                max = score;
+
+                if (unverifiedEnabled && unverifiedScores[game][difficulty][shottype][0] > score) {
+                    unverifiedObj[game + difficulty + shottype] = unverifiedScores[game][difficulty][shottype];
+                    unverifiedScore = unverifiedObj[game + difficulty + shottype];
+                    score = unverifiedScore[0];
+                    player = unverifiedScore[1];
+                    date = unverifiedScore[2];
+                    overall.player = player;
+                    overall.date = date;
+                    max = score;
+                }
+            }
+
+            if (unverifiedEnabled && unverifiedScores[game][difficulty][shottype][0] > score) {
+                unverifiedObj[game + difficulty + shottype] = unverifiedScores[game][difficulty][shottype];
+                unverifiedScore = unverifiedObj[game + difficulty + shottype];
+                score = unverifiedScore[0];
+                player = unverifiedScore[1];
+                date = unverifiedScore[2];
+            } else {
+                unverifiedScore = false;
             }
 
             sepScore = ((game == "WBaWC" || game == "UM") && score > MAX_SCORE ? "<span class='cs'>9,999,999,990" +
             "<span class='tooltip truescore'>" + sep(score) + "</span></span>" : sep(score));
-            text = (replay === "" ? sepScore : "<a class='replay' href='" + replay + "'>" + sepScore + "<span class='dl_icon'></span></a>") +
-            "<br>by <em>" + player + "</em>" + (date && datesEnabled ? "<span class='dimgrey'><br>" +
+
+            text = (replay === "" ? sepScore : "<a class='replay' href='" + replay + "'>" + sepScore + "<span class='dl_icon'></span></a>");
+
+            if (unverifiedObj.hasOwnProperty(game + difficulty + shottype)) {
+                text = "<span class='unver_container'><span class='unver'>" + sepScore + "</span><span class='tooltip'>Unverified</span></span>";
+            }
+
+            text += "<br>by <em>" + player + "</em>" + (date && datesEnabled ? "<span class='dimgrey'><br>" +
             "<span class='datestring_game'>" + date + "</span></span>" : "");
             $("#" + game + difficulty + shottype).html(score > 0 ? text : '-');
 
@@ -312,9 +365,18 @@ function showWRs(event) {
         if (bestShotMax > 0) {
             sepScore = ((game == "WBaWC" || game == "UM") && bestShotMax > MAX_SCORE ? "<span class='cs'>9,999,999,990" +
             "<span class='tooltip truescore'>" + sep(bestShotMax) + "</span></span>" : sep(bestShotMax));
-            $(bestShot.id).html((bestShot.replay === "" ? "<u>" + sepScore + "</u>" : "<u><a class='replay' href='" + bestShot.replay +
-            "'>" + sepScore + "<span class='dl_icon'></span></a></u>") + "<br>by <em>" + bestShot.player +
-            "</em>" + (bestShot.date && datesEnabled ? "<span class='dimgrey'><br><span class='datestring_game'>" + bestShot.date + "</span></span>" : ""));
+
+            text = (bestShot.replay === "" ? "<u>" + sepScore + "</u>" : "<u><a class='replay' href='" + bestShot.replay +
+            "'>" + sepScore + "<span class='dl_icon'></span></a></u>");
+
+            if (unverifiedObj.hasOwnProperty(game + difficulty + bestShot.shottype)) {
+                text = "<span class='unver_container'><span class='unver'><u>" + sepScore + "</u></span><span class='tooltip'>Unverified</span></span>";
+            }
+
+            text += "<br>by <em>" + bestShot.player +
+            "</em>" + (bestShot.date && datesEnabled ? "<span class='dimgrey'><br><span class='datestring_game'>" + bestShot.date + "</span></span>" : "");
+
+            $(bestShot.id).html(text);
             compareWRs[difficulty] = [Math.min(bestShotMax, MAX_SCORE), bestShot.player, bestShot.shottype];
         }
 
@@ -336,7 +398,7 @@ function showWRs(event) {
         $(removeSeason(overall.id)).html($(removeSeason(overall.id)).html().replace("<u>", "<u><strong>").replace("</u>", "</strong></u>"));
     }
 
-    showWesternRecords(compareWRs, game);
+    showWesternRecords(compareWRs, unverifiedObj, game);
     generateTableText("wr", language);
     generateFullNames(language);
     generateShottypes(language);
@@ -463,14 +525,18 @@ function showPlayerWRs(player) {
     generateDates(false, false, playerSelected);
 }
 
+function reloadTable() {
+    if (selected !== "") {
+        var tmp = selected;
+
+        showWRs({data: {game: tmp, seasonSwitch: false}});
+        showWRs({data: {game: tmp, seasonSwitch: false}});
+    }
+}
+
 function updateOrientation() {
     if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) {
-        if (selected !== "") {
-            var tmp = selected;
-
-            showWRs({data: {game: tmp, seasonSwitch: false}});
-            showWRs({data: {game: tmp, seasonSwitch: false}});
-        }
+        reloadTable();
     }
 }
 
@@ -546,7 +612,7 @@ function setEventListeners() {
     $("#player").on("select", showPlayerWRs);
     $("body").on("resize", updateOrientation);
     $("#dates").on("click", {alreadyDisabled: false}, toggleDates);
-    //$("#unverified").on("click", toggleUnverified);
+    $("#unverified").on("click", toggleUnverified);
     $("#en-gb").on("click", {language: "en_US", notation: "DMY"}, setLanguage);
     $("#en-us").on("click", {language: "en_US", notation: "MDY"}, setLanguage);
     $("#jp").on("click", {language: "ja_JP", notation: "YMD"}, setLanguage);
@@ -570,7 +636,7 @@ $(document).ready(function () {
     missingReplays = $("#missing_replays").val();
     datesEnabled = localStorage.getItem("datesEnabled") ? true : false;
     seasonsEnabled = localStorage.getItem("seasonsEnabled") ? true : false;
-    //unverifiedEnabled = localStorage.getItem("unverifiedEnabled") ? true : false;
+    unverifiedEnabled = localStorage.getItem("unverifiedEnabled") ? true : false;
     $("#missing_replays").remove();
     setEventListeners();
     setAttributes();
@@ -597,7 +663,7 @@ $(document).ready(function () {
         $("#dates").prop("checked", true);
     }
 
-    /*if (unverifiedEnabled) {
+    if (unverifiedEnabled) {
         $("#unverified").prop("checked", true);
-    }*/
+    }
 });
