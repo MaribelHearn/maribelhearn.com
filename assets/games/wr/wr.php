@@ -86,8 +86,8 @@
                     if (file_exists(replay_path($game, $overall_diff[$num], $overall_shottype[$num]))) {
                         $path = replay_path($game, $overall_diff[$num], $overall_shottype[$num]);
                         $replay = '<a href="' . $path . '">' . substr($path, 8) . '</a>';
-                    } else if (!empty($overall[$video])) {
-						$replay = '<a href="' . $overall[$video] . '">YouTube link</a>';
+                    } else if (!empty($overall_video[$num])) {
+						$replay = '<a href="' . $overall_video[$num] . '">YouTube link</a>';
 					} else {
                         $replay = '-';
                     }
