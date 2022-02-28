@@ -426,7 +426,7 @@ function addPlayerWR(playerWRs, game, difficulty, shottype, isUnverified) {
 
     if (isUnverified) {
         score = sep(unverifiedScores[game][difficulty][shottype][0]);
-        date = sep(unverifiedScores[game][difficulty][shottype][2]);
+        date = unverifiedScores[game][difficulty][shottype][2];
     }
 
     playerWRs.dates.push("<span class='datestring_player'>" + date + "</span>");
