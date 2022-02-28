@@ -74,6 +74,9 @@ tr:not(.west_tr):nth-child(even), tr.west_tr:nth-child(odd) {
 .UMt th, .UMp, .UM {
     background-color: #23fcb1;
 }
+.unver {
+    color: darkred;
+}
 .border {
     border: 1px solid black;
     display: inline-block;
@@ -152,12 +155,12 @@ tr:not(.west_tr):nth-child(even), tr.west_tr:nth-child(odd) {
     color: #990099;
     font-weight: bold;
 }
-.cs {
+.cs, .unver_container {
     cursor: help;
     position: relative;
     border-bottom: 1px dotted black;
 }
-.cs .tooltip {
+.cs .tooltip, .unver_container .tooltip {
     left: 80%;
     margin-left: -60px;
 }
@@ -167,6 +170,9 @@ tr:not(.west_tr):nth-child(even), tr.west_tr:nth-child(odd) {
 .game_image .tooltip {
     left: 0%;
     margin-left: -60px;
+}
+.cs:hover .tooltip, .game_image:hover .tooltip, .unver_container:hover .tooltip {
+    visibility: visible;
 }
 .tooltip {
     font-weight: initial;
@@ -185,12 +191,6 @@ tr:not(.west_tr):nth-child(even), tr.west_tr:nth-child(odd) {
 }
 .truescores, .full_name {
     width: 300px;
-}
-.cs:hover .tooltip {
-    visibility: visible;
-}
-.game_image:hover .tooltip {
-    visibility: visible;
 }
 .dl_icon {
     width: 11px;

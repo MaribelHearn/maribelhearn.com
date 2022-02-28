@@ -51,6 +51,10 @@
             <input id='dates' type='checkbox'>
 	        <label id='label_dates' for='dates' class='dates'><?php echo _('Dates') ?></label>
         </p>
+        <!--<p>
+            <input id='unverified' type='checkbox'>
+	        <label id='label_unverified' for='unverified' class='unverified'><?php echo _('Unverified Scores') ?></label>
+        </p>-->
     </div>
     <div id='overall'>
         <h2 class='overallrecords'><?php echo _('Overall Records') ?></h2>
@@ -355,5 +359,5 @@
         </table>
     </div>
     <p id='back'><strong><a id='backtotop' href='#top'><?php echo _('Back to Top') ?></a></strong></p>
-	<?php echo '<input id="missingReplays" type="hidden" value="' . implode('', $missing_replays) . '">' ?>
+	<?php echo '<input id="missing_replays" type="hidden" value="' . implode('', $missing_replays) . '">' ?>
 </div>
