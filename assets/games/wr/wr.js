@@ -434,7 +434,7 @@ function addPlayerWR(playerWRs, game, difficulty, shottype, isUnverified) {
     if (replay) {
         playerWRs.scores.push(score + (shottype === "" ? "": " (<span class='" + shottype + "'>" + shottype + "</span>)"));
         playerWRs.replays.push("<a href='" + replay + "'>" + replay + "</a>");
-    } else if (gameAbbr(game) < 6 || missingReplays.includes(game + difficulty + shottype)) {
+    } else if (gameAbbr(game) < 6 || missingReplays.includes(game + difficulty + shottype) || isUnverified) {
         playerWRs.scores.push((isUnverified ? formatUnverified(score) : score) + (shottype === "" ? "": " (<span class='" + shottype + "'>" + shottype + "</span>)"));
         playerWRs.replays.push('-');
     } else {
