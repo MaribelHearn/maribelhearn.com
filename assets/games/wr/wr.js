@@ -241,11 +241,17 @@ function showWRs(event) {
     var overall = {}, bestShot = {}, compareWRs = {}, unverifiedObj = {}, shottypes = [], max = 0, diffKey = "Easy", difficulty,
     shottype, character, season, wr, score, player, replay, date, text, sepScore, bestShotMax, unverifiedScore;
 
-    $("#list").html("<p id='fullname'></p><p id='seasontoggle'><input id='seasons' type='checkbox'>" +
-    "<label id='label_seasons' class='Seasons' for='seasons'></label>" +
-    "</p><table id='table' class='sortable'><thead id='list_thead'></thead><tbody id='list_tbody'></tbody></table>" +
+    $("#list").html("<p id='fullname'></p>" +
+    "<p id='seasontoggle'><input id='seasons' type='checkbox'><label id='label_seasons' class='Seasons' for='seasons'></label></p>" +
+    "<p><input id='unverified' type='checkbox'><label id='label_unverified' for='unverified' class='unverified'>Unverified Scores</label></p>" +
+    "<table id='table' class='sortable'><thead id='list_thead'></thead><tbody id='list_tbody'></tbody></table>" +
     "<table><thead id='west_thead'></thead><tbody id='west_tbody'></tbody></table>");
     $("#seasons").on("click", toggleSeasons);
+    $("#unverified").on("click", toggleUnverified);
+
+    if (unverifiedEnabled) {
+        $("#unverified").prop("checked", true);
+    }
 
     if (game == 'StB' || game == 'DS') {
         diffKey = '1';
@@ -491,7 +497,6 @@ function showPlayerWRs(player) {
         for (difficulty in WRs[game]) {
             for (shottype in WRs[game][difficulty]) {
                 if (WRs[game][difficulty][shottype].includes(player)) {
-                    console.log("Adding " + game + difficulty + shottype + " WR");
                     playerWRs = addPlayerWR(playerWRs, game, difficulty, shottype, false);
                     sum += 1;
                 }
@@ -506,12 +511,11 @@ function showPlayerWRs(player) {
         }
     }
 
-    if (unverifiedEnabled && JSON.stringify(unverifiedScores).includes(player)) {
+    if (JSON.stringify(unverifiedScores).includes(player)) {
         for (game in unverifiedScores) {
             for (difficulty in unverifiedScores[game]) {
                 for (shottype in unverifiedScores[game][difficulty]) {
                     if (unverifiedScores[game][difficulty][shottype].includes(player)) {
-                        console.log("Adding " + game + difficulty + shottype + " Unverified Score");
                         playerWRs = addPlayerWR(playerWRs, game, difficulty, shottype, true);
                         sum += 1;
                     }
@@ -564,11 +568,6 @@ function reloadTable() {
 
         showWRs({data: {game: tmp, seasonSwitch: false}});
         showWRs({data: {game: tmp, seasonSwitch: false}});
-    }
-
-    if ($("#player").val() !== "") {
-        showPlayerWRs($("#player").val());
-        showPlayerWRs($("#player").val());
     }
 }
 
@@ -650,7 +649,6 @@ function setEventListeners() {
     $("#player").on("select", showPlayerWRs);
     $("body").on("resize", updateOrientation);
     $("#dates").on("click", {alreadyDisabled: false}, toggleDates);
-    $("#unverified").on("click", toggleUnverified);
     $("#en-gb").on("click", {language: "en_US", notation: "DMY"}, setLanguage);
     $("#en-us").on("click", {language: "en_US", notation: "MDY"}, setLanguage);
     $("#jp").on("click", {language: "ja_JP", notation: "YMD"}, setLanguage);
@@ -699,9 +697,5 @@ $(document).ready(function () {
         disableDates();
     } else {
         $("#dates").prop("checked", true);
-    }
-
-    if (unverifiedEnabled) {
-        $("#unverified").prop("checked", true);
     }
 });
