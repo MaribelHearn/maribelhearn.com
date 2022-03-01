@@ -218,7 +218,9 @@ function touhou_sites() {
     '<p><a href="https://gensakudan.com/">' .
     '<span class="icon gsd_icon"></span>Retrograde Road</a></p>' .
     '<p><a href="https://www.thspotify.moe/">' .
-    '<span class="icon thspotify_icon"></span>Touhou Spotify Music</a></p>';
+    '<span class="icon thspotify_icon"></span>Touhou Spotify Music</a></p>' .
+    '<p><a href="https://touhouworldcup.com">' .
+    '<span class="icon twc_icon"></span> Touhou World Cup</a></p>';
     //$navbar .= '<p><a href="https://zps-stg.github.io">' .
     //'<span class="icon zps_icon"></span>ZPS\'s Site</a></p>';
 }
