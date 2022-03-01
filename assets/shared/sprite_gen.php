@@ -39,6 +39,12 @@ for ($i = 0; $i < count($chars); $i++) {
     $picker_y = floor($i / $row_size) * -80;
     $tiered_x = ($i % $row_size) * -120;
     $tiered_y = floor($i / $row_size) * -120;
+    if ($_GET['mobile']) {
+        $picker_x = ($i % $row_size) * -60;
+        $picker_y = floor($i / $row_size) * -60;
+        $tiered_x = ($i % $row_size) * -60;
+        $tiered_y = floor($i / $row_size) * -60;
+    }
     echo '#' . $chars[$i] . '.list_characters{background-position:' . $picker_x . 'px ' . $picker_y . 'px}';
     echo '#' . $chars[$i] . '.tiered_characters{background-position:' . $tiered_x . 'px ' . $tiered_y . 'px}';
 }
@@ -47,6 +53,12 @@ for ($i = 0; $i < count($works); $i++) {
     $picker_y = floor($i / $works_row_size) * -80;
     $tiered_x = ($i % $works_row_size) * -120;
     $tiered_y = floor($i / $works_row_size) * -120;
+    if ($_GET['mobile']) {
+        $picker_x = ($i % $works_row_size) * -60;
+        $picker_y = floor($i / $works_row_size) * -60;
+        $tiered_x = ($i % $works_row_size) * -60;
+        $tiered_y = floor($i / $works_row_size) * -60;
+    }
     echo '#' . $works[$i] . '.list_works{background-position:' . $picker_x . 'px ' . $picker_y . 'px}';
     echo '#' . $works[$i] . '.tiered_works{background-position:' . $tiered_x . 'px ' . $tiered_y . 'px}';
 }
@@ -55,6 +67,12 @@ for ($i = 0; $i < count($shots); $i++) {
     $picker_y = floor($i / $row_size) * -80;
     $tiered_x = ($i % $row_size) * -120;
     $tiered_y = floor($i / $row_size) * -120;
+    if ($_GET['mobile']) {
+        $picker_x = ($i % $row_size) * -60;
+        $picker_y = floor($i / $row_size) * -60;
+        $tiered_x = ($i % $row_size) * -60;
+        $tiered_y = floor($i / $row_size) * -60;
+    }
     echo '#' . $shots[$i] . '.list_shots{background-position:' . $picker_x . 'px ' . $picker_y . 'px}';
     echo '#' . $shots[$i] . '.tiered_shots{background-position:' . $tiered_x . 'px ' . $tiered_y . 'px}';
 }
