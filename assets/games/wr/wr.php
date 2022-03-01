@@ -13,6 +13,9 @@
     <p id='noreup'><?php
         echo _('The replays provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.');
     ?></p>
+    <p id='unver'><?php
+        echo _('If you toggle Unverified Scores, this will show scores that are higher than the World Record, but lack replay or video proof.');
+    ?></p>
     <p id='lastupdate'><?php echo format_lm($lm, $lang, $notation) ?></p>
     <h2 id='contents_header'><?php echo _('Contents') ?></h2>
     <?php
@@ -50,10 +53,6 @@
         <p>
             <input id='dates' type='checkbox'>
 	        <label id='label_dates' for='dates' class='dates'><?php echo _('Dates') ?></label>
-        </p>
-        <p>
-            <input id='unverified' type='checkbox'>
-	        <label id='label_unverified' for='unverified' class='unverified'><?php echo _('Unverified Scores') ?></label>
         </p>
     </div>
     <div id='overall'>
@@ -275,6 +274,7 @@
 		        foreach ($pl as $key => $player) {
 		            echo '<option value="' . $player . '">';
 		        }
+                echo '<option value="NALIS">'; // temporary solution
 		    ?>
         </datalist>
     </div>
