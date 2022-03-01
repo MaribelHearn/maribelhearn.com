@@ -35,7 +35,7 @@
     $json = file_get_contents(str_replace('.php', '.json', $page_path));
     $data = (object) json_decode($json, true);
     $css_js_file = in_array($page, $use_index) ? 'index' : $page;
-    $has_mobile_sheet = file_exists('assets/' . $css_js_file . '/' . (in_array($page, $use_index) ? 'main' : $page) . '_mobile.css');
+    $has_mobile_sheet = file_exists('assets/' . $dir . '/' . $css_js_file . '/' . (in_array($page, $use_index) ? 'main' : $page) . '_mobile.css');
     $favicon_ext = file_exists('assets/' . $dir . '/' . $page . '/'. $page . '.ico') ? '.ico' : '.png';
     $favicon = 'assets/' . $page . '/' . $page . $favicon_ext;
     if ($has_mobile_sheet) {
