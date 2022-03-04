@@ -78,15 +78,6 @@
                     <span class='tooltip'>Portal for competitive PoFV play, featuring info about its metagame and tournaments and links to relevant resources.</span>
                 </p>
                 <p class='link'>
-                    <a href='/twc'><span class='icon twc_icon'></span>
-                    Touhou World Cup</a>
-                    <span class='icon flag_japan'></span>
-                    <span class='icon flag_china'></span>
-                    <span class='icon flag_russia'></span>
-                    <span class='icon flag_germany'></span>
-                    <span class='tooltip'>Main webpage for Touhou World Cup, containing the schedule, rules and other relevant information.</span>
-                </p>
-                <p class='link'>
                     <a href='/fangame'><span class='icon fangame_icon'></span>
                     Fangame Accomplishments</a>
                     <span class='tooltip'>Notable accomplishments in Touhou fangames and Touhou-related games, including both LNNs and score runs.</span>
@@ -138,6 +129,10 @@
                     the earlier version of the third Seihou game.</span>
                 </p>
             </div>
+        </div>
+        <div id='touhou_world_cup'>
+            <h2>Touhou World Cup 2022</h2>
+            <p class='wide'>Touhou World Cup 2022 has been announced! Visit <span class='icon twc_icon'></span> <a href='https://touhouworldcup.com'>touhouworldcup.com</a> for more information.</p>
         </div>
         <div id='special_thanks'>
             <h2>Special Thanks</h2>

@@ -284,7 +284,6 @@ function navbar(string $page) {
                 $navbar .= '<p><a href="/trs"><span class="icon trs_icon"></span> TRS</a></p>';
                 $navbar .= '<p><a href="/gensokyo"><span class="icon gensokyo_icon"></span> Gensokyo</a></p>';
                 $navbar .= '<p><a href="/pofv"><span class="icon pofv_icon"></span> PoFV</a></p>';
-                $navbar .= '<p><a href="/twc"><span class="icon twc_icon"></span> TWC</a></p>';
                 $navbar .= '<p><a href="/fangame"><span class="icon fangame_icon"></span> Fangame</a></p>';
                 $navbar .= '<p><a href="/faq"><span class="icon faq_icon"></span> FAQ</a></p>';
                 $navbar .= '<p><a href="/royalflare"><span class="icon royalflare_icon"></span> Royalflare</a></p>';
@@ -344,10 +343,10 @@ function navbar(string $page) {
 }
 function wrap_top() {
     global $page, $lang,  $error_code, $layout;
-    $ja = Array('drc', 'lnn', 'tools', 'twc', 'wr');
-    $zh = Array('drc', 'lnn', 'pofv', 'twc', 'wr');
-    $ru = Array('lnn', 'tools', 'twc', 'wr');
-    $de = Array('drc', 'lnn', 'tools', 'twc', 'wr');
+    $ja = Array('drc', 'lnn', 'tools', 'wr');
+    $zh = Array('drc', 'lnn', 'pofv', 'wr');
+    $ru = Array('lnn', 'tools', 'wr');
+    $de = Array('drc', 'lnn', 'tools', 'wr');
     $tl_title = Array('credits', 'lnn', 'wr');
     if (empty($page)) {
         $page = 'index';

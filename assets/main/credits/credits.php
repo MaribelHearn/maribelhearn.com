@@ -15,7 +15,7 @@
     <h3><span class='icon flag_japan'></span> <?php echo _('Japanese') ?></h3>
     <ul class='credits'>
         <li><a href='https://twitter.com/7bitm' target='_blank'>7bitm</a>: DRC</li>
-        <li><a href='https://twitter.com/toho_yumiya' target='_blank'><?php echo ($lang == 'ja_JP' ? 'ゆーみや' : 'Yu-miya') ?></a>: DRC, Tools, WR, LNN, TWC</li>
+        <li><a href='https://twitter.com/toho_yumiya' target='_blank'><?php echo ($lang == 'ja_JP' ? 'ゆーみや' : 'Yu-miya') ?></a>: DRC, Tools, WR, LNN</li>
     </ul>
     <h3><span class='icon flag_china'></span> <?php echo _('Chinese') ?></h3>
     <ul class='credits'>
@@ -24,15 +24,14 @@
         <li><a href='https://twitter.com/Cerasis_th' target='_blank'>Cerasis</a>: DRC</li>
         <li>williewillus: WR, LNN</li>
         <li>Jumbo: PoFV</li>
-        <li><a href='https://space.bilibili.com/107846194' target='_blank'>Komeiji Compiler</a>: TWC</li>
     </ul>
     <h3><span class='icon flag_russia'></span> <?php echo _('Russian') ?></h3>
     <ul class='credits'>
-        <li><a href='https://www.youtube.com/channel/UC7QqmWFA-hAyrP5C1c2b-Iw'>KVS</a>: Tools, WR, LNN, TWC</li>
+        <li><a href='https://www.youtube.com/channel/UC7QqmWFA-hAyrP5C1c2b-Iw'>KVS</a>: Tools, WR, LNN</li>
     </ul>
     <h3><span class='icon flag_germany'></span> <?php echo _('German') ?></h3>
     <ul class='credits'>
-        <li><a href='https://twitter.com/Kawaii_Shadowii'>Kawaii_Shadowii</a>: DRC, Tools, WR, LNN, TWC</li>
+        <li><a href='https://twitter.com/Kawaii_Shadowii'>Kawaii_Shadowii</a>: DRC, Tools, WR, LNN</li>
     </ul>
     <h2><?php echo _('Character Artists') ?></h2>
     <ul class='credits'>
@@ -67,8 +66,6 @@
         Tools (<a href='https://www.pixiv.net/en/artworks/19816763' target='_blank'>Source</a>)</li>
         <li><a href='https://www.pixiv.net/en/users/20799' target='_blank'>白雪 睦月</a>:
         TRS (<a href='https://www.pixiv.net/en/artworks/23271307' target='_blank'>Source</a>)</li>
-        <li><a href='https://www.pixiv.net/en/users/1868609' target='_blank'>宇文風</a>:
-        TWC (<a href='https://www.pixiv.net/en/artworks/40523714' target='_blank'>Source</a>)</li>
         <li><a href='https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ' target='_blank'>Catboyjeremie</a>:
         WR (<a href='https://pbs.twimg.com/media/AsicC9bCQAAzu-H?format=jpg' target='_blank'>Source</a>)</li>
         <li><a href='https://www.pixiv.net/member.php?id=4678572' target='_blank'>ETERSIARUM:</a>

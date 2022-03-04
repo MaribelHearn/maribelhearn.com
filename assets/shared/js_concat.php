@@ -23,8 +23,8 @@ function directory(string $page) {
 }
 $min = (!is_localhost($_SERVER['REMOTE_ADDR']) ? '-min' : '');
 $sorttable = array('drc', 'fangame', 'gensokyo', 'lnn', 'royalflare', 'scoring', 'survival', 'thvote', 'wr');
-$jquery = array('drc', 'lnn', 'pofv', 'royalflare', 'scoring', 'slots', 'survival', 'tiers', 'twc', 'wr');
-$utils = array('drc', 'lnn', 'pofv', 'tiers', 'twc', 'wr');
+$jquery = array('drc', 'lnn', 'pofv', 'royalflare', 'scoring', 'slots', 'survival', 'tiers', 'wr');
+$utils = array('drc', 'lnn', 'pofv', 'tiers', 'wr');
 $canvas = array('slots', 'survival', 'tiers');
 $page = $_GET['page'];
 $dir = directory($page);
