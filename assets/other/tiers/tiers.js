@@ -1108,7 +1108,6 @@ function nav() {
     "<p><a href='trs'><img src='assets/games/trs/trs.png' alt='TRS icon'> Touhou Replay Showcase</a></p>" +
     "<p><a href='gensokyo'><img src='assets/games/gensokyo/gensokyo.ico' alt='Gensokyo.org icon'> Gensokyo Replay Archive</a></p>" +
     "<p><a href='pofv'><img src='assets/games/pofv/pofv.ico' alt='PoFV icon'> Phantasmagoria of Flower View</a></p>" +
-    "<p><a href='twc'><img src='assets/games/twc/twc.ico' alt='TWC icon'> Touhou World Cup</a></p>" +
     "<p><a href='fangame'><img src='assets/games/fangame/fangame.png' alt='Tricoloured star icon'> Touhou Fangame Accomplishments</a></p>" +
     "<p><a href='thvote'><img src='assets/other/thvote/thvote.ico' alt='Tou kanji icon'> THWiki Popularity Poll 2020 Results Translation</a></p>" +
     "<p><a href='slots'><img src='assets/other/slots/slots.ico' alt='Heart icon'> Touhou Slot Machine</a></p>" +
