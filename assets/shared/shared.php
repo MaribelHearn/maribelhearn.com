@@ -122,12 +122,20 @@ function hit(string $filename, string $status_code) {
     }
 }
 function set_theme_cookie() {
-    setcookie('theme', ($_GET['theme'] == 'dark' ? 'dark' : ''), array(
-        'expires' => 2147483647,
-        'path' => '/',
-        'secure' => true,
-        'samesite' => 'Strict'
-    ));
+    if (is_localhost($_SERVER['REMOTE_ADDR'])) {
+        setcookie('theme', ($_GET['theme'] == 'dark' ? 'dark' : ''), array(
+            'expires' => 2147483647,
+            'path' => '/',
+            'samesite' => 'Strict'
+        ));
+    } else {
+        setcookie('theme', ($_GET['theme'] == 'dark' ? 'dark' : ''), array(
+            'expires' => 2147483647,
+            'path' => '/',
+            'secure' => true,
+            'samesite' => 'Strict'
+        ));
+    }
 }
 function set_lang_cookie() {
     if (empty($_GET['hl']) || $_GET['hl'] == 'en-gb' || $_GET['hl'] == 'en') {
@@ -156,18 +164,31 @@ function set_lang_cookie() {
         if (isset($_COOKIE['datenotation']) && strpos($_GET['hl'], 'en') !== false && $_COOKIE['datenotation'] == 'MDY') {
             $notation = 'MDY';
         }
-        setcookie('lang', $lang, array(
-            'expires' => 2147483647,
-            'path' => '/',
-            'secure' => true,
-            'samesite' => 'Strict'
-        ));
-        setcookie('datenotation', $notation, array(
-            'expires' => 2147483647,
-            'path' => '/',
-            'secure' => true,
-            'samesite' => 'Strict'
-        ));
+        if (is_localhost($_SERVER['REMOTE_ADDR'])) {
+            setcookie('lang', $lang, array(
+                'expires' => 2147483647,
+                'path' => '/',
+                'samesite' => 'Strict'
+            ));
+            setcookie('datenotation', $notation, array(
+                'expires' => 2147483647,
+                'path' => '/',
+                'samesite' => 'Strict'
+            ));
+        } else {
+            setcookie('lang', $lang, array(
+                'expires' => 2147483647,
+                'path' => '/',
+                'secure' => true,
+                'samesite' => 'Strict'
+            ));
+            setcookie('datenotation', $notation, array(
+                'expires' => 2147483647,
+                'path' => '/',
+                'secure' => true,
+                'samesite' => 'Strict'
+            ));
+        }
     } else {
         if (isset($_COOKIE['lang'])) {
             $lang = str_replace('"', '', $_COOKIE['lang']);

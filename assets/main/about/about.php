@@ -43,7 +43,7 @@
     include Labyrinth of Touhou, Seihou Shuusou Gyoku, Samidare, Dodonpachi Saidaioujou, Mushihime-sama as well as Futari,
     Great Fairy Wars, Subterranean Animism, Shining Shooting Star, Mrs. Estacion, eXceed 3rd, Guwange and Ikaruga;
     many more follow suit. Some of my favourite themes are listed in the table below.</p>
-    <table class='center'>
+    <table id='music_links' class='center'>
         <thead>
             <tr>
                 <th>Link</th>
@@ -53,123 +53,123 @@
         </thead>
         <tbody>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=pw2WQjqKpVM'>Flight of the Bamboo Cutter ~ Lunatic Princess</a></td>
+                <td><a href='https://www.youtube.com/watch?v=pw2WQjqKpVM' target='_blank'>Flight of the Bamboo Cutter ~ Lunatic Princess</a></td>
                 <td>Touhou 8: Imperishable Night, Final Boss</td>
                 <td>ZUN</td>
             </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=PitDLZPaVhA'>The Primal Scene of Japan The Girl Watched</a></td>
+                <td><a href='https://www.youtube.com/watch?v=PitDLZPaVhA' target='_blank'>The Primal Scene of Japan The Girl Watched</a></td>
                 <td>Touhou 10: Mountain of Faith, Stage 5</td>
                 <td>ZUN</td>
             </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=7wEHo_uUgZ0'>Hartmann's Youkai Girl</a></td>
+                <td><a href='https://www.youtube.com/watch?v=7wEHo_uUgZ0' target='_blank'>Hartmann's Youkai Girl</a></td>
                 <td>Touhou 11: Subterranean Animism, Extra Stage Boss</td>
                 <td>ZUN</td>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=yHlbViNW-eI'>The Refrain of the Lovely Great War</a></td>
+                <td><a href='https://www.youtube.com/watch?v=yHlbViNW-eI' target='_blank'>The Refrain of the Lovely Great War</a></td>
                 <td>Touhou 12.8: Great Fairy Wars, Stage 1</td>
                 <td>ZUN</td>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=IUKsMBN7dS4&t=54s'>The Hall of Dreams' Great Mausoleum</a></td>
+                <td><a href='https://www.youtube.com/watch?v=IUKsMBN7dS4&t=54s' target='_blank'>The Hall of Dreams' Great Mausoleum</a></td>
                 <td>Touhou 13: Ten Desires, Stage 5</td>
                 <td>ZUN</td>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=0o8xTL_W-9I'>Illusionary White Traveler</a></td>
+                <td><a href='https://www.youtube.com/watch?v=0o8xTL_W-9I' target='_blank'>Illusionary White Traveler</a></td>
                 <td>Touhou 16: Hidden Star in Four Seasons, Stage 4</td>
                 <td>ZUN</td>
             </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=sxpRSGm-2ao#t=13m22s'>Illusory Imperial Capital</a></td>
+                <td><a href='https://www.youtube.com/watch?v=sxpRSGm-2ao#t=13m22s' target='_blank'>Illusory Imperial Capital</a></td>
                 <td>Seihou Shuusou Gyoku, Stage 2</td>
                 <td>ZUN</td>
             </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=sxpRSGm-2ao#t=22m11s'>Illusion of Flowers, Air of Scarlet Dream</a></td>
+                <td><a href='https://www.youtube.com/watch?v=sxpRSGm-2ao#t=22m11s' target='_blank'>Illusion of Flowers, Air of Scarlet Dream</a></td>
                 <td>Seihou Shuusou Gyoku, Stage 3</td>
                 <td>ZUN</td>
             </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=gJuIRucytTc'>Trans--</a></td>
+                <td><a href='https://www.youtube.com/watch?v=gJuIRucytTc' target='_blank'>Trans--</a></td>
                 <td>Seihou Banshiryuu C67, Final Boss</td>
                 <td>halt, Doku Den P</td>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=OfH1FrSlDws'>Broken Strawberry Shortcake</a></td>
+                <td><a href='https://www.youtube.com/watch?v=OfH1FrSlDws' target='_blank'>Broken Strawberry Shortcake</a></td>
                 <td>Samidare, Extra Stage Second Boss</td>
                 <td>Ryu-Lighter</td>
             </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=nAPXKiYenE0'>Setting Off ~ Departure Dream</a></td>
+                <td><a href='https://www.youtube.com/watch?v=nAPXKiYenE0' target='_blank'>Setting Off ~ Departure Dream</a></td>
                 <td>Mrs. Estacion, Stage 2</td>
                 <td>Misora</td>
             </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=L_aUBbZ2rJQ'>Eternal Stars in Memories</a></td>
+                <td><a href='https://www.youtube.com/watch?v=L_aUBbZ2rJQ' target='_blank'>Eternal Stars in Memories</a></td>
                 <td>Touhou Shining Shooting Star, Stage 5</td>
                 <td>Shihenwx</td>
             </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=8ym2uK-nm7k'>Reality</a></td>
+                <td><a href='https://www.youtube.com/watch?v=8ym2uK-nm7k' target='_blank'>Reality</a></td>
                 <td>Ikaruga, Stage 4</td>
                 <td>Hiroshi Iuchi</td>
             </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=MipAMcUWQfI'>Ai</a></td>
+                <td><a href='https://www.youtube.com/watch?v=MipAMcUWQfI' target='_blank'>Ai</a></td>
                 <td>Dodonpachi Saidaioujou, Stage 3</td>
                 <td>Manabu Namiki</td>
             </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=m6wbfQkUI7I'>The Battle Was Just "To Continue That Future"</a></td>
+                <td><a href='https://www.youtube.com/watch?v=m6wbfQkUI7I' target='_blank'>The Battle Was Just "To Continue That Future"</a></td>
                 <td>Dodonpachi Daifukkatsu, Stage 5</td>
                 <td>Manabu Namiki</td>
             </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=SimTGe2xYno'>Vertigo</a></td>
+                <td><a href='https://www.youtube.com/watch?v=SimTGe2xYno' target='_blank'>Vertigo</a></td>
                 <td>Dodonpachi Daifukkatsu Black Label, Stage 5</td>
                 <td>Manabu Namiki</td>
             </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=XqNZL6Vp-w8'>Like the Night of the Falling Stars</a></td>
+                <td><a href='https://www.youtube.com/watch?v=XqNZL6Vp-w8' target='_blank'>Like the Night of the Falling Stars</a></td>
                 <td>Mushihimesama, Stage 4</td>
                 <td>Manabu Namiki</td>
             </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=PMSs_2f2iOE'>The Black Shell Beast King</a></td>
+                <td><a href='https://www.youtube.com/watch?v=PMSs_2f2iOE' target='_blank'>The Black Shell Beast King</a></td>
                 <td>Mushihimesama Futari, Stage 4</td>
                 <td>Manabu Namiki</td>
             </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=OpUf3aaY1hQ'>Underworld Cherry Blossoms</a></td>
+                <td><a href='https://www.youtube.com/watch?v=OpUf3aaY1hQ' target='_blank'>Underworld Cherry Blossoms</a></td>
                 <td>Guwange, Stage 3</td>
                 <td>Manabu Namiki</td>
             </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=C4OIyerQUWU'>Maid to Order</a></td>
+                <td><a href='https://www.youtube.com/watch?v=C4OIyerQUWU' target='_blank'>Maid to Order</a></td>
                 <td>eXceed 3rd JADE PENETRATE, Stage 4</td>
                 <td>Saitama Saisyu Heiki (S.S.H)</td>
             </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=wBudg5ekli0'>Maid to Order (Arranged)</a></td>
+                <td><a href='https://www.youtube.com/watch?v=wBudg5ekli0' target='_blank'>Maid to Order (Arranged)</a></td>
                 <td>eXceed 3rd JADE PENETRATE Black Package, Stage 4</td>
                 <td>Saitama Saisyu Heiki (S.S.H)</td>
             </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=UzCNF-ZQVfs'>Deceitful Wings (Arranged)</a></td>
+                <td><a href='https://www.youtube.com/watch?v=UzCNF-ZQVfs' target='_blank'>Deceitful Wings (Arranged)</a></td>
                 <td>Atelier Iris: Eternal Mana, Final Boss</td>
                 <td>Saitama Saisyu Heiki (S.S.H)</td>
             </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=nvowdGnQjXY'>Road to the Globe</a></td>
+                <td><a href='https://www.youtube.com/watch?v=nvowdGnQjXY' target='_blank'>Road to the Globe</a></td>
                 <td>Labyrinth of Touhou, Dungeon (floors 7F, 13F, 22F, 24F)*</td>
                 <td>Rengoku Teien</td>
             </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=Q441gfsvzKM'>Dark a Liar</a></td>
+                <td><a href='https://www.youtube.com/watch?v=Q441gfsvzKM' target='_blank'>Dark a Liar</a></td>
                 <td>Labyrinth of Touhou, Final Boss*</td>
                 <td>Rengoku Teien</td>
             </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=llnXhrCn9Yo'>Battle! Elite Four</a></td>
+                <td><a href='https://www.youtube.com/watch?v=llnXhrCn9Yo' target='_blank'>Battle! Elite Four</a></td>
                 <td>Pokemon Black and White, Elite Four</td>
                 <td>Junichi Masuda</td>
             </tr>

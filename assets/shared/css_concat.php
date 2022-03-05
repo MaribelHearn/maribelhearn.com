@@ -20,8 +20,8 @@ $min = (!is_localhost($_SERVER['REMOTE_ADDR']) ? '-min' : '');
 $page = $_GET['page'];
 $dir = directory($page);
 $css = array(
-    '../' . $dir . '/' . $page . '/' . ($page == 'index' ? 'main' : $page) . $min . '.css',
-    'shared' . $min . '.css'
+    'shared' . $min . '.css',
+    '../' . $dir . '/' . $page . '/' . ($page == 'index' ? 'main' : $page) . $min . '.css'
 );
 if ($_GET['mobile']) {
     array_push($css, 'shared_mobile' . $min . '.css');

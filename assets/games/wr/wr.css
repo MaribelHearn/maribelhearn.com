@@ -212,18 +212,6 @@ tr:not(.west_tr):nth-child(even), tr.west_tr:nth-child(odd) {
 .dropdown_content:hover .dropdown_content {
     display: block;
 }
-.wrap {
-    border: 1px solid #000;
-    text-align: center;
-    margin-left: 25%;
-    margin-right: 25%;
-    font: 14px verdana,sans-serif;
-}
-#wrap {
-    padding-left: 15px;
-    padding-right: 15px;
-    opacity: 0.8;
-}
 #wrap:after {
     content: '\200C';
     display: block;
@@ -335,12 +323,6 @@ tr:not(.west_tr):nth-child(even), tr.west_tr:nth-child(odd) {
     .wrap {
         margin-left: 20%;
         margin-right: 20%;
-    }
-}
-@media only screen and (min-width: 1150px) and (max-width: 1550px) {
-    .wrap {
-        margin-left: 15%;
-        margin-right: 15%;
     }
 }
 @media only screen and (min-width: 800px) and (max-width: 1150px) {

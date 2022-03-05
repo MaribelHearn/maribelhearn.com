@@ -223,19 +223,6 @@ table {
 .dropdown_content:hover .dropdown_content {
     display: block;
 }
-.wrap {
-    border: 1px solid #000;
-    text-align: center;
-    margin-left: 23%;
-    margin-right: 23%;
-    font: 14px verdana,sans-serif;
-}
-#wrap {
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
-    opacity: 0.8;
-}
 #nav {
     margin-bottom: 5px;
 }
@@ -266,8 +253,8 @@ table {
         clear: both;
     }
     .wrap {
-        margin-left: 0;
-        margin-right: 0;
+        margin-left: 10%;
+        margin-right: 10%;
     }
 }
 @media only screen and (min-width: 800px) and (max-width: 1200px) {
@@ -280,8 +267,8 @@ table {
         margin-top: 10px;
     }
     .wrap {
-        margin-left: 0;
-        margin-right: 0;
+        margin-left: 5%;
+        margin-right: 5%;
         font-size: 11px;
     }
 }

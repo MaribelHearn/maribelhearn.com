@@ -170,18 +170,6 @@ tr:nth-child(even) {
 .dropdown_content:hover .dropdown_content {
     display: block;
 }
-.wrap {
-    border: 1px solid black;
-    text-align: center;
-    margin-left: 25%;
-    margin-right: 25%;
-    font: 14px verdana, sans-serif;
-}
-#wrap {
-    padding-left: 15px;
-    padding-right: 15px;
-    opacity: 0.8;
-}
 #wrap:after {
     content: "\200C";
     display: block;
@@ -276,12 +264,6 @@ tr:nth-child(even) {
 }
 #UM_image, #UM_image_old {
     background-position: -900px 0px;
-}
-@media only screen and (min-width: 1100px) and (max-width: 1400px) {
-    .wrap {
-        margin-left: 15%;
-        margin-right: 15%;
-    }
 }
 @media only screen and (min-width: 800px) and (max-width: 1100px) {
     h1 {

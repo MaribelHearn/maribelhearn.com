@@ -76,19 +76,6 @@ ol {
     width: 50px;
     height: 50px;
 }
-.wrap {
-    border: 1px solid #000;
-    text-align: center;
-    margin-left: 23%;
-    margin-right: 23%;
-    font: 14px verdana,sans-serif;
-}
-#wrap {
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 5px;
-    opacity: 0.8;
-}
 #wrap > div:not(#topbar) {
     display: inline-block;
 }
@@ -150,18 +137,6 @@ ol {
 }
 #UM_image {
     background-position: -900px 0px;
-}
-@media only screen and (min-width: 1400px) and (max-width: 1800px) {
-    .wrap {
-        margin-left: 15%;
-        margin-right: 15%;
-    }
-}
-@media only screen and (min-width: 1225px) and (max-width: 1400px) {
-    .wrap {
-        margin-left: 10%;
-        margin-right: 10%;
-    }
 }
 @media only screen and (min-width: 1000px) and (max-width: 1225px) {
     .wrap {
