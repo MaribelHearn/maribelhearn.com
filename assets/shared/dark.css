@@ -109,7 +109,7 @@ a:visited.dropdown_button {
 }
 #contents tr, #contents th, #contents td, #responses tr, #responses th, #responses td, #jargontable th, #jargontable td,
 #spelltable th, #spelltable td, #bullettable th, #bullettable td, #schedule_table th, #schedule_table td, #results_2020 th,
-#results_2020 td, #countries tr, #countries th, #countries td, .border td, .center th, .center td {
+#results_2020 td, #countries tr, #countries th, #countries td, #music_links th, #music_links td, .border td, .center th, .center td {
     border: none;
 }
 #results_2020 td, #schedule_table td {

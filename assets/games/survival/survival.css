@@ -78,19 +78,6 @@ input[type=button] {
 .dropdown_content:hover .dropdown_content {
     display: block;
 }
-.wrap {
-    border: 1px solid #000;
-    text-align: center;
-    margin-left: 24%;
-    margin-right: 24%;
-    font: 14px verdana,sans-serif;
-}
-#wrap {
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
-    opacity: 0.8;
-}
 #nav {
     margin-bottom: 5px;
 }

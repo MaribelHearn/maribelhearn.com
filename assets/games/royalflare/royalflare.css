@@ -156,18 +156,8 @@ a.scene {
 .UMt th, .UMp, .UM {
     background-color: #23fcb1;
 }
-.wrap {
-    border: 1px solid #000;
-    text-align: center;
-    margin-left: 24%;
-    margin-right: 24%;
-    font: 14px verdana,sans-serif;
-}
 #wrap {
-    padding-left: 10px;
-    padding-right: 10px;
     padding-bottom: 15px;
-    opacity: 0.8;
 }
 #nav {
     margin-bottom: 5px;
@@ -188,9 +178,6 @@ a.scene {
     .wrap {
         margin-left: 5%;
         margin-right: 5%;
-    }
-    #wrap {
-        font-size: 12px;
     }
 }
 @media only screen and (min-width: 1800px) and (max-width: 2150px) {

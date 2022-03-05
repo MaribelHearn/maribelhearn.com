@@ -94,19 +94,6 @@ ol > li {
 .dropdown_content > p {
     margin: 4px;
 }
-.wrap {
-    border: 1px solid #000;
-    text-align: center;
-    margin-left: 23%;
-    margin-right: 23%;
-    font: 14px verdana,sans-serif;
-}
-#wrap {
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
-    opacity: 0.8;
-}
 #wrap > div:not(#topbar):not(#modal) {
     display: inline-block;
 }
