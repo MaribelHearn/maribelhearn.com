@@ -1,7 +1,6 @@
 /*global $ MAX_SCORE getCookie setCookie deleteCookie gameAbbr shottypeAbbr sep fullNameNumber generateTableText
-generateFullNames generateShottypes generateShortNames translateUSDate translateDate translateEADate*/
-var WRs, westScores, missingReplays, unverifiedScores, seasonsEnabled, datesEnabled, unverifiedEnabled,
-    notation = "DMY", language = "en_US", selected = "", playerSelected = false,
+generateFullNames generateShottypes generateShortNames*/
+var WRs, westScores, missingReplays, unverifiedScores, seasonsEnabled, datesEnabled, unverifiedEnabled, language = "en-GB", selected = "",
     all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN",
     "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
 
@@ -53,6 +52,14 @@ function toggleDates(event) {
 }
 
 function toggleUnverified() {
+    if (!unverifiedScores) {
+        $.get("assets/shared/json/unverified.json", function (data) {
+            unverifiedScores = data;
+            toggleUnverified();
+        }, "json");
+        return;
+    }
+
     unverifiedEnabled = !unverifiedEnabled;
     unverifiedEnabled ? localStorage.setItem("unverifiedEnabled", true) : localStorage.removeItem("unverifiedEnabled");
     reloadTable();
@@ -79,7 +86,7 @@ function bestSeason(difficulty, shottype) {
     var shottypes = WRs.HSiFS[difficulty], max = 0, season, i;
 
     for (i in shottypes) {
-        if (!i.contains(shottype)) {
+        if (!i.includes(shottype)) {
             continue;
         }
 
@@ -200,47 +207,7 @@ function appendDifficultyHeaders(game, difficulty, shottypes) {
     }
 }
 
-function showWRs(event) {
-    var game = event.data.game ? event.data.game : this.id.replace("_image", ""), seasonSwitch = event.data.seasonSwitch;
-
-    if (!WRs || !westScores) {
-        $.get("assets/shared/json/wrlist.json", function (data1) {
-            $.get("assets/shared/json/bestinthewest.json", function (data2) {
-                if (unverifiedEnabled) {
-                    $.get("assets/shared/json/unverified.json", function (data3) {
-                        WRs = data1;
-                        westScores = data2;
-                        unverifiedScores = data3;
-                        showWRs({data: {game: game, seasonSwitch: seasonSwitch}});
-                    }, "json");
-                } else {
-                    WRs = data1;
-                    westScores = data2;
-                    showWRs({data: {game: game, seasonSwitch: seasonSwitch}});
-                }
-            }, "json");
-        }, "json");
-        return;
-    }
-
-    if (unverifiedEnabled && !unverifiedScores) {
-        $.get("assets/shared/json/unverified.json", function (data) {
-            unverifiedScores = data;
-            showWRs({data: {game: game, seasonSwitch: seasonSwitch}});
-        }, "json");
-        return;
-    }
-
-    if (game == selected && !seasonSwitch) {
-        $("#list").html("");
-        $("#" + game + "_image").css("border", $("#" + game + "_image").hasClass("cover98") ? "1px solid black" : "none");
-        selected = "";
-        return;
-    }
-
-    var overall = {}, bestShot = {}, compareWRs = {}, unverifiedObj = {}, shottypes = [], max = 0, diffKey = "Easy", difficulty,
-    shottype, character, season, wr, score, player, replay, date, text, sepScore, bestShotMax, unverifiedScore;
-
+function prepareShowWR(game, shottypes) {
     $("#list").html("<p id='fullname'></p>" +
     "<p id='seasontoggle'><input id='seasons' type='checkbox'><label id='label_seasons' class='Seasons' for='seasons'></label></p>" +
     "<p><input id='unverified' type='checkbox'><label id='label_unverified' for='unverified' class='unverified'>Unverified Scores</label></p>" +
@@ -251,14 +218,6 @@ function showWRs(event) {
 
     if (unverifiedEnabled) {
         $("#unverified").prop("checked", true);
-    }
-
-    if (game == 'StB' || game == 'DS') {
-        diffKey = '1';
-    }
-
-    for (shottype in WRs[game][diffKey]) {
-        shottypes.pushStrict(seasonsEnabled ? shottype : removeSeason(shottype));
     }
 
     if (selected !== "") {
@@ -273,6 +232,33 @@ function showWRs(event) {
     $("#fullname").html(fullNameNumber(game));
     $("#table").addClass(game + "t");
     appendShottypeHeaders(game, shottypes);
+}
+
+function formatDate(date) {
+    date = date.split('/').reverse().join('/');
+
+    if (language == "ja-JP" || language == "zh-CN") {
+        date = new Date(date).toLocaleString(language, {"dateStyle": "long"});
+    } else {
+        date = new Date(date).toLocaleString(language, {"year": "numeric", "month": "2-digit", "day": "2-digit"});
+    }
+
+    return date;
+}
+
+function showWRtable(game) {
+    var overall = {}, bestShot = {}, compareWRs = {}, unverifiedObj = {}, shottypes = [], max = 0, diffKey = "Easy", difficulty,
+    shottype, character, season, wr, score, player, replay, date, text, sepScore, bestShotMax, unverifiedScore;
+
+    if (game == 'StB' || game == 'DS') {
+        diffKey = '1';
+    }
+
+    for (shottype in WRs[game][diffKey]) {
+        shottypes.pushStrict(seasonsEnabled ? shottype : removeSeason(shottype));
+    }
+
+    prepareShowWR(game, shottypes);
 
     for (difficulty in WRs[game]) {
         appendDifficultyHeaders(game, difficulty, shottypes);
@@ -284,11 +270,12 @@ function showWRs(event) {
             wr = WRs[game][difficulty][shottype];
             score = wr[0];
             player = wr[1];
-            date = wr[2];
+            date = formatDate(wr[2]);
+
             if (wr[3]) {
                 replay = wr[3];
             } else {
-                if (gameAbbr(game) < 6 || missingReplays.contains(game + difficulty + shottype)) {
+                if (gameAbbr(game) < 6 || missingReplays.includes(game + difficulty + shottype)) {
                     replay = "";
                 } else {
                     replay = replayPath(game, difficulty, shottype);
@@ -296,13 +283,7 @@ function showWRs(event) {
             }
 
             if (score > bestShotMax) {
-                bestShot.id = "#" + game + difficulty + shottype;
-                bestShot.player = player;
-                bestShot.shottype = shottype;
-                bestShot.season = season;
-                bestShot.max = score;
-                bestShot.replay = replay;
-                bestShot.date = date;
+                bestShot = {"id": "#" + game + difficulty + shottype, "player": player, "shottype": shottype, "season": season, "max": score, "replay": replay, "date": date};
                 bestShotMax = score;
 
                 if (unverifiedEnabled && unverifiedScores[game][difficulty][shottype][0] > score) {
@@ -310,7 +291,7 @@ function showWRs(event) {
                     unverifiedScore = unverifiedObj[game + difficulty + shottype];
                     score = unverifiedScore[0];
                     player = unverifiedScore[1];
-                    date = unverifiedScore[2];
+                    date = formatDate(unverifiedScore[2]);
                     bestShot.player = player;
                     bestShot.max = score;
                     bestShot.date = date;
@@ -320,11 +301,7 @@ function showWRs(event) {
             }
 
             if (score > max) {
-                overall.id = "#" + game + difficulty + shottype;
-                overall.player = player;
-                overall.difficulty = difficulty;
-                overall.season = season;
-                overall.date = date;
+                overall = {"id": "#" + game + difficulty + shottype, "player": player, "difficulty": difficulty, "season": season, "date": date};
                 max = score;
 
                 if (unverifiedEnabled && unverifiedScores[game][difficulty][shottype][0] > score) {
@@ -332,7 +309,7 @@ function showWRs(event) {
                     unverifiedScore = unverifiedObj[game + difficulty + shottype];
                     score = unverifiedScore[0];
                     player = unverifiedScore[1];
-                    date = unverifiedScore[2];
+                    date = formatDate(unverifiedScore[2]);
                     overall.player = player;
                     overall.date = date;
                     max = score;
@@ -408,10 +385,52 @@ function showWRs(event) {
     generateTableText("wr", language);
     generateFullNames(language);
     generateShottypes(language);
-    generateDates(false, false, false);
     $("#list").css("display", "block");
     $("#seasontoggle").css("display", game == "HSiFS" ? "block" : "none");
     $("#seasons").prop("checked", seasonsEnabled);
+}
+
+function verifyConditions(game, seasonSwitch) {
+    if (game == selected && !seasonSwitch) {
+        $("#list").html("");
+        $("#" + game + "_image").css("border", $("#" + game + "_image").hasClass("cover98") ? "1px solid black" : "none");
+        selected = "";
+        return false;
+    }
+
+    return true;
+}
+
+function showWRs(event) {
+    var game = event.data.game ? event.data.game : this.id.replace("_image", ""), seasonSwitch = event.data.seasonSwitch;
+
+    if (!WRs || !westScores) {
+        $.get("assets/shared/json/wrlist.json", function (data1) {
+            $.get("assets/shared/json/bestinthewest.json", function (data2) {
+                if (unverifiedEnabled) {
+                    $.get("assets/shared/json/unverified.json", function (data3) {
+                        WRs = data1;
+                        westScores = data2;
+                        unverifiedScores = data3;
+                        if (verifyConditions(game, seasonSwitch)) {
+                            showWRtable(game);
+                        }
+                    }, "json");
+                } else {
+                    WRs = data1;
+                    westScores = data2;
+                    if (verifyConditions(game, seasonSwitch)) {
+                        showWRtable(game);
+                    }
+                }
+            }, "json");
+        }, "json");
+        return;
+    }
+
+    if (verifyConditions(game, seasonSwitch)) {
+        showWRtable(game);
+    }
 }
 
 function addPlayerWR(playerWRs, game, difficulty, shottype, isUnverified) {
@@ -435,7 +454,7 @@ function addPlayerWR(playerWRs, game, difficulty, shottype, isUnverified) {
         date = unverifiedScores[game][difficulty][shottype][2];
     }
 
-    playerWRs.dates.push("<span class='datestring_player'>" + date + "</span>");
+    playerWRs.dates.push("<span class='datestring_player'>" + formatDate(date) + "</span>");
 
     if (replay) {
         playerWRs.scores.push(score + (shottype === "" ? "": " (<span class='" + shottype + "'>" + shottype + "</span>)"));
@@ -484,13 +503,11 @@ function showPlayerWRs(player) {
     }
 
     if (player === "") {
-        playerSelected = false;
         return;
     }
 
     var playerWRs = {"scores": [], "replays": [], "dates": [], "cats": []}, sum = 0, game, difficulty, shottype;
 
-    playerSelected = true;
     $("#playerlistbody").html("");
 
     for (game in WRs) {
@@ -548,7 +565,6 @@ function showPlayerWRs(player) {
 
     if (sum === 0) {
         $("#playerlist").css("display", "none");
-        playerSelected = false;
         return;
     }
 
@@ -559,15 +575,11 @@ function showPlayerWRs(player) {
     generateTableText("wr", language);
     generateShortNames(language);
     generateShottypes(language);
-    generateDates(false, false, playerSelected);
 }
 
 function reloadTable() {
     if (selected !== "") {
-        var tmp = selected;
-
-        showWRs({data: {game: tmp, seasonSwitch: false}});
-        showWRs({data: {game: tmp, seasonSwitch: false}});
+        showWRtable(selected);
     }
 }
 
@@ -577,69 +589,15 @@ function updateOrientation() {
     }
 }
 
-function generateDates(oldLanguage, oldNotation, playerSelected) {
-    var datestrings, date, i;
-
-    if (oldLanguage) {
-        datestrings = $(".datestring");
-
-        for (i = 0; i < datestrings.length; i += 1) {
-            date = $(datestrings[i]).html();
-
-            if (language == "en_US" || language == "ru_RU") {
-                if (oldLanguage == "en_US") {
-                    if (notation == "DMY") {
-                        $(datestrings[i]).html(translateUSDate(date, "DMY"));
-                    } else if (notation == "MDY") {
-                        $(datestrings[i]).html(translateDate(date, "MDY"));
-                    }
-                } else {
-                    $(datestrings[i]).html(translateEADate(date, notation));
-                }
-            } else if (language == "ja_JP" || language == "zh_CN") {
-                if (oldLanguage == "en_US" || oldLanguage == "ru_RU") {
-                    if (oldNotation == "DMY") {
-                        $(datestrings[i]).html(translateDate(date, "YMD"));
-                    } else if (oldNotation == "MDY") {
-                        $(datestrings[i]).html(translateUSDate(date, "YMD"));
-                    }
-                }
-            }
-        }
-    }
-
-    if (selected !== "" || playerSelected) {
-        datestrings = $(playerSelected ? ".datestring_player" : ".datestring_game");
-
-        if (!oldNotation) {
-            for (i = 0; i < datestrings.length; i += 1) {
-                $(datestrings[i]).html(translateDate($(datestrings[i]).html(), notation))
-            }
-        } else if (notation != oldNotation) {
-            for (i = 0; i < datestrings.length; i += 1) {
-                if (oldNotation == "DMY") {
-                    $(datestrings[i]).html(translateDate($(datestrings[i]).html(), notation))
-                } else if (oldNotation == "MDY") {
-                    $(datestrings[i]).html(translateUSDate($(datestrings[i]).html(), notation))
-                } else if (oldNotation == "YMD") {
-                    $(datestrings[i]).html(translateEADate($(datestrings[i]).html(), notation))
-                }
-            }
-        }
-    }
-}
-
 function setLanguage(event) {
-    var newLanguage = event.data.language, newNotation = event.data.notation;
+    var newLanguage = event.data.language;
 
-    if (language == newLanguage && notation == newNotation) {
+    if (language == newLanguage) {
         return;
     }
 
     language = newLanguage;
     setCookie("lang", newLanguage);
-    notation = newNotation;
-    setCookie("datenotation", newNotation);
     location.href = location.href.split('#')[0].split('?')[0];
 }
 
@@ -649,12 +607,12 @@ function setEventListeners() {
     $("#player").on("select", showPlayerWRs);
     $("body").on("resize", updateOrientation);
     $("#dates").on("click", {alreadyDisabled: false}, toggleDates);
-    $("#en-gb").on("click", {language: "en_US", notation: "DMY"}, setLanguage);
-    $("#en-us").on("click", {language: "en_US", notation: "MDY"}, setLanguage);
-    $("#jp").on("click", {language: "ja_JP", notation: "YMD"}, setLanguage);
-    $("#zh").on("click", {language: "zh_CN", notation: "YMD"}, setLanguage);
-    $("#ru").on("click", {language: "ru_RU", notation: "DMY"}, setLanguage);
-    $("#de").on("click", {language: "de_DE", notation: "DMY"}, setLanguage);
+    $("#en-gb").on("click", {language: "en_GB"}, setLanguage);
+    $("#en-us").on("click", {language: "en_US"}, setLanguage);
+    $("#jp").on("click", {language: "ja_JP"}, setLanguage);
+    $("#zh").on("click", {language: "zh_CN"}, setLanguage);
+    $("#ru").on("click", {language: "ru_RU"}, setLanguage);
+    $("#de").on("click", {language: "de_DE"}, setLanguage);
     $(".game_img").on("click", {seasonSwitch: false}, showWRs);
 }
 
@@ -677,20 +635,16 @@ $(document).ready(function () {
     setEventListeners();
     setAttributes();
 
-    if (getCookie("lang") == "ja_JP" || location.href.contains("jp")) {
-        language = "ja_JP";
-        notation = "YMD";
-    } else if (getCookie("lang") == "zh_CN" || location.href.contains("zh")) {
-        language = "zh_CN";
-        notation = "YMD";
-    } else if (getCookie("lang") == "de_DE" || location.href.contains("de")) {
-        language = "de_DE";
-    } else if (getCookie("lang") == "ru_RU") {
-        language = "ru_RU";
-    } else if (getCookie("datenotation") == "MDY" || location.href.contains("en-us")) {
-        notation = "MDY";
-    } else if (getCookie("datenotation") == "YMD") {
-        notation = "YMD";
+    if (getCookie("lang") == "ja_JP" || location.href.includes("?hl=jp")) {
+        language = "ja-JP";
+    } else if (getCookie("lang") == "zh_CN" || location.href.includes("?hl=zh")) {
+        language = "zh-CN";
+    } else if (getCookie("lang") == "de_DE" || location.href.includes("?hl=de")) {
+        language = "de-DE";
+    } else if (getCookie("lang") == "ru_RU" || location.href.includes("?hl=ru")) {
+        language = "ru-RU";
+    } else if (getCookie("lang") == "en_US" || location.href.includes("?hl=en-us")) {
+        language = "en-US";
     }
 
     if (!datesEnabled) {

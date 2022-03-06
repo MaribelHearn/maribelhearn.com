@@ -151,42 +151,6 @@ function monthToNumber(month) {
     }[month];
 }
 
-function translateDate(date, notation) {
-    var tmp = date.split('/');
-
-    var day = tmp[0], month = tmp[1], year = tmp[2];
-
-    if (notation == "YMD") {
-        return (year + "年" + month + "月" + day + "日");
-    } else if (notation == "MDY") {
-        return (month + "/" + day + "/" + year);
-    }
-}
-
-function translateUSDate(date, notation) {
-    var tmp = date.split('/');
-
-    var day = tmp[1], month = tmp[0], year = tmp[2];
-
-    if (notation == "YMD") {
-        return (year + "年" + month + "月" + day + "日");
-    } else if (notation == "DMY") {
-        return (day + "/" + month + "/" + year);
-    }
-}
-
-function translateEADate(date, notation) {
-    var tmp = date.replace(/(年|月|日)/g, '/').split('/');
-
-    var day = tmp[2], month = tmp[1], year = tmp[0];
-
-    if (notation == "DMY") {
-        return (day + "/" + month + "/" + year);
-    } else if (notation == "MDY") {
-        return (month + "/" + day + "/" + year);
-    }
-}
-
 function gameAbbr(game) {
     return ({
         "HRtP": 1,
@@ -309,6 +273,8 @@ function shottypeAbbr(shottype) {
 }
 
 function generateTableText(page, language) {
+    language = language.replace('-', '_');
+
     if (language == "zh_CN") {
         $(".game").html("游戏");
         $(".player").html("玩家");
@@ -397,6 +363,8 @@ function generateTableText(page, language) {
 }
 
 function generateShortNames(language) {
+    language = language.replace('-', '_');
+
     if (language == "zh_CN") {
         $(".HRtP").html("灵");
         $(".SoEW").html("封");
@@ -463,6 +431,8 @@ function generateShortNames(language) {
     }
 }
 function generateFullNames(language) {
+    language = language.replace('-', '_');
+
     if (language == "zh_CN") {
         $(".HRtPf").html("东方灵异传　～ Highly Responsive to Prayers");
         $(".SoEWf").html("东方封魔录　～ the Story of Eastern Wonderland");
@@ -532,6 +502,8 @@ function generateFullNames(language) {
     }
 }
 function generateShottypes(language) {
+    language = language.replace('-', '_');
+
     if (language == "zh_CN") {
         $(".Makai").html("魔界");
         $(".Jigoku").html("地狱");

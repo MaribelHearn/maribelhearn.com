@@ -44,7 +44,7 @@ function replay_path(string $game, string $diff, string $shot) {
     return 'replays/th' . num($game) . '_ud' . substr($diff, 0, 2) . shot_abbr($shot) . '.rpy';
 }
 
-function date_tl(string $date, string $notation) {
+function date_tl(string $date, string $lang) {
     if ($date == '') {
         return '';
     }
@@ -52,11 +52,13 @@ function date_tl(string $date, string $notation) {
     $day = $tmp[0];
     $month = $tmp[1];
     $year = $tmp[2];
-    if ($notation == 'MDY') {
+    if ($lang == 'en_US') {
         return $month . '/' . $day . '/' . $year;
-    } else if ($notation == 'YMD') {
+    } else if ($lang == 'ja_JP' || $lang == 'zh_CN') {
         return $year . '年' . $month . '月' . $day . '日';
-    } else { // DMY
+    } else if ($lang == 'ru_RU' || $lang == 'de_DE') {
+        return $day . '.' . $month . '.' . $year;
+    } else { // en_GB
         return $day . '/' . $month . '/' . $year;
     }
 }
