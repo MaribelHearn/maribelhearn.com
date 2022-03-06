@@ -81,7 +81,7 @@
                     echo '<td id="' . $game . 'overall1">' . ($overall[$num] == 0 ? '-' : $overall_player[$num]) . ($game == 'WBaWC' || $game == 'UM' ? '*' : '') . '</td>';
 					echo '<td id="' . $game . 'overall2">' . ($overall[$num] == 0 ? '-' : $overall_diff[$num]) . '</td>';
 					echo '<td id="' . $game . 'overall3">' . ($overall[$num] == 0 ? '-' : _($overall_shottype[$num])) . '</td>';
-					echo '<td id="' . $game . 'overall4" class="datestring">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $notation)) . '</td>';
+					echo '<td id="' . $game . 'overall4" class="datestring">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $lang)) . '</td>';
                     if (file_exists(replay_path($game, $overall_diff[$num], $overall_shottype[$num]))) {
                         $path = replay_path($game, $overall_diff[$num], $overall_shottype[$num]);
                         $replay = '<a href="' . $path . '">' . substr($path, 8) . '</a>';
@@ -111,7 +111,7 @@
 				echo '<span id="' . $game . 'overall2m">' . ($overall[$num] == 0 ? '-' : $overall_diff[$num]) . '</span> ';
 				echo '<span id="' . $game . 'overall3m">' . ($overall[$num] == 0 ? '-' : _($overall_shottype[$num])) . '</span> by ';
 				echo '<span id="' . $game . 'overall1m"><em>' . ($overall[$num] == 0 ? '-' : $overall_player[$num]) . ($game == 'WBaWC' || $game == 'UM' ? '*' : '') . '</em></span> ';
-				echo '<br><span id="' . $game . 'overall4m" class="datestring_player">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $notation)) . '</span></p><hr>';
+				echo '<br><span id="' . $game . 'overall4m" class="datestring_player">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $lang)) . '</span></p><hr>';
 			}
 		?>
     </div>
@@ -171,7 +171,7 @@
                             }
                             echo '<br>by <em>' . $shots[$shot][1] .
                             '</em><span class="dimgrey"><br><span class="datestring_game"' .
-                            '>' . date_tl($shots[$shot][2], $notation) . '</span></span></td>';
+                            '>' . date_tl($shots[$shot][2], $lang) . '</span></span></td>';
                         }
                     } else {
                         if ($score >= $MAX_SCORE) {
@@ -193,7 +193,7 @@
                             echo '<td></td>';
                         } else {
                             echo '<td>' . $score_text . '<br>by <em>' . $player . '</em><span class="dimgrey"><br>' .
-                            '<span class="datestring_game">' . date_tl($date, $notation) . '</span></span></td>';
+                            '<span class="datestring_game">' . date_tl($date, $lang) . '</span></span></td>';
                         }
                     }
                 }
@@ -205,7 +205,7 @@
                     $score = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score . '<span class="dl_icon"></span></a>';
                 }
                 echo '<tr><td>Extra</td><td colspan="4">' . $score . '<br>by <em>' . $obj['Extra']['-'][1] .
-                '</em><span class="dimgrey"><br><span class="datestring_game">' . date_tl($obj['Extra']['-'][2], $notation) .
+                '</em><span class="dimgrey"><br><span class="datestring_game">' . date_tl($obj['Extra']['-'][2], $lang) .
                 '</span></span></td></tr>';
             }
             echo '</tbody></table></div>';
@@ -313,7 +313,7 @@
                     echo '<tr><td class="' . $obj->game . 'p">' . _($obj->game) . ($lang == 'en_US' || $lang == 'ru_RU' || $lang == 'de_DE' ? ' ' : '') .
 					$obj->diff . ($lang == 'en_US' || $lang == 'ru_RU' || $lang == 'de_DE' ? ' ' : '') . _($obj->shot) . '</td>' .
                     '<td>' . number_format($obj->score, 0, '.', ',') . '</td><td>' . $obj->player . '</td>' .
-                    '<td>' . $replay . '</td><td class="datestring">' . date_tl($obj->date, $notation) . '</td></tr>';
+                    '<td>' . $replay . '</td><td class="datestring">' . date_tl($obj->date, $lang) . '</td></tr>';
                 }
             ?></tbody>
         </table>
@@ -332,7 +332,7 @@
                 echo '<p class="' . $obj->game . '">' . _($obj->game) . ($lang == 'en_US' || $lang == 'ru_RU' || $lang == 'de_DE' ? ' ' : '') .
 				$obj->diff . ($lang == 'en_US' || $lang == 'ru_RU' || $lang == 'de_DE' ? ' ' : '') .
                 '' . _($obj->shot) . '</p><p>' . number_format($obj->score, 0, '.', ',') .
-                ' by <em>' . $obj->player . '</em><br><span class="datestring_player">' . date_tl($obj->date, $notation) . '</span></p>';
+                ' by <em>' . $obj->player . '</em><br><span class="datestring_player">' . date_tl($obj->date, $lang) . '</span></p>';
             }
         ?><hr>
     </div>
