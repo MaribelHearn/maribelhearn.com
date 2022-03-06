@@ -1,6 +1,6 @@
 /*global $ getCookie deleteCookie setCookie gameAbbr shottypeAbbr generateTableText
 generateFullNames generateShottypes fullNameNumber generateShortNames*/
-var LNNs, alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", language = "en_US", notation = "DMY", selected = "", missingReplays, videoLNNs, testing;
+var alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", language = "en_GB", selected = "", missingReplays, videoLNNs, testing;
 
 function toggleLayout() {
     if (getCookie("lnn_old_layout")) {
@@ -55,14 +55,6 @@ function hasReplay(game, player, shottype) {
 function showLNNs(game) {
     if (typeof game == "object") {
         game = this.id.replace("_image", ""); // if event listener fired
-    }
-
-    if (!LNNs) {
-        $.get("assets/shared/json/lnnlist.json", function (data) {
-            LNNs = data;
-            showLNNs(game);
-        }, "json");
-        return;
     }
 
     if (game == selected) {
@@ -162,13 +154,6 @@ function showPlayerLNNs(player) {
         player = this.value; // if event listener fired
     }
 
-    if (!LNNs) {
-        $.get("assets/shared/json/lnnlist.json", function (data) {
-            LNNs = data;
-            showPlayerLNNs(player);
-        }, "json");
-    }
-
     if (player === "") {
         return;
     }
@@ -238,21 +223,14 @@ function showPlayerLNNs(player) {
 }
 
 function setLanguage(event) {
-    var newLanguage = event.data.language, newNotation = event.data.notation;
+    var newLanguage = event.data.language;
 
-    if (language == newLanguage && notation == newNotation) {
+    if (language == newLanguage) {
         return;
     }
 
     language = newLanguage;
     setCookie("lang", newLanguage);
-
-    if (newNotation == "DMY" && notation == "MDY") {
-        newNotation = "MDY";
-    }
-
-    notation = newNotation;
-    setCookie("datenotation", newNotation);
     location.href = location.href.split('#')[0].split('?')[0];
 }
 
@@ -269,6 +247,18 @@ function parseVideos(videos) {
 }
 
 $(document).ready(function () {
+    if (getCookie("lang") == "ja_JP" || location.href.includes("?hl=jp")) {
+        language = "ja_JP";
+    } else if (getCookie("lang") == "zh_CN" || location.href.includes("?hl=zh")) {
+        language = "zh_CN";
+    } else if (getCookie("lang") == "de_DE" || location.href.includes("?hl=de")) {
+        language = "de_DE";
+    } else if (getCookie("lang") == "ru_RU" || location.href.includes("?hl=ru")) {
+        language = "ru_RU";
+    } else if (getCookie("lang") == "en_US" || location.href.includes("?hl=en-us")) {
+        language = "en_US";
+    }
+
     $("#player").on("change", showPlayerLNNs);
     $("#player").on("select", showPlayerLNNs);
     $("#layouttoggle").on("click", toggleLayout);
@@ -277,29 +267,13 @@ $(document).ready(function () {
     $("#playersearchlink").css("display", "block");
     $("#newlayout").css("display", "block");
     $(".flag").attr("href", "");
-    $("#en").on("click", {language: "en_US", notation: "DMY"}, setLanguage);
-    $("#jp").on("click", {language: "ja_JP", notation: "YMD"}, setLanguage);
-    $("#zh").on("click", {language: "zh_CN", notation: "YMD"}, setLanguage);
-    $("#ru").on("click", {language: "ru_RU", notation: "DMY"}, setLanguage);
-    $("#de").on("click", {language: "de_DE", notation: "DMY"}, setLanguage);
+    $("#en").on("click", {language: (language == "en_US" ? "en_US" : "en_GB")}, setLanguage);
+    $("#jp").on("click", {language: "ja_JP"}, setLanguage);
+    $("#zh").on("click", {language: "zh_CN"}, setLanguage);
+    $("#ru").on("click", {language: "ru_RU"}, setLanguage);
+    $("#de").on("click", {language: "de_DE"}, setLanguage);
     $(".game_img").on("click", showLNNs);
     missingReplays = $("#missingReplays").val();
     videoLNNs = parseVideos($("#videos").val());
     testing = Boolean($("#testing").val());
-
-    if (getCookie("lang") == "ja_JP" || location.href.contains("jp")) {
-        language = "ja_JP";
-        notation = "YMD";
-    } else if (getCookie("lang") == "zh_CN" || location.href.contains("zh")) {
-        language = "zh_CN";
-        notation = "YMD";
-    } else if (getCookie("lang") == "ru_RU") {
-        language = "ru_RU";
-    } else if (getCookie("lang") == "de_DE") {
-        language = "de_DE";
-    } else if (getCookie("datenotation") == "MDY" || location.href.contains("en-us")) {
-        notation = "MDY";
-    } else if (getCookie("datenotation") == "YMD") {
-        notation = "YMD";
-    }
 });
