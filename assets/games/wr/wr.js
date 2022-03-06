@@ -1,6 +1,6 @@
 /*global $ MAX_SCORE getCookie setCookie deleteCookie gameAbbr shottypeAbbr sep fullNameNumber generateTableText
 generateFullNames generateShottypes generateShortNames*/
-var WRs, westScores, missingReplays, unverifiedScores, seasonsEnabled, datesEnabled, unverifiedEnabled, language = "en-GB", selected = "",
+var  missingReplays, seasonsEnabled, datesEnabled, unverifiedEnabled, language = "en-GB", selected = "",
     all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN",
     "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
 
@@ -52,14 +52,6 @@ function toggleDates(event) {
 }
 
 function toggleUnverified() {
-    if (!unverifiedScores) {
-        $.get("assets/shared/json/unverified.json", function (data) {
-            unverifiedScores = data;
-            toggleUnverified();
-        }, "json");
-        return;
-    }
-
     unverifiedEnabled = !unverifiedEnabled;
     unverifiedEnabled ? localStorage.setItem("unverifiedEnabled", true) : localStorage.removeItem("unverifiedEnabled");
     reloadTable();
@@ -237,10 +229,10 @@ function prepareShowWR(game, shottypes) {
 function formatDate(date) {
     date = date.split('/').reverse().join('/');
 
-    if (language == "ja-JP" || language == "zh-CN") {
-        date = new Date(date).toLocaleString(language, {"dateStyle": "long"});
+    if (language == "ja_JP" || language == "zh_CN") {
+        date = new Date(date).toLocaleString(language.replace('_', '-'), {"dateStyle": "long"});
     } else {
-        date = new Date(date).toLocaleString(language, {"year": "numeric", "month": "2-digit", "day": "2-digit"});
+        date = new Date(date).toLocaleString(language.replace('_', '-'), {"year": "numeric", "month": "2-digit", "day": "2-digit"});
     }
 
     return date;
@@ -404,30 +396,6 @@ function verifyConditions(game) {
 function showWRs(event) {
     var game = event.data ? event.data.game : this.id.replace("_image", "");
 
-    if (!WRs || !westScores) {
-        $.get("assets/shared/json/wrlist.json", function (data1) {
-            $.get("assets/shared/json/bestinthewest.json", function (data2) {
-                if (unverifiedEnabled) {
-                    $.get("assets/shared/json/unverified.json", function (data3) {
-                        WRs = data1;
-                        westScores = data2;
-                        unverifiedScores = data3;
-                        if (verifyConditions(game)) {
-                            showWRtable(game);
-                        }
-                    }, "json");
-                } else {
-                    WRs = data1;
-                    westScores = data2;
-                    if (verifyConditions(game)) {
-                        showWRtable(game);
-                    }
-                }
-            }, "json");
-        }, "json");
-        return;
-    }
-
     if (verifyConditions(game)) {
         showWRtable(game);
     }
@@ -476,30 +444,6 @@ function addPlayerWR(playerWRs, game, difficulty, shottype, isUnverified) {
 function showPlayerWRs(player) {
     if (typeof player == "object") {
         player = this.value; // if event listener fired
-    }
-
-    if (!WRs) {
-        $.get("assets/shared/json/wrlist.json", function (data1) {
-            if (unverifiedEnabled) {
-                $.get("assets/shared/json/unverified.json", function (data2) {
-                    WRs = data1;
-                    unverifiedScores = data2;
-                    showPlayerWRs(player);
-                }, "json");
-            } else {
-                WRs = data1;
-                showPlayerWRs(player);
-            }
-        }, "json");
-        return;
-    }
-
-    if (!unverifiedScores) {
-        $.get("assets/shared/json/unverified.json", function (data) {
-            unverifiedScores = data;
-            showPlayerWRs(player);
-        }, "json");
-        return;
     }
 
     if (player === "") {
@@ -627,6 +571,18 @@ function setAttributes() {
 }
 
 $(document).ready(function () {
+    if (getCookie("lang") == "ja_JP" || location.href.includes("?hl=jp")) {
+        language = "ja_JP";
+    } else if (getCookie("lang") == "zh_CN" || location.href.includes("?hl=zh")) {
+        language = "zh_CN";
+    } else if (getCookie("lang") == "de_DE" || location.href.includes("?hl=de")) {
+        language = "de_DE";
+    } else if (getCookie("lang") == "ru_RU" || location.href.includes("?hl=ru")) {
+        language = "ru_RU";
+    } else if (getCookie("lang") == "en_US" || location.href.includes("?hl=en-us")) {
+        language = "en_US";
+    }
+
     missingReplays = $("#missing_replays").val();
     datesEnabled = localStorage.getItem("datesEnabled") ? true : false;
     seasonsEnabled = localStorage.getItem("seasonsEnabled") ? true : false;
@@ -634,18 +590,6 @@ $(document).ready(function () {
     $("#missing_replays").remove();
     setEventListeners();
     setAttributes();
-
-    if (getCookie("lang") == "ja_JP" || location.href.includes("?hl=jp")) {
-        language = "ja-JP";
-    } else if (getCookie("lang") == "zh_CN" || location.href.includes("?hl=zh")) {
-        language = "zh-CN";
-    } else if (getCookie("lang") == "de_DE" || location.href.includes("?hl=de")) {
-        language = "de-DE";
-    } else if (getCookie("lang") == "ru_RU" || location.href.includes("?hl=ru")) {
-        language = "ru-RU";
-    } else if (getCookie("lang") == "en_US" || location.href.includes("?hl=en-us")) {
-        language = "en-US";
-    }
 
     if (!datesEnabled) {
         disableDates();

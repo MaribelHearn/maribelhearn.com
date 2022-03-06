@@ -1,5 +1,5 @@
 /*global $ setCookie getCookie*/
-var language = "en_US", notation = "DMY", STATS = {
+var language = "en_GB", STATS = {
         "reimu": {
             "speed": 68,
             "focus": 136,
@@ -169,7 +169,7 @@ var language = "en_US", notation = "DMY", STATS = {
     },
     DESCRIPTION = {
         "youmu": {
-            "en_US": "Her movement speeds allow her to be either very slow or very fast at will. " +
+            "en_GB": "Her movement speeds allow her to be either very slow or very fast at will. " +
                 "The sword has little cooldown, so it can be used repeatedly despite her slow charge speed. " +
                 "With that speed, the bullet clearing effect, and the invincibility frames that come with all charge attacks, " +
                 "she can easily cut through situations that no mortal should be able to dodge, and she can do it very often. " +
@@ -183,7 +183,7 @@ var language = "en_US", notation = "DMY", STATS = {
                 "因此，妖梦是毫无争议的强机。"
         },
         "marisa": {
-            "en_US": "Marisa's charge attack not only instantly destroys spirits, but causes them to explode " +
+            "en_GB": "Marisa's charge attack not only instantly destroys spirits, but causes them to explode " +
                 "as if they had been activated. This allows her to easily set off chain reactions anywhere on the screen, " +
                 "without the need to rely on her scope. Her special ability means she can cast spells more often. " +
                 "Her high unfocused speed is great for macrododging and synergizes with her laser, " +
@@ -198,7 +198,7 @@ var language = "en_US", notation = "DMY", STATS = {
                 "在开花战中，魔理沙是无可争议的最强机体。"
         },
         "reimu": {
-            "en_US": "She's powerful because of her level 2 spell, which limits the opponent's movement and " +
+            "en_GB": "She's powerful because of her level 2 spell, which limits the opponent's movement and " +
                 "spawns over a long period of time, meaning it cannot itself be entirely countered by a spell from the opponent. " +
                 "However, she faces extremely fast bullets constantly as they are returned from her own spells " +
                 "(speed is retained when bullets are reflected). Her movement is slow, and her scope is slow to expand. " +
@@ -210,7 +210,7 @@ var language = "en_US", notation = "DMY", STATS = {
                 "总而言之，除了C2，灵梦的性能平庸。但是灵梦仅仅因为C2超强的进攻能力，使她成为了花映塚的顶级角色。"
         },
         "komachi": {
-            "en_US": "Her awesome scope and auto-targeting charge attack give her a lot of freedom. " +
+            "en_GB": "Her awesome scope and auto-targeting charge attack give her a lot of freedom. " +
                 "She can essentially start a combo at will, from anywhere on the screen. She's not obligated to chase the fairies and " +
                 "spirits around to maintain her spell points, and so can pay more attention to dodging. " +
                 "Her spell is not very dangerous, but neither does it feed the opponent much energy, " +
@@ -226,7 +226,7 @@ var language = "en_US", notation = "DMY", STATS = {
         },
         // Eiki
         "eiki": {
-            "en_US": "Great movement speeds, scope, and charge attack. Her boss is also pretty good. " +
+            "en_GB": "Great movement speeds, scope, and charge attack. Her boss is also pretty good. " +
                 "Her extra attack 'clones' existing bullets on the opponent's screen by firing a special, " +
                 "faster bullet in the same trajectory. Because the speed is determined by the original bullet, " +
                 "this is more effective against characters whose spells use fast bullets (Yuuka, Reimu, etc.). " +
@@ -243,7 +243,7 @@ var language = "en_US", notation = "DMY", STATS = {
         },
         // Lyrica
         "lyrica": {
-            "en_US": "Lyrica's scope is similar to Marisa's, but is much harder to use due to her slowness. " +
+            "en_GB": "Lyrica's scope is similar to Marisa's, but is much harder to use due to her slowness. " +
                 "Her charge attack also only shoots straight forward, and, due to the fact that it stays in place, " +
                 "it cannot be swept horizontally in the hopes of hitting an exposed fairy. This lack of coverage, " +
                 "again coupled with her slow movement, makes her extremely dependent on her scope to start chains, " +
@@ -258,7 +258,7 @@ var language = "en_US", notation = "DMY", STATS = {
         },
         // Medicine
         "medicine": {
-            "en_US": "She boasts nice movement speeds and scope, and her ability to pass through spirits is sometimes useful. " +
+            "en_GB": "She boasts nice movement speeds and scope, and her ability to pass through spirits is sometimes useful. " +
                 "Her charge speed is kind of low and her charge attack sucks. Her spell, much like Eiki's, " +
                 "does nothing but feed her opponent. Her extra attack is terrifying and its effect stacks, " +
                 "eventually almost freezing the enemy in place. Unfortunately they will usually have lots of energy " +
@@ -275,7 +275,7 @@ var language = "en_US", notation = "DMY", STATS = {
         },
         // Yuuka
         "yuuka": {
-            "en_US": "Her boss, spell, and Extra attacks give her a decent offense as they force the opponent downward, " +
+            "en_GB": "Her boss, spell, and Extra attacks give her a decent offense as they force the opponent downward, " +
                 "but her defense is ruined by her slow movement. She has a hard time getting high enough on the screen to " +
                 "clear a decent area with her spells, and she's terrible at misdirecting and macrododging. " +
                 "This is a big problem, because the number of pellets she creates tends to push the game toward a spell war, " +
@@ -290,7 +290,7 @@ var language = "en_US", notation = "DMY", STATS = {
         },
         // Reisen
         "reisen": {
-            "en_US": "Good defense, terrible offense; that is Reisen in a nutshell. Her spell creates too many bullets. " +
+            "en_GB": "Good defense, terrible offense; that is Reisen in a nutshell. Her spell creates too many bullets. " +
                 "She should only win against characters with slow charge speeds who cannot keep up with the all-out spell spam " +
                 "that will inevitably ensue. Reisen herself is well-equipped to deal with that situation, " +
                 "with her good scope, charge speed, and charge attack. Even then, between skilled enough players, " +
@@ -303,7 +303,7 @@ var language = "en_US", notation = "DMY", STATS = {
         },
         // Sakuya
         "sakuya": {
-            "en_US": "Her focused movement speed is barely different from her normal speed. This is strictly a weakness: " +
+            "en_GB": "Her focused movement speed is barely different from her normal speed. This is strictly a weakness: " +
                 "she's too fast for precision, while also being too slow for anything else. The scope is awkward. " +
                 "The charge attack is even more useless than Reimu's. She is subject to a strange glitch; " +
                 "her time stop ends the bullet clearing effect of her spells. The result is that both the level 2 and level 3 spells " +
@@ -329,7 +329,7 @@ var language = "en_US", notation = "DMY", STATS = {
         },
         // Lunasa
         "lunasa": {
-            "en_US": "While her movement and charge speeds are good, her defense is still a bit low thanks to " +
+            "en_GB": "While her movement and charge speeds are good, her defense is still a bit low thanks to " +
                 "her awkward scope and three-way shot. Her offense is likewise nothing to write home about. " +
                 "Her spell is so slow it hardly matters at all. Her extra attacks are okay for limiting the opponent's space, " +
                 "but are again very slow and can be easily streamed much like Aya's. Her boss is also unimpressive, " +
@@ -341,7 +341,7 @@ var language = "en_US", notation = "DMY", STATS = {
         },
         // Merlin
         "merlin": {
-            "en_US": "Her movement, scope, and charge speed are all very slow. " +
+            "en_GB": "Her movement, scope, and charge speed are all very slow. " +
                 "The scope is essentially Lyrica's, but horizontal, and her charge attack shoots horizontally as well. " +
                 "Her basic shots do not spawn from the center of her sprite but rather from two points to her left and right. " +
                 "The shots from the right fly diagonally left and the ones from the left fly diagonally right, " +
@@ -360,7 +360,7 @@ var language = "en_US", notation = "DMY", STATS = {
         },
         // Aya
         "aya": {
-            "en_US": "Her focused speed is uncomfortably fast. Her spell and Extra attack aren't individually terrible, but " +
+            "en_GB": "Her focused speed is uncomfortably fast. Her spell and Extra attack aren't individually terrible, but " +
                 "play exactly the same role, so as long as the opponent carefully moves in one direction, they have very little " +
                 "to worry about. Still, her offense can be okay when the game picks up, especially when her boss is present, " +
                 "since this makes it very hard for the opponent to move up. Her big problem is her defense. " +
@@ -372,7 +372,7 @@ var language = "en_US", notation = "DMY", STATS = {
         },
         // Mystia
         "mystia": {
-            "en_US": "Defensively, she's not bad. Good speeds, fast scope, and an acceptable charge attack. " +
+            "en_GB": "Defensively, she's not bad. Good speeds, fast scope, and an acceptable charge attack. " +
                 "Her offense, however, is miserable. The spell takes a thousand years to appear, and even once it starts to move, " +
                 "the bullets are slow. You might think at first that its slow appearance would make it somewhat resistant to " +
                 "being cancelled by the opponent's spells, but there is actually a single 'generator' bullet (the bird-like thing) " +
@@ -386,7 +386,7 @@ var language = "en_US", notation = "DMY", STATS = {
         },
         // Cirno
         "cirno": {
-            "en_US": "She's fast and has an okay scope. She charges a bit slowly, but this doesn't matter too much. " +
+            "en_GB": "She's fast and has an okay scope. She charges a bit slowly, but this doesn't matter too much. " +
                 "Her spell attack creates a simple ring of bullets, then freezes all bullets on both players screens " +
                 "(with the exception of a few character's extra attacks, including Cirno's), randomly changes their directions, " +
                 "then sends them all moving at once. The original speed of the bullets is not retained. Additionally, " +
@@ -403,7 +403,7 @@ var language = "en_US", notation = "DMY", STATS = {
         },
         // Tewi
         "tewi": {
-            "en_US": "Fast while unfocused, slow when focused. Her charge speed is excellent. " +
+            "en_GB": "Fast while unfocused, slow when focused. Her charge speed is excellent. " +
                 "Her scope is slow and poorly shaped (much like Merlin's), her charge attack is terrible. " +
                 "While slow focused speed is normally ideal, it's a rotten combination with slow scope speed, " +
                 "so spirits become a much greater nuisance than they would usually be. Her extra attacks aren't garbage, " +
@@ -487,38 +487,28 @@ function charInfo() {
 }
 
 function setLanguage(event) {
-    var newLanguage = event.data.language, newNotation = event.data.notation;
+    var newLanguage = event.data.language;
 
-    if (language == newLanguage && notation == newNotation) {
+    if (language == newLanguage) {
         return;
     }
 
     language = newLanguage;
     setCookie("lang", newLanguage);
-
-    if (newNotation == "DMY" && notation == "MDY") {
-        newNotation = "MDY";
-    }
-
-    notation = newNotation;
-    setCookie("datenotation", newNotation);
     location.href = location.href.split('#')[0].split('?')[0];
 }
 
 $(document).ready(function () {
-    if (getCookie("lang") == "zh_CN" || location.href.contains("zh")) {
+    if (getCookie("lang") == "zh_CN" || location.href.includes("?hl=zh")) {
         language = "zh_CN";
-        notation = "YMD";
-    } else if (getCookie("datenotation") == "MDY" || location.href.contains("en-us")) {
-        notation = "MDY";
-    } else if (getCookie("datenotation") == "YMD") {
-        notation = "YMD";
+    } else if (getCookie("lang") == "en_US" || location.href.includes("?hl=en-us")) {
+        language = "en_GB";
     }
 
     $("body").on("click", closeModal);
     $("body").on("keypress", closeModal);
     $(".char").on("click", charInfo);
     $(".flag").attr("href", "");
-    $("#en").on("click", {language: "en_US", notation: "DMY"}, setLanguage);
-    $("#zh").on("click", {language: "zh_CN", notation: "YMD"}, setLanguage);
+    $("#en").on("click", {language: (getCookie("lang") == "en_US" ? "en_US" : "en_GB")}, setLanguage);
+    $("#zh").on("click", {language: "zh_CN"}, setLanguage);
 });

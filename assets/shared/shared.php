@@ -140,37 +140,22 @@ function set_theme_cookie() {
 function set_lang_cookie() {
     if (empty($_GET['hl']) || $_GET['hl'] == 'en-gb' || $_GET['hl'] == 'en') {
         $lang = 'en_US';
-        $notation = 'DMY';
     } else if ($_GET['hl'] == 'en-us') {
         $lang = 'en_US';
-        $notation = 'MDY';
     } else if ($_GET['hl'] == 'jp') {
         $lang = 'ja_JP';
-        $notation = 'YMD';
     } else if ($_GET['hl'] == 'zh') {
         $lang = 'zh_CN';
-        $notation = 'YMD';
     } else if ($_GET['hl'] == 'ru') {
         $lang = 'ru_RU';
-        $notation = 'DMY';
     } else if ($_GET['hl'] == 'de') {
         $lang = 'de_DE';
-        $notation = 'DMY';
     } else {
         $lang = 'en_US';
-        $notation = 'DMY';
     }
     if (!empty($_GET['hl'])) {
-        if (isset($_COOKIE['datenotation']) && strpos($_GET['hl'], 'en') !== false && $_COOKIE['datenotation'] == 'MDY') {
-            $notation = 'MDY';
-        }
         if (is_localhost($_SERVER['REMOTE_ADDR'])) {
             setcookie('lang', $lang, array(
-                'expires' => 2147483647,
-                'path' => '/',
-                'samesite' => 'Strict'
-            ));
-            setcookie('datenotation', $notation, array(
                 'expires' => 2147483647,
                 'path' => '/',
                 'samesite' => 'Strict'
@@ -182,23 +167,14 @@ function set_lang_cookie() {
                 'secure' => true,
                 'samesite' => 'Strict'
             ));
-            setcookie('datenotation', $notation, array(
-                'expires' => 2147483647,
-                'path' => '/',
-                'secure' => true,
-                'samesite' => 'Strict'
-            ));
         }
     } else {
         if (isset($_COOKIE['lang'])) {
             $lang = str_replace('"', '', $_COOKIE['lang']);
         }
-        if (isset($_COOKIE['datenotation'])) {
-            $notation = str_replace('"', '', $_COOKIE['datenotation']);
-        }
     }
 
-    return (object) array('lang' => $lang, 'notation' => $notation);
+    return $lang;
 }
 function lang_code() {
     global $lang;

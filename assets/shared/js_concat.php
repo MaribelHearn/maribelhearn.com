@@ -26,6 +26,7 @@ $sorttable = array('drc', 'fangame', 'gensokyo', 'lnn', 'royalflare', 'scoring',
 $jquery = array('drc', 'lnn', 'pofv', 'royalflare', 'scoring', 'slots', 'survival', 'tiers', 'wr');
 $utils = array('drc', 'lnn', 'pofv', 'tiers', 'wr');
 $canvas = array('slots', 'survival', 'tiers');
+$wr_json = array('drc', 'scoring', 'wr');
 $page = $_GET['page'];
 $dir = directory($page);
 $js = array();
@@ -55,6 +56,23 @@ if ($page == 'tiers' && $_GET['mobile']) {
 }
 if (file_exists('../' . $dir . '/' . $page . '/' . $page . $min . '.js')) {
     array_push($js, '../' . $dir . '/' . $page . '/' . $page . $min . '.js');
+}
+if ($page == 'drc') {
+    echo 'const Rubrics = ' . file_get_contents('json/rubrics.json') . ';';
+}
+if ($page == 'scoring') {
+    echo 'const scores = ' . file_get_contents('json/defaults.json') . ';';
+}
+if ($page == 'lnn') {
+    echo 'const LNNs = ' . file_get_contents('json/lnnlist.json') . ';';
+    echo 'const unverifiedScores = ' . file_get_contents('json/unverified.json') . ';';
+}
+if ($page == 'wr') {
+    echo 'const westScores = ' . file_get_contents('json/bestinthewest.json') . ';';
+    echo 'const unverifiedScores = ' . file_get_contents('json/unverified.json') . ';';
+}
+if (in_array($page, $wr_json)) {
+    echo 'const WRs = ' . file_get_contents('json/wrlist.json') . ';';
 }
 foreach ($js as $js_file) {
     $js_content = file_get_contents($js_file);

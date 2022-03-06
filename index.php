@@ -24,9 +24,7 @@
     $page_path = 'assets/%dir/' . $page . '/' . $page . '.php'; // without subdir
     $page = redirect($page, $page_path, $_SERVER['REQUEST_URI'], $status_code);
     hit($page, $status_code);
-    $lc_values = set_lang_cookie();
-    $lang = $lc_values->lang;
-    $notation = $lc_values->notation;
+    $lang = set_lang_cookie();
     $locale = $lang . '.UTF-8';
     $page = preg_replace('/\//', '', $page);
     $use_index = array('index', 'about', 'credits', 'privacy', 'error');

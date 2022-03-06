@@ -16,7 +16,7 @@
     <p id='unver'><?php
         echo _('If you toggle Unverified Scores, this will show scores that are higher than the World Record, but lack replay or video proof.');
     ?></p>
-    <p id='lastupdate'><?php echo format_lm($lm, $lang, $notation) ?></p>
+    <p id='lastupdate'><?php echo format_lm($lm, $lang) ?></p>
     <h2 id='contents_header'><?php echo _('Contents') ?></h2>
     <?php
         // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
