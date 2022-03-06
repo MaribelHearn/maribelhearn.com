@@ -406,7 +406,7 @@ function addPlayerWR(playerWRs, game, difficulty, shottype, isUnverified) {
 
     if (!playerWRs.cats.includes(game + difficulty)) {
         $("#playerlistbody").append("<tr><td class='" + game + "p'><span class='" + game + "'>" + game +
-        "</span>" + (language == "en_US" ? " " : "") + "<span class='" + difficulty + "'>" + difficulty +
+        "</span>" + (language != "ja_JP" && language != "zh_CN" ? " " : "") + "<span class='" + difficulty + "'>" + difficulty +
         "</span></td><td id='" + game + difficulty +
         "s'></td><td id=" + game + difficulty + "r></td>" +
         "<td id='" + game + difficulty + "d' class='date_empty'></td></tr>");
