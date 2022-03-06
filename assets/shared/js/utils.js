@@ -345,8 +345,8 @@ function generateTableText(page, language) {
         $(".difficulty").html("Schwierigkeitsgrad");
         $(".shottype").html("Shot Type");
         $(".route").html("Route");
-        $(".date").html("Date");
-        $(".dates").html("Datum");
+        $(".date").html("Datum");
+        $(".dates").html("Daten");
         $(".total").html("Gesamt");
         $(".overall").html("Gesamt");
         $(".world").html("Weltweit");

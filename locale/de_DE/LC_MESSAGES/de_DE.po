@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2022-01-16 17:59+0100\n"
-"PO-Revision-Date: 2022-01-31 23:41+0100\n"
+"PO-Revision-Date: 2022-03-06 23:56+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Poedit-Basepath: ../../../assets\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -1626,7 +1626,7 @@ msgstr "Westliche Rekorde"
 
 #: wr/wr.php:52
 msgid "Dates"
-msgstr "Datum"
+msgstr "Daten"
 
 #: wr/wr.php:61 wr/wr.php:307 wr/wr.php:320
 msgid "Score"
