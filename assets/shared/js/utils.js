@@ -317,6 +317,27 @@ function generateTableText(page, language) {
         $(".nooflnnnns").html("LNNNNの数");
         $(".different").html("（プレイヤー）");
         $(".all").html("（全）");
+    } else if (language == "ru_RU") {
+        $(".game").html("Game");
+        $(".player").html("Player");
+        $(".players").html("Players");
+        $(".difficulty").html("Difficulty");
+        $(".shottype").html("Shottype");
+        $(".route").html("Route");
+        $(".date").html("Date");
+        $(".dates").html("Даты");
+        $(".total").html("Total");
+        $(".overall").html("Overall");
+        $(".world").html("World");
+        $(".west").html("West");
+        $(".percentage").html("Percentage");
+        $(".nooflnns").html("No. of LNNs");
+        $(".nooflnnus").html("No. of LNN(N)s");
+        $(".nooflnnns").html("No. of LNNNs");
+        $(".nooflnnfss").html("No. of LNNFSs");
+        $(".nooflnnnns").html("No. of LNNNNs");
+        $(".different").html("(Different players)");
+        $(".all").html("(All)");
     } else if (language == "de_DE") {
         $(".game").html("Spiel");
         $(".player").html("Spieler");
