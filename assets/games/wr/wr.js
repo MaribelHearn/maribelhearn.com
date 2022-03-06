@@ -19,7 +19,7 @@ function isPortrait() {
 function toggleSeasons() {
     seasonsEnabled = !seasonsEnabled;
     seasonsEnabled ? localStorage.setItem("seasonsEnabled", true) : localStorage.removeItem("seasonsEnabled");
-    showWRs({data: {game: "HSiFS", seasonSwitch: true}});
+    reloadTable();
 }
 
 function toggleLayout() {
@@ -390,8 +390,8 @@ function showWRtable(game) {
     $("#seasons").prop("checked", seasonsEnabled);
 }
 
-function verifyConditions(game, seasonSwitch) {
-    if (game == selected && !seasonSwitch) {
+function verifyConditions(game) {
+    if (game == selected) {
         $("#list").html("");
         $("#" + game + "_image").css("border", $("#" + game + "_image").hasClass("cover98") ? "1px solid black" : "none");
         selected = "";
@@ -402,7 +402,7 @@ function verifyConditions(game, seasonSwitch) {
 }
 
 function showWRs(event) {
-    var game = event.data.game ? event.data.game : this.id.replace("_image", ""), seasonSwitch = event.data.seasonSwitch;
+    var game = event.data ? event.data.game : this.id.replace("_image", "");
 
     if (!WRs || !westScores) {
         $.get("assets/shared/json/wrlist.json", function (data1) {
@@ -412,14 +412,14 @@ function showWRs(event) {
                         WRs = data1;
                         westScores = data2;
                         unverifiedScores = data3;
-                        if (verifyConditions(game, seasonSwitch)) {
+                        if (verifyConditions(game)) {
                             showWRtable(game);
                         }
                     }, "json");
                 } else {
                     WRs = data1;
                     westScores = data2;
-                    if (verifyConditions(game, seasonSwitch)) {
+                    if (verifyConditions(game)) {
                         showWRtable(game);
                     }
                 }
@@ -428,7 +428,7 @@ function showWRs(event) {
         return;
     }
 
-    if (verifyConditions(game, seasonSwitch)) {
+    if (verifyConditions(game)) {
         showWRtable(game);
     }
 }
@@ -613,7 +613,7 @@ function setEventListeners() {
     $("#zh").on("click", {language: "zh_CN"}, setLanguage);
     $("#ru").on("click", {language: "ru_RU"}, setLanguage);
     $("#de").on("click", {language: "de_DE"}, setLanguage);
-    $(".game_img").on("click", {seasonSwitch: false}, showWRs);
+    $(".game_img").on("click", showWRs);
 }
 
 function setAttributes() {
