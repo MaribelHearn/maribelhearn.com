@@ -44,14 +44,6 @@
         <p>Credit to an unknown original creator for the idea of this randomiser.</p>
         <p>Originally known as Touhou Click and Drag Game.</p>
     </div>
-    <?php
-        $json = file_get_contents('assets/other/slots/json/charpos.json');
-        $chars = implode(',', json_decode($json, true));
-        $json = file_get_contents('assets/other/slots/json/locations.json');
-        $locations = implode(',', json_decode($json, true));
-        echo '<input id="chars_load" type="hidden" value="' . $chars . '" data-html2canvas-ignore>';
-        echo '<input id="locations_load" type="hidden" value="' . $locations . '" data-html2canvas-ignore>';
-    ?>
 </div>
 <div id='modal' data-html2canvas-ignore>
     <div id='modal_inner'></div>

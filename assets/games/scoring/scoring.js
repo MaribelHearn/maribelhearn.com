@@ -1,4 +1,4 @@
-/*global $ sorttable deleteCookie*/
+/*global $ WRs scores sorttable deleteCookie*/
 var tracked = ["EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"],
     untracked = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "PoFV"];
 

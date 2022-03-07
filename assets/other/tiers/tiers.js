@@ -1,4 +1,4 @@
-/*global $ html2canvas getCookie deleteCookie MobileDragDrop*/
+/*global $ categories gameCategories shotCategories html2canvas getCookie deleteCookie MobileDragDrop*/
 if (typeof MobileDragDrop !== "undefined") {
     MobileDragDrop.polyfill({
         holdToDrag: 200
@@ -7,9 +7,6 @@ if (typeof MobileDragDrop !== "undefined") {
 
 var MAX_NUMBER_OF_TIERS = 100,
     MAX_NAME_LENGTH = 50,
-    categories = {},
-    gameCategories = {},
-    shotCategories = {},
     tieredItems = [],
     sorts = ["characters", "works", "shots"],
     defaultTiers = ["S", "A", "B", "C"],
@@ -1951,38 +1948,6 @@ function deleteLegacyCookies() {
     localStorage.removeItem("shotOrder");
 }
 
-function loadCategories() {
-    var chars = $("#chars_load").children(), works = $("#works_load").children(), shots = $("#shots_load").children(),
-        val, i, j;
-
-    for (i = 0; i < chars.length; i++) {
-        val = chars[i].value.split(',');
-        categories[chars[i].id] = {"chars": []};
-
-        for (j = 0; j < val.length; j++) {
-            categories[chars[i].id].chars.push(val[j]);
-        }
-    }
-
-    for (i = 0; i < works.length; i++) {
-        val = works[i].value.split(',');
-        gameCategories[works[i].id] = {"chars": []};
-
-        for (j = 0; j < val.length; j++) {
-            gameCategories[works[i].id].chars.push(val[j]);
-        }
-    }
-
-    for (i = 0; i < shots.length; i++) {
-        val = shots[i].value.split(',');
-        shotCategories[shots[i].id] = {"chars": []};
-
-        for (j = 0; j < val.length; j++) {
-            shotCategories[shots[i].id].chars.push(val[j]);
-        }
-    }
-}
-
 function loadTier(tiersData, tierNum, tierSort) {
     var tierList = getCurrentTierList(tierSort), item, i;
 
@@ -2258,7 +2223,6 @@ $(document).ready(function () {
         showInformation();
     }
 
-    loadCategories();
     $("#tier_list_caption").html(settings[settings.sort].tierListName);
     $("#chars_load, #works_load, #shots_load").remove();
     $("#sort").val(settings.sort);

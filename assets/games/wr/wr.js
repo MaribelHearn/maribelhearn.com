@@ -1,5 +1,5 @@
-/*global $ MAX_SCORE getCookie setCookie deleteCookie gameAbbr shottypeAbbr sep fullNameNumber generateTableText
-generateFullNames generateShottypes generateShortNames*/
+/*global $ WRs westScores unverifiedScores MAX_SCORE getCookie setCookie deleteCookie gameAbbr shottypeAbbr
+sep fullNameNumber generateTableText generateFullNames generateShottypes generateShortNames*/
 var  missingReplays, seasonsEnabled, datesEnabled, unverifiedEnabled, language = "en-GB", selected = "",
     all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN",
     "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];

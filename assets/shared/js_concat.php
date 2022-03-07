@@ -71,6 +71,15 @@ if ($page == 'wr') {
     echo 'const westScores = ' . file_get_contents('json/bestinthewest.json') . ';';
     echo 'const unverifiedScores = ' . file_get_contents('json/unverified.json') . ';';
 }
+if ($page == 'tiers') {
+    echo 'const categories = ' . file_get_contents('json/chars.json') . ';';
+    echo 'const gameCategories = ' . file_get_contents('json/works.json') . ';';
+    echo 'const shotCategories = ' . file_get_contents('json/shots.json') . ';';
+}
+if ($page == 'slots') {
+    echo 'const CHARS = ' . file_get_contents('json/charpos.json') . ';';
+    echo 'const LOCATIONS = ' . file_get_contents('json/locations.json') . ';';
+}
 if (in_array($page, $wr_json)) {
     echo 'const WRs = ' . file_get_contents('json/wrlist.json') . ';';
 }
