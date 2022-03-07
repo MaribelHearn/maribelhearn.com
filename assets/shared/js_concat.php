@@ -57,11 +57,11 @@ if ($page == 'tiers' && $_GET['mobile']) {
 if (file_exists('../' . $dir . '/' . $page . '/' . $page . $min . '.js')) {
     array_push($js, '../' . $dir . '/' . $page . '/' . $page . $min . '.js');
 }
+if ($page == 'scoring') {
+    echo 'var scores = ' . file_get_contents('json/defaults.json') . ';';
+}
 if ($page == 'drc') {
     echo 'const Rubrics = ' . file_get_contents('json/rubrics.json') . ';';
-}
-if ($page == 'scoring') {
-    echo 'const scores = ' . file_get_contents('json/defaults.json') . ';';
 }
 if ($page == 'lnn') {
     echo 'const LNNs = ' . file_get_contents('json/lnnlist.json') . ';';
