@@ -1,4 +1,4 @@
-/*global $ html2canvas*/
+/*global $ CHARS LOCATIONS html2canvas*/
 var SPECIES = ["Human", "Magician", "Devil", "Ghost", "Yuki-onna", "Night sparrow", "Tengu", "Kappa",
     "Tsurube-otoshi", "Tsuchigumo", "Hashihime", "Satori", "Shuchuu", "Tsukumogami", "Nyuudou",
     "Nue", "Daidarabotchi", "Yamabiko", "Zombie", "Gashadokuro", "Kirin", "Wanyuudou", "Katawa-guruma",
@@ -12,11 +12,7 @@ var SPECIES = ["Human", "Magician", "Devil", "Ghost", "Yuki-onna", "Night sparro
     "Married to", "Honeymoon location", "No. of children", "Cockblocked by"],
     bannedChars = ['<', '>', '&'],
     slots = [],
-    chars = [],
-    locations = [],
     speed = 100,
-    numberOfChars,
-    numberOfLocations,
     running;
 
 function isMobile() {
@@ -36,10 +32,10 @@ function randomiseImage(max, slot, previous) {
     y = Math.floor(slots[slot] / ROW_SIZE) * OFFSET;
     $("#slot" + slot).css("background-position", x + "px " + y + "px");
 
-    if (max == numberOfChars) {
-        $("#slot" + slot).html("<div id='text" + slot + "' class='name'>" + chars[slots[slot]] + "</div>");
+    if (max == CHARS.length) {
+        $("#slot" + slot).html("<div id='text" + slot + "' class='name'>" + CHARS[slots[slot]] + "</div>");
     } else {
-        $("#slot" + slot).html("<div id='text" + slot + "' class='name'>" + locations[slots[slot]] + "</div>");
+        $("#slot" + slot).html("<div id='text" + slot + "' class='name'>" + LOCATIONS[slots[slot]] + "</div>");
     }
 }
 
@@ -62,11 +58,11 @@ function tick() {
         if (slot === 0) {
             randomiseArray(SPECIES, slot, previous);
         } else if (slot == 6) {
-            randomiseImage(numberOfLocations, slot, previous);
+            randomiseImage(LOCATIONS.length, slot, previous);
         } else if (slot == 7) {
             randomiseArray(NUMBERS, slot, previous);
         } else {
-            randomiseImage(numberOfChars, slot, previous);
+            randomiseImage(CHARS.length, slot, previous);
         }
 
     }
@@ -244,14 +240,6 @@ function titleMenu(event) {
     $("#modal").css("display", "block");
 }
 
-function loadCharsLocs() {
-    chars = $("#chars_load").val().split(',');
-    locations = $("#locations_load").val().split(',');
-    numberOfChars = chars.length;
-    numberOfLocations = locations.length;
-    $("#chars_load, #locs_load").remove();
-}
-
 $(document).ready(function () {
     setEventListeners();
 
@@ -268,6 +256,4 @@ $(document).ready(function () {
             $("#title" + i).html(slotTitles[i]);
         }
     }
-
-    loadCharsLocs();
 });

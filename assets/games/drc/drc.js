@@ -1,4 +1,4 @@
-/*global $ getCookie setCookie*/
+/*global $ WRs Rubrics getCookie setCookie*/
 var step, phantasm = true, noExtra = true, noShottypes = true, dsActive = true, language = "en_GB",
     DIFFICULTY = "#difficulty", BOMBS = "#bombs", SCORE = "#score", PERFORMANCE = "#performance", DRCPOINTS = "#drcpoints",
     ERROR = "#error", SHOTTYPE = "#shottype", NOTIFY = "#notify", NB = "#nb", MISSES = "#misses", CHALLENGE = "#challenge",

@@ -84,33 +84,3 @@
 	<p id='msg_container_mobile'></p>
 </div>
 <div id='characters' class='dark_bg' data-html2canvas-ignore></div>
-<?php
-    $json = file_get_contents('assets/other/tiers/json/chars.json');
-    $chars = json_decode($json, true);
-    $json = file_get_contents('assets/other/tiers/json/works.json');
-    $works = json_decode($json, true);
-    $json = file_get_contents('assets/shared/json/shots.json');
-    $shots = json_decode($json, true);
-    echo '<div id="chars_load" class="dark_bg" data-html2canvas-ignore>';
-    foreach ($chars as $category => $value) {
-        foreach ($chars[$category] as $key => $value) {
-            echo '<input id="' . $category . '" type="hidden" value="' . implode(',', $value) . '">';
-        }
-    }
-    echo '</div><div id="works_load" class="dark_bg" data-html2canvas-ignore>';
-    foreach ($works as $category => $value) {
-        foreach ($works[$category] as $key => $value) {
-            echo '<input id="' . $category . '" type="hidden" value="' . implode(',', $value) . '">';
-        }
-    }
-    echo '</div><div id="shots_load" class="dark_bg" data-html2canvas-ignore>';
-    foreach ($shots as $category => $value) {
-        foreach ($shots[$category] as $key => $value) {
-			foreach ($value as $key => $shot) {
-				$value[$key] = $category . ' ' . $shot;
-			}
-            echo '<input id="' . $category . '" type="hidden" value="' . implode(',', $value) . '">';
-        }
-    }
-    echo '</div>';
-?>

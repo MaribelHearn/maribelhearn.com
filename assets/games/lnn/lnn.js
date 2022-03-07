@@ -1,4 +1,4 @@
-/*global $ getCookie deleteCookie setCookie gameAbbr shottypeAbbr generateTableText
+/*global $ LNNs getCookie deleteCookie setCookie gameAbbr shottypeAbbr generateTableText
 generateFullNames generateShottypes fullNameNumber generateShortNames*/
 var alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", language = "en_GB", selected = "", missingReplays, videoLNNs, testing;
 
