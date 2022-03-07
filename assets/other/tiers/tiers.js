@@ -1948,6 +1948,14 @@ function deleteLegacyCookies() {
     localStorage.removeItem("shotOrder");
 }
 
+function addCategoryNamesToShots() {
+    for (var i = 0; i < shotCategories.length; i++) {
+        for (var j = 0; j < shotCategories[i].chars.length; j++) {
+            shotCategories[i].chars[j] = i + " " + shotCategories[i].chars[j];
+        }
+    }
+}
+
 function loadTier(tiersData, tierNum, tierSort) {
     var tierList = getCurrentTierList(tierSort), item, i;
 
@@ -2216,6 +2224,7 @@ function setEventListeners() {
 
 $(document).ready(function () {
     deleteLegacyCookies();
+    addCategoryNamesToShots();
 
     if (localStorage.settings) {
         loadSettingsFromStorage();

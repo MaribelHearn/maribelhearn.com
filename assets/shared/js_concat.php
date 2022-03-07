@@ -72,9 +72,9 @@ if ($page == 'wr') {
     echo 'const unverifiedScores = ' . file_get_contents('json/unverified.json') . ';';
 }
 if ($page == 'tiers') {
-    echo 'const categories = ' . file_get_contents('json/chars.json') . ';';
-    echo 'const gameCategories = ' . file_get_contents('json/works.json') . ';';
-    echo 'const shotCategories = ' . file_get_contents('json/shots.json') . ';';
+    echo 'var categories = ' . file_get_contents('json/chars.json') . ';';
+    echo 'var gameCategories = ' . file_get_contents('json/works.json') . ';';
+    echo 'var shotCategories = ' . file_get_contents('json/shots.json') . ';';
 }
 if ($page == 'slots') {
     echo 'const CHARS = ' . file_get_contents('json/charpos.json') . ';';
