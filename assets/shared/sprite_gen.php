@@ -1,6 +1,9 @@
 <?php
 $row_size = 9;
 $works_row_size = 8;
+$offset = -120;
+$picker_offset = -80;
+$mobile_offset = -60;
 $chars = array('MarisaKirisame', 'ReimuHakurei', 'Elis', 'Kikuri', 'Konngara', 'Mima', 'ReimuPC-98', 'Sariel', 'SinGyokuF', 'SinGyokuM', 'YuugenMagan', 'EvilEyeSigma', 'Genjii', 'MarisaPC-98', 'Meira', 'Rika',
 'ChiyuriKitashirakawa', 'Ellen', 'KanaAnaberal', 'Kotohime', 'Mimi-chan', 'RikakoAsakura', 'Ruukoto', 'YumemiOkazaki', 'Elly', 'Gengetsu', 'Kurumi', 'Mugetsu', 'Orange', 'YuukaPC-98', 'AlicePC-98',
 'Luize', 'MaiPC-98', 'Sara', 'Shinki', 'Yuki', 'Yumeko', 'Cirno', 'Daiyousei', 'FlandreScarlet', 'HongMeiling', 'Koakuma', 'PatchouliKnowledge', 'RemiliaScarlet', 'Rumia', 'SakuyaIzayoi',
@@ -28,50 +31,50 @@ $shots = array('EoSDReimuA', 'EoSDReimuB', 'EoSDMarisaA', 'EoSDMarisaB', 'PCBRei
 'INGhostTeam', 'INReimu', 'INYukari', 'INMarisa', 'INAlice', 'INSakuya', 'INRemilia', 'INYoumu', 'INYuyuko', 'PoFVReimu', 'PoFVMarisa', 'PoFVSakuya', 'PoFVYoumu', 'PoFVReisen', 'PoFVCirno',
 'PoFVLyrica', 'PoFVMystia', 'PoFVTewi', 'PoFVAya', 'PoFVMedicine', 'PoFVYuuka', 'PoFVKomachi', 'PoFVEiki', 'MoFReimuA', 'MoFReimuB', 'MoFReimuC', 'MoFMarisaA', 'MoFMarisaB', 'MoFMarisaC',
 'SAReimuA', 'SAReimuB', 'SAReimuC', 'SAMarisaA', 'SAMarisaB', 'SAMarisaC', 'UFOReimuA', 'UFOReimuB', 'UFOMarisaA', 'UFOMarisaB', 'UFOSanaeA', 'UFOSanaeB', 'TDReimu', 'TDMarisa', 'TDSanae',
-'TDYoumu', 'DDCReimuA', 'DDCReimuB', 'DDCMarisaA', 'DDCMarisaB', 'DDCSakuyaB', 'LoLKReimu', 'LoLKMarisa', 'LoLKSanae', 'LoLKReisen', 'HSiFSReimuSpring', 'HSiFSReimuSummer', 'HSiFSReimuAutumn',
+'TDYoumu', 'DDCReimuA', 'DDCReimuB', 'DDCMarisaA', 'DDCMarisaB', 'DDCSakuyaA', 'DDCSakuyaB', 'LoLKReimu', 'LoLKMarisa', 'LoLKSanae', 'LoLKReisen', 'HSiFSReimuSpring', 'HSiFSReimuSummer', 'HSiFSReimuAutumn',
 'HSiFSReimuWinter', 'HSiFSCirnoSpring', 'HSiFSCirnoSummer', 'HSiFSCirnoAutumn', 'HSiFSCirnoWinter', 'HSiFSAyaSpring', 'HSiFSAyaSummer', 'HSiFSAyaAutumn', 'HSiFSAyaWinter', 'HSiFSMarisaSpring',
 'HSiFSMarisaSummer', 'HSiFSMarisaAutumn', 'HSiFSMarisaWinter', 'WBaWCReimuWolf', 'WBaWCReimuOtter', 'WBaWCReimuEagle', 'WBaWCMarisaWolf', 'WBaWCMarisaOtter', 'WBaWCMarisaEagle',
 'WBaWCYoumuWolf', 'WBaWCYoumuOtter', 'WBaWCYoumuEagle', 'UMReimu', 'UMMarisa', 'UMSakuya', 'UMSanae', 'SoEWReimuA', 'SoEWReimuB', 'SoEWReimuC', 'PoDDReimu', 'PoDDMima', 'PoDDMarisa',
 'PoDDEllen', 'PoDDKotohime', 'PoDDKana', 'PoDDRikako', 'PoDDChiyuri', 'PoDDYumemi', 'LLSReimuA', 'LLSReimuB', 'LLSMarisaA', 'LLSMarisaB', 'MSReimu', 'MSMarisa', 'MSMima', 'MSYuuka',
 'PoFVMerlin', 'PoFVLunasa', 'HSiFSReimuExtra', 'HSiFSCirnoExtra', 'HSiFSAyaExtra', 'HSiFSMarisaExtra');
 for ($i = 0; $i < count($chars); $i++) {
-    $picker_x = ($i % $row_size) * -80;
-    $picker_y = floor($i / $row_size) * -80;
-    $tiered_x = ($i % $row_size) * -120;
-    $tiered_y = floor($i / $row_size) * -120;
+    $picker_x = ($i % $row_size) * $picker_offset;
+    $picker_y = floor($i / $row_size) * $picker_offset;
+    $tiered_x = ($i % $row_size) * $offset;
+    $tiered_y = floor($i / $row_size) * $offset;
     if ($_GET['mobile']) {
-        $picker_x = ($i % $row_size) * -60;
-        $picker_y = floor($i / $row_size) * -60;
-        $tiered_x = ($i % $row_size) * -60;
-        $tiered_y = floor($i / $row_size) * -60;
+        $picker_x = ($i % $row_size) * $mobile_offset;
+        $picker_y = floor($i / $row_size) * $mobile_offset;
+        $tiered_x = ($i % $row_size) * $mobile_offset;
+        $tiered_y = floor($i / $row_size) * $mobile_offset;
     }
     echo '#' . $chars[$i] . '.list_characters{background-position:' . $picker_x . 'px ' . $picker_y . 'px}';
     echo '#' . $chars[$i] . '.tiered_characters{background-position:' . $tiered_x . 'px ' . $tiered_y . 'px}';
 }
 for ($i = 0; $i < count($works); $i++) {
-    $picker_x = ($i % $works_row_size) * -80;
-    $picker_y = floor($i / $works_row_size) * -80;
-    $tiered_x = ($i % $works_row_size) * -120;
-    $tiered_y = floor($i / $works_row_size) * -120;
+    $picker_x = ($i % $works_row_size) * $picker_offset;
+    $picker_y = floor($i / $works_row_size) * $picker_offset;
+    $tiered_x = ($i % $works_row_size) * $offset;
+    $tiered_y = floor($i / $works_row_size) * $offset;
     if ($_GET['mobile']) {
-        $picker_x = ($i % $works_row_size) * -60;
-        $picker_y = floor($i / $works_row_size) * -60;
-        $tiered_x = ($i % $works_row_size) * -60;
-        $tiered_y = floor($i / $works_row_size) * -60;
+        $picker_x = ($i % $works_row_size) * $mobile_offset;
+        $picker_y = floor($i / $works_row_size) * $mobile_offset;
+        $tiered_x = ($i % $works_row_size) * $mobile_offset;
+        $tiered_y = floor($i / $works_row_size) * $mobile_offset;
     }
     echo '#' . $works[$i] . '.list_works{background-position:' . $picker_x . 'px ' . $picker_y . 'px}';
     echo '#' . $works[$i] . '.tiered_works{background-position:' . $tiered_x . 'px ' . $tiered_y . 'px}';
 }
 for ($i = 0; $i < count($shots); $i++) {
-    $picker_x = ($i % $row_size) * -80;
-    $picker_y = floor($i / $row_size) * -80;
-    $tiered_x = ($i % $row_size) * -120;
-    $tiered_y = floor($i / $row_size) * -120;
+    $picker_x = ($i % $row_size) * $picker_offset;
+    $picker_y = floor($i / $row_size) * $picker_offset;
+    $tiered_x = ($i % $row_size) * $offset;
+    $tiered_y = floor($i / $row_size) * $offset;
     if ($_GET['mobile']) {
-        $picker_x = ($i % $row_size) * -60;
-        $picker_y = floor($i / $row_size) * -60;
-        $tiered_x = ($i % $row_size) * -60;
-        $tiered_y = floor($i / $row_size) * -60;
+        $picker_x = ($i % $row_size) * $mobile_offset;
+        $picker_y = floor($i / $row_size) * $mobile_offset;
+        $tiered_x = ($i % $row_size) * $mobile_offset;
+        $tiered_y = floor($i / $row_size) * $mobile_offset;
     }
     echo '#' . $shots[$i] . '.list_shots{background-position:' . $picker_x . 'px ' . $picker_y . 'px}';
     echo '#' . $shots[$i] . '.tiered_shots{background-position:' . $tiered_x . 'px ' . $tiered_y . 'px}';
