@@ -1949,7 +1949,7 @@ function deleteLegacyCookies() {
 }
 
 function addCategoryNamesToShots() {
-    for (var i = 0; i < shotCategories.length; i++) {
+    for (var i in shotCategories) {
         for (var j = 0; j < shotCategories[i].chars.length; j++) {
             shotCategories[i].chars[j] = i + " " + shotCategories[i].chars[j];
         }
