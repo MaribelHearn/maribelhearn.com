@@ -15,10 +15,10 @@ $chars = array('MarisaKirisame', 'ReimuHakurei', 'Elis', 'Kikuri', 'Konngara', '
 'MononobenoFuto', 'SeigaKaku', 'SoganoTojiko', 'ToyosatomiminoMiko', 'YoshikaMiyako', 'HatanoKokoro', 'Clownpiece', 'DoremySweet', 'HecatiaLapislazuli', 'Junko', 'Ringo', 'SagumeKishin', 'Seiran',
 'BenbenTsukumo', 'KagerouImaizumi', 'RaikoHorikawa', 'SeijaKijin', 'Sekibanki', 'ShinmyoumaruSukuna', 'Wakasagihime', 'YatsuhashiTsukumo', 'SumirekoUsami', 'JoonYorigami', 'ShionYorigami',
 'AunnKomano', 'EternityLarva', 'MaiTeireida', 'NarumiYatadera', 'NemunoSakata', 'OkinaMatara', 'SatonoNishida', 'EikaEbisu', 'KeikiHaniyasushin', 'KutakaNiwatari', 'MayumiJoutouguu',
-'SakiKurokoma', 'UrumiUshizaki', 'YachieKicchou', 'FortuneTeller', 'HiedanoAkyuu', 'KasenIbaraki', 'KosuzuMotoori', 'ReisenII', 'RinnosukeMorichika', 'Tokiko', 'WatatsukinoToyohime',
-'WatatsukinoYorihime', 'MaribelHearn', 'RenkoUsami', 'MiyoiOkunoda', 'MikeGoutokuji', 'TakaneYamashiro', 'SannyoKomakusa', 'MisumaruTamatsukuri', 'TsukasaKudamaki', 'MegumuIizunamaru',
-'ChimataTenkyuu', 'MomoyoHimemushi', 'YuumaToutetsu', 'FiveMagicStones', 'MarisaPC-98LLS', 'YuukaPC-98Stage5', 'YukiandMai', 'AlicePC-98Extra', 'YuyukoSaigyoujiResurrectionButterfly',
-'KaguyaHouraisanLastSpells', 'YuyukoSaigyoujiTD', 'OkinaMataraExtra', 'MarisaKirisameGFW');
+'SakiKurokoma', 'UrumiUshizaki', 'YachieKicchou', 'YuumaToutetsu', 'ChimataTenkyuu', 'MegumuIizunamaru', 'MikeGoutokuji', 'MisumaruTamatsukuri', 'MomoyoHimemushi', 'SannyoKomakusa',
+'TakaneYamashiro', 'TsukasaKudamaki', 'FortuneTeller', 'HiedanoAkyuu', 'KasenIbaraki', 'KosuzuMotoori', 'MiyoiOkunoda', 'ReisenII', 'RinnosukeMorichika', 'Tokiko', 'WatatsukinoToyohime',
+'WatatsukinoYorihime', 'MaribelHearn', 'RenkoUsami', 'AlicePC-98Extra', 'FiveMagicStones', 'KaguyaHouraisanLastSpells', 'MarisaKirisameGFW', 'MarisaPC-98LLS', 'OkinaMataraExtra', 'YukiandMai',
+'YuukaPC-98Stage5', 'YuyukoSaigyoujiResurrectionButterfly', 'YuyukoSaigyoujiTD');
 $works = array('HighlyResponsivetoPrayers', 'StoryofEasternWonderland', 'PhantasmagoriaofDimDream', 'LotusLandStory', 'MysticSquare', 'EmbodimentofScarletDevil', 'PerfectCherryBlossom', 'ImmaterialandMissingPower',
 'ImperishableNight', 'PhantasmagoriaofFlowerView', 'ShoottheBullet', 'MountainofFaith', 'ScarletWeatherRhapsody', 'SubterraneanAnimism', 'UndefinedFantasticObject', 'TouhouHisoutensoku',
 'DoubleSpoiler', 'GreatFairyWars', 'TenDesires', 'HopelessMasquerade', 'DoubleDealingCharacter', 'ImpossibleSpellCard', 'UrbanLegendinLimbo', 'LegacyofLunaticKingdom',

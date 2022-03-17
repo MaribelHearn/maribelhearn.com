@@ -1006,7 +1006,7 @@ function detectRightCtrlCombo(event) {
 }
 
 function storageUsed() {
-    return localStorage.hasOwnProperty("settings") || localStorage.hasOwnProperty("tiers") || localStorage.hasOwnProperty("gameTiers");
+    return localStorage.hasOwnProperty("settings") || localStorage.hasOwnProperty("tiers") || localStorage.hasOwnProperty("gameTiers") || localStorage.hasOwnProperty("shotTiers");
 }
 
 function allowData() {
