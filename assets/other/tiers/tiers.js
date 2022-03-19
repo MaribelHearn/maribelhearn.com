@@ -1,4 +1,4 @@
-/*global $ categories gameCategories shotCategories html2canvas getCookie deleteCookie MobileDragDrop*/
+/*global $ categories html2canvas getCookie deleteCookie MobileDragDrop*/
 if (typeof MobileDragDrop !== "undefined") {
     MobileDragDrop.polyfill({
         holdToDrag: 200
@@ -16,6 +16,7 @@ const pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"];
 const windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "Spinoff"];
 const spinoffs = ["IaMP", "SWR", "Soku", "DS", "GFW", "HM", "ULiL", "AoCF"];
 const maleCharacters = ["SinGyokuM", "Genjii", "Unzan", "RinnosukeMorichika", "FortuneTeller"];
+const clans = ["FujiwaranoMokou", "SoganoTojiko", "MononobenoFuto", "ToyosatomiminoMiko", "HiedanoAkyuu", "WatatsukinoToyohime", "WatatsukinoYorihime"];
 const themeDuplicates = ["FiveMagicStones", "MarisaPC-98LLS", "YuukaPC-98Stage5", "YukiandMai", "AlicePC-98Extra", "YuyukoSaigyoujiResurrectionButterfly",
         "KaguyaHouraisanLastSpells", "YuyukoSaigyoujiTD", "OkinaMataraExtra", "MarisaKirisameGFW"]; // iCiel Gotham Ultra 24
 const DEFAULT_SETTINGS = {
@@ -78,12 +79,51 @@ let tieredItems = [],
     smallPicker = false,
     unsavedChanges = false;
 
+function addSpacing(item) {
+    if (whichSort(item) == "shots") {
+        if (item.includes("HSiFS") || item.includes("WBaWC")) {
+            return item.replace("HSiFS", "HSiFS ").replace("WBaWC", "WBaWC ");
+        }
+
+        return item.replace(item.match(/[A-Z][A-Z][a-z]/)[0], item.match(/[A-Z][A-Z][a-z]/)[0].substr(0, 1) + " " + item.match(/[A-Z][A-Z][a-z]/)[0].substr(1));
+    }
+
+    if (item == "ReisenII") {
+        return "Reisen II";
+    } else if (item == "Retrospective53minutes") {
+        return "Retrospective 53 minutes";
+    } else if (clans.includes(item)) {
+        return item.substr(0, item.lastIndexOf("no")) + " " + item.substr(item.lastIndexOf("no"), 2) + " " + item.substr(item.lastIndexOf("no") + 2);
+    }
+
+    for (let i = 1; i < item.length; i++) {
+        let c = item[i];
+        if ((/[A-Z]/.test(c) || /\d+/.test(c)) && item.charAt(i - 1) !== ' ') {
+            item = item.substr(0, i) + " " + item.substr(i);
+        }
+    }
+
+    if (/of [A-Z]/.test(item)) {
+        item = item.replace("of ", " of ");
+    } else if (/in [A-Z]/.test(item)) {
+        item = item.replace("in ", " in ");
+    } else if (/and [A-Z]/.test(item) && item != "Lotus Land Story") {
+        item = item.replace("and ", " and ");
+    } else if ( /the [A-Z]/.test(item)) {
+        item = item.replace("the ", " the ");
+    } else if (/to [A-Z]/.test(item)) {
+        item = item.replace("to ", " to ");
+    }
+
+    return item.replace("Sin Gyoku", "SinGyoku").replace("Yuugen Magan", "YuugenMagan");
+}
+
 function getTierNumOf(item) {
     var tierList = getCurrentTierList(), tierNum, i;
 
     for (tierNum in tierList) {
         for (i = 0; i < tierList[tierNum].chars.length; i++) {
-            if (tierList[tierNum].chars[i] === item.removeSpaces()) {
+            if (tierList[tierNum].chars[i] === item) {
                 return Number(tierNum);
             }
         }
@@ -111,27 +151,15 @@ function getCategoryOf(item) {
         return false;
     }
 
-    var cats = getCurrentCategories(), categoryName;
+    let cats = categories[settings.sort];
 
-    for (categoryName in cats) {
-        if (JSON.stringify(cats[categoryName].chars).removeSpaces().contains(item.removeSpaces())) {
+    for (let categoryName in cats) {
+        if (cats[categoryName].chars.includes(item)) {
             return categoryName;
         }
     }
 
     return false;
-}
-
-function getCurrentCategories() {
-    if (settings.sort == "characters") {
-        return categories;
-    }
-
-    if (settings.sort == "works") {
-        return gameCategories;
-    }
-
-    return shotCategories;
 }
 
 function getCurrentTierList(sort) {
@@ -150,24 +178,42 @@ function getCurrentTierList(sort) {
     return shotTiers;
 }
 
+function whichSort(item) {
+    if (item === "") {
+        return false;
+    }
+
+    for (let sort of sorts) {
+        for (let category in categories[sort]) {
+            if (categories[sort][category].chars.includes(item)) {
+                return sort;
+            }
+        }
+    }
+
+    return false;
+}
+
+function isItem(item) {
+    return whichSort(item) ? true : false;
+}
+
 function isMobile() {
     return navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1;
 }
 
-function isCharacter(character) {
-    return character !== "" && JSON.stringify(categories).removeSpaces().contains(character);
-}
-
-function isWork(work) {
-    return work !== "" && JSON.stringify(gameCategories).removeSpaces().contains(work);
-}
-
-function isItem(item) {
-    return item !== "" && JSON.stringify(getCurrentCategories()).removeSpaces().contains(item);
-}
-
 function isCategory(category) {
-    return category !== "" && (Object.keys(categories).contains(category) || Object.keys(gameCategories).contains(category));
+    if (category === "") {
+        return false;
+    }
+
+    for (let sort of sorts) {
+        if (categories[sort].hasOwnProperty(category)) {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 function isTiered(item) {
@@ -185,10 +231,10 @@ function isTiered(item) {
 }
 
 function allTiered(categoryName) {
-    var cats = getCurrentCategories(), i;
+    var cats = categories[settings.sort], i;
 
     for (i = 0; i < cats[categoryName].chars.length; i++) {
-        if (!isTiered(cats[categoryName].chars[i].removeSpaces())) {
+        if (!isTiered(cats[categoryName].chars[i])) {
             return false;
         }
     }
@@ -197,7 +243,6 @@ function allTiered(categoryName) {
 }
 
 function setPickerItemEvents(item) {
-    item = item.removeSpaces();
     $("#" + item).off("dblclick");
     $("#" + item).off("contextmenu");
     $("#" + item).off("dragstart");
@@ -232,7 +277,7 @@ function setTieredItemEvents(item, tierNum) {
 }
 
 function reloadTiers() {
-    var cats = getCurrentCategories(), tierList = getCurrentTierList(), tierNum, i, item, id, j;
+    var cats = categories[settings.sort], tierList = getCurrentTierList(), tierNum, i, item, id, j;
 
     for (i = 0; i < Object.keys(tiers).length; i++) {
         $("#tier" + i).html("");
@@ -282,7 +327,7 @@ function reloadTiers() {
             setTieredItemEvents(item, tierNum);
 
             for (j in cats) {
-                if (!$("#" + j).html().contains("list_" + settings.sort)) {
+                if (!$("#" + j).html().includes("list_" + settings.sort)) {
                     $("#" + j).css("display", "none");
                 }
             }
@@ -367,7 +412,7 @@ function insertAt(character, tierNum, pos, chars) {
 }
 
 function addToTier(item, tierNum, pos, noDisplay) {
-    var cats = getCurrentCategories(), tierList = getCurrentTierList(), categoryName = getCategoryOf(item), id, i;
+    var cats = categories[settings.sort], tierList = getCurrentTierList(), categoryName = getCategoryOf(item), id;
 
     if (isTiered(item)) {
         return;
@@ -402,8 +447,8 @@ function addToTier(item, tierNum, pos, noDisplay) {
 
     unsavedChanges = true;
 
-    for (i = 0; i < cats[categoryName].chars.length; i++) {
-        if (!isTiered(cats[categoryName].chars[i])) {
+    for (let chara of cats[categoryName].chars) {
+        if (!isTiered(chara)) {
             return;
         }
     }
@@ -414,7 +459,7 @@ function addToTier(item, tierNum, pos, noDisplay) {
 function addMultiSelection(tierNum) {
     var multi = true, i;
 
-    if (multiSelection.contains(following)) {
+    if (multiSelection.includes(following)) {
         for (i = 0; i < multiSelection.length; i++) {
             if (isTiered(multiSelection[i])) {
                 removeFromTier(multiSelection[i], getTierNumOf(multiSelection[i]), multi);
@@ -440,7 +485,7 @@ function addMultiSelection(tierNum) {
 function removeMultiSelection() {
     var multi = true, i;
 
-    if (multiSelection.contains(following)) {
+    if (multiSelection.includes(following)) {
         for (i = 0; i < multiSelection.length; i++) {
             $("#" + multiSelection[i]).removeClass("selected");
             removeFromTier(multiSelection[i], getTierNumOf(multiSelection[i]));
@@ -457,7 +502,7 @@ function removeMultiSelection() {
 }
 
 function toggleMulti() {
-    if (multiSelection.contains(this.id)) {
+    if (multiSelection.includes(this.id)) {
         multiSelection.remove(this.id);
         $("#" + this.id).removeClass("selected");
         return;
@@ -491,19 +536,17 @@ function addToTierMobile(event) {
         return;
     }
 
-    character = item.removeSpaces();
-
-    if (isTiered(character)) {
-        changeToTier(character, tierNum);
+    if (isTiered(item)) {
+        changeToTier(item, tierNum);
     } else {
-        addToTier(character, tierNum);
+        addToTier(item, tierNum);
     }
 
     emptyModal();
 }
 
 function addMenu(event) {
-    var character = event.data.name, tierList = getCurrentTierList(), tierNum;
+    var item = event.data.name, tierList = getCurrentTierList(), tierNum;
 
     emptyModal();
     event.preventDefault();
@@ -511,14 +554,14 @@ function addMenu(event) {
     if (typeof character == "object") { // multiselection
         $("#modal_inner").html("<h3>" + multiSelectionToText() + "</h3><p>Add to tier:</p>");
     } else {
-        $("#modal_inner").html("<h3>" + character +
-        "</h3><p>" + (isTiered(character.removeSpaces()) ? "Change" : "Add") + " to tier:</p>");
+        $("#modal_inner").html("<h3>" + item +
+        "</h3><p>" + (isTiered(item) ? "Change" : "Add") + " to tier:</p>");
     }
 
     for (tierNum = 0; tierNum < Object.keys(tierList).length; tierNum++) {
         $("#modal_inner").append("<input id='mobile_addtotier_" + tierNum +
         "' class='mobile_add' type='button' value='" + tierList[tierNum].name + "'>");
-        $("#mobile_addtotier_" + tierNum).on("click", {character: character, tierNum: tierNum}, addToTierMobile);
+        $("#mobile_addtotier_" + tierNum).on("click", {character: item, tierNum: tierNum}, addToTierMobile);
     }
     $("#modal_inner").css("display", "block");
     $("#modal").css("display", "block");
@@ -631,7 +674,7 @@ function removeFromTier(item, tierNum, multi, noDisplay) {
     tierList[tierNum].chars.remove(item);
     tieredItems.remove(item);
 
-    if (!multi && multiSelection.contains(item)) {
+    if (!multi && multiSelection.includes(item)) {
         $("#" + item).removeClass("selected");
         multiSelection.remove(item);
     }
@@ -866,12 +909,12 @@ function detectKey(event) {
 }
 
 function quickAdd(tierNum) {
-    var cats = getCurrentCategories(), categoryName, character, i;
+    var cats = categories[settings.sort], categoryName, character, i;
 
     for (categoryName in cats) {
         if (settings.categories[settings.sort][categoryName].enabled) {
             for (i = 0; i < cats[categoryName].chars.length; i++) {
-                character = cats[categoryName].chars[i].removeSpaces();
+                character = cats[categoryName].chars[i];
 
                 if (!isTiered(character)) {
                     addToTier(character, tierNum);
@@ -1123,7 +1166,7 @@ function checkSort(text) {
     var i, j, characters;
 
     for (i = 0; i < text.length; i ++) {
-        if (text[i].contains(':') || text[i].contains(';')) {
+        if (text[i].includes(':') || text[i].includes(';')) {
             continue;
         }
 
@@ -1135,13 +1178,7 @@ function checkSort(text) {
             characters = text[i].split(',');
 
             for (j = 0; j < characters.length; j += 1) {
-                if (isCharacter(characters[j].removeSpaces())) {
-                    return "characters";
-                } else if (isWork(characters[j].removeSpaces())) {
-                    return "works";
-                } else { // isShot()
-                    return "shots";
-                }
+                return whichSort(characters[j]);
             }
         }
     }
@@ -1179,12 +1216,12 @@ function parseImport(text, tierList, sort, tmpSort) {
         clearTiers(tierList, sort, tmpSort);
 
         for (i = 0; i < text.length; i++) {
-            if (text[i].contains(';')) {
+            if (text[i].includes(';')) {
                 parseSettings(text[i], sort);
                 i += 1;
             }
 
-            if (text[i].contains(':')) {
+            if (text[i].includes(':')) {
                 addTier({data: {tierName: text[i].replace(':', ""), noDisplay: noDisplay}});
                 counter += 1;
                 i += 1;
@@ -1207,7 +1244,7 @@ function parseImport(text, tierList, sort, tmpSort) {
                     }
 
                     try {
-                        addToTier(characters[j].removeSpaces(), counter, noDisplay);
+                        addToTier(characters[j], counter, noDisplay);
 
                         if (alreadyAdded.includes(characters[j])) {
                             throw "Item already added";
@@ -1215,7 +1252,7 @@ function parseImport(text, tierList, sort, tmpSort) {
 
                         alreadyAdded.push(characters[j]);
                     } catch (e) {
-                        tierList[counter].chars.remove(characters[j].removeSpaces());
+                        tierList[counter].chars.remove(characters[j]);
                     }
                 }
             }
@@ -1475,7 +1512,7 @@ function settingsMenuChars() {
 }
 
 function settingsMenuOther() {
-    var cats = getCurrentCategories(), categoryName, current = 0, counter = 0;
+    var cats = categories[settings.sort], categoryName, current = 0, counter = 0;
 
     $("#modal_inner").append("Include " + settings.sort + " in the following categories:" +
     "<table id='settings_table'><tbody><tr id='settings_tr0'>");
@@ -1529,7 +1566,7 @@ function settingsMenu() {
 }
 
 function massRemoval(removedCategories) {
-    var cats = getCurrentCategories(), categoryName, character, i, j;
+    var cats = categories[settings.sort], categoryName, character, i, j;
 
     $("#settings_msg_container").html("<strong class='error'>Girls are being removed, please wait warmly...</strong>");
 
@@ -1538,7 +1575,7 @@ function massRemoval(removedCategories) {
 
         if (isCategory(categoryName)) {
             for (j in cats[categoryName].chars) {
-                character = cats[categoryName].chars[j].removeSpaces();
+                character = cats[categoryName].chars[j];
 
                 if (isTiered(character)) {
                     removeFromTier(character, getTierNumOf(character));
@@ -1576,14 +1613,14 @@ function toggleThemes() {
 }
 
 function saveSettingsData() {
-    var cats = getCurrentCategories(), removedCategories = [], categoryName, item, confirmation, i;
+    var cats = categories[settings.sort], removedCategories = [], categoryName, item, confirmation, i;
 
     for (categoryName in cats) {
         settings.categories[settings.sort][categoryName].enabled = $("#checkbox_" + categoryName).is(":checked");
 
         if (!$("#checkbox_" + categoryName).is(":checked")) {
             for (i = 0; i < cats[categoryName].chars.length; i++) {
-                item = cats[categoryName].chars[i].removeSpaces();
+                item = cats[categoryName].chars[i];
 
                 if (isTiered(item)) {
                     removedCategories.push(categoryName);
@@ -1795,7 +1832,7 @@ function tierOntoTier(tierNum) {
 }
 
 function itemOntoTier(tierNum) {
-    if (multiSelection.length > 0 && multiSelection.contains(following)) {
+    if (multiSelection.length > 0 && multiSelection.includes(following)) {
         addMultiSelection(tierNum);
     } else {
         if (isTiered(following)) {
@@ -1890,9 +1927,9 @@ function deleteLegacyCookies() {
 }
 
 function addCategoryNamesToShots() {
-    for (var i in shotCategories) {
-        for (var j = 0; j < shotCategories[i].chars.length; j++) {
-            shotCategories[i].chars[j] = i + " " + shotCategories[i].chars[j];
+    for (var i in categories.shots) {
+        for (var j = 0; j < categories.shots[i].chars.length; j++) {
+            categories.shots[i].chars[j] = i + categories.shots[i].chars[j];
         }
     }
 }
@@ -2006,16 +2043,16 @@ function loadTiersFromStorage() {
 }
 
 function loadItems() {
-    var cats = getCurrentCategories(), categoryName, item, i;
+    var cats = categories[settings.sort], categoryName, item, i;
 
     for (categoryName in cats) {
         $("#characters").append("<div id='" + categoryName + "' class='dark_bg'>");
 
         for (i in cats[categoryName].chars) {
             item = cats[categoryName].chars[i].replace("'", "");
-            $("#" + categoryName).append("<span id='" + item.removeSpaces() +
-            "C'><span id='" + item.removeSpaces() + "' class='item list_" + settings.sort +
-            "' draggable='true' " + "alt='" + item + "' title='" + item + "'>");
+            $("#" + categoryName).append("<span id='" + item +
+            "C'><span id='" + item + "' class='item list_" + settings.sort +
+            "' draggable='true' " + "alt='" + item + "' title='" + addSpacing(item) + "'>");
             setPickerItemEvents(item);
         }
 
@@ -2033,7 +2070,7 @@ function loadItems() {
 function loadLegacySettings(settingsData) {
     if (settingsData.hasOwnProperty("categories")) {
         for (let category in settingsData.categories) {
-            if (spinoffs.contains(category)) {
+            if (spinoffs.includes(category)) {
                 settings.categories.characters["Spinoff"].enabled = settingsData.categories[category].enabled;
             } else {
                 settings.categories.characters[category].enabled = settingsData.categories[category].enabled;

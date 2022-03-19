@@ -72,9 +72,8 @@ if ($page == 'wr') {
     echo 'const unverifiedScores = ' . file_get_contents('json/unverified.json') . ';';
 }
 if ($page == 'tiers') {
-    echo 'var categories = ' . file_get_contents('json/chars.json') . ';';
-    echo 'var gameCategories = ' . file_get_contents('json/works.json') . ';';
-    echo 'var shotCategories = ' . file_get_contents('json/shots.json') . ';';
+    echo 'const categories = {"characters":' . file_get_contents('json/chars.json') .
+    ',"works":' . file_get_contents('json/works.json') . ',"shots":' . file_get_contents('json/shots.json') . '};';
 }
 if ($page == 'slots') {
     echo 'const CHARS = ' . file_get_contents('json/charpos.json') . ';';
