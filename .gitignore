@@ -1,0 +1,18 @@
+# non-repo json data
+assets/shared/json/gensokyo.json
+assets/shared/json/admin.json
+bestinthewest.json
+unverified.json
+lnnvideos.json
+lnnlist.json
+wrlist.json
+
+# minified files
+*-min.css
+*-min.js
+
+# stats dir
+.stats/*
+
+# replay dir
+replays
