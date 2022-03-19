@@ -11,7 +11,7 @@ const defaultTiers = ["S", "A", "B", "C"];
 const defaultColour = "#1b232e";
 const defaultWidth = navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1 ? 60 : 120;
 const defaultSize = 32;
-const sorts = ["characters", "works", "shots"];
+const sorts = ["characters", "works", "shots"]; //, "cards"
 const pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"];
 const windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "Spinoff"];
 const spinoffs = ["IaMP", "SWR", "Soku", "DS", "GFW", "HM", "ULiL", "AoCF"];
@@ -19,6 +19,12 @@ const maleCharacters = ["SinGyokuM", "Genjii", "Unzan", "RinnosukeMorichika", "F
 const clans = ["FujiwaranoMokou", "SoganoTojiko", "MononobenoFuto", "ToyosatomiminoMiko", "HiedanoAkyuu", "WatatsukinoToyohime", "WatatsukinoYorihime"];
 const themeDuplicates = ["FiveMagicStones", "MarisaPC-98LLS", "YuukaPC-98Stage5", "YukiandMai", "AlicePC-98Extra", "YuyukoSaigyoujiResurrectionButterfly",
         "KaguyaHouraisanLastSpells", "YuyukoSaigyoujiTD", "OkinaMataraExtra", "MarisaKirisameGFW"]; // iCiel Gotham Ultra 24
+const DEFAULT_PROPS = {
+    "tierListName": "",
+    "tierListColour": defaultColour,
+    "tierHeaderWidth": defaultWidth,
+    "tierHeaderFontSize": defaultSize
+};
 const DEFAULT_SETTINGS = {
     "categories": {
         "characters": {
@@ -39,27 +45,16 @@ const DEFAULT_SETTINGS = {
             "MoF": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true }, "TD": { enabled: true },
             "DDC": { enabled: true }, "LoLK": { enabled: true }, "HSiFS": { enabled: true }, "WBaWC": { enabled: true },
             "UM": { enabled: true }
-        }
+        },
+        /*"cards": {
+            "Item": { enabled: true }, "Equipment": { enabled: true }, "Passive": { enabled: true }, "Active": { enabled: true }
+        }*/
     },
     "props": {
-        "characters": {
-            "tierListName": "",
-            "tierListColour": defaultColour,
-            "tierHeaderWidth": defaultWidth,
-            "tierHeaderFontSize": defaultSize
-        },
-        "works": {
-            "tierListName": "",
-            "tierListColour": defaultColour,
-            "tierHeaderWidth": defaultWidth,
-            "tierHeaderFontSize": defaultSize
-        },
-        "shots": {
-            "tierListName": "",
-            "tierListColour": defaultColour,
-            "tierHeaderWidth": defaultWidth,
-            "tierHeaderFontSize": defaultSize
-        }
+        "characters": DEFAULT_PROPS,
+        "works": DEFAULT_PROPS,
+        "shots": DEFAULT_PROPS,
+        //"cards": DEFAULT_PROPS
     },
     "pc98Enabled": true,
     "windowsEnabled": true,
@@ -1163,22 +1158,21 @@ function checkSort(text) {
         return false;
     }
 
-    var i, j, characters;
-
-    for (i = 0; i < text.length; i ++) {
-        if (text[i].includes(':') || text[i].includes(';')) {
+    for (let line of text) {
+        if (line.includes(':') || line.includes(';')) {
             continue;
         }
 
-        if (text[i].charAt(0) == '#') {
+        if (line.charAt(0) == '#') {
             continue;
         }
 
-        if (text[i] !== "") {
-            characters = text[i].split(',');
+        if (line !== "") {
+            let items = line.split(',');
+            console.log(items);
 
-            for (j = 0; j < characters.length; j += 1) {
-                return whichSort(characters[j]);
+            for (let item of items) {
+                return whichSort(item.removeSpaces());
             }
         }
     }
@@ -1244,7 +1238,7 @@ function parseImport(text, tierList, sort, tmpSort) {
                     }
 
                     try {
-                        addToTier(characters[j], counter, noDisplay);
+                        addToTier(characters[j].removeSpaces(), counter, noDisplay);
 
                         if (alreadyAdded.includes(characters[j])) {
                             throw "Item already added";
@@ -1480,12 +1474,12 @@ function takeScreenshot() {
 }
 
 function settingsMenuChars() {
-    var categoryName, current = 0, counter = 0;
+    let cats = categories[settings.sort], current = 0, counter = 0;
 
     $("#modal_inner").append("<div>Include characters in the following works of first appearance:" +
     "<table id='settings_table'><tbody><tr id='settings_tr0'>");
 
-    for (categoryName in categories) {
+    for (let categoryName in cats) {
         if (counter > 0 && counter % 5 === 0) {
             counter = 0;
             current += 1;
@@ -1512,12 +1506,12 @@ function settingsMenuChars() {
 }
 
 function settingsMenuOther() {
-    var cats = categories[settings.sort], categoryName, current = 0, counter = 0;
+    let cats = categories[settings.sort], current = 0, counter = 0;
 
     $("#modal_inner").append("Include " + settings.sort + " in the following categories:" +
     "<table id='settings_table'><tbody><tr id='settings_tr0'>");
 
-    for (categoryName in cats) {
+    for (let categoryName in cats) {
         if (counter > 0 && counter % 5 === 0) {
             counter = 0;
             current += 1;
@@ -1790,6 +1784,7 @@ function modalEraseSingle() {
     $(".tier_header").css("max-width", defaultWidth + "px");
     $(".tier_header").css("font-size", defaultSize + "px");
     $(".tier_header").css("width", defaultWidth + "px");
+    localStorage.setItem("settings", JSON.stringify(settings));
     unsavedChanges = false;
     saveTiersData();
     printMessage("<strong class='confirmation'>Reset the current tier list and its settings to their default states!</strong>");
@@ -2140,10 +2135,14 @@ function loadSettingsFromStorage() {
         }
 
         for (let sort of sorts) {
-            settings.props[sort].tierListName = (settingsData.props[sort].tierListName ? settingsData.props[sort].tierListName : "");
-            settings.props[sort].tierListColour = (settingsData.props[sort].tierListColour ? settingsData.props[sort].tierListColour : defaultColour);
-            settings.props[sort].tierHeaderWidth = (settingsData.props[sort].tierHeaderWidth ? settingsData.props[sort].tierHeaderWidth : defaultWidth);
-            settings.props[sort].tierHeaderFontSize = (settingsData.props[sort].tierHeaderFontSize ? settingsData.props[sort].tierHeaderFontSize : defaultSize);
+            if (settings.props.hasOwnProperty(sort)) {
+                settings.props[sort].tierListName = (settingsData.props[sort].tierListName ? settingsData.props[sort].tierListName : "");
+                settings.props[sort].tierListColour = (settingsData.props[sort].tierListColour ? settingsData.props[sort].tierListColour : defaultColour);
+                settings.props[sort].tierHeaderWidth = (settingsData.props[sort].tierHeaderWidth ? settingsData.props[sort].tierHeaderWidth : defaultWidth);
+                settings.props[sort].tierHeaderFontSize = (settingsData.props[sort].tierHeaderFontSize ? settingsData.props[sort].tierHeaderFontSize : defaultSize);
+            } else {
+                settings.props[sort] = DEFAULT_PROPS;
+            }
         }
     }
 }
