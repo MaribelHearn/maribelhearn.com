@@ -97,8 +97,8 @@ function addSpacing(item) {
     }
 
     for (let i = 1; i < item.length; i++) {
-        let c = item[i];
-        if ((/[A-Z]/.test(c) || /\d+/.test(c)) && item.charAt(i - 1) !== ' ') {
+        let letter = item[i];
+        if ((/[A-Z]/.test(letter) || /\d+/.test(letter)) && item.charAt(i - 1) !== ' ') {
             item = item.substr(0, i) + " " + item.substr(i);
         }
     }
