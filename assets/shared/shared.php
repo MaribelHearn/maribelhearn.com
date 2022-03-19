@@ -439,7 +439,7 @@ function handle_file_upload() {
             if (!empty($ext)) {
                 $ext = '.' . $ext;
             }
-            $path = sprintf('./assets/tiers/uploads/%s%s', sha1_file($_FILES['import']['tmp_name']), $ext);
+            $path = sprintf('./assets/games/tiers/uploads/%s%s', sha1_file($_FILES['import']['tmp_name']), $ext);
             if (!move_uploaded_file($_FILES['import']['tmp_name'], $path)) {
                 return '<strong class="error">Error: failed to move uploaded file.</strong>';
             }
