@@ -5,34 +5,42 @@ if (typeof MobileDragDrop !== "undefined") {
     });
 }
 
-var MAX_NUMBER_OF_TIERS = 100,
-    MAX_NAME_LENGTH = 50,
-    tieredItems = [],
-    sorts = ["characters", "works", "shots"],
-    defaultTiers = ["S", "A", "B", "C"],
-    defaultColour = "#1b232e",
-    defaultWidth = (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) ? 60 : 120,
-    defaultSize = 32,
-    settings = {
-        "categories": {
+const MAX_NUMBER_OF_TIERS = 100;
+const MAX_NAME_LENGTH = 50;
+const defaultTiers = ["S", "A", "B", "C"];
+const defaultColour = "#1b232e";
+const defaultWidth = navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1 ? 60 : 120;
+const defaultSize = 32;
+const sorts = ["characters", "works", "shots"];
+const pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"];
+const windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "Spinoff"];
+const spinoffs = ["IaMP", "SWR", "Soku", "DS", "GFW", "HM", "ULiL", "AoCF"];
+const maleCharacters = ["SinGyokuM", "Genjii", "Unzan", "RinnosukeMorichika", "FortuneTeller"];
+const themeDuplicates = ["FiveMagicStones", "MarisaPC-98LLS", "YuukaPC-98Stage5", "YukiandMai", "AlicePC-98Extra", "YuyukoSaigyoujiResurrectionButterfly",
+        "KaguyaHouraisanLastSpells", "YuyukoSaigyoujiTD", "OkinaMataraExtra", "MarisaKirisameGFW"]; // iCiel Gotham Ultra 24
+const DEFAULT_SETTINGS = {
+    "categories": {
+        "characters": {
             "Main": { enabled: true }, "HRtP": { enabled: true }, "SoEW": { enabled: true }, "PoDD": { enabled: true },
             "LLS": { enabled: true }, "MS": { enabled: true }, "EoSD": { enabled: true }, "PCB": { enabled: true },
             "IN": { enabled: true }, "PoFV": { enabled: true }, "MoF": { enabled: true }, "SA": { enabled: true },
             "UFO": { enabled: true }, "TD": { enabled: true }, "DDC": { enabled: true }, "LoLK": { enabled: true },
-            "HSiFS": { enabled: true }, "WBaWC": { enabled: true }, "UM": { enabled: true }, "Spinoff": { enabled : true },
+            "HSiFS": { enabled: true }, "WBaWC": { enabled: true }, "UM": { enabled: true }, "Spinoff": { enabled: true },
             "Manga": { enabled: true }, "CD": { enabled: true }
         },
-        "gameCategories": {
+        "works": {
             "PC-98": { enabled: true }, "Classic": { enabled: true }, "Modern1": { enabled: true }, "Modern2": { enabled: true },
             "Mangas": { enabled: true }, "Books": { enabled: true }, "CDs": { enabled: true }
         },
-        "shotCategories": {
-            "SoEW": { enabled : true }, "PoDD": { enabled : true }, "LLS": { enabled : true }, "MS": { enabled : true },
+        "shots": {
+            "SoEW": { enabled: true }, "PoDD": { enabled: true }, "LLS": { enabled: true }, "MS": { enabled: true },
             "EoSD": { enabled: true }, "PCB": { enabled: true }, "IN": { enabled: true }, "PoFV": { enabled: true },
             "MoF": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true }, "TD": { enabled: true },
             "DDC": { enabled: true }, "LoLK": { enabled: true }, "HSiFS": { enabled: true }, "WBaWC": { enabled: true },
             "UM": { enabled: true }
-        },
+        }
+    },
+    "props": {
         "characters": {
             "tierListName": "",
             "tierListColour": defaultColour,
@@ -50,20 +58,17 @@ var MAX_NUMBER_OF_TIERS = 100,
             "tierListColour": defaultColour,
             "tierHeaderWidth": defaultWidth,
             "tierHeaderFontSize": defaultSize
-        },
-        "pc98Enabled": true,
-        "windowsEnabled": true,
-        "maleEnabled": true,
-        "themesEnabled": false,
-        "sort": "characters"
+        }
     },
-    windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "Spinoff"],
-    spinoffs = ["IaMP", "SWR", "Soku", "DS", "GFW", "HM", "ULiL", "AoCF"],
-    maleCharacters = ["SinGyokuM", "Genjii", "Unzan", "RinnosukeMorichika", "FortuneTeller"],
-    themeDuplicates = ["FiveMagicStones", "MarisaPC-98LLS", "YuukaPC-98Stage5", "YukiandMai", "AlicePC-98Extra", // iCiel Gotham Ultra 24
-            "YuyukoSaigyoujiResurrectionButterfly", "KaguyaHouraisanLastSpells", "YuyukoSaigyoujiTD", "OkinaMataraExtra", "MarisaKirisameGFW"],
-    pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"],
-    tieredClasses = ["tiered_characters", "tiered_works", "tiered_shots"],
+    "pc98Enabled": true,
+    "windowsEnabled": true,
+    "maleEnabled": true,
+    "themesEnabled": false,
+    "sort": "characters"
+};
+
+let tieredItems = [],
+    settings = DEFAULT_SETTINGS,
     tiers = {},
     gameTiers = {},
     shotTiers = {},
@@ -129,18 +134,6 @@ function getCurrentCategories() {
     return shotCategories;
 }
 
-function getCurrentCategorySettings() {
-    if (settings.sort == "characters") {
-        return settings.categories;
-    }
-
-    if (settings.sort == "works") {
-        return settings.gameCategories;
-    }
-
-    return settings.shotCategories;
-}
-
 function getCurrentTierList(sort) {
     if (!sort) {
         sort = settings.sort;
@@ -170,9 +163,7 @@ function isWork(work) {
 }
 
 function isItem(item) {
-    var cats = getCurrentCategories();
-
-    return item !== "" && JSON.stringify(cats).removeSpaces().contains(item);
+    return item !== "" && JSON.stringify(getCurrentCategories()).removeSpaces().contains(item);
 }
 
 function isCategory(category) {
@@ -180,14 +171,12 @@ function isCategory(category) {
 }
 
 function isTiered(item) {
-    var i;
-
     if (!item) {
         return false;
     }
 
-    for (i = 0; i < tieredClasses.length; i++) {
-        if ($("#" + item).hasClass(tieredClasses[i])) {
+    for (let sort of sorts) {
+        if ($("#" + item).hasClass("tiered_" + sort)) {
             return true;
         }
     }
@@ -253,7 +242,7 @@ function reloadTiers() {
         return;
     }
 
-    $("#tier_list_caption").html(settings[settings.sort].tierListName);
+    $("#tier_list_caption").html(settings.props[settings.sort].tierListName);
 
     for (tierNum in tierList) {
         tierNum = Number(tierNum);
@@ -263,13 +252,13 @@ function reloadTiers() {
         $("#tr" + tierNum).on("dragover dragenter", allowDrop);
         $("#tr" + tierNum).on("drop", drop);
         $("#tr" + tierNum).on("dragstart", drag);
-        $("#tr" + tierNum).css("background-color", settings[settings.sort].tierListColour);
+        $("#tr" + tierNum).css("background-color", settings.props[settings.sort].tierListColour);
         $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
         $("#th" + tierNum).css("background-color", tierList[tierNum].bg);
         $("#th" + tierNum).css("color", tierList[tierNum].colour);
-        $("#th" + tierNum).css("max-width", settings[settings.sort].tierHeaderWidth + "px");
-        $("#th" + tierNum).css("width", settings[settings.sort].tierHeaderWidth + "px");
-        $("#th" + tierNum).css("font-size", settings[settings.sort].tierHeaderFontSize + "px");
+        $("#th" + tierNum).css("max-width", settings.props[settings.sort].tierHeaderWidth + "px");
+        $("#th" + tierNum).css("width", settings.props[settings.sort].tierHeaderWidth + "px");
+        $("#th" + tierNum).css("font-size", settings.props[settings.sort].tierHeaderFontSize + "px");
 
         if (isMobile()) {
             $("#th" + tierNum).css("height", "60px");
@@ -323,7 +312,7 @@ function addDefaultTiers(sort) {
 
 function initialise() {
     addDefaultTiers(settings.sort);
-    $("#tier_list_caption").html(settings[settings.sort].tierListName);
+    $("#tier_list_caption").html(settings.props[settings.sort].tierListName);
 
     if (isMobile()) {
         $("#add_tier_cell_mobile").attr("colspan", 2);
@@ -663,8 +652,8 @@ function changeToTier(item, tierNum, pos, multi) {
 function tierListName(event) {
     var name = event.data.tierListName;
 
-    settings[settings.sort].tierListName = name.replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
-    $("#tier_list_caption").html(settings[settings.sort].tierListName);
+    settings.props[settings.sort].tierListName = name.replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
+    $("#tier_list_caption").html(settings.props[settings.sort].tierListName);
     localStorage.setItem("settings", JSON.stringify(settings));
 }
 
@@ -708,10 +697,10 @@ function addTier(event) {
         $("#tr" + tierNum).on("drop", drop);
         $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
         $("#th" + tierNum).on("dragstart", drag);
-        $("#th" + tierNum).css("max-width", settings[settings.sort].tierHeaderWidth + "px");
-        $("#th" + tierNum).css("width", settings[settings.sort].tierHeaderWidth + "px");
-        $("#th" + tierNum).css("font-size", settings[settings.sort].tierHeaderFontSize + "px");
-        $("#tier" + tierNum).css("background-color", settings[settings.sort].tierListColour);
+        $("#th" + tierNum).css("max-width", settings.props[settings.sort].tierHeaderWidth + "px");
+        $("#th" + tierNum).css("width", settings.props[settings.sort].tierHeaderWidth + "px");
+        $("#th" + tierNum).css("font-size", settings.props[settings.sort].tierHeaderFontSize + "px");
+        $("#tier" + tierNum).css("background-color", settings.props[settings.sort].tierListColour);
 
         if (isMobile()) {
             $("#th" + tierNum).css("height", "60px");
@@ -880,7 +869,7 @@ function quickAdd(tierNum) {
     var cats = getCurrentCategories(), categoryName, character, i;
 
     for (categoryName in cats) {
-        if (settings.sort == "characters" && settings.categories[categoryName].enabled || settings.sort == "works" && settings.gameCategories[categoryName].enabled) {
+        if (settings.categories[settings.sort][categoryName].enabled) {
             for (i = 0; i < cats[categoryName].chars.length; i++) {
                 character = cats[categoryName].chars[i].removeSpaces();
 
@@ -915,15 +904,15 @@ function saveSingleTierSettings(event) {
     tierList[tierNum].name = tierName;
     tierList[tierNum].bg = tierBg;
     tierList[tierNum].colour = tierColour;
-    settings[settings.sort].tierListName = $("#tier_list_name_menu").val().replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
-    settings[settings.sort].tierListColour = $("#tier_list_colour").val();
-    settings[settings.sort].tierHeaderWidth = $("#tier_header_width").val() > defaultWidth ? $("#tier_header_width").val() : defaultWidth;
-    settings[settings.sort].tierHeaderFontSize = $("#tier_header_font_size").val() != defaultSize ? $("#tier_header_font_size").val() : defaultSize;
-    $(".tier_content").css("background-color", settings[settings.sort].tierListColour);
-    $(".tier_header").css("width", settings[settings.sort].tierHeaderWidth + "px");
-    $(".tier_header").css("max-width", settings[settings.sort].tierHeaderWidth + "px");
-    $(".tier_header").css("font-size", settings[settings.sort].tierHeaderFontSize + "px");
-    $("#tier_list_caption").html(settings[settings.sort].tierListName);
+    settings.props[settings.sort].tierListName = $("#tier_list_name_menu").val().replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
+    settings.props[settings.sort].tierListColour = $("#tier_list_colour").val();
+    settings.props[settings.sort].tierHeaderWidth = $("#tier_header_width").val() > defaultWidth ? $("#tier_header_width").val() : defaultWidth;
+    settings.props[settings.sort].tierHeaderFontSize = $("#tier_header_font_size").val() != defaultSize ? $("#tier_header_font_size").val() : defaultSize;
+    $(".tier_content").css("background-color", settings.props[settings.sort].tierListColour);
+    $(".tier_header").css("width", settings.props[settings.sort].tierHeaderWidth + "px");
+    $(".tier_header").css("max-width", settings.props[settings.sort].tierHeaderWidth + "px");
+    $(".tier_header").css("font-size", settings.props[settings.sort].tierHeaderFontSize + "px");
+    $("#tier_list_caption").html(settings.props[settings.sort].tierListName);
     $("#modal_inner").html("");
     $("#modal_inner").css("display", "none");
     $("#modal").css("display", "none");
@@ -945,13 +934,13 @@ function tierMenu(tierNum) {
     "'></p></div><hr>");
     $("#modal_inner").append("<div>Other settings (apply to all tiers):" +
     "<p><label for='tier_list_name_menu'>Tier list name (optional)</label>" +
-    "<input id='tier_list_name_menu' class='settings_input' type='text' value='" + settings[settings.sort].tierListName + "'></p>" +
+    "<input id='tier_list_name_menu' class='settings_input' type='text' value='" + settings.props[settings.sort].tierListName + "'></p>" +
     "<p><label for='tier_list_colour'>Tier list colour</label>" +
-    "<input id='tier_list_colour' class='settings_input' type='color' value='" + settings[settings.sort].tierListColour + "'></p>" +
+    "<input id='tier_list_colour' class='settings_input' type='color' value='" + settings.props[settings.sort].tierListColour + "'></p>" +
     "<label for='tier_header_width'>Tier header width</label>" +
-    "<input id='tier_header_width' class='settings_input' type='number' value=" + settings[settings.sort].tierHeaderWidth + " min=" + defaultWidth + "></p>" +
+    "<input id='tier_header_width' class='settings_input' type='number' value=" + settings.props[settings.sort].tierHeaderWidth + " min=" + defaultWidth + "></p>" +
     "<p><label for='tier_header_font_size'>Tier header font size</label>" +
-    "<input id='tier_header_font_size' class='settings_input' type='number' value=" + settings[settings.sort].tierHeaderFontSize + "></p></div>");
+    "<input id='tier_header_font_size' class='settings_input' type='number' value=" + settings.props[settings.sort].tierHeaderFontSize + "></p></div>");
     $("#modal_inner").append("<div><p><input id='save_tier_settings' type='button' value='Save Changes'></p>" +
     "<p><input id='remove_tier' type='button' value='Remove This Tier'></p><p id='settings_msg_container'></p></div>");
     $("#modal_inner").css("display", "block");
@@ -1172,14 +1161,14 @@ function parseSettings(string, sort) {
     var settingsArray = string.split(';');
 
     if (settingsArray.length == 3) {
-        settings[sort].tierListName = settingsArray[0].replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
-        settings[sort].tierHeaderWidth = settingsArray[1];
-        settings[sort].tierHeaderFontSize = settingsArray[2];
+        settings.props[sort].tierListName = settingsArray[0].replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
+        settings.props[sort].tierHeaderWidth = settingsArray[1];
+        settings.props[sort].tierHeaderFontSize = settingsArray[2];
     } else {
-        settings[sort].tierListName = settingsArray[0].replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
-        settings[sort].tierListColour = settingsArray[1];
-        settings[sort].tierHeaderWidth = settingsArray[2];
-        settings[sort].tierHeaderFontSize = settingsArray[3];
+        settings.props[sort].tierListName = settingsArray[0].replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
+        settings.props[sort].tierListColour = settingsArray[1];
+        settings.props[sort].tierHeaderWidth = settingsArray[2];
+        settings.props[sort].tierHeaderFontSize = settingsArray[3];
     }
 }
 
@@ -1248,8 +1237,8 @@ function applyImport(tierList) {
     $("#modal_inner").html("");
     $("#modal").css("display", "none");
     $("#modal_inner").css("display", "none");
-    $("#tier_list_caption").html(settings[settings.sort].tierListName);
-    $(".tier_content").css("background-color", settings[settings.sort].tierListColour);
+    $("#tier_list_caption").html(settings.props[settings.sort].tierListName);
+    $(".tier_content").css("background-color", settings.props[settings.sort].tierListColour);
 }
 
 function doImport() {
@@ -1323,9 +1312,9 @@ function exportText() {
         $("#modal_inner").html("<h2>Export to Text File</h2>");
     }
 
-    textFile += (settings[settings.sort].tierListName ? settings[settings.sort].tierListName : "-") +
-    ";" + settings[settings.sort].tierListColour + ";" + settings[settings.sort].tierHeaderWidth +
-    ";" + settings[settings.sort].tierHeaderFontSize;
+    textFile += (settings.props[settings.sort].tierListName ? settings.props[settings.sort].tierListName : "-") +
+    ";" + settings.props[settings.sort].tierListColour + ";" + settings.props[settings.sort].tierHeaderWidth +
+    ";" + settings.props[settings.sort].tierHeaderFontSize;
 
     for (tierNum in tierList) {
         textFile += "\n" + tierList[tierNum].name + ":\n" + tierList[tierNum].bg +
@@ -1364,8 +1353,8 @@ function fileName(extension) {
         minutes = (date.getMinutes()).toLocaleString("en-US", {minimumIntegerDigits: 2}),
         seconds = (date.getSeconds()).toLocaleString("en-US", {minimumIntegerDigits: 2});
 
-    if (settings[settings.sort].tierListName !== "") {
-        name = settings[settings.sort].tierListName.toLowerCase().replace(/\s/g, '_');
+    if (settings.props[settings.sort].tierListName !== "") {
+        name = settings.props[settings.sort].tierListName.toLowerCase().replace(/\s/g, '_');
     }
 
     return name + "_" + date.getFullYear() + "_" + month +
@@ -1467,7 +1456,7 @@ function settingsMenuChars() {
         }
 
         $("#settings_tr" + current).append("<td><input id='checkbox_" + categoryName +
-        "' type='checkbox'" + (settings.categories[categoryName].enabled ? " checked" : "") +
+        "' type='checkbox'" + (settings.categories[settings.sort][categoryName].enabled ? " checked" : "") +
         "><label for='" + categoryName + "'>" + categoryName + "</label></td>");
         counter += 1;
     }
@@ -1499,7 +1488,7 @@ function settingsMenuOther() {
         }
 
         $("#settings_tr" + current).append("<td><input id='checkbox_" + categoryName +
-        "' type='checkbox'" + (getCurrentCategorySettings()[categoryName].enabled ? " checked" : "") +
+        "' type='checkbox'" + (settings.categories[settings.sort][categoryName].enabled ? " checked" : "") +
         "><label for='" + categoryName + "'>" + categoryName + "</label></td>");
         counter += 1;
     }
@@ -1523,13 +1512,13 @@ function settingsMenu() {
 
     printMessage("");
     $("#modal_inner").append("<div>Other settings:<p><label for='tier_list_name_menu'>Tier list name (optional)</label>" +
-    "<input id='tier_list_name_menu' class='settings_input' type='text' value='" + settings[settings.sort].tierListName + "'></p>" +
+    "<input id='tier_list_name_menu' class='settings_input' type='text' value='" + settings.props[settings.sort].tierListName + "'></p>" +
     "<p><label for='tier_list_colour'>Tier list colour</label>" +
-    "<input id='tier_list_colour' class='settings_input' type='color' value='" + settings[settings.sort].tierListColour + "'></p>" +
+    "<input id='tier_list_colour' class='settings_input' type='color' value='" + settings.props[settings.sort].tierListColour + "'></p>" +
     "<label for='tier_header_width'>Tier header width</label>" +
-    "<input id='tier_header_width' class='settings_input' type='number' value=" + settings[settings.sort].tierHeaderWidth +
+    "<input id='tier_header_width' class='settings_input' type='number' value=" + settings.props[settings.sort].tierHeaderWidth +
     " min=" + defaultWidth + "></p><p><label for='tier_header_font_size'>Tier header font size</label>" +
-    "<input id='tier_header_font_size' class='settings_input' type='number' value=" + settings[settings.sort].tierHeaderFontSize +
+    "<input id='tier_header_font_size' class='settings_input' type='number' value=" + settings.props[settings.sort].tierHeaderFontSize +
     "></p><p>To customise a tier's name and colour, click it in your tier list.</p></div>");
     $("#modal_inner").append("<div><p><input id='save_settings' type='button' value='Save Changes'></p>" +
     "<p id='settings_msg_container'></p></div>");
@@ -1590,13 +1579,7 @@ function saveSettingsData() {
     var cats = getCurrentCategories(), removedCategories = [], categoryName, item, confirmation, i;
 
     for (categoryName in cats) {
-        if (settings.sort == "characters") {
-            settings.categories[categoryName].enabled = $("#checkbox_" + categoryName).is(":checked");
-        } else if (settings.sort == "works") {
-            settings.gameCategories[categoryName].enabled = $("#checkbox_" + categoryName).is(":checked");
-        } else { // settings.sort == "shots"
-            settings.shotCategories[categoryName].enabled = $("#checkbox_" + categoryName).is(":checked");
-        }
+        settings.categories[settings.sort][categoryName].enabled = $("#checkbox_" + categoryName).is(":checked");
 
         if (!$("#checkbox_" + categoryName).is(":checked")) {
             for (i = 0; i < cats[categoryName].chars.length; i++) {
@@ -1647,15 +1630,15 @@ function saveSettingsData() {
         toggleThemes();
     }
 
-    settings[settings.sort].tierListName = $("#tier_list_name_menu").val().replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
-    settings[settings.sort].tierListColour = $("#tier_list_colour").val();
-    settings[settings.sort].tierHeaderWidth = $("#tier_header_width").val() > defaultWidth ? $("#tier_header_width").val() : defaultWidth;
-    settings[settings.sort].tierHeaderFontSize = $("#tier_header_font_size").val() != defaultSize ? $("#tier_header_font_size").val() : defaultSize;
-    $(".tier_header").css("width", settings[settings.sort].tierHeaderWidth + "px");
-    $(".tier_header").css("max-width", settings[settings.sort].tierHeaderWidth + "px");
-    $(".tier_header").css("font-size", settings[settings.sort].tierHeaderFontSize + "px");
-    $(".tier_content").css("background-color", settings[settings.sort].tierListColour);
-    $("#tier_list_caption").html(settings[settings.sort].tierListName);
+    settings.props[settings.sort].tierListName = $("#tier_list_name_menu").val().replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
+    settings.props[settings.sort].tierListColour = $("#tier_list_colour").val();
+    settings.props[settings.sort].tierHeaderWidth = $("#tier_header_width").val() > defaultWidth ? $("#tier_header_width").val() : defaultWidth;
+    settings.props[settings.sort].tierHeaderFontSize = $("#tier_header_font_size").val() != defaultSize ? $("#tier_header_font_size").val() : defaultSize;
+    $(".tier_header").css("width", settings.props[settings.sort].tierHeaderWidth + "px");
+    $(".tier_header").css("max-width", settings.props[settings.sort].tierHeaderWidth + "px");
+    $(".tier_header").css("font-size", settings.props[settings.sort].tierHeaderFontSize + "px");
+    $(".tier_content").css("background-color", settings.props[settings.sort].tierListColour);
+    $("#tier_list_caption").html(settings.props[settings.sort].tierListName);
     $("#modal_inner").html("");
     $("#modal_inner").css("display", "none");
     $("#modal").css("display", "none");
@@ -1736,50 +1719,8 @@ function eraseAllConfirmed() {
     gameTiers = {};
     shotTiers = {};
     tmp = settings.sort;
-    settings = {
-        "categories": {
-            "Main": { enabled: true }, "HRtP": { enabled: true }, "SoEW": { enabled: true }, "PoDD": { enabled: true },
-            "LLS": { enabled: true }, "MS": { enabled: true }, "EoSD": { enabled: true }, "PCB": { enabled: true },
-            "IN": { enabled: true }, "PoFV": { enabled: true }, "MoF": { enabled: true }, "SA": { enabled: true },
-            "UFO": { enabled: true }, "TD": { enabled: true }, "DDC": { enabled: true }, "LoLK": { enabled: true },
-            "HSiFS": { enabled: true }, "WBaWC": { enabled: true }, "UM": { enabled: true }, "Spinoff": { enabled : true },
-            "Manga": { enabled: true }, "CD": { enabled: true }
-        },
-        "gameCategories": {
-            "PC-98": { enabled: true }, "Classic": { enabled: true }, "Modern1": { enabled: true }, "Modern2": { enabled: true },
-            "Mangas": { enabled: true }, "Books": { enabled: true }, "CDs": { enabled: true }
-        },
-        "shotCategories": {
-            "SoEW": { enabled : true }, "PoDD": { enabled : true }, "LLS": { enabled : true }, "MS": { enabled : true },
-            "EoSD": { enabled: true }, "PCB": { enabled: true }, "IN": { enabled: true }, "PoFV": { enabled: true },
-            "MoF": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true }, "TD": { enabled: true },
-            "DDC": { enabled: true }, "LoLK": { enabled: true }, "HSiFS": { enabled: true }, "WBaWC": { enabled: true },
-            "UM": { enabled: true }
-        },
-        "characters": {
-            "tierListName": "",
-            "tierListColour": defaultColour,
-            "tierHeaderWidth": defaultWidth,
-            "tierHeaderFontSize": defaultSize
-        },
-        "works": {
-            "tierListName": "",
-            "tierListColour": defaultColour,
-            "tierHeaderWidth": defaultWidth,
-            "tierHeaderFontSize": defaultSize
-        },
-        "shots": {
-            "tierListName": "",
-            "tierListColour": defaultColour,
-            "tierHeaderWidth": defaultWidth,
-            "tierHeaderFontSize": defaultSize
-        },
-        "pc98Enabled": true,
-        "windowsEnabled": true,
-        "maleEnabled": true,
-        "themesEnabled": false,
-        "sort": tmp
-    };
+    settings = DEFAULT_SETTINGS;
+    settings.sort = tmp;
     localStorage.removeItem("tiers");
     localStorage.removeItem("gameTiers");
     localStorage.removeItem("shotTiers");
@@ -1803,10 +1744,10 @@ function modalEraseSingle() {
         addTier({data: {tierName: defaultTiers[i]}});
     }
 
-    settings[settings.sort].tierListName = "";
-    settings[settings.sort].tierListColour = defaultColour;
-    settings[settings.sort].tierHeaderWidth = defaultWidth;
-    settings[settings.sort].tierHeaderFontSize = defaultSize;
+    settings.props[settings.sort].tierListName = "";
+    settings.props[settings.sort].tierListColour = defaultColour;
+    settings.props[settings.sort].tierHeaderWidth = defaultWidth;
+    settings.props[settings.sort].tierHeaderFontSize = defaultSize;
     $("#tier_list_caption").html("");
     $(".tier_content").css("background-color", defaultColour);
     $(".tier_header").css("max-width", defaultWidth + "px");
@@ -1975,9 +1916,9 @@ function loadTier(tiersData, tierNum, tierSort) {
         $("#th" + tierNum).on("dragstart", drag);
         $("#th" + tierNum).css("background-color", tierList[tierNum].bg);
         $("#th" + tierNum).css("color", tierList[tierNum].colour);
-        $("#th" + tierNum).css("max-width", settings[settings.sort].tierHeaderWidth + "px");
-        $("#th" + tierNum).css("width", settings[settings.sort].tierHeaderWidth + "px");
-        $("#th" + tierNum).css("font-size", settings[settings.sort].tierHeaderFontSize + "px");
+        $("#th" + tierNum).css("max-width", settings.props[settings.sort].tierHeaderWidth + "px");
+        $("#th" + tierNum).css("width", settings.props[settings.sort].tierHeaderWidth + "px");
+        $("#th" + tierNum).css("font-size", settings.props[settings.sort].tierHeaderFontSize + "px");
 
         if (isMobile()) {
             $("#th" + tierNum).css("height", "60px");
@@ -2080,11 +2021,7 @@ function loadItems() {
 
         $("#characters").append("</div>");
 
-        if (settings.sort == "characters" && !settings.categories[categoryName].enabled) {
-            $("#" + categoryName).css("display", "none");
-        } else if (settings.sort == "works" && !settings.gameCategories[categoryName].enabled) {
-            $("#" + categoryName).css("display", "none");
-        } else if (settings.sort == "shots" && !settings.shotCategories[categoryName].enabled) {
+        if (!settings.categories[settings.sort][categoryName].enabled) {
             $("#" + categoryName).css("display", "none");
         }
 
@@ -2093,45 +2030,42 @@ function loadItems() {
     }
 }
 
-function loadSettingsFromStorage() {
-    var settingsData = JSON.parse(localStorage.getItem("settings")), category, sort, i;
-
+function loadLegacySettings(settingsData) {
     if (settingsData.hasOwnProperty("categories")) {
-        for (category in settingsData.categories) {
+        for (let category in settingsData.categories) {
             if (spinoffs.contains(category)) {
-                settings.categories["Spinoff"].enabled = settingsData.categories[category].enabled;
+                settings.categories.characters["Spinoff"].enabled = settingsData.categories[category].enabled;
             } else {
-                settings.categories[category].enabled = settingsData.categories[category].enabled;
+                settings.categories.characters[category].enabled = settingsData.categories[category].enabled;
             }
         }
 
         if (settingsData.hasOwnProperty("gameCategories")) {
-            for (category in settingsData.gameCategories) {
+            for (let category in settingsData.gameCategories) {
                 if (category == "Manga") { // fix legacy manga
-                    settings.gameCategories["Mangas"] = settingsData.gameCategories[category];
+                    settings.categories.works["Mangas"] = settingsData.gameCategories[category];
                     continue;
                 }
 
-                settings.gameCategories[category].enabled = settingsData.gameCategories[category].enabled;
+                settings.categories.works[category].enabled = settingsData.gameCategories[category].enabled;
             }
         }
 
         if (settingsData.hasOwnProperty("shotCategories")) {
-            for (category in settingsData.shotCategories) {
-                if (!settings.shotCategories[category]) {
-                    settings.shotCategories[category] = { enabled : true };
+            for (let category in settingsData.shotCategories) {
+                if (!settings.categories.shots[category]) {
+                    settings.categories.shots[category] = { enabled: true };
                 }
 
-                settings.shotCategories[category].enabled = settingsData.shotCategories[category].enabled;
+                settings.categories.shots[category].enabled = settingsData.shotCategories[category].enabled;
             }
         }
 
-        for (i = 0; i < sorts.length; i++) {
-            sort = sorts[i];
-            settings[sort].tierListName = (settingsData[sort] && settingsData[sort].tierListName ? settingsData[sort].tierListName : "");
-            settings[sort].tierListColour = (settingsData[sort] && settingsData[sort].tierListColour ? settingsData[sort].tierListColour : defaultColour);
-            settings[sort].tierHeaderWidth = (settingsData[sort] && settingsData[sort].tierHeaderWidth ? settingsData[sort].tierHeaderWidth : defaultWidth);
-            settings[sort].tierHeaderFontSize = (settingsData[sort] && settingsData[sort].tierHeaderFontSize ? settingsData[sort].tierHeaderFontSize : defaultSize);
+        for (let sort of sorts) {
+            settings.props[sort].tierListName = (settingsData[sort] && settingsData[sort].tierListName ? settingsData[sort].tierListName : "");
+            settings.props[sort].tierListColour = (settingsData[sort] && settingsData[sort].tierListColour ? settingsData[sort].tierListColour : defaultColour);
+            settings.props[sort].tierHeaderWidth = (settingsData[sort] && settingsData[sort].tierHeaderWidth ? settingsData[sort].tierHeaderWidth : defaultWidth);
+            settings.props[sort].tierHeaderFontSize = (settingsData[sort] && settingsData[sort].tierHeaderFontSize ? settingsData[sort].tierHeaderFontSize : defaultSize);
         }
 
         if (settingsData.picker && settingsData.picker == "small") {
@@ -2141,16 +2075,38 @@ function loadSettingsFromStorage() {
         settings.pc98Enabled = settingsData.pc98Enabled;
         settings.windowsEnabled = settingsData.windowsEnabled;
         settings.maleEnabled = settingsData.maleEnabled;
-        settings.themesEnabled = (settingsData.themesEnabled ? settingsData.themesEnabled : false);
+        settings.themesEnabled = (settingsData.themesEnabled ? settingsData.themesenabled: false);
         settings.sort = settingsData.sort;
     } else {
-        for (category in settingsData) {
+        for (let category in settingsData) {
             if (category == "Other") {
-                settings.categories["Manga"].enabled = settingsData[category].enabled;
-                settings.categories["CD"].enabled = settingsData[category].enabled;
+                settings.categories.characters["Manga"].enabled = settingsData[category].enabled;
+                settings.categories.characters["CD"].enabled = settingsData[category].enabled;
             } else {
-                settings.categories[category].enabled = settingsData[category].enabled;
+                settings.categories.characters[category].enabled = settingsData[category].enabled;
             }
+        }
+    }
+}
+
+function loadSettingsFromStorage() {
+    let settingsData = JSON.parse(localStorage.getItem("settings"));
+
+    if (settingsData.hasOwnProperty("gameCategories")) {
+        loadLegacySettings(settingsData);
+        return;
+    }
+
+    if (settingsData.hasOwnProperty("categories")) {
+        for (let item in settings) {
+            settings[item] = settingsData[item];
+        }
+
+        for (let sort of sorts) {
+            settings.props[sort].tierListName = (settingsData.props[sort].tierListName ? settingsData.props[sort].tierListName : "");
+            settings.props[sort].tierListColour = (settingsData.props[sort].tierListColour ? settingsData.props[sort].tierListColour : defaultColour);
+            settings.props[sort].tierHeaderWidth = (settingsData.props[sort].tierHeaderWidth ? settingsData.props[sort].tierHeaderWidth : defaultWidth);
+            settings.props[sort].tierHeaderFontSize = (settingsData.props[sort].tierHeaderFontSize ? settingsData.props[sort].tierHeaderFontSize : defaultSize);
         }
     }
 }
@@ -2228,19 +2184,18 @@ $(document).ready(function () {
 
     if (localStorage.settings) {
         loadSettingsFromStorage();
-    } else if (!localStorage.tiers && !localStorage.gameTiers && !localStorage.shotTiers) {
-        showInformation();
     }
 
-    $("#tier_list_caption").html(settings[settings.sort].tierListName);
+    $("#tier_list_caption").html(settings.props[settings.sort].tierListName);
     $("#chars_load, #works_load, #shots_load").remove();
     $("#sort").val(settings.sort);
     loadItems();
 
-    if (localStorage.tiers || localStorage.gameTiers || localStorage.shotTiers) {
-        loadTiersFromStorage();
-    } else {
+    if (!localStorage.tiers && !localStorage.gameTiers && !localStorage.shotTiers) {
+        showInformation();
         initialise();
+    } else {
+        loadTiersFromStorage();
     }
 
     if ($("#import").length) {
@@ -2251,7 +2206,7 @@ $(document).ready(function () {
         $("#error").remove();
     }
 
-    $(".tier_content").css("background-color", settings[settings.sort].tierListColour);
+    $(".tier_content").css("background-color", settings.props[settings.sort].tierListColour);
     setEventListeners();
     unsavedChanges = false;
 });
