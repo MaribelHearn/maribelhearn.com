@@ -66,8 +66,6 @@ const DEFAULT_SETTINGS = {
 let tieredItems = [],
     settings = DEFAULT_SETTINGS,
     tiers = {},
-    gameTiers = {},
-    shotTiers = {},
     multiSelection = [],
     following = "",
     tierView = false,
@@ -162,15 +160,7 @@ function getCurrentTierList(sort) {
         sort = settings.sort;
     }
 
-    if (sort == "characters") {
-        return tiers;
-    }
-
-    if (sort == "works") {
-        return gameTiers;
-    }
-
-    return shotTiers;
+    return tiers[settings.sort];
 }
 
 function whichSort(item) {
@@ -330,24 +320,24 @@ function reloadTiers() {
     }
 }
 
-function addDefaultTiers(sort) {
-    var i, j;
+function addDefaultTiers(category) {
+    let tmp = settings.sort;
 
-    for (i = 0; i < defaultTiers.length; i++) {
-        addTier({data: {tierName: defaultTiers[i]}});
+    for (let tierName of defaultTiers) {
+        addTier({data: {tierName: tierName}});
     }
 
-    for (i = 0; i < sorts.length; i++) {
-        if (sorts[i] != sort) {
-            settings.sort = sorts[i];
+    for (let sort of sorts) {
+        if (sort != category) {
+            settings.sort = sort;
 
-            for (j = 0; j < defaultTiers.length; j++) {
-                addTier({data: {tierName: defaultTiers[j], noDisplay: true}});
+            for (let tierName of defaultTiers) {
+                addTier({data: {tierName: tierName, noDisplay: true}});
             }
         }
     }
 
-    settings.sort = sort;
+    settings.sort = tmp;
 }
 
 function initialise() {
@@ -700,8 +690,7 @@ function validateTierName(tierName) {
 }
 
 function addTier(event) {
-    var tierName = event.data.tierName, noDisplay = event.data.noDisplay, tierList = getCurrentTierList(),
-        tierNum = 0;
+    let tierName = event.data.tierName, noDisplay = event.data.noDisplay, tierList = getCurrentTierList(noDisplay), tierNum = 0;
 
     printMessage("");
 
@@ -1033,7 +1022,7 @@ function detectRightCtrlCombo(event) {
 }
 
 function storageUsed() {
-    return localStorage.hasOwnProperty("settings") || localStorage.hasOwnProperty("tiers") || localStorage.hasOwnProperty("gameTiers") || localStorage.hasOwnProperty("shotTiers");
+    return localStorage.hasOwnProperty("settings") || localStorage.hasOwnProperty("tiers");
 }
 
 function allowData() {
@@ -1046,8 +1035,6 @@ function allowData() {
 
 function saveTiersData() {
     localStorage.setItem("tiers", JSON.stringify(tiers));
-    localStorage.setItem("gameTiers", JSON.stringify(gameTiers));
-    localStorage.setItem("shotTiers", JSON.stringify(shotTiers));
     printMessage("<strong class='confirmation'>Tier list(s) saved!</strong>");
 }
 
@@ -1169,7 +1156,6 @@ function checkSort(text) {
 
         if (line !== "") {
             let items = line.split(',');
-            console.log(items);
 
             for (let item of items) {
                 return whichSort(item.removeSpaces());
@@ -1181,9 +1167,9 @@ function checkSort(text) {
 }
 
 function clearTiers(tierList, sort, tmpSort) {
-    var skipConfirmation = true, noDisplay = (sort == tmpSort ? false : true), tierNum;
+    let skipConfirmation = true, noDisplay = (sort == tmpSort ? false : true);
 
-    for (tierNum = Object.keys(tierList).length - 1; tierNum >= 0; tierNum--) {
+    for (let tierNum = Object.keys(tierList).length - 1; tierNum >= 0; tierNum--) {
         removeTier(tierNum, skipConfirmation, noDisplay);
     }
 }
@@ -1743,18 +1729,17 @@ function changeLog() {
 }
 
 function eraseAllConfirmed() {
-    var tierList = getCurrentTierList(), tmp;
-
-    clearTiers(tierList, settings.sort, settings.sort);
+    clearTiers(getCurrentTierList(), settings.sort, settings.sort);
     tiers = {};
-    gameTiers = {};
-    shotTiers = {};
-    tmp = settings.sort;
+
+    for (let sort of sorts) {
+        tiers[sort] = {};
+    }
+
+    let tmp = settings.sort;
     settings = DEFAULT_SETTINGS;
     settings.sort = tmp;
     localStorage.removeItem("tiers");
-    localStorage.removeItem("gameTiers");
-    localStorage.removeItem("shotTiers");
     localStorage.removeItem("settings");
     initialise();
     printMessage("<strong class='confirmation'>Reset the tier list and settings to their default states!</strong>");
@@ -1891,29 +1876,46 @@ function drop(event) {
 }
 
 function deleteLegacyCookies() {
+    if (getCookie("order")) {
+        deleteCookie("order");
+    }
+
+    if (getCookie("gameOrder")) {
+        deleteCookie("gameOrder");
+    }
+
+    if (getCookie("tiers")) {
+        tiers.characters = getCookie("tiers");
+        localStorage.setItem("tiers", JSON.stringify(tiers));
+        deleteCookie("tiers");
+    }
+
+    if (getCookie("gameTiers")) {
+        tiers.works = getCookie("gameTiers");
+        localStorage.setItem("tiers", JSON.stringify(tiers));
+        deleteCookie("gameTiers");
+    }
+
     if (getCookie("settings")) {
         localStorage.setItem("settings", getCookie("settings"));
         deleteCookie("settings");
     }
 
-    if (getCookie("tiers")) {
-        localStorage.setItem("tiers", getCookie("tiers"));
-        deleteCookie("tiers");
+    if (localStorage.getItem("tiers") && JSON.parse(localStorage.getItem("tiers")).hasOwnProperty("0")) {
+        tiers.characters = JSON.parse(localStorage.getItem("tiers"));
+        localStorage.setItem("tiers", JSON.stringify(tiers));
     }
 
-    if (getCookie("order")) {
-        localStorage.setItem("order", getCookie("order"));
-        deleteCookie("order");
+    if (localStorage.getItem("gameTiers")) {
+        tiers.works = JSON.parse(localStorage.getItem("gameTiers"));
+        localStorage.setItem("tiers", JSON.stringify(tiers));
+        localStorage.removeItem("gameTiers");
     }
 
-    if (getCookie("gameTiers")) {
-        localStorage.setItem("gameTiers", getCookie("gameTiers"));
-        deleteCookie("gameTiers");
-    }
-
-    if (getCookie("gameOrder")) {
-        localStorage.setItem("gameOrder", getCookie("gameOrder"));
-        deleteCookie("gameOrder");
+    if (localStorage.getItem("shotTiers")) {
+        tiers.shots = JSON.parse(localStorage.getItem("shotTiers"));
+        localStorage.setItem("tiers", JSON.stringify(tiers));
+        localStorage.removeItem("shotTiers");
     }
 
     localStorage.removeItem("order");
@@ -1930,27 +1932,25 @@ function addCategoryNamesToShots() {
 }
 
 function loadTier(tiersData, tierNum, tierSort) {
-    var tierList = getCurrentTierList(tierSort), item, i;
-
-    tierList[tierNum] = {};
-    tierList[tierNum].name = tiersData[tierNum].name;
-    tierList[tierNum].bg = tiersData[tierNum].bg;
-    tierList[tierNum].colour = tiersData[tierNum].colour;
-    tierList[tierNum].chars = [];
+    tiers[tierSort][tierNum] = {};
+    tiers[tierSort][tierNum].name = tiersData.name;
+    tiers[tierSort][tierNum].bg = tiersData.bg;
+    tiers[tierSort][tierNum].colour = tiersData.colour;
+    tiers[tierSort][tierNum].chars = [];
 
     if (tierSort == settings.sort) {
         $("#tier_list_tbody").append("<tr id='tr" + tierNum + "' class='tier'><th id='th" + tierNum +
-        "' class='tier_header' draggable='true'>" + tiersData[tierNum].name + "</th><td id='tier" + tierNum +
+        "' class='tier_header' draggable='true'>" + tiersData.name + "</th><td id='tier" + tierNum +
         "' class='tier_content'></td></tr>");
         $("#tr" + tierNum).on("dragover dragenter", allowDrop);
         $("#tr" + tierNum).on("drop", drop);
         $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
         $("#th" + tierNum).on("dragstart", drag);
-        $("#th" + tierNum).css("background-color", tierList[tierNum].bg);
-        $("#th" + tierNum).css("color", tierList[tierNum].colour);
-        $("#th" + tierNum).css("max-width", settings.props[settings.sort].tierHeaderWidth + "px");
-        $("#th" + tierNum).css("width", settings.props[settings.sort].tierHeaderWidth + "px");
-        $("#th" + tierNum).css("font-size", settings.props[settings.sort].tierHeaderFontSize + "px");
+        $("#th" + tierNum).css("background-color", tiers[tierSort][tierNum].bg);
+        $("#th" + tierNum).css("color", tiers[tierSort][tierNum].colour);
+        $("#th" + tierNum).css("max-width", settings.props[tierSort].tierHeaderWidth + "px");
+        $("#th" + tierNum).css("width", settings.props[tierSort].tierHeaderWidth + "px");
+        $("#th" + tierNum).css("font-size", settings.props[tierSort].tierHeaderFontSize + "px");
 
         if (isMobile()) {
             $("#th" + tierNum).css("height", "60px");
@@ -1958,83 +1958,43 @@ function loadTier(tiersData, tierNum, tierSort) {
         } else {
             $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
         }
+    }
 
-        for (i = 0; i < tiersData[tierNum].chars.length; i++) {
-            item = tiersData[tierNum].chars[i];
-
-            if (item == "Mai") {
-                item = "Mai PC-98";
-            }
-
-            if (isMobile()) {
-                $("#" + item).off("click");
-            }
-
-            addToTier(item, tierNum);
+    for (let item of tiersData.chars) {
+        if (item == "Mai") {
+            item = "Mai PC-98";
         }
-    } else {
-        for (i = 0; i < tiersData[tierNum].chars.length; i++) {
-            item = tiersData[tierNum].chars[i];
 
-            if (item == "Mai") {
-                item = "Mai PC-98";
-            }
+        if (isMobile()) {
+            $("#" + item).off("click");
+        }
 
-            if (isMobile()) {
-                $("#" + item).off("click");
-            }
-
-            tierList[tierNum].chars.pushStrict(item);
+        if (tierSort == settings.sort) {
+            addToTier(item, tierNum);
+        } else {
+            tiers[tierSort][tierNum].chars.pushStrict(item);
         }
     }
 }
 
 function loadTiersFromStorage() {
-    var tiersData = JSON.parse(localStorage.getItem("tiers")),
-        gameTiersData = JSON.parse(localStorage.getItem("gameTiers")),
-        shotTiersData = JSON.parse(localStorage.getItem("shotTiers")),
-        tmp = settings.sort, tierNum, i;
+    let tiersData = JSON.parse(localStorage.getItem("tiers")), tierList, tier;
 
-    if (tiersData && !tiersData.isEmpty()) {
-        for (tierNum in tiersData) {
-            tierNum = Number(tierNum);
-            loadTier(tiersData, tierNum, "characters");
-        }
-    } else {
-        settings.sort = "characters";
+    for (let category in tiersData) {
+        tierList = tiersData[category];
 
-        for (i = 0; i < defaultTiers.length; i++) {
-            addTier({data: {tierName: defaultTiers[i], noDisplay: tmp != "characters"}});
-        }
-    }
-
-    if (gameTiersData && !gameTiersData.isEmpty()) {
-        for (tierNum in gameTiersData) {
-            tierNum = Number(tierNum);
-            loadTier(gameTiersData, tierNum, "works");
-        }
-    } else {
-        settings.sort = "works";
-
-        for (i = 0; i < defaultTiers.length; i++) {
-            addTier({data: {tierName: defaultTiers[i], noDisplay: tmp != "works"}});
+        if (tierList.isEmpty()) {
+           for (let tierName of defaultTiers) {
+               addTier({data: {tierName: tierName, noDisplay: category}});
+           }
+        } else {
+            for (let tierNum in tierList) {
+                tier = tierList[tierNum];
+                tierNum = Number(tierNum);
+                loadTier(tier, tierNum, category);
+            }
         }
     }
-
-    if (shotTiersData && !shotTiersData.isEmpty()) {
-        for (tierNum in shotTiersData) {
-            tierNum = Number(tierNum);
-            loadTier(shotTiersData, tierNum, "shots");
-        }
-    } else {
-        settings.sort = "shots";
-
-        for (i = 0; i < defaultTiers.length; i++) {
-            addTier({data: {tierName: defaultTiers[i], noDisplay: tmp != "shots"}});
-        }
-    }
-
-    settings.sort = tmp;
 }
 
 function loadItems() {
@@ -2215,6 +2175,10 @@ function setEventListeners() {
 }
 
 $(document).ready(function () {
+    for (let sort of sorts) {
+        tiers[sort] = {};
+    }
+
     deleteLegacyCookies();
     addCategoryNamesToShots();
 
