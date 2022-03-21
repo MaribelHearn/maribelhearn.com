@@ -1,9 +1,13 @@
 <?php
 $row_size = 9;
 $works_row_size = 8;
+$cards_row_size = 7;
 $offset = -120;
 $picker_offset = -80;
 $mobile_offset = -60;
+$cards_offset = -96;
+$cards_picker_offset = -64;
+$cards_mobile_offset = -48;
 $chars = array('MarisaKirisame', 'ReimuHakurei', 'Elis', 'Kikuri', 'Konngara', 'Mima', 'ReimuPC-98', 'Sariel', 'SinGyokuF', 'SinGyokuM', 'YuugenMagan', 'EvilEyeSigma', 'Genjii', 'MarisaPC-98', 'Meira', 'Rika',
 'ChiyuriKitashirakawa', 'Ellen', 'KanaAnaberal', 'Kotohime', 'Mimi-chan', 'RikakoAsakura', 'Ruukoto', 'YumemiOkazaki', 'Elly', 'Gengetsu', 'Kurumi', 'Mugetsu', 'Orange', 'YuukaPC-98', 'AlicePC-98',
 'Luize', 'MaiPC-98', 'Sara', 'Shinki', 'Yuki', 'Yumeko', 'Cirno', 'Daiyousei', 'FlandreScarlet', 'HongMeiling', 'Koakuma', 'PatchouliKnowledge', 'RemiliaScarlet', 'Rumia', 'SakuyaIzayoi',
@@ -37,6 +41,13 @@ $shots = array('EoSDReimuA', 'EoSDReimuB', 'EoSDMarisaA', 'EoSDMarisaB', 'PCBRei
 'WBaWCYoumuWolf', 'WBaWCYoumuOtter', 'WBaWCYoumuEagle', 'UMReimu', 'UMMarisa', 'UMSakuya', 'UMSanae', 'SoEWReimuA', 'SoEWReimuB', 'SoEWReimuC', 'PoDDReimu', 'PoDDMima', 'PoDDMarisa',
 'PoDDEllen', 'PoDDKotohime', 'PoDDKana', 'PoDDRikako', 'PoDDChiyuri', 'PoDDYumemi', 'LLSReimuA', 'LLSReimuB', 'LLSMarisaA', 'LLSMarisaB', 'MSReimu', 'MSMarisa', 'MSMima', 'MSYuuka',
 'PoFVMerlin', 'PoFVLunasa', 'HSiFSReimuExtra', 'HSiFSCirnoExtra', 'HSiFSAyaExtra', 'HSiFSMarisaExtra');
+$cards = array('LifeCard', 'SpellCard', 'FragmentedLifeCard', 'FragmentedSpellCard', 'MoneyComesAndGoesOnItsOwn', 'Ringo-BrandDango', 'PhoenixsTail', 'Yin-YangOrb', 'Yin-YangOrbNeedle',
+'Mini-Hakkero', 'Mini-HakkeroMissile', 'MaidKnife', 'MaidKnifeRicochet', 'SafeReturnAmulet', 'ShedSnakeskinAmulet', 'Half-HalfGhost', 'ShanghaiDoll', 'IceFairy', 'BackDoor', 'AnnoyingUFO',
+'AncientMagatama', 'BlankCard', 'MisersAdvice', 'OfferingsToASacredMountain', 'DeathAvoidanceElixir', 'LuckyRabbitsFoot', 'LawOfTheSurvivalOfTheFittest', 'SutraOfDharmaticPower', 'PebbleHat',
+'BurstingRedFrog', 'GaleGeta', 'IdolDefenseCorps', 'PrincessKaguyasSecretStash', 'ReliableTanukiApprentice', 'DanmakuGhost', 'KiketsuMatriarchsThreat', 'MoneyIsTheBestLawyerInHell',
+'PhysicalEnhancementJizo', 'SpellBeforeTheFall', 'LuckyCatWithGoodBusinessSkills', 'YamawaroShoppingTechnique', 'DragonPipe', 'GluttonousCentipede', 'Sky-BlueMagatama', 'ScreenBorder',
+'MiracleMallet', 'KeystoneOfEndurance', 'MoonOfMadness',  'EsteemedAuthority', 'VampireFang', 'UndergroundSun', 'ItemSeason', 'HeavyBassDrum', 'Psychokinesis', 'SpiritPowerSampleBottle',
+'GreatTengusBarleyRice');
 for ($i = 0; $i < count($chars); $i++) {
     $picker_x = ($i % $row_size) * $picker_offset;
     $picker_y = floor($i / $row_size) * $picker_offset;
@@ -78,5 +89,19 @@ for ($i = 0; $i < count($shots); $i++) {
     }
     echo '#' . $shots[$i] . '.list_shots{background-position:' . $picker_x . 'px ' . $picker_y . 'px}';
     echo '#' . $shots[$i] . '.tiered_shots{background-position:' . $tiered_x . 'px ' . $tiered_y . 'px}';
+}
+for ($i = 0; $i < count($cards); $i++) {
+    $picker_x = ($i % $cards_row_size) * $cards_picker_offset;
+    $picker_y = floor($i / $cards_row_size) * $picker_offset;
+    $tiered_x = ($i % $cards_row_size) * $cards_offset;
+    $tiered_y = floor($i / $cards_row_size) * $offset;
+    if ($_GET['mobile']) {
+        $picker_x = ($i % $cards_row_size) * $cards_mobile_offset;
+        $picker_y = floor($i / $cards_row_size) * $mobile_offset;
+        $tiered_x = ($i % $cards_row_size) * $cards_mobile_offset;
+        $tiered_y = floor($i / $cards_row_size) * $mobile_offset;
+    }
+    echo '#' . $cards[$i] . '.list_cards{background-position:' . $picker_x . 'px ' . $picker_y . 'px}';
+    echo '#' . $cards[$i] . '.tiered_cards{background-position:' . $tiered_x . 'px ' . $tiered_y . 'px}';
 }
 ?>
