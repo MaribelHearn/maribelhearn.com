@@ -26,6 +26,9 @@
     hit($page, $status_code);
     $lang = set_lang_cookie();
     $locale = $lang . '.UTF-8';
+    setlocale(LC_ALL, $locale);
+    bindtextdomain($lang, 'locale');
+    textdomain($lang);
     $page = preg_replace('/\//', '', $page);
     $use_index = array('index', 'about', 'credits', 'privacy', 'error');
     $dir = directory($page, $use_index);
