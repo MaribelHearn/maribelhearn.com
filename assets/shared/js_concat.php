@@ -5,6 +5,9 @@ if (isset($_SERVER['HTTP_ACCEPT_ENCODING']) && substr_count($_SERVER['HTTP_ACCEP
 } else {
     ob_start();
 }
+if (!isset($_GET['page'])) {
+    exit();
+}
 function is_localhost(string $addr) {
     return $addr == '::1' || $addr == '127.0.0.1' || substr($addr, 0, 8) == '192.168.';
 }
@@ -43,7 +46,7 @@ if (in_array($page, $utils)) {
 if (in_array($page, $sorttable)) {
     array_push($js, 'js/sorttable' . $min . '.js');
 }
-if ($page == 'tiers' && $_GET['mobile']) {
+if ($page == 'tiers' && isset($_GET['mobile']) && $_GET['mobile']) {
     array_push($js, 'js/polyfill_dragdrop' . $min . '.js');
 } else if ($page == 'error') {
     array_push($js, 'https://maribelhearn.com/assets/shared/js/dark' . $min . '.js');
