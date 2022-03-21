@@ -250,8 +250,8 @@ if (!empty($_SESSION['subpage'])) {
     }
     if ($subpage == 'search') {
         $player = (isset($_GET['player']) ? preg_replace('/</', '&lt;', preg_replace('/>/', '&gt;', $_GET['player'])) : '');
-        $game = (isset($_GET['game']) ? preg_replace('/</', '&lt;', preg_replace('/>/', '&gt;', $_GET['game'])) : '');
-        $diff = (isset($_GET['diff']) ? preg_replace('/</', '&lt;', preg_replace('/>/', '&gt;', $_GET['diff'])) : '');
+        $game = (isset($_GET['game']) ? preg_replace('/</', '&lt;', preg_replace('/>/', '&gt;', $_GET['game'])) : '-');
+        $diff = (isset($_GET['diff']) ? preg_replace('/</', '&lt;', preg_replace('/>/', '&gt;', $_GET['diff'])) : '-');
         $shot = (isset($_GET['shot']) ? preg_replace('/</', '&lt;', preg_replace('/>/', '&gt;', $_GET['shot'])) : '');
         $comment = (isset($_GET['comment']) ? preg_replace('/</', '&lt;', preg_replace('/>/', '&gt;', $_GET['comment'])) : '');
         if ($game == 'th095' || $game == 'th125' || $game == 'th143' || $game == 'th165') {
