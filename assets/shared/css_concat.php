@@ -1,5 +1,8 @@
 <?php
 header('Content-type: text/css');
+if (!isset($_GET['page'])) {
+    exit();
+}
 function is_localhost(string $addr) {
     return $addr == '::1' || $addr == '127.0.0.1' || substr($addr, 0, 8) == '192.168.';
 }
@@ -23,7 +26,7 @@ $css = array(
     'shared' . $min . '.css',
     '../' . $dir . '/' . $page . '/' . ($page == 'index' ? 'main' : $page) . $min . '.css'
 );
-if ($_GET['mobile']) {
+if (isset($_GET['mobile']) && $_GET['mobile']) {
     array_push($css, 'shared_mobile' . $min . '.css');
     array_push($css, '../' . $dir . '/' . $page . '/' . ($page == 'index' ? 'main' : $page) . '_mobile' . $min . '.css');
 }
