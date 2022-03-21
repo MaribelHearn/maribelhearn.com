@@ -1,0 +1,1141 @@
+{
+  "HRtP": {
+    "Makai": [],
+    "Jigoku": []
+  },
+  "SoEW": {
+    "ReimuA": [
+      "Pearl"
+    ],
+    "ReimuB": [],
+    "ReimuC": []
+  },
+  "PoDD": {
+    "Reimu": [
+      "Rurilitt",
+      "KirbyComment"
+    ],
+    "Mima": [],
+    "Marisa": [],
+    "Ellen": [],
+    "Kotohime": [],
+    "Kana": [],
+    "Rikako": [],
+    "Chiyuri": [],
+    "Yumemi": [
+      "Zil"
+    ]
+  },
+  "LLS": {
+    "ReimuA": [],
+    "ReimuB": [],
+    "MarisaA": [],
+    "MarisaB": []
+  },
+  "MS": {
+    "Reimu": [],
+    "Marisa": [],
+    "Mima": [
+      "Scarlet Moose"
+    ],
+    "Yuuka": []
+  },
+  "EoSD": {
+    "ReimuA": [
+      "Clio",
+      "SOC",
+      "ZY",
+      "suzu",
+      "Meopala"
+    ],
+    "ReimuB": [
+      "ADV",
+      "Amana",
+      "Cactu",
+      "Chargog",
+      "Clio",
+      "Everlasting",
+      "GB",
+      "HNY",
+      "INL",
+      "K・G",
+      "LYX",
+      "Mino",
+      "SOC",
+      "Yatsuzume",
+      "hayamin",
+      "kkgk",
+      "ns",
+      "oimer",
+      "rori-",
+      "いずみこ",
+      "うちゃ",
+      "きゅーでぃー",
+      "ごぼう",
+      "そなた",
+      "むれい",
+      "水月",
+      "Ghost",
+      "ZJM"
+    ],
+    "MarisaA": [
+      "Chargog",
+      "SOC"
+    ],
+    "MarisaB": [
+      "Everlasting",
+      "SOC",
+      "いずみこ"
+    ]
+  },
+  "PCB": {
+    "ReimuA": [
+      "17",
+      "Amana",
+      "EOH",
+      "LRS",
+      "Mino",
+      "SOC",
+      "pndsng",
+      "rori-",
+      "こーりん",
+      "Satis",
+      "HNY"
+    ],
+    "ReimuB": [
+      "ANE",
+      "Amana",
+      "Chargog",
+      "EOH",
+      "GB",
+      "HNY",
+      "HS参謀",
+      "IwanaM",
+      "K・G",
+      "Lirio",
+      "Mino",
+      "SOC",
+      "Satis",
+      "XCF",
+      "ZY",
+      "hayamin",
+      "rori-",
+      "ごぼう",
+      "ゆーすけ",
+      "グロリアス苦笑い",
+      "夏の氷精",
+      "若叶",
+      "うちゃ",
+      "四季映夢",
+      "CWC"
+    ],
+    "MarisaA": [
+      "Nishibi",
+      "SOC",
+      "rori-",
+      "四季映夢",
+      "ISN",
+      "ATM",
+      "YWH"
+    ],
+    "MarisaB": [
+      "SOC",
+      "Scarlet Moose",
+      "rori-",
+      "Mino",
+      "グロリアス苦笑い"
+    ],
+    "SakuyaA": [
+      "Ghost",
+      "SOC",
+      "rori-",
+      "水月"
+    ],
+    "SakuyaB": [
+      "Amana",
+      "KYO",
+      "Kayar",
+      "Mino",
+      "Rurilitt",
+      "SOC",
+      "UFO",
+      "Yatsuzume",
+      "gyouch",
+      "rori-",
+      "うちゃ",
+      "るめりうむ",
+      "Ivin",
+      "四季映夢",
+      "そなた",
+      "streetmachino"
+    ]
+  },
+  "IN": {
+    "BorderTeamFinalA": [
+      "1",
+      "Amana",
+      "EOH",
+      "GB",
+      "K・G",
+      "Lirio",
+      "SOC",
+      "うちゃ",
+      "こーりん",
+      "水月",
+      "绿绿可柚",
+      "ZY",
+      "ふすま",
+      "そなた",
+      "CWC",
+      "Mr Jovial",
+      "Brain Temple"
+    ],
+    "BorderTeamFinalB": [
+      "***YZ***",
+      "1",
+      "Amana",
+      "GB",
+      "Kayar",
+      "Lirio",
+      "Mino",
+      "Mr Jovial",
+      "Poitaro",
+      "SOC",
+      "Zen",
+      "gyouch",
+      "うちゃ",
+      "こーりん",
+      "ごぼう",
+      "水月",
+      "YWH",
+      "17",
+      "そなた",
+      "CWC",
+      "ふすま",
+      "ns",
+      "marksman"
+    ],
+    "MagicTeamFinalA": [
+      "1",
+      "Akaldar",
+      "IAH",
+      "SOC",
+      "Mr Jovial",
+      "ATM",
+      "绿绿可柚"
+    ],
+    "MagicTeamFinalB": [
+      "1",
+      "ISN",
+      "SOC",
+      "ATM",
+      "Mr Jovial"
+    ],
+    "ScarletTeamFinalA": [
+      "1",
+      "SOC",
+      "绿绿可柚",
+      "Mr Jovial"
+    ],
+    "ScarletTeamFinalB": [
+      "1",
+      "SOC",
+      "Yatsuzume",
+      "Mr Jovial"
+    ],
+    "GhostTeamFinalA": [
+      "1",
+      "Clio",
+      "SOC",
+      "erumon",
+      "绿绿可柚",
+      "Mr Jovial"
+    ],
+    "GhostTeamFinalB": [
+      "1",
+      "Clio",
+      "K・G",
+      "SOC",
+      "erumon",
+      "ryusei",
+      "グロリアス苦笑い",
+      "Mr Jovial",
+      "うちゃ"
+    ],
+    "ReimuFinalA": [
+      "绿绿可柚",
+      "SOC"
+    ],
+    "ReimuFinalB": [
+      "1",
+      "SOC"
+    ],
+    "YukariFinalA": [
+      "1",
+      "绿绿可柚",
+      "SOC",
+      "Mr Jovial",
+      "CWC"
+    ],
+    "YukariFinalB": [
+      "1",
+      "K・G",
+      "SOC",
+      "Mr Jovial",
+      "CWC"
+    ],
+    "MarisaFinalA": [
+      "1",
+      "绿绿可柚",
+      "SOC"
+    ],
+    "MarisaFinalB": [
+      "1",
+      "SOC"
+    ],
+    "AliceFinalA": [
+      "SOC"
+    ],
+    "AliceFinalB": [
+      "1",
+      "SOC"
+    ],
+    "SakuyaFinalA": [
+      "绿绿可柚",
+      "SOC"
+    ],
+    "SakuyaFinalB": [
+      "1",
+      "SOC"
+    ],
+    "RemiliaFinalA": [
+      "1",
+      "绿绿可柚",
+      "SOC",
+      "Mr Jovial"
+    ],
+    "RemiliaFinalB": [
+      "1",
+      "SOC"
+    ],
+    "YoumuFinalA": [
+      "COMMON",
+      "绿绿可柚",
+      "SOC"
+    ],
+    "YoumuFinalB": [
+      "1",
+      "K・G",
+      "SOC"
+    ],
+    "YuyukoFinalA": [
+      "绿绿可柚",
+      "1",
+      "SOC"
+    ],
+    "YuyukoFinalB": [
+      "1",
+      "SOC"
+    ]
+  },
+  "MoF": {
+    "ReimuA": [
+      "Kause",
+      "Mino",
+      "SHN",
+      "SOC",
+      "Y.S",
+      "dxk",
+      "gyouch",
+      "suzu",
+      "zizi",
+      "園田琴梨",
+      "zxxsmart",
+      "うちゃ",
+      "Kayo Mayo",
+      "aelita",
+      "ひのき"
+    ],
+    "ReimuB": [
+      "1",
+      "17",
+      "2-TRI.",
+      "ANE",
+      "Adolee",
+      "Amana",
+      "COMMON",
+      "DJRock",
+      "EOH",
+      "ESC",
+      "Everlasting",
+      "GB",
+      "HNY",
+      "IAH",
+      "IwanaM",
+      "KYO",
+      "Kannazuki",
+      "Kayo Mayo",
+      "K・G",
+      "LXN",
+      "Lirio",
+      "MB",
+      "Mino",
+      "PWG",
+      "RANKO",
+      "SHN",
+      "SLSPC",
+      "SOC",
+      "Suiren",
+      "TALIS",
+      "Tylopilus",
+      "UFO",
+      "XBH",
+      "Yatsuzume",
+      "btn",
+      "coa",
+      "dxk",
+      "gyouch",
+      "kkgk",
+      "ly/spirit",
+      "rori-",
+      "ryusei",
+      "saki",
+      "sui_clo",
+      "yahoobb",
+      "いずみこ",
+      "うちゃ",
+      "ごぼう",
+      "四季映夢",
+      "夏の氷精",
+      "東風谷アオイ",
+      "水月",
+      "Seiko",
+      "S-LCH",
+      "aelita",
+      "Scarlet Moose",
+      "CWC",
+      "C@S",
+      "Dai",
+      "Zera",
+      "411012",
+      "LRS",
+      "かも猫",
+      "園田琴梨",
+      "のるびす",
+      "hrs2006",
+      "ns",
+      "Haki",
+      "GZZ",
+      "九条アリス",
+      "ひのき"
+    ],
+    "ReimuC": [
+      "ISN",
+      "PWG",
+      "SOC",
+      "dxk",
+      "模范炸比",
+      "水月",
+      "Kayo Mayo",
+      "うちゃ",
+      "そなた",
+      "園田琴梨",
+      "aelita"
+    ],
+    "MarisaA": [
+      "SOC",
+      "Kayo Mayo",
+      "aelita",
+      "1"
+    ],
+    "MarisaB": [
+      "1",
+      "ATM",
+      "Amana",
+      "SOC",
+      "dxk",
+      "ryusei",
+      "うちゃ",
+      "れいか",
+      "Kayo Mayo",
+      "aelita",
+      "绿绿可柚",
+      "AMM"
+    ],
+    "MarisaC": [
+      "ASK",
+      "Amana",
+      "K・G",
+      "Reisen",
+      "SOC",
+      "dxk",
+      "水月",
+      "ryusei",
+      "Kayo Mayo",
+      "うちゃ",
+      "ZJM",
+      "aelita"
+    ]
+  },
+  "SA": {
+    "ReimuA": [
+      "***YZ***",
+      "17",
+      "ANE",
+      "Amana",
+      "Cerasis",
+      "Clio",
+      "Dagoth2hu",
+      "EOH",
+      "Everlasting",
+      "GB",
+      "HNY",
+      "Kayo Mayo",
+      "Koxus",
+      "K・G",
+      "ior",
+      "Lirio",
+      "MB",
+      "Mino",
+      "Nindel",
+      "RZN",
+      "SLSPC",
+      "SOC",
+      "TALIS",
+      "XCF",
+      "Yatsuzume",
+      "coa",
+      "gyouch",
+      "neco",
+      "あおふ",
+      "うちゃ",
+      "えすか",
+      "こーりん",
+      "ごぼう",
+      "にゃんこ",
+      "タカティン",
+      "リョクミン",
+      "四季映夢",
+      "東風谷アオイ",
+      "水月",
+      "海神",
+      "镜",
+      "INL",
+      "そなた",
+      "ling",
+      "みぞる",
+      "かも猫",
+      "ATM",
+      "marskman",
+      "ns",
+      "CWC",
+      "Cero"
+    ],
+    "ReimuB": [
+      "***YZ***",
+      "Amana",
+      "Cerasis",
+      "Everlasting",
+      "ior",
+      "SOC",
+      "うちゃ",
+      "海神",
+      "HNY",
+      "そなた",
+      "ZJM",
+      "Cero"
+    ],
+    "ReimuC": [
+      "Cerasis",
+      "ior",
+      "SOC",
+      "海神",
+      "リョクミン",
+      "HNY",
+      "そなた",
+      "Dagoth2hu",
+      "うちゃ"
+    ],
+    "MarisaA": [
+      "***YZ***",
+      "Chargog",
+      "ior",
+      "SOC",
+      "Dagoth2hu",
+      "Mr Jovial",
+      "Cerasis",
+      "うちゃ",
+      "そなた",
+      "ZJM"
+    ],
+    "MarisaB": [
+      "ISN",
+      "ior",
+      "SOC",
+      "えなめる",
+      "クロム～ブルー",
+      "STI",
+      "Dagoth2hu",
+      "Cerasis",
+      "Chromium",
+      "そなた"
+    ],
+    "MarisaC": [
+      "ior",
+      "SOC",
+      "そなた"
+    ]
+  },
+  "UFO": {
+    "ReimuA": [
+      "***YZ***",
+      "Amana",
+      "Chargog",
+      "EOH",
+      "Everlasting",
+      "GB",
+      "HNY",
+      "LYX",
+      "MB",
+      "Mino",
+      "SOC",
+      "Yatsuzume",
+      "coa",
+      "gatsguts",
+      "harukara",
+      "yuki",
+      "うちゃ",
+      "ごぼう",
+      "むれい",
+      "四季映夢",
+      "水月",
+      "ns",
+      "rori-",
+      "ZJM"
+    ],
+    "ReimuAUFOs": [
+      "INL",
+      "K・G",
+      "ZeroPride",
+      "アイスプライス"
+    ],
+    "ReimuB": [
+      "***YZ***",
+      "K・G",
+      "SOC",
+      "shin",
+      "そなた",
+      "IAH",
+      "TheHan"
+    ],
+    "ReimuBUFOs": [],
+    "MarisaA": [
+      "HNY",
+      "K・G",
+      "SOC"
+    ],
+    "MarisaAUFOs": [],
+    "MarisaB": [
+      "***YZ***",
+      "SOC"
+    ],
+    "MarisaBUFOs": [
+      "K・G"
+    ],
+    "SanaeA": [
+      "***YZ***",
+      "K・G",
+      "SOC",
+      "ior"
+    ],
+    "SanaeAUFOs": [],
+    "SanaeB": [
+      "***YZ***",
+      "SOC"
+    ],
+    "SanaeBUFOs": [
+      "K・G"
+    ]
+  },
+  "GFW": {
+    "A1": [
+      "Amana",
+      "K.Kano",
+      "KirbyComment",
+      "K・G",
+      "Maribel Hearn",
+      "SOC",
+      "Satis",
+      "chum",
+      "kuro",
+      "ns",
+      "うちゃ",
+      "こーりん",
+      "EOH",
+      "湖小",
+      "るめりうむ",
+      "Dagoth2hu",
+      "MN",
+      "四季映夢",
+      "そなた",
+      "Cero",
+      "ふぇぶりゅう",
+      "ISN",
+      "ATM"
+    ],
+    "A2": [
+      "Amana",
+      "GAN",
+      "K.Kano",
+      "KirbyComment",
+      "Maribel Hearn",
+      "SOC",
+      "Satis",
+      "Youjeen",
+      "chum",
+      "clock_eu26",
+      "こーりん",
+      "EOH",
+      "ATM",
+      "るめりうむ",
+      "Dagoth2hu",
+      "ふぇぶりゅう",
+      "うちゃ",
+      "Kayo Mayo",
+      "Cerasis"
+    ],
+    "B1": [
+      "K.Kano",
+      "SOC",
+      "Satis",
+      "chum",
+      "ns",
+      "こーりん",
+      "EOH",
+      "るめりうむ",
+      "Dagoth2hu",
+      "うちゃ"
+    ],
+    "B2": [
+      "Amana",
+      "K.Kano",
+      "SOC",
+      "chum",
+      "ns",
+      "こーりん",
+      "EOH",
+      "KirbyComment",
+      "るめりうむ",
+      "Dagoth2hu",
+      "うちゃ"
+    ],
+    "C1": [
+      "K.Kano",
+      "SOC",
+      "Satis",
+      "chum",
+      "こーりん",
+      "EOH",
+      "るめりうむ",
+      "Dagoth2hu",
+      "うちゃ"
+    ],
+    "C2": [
+      "Amana",
+      "K.Kano",
+      "SOC",
+      "chum",
+      "こーりん",
+      "EOH",
+      "るめりうむ",
+      "Dagoth2hu",
+      "ふぇぶりゅう",
+      "うちゃ"
+    ]
+  },
+  "TD": {
+    "Reimu": [
+      "17",
+      "7bitm",
+      "ASL",
+      "Amana",
+      "COMMON",
+      "EOH",
+      "GB",
+      "Ghost",
+      "HNY",
+      "IAH",
+      "K・G",
+      "LYX",
+      "MB",
+      "Mino",
+      "Pieraz",
+      "Ryuuko",
+      "SLSPC",
+      "SOC",
+      "XCF",
+      "XuWu",
+      "YWH",
+      "Yatsuzume",
+      "coa",
+      "gyouch",
+      "morth",
+      "ns",
+      "あーるえす",
+      "うちゃ",
+      "おとど",
+      "ごぼう",
+      "ふぇぶりゅう",
+      "みぞる",
+      "九条アリス",
+      "水月",
+      "ANE",
+      "海神",
+      "Seiko",
+      "nim",
+      "suzu",
+      "S-LCH",
+      "GZZ",
+      "916",
+      "Asahi",
+      "四季映夢",
+      "Zera",
+      "pyro",
+      "kitt1es",
+      "園田琴梨",
+      "CWC",
+      "Aelita",
+      "kkgk",
+      "Cao Minh"
+    ],
+    "Marisa": [
+      "Amana",
+      "K・G",
+      "SOC",
+      "ns",
+      "epsilon",
+      "四季映夢",
+      "Mr Jovial",
+      "pyro",
+      "園田琴梨",
+      "YWH"
+    ],
+    "Sanae": [
+      "Amana",
+      "K・G",
+      "SOC",
+      "ns",
+      "九条アリス",
+      "四季映夢",
+      "YWH"
+    ],
+    "Youmu": [
+      "Amana",
+      "Dagoth2hu",
+      "EOH",
+      "Ghost",
+      "IwanaM",
+      "K・G",
+      "Lirio",
+      "SOC",
+      "ns",
+      "うちゃ",
+      "こーりん",
+      "四季映夢",
+      "ATM",
+      "Scarlet Moose",
+      "るめりうむ",
+      "YWH",
+      "そなた",
+      "小八真棒",
+      "Diamenciory"
+    ]
+  },
+  "DDC": {
+    "ReimuA": [
+      "Adolee",
+      "Amana",
+      "EOH",
+      "Frozaple",
+      "GB",
+      "ごぼう",
+      "gyouch",
+      "HNY",
+      "IAH",
+      "K・G",
+      "水月",
+      "Mino",
+      "RZN",
+      "SOC",
+      "YSZK",
+      "Yatsuzume",
+      "むれい",
+      "うちゃ",
+      "こーりん",
+      "SLSPC",
+      "四季映夢",
+      "XCF",
+      "noari",
+      "園田琴梨",
+      "たるは",
+      "にゃんこ",
+      "pyro",
+      "marskman",
+      "Cerasis",
+      "おいたん",
+      "CWC",
+      "GZZ"
+    ],
+    "ReimuB": [
+      "SLSPC",
+      "ISN",
+      "SOC"
+    ],
+    "MarisaA": [
+      "SOC"
+    ],
+    "MarisaB": [
+      "Frozaple",
+      "HNY",
+      "pyro",
+      "SOC"
+    ],
+    "SakuyaA": [
+      "Amana",
+      "Frozaple",
+      "K・G",
+      "Lirio",
+      "水月",
+      "mazakura",
+      "にしゅびー",
+      "针喵",
+      "ns",
+      "ATM",
+      "noari",
+      "SOC",
+      "Pen",
+      "うちゃ",
+      "marksman",
+      "にゃんこ",
+      "ANE",
+      "WEF",
+      "るめりうむ",
+      "pyro",
+      "そなた",
+      "四季映夢",
+      "CWC",
+      "Dean"
+    ],
+    "SakuyaB": [
+      "SOC"
+    ]
+  },
+  "LoLK": {
+    "Reimu": [
+      "Amana",
+      "HNY",
+      "NFkarl",
+      "SLSPC",
+      "Yatsuzume",
+      "うちゃ",
+      "きゅーでぃー",
+      "ごぼう",
+      "そなた",
+      "ns",
+      "GZZ",
+      "SOC"
+    ],
+    "Marisa": [
+      "Amana",
+      "SOC"
+    ],
+    "Sanae": [
+      "Amana",
+      "ior",
+      "SOC"
+    ],
+    "Reisen": [
+      "Amana",
+      "K・G",
+      "SOC"
+    ]
+  },
+  "HSiFS": {
+    "ReimuSpring": [
+      "SOC"
+    ],
+    "ReimuSummer": [
+      "SOC",
+      "そなた"
+    ],
+    "ReimuAutumn": [
+      "ANE",
+      "Amana",
+      "GB",
+      "HNY",
+      "IAH",
+      "Lirio",
+      "SOC",
+      "うちゃ",
+      "こーりん",
+      "むれい",
+      "四季映夢",
+      "AMM",
+      "ns"
+    ],
+    "ReimuWinter": [
+      "Amana",
+      "GOOKbab!",
+      "IAH",
+      "Mino",
+      "SOC",
+      "Yatsuzume",
+      "coa",
+      "zizi",
+      "ごぼう",
+      "四季映夢",
+      "園田琴梨",
+      "实况主本人",
+      "Haki",
+      "AMM"
+    ],
+    "CirnoSpring": [
+      "IAH",
+      "SOC"
+    ],
+    "CirnoSummer": [
+      "そなた",
+      "SOC"
+    ],
+    "CirnoAutumn": [
+      "Amana",
+      "四季映夢",
+      "SOC"
+    ],
+    "CirnoWinter": [
+      "Amana",
+      "SOC",
+      "園田琴梨"
+    ],
+    "AyaSpring": [
+      "SOC",
+      "ior"
+    ],
+    "AyaSummer": [
+      "そなた",
+      "ior",
+      "SOC"
+    ],
+    "AyaAutumn": [
+      "Amana",
+      "SOC"
+    ],
+    "AyaWinter": [
+      "IAH",
+      "SOC"
+    ],
+    "MarisaSpring": [
+      "Amana",
+      "HNY",
+      "IAH",
+      "SOC"
+    ],
+    "MarisaSummer": [
+      "Amana",
+      "IAH",
+      "そなた",
+      "園田琴梨",
+      "SOC"
+    ],
+    "MarisaAutumn": [
+      "Amana",
+      "GB",
+      "IAH",
+      "K・G",
+      "SOC",
+      "うちゃ",
+      "園田琴梨",
+      "四季映夢",
+      "gyouch"
+    ],
+    "MarisaWinter": [
+      "IAH",
+      "SOC",
+      "古明地筍",
+      "实况主本人"
+    ]
+  },
+  "WBaWC": {
+    "ReimuWolf": [
+      "BEN",
+      "SOC",
+      "YWH",
+      "Zera",
+      "すばりっく",
+      "四季映夢",
+      "Haki"
+    ],
+    "ReimuOtter": [
+      "SOC",
+      "YWH",
+      "すばりっく",
+      "BEN"
+    ],
+    "ReimuEagle": [
+      "SOC",
+      "YWH",
+      "すばりっく"
+    ],
+    "MarisaWolf": [
+      "Amana",
+      "HNY",
+      "Mino",
+      "SOC",
+      "YWH",
+      "すばりっく",
+      "四季映夢",
+      "notbluebus"
+    ],
+    "MarisaOtter": [
+      "SOC",
+      "YWH",
+      "K・G"
+    ],
+    "MarisaEagle": [
+      "SOC",
+      "YWH",
+      "すばりっく"
+    ],
+    "YoumuWolf": [
+      "SOC",
+      "YWH",
+      "Yatsuzume",
+      "ns",
+      "うちゃ",
+      "すばりっく",
+      "そなた",
+      "にゃんこ",
+      "るめりうむ",
+      "四季映夢",
+      "gyouch",
+      "ATM",
+      "erumon"
+    ],
+    "YoumuOtter": [
+      "SOC",
+      "YWH",
+      "うちゃ",
+      "四季映夢"
+    ],
+    "YoumuEagle": [
+      "SOC",
+      "YWH",
+      "ぶちスライム",
+      "BEN"
+    ]
+  },
+  "UM": {
+    "Reimu": [], "Marisa": [], "Sanae": [], "Sakuya": []
+  },
+  "LM": "04/04/2021"
+}
