@@ -45,7 +45,7 @@
         if (!empty($player) && !$player_matches) {
             return false;
         }
-        if ($diff != '-' && $entry['difficulty'] != $diff) {
+        if ($diff != '-' && array_key_exists('difficulty', $entry) && $entry['difficulty'] != $diff) {
             return false;
         }
         if ($game == 'GFW') {
