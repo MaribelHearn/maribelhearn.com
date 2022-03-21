@@ -1011,7 +1011,7 @@ function tierMenu(tierNum) {
 }
 
 function detectLeftCtrlCombo(event) {
-    var tierNum = event.data.tierNum;
+    let tierNum = event.data.tierNum;
 
     if (event.ctrlKey) {
         quickAdd(tierNum);
@@ -1021,13 +1021,11 @@ function detectLeftCtrlCombo(event) {
 }
 
 function emptyTier(tierNum) {
-    var confirmation;
-
     if (isMobile()) {
         removeCharacters(tierNum);
     }
 
-    confirmation = confirm("Are you sure you want to empty this tier? This will return all characters in it to the picker.");
+    let confirmation = confirm("Are you sure you want to empty this tier? This will return all items in it to the picker.");
 
     if (confirmation) {
         removeCharacters(tierNum);
@@ -1035,7 +1033,7 @@ function emptyTier(tierNum) {
 }
 
 function detectRightCtrlCombo(event) {
-    var tierNum = event.data.tierNum;
+    let tierNum = event.data.tierNum;
 
     if (event.ctrlKey) {
         emptyTier(tierNum);
