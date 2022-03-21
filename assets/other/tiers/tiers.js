@@ -11,7 +11,7 @@ const defaultTiers = ["S", "A", "B", "C"];
 const defaultColour = "#1b232e";
 const defaultWidth = navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1 ? 60 : 120;
 const defaultSize = 32;
-const sorts = ["characters", "works", "shots"]; //, "cards"
+const sorts = ["characters", "works", "shots", "cards"];
 const pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"];
 const windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "Spinoff"];
 const spinoffs = ["IaMP", "SWR", "Soku", "DS", "GFW", "HM", "ULiL", "AoCF"];
@@ -46,15 +46,35 @@ const DEFAULT_SETTINGS = {
             "DDC": { enabled: true }, "LoLK": { enabled: true }, "HSiFS": { enabled: true }, "WBaWC": { enabled: true },
             "UM": { enabled: true }
         },
-        /*"cards": {
+        "cards": {
             "Item": { enabled: true }, "Equipment": { enabled: true }, "Passive": { enabled: true }, "Active": { enabled: true }
-        }*/
+        }
     },
     "props": {
-        "characters": DEFAULT_PROPS,
-        "works": DEFAULT_PROPS,
-        "shots": DEFAULT_PROPS,
-        //"cards": DEFAULT_PROPS
+        "characters": {
+            "tierListName": "",
+            "tierListColour": defaultColour,
+            "tierHeaderWidth": defaultWidth,
+            "tierHeaderFontSize": defaultSize
+        },
+        "works": {
+            "tierListName": "",
+            "tierListColour": defaultColour,
+            "tierHeaderWidth": defaultWidth,
+            "tierHeaderFontSize": defaultSize
+        },
+        "shots": {
+            "tierListName": "",
+            "tierListColour": defaultColour,
+            "tierHeaderWidth": defaultWidth,
+            "tierHeaderFontSize": defaultSize
+        },
+        "cards": {
+            "tierListName": "",
+            "tierListColour": defaultColour,
+            "tierHeaderWidth": defaultWidth,
+            "tierHeaderFontSize": defaultSize
+        }
     },
     "pc98Enabled": true,
     "windowsEnabled": true,
@@ -73,40 +93,50 @@ let tieredItems = [],
     unsavedChanges = false;
 
 function addSpacing(item) {
-    if (whichSort(item) == "shots") {
+    const sort = whichSort(item);
+
+    if (sort == "shots") {
         if (item.includes("HSiFS") || item.includes("WBaWC")) {
             return item.replace("HSiFS", "HSiFS ").replace("WBaWC", "WBaWC ");
         }
 
-        return item.replace(item.match(/[A-Z][A-Z][a-z]/)[0], item.match(/[A-Z][A-Z][a-z]/)[0].substr(0, 1) + " " + item.match(/[A-Z][A-Z][a-z]/)[0].substr(1));
+        return item.replace(item.match(/[A-Z][A-Z][a-z]/)[0], item.match(/[A-Z][A-Z][a-z]/)[0].substr(0, 1) + " " + item.match(/[A-Z][A-Z][a-z]/)[0].substr(1)).replace("Team", " Team");
     }
 
     if (item == "ReisenII") {
         return "Reisen II";
     } else if (item == "Retrospective53minutes") {
         return "Retrospective 53 minutes";
+    } else if (item == "AnnoyingUFO") {
+        return "Annoying UFO";
     } else if (clans.includes(item)) {
         return item.substr(0, item.lastIndexOf("no")) + " " + item.substr(item.lastIndexOf("no"), 2) + " " + item.substr(item.lastIndexOf("no") + 2);
     }
 
     for (let i = 1; i < item.length; i++) {
         let c = item[i];
-        if ((/[A-Z]/.test(c) || /\d+/.test(c)) && item.charAt(i - 1) !== ' ') {
+        if ((/[A-Z]/.test(c) || /\d+/.test(c)) && item.charAt(i - 1) !== ' ' && item.charAt(i - 1) !== '-') {
             item = item.substr(0, i) + " " + item.substr(i);
         }
     }
 
-    if (/of [A-Z]/.test(item)) {
-        item = item.replace("of ", " of ");
-    } else if (/in [A-Z]/.test(item)) {
-        item = item.replace("in ", " in ");
-    } else if (/and [A-Z]/.test(item) && item != "Lotus Land Story") {
-        item = item.replace("and ", " and ");
-    } else if ( /the [A-Z]/.test(item)) {
-        item = item.replace("the ", " the ");
-    } else if (/to [A-Z]/.test(item)) {
-        item = item.replace("to ", " to ");
+    if (sort != "cards") {
+        if (/of [A-Z]/.test(item)) {
+            item = item.replace("of ", " of ");
+        } else if (/in [A-Z]/.test(item)) {
+            item = item.replace("in ", " in ");
+        } else if (/and [A-Z]/.test(item) && item != "Lotus Land Story") {
+            item = item.replace("and ", " and ");
+        } else if ( /the [A-Z]/.test(item)) {
+            item = item.replace("the ", " the ");
+        } else if (/to [A-Z]/.test(item)) {
+            item = item.replace("to ", " to ");
+        }
+    } else {
+        item = item.replace("And ", "and ").replace("Its ", "its ").replace("To ", "to ").replace(" A ", " a ").replace("Of ", "of ");
+        item = item.replace("The ", "the ").replace("Is ", "is ").replace("In ", "in ").replace("With ", "with ");
     }
+
 
     return item.replace("Sin Gyoku", "SinGyoku").replace("Yuugen Magan", "YuugenMagan");
 }
@@ -160,7 +190,7 @@ function getCurrentTierList(sort) {
         sort = settings.sort;
     }
 
-    return tiers[settings.sort];
+    return tiers[sort];
 }
 
 function whichSort(item) {
@@ -320,28 +350,21 @@ function reloadTiers() {
     }
 }
 
-function addDefaultTiers(category) {
+function addDefaultTiers(sort) {
     let tmp = settings.sort;
 
     for (let tierName of defaultTiers) {
-        addTier({data: {tierName: tierName}});
-    }
-
-    for (let sort of sorts) {
-        if (sort != category) {
-            settings.sort = sort;
-
-            for (let tierName of defaultTiers) {
-                addTier({data: {tierName: tierName, noDisplay: true}});
-            }
-        }
+        addTier({data: {tierName: tierName, noDisplay: sort == tmp ? false : sort}});
     }
 
     settings.sort = tmp;
 }
 
 function initialise() {
-    addDefaultTiers(settings.sort);
+    for (let sort of sorts) {
+        addDefaultTiers(sort);
+    }
+
     $("#tier_list_caption").html(settings.props[settings.sort].tierListName);
 
     if (isMobile()) {
@@ -692,7 +715,9 @@ function validateTierName(tierName) {
 function addTier(event) {
     let tierName = event.data.tierName, noDisplay = event.data.noDisplay, tierList = getCurrentTierList(noDisplay), tierNum = 0;
 
-    printMessage("");
+    if (settings.sort == "works") {
+        console.log(tierList);
+    }
 
     while (tierNum < Object.keys(tierList).length) {
         tierNum += 1;
@@ -1926,7 +1951,7 @@ function deleteLegacyCookies() {
 function addCategoryNamesToShots() {
     for (var i in categories.shots) {
         for (var j = 0; j < categories.shots[i].chars.length; j++) {
-            categories.shots[i].chars[j] = i + categories.shots[i].chars[j];
+            categories.shots[i].chars[j] = i + categories.shots[i].chars[j].replace(" Team", "Team");
         }
     }
 }
@@ -1980,13 +2005,21 @@ function loadTier(tiersData, tierNum, tierSort) {
 function loadTiersFromStorage() {
     let tiersData = JSON.parse(localStorage.getItem("tiers")), tierList, tier;
 
-    for (let category in tiersData) {
+    for (let category in tiers) {
+        if (!tiersData.hasOwnProperty(category)) {
+            for (let tierName of defaultTiers) {
+                addTier({data: {tierName: tierName, noDisplay: category}});
+            }
+
+            continue;
+        }
+
         tierList = tiersData[category];
 
         if (tierList.isEmpty()) {
-           for (let tierName of defaultTiers) {
-               addTier({data: {tierName: tierName, noDisplay: category}});
-           }
+            for (let tierName of defaultTiers) {
+                addTier({data: {tierName: tierName, noDisplay: category}});
+            }
         } else {
             for (let tierNum in tierList) {
                 tier = tierList[tierNum];
@@ -2091,11 +2124,21 @@ function loadSettingsFromStorage() {
 
     if (settingsData.hasOwnProperty("categories")) {
         for (let item in settings) {
+            if (item == "categories" || item == "props") {
+                continue;
+            }
+
             settings[item] = settingsData[item];
         }
 
+        if (settingsData.picker && settingsData.picker == "small") {
+            togglePickerSize({data: {load: true}});
+        }
+
         for (let sort of sorts) {
-            if (settings.props.hasOwnProperty(sort)) {
+            settings.categories[sort] = settingsData.categories.hasOwnProperty(sort) ? settingsData.categories[sort] : DEFAULT_SETTINGS.categories[sort];
+
+            if (settingsData.props.hasOwnProperty(sort)) {
                 settings.props[sort].tierListName = (settingsData.props[sort].tierListName ? settingsData.props[sort].tierListName : "");
                 settings.props[sort].tierListColour = (settingsData.props[sort].tierListColour ? settingsData.props[sort].tierListColour : defaultColour);
                 settings.props[sort].tierHeaderWidth = (settingsData.props[sort].tierHeaderWidth ? settingsData.props[sort].tierHeaderWidth : defaultWidth);

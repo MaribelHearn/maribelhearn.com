@@ -15,7 +15,7 @@
                 <option value='characters'>Characters</option>
                 <option value='works'>Works</option>
                 <option value='shots'>Shottypes</option>
-                <!--<option value='cards'>Cards</option>-->
+                <option value='cards'>Cards</option>
             </select>
             <label for='toggle_view'>Change view:</label>
             <input id='toggle_view' class='button' type='button' value='Tier List View'>

@@ -1,6 +1,6 @@
 <?php
 header('Content-type: text/javascript');
-if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')) {
+if (isset($_SERVER['HTTP_ACCEPT_ENCODING']) && substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')) {
     ob_start('ob_gzhandler');
 } else {
     ob_start();
@@ -73,7 +73,8 @@ if ($page == 'wr') {
 }
 if ($page == 'tiers') {
     echo 'const categories = {"characters":' . file_get_contents('json/chars.json') .
-    ',"works":' . file_get_contents('json/works.json') . ',"shots":' . file_get_contents('json/shots.json') . '};';
+    ',"works":' . file_get_contents('json/works.json') . ',"shots":' . file_get_contents('json/shots.json') .
+    ',"cards":' . file_get_contents('json/cards.json') . '};';
 }
 if ($page == 'slots') {
     echo 'const CHARS = ' . file_get_contents('json/charpos.json') . ';';
