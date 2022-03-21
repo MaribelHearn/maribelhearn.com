@@ -24,7 +24,7 @@ input[type=button]:not(.button_bottom) {
     height: 60px;
     cursor: pointer;
 }
-.mobile_add, .mobile_button {
+.mobile_button {
     margin: 10px;
 }
 .list_characters, .tiered_characters, .list_works, .tiered_works, .list_shots, .tiered_shots {
