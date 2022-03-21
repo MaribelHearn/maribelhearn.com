@@ -31,6 +31,10 @@ input[type=button]:not(.button_bottom) {
     width: 60px;
     height: 60px;
 }
+.list_cards, .tiered_cards {
+    width: 48px;
+    height: 60px;
+}
 .list_characters, .tiered_characters {
     background-image: url('../shared/spritesheets/characters_sheet60x60.png');
 }
@@ -39,6 +43,9 @@ input[type=button]:not(.button_bottom) {
 }
 .list_shots, .tiered_shots {
     background-image: url('../shared/spritesheets/shots_sheet60x60.png');
+}
+.list_cards, .tiered_cards {
+    background-image: url('../shared/spritesheets/cards_sheet60x60.png');
 }
 #wrap {
     top: 5px;
