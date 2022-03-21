@@ -111,6 +111,11 @@ li {
 .hidden {
     display: none;
 }
+.mobile_add {
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+}
 .tierview_button {
     margin-left: 10px;
 }
