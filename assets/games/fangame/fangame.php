@@ -5,7 +5,7 @@
 	survival condition(s) are listed with the game titles.</p>
     <p id='tables'>All of the table columns are sortable.</p>
     <p id='noreup'>The replays or videos provided are <strong>not</strong> meant to be reuploaded anywhere.</p>
-    <p id='lastupdate'>Accomplishments are current as of 5 October 2021.</p>
+    <p id='lastupdate'>Accomplishments are current as of 25 October 2021.</p>
     <h2 id='contents_header'>Contents</h2>
     <div id='contents' class='border'>
 		<p><a href='#lnns'>LNN Clears</a></p>
