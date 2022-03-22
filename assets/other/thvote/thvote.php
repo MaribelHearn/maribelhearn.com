@@ -8,14 +8,16 @@
             echo '<span id="back"><a href="/thvote">&lt;= Back to Main Page</a></span>';
         }
         echo wrap_top();
-        echo '<h1>THWiki Popularity Poll 2021 Results' . (!empty($subpage) ? ' - Extra Statistics' : '') . '</h1>';
+        echo '<h1>THWiki Popularity Poll 2021 Results' . ($subpage == 'extras' ? ' - Extra Statistics' : '') . '</h1>';
         if (!empty($_GET['redirect'])) {
             echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
         }
-        if (!empty($subpage)) {
+        if ($subpage == 'extras') {
             include_once 'assets/other/thvote/subpages/' . $subpage . '.php';
-        } else {
+        } else if (empty($subpage)) {
             include_once 'assets/other/thvote/subpages/main_page.php';
+        } else {
+            echo '<p>No such page.</p>';
         }
     ?>
 </div>
