@@ -38,6 +38,15 @@ function redirect_to_closest(string $url) {
         }
     }
 }
+function subpage_name(string $subpage) {
+    switch ($subpage) {
+        case 'eosd': return 'EoSD';
+        case 'gfx': return 'Graphics';
+        case 'res': return 'Resources';
+        case 'extras': return 'Extra Statistics';
+        default: return ucfirst($subpage);
+    }
+}
 function page_exists(string $page_path) {
     $main = str_replace('%dir', 'main', $page_path);
     $games = str_replace('%dir', 'games', $page_path);

@@ -12,7 +12,7 @@ music and works will not change when the full results are published.</p>-->
     <p><a href='#works'>Works</a></p>
     <p><a href='#questionnaire'>Questionnaire</a></p>
     <br>
-    <p><a href='/thvote/extra'>Extra Statistics (separate page)</a></p>
+    <p><a href='/thvote/extras'>Extra Statistics (separate page)</a></p>
 </div>
 <h2>Valid responses</h2>
 <div id='responses' class='border'>

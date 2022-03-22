@@ -9,6 +9,8 @@
             echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
         }
         if (!empty($subpage)) {
+            if ($subpage == 'gfx') $subpage = 'graphics';
+            if ($subpage == 'res') $subpage = 'resources';
             $path = 'assets/games/faq/' . ($subpage == 'eosd' ? 'eosd' : 'subpages') . '/' . $subpage . '.php';
             if (file_exists($path)) {
                 include_once $path;
