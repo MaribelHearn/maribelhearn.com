@@ -185,6 +185,16 @@ a:visited.dropdown_button {
 .dropdown_content.dark_bg {
     background-color: #1b232e;
 }
+.dropdown_content p a:hover {
+    background-color: #bbb;
+}
+.dropdown_content.dark_bg p a:hover {
+    background-color: #555;
+}
+.dropdown_content p a {
+    display: inline-block;
+    width: 100%;
+}
 .dropdown_right {
     right: 0;
 }
