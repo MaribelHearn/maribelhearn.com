@@ -54,6 +54,7 @@ tr:not(.west_tr):nth-child(even), tr.west_tr:nth-child(odd) {
     background-color: #00c8c8;
 }
 .TDt th, .TDp, .TD {
+    color: white;
     background-color: #4a808c;
 }
 .DDCt th, .DDCp, .DDC {
