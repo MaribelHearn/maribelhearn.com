@@ -310,8 +310,8 @@
 					} else {
                         $replay = '-';
                     }
-                    echo '<tr><td class="' . $obj->game . 'p">' . _($obj->game) . ($lang == 'en_US' || $lang == 'ru_RU' || $lang == 'de_DE' ? ' ' : '') .
-					$obj->diff . ($lang == 'en_US' || $lang == 'ru_RU' || $lang == 'de_DE' ? ' ' : '') . _($obj->shot) . '</td>' .
+                    echo '<tr><td class="' . $obj->game . 'p">' . _($obj->game) . (has_space($lang) ? ' ' : '') .
+					$obj->diff . (has_space($lang) ? ' ' : '') . _($obj->shot) . '</td>' .
                     '<td>' . number_format($obj->score, 0, '.', ',') . '</td><td>' . $obj->player . '</td>' .
                     '<td>' . $replay . '</td><td class="datestring">' . date_tl($obj->date, $lang) . '</td></tr>';
                 }
