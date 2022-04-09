@@ -313,7 +313,7 @@ function showWRtable(game) {
                 unverifiedScore = unverifiedObj[game + difficulty + shottype];
                 score = unverifiedScore[0];
                 player = unverifiedScore[1];
-                date = unverifiedScore[2];
+                date = formatDate(unverifiedScore[2]);
             } else {
                 unverifiedScore = false;
             }
@@ -324,7 +324,7 @@ function showWRtable(game) {
             text = (replay === "" ? sepScore : "<a class='replay' href='" + replay + "'>" + sepScore + "<span class='dl_icon'></span></a>");
 
             if (unverifiedObj.hasOwnProperty(game + difficulty + shottype)) {
-                text = "<span class='unver_container'><span class='unver'>" + sepScore + "</span><span class='tooltip'>Unverified</span></span>";
+                text = formatUnverified(sepScore);
             }
 
             text += "<br>by <em>" + player + "</em>" + (date && datesEnabled ? "<span class='dimgrey'><br>" +
@@ -345,7 +345,7 @@ function showWRtable(game) {
             "'>" + sepScore + "<span class='dl_icon'></span></a></u>");
 
             if (unverifiedObj.hasOwnProperty(game + difficulty + bestShot.shottype)) {
-                text = "<span class='unver_container'><span class='unver'><u>" + sepScore + "</u></span><span class='tooltip'>Unverified</span></span>";
+                text = formatUnverified("<u>" + sepScore + "</u>");
             }
 
             text += "<br>by <em>" + bestShot.player +
@@ -360,10 +360,23 @@ function showWRtable(game) {
         }
 
         if (game == "HSiFS") {
-            $(removeSeason(bestShot.id) + (difficulty == "Extra" ? "Small" : "")).html((bestShot.replay === "" ? "<u>" + sep(bestShotMax) +
-            "</u>" : "<u><a class='replay' href='" + bestShot.replay + "'>" + sep(bestShotMax) + "<span class='dl_icon'></span></a></u>") + "<br>by <em>" + bestShot.player +
-            "</em>" + (game == "HSiFS" && difficulty != "Extra" ? " (" + bestShot.season + ")" : "") + (bestShot.date && datesEnabled ? "<span class='dimgrey'><br>" +
-            "<span class='datestring_game'>" + bestShot.date + "</span></span>" : ""));
+            sepScore = (bestShot.replay === ""
+                ? "<u>" + sep(bestShotMax) + "</u>"
+                : "<u><a class='replay' href='" + bestShot.replay + "'>" + sep(bestShotMax) + "<span class='dl_icon'></span></a></u>"
+            );
+
+            if (unverifiedObj.hasOwnProperty("HSiFS" + difficulty + bestShot.shottype)) {
+                sepScore = formatUnverified(sepScore);
+            }
+
+            $(removeSeason(bestShot.id) + (difficulty == "Extra" ? "Small" : "")).html(sepScore + "<br>by <em>" + bestShot.player + "</em>" +
+            (game == "HSiFS" && difficulty != "Extra"
+                ? " (" + bestShot.season + ")"
+                : ""
+            ) + (bestShot.date && datesEnabled
+                ? "<span class='dimgrey'><br>" + "<span class='datestring_game'>" + bestShot.date + "</span></span>"
+                : ""
+            ));
         }
     }
 
@@ -419,7 +432,7 @@ function addPlayerWR(playerWRs, game, difficulty, shottype, isUnverified) {
 
     if (isUnverified) {
         score = sep(unverifiedScores[game][difficulty][shottype][0]);
-        date = unverifiedScores[game][difficulty][shottype][2];
+        date = formatDate(unverifiedScores[game][difficulty][shottype][2]);
     }
 
     playerWRs.dates.push("<span class='datestring_player'>" + formatDate(date) + "</span>");
