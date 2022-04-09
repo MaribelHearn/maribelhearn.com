@@ -205,10 +205,6 @@ ol > li {
     }
 }
 @media only screen and (min-width: 1100px) and (max-width: 1500px) {
-    .wrap {
-        margin-left: 15%;
-        margin-right: 15%;
-    }
     #modal_inner {
         width: 65%;
     }
@@ -226,10 +222,6 @@ ol > li {
         width: 80px;
         height: 80px;
         background-image: url('../pofv/faces80x80.png');
-    }
-    .wrap {
-        margin-left: 8%;
-        margin-right: 8%;
     }
     #modal_inner {
         font-size: 11px;
