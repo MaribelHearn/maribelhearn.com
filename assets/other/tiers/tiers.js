@@ -120,7 +120,7 @@ function addSpacing(item) {
         }
     }
 
-    if (sort != "cards") {
+    if (sort == "works") {
         if (/of [A-Z]/.test(item)) {
             item = item.replace("of ", " of ");
         } else if (/in [A-Z]/.test(item)) {
@@ -138,7 +138,7 @@ function addSpacing(item) {
     }
 
 
-    return item.replace("Sin Gyoku", "SinGyoku").replace("Yuugen Magan", "YuugenMagan");
+    return item.replace("Sin Gyoku", "SinGyoku").replace("Yuugen Magan", "YuugenMagan").replace("P C-9 8", "PC-98").replace("L L S", "LLS").replace("G F W", "GFW").replace("T D", "TD");
 }
 
 function getTierNumOf(item) {
