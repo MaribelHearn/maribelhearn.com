@@ -82,12 +82,12 @@
 					echo '<td id="' . $game . 'overall2">' . ($overall[$num] == 0 ? '-' : $overall_diff[$num]) . '</td>';
 					echo '<td id="' . $game . 'overall3">' . ($overall[$num] == 0 ? '-' : _($overall_shottype[$num])) . '</td>';
 					echo '<td id="' . $game . 'overall4" class="datestring">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $lang)) . '</td>';
-                    if (file_exists(replay_path($game, $overall_diff[$num], $overall_shottype[$num]))) {
+                    if (!empty($overall_video[$num])) {
+						$replay = '<a href="' . $overall_video[$num] . '">YouTube link</a>';
+					} else if (file_exists(replay_path($game, $overall_diff[$num], $overall_shottype[$num]))) {
                         $path = replay_path($game, $overall_diff[$num], $overall_shottype[$num]);
                         $replay = '<a href="' . $path . '">' . substr($path, 8) . '</a>';
-                    } else if (!empty($overall_video[$num])) {
-						$replay = '<a href="' . $overall_video[$num] . '">YouTube link</a>';
-					} else {
+                    } else {
                         $replay = '-';
                     }
 					echo '<td id="' . $game . 'overall5">' . $replay . '</td></tr>';
