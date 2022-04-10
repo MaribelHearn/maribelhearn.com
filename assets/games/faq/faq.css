@@ -64,10 +64,7 @@ ol {
 .img_caption {
     margin-top: 1px;
 }
-.shots {
-    word-wrap: break-word;
-}
-.shots th, .shots td, .res th, .res td {
+.shots th, .shots td, .unlocks th, .unlocks td, .res th, .res td {
     white-space: normal;
 }
 .cover {

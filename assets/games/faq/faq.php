@@ -1,9 +1,9 @@
 <div id='wrap' class='wrap'>
     <?php
-        if (!empty($subpage) || !empty($_GET['p'])) {
-            echo '<span id="backtomain"><a href="/faq">&lt;= Back to Main Page</a></span>';
-        }
         echo wrap_top();
+        if (!empty($subpage) || !empty($_GET['p'])) {
+            echo '<span id="back"><a href="/faq">&lt;= Back to Main Page</a></span>';
+        }
         echo '<h1>Frequently Asked Questions</h1>';
         if (!empty($_GET['redirect'])) {
             echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
@@ -28,5 +28,5 @@
             include_once 'assets/games/faq/subpages/main_page.php';
         }
 	?>
-    <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
+    <p><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
 </div>

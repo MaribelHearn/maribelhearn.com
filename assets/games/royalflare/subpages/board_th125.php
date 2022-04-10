@@ -12,7 +12,7 @@
 <?php
     function ds_table(array $board, string $stage, string $scene, string $shottype, string $lang) {
         global $is_mobile;
-        echo '<table id="' . $stage . '-' . $scene . 't" class="' . 'DS' . 't' . ($shottype == 'Hatate' ? ' hatate' : '') .
+        echo '<div class="overflow"><table id="' . $stage . '-' . $scene . 't" class="' . 'DS' . 't' . ($shottype == 'Hatate' ? ' hatate' : '') .
         ' sortable"><tr><th class="head">#</th><th id="' . $stage . '-' . $scene . 'score">スコア<br>Score</th>' .
         '<th>処理落率<br>Slowdown</th><th><span class="nowrap">使用キャラ</span><br>Shottype</th><th><span class="nowrap">撮影対象</span><br>Scene</th>' .
         '<th>プレイ日付<br>Play Date</th><th>名前<br>Player</th>' . ($is_mobile ? '' : '<th>コメント<br>Comment</th>') . '<th>リプレイ<br>Replay</th></tr>';
@@ -24,7 +24,7 @@
                 '</td>' . ($is_mobile ? '' : '<td class="break">' . $entry['comment'] . '</td>') . '<td><a href="' . $entry['replay'] . '">' . $entry['uploaded'] . '</a></td></tr>';
             }
         }
-        echo '</table>';
+        echo '</table></div>';
     }
 
     foreach ($stages->{'DS'} as $key => $stage) {

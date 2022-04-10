@@ -38,64 +38,61 @@
             <input id='fillAll' type='button' value='Fill All'>
         </p>
     </div>
-    <div id='dummy' data-html2canvas-ignore><div id='dummy_sub'></div></div>
-    <div id='container'>
-        <table id='survival'>
-            <caption id='legend'>
-				<span class='legend clear'></span> 1cc
-				<span class='legend nm'></span> NM
-				<span class='legend nb'></span> NB
-				<span class='legend nmnb'></span> NMNB
-			</caption>
-            <thead>
-                <tr>
-                    <th>Game</th>
-					<?php
-						foreach ($diffs as $key => $diff) {
-							echo '<th id="' . $diff . '">' . $diff . '</th>';
-						}
-					?>
-                    <th>Phantasm</th>
-                </tr>
-            </thead>
-            <tbody>
+    <div class='overflow'><table id='survival'>
+        <caption id='legend'>
+			<span class='legend clear'></span> 1cc
+			<span class='legend nm'></span> NM
+			<span class='legend nb'></span> NB
+			<span class='legend nmnb'></span> NMNB
+		</caption>
+        <thead>
+            <tr>
+                <th>Game</th>
 				<?php
-					foreach ($games as $key => $game) {
-						$achievs = achievs($game);
-						echo '<tr id="' . $game . 'tr"><td id="' . $game . '">' . display_name($game) . '</td>';
-						foreach ($diffs as $key => $diff) {
-							if (no_extra($game, $diff) && $diff == 'Extra') {
-								if ($game != 'INFinalB') {
-									echo '<td class="noborders"></td><td class="noborders"></td>';
-								}
-
-								continue;
+					foreach ($diffs as $key => $diff) {
+						echo '<th id="' . $diff . '">' . $diff . '</th>';
+					}
+				?>
+                <th>Phantasm</th>
+            </tr>
+        </thead>
+        <tbody>
+			<?php
+				foreach ($games as $key => $game) {
+					$achievs = achievs($game);
+					echo '<tr id="' . $game . 'tr"><td id="' . $game . '">' . display_name($game) . '</td>';
+					foreach ($diffs as $key => $diff) {
+						if (no_extra($game, $diff) && $diff == 'Extra') {
+							if ($game != 'INFinalB') {
+								echo '<td class="noborders"></td><td class="noborders"></td>';
 							}
-							echo ($game == 'INFinalA' && $diff == 'Extra' ? '<td rowspan="2">' : '<td>');
-							echo '<select id="' . $game . $diff . '" class="category">';
+
+							continue;
+						}
+						echo ($game == 'INFinalA' && $diff == 'Extra' ? '<td rowspan="2">' : '<td>');
+						echo '<select id="' . $game . $diff . '" class="category">';
+						foreach ($achievs as $key => $achiev) {
+							echo '<option>' . $achiev . '</option>';
+						}
+						echo '</select></td>';
+						if ($game == 'PCB' && $diff == 'Extra') {
+							echo '<td><select id="PCBPhantasm" class="category">';
 							foreach ($achievs as $key => $achiev) {
 								echo '<option>' . $achiev . '</option>';
 							}
 							echo '</select></td>';
-							if ($game == 'PCB' && $diff == 'Extra') {
-								echo '<td><select id="PCBPhantasm" class="category">';
-								foreach ($achievs as $key => $achiev) {
-									echo '<option>' . $achiev . '</option>';
-								}
-								echo '</select></td>';
-							} else if ($game != 'PCB' && $diff == 'Extra') {
-								echo '<td class="noborders"></td>';
-							}
-							if ($game == 'INFinalA' && $diff != 'Extra') {
-								echo '<td id="B' . $diff . '" class="hidden">';
-							}
+						} else if ($game != 'PCB' && $diff == 'Extra') {
+							echo '<td class="noborders"></td>';
 						}
-						echo '</tr>';
+						if ($game == 'INFinalA' && $diff != 'Extra') {
+							echo '<td id="B' . $diff . '" class="hidden">';
+						}
 					}
-				?>
-            </tbody>
-    	</table>
-	</div>
+					echo '</tr>';
+				}
+			?>
+        </tbody>
+	</table></div>
     <div id='bottom' data-html2canvas-ignore>
         <p><input id='save' type='button' value='Save'><input id='apply' type='button' value='Generate Tables'><input id='reset' type='button' value='Reset'></p>
         <p id='message'></p>

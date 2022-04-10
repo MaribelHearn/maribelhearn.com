@@ -23,7 +23,7 @@ $extras = [
 <h2 id='extra'>How do I unlock the Extra Stage?</h2>
 <p>Extra unlock requirements depend on which game you are playing. The minimum requirements to unlock Extra for each game are listed in the table below.</p>
 <p>Aside from SoEW (Touhou 2) and PoFV (Touhou 9), meeting the requirement with a certain shottype will only unlock Extra for that shottype.</p>
-<table>
+<div class='overflow'><table class='unlocks'>
     <tr>
         <th>#</th>
         <th>Game</th>
@@ -34,5 +34,5 @@ $extras = [
             echo '<tr><td>Touhou ' . strval($data[0]) . '</td><td>' . $game . '</td><td>' . $data[1] . '</td></tr>';
         }
     ?>
-</table>
+</table></div>
 <p>* SA (Touhou 11) has a bug where Extra is <em>locked</em> if you 1cc the game on Easy. This forces you to 1cc on Normal or higher again.</p>

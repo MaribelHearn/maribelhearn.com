@@ -1,16 +1,3 @@
-@media only screen and (orientation: portrait) {
-    .dummy {
-        display: block;
-    }
-    .dummy, .container {
-        overflow-x: scroll;
-        overflow-y: hidden;
-    }
-}
-@media only screen and (orientation: landscape) {
-    #corr_dummy, #corr_container {
-        overflow-x: scroll;
-        overflow-y: hidden;
-        display: block;
-    }
+#back {
+    float: none;
 }
