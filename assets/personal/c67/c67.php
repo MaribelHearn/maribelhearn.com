@@ -221,50 +221,48 @@
     together with slow movement. These factors make her very poor at item collection. At least, her damage dealt to bosses is pretty good,
     having the strongest focused shot in the game (second strongest shot overall), only beaten by HiranoS's regular shot.</p>
     <h3 id='comparison'>Comparison</h3>
-    <div id='container'>
-        <table>
-            <tr>
-                <th>Shottype</th>
-                <th>Regular shot power</th>
-                <th>Regular shot range</th>
-                <th>Focused shot power</th>
-                <th>Bomb power</th>
-                <th>Bomb duration</th>
-            </tr>
-            <tr>
-                <th>VIVIT-W</th>
-                <td>75</td>
-                <td>Wide</td>
-                <td>125</td>
-                <td>235</td>
-                <td>Long</td>
-            </tr>
-            <tr>
-                <th>VIVIT-A</th>
-                <td>175</td>
-                <td>Very narrow</td>
-                <td>80</td>
-                <td>450</td>
-                <td>Short</td>
-            </tr>
-            <tr>
-                <th>HiranoS</th>
-                <td>195</td>
-                <td>Narrow</td>
-                <td>50</td>
-                <td>25*</td>
-                <td>Short</td>
-            </tr>
-            <tr>
-                <th>HiranoO</th>
-                <td>150</td>
-                <td>Very narrow</td>
-                <td>180</td>
-                <td>512</td>
-                <td>Short</td>
-            </tr>
-        </table>
-    </div>
+    <div class='overflow'><table>
+        <tr>
+            <th>Shottype</th>
+            <th>Regular shot power</th>
+            <th>Regular shot range</th>
+            <th>Focused shot power</th>
+            <th>Bomb power</th>
+            <th>Bomb duration</th>
+        </tr>
+        <tr>
+            <th>VIVIT-W</th>
+            <td>75</td>
+            <td>Wide</td>
+            <td>125</td>
+            <td>235</td>
+            <td>Long</td>
+        </tr>
+        <tr>
+            <th>VIVIT-A</th>
+            <td>175</td>
+            <td>Very narrow</td>
+            <td>80</td>
+            <td>450</td>
+            <td>Short</td>
+        </tr>
+        <tr>
+            <th>HiranoS</th>
+            <td>195</td>
+            <td>Narrow</td>
+            <td>50</td>
+            <td>25*</td>
+            <td>Short</td>
+        </tr>
+        <tr>
+            <th>HiranoO</th>
+            <td>150</td>
+            <td>Very narrow</td>
+            <td>180</td>
+            <td>512</td>
+            <td>Short</td>
+        </tr>
+    </table></div>
     <p>* Much higher than any other bomb in practice (if used on top of an enemy or boss)</p>
     <p><strong><a href='#top'>Back to Top</a></strong></p>
 </div>

@@ -1,3 +1,6 @@
 .error {
     width: 100%;
 }
+#back {
+    float: none;
+}

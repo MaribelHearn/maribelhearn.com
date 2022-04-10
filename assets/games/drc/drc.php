@@ -114,7 +114,7 @@
 				'<a href="#doubleSpoiler">Click here</a> for said system.');
 			?></li>
         </ul>
-		<table class='nomargin'>
+		<div class='overflow'><table class='nomargin'>
 			<thead>
 				<tr>
 					<td colspan='3'><strong id='scoring1'><?php echo _('Scoring') ?></strong><br>
@@ -136,11 +136,11 @@
 				}
 			?>
 			</tbody>
-		</table>
+		</table></div>
 		<br>
 		<p id='fictionalWRtitle'><strong><?php echo _('Fictional WRs') ?></strong></p>
 		<p id='fictionalWRdesc'><?php echo _('The categories in the table below use a fictional WR instead of the real one.') ?></p>
-		<table class='nomargin'>
+		<div class='overflow'><table class='nomargin'>
 			<tbody id='fictionalWRtable'>
 			<?php
 				foreach ($Rubrics['SCORE'] as $game => $value) {
@@ -158,13 +158,13 @@
 				}
 			?>
 			</tbody>
-		</table>
+		</table></div>
 		<br>
 		<p id='WRdefinitionTitle'><strong><?php echo _('\'WR\' definition') ?></strong></p>
 		<p id='WRdefinitionDesc'><?php
 			echo _('The categories in the table below always use the WR of a specific shottype.');
 		?></p>
-		<table class='nomargin'>
+		<div class='overflow'><table class='nomargin'>
 			<tbody id='WRdefinitionTable'>
 			<?php
 				foreach ($Rubrics['SCORE'] as $game => $value) {
@@ -177,7 +177,7 @@
 				}
 			?>
 			</tbody>
-		</table>
+		</table></div>
         <br>
         <p id='mountainOfFaith'><strong><?php echo _('MoF Scoring') ?></strong></p>
         <p id='mountainOfFaithDesc'><?php
@@ -186,7 +186,7 @@
 			'dependent on how much higher than the threshold your score is. ' .
 			'The maximum is 375 on Easy and 500 on Lunatic.');
         ?></p>
-        <table class='nomargin'>
+        <div class='overflow'><table class='nomargin'>
             <tbody id='mofTable'>
 			<?php
 				foreach ($Rubrics['MOF_THRESHOLDS'] as $diff => $value) {
@@ -223,7 +223,7 @@
 				}
 			?>
 			</tbody>
-        </table>
+        </table></div>
         <br>
         <p id='doubleSpoiler'><strong><?php echo _('DS Scoring') ?></strong></p>
         <p id='doubleSpoilerDesc'><?php
@@ -231,7 +231,7 @@
 			'at which you will have set numbers of points points respectively. Then, increments are done, ' .
 			'dependent on how much higher than the threshold your score is.');
 		?></p>
-        <table class='nomargin'>
+        <div class='overflow'><table class='nomargin'>
             <tbody id='dsTable'>
 			<?php
 				echo '<tr><th>' . _('Scene') . '</th><th class="basePoints">' . _('Base points') .
@@ -266,7 +266,7 @@
 			    }
 			?>
 			</tbody>
-        </table>
+        </table></div>
         <br>
         <p><strong><a class='backToTop' href='#top'><?php echo _('Back to Top') ?></a></strong></p>
 	</div>
@@ -295,7 +295,7 @@
 				'and further releases add 0.5, 0.4, 0.3, 0.2, 0.1 to <em>n</em>.');
 			?></li>
         </ul>
-        <table class='nomargin'>
+        <div class='overflow'><table class='nomargin'>
         	<thead>
 				<tr>
 					<td colspan='6'><strong id='survival1'><?php echo _('Survival') ?></strong><br>
@@ -326,7 +326,7 @@
 				}
 			?>
 			</tbody>
-        </table>
+        </table></div>
 		<br>
         <p id='phantasmagoria'><strong><?php echo _('PoDD & PoFV Survival') ?></strong></p>
         <p id='phantasmagoriaDesc'><?php
@@ -334,7 +334,7 @@
 			'and 8 for PoFV Extra. NoBombBonus is a difficulty-specific No Bomb bonus for PoDD and a No Charge Attacks ' .
 			'bonus for PoFV. RoundsLost is equal to how many rounds the player lost.');
 		?></p>
-        <table class='nomargin'>
+        <div class='overflow'><table class='nomargin'>
             <thead><tr><td id='pofvFormula' colspan='4'><?php
 				echo _('||Max - ((Max - Min) / MaxLives * RoundsLost)|| + NoBombBonus');
 			?></td></tr></thead>
@@ -359,7 +359,7 @@
 				}
 			?>
 			</tbody>
-        </table>
+        </table></div>
         <br>
         <p id='shottypeMultipliers'><strong><?php echo _('Shottype Multipliers') ?></strong></p>
         <p id='shotMultDesc'><?php
@@ -367,7 +367,7 @@
 			'run only; they do <em>not</em> apply for Extra, nor do they apply for HSiFS runs that use releases.' .
 			'For all shots not listed here, the shottype multipliers are equal to 1.');
 		?></p>
-        <table class='nomargin'>
+        <div class='overflow'><table class='nomargin'>
             <tbody id='shottypeMultipliersTable'>
 			<?php
 				foreach ($Rubrics['SURV'] as $game => $value) {
@@ -386,7 +386,7 @@
 				}
 			?>
 			</tbody>
-        </table>
+        </table></div>
         <br>
         <p><strong><a class='backToTop' href='#top'><?php echo _('Back to Top') ?></a></strong></p>
     </div>

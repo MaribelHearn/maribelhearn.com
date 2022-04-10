@@ -17,7 +17,7 @@
             $table = '';
             $count = 0;
             echo '<p id="' . $stage . '-' . $scene . '" class="wide shottype">' . ($game != 'VD' ? 'Scene ' : '') . format_stage($game, $stage) . '-' . $scene . '</p>';
-            $table .= '<table id="' . $stage . '-' . $scene . 't" class="' . $game . 't sortable"><tr><th class="head">#</th><th id="' . $stage . '-' . $scene .
+            $table .= '<div class="overflow"><table id="' . $stage . '-' . $scene . 't" class="' . $game . 't sortable"><tr><th class="head">#</th><th id="' . $stage . '-' . $scene .
             'score">スコア<br>Score</th><th>処理落率<br>Slowdown</th><th><span class="nowrap">撮影対象</span><br>Scene</th>' .
             '<th>プレイ日付<br>Play Date</th><th>名前<br>Player</th><th>コメント<br>Comment</th><th>リプレイ<br>Replay</th></tr>';
             foreach ($board as $key => $entry) {
@@ -29,7 +29,7 @@
                     $count += 1;
                 }
             }
-            $table .= '</table>';
+            $table .= '</table></div>';
             if ($count > 0) {
                 echo $table;
             } else {

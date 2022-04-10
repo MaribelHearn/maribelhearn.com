@@ -1,5 +1,4 @@
 table {
-    overflow: auto;
     margin-left: auto;
     margin-right: auto;
 }
@@ -12,10 +11,6 @@ table {
 }
 .left {
     text-align: left;
-}
-.dummy_sub {
-    width: 1000px;
-    height: 20px;
 }
 .percentage {
     text-align: center;
@@ -203,7 +198,7 @@ table {
     font-weight: bold;
     background-color: lightgreen;
 }
-.hidden, .dummy, #age_detail, #age_summary_button {
+.hidden, #age_detail, #age_summary_button {
     display: none;
 }
 .tooltip {
