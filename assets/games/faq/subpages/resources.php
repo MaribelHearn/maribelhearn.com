@@ -46,7 +46,7 @@ $bombs = [
 <h4 id='lives'>Extra lives</h4>
 <p>Extra lives are commonly referred to as extends or 1ups. The table below tells you what system for awarding extends each game uses.</p>
 <p>In LoLK (Touhou 15) on Pointdevice Mode, you do not get any extra lives, but instead have the ability to retry a section when you die.</p>
-<table class='res'>
+<div class='overflow'><table class='res'>
     <tr>
         <th>#</th>
         <th>Game</th>
@@ -58,7 +58,7 @@ $bombs = [
             echo '<tr><td>Touhou ' . strval($data[0]) . '</td><td>' . $game . '</td><td>' . $data[1] . '</td><td>' . $data[2] . '</td></tr>';
         }
     ?>
-</table>
+</table></div>
 <p>* In HRtP (Touhou 1), you do not get an extra life for a multiple of 400k if the score is achieved through a stage clear bonus.</p>
 <p>** In LoLK (Touhou 15), you need 5 lifepieces instead of 3 to gain a life in Extra.</p>
 <h4 id='bombs'>Bombs</h4>
@@ -66,7 +66,7 @@ $bombs = [
 GFW (Touhou 12.8) has a unique bomb system, known as Perfect Freeze, which is a percentage up to 300% and costs 100% to use. Bombs do not exist in PoFV (Touhou 9).</p>
 <p>The default stock is 3 bombs, which you receive both when starting a run and when you die. In some games though, it works a bit differently.
 Furthermore, you are awarded a bomb if you get an extra life when you already have the maximum number of lives.</p>
-<table class='res'>
+<div class='overflow'><table class='res'>
     <tr>
         <th>#</th>
         <th>Game</th>
@@ -79,7 +79,7 @@ Furthermore, you are awarded a bomb if you get an extra life when you already ha
             echo '<tr><td>Touhou ' . strval($data[0]) . '</td><td>' . $game . '</td><td>' . $data[1] . '</td><td>' . $data[2] . '</td><td>' . $data[3] . '</td></tr>';
         }
     ?>
-</table>
+</table></div>
 <p>** In SoEW (Touhou 2), when you die and have 0 extra lives left, you will receive 2 bombs in addition to the stock. You start out with 1 bomb in Extra.</p>
 <p>*** In PCB (Touhou 7), Marisa and Sakuya have different bomb stocks. Marisa starts out with 2 bombs and Sakuya starts out with 4 bombs.</p>
 <p>**** In IN (Touhou 8), if playing as Ghost Team, you get an extra bomb when clearing a stage with less than 3 bombs left.</p>

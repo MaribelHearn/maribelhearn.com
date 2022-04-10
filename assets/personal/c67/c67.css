@@ -73,9 +73,6 @@ table, tr, th, td {
         width: 175px;
         height: 72px;
     }
-    #container {
-        overflow-x: scroll;
-    }
     #table {
         font-size: 11px;
     }

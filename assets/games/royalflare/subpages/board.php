@@ -15,7 +15,7 @@
         }
         echo '<h2 id="' . $diff . '">' . $diff . '</h2>';
         if ($game == 'GFW' && $diff == 'Extra') {
-            echo '<table id="' . $diff . 't" class="' . $game . 't sortable"><tr><th class="head">#</th><th id="' . $diff .
+            echo '<div class="overflow"><table id="' . $diff . 't" class="' . $game . 't sortable"><tr><th class="head">#</th><th id="' . $diff .
             'score">スコア<br>Score</th><th>処理落率<br>Slowdown</th><th>難易度<br>Difficulty</th>' .
             '<th>プレイ日付<br>Play Date</th><th>名前<br>Player</th><th>コメント<br>Comment</th><th>リプレイ<br>Replay</th></tr>';
             foreach ($board as $key => $entry) {
@@ -26,11 +26,11 @@
                     '</td><td><a href="' . $entry['replay'] . '">' . $entry['uploaded'] . '</a></td></tr>';
                 }
             }
-            echo '</table>';
+            echo '</table></div>';
         } else {
             foreach ($shots as $key => $shot) {
                 echo '<p id="' . $diff . $shot . '" class="shottype">' . (tl_shot(str_replace(' ', '', $shot), 'Japanese') != $shot ? tl_shot(str_replace(' ', '', $shot), 'Japanese') . ' - ' : '') . $shot .
-                '</p><table id="' . $diff . $shot . 't" class="' . $game . 't sortable"><tr><th class="head">#</th><th id="' . $diff . $shot .
+                '</p><div class="overflow"><table id="' . $diff . $shot . 't" class="' . $game . 't sortable"><tr><th class="head">#</th><th id="' . $diff . $shot .
                 'score">スコア<br>Score</th><th>処理落率<br>Slowdown</th>' . ($game != 'GFW' ? '<th><span class="nowrap">使用キャラ</span><br>Shottype</th>' : '<th><span class="nowrap">ルート</span><br>Route</th>') .
                 '<th>難易度<br>Difficulty</th><th>プレイ日付<br>Play Date</th><th>名前<br>Player</th>' . ($is_mobile ? '' : '<th>コメント<br>Comment</th>') . '<th>リプレイ<br>Replay</th></tr>';
                 foreach ($board as $key => $entry) {
@@ -45,7 +45,7 @@
                         }
                     }
                 }
-                echo '</table>';
+                echo '</table></div>';
             }
         }
     }

@@ -35,7 +35,7 @@
             } else {
                 echo '<p id="' . $diff . $shot . '" class="shottype">' . tl_shot($shot, 'Japanese') . ' - ' . $shot . '</p>';
             }
-            echo '<table id="' . $diff . $shot . 't" class="' . $game . 't sortable"><tr><th class="head">#</th><th id="' . $diff . $shot .
+            echo '<div class="overflow"><table id="' . $diff . $shot . 't" class="' . $game . 't sortable"><tr><th class="head">#</th><th id="' . $diff . $shot .
             'score">スコア<br>Score</th><th>処理落率<br>Slowdown</th><th>使用キャラ<br>Shottype</th><th>難易度<br>Difficulty</th>' .
             '<th>プレイ日付<br>Play Date</th><th>名前<br>Player</th>' . ($is_mobile ? '' : '<th>コメント<br>Comment</th>') . '<th>リプレイ<br>Replay</th></tr>';
             foreach ($board as $key => $entry) {
@@ -46,7 +46,7 @@
                     '<td><a href="' . $entry['replay'] . '">' . $entry['uploaded'] . '</a></td></tr>';
                 }
             }
-            echo '</table>';
+            echo '</table></div>';
         }
     }
 ?>

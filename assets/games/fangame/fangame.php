@@ -13,7 +13,7 @@
     </div>
 	<h2 id='lnns'>LNN Clears</h2>
 	<h3 class='fangames'>Fangames</h3>
-	<table class='sortable'>
+    <div class='overflow'><table class='sortable'>
 		<caption><span class='fangame sss'></span> Shining Shooting Star (No Border Breaks, Full Spell)</caption>
 		<tr>
 			<th class='player'>Player</th>
@@ -60,8 +60,8 @@
 			<td>6 June 2018</td>
 			<td><a href='https://pan.baidu.com/s/1jNRpFqsCPwC7sWiDdla1zA'>Replay</a></td>
 		</tr>
-	</table>
-	<table class='sortable'>
+	</table></div>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame mb'></span> Marine Benefit</caption>
 		<tr>
 			<th class='player'>Player</th>
@@ -76,8 +76,8 @@
 			<td>5 January 2018</td>
 			<td><a href='https://www.bilibili.com/video/av18002342/'>Video</a></td>
 		</tr>
-	</table>
-	<table class='sortable'>
+	</table></div>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame wnsp'></span> White Names Spoiled Past</caption>
 		<tr>
 			<th class='player'>Player</th>
@@ -92,8 +92,8 @@
 			<td>9 May 2018</td>
 			<td><a href='https://www.bilibili.com/video/av23202659'>Video (Lap 2)</a></td>
 		</tr>
-	</table>
-	<table class='sortable'>
+	</table></div>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame fos'></span> Fairies of Sorcery (No Burst)</caption>
 		<tr>
 			<th class='player'>Player</th>
@@ -108,8 +108,8 @@
 			<td>29 April 2018</td>
 			<td><a href='https://www.bilibili.com/video/av22709326'>Video</a></td>
 		</tr>
-	</table>
-	<table class='sortable'>
+	</table></div>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame fdf'></span> Fantastic Danmaku Festival</caption>
 		<tr>
 			<th class='player'>Player</th>
@@ -191,8 +191,8 @@
 			<td>7 March 2018</td>
 			<td><a href='https://www.bilibili.com/video/av20483547'>Video</a></td>
 		</tr>
-	</table>
-	<table class='sortable'>
+	</table></div>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame fdf2'></span> Fantastic Danmaku Festival Part II (No Border Breaks)</caption>
 		<tr>
 			<th class='player'>Player</th>
@@ -219,8 +219,8 @@
 			<td>6 March 2020</td>
 			<td><a href='https://www.youtube.com/watch?v=vCxVc8SxGC8'>Video</a></td>
 		</tr>
-	</table>
-	<table class='sortable'>
+	</table></div>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame tfs'></span> The Flower Shooter</caption>
 		<tr>
 			<th class='player'>Player</th>
@@ -235,8 +235,8 @@
 			<td>9 January 2018</td>
 			<td><a href='https://www.bilibili.com/video/av18118720'>Video</a></td>
 		</tr>
-	</table>
-	<table class='sortable'>
+	</table></div>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame hsob'></span> Hollow Song of Birds (No Z-Spells, Full Spell)</caption>
 		<tr>
 			<th class='player'>Player</th>
@@ -270,8 +270,8 @@
 			<td>14 September 2021</td>
 			<td><a href='https://www.youtube.com/watch?v=nYDp-rIf-rg'>Video</a></td>
 		</tr>
-	</table>
-	<table class='sortable'>
+	</table></div>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame mpp'></span> Mystical Power Plant</caption>
 		<tr>
 			<th class='player'>Player</th>
@@ -297,8 +297,8 @@
 			<td><a href='https://cdn.discordapp.com/attachments/175267714904883200/552123320519098369/MPP_Package_replay11.dat'>Replay<br>
 			<a href='https://www.youtube.com/watch?v=C9endry0cno'>Video</a></td>
 		</tr>
-	</table>
-	<table class='sortable'>
+	</table></div>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame bosm'></span> Book of Star Mythology (Full Spell)</caption>
 		<tr>
 			<th class='player'>Player</th>
@@ -320,8 +320,8 @@
 			<td><a href='https://cdn.discordapp.com/attachments/229569755344928768/857279695740338225/Main_replay70.dat'>Replay</a><br>
 			<a href='https://www.youtube.com/watch?v=WDx-WbUOFO4&t=0s'>Video</a></td>
 		</tr>
-	</table>
-	<table class='sortable'>
+	</table></div>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame gods'></span> Glory of Deep Skies (No Elemental Burst, Full Spell)</caption>
 		<tr>
 			<th class='player'>Player</th>
@@ -337,8 +337,8 @@
 			<td><a href='https://cdn.discordapp.com/attachments/229569755344928768/857279863279190016/Package_replay10.dat'>Replay</a><br>
 			<a href='https://www.youtube.com/watch?v=nz4ZpqsyoKM'>Video</a></td>
 		</tr>
-	</table>
-	<table class='sortable'>
+	</table></div>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame rss'></span> Riverbed Soul Saver (No Hyper)</caption>
 		<tr>
 			<th class='player'>Player</th>
@@ -354,8 +354,8 @@
 			<td><a href='https://cdn.discordapp.com/attachments/229569755344928768/857280067289874432/Package_replay14.dat'>Replay</a><br>
 			<a href='https://www.youtube.com/watch?v=GikbAJLP0UM'>Video</a></td>
 		</tr>
-	</table>
-	<table class='sortable'>
+	</table></div>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame rss'></span> Riverbed Soul Saver Overdrive (No Hyper)</caption>
 		<tr>
 			<th class='player'>Player</th>
@@ -370,8 +370,8 @@
 			<td>5 June 2015</td>
 			<td><a href='https://www.bilibili.com/video/av2400519'>Video</a></td>
 		</tr>
-	</table>
-	<table class='sortable'>
+	</table></div>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame ibp'></span> Infinite Blade Pavilion (No Special Attack)</caption>
 		<tr>
 			<th class='player'>Player</th>
@@ -393,9 +393,9 @@
 			<td><a href='https://cdn.discordapp.com/attachments/704137913654444042/857376310337732608/Th_IBP_replay02.dat'>Replay</a><br>
 			<a href='https://www.youtube.com/watch?v=OLprhFAYigk'>Video</a></td>
 		</tr>
-	</table>
+	</table></div>
 	<h3 class='related'>Related Games</h3>
-	<table class='sortable'>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame bm'></span> Barrage Musical</caption>
 		<tr>
 			<th class='player'>Player</th>
@@ -410,10 +410,10 @@
 			<td>22 September 2017</td>
 			<td><a href='https://www.bilibili.com/video/BV1xx411u7Yz'>Video</a></td>
 		</tr>
-	</table>
+	</table></div>
 	<h2 id='scores'>Notable Scores</h2>
 	<h3 class='fangames'>Fangames</h2>
-    <table class='sortable'>
+    <div class='overflow'><table class='sortable'>
     	<caption><span class='fangame sss'></span> Shining Shooting Star</caption>
         <tr>
             <th class='difficulty'>Difficulty</th>
@@ -446,8 +446,8 @@
             <td>9 May 2017</td>
             <td><a href='http://www.bilibili.com/video/av10443836'>Video</a></td>
         </tr>
-    </table>
-	<table class='sortable'>
+    </table></div>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame bosm'></span> Book of Star Mythology</caption>
 		<tr>
             <th class='difficulty'>Difficulty</th>
@@ -480,8 +480,8 @@
             <td>30 December 2016</td>
             <td><a href='https://cdn.discordapp.com/attachments/229569755344928768/856824119134781440/Main_replay09.dat'>Replay</a></td>
         </tr>
-	</table>
-	<table class='sortable'>
+	</table></div>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame fdf2'></span> Fantastic Danmaku Festival Part II</caption>
 		<tr>
             <th class='difficulty'>Difficulty</th>
@@ -550,8 +550,8 @@
 			<td>21 August 2019</td>
 			<td><a href='https://www.bilibili.com/video/BV14441197Hi'>Video</a></td>
 		</tr>
-	</table>
-	<table class='sortable'>
+	</table></div>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame hsob'></span> Hollow Song of Birds</caption>
 		<tr>
             <th class='difficulty'>Difficulty</th>
@@ -566,8 +566,8 @@
 			<td>3 March 2019</td>
 			<td><a href='https://www.nicovideo.jp/watch/sm34720492'>Video</a></td>
 		</tr>
-	</table>
-	<table class='sortable'>
+	</table></div>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame ibp'></span> Infinite Blade Pavilion</caption>
 		<tr>
             <th class='difficulty'>Difficulty</th>
@@ -591,8 +591,8 @@
 			<td>22 March 2021</td>
 			<td><a href='https://www.youtube.com/watch?v=vBmKScNyNmk'>Video</a></td>
 		</tr>
-	</table>
-	<table class='sortable'>
+	</table></div>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame pt'></span> Phantasmagoria Trues</caption>
 		<tr>
             <th class='zone'>Zone</th>
@@ -619,8 +619,8 @@
 			<td>6 August 2016</td>
 			<td><a href='https://www.youtube.com/watch?v=GAYmbKeVZE8'>Video</a></td>
 		</tr>
-	</table>
-	<table class='sortable'>
+	</table></div>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame eios'></span> Elegant Impermanence of Sakura</caption>
 		<tr>
             <th class='difficulty'>Difficulty</th>
@@ -659,8 +659,8 @@
 			<td>16 May 2020</td>
 			<td><a href='https://www.bilibili.com/video/BV1zZ4y1s7ya'>Video</a></td>
 		</tr>
-	</table>
-	<table class='sortable'>
+	</table></div>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame sohw'></span> Servants of Harvest Wish</caption>
 		<tr>
             <th class='difficulty'>Difficulty</th>
@@ -687,8 +687,8 @@
 			<td>14 July 2020</td>
 			<td><a href='https://www.youtube.com/watch?v=zNTMsiprIGA'>Video</a></td>
 		</tr>
-	</table>
-	<table class='sortable'>
+	</table></div>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame msd'></span> Magical Singular Day -Absolution-</caption>
 		<tr>
             <th class='difficulty'>Difficulty</th>
@@ -703,9 +703,9 @@
 			<td>5 April 2021</td>
 			<td><a href='https://www.youtube.com/watch?v=Fp4XKTHGLZ8'>Video</a></td>
 		</tr>
-	</table>
+	</table></div>
 	<h3 class='related'>Related Games</h3>
-    <table class='sortable'>
+    <div class='overflow'><table class='sortable'>
     	<caption><span class='fangame sg'></span> Seihou 1 - Shuusou Gyoku</caption>
         <tr>
             <th class='difficulty'>Difficulty</th>
@@ -732,8 +732,8 @@
 			<td>5 October 2021</td>
 			<td><a href='https://www.youtube.com/watch?v=W4g90Mb6LnM'>Video</a></td>
 		</tr>
-    </table>
-    <table class='sortable'>
+    </table></div>
+    <div class='overflow'><table class='sortable'>
 		<caption><span class='fangame kg'></span> Seihou 2 - Kioh Gyoku</caption>
         <tr>
             <th class='shottype'>Shottype</th>
@@ -776,8 +776,8 @@
             <td>11 October 2020</td>
 			<td><a href='https://www.youtube.com/watch?v=t5yqWKTT2Os'>Video</a></td>
 		</tr>
-    </table>
-    <table class='sortable'>
+    </table></div>
+    <div class='overflow'><table class='sortable'>
 		<caption><span class='fangame bsr'></span> Seihou 3 - Banshiryuu (C67 version)</caption>
         <tr>
             <th class='difficulty'>Difficulty</th>
@@ -798,8 +798,8 @@
 			<td>29 September 2016</td>
 			<td><a href='https://www.youtube.com/watch?v=s-mv2j1jtao'>Video</a></td>
 		</tr>
-    </table>
-    <table class='sortable'>
+    </table></div>
+    <div class='overflow'><table class='sortable'>
 		<caption><span class='fangame smd'></span> Samidare</caption>
         <tr>
             <th class='difficulty'>Difficulty</th>
@@ -847,8 +847,8 @@
 			<td>1 February 2005</td>
             <td>-</td>
 		</tr>
-    </table>
-    <table class='sortable'>
+    </table></div>
+    <div class='overflow'><table class='sortable'>
 		<caption><span class='fangame mrs'></span> Mrs. Estacion</caption>
         <tr>
             <th class='difficulty'>Difficulty</th>
@@ -875,8 +875,8 @@
 			<td>17 June 2016</td>
 			<td><a href='https://www.youtube.com/watch?v=hRM74eMjGuY'>Video</a></td>
 		</tr>
-    </table>
-	<table class='sortable'>
+    </table></div>
+	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame bm'></span> Barrage Musical</caption>
         <tr>
             <th class='difficulty'>Difficulty</th>
@@ -891,6 +891,6 @@
 			<td>25 January 2018</td>
             <td><a href='https://www.youtube.com/watch?v=IZWDG7W67kI'>Video</a></td>
 		</tr>
-	</table>
+	</table></div>
     <p id='back'><strong><a href='#top'>Back to Top</a></strong></p>
 </div>

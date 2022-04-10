@@ -62,144 +62,140 @@
         <h2>High Scores</h2>
         <p>The following tables list my current high scores in the categories I have scored, as well as, if I did not 1cc, which stage was reached.</p>
         <h3>Notable</h3>
-        <div class='container'>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Category</th>
-                        <th>Score</th>
-                        <th>Shottype</th>
-                        <th>Date</th>
-                        <th>Video</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>TD Lunatic</td>
-                        <td>3,475,825,090</td>
-                        <td>Marisa</td>
-                        <td>April 18, 2021</td>
-                        <td><strong><a href='https://www.youtube.com/watch?v=a-vejcZEMnQ'>Old link (YouTube)</a></strong></td>
-                    </tr>
-                    <tr>
-                        <td>TD Hard</td>
-                        <td>3,116,809,310</td>
-                        <td>Marisa</td>
-                        <td>October 31, 2018</td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
-                        <td>TD Normal</td>
-                        <td>1,722,391,740</td>
-                        <td>Marisa</td>
-                        <td>September 8, 2018</td>
-                        <td><strong><a href='https://www.twitch.tv/videos/312223855?t=16m40s'>Link (Twitch)</a></strong></td>
-                    </tr>
-                    <tr>
-                        <td>TD Easy</td>
-                        <td>917,219,120</td>
-                        <td>Marisa</td>
-                        <td>September 26, 2019</td>
-                        <td><strong><a href='https://www.twitch.tv/videos/486728072?t=14m1s'>Old link (Twitch)</a></strong></td>
-                    </tr>
-                    <tr>
-                        <td>TD Extra</td>
-                        <td>537,659,780</td>
-                        <td>Marisa</td>
-                        <td>December 21, 2019</td>
-                        <td><strong><a href='https://www.youtube.com/watch?v=LPy7CNA1zRY&t=181s'>Link (YouTube)</a></strong></td>
-                    </tr>
-					<tr>
-						<td>HSiFS Lunatic</td>
-						<td>7,040,149,600</td>
-						<td>AyaAutumn</td>
-						<td>July 6, 2019</td>
-						<td><strong><a href='https://www.youtube.com/watch?v=J83JwvEONjQ'>Link (YouTube)</a></strong></td>
-					</tr>
-                    <tr>
-                        <td>EoSD Extra</td>
-                        <td>502,276,420</td>
-                        <td>MarisaB</td>
-                        <td>March 3, 2017</td>
-                        <td><strong><a href='https://www.youtube.com/watch?v=nTaYBo5Ec44'>Link (YouTube)</a></strong></td>
-                    </tr>
-                    <tr>
-                        <td><abbr title='Shining Shooting Star'>SSS</abbr> Extra</td>
-                        <td>1,049,352,190</td>
-                        <td>Koishi</td>
-                        <td>December 25, 2017</td>
-                        <td><strong><a href='https://www.youtube.com/watch?v=bMBmHmFNvZc'>Link (YouTube)</a></strong></td>
-                    </tr>
-                    <tr>
-                        <td><abbr title='Banshiryuu (C67)'>BSR</abbr> Easy</td>
-                        <td>206,254,030 (<abbr title='Highest known score'>HKS</abbr>)</td>
-                        <td>HiranoS</td>
-                        <td>October 21, 2019</td>
-                        <td><strong><a href='https://www.youtube.com/watch?v=r-xKFTUhNP8'>Link (YouTube)</a></strong></td>
-                    </tr>
-                    <tr>
-                        <td><abbr title='Samidare'>SMD</abbr></td>
-                        <td>46,815,936</td>
-                        <td><em>N/A</em></td>
-                        <td>December 9, 2017</td>
-                        <td><strong><a href='https://www.youtube.com/watch?v=V0-Vb1TX7V8'>Link (YouTube)</a></strong></td>
-                    </tr>
-                    <tr>
-                        <td><abbr title='Samidare'>SMD</abbr> Extra</td>
-                        <td>294,204,460 (WR)</td>
-                        <td><em>N/A</em></td>
-                        <td>November 17, 2017</td>
-                        <td><strong><a href='https://www.youtube.com/watch?v=ALCrslNqGmo'>Link (YouTube)</a></strong></td>
-                    </tr>
-                </tbody>
-            </table>
-		</div>
+        <div class='overflow'><table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Score</th>
+                    <th>Shottype</th>
+                    <th>Date</th>
+                    <th>Video</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>TD Lunatic</td>
+                    <td>3,475,825,090</td>
+                    <td>Marisa</td>
+                    <td>April 18, 2021</td>
+                    <td><strong><a href='https://www.youtube.com/watch?v=a-vejcZEMnQ'>Old link (YouTube)</a></strong></td>
+                </tr>
+                <tr>
+                    <td>TD Hard</td>
+                    <td>3,116,809,310</td>
+                    <td>Marisa</td>
+                    <td>October 31, 2018</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>TD Normal</td>
+                    <td>1,722,391,740</td>
+                    <td>Marisa</td>
+                    <td>September 8, 2018</td>
+                    <td><strong><a href='https://www.twitch.tv/videos/312223855?t=16m40s'>Link (Twitch)</a></strong></td>
+                </tr>
+                <tr>
+                    <td>TD Easy</td>
+                    <td>917,219,120</td>
+                    <td>Marisa</td>
+                    <td>September 26, 2019</td>
+                    <td><strong><a href='https://www.twitch.tv/videos/486728072?t=14m1s'>Old link (Twitch)</a></strong></td>
+                </tr>
+                <tr>
+                    <td>TD Extra</td>
+                    <td>537,659,780</td>
+                    <td>Marisa</td>
+                    <td>December 21, 2019</td>
+                    <td><strong><a href='https://www.youtube.com/watch?v=LPy7CNA1zRY&t=181s'>Link (YouTube)</a></strong></td>
+                </tr>
+				<tr>
+					<td>HSiFS Lunatic</td>
+					<td>7,040,149,600</td>
+					<td>AyaAutumn</td>
+					<td>July 6, 2019</td>
+					<td><strong><a href='https://www.youtube.com/watch?v=J83JwvEONjQ'>Link (YouTube)</a></strong></td>
+				</tr>
+                <tr>
+                    <td>EoSD Extra</td>
+                    <td>502,276,420</td>
+                    <td>MarisaB</td>
+                    <td>March 3, 2017</td>
+                    <td><strong><a href='https://www.youtube.com/watch?v=nTaYBo5Ec44'>Link (YouTube)</a></strong></td>
+                </tr>
+                <tr>
+                    <td><abbr title='Shining Shooting Star'>SSS</abbr> Extra</td>
+                    <td>1,049,352,190</td>
+                    <td>Koishi</td>
+                    <td>December 25, 2017</td>
+                    <td><strong><a href='https://www.youtube.com/watch?v=bMBmHmFNvZc'>Link (YouTube)</a></strong></td>
+                </tr>
+                <tr>
+                    <td><abbr title='Banshiryuu (C67)'>BSR</abbr> Easy</td>
+                    <td>206,254,030 (<abbr title='Highest known score'>HKS</abbr>)</td>
+                    <td>HiranoS</td>
+                    <td>October 21, 2019</td>
+                    <td><strong><a href='https://www.youtube.com/watch?v=r-xKFTUhNP8'>Link (YouTube)</a></strong></td>
+                </tr>
+                <tr>
+                    <td><abbr title='Samidare'>SMD</abbr></td>
+                    <td>46,815,936</td>
+                    <td><em>N/A</em></td>
+                    <td>December 9, 2017</td>
+                    <td><strong><a href='https://www.youtube.com/watch?v=V0-Vb1TX7V8'>Link (YouTube)</a></strong></td>
+                </tr>
+                <tr>
+                    <td><abbr title='Samidare'>SMD</abbr> Extra</td>
+                    <td>294,204,460 (WR)</td>
+                    <td><em>N/A</em></td>
+                    <td>November 17, 2017</td>
+                    <td><strong><a href='https://www.youtube.com/watch?v=ALCrslNqGmo'>Link (YouTube)</a></strong></td>
+                </tr>
+            </tbody>
+        </table></div>
         <h3>Other</h3>
-		<div class='container'>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Category</th>
-                        <th>Score</th>
-                        <th>Shottype</th>
-                        <th>Date</th>
-                        <th>Video</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>EoSD Lunatic</td>
-                        <td>340,970,920 (6)</td>
-                        <td>ReimuB</td>
-                        <td>June 3, 2017</td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
-                        <td><abbr title='Shining Shooting Star'>SSS</abbr> Lunatic</td>
-                        <td>4,290,992,620</td>
-                        <td>Koishi</td>
-                        <td>September 17, 2017</td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
-                        <td><abbr title='Mrs. Estacion'>MRS</abbr> Easy</td>
-                        <td>348,933,504,628 (<abbr title='Highest known score'>HKS</abbr>)</td>
-                        <td>HimekaB</td>
-                        <td>January 11, 2018</td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
-                        <td><abbr title='Mrs. Estacion'>MRS</abbr> Special</td>
-                        <td>114,994,208,403 (<abbr title='Highest known score'>HKS</abbr>)</td>
-                        <td>HimekaB</td>
-                        <td>June 17, 2016</td>
-                        <td><strong><a href='https://www.youtube.com/watch?v=hRM74eMjGuY'>Link (YouTube)</a></strong></td>
-                    </tr>
-                </tbody>
-            </table>
-		</div>
+        <div class='overflow'><table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Score</th>
+                    <th>Shottype</th>
+                    <th>Date</th>
+                    <th>Video</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>EoSD Lunatic</td>
+                    <td>340,970,920 (6)</td>
+                    <td>ReimuB</td>
+                    <td>June 3, 2017</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><abbr title='Shining Shooting Star'>SSS</abbr> Lunatic</td>
+                    <td>4,290,992,620</td>
+                    <td>Koishi</td>
+                    <td>September 17, 2017</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><abbr title='Mrs. Estacion'>MRS</abbr> Easy</td>
+                    <td>348,933,504,628 (<abbr title='Highest known score'>HKS</abbr>)</td>
+                    <td>HimekaB</td>
+                    <td>January 11, 2018</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><abbr title='Mrs. Estacion'>MRS</abbr> Special</td>
+                    <td>114,994,208,403 (<abbr title='Highest known score'>HKS</abbr>)</td>
+                    <td>HimekaB</td>
+                    <td>June 17, 2016</td>
+                    <td><strong><a href='https://www.youtube.com/watch?v=hRM74eMjGuY'>Link (YouTube)</a></strong></td>
+                </tr>
+            </tbody>
+        </table></div>
         <h2 id='survival'>Survival</h2>
-		<table>
+		<div class='overflow'><table>
 			<caption>Legend:</caption>
 			<thead>
 				<tr>
@@ -229,10 +225,10 @@
 						<td>Attempted</td>
 					</tr>
 			</tbody>
-		</table>
+		</table></div>
         <p>An empty cell means that the difficulty or achievement has not been tried (yet),<br>and an 'X' means the difficulty or achievement does not exist in the game.</p>
         <h3>Touhou</h3>
-        <table>
+        <div class='overflow'><table>
             <thead>
                 <tr>
                     <th class='overview'>Game</th>
@@ -398,9 +394,9 @@
                     <td id='xUM' class='nmnb' colspan='2'></td>
                 </tr>
             </tbody>
-        </table>
+        </table></div>
         <h3>Related</h3>
-        <table>
+        <div class='overflow'><table>
             <thead>
                 <tr>
                     <th class='overview'>Game</th>
@@ -445,9 +441,9 @@
                     <td id='xMRS' class='nb'></td>
                 </tr>
            </tbody>
-        </table>
+        </table></div>
         <h3>CAVE (&lt;= 2003)</h3>
-        <table>
+        <div class='overflow'><table>
             <thead>
                 <tr>
                     <th class='overview'>Game</th>
@@ -488,9 +484,9 @@
                     <td id='2uKetsui'></td>
                 </tr>
            </tbody>
-        </table>
+        </table></div>
         <h3>Mushihime-sama</h3>
-        <table>
+        <div class='overflow'><table>
             <thead>
                 <tr>
                     <th class='overview'>Game</th>
@@ -549,9 +545,9 @@
 					<td id='gMSFbl'></td>
 				</tr>
            </tbody>
-        </table>
+        </table></div>
         <h3>Deathsmiles</h3>
-        <table>
+        <div class='overflow'><table>
             <thead>
                 <tr>
                     <th class='overview'>Game</th>
@@ -577,7 +573,7 @@
                     <td id='999DSmbl'></td>
                 </tr>
            </tbody>
-        </table>
+        </table></div>
     </div>
     <div id='SoEW'>
         <h2>TH02 - Story of Eastern Wonderland</h2>
@@ -588,59 +584,58 @@
 		</picture>
         <p>Obtained: March 28, 2012</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Easy</strong></td>
-            <td class='g'>Completed</td>
-            <td>February 1, 2014</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Normal</strong></td>
-            <td class='g'>Completed</td>
-            <td>February 1, 2014</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Hard</strong></td>
-            <td class='g'>Completed</td>
-            <td>October 21, 2018</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Lunatic</strong></td>
-            <td class='g'>Completed</td>
-            <td>October 21, 2018</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td colspan='4'></td>
-        </tr>
-        <tr>
-            <td><strong>Extra</strong></td>
-            <td class='g'>Completed</td>
-            <td>November 2, 2016</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Easy</strong></td>
+                <td class='g'>Completed</td>
+                <td>February 1, 2014</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Normal</strong></td>
+                <td class='g'>Completed</td>
+                <td>February 1, 2014</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Hard</strong></td>
+                <td class='g'>Completed</td>
+                <td>October 21, 2018</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Lunatic</strong></td>
+                <td class='g'>Completed</td>
+                <td>October 21, 2018</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td colspan='4'></td>
+            </tr>
+            <tr>
+                <td><strong>Extra</strong></td>
+                <td class='g'>Completed</td>
+                <td>November 2, 2016</td>
+                <td>No</td>
+            </tr>
+        </table></div>
     </div>
     <div id='PoDD'>
         <h2>TH03 - Phantasmagoria of Dim.Dream</h2>
-		<picture>
-			<source srcset='assets/personal/history/games/podd250x250.webp' type='image/webp'>
-			<source srcset='assets/personal/history/games/podd250x250.jpg'>
-			<img loading='lazy' src='assets/personal/history/games/podd250x250.jpg' alt='PoDD'>
-		</picture>
+    	<picture>
+    		<source srcset='assets/personal/history/games/podd250x250.webp' type='image/webp'>
+    		<source srcset='assets/personal/history/games/podd250x250.jpg'>
+    		<img loading='lazy' src='assets/personal/history/games/podd250x250.jpg' alt='PoDD'>
+    	</picture>
         <p>Obtained: March 28, 2012</p>
         <h3>Survival</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Progress</th>
@@ -671,8 +666,7 @@
                 <td>-</td>
                 <td>No</td>
             </tr>
-            </table>
-       </div>
+        </table></div>
     </div>
     <div id='LLS'>
         <h2>TH04 - Lotus Land Story</h2>
@@ -683,8 +677,7 @@
 		</picture>
         <p>Obtained: March 28, 2012</p>
         <h3>Survival</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Progress</th>
@@ -736,8 +729,7 @@
                 <td>-</td>
                 <td><strong><a href='https://www.youtube.com/watch?v=twsuyg2icSc'>1cc (YouTube)</a></strong></td>
             </tr>
-            </table>
-		</div>
+        </table></div>
     </div>
     <div id='MS'>
         <h2>TH05 - Mystic Square</h2>
@@ -748,8 +740,7 @@
 		</picture>
         <p>Obtained: March 28, 2012</p>
         <h3>Survival</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Progress</th>
@@ -801,8 +792,7 @@
                 <td>-</td>
                 <td><strong><a href='https://www.youtube.com/watch?v=xeSdNE86Bc8'>1cc (YouTube)</a></strong></td>
             </tr>
-            </table>
-		</div>
+        </table></div>
     </div>
     <div id='EoSD'>
         <h2>TH06 - The Embodiment of Scarlet Devil</h2>
@@ -813,8 +803,7 @@
 		</picture>
         <p>Obtained: September 28, 2011</p>
         <h3>Scoring</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Shottype</th>
@@ -839,11 +828,9 @@
                 <td>March 3, 2017</td>
                 <td><strong><a href='https://www.youtube.com/watch?v=nTaYBo5Ec44'>Link (YouTube)</a></strong></td>
             </tr>
-            </table>
-		</div>
+        </table></div>
         <h3>Survival</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Progress</th>
@@ -898,56 +885,55 @@
                 <td><strong><a href='https://www.youtube.com/watch?v=4T-WMpfbOzE'>1cc</a>
                 <a href='https://www.youtube.com/watch?v=GvB1NznGjs8'>NMNB</a></strong></td>
             </tr>
-            </table>
-		</div>
+        </table></div>
         <h3>Clears with continues</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Easy</strong></td>
-            <td class='g'>Completed</td>
-            <td>October 1, 2011</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Normal</strong></td>
-            <td class='g'>Completed</td>
-            <td>October 23, 2011</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Hard</strong></td>
-            <td class='g'>Completed</td>
-            <td>November 16, 2011</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Lunatic</strong></td>
-            <td class='g'>Completed</td>
-            <td>January 2, 2012</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Easy</strong></td>
+                <td class='g'>Completed</td>
+                <td>October 1, 2011</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Normal</strong></td>
+                <td class='g'>Completed</td>
+                <td>October 23, 2011</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Hard</strong></td>
+                <td class='g'>Completed</td>
+                <td>November 16, 2011</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Lunatic</strong></td>
+                <td class='g'>Completed</td>
+                <td>January 2, 2012</td>
+                <td>No</td>
+            </tr>
+        </table></div>
         <h3>Other achievements</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Extra <abbr title='Without dying'>No Miss</abbr></strong></td>
-            <td class='g'>Completed</td>
-            <td>August 28, 2014</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=QFj0HjBNrn0'>Link (YouTube)</a></strong></td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Extra <abbr title='Without dying'>No Miss</abbr></strong></td>
+                <td class='g'>Completed</td>
+                <td>August 28, 2014</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=QFj0HjBNrn0'>Link (YouTube)</a></strong></td>
+            </tr>
+        </table></div>
         <p>EoSD was my first bullet hell game, and the EoSD Easy clear was my first ever "achievement".</p>
     </div>
     <div id='PCB'>
@@ -959,8 +945,7 @@
 		</picture>
 		<p>Obtained: November 2, 2011</p>
         <h3>Survival</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Progress</th>
@@ -1024,29 +1009,28 @@
                 <td><strong><a href='https://www.youtube.com/watch?v=LGZTL89-GAY'>1cc</a>
                 <a href='https://www.youtube.com/watch?v=quRT-E1lL7c'>NNN</a></strong></td>
             </tr>
-            </table>
-		</div>
+        </table></div>
         <h3>Other achievements</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Extra <abbr title='Without dying'>No Miss</abbr></strong></td>
-            <td class='g'>Completed</td>
-            <td>March 3, 2014</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=xQBdy7FDFhU'>Link (YouTube)</a></strong></td>
-        </tr>
-        <tr>
-            <td><strong>Phantasm <abbr title='Without dying'>No Miss</abbr></strong></td>
-            <td class='g'>Completed</td>
-            <td>August 27, 2014</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=JgIZquvUvZE'>Link (YouTube)</a></strong></td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Extra <abbr title='Without dying'>No Miss</abbr></strong></td>
+                <td class='g'>Completed</td>
+                <td>March 3, 2014</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=xQBdy7FDFhU'>Link (YouTube)</a></strong></td>
+            </tr>
+            <tr>
+                <td><strong>Phantasm <abbr title='Without dying'>No Miss</abbr></strong></td>
+                <td class='g'>Completed</td>
+                <td>August 27, 2014</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=JgIZquvUvZE'>Link (YouTube)</a></strong></td>
+            </tr>
+        </table></div>
     </div>
     <div id='IN'>
         <h2>TH08 - Imperishable Night</h2>
@@ -1057,8 +1041,7 @@
 		</picture>
         <p>Obtained: November 2, 2011</p>
         <h3>Survival</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Progress</th>
@@ -1112,78 +1095,77 @@
                 <a href='https://www.youtube.com/watch?v=nP5sBxmr0bI'>NB</a>
                 <a href='https://www.youtube.com/watch?v=Gc5WnDPZM2I'>NMNB</a></strong></td>
             </tr>
-            </table>
-		</div>
+        </table></div>
         <h3>Spell Captures</h3>
-        <table>
-        <tr>
-            <th>Character</th>
-            <th>Spells Captured</th>
-            <th>Date of completion</th>
-        <tr>
-            <td><strong>Reimu/Yukari</strong></td>
-            <td class='g'>222/222</td>
-            <td>April 29, 2013</td>
-        </tr>
-        <tr>
-            <td><strong>Marisa/Alice</strong></td>
-            <td class='g'>222/222</td>
-            <td>September 13, 2014</td>
-        </tr>
-        <tr>
-            <td><strong>Sakuya/Remilia</strong></td>
-            <td class='g'>222/222</td>
-            <td>August 21, 2014</td>
-        </tr>
-        <tr>
-            <td><strong>Youmu/Yuyuko</strong></td>
-            <td class='g'>222/222</td>
-            <td>August 21, 2014</td>
-        </tr>
-        <tr>
-            <td colspan='3'></td>
-        </tr>
-        <tr>
-            <td><strong>Reimu</strong></td>
-            <td class='g'>222/222</td>
-            <td>November 11, 2016</td>
-        </tr>
-        <tr>
-            <td><strong>Yukari</strong></td>
-            <td class='g'>222/222</td>
-            <td>November 6, 2016</td>
-        </tr>
-        <tr>
-            <td><strong>Marisa</strong></td>
-            <td class='g'>222/222</td>
-            <td>November 11, 2016</td>
-        </tr>
-        <tr>
-            <td><strong>Alice</strong></td>
-            <td class='g'>222/222</td>
-            <td>April 24, 2017</td>
-        </tr>
-        <tr>
-            <td><strong>Sakuya</strong></td>
-            <td class='g'>222/222</td>
-            <td>April 24, 2017</td>
-        </tr>
-        <tr>
-            <td><strong>Remilia</strong></td>
-            <td class='g'>222/222</td>
-            <td>April 21, 2017</td>
-        </tr>
-        <tr>
-            <td><strong>Youmu</strong></td>
-            <td class='g'>222/222</td>
-            <td>February 11, 2017</td>
-        </tr>
-        <tr>
-            <td><strong>Yuyuko</strong></td>
-            <td class='g'>222/222</td>
-            <td>February 10, 2017</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Character</th>
+                <th>Spells Captured</th>
+                <th>Date of completion</th>
+            <tr>
+                <td><strong>Reimu/Yukari</strong></td>
+                <td class='g'>222/222</td>
+                <td>April 29, 2013</td>
+            </tr>
+            <tr>
+                <td><strong>Marisa/Alice</strong></td>
+                <td class='g'>222/222</td>
+                <td>September 13, 2014</td>
+            </tr>
+            <tr>
+                <td><strong>Sakuya/Remilia</strong></td>
+                <td class='g'>222/222</td>
+                <td>August 21, 2014</td>
+            </tr>
+            <tr>
+                <td><strong>Youmu/Yuyuko</strong></td>
+                <td class='g'>222/222</td>
+                <td>August 21, 2014</td>
+            </tr>
+            <tr>
+                <td colspan='3'></td>
+            </tr>
+            <tr>
+                <td><strong>Reimu</strong></td>
+                <td class='g'>222/222</td>
+                <td>November 11, 2016</td>
+            </tr>
+            <tr>
+                <td><strong>Yukari</strong></td>
+                <td class='g'>222/222</td>
+                <td>November 6, 2016</td>
+            </tr>
+            <tr>
+                <td><strong>Marisa</strong></td>
+                <td class='g'>222/222</td>
+                <td>November 11, 2016</td>
+            </tr>
+            <tr>
+                <td><strong>Alice</strong></td>
+                <td class='g'>222/222</td>
+                <td>April 24, 2017</td>
+            </tr>
+            <tr>
+                <td><strong>Sakuya</strong></td>
+                <td class='g'>222/222</td>
+                <td>April 24, 2017</td>
+            </tr>
+            <tr>
+                <td><strong>Remilia</strong></td>
+                <td class='g'>222/222</td>
+                <td>April 21, 2017</td>
+            </tr>
+            <tr>
+                <td><strong>Youmu</strong></td>
+                <td class='g'>222/222</td>
+                <td>February 11, 2017</td>
+            </tr>
+            <tr>
+                <td><strong>Yuyuko</strong></td>
+                <td class='g'>222/222</td>
+                <td>February 10, 2017</td>
+            </tr>
+        </table></div>
     </div>
     <div id='PoFV'>
         <h2>TH09 - Phantasmagoria of Flower View</h2>
@@ -1194,8 +1176,7 @@
 		</picture>
         <p>Obtained: November 2, 2011</p>
         <h3>Survival</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Progress</th>
@@ -1247,8 +1228,7 @@
 				<td>May 4, 2019</td>
                 <td><strong><a href='https://www.youtube.com/watch?v=LPCYvQbo3GU'>NMNC</a></strong></td>
             </tr>
-            </table>
-		</div>
+        </table></div>
     </div>
     <div id='StB'>
         <h2>TH9.5 Shoot the Bullet</h2>
@@ -1259,21 +1239,21 @@
 		</picture>
         <p>Obtained: April 14, 2012</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Character</th>
-            <th>Spells Captured</th>
-            <th>Date of completion</th>
-            <th>Video</th>
-        <tr>
-            <td><strong>Aya</strong></td>
-            <td class='g'>85/85</td>
-            <td>November 12, 2016</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Character</th>
+                <th>Spells Captured</th>
+                <th>Date of completion</th>
+                <th>Video</th>
+            <tr>
+                <td><strong>Aya</strong></td>
+                <td class='g'>85/85</td>
+                <td>November 12, 2016</td>
+                <td>No</td>
+            </tr>
+        </table></div>
         <h3>Progress</h3>
-        <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Stage</th>
                 <th>1</th>
@@ -1418,7 +1398,7 @@
                 <td class='y'><strong>Y</strong></td>
                 <td>-</td>
             </tr>
-        </table>
+        </table></div>
     </div>
     <div id='MoF'>
         <h2>TH10 - Mountain of Faith</h2>
@@ -1429,8 +1409,7 @@
 		</picture>
         <p>Obtained: December 10, 2011 (est.)</p>
         <h3>Survival</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Progress</th>
@@ -1484,23 +1463,22 @@
                 <td><strong><a href='https://www.youtube.com/watch?v=Y_SNkhnmOwY'>1cc</a>
                 <a href='https://www.youtube.com/watch?v=DvOxtmKcXrg'>NMNB</a></strong></td>
             </tr>
-            </table>
-		</div>
+        </table></div>
         <h3>Other achievements</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Extra <abbr title='Without dying'>No Miss</abbr></strong></td>
-            <td class='g'>Completed</td>
-            <td>March 18, 2014</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=ryXqNmQP8sE'>Link (YouTube)</a></strong></td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Extra <abbr title='Without dying'>No Miss</abbr></strong></td>
+                <td class='g'>Completed</td>
+                <td>March 18, 2014</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=ryXqNmQP8sE'>Link (YouTube)</a></strong></td>
+            </tr>
+        </table></div>
     </div>
     <div id='SA'>
         <h2>TH11 - Subterranean Animism</h2>
@@ -1510,9 +1488,8 @@
 			<img loading='lazy' src='assets/personal/history/games/sa250x250.jpg' alt='SA'>
 		</picture>
         <p>Obtained: November 16, 2011 (est.)</p>
-		<div class='container'>
-            <h3>Survival</h3>
-            <table>
+        <h3>Survival</h3>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Progress</th>
@@ -1565,8 +1542,7 @@
                 <td><strong><a href='https://www.youtube.com/watch?v=nJ5VvNk5InY'>1cc</a>
                 <a href='https://www.youtube.com/watch?v=b5SI9KUtMnw'>NMNB</a></strong></td>
             </tr>
-            </table>
-		</div>
+        </table></div>
     </div>
     <div id='UFO'>
         <h2>TH12 - Undefined Fantastic Object</h2>
@@ -1577,8 +1553,7 @@
 		</picture>
         <p>Obtained: December 14, 2011 (demo by mistake, est.); December 21, 2011 (est.)</p>
         <h3>Survival</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Progress</th>
@@ -1631,8 +1606,7 @@
                 <td><strong><a href='https://www.youtube.com/watch?v=TL9JficIP48'>1cc</a>
                 <a href='https://www.youtube.com/watch?v=gFD0me_hd3U'>NMNB</a></strong></td>
             </tr>
-            </table>
-		</div>
+        </table></div>
     </div>
     <div id='DS'>
         <h2>TH12.5 Double Spoiler</h2>
@@ -1643,29 +1617,29 @@
 		</picture>
         <p>Obtained: April 14, 2012</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Character</th>
-            <th>Spells Captured</th>
-            <th>Date of completion</th>
-            <th>Video</th>
-        <tr>
-            <td><strong>Aya</strong></td>
-            <td class='g'>108/108</td>
-            <td>November 13, 2016</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Hatate</strong></td>
-            <td class='g'>99/99</td>
-            <td>November 15, 2016</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Character</th>
+                <th>Spells Captured</th>
+                <th>Date of completion</th>
+                <th>Video</th>
+            <tr>
+                <td><strong>Aya</strong></td>
+                <td class='g'>108/108</td>
+                <td>November 13, 2016</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Hatate</strong></td>
+                <td class='g'>99/99</td>
+                <td>November 15, 2016</td>
+                <td>No</td>
+            </tr>
+        </table></div>
 		<div id='ds_scenes'>
             <div id='ds_aya'>
                 <h3>Aya's Progress</h3>
-                <table>
+                <div class='overflow'><table>
                     <tr>
                         <th>Stage</th>
                         <th>1</th>
@@ -1846,11 +1820,11 @@
                         <td class='y'><strong>Y</strong></td>
                         <td class='y'><strong><a class='i' href='https://www.youtube.com/watch?v=N57I335uJ3w'>Y</a></strong></td>
                     </tr>
-                </table>
+                </table></div>
             </div>
 			<div id='ds_hatate'>
                 <h3>Hatate's Progress</h3>
-                <table>
+                <div class='overflow'><table>
                     <tr>
                         <th>Stage</th>
                         <th>1</th>
@@ -2019,7 +1993,7 @@
                         <td class='y'><strong>Y</strong></td>
                         <td class='y'><strong>Y</strong></td>
                     </tr>
-                </table>
+                </table></div>
             </div>
 		</div>
     </div>
@@ -2032,8 +2006,7 @@
 		</picture>
         <p>Obtained: April 14, 2012</p>
         <h3>Survival</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Progress</th>
@@ -2092,43 +2065,41 @@
                 <a href='https://www.youtube.com/watch?v=1MpLjJIDVtk'>NB</a>
                 <a href='https://www.youtube.com/watch?v=Tr49V-j0ON0'>NMNB</a></strong></td>
             </tr>
-            </table>
-		</div>
-        <table id='routes'>
-        <tr>
-            <th>Difficulty</th>
-            <th>Routes 1cc'd</th>
-            <th>Routes NB'd</th>
-            <th>Routes NMNB'd</th>
-        </tr>
-        <tr>
-            <th>Easy</th>
-            <td>All</td>
-            <td>All</td>
-            <td>A1, A2, B2, C2</td>
-        </tr>
-        <tr>
-            <th>Normal</th>
-            <td>All</td>
-            <td>All</td>
-            <td>A1, A2, B2, C2</td>
-        </tr>
-        <tr>
-            <th>Hard</th>
-            <td>All</td>
-            <td>All</td>
-            <td>A1, A2, B2, C2</td>
-        </tr>
-        <tr>
-            <th>Lunatic</th>
-            <td>All</td>
-            <td>All</td>
-            <td>A1, A2, B2, C2</td>
-        </tr>
-        </table>
+        </table></div>
+        <div class='overflow'><table id='routes'>
+            <tr>
+                <th>Difficulty</th>
+                <th>Routes 1cc'd</th>
+                <th>Routes NB'd</th>
+                <th>Routes NMNB'd</th>
+            </tr>
+            <tr>
+                <th>Easy</th>
+                <td>All</td>
+                <td>All</td>
+                <td>A1, A2, B2, C2</td>
+            </tr>
+            <tr>
+                <th>Normal</th>
+                <td>All</td>
+                <td>All</td>
+                <td>A1, A2, B2, C2</td>
+            </tr>
+            <tr>
+                <th>Hard</th>
+                <td>All</td>
+                <td>All</td>
+                <td>A1, A2, B2, C2</td>
+            </tr>
+            <tr>
+                <th>Lunatic</th>
+                <td>All</td>
+                <td>All</td>
+                <td>A1, A2, B2, C2</td>
+            </tr>
+        </table></div>
         <h3>Other achievements</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Progress</th>
@@ -2143,8 +2114,7 @@
                 <td>December 13, 2015</td>
                 <td><strong><a href='https://www.youtube.com/watch?v=5qtzzlwMnLU'>A1</a></strong></td>
             </tr>
-            </table>
-		</div>
+        </table></div>
     </div>
     <div id='TD'>
         <h2>TH13 - Ten Desires</h2>
@@ -2155,8 +2125,7 @@
 		</picture>
         <p>Obtained: February 3, 2012 (est.)</p>
         <h3>Scoring</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Shottype</th>
@@ -2205,11 +2174,9 @@
 				<td>December 21, 2019</td>
 				<td><strong><a href='https://www.youtube.com/watch?v=LPy7CNA1zRY&t=181s'>Link (YouTube)</a></strong></td>
 			</tr>
-            </table>
-		</div>
+        </table></div>
         <h3>Survival</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Progress</th>
@@ -2264,35 +2231,34 @@
                 <a href='https://www.youtube.com/watch?v=zB3SIvy23pk'>NBNT</a>
                 <a href='https://www.youtube.com/watch?v=pTD7GBZzvB0'>NNN</a></strong></td>
             </tr>
-            </table>
-		</div>
+        </table></div>
         <h3>Spell Captures</h3>
-        <table>
-        <tr>
-            <th>Character</th>
-            <th>Spells Captured</th>
-            <th>Date of completion</th>
-        <tr>
-            <td><strong>Reimu</strong></td>
-            <td class='g'>127/127</td>
-            <td>April 22, 2013</td>
-        </tr>
-        <tr>
-            <td><strong>Marisa</strong></td>
-            <td class='g'>127/127</td>
-            <td>May 1, 2013</td>
-        </tr>
-        <tr>
-            <td><strong>Sanae</strong></td>
-            <td class='g'>127/127</td>
-            <td>August 25, 2015</td>
-        </tr>
-        <tr>
-            <td><strong>Youmu</strong></td>
-            <td class='g'>127/127</td>
-            <td>May 1, 2013</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Character</th>
+                <th>Spells Captured</th>
+                <th>Date of completion</th>
+            <tr>
+                <td><strong>Reimu</strong></td>
+                <td class='g'>127/127</td>
+                <td>April 22, 2013</td>
+            </tr>
+            <tr>
+                <td><strong>Marisa</strong></td>
+                <td class='g'>127/127</td>
+                <td>May 1, 2013</td>
+            </tr>
+            <tr>
+                <td><strong>Sanae</strong></td>
+                <td class='g'>127/127</td>
+                <td>August 25, 2015</td>
+            </tr>
+            <tr>
+                <td><strong>Youmu</strong></td>
+                <td class='g'>127/127</td>
+                <td>May 1, 2013</td>
+            </tr>
+        </table></div>
     </div>
     <div id='DDC'>
         <h2>TH14 - Double Dealing Character</h2>
@@ -2303,8 +2269,7 @@
 		</picture>
         <p>Obtained: August 12, 2013</p>
         <h3>Survival</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Progress</th>
@@ -2358,45 +2323,44 @@
                 <a href='https://www.youtube.com/watch?v=SZWY1JGXPS4'>NB</a>
                 <a href='https://www.youtube.com/watch?v=MtKJsKdXW5Q'>NMNB</a></strong></td>
             </tr>
-            </table>
-		</div>
+        </table></div>
         <h3>Spell Captures</h3>
-        <table>
-        <tr>
-            <th>Character</th>
-            <th>Spells Captured</th>
-            <th>Date of completion</th>
-        <tr>
-            <td><strong>Reimu-A</strong></td>
-            <td class='g'>120/120</td>
-            <td>August 19, 2014</td>
-        </tr>
-        <tr>
-            <td><strong>Reimu-B</strong></td>
-            <td class='g'>120/120</td>
-            <td>September 14, 2014</td>
-        </tr>
-        <tr>
-            <td><strong>Marisa-A</strong></td>
-            <td class='g'>120/120</td>
-            <td>September 13, 2014</td>
-        </tr>
-        <tr>
-            <td><strong>Marisa-B</strong></td>
-            <td class='g'>120/120</td>
-            <td>September 12, 2014</td>
-        </tr>
-        <tr>
-            <td><strong>Sakuya-A</strong></td>
-            <td class='g'>120/120</td>
-            <td>March 7, 2014</td>
-        </tr>
-        <tr>
-            <td><strong>Sakuya-B</strong></td>
-            <td class='g'>120/120</td>
-            <td>September 14, 2014</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Character</th>
+                <th>Spells Captured</th>
+                <th>Date of completion</th>
+            <tr>
+                <td><strong>Reimu-A</strong></td>
+                <td class='g'>120/120</td>
+                <td>August 19, 2014</td>
+            </tr>
+            <tr>
+                <td><strong>Reimu-B</strong></td>
+                <td class='g'>120/120</td>
+                <td>September 14, 2014</td>
+            </tr>
+            <tr>
+                <td><strong>Marisa-A</strong></td>
+                <td class='g'>120/120</td>
+                <td>September 13, 2014</td>
+            </tr>
+            <tr>
+                <td><strong>Marisa-B</strong></td>
+                <td class='g'>120/120</td>
+                <td>September 12, 2014</td>
+            </tr>
+            <tr>
+                <td><strong>Sakuya-A</strong></td>
+                <td class='g'>120/120</td>
+                <td>March 7, 2014</td>
+            </tr>
+            <tr>
+                <td><strong>Sakuya-B</strong></td>
+                <td class='g'>120/120</td>
+                <td>September 14, 2014</td>
+            </tr>
+        </table></div>
     </div>
     <div id='ISC'>
         <h2>TH14.3 - Impossible Spell Card</h2>
@@ -2407,24 +2371,24 @@
 		</picture>
         <p>Obtained: May 11, 2014</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Spells Captured</th>
-            <th>Date of completion</th>
-        <tr>
-            <td><strong>Using Items</strong></td>
-            <td class='g'>75/75</td>
-            <td>May 13, 2014</td>
-        </tr>
-        <tr>
-            <td><strong>No Items</strong></td>
-            <td>74/75</td>
-            <td>-</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Spells Captured</th>
+                <th>Date of completion</th>
+            <tr>
+                <td><strong>Using Items</strong></td>
+                <td class='g'>75/75</td>
+                <td>May 13, 2014</td>
+            </tr>
+            <tr>
+                <td><strong>No Items</strong></td>
+                <td>74/75</td>
+                <td>-</td>
+            </tr>
+        </table></div>
         <h3>No Items Clear Progress</h3>
-        <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Day</th>
                 <th>1</th>
@@ -2568,7 +2532,7 @@
                 <td class='y'><strong><a class='i' href='https://www.youtube.com/watch?v=0QLDE47yjOY'>Y</a></strong></td>
                 <td class='y'><strong><a class='i' href='https://www.youtube.com/watch?v=r4AYJatESnI'>Y</a></strong></td>
             </tr>
-        </table>
+        </table></div>
     </div>
     <div id='LoLK'>
         <h2>TH15 - Legacy of Lunatic Kingdom</h2>
@@ -2578,9 +2542,8 @@
 			<img loading='lazy' src='assets/personal/history/games/lolk250x250.jpg' alt='LoLK'>
 		</picture>
         <p>Obtained: August 14, 2015</p>
-        <h3>Survival</h3>
-		<div class='container'>
-            <table>
+        <h3>Survival</h3>>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Progress</th>
@@ -2633,10 +2596,9 @@
                 <td><strong><a href='https://www.youtube.com/watch?v=3simoF6ESfU'>1cc</a>
                 <a href='https://www.youtube.com/watch?v=H9w_cv4ZouI'>NB</a></strong></td>
             </tr>
-            </table>
-		</div>
+        </table></div>
         <h3>Pointdevice Mode</h3>
-        <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Retries</th>
@@ -2667,7 +2629,7 @@
                 <td>August 18, 2015</td>
                 <td>No</td>
             </tr>
-        </table>
+        </table></div>
     </div>
     <div id='HSiFS'>
         <h2>TH16 - Hidden Star in Four Seasons</h2>
@@ -2678,8 +2640,7 @@
 		</picture>
         <p>Obtained: August 11, 2017</p>
         <h3>Scoring</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Shottype</th>
@@ -2696,11 +2657,9 @@
                 <td>July 1, 2019</td>
                 <td><strong><a href='https://www.youtube.com/watch?v=J83JwvEONjQ'>Link (YouTube)</a></strong></td>
             </tr>
-            </table>
-		</div>
+        </table></div>
         <h3>Survival</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Progress</th>
@@ -2754,8 +2713,7 @@
                 <td><strong><a href='https://www.youtube.com/watch?v=YwZNj4te42I'>1cc</a></strong>
                 <strong><a href='https://www.youtube.com/watch?v=HycerOpMtbY'>NNN</a></strong></td>
             </tr>
-            </table>
-		</div>
+        </table></div>
     </div>
     <div id='VD'>
         <h2>TH16.5 - Violet Detector</h2>
@@ -2766,21 +2724,21 @@
 		</picture>
         <p>Obtained: August 29, 2018</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Character</th>
-            <th>Spells Captured</th>
-            <th>Date of completion</th>
-            <th>Video</th>
-        <tr>
-            <td>Sumireko</td>
-            <td class='g'>103/103</td>
-            <td>August 31, 2018</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Character</th>
+                <th>Spells Captured</th>
+                <th>Date of completion</th>
+                <th>Video</th>
+            <tr>
+                <td>Sumireko</td>
+                <td class='g'>103/103</td>
+                <td>August 31, 2018</td>
+                <td>No</td>
+            </tr>
+        </table></div>
         <h3>Progress</h3>
-        <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Stage</th>
                 <th>1</th>
@@ -3011,7 +2969,7 @@
                 <td>-</td>
                 <td>-</td>
             </tr>
-        </table>
+        </table></div>
     </div>
     <div id='WBaWC'>
         <h2>TH17 - Wily Beast and Weakest Creature</h2>
@@ -3022,8 +2980,7 @@
 		</picture>
         <p>Obtained: August 12, 2019</p>
         <h3>Survival</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Progress</th>
@@ -3076,8 +3033,7 @@
                 <td><strong><a href='https://www.youtube.com/watch?v=z4sM9kPtRsk'>1cc</a>
                 <a href='https://www.youtube.com/watch?v=xXFRbyoqECk'>NNNN</a></strong></td>
             </tr>
-            </table>
-		</div>
+        </table></div>
     </div>
     <div id='UM'>
         <h2>TH18 - Unconnected Marketeers</h2>
@@ -3088,8 +3044,7 @@
 		</picture>
         <p>Obtained: May 3, 2021</p>
         <h3>Survival</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Progress</th>
@@ -3142,8 +3097,7 @@
                 <td><strong><a href='https://www.youtube.com/watch?v=5jh5vc97NxE'>1cc</a>
 				<a href='https://www.youtube.com/watch?v=18GuAM7yOoY'>NNN</a></td>
             </tr>
-            </table>
-		</div>
+        </table></div>
     </div>
     <div id='SSS'>
         <h2>Shining Shooting Star</h2>
@@ -3154,8 +3108,7 @@
 		</picture>
         <p>Obtained: April 27, 2017</p>
         <h3>Scoring</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Shottype</th>
@@ -3180,11 +3133,9 @@
                 <td>December 25, 2017</td>
                 <td><strong><a href='https://www.youtube.com/watch?v=bMBmHmFNvZc'>Link (YouTube)</a></strong></td>
             </tr>
-            </table>
-		</div>
+        </table></div>
         <h3>Survival</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Progress</th>
@@ -3236,8 +3187,7 @@
                 <td>-</td>
                 <td>No</td>
             </tr>
-            </table>
-		</div>
+        </table></div>
     </div>
     <div id='eX1'>
         <h2>eXceed - Gun Bullet Children</h2>
@@ -3248,32 +3198,32 @@
 		</picture>
         <p>Obtained: December 27, 2015 (Steam)</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Easy</strong></td>
-            <td class='g'>Completed</td>
-            <td>January 1, 2016</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Normal</strong></td>
-            <td class='g'>Completed</td>
-            <td>January 1, 2016</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Hard</strong></td>
-            <td class='g'>Completed</td>
-            <td>January 1, 2016</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Easy</strong></td>
+                <td class='g'>Completed</td>
+                <td>January 1, 2016</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Normal</strong></td>
+                <td class='g'>Completed</td>
+                <td>January 1, 2016</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Hard</strong></td>
+                <td class='g'>Completed</td>
+                <td>January 1, 2016</td>
+                <td>No</td>
+            </tr>
+        </table></div>
     </div>
     <div id='eX2'>
         <h2>eXceed 2nd - Vampire REX</h2>
@@ -3284,38 +3234,38 @@
 		</picture>
         <p>Obtained: December 27, 2015 (Steam)</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Easy</strong></td>
-            <td class='g'>Completed</td>
-            <td>December 27, 2015</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Normal</strong></td>
-            <td class='g'>Completed</td>
-            <td>December 30, 2015</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Hard</strong></td>
-            <td class='g'>Completed</td>
-            <td>January 4, 2016</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Exceed</strong></td>
-            <td class='g'>Completed</td>
-            <td>January 5, 2016</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=z8kNODfV7Lg'>Link (YouTube)</a></strong></td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Easy</strong></td>
+                <td class='g'>Completed</td>
+                <td>December 27, 2015</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Normal</strong></td>
+                <td class='g'>Completed</td>
+                <td>December 30, 2015</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Hard</strong></td>
+                <td class='g'>Completed</td>
+                <td>January 4, 2016</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Exceed</strong></td>
+                <td class='g'>Completed</td>
+                <td>January 5, 2016</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=z8kNODfV7Lg'>Link (YouTube)</a></strong></td>
+            </tr>
+        </table></div>
     </div>
     <div id='eX3'>
         <h2>eXceed 3rd - Jade Penetrate Black Package</h2>
@@ -3326,62 +3276,62 @@
 		</picture>
         <p>Obtained: December 27, 2015 (Steam)</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Easy</strong></td>
-            <td class='g'>Completed</td>
-            <td>December 29, 2015</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Normal</strong></td>
-            <td class='g'>Completed+TLB</td>
-            <td>December 29, 2015</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Hard</strong></td>
-            <td class='g'>Completed+TLB</td>
-            <td>September 25, 2016</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Exceed</strong></td>
-            <td class='g'>Completed+TLB</td>
-            <td>September 25, 2016</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=0tHOJYCy3Jc'>Link (YouTube)</a></strong></td>
-        </tr>
-        <tr>
-            <td><strong>Easy (Auto-Bomb)</strong></td>
-            <td class='g'>Completed</td>
-            <td>December 27, 2015</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Normal (Auto-Bomb)</strong></td>
-            <td class='g'>Completed</td>
-            <td>December 27, 2015</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Hard (Auto-Bomb)</strong></td>
-            <td class='g'>Completed</td>
-            <td>December 27, 2015</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Exceed (Auto-Bomb)</strong></td>
-            <td class='g'>Completed</td>
-            <td>December 29, 2015</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Easy</strong></td>
+                <td class='g'>Completed</td>
+                <td>December 29, 2015</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Normal</strong></td>
+                <td class='g'>Completed+TLB</td>
+                <td>December 29, 2015</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Hard</strong></td>
+                <td class='g'>Completed+TLB</td>
+                <td>September 25, 2016</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Exceed</strong></td>
+                <td class='g'>Completed+TLB</td>
+                <td>September 25, 2016</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=0tHOJYCy3Jc'>Link (YouTube)</a></strong></td>
+            </tr>
+            <tr>
+                <td><strong>Easy (Auto-Bomb)</strong></td>
+                <td class='g'>Completed</td>
+                <td>December 27, 2015</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Normal (Auto-Bomb)</strong></td>
+                <td class='g'>Completed</td>
+                <td>December 27, 2015</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Hard (Auto-Bomb)</strong></td>
+                <td class='g'>Completed</td>
+                <td>December 27, 2015</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Exceed (Auto-Bomb)</strong></td>
+                <td class='g'>Completed</td>
+                <td>December 29, 2015</td>
+                <td>No</td>
+            </tr>
+        </table></div>
     </div>
     <div id='SG'>
         <h2>SH01 - Shuusou Gyoku</h2>
@@ -3392,47 +3342,47 @@
 		</picture>
         <p>Obtained: November 30, 2012</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Easy</strong></td>
-            <td class='g'>Completed</td>
-            <td>?, 2012</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Normal</strong></td>
-            <td class='g'>Completed</td>
-            <td>?, 2012</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Hard</strong></td>
-            <td class='g'>Completed</td>
-            <td>August 22, 2013</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=V521_2NY7go'>Link (YouTube)</a></strong></td>
-        </tr>
-        <tr>
-            <td><strong>Lunatic</strong></td>
-            <td class='g'>Completed</td>
-            <td>February 2, 2014</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=u4AJCxdE6ao'>Link (YouTube)</a></strong></td>
-        </tr>
-        <tr>
-            <td colspan='4'></td>
-        </tr>
-        <tr>
-            <td><strong>Extra</strong></td>
-            <td class='g'>Completed</td>
-            <td>February 6, 2014</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=IZFBd92OXbY'>Link (YouTube)</a></strong></td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Easy</strong></td>
+                <td class='g'>Completed</td>
+                <td>?, 2012</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Normal</strong></td>
+                <td class='g'>Completed</td>
+                <td>?, 2012</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Hard</strong></td>
+                <td class='g'>Completed</td>
+                <td>August 22, 2013</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=V521_2NY7go'>Link (YouTube)</a></strong></td>
+            </tr>
+            <tr>
+                <td><strong>Lunatic</strong></td>
+                <td class='g'>Completed</td>
+                <td>February 2, 2014</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=u4AJCxdE6ao'>Link (YouTube)</a></strong></td>
+            </tr>
+            <tr>
+                <td colspan='4'></td>
+            </tr>
+            <tr>
+                <td><strong>Extra</strong></td>
+                <td class='g'>Completed</td>
+                <td>February 6, 2014</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=IZFBd92OXbY'>Link (YouTube)</a></strong></td>
+            </tr>
+        </table></div>
     </div>
     <div id='BSR'>
         <h2>SH03 - Banshiryuu (C67)</h2>
@@ -3443,8 +3393,7 @@
 		</picture>
         <p>Obtained: September 7, 2012</p>
         <h3>Scoring</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Shottype</th>
@@ -3590,41 +3539,40 @@
                 <td>-</td>
                 <td>No</td>
             </tr>
-            </table>
-		</div>
+        </table></div>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Easy</strong></td>
-            <td class='g'>Completed</td>
-            <td>October 26, 2012</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Normal</strong></td>
-            <td class='g'>Completed</td>
-            <td>October 26, 2012</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Hard</strong></td>
-            <td class='g'>Completed</td>
-            <td>December 14, 2012</td>
-            <td><strong><a href='http://www.youtube.com/watch?v=_YLskQFOGuE&amp;list=PLVsboTfyC-K1IrHcK_zkcuqtZKCRl57b_&amp;index=1'>Link (YouTube)</a></strong></td>
-        </tr>
-        <tr>
-            <td><strong>Lunatic</strong></td>
-            <td class='g'>Completed</td>
-            <td>August 26, 2013</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=wkgcGgzymXw'>Link (YouTube)</a></strong></td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Easy</strong></td>
+                <td class='g'>Completed</td>
+                <td>October 26, 2012</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Normal</strong></td>
+                <td class='g'>Completed</td>
+                <td>October 26, 2012</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Hard</strong></td>
+                <td class='g'>Completed</td>
+                <td>December 14, 2012</td>
+                <td><strong><a href='http://www.youtube.com/watch?v=_YLskQFOGuE&amp;list=PLVsboTfyC-K1IrHcK_zkcuqtZKCRl57b_&amp;index=1'>Link (YouTube)</a></strong></td>
+            </tr>
+            <tr>
+                <td><strong>Lunatic</strong></td>
+                <td class='g'>Completed</td>
+                <td>August 26, 2013</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=wkgcGgzymXw'>Link (YouTube)</a></strong></td>
+            </tr>
+        </table></div>
     </div>
     <div id='SMD'>
         <h2>Samidare</h2>
@@ -3635,8 +3583,7 @@
 		</picture>
         <p>Obtained: October 10, 2012</p>
         <h3>Scoring</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Score</th>
@@ -3658,11 +3605,9 @@
                 <td>November 17, 2017</td>
                 <td><strong><a href='https://www.youtube.com/watch?v=ALCrslNqGmo'>Link (YouTube)</a></strong></td>
             </tr>
-            </table>
-		</div>
+        </table></div>
         <h3>Survival</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Progress</th>
@@ -3687,8 +3632,7 @@
                 <td>December 17, 2013</td>
                 <td><strong><a href='https://www.youtube.com/watch?v=9yy0cUNaPhA'>1cc</a> <a href='https://www.youtube.com/watch?v=leJRk5RF_8A'>NM</a></strong></td>
             </tr>
-            </table>
-		</div>
+        </table></div>
     </div>
     <div id='MRS'>
         <h2>Mrs. Estacion</h2>
@@ -3699,8 +3643,7 @@
 		</picture>
         <p>Obtained: February 23, 2013</p>
         <h3>Scoring</h3>
-		<div class='container'>
-            <table>
+        <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
                 <th>Shottype</th>
@@ -3725,59 +3668,58 @@
                 <td>June 17, 2016</td>
                 <td><strong><a href='https://www.youtube.com/watch?v=hRM74eMjGuY'>Link (YouTube)</a></strong></td>
             </tr>
-            </table>
-		</div>
+        </table></div>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Easy</strong></td>
-            <td class='g'>Completed</td>
-            <td>February 23, 2013 (est.)</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Normal</strong></td>
-            <td class='g'>Completed</td>
-            <td>February 26, 2013</td>
-            <td><strong><a href='http://www.youtube.com/watch?v=KyCaOzE6yqg&amp;list=PLVsboTfyC-K1Rbxyb0zmx1_7C0zUFCtOq&amp;index=1'>Link (YouTube)</a></strong></td>
-        </tr>
-        <tr>
-            <td><strong>Hard</strong></td>
-            <td class='g'>Completed</td>
-            <td>May 28, 2013</td>
-            <td><strong><a href='http://www.youtube.com/watch?v=rmJweyVclKs&amp;list=PLVsboTfyC-K2hkaResfvk2Lt4uEFcdqYd&amp;index=1'>Link (YouTube)</a></strong></td>
-        </tr>
-        <tr>
-            <td colspan='4'></td>
-        </tr>
-        <tr>
-            <td><strong>Special</strong></td>
-            <td class='g'>Completed</td>
-            <td>February 27, 2013</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=64_UYh1nPYo'>Link (YouTube)</a></strong></td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Easy</strong></td>
+                <td class='g'>Completed</td>
+                <td>February 23, 2013 (est.)</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Normal</strong></td>
+                <td class='g'>Completed</td>
+                <td>February 26, 2013</td>
+                <td><strong><a href='http://www.youtube.com/watch?v=KyCaOzE6yqg&amp;list=PLVsboTfyC-K1Rbxyb0zmx1_7C0zUFCtOq&amp;index=1'>Link (YouTube)</a></strong></td>
+            </tr>
+            <tr>
+                <td><strong>Hard</strong></td>
+                <td class='g'>Completed</td>
+                <td>May 28, 2013</td>
+                <td><strong><a href='http://www.youtube.com/watch?v=rmJweyVclKs&amp;list=PLVsboTfyC-K2hkaResfvk2Lt4uEFcdqYd&amp;index=1'>Link (YouTube)</a></strong></td>
+            </tr>
+            <tr>
+                <td colspan='4'></td>
+            </tr>
+            <tr>
+                <td><strong>Special</strong></td>
+                <td class='g'>Completed</td>
+                <td>February 27, 2013</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=64_UYh1nPYo'>Link (YouTube)</a></strong></td>
+            </tr>
+        </table></div>
         <h3>Other achievements</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Special <abbr title='Without dying'>No Miss</abbr></strong></td>
-            <td class='g'>Completed</td>
-            <td>April 19, 2015</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=5ZQqGy9wXP0'>Link (YouTube)</a></strong></td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Special <abbr title='Without dying'>No Miss</abbr></strong></td>
+                <td class='g'>Completed</td>
+                <td>April 19, 2015</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=5ZQqGy9wXP0'>Link (YouTube)</a></strong></td>
+            </tr>
+        </table></div>
     </div>
     <div id='DP'>
         <h2>Donpachi</h2>
@@ -3788,26 +3730,26 @@
 		</picture>
         <p>Obtained: March 18, 2014</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>1-ALL</strong></td>
-            <td class='g'>Completed</td>
-            <td>September 5, 2015</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=nfsS7_osIog'>Link (YouTube)</a></strong></td>
-        </tr>
-        <tr>
-            <td><strong>2-ALL</strong></td>
-            <td>Stage 2-1</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>1-ALL</strong></td>
+                <td class='g'>Completed</td>
+                <td>September 5, 2015</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=nfsS7_osIog'>Link (YouTube)</a></strong></td>
+            </tr>
+            <tr>
+                <td><strong>2-ALL</strong></td>
+                <td>Stage 2-1</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+        </table></div>
     </div>
     <div id='DDP'>
         <h2>Dodonpachi</h2>
@@ -3818,26 +3760,26 @@
 		</picture>
         <p>Obtained: March 18, 2014</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>1-ALL</strong></td>
-            <td class='g'>Completed</td>
-            <td>November 2, 2014</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=ywikzKYTIMM'>Link (YouTube)</a></strong></td>
-        </tr>
-        <tr>
-            <td><strong>2-ALL</strong></td>
-            <td>Not yet tried</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>1-ALL</strong></td>
+                <td class='g'>Completed</td>
+                <td>November 2, 2014</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=ywikzKYTIMM'>Link (YouTube)</a></strong></td>
+            </tr>
+            <tr>
+                <td><strong>2-ALL</strong></td>
+                <td>Not yet tried</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+        </table></div>
     </div>
     <div id='DOJ'>
         <h2>Dodonpachi Daioujou</h2>
@@ -3848,38 +3790,38 @@
 		</picture>
         <p>Obtained: November 3, 2012</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>1-ALL (BL)</strong></td>
-            <td class='g'>Completed</td>
-            <td>March 26, 2014</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=chKVBeb0I5g'>Link (YouTube)</a></strong></td>
-        </tr>
-        <tr>
-            <td><strong>2-ALL (BL)</strong></td>
-            <td>Stage 2-3</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>1-ALL (WL)</strong></td>
-            <td>Stage 1-5</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>2-ALL (WL)</strong></td>
-            <td>Stage 1-5</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>1-ALL (BL)</strong></td>
+                <td class='g'>Completed</td>
+                <td>March 26, 2014</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=chKVBeb0I5g'>Link (YouTube)</a></strong></td>
+            </tr>
+            <tr>
+                <td><strong>2-ALL (BL)</strong></td>
+                <td>Stage 2-3</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>1-ALL (WL)</strong></td>
+                <td>Stage 1-5</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>2-ALL (WL)</strong></td>
+                <td>Stage 1-5</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+        </table></div>
     </div>
     <div id='DFK'>
         <h2>Dodonpachi Daifukkatsu</h2>
@@ -3890,126 +3832,126 @@
 		</picture>
         <p>Obtained: October 8, 2013 (X360), October 14, 2016 (Steam)</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>1-ALL</strong></td>
-            <td class='g'>Completed</td>
-            <td>May 7, 2014</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=Su_diaNCUX8'>Link (YouTube)</a></strong></td>
-        </tr>
-        <tr>
-            <td><strong>2-ALL (Omote Loop)</strong></td>
-            <td>Practicing</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>2-ALL (Ura Loop)</strong></td>
-            <td>Not yet tried</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>1-ALL</strong></td>
+                <td class='g'>Completed</td>
+                <td>May 7, 2014</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=Su_diaNCUX8'>Link (YouTube)</a></strong></td>
+            </tr>
+            <tr>
+                <td><strong>2-ALL (Omote Loop)</strong></td>
+                <td>Practicing</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>2-ALL (Ura Loop)</strong></td>
+                <td>Not yet tried</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+        </table></div>
         <h3>Novice</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>1-ALL</strong></td>
-            <td class='g'>Completed</td>
-            <td>October 10, 2013</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>2-ALL (Omote Loop)</strong></td>
-            <td class='g'>Completed</td>
-            <td>December 14, 2013</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>2-ALL (Ura Loop)</strong></td>
-            <td class='g'>Completed</td>
-            <td>October 17, 2016</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>1-ALL</strong></td>
+                <td class='g'>Completed</td>
+                <td>October 10, 2013</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>2-ALL (Omote Loop)</strong></td>
+                <td class='g'>Completed</td>
+                <td>December 14, 2013</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>2-ALL (Ura Loop)</strong></td>
+                <td class='g'>Completed</td>
+                <td>October 17, 2016</td>
+                <td>No</td>
+            </tr>
+        </table></div>
         <h3>Black Label</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Bomb Style</strong></td>
-            <td>Stage 5</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Power Style</strong></td>
-            <td>Not yet tried</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Strong Style</strong></td>
-            <td>Not yet tried</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Bomb Style</strong></td>
+                <td>Stage 5</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Power Style</strong></td>
+                <td>Not yet tried</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Strong Style</strong></td>
+                <td>Not yet tried</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+        </table></div>
         <h3>Black Label Novice</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Bomb Style</strong></td>
-            <td class='g'>Completed</td>
-            <td>August 11, 2015</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Power Style</strong></td>
-            <td class='g'>Completed</td>
-            <td>October 17, 2016</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Strong Style</strong></td>
-            <td class='g'>Completed</td>
-            <td>October 17, 2016</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Bomb Style</strong></td>
+                <td class='g'>Completed</td>
+                <td>August 11, 2015</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Power Style</strong></td>
+                <td class='g'>Completed</td>
+                <td>October 17, 2016</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Strong Style</strong></td>
+                <td class='g'>Completed</td>
+                <td>October 17, 2016</td>
+                <td>No</td>
+            </tr>
+        </table></div>
         <h3>Black Label Arrange (Ketsuipachi)</h3>
-        <table>
-        <tr>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td>Stage 5</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td>Stage 5</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+        </table></div>
     </div>
     <div id='SDOJ'>
         <h2>Dodonpachi Saidaioujou</h2>
@@ -4020,38 +3962,38 @@
 		</picture>
         <p>Obtained: October 29, 2013</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Novice</strong></td>
-            <td class='g'>Completed</td>
-            <td>February 24, 2014</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Novice (Expert)</strong></td>
-            <td>Not yet tried</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Arcade HD</strong></td>
-            <td>Not yet tried</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Arcade HD (Expert)</strong></td>
-            <td>Not yet tried</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Novice</strong></td>
+                <td class='g'>Completed</td>
+                <td>February 24, 2014</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Novice (Expert)</strong></td>
+                <td>Not yet tried</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Arcade HD</strong></td>
+                <td>Not yet tried</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Arcade HD (Expert)</strong></td>
+                <td>Not yet tried</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+        </table></div>
     </div>
     <div id='Batsugun'>
         <h2>Batsugun Special Version</h2>
@@ -4062,38 +4004,38 @@
 		</picture>
         <p>Obtained: March 2, 2016</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>1-ALL</strong></td>
-            <td class='g'>Completed</td>
-            <td>March 2, 2016</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>2-ALL</strong></td>
-            <td class='g'>Completed</td>
-            <td>March 3, 2016</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=m7Hvu_XKFYo'>Link (YouTube)</a></strong></td>
-        </tr>
-        <tr>
-            <td><strong>3-ALL</strong></td>
-            <td>Stage 11</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>4-ALL</strong></td>
-            <td>Stage 11</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>1-ALL</strong></td>
+                <td class='g'>Completed</td>
+                <td>March 2, 2016</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>2-ALL</strong></td>
+                <td class='g'>Completed</td>
+                <td>March 3, 2016</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=m7Hvu_XKFYo'>Link (YouTube)</a></strong></td>
+            </tr>
+            <tr>
+                <td><strong>3-ALL</strong></td>
+                <td>Stage 11</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>4-ALL</strong></td>
+                <td>Stage 11</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+        </table></div>
     </div>
     <div id='ESP'>
         <h2>ESP Ra.De.</h2>
@@ -4104,20 +4046,20 @@
 		</picture>
         <p>Obtained: March 28, 2014</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>ALL</strong></td>
-            <td>Stage 5</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>ALL</strong></td>
+                <td>Stage 5</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+        </table></div>
     </div>
     <div id='ESPg'>
         <h2>Espgaluda</h2>
@@ -4128,20 +4070,20 @@
 		</picture>
         <p>Obtained: March 28, 2014</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>ALL</strong></td>
-            <td class='g'>Completed</td>
-            <td>November 28, 2015</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=WtVbxjLpAbs'>Link (YouTube)</a></strong></td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>ALL</strong></td>
+                <td class='g'>Completed</td>
+                <td>November 28, 2015</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=WtVbxjLpAbs'>Link (YouTube)</a></strong></td>
+            </tr>
+        </table></div>
     </div>
     <div id='Ketsui'>
         <h2>Ketsui ~Kizuna Jigoku Tachi~</h2>
@@ -4152,32 +4094,32 @@
 		</picture>
         <p>Obtained: December 1, 2012</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>1-ALL</strong></td>
-            <td class='g'>Completed</td>
-            <td>September 21, 2015</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=F5TZ1YFBmcQ'>Link (YouTube)</a></strong></td>
-        </tr>
-        <tr>
-            <td><strong>2-ALL (Omote Loop)</strong></td>
-            <td>Not yet tried</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>2-ALL (Ura Loop)</strong></td>
-            <td>Not yet tried</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>1-ALL</strong></td>
+                <td class='g'>Completed</td>
+                <td>September 21, 2015</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=F5TZ1YFBmcQ'>Link (YouTube)</a></strong></td>
+            </tr>
+            <tr>
+                <td><strong>2-ALL (Omote Loop)</strong></td>
+                <td>Not yet tried</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>2-ALL (Ura Loop)</strong></td>
+                <td>Not yet tried</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+        </table></div>
     </div>
     <div id='MSm'>
         <h2>Mushihime-sama</h2>
@@ -4188,74 +4130,74 @@
 		</picture>
         <p>Obtained: November 6, 2015 (Steam)</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Original</strong></td>
-            <td class='g'>Completed</td>
-            <td>November 8, 2015</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=O-zCaWKkWEU'>Link (YouTube)</a></strong></td>
-        </tr>
-        <tr>
-            <td><strong>Maniac</strong></td>
-            <td class='g'>Completed</td>
-            <td>November 8, 2015</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=Y9iANaLCQ3s'>Link (YouTube)</a></strong></td>
-        </tr>
-        <tr>
-            <td><strong>Ultra</strong></td>
-            <td>Stage 3</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Original</strong></td>
+                <td class='g'>Completed</td>
+                <td>November 8, 2015</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=O-zCaWKkWEU'>Link (YouTube)</a></strong></td>
+            </tr>
+            <tr>
+                <td><strong>Maniac</strong></td>
+                <td class='g'>Completed</td>
+                <td>November 8, 2015</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=Y9iANaLCQ3s'>Link (YouTube)</a></strong></td>
+            </tr>
+            <tr>
+                <td><strong>Ultra</strong></td>
+                <td>Stage 3</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+        </table></div>
         <h3>Novice</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Original</strong></td>
-            <td class='g'>Completed</td>
-            <td>November 7, 2015</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Maniac</strong></td>
-            <td class='g'>Completed</td>
-            <td>November 7, 2015</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Ultra</strong></td>
-            <td class='g'>Completed</td>
-            <td>November 9, 2015</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=nq3kOQzG2Wo'>Link (YouTube)</a></strong></td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Original</strong></td>
+                <td class='g'>Completed</td>
+                <td>November 7, 2015</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Maniac</strong></td>
+                <td class='g'>Completed</td>
+                <td>November 7, 2015</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Ultra</strong></td>
+                <td class='g'>Completed</td>
+                <td>November 9, 2015</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=nq3kOQzG2Wo'>Link (YouTube)</a></strong></td>
+            </tr>
+        </table></div>
         <h3>Arrange</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Arrange</strong></td>
-            <td>True Final Boss</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Arrange</strong></td>
+                <td>True Final Boss</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+        </table></div>
     </div>
     <div id='MSF'>
         <h2>Mushihime-sama Futari</h2>
@@ -4266,86 +4208,86 @@
 		</picture>
         <p>Obtained: October 29, 2013</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Original</strong></td>
-            <td>Not yet tried</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Maniac</strong></td>
-            <td>Not yet tried</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Ultra</strong></td>
-            <td>Stage 2</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Original</strong></td>
+                <td>Not yet tried</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Maniac</strong></td>
+                <td>Not yet tried</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Ultra</strong></td>
+                <td>Stage 2</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+        </table></div>
         <h3>Novice</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Original</strong></td>
-            <td class='g'>Completed</td>
-            <td>October 31, 2013</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Maniac</strong></td>
-            <td class='g'>Completed</td>
-            <td>November 1, 2013</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Ultra</strong></td>
-            <td class='g'>Completed</td>
-            <td>November 1, 2013</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Original</strong></td>
+                <td class='g'>Completed</td>
+                <td>October 31, 2013</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Maniac</strong></td>
+                <td class='g'>Completed</td>
+                <td>November 1, 2013</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Ultra</strong></td>
+                <td class='g'>Completed</td>
+                <td>November 1, 2013</td>
+                <td>No</td>
+            </tr>
+        </table></div>
         <h3>Black Label</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Original</strong></td>
-            <td class='g'>Completed</td>
-            <td>September 5, 2015</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Maniac</strong></td>
-            <td>Not yet tried</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>God</strong></td>
-            <td>Not yet tried</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Original</strong></td>
+                <td class='g'>Completed</td>
+                <td>September 5, 2015</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Maniac</strong></td>
+                <td>Not yet tried</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>God</strong></td>
+                <td>Not yet tried</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+        </table></div>
     </div>
     <div id='DSm'>
         <h2>Deathsmiles</h2>
@@ -4356,65 +4298,65 @@
 		</picture>
         <p>Obtained: October 8, 2013 (X360); March 11, 2016 (Steam)</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Level 1</strong></td>
-            <td class='g'>Completed</td>
-            <td>March 11, 2016</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Level 2</strong></td>
-            <td class='g'>Completed</td>
-            <td>March 12, 2016</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Level 3</strong></td>
-            <td class='g'>Completed</td>
-            <td>March 15, 2016</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Level 1</strong></td>
+                <td class='g'>Completed</td>
+                <td>March 11, 2016</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Level 2</strong></td>
+                <td class='g'>Completed</td>
+                <td>March 12, 2016</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Level 3</strong></td>
+                <td class='g'>Completed</td>
+                <td>March 15, 2016</td>
+                <td>No</td>
+            </tr>
+        </table></div>
         <h3>Mega Black Label</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Level 1</strong></td>
-            <td class='g'>Completed</td>
-            <td>March 28, 2014</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Level 2</strong></td>
-            <td class='g'>Completed</td>
-            <td>April 11, 2014</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Level 3</strong></td>
-            <td class='g'>Completed</td>
-            <td>March 12, 2016</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=TKJ9_8Kop6o'>Link (YouTube)</a></strong> (Not first 1cc)</td>
-        </tr>
-        <tr>
-            <td><strong>Level 999</strong></td>
-            <td>Chapter 1-2</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Level 1</strong></td>
+                <td class='g'>Completed</td>
+                <td>March 28, 2014</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Level 2</strong></td>
+                <td class='g'>Completed</td>
+                <td>April 11, 2014</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Level 3</strong></td>
+                <td class='g'>Completed</td>
+                <td>March 12, 2016</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=TKJ9_8Kop6o'>Link (YouTube)</a></strong> (Not first 1cc)</td>
+            </tr>
+            <tr>
+                <td><strong>Level 999</strong></td>
+                <td>Chapter 1-2</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+        </table></div>
     </div>
     <div id='Ikaruga'>
         <h2>Ikaruga</h2>
@@ -4425,32 +4367,32 @@
 		</picture>
         <p>Obtained: December 5, 2015 (Steam)</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Easy</strong></td>
-            <td class='g'>Completed</td>
-            <td>March 6, 2016</td>
-            <td><strong><a href='https://www.youtube.com/watch?v=T7Mu17-7sN4'>Link (YouTube)</a></strong></td>
-        </tr>
-        <tr>
-            <td><strong>Normal</strong></td>
-            <td>Not yet tried</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Hard</strong></td>
-            <td>Not yet tried</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Easy</strong></td>
+                <td class='g'>Completed</td>
+                <td>March 6, 2016</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=T7Mu17-7sN4'>Link (YouTube)</a></strong></td>
+            </tr>
+            <tr>
+                <td><strong>Normal</strong></td>
+                <td>Not yet tried</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Hard</strong></td>
+                <td>Not yet tried</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+        </table></div>
     </div>
     <div id='CCWI'>
         <h2>Crimzon Clover</h2>
@@ -4461,53 +4403,53 @@
 		</picture>
         <p>Obtained: December 5, 2015 (Steam)</p>
         <h3>Survival</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Original</strong></td>
-            <td>Stage 5 Boss</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Boost</strong></td>
-            <td>Stage 4</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Unlimited</strong></td>
-            <td>Stage 1 Boss</td>
-            <td>-</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Original</strong></td>
+                <td>Stage 5 Boss</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Boost</strong></td>
+                <td>Stage 4</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Unlimited</strong></td>
+                <td>Stage 1 Boss</td>
+                <td>-</td>
+                <td>No</td>
+            </tr>
+        </table></div>
         <h3>Novice</h3>
-        <table>
-        <tr>
-            <th>Difficulty</th>
-            <th>Progress</th>
-            <th>Date of first 1cc</th>
-            <th>Video</th>
-        </tr>
-        <tr>
-            <td><strong>Original</strong></td>
-            <td class='g'>Completed</td>
-            <td>December 5, 2015</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td><strong>Boost</strong></td>
-            <td class='g'>Completed</td>
-            <td>December 6, 2015</td>
-            <td>No</td>
-        </tr>
-        </table>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Original</strong></td>
+                <td class='g'>Completed</td>
+                <td>December 5, 2015</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Boost</strong></td>
+                <td class='g'>Completed</td>
+                <td>December 6, 2015</td>
+                <td>No</td>
+            </tr>
+        </table></div>
     </div>
     <p><strong><a href='#top'>Back to Top</a></strong></p>
 </div>

@@ -158,6 +158,9 @@ a:visited.dropdown_button {
 .thspotify_icon {
     background-position: -992px 0px;
 }
+.overflow {
+    overflow-x: auto;
+}
 .dropdowns {
     margin-left: auto;
     margin-right: auto;
@@ -273,10 +276,6 @@ a:visited.dropdown_button {
     ul, ol {
         padding-left: 0px;
     }
-    table:not(#jargontable):not(#checkboxes) {
-        overflow-x: scroll;
-        font-size: 8px;
-    }
     input, select {
         font-size: 11px;
     }
@@ -299,10 +298,6 @@ a:visited.dropdown_button {
     #hy_container {
         float: none;
     }
-    #languages {
-        margin-top: 10px;
-        width: 100%;
-    }
     #ext_mobile {
         display: inline-block;
     }
@@ -320,7 +315,7 @@ a:visited.dropdown_button {
     }
 }
 @media only screen and (max-width: 1100px) {
-    .wrap {
+    #wrap {
         font-size: 12px;
     }
 }
