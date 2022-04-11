@@ -148,7 +148,7 @@ function set_theme_cookie() {
 }
 function set_lang_cookie() {
     if (empty($_GET['hl']) || $_GET['hl'] == 'en-gb' || $_GET['hl'] == 'en') {
-        $lang = 'en_US';
+        $lang = 'en_GB';
     } else if ($_GET['hl'] == 'en-us') {
         $lang = 'en_US';
     } else if ($_GET['hl'] == 'jp') {
@@ -159,6 +159,8 @@ function set_lang_cookie() {
         $lang = 'ru_RU';
     } else if ($_GET['hl'] == 'de') {
         $lang = 'de_DE';
+    } else if ($_GET['hl'] == 'es') {
+        $lang = 'es_ES';
     } else {
         $lang = 'en_US';
     }
@@ -192,6 +194,7 @@ function lang_code() {
         case 'zh_CN': return 'zh';
         case 'ru_RU': return 'zh';
         case 'de_DE': return 'de';
+        case 'es_ES': return 'es';
         default: return 'en';
     }
 }
@@ -347,12 +350,18 @@ function navbar(string $page) {
     }
     return $navbar;
 }
+function has_translation(string $page, string $lang = '-') {
+    $langs = new ArrayObject();
+    $langs['-'] = Array('drc', 'lnn', 'pofv', 'tools', 'wr');
+    $langs['ja'] = Array('drc', 'lnn', 'tools', 'wr');
+    $langs['zh'] = Array('drc', 'lnn', 'pofv', 'wr');
+    $langs['ru'] = Array('lnn', 'tools', 'wr');
+    $langs['de'] = Array('drc', 'lnn', 'tools', 'wr');
+    $langs['es'] = Array('lnn', 'tools', 'wr');
+    return in_array($page, $langs[$lang]);
+}
 function wrap_top() {
     global $page, $lang,  $error_code, $layout;
-    $ja = Array('drc', 'lnn', 'tools', 'wr');
-    $zh = Array('drc', 'lnn', 'pofv', 'wr');
-    $ru = Array('lnn', 'tools', 'wr');
-    $de = Array('drc', 'lnn', 'tools', 'wr');
     $tl_title = Array('credits', 'lnn', 'wr');
     if (empty($page)) {
         $page = 'index';
@@ -361,7 +370,7 @@ function wrap_top() {
     $dir = directory($page, $use_index);
     $json = file_get_contents($page == 'admin' ? 'admin.json' : 'assets/' . $dir . '/' . $page . '/' . $page . '.json');
     $data = (object) json_decode($json, true);
-    if (in_array($page, $ja) || in_array($page, $zh) || in_array($page, $ru) || in_array($page, $de)) {
+    if (has_translation($page)) {
         echo '<div id="topbar">';
     }
     if (isset($_COOKIE)) {
@@ -371,7 +380,7 @@ function wrap_top() {
     if ($page == 'lnn' || $page == 'wr') {
         echo '<span id="toggle"><a id="layouttoggle" href="' . $page . '">' . ($layout == 'New' ? 'Old' : 'New') . ' layout</a></span>';
     }
-    if (in_array($page, $ja) || in_array($page, $zh) || in_array($page, $ru) || in_array($page, $de)) {
+    if (has_translation($page)) {
         echo '<div id="languages">';
         if ($page == 'wr') {
             echo '<a id="en-gb" class="flag" href="wr?hl=en-gb">' .
@@ -383,25 +392,29 @@ function wrap_top() {
             echo '<a id="en" class="flag" href="' . $page . '?hl=en">' .
             '<img class="flag_en" src="assets/shared/flags/uk.png" alt="' . _('Flag of the United Kingdom') . '"><p class="language">English</p></a> ';
         }
-        if (in_array($page, $ja)) {
+        if (has_translation($page, 'ja')) {
             echo '<a id="jp" class="flag" href="' . $page . '?hl=jp">' .
             '<img src="assets/shared/flags/japan.png" alt="' . _('Flag of Japan') . '"><p class="language">日本語</p></a> ';
         }
-        if (in_array($page, $zh)) {
+        if (has_translation($page, 'zh')) {
             echo '<a id="zh" class="flag" href="' . $page . '?hl=zh">' .
             '<img src="assets/shared/flags/china.png" alt="' . _('Flag of the P.R.C.') . '"><p class="language">简体中文</p></a> ';
         }
-        if (in_array($page, $ru)) {
+        if (has_translation($page, 'ru')) {
             echo '<a id="ru" class="flag" href="' . $page . '?hl=ru">' .
             '<img src="assets/shared/flags/russia.png" alt="' . _('Flag of Russia') . '"><p class="language">Русский</p></a>';
         }
-        if (in_array($page, $de)) {
+        if (has_translation($page, 'de')) {
             echo '<a id="de" class="flag" href="' . $page . '?hl=de">' .
             '<img src="assets/shared/flags/germany.png" alt="' . _('Flag of Germany') . '"><p class="language">Deutsch</p></a>';
         }
+        if (has_translation($page, 'es')) {
+            echo '<a id="es" class="flag" href="' . $page . '?hl=es">' .
+            '<img src="assets/shared/flags/spain.png" alt="' . _('Flag of Spain') . '"><p class="language">Español</p></a>';
+        }
         echo '</div>';
     }
-    if (in_array($page, $ja) || in_array($page, $zh) || in_array($page, $ru) || in_array($page, $de)) {
+    if (has_translation($page)) {
         echo '</div>';
     }
     if ($page == 'survival' || $page == 'slots') {

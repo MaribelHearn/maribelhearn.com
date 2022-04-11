@@ -34,6 +34,7 @@
                     <span class='icon flag_japan'></span>
                     <span class='icon flag_russia'></span>
                     <span class='icon flag_germany'></span>
+                    <span class='icon flag_spain'></span>
                     <span class='tooltip'>A collection of helpful patches and tools for
                     the Touhou shooting games, many of which for efficient practicing.</span>
                 </p>
@@ -44,6 +45,7 @@
                     <span class='icon flag_china'></span>
                     <span class='icon flag_russia'></span>
                     <span class='icon flag_germany'></span>
+                    <span class='icon flag_spain'></span>
                     <span class='tooltip'>The world records for all Touhou shooting games except for the scene games.</span>
                 </p>
                 <p class='link'>
@@ -53,6 +55,7 @@
                     <span class='icon flag_china'></span>
                     <span class='icon flag_russia'></span>
                     <span class='icon flag_germany'></span>
+                    <span class='icon flag_spain'></span>
                     <span class='tooltip'>Players who have done Lunatic No Miss No Bomb (LNN)
                     runs of the Touhou shooting games are listed here.</span>
                 </p>

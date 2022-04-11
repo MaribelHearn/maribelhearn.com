@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2022-03-07 01:37+0100\n"
-"PO-Revision-Date: 2022-03-07 01:42+0100\n"
+"PO-Revision-Date: 2022-04-11 14:50+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -18,6 +18,7 @@ msgstr ""
 "X-Poedit-SearchPath-3: lnn/lnn_code.php\n"
 "X-Poedit-SearchPath-4: tools/tools.php\n"
 
+# n
 #: lnn/lnn.php:5
 msgid ""
 "A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. "
@@ -25,6 +26,11 @@ msgid ""
 "an LNN with it, if any. If a player has multiple LNNs for one particular "
 "shottype, those are not factored in."
 msgstr ""
+"Una lista de partidas de Touhou Lunatic No Miss No Bomb (LNN), actualizada "
+"de vez en cuando. Para cada tipo de disparo en un juego, las tablas "
+"indicarán qué jugadores han realizado un LNN con él, si es que lo han hecho. "
+"Si un jugador tiene múltiples LNN para un solo tipo de disparo, esos no se "
+"contarán."
 
 #: lnn/lnn.php:10
 msgid ""
@@ -36,98 +42,110 @@ msgid ""
 "to have a significant impact on the difficulty of the run. As for IN, an LNN "
 "is assumed to capture all Last Spells and is referred to as LNNFS."
 msgstr ""
+"Son requeridas algunas condiciones extras para PCB, TD, HSiFS, WBaWC y UM; "
+"estas son: no perder el borde en PCB, no usar trance en TD, no usar release "
+"en HSiFS, no usar el modo rugido furioso, no interrumpir el rugido para "
+"WBaWC y no usar cartas en UM. Una LNN en estos juegos se llama LNNN o LNNNN, "
+"las N extras denotan más condiciones. La condición extra en UFO, no invocar "
+"ovnis, es opcional, ya que se considera que no tiene un impacto "
+"significativo sobre la dificultad de la partida. En IN, se considera una LNN "
+"a una partida en la que se capturan todas las Last Spells, y entonces se "
+"refiere a ella como una LNNFS."
 
 #: lnn/lnn.php:17 wr/wr.php:11
 msgid "All of the table columns are sortable."
-msgstr ""
+msgstr "Todas las columnas de la tabla son ordenables."
 
 #: lnn/lnn.php:19 tools/tools.php:14 wr/wr.php:20
 msgid "Contents"
-msgstr ""
+msgstr "Contenidos"
 
 #: lnn/lnn.php:24 lnn/lnn.php:29 lnn/lnn.php:44
 msgid "LNN Lists"
-msgstr ""
+msgstr "Listas de LNN"
 
 #: lnn/lnn.php:25 lnn/lnn.php:37 lnn/lnn.php:136
 msgid "Overall Count"
-msgstr ""
+msgstr "Conteo Total"
 
 #: lnn/lnn.php:26 lnn/lnn.php:38 lnn/lnn.php:183 wr/wr.php:30 wr/wr.php:47
 #: wr/wr.php:340
 msgid "Player Ranking"
-msgstr ""
+msgstr "Ranking del Jugador"
 
 #: lnn/lnn.php:36 lnn/lnn.php:111 wr/wr.php:42 wr/wr.php:268
 msgid "Player Search"
-msgstr ""
+msgstr "Búsqueda de Jugador"
 
 #: lnn/lnn.php:61
 msgid "(Different players)"
-msgstr ""
+msgstr "(Jugadores diferentes)"
 
 #: lnn/lnn.php:61
 msgid "Players"
-msgstr ""
+msgstr "Jugadores"
 
 #: lnn/lnn.php:89 lnn/lnn.php:171
 msgid "Overall"
-msgstr ""
+msgstr "Total"
 
 #: lnn/lnn.php:98
 msgid "Click a game cover to show its list of LNNs."
-msgstr ""
+msgstr "Haz click en un juego para mostrar su lista de LNNs."
 
 #: lnn/lnn.php:112
 msgid "Choose a player name from the menu below to show their LNNs."
 msgstr ""
+"Escoge el nombre de un jugador del menú de abajo para mostrar sus LNNs."
 
 #: lnn/lnn.php:113 lnn/lnn.php:188 wr/wr.php:65 wr/wr.php:269 wr/wr.php:299
 #: wr/wr.php:345
 msgid "Player"
-msgstr ""
+msgstr "Jugador"
 
 #: lnn/lnn.php:127 lnn/lnn.php:141 wr/wr.php:63
 msgid "Game"
-msgstr ""
+msgstr "Juego"
 
 #: lnn/lnn.php:128 wr/wr.php:67
 msgid "Shottype"
-msgstr ""
+msgstr "Tipo de disparo"
 
 #: lnn/lnn.php:129 wr/wr.php:69 wr/wr.php:286 wr/wr.php:300
 msgid "Replay"
-msgstr ""
+msgstr "Repetición"
 
 #: lnn/lnn.php:143 lnn/lnn.php:190
 msgid "No. of LNNs"
-msgstr ""
+msgstr "N° de LNNs"
 
 #: lnn/lnn.php:145
 msgid "Different players"
-msgstr ""
+msgstr "Jugadores diferentes"
 
 #: lnn/lnn.php:176
 msgid "Replays"
-msgstr ""
+msgstr "Repeticiones"
 
 #: lnn/lnn.php:193
 msgid "Games LNN'd"
-msgstr ""
+msgstr "Juegos con LNN"
 
 #: lnn/lnn.php:207 lnn/lnn.php:208
 msgid " (All Windows)"
-msgstr ""
+msgstr " Todos los juegos de Windows"
 
 #: lnn/lnn.php:215 tools/tools.php:521 wr/wr.php:371
 msgid "Back to Top"
-msgstr ""
+msgstr "Volver al inicio"
 
 #: tools/tools.php:5
 msgid ""
 "This page contains download links to all kinds of different patches or tools "
 "applicable to the official Touhou shooting games."
 msgstr ""
+"Esta página contiene enlaces de descarga para toda clase de parches o "
+"herramientas aplicables a los juegos de disparo oficiales de Touhou."
 
 #: tools/tools.php:8
 msgid ""
@@ -139,46 +157,53 @@ msgid ""
 "below (see THCRAP section). These patches will have the favicon of their "
 "site next to them."
 msgstr ""
+"Algunos de los parches también están disponibles en <a href=\"https://www."
+"thpatch.net/wiki/Touhou_Patch_Center:Servers\"><span class=\"icon thcrap_icon"
+"\"></span> Touhou Patch Center</a> y pueden ser usados mediante <a href="
+"\"https://www.thpatch.net/wiki/Touhou_Patch_Center:Download\">su parchador "
+"automático de traducciones y herramienta de modding</a>, los cuales también "
+"pueden ser descargados usando nuestro mirror más abajo (véase la sección de "
+"THCRAP). Estos parches tendrán su ícono al lado de ellos."
 
 #: tools/tools.php:18
 msgid "<strong>For Windows 10:</strong> DX8 to DX9"
-msgstr ""
+msgstr "<strong>Para Windows 10:</strong> DX8 a DX9"
 
 #: tools/tools.php:19 tools/tools.php:74
 msgid "Completed Scorefiles"
-msgstr ""
+msgstr "Archivos de puntaje completados"
 
 #: tools/tools.php:22 tools/tools.php:153
 msgid "General Practice Tools"
-msgstr ""
+msgstr "Herramientas de Práctica Generales"
 
 #: tools/tools.php:23 tools/tools.php:184
 msgid "Boss Rush Patches"
-msgstr ""
+msgstr "Parches de Boss Rush"
 
 #: tools/tools.php:24 tools/tools.php:233
 msgid "Specific Pattern Practice"
-msgstr ""
+msgstr "Prácticas para Patrones Específicos"
 
 #: tools/tools.php:25 tools/tools.php:266
 msgid "Shottype Modifications"
-msgstr ""
+msgstr "Modificaciones para Tipos de Disparo"
 
 #: tools/tools.php:26 tools/tools.php:311
 msgid "Hard Mode / Ultra Patches"
-msgstr ""
+msgstr "Parches de Modo Difícil / Ultra"
 
 #: tools/tools.php:27 tools/tools.php:370
 msgid "Graphical Patches"
-msgstr ""
+msgstr "Parches Gráficos"
 
 #: tools/tools.php:28 tools/tools.php:401
 msgid "PC-98 Emulators"
-msgstr ""
+msgstr "Emuladores de PC-98"
 
 #: tools/tools.php:29 tools/tools.php:434
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Misceláneos"
 
 #: tools/tools.php:35
 msgid ""
@@ -190,6 +215,14 @@ msgid ""
 "resolution as well.</p><p>Vpatch is applicable to all official shooting "
 "games bar HSiFS, WBaWC and UM."
 msgstr ""
+"Remueve el retraso de input, te permite incrementar los FPS dentro del juego "
+"(60 por defecto), arregla de manera opcional numerosos bugs (contador de "
+"cerezos de PCB, disparo sin enfocar de poder-3 de MarisaB en MoF, contador "
+"de puntaje de 2.147b en UFO). El retraso de input prevalece más en los "
+"juegos más viejos (EoSD a IN) y correrlos con el Vpatch mejorará la "
+"experiencia de juego de manera significativa. También te permite elegir una "
+"resolución personalizada.</p><p>Vpatch es aplicable a todos los juegos de "
+"disparo antes de HSiFS, WBaWC y UM."
 
 #: tools/tools.php:41 tools/tools.php:58 tools/tools.php:61 tools/tools.php:71
 #: tools/tools.php:81 tools/tools.php:90 tools/tools.php:168
@@ -207,7 +240,7 @@ msgstr ""
 #: tools/tools.php:495 tools/tools.php:503 tools/tools.php:511
 #: tools/tools.php:519
 msgid "Download"
-msgstr ""
+msgstr "Descarga"
 
 #: tools/tools.php:45
 msgid ""
@@ -216,6 +249,10 @@ msgid ""
 "Main_page\" target=\"_blank\"><span class=\"icon thcrap_icon\"></span> "
 "thcrap</a></h2>"
 msgstr ""
+"<h2 id=\"thcrap\">THCRAP (Parches de traducción / Herramienta de Modding)<a "
+"id=\"thcrap_link\" href=\"https://www.thpatch.net/wiki/Touhou_Patch_Center:"
+"Main_page\" target=\"_blank\"><span class=\"icon thcrap_icon\"></span> "
+"thcrap</a></h2>"
 
 #: tools/tools.php:51
 msgid ""
@@ -225,14 +262,20 @@ msgid ""
 "Patcher (THCRAP) for all Windows Touhou games. The thpatch.net link also "
 "links to instructions on how to use the patcher."
 msgstr ""
+"Parches de traducción al español y muchos otros idiomas, además de "
+"incontables modificaciones al juego, gráficos y más, además de la facultad "
+"de hacer el suyo propio, son provistos por el Touhou Community Reliant "
+"Automatic Patcher (THCRAP) para todos los juegos de Touhou de Windows. El "
+"enlace de thpatch.net también dirige a instrucciones sobre cómo usar el "
+"parche."
 
 #: tools/tools.php:61
 msgid " (maribelhearn.com mirror)"
-msgstr ""
+msgstr " (mirror de maribelhearn.com)"
 
 #: tools/tools.php:66
 msgid "DX8 to DX9 converter"
-msgstr ""
+msgstr "Convertidor de DX8 a DX9"
 
 #: tools/tools.php:68
 msgid ""
@@ -240,6 +283,9 @@ msgid ""
 "properly on Windows 10. Extract it into the folders of these games for it to "
 "take effect."
 msgstr ""
+"Hace que los juegos más viejos de la era Windows de Touhou (EOSD, PCB, IN, "
+"PoFV y StB) se ejecuten de manera correcta en Windows 10. Extraígalo en las "
+"carpetas de estos juegos para que funcione."
 
 #: tools/tools.php:76
 msgid ""
@@ -248,20 +294,29 @@ msgid ""
 "Extra Stage, every practice stage and spell in Spell Practice for all "
 "shottypes."
 msgstr ""
+"Estos son los (casi) completos archivos <span class=\"code\">score.dat</"
+"span> útiles para practicar y combinarlos con otras herramientas, ya que "
+"tienen el Nivel Extra desbloqueado, todo nivel en Modo Práctica y todas las "
+"spells desbloqueadas para practicarlas con todos los tipos de disparo."
 
 #: tools/tools.php:80
 msgid "All official shooting games aside from VD are included."
-msgstr ""
+msgstr "Todos los juegos de disparo a excepción de VD están incluidos."
 
 #: tools/tools.php:85
 msgid "<h2 id=\"thprac\">Thprac (universal practice tool by ACK)</h2>"
 msgstr ""
+"<h2 id=\"thprac\">Thprac (herramienta universal de práctica hecha por ACK)</"
+"h2>"
 
 #: tools/tools.php:87
 msgid ""
 "Single practice tool that works on all of the official Touhou shoot 'em up "
 "games, allowing you to change settings or skip to patterns at will."
 msgstr ""
+"Una herramienta de práctica que funciona en todos los juegos oficiales de "
+"disparo de Touhou, permitiéndote cambiar las opciones o saltar entre "
+"patrones a voluntad."
 
 #: tools/tools.php:95
 msgid ""
@@ -280,72 +335,90 @@ msgid ""
 "occasional menu bug that causes an SSG to duplicate itself and make other "
 "SSGs invisible."
 msgstr ""
+"Programa japonés que permite cargar archivos en formato <span class=\"code"
+"\">.ssg</span> que modifican el juego mientras se está ejecutando, otorgando "
+"opciones para practicar, como también usar trampas. Los SSG de SpoilerAL "
+"requieren la <em>versión original en japonés</em> de los juegos para "
+"funcionar. Los SSG de 4.6 tienen opciones de práctica como saltar a un frame "
+"específico del juego o una spell específica, mientras que los SSG de niL "
+"tienen opciones de trampa como invencibilidad. También hay un SSG de MoF "
+"aparte, creado por <a href=\"https://www.twitch.tv/akaldar\" target=\"_blank"
+"\">Akaldar</a> para practicar eficientemente en este juego, un SSG de GFW "
+"aparte, como también un SSG de TD específicamente diseñado para practicar "
+"eficientemente por puntuación, hecho por Leo, un SSG de DDC y un SSG de "
+"práctica de capítulos de LoLK por<a href=\"https://www.youtube.com/channel/"
+"UChyVpooBi31k3xPbWYsoq3w\" target=\"_blank\">32th System</a>, y un SSG de "
+"HSiFS aparte, con opciones de trampa. Sea cauteloso con un bug ocasional en "
+"el menú del programa que causa que un SSG se duplique a sí mismo y deje a "
+"los otros SSG invisibles."
 
 #: tools/tools.php:107
 msgid "Main Program"
-msgstr ""
+msgstr "Programa"
 
 #: tools/tools.php:108
 msgid "SSG Pack (4.6)"
-msgstr ""
+msgstr "Paquete de SSG (4.6)"
 
 #: tools/tools.php:115
 msgid "SSG Pack (niL)"
-msgstr ""
+msgstr "Paquete de SSG (niL)"
 
 #: tools/tools.php:118
 msgid "SSG Pack (LET)"
-msgstr ""
+msgstr "Paquete de SSG (LET)"
 
 #: tools/tools.php:121
 msgid "SSG Pack (niL, English translated)"
-msgstr ""
+msgstr "Paquete de SSG (niL, Traducido al inglés)"
 
 #: tools/tools.php:124
 msgid "MoF SSG by Akaldar"
-msgstr ""
+msgstr "SSG para MoF por Akaldar"
 
 #: tools/tools.php:127
 msgid "GFW SSG (English translated)"
-msgstr ""
+msgstr "SSG para GFW (Traducido al inglés)"
 
 #: tools/tools.php:130
 msgid "TD Scoring SSG by Leo (English translated)"
-msgstr ""
+msgstr "SSG para puntuar en TD por Leo (Traducido al inglés)"
 
 #: tools/tools.php:133
 msgid "HSiFS Scoring SSG by Sonitsuku"
-msgstr ""
+msgstr "SSG para puntuar en HSiFS por Sonitsuku"
 
 #: tools/tools.php:136
 msgid "DDC SSG by 32th System"
-msgstr ""
+msgstr "SSG para DDC por 32th System"
 
 #: tools/tools.php:139
 msgid "LoLK SSG by CreepyNinja"
-msgstr ""
+msgstr "SSG para LoLK por CreepyNinja"
 
 #: tools/tools.php:142
 msgid "LoLK Chapter Practice SSG by 32th System"
-msgstr ""
+msgstr "SSG para practicar capítulos en LoLK por 32th System"
 
 #: tools/tools.php:145
 msgid "HSiFS SSG (cheats, English translated)"
-msgstr ""
+msgstr "SSG para HSiFS (Trampas, Traducido al inglés)"
 
 #: tools/tools.php:148
 msgid "Alternative HSiFS SSG (English translated)"
-msgstr ""
+msgstr "SSG alternativo para HSiFS (Traducido al inglés)"
 
 #: tools/tools.php:155
 msgid ""
 "Patches intended for efficient practice in one or more games, allowing the "
 "player to skip to patterns or changing power and such."
 msgstr ""
+"Parches destinados a la práctica eficiente en uno o más juegos, permitiendo "
+"al jugador saltarse patrones o cambiar el poder, entre otras cosas."
 
 #: tools/tools.php:158
 msgid "Practice Tools by "
-msgstr ""
+msgstr "Herramientas de práctica por "
 
 #: tools/tools.php:160
 msgid ""
@@ -355,20 +428,27 @@ msgid ""
 "The LoLK one was made for v1.00a but mostly functions properly on v1.00b as "
 "well."
 msgstr ""
+"Herramientas que permiten saltarte patrones específicos en SA, UFO y LoLK, "
+"también permitiendo otras opciones como tu poder actual. Las herramientas "
+"para UFO y LoLK son programas externos, mientras que la herramienta para SA "
+"es una modificación del juego. La herramienta de LoLK fue creada para la "
+"versión v1.00a, pero también funciona en la versión v1.00b."
 
 #: tools/tools.php:170
 msgid "WBaWC Practice by "
-msgstr ""
+msgstr "Práctica de WBaWC por "
 
 #: tools/tools.php:172
 msgid ""
 "Allows skipping to any part of the game, similar to Riri's practice tools, "
 "using an in-game menu."
 msgstr ""
+"Permite saltar a cualquier parte del juego, similar a las herramientas de "
+"práctica de Riri, usando un menú dentro del juego."
 
 #: tools/tools.php:175
 msgid "GFW \"Brown Label\" Practice by "
-msgstr ""
+msgstr "Práctica de GFW “Brown Label” por "
 
 #: tools/tools.php:177
 msgid ""
@@ -377,6 +457,10 @@ msgid ""
 "practice, B for midboss and boss and C for boss only. Refer to the readme "
 "file for further information."
 msgstr ""
+"Archivos <span class=\"code\">.dat</span> modificados que te permiten "
+"practicar niveles específicos de cualquier ruta en el juego. Selecciona A "
+"dentro del juego para práctica de nivel completo, B para subjefes y jefes y "
+"C para solo jefes. Revisa el archivo Léeme para más información."
 
 #: tools/tools.php:186
 msgid ""
@@ -384,20 +468,26 @@ msgid ""
 "games that skip stage portions, allowing you to efficiently practice boss "
 "battles. The skipping applies to both full runs and practice runs."
 msgstr ""
+"Modificaciones a los archivos <span class=\"code\">.dat</span> principales "
+"de los juegos que salta las secciones de nivel, permitiendo practicar las "
+"batallas de jefe de manera eficiente. Este salto aplica a partidas completas "
+"y de práctica."
 
 #: tools/tools.php:190 tools/tools.php:211
 msgid "Boss Rush Patches by "
-msgstr ""
+msgstr "Parches Boss Rush por "
 
 #: tools/tools.php:192
 msgid ""
 "All midbosses and bosses are included, everything else being kept the same. "
 "There are also 'boss-only' versions that do skip the midbosses."
 msgstr ""
+"Todas las subjefas y jefas están incluidas, el resto se mantiene igual. Hay "
+"también versiones con \"solo jefas\" que se saltan las subjefas."
 
 #: tools/tools.php:196
 msgid "Full Pack"
-msgstr ""
+msgstr "Paquete Completo"
 
 #: tools/tools.php:213
 msgid ""
@@ -406,48 +496,55 @@ msgid ""
 "every single one of her Spell Cards. Note that the safe areas on Border of "
 "Wave and Particle and Utsuho's 3rd spell are removed in this patch."
 msgstr ""
+"Parches para SA y UFO que no solo remueven las secciones de nivel, también "
+"las bombas. El parche para SA convierte el nivel 4 en Satori Rush donde te "
+"enfrentarás a cada una de sus Spell Cards. Tenga en cuenta que las zonas "
+"seguras en Recolección «Límite entre Onda y Partícula» y la tercera spell de "
+"Utsuho fueron removidas en este parche."
 
 #: tools/tools.php:222
 msgid "EoSD Boss Rush by "
-msgstr ""
+msgstr "Boss Rush de EoSD por "
 
 #: tools/tools.php:223
 msgid "Another boss rush patch for EoSD, also including 'Patchouli Rush'."
-msgstr ""
+msgstr "Otro parche de Boss Rush de EoSD, que incluye un \"Patchouli Rush\"."
 
 #: tools/tools.php:225
 msgid "PCB Boss Rush by rsy_type1 and "
-msgstr ""
+msgstr "Boss Rush de PCB por rsy_type1 y "
 
 #: tools/tools.php:226
 msgid "A boss rush patch for PCB."
-msgstr ""
+msgstr "Un parche de Boss Rush de PCB."
 
 #: tools/tools.php:228
 msgid "WBaWC Boss Rush by "
-msgstr ""
+msgstr "Boss Rush de WBaWC por "
 
 #: tools/tools.php:229
 msgid "A boss rush patch for WBaWC."
-msgstr ""
+msgstr "Un parche de Boss Rush de WBaWC."
 
 #: tools/tools.php:235
 msgid ""
 "Patches intended for practicing one or a few specific patterns in a game. "
 "Usually <span class=\"code\">.dat</span> modifications."
 msgstr ""
+"Parches destinados a practicar uno o más patrones específicos en un juego. "
+"Usualmente modificaciones de archivo <span class=\"code\">.dat</span>."
 
 #: tools/tools.php:238
 msgid "Books Practice for EoSD by "
-msgstr ""
+msgstr "Práctica de los libros en EoSD por "
 
 #: tools/tools.php:239
 msgid "Repeats the Stage 4 Books section for easy practicing."
-msgstr ""
+msgstr "Repite la sección de los libros en el Nivel 4 para práctica sencilla."
 
 #: tools/tools.php:241
 msgid "VoWG + PWG Practice for MoF by "
-msgstr ""
+msgstr "Práctica de VoWG + PWG de MoF por "
 
 #: tools/tools.php:243
 msgid ""
@@ -455,18 +552,21 @@ msgid ""
 "to Peerless Wind God (her timeout spell), which will also repeat itself "
 "indefinitely."
 msgstr ""
+"Hace que Kanako salte a «Virtudes Divinas de la Diosa del Viento» (su spell "
+"final) y Aya salte a «Diosa del Viento Inigualable» (su spell de timeout), "
+"la cual se repetirá indefinidamente."
 
 #: tools/tools.php:248
 msgid "IN Nonspell Practice"
-msgstr ""
+msgstr "Práctica de Nonspells de IN"
 
 #: tools/tools.php:249
 msgid "Patch that lets you practice nonspells in IN."
-msgstr ""
+msgstr "Parche que permite practicar nonspells en IN."
 
 #: tools/tools.php:251
 msgid "Timeout Phase Collection by "
-msgstr ""
+msgstr "Colección de Fases de Timeout por "
 
 #: tools/tools.php:253
 msgid ""
@@ -474,88 +574,93 @@ msgid ""
 "Extra from MoF to HSiFS, plus Devil's Recitation, but not including GFW "
 "Stage 3 final spells."
 msgstr ""
+"Parches para practicar las fases de timeout de las spells finales en Lunatic "
+"y Extra, más «Recital Diabólico», pero sin incluir las spells finales del "
+"nivel 3 de GFW."
 
 #: tools/tools.php:258
 msgid "MoF to LoLK"
-msgstr ""
+msgstr "MoF a LoLK"
 
 #: tools/tools.php:261
 msgid "HSiFS season finals and Extra final"
-msgstr ""
+msgstr "Spells finales de HSiFS por estación y spell final del Extra"
 
 #: tools/tools.php:267
 msgid "MoF Reisen by "
-msgstr ""
+msgstr "Reisen en MoF por "
 
 #: tools/tools.php:268
 msgid "Replaces ReimuC with Reisen in MoF."
-msgstr ""
+msgstr "Reemplaza a ReimuC por Reisen en MoF."
 
 #: tools/tools.php:270
 msgid "UFO Tsubakura mod by "
-msgstr ""
+msgstr "Tsubakura en UFO por "
 
 #: tools/tools.php:273
 msgid ""
 "Replaces both Reimu shottypes in UFO with Tsubakura shottypes, a character "
 "from the Len'en series. Also changes the dialogues and endings."
 msgstr ""
+"Reemplaza ambos disparos de Reimu en UFO por disparos de Tsubakura, "
+"personaje de Len'en Project. También cambia los diálogos y finales."
 
 #: tools/tools.php:277
 msgid "DDC Sanae by "
-msgstr ""
+msgstr "Sanae en DDC por "
 
 #: tools/tools.php:280
 msgid "Replaces ReimuB with Sanae in DDC."
-msgstr ""
+msgstr "Reemplaza a ReimuB por Sanae en DDC."
 
 #: tools/tools.php:283
 msgid "HSiFS Sanae by "
-msgstr ""
+msgstr "Sanae en HSiFS por "
 
 #: tools/tools.php:286
 msgid "Replaces Marisa with Sanae in HSiFS."
-msgstr ""
+msgstr "Reemplaza a Marisa por Sanae en HSiFS."
 
 #: tools/tools.php:289
 msgid "LoLK Sakuya by "
-msgstr ""
+msgstr "Sakuya en LoLK por "
 
 #: tools/tools.php:292
 msgid "Replaces Reisen with Sakuya in LoLK."
-msgstr ""
+msgstr "Reemplaza a Reisen por Sakuya en LoLK."
 
 #: tools/tools.php:295
 msgid "TD Yuuka by "
-msgstr ""
+msgstr "Yuuka en TD por "
 
 #: tools/tools.php:297
 msgid "Replaces Marisa with Yuuka in TD. Also changes the dialogues."
-msgstr ""
+msgstr "Reemplaza a Marisa por Yuuka en TD. También cambia los disparos."
 
 #: tools/tools.php:300
 msgid "DS Seija by "
-msgstr ""
+msgstr "Seija en DS por "
 
 #: tools/tools.php:301
 msgid "Replaces Aya in DS with Seija, including when she shows up as a boss."
-msgstr ""
+msgstr "Reemplaza a Aya en DS con Seija, incluyendo cuando aparece como jefa."
 
 #: tools/tools.php:303
 msgid "WBaWC (Demo) Reisen by "
-msgstr ""
+msgstr "Reisen en la Demo de WBaWC por "
 
 #: tools/tools.php:304
 msgid "Replaces ReimuOtter with Reisen in the WBaWC demo."
-msgstr ""
+msgstr "Reemplaza a Reimu Nutria por Reisen en la demo de WBaWC."
 
 #: tools/tools.php:306
 msgid "WBaWC Narumi by "
-msgstr ""
+msgstr "Narumi en WBaWC por "
 
 #: tools/tools.php:307
 msgid "Adds Narumi to WBaWC as a shottype."
-msgstr ""
+msgstr "Añade a Narumi a WBaWC como un disparo."
 
 #: tools/tools.php:313
 msgid ""
@@ -564,58 +669,71 @@ msgid ""
 "change the actual patterns. The main Ultra patch collection includes the "
 "games up to ISC."
 msgstr ""
+"Parches que incrementan la densidad y velocidad de las balas a través de "
+"todo el juego, a la vez entregándote autobombas para compensar. Los parches "
+"en Modo Difícil también cambian los patrones del juego. La colección "
+"principal de parches Ultra incluye los juegos hasta ISC."
 
 #: tools/tools.php:318
 msgid "Main Ultra Patches"
-msgstr ""
+msgstr "Parches Principales Ultra"
 
 #: tools/tools.php:319
 msgid "Alternate EoSD Ultra"
-msgstr ""
+msgstr "Ultra EoSD alternativo"
 
 #: tools/tools.php:321
 msgid "Hard Mode patches by "
-msgstr ""
+msgstr "Parches Modo Difícil por "
 
 #: tools/tools.php:322
 msgid ""
 "Patches for UFO and DDC that modify patterns, besides simply making them "
 "harder."
 msgstr ""
+"Parches para UFO y DDC que modifican patrones, además de aumentar la "
+"dificultad de estos."
 
 #: tools/tools.php:327
 msgid "RNG patches by "
-msgstr ""
+msgstr "Parches RNG por "
 
 #: tools/tools.php:330
 msgid ""
 "A collection of modified <span class=\"code\">.dat</span> files that "
 "randomise the patterns in the game."
 msgstr ""
+"Colección de archivos <span class=\"code\">.dat</span> modificados que "
+"aleatoriza los patrones en el juego."
 
 #: tools/tools.php:335
 msgid ""
 "A Chinese Ultra patch for LoLK, which does <em>not</em> have autobomb, but "
 "it doubles your shot power instead."
 msgstr ""
+"Un parche chino Ultra para LoLK, el cual <em>no</em> tiene auto-bomba, pero "
+"duplica el poder de tu disparo."
 
 #: tools/tools.php:339
 msgid "IN Double Stage "
-msgstr ""
+msgstr "IN Nivel Doble "
 
 #: tools/tools.php:341
 msgid ""
 "Allows you to play 4A, 4B, 6A and 6B in a single run. Optionally also "
 "includes Extra at the end."
 msgstr ""
+"Te permite jugar 4A, 4B, 6A y 6B en una sola partida. Opcionalmente incluye "
+"el extra al final."
 
 #: tools/tools.php:347
 msgid "HSiFS UltraB by "
-msgstr ""
+msgstr "HSiFS UltraB por "
 
 #: tools/tools.php:349
 msgid "An alternate HSiFS Ultra patch that also increases density."
 msgstr ""
+"Un parche alternativo de HSiFS Ultra que también incrementa la densidad."
 
 #: tools/tools.php:355
 msgid ""
@@ -623,10 +741,13 @@ msgid ""
 "bosses of both games.It removes all stage portions, effectively making it a "
 "boss rush, and also combines the HUDs of both games."
 msgstr ""
+"Combina LoLK con DDC, haciendo cada pelea de jefe una pelea contra los jefes "
+"de ambos juegos. Remueve todas las secciones de nivel, efectivamente "
+"convirtiéndolo en un boss rush, también combina los HUD de ambos juegos."
 
 #: tools/tools.php:359
 msgid "OC Patches by "
-msgstr ""
+msgstr "Parches OC por "
 
 #: tools/tools.php:362
 msgid ""
@@ -636,52 +757,64 @@ msgid ""
 "another patch with the same OC replacement and pattern modding for VD on the "
 "Okina scenes on the same download page."
 msgstr ""
+"Versión remasterizada del nivel 6 y una versión más difícil del extra en "
+"HSiFS, incluyendo a un personaje original reemplazando a Okina y una "
+"historia alternativa junto con cambios a los patrones, tipos de balas, "
+"música de nivel y gráficos. Hay otro parche con el mismo cambio de OC y "
+"modificaciones de patrones para VD en la escenas de Okina en la misma página "
+"de descargas."
 
 #: tools/tools.php:367 tools/tools.php:431
 msgid "Downloads"
-msgstr ""
+msgstr "Descargas"
 
 #: tools/tools.php:372
 msgid ""
 "Modifications to the main <span class=\"code\">.dat</span> files of the "
 "games that change the way the game looks."
 msgstr ""
+"Modificaciones a los principales archivos <span class=\"code\">.dat</span> "
+"de los juegos que cambian cómo se ven."
 
 #: tools/tools.php:375
 msgid "Graphical Patches by "
-msgstr ""
+msgstr "Parches gráficos por "
 
 #: tools/tools.php:377
 msgid ""
 "Includes PCB and HSiFS in MS Paint style, an emoji-themed version of UFO and "
 "a Christmas-themed version of LoLK."
 msgstr ""
+"Incluye PCB y HSiFS en estilo MS Paint, una versión temática emoji de UFO y "
+"una versión navideña de LoLK."
 
 #: tools/tools.php:382
 msgid "Paint Cherry Blossom"
-msgstr ""
+msgstr "Paint Cherry Blossom"
 
 #: tools/tools.php:385
 msgid "Painting Stars in Four Seasons"
-msgstr ""
+msgstr "Painting Stars in Four Seasons"
 
 #: tools/tools.php:388
 msgid "Undefined Fantastic Emoji"
-msgstr ""
+msgstr "Undefined Fantastic Emoji"
 
 #: tools/tools.php:391
 msgid "Legacy of Lunatic Christmas"
-msgstr ""
+msgstr "Legacy of Lunatic Christmas"
 
 #: tools/tools.php:394
 msgid "Vertical Play Patches by "
-msgstr ""
+msgstr "Parches de Juego Vertical por "
 
 #: tools/tools.php:396
 msgid ""
 "Makes MoF, SA, UFO and TD play in the arcade-style vertical resolution, also "
 "known as TATE."
 msgstr ""
+"Hace que MoF, SA, UFO y TD se jueguen en el estilo de resolución arcade "
+"vertical conocido como TATE."
 
 #: tools/tools.php:404
 msgid ""
@@ -690,6 +823,11 @@ msgid ""
 "configurations; can be confusing for new users. The emulator is located in "
 "the bin folder with two versions, 32-bit and 64-bit (x64)."
 msgstr ""
+"El único emulador que sigue recibiendo mantenimiento junto con DOSBox-X. "
+"Ofrece ilimitados savestates y tiene una alta precisión, pero requiere las "
+"configuraciones adecuadas; puede ser confuso para nuevos usuarios. El "
+"emulador se ubica en la carpeta bin con dos versiones, 32-bits y 64-bits "
+"(x64)."
 
 #: tools/tools.php:411
 msgid ""
@@ -697,6 +835,9 @@ msgid ""
 "needing configuration of any kind, but less feature-rich, and allows 8 "
 "active savestates at a time, 4 of which through hotkeys."
 msgstr ""
+"Emulador fácil de usar que emula los juegos de Touhou de manera correcta sin "
+"requerir configuración de ningún tipo, pero con menos características, y "
+"permite tener 8 savestates al mismo tiempo, 4 de los cuales son por hotkeys."
 
 #: tools/tools.php:417
 msgid ""
@@ -705,10 +846,15 @@ msgid ""
 "requires proper configuration to be accurate. Allows for 8 savestates and "
 "requires a separate font file, linked below."
 msgstr ""
+"Este emulador tiene bajos requerimientos del sistema y puede correr en "
+"computadoras muy viejas. Sin embargo las gráficas son mediocres y la "
+"emulación de sonido requiere una configuración correcta para ser precisa. "
+"Permite 8 savestates y requiere un archivo de fuente, enlace para descargar "
+"abajo."
 
 #: tools/tools.php:423
 msgid "Font"
-msgstr ""
+msgstr "Fuente"
 
 #: tools/tools.php:427
 msgid ""
@@ -716,10 +862,14 @@ msgid ""
 "emulator to run natively under not only Windows, but also Mac and Linux. A "
 "list of downloads for each system can be found via the link below."
 msgstr ""
+"Una variación del proyecto DOSBox que tiene soporte para PC-98. Es el único "
+"emulador que puede correr no solo en Windows, sino también en Mac y Linux. "
+"Una lista de descargas para cada sistema se puede encontrar en el enlace de "
+"abajo."
 
 #: tools/tools.php:435
 msgid "Real Time DRC Points Displayer by "
-msgstr ""
+msgstr "Contador en tiempo real de puntos DRC por "
 
 #: tools/tools.php:437
 msgid ""
@@ -727,18 +877,21 @@ msgid ""
 "<a href=\"drc\">DRC</a> points for both survival and scoring during a Touhou "
 "run."
 msgstr ""
+"Una herramienta que rastrea datos dentro del juego como muertes, bombas, "
+"etc. Calculando puntos <a href=\"drc\">DRC</a> para supervivencia y "
+"puntuación durante una sesión de Touhou."
 
 #: tools/tools.php:441
 msgid "MS Black Label by "
-msgstr ""
+msgstr "MS Black Label por "
 
 #: tools/tools.php:442
 msgid "Increases the graze cap from 999 to 65536."
-msgstr ""
+msgstr "Incrementa el límite de graze de 999 a 65536."
 
 #: tools/tools.php:444
 msgid "EoSD Capture History Tracker by "
-msgstr ""
+msgstr "Rastreador de Historial de Capturas de EoSD por "
 
 #: tools/tools.php:446
 msgid ""
@@ -746,46 +899,53 @@ msgid ""
 "spells in EoSD. Includes Stage 4 Books and Play Time tracking, as well as "
 "allowing for multiple save files."
 msgstr ""
+"Herramienta de línea de comando que te permite rastrear cuántas veces has "
+"capturado spells en EoSD. Incluye los libros del nivel 4 y rastreo de tiempo "
+"de juego, también permite uso en múltiples archivos de guardado."
 
 #: tools/tools.php:454
 msgid "PoFV Play Time Recorder by "
-msgstr ""
+msgstr "Contador de tiempo de juego de PoFV por "
 
 #: tools/tools.php:456
 msgid "Keeps track of your play time in PoFV."
-msgstr ""
+msgstr "Toma cuenta del tiempo de juego en PoFV."
 
 #: tools/tools.php:458
 msgid "PoFV Replay Save Crash Fixer"
-msgstr ""
+msgstr "Arreglo del crasheo de guardado de repeticiones de PoFV"
 
 #: tools/tools.php:460
 msgid ""
 "Launching this alongside the game fixes the bug that makes the game crash "
 "whenever you save a replay."
 msgstr ""
+"Ejecutando esto junto al juego arregla el bug que hace que se congele cada "
+"vez que guardas una repetición."
 
 #: tools/tools.php:463
 msgid "TD Arrange Patch by "
-msgstr ""
+msgstr "Parche de arreglos de TD por "
 
 #: tools/tools.php:465
 msgid ""
 "Modification of TD that removes the invincibility from trances, instead "
 "allowing you to use them starting at 1/3 full gauge."
 msgstr ""
+"Modificación de TD que remueve la invulnerabilidad de los trances, en vez de "
+"ello te permite usarlos comenzando a 1/3 del medidor lleno."
 
 #: tools/tools.php:473
 msgid "HSiFS Max Season Start by "
-msgstr ""
+msgstr "Inicio de estación máxima en HSiFS por "
 
 #: tools/tools.php:476
 msgid "Lets you start with your season level at 6."
-msgstr ""
+msgstr "Te permite iniciar con tu estación al nivel 6."
 
 #: tools/tools.php:480
 msgid "Polished Shooting Star by "
-msgstr ""
+msgstr "Polished Shooting Star by "
 
 #: tools/tools.php:483
 msgid ""
@@ -795,40 +955,47 @@ msgid ""
 "extremely fast until a full run is played or a replay of one of certain "
 "stages is watched."
 msgstr ""
+"Te permite jugar el fangame Shining Shooting Star sin necesitar cambiar tu "
+"locale a Chino. Tomar en cuenta que no arregla el bug de velocidad de "
+"patrones que usaban una coma para decimales, lo cual hace que ciertos "
+"patrones sean demasiado rápidos hasta que una sesión completa se ha jugado o "
+"una repetición de ciertos niveles se ha visto."
 
 #: tools/tools.php:490
 msgid "Input Display by "
-msgstr ""
+msgstr "Muestra de Input por "
 
 #: tools/tools.php:493
 msgid "Shows your button presses. Works on both gameplay and replays."
-msgstr ""
+msgstr "Muestra los botones que aprietas, funciona en juego y repeticiones."
 
 #: tools/tools.php:497
 msgid "LoLK Pointdevice no power loss by "
-msgstr ""
+msgstr "LoLK Modo Perfecto sin pérdida de poder por "
 
 #: tools/tools.php:500
 msgid ""
 "Disables the 0.01 power loss mechanic of Pointdevice Mode in LoLK, making "
 "sure you never lose power upon restarting a chapter."
 msgstr ""
+"Deshabilita la pérdida de 0.01 de poder del Modo Perfecto en LoLK, "
+"asegurándote que nunca pierdas poder al reiniciar un capítulo."
 
 #: tools/tools.php:505
 msgid "HSiFS UFO mod by "
-msgstr ""
+msgstr "Mod de UFO para HSiFS "
 
 #: tools/tools.php:509
 msgid "Adds UFOs to HSiFS."
-msgstr ""
+msgstr "Añade ovnis a HSiFS."
 
 #: tools/tools.php:513
 msgid "WBaWC score cap mod by "
-msgstr ""
+msgstr "Modificación de puntuación en WBaWC por "
 
 #: tools/tools.php:517
 msgid "Allows the in-game score counter to exceed 9,999,999,990 points."
-msgstr ""
+msgstr "Le permite al contador del juego exceder los 9,999,999,990 puntos."
 
 #: wr/wr.php:5
 msgid ""
@@ -837,87 +1004,99 @@ msgid ""
 "specific records are, only numbers. The list does not include scene games as "
 "of now."
 msgstr ""
+"Una lista correcta de Récords Mundiales de Touhou, actualizada con "
+"frecuencia. Como nota, la clasificación de jugadores en la parte inferior no "
+"toma en consideración que tan altos son ciertos récords, solo números. La "
+"lista no incluye los juegos por escena por ahora."
 
 #: wr/wr.php:10
 msgid ""
 "Click a score to download the corresponding replay, if there is one "
 "available. "
 msgstr ""
+"Elige una puntuación para descargar la correspondiente repetición, si hay "
+"una disponible "
 
 #: wr/wr.php:14
 msgid ""
 "The replays provided are <strong>not</strong> meant to be reuploaded to any "
 "replay uploading services."
 msgstr ""
+"Las repeticiones proporcionadas <strong>no</strong> son intencionadas para "
+"resubir a otro servicio de repeticiones."
 
 #: wr/wr.php:17
 msgid ""
 "If you toggle Unverified Scores, this will show scores that are higher than "
 "the World Record, but lack replay or video proof."
 msgstr ""
+"Si activas Puntuaciones Sin Verificar, esto mostrará puntuaciones más altas "
+"que el Récord Mundial, pero no tienen pruebas de repetición o video."
 
 #: wr/wr.php:25 wr/wr.php:26 wr/wr.php:34 wr/wr.php:35 wr/wr.php:59
 #: wr/wr.php:99
 msgid "Overall Records"
-msgstr ""
+msgstr "Récords Generales"
 
 #: wr/wr.php:27 wr/wr.php:36 wr/wr.php:118
 msgid "World Records"
-msgstr ""
+msgstr "Récords Mundiales"
 
 #: wr/wr.php:28 wr/wr.php:29 wr/wr.php:43 wr/wr.php:45 wr/wr.php:294
 #: wr/wr.php:322
 msgid "Recent Records"
-msgstr ""
+msgstr "Récords Recientes"
 
 #: wr/wr.php:41 wr/wr.php:214
 msgid "Western Records"
-msgstr ""
+msgstr "Récords Occidentales"
 
 #: wr/wr.php:55
 msgid "Dates"
-msgstr ""
+msgstr "Fechas"
 
 #: wr/wr.php:64 wr/wr.php:285 wr/wr.php:298
 msgid "Score"
-msgstr ""
+msgstr "Puntuación"
 
 #: wr/wr.php:66
 msgid "Difficulty"
-msgstr ""
+msgstr "Dificultad"
 
 #: wr/wr.php:68 wr/wr.php:287 wr/wr.php:301
 msgid "Date"
-msgstr ""
+msgstr "Fecha"
 
 #: wr/wr.php:217
 msgid "World"
-msgstr ""
+msgstr "Mundo"
 
 #: wr/wr.php:218
 msgid "West"
-msgstr ""
+msgstr "Occidente"
 
 #: wr/wr.php:218
 msgid "Percentage"
-msgstr ""
+msgstr "Porcentaje"
 
 #: wr/wr.php:247
 msgid "Click a game cover to show its list of world records."
-msgstr ""
+msgstr "Da click en una portada de juego para mostrar sus récords mundiales."
 
 #: wr/wr.php:268
 msgid "Choose a player name from the menu below to show their WRs."
 msgstr ""
+"Elige un nombre de jugador del siguiente menú para mostrar sus récords "
+"mundiales."
 
 #: wr/wr.php:284 wr/wr.php:297
 msgid "Category"
-msgstr ""
+msgstr "Categoría"
 
 #: wr/wr.php:346
 msgid "No. of WRs"
-msgstr ""
+msgstr "Número de récords mundiales"
 
 #: wr/wr.php:347
 msgid "Different games"
-msgstr ""
+msgstr "Juegos diferentes"
