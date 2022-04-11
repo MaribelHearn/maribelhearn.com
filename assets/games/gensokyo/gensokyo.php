@@ -73,7 +73,7 @@
                     }
                     foreach (glob('replays/gensokyo/' . $key . '/*.rpy') as $file) {
                         if ($found === 0) {
-                            echo '<table id="replays" class="sortable"><thead><tr><th class="general_header">Player</th><th class="general_header">Category</th>' .
+                            echo '<div class="overflow"><table id="replays" class="sortable"><thead><tr><th class="general_header">Player</th><th class="general_header">Category</th>' .
                             '<th class="general_header">Score</th><th class="general_header sorttable_mmdd">Date added</th><th class="general_header">Type</th>' .
                             '<th class="general_header">Conditions</th><th class="general_header">Download</th></tr></thead><tbody>';
                         }
@@ -97,7 +97,7 @@
                 }
             }
             if ($found > 0) {
-                echo '</tbody></table>';
+                echo '</tbody></table></div>';
             } else if (input_validity() == 2) {
                 echo '<p>No replays found.</p>';
             } else if (input_validity() == 1) {
