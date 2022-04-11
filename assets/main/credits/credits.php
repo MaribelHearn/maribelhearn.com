@@ -33,6 +33,11 @@
     <ul class='credits'>
         <li><a href='https://twitter.com/Kawaii_Shadowii'>Kawaii_Shadowii</a>: DRC, Tools, WR, LNN</li>
     </ul>
+    <h3><span class='icon flag_spain'></span> <?php echo _('Spanish') ?></h3>
+    <ul class='credits'>
+        <li><a href='https://twitter.com/POfBoundaries'>Paradise of Boundaries</a>: Tools, WR, LNN</li>
+        <li class='sub_li'>Contributing members: Chise, Roka Enzaki, Fumiko, Wolfytonio</li>
+    </ul>
     <h2><?php echo _('Character Artists') ?></h2>
     <ul class='credits'>
         <li><a href='https://www.pixiv.net/member.php?id=4920496' target='_blank'>Dairi:</a> Tiers, Slots</li>
