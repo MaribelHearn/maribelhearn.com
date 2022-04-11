@@ -29,6 +29,9 @@ a:link.dropdown_button {
 a:visited.dropdown_button {
     color: black;
 }
+.language {
+    margin-left: 3px;
+}
 .icon {
     background-image: url('/assets/shared/spritesheets/icon_sheet.png');
     display: inline-block;
