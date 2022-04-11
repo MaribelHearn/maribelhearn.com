@@ -54,7 +54,7 @@ function format_conditions($conditions, string $category) {
         $conditions = preg_split('/,/', $conditions);
         foreach ($conditions as $key => $cond) {
             $cond_name = condition_name($cond);
-            $result .= '<img src="/assets/gensokyo/gif/' . $cond . '.gif" width="20" height="20" alt="' . $cond_name . '" title="' . $cond_name . '">';
+            $result .= '<img src="assets/games/gensokyo/gif/' . $cond . '.gif" width="20" height="20" alt="' . $cond_name . '" title="' . $cond_name . '">';
         }
     }
     return $result;
