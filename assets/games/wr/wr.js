@@ -1,6 +1,6 @@
 /*global $ WRs westScores unverifiedScores MAX_SCORE getCookie setCookie deleteCookie gameAbbr shottypeAbbr
 sep fullNameNumber generateTableText generateFullNames generateShottypes generateShortNames*/
-var  missingReplays, seasonsEnabled, datesEnabled, unverifiedEnabled, language = "en-GB", selected = "",
+var  missingReplays, seasonsEnabled, datesEnabled, unverifiedEnabled, language = "en_GB", selected = "",
     all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN",
     "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
 
@@ -570,6 +570,7 @@ function setEventListeners() {
     $("#zh").on("click", {language: "zh_CN"}, setLanguage);
     $("#ru").on("click", {language: "ru_RU"}, setLanguage);
     $("#de").on("click", {language: "de_DE"}, setLanguage);
+    $("#es").on("click", {language: "es_ES"}, setLanguage);
     $(".game_img").on("click", showWRs);
 }
 
@@ -588,10 +589,12 @@ $(document).ready(function () {
         language = "ja_JP";
     } else if (getCookie("lang") == "zh_CN" || location.href.includes("?hl=zh")) {
         language = "zh_CN";
-    } else if (getCookie("lang") == "de_DE" || location.href.includes("?hl=de")) {
-        language = "de_DE";
     } else if (getCookie("lang") == "ru_RU" || location.href.includes("?hl=ru")) {
         language = "ru_RU";
+    } else if (getCookie("lang") == "de_DE" || location.href.includes("?hl=de")) {
+        language = "de_DE";
+    } else if (getCookie("lang") == "es_ES" || location.href.includes("?hl=es")) {
+        language = "es_ES";
     } else if (getCookie("lang") == "en_US" || location.href.includes("?hl=en-us")) {
         language = "en_US";
     }

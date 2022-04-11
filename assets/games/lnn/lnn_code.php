@@ -12,12 +12,12 @@ $flag = array();
 $missing_replays = array();
 $video_lnns = array();
 $gt = 0;
+
 function lnn_type(string $game, string $lang) {
-    if ($lang == 'zh_CN') {
+    /*if ($lang == 'zh_CN') {
         switch ($game) {
             case 'PCB': return 'LNNN的数量';
             case 'IN': return 'LNNFS的数量';
-            case 'UFO': return 'LNN的数量';
             case 'TD': return 'LNNN的数量';
             case 'HSiFS': return 'LNNN的数量';
             case 'WBaWC': return 'LNNNN的数量';
@@ -28,39 +28,64 @@ function lnn_type(string $game, string $lang) {
         switch ($game) {
             case 'PCB': return 'LNNNの数';
             case 'IN': return 'LNNFSの数';
-            case 'UFO': return 'LNNの数';
             case 'TD': return 'LNNNの数';
             case 'HSiFS': return 'LNNNの数';
             case 'WBaWC': return 'LNNNNの数';
             case 'UM': return 'LNNNの数';
             default: return 'LNNの数';
         }
-    } else { // English or Russian
+    } else if ($lang == 'de_DE') {
         switch ($game) {
-            case 'PCB': return 'No. of LNNNs';
-            case 'IN': return 'No. of LNNFSs';
-            case 'UFO': return 'No. of LNN(N)s';
-            case 'TD': return 'No. of LNNNs';
-            case 'HSiFS': return 'No. of LNNNs';
-            case 'WBaWC': return 'No. of LNNNNs';
-            case 'UM': return 'No. of LNNNs';
-            default: return 'No. of LNNs';
+            case 'PCB': return 'Anzahl LNNNs';
+            case 'IN': return 'Anzahl LNNFSs';
+            case 'UFO': return 'Anzahl LNN(N)s';
+            case 'TD': return 'Anzahl LNNNs';
+            case 'HSiFS': return 'Anzahl LNNNs';
+            case 'WBaWC': return 'Anzahl LNNNNs';
+            case 'UM': return 'Anzahl LNNNs';
+            default: return 'Anzahl LNNs';
         }
+    } else { // English or Russian*/
+    switch ($game) {
+        case 'PCB': return _('No. of LNNNs');
+        case 'IN': return _('No. of LNNFSs');
+        case 'UFO': return _('No. of LNN(N)s');
+        case 'TD': return _('No. of LNNNs');
+        case 'HSiFS': return _('No. of LNNNs');
+        case 'WBaWC': return _('No. of LNNNNs');
+        case 'UM': return _('No. of LNNNs');
+        default: return _('No. of LNNs');
     }
+    //}
 }
-function date_tl(string $date) {
+
+function date_tl(string $date, string $lang) {
+    if ($date == '') {
+        return '';
+    }
     $tmp = preg_split('/\//', $date);
     $day = $tmp[0];
     $month = $tmp[1];
     $year = $tmp[2];
-    return $year . '年' . $month . '月' . $day . '日';
+    if ($lang == 'en_US') {
+        return $month . '/' . $day . '/' . $year;
+    } else if ($lang == 'ja_JP' || $lang == 'zh_CN') {
+        return $year . '年' . $month . '月' . $day . '日';
+    } else if ($lang == 'ru_RU' || $lang == 'de_DE') {
+        return $day . '.' . $month . '.' . $year;
+    } else { // en_GB || es_ES
+        return $day . '/' . $month . '/' . $year;
+    }
 }
+
 function format_lm(string $lm, string $lang) {
     switch ($lang) {
-        case 'ja_JP': return '<span id="lm">' . date_tl($lm) . '</span>現在のLNN記録です。';
-        case 'zh_CN': return 'LNN更新于<span id="lm">' . date_tl($lm) . '</span>。';
-        case 'ru_RU': return 'Список LNN\'ов актуален на ' . $lm . '</span>.';
-        default: return 'LNNs are current as of <span id="lm">' . $lm . '</span>.';
+        case 'ja_JP': return '<span id="lm">' . date_tl($lm, $lang) . '</span>現在のLNN記録です。';
+        case 'zh_CN': return 'LNN更新于<span id="lm">' . date_tl($lm, $lang) . '</span>。';
+        case 'ru_RU': return 'Список LNN\'ов актуален на ' . date_tl($lm, $lang) . '</span>.';
+        case 'de_DE': return 'Die LNNs sind ab ' . date_tl($lm, $lang) . ' aktuell.</span>';
+        case 'es_ES': return 'Los LNNs están actualizados hasta el ' . date_tl($lm, $lang) . '.</span>';
+        default: return 'LNNs are current as of <span id="lm">' . date_tl($lm, $lang) . '</span>.';
     }
 }
 function replay_path(string $game, string $player, string $shot) {

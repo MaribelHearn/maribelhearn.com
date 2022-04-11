@@ -21,7 +21,7 @@ $recent = array();
 $lm = '0/0/0';
 
 function has_space(string $lang) {
-    return $lang == 'en_GB' || $lang == 'en_US' || $lang == 'ru_RU' || $lang == 'de_DE';
+    return $lang == 'en_GB' || $lang == 'en_US' || $lang == 'ru_RU' || $lang == 'de_DE' || $lang == 'es_ES';
 }
 
 function pc_class(int $pc) {
@@ -62,22 +62,19 @@ function date_tl(string $date, string $lang) {
         return $year . '年' . $month . '月' . $day . '日';
     } else if ($lang == 'ru_RU' || $lang == 'de_DE') {
         return $day . '.' . $month . '.' . $year;
-    } else { // en_GB
+    } else { // en_GB || es_ES
         return $day . '/' . $month . '/' . $year;
     }
 }
 
 function format_lm(string $lm, string $lang) {
-    if ($lang == 'ja_JP') {
-        return '<span id="lm">' . date_tl($lm, $lang) . '</span>現在の世界記録です。';
-    } else if ($lang == 'zh_CN') {
-        return '世界记录更新于<span id="lm">' . date_tl($lm, $lang) . '</span>。';
-    } else if ($lang == 'ru_RU') {
-        return 'Рекорды актуальны на <span id="lm">' . date_tl($lm, $lang) . '</span>.';
-    } else if ($lang == 'de_DE') {
-        return 'Die Weltrekorde sind ab <span id="lm">' . date_tl($lm, $lang) . '</span> aktuell.';
-    } else {
-        return 'World records are current as of <span id="lm">' . date_tl($lm, $lang) . '</span>.';
+    switch ($lang) {
+        case 'ja_JP': return '<span id="lm">' . date_tl($lm, $lang) . '</span>現在の世界記録です。';
+        case 'zh_CN': return '世界记录更新于<span id="lm">' . date_tl($lm, $lang) . '</span>。';
+        case 'ru_RU': return 'Рекорды актуальны на <span id="lm">' . date_tl($lm, $lang) . '</span>.';
+        case 'de_DE': return 'Die Weltrekorde sind ab <span id="lm">' . date_tl($lm, $lang) . '</span> aktuell.';
+        case 'es_ES': return 'Los Récords Mundiales están actualizados hasta el <span id="lm">' . date_tl($lm, $lang) . '</span>.';
+        default: return 'World records are current as of <span id="lm">' . date_tl($lm, $lang) . '</span>.';
     }
 }
 
