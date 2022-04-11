@@ -188,11 +188,11 @@ function set_lang_cookie() {
 function lang_code() {
     global $lang;
     switch ($lang) {
-        case 'en_US': return 'en';
         case 'ja_JP': return 'ja';
         case 'zh_CN': return 'zh';
         case 'ru_RU': return 'zh';
         case 'de_DE': return 'de';
+        default: return 'en';
     }
 }
 function background_position($page) {
