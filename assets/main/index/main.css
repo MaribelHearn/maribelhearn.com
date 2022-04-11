@@ -35,6 +35,10 @@ table {
     color: darkred;
     font-weight: bold;
 }
+.sub_li {
+    list-style-type: square;
+    padding-left: 15px;
+}
 .credits {
     text-align: left;
     margin-left: 25%;
