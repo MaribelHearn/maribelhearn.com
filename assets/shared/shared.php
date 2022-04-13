@@ -82,7 +82,7 @@ function hit(string $filename, string $status_code) {
             return;
         }
         $ip = $_SERVER['REMOTE_ADDR'];
-        $token = (file_exists($path . 'token')) ? trim(file_get_contents($path . 'token')) : '');
+        $token = (file_exists($path . 'token') ? trim(file_get_contents($path . 'token')) : '');
         if (is_localhost($ip) || !isset($_COOKIE['token']) || $_COOKIE['token'] !== $token) {
             $page = str_replace('.php', '', $filename);
             if (!empty($status_code)) {
