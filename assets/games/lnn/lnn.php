@@ -15,7 +15,7 @@
         'is referred to as LNNFS.');
 	?></p>
     <p id='tables'><?php echo _('All of the table columns are sortable.') ?></p>
-    <p id='lastupdate'><?php echo format_lm($lnn['LM'], $lang) ?></p>
+    <p id='lastupdate'><?php echo (isset($lnn['LM']) ? format_lm($lnn['LM'], $lang) : '') ?></p>
     <h2 id='contents_header'><?php echo _('Contents') ?></h2>
 
     <?php
