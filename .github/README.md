@@ -14,8 +14,9 @@ cd maribelhearn.com
 ```
 Then, run the PHP development server from the directory you cloned to.
 ```
-php -S 127.0.0.1:<port>
+php -S 127.0.0.1:8000
 ```
+You can also specify a port other than 8000.
 
 ## Troubleshooting
 ```
