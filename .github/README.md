@@ -16,7 +16,8 @@ Then, run the PHP development server from the directory you cloned to.
 ```
 php -S 127.0.0.1:8000
 ```
-You can also specify a port other than 8000.
+Connect to `http://127.0.0.1:8000` using your browser. You can also specify a port other than 8000.
+If you want, you can use a Web server such as [Apache](https://apache.org/) or [Nginx](https://nginx.org/) to host the site.
 
 ## Troubleshooting
 ```
