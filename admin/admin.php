@@ -142,7 +142,7 @@
                         }
                         $total = 0;
                         foreach ($countries as $country => $count) {
-                            echo '<tr' . ($total >= $DISPLAY_LIMIT ? ' class="hidden"' : '') . '>';
+                            echo '<tr>';
                             if ($country == 'new' || $country == 'local') {
                                 echo '<td></td><th>' . $country . '</th><td>' . $count . '</td><td><progress value="' . $count .
                                 '" max="' . $max . '"></progress></td></tr>';
@@ -162,7 +162,7 @@
                             }
                             $total += 1;
                         }
-                        echo '</table><input id="expand" type="button" value="Expand">';
+                        echo '</table>';
                     }
                 ?>
                 <p class='wide-top'>You are visiting this page using <strong id='os'></strong>.</p>
