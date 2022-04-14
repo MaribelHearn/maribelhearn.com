@@ -130,7 +130,7 @@
 						'</th><th id="exp0">' . _('Exponent') . '</th></tr>';
 					}
 					foreach ($Rubrics['SCORE'][$game] as $diff => $rubric) {
-						echo '<tr><th>' . _($game) . ($lang == 'en_US' || $lang == 'de_DE' ? ' ' : '') . $diff .
+						echo '<tr><th>' . _($game) . (has_space($lang) ? ' ' : '') . $diff .
 						'</th><td>' . $rubric['base'] . '</td><td>' . $rubric['exp'] . '</td></tr>';
 					}
 				}
@@ -147,11 +147,11 @@
 					foreach ($Rubrics['SCORE'][$game] as $diff => $rubric) {
 						if (!empty($rubric['wr']) && is_array($rubric['wr'])) {
 		                    foreach ($rubric['wr'] as $shot => $score) {
-		                        echo '<tr><th>' . _($game) . ($lang == 'en_US' || $lang == 'de_DE' ? ' ' : '') . $diff . ' ' . _($shot) .
+		                        echo '<tr><th>' . _($game) . (has_space($lang) ? ' ' : '') . $diff . ' ' . _($shot) .
 								'</th><td>' . abbreviate($score, $lang) . '</td></tr>';
 		                    }
 		                } else if (!empty($rubric['wr'])) {
-		                    echo '<tr><th>' . _($game) . ($lang == 'en_US' || $lang == 'de_DE' ? ' ' : '') . $diff .
+		                    echo '<tr><th>' . _($game) . (has_space($lang) ? ' ' : '') . $diff .
 							'</th><td>' . abbreviate($rubric['wr'], $lang) . '</td></tr>';
 		                }
 					}
@@ -170,7 +170,7 @@
 				foreach ($Rubrics['SCORE'] as $game => $value) {
 					foreach ($Rubrics['SCORE'][$game] as $diff => $rubric) {
 						if (!empty($rubric['basedOn'])) {
-			                echo '<tr><th>' . _($game) . ($lang == 'en_US' || $lang == 'de_DE' ? ' ' : '') . $diff .
+			                echo '<tr><th>' . _($game) . (has_space($lang) ? ' ' : '') . $diff .
 							'</th><td>' . _($rubric['basedOn']) . '</td></tr>';
 			            }
 					}
@@ -319,7 +319,7 @@
 						if ($diff == 'multiplier' || $diff == 'seasonMultiplier') {
 							continue;
 						}
-			        	echo '<tr><th>' . _($game) . ($lang == 'en_US' || $lang == 'de_DE' ? ' ' : '') . $diff . '</th><td>' . $rubric['base'] .
+			        	echo '<tr><th>' . _($game) . (has_space($lang) ? ' ' : '') . $diff . '</th><td>' . $rubric['base'] .
 						'</td><td>' . $rubric['exp'] . '</td><td>' . $rubric['miss'] .
 						'</td><td>' . $rubric['firstBomb'] . '</td><td>' . $rubric['bomb'] . '</td></tr>';
 					}
@@ -352,7 +352,7 @@
 							if ($diff == 'multiplier' || $diff == 'seasonMultiplier') {
 								continue;
 							}
-				        	echo '<tr><th>' . _($game) . ($lang == 'en_US' || $lang == 'de_DE' ? ' ' : '') . $diff . '</th><td>' . $rubric['base'] .
+				        	echo '<tr><th>' . _($game) . (has_space($lang) ? ' ' : '') . $diff . '</th><td>' . $rubric['base'] .
 							'</td><td>' . $rubric['min'] . '</td><td>' . $rubric['noBombBonus'] . '</td></tr>';
 						}
 					}
@@ -378,7 +378,7 @@
 					foreach ($value as $diff => $rubric) {
 						if ($diff == 'multiplier' || $diff == 'seasonMultiplier') {
 							foreach ($rubric as $shot => $mult) {
-								echo '<tr><th>' . _($game) . ($lang == 'en_US' || $lang == 'de_DE' ? ' ' : '') . ($lang == 'ja_JP' ? 'の' : '') .
+								echo '<tr><th>' . _($game) . (has_space($lang) ? ' ' : '') . ($lang == 'ja_JP' ? 'の' : '') .
 								_($shot) . '</th><td>' . $mult . '</td></tr>';
 							}
 						}

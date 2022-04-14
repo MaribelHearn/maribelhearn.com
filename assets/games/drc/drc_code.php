@@ -1,6 +1,13 @@
 <?php
 $id = 0;
-$wrlist_json = file_get_contents('assets/shared/json/wrlist.json');
+if (file_exists('assets/shared/json/wrlist.json')) {
+    $wrlist_json = file_get_contents('assets/shared/json/wrlist.json');
+} else {
+    $wrlist_json = curl_get('https://maribelhearn.com/assets/shared/json/wrlist.json');
+    if ($wrlist_json === false) {
+        die('Download failed!');
+    }
+}
 $rubrics_json = file_get_contents('assets/shared/json/rubrics.json');
 $WRs = json_decode($wrlist_json, true);
 $Rubrics = json_decode($rubrics_json, true);
