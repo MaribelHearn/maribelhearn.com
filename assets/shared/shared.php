@@ -1,4 +1,7 @@
 <?php
+function has_space(string $lang) {
+    return $lang != 'ja_JP' && $lang != 'zh_CN';
+}
 function curl_get(string $url){
     if (!function_exists('curl_init')){
         die('Sorry cURL is not installed!');

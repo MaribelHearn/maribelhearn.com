@@ -28,10 +28,6 @@ $flag = array();
 $recent = array();
 $lm = '0/0/0';
 
-function has_space(string $lang) {
-    return $lang == 'en_GB' || $lang == 'en_US' || $lang == 'ru_RU' || $lang == 'de_DE' || $lang == 'es_ES';
-}
-
 function pc_class(int $pc) {
     if ($pc < 50) {
         return 'does_not_even_score';
