@@ -1,8 +1,6 @@
-# non-repo json data
-assets/shared/json/admin.json
-
 # data files
 assets/shared/json/gensokyo.json
+assets/shared/json/admin.json
 bestinthewest.json
 unverified.json
 lnnvideos.json
