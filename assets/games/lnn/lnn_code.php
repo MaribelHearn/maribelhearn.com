@@ -1,8 +1,16 @@
 <?php
 $ALL_LNN = 101;
 $ALL_GAME_LNN = 13;
-$json = file_get_contents('assets/shared/json/lnnlist.json');
-$video_json = file_get_contents('assets/shared/json/lnnvideos.json');
+if (file_exists('assets/shared/json/lnnlist.json')) {
+    $json = file_get_contents('assets/shared/json/lnnlist.json');
+    $video_json = file_get_contents('assets/shared/json/lnnvideos.json');
+} else {
+    $json = curl_get('https://maribelhearn.com/assets/shared/json/lnnlist.json');
+    $video_json = curl_get('https://maribelhearn.com/assets/shared/json/lnnvideos.json');
+    if ($json === false || $video_json === false) {
+        die('Download failed!');
+    }
+}
 $lnn = json_decode($json, true);
 $lnn_videos = json_decode($video_json, true);
 $layout = (isset($_COOKIE['lnn_old_layout']) ? 'Old' : 'New');

@@ -8,6 +8,22 @@ if (isset($_SERVER['HTTP_ACCEPT_ENCODING']) && substr_count($_SERVER['HTTP_ACCEP
 if (!isset($_GET['page'])) {
     exit();
 }
+function curl_get(string $url){
+    if (!function_exists('curl_init')){
+        die('Sorry cURL is not installed!');
+    }
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_USERAGENT, 'MozillaXYZ/1.0');
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+    $output = curl_exec($ch);
+    curl_close($ch);
+    return $output;
+}
 function is_localhost(string $addr) {
     return $addr == '::1' || $addr == '127.0.0.1' || substr($addr, 0, 8) == '192.168.';
 }
@@ -67,12 +83,20 @@ if ($page == 'drc') {
     echo 'const Rubrics = ' . file_get_contents('json/rubrics.json') . ';';
 }
 if ($page == 'lnn') {
-    echo 'const LNNs = ' . file_get_contents('json/lnnlist.json') . ';';
-    echo 'const unverifiedScores = ' . file_get_contents('json/unverified.json') . ';';
+    if (file_exists('json/lnnlist.json')) {
+        echo 'const LNNs = ' . file_get_contents('json/lnnlist.json') . ';';
+    } else {
+        echo 'const LNNs = ' . curl_get('https://maribelhearn.com/assets/shared/json/lnnlist.json') . ';';
+    }
 }
 if ($page == 'wr') {
-    echo 'const westScores = ' . file_get_contents('json/bestinthewest.json') . ';';
-    echo 'const unverifiedScores = ' . file_get_contents('json/unverified.json') . ';';
+    if (file_exists('json/bestinthewest.json')) {
+        echo 'const westScores = ' . file_get_contents('json/bestinthewest.json') . ';';
+        echo 'const unverifiedScores = ' . file_get_contents('json/unverified.json') . ';';
+    } else {
+        echo 'const westScores = ' . curl_get('https://maribelhearn.com/assets/shared/json/bestinthewest.json') . ';';
+        echo 'const unverifiedScores = ' . curl_get('https://maribelhearn.com/assets/shared/json/unverified.json') . ';';
+    }
 }
 if ($page == 'tiers') {
     echo 'const categories = {"characters":' . file_get_contents('json/chars.json') .
@@ -84,7 +108,11 @@ if ($page == 'slots') {
     echo 'const LOCATIONS = ' . file_get_contents('json/locations.json') . ';';
 }
 if (in_array($page, $wr_json)) {
-    echo 'const WRs = ' . file_get_contents('json/wrlist.json') . ';';
+    if (file_exists('json/wrlist.json')) {
+        echo 'const WRs = ' . file_get_contents('json/wrlist.json') . ';';
+    } else {
+        echo 'const WRs = ' . curl_get('https://maribelhearn.com/assets/shared/json/wrlist.json') . ';';
+    }
 }
 foreach ($js as $js_file) {
     $js_content = file_get_contents($js_file);

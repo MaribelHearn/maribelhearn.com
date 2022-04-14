@@ -1,6 +1,14 @@
 # non-repo json data
 assets/shared/json/admin.json
 
+# data files
+assets/shared/json/gensokyo.json
+bestinthewest.json
+unverified.json
+lnnvideos.json
+lnnlist.json
+wrlist.json
+
 # minified files
 *-min.css
 *-min.js

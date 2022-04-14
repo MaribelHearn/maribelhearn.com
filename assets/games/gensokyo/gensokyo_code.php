@@ -1,5 +1,12 @@
 <?php
-$json = file_get_contents('assets/shared/json/gensokyo.json');
+if (file_exists('assets/shared/json/gensokyo.json')) {
+    $json = file_get_contents('assets/shared/json/gensokyo.json');
+} else {
+    $json = curl_get('https://maribelhearn.com/assets/shared/json/gensokyo.json');
+    if ($json === false) {
+        die('Download failed!');
+    }
+}
 $reps = json_decode($json, true);
 $games = Array('EoSD', 'PCB', 'IN', 'PoFV', 'StB', 'MoF', 'SA', 'UFO', 'DS', 'GFW', 'TD');
 $diffs = Array('Easy', 'Normal', 'Hard', 'Lunatic', 'Extra', 'Phantasm', 'Last Word');
