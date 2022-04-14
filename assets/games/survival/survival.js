@@ -373,7 +373,8 @@ function drawOverview() {
     prepareRendering();
     try {
         html2canvas(document.getElementById("survival"), {
-            backgroundColor: "white"
+            backgroundColor: "white",
+            "logging": false
         }).then(function(canvas) {
             var base64image = canvas.toDataURL("image/png");
 
