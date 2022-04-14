@@ -67,11 +67,12 @@ function format_conditions($conditions, string $category) {
     return $result;
 }
 
-function replay_table(array $rep) {
+function replay_table(string $id, array $rep) {
     $comment = str_replace('<', '&lt;', $rep['comment']);
     $comment = str_replace('>', '&gt;', $comment);
     $backlink = explode('&id', $_SERVER['REQUEST_URI']);
     $conditions = format_conditions($rep['conditions'], $rep['category']);
+    $url = (is_localhost($_SERVER['REMOTE_ADDR']) ? 'https://maribelhearn.com/' : '') . 'replays/gensokyo/' . $id . '/' . $rep['rpy'];
     echo '<div class="overflow"><table id="replay" class="sortable"><tbody>';
     echo '<tr><th class="general_header">Player</th><td id="player_td">' . $rep['player'] . '</td></tr>';
     echo '<tr><th class="general_header">Category</th><td>' . $rep['category'] . ($rep['category'] == 'DS' ? ' ' . $rep['slowdown'] : '') .
@@ -84,10 +85,7 @@ function replay_table(array $rep) {
     echo '<tr><th class="general_header">Shottype</th><td>' . ($rep['category'] == 'DS' ? $rep['slowdown'] : $rep['shottype']) . '</td></tr>';
     echo '<tr><th class="general_header">Conditions</th><td>' . $conditions . '</td></tr>';
     echo '<tr><th class="general_header">Comment</th><td>' . ($rep['category'] == 'DS' ? $rep['conditions'] : $comment) . '</td></tr>';
-    foreach (glob('replays/gensokyo/' . $_GET['id'] . '/*.rpy') as $file) {
-        $replay = explode('/', $file);
-        echo '<tr><th class="general_header">Download</th><td><a href="' . $file . '">' . $replay[3] . '</a></td></tr>';
-    }
+    echo '<tr><th class="general_header">Download</th><td><a href="' . $url . '">' . $rep['rpy'] . '</a></td></tr>';
     echo '</tbody><tfoot><tr><th id="back" colspan="2"><a href="' . $backlink[0] . '">Back</a></th></tr></tfoot></table></div>';
 }
 
