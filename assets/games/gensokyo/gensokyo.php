@@ -65,6 +65,7 @@
         if (!empty($_GET['id'])) {
             replay_table($_GET['id'], $reps[$_GET['id']]);
         } else if ($searched) {
+            $table = '';
             $found = 0;
             if (input_validity() == 2) {
                 foreach ($reps as $key => $rep) {
@@ -72,14 +73,14 @@
                         continue;
                     }
                     if ($found === 0) {
-                        echo '<div class="overflow"><table id="replays" class="sortable"><thead><tr><th class="general_header">Player</th><th class="general_header">Category</th>' .
+                        $table .= '<div class="overflow"><table id="replays" class="sortable"><thead><tr><th class="general_header">Player</th><th class="general_header">Category</th>' .
                         '<th class="general_header">Score</th><th class="general_header sorttable_mmdd">Date added</th><th class="general_header">Type</th>' .
                         '<th class="general_header">Conditions</th><th class="general_header">Download</th></tr></thead><tbody>';
                     }
                     if (!empty($rep['rpy'])) {
                         $url = (is_localhost($_SERVER['REMOTE_ADDR']) ? 'https://maribelhearn.com/' : '') . 'replays/gensokyo/' . $key . '/' . $rep['rpy'];
                         if ($rep['category'] == 'DS') {
-                            echo '<tr><td><a href="' . $_SERVER['REQUEST_URI'] . '&id=' . $key . '">' . $rep['player'] .
+                            $table .= '<tr><td><a href="' . $_SERVER['REQUEST_URI'] . '&id=' . $key . '">' . $rep['player'] .
                             '</a></td><td>' . $rep['category'] . '<br>' . $rep['slowdown'] . // shottype
                             '</td><td>' . $rep['type'] . // score
                             '</td><td>' . substr($rep['ver'], 0, 10) . '<br>' . substr($rep['ver'], 10) . // date
@@ -87,7 +88,7 @@
                             '</a></td></tr>'; // date = type, conditions empty
                         } else {
                             $conditions = format_conditions($rep['conditions'], $rep['category']);
-                            echo '<tr><td><a href="' . $_SERVER['REQUEST_URI'] . '&id=' . $key . '">' . $rep['player'] .
+                            $table .= '<tr><td><a href="' . $_SERVER['REQUEST_URI'] . '&id=' . $key . '">' . $rep['player'] .
                             '</a></td><td>' . $rep['category'] . '<br>' . $rep['shottype'] . '</td><td>' . $rep['score'] .
                             '</td><td>' . str_replace(' ', '<br>', $rep['date']) . '</td><td>' . $rep['type'] .
                             '</td><td>' . $conditions . '</td><td><a href="' . $url . '">' . $rep['rpy'] .
@@ -98,7 +99,7 @@
                 }
             }
             if ($found > 0) {
-                echo '</tbody></table></div>';
+                echo '<p>' . number_format($found, 0, '.', ',') . ' results.</p>' . $table . '</tbody></table></div>';
             } else if (input_validity() == 2) {
                 echo '<p>No replays found.</p>';
             } else if (input_validity() == 1) {
