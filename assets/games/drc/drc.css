@@ -61,11 +61,6 @@ input[type=number] {
 #route, #season, #calculator, #scoringButton, #survivalButton {
     display: none;
 }
-#languages {
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
 @media only screen and (min-width: 800px) and (max-width: 1100px) {
     h1 {
         margin-bottom: 15px;

@@ -232,6 +232,11 @@ a:visited.dropdown_button {
 #ext_mobile {
     display: none;
 }
+#languages {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
 #hy {
     background-image: url('/assets/shared/spritesheets/icon_sheet.png');
     background-position: -512px 0px;
