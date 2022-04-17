@@ -30,6 +30,9 @@ form {
 .general_header {
     background-color: #aaaaaa;
 }
+.sorttable_mmdd {
+    white-space: nowrap;
+}
 #nav {
     margin-bottom: 5px;
 }
