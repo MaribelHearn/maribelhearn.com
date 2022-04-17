@@ -245,11 +245,6 @@ tr:not(.west_tr):nth-child(even), tr.west_tr:nth-child(odd) {
 #toggle {
     float: left;
 }
-#languages {
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
 #dates {
     margin-top: 0px;
     margin-bottom: 0px;

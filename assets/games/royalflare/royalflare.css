@@ -165,6 +165,9 @@ a.scene {
 #back {
     float: left;
 }
+#hy_text {
+    margin: 4px 0px 0px 0px;
+}
 @media only screen and (max-width: 1400px) {
     .wrap {
         margin-left: 0%;

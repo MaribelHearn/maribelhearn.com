@@ -197,11 +197,6 @@ tr:nth-child(even) {
 #toggle {
     float: left;
 }
-#languages {
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
 #HRtPt, #SoEWt {
     width: 400px;
 }

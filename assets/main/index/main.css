@@ -131,6 +131,9 @@ table {
     font-size: 11px;
     color: #505050;
 }
+#hy_text {
+    margin: 4px 0px 0px 0px;
+}
 @media only screen and (max-width: 1100px) {
     .page_table > .link > .tooltip {
         width: 200px;

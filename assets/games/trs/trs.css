@@ -64,3 +64,6 @@ textarea {
 #game_other_p, #video {
     display: none;
 }
+#hy_text {
+    margin: 4px 0px 0px 0px;
+}

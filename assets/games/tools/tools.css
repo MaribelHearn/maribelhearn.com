@@ -44,11 +44,6 @@ table, tr, th, td {
 #wrap > div:not(#topbar) {
     display: inline-block;
 }
-#languages {
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
 #thcrap_link {
     font: 14px verdana,sans-serif;
 }
@@ -72,5 +67,9 @@ table, tr, th, td {
     h1 {
         margin-bottom: 15px;
         margin-top: 15px;
+    }
+    #languages {
+        margin-top: 10px;
+        width: 100%;
     }
 }
