@@ -140,7 +140,7 @@
         <div id='special_thanks'>
             <h2>Special Thanks</h2>
             <p class='wide'>Many thanks to my awesome supporters for covering server costs!</p>
-            <p>Taishisamaaa, Omega, MeFigaYoma, Sodamachine, guy, 32th System, Redaction, Kawaii_Shadowii, Isaac and anonymous supporters</p>
+            <p>Taishisamaaa, Omega, MeFigaYoma, Sodamachine, guy, 32th System, Redaction, Kawaii_Shadowii, Isaac, yeashie and anonymous supporters</p>
         </div>
     </div>
     <div id='bottom'>
