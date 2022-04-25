@@ -1,31 +1,27 @@
 /*global $ html2canvas deleteCookie*/
-var games = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "INFinalA",
+let games = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "INFinalA",
     "INFinalB", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"],
-    vals = {}, unsavedChanges = false, originalContent, completions, na, i;
+    vals = {}, unsavedChanges = false, originalContent, completions, na;
 
-for (i = 0; i < games.length; i++) {
-    vals[games[i]] = {
+for (let game of games) {
+    vals[game] = {
         "Easy": "N/A",
         "Normal": "N/A",
         "Hard": "N/A",
         "Lunatic": "N/A"
     };
 
-    if (games[i] != "HRtP" && games[i] != "PoDD" && games[i] != "INFinalB") {
-        vals[games[i]].Extra = "N/A";
+    if (game != "HRtP" && game != "PoDD" && game != "INFinalB") {
+        vals[game].Extra = "N/A";
     }
 
-    if (games[i] == "PCB") {
+    if (game == "PCB") {
         vals.PCB.Phantasm = "N/A";
     }
 }
 
-String.prototype.contains = function (string) {
-    return this.indexOf(string) > -1;
-};
-
 function getPercentage(game) {
-    if (game.contains("IN")) {
+    if (game.includes("IN")) {
         return 100 / (Object.keys(vals["INFinalA"]).length + Object.keys(vals["INFinalB"]).length);
     }
 
@@ -33,33 +29,26 @@ function getPercentage(game) {
 }
 
 function gameSpecific(game, achievement) {
-    if (achievement != "NB+" && achievement != "NMNB") {
+    if (achievement != "NM+" && achievement != "NB+" && achievement != "NMNB") {
         return achievement;
     }
-    if (game == "PCB") {
-        return ({"NB+": "NBNBB", "NMNB": "NMNBNBB"}[achievement]);
-    } else if (game == "UFO") {
-        return ({"NB+": "NBNV", "NMNB": "NMNB(NV)"}[achievement]);
-    } else if (game == "TD") {
-        return ({"NB+": "NBNT", "NMNB": "NMNBNT"}[achievement]);
-    } else if (game == "HSiFS") {
-        return ({"NB+": "NBNR", "NMNB": "NMNBNR"}[achievement]);
-    } else if (game == "WBaWC") {
-        return ({"NB+": "NBNHNRB", "NMNB": "NNNN"}[achievement]);
-    } else if (game == "UM") {
-        return ({"NB+": "NBNC", "NMNB": "NMNBNC"}[achievement]);
-    } else {
-        return ({"NB+": "NB", "NMNB": "NMNB"}[achievement]);
+
+    switch (game) {
+        case "PCB": return ({"NM+": "NMNBB", "NB+": "NBNBB", "NMNB": "NMNBNBB"}[achievement]);
+        case "UFO": return ({"NM+": "NMNV", "NB+": "NBNV", "NMNB": "NMNB(NV)"}[achievement]);
+        case "TD": return ({"NM+": "NMNT", "NB+": "NBNT", "NMNB": "NMNBNT"}[achievement]);
+        case "HSiFS": return ({"NM+": "NMNR", "NB+": "NBNR", "NMNB": "NMNBNR"}[achievement]);
+        case "WBaWC": return ({"NM+": "NMNHNRB", "NB+": "NBNHNRB", "NMNB": "NNNN"}[achievement]);
+        case "UM": return ({"NM+": "NMNC", "NB+": "NBNC", "NMNB": "NMNBNC"}[achievement]);
+        default: return ({"NM+": "NM", "NB+": "NB", "NMNB": "NMNB"}[achievement]);
     }
 }
 
 function fillGame(game, achievement) {
-    var difficulty, tmp;
+    for (let difficulty in vals[game]) {
+        let tmp = achievement;
 
-    for (difficulty in vals[game]) {
-        tmp = achievement;
-
-        if (achievement == "NB+" || achievement == "NMNB") {
+        if (achievement == "NM+" || achievement == "NB+" || achievement == "NMNB") {
             achievement = gameSpecific(game, achievement);
         }
 
@@ -69,8 +58,8 @@ function fillGame(game, achievement) {
     }
 
     if (game == "INFinalB") {
-        if (achievement == "NB+" ) {
-            achievement = "NB";
+        if (achievement == "NM+" || achievement == "NB+") {
+            achievement = achievement.slice(0, -1);
         }
 
         $("#INFinalAExtra").val(achievement);
@@ -79,15 +68,15 @@ function fillGame(game, achievement) {
 }
 
 function fillDifficulty(difficulty, achievement) {
-    var game, tmp;
-
     if (difficulty == "Extra") {
         $("#PCBPhantasm").val(gameSpecific("PCB", achievement));
         vals.PCB.Phantasm = gameSpecific("PCB", achievement);
     }
 
-    for (game in vals) {
-        if (achievement == "NB+" || achievement == "NMNB") {
+    for (let game in vals) {
+        let tmp;
+
+        if (achievement == "NM+" || achievement == "NB+" || achievement == "NMNB") {
             tmp = gameSpecific(game, achievement);
         } else {
             tmp = achievement;
@@ -104,12 +93,12 @@ function fillDifficulty(difficulty, achievement) {
 
 function initAchievementCounts() {
     return {
-        "Easy": { "Not cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NB+": 0, "NMNB": 0 },
-        "Normal": { "Not cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NB+": 0, "NMNB": 0 },
-        "Hard": { "Not cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NB+": 0, "NMNB": 0 },
-        "Lunatic": { "Not cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NB+": 0, "NMNB": 0 },
-        "Extra": { "Not cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NB+": 0, "NMNB": 0 },
-        "Total": { "Not cleared": 0, "1cc": 0, "NM": 0, "NB": 0, "NB+": 0, "NMNB": 0 }
+        "Easy": { "Not cleared": 0, "1cc": 0, "NM": 0, "NM+": 0, "NB": 0, "NB+": 0, "NMNB": 0 },
+        "Normal": { "Not cleared": 0, "1cc": 0, "NM": 0, "NM+": 0, "NB": 0, "NB+": 0, "NMNB": 0 },
+        "Hard": { "Not cleared": 0, "1cc": 0, "NM": 0, "NM+": 0, "NB": 0, "NB+": 0, "NMNB": 0 },
+        "Lunatic": { "Not cleared": 0, "1cc": 0, "NM": 0, "NM+": 0, "NB": 0, "NB+": 0, "NMNB": 0 },
+        "Extra": { "Not cleared": 0, "1cc": 0, "NM": 0, "NM+": 0, "NB": 0, "NB+": 0, "NMNB": 0 },
+        "Total": { "Not cleared": 0, "1cc": 0, "NM": 0, "NM+": 0, "NB": 0, "NB+": 0, "NMNB": 0 }
     };
 }
 
@@ -150,6 +139,12 @@ function format(achievement) {
         "NR": "np",
         "NHNRB": "np",
         "NC": "np",
+        "NMNBB": "nmp",
+        "NMNV": "nmp",
+        "NMNT": "nmp",
+        "NMNR": "nmp",
+        "NMNHNRB": "nmp",
+        "NMNC": "nmp",
         "NBNBB": "nbp",
         "NBNV": "nbp",
         "NBNT": "nbp",
@@ -166,13 +161,22 @@ function format(achievement) {
     })[achievement];
 }
 
-function fillOverviewGame(game, numbers) {
-    var difficulty, value;
+function needsText(achievement) {
+    achievement = format(achievement);
 
-    for (difficulty in vals[game]) {
-        value = vals[game][difficulty];
+    switch (achievement) {
+        case "np": return true;
+        case "nmp": return true;
+        case "nbp": return true;
+        default: return false;
+    }
+}
+
+function fillOverviewGame(game, numbers) {
+    for (let difficulty in vals[game]) {
+        let value = vals[game][difficulty];
         $("#" + game + "_tr").append("<td class='" + format(value) + "'" + (difficulty == "Extra" && game != "PCB" ? " colspan='2'" : "") +
-        ">" + (format(value) == "nbp" || format(value) == "np" ? value : "") + "</td>");
+        ">" + (needsText(value) ? value : "") + "</td>");
 
         if (value == "N/A") {
             na[game] += getPercentage(game);
@@ -180,8 +184,11 @@ function fillOverviewGame(game, numbers) {
             numbers[difficulty == "Phantasm" ? "Extra" : difficulty]["Not cleared"] += 1;
             numbers["Total"]["Not cleared"] += 1;
         } else {
-            completions[game.contains("IN") ? "IN" : game] += getPercentage(game.contains("IN") ? "IN" : game);
-            if (value.substr(0, 2) == "NB" && value.length > 2) {
+            completions[game.includes("IN") ? "IN" : game] += getPercentage(game.includes("IN") ? "IN" : game);
+            if (value.substr(0, 2) == "NM" && value.length > 2 && value.substr(2, 2) != "NB") {
+                numbers[difficulty == "Phantasm" ? "Extra" : difficulty]["NM+"] += 1;
+                numbers["Total"]["NM+"] += 1;
+            } else if (value.substr(0, 2) == "NB" && value.length > 2) {
                 numbers[difficulty == "Phantasm" ? "Extra" : difficulty]["NB+"] += 1;
                 numbers["Total"]["NB+"] += 1;
             } else if (value.substr(0, 4) == "NMNB" || value == "NNNN") {
@@ -199,14 +206,12 @@ function fillOverviewGame(game, numbers) {
 }
 
 function fillOverview(numbers) {
-    var id = "#overview_tbody", game, gameID;
-
+    let id = "#overview_tbody";
     $(id).html("");
 
-    for (game in vals) {
+    for (let game in vals) {
+        let gameID = "#" + game + "_tr";
         $(id).append("<tr id='" + game + "_tr'><th>" + game + "</th></tr>");
-        gameID = "#" + game + "_tr";
-
         numbers = fillOverviewGame(game, numbers);
 
         if (game == "HRtP" || game == "PoDD") {
@@ -222,29 +227,27 @@ function fillOverview(numbers) {
 }
 
 function fillNumberTable(numbers) {
-    var id = "#number_table_tbody", difficulty, value;
-
+    let id = "#number_table_tbody";
     $(id).html("");
 
-    for (difficulty in numbers) {
+    for (let difficulty in numbers) {
         if (difficulty == "Total") {
             $(id).append("<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>");
         }
 
         $(id).append("<tr id='" + difficulty + "_tr'><th>" + difficulty + "</th></tr>");
 
-        for (value in numbers[difficulty]) {
+        for (let value in numbers[difficulty]) {
             $("#" + difficulty + "_tr").append("<td>" + numbers[difficulty][value] + "</td>");
         }
     }
 }
 
 function fillCompletionTable() {
-    var id = "#completion_table_tbody", game;
-
+    let id = "#completion_table_tbody";
     $(id).html("");
 
-    for (game in vals) {
+    for (let game in vals) {
         if (Math.round(na[game]) == 100) {
             continue;
         }
@@ -260,7 +263,7 @@ function fillCompletionTable() {
 }
 
 function fileName() {
-    var date = new Date(),
+    let date = new Date(),
         month = (date.getMonth() + 1).toLocaleString("en-US", {minimumIntegerDigits: 2}),
         day = (date.getDate()).toLocaleString("en-US", {minimumIntegerDigits: 2}),
         hours = (date.getHours()).toLocaleString("en-US", {minimumIntegerDigits: 2}),
@@ -271,35 +274,30 @@ function fileName() {
     "_" + day + "_" + hours + "_" + minutes + "_" + seconds + ".png";
 }
 
-function isMobile() {
-    return navigator.userAgent.contains("Mobile") || navigator.userAgent.contains("Tablet");
-}
-
 function applyColours() {
-    var id, tmp;
-
     $("select").each(function () {
-        id = $(this).attr("id");
+        let id = $(this).attr("id");
 
         if (id.substr(0, 4) != "fill") {
-            if (id.contains("Extra") && !id.contains("PCB") || !id.contains("Extra") && id != "PCBPhantasm" && !id.contains("IN")) {
+            if (id.includes("Extra") && !id.includes("PCB") || !id.includes("Extra") && id != "PCBPhantasm" && !id.includes("IN")) {
                 $(this).parent().attr("colspan", 2);
                 $(this).parent().addClass("overview");
             } else if (id == "PCBExtra" || id == "PCBPhantasm") {
                 $(this).parent().addClass("overview_half");
-            } else if (id.contains("IN") && !id.contains("Extra")) {
+            } else if (id.includes("IN") && !id.includes("Extra")) {
                 $(this).parent().addClass("overview_half");
             } else {
                 $(this).parent().addClass("overview");
             }
 
-            $(this).parent().addClass(format($(this).val()));
-            $(this).parent().html(format($(this).val()) == "nbp" ? $(this).val() : "");
+            let value = $(this).val();
+            $(this).parent().addClass(format(value));
+            $(this).parent().html(needsText(value) ? $(this).val() : "");
 
-            if ($(this).attr("id").contains("INFinalB")) {
-                tmp = $(this).attr("id").replace("INFinal", "");
-                $("#" + tmp).addClass(format($(this).val()));
-                $("#" + tmp).html(format($(this).val()) == "nbp" ? $(this).val() : "");
+            if ($(this).attr("id").includes("INFinalB")) {
+                let tmp = $(this).attr("id").replace("INFinal", "");
+                $("#" + tmp).addClass(format(value));
+                $("#" + tmp).html(needsText(value) ? value : "");
             }
         }
     });
@@ -330,8 +328,8 @@ function prepareRendering() {
     $(".overview").attr("rowspan", 1);
     $("#INFinalBtr").remove();
 
-    for (var i = 0; i < games.length; i++) {
-        $("#" + games[i]).addClass("bold");
+    for (let game of games) {
+        $("#" + game).addClass("bold");
     }
 }
 
@@ -376,7 +374,7 @@ function drawOverview() {
             backgroundColor: "white",
             "logging": false
         }).then(function(canvas) {
-            var base64image = canvas.toDataURL("image/png");
+            const base64image = canvas.toDataURL("image/png");
 
             $("#screenshot").html("<a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
             "<input type='button' value='Save to Device'></a> <input id='close' type='button' value='Close'></p>" +
@@ -402,8 +400,7 @@ function save() {
 }
 
 function apply() {
-    var numbers = initAchievementCounts();
-
+    let numbers = initAchievementCounts();
     na = initGameCounts();
     completions = initGameCounts();
     numbers = fillOverview(numbers);
@@ -424,15 +421,11 @@ function emptyModal() {
 }
 
 function getCookie(name) {
-    var decodedCookies, cookieArray, cookie;
-
-    decodedCookies = decodeURIComponent(document.cookie);
-    cookieArray = decodedCookies.split(';');
+    let decodedCookies = decodeURIComponent(document.cookie);
+    let cookieArray = decodedCookies.split(';');
     name += '=';
 
-    for (var i = 0; i < cookieArray.length; i += 1) {
-        cookie = cookieArray[i];
-
+    for (let cookie of cookieArray) {
         while (cookie.charAt(0) === ' ') {
             cookie = cookie.substring(1);
         }
@@ -467,7 +460,7 @@ function readLocalStorage() {
             $("#toggleData").prop("checked", true);
         }
 
-        var data = localStorage.getItem("vals");
+        let data = localStorage.getItem("vals");
 
         if (data) {
             vals = JSON.parse(data);
@@ -509,15 +502,15 @@ function readLocalStorage() {
 }
 
 function init() {
-    for (var game in vals) {
-        for (var difficulty in vals[game]) {
+    for (let game in vals) {
+        for (let difficulty in vals[game]) {
             $("#" + game + difficulty).val(vals[game][difficulty]);
         }
     }
 }
 
 function closeModal(event) {
-    var modal = document.getElementById("results");
+    let modal = document.getElementById("results");
 
     if ((event.target && event.target == modal) || (event.keyCode && event.key == "Escape")) {
         emptyModal();
@@ -529,7 +522,8 @@ function changed() {
 }
 
 function fillAll() {
-    var value = $("#fillGameDifficulty").val(), achievement = $("#fillAchievement").val();
+    let value = $("#fillGameDifficulty").val();
+    let achievement = $("#fillAchievement").val();
 
     if (vals.hasOwnProperty(value)) {
         fillGame(value, achievement);
@@ -539,15 +533,15 @@ function fillAll() {
 }
 
 function reset() {
-    var confirmation = confirm("Are you sure you want to reset your progress table?"), game, difficulty;
+    let confirmation = confirm("Are you sure you want to reset your progress table?");
 
     if (confirmation) {
         $("#toggleData").prop("checked", false);
         localStorage.removeItem("vals");
     }
 
-    for (game in vals) {
-        for (difficulty in vals[game]) {
+    for (let game in vals) {
+        for (let difficulty in vals[game]) {
             vals[game][difficulty] = "N/A";
             $("#" + game + difficulty).val("N/A");
         }
@@ -558,10 +552,10 @@ function reset() {
 }
 
 function setProgress() {
-    var category = this.id, val = this.value, game, difficulty;
-
-    difficulty = category.match(/Easy|Normal|Hard|Lunatic|Extra|Phantasm/);
-    game = category.replace(difficulty, "");
+    let category = this.id;
+    let val = this.value;
+    let difficulty = category.match(/Easy|Normal|Hard|Lunatic|Extra|Phantasm/);
+    let game = category.replace(difficulty, "");
     vals[game][difficulty] = val;
 }
 
@@ -576,23 +570,11 @@ function setEventListeners() {
     $(".category").on("change", setProgress);
 }
 
-function addMobileScrollbars() {
-    if (isMobile()) {
-        $("#dummy").scroll(function(){
-            $("#container").scrollLeft($("#dummy").scrollLeft());
-        });
-        $("#container").scroll(function(){
-            $("#dummy").scrollLeft($("#container").scrollLeft());
-        });
-    }
-}
-
 $(document).ready(function () {
     deleteLegacyCookies();
     readLocalStorage();
     init();
     setEventListeners();
-    addMobileScrollbars();
     window.onbeforeunload = function () {
         if (unsavedChanges) {
             return "";
