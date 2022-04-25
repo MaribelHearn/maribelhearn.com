@@ -36,7 +36,7 @@ input[type=button] {
     background-color: green;
 }
 .nm {
-    background-color: brown;
+    background-color: #b88;
 }
 .nb {
     background-color: blue;
@@ -45,6 +45,11 @@ input[type=button] {
     color: white;
     text-align: center;
     background-color: green;
+}
+.nmp {
+    color: white;
+    text-align: center;
+    background-color: #b88;
 }
 .nbp {
     color: white;
