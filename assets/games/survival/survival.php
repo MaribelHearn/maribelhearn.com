@@ -30,6 +30,7 @@
                 <option>Not cleared</option>
                 <option>1cc</option>
                 <option>NM</option>
+                <option>NM+</option>
                 <option>NB</option>
                 <option>NB+</option>
                 <option>NMNB</option>
@@ -113,6 +114,7 @@
 					<th>Not cleared</th>
 					<th>1cc</th>
 					<th>NM</th>
+                    <th>NM+</th>
 	        		<th>NB</th>
 					<th>NB+</th>
 					<th>NMNB</th>

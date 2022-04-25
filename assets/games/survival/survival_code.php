@@ -5,12 +5,12 @@ $diffs = ['Easy', 'Normal', 'Hard', 'Lunatic', 'Extra'];
 function achievs(string $game) {
     $achievs = ['N/A', 'Not cleared', '1cc', 'NM', 'NB'];
     switch ($game) {
-        case 'PCB': return array_merge($achievs, ['NBB', 'NBNBB', 'NMNBNBB']);
-        case 'UFO': return array_merge($achievs, ['NV', 'NBNV', 'NMNB(NV)']);
-        case 'TD': return array_merge($achievs, ['NT', 'NBNT', 'NMNBNT']);
-        case 'HSiFS': return array_merge($achievs, ['NR', 'NBNR', 'NMNBNR']);
-        case 'WBaWC': return array_merge($achievs, ['NHNRB', 'NBNHNRB', 'NNNN']);
-        case 'UM': return array_merge($achievs, ['NC', 'NBNC', 'NMNBNC']);
+        case 'PCB': return array_merge($achievs, ['NBB', 'NMNBB', 'NBNBB', 'NMNBNBB']);
+        case 'UFO': return array_merge($achievs, ['NV', 'NMNV', 'NBNV', 'NMNB(NV)']);
+        case 'TD': return array_merge($achievs, ['NT', 'NMNT', 'NBNT', 'NMNBNT']);
+        case 'HSiFS': return array_merge($achievs, ['NR', 'NMNR', 'NBNR', 'NMNBNR']);
+        case 'WBaWC': return array_merge($achievs, ['NHNRB', 'NMNHNRB', 'NBNHNRB', 'NNNN']);
+        case 'UM': return array_merge($achievs, ['NC', 'NMNC', 'NBNC', 'NMNBNC']);
         default: return array_merge($achievs, ['NMNB']);
     }
 }
