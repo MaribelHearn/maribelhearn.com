@@ -1,4 +1,3 @@
-<?php setlocale(LC_ALL, $locale); bindtextdomain($lang, 'locale'); textdomain($lang) ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
     <p><?php
