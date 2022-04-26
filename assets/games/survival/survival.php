@@ -3,14 +3,8 @@
     <?php echo wrap_top() ?>
         <noscript><strong>Notice:</strong> this page will not function properly with JavaScript disabled.</noscript>
 		<p>Fill in the best survivals you have pulled off in the table below. If you leave a dropdown menu on the N/A option, it will not be factored in.
-        When you click Apply, three different tables indicating your survival progress will be generated.</p>
-		<p>The main survival progress table is an image and can be copied or saved to your device.</p>
-        <p>NM = No Miss (no deaths), NB = No Bomb, NMNB = No Miss No Bomb. There can also be a third restriction, depending on the game.
-        In PCB this restriction is NBB (No Border Breaks), in UFO it is NV (No UFO Summons),
-		in TD it is NT (No Trance), in HSiFS it is NR (No Releases), in WBaWC it is NHNRB (No Berserk Roar No Roar Breaks)
-		and in UM it is NC (No Cards, that is, no cards that affect survival play).
-        The Phantasm Stage counts as another Extra Stage.</p>
-        <p>Use the below selectors to fill up many achievements at once, either by game or by difficulty.</p>
+        When you click Apply, three different tables indicating your survival progress will be generated. The main survival progress table is an image and can be copied or saved to your device.
+        Use the below selectors to fill up many achievements at once, either by game or by difficulty. See <a href='#acronyms'>the bottom of this page</a> for an explanation of the acronyms.</p>
         <p>
             <label for='fillGameDifficulty'>Game / Difficulty</label>
             <select id='fillGameDifficulty'>
@@ -99,6 +93,20 @@
     <div id='bottom' data-html2canvas-ignore>
         <p><input id='save' type='button' value='Save'><input id='apply' type='button' value='Generate Tables'><input id='reset' type='button' value='Reset'></p>
         <p id='message'></p>
+        <h2 id='acronyms'>Acronyms</h2>
+        <ul>
+            <li><strong>NM:</strong> No Miss. Clear without dying.</li>
+            <li><strong>NB:</strong> No Bombs. Clear without bombing.</li>
+            <li><strong>NMNB:</strong> No Miss No Bombs. Clear without dying or bombing.</li>
+            <li><strong>NBB:</strong> No Border Breaks. Clear without breaking any borders (Touhou 7 PCB).</li>
+            <li><strong>NV:</strong> No UFO Summons. Clear without summoning any UFOs (Touhou 12 UFO).</li>
+            <li><strong>NT:</strong> No Trances. Clear without using any manual trances (Touhou 13 TD).</li>
+            <li><strong>NR:</strong> No Releases. Clear without using season releases (Touhou 16 HSiFS).</li>
+            <li><strong>NHNRB:</strong> No Hypers, No Roar Breaks. Clear without using Berserk Roar, also called hypers, and without breaking them. (Touhou 17 WBaWC).</li>
+            <li><strong>NC:</strong> No Cards. Clear without using cards (Touhou 18 UM).</li>
+            <li><strong>NNN:</strong> No Miss, No Bomb, No Third Condition. Clear without dying, bombing, or violating a third condition.</li>
+            <li><strong>NNNN:</strong> The above, but including a fourth condition.</li>
+        </ul>
     </div>
 </div>
 <div id='results' data-html2canvas-ignore>
