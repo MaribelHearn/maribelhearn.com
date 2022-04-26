@@ -1,4 +1,4 @@
-<?php include_once 'assets/shared/tl.php'; include_once 'assets/games/wr/wr_code.php'; setlocale(LC_ALL, $locale); bindtextdomain($lang, 'locale'); textdomain($lang) ?>
+<?php include_once 'assets/shared/tl.php'; include_once 'assets/games/wr/wr_code.php' ?>
 <div id='wrap' class='wrap'>
 	<?php echo wrap_top() ?>
     <p id='description'><?php

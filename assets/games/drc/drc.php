@@ -1,4 +1,4 @@
-<?php include_once 'assets/games/drc/drc_code.php'; setlocale(LC_ALL, $locale); bindtextdomain($lang, 'locale'); textdomain($lang) ?>
+<?php include_once 'assets/games/drc/drc_code.php' ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
     <p id='drcIntro'><?php
