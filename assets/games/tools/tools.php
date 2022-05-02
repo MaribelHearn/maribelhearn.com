@@ -329,12 +329,6 @@
 		echo _('A collection of modified <span class="code">.dat</span> files that randomise the patterns in the game.');
 	?></p>
 	<a href='https://mega.nz/folder/AY8iWQyZ#ItObpMjIGEfOXPZyCXAJfA/folder/lckTxKYa' target='_blank'><?php echo _('Download') ?></a>
-    <p><strong>LoLK Black Label</strong></p>
-    <p><?php
-		echo _('A Chinese Ultra patch for LoLK, which does <em>not</em> have autobomb, ' .
-		'but it doubles your shot power instead.');
-	?></p>
-    <a href='https://pan.baidu.com/s/1pJDYEsr' target='_blank'><?php echo _('Download') ?> (Baidu)</a>
     <p><strong><?php echo _('IN Double Stage ') ?>4/6</strong></p>
     <p><?php
 		echo _('Allows you to play 4A, 4B, 6A and 6B in a single run. Optionally also includes Extra at the end.');
@@ -458,7 +452,7 @@
     <p><?php
 		echo _('Launching this alongside the game fixes the bug that makes the game crash whenever you save a replay.');
 	?></p>
-    <a href='https://pan.baidu.com/share/link?shareid=3349324077&uk=1627698914' target='_blank'><?php echo _('Download') ?> (Baidu)</a>
+    <a href='https://maribelhearn.com/mirror/th09saverpyfix.zip' target='_blank'><?php echo _('Download') ?></a>
     <p><strong><?php echo _('TD Arrange Patch by ') ?><a href='https://twitter.com/qu_ark' target='_blank'>Nereid</a></strong></p>
     <p><?php
 		echo _('Modification of TD that removes the invincibility from trances, ' .
