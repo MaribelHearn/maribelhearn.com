@@ -32,12 +32,6 @@ tr:nth-child(even) {
 .cover98 {
     border: 1px solid #000;
 }
-.flag {
-    display: inline-block;
-}
-.language {
-    margin-top: 0px;
-}
 .general_header {
     background-color: #aaaaaa;
 }

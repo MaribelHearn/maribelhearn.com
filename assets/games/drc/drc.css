@@ -14,12 +14,6 @@ input[type=number] {
 .noborders {
     border: none;
 }
-.flag {
-    display: inline-block;
-}
-.language {
-    margin-top: 0px;
-}
 .error {
     color: red;
 }
