@@ -29,7 +29,11 @@ a:link.dropdown_button {
 a:visited.dropdown_button {
     color: black;
 }
+.flag {
+    display: inline-block;
+}
 .language {
+    margin-top: 0px;
     margin-left: 3px;
 }
 .icon {

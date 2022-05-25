@@ -24,12 +24,6 @@ table, tr, th, td {
 .wide-bottom {
     margin-bottom: 10px;
 }
-.flag {
-    display: inline-block;
-}
-.language {
-    margin-top: 0px;
-}
 .tooltip {
     visibility: hidden;
     background-color: black;
