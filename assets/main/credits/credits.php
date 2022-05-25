@@ -4,9 +4,9 @@
     <ul class='credits'>
         <li><a href='https://github.com/32th-System' target='_blank'>32th System</a>: Royalflare JSON data</li>
         <li><a href='https://github.com/hoangcaominh' target='_blank'>Hoàng Cao Minh</a>: DRC calculator integration</li>
-		<li><a href='https://www.youtube.com/channel/UCqKACPKvHg6Ub-kb8rlkrhQ' target='_blank'>Nylilsa:</a> Testing</li>
-		<li><a href='https://twitter.com/TheDukeofBooms' target='_blank'>ZXNova:</a> Most Dairi face crops</li>
-		<li><a href='https://twitter.com/CuprianLycoris' target='_blank'>Cuprian Lycoris:</a> Most ZUN face crops</li>
+		<li><a href='https://www.youtube.com/channel/UCqKACPKvHg6Ub-kb8rlkrhQ' target='_blank'>Nylilsa</a>: Testing</li>
+		<li><a href='https://twitter.com/TheDukeofBooms' target='_blank'>ZXNova</a>: Most Dairi face crops</li>
+		<li><a href='https://twitter.com/CuprianLycoris' target='_blank'>Cuprian Lycoris</a>: Most ZUN face crops</li>
 		<li>Knirgesh: PoFV netplay guide and tournament rules</li>
         <li><a href='https://twitter.com/UndreamtBoss' target='_blank'>Zil</a>: PoFV character descriptions</li>
 		<li><a href='https://twitter.com/homoiconicbully' target='_blank'>Lesbea</a>: PoFV averaged tier list</li>
@@ -40,8 +40,8 @@
     </ul>
     <h2><?php echo _('Character Artists') ?></h2>
     <ul class='credits'>
-        <li><a href='https://www.pixiv.net/member.php?id=4920496' target='_blank'>Dairi:</a> Tiers, Slots</li>
-        <li><a href='https://twitter.com/korindo' target='_blank'>ZUN:</a> PoFV, Tiers</li>
+        <li><a href='https://www.pixiv.net/member.php?id=4920496' target='_blank'>Dairi</a>: Tiers, Slots</li>
+        <li><a href='https://twitter.com/korindo' target='_blank'>ZUN</a>: PoFV, Tiers</li>
     </ul>
     <h2><?php echo _('Background Artists') ?></h2>
     <ul class='credits'>
@@ -73,7 +73,7 @@
         TRS (<a href='https://www.pixiv.net/en/artworks/23271307' target='_blank'>Source</a>)</li>
         <li><a href='https://www.youtube.com/channel/UCa1hZ9f6azCdOkMtiHyyaBQ' target='_blank'>Catboyjeremie</a>:
         WR (<a href='https://pbs.twimg.com/media/AsicC9bCQAAzu-H?format=jpg' target='_blank'>Source</a>)</li>
-        <li><a href='https://www.pixiv.net/member.php?id=4678572' target='_blank'>ETERSIARUM:</a>
+        <li><a href='https://www.pixiv.net/member.php?id=4678572' target='_blank'>ETERSIARUM</a>:
         Tiers (<a class='dead' href='https://www.pixiv.net/member_illust.php?mode=medium&illust_id=41297499' target='_blank'>Source</a>)</li>
         <li>Unknown source: Jargon, Royalflare, Slots</li>
     </ul>
