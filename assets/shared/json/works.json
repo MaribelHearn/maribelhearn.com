@@ -1,1 +1,88 @@
-{"PC-98":{"chars":["HighlyResponsivetoPrayers","StoryofEasternWonderland","PhantasmagoriaofDimDream","LotusLandStory","MysticSquare"]},"Classic":{"chars":["EmbodimentofScarletDevil","PerfectCherryBlossom","ImmaterialandMissingPower","ImperishableNight","PhantasmagoriaofFlowerView","ShoottheBullet"]},"Modern1":{"chars":["MountainofFaith","ScarletWeatherRhapsody","SubterraneanAnimism","UndefinedFantasticObject","TouhouHisoutensoku","DoubleSpoiler","GreatFairyWars"]},"Modern2":{"chars":["TenDesires","HopelessMasquerade","DoubleDealingCharacter","ImpossibleSpellCard","UrbanLegendinLimbo","LegacyofLunaticKingdom","AntinomyofCommonFlowers","HiddenStarinFourSeasons","VioletDetector","WilyBeastandWeakestCreature","GouyokuIbun","UnconnectedMarketeers"]},"Mangas":{"chars":["TouhouSangetsusei","TouhouBougetsushou","WildandHornedHermit","CuriositiesofLotusAsia","ForbiddenScrollery","FoulDetectiveSatori","LotusEaters"]},"Books":{"chars":["BohemianArchiveinJapaneseRed","PerfectMementoinStrictSense","TheGrimoireofMarisa","SymposiumofPost-mysticism","AlternativeFactsinEasternUtopia","TheGrimoireofUsami"]},"CDs":{"chars":["DollsinPseudoParadise","GhostlyFieldClub","ChangeabilityofStrangeDream","Retrospective53minutes","AkyuusUntouchedScoreVolume1","AkyuusUntouchedScoreVolume2","AkyuusUntouchedScoreVolume3","AkyuusUntouchedScoreVolume4","AkyuusUntouchedScoreVolume5","MagicalAstronomy","UnknownFlowerMesmerizingJourney","TrojanGreenAsteroid","Neo-traditionalismofJapan","DrLatencysFreakReport","DatelessBarOldAdam"]}}
+{
+    "PC-98": {
+        "chars": [
+            "HighlyResponsivetoPrayers",
+            "StoryofEasternWonderland",
+            "PhantasmagoriaofDimDream",
+            "LotusLandStory",
+            "MysticSquare"
+        ]
+    },
+    "Classic": {
+        "chars": [
+            "EmbodimentofScarletDevil",
+            "PerfectCherryBlossom",
+            "ImmaterialandMissingPower",
+            "ImperishableNight",
+            "PhantasmagoriaofFlowerView",
+            "ShoottheBullet"
+        ]
+    },
+    "Modern1": {
+        "chars": [
+            "MountainofFaith",
+            "ScarletWeatherRhapsody",
+            "SubterraneanAnimism",
+            "UndefinedFantasticObject",
+            "TouhouHisoutensoku",
+            "DoubleSpoiler",
+            "GreatFairyWars"
+        ]
+    },
+    "Modern2": {
+        "chars": [
+            "TenDesires",
+            "HopelessMasquerade",
+            "DoubleDealingCharacter",
+            "ImpossibleSpellCard",
+            "UrbanLegendinLimbo",
+            "LegacyofLunaticKingdom",
+            "AntinomyofCommonFlowers",
+            "HiddenStarinFourSeasons",
+            "VioletDetector",
+            "WilyBeastandWeakestCreature",
+            "GouyokuIbun",
+            "UnconnectedMarketeers"
+        ]
+    },
+    "Mangas": {
+        "chars": [
+            "TouhouSangetsusei",
+            "TouhouBougetsushou",
+            "WildandHornedHermit",
+            "CuriositiesofLotusAsia",
+            "ForbiddenScrollery",
+            "FoulDetectiveSatori",
+            "LotusEaters"
+        ]
+    },
+    "Books": {
+        "chars": [
+            "BohemianArchiveinJapaneseRed",
+            "PerfectMementoinStrictSense",
+            "TheGrimoireofMarisa",
+            "SymposiumofPost-mysticism",
+            "AlternativeFactsinEasternUtopia",
+            "TheGrimoireofUsami"
+        ]
+    },
+    "CDs": {
+        "chars": [
+            "DollsinPseudoParadise",
+            "GhostlyFieldClub",
+            "ChangeabilityofStrangeDream",
+            "Retrospective53minutes",
+            "AkyuusUntouchedScoreVolume1",
+            "AkyuusUntouchedScoreVolume2",
+            "AkyuusUntouchedScoreVolume3",
+            "AkyuusUntouchedScoreVolume4",
+            "AkyuusUntouchedScoreVolume5",
+            "MagicalAstronomy",
+            "UnknownFlowerMesmerizingJourney",
+            "TrojanGreenAsteroid",
+            "Neo-traditionalismofJapan",
+            "DrLatencysFreakReport",
+            "DatelessBarOldAdam"
+        ]
+    }
+}

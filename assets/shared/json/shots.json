@@ -1,1 +1,193 @@
-{"SoEW":{"chars":["ReimuA","ReimuB","ReimuC"]},"PoDD":{"chars":["Reimu","Mima","Marisa","Ellen","Kotohime","Kana","Rikako","Chiyuri","Yumemi"]},"LLS":{"chars":["ReimuA","ReimuB","MarisaA","MarisaB"]},"MS":{"chars":["Reimu","Marisa","Mima","Yuuka"]},"EoSD":{"chars":["ReimuA","ReimuB","MarisaA","MarisaB"]},"PCB":{"chars":["ReimuA","ReimuB","MarisaA","MarisaB","SakuyaA","SakuyaB"]},"IN":{"chars":["Border Team","Magic Team","Scarlet Team","Ghost Team","Reimu","Yukari","Marisa","Alice","Sakuya","Remilia","Youmu","Yuyuko"]},"PoFV":{"chars":["Reimu","Marisa","Sakuya","Youmu","Reisen","Cirno","Lyrica","Merlin","Lunasa","Mystia","Tewi","Aya","Medicine","Yuuka","Komachi","Eiki"]},"MoF":{"chars":["ReimuA","ReimuB","ReimuC","MarisaA","MarisaB","MarisaC"]},"SA":{"chars":["ReimuA","ReimuB","ReimuC","MarisaA","MarisaB","MarisaC"]},"UFO":{"chars":["ReimuA","ReimuB","MarisaA","MarisaB","SanaeA","SanaeB"]},"TD":{"chars":["Reimu","Marisa","Sanae","Youmu"]},"DDC":{"chars":["ReimuA","ReimuB","MarisaA","MarisaB","SakuyaA","SakuyaB"]},"LoLK":{"chars":["Reimu","Marisa","Sanae","Reisen"]},"HSiFS":{"chars":["ReimuSpring","ReimuSummer","ReimuAutumn","ReimuWinter","ReimuExtra","CirnoSpring","CirnoSummer","CirnoAutumn","CirnoWinter","CirnoExtra","AyaSpring","AyaSummer","AyaAutumn","AyaWinter","AyaExtra","MarisaSpring","MarisaSummer","MarisaAutumn","MarisaWinter","MarisaExtra"]},"WBaWC":{"chars":["ReimuWolf","ReimuOtter","ReimuEagle","MarisaWolf","MarisaOtter","MarisaEagle","YoumuWolf","YoumuOtter","YoumuEagle"]},"UM":{"chars":["Reimu","Marisa","Sakuya","Sanae"]}}
+{
+    "SoEW": {
+        "chars": [
+            "ReimuA",
+            "ReimuB",
+            "ReimuC"
+        ]
+    },
+    "PoDD": {
+        "chars": [
+            "Reimu",
+            "Mima",
+            "Marisa",
+            "Ellen",
+            "Kotohime",
+            "Kana",
+            "Rikako",
+            "Chiyuri",
+            "Yumemi"
+        ]
+    },
+    "LLS": {
+        "chars": [
+            "ReimuA",
+            "ReimuB",
+            "MarisaA",
+            "MarisaB"
+        ]
+    },
+    "MS": {
+        "chars": [
+            "Reimu",
+            "Marisa",
+            "Mima",
+            "Yuuka"
+        ]
+    },
+    "EoSD": {
+        "chars": [
+            "ReimuA",
+            "ReimuB",
+            "MarisaA",
+            "MarisaB"
+        ]
+    },
+    "PCB": {
+        "chars": [
+            "ReimuA",
+            "ReimuB",
+            "MarisaA",
+            "MarisaB",
+            "SakuyaA",
+            "SakuyaB"
+        ]
+    },
+    "IN": {
+        "chars": [
+            "Border Team",
+            "Magic Team",
+            "Scarlet Team",
+            "Ghost Team",
+            "Reimu",
+            "Yukari",
+            "Marisa",
+            "Alice",
+            "Sakuya",
+            "Remilia",
+            "Youmu",
+            "Yuyuko"
+        ]
+    },
+    "PoFV": {
+        "chars": [
+            "Reimu",
+            "Marisa",
+            "Sakuya",
+            "Youmu",
+            "Reisen",
+            "Cirno",
+            "Lyrica",
+            "Merlin",
+            "Lunasa",
+            "Mystia",
+            "Tewi",
+            "Aya",
+            "Medicine",
+            "Yuuka",
+            "Komachi",
+            "Eiki"
+        ]
+    },
+    "MoF": {
+        "chars": [
+            "ReimuA",
+            "ReimuB",
+            "ReimuC",
+            "MarisaA",
+            "MarisaB",
+            "MarisaC"
+        ]
+    },
+    "SA": {
+        "chars": [
+            "ReimuA",
+            "ReimuB",
+            "ReimuC",
+            "MarisaA",
+            "MarisaB",
+            "MarisaC"
+        ]
+    },
+    "UFO": {
+        "chars": [
+            "ReimuA",
+            "ReimuB",
+            "MarisaA",
+            "MarisaB",
+            "SanaeA",
+            "SanaeB"
+        ]
+    },
+    "TD": {
+        "chars": [
+            "Reimu",
+            "Marisa",
+            "Sanae",
+            "Youmu"
+        ]
+    },
+    "DDC": {
+        "chars": [
+            "ReimuA",
+            "ReimuB",
+            "MarisaA",
+            "MarisaB",
+            "SakuyaA",
+            "SakuyaB"
+        ]
+    },
+    "LoLK": {
+        "chars": [
+            "Reimu",
+            "Marisa",
+            "Sanae",
+            "Reisen"
+        ]
+    },
+    "HSiFS": {
+        "chars": [
+            "ReimuSpring",
+            "ReimuSummer",
+            "ReimuAutumn",
+            "ReimuWinter",
+            "ReimuExtra",
+            "CirnoSpring",
+            "CirnoSummer",
+            "CirnoAutumn",
+            "CirnoWinter",
+            "CirnoExtra",
+            "AyaSpring",
+            "AyaSummer",
+            "AyaAutumn",
+            "AyaWinter",
+            "AyaExtra",
+            "MarisaSpring",
+            "MarisaSummer",
+            "MarisaAutumn",
+            "MarisaWinter",
+            "MarisaExtra"
+        ]
+    },
+    "WBaWC": {
+        "chars": [
+            "ReimuWolf",
+            "ReimuOtter",
+            "ReimuEagle",
+            "MarisaWolf",
+            "MarisaOtter",
+            "MarisaEagle",
+            "YoumuWolf",
+            "YoumuOtter",
+            "YoumuEagle"
+        ]
+    },
+    "UM": {
+        "chars": [
+            "Reimu",
+            "Marisa",
+            "Sakuya",
+            "Sanae"
+        ]
+    }
+}

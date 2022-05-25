@@ -1,1 +1,263 @@
-{"Main":{"chars":["ReimuHakurei","MarisaKirisame"]},"HRtP":{"chars":["ReimuPC-98","SinGyokuM","SinGyokuF","YuugenMagan","Mima","Elis","Kikuri","Sariel","Konngara"]},"SoEW":{"chars":["Genjii","Rika","Meira","FiveMagicStones","MarisaPC-98","EvilEyeSigma"]},"PoDD":{"chars":["Ellen","Kotohime","KanaAnaberal","RikakoAsakura","ChiyuriKitashirakawa","YumemiOkazaki","Ruukoto","Mimi-chan"]},"LLS":{"chars":["Orange","Kurumi","Elly","MarisaPC-98LLS","YuukaPC-98Stage5","YuukaPC-98","Mugetsu","Gengetsu"]},"MS":{"chars":["Sara","Luize","AlicePC-98","YukiandMai","Yuki","MaiPC-98","Yumeko","Shinki","AlicePC-98Extra"]},"EoSD":{"chars":["Rumia","Daiyousei","Cirno","HongMeiling","Koakuma","PatchouliKnowledge","SakuyaIzayoi","RemiliaScarlet","FlandreScarlet"]},"PCB":{"chars":["LettyWhiterock","Chen","AliceMargatroid","LilyWhite","LyricaPrismriver","LunasaPrismriver","MerlinPrismriver","YoumuKonpaku","YuyukoSaigyouji","YuyukoSaigyoujiResurrectionButterfly","RanYakumo","YukariYakumo"]},"IN":{"chars":["WriggleNightbug","MystiaLorelei","KeineKamishirasawa","TewiInaba","ReisenUdongeinInaba","EirinYagokoro","KaguyaHouraisan","KaguyaHouraisanLastSpells","FujiwaranoMokou"]},"PoFV":{"chars":["AyaShameimaru","MedicineMelancholy","YuukaKazami","KomachiOnozuka","EikiShikiYamaxanadu"]},"MoF":{"chars":["ShizuhaAki","MinorikoAki","HinaKagiyama","NitoriKawashiro","MomijiInubashiri","SanaeKochiya","KanakoYasaka","SuwakoMoriya"]},"SA":{"chars":["Kisume","YamameKurodani","ParseeMizuhashi","YuugiHoshiguma","SatoriKomeiji","RinKaenbyou","UtsuhoReiuji","KoishiKomeiji"]},"UFO":{"chars":["Nazrin","KogasaTatara","IchirinKumoi","Unzan","MinamitsuMurasa","ShouToramaru","ByakurenHijiri","NueHoujuu"]},"TD":{"chars":["YuyukoSaigyoujiTD","KyoukoKasodani","YoshikaMiyako","SeigaKaku","SoganoTojiko","MononobenoFuto","ToyosatomiminoMiko","MamizouFutatsuiwa"]},"DDC":{"chars":["Wakasagihime","Sekibanki","KagerouImaizumi","BenbenTsukumo","YatsuhashiTsukumo","SeijaKijin","ShinmyoumaruSukuna","RaikoHorikawa"]},"LoLK":{"chars":["Seiran","Ringo","DoremySweet","SagumeKishin","Clownpiece","Junko","HecatiaLapislazuli"]},"HSiFS":{"chars":["EternityLarva","NemunoSakata","AunnKomano","NarumiYatadera","SatonoNishida","MaiTeireida","OkinaMatara","OkinaMataraExtra"]},"WBaWC":{"chars":["EikaEbisu","UrumiUshizaki","KutakaNiwatari","YachieKicchou","MayumiJoutouguu","KeikiHaniyasushin","SakiKurokoma"]},"UM":{"chars":["MikeGoutokuji","TakaneYamashiro","SannyoKomakusa","MisumaruTamatsukuri","TsukasaKudamaki","MegumuIizunamaru","ChimataTenkyuu","MomoyoHimemushi"]},"Spinoff":{"chars":["SuikaIbuki","IkuNagae","TenshiHinanawi","Hisoutensoku","HatateHimekaidou","LunaChild","StarSapphire","MarisaKirisameGFW","SunnyMilk","HatanoKokoro","SumirekoUsami","JoonYorigami","ShionYorigami","YuumaToutetsu"]},"Manga":{"chars":["HiedanoAkyuu","WatatsukinoToyohime","WatatsukinoYorihime","ReisenII","KasenIbaraki","RinnosukeMorichika","Tokiko","KosuzuMotoori","FortuneTeller","MiyoiOkunoda"]},"CD":{"chars":["MaribelHearn","RenkoUsami"]}}
+{
+    "Main": {
+        "chars": [
+            "ReimuHakurei",
+            "MarisaKirisame"
+        ]
+    },
+    "HRtP": {
+        "chars": [
+            "ReimuPC-98",
+            "SinGyokuM",
+            "SinGyokuF",
+            "YuugenMagan",
+            "Mima",
+            "Elis",
+            "Kikuri",
+            "Sariel",
+            "Konngara"
+        ]
+    },
+    "SoEW": {
+        "chars": [
+            "Genjii",
+            "Rika",
+            "Meira",
+            "FiveMagicStones",
+            "MarisaPC-98",
+            "EvilEyeSigma"
+        ]
+    },
+    "PoDD": {
+        "chars": [
+            "Ellen",
+            "Kotohime",
+            "KanaAnaberal",
+            "RikakoAsakura",
+            "ChiyuriKitashirakawa",
+            "YumemiOkazaki",
+            "Ruukoto",
+            "Mimi-chan"
+        ]
+    },
+    "LLS": {
+        "chars": [
+            "Orange",
+            "Kurumi",
+            "Elly",
+            "MarisaPC-98LLS",
+            "YuukaPC-98Stage5",
+            "YuukaPC-98",
+            "Mugetsu",
+            "Gengetsu"
+        ]
+    },
+    "MS": {
+        "chars": [
+            "Sara",
+            "Luize",
+            "AlicePC-98",
+            "YukiandMai",
+            "Yuki",
+            "MaiPC-98",
+            "Yumeko",
+            "Shinki",
+            "AlicePC-98Extra"
+        ]
+    },
+    "EoSD": {
+        "chars": [
+            "Rumia",
+            "Daiyousei",
+            "Cirno",
+            "HongMeiling",
+            "Koakuma",
+            "PatchouliKnowledge",
+            "SakuyaIzayoi",
+            "RemiliaScarlet",
+            "FlandreScarlet"
+        ]
+    },
+    "PCB": {
+        "chars": [
+            "LettyWhiterock",
+            "Chen",
+            "AliceMargatroid",
+            "LilyWhite",
+            "LyricaPrismriver",
+            "LunasaPrismriver",
+            "MerlinPrismriver",
+            "YoumuKonpaku",
+            "YuyukoSaigyouji",
+            "YuyukoSaigyoujiResurrectionButterfly",
+            "RanYakumo",
+            "YukariYakumo"
+        ]
+    },
+    "IN": {
+        "chars": [
+            "WriggleNightbug",
+            "MystiaLorelei",
+            "KeineKamishirasawa",
+            "TewiInaba",
+            "ReisenUdongeinInaba",
+            "EirinYagokoro",
+            "KaguyaHouraisan",
+            "KaguyaHouraisanLastSpells",
+            "FujiwaranoMokou"
+        ]
+    },
+    "PoFV": {
+        "chars": [
+            "AyaShameimaru",
+            "MedicineMelancholy",
+            "YuukaKazami",
+            "KomachiOnozuka",
+            "EikiShikiYamaxanadu"
+        ]
+    },
+    "MoF": {
+        "chars": [
+            "ShizuhaAki",
+            "MinorikoAki",
+            "HinaKagiyama",
+            "NitoriKawashiro",
+            "MomijiInubashiri",
+            "SanaeKochiya",
+            "KanakoYasaka",
+            "SuwakoMoriya"
+        ]
+    },
+    "SA": {
+        "chars": [
+            "Kisume",
+            "YamameKurodani",
+            "ParseeMizuhashi",
+            "YuugiHoshiguma",
+            "SatoriKomeiji",
+            "RinKaenbyou",
+            "UtsuhoReiuji",
+            "KoishiKomeiji"
+        ]
+    },
+    "UFO": {
+        "chars": [
+            "Nazrin",
+            "KogasaTatara",
+            "IchirinKumoi",
+            "Unzan",
+            "MinamitsuMurasa",
+            "ShouToramaru",
+            "ByakurenHijiri",
+            "NueHoujuu"
+        ]
+    },
+    "TD": {
+        "chars": [
+            "YuyukoSaigyoujiTD",
+            "KyoukoKasodani",
+            "YoshikaMiyako",
+            "SeigaKaku",
+            "SoganoTojiko",
+            "MononobenoFuto",
+            "ToyosatomiminoMiko",
+            "MamizouFutatsuiwa"
+        ]
+    },
+    "DDC": {
+        "chars": [
+            "Wakasagihime",
+            "Sekibanki",
+            "KagerouImaizumi",
+            "BenbenTsukumo",
+            "YatsuhashiTsukumo",
+            "SeijaKijin",
+            "ShinmyoumaruSukuna",
+            "RaikoHorikawa"
+        ]
+    },
+    "LoLK": {
+        "chars": [
+            "Seiran",
+            "Ringo",
+            "DoremySweet",
+            "SagumeKishin",
+            "Clownpiece",
+            "Junko",
+            "HecatiaLapislazuli"
+        ]
+    },
+    "HSiFS": {
+        "chars": [
+            "EternityLarva",
+            "NemunoSakata",
+            "AunnKomano",
+            "NarumiYatadera",
+            "SatonoNishida",
+            "MaiTeireida",
+            "OkinaMatara",
+            "OkinaMataraExtra"
+        ]
+    },
+    "WBaWC": {
+        "chars": [
+            "EikaEbisu",
+            "UrumiUshizaki",
+            "KutakaNiwatari",
+            "YachieKicchou",
+            "MayumiJoutouguu",
+            "KeikiHaniyasushin",
+            "SakiKurokoma"
+        ]
+    },
+    "UM": {
+        "chars": [
+            "MikeGoutokuji",
+            "TakaneYamashiro",
+            "SannyoKomakusa",
+            "MisumaruTamatsukuri",
+            "TsukasaKudamaki",
+            "MegumuIizunamaru",
+            "ChimataTenkyuu",
+            "MomoyoHimemushi"
+        ]
+    },
+    "Spinoff": {
+        "chars": [
+            "SuikaIbuki",
+            "IkuNagae",
+            "TenshiHinanawi",
+            "Hisoutensoku",
+            "HatateHimekaidou",
+            "LunaChild",
+            "StarSapphire",
+            "MarisaKirisameGFW",
+            "SunnyMilk",
+            "HatanoKokoro",
+            "SumirekoUsami",
+            "JoonYorigami",
+            "ShionYorigami",
+            "YuumaToutetsu"
+        ]
+    },
+    "Manga": {
+        "chars": [
+            "HiedanoAkyuu",
+            "WatatsukinoToyohime",
+            "WatatsukinoYorihime",
+            "ReisenII",
+            "KasenIbaraki",
+            "RinnosukeMorichika",
+            "Tokiko",
+            "KosuzuMotoori",
+            "FortuneTeller",
+            "MiyoiOkunoda"
+        ]
+    },
+    "CD": {
+        "chars": [
+            "MaribelHearn",
+            "RenkoUsami"
+        ]
+    }
+}

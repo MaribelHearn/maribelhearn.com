@@ -8,6 +8,7 @@ lnnlist.json
 wrlist.json
 
 # minified files
+*-min.json
 *-min.css
 *-min.js
 
