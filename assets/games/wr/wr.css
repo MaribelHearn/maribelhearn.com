@@ -118,12 +118,6 @@ tr:not(.west_tr):nth-child(even), tr.west_tr:nth-child(odd) {
 .noborders {
     border: none;
 }
-.flag {
-    display: inline-block;
-}
-.language {
-    margin-top: 0px;
-}
 .Spring {
     color: #990099;
 }

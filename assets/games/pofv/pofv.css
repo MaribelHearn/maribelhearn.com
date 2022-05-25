@@ -41,14 +41,8 @@ ol > li {
 .E {
     color: #00D0D0;
 }
-.flag {
-    display: inline-block;
-}
 .flag_france {
     background-position: -896px 0px;
-}
-.language {
-    margin-top: 0px;
 }
 .art {
     border: 1px solid black;
