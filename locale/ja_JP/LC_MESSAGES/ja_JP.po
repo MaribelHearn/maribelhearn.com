@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-27 20:21+0200\n"
-"PO-Revision-Date: 2022-05-27 20:21+0200\n"
+"POT-Creation-Date: 2022-05-27 21:56+0200\n"
+"PO-Revision-Date: 2022-05-27 22:00+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -17,6 +17,9 @@ msgstr ""
 "X-Poedit-SearchPath-2: games/wr/wr.php\n"
 "X-Poedit-SearchPath-3: games/lnn/lnn.php\n"
 "X-Poedit-SearchPath-4: games/tools/tools.php\n"
+"X-Poedit-SearchPath-5: games/wr/wr.js\n"
+"X-Poedit-SearchPath-6: games/lnn/lnn.js\n"
+"X-Poedit-SearchPath-7: shared/shared.php\n"
 
 #: games/drc/drc.php:5
 msgid ""
@@ -153,51 +156,55 @@ msgstr "天"
 msgid "WBaWC"
 msgstr "鬼"
 
-#: games/drc/drc.php:57
+#: games/drc/drc.php:48
+msgid "UM"
+msgstr "虹"
+
+#: games/drc/drc.php:58
 msgid "FinalA"
 msgstr "Aルート"
 
-#: games/drc/drc.php:58
+#: games/drc/drc.php:59
 msgid "FinalB"
 msgstr "Bルート"
 
-#: games/drc/drc.php:61 games/drc/drc.php:120
+#: games/drc/drc.php:62 games/drc/drc.php:121
 msgid "Scoring"
 msgstr "稼ぎ"
 
-#: games/drc/drc.php:62 games/drc/drc.php:301
+#: games/drc/drc.php:63 games/drc/drc.php:302
 msgid "Survival"
 msgstr "クリア重視"
 
-#: games/drc/drc.php:68
+#: games/drc/drc.php:69
 msgid "Spring"
 msgstr "春"
 
-#: games/drc/drc.php:69
+#: games/drc/drc.php:70
 msgid "Summer"
 msgstr "夏"
 
-#: games/drc/drc.php:70
+#: games/drc/drc.php:71
 msgid "Autumn"
 msgstr "秋"
 
-#: games/drc/drc.php:71
+#: games/drc/drc.php:72
 msgid "Winter"
 msgstr "冬"
 
-#: games/drc/drc.php:75
+#: games/drc/drc.php:76
 msgid "Calculate"
 msgstr "計算する"
 
-#: games/drc/drc.php:77
+#: games/drc/drc.php:78
 msgid "Rules"
 msgstr "ルール"
 
-#: games/drc/drc.php:79
+#: games/drc/drc.php:80
 msgid "No cheating by using external programs or modifying the game FPS."
 msgstr "外部ツールを用いたチート行為やゲームのFPSを変更することを禁止します。"
 
-#: games/drc/drc.php:80
+#: games/drc/drc.php:81
 msgid ""
 "Replays are required for Windows game submissions, while for PC-98 a video "
 "is accepted."
@@ -205,18 +212,18 @@ msgstr ""
 "Windows版作品の登録にはリプレイが必要です。PC-98版作品においては録画ファイル"
 "にて受け付け可能です。"
 
-#: games/drc/drc.php:81
+#: games/drc/drc.php:82
 msgid "All runs must be played using at most default lives and bombs."
 msgstr ""
 "プレイに於いては、初期残機ボムにて参加すること。ただし初期残機ボムを操作する"
 "ことが出来る作品においては減らすことのみ可能とする。なおペナルティーはないも"
 "のとする。"
 
-#: games/drc/drc.php:83
+#: games/drc/drc.php:84
 msgid "Rubrics"
 msgstr "ルーブリック"
 
-#: games/drc/drc.php:85
+#: games/drc/drc.php:86
 msgid ""
 "The rubrics are the formulas and fixed values used to calculate the number "
 "of DRC points for a run. If you are curious about how your points are being "
@@ -226,23 +233,23 @@ msgstr ""
 "ことです。ポイントの決定方法を知りたい場合は、下のボタンをクリックして展開し"
 "て下さい。"
 
-#: games/drc/drc.php:88
+#: games/drc/drc.php:89
 msgid "Show Scoring Rubrics"
 msgstr "稼ぎのルーブリックを見せて"
 
-#: games/drc/drc.php:89
+#: games/drc/drc.php:90
 msgid "Show Survival Rubrics"
 msgstr "クリア重視のルーブリックを見せて"
 
-#: games/drc/drc.php:91
+#: games/drc/drc.php:92
 msgid "Scoring Notes"
 msgstr "稼ぎのノート"
 
-#: games/drc/drc.php:94
+#: games/drc/drc.php:95
 msgid "The World Records are taken from <a href=\"wr\">the WR page</a>."
 msgstr "WRのリストは<a href=\"wr\">こちら</a>です。"
 
-#: games/drc/drc.php:97
+#: games/drc/drc.php:98
 msgid ""
 "If you achieve a new World Record, your points are equal to the maximum "
 "number of points; otherwise, the formula applies."
@@ -250,7 +257,7 @@ msgstr ""
 "もし新世界記録を達成すれば、あなたのポイントは最高点になります。そうでなけれ"
 "ば式を適用します。"
 
-#: games/drc/drc.php:101
+#: games/drc/drc.php:102
 msgid ""
 "Some categories use a fictional WR. <a href=\"#fictionalWRtitle\">Click "
 "here</a> for the list of them."
@@ -258,7 +265,7 @@ msgstr ""
 "いくつかのカテゴリには、仮のWRを設定してあります。仮のWRのリストは<a href="
 "\"#fictionalWRtitle\">ここをクリック</a>。"
 
-#: games/drc/drc.php:105
+#: games/drc/drc.php:106
 msgid ""
 "Some categories always use the WR of a specific shottype. <a href="
 "\"#WRdefinitionTitle\">Click here</a> for the list of them."
@@ -266,7 +273,7 @@ msgstr ""
 "幾つかのカテゴリには、特定のショットタイプによるWRが設定されています。WRの定"
 "義のリストは<a href=\"#WRdefinitionTitle\">ここをクリック</a> 。"
 
-#: games/drc/drc.php:109
+#: games/drc/drc.php:110
 msgid ""
 "MoF uses a separate system. <a href=\"#mountainOfFaith\">Click here</a> for "
 "said system."
@@ -274,7 +281,7 @@ msgstr ""
 "東方風神録では別のシステムを使います。そのシステムは<a href="
 "\"#mountainOfFaith\">ここをクリック</a>。"
 
-#: games/drc/drc.php:113
+#: games/drc/drc.php:114
 msgid ""
 "DS uses a separate system. <a href=\"#doubleSpoiler\">Click here</a> for "
 "said system."
@@ -282,46 +289,46 @@ msgstr ""
 "ダブルスポイラーでは別のシステムを使います。そのシステムは<a href="
 "\"#doubleSpoiler\">ここをクリック</a>。"
 
-#: games/drc/drc.php:121
+#: games/drc/drc.php:122
 msgid "||Max * (Score/WR)^Exp||"
 msgstr "||最大点 * (スコア / 世界記録) ^ 冪指数||"
 
-#: games/drc/drc.php:128 games/drc/drc.php:312 games/drc/drc.php:346
+#: games/drc/drc.php:129 games/drc/drc.php:313 games/drc/drc.php:347
 #: games/lnn/lnn.php:127 games/lnn/lnn.php:141 games/wr/wr.php:63
 msgid "Game"
 msgstr "ゲーム"
 
-#: games/drc/drc.php:129 games/drc/drc.php:313 games/drc/drc.php:347
+#: games/drc/drc.php:130 games/drc/drc.php:314 games/drc/drc.php:348
 msgid "Max points"
 msgstr "最大点"
 
-#: games/drc/drc.php:130
+#: games/drc/drc.php:131
 msgid "Exponent"
 msgstr "冪指数"
 
-#: games/drc/drc.php:141
+#: games/drc/drc.php:142
 msgid "Fictional WRs"
 msgstr "仮のWR"
 
-#: games/drc/drc.php:142
+#: games/drc/drc.php:143
 msgid ""
 "The categories in the table below use a fictional WR instead of the real one."
 msgstr "下記のものは、本来のWRの代わりに仮のWRを設定をしたものの表です。"
 
-#: games/drc/drc.php:163
+#: games/drc/drc.php:164
 msgid "'WR' definition"
 msgstr "WRの定義"
 
-#: games/drc/drc.php:165
+#: games/drc/drc.php:166
 msgid ""
 "The categories in the table below always use the WR of a specific shottype."
 msgstr "表には、WRとして採用したショットタイプを紹介しています。"
 
-#: games/drc/drc.php:182
+#: games/drc/drc.php:183
 msgid "MoF Scoring"
 msgstr "東方風神録の稼ぎ"
 
-#: games/drc/drc.php:184
+#: games/drc/drc.php:185
 msgid ""
 "For each difficulty and shottype there are six thresholds, at which you will "
 "have set numbers of points respectively. Then, increments are done, "
@@ -332,36 +339,36 @@ msgstr ""
 "なたのスコアがどれだけ閾値より高いかに基づき増分します。Easyの最大点は375で"
 "す。Lunaticの最大点は500です。"
 
-#: games/drc/drc.php:195
+#: games/drc/drc.php:196
 msgid "If score &lt; 1st threshold, then: ||220*(Score/T1)^2||"
 msgstr "スコアが第一閾値よりも小さければ、||220*(スコア/第一閾値)^2||"
 
-#: games/drc/drc.php:197
+#: games/drc/drc.php:198
 msgid "If score &lt; 2b, then: ||200*(Score/2b)^2||"
 msgstr "スコアが20億よりも小さければ、||200*(スコア/20億)^2||"
 
-#: games/drc/drc.php:199
+#: games/drc/drc.php:200
 msgid "If score &lt; 900m, then: ||100*(Score/900m)^2||"
 msgstr "スコアが9億よりも小さければ、||100*(スコア/9億)^2||"
 
-#: games/drc/drc.php:203
+#: games/drc/drc.php:204
 msgid "Threshold"
 msgstr "閾値"
 
-#: games/drc/drc.php:204 games/drc/drc.php:237
+#: games/drc/drc.php:205 games/drc/drc.php:238
 msgid "Base points"
 msgstr "素点"
 
-#: games/drc/drc.php:205 games/drc/drc.php:238 games/drc/drc.php:240
-#: games/drc/drc.php:242
+#: games/drc/drc.php:206 games/drc/drc.php:239 games/drc/drc.php:241
+#: games/drc/drc.php:243
 msgid "Increments"
 msgstr "増加"
 
-#: games/drc/drc.php:228
+#: games/drc/drc.php:229
 msgid "DS Scoring"
 msgstr "ダブルスポイラーの稼ぎ"
 
-#: games/drc/drc.php:230
+#: games/drc/drc.php:231
 msgid ""
 "For each scene there are three thresholds, at which you will have set "
 "numbers of points points respectively. Then, increments are done, dependent "
@@ -370,32 +377,32 @@ msgstr ""
 "各撮影対象各機体で3つの閾値があり、それぞれで点数を設定しています。その後、あ"
 "なたのスコアがどれだけ閾値より高いかに基づき増分します。"
 
-#: games/drc/drc.php:237
+#: games/drc/drc.php:238
 msgid "Scene"
 msgstr "撮影対象"
 
-#: games/drc/drc.php:239
+#: games/drc/drc.php:240
 msgid "Threshold 1"
 msgstr "閾値1"
 
-#: games/drc/drc.php:241
+#: games/drc/drc.php:242
 msgid "Threshold 2"
 msgstr "閾値2"
 
-#: games/drc/drc.php:243
+#: games/drc/drc.php:244
 msgid "Threshold 3"
 msgstr "閾値3"
 
-#: games/drc/drc.php:271 games/drc/drc.php:391 games/lnn/lnn.php:215
+#: games/drc/drc.php:272 games/drc/drc.php:392 games/lnn/lnn.php:215
 #: games/tools/tools.php:514 games/wr/wr.php:371
 msgid "Back to Top"
 msgstr "上に帰る"
 
-#: games/drc/drc.php:274
+#: games/drc/drc.php:275
 msgid "Survival Notes"
 msgstr "クリア重視のノート"
 
-#: games/drc/drc.php:278
+#: games/drc/drc.php:279
 msgid ""
 "For a main game clear, a shottype multiplier is applied to your DRC points, "
 "the result of which is again rounded. <a href=\"#shottypeMultipliers\">Click "
@@ -404,7 +411,7 @@ msgstr ""
 "本編クリアではキャラ倍率がDRCポイントに掛けられます。その結果は四捨五入されま"
 "す。キャラ倍率のリストはa href=\"#shottypeMultipliers\">ここをクリック</a>。"
 
-#: games/drc/drc.php:283
+#: games/drc/drc.php:284
 msgid ""
 "The Phantasmagorias use a separate system. <a href=\"#phantasmagoria\">Click "
 "here</a> for said system."
@@ -412,7 +419,7 @@ msgstr ""
 "東方夢時空と東方花映塚では別のシステムを使います。その方式は<a href="
 "\"#phantasmagoria\">ここをクリック</a> 。"
 
-#: games/drc/drc.php:288
+#: games/drc/drc.php:289
 msgid ""
 "For IN, you obtain 2 (1 on Easy) additional points for each captured Last "
 "Spell, with the exception of Imperishable Shooting, which yields 5 points."
@@ -420,7 +427,7 @@ msgstr ""
 "東方永夜抄ではラストスペルを取得する度に２点（Easyのみ１点）の追加点を得ま"
 "す。「インペリシャブルシューティング」の追加点は５点とします。"
 
-#: games/drc/drc.php:294
+#: games/drc/drc.php:295
 msgid ""
 "For HSiFS, the first release adds 2 to <em>n</em>, and further releases add "
 "0.5, 0.4, 0.3, 0.2, 0.1 to <em>n</em>."
@@ -428,19 +435,19 @@ msgstr ""
 "東方天空璋では、最初の季節解放は２ボム扱い、以降の解放は０.５、０.４、０.３、"
 "０.２、０.１ボム扱いとします。"
 
-#: games/drc/drc.php:302
+#: games/drc/drc.php:303
 msgid "||Max * (Base^-n)||"
 msgstr "||最大点 * (底 ^ -n)||"
 
-#: games/drc/drc.php:314
+#: games/drc/drc.php:315
 msgid "Base"
 msgstr "底"
 
-#: games/drc/drc.php:331
+#: games/drc/drc.php:332
 msgid "PoDD & PoFV Survival"
 msgstr "東方夢時空と東方花映塚のクリア重視"
 
-#: games/drc/drc.php:333
+#: games/drc/drc.php:334
 msgid ""
 "In the below formula, MaxLives is equal to 5 for PoDD, 7 for PoFV main game "
 "and 8 for PoFV Extra. NoBombBonus is a difficulty-specific No Bomb bonus for "
@@ -451,24 +458,24 @@ msgstr ""
 "す。ノーボムボーナスは難易度ごとに変わる、夢時空でのボムの不使用ボーナスと花"
 "映塚の（Ｃ１含む）チャージ攻撃の不使用ボーナスです。"
 
-#: games/drc/drc.php:339
+#: games/drc/drc.php:340
 msgid "||Max - ((Max - Min) / MaxLives * RoundsLost)|| + NoBombBonus"
 msgstr ""
 "||最大点 - ((最大点 - 最小点) / 最大残機 * 敗北数)|| + ノーボムボーナス"
 
-#: games/drc/drc.php:348
+#: games/drc/drc.php:349
 msgid "Min points"
 msgstr "最小点"
 
-#: games/drc/drc.php:349
+#: games/drc/drc.php:350
 msgid "No Bomb bonus"
 msgstr "ノーボムボーナス"
 
-#: games/drc/drc.php:364
+#: games/drc/drc.php:365
 msgid "Shottype Multipliers"
 msgstr "キャラ倍率"
 
-#: games/drc/drc.php:366
+#: games/drc/drc.php:367
 msgid ""
 "These are applied to the result of the survival formula for a main game run "
 "only; they do <em>not</em> apply for Extra, nor do they apply for HSiFS runs "
@@ -479,13 +486,59 @@ msgstr ""
 "ん。解放を使用した天空璋のプレイにも適用されません。ここに載っていない機体の"
 "キャラ倍率は１となります。"
 
-#: games/drc/drc.php:375 games/lnn/lnn.php:128 games/wr/wr.php:67
+#: games/drc/drc.php:376 games/lnn/lnn.js:26 games/lnn/lnn.php:128
+#: games/wr/wr.js:64 games/wr/wr.php:67
 msgid "Shottype"
 msgstr "キャラ"
 
-#: games/drc/drc.php:376
+#: games/drc/drc.php:377
 msgid "Multiplier"
 msgstr "倍率"
+
+#: games/lnn/lnn.js:14 games/lnn/lnn.js:17 games/lnn/lnn.js:18
+#: games/lnn/lnn.js:20
+msgid "No. of LNNNs"
+msgstr "LNNNの数"
+
+#: games/lnn/lnn.js:15
+msgid "No. of LNNFSs"
+msgstr "LNNFSの数"
+
+#: games/lnn/lnn.js:16
+msgid "No. of LNN(N)s"
+msgstr "LNN(N)の数"
+
+#: games/lnn/lnn.js:19
+msgid "No. of LNNNNs"
+msgstr "LNNNNの数"
+
+#: games/lnn/lnn.js:21 games/lnn/lnn.php:143 games/lnn/lnn.php:190
+msgid "No. of LNNs"
+msgstr "LNNの数"
+
+#: games/lnn/lnn.js:26 games/wr/wr.js:64
+msgid "Route"
+msgstr "ルート"
+
+#: games/lnn/lnn.js:85 games/lnn/lnn.php:61
+msgid "(Different players)"
+msgstr "（プレイヤー）"
+
+#: games/lnn/lnn.js:85 games/lnn/lnn.php:61
+msgid "Players"
+msgstr "プレイヤー"
+
+#: games/lnn/lnn.js:86 games/lnn/lnn.php:89 games/lnn/lnn.php:171
+msgid "Overall"
+msgstr "合計"
+
+#: games/lnn/lnn.js:201
+msgid "(All)"
+msgstr "（全）"
+
+#: games/lnn/lnn.js:210
+msgid "Total"
+msgstr "合計"
 
 #: games/lnn/lnn.php:5
 msgid ""
@@ -541,18 +594,6 @@ msgstr "プレイヤーのランキング"
 msgid "Player Search"
 msgstr "プレイヤーを捜す"
 
-#: games/lnn/lnn.php:61
-msgid "(Different players)"
-msgstr "（プレイヤー）"
-
-#: games/lnn/lnn.php:61
-msgid "Players"
-msgstr "プレイヤー"
-
-#: games/lnn/lnn.php:89 games/lnn/lnn.php:171
-msgid "Overall"
-msgstr "合計"
-
 #: games/lnn/lnn.php:98
 msgid "Click a game cover to show its list of LNNs."
 msgstr "LNNリストはゲームをクリック。"
@@ -571,10 +612,6 @@ msgstr "プレイヤー"
 #: games/wr/wr.php:300
 msgid "Replay"
 msgstr "リプレイ"
-
-#: games/lnn/lnn.php:143 games/lnn/lnn.php:190
-msgid "No. of LNNs"
-msgstr "LNNの数"
 
 #: games/lnn/lnn.php:145
 msgid "Different players"
@@ -1402,6 +1439,22 @@ msgstr ""
 "ゲーム内の9,999,999,990を突破しているスコアを実際のスコアで表示するツールで"
 "す。"
 
+#: games/wr/wr.js:119 games/wr/wr.php:217
+msgid "World"
+msgstr "世界"
+
+#: games/wr/wr.js:119 games/wr/wr.php:218
+msgid "West"
+msgstr "海外"
+
+#: games/wr/wr.js:119 games/wr/wr.php:218
+msgid "Percentage"
+msgstr "割合"
+
+#: games/wr/wr.js:203
+msgid "Seasons"
+msgstr "時期"
+
 #: games/wr/wr.php:5
 msgid ""
 "An accurate list of Touhou world records, updated every so often. Note that "
@@ -1467,18 +1520,6 @@ msgstr "難易度"
 msgid "Date"
 msgstr "日付"
 
-#: games/wr/wr.php:217
-msgid "World"
-msgstr "世界"
-
-#: games/wr/wr.php:218
-msgid "West"
-msgstr "海外"
-
-#: games/wr/wr.php:218
-msgid "Percentage"
-msgstr "割合"
-
 #: games/wr/wr.php:247
 msgid "Click a game cover to show its list of world records."
 msgstr "世界記録リストはゲームをクリック。"
@@ -1496,237 +1537,389 @@ msgstr "WR数"
 msgid "Different games"
 msgstr "ゲーム"
 
+#: shared/shared.php:397
+msgid "Youkai mode (Dark)"
+msgstr "妖怪モード（ダーク）"
+
+#: shared/shared.php:397
+msgid "Human mode (Light)"
+msgstr "人間モード（ライト）"
+
+#: shared/shared.php:406 shared/shared.php:412
+msgid "Flag of the United Kingdom"
+msgstr "イギリスの国旗"
+
+#: shared/shared.php:408
+msgid "Flag of the United States"
+msgstr "アメリカ合衆国の国旗"
+
+#: shared/shared.php:416
+msgid "Flag of Japan"
+msgstr "日本の国旗"
+
+#: shared/shared.php:420
+msgid "Flag of the P.R.C."
+msgstr "中華人民共和国の国旗"
+
+#: shared/shared.php:424
+msgid "Flag of Russia"
+msgstr "ロシアの国旗"
+
+#: shared/shared.php:428
+msgid "Flag of Germany"
+msgstr "ドイツの国旗"
+
+#: shared/shared.php:432
+msgid "Flag of Spain"
+msgstr "スペインの国旗"
+
 #: shared/translations.php:2
+msgid "Makai"
+msgstr "魔界"
+
+#: shared/translations.php:3
+msgid "Jigoku"
+msgstr "地獄"
+
+#: shared/translations.php:4
 msgid "ReimuA"
 msgstr "霊夢A"
 
-#: shared/translations.php:3
+#: shared/translations.php:5
 msgid "ReimuB"
 msgstr "霊夢B"
 
-#: shared/translations.php:4
-msgid "MarisaA"
-msgstr "魔理沙A"
-
-#: shared/translations.php:5
-msgid "MarisaB"
-msgstr "魔理沙B"
-
 #: shared/translations.php:6
-msgid "SakuyaA"
-msgstr "咲夜A"
-
-#: shared/translations.php:7
-msgid "SakuyaB"
-msgstr "咲夜B"
-
-#: shared/translations.php:8
-msgid "BorderTeam"
-msgstr "霊夢＆紫"
-
-#: shared/translations.php:9
-msgid "MagicTeam"
-msgstr "魔理沙＆アリス"
-
-#: shared/translations.php:10
-msgid "ScarletTeam"
-msgstr "咲夜＆レミリア"
-
-#: shared/translations.php:11
-msgid "GhostTeam"
-msgstr "妖夢＆幽々子"
-
-#: shared/translations.php:12
-msgid "Reimu"
-msgstr "霊夢"
-
-#: shared/translations.php:13
-msgid "Marisa"
-msgstr "魔理沙"
-
-#: shared/translations.php:14
-msgid "Sakuya"
-msgstr "咲夜"
-
-#: shared/translations.php:15 shared/translations.php:20
-msgid "Youmu"
-msgstr "妖夢"
-
-#: shared/translations.php:16
-msgid "Yukari"
-msgstr "紫"
-
-#: shared/translations.php:17
-msgid "Alice"
-msgstr "アリス"
-
-#: shared/translations.php:18
-msgid "Remilia"
-msgstr "レミリア"
-
-#: shared/translations.php:19
-msgid "Yuyuko"
-msgstr "幽々子"
-
-#: shared/translations.php:21
-msgid "Reisen"
-msgstr "鈴仙"
-
-#: shared/translations.php:22
-msgid "Cirno"
-msgstr "チルノ"
-
-#: shared/translations.php:23
-msgid "Lyrica"
-msgstr "リリカ"
-
-#: shared/translations.php:24
-msgid "Mystia"
-msgstr "ミスティア"
-
-#: shared/translations.php:25
-msgid "Aya"
-msgstr "文"
-
-#: shared/translations.php:26
-msgid "Medicine"
-msgstr "メディスン"
-
-#: shared/translations.php:27
-msgid "Yuuka"
-msgstr "幽香"
-
-#: shared/translations.php:28
-msgid "Komachi"
-msgstr "小町"
-
-#: shared/translations.php:29
-msgid "Eiki"
-msgstr "映姫"
-
-#: shared/translations.php:30
 msgid "ReimuC"
 msgstr "霊夢C"
 
+#: shared/translations.php:7
+msgid "Mima"
+msgstr "魅魔"
+
+#: shared/translations.php:8
+msgid "Ellen"
+msgstr "エレン"
+
+#: shared/translations.php:9
+msgid "Kotohime"
+msgstr "小兎姫"
+
+#: shared/translations.php:10
+msgid "Kana"
+msgstr "カナ"
+
+#: shared/translations.php:11
+msgid "Rikako"
+msgstr "理香子"
+
+#: shared/translations.php:12
+msgid "Chiyuri"
+msgstr "ちゆり"
+
+#: shared/translations.php:13
+msgid "Yumemi"
+msgstr "夢美"
+
+#: shared/translations.php:14
+msgid "MarisaA"
+msgstr "魔理沙A"
+
+#: shared/translations.php:15
+msgid "MarisaB"
+msgstr "魔理沙B"
+
+#: shared/translations.php:16
+msgid "SakuyaA"
+msgstr "咲夜A"
+
+#: shared/translations.php:17
+msgid "SakuyaB"
+msgstr "咲夜B"
+
+#: shared/translations.php:18
+msgid "BorderTeam"
+msgstr "霊夢＆紫"
+
+#: shared/translations.php:19
+msgid "MagicTeam"
+msgstr "魔理沙＆アリス"
+
+#: shared/translations.php:20
+msgid "ScarletTeam"
+msgstr "咲夜＆レミリア"
+
+#: shared/translations.php:21
+msgid "GhostTeam"
+msgstr "妖夢＆幽々子"
+
+#: shared/translations.php:22
+msgid "Reimu"
+msgstr "霊夢"
+
+#: shared/translations.php:23
+msgid "Marisa"
+msgstr "魔理沙"
+
+#: shared/translations.php:24
+msgid "Sakuya"
+msgstr "咲夜"
+
+#: shared/translations.php:25 shared/translations.php:30
+msgid "Youmu"
+msgstr "妖夢"
+
+#: shared/translations.php:26
+msgid "Yukari"
+msgstr "紫"
+
+#: shared/translations.php:27
+msgid "Alice"
+msgstr "アリス"
+
+#: shared/translations.php:28
+msgid "Remilia"
+msgstr "レミリア"
+
+#: shared/translations.php:29
+msgid "Yuyuko"
+msgstr "幽々子"
+
 #: shared/translations.php:31
+msgid "Reisen"
+msgstr "鈴仙"
+
+#: shared/translations.php:32
+msgid "Cirno"
+msgstr "チルノ"
+
+#: shared/translations.php:33
+msgid "Lyrica"
+msgstr "リリカ"
+
+#: shared/translations.php:34
+msgid "Mystia"
+msgstr "ミスティア"
+
+#: shared/translations.php:35
+msgid "Tewi"
+msgstr "てゐ"
+
+#: shared/translations.php:36
+msgid "Aya"
+msgstr "文"
+
+#: shared/translations.php:37
+msgid "Medicine"
+msgstr "メディスン"
+
+#: shared/translations.php:38
+msgid "Yuuka"
+msgstr "幽香"
+
+#: shared/translations.php:39
+msgid "Komachi"
+msgstr "小町"
+
+#: shared/translations.php:40
+msgid "Eiki"
+msgstr "映姫"
+
+#: shared/translations.php:41
 msgid "MarisaC"
 msgstr "魔理沙C"
 
-#: shared/translations.php:32
+#: shared/translations.php:42
 msgid "SanaeA"
 msgstr "早苗A"
 
-#: shared/translations.php:33
+#: shared/translations.php:43
 msgid "SanaeB"
 msgstr "早苗B"
 
-#: shared/translations.php:34
+#: shared/translations.php:44
+msgid "Hatate"
+msgstr "はたて"
+
+#: shared/translations.php:45
 msgid "Sanae"
 msgstr "早苗"
 
-#: shared/translations.php:35
+#: shared/translations.php:46
 msgid "ReimuSpring"
 msgstr "霊夢(春)"
 
-#: shared/translations.php:36
+#: shared/translations.php:47
 msgid "CirnoSpring"
 msgstr "チルノ(春)"
 
-#: shared/translations.php:37
+#: shared/translations.php:48
 msgid "AyaSpring"
 msgstr "文(春)"
 
-#: shared/translations.php:38
+#: shared/translations.php:49
 msgid "MarisaSpring"
 msgstr "魔理沙(春)"
 
-#: shared/translations.php:39
+#: shared/translations.php:50
 msgid "ReimuSummer"
 msgstr "霊夢(夏)"
 
-#: shared/translations.php:40
+#: shared/translations.php:51
 msgid "CirnoSummer"
 msgstr "チルノ(夏)"
 
-#: shared/translations.php:41
+#: shared/translations.php:52
 msgid "AyaSummer"
 msgstr "文(夏)"
 
-#: shared/translations.php:42
+#: shared/translations.php:53
 msgid "MarisaSummer"
 msgstr "魔理沙(夏)"
 
-#: shared/translations.php:43
+#: shared/translations.php:54
 msgid "ReimuAutumn"
 msgstr "霊夢(秋)"
 
-#: shared/translations.php:44
+#: shared/translations.php:55
 msgid "CirnoAutumn"
 msgstr "チルノ(秋)"
 
-#: shared/translations.php:45
+#: shared/translations.php:56
 msgid "AyaAutumn"
 msgstr "文(秋)"
 
-#: shared/translations.php:46
+#: shared/translations.php:57
 msgid "MarisaAutumn"
 msgstr "魔理沙(秋)"
 
-#: shared/translations.php:47
+#: shared/translations.php:58
 msgid "ReimuWinter"
 msgstr "霊夢(冬)"
 
-#: shared/translations.php:48
+#: shared/translations.php:59
 msgid "CirnoWinter"
 msgstr "チルノ(冬)"
 
-#: shared/translations.php:49
+#: shared/translations.php:60
 msgid "AyaWinter"
 msgstr "文(冬)"
 
-#: shared/translations.php:50
+#: shared/translations.php:61
 msgid "MarisaWinter"
 msgstr "魔理沙(冬)"
 
-#: shared/translations.php:51
+#: shared/translations.php:62
 msgid "ReimuWolf"
 msgstr "霊夢W"
 
-#: shared/translations.php:52
+#: shared/translations.php:63
 msgid "ReimuOtter"
 msgstr "霊夢O"
 
-#: shared/translations.php:53
+#: shared/translations.php:64
 msgid "ReimuEagle"
 msgstr "霊夢E"
 
-#: shared/translations.php:54
+#: shared/translations.php:65
 msgid "MarisaWolf"
 msgstr "魔理沙W"
 
-#: shared/translations.php:55
+#: shared/translations.php:66
 msgid "MarisaOtter"
 msgstr "魔理沙O"
 
-#: shared/translations.php:56
+#: shared/translations.php:67
 msgid "MarisaEagle"
 msgstr "魔理沙E"
 
-#: shared/translations.php:57
+#: shared/translations.php:68
 msgid "YoumuWolf"
 msgstr "妖夢W"
 
-#: shared/translations.php:58
+#: shared/translations.php:69
 msgid "YoumuOtter"
 msgstr "妖夢O"
 
-#: shared/translations.php:59
+#: shared/translations.php:70
 msgid "YoumuEagle"
 msgstr "妖夢E"
 
-#: shared/translations.php:60
-msgid "Seasons"
-msgstr "時期"
+#: shared/translations.php:71
+msgid "Touhou 1 - The Highly Responsive to Prayers"
+msgstr "東方靈異伝　～ The Highly Responsive to Prayers"
+
+#: shared/translations.php:72
+msgid "Touhou 2 - The Story of Eastern Wonderland"
+msgstr "東方封魔録　～ the Story of Eastern Wonderland"
+
+#: shared/translations.php:73
+msgid "Touhou 3 - Phantasmagoria of Dim.Dream"
+msgstr "東方夢時空　～ Phantasmagoria of Dim.Dream"
+
+#: shared/translations.php:74
+msgid "Touhou 4 - Lotus Land Story"
+msgstr "東方幻想郷　～ Lotus Land Story"
+
+#: shared/translations.php:75
+msgid "Touhou 5 - Mystic Square"
+msgstr "東方怪綺談　～ Mystic Square"
+
+#: shared/translations.php:76
+msgid "Touhou 6 - The Embodiment of Scarlet Devil"
+msgstr "東方紅魔郷　～ the Embodiment of Scarlet Devil"
+
+#: shared/translations.php:77
+msgid "Touhou 7 - Perfect Cherry Blossom"
+msgstr "東方妖々夢　～ Perfect Cherry Blossom"
+
+#: shared/translations.php:78
+msgid "Touhou 8 - Imperishable Night"
+msgstr "東方永夜抄　～ Imperishable Night"
+
+#: shared/translations.php:79
+msgid "Touhou 9 - Phantasmagoria of Flower View"
+msgstr "東方花映塚　～ Phantasmagoria of Flower View"
+
+#: shared/translations.php:80
+msgid "Touhou 10 - Mountain of Faith"
+msgstr "東方風神録　～ Mountain of Faith"
+
+#: shared/translations.php:81
+msgid "Touhou 11 - Subterranean Animism"
+msgstr "東方地霊殿　～ Subterranean Animism"
+
+#: shared/translations.php:82
+msgid "Touhou 12 - Undefined Fantastic Object"
+msgstr "東方星蓮船　～ Undefined Fantastic Object"
+
+#: shared/translations.php:83
+msgid "Touhou 12.8 - Great Fairy Wars"
+msgstr "妖精大戦争　～ 東方三月精"
+
+#: shared/translations.php:84
+msgid "Touhou 13 - Ten Desires"
+msgstr "東方神霊廟　～ Ten Desires"
+
+#: shared/translations.php:85
+msgid "Touhou 14 - Double Dealing Character"
+msgstr "東方輝針城　～ Double Dealing Character"
+
+#: shared/translations.php:86
+msgid "Touhou 15 - Legacy of Lunatic Kingdom"
+msgstr "東方紺珠伝　～ Legacy of Lunatic Kingdom"
+
+#: shared/translations.php:87
+msgid "Touhou 16 - Hidden Star in Four Seasons"
+msgstr "東方天空璋　～ Hidden Star in Four Seasons"
+
+#: shared/translations.php:88
+msgid "Touhou 17 - Wily Beast and Weakest Creature"
+msgstr "東方鬼形獣　～ Wily Beast and Weakest Creature"
+
+#: shared/translations.php:89
+msgid "Touhou 18 - Unconnected Marketeers"
+msgstr "東方虹龍洞　～ Unconnected Marketeers"
 
 #~ msgid "ReimuYukari"
 #~ msgstr "霊夢＆紫"
@@ -1745,56 +1938,10 @@ msgstr "時期"
 #~ "reuploaded to any replay uploading services."
 #~ msgstr "リプレイファイルの二次利用は禁止致します。"
 
-#~ msgid "No. of LNNNs"
-#~ msgstr "LNNNの数"
-
-#~ msgid "No. of LNNFSs"
-#~ msgstr "LNNFSの数"
-
-#~ msgid "No. of LNN(N)s"
-#~ msgstr "LNN(N)の数"
-
-#~ msgid "No. of LNNNNs"
-#~ msgstr "LNNNNの数"
-
-#~ msgid "Route"
-#~ msgstr "ルート "
-
 #, fuzzy
 #~| msgid "Contents"
 #~ msgid "Contributors"
 #~ msgstr "内容"
-
-#~ msgid "Youkai mode (Dark)"
-#~ msgstr "妖怪モード（ダーク）"
-
-#~ msgid "Human mode (Light)"
-#~ msgstr "人間モード（ライト）"
-
-#~ msgid "Flag of the United Kingdom"
-#~ msgstr "イギリスの国旗"
-
-#~ msgid "Flag of the United States"
-#~ msgstr "アメリカ合衆国の国旗"
-
-#~ msgid "Flag of Japan"
-#~ msgstr "日本の国旗"
-
-#~ msgid "Flag of the P.R.C."
-#~ msgstr "中華人民共和国の国旗"
-
-#~ msgid "Flag of Russia"
-#~ msgstr "ロシアの国旗"
-
-#, fuzzy
-#~| msgid "Flag of Japan"
-#~ msgid "Flag of Germany"
-#~ msgstr "日本の国旗"
-
-#, fuzzy
-#~| msgid "Flag of Japan"
-#~ msgid "Flag of Spain"
-#~ msgstr "日本の国旗"
 
 #~ msgid ""
 #~ "A Chinese Ultra patch for LoLK, which does <em>not</em> have autobomb, "
@@ -2079,104 +2226,11 @@ msgstr "時期"
 #~ msgid "Touhou Lunatic No Miss No Bombs"
 #~ msgstr "東方Lunaticノーミスノーボム"
 
-#~ msgid "Touhou 1 - The Highly Responsive to Prayers"
-#~ msgstr "東方靈異伝　～ The Highly Responsive to Prayers"
-
-#~ msgid "Touhou 2 - The Story of Eastern Wonderland"
-#~ msgstr "東方封魔録　～ the Story of Eastern Wonderland"
-
-#~ msgid "Touhou 3 - Phantasmagoria of Dim.Dream"
-#~ msgstr "東方夢時空　～ Phantasmagoria of Dim.Dream"
-
-#~ msgid "Touhou 4 - Lotus Land Story"
-#~ msgstr "東方幻想郷　～ Lotus Land Story"
-
-#~ msgid "Touhou 5 - Mystic Square"
-#~ msgstr "東方怪綺談　～ Mystic Square"
-
-#~ msgid "Touhou 6 - The Embodiment of Scarlet Devil"
-#~ msgstr "東方紅魔郷　～ the Embodiment of Scarlet Devil"
-
-#~ msgid "Touhou 7 - Perfect Cherry Blossom"
-#~ msgstr "東方妖々夢　～ Perfect Cherry Blossom"
-
-#~ msgid "Touhou 8 - Imperishable Night"
-#~ msgstr "東方永夜抄　～ Imperishable Night"
-
-#~ msgid "Touhou 9 - Phantasmagoria of Flower View"
-#~ msgstr "東方花映塚　～ Phantasmagoria of Flower View"
-
 #~ msgid "Touhou 9.5 - Shoot the Bullet"
 #~ msgstr "東方文花帖　～ Shoot the Bullet"
-
-#~ msgid "Touhou 10 - Mountain of Faith"
-#~ msgstr "東方風神録　～ Mountain of Faith"
-
-#~ msgid "Touhou 11 - Subterranean Animism"
-#~ msgstr "東方地霊殿　～ Subterranean Animism"
-
-#~ msgid "Touhou 12 - Undefined Fantastic Object"
-#~ msgstr "東方星蓮船　～ Undefined Fantastic Object"
 
 #~ msgid "Touhou 12.5 - Double Spoiler"
 #~ msgstr "ダブルスポイラー　～ 東方文花帖"
 
-#~ msgid "Touhou 12.8 - Great Fairy Wars"
-#~ msgstr "妖精大戦争　～ 東方三月精"
-
-#~ msgid "Touhou 13 - Ten Desires"
-#~ msgstr "東方神霊廟　～ Ten Desires"
-
-#~ msgid "Touhou 14 - Double Dealing Character"
-#~ msgstr "東方輝針城　～ Double Dealing Character"
-
-#~ msgid "Touhou 15 - Legacy of Lunatic Kingdom"
-#~ msgstr "東方紺珠伝　～ Legacy of Lunatic Kingdom"
-
-#~ msgid "Touhou 16 - Hidden Star in Four Seasons"
-#~ msgstr "東方天空璋　～ Hidden Star in Four Seasons"
-
-#~ msgid "Touhou 17 - Wily Beast and Weakest Creature"
-#~ msgstr "東方鬼形獣　～ Wily Beast and Weakest Creature"
-
-#~ msgid "Touhou 18 - Unconnected Marketeers"
-#~ msgstr "東方虹龍洞　～ Unconnected Marketeers"
-
 #~ msgid "StB"
 #~ msgstr "文"
-
-#~ msgid "UM"
-#~ msgstr "虹"
-
-#~ msgid "Makai"
-#~ msgstr "魔界"
-
-#~ msgid "Jigoku"
-#~ msgstr "地獄"
-
-#~ msgid "Mima"
-#~ msgstr "魅魔"
-
-#~ msgid "Ellen"
-#~ msgstr "エレン"
-
-#~ msgid "Kotohime"
-#~ msgstr "小兎姫"
-
-#~ msgid "Kana"
-#~ msgstr "カナ"
-
-#~ msgid "Rikako"
-#~ msgstr "理香子"
-
-#~ msgid "Chiyuri"
-#~ msgstr "ちゆり"
-
-#~ msgid "Yumemi"
-#~ msgstr "夢美"
-
-#~ msgid "Tewi"
-#~ msgstr "てゐ"
-
-#~ msgid "Hatate"
-#~ msgstr "はたて"

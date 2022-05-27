@@ -45,6 +45,7 @@
             <option id='lolk' value='LoLK'><?php echo _('LoLK') ?></option>
             <option id='hsifs' value='HSiFS'><?php echo _('HSiFS') ?></option>
             <option id='wbawc' value='WBaWC'><?php echo _('WBaWC') ?></option>
+            <option id='um' value='UM'><?php echo _('UM') ?></option>
         </select>
         <select id='difficulty'>
             <option>Easy</option>
