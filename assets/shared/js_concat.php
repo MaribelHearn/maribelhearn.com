@@ -43,7 +43,7 @@ function directory(string $page) {
 $min = (!is_localhost($_SERVER['REMOTE_ADDR']) ? '-min' : '');
 $sorttable = array('drc', 'fangame', 'gensokyo', 'lnn', 'royalflare', 'scoring', 'survival', 'thvote', 'wr');
 $jquery = array('drc', 'lnn', 'pofv', 'royalflare', 'scoring', 'slots', 'survival', 'tiers', 'wr');
-$utils = array('drc', 'lnn', 'pofv', 'tiers', 'wr');
+$utils = array('drc', 'lnn', 'pofv', 'scoring', 'slots', 'survival', 'tiers', 'wr');
 $canvas = array('slots', 'survival', 'tiers');
 $wr_json = array('drc', 'scoring', 'wr');
 $po2json = array('drc', 'lnn', 'wr');

@@ -1,4 +1,4 @@
-/*global $ html2canvas deleteCookie*/
+/*global $ html2canvas getCookie deleteCookie*/
 let games = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "INFinalA",
     "INFinalB", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"],
     vals = {}, unsavedChanges = false, originalContent, completions, na;
@@ -418,28 +418,6 @@ function emptyModal() {
     $("#results").css("display", "none");
     $("#overview_container").css("display", "inline");
     cleanupRendering();
-}
-
-function getCookie(name) {
-    let decodedCookies = decodeURIComponent(document.cookie);
-    let cookieArray = decodedCookies.split(';');
-    name += '=';
-
-    for (let cookie of cookieArray) {
-        while (cookie.charAt(0) === ' ') {
-            cookie = cookie.substring(1);
-        }
-
-        if (cookie.indexOf(name) === 0) {
-            try {
-                return JSON.parse(cookie.substring(name.length, cookie.length));
-            } catch (err) {
-                return JSON.parse("\"" + cookie.substring(name.length, cookie.length) + "\"");
-            }
-        }
-    }
-
-    return "";
 }
 
 function deleteLegacyCookies() {

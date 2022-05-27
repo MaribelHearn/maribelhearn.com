@@ -1,4 +1,4 @@
-/*global $ _ WRs westScores unverifiedScores MAX_SCORE getCookie setCookie deleteCookie gameAbbr shottypeAbbr sep fullNameNumber*/
+/*global $ _ WRs westScores unverifiedScores MAX_SCORE isMobile setCookie getCookie deleteCookie gameAbbr shottypeAbbr sep fullNameNumber*/
 var  missingReplays, seasonsEnabled, datesEnabled, unverifiedEnabled, language = "en_GB", selected = "",
     all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN",
     "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
@@ -12,7 +12,7 @@ function removeSeason(string) {
 }
 
 function isPortrait() {
-    return window.innerHeight > window.innerWidth && (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1);
+    return window.innerHeight > window.innerWidth && isMobile();
 }
 
 function toggleSeasons() {
@@ -533,7 +533,7 @@ function reloadTable() {
 }
 
 function updateOrientation() {
-    if (navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1) {
+    if (navigator.userAgent.includes("Mobile") || navigator.userAgent.includes("Tablet")) {
         reloadTable();
     }
 }
