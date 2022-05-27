@@ -1,0 +1,2073 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2022-05-27 20:29+0200\n"
+"PO-Revision-Date: 2022-05-27 20:29+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: assets/games/drc/drc.php:5
+msgid ""
+"The <strong>Dodging Rain Competition (DRC)</strong> is a Touhou game "
+"competition that was devised by <a href=\"https://www.youtube.com/user/"
+"mariomaster657\">ZM</a> and is held on <a href=\"https://discord.gg/Ucae3Uf"
+"\">the official DRC Discord</a>. Two teams go up against each other in "
+"several different categories. Each player posts an arbitrarily long list of "
+"categories, ordered by preference, which can be either survival or scoring "
+"of any Touhou shooting game and any difficulty. They will be matched up "
+"against a player from the other team, in a category that both players had on "
+"their list. The teams and categories are determined by the DRC management "
+"team. Players are given two weeks to sign up for the competition, and once "
+"it starts, two weeks to submit a replay, which will be awarded points "
+"dependent on the rubrics. Runs done outside those two weeks are invalid. "
+"Players can submit an unlimited number of replays; the replay that is worth "
+"the most DRC points will count."
+msgstr ""
+
+#: assets/games/drc/drc.php:18
+msgid ""
+"If you want to know how many DRC points a run is worth, the points for a "
+"given run can be determined using the calculator below."
+msgstr ""
+
+#: assets/games/drc/drc.php:22
+msgid "Points Calculator"
+msgstr ""
+
+#: assets/games/drc/drc.php:23
+msgid ""
+"<em>Sorry, you cannot calculate DRC points with JavaScript disabled.</em>"
+msgstr ""
+
+#: assets/games/drc/drc.php:25
+msgid ""
+"Scores can only contain digits, commas, dots and spaces. Survival runs are "
+"assumed to have cleared, scoring runs not."
+msgstr ""
+
+#: assets/games/drc/drc.php:27 assets/games/wr/wr.php:284
+#: assets/games/wr/wr.php:297
+msgid "Category"
+msgstr ""
+
+#: assets/games/drc/drc.php:29
+msgid "HRtP"
+msgstr ""
+
+#: assets/games/drc/drc.php:30
+msgid "SoEW"
+msgstr ""
+
+#: assets/games/drc/drc.php:31
+msgid "PoDD"
+msgstr ""
+
+#: assets/games/drc/drc.php:32
+msgid "LLS"
+msgstr ""
+
+#: assets/games/drc/drc.php:33
+msgid "MS"
+msgstr ""
+
+#: assets/games/drc/drc.php:34
+msgid "EoSD"
+msgstr ""
+
+#: assets/games/drc/drc.php:35
+msgid "PCB"
+msgstr ""
+
+#: assets/games/drc/drc.php:36
+msgid "IN"
+msgstr ""
+
+#: assets/games/drc/drc.php:37
+msgid "PoFV"
+msgstr ""
+
+#: assets/games/drc/drc.php:38
+msgid "MoF"
+msgstr ""
+
+#: assets/games/drc/drc.php:39
+msgid "SA"
+msgstr ""
+
+#: assets/games/drc/drc.php:40
+msgid "UFO"
+msgstr ""
+
+#: assets/games/drc/drc.php:41
+msgid "DS"
+msgstr ""
+
+#: assets/games/drc/drc.php:42
+msgid "GFW"
+msgstr ""
+
+#: assets/games/drc/drc.php:43
+msgid "TD"
+msgstr ""
+
+#: assets/games/drc/drc.php:44
+msgid "DDC"
+msgstr ""
+
+#: assets/games/drc/drc.php:45
+msgid "LoLK"
+msgstr ""
+
+#: assets/games/drc/drc.php:46
+msgid "HSiFS"
+msgstr ""
+
+#: assets/games/drc/drc.php:47
+msgid "WBaWC"
+msgstr ""
+
+#: assets/games/drc/drc.php:57
+msgid "FinalA"
+msgstr ""
+
+#: assets/games/drc/drc.php:58
+msgid "FinalB"
+msgstr ""
+
+#: assets/games/drc/drc.php:61 assets/games/drc/drc.php:120
+msgid "Scoring"
+msgstr ""
+
+#: assets/games/drc/drc.php:62 assets/games/drc/drc.php:301
+msgid "Survival"
+msgstr ""
+
+#: assets/games/drc/drc.php:68 assets/shared/tl.php:147
+msgid "Spring"
+msgstr ""
+
+#: assets/games/drc/drc.php:69 assets/shared/tl.php:148
+msgid "Summer"
+msgstr ""
+
+#: assets/games/drc/drc.php:70 assets/shared/tl.php:149
+msgid "Autumn"
+msgstr ""
+
+#: assets/games/drc/drc.php:71 assets/shared/tl.php:150
+msgid "Winter"
+msgstr ""
+
+#: assets/games/drc/drc.php:75
+msgid "Calculate"
+msgstr ""
+
+#: assets/games/drc/drc.php:77
+msgid "Rules"
+msgstr ""
+
+#: assets/games/drc/drc.php:79
+msgid "No cheating by using external programs or modifying the game FPS."
+msgstr ""
+
+#: assets/games/drc/drc.php:80
+msgid ""
+"Replays are required for Windows game submissions, while for PC-98 a video "
+"is accepted."
+msgstr ""
+
+#: assets/games/drc/drc.php:81
+msgid "All runs must be played using at most default lives and bombs."
+msgstr ""
+
+#: assets/games/drc/drc.php:83
+msgid "Rubrics"
+msgstr ""
+
+#: assets/games/drc/drc.php:85
+msgid ""
+"The rubrics are the formulas and fixed values used to calculate the number "
+"of DRC points for a run. If you are curious about how your points are being "
+"determined, click the button below to expand."
+msgstr ""
+
+#: assets/games/drc/drc.php:88
+msgid "Show Scoring Rubrics"
+msgstr ""
+
+#: assets/games/drc/drc.php:89
+msgid "Show Survival Rubrics"
+msgstr ""
+
+#: assets/games/drc/drc.php:91
+msgid "Scoring Notes"
+msgstr ""
+
+#: assets/games/drc/drc.php:94
+msgid "The World Records are taken from <a href=\"wr\">the WR page</a>."
+msgstr ""
+
+#: assets/games/drc/drc.php:97
+msgid ""
+"If you achieve a new World Record, your points are equal to the maximum "
+"number of points; otherwise, the formula applies."
+msgstr ""
+
+#: assets/games/drc/drc.php:101
+msgid ""
+"Some categories use a fictional WR. <a href=\"#fictionalWRtitle\">Click "
+"here</a> for the list of them."
+msgstr ""
+
+#: assets/games/drc/drc.php:105
+msgid ""
+"Some categories always use the WR of a specific shottype. <a href="
+"\"#WRdefinitionTitle\">Click here</a> for the list of them."
+msgstr ""
+
+#: assets/games/drc/drc.php:109
+msgid ""
+"MoF uses a separate system. <a href=\"#mountainOfFaith\">Click here</a> for "
+"said system."
+msgstr ""
+
+#: assets/games/drc/drc.php:113
+msgid ""
+"DS uses a separate system. <a href=\"#doubleSpoiler\">Click here</a> for "
+"said system."
+msgstr ""
+
+#: assets/games/drc/drc.php:121
+msgid "||Max * (Score/WR)^Exp||"
+msgstr ""
+
+#: assets/games/drc/drc.php:128 assets/games/drc/drc.php:312
+#: assets/games/drc/drc.php:346 assets/games/lnn/lnn.php:127
+#: assets/games/lnn/lnn.php:141 assets/games/survival/survival.php:46
+#: assets/games/survival/survival.php:137 assets/games/wr/wr.php:63
+msgid "Game"
+msgstr ""
+
+#: assets/games/drc/drc.php:129 assets/games/drc/drc.php:313
+#: assets/games/drc/drc.php:347
+msgid "Max points"
+msgstr ""
+
+#: assets/games/drc/drc.php:130
+msgid "Exponent"
+msgstr ""
+
+#: assets/games/drc/drc.php:141
+msgid "Fictional WRs"
+msgstr ""
+
+#: assets/games/drc/drc.php:142
+msgid ""
+"The categories in the table below use a fictional WR instead of the real one."
+msgstr ""
+
+#: assets/games/drc/drc.php:163
+msgid "'WR' definition"
+msgstr ""
+
+#: assets/games/drc/drc.php:165
+msgid ""
+"The categories in the table below always use the WR of a specific shottype."
+msgstr ""
+
+#: assets/games/drc/drc.php:182
+msgid "MoF Scoring"
+msgstr ""
+
+#: assets/games/drc/drc.php:184
+msgid ""
+"For each difficulty and shottype there are six thresholds, at which you will "
+"have set numbers of points respectively. Then, increments are done, "
+"dependent on how much higher than the threshold your score is. The maximum "
+"is 375 on Easy and 500 on Lunatic."
+msgstr ""
+
+#: assets/games/drc/drc.php:195
+msgid "If score &lt; 1st threshold, then: ||220*(Score/T1)^2||"
+msgstr ""
+
+#: assets/games/drc/drc.php:197
+msgid "If score &lt; 2b, then: ||200*(Score/2b)^2||"
+msgstr ""
+
+#: assets/games/drc/drc.php:199
+msgid "If score &lt; 900m, then: ||100*(Score/900m)^2||"
+msgstr ""
+
+#: assets/games/drc/drc.php:203
+msgid "Threshold"
+msgstr ""
+
+#: assets/games/drc/drc.php:204 assets/games/drc/drc.php:237
+msgid "Base points"
+msgstr ""
+
+#: assets/games/drc/drc.php:205 assets/games/drc/drc.php:238
+#: assets/games/drc/drc.php:240 assets/games/drc/drc.php:242
+msgid "Increments"
+msgstr ""
+
+#: assets/games/drc/drc.php:228
+msgid "DS Scoring"
+msgstr ""
+
+#: assets/games/drc/drc.php:230
+msgid ""
+"For each scene there are three thresholds, at which you will have set "
+"numbers of points points respectively. Then, increments are done, dependent "
+"on how much higher than the threshold your score is."
+msgstr ""
+
+#: assets/games/drc/drc.php:237
+msgid "Scene"
+msgstr ""
+
+#: assets/games/drc/drc.php:239
+msgid "Threshold 1"
+msgstr ""
+
+#: assets/games/drc/drc.php:241
+msgid "Threshold 2"
+msgstr ""
+
+#: assets/games/drc/drc.php:243
+msgid "Threshold 3"
+msgstr ""
+
+#: assets/games/drc/drc.php:271 assets/games/drc/drc.php:391
+#: assets/games/fangame/fangame.php:894 assets/games/lnn/lnn.php:215
+#: assets/games/tools/tools.php:514 assets/games/wr/wr.php:371
+msgid "Back to Top"
+msgstr ""
+
+#: assets/games/drc/drc.php:274
+msgid "Survival Notes"
+msgstr ""
+
+#: assets/games/drc/drc.php:278
+msgid ""
+"For a main game clear, a shottype multiplier is applied to your DRC points, "
+"the result of which is again rounded. <a href=\"#shottypeMultipliers\">Click "
+"here</a> for the list of them."
+msgstr ""
+
+#: assets/games/drc/drc.php:283
+msgid ""
+"The Phantasmagorias use a separate system. <a href=\"#phantasmagoria\">Click "
+"here</a> for said system."
+msgstr ""
+
+#: assets/games/drc/drc.php:288
+msgid ""
+"For IN, you obtain 2 (1 on Easy) additional points for each captured Last "
+"Spell, with the exception of Imperishable Shooting, which yields 5 points."
+msgstr ""
+
+#: assets/games/drc/drc.php:294
+msgid ""
+"For HSiFS, the first release adds 2 to <em>n</em>, and further releases add "
+"0.5, 0.4, 0.3, 0.2, 0.1 to <em>n</em>."
+msgstr ""
+
+#: assets/games/drc/drc.php:302
+msgid "||Max * (Base^-n)||"
+msgstr ""
+
+#: assets/games/drc/drc.php:314
+msgid "Base"
+msgstr ""
+
+#: assets/games/drc/drc.php:331
+msgid "PoDD & PoFV Survival"
+msgstr ""
+
+#: assets/games/drc/drc.php:333
+msgid ""
+"In the below formula, MaxLives is equal to 5 for PoDD, 7 for PoFV main game "
+"and 8 for PoFV Extra. NoBombBonus is a difficulty-specific No Bomb bonus for "
+"PoDD and a No Charge Attacks bonus for PoFV. RoundsLost is equal to how many "
+"rounds the player lost."
+msgstr ""
+
+#: assets/games/drc/drc.php:339
+msgid "||Max - ((Max - Min) / MaxLives * RoundsLost)|| + NoBombBonus"
+msgstr ""
+
+#: assets/games/drc/drc.php:348
+msgid "Min points"
+msgstr ""
+
+#: assets/games/drc/drc.php:349
+msgid "No Bomb bonus"
+msgstr ""
+
+#: assets/games/drc/drc.php:364
+msgid "Shottype Multipliers"
+msgstr ""
+
+#: assets/games/drc/drc.php:366
+msgid ""
+"These are applied to the result of the survival formula for a main game run "
+"only; they do <em>not</em> apply for Extra, nor do they apply for HSiFS runs "
+"that use releases.For all shots not listed here, the shottype multipliers "
+"are equal to 1."
+msgstr ""
+
+#: assets/games/drc/drc.php:375 assets/games/fangame/fangame.php:19
+#: assets/games/fangame/fangame.php:67 assets/games/fangame/fangame.php:83
+#: assets/games/fangame/fangame.php:99 assets/games/fangame/fangame.php:115
+#: assets/games/fangame/fangame.php:198 assets/games/fangame/fangame.php:226
+#: assets/games/fangame/fangame.php:242 assets/games/fangame/fangame.php:277
+#: assets/games/fangame/fangame.php:304 assets/games/fangame/fangame.php:327
+#: assets/games/fangame/fangame.php:344 assets/games/fangame/fangame.php:361
+#: assets/games/fangame/fangame.php:377 assets/games/fangame/fangame.php:401
+#: assets/games/fangame/fangame.php:419 assets/games/fangame/fangame.php:453
+#: assets/games/fangame/fangame.php:487 assets/games/fangame/fangame.php:557
+#: assets/games/fangame/fangame.php:573 assets/games/fangame/fangame.php:598
+#: assets/games/fangame/fangame.php:626 assets/games/fangame/fangame.php:666
+#: assets/games/fangame/fangame.php:694 assets/games/fangame/fangame.php:711
+#: assets/games/fangame/fangame.php:738 assets/games/fangame/fangame.php:783
+#: assets/games/fangame/fangame.php:854 assets/games/fangame/fangame.php:882
+#: assets/games/lnn/lnn.php:128 assets/games/wr/wr.js:64
+#: assets/games/wr/wr.php:67
+msgid "Shottype"
+msgstr ""
+
+#: assets/games/drc/drc.php:376
+msgid "Multiplier"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:3
+msgid ""
+"This page lists known Lunatic No Miss No Bomb (LNN) clears and notable high "
+"scores for Touhou fangames, as well as Touhou-related games. For LNNs, any "
+"additional survival condition(s) are listed with the game titles."
+msgstr ""
+
+#: assets/games/fangame/fangame.php:5 assets/games/lnn/lnn.php:17
+#: assets/games/wr/wr.php:11
+msgid "All of the table columns are sortable."
+msgstr ""
+
+#: assets/games/fangame/fangame.php:6
+msgid ""
+"The replays or videos provided are <strong>not</strong> meant to be "
+"reuploaded to any replay uploading services."
+msgstr ""
+
+#: assets/games/fangame/fangame.php:7
+msgid "Accomplishments are current as of 25 October 2021."
+msgstr ""
+
+#: assets/games/fangame/fangame.php:8 assets/games/lnn/lnn.php:19
+#: assets/games/tools/tools.php:13 assets/games/wr/wr.php:20
+msgid "Contents"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:10 assets/games/fangame/fangame.php:13
+msgid "LNN Clears"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:11
+msgid "Notable Scores"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:14
+msgid "Fangames"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:16
+msgid "(No Border Breaks, Full Spell)"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:18 assets/games/fangame/fangame.php:66
+#: assets/games/fangame/fangame.php:82 assets/games/fangame/fangame.php:98
+#: assets/games/fangame/fangame.php:114 assets/games/fangame/fangame.php:197
+#: assets/games/fangame/fangame.php:225 assets/games/fangame/fangame.php:241
+#: assets/games/fangame/fangame.php:276 assets/games/fangame/fangame.php:303
+#: assets/games/fangame/fangame.php:326 assets/games/fangame/fangame.php:343
+#: assets/games/fangame/fangame.php:360 assets/games/fangame/fangame.php:376
+#: assets/games/fangame/fangame.php:400 assets/games/lnn/lnn.php:113
+#: assets/games/lnn/lnn.php:188 assets/games/wr/wr.php:65
+#: assets/games/wr/wr.php:269 assets/games/wr/wr.php:299
+#: assets/games/wr/wr.php:345
+msgid "Player"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:20 assets/games/fangame/fangame.php:68
+#: assets/games/fangame/fangame.php:84 assets/games/fangame/fangame.php:100
+#: assets/games/fangame/fangame.php:117 assets/games/fangame/fangame.php:199
+#: assets/games/fangame/fangame.php:227 assets/games/fangame/fangame.php:243
+#: assets/games/fangame/fangame.php:279 assets/games/fangame/fangame.php:305
+#: assets/games/fangame/fangame.php:328 assets/games/fangame/fangame.php:345
+#: assets/games/fangame/fangame.php:362 assets/games/fangame/fangame.php:378
+#: assets/games/fangame/fangame.php:402 assets/games/fangame/fangame.php:420
+#: assets/games/fangame/fangame.php:454 assets/games/fangame/fangame.php:488
+#: assets/games/fangame/fangame.php:558 assets/games/fangame/fangame.php:575
+#: assets/games/fangame/fangame.php:599 assets/games/fangame/fangame.php:627
+#: assets/games/fangame/fangame.php:667 assets/games/fangame/fangame.php:695
+#: assets/games/fangame/fangame.php:712 assets/games/fangame/fangame.php:739
+#: assets/games/fangame/fangame.php:784 assets/games/fangame/fangame.php:805
+#: assets/games/fangame/fangame.php:855 assets/games/fangame/fangame.php:883
+#: assets/games/wr/wr.php:64 assets/games/wr/wr.php:285
+#: assets/games/wr/wr.php:298
+msgid "Score"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:21 assets/games/fangame/fangame.php:69
+#: assets/games/fangame/fangame.php:85 assets/games/fangame/fangame.php:101
+#: assets/games/fangame/fangame.php:118 assets/games/fangame/fangame.php:200
+#: assets/games/fangame/fangame.php:228 assets/games/fangame/fangame.php:244
+#: assets/games/fangame/fangame.php:280 assets/games/fangame/fangame.php:306
+#: assets/games/fangame/fangame.php:329 assets/games/fangame/fangame.php:346
+#: assets/games/fangame/fangame.php:363 assets/games/fangame/fangame.php:379
+#: assets/games/fangame/fangame.php:403 assets/games/fangame/fangame.php:421
+#: assets/games/fangame/fangame.php:455 assets/games/fangame/fangame.php:489
+#: assets/games/fangame/fangame.php:559 assets/games/fangame/fangame.php:576
+#: assets/games/fangame/fangame.php:600 assets/games/fangame/fangame.php:628
+#: assets/games/fangame/fangame.php:668 assets/games/fangame/fangame.php:696
+#: assets/games/fangame/fangame.php:713 assets/games/fangame/fangame.php:740
+#: assets/games/fangame/fangame.php:785 assets/games/fangame/fangame.php:806
+#: assets/games/fangame/fangame.php:856 assets/games/fangame/fangame.php:884
+#: assets/games/wr/wr.php:68 assets/games/wr/wr.php:287
+#: assets/games/wr/wr.php:301
+msgid "Date"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:22 assets/games/fangame/fangame.php:70
+#: assets/games/fangame/fangame.php:86 assets/games/fangame/fangame.php:102
+#: assets/games/fangame/fangame.php:119 assets/games/fangame/fangame.php:201
+#: assets/games/fangame/fangame.php:229 assets/games/fangame/fangame.php:245
+#: assets/games/fangame/fangame.php:281 assets/games/fangame/fangame.php:307
+#: assets/games/fangame/fangame.php:330 assets/games/fangame/fangame.php:347
+#: assets/games/fangame/fangame.php:364 assets/games/fangame/fangame.php:380
+#: assets/games/fangame/fangame.php:404 assets/games/fangame/fangame.php:422
+#: assets/games/fangame/fangame.php:456 assets/games/fangame/fangame.php:490
+#: assets/games/fangame/fangame.php:560 assets/games/fangame/fangame.php:577
+#: assets/games/fangame/fangame.php:601 assets/games/fangame/fangame.php:629
+#: assets/games/fangame/fangame.php:669 assets/games/fangame/fangame.php:697
+#: assets/games/fangame/fangame.php:714 assets/games/fangame/fangame.php:741
+#: assets/games/fangame/fangame.php:786 assets/games/fangame/fangame.php:807
+#: assets/games/fangame/fangame.php:857 assets/games/fangame/fangame.php:885
+msgid "Source"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:28 assets/games/fangame/fangame.php:34
+#: assets/games/fangame/fangame.php:41 assets/games/fangame/fangame.php:48
+#: assets/games/fangame/fangame.php:54 assets/games/fangame/fangame.php:76
+#: assets/games/fangame/fangame.php:108 assets/games/fangame/fangame.php:126
+#: assets/games/fangame/fangame.php:133 assets/games/fangame/fangame.php:140
+#: assets/games/fangame/fangame.php:147 assets/games/fangame/fangame.php:155
+#: assets/games/fangame/fangame.php:163 assets/games/fangame/fangame.php:170
+#: assets/games/fangame/fangame.php:177 assets/games/fangame/fangame.php:184
+#: assets/games/fangame/fangame.php:191 assets/games/fangame/fangame.php:207
+#: assets/games/fangame/fangame.php:213 assets/games/fangame/fangame.php:219
+#: assets/games/fangame/fangame.php:235 assets/games/fangame/fangame.php:251
+#: assets/games/fangame/fangame.php:257 assets/games/fangame/fangame.php:264
+#: assets/games/fangame/fangame.php:270 assets/games/fangame/fangame.php:289
+#: assets/games/fangame/fangame.php:297 assets/games/fangame/fangame.php:313
+#: assets/games/fangame/fangame.php:320 assets/games/fangame/fangame.php:337
+#: assets/games/fangame/fangame.php:354 assets/games/fangame/fangame.php:370
+#: assets/games/fangame/fangame.php:386 assets/games/fangame/fangame.php:393
+#: assets/games/fangame/fangame.php:410 assets/games/fangame/fangame.php:428
+#: assets/games/fangame/fangame.php:434 assets/games/fangame/fangame.php:440
+#: assets/games/fangame/fangame.php:446 assets/games/fangame/fangame.php:496
+#: assets/games/fangame/fangame.php:502 assets/games/fangame/fangame.php:508
+#: assets/games/fangame/fangame.php:520 assets/games/fangame/fangame.php:532
+#: assets/games/fangame/fangame.php:538 assets/games/fangame/fangame.php:544
+#: assets/games/fangame/fangame.php:550 assets/games/fangame/fangame.php:566
+#: assets/games/fangame/fangame.php:584 assets/games/fangame/fangame.php:591
+#: assets/games/fangame/fangame.php:619 assets/games/fangame/fangame.php:635
+#: assets/games/fangame/fangame.php:641 assets/games/fangame/fangame.php:647
+#: assets/games/fangame/fangame.php:653 assets/games/fangame/fangame.php:659
+#: assets/games/fangame/fangame.php:675 assets/games/fangame/fangame.php:681
+#: assets/games/fangame/fangame.php:687 assets/games/fangame/fangame.php:703
+#: assets/games/fangame/fangame.php:720 assets/games/fangame/fangame.php:726
+#: assets/games/fangame/fangame.php:732 assets/games/fangame/fangame.php:746
+#: assets/games/fangame/fangame.php:751 assets/games/fangame/fangame.php:756
+#: assets/games/fangame/fangame.php:761 assets/games/fangame/fangame.php:766
+#: assets/games/fangame/fangame.php:771 assets/games/fangame/fangame.php:776
+#: assets/games/fangame/fangame.php:792 assets/games/fangame/fangame.php:798
+#: assets/games/fangame/fangame.php:812 assets/games/fangame/fangame.php:817
+#: assets/games/fangame/fangame.php:822 assets/games/fangame/fangame.php:832
+#: assets/games/fangame/fangame.php:863 assets/games/fangame/fangame.php:869
+#: assets/games/fangame/fangame.php:875 assets/games/fangame/fangame.php:891
+msgid "Video"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:40 assets/games/fangame/fangame.php:47
+#: assets/games/fangame/fangame.php:60 assets/games/fangame/fangame.php:154
+#: assets/games/fangame/fangame.php:162 assets/games/fangame/fangame.php:263
+#: assets/games/fangame/fangame.php:288 assets/games/fangame/fangame.php:296
+#: assets/games/fangame/fangame.php:319 assets/games/fangame/fangame.php:336
+#: assets/games/fangame/fangame.php:353 assets/games/fangame/fangame.php:392
+#: assets/games/fangame/fangame.php:468 assets/games/fangame/fangame.php:474
+#: assets/games/fangame/fangame.php:480 assets/games/lnn/lnn.php:129
+#: assets/games/wr/wr.php:69 assets/games/wr/wr.php:286
+#: assets/games/wr/wr.php:300
+msgid "Replay"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:96
+msgid "(No Burst)"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:116 assets/games/fangame/fangame.php:574
+msgid "Version"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:195
+msgid "(No Border Breaks)"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:239
+msgid "(No Z-Spells, Full Spell)"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:301
+msgid "(Full Spell)"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:324
+msgid "(No Elemental Burst, Full Spell)"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:341 assets/games/fangame/fangame.php:358
+msgid "(No Hyper)"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:374
+msgid "(No Special Attack)"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:398 assets/games/fangame/fangame.php:879
+msgid "Barrage Musical ~A Fantasy of Tempest~"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:418 assets/games/fangame/fangame.php:452
+#: assets/games/fangame/fangame.php:486 assets/games/fangame/fangame.php:556
+#: assets/games/fangame/fangame.php:572 assets/games/fangame/fangame.php:625
+#: assets/games/fangame/fangame.php:665 assets/games/fangame/fangame.php:693
+#: assets/games/fangame/fangame.php:710 assets/games/fangame/fangame.php:782
+#: assets/games/fangame/fangame.php:804 assets/games/fangame/fangame.php:853
+#: assets/games/fangame/fangame.php:881 assets/games/survival/survival.php:121
+#: assets/games/wr/wr.php:66
+msgid "Difficulty"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:597
+msgid "Zone"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:708
+msgid "Seihou 1 - Shuusou Gyoku"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:736
+msgid "Seihou 2 - Kioh Gyoku"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:780
+msgid "Seihou 3 - Banshiryuu (C67 version)"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:802
+msgid "Samidare"
+msgstr ""
+
+#: assets/games/fangame/fangame.php:851
+msgid "Mrs. Estacion"
+msgstr ""
+
+#: assets/games/lnn/lnn.php:5
+msgid ""
+"A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. "
+"For every shottype in a game, tables will tell you which players have done "
+"an LNN with it, if any. If a player has multiple LNNs for one particular "
+"shottype, those are not factored in."
+msgstr ""
+
+#: assets/games/lnn/lnn.php:10
+msgid ""
+"Extra conditions are required for PCB, TD, HSiFS, WBaWC and UM; these are No "
+"Border Breaks for PCB, No Trance for TD, No Release for HSiFS, No Berserk "
+"Roar No Roar Breaks for WBaWC and No Cards for UM. LNN in these games is "
+"called LNNN or LNNNN, with extra Ns to denote the extra conditions. The "
+"extra condition in UFO, no UFO summons, is optional, as it is not considered "
+"to have a significant impact on the difficulty of the run. As for IN, an LNN "
+"is assumed to capture all Last Spells and is referred to as LNNFS."
+msgstr ""
+
+#: assets/games/lnn/lnn.php:24 assets/games/lnn/lnn.php:29
+#: assets/games/lnn/lnn.php:44
+msgid "LNN Lists"
+msgstr ""
+
+#: assets/games/lnn/lnn.php:25 assets/games/lnn/lnn.php:37
+#: assets/games/lnn/lnn.php:136
+msgid "Overall Count"
+msgstr ""
+
+#: assets/games/lnn/lnn.php:26 assets/games/lnn/lnn.php:38
+#: assets/games/lnn/lnn.php:183 assets/games/wr/wr.php:30
+#: assets/games/wr/wr.php:47 assets/games/wr/wr.php:340
+msgid "Player Ranking"
+msgstr ""
+
+#: assets/games/lnn/lnn.php:36 assets/games/lnn/lnn.php:111
+#: assets/games/wr/wr.php:42 assets/games/wr/wr.php:268
+msgid "Player Search"
+msgstr ""
+
+#: assets/games/lnn/lnn.php:61
+msgid "(Different players)"
+msgstr ""
+
+#: assets/games/lnn/lnn.php:61
+msgid "Players"
+msgstr ""
+
+#: assets/games/lnn/lnn.php:89 assets/games/lnn/lnn.php:171
+msgid "Overall"
+msgstr ""
+
+#: assets/games/lnn/lnn.php:98
+msgid "Click a game cover to show its list of LNNs."
+msgstr ""
+
+#: assets/games/lnn/lnn.php:112
+msgid "Choose a player name from the menu below to show their LNNs."
+msgstr ""
+
+#: assets/games/lnn/lnn.php:143 assets/games/lnn/lnn.php:190
+#: assets/games/lnn/lnn_code.php:65
+msgid "No. of LNNs"
+msgstr ""
+
+#: assets/games/lnn/lnn.php:145
+msgid "Different players"
+msgstr ""
+
+#: assets/games/lnn/lnn.php:176
+msgid "Replays"
+msgstr ""
+
+#: assets/games/lnn/lnn.php:193
+msgid "Games LNN'd"
+msgstr ""
+
+#: assets/games/lnn/lnn.php:207 assets/games/lnn/lnn.php:208
+msgid " (All Windows)"
+msgstr ""
+
+#: assets/games/lnn/lnn_code.php:58 assets/games/lnn/lnn_code.php:61
+#: assets/games/lnn/lnn_code.php:62 assets/games/lnn/lnn_code.php:64
+msgid "No. of LNNNs"
+msgstr ""
+
+#: assets/games/lnn/lnn_code.php:59
+msgid "No. of LNNFSs"
+msgstr ""
+
+#: assets/games/lnn/lnn_code.php:60
+msgid "No. of LNN(N)s"
+msgstr ""
+
+#: assets/games/lnn/lnn_code.php:63
+msgid "No. of LNNNNs"
+msgstr ""
+
+#: assets/games/survival/survival.php:4
+msgid "<strong>Notice:</strong> this page requires JavaScript."
+msgstr ""
+
+#: assets/games/survival/survival.php:5
+msgid ""
+"Fill in the best survivals you have pulled off in the table below. If you "
+"leave a dropdown menu on the N/A option, it will not be factored in. When "
+"you click Apply, three different tables indicating your survival progress "
+"will be generated. The main survival progress table is an image and can be "
+"copied or saved to your device. Use the below selectors to fill up many "
+"achievements at once, either by game or by difficulty. See <a href="
+"\"#acronyms\">the bottom of this page</a> for an explanation of the acronyms."
+msgstr ""
+
+#: assets/games/survival/survival.php:9
+msgid "Game / Difficulty"
+msgstr ""
+
+#: assets/games/survival/survival.php:21
+msgid "Achievement"
+msgstr ""
+
+#: assets/games/survival/survival.php:23
+msgid "N/A"
+msgstr ""
+
+#: assets/games/survival/survival.php:24 assets/games/survival/survival.php:122
+msgid "Not cleared"
+msgstr ""
+
+#: assets/games/survival/survival.php:25 assets/games/survival/survival.php:39
+#: assets/games/survival/survival.php:123
+msgid "1cc"
+msgstr ""
+
+#: assets/games/survival/survival.php:26 assets/games/survival/survival.php:40
+#: assets/games/survival/survival.php:124
+msgid "NM"
+msgstr ""
+
+#: assets/games/survival/survival.php:27 assets/games/survival/survival.php:125
+msgid "NM+"
+msgstr ""
+
+#: assets/games/survival/survival.php:28 assets/games/survival/survival.php:41
+#: assets/games/survival/survival.php:126
+msgid "NB"
+msgstr ""
+
+#: assets/games/survival/survival.php:29 assets/games/survival/survival.php:127
+msgid "NB+"
+msgstr ""
+
+#: assets/games/survival/survival.php:30 assets/games/survival/survival.php:42
+#: assets/games/survival/survival.php:128
+msgid "NMNB"
+msgstr ""
+
+#: assets/games/survival/survival.php:96
+msgid "Acronyms"
+msgstr ""
+
+#: assets/games/survival/survival.php:98
+msgid "NM:"
+msgstr ""
+
+#: assets/games/survival/survival.php:98
+msgid "No Miss. Clear without dying."
+msgstr ""
+
+#: assets/games/survival/survival.php:99
+msgid "NB:"
+msgstr ""
+
+#: assets/games/survival/survival.php:99
+msgid "No Bombs. Clear without bombing."
+msgstr ""
+
+#: assets/games/survival/survival.php:100
+msgid "NMNB:"
+msgstr ""
+
+#: assets/games/survival/survival.php:100
+msgid "No Miss No Bombs. Clear without dying or bombing."
+msgstr ""
+
+#: assets/games/survival/survival.php:101
+msgid "NBB:"
+msgstr ""
+
+#: assets/games/survival/survival.php:101
+msgid "No Border Breaks. Clear without breaking any borders (Touhou 7 PCB)."
+msgstr ""
+
+#: assets/games/survival/survival.php:102
+msgid "NV:"
+msgstr ""
+
+#: assets/games/survival/survival.php:102
+msgid "No UFO Summons. Clear without summoning any UFOs (Touhou 12 UFO)."
+msgstr ""
+
+#: assets/games/survival/survival.php:103
+msgid "NT:"
+msgstr ""
+
+#: assets/games/survival/survival.php:103
+msgid "No Trances. Clear without using any manual trances (Touhou 13 TD)."
+msgstr ""
+
+#: assets/games/survival/survival.php:104
+msgid "NR:"
+msgstr ""
+
+#: assets/games/survival/survival.php:104
+msgid "No Releases. Clear without using season releases (Touhou 16 HSiFS)."
+msgstr ""
+
+#: assets/games/survival/survival.php:105
+msgid "NHNRB:"
+msgstr ""
+
+#: assets/games/survival/survival.php:105
+msgid ""
+"No Hypers, No Roar Breaks. Clear without using Berserk Roar, also called "
+"hypers, and without breaking them. (Touhou 17 WBaWC)."
+msgstr ""
+
+#: assets/games/survival/survival.php:106
+msgid "NC:"
+msgstr ""
+
+#: assets/games/survival/survival.php:106
+msgid "No Cards. Clear without using cards (Touhou 18 UM)."
+msgstr ""
+
+#: assets/games/survival/survival.php:107
+msgid "NNN:"
+msgstr ""
+
+#: assets/games/survival/survival.php:107
+msgid ""
+"No Miss, No Bomb, No Third Condition. Clear without dying, bombing, or "
+"violating a third condition."
+msgstr ""
+
+#: assets/games/survival/survival.php:108
+msgid "NNNN:"
+msgstr ""
+
+#: assets/games/survival/survival.php:108
+msgid "The above, but including a fourth condition."
+msgstr ""
+
+#: assets/games/survival/survival.php:114
+msgid "Progress Table"
+msgstr ""
+
+#: assets/games/survival/survival.php:115
+msgid "Rendering image..."
+msgstr ""
+
+#: assets/games/survival/survival.php:117
+msgid "Numbers of Achievements"
+msgstr ""
+
+#: assets/games/survival/survival.php:133
+msgid "Clear Completions"
+msgstr ""
+
+#: assets/games/survival/survival.php:138
+msgid "Clear Completion"
+msgstr ""
+
+#: assets/games/tools/tools.php:4
+msgid ""
+"This page contains download links to all kinds of different patches or tools "
+"applicable to the official Touhou shooting games."
+msgstr ""
+
+#: assets/games/tools/tools.php:7
+msgid ""
+"Some of the patches are also available at <a href=\"https://www.thpatch.net/"
+"wiki/Touhou_Patch_Center:Servers\"><span class=\"icon thcrap_icon\"></span> "
+"Touhou Patch Center</a> and can be used through <a href=\"https://www."
+"thpatch.net/wiki/Touhou_Patch_Center:Download\">their automatic translation "
+"patcher and modding tool</a>, which can also be downloaded using our mirror "
+"below (see THCRAP section). These patches will have the favicon of their "
+"site next to them."
+msgstr ""
+
+#: assets/games/tools/tools.php:17
+msgid "<strong>For Windows 10:</strong> DX8 to DX9"
+msgstr ""
+
+#: assets/games/tools/tools.php:18 assets/games/tools/tools.php:73
+msgid "Completed Scorefiles"
+msgstr ""
+
+#: assets/games/tools/tools.php:21 assets/games/tools/tools.php:152
+msgid "General Practice Tools"
+msgstr ""
+
+#: assets/games/tools/tools.php:22 assets/games/tools/tools.php:183
+msgid "Boss Rush Patches"
+msgstr ""
+
+#: assets/games/tools/tools.php:23 assets/games/tools/tools.php:232
+msgid "Specific Pattern Practice"
+msgstr ""
+
+#: assets/games/tools/tools.php:24 assets/games/tools/tools.php:265
+msgid "Shottype Modifications"
+msgstr ""
+
+#: assets/games/tools/tools.php:25 assets/games/tools/tools.php:310
+msgid "Hard Mode / Ultra Patches"
+msgstr ""
+
+#: assets/games/tools/tools.php:26 assets/games/tools/tools.php:363
+msgid "Graphical Patches"
+msgstr ""
+
+#: assets/games/tools/tools.php:27 assets/games/tools/tools.php:394
+msgid "PC-98 Emulators"
+msgstr ""
+
+#: assets/games/tools/tools.php:28 assets/games/tools/tools.php:427
+msgid "Miscellaneous"
+msgstr ""
+
+#: assets/games/tools/tools.php:34
+msgid ""
+"Removes input delay, allows you to increase in-game FPS (default is 60), "
+"optionally fixes several bugs (PCB cherry display, MoF MarisaB 3-power "
+"unfocus, UFO 2.147b score display). The input delay is mostly prevalent in "
+"the older games (EoSD to IN) and running them on Vpatch will significantly "
+"improve the gameplay experience. It allows you to set a custom screen "
+"resolution as well.</p><p>Vpatch is applicable to all official shooting "
+"games bar HSiFS, WBaWC and UM."
+msgstr ""
+
+#: assets/games/tools/tools.php:40 assets/games/tools/tools.php:57
+#: assets/games/tools/tools.php:60 assets/games/tools/tools.php:70
+#: assets/games/tools/tools.php:80 assets/games/tools/tools.php:89
+#: assets/games/tools/tools.php:167 assets/games/tools/tools.php:173
+#: assets/games/tools/tools.php:180 assets/games/tools/tools.php:223
+#: assets/games/tools/tools.php:226 assets/games/tools/tools.php:229
+#: assets/games/tools/tools.php:239 assets/games/tools/tools.php:245
+#: assets/games/tools/tools.php:249 assets/games/tools/tools.php:268
+#: assets/games/tools/tools.php:275 assets/games/tools/tools.php:281
+#: assets/games/tools/tools.php:287 assets/games/tools/tools.php:293
+#: assets/games/tools/tools.php:298 assets/games/tools/tools.php:301
+#: assets/games/tools/tools.php:304 assets/games/tools/tools.php:307
+#: assets/games/tools/tools.php:331 assets/games/tools/tools.php:344
+#: assets/games/tools/tools.php:351 assets/games/tools/tools.php:391
+#: assets/games/tools/tools.php:401 assets/games/tools/tools.php:407
+#: assets/games/tools/tools.php:415 assets/games/tools/tools.php:433
+#: assets/games/tools/tools.php:436 assets/games/tools/tools.php:443
+#: assets/games/tools/tools.php:450 assets/games/tools/tools.php:455
+#: assets/games/tools/tools.php:462 assets/games/tools/tools.php:471
+#: assets/games/tools/tools.php:481 assets/games/tools/tools.php:488
+#: assets/games/tools/tools.php:496 assets/games/tools/tools.php:504
+#: assets/games/tools/tools.php:512
+msgid "Download"
+msgstr ""
+
+#: assets/games/tools/tools.php:44
+msgid ""
+"<h2 id=\"thcrap\">THCRAP (Translation patches / Modding tool) <a id="
+"\"thcrap_link\" href=\"https://www.thpatch.net/wiki/Touhou_Patch_Center:"
+"Main_page\" target=\"_blank\"><span class=\"icon thcrap_icon\"></span> "
+"thcrap</a></h2>"
+msgstr ""
+
+#: assets/games/tools/tools.php:50
+msgid ""
+"Translation patches into English and many other languages, as well as "
+"countless modifications to gameplay, graphics and more, plus the ability to "
+"make your own, are provided by the Touhou Community Reliant Automatic "
+"Patcher (THCRAP) for all Windows Touhou games. The thpatch.net link also "
+"links to instructions on how to use the patcher."
+msgstr ""
+
+#: assets/games/tools/tools.php:60
+msgid " (maribelhearn.com mirror)"
+msgstr ""
+
+#: assets/games/tools/tools.php:65
+msgid "DX8 to DX9 converter"
+msgstr ""
+
+#: assets/games/tools/tools.php:67
+msgid ""
+"Makes the older Touhou Windows games (EoSD, PCB, IN, PoFV and StB) run "
+"properly on Windows 10. Extract it into the folders of these games for it to "
+"take effect."
+msgstr ""
+
+#: assets/games/tools/tools.php:75
+msgid ""
+"These are (mostly) complete <span class=\"code\">score.dat</span> files "
+"useful for practice combined with other tools, as they have unlocked the "
+"Extra Stage, every practice stage and spell in Spell Practice for all "
+"shottypes."
+msgstr ""
+
+#: assets/games/tools/tools.php:79
+msgid "All official shooting games aside from VD are included."
+msgstr ""
+
+#: assets/games/tools/tools.php:84
+msgid "<h2 id=\"thprac\">Thprac (universal practice tool by ACK)</h2>"
+msgstr ""
+
+#: assets/games/tools/tools.php:86
+msgid ""
+"Single practice tool that works on all of the official Touhou shoot 'em up "
+"games, allowing you to change settings or skip to patterns at will."
+msgstr ""
+
+#: assets/games/tools/tools.php:94
+msgid ""
+"Japanese program that can load <span class=\"code\">.ssg</span> files that "
+"modify the game while it is running, allowing for practice options as well "
+"as cheats. SpoilerAL SSGs require the <em>original Japanese versions</em> of "
+"the games to work. The 4.6 SSGs have practice options such as skipping to a "
+"specific frame of the game or a specific spell, while the niL SSGs have "
+"cheat options such as invincibility. There is also a separate MoF SSG made "
+"by <a href=\"https://www.twitch.tv/akaldar\" target=\"_blank\">Akaldar</a> "
+"for efficient practice in that game specifically, a separate GFW SSG, as "
+"well as a TD SSG specifically designed for efficient scoring practice, made "
+"by Leo, a DDC SSG and a LoLK Chapter Practice SSG by <a href=\"https://www."
+"youtube.com/channel/UChyVpooBi31k3xPbWYsoq3w\" target=\"_blank\">32th "
+"System</a> and separate HSiFS SSGs with cheat options. Be wary of an "
+"occasional menu bug that causes an SSG to duplicate itself and make other "
+"SSGs invisible."
+msgstr ""
+
+#: assets/games/tools/tools.php:106
+msgid "Main Program"
+msgstr ""
+
+#: assets/games/tools/tools.php:107
+msgid "SSG Pack (4.6)"
+msgstr ""
+
+#: assets/games/tools/tools.php:114
+msgid "SSG Pack (niL)"
+msgstr ""
+
+#: assets/games/tools/tools.php:117
+msgid "SSG Pack (LET)"
+msgstr ""
+
+#: assets/games/tools/tools.php:120
+msgid "SSG Pack (niL, English translated)"
+msgstr ""
+
+#: assets/games/tools/tools.php:123
+msgid "MoF SSG by Akaldar"
+msgstr ""
+
+#: assets/games/tools/tools.php:126
+msgid "GFW SSG (English translated)"
+msgstr ""
+
+#: assets/games/tools/tools.php:129
+msgid "TD Scoring SSG by Leo (English translated)"
+msgstr ""
+
+#: assets/games/tools/tools.php:132
+msgid "HSiFS Scoring SSG by Sonitsuku"
+msgstr ""
+
+#: assets/games/tools/tools.php:135
+msgid "DDC SSG by 32th System"
+msgstr ""
+
+#: assets/games/tools/tools.php:138
+msgid "LoLK SSG by CreepyNinja"
+msgstr ""
+
+#: assets/games/tools/tools.php:141
+msgid "LoLK Chapter Practice SSG by 32th System"
+msgstr ""
+
+#: assets/games/tools/tools.php:144
+msgid "HSiFS SSG (cheats, English translated)"
+msgstr ""
+
+#: assets/games/tools/tools.php:147
+msgid "Alternative HSiFS SSG (English translated)"
+msgstr ""
+
+#: assets/games/tools/tools.php:154
+msgid ""
+"Patches intended for efficient practice in one or more games, allowing the "
+"player to skip to patterns or changing power and such."
+msgstr ""
+
+#: assets/games/tools/tools.php:157
+msgid "Practice Tools by "
+msgstr ""
+
+#: assets/games/tools/tools.php:159
+msgid ""
+"Tools that allow you to skip to specific patterns in SA, UFO and LoLK, also "
+"allowing for other settings like your current power. The UFO and LoLK tools "
+"are external programs, while the SA tool is a modification of the program. "
+"The LoLK one was made for v1.00a but mostly functions properly on v1.00b as "
+"well."
+msgstr ""
+
+#: assets/games/tools/tools.php:169
+msgid "WBaWC Practice by "
+msgstr ""
+
+#: assets/games/tools/tools.php:171
+msgid ""
+"Allows skipping to any part of the game, similar to Riri's practice tools, "
+"using an in-game menu."
+msgstr ""
+
+#: assets/games/tools/tools.php:174
+msgid "GFW \"Brown Label\" Practice by "
+msgstr ""
+
+#: assets/games/tools/tools.php:176
+msgid ""
+"Modified <span class=\"code\">.dat</span> files that allow you to practice "
+"specific stages of any route in the game. Select A in-game for full stage "
+"practice, B for midboss and boss and C for boss only. Refer to the readme "
+"file for further information."
+msgstr ""
+
+#: assets/games/tools/tools.php:185
+msgid ""
+"Modifications to the main <span class=\"code\">.dat</span> files of the "
+"games that skip stage portions, allowing you to efficiently practice boss "
+"battles. The skipping applies to both full runs and practice runs."
+msgstr ""
+
+#: assets/games/tools/tools.php:189 assets/games/tools/tools.php:210
+msgid "Boss Rush Patches by "
+msgstr ""
+
+#: assets/games/tools/tools.php:191
+msgid ""
+"All midbosses and bosses are included, everything else being kept the same. "
+"There are also 'boss-only' versions that do skip the midbosses."
+msgstr ""
+
+#: assets/games/tools/tools.php:195
+msgid "Full Pack"
+msgstr ""
+
+#: assets/games/tools/tools.php:212
+msgid ""
+"Patches for SA and UFO that not only remove stage portions, but also bombs. "
+"The SA one includes turning Stage 4 into 'Satori Rush', where you fight "
+"every single one of her Spell Cards. Note that the safe areas on Border of "
+"Wave and Particle and Utsuho's 3rd spell are removed in this patch."
+msgstr ""
+
+#: assets/games/tools/tools.php:221
+msgid "EoSD Boss Rush by "
+msgstr ""
+
+#: assets/games/tools/tools.php:222
+msgid "Another boss rush patch for EoSD, also including 'Patchouli Rush'."
+msgstr ""
+
+#: assets/games/tools/tools.php:224
+msgid "PCB Boss Rush by rsy_type1 and "
+msgstr ""
+
+#: assets/games/tools/tools.php:225
+msgid "A boss rush patch for PCB."
+msgstr ""
+
+#: assets/games/tools/tools.php:227
+msgid "WBaWC Boss Rush by "
+msgstr ""
+
+#: assets/games/tools/tools.php:228
+msgid "A boss rush patch for WBaWC."
+msgstr ""
+
+#: assets/games/tools/tools.php:234
+msgid ""
+"Patches intended for practicing one or a few specific patterns in a game. "
+"Usually <span class=\"code\">.dat</span> modifications."
+msgstr ""
+
+#: assets/games/tools/tools.php:237
+msgid "Books Practice for EoSD by "
+msgstr ""
+
+#: assets/games/tools/tools.php:238
+msgid "Repeats the Stage 4 Books section for easy practicing."
+msgstr ""
+
+#: assets/games/tools/tools.php:240
+msgid "VoWG + PWG Practice for MoF by "
+msgstr ""
+
+#: assets/games/tools/tools.php:242
+msgid ""
+"Makes Kanako skip to Virtue of Wind God (her final spell) and makes Aya skip "
+"to Peerless Wind God (her timeout spell), which will also repeat itself "
+"indefinitely."
+msgstr ""
+
+#: assets/games/tools/tools.php:247
+msgid "IN Nonspell Practice"
+msgstr ""
+
+#: assets/games/tools/tools.php:248
+msgid "Patch that lets you practice nonspells in IN."
+msgstr ""
+
+#: assets/games/tools/tools.php:250
+msgid "Timeout Phase Collection by "
+msgstr ""
+
+#: assets/games/tools/tools.php:252
+msgid ""
+"Patches for practicing the timeout phases of the final spells on Lunatic and "
+"Extra from MoF to HSiFS, plus Devil's Recitation, but not including GFW "
+"Stage 3 final spells."
+msgstr ""
+
+#: assets/games/tools/tools.php:257
+msgid "MoF to LoLK"
+msgstr ""
+
+#: assets/games/tools/tools.php:260
+msgid "HSiFS season finals and Extra final"
+msgstr ""
+
+#: assets/games/tools/tools.php:266
+msgid "MoF Reisen by "
+msgstr ""
+
+#: assets/games/tools/tools.php:267
+msgid "Replaces ReimuC with Reisen in MoF."
+msgstr ""
+
+#: assets/games/tools/tools.php:269
+msgid "UFO Tsubakura mod by "
+msgstr ""
+
+#: assets/games/tools/tools.php:272
+msgid ""
+"Replaces both Reimu shottypes in UFO with Tsubakura shottypes, a character "
+"from the Len'en series. Also changes the dialogues and endings."
+msgstr ""
+
+#: assets/games/tools/tools.php:276
+msgid "DDC Sanae by "
+msgstr ""
+
+#: assets/games/tools/tools.php:279
+msgid "Replaces ReimuB with Sanae in DDC."
+msgstr ""
+
+#: assets/games/tools/tools.php:282
+msgid "HSiFS Sanae by "
+msgstr ""
+
+#: assets/games/tools/tools.php:285
+msgid "Replaces Marisa with Sanae in HSiFS."
+msgstr ""
+
+#: assets/games/tools/tools.php:288
+msgid "LoLK Sakuya by "
+msgstr ""
+
+#: assets/games/tools/tools.php:291
+msgid "Replaces Reisen with Sakuya in LoLK."
+msgstr ""
+
+#: assets/games/tools/tools.php:294
+msgid "TD Yuuka by "
+msgstr ""
+
+#: assets/games/tools/tools.php:296
+msgid "Replaces Marisa with Yuuka in TD. Also changes the dialogues."
+msgstr ""
+
+#: assets/games/tools/tools.php:299
+msgid "DS Seija by "
+msgstr ""
+
+#: assets/games/tools/tools.php:300
+msgid "Replaces Aya in DS with Seija, including when she shows up as a boss."
+msgstr ""
+
+#: assets/games/tools/tools.php:302
+msgid "WBaWC (Demo) Reisen by "
+msgstr ""
+
+#: assets/games/tools/tools.php:303
+msgid "Replaces ReimuOtter with Reisen in the WBaWC demo."
+msgstr ""
+
+#: assets/games/tools/tools.php:305
+msgid "WBaWC Narumi by "
+msgstr ""
+
+#: assets/games/tools/tools.php:306
+msgid "Adds Narumi to WBaWC as a shottype."
+msgstr ""
+
+#: assets/games/tools/tools.php:312
+msgid ""
+"Patches that increase the bullet density and speed throughout the game, "
+"while giving you autobombs to compensate for it. The Hard Mode patches also "
+"change the actual patterns. The main Ultra patch collection includes the "
+"games up to ISC."
+msgstr ""
+
+#: assets/games/tools/tools.php:317
+msgid "Main Ultra Patches"
+msgstr ""
+
+#: assets/games/tools/tools.php:318
+msgid "Alternate EoSD Ultra"
+msgstr ""
+
+#: assets/games/tools/tools.php:320
+msgid "Hard Mode patches by "
+msgstr ""
+
+#: assets/games/tools/tools.php:321
+msgid ""
+"Patches for UFO and DDC that modify patterns, besides simply making them "
+"harder."
+msgstr ""
+
+#: assets/games/tools/tools.php:326
+msgid "RNG patches by "
+msgstr ""
+
+#: assets/games/tools/tools.php:329
+msgid ""
+"A collection of modified <span class=\"code\">.dat</span> files that "
+"randomise the patterns in the game."
+msgstr ""
+
+#: assets/games/tools/tools.php:332
+msgid "IN Double Stage "
+msgstr ""
+
+#: assets/games/tools/tools.php:334
+msgid ""
+"Allows you to play 4A, 4B, 6A and 6B in a single run. Optionally also "
+"includes Extra at the end."
+msgstr ""
+
+#: assets/games/tools/tools.php:340
+msgid "HSiFS UltraB by "
+msgstr ""
+
+#: assets/games/tools/tools.php:342
+msgid "An alternate HSiFS Ultra patch that also increases density."
+msgstr ""
+
+#: assets/games/tools/tools.php:348
+msgid ""
+"Combines LoLK with DDC, making each boss fight a dual boss fight against the "
+"bosses of both games.It removes all stage portions, effectively making it a "
+"boss rush, and also combines the HUDs of both games."
+msgstr ""
+
+#: assets/games/tools/tools.php:352
+msgid "OC Patches by "
+msgstr ""
+
+#: assets/games/tools/tools.php:355
+msgid ""
+"Remastered version of Stage 6 and harder version of Extra in HSiFS, "
+"including an original character replacing Okina and alternate story along "
+"with pattern, bullet type, stage music and graphical changes. There is "
+"another patch with the same OC replacement and pattern modding for VD on the "
+"Okina scenes on the same download page."
+msgstr ""
+
+#: assets/games/tools/tools.php:360 assets/games/tools/tools.php:424
+msgid "Downloads"
+msgstr ""
+
+#: assets/games/tools/tools.php:365
+msgid ""
+"Modifications to the main <span class=\"code\">.dat</span> files of the "
+"games that change the way the game looks."
+msgstr ""
+
+#: assets/games/tools/tools.php:368
+msgid "Graphical Patches by "
+msgstr ""
+
+#: assets/games/tools/tools.php:370
+msgid ""
+"Includes PCB and HSiFS in MS Paint style, an emoji-themed version of UFO and "
+"a Christmas-themed version of LoLK."
+msgstr ""
+
+#: assets/games/tools/tools.php:375
+msgid "Paint Cherry Blossom"
+msgstr ""
+
+#: assets/games/tools/tools.php:378
+msgid "Painting Stars in Four Seasons"
+msgstr ""
+
+#: assets/games/tools/tools.php:381
+msgid "Undefined Fantastic Emoji"
+msgstr ""
+
+#: assets/games/tools/tools.php:384
+msgid "Legacy of Lunatic Christmas"
+msgstr ""
+
+#: assets/games/tools/tools.php:387
+msgid "Vertical Play Patches by "
+msgstr ""
+
+#: assets/games/tools/tools.php:389
+msgid ""
+"Makes MoF, SA, UFO and TD play in the arcade-style vertical resolution, also "
+"known as TATE."
+msgstr ""
+
+#: assets/games/tools/tools.php:397
+msgid ""
+"The only emulator that is currently still maintained together with DOSBox-X. "
+"It offers unlimited savestates and has high accuracy, but requires the right "
+"configurations; can be confusing for new users. The emulator is located in "
+"the bin folder with two versions, 32-bit and 64-bit (x64)."
+msgstr ""
+
+#: assets/games/tools/tools.php:404
+msgid ""
+"Easy-to-use emulator that will emulate the Touhou games properly without "
+"needing configuration of any kind, but less feature-rich, and allows 8 "
+"active savestates at a time, 4 of which through hotkeys."
+msgstr ""
+
+#: assets/games/tools/tools.php:410
+msgid ""
+"This emulator has low system requirements and can run even on very old "
+"computers. However, the graphics are mediocre and the sound emulation "
+"requires proper configuration to be accurate. Allows for 8 savestates and "
+"requires a separate font file, linked below."
+msgstr ""
+
+#: assets/games/tools/tools.php:416
+msgid "Font"
+msgstr ""
+
+#: assets/games/tools/tools.php:420
+msgid ""
+"A fork of the DOSBox project that has support for PC-98. It is the only "
+"emulator to run natively under not only Windows, but also Mac and Linux. A "
+"list of downloads for each system can be found via the link below."
+msgstr ""
+
+#: assets/games/tools/tools.php:428
+msgid "Real Time DRC Points Displayer by "
+msgstr ""
+
+#: assets/games/tools/tools.php:430
+msgid ""
+"A tool that tracks in-game data such as misses, bombs, etc, thus calculating "
+"<a href=\"drc\">DRC</a> points for both survival and scoring during a Touhou "
+"run."
+msgstr ""
+
+#: assets/games/tools/tools.php:434
+msgid "MS Black Label by "
+msgstr ""
+
+#: assets/games/tools/tools.php:435
+msgid "Increases the graze cap from 999 to 65536."
+msgstr ""
+
+#: assets/games/tools/tools.php:437
+msgid "EoSD Capture History Tracker by "
+msgstr ""
+
+#: assets/games/tools/tools.php:439
+msgid ""
+"Command-line tool that allows you to track how many times you captured "
+"spells in EoSD. Includes Stage 4 Books and Play Time tracking, as well as "
+"allowing for multiple save files."
+msgstr ""
+
+#: assets/games/tools/tools.php:447
+msgid "PoFV Play Time Recorder by "
+msgstr ""
+
+#: assets/games/tools/tools.php:449
+msgid "Keeps track of your play time in PoFV."
+msgstr ""
+
+#: assets/games/tools/tools.php:451
+msgid "PoFV Replay Save Crash Fixer"
+msgstr ""
+
+#: assets/games/tools/tools.php:453
+msgid ""
+"Launching this alongside the game fixes the bug that makes the game crash "
+"whenever you save a replay."
+msgstr ""
+
+#: assets/games/tools/tools.php:456
+msgid "TD Arrange Patch by "
+msgstr ""
+
+#: assets/games/tools/tools.php:458
+msgid ""
+"Modification of TD that removes the invincibility from trances, instead "
+"allowing you to use them starting at 1/3 full gauge."
+msgstr ""
+
+#: assets/games/tools/tools.php:466
+msgid "HSiFS Max Season Start by "
+msgstr ""
+
+#: assets/games/tools/tools.php:469
+msgid "Lets you start with your season level at 6."
+msgstr ""
+
+#: assets/games/tools/tools.php:473
+msgid "Polished Shooting Star by "
+msgstr ""
+
+#: assets/games/tools/tools.php:476
+msgid ""
+"Allows you to run the fangame Shining Shooting Star without requiring you to "
+"set your locale to Chinese. Note that it does not fix the pattern speed bug "
+"on locales that use a comma for decimals, which makes certain patterns "
+"extremely fast until a full run is played or a replay of one of certain "
+"stages is watched."
+msgstr ""
+
+#: assets/games/tools/tools.php:483
+msgid "Input Display by "
+msgstr ""
+
+#: assets/games/tools/tools.php:486
+msgid "Shows your button presses. Works on both gameplay and replays."
+msgstr ""
+
+#: assets/games/tools/tools.php:490
+msgid "LoLK Pointdevice no power loss by "
+msgstr ""
+
+#: assets/games/tools/tools.php:493
+msgid ""
+"Disables the 0.01 power loss mechanic of Pointdevice Mode in LoLK, making "
+"sure you never lose power upon restarting a chapter."
+msgstr ""
+
+#: assets/games/tools/tools.php:498
+msgid "HSiFS UFO mod by "
+msgstr ""
+
+#: assets/games/tools/tools.php:502
+msgid "Adds UFOs to HSiFS."
+msgstr ""
+
+#: assets/games/tools/tools.php:506
+msgid "WBaWC score cap mod by "
+msgstr ""
+
+#: assets/games/tools/tools.php:510
+msgid "Allows the in-game score counter to exceed 9,999,999,990 points."
+msgstr ""
+
+#: assets/games/wr/wr.js:64
+msgid "Route"
+msgstr ""
+
+#: assets/games/wr/wr.js:119 assets/games/wr/wr.php:217
+msgid "World"
+msgstr ""
+
+#: assets/games/wr/wr.js:119 assets/games/wr/wr.php:218
+msgid "West"
+msgstr ""
+
+#: assets/games/wr/wr.js:119 assets/games/wr/wr.php:218
+msgid "Percentage"
+msgstr ""
+
+#: assets/games/wr/wr.js:203 assets/shared/translations.php:60
+msgid "Seasons"
+msgstr ""
+
+#: assets/games/wr/wr.php:5
+msgid ""
+"An accurate list of Touhou world records, updated every so often. Note that "
+"the player ranking at the bottom does not take into account how strong "
+"specific records are, only numbers. The list does not include scene games as "
+"of now."
+msgstr ""
+
+#: assets/games/wr/wr.php:10
+msgid ""
+"Click a score to download the corresponding replay, if there is one "
+"available. "
+msgstr ""
+
+#: assets/games/wr/wr.php:14
+msgid ""
+"The replays provided are <strong>not</strong> meant to be reuploaded to any "
+"replay uploading services."
+msgstr ""
+
+#: assets/games/wr/wr.php:17
+msgid ""
+"If you toggle Unverified Scores, this will show scores that are higher than "
+"the World Record, but lack replay or video proof."
+msgstr ""
+
+#: assets/games/wr/wr.php:25 assets/games/wr/wr.php:26
+#: assets/games/wr/wr.php:34 assets/games/wr/wr.php:35
+#: assets/games/wr/wr.php:59 assets/games/wr/wr.php:99
+msgid "Overall Records"
+msgstr ""
+
+#: assets/games/wr/wr.php:27 assets/games/wr/wr.php:36
+#: assets/games/wr/wr.php:118
+msgid "World Records"
+msgstr ""
+
+#: assets/games/wr/wr.php:28 assets/games/wr/wr.php:29
+#: assets/games/wr/wr.php:43 assets/games/wr/wr.php:45
+#: assets/games/wr/wr.php:294 assets/games/wr/wr.php:322
+msgid "Recent Records"
+msgstr ""
+
+#: assets/games/wr/wr.php:41 assets/games/wr/wr.php:214
+msgid "Western Records"
+msgstr ""
+
+#: assets/games/wr/wr.php:55
+msgid "Dates"
+msgstr ""
+
+#: assets/games/wr/wr.php:247
+msgid "Click a game cover to show its list of world records."
+msgstr ""
+
+#: assets/games/wr/wr.php:268
+msgid "Choose a player name from the menu below to show their WRs."
+msgstr ""
+
+#: assets/games/wr/wr.php:346
+msgid "No. of WRs"
+msgstr ""
+
+#: assets/games/wr/wr.php:347
+msgid "Different games"
+msgstr ""
+
+#: assets/main/credits/credits.php:3
+msgid "Contributors"
+msgstr ""
+
+#: assets/main/credits/credits.php:14
+msgid "Translators"
+msgstr ""
+
+#: assets/main/credits/credits.php:15
+msgid "Japanese"
+msgstr ""
+
+#: assets/main/credits/credits.php:20
+msgid "Chinese"
+msgstr ""
+
+#: assets/main/credits/credits.php:28
+msgid "Russian"
+msgstr ""
+
+#: assets/main/credits/credits.php:32
+msgid "German"
+msgstr ""
+
+#: assets/main/credits/credits.php:36
+msgid "Spanish"
+msgstr ""
+
+#: assets/main/credits/credits.php:41
+msgid "Character Artists"
+msgstr ""
+
+#: assets/main/credits/credits.php:46
+msgid "Background Artists"
+msgstr ""
+
+#: assets/shared/shared.php:397
+msgid "Youkai mode (Dark)"
+msgstr ""
+
+#: assets/shared/shared.php:397
+msgid "Human mode (Light)"
+msgstr ""
+
+#: assets/shared/shared.php:406 assets/shared/shared.php:412
+msgid "Flag of the United Kingdom"
+msgstr ""
+
+#: assets/shared/shared.php:408
+msgid "Flag of the United States"
+msgstr ""
+
+#: assets/shared/shared.php:416
+msgid "Flag of Japan"
+msgstr ""
+
+#: assets/shared/shared.php:420
+msgid "Flag of the P.R.C."
+msgstr ""
+
+#: assets/shared/shared.php:424
+msgid "Flag of Russia"
+msgstr ""
+
+#: assets/shared/shared.php:428
+msgid "Flag of Germany"
+msgstr ""
+
+#: assets/shared/shared.php:432
+msgid "Flag of Spain"
+msgstr ""
+
+#: assets/shared/translations.php:2
+msgid "ReimuA"
+msgstr ""
+
+#: assets/shared/translations.php:3
+msgid "ReimuB"
+msgstr ""
+
+#: assets/shared/translations.php:4
+msgid "MarisaA"
+msgstr ""
+
+#: assets/shared/translations.php:5
+msgid "MarisaB"
+msgstr ""
+
+#: assets/shared/translations.php:6
+msgid "SakuyaA"
+msgstr ""
+
+#: assets/shared/translations.php:7
+msgid "SakuyaB"
+msgstr ""
+
+#: assets/shared/translations.php:8
+msgid "BorderTeam"
+msgstr "Border Team"
+
+#: assets/shared/translations.php:9
+msgid "MagicTeam"
+msgstr "Magic Team"
+
+#: assets/shared/translations.php:10
+msgid "ScarletTeam"
+msgstr "Scarlet Team"
+
+#: assets/shared/translations.php:11
+msgid "GhostTeam"
+msgstr "Ghost Team"
+
+#: assets/shared/translations.php:12
+msgid "Reimu"
+msgstr ""
+
+#: assets/shared/translations.php:13
+msgid "Marisa"
+msgstr ""
+
+#: assets/shared/translations.php:14
+msgid "Sakuya"
+msgstr ""
+
+#: assets/shared/translations.php:15 assets/shared/translations.php:20
+msgid "Youmu"
+msgstr ""
+
+#: assets/shared/translations.php:16
+msgid "Yukari"
+msgstr ""
+
+#: assets/shared/translations.php:17
+msgid "Alice"
+msgstr ""
+
+#: assets/shared/translations.php:18
+msgid "Remilia"
+msgstr ""
+
+#: assets/shared/translations.php:19
+msgid "Yuyuko"
+msgstr ""
+
+#: assets/shared/translations.php:21
+msgid "Reisen"
+msgstr ""
+
+#: assets/shared/translations.php:22
+msgid "Cirno"
+msgstr ""
+
+#: assets/shared/translations.php:23
+msgid "Lyrica"
+msgstr ""
+
+#: assets/shared/translations.php:24
+msgid "Mystia"
+msgstr ""
+
+#: assets/shared/translations.php:25
+msgid "Aya"
+msgstr ""
+
+#: assets/shared/translations.php:26
+msgid "Medicine"
+msgstr ""
+
+#: assets/shared/translations.php:27
+msgid "Yuuka"
+msgstr ""
+
+#: assets/shared/translations.php:28
+msgid "Komachi"
+msgstr ""
+
+#: assets/shared/translations.php:29
+msgid "Eiki"
+msgstr ""
+
+#: assets/shared/translations.php:30
+msgid "ReimuC"
+msgstr ""
+
+#: assets/shared/translations.php:31
+msgid "MarisaC"
+msgstr ""
+
+#: assets/shared/translations.php:32
+msgid "SanaeA"
+msgstr ""
+
+#: assets/shared/translations.php:33
+msgid "SanaeB"
+msgstr ""
+
+#: assets/shared/translations.php:34
+msgid "Sanae"
+msgstr ""
+
+#: assets/shared/translations.php:35
+msgid "ReimuSpring"
+msgstr ""
+
+#: assets/shared/translations.php:36
+msgid "CirnoSpring"
+msgstr ""
+
+#: assets/shared/translations.php:37
+msgid "AyaSpring"
+msgstr ""
+
+#: assets/shared/translations.php:38
+msgid "MarisaSpring"
+msgstr ""
+
+#: assets/shared/translations.php:39
+msgid "ReimuSummer"
+msgstr ""
+
+#: assets/shared/translations.php:40
+msgid "CirnoSummer"
+msgstr ""
+
+#: assets/shared/translations.php:41
+msgid "AyaSummer"
+msgstr ""
+
+#: assets/shared/translations.php:42
+msgid "MarisaSummer"
+msgstr ""
+
+#: assets/shared/translations.php:43
+msgid "ReimuAutumn"
+msgstr ""
+
+#: assets/shared/translations.php:44
+msgid "CirnoAutumn"
+msgstr ""
+
+#: assets/shared/translations.php:45
+msgid "AyaAutumn"
+msgstr ""
+
+#: assets/shared/translations.php:46
+msgid "MarisaAutumn"
+msgstr ""
+
+#: assets/shared/translations.php:47
+msgid "ReimuWinter"
+msgstr ""
+
+#: assets/shared/translations.php:48
+msgid "CirnoWinter"
+msgstr ""
+
+#: assets/shared/translations.php:49
+msgid "AyaWinter"
+msgstr ""
+
+#: assets/shared/translations.php:50
+msgid "MarisaWinter"
+msgstr ""
+
+#: assets/shared/translations.php:51
+msgid "ReimuWolf"
+msgstr ""
+
+#: assets/shared/translations.php:52
+msgid "ReimuOtter"
+msgstr ""
+
+#: assets/shared/translations.php:53
+msgid "ReimuEagle"
+msgstr ""
+
+#: assets/shared/translations.php:54
+msgid "MarisaWolf"
+msgstr ""
+
+#: assets/shared/translations.php:55
+msgid "MarisaOtter"
+msgstr ""
+
+#: assets/shared/translations.php:56
+msgid "MarisaEagle"
+msgstr ""
+
+#: assets/shared/translations.php:57
+msgid "YoumuWolf"
+msgstr ""
+
+#: assets/shared/translations.php:58
+msgid "YoumuOtter"
+msgstr ""
+
+#: assets/shared/translations.php:59
+msgid "YoumuEagle"
+msgstr ""
+
+#~ msgid "ReimuYukari"
+#~ msgstr "Reimu & Yukari"
+
+#~ msgid "MarisaAlice"
+#~ msgstr "Marisa & Alice"
+
+#~ msgid "SakuyaRemilia"
+#~ msgstr "Sakuya & Remilia"
+
+#~ msgid "YoumuYuyuko"
+#~ msgstr "Youmu & Yuyuko"
