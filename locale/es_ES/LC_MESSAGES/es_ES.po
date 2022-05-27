@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-27 19:45+0200\n"
-"PO-Revision-Date: 2022-05-27 19:45+0200\n"
+"POT-Creation-Date: 2022-05-27 20:21+0200\n"
+"PO-Revision-Date: 2022-05-27 20:21+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -1144,20 +1144,20 @@ msgid "SakuyaB"
 msgstr ""
 
 #: shared/translations.php:8
-msgid "ReimuYukari"
-msgstr ""
+msgid "BorderTeam"
+msgstr "Border Team"
 
 #: shared/translations.php:9
-msgid "MarisaAlice"
-msgstr ""
+msgid "MagicTeam"
+msgstr "Magic Team"
 
 #: shared/translations.php:10
-msgid "SakuyaRemilia"
-msgstr ""
+msgid "ScarletTeam"
+msgstr "Scarlet Team"
 
 #: shared/translations.php:11
-msgid "YoumuYuyuko"
-msgstr ""
+msgid "GhostTeam"
+msgstr "Ghost Team"
 
 #: shared/translations.php:12
 msgid "Reimu"
@@ -1171,7 +1171,7 @@ msgstr ""
 msgid "Sakuya"
 msgstr ""
 
-#: shared/translations.php:15 shared/translations.php:25
+#: shared/translations.php:15 shared/translations.php:20
 msgid "Youmu"
 msgstr ""
 
@@ -1191,131 +1191,163 @@ msgstr ""
 msgid "Yuyuko"
 msgstr ""
 
-#: shared/translations.php:20
-msgid "ReimuC"
-msgstr ""
-
 #: shared/translations.php:21
-msgid "MarisaC"
-msgstr ""
-
-#: shared/translations.php:22
-msgid "SanaeA"
-msgstr ""
-
-#: shared/translations.php:23
-msgid "SanaeB"
-msgstr ""
-
-#: shared/translations.php:24
-msgid "Sanae"
-msgstr ""
-
-#: shared/translations.php:26
 msgid "Reisen"
 msgstr ""
 
+#: shared/translations.php:22
+msgid "Cirno"
+msgstr ""
+
+#: shared/translations.php:23
+msgid "Lyrica"
+msgstr ""
+
+#: shared/translations.php:24
+msgid "Mystia"
+msgstr ""
+
+#: shared/translations.php:25
+msgid "Aya"
+msgstr ""
+
+#: shared/translations.php:26
+msgid "Medicine"
+msgstr ""
+
 #: shared/translations.php:27
-msgid "ReimuSpring"
+msgid "Yuuka"
 msgstr ""
 
 #: shared/translations.php:28
-msgid "CirnoSpring"
+msgid "Komachi"
 msgstr ""
 
 #: shared/translations.php:29
-msgid "AyaSpring"
+msgid "Eiki"
 msgstr ""
 
 #: shared/translations.php:30
-msgid "MarisaSpring"
+msgid "ReimuC"
 msgstr ""
 
 #: shared/translations.php:31
-msgid "ReimuSummer"
+msgid "MarisaC"
 msgstr ""
 
 #: shared/translations.php:32
-msgid "CirnoSummer"
+msgid "SanaeA"
 msgstr ""
 
 #: shared/translations.php:33
-msgid "AyaSummer"
+msgid "SanaeB"
 msgstr ""
 
 #: shared/translations.php:34
-msgid "MarisaSummer"
+msgid "Sanae"
 msgstr ""
 
 #: shared/translations.php:35
-msgid "ReimuAutumn"
+msgid "ReimuSpring"
 msgstr ""
 
 #: shared/translations.php:36
-msgid "CirnoAutumn"
+msgid "CirnoSpring"
 msgstr ""
 
 #: shared/translations.php:37
-msgid "AyaAutumn"
+msgid "AyaSpring"
 msgstr ""
 
 #: shared/translations.php:38
-msgid "MarisaAutumn"
+msgid "MarisaSpring"
 msgstr ""
 
 #: shared/translations.php:39
-msgid "ReimuWinter"
+msgid "ReimuSummer"
 msgstr ""
 
 #: shared/translations.php:40
-msgid "CirnoWinter"
+msgid "CirnoSummer"
 msgstr ""
 
 #: shared/translations.php:41
-msgid "AyaWinter"
+msgid "AyaSummer"
 msgstr ""
 
 #: shared/translations.php:42
-msgid "MarisaWinter"
+msgid "MarisaSummer"
 msgstr ""
 
 #: shared/translations.php:43
-msgid "ReimuWolf"
+msgid "ReimuAutumn"
 msgstr ""
 
 #: shared/translations.php:44
-msgid "ReimuOtter"
+msgid "CirnoAutumn"
 msgstr ""
 
 #: shared/translations.php:45
-msgid "ReimuEagle"
+msgid "AyaAutumn"
 msgstr ""
 
 #: shared/translations.php:46
-msgid "MarisaWolf"
+msgid "MarisaAutumn"
 msgstr ""
 
 #: shared/translations.php:47
-msgid "MarisaOtter"
+msgid "ReimuWinter"
 msgstr ""
 
 #: shared/translations.php:48
-msgid "MarisaEagle"
+msgid "CirnoWinter"
 msgstr ""
 
 #: shared/translations.php:49
-msgid "YoumuWolf"
+msgid "AyaWinter"
 msgstr ""
 
 #: shared/translations.php:50
-msgid "YoumuOtter"
+msgid "MarisaWinter"
 msgstr ""
 
 #: shared/translations.php:51
-msgid "YoumuEagle"
+msgid "ReimuWolf"
 msgstr ""
 
 #: shared/translations.php:52
+msgid "ReimuOtter"
+msgstr ""
+
+#: shared/translations.php:53
+msgid "ReimuEagle"
+msgstr ""
+
+#: shared/translations.php:54
+msgid "MarisaWolf"
+msgstr ""
+
+#: shared/translations.php:55
+msgid "MarisaOtter"
+msgstr ""
+
+#: shared/translations.php:56
+msgid "MarisaEagle"
+msgstr ""
+
+#: shared/translations.php:57
+msgid "YoumuWolf"
+msgstr ""
+
+#: shared/translations.php:58
+msgid "YoumuOtter"
+msgstr ""
+
+#: shared/translations.php:59
+msgid "YoumuEagle"
+msgstr ""
+
+#: shared/translations.php:60
 msgid "Seasons"
 msgstr "Estaciones"
 

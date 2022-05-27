@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-27 19:56+0200\n"
-"PO-Revision-Date: 2022-05-27 19:57+0200\n"
+"POT-Creation-Date: 2022-05-27 20:22+0200\n"
+"PO-Revision-Date: 2022-05-27 20:22+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -684,19 +684,19 @@ msgid "SakuyaB"
 msgstr "咲夜B"
 
 #: shared/translations.php:8
-msgid "ReimuYukari"
+msgid "BorderTeam"
 msgstr "结界组"
 
 #: shared/translations.php:9
-msgid "MarisaAlice"
+msgid "MagicTeam"
 msgstr "咏唱组"
 
 #: shared/translations.php:10
-msgid "SakuyaRemilia"
+msgid "ScarletTeam"
 msgstr "红魔组"
 
 #: shared/translations.php:11
-msgid "YoumuYuyuko"
+msgid "GhostTeam"
 msgstr "幽冥组"
 
 #: shared/translations.php:12
@@ -711,7 +711,7 @@ msgstr "魔理沙"
 msgid "Sakuya"
 msgstr "咲夜"
 
-#: shared/translations.php:15 shared/translations.php:25
+#: shared/translations.php:15 shared/translations.php:20
 msgid "Youmu"
 msgstr "妖梦"
 
@@ -731,133 +731,177 @@ msgstr "蕾米莉亚"
 msgid "Yuyuko"
 msgstr "幽幽子"
 
-#: shared/translations.php:20
-msgid "ReimuC"
-msgstr "灵梦C"
-
 #: shared/translations.php:21
-msgid "MarisaC"
-msgstr "魔理沙C"
-
-#: shared/translations.php:22
-msgid "SanaeA"
-msgstr "早苗A"
-
-#: shared/translations.php:23
-msgid "SanaeB"
-msgstr "早苗B"
-
-#: shared/translations.php:24
-msgid "Sanae"
-msgstr "早苗"
-
-#: shared/translations.php:26
 msgid "Reisen"
 msgstr "铃仙"
 
+#: shared/translations.php:22
+msgid "Cirno"
+msgstr "琪露诺"
+
+#: shared/translations.php:23
+msgid "Lyrica"
+msgstr "莉莉卡"
+
+#: shared/translations.php:24
+msgid "Mystia"
+msgstr "米丝蒂亚"
+
+#: shared/translations.php:25
+msgid "Aya"
+msgstr "文"
+
+#: shared/translations.php:26
+msgid "Medicine"
+msgstr "梅蒂薪"
+
 #: shared/translations.php:27
+msgid "Yuuka"
+msgstr "幽香"
+
+#: shared/translations.php:28
+msgid "Komachi"
+msgstr "小町"
+
+#: shared/translations.php:29
+msgid "Eiki"
+msgstr "映姬"
+
+#: shared/translations.php:30
+msgid "ReimuC"
+msgstr "灵梦C"
+
+#: shared/translations.php:31
+msgid "MarisaC"
+msgstr "魔理沙C"
+
+#: shared/translations.php:32
+msgid "SanaeA"
+msgstr "早苗A"
+
+#: shared/translations.php:33
+msgid "SanaeB"
+msgstr "早苗B"
+
+#: shared/translations.php:34
+msgid "Sanae"
+msgstr "早苗"
+
+#: shared/translations.php:35
 msgid "ReimuSpring"
 msgstr "灵梦春"
 
-#: shared/translations.php:28
+#: shared/translations.php:36
 msgid "CirnoSpring"
 msgstr "琪露诺春"
 
-#: shared/translations.php:29
+#: shared/translations.php:37
 msgid "AyaSpring"
 msgstr "文春"
 
-#: shared/translations.php:30
+#: shared/translations.php:38
 msgid "MarisaSpring"
 msgstr "魔理沙春"
 
-#: shared/translations.php:31
+#: shared/translations.php:39
 msgid "ReimuSummer"
 msgstr "灵梦夏"
 
-#: shared/translations.php:32
+#: shared/translations.php:40
 msgid "CirnoSummer"
 msgstr "琪露诺夏"
 
-#: shared/translations.php:33
+#: shared/translations.php:41
 msgid "AyaSummer"
 msgstr "文夏"
 
-#: shared/translations.php:34
+#: shared/translations.php:42
 msgid "MarisaSummer"
 msgstr "魔理沙夏"
 
-#: shared/translations.php:35
+#: shared/translations.php:43
 msgid "ReimuAutumn"
 msgstr "灵梦秋"
 
-#: shared/translations.php:36
+#: shared/translations.php:44
 msgid "CirnoAutumn"
 msgstr "琪露诺秋"
 
-#: shared/translations.php:37
+#: shared/translations.php:45
 msgid "AyaAutumn"
 msgstr "文秋"
 
-#: shared/translations.php:38
+#: shared/translations.php:46
 msgid "MarisaAutumn"
 msgstr "魔理沙秋"
 
-#: shared/translations.php:39
+#: shared/translations.php:47
 msgid "ReimuWinter"
 msgstr "灵梦冬"
 
-#: shared/translations.php:40
+#: shared/translations.php:48
 msgid "CirnoWinter"
 msgstr "琪露诺冬"
 
-#: shared/translations.php:41
+#: shared/translations.php:49
 msgid "AyaWinter"
 msgstr "文冬"
 
-#: shared/translations.php:42
+#: shared/translations.php:50
 msgid "MarisaWinter"
 msgstr "魔理沙冬"
 
-#: shared/translations.php:43
+#: shared/translations.php:51
 msgid "ReimuWolf"
 msgstr "灵梦狼"
 
-#: shared/translations.php:44
+#: shared/translations.php:52
 msgid "ReimuOtter"
 msgstr "灵梦獭"
 
-#: shared/translations.php:45
+#: shared/translations.php:53
 msgid "ReimuEagle"
 msgstr "灵梦鹰"
 
-#: shared/translations.php:46
+#: shared/translations.php:54
 msgid "MarisaWolf"
 msgstr "魔理沙狼"
 
-#: shared/translations.php:47
+#: shared/translations.php:55
 msgid "MarisaOtter"
 msgstr "魔理沙獭"
 
-#: shared/translations.php:48
+#: shared/translations.php:56
 msgid "MarisaEagle"
 msgstr "魔理沙鹰"
 
-#: shared/translations.php:49
+#: shared/translations.php:57
 msgid "YoumuWolf"
 msgstr "妖梦狼"
 
-#: shared/translations.php:50
+#: shared/translations.php:58
 msgid "YoumuOtter"
 msgstr "妖梦獭"
 
-#: shared/translations.php:51
+#: shared/translations.php:59
 msgid "YoumuEagle"
 msgstr "妖梦鹰"
 
-#: shared/translations.php:52
+#: shared/translations.php:60
 msgid "Seasons"
 msgstr "季節"
+
+#~ msgid "ReimuYukari"
+#~ msgstr "结界组"
+
+#~ msgid "MarisaAlice"
+#~ msgstr "咏唱组"
+
+#~ msgid "SakuyaRemilia"
+#~ msgstr "红魔组"
+
+#~ msgid "YoumuYuyuko"
+#~ msgstr "幽冥组"
 
 #, fuzzy
 #~| msgid "Touhou 7 - Perfect Cherry Blossom"
@@ -1233,44 +1277,8 @@ msgstr "季節"
 #~ msgid "Yumemi"
 #~ msgstr "梦美"
 
-#~ msgid "Yuuka"
-#~ msgstr "幽香"
-
-#~ msgid "BorderTeam"
-#~ msgstr "结界组"
-
-#~ msgid "MagicTeam"
-#~ msgstr "咏唱组"
-
-#~ msgid "ScarletTeam"
-#~ msgstr "红魔组"
-
-#~ msgid "GhostTeam"
-#~ msgstr "幽冥组"
-
-#~ msgid "Cirno"
-#~ msgstr "琪露诺"
-
-#~ msgid "Lyrica"
-#~ msgstr "莉莉卡"
-
-#~ msgid "Mystia"
-#~ msgstr "米丝蒂亚"
-
 #~ msgid "Tewi"
 #~ msgstr "帝"
-
-#~ msgid "Aya"
-#~ msgstr "文"
-
-#~ msgid "Medicine"
-#~ msgstr "梅蒂薪"
-
-#~ msgid "Komachi"
-#~ msgstr "小町"
-
-#~ msgid "Eiki"
-#~ msgstr "映姬"
 
 #~ msgid "Hatate"
 #~ msgstr "羽立"
