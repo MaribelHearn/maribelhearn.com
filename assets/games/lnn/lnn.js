@@ -80,7 +80,7 @@ function showLNNs(game) {
     $("#" + game + "_image").css("border", "3px solid gold");
     selected = game;
     $("#fullname").addClass(game + "f");
-    $("#fullname").html(fullNameNumber(game));
+    $("#fullname").html(_(fullNameNumber(game)));
     $("#listhead").html("<tr><th class='general_header'>" + shotRoute(game) + "</th><th class='general_header sorttable_numeric'>" + restrictions(game) +
     "<br>" + _("(Different players)") + "</th><th class='general_header'>" + _("Players") + "</th></tr>");
     $("#listfoot").html("<tr><td class='foot'>" + _("Overall") + "</td>" +
