@@ -49,7 +49,7 @@ function replayPath(game, player, character, type) {
 }
 
 function hasReplay(game, player, shottype) {
-    return videoLNNs[game + shottype + player] || (gameAbbr(game) >= 6 && !missingReplays.contains(game + player.removeSpaces() + shottype));
+    return videoLNNs[game + shottype + player] || (gameAbbr(game) >= 6 && !missingReplays.includes(game + player.removeSpaces() + shottype));
 }
 
 function showLNNs(game) {
@@ -88,7 +88,7 @@ function showLNNs(game) {
     $("#listbody").html("");
 
     for (shottype in LNNs[game]) {
-        if (game != "UFO" || (game == "UFO" && !shottype.contains("UFOs"))) {
+        if (game != "UFO" || (game == "UFO" && !shottype.includes("UFOs"))) {
             shotplayers = [];
             shotcount = 0;
             character = shottype.replace(/UFOs/, "");
@@ -167,15 +167,15 @@ function showPlayerLNNs(player) {
         max = (game == "UFO" ? 6 : Object.keys(LNNs[game]).length);
 
         for (shottype in LNNs[game]) {
-            if (LNNs[game][shottype].contains(player)) {
-                if (!games.contains(game)) {
+            if (LNNs[game][shottype].includes(player)) {
+                if (!games.includes(game)) {
                     $("#playerlistbody").append("<tr><td class='" + game + "l'>" + _(game) + "</td><td id='" + game + "s'></td><td id='" + game + "r'></td></tr>");
                     games.push(game);
                 }
                 character = shottype.replace(/(FinalA|FinalB|UFOs)/g, "");
                 type = shottype.replace(character, "");
                 array.push(_(character) + (type === "" ? "": " (<span class='" + type + "'>" + _(type) + "</span>)"));
-                if (gameAbbr(game) < 6 || missingReplays.contains(game + player.removeSpaces() + shottype)) {
+                if (gameAbbr(game) < 6 || missingReplays.includes(game + player.removeSpaces() + shottype)) {
                     if (videoLNNs.hasOwnProperty(game + shottype + player)) {
                         replays.push("<a href='" + videoLNNs[game + shottype + player] + "' target='_blank'>" + videoLNNs[game + shottype + player] + "</a>");
                     } else {

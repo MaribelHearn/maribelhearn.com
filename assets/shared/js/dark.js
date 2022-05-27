@@ -3,7 +3,7 @@ var language, done, head, hy;
 function dark() {
     var style = document.createElement("link"), page = location.pathname.split('/')[1];
     style.id = "dark_theme";
-    style.href = (location.host != "localhost" || location.pathname.indexOf("error") > -1 ? "https://maribelhearn.com/" : "/") + "assets/shared/dark.css";
+    style.href = (location.host != "localhost" || location.pathname.includes("error") ? "https://maribelhearn.com/" : "/") + "assets/shared/dark.css";
     style.type = "text/css";
     style.rel = "stylesheet";
     head.appendChild(style);
@@ -52,15 +52,11 @@ function ready() {
 }
 
 function getCookie(name) {
-    var decodedCookies, cookieArray, cookie;
-
-    decodedCookies = decodeURIComponent(document.cookie);
-    cookieArray = decodedCookies.split(';');
+    let decodedCookies = decodeURIComponent(document.cookie);
+    let cookieArray = decodedCookies.split(';');
     name += '=';
 
-    for (var i = 0; i < cookieArray.length; i += 1) {
-        cookie = cookieArray[i];
-
+    for (let cookie of cookieArray) {
         while (cookie.charAt(0) === ' ') {
             cookie = cookie.substring(1);
         }

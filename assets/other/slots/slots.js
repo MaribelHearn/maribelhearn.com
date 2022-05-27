@@ -1,4 +1,4 @@
-/*global $ CHARS LOCATIONS html2canvas*/
+/*global $ CHARS LOCATIONS html2canvas isMobile*/
 var SPECIES = ["Human", "Magician", "Devil", "Ghost", "Yuki-onna", "Night sparrow", "Tengu", "Kappa",
     "Tsurube-otoshi", "Tsuchigumo", "Hashihime", "Satori", "Shuchuu", "Tsukumogami", "Nyuudou",
     "Nue", "Daidarabotchi", "Yamabiko", "Zombie", "Gashadokuro", "Kirin", "Wanyuudou", "Katawa-guruma",
@@ -14,10 +14,6 @@ var SPECIES = ["Human", "Magician", "Devil", "Ghost", "Yuki-onna", "Night sparro
     slots = [],
     speed = 100,
     running;
-
-function isMobile() {
-    return navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1;
-}
 
 function randomiseImage(max, slot, previous) {
     var x, y;
