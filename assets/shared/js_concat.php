@@ -46,6 +46,7 @@ $jquery = array('drc', 'lnn', 'pofv', 'royalflare', 'scoring', 'slots', 'surviva
 $utils = array('drc', 'lnn', 'pofv', 'tiers', 'wr');
 $canvas = array('slots', 'survival', 'tiers');
 $wr_json = array('drc', 'scoring', 'wr');
+$po2json = array('drc', 'lnn', 'wr');
 $page = $_GET['page'];
 $dir = directory($page);
 $js = array();
@@ -112,6 +113,15 @@ if (in_array($page, $wr_json)) {
         echo 'const WRs = ' . file_get_contents('json/wrlist.json') . ';';
     } else {
         echo 'const WRs = ' . curl_get('https://maribelhearn.com/assets/shared/json/wrlist.json') . ';';
+    }
+}
+if (in_array($page, $po2json) && !empty($_GET['hl'])) {
+    $lang = $_GET['hl'];
+    $path = '../../locale/' . $lang . '/LC_MESSAGES/' . $lang . '.json';
+    if (file_exists($path)) {
+        echo 'const TRANSLATIONS = ' . file_get_contents($path) . ';';
+    } else {
+        echo 'const TRANSLATIONS = ' . curl_get('https://maribelhearn.com/locale/' . $lang . '/LC_MESSAGES/' . $lang . '.json') . ';';
     }
 }
 foreach ($js as $js_file) {

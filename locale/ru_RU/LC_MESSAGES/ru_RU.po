@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-27 20:22+0200\n"
-"PO-Revision-Date: 2022-05-27 20:22+0200\n"
+"POT-Creation-Date: 2022-05-27 21:52+0200\n"
+"PO-Revision-Date: 2022-05-27 21:53+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -17,6 +17,59 @@ msgstr ""
 "X-Poedit-SearchPath-1: games/tools/tools.php\n"
 "X-Poedit-SearchPath-2: games/wr/wr.php\n"
 "X-Poedit-SearchPath-3: shared/translations.php\n"
+"X-Poedit-SearchPath-4: games/lnn/lnn.js\n"
+"X-Poedit-SearchPath-5: games/wr/wr.js\n"
+"X-Poedit-SearchPath-6: shared/shared.php\n"
+
+#: games/lnn/lnn.js:14 games/lnn/lnn.js:17 games/lnn/lnn.js:18
+#: games/lnn/lnn.js:20
+msgid "No. of LNNNs"
+msgstr ""
+
+#: games/lnn/lnn.js:15
+msgid "No. of LNNFSs"
+msgstr ""
+
+#: games/lnn/lnn.js:16
+msgid "No. of LNN(N)s"
+msgstr ""
+
+#: games/lnn/lnn.js:19
+msgid "No. of LNNNNs"
+msgstr ""
+
+#: games/lnn/lnn.js:21 games/lnn/lnn.php:143 games/lnn/lnn.php:190
+msgid "No. of LNNs"
+msgstr ""
+
+#: games/lnn/lnn.js:26 games/wr/wr.js:64
+msgid "Route"
+msgstr ""
+
+#: games/lnn/lnn.js:26 games/lnn/lnn.php:128 games/wr/wr.js:64
+#: games/wr/wr.php:67
+msgid "Shottype"
+msgstr ""
+
+#: games/lnn/lnn.js:85 games/lnn/lnn.php:61
+msgid "(Different players)"
+msgstr ""
+
+#: games/lnn/lnn.js:85 games/lnn/lnn.php:61
+msgid "Players"
+msgstr ""
+
+#: games/lnn/lnn.js:86 games/lnn/lnn.php:89 games/lnn/lnn.php:171
+msgid "Overall"
+msgstr ""
+
+#: games/lnn/lnn.js:201
+msgid "(All)"
+msgstr ""
+
+#: games/lnn/lnn.js:210
+msgid "Total"
+msgstr ""
 
 #: games/lnn/lnn.php:5
 msgid ""
@@ -74,18 +127,6 @@ msgstr "Рейтинг игроков"
 msgid "Player Search"
 msgstr "Поиск игроков"
 
-#: games/lnn/lnn.php:61
-msgid "(Different players)"
-msgstr ""
-
-#: games/lnn/lnn.php:61
-msgid "Players"
-msgstr ""
-
-#: games/lnn/lnn.php:89 games/lnn/lnn.php:171
-msgid "Overall"
-msgstr ""
-
 #: games/lnn/lnn.php:98
 msgid "Click a game cover to show its list of LNNs."
 msgstr "Нажмите на обложку игры для получения ее списка LNN."
@@ -103,17 +144,9 @@ msgstr ""
 msgid "Game"
 msgstr ""
 
-#: games/lnn/lnn.php:128 games/wr/wr.php:67
-msgid "Shottype"
-msgstr ""
-
 #: games/lnn/lnn.php:129 games/wr/wr.php:69 games/wr/wr.php:286
 #: games/wr/wr.php:300
 msgid "Replay"
-msgstr ""
-
-#: games/lnn/lnn.php:143 games/lnn/lnn.php:190
-msgid "No. of LNNs"
 msgstr ""
 
 #: games/lnn/lnn.php:145
@@ -956,6 +989,22 @@ msgstr "Фикс каунтерстопа в WBaWC от "
 msgid "Allows the in-game score counter to exceed 9,999,999,990 points."
 msgstr "Позволяет счетчику очков превышать 9.999.999.990 очков."
 
+#: games/wr/wr.js:119 games/wr/wr.php:217
+msgid "World"
+msgstr ""
+
+#: games/wr/wr.js:119 games/wr/wr.php:218
+msgid "West"
+msgstr ""
+
+#: games/wr/wr.js:119 games/wr/wr.php:218
+msgid "Percentage"
+msgstr ""
+
+#: games/wr/wr.js:203
+msgid "Seasons"
+msgstr "Времена года"
+
 #: games/wr/wr.php:5
 msgid ""
 "An accurate list of Touhou world records, updated every so often. Note that "
@@ -1021,18 +1070,6 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: games/wr/wr.php:217
-msgid "World"
-msgstr ""
-
-#: games/wr/wr.php:218
-msgid "West"
-msgstr ""
-
-#: games/wr/wr.php:218
-msgid "Percentage"
-msgstr ""
-
 #: games/wr/wr.php:247
 msgid "Click a game cover to show its list of world records."
 msgstr "Нажмите на обложку игры для получения ее списка рекордов."
@@ -1054,261 +1091,392 @@ msgstr ""
 msgid "Different games"
 msgstr ""
 
+#: shared/shared.php:397
+msgid "Youkai mode (Dark)"
+msgstr ""
+
+#: shared/shared.php:397
+msgid "Human mode (Light)"
+msgstr ""
+
+#: shared/shared.php:406 shared/shared.php:412
+msgid "Flag of the United Kingdom"
+msgstr "Флаг Великобритании"
+
+#: shared/shared.php:408
+msgid "Flag of the United States"
+msgstr "Флаг США"
+
+#: shared/shared.php:416
+msgid "Flag of Japan"
+msgstr "Флаг Японии"
+
+#: shared/shared.php:420
+msgid "Flag of the P.R.C."
+msgstr "Флаг Китая"
+
+#: shared/shared.php:424
+msgid "Flag of Russia"
+msgstr "Флаг России"
+
+#: shared/shared.php:428
+msgid "Flag of Germany"
+msgstr "Флаг Германии"
+
+#: shared/shared.php:432
+msgid "Flag of Spain"
+msgstr "Флаг Испании"
+
 #: shared/translations.php:2
-msgid "ReimuA"
+msgid "Makai"
 msgstr ""
 
 #: shared/translations.php:3
-msgid "ReimuB"
+msgid "Jigoku"
 msgstr ""
 
 #: shared/translations.php:4
-msgid "MarisaA"
+msgid "ReimuA"
 msgstr ""
 
 #: shared/translations.php:5
-msgid "MarisaB"
+msgid "ReimuB"
 msgstr ""
 
 #: shared/translations.php:6
-msgid "SakuyaA"
-msgstr ""
-
-#: shared/translations.php:7
-msgid "SakuyaB"
-msgstr ""
-
-#: shared/translations.php:8
-msgid "BorderTeam"
-msgstr "Border Team"
-
-#: shared/translations.php:9
-msgid "MagicTeam"
-msgstr "Magic Team"
-
-#: shared/translations.php:10
-msgid "ScarletTeam"
-msgstr "Scarlet Team"
-
-#: shared/translations.php:11
-msgid "GhostTeam"
-msgstr "Ghost Team"
-
-#: shared/translations.php:12
-msgid "Reimu"
-msgstr ""
-
-#: shared/translations.php:13
-msgid "Marisa"
-msgstr ""
-
-#: shared/translations.php:14
-msgid "Sakuya"
-msgstr ""
-
-#: shared/translations.php:15 shared/translations.php:20
-msgid "Youmu"
-msgstr ""
-
-#: shared/translations.php:16
-msgid "Yukari"
-msgstr ""
-
-#: shared/translations.php:17
-msgid "Alice"
-msgstr ""
-
-#: shared/translations.php:18
-msgid "Remilia"
-msgstr ""
-
-#: shared/translations.php:19
-msgid "Yuyuko"
-msgstr ""
-
-#: shared/translations.php:21
-msgid "Reisen"
-msgstr ""
-
-#: shared/translations.php:22
-msgid "Cirno"
-msgstr ""
-
-#: shared/translations.php:23
-msgid "Lyrica"
-msgstr ""
-
-#: shared/translations.php:24
-msgid "Mystia"
-msgstr ""
-
-#: shared/translations.php:25
-msgid "Aya"
-msgstr ""
-
-#: shared/translations.php:26
-msgid "Medicine"
-msgstr ""
-
-#: shared/translations.php:27
-msgid "Yuuka"
-msgstr ""
-
-#: shared/translations.php:28
-msgid "Komachi"
-msgstr ""
-
-#: shared/translations.php:29
-msgid "Eiki"
-msgstr ""
-
-#: shared/translations.php:30
 msgid "ReimuC"
 msgstr ""
 
+#: shared/translations.php:7
+msgid "Mima"
+msgstr ""
+
+#: shared/translations.php:8
+msgid "Ellen"
+msgstr ""
+
+#: shared/translations.php:9
+msgid "Kotohime"
+msgstr ""
+
+#: shared/translations.php:10
+msgid "Kana"
+msgstr ""
+
+#: shared/translations.php:11
+msgid "Rikako"
+msgstr ""
+
+#: shared/translations.php:12
+msgid "Chiyuri"
+msgstr ""
+
+#: shared/translations.php:13
+msgid "Yumemi"
+msgstr ""
+
+#: shared/translations.php:14
+msgid "MarisaA"
+msgstr ""
+
+#: shared/translations.php:15
+msgid "MarisaB"
+msgstr ""
+
+#: shared/translations.php:16
+msgid "SakuyaA"
+msgstr ""
+
+#: shared/translations.php:17
+msgid "SakuyaB"
+msgstr ""
+
+#: shared/translations.php:18
+msgid "BorderTeam"
+msgstr "Border Team"
+
+#: shared/translations.php:19
+msgid "MagicTeam"
+msgstr "Magic Team"
+
+#: shared/translations.php:20
+msgid "ScarletTeam"
+msgstr "Scarlet Team"
+
+#: shared/translations.php:21
+msgid "GhostTeam"
+msgstr "Ghost Team"
+
+#: shared/translations.php:22
+msgid "Reimu"
+msgstr ""
+
+#: shared/translations.php:23
+msgid "Marisa"
+msgstr ""
+
+#: shared/translations.php:24
+msgid "Sakuya"
+msgstr ""
+
+#: shared/translations.php:25 shared/translations.php:30
+msgid "Youmu"
+msgstr ""
+
+#: shared/translations.php:26
+msgid "Yukari"
+msgstr ""
+
+#: shared/translations.php:27
+msgid "Alice"
+msgstr ""
+
+#: shared/translations.php:28
+msgid "Remilia"
+msgstr ""
+
+#: shared/translations.php:29
+msgid "Yuyuko"
+msgstr ""
+
 #: shared/translations.php:31
-msgid "MarisaC"
+msgid "Reisen"
 msgstr ""
 
 #: shared/translations.php:32
-msgid "SanaeA"
+msgid "Cirno"
 msgstr ""
 
 #: shared/translations.php:33
-msgid "SanaeB"
+msgid "Lyrica"
 msgstr ""
 
 #: shared/translations.php:34
-msgid "Sanae"
+msgid "Mystia"
 msgstr ""
 
 #: shared/translations.php:35
-msgid "ReimuSpring"
+msgid "Tewi"
 msgstr ""
 
 #: shared/translations.php:36
-msgid "CirnoSpring"
+msgid "Aya"
 msgstr ""
 
 #: shared/translations.php:37
-msgid "AyaSpring"
+msgid "Medicine"
 msgstr ""
 
 #: shared/translations.php:38
-msgid "MarisaSpring"
+msgid "Yuuka"
 msgstr ""
 
 #: shared/translations.php:39
-msgid "ReimuSummer"
+msgid "Komachi"
 msgstr ""
 
 #: shared/translations.php:40
-msgid "CirnoSummer"
+msgid "Eiki"
 msgstr ""
 
 #: shared/translations.php:41
-msgid "AyaSummer"
+msgid "MarisaC"
 msgstr ""
 
 #: shared/translations.php:42
-msgid "MarisaSummer"
+msgid "SanaeA"
 msgstr ""
 
 #: shared/translations.php:43
-msgid "ReimuAutumn"
+msgid "SanaeB"
 msgstr ""
 
 #: shared/translations.php:44
-msgid "CirnoAutumn"
+msgid "Hatate"
 msgstr ""
 
 #: shared/translations.php:45
-msgid "AyaAutumn"
+msgid "Sanae"
 msgstr ""
 
 #: shared/translations.php:46
-msgid "MarisaAutumn"
+msgid "ReimuSpring"
 msgstr ""
 
 #: shared/translations.php:47
-msgid "ReimuWinter"
+msgid "CirnoSpring"
 msgstr ""
 
 #: shared/translations.php:48
-msgid "CirnoWinter"
+msgid "AyaSpring"
 msgstr ""
 
 #: shared/translations.php:49
-msgid "AyaWinter"
+msgid "MarisaSpring"
 msgstr ""
 
 #: shared/translations.php:50
-msgid "MarisaWinter"
+msgid "ReimuSummer"
 msgstr ""
 
 #: shared/translations.php:51
-msgid "ReimuWolf"
+msgid "CirnoSummer"
 msgstr ""
 
 #: shared/translations.php:52
-msgid "ReimuOtter"
+msgid "AyaSummer"
 msgstr ""
 
 #: shared/translations.php:53
-msgid "ReimuEagle"
+msgid "MarisaSummer"
 msgstr ""
 
 #: shared/translations.php:54
-msgid "MarisaWolf"
+msgid "ReimuAutumn"
 msgstr ""
 
 #: shared/translations.php:55
-msgid "MarisaOtter"
+msgid "CirnoAutumn"
 msgstr ""
 
 #: shared/translations.php:56
-msgid "MarisaEagle"
+msgid "AyaAutumn"
 msgstr ""
 
 #: shared/translations.php:57
-msgid "YoumuWolf"
+msgid "MarisaAutumn"
 msgstr ""
 
 #: shared/translations.php:58
-msgid "YoumuOtter"
+msgid "ReimuWinter"
 msgstr ""
 
 #: shared/translations.php:59
-msgid "YoumuEagle"
+msgid "CirnoWinter"
 msgstr ""
 
 #: shared/translations.php:60
-msgid "Seasons"
-msgstr "Времена года"
+msgid "AyaWinter"
+msgstr ""
+
+#: shared/translations.php:61
+msgid "MarisaWinter"
+msgstr ""
+
+#: shared/translations.php:62
+msgid "ReimuWolf"
+msgstr ""
+
+#: shared/translations.php:63
+msgid "ReimuOtter"
+msgstr ""
+
+#: shared/translations.php:64
+msgid "ReimuEagle"
+msgstr ""
+
+#: shared/translations.php:65
+msgid "MarisaWolf"
+msgstr ""
+
+#: shared/translations.php:66
+msgid "MarisaOtter"
+msgstr ""
+
+#: shared/translations.php:67
+msgid "MarisaEagle"
+msgstr ""
+
+#: shared/translations.php:68
+msgid "YoumuWolf"
+msgstr ""
+
+#: shared/translations.php:69
+msgid "YoumuOtter"
+msgstr ""
+
+#: shared/translations.php:70
+msgid "YoumuEagle"
+msgstr ""
+
+#: shared/translations.php:71
+msgid "Touhou 1 - The Highly Responsive to Prayers"
+msgstr ""
+
+#: shared/translations.php:72
+msgid "Touhou 2 - The Story of Eastern Wonderland"
+msgstr ""
+
+#: shared/translations.php:73
+msgid "Touhou 3 - Phantasmagoria of Dim.Dream"
+msgstr ""
+
+#: shared/translations.php:74
+msgid "Touhou 4 - Lotus Land Story"
+msgstr ""
+
+#: shared/translations.php:75
+msgid "Touhou 5 - Mystic Square"
+msgstr ""
+
+#: shared/translations.php:76
+msgid "Touhou 6 - The Embodiment of Scarlet Devil"
+msgstr ""
+
+#: shared/translations.php:77
+msgid "Touhou 7 - Perfect Cherry Blossom"
+msgstr ""
+
+#: shared/translations.php:78
+msgid "Touhou 8 - Imperishable Night"
+msgstr ""
+
+#: shared/translations.php:79
+msgid "Touhou 9 - Phantasmagoria of Flower View"
+msgstr ""
+
+#: shared/translations.php:80
+msgid "Touhou 10 - Mountain of Faith"
+msgstr ""
+
+#: shared/translations.php:81
+msgid "Touhou 11 - Subterranean Animism"
+msgstr ""
+
+#: shared/translations.php:82
+msgid "Touhou 12 - Undefined Fantastic Object"
+msgstr ""
+
+#: shared/translations.php:83
+msgid "Touhou 12.8 - Great Fairy Wars"
+msgstr ""
+
+#: shared/translations.php:84
+msgid "Touhou 13 - Ten Desires"
+msgstr ""
+
+#: shared/translations.php:85
+msgid "Touhou 14 - Double Dealing Character"
+msgstr ""
+
+#: shared/translations.php:86
+msgid "Touhou 15 - Legacy of Lunatic Kingdom"
+msgstr ""
+
+#: shared/translations.php:87
+msgid "Touhou 16 - Hidden Star in Four Seasons"
+msgstr ""
+
+#: shared/translations.php:88
+msgid "Touhou 17 - Wily Beast and Weakest Creature"
+msgstr ""
+
+#: shared/translations.php:89
+msgid "Touhou 18 - Unconnected Marketeers"
+msgstr ""
 
 #~ msgid "Rules"
 #~ msgstr "Правила"
-
-#~ msgid "Youkai mode (Dark)"
-#~ msgstr "Youkai mode (Dark)"
-
-#~ msgid "Human mode (Light)"
-#~ msgstr "Human mode (Light)"
-
-#~ msgid "Flag of the United Kingdom"
-#~ msgstr "Флаг Великобритании"
-
-#~ msgid "Flag of the United States"
-#~ msgstr "Флаг США"
-
-#~ msgid "Flag of Japan"
-#~ msgstr "Флаг Японии"
-
-#~ msgid "Flag of the P.R.C."
-#~ msgstr "Флаг Китая"
-
-#~ msgid "Flag of Russia"
-#~ msgstr "Флаг России"
 
 #~ msgid ""
 #~ "A Chinese Ultra patch for LoLK, which does <em>not</em> have autobomb, "

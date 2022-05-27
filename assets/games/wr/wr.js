@@ -1,5 +1,4 @@
-/*global $ WRs westScores unverifiedScores MAX_SCORE getCookie setCookie deleteCookie gameAbbr shottypeAbbr
-sep fullNameNumber generateTableText generateFullNames generateShottypes generateShortNames*/
+/*global $ _ WRs westScores unverifiedScores MAX_SCORE getCookie setCookie deleteCookie gameAbbr shottypeAbbr sep fullNameNumber*/
 var  missingReplays, seasonsEnabled, datesEnabled, unverifiedEnabled, language = "en_GB", selected = "",
     all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN",
     "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
@@ -62,7 +61,7 @@ function disableDates() {
 }
 
 function shotRoute(game) {
-    return game == "HRtP" || game == "GFW" ? "Route" : "Shottype";
+    return game == "HRtP" || game == "GFW" ? _("Route") : _("Shottype");
 }
 
 function replayPath(game, difficulty, shottype) {
@@ -117,7 +116,7 @@ function showWesternRecords(compareWRs, unverifiedObj, game) {
     }
 
     $("#west_tbody").html("");
-    $("#west_thead").html("<tr class='west_tr'><th class='world'>World</th><th class='west'>West</th><th class='percentage'>Percentage</th></tr>");
+    $("#west_thead").html(`<tr class='west_tr'><th class='world'>${_("World")}</th><th class='west'>${_("West")}</th><th class='percentage'>${_("Percentage")}</th></tr>`);
 
     for (difficulty in westScores[game]) {
         if (westScores[game][difficulty].length === 0) {
@@ -134,9 +133,9 @@ function showWesternRecords(compareWRs, unverifiedObj, game) {
         percentage = (west / world * 100).toFixed(2);
         $("#west_tbody").append("<tr class='west_tr'><td colspan='3'>" + difficulty + "</td></tr>");
         $("#west_tbody").append("<tr class='west_tr'><td>" + (unverifiedObj.hasOwnProperty(game + difficulty + worldShottype) ? formatUnverified(sep(world)) : sep(world)) + "<br>by <em>" + worldPlayer +
-        "</em>" + (worldShottype != '-' ? "<br>(<span class='" + worldShottype + "'>" + worldShottype + "</span>)" : "") +
+        "</em>" + (worldShottype != '-' ? "<br>(<span class='" + worldShottype + "'>" + _(worldShottype) + "</span>)" : "") +
         "</td><td>" + sep(west) + "<br>by <em>" + westPlayer + "</em>" + (westShottype != '-' ? "<br>(<span class='" + westShottype +
-        "'>" + westShottype + "</span>)" : "") + "</td><td class='" + percentageClass(percentage) +
+        "'>" + _(westShottype) + "</span>)" : "") + "</td><td class='" + percentageClass(percentage) +
         "'>(" + (parseInt(percentage) == 100 ? 100 : percentage) + "%)</td></tr>");
     }
 }
@@ -152,12 +151,12 @@ function appendShottypeHeaders(game, shottypes) {
             if (game != "GFW" || difficulty != "Extra") {
                 for (i = 0; i < shottypes.length; i++) {
                     if (game == "HSiFS" && difficulty != "Extra" && seasonsEnabled) {
-                        $("#list_tbody").append("<tr id='" + shottypes[i] + difficulty + "'><td><span class='" + removeSeason(shottypes[i]) +
-                        "'>" + removeSeason(shottypes[i]) + "</span><span class='" + removeChar(shottypes[i]) + "'>" + removeChar(shottypes[i]) + "</span></td></tr>");
+                        $("#list_tbody").append("<tr id='" + shottypes[i] + difficulty + "'><td><span>" + _(removeSeason(shottypes[i])) +
+                        "</span><span class='" + removeChar(shottypes[i]) + "'>" + _(removeChar(shottypes[i])) + "</span></td></tr>");
                     } else if (game == "HSiFS" && difficulty == "Extra" && seasonsEnabled && removeChar(shottypes[i]) == "Spring") {
-                        $("#list_tbody").append("<tr id='" + shottypes[i] + "'><td class='" + removeSeason(shottypes[i]) + "'>" + removeSeason(shottypes[i]) + "</td></tr>");
+                        $("#list_tbody").append("<tr id='" + shottypes[i] + "'><td>" + _(removeSeason(shottypes[i])) + "</td></tr>");
                     } else if (game != "HSiFS" || !seasonsEnabled) {
-                        $("#list_tbody").append("<tr id='" + shottypes[i] + difficulty + "'><td class='" + shottypes[i] + "'>" + shottypes[i] + "</td></tr>");
+                        $("#list_tbody").append("<tr id='" + shottypes[i] + difficulty + "'><td>" + _(shottypes[i]) + "</td></tr>");
                     }
                 }
             }
@@ -166,10 +165,10 @@ function appendShottypeHeaders(game, shottypes) {
         $("#list_thead").html("<tr id='list_thead_tr'><th class='" + shotRoute(game).toLowerCase() + "'>" + shotRoute(game) + "</th></tr>");
         for (i = 0; i < shottypes.length; i++) {
             if (game == "HSiFS" && seasonsEnabled) {
-                $("#list_tbody").append("<tr id='" + shottypes[i] + "'><td><span class='" + removeSeason(shottypes[i]) + "'>" + removeSeason(shottypes[i]) +
-                "</span><span class='" + removeChar(shottypes[i]) + "'>" + removeChar(shottypes[i]) + "</span></td></tr>");
+                $("#list_tbody").append("<tr id='" + shottypes[i] + "'><td><span>" + _(removeSeason(shottypes[i])) +
+                "</span><span class='" + removeChar(shottypes[i]) + "'>" + _(removeChar(shottypes[i])) + "</span></td></tr>");
             } else {
-                $("#list_tbody").append("<tr id='" + shottypes[i] + "'><td class='" + shottypes[i] + "'>" + shottypes[i] + "</td></tr>");
+                $("#list_tbody").append("<tr id='" + shottypes[i] + "'><td>" + _(shottypes[i]) + "</td></tr>");
             }
         }
     }
@@ -201,7 +200,7 @@ function appendDifficultyHeaders(game, difficulty, shottypes) {
 
 function prepareShowWR(game, shottypes) {
     $("#list").html("<p id='fullname'></p>" +
-    "<p id='seasontoggle'><input id='seasons' type='checkbox'><label id='label_seasons' class='Seasons' for='seasons'></label></p>" +
+    "<p id='seasontoggle'><input id='seasons' type='checkbox'><label id='label_seasons' class='Seasons' for='seasons'>" + _("Seasons") + "</label></p>" +
     "<p><input id='unverified' type='checkbox'><label id='label_unverified' for='unverified' class='unverified'>Unverified Scores</label></p>" +
     "<table id='table' class='sortable'><thead id='list_thead'></thead><tbody id='list_tbody'></tbody></table>" +
     "<table><thead id='west_thead'></thead><tbody id='west_tbody'></tbody></table>");
@@ -221,7 +220,7 @@ function prepareShowWR(game, shottypes) {
     $("#" + game + "_image").css("border", "3px solid gold");
     selected = game;
     $("#fullname").addClass(game + "f");
-    $("#fullname").html(fullNameNumber(game));
+    $("#fullname").html(_(fullNameNumber(game)));
     $("#table").addClass(game + "t");
     appendShottypeHeaders(game, shottypes);
 }
@@ -332,7 +331,7 @@ function showWRtable(game) {
             $("#" + game + difficulty + shottype).html(score > 0 ? text : '-');
 
             if (game == "HSiFS" && season == bestSeason(difficulty, character)) {
-                $("#" + game + difficulty + character + (difficulty == "Extra" ? "Small" : "")).html(text + (difficulty != "Extra" ? " (" + bestSeason(difficulty, character) +
+                $("#" + game + difficulty + character + (difficulty == "Extra" ? "Small" : "")).html(text + (difficulty != "Extra" ? " (" + _(bestSeason(difficulty, character)) +
                 ")" : ""));
             }
         }
@@ -371,7 +370,7 @@ function showWRtable(game) {
 
             $(removeSeason(bestShot.id) + (difficulty == "Extra" ? "Small" : "")).html(sepScore + "<br>by <em>" + bestShot.player + "</em>" +
             (game == "HSiFS" && difficulty != "Extra"
-                ? " (" + bestShot.season + ")"
+                ? " (" + _(bestShot.season) + ")"
                 : ""
             ) + (bestShot.date && datesEnabled
                 ? "<span class='dimgrey'><br>" + "<span class='datestring_game'>" + bestShot.date + "</span></span>"
@@ -387,9 +386,6 @@ function showWRtable(game) {
     }
 
     showWesternRecords(compareWRs, unverifiedObj, game);
-    generateTableText("wr", language);
-    generateFullNames(language);
-    generateShottypes(language);
     $("#list").css("display", "block");
     $("#seasontoggle").css("display", game == "HSiFS" ? "block" : "none");
     $("#seasons").prop("checked", seasonsEnabled);
@@ -418,10 +414,9 @@ function addPlayerWR(playerWRs, game, difficulty, shottype, isUnverified) {
     var score, date, replay, tmp;
 
     if (!playerWRs.cats.includes(game + difficulty)) {
-        $("#playerlistbody").append("<tr><td class='" + game + "p'><span class='" + game + "'>" + game +
-        "</span>" + (language != "ja_JP" && language != "zh_CN" ? " " : "") + "<span class='" + difficulty + "'>" + difficulty +
-        "</span></td><td id='" + game + difficulty +
-        "s'></td><td id=" + game + difficulty + "r></td>" +
+        $("#playerlistbody").append("<tr><td class='" + game + "p'><span>" + _(game) +
+        "</span>" + (language != "ja_JP" && language != "zh_CN" ? " " : "") + "<span>" + difficulty + "</span></td>" +
+        "<td id='" + game + difficulty + "s'></td><td id=" + game + difficulty + "r></td>" +
         "<td id='" + game + difficulty + "d' class='date_empty'></td></tr>");
         playerWRs.cats.push(game + difficulty);
     }
@@ -441,7 +436,7 @@ function addPlayerWR(playerWRs, game, difficulty, shottype, isUnverified) {
         playerWRs.scores.push(score + (shottype === "" ? "": " (<span class='" + shottype + "'>" + shottype + "</span>)"));
         playerWRs.replays.push("<a href='" + replay + "'>" + replay + "</a>");
     } else if (gameAbbr(game) < 6 || missingReplays.includes(game + difficulty + shottype) || isUnverified) {
-        playerWRs.scores.push((isUnverified ? formatUnverified(score) : score) + (shottype === "" ? "": " (<span class='" + shottype + "'>" + shottype + "</span>)"));
+        playerWRs.scores.push((isUnverified ? formatUnverified(score) : score) + (shottype === "" ? "": " (<span>" + _(shottype) + "</span>)"));
         playerWRs.replays.push('-');
     } else {
         playerWRs.scores.push(score + (shottype === "" ? "": " (<span class='" + shottype + "'>" + shottype + "</span>)"));
@@ -529,9 +524,6 @@ function showPlayerWRs(player) {
     $(".datestring_player").css("display", datesEnabled ? "inline" : "none");
     $("#playerlistfoot").html("<tr><td colspan='4'></td></tr><tr><td class='total'>Total</td><td colspan='3'>" + sum + "</td></tr>");
     $("#playerlist").css("display", "block");
-    generateTableText("wr", language);
-    generateShortNames(language);
-    generateShottypes(language);
 }
 
 function reloadTable() {

@@ -1,5 +1,4 @@
-/*global $ LNNs getCookie deleteCookie setCookie gameAbbr shottypeAbbr generateTableText
-generateFullNames generateShottypes fullNameNumber generateShortNames*/
+/*global $ _ LNNs getCookie deleteCookie setCookie gameAbbr shottypeAbbr fullNameNumber*/
 var alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", language = "en_GB", selected = "", missingReplays, videoLNNs, testing;
 
 function toggleLayout() {
@@ -11,19 +10,20 @@ function toggleLayout() {
 }
 
 function restrictions(game) {
-    return ({
-        "PCB": "n",
-        "IN": "fs",
-        "UFO": "u",
-        "TD": "n",
-        "HSiFS": "n",
-        "WBaWC": "nn",
-        "UM": "n"
-    }[game]);
+    switch (game) {
+        case "PCB": return _("No. of LNNNs");
+        case "IN": return _("No. of LNNFSs");
+        case "UFO": return _("No. of LNN(N)s");
+        case "TD": return _("No. of LNNNs");
+        case "HSiFS": return _("No. of LNNNs");
+        case "WBaWC": return _("No. of LNNNNs");
+        case "UM": return _("No. of LNNNs");
+        default: return _("No. of LNNs");
+    }
 }
 
 function shotRoute(game) {
-    return game == "HRtP" || game == "GFW" ? "Route" : "Shottype";
+    return game == "HRtP" || game == "GFW" ? _("Route") : _("Shottype");
 }
 
 function replayPath(game, player, character, type) {
@@ -81,10 +81,9 @@ function showLNNs(game) {
     selected = game;
     $("#fullname").addClass(game + "f");
     $("#fullname").html(fullNameNumber(game));
-    $("#listhead").html("<tr><th class='general_header " + shotRoute(game).toLowerCase() + "'>" + shotRoute(game) +
-    "</th><th class='general_header sorttable_numeric'><span id='numeric' class='nooflnn" + (restrictions(game) ? restrictions(game) : "") +
-    "s'>No. of LNNs</span><br><span class='different'>(Different players)</span></th><th class='general_header players'>Players</th></tr>");
-    $("#listfoot").html("<tr><td class='foot'><span class='overall'>Overall</span></td>" +
+    $("#listhead").html("<tr><th class='general_header'>" + shotRoute(game) + "</th><th class='general_header sorttable_numeric'>" + restrictions(game) +
+    "<br>" + _("(Different players)") + "</th><th class='general_header'>" + _("Players") + "</th></tr>");
+    $("#listfoot").html("<tr><td class='foot'>" + _("Overall") + "</td>" +
     "<td id='count' class='foot'></td><td id='total' class='foot'></td></tr>");
     $("#listbody").html("");
 
@@ -95,12 +94,10 @@ function showLNNs(game) {
             character = shottype.replace(/UFOs/, "");
             if (game == "IN" || game == "HSiFS") {
                 season = shottype.substr(-6);
-                $("#listbody").append("<tr><td class='nowrap'><span class='" + shottype.slice(0, -6) + "'>" + shottype.slice(0, -6) +
-                "</span><span class='" + season + "'>" + season + "</span></td><td id='" + shottype +
-                "n'></td><td id='" + shottype + "'></td>");
+                $("#listbody").append("<tr><td class='nowrap'><span class='" + shottype.slice(0, -6) + "'>" + _(shottype.slice(0, -6)) +
+                "</span><span class='" + season + "'>" + _(season) + "</span></td><td id='" + shottype + "n'></td><td id='" + shottype + "'></td>");
             } else {
-                $("#listbody").append("<tr><td class='nowrap " + character + "'>" + character +
-                "</td><td id='" + character + "n'></td><td id='" + character + "'></td>");
+                $("#listbody").append("<tr><td class='nowrap'>" + _(character) + "</td><td id='" + character + "n'></td><td id='" + character + "'></td>");
             }
         }
 
@@ -144,9 +141,6 @@ function showLNNs(game) {
     $("#count").html(gamecount + " (" + players.length + ")");
     $("#total").html($("#total").html().replace(", ", ""));
     $("#list").css("display", "block");
-    generateTableText("lnn", language);
-    generateFullNames(language);
-    generateShottypes(language);
 }
 
 function showPlayerLNNs(player) {
@@ -175,14 +169,12 @@ function showPlayerLNNs(player) {
         for (shottype in LNNs[game]) {
             if (LNNs[game][shottype].contains(player)) {
                 if (!games.contains(game)) {
-                    $("#playerlistbody").append("<tr><td class='" + game + "l'><span class='" + game + "'>" + game +
-                    "</span></td><td id='" + game + "s'></td><td id='" + game + "r'></td></tr>");
+                    $("#playerlistbody").append("<tr><td class='" + game + "l'>" + _(game) + "</td><td id='" + game + "s'></td><td id='" + game + "r'></td></tr>");
                     games.push(game);
                 }
                 character = shottype.replace(/(FinalA|FinalB|UFOs)/g, "");
                 type = shottype.replace(character, "");
-                array.push("<span class='" + character + "'>" + character +
-                "</span>" + (type === "" ? "": " (<span class='" + type + "'>" + type + "</span>)"));
+                array.push(_(character) + (type === "" ? "": " (<span class='" + type + "'>" + _(type) + "</span>)"));
                 if (gameAbbr(game) < 6 || missingReplays.contains(game + player.removeSpaces() + shottype)) {
                     if (videoLNNs.hasOwnProperty(game + shottype + player)) {
                         replays.push("<a href='" + videoLNNs[game + shottype + player] + "' target='_blank'>" + videoLNNs[game + shottype + player] + "</a>");
@@ -206,7 +198,7 @@ function showPlayerLNNs(player) {
         $("#" + game + "r").html(list);
 
         if (gameshots.length == max) {
-            $("#" + game + "l").append("<br><strong class='all'>(All)</strong>");
+            $("#" + game + "l").append("<br><strong>" + _("(All)") + "</strong>");
         }
     }
 
@@ -215,11 +207,8 @@ function showPlayerLNNs(player) {
         return;
     }
 
-    $("#playerlistfoot").html("<tr><td colspan='3'></td></tr><tr><td class='total'>Total</td><td colspan='2'>" + sum + "</td></tr>");
+    $("#playerlistfoot").html("<tr><td colspan='3'></td></tr><tr><td>" + _("Total") + "</td><td colspan='2'>" + sum + "</td></tr>");
     $("#playerlist").css("display", "block");
-    generateTableText("lnn", language);
-    generateShortNames(language);
-    generateShottypes();
 }
 
 function setLanguage(event) {

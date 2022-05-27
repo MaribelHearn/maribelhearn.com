@@ -1,4 +1,4 @@
-/*global $ WRs Rubrics getCookie setCookie*/
+/*global $ _ WRs Rubrics getCookie setCookie*/
 var step, phantasm = true, noExtra = true, noShottypes = true, dsActive = true, language = "en_GB",
     DIFFICULTY = "#difficulty", BOMBS = "#bombs", SCORE = "#score", PERFORMANCE = "#performance", DRCPOINTS = "#drcpoints",
     ERROR = "#error", SHOTTYPE = "#shottype", NOTIFY = "#notify", NB = "#nb", MISSES = "#misses", CHALLENGE = "#challenge",
@@ -56,270 +56,11 @@ function updateCountdown() {
     hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    $(COUNTDOWN).html("DRC End<br>" + days + translate("d ") + hours + translate("h ")
-    + minutes + translate("m ") + seconds + translate("s"));
+    $(COUNTDOWN).html("DRC End<br>" + days + "d " + hours + "h " + minutes + "m " + seconds + "s");
 
     if (distance < 0) {
         $(COUNTDOWN).html("");
         clearInterval(step);
-    }
-}
-
-function translateCharName(charName) {
-    if (language == "zh_CN") {
-        return ({
-            "Makai": "魔界",
-            "Jigoku": "地狱",
-            "ReimuA": "灵梦A",
-            "ReimuB": "灵梦B",
-            "ReimuC": "灵梦C",
-            "Reimu": "灵梦",
-            "Mima": "魅魔",
-            "Marisa": "魔理沙",
-            "Ellen": "爱莲",
-            "Kotohime": "小兔姬",
-            "Kana": "卡娜",
-            "Rikako": "理香子",
-            "Chiyuri": "千百合",
-            "Yumemi": "梦美",
-            "Yuuka": "幽香",
-            "MarisaA": "魔理沙A",
-            "MarisaB": "魔理沙B",
-            "SakuyaA": "咲夜A",
-            "SakuyaB": "咲夜B",
-            "BorderTeam": "结界组",
-            "MagicTeam": "咏唱组",
-            "ScarletTeam": "红魔组",
-            "GhostTeam": "幽冥组",
-            "Yukari": "紫",
-            "Alice": "爱丽丝",
-            "Sakuya": "咲夜",
-            "Remilia": "蕾米莉亚",
-            "Youmu": "妖梦",
-            "Yuyuko": "幽幽子",
-            "Reisen": "铃仙",
-            "Cirno": "琪露诺",
-            "Lyrica": "莉莉卡",
-            "Mystia": "米丝蒂亚",
-            "Tewi": "帝",
-            "Aya": "文",
-            "Medicine": "梅蒂薪",
-            "Komachi": "小町",
-            "Eiki": "映姬",
-            "MarisaC": "魔理沙C",
-            "SanaeA": "早苗A",
-            "SanaeB": "早苗B",
-            "A1": "A1",
-            "A2": "A2",
-            "B1": "B1",
-            "B2": "B2",
-            "C1": "C1",
-            "C2": "C2",
-            "Sanae": "早苗",
-            "Spring": "春",
-            "Summer": "夏",
-            "Autumn": "秋",
-            "Winter": "冬",
-            "ReimuSpring": "灵梦春",
-            "CirnoSpring": "琪露诺春",
-            "AyaSpring": "文春",
-            "MarisaSpring": "魔理沙春",
-            "ReimuSummer": "灵梦夏",
-            "CirnoSummer": "琪露诺夏",
-            "AyaSummer": "文夏",
-            "MarisaSummer": "魔理沙夏",
-            "CirnoAutumn": "琪露诺秋",
-            "AyaAutumn": "文秋",
-            "MarisaAutumn": "魔理沙秋",
-            "CirnoWinter": "琪露诺冬",
-            "AyaWinter": "文冬",
-            "ReimuWolf": "灵梦狼",
-            "ReimuOtter": "灵梦獺",
-            "ReimuEagle": "灵梦鹰",
-            "MarisaWolf": "魔理沙狼",
-            "MarisaOtter": "魔理沙獺",
-            "MarisaEagle": "魔理沙鹰",
-            "YoumuWolf": "妖梦狼",
-            "YoumuOtter": "妖梦獺",
-            "YoumuEagle": "妖梦鹰"
-        }[charName]);
-    } else if (language == "ja_JP") {
-        return ({
-            "Makai": "魔界",
-            "Jigoku": "地獄",
-            "ReimuA": "霊夢A",
-            "ReimuB": "霊夢B",
-            "ReimuC": "霊夢C",
-            "Reimu": "霊夢",
-            "Mima": "魅魔",
-            "Marisa": "魔理沙",
-            "Ellen": "エレン",
-            "Kotohime": "小兎姫",
-            "Kana": "カナ",
-            "Rikako": "理香子",
-            "Chiyuri": "ちゆり",
-            "Yumemi": "夢美",
-            "Yuuka": "幽香",
-            "MarisaA": "魔理沙A",
-            "MarisaB": "魔理沙B",
-            "SakuyaA": "咲夜A",
-            "SakuyaB": "咲夜B",
-            "BorderTeam": "霊夢＆紫",
-            "MagicTeam": "魔理沙＆アリス",
-            "ScarletTeam": "咲夜＆レミリア",
-            "GhostTeam": "妖夢＆幽々子",
-            "Yukari": "紫",
-            "Alice": "アリス",
-            "Sakuya": "咲夜",
-            "Remilia": "レミリア",
-            "Youmu": "妖夢",
-            "Yuyuko": "幽々子",
-            "Reisen": "鈴仙",
-            "Cirno": "チルノ",
-            "Lyrica": "リリカ",
-            "Mystia": "ミスティア",
-            "Tewi": "てゐ",
-            "Aya": "文",
-            "Medicine": "メディスン",
-            "Komachi": "小町",
-            "Eiki": "映姫",
-            "MarisaC": "魔理沙C",
-            "SanaeA": "早苗A",
-            "SanaeB": "早苗B",
-            "A1": "A1",
-            "A2": "A2",
-            "B1": "B1",
-            "B2": "B2",
-            "C1": "C1",
-            "C2": "C2",
-            "Sanae": "早苗",
-            "Spring": "春",
-            "Summer": "夏",
-            "Autumn": "秋",
-            "Winter": "冬",
-            "ReimuSpring": "霊夢春",
-            "CirnoSpring": "チルノ春",
-            "AyaSpring": "文春",
-            "MarisaSpring": "魔理沙春",
-            "ReimuSummer": "霊夢夏",
-            "CirnoSummer": "チルノ夏",
-            "AyaSummer": "文夏",
-            "MarisaSummer": "魔理沙夏",
-            "CirnoAutumn": "チルノ秋",
-            "AyaAutumn": "文秋",
-            "MarisaAutumn": "魔理沙秋",
-            "CirnoWinter": "チルノ冬",
-            "AyaWinter": "文冬",
-            "ReimuWolf": "霊夢狼",
-            "ReimuOtter": "霊夢獺",
-            "ReimuEagle": "霊夢鷲",
-            "MarisaWolf": "魔理沙狼",
-            "MarisaOtter": "魔理沙獺",
-            "MarisaEagle": "魔理沙鷲",
-            "YoumuWolf": "妖夢狼",
-            "YoumuOtter": "妖夢獺",
-            "YoumuEagle": "妖夢鷲"
-        }[charName]);
-    } else { // en_US
-        return charName.replace("Team", " Team");
-    }
-}
-
-function translate(arg) {
-    if (language == "zh_CN") {
-        return ({
-            "Route": "路线",
-            "Shottype": "机体",
-            "Important Notice:": "重要提示：",
-            "usage of the MarisaB damage bug is BANNED in survival.": "生存向 弑神炮禁止。",
-            "<em>manual</em> trances count as bombs (that is, trances from pressing C).": "主动灵界视作扔雷。",
-            "border breaks count as bombs <em>even if they are accidental</em>.": "灵击视作扔雷，无论是否被弹灵击。",
-            "Your DRC points for this run: ": "本轮DRC得分：",
-            "Error: ": "错误：",
-            "the survival rubrics for this game are undetermined as of now.": "此游戏的生存向计算公式现在仍未决定。",
-            "the scoring rubrics for this game are undetermined as of now.": "此游戏的打分向计算公式现在仍未决定。",
-            "the scoring rubrics for this difficulty are undetermined as of now.": "此难度的打分向计算公式现在仍未决定。",
-            "the scoring rubrics for this shottype are undetermined as of now.": "此机体的打分向计算公式现在仍未决定。",
-            "invalid score.": "无效分数。",
-            "||Max * (Score/WR)^Exp||": "||最大值 * (得分 / WR) ^ 指数||",
-            "||Max * (Base^-n)||": "||最大值 * (基数 ^ -n)||",
-            "Category": "项目",
-            "WR based on": "机体",
-            "Scoring": "打分",
-            "Survival": "生存",
-            "Hide Survival Rubrics": "隐藏生存计算公式",
-            "Show Survival Rubrics": "显示生存计算公式",
-            "Hide Scoring Rubrics": "隐藏打分计算公式",
-            "Show Scoring Rubrics": "显示打分计算公式",
-            "No Bomb": "禁雷",
-            "Misses": "被弹数",
-            "Rounds lost": "败北数",
-            "No Charge Attacks": "NC",
-            "Border Breaks": "灵击数",
-            "Bombs / Trances": "扔雷数/灵界数",
-            "Bombs": "扔雷数",
-            "Imperishable Shooting Captured": "【不朽的弹幕】收取",
-            "Last Spells Captured": "LSC收取数",
-            "Releases": "季节解放数",
-            "Score": "分数",
-            "Scene": "场景",
-            "Threshold 1": "第一阈值",
-            "Threshold 2": "第二阈值",
-            "Threshold 3": "第三阈值",
-            "Base points": "基数分",
-            "d ": "日",
-            "h ": "时",
-            "m ": "分",
-            "s": "秒"
-        }[arg]);
-    } else if (language == "ja_JP") {
-        return ({
-            "Route": "ルート",
-            "Shottype": "キャラ",
-            "Important Notice:": "重要通知:",
-            "usage of the MarisaB damage bug is BANNED in survival.": "魔理沙Bのバグを使ってはいけまでん。",
-            "<em>manual</em> trances count as bombs (that is, trances from pressing C).": "Cキー押下による手動トランスはボムとして扱います。",
-            "border breaks count as bombs <em>even if they are accidental</em>.": "霊撃は偶発的なものであってもボムとして扱います。",
-            "Your DRC points for this run: ": "DRCポイント: ",
-            "Error: ": "エラー: ",
-            "the survival rubrics for this game are undetermined as of now.": "このゲームのクリア重視のルーブリックはまだ決めていない。",
-            "the scoring rubrics for this game are undetermined as of now.": "このゲームの稼ぎのルーブリックはまだ決めていない。",
-            "the scoring rubrics for this difficulty are undetermined as of now.": "この難易度の稼ぎのルーブリックはまだ決めていない。",
-            "the scoring rubrics for this shottype are undetermined as of now.": "このキャラの稼ぎのルーブリックはまだ決めていない。",
-            "invalid score.": "無効のスコア。",
-            "||Max * (Score/WR)^Exp||": "||最大点 * (スコア / WR) ^ 冪指数||",
-            "||Max * (Base^-n)||": "||最大点 * (底 ^ -n)||",
-            "Category": "カテゴリー",
-            "WR based on": "キャラ",
-            "Scoring": "稼ぎ",
-            "Survival": "クリア重視",
-            "Hide Survival Rubrics": "クリア重視のルーブリックを見せない",
-            "Show Survival Rubrics": "クリア重視のルーブリックを見せて",
-            "Hide Scoring Rubrics": "稼ぎのルーブリックを見せない",
-            "Show Scoring Rubrics": "稼ぎのルーブリックを見せて",
-            "No Bomb": "ノーボム",
-            "Misses": "ミス",
-            "Rounds lost": "敗北数",
-            "No Charge Attacks": "ノーチャージ攻撃",
-            "Border Breaks": "霊撃",
-            "Bombs / Trances": "ボム / トランス",
-            "Bombs": "ボム",
-            "Imperishable Shooting Captured": "「インペリシャブルシューティング」取得",
-            "Last Spells Captured": "ラストスペル取得",
-            "Releases": "解放",
-            "Score": "スコア",
-            "Scene": "撮影対象",
-            "Threshold 1": "閾値1",
-            "Threshold 2": "閾値2",
-            "Threshold 3": "閾値3",
-            "Base points": "素点",
-            "d ": "日",
-            "h ": "時",
-            "m ": "分",
-            "s": "秒"
-        }[arg]);
-    } else { // en_US
-        return arg;
     }
 }
 
@@ -338,17 +79,17 @@ function checkValues(event) {
         game = $(GAME).val(), difficulty = $(DIFFICULTY).val(), challenge = $(CHALLENGE).val(), shottype = $(SHOTTYPE).val();
 
     if (challenge == "Survival") {
-        var notifyText = "<b id='impNot'>" + translate("Important Notice:") + "</b> ";
+        var notifyText = "<b id='impNot'>" + _("Important Notice:") + "</b> ";
 
         if (game == "MoF" && shottype == "MarisaB") {
             $(NOTIFY).html(notifyText + "<span id='impNotText0'>" +
-            translate("usage of the MarisaB damage bug is BANNED in survival.") + "</span>");
+            _("usage of the MarisaB damage bug is BANNED in survival.") + "</span>");
         } else if (game == "TD") {
             $(NOTIFY).html(notifyText + "<span id='impNotText1'>" +
-            translate("<em>manual</em> trances count as bombs (that is, trances from pressing C).") + "</span>");
+            _("<em>manual</em> trances count as bombs (that is, trances from pressing C).") + "</span>");
         } else if (game == "PCB") {
             $(NOTIFY).html(notifyText + "<span id='impNotText2'>" +
-            translate("border breaks count as bombs <em>even if they are accidental</em>.") + "</span>");
+            _("border breaks count as bombs <em>even if they are accidental</em>.") + "</span>");
         } else {
             $(NOTIFY).html("");
         }
@@ -392,44 +133,44 @@ function checkValues(event) {
             var survOptions = MISSES_INPUT;
 
             if (game == "PoDD") {
-                survOptions += "<br><label id='nbLabel' for='nb'>" + translate("No Bomb") + "</label><input id='nb' type='checkbox'>";
-                survOptions = survOptions.replace(translate("Misses") + "</label>", translate("Rounds lost") +
+                survOptions += "<br><label id='nbLabel' for='nb'>" + _("No Bomb") + "</label><input id='nb' type='checkbox'>";
+                survOptions = survOptions.replace(_("Misses") + "</label>", _("Rounds lost") +
                 "</label>").replace("max=100", "max=5");
             } else if (game == "PoFV") {
-                survOptions += "<br><label id='ncLabel' for='nb'>" + translate("No Charge Attacks") + "</label><input id='nb' type='checkbox'>";
-                survOptions = survOptions.replace(translate("Misses") + "</label>", translate("Rounds lost") +
+                survOptions += "<br><label id='ncLabel' for='nb'>" + _("No Charge Attacks") + "</label><input id='nb' type='checkbox'>";
+                survOptions = survOptions.replace(_("Misses") + "</label>", _("Rounds lost") +
                 "</label>").replace("max=100", "max=8");
             } else {
                 if (game == "PCB") {
-                    survOptions += "<br><label id='bombsLabel' for='bombs'>" + translate("Bombs") +
+                    survOptions += "<br><label id='bombsLabel' for='bombs'>" + _("Bombs") +
                     "</label><input id='bombs' type='number' value=0 min=0 max=100>";
-                    survOptions += "<br><label id='bbLabel' for='bb'>" + translate("Border Breaks") +
+                    survOptions += "<br><label id='bbLabel' for='bb'>" + _("Border Breaks") +
                     "</label><input id='bb' type='number' value=0 min=0 max=100>";
                 } else if (game == "TD") {
-                    survOptions += "<br><label id='bombsLabel' for='bombs'>" + translate("Bombs / Trances") +
+                    survOptions += "<br><label id='bombsLabel' for='bombs'>" + _("Bombs / Trances") +
                     "</label><input id='bombs' type='number' value=0 min=0 max=100>";
                 } else {
-                    survOptions += "<br><label id='bombsLabel' for='bombs'>" + translate("Bombs") +
+                    survOptions += "<br><label id='bombsLabel' for='bombs'>" + _("Bombs") +
                     "</label><input id='bombs' type='number' value=0 min=0 max=100>";
                 }
                 if (game == "IN") {
                     difficulty = $(DIFFICULTY).val();
                     if (difficulty == "Extra") {
-                        survOptions += "<br><label id='isLabel' for='is'>" + translate("Imperishable Shooting Captured") +
+                        survOptions += "<br><label id='isLabel' for='is'>" + _("Imperishable Shooting Captured") +
                         "</label><input id='is' type='checkbox'>";
                     } else {
-                        survOptions += "<br><label id='lsLabel' for='ls'>" + translate("Last Spells Captured") +
+                        survOptions += "<br><label id='lsLabel' for='ls'>" + _("Last Spells Captured") +
                         "</label><input id='ls' type='number' value=0 min=0 max=10>";
                         $(ROUTE).css("display", "inline");
                     }
                 }
                 if (game == "HSiFS") {
-                    survOptions += "<br><label id='releasesLabel' for='releases'>" + translate("Releases") +
+                    survOptions += "<br><label id='releasesLabel' for='releases'>" + _("Releases") +
                     "</label><input id='releases' type='number' value=0 min=0 max=1000>";
                 }
             }
             $(PERFORMANCE).html(survOptions);
-            $(MISSES_LABEL).html(translate("Misses"));
+            $(MISSES_LABEL).html(_("Misses"));
         } else {
             if (game == "DS") {
                 $(PERFORMANCE).html("<label for='scene'>Scene</label><select id='scene'><option>2-5</option><option>5" +
@@ -439,7 +180,7 @@ function checkValues(event) {
                 $(PERFORMANCE).html(SCORE_OPTIONS);
             }
 
-            $(SCORE_LABEL).html(translate("Score"));
+            $(SCORE_LABEL).html(_("Score"));
             $(NOTIFY).html("");
         }
     }
@@ -459,8 +200,7 @@ function checkShottypes(event) {
     }
 
     for (i = 0; i < shottypes.length; i += 1) {
-        shottypeList += "<option id='shottype" + i + "' value='" + shottypes[i] +
-        "'>" + translateCharName(shottypes[i]) + "</option>";
+        shottypeList += "<option id='shottype" + i + "' value='" + shottypes[i] + "'>" + _(shottypes[i]) + "</option>";
     }
 
     if (alwaysChange) {
@@ -468,9 +208,9 @@ function checkShottypes(event) {
     }
 
     if (game == "HRtP" || game == "GFW") {
-        $(SHOTTYPE_LABEL).html(translate("Route"));
+        $(SHOTTYPE_LABEL).html(_("Route"));
     } else {
-        $(SHOTTYPE_LABEL).html(translate("Shottype"));
+        $(SHOTTYPE_LABEL).html(_("Shottype"));
     }
 
     if (game == "GFW" && difficulty == "Extra") {
@@ -492,7 +232,7 @@ function drcPoints() {
 
     if (challenge == "Survival") {
         if (!Rubrics.SURV[game]) {
-            $(ERROR).html("<strong class='error'>" + translate("Error: ") + translate("the survival rubrics for this game are undetermined as of now.") + "</strong>");
+            $(ERROR).html("<strong class='error'>" + _("Error: ") + _("the survival rubrics for this game are undetermined as of now.") + "</strong>");
             $(DRCPOINTS).html("");
             return;
         } else {
@@ -511,8 +251,8 @@ function drcPoints() {
         points = (isPhantasmagoria(game) ? phantasmagoria(rubric, game, difficulty, shottypeMultiplier) : survivalPoints(rubric, game, difficulty, shottypeMultiplier));
     } else {
         if (!(game == "MoF" && (difficulty == "Easy" || difficulty == "Lunatic" || difficulty == "Extra")) && game != "DS" && !Rubrics.SCORE[game]) {
-            $(ERROR).html("<strong class='error'>" + translate("Error: ") + translate("the scoring rubrics for this game are undetermined as of now.") + "</strong>");
-            $(DRCPOINTS).html("<p id='result'>" + translate("Your DRC points for this run: ") + " <strong>0</strong>!</p>");
+            $(ERROR).html("<strong class='error'>" + _("Error: ") + _("the scoring rubrics for this game are undetermined as of now.") + "</strong>");
+            $(DRCPOINTS).html("<p id='result'>" + _("Your DRC points for this run: ") + " <strong>0</strong>!</p>");
             return
         } else {
             $(ERROR).html("");
@@ -527,7 +267,7 @@ function drcPoints() {
             points = scoringPoints(rubric, game, difficulty, shottype);
         }
     }
-    $(DRCPOINTS).html("<p id='result'>" + translate("Your DRC points for this run: ") + " <strong>" + points + "</strong>!</p>");
+    $(DRCPOINTS).html("<p id='result'>" + _("Your DRC points for this run: ") + " <strong>" + points + "</strong>!</p>");
 }
 
 function phantasmagoria(rubric, game, difficulty, shottypeMultiplier) {
@@ -634,10 +374,10 @@ function mofFormula(difficulty, shottype) {
         drcpoints = 0, thresholds, increment, step, i;
 
     if (difficulty != "Easy" && difficulty != "Lunatic" && difficulty != "Extra") {
-        $(ERROR).html("<strong class='error'>" + translate("Error: ") + translate("the scoring rubrics for this difficulty are undetermined as of now.") + "</strong>");
+        $(ERROR).html("<strong class='error'>" + _("Error: ") + _("the scoring rubrics for this difficulty are undetermined as of now.") + "</strong>");
         return drcpoints;
     } else if (difficulty == "Lunatic" && shottype != "ReimuB" && shottype != "MarisaC" || difficulty == "Extra" && shottype != "ReimuB") {
-        $(ERROR).html("<strong class='error'>" + translate("Error: ") + translate("the scoring rubrics for this shottype are undetermined as of now.") + "</strong>");
+        $(ERROR).html("<strong class='error'>" + _("Error: ") + _("the scoring rubrics for this shottype are undetermined as of now.") + "</strong>");
         return drcpoints;
     }
 
@@ -716,7 +456,7 @@ function scoringPoints(rubric, game, difficulty, shottype) {
     var score = Number($(SCORE).val().replace(/,/g, "").replace(/\./g, "").replace(/ /g, "")), wr, wrshottype, exp;
 
     if (isNaN(score)) {
-        $(ERROR).html("<strong class='error'>" + translate("Error: ") + translate("invalid score.") + "</strong>");
+        $(ERROR).html("<strong class='error'>" + _("Error: ") + _("invalid score.") + "</strong>");
         return 0;
     } else {
         $(ERROR).html("");
@@ -743,7 +483,7 @@ function showRubrics(event) {
 
     $(challenge == "Survival" ? SURV_RUBRICS : SCORE_RUBRICS).css("display", "block");
     $(challenge == "Survival" ? SURV_BUTTON : SCORE_BUTTON).on("click", {challenge: challenge}, hideRubrics);
-    $(challenge == "Survival" ? SURV_BUTTON : SCORE_BUTTON).val(translate("Hide " + challenge + " Rubrics"));
+    $(challenge == "Survival" ? SURV_BUTTON : SCORE_BUTTON).val(_("Hide " + challenge + " Rubrics"));
 }
 
 function hideRubrics(event) {
@@ -751,7 +491,7 @@ function hideRubrics(event) {
 
     $(challenge == "Survival" ? SURV_RUBRICS : SCORE_RUBRICS).css("display", "none");
     $(challenge == "Survival" ? SURV_BUTTON : SCORE_BUTTON).on("click", {challenge: challenge}, showRubrics);
-    $(challenge == "Survival" ? SURV_BUTTON : SCORE_BUTTON).val(translate("Show " + challenge + " Rubrics"));
+    $(challenge == "Survival" ? SURV_BUTTON : SCORE_BUTTON).val(_("Show " + challenge + " Rubrics"));
 }
 
 function setLanguage(event) {
