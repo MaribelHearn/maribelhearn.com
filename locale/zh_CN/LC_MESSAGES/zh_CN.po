@@ -1,20 +1,23 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-01-16 17:35+0100\n"
-"PO-Revision-Date: 2022-01-16 18:58+0100\n"
+"POT-Creation-Date: 2022-05-27 19:56+0200\n"
+"PO-Revision-Date: 2022-05-27 19:57+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
-"X-Poedit-Basepath: ../../../assets\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Poedit-SearchPath-0: .\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ../../../assets\n"
+"X-Poedit-SearchPath-0: games/drc/drc.php\n"
+"X-Poedit-SearchPath-1: games/lnn/lnn.php\n"
+"X-Poedit-SearchPath-2: games/wr/wr.php\n"
+"X-Poedit-SearchPath-3: shared/translations.php\n"
 
-#: drc/drc.php:5
+#: games/drc/drc.php:5
 msgid ""
 "The <strong>Dodging Rain Competition (DRC)</strong> is a Touhou game "
 "competition that was devised by <a href=\"https://www.youtube.com/user/"
@@ -40,199 +43,198 @@ msgstr ""
 "间提交参赛录像，录像所获得分根据计算公式而定。未在两周内提交则视为无效。玩家"
 "提交的rep个数无限制，最终DRC得分将选取最高分录入。"
 
-#: drc/drc.php:18
+#: games/drc/drc.php:18
 msgid ""
 "If you want to know how many DRC points a run is worth, the points for a "
 "given run can be determined using the calculator below."
 msgstr "如果你想知道得了多少DRC分，请将你完成的项目填入下方计算器内开始计算。"
 
-#: drc/drc.php:22
+#: games/drc/drc.php:22
 msgid "Points Calculator"
 msgstr "得分计算器"
 
-#: drc/drc.php:23
+#: games/drc/drc.php:23
 msgid ""
 "<em>Sorry, you cannot calculate DRC points with JavaScript disabled.</em>"
 msgstr "不好意思，目前计算DRC分必须开启JavaScript。"
 
-#: drc/drc.php:25
+#: games/drc/drc.php:25
 msgid ""
 "Scores can only contain digits, commas, dots and spaces. Survival runs are "
 "assumed to have cleared, scoring runs not."
 msgstr ""
 "分数可包含数字、逗号、句号、空格。生存向将会被假定为已通关，打分则不会。"
 
-#: drc/drc.php:27 twc/twc.php:45 wr/wr.php:306 wr/wr.php:319
+#: games/drc/drc.php:27 games/wr/wr.php:284 games/wr/wr.php:297
 msgid "Category"
 msgstr "项目"
 
-#: drc/drc.php:29
+#: games/drc/drc.php:29
 msgid "HRtP"
 msgstr "灵"
 
-#: drc/drc.php:30
+#: games/drc/drc.php:30
 msgid "SoEW"
 msgstr "封"
 
-#: drc/drc.php:31
+#: games/drc/drc.php:31
 msgid "PoDD"
 msgstr "梦"
 
-#: drc/drc.php:32
+#: games/drc/drc.php:32
 msgid "LLS"
 msgstr "幻"
 
-#: drc/drc.php:33
+#: games/drc/drc.php:33
 msgid "MS"
 msgstr "怪"
 
-#: drc/drc.php:34
+#: games/drc/drc.php:34
 msgid "EoSD"
 msgstr "红"
 
-#: drc/drc.php:35
+#: games/drc/drc.php:35
 msgid "PCB"
 msgstr "妖"
 
-#: drc/drc.php:36
+#: games/drc/drc.php:36
 msgid "IN"
 msgstr "永"
 
-#: drc/drc.php:37
+#: games/drc/drc.php:37
 msgid "PoFV"
 msgstr "花"
 
-#: drc/drc.php:38
+#: games/drc/drc.php:38
 msgid "MoF"
 msgstr "风"
 
-#: drc/drc.php:39
+#: games/drc/drc.php:39
 msgid "SA"
 msgstr "地"
 
-#: drc/drc.php:40
+#: games/drc/drc.php:40
 msgid "UFO"
 msgstr "星"
 
-#: drc/drc.php:41
+#: games/drc/drc.php:41
 msgid "DS"
 msgstr "DS"
 
-#: drc/drc.php:42
+#: games/drc/drc.php:42
 msgid "GFW"
 msgstr "大"
 
-#: drc/drc.php:43
+#: games/drc/drc.php:43
 msgid "TD"
 msgstr "神"
 
-#: drc/drc.php:44
+#: games/drc/drc.php:44
 msgid "DDC"
 msgstr "辉"
 
-#: drc/drc.php:45
+#: games/drc/drc.php:45
 msgid "LoLK"
 msgstr "绀"
 
-#: drc/drc.php:46
+#: games/drc/drc.php:46
 msgid "HSiFS"
 msgstr "天"
 
-#: drc/drc.php:47
+#: games/drc/drc.php:47
 msgid "WBaWC"
 msgstr "鬼"
 
-#: drc/drc.php:57
+#: games/drc/drc.php:57
 msgid "FinalA"
 msgstr "路线A"
 
-#: drc/drc.php:58
+#: games/drc/drc.php:58
 msgid "FinalB"
 msgstr "路线B"
 
-#: drc/drc.php:61 drc/drc.php:120
+#: games/drc/drc.php:61 games/drc/drc.php:120
 msgid "Scoring"
 msgstr "打分"
 
-#: drc/drc.php:62 drc/drc.php:301
+#: games/drc/drc.php:62 games/drc/drc.php:301
 msgid "Survival"
 msgstr "生存"
 
-#: drc/drc.php:68 shared/tl.php:432
+#: games/drc/drc.php:68
 msgid "Spring"
 msgstr "春"
 
-#: drc/drc.php:69 shared/tl.php:433
+#: games/drc/drc.php:69
 msgid "Summer"
 msgstr "夏"
 
-#: drc/drc.php:70 shared/tl.php:434
+#: games/drc/drc.php:70
 msgid "Autumn"
 msgstr "秋"
 
-#: drc/drc.php:71 shared/tl.php:435
+#: games/drc/drc.php:71
 msgid "Winter"
 msgstr "冬"
 
-#: drc/drc.php:75
+#: games/drc/drc.php:75
 msgid "Calculate"
 msgstr "计算"
 
-#: drc/drc.php:77 twc/twc.php:32 twc/twc.php:53
+#: games/drc/drc.php:77
 msgid "Rules"
 msgstr "规则"
 
-#: drc/drc.php:79
+#: games/drc/drc.php:79
 msgid "No cheating by using external programs or modifying the game FPS."
 msgstr "禁止通过使用内置程序或修改游戏帧数作弊。"
 
-#: drc/drc.php:80
+#: games/drc/drc.php:80
 msgid ""
 "Replays are required for Windows game submissions, while for PC-98 a video "
 "is accepted."
 msgstr "windows平台游戏需要提交rep；PC98平台游戏可提交视频。"
 
-#: drc/drc.php:81
+#: games/drc/drc.php:81
 msgid "All runs must be played using at most default lives and bombs."
 msgstr "所有游戏必须在最大默认残机数、bomb数下进行。"
 
-#: drc/drc.php:83
+#: games/drc/drc.php:83
 msgid "Rubrics"
 msgstr "计算公式"
 
-#: drc/drc.php:85
+#: games/drc/drc.php:85
 msgid ""
 "The rubrics are the formulas and fixed values used to calculate the number "
-"of DRC points for a run.\n"
-"\t\tIf you are curious about how your points are being determined, click the "
-"button below to expand."
+"of DRC points for a run. If you are curious about how your points are being "
+"determined, click the button below to expand."
 msgstr ""
 "计算公式将计算出你所完成项目的分数。如果你想知道分数是如何计算的，请点击下方"
 "按钮展开。"
 
-#: drc/drc.php:88
+#: games/drc/drc.php:88
 msgid "Show Scoring Rubrics"
 msgstr "显示打分计算公式"
 
-#: drc/drc.php:89
+#: games/drc/drc.php:89
 msgid "Show Survival Rubrics"
 msgstr "显示生存计算公式"
 
-#: drc/drc.php:91
+#: games/drc/drc.php:91
 msgid "Scoring Notes"
 msgstr "打分简介"
 
-#: drc/drc.php:94
+#: games/drc/drc.php:94
 msgid "The World Records are taken from <a href=\"wr\">the WR page</a>."
 msgstr "世界纪录参考自<a href=\"wr\">此网页</a>。"
 
-#: drc/drc.php:97
+#: games/drc/drc.php:97
 msgid ""
 "If you achieve a new World Record, your points are equal to the maximum "
 "number of points; otherwise, the formula applies."
 msgstr "如果获得新世界纪录，你的分数即为最大值。否则，则按公式计算。"
 
-#: drc/drc.php:101
+#: games/drc/drc.php:101
 msgid ""
 "Some categories use a fictional WR. <a href=\"#fictionalWRtitle\">Click "
 "here</a> for the list of them."
@@ -240,7 +242,7 @@ msgstr ""
 "某些项目将参考一个虚构的世界纪录<a href=\"#fictionalWRtitle\">单击此处</a>查"
 "看列表。"
 
-#: drc/drc.php:105
+#: games/drc/drc.php:105
 msgid ""
 "Some categories always use the WR of a specific shottype. <a href="
 "\"#WRdefinitionTitle\">Click here</a> for the list of them."
@@ -248,7 +250,7 @@ msgstr ""
 "某些项目将一直参考具体某一机体。<a href=\"#WRdefinitionTitle\"单击此处</a>查"
 "看列表。"
 
-#: drc/drc.php:109
+#: games/drc/drc.php:109
 msgid ""
 "MoF uses a separate system. <a href=\"#mountainOfFaith\">Click here</a> for "
 "said system."
@@ -256,7 +258,7 @@ msgstr ""
 "东方风神录采用单独的计分方式。<a href=\"#mountainOfFaith\"单击此处</a>以获取"
 "系统介绍。"
 
-#: drc/drc.php:113
+#: games/drc/drc.php:113
 msgid ""
 "DS uses a separate system. <a href=\"#doubleSpoiler\">Click here</a> for "
 "said system."
@@ -264,46 +266,46 @@ msgstr ""
 "对抗新闻采用单独的计分方式。<a href=\"#doubleSpoiler\">单击此处</a>以获取系统"
 "介绍。"
 
-#: drc/drc.php:121
+#: games/drc/drc.php:121
 msgid "||Max * (Score/WR)^Exp||"
 msgstr "||最大值 *（得分 / 世界纪录）^ 指数||"
 
-#: drc/drc.php:128 drc/drc.php:312 drc/drc.php:346 lnn/lnn.php:127
-#: lnn/lnn.php:141 wr/wr.php:60
+#: games/drc/drc.php:128 games/drc/drc.php:312 games/drc/drc.php:346
+#: games/lnn/lnn.php:127 games/lnn/lnn.php:141 games/wr/wr.php:63
 msgid "Game"
 msgstr "游戏"
 
-#: drc/drc.php:129 drc/drc.php:313 drc/drc.php:347
+#: games/drc/drc.php:129 games/drc/drc.php:313 games/drc/drc.php:347
 msgid "Max points"
 msgstr "最大值"
 
-#: drc/drc.php:130
+#: games/drc/drc.php:130
 msgid "Exponent"
 msgstr "指数"
 
-#: drc/drc.php:141
+#: games/drc/drc.php:141
 msgid "Fictional WRs"
 msgstr "虚构WR"
 
-#: drc/drc.php:142
+#: games/drc/drc.php:142
 msgid ""
 "The categories in the table below use a fictional WR instead of the real one."
 msgstr "下列表中的项目将参考以下虚构的世界纪录。"
 
-#: drc/drc.php:163
+#: games/drc/drc.php:163
 msgid "'WR' definition"
 msgstr "WR的定义"
 
-#: drc/drc.php:165
+#: games/drc/drc.php:165
 msgid ""
 "The categories in the table below always use the WR of a specific shottype."
 msgstr "以下表中的项目将独立于其他机体来计算。"
 
-#: drc/drc.php:182
+#: games/drc/drc.php:182
 msgid "MoF Scoring"
 msgstr "东方风神录打分"
 
-#: drc/drc.php:184
+#: games/drc/drc.php:184
 msgid ""
 "For each difficulty and shottype there are six thresholds, at which you will "
 "have set numbers of points respectively. Then, increments are done, "
@@ -313,35 +315,36 @@ msgstr ""
 "对于每个难度和机体有六个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅"
 "取决于你的游戏内得分。Easy最大值是375。Lunatic最大值是500。"
 
-#: drc/drc.php:195
+#: games/drc/drc.php:195
 msgid "If score &lt; 1st threshold, then: ||220*(Score/T1)^2||"
 msgstr "若分数小于第一阈值，||220*(分数/第一阈值)^2||"
 
-#: drc/drc.php:197
+#: games/drc/drc.php:197
 msgid "If score &lt; 2b, then: ||200*(Score/2b)^2||"
 msgstr "若分数小于20亿，||200*(分数/20亿)^2||"
 
-#: drc/drc.php:199
+#: games/drc/drc.php:199
 msgid "If score &lt; 900m, then: ||100*(Score/900m)^2||"
 msgstr "若分数小于9亿，||100*(分数/9亿)^2||"
 
-#: drc/drc.php:203
+#: games/drc/drc.php:203
 msgid "Threshold"
 msgstr "阈值"
 
-#: drc/drc.php:204 drc/drc.php:237
+#: games/drc/drc.php:204 games/drc/drc.php:237
 msgid "Base points"
 msgstr "基数分"
 
-#: drc/drc.php:205 drc/drc.php:238 drc/drc.php:240 drc/drc.php:242
+#: games/drc/drc.php:205 games/drc/drc.php:238 games/drc/drc.php:240
+#: games/drc/drc.php:242
 msgid "Increments"
 msgstr "增幅"
 
-#: drc/drc.php:228
+#: games/drc/drc.php:228
 msgid "DS Scoring"
 msgstr "春对抗新闻打分"
 
-#: drc/drc.php:230
+#: games/drc/drc.php:230
 msgid ""
 "For each scene there are three thresholds, at which you will have set "
 "numbers of points points respectively. Then, increments are done, dependent "
@@ -350,32 +353,32 @@ msgstr ""
 "对于每个场景和机体有三个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅"
 "取决于你的游戏内得分。"
 
-#: drc/drc.php:237
+#: games/drc/drc.php:237
 msgid "Scene"
 msgstr "场景"
 
-#: drc/drc.php:239
+#: games/drc/drc.php:239
 msgid "Threshold 1"
 msgstr "第一阈值"
 
-#: drc/drc.php:241
+#: games/drc/drc.php:241
 msgid "Threshold 2"
 msgstr "第二阈值"
 
-#: drc/drc.php:243
+#: games/drc/drc.php:243
 msgid "Threshold 3"
 msgstr "第三阈值"
 
-#: drc/drc.php:271 drc/drc.php:391 lnn/lnn.php:215 tools/tools.php:528
-#: twc/twc.php:143 wr/wr.php:393
+#: games/drc/drc.php:271 games/drc/drc.php:391 games/lnn/lnn.php:215
+#: games/wr/wr.php:371
 msgid "Back to Top"
 msgstr "回到顶部"
 
-#: drc/drc.php:274
+#: games/drc/drc.php:274
 msgid "Survival Notes"
 msgstr "生存简介"
 
-#: drc/drc.php:278
+#: games/drc/drc.php:278
 msgid ""
 "For a main game clear, a shottype multiplier is applied to your DRC points, "
 "the result of which is again rounded. <a href=\"#shottypeMultipliers\">Click "
@@ -384,7 +387,7 @@ msgstr ""
 "当完成一项游戏，机体系数会影响DRC总分，结果会再次近似。<a href="
 "\"#shottypeMultipliers\">单击此处</a>查看列表。"
 
-#: drc/drc.php:283
+#: games/drc/drc.php:283
 msgid ""
 "The Phantasmagorias use a separate system. <a href=\"#phantasmagoria\">Click "
 "here</a> for said system."
@@ -392,7 +395,7 @@ msgstr ""
 "东方梦时空和东方花映塚关卡采用单独的计分方式。<a href=\"#phantasmagoria\">单"
 "击此处</a>以获取系统介绍。"
 
-#: drc/drc.php:288
+#: games/drc/drc.php:288
 msgid ""
 "For IN, you obtain 2 (1 on Easy) additional points for each captured Last "
 "Spell, with the exception of Imperishable Shooting, which yields 5 points."
@@ -400,26 +403,26 @@ msgstr ""
 "对于永夜抄，每收取一张LSC，则获得额外的2分（Easy难度为1分）。收取【不朽的弹"
 "幕】获得5分。 "
 
-#: drc/drc.php:294
+#: games/drc/drc.php:294
 msgid ""
 "For HSiFS, the first release adds 2 to <em>n</em>, and further releases add "
 "0.5, 0.4, 0.3, 0.2, 0.1 to <em>n</em>."
 msgstr ""
 "对于东方天空璋，初次季节解放则n+2，之后的季节释放n+0.5，0.4，0.3，0.2，0.1。"
 
-#: drc/drc.php:302
+#: games/drc/drc.php:302
 msgid "||Max * (Base^-n)||"
 msgstr "||最大值 *（基数 ^ -n）||"
 
-#: drc/drc.php:314
+#: games/drc/drc.php:314
 msgid "Base"
 msgstr "基数"
 
-#: drc/drc.php:331
+#: games/drc/drc.php:331
 msgid "PoDD & PoFV Survival"
 msgstr "东方梦时空和东方花映塚生存"
 
-#: drc/drc.php:333
+#: games/drc/drc.php:333
 msgid ""
 "In the below formula, MaxLives is equal to 5 for PoDD, 7 for PoFV main game "
 "and 8 for PoFV Extra. NoBombBonus is a difficulty-specific No Bomb bonus for "
@@ -429,23 +432,23 @@ msgstr ""
 "在以下公式中，东方梦时空的最大残机数为5，东方花映塚故事模式为7，EX为8。NB奖分"
 "依难度而定。东方梦时空为NB奖分，东方花映塚为NC奖分。"
 
-#: drc/drc.php:339
+#: games/drc/drc.php:339
 msgid "||Max - ((Max - Min) / MaxLives * RoundsLost)|| + NoBombBonus"
 msgstr "||最大值 -最大值 - 最小值） / 最大残机 * 败北数）|| + NB奖分"
 
-#: drc/drc.php:348
+#: games/drc/drc.php:348
 msgid "Min points"
 msgstr "最小值"
 
-#: drc/drc.php:349
+#: games/drc/drc.php:349
 msgid "No Bomb bonus"
 msgstr "值\tNB奖分"
 
-#: drc/drc.php:364
+#: games/drc/drc.php:364
 msgid "Shottype Multipliers"
 msgstr "机体系数"
 
-#: drc/drc.php:366
+#: games/drc/drc.php:366
 msgid ""
 "These are applied to the result of the survival formula for a main game run "
 "only; they do <em>not</em> apply for Extra, nor do they apply for HSiFS runs "
@@ -455,15 +458,15 @@ msgstr ""
 "该要素仅适用于生存项目的计算公式，不适用于EX和使用了季节解放的天空璋。未列出"
 "的机体，系数均为1。"
 
-#: drc/drc.php:375 lnn/lnn.php:128 wr/wr.php:64
+#: games/drc/drc.php:375 games/lnn/lnn.php:128 games/wr/wr.php:67
 msgid "Shottype"
 msgstr "机体"
 
-#: drc/drc.php:376
+#: games/drc/drc.php:376
 msgid "Multiplier"
 msgstr "系数"
 
-#: lnn/lnn.php:5
+#: games/lnn/lnn.php:5
 msgid ""
 "A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. "
 "For every shottype in a game, tables will tell you which players have done "
@@ -474,7 +477,7 @@ msgstr ""
 "新。每作游戏的每个机体有一行显示打出LNN的玩家。如果某一位玩家用一个机体打出多"
 "次LNN，只算一次，其余次数不算入统计。"
 
-#: lnn/lnn.php:10
+#: games/lnn/lnn.php:10
 msgid ""
 "Extra conditions are required for PCB, TD, HSiFS, WBaWC and UM; these are No "
 "Border Breaks for PCB, No Trance for TD, No Release for HSiFS, No Berserk "
@@ -489,1086 +492,83 @@ msgstr ""
 "第三个N代表着附加的条件。星莲船的附加条件（不开飞碟）由于对难度没有大量的影"
 "响，可以自选。永夜抄的LNN必须收取所有LSC，称做LNNFS。"
 
-#: lnn/lnn.php:17 wr/wr.php:11
+#: games/lnn/lnn.php:17 games/wr/wr.php:11
 msgid "All of the table columns are sortable."
 msgstr "点击任何标题即可排序表格内容。"
 
-#: lnn/lnn.php:19 tools/tools.php:14 twc/twc.php:29 wr/wr.php:17
+#: games/lnn/lnn.php:19 games/wr/wr.php:20
 msgid "Contents"
 msgstr "内容"
 
-#: lnn/lnn.php:24 lnn/lnn.php:29 lnn/lnn.php:44
+#: games/lnn/lnn.php:24 games/lnn/lnn.php:29 games/lnn/lnn.php:44
 msgid "LNN Lists"
 msgstr "LNN列表"
 
-#: lnn/lnn.php:25 lnn/lnn.php:37 lnn/lnn.php:136
+#: games/lnn/lnn.php:25 games/lnn/lnn.php:37 games/lnn/lnn.php:136
 msgid "Overall Count"
 msgstr "总数"
 
-#: lnn/lnn.php:26 lnn/lnn.php:38 lnn/lnn.php:183 wr/wr.php:27 wr/wr.php:44
-#: wr/wr.php:362
+#: games/lnn/lnn.php:26 games/lnn/lnn.php:38 games/lnn/lnn.php:183
+#: games/wr/wr.php:30 games/wr/wr.php:47 games/wr/wr.php:340
 msgid "Player Ranking"
 msgstr "玩家排行"
 
-#: lnn/lnn.php:36 lnn/lnn.php:111 wr/wr.php:39 wr/wr.php:291
+#: games/lnn/lnn.php:36 games/lnn/lnn.php:111 games/wr/wr.php:42
+#: games/wr/wr.php:268
 msgid "Player Search"
 msgstr "玩家WR"
 
-#: lnn/lnn.php:61
+#: games/lnn/lnn.php:61
 msgid "(Different players)"
 msgstr "（玩家）"
 
-#: lnn/lnn.php:61 twc/twc.php:46
+#: games/lnn/lnn.php:61
 msgid "Players"
 msgstr "玩家"
 
-#: lnn/lnn.php:89 lnn/lnn.php:171
+#: games/lnn/lnn.php:89 games/lnn/lnn.php:171
 msgid "Overall"
 msgstr "合計"
 
-#: lnn/lnn.php:98
+#: games/lnn/lnn.php:98
 msgid "Click a game cover to show its list of LNNs."
 msgstr "单击游戏处查看LNN列表。"
 
-#: lnn/lnn.php:112
+#: games/lnn/lnn.php:112
 msgid "Choose a player name from the menu below to show their LNNs."
 msgstr "在以下的菜单选择玩家的名字则可查看其LNN。"
 
-#: lnn/lnn.php:113 lnn/lnn.php:188 wr/wr.php:62 wr/wr.php:292 wr/wr.php:321
-#: wr/wr.php:367
+#: games/lnn/lnn.php:113 games/lnn/lnn.php:188 games/wr/wr.php:65
+#: games/wr/wr.php:269 games/wr/wr.php:299 games/wr/wr.php:345
 msgid "Player"
 msgstr "玩家"
 
-#: lnn/lnn.php:129 wr/wr.php:308 wr/wr.php:322
+#: games/lnn/lnn.php:129 games/wr/wr.php:69 games/wr/wr.php:286
+#: games/wr/wr.php:300
 msgid "Replay"
 msgstr "Rep"
 
-#: lnn/lnn.php:143 lnn/lnn.php:190
+#: games/lnn/lnn.php:143 games/lnn/lnn.php:190
 msgid "No. of LNNs"
 msgstr "LNN的数量"
 
-#: lnn/lnn.php:145
+#: games/lnn/lnn.php:145
 msgid "Different players"
 msgstr "玩家"
 
-#: lnn/lnn.php:176
+#: games/lnn/lnn.php:176
 msgid "Replays"
 msgstr "Rep"
 
-#: lnn/lnn.php:193
+#: games/lnn/lnn.php:193
 msgid "Games LNN'd"
 msgstr "游戏"
 
-#: lnn/lnn.php:207 lnn/lnn.php:208
+#: games/lnn/lnn.php:207 games/lnn/lnn.php:208
 msgid " (All Windows)"
 msgstr "（全Windows）"
 
-#: shared/shared.php:318
-msgid "Youkai mode (Dark)"
-msgstr "Youkai mode (Dark)"
-
-#: shared/shared.php:318
-msgid "Human mode (Light)"
-msgstr "Human mode (Light)"
-
-#: shared/shared.php:326 shared/shared.php:332
-msgid "Flag of the United Kingdom"
-msgstr "英国旗"
-
-#: shared/shared.php:328
-msgid "Flag of the United States"
-msgstr "美国旗"
-
-#: shared/shared.php:336
-msgid "Flag of Japan"
-msgstr "日本旗"
-
-#: shared/shared.php:340
-msgid "Flag of the P.R.C."
-msgstr "中国旗"
-
-#: shared/shared.php:344
-msgid "Flag of Russia"
-msgstr "俄羅斯國旗"
-
-#: tools/tools.php:5
-msgid ""
-"This page contains download links to all kinds of different patches or tools "
-"applicable to the official Touhou shooting games."
-msgstr ""
-
-#: tools/tools.php:8
-msgid ""
-"Some of the patches are also available at <a href=\"https://www.thpatch.net/"
-"wiki/Touhou_Patch_Center:Servers\"><span class=\"icon thcrap_icon\"></span> "
-"Touhou Patch Center</a> and can be used through <a href=\"https://www."
-"thpatch.net/wiki/Touhou_Patch_Center:Download\">their automatic translation "
-"patcher and modding tool</a>, which can also be downloaded using our mirror "
-"below (see THCRAP section). These patches will have the favicon of their "
-"site next to them."
-msgstr ""
-
-#: tools/tools.php:18
-msgid "<strong>For Windows 10:</strong> DX8 to DX9"
-msgstr ""
-
-#: tools/tools.php:19 tools/tools.php:74
-msgid "Completed Scorefiles"
-msgstr ""
-
-#: tools/tools.php:22 tools/tools.php:160
-msgid "General Practice Tools"
-msgstr ""
-
-#: tools/tools.php:23 tools/tools.php:191
-msgid "Boss Rush Patches"
-msgstr ""
-
-#: tools/tools.php:24 tools/tools.php:240
-msgid "Specific Pattern Practice"
-msgstr ""
-
-#: tools/tools.php:25 tools/tools.php:273
-msgid "Shottype Modifications"
-msgstr ""
-
-#: tools/tools.php:26 tools/tools.php:318
-msgid "Hard Mode / Ultra Patches"
-msgstr ""
-
-#: tools/tools.php:27 tools/tools.php:377
-msgid "Graphical Patches"
-msgstr ""
-
-#: tools/tools.php:28 tools/tools.php:408
-msgid "PC-98 Emulators"
-msgstr ""
-
-#: tools/tools.php:29 tools/tools.php:441
-msgid "Miscellaneous"
-msgstr ""
-
-#: tools/tools.php:35
-msgid ""
-"Removes input delay, allows you to increase in-game FPS (default is 60), "
-"optionally fixes several bugs (PCB cherry display, MoF MarisaB 3-power "
-"unfocus, UFO 2.147b score display). The input delay is mostly prevalent in "
-"the older games (EoSD to IN) and running them on Vpatch will significantly "
-"improve the gameplay experience. It allows you to set a custom screen "
-"resolution as well.</p><p>Vpatch is applicable to all official shooting "
-"games bar HSiFS, WBaWC and UM."
-msgstr ""
-
-#: tools/tools.php:41 tools/tools.php:58 tools/tools.php:61 tools/tools.php:71
-#: tools/tools.php:81 tools/tools.php:97 tools/tools.php:175
-#: tools/tools.php:181 tools/tools.php:188 tools/tools.php:231
-#: tools/tools.php:234 tools/tools.php:237 tools/tools.php:247
-#: tools/tools.php:253 tools/tools.php:257 tools/tools.php:276
-#: tools/tools.php:283 tools/tools.php:289 tools/tools.php:295
-#: tools/tools.php:301 tools/tools.php:306 tools/tools.php:309
-#: tools/tools.php:311 tools/tools.php:315 tools/tools.php:339
-#: tools/tools.php:345 tools/tools.php:358 tools/tools.php:365
-#: tools/tools.php:405 tools/tools.php:415 tools/tools.php:421
-#: tools/tools.php:429 tools/tools.php:447 tools/tools.php:450
-#: tools/tools.php:457 tools/tools.php:464 tools/tools.php:469
-#: tools/tools.php:476 tools/tools.php:485 tools/tools.php:495
-#: tools/tools.php:502 tools/tools.php:510 tools/tools.php:518
-#: tools/tools.php:526
-msgid "Download"
-msgstr ""
-
-#: tools/tools.php:45
-msgid ""
-"<h2 id=\"thcrap\">THCRAP (Translation patches / Modding tool) <a id="
-"\"thcrap_link\" href=\"https://www.thpatch.net/wiki/Touhou_Patch_Center:"
-"Main_page\" target=\"_blank\"><span class=\"icon thcrap_icon\"></span> "
-"thcrap</a></h2>"
-msgstr ""
-
-#: tools/tools.php:51
-msgid ""
-"Translation patches into English and many other languages, as well as "
-"countless modifications to gameplay, graphics and more, plus the ability to "
-"make your own, are provided by the Touhou Community Reliant Automatic "
-"Patcher (THCRAP) for all Windows Touhou games. The thpatch.net link also "
-"links to instructions on how to use the patcher."
-msgstr ""
-
-#: tools/tools.php:61
-msgid " (maribelhearn.com mirror)"
-msgstr ""
-
-#: tools/tools.php:66
-msgid "DX8 to DX9 converter"
-msgstr ""
-
-#: tools/tools.php:68
-msgid ""
-"Makes the older Touhou Windows games (EoSD, PCB, IN, PoFV and StB) run "
-"properly on Windows 10. Extract it into the folders of these games for it to "
-"take effect."
-msgstr ""
-
-#: tools/tools.php:76
-msgid ""
-"These are (mostly) complete <span class=\"code\">score.dat</span> files "
-"useful for practice combined with other tools, as they have unlocked the "
-"Extra Stage, every practice stage and spell in Spell Practice for all "
-"shottypes."
-msgstr ""
-
-#: tools/tools.php:80
-msgid "All official shooting games aside from VD are included."
-msgstr ""
-
-#: tools/tools.php:85
-msgid "<h2 id=\"thprac\">Thprac (universal practice tool by ACK)</h2>"
-msgstr ""
-
-#: tools/tools.php:102
-msgid ""
-"Japanese program that can load <span class=\"code\">.ssg</span> files that "
-"modify the game while it is running, allowing for practice options as well "
-"as cheats. SpoilerAL SSGs require the <em>original Japanese versions</em> of "
-"the games to work. The 4.6 SSGs have practice options such as skipping to a "
-"specific frame of the game or a specific spell, while the niL SSGs have "
-"cheat options such as invincibility. There is also a separate MoF SSG made "
-"by <a href=\"https://www.twitch.tv/akaldar\" target=\"_blank\">Akaldar</a> "
-"for efficient practice in that game specifically, a separate GFW SSG, as "
-"well as a TD SSG specifically designed for efficient scoring practice, made "
-"by Leo, a DDC SSG and a LoLK Chapter Practice SSG by <a href=\"https://www."
-"youtube.com/channel/UChyVpooBi31k3xPbWYsoq3w\" target=\"_blank\">32th "
-"System</a> and separate HSiFS SSGs with cheat options. Be wary of an "
-"occasional menu bug that causes an SSG to duplicate itself and make other "
-"SSGs invisible."
-msgstr ""
-
-#: tools/tools.php:114
-msgid "Main Program"
-msgstr ""
-
-#: tools/tools.php:115
-msgid "SSG Pack (4.6)"
-msgstr ""
-
-#: tools/tools.php:122
-msgid "SSG Pack (niL)"
-msgstr ""
-
-#: tools/tools.php:125
-msgid "SSG Pack (LET)"
-msgstr ""
-
-#: tools/tools.php:128
-msgid "SSG Pack (niL, English translated)"
-msgstr ""
-
-#: tools/tools.php:131
-msgid "MoF SSG by Akaldar"
-msgstr ""
-
-#: tools/tools.php:134
-msgid "GFW SSG (English translated)"
-msgstr ""
-
-#: tools/tools.php:137
-msgid "TD Scoring SSG by Leo (English translated)"
-msgstr ""
-
-#: tools/tools.php:140
-msgid "HSiFS Scoring SSG by Sonitsuku"
-msgstr ""
-
-#: tools/tools.php:143
-msgid "DDC SSG by 32th System"
-msgstr ""
-
-#: tools/tools.php:146
-msgid "LoLK SSG by CreepyNinja"
-msgstr ""
-
-#: tools/tools.php:149
-msgid "LoLK Chapter Practice SSG by 32th System"
-msgstr ""
-
-#: tools/tools.php:152
-msgid "HSiFS SSG (cheats, English translated)"
-msgstr ""
-
-#: tools/tools.php:155
-msgid "Alternative HSiFS SSG (English translated)"
-msgstr ""
-
-#: tools/tools.php:162
-msgid ""
-"Patches intended for efficient practice in one or more games, allowing the "
-"player to skip to patterns or changing power and such."
-msgstr ""
-
-#: tools/tools.php:165
-msgid "Practice Tools by "
-msgstr ""
-
-#: tools/tools.php:167
-msgid ""
-"Tools that allow you to skip to specific patterns in SA, UFO and LoLK, also "
-"allowing for other settings like your current power. The UFO and LoLK tools "
-"are external programs, while the SA tool is a modification of the program. "
-"The LoLK one was made for v1.00a but mostly functions properly on v1.00b as "
-"well."
-msgstr ""
-
-#: tools/tools.php:177
-msgid "WBaWC Practice by "
-msgstr ""
-
-#: tools/tools.php:179
-msgid ""
-"Allows skipping to any part of the game, similar to Riri's practice tools, "
-"using an in-game menu."
-msgstr ""
-
-#: tools/tools.php:182
-msgid "GFW \"Brown Label\" Practice by "
-msgstr ""
-
-#: tools/tools.php:184
-msgid ""
-"Modified <span class=\"code\">.dat</span> files that allow you to practice "
-"specific stages of any route in the game. Select A in-game for full stage "
-"practice, B for midboss and boss and C for boss only. Refer to the readme "
-"file for further information."
-msgstr ""
-
-#: tools/tools.php:193
-msgid ""
-"Modifications to the main <span class=\"code\">.dat</span> files of the "
-"games that skip stage portions, allowing you to efficiently practice boss "
-"battles. The skipping applies to both full runs and practice runs."
-msgstr ""
-
-#: tools/tools.php:197 tools/tools.php:218
-msgid "Boss Rush Patches by "
-msgstr ""
-
-#: tools/tools.php:199
-msgid ""
-"All midbosses and bosses are included, everything else being kept the same. "
-"There are also 'boss-only' versions that do skip the midbosses."
-msgstr ""
-
-#: tools/tools.php:203
-msgid "Full Pack"
-msgstr ""
-
-#: tools/tools.php:220
-msgid ""
-"Patches for SA and UFO that not only remove stage portions, but also bombs. "
-"The SA one includes turning Stage 4 into 'Satori Rush', where you fight "
-"every single one of her Spell Cards. Note that the safe areas on Border of "
-"Wave and Particle and Utsuho's 3rd spell are removed in this patch."
-msgstr ""
-
-#: tools/tools.php:229
-msgid "EoSD Boss Rush by "
-msgstr ""
-
-#: tools/tools.php:230
-msgid "Another boss rush patch for EoSD, also including 'Patchouli Rush'."
-msgstr ""
-
-#: tools/tools.php:232
-msgid "PCB Boss Rush by rsy_type1 and "
-msgstr ""
-
-#: tools/tools.php:233
-msgid "A boss rush patch for PCB."
-msgstr ""
-
-#: tools/tools.php:235
-msgid "WBaWC Boss Rush by "
-msgstr ""
-
-#: tools/tools.php:236
-msgid "A boss rush patch for WBaWC."
-msgstr ""
-
-#: tools/tools.php:242
-msgid ""
-"Patches intended for practicing one or a few specific patterns in a game. "
-"Usually <span class=\"code\">.dat</span> modifications."
-msgstr ""
-
-#: tools/tools.php:245
-msgid "Books Practice for EoSD by "
-msgstr ""
-
-#: tools/tools.php:246
-msgid "Repeats the Stage 4 Books section for easy practicing."
-msgstr ""
-
-#: tools/tools.php:248
-msgid "VoWG + PWG Practice for MoF by "
-msgstr ""
-
-#: tools/tools.php:250
-msgid ""
-"Makes Kanako skip to Virtue of Wind God (her final spell) and makes Aya skip "
-"to Peerless Wind God (her timeout spell), which will also repeat itself "
-"indefinitely."
-msgstr ""
-
-#: tools/tools.php:255
-msgid "IN Nonspell Practice"
-msgstr ""
-
-#: tools/tools.php:256
-msgid "Patch that lets you practice nonspells in IN."
-msgstr ""
-
-#: tools/tools.php:258
-msgid "Timeout Phase Collection by "
-msgstr ""
-
-#: tools/tools.php:260
-msgid ""
-"Patches for practicing the timeout phases of the final spells on Lunatic and "
-"Extra from MoF to HSiFS, plus Devil's Recitation, but not including GFW "
-"Stage 3 final spells."
-msgstr ""
-
-#: tools/tools.php:265
-msgid "MoF to LoLK"
-msgstr ""
-
-#: tools/tools.php:268
-msgid "HSiFS season finals and Extra final"
-msgstr ""
-
-#: tools/tools.php:274
-msgid "MoF Reisen by "
-msgstr ""
-
-#: tools/tools.php:275
-msgid "Replaces ReimuC with Reisen in MoF."
-msgstr ""
-
-#: tools/tools.php:277
-msgid "UFO Tsubakura mod by "
-msgstr ""
-
-#: tools/tools.php:280
-msgid ""
-"Replaces both Reimu shottypes in UFO with Tsubakura shottypes, a character "
-"from the Len'en series. Also changes the dialogues and endings."
-msgstr ""
-
-#: tools/tools.php:284
-msgid "DDC Sanae by "
-msgstr ""
-
-#: tools/tools.php:287
-msgid "Replaces ReimuB with Sanae in DDC."
-msgstr ""
-
-#: tools/tools.php:290
-msgid "HSiFS Sanae by "
-msgstr ""
-
-#: tools/tools.php:293
-msgid "Replaces Marisa with Sanae in HSiFS."
-msgstr ""
-
-#: tools/tools.php:296
-msgid "LoLK Sakuya by "
-msgstr ""
-
-#: tools/tools.php:299
-msgid "Replaces Reisen with Sakuya in LoLK."
-msgstr ""
-
-#: tools/tools.php:302
-msgid "TD Yuuka by "
-msgstr ""
-
-#: tools/tools.php:304
-msgid "Replaces Marisa with Yuuka in TD. Also changes the dialogues."
-msgstr ""
-
-#: tools/tools.php:307
-msgid "DS Seija by "
-msgstr ""
-
-#: tools/tools.php:308
-msgid "Replaces Aya in DS with Seija, including when she shows up as a boss."
-msgstr ""
-
-#: tools/tools.php:310
-msgid "WBaWC (Demo) Reisen by "
-msgstr ""
-
-#: tools/tools.php:312
-msgid "Replaces ReimuOtter with Reisen in the WBaWC demo."
-msgstr ""
-
-#: tools/tools.php:313
-msgid "WBaWC Narumi by "
-msgstr ""
-
-#: tools/tools.php:314
-msgid "Adds Narumi to WBaWC as a shottype."
-msgstr ""
-
-#: tools/tools.php:320
-msgid ""
-"Patches that increase the bullet density and speed throughout the game, "
-"while giving you autobombs to compensate for it. The Hard Mode patches also "
-"change the actual patterns. The main Ultra patch collection includes the "
-"games up to ISC."
-msgstr ""
-
-#: tools/tools.php:325
-msgid "Main Ultra Patches"
-msgstr ""
-
-#: tools/tools.php:326
-msgid "Alternate EoSD Ultra"
-msgstr ""
-
-#: tools/tools.php:328
-msgid "Hard Mode patches by "
-msgstr ""
-
-#: tools/tools.php:329
-msgid ""
-"Patches for UFO and DDC that modify patterns, besides simply making them "
-"harder."
-msgstr ""
-
-#: tools/tools.php:334
-msgid "RNG patches by "
-msgstr ""
-
-#: tools/tools.php:337
-msgid ""
-"A collection of modified <span class=\"code\">.dat</span> files that "
-"randomise the patterns in the game."
-msgstr ""
-
-#: tools/tools.php:342
-msgid ""
-"A Chinese Ultra patch for LoLK, which does <em>not</em> have autobomb, but "
-"it doubles your shot power instead."
-msgstr ""
-
-#: tools/tools.php:346
-msgid "IN Double Stage "
-msgstr ""
-
-#: tools/tools.php:348
-msgid ""
-"Allows you to play 4A, 4B, 6A and 6B in a single run. Optionally also "
-"includes Extra at the end."
-msgstr ""
-
-#: tools/tools.php:354
-msgid "HSiFS UltraB by "
-msgstr ""
-
-#: tools/tools.php:356
-msgid "An alternate HSiFS Ultra patch that also increases density."
-msgstr ""
-
-#: tools/tools.php:362
-msgid ""
-"Combines LoLK with DDC, making each boss fight a dual boss fight against the "
-"bosses of both games.It removes all stage portions, effectively making it a "
-"boss rush, and also combines the HUDs of both games."
-msgstr ""
-
-#: tools/tools.php:366
-msgid "OC Patches by "
-msgstr ""
-
-#: tools/tools.php:369
-msgid ""
-"Remastered version of Stage 6 and harder version of Extra in HSiFS, "
-"including an original character replacing Okina and alternate story along "
-"with pattern, bullet type, stage music and graphical changes. There is "
-"another patch with the same OC replacement and pattern modding for VD on the "
-"Okina scenes on the same download page."
-msgstr ""
-
-#: tools/tools.php:374 tools/tools.php:438
-msgid "Downloads"
-msgstr ""
-
-#: tools/tools.php:379
-msgid ""
-"Modifications to the main <span class=\"code\">.dat</span> files of the "
-"games that change the way the game looks."
-msgstr ""
-
-#: tools/tools.php:382
-msgid "Graphical Patches by "
-msgstr ""
-
-#: tools/tools.php:384
-msgid ""
-"Includes PCB and HSiFS in MS Paint style, an emoji-themed version of UFO and "
-"a Christmas-themed version of LoLK."
-msgstr ""
-
-#: tools/tools.php:401
-msgid "Vertical Play Patches by "
-msgstr ""
-
-#: tools/tools.php:403
-msgid ""
-"Makes MoF, SA, UFO and TD play in the arcade-style vertical resolution, also "
-"known as TATE."
-msgstr ""
-
-#: tools/tools.php:411
-msgid ""
-"The only emulator that is currently still maintained together with DOSBox-X. "
-"It offers unlimited savestates and has high accuracy, but requires the right "
-"configurations; can be confusing for new users. The emulator is located in "
-"the bin folder with two versions, 32-bit and 64-bit (x64)."
-msgstr ""
-
-#: tools/tools.php:418
-msgid ""
-"Easy-to-use emulator that will emulate the Touhou games properly without "
-"needing configuration of any kind, but less feature-rich, and allows 8 "
-"active savestates at a time, 4 of which through hotkeys."
-msgstr ""
-
-#: tools/tools.php:424
-msgid ""
-"This emulator has low system requirements and can run even on very old "
-"computers. However, the graphics are mediocre and the sound emulation "
-"requires proper configuration to be accurate. Allows for 8 savestates and "
-"requires a separate font file, linked below."
-msgstr ""
-
-#: tools/tools.php:430
-msgid "Font"
-msgstr ""
-
-#: tools/tools.php:434
-msgid ""
-"A fork of the DOSBox project that has support for PC-98. It is the only "
-"emulator to run natively under not only Windows, but also Mac and Linux. A "
-"list of downloads for each system can be found via the link below."
-msgstr ""
-
-#: tools/tools.php:442
-msgid "Real Time DRC Points Displayer by "
-msgstr ""
-
-#: tools/tools.php:444
-msgid ""
-"A tool that tracks in-game data such as misses, bombs, etc, thus calculating "
-"<a href=\"drc\">DRC</a> points for both survival and scoring during a Touhou "
-"run."
-msgstr ""
-
-#: tools/tools.php:448
-msgid "MS Black Label by "
-msgstr ""
-
-#: tools/tools.php:449
-msgid "Increases the graze cap from 999 to 65536."
-msgstr ""
-
-#: tools/tools.php:451
-msgid "EoSD Capture History Tracker by "
-msgstr ""
-
-#: tools/tools.php:453
-msgid ""
-"Command-line tool that allows you to track how many times you captured "
-"spells in EoSD. Includes Stage 4 Books and Play Time tracking, as well as "
-"allowing for multiple save files."
-msgstr ""
-
-#: tools/tools.php:461
-msgid "PoFV Play Time Recorder by "
-msgstr ""
-
-#: tools/tools.php:463
-msgid "Keeps track of your play time in PoFV."
-msgstr ""
-
-#: tools/tools.php:465
-msgid "PoFV Replay Save Crash Fixer"
-msgstr ""
-
-#: tools/tools.php:467
-msgid ""
-"Launching this alongside the game fixes the bug that makes the game crash "
-"whenever you save a replay."
-msgstr ""
-
-#: tools/tools.php:470
-msgid "TD Arrange Patch by "
-msgstr ""
-
-#: tools/tools.php:472
-msgid ""
-"Modification of TD that removes the invincibility from trances, instead "
-"allowing you to use them starting at 1/3 full gauge."
-msgstr ""
-
-#: tools/tools.php:480
-msgid "HSiFS Max Season Start by )"
-msgstr ""
-
-#: tools/tools.php:483
-msgid "Lets you start with your season level at 6."
-msgstr ""
-
-#: tools/tools.php:487
-msgid "Polished Shooting Star by "
-msgstr ""
-
-#: tools/tools.php:490
-msgid ""
-"Allows you to run the fangame Shining Shooting Star without requiring you to "
-"set your locale to Chinese. Note that it does not fix the pattern speed bug "
-"on locales that use a comma for decimals, which makes certain patterns "
-"extremely fast until a full run is played or a replay of one of certain "
-"stages is watched."
-msgstr ""
-
-#: tools/tools.php:497
-msgid "Input Display by "
-msgstr ""
-
-#: tools/tools.php:500
-msgid "Shows your button presses. Works on both gameplay and replays."
-msgstr ""
-
-#: tools/tools.php:504
-msgid "LoLK Pointdevice no power loss by "
-msgstr ""
-
-#: tools/tools.php:507
-msgid ""
-"Disables the 0.01 power loss mechanic of Pointdevice Mode in LoLK, making "
-"sure you never lose power upon restarting a chapter."
-msgstr ""
-
-#: tools/tools.php:512
-msgid "HSiFS UFO mod by "
-msgstr ""
-
-#: tools/tools.php:516
-msgid "Adds UFOs to HSiFS."
-msgstr ""
-
-#: tools/tools.php:520
-msgid "WBaWC score cap mod by "
-msgstr ""
-
-#: tools/tools.php:524
-msgid "Allows the in-game score counter to exceed 9,999,999,990 points."
-msgstr ""
-
-#: twc/twc.php:5
-msgid ""
-"<strong>Touhou World Cup (TWC)</strong> is an annual international Touhou "
-"shooting game competition, first held in 2020, organised by the Chinese "
-"gameplay community. This time around, in 2021, it is organised by the "
-"Western gameplay community."
-msgstr ""
-"<strong>Touhou World Cup (TWC)</strong>东方世界杯是一场每年一度的东方STG游戏"
-"比赛，世界杯的第一场在2020由中国玩家群体主办, 而今年2021，TWC由西方玩家群体所"
-"筹办。"
-
-#: twc/twc.php:10
-msgid ""
-"Three teams, a Western community team, a Chinese team, and a Japanese team, "
-"duke it out on Lunatic and Extra mode, playing on live streams and playing "
-"both high score and survival."
-msgstr ""
-"东方世界杯有三支参赛队伍，西方队，中国队和日本队，三支队伍将在东方弹幕作的"
-"Lunatic与Extra模式中一决雌雄，在避弹和打分两个环节上激烈对抗。"
-
-#: twc/twc.php:14
-msgid ""
-"See below for official communication channels, live streams with commentary, "
-"the schedule, and the rules the players play by."
-msgstr ""
-"关于我们的官方社交媒体，解说流，时间表以及玩家需要遵守的规则，请往下读。"
-
-#: twc/twc.php:18
-msgid "Official TWC Twitter"
-msgstr "TWC的官方推特"
-
-#: twc/twc.php:19
-msgid "Official TWC YouTube Channel"
-msgstr "TWC的官方YouTube频道"
-
-#: twc/twc.php:20
-msgid "English commentary stream (Twitch)"
-msgstr "英文流解说（Twitch）"
-
-#: twc/twc.php:22
-msgid "Chinese commentary stream 1 (Bilibili)"
-msgstr "一号中文流解说（Bilibili）"
-
-#: twc/twc.php:24
-msgid "Chinese commentary stream 2 (Bilibili)"
-msgstr "二号中文流解说（Bilibili）"
-
-#: twc/twc.php:26
-msgid "Japanese commentary stream (YouTube)"
-msgstr "日文流解说（YouTube）"
-
-#: twc/twc.php:27
-msgid "Russian commentary stream (Twitch)"
-msgstr "俄文流解说（Twitch）"
-
-#: twc/twc.php:31 twc/twc.php:34
-msgid "Schedule"
-msgstr "时间表"
-
-#: twc/twc.php:35
-msgid "Your time zone was detected as <span id=\"timezone\"></span>."
-msgstr "我们检测到您的时区是 <span id=\"timezone\"></span>。"
-
-#: twc/twc.php:38
-msgid ""
-"Daylight Saving Time (also known as Summer Time or DST) is taken into "
-"account automatically."
-msgstr ""
-"Daylight Saving Time (also known as Summer Time or DST) is taken into "
-"account automatically."
-
-#: twc/twc.php:44
-msgid "Date/Time"
-msgstr "日期和时间"
-
-#: twc/twc.php:47
-msgid "Reset Time<br>(minutes)"
-msgstr "Reset Time<br>（分钟）"
-
-#: twc/twc.php:54
-msgid "Format"
-msgstr "比赛形式"
-
-#: twc/twc.php:55
-msgid ""
-"For every match, each team can earn points. Ranking is based on whoever has "
-"the most points:"
-msgstr ""
-"每场比赛以选手比赛中获得的最高积分进行排名，同时选手所在队伍获得相应的总分。"
-
-#: twc/twc.php:57
-msgid "1st place - 2 pts"
-msgstr "冠军：2总分(避免负分歧义)"
-
-#: twc/twc.php:58
-msgid "2nd place - 1 pt"
-msgstr "亚军：1总分"
-
-#: twc/twc.php:59
-msgid "3rd place - 0 pts"
-msgstr "季军：0总分"
-
-#: twc/twc.php:61
-msgid ""
-"In 2-team matches, the first place gets 2 points, and 2nd place gets 1 point."
-msgstr "即使是二人战，双方也按照以上描述得分，不参与队伍算季军。"
-
-#: twc/twc.php:63
-msgid ""
-"If multiple players have the exact same amount of ISCORE, their points will "
-"be split equally. This also means that, if multiple players have the highest "
-"ISCORE, the match ends in a tie."
-msgstr ""
-"如果一个以上的玩家获得了同样的甜品站分数，他们将会得到同样的积分，这同时意味"
-"着如果多人获得了同样的最高分，那么本场比赛将会为平局。"
-
-#: twc/twc.php:66
-msgid ""
-"At the end of the World Cup, the teams will be ranked based on has the most "
-"points."
-msgstr "在世界杯结束的时候，队伍将会按照积分排名。"
-
-#: twc/twc.php:67
-msgid "Calculating Points"
-msgstr "计算积分"
-
-#: twc/twc.php:69
-msgid ""
-"The points are based on the <a href=\"https://www.isndes.com/jf\">ISCORE "
-"calculator</a> (see the \"About ISCORE\" link in the top right after "
-"changing to English via the language icon, fourth from the right)."
-msgstr ""
-"积分使用<a href=\"https://www.isndes.com/jf\">甜品站积分计</a>算器计算，计算"
-"公式可上甜品站查看，大战争避弹除外（后述）。"
-
-#: twc/twc.php:74
-msgid ""
-"Score matches are calculated based on the ISCORE formula. Survival matches "
-"(except for GFW) are calculated as follows:"
-msgstr ""
-
-#: twc/twc.php:77
-msgid "(ISCORE No Miss No Bomb Score)*0.5^(deaths)"
-msgstr "（甜品站积分 NMNB分数）*0.5^（死亡数）"
-
-#: twc/twc.php:78
-msgid "In survival runs, bombs are counted as 2 deaths."
-msgstr "全作避弹项目中，丢雷算2 miss。"
-
-#: twc/twc.php:80
-msgid ""
-"ISCORE is a scoring metric that compensates for the differences in "
-"performance between shot types and categories. The formulas used can be "
-"found in the ISCORE rubric with the calculator linked above."
-msgstr ""
-"甜品站分数是可以将不同比赛的差异得分进行修补整合的打分矩阵，您可以点击上面的"
-"甜品站计算器来查看所用的公式。"
-
-#: twc/twc.php:84
-msgid "Game-specific Concerns"
-msgstr "额外提醒"
-
-#: twc/twc.php:85
-msgid "Touhou 7"
-msgstr "妖妖梦"
-
-#: twc/twc.php:86
-msgid "A border break is considered a death in survival runs."
-msgstr "灵击，无论主动还是被动，都算1 miss。"
-
-#: twc/twc.php:87
-msgid "Touhou 8"
-msgstr "永夜抄"
-
-#: twc/twc.php:89
-msgid ""
-"Getting hit during a Last Spell is <strong>not</strong> considered a death "
-"in survival runs. However, ISCORE gives a higher base value in this game to "
-"runs that capture all spells (which includes unlocking and capturing "
-"<strong>every</strong> Last Spell) AND do not die/bomb (NN + Full-SC)."
-msgstr ""
-"LSC被弹不算1 miss。积分只在LNN的情况下才考虑全卡，LNNFS会获得额外积分。"
-
-#: twc/twc.php:94
-msgid "Touhou 12"
-msgstr "星莲船"
-
-#: twc/twc.php:98
-msgid ""
-"Summoning a UFO is considered a death in survival runs. However, collecting "
-"tokens does not affect the score in survival runs."
-msgstr "开碟算1 miss。收碟碎片不影响miss数。"
-
-#: twc/twc.php:101
-msgid "Touhou 12.8"
-msgstr "妖精大战争"
-
-#: twc/twc.php:103
-msgid "The survival formula for this game is (gold medals*1.5)-(deaths)."
-msgstr "使用冰冻技能不算miss。避弹公式是（金牌数*1.5）-（miss数）。"
-
-#: twc/twc.php:104
-msgid "Touhou 13"
-msgstr "神灵庙"
-
-#: twc/twc.php:106
-msgid ""
-"A manual trance is considered 2 deaths in survival runs. ISCORE gives a "
-"higher base value in this game to runs that capture all spells AND does not "
-"die/bomb (NN + Full-SC)."
-msgstr ""
-"主动开灵界算2 miss，被动灵界不算作miss，且可以在被动灵界中开枪积分只在LNNN的"
-"情况下才考虑全卡，LNNNFS会获得额外积分。"
-
-#: twc/twc.php:110
-msgid "Touhou 15"
-msgstr "绀珠传"
-
-#: twc/twc.php:111
-msgid "All runs in both survival/score have to be done in Legacy Mode."
-msgstr "避弹打分都必须使用传统模式。"
-
-#: twc/twc.php:112
-msgid "Touhou 16"
-msgstr "天空璋"
-
-#: twc/twc.php:113
-msgid "Releasing your season gauge is considered 2 deaths in survival runs."
-msgstr "季节释放算2 miss。"
-
-#: twc/twc.php:114
-msgid "Touhou 17"
-msgstr "鬼形兽"
-
-#: twc/twc.php:116
-msgid ""
-"Channeling a berserk roar (3 or more of the same animal tokens during roar "
-"mode) is considered 2 deaths in survival runs. Breaking your roar (bombing "
-"or touching a bullet during roar mode) is considered a death in survival "
-"runs."
-msgstr ""
-"开暴走（吃了3个以上同样的动物灵）算2 miss。开正常hyper不算1 miss。灵击，无论"
-"主动还是被动，都算1 miss。"
-
-#: twc/twc.php:120
-msgid "Use of Third Party Software &amp; Material"
-msgstr "使用额外软件"
-
-#: twc/twc.php:122
-msgid ""
-"Vsync patch is allowed. Practice patches (such as thprac) are allowed, but "
-"all practice cheats have to be disabled for the runs."
-msgstr ""
-"VP补丁允许使用。各种练习器都允许使用，但不能影响正式推把，也不能影响replay的"
-"正常播放。"
-
-#: twc/twc.php:126
-msgid ""
-"Visual patches (e.g. hitbox patch) are prohibited. Translation patches are "
-"allowed but discouraged. Audio patches/background music is allowed but no "
-"copyrighted material."
-msgstr ""
-"所有的贴图魔改一律禁止使用，包括红魔乡判定点补丁。翻译补丁（汉化版等）允许使"
-"用，但不推荐。比赛时允许使用背景音乐魔改，或播自己的音乐，但必须保证没有任何"
-"版权问题。"
-
-#: twc/twc.php:129
-msgid "Other Rules"
-msgstr "其他规则"
-
-#: twc/twc.php:131
-msgid ""
-"<li>Runs only count from the moment the timer has started.</li><li>Players "
-"can start as many runs as they want during the match. When the timer has "
-"finished on stream, no new runs can be started anymore.</li><li>A clear is "
-"always better than a gameover, no matter the score difference.</li><li>The "
-"players have to stream their gameplay. Just stream game footage: no overlay "
-"that shapes/crops the stream.</li><li>Streamers are allowed to have elements "
-"(images, input displays, cameras, etc.) on top of their game. However, the "
-"gameplay window, as well as all information on the player's HUD, has to be "
-"visible at all times.</li><li>Finished runs need their replays saved.</"
-"li><li>Please hide the story ending when your run finishes.</li>"
-msgstr ""
-"<li>比赛指定开始时间后的推把才算有效。</li><li>选手在比赛期间无限制推把，推把"
-"时间到了之后的推把无效。</li><li>通关总是优于疮痍，不论分数。</li><li>比赛过"
-"程中，选手们必须全程直播游戏画面。选手直播时请让游戏画面尽可能铺满直播画面，"
-"但请不要改变长宽比。</li><li>同时请选手们把游戏画面放在正中，减轻导播的负担。"
-"游戏画面上可显示额外的图，按键，摄像头等，但不能遮挡任何信息（标题图以外）。"
-"</li><li>通关后要求选手们存rep，赛后提交最佳rep。</li><li>！！！特别注"
-"意！！！通关后选手们在直播画面不能显示ED画面（结局对话），可使用自选图遮挡。"
-"请尽量遵守官方近期更新的东方使用规则。</li>"
-
-#: wr/wr.php:5
+#: games/wr/wr.php:5
 msgid ""
 "An accurate list of Touhou world records, updated every so often. Note that "
 "the player ranking at the bottom does not take into account how strong "
@@ -1579,355 +579,698 @@ msgstr ""
 "的玩家排行榜只算玩家们得到的记录有多少，并不算记录的强度。目前数据并不包括摄"
 "影游戏。"
 
-#: wr/wr.php:10
+#: games/wr/wr.php:10
 msgid ""
 "Click a score to download the corresponding replay, if there is one "
 "available. "
 msgstr "点击任何分数即可下载对应的rep。"
 
-#: wr/wr.php:14
+#: games/wr/wr.php:14
 msgid ""
 "The replays provided are <strong>not</strong> meant to be reuploaded to any "
 "replay uploading services."
 msgstr "请勿将rep上传到别的存rep网站。"
 
-#: wr/wr.php:22 wr/wr.php:23 wr/wr.php:31 wr/wr.php:32 wr/wr.php:56
-#: wr/wr.php:109
+#: games/wr/wr.php:17
+msgid ""
+"If you toggle Unverified Scores, this will show scores that are higher than "
+"the World Record, but lack replay or video proof."
+msgstr ""
+
+#: games/wr/wr.php:25 games/wr/wr.php:26 games/wr/wr.php:34 games/wr/wr.php:35
+#: games/wr/wr.php:59 games/wr/wr.php:99
 msgid "Overall Records"
 msgstr "整体世界纪录"
 
-#: wr/wr.php:24 wr/wr.php:33 wr/wr.php:144
+#: games/wr/wr.php:27 games/wr/wr.php:36 games/wr/wr.php:118
 msgid "World Records"
 msgstr "世界纪录"
 
-#: wr/wr.php:25 wr/wr.php:26 wr/wr.php:40 wr/wr.php:42 wr/wr.php:316
-#: wr/wr.php:344
+#: games/wr/wr.php:28 games/wr/wr.php:29 games/wr/wr.php:43 games/wr/wr.php:45
+#: games/wr/wr.php:294 games/wr/wr.php:322
 msgid "Recent Records"
 msgstr "最近世界纪录"
 
-#: wr/wr.php:38 wr/wr.php:237
+#: games/wr/wr.php:41 games/wr/wr.php:214
 msgid "Western Records"
 msgstr "西方纪录"
 
-#: wr/wr.php:52
+#: games/wr/wr.php:55
 msgid "Dates"
 msgstr "日期"
 
-#: wr/wr.php:61 wr/wr.php:307 wr/wr.php:320
+#: games/wr/wr.php:64 games/wr/wr.php:285 games/wr/wr.php:298
 msgid "Score"
 msgstr "分数"
 
-#: wr/wr.php:63
+#: games/wr/wr.php:66
 msgid "Difficulty"
 msgstr "难度"
 
-#: wr/wr.php:65 wr/wr.php:309 wr/wr.php:323
+#: games/wr/wr.php:68 games/wr/wr.php:287 games/wr/wr.php:301
 msgid "Date"
 msgstr "日期"
 
-#: wr/wr.php:240
+#: games/wr/wr.php:217
 msgid "World"
 msgstr "世界"
 
-#: wr/wr.php:241
+#: games/wr/wr.php:218
 msgid "West"
 msgstr "西方"
 
-#: wr/wr.php:241
+#: games/wr/wr.php:218
 msgid "Percentage"
 msgstr "百分"
 
-#: wr/wr.php:270
+#: games/wr/wr.php:247
 msgid "Click a game cover to show its list of world records."
 msgstr "单击游戏处查看世界纪录列表。"
 
-#: wr/wr.php:291
+#: games/wr/wr.php:268
 msgid "Choose a player name from the menu below to show their WRs."
 msgstr "在以下的菜单选择玩家的名字则可查看其WR。"
 
-#: wr/wr.php:368
+#: games/wr/wr.php:346
 msgid "No. of WRs"
 msgstr "WR数量"
 
-#: wr/wr.php:369
+#: games/wr/wr.php:347
 msgid "Different games"
 msgstr "游戏"
 
-msgid "Max Points"
-msgstr "游戏"
-
-msgid "Touhou World Records"
-msgstr "东方世界纪录"
-
-msgid "Touhou Lunatic No Miss No Bombs"
-msgstr "东方LNN"
-
-msgid "Touhou 1 - The Highly Responsive to Prayers"
-msgstr "东方灵异传　～ The Highly Responsive to Prayers"
-
-msgid "Touhou 2 - The Story of Eastern Wonderland"
-msgstr "东方封魔录　～ the Story of Eastern Wonderland"
-
-msgid "Touhou 3 - Phantasmagoria of Dim.Dream"
-msgstr "东方梦时空　～ Phantasmagoria of Dim.Dream"
-
-msgid "Touhou 4 - Lotus Land Story"
-msgstr "东方幻想乡　～ Lotus Land Story"
-
-msgid "Touhou 5 - Mystic Square"
-msgstr "东方怪绮谈　～ Mystic Square"
-
-msgid "Touhou 6 - The Embodiment of Scarlet Devil"
-msgstr "东方红魔乡　～ the Embodiment of Scarlet Devil"
-
-msgid "Touhou 7 - Perfect Cherry Blossom"
-msgstr "东方妖妖梦　～ Perfect Cherry Blossom"
-
-msgid "Touhou 8 - Imperishable Night"
-msgstr "东方永夜抄　～ Imperishable Night"
-
-msgid "Touhou 9 - Phantasmagoria of Flower View"
-msgstr "东方花映塚　～ Phantasmagoria of Flower View"
-
-msgid "Touhou 9.5 - Shoot the Bullet"
-msgstr "东方文花帖　～ Shoot the Bullet"
-
-msgid "Touhou 10 - Mountain of Faith"
-msgstr "东方风神录　～ Mountain of Faith"
-
-msgid "Touhou 11 - Subterranean Animism"
-msgstr "东方地灵殿　～ Subterranean Animism"
-
-msgid "Touhou 12 - Undefined Fantastic Object"
-msgstr "东方星莲船　～ Undefined Fantastic Object"
-
-msgid "Touhou 12.5 - Double Spoiler"
-msgstr "对抗新闻　～ 东方文花帖"
-
-msgid "Touhou 12.8 - Great Fairy Wars"
-msgstr "妖精大战争　～ 东方三月精"
-
-msgid "Touhou 13 - Ten Desires"
-msgstr "东方神灵庙　～ Ten Desires"
-
-msgid "Touhou 14 - Double Dealing Character"
-msgstr "东方辉针城　～ Double Dealing Character"
-
-msgid "Touhou 15 - Legacy of Lunatic Kingdom"
-msgstr "东方绀珠传　～ Legacy of Lunatic Kingdom"
-
-msgid "Touhou 16 - Hidden Star in Four Seasons"
-msgstr "东方天空璋　～ Hidden Star in Four Seasons"
-
-msgid "Touhou 17 - Wily Beast and Weakest Creature"
-msgstr "东方鬼形獣　～ Wily Beast and Weakest Creature"
-
-msgid "Touhou 18 - Unconnected Marketeers"
-msgstr "东方虹龙洞　～ Unconnected Marketeers"
-
-msgid "StB"
-msgstr "文"
-
-msgid "UM"
-msgstr "虹"
-
-msgid "Makai"
-msgstr "魔界"
-
-msgid "Jigoku"
-msgstr "地狱"
-
+#: shared/translations.php:2
 msgid "ReimuA"
 msgstr "灵梦A"
 
+#: shared/translations.php:3
 msgid "ReimuB"
 msgstr "灵梦B"
 
-msgid "ReimuC"
-msgstr "灵梦C"
-
-msgid "Reimu"
-msgstr "灵梦"
-
-msgid "Mima"
-msgstr "魅魔"
-
-msgid "Marisa"
-msgstr "魔理沙"
-
-msgid "Ellen"
-msgstr "爱莲"
-
-msgid "Kotohime"
-msgstr "小兔姬"
-
-msgid "Kana"
-msgstr "卡娜"
-
-msgid "Rikako"
-msgstr "理香子"
-
-msgid "Chiyuri"
-msgstr "千百合"
-
-msgid "Yumemi"
-msgstr "梦美"
-
-msgid "Yuuka"
-msgstr "幽香"
-
+#: shared/translations.php:4
 msgid "MarisaA"
 msgstr "魔理沙A"
 
+#: shared/translations.php:5
 msgid "MarisaB"
 msgstr "魔理沙B"
 
+#: shared/translations.php:6
 msgid "SakuyaA"
 msgstr "咲夜A"
 
+#: shared/translations.php:7
 msgid "SakuyaB"
 msgstr "咲夜B"
 
-msgid "BorderTeam"
+#: shared/translations.php:8
+msgid "ReimuYukari"
 msgstr "结界组"
 
-msgid "MagicTeam"
+#: shared/translations.php:9
+msgid "MarisaAlice"
 msgstr "咏唱组"
 
-msgid "ScarletTeam"
+#: shared/translations.php:10
+msgid "SakuyaRemilia"
 msgstr "红魔组"
 
-msgid "GhostTeam"
+#: shared/translations.php:11
+msgid "YoumuYuyuko"
 msgstr "幽冥组"
 
-msgid "Yukari"
-msgstr "紫"
+#: shared/translations.php:12
+msgid "Reimu"
+msgstr "灵梦"
 
-msgid "Alice"
-msgstr "爱丽丝"
+#: shared/translations.php:13
+msgid "Marisa"
+msgstr "魔理沙"
 
+#: shared/translations.php:14
 msgid "Sakuya"
 msgstr "咲夜"
 
-msgid "Remilia"
-msgstr "蕾米莉亚"
-
+#: shared/translations.php:15 shared/translations.php:25
 msgid "Youmu"
 msgstr "妖梦"
 
+#: shared/translations.php:16
+msgid "Yukari"
+msgstr "紫"
+
+#: shared/translations.php:17
+msgid "Alice"
+msgstr "爱丽丝"
+
+#: shared/translations.php:18
+msgid "Remilia"
+msgstr "蕾米莉亚"
+
+#: shared/translations.php:19
 msgid "Yuyuko"
 msgstr "幽幽子"
 
-msgid "Cirno"
-msgstr "琪露诺"
+#: shared/translations.php:20
+msgid "ReimuC"
+msgstr "灵梦C"
 
-msgid "Lyrica"
-msgstr "莉莉卡"
-
-msgid "Mystia"
-msgstr "米丝蒂亚"
-
-msgid "Tewi"
-msgstr "帝"
-
-msgid "Aya"
-msgstr "文"
-
-msgid "Medicine"
-msgstr "梅蒂薪"
-
-msgid "Komachi"
-msgstr "小町"
-
-msgid "Eiki"
-msgstr "映姬"
-
-msgid "Hatate"
-msgstr "羽立"
-
+#: shared/translations.php:21
 msgid "MarisaC"
 msgstr "魔理沙C"
 
+#: shared/translations.php:22
 msgid "SanaeA"
 msgstr "早苗A"
 
+#: shared/translations.php:23
 msgid "SanaeB"
 msgstr "早苗B"
 
+#: shared/translations.php:24
 msgid "Sanae"
 msgstr "早苗"
 
+#: shared/translations.php:26
+msgid "Reisen"
+msgstr "铃仙"
+
+#: shared/translations.php:27
 msgid "ReimuSpring"
 msgstr "灵梦春"
 
+#: shared/translations.php:28
 msgid "CirnoSpring"
 msgstr "琪露诺春"
 
+#: shared/translations.php:29
 msgid "AyaSpring"
 msgstr "文春"
 
+#: shared/translations.php:30
 msgid "MarisaSpring"
 msgstr "魔理沙春"
 
+#: shared/translations.php:31
 msgid "ReimuSummer"
 msgstr "灵梦夏"
 
+#: shared/translations.php:32
 msgid "CirnoSummer"
 msgstr "琪露诺夏"
 
+#: shared/translations.php:33
 msgid "AyaSummer"
 msgstr "文夏"
 
+#: shared/translations.php:34
 msgid "MarisaSummer"
 msgstr "魔理沙夏"
 
+#: shared/translations.php:35
 msgid "ReimuAutumn"
 msgstr "灵梦秋"
 
+#: shared/translations.php:36
 msgid "CirnoAutumn"
 msgstr "琪露诺秋"
 
+#: shared/translations.php:37
 msgid "AyaAutumn"
 msgstr "文秋"
 
+#: shared/translations.php:38
 msgid "MarisaAutumn"
 msgstr "魔理沙秋"
 
+#: shared/translations.php:39
 msgid "ReimuWinter"
 msgstr "灵梦冬"
 
+#: shared/translations.php:40
 msgid "CirnoWinter"
 msgstr "琪露诺冬"
 
+#: shared/translations.php:41
 msgid "AyaWinter"
 msgstr "文冬"
 
+#: shared/translations.php:42
 msgid "MarisaWinter"
 msgstr "魔理沙冬"
 
+#: shared/translations.php:43
 msgid "ReimuWolf"
 msgstr "灵梦狼"
 
+#: shared/translations.php:44
 msgid "ReimuOtter"
 msgstr "灵梦獭"
 
+#: shared/translations.php:45
 msgid "ReimuEagle"
 msgstr "灵梦鹰"
 
+#: shared/translations.php:46
 msgid "MarisaWolf"
 msgstr "魔理沙狼"
 
+#: shared/translations.php:47
 msgid "MarisaOtter"
 msgstr "魔理沙獭"
 
+#: shared/translations.php:48
 msgid "MarisaEagle"
 msgstr "魔理沙鹰"
 
+#: shared/translations.php:49
 msgid "YoumuWolf"
 msgstr "妖梦狼"
 
+#: shared/translations.php:50
 msgid "YoumuOtter"
 msgstr "妖梦獭"
 
+#: shared/translations.php:51
 msgid "YoumuEagle"
 msgstr "妖梦鹰"
+
+#: shared/translations.php:52
+msgid "Seasons"
+msgstr "季節"
+
+#, fuzzy
+#~| msgid "Touhou 7 - Perfect Cherry Blossom"
+#~ msgid "Paint Cherry Blossom"
+#~ msgstr "东方妖妖梦　～ Perfect Cherry Blossom"
+
+#, fuzzy
+#~| msgid "Touhou 16 - Hidden Star in Four Seasons"
+#~ msgid "Painting Stars in Four Seasons"
+#~ msgstr "东方天空璋　～ Hidden Star in Four Seasons"
+
+#, fuzzy
+#~| msgid "Touhou 12 - Undefined Fantastic Object"
+#~ msgid "Undefined Fantastic Emoji"
+#~ msgstr "东方星莲船　～ Undefined Fantastic Object"
+
+#, fuzzy
+#~| msgid "Touhou 15 - Legacy of Lunatic Kingdom"
+#~ msgid "Legacy of Lunatic Christmas"
+#~ msgstr "东方绀珠传　～ Legacy of Lunatic Kingdom"
+
+#~ msgid "Youkai mode (Dark)"
+#~ msgstr "Youkai mode (Dark)"
+
+#~ msgid "Human mode (Light)"
+#~ msgstr "Human mode (Light)"
+
+#~ msgid "Flag of the United Kingdom"
+#~ msgstr "英国旗"
+
+#~ msgid "Flag of the United States"
+#~ msgstr "美国旗"
+
+#~ msgid "Flag of Japan"
+#~ msgstr "日本旗"
+
+#~ msgid "Flag of the P.R.C."
+#~ msgstr "中国旗"
+
+#~ msgid "Flag of Russia"
+#~ msgstr "俄羅斯國旗"
+
+#~ msgid ""
+#~ "<strong>Touhou World Cup (TWC)</strong> is an annual international Touhou "
+#~ "shooting game competition, first held in 2020, organised by the Chinese "
+#~ "gameplay community. This time around, in 2021, it is organised by the "
+#~ "Western gameplay community."
+#~ msgstr ""
+#~ "<strong>Touhou World Cup (TWC)</strong>东方世界杯是一场每年一度的东方STG游"
+#~ "戏比赛，世界杯的第一场在2020由中国玩家群体主办, 而今年2021，TWC由西方玩家"
+#~ "群体所筹办。"
+
+#~ msgid ""
+#~ "Three teams, a Western community team, a Chinese team, and a Japanese "
+#~ "team, duke it out on Lunatic and Extra mode, playing on live streams and "
+#~ "playing both high score and survival."
+#~ msgstr ""
+#~ "东方世界杯有三支参赛队伍，西方队，中国队和日本队，三支队伍将在东方弹幕作的"
+#~ "Lunatic与Extra模式中一决雌雄，在避弹和打分两个环节上激烈对抗。"
+
+#~ msgid ""
+#~ "See below for official communication channels, live streams with "
+#~ "commentary, the schedule, and the rules the players play by."
+#~ msgstr ""
+#~ "关于我们的官方社交媒体，解说流，时间表以及玩家需要遵守的规则，请往下读。"
+
+#~ msgid "Official TWC Twitter"
+#~ msgstr "TWC的官方推特"
+
+#~ msgid "Official TWC YouTube Channel"
+#~ msgstr "TWC的官方YouTube频道"
+
+#~ msgid "English commentary stream (Twitch)"
+#~ msgstr "英文流解说（Twitch）"
+
+#~ msgid "Chinese commentary stream 1 (Bilibili)"
+#~ msgstr "一号中文流解说（Bilibili）"
+
+#~ msgid "Chinese commentary stream 2 (Bilibili)"
+#~ msgstr "二号中文流解说（Bilibili）"
+
+#~ msgid "Japanese commentary stream (YouTube)"
+#~ msgstr "日文流解说（YouTube）"
+
+#~ msgid "Russian commentary stream (Twitch)"
+#~ msgstr "俄文流解说（Twitch）"
+
+#~ msgid "Schedule"
+#~ msgstr "时间表"
+
+#~ msgid "Your time zone was detected as <span id=\"timezone\"></span>."
+#~ msgstr "我们检测到您的时区是 <span id=\"timezone\"></span>。"
+
+#~ msgid ""
+#~ "Daylight Saving Time (also known as Summer Time or DST) is taken into "
+#~ "account automatically."
+#~ msgstr ""
+#~ "Daylight Saving Time (also known as Summer Time or DST) is taken into "
+#~ "account automatically."
+
+#~ msgid "Date/Time"
+#~ msgstr "日期和时间"
+
+#~ msgid "Reset Time<br>(minutes)"
+#~ msgstr "Reset Time<br>（分钟）"
+
+#~ msgid "Format"
+#~ msgstr "比赛形式"
+
+#~ msgid ""
+#~ "For every match, each team can earn points. Ranking is based on whoever "
+#~ "has the most points:"
+#~ msgstr ""
+#~ "每场比赛以选手比赛中获得的最高积分进行排名，同时选手所在队伍获得相应的总"
+#~ "分。"
+
+#~ msgid "1st place - 2 pts"
+#~ msgstr "冠军：2总分(避免负分歧义)"
+
+#~ msgid "2nd place - 1 pt"
+#~ msgstr "亚军：1总分"
+
+#~ msgid "3rd place - 0 pts"
+#~ msgstr "季军：0总分"
+
+#~ msgid ""
+#~ "In 2-team matches, the first place gets 2 points, and 2nd place gets 1 "
+#~ "point."
+#~ msgstr "即使是二人战，双方也按照以上描述得分，不参与队伍算季军。"
+
+#~ msgid ""
+#~ "If multiple players have the exact same amount of ISCORE, their points "
+#~ "will be split equally. This also means that, if multiple players have the "
+#~ "highest ISCORE, the match ends in a tie."
+#~ msgstr ""
+#~ "如果一个以上的玩家获得了同样的甜品站分数，他们将会得到同样的积分，这同时意"
+#~ "味着如果多人获得了同样的最高分，那么本场比赛将会为平局。"
+
+#~ msgid ""
+#~ "At the end of the World Cup, the teams will be ranked based on has the "
+#~ "most points."
+#~ msgstr "在世界杯结束的时候，队伍将会按照积分排名。"
+
+#~ msgid "Calculating Points"
+#~ msgstr "计算积分"
+
+#~ msgid ""
+#~ "The points are based on the <a href=\"https://www.isndes.com/jf\">ISCORE "
+#~ "calculator</a> (see the \"About ISCORE\" link in the top right after "
+#~ "changing to English via the language icon, fourth from the right)."
+#~ msgstr ""
+#~ "积分使用<a href=\"https://www.isndes.com/jf\">甜品站积分计</a>算器计算，计"
+#~ "算公式可上甜品站查看，大战争避弹除外（后述）。"
+
+#~ msgid "(ISCORE No Miss No Bomb Score)*0.5^(deaths)"
+#~ msgstr "（甜品站积分 NMNB分数）*0.5^（死亡数）"
+
+#~ msgid "In survival runs, bombs are counted as 2 deaths."
+#~ msgstr "全作避弹项目中，丢雷算2 miss。"
+
+#~ msgid ""
+#~ "ISCORE is a scoring metric that compensates for the differences in "
+#~ "performance between shot types and categories. The formulas used can be "
+#~ "found in the ISCORE rubric with the calculator linked above."
+#~ msgstr ""
+#~ "甜品站分数是可以将不同比赛的差异得分进行修补整合的打分矩阵，您可以点击上面"
+#~ "的甜品站计算器来查看所用的公式。"
+
+#~ msgid "Game-specific Concerns"
+#~ msgstr "额外提醒"
+
+#~ msgid "Touhou 7"
+#~ msgstr "妖妖梦"
+
+#~ msgid "A border break is considered a death in survival runs."
+#~ msgstr "灵击，无论主动还是被动，都算1 miss。"
+
+#~ msgid "Touhou 8"
+#~ msgstr "永夜抄"
+
+#~ msgid ""
+#~ "Getting hit during a Last Spell is <strong>not</strong> considered a "
+#~ "death in survival runs. However, ISCORE gives a higher base value in this "
+#~ "game to runs that capture all spells (which includes unlocking and "
+#~ "capturing <strong>every</strong> Last Spell) AND do not die/bomb (NN + "
+#~ "Full-SC)."
+#~ msgstr ""
+#~ "LSC被弹不算1 miss。积分只在LNN的情况下才考虑全卡，LNNFS会获得额外积分。"
+
+#~ msgid "Touhou 12"
+#~ msgstr "星莲船"
+
+#~ msgid ""
+#~ "Summoning a UFO is considered a death in survival runs. However, "
+#~ "collecting tokens does not affect the score in survival runs."
+#~ msgstr "开碟算1 miss。收碟碎片不影响miss数。"
+
+#~ msgid "Touhou 12.8"
+#~ msgstr "妖精大战争"
+
+#~ msgid "The survival formula for this game is (gold medals*1.5)-(deaths)."
+#~ msgstr "使用冰冻技能不算miss。避弹公式是（金牌数*1.5）-（miss数）。"
+
+#~ msgid "Touhou 13"
+#~ msgstr "神灵庙"
+
+#~ msgid ""
+#~ "A manual trance is considered 2 deaths in survival runs. ISCORE gives a "
+#~ "higher base value in this game to runs that capture all spells AND does "
+#~ "not die/bomb (NN + Full-SC)."
+#~ msgstr ""
+#~ "主动开灵界算2 miss，被动灵界不算作miss，且可以在被动灵界中开枪积分只在LNNN"
+#~ "的情况下才考虑全卡，LNNNFS会获得额外积分。"
+
+#~ msgid "Touhou 15"
+#~ msgstr "绀珠传"
+
+#~ msgid "All runs in both survival/score have to be done in Legacy Mode."
+#~ msgstr "避弹打分都必须使用传统模式。"
+
+#~ msgid "Touhou 16"
+#~ msgstr "天空璋"
+
+#~ msgid "Releasing your season gauge is considered 2 deaths in survival runs."
+#~ msgstr "季节释放算2 miss。"
+
+#~ msgid "Touhou 17"
+#~ msgstr "鬼形兽"
+
+#~ msgid ""
+#~ "Channeling a berserk roar (3 or more of the same animal tokens during "
+#~ "roar mode) is considered 2 deaths in survival runs. Breaking your roar "
+#~ "(bombing or touching a bullet during roar mode) is considered a death in "
+#~ "survival runs."
+#~ msgstr ""
+#~ "开暴走（吃了3个以上同样的动物灵）算2 miss。开正常hyper不算1 miss。灵击，无"
+#~ "论主动还是被动，都算1 miss。"
+
+#~ msgid "Use of Third Party Software &amp; Material"
+#~ msgstr "使用额外软件"
+
+#~ msgid ""
+#~ "Vsync patch is allowed. Practice patches (such as thprac) are allowed, "
+#~ "but all practice cheats have to be disabled for the runs."
+#~ msgstr ""
+#~ "VP补丁允许使用。各种练习器都允许使用，但不能影响正式推把，也不能影响replay"
+#~ "的正常播放。"
+
+#~ msgid ""
+#~ "Visual patches (e.g. hitbox patch) are prohibited. Translation patches "
+#~ "are allowed but discouraged. Audio patches/background music is allowed "
+#~ "but no copyrighted material."
+#~ msgstr ""
+#~ "所有的贴图魔改一律禁止使用，包括红魔乡判定点补丁。翻译补丁（汉化版等）允许"
+#~ "使用，但不推荐。比赛时允许使用背景音乐魔改，或播自己的音乐，但必须保证没有"
+#~ "任何版权问题。"
+
+#~ msgid "Other Rules"
+#~ msgstr "其他规则"
+
+#~ msgid ""
+#~ "<li>Runs only count from the moment the timer has started.</"
+#~ "li><li>Players can start as many runs as they want during the match. When "
+#~ "the timer has finished on stream, no new runs can be started anymore.</"
+#~ "li><li>A clear is always better than a gameover, no matter the score "
+#~ "difference.</li><li>The players have to stream their gameplay. Just "
+#~ "stream game footage: no overlay that shapes/crops the stream.</"
+#~ "li><li>Streamers are allowed to have elements (images, input displays, "
+#~ "cameras, etc.) on top of their game. However, the gameplay window, as "
+#~ "well as all information on the player's HUD, has to be visible at all "
+#~ "times.</li><li>Finished runs need their replays saved.</li><li>Please "
+#~ "hide the story ending when your run finishes.</li>"
+#~ msgstr ""
+#~ "<li>比赛指定开始时间后的推把才算有效。</li><li>选手在比赛期间无限制推把，"
+#~ "推把时间到了之后的推把无效。</li><li>通关总是优于疮痍，不论分数。</li><li>"
+#~ "比赛过程中，选手们必须全程直播游戏画面。选手直播时请让游戏画面尽可能铺满直"
+#~ "播画面，但请不要改变长宽比。</li><li>同时请选手们把游戏画面放在正中，减轻"
+#~ "导播的负担。游戏画面上可显示额外的图，按键，摄像头等，但不能遮挡任何信息"
+#~ "（标题图以外）。</li><li>通关后要求选手们存rep，赛后提交最佳rep。</"
+#~ "li><li>！！！特别注意！！！通关后选手们在直播画面不能显示ED画面（结局对"
+#~ "话），可使用自选图遮挡。请尽量遵守官方近期更新的东方使用规则。</li>"
+
+#~ msgid "Max Points"
+#~ msgstr "游戏"
+
+#~ msgid "Touhou World Records"
+#~ msgstr "东方世界纪录"
+
+#~ msgid "Touhou Lunatic No Miss No Bombs"
+#~ msgstr "东方LNN"
+
+#~ msgid "Touhou 1 - The Highly Responsive to Prayers"
+#~ msgstr "东方灵异传　～ The Highly Responsive to Prayers"
+
+#~ msgid "Touhou 2 - The Story of Eastern Wonderland"
+#~ msgstr "东方封魔录　～ the Story of Eastern Wonderland"
+
+#~ msgid "Touhou 3 - Phantasmagoria of Dim.Dream"
+#~ msgstr "东方梦时空　～ Phantasmagoria of Dim.Dream"
+
+#~ msgid "Touhou 4 - Lotus Land Story"
+#~ msgstr "东方幻想乡　～ Lotus Land Story"
+
+#~ msgid "Touhou 5 - Mystic Square"
+#~ msgstr "东方怪绮谈　～ Mystic Square"
+
+#~ msgid "Touhou 6 - The Embodiment of Scarlet Devil"
+#~ msgstr "东方红魔乡　～ the Embodiment of Scarlet Devil"
+
+#~ msgid "Touhou 8 - Imperishable Night"
+#~ msgstr "东方永夜抄　～ Imperishable Night"
+
+#~ msgid "Touhou 9 - Phantasmagoria of Flower View"
+#~ msgstr "东方花映塚　～ Phantasmagoria of Flower View"
+
+#~ msgid "Touhou 9.5 - Shoot the Bullet"
+#~ msgstr "东方文花帖　～ Shoot the Bullet"
+
+#~ msgid "Touhou 10 - Mountain of Faith"
+#~ msgstr "东方风神录　～ Mountain of Faith"
+
+#~ msgid "Touhou 11 - Subterranean Animism"
+#~ msgstr "东方地灵殿　～ Subterranean Animism"
+
+#~ msgid "Touhou 12.5 - Double Spoiler"
+#~ msgstr "对抗新闻　～ 东方文花帖"
+
+#~ msgid "Touhou 12.8 - Great Fairy Wars"
+#~ msgstr "妖精大战争　～ 东方三月精"
+
+#~ msgid "Touhou 13 - Ten Desires"
+#~ msgstr "东方神灵庙　～ Ten Desires"
+
+#~ msgid "Touhou 14 - Double Dealing Character"
+#~ msgstr "东方辉针城　～ Double Dealing Character"
+
+#~ msgid "Touhou 17 - Wily Beast and Weakest Creature"
+#~ msgstr "东方鬼形獣　～ Wily Beast and Weakest Creature"
+
+#~ msgid "Touhou 18 - Unconnected Marketeers"
+#~ msgstr "东方虹龙洞　～ Unconnected Marketeers"
+
+#~ msgid "StB"
+#~ msgstr "文"
+
+#~ msgid "UM"
+#~ msgstr "虹"
+
+#~ msgid "Makai"
+#~ msgstr "魔界"
+
+#~ msgid "Jigoku"
+#~ msgstr "地狱"
+
+#~ msgid "Mima"
+#~ msgstr "魅魔"
+
+#~ msgid "Ellen"
+#~ msgstr "爱莲"
+
+#~ msgid "Kotohime"
+#~ msgstr "小兔姬"
+
+#~ msgid "Kana"
+#~ msgstr "卡娜"
+
+#~ msgid "Rikako"
+#~ msgstr "理香子"
+
+#~ msgid "Chiyuri"
+#~ msgstr "千百合"
+
+#~ msgid "Yumemi"
+#~ msgstr "梦美"
+
+#~ msgid "Yuuka"
+#~ msgstr "幽香"
+
+#~ msgid "BorderTeam"
+#~ msgstr "结界组"
+
+#~ msgid "MagicTeam"
+#~ msgstr "咏唱组"
+
+#~ msgid "ScarletTeam"
+#~ msgstr "红魔组"
+
+#~ msgid "GhostTeam"
+#~ msgstr "幽冥组"
+
+#~ msgid "Cirno"
+#~ msgstr "琪露诺"
+
+#~ msgid "Lyrica"
+#~ msgstr "莉莉卡"
+
+#~ msgid "Mystia"
+#~ msgstr "米丝蒂亚"
+
+#~ msgid "Tewi"
+#~ msgstr "帝"
+
+#~ msgid "Aya"
+#~ msgstr "文"
+
+#~ msgid "Medicine"
+#~ msgstr "梅蒂薪"
+
+#~ msgid "Komachi"
+#~ msgstr "小町"
+
+#~ msgid "Eiki"
+#~ msgstr "映姬"
+
+#~ msgid "Hatate"
+#~ msgstr "羽立"
