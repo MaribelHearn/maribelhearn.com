@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2022-01-16 17:59+0100\n"
-"PO-Revision-Date: 2022-03-06 23:56+0100\n"
+"PO-Revision-Date: 2022-05-27 18:03+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -1391,7 +1391,7 @@ msgstr "Reset-Zeit<br>(Minuten)"
 
 #: twc/twc.php:54
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
 #: twc/twc.php:55
 msgid "For every match, each team can earn points. Ranking is based on whoever has the most points:"
