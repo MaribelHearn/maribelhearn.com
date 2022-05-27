@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-27 20:21+0200\n"
-"PO-Revision-Date: 2022-05-27 20:21+0200\n"
+"POT-Creation-Date: 2022-05-27 21:50+0200\n"
+"PO-Revision-Date: 2022-05-27 21:59+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -17,6 +17,9 @@ msgstr ""
 "X-Poedit-SearchPath-2: games/tools/tools.php\n"
 "X-Poedit-SearchPath-3: games/wr/wr.php\n"
 "X-Poedit-SearchPath-4: shared/translations.php\n"
+"X-Poedit-SearchPath-5: games/lnn/lnn.js\n"
+"X-Poedit-SearchPath-6: games/wr/wr.js\n"
+"X-Poedit-SearchPath-7: shared/shared.php\n"
 
 #: games/drc/drc.php:5
 msgid ""
@@ -160,52 +163,56 @@ msgstr ""
 msgid "WBaWC"
 msgstr ""
 
-#: games/drc/drc.php:57
-msgid "FinalA"
+#: games/drc/drc.php:48
+msgid "UM"
 msgstr ""
 
 #: games/drc/drc.php:58
+msgid "FinalA"
+msgstr ""
+
+#: games/drc/drc.php:59
 msgid "FinalB"
 msgstr ""
 
-#: games/drc/drc.php:61 games/drc/drc.php:120
+#: games/drc/drc.php:62 games/drc/drc.php:121
 msgid "Scoring"
 msgstr ""
 
-#: games/drc/drc.php:62 games/drc/drc.php:301
+#: games/drc/drc.php:63 games/drc/drc.php:302
 msgid "Survival"
 msgstr ""
 
-#: games/drc/drc.php:68
+#: games/drc/drc.php:69
 msgid "Spring"
 msgstr "Frühling"
 
-#: games/drc/drc.php:69
+#: games/drc/drc.php:70
 msgid "Summer"
 msgstr "Sommer"
 
-#: games/drc/drc.php:70
+#: games/drc/drc.php:71
 msgid "Autumn"
 msgstr "Herbst"
 
-#: games/drc/drc.php:71
+#: games/drc/drc.php:72
 msgid "Winter"
 msgstr ""
 
-#: games/drc/drc.php:75
+#: games/drc/drc.php:76
 msgid "Calculate"
 msgstr "Berechnen"
 
-#: games/drc/drc.php:77
+#: games/drc/drc.php:78
 msgid "Rules"
 msgstr "Regeln"
 
-#: games/drc/drc.php:79
+#: games/drc/drc.php:80
 msgid "No cheating by using external programs or modifying the game FPS."
 msgstr ""
 "Kein Cheaten durch externe Programme oder Modifizierung der FPS des Spiels."
 
-#: games/drc/drc.php:80
+#: games/drc/drc.php:81
 msgid ""
 "Replays are required for Windows game submissions, while for PC-98 a video "
 "is accepted."
@@ -213,16 +220,16 @@ msgstr ""
 "Replays sind für Windows-Spiele erforderlich, während für PC-98 ein Video "
 "akzeptiert wird."
 
-#: games/drc/drc.php:81
+#: games/drc/drc.php:82
 msgid "All runs must be played using at most default lives and bombs."
 msgstr ""
 "Alle Runs müssen mit maximal Standardleben und -bomben gespielt werden."
 
-#: games/drc/drc.php:83
+#: games/drc/drc.php:84
 msgid "Rubrics"
 msgstr "Rubriken"
 
-#: games/drc/drc.php:85
+#: games/drc/drc.php:86
 msgid ""
 "The rubrics are the formulas and fixed values used to calculate the number "
 "of DRC points for a run. If you are curious about how your points are being "
@@ -233,23 +240,23 @@ msgstr ""
 "deine Punkte ermittelt werden, klick auf die Schaltfläche unten, um mehr "
 "Infos zu sehen."
 
-#: games/drc/drc.php:88
+#: games/drc/drc.php:89
 msgid "Show Scoring Rubrics"
 msgstr "Scoring-Rubriken anzeigen"
 
-#: games/drc/drc.php:89
+#: games/drc/drc.php:90
 msgid "Show Survival Rubrics"
 msgstr "Survival-Rubriken anzeigen"
 
-#: games/drc/drc.php:91
+#: games/drc/drc.php:92
 msgid "Scoring Notes"
 msgstr "Scoring-Anmerkungen"
 
-#: games/drc/drc.php:94
+#: games/drc/drc.php:95
 msgid "The World Records are taken from <a href=\"wr\">the WR page</a>."
 msgstr "Die Weltrekorde werden von <a href=\"wr\">der WR-Seite</a> übernommen."
 
-#: games/drc/drc.php:97
+#: games/drc/drc.php:98
 msgid ""
 "If you achieve a new World Record, your points are equal to the maximum "
 "number of points; otherwise, the formula applies."
@@ -257,7 +264,7 @@ msgstr ""
 "Wenn du einen neuen Weltrekord aufstellst, entsprechen deine Punkte der "
 "maximalen Punktzahl; Ansonsten gilt die Formel."
 
-#: games/drc/drc.php:101
+#: games/drc/drc.php:102
 msgid ""
 "Some categories use a fictional WR. <a href=\"#fictionalWRtitle\">Click "
 "here</a> for the list of them."
@@ -265,7 +272,7 @@ msgstr ""
 "Einige Kategorien verwenden einen fiktiven WR. <a href=\"#fictionalWRtitle"
 "\">Klick hier</a> für die Liste dieser Kategorien."
 
-#: games/drc/drc.php:105
+#: games/drc/drc.php:106
 msgid ""
 "Some categories always use the WR of a specific shottype. <a href="
 "\"#WRdefinitionTitle\">Click here</a> for the list of them."
@@ -273,7 +280,7 @@ msgstr ""
 "Einige Kategorien verwenden immer den WR eines bestimmten Shot Types. <a "
 "href=\"#WRdefinitionTitle\">Klick hier</a> für die Liste dieser Kategorien."
 
-#: games/drc/drc.php:109
+#: games/drc/drc.php:110
 msgid ""
 "MoF uses a separate system. <a href=\"#mountainOfFaith\">Click here</a> for "
 "said system."
@@ -281,7 +288,7 @@ msgstr ""
 "MoF verwendet ein eigenes System. <a href=\"#mountainOfFaith\">Klick hier</"
 "a> für dieses System."
 
-#: games/drc/drc.php:113
+#: games/drc/drc.php:114
 msgid ""
 "DS uses a separate system. <a href=\"#doubleSpoiler\">Click here</a> for "
 "said system."
@@ -289,50 +296,50 @@ msgstr ""
 "DS verwendet ein eigenes System. <a href=\"#doubleSpoiler\">Klick hier</a> "
 "für dieses System."
 
-#: games/drc/drc.php:121
+#: games/drc/drc.php:122
 msgid "||Max * (Score/WR)^Exp||"
 msgstr ""
 
-#: games/drc/drc.php:128 games/drc/drc.php:312 games/drc/drc.php:346
+#: games/drc/drc.php:129 games/drc/drc.php:313 games/drc/drc.php:347
 #: games/lnn/lnn.php:127 games/lnn/lnn.php:141 games/wr/wr.php:63
 msgid "Game"
 msgstr "Spiel"
 
-#: games/drc/drc.php:129 games/drc/drc.php:313 games/drc/drc.php:347
+#: games/drc/drc.php:130 games/drc/drc.php:314 games/drc/drc.php:348
 msgid "Max points"
 msgstr "Max. Punkte"
 
-#: games/drc/drc.php:130
+#: games/drc/drc.php:131
 msgid "Exponent"
 msgstr ""
 
-#: games/drc/drc.php:141
+#: games/drc/drc.php:142
 msgid "Fictional WRs"
 msgstr "Fiktive WRs"
 
-#: games/drc/drc.php:142
+#: games/drc/drc.php:143
 msgid ""
 "The categories in the table below use a fictional WR instead of the real one."
 msgstr ""
 "Die Kategorien in der nachstehenden Tabelle verwenden einen fiktiven WR "
 "anstelle eines realen WRs."
 
-#: games/drc/drc.php:163
+#: games/drc/drc.php:164
 msgid "'WR' definition"
 msgstr "\"WR\" Definition"
 
-#: games/drc/drc.php:165
+#: games/drc/drc.php:166
 msgid ""
 "The categories in the table below always use the WR of a specific shottype."
 msgstr ""
 "Die Kategorien in der nachstehenden Tabelle verwenden immer den WR eines "
 "bestimmten Shot Types."
 
-#: games/drc/drc.php:182
+#: games/drc/drc.php:183
 msgid "MoF Scoring"
 msgstr ""
 
-#: games/drc/drc.php:184
+#: games/drc/drc.php:185
 msgid ""
 "For each difficulty and shottype there are six thresholds, at which you will "
 "have set numbers of points respectively. Then, increments are done, "
@@ -344,36 +351,36 @@ msgstr ""
 "deine Punktzahl über dem Schwellenwert liegt, erhältst du zusätzlich Punkte. "
 "Das Maximum liegt bei 375 Punkten auf Easy und bei 500 Punkten auf Lunatic."
 
-#: games/drc/drc.php:195
+#: games/drc/drc.php:196
 msgid "If score &lt; 1st threshold, then: ||220*(Score/T1)^2||"
 msgstr "Wenn Score &lt; 1. Schwellenwert, dann: ||220*(Score/S1)^2||"
 
-#: games/drc/drc.php:197
+#: games/drc/drc.php:198
 msgid "If score &lt; 2b, then: ||200*(Score/2b)^2||"
 msgstr "Wenn Score &lt; 2b, dann: ||200*(Score/2b)^2||"
 
-#: games/drc/drc.php:199
+#: games/drc/drc.php:200
 msgid "If score &lt; 900m, then: ||100*(Score/900m)^2||"
 msgstr "Wenn Score &lt; 900m, dann: ||100*(Score/900m)^2||"
 
-#: games/drc/drc.php:203
+#: games/drc/drc.php:204
 msgid "Threshold"
 msgstr "Schwellenwert"
 
-#: games/drc/drc.php:204 games/drc/drc.php:237
+#: games/drc/drc.php:205 games/drc/drc.php:238
 msgid "Base points"
 msgstr "Basispunkte"
 
-#: games/drc/drc.php:205 games/drc/drc.php:238 games/drc/drc.php:240
-#: games/drc/drc.php:242
+#: games/drc/drc.php:206 games/drc/drc.php:239 games/drc/drc.php:241
+#: games/drc/drc.php:243
 msgid "Increments"
 msgstr "Inkremente"
 
-#: games/drc/drc.php:228
+#: games/drc/drc.php:229
 msgid "DS Scoring"
 msgstr ""
 
-#: games/drc/drc.php:230
+#: games/drc/drc.php:231
 msgid ""
 "For each scene there are three thresholds, at which you will have set "
 "numbers of points points respectively. Then, increments are done, dependent "
@@ -383,32 +390,32 @@ msgstr ""
 "bestimmte Punktzahl erreichst. Je nachdem, wie hoch deine Punktzahl über dem "
 "Schwellenwert liegt, erhältst du zusätzlich Punkte."
 
-#: games/drc/drc.php:237
+#: games/drc/drc.php:238
 msgid "Scene"
 msgstr "Szene"
 
-#: games/drc/drc.php:239
+#: games/drc/drc.php:240
 msgid "Threshold 1"
 msgstr "Schwellenwert 1"
 
-#: games/drc/drc.php:241
+#: games/drc/drc.php:242
 msgid "Threshold 2"
 msgstr "Schwellenwert 2"
 
-#: games/drc/drc.php:243
+#: games/drc/drc.php:244
 msgid "Threshold 3"
 msgstr "Schwellenwert 3"
 
-#: games/drc/drc.php:271 games/drc/drc.php:391 games/lnn/lnn.php:215
+#: games/drc/drc.php:272 games/drc/drc.php:392 games/lnn/lnn.php:215
 #: games/tools/tools.php:514 games/wr/wr.php:371
 msgid "Back to Top"
 msgstr "Zurück zum Anfang"
 
-#: games/drc/drc.php:274
+#: games/drc/drc.php:275
 msgid "Survival Notes"
 msgstr "Survival Anmerkungen"
 
-#: games/drc/drc.php:278
+#: games/drc/drc.php:279
 msgid ""
 "For a main game clear, a shottype multiplier is applied to your DRC points, "
 "the result of which is again rounded. <a href=\"#shottypeMultipliers\">Click "
@@ -419,7 +426,7 @@ msgstr ""
 "\"#shottypeMultipliers\">Klick hier</a> für eine Liste dieser "
 "Multiplikatoren."
 
-#: games/drc/drc.php:283
+#: games/drc/drc.php:284
 msgid ""
 "The Phantasmagorias use a separate system. <a href=\"#phantasmagoria\">Click "
 "here</a> for said system."
@@ -427,7 +434,7 @@ msgstr ""
 "Die Phantasmagorias verwenden ein anderes System. <a href=\"#phantasmagoria"
 "\">Klick hier</a> für dieses System."
 
-#: games/drc/drc.php:288
+#: games/drc/drc.php:289
 msgid ""
 "For IN, you obtain 2 (1 on Easy) additional points for each captured Last "
 "Spell, with the exception of Imperishable Shooting, which yields 5 points."
@@ -436,7 +443,7 @@ msgstr ""
 "geschafften Last Spell, mit Ausnahme von Imperishable Shooting, der 5 Punkte "
 "einbringt."
 
-#: games/drc/drc.php:294
+#: games/drc/drc.php:295
 msgid ""
 "For HSiFS, the first release adds 2 to <em>n</em>, and further releases add "
 "0.5, 0.4, 0.3, 0.2, 0.1 to <em>n</em>."
@@ -444,19 +451,19 @@ msgstr ""
 "Bei HSiFS wird beim ersten Release 2 zu <em>n</em> addiert, in den weiteren "
 "Releases wird 0,5, 0,4, 0,3, 0,2 und 0,1 zu <em>n</em> addiert."
 
-#: games/drc/drc.php:302
+#: games/drc/drc.php:303
 msgid "||Max * (Base^-n)||"
 msgstr "||Max * (Basis^-n)||"
 
-#: games/drc/drc.php:314
+#: games/drc/drc.php:315
 msgid "Base"
 msgstr "Basis"
 
-#: games/drc/drc.php:331
+#: games/drc/drc.php:332
 msgid "PoDD & PoFV Survival"
 msgstr ""
 
-#: games/drc/drc.php:333
+#: games/drc/drc.php:334
 msgid ""
 "In the below formula, MaxLives is equal to 5 for PoDD, 7 for PoFV main game "
 "and 8 for PoFV Extra. NoBombBonus is a difficulty-specific No Bomb bonus for "
@@ -468,23 +475,23 @@ msgstr ""
 "Bomb-Bonus für PoDD und ein No-Charge-Attacks-Bonus für PoFV. RoundsLost "
 "gibt an, wie viele Runden der Spieler verloren hat."
 
-#: games/drc/drc.php:339
+#: games/drc/drc.php:340
 msgid "||Max - ((Max - Min) / MaxLives * RoundsLost)|| + NoBombBonus"
 msgstr ""
 
-#: games/drc/drc.php:348
+#: games/drc/drc.php:349
 msgid "Min points"
 msgstr "Min. Punkte"
 
-#: games/drc/drc.php:349
+#: games/drc/drc.php:350
 msgid "No Bomb bonus"
 msgstr "No-Bomb-Bonus"
 
-#: games/drc/drc.php:364
+#: games/drc/drc.php:365
 msgid "Shottype Multipliers"
 msgstr "Shot Type Multiplikatoren"
 
-#: games/drc/drc.php:366
+#: games/drc/drc.php:367
 msgid ""
 "These are applied to the result of the survival formula for a main game run "
 "only; they do <em>not</em> apply for Extra, nor do they apply for HSiFS runs "
@@ -496,13 +503,59 @@ msgstr ""
 "Releases verwenden. Für alle hier nicht aufgelisteten Shot Types sind die "
 "Shot Type-Multiplikatoren gleich 1."
 
-#: games/drc/drc.php:375 games/lnn/lnn.php:128 games/wr/wr.php:67
+#: games/drc/drc.php:376 games/lnn/lnn.js:26 games/lnn/lnn.php:128
+#: games/wr/wr.js:64 games/wr/wr.php:67
 msgid "Shottype"
 msgstr "Shot Type"
 
-#: games/drc/drc.php:376
+#: games/drc/drc.php:377
 msgid "Multiplier"
 msgstr "Multiplikator"
+
+#: games/lnn/lnn.js:14 games/lnn/lnn.js:17 games/lnn/lnn.js:18
+#: games/lnn/lnn.js:20
+msgid "No. of LNNNs"
+msgstr "Anzahl LNNNs"
+
+#: games/lnn/lnn.js:15
+msgid "No. of LNNFSs"
+msgstr "Anzahl LNNFSs"
+
+#: games/lnn/lnn.js:16
+msgid "No. of LNN(N)s"
+msgstr "Anzahl LNN(N)s"
+
+#: games/lnn/lnn.js:19
+msgid "No. of LNNNNs"
+msgstr "Anzahl LNNNNs"
+
+#: games/lnn/lnn.js:21 games/lnn/lnn.php:143 games/lnn/lnn.php:190
+msgid "No. of LNNs"
+msgstr "Anzahl LNNs"
+
+#: games/lnn/lnn.js:26 games/wr/wr.js:64
+msgid "Route"
+msgstr ""
+
+#: games/lnn/lnn.js:85 games/lnn/lnn.php:61
+msgid "(Different players)"
+msgstr "(Verschiedene Spieler)"
+
+#: games/lnn/lnn.js:85 games/lnn/lnn.php:61
+msgid "Players"
+msgstr "Spieler"
+
+#: games/lnn/lnn.js:86 games/lnn/lnn.php:89 games/lnn/lnn.php:171
+msgid "Overall"
+msgstr "Gesamt"
+
+#: games/lnn/lnn.js:201
+msgid "(All)"
+msgstr "(Alle)"
+
+#: games/lnn/lnn.js:210
+msgid "Total"
+msgstr "Gesamt"
 
 #: games/lnn/lnn.php:5
 msgid ""
@@ -563,18 +616,6 @@ msgstr "Spieler-Ranking"
 msgid "Player Search"
 msgstr "Spieler-Suche"
 
-#: games/lnn/lnn.php:61
-msgid "(Different players)"
-msgstr "(Verschiedene Spieler)"
-
-#: games/lnn/lnn.php:61
-msgid "Players"
-msgstr "Spieler"
-
-#: games/lnn/lnn.php:89 games/lnn/lnn.php:171
-msgid "Overall"
-msgstr "Gesamt"
-
 #: games/lnn/lnn.php:98
 msgid "Click a game cover to show its list of LNNs."
 msgstr "Klick auf ein Spielcover, um die Liste der LNNs anzuzeigen."
@@ -594,10 +635,6 @@ msgstr "Spieler"
 #: games/wr/wr.php:300
 msgid "Replay"
 msgstr ""
-
-#: games/lnn/lnn.php:143 games/lnn/lnn.php:190
-msgid "No. of LNNs"
-msgstr "Anzahl LNNs"
 
 #: games/lnn/lnn.php:145
 msgid "Different players"
@@ -1475,6 +1512,22 @@ msgstr "WBaWC Punktzahlbegrenzung-Mod von "
 msgid "Allows the in-game score counter to exceed 9,999,999,990 points."
 msgstr "Ermöglicht es, dass die Punktzahl 9.999.999.990 überschreiten kann."
 
+#: games/wr/wr.js:119 games/wr/wr.php:217
+msgid "World"
+msgstr "Weltweit"
+
+#: games/wr/wr.js:119 games/wr/wr.php:218
+msgid "West"
+msgstr "Westen"
+
+#: games/wr/wr.js:119 games/wr/wr.php:218
+msgid "Percentage"
+msgstr "Prozent"
+
+#: games/wr/wr.js:203
+msgid "Seasons"
+msgstr "Jahreszeiten"
+
 #: games/wr/wr.php:5
 msgid ""
 "An accurate list of Touhou world records, updated every so often. Note that "
@@ -1543,18 +1596,6 @@ msgstr "Schwierigkeitsgrad"
 msgid "Date"
 msgstr "Datum"
 
-#: games/wr/wr.php:217
-msgid "World"
-msgstr "Weltweit"
-
-#: games/wr/wr.php:218
-msgid "West"
-msgstr "Westen"
-
-#: games/wr/wr.php:218
-msgid "Percentage"
-msgstr "Prozent"
-
 #: games/wr/wr.php:247
 msgid "Click a game cover to show its list of world records."
 msgstr "Klick auf ein Spielcover, um die Liste der Weltrekorde anzuzeigen."
@@ -1572,237 +1613,389 @@ msgstr "Anzahl WRs"
 msgid "Different games"
 msgstr "Verschiedene Spiele"
 
+#: shared/shared.php:397
+msgid "Youkai mode (Dark)"
+msgstr "Youkai-Modus (Dunkel)"
+
+#: shared/shared.php:397
+msgid "Human mode (Light)"
+msgstr "Menschen-Modus (Hell)"
+
+#: shared/shared.php:406 shared/shared.php:412
+msgid "Flag of the United Kingdom"
+msgstr "Flagge des Vereinigten Königreichs"
+
+#: shared/shared.php:408
+msgid "Flag of the United States"
+msgstr "Flagge der Vereinigten Staaten"
+
+#: shared/shared.php:416
+msgid "Flag of Japan"
+msgstr "Flagge von Japan"
+
+#: shared/shared.php:420
+msgid "Flag of the P.R.C."
+msgstr "Flagge der P.R.C."
+
+#: shared/shared.php:424
+msgid "Flag of Russia"
+msgstr "Flagge von Russland"
+
+#: shared/shared.php:428
+msgid "Flag of Germany"
+msgstr "Flagge von Deutschland"
+
+#: shared/shared.php:432
+msgid "Flag of Spain"
+msgstr "Flagge von Spanien"
+
 #: shared/translations.php:2
-msgid "ReimuA"
+msgid "Makai"
 msgstr ""
 
 #: shared/translations.php:3
-msgid "ReimuB"
+msgid "Jigoku"
 msgstr ""
 
 #: shared/translations.php:4
-msgid "MarisaA"
+msgid "ReimuA"
 msgstr ""
 
 #: shared/translations.php:5
-msgid "MarisaB"
+msgid "ReimuB"
 msgstr ""
 
 #: shared/translations.php:6
-msgid "SakuyaA"
-msgstr ""
-
-#: shared/translations.php:7
-msgid "SakuyaB"
-msgstr ""
-
-#: shared/translations.php:8
-msgid "BorderTeam"
-msgstr "Border Team"
-
-#: shared/translations.php:9
-msgid "MagicTeam"
-msgstr "Magic Team"
-
-#: shared/translations.php:10
-msgid "ScarletTeam"
-msgstr "Scarlet Team"
-
-#: shared/translations.php:11
-msgid "GhostTeam"
-msgstr "Ghost Team"
-
-#: shared/translations.php:12
-msgid "Reimu"
-msgstr ""
-
-#: shared/translations.php:13
-msgid "Marisa"
-msgstr ""
-
-#: shared/translations.php:14
-msgid "Sakuya"
-msgstr ""
-
-#: shared/translations.php:15 shared/translations.php:20
-msgid "Youmu"
-msgstr ""
-
-#: shared/translations.php:16
-msgid "Yukari"
-msgstr ""
-
-#: shared/translations.php:17
-msgid "Alice"
-msgstr ""
-
-#: shared/translations.php:18
-msgid "Remilia"
-msgstr ""
-
-#: shared/translations.php:19
-msgid "Yuyuko"
-msgstr ""
-
-#: shared/translations.php:21
-msgid "Reisen"
-msgstr ""
-
-#: shared/translations.php:22
-msgid "Cirno"
-msgstr ""
-
-#: shared/translations.php:23
-msgid "Lyrica"
-msgstr ""
-
-#: shared/translations.php:24
-msgid "Mystia"
-msgstr ""
-
-#: shared/translations.php:25
-msgid "Aya"
-msgstr ""
-
-#: shared/translations.php:26
-msgid "Medicine"
-msgstr ""
-
-#: shared/translations.php:27
-msgid "Yuuka"
-msgstr ""
-
-#: shared/translations.php:28
-msgid "Komachi"
-msgstr ""
-
-#: shared/translations.php:29
-msgid "Eiki"
-msgstr ""
-
-#: shared/translations.php:30
 msgid "ReimuC"
 msgstr ""
 
+#: shared/translations.php:7
+msgid "Mima"
+msgstr ""
+
+#: shared/translations.php:8
+msgid "Ellen"
+msgstr ""
+
+#: shared/translations.php:9
+msgid "Kotohime"
+msgstr ""
+
+#: shared/translations.php:10
+msgid "Kana"
+msgstr ""
+
+#: shared/translations.php:11
+msgid "Rikako"
+msgstr ""
+
+#: shared/translations.php:12
+msgid "Chiyuri"
+msgstr ""
+
+#: shared/translations.php:13
+msgid "Yumemi"
+msgstr ""
+
+#: shared/translations.php:14
+msgid "MarisaA"
+msgstr ""
+
+#: shared/translations.php:15
+msgid "MarisaB"
+msgstr ""
+
+#: shared/translations.php:16
+msgid "SakuyaA"
+msgstr ""
+
+#: shared/translations.php:17
+msgid "SakuyaB"
+msgstr ""
+
+#: shared/translations.php:18
+msgid "BorderTeam"
+msgstr "Border Team"
+
+#: shared/translations.php:19
+msgid "MagicTeam"
+msgstr "Magic Team"
+
+#: shared/translations.php:20
+msgid "ScarletTeam"
+msgstr "Scarlet Team"
+
+#: shared/translations.php:21
+msgid "GhostTeam"
+msgstr "Ghost Team"
+
+#: shared/translations.php:22
+msgid "Reimu"
+msgstr ""
+
+#: shared/translations.php:23
+msgid "Marisa"
+msgstr ""
+
+#: shared/translations.php:24
+msgid "Sakuya"
+msgstr ""
+
+#: shared/translations.php:25 shared/translations.php:30
+msgid "Youmu"
+msgstr ""
+
+#: shared/translations.php:26
+msgid "Yukari"
+msgstr ""
+
+#: shared/translations.php:27
+msgid "Alice"
+msgstr ""
+
+#: shared/translations.php:28
+msgid "Remilia"
+msgstr ""
+
+#: shared/translations.php:29
+msgid "Yuyuko"
+msgstr ""
+
 #: shared/translations.php:31
-msgid "MarisaC"
+msgid "Reisen"
 msgstr ""
 
 #: shared/translations.php:32
-msgid "SanaeA"
+msgid "Cirno"
 msgstr ""
 
 #: shared/translations.php:33
-msgid "SanaeB"
+msgid "Lyrica"
 msgstr ""
 
 #: shared/translations.php:34
-msgid "Sanae"
+msgid "Mystia"
 msgstr ""
 
 #: shared/translations.php:35
+msgid "Tewi"
+msgstr ""
+
+#: shared/translations.php:36
+msgid "Aya"
+msgstr ""
+
+#: shared/translations.php:37
+msgid "Medicine"
+msgstr ""
+
+#: shared/translations.php:38
+msgid "Yuuka"
+msgstr ""
+
+#: shared/translations.php:39
+msgid "Komachi"
+msgstr ""
+
+#: shared/translations.php:40
+msgid "Eiki"
+msgstr ""
+
+#: shared/translations.php:41
+msgid "MarisaC"
+msgstr ""
+
+#: shared/translations.php:42
+msgid "SanaeA"
+msgstr ""
+
+#: shared/translations.php:43
+msgid "SanaeB"
+msgstr ""
+
+#: shared/translations.php:44
+msgid "Hatate"
+msgstr ""
+
+#: shared/translations.php:45
+msgid "Sanae"
+msgstr ""
+
+#: shared/translations.php:46
 msgid "ReimuSpring"
 msgstr "ReimuFrühling"
 
-#: shared/translations.php:36
+#: shared/translations.php:47
 msgid "CirnoSpring"
 msgstr "CirnoFrühling"
 
-#: shared/translations.php:37
+#: shared/translations.php:48
 msgid "AyaSpring"
 msgstr "AyaFrühling"
 
-#: shared/translations.php:38
+#: shared/translations.php:49
 msgid "MarisaSpring"
 msgstr "MarisaFrühling"
 
-#: shared/translations.php:39
+#: shared/translations.php:50
 msgid "ReimuSummer"
 msgstr "ReimuSommer"
 
-#: shared/translations.php:40
+#: shared/translations.php:51
 msgid "CirnoSummer"
 msgstr "CirnoSommer"
 
-#: shared/translations.php:41
+#: shared/translations.php:52
 msgid "AyaSummer"
 msgstr "AyaSommer"
 
-#: shared/translations.php:42
+#: shared/translations.php:53
 msgid "MarisaSummer"
 msgstr "MarisaSommer"
 
-#: shared/translations.php:43
+#: shared/translations.php:54
 msgid "ReimuAutumn"
 msgstr "ReimuHerbst"
 
-#: shared/translations.php:44
+#: shared/translations.php:55
 msgid "CirnoAutumn"
 msgstr "CirnoHerbst"
 
-#: shared/translations.php:45
+#: shared/translations.php:56
 msgid "AyaAutumn"
 msgstr "AyaHerbst"
 
-#: shared/translations.php:46
+#: shared/translations.php:57
 msgid "MarisaAutumn"
 msgstr "MarisaHerbst"
 
-#: shared/translations.php:47
+#: shared/translations.php:58
 msgid "ReimuWinter"
 msgstr ""
 
-#: shared/translations.php:48
+#: shared/translations.php:59
 msgid "CirnoWinter"
 msgstr ""
 
-#: shared/translations.php:49
+#: shared/translations.php:60
 msgid "AyaWinter"
 msgstr ""
 
-#: shared/translations.php:50
+#: shared/translations.php:61
 msgid "MarisaWinter"
 msgstr ""
 
-#: shared/translations.php:51
+#: shared/translations.php:62
 msgid "ReimuWolf"
 msgstr ""
 
-#: shared/translations.php:52
+#: shared/translations.php:63
 msgid "ReimuOtter"
 msgstr ""
 
-#: shared/translations.php:53
+#: shared/translations.php:64
 msgid "ReimuEagle"
 msgstr "ReimuAdler"
 
-#: shared/translations.php:54
+#: shared/translations.php:65
 msgid "MarisaWolf"
 msgstr ""
 
-#: shared/translations.php:55
+#: shared/translations.php:66
 msgid "MarisaOtter"
 msgstr ""
 
-#: shared/translations.php:56
+#: shared/translations.php:67
 msgid "MarisaEagle"
 msgstr "MarisaAdler"
 
-#: shared/translations.php:57
+#: shared/translations.php:68
 msgid "YoumuWolf"
 msgstr ""
 
-#: shared/translations.php:58
+#: shared/translations.php:69
 msgid "YoumuOtter"
 msgstr ""
 
-#: shared/translations.php:59
+#: shared/translations.php:70
 msgid "YoumuEagle"
 msgstr "YoumuAdler"
 
-#: shared/translations.php:60
-msgid "Seasons"
-msgstr "Jahreszeiten"
+#: shared/translations.php:71
+msgid "Touhou 1 - The Highly Responsive to Prayers"
+msgstr ""
+
+#: shared/translations.php:72
+msgid "Touhou 2 - The Story of Eastern Wonderland"
+msgstr ""
+
+#: shared/translations.php:73
+msgid "Touhou 3 - Phantasmagoria of Dim.Dream"
+msgstr ""
+
+#: shared/translations.php:74
+msgid "Touhou 4 - Lotus Land Story"
+msgstr ""
+
+#: shared/translations.php:75
+msgid "Touhou 5 - Mystic Square"
+msgstr ""
+
+#: shared/translations.php:76
+msgid "Touhou 6 - The Embodiment of Scarlet Devil"
+msgstr ""
+
+#: shared/translations.php:77
+msgid "Touhou 7 - Perfect Cherry Blossom"
+msgstr ""
+
+#: shared/translations.php:78
+msgid "Touhou 8 - Imperishable Night"
+msgstr ""
+
+#: shared/translations.php:79
+msgid "Touhou 9 - Phantasmagoria of Flower View"
+msgstr ""
+
+#: shared/translations.php:80
+msgid "Touhou 10 - Mountain of Faith"
+msgstr ""
+
+#: shared/translations.php:81
+msgid "Touhou 11 - Subterranean Animism"
+msgstr ""
+
+#: shared/translations.php:82
+msgid "Touhou 12 - Undefined Fantastic Object"
+msgstr ""
+
+#: shared/translations.php:83
+msgid "Touhou 12.8 - Great Fairy Wars"
+msgstr ""
+
+#: shared/translations.php:84
+msgid "Touhou 13 - Ten Desires"
+msgstr ""
+
+#: shared/translations.php:85
+msgid "Touhou 14 - Double Dealing Character"
+msgstr ""
+
+#: shared/translations.php:86
+msgid "Touhou 15 - Legacy of Lunatic Kingdom"
+msgstr ""
+
+#: shared/translations.php:87
+msgid "Touhou 16 - Hidden Star in Four Seasons"
+msgstr ""
+
+#: shared/translations.php:88
+msgid "Touhou 17 - Wily Beast and Weakest Creature"
+msgstr ""
+
+#: shared/translations.php:89
+msgid "Touhou 18 - Unconnected Marketeers"
+msgstr ""
 
 #~ msgid ""
 #~ "The replays or videos provided are <strong>not</strong> meant to be "
@@ -1811,47 +2004,8 @@ msgstr "Jahreszeiten"
 #~ "Die zur Verfügung gestellten Replays sind <strong>nicht</strong> dafür "
 #~ "gedacht, auf irgendwelche Replay-Upload-Dienste hochgeladen zu werden."
 
-#~ msgid "No. of LNNNs"
-#~ msgstr "Anzahl LNNNs"
-
-#~ msgid "No. of LNNFSs"
-#~ msgstr "Anzahl LNNFSs"
-
-#~ msgid "No. of LNN(N)s"
-#~ msgstr "Anzahl LNN(N)s"
-
-#~ msgid "No. of LNNNNs"
-#~ msgstr "Anzahl LNNNNs"
-
 #~ msgid "Game / Difficulty"
 #~ msgstr "Spiel / Schwierigkeitsgrad"
-
-#~ msgid "Youkai mode (Dark)"
-#~ msgstr "Youkai-Modus (Dunkel)"
-
-#~ msgid "Human mode (Light)"
-#~ msgstr "Menschen-Modus (Hell)"
-
-#~ msgid "Flag of the United Kingdom"
-#~ msgstr "Flagge des Vereinigten Königreichs"
-
-#~ msgid "Flag of the United States"
-#~ msgstr "Flagge der Vereinigten Staaten"
-
-#~ msgid "Flag of Japan"
-#~ msgstr "Flagge von Japan"
-
-#~ msgid "Flag of the P.R.C."
-#~ msgstr "Flagge der P.R.C."
-
-#~ msgid "Flag of Russia"
-#~ msgstr "Flagge von Russland"
-
-#~ msgid "Flag of Germany"
-#~ msgstr "Flagge von Deutschland"
-
-#~ msgid "Flag of Spain"
-#~ msgstr "Flagge von Spanien"
 
 #~ msgid ""
 #~ "A Chinese Ultra patch for LoLK, which does <em>not</em> have autobomb, "

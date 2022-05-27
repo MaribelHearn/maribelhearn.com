@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-27 20:28+0200\n"
-"PO-Revision-Date: 2022-05-27 20:30+0200\n"
+"POT-Creation-Date: 2022-05-27 21:50+0200\n"
+"PO-Revision-Date: 2022-05-27 21:50+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_GB\n"
@@ -13,6 +13,148 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 "X-Poedit-Basepath: ../../..\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: assets/games/drc/drc.js:82
+msgid "Important Notice:"
+msgstr ""
+
+#: assets/games/drc/drc.js:86
+msgid "usage of the MarisaB damage bug is BANNED in survival."
+msgstr ""
+
+#: assets/games/drc/drc.js:89
+msgid ""
+"<em>manual</em> trances count as bombs (that is, trances from pressing C)."
+msgstr ""
+
+#: assets/games/drc/drc.js:92
+msgid "border breaks count as bombs <em>even if they are accidental</em>."
+msgstr ""
+
+#: assets/games/drc/drc.js:136
+msgid "No Bomb"
+msgstr ""
+
+#: assets/games/drc/drc.js:137 assets/games/drc/drc.js:141
+#: assets/games/drc/drc.js:173
+msgid "Misses"
+msgstr ""
+
+#: assets/games/drc/drc.js:137 assets/games/drc/drc.js:141
+msgid "Rounds lost"
+msgstr ""
+
+#: assets/games/drc/drc.js:140
+msgid "No Charge Attacks"
+msgstr ""
+
+#: assets/games/drc/drc.js:145 assets/games/drc/drc.js:153
+msgid "Bombs"
+msgstr ""
+
+#: assets/games/drc/drc.js:147
+msgid "Border Breaks"
+msgstr ""
+
+#: assets/games/drc/drc.js:150
+msgid "Bombs / Trances"
+msgstr ""
+
+#: assets/games/drc/drc.js:159
+msgid "Imperishable Shooting Captured"
+msgstr ""
+
+#: assets/games/drc/drc.js:162
+msgid "Last Spells Captured"
+msgstr ""
+
+#: assets/games/drc/drc.js:168
+msgid "Releases"
+msgstr ""
+
+#: assets/games/drc/drc.js:183 assets/games/fangame/fangame.php:20
+#: assets/games/fangame/fangame.php:68 assets/games/fangame/fangame.php:84
+#: assets/games/fangame/fangame.php:100 assets/games/fangame/fangame.php:117
+#: assets/games/fangame/fangame.php:199 assets/games/fangame/fangame.php:227
+#: assets/games/fangame/fangame.php:243 assets/games/fangame/fangame.php:279
+#: assets/games/fangame/fangame.php:305 assets/games/fangame/fangame.php:328
+#: assets/games/fangame/fangame.php:345 assets/games/fangame/fangame.php:362
+#: assets/games/fangame/fangame.php:378 assets/games/fangame/fangame.php:402
+#: assets/games/fangame/fangame.php:420 assets/games/fangame/fangame.php:454
+#: assets/games/fangame/fangame.php:488 assets/games/fangame/fangame.php:558
+#: assets/games/fangame/fangame.php:575 assets/games/fangame/fangame.php:599
+#: assets/games/fangame/fangame.php:627 assets/games/fangame/fangame.php:667
+#: assets/games/fangame/fangame.php:695 assets/games/fangame/fangame.php:712
+#: assets/games/fangame/fangame.php:739 assets/games/fangame/fangame.php:784
+#: assets/games/fangame/fangame.php:805 assets/games/fangame/fangame.php:855
+#: assets/games/fangame/fangame.php:883 assets/games/wr/wr.php:64
+#: assets/games/wr/wr.php:285 assets/games/wr/wr.php:298
+msgid "Score"
+msgstr ""
+
+#: assets/games/drc/drc.js:211 assets/games/lnn/lnn.js:26
+#: assets/games/wr/wr.js:64
+msgid "Route"
+msgstr ""
+
+#: assets/games/drc/drc.js:213 assets/games/drc/drc.php:376
+#: assets/games/fangame/fangame.php:19 assets/games/fangame/fangame.php:67
+#: assets/games/fangame/fangame.php:83 assets/games/fangame/fangame.php:99
+#: assets/games/fangame/fangame.php:115 assets/games/fangame/fangame.php:198
+#: assets/games/fangame/fangame.php:226 assets/games/fangame/fangame.php:242
+#: assets/games/fangame/fangame.php:277 assets/games/fangame/fangame.php:304
+#: assets/games/fangame/fangame.php:327 assets/games/fangame/fangame.php:344
+#: assets/games/fangame/fangame.php:361 assets/games/fangame/fangame.php:377
+#: assets/games/fangame/fangame.php:401 assets/games/fangame/fangame.php:419
+#: assets/games/fangame/fangame.php:453 assets/games/fangame/fangame.php:487
+#: assets/games/fangame/fangame.php:557 assets/games/fangame/fangame.php:573
+#: assets/games/fangame/fangame.php:598 assets/games/fangame/fangame.php:626
+#: assets/games/fangame/fangame.php:666 assets/games/fangame/fangame.php:694
+#: assets/games/fangame/fangame.php:711 assets/games/fangame/fangame.php:738
+#: assets/games/fangame/fangame.php:783 assets/games/fangame/fangame.php:854
+#: assets/games/fangame/fangame.php:882 assets/games/lnn/lnn.js:26
+#: assets/games/lnn/lnn.php:128 assets/games/wr/wr.js:64
+#: assets/games/wr/wr.php:67
+msgid "Shottype"
+msgstr ""
+
+#: assets/games/drc/drc.js:235 assets/games/drc/drc.js:254
+#: assets/games/drc/drc.js:377 assets/games/drc/drc.js:380
+#: assets/games/drc/drc.js:459
+msgid "Error: "
+msgstr ""
+
+#: assets/games/drc/drc.js:235
+msgid "the survival rubrics for this game are undetermined as of now."
+msgstr ""
+
+#: assets/games/drc/drc.js:254
+msgid "the scoring rubrics for this game are undetermined as of now."
+msgstr ""
+
+#: assets/games/drc/drc.js:255 assets/games/drc/drc.js:270
+msgid "Your DRC points for this run: "
+msgstr ""
+
+#: assets/games/drc/drc.js:377
+msgid "the scoring rubrics for this difficulty are undetermined as of now."
+msgstr ""
+
+#: assets/games/drc/drc.js:380
+msgid "the scoring rubrics for this shottype are undetermined as of now."
+msgstr ""
+
+#: assets/games/drc/drc.js:459
+msgid "invalid score."
+msgstr ""
+
+#: assets/games/drc/drc.js:486
+msgid "Hide "
+msgstr ""
+
+#: assets/games/drc/drc.js:494
+msgid "Show "
+msgstr ""
 
 #: assets/games/drc/drc.php:5
 msgid ""
@@ -134,160 +276,164 @@ msgstr ""
 msgid "WBaWC"
 msgstr ""
 
-#: assets/games/drc/drc.php:57
-msgid "FinalA"
+#: assets/games/drc/drc.php:48
+msgid "UM"
 msgstr ""
 
 #: assets/games/drc/drc.php:58
+msgid "FinalA"
+msgstr ""
+
+#: assets/games/drc/drc.php:59
 msgid "FinalB"
 msgstr ""
 
-#: assets/games/drc/drc.php:61 assets/games/drc/drc.php:120
+#: assets/games/drc/drc.php:62 assets/games/drc/drc.php:121
 msgid "Scoring"
 msgstr ""
 
-#: assets/games/drc/drc.php:62 assets/games/drc/drc.php:301
+#: assets/games/drc/drc.php:63 assets/games/drc/drc.php:302
 msgid "Survival"
 msgstr ""
 
-#: assets/games/drc/drc.php:68 assets/shared/tl.php:147
+#: assets/games/drc/drc.php:69 assets/shared/tl.php:147
 msgid "Spring"
 msgstr ""
 
-#: assets/games/drc/drc.php:69 assets/shared/tl.php:148
+#: assets/games/drc/drc.php:70 assets/shared/tl.php:148
 msgid "Summer"
 msgstr ""
 
-#: assets/games/drc/drc.php:70 assets/shared/tl.php:149
+#: assets/games/drc/drc.php:71 assets/shared/tl.php:149
 msgid "Autumn"
 msgstr ""
 
-#: assets/games/drc/drc.php:71 assets/shared/tl.php:150
+#: assets/games/drc/drc.php:72 assets/shared/tl.php:150
 msgid "Winter"
 msgstr ""
 
-#: assets/games/drc/drc.php:75
+#: assets/games/drc/drc.php:76
 msgid "Calculate"
 msgstr ""
 
-#: assets/games/drc/drc.php:77
+#: assets/games/drc/drc.php:78
 msgid "Rules"
 msgstr ""
 
-#: assets/games/drc/drc.php:79
+#: assets/games/drc/drc.php:80
 msgid "No cheating by using external programs or modifying the game FPS."
 msgstr ""
 
-#: assets/games/drc/drc.php:80
+#: assets/games/drc/drc.php:81
 msgid ""
 "Replays are required for Windows game submissions, while for PC-98 a video "
 "is accepted."
 msgstr ""
 
-#: assets/games/drc/drc.php:81
+#: assets/games/drc/drc.php:82
 msgid "All runs must be played using at most default lives and bombs."
 msgstr ""
 
-#: assets/games/drc/drc.php:83
+#: assets/games/drc/drc.php:84
 msgid "Rubrics"
 msgstr ""
 
-#: assets/games/drc/drc.php:85
+#: assets/games/drc/drc.php:86
 msgid ""
 "The rubrics are the formulas and fixed values used to calculate the number "
 "of DRC points for a run. If you are curious about how your points are being "
 "determined, click the button below to expand."
 msgstr ""
 
-#: assets/games/drc/drc.php:88
+#: assets/games/drc/drc.php:89
 msgid "Show Scoring Rubrics"
 msgstr ""
 
-#: assets/games/drc/drc.php:89
+#: assets/games/drc/drc.php:90
 msgid "Show Survival Rubrics"
 msgstr ""
 
-#: assets/games/drc/drc.php:91
+#: assets/games/drc/drc.php:92
 msgid "Scoring Notes"
 msgstr ""
 
-#: assets/games/drc/drc.php:94
+#: assets/games/drc/drc.php:95
 msgid "The World Records are taken from <a href=\"wr\">the WR page</a>."
 msgstr ""
 
-#: assets/games/drc/drc.php:97
+#: assets/games/drc/drc.php:98
 msgid ""
 "If you achieve a new World Record, your points are equal to the maximum "
 "number of points; otherwise, the formula applies."
 msgstr ""
 
-#: assets/games/drc/drc.php:101
+#: assets/games/drc/drc.php:102
 msgid ""
 "Some categories use a fictional WR. <a href=\"#fictionalWRtitle\">Click "
 "here</a> for the list of them."
 msgstr ""
 
-#: assets/games/drc/drc.php:105
+#: assets/games/drc/drc.php:106
 msgid ""
 "Some categories always use the WR of a specific shottype. <a href="
 "\"#WRdefinitionTitle\">Click here</a> for the list of them."
 msgstr ""
 
-#: assets/games/drc/drc.php:109
+#: assets/games/drc/drc.php:110
 msgid ""
 "MoF uses a separate system. <a href=\"#mountainOfFaith\">Click here</a> for "
 "said system."
 msgstr ""
 
-#: assets/games/drc/drc.php:113
+#: assets/games/drc/drc.php:114
 msgid ""
 "DS uses a separate system. <a href=\"#doubleSpoiler\">Click here</a> for "
 "said system."
 msgstr ""
 
-#: assets/games/drc/drc.php:121
+#: assets/games/drc/drc.php:122
 msgid "||Max * (Score/WR)^Exp||"
 msgstr ""
 
-#: assets/games/drc/drc.php:128 assets/games/drc/drc.php:312
-#: assets/games/drc/drc.php:346 assets/games/lnn/lnn.php:127
+#: assets/games/drc/drc.php:129 assets/games/drc/drc.php:313
+#: assets/games/drc/drc.php:347 assets/games/lnn/lnn.php:127
 #: assets/games/lnn/lnn.php:141 assets/games/survival/survival.php:46
 #: assets/games/survival/survival.php:137 assets/games/wr/wr.php:63
 msgid "Game"
 msgstr ""
 
-#: assets/games/drc/drc.php:129 assets/games/drc/drc.php:313
-#: assets/games/drc/drc.php:347
+#: assets/games/drc/drc.php:130 assets/games/drc/drc.php:314
+#: assets/games/drc/drc.php:348
 msgid "Max points"
 msgstr ""
 
-#: assets/games/drc/drc.php:130
+#: assets/games/drc/drc.php:131
 msgid "Exponent"
 msgstr ""
 
-#: assets/games/drc/drc.php:141
+#: assets/games/drc/drc.php:142
 msgid "Fictional WRs"
 msgstr ""
 
-#: assets/games/drc/drc.php:142
+#: assets/games/drc/drc.php:143
 msgid ""
 "The categories in the table below use a fictional WR instead of the real one."
 msgstr ""
 
-#: assets/games/drc/drc.php:163
+#: assets/games/drc/drc.php:164
 msgid "'WR' definition"
 msgstr ""
 
-#: assets/games/drc/drc.php:165
+#: assets/games/drc/drc.php:166
 msgid ""
 "The categories in the table below always use the WR of a specific shottype."
 msgstr ""
 
-#: assets/games/drc/drc.php:182
+#: assets/games/drc/drc.php:183
 msgid "MoF Scoring"
 msgstr ""
 
-#: assets/games/drc/drc.php:184
+#: assets/games/drc/drc.php:185
 msgid ""
 "For each difficulty and shottype there are six thresholds, at which you will "
 "have set numbers of points respectively. Then, increments are done, "
@@ -295,106 +441,106 @@ msgid ""
 "is 375 on Easy and 500 on Lunatic."
 msgstr ""
 
-#: assets/games/drc/drc.php:195
+#: assets/games/drc/drc.php:196
 msgid "If score &lt; 1st threshold, then: ||220*(Score/T1)^2||"
 msgstr ""
 
-#: assets/games/drc/drc.php:197
+#: assets/games/drc/drc.php:198
 msgid "If score &lt; 2b, then: ||200*(Score/2b)^2||"
 msgstr ""
 
-#: assets/games/drc/drc.php:199
+#: assets/games/drc/drc.php:200
 msgid "If score &lt; 900m, then: ||100*(Score/900m)^2||"
 msgstr ""
 
-#: assets/games/drc/drc.php:203
+#: assets/games/drc/drc.php:204
 msgid "Threshold"
 msgstr ""
 
-#: assets/games/drc/drc.php:204 assets/games/drc/drc.php:237
+#: assets/games/drc/drc.php:205 assets/games/drc/drc.php:238
 msgid "Base points"
 msgstr ""
 
-#: assets/games/drc/drc.php:205 assets/games/drc/drc.php:238
-#: assets/games/drc/drc.php:240 assets/games/drc/drc.php:242
+#: assets/games/drc/drc.php:206 assets/games/drc/drc.php:239
+#: assets/games/drc/drc.php:241 assets/games/drc/drc.php:243
 msgid "Increments"
 msgstr ""
 
-#: assets/games/drc/drc.php:228
+#: assets/games/drc/drc.php:229
 msgid "DS Scoring"
 msgstr ""
 
-#: assets/games/drc/drc.php:230
+#: assets/games/drc/drc.php:231
 msgid ""
 "For each scene there are three thresholds, at which you will have set "
 "numbers of points points respectively. Then, increments are done, dependent "
 "on how much higher than the threshold your score is."
 msgstr ""
 
-#: assets/games/drc/drc.php:237
+#: assets/games/drc/drc.php:238
 msgid "Scene"
 msgstr ""
 
-#: assets/games/drc/drc.php:239
+#: assets/games/drc/drc.php:240
 msgid "Threshold 1"
 msgstr ""
 
-#: assets/games/drc/drc.php:241
+#: assets/games/drc/drc.php:242
 msgid "Threshold 2"
 msgstr ""
 
-#: assets/games/drc/drc.php:243
+#: assets/games/drc/drc.php:244
 msgid "Threshold 3"
 msgstr ""
 
-#: assets/games/drc/drc.php:271 assets/games/drc/drc.php:391
+#: assets/games/drc/drc.php:272 assets/games/drc/drc.php:392
 #: assets/games/fangame/fangame.php:894 assets/games/lnn/lnn.php:215
 #: assets/games/tools/tools.php:514 assets/games/wr/wr.php:371
 msgid "Back to Top"
 msgstr ""
 
-#: assets/games/drc/drc.php:274
+#: assets/games/drc/drc.php:275
 msgid "Survival Notes"
 msgstr ""
 
-#: assets/games/drc/drc.php:278
+#: assets/games/drc/drc.php:279
 msgid ""
 "For a main game clear, a shottype multiplier is applied to your DRC points, "
 "the result of which is again rounded. <a href=\"#shottypeMultipliers\">Click "
 "here</a> for the list of them."
 msgstr ""
 
-#: assets/games/drc/drc.php:283
+#: assets/games/drc/drc.php:284
 msgid ""
 "The Phantasmagorias use a separate system. <a href=\"#phantasmagoria\">Click "
 "here</a> for said system."
 msgstr ""
 
-#: assets/games/drc/drc.php:288
+#: assets/games/drc/drc.php:289
 msgid ""
 "For IN, you obtain 2 (1 on Easy) additional points for each captured Last "
 "Spell, with the exception of Imperishable Shooting, which yields 5 points."
 msgstr ""
 
-#: assets/games/drc/drc.php:294
+#: assets/games/drc/drc.php:295
 msgid ""
 "For HSiFS, the first release adds 2 to <em>n</em>, and further releases add "
 "0.5, 0.4, 0.3, 0.2, 0.1 to <em>n</em>."
 msgstr ""
 
-#: assets/games/drc/drc.php:302
+#: assets/games/drc/drc.php:303
 msgid "||Max * (Base^-n)||"
 msgstr ""
 
-#: assets/games/drc/drc.php:314
+#: assets/games/drc/drc.php:315
 msgid "Base"
 msgstr ""
 
-#: assets/games/drc/drc.php:331
+#: assets/games/drc/drc.php:332
 msgid "PoDD & PoFV Survival"
 msgstr ""
 
-#: assets/games/drc/drc.php:333
+#: assets/games/drc/drc.php:334
 msgid ""
 "In the below formula, MaxLives is equal to 5 for PoDD, 7 for PoFV main game "
 "and 8 for PoFV Extra. NoBombBonus is a difficulty-specific No Bomb bonus for "
@@ -402,23 +548,23 @@ msgid ""
 "rounds the player lost."
 msgstr ""
 
-#: assets/games/drc/drc.php:339
+#: assets/games/drc/drc.php:340
 msgid "||Max - ((Max - Min) / MaxLives * RoundsLost)|| + NoBombBonus"
 msgstr ""
 
-#: assets/games/drc/drc.php:348
+#: assets/games/drc/drc.php:349
 msgid "Min points"
 msgstr ""
 
-#: assets/games/drc/drc.php:349
+#: assets/games/drc/drc.php:350
 msgid "No Bomb bonus"
 msgstr ""
 
-#: assets/games/drc/drc.php:364
+#: assets/games/drc/drc.php:365
 msgid "Shottype Multipliers"
 msgstr ""
 
-#: assets/games/drc/drc.php:366
+#: assets/games/drc/drc.php:367
 msgid ""
 "These are applied to the result of the survival formula for a main game run "
 "only; they do <em>not</em> apply for Extra, nor do they apply for HSiFS runs "
@@ -426,27 +572,7 @@ msgid ""
 "are equal to 1."
 msgstr ""
 
-#: assets/games/drc/drc.php:375 assets/games/fangame/fangame.php:19
-#: assets/games/fangame/fangame.php:67 assets/games/fangame/fangame.php:83
-#: assets/games/fangame/fangame.php:99 assets/games/fangame/fangame.php:115
-#: assets/games/fangame/fangame.php:198 assets/games/fangame/fangame.php:226
-#: assets/games/fangame/fangame.php:242 assets/games/fangame/fangame.php:277
-#: assets/games/fangame/fangame.php:304 assets/games/fangame/fangame.php:327
-#: assets/games/fangame/fangame.php:344 assets/games/fangame/fangame.php:361
-#: assets/games/fangame/fangame.php:377 assets/games/fangame/fangame.php:401
-#: assets/games/fangame/fangame.php:419 assets/games/fangame/fangame.php:453
-#: assets/games/fangame/fangame.php:487 assets/games/fangame/fangame.php:557
-#: assets/games/fangame/fangame.php:573 assets/games/fangame/fangame.php:598
-#: assets/games/fangame/fangame.php:626 assets/games/fangame/fangame.php:666
-#: assets/games/fangame/fangame.php:694 assets/games/fangame/fangame.php:711
-#: assets/games/fangame/fangame.php:738 assets/games/fangame/fangame.php:783
-#: assets/games/fangame/fangame.php:854 assets/games/fangame/fangame.php:882
-#: assets/games/lnn/lnn.php:128 assets/games/wr/wr.js:64
-#: assets/games/wr/wr.php:67
-msgid "Shottype"
-msgstr ""
-
-#: assets/games/drc/drc.php:376
+#: assets/games/drc/drc.php:377
 msgid "Multiplier"
 msgstr ""
 
@@ -505,26 +631,6 @@ msgstr ""
 #: assets/games/wr/wr.php:269 assets/games/wr/wr.php:299
 #: assets/games/wr/wr.php:345
 msgid "Player"
-msgstr ""
-
-#: assets/games/fangame/fangame.php:20 assets/games/fangame/fangame.php:68
-#: assets/games/fangame/fangame.php:84 assets/games/fangame/fangame.php:100
-#: assets/games/fangame/fangame.php:117 assets/games/fangame/fangame.php:199
-#: assets/games/fangame/fangame.php:227 assets/games/fangame/fangame.php:243
-#: assets/games/fangame/fangame.php:279 assets/games/fangame/fangame.php:305
-#: assets/games/fangame/fangame.php:328 assets/games/fangame/fangame.php:345
-#: assets/games/fangame/fangame.php:362 assets/games/fangame/fangame.php:378
-#: assets/games/fangame/fangame.php:402 assets/games/fangame/fangame.php:420
-#: assets/games/fangame/fangame.php:454 assets/games/fangame/fangame.php:488
-#: assets/games/fangame/fangame.php:558 assets/games/fangame/fangame.php:575
-#: assets/games/fangame/fangame.php:599 assets/games/fangame/fangame.php:627
-#: assets/games/fangame/fangame.php:667 assets/games/fangame/fangame.php:695
-#: assets/games/fangame/fangame.php:712 assets/games/fangame/fangame.php:739
-#: assets/games/fangame/fangame.php:784 assets/games/fangame/fangame.php:805
-#: assets/games/fangame/fangame.php:855 assets/games/fangame/fangame.php:883
-#: assets/games/wr/wr.php:64 assets/games/wr/wr.php:285
-#: assets/games/wr/wr.php:298
-msgid "Score"
 msgstr ""
 
 #: assets/games/fangame/fangame.php:21 assets/games/fangame/fangame.php:69
@@ -692,6 +798,51 @@ msgstr ""
 msgid "Mrs. Estacion"
 msgstr ""
 
+#: assets/games/lnn/lnn.js:14 assets/games/lnn/lnn.js:17
+#: assets/games/lnn/lnn.js:18 assets/games/lnn/lnn.js:20
+#: assets/games/lnn/lnn_code.php:58 assets/games/lnn/lnn_code.php:61
+#: assets/games/lnn/lnn_code.php:62 assets/games/lnn/lnn_code.php:64
+msgid "No. of LNNNs"
+msgstr ""
+
+#: assets/games/lnn/lnn.js:15 assets/games/lnn/lnn_code.php:59
+msgid "No. of LNNFSs"
+msgstr ""
+
+#: assets/games/lnn/lnn.js:16 assets/games/lnn/lnn_code.php:60
+msgid "No. of LNN(N)s"
+msgstr ""
+
+#: assets/games/lnn/lnn.js:19 assets/games/lnn/lnn_code.php:63
+msgid "No. of LNNNNs"
+msgstr ""
+
+#: assets/games/lnn/lnn.js:21 assets/games/lnn/lnn.php:143
+#: assets/games/lnn/lnn.php:190 assets/games/lnn/lnn_code.php:65
+msgid "No. of LNNs"
+msgstr ""
+
+#: assets/games/lnn/lnn.js:85 assets/games/lnn/lnn.php:61
+msgid "(Different players)"
+msgstr ""
+
+#: assets/games/lnn/lnn.js:85 assets/games/lnn/lnn.php:61
+msgid "Players"
+msgstr ""
+
+#: assets/games/lnn/lnn.js:86 assets/games/lnn/lnn.php:89
+#: assets/games/lnn/lnn.php:171
+msgid "Overall"
+msgstr ""
+
+#: assets/games/lnn/lnn.js:201
+msgid "(All)"
+msgstr ""
+
+#: assets/games/lnn/lnn.js:210
+msgid "Total"
+msgstr ""
+
 #: assets/games/lnn/lnn.php:5
 msgid ""
 "A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. "
@@ -732,29 +883,12 @@ msgstr ""
 msgid "Player Search"
 msgstr ""
 
-#: assets/games/lnn/lnn.php:61
-msgid "(Different players)"
-msgstr ""
-
-#: assets/games/lnn/lnn.php:61
-msgid "Players"
-msgstr ""
-
-#: assets/games/lnn/lnn.php:89 assets/games/lnn/lnn.php:171
-msgid "Overall"
-msgstr ""
-
 #: assets/games/lnn/lnn.php:98
 msgid "Click a game cover to show its list of LNNs."
 msgstr ""
 
 #: assets/games/lnn/lnn.php:112
 msgid "Choose a player name from the menu below to show their LNNs."
-msgstr ""
-
-#: assets/games/lnn/lnn.php:143 assets/games/lnn/lnn.php:190
-#: assets/games/lnn/lnn_code.php:65
-msgid "No. of LNNs"
 msgstr ""
 
 #: assets/games/lnn/lnn.php:145
@@ -771,23 +905,6 @@ msgstr ""
 
 #: assets/games/lnn/lnn.php:207 assets/games/lnn/lnn.php:208
 msgid " (All Windows)"
-msgstr ""
-
-#: assets/games/lnn/lnn_code.php:58 assets/games/lnn/lnn_code.php:61
-#: assets/games/lnn/lnn_code.php:62 assets/games/lnn/lnn_code.php:64
-msgid "No. of LNNNs"
-msgstr ""
-
-#: assets/games/lnn/lnn_code.php:59
-msgid "No. of LNNFSs"
-msgstr ""
-
-#: assets/games/lnn/lnn_code.php:60
-msgid "No. of LNN(N)s"
-msgstr ""
-
-#: assets/games/lnn/lnn_code.php:63
-msgid "No. of LNNNNs"
 msgstr ""
 
 #: assets/games/survival/survival.php:4
@@ -1673,10 +1790,6 @@ msgstr ""
 msgid "Allows the in-game score counter to exceed 9,999,999,990 points."
 msgstr ""
 
-#: assets/games/wr/wr.js:64
-msgid "Route"
-msgstr ""
-
 #: assets/games/wr/wr.js:119 assets/games/wr/wr.php:217
 msgid "World"
 msgstr ""
@@ -1689,7 +1802,7 @@ msgstr ""
 msgid "Percentage"
 msgstr ""
 
-#: assets/games/wr/wr.js:203 assets/shared/translations.php:60
+#: assets/games/wr/wr.js:203
 msgid "Seasons"
 msgstr ""
 
@@ -1833,231 +1946,351 @@ msgid "Flag of Spain"
 msgstr ""
 
 #: assets/shared/translations.php:2
-msgid "ReimuA"
+msgid "Makai"
 msgstr ""
 
 #: assets/shared/translations.php:3
-msgid "ReimuB"
+msgid "Jigoku"
 msgstr ""
 
 #: assets/shared/translations.php:4
-msgid "MarisaA"
+msgid "ReimuA"
 msgstr ""
 
 #: assets/shared/translations.php:5
-msgid "MarisaB"
+msgid "ReimuB"
 msgstr ""
 
 #: assets/shared/translations.php:6
-msgid "SakuyaA"
-msgstr ""
-
-#: assets/shared/translations.php:7
-msgid "SakuyaB"
-msgstr ""
-
-#: assets/shared/translations.php:8
-msgid "BorderTeam"
-msgstr "Border Team"
-
-#: assets/shared/translations.php:9
-msgid "MagicTeam"
-msgstr "Magic Team"
-
-#: assets/shared/translations.php:10
-msgid "ScarletTeam"
-msgstr "Scarlet Team"
-
-#: assets/shared/translations.php:11
-msgid "GhostTeam"
-msgstr "Ghost Team"
-
-#: assets/shared/translations.php:12
-msgid "Reimu"
-msgstr ""
-
-#: assets/shared/translations.php:13
-msgid "Marisa"
-msgstr ""
-
-#: assets/shared/translations.php:14
-msgid "Sakuya"
-msgstr ""
-
-#: assets/shared/translations.php:15 assets/shared/translations.php:20
-msgid "Youmu"
-msgstr ""
-
-#: assets/shared/translations.php:16
-msgid "Yukari"
-msgstr ""
-
-#: assets/shared/translations.php:17
-msgid "Alice"
-msgstr ""
-
-#: assets/shared/translations.php:18
-msgid "Remilia"
-msgstr ""
-
-#: assets/shared/translations.php:19
-msgid "Yuyuko"
-msgstr ""
-
-#: assets/shared/translations.php:21
-msgid "Reisen"
-msgstr ""
-
-#: assets/shared/translations.php:22
-msgid "Cirno"
-msgstr ""
-
-#: assets/shared/translations.php:23
-msgid "Lyrica"
-msgstr ""
-
-#: assets/shared/translations.php:24
-msgid "Mystia"
-msgstr ""
-
-#: assets/shared/translations.php:25
-msgid "Aya"
-msgstr ""
-
-#: assets/shared/translations.php:26
-msgid "Medicine"
-msgstr ""
-
-#: assets/shared/translations.php:27
-msgid "Yuuka"
-msgstr ""
-
-#: assets/shared/translations.php:28
-msgid "Komachi"
-msgstr ""
-
-#: assets/shared/translations.php:29
-msgid "Eiki"
-msgstr ""
-
-#: assets/shared/translations.php:30
 msgid "ReimuC"
 msgstr ""
 
+#: assets/shared/translations.php:7
+msgid "Mima"
+msgstr ""
+
+#: assets/shared/translations.php:8
+msgid "Ellen"
+msgstr ""
+
+#: assets/shared/translations.php:9
+msgid "Kotohime"
+msgstr ""
+
+#: assets/shared/translations.php:10
+msgid "Kana"
+msgstr ""
+
+#: assets/shared/translations.php:11
+msgid "Rikako"
+msgstr ""
+
+#: assets/shared/translations.php:12
+msgid "Chiyuri"
+msgstr ""
+
+#: assets/shared/translations.php:13
+msgid "Yumemi"
+msgstr ""
+
+#: assets/shared/translations.php:14
+msgid "MarisaA"
+msgstr ""
+
+#: assets/shared/translations.php:15
+msgid "MarisaB"
+msgstr ""
+
+#: assets/shared/translations.php:16
+msgid "SakuyaA"
+msgstr ""
+
+#: assets/shared/translations.php:17
+msgid "SakuyaB"
+msgstr ""
+
+#: assets/shared/translations.php:18
+msgid "BorderTeam"
+msgstr "Border Team"
+
+#: assets/shared/translations.php:19
+msgid "MagicTeam"
+msgstr "Magic Team"
+
+#: assets/shared/translations.php:20
+msgid "ScarletTeam"
+msgstr "Scarlet Team"
+
+#: assets/shared/translations.php:21
+msgid "GhostTeam"
+msgstr "Ghost Team"
+
+#: assets/shared/translations.php:22
+msgid "Reimu"
+msgstr ""
+
+#: assets/shared/translations.php:23
+msgid "Marisa"
+msgstr ""
+
+#: assets/shared/translations.php:24
+msgid "Sakuya"
+msgstr ""
+
+#: assets/shared/translations.php:25 assets/shared/translations.php:30
+msgid "Youmu"
+msgstr ""
+
+#: assets/shared/translations.php:26
+msgid "Yukari"
+msgstr ""
+
+#: assets/shared/translations.php:27
+msgid "Alice"
+msgstr ""
+
+#: assets/shared/translations.php:28
+msgid "Remilia"
+msgstr ""
+
+#: assets/shared/translations.php:29
+msgid "Yuyuko"
+msgstr ""
+
 #: assets/shared/translations.php:31
-msgid "MarisaC"
+msgid "Reisen"
 msgstr ""
 
 #: assets/shared/translations.php:32
-msgid "SanaeA"
+msgid "Cirno"
 msgstr ""
 
 #: assets/shared/translations.php:33
-msgid "SanaeB"
+msgid "Lyrica"
 msgstr ""
 
 #: assets/shared/translations.php:34
-msgid "Sanae"
+msgid "Mystia"
 msgstr ""
 
 #: assets/shared/translations.php:35
-msgid "ReimuSpring"
+msgid "Tewi"
 msgstr ""
 
 #: assets/shared/translations.php:36
-msgid "CirnoSpring"
+msgid "Aya"
 msgstr ""
 
 #: assets/shared/translations.php:37
-msgid "AyaSpring"
+msgid "Medicine"
 msgstr ""
 
 #: assets/shared/translations.php:38
-msgid "MarisaSpring"
+msgid "Yuuka"
 msgstr ""
 
 #: assets/shared/translations.php:39
-msgid "ReimuSummer"
+msgid "Komachi"
 msgstr ""
 
 #: assets/shared/translations.php:40
-msgid "CirnoSummer"
+msgid "Eiki"
 msgstr ""
 
 #: assets/shared/translations.php:41
-msgid "AyaSummer"
+msgid "MarisaC"
 msgstr ""
 
 #: assets/shared/translations.php:42
-msgid "MarisaSummer"
+msgid "SanaeA"
 msgstr ""
 
 #: assets/shared/translations.php:43
-msgid "ReimuAutumn"
+msgid "SanaeB"
 msgstr ""
 
 #: assets/shared/translations.php:44
-msgid "CirnoAutumn"
+msgid "Hatate"
 msgstr ""
 
 #: assets/shared/translations.php:45
-msgid "AyaAutumn"
+msgid "Sanae"
 msgstr ""
 
 #: assets/shared/translations.php:46
-msgid "MarisaAutumn"
+msgid "ReimuSpring"
 msgstr ""
 
 #: assets/shared/translations.php:47
-msgid "ReimuWinter"
+msgid "CirnoSpring"
 msgstr ""
 
 #: assets/shared/translations.php:48
-msgid "CirnoWinter"
+msgid "AyaSpring"
 msgstr ""
 
 #: assets/shared/translations.php:49
-msgid "AyaWinter"
+msgid "MarisaSpring"
 msgstr ""
 
 #: assets/shared/translations.php:50
-msgid "MarisaWinter"
+msgid "ReimuSummer"
 msgstr ""
 
 #: assets/shared/translations.php:51
-msgid "ReimuWolf"
+msgid "CirnoSummer"
 msgstr ""
 
 #: assets/shared/translations.php:52
-msgid "ReimuOtter"
+msgid "AyaSummer"
 msgstr ""
 
 #: assets/shared/translations.php:53
-msgid "ReimuEagle"
+msgid "MarisaSummer"
 msgstr ""
 
 #: assets/shared/translations.php:54
-msgid "MarisaWolf"
+msgid "ReimuAutumn"
 msgstr ""
 
 #: assets/shared/translations.php:55
-msgid "MarisaOtter"
+msgid "CirnoAutumn"
 msgstr ""
 
 #: assets/shared/translations.php:56
-msgid "MarisaEagle"
+msgid "AyaAutumn"
 msgstr ""
 
 #: assets/shared/translations.php:57
-msgid "YoumuWolf"
+msgid "MarisaAutumn"
 msgstr ""
 
 #: assets/shared/translations.php:58
-msgid "YoumuOtter"
+msgid "ReimuWinter"
 msgstr ""
 
 #: assets/shared/translations.php:59
+msgid "CirnoWinter"
+msgstr ""
+
+#: assets/shared/translations.php:60
+msgid "AyaWinter"
+msgstr ""
+
+#: assets/shared/translations.php:61
+msgid "MarisaWinter"
+msgstr ""
+
+#: assets/shared/translations.php:62
+msgid "ReimuWolf"
+msgstr ""
+
+#: assets/shared/translations.php:63
+msgid "ReimuOtter"
+msgstr ""
+
+#: assets/shared/translations.php:64
+msgid "ReimuEagle"
+msgstr ""
+
+#: assets/shared/translations.php:65
+msgid "MarisaWolf"
+msgstr ""
+
+#: assets/shared/translations.php:66
+msgid "MarisaOtter"
+msgstr ""
+
+#: assets/shared/translations.php:67
+msgid "MarisaEagle"
+msgstr ""
+
+#: assets/shared/translations.php:68
+msgid "YoumuWolf"
+msgstr ""
+
+#: assets/shared/translations.php:69
+msgid "YoumuOtter"
+msgstr ""
+
+#: assets/shared/translations.php:70
 msgid "YoumuEagle"
+msgstr ""
+
+#: assets/shared/translations.php:71
+msgid "Touhou 1 - The Highly Responsive to Prayers"
+msgstr ""
+
+#: assets/shared/translations.php:72
+msgid "Touhou 2 - The Story of Eastern Wonderland"
+msgstr ""
+
+#: assets/shared/translations.php:73
+msgid "Touhou 3 - Phantasmagoria of Dim.Dream"
+msgstr ""
+
+#: assets/shared/translations.php:74
+msgid "Touhou 4 - Lotus Land Story"
+msgstr ""
+
+#: assets/shared/translations.php:75
+msgid "Touhou 5 - Mystic Square"
+msgstr ""
+
+#: assets/shared/translations.php:76
+msgid "Touhou 6 - The Embodiment of Scarlet Devil"
+msgstr ""
+
+#: assets/shared/translations.php:77
+msgid "Touhou 7 - Perfect Cherry Blossom"
+msgstr ""
+
+#: assets/shared/translations.php:78
+msgid "Touhou 8 - Imperishable Night"
+msgstr ""
+
+#: assets/shared/translations.php:79
+msgid "Touhou 9 - Phantasmagoria of Flower View"
+msgstr ""
+
+#: assets/shared/translations.php:80
+msgid "Touhou 10 - Mountain of Faith"
+msgstr ""
+
+#: assets/shared/translations.php:81
+msgid "Touhou 11 - Subterranean Animism"
+msgstr ""
+
+#: assets/shared/translations.php:82
+msgid "Touhou 12 - Undefined Fantastic Object"
+msgstr ""
+
+#: assets/shared/translations.php:83
+msgid "Touhou 12.8 - Great Fairy Wars"
+msgstr ""
+
+#: assets/shared/translations.php:84
+msgid "Touhou 13 - Ten Desires"
+msgstr ""
+
+#: assets/shared/translations.php:85
+msgid "Touhou 14 - Double Dealing Character"
+msgstr ""
+
+#: assets/shared/translations.php:86
+msgid "Touhou 15 - Legacy of Lunatic Kingdom"
+msgstr ""
+
+#: assets/shared/translations.php:87
+msgid "Touhou 16 - Hidden Star in Four Seasons"
+msgstr ""
+
+#: assets/shared/translations.php:88
+msgid "Touhou 17 - Wily Beast and Weakest Creature"
+msgstr ""
+
+#: assets/shared/translations.php:89
+msgid "Touhou 18 - Unconnected Marketeers"
 msgstr ""
 
 #~ msgid "ReimuYukari"

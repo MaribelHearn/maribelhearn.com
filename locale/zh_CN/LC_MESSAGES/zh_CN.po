@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-27 20:22+0200\n"
-"PO-Revision-Date: 2022-05-27 20:22+0200\n"
+"POT-Creation-Date: 2022-05-27 21:53+0200\n"
+"PO-Revision-Date: 2022-05-27 22:01+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -16,6 +16,9 @@ msgstr ""
 "X-Poedit-SearchPath-1: games/lnn/lnn.php\n"
 "X-Poedit-SearchPath-2: games/wr/wr.php\n"
 "X-Poedit-SearchPath-3: shared/translations.php\n"
+"X-Poedit-SearchPath-4: games/lnn/lnn.js\n"
+"X-Poedit-SearchPath-5: games/wr/wr.js\n"
+"X-Poedit-SearchPath-6: shared/shared.php\n"
 
 #: games/drc/drc.php:5
 msgid ""
@@ -145,65 +148,69 @@ msgstr "天"
 msgid "WBaWC"
 msgstr "鬼"
 
-#: games/drc/drc.php:57
+#: games/drc/drc.php:48
+msgid "UM"
+msgstr "虹"
+
+#: games/drc/drc.php:58
 msgid "FinalA"
 msgstr "路线A"
 
-#: games/drc/drc.php:58
+#: games/drc/drc.php:59
 msgid "FinalB"
 msgstr "路线B"
 
-#: games/drc/drc.php:61 games/drc/drc.php:120
+#: games/drc/drc.php:62 games/drc/drc.php:121
 msgid "Scoring"
 msgstr "打分"
 
-#: games/drc/drc.php:62 games/drc/drc.php:301
+#: games/drc/drc.php:63 games/drc/drc.php:302
 msgid "Survival"
 msgstr "生存"
 
-#: games/drc/drc.php:68
+#: games/drc/drc.php:69
 msgid "Spring"
 msgstr "春"
 
-#: games/drc/drc.php:69
+#: games/drc/drc.php:70
 msgid "Summer"
 msgstr "夏"
 
-#: games/drc/drc.php:70
+#: games/drc/drc.php:71
 msgid "Autumn"
 msgstr "秋"
 
-#: games/drc/drc.php:71
+#: games/drc/drc.php:72
 msgid "Winter"
 msgstr "冬"
 
-#: games/drc/drc.php:75
+#: games/drc/drc.php:76
 msgid "Calculate"
 msgstr "计算"
 
-#: games/drc/drc.php:77
+#: games/drc/drc.php:78
 msgid "Rules"
 msgstr "规则"
 
-#: games/drc/drc.php:79
+#: games/drc/drc.php:80
 msgid "No cheating by using external programs or modifying the game FPS."
 msgstr "禁止通过使用内置程序或修改游戏帧数作弊。"
 
-#: games/drc/drc.php:80
+#: games/drc/drc.php:81
 msgid ""
 "Replays are required for Windows game submissions, while for PC-98 a video "
 "is accepted."
 msgstr "windows平台游戏需要提交rep；PC98平台游戏可提交视频。"
 
-#: games/drc/drc.php:81
+#: games/drc/drc.php:82
 msgid "All runs must be played using at most default lives and bombs."
 msgstr "所有游戏必须在最大默认残机数、bomb数下进行。"
 
-#: games/drc/drc.php:83
+#: games/drc/drc.php:84
 msgid "Rubrics"
 msgstr "计算公式"
 
-#: games/drc/drc.php:85
+#: games/drc/drc.php:86
 msgid ""
 "The rubrics are the formulas and fixed values used to calculate the number "
 "of DRC points for a run. If you are curious about how your points are being "
@@ -212,29 +219,29 @@ msgstr ""
 "计算公式将计算出你所完成项目的分数。如果你想知道分数是如何计算的，请点击下方"
 "按钮展开。"
 
-#: games/drc/drc.php:88
+#: games/drc/drc.php:89
 msgid "Show Scoring Rubrics"
 msgstr "显示打分计算公式"
 
-#: games/drc/drc.php:89
+#: games/drc/drc.php:90
 msgid "Show Survival Rubrics"
 msgstr "显示生存计算公式"
 
-#: games/drc/drc.php:91
+#: games/drc/drc.php:92
 msgid "Scoring Notes"
 msgstr "打分简介"
 
-#: games/drc/drc.php:94
+#: games/drc/drc.php:95
 msgid "The World Records are taken from <a href=\"wr\">the WR page</a>."
 msgstr "世界纪录参考自<a href=\"wr\">此网页</a>。"
 
-#: games/drc/drc.php:97
+#: games/drc/drc.php:98
 msgid ""
 "If you achieve a new World Record, your points are equal to the maximum "
 "number of points; otherwise, the formula applies."
 msgstr "如果获得新世界纪录，你的分数即为最大值。否则，则按公式计算。"
 
-#: games/drc/drc.php:101
+#: games/drc/drc.php:102
 msgid ""
 "Some categories use a fictional WR. <a href=\"#fictionalWRtitle\">Click "
 "here</a> for the list of them."
@@ -242,7 +249,7 @@ msgstr ""
 "某些项目将参考一个虚构的世界纪录<a href=\"#fictionalWRtitle\">单击此处</a>查"
 "看列表。"
 
-#: games/drc/drc.php:105
+#: games/drc/drc.php:106
 msgid ""
 "Some categories always use the WR of a specific shottype. <a href="
 "\"#WRdefinitionTitle\">Click here</a> for the list of them."
@@ -250,7 +257,7 @@ msgstr ""
 "某些项目将一直参考具体某一机体。<a href=\"#WRdefinitionTitle\"单击此处</a>查"
 "看列表。"
 
-#: games/drc/drc.php:109
+#: games/drc/drc.php:110
 msgid ""
 "MoF uses a separate system. <a href=\"#mountainOfFaith\">Click here</a> for "
 "said system."
@@ -258,7 +265,7 @@ msgstr ""
 "东方风神录采用单独的计分方式。<a href=\"#mountainOfFaith\"单击此处</a>以获取"
 "系统介绍。"
 
-#: games/drc/drc.php:113
+#: games/drc/drc.php:114
 msgid ""
 "DS uses a separate system. <a href=\"#doubleSpoiler\">Click here</a> for "
 "said system."
@@ -266,46 +273,46 @@ msgstr ""
 "对抗新闻采用单独的计分方式。<a href=\"#doubleSpoiler\">单击此处</a>以获取系统"
 "介绍。"
 
-#: games/drc/drc.php:121
+#: games/drc/drc.php:122
 msgid "||Max * (Score/WR)^Exp||"
 msgstr "||最大值 *（得分 / 世界纪录）^ 指数||"
 
-#: games/drc/drc.php:128 games/drc/drc.php:312 games/drc/drc.php:346
+#: games/drc/drc.php:129 games/drc/drc.php:313 games/drc/drc.php:347
 #: games/lnn/lnn.php:127 games/lnn/lnn.php:141 games/wr/wr.php:63
 msgid "Game"
 msgstr "游戏"
 
-#: games/drc/drc.php:129 games/drc/drc.php:313 games/drc/drc.php:347
+#: games/drc/drc.php:130 games/drc/drc.php:314 games/drc/drc.php:348
 msgid "Max points"
 msgstr "最大值"
 
-#: games/drc/drc.php:130
+#: games/drc/drc.php:131
 msgid "Exponent"
 msgstr "指数"
 
-#: games/drc/drc.php:141
+#: games/drc/drc.php:142
 msgid "Fictional WRs"
 msgstr "虚构WR"
 
-#: games/drc/drc.php:142
+#: games/drc/drc.php:143
 msgid ""
 "The categories in the table below use a fictional WR instead of the real one."
 msgstr "下列表中的项目将参考以下虚构的世界纪录。"
 
-#: games/drc/drc.php:163
+#: games/drc/drc.php:164
 msgid "'WR' definition"
 msgstr "WR的定义"
 
-#: games/drc/drc.php:165
+#: games/drc/drc.php:166
 msgid ""
 "The categories in the table below always use the WR of a specific shottype."
 msgstr "以下表中的项目将独立于其他机体来计算。"
 
-#: games/drc/drc.php:182
+#: games/drc/drc.php:183
 msgid "MoF Scoring"
 msgstr "东方风神录打分"
 
-#: games/drc/drc.php:184
+#: games/drc/drc.php:185
 msgid ""
 "For each difficulty and shottype there are six thresholds, at which you will "
 "have set numbers of points respectively. Then, increments are done, "
@@ -315,36 +322,36 @@ msgstr ""
 "对于每个难度和机体有六个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅"
 "取决于你的游戏内得分。Easy最大值是375。Lunatic最大值是500。"
 
-#: games/drc/drc.php:195
+#: games/drc/drc.php:196
 msgid "If score &lt; 1st threshold, then: ||220*(Score/T1)^2||"
 msgstr "若分数小于第一阈值，||220*(分数/第一阈值)^2||"
 
-#: games/drc/drc.php:197
+#: games/drc/drc.php:198
 msgid "If score &lt; 2b, then: ||200*(Score/2b)^2||"
 msgstr "若分数小于20亿，||200*(分数/20亿)^2||"
 
-#: games/drc/drc.php:199
+#: games/drc/drc.php:200
 msgid "If score &lt; 900m, then: ||100*(Score/900m)^2||"
 msgstr "若分数小于9亿，||100*(分数/9亿)^2||"
 
-#: games/drc/drc.php:203
+#: games/drc/drc.php:204
 msgid "Threshold"
 msgstr "阈值"
 
-#: games/drc/drc.php:204 games/drc/drc.php:237
+#: games/drc/drc.php:205 games/drc/drc.php:238
 msgid "Base points"
 msgstr "基数分"
 
-#: games/drc/drc.php:205 games/drc/drc.php:238 games/drc/drc.php:240
-#: games/drc/drc.php:242
+#: games/drc/drc.php:206 games/drc/drc.php:239 games/drc/drc.php:241
+#: games/drc/drc.php:243
 msgid "Increments"
 msgstr "增幅"
 
-#: games/drc/drc.php:228
+#: games/drc/drc.php:229
 msgid "DS Scoring"
 msgstr "春对抗新闻打分"
 
-#: games/drc/drc.php:230
+#: games/drc/drc.php:231
 msgid ""
 "For each scene there are three thresholds, at which you will have set "
 "numbers of points points respectively. Then, increments are done, dependent "
@@ -353,32 +360,32 @@ msgstr ""
 "对于每个场景和机体有三个阈值，在每个阈值内有各自的得分系数且分数增量固定，仅"
 "取决于你的游戏内得分。"
 
-#: games/drc/drc.php:237
+#: games/drc/drc.php:238
 msgid "Scene"
 msgstr "场景"
 
-#: games/drc/drc.php:239
+#: games/drc/drc.php:240
 msgid "Threshold 1"
 msgstr "第一阈值"
 
-#: games/drc/drc.php:241
+#: games/drc/drc.php:242
 msgid "Threshold 2"
 msgstr "第二阈值"
 
-#: games/drc/drc.php:243
+#: games/drc/drc.php:244
 msgid "Threshold 3"
 msgstr "第三阈值"
 
-#: games/drc/drc.php:271 games/drc/drc.php:391 games/lnn/lnn.php:215
+#: games/drc/drc.php:272 games/drc/drc.php:392 games/lnn/lnn.php:215
 #: games/wr/wr.php:371
 msgid "Back to Top"
 msgstr "回到顶部"
 
-#: games/drc/drc.php:274
+#: games/drc/drc.php:275
 msgid "Survival Notes"
 msgstr "生存简介"
 
-#: games/drc/drc.php:278
+#: games/drc/drc.php:279
 msgid ""
 "For a main game clear, a shottype multiplier is applied to your DRC points, "
 "the result of which is again rounded. <a href=\"#shottypeMultipliers\">Click "
@@ -387,7 +394,7 @@ msgstr ""
 "当完成一项游戏，机体系数会影响DRC总分，结果会再次近似。<a href="
 "\"#shottypeMultipliers\">单击此处</a>查看列表。"
 
-#: games/drc/drc.php:283
+#: games/drc/drc.php:284
 msgid ""
 "The Phantasmagorias use a separate system. <a href=\"#phantasmagoria\">Click "
 "here</a> for said system."
@@ -395,7 +402,7 @@ msgstr ""
 "东方梦时空和东方花映塚关卡采用单独的计分方式。<a href=\"#phantasmagoria\">单"
 "击此处</a>以获取系统介绍。"
 
-#: games/drc/drc.php:288
+#: games/drc/drc.php:289
 msgid ""
 "For IN, you obtain 2 (1 on Easy) additional points for each captured Last "
 "Spell, with the exception of Imperishable Shooting, which yields 5 points."
@@ -403,26 +410,26 @@ msgstr ""
 "对于永夜抄，每收取一张LSC，则获得额外的2分（Easy难度为1分）。收取【不朽的弹"
 "幕】获得5分。 "
 
-#: games/drc/drc.php:294
+#: games/drc/drc.php:295
 msgid ""
 "For HSiFS, the first release adds 2 to <em>n</em>, and further releases add "
 "0.5, 0.4, 0.3, 0.2, 0.1 to <em>n</em>."
 msgstr ""
 "对于东方天空璋，初次季节解放则n+2，之后的季节释放n+0.5，0.4，0.3，0.2，0.1。"
 
-#: games/drc/drc.php:302
+#: games/drc/drc.php:303
 msgid "||Max * (Base^-n)||"
 msgstr "||最大值 *（基数 ^ -n）||"
 
-#: games/drc/drc.php:314
+#: games/drc/drc.php:315
 msgid "Base"
 msgstr "基数"
 
-#: games/drc/drc.php:331
+#: games/drc/drc.php:332
 msgid "PoDD & PoFV Survival"
 msgstr "东方梦时空和东方花映塚生存"
 
-#: games/drc/drc.php:333
+#: games/drc/drc.php:334
 msgid ""
 "In the below formula, MaxLives is equal to 5 for PoDD, 7 for PoFV main game "
 "and 8 for PoFV Extra. NoBombBonus is a difficulty-specific No Bomb bonus for "
@@ -432,23 +439,23 @@ msgstr ""
 "在以下公式中，东方梦时空的最大残机数为5，东方花映塚故事模式为7，EX为8。NB奖分"
 "依难度而定。东方梦时空为NB奖分，东方花映塚为NC奖分。"
 
-#: games/drc/drc.php:339
+#: games/drc/drc.php:340
 msgid "||Max - ((Max - Min) / MaxLives * RoundsLost)|| + NoBombBonus"
 msgstr "||最大值 -最大值 - 最小值） / 最大残机 * 败北数）|| + NB奖分"
 
-#: games/drc/drc.php:348
+#: games/drc/drc.php:349
 msgid "Min points"
 msgstr "最小值"
 
-#: games/drc/drc.php:349
+#: games/drc/drc.php:350
 msgid "No Bomb bonus"
 msgstr "值\tNB奖分"
 
-#: games/drc/drc.php:364
+#: games/drc/drc.php:365
 msgid "Shottype Multipliers"
 msgstr "机体系数"
 
-#: games/drc/drc.php:366
+#: games/drc/drc.php:367
 msgid ""
 "These are applied to the result of the survival formula for a main game run "
 "only; they do <em>not</em> apply for Extra, nor do they apply for HSiFS runs "
@@ -458,13 +465,59 @@ msgstr ""
 "该要素仅适用于生存项目的计算公式，不适用于EX和使用了季节解放的天空璋。未列出"
 "的机体，系数均为1。"
 
-#: games/drc/drc.php:375 games/lnn/lnn.php:128 games/wr/wr.php:67
+#: games/drc/drc.php:376 games/lnn/lnn.js:26 games/lnn/lnn.php:128
+#: games/wr/wr.js:64 games/wr/wr.php:67
 msgid "Shottype"
 msgstr "机体"
 
-#: games/drc/drc.php:376
+#: games/drc/drc.php:377
 msgid "Multiplier"
 msgstr "系数"
+
+#: games/lnn/lnn.js:14 games/lnn/lnn.js:17 games/lnn/lnn.js:18
+#: games/lnn/lnn.js:20
+msgid "No. of LNNNs"
+msgstr "LNNN的数量"
+
+#: games/lnn/lnn.js:15
+msgid "No. of LNNFSs"
+msgstr "LNNFS的数量"
+
+#: games/lnn/lnn.js:16
+msgid "No. of LNN(N)s"
+msgstr "LNN(N)的数量"
+
+#: games/lnn/lnn.js:19
+msgid "No. of LNNNNs"
+msgstr "LNNNN的数量"
+
+#: games/lnn/lnn.js:21 games/lnn/lnn.php:143 games/lnn/lnn.php:190
+msgid "No. of LNNs"
+msgstr "LNN的数量"
+
+#: games/lnn/lnn.js:26 games/wr/wr.js:64
+msgid "Route"
+msgstr "路线"
+
+#: games/lnn/lnn.js:85 games/lnn/lnn.php:61
+msgid "(Different players)"
+msgstr "（玩家）"
+
+#: games/lnn/lnn.js:85 games/lnn/lnn.php:61
+msgid "Players"
+msgstr "玩家"
+
+#: games/lnn/lnn.js:86 games/lnn/lnn.php:89 games/lnn/lnn.php:171
+msgid "Overall"
+msgstr "合計"
+
+#: games/lnn/lnn.js:201
+msgid "(All)"
+msgstr "（全）"
+
+#: games/lnn/lnn.js:210
+msgid "Total"
+msgstr "合計"
 
 #: games/lnn/lnn.php:5
 msgid ""
@@ -518,18 +571,6 @@ msgstr "玩家排行"
 msgid "Player Search"
 msgstr "玩家WR"
 
-#: games/lnn/lnn.php:61
-msgid "(Different players)"
-msgstr "（玩家）"
-
-#: games/lnn/lnn.php:61
-msgid "Players"
-msgstr "玩家"
-
-#: games/lnn/lnn.php:89 games/lnn/lnn.php:171
-msgid "Overall"
-msgstr "合計"
-
 #: games/lnn/lnn.php:98
 msgid "Click a game cover to show its list of LNNs."
 msgstr "单击游戏处查看LNN列表。"
@@ -548,10 +589,6 @@ msgstr "玩家"
 msgid "Replay"
 msgstr "Rep"
 
-#: games/lnn/lnn.php:143 games/lnn/lnn.php:190
-msgid "No. of LNNs"
-msgstr "LNN的数量"
-
 #: games/lnn/lnn.php:145
 msgid "Different players"
 msgstr "玩家"
@@ -567,6 +604,22 @@ msgstr "游戏"
 #: games/lnn/lnn.php:207 games/lnn/lnn.php:208
 msgid " (All Windows)"
 msgstr "（全Windows）"
+
+#: games/wr/wr.js:119 games/wr/wr.php:217
+msgid "World"
+msgstr "世界"
+
+#: games/wr/wr.js:119 games/wr/wr.php:218
+msgid "West"
+msgstr "西方"
+
+#: games/wr/wr.js:119 games/wr/wr.php:218
+msgid "Percentage"
+msgstr "百分"
+
+#: games/wr/wr.js:203
+msgid "Seasons"
+msgstr "季節"
 
 #: games/wr/wr.php:5
 msgid ""
@@ -631,18 +684,6 @@ msgstr "难度"
 msgid "Date"
 msgstr "日期"
 
-#: games/wr/wr.php:217
-msgid "World"
-msgstr "世界"
-
-#: games/wr/wr.php:218
-msgid "West"
-msgstr "西方"
-
-#: games/wr/wr.php:218
-msgid "Percentage"
-msgstr "百分"
-
 #: games/wr/wr.php:247
 msgid "Click a game cover to show its list of world records."
 msgstr "单击游戏处查看世界纪录列表。"
@@ -659,237 +700,389 @@ msgstr "WR数量"
 msgid "Different games"
 msgstr "游戏"
 
+#: shared/shared.php:397
+msgid "Youkai mode (Dark)"
+msgstr "Youkai mode (Dark)"
+
+#: shared/shared.php:397
+msgid "Human mode (Light)"
+msgstr "Human mode (Light)"
+
+#: shared/shared.php:406 shared/shared.php:412
+msgid "Flag of the United Kingdom"
+msgstr "英国旗"
+
+#: shared/shared.php:408
+msgid "Flag of the United States"
+msgstr "美国旗"
+
+#: shared/shared.php:416
+msgid "Flag of Japan"
+msgstr "日本旗"
+
+#: shared/shared.php:420
+msgid "Flag of the P.R.C."
+msgstr "中国旗"
+
+#: shared/shared.php:424
+msgid "Flag of Russia"
+msgstr "俄羅斯國旗"
+
+#: shared/shared.php:428
+msgid "Flag of Germany"
+msgstr "德国国旗"
+
+#: shared/shared.php:432
+msgid "Flag of Spain"
+msgstr "西班牙国旗"
+
 #: shared/translations.php:2
+msgid "Makai"
+msgstr "魔界"
+
+#: shared/translations.php:3
+msgid "Jigoku"
+msgstr "地狱"
+
+#: shared/translations.php:4
 msgid "ReimuA"
 msgstr "灵梦A"
 
-#: shared/translations.php:3
+#: shared/translations.php:5
 msgid "ReimuB"
 msgstr "灵梦B"
 
-#: shared/translations.php:4
-msgid "MarisaA"
-msgstr "魔理沙A"
-
-#: shared/translations.php:5
-msgid "MarisaB"
-msgstr "魔理沙B"
-
 #: shared/translations.php:6
-msgid "SakuyaA"
-msgstr "咲夜A"
-
-#: shared/translations.php:7
-msgid "SakuyaB"
-msgstr "咲夜B"
-
-#: shared/translations.php:8
-msgid "BorderTeam"
-msgstr "结界组"
-
-#: shared/translations.php:9
-msgid "MagicTeam"
-msgstr "咏唱组"
-
-#: shared/translations.php:10
-msgid "ScarletTeam"
-msgstr "红魔组"
-
-#: shared/translations.php:11
-msgid "GhostTeam"
-msgstr "幽冥组"
-
-#: shared/translations.php:12
-msgid "Reimu"
-msgstr "灵梦"
-
-#: shared/translations.php:13
-msgid "Marisa"
-msgstr "魔理沙"
-
-#: shared/translations.php:14
-msgid "Sakuya"
-msgstr "咲夜"
-
-#: shared/translations.php:15 shared/translations.php:20
-msgid "Youmu"
-msgstr "妖梦"
-
-#: shared/translations.php:16
-msgid "Yukari"
-msgstr "紫"
-
-#: shared/translations.php:17
-msgid "Alice"
-msgstr "爱丽丝"
-
-#: shared/translations.php:18
-msgid "Remilia"
-msgstr "蕾米莉亚"
-
-#: shared/translations.php:19
-msgid "Yuyuko"
-msgstr "幽幽子"
-
-#: shared/translations.php:21
-msgid "Reisen"
-msgstr "铃仙"
-
-#: shared/translations.php:22
-msgid "Cirno"
-msgstr "琪露诺"
-
-#: shared/translations.php:23
-msgid "Lyrica"
-msgstr "莉莉卡"
-
-#: shared/translations.php:24
-msgid "Mystia"
-msgstr "米丝蒂亚"
-
-#: shared/translations.php:25
-msgid "Aya"
-msgstr "文"
-
-#: shared/translations.php:26
-msgid "Medicine"
-msgstr "梅蒂薪"
-
-#: shared/translations.php:27
-msgid "Yuuka"
-msgstr "幽香"
-
-#: shared/translations.php:28
-msgid "Komachi"
-msgstr "小町"
-
-#: shared/translations.php:29
-msgid "Eiki"
-msgstr "映姬"
-
-#: shared/translations.php:30
 msgid "ReimuC"
 msgstr "灵梦C"
 
+#: shared/translations.php:7
+msgid "Mima"
+msgstr "魅魔"
+
+#: shared/translations.php:8
+msgid "Ellen"
+msgstr "爱莲"
+
+#: shared/translations.php:9
+msgid "Kotohime"
+msgstr "小兔姬"
+
+#: shared/translations.php:10
+msgid "Kana"
+msgstr "卡娜"
+
+#: shared/translations.php:11
+msgid "Rikako"
+msgstr "理香子"
+
+#: shared/translations.php:12
+msgid "Chiyuri"
+msgstr "千百合"
+
+#: shared/translations.php:13
+msgid "Yumemi"
+msgstr "梦美"
+
+#: shared/translations.php:14
+msgid "MarisaA"
+msgstr "魔理沙A"
+
+#: shared/translations.php:15
+msgid "MarisaB"
+msgstr "魔理沙B"
+
+#: shared/translations.php:16
+msgid "SakuyaA"
+msgstr "咲夜A"
+
+#: shared/translations.php:17
+msgid "SakuyaB"
+msgstr "咲夜B"
+
+#: shared/translations.php:18
+msgid "BorderTeam"
+msgstr "结界组"
+
+#: shared/translations.php:19
+msgid "MagicTeam"
+msgstr "咏唱组"
+
+#: shared/translations.php:20
+msgid "ScarletTeam"
+msgstr "红魔组"
+
+#: shared/translations.php:21
+msgid "GhostTeam"
+msgstr "幽冥组"
+
+#: shared/translations.php:22
+msgid "Reimu"
+msgstr "灵梦"
+
+#: shared/translations.php:23
+msgid "Marisa"
+msgstr "魔理沙"
+
+#: shared/translations.php:24
+msgid "Sakuya"
+msgstr "咲夜"
+
+#: shared/translations.php:25 shared/translations.php:30
+msgid "Youmu"
+msgstr "妖梦"
+
+#: shared/translations.php:26
+msgid "Yukari"
+msgstr "紫"
+
+#: shared/translations.php:27
+msgid "Alice"
+msgstr "爱丽丝"
+
+#: shared/translations.php:28
+msgid "Remilia"
+msgstr "蕾米莉亚"
+
+#: shared/translations.php:29
+msgid "Yuyuko"
+msgstr "幽幽子"
+
 #: shared/translations.php:31
+msgid "Reisen"
+msgstr "铃仙"
+
+#: shared/translations.php:32
+msgid "Cirno"
+msgstr "琪露诺"
+
+#: shared/translations.php:33
+msgid "Lyrica"
+msgstr "莉莉卡"
+
+#: shared/translations.php:34
+msgid "Mystia"
+msgstr "米丝蒂亚"
+
+#: shared/translations.php:35
+msgid "Tewi"
+msgstr "帝"
+
+#: shared/translations.php:36
+msgid "Aya"
+msgstr "文"
+
+#: shared/translations.php:37
+msgid "Medicine"
+msgstr "梅蒂薪"
+
+#: shared/translations.php:38
+msgid "Yuuka"
+msgstr "幽香"
+
+#: shared/translations.php:39
+msgid "Komachi"
+msgstr "小町"
+
+#: shared/translations.php:40
+msgid "Eiki"
+msgstr "映姬"
+
+#: shared/translations.php:41
 msgid "MarisaC"
 msgstr "魔理沙C"
 
-#: shared/translations.php:32
+#: shared/translations.php:42
 msgid "SanaeA"
 msgstr "早苗A"
 
-#: shared/translations.php:33
+#: shared/translations.php:43
 msgid "SanaeB"
 msgstr "早苗B"
 
-#: shared/translations.php:34
+#: shared/translations.php:44
+msgid "Hatate"
+msgstr "羽立"
+
+#: shared/translations.php:45
 msgid "Sanae"
 msgstr "早苗"
 
-#: shared/translations.php:35
+#: shared/translations.php:46
 msgid "ReimuSpring"
 msgstr "灵梦春"
 
-#: shared/translations.php:36
+#: shared/translations.php:47
 msgid "CirnoSpring"
 msgstr "琪露诺春"
 
-#: shared/translations.php:37
+#: shared/translations.php:48
 msgid "AyaSpring"
 msgstr "文春"
 
-#: shared/translations.php:38
+#: shared/translations.php:49
 msgid "MarisaSpring"
 msgstr "魔理沙春"
 
-#: shared/translations.php:39
+#: shared/translations.php:50
 msgid "ReimuSummer"
 msgstr "灵梦夏"
 
-#: shared/translations.php:40
+#: shared/translations.php:51
 msgid "CirnoSummer"
 msgstr "琪露诺夏"
 
-#: shared/translations.php:41
+#: shared/translations.php:52
 msgid "AyaSummer"
 msgstr "文夏"
 
-#: shared/translations.php:42
+#: shared/translations.php:53
 msgid "MarisaSummer"
 msgstr "魔理沙夏"
 
-#: shared/translations.php:43
+#: shared/translations.php:54
 msgid "ReimuAutumn"
 msgstr "灵梦秋"
 
-#: shared/translations.php:44
+#: shared/translations.php:55
 msgid "CirnoAutumn"
 msgstr "琪露诺秋"
 
-#: shared/translations.php:45
+#: shared/translations.php:56
 msgid "AyaAutumn"
 msgstr "文秋"
 
-#: shared/translations.php:46
+#: shared/translations.php:57
 msgid "MarisaAutumn"
 msgstr "魔理沙秋"
 
-#: shared/translations.php:47
+#: shared/translations.php:58
 msgid "ReimuWinter"
 msgstr "灵梦冬"
 
-#: shared/translations.php:48
+#: shared/translations.php:59
 msgid "CirnoWinter"
 msgstr "琪露诺冬"
 
-#: shared/translations.php:49
+#: shared/translations.php:60
 msgid "AyaWinter"
 msgstr "文冬"
 
-#: shared/translations.php:50
+#: shared/translations.php:61
 msgid "MarisaWinter"
 msgstr "魔理沙冬"
 
-#: shared/translations.php:51
+#: shared/translations.php:62
 msgid "ReimuWolf"
 msgstr "灵梦狼"
 
-#: shared/translations.php:52
+#: shared/translations.php:63
 msgid "ReimuOtter"
 msgstr "灵梦獭"
 
-#: shared/translations.php:53
+#: shared/translations.php:64
 msgid "ReimuEagle"
 msgstr "灵梦鹰"
 
-#: shared/translations.php:54
+#: shared/translations.php:65
 msgid "MarisaWolf"
 msgstr "魔理沙狼"
 
-#: shared/translations.php:55
+#: shared/translations.php:66
 msgid "MarisaOtter"
 msgstr "魔理沙獭"
 
-#: shared/translations.php:56
+#: shared/translations.php:67
 msgid "MarisaEagle"
 msgstr "魔理沙鹰"
 
-#: shared/translations.php:57
+#: shared/translations.php:68
 msgid "YoumuWolf"
 msgstr "妖梦狼"
 
-#: shared/translations.php:58
+#: shared/translations.php:69
 msgid "YoumuOtter"
 msgstr "妖梦獭"
 
-#: shared/translations.php:59
+#: shared/translations.php:70
 msgid "YoumuEagle"
 msgstr "妖梦鹰"
 
-#: shared/translations.php:60
-msgid "Seasons"
-msgstr "季節"
+#: shared/translations.php:71
+msgid "Touhou 1 - The Highly Responsive to Prayers"
+msgstr "东方灵异传　～ The Highly Responsive to Prayers"
+
+#: shared/translations.php:72
+msgid "Touhou 2 - The Story of Eastern Wonderland"
+msgstr "东方封魔录　～ the Story of Eastern Wonderland"
+
+#: shared/translations.php:73
+msgid "Touhou 3 - Phantasmagoria of Dim.Dream"
+msgstr "东方梦时空　～ Phantasmagoria of Dim.Dream"
+
+#: shared/translations.php:74
+msgid "Touhou 4 - Lotus Land Story"
+msgstr "东方幻想乡　～ Lotus Land Story"
+
+#: shared/translations.php:75
+msgid "Touhou 5 - Mystic Square"
+msgstr "东方怪绮谈　～ Mystic Square"
+
+#: shared/translations.php:76
+msgid "Touhou 6 - The Embodiment of Scarlet Devil"
+msgstr "东方红魔乡　～ the Embodiment of Scarlet Devil"
+
+#: shared/translations.php:77
+msgid "Touhou 7 - Perfect Cherry Blossom"
+msgstr "东方妖妖梦　～ Perfect Cherry Blossom"
+
+#: shared/translations.php:78
+msgid "Touhou 8 - Imperishable Night"
+msgstr "东方永夜抄　～ Imperishable Night"
+
+#: shared/translations.php:79
+msgid "Touhou 9 - Phantasmagoria of Flower View"
+msgstr "东方花映塚　～ Phantasmagoria of Flower View"
+
+#: shared/translations.php:80
+msgid "Touhou 10 - Mountain of Faith"
+msgstr "东方风神录　～ Mountain of Faith"
+
+#: shared/translations.php:81
+msgid "Touhou 11 - Subterranean Animism"
+msgstr "东方地灵殿　～ Subterranean Animism"
+
+#: shared/translations.php:82
+msgid "Touhou 12 - Undefined Fantastic Object"
+msgstr "东方星莲船　～ Undefined Fantastic Object"
+
+#: shared/translations.php:83
+msgid "Touhou 12.8 - Great Fairy Wars"
+msgstr "妖精大战争　～ 东方三月精"
+
+#: shared/translations.php:84
+msgid "Touhou 13 - Ten Desires"
+msgstr "东方神灵庙　～ Ten Desires"
+
+#: shared/translations.php:85
+msgid "Touhou 14 - Double Dealing Character"
+msgstr "东方辉针城　～ Double Dealing Character"
+
+#: shared/translations.php:86
+msgid "Touhou 15 - Legacy of Lunatic Kingdom"
+msgstr "东方绀珠传　～ Legacy of Lunatic Kingdom"
+
+#: shared/translations.php:87
+msgid "Touhou 16 - Hidden Star in Four Seasons"
+msgstr "东方天空璋　～ Hidden Star in Four Seasons"
+
+#: shared/translations.php:88
+msgid "Touhou 17 - Wily Beast and Weakest Creature"
+msgstr "东方鬼形獣　～ Wily Beast and Weakest Creature"
+
+#: shared/translations.php:89
+msgid "Touhou 18 - Unconnected Marketeers"
+msgstr "东方虹龙洞　～ Unconnected Marketeers"
 
 #~ msgid "ReimuYukari"
 #~ msgstr "结界组"
@@ -902,47 +1095,6 @@ msgstr "季節"
 
 #~ msgid "YoumuYuyuko"
 #~ msgstr "幽冥组"
-
-#, fuzzy
-#~| msgid "Touhou 7 - Perfect Cherry Blossom"
-#~ msgid "Paint Cherry Blossom"
-#~ msgstr "东方妖妖梦　～ Perfect Cherry Blossom"
-
-#, fuzzy
-#~| msgid "Touhou 16 - Hidden Star in Four Seasons"
-#~ msgid "Painting Stars in Four Seasons"
-#~ msgstr "东方天空璋　～ Hidden Star in Four Seasons"
-
-#, fuzzy
-#~| msgid "Touhou 12 - Undefined Fantastic Object"
-#~ msgid "Undefined Fantastic Emoji"
-#~ msgstr "东方星莲船　～ Undefined Fantastic Object"
-
-#, fuzzy
-#~| msgid "Touhou 15 - Legacy of Lunatic Kingdom"
-#~ msgid "Legacy of Lunatic Christmas"
-#~ msgstr "东方绀珠传　～ Legacy of Lunatic Kingdom"
-
-#~ msgid "Youkai mode (Dark)"
-#~ msgstr "Youkai mode (Dark)"
-
-#~ msgid "Human mode (Light)"
-#~ msgstr "Human mode (Light)"
-
-#~ msgid "Flag of the United Kingdom"
-#~ msgstr "英国旗"
-
-#~ msgid "Flag of the United States"
-#~ msgstr "美国旗"
-
-#~ msgid "Flag of Japan"
-#~ msgstr "日本旗"
-
-#~ msgid "Flag of the P.R.C."
-#~ msgstr "中国旗"
-
-#~ msgid "Flag of Russia"
-#~ msgstr "俄羅斯國旗"
 
 #~ msgid ""
 #~ "<strong>Touhou World Cup (TWC)</strong> is an annual international Touhou "
@@ -1193,92 +1345,11 @@ msgstr "季節"
 #~ msgid "Touhou Lunatic No Miss No Bombs"
 #~ msgstr "东方LNN"
 
-#~ msgid "Touhou 1 - The Highly Responsive to Prayers"
-#~ msgstr "东方灵异传　～ The Highly Responsive to Prayers"
-
-#~ msgid "Touhou 2 - The Story of Eastern Wonderland"
-#~ msgstr "东方封魔录　～ the Story of Eastern Wonderland"
-
-#~ msgid "Touhou 3 - Phantasmagoria of Dim.Dream"
-#~ msgstr "东方梦时空　～ Phantasmagoria of Dim.Dream"
-
-#~ msgid "Touhou 4 - Lotus Land Story"
-#~ msgstr "东方幻想乡　～ Lotus Land Story"
-
-#~ msgid "Touhou 5 - Mystic Square"
-#~ msgstr "东方怪绮谈　～ Mystic Square"
-
-#~ msgid "Touhou 6 - The Embodiment of Scarlet Devil"
-#~ msgstr "东方红魔乡　～ the Embodiment of Scarlet Devil"
-
-#~ msgid "Touhou 8 - Imperishable Night"
-#~ msgstr "东方永夜抄　～ Imperishable Night"
-
-#~ msgid "Touhou 9 - Phantasmagoria of Flower View"
-#~ msgstr "东方花映塚　～ Phantasmagoria of Flower View"
-
 #~ msgid "Touhou 9.5 - Shoot the Bullet"
 #~ msgstr "东方文花帖　～ Shoot the Bullet"
-
-#~ msgid "Touhou 10 - Mountain of Faith"
-#~ msgstr "东方风神录　～ Mountain of Faith"
-
-#~ msgid "Touhou 11 - Subterranean Animism"
-#~ msgstr "东方地灵殿　～ Subterranean Animism"
 
 #~ msgid "Touhou 12.5 - Double Spoiler"
 #~ msgstr "对抗新闻　～ 东方文花帖"
 
-#~ msgid "Touhou 12.8 - Great Fairy Wars"
-#~ msgstr "妖精大战争　～ 东方三月精"
-
-#~ msgid "Touhou 13 - Ten Desires"
-#~ msgstr "东方神灵庙　～ Ten Desires"
-
-#~ msgid "Touhou 14 - Double Dealing Character"
-#~ msgstr "东方辉针城　～ Double Dealing Character"
-
-#~ msgid "Touhou 17 - Wily Beast and Weakest Creature"
-#~ msgstr "东方鬼形獣　～ Wily Beast and Weakest Creature"
-
-#~ msgid "Touhou 18 - Unconnected Marketeers"
-#~ msgstr "东方虹龙洞　～ Unconnected Marketeers"
-
 #~ msgid "StB"
 #~ msgstr "文"
-
-#~ msgid "UM"
-#~ msgstr "虹"
-
-#~ msgid "Makai"
-#~ msgstr "魔界"
-
-#~ msgid "Jigoku"
-#~ msgstr "地狱"
-
-#~ msgid "Mima"
-#~ msgstr "魅魔"
-
-#~ msgid "Ellen"
-#~ msgstr "爱莲"
-
-#~ msgid "Kotohime"
-#~ msgstr "小兔姬"
-
-#~ msgid "Kana"
-#~ msgstr "卡娜"
-
-#~ msgid "Rikako"
-#~ msgstr "理香子"
-
-#~ msgid "Chiyuri"
-#~ msgstr "千百合"
-
-#~ msgid "Yumemi"
-#~ msgstr "梦美"
-
-#~ msgid "Tewi"
-#~ msgstr "帝"
-
-#~ msgid "Hatate"
-#~ msgstr "羽立"

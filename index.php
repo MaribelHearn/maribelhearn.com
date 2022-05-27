@@ -26,10 +26,12 @@
     hit($page, $status_code);
     $lang = set_lang_cookie();
     $locale = $lang . '.UTF-8';
-    setlocale(LC_ALL, $locale);
-    bindtextdomain($lang, 'locale');
-    textdomain($lang);
     $page = preg_replace('/\//', '', $page);
+    if (has_translation($page)) {
+        setlocale(LC_ALL, $locale);
+        bindtextdomain($lang, 'locale');
+        textdomain($lang);
+    }
     $use_index = array('index', 'about', 'credits', 'privacy', 'error');
     $dir = directory($page, $use_index);
     $page_path = 'assets/' . $dir . '/' . $page . '/' . $page . '.php';
@@ -47,7 +49,7 @@
         $is_mobile = false;
     }
     $css_href = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/shared/css_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile;
-    $js_href = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/shared/js_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile;
+    $js_href = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/shared/js_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile . '&hl=' . $lang;
     $favicon_dir = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . (!in_array($page, $use_index) ? 'assets/' . $dir . '/' . $page : '');
     $bg_pos = background_position($page);
     $file_upload = handle_file_upload();
