@@ -1,92 +1,37 @@
 /*global TRANSLATIONS*/
+/*eslint no-unused-vars: 0*/
 const MAX_SCORE = 9999999990;
-const minAge = "Thu, 01 Jan 1970 00:00:00 UTC";
-const maxAge = "Fri, 31 Dec 9999 23:59:59 UTC";
-
-String.prototype.contains = function (string) {
-    return this.indexOf(string) > -1;
-};
-
-String.prototype.cap = function () {
-    return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
-};
+const MAX_AGE = "Fri, 31 Dec 9999 23:59:59 UTC";
+const MIN_AGE = "Thu, 01 Jan 1970 00:00:00 UTC";
 
 String.prototype.removeSpaces = function () {
     return this.replace(/ /g, "");
 };
 
-String.prototype.strip = function () {
-    return this.replace(/<\/?[^>]*>/g, "");
-};
-
-String.prototype.insertAt = function (index, string) {
-    return this.substr(0, index) + string + this.substr(index);
-};
-
-String.prototype.removeAt = function (index) {
-    return this.substr(0, index) + this.substr(index + 1);
-};
-
-Object.defineProperty(Array.prototype, "contains", {
-    configurable: true,
-    enumerable: false,
-    value: function (value) {
-        return this.indexOf(value) > -1;
-    }
-});
-
 Object.defineProperty(Array.prototype, "pushStrict", {
     configurable: true,
     enumerable: false,
     value: function (value) {
-        if (!this.contains(value)) {
+        if (!this.includes(value)) {
             this.push(value);
         }
     }
 });
 
-Object.defineProperty(Array.prototype, "remove", {
-    configurable: true,
-    enumerable: false,
-    value: function (value) {
-        if (this.contains(value)) {
-            this.splice(this.indexOf(value), 1);
-        }
-    }
-});
-
-Object.defineProperty(Array.prototype, "append", {
-    configurable: true,
-    enumerable: false,
-    value: function (array) {
-        for (var i = 0; i < array.length; i += 1) {
-            this.push(array[i]);
-        }
-    }
-});
-
-Object.defineProperty(Object.prototype, "isEmpty", {
-    configurable: true,
-    enumerable: false,
-    value: function () {
-        return Object.keys(this).length === 0;
-    }
-});
+function isMobile() {
+    return navigator.userAgent.includes("Mobile") || navigator.userAgent.indexOf("Tablet");
+}
 
 function setCookie(name, value) {
-    document.cookie = name + "=" + value + ";expires=" + maxAge + ";path=/;sameSite=Strict;" + (location.protocol == "https:" ? "Secure;" : "");
+    document.cookie = name + "=" + value + ";expires=" + MAX_AGE + ";path=/;sameSite=Strict;" + (location.protocol == "https:" ? "Secure;" : "");
 }
 
 function getCookie(name) {
-    var decodedCookies, cookieArray, cookie;
-
-    decodedCookies = decodeURIComponent(document.cookie);
-    cookieArray = decodedCookies.split(';');
+    let decodedCookies = decodeURIComponent(document.cookie);
+    let cookieArray = decodedCookies.split(';');
     name += '=';
 
-    for (var i = 0; i < cookieArray.length; i += 1) {
-        cookie = cookieArray[i];
-
+    for (let cookie of cookieArray) {
         while (cookie.charAt(0) === ' ') {
             cookie = cookie.substring(1);
         }
@@ -104,28 +49,7 @@ function getCookie(name) {
 }
 
 function deleteCookie(name) {
-    document.cookie = name + "=;expires=" + minAge + ";path=/;";
-}
-
-function listCookies() {
-    var cookieNames = [], decodedCookies, cookieArray, i;
-
-    decodedCookies = decodeURIComponent(document.cookie);
-    cookieArray = decodedCookies.split(';');
-
-    for (i = 0; i < cookieArray.length; i += 1) {
-        cookieNames.push(cookieArray[i].split('=')[0].removeSpaces());
-    }
-
-    return cookieNames;
-}
-
-function numericSort(a, b) {
-    return b - a;
-}
-
-function rand(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    document.cookie = name + "=;expires=" + MIN_AGE + ";path=/;";
 }
 
 function sep(number) {

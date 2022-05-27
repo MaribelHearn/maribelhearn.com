@@ -436,7 +436,7 @@ function bestSeason(difficulty, shottype) {
     var shottypes = WRs.HSiFS[difficulty], max = 0, season, i;
 
     for (i in shottypes) {
-        if (!i.contains(shottype)) {
+        if (!i.includes(shottype)) {
             continue;
         }
 

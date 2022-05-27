@@ -1,4 +1,4 @@
-/*global $ WRs scores sorttable deleteCookie*/
+/*global $ WRs scores sorttable getCookie deleteCookie*/
 var tracked = ["EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"],
     untracked = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "PoFV"];
 
@@ -232,32 +232,6 @@ function checkShown() {
             hide(game);
         }
     }
-}
-
-function getCookie(name) {
-    var decodedCookies, cookieArray, cookie;
-
-    decodedCookies = decodeURIComponent(document.cookie);
-    cookieArray = decodedCookies.split(';');
-    name += '=';
-
-    for (var i = 0; i < cookieArray.length; i += 1) {
-        cookie = cookieArray[i];
-
-        while (cookie.charAt(0) === ' ') {
-            cookie = cookie.substring(1);
-        }
-
-        if (cookie.indexOf(name) === 0) {
-            try {
-                return JSON.parse(cookie.substring(name.length, cookie.length));
-            } catch (err) {
-                return JSON.parse("\"" + cookie.substring(name.length, cookie.length) + "\"");
-            }
-        }
-    }
-
-    return "";
 }
 
 $(document).ready(function () {

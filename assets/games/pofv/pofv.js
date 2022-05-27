@@ -1,5 +1,6 @@
-/*global $ setCookie getCookie*/
-var language = "en_GB", STATS = {
+/*global $ isMobile setCookie getCookie*/
+let language = "en_GB";
+const STATS = {
         "reimu": {
             "speed": 68,
             "focus": 136,
@@ -419,9 +420,9 @@ var language = "en_GB", STATS = {
                 "也有个完全给对面送气的攻击。她的能力还不错，在高压下可以不用按X硬扭。总而言之，小兔子进攻差，而且固灵范围让她的防守也变得很差，" +
                 "使得她是游戏中最弱的角色之一。"
         },
-    },
-    MIN_SPEED = 148,
-    MIN_CHARGE = 45.5;
+    };
+const MIN_SPEED = 148;
+const MIN_CHARGE = 45.5;
 
 function emptyModal() {
     $("#modal_inner").html("");
@@ -430,24 +431,19 @@ function emptyModal() {
 }
 
 function closeModal(event) {
-    var modal = document.getElementById("modal");
+    const modal = document.getElementById("modal");
 
     if ((event.target && event.target == modal) || (event.keyCode && event.keyCode == 27)) {
         emptyModal();
     }
 }
 
-function isMobile() {
-    return navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1;
-}
-
 function charInfo() {
-    var chara = this.title.split(' ')[0].toLowerCase();
-
-    var speed = MIN_SPEED - STATS[chara].speed,
-        focus = Math.max(MIN_SPEED - STATS[chara].focus, 1.5),
-        //scope = Math.max(minScope - STATS[char].scope, 3),
-        charge = Math.max(MIN_CHARGE - STATS[chara].charge, 0.3);
+    const chara = this.title.split(' ')[0].toLowerCase();
+    const speed = MIN_SPEED - STATS[chara].speed;
+    const focus = Math.max(MIN_SPEED - STATS[chara].focus, 1.5);
+    //const scope = Math.max(minScope - STATS[char].scope, 3);
+    const charge = Math.max(MIN_CHARGE - STATS[chara].charge, 0.3);
 
     emptyModal();
 
@@ -487,7 +483,7 @@ function charInfo() {
 }
 
 function setLanguage(event) {
-    var newLanguage = event.data.language;
+    const newLanguage = event.data.language;
 
     if (language == newLanguage) {
         return;

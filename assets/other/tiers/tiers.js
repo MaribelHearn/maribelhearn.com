@@ -1,15 +1,37 @@
-/*global $ categories html2canvas getCookie deleteCookie MobileDragDrop*/
+/*global $ categories html2canvas isMobile getCookie deleteCookie MobileDragDrop*/
 if (typeof MobileDragDrop !== "undefined") {
     MobileDragDrop.polyfill({
         holdToDrag: 200
     });
 }
 
+String.prototype.strip = function () {
+    return this.replace(/<\/?[^>]*>/g, "");
+};
+
+Object.defineProperty(Array.prototype, "remove", {
+    configurable: true,
+    enumerable: false,
+    value: function (value) {
+        if (this.includes(value)) {
+            this.splice(this.indexOf(value), 1);
+        }
+    }
+});
+
+Object.defineProperty(Object.prototype, "isEmpty", {
+    configurable: true,
+    enumerable: false,
+    value: function () {
+        return Object.keys(this).length === 0;
+    }
+});
+
 const MAX_NUMBER_OF_TIERS = 100;
 const MAX_NAME_LENGTH = 50;
 const defaultTiers = ["S", "A", "B", "C"];
 const defaultColour = "#1b232e";
-const defaultWidth = navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1 ? 60 : 120;
+const defaultWidth = isMobile() ? 60 : 120;
 const defaultSize = 32;
 const sorts = ["characters", "works", "shots", "cards"];
 const pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"];
@@ -211,10 +233,6 @@ function whichSort(item) {
 
 function isItem(item) {
     return whichSort(item) ? true : false;
-}
-
-function isMobile() {
-    return navigator.userAgent.indexOf("Mobile") > -1 || navigator.userAgent.indexOf("Tablet") > -1;
 }
 
 function isCategory(category) {
