@@ -48,7 +48,6 @@ $wr_json = array('drc', 'scoring', 'wr');
 $po2json = array('drc', 'lnn', 'wr');
 $page = $_GET['page'];
 $dir = directory($page);
-$js = array('js/utils' . $min . '.js');
 if (in_array($page, $canvas)) {
     array_push($js, 'js/html2canvas' . $min . '.js');
     array_push($js, 'js/polyfill_promise' . $min . '.js');
@@ -62,10 +61,13 @@ if (in_array($page, $sorttable)) {
 if ($page == 'tiers' && isset($_GET['mobile']) && $_GET['mobile']) {
     array_push($js, 'js/polyfill_dragdrop' . $min . '.js');
 } else if ($page == 'error') {
-    array_push($js, 'https://maribelhearn.com/assets/shared/js/dark' . $min . '.js');
+    array_push($js, 'https://maribelhearn.com/assets/shared/js/utils' . $min . '.js');
 } else if ($page == 'admin') {
     array_push($js, '../../admin/detect.js');
     array_push($js, '../../admin/admin.js');
+}
+if ($page != 'error') {
+    $js = array('js/utils' . $min . '.js');
 }
 if (file_exists('../' . $dir . '/' . $page . '/' . $page . $min . '.js')) {
     array_push($js, '../' . $dir . '/' . $page . '/' . $page . $min . '.js');
