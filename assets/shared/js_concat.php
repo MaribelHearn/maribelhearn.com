@@ -48,6 +48,7 @@ $wr_json = array('drc', 'scoring', 'wr');
 $po2json = array('drc', 'lnn', 'wr');
 $page = $_GET['page'];
 $dir = directory($page);
+$js = array();
 if (in_array($page, $canvas)) {
     array_push($js, 'js/html2canvas' . $min . '.js');
     array_push($js, 'js/polyfill_promise' . $min . '.js');
