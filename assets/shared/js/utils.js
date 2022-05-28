@@ -3,6 +3,15 @@
 const MAX_SCORE = 9999999990;
 const MAX_AGE = "Fri, 31 Dec 9999 23:59:59 UTC";
 const MIN_AGE = "Thu, 01 Jan 1970 00:00:00 UTC";
+const head = document.getElementsByTagName("head")[0];
+const hy = document.getElementById("hy_container");
+let done = false;
+
+window.addEventListener("DOMContentLoaded", ready, false);
+
+if (hy) {
+    hy.addEventListener("click", theme);
+}
 
 String.prototype.removeSpaces = function () {
     return this.replace(/ /g, "");
@@ -17,6 +26,14 @@ Object.defineProperty(Array.prototype, "pushStrict", {
         }
     }
 });
+
+function _(text) {
+    if (!["/drc", "/lnn", "/wr"].includes(location.pathname)) {
+        return text;
+    }
+
+    return !TRANSLATIONS[text] || TRANSLATIONS[text][1] === "" ? text : TRANSLATIONS[text][1];
+}
 
 function isMobile() {
     return navigator.userAgent.includes("Mobile") || navigator.userAgent.indexOf("Tablet");
@@ -50,6 +67,74 @@ function getCookie(name) {
 
 function deleteCookie(name) {
     document.cookie = name + "=;expires=" + MIN_AGE + ";path=/;";
+}
+
+function dark() {
+    const page = location.pathname.split('/')[1];
+    let style = document.createElement("link");
+    style.id = "dark_theme";
+    style.href = (location.host != "localhost" || location.pathname.includes("error") ? "https://maribelhearn.com/" : "/") + "assets/shared/dark.css";
+    style.type = "text/css";
+    style.rel = "stylesheet";
+    head.appendChild(style);
+
+    if (["lnn", "gensokyo", "royalflare", "wr"].includes(page)) {
+        style = document.createElement("style");
+        style.id = "dark_theme_table";
+        style.innerText = "tr:not(.west_tr):nth-child(even),tr.west_tr:nth-child(odd),#player_td{background-color:#555555;}";
+        head.appendChild(style);
+    }
+}
+
+function ready() {
+    if (done) {
+        return;
+    }
+
+    done = true;
+
+    if (localStorage.theme) { // legacy
+        document.cookie = "theme=dark;expires=Fri, 31 Dec 9999 23:59:59 UTC;path=/;sameSite=Strict;Secure;";
+        localStorage.removeItem("theme");
+        document.getElementById("hy_text").innerHTML = _("Youkai mode (Dark)");
+        dark();
+    }
+
+    if (document.getElementById("hy_link")) {
+        document.getElementById("hy_container").innerHTML = document.getElementById("hy_link").innerHTML;
+    }
+}
+
+function theme() {
+    if (getCookie("theme") == "dark") {
+        document.cookie = "theme=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;" +
+        "sameSite=Strict;" + (location.protocol == "https:" ? "Secure;" : "");
+        document.getElementById("hy_text").innerHTML = _("Human mode (Light)");
+
+        if (document.head.contains(document.getElementById("dark_theme_table"))) {
+            head.removeChild(document.getElementById("dark_theme_table"));
+        }
+
+        if (document.head.contains(document.getElementById("dark_theme"))) {
+            head.removeChild(document.getElementById("dark_theme"));
+        } else {
+            window.location.reload(false);
+        }
+    } else {
+        let cookieString = ";expires=Fri, 31 Dec 9999 23:59:59 UTC;path=/;sameSite=Strict;";
+
+        if (location.protocol == "https:") {
+            cookieString += "Secure;";
+        }
+
+        document.cookie = "theme=dark" + cookieString;
+        document.getElementById("hy_text").innerHTML = _("Youkai mode (Dark)");
+        dark();
+    }
+
+    if (localStorage.theme) { // legacy
+        localStorage.removeItem("theme");
+    }
 }
 
 function sep(number) {
@@ -196,8 +281,4 @@ function shottypeAbbr(shottype) {
         "YoumuOtter": "YO",
         "YoumuEagle": "YE"
     })[shottype];
-}
-
-function _(text) {
-    return !TRANSLATIONS[text] || TRANSLATIONS[text][1] === "" ? text : TRANSLATIONS[text][1];
 }
