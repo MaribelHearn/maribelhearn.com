@@ -68,7 +68,7 @@ if ($page == 'tiers' && isset($_GET['mobile']) && $_GET['mobile']) {
     array_push($js, '../../admin/admin.js');
 }
 if ($page != 'error') {
-    $js = array('js/utils' . $min . '.js');
+    array_push($js, 'js/utils' . $min . '.js');
 }
 if (file_exists('../' . $dir . '/' . $page . '/' . $page . $min . '.js')) {
     array_push($js, '../' . $dir . '/' . $page . '/' . $page . $min . '.js');
