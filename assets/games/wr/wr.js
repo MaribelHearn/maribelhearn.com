@@ -1,7 +1,9 @@
 /*global $ _ WRs westScores unverifiedScores MAX_SCORE isMobile setCookie getCookie deleteCookie gameAbbr shottypeAbbr sep fullNameNumber*/
-var  missingReplays, seasonsEnabled, datesEnabled, unverifiedEnabled, language = "en_GB", selected = "",
-    all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN",
-    "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
+const all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
+let missingReplays, seasonsEnabled, datesEnabled, unverifiedEnabled;
+let language = "en_GB";
+let selected = "";
+
 
 function removeChar(string) {
     return string.replace("Reimu", "").replace("Cirno", "").replace("Aya", "").replace("Marisa", "");
@@ -30,19 +32,19 @@ function toggleLayout() {
 }
 
 function toggleDates(event) {
-    var alreadyDisabled = event.data.alreadyDisabled, i;
+    const alreadyDisabled = event.data.alreadyDisabled;
 
     if (!alreadyDisabled) {
         datesEnabled = !datesEnabled;
         datesEnabled ? localStorage.setItem("datesEnabled", true) : localStorage.removeItem("datesEnabled");
     }
 
-    for (i in all) {
-        if (all[i] == "overall") {
+    for (let game of all) {
+        if (game == "overall") {
             continue;
         }
 
-        $("#" + all[i] + "overall4, #" + all[i] + "overallm").css("display", datesEnabled ? "table-cell" : "none");
+        $("#" + game + "overall4, #" + game + "overallm").css("display", datesEnabled ? "table-cell" : "none");
     }
 
     $(".datestring_player").css("display", datesEnabled ? "inline" : "none");
@@ -74,16 +76,18 @@ function replayPath(game, difficulty, shottype) {
 }
 
 function bestSeason(difficulty, shottype) {
-    var shottypes = WRs.HSiFS[difficulty], max = 0, season, i;
+    const shottypes = WRs.HSiFS[difficulty];
+    let max = 0;
+    let season;
 
-    for (i in shottypes) {
-        if (!i.includes(shottype)) {
+    for (let key in shottypes) {
+        if (!key.includes(shottype)) {
             continue;
         }
 
-        if (shottypes[i][0] > max) {
-            season = i.replace(shottype, "");
-            max = shottypes[i][0];
+        if (shottypes[key][0] > max) {
+            season = key.replace(shottype, "");
+            max = shottypes[key][0];
         }
     }
 
@@ -109,8 +113,6 @@ function formatUnverified(score) {
 }
 
 function showWesternRecords(compareWRs, unverifiedObj, game) {
-    var difficulty, percentage, west, westPlayer, westShottype, world, worldPlayer, worldShottype;
-
     if (game == "StB" || game == "DS") {
         return;
     }
@@ -118,52 +120,54 @@ function showWesternRecords(compareWRs, unverifiedObj, game) {
     $("#west_tbody").html("");
     $("#west_thead").html(`<tr class='west_tr'><th class='world'>${_("World")}</th><th class='west'>${_("West")}</th><th class='percentage'>${_("Percentage")}</th></tr>`);
 
-    for (difficulty in westScores[game]) {
+    for (let difficulty in westScores[game]) {
         if (westScores[game][difficulty].length === 0) {
             $("#" + game + difficulty).append("<td>-</td><th>-</th>");
             continue;
         }
 
-        west = westScores[game][difficulty][0];
-        westPlayer = westScores[game][difficulty][1];
-        westShottype = westScores[game][difficulty][2];
-        world = compareWRs[difficulty][0];
-        worldPlayer = compareWRs[difficulty][1];
-        worldShottype = compareWRs[difficulty][2];
-        percentage = (west / world * 100).toFixed(2);
-        $("#west_tbody").append("<tr class='west_tr'><td colspan='3'>" + difficulty + "</td></tr>");
-        $("#west_tbody").append("<tr class='west_tr'><td>" + (unverifiedObj.hasOwnProperty(game + difficulty + worldShottype) ? formatUnverified(sep(world)) : sep(world)) + "<br>by <em>" + worldPlayer +
-        "</em>" + (worldShottype != '-' ? "<br>(<span class='" + worldShottype + "'>" + _(worldShottype) + "</span>)" : "") +
-        "</td><td>" + sep(west) + "<br>by <em>" + westPlayer + "</em>" + (westShottype != '-' ? "<br>(<span class='" + westShottype +
-        "'>" + _(westShottype) + "</span>)" : "") + "</td><td class='" + percentageClass(percentage) +
-        "'>(" + (parseInt(percentage) == 100 ? 100 : percentage) + "%)</td></tr>");
+        let west = westScores[game][difficulty][0];
+        let westPlayer = westScores[game][difficulty][1];
+        let westShottype = westScores[game][difficulty][2];
+        let world = compareWRs[difficulty][0];
+        let worldPlayer = compareWRs[difficulty][1];
+        let worldShottype = compareWRs[difficulty][2];
+        let percentage = (west / world * 100).toFixed(2);
+        let percentageText = parseInt(percentage) == 100 ? 100 : percentage;
+        westShottype = (westShottype != '-' ? "<br>(" + _(westShottype) + ")" : "");
+        world = (unverifiedObj.hasOwnProperty(game + difficulty + worldShottype) ? formatUnverified(sep(world)) : sep(world));
+        worldShottype = (worldShottype != '-' ? `<br>(` + _(worldShottype) + ")" : "");
+        $("#west_tbody").append(`<tr class='west_tr'><td colspan='3'>${difficulty}</td>`);
+        $("#west_tbody").append(`<td>${world}<br>by <em>${worldPlayer}</em>${worldShottype}</td>`);
+        $("#west_tbody").append(`<td>${sep(west)}<br>by <em>${westPlayer}</em>${westShottype}</td><td class='${percentageClass(percentage)}'>(${percentageText}%)</td></tr>`);
+    }
+}
+
+function appendShottypeHeader(game, difficulty, shottype) {
+    if (game == "HSiFS" && difficulty == "Extra" && seasonsEnabled && removeChar(shottype) == "Spring") {
+        $("#list_tbody").append(`<tr id='${shottype}'><td>${_(removeSeason(shottype))}</td></tr>`);
+    } else {
+        $("#list_tbody").append(`<tr id='${shottype + difficulty}'><td>${_(shottype)}</td></tr>`);
     }
 }
 
 function appendShottypeHeaders(game, shottypes) {
-    var i;
-
     $("#list_tbody").html("");
 
     if (isPortrait()) {
-        for (var difficulty in WRs[game]) {
-            $("#list_tbody").append("<tr><th class='" + shotRoute(game).toLowerCase() + "'>" + shotRoute(game) + "</th><th class='" + difficulty + "'>" + difficulty + "</th></tr>");
+        for (let difficulty in WRs[game]) {
+            $("#list_tbody").append(`<tr><th>${shotRoute(game)}</th><th class='${difficulty}'>${difficulty}</th></tr>`);
+
             if (game != "GFW" || difficulty != "Extra") {
-                for (i = 0; i < shottypes.length; i++) {
-                    if (game == "HSiFS" && difficulty != "Extra" && seasonsEnabled) {
-                        $("#list_tbody").append("<tr id='" + shottypes[i] + difficulty + "'><td><span>" + _(removeSeason(shottypes[i])) +
-                        "</span><span class='" + removeChar(shottypes[i]) + "'>" + _(removeChar(shottypes[i])) + "</span></td></tr>");
-                    } else if (game == "HSiFS" && difficulty == "Extra" && seasonsEnabled && removeChar(shottypes[i]) == "Spring") {
-                        $("#list_tbody").append("<tr id='" + shottypes[i] + "'><td>" + _(removeSeason(shottypes[i])) + "</td></tr>");
-                    } else if (game != "HSiFS" || !seasonsEnabled) {
-                        $("#list_tbody").append("<tr id='" + shottypes[i] + difficulty + "'><td>" + _(shottypes[i]) + "</td></tr>");
-                    }
+                for (let shottype of shottypes) {
+                    appendShottypeHeader(game, difficulty, shottype);
                 }
             }
         }
     } else {
-        $("#list_thead").html("<tr id='list_thead_tr'><th class='" + shotRoute(game).toLowerCase() + "'>" + shotRoute(game) + "</th></tr>");
-        for (i = 0; i < shottypes.length; i++) {
+        $("#list_thead").html(`<tr id='list_thead_tr'><th>${shotRoute(game)}</th></tr>`);
+
+        for (let i = 0; i < shottypes.length; i++) {
             if (game == "HSiFS" && seasonsEnabled) {
                 $("#list_tbody").append("<tr id='" + shottypes[i] + "'><td><span>" + _(removeSeason(shottypes[i])) +
                 "</span><span class='" + removeChar(shottypes[i]) + "'>" + _(removeChar(shottypes[i])) + "</span></td></tr>");
@@ -175,24 +179,24 @@ function appendShottypeHeaders(game, shottypes) {
 }
 
 function appendDifficultyHeaders(game, difficulty, shottypes) {
-    var extraShots = ["Reimu", "Cirno", "Aya", "Marisa"], i;
+    var extraShots = ["Reimu", "Cirno", "Aya", "Marisa"];
 
     if (game == "GFW" && difficulty == "Extra") {
-        $("#list_tbody").append("<tr id='" + shottypes[i] + "'><td>Extra</td><td id='GFWExtra-'" + (isPortrait() ? "" : " colspan='4'") + "></td></tr>");
+        $("#list_tbody").append("<tr id='Extra'><td>Extra</td><td id='GFWExtra-'" + (isPortrait() ? "" : " colspan='4'") + "></td></tr>");
     } else if (game == "HSiFS" && difficulty == "Extra" && seasonsEnabled) {
         $("#list_thead_tr").append("<th class='sorttable_numeric'>Extra</th>");
-        for (i = 0; i < 4; i += 1) {
+        for (let i = 0; i < 4; i += 1) {
             $("#" + extraShots[i] + "Spring").append("<td id='" + game + difficulty + extraShots[i] + "'" + (isPortrait() ? "" : " rowspan='4'") + "></td>");
         }
     } else {
         if (!isPortrait()) {
             $("#list_thead_tr").append("<th class='sorttable_numeric'>" + difficulty + "</th>");
         }
-        for (i = 0; i < shottypes.length; i += 1) {
+        for (let shottype of shottypes) {
             if (isPortrait()) {
-                $("#" + shottypes[i] + difficulty).append("<td id='" + game + difficulty + shottypes[i] + "'></td>");
+                $("#" + shottype + difficulty).append("<td id='" + game + difficulty + shottype + "'></td>");
             } else {
-                $("#" + shottypes[i]).append("<td id='" + game + difficulty + shottypes[i] + "'></td>");
+                $("#" + shottype).append("<td id='" + game + difficulty + shottype + "'></td>");
             }
         }
     }
@@ -394,7 +398,7 @@ function showWRtable(game) {
 function verifyConditions(game) {
     if (game == selected) {
         $("#list").html("");
-        $("#" + game + "_image").css("border", $("#" + game + "_image").hasClass("cover98") ? "1px solid black" : "none");
+        $(`#${game}_image`).css("border", $(`#${game}_image`).hasClass("cover98") ? "1px solid black" : "none");
         selected = "";
         return false;
     }
@@ -403,7 +407,7 @@ function verifyConditions(game) {
 }
 
 function showWRs(event) {
-    var game = event.data ? event.data.game : this.id.replace("_image", "");
+    const game = event.data ? event.data.game : this.id.replace("_image", "");
 
     if (verifyConditions(game)) {
         showWRtable(game);
@@ -411,39 +415,39 @@ function showWRs(event) {
 }
 
 function addPlayerWR(playerWRs, game, difficulty, shottype, isUnverified) {
-    var score, date, replay, tmp;
-
     if (!playerWRs.cats.includes(game + difficulty)) {
-        $("#playerlistbody").append("<tr><td class='" + game + "p'><span>" + _(game) +
-        "</span>" + (language != "ja_JP" && language != "zh_CN" ? " " : "") + "<span>" + difficulty + "</span></td>" +
-        "<td id='" + game + difficulty + "s'></td><td id=" + game + difficulty + "r></td>" +
-        "<td id='" + game + difficulty + "d' class='date_empty'></td></tr>");
+        let space = (language != "ja_JP" && language != "zh_CN" ? " " : "");
+        $("#playerlistbody").append(`<tr>` +
+                `<td class='${game}p'>${_(game)}${space}${difficulty}</td>` +
+                `<td id='${game + difficulty}s'></td>` +
+                `<td id='${game + difficulty}r'></td>` +
+                `<td id='${game + difficulty}d' class='date_empty'></td>` +
+                `</tr>`);
         playerWRs.cats.push(game + difficulty);
     }
 
-    score = sep(WRs[game][difficulty][shottype][0]);
-    date = WRs[game][difficulty][shottype][2];
-    replay = WRs[game][difficulty][shottype][3];
+    const shottypeText = (shottype === "" ? "" : " (" + _(shottype) + ")");
+    let score = sep(WRs[game][difficulty][shottype][0]);
+    let date = formatDate(WRs[game][difficulty][shottype][2]);
+    let replay = WRs[game][difficulty][shottype][3];
+    let tmp;
 
     if (isUnverified) {
-        score = sep(unverifiedScores[game][difficulty][shottype][0]);
+        score = formatUnverified(sep(unverifiedScores[game][difficulty][shottype][0]));
         date = formatDate(unverifiedScores[game][difficulty][shottype][2]);
     }
 
-    playerWRs.dates.push("<span class='datestring_player'>" + formatDate(date) + "</span>");
+    playerWRs.scores.push(score + shottypeText);
+    playerWRs.dates.push(`<span class='datestring_player'>${date}</span>`);
 
     if (replay) {
-        playerWRs.scores.push(score + (shottype === "" ? "": " (<span class='" + shottype + "'>" + shottype + "</span>)"));
-        playerWRs.replays.push("<a href='" + replay + "'>" + replay + "</a>");
+        playerWRs.replays.push(`<a href='${replay}'>${replay}</a>`);
     } else if (gameAbbr(game) < 6 || missingReplays.includes(game + difficulty + shottype) || isUnverified) {
-        playerWRs.scores.push((isUnverified ? formatUnverified(score) : score) + (shottype === "" ? "": " (<span>" + _(shottype) + "</span>)"));
         playerWRs.replays.push('-');
     } else {
-        playerWRs.scores.push(score + (shottype === "" ? "": " (<span class='" + shottype + "'>" + shottype + "</span>)"));
         replay = replayPath(game, difficulty, shottype);
         tmp = replay.split('/');
-        playerWRs.replays.push("<a href='" + location.origin +
-        "/" + replay + "'>" + tmp[tmp.length - 1] + "</a>");
+        playerWRs.replays.push(`<a href='${location.origin}/${replay}'>${tmp[tmp.length - 1]}</a>`);
     }
 
     return playerWRs;
@@ -458,22 +462,23 @@ function showPlayerWRs(player) {
         return;
     }
 
-    var playerWRs = {"scores": [], "replays": [], "dates": [], "cats": []}, sum = 0, game, difficulty, shottype;
+    let playerWRs = {"scores": [], "replays": [], "dates": [], "cats": []};
+    let sum = 0;
 
     $("#playerlistbody").html("");
 
-    for (game in WRs) {
-        for (difficulty in WRs[game]) {
-            for (shottype in WRs[game][difficulty]) {
+    for (let game in WRs) {
+        for (let difficulty in WRs[game]) {
+            for (let shottype in WRs[game][difficulty]) {
                 if (WRs[game][difficulty][shottype].includes(player)) {
                     playerWRs = addPlayerWR(playerWRs, game, difficulty, shottype, false);
                     sum += 1;
                 }
             }
 
-            $("#" + game + difficulty + "s").html(playerWRs.scores.join("<br>"));
-            $("#" + game + difficulty + "r").html(playerWRs.replays.join("<br>"));
-            $("#" + game + difficulty + "d").html(playerWRs.dates.join("<br>"));
+            $(`#${game + difficulty}s`).html(playerWRs.scores.join("<br>"));
+            $(`#${game + difficulty}r`).html(playerWRs.replays.join("<br>"));
+            $(`#${game + difficulty}d`).html(playerWRs.dates.join("<br>"));
             playerWRs.scores = [];
             playerWRs.replays = [];
             playerWRs.dates = [];
@@ -481,31 +486,31 @@ function showPlayerWRs(player) {
     }
 
     if (JSON.stringify(unverifiedScores).includes(player)) {
-        for (game in unverifiedScores) {
-            for (difficulty in unverifiedScores[game]) {
-                for (shottype in unverifiedScores[game][difficulty]) {
+        for (let game in unverifiedScores) {
+            for (let difficulty in unverifiedScores[game]) {
+                for (let shottype in unverifiedScores[game][difficulty]) {
                     if (unverifiedScores[game][difficulty][shottype].includes(player)) {
                         playerWRs = addPlayerWR(playerWRs, game, difficulty, shottype, true);
                         sum += 1;
                     }
                 }
 
-                if ($("#" + game + difficulty + "s").html() === "") {
-                    $("#" + game + difficulty + "s").html(playerWRs.scores.join("<br>"));
+                if ($(`#${game + difficulty}s`).html() === "") {
+                    $(`#${game + difficulty}s`).html(playerWRs.scores.join("<br>"));
                 } else {
-                    $("#" + game + difficulty + "s").append("<br>" + playerWRs.scores.join("<br>"));
+                    $(`#${game + difficulty}s`).append("<br>" + playerWRs.scores.join("<br>"));
                 }
 
-                if ($("#" + game + difficulty + "r").html() === "") {
-                    $("#" + game + difficulty + "r").html(playerWRs.replays.join("<br>"));
+                if ($(`#${game + difficulty}r`).html() === "") {
+                    $(`#${game + difficulty}r`).html(playerWRs.replays.join("<br>"));
                 } else {
-                    $("#" + game + difficulty + "r").append("<br>" + playerWRs.replays.join("<br>"));
+                    $(`#${game + difficulty}r`).append("<br>" + playerWRs.replays.join("<br>"));
                 }
 
-                if ($("#" + game + difficulty + "d").html() === "") {
-                    $("#" + game + difficulty + "d").html(playerWRs.dates.join("<br>"));
+                if ($(`#${game + difficulty}d`).html() === "") {
+                    $(`#${game + difficulty}d`).html(playerWRs.dates.join("<br>"));
                 } else {
-                    $("#" + game + difficulty + "d").append("<br>" + playerWRs.dates.join("<br>"));
+                    $(`#${game + difficulty}d`).append("<br>" + playerWRs.dates.join("<br>"));
                 }
 
                 playerWRs.scores = [];
@@ -533,13 +538,13 @@ function reloadTable() {
 }
 
 function updateOrientation() {
-    if (navigator.userAgent.includes("Mobile") || navigator.userAgent.includes("Tablet")) {
+    if (isMobile()) {
         reloadTable();
     }
 }
 
 function setLanguage(event) {
-    var newLanguage = event.data.language;
+    const newLanguage = event.data.language;
 
     if (language == newLanguage) {
         return;

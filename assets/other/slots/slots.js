@@ -1,4 +1,4 @@
-/*global $ CHARS LOCATIONS html2canvas isMobile*/
+/*global $ CHARS LOCATIONS html2canvas isMobile getCookie*/
 var SPECIES = ["Human", "Magician", "Devil", "Ghost", "Yuki-onna", "Night sparrow", "Tengu", "Kappa",
     "Tsurube-otoshi", "Tsuchigumo", "Hashihime", "Satori", "Shuchuu", "Tsukumogami", "Nyuudou",
     "Nue", "Daidarabotchi", "Yamabiko", "Zombie", "Gashadokuro", "Kirin", "Wanyuudou", "Katawa-guruma",
@@ -93,32 +93,6 @@ function fileName() {
 
     return "touhou_slot_machine_" + date.getFullYear() + "_" + month +
     "_" + day + "_" + hours + "_" + minutes + "_" + seconds + ".png";
-}
-
-function getCookie(name) {
-    var decodedCookies, cookieArray, cookie;
-
-    decodedCookies = decodeURIComponent(document.cookie);
-    cookieArray = decodedCookies.split(';');
-    name += '=';
-
-    for (var i = 0; i < cookieArray.length; i += 1) {
-        cookie = cookieArray[i];
-
-        while (cookie.charAt(0) === ' ') {
-            cookie = cookie.substring(1);
-        }
-
-        if (cookie.indexOf(name) === 0) {
-            try {
-                return JSON.parse(cookie.substring(name.length, cookie.length));
-            } catch (err) {
-                return JSON.parse("\"" + cookie.substring(name.length, cookie.length) + "\"");
-            }
-        }
-    }
-
-    return "";
 }
 
 

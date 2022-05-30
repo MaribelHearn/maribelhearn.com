@@ -1,4 +1,5 @@
 <?php
+$langs = array('en_GB', 'en_US', 'ja_JP', 'zh_CN', 'ru_RU', 'de_DE', 'es_ES');
 function has_space(string $lang) {
     return $lang != 'ja_JP' && $lang != 'zh_CN';
 }

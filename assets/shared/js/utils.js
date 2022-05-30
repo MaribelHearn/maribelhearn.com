@@ -94,7 +94,7 @@ function ready() {
     done = true;
 
     if (localStorage.theme) { // legacy
-        document.cookie = "theme=dark;expires=Fri, 31 Dec 9999 23:59:59 UTC;path=/;sameSite=Strict;Secure;";
+        setCookie("theme", "dark");
         localStorage.removeItem("theme");
         document.getElementById("hy_text").innerHTML = _("Youkai mode (Dark)");
         dark();
@@ -106,9 +106,8 @@ function ready() {
 }
 
 function theme() {
-    if (getCookie("theme") == "dark") {
-        document.cookie = "theme=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;" +
-        "sameSite=Strict;" + (location.protocol == "https:" ? "Secure;" : "");
+    if (getCookie("theme")) {
+        deleteCookie("theme");
         document.getElementById("hy_text").innerHTML = _("Human mode (Light)");
 
         if (document.head.contains(document.getElementById("dark_theme_table"))) {
@@ -121,13 +120,7 @@ function theme() {
             window.location.reload(false);
         }
     } else {
-        let cookieString = ";expires=Fri, 31 Dec 9999 23:59:59 UTC;path=/;sameSite=Strict;";
-
-        if (location.protocol == "https:") {
-            cookieString += "Secure;";
-        }
-
-        document.cookie = "theme=dark" + cookieString;
+        setCookie("theme", "dark");
         document.getElementById("hy_text").innerHTML = _("Youkai mode (Dark)");
         dark();
     }
