@@ -112,7 +112,11 @@ if (in_array($page, $wr_json)) {
     }
 }
 if (in_array($page, $po2json) && !empty($_GET['hl'])) {
+    $langs = array('en_GB', 'en_US', 'ja_JP', 'zh_CN', 'ru_RU', 'de_DE', 'es_ES');
     $lang = $_GET['hl'];
+    if (!in_array($lang, $langs)) {
+        $lang = 'en_US';
+    }
     $path = '../../locale/' . $lang . '/LC_MESSAGES/' . $lang . '.json';
     if (file_exists($path)) {
         echo 'const TRANSLATIONS = ' . file_get_contents($path) . ';';
