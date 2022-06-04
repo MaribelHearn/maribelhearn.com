@@ -86,7 +86,7 @@
 		echo _('Single practice tool that works on all of the official Touhou shoot \'em up games, ' .
 		'allowing you to change settings or skip to patterns at will.');
 	?></p>
-	<a href='https://github.com/ack7139/thprac/releases'><?php echo _('Download') ?></a>
+	<a href='https://github.com/touhouworldcup/thprac/releases/latest'><?php echo _('Download') ?></a>
     <!-- SpoilerAL -->
     <hr>
     <h2 id='spoileral'>SpoilerAL<?php if ($lang == 'ja_JP') { echo '（すぽいらーえーる）'; } ?></h2>
