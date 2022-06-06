@@ -38,11 +38,29 @@ table.center {
 .noborders {
     border: none;
 }
-.error {
-    color: red;
-}
 .label {
     display: none;
+}
+.result_table {
+    display: none;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.result_table, .result_table th, .result_table td {
+    border: 1px solid #000;
+}
+.result_table tbody {
+    counter-reset: sortabletablescope;
+}
+.result_table thead tr::before {
+    content: '';
+    display: table-cell;
+}
+.result_table tbody tr::before {
+    content: counter(sortabletablescope);
+    counter-increment: sortabletablescope;
+    display: table-cell;
 }
 .border p {
     margin: 4px;
@@ -73,6 +91,14 @@ table.center {
 #notice {
     display: none;
 }
+#message {
+    font-weight: bold;
+    color: green;
+}
+#error {
+    font-weight: bold;
+    color: red;
+}
 #checkboxes, #checkboxes td:not(.noborders) {
     border: 1px solid #000;
 }
@@ -81,33 +107,6 @@ table.center {
     display: block;
     line-height: 1em;
     color: #000;
-}
-#table {
-    margin-top: 15px;
-    margin-left: auto;
-    margin-right: auto;
-}
-#gameTable {
-    margin-left: auto;
-    margin-right: auto;
-}
-#table, #table th, #table td {
-    border: 1px solid #000;
-}
-#gameTable, #gameTable th, #gameTable td {
-    border: 1px solid #000;
-}
-#gameTable tbody, #table tbody {
-    counter-reset: sortabletablescope;
-}
-#gameTable thead tr::before, #table thead tr::before {
-    content: '';
-    display: table-cell;
-}
-#gameTable tbody tr::before, #table tbody tr::before {
-    content: counter(sortabletablescope);
-    counter-increment: sortabletablescope;
-    display: table-cell;
 }
 #HRtP_image {
     background-position: 0px 0px;
