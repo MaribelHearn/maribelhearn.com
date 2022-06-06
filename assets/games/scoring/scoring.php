@@ -1,7 +1,7 @@
 <?php include_once 'assets/games/scoring/scoring_code.php' ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
-    <noscript><strong>Notice:</strong> this page cannot function properly with JavaScript disabled.</noscript>
+    <noscript><strong>Notice:</strong> this page requires JavaScript.</noscript>
     <p>Enter your high scores. You can leave any high score empty. The scores you entered will be compared to the world records that
     were achieved with the same shottypes and percentages will be given. When you click the 'Calculate' button at the bottom of the
     page, sortable tables will be generated to tell you how your scores compare to the world records.</p>
@@ -95,16 +95,10 @@
         </tbody>
         <tfoot>
             <tr class='noborders'>
-                <td>
-                    <input id='tracked' type='checkbox' checked>
-                    <label for='tracked'>Tracked</label>
-                </td><td>
-                    <input id='untracked' type='checkbox' checked>
-                    <label for='untracked'>Untracked</label>
-                </td><td>
+                <td colspan='4'>
                     <input id='all' type='checkbox' checked>
                     <label for='all'>All</label>
-                </td><td class='noborders'></td>
+                </td>
             </tr>
         </tfoot>
     </table>
@@ -152,10 +146,39 @@
 			echo '</table></div>';
 		}
 	?>
-	<div id='topList'></div>
+	<div id='top_list'>
+        <table id='score_table' class='result_table'>
+            <thead>
+                <tr>
+                    <th>Game + Difficulty</th>
+                    <th>Shottype / Route</th>
+                    <th class='sorttable_numeric'>Score</th>
+                    <th>WR Percentage</th>
+                    <th>Progress Bar</th>
+                    <th>WR</th>
+                </tr>
+            </thead>
+            <tbody id='score_tbody'>
+            </tbody>
+        </table>
+        <table id='game_table' class='result_table'>
+            <thead>
+                <tr>
+                    <th>Game</th>
+                    <th>Average Percentage</th>
+                </tr>
+            </thead>
+            <tbody id='game_tbody'>
+            </tbody>
+        </table>
+    </div>
     <p><label for='precision'>Number of decimals:</label> <input id='precision' type='number' value='0' min='0' max='5' step='1'></p>
+    <p id='message'></p>
     <p id='error'></p>
-	<p><label for='toggleData'>Save Data</label><input id='toggleData' type='checkbox'></p>
-	<p><input id='calc' type='button' value='Calculate'><input id='reset' type='button' value='Reset'></p>
+	<p>
+        <input id='save' type='button' value='Save'>
+        <input id='calc' type='button' value='Calculate'>
+        <input id='reset' type='button' value='Reset'>
+    </p>
     <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
 </div>
