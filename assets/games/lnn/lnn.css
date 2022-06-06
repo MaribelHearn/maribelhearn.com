@@ -39,70 +39,70 @@ tr:nth-child(even) {
     content: '';
     display: table-cell;
 }
-.HRtP, .HRtPl {
+.HRtP {
     color: white;
     background-color: #b6423c;
 }
-.SoEW, .SoEWl {
+.SoEW {
     color: white;
     background-color: #7d3884;
 }
-.PoDD, .PoDDl {
+.PoDD {
     background-color: gold;
 }
-.LLS, .LLSl {
+.LLS {
     background-color: #90ee90;
 }
-.MS, .MSl {
+.MS {
     color: white;
     background-color: #ae11d5;
 }
-.EoSD, .EoSDl {
+.EoSD {
     background-color: #ff2400;
 }
-.PCB, .PCBl {
+.PCB {
     background-color: #ff8ed2;
 }
-.IN, .INl {
+.IN {
     color: white;
     background-color: #339;
 }
-.PoFV, .PoFVl {
+.PoFV {
     background-color: #009973;
 }
-.MoF, .MoFl {
+.MoF {
     background-color: #96b300;
 }
-.SA, .SAl {
+.SA {
     color: white;
     background-color: #591400;
 }
-.UFO, .UFOl {
+.UFO {
     color: white;
     background-color: #4169e1;
 }
-.GFW, .GFWl {
+.GFW {
     background-color: #00c8c8;
 }
-.TD, .TDl {
+.TD {
     background-color: #4a808c;
 }
-.DDC, .DDCl {
+.DDC {
     background-color: #a77;
 }
-.LoLK, .LoLKl {
+.LoLK {
     color: white;
     background-color: #6a47be;
 }
-.HSiFS, .HSiFSl {
+.HSiFS {
     color: white;
     background-color: #176e0e;
 }
-.WBaWC, .WBaWCl {
+.WBaWC {
     color: white;
     background-color: #190e0e;
 }
-.UM, .UMl {
+.UM {
     background-color: #23fcb1;
 }
 .FinalA, .FinalB, .in_route {
