@@ -1,0 +1,114 @@
+{
+    "reimu": {
+        "speed": 68,
+        "focus": 136,
+        "scope": 20,
+        "charge": 25,
+        "delay": 41
+    },
+    "marisa": {
+        "speed": 55,
+        "focus": 91,
+        "scope": 101,
+        "charge": 31,
+        "delay": 36
+    },
+    "sakuya": {
+        "speed": 68,
+        "focus": 85,
+        "scope": 31,
+        "charge": 28,
+        "delay": 46
+    },
+    "youmu": {
+        "speed": 55,
+        "focus": 130,
+        "scope": 182,
+        "charge": 45.5,
+        "delay": 23
+    },
+    "reisen": {
+        "speed": 61,
+        "focus": 109,
+        "scope": 12,
+        "charge": 28.75,
+        "delay": 51
+    },
+    "cirno": {
+        "speed": 58,
+        "focus": 83,
+        "scope": 4,
+        "charge": 34.5,
+        "delay": 51
+    },
+    "lyrica": {
+        "speed": 65,
+        "focus": 124,
+        "scope": 32,
+        "charge": 35.75,
+        "delay": 51
+    },
+    "merlin": {
+        "speed": 72,
+        "focus": 136,
+        "scope": 48,
+        "charge": 42,
+        "delay": 31
+    },
+    "lunasa": {
+        "speed": 61,
+        "focus": 109,
+        "scope": 16,
+        "charge": 31.25,
+        "delay": 51
+    },
+    "mystia": {
+        "speed": 55,
+        "focus": 80,
+        "scope": 10,
+        "charge": 33.5,
+        "delay": 51
+    },
+    "tewi": {
+        "speed": 61,
+        "focus": 145,
+        "scope": 38,
+        "charge": 25,
+        "delay": 51
+    },
+    "aya": {
+        "speed": 50,
+        "focus": 79,
+        "scope": 50,
+        "charge": 25,
+        "delay": 51
+    },
+    "medicine": {
+        "speed": 55,
+        "focus": 114,
+        "scope": 19,
+        "charge": 35.75,
+        "delay": 51
+    },
+    "yuuka": {
+        "speed": 91,
+        "focus": 148,
+        "scope": 4,
+        "charge": 25.75,
+        "delay": 51
+    },
+    "komachi": {
+        "speed": 67,
+        "focus": 124,
+        "scope": 20,
+        "charge": 31.25,
+        "delay": 51
+    },
+    "eiki": {
+        "speed": 55,
+        "focus": 114,
+        "scope": 5,
+        "charge": 31,
+        "delay": 51
+    }
+}
