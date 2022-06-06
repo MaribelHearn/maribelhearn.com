@@ -36,7 +36,7 @@ function _(text) {
 }
 
 function isMobile() {
-    return navigator.userAgent.includes("Mobile") || navigator.userAgent.indexOf("Tablet");
+    return navigator.userAgent.includes("Mobile") || navigator.userAgent.includes("Tablet");
 }
 
 function setCookie(name, value) {
