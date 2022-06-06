@@ -1,24 +1,22 @@
 function init() {
-    var th = document.getElementsByTagName("th"), tables, table, tr, td, i;
+    const thElements = document.getElementsByTagName("th");
 
-    for (i = 0; i < th.length; i++) {
-        if (th[i].id.includes("score")) {
-            th[i].click();
-            th[i].click();
+    for (const th of thElements) {
+        if (th.id.includes("score")) {
+            th.click();
+            th.click();
         }
     }
 
-    tables = document.getElementsByTagName("table");
+    const tables = document.getElementsByTagName("table");
 
-    for (i = 0; i < tables.length; i++) {
-        table = tables[i];
-
+    for (const table of tables) {
         if (table.id == "results" || table.classList.contains("hellsinker")) {
             continue;
         }
 
-        tr = table.getElementsByTagName("tr");
-        td = tr[1].getElementsByTagName("td");
+        const tr = table.getElementsByTagName("tr");
+        let td = tr[1].getElementsByTagName("td");
 
         if (!td[1].innerHTML.includes(',')) {
             return;
