@@ -42,7 +42,7 @@ function directory(string $page) {
 }
 $min = (!is_localhost($_SERVER['REMOTE_ADDR']) ? '-min' : '');
 $sorttable = array('drc', 'fangame', 'gensokyo', 'lnn', 'royalflare', 'scoring', 'survival', 'thvote', 'wr');
-$jquery = array('drc', 'lnn', 'pofv', 'royalflare', 'scoring', 'slots', 'survival', 'tiers', 'wr');
+$jquery = array('drc', 'lnn', 'royalflare', 'scoring', 'slots', 'survival', 'tiers', 'wr');
 $canvas = array('slots', 'survival', 'tiers');
 $wr_json = array('drc', 'scoring', 'wr');
 $po2json = array('drc', 'lnn', 'wr');
@@ -94,6 +94,10 @@ if ($page == 'wr') {
         echo 'const westScores = ' . curl_get('https://maribelhearn.com/assets/shared/json/bestinthewest.json') . ';';
         echo 'const unverifiedScores = ' . curl_get('https://maribelhearn.com/assets/shared/json/unverified.json') . ';';
     }
+}
+if ($page == 'pofv') {
+    echo 'const STATS = ' . file_get_contents('json/pofv_stats.json') . ';';
+    echo 'const DESCRIPTIONS = ' . file_get_contents('json/pofv_descriptions.json') . ';';
 }
 if ($page == 'tiers') {
     echo 'const categories = {"characters":' . file_get_contents('json/chars.json') .
