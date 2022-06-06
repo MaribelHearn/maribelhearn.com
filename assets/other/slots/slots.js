@@ -93,7 +93,6 @@ function fileName() {
     const hours = (date.getHours()).toLocaleString("en-US", {minimumIntegerDigits: 2});
     const minutes = (date.getMinutes()).toLocaleString("en-US", {minimumIntegerDigits: 2});
     const seconds = (date.getSeconds()).toLocaleString("en-US", {minimumIntegerDigits: 2});
-
     return `touhou_slot_machine_${date.getFullYear()}_${month}_${day}_${hours}_${minutes}_${seconds}.png`;
 }
 
@@ -150,7 +149,7 @@ function checkBannedChars(event) {
 
 function setEventListeners() {
     document.body.addEventListener("click", closeModal, false);
-    document.body.addEventListener("keypress", closeModal, false);
+    document.body.addEventListener("keyup", closeModal, false);
     document.getElementById("start").addEventListener("click", startSlots, false);
     document.getElementById("stop").addEventListener("click", stopSlots, false);
     document.getElementById("screenshot").addEventListener("click", takeScreenshot, false);

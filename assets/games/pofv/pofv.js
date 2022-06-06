@@ -66,7 +66,7 @@ function emptyModal() {
 function closeModal(event) {
     const modal = document.getElementById("modal");
 
-    if ((event.target && event.target == modal) || (event.keyCode && event.keyCode == 27)) {
+    if ((event.target && event.target == modal) || (event.key && event.key == "Escape")) {
         emptyModal();
     }
 }
@@ -141,10 +141,9 @@ function init() {
     }
 
     document.body.addEventListener("click", closeModal, false);
-    document.body.addEventListener("keypress", closeModal, false);
+    document.body.addEventListener("keyup", closeModal, false);
     document.getElementById("en").addEventListener('click', setLanguage, false);
     document.getElementById("zh").addEventListener("click", setLanguage, false);
-
     const chars = document.querySelectorAll(".char");
     const flags = document.querySelectorAll(".flag");
 
