@@ -1,37 +1,34 @@
-/*global $ CHARS LOCATIONS html2canvas isMobile getCookie*/
-var SPECIES = ["Human", "Magician", "Devil", "Ghost", "Yuki-onna", "Night sparrow", "Tengu", "Kappa",
-    "Tsurube-otoshi", "Tsuchigumo", "Hashihime", "Satori", "Shuchuu", "Tsukumogami", "Nyuudou",
-    "Nue", "Daidarabotchi", "Yamabiko", "Zombie", "Gashadokuro", "Kirin", "Wanyuudou", "Katawa-guruma",
-    "Zashiki-warashi", "Hobgoblin", "Enenra", "Mermaid", "Rokurokubi", "Amanojaku", "Baku", "Yamanba"],
-    NUMBERS = ["None", "1", "2", "3", "4", "5+"],
-    OFFSET = -120,
-    ROW_SIZE = 9,
-    NUMBER_OF_SLOTS = 9,
-    MAX_TITLE_LENGTH = 30,
-    slotTitles = ["You are a ...", "Best friend", "Hates you", "First kiss", "Has a crush on you",
-    "Married to", "Honeymoon location", "No. of children", "Cockblocked by"],
-    bannedChars = ['<', '>', '&'],
-    slots = [],
-    speed = 100,
-    running;
+/*global CHARS LOCATIONS html2canvas isMobile getCookie*/
+const SPECIES = ["Human", "Magician", "Devil", "Ghost", "Yuki-onna", "Night sparrow", "Tengu", "Kappa",
+"Tsurube-otoshi", "Tsuchigumo", "Hashihime", "Satori", "Shuchuu", "Tsukumogami", "Nyuudou",
+"Nue", "Daidarabotchi", "Yamabiko", "Zombie", "Gashadokuro", "Kirin", "Wanyuudou", "Katawa-guruma",
+"Zashiki-warashi", "Hobgoblin", "Enenra", "Mermaid", "Rokurokubi", "Amanojaku", "Baku", "Yamanba"];
+const NUMBERS = ["None", "1", "2", "3", "4", "5+"];
+const OFFSET = -120;
+const ROW_SIZE = 9;
+const NUMBER_OF_SLOTS = 9;
+const MAX_TITLE_LENGTH = 30;
+const SPEED = 100;
+const BANNED_CHARS = ['<', '>', '&'];
+let slotTitles = ["You are a ...", "Best friend", "Hates you", "First kiss", "Has a crush on you", "Married to", "Honeymoon location", "No. of children", "Cockblocked by"];
+let slots = [];
+let running, currentID;
 
 function randomiseImage(max, slot, previous) {
-    var x, y;
-
     slots[slot] = Math.floor(Math.random() * (max - 1));
 
     if (slots[slot] == previous) {
         slots[slot] = (slots[slot] + 1) % max;
     }
 
-    x = (slots[slot] % ROW_SIZE) * OFFSET;
-    y = Math.floor(slots[slot] / ROW_SIZE) * OFFSET;
-    $("#slot" + slot).css("background-position", x + "px " + y + "px");
+    let x = (slots[slot] % ROW_SIZE) * OFFSET;
+    let y = Math.floor(slots[slot] / ROW_SIZE) * OFFSET;
+    document.getElementById(`slot${slot}`).style.backgroundPosition = `${x}px ${y}px`;
 
     if (max == CHARS.length) {
-        $("#slot" + slot).html("<div id='text" + slot + "' class='name'>" + CHARS[slots[slot]] + "</div>");
+        document.getElementById(`slot${slot}`).innerHTML = `<div id='text${slot}' class='name'>${CHARS[slots[slot]]}</div>`;
     } else {
-        $("#slot" + slot).html("<div id='text" + slot + "' class='name'>" + LOCATIONS[slots[slot]] + "</div>");
+        document.getElementById(`slot${slot}`).innerHTML = `<div id='text${slot}' class='name'>${LOCATIONS[slots[slot]]}</div>`;
     }
 }
 
@@ -42,14 +39,12 @@ function randomiseArray(array, slot, previous) {
         slots[slot] = (slots[slot] == array.length - 1 ? 0 : slots[slot] + 1);
     }
 
-    $("#slot" + slot).html(array[slots[slot]]);
+    document.getElementById(`slot${slot}`).innerHTML = array[slots[slot]];
 }
 
 function tick() {
-    var previous, slot;
-
-    for (slot = 0; slot < NUMBER_OF_SLOTS; slot++) {
-        previous = slots[slot];
+    for (let slot = 0; slot < NUMBER_OF_SLOTS; slot++) {
+        const previous = slots[slot];
 
         if (slot === 0) {
             randomiseArray(SPECIES, slot, previous);
@@ -64,12 +59,26 @@ function tick() {
     }
 }
 
+function emptyModal() {
+    document.getElementById("modal_title").style.display = "none";
+    document.getElementById("modal_screenshot").style.display = "none";
+    document.getElementById("modal").style.display = "none";
+}
+
+function closeModal(event) {
+    const modal = document.getElementById("modal");
+
+    if ((event.target && event.target == modal) || (event.key && event.key == "Escape")) {
+        emptyModal();
+    }
+}
+
 function startSlots() {
     if (running) {
         return;
     }
 
-    running = setInterval(tick, speed);
+    running = setInterval(tick, SPEED);
 }
 
 function stopSlots() {
@@ -77,22 +86,15 @@ function stopSlots() {
     running = undefined;
 }
 
-function emptyModal() {
-    $("#modal_inner").html("");
-    $("#modal_inner").css("display", "none");
-    $("#modal").css("display", "none");
-}
-
 function fileName() {
-    var date = new Date(),
-        month = (date.getMonth() + 1).toLocaleString("en-US", {minimumIntegerDigits: 2}),
-        day = (date.getDate()).toLocaleString("en-US", {minimumIntegerDigits: 2}),
-        hours = (date.getHours()).toLocaleString("en-US", {minimumIntegerDigits: 2}),
-        minutes = (date.getMinutes()).toLocaleString("en-US", {minimumIntegerDigits: 2}),
-        seconds = (date.getSeconds()).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    const date = new Date();
+    const month = (date.getMonth() + 1).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    const day = (date.getDate()).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    const hours = (date.getHours()).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    const minutes = (date.getMinutes()).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    const seconds = (date.getSeconds()).toLocaleString("en-US", {minimumIntegerDigits: 2});
 
-    return "touhou_slot_machine_" + date.getFullYear() + "_" + month +
-    "_" + day + "_" + hours + "_" + minutes + "_" + seconds + ".png";
+    return `touhou_slot_machine_${date.getFullYear()}_${month}_${day}_${hours}_${minutes}_${seconds}.png`;
 }
 
 
@@ -101,7 +103,9 @@ function backgroundColour() {
 }
 
 function takeScreenshot() {
-    emptyModal();
+    const width = document.getElementById("table").offsetWidth + 20;
+    const height = document.getElementById("table").offsetHeight + (isMobile() ? 20 : 0);
+    const windowHeight = height + (isMobile() ? 15 : 0);
 
     try {
         html2canvas(document.body, {
@@ -110,107 +114,96 @@ function takeScreenshot() {
                 doc.getElementById("table").style.marginLeft = "0px";
             },
             "backgroundColor": backgroundColour(),
-            "windowWidth": $("#table").width() + 20,
-            "width": $("#table").width() + 20,
-            "windowHeight": $("#table").height() + (isMobile() ? 20 : 0),
-            "height": $("#table").height() + (isMobile() ? 35 : 0),
+            "windowWidth": width,
+            "width": width,
+            "windowHeight": windowHeight,
+            "height": height,
             "logging": false
         }).then(function(canvas) {
-            var base64image = canvas.toDataURL("image/png");
-
-            $("#modal_inner").html("<h2>Screenshot</h2>");
-            $("#modal_inner").append("<p><a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
-            "<input type='button' value='Save to Device'></a></p>" +
-            "<p><img id='screenshot_base64' src='" + base64image + "' alt='Slot machine screenshot'></p>");
-            $("#modal_inner, #modal").css("display", "block");
+            const base64 = canvas.toDataURL("image/png");
+            document.getElementById("screenshot_base64").src = base64;
+            document.getElementById("save_link").href = base64;
+            document.getElementById("save_link").download = fileName();
+            document.getElementById("modal_screenshot").style.display = "block";
+            document.getElementById("modal").style.display = "block";
         });
     } catch (err) {
-        alert("Your browser is outdated. Use a different browser to " +
-        "screenshot your slot machine.");
+        alert("Your browser is outdated. Use a different browser to screenshot your slot machine.");
     }
 }
 
 function reset() {
-    slotTitles = ["You are a ...", "Best friend", "Hates you", "First kiss", "Has a crush on you",
-    "Married to", "Honeymoon location", "No. of children", "Cockblocked by"];
+    slotTitles = ["You are a ...", "Best friend", "Hates you", "First kiss", "Has a crush on you", "Married to", "Honeymoon location", "No. of children", "Cockblocked by"];
     localStorage.removeItem("slotTitles");
 
-    for (var i = 0; i < NUMBER_OF_SLOTS; i++) {
-        $("#title" + i).html(slotTitles[i]);
-    }
-}
-
-function closeModal(event) {
-    var modal = document.getElementById("modal");
-
-    if ((event.target && event.target == modal) || (event.key && event.key == "Escape")) {
-        emptyModal();
-    }
-}
-
-function setEventListeners() {
-    $("#start").on("click", startSlots);
-    $("#stop").on("click", stopSlots);
-    $("#screenshot").on("click", takeScreenshot);
-    $("#reset").on("click", reset);
-    $("body").on("click", closeModal);
-    $("body").on("keyup", closeModal);
-}
-
-function updateTitle(event) {
-    var title = $("#custom_title").val();
-
-    if (title.length > MAX_TITLE_LENGTH) {
-        return;
-    }
-
-    $("#title" + event.data.id).html(title);
-    slotTitles[event.data.id] = title;
-    localStorage.setItem("slotTitles", JSON.stringify(slotTitles));
-    emptyModal();
-}
-
-function titleChanged(event) {
-    var length = $("#custom_title").val().length;
-
-    if (event.key || event.type == "click") {
-        if (event.key == "Enter" || event.type == "click") {
-            updateTitle(event);
-            return;
-        }
-
-        $("#title_length").html(length + "/" + MAX_TITLE_LENGTH);
-
-        if (length > MAX_TITLE_LENGTH) {
-            $("#title_length").css({"color": "red", "font-weight": "bold"});
-        } else {
-            $("#title_length").css({"color": "grey", "font-weight": "normal"});
-        }
+    for (let i = 0; i < NUMBER_OF_SLOTS; i++) {
+        document.getElementById(`title${i}`).innerHTML = slotTitles[i];
     }
 }
 
 function checkBannedChars(event) {
-    if (event.key && bannedChars.includes(event.key)) {
+    if (event.key && BANNED_CHARS.includes(event.key)) {
         event.preventDefault();
         return;
     }
 }
 
-function titleMenu(event) {
-    emptyModal();
-    $("#modal_inner").html("<h2>Change Title</h2><p><input id='custom_title' " +
-    "type='text' value='" + slotTitles[event.data.id] +
-    "'><small id='title_length'>" + slotTitles[event.data.id].length +
-    "/" + MAX_TITLE_LENGTH + "</small></p>" +
-    "<p><input id='change_title' type='button' value='Change'></p>");
-    $("#custom_title").on("keyup", {id: event.data.id}, titleChanged);
-    $("#change_title").on("click", {id: event.data.id}, titleChanged);
-    $("#custom_title").on("keypress", checkBannedChars);
-    $("#modal_inner").css("display", "block");
-    $("#modal").css("display", "block");
+function setEventListeners() {
+    document.body.addEventListener("click", closeModal, false);
+    document.body.addEventListener("keypress", closeModal, false);
+    document.getElementById("start").addEventListener("click", startSlots, false);
+    document.getElementById("stop").addEventListener("click", stopSlots, false);
+    document.getElementById("screenshot").addEventListener("click", takeScreenshot, false);
+    document.getElementById("reset").addEventListener("click", reset, false);
+    document.getElementById("custom_title").addEventListener("keypress", checkBannedChars, false);
 }
 
-$(document).ready(function () {
+function updateTitle() {
+    const title = document.getElementById("custom_title").value;
+
+    if (title.length > MAX_TITLE_LENGTH) {
+        return;
+    }
+
+    document.getElementById(`title${currentID}`).innerHTML = title;
+    slotTitles[currentID] = title;
+    localStorage.setItem("slotTitles", JSON.stringify(slotTitles));
+    emptyModal();
+}
+
+function titleChanged(event) {
+    const length = document.getElementById("custom_title").value.length;
+
+    if (event.key || event.type == "click") {
+        if (event.key == "Enter" || event.type == "click") {
+            updateTitle();
+            return;
+        }
+
+        document.getElementById("title_length").innerHTML = `${length}/${MAX_TITLE_LENGTH}`;
+
+        if (length > MAX_TITLE_LENGTH) {
+            document.getElementById("title_length").style.color = "red";
+            document.getElementById("title_length").style.fontWeight = "bold";
+        } else {
+            document.getElementById("title_length").style.color = "gray";
+            document.getElementById("title_length").style.fontWeight = "normal";
+        }
+    }
+}
+
+function titleMenu(event) {
+    const id = event.target.id.replace(/[a-z]/g, "");
+    document.getElementById("custom_title").addEventListener("keyup", titleChanged, false);
+    document.getElementById("change_title").addEventListener("click", titleChanged, false);
+    document.getElementById("custom_title").value = slotTitles[id];
+    document.getElementById("title_length").innerHTML = `${slotTitles[id].length}/${MAX_TITLE_LENGTH}`;
+    document.getElementById("modal_title").style.display = "block";
+    document.getElementById("modal").style.display = "block";
+    currentID = id;
+}
+
+function init() {
     setEventListeners();
 
     if (localStorage.hasOwnProperty("slotTitles")) {
@@ -219,11 +212,13 @@ $(document).ready(function () {
         localStorage.setItem("slotTitles", JSON.stringify(slotTitles));
     }
 
-    for (var i = 0; i < NUMBER_OF_SLOTS; i++) {
-        $("#title" + i).on("click", {id: i}, titleMenu);
+    for (let i = 0; i < NUMBER_OF_SLOTS; i++) {
+        document.getElementById(`title${i}`).addEventListener("click", titleMenu, false);
 
         if (localStorage.hasOwnProperty("slotTitles")) {
-            $("#title" + i).html(slotTitles[i]);
+            document.getElementById(`title${i}`).innerHTML = slotTitles[i];
         }
     }
-});
+}
+
+window.addEventListener("DOMContentLoaded", init, false);

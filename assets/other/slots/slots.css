@@ -92,7 +92,7 @@ table, th, td {
     background-color: rgba(0,0,0,.4);
     color: #000;
 }
-#modal_inner {
+.modal_inner {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
