@@ -1,6 +1,5 @@
 /*global $ _ LNNs getCookie deleteCookie setCookie gameAbbr shottypeAbbr fullNameNumber*/
 const alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-let language = "en_GB";
 let selected = "";
 let missingReplays, videoLNNs;
 
@@ -230,7 +229,6 @@ function setLanguage(event) {
         newLanguage = event.target.id || event.target.parentNode.id;
     }
 
-    language = newLanguage;
     location.href = location.href.split('#')[0].split('?')[0];
     setCookie("lang", newLanguage);
 }
@@ -253,9 +251,12 @@ function setEventListeners() {
 }
 
 function setAttributes() {
-    document.getElementById("contents_new").style.display = "inline-block";
+    if (!getCookie("lnn_old_layout")) {
+        document.getElementById("newlayout").style.display = "block";
+        document.getElementById("contents_new").style.display = "inline-block";
+    }
+
     document.getElementById("playersearch").style.display = "block";
-    document.getElementById("newlayout").style.display = "block";
     const flags = document.querySelectorAll(".flag");
     const playerSearchLink = document.getElementById("playersearchlink");
 
@@ -281,20 +282,6 @@ function parseVideos() {
 }
 
 function init() {
-    if (getCookie("lang") == "ja_JP" || location.href.includes("?hl=jp")) {
-        language = "ja_JP";
-    } else if (getCookie("lang") == "zh_CN" || location.href.includes("?hl=zh")) {
-        language = "zh_CN";
-    } else if (getCookie("lang") == "ru_RU" || location.href.includes("?hl=ru")) {
-        language = "ru_RU";
-    } else if (getCookie("lang") == "de_DE" || location.href.includes("?hl=de")) {
-        language = "de_DE";
-    } else if (getCookie("lang") == "es_ES" || location.href.includes("?hl=es")) {
-        language = "es_ES";
-    } else if (getCookie("lang") == "en_US" || location.href.includes("?hl=en-us")) {
-        language = "en_US";
-    }
-
     setEventListeners();
     setAttributes();
     videoLNNs = parseVideos();
