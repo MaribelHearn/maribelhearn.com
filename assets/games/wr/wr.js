@@ -150,12 +150,12 @@ function appendShottypeHeader(game, difficulty, shottype) {
 }
 
 function appendShottypeHeaders(game, shots) {
-    const list_tbody = document.getElementById("list_tbody");
-    list_tbody.innerHTML = "";
+    const listTable = document.getElementById("list_tbody");
+    listTable.innerHTML = "";
 
     if (isPortrait()) {
         for (const difficulty in WRs[game]) {
-            list_tbody.innerHTML += `<tr><th>${shotRoute(game)}</th><th class='${difficulty}'>${difficulty}</th></tr>`;
+            listTable.innerHTML += `<tr><th>${shotRoute(game)}</th><th class='${difficulty}'>${difficulty}</th></tr>`;
 
             if (game != "GFW" || difficulty != "Extra") {
                 for (const shots of shots) {
@@ -168,9 +168,9 @@ function appendShottypeHeaders(game, shots) {
 
         for (const shot of shots) {
             if (game == "HSiFS" && seasonsEnabled) {
-                $("#list_tbody").append(`<tr id='${shot}'><td>${_(removeSeason(shot))}<span class='${removeChar(shot)}'>${_(removeChar(shot))}</span></td></tr>`);
+                listTable.innerHTML += `<tr id='${shot}'><td>${_(removeSeason(shot))}<span class='${removeChar(shot)}'>${_(removeChar(shot))}</span></td></tr>`;
             } else {
-                $("#list_tbody").append(`<tr id='${shot}'><td>${_(shot)}</td></tr>`);
+                listTable.innerHTML += `<tr id='${shot}'><td>${_(shot)}</td></tr>`;
             }
         }
     }
@@ -178,27 +178,28 @@ function appendShottypeHeaders(game, shots) {
 
 function appendDifficultyHeaders(game, diff, shottypes) {
     const extraShots = ["Reimu", "Cirno", "Aya", "Marisa"];
+    const listTableHeader = document.getElementById("list_thead_tr");
 
     if (game == "GFW" && diff == "Extra") {
         const colspan = (isPortrait() ? "" : " colspan='4'");
-        $("#list_tbody").append(`<tr id='Extra'><td>Extra</td><td id='GFWExtra-'${colspan}></td></tr>`);
+        document.getElementById("list_tbody").innerHTML += `<tr id='Extra'><td>Extra</td><td id='GFWExtra-'${colspan}></td></tr>`;
     } else if (game == "HSiFS" && diff == "Extra" && seasonsEnabled) {
         const rowspan = (isPortrait() ? "" : " rowspan='4'");
-        $("#list_thead_tr").append("<th class='sorttable_numeric'>Extra</th>");
+        listTableHeader.innerHTML += "<th class='sorttable_numeric'>Extra</th>";
 
         for (const shot of extraShots) {
-            $(`#${shot}Spring`).append(`<td id='${game + diff + shot}'${rowspan}></td>`);
+            document.getElementById(`${shot}Spring`).innerHTML += `<td id='${game + diff + shot}'${rowspan}></td>`;
         }
     } else {
         if (!isPortrait()) {
-            $("#list_thead_tr").append("<th class='sorttable_numeric'>" + diff + "</th>");
+            listTableHeader.innerHTML += `<th class='sorttable_numeric'>${diff}</th>`;
         }
 
         for (const shottype of shottypes) {
             if (isPortrait()) {
-                $("#" + shottype + diff).append(`<td id='${game + diff + shottype}'></td>`);
+                document.getElementById(shottype + diff).innerHTML += `<td id='${game + diff + shottype}'></td>`;
             } else {
-                $("#" + shottype).append(`<td id='${game + diff + shottype}'></td>`);
+                document.getElementById(shottype).innerHTML += `<td id='${game + diff + shottype}'></td>`;
             }
         }
     }
@@ -221,7 +222,7 @@ function prepareShowWR(game, records) {
     $("#unverified").on("click", toggleUnverified);
 
     if (unverifiedEnabled) {
-        $("#unverified").prop("checked", true);
+        document.getElementById("unverified").checked = true;
     }
 
     if (selected !== "") {
@@ -553,9 +554,12 @@ function setEventListeners() {
 }
 
 function setAttributes() {
-    document.getElementById("newlayout").style.display = "block";
+    if (!getCookie("wr_old_layout")) {
+        document.getElementById("newlayout").style.display = "block";
+        document.getElementById("contents_new").style.display = "inline-block";
+    }
+    
     document.getElementById("playersearch").style.display = "block";
-    document.getElementById("contents_new").style.display = "table";
     document.getElementById("checkboxes").style.display = "table";
     const flags = document.querySelectorAll(".flag");
     const westernRecordsLink = document.getElementById("westernlink");

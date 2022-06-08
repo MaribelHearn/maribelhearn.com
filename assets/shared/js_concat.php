@@ -56,7 +56,7 @@ if (in_array($page, $canvas)) {
 if (in_array($page, $jquery)) {
     array_push($js, 'js/jquery' . $min . '.js');
 }
-if (in_array($page, $sorttable)) {
+if (in_array($page, $sorttable) && !($page == 'wr' && isset($_COOKIE['wr_old_layout'])) && ($page == 'lnn' && isset($_COOKIE['lnn_old_layout']))) {
     array_push($js, 'js/sorttable' . $min . '.js');
 }
 if ($page == 'tiers' && isset($_GET['mobile']) && $_GET['mobile']) {
