@@ -152,10 +152,12 @@
                         $score = $shots[$shot][0];
                         $player = $shots[$shot][1];
                         $date = $shots[$shot][2];
+                        $video = empty($shots[$shot][3]) ? '' : $shots[$shot][3];
                     } else {
                         $score = 0;
                         $player = '';
                         $date = '';
+                        $video = '';
                     }
                     if ($game == 'GFW' && $diff == 'Extra') {
                         break;
@@ -182,6 +184,8 @@
                         }
                         if (file_exists(replay_path($game, $diff, $shot))) {
                             $score_text = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score_text . '<span class="dl_icon"></span></a>';
+                        } else if (!empty($video)) {
+                            $score_text = '<a class="replay" href="' . $video . '">' . $score_text . '<span class="dl_icon"></span></a>';
                         }
                         if ($score == $overall[num($game)] && $game != 'StB' && $game != 'DS') {
                             $score_text = '<strong>' . $score_text . '</strong>';
@@ -274,7 +278,6 @@
 		        foreach ($pl as $key => $player) {
 		            echo '<option value="' . $player . '">';
 		        }
-                echo '<option value="NALIS">'; // temporary solution
 		    ?>
         </datalist>
     </div>
