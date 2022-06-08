@@ -254,7 +254,7 @@ function formatDate(date) {
     return date;
 }
 
-function showWesternRecords(game, records, unverifiedObj) {
+function showWesternRecords(game, records) {
     if (game == "StB" || game == "DS") {
         return;
     }
@@ -270,41 +270,55 @@ function showWesternRecords(game, records, unverifiedObj) {
 
         let west = westScores[game][diff][0];
         const westPlayer = westScores[game][diff][1];
-        let westShottype = westScores[game][diff][2];
+        let westShot = westScores[game][diff][2];
         let world = records.bestShot[diff].score;
-        const worldPlayer = records.bestShot[diff].player;
-        let worldShottype = records.bestShot[diff].shottype;
+        let worldPlayer = records.bestShot[diff].player;
+        let worldShot = records.bestShot[diff].shottype;
+        let isUnverified = false;
+
+        if (unverifiedEnabled && unverifiedScores[game][diff][worldShot][0] > world) {
+            const unverifiedScore = unverifiedScores[game][diff][worldShot];
+            world = unverifiedScore[0];
+            worldPlayer = unverifiedScore[1];
+            isUnverified = true;
+        }
+
         const percentage = (west / world * 100).toFixed(2);
         const percentageText = parseInt(percentage) == 100 ? 100 : percentage;
         west = ((game == "WBaWC" || game == "UM") && west > MAX_SCORE
                 ? `<span class='cs'>9,999,999,990<span class='tooltip truescore'>${sep(west)}</span></span>`
                 : sep(west)
         );
-        westShottype = (westShottype != '-' ? `<br>(${_(westShottype)})` : "");
+        westShot = (westShot != '-' ? `<br>(${_(westShot)})` : "");
+
         world = ((game == "WBaWC" || game == "UM") && world > MAX_SCORE
                 ? `<span class='cs'>9,999,999,990<span class='tooltip truescore'>${sep(world)}</span></span>`
                 : sep(world)
         );
-        world = (unverifiedObj.hasOwnProperty(game + diff + worldShottype) ? formatUnverified(world) : world);
-        worldShottype = (worldShottype != '-' ? `<br>(${_(worldShottype)})` : "");
+        world = (isUnverified ? formatUnverified(world) : world);
+        worldShot = (worldShot != '-' ? `<br>(${_(worldShot)})` : "");
         const westTable = document.getElementById("west_tbody");
         westTable.innerHTML += `<tr class='west_tr'><td colspan='3'>${diff}</td></tr>`;
-        westTable.innerHTML += `<tr class='west_tr'><td>${world}<br>by <em>${worldPlayer}</em>${worldShottype}</td>` +
-                `<td>${west}<br>by <em>${westPlayer}</em>${westShottype}</td><td class='${percentageClass(percentage)}'>(${percentageText}%)</td></tr>`;
+        westTable.innerHTML += `<tr class='west_tr'><td>${world}<br>by <em>${worldPlayer}</em>${worldShot}</td>` +
+                `<td>${west}<br>by <em>${westPlayer}</em>${westShot}</td><td class='${percentageClass(percentage)}'>(${percentageText}%)</td></tr>`;
     }
 }
 
 function showWRtable(game, records) {
-    let unverifiedObj = {};
-
     for (const diff in records.WRs) {
         for (const shot in records.WRs[diff]) {
+            const id = game + diff + (game == "HSiFS" && !seasonsEnabled ? removeSeason(shot) : shot);
             const wr = records.WRs[diff][shot];
             let score = wr[0];
             let player = wr[1];
             let date = formatDate(wr[2]);
             let replay = wr[3];
-            let unverifiedScore;
+            let isUnverified = false;
+
+            if (score === 0) {
+                document.getElementById(id).innerHTML = '-';
+                continue;
+            }
 
             if (!replay) {
                 if (gameAbbr(game) < 6 || missingReplays.includes(game + diff + shot)) {
@@ -315,13 +329,11 @@ function showWRtable(game, records) {
             }
 
             if (unverifiedEnabled && unverifiedScores[game][diff][shot][0] > score) {
-                unverifiedObj[game + diff + shot] = unverifiedScores[game][diff][shot];
-                unverifiedScore = unverifiedObj[game + diff + shot];
+                const unverifiedScore = unverifiedScores[game][diff][shot];
                 score = unverifiedScore[0];
                 player = unverifiedScore[1];
                 date = formatDate(unverifiedScore[2]);
-            } else {
-                unverifiedScore = false;
+                isUnverified = true;
             }
 
             let text = ((game == "WBaWC" || game == "UM") && score > MAX_SCORE
@@ -329,12 +341,18 @@ function showWRtable(game, records) {
                     : sep(score)
             );
 
-            if (unverifiedObj.hasOwnProperty(game + diff + shot)) {
+            if (isUnverified) {
                 text = formatUnverified(text);
             }
 
             if (replay) {
-                text = `<a class='replay' href='${replay}'>${text}<span class='dl_icon'></span></a>`;
+                text = `<a class='replay' href='${replay}'>${text}`;
+
+                if (isUnverified) {
+                    text += "</a>";
+                } else {
+                    text += "<span class='dl_icon'></span></a>";
+                }
             }
 
             text += `<br>by <em>${player}</em>`;
@@ -343,12 +361,9 @@ function showWRtable(game, records) {
                 text += `<span class='dimgrey'><br><span class='datestring_game'>${date}</span></span>`;
             }
 
-            const id = game + diff + (game == "HSiFS" && !seasonsEnabled ? removeSeason(shot) : shot);
-            document.getElementById(id).innerHTML = (score > 0 ? text : '-');
+            document.getElementById(id).innerHTML = text;
         }
     }
-
-    showWesternRecords(game, records, unverifiedObj);
 }
 
 function highlightBests(game, records) {
@@ -377,6 +392,7 @@ function showWRs(event) {
         prepareShowWR(game, records);
         showWRtable(game, records);
         highlightBests(game, records);
+        showWesternRecords(game, records);
         document.getElementById("list").style.display = "block";
         document.getElementById("toggle_season").style.display = (game == "HSiFS" ? "block" : "none");
         document.getElementById("seasons").checked = seasonsEnabled;
@@ -408,6 +424,7 @@ function addPlayerWR(playerWRs, game, difficulty, shottype, isUnverified) {
     if (isUnverified) {
         score = formatUnverified(sep(unverifiedScores[game][difficulty][shottype][0]));
         date = formatDate(unverifiedScores[game][difficulty][shottype][2]);
+        replay = "";
     }
 
     playerWRs.scores.push(score + shottypeText);
@@ -437,59 +454,43 @@ function showPlayerWRs(player) {
 
     let playerWRs = {"scores": [], "replays": [], "dates": [], "cats": []};
     let sum = 0;
-
     document.getElementById("playerlistbody").innerHTML = "";
 
     for (const game in WRs) {
-        for (const difficulty in WRs[game]) {
-            for (const shottype in WRs[game][difficulty]) {
-                if (WRs[game][difficulty][shottype].includes(player)) {
-                    playerWRs = addPlayerWR(playerWRs, game, difficulty, shottype, false);
+        for (const diff in WRs[game]) {
+            for (const shot in WRs[game][diff]) {
+                if (WRs[game][diff][shot].includes(player)) {
+                    playerWRs = addPlayerWR(playerWRs, game, diff, shot, false);
                     sum += 1;
                 }
             }
 
-            $(`#${game + difficulty}s`).html(playerWRs.scores.join("<br>"));
-            $(`#${game + difficulty}r`).html(playerWRs.replays.join("<br>"));
-            $(`#${game + difficulty}d`).html(playerWRs.dates.join("<br>"));
+            for (const shot in unverifiedScores[game][diff]) {
+                if (unverifiedScores[game][diff][shot].includes(player)) {
+                    playerWRs = addPlayerWR(playerWRs, game, diff, shot, true);
+                    sum += 1;
+                }
+            }
+
+            const scores = document.getElementById(`${game + diff}s`);
+            const replays = document.getElementById(`${game + diff}r`);
+            const dates = document.getElementById(`${game + diff}d`);
+
+            if (scores) {
+                scores.innerHTML = playerWRs.scores.join("<br>");
+            }
+
+            if (replays) {
+                replays.innerHTML = playerWRs.replays.join("<br>");
+            }
+
+            if (dates) {
+                dates.innerHTML = playerWRs.dates.join("<br>");
+            }
+
             playerWRs.scores = [];
             playerWRs.replays = [];
             playerWRs.dates = [];
-        }
-    }
-
-    if (JSON.stringify(unverifiedScores).includes(player)) {
-        for (const game in unverifiedScores) {
-            for (const difficulty in unverifiedScores[game]) {
-                for (const shottype in unverifiedScores[game][difficulty]) {
-                    if (unverifiedScores[game][difficulty][shottype].includes(player)) {
-                        playerWRs = addPlayerWR(playerWRs, game, difficulty, shottype, true);
-                        sum += 1;
-                    }
-                }
-
-                if ($(`#${game + difficulty}s`).html() === "") {
-                    $(`#${game + difficulty}s`).html(playerWRs.scores.join("<br>"));
-                } else {
-                    $(`#${game + difficulty}s`).append("<br>" + playerWRs.scores.join("<br>"));
-                }
-
-                if ($(`#${game + difficulty}r`).html() === "") {
-                    $(`#${game + difficulty}r`).html(playerWRs.replays.join("<br>"));
-                } else {
-                    $(`#${game + difficulty}r`).append("<br>" + playerWRs.replays.join("<br>"));
-                }
-
-                if ($(`#${game + difficulty}d`).html() === "") {
-                    $(`#${game + difficulty}d`).html(playerWRs.dates.join("<br>"));
-                } else {
-                    $(`#${game + difficulty}d`).append("<br>" + playerWRs.dates.join("<br>"));
-                }
-
-                playerWRs.scores = [];
-                playerWRs.replays = [];
-                playerWRs.dates = [];
-            }
         }
     }
 
