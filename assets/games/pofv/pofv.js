@@ -118,7 +118,7 @@ function charInfo() {
 function setLanguage(event) {
     let newLanguage;
 
-    if (event.target.id == "en" || event.target.parentNode.id == "en") {
+    if (event.target.id == "en_GB" || event.target.parentNode.id == "en_GB") {
         newLanguage = (getCookie("lang") == "en_US" ? "en_US" : "en_GB");
     } else {
         newLanguage = "zh_CN";
