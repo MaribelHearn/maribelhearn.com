@@ -37,10 +37,10 @@ $(document).ready(function () {
     $("#scoringButton, #survivalButton").css("display", "inline");
     $("#scoringRubrics, #survivalRubrics").css("display", "none");
     $(".flag").attr("href", "");
-    $("#en").on("click", {language: (language == "en_US" ? "en_US" : "en_GB")}, setLanguage);
-    $("#jp").on("click", {language: "ja_JP"}, setLanguage);
-    $("#zh").on("click", {language: "zh_CN"}, setLanguage);
-    $("#de").on("click", {language: "de_DE"}, setLanguage);
+    $("#en_GB").on("click", {language: (language == "en_US" ? "en_US" : "en_GB")}, setLanguage);
+    $("#ja_JP").on("click", {language: "ja_JP"}, setLanguage);
+    $("#zh_CN").on("click", {language: "zh_CN"}, setLanguage);
+    $("#de_DE").on("click", {language: "de_DE"}, setLanguage);
     checkValues({data: {changePerf: true, changeShots: true}});
     step = setInterval(updateCountdown, 1000);
     updateCountdown();
@@ -495,13 +495,15 @@ function hideRubrics(event) {
 }
 
 function setLanguage(event) {
-    var newLanguage = event.data.language;
+    let newLanguage;
 
-    if (language == newLanguage) {
-        return;
+    if (event.target.id == "en_GB" || event.target.parentNode.id == "en_GB") {
+        newLanguage = (getCookie("lang") == "en_US" ? "en_US" : "en_GB");
+    } else {
+        newLanguage = event.target.id || event.target.parentNode.id;
     }
 
     language = newLanguage;
-    setCookie("lang", newLanguage);
     location.href = location.href.split('#')[0].split('?')[0];
+    setCookie("lang", newLanguage);
 }

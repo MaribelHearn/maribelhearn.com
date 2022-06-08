@@ -31,25 +31,34 @@ function toggleLayout() {
     }
 }
 
-function toggleDates(event) {
-    const alreadyDisabled = event.data.alreadyDisabled;
-
-    if (!alreadyDisabled) {
+function toggleDates(alreadyDisabled) {
+    if (alreadyDisabled !== true) {
         datesEnabled = !datesEnabled;
         datesEnabled ? localStorage.setItem("datesEnabled", true) : localStorage.removeItem("datesEnabled");
     }
 
-    for (let game of all) {
+    const display = (datesEnabled ? "table-cell" : "none");
+    const displayPlayer = (datesEnabled ? "inline" : "none");
+
+    for (const game of all) {
         if (game == "overall") {
             continue;
         }
 
-        $("#" + game + "overall4, #" + game + "overallm").css("display", datesEnabled ? "table-cell" : "none");
+        document.getElementById(`${game}overall4`).style.display = display;
+        document.getElementById(`${game}overallm`).style.display = display;
+    }
+    
+    const dateStrings = document.querySelectorAll(".date, .date_empty, .datestring, .datestring_game");
+    const playerDateStrings = document.querySelectorAll(".datestring_player");
+
+    for (const dateString of dateStrings) {
+        dateString.style.display = display;
     }
 
-    $(".datestring_player").css("display", datesEnabled ? "inline" : "none");
-    $(".date, .date_empty").css("display", datesEnabled ? "table-cell" : "none");
-    $(".datestring, .datestring_game").css("display", datesEnabled ? "table-cell" : "none");
+    for (const playerDateString of playerDateStrings) {
+        playerDateString.style.display = displayPlayer;
+    }
 }
 
 function toggleUnverified() {
@@ -59,7 +68,8 @@ function toggleUnverified() {
 }
 
 function disableDates() {
-    toggleDates({data: {alreadyDisabled: true}});
+    const alreadyDisabled = true;
+    toggleDates(alreadyDisabled);
 }
 
 function shotRoute(game) {
@@ -72,26 +82,7 @@ function replayPath(game, difficulty, shottype) {
         shottype = shottype.padStart(2, 0);
     }
 
-    return "replays/th" + gameAbbr(game) + "_ud" + difficulty.substr(0, 2) + shottypeAbbr(shottype) + ".rpy";
-}
-
-function bestSeason(difficulty, shottype) {
-    const shottypes = WRs.HSiFS[difficulty];
-    let max = 0;
-    let season;
-
-    for (let key in shottypes) {
-        if (!key.includes(shottype)) {
-            continue;
-        }
-
-        if (shottypes[key][0] > max) {
-            season = key.replace(shottype, "");
-            max = shottypes[key][0];
-        }
-    }
-
-    return season;
+    return `replays/th${gameAbbr(game)}_ud${difficulty.substr(0, 2) + shottypeAbbr(shottype)}.rpy`;
 }
 
 function percentageClass(percentage) {
@@ -114,8 +105,9 @@ function formatUnverified(score) {
 
 function verifyConditions(game) {
     if (game == selected) {
-        $("#list").html("");
-        $(`#${game}_image`).css("border", $(`#${game}_image`).hasClass("cover98") ? "1px solid black" : "none");
+        const border = (document.getElementById(`${game}_image`).classList.contains("cover98") ? "1px solid black" : "none");
+        document.getElementById("list").innerHTML = "";
+        document.getElementById(`${game}_image`).style.border = border;
         selected = "";
         return false;
     }
@@ -137,11 +129,11 @@ function getWRs(game) {
             const date = category[2];
 
             if (score > result.bestShot[diff].score) {
-                result.bestShot[diff] = { "id": "#" + game + diff + shot, "score": score, "player": player, "date": date, "shottype": shot };
+                result.bestShot[diff] = { "id": game + diff + shot, "score": score, "player": player, "date": date, "shottype": shot };
             }
 
             if (score > result.overall.score) {
-                result.overall = { "id": "#" + game + diff + shot, "score": score, "player": player, "date": date };
+                result.overall = { "id": game + diff + shot, "score": score, "player": player, "date": date };
             }
         }
     }
@@ -151,34 +143,34 @@ function getWRs(game) {
 
 function appendShottypeHeader(game, difficulty, shottype) {
     if (game == "HSiFS" && difficulty == "Extra" && seasonsEnabled && removeChar(shottype) == "Spring") {
-        $("#list_tbody").append(`<tr id='${shottype}'><td>${_(removeSeason(shottype))}</td></tr>`);
+        document.getElementById("list_tbody").innerHTML += `<tr id='${shottype}'><td>${_(removeSeason(shottype))}</td></tr>`;
     } else {
-        $("#list_tbody").append(`<tr id='${shottype + difficulty}'><td>${_(shottype)}</td></tr>`);
+        document.getElementById("list_tbody").innerHTML += `<tr id='${shottype + difficulty}'><td>${_(shottype)}</td></tr>`;
     }
 }
 
-function appendShottypeHeaders(game, shottypes) {
-    $("#list_tbody").html("");
+function appendShottypeHeaders(game, shots) {
+    const list_tbody = document.getElementById("list_tbody");
+    list_tbody.innerHTML = "";
 
     if (isPortrait()) {
-        for (let difficulty in WRs[game]) {
-            $("#list_tbody").append(`<tr><th>${shotRoute(game)}</th><th class='${difficulty}'>${difficulty}</th></tr>`);
+        for (const difficulty in WRs[game]) {
+            list_tbody.innerHTML += `<tr><th>${shotRoute(game)}</th><th class='${difficulty}'>${difficulty}</th></tr>`;
 
             if (game != "GFW" || difficulty != "Extra") {
-                for (let shottype of shottypes) {
-                    appendShottypeHeader(game, difficulty, shottype);
+                for (const shots of shots) {
+                    appendShottypeHeader(game, difficulty, shots);
                 }
             }
         }
     } else {
-        $("#list_thead").html(`<tr id='list_thead_tr'><th>${shotRoute(game)}</th></tr>`);
+        document.getElementById("list_thead").innerHTML = `<tr id='list_thead_tr'><th>${shotRoute(game)}</th></tr>`;
 
-        for (let i = 0; i < shottypes.length; i++) {
+        for (const shot of shots) {
             if (game == "HSiFS" && seasonsEnabled) {
-                $("#list_tbody").append("<tr id='" + shottypes[i] + "'><td><span>" + _(removeSeason(shottypes[i])) +
-                "</span><span class='" + removeChar(shottypes[i]) + "'>" + _(removeChar(shottypes[i])) + "</span></td></tr>");
+                $("#list_tbody").append(`<tr id='${shot}'><td>${_(removeSeason(shot))}<span class='${removeChar(shot)}'>${_(removeChar(shot))}</span></td></tr>`);
             } else {
-                $("#list_tbody").append("<tr id='" + shottypes[i] + "'><td>" + _(shottypes[i]) + "</td></tr>");
+                $("#list_tbody").append(`<tr id='${shot}'><td>${_(shot)}</td></tr>`);
             }
         }
     }
@@ -221,7 +213,7 @@ function prepareShowWR(game, records) {
     }
 
     $("#list").html("<p id='fullname'></p>" +
-    "<p id='seasontoggle'><input id='seasons' type='checkbox'><label id='label_seasons' class='Seasons' for='seasons'>" + _("Seasons") + "</label></p>" +
+    "<p id='toggle_season'><input id='seasons' type='checkbox'><label id='label_seasons' class='Seasons' for='seasons'>" + _("Seasons") + "</label></p>" +
     "<p><input id='unverified' type='checkbox'><label id='label_unverified' for='unverified' class='unverified'>Unverified Scores</label></p>" +
     "<table id='table' class='sortable'><thead id='list_thead'></thead><tbody id='list_tbody'></tbody></table>" +
     "<table><thead id='west_thead'></thead><tbody id='west_tbody'></tbody></table>");
@@ -267,16 +259,16 @@ function showWesternRecords(game, records, unverifiedObj) {
         return;
     }
 
-    $("#west_tbody").html("");
-    $("#west_thead").html(`<tr class='west_tr'><th class='world'>${_("World")}</th><th class='west'>${_("West")}</th><th class='percentage'>${_("Percentage")}</th></tr>`);
+    document.getElementById("west_tbody").innerHTML = "";
+    document.getElementById("west_thead").innerHTML = `<tr class='west_tr'><th class='world'>${_("World")}</th><th class='west'>${_("West")}</th><th class='percentage'>${_("Percentage")}</th></tr>`;
 
     for (const diff in westScores[game]) {
         if (westScores[game][diff].length === 0) {
-            $("#" + game + diff).append("<td>-</td><th>-</th>");
+            document.getElementById(game + diff).innerHTML += "<td>-</td><th>-</th>";
             continue;
         }
 
-        const west = westScores[game][diff][0];
+        let west = westScores[game][diff][0];
         const westPlayer = westScores[game][diff][1];
         let westShottype = westScores[game][diff][2];
         let world = records.bestShot[diff].score;
@@ -284,28 +276,35 @@ function showWesternRecords(game, records, unverifiedObj) {
         let worldShottype = records.bestShot[diff].shottype;
         const percentage = (west / world * 100).toFixed(2);
         const percentageText = parseInt(percentage) == 100 ? 100 : percentage;
-        westShottype = (westShottype != '-' ? "<br>(" + _(westShottype) + ")" : "");
-        world = (unverifiedObj.hasOwnProperty(game + diff + worldShottype) ? formatUnverified(sep(world)) : sep(world));
-        worldShottype = (worldShottype != '-' ? `<br>(` + _(worldShottype) + ")" : "");
-        $("#west_tbody").append(`<tr class='west_tr'><td colspan='3'>${diff}</td>`);
-        $("#west_tbody").append(`<td>${world}<br>by <em>${worldPlayer}</em>${worldShottype}</td>`);
-        $("#west_tbody").append(`<td>${sep(west)}<br>by <em>${westPlayer}</em>${westShottype}</td><td class='${percentageClass(percentage)}'>(${percentageText}%)</td></tr>`);
+        west = ((game == "WBaWC" || game == "UM") && west > MAX_SCORE
+                ? `<span class='cs'>9,999,999,990<span class='tooltip truescore'>${sep(west)}</span></span>`
+                : sep(west)
+        );
+        westShottype = (westShottype != '-' ? `<br>(${_(westShottype)})` : "");
+        world = ((game == "WBaWC" || game == "UM") && world > MAX_SCORE
+                ? `<span class='cs'>9,999,999,990<span class='tooltip truescore'>${sep(world)}</span></span>`
+                : sep(world)
+        );
+        world = (unverifiedObj.hasOwnProperty(game + diff + worldShottype) ? formatUnverified(world) : world);
+        worldShottype = (worldShottype != '-' ? `<br>(${_(worldShottype)})` : "");
+        const westTable = document.getElementById("west_tbody");
+        westTable.innerHTML += `<tr class='west_tr'><td colspan='3'>${diff}</td></tr>`;
+        westTable.innerHTML += `<tr class='west_tr'><td>${world}<br>by <em>${worldPlayer}</em>${worldShottype}</td>` +
+                `<td>${west}<br>by <em>${westPlayer}</em>${westShottype}</td><td class='${percentageClass(percentage)}'>(${percentageText}%)</td></tr>`;
     }
 }
 
 function showWRtable(game, records) {
     let unverifiedObj = {};
-    let text, scoreText, unverifiedScore;
 
     for (const diff in records.WRs) {
         for (const shot in records.WRs[diff]) {
-            const character = removeSeason(shot);
-            const season = removeChar(shot);
             const wr = records.WRs[diff][shot];
             let score = wr[0];
             let player = wr[1];
             let date = formatDate(wr[2]);
             let replay = wr[3];
+            let unverifiedScore;
 
             if (!replay) {
                 if (gameAbbr(game) < 6 || missingReplays.includes(game + diff + shot)) {
@@ -325,27 +324,27 @@ function showWRtable(game, records) {
                 unverifiedScore = false;
             }
 
-            scoreText = ((game == "WBaWC" || game == "UM") && score > MAX_SCORE
-                    ? "<span class='cs'>9,999,999,990<span class='tooltip truescore'>" + sep(score) + "</span></span>"
+            let text = ((game == "WBaWC" || game == "UM") && score > MAX_SCORE
+                    ? `<span class='cs'>9,999,999,990<span class='tooltip truescore'>${sep(score)}</span></span>`
                     : sep(score)
             );
 
             if (unverifiedObj.hasOwnProperty(game + diff + shot)) {
-                scoreText = formatUnverified(scoreText);
+                text = formatUnverified(text);
             }
 
-            text = (replay === ""
-                    ? scoreText
-                    : `<a class='replay' href='${replay}'>${scoreText}<span class='dl_icon'></span></a>`
-            );
-
-            text += "<br>by <em>" + player + "</em>" + (date && datesEnabled ? "<span class='dimgrey'><br>" +
-            "<span class='datestring_game'>" + date + "</span></span>" : "");
-            $("#" + game + diff + shot).html(score > 0 ? text : '-');
-
-            if (game == "HSiFS" && season == bestSeason(diff, character)) {
-                $("#" + game + diff + character + (diff == "Extra" ? "Small" : "")).html(text + (diff != "Extra" ? " (" + _(bestSeason(diff, character)) + ")" : ""));
+            if (replay) {
+                text = `<a class='replay' href='${replay}'>${text}<span class='dl_icon'></span></a>`;
             }
+
+            text += `<br>by <em>${player}</em>`;
+
+            if (date && datesEnabled) {
+                text += `<span class='dimgrey'><br><span class='datestring_game'>${date}</span></span>`;
+            }
+
+            const id = game + diff + (game == "HSiFS" && !seasonsEnabled ? removeSeason(shot) : shot);
+            document.getElementById(id).innerHTML = (score > 0 ? text : '-');
         }
     }
 
@@ -360,14 +359,14 @@ function highlightBests(game, records) {
             bestShot.id = removeSeason(bestShot.id);
         }
 
-        $(bestShot.id).html("<u>" + $(bestShot.id).html().replace("<br>", "</u><br>"));
+        document.getElementById(bestShot.id).innerHTML = "<u>" + document.getElementById(bestShot.id).innerHTML.replace("<br>", "</u><br>");
     }
 
     if (game == "HSiFS" && !seasonsEnabled) {
         records.overall.id = removeSeason(records.overall.id);
     }
 
-    $(records.overall.id).html($(records.overall.id).html().replace("<u>", "<u><strong>").replace("</u>", "</strong></u>"));
+    document.getElementById(records.overall.id).innerHTML = document.getElementById(records.overall.id).innerHTML.replace("<u>", "<u><strong>").replace("</u>", "</strong></u>");
 }
 
 function showWRs(event) {
@@ -378,26 +377,30 @@ function showWRs(event) {
         prepareShowWR(game, records);
         showWRtable(game, records);
         highlightBests(game, records);
-        $("#list").css("display", "block");
-        $("#seasontoggle").css("display", game == "HSiFS" ? "block" : "none");
-        $("#seasons").prop("checked", seasonsEnabled);
+        document.getElementById("list").style.display = "block";
+        document.getElementById("toggle_season").style.display = (game == "HSiFS" ? "block" : "none");
+        document.getElementById("seasons").checked = seasonsEnabled;
     }
 }
 
 function addPlayerWR(playerWRs, game, difficulty, shottype, isUnverified) {
     if (!playerWRs.cats.includes(game + difficulty)) {
         const space = (language != "ja_JP" && language != "zh_CN" ? " " : "");
-        $("#playerlistbody").append(`<tr>` +
+        document.getElementById("playerlistbody").innerHTML += `<tr>` +
                 `<td class='${game}p'>${_(game)}${space}${difficulty}</td>` +
                 `<td id='${game + difficulty}s'></td>` +
                 `<td id='${game + difficulty}r'></td>` +
                 `<td id='${game + difficulty}d' class='date_empty'></td>` +
-                `</tr>`);
+                `</tr>`;
         playerWRs.cats.push(game + difficulty);
     }
 
-    const shottypeText = (shottype === "" ? "" : " (" + _(shottype) + ")");
-    let score = sep(WRs[game][difficulty][shottype][0]);
+    const shottypeText = (shottype === "" ? "" : ` (${_(shottype)})`);
+    const wr = WRs[game][difficulty][shottype][0];
+    let score = ((game == "WBaWC" || game == "UM") && wr > MAX_SCORE
+            ? `<span class='cs'>9,999,999,990<span class='tooltip truescore'>${sep(wr)}</span></span>`
+            : sep(wr)
+    );
     let date = formatDate(WRs[game][difficulty][shottype][2]);
     let replay = WRs[game][difficulty][shottype][3];
     let tmp;
@@ -435,11 +438,11 @@ function showPlayerWRs(player) {
     let playerWRs = {"scores": [], "replays": [], "dates": [], "cats": []};
     let sum = 0;
 
-    $("#playerlistbody").html("");
+    document.getElementById("playerlistbody").innerHTML = "";
 
-    for (let game in WRs) {
-        for (let difficulty in WRs[game]) {
-            for (let shottype in WRs[game][difficulty]) {
+    for (const game in WRs) {
+        for (const difficulty in WRs[game]) {
+            for (const shottype in WRs[game][difficulty]) {
                 if (WRs[game][difficulty][shottype].includes(player)) {
                     playerWRs = addPlayerWR(playerWRs, game, difficulty, shottype, false);
                     sum += 1;
@@ -456,9 +459,9 @@ function showPlayerWRs(player) {
     }
 
     if (JSON.stringify(unverifiedScores).includes(player)) {
-        for (let game in unverifiedScores) {
-            for (let difficulty in unverifiedScores[game]) {
-                for (let shottype in unverifiedScores[game][difficulty]) {
+        for (const game in unverifiedScores) {
+            for (const difficulty in unverifiedScores[game]) {
+                for (const shottype in unverifiedScores[game][difficulty]) {
                     if (unverifiedScores[game][difficulty][shottype].includes(player)) {
                         playerWRs = addPlayerWR(playerWRs, game, difficulty, shottype, true);
                         sum += 1;
@@ -491,7 +494,7 @@ function showPlayerWRs(player) {
     }
 
     if (sum === 0) {
-        $("#playerlist").css("display", "none");
+        document.getElementById("playerlist").style.display = "none";
         return;
     }
 
@@ -505,7 +508,7 @@ function reloadTable() {
     if (selected !== "") {
         const game = selected;
         selected = "";
-        $("#list").html("");
+        document.getElementById("list").innerHTML = "";
         showWRs({ data: { game: game } });
     }
 }
@@ -517,7 +520,7 @@ function updateOrientation() {
 }
 
 function setLanguage(event) {
-    const newLanguage = event.data.language;
+    const newLanguage = event.target.id || event.target.parentNode.id;
 
     if (language == newLanguage) {
         return;
@@ -529,32 +532,48 @@ function setLanguage(event) {
 }
 
 function setEventListeners() {
-    $("#layouttoggle").on("click", toggleLayout);
-    $("#player").on("change", showPlayerWRs);
-    $("#player").on("select", showPlayerWRs);
-    $("body").on("resize", updateOrientation);
-    $("#dates").on("click", {alreadyDisabled: false}, toggleDates);
-    $("#en-gb").on("click", {language: "en_GB"}, setLanguage);
-    $("#en-us").on("click", {language: "en_US"}, setLanguage);
-    $("#jp").on("click", {language: "ja_JP"}, setLanguage);
-    $("#zh").on("click", {language: "zh_CN"}, setLanguage);
-    $("#ru").on("click", {language: "ru_RU"}, setLanguage);
-    $("#de").on("click", {language: "de_DE"}, setLanguage);
-    $("#es").on("click", {language: "es_ES"}, setLanguage);
-    $(".game_img").on("click", showWRs);
+    document.body.addEventListener("resize", updateOrientation, false);
+    document.getElementById("toggle_layout").addEventListener("click", toggleLayout, false);
+    document.getElementById("player").addEventListener("change", showPlayerWRs, false);
+    document.getElementById("player").addEventListener("select", showPlayerWRs, false);
+    document.getElementById("en_GB").addEventListener("click", setLanguage, false);
+    document.getElementById("en_US").addEventListener("click", setLanguage, false);
+    document.getElementById("ja_JP").addEventListener("click", setLanguage, false);
+    document.getElementById("zh_CN").addEventListener("click", setLanguage, false);
+    document.getElementById("ru_RU").addEventListener("click", setLanguage, false);
+    document.getElementById("de_DE").addEventListener("click", setLanguage, false);
+    document.getElementById("es_ES").addEventListener("click", setLanguage, false);
+    document.getElementById("dates").addEventListener("click", toggleDates, false);
+    const gameImg = document.querySelectorAll(".game_img");
+
+    for (const element of gameImg) {
+        element.addEventListener("click", showWRs, false);
+    }
 }
 
 function setAttributes() {
-    $("#newlayout").css("display", "block");
-    $("#playersearch").css("display", "block");
-    $("#contents_new").css("display", "table");
-    $("#westernlink").css("display", "block");
-    $("#playersearchlink").css("display", "block");
-    $("#checkboxes").css("display", "table");
-    $(".flag").attr("href", "");
+    document.getElementById("newlayout").style.display = "block";
+    document.getElementById("playersearch").style.display = "block";
+    document.getElementById("contents_new").style.display = "table";
+    document.getElementById("checkboxes").style.display = "table";
+    const flags = document.querySelectorAll(".flag");
+    const westernRecordsLink = document.getElementById("westernlink");
+    const playerSearchLink = document.getElementById("playersearchlink");
+
+    for (const flag of flags) {
+        flag.setAttribute("href", "");
+    }
+    
+    if (westernRecordsLink) {
+        document.getElementById("westernlink").style.display = "block";
+    }
+
+    if (playerSearchLink) {
+        document.getElementById("playersearchlink").style.display = "block";
+    }
 }
 
-$(document).ready(function () {
+function init() {
     if (getCookie("lang") == "ja_JP" || location.href.includes("?hl=jp")) {
         language = "ja_JP";
     } else if (getCookie("lang") == "zh_CN" || location.href.includes("?hl=zh")) {
@@ -569,17 +588,20 @@ $(document).ready(function () {
         language = "en_US";
     }
 
-    missingReplays = $("#missing_replays").val();
+    missingReplays = document.getElementById("missing_replays").value;
     datesEnabled = localStorage.getItem("datesEnabled") ? true : false;
     seasonsEnabled = localStorage.getItem("seasonsEnabled") ? true : false;
     unverifiedEnabled = localStorage.getItem("unverifiedEnabled") ? true : false;
-    $("#missing_replays").remove();
+    const missingReplaysElement = document.getElementById("missing_replays");
+    missingReplaysElement.parentNode.removeChild(missingReplaysElement);
     setEventListeners();
     setAttributes();
 
     if (!datesEnabled) {
         disableDates();
     } else {
-        $("#dates").prop("checked", true);
+        document.getElementById("dates").checked = true;
     }
-});
+}
+
+window.addEventListener("DOMContentLoaded", init, false);

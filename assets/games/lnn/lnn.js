@@ -48,21 +48,23 @@ function replayPath(game, player, character, type) {
         last = (type !== "" ? type.charAt(type.length - 1) : player.charAt(player.length - 1));
     }
 
-    return "replays/lnn/" + folder + "/th" + gameAbbr(game) +
-    "_ud" + first + last + shottypeAbbr(character) + ".rpy";
+    return `replays/lnn/${folder}/th${gameAbbr(game)}_ud${first + last + shottypeAbbr(character)}.rpy`;
 }
 
 function prepareShowLNNs(game) {
     if (selected !== "") {
-        $(`#${selected}_image`).css("border", $("#" + selected + "_image").hasClass("cover98") ? "1px solid black" : "none");
+        const selectedImg = document.getElementById(`${selected}_image`);
+        const border = (selectedImg.classList.contains("cover98") ? "1px solid black" : "none");
+        selectedImg.style.border = border;
     }
 
-    if ($("#fullname").hasClass(selected + "f")) {
-        $("#fullname").removeClass(selected + "f");
+    const fullName = document.getElementById("fullname");
+
+    if (fullName.classList.contains(selected + "f")) {
+        fullName.classList.remove(selected + "f");
     }
 
-    $("#" + game + "_image").css("border", "3px solid gold");
-    selected = game;
+    document.getElementById(`${game}_image`).style.border = "3px solid gold";
     $("#fullname").addClass(`${game}f`);
     $("#fullname").html(_(fullNameNumber(game)));
     $("#listhead").html(`<tr><th class='general_header'>${shotRoute(game)}</th>` +
@@ -70,6 +72,7 @@ function prepareShowLNNs(game) {
             `<th class='general_header'>${_("Players")}</th></tr>`);
     $("#listfoot").html(`<tr><td class='foot'>${_("Overall")}</td><td id='count' class='foot'></td><td id='total' class='foot'></td></tr>`);
     $("#listbody").html("");
+    selected = game;
 }
 
 function showLNNs() { // .game_img onclick
@@ -186,7 +189,7 @@ function showPlayerLNNs() { // player onchange, player onselect
 
     let games = [];
     let sum = 0;
-    $("#playerlistbody").html("");
+    document.getElementById("playerlistbody").innerHTML = "";
 
     for (const game in LNNs) {
         if (game == "LM") {
@@ -219,10 +222,12 @@ function showPlayerLNNs() { // player onchange, player onselect
 }
 
 function setLanguage(event) {
-    const newLanguage = event.data.language;
+    let newLanguage;
 
-    if (language == newLanguage) {
-        return;
+    if (event.target.id == "en_GB" || event.target.parentNode.id == "en_GB") {
+        newLanguage = (getCookie("lang") == "en_US" ? "en_US" : "en_GB");
+    } else {
+        newLanguage = event.target.id || event.target.parentNode.id;
     }
 
     language = newLanguage;
@@ -231,28 +236,40 @@ function setLanguage(event) {
 }
 
 function setEventListeners() {
-    $("#player").on("change", showPlayerLNNs);
-    $("#player").on("select", showPlayerLNNs);
-    $("#layouttoggle").on("click", toggleLayout);
-    $("#en").on("click", {language: (language == "en_US" ? "en_US" : "en_GB")}, setLanguage);
-    $("#jp").on("click", {language: "ja_JP"}, setLanguage);
-    $("#zh").on("click", {language: "zh_CN"}, setLanguage);
-    $("#ru").on("click", {language: "ru_RU"}, setLanguage);
-    $("#de").on("click", {language: "de_DE"}, setLanguage);
-    $("#es").on("click", {language: "es_ES"}, setLanguage);
-    $(".game_img").on("click", showLNNs);
+    document.getElementById("toggle_layout").addEventListener("click", toggleLayout, false);
+    document.getElementById("player").addEventListener("change", showPlayerLNNs, false);
+    document.getElementById("player").addEventListener("select", showPlayerLNNs, false);
+    document.getElementById("en_GB").addEventListener("click", setLanguage, false);
+    document.getElementById("ja_JP").addEventListener("click", setLanguage, false);
+    document.getElementById("zh_CN").addEventListener("click", setLanguage, false);
+    document.getElementById("ru_RU").addEventListener("click", setLanguage, false);
+    document.getElementById("de_DE").addEventListener("click", setLanguage, false);
+    document.getElementById("es_ES").addEventListener("click", setLanguage, false);
+    const gameImg = document.querySelectorAll(".game_img");
+
+    for (const element of gameImg) {
+        element.addEventListener("click", showLNNs, false);
+    }
 }
 
 function setAttributes() {
-    $("#contents_new").css("display", "inline-block");
-    $("#playersearch").css("display", "block");
-    $("#playersearchlink").css("display", "block");
-    $("#newlayout").css("display", "block");
-    $(".flag").attr("href", "");
+    document.getElementById("contents_new").style.display = "inline-block";
+    document.getElementById("playersearch").style.display = "block";
+    document.getElementById("newlayout").style.display = "block";
+    const flags = document.querySelectorAll(".flag");
+    const playerSearchLink = document.getElementById("playersearchlink");
+
+    for (const flag of flags) {
+        flag.setAttribute("href", "");
+    }
+
+    if (playerSearchLink) {
+        document.getElementById("playersearchlink").style.display = "block";
+    }
 }
 
 function parseVideos() {
-    const videos = $("#videos").val().split(',');
+    const videos = document.getElementById("videos").value.split(',');
     let result = {};
 
     for (let video of videos) {
@@ -263,7 +280,7 @@ function parseVideos() {
     return result;
 }
 
-$(document).ready(function () {
+function init() {
     if (getCookie("lang") == "ja_JP" || location.href.includes("?hl=jp")) {
         language = "ja_JP";
     } else if (getCookie("lang") == "zh_CN" || location.href.includes("?hl=zh")) {
@@ -281,5 +298,7 @@ $(document).ready(function () {
     setEventListeners();
     setAttributes();
     videoLNNs = parseVideos();
-    missingReplays = $("#missingReplays").val();
-});
+    missingReplays = document.getElementById("missingReplays").value;
+}
+
+window.addEventListener("DOMContentLoaded", init, false);
