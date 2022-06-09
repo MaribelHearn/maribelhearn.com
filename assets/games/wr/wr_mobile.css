@@ -1,4 +1,4 @@
-#layouttoggle {
+#toggle_layout {
     display: none;
 }
 @media only screen and (orientation: portrait) {

@@ -1,15 +1,17 @@
-/*global $ _ WRs westScores unverifiedScores MAX_SCORE isMobile setCookie getCookie deleteCookie gameAbbr shottypeAbbr sep fullNameNumber*/
+/*global _ WRs westScores unverifiedScores MAX_SCORE isMobile setCookie getCookie deleteCookie gameAbbr shottypeAbbr sep fullNameNumber*/
 const all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
-let missingReplays, seasonsEnabled, datesEnabled, unverifiedEnabled;
+const hsifsExtraShots = ["Reimu", "Cirno", "Aya", "Marisa"];
+let seasonsEnabled, datesEnabled, unverifiedEnabled;
 let language = "en_GB";
 let selected = "";
+let missingReplays = "";
 
 
-function removeChar(string) {
+function getSeason(string) {
     return string.replace("Reimu", "").replace("Cirno", "").replace("Aya", "").replace("Marisa", "");
 }
 
-function removeSeason(string) {
+function getCharacter(string) {
     return string.replace("Spring", "").replace("Summer", "").replace("Autumn", "").replace("Winter", "");
 }
 
@@ -46,7 +48,11 @@ function toggleDates(alreadyDisabled) {
         }
 
         document.getElementById(`${game}overall4`).style.display = display;
-        document.getElementById(`${game}overallm`).style.display = display;
+        const overallMobile = document.getElementById(`${game}overallm`);
+    
+        if (overallMobile) {
+            overallMobile.style.display = display;
+        }
     }
     
     const dateStrings = document.querySelectorAll(".date, .date_empty, .datestring, .datestring_game");
@@ -103,18 +109,6 @@ function formatUnverified(score) {
     return `<span class='unver_container'><span class='unver'>${score}</span><span class='tooltip'>Unverified</span></span>`;
 }
 
-function verifyConditions(game) {
-    if (game == selected) {
-        const border = (document.getElementById(`${game}_image`).classList.contains("cover98") ? "1px solid black" : "none");
-        document.getElementById("list").innerHTML = "";
-        document.getElementById(`${game}_image`).style.border = border;
-        selected = "";
-        return false;
-    }
-
-    return true;
-}
-
 function getWRs(game) {
     let result = { "WRs": {}, "overall": { "score": 0 }, "bestShot": {} };
 
@@ -141,105 +135,101 @@ function getWRs(game) {
     return result;
 }
 
-function appendShottypeHeader(game, difficulty, shottype) {
-    if (game == "HSiFS" && difficulty == "Extra" && seasonsEnabled && removeChar(shottype) == "Spring") {
-        document.getElementById("list_tbody").innerHTML += `<tr id='${shottype}'><td>${_(removeSeason(shottype))}</td></tr>`;
+function appendShottypeHeaderPortrait(game, diff, shot) {
+    if (game == "HSiFS" && diff != "Extra" && seasonsEnabled) {
+        document.getElementById("world_tbody").innerHTML += `<tr id='${shot + diff}'><td>${_(getCharacter(shot))}<span class='${getSeason(shot)}'>${_(getSeason(shot))}</span></td></tr>`;
     } else {
-        document.getElementById("list_tbody").innerHTML += `<tr id='${shottype + difficulty}'><td>${_(shottype)}</td></tr>`;
+        document.getElementById("world_tbody").innerHTML += `<tr id='${shot + diff}'><td>${_(shot)}</td></tr>`;
     }
 }
 
 function appendShottypeHeaders(game, shots) {
-    const listTable = document.getElementById("list_tbody");
-    listTable.innerHTML = "";
+    const worldTable = document.getElementById("world_tbody");
+    worldTable.innerHTML = "";
 
     if (isPortrait()) {
-        for (const difficulty in WRs[game]) {
-            listTable.innerHTML += `<tr><th>${shotRoute(game)}</th><th class='${difficulty}'>${difficulty}</th></tr>`;
+        for (const diff in WRs[game]) {
+            worldTable.innerHTML += `<tr><th>${shotRoute(game)}</th><th class='${diff}'>${diff}</th></tr>`;
 
-            if (game != "GFW" || difficulty != "Extra") {
-                for (const shots of shots) {
-                    appendShottypeHeader(game, difficulty, shots);
+            if (game == "HSiFS" && diff == "Extra") {
+                shots = hsifsExtraShots;
+            }
+            
+            if (game != "GFW" || diff != "Extra") {
+                for (const shot of shots) {
+                    appendShottypeHeaderPortrait(game, diff, shot);
                 }
             }
         }
     } else {
-        document.getElementById("list_thead").innerHTML = `<tr id='list_thead_tr'><th>${shotRoute(game)}</th></tr>`;
+        document.getElementById("world_thead").innerHTML = `<tr id='world_thead_tr'><th>${shotRoute(game)}</th></tr>`;
 
         for (const shot of shots) {
             if (game == "HSiFS" && seasonsEnabled) {
-                listTable.innerHTML += `<tr id='${shot}'><td>${_(removeSeason(shot))}<span class='${removeChar(shot)}'>${_(removeChar(shot))}</span></td></tr>`;
+                worldTable.innerHTML += `<tr id='${shot}'><td>${_(getCharacter(shot))}<span class='${getSeason(shot)}'>${_(getSeason(shot))}</span></td></tr>`;
             } else {
-                listTable.innerHTML += `<tr id='${shot}'><td>${_(shot)}</td></tr>`;
+                worldTable.innerHTML += `<tr id='${shot}'><td>${_(shot)}</td></tr>`;
             }
         }
     }
 }
 
-function appendDifficultyHeaders(game, diff, shottypes) {
-    const extraShots = ["Reimu", "Cirno", "Aya", "Marisa"];
-    const listTableHeader = document.getElementById("list_thead_tr");
+function appendDifficultyHeaders(game, diff, shots) {
+    const worldTableHeaderRow = document.getElementById("world_thead_tr");
 
     if (game == "GFW" && diff == "Extra") {
         const colspan = (isPortrait() ? "" : " colspan='4'");
-        document.getElementById("list_tbody").innerHTML += `<tr id='Extra'><td>Extra</td><td id='GFWExtra-'${colspan}></td></tr>`;
+        document.getElementById("world_tbody").innerHTML += `<tr id='Extra'><td>Extra</td><td id='GFWExtra-'${colspan}></td></tr>`;
     } else if (game == "HSiFS" && diff == "Extra" && seasonsEnabled) {
-        const rowspan = (isPortrait() ? "" : " rowspan='4'");
-        listTableHeader.innerHTML += "<th class='sorttable_numeric'>Extra</th>";
+        if (!isPortrait()) {
+            worldTableHeaderRow.innerHTML += "<th class='sorttable_numeric'>Extra</th>";
+        }
 
-        for (const shot of extraShots) {
-            document.getElementById(`${shot}Spring`).innerHTML += `<td id='${game + diff + shot}'${rowspan}></td>`;
+        for (const shot of hsifsExtraShots) {
+            const id = (isPortrait() ? `${shot}${diff}` : `${shot}Spring`);
+            const rowspan = (isPortrait() ? "" : " rowspan='4'");
+            document.getElementById(id).innerHTML += `<td id='${game + diff + shot}'${rowspan}></td>`;
         }
     } else {
         if (!isPortrait()) {
-            listTableHeader.innerHTML += `<th class='sorttable_numeric'>${diff}</th>`;
+            worldTableHeaderRow.innerHTML += `<th class='sorttable_numeric'>${diff}</th>`;
         }
 
-        for (const shottype of shottypes) {
-            if (isPortrait()) {
-                document.getElementById(shottype + diff).innerHTML += `<td id='${game + diff + shottype}'></td>`;
-            } else {
-                document.getElementById(shottype).innerHTML += `<td id='${game + diff + shottype}'></td>`;
-            }
+        for (const shot of shots) {
+            const id = (isPortrait() ? shot + diff : shot);
+            document.getElementById(id).innerHTML += `<td id='${game + diff + shot}'></td>`;
         }
     }
 }
 
 function prepareShowWR(game, records) {
     const diffKey = (game == 'StB' || game == 'DS' ? '1' : "Easy");
-    let shottypes = [];
+    let shots = [];
 
-    for (const shottype in WRs[game][diffKey]) {
-        shottypes.pushStrict(seasonsEnabled ? shottype : removeSeason(shottype));
+    for (const shot in WRs[game][diffKey]) {
+        shots.pushStrict(seasonsEnabled ? shot : getCharacter(shot));
     }
-
-    $("#list").html("<p id='fullname'></p>" +
-    "<p id='toggle_season'><input id='seasons' type='checkbox'><label id='label_seasons' class='Seasons' for='seasons'>" + _("Seasons") + "</label></p>" +
-    "<p><input id='unverified' type='checkbox'><label id='label_unverified' for='unverified' class='unverified'>Unverified Scores</label></p>" +
-    "<table id='table' class='sortable'><thead id='list_thead'></thead><tbody id='list_tbody'></tbody></table>" +
-    "<table><thead id='west_thead'></thead><tbody id='west_tbody'></tbody></table>");
-    $("#seasons").on("click", toggleSeasons);
-    $("#unverified").on("click", toggleUnverified);
 
     if (unverifiedEnabled) {
         document.getElementById("unverified").checked = true;
     }
 
     if (selected !== "") {
-        $(`#${selected}_image`).css("border", $("#" + selected + "_image").hasClass("cover98") ? "1px solid black" : "none");
+        const selectedImg = document.getElementById(`${selected}_image`);
+        const border = selectedImg.classList.contains("cover98") ? "1px solid black" : "none";
+        selectedImg.style.border = border;
     }
 
-    $("#fullname").removeClass(selected + "f");
-    $("#table").removeClass(selected + "t");
-    $(`#${game}_image`).css("border", "3px solid gold");
+    const wrTable = document.getElementById("world");
+    wrTable.classList.remove(`${selected}t`);
+    wrTable.classList.add(`${game}t`);
     selected = game;
-    $("#fullname").addClass(game + "f");
-    $("#fullname").html(_(fullNameNumber(game)));
-    $("#table").addClass(game + "t");
-    appendShottypeHeaders(game, shottypes);
+    document.getElementById(`${game}_image`).style.border = "3px solid gold";
+    document.getElementById("fullname").innerHTML = fullNameNumber(game);
+    appendShottypeHeaders(game, shots);
 
     for (const diff in records.WRs) {
-        appendDifficultyHeaders(game, diff, shottypes);
+        appendDifficultyHeaders(game, diff, shots);
     }
 }
 
@@ -261,7 +251,7 @@ function showWesternRecords(game, records) {
     }
 
     document.getElementById("west_tbody").innerHTML = "";
-    document.getElementById("west_thead").innerHTML = `<tr class='west_tr'><th class='world'>${_("World")}</th><th class='west'>${_("West")}</th><th class='percentage'>${_("Percentage")}</th></tr>`;
+    document.getElementById("west_thead").innerHTML = `<tr class='irregular_tr'><th class='world'>${_("World")}</th><th class='west'>${_("West")}</th><th class='percentage'>${_("Percentage")}</th></tr>`;
 
     for (const diff in westScores[game]) {
         if (westScores[game][diff].length === 0) {
@@ -299,16 +289,36 @@ function showWesternRecords(game, records) {
         world = (isUnverified ? formatUnverified(world) : world);
         worldShot = (worldShot != '-' ? `<br>(${_(worldShot)})` : "");
         const westTable = document.getElementById("west_tbody");
-        westTable.innerHTML += `<tr class='west_tr'><td colspan='3'>${diff}</td></tr>`;
-        westTable.innerHTML += `<tr class='west_tr'><td>${world}<br>by <em>${worldPlayer}</em>${worldShot}</td>` +
+        westTable.innerHTML += `<tr class='irregular_tr'><td colspan='3'>${diff}</td></tr>`;
+        westTable.innerHTML += `<tr class='irregular_tr'><td>${world}<br>by <em>${worldPlayer}</em>${worldShot}</td>` +
                 `<td>${west}<br>by <em>${westPlayer}</em>${westShot}</td><td class='${percentageClass(percentage)}'>(${percentageText}%)</td></tr>`;
     }
+}
+
+function bestSeason(diff, shot) {
+    const shots = WRs.HSiFS[diff];
+    let max = 0;
+    let season;
+
+    for (const key in shots) {
+        if (!key.includes(shot)) {
+            continue;
+        }
+
+        if (shots[key][0] > max) {
+            season = key.replace(shot, "");
+            max = shots[key][0];
+        }
+    }
+
+    return season;
 }
 
 function showWRtable(game, records) {
     for (const diff in records.WRs) {
         for (const shot in records.WRs[diff]) {
-            const id = game + diff + (game == "HSiFS" && !seasonsEnabled ? removeSeason(shot) : shot);
+            const chara = getCharacter(shot);
+            const id = game + diff + (game == "HSiFS" && !seasonsEnabled ? chara : shot);
             const wr = records.WRs[diff][shot];
             let score = wr[0];
             let player = wr[1];
@@ -318,6 +328,10 @@ function showWRtable(game, records) {
 
             if (score === 0) {
                 document.getElementById(id).innerHTML = '-';
+                continue;
+            }
+            
+            if (game == "HSiFS" && !seasonsEnabled && getSeason(shot) != bestSeason(diff, chara)) {
                 continue;
             }
 
@@ -372,71 +386,81 @@ function highlightBests(game, records) {
         const bestShot = records.bestShot[diff];
 
         if (game == "HSiFS" && !seasonsEnabled) {
-            bestShot.id = removeSeason(bestShot.id);
+            bestShot.id = getCharacter(bestShot.id);
         }
 
-        document.getElementById(bestShot.id).innerHTML = "<u>" + document.getElementById(bestShot.id).innerHTML.replace("<br>", "</u><br>");
+        const shotRecord = document.getElementById(bestShot.id);
+        shotRecord.innerHTML = "<u>" + shotRecord.innerHTML.replace("<br>", "</u><br>");
     }
 
     if (game == "HSiFS" && !seasonsEnabled) {
-        records.overall.id = removeSeason(records.overall.id);
+        records.overall.id = getCharacter(records.overall.id);
     }
 
-    document.getElementById(records.overall.id).innerHTML = document.getElementById(records.overall.id).innerHTML.replace("<u>", "<u><strong>").replace("</u>", "</strong></u>");
+    const overallRecord = document.getElementById(records.overall.id);
+    overallRecord.innerHTML = overallRecord.innerHTML.replace("<u>", "<u><strong>").replace("</u>", "</strong></u>");
 }
 
 function showWRs(event) {
     const game = event.data ? event.data.game : this.id.replace("_image", "");
 
-    if (verifyConditions(game)) {
+    if (game != selected) {
         const records = getWRs(game);
         prepareShowWR(game, records);
         showWRtable(game, records);
         highlightBests(game, records);
         showWesternRecords(game, records);
-        document.getElementById("list").style.display = "block";
+        document.getElementById("wr_list").style.display = "block";
         document.getElementById("toggle_season").style.display = (game == "HSiFS" ? "block" : "none");
         document.getElementById("seasons").checked = seasonsEnabled;
+    } else {
+        const gameImg = document.getElementById(`${game}_image`);
+        const border = (gameImg.classList.contains("cover98") ? "1px solid black" : "none");
+        gameImg.style.border = border;
+        document.getElementById("wr_list").style.display = "none";
+        selected = "";
     }
 }
 
-function addPlayerWR(playerWRs, game, difficulty, shottype, isUnverified) {
-    if (!playerWRs.cats.includes(game + difficulty)) {
+function addPlayerWR(playerWRs, game, diff, shot, isUnverified) {
+    if (!playerWRs.cats.includes(game + diff)) {
         const space = (language != "ja_JP" && language != "zh_CN" ? " " : "");
-        document.getElementById("playerlistbody").innerHTML += `<tr>` +
-                `<td class='${game}p'>${_(game)}${space}${difficulty}</td>` +
-                `<td id='${game + difficulty}s'></td>` +
-                `<td id='${game + difficulty}r'></td>` +
-                `<td id='${game + difficulty}d' class='date_empty'></td>` +
+        document.getElementById("player_tbody").innerHTML += `<tr>` +
+                `<td class='${game}p'>${_(game)}${space}${diff}</td>` +
+                `<td id='${game + diff}s'></td>` +
+                `<td id='${game + diff}t'></td>` +
+                `<td id='${game + diff}r'></td>` +
+                `<td id='${game + diff}d' class='date_empty'></td>` +
                 `</tr>`;
-        playerWRs.cats.push(game + difficulty);
+        playerWRs.cats.push(game + diff);
     }
 
-    const shottypeText = (shottype === "" ? "" : ` (${_(shottype)})`);
-    const wr = WRs[game][difficulty][shottype][0];
+    const wr = WRs[game][diff][shot][0];
     let score = ((game == "WBaWC" || game == "UM") && wr > MAX_SCORE
             ? `<span class='cs'>9,999,999,990<span class='tooltip truescore'>${sep(wr)}</span></span>`
             : sep(wr)
     );
-    let date = formatDate(WRs[game][difficulty][shottype][2]);
-    let replay = WRs[game][difficulty][shottype][3];
+    let date = formatDate(WRs[game][diff][shot][2]);
+    let replay = WRs[game][diff][shot][3];
     let tmp;
 
     if (isUnverified) {
-        score = formatUnverified(sep(unverifiedScores[game][difficulty][shottype][0]));
-        date = formatDate(unverifiedScores[game][difficulty][shottype][2]);
+        score = formatUnverified(sep(unverifiedScores[game][diff][shot][0]));
+        date = formatDate(unverifiedScores[game][diff][shot][2]);
         replay = "";
     }
 
-    playerWRs.scores.push(score + shottypeText);
+    playerWRs.raw.push(wr);
+    playerWRs.scores.push(score);
+    playerWRs.shots.push(_(shot));
     playerWRs.dates.push(`<span class='datestring_player'>${date}</span>`);
 
     if (replay) {
         playerWRs.replays.push(`<a href='${replay}'>${replay}</a>`);
-    } else if (gameAbbr(game) < 6 || missingReplays.includes(game + difficulty + shottype) || isUnverified) {
+    } else if (gameAbbr(game) < 6 || missingReplays.includes(game + diff + shot) || isUnverified) {
         playerWRs.replays.push('-');
     } else {
-        replay = replayPath(game, difficulty, shottype);
+        replay = replayPath(game, diff, shot);
         tmp = replay.split('/');
         playerWRs.replays.push(`<a href='${location.origin}/${replay}'>${tmp[tmp.length - 1]}</a>`);
     }
@@ -453,64 +477,74 @@ function showPlayerWRs(player) {
         return;
     }
 
-    let playerWRs = {"scores": [], "replays": [], "dates": [], "cats": []};
+    let playerWRs = {"raw": [], "scores": [], "shots": [], "replays": [], "dates": [], "cats": []};
     let sum = 0;
-    document.getElementById("playerlistbody").innerHTML = "";
+    document.getElementById("player_tbody").innerHTML = "";
 
     for (const game in WRs) {
         for (const diff in WRs[game]) {
+            let diffSum = 0;
+
             for (const shot in WRs[game][diff]) {
                 if (WRs[game][diff][shot].includes(player)) {
                     playerWRs = addPlayerWR(playerWRs, game, diff, shot, false);
+                    diffSum += 1;
                     sum += 1;
                 }
             }
 
             for (const shot in unverifiedScores[game][diff]) {
-                if (unverifiedScores[game][diff][shot].includes(player)) {
+                if (unverifiedScores[game][diff][shot].includes(player) && !playerWRs.raw.includes(unverifiedScores[game][diff][shot][0])) {
                     playerWRs = addPlayerWR(playerWRs, game, diff, shot, true);
+                    diffSum += 1;
                     sum += 1;
                 }
             }
 
+            if (diffSum === 0) {
+                continue;
+            }
+
             const scores = document.getElementById(`${game + diff}s`);
+            const shots = document.getElementById(`${game + diff}t`);
             const replays = document.getElementById(`${game + diff}r`);
             const dates = document.getElementById(`${game + diff}d`);
-
-            if (scores) {
-                scores.innerHTML = playerWRs.scores.join("<br>");
-            }
-
-            if (replays) {
-                replays.innerHTML = playerWRs.replays.join("<br>");
-            }
-
-            if (dates) {
-                dates.innerHTML = playerWRs.dates.join("<br>");
-            }
-
+            scores.innerHTML = playerWRs.scores.join("<br>");
+            shots.innerHTML = playerWRs.shots.join("<br>");
+            replays.innerHTML = playerWRs.replays.join("<br>");
+            dates.innerHTML = playerWRs.dates.join("<br>");
+            playerWRs.raw = [];
             playerWRs.scores = [];
+            playerWRs.shots = [];
             playerWRs.replays = [];
             playerWRs.dates = [];
         }
     }
 
     if (sum === 0) {
-        document.getElementById("playerlist").style.display = "none";
+        document.getElementById("player_list").style.display = "none";
         return;
     }
 
-    $(".date_empty").css("display", datesEnabled ? "table-cell" : "none");
-    $(".datestring_player").css("display", datesEnabled ? "inline" : "none");
-    $("#playerlistfoot").html("<tr><td colspan='4'></td></tr><tr><td class='total'>Total</td><td colspan='3'>" + sum + "</td></tr>");
-    $("#playerlist").css("display", "block");
+    const dateEmpty = document.querySelectorAll(".date_empty");
+    const dateStringPlayer = document.querySelectorAll(".datestring_player");
+
+    for (const element of dateEmpty) {
+        element.style.display = (datesEnabled ? "table-cell" : "none");
+    }
+
+    for (const element of dateStringPlayer) {
+        element.style.display = (datesEnabled ? "inline" : "none");
+    }
+
+    document.getElementById("player_sum").innerHTML = sum;
+    document.getElementById("player_list").style.display = "block";
 }
 
 function reloadTable() {
     if (selected !== "") {
         const game = selected;
         selected = "";
-        document.getElementById("list").innerHTML = "";
         showWRs({ data: { game: game } });
     }
 }
@@ -546,6 +580,8 @@ function setEventListeners() {
     document.getElementById("de_DE").addEventListener("click", setLanguage, false);
     document.getElementById("es_ES").addEventListener("click", setLanguage, false);
     document.getElementById("dates").addEventListener("click", toggleDates, false);
+    document.getElementById("seasons").addEventListener("click", toggleSeasons, false);
+    document.getElementById("unverified").addEventListener("click", toggleUnverified, false);
     const gameImg = document.querySelectorAll(".game_img");
 
     for (const element of gameImg) {

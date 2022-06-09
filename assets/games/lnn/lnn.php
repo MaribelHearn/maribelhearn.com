@@ -1,4 +1,4 @@
-<?php include_once 'assets/shared/tl.php'; include_once 'assets/games/lnn/lnn_code.php' ?>
+<?php include_once 'assets/games/lnn/lnn_code.php' ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
     <p id='description'><?php
@@ -31,7 +31,7 @@
             if ($game == 'LM') {
                 continue;
             }
-            echo '<p><a href="#' . $game . '">' . _(full_name($game)) . '</a></p>';
+            echo '<p><a href="#' . $game . '">' . full_name($game) . '</a></p>';
         }
         echo '<p id="playersearchlink"><a href="#playersearch">' . _('Player Search') .
         '</a></p><p><a href="#overall" class="overallcount">' . _('Overall Count') .
@@ -55,8 +55,8 @@
             $all = array();
             echo '<div id="' . $game . '"><p>' .
             '<table id="' . $game . 't" class="sortable"><caption><p><span id="' . $game . '_image_old" ' .
-            'class="cover ' . (num($game) <= 5 ? 'cover98' : '') . '"></span> ' . _(full_name($game)) .
-            '</p></caption><thead><tr><th class="general_header">' . _(shot_route($game)) . '</th>' .
+            'class="cover ' . (num($game) <= 5 ? 'cover98' : '') . '"></span> ' . full_name($game) .
+            '</p></caption><thead><tr><th class="general_header">' . shot_route($game) . '</th>' .
             '<th class="general_header sorttable_numeric">' . lnn_type($game, $lang) .
             '<br>' . _('(Different players)') . '</th><th class="general_header">' . _('Players') .
             '</tr></thead><tbody>';
@@ -101,35 +101,62 @@
 		            continue;
 	            }
 		        echo '<span class="game_image"><span id="' . $game . '_image" class="game_img"></span>' .
-                '<span class="full_name tooltip">' . _(full_name($game)) . '</span></span>';
+                '<span class="full_name tooltip">' . full_name($game) . '</span></span>';
 		    }
-            echo '<div id="list"><p id="fullname"></p><table class="sortable"><thead id="listhead"></thead>' .
-            '<tbody id="listbody"></tbody><tfoot id="listfoot"></tfoot></table></div></div>';
+            echo '</div>';
         }
     ?>
+    <div id='lnn_list'>
+        <p id='fullname'></p>
+        <table class='sortable'>
+            <thead id='lnn_thead'>
+                <tr>
+                    <th id='lnn_shotroute' class='general_header'></th>
+                    <th class='general_header sorttable_numeric'><span id='lnn_restrictions'></span><br><?php _('(Different players)') ?></th>
+                    <th class='general_header'><?php echo _('Players') ?></th>
+                </tr>
+            </thead>
+            <tbody id='lnn_tbody'></tbody>
+            <tfoot id='lnn_tfoot'>
+                <tr>
+                    <td id='lnn_overall' class='foot'><?php echo _('Overall') ?></td>
+                    <td id='count' class='foot'></td>
+                    <td id='total' class='foot'></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
     <div id='playersearch'>
         <h2><?php echo _('Player Search'); ?></h2>
 		<p id='playerlnns'><?php echo _('Choose a player name from the menu below to show their LNNs.') ?></p>
 		<label for='player' class='player'><?php echo _('Player'); ?></label>
-		<input id='player' list='autocomplete' type='text'>
-        <datalist id='autocomplete'>
+		<select id='player'>
+            <option value=''>...</option>
 		    <?php
 		        asort($pl);
 		        foreach ($pl as $key => $player) {
-		            echo '<option value="' . $player . '">';
+		            echo '<option value="' . $player . '">' . $player . '</option>';
 		        }
 		    ?>
-	    </datalist>
+	    </select>
     </div>
-	<div id='playerlist'>
+	<div id='player_list'>
 		<table class='sortable'>
-			<thead id='playerlisthead'><tr>
+			<thead id='player_thead'><tr>
                 <th class='game'><?php echo _('Game') ; ?></th>
                 <th class='shottype'><?php echo _('Shottype'); ?></th>
                 <th class='replay'><?php echo _('Replay'); ?></th>
             </tr></thead>
-			<tbody id='playerlistbody'></tbody>
-			<tfoot id='playerlistfoot'></tfoot>
+			<tbody id='player_tbody'></tbody>
+			<tfoot id='player_tfoot'>
+                <tr>
+                    <td colspan='5'></td>
+                </tr>
+                <tr class='irregular_tr'>
+                    <td class='total'><?php echo _('Total') ?></td>
+                    <td id='player_sum' colspan='4'></td>
+                </tr>
+            </tfoot>
 		</table>
 	</div>
     <div id='overall'>

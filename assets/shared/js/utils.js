@@ -181,27 +181,27 @@ function gameAbbr(game) {
 
 function fullNameNumber(game) {
     return ({
-        "HRtP": "Touhou 1 - The Highly Responsive to Prayers",
-        "SoEW": "Touhou 2 - The Story of Eastern Wonderland",
-        "PoDD": "Touhou 3 - Phantasmagoria of Dim.Dream",
-        "LLS": "Touhou 4 - Lotus Land Story",
-        "MS": "Touhou 5 - Mystic Square",
-        "EoSD": "Touhou 6 - The Embodiment of Scarlet Devil",
-        "PCB": "Touhou 7 - Perfect Cherry Blossom",
-        "IN": "Touhou 8 - Imperishable Night",
-        "PoFV": "Touhou 9 - Phantasmagoria of Flower View",
-        "StB": "Touhou 9.5 - Shoot the Bullet",
-        "MoF": "Touhou 10 - Mountain of Faith",
-        "SA": "Touhou 11 - Subterranean Animism",
-        "UFO": "Touhou 12 - Undefined Fantastic Object",
-        "DS": "Touhou 12.5 - Double Spoiler",
-        "GFW": "Touhou 12.8 - Great Fairy Wars",
-        "TD": "Touhou 13 - Ten Desires",
-        "DDC": "Touhou 14 - Double Dealing Character",
-        "LoLK": "Touhou 15 - Legacy of Lunatic Kingdom",
-        "HSiFS": "Touhou 16 - Hidden Star in Four Seasons",
-        "WBaWC": "Touhou 17 - Wily Beast and Weakest Creature",
-        "UM": "Touhou 18 - Unconnected Marketeers"
+        "HRtP": _("Touhou 1 - The Highly Responsive to Prayers"),
+        "SoEW": _("Touhou 2 - The Story of Eastern Wonderland"),
+        "PoDD": _("Touhou 3 - Phantasmagoria of Dim.Dream"),
+        "LLS": _("Touhou 4 - Lotus Land Story"),
+        "MS": _("Touhou 5 - Mystic Square"),
+        "EoSD": _("Touhou 6 - The Embodiment of Scarlet Devil"),
+        "PCB": _("Touhou 7 - Perfect Cherry Blossom"),
+        "IN": _("Touhou 8 - Imperishable Night"),
+        "PoFV": _("Touhou 9 - Phantasmagoria of Flower View"),
+        "StB": _("Touhou 9.5 - Shoot the Bullet"),
+        "MoF": _("Touhou 10 - Mountain of Faith"),
+        "SA": _("Touhou 11 - Subterranean Animism"),
+        "UFO": _("Touhou 12 - Undefined Fantastic Object"),
+        "DS": _("Touhou 12.5 - Double Spoiler"),
+        "GFW": _("Touhou 12.8 - Great Fairy Wars"),
+        "TD": _("Touhou 13 - Ten Desires"),
+        "DDC": _("Touhou 14 - Double Dealing Character"),
+        "LoLK": _("Touhou 15 - Legacy of Lunatic Kingdom"),
+        "HSiFS": _("Touhou 16 - Hidden Star in Four Seasons"),
+        "WBaWC": _("Touhou 17 - Wily Beast and Weakest Creature"),
+        "UM": _("Touhou 18 - Unconnected Marketeers")
     }[game]);
 }
 
