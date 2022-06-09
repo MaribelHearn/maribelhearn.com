@@ -493,7 +493,7 @@ function fillNumberTable(numbers) {
 
     for (const difficulty in numbers) {
         if (difficulty == "Total") {
-            tbody.innerHTML += "<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+            tbody.innerHTML += "<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
         }
 
         tbody.innerHTML += `<tr id='${difficulty}_tr'><th>${difficulty}</th></tr>`;
@@ -508,17 +508,19 @@ function fillCompletionTable() {
     const tbody = document.getElementById("completion_table_tbody");
     tbody.innerHTML = "";
 
-    for (const game in vals) {
+    for (let game in vals) {
+        if (game.includes("IN")) {
+            continue;
+        }
+
         if (Math.round(na[game]) == 100) {
             continue;
         }
 
-        if (game == "INFinalA") {
+        tbody.innerHTML += `<tr><td>${game}</td><td>${Math.round(completions[game])}%</td></tr>`;
+
+        if (game == "PCB") { // otherwise IN is at the end
             tbody.innerHTML += `<tr><td>IN</td><td>${Math.round(completions["IN"])}%</td></tr>`;
-        } else if (game == "INFinalB") {
-            continue;
-        } else {
-            tbody.innerHTML += `<tr><td>${game}</td><td>${Math.round(completions[game])}%</td></tr>`;
         }
     }
 }
@@ -570,7 +572,6 @@ function setEventListeners() {
     document.getElementById("apply").addEventListener("click", apply, false);
     document.getElementById("reset").addEventListener("click", reset, false);
     document.getElementById("close").addEventListener("click", emptyModal, false);
-
     const select = document.querySelectorAll("select");
     const categories = document.querySelectorAll(".category");
 
