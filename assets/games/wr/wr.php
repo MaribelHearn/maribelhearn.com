@@ -281,7 +281,13 @@
             <tbody id='world_tbody'></tbody>
         </table>
         <table id='west'>
-            <thead id='west_thead'></thead>
+            <thead id='west_thead'>
+                <tr class='irregular_tr'>
+                    <th class='world'><?php echo _('World') ?></th>
+                    <th class='west'><?php echo _('West') ?></th>
+                    <th class='percentage'><?php echo _('Percentage') ?></th>
+                </tr>
+            </thead>
             <tbody id='west_tbody'></tbody>
         </table>
 	</div>

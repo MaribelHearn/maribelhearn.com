@@ -251,7 +251,6 @@ function showWesternRecords(game, records) {
     }
 
     document.getElementById("west_tbody").innerHTML = "";
-    document.getElementById("west_thead").innerHTML = `<tr class='irregular_tr'><th class='world'>${_("World")}</th><th class='west'>${_("West")}</th><th class='percentage'>${_("Percentage")}</th></tr>`;
 
     for (const diff in westScores[game]) {
         if (westScores[game][diff].length === 0) {
@@ -417,6 +416,7 @@ function showWRs(event) {
         const gameImg = document.getElementById(`${game}_image`);
         const border = (gameImg.classList.contains("cover98") ? "1px solid black" : "none");
         gameImg.style.border = border;
+        document.getElementById("world").classList.remove(`${game}t`);
         document.getElementById("wr_list").style.display = "none";
         selected = "";
     }
