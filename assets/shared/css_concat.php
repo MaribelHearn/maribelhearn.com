@@ -48,6 +48,6 @@ foreach ($css as $css_file) {
     echo $css_content;
 }
 if (isset($_COOKIE['theme']) && ($page == 'lnn' || $page == 'gensokyo' || $page == 'royalflare' || $page == 'wr')) {
-    echo 'tr:not(.west_tr):nth-child(even),tr.west_tr:nth-child(odd),#player_td{background-color:#555555;}';
+    echo 'tr:not(.irregular_tr):nth-child(even),tr.irregular_tr:nth-child(odd),#player_td{background-color:#555555;}';
 }
 ?>
