@@ -18,3 +18,9 @@ wrlist.json
 
 # replay dir
 replays
+
+# dev
+.vscode/
+.history/
+node_modules/
+package*.json
