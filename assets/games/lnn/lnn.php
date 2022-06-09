@@ -108,7 +108,7 @@
     ?>
     <div id='lnn_list'>
         <p id='fullname'></p>
-        <table class='sortable'>
+        <table id='lnn_table' class='sortable'>
             <thead id='lnn_thead'>
                 <tr>
                     <th id='lnn_shotroute' class='general_header'></th>
