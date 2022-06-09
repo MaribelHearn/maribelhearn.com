@@ -30,7 +30,7 @@
                 <option value='NMNB'><?php echo _('NMNB') ?></option>
             </select>
             <br>
-            <input id='fillAll' type='button' value='Fill All'>
+            <input id='fill_all' type='button' value='Fill All'>
         </p>
     </div>
     <div id='container' class='overflow'>
@@ -113,7 +113,13 @@
 	<div id='modal_inner'>
 		<h2><?php echo _('Progress Table') ?></h2>
 		<p id='rendering_message'><?php echo _('Rendering image...') ?></p>
-		<span id='screenshot'></span>
+		<div id='screenshot'>
+            <a id='save_link' href='' download=''>
+                <input type='button' value='Save to Device'>
+            </a>
+            <input id='close' type='button' value='Close'>
+            <p><img id='screenshot_base64' src='' alt='Survival progress table'></p>
+        </div>
         <h2><?php echo _('Numbers of Achievements') ?></h2>
 		<table id='number_table' class='sortable'>
         	<thead>

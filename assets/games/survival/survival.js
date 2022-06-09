@@ -1,9 +1,10 @@
-/*global $ html2canvas getCookie deleteCookie*/
-let games = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "INFinalA",
-    "INFinalB", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"],
-    vals = {}, unsavedChanges = false, originalContent, completions, na;
+/*global html2canvas getCookie deleteCookie*/
+const games = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "INFinalA", "INFinalB", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
+let vals = {};
+let unsavedChanges = false;
+let originalContent, completions, na;
 
-for (let game of games) {
+for (const game of games) {
     vals[game] = {
         "Easy": "N/A",
         "Normal": "N/A",
@@ -18,14 +19,6 @@ for (let game of games) {
     if (game == "PCB") {
         vals.PCB.Phantasm = "N/A";
     }
-}
-
-function getPercentage(game) {
-    if (game.includes("IN")) {
-        return 100 / (Object.keys(vals["INFinalA"]).length + Object.keys(vals["INFinalB"]).length);
-    }
-
-    return 100 / Object.keys(vals[game]).length;
 }
 
 function gameSpecific(game, achievement) {
@@ -45,14 +38,14 @@ function gameSpecific(game, achievement) {
 }
 
 function fillGame(game, achievement) {
-    for (let difficulty in vals[game]) {
-        let tmp = achievement;
+    for (const difficulty in vals[game]) {
+        const tmp = achievement;
 
         if (achievement == "NM+" || achievement == "NB+" || achievement == "NMNB") {
             achievement = gameSpecific(game, achievement);
         }
 
-        $("#" + game + difficulty).val(achievement);
+        document.getElementById(game + difficulty).value = achievement;
         vals[game][difficulty] = achievement;
         achievement = tmp;
     }
@@ -62,18 +55,18 @@ function fillGame(game, achievement) {
             achievement = achievement.slice(0, -1);
         }
 
-        $("#INFinalAExtra").val(achievement);
+        document.getElementById("INFinalAExtra").value = achievement;
         vals["INFinalA"]["Extra"] = achievement;
     }
 }
 
 function fillDifficulty(difficulty, achievement) {
     if (difficulty == "Extra") {
-        $("#PCBPhantasm").val(gameSpecific("PCB", achievement));
+        document.getElementById("PCBPhantasm").value = gameSpecific("PCB", achievement);
         vals.PCB.Phantasm = gameSpecific("PCB", achievement);
     }
 
-    for (let game in vals) {
+    for (const game in vals) {
         let tmp;
 
         if (achievement == "NM+" || achievement == "NB+" || achievement == "NMNB") {
@@ -86,7 +79,7 @@ function fillDifficulty(difficulty, achievement) {
             continue;
         }
 
-        $("#" + game + difficulty).val(tmp);
+        document.getElementById(game + difficulty).value = tmp;
         vals[game][difficulty] = tmp;
     }
 }
@@ -161,6 +154,47 @@ function format(achievement) {
     })[achievement];
 }
 
+function runQuerySelectors() {
+    const toHide = ["nav", "hy_container", "content", "bottom"];
+    const noBorders = document.querySelectorAll(".noborders");
+
+    for (const id of toHide) {
+        document.getElementById(id).style.display = "none";
+    }
+
+    for (const element of noBorders) {
+        element.classList.add("overview");
+        element.classList.add("no_extra");
+    }
+
+    const hidden = document.querySelectorAll(".hidden");
+    const inRoute = document.querySelectorAll(".in_route");
+    const noExtra = document.querySelectorAll(".no_extra");
+
+    for (const element of hidden) {
+        element.classList.add("overview_half");
+        element.style.display = "table-cell";
+    }
+
+    for (const element of inRoute) {
+        element.parentNode.removeChild(element);
+    }
+
+    for (const element of noExtra) {
+        element.setAttribute("colspan", 2);
+        element.innerHTML = "X";
+        element.classList.remove("noborders");
+    }
+
+    const overview = document.querySelectorAll(".overview");
+    const toRemove = document.getElementById("INFinalBtr");
+    toRemove.parentNode.removeChild(toRemove);
+
+    for (const element of overview) {
+        element.setAttribute("rowspan", 1);
+    }
+}
+
 function needsText(achievement) {
     achievement = format(achievement);
 
@@ -172,164 +206,70 @@ function needsText(achievement) {
     }
 }
 
-function fillOverviewGame(game, numbers) {
-    for (let difficulty in vals[game]) {
-        let value = vals[game][difficulty];
-        $("#" + game + "_tr").append("<td class='" + format(value) + "'" + (difficulty == "Extra" && game != "PCB" ? " colspan='2'" : "") +
-        ">" + (needsText(value) ? value : "") + "</td>");
-
-        if (value == "N/A") {
-            na[game] += getPercentage(game);
-        } else if (value == "Not cleared") {
-            numbers[difficulty == "Phantasm" ? "Extra" : difficulty]["Not cleared"] += 1;
-            numbers["Total"]["Not cleared"] += 1;
-        } else {
-            completions[game.includes("IN") ? "IN" : game] += getPercentage(game.includes("IN") ? "IN" : game);
-            if (value.substr(0, 2) == "NM" && value.length > 2 && value.substr(2, 2) != "NB") {
-                numbers[difficulty == "Phantasm" ? "Extra" : difficulty]["NM+"] += 1;
-                numbers["Total"]["NM+"] += 1;
-            } else if (value.substr(0, 2) == "NB" && value.length > 2) {
-                numbers[difficulty == "Phantasm" ? "Extra" : difficulty]["NB+"] += 1;
-                numbers["Total"]["NB+"] += 1;
-            } else if (value.substr(0, 4) == "NMNB" || value == "NNNN") {
-                numbers[difficulty == "Phantasm" ? "Extra" : difficulty]["NMNB"] += 1;
-                numbers["Total"]["NMNB"] += 1;
-            } else {
-                value = (format(value) == "np" ? "1cc" : value);
-                numbers[difficulty == "Phantasm" ? "Extra" : difficulty][value] += 1;
-                numbers["Total"][value] += 1;
-            }
-        }
-    }
-
-    return numbers;
-}
-
-function fillOverview(numbers) {
-    let id = "#overview_tbody";
-    $(id).html("");
-
-    for (let game in vals) {
-        let gameID = "#" + game + "_tr";
-        $(id).append("<tr id='" + game + "_tr'><th>" + game + "</th></tr>");
-        numbers = fillOverviewGame(game, numbers);
-
-        if (game == "HRtP" || game == "PoDD") {
-            $(gameID).append("<td colspan='2'>X</td>");
-        }
-
-        if (game == "MS") {
-            $(id).append("<tr><td></td><td></td><td></td><td></td><td></td><td colspan='2'></td></tr>");
-        }
-    }
-
-    return numbers;
-}
-
-function fillNumberTable(numbers) {
-    let id = "#number_table_tbody";
-    $(id).html("");
-
-    for (let difficulty in numbers) {
-        if (difficulty == "Total") {
-            $(id).append("<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>");
-        }
-
-        $(id).append("<tr id='" + difficulty + "_tr'><th>" + difficulty + "</th></tr>");
-
-        for (let value in numbers[difficulty]) {
-            $("#" + difficulty + "_tr").append("<td>" + numbers[difficulty][value] + "</td>");
-        }
-    }
-}
-
-function fillCompletionTable() {
-    let id = "#completion_table_tbody";
-    $(id).html("");
-
-    for (let game in vals) {
-        if (Math.round(na[game]) == 100) {
-            continue;
-        }
-
-        if (game == "INFinalA") {
-            $(id).append("<tr><td>IN</td><td>" + Math.round(completions["IN"]) + "%</td></tr>");
-        } else if (game == "INFinalB") {
-            continue;
-        } else {
-            $(id).append("<tr><td>" + game + "</td><td>" + Math.round(completions[game]) + "%</td></tr>");
-        }
-    }
-}
-
-function fileName() {
-    let date = new Date(),
-        month = (date.getMonth() + 1).toLocaleString("en-US", {minimumIntegerDigits: 2}),
-        day = (date.getDate()).toLocaleString("en-US", {minimumIntegerDigits: 2}),
-        hours = (date.getHours()).toLocaleString("en-US", {minimumIntegerDigits: 2}),
-        minutes = (date.getMinutes()).toLocaleString("en-US", {minimumIntegerDigits: 2}),
-        seconds = (date.getSeconds()).toLocaleString("en-US", {minimumIntegerDigits: 2});
-
-    return "touhou_survival_progress_" + date.getFullYear() + "_" + month +
-    "_" + day + "_" + hours + "_" + minutes + "_" + seconds + ".png";
-}
-
 function applyColours() {
-    $("select").each(function () {
-        let id = $(this).attr("id");
+    for (const game of games) {
+        if (game == "INFinalB") {
+            continue;
+        }
 
-        if (id.substr(0, 4) != "fill") {
-            if (id.includes("Extra") && !id.includes("PCB") || !id.includes("Extra") && id != "PCBPhantasm" && !id.includes("IN")) {
-                $(this).parent().attr("colspan", 2);
-                $(this).parent().addClass("overview");
+        for (const diff in vals[game]) {
+            const id = game + diff;
+            const element = document.getElementById(id);
+
+            if (id.includes("Extra") && !id.includes("PCB") && !id.includes("IN") || !id.includes("Extra") && id != "PCBPhantasm" && !id.includes("IN")) {
+                element.parentNode.setAttribute("colspan", 2);
+                element.parentNode.classList.add("overview");
             } else if (id == "PCBExtra" || id == "PCBPhantasm") {
-                $(this).parent().addClass("overview_half");
+                element.parentNode.classList.add("overview_half");
             } else if (id.includes("IN") && !id.includes("Extra")) {
-                $(this).parent().addClass("overview_half");
+                element.parentNode.classList.add("overview_half");
             } else {
-                $(this).parent().addClass("overview");
+                element.parentNode.classList.add("overview");
             }
+    
+            const value = element.value;
+    
+            if (value != "N/A") {
+                element.parentNode.classList.add(format(value));
+            }
+    
+            element.parentNode.innerHTML = (needsText(value) ? value : "");
 
-            let value = $(this).val();
-            $(this).parent().addClass(format(value));
-            $(this).parent().html(needsText(value) ? $(this).val() : "");
-
-            if ($(this).attr("id").includes("INFinalB")) {
-                let tmp = $(this).attr("id").replace("INFinal", "");
-                $("#" + tmp).addClass(format(value));
-                $("#" + tmp).html(needsText(value) ? value : "");
+            if (id.includes("INFinalA") && !id.includes("Extra")) {
+                const finalBelement = document.getElementById(id.replace("INFinalA", "B"));
+                const value = vals["INFinalB"][diff];
+                finalBelement.classList.add(format(value));
+                finalBelement.innerHTML = (needsText(value) ? value : "");
             }
         }
-    });
+    }
 }
 
 function prepareRendering() {
-    $("#Easy").attr("colspan", 2);
-    $("#Normal").attr("colspan", 2);
-    $("#Hard").attr("colspan", 2);
-    $("#Lunatic").attr("colspan", 2);
-    $("#Extra").attr("colspan", 2);
-    $("#INFinalA").addClass("bold");
-    $("#survival").addClass("rendering");
-    $("#survival, #wrap").css("margin-left", "0");
-    $("#container, #wrap").css("background-color", "white");
-    $("#nav, #ack, #hy_container, #content, #bottom").css("display", "none");
-    $("#rendering_message").html("Rendering image...");
-    $("#rendering_message").css("display", "block");
-    $("#legend").css("display", "table-caption");
-    $(".noborders").addClass("overview no_extra");
-    $(".no_extra").attr("colspan", 2);
-    $(".no_extra").html("X");
-    $(".no_extra").removeClass("noborders");
-    $(".in_route").remove();
-    $(".hidden").addClass("overview_half");
-    $(".hidden").css("display", "table-cell");
+    document.getElementById("Easy").setAttribute("colspan", 2);
+    document.getElementById("Normal").setAttribute("colspan", 2);
+    document.getElementById("Hard").setAttribute("colspan", 2);
+    document.getElementById("Lunatic").setAttribute("colspan", 2);
+    document.getElementById("Extra").setAttribute("colspan", 2);
+    document.getElementById("rendering_message").style.display = "block";
+    document.getElementById("legend").style.display = "table-caption";
+    document.getElementById("INFinalA").classList.add("bold");
+    document.getElementById("survival").classList.add("rendering");
+    document.getElementById("survival").style.marginLeft = 0;
+    document.getElementById("wrap").style.marginLeft = 0;
+    document.getElementById("wrap").style.backgroundColor = "white";
+    document.getElementById("container").style.backgroundColor = "white";
+    document.getElementById("INFinalAExtra").parentNode.setAttribute("rowspan", 1);
+    document.getElementById("INFinalAExtra").parentNode.setAttribute("colspan", 2);
+    runQuerySelectors();
     applyColours();
-    $(".overview").attr("rowspan", 1);
-    $("#INFinalBtr").remove();
 
-    for (let game of games) {
-        $("#" + game).addClass("bold");
+    for (const game of games) {
+        if (game.includes("IN")) {
+            continue;
+        }
+
+        document.getElementById(game).classList.add("bold");
     }
 }
 
@@ -350,74 +290,63 @@ function marginLeft() {
 }
 
 function cleanupRendering() {
-    if (screen.width > 800) {
-        $("#ack").css("display", "block");
+    const toDisplay = ["nav", "content", "bottom", "hy_container"];
+    document.getElementById("screenshot_base64").style.maxWidth = screen.width;
+    document.getElementById("screenshot_base64").style.maxHeight = screen.width;
+    document.getElementById("container").innerHTML = originalContent;
+    document.getElementById("wrap").style.marginLeft = marginLeft();
+    document.getElementById("wrap").removeAttribute("style");
+    document.getElementById("container").removeAttribute("style");
+    document.getElementById("rendering_message").style.display = "none";
+    document.getElementById("legend").style.display = "none";
+
+    for (const id of toDisplay) {
+        document.getElementById(id).style.display = "block";
     }
 
-    $("#base64").css("max-width", screen.width);
-    $("#base64").css("max-height", screen.width);
-    $("#container").html(originalContent);
-    $("#rendering_message, #legend").css("display", "none");
-    $("#nav, #content, #bottom").css("display", "block");
-    $("#hy_container").css("display", "block");
-    $("#wrap").css("margin-left", marginLeft());
-    $("#container, #wrap").removeAttr("style");
-    init();
+    initValues();
+}
+
+function fileName() {
+    const date = new Date();
+    const month = (date.getMonth() + 1).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    const day = (date.getDate()).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    const hours = (date.getHours()).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    const minutes = (date.getMinutes()).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    const seconds = (date.getSeconds()).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    return `touhou_survival_progress_${date.getFullYear()}_${month}_${day}_${hours}_${minutes}_${seconds}.png`;
 }
 
 function drawOverview() {
-    originalContent = $("#container").html();
-
+    originalContent = document.getElementById("container").innerHTML;
     prepareRendering();
+
     try {
         html2canvas(document.getElementById("survival"), {
             backgroundColor: "white",
             "logging": false
         }).then(function(canvas) {
-            const base64image = canvas.toDataURL("image/png");
-
-            $("#screenshot").html("<a id='save_link' href='" + base64image + "' download='" + fileName() + "'>" +
-            "<input type='button' value='Save to Device'></a> <input id='close' type='button' value='Close'></p>" +
-            "<p><img id='base64' src='" + base64image + "' alt='Survival progress table'></p>");
-            $("#close").on("click", emptyModal);
+            const base64 = canvas.toDataURL("image/png");
+            document.getElementById("screenshot_base64").src = base64;
+            const saveLink = document.getElementById("save_link");
+            saveLink.href = base64;
+            saveLink.download = fileName();
             cleanupRendering();
         });
     } catch (err) {
-        $("#rendering_message").html("Your browser is outdated. Use a different browser to " +
-        "generate an image of your survival progress table.");
+        document.getElementById("rendering_message").innerHTML = "Your browser is outdated. Use a different browser to generate an image of your survival progress table.";
     }
 }
 
 function printMessage(message) {
-    $("#message").html("<strong class='message'>" + message + "</strong>");
-}
-
-function save() {
-    localStorage.setItem("saveSurvivalData", true);
-    localStorage.setItem("vals", JSON.stringify(vals));
-    unsavedChanges = false;
-    printMessage("Survival table saved!");
-}
-
-function apply() {
-    let numbers = initAchievementCounts();
-    na = initGameCounts();
-    completions = initGameCounts();
-    numbers = fillOverview(numbers);
-    fillNumberTable(numbers);
-    fillCompletionTable();
-    $("#modal_inner").css("display", "block");
-    $("#results").css("display", "block");
-    save();
-    drawOverview();
-    printMessage("");
+    document.getElementById("message").innerHTML = `<strong class='message'>${message}</strong>`;
 }
 
 function emptyModal() {
-    $("#modal_inner").css("display", "none");
-    $("#results").css("display", "none");
-    $("#overview_container").css("display", "inline");
     cleanupRendering();
+    document.getElementById("container").style.display = "block";
+    document.getElementById("modal_inner").style.display = "none";
+    document.getElementById("results").style.display = "none";
 }
 
 function deleteLegacyCookies() {
@@ -430,15 +359,16 @@ function deleteLegacyCookies() {
         localStorage.setItem("saveSurvivalData", getCookie("saveCookies"));
         deleteCookie("saveCookies");
     }
+
+    if (localStorage.hasOwnProperty("saveSurvivalData") || localStorage.hasOwnProperty("saveData")) {
+        localStorage.removeItem("saveSurvivalData");
+        localStorage.removeItem("saveData");
+    }
 }
 
 function readLocalStorage() {
     try {
-        if (localStorage.hasOwnProperty("saveSurvivalData") || localStorage.hasOwnProperty("saveData")) {
-            $("#toggleData").prop("checked", true);
-        }
-
-        let data = localStorage.getItem("vals");
+        const data = localStorage.getItem("vals");
 
         if (data) {
             vals = JSON.parse(data);
@@ -479,29 +409,25 @@ function readLocalStorage() {
     }
 }
 
-function init() {
-    for (let game in vals) {
-        for (let difficulty in vals[game]) {
-            $("#" + game + difficulty).val(vals[game][difficulty]);
-        }
-    }
-}
-
 function closeModal(event) {
-    let modal = document.getElementById("results");
+    const modal = document.getElementById("results");
 
-    if ((event.target && event.target == modal) || (event.keyCode && event.key == "Escape")) {
+    if ((event.target && event.target == modal) || (event.key && event.key == "Escape")) {
         emptyModal();
     }
 }
 
-function changed() {
-    unsavedChanges = true;
+function initValues() {
+    for (const game in vals) {
+        for (const difficulty in vals[game]) {
+            document.getElementById(game + difficulty).value = vals[game][difficulty];
+        }
+    }
 }
 
 function fillAll() {
-    let value = $("#fillGameDifficulty").val();
-    let achievement = $("#fillAchievement").val();
+    const value = document.getElementById("fillGameDifficulty").value;
+    const achievement = document.getElementById("fillAchievement").value;
 
     if (vals.hasOwnProperty(value)) {
         fillGame(value, achievement);
@@ -510,18 +436,117 @@ function fillAll() {
     }
 }
 
+function save() {
+    localStorage.setItem("saveSurvivalData", true);
+    localStorage.setItem("vals", JSON.stringify(vals));
+    unsavedChanges = false;
+    printMessage("Survival table saved!");
+}
+
+function getPercentage(game) {
+    if (game.includes("IN")) {
+        return 100 / (Object.keys(vals["INFinalA"]).length + Object.keys(vals["INFinalB"]).length);
+    }
+
+    return 100 / Object.keys(vals[game]).length;
+}
+
+function countAchievements(numbers) {
+    for (const game in vals) {
+        for (let diff in vals[game]) {
+            let value = vals[game][diff];
+            diff = (diff == "Phantasm" ? "Extra" : diff);
+    
+            if (value == "N/A") {
+                na[game] += getPercentage(game);
+            } else if (value == "Not cleared") {
+                numbers[diff]["Not cleared"] += 1;
+                numbers["Total"]["Not cleared"] += 1;
+            } else {
+                let gameTmp = (game.includes("IN") ? "IN" : game);
+                completions[gameTmp] += getPercentage(gameTmp);
+    
+                if (value.substr(0, 2) == "NM" && value.length > 2 && value.substr(2, 2) != "NB") {
+                    numbers[diff]["NM+"] += 1;
+                    numbers["Total"]["NM+"] += 1;
+                } else if (value.substr(0, 2) == "NB" && value.length > 2) {
+                    numbers[diff]["NB+"] += 1;
+                    numbers["Total"]["NB+"] += 1;
+                } else if (value.substr(0, 4) == "NMNB" || value == "NNNN") {
+                    numbers[diff]["NMNB"] += 1;
+                    numbers["Total"]["NMNB"] += 1;
+                } else {
+                    value = (format(value) == "np" ? "1cc" : value);
+                    numbers[diff][value] += 1;
+                    numbers["Total"][value] += 1;
+                }
+            }
+        }
+    }
+
+    return numbers;
+}
+
+function fillNumberTable(numbers) {
+    const tbody = document.getElementById("number_table_tbody");
+    tbody.innerHTML = "";
+
+    for (const difficulty in numbers) {
+        if (difficulty == "Total") {
+            tbody.innerHTML += "<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+        }
+
+        tbody.innerHTML += `<tr id='${difficulty}_tr'><th>${difficulty}</th></tr>`;
+
+        for (const value in numbers[difficulty]) {
+            document.getElementById(`${difficulty}_tr`).innerHTML += `<td>${numbers[difficulty][value]}</td>`;
+        }
+    }
+}
+
+function fillCompletionTable() {
+    const tbody = document.getElementById("completion_table_tbody");
+    tbody.innerHTML = "";
+
+    for (const game in vals) {
+        if (Math.round(na[game]) == 100) {
+            continue;
+        }
+
+        if (game == "INFinalA") {
+            tbody.innerHTML += `<tr><td>IN</td><td>${Math.round(completions["IN"])}%</td></tr>`;
+        } else if (game == "INFinalB") {
+            continue;
+        } else {
+            tbody.innerHTML += `<tr><td>${game}</td><td>${Math.round(completions[game])}%</td></tr>`;
+        }
+    }
+}
+
+function apply() {
+    let numbers = initAchievementCounts();
+    na = initGameCounts();
+    completions = initGameCounts();
+    numbers = countAchievements(numbers);
+    fillNumberTable(numbers);
+    fillCompletionTable();
+    document.getElementById("modal_inner").style.display = "block";
+    document.getElementById("results").style.display = "block";
+    drawOverview();
+    printMessage("");
+}
+
 function reset() {
-    let confirmation = confirm("Are you sure you want to reset your progress table?");
+    const confirmation = confirm("Are you sure you want to reset your progress table?");
 
     if (confirmation) {
-        $("#toggleData").prop("checked", false);
         localStorage.removeItem("vals");
     }
 
-    for (let game in vals) {
-        for (let difficulty in vals[game]) {
+    for (const game in vals) {
+        for (const difficulty in vals[game]) {
             vals[game][difficulty] = "N/A";
-            $("#" + game + difficulty).val("N/A");
+            document.getElementById(game + difficulty).value = "N/A";
         }
     }
 
@@ -530,28 +555,38 @@ function reset() {
 }
 
 function setProgress() {
-    let category = this.id;
-    let val = this.value;
-    let difficulty = category.match(/Easy|Normal|Hard|Lunatic|Extra|Phantasm/);
-    let game = category.replace(difficulty, "");
+    const category = this.id;
+    const val = this.value;
+    const difficulty = category.match(/Easy|Normal|Hard|Lunatic|Extra|Phantasm/);
+    const game = category.replace(difficulty, "");
     vals[game][difficulty] = val;
 }
 
 function setEventListeners() {
-    $("body").on("click", closeModal);
-    $("body").on("keyup", closeModal);
-    $("select").on("click", changed);
-    $("#fillAll").on("click", fillAll);
-    $("#save").on("click", save);
-    $("#apply").on("click", apply);
-    $("#reset").on("click", reset);
-    $(".category").on("change", setProgress);
+    document.body.addEventListener("click", closeModal, false);
+    document.body.addEventListener("keyup", closeModal, false);
+    document.getElementById("fill_all").addEventListener("click", fillAll, false);
+    document.getElementById("save").addEventListener("click", save, false);
+    document.getElementById("apply").addEventListener("click", apply, false);
+    document.getElementById("reset").addEventListener("click", reset, false);
+    document.getElementById("close").addEventListener("click", emptyModal, false);
+
+    const select = document.querySelectorAll("select");
+    const categories = document.querySelectorAll(".category");
+
+    for (const element of select) {
+        element.addEventListener("click", function () { unsavedChanges = true }, false);
+    }
+
+    for (const element of categories) {
+        element.addEventListener("change", setProgress, false);
+    }
 }
 
-$(document).ready(function () {
+function init() {
     deleteLegacyCookies();
     readLocalStorage();
-    init();
+    initValues();
     setEventListeners();
     window.onbeforeunload = function () {
         if (unsavedChanges) {
@@ -560,4 +595,6 @@ $(document).ready(function () {
 
         return undefined;
     }
-});
+}
+
+window.addEventListener("DOMContentLoaded", init, false);
