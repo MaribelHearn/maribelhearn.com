@@ -6,7 +6,7 @@ table {
 table, th, td {
     border: 1px solid #000;
 }
-tr:nth-child(even) {
+tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
     background-color: #dddddd;
 }
 .border {
@@ -173,12 +173,11 @@ tr:nth-child(even) {
 #nav {
     margin-bottom: 5px;
 }
-#newlayout, #playersearch, #playersearchlink, #contents_new {
+#newlayout, #playersearch, #playersearchlink, #contents_new, #lnn_list, #player_list {
     display: none;
 }
-#list, #playerlist {
+#lnn_list, #player_list {
     margin-top: 10px;
-    display: none;
 }
 #ranking.sortable tbody {
     counter-reset: sortabletablescope;

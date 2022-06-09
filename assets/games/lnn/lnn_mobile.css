@@ -4,6 +4,6 @@
 .FinalA, .FinalB, .in_route {
     font-size: 8px;
 }
-#layouttoggle {
+#toggle_layout {
     display: none;
 }

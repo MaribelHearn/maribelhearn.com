@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-27 21:50+0200\n"
-"PO-Revision-Date: 2022-05-27 21:59+0200\n"
+"POT-Creation-Date: 2022-06-09 22:57+0200\n"
+"PO-Revision-Date: 2022-06-09 22:57+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -25,13 +25,13 @@ msgstr ""
 msgid ""
 "The <strong>Dodging Rain Competition (DRC)</strong> is a Touhou game "
 "competition that was devised by <a href=\"https://www.youtube.com/user/"
-"mariomaster657\">ZM</a> and is held on <a href=\"https://discord.gg/Ucae3Uf"
-"\">the official DRC Discord</a>. Two teams go up against each other in "
-"several different categories. Each player posts an arbitrarily long list of "
-"categories, ordered by preference, which can be either survival or scoring "
-"of any Touhou shooting game and any difficulty. They will be matched up "
-"against a player from the other team, in a category that both players had on "
-"their list. The teams and categories are determined by the DRC management "
+"mariomaster657\">ZM</a> and is held on <a href=\"https://discord.gg/"
+"Ucae3Uf\">the official DRC Discord</a>. Two teams go up against each other "
+"in several different categories. Each player posts an arbitrarily long list "
+"of categories, ordered by preference, which can be either survival or "
+"scoring of any Touhou shooting game and any difficulty. They will be matched "
+"up against a player from the other team, in a category that both players had "
+"on their list. The teams and categories are determined by the DRC management "
 "team. Players are given two weeks to sign up for the competition, and once "
 "it starts, two weeks to submit a replay, which will be awarded points "
 "dependent on the rubrics. Runs done outside those two weeks are invalid. "
@@ -83,7 +83,7 @@ msgstr ""
 "Survival-Runs wird davon ausgegangen, dass sie komplett durchgespielt "
 "wurden, bei Scoring Runs nicht."
 
-#: games/drc/drc.php:27 games/wr/wr.php:284 games/wr/wr.php:297
+#: games/drc/drc.php:27 games/wr/wr.php:305 games/wr/wr.php:328
 msgid "Category"
 msgstr "Kategorie"
 
@@ -183,19 +183,19 @@ msgstr ""
 msgid "Survival"
 msgstr ""
 
-#: games/drc/drc.php:69
+#: games/drc/drc.php:69 shared/shared.php:589
 msgid "Spring"
 msgstr "Frühling"
 
-#: games/drc/drc.php:70
+#: games/drc/drc.php:70 shared/shared.php:590
 msgid "Summer"
 msgstr "Sommer"
 
-#: games/drc/drc.php:71
+#: games/drc/drc.php:71 shared/shared.php:591
 msgid "Autumn"
 msgstr "Herbst"
 
-#: games/drc/drc.php:72
+#: games/drc/drc.php:72 shared/shared.php:592
 msgid "Winter"
 msgstr ""
 
@@ -269,13 +269,13 @@ msgid ""
 "Some categories use a fictional WR. <a href=\"#fictionalWRtitle\">Click "
 "here</a> for the list of them."
 msgstr ""
-"Einige Kategorien verwenden einen fiktiven WR. <a href=\"#fictionalWRtitle"
-"\">Klick hier</a> für die Liste dieser Kategorien."
+"Einige Kategorien verwenden einen fiktiven WR. <a "
+"href=\"#fictionalWRtitle\">Klick hier</a> für die Liste dieser Kategorien."
 
 #: games/drc/drc.php:106
 msgid ""
-"Some categories always use the WR of a specific shottype. <a href="
-"\"#WRdefinitionTitle\">Click here</a> for the list of them."
+"Some categories always use the WR of a specific shottype. <a "
+"href=\"#WRdefinitionTitle\">Click here</a> for the list of them."
 msgstr ""
 "Einige Kategorien verwenden immer den WR eines bestimmten Shot Types. <a "
 "href=\"#WRdefinitionTitle\">Klick hier</a> für die Liste dieser Kategorien."
@@ -301,7 +301,7 @@ msgid "||Max * (Score/WR)^Exp||"
 msgstr ""
 
 #: games/drc/drc.php:129 games/drc/drc.php:313 games/drc/drc.php:347
-#: games/lnn/lnn.php:127 games/lnn/lnn.php:141 games/wr/wr.php:63
+#: games/lnn/lnn.php:146 games/lnn/lnn.php:168 games/wr/wr.php:63
 msgid "Game"
 msgstr "Spiel"
 
@@ -406,8 +406,8 @@ msgstr "Schwellenwert 2"
 msgid "Threshold 3"
 msgstr "Schwellenwert 3"
 
-#: games/drc/drc.php:272 games/drc/drc.php:392 games/lnn/lnn.php:215
-#: games/tools/tools.php:514 games/wr/wr.php:371
+#: games/drc/drc.php:272 games/drc/drc.php:392 games/lnn/lnn.php:242
+#: games/tools/tools.php:514 games/wr/wr.php:402
 msgid "Back to Top"
 msgstr "Zurück zum Anfang"
 
@@ -422,8 +422,8 @@ msgid ""
 "here</a> for the list of them."
 msgstr ""
 "Für einen Hauptspiel-Clear wird ein Shot Type-Multiplikator auf deine DRC-"
-"Punkte angewendet, dessen Ergebnis wiederum gerundet wird. <a href="
-"\"#shottypeMultipliers\">Klick hier</a> für eine Liste dieser "
+"Punkte angewendet, dessen Ergebnis wiederum gerundet wird. <a "
+"href=\"#shottypeMultipliers\">Klick hier</a> für eine Liste dieser "
 "Multiplikatoren."
 
 #: games/drc/drc.php:284
@@ -431,8 +431,8 @@ msgid ""
 "The Phantasmagorias use a separate system. <a href=\"#phantasmagoria\">Click "
 "here</a> for said system."
 msgstr ""
-"Die Phantasmagorias verwenden ein anderes System. <a href=\"#phantasmagoria"
-"\">Klick hier</a> für dieses System."
+"Die Phantasmagorias verwenden ein anderes System. <a "
+"href=\"#phantasmagoria\">Klick hier</a> für dieses System."
 
 #: games/drc/drc.php:289
 msgid ""
@@ -503,8 +503,9 @@ msgstr ""
 "Releases verwenden. Für alle hier nicht aufgelisteten Shot Types sind die "
 "Shot Type-Multiplikatoren gleich 1."
 
-#: games/drc/drc.php:376 games/lnn/lnn.js:26 games/lnn/lnn.php:128
-#: games/wr/wr.js:64 games/wr/wr.php:67
+#: games/drc/drc.php:376 games/lnn/lnn.js:28 games/lnn/lnn.php:147
+#: games/wr/wr.js:82 games/wr/wr.php:67 games/wr/wr.php:307
+#: shared/shared.php:517
 msgid "Shottype"
 msgstr "Shot Type"
 
@@ -512,50 +513,34 @@ msgstr "Shot Type"
 msgid "Multiplier"
 msgstr "Multiplikator"
 
-#: games/lnn/lnn.js:14 games/lnn/lnn.js:17 games/lnn/lnn.js:18
-#: games/lnn/lnn.js:20
+#: games/lnn/lnn.js:16 games/lnn/lnn.js:19 games/lnn/lnn.js:20
+#: games/lnn/lnn.js:22
 msgid "No. of LNNNs"
 msgstr "Anzahl LNNNs"
 
-#: games/lnn/lnn.js:15
+#: games/lnn/lnn.js:17
 msgid "No. of LNNFSs"
 msgstr "Anzahl LNNFSs"
 
-#: games/lnn/lnn.js:16
+#: games/lnn/lnn.js:18
 msgid "No. of LNN(N)s"
 msgstr "Anzahl LNN(N)s"
 
-#: games/lnn/lnn.js:19
+#: games/lnn/lnn.js:21
 msgid "No. of LNNNNs"
 msgstr "Anzahl LNNNNs"
 
-#: games/lnn/lnn.js:21 games/lnn/lnn.php:143 games/lnn/lnn.php:190
+#: games/lnn/lnn.js:23 games/lnn/lnn.php:170 games/lnn/lnn.php:217
 msgid "No. of LNNs"
 msgstr "Anzahl LNNs"
 
-#: games/lnn/lnn.js:26 games/wr/wr.js:64
+#: games/lnn/lnn.js:28 games/wr/wr.js:82 shared/shared.php:517
 msgid "Route"
 msgstr ""
 
-#: games/lnn/lnn.js:85 games/lnn/lnn.php:61
-msgid "(Different players)"
-msgstr "(Verschiedene Spieler)"
-
-#: games/lnn/lnn.js:85 games/lnn/lnn.php:61
-msgid "Players"
-msgstr "Spieler"
-
-#: games/lnn/lnn.js:86 games/lnn/lnn.php:89 games/lnn/lnn.php:171
-msgid "Overall"
-msgstr "Gesamt"
-
-#: games/lnn/lnn.js:201
+#: games/lnn/lnn.js:218
 msgid "(All)"
 msgstr "(Alle)"
-
-#: games/lnn/lnn.js:210
-msgid "Total"
-msgstr "Gesamt"
 
 #: games/lnn/lnn.php:5
 msgid ""
@@ -602,53 +587,69 @@ msgstr "Inhalte"
 msgid "LNN Lists"
 msgstr "LNN Listen"
 
-#: games/lnn/lnn.php:25 games/lnn/lnn.php:37 games/lnn/lnn.php:136
+#: games/lnn/lnn.php:25 games/lnn/lnn.php:37 games/lnn/lnn.php:163
 msgid "Overall Count"
 msgstr "Gesamtzahl"
 
-#: games/lnn/lnn.php:26 games/lnn/lnn.php:38 games/lnn/lnn.php:183
-#: games/wr/wr.php:30 games/wr/wr.php:47 games/wr/wr.php:340
+#: games/lnn/lnn.php:26 games/lnn/lnn.php:38 games/lnn/lnn.php:210
+#: games/wr/wr.php:30 games/wr/wr.php:47 games/wr/wr.php:371
 msgid "Player Ranking"
 msgstr "Spieler-Ranking"
 
-#: games/lnn/lnn.php:36 games/lnn/lnn.php:111 games/wr/wr.php:42
-#: games/wr/wr.php:268
+#: games/lnn/lnn.php:36 games/lnn/lnn.php:130 games/wr/wr.php:42
+#: games/wr/wr.php:289
 msgid "Player Search"
 msgstr "Spieler-Suche"
+
+#: games/lnn/lnn.php:61 games/lnn/lnn.php:115
+msgid "(Different players)"
+msgstr "(Verschiedene Spieler)"
+
+#: games/lnn/lnn.php:61 games/lnn/lnn.php:116
+msgid "Players"
+msgstr "Spieler"
+
+#: games/lnn/lnn.php:89 games/lnn/lnn.php:122 games/lnn/lnn.php:198
+msgid "Overall"
+msgstr "Gesamt"
 
 #: games/lnn/lnn.php:98
 msgid "Click a game cover to show its list of LNNs."
 msgstr "Klick auf ein Spielcover, um die Liste der LNNs anzuzeigen."
 
-#: games/lnn/lnn.php:112
+#: games/lnn/lnn.php:131
 msgid "Choose a player name from the menu below to show their LNNs."
 msgstr ""
 "Wähle einen Spielernamen aus dem untenstehenden Menü aus, um dessen LNNs "
 "anzuzeigen."
 
-#: games/lnn/lnn.php:113 games/lnn/lnn.php:188 games/wr/wr.php:65
-#: games/wr/wr.php:269 games/wr/wr.php:299 games/wr/wr.php:345
+#: games/lnn/lnn.php:132 games/lnn/lnn.php:215 games/wr/wr.php:65
+#: games/wr/wr.php:290 games/wr/wr.php:330 games/wr/wr.php:376
 msgid "Player"
 msgstr "Spieler"
 
-#: games/lnn/lnn.php:129 games/wr/wr.php:69 games/wr/wr.php:286
-#: games/wr/wr.php:300
+#: games/lnn/lnn.php:148 games/wr/wr.php:69 games/wr/wr.php:308
+#: games/wr/wr.php:331
 msgid "Replay"
 msgstr ""
 
-#: games/lnn/lnn.php:145
+#: games/lnn/lnn.php:156 games/wr/wr.php:318
+msgid "Total"
+msgstr "Gesamt"
+
+#: games/lnn/lnn.php:172
 msgid "Different players"
 msgstr "Verschiedene Spieler"
 
-#: games/lnn/lnn.php:176
+#: games/lnn/lnn.php:203
 msgid "Replays"
 msgstr ""
 
-#: games/lnn/lnn.php:193
+#: games/lnn/lnn.php:220
 msgid "Games LNN'd"
 msgstr "Spiele LNN'd"
 
-#: games/lnn/lnn.php:207 games/lnn/lnn.php:208
+#: games/lnn/lnn.php:234 games/lnn/lnn.php:235
 msgid " (All Windows)"
 msgstr " (Alle Windows)"
 
@@ -762,13 +763,13 @@ msgstr ""
 
 #: games/tools/tools.php:44
 msgid ""
-"<h2 id=\"thcrap\">THCRAP (Translation patches / Modding tool) <a id="
-"\"thcrap_link\" href=\"https://www.thpatch.net/wiki/Touhou_Patch_Center:"
+"<h2 id=\"thcrap\">THCRAP (Translation patches / Modding tool) <a "
+"id=\"thcrap_link\" href=\"https://www.thpatch.net/wiki/Touhou_Patch_Center:"
 "Main_page\" target=\"_blank\"><span class=\"icon thcrap_icon\"></span> "
 "thcrap</a></h2>"
 msgstr ""
-"<h2 id=\"thcrap\">THCRAP (Übersetzungspatches / Modding-Tool) <a id="
-"\"thcrap_link\" href=\"https://www.thpatch.net/wiki/Touhou_Patch_Center:"
+"<h2 id=\"thcrap\">THCRAP (Übersetzungspatches / Modding-Tool) <a "
+"id=\"thcrap_link\" href=\"https://www.thpatch.net/wiki/Touhou_Patch_Center:"
 "Main_page\" target=\"_blank\"><span class=\"icon thcrap_icon\"></span> "
 "thcrap</a></h2>"
 
@@ -857,15 +858,15 @@ msgstr ""
 "4.6 SSGs haben Übungsoptionen wie das Überspringen zu einem bestimmten Frame "
 "des Spiels oder zu einem bestimmten Spell, während die niL SSGs Cheat-"
 "Optionen wie z.B. Unbesiegbarkeit bieten. Es gibt auch eine separate MoF-"
-"SSG, die von <a href=\"https://www.twitch.tv/akaldar\" target=\"_blank"
-"\">Akaldar</a> speziell für effizientes Üben in diesem Spiel gemacht wurde, "
-"eine separate GFW-SSG, sowie eine TD-SSG, die speziell für effizientes Üben "
-"von Scoring designt wurde und von Leo gemacht wurde, eine DDC-SSG und eine "
-"LoLK-Kapitel-Übungs-SSG von <a href=\"https://www.youtube.com/channel/"
-"UChyVpooBi31k3xPbWYsoq3w\" target=\"_blank\">32th System</a> und separate "
-"HSiFS-SSGs mit Cheat-Optionen. Achte auf einen gelegentlichen Menübug, der "
-"dazu führt, dass eine SSG sich selbst dupliziert und andere SSGs unsichtbar "
-"macht."
+"SSG, die von <a href=\"https://www.twitch.tv/akaldar\" "
+"target=\"_blank\">Akaldar</a> speziell für effizientes Üben in diesem Spiel "
+"gemacht wurde, eine separate GFW-SSG, sowie eine TD-SSG, die speziell für "
+"effizientes Üben von Scoring designt wurde und von Leo gemacht wurde, eine "
+"DDC-SSG und eine LoLK-Kapitel-Übungs-SSG von <a href=\"https://www.youtube."
+"com/channel/UChyVpooBi31k3xPbWYsoq3w\" target=\"_blank\">32th System</a> und "
+"separate HSiFS-SSGs mit Cheat-Optionen. Achte auf einen gelegentlichen "
+"Menübug, der dazu führt, dass eine SSG sich selbst dupliziert und andere "
+"SSGs unsichtbar macht."
 
 #: games/tools/tools.php:106
 msgid "Main Program"
@@ -1388,9 +1389,9 @@ msgid ""
 "<a href=\"drc\">DRC</a> points for both survival and scoring during a Touhou "
 "run."
 msgstr ""
-"Ein Tool, das In-Game-Daten wie Tode, Bomben usw. trackt und so <a href=\"drc"
-"\">DRC</a>-Punkte für Survival und Scoring während eines Touhou-Runs "
-"berechnet."
+"Ein Tool, das In-Game-Daten wie Tode, Bomben usw. trackt und so <a "
+"href=\"drc\">DRC</a>-Punkte für Survival und Scoring während eines Touhou-"
+"Runs berechnet."
 
 #: games/tools/tools.php:434
 msgid "MS Black Label by "
@@ -1512,21 +1513,17 @@ msgstr "WBaWC Punktzahlbegrenzung-Mod von "
 msgid "Allows the in-game score counter to exceed 9,999,999,990 points."
 msgstr "Ermöglicht es, dass die Punktzahl 9.999.999.990 überschreiten kann."
 
-#: games/wr/wr.js:119 games/wr/wr.php:217
+#: games/wr/wr.js:254 games/wr/wr.php:221
 msgid "World"
 msgstr "Weltweit"
 
-#: games/wr/wr.js:119 games/wr/wr.php:218
+#: games/wr/wr.js:254 games/wr/wr.php:222
 msgid "West"
 msgstr "Westen"
 
-#: games/wr/wr.js:119 games/wr/wr.php:218
+#: games/wr/wr.js:254 games/wr/wr.php:222
 msgid "Percentage"
 msgstr "Prozent"
-
-#: games/wr/wr.js:203
-msgid "Seasons"
-msgstr "Jahreszeiten"
 
 #: games/wr/wr.php:5
 msgid ""
@@ -1572,11 +1569,11 @@ msgid "World Records"
 msgstr "Weltrekorde"
 
 #: games/wr/wr.php:28 games/wr/wr.php:29 games/wr/wr.php:43 games/wr/wr.php:45
-#: games/wr/wr.php:294 games/wr/wr.php:322
+#: games/wr/wr.php:325 games/wr/wr.php:353
 msgid "Recent Records"
 msgstr "Neueste Rekorde"
 
-#: games/wr/wr.php:41 games/wr/wr.php:214
+#: games/wr/wr.php:41 games/wr/wr.php:218
 msgid "Western Records"
 msgstr "Westliche Rekorde"
 
@@ -1584,7 +1581,7 @@ msgstr "Westliche Rekorde"
 msgid "Dates"
 msgstr "Daten"
 
-#: games/wr/wr.php:64 games/wr/wr.php:285 games/wr/wr.php:298
+#: games/wr/wr.php:64 games/wr/wr.php:306 games/wr/wr.php:329
 msgid "Score"
 msgstr "Punktanzahl"
 
@@ -1592,62 +1589,154 @@ msgstr "Punktanzahl"
 msgid "Difficulty"
 msgstr "Schwierigkeitsgrad"
 
-#: games/wr/wr.php:68 games/wr/wr.php:287 games/wr/wr.php:301
+#: games/wr/wr.php:68 games/wr/wr.php:309 games/wr/wr.php:332
 msgid "Date"
 msgstr "Datum"
 
-#: games/wr/wr.php:247
+#: games/wr/wr.php:251
 msgid "Click a game cover to show its list of world records."
 msgstr "Klick auf ein Spielcover, um die Liste der Weltrekorde anzuzeigen."
 
-#: games/wr/wr.php:268
+#: games/wr/wr.php:273
+msgid "Seasons"
+msgstr "Jahreszeiten"
+
+#: games/wr/wr.php:277
+msgid "Unverified Scores"
+msgstr ""
+
+#: games/wr/wr.php:289
 msgid "Choose a player name from the menu below to show their WRs."
 msgstr ""
 "Wähle einen Spielernamen aus dem unten stehenden Menü, um die WRs anzuzeigen."
 
-#: games/wr/wr.php:346
+#: games/wr/wr.php:377
 msgid "No. of WRs"
 msgstr "Anzahl WRs"
 
-#: games/wr/wr.php:347
+#: games/wr/wr.php:378
 msgid "Different games"
 msgstr "Verschiedene Spiele"
 
-#: shared/shared.php:397
+#: shared/shared.php:417
 msgid "Youkai mode (Dark)"
 msgstr "Youkai-Modus (Dunkel)"
 
-#: shared/shared.php:397
+#: shared/shared.php:417
 msgid "Human mode (Light)"
 msgstr "Menschen-Modus (Hell)"
 
-#: shared/shared.php:406 shared/shared.php:412
+#: shared/shared.php:426 shared/shared.php:433
 msgid "Flag of the United Kingdom"
 msgstr "Flagge des Vereinigten Königreichs"
 
-#: shared/shared.php:408
+#: shared/shared.php:429
 msgid "Flag of the United States"
 msgstr "Flagge der Vereinigten Staaten"
 
-#: shared/shared.php:416
+#: shared/shared.php:437
 msgid "Flag of Japan"
 msgstr "Flagge von Japan"
 
-#: shared/shared.php:420
+#: shared/shared.php:441
 msgid "Flag of the P.R.C."
 msgstr "Flagge der P.R.C."
 
-#: shared/shared.php:424
+#: shared/shared.php:445
 msgid "Flag of Russia"
 msgstr "Flagge von Russland"
 
-#: shared/shared.php:428
+#: shared/shared.php:449
 msgid "Flag of Germany"
 msgstr "Flagge von Deutschland"
 
-#: shared/shared.php:432
+#: shared/shared.php:453
 msgid "Flag of Spain"
 msgstr "Flagge von Spanien"
+
+#: shared/shared.php:549
+msgid "Touhou 1 - The Highly Responsive to Prayers"
+msgstr ""
+
+#: shared/shared.php:550
+msgid "Touhou 2 - The Story of Eastern Wonderland"
+msgstr ""
+
+#: shared/shared.php:551
+msgid "Touhou 3 - Phantasmagoria of Dim.Dream"
+msgstr ""
+
+#: shared/shared.php:552
+msgid "Touhou 4 - Lotus Land Story"
+msgstr ""
+
+#: shared/shared.php:553
+msgid "Touhou 5 - Mystic Square"
+msgstr ""
+
+#: shared/shared.php:554
+msgid "Touhou 6 - The Embodiment of Scarlet Devil"
+msgstr ""
+
+#: shared/shared.php:555
+msgid "Touhou 7 - Perfect Cherry Blossom"
+msgstr ""
+
+#: shared/shared.php:556
+msgid "Touhou 8 - Imperishable Night"
+msgstr ""
+
+#: shared/shared.php:557
+msgid "Touhou 9 - Phantasmagoria of Flower View"
+msgstr ""
+
+#: shared/shared.php:558
+msgid "Touhou 9.5 - Shoot the Bullet"
+msgstr ""
+
+#: shared/shared.php:559
+msgid "Touhou 10 - Mountain of Faith"
+msgstr ""
+
+#: shared/shared.php:560
+msgid "Touhou 11 - Subterranean Animism"
+msgstr ""
+
+#: shared/shared.php:561
+msgid "Touhou 12 - Undefined Fantastic Object"
+msgstr ""
+
+#: shared/shared.php:562
+msgid "Touhou 12.5 - Double Spoiler"
+msgstr ""
+
+#: shared/shared.php:563
+msgid "Touhou 12.8 - Great Fairy Wars"
+msgstr ""
+
+#: shared/shared.php:564
+msgid "Touhou 13 - Ten Desires"
+msgstr ""
+
+#: shared/shared.php:565
+msgid "Touhou 14 - Double Dealing Character"
+msgstr ""
+
+#: shared/shared.php:566
+msgid "Touhou 15 - Legacy of Lunatic Kingdom"
+msgstr ""
+
+#: shared/shared.php:567
+msgid "Touhou 16 - Hidden Star in Four Seasons"
+msgstr ""
+
+#: shared/shared.php:568
+msgid "Touhou 17 - Wily Beast and Weakest Creature"
+msgstr ""
+
+#: shared/shared.php:569
+msgid "Touhou 18 - Unconnected Marketeers"
+msgstr ""
 
 #: shared/translations.php:2
 msgid "Makai"
@@ -1920,82 +2009,6 @@ msgstr ""
 #: shared/translations.php:70
 msgid "YoumuEagle"
 msgstr "YoumuAdler"
-
-#: shared/translations.php:71
-msgid "Touhou 1 - The Highly Responsive to Prayers"
-msgstr ""
-
-#: shared/translations.php:72
-msgid "Touhou 2 - The Story of Eastern Wonderland"
-msgstr ""
-
-#: shared/translations.php:73
-msgid "Touhou 3 - Phantasmagoria of Dim.Dream"
-msgstr ""
-
-#: shared/translations.php:74
-msgid "Touhou 4 - Lotus Land Story"
-msgstr ""
-
-#: shared/translations.php:75
-msgid "Touhou 5 - Mystic Square"
-msgstr ""
-
-#: shared/translations.php:76
-msgid "Touhou 6 - The Embodiment of Scarlet Devil"
-msgstr ""
-
-#: shared/translations.php:77
-msgid "Touhou 7 - Perfect Cherry Blossom"
-msgstr ""
-
-#: shared/translations.php:78
-msgid "Touhou 8 - Imperishable Night"
-msgstr ""
-
-#: shared/translations.php:79
-msgid "Touhou 9 - Phantasmagoria of Flower View"
-msgstr ""
-
-#: shared/translations.php:80
-msgid "Touhou 10 - Mountain of Faith"
-msgstr ""
-
-#: shared/translations.php:81
-msgid "Touhou 11 - Subterranean Animism"
-msgstr ""
-
-#: shared/translations.php:82
-msgid "Touhou 12 - Undefined Fantastic Object"
-msgstr ""
-
-#: shared/translations.php:83
-msgid "Touhou 12.8 - Great Fairy Wars"
-msgstr ""
-
-#: shared/translations.php:84
-msgid "Touhou 13 - Ten Desires"
-msgstr ""
-
-#: shared/translations.php:85
-msgid "Touhou 14 - Double Dealing Character"
-msgstr ""
-
-#: shared/translations.php:86
-msgid "Touhou 15 - Legacy of Lunatic Kingdom"
-msgstr ""
-
-#: shared/translations.php:87
-msgid "Touhou 16 - Hidden Star in Four Seasons"
-msgstr ""
-
-#: shared/translations.php:88
-msgid "Touhou 17 - Wily Beast and Weakest Creature"
-msgstr ""
-
-#: shared/translations.php:89
-msgid "Touhou 18 - Unconnected Marketeers"
-msgstr ""
 
 #~ msgid ""
 #~ "The replays or videos provided are <strong>not</strong> meant to be "

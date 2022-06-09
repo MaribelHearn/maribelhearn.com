@@ -5,7 +5,7 @@ table {
 table, th, td {
     border: 1px solid #000;
 }
-tr:not(.west_tr):nth-child(even), tr.west_tr:nth-child(odd) {
+tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
     background-color: #dddddd;
 }
 .HRtPt th, .HRtPp, .HRtP {
@@ -197,7 +197,7 @@ tr:not(.west_tr):nth-child(even), tr.west_tr:nth-child(odd) {
     content: '';
     display: table-cell;
 }
-.hidden, #overall_linkm, #overall_linkmn, #overallm, #list, #playerlist, #playersearch, #checkboxes,
+.hidden, #overall_linkm, #overall_linkmn, #overallm, #wr_list, #player_list, #player_search, #checkboxes,
 #seasontoggle, #newlayout, #playersearchlink, #contents_new, #recent_linkm, #recent_linkmn, #recentm {
     display: none;
 }
@@ -216,10 +216,10 @@ tr:not(.west_tr):nth-child(even), tr.west_tr:nth-child(odd) {
 #nav {
     margin-bottom: 5px;
 }
-#list, #playerlist {
+#wr_list, #player_list {
     margin-top: 10px;
 }
-#table {
+#world {
     margin-bottom: 15px;
 }
 #checkboxes, #ranking {
