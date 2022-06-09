@@ -1,4 +1,3 @@
-<?php include_once 'assets/shared/tl.php' ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
     <p>This is a portal for competitive PoFV play, featuring the current tier list, a guide to help you get started with
