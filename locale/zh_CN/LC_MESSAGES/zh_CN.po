@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-27 21:53+0200\n"
-"PO-Revision-Date: 2022-05-27 22:01+0200\n"
+"POT-Creation-Date: 2022-06-09 22:58+0200\n"
+"PO-Revision-Date: 2022-06-09 23:04+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -24,13 +24,13 @@ msgstr ""
 msgid ""
 "The <strong>Dodging Rain Competition (DRC)</strong> is a Touhou game "
 "competition that was devised by <a href=\"https://www.youtube.com/user/"
-"mariomaster657\">ZM</a> and is held on <a href=\"https://discord.gg/Ucae3Uf"
-"\">the official DRC Discord</a>. Two teams go up against each other in "
-"several different categories. Each player posts an arbitrarily long list of "
-"categories, ordered by preference, which can be either survival or scoring "
-"of any Touhou shooting game and any difficulty. They will be matched up "
-"against a player from the other team, in a category that both players had on "
-"their list. The teams and categories are determined by the DRC management "
+"mariomaster657\">ZM</a> and is held on <a href=\"https://discord.gg/"
+"Ucae3Uf\">the official DRC Discord</a>. Two teams go up against each other "
+"in several different categories. Each player posts an arbitrarily long list "
+"of categories, ordered by preference, which can be either survival or "
+"scoring of any Touhou shooting game and any difficulty. They will be matched "
+"up against a player from the other team, in a category that both players had "
+"on their list. The teams and categories are determined by the DRC management "
 "team. Players are given two weeks to sign up for the competition, and once "
 "it starts, two weeks to submit a replay, which will be awarded points "
 "dependent on the rubrics. Runs done outside those two weeks are invalid. "
@@ -38,13 +38,13 @@ msgid ""
 "the most DRC points will count."
 msgstr ""
 "<strong>Dodging Rain Competition(DRC)</strong>是由<a href=\"https://www."
-"youtube.com/user/mariomaster657\">ZM</a>发起的东方比赛，举办地点：<a href="
-"\"https://discord.gg/Ucae3Uf\">DRC Discord</a>。两队进行不同项目的比赛。每位"
-"选手报名时写下想打的任意项目，根据偏好排序，可以是避弹向的生存，也可以是打"
-"分，任意作品、任意难度均可。列出的项目会与另一队进行匹配，相同项目的选手即匹"
-"配成功。分组与项目由DRC主办方决定。选手将会有二周时间报名。一旦开赛，有两周时"
-"间提交参赛录像，录像所获得分根据计算公式而定。未在两周内提交则视为无效。玩家"
-"提交的rep个数无限制，最终DRC得分将选取最高分录入。"
+"youtube.com/user/mariomaster657\">ZM</a>发起的东方比赛，举办地点：<a "
+"href=\"https://discord.gg/Ucae3Uf\">DRC Discord</a>。两队进行不同项目的比赛。"
+"每位选手报名时写下想打的任意项目，根据偏好排序，可以是避弹向的生存，也可以是"
+"打分，任意作品、任意难度均可。列出的项目会与另一队进行匹配，相同项目的选手即"
+"匹配成功。分组与项目由DRC主办方决定。选手将会有二周时间报名。一旦开赛，有两周"
+"时间提交参赛录像，录像所获得分根据计算公式而定。未在两周内提交则视为无效。玩"
+"家提交的rep个数无限制，最终DRC得分将选取最高分录入。"
 
 #: games/drc/drc.php:18
 msgid ""
@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "分数可包含数字、逗号、句号、空格。生存向将会被假定为已通关，打分则不会。"
 
-#: games/drc/drc.php:27 games/wr/wr.php:284 games/wr/wr.php:297
+#: games/drc/drc.php:27 games/wr/wr.php:305 games/wr/wr.php:328
 msgid "Category"
 msgstr "项目"
 
@@ -168,19 +168,19 @@ msgstr "打分"
 msgid "Survival"
 msgstr "生存"
 
-#: games/drc/drc.php:69
+#: games/drc/drc.php:69 shared/shared.php:589
 msgid "Spring"
 msgstr "春"
 
-#: games/drc/drc.php:70
+#: games/drc/drc.php:70 shared/shared.php:590
 msgid "Summer"
 msgstr "夏"
 
-#: games/drc/drc.php:71
+#: games/drc/drc.php:71 shared/shared.php:591
 msgid "Autumn"
 msgstr "秋"
 
-#: games/drc/drc.php:72
+#: games/drc/drc.php:72 shared/shared.php:592
 msgid "Winter"
 msgstr "冬"
 
@@ -251,8 +251,8 @@ msgstr ""
 
 #: games/drc/drc.php:106
 msgid ""
-"Some categories always use the WR of a specific shottype. <a href="
-"\"#WRdefinitionTitle\">Click here</a> for the list of them."
+"Some categories always use the WR of a specific shottype. <a "
+"href=\"#WRdefinitionTitle\">Click here</a> for the list of them."
 msgstr ""
 "某些项目将一直参考具体某一机体。<a href=\"#WRdefinitionTitle\"单击此处</a>查"
 "看列表。"
@@ -278,7 +278,7 @@ msgid "||Max * (Score/WR)^Exp||"
 msgstr "||最大值 *（得分 / 世界纪录）^ 指数||"
 
 #: games/drc/drc.php:129 games/drc/drc.php:313 games/drc/drc.php:347
-#: games/lnn/lnn.php:127 games/lnn/lnn.php:141 games/wr/wr.php:63
+#: games/lnn/lnn.php:146 games/lnn/lnn.php:168 games/wr/wr.php:63
 msgid "Game"
 msgstr "游戏"
 
@@ -376,8 +376,8 @@ msgstr "第二阈值"
 msgid "Threshold 3"
 msgstr "第三阈值"
 
-#: games/drc/drc.php:272 games/drc/drc.php:392 games/lnn/lnn.php:215
-#: games/wr/wr.php:371
+#: games/drc/drc.php:272 games/drc/drc.php:392 games/lnn/lnn.php:242
+#: games/wr/wr.php:402
 msgid "Back to Top"
 msgstr "回到顶部"
 
@@ -391,8 +391,8 @@ msgid ""
 "the result of which is again rounded. <a href=\"#shottypeMultipliers\">Click "
 "here</a> for the list of them."
 msgstr ""
-"当完成一项游戏，机体系数会影响DRC总分，结果会再次近似。<a href="
-"\"#shottypeMultipliers\">单击此处</a>查看列表。"
+"当完成一项游戏，机体系数会影响DRC总分，结果会再次近似。<a "
+"href=\"#shottypeMultipliers\">单击此处</a>查看列表。"
 
 #: games/drc/drc.php:284
 msgid ""
@@ -465,8 +465,9 @@ msgstr ""
 "该要素仅适用于生存项目的计算公式，不适用于EX和使用了季节解放的天空璋。未列出"
 "的机体，系数均为1。"
 
-#: games/drc/drc.php:376 games/lnn/lnn.js:26 games/lnn/lnn.php:128
-#: games/wr/wr.js:64 games/wr/wr.php:67
+#: games/drc/drc.php:376 games/lnn/lnn.js:28 games/lnn/lnn.php:147
+#: games/wr/wr.js:82 games/wr/wr.php:67 games/wr/wr.php:307
+#: shared/shared.php:517
 msgid "Shottype"
 msgstr "机体"
 
@@ -474,50 +475,34 @@ msgstr "机体"
 msgid "Multiplier"
 msgstr "系数"
 
-#: games/lnn/lnn.js:14 games/lnn/lnn.js:17 games/lnn/lnn.js:18
-#: games/lnn/lnn.js:20
+#: games/lnn/lnn.js:16 games/lnn/lnn.js:19 games/lnn/lnn.js:20
+#: games/lnn/lnn.js:22
 msgid "No. of LNNNs"
 msgstr "LNNN的数量"
 
-#: games/lnn/lnn.js:15
+#: games/lnn/lnn.js:17
 msgid "No. of LNNFSs"
 msgstr "LNNFS的数量"
 
-#: games/lnn/lnn.js:16
+#: games/lnn/lnn.js:18
 msgid "No. of LNN(N)s"
 msgstr "LNN(N)的数量"
 
-#: games/lnn/lnn.js:19
+#: games/lnn/lnn.js:21
 msgid "No. of LNNNNs"
 msgstr "LNNNN的数量"
 
-#: games/lnn/lnn.js:21 games/lnn/lnn.php:143 games/lnn/lnn.php:190
+#: games/lnn/lnn.js:23 games/lnn/lnn.php:170 games/lnn/lnn.php:217
 msgid "No. of LNNs"
 msgstr "LNN的数量"
 
-#: games/lnn/lnn.js:26 games/wr/wr.js:64
+#: games/lnn/lnn.js:28 games/wr/wr.js:82 shared/shared.php:517
 msgid "Route"
 msgstr "路线"
 
-#: games/lnn/lnn.js:85 games/lnn/lnn.php:61
-msgid "(Different players)"
-msgstr "（玩家）"
-
-#: games/lnn/lnn.js:85 games/lnn/lnn.php:61
-msgid "Players"
-msgstr "玩家"
-
-#: games/lnn/lnn.js:86 games/lnn/lnn.php:89 games/lnn/lnn.php:171
-msgid "Overall"
-msgstr "合計"
-
-#: games/lnn/lnn.js:201
+#: games/lnn/lnn.js:218
 msgid "(All)"
 msgstr "（全）"
-
-#: games/lnn/lnn.js:210
-msgid "Total"
-msgstr "合計"
 
 #: games/lnn/lnn.php:5
 msgid ""
@@ -557,69 +542,81 @@ msgstr "内容"
 msgid "LNN Lists"
 msgstr "LNN列表"
 
-#: games/lnn/lnn.php:25 games/lnn/lnn.php:37 games/lnn/lnn.php:136
+#: games/lnn/lnn.php:25 games/lnn/lnn.php:37 games/lnn/lnn.php:163
 msgid "Overall Count"
 msgstr "总数"
 
-#: games/lnn/lnn.php:26 games/lnn/lnn.php:38 games/lnn/lnn.php:183
-#: games/wr/wr.php:30 games/wr/wr.php:47 games/wr/wr.php:340
+#: games/lnn/lnn.php:26 games/lnn/lnn.php:38 games/lnn/lnn.php:210
+#: games/wr/wr.php:30 games/wr/wr.php:47 games/wr/wr.php:371
 msgid "Player Ranking"
 msgstr "玩家排行"
 
-#: games/lnn/lnn.php:36 games/lnn/lnn.php:111 games/wr/wr.php:42
-#: games/wr/wr.php:268
+#: games/lnn/lnn.php:36 games/lnn/lnn.php:130 games/wr/wr.php:42
+#: games/wr/wr.php:289
 msgid "Player Search"
-msgstr "玩家WR"
+msgstr "玩家搜寻"
+
+#: games/lnn/lnn.php:61 games/lnn/lnn.php:115
+msgid "(Different players)"
+msgstr "（玩家）"
+
+#: games/lnn/lnn.php:61 games/lnn/lnn.php:116
+msgid "Players"
+msgstr "玩家"
+
+#: games/lnn/lnn.php:89 games/lnn/lnn.php:122 games/lnn/lnn.php:198
+msgid "Overall"
+msgstr "合計"
 
 #: games/lnn/lnn.php:98
 msgid "Click a game cover to show its list of LNNs."
 msgstr "单击游戏处查看LNN列表。"
 
-#: games/lnn/lnn.php:112
+#: games/lnn/lnn.php:131
 msgid "Choose a player name from the menu below to show their LNNs."
 msgstr "在以下的菜单选择玩家的名字则可查看其LNN。"
 
-#: games/lnn/lnn.php:113 games/lnn/lnn.php:188 games/wr/wr.php:65
-#: games/wr/wr.php:269 games/wr/wr.php:299 games/wr/wr.php:345
+#: games/lnn/lnn.php:132 games/lnn/lnn.php:215 games/wr/wr.php:65
+#: games/wr/wr.php:290 games/wr/wr.php:330 games/wr/wr.php:376
 msgid "Player"
 msgstr "玩家"
 
-#: games/lnn/lnn.php:129 games/wr/wr.php:69 games/wr/wr.php:286
-#: games/wr/wr.php:300
+#: games/lnn/lnn.php:148 games/wr/wr.php:69 games/wr/wr.php:308
+#: games/wr/wr.php:331
 msgid "Replay"
 msgstr "Rep"
 
-#: games/lnn/lnn.php:145
+#: games/lnn/lnn.php:156 games/wr/wr.php:318
+msgid "Total"
+msgstr "合計"
+
+#: games/lnn/lnn.php:172
 msgid "Different players"
 msgstr "玩家"
 
-#: games/lnn/lnn.php:176
+#: games/lnn/lnn.php:203
 msgid "Replays"
 msgstr "Rep"
 
-#: games/lnn/lnn.php:193
+#: games/lnn/lnn.php:220
 msgid "Games LNN'd"
 msgstr "游戏"
 
-#: games/lnn/lnn.php:207 games/lnn/lnn.php:208
+#: games/lnn/lnn.php:234 games/lnn/lnn.php:235
 msgid " (All Windows)"
 msgstr "（全Windows）"
 
-#: games/wr/wr.js:119 games/wr/wr.php:217
+#: games/wr/wr.js:254 games/wr/wr.php:221
 msgid "World"
 msgstr "世界"
 
-#: games/wr/wr.js:119 games/wr/wr.php:218
+#: games/wr/wr.js:254 games/wr/wr.php:222
 msgid "West"
 msgstr "西方"
 
-#: games/wr/wr.js:119 games/wr/wr.php:218
+#: games/wr/wr.js:254 games/wr/wr.php:222
 msgid "Percentage"
 msgstr "百分"
-
-#: games/wr/wr.js:203
-msgid "Seasons"
-msgstr "季節"
 
 #: games/wr/wr.php:5
 msgid ""
@@ -660,11 +657,11 @@ msgid "World Records"
 msgstr "世界纪录"
 
 #: games/wr/wr.php:28 games/wr/wr.php:29 games/wr/wr.php:43 games/wr/wr.php:45
-#: games/wr/wr.php:294 games/wr/wr.php:322
+#: games/wr/wr.php:325 games/wr/wr.php:353
 msgid "Recent Records"
 msgstr "最近世界纪录"
 
-#: games/wr/wr.php:41 games/wr/wr.php:214
+#: games/wr/wr.php:41 games/wr/wr.php:218
 msgid "Western Records"
 msgstr "西方纪录"
 
@@ -672,7 +669,7 @@ msgstr "西方纪录"
 msgid "Dates"
 msgstr "日期"
 
-#: games/wr/wr.php:64 games/wr/wr.php:285 games/wr/wr.php:298
+#: games/wr/wr.php:64 games/wr/wr.php:306 games/wr/wr.php:329
 msgid "Score"
 msgstr "分数"
 
@@ -680,61 +677,153 @@ msgstr "分数"
 msgid "Difficulty"
 msgstr "难度"
 
-#: games/wr/wr.php:68 games/wr/wr.php:287 games/wr/wr.php:301
+#: games/wr/wr.php:68 games/wr/wr.php:309 games/wr/wr.php:332
 msgid "Date"
 msgstr "日期"
 
-#: games/wr/wr.php:247
+#: games/wr/wr.php:251
 msgid "Click a game cover to show its list of world records."
 msgstr "单击游戏处查看世界纪录列表。"
 
-#: games/wr/wr.php:268
+#: games/wr/wr.php:273
+msgid "Seasons"
+msgstr "季節"
+
+#: games/wr/wr.php:277
+msgid "Unverified Scores"
+msgstr ""
+
+#: games/wr/wr.php:289
 msgid "Choose a player name from the menu below to show their WRs."
 msgstr "在以下的菜单选择玩家的名字则可查看其WR。"
 
-#: games/wr/wr.php:346
+#: games/wr/wr.php:377
 msgid "No. of WRs"
 msgstr "WR数量"
 
-#: games/wr/wr.php:347
+#: games/wr/wr.php:378
 msgid "Different games"
 msgstr "游戏"
 
-#: shared/shared.php:397
+#: shared/shared.php:417
 msgid "Youkai mode (Dark)"
 msgstr "Youkai mode (Dark)"
 
-#: shared/shared.php:397
+#: shared/shared.php:417
 msgid "Human mode (Light)"
 msgstr "Human mode (Light)"
 
-#: shared/shared.php:406 shared/shared.php:412
+#: shared/shared.php:426 shared/shared.php:433
 msgid "Flag of the United Kingdom"
 msgstr "英国旗"
 
-#: shared/shared.php:408
+#: shared/shared.php:429
 msgid "Flag of the United States"
 msgstr "美国旗"
 
-#: shared/shared.php:416
+#: shared/shared.php:437
 msgid "Flag of Japan"
 msgstr "日本旗"
 
-#: shared/shared.php:420
+#: shared/shared.php:441
 msgid "Flag of the P.R.C."
 msgstr "中国旗"
 
-#: shared/shared.php:424
+#: shared/shared.php:445
 msgid "Flag of Russia"
 msgstr "俄羅斯國旗"
 
-#: shared/shared.php:428
+#: shared/shared.php:449
 msgid "Flag of Germany"
 msgstr "德国国旗"
 
-#: shared/shared.php:432
+#: shared/shared.php:453
 msgid "Flag of Spain"
 msgstr "西班牙国旗"
+
+#: shared/shared.php:549
+msgid "Touhou 1 - The Highly Responsive to Prayers"
+msgstr "东方灵异传　～ The Highly Responsive to Prayers"
+
+#: shared/shared.php:550
+msgid "Touhou 2 - The Story of Eastern Wonderland"
+msgstr "东方封魔录　～ the Story of Eastern Wonderland"
+
+#: shared/shared.php:551
+msgid "Touhou 3 - Phantasmagoria of Dim.Dream"
+msgstr "东方梦时空　～ Phantasmagoria of Dim.Dream"
+
+#: shared/shared.php:552
+msgid "Touhou 4 - Lotus Land Story"
+msgstr "东方幻想乡　～ Lotus Land Story"
+
+#: shared/shared.php:553
+msgid "Touhou 5 - Mystic Square"
+msgstr "东方怪绮谈　～ Mystic Square"
+
+#: shared/shared.php:554
+msgid "Touhou 6 - The Embodiment of Scarlet Devil"
+msgstr "东方红魔乡　～ the Embodiment of Scarlet Devil"
+
+#: shared/shared.php:555
+msgid "Touhou 7 - Perfect Cherry Blossom"
+msgstr "东方妖妖梦　～ Perfect Cherry Blossom"
+
+#: shared/shared.php:556
+msgid "Touhou 8 - Imperishable Night"
+msgstr "东方永夜抄　～ Imperishable Night"
+
+#: shared/shared.php:557
+msgid "Touhou 9 - Phantasmagoria of Flower View"
+msgstr "东方花映塚　～ Phantasmagoria of Flower View"
+
+#: shared/shared.php:558
+msgid "Touhou 9.5 - Shoot the Bullet"
+msgstr "东方文花帖　～ Shoot the Bullet"
+
+#: shared/shared.php:559
+msgid "Touhou 10 - Mountain of Faith"
+msgstr "东方风神录　～ Mountain of Faith"
+
+#: shared/shared.php:560
+msgid "Touhou 11 - Subterranean Animism"
+msgstr "东方地灵殿　～ Subterranean Animism"
+
+#: shared/shared.php:561
+msgid "Touhou 12 - Undefined Fantastic Object"
+msgstr "东方星莲船　～ Undefined Fantastic Object"
+
+#: shared/shared.php:562
+msgid "Touhou 12.5 - Double Spoiler"
+msgstr "对抗新闻　～ 东方文花帖"
+
+#: shared/shared.php:563
+msgid "Touhou 12.8 - Great Fairy Wars"
+msgstr "妖精大战争　～ 东方三月精"
+
+#: shared/shared.php:564
+msgid "Touhou 13 - Ten Desires"
+msgstr "东方神灵庙　～ Ten Desires"
+
+#: shared/shared.php:565
+msgid "Touhou 14 - Double Dealing Character"
+msgstr "东方辉针城　～ Double Dealing Character"
+
+#: shared/shared.php:566
+msgid "Touhou 15 - Legacy of Lunatic Kingdom"
+msgstr "东方绀珠传　～ Legacy of Lunatic Kingdom"
+
+#: shared/shared.php:567
+msgid "Touhou 16 - Hidden Star in Four Seasons"
+msgstr "东方天空璋　～ Hidden Star in Four Seasons"
+
+#: shared/shared.php:568
+msgid "Touhou 17 - Wily Beast and Weakest Creature"
+msgstr "东方鬼形獣　～ Wily Beast and Weakest Creature"
+
+#: shared/shared.php:569
+msgid "Touhou 18 - Unconnected Marketeers"
+msgstr "东方虹龙洞　～ Unconnected Marketeers"
 
 #: shared/translations.php:2
 msgid "Makai"
@@ -1008,82 +1097,6 @@ msgstr "妖梦獭"
 msgid "YoumuEagle"
 msgstr "妖梦鹰"
 
-#: shared/translations.php:71
-msgid "Touhou 1 - The Highly Responsive to Prayers"
-msgstr "东方灵异传　～ The Highly Responsive to Prayers"
-
-#: shared/translations.php:72
-msgid "Touhou 2 - The Story of Eastern Wonderland"
-msgstr "东方封魔录　～ the Story of Eastern Wonderland"
-
-#: shared/translations.php:73
-msgid "Touhou 3 - Phantasmagoria of Dim.Dream"
-msgstr "东方梦时空　～ Phantasmagoria of Dim.Dream"
-
-#: shared/translations.php:74
-msgid "Touhou 4 - Lotus Land Story"
-msgstr "东方幻想乡　～ Lotus Land Story"
-
-#: shared/translations.php:75
-msgid "Touhou 5 - Mystic Square"
-msgstr "东方怪绮谈　～ Mystic Square"
-
-#: shared/translations.php:76
-msgid "Touhou 6 - The Embodiment of Scarlet Devil"
-msgstr "东方红魔乡　～ the Embodiment of Scarlet Devil"
-
-#: shared/translations.php:77
-msgid "Touhou 7 - Perfect Cherry Blossom"
-msgstr "东方妖妖梦　～ Perfect Cherry Blossom"
-
-#: shared/translations.php:78
-msgid "Touhou 8 - Imperishable Night"
-msgstr "东方永夜抄　～ Imperishable Night"
-
-#: shared/translations.php:79
-msgid "Touhou 9 - Phantasmagoria of Flower View"
-msgstr "东方花映塚　～ Phantasmagoria of Flower View"
-
-#: shared/translations.php:80
-msgid "Touhou 10 - Mountain of Faith"
-msgstr "东方风神录　～ Mountain of Faith"
-
-#: shared/translations.php:81
-msgid "Touhou 11 - Subterranean Animism"
-msgstr "东方地灵殿　～ Subterranean Animism"
-
-#: shared/translations.php:82
-msgid "Touhou 12 - Undefined Fantastic Object"
-msgstr "东方星莲船　～ Undefined Fantastic Object"
-
-#: shared/translations.php:83
-msgid "Touhou 12.8 - Great Fairy Wars"
-msgstr "妖精大战争　～ 东方三月精"
-
-#: shared/translations.php:84
-msgid "Touhou 13 - Ten Desires"
-msgstr "东方神灵庙　～ Ten Desires"
-
-#: shared/translations.php:85
-msgid "Touhou 14 - Double Dealing Character"
-msgstr "东方辉针城　～ Double Dealing Character"
-
-#: shared/translations.php:86
-msgid "Touhou 15 - Legacy of Lunatic Kingdom"
-msgstr "东方绀珠传　～ Legacy of Lunatic Kingdom"
-
-#: shared/translations.php:87
-msgid "Touhou 16 - Hidden Star in Four Seasons"
-msgstr "东方天空璋　～ Hidden Star in Four Seasons"
-
-#: shared/translations.php:88
-msgid "Touhou 17 - Wily Beast and Weakest Creature"
-msgstr "东方鬼形獣　～ Wily Beast and Weakest Creature"
-
-#: shared/translations.php:89
-msgid "Touhou 18 - Unconnected Marketeers"
-msgstr "东方虹龙洞　～ Unconnected Marketeers"
-
 #~ msgid "ReimuYukari"
 #~ msgstr "结界组"
 
@@ -1344,12 +1357,6 @@ msgstr "东方虹龙洞　～ Unconnected Marketeers"
 
 #~ msgid "Touhou Lunatic No Miss No Bombs"
 #~ msgstr "东方LNN"
-
-#~ msgid "Touhou 9.5 - Shoot the Bullet"
-#~ msgstr "东方文花帖　～ Shoot the Bullet"
-
-#~ msgid "Touhou 12.5 - Double Spoiler"
-#~ msgstr "对抗新闻　～ 东方文花帖"
 
 #~ msgid "StB"
 #~ msgstr "文"

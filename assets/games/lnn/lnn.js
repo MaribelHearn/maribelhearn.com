@@ -1,4 +1,4 @@
-/*global $ _ LNNs getCookie deleteCookie setCookie gameAbbr shottypeAbbr fullNameNumber*/
+/*global _ LNNs getCookie deleteCookie setCookie gameAbbr shottypeAbbr fullNameNumber*/
 const alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 let selected = "";
 let missingReplays, videoLNNs;
@@ -63,32 +63,19 @@ function prepareShowLNNs(game) {
         fullName.classList.remove(selected + "f");
     }
 
+    fullName.classList.add(`${game}f`);
+    fullName.innerHTML = fullNameNumber(game);
     document.getElementById(`${game}_image`).style.border = "3px solid gold";
-    $("#fullname").addClass(`${game}f`);
-    $("#fullname").html(_(fullNameNumber(game)));
-    $("#listhead").html(`<tr><th class='general_header'>${shotRoute(game)}</th>` +
-            `<th class='general_header sorttable_numeric'>${restrictions(game)}<br>${_("(Different players)")}</th>` +
-            `<th class='general_header'>${_("Players")}</th></tr>`);
-    $("#listfoot").html(`<tr><td class='foot'>${_("Overall")}</td><td id='count' class='foot'></td><td id='total' class='foot'></td></tr>`);
-    $("#listbody").html("");
+    document.getElementById("lnn_shotroute").innerHTML = shotRoute(game);
+    document.getElementById("lnn_restrictions").innerHTML = restrictions(game);
+    document.getElementById("lnn_tbody").innerHTML = "";
     selected = game;
 }
 
-function showLNNs() { // .game_img onclick
-    const game = this.id.replace("_image", "");
+function showLNNtable(game) {
+    const lnnTable = document.getElementById("lnn_tbody");
     let players = [];
     let gameCount = 0;
-
-    if (game == selected) {
-        $("#list").css("display", "none");
-        $(`#${game}_image`).css("border", $(`#${game}_image`).hasClass("cover98") ? "1px solid black" : "none");
-        $("#fullname, #listhead, #listbody, #listfoot").html("");
-        $("#fullname").removeClass(game + "f");
-        selected = "";
-        return;
-    }
-
-    prepareShowLNNs(game);
 
     for (const shot in LNNs[game]) {
         if (shot.includes("UFOs")) {
@@ -100,11 +87,11 @@ function showLNNs() { // .game_img onclick
 
         if (game == "IN" || game == "HSiFS") {
             const character = shot.slice(0, -6);
-            const type = shot.substr(-6);
-            $("#listbody").append(`<tr><td class='nowrap'><span class='${character}'>${_(character)}</span>` +
-                    `<span class='${type}'>${_(type)}</span></td><td id='${shot}n'></td><td id='${shot}'></td>`);
+            const type = shot.slice(-6);
+            lnnTable.innerHTML += `<tr><td class='nowrap'><span class='${character}'>${_(character)}</span>` +
+                    `<span class='${type}'>${_(type)}</span></td><td id='${shot}n'></td><td id='${shot}'></td>`;
         } else {
-            $("#listbody").append(`<tr><td class='nowrap'>${_(shot)}</td><td id='${shot}n'></td><td id='${shot}'></td>`);
+            lnnTable.innerHTML += `<tr><td class='nowrap'>${_(shot)}</td><td id='${shot}n'></td><td id='${shot}'></td>`;
         }
 
         for (const player of LNNs[game][shot]) {
@@ -124,30 +111,49 @@ function showLNNs() { // .game_img onclick
         }
 
         shotPlayers.sort();
-        $(`#${shot}n`).html(shotCount);
+        document.getElementById(`${shot}n`).innerHTML = shotCount;
 
         if (shotCount === 0) {
             continue;
         }
 
+        const shotElement = document.getElementById(`${shot}`);
+
         for (const shotPlayer of shotPlayers) {
-            $(`#${shot}`).append(", " + shotPlayer);
+            shotElement.innerHTML += `, ${shotPlayer}`;
         }
 
-        if ($(`#${shot}`).html().substring(0, 2) == ", ") {
-            $(`#${shot}`).html($(`#${shot}`).html().replace(", ", ""));
+        if (shotElement.innerHTML.substring(0, 2) == ", ") {
+            shotElement.innerHTML = shotElement.innerHTML.replace(", ", "");
         }
     }
 
     players.sort();
+    const total = document.getElementById("total");
+    total.innerHTML = "";
 
     for (const player of players) {
-        $("#total").append(", " + player);
+        total.innerHTML += `, ${player}`;
     }
 
-    $("#count").html(`${gameCount} (${players.length})`);
-    $("#total").html($("#total").html().replace(", ", ""));
-    $("#list").css("display", "block");
+    document.getElementById("count").innerHTML = `${gameCount} (${players.length})`;
+    total.innerHTML = total.innerHTML.replace(", ", "");
+}
+
+function showLNNs() { // .game_img onclick
+    const game = this.id.replace("_image", "");
+
+    if (game != selected) {
+        prepareShowLNNs(game);
+        showLNNtable(game);
+        document.getElementById("lnn_list").style.display = "block";
+    } else {
+        const gameImg = document.getElementById(`${game}_image`);
+        const border = (gameImg.classList.contains("cover98") ? "1px solid black" : "none");
+        gameImg.style.border = border;
+        document.getElementById("lnn_list").style.display = "none";
+        selected = "";
+    }
 }
 
 function getPlayerLNNs(player, game) {
@@ -188,7 +194,8 @@ function showPlayerLNNs() { // player onchange, player onselect
 
     let games = [];
     let sum = 0;
-    document.getElementById("playerlistbody").innerHTML = "";
+    const playerTable = document.getElementById("player_tbody");
+    playerTable.innerHTML = "";
 
     for (const game in LNNs) {
         if (game == "LM") {
@@ -197,27 +204,28 @@ function showPlayerLNNs() { // player onchange, player onselect
 
         const playerLNNs = getPlayerLNNs(player, game);
         const max = (game == "UFO" ? 6 : Object.keys(LNNs[game]).length);
+        const lnnShots = document.getElementById(`${game}l`);
 
         if (playerLNNs.runs.length > 0) {
             games.push(game);
             sum += playerLNNs.runs.length;
-            $("#playerlistbody").append(`<tr><td id='${game}l' class='${game}'>${_(game)}</td><td id='${game}s'></td><td id='${game}r'></td></tr>`);
-            $(`#${game}s`).html(playerLNNs.runs.join("<br>"));
-            $(`#${game}r`).html(playerLNNs.replays.join("<br>"));
+            playerTable.innerHTML += `<tr><td id='${game}l' class='${game}'>${_(game)}</td><td id='${game}s'></td><td id='${game}r'></td></tr>`;
+            document.getElementById(`${game}s`).innerHTML = playerLNNs.runs.join("<br>");
+            document.getElementById(`${game}r`).innerHTML = playerLNNs.replays.join("<br>");
         }
 
         if (playerLNNs.shots.length == max) {
-            $(`#${game}l`).append(`<br><strong>${_("(All)")}</strong>`);
+            lnnShots.innerHTML += `<br><strong>${_("(All)")}</strong>`;
         }
     }
 
     if (sum === 0) {
-        $("#playerlist").css("display", "none");
+        document.getElementById("player_list").style.display = "none";
         return;
     }
 
-    $("#playerlistfoot").html(`<tr><td colspan='3'></td></tr><tr><td>${_("Total")}</td><td colspan='2'>${sum}</td></tr>`);
-    $("#playerlist").css("display", "block");
+    document.getElementById("player_sum").innerHTML = sum;
+    document.getElementById("player_list").style.display = "block";
 }
 
 function setLanguage(event) {
