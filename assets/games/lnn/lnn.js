@@ -57,19 +57,15 @@ function prepareShowLNNs(game) {
         selectedImg.style.border = border;
     }
 
-    const fullName = document.getElementById("fullname");
-
-    if (fullName.classList.contains(selected + "f")) {
-        fullName.classList.remove(selected + "f");
-    }
-
-    fullName.classList.add(`${game}f`);
-    fullName.innerHTML = fullNameNumber(game);
+    const lnnTable = document.getElementById("lnn_table");
+    lnnTable.classList.remove(`${selected}t`);
+    lnnTable.classList.add(`${game}t`);
+    selected = game;
     document.getElementById(`${game}_image`).style.border = "3px solid gold";
+    document.getElementById("fullname").innerHTML = fullNameNumber(game);
     document.getElementById("lnn_shotroute").innerHTML = shotRoute(game);
     document.getElementById("lnn_restrictions").innerHTML = restrictions(game);
     document.getElementById("lnn_tbody").innerHTML = "";
-    selected = game;
 }
 
 function showLNNtable(game) {
@@ -151,6 +147,7 @@ function showLNNs() { // .game_img onclick
         const gameImg = document.getElementById(`${game}_image`);
         const border = (gameImg.classList.contains("cover98") ? "1px solid black" : "none");
         gameImg.style.border = border;
+        document.getElementById("lnn_table").classList.remove(`${game}t`);
         document.getElementById("lnn_list").style.display = "none";
         selected = "";
     }
@@ -204,7 +201,6 @@ function showPlayerLNNs() { // player onchange, player onselect
 
         const playerLNNs = getPlayerLNNs(player, game);
         const max = (game == "UFO" ? 6 : Object.keys(LNNs[game]).length);
-        const lnnShots = document.getElementById(`${game}l`);
 
         if (playerLNNs.runs.length > 0) {
             games.push(game);
@@ -213,6 +209,8 @@ function showPlayerLNNs() { // player onchange, player onselect
             document.getElementById(`${game}s`).innerHTML = playerLNNs.runs.join("<br>");
             document.getElementById(`${game}r`).innerHTML = playerLNNs.replays.join("<br>");
         }
+
+        const lnnShots = document.getElementById(`${game}l`);
 
         if (playerLNNs.shots.length == max) {
             lnnShots.innerHTML += `<br><strong>${_("(All)")}</strong>`;
