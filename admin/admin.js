@@ -12,7 +12,6 @@ function set() {
 
 function userAgent() {
     const ua = detect.parse(navigator.userAgent);
-
     document.getElementById("os").innerHTML = "<img src='" + (location.host == "maribelhearn.com" ? "https://maribelhearn.com/" : "") +
     "admin/icons/" + ua.os.name + ".png' alt='" + ua.os.name + " icon'> " + ua.os.name;
     document.getElementById("browser").innerHTML = "<img src='" + (location.host == "maribelhearn.com" ? "https://maribelhearn.com/" : "") +
@@ -20,7 +19,8 @@ function userAgent() {
 }
 
 function addCacheEntries() {
-    var entries = document.getElementById("new_cache_entries"), xhr = new XMLHttpRequest();
+    const entries = document.getElementById("new_cache_entries");
+    const xhr = new XMLHttpRequest();
 
     if (!entries) {
         document.getElementById("response").innerHTML = "No new cache entries.";
