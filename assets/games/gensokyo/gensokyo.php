@@ -63,6 +63,10 @@
         $tmp = explode('?', $_SERVER['REQUEST_URI']);
         $searched = !empty($tmp[1]);
         if (!empty($_GET['id'])) {
+            if (!in_array($_GET['id'], $reps)) {
+                echo '<p>Invalid replay ID. Please use the search functionality to find the replay(s) you are looking for.</p>';
+                return;
+            }
             replay_table($_GET['id'], $reps[$_GET['id']]);
         } else if ($searched) {
             $table = '';
