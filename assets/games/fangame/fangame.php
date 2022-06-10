@@ -393,6 +393,22 @@
 			<a href='https://www.youtube.com/watch?v=OLprhFAYigk'><?php echo _('Video') ?></a></td>
 		</tr>
 	</table></div>
+	<div class='overflow'><table class='sortable'>
+		<caption><span class='fangame eios'></span> 东方祈华梦 ~ Elegant Impermanence of Sakura</caption>
+		<tr>
+            <th class='difficulty'><?php echo _('Difficulty') ?></th>
+            <th class='shottype'><?php echo _('Shottype') ?></th>
+            <th class='sorttable_numeric'><?php echo _('Score') ?></th>
+            <th class='date'><?php echo _('Date') ?></th>
+            <th class='source'><?php echo _('Source') ?></th>
+        </tr><tr>
+			<td>NMS</td>
+			<td>Reimu &amp; Yukari</td>
+			<td>21,314,395,700</td>
+			<td>9 June 2022</td>
+			<td><a href='https://www.youtube.com/watch?v=3Pm9zrUe9Ik'><?php echo _('Video') ?></a></td>
+		</tr>
+	</table></div>
 	<h3 class='related'>Related Games</h3>
 	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame bm'></span> <?php echo _('Barrage Musical ~A Fantasy of Tempest~') ?></caption>
@@ -604,13 +620,13 @@
 			<td>Default MarisaA</td>
 			<td><u><strong>4,508,088,108,712,984,576</strong></u><br>by <em>yakamino</em></td>
 			<td>1 August 2020</td>
-			<td><a href='https://pbs.twimg.com/media/EeUije9UwAIRd-6.jpg:large'>Screenshot</a></td>
+			<td><a href='https://pbs.twimg.com/media/EeUije9UwAIRd-6.jpg:large'><?php echo _('Screenshot') ?></a></td>
 		</tr><tr>
 			<td>Unlimited</td>
 			<td>Default MarisaA</td>
 			<td><u>3,162,576,147,384,893,440</u><br>by <em>yakamino</em></td>
 			<td>1 February 2020</td>
-			<td><a href='https://pbs.twimg.com/media/EPr5ZjCUYAA_2jJ.jpg:large'>Screenshot</a></td>
+			<td><a href='https://pbs.twimg.com/media/EPr5ZjCUYAA_2jJ.jpg:large'><?php echo _('Screenshot') ?></a></td>
 		</tr><tr>
 			<td>Unlimited</td>
 			<td>Default ReimuB</td>
