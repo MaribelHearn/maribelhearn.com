@@ -56,7 +56,7 @@ if (in_array($page, $canvas)) {
 if (in_array($page, $jquery)) {
     array_push($js, 'js/jquery' . $min . '.js');
 }
-if (in_array($page, $sorttable) && !($page == 'wr' && isset($_COOKIE['wr_old_layout'])) && ($page == 'lnn' && isset($_COOKIE['lnn_old_layout']))) {
+if (in_array($page, $sorttable) && !($page == 'wr' && isset($_COOKIE['wr_old_layout'])) && !($page == 'lnn' && isset($_COOKIE['lnn_old_layout']))) {
     array_push($js, 'js/sorttable' . $min . '.js');
 }
 if ($page == 'tiers' && isset($_GET['mobile']) && $_GET['mobile']) {
@@ -74,7 +74,7 @@ if (file_exists('../' . $dir . '/' . $page . '/' . $page . $min . '.js')) {
     array_push($js, '../' . $dir . '/' . $page . '/' . $page . $min . '.js');
 }
 if ($page == 'scoring') {
-    echo 'var scores = ' . file_get_contents('json/defaults.json') . ';';
+    echo 'let scores = ' . file_get_contents('json/defaults.json') . ';';
 }
 if ($page == 'drc') {
     echo 'const Rubrics = ' . file_get_contents('json/rubrics.json') . ';';
