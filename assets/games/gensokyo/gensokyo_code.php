@@ -68,6 +68,10 @@ function format_conditions($conditions, string $category) {
 }
 
 function replay_table(string $id, array $rep) {
+    if (empty($rep['rpy'])) {
+        echo '<p>No such replay.</p>';
+        return;
+    }
     $comment = str_replace('<', '&lt;', $rep['comment']);
     $comment = str_replace('>', '&gt;', $comment);
     $backlink = explode('&id', $_SERVER['REQUEST_URI']);
