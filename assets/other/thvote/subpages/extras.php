@@ -3,6 +3,7 @@
     <p><a href='#jumps'>Biggest jumps</a></p>
     <p><a href='#mpg'>Music vote per maingame</a></p>
     <ul><li><a href='#mtotals'>Totals per maingame</a></li><?php
+        $games = ['HRtP', 'SoEW', 'PoDD', 'LLS', 'MS', 'EoSD', 'PCB', 'IN', 'PoFV', 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC', 'UM'];
         foreach ($games as $key => $game) {
             if ($key < 5 || $game == 'GFW') {
                 continue;
