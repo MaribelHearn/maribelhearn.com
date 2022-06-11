@@ -1777,9 +1777,9 @@ function deleteLegacyCookies() {
 }
 
 function addCategoryNamesToShots() {
-    for (var i in categories.shots) {
-        for (var j = 0; j < categories.shots[i].chars.length; j++) {
-            categories.shots[i].chars[j] = i + categories.shots[i].chars[j].replace(" Team", "Team");
+    for (const key in categories.shots) {
+        for (let i = 0; i < categories.shots[key].chars.length; i++) {
+            categories.shots[key].chars[i] = key + categories.shots[key].chars[i].replace(" Team", "Team");
         }
     }
 }
@@ -1863,22 +1863,32 @@ function loadTiersFromStorage() {
 
 function loadItems(pageLoad) {
     const cats = categories[settings.sort];
-    const items = document.getElementById("characters");
 
     if (!pageLoad) {
+        const items = document.getElementById("characters");
+
         for (const categoryName in cats) {
             items.innerHTML += `<div id='${categoryName}' class='dark_bg'>`;
             const category = document.getElementById(categoryName);
     
-            for (let item of cats[categoryName].chars) {
-                category.innerHTML += `<span id='${item}C'><span id='${item}' class='item list_${settings.sort}' draggable='true' alt='${item}' title='${addSpacing(item)}'></span></span>`;
+            for (const item of cats[categoryName].chars) {
+                let span = document.createElement("span");
+                let childSpan = document.createElement("span");
+                span.id = `${item}C`;
+                childSpan.id = `${item}`;
+                childSpan.classList.add("item");
+                childSpan.classList.add(`list_${settings.sort}`);
+                childSpan.draggable = true;
+                childSpan.title = addSpacing(item);
+                span.appendChild(childSpan);
+                category.appendChild(span);
             }
     
             items.innerHTML += "</div>";
         }
     } else {
         for (const categoryName in cats) {
-            for (let item of cats[categoryName].chars) {
+            for (const item of cats[categoryName].chars) {
                 setPickerItemEvents(item);
                 document.getElementById(item).title = addSpacing(item);
             }
