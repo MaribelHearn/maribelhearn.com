@@ -1,4 +1,4 @@
-/*global $ categories html2canvas isMobile getCookie deleteCookie MobileDragDrop*/
+/*global $ categories html2canvas isMobile setCookie getCookie deleteCookie MobileDragDrop*/
 if (typeof MobileDragDrop !== "undefined") {
     MobileDragDrop.polyfill({
         holdToDrag: 200
@@ -288,7 +288,7 @@ function setPickerItemEvents(item) {
     $("#" + item).off("dragover dragenter");
     $("#" + item).off("click");
     $("#" + item).on("dragstart", drag);
-    $("#" + item).on("click", toggleMulti);
+    document.getElementById(item).addEventListener("click", toggleMulti, false);
 
     if (!isMobile()) {
         $("#" + item).on("dblclick", {name: $("#" + item).attr("title")}, addMenu);
@@ -404,12 +404,13 @@ function switchSort() {
         settings.sort = document.getElementById("sort").value;
     }
 
-    loadItems();
+    loadItems(false);
     reloadTiers();
     saveConfirmation({data: {noMenu: true}});
+    setCookie("sort", settings.sort);
 
     if (isMobile()) {
-        printMessage("<strong class='confirmation'>Switched to " + settings.sort + "!</strong>");
+        printMessage(`<strong class='confirmation'>Switched to ${settings.sort}!</strong>`);
     } else {
         printMessage("");
     }
@@ -1860,24 +1861,33 @@ function loadTiersFromStorage() {
     }
 }
 
-function loadItems() {
+function loadItems(pageLoad) {
     const cats = categories[settings.sort];
     const items = document.getElementById("characters");
 
-    for (const categoryName in cats) {
-        items.innerHTML += `<div id='${categoryName}' class='dark_bg'>`;
-        const category = document.getElementById(categoryName);
-
-        for (let item of cats[categoryName].chars) {
-            item = item.replace("'", "");
-            category.innerHTML += `<span id='${item}C'><span id='${item}' class='item list_${settings.sort}' draggable='true' alt='${item}' title='${addSpacing(item)}'>`;
-            setPickerItemEvents(item);
+    if (!pageLoad) {
+        for (const categoryName in cats) {
+            items.innerHTML += `<div id='${categoryName}' class='dark_bg'>`;
+            const category = document.getElementById(categoryName);
+    
+            for (let item of cats[categoryName].chars) {
+                category.innerHTML += `<span id='${item}C'><span id='${item}' class='item list_${settings.sort}' draggable='true' alt='${item}' title='${addSpacing(item)}'></span></span>`;
+            }
+    
+            items.innerHTML += "</div>";
         }
+    } else {
+        for (const categoryName in cats) {
+            for (let item of cats[categoryName].chars) {
+                setPickerItemEvents(item);
+                document.getElementById(item).title = addSpacing(item);
+            }
+        }
+    }
 
-        items.innerHTML += "</div>";
-
+    for (const categoryName in cats) {
         if (!settings.categories[settings.sort][categoryName].enabled) {
-            category.style.display = "none";
+            document.getElementById(categoryName).style.display = "none";
         }
 
         toggleMale();
@@ -2075,7 +2085,7 @@ function init() {
 
     document.getElementById("tier_list_caption").innerHTML = settings.props[settings.sort].tierListName;
     document.getElementById("sort").value = settings.sort;
-    loadItems();
+    loadItems(true);
 
     if (!localStorage.tiers && !localStorage.gameTiers && !localStorage.shotTiers) {
         showInformation();
