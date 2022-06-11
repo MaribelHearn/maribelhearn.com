@@ -283,6 +283,33 @@ function own_sites() {
     '<span class="icon source_icon"></span>Source</a></p>';
 }
 
+function game_pages() {
+    return '<p><a href="/scoring"><span class="icon scoring_icon"></span> Scoring</a></p>' .
+    '<p><a href="/survival"><span class="icon survival_icon"></span> Survival</a></p>' .
+    '<p><a href="/drc"><span class="icon drc_icon"></span> DRC</a></p>' .
+    '<p><a href="/tools"><span class="icon tools_icon"></span> Tools</a></p>' .
+    '<p><a href="/wr"><span class="icon wr_icon"></span> WR</a></p>' .
+    '<p><a href="/lnn"><span class="icon lnn_icon"></span> LNN</a></p>' .
+    '<p><a href="/jargon"><span class="icon jargon_icon"></span> Jargon</a></p>' .
+    '<p><a href="/trs"><span class="icon trs_icon"></span> TRS</a></p>' .
+    '<p><a href="/gensokyo"><span class="icon gensokyo_icon"></span> Gensokyo</a></p>' .
+    '<p><a href="/pofv"><span class="icon pofv_icon"></span> PoFV</a></p>' .
+    '<p><a href="/fangame"><span class="icon fangame_icon"></span> Fangame</a></p>' .
+    '<p><a href="/faq"><span class="icon faq_icon"></span> FAQ</a></p>' .
+    '<p><a href="/royalflare"><span class="icon royalflare_icon"></span> Royalflare</a></p>';
+}
+
+function other_pages() {
+    return '<p><a href="/thvote"><span class="icon thvote_icon"></span> Poll</a></p>' .
+    '<p><a href="/tiers"><span class="icon tiers_icon"></span> Tiers</a></p>' .
+    '<p><a href="/slots"><span class="icon slots_icon"></span> Slots</a></p>';
+}
+
+function personal_pages() {
+    return '<p><a href="/history"><span class="icon history_icon"></span> History</a></p>' .
+    '<p><a href="/c67"><span class="icon c67_icon"></span> C67</a></p>';
+}
+
 function show_admin(string $token_path) {
     return is_localhost($_SERVER['REMOTE_ADDR']) || isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents($token_path));
 }
@@ -320,34 +347,19 @@ function navbar(string $page) {
         $navbar .= '<div class="dropdown">';
             $navbar .= '<a href="#" class="dropdown_button">Games&#x25BF;</a>';
             $navbar .= '<div class="dropdown_content' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
-                $navbar .= '<p><a href="/scoring"><span class="icon scoring_icon"></span> Scoring</a></p>';
-                $navbar .= '<p><a href="/survival"><span class="icon survival_icon"></span> Survival</a></p>';
-                $navbar .= '<p><a href="/drc"><span class="icon drc_icon"></span> DRC</a></p>';
-                $navbar .= '<p><a href="/tools"><span class="icon tools_icon"></span> Tools</a></p>';
-                $navbar .= '<p><a href="/wr"><span class="icon wr_icon"></span> WR</a></p>';
-                $navbar .= '<p><a href="/lnn"><span class="icon lnn_icon"></span> LNN</a></p>';
-                $navbar .= '<p><a href="/jargon"><span class="icon jargon_icon"></span> Jargon</a></p>';
-                $navbar .= '<p><a href="/trs"><span class="icon trs_icon"></span> TRS</a></p>';
-                $navbar .= '<p><a href="/gensokyo"><span class="icon gensokyo_icon"></span> Gensokyo</a></p>';
-                $navbar .= '<p><a href="/pofv"><span class="icon pofv_icon"></span> PoFV</a></p>';
-                $navbar .= '<p><a href="/fangame"><span class="icon fangame_icon"></span> Fangame</a></p>';
-                $navbar .= '<p><a href="/faq"><span class="icon faq_icon"></span> FAQ</a></p>';
-                $navbar .= '<p><a href="/royalflare"><span class="icon royalflare_icon"></span> Royalflare</a></p>';
+                $navbar .= game_pages();
             $navbar .= '</div>';
         $navbar .= '</div> ';
         $navbar .= '<div class="dropdown">';
             $navbar .= '<a href="#" class="dropdown_button">Other&#x25BF;</a>';
             $navbar .= '<div class="dropdown_content' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
-                $navbar .= '<p><a href="/thvote"><span class="icon thvote_icon"></span> Poll</a></p>';
-                $navbar .= '<p><a href="/tiers"><span class="icon tiers_icon"></span> Tiers</a></p>';
-                $navbar .= '<p><a href="/slots"><span class="icon slots_icon"></span> Slots</a></p>';
+                $navbar .= other_pages();
             $navbar .= '</div>';
         $navbar .= '</div> ';
         $navbar .= '<div class="dropdown">';
             $navbar .= '<a href="#" class="dropdown_button">Personal&#x25BF;</a>';
             $navbar .= '<div class="dropdown_content' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
-                $navbar .= '<p><a href="/history"><span class="icon history_icon"></span> History</a></p>';
-                $navbar .= '<p><a href="/c67"><span class="icon c67_icon"></span> C67</a></p>';
+                $navbar .= personal_pages();
             $navbar .= '</div>';
         $navbar .= '</div> ';
         $navbar .= '<div id="ext_mobile"' . ($page == 'tiers' ? ' class="dark_bg"' : '') . '>';

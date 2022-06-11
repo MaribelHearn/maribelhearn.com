@@ -100,9 +100,12 @@ if ($page == 'pofv') {
     echo 'const DESCRIPTIONS = ' . file_get_contents('json/pofv_descriptions.json') . ';';
 }
 if ($page == 'tiers') {
-    echo 'const categories = {"characters":' . file_get_contents('json/chars.json') .
-    ',"works":' . file_get_contents('json/works.json') . ',"shots":' . file_get_contents('json/shots.json') .
-    ',"cards":' . file_get_contents('json/cards.json') . '};';
+    echo 'const categories = {' .
+        '"characters":' . file_get_contents('json/characters.json') . ',' . 
+        '"works":' . file_get_contents('json/works.json') . ',' .
+        '"shots":' . file_get_contents('json/shots.json') . ',' .
+        '"cards":' . file_get_contents('json/cards.json') .
+    '};';
 }
 if ($page == 'slots') {
     echo 'const CHARS = ' . file_get_contents('json/charpos.json') . ';';
