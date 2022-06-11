@@ -29,8 +29,8 @@ Object.defineProperty(Object.prototype, "isEmpty", {
 
 const MAX_NUMBER_OF_TIERS = 100;
 const MAX_NAME_LENGTH = 50;
-const defaultTiers = ["S", "A", "B", "C"];
-const defaultColour = "#1b232e";
+const defaultBg = "#1b232e";
+const defaultColour = "#a0a0a0";
 const defaultWidth = isMobile() ? 60 : 120;
 const defaultSize = 32;
 const sorts = ["characters", "works", "shots", "cards"];
@@ -41,9 +41,16 @@ const maleCharacters = ["SinGyokuM", "Genjii", "Unzan", "RinnosukeMorichika", "F
 const clans = ["FujiwaranoMokou", "SoganoTojiko", "MononobenoFuto", "ToyosatomiminoMiko", "HiedanoAkyuu", "WatatsukinoToyohime", "WatatsukinoYorihime"];
 const themeDuplicates = ["FiveMagicStones", "MarisaPC-98LLS", "YuukaPC-98Stage5", "YukiandMai", "AlicePC-98Extra", "YuyukoSaigyoujiResurrectionButterfly",
         "KaguyaHouraisanLastSpells", "YuyukoSaigyoujiTD", "OkinaMataraExtra", "MarisaKirisameGFW"]; // iCiel Gotham Ultra 24
+const DEFAULT_TIER_NAMES = ["S", "A", "B", "C"];
+const DEFAULT_TIERS = {
+    "0": { "name": "S", "bg": "#1b232e", "colour": "#a0a0a0", "chars": [] },
+    "1": { "name": "A", "bg": "#1b232e", "colour": "#a0a0a0", "chars": [] },
+    "2": { "name": "B", "bg": "#1b232e", "colour": "#a0a0a0", "chars": [] },
+    "3": { "name": "C", "bg": "#1b232e", "colour": "#a0a0a0", "chars": [] }
+};
 const DEFAULT_PROPS = {
     "tierListName": "",
-    "tierListColour": defaultColour,
+    "tierListColour": defaultBg,
     "tierHeaderWidth": defaultWidth,
     "tierHeaderFontSize": defaultSize
 };
@@ -75,25 +82,25 @@ const DEFAULT_SETTINGS = {
     "props": {
         "characters": {
             "tierListName": "",
-            "tierListColour": defaultColour,
+            "tierListColour": defaultBg,
             "tierHeaderWidth": defaultWidth,
             "tierHeaderFontSize": defaultSize
         },
         "works": {
             "tierListName": "",
-            "tierListColour": defaultColour,
+            "tierListColour": defaultBg,
             "tierHeaderWidth": defaultWidth,
             "tierHeaderFontSize": defaultSize
         },
         "shots": {
             "tierListName": "",
-            "tierListColour": defaultColour,
+            "tierListColour": defaultBg,
             "tierHeaderWidth": defaultWidth,
             "tierHeaderFontSize": defaultSize
         },
         "cards": {
             "tierListName": "",
-            "tierListColour": defaultColour,
+            "tierListColour": defaultBg,
             "tierHeaderWidth": defaultWidth,
             "tierHeaderFontSize": defaultSize
         }
@@ -367,40 +374,34 @@ function reloadTiers() {
     }
 }
 
-function addDefaultTiers(sort) {
-    let tmp = settings.sort;
-
-    for (let tierName of defaultTiers) {
-        addTier({data: {tierName: tierName, noDisplay: sort == tmp ? false : sort}});
-    }
-
-    settings.sort = tmp;
-}
-
 function initialise() {
-    for (let sort of sorts) {
-        addDefaultTiers(sort);
-    }
+    for (const sort of sorts) {
+        tiers[sort] = {
+            "0": { "name": "S", "bg": defaultBg, "colour": defaultColour, "chars": [] },
+            "1": { "name": "A", "bg": defaultBg, "colour": defaultColour, "chars": [] },
+            "2": { "name": "B", "bg": defaultBg, "colour": defaultColour, "chars": [] },
+            "3": { "name": "C", "bg": defaultBg, "colour": defaultColour, "chars": [] }
+        };
 
-    $("#tier_list_caption").html(settings.props[settings.sort].tierListName);
-
-    if (isMobile()) {
-        $("#add_tier_cell_mobile").attr("colspan", 2);
+        for (const tierNum in tiers[sort]) {
+            loadTier(tiers[sort][tierNum], Number(tierNum), sort);
+        }
     }
 }
 
-function printMessage(html) {
-    $("#msg_container" + (isMobile() ? "_mobile" : "")).html(html);
+function printMessage(message) {
+    const id = "msg_container" + (isMobile() ? "_mobile" : "");
+    document.getElementById(id).innerHTML = message;
 }
 
 function switchSort() {
-    $("#characters").html("");
-    $("#tier_list_tbody").html("");
+    document.getElementById("characters").innerHTML = "";
+    document.getElementById("tier_list_tbody").innerHTML = "";
 
     if (isMobile()) {
         settings.sort = sorts[(sorts.indexOf(settings.sort) + 1) % sorts.length];
     } else {
-        settings.sort = $("#sort").val();
+        settings.sort = document.getElementById("sort").value;
     }
 
     loadItems();
@@ -735,10 +736,6 @@ function addTier(event) {
     let tierName = event.data.tierName;
     let tierNum = 0;
 
-    if (settings.sort == "cards") {
-        console.log(tierList);
-    }
-
     while (tierNum < Object.keys(tierList).length) {
         tierNum += 1;
     }
@@ -784,8 +781,8 @@ function addTier(event) {
 
     tierList[tierNum] = {};
     tierList[tierNum].name = tierName;
-    tierList[tierNum].bg = "#1b232e";
-    tierList[tierNum].colour = "#a0a0a0";
+    tierList[tierNum].bg = defaultBg;
+    tierList[tierNum].colour = defaultColour;
     tierList[tierNum].chars = [];
     unsavedChanges = true;
 }
@@ -912,17 +909,16 @@ function removeTier(tierNum, skipConfirmation, noDisplay) {
 }
 
 function emptyModal() {
-    $("#modal_inner").html("");
-    $("#modal_inner").css("display", "none");
-    $("#modal").css("display", "none");
-
-    if (isMobile()) {
-        $(".menu").off("click");
+    document.getElementById("modal").style.display = "none";
+    const innerModals = document.querySelectorAll(".modal_inner");
+    
+    for (const element of innerModals) {
+        element.style.display = "none";
     }
 }
 
 function closeModal(event) {
-    var modal = document.getElementById("modal");
+    const modal = document.getElementById("modal");
 
     if (event.target && event.target == modal) {
         emptyModal();
@@ -956,9 +952,9 @@ function quickAdd(tierNum) {
 function saveSingleTierSettings(event) {
     var tierNum = event.data.tierNum,
         tierList = getCurrentTierList(),
-        tierName = $("#custom_name_tier" + tierNum).val().strip().replace(/'/g, ""),
-        tierBg = $("#custom_bg_tier" + tierNum).val(),
-        tierColour = $("#custom_colour_tier" + tierNum).val();
+        tierName = $("#custom_name_tier").val().strip().replace(/'/g, ""),
+        tierBg = $("#custom_bg_tier").val(),
+        tierColour = $("#custom_colour_tier").val();
 
     if (!allowData()) {
         return;
@@ -996,30 +992,14 @@ function tierMenu(tierNum) {
     var tierList = getCurrentTierList(), otherTierNum;
 
     emptyModal();
-    $("#modal_inner").append("<h2>Customise Tier '" + tierList[tierNum].name + "'</h2><div id='customise_tier'>");
-    $("#modal_inner").append("<p class='name'><label for='custom_name_tier" + tierNum +
-    "'>Name</label><input id='custom_name_tier" + tierNum + "' class='settings_input' type='text' value='" + tierList[tierNum].name +
-    "'></p><p class='colour'><label for='custom_bg_tier" + tierNum +
-    "'>Background Colour</label><input id='custom_bg_tier" + tierNum + "' type='color' value='" + tierList[tierNum].bg + "'>");
-    $("#modal_inner").append("<label for='custom_colour_tier" + tierNum +
-    "'>Text Colour</label><input id='custom_colour_tier" + tierNum + "' type='color' value='" + tierList[tierNum].colour +
-    "'></p></div><hr>");
-    $("#modal_inner").append("<div>Other settings (apply to all tiers):" +
-    "<p><label for='tier_list_name_menu'>Tier list name (optional)</label>" +
-    "<input id='tier_list_name_menu' class='settings_input' type='text' value='" + settings.props[settings.sort].tierListName + "'></p>" +
-    "<p><label for='tier_list_colour'>Tier list colour</label>" +
-    "<input id='tier_list_colour' class='settings_input' type='color' value='" + settings.props[settings.sort].tierListColour + "'></p>" +
-    "<label for='tier_header_width'>Tier header width</label>" +
-    "<input id='tier_header_width' class='settings_input' type='number' value=" + settings.props[settings.sort].tierHeaderWidth + " min=" + defaultWidth + "></p>" +
-    "<p><label for='tier_header_font_size'>Tier header font size</label>" +
-    "<input id='tier_header_font_size' class='settings_input' type='number' value=" + settings.props[settings.sort].tierHeaderFontSize + "></p></div>");
-    $("#modal_inner").append("<div><p><input id='save_tier_settings' type='button' value='Save Changes'></p>" +
-    "<p><input id='remove_tier' type='button' value='Remove This Tier'></p><p id='settings_msg_container'></p></div>");
-    $("#modal_inner").css("display", "block");
-    $("#modal").css("display", "block");
+    document.getElementById("tier_menu_header").innerHTML += " " + tierList[tierNum].name;
+    document.getElementById("custom_name_tier").value = tierList[tierNum].name;
+    document.getElementById("custom_bg_tier").value = tierList[tierNum].bg;
+    document.getElementById("custom_colour_tier").value = tierList[tierNum].colour;
     $("#save_tier_settings").on("click", {tierNum: tierNum}, saveSingleTierSettings);
     $("#remove_tier").on("click", {tierNum: tierNum}, removeTierButton);
-    $(".settings_input").on("keyup", {tierNum: tierNum}, detectTiersEnter);
+    document.getElementById("tier_menu").style.display = "block";
+    document.getElementById("modal").style.display = "block";
 
     for (otherTierNum in tierList) {
         if (otherTierNum == tierNum) {
@@ -1095,92 +1075,24 @@ function saveConfirmation(event) {
     saveTiersData();
 }
 
-function mobileInfo() {
-    $("#modal_inner").html("<h3>Welcome!</h3>");
-    $("#modal_inner").append("<p id='instructions_text'>This page allows you to create your own Touhou tier lists. " +
-    "Currently, you can sort characters, works, and shottypes. Usage instructions are listed below.</p>" +
-    "<ul id='instructions_list'><li><strong>Adding Items:</strong> Long press and drag an item into a tier box or the field.</li>" +
-    "<li><strong>Moving Items:</strong> Long press and drag an item onto another item to move that item to its location.</li>" +
-    "<li><strong>Multi Selection:</strong> Tap multiple items to drag them together, adding them to a tier, in your clicking order.</li>" +
-    "<li><strong>Removing Items:</strong> Long press and drag an item from a tier onto the picker to remove it from that tier.</li>" +
-    "<li><strong>Adding Tiers:</strong> Use the Add Tier text field and button at the top of the tier list to add a new tier.</li>" +
-    "<li><strong>Moving Tiers:</strong> Long press and drag a tier onto another tier to move it to its position.</li>" +
-    "<li><strong>Editing Tiers:</strong> Tap a tier to edit that tier, such as its name or background colour.</li>" +
-    "<li><strong>Removing Tiers:</strong> Tap a tier and click the Remove This Tier button to remove it and all of its contents.</li></ul>");
-    $("#modal_inner").append("<p>Use the buttons at the bottom of the screen to save your tier lists, " +
-    "open the main menu, view these instructions, and switch between tiering characters, works, and shottypes (Switch Mode).</p>");
-    $("#modal_inner").append("<p>Tap outside the window to close popup windows like this one.</p>");
-}
-
-function desktopInfo() {
-    $("#modal_inner").html("<h2>Welcome!</h2>");
-    $("#modal_inner").append("<p id='instructions_text'>This page allows you to create your own Touhou tier lists. " +
-    "Currently, you can sort characters, works, and shottypes. Usage instructions are listed below.</p>" +
-    "<ul id='instructions_list'><li><strong>Adding Items:</strong> Drag an item onto a tier box, or the field, " +
-    "to add that item to it. You can also double click an item to add it to a tier, using a popup menu.</li>" +
-    "<li><strong>Moving Items:</strong> Drag an item onto another item to move that item to its location. " +
-    "The same double click menu that can be used in the picker can also be used for this.</li>" +
-    "<li><strong>Multi Selection:</strong> Click multiple items to drag them together, adding them to a tier in your " +
-    "clicking order. Alternatively, press Enter to add a selection of multiple characters to a tier, using a popup menu.</li>" +
-    "<li><strong>Removing Items:</strong> Right click an item in a tier, or drag it " +
-    "onto the picker, to remove it from that tier.</li><li><strong>Add All Remaining:</strong> Ctrl+Click a " +
-    "tier to add all remaining items to it.</li><li><strong>Adding Tiers:</strong> Use the Add Tier text field " +
-    "and button at the bottom of the tier list to add a new tier, or press Enter while in the text field.</li>" +
-    "<li><strong>Moving Tiers:</strong> Drag a tier onto another tier to move it to its position.</li>" +
-    "<li><strong>Editing Tiers:</strong> Click a tier to edit that tier, such as its name or background colour.</li>" +
-    "<li><strong>Removing Tiers:</strong> Right click a tier to remove that tier and all of its contents. " +
-    "Asks for confirmation if there are items in it.</li>" +
-    "<li><strong>Emptying Tiers:</strong> Ctrl+Right Click a tier to empty it. Asks for confirmation.</li></ul>");
-    $("#modal_inner").append("<p>Use the buttons at the top of the screen to save your tier lists, " +
-    "import/export to text, take a screenshot, change the tier list settings, view the changelog, or reset for a new start.</p>");
-    $("#modal_inner").append("<p>Click outside the window, or press Esc, to close popup windows like this one.</p>");
-}
-
 function showInformation() {
     emptyModal();
     printMessage("");
 
     if (isMobile()) {
-        mobileInfo();
+        document.getElementById("info_mobile").style.display = "block";
     } else {
-        desktopInfo();
+        document.getElementById("info_desktop").style.display = "block";
     }
 
-    $("#modal_inner").css("display", "block");
-    $("#modal").css("display", "block");
+    document.getElementById("modal").style.display = "block";
 }
 
-function nav() {
-    return "<h3>Navigation</h3>" +
-    "<p><a href='scoring'><img src='assets/games/scoring/scoring.ico' alt='Spell Card icon'> High Score Storage</a></p>" +
-    "<p><a href='survival'><img src='assets/games/survival/survival.ico' alt='1up Item icon'> Survival Progress Table Generator</a></p>" +
-    "<p><a href='drc'><img src='assets/games/drc/drc.ico' alt='Power icon'> Dodging Rain Competition</a></p>" +
-    "<p><a href='tools'><img src='assets/games/tools/tools.ico' alt='UFO icon'> Touhou Patches and Tools</a></p>" +
-    "<p><a href='wr'><img src='assets/games/wr/wr.ico' alt='Point Item icon'> Touhou World Records</a></p>" +
-    "<p><a href='lnn'><img src='assets/games/lnn/lnn.ico' alt='Full Power icon'> Touhou Lunatic No Miss No Bombs</a></p>" +
-    "<p><a href='jargon'><img src='assets/games/jargon/jargon.ico' alt='Bomb icon'> Touhou Community Jargon</a></p>" +
-    "<p><a href='trs'><img src='assets/games/trs/trs.png' alt='TRS icon'> Touhou Replay Showcase</a></p>" +
-    "<p><a href='gensokyo'><img src='assets/games/gensokyo/gensokyo.ico' alt='Gensokyo.org icon'> Gensokyo Replay Archive</a></p>" +
-    "<p><a href='pofv'><img src='assets/games/pofv/pofv.ico' alt='PoFV icon'> Phantasmagoria of Flower View</a></p>" +
-    "<p><a href='fangame'><img src='assets/games/fangame/fangame.png' alt='Tricoloured star icon'> Touhou Fangame Accomplishments</a></p>" +
-    "<p><a href='thvote'><img src='assets/other/thvote/thvote.ico' alt='Tou kanji icon'> THWiki Popularity Poll 2020 Results Translation</a></p>" +
-    "<p><a href='slots'><img src='assets/other/slots/slots.ico' alt='Heart icon'> Touhou Slot Machine</a></p>" +
-    "<p><a href='history'><img src='assets/personal/history/history.ico' alt='Maribel icon'> Shmup Achievement History</a></p>" +
-    "<p><a href='c67'><img src='assets/personal/c67/c67.ico' alt='Banshiryuu icon'> Seihou Banshiryuu C67</a></p>";
-}
-
-function menu() {
+function menuMobile() {
     emptyModal();
-    $("#modal_inner").html("<h3>Menu</h3>" + $("#buttons").html().replace(/_button/g, "_button_m") + nav());
-    $("#info_button_m, #save_button_m").css("display", "none");
-    $("#import_button_m").on("click", importText);
-    $("#export_button_m").on("click", exportText);
-    $("#screenshot_button_m").on("click", takeScreenshot);
-    $("#settings_button_m").on("click", settingsMenu);
-    $("#changelog_button_m").on("click", changeLog);
-    $("#reset_button_m").on("click", eraseAll);
-    $("#modal_inner").css("display", "block");
-    $("#modal").css("display", "block");
+    printMessage("");
+    document.getElementById("menu_mobile").style.display = "block";
+    document.getElementById("modal").style.display = "block";
 }
 
 function checkSort(text) {
@@ -1192,7 +1104,7 @@ function checkSort(text) {
         return false;
     }
 
-    for (let line of text) {
+    for (const line of text) {
         if (line.includes(':') || line.includes(';')) {
             continue;
         }
@@ -1202,9 +1114,9 @@ function checkSort(text) {
         }
 
         if (line !== "") {
-            let items = line.split(',');
+            const items = line.split(',');
 
-            for (let item of items) {
+            for (const item of items) {
                 return whichSort(item.removeSpaces());
             }
         }
@@ -1350,19 +1262,8 @@ function doImport() {
 function importText() {
     emptyModal();
     printMessage("");
-
-    if (isMobile()) {
-        $("#modal_inner").html("<h3>Import from Text File</h3>");
-    } else {
-        $("#modal_inner").html("<h2>Import from Text File</h2>");
-    }
-
-    $("#modal_inner").append("<p>Note that the format should be the same as the exported text.</p>");
-    $("#modal_inner").append("<p><strong>Warning:</strong> Importing can overwrite one of your current tier lists!");
-    $("#modal_inner").append("<form target='_self' method='post' enctype='multipart/form-data'><label for='import_button'>Upload file:</label> " +
-    "<input id='import_button' name='import' type='file'><p><input type='submit' value='Import'></p></form>");
-    $("#modal_inner").css("display", "block");
-    $("#modal").css("display", "block");
+    document.getElementById("import_text").style.display = "block";
+    document.getElementById("modal").style.display = "block";
 }
 
 function copyToClipboard(event) {
@@ -1373,21 +1274,13 @@ function copyToClipboard(event) {
 
 function exportText() {
     const tierList = getCurrentTierList();
-    let textFile = "";
-    emptyModal();
-    printMessage("");
-
-    if (isMobile()) {
-        $("#modal_inner").html("<h3>Export to Text File</h3>");
-    } else {
-        $("#modal_inner").html("<h2>Export to Text File</h2>");
-    }
-
-    textFile += settings.sort +
+    let textFile = settings.sort +
     "\n" + (settings.props[settings.sort].tierListName ? settings.props[settings.sort].tierListName : "-") +
     ";" + settings.props[settings.sort].tierListColour +
     ";" + settings.props[settings.sort].tierHeaderWidth +
     ";" + settings.props[settings.sort].tierHeaderFontSize;
+    emptyModal();
+    printMessage("");
 
     for (const tierNum in tierList) {
         textFile += "\n" + tierList[tierNum].name + ":\n" + tierList[tierNum].bg +
@@ -1402,11 +1295,11 @@ function exportText() {
         textFile += items.join(", ") + "\n";
     }
 
-    $("#modal_inner").append("<p><input id='copy_to_clipboard' type='button' value='Copy to Clipboard'></p>");
-    $("#modal_inner").append("<p><a id='save_link' href='data:text/plain;charset=utf-8," + encodeURIComponent(textFile) + "' download='" + fileName("txt") + "'>" +
-    "<input type='button' class='button' value='Save to Device'></a></p>");
+    const saveLink = document.getElementById("save_link");
+    saveLink.href = "data:text/plain;charset=utf-8," + encodeURIComponent(textFile);
+    saveLink.download = fileName("text");
     $("#copy_to_clipboard").on("click", {text: textFile}, copyToClipboard);
-    document.getElementById("modal_inner").style.display = "block";
+    document.getElementById("export_text").style.display = "block";
     document.getElementById("modal").style.display = "block";
 }
 
@@ -1457,23 +1350,25 @@ function takeScreenshot() {
     emptyModal();
 
     try {
-        var temp = tierView;
+        const isTierView = tierView;
 
-        if (!isMobile() && !temp) {
+        if (!isMobile() && !isTierView) {
             toggleTierView();
         }
 
         printMessage("<strong class='confirmation'>Girls are being screenshotted, please watch warmly...</strong>");
         html2canvas(document.body, {
             "onclone": function (doc) {
+                const wrap = doc.getElementById("wrap");
+                const tierListContainer = doc.getElementById("tier_list_container");
                 doc.getElementsByTagName("body")[0].style.backgroundImage = "none";
-                doc.getElementById("wrap").style.width = "100%";
-                doc.getElementById("wrap").style.height = "auto";
-                doc.getElementById("wrap").style.maxHeight = "none";
-                doc.getElementById("tier_list_container").style.width = "100%";
-                doc.getElementById("tier_list_container").style.height = "auto";
-                doc.getElementById("tier_list_container").style.maxHeight = "none";
-                doc.getElementById("tier_list_container").style.marginLeft = "0px";
+                wrap.style.width = "100%";
+                wrap.style.height = "auto";
+                wrap.style.maxHeight = "none";
+                tierListContainer.style.width = "100%";
+                tierListContainer.style.height = "auto";
+                tierListContainer.style.maxHeight = "none";
+                tierListContainer.style.marginLeft = "0px";
             },
             "windowHeight": $("#tier_list_tbody").height() + $("#tier_list_caption").height() + 15,
             "height": $("#tier_list_tbody").height() + $("#tier_list_caption").height() + 15,
@@ -1481,26 +1376,19 @@ function takeScreenshot() {
             "scrollX": 0,
             "scrollY": 0
         }).then(function(canvas) {
-            var base64image = canvas.toDataURL("image/png");
-
-            if (isMobile()) {
-                $("#modal_inner").append("<h3>Screenshot</h3>");
-            } else {
-                $("#modal_inner").append("<h2>Screenshot</h2>");
-
-                if (!temp) {
-                    toggleTierView();
-                }
+            if (!isMobile() && !isTierView) {
+                toggleTierView();
             }
 
-            $("#modal_inner").append("<p><a id='save_link' href='" + base64image + "' download='" + fileName("png") + "'>" +
-            "<input type='button' class='button' value='Save to Device'></a></p>" +
-            //"<p><input id='clipboard' type='button' class='button' value='Copy to Clipboard'></p>" +
-            "<p><img id='screenshot_base64' src='" + base64image + "' alt='Tier list screenshot'></p>");
-            //$("#clipboard").on("click", {blob: base64image}, imageToClipboard);
-            $("#modal_inner").css("display", "block");
-            $("#modal").css("display", "block");
+            const base64image = canvas.toDataURL("image/png");
+            const saveLink = document.getElementById("save_link");
+            saveLink.href = base64image;
+            saveLink.download = fileName("png");
+            document.getElementById("screenshot_base64").src = base64image;
+            document.getElementById("screenshot").style.display = "block";
+            document.getElementById("modal").style.display = "block";
             printMessage("");
+            //$("#clipboard").on("click", {blob: base64image}, imageToClipboard);
         });
     } catch (e) {
         printMessage("<strong class='error'>Error: your browser is outdated. Use a different browser " +
@@ -1508,95 +1396,46 @@ function takeScreenshot() {
     }
 }
 
-function settingsMenuChars() {
-    let cats = categories[settings.sort], current = 0, counter = 0;
-
-    $("#modal_inner").append("<div>Include characters in the following works of first appearance:" +
-    "<table id='settings_table'><tbody><tr id='settings_tr0'>");
+function showCheckboxes() {
+    const cats = categories[settings.sort];
+    const id = (settings.sort == "characters" ? "settings_characters" : "settings");
+    const settingsTable = document.getElementById(`${id}_tbody`);
+    let counter = 0;
+    settingsTable.innerHTML = `<tr id='${id}_tr0'>`;
 
     for (let categoryName in cats) {
+        const current = Math.floor(counter / 5);
+    
         if (counter > 0 && counter % 5 === 0) {
-            counter = 0;
-            current += 1;
-            $("#settings_table").append("</tr><tr id='settings_tr" + current + "'>");
+            settingsTable.innerHTML += `</tr><tr id='${id}_tr${current}'>`;
         }
 
-        $("#settings_tr" + current).append("<td><input id='checkbox_" + categoryName +
-        "' type='checkbox'" + (settings.categories[settings.sort][categoryName].enabled ? " checked" : "") +
-        "><label for='" + categoryName + "'>" + categoryName + "</label></td>");
+        const isChecked = (settings.categories[settings.sort][categoryName].enabled ? " checked" : "");
+        document.getElementById(`${id}_tr${current}`).innerHTML += `<td><input id='checkbox_${categoryName}' type='checkbox'${isChecked}><label for='${categoryName}'>${categoryName}</label></td>`;
         counter += 1;
     }
 
-    $("#modal_inner").append("</tr></tbody></table>");
-    $("#modal_inner").append("<p><label for='pc-98'>PC-98</label><input id='pc98' type='checkbox'" +
-    " " + (settings.pc98Enabled ? " checked" : "") + " " + "></p>");
-    $("#pc98").on("click", togglePC98);
-    $("#modal_inner").append("<p><label for='windows'>Windows</label><input id='windows' type='checkbox'" +
-    " " + (settings.windowsEnabled ? " checked" : "") + "></p>");
-    $("#windows").on("click", toggleWindows);
-    $("#modal_inner").append("<p><label for='male'>Male Characters</label><input id='male' type='checkbox'" +
-    " " + (settings.maleEnabled ? " checked" : "") + " " + "></p></div>");
-    $("#modal_inner").append("<p><label for='themes'>Boss Theme Duplicates</label><input id='themes' type='checkbox'" +
-    " " + (settings.themesEnabled ? " checked" : "") + " " + "></p></div>");
-}
-
-function settingsMenuOther() {
-    let cats = categories[settings.sort], current = 0, counter = 0;
-
-    $("#modal_inner").append("Include " + settings.sort + " in the following categories:" +
-    "<table id='settings_table'><tbody><tr id='settings_tr0'>");
-
-    for (let categoryName in cats) {
-        if (counter > 0 && counter % 5 === 0) {
-            counter = 0;
-            current += 1;
-            $("#settings_table").append("</tr><tr id='settings_tr" + current + "'>");
-        }
-
-        $("#settings_tr" + current).append("<td><input id='checkbox_" + categoryName +
-        "' type='checkbox'" + (settings.categories[settings.sort][categoryName].enabled ? " checked" : "") +
-        "><label for='" + categoryName + "'>" + categoryName + "</label></td>");
-        counter += 1;
-    }
-    $("#modal_inner").append("</tr></tbody></table>");
+    settingsTable.innerHTML += "</tr>";
 }
 
 function settingsMenu() {
     emptyModal();
-
-    if (isMobile()) {
-        $("#modal_inner").html("<h3>Settings</h3>");
-    } else {
-        $("#modal_inner").html("<h2>Settings</h2>");
-    }
-
-    if (settings.sort == "characters") {
-        settingsMenuChars();
-    } else { // "works" or "shots"
-        settingsMenuOther();
-    }
-
+    showCheckboxes();
     printMessage("");
-    $("#modal_inner").append("<div>Other settings:<p><label for='tier_list_name_menu'>Tier list name (optional)</label>" +
-    "<input id='tier_list_name_menu' class='settings_input' type='text' value='" + settings.props[settings.sort].tierListName + "'></p>" +
-    "<p><label for='tier_list_colour'>Tier list colour</label>" +
-    "<input id='tier_list_colour' class='settings_input' type='color' value='" + settings.props[settings.sort].tierListColour + "'></p>" +
-    "<label for='tier_header_width'>Tier header width</label>" +
-    "<input id='tier_header_width' class='settings_input' type='number' value=" + settings.props[settings.sort].tierHeaderWidth +
-    " min=" + defaultWidth + "></p><p><label for='tier_header_font_size'>Tier header font size</label>" +
-    "<input id='tier_header_font_size' class='settings_input' type='number' value=" + settings.props[settings.sort].tierHeaderFontSize +
-    "></p><p>To customise a tier's name and colour, click it in your tier list.</p></div>");
-    $("#modal_inner").append("<div><p><input id='save_settings' type='button' value='Save Changes'></p>" +
-    "<p id='settings_msg_container'></p></div>");
-    $("#modal_inner").css("display", "block");
-    $("#modal").css("display", "block");
-    $("#save_settings").on("click", saveConfirmation);
-    $(".settings_input").on("keyup", detectSettingsEnter);
+    const isCharacters = (settings.sort == "characters");
+    document.getElementById("settings_characters").style.display = (isCharacters ? "block" : "none");
+    document.getElementById("settings_other").style.display = (isCharacters ? "none" : "block");
+    document.getElementById("tier_list_name_menu").value = settings.props[settings.sort].tierListName;
+    document.getElementById("tier_list_colour").value = settings.props[settings.sort].tierListColour;
+    document.getElementById("tier_header_width").value = settings.props[settings.sort].tierHeaderWidth;
+    document.getElementById("tier_header_width").min = defaultWidth;
+    document.getElementById("tier_header_font_size").value = settings.props[settings.sort].tierHeaderFontSize;
+    document.getElementById("settings").style.display = "block";
+    document.getElementById("modal").style.display = "block";
 }
 
 function massRemoval(removedCategories) {
     var cats = categories[settings.sort], categoryName, character, i, j;
-
     $("#settings_msg_container").html("<strong class='error'>Girls are being removed, please wait warmly...</strong>");
 
     for (i = 0; i < removedCategories.length; i++) {
@@ -1618,14 +1457,16 @@ function massRemoval(removedCategories) {
 }
 
 function togglePC98() {
-    for (var i = 0; i < pc98.length; i++) {
-        $("#checkbox_" + pc98[i]).prop("checked", $("#pc98").is(":checked") ? true : false);
+    for (const id of pc98) {
+        const element = document.getElementById(`checkbox_${id}`);
+        element.checked = !element.checked;
     }
 }
 
 function toggleWindows() {
-    for (var i = 0; i < windows.length; i++) {
-        $("#checkbox_" + windows[i]).prop("checked", $("#windows").is(":checked") ? true : false);
+    for (const id of windows) {
+        const element = document.getElementById(`checkbox_${id}`);
+        element.checked = !element.checked;
     }
 }
 
@@ -1722,7 +1563,7 @@ function toggleTierView() {
     $("#wrap").css("bottom", tierView ? "5px" : "");
     $("#wrap").css("left", tierView ? "5px" : "");
     $("#wrap").css("border", tierView ? "none" : "1px solid #000");
-    $("body").css("background", tierView ? "#1b232e" : "url('assets/other/tiers/tiers.jpg') center no-repeat fixed");
+    $("body").css("background", tierView ? defaultBg : "url('assets/other/tiers/tiers.jpg') center no-repeat fixed");
     $("body").css("background-size", tierView ? "default" : "cover");
 }
 
@@ -1748,46 +1589,19 @@ function togglePickerSize(event) {
 function changeLog() {
     emptyModal();
     printMessage("");
-
-    if (isMobile()) {
-        $("#modal_inner").html("<h3>Changelog</h3>");
-    } else {
-        $("#modal_inner").html("<h2>Changelog</h2>");
-    }
-
-    $("#modal_inner").append("<ul class='left'><li>05/12/2018: Initial release</li>" +
-    "<li>05/12/2018: Dairi art added and made the default; PC-98 and male characters added</li>" +
-    "<li>21/01/2019: Mobile version</li>" +
-    "<li>24/04/2019: Works added</li>" +
-    "<li>18/08/2019: Migrated to maribelhearn.com</li>" +
-    "<li>17/09/2019: Mobile version bugs fixed and speed increased; changelog added</li>" +
-    "<li>04/10/2019: WBaWC characters added</li>" +
-    "<li>19/12/2019: Fixed character disappearance bug and related issues</li>" +
-    "<li>02/01/2020: Fixed tier list loading bug</li>" +
-    "<li>13/03/2020: Fixed bug caused by swapping tiers as well as a bug caused by naming a tier after a character</li>" +
-    "<li>06/04/2020: Added ability to change the tier header font size and made tier header width changes apply immediately</li>" +
-    "<li>06/09/2020: Miyoi Okunoda added</li>" +
-    "<li>23/09/2020: Screenshotting added, only working on Firefox</li>" +
-    "<li>26/06/2021: UM characters added</li>" +
-    "<li>18/07/2021: Screenshotting fixed, works on all modern browsers</li>" +
-    "<li>20/07/2021: Shottypes added</li>" +
-    "<li>06/11/2021: Yuuma Toutetsu added</li>" +
-    "<li>01/01/2022: Import and export to text now uses files</li></ul>");
-    $("#modal_inner").css("display", "block");
-    $("#modal").css("display", "block");
+    document.getElementById("changelog").style.display = "block";
+    document.getElementById("modal").style.display = "block";
 }
 
 function eraseAllConfirmed() {
     clearTiers(getCurrentTierList(), settings.sort, settings.sort);
     tiers = {};
 
-    for (let sort of sorts) {
+    for (const sort of sorts) {
         tiers[sort] = {};
     }
 
-    let tmp = settings.sort;
     settings = DEFAULT_SETTINGS;
-    settings.sort = tmp;
     localStorage.removeItem("tiers");
     localStorage.removeItem("settings");
     initialise();
@@ -1801,20 +1615,18 @@ function modalEraseAll() {
 }
 
 function modalEraseSingle() {
-    var i;
-
     clearTiers(getCurrentTierList(), settings.sort, settings.sort);
 
-    for (i = 0; i < defaultTiers.length; i++) {
-        addTier({data: {tierName: defaultTiers[i]}});
+    for (const tierName of DEFAULT_TIER_NAMES) {
+        addTier({data: {tierName: tierName}});
     }
 
     settings.props[settings.sort].tierListName = "";
-    settings.props[settings.sort].tierListColour = defaultColour;
+    settings.props[settings.sort].tierListColour = defaultBg;
     settings.props[settings.sort].tierHeaderWidth = defaultWidth;
     settings.props[settings.sort].tierHeaderFontSize = defaultSize;
     $("#tier_list_caption").html("");
-    $(".tier_content").css("background-color", defaultColour);
+    $(".tier_content").css("background-color", defaultBg);
     $(".tier_header").css("max-width", defaultWidth + "px");
     $(".tier_header").css("font-size", defaultSize + "px");
     $(".tier_header").css("width", defaultWidth + "px");
@@ -1827,17 +1639,8 @@ function modalEraseSingle() {
 
 function eraseAll() {
     emptyModal();
-    $("#modal_inner").html("<h3>Reset</h3><p>Are you sure you want to reset your tier lists and settings to the defaults? " +
-    "<strong>Erase All</strong> will permanently erase all of your loaded tier lists and settings.</p>" +
-    "<p><strong>Erase Current Tier List</strong> will only erase the tier list that is currently open.</p>");
-    $("#modal_inner").append("<p><input id='erase_all_button' class='mobile_button' type='button' value='Erase All'></p>");
-    $("#modal_inner").append("<p><input id='erase_single_button' class='mobile_button' type='button' value='Erase Current Tier List'></p>");
-    $("#modal_inner").append("<p><input id='cancel_button' class='mobile_button' type='button' value='Cancel'></p>");
-    $("#erase_all_button").on("click", modalEraseAll);
-    $("#erase_single_button").on("click", modalEraseSingle);
-    $("#cancel_button").on("click", emptyModal);
-    $("#modal_inner").css("display", "block");
-    $("#modal").css("display", "block");
+    document.getElementById("reset").style.display = "block";
+    document.getElementById("modal").style.display = "block";
 }
 
 function drag(event) {
@@ -2027,51 +1830,54 @@ function loadTier(tiersData, tierNum, tierSort) {
 }
 
 function loadTiersFromStorage() {
-    let tiersData = JSON.parse(localStorage.getItem("tiers")), tierList, tier;
+    const tiersData = JSON.parse(localStorage.getItem("tiers"));
 
-    for (let category in tiers) {
-        if (!tiersData.hasOwnProperty(category)) {
-            for (let tierName of defaultTiers) {
-                addTier({data: {tierName: tierName, noDisplay: category}});
+    for (const sort in tiers) {
+        if (!tiersData.hasOwnProperty(sort)) {
+            tiers[sort] = DEFAULT_TIERS;
+
+            for (const tierNum in tiers[sort]) {
+                loadTier(tiers[sort][tierNum], Number(tierNum), sort);
             }
 
             continue;
         }
 
-        tierList = tiersData[category];
+        const tierList = tiersData[sort];
 
         if (tierList.isEmpty()) {
-            for (let tierName of defaultTiers) {
-                addTier({data: {tierName: tierName, noDisplay: category}});
+            tiers[sort] = DEFAULT_TIERS;
+
+            for (const tierNum in tiers[sort]) {
+                loadTier(tiers[sort][tierNum], Number(tierNum), sort);
             }
         } else {
-            for (let tierNum in tierList) {
-                tier = tierList[tierNum];
-                tierNum = Number(tierNum);
-                loadTier(tier, tierNum, category);
+            for (const tierNum in tierList) {
+                const tier = tierList[tierNum];
+                loadTier(tier, Number(tierNum), sort);
             }
         }
     }
 }
 
 function loadItems() {
-    var cats = categories[settings.sort], categoryName, item, i;
+    const cats = categories[settings.sort];
+    const items = document.getElementById("characters");
 
-    for (categoryName in cats) {
-        $("#characters").append("<div id='" + categoryName + "' class='dark_bg'>");
+    for (const categoryName in cats) {
+        items.innerHTML += `<div id='${categoryName}' class='dark_bg'>`;
+        const category = document.getElementById(categoryName);
 
-        for (i in cats[categoryName].chars) {
-            item = cats[categoryName].chars[i].replace("'", "");
-            $("#" + categoryName).append("<span id='" + item +
-            "C'><span id='" + item + "' class='item list_" + settings.sort +
-            "' draggable='true' " + "alt='" + item + "' title='" + addSpacing(item) + "'>");
+        for (let item of cats[categoryName].chars) {
+            item = item.replace("'", "");
+            category.innerHTML += `<span id='${item}C'><span id='${item}' class='item list_${settings.sort}' draggable='true' alt='${item}' title='${addSpacing(item)}'>`;
             setPickerItemEvents(item);
         }
 
-        $("#characters").append("</div>");
+        items.innerHTML += "</div>";
 
         if (!settings.categories[settings.sort][categoryName].enabled) {
-            $("#" + categoryName).css("display", "none");
+            category.style.display = "none";
         }
 
         toggleMale();
@@ -2112,7 +1918,7 @@ function loadLegacySettings(settingsData) {
 
         for (let sort of sorts) {
             settings.props[sort].tierListName = (settingsData[sort] && settingsData[sort].tierListName ? settingsData[sort].tierListName : "");
-            settings.props[sort].tierListColour = (settingsData[sort] && settingsData[sort].tierListColour ? settingsData[sort].tierListColour : defaultColour);
+            settings.props[sort].tierListColour = (settingsData[sort] && settingsData[sort].tierListColour ? settingsData[sort].tierListColour : defaultBg);
             settings.props[sort].tierHeaderWidth = (settingsData[sort] && settingsData[sort].tierHeaderWidth ? settingsData[sort].tierHeaderWidth : defaultWidth);
             settings.props[sort].tierHeaderFontSize = (settingsData[sort] && settingsData[sort].tierHeaderFontSize ? settingsData[sort].tierHeaderFontSize : defaultSize);
         }
@@ -2164,7 +1970,7 @@ function loadSettingsFromStorage() {
 
             if (settingsData.props.hasOwnProperty(sort)) {
                 settings.props[sort].tierListName = (settingsData.props[sort].tierListName ? settingsData.props[sort].tierListName : "");
-                settings.props[sort].tierListColour = (settingsData.props[sort].tierListColour ? settingsData.props[sort].tierListColour : defaultColour);
+                settings.props[sort].tierListColour = (settingsData.props[sort].tierListColour ? settingsData.props[sort].tierListColour : defaultBg);
                 settings.props[sort].tierHeaderWidth = (settingsData.props[sort].tierHeaderWidth ? settingsData.props[sort].tierHeaderWidth : defaultWidth);
                 settings.props[sort].tierHeaderFontSize = (settingsData.props[sort].tierHeaderFontSize ? settingsData.props[sort].tierHeaderFontSize : defaultSize);
             } else {
@@ -2228,10 +2034,24 @@ function setEventListeners() {
     $("#reset_button").on("click", eraseAll);
     $("#information_button").on("click", showInformation);
     $("#save_button_mobile").on("click", {noMenu: true}, saveConfirmation);
-    $("#menu_button").on("click", menu);
+    $("#menu_button").on("click", menuMobile);
     $("#switch_button").on("click", switchSort);
     $("#characters").on("dragover dragenter", allowDrop);
     $("#characters").on("drop", drop);
+    $("#pc98").on("click", togglePC98);
+    $("#windows").on("click", toggleWindows);
+    $("#save_settings").on("click", saveConfirmation);
+    $(".settings_input").on("keyup", detectSettingsEnter);
+    $("#erase_all_button").on("click", modalEraseAll);
+    $("#erase_single_button").on("click", modalEraseSingle);
+    $("#cancel_button").on("click", emptyModal);
+    $("#custom_name_tier").on("keyup", detectTiersEnter);
+    $("#import_button_mobile").on("click", importText);
+    $("#export_button_mobile").on("click", exportText);
+    $("#screenshot_button_mobile").on("click", takeScreenshot);
+    $("#settings_button_mobile").on("click", settingsMenu);
+    $("#changelog_button_mobile").on("click", changeLog);
+    $("#reset_button_mobile").on("click", eraseAll);
     window.onbeforeunload = function () {
         if (unsavedChanges) {
             return "";
@@ -2241,7 +2061,7 @@ function setEventListeners() {
     }
 }
 
-$(document).ready(function () {
+function init() {
     for (let sort of sorts) {
         tiers[sort] = {};
     }
@@ -2253,9 +2073,8 @@ $(document).ready(function () {
         loadSettingsFromStorage();
     }
 
-    $("#tier_list_caption").html(settings.props[settings.sort].tierListName);
-    $("#chars_load, #works_load, #shots_load").remove();
-    $("#sort").val(settings.sort);
+    document.getElementById("tier_list_caption").innerHTML = settings.props[settings.sort].tierListName;
+    document.getElementById("sort").value = settings.sort;
     loadItems();
 
     if (!localStorage.tiers && !localStorage.gameTiers && !localStorage.shotTiers) {
@@ -2276,4 +2095,6 @@ $(document).ready(function () {
     $(".tier_content").css("background-color", settings.props[settings.sort].tierListColour);
     setEventListeners();
     unsavedChanges = false;
-});
+}
+
+window.addEventListener("DOMContentLoaded", init, false);
