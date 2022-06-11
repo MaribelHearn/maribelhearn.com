@@ -284,7 +284,11 @@
     foreach ($cats as $categoryName => $category) {
         echo '<div id="' . $categoryName . '" class="dark_bg">';
         foreach ($category['chars'] as $key => $item) {
+            if ($sort == 'shots') {
+                $item = $categoryName . str_replace(' Team', 'Team', $item);
+            }
             echo '<span id="' . $item . 'C"><span id="' . $item . '" class="item list_' . $sort . '" draggable="true"></span></span>';
         }
+        echo '</div>';
     }
 ?></div>
