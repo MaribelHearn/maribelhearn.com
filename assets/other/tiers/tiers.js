@@ -104,15 +104,14 @@ const DEFAULT_SETTINGS = {
     "themesEnabled": false,
     "sort": "characters"
 };
-
-let tieredItems = [],
-    settings = DEFAULT_SETTINGS,
-    tiers = {},
-    multiSelection = [],
-    following = "",
-    tierView = false,
-    smallPicker = false,
-    unsavedChanges = false;
+let tieredItems = [];
+let settings = DEFAULT_SETTINGS;
+let tiers = {};
+let multiSelection = [];
+let following = "";
+let tierView = false;
+let smallPicker = false;
+let unsavedChanges = false;
 
 function addSpacing(item) {
     const sort = whichSort(item);
@@ -731,9 +730,12 @@ function validateTierName(tierName) {
 }
 
 function addTier(event) {
-    let tierName = event.data.tierName, noDisplay = event.data.noDisplay, tierList = getCurrentTierList(noDisplay), tierNum = 0;
+    const noDisplay = event.data.noDisplay;
+    const tierList = getCurrentTierList();
+    let tierName = event.data.tierName;
+    let tierNum = 0;
 
-    if (settings.sort == "works") {
+    if (settings.sort == "cards") {
         console.log(tierList);
     }
 
@@ -1182,6 +1184,10 @@ function menu() {
 }
 
 function checkSort(text) {
+    if (sorts.includes(text[0])) {
+        return text[0];
+    }
+
     if (text.join('\n').trim() === "") {
         return false;
     }
@@ -1230,13 +1236,20 @@ function parseSettings(string, sort) {
     }
 }
 
-function parseImport(text, tierList, sort, tmpSort) {
-    var alreadyAdded = [], counter = -1, noDisplay = (sort == tmpSort ? false : true), characters, i, j;
+function parseImport(text, tierList, sort, originalSort) {
+    let alreadyAdded = [];
+    let counter = -1;
+    let noDisplay = (sort == originalSort ? false : true);
+    let characters;
 
     try {
-        clearTiers(tierList, sort, tmpSort);
+        clearTiers(tierList, sort, originalSort);
 
-        for (i = 0; i < text.length; i++) {
+        for (let i = 0; i < text.length; i++) {
+            if (i === 0 && sorts.includes(text[i])) {
+                i += 1;
+            }
+
             if (text[i].includes(';')) {
                 parseSettings(text[i], sort);
                 i += 1;
@@ -1257,23 +1270,23 @@ function parseImport(text, tierList, sort, tmpSort) {
             if (text[i] !== "") {
                 characters = text[i].split(',');
 
-                for (j = 0; j < characters.length; j += 1) {
-                    characters[j] = characters[j].trim();
+                for (let item of characters) {
+                    item = item.trim();
 
-                    if (characters[j] == "Mai") {
-                        characters[j] = "Mai PC-98";
+                    if (item == "Mai") {
+                        item = "Mai PC-98";
                     }
 
                     try {
-                        addToTier(characters[j].removeSpaces(), counter, noDisplay);
+                        addToTier(item.removeSpaces(), counter, noDisplay);
 
-                        if (alreadyAdded.includes(characters[j])) {
+                        if (alreadyAdded.includes(item)) {
                             throw "Item already added";
                         }
 
-                        alreadyAdded.push(characters[j]);
+                        alreadyAdded.push(item);
                     } catch (e) {
-                        tierList[counter].chars.remove(characters[j]);
+                        tierList[counter].chars.remove(item);
                     }
                 }
             }
@@ -1300,35 +1313,35 @@ function applyImport(tierList) {
 }
 
 function doImport() {
-    var text = $("#import").val().split('\n'), tierSort = checkSort(text), tmpSort = settings.sort, tierList;
-
+    const text = document.getElementById("import").value.split('\n');
+    const tierSort = checkSort(text);
+    const originalSort = settings.sort;
     settings.sort = tierSort;
-    tierList = getCurrentTierList();
+    const tierList = getCurrentTierList();
 
-    if (!tierSort || !parseImport(text, tierList, tierSort, tmpSort)) {
-        settings.sort = tmpSort;
-        $("#modal_inner").html("");
-        $("#modal").css("display", "none");
-        $("#modal_inner").css("display", "none");
+    if (!tierSort || !parseImport(text, tierList, tierSort, originalSort)) {
+        settings.sort = originalSort;
+        document.getElementById("modal_inner").innerHTML = "";
+        document.getElementById("modal").style.display = "none";
+        document.getElementById("modal_inner").style.display = "none";
 
         if (!tierSort) {
             printMessage("<strong class='error'>Error: cannot import an empty list!</strong>");
         } else {
-            printMessage("<strong class='error'>Error: invalid tier list. Either there is a typo somewhere, " +
-            "or this is a bug. Please contact Maribel in case of the latter.</strong>");
+            printMessage("<strong class='error'>Error: invalid tier list. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
         }
 
         return;
     }
 
-    if (tierSort == tmpSort) {
+    if (tierSort == originalSort) {
         applyImport(tierList);
     }
 
-    settings.sort = tmpSort;
-    $("#modal_inner").html("");
-    $("#modal").css("display", "none");
-    $("#modal_inner").css("display", "none");
+    settings.sort = originalSort;
+    document.getElementById("modal_inner").innerHTML = "";
+    document.getElementById("modal").style.display = "none";
+    document.getElementById("modal_inner").style.display = "none";
     saveTiersData();
     localStorage.setItem("settings", JSON.stringify(settings));
     printMessage("<strong class='confirmation'>Tier list successfully imported!</strong>");
@@ -1359,8 +1372,8 @@ function copyToClipboard(event) {
 }
 
 function exportText() {
-    var tierList = getCurrentTierList(), textFile = "", totalChars = 0, tierNum, character, i;
-
+    const tierList = getCurrentTierList();
+    let textFile = "";
     emptyModal();
     printMessage("");
 
@@ -1370,36 +1383,31 @@ function exportText() {
         $("#modal_inner").html("<h2>Export to Text File</h2>");
     }
 
-    textFile += (settings.props[settings.sort].tierListName ? settings.props[settings.sort].tierListName : "-") +
-    ";" + settings.props[settings.sort].tierListColour + ";" + settings.props[settings.sort].tierHeaderWidth +
+    textFile += settings.sort +
+    "\n" + (settings.props[settings.sort].tierListName ? settings.props[settings.sort].tierListName : "-") +
+    ";" + settings.props[settings.sort].tierListColour +
+    ";" + settings.props[settings.sort].tierHeaderWidth +
     ";" + settings.props[settings.sort].tierHeaderFontSize;
 
-    for (tierNum in tierList) {
+    for (const tierNum in tierList) {
         textFile += "\n" + tierList[tierNum].name + ":\n" + tierList[tierNum].bg +
         " " + tierList[tierNum].colour + "\n";
+        let items = [];
 
-        for (i = 0; i < tierList[tierNum].chars.length; i += 1) {
-            character = $("#" + tierList[tierNum].chars[i]).attr("title");
-            textFile += character + (i == tierList[tierNum].chars.length - 1 ? "" : ", ");
-            totalChars += 1;
+        for (const item of tierList[tierNum].chars) {
+            const title = document.getElementById(item).getAttribute("title");
+            items.push(title);
         }
 
-        textFile += "\n";
+        textFile += items.join(", ") + "\n";
     }
 
     $("#modal_inner").append("<p><input id='copy_to_clipboard' type='button' value='Copy to Clipboard'></p>");
     $("#modal_inner").append("<p><a id='save_link' href='data:text/plain;charset=utf-8," + encodeURIComponent(textFile) + "' download='" + fileName("txt") + "'>" +
     "<input type='button' class='button' value='Save to Device'></a></p>");
     $("#copy_to_clipboard").on("click", {text: textFile}, copyToClipboard);
-
-    if (totalChars === 0) {
-        printMessage("<strong class='error'>Error: cannot export empty tiers.</strong>");
-        $("#modal_inner").html("");
-        return;
-    }
-
-    $("#modal_inner").css("display", "block");
-    $("#modal").css("display", "block");
+    document.getElementById("modal_inner").style.display = "block";
+    document.getElementById("modal").style.display = "block";
 }
 
 function fileName(extension) {
