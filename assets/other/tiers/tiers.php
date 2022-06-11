@@ -72,6 +72,7 @@
                 </tr>
             </tfoot>
         </table>
+        <noscript><p><strong>Notice:</strong> this page requires JavaScript.</p></noscript>
     </div>
 </div>
 <div id='modal' data-html2canvas-ignore>
@@ -272,4 +273,18 @@
 	<input id='switch_button' class='button_bottom' type='button' value='Switch Mode'>
 	<p id='msg_container_mobile'></p>
 </div>
-<div id='characters' class='dark_bg' data-html2canvas-ignore></div>
+<div id='characters' class='dark_bg' data-html2canvas-ignore><?php
+    if (!isset($_COOKIE['sort'])) {
+        $sort = 'characters';
+    } else {
+        $sort = $_COOKIE['sort'];
+    }
+    $json = file_get_contents('assets/shared/json/' . $sort . '.json');
+    $cats = json_decode($json, true);
+    foreach ($cats as $categoryName => $category) {
+        echo '<div id="' . $categoryName . '" class="dark_bg">';
+        foreach ($category['chars'] as $key => $item) {
+            echo '<span id="' . $item . 'C"><span id="' . $item . '" class="item list_' . $sort . '" draggable="true"></span></span>';
+        }
+    }
+?></div>
