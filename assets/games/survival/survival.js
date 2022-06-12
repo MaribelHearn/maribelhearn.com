@@ -238,7 +238,11 @@ function applyColours() {
             if (id.includes("INFinalA") && !id.includes("Extra")) {
                 const finalBelement = document.getElementById(id.replace("INFinalA", "B"));
                 const value = vals["INFinalB"][diff];
-                finalBelement.classList.add(format(value));
+
+                if (format(value) !== "") {
+                    finalBelement.classList.add(format(value));
+                }
+
                 finalBelement.innerHTML = (needsText(value) ? value : "");
             }
         }
@@ -332,7 +336,7 @@ function drawOverview() {
             const saveLink = document.getElementById("save_link");
             saveLink.href = base64;
             saveLink.download = fileName();
-            cleanupRendering();
+            //cleanupRendering();
         });
     } catch (err) {
         document.getElementById("rendering_message").innerHTML = "Your browser is outdated. Use a different browser to generate an image of your survival progress table.";
@@ -533,8 +537,8 @@ function apply() {
     numbers = countAchievements(numbers);
     fillNumberTable(numbers);
     fillCompletionTable();
-    document.getElementById("modal_inner").style.display = "block";
-    document.getElementById("results").style.display = "block";
+    //document.getElementById("modal_inner").style.display = "block";
+    //document.getElementById("results").style.display = "block";
     drawOverview();
     printMessage("");
 }
@@ -562,7 +566,6 @@ function setProgress() {
     const val = this.value;
     const difficulty = category.match(/Easy|Normal|Hard|Lunatic|Extra|Phantasm/)[0];
     const game = category.replace(difficulty, "");
-    console.log(category, val, difficulty, game);
     vals[game][difficulty] = val;
 }
 
