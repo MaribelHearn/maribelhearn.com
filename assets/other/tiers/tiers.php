@@ -265,6 +265,11 @@
             echo personal_pages();
         ?>
     </div>
+    <div id='add_menu_mobile' class='modal_inner'>
+        <h3 id='selection'></h3>
+        <p id='selection_text'>Add to tier:</p>
+        <p id='add_menu_inputs'></p>
+    </div>
 </div>
 <div id='buttons_mobile' class='dark_bg' data-html2canvas-ignore>
 	<input id='save_button_mobile' type='button' value='Save'>

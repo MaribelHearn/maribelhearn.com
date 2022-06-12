@@ -683,7 +683,7 @@ function removeFromTier(item, tierNum, multi, noDisplay) {
     printMessage("");
     $("#" + item).removeClass("tiered_" + settings.sort);
     $("#" + item).addClass("list_" + settings.sort);
-    $("#" + item).off("contextmenu");
+    $("#" + item).off("contextmenu dragenter dragover");
 
     if (isMobile()) {
         $("#" + item).on("contextmenu", preventContextMenu);
@@ -1206,16 +1206,18 @@ function parseImport(text, tierList, sort, originalSort) {
 }
 
 function applyImport(tierList) {
-    for (var tierNum in tierList) {
-        $("#th" + tierNum).css("background-color", tierList[tierNum].bg);
-        $("#th" + tierNum).css("color", tierList[tierNum].colour);
+    for (const tierNum in tierList) {
+        const tierHeader = document.getElementById(`th${tierNum}`);
+        tierHeader.style.backgroundColor = tierList[tierNum].bg;
+        tierHeader.style.color = tierList[tierNum].colour;
     }
 
-    $("#modal_inner").html("");
-    $("#modal").css("display", "none");
-    $("#modal_inner").css("display", "none");
-    $("#tier_list_caption").html(settings.props[settings.sort].tierListName);
-    $(".tier_content").css("background-color", settings.props[settings.sort].tierListColour);
+    document.getElementById("tier_list_caption").innerHTML = settings.props[settings.sort].tierListName;
+    const tierContent = document.querySelectorAll(".tier_content");
+
+    for (const element of tierContent) {
+        element.style.backgroundColor = settings.props[settings.sort].tierListColour;
+    }
 }
 
 function doImport() {
@@ -1227,9 +1229,8 @@ function doImport() {
 
     if (!tierSort || !parseImport(text, tierList, tierSort, originalSort)) {
         settings.sort = originalSort;
-        document.getElementById("modal_inner").innerHTML = "";
+        document.getElementById("import_text").style.display = "none";
         document.getElementById("modal").style.display = "none";
-        document.getElementById("modal_inner").style.display = "none";
 
         if (!tierSort) {
             printMessage("<strong class='error'>Error: cannot import an empty list!</strong>");
@@ -1245,9 +1246,8 @@ function doImport() {
     }
 
     settings.sort = originalSort;
-    document.getElementById("modal_inner").innerHTML = "";
+    document.getElementById("import_text").style.display = "none";
     document.getElementById("modal").style.display = "none";
-    document.getElementById("modal_inner").style.display = "none";
     saveTiersData();
     localStorage.setItem("settings", JSON.stringify(settings));
     printMessage("<strong class='confirmation'>Tier list successfully imported!</strong>");
@@ -1291,7 +1291,7 @@ function exportText() {
 
     const saveLink = document.getElementById("save_link");
     saveLink.href = "data:text/plain;charset=utf-8," + encodeURIComponent(textFile);
-    saveLink.download = fileName("text");
+    saveLink.download = fileName("txt");
     $("#copy_to_clipboard").on("click", {text: textFile}, copyToClipboard);
     document.getElementById("export_text").style.display = "block";
     document.getElementById("modal").style.display = "block";
@@ -2077,7 +2077,7 @@ function setEventListeners() {
 }
 
 function init() {
-    for (let sort of sorts) {
+    for (const sort of sorts) {
         tiers[sort] = {};
     }
 
@@ -2103,16 +2103,18 @@ function init() {
     const errorElement = document.getElementById("import");
     const tierContent = document.querySelectorAll(".tier_content");
 
-    if (importElement && importElement.length) {
+    if (importElement) {
         doImport();
         importElement.parentNode.removeChild(importElement);
-    } else if (errorElement && errorElement.length) {
-        printMessage(errorElement.value);
-        errorElement.parentNode.removeChild(errorElement);
-    }
+    } else {
+        if (errorElement && errorElement.length) {
+            printMessage(errorElement.value);
+            errorElement.parentNode.removeChild(errorElement);
+        }
 
-    for (const element of tierContent) {
-        element.style.backgroundColor = settings.props[settings.sort].tierListColour;
+        for (const element of tierContent) {
+            element.style.backgroundColor = settings.props[settings.sort].tierListColour;
+        }
     }
 
     setEventListeners();
