@@ -229,7 +229,7 @@ function applyColours() {
     
             const value = element.value;
     
-            if (value != "N/A") {
+            if (format(value) !== "") {
                 element.parentNode.classList.add(format(value));
             }
     
@@ -305,6 +305,7 @@ function cleanupRendering() {
     }
 
     initValues();
+    setEventListenersSelect();
 }
 
 function fileName() {
@@ -559,19 +560,13 @@ function reset() {
 function setProgress() {
     const category = this.id;
     const val = this.value;
-    const difficulty = category.match(/Easy|Normal|Hard|Lunatic|Extra|Phantasm/);
+    const difficulty = category.match(/Easy|Normal|Hard|Lunatic|Extra|Phantasm/)[0];
     const game = category.replace(difficulty, "");
+    console.log(category, val, difficulty, game);
     vals[game][difficulty] = val;
 }
 
-function setEventListeners() {
-    document.body.addEventListener("click", closeModal, false);
-    document.body.addEventListener("keyup", closeModal, false);
-    document.getElementById("fill_all").addEventListener("click", fillAll, false);
-    document.getElementById("save").addEventListener("click", save, false);
-    document.getElementById("apply").addEventListener("click", apply, false);
-    document.getElementById("reset").addEventListener("click", reset, false);
-    document.getElementById("close").addEventListener("click", emptyModal, false);
+function setEventListenersSelect() {
     const select = document.querySelectorAll("select");
     const categories = document.querySelectorAll(".category");
 
@@ -582,6 +577,17 @@ function setEventListeners() {
     for (const element of categories) {
         element.addEventListener("change", setProgress, false);
     }
+}
+
+function setEventListeners() {
+    document.body.addEventListener("click", closeModal, false);
+    document.body.addEventListener("keyup", closeModal, false);
+    document.getElementById("fill_all").addEventListener("click", fillAll, false);
+    document.getElementById("save").addEventListener("click", save, false);
+    document.getElementById("apply").addEventListener("click", apply, false);
+    document.getElementById("reset").addEventListener("click", reset, false);
+    document.getElementById("close").addEventListener("click", emptyModal, false);
+    setEventListenersSelect();
 }
 
 function init() {
