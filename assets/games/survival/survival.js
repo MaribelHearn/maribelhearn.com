@@ -336,7 +336,7 @@ function drawOverview() {
             const saveLink = document.getElementById("save_link");
             saveLink.href = base64;
             saveLink.download = fileName();
-            //cleanupRendering();
+            cleanupRendering();
         });
     } catch (err) {
         document.getElementById("rendering_message").innerHTML = "Your browser is outdated. Use a different browser to generate an image of your survival progress table.";
@@ -537,8 +537,8 @@ function apply() {
     numbers = countAchievements(numbers);
     fillNumberTable(numbers);
     fillCompletionTable();
-    //document.getElementById("modal_inner").style.display = "block";
-    //document.getElementById("results").style.display = "block";
+    document.getElementById("modal_inner").style.display = "block";
+    document.getElementById("results").style.display = "block";
     drawOverview();
     printMessage("");
 }
