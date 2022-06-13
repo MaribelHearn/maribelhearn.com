@@ -127,7 +127,7 @@
         <h2>Export to Text File</h2>
         <p><input id='copy_to_clipboard' type='button' value='Copy to Clipboard'></p>
         <p>
-            <a id='save_link' href='' download=''>
+            <a id='save_link' href='#' download='#'>
                 <input type='button' class='button' value='Save to Device'>
             </a>
         </p>
@@ -135,7 +135,7 @@
     <div id='screenshot' class='modal_inner'>
         <h2>Screenshot</h2>
         <p>
-            <a id='save_link' href='' download=''>
+            <a id='screenshot_link' href='#' download='#'>
                 <input type='button' class='button' value='Save to Device'>
             </a>
         </p>
