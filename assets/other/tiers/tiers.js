@@ -13,9 +13,7 @@ Object.defineProperty(Array.prototype, "remove", {
     configurable: true,
     enumerable: false,
     value: function (value) {
-        if (this.includes(value)) {
-            this.splice(this.indexOf(value), 1);
-        }
+        this.splice(this.indexOf(value), 1);
     }
 });
 
@@ -34,8 +32,6 @@ const defaultColour = "#a0a0a0";
 const defaultWidth = isMobile() ? 60 : 120;
 const defaultSize = 32;
 const sorts = ["characters", "works", "shots", "cards"];
-const pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"];
-const windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "Spinoff"];
 const spinoffs = ["IaMP", "SWR", "Soku", "DS", "GFW", "HM", "ULiL", "AoCF"];
 const maleCharacters = ["SinGyokuM", "Genjii", "Unzan", "RinnosukeMorichika", "FortuneTeller"];
 const clans = ["FujiwaranoMokou", "SoganoTojiko", "MononobenoFuto", "ToyosatomiminoMiko", "HiedanoAkyuu", "WatatsukinoToyohime", "WatatsukinoYorihime"];
@@ -170,11 +166,11 @@ function addSpacing(item) {
 }
 
 function getTierNumOf(item) {
-    var tierList = getCurrentTierList(), tierNum, i;
+    const tierList = getCurrentTierList();
 
-    for (tierNum in tierList) {
-        for (i = 0; i < tierList[tierNum].chars.length; i++) {
-            if (tierList[tierNum].chars[i] === item) {
+    for (const tierNum in tierList) {
+        for (const otherItem of tierList[tierNum].chars) {
+            if (otherItem === item) {
                 return Number(tierNum);
             }
         }
@@ -188,12 +184,12 @@ function getPositionOf(item) {
         return -1;
     }
 
-    return Number($("#" + item).parent().attr("id").split("_")[1]);
+    const element = document.getElementById(item);
+    return Number(element.parentNode.id.split('_')[1]);
 }
 
 function getItemAt(tierNum, pos) {
-    var tierList = getCurrentTierList();
-
+    const tierList = getCurrentTierList();
     return tierList[tierNum].chars[pos];
 }
 
@@ -202,9 +198,9 @@ function getCategoryOf(item) {
         return false;
     }
 
-    let cats = categories[settings.sort];
+    const cats = categories[settings.sort];
 
-    for (let categoryName in cats) {
+    for (const categoryName in cats) {
         if (cats[categoryName].chars.includes(item)) {
             return categoryName;
         }
@@ -226,8 +222,8 @@ function whichSort(item) {
         return false;
     }
 
-    for (let sort of sorts) {
-        for (let category in categories[sort]) {
+    for (const sort of sorts) {
+        for (const category in categories[sort]) {
             if (categories[sort][category].chars.includes(item)) {
                 return sort;
             }
@@ -246,7 +242,7 @@ function isCategory(category) {
         return false;
     }
 
-    for (let sort of sorts) {
+    for (const sort of sorts) {
         if (categories[sort].hasOwnProperty(category)) {
             return true;
         }
@@ -260,8 +256,10 @@ function isTiered(item) {
         return false;
     }
 
-    for (let sort of sorts) {
-        if ($("#" + item).hasClass("tiered_" + sort)) {
+    const itemClasses = document.getElementById(item).classList;
+
+    for (const sort of sorts) {
+        if (itemClasses.contains(`tiered_${sort}`)) {
             return true;
         }
     }
@@ -270,10 +268,10 @@ function isTiered(item) {
 }
 
 function allTiered(categoryName) {
-    var cats = categories[settings.sort], i;
+    const cats = categories[settings.sort];
 
-    for (i = 0; i < cats[categoryName].chars.length; i++) {
-        if (!isTiered(cats[categoryName].chars[i])) {
+    for (const item of cats[categoryName].chars) {
+        if (!isTiered(item)) {
             return false;
         }
     }
@@ -322,7 +320,7 @@ function reloadTiers() {
         return;
     }
 
-    $("#tier_list_caption").html(settings.props[settings.sort].tierListName);
+    document.getElementById("tier_list_caption").innerHTML = settings.props[settings.sort].tierListName;
 
     for (tierNum in tierList) {
         tierNum = Number(tierNum);
@@ -402,7 +400,7 @@ function switchSort() {
 
     loadItems(false);
     reloadTiers();
-    saveConfirmation({data: {noMenu: true}});
+    saveWithoutMenu();
     setCookie("sort", settings.sort);
 
     if (isMobile()) {
@@ -413,21 +411,22 @@ function switchSort() {
 }
 
 function tieredContextMenu(event) {
-    var item = this.id, tierNum = Number(event.data.tierNum);
-
+    event.preventDefault();
+    const item = this.id;
+    const tierNum = Number(event.data.tierNum);
     removeFromTier(item, tierNum);
     return false;
 }
 
 function insertAt(character, tierNum, pos, chars) {
-    var counter, id, next;
+    const element = document.getElementById(character);
+    document.getElementById(`tier${tierNum}_${pos}`).appendChild(element);
 
-    $("#tier" + tierNum + "_" + (pos)).append($("#" + character));
-
-    for (counter = chars.length - 1; counter >= pos; counter -= 1) {
-        id = getItemAt(tierNum, counter);
-        next = "tier" + tierNum + "_" + (counter + 1);
-        $("#" + next).append($("#" + id));
+    for (let counter = chars.length - 1; counter >= pos; counter -= 1) {
+        const id = getItemAt(tierNum, counter);
+        const next = `tier${tierNum}_${counter + 1}`;
+        const itemElement = document.getElementById(id);
+        document.getElementById(next).appendChild(itemElement);
         chars[counter + 1] = id;
     }
 
@@ -442,10 +441,10 @@ function addToTier(item, tierNum, pos, noDisplay) {
     }
 
     printMessage("");
-    $("#" + item).removeClass("selected");
-    $("#" + item).removeClass("list_" + settings.sort);
-    $("#" + item).addClass("tiered_" + settings.sort);
-    $("#" + item).off("contextmenu");
+    const itemElement = document.getElementById(item);
+    itemElement.classList.remove("selected");
+    itemElement.classList.remove(`list_${settings.sort}`);
+    itemElement.classList.add(`tiered_${settings.sort}`);
 
     if (isMobile()) {
         $("#" + item).on("contextmenu", preventContextMenu);
@@ -480,19 +479,19 @@ function addToTier(item, tierNum, pos, noDisplay) {
 }
 
 function addMultiSelection(tierNum) {
-    var multi = true, i;
+    const multi = true;
 
     if (multiSelection.includes(following)) {
-        for (i = 0; i < multiSelection.length; i++) {
-            if (isTiered(multiSelection[i])) {
-                removeFromTier(multiSelection[i], getTierNumOf(multiSelection[i]), multi);
+        for (const item of multiSelection) {
+            if (isTiered(item)) {
+                removeFromTier(item, getTierNumOf(item), multi);
             }
 
-            addToTier(multiSelection[i], tierNum);
+            addToTier(item, tierNum);
         }
     } else {
-        for (i = 0; i < multiSelection.length; i++) {
-            $("#" + multiSelection[i]).removeClass("selected");
+        for (const item of multiSelection) {
+            document.getElementById(item).classList.remove("selected");
         }
 
         if (isTiered(following)) {
@@ -506,16 +505,16 @@ function addMultiSelection(tierNum) {
 }
 
 function removeMultiSelection() {
-    var multi = true, i;
+    const multi = true;
 
     if (multiSelection.includes(following)) {
-        for (i = 0; i < multiSelection.length; i++) {
-            $("#" + multiSelection[i]).removeClass("selected");
-            removeFromTier(multiSelection[i], getTierNumOf(multiSelection[i]));
+        for (const item of multiSelection) {
+            document.getElementById(item).classList.remove("selected");
+            removeFromTier(item, getTierNumOf(item));
         }
     } else {
-        for (i = 0; i < multiSelection.length; i++) {
-            $("#" + multiSelection[i]).removeClass("selected");
+        for (const item of multiSelection) {
+            document.getElementById(item).classList.remove("selected");
         }
 
         removeFromTier(following, getTierNumOf(following), multi);
@@ -527,19 +526,19 @@ function removeMultiSelection() {
 function toggleMulti() {
     if (multiSelection.includes(this.id)) {
         multiSelection.remove(this.id);
-        $("#" + this.id).removeClass("selected");
+        document.getElementById(this.id).classList.remove("selected");
         return;
     }
 
     multiSelection.push(this.id);
-    $("#" + this.id).addClass("selected");
+    document.getElementById(this.id).classList.add("selected");
 }
 
 function multiSelectionToText() {
-    var result = [], i;
+    let result = [];
 
-    for (i = 0; i < multiSelection.length; i++) {
-        result.push($("#" + multiSelection[i]).attr("title"));
+    for (const item of multiSelection) {
+        result.push(document.getElementById(item).title);
     }
 
     return result.join(", ");
@@ -602,7 +601,7 @@ function addMenu(event) {
 }
 
 function moveToBack(character, tierNum) {
-    var tierList = getCurrentTierList();
+    const tierList = getCurrentTierList();
 
     if (getPositionOf(character) === tierList[tierNum].chars.length - 1) {
         return;
@@ -652,22 +651,20 @@ function moveItemTo(sourceItem, targetItem) {
 }
 
 function moveMultiSelectionTo(targetItem) {
-    var tierNum = getTierNumOf(targetItem), i;
+    const tierNum = getTierNumOf(targetItem);
 
-    for (i = 0; i < multiSelection.length; i++) {
-        $("#" + multiSelection[i]).removeClass("selected");
-        moveItemTo(multiSelection[i], targetItem, tierNum);
+    for (const item of multiSelection) {
+        document.getElementById(item).classList.remove("selected");
+        moveItemTo(item, targetItem, tierNum);
     }
 
     multiSelection = [];
 }
 
 function changeMultiSelectionTo(tierNum, pos, multi) {
-    var i;
-
-    for (i = 0; i < multiSelection.length; i++) {
-        $("#" + multiSelection[i]).removeClass("selected");
-        changeToTier(multiSelection[i], tierNum, pos, multi);
+    for (const item of multiSelection) {
+        document.getElementById(item).classList.remove("selected");
+        changeToTier(item, tierNum, pos, multi);
     }
 
     multiSelection = [];
@@ -681,12 +678,13 @@ function removeFromTier(item, tierNum, multi, noDisplay) {
     }
 
     printMessage("");
-    $("#" + item).removeClass("tiered_" + settings.sort);
-    $("#" + item).addClass("list_" + settings.sort);
+    const itemElement = document.getElementById(item);
+    itemElement.classList.remove("tiered_" + settings.sort);
+    itemElement.classList.add("list_" + settings.sort);
     $("#" + item).off("contextmenu dragenter dragover");
 
     if (isMobile()) {
-        $("#" + item).on("contextmenu", preventContextMenu);
+        itemElement.addEventListener("contextmenu", preventContextMenu, false);
     }
 
     if (!noDisplay) {
@@ -701,7 +699,8 @@ function removeFromTier(item, tierNum, multi, noDisplay) {
                 $("#tier" + tierNum + "_" + (counter - 1)).append($("#" + tmp));
             }
 
-            $("#tier" + tierNum + "_" + (tierList[tierNum].chars.length - 1)).remove();
+            const lastItemElement = document.getElementById(`tier${tierNum}_${tierList[tierNum].chars.length - 1}`);
+            lastItemElement.parentNode.removeChild(lastItemElement);
         }
     }
 
@@ -709,7 +708,7 @@ function removeFromTier(item, tierNum, multi, noDisplay) {
     tieredItems.remove(item);
 
     if (!multi && multiSelection.includes(item)) {
-        $("#" + item).removeClass("selected");
+        itemElement.classList.remove("selected");
         multiSelection.remove(item);
     }
 
@@ -726,11 +725,10 @@ function changeToTier(item, tierNum, pos, multi) {
     }
 }
 
-function tierListName(event) {
-    var name = event.data.tierListName;
-
-    settings.props[settings.sort].tierListName = name.replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
-    $("#tier_list_caption").html(settings.props[settings.sort].tierListName);
+function changeTierListName(event) {
+    const tierListName = event.data.tierListName;
+    settings.props[settings.sort].tierListName = tierListName.replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
+    document.getElementById("tier_list_caption").innerHTML = settings.props[settings.sort].tierListName;
     localStorage.setItem("settings", JSON.stringify(settings));
 }
 
@@ -877,7 +875,8 @@ function removeTierButton(event) {
 }
 
 function removeTier(tierNum, skipConfirmation, noDisplay) {
-    var tierList = getCurrentTierList(), confirmation = true, lastTierNum, i, j;
+    const tierList = getCurrentTierList();
+    let confirmation = true;
 
     if (tierList[tierNum].chars.length === 0) {
         skipConfirmation = true;
@@ -890,25 +889,26 @@ function removeTier(tierNum, skipConfirmation, noDisplay) {
     if (confirmation) {
         removeCharacters(Number(tierNum), noDisplay);
 
-        for (i in tierList) {
-            if (i > tierNum) {
-                removeTierEvents(i - 1);
-                $("#tr" + (i - 1)).html($("#tr" + i).html().replace("th" + i, "th" + (i - 1)).replace("tier" + i, "tier" + (i - 1)));
-                $("#tier" + (i - 1)).html($("#tier" + (i - 1)).html().replace(new RegExp("tier" + i + "_", "g"), "tier" + (i - 1) + "_"));
-                tierList[i - 1] = tierList[i];
-                setTierEvents(i - 1);
+        for (const otherTierNum in tierList) {
+            if (otherTierNum > tierNum) {
+                removeTierEvents(otherTierNum - 1);
+                $("#tr" + (otherTierNum - 1)).html($("#tr" + otherTierNum).html().replace("th" + otherTierNum, "th" + (otherTierNum - 1)).replace("tier" + otherTierNum, "tier" + (otherTierNum - 1)));
+                $("#tier" + (otherTierNum - 1)).html($("#tier" + (otherTierNum - 1)).html().replace(new RegExp("tier" + otherTierNum + "_", "g"), "tier" + (otherTierNum - 1) + "_"));
+                tierList[otherTierNum - 1] = tierList[otherTierNum];
+                setTierEvents(otherTierNum - 1);
 
-                for (j in tierList[i - 1].chars) {
-                    setTieredItemEvents(tierList[i - 1].chars[j], i - 1);
+                for (const item of tierList[otherTierNum - 1].chars) {
+                    setTieredItemEvents(item, otherTierNum - 1);
                 }
             }
         }
 
-        lastTierNum = Object.keys(tierList).length - 1;
+        const lastTierNum = Object.keys(tierList).length - 1;
         delete tierList[lastTierNum];
 
         if (!noDisplay) {
-            $("#tr" + lastTierNum).remove();
+            const lastTier = document.getElementById(`tr${lastTierNum}`);
+            lastTier.parentNode.removeChild(lastTier);
         }
     }
 
@@ -942,15 +942,13 @@ function detectKey(event) {
 }
 
 function quickAdd(tierNum) {
-    var cats = categories[settings.sort], categoryName, character, i;
+    const cats = categories[settings.sort];
 
-    for (categoryName in cats) {
+    for (const categoryName in cats) {
         if (settings.categories[settings.sort][categoryName].enabled) {
-            for (i = 0; i < cats[categoryName].chars.length; i++) {
-                character = cats[categoryName].chars[i];
-
-                if (!isTiered(character)) {
-                    addToTier(character, tierNum);
+            for (const item of cats[categoryName].chars.length) {
+                if (!isTiered(item)) {
+                    addToTier(item, tierNum);
                 }
             }
         }
@@ -958,6 +956,7 @@ function quickAdd(tierNum) {
 }
 
 function saveSingleTierSettings(event) {
+    emptyModal();
     const tierNum = event.data.tierNum;
     const tierName = document.getElementById("custom_name_tier").value.strip().replace(/'/g, "");
     const tierBg = document.getElementById("custom_bg_tier").value;
@@ -978,7 +977,7 @@ function saveSingleTierSettings(event) {
     th.style.color = tierColour;
     localStorage.setItem("settings", JSON.stringify(settings));
     saveTiersData();
-    emptyModal();
+    printMessage("<strong class='confirmation'>Tier settings saved!</strong>");
 }
 
 function tierMenu(tierNum) {
@@ -1005,7 +1004,7 @@ function tierMenu(tierNum) {
 }
 
 function detectLeftCtrlCombo(event) {
-    let tierNum = event.data.tierNum;
+    const tierNum = event.data.tierNum;
 
     if (event.ctrlKey) {
         quickAdd(tierNum);
@@ -1027,7 +1026,7 @@ function emptyTier(tierNum) {
 }
 
 function detectRightCtrlCombo(event) {
-    let tierNum = event.data.tierNum;
+    const tierNum = event.data.tierNum;
 
     if (event.ctrlKey) {
         emptyTier(tierNum);
@@ -1051,22 +1050,23 @@ function allowData() {
 }
 
 function saveTiersData() {
-    localStorage.setItem("tiers", JSON.stringify(tiers));
-    printMessage("<strong class='confirmation'>Tier list(s) saved!</strong>");
-}
-
-function saveConfirmation(event) {
     if (!allowData()) {
         return;
     }
 
-    if (!event || !event.data) {
-        saveSettingsData();
-    } else if (event.data.noMenu) {
-        localStorage.setItem("settings", JSON.stringify(settings));
-    }
+    localStorage.setItem("tiers", JSON.stringify(tiers));
+}
 
+function saveTiersAndSettings() {
+    saveSettingsData();
     saveTiersData();
+    printMessage("<strong class='confirmation'>Tier list(s) and settings saved!</strong>");
+}
+
+function saveWithoutMenu() {
+    localStorage.setItem("settings", JSON.stringify(settings));
+    saveTiersData();
+    printMessage("<strong class='confirmation'>Tier list(s) and settings saved!</strong>");
 }
 
 function showInformation() {
@@ -1119,8 +1119,9 @@ function checkSort(text) {
     return false;
 }
 
-function clearTiers(tierList, sort, tmpSort) {
-    let skipConfirmation = true, noDisplay = (sort == tmpSort ? false : true);
+function clearTiers(tierList, sort, sortBackup) {
+    const skipConfirmation = true;
+    const noDisplay = (sort == sortBackup ? false : true);
 
     for (let tierNum = Object.keys(tierList).length - 1; tierNum >= 0; tierNum--) {
         removeTier(tierNum, skipConfirmation, noDisplay);
@@ -1261,20 +1262,36 @@ function importText() {
 }
 
 function copyToClipboard(event) {
-    navigator.clipboard.writeText(event.data.text.replace(/<\/p><p>/g, "\n").strip());
     emptyModal();
+    navigator.clipboard.writeText(event.data.text.replace(/<\/p><p>/g, "\n").strip());
     printMessage("<strong class='confirmation'>Copied to clipboard!</strong>");
 }
 
+function fileName(extension) {
+    const date = new Date();
+    const month = (date.getMonth() + 1).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    const day = (date.getDate()).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    const hours = (date.getHours()).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    const minutes = (date.getMinutes()).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    const seconds = (date.getSeconds()).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    let name = "touhou_tier_list";
+
+    if (settings.props[settings.sort].tierListName !== "") {
+        name = settings.props[settings.sort].tierListName.toLowerCase().replace(/\s/g, '_');
+    }
+
+    return `${name}_${date.getFullYear()}_${month}_${day}_${hours}_${minutes}_${seconds}.${extension}`;
+}
+
 function exportText() {
+    emptyModal();
+    printMessage("");
     const tierList = getCurrentTierList();
     let textFile = settings.sort +
     "\n" + (settings.props[settings.sort].tierListName ? settings.props[settings.sort].tierListName : "-") +
     ";" + settings.props[settings.sort].tierListColour +
     ";" + settings.props[settings.sort].tierHeaderWidth +
     ";" + settings.props[settings.sort].tierHeaderFontSize;
-    emptyModal();
-    printMessage("");
 
     for (const tierNum in tierList) {
         textFile += "\n" + tierList[tierNum].name + ":\n" + tierList[tierNum].bg +
@@ -1295,23 +1312,6 @@ function exportText() {
     $("#copy_to_clipboard").on("click", {text: textFile}, copyToClipboard);
     document.getElementById("export_text").style.display = "block";
     document.getElementById("modal").style.display = "block";
-}
-
-function fileName(extension) {
-    var date = new Date(),
-        name = "touhou_tier_list",
-        month = (date.getMonth() + 1).toLocaleString("en-US", {minimumIntegerDigits: 2}),
-        day = (date.getDate()).toLocaleString("en-US", {minimumIntegerDigits: 2}),
-        hours = (date.getHours()).toLocaleString("en-US", {minimumIntegerDigits: 2}),
-        minutes = (date.getMinutes()).toLocaleString("en-US", {minimumIntegerDigits: 2}),
-        seconds = (date.getSeconds()).toLocaleString("en-US", {minimumIntegerDigits: 2});
-
-    if (settings.props[settings.sort].tierListName !== "") {
-        name = settings.props[settings.sort].tierListName.toLowerCase().replace(/\s/g, '_');
-    }
-
-    return name + "_" + date.getFullYear() + "_" + month +
-    "_" + day + "_" + hours + "_" + minutes + "_" + seconds + "." + extension;
 }
 
 /*function base64toBlob(dataURI) {
@@ -1359,7 +1359,7 @@ function takeScreenshot() {
                 wrap.style.width = "100%";
                 wrap.style.height = "auto";
                 wrap.style.maxHeight = "none";
-                tierListContainer.style.width = "100%";
+                tierListContainer.style.width = "98%";
                 tierListContainer.style.height = "auto";
                 tierListContainer.style.maxHeight = "none";
                 tierListContainer.style.marginLeft = "0px";
@@ -1375,7 +1375,7 @@ function takeScreenshot() {
             }
 
             const base64image = canvas.toDataURL("image/png");
-            const saveLink = document.getElementById("save_link");
+            const saveLink = document.getElementById("screenshot_link");
             saveLink.href = base64image;
             saveLink.download = fileName("png");
             document.getElementById("screenshot_base64").src = base64image;
@@ -1385,8 +1385,7 @@ function takeScreenshot() {
             //$("#clipboard").on("click", {blob: base64image}, imageToClipboard);
         });
     } catch (e) {
-        printMessage("<strong class='error'>Error: your browser is outdated. Use a different browser " +
-        "to screenshot your tier list.</strong>");
+        printMessage("<strong class='error'>Error: your browser is outdated. Use a different browser to screenshot your tier list.</strong>");
     }
 }
 
@@ -1397,7 +1396,7 @@ function showCheckboxes() {
     let counter = 0;
     settingsTable.innerHTML = `<tr id='${id}_tr0'>`;
 
-    for (let categoryName in cats) {
+    for (const categoryName in cats) {
         const current = Math.floor(counter / 5);
     
         if (counter > 0 && counter % 5 === 0) {
@@ -1414,8 +1413,8 @@ function showCheckboxes() {
 
 function settingsMenu() {
     emptyModal();
-    showCheckboxes();
     printMessage("");
+    showCheckboxes();
     const isCharacters = (settings.sort == "characters");
     document.getElementById("settings_characters").style.display = (isCharacters ? "block" : "none");
     document.getElementById("settings_other").style.display = (isCharacters ? "none" : "block");
@@ -1428,36 +1427,35 @@ function settingsMenu() {
     document.getElementById("modal").style.display = "block";
 }
 
-function massRemoval(removedCategories) {
-    var cats = categories[settings.sort], categoryName, character, i, j;
-    $("#settings_msg_container").html("<strong class='error'>Girls are being removed, please wait warmly...</strong>");
+function massRemoval(toRemove) {
+    const cats = categories[settings.sort];
 
-    for (i = 0; i < removedCategories.length; i++) {
-        categoryName = removedCategories[i];
-
-        if (isCategory(categoryName)) {
-            for (j in cats[categoryName].chars) {
-                character = cats[categoryName].chars[j];
-
-                if (isTiered(character)) {
-                    removeFromTier(character, getTierNumOf(character));
+    for (const value of toRemove) {
+        if (isCategory(value)) {
+            for (const item of cats[value].chars) {
+                if (isTiered(item)) {
+                    removeFromTier(item, getTierNumOf(item));
                 }
             }
         } else {
-            character = categoryName;
-            removeFromTier(character, getTierNumOf(character));
+            const item = value;
+            removeFromTier(item, getTierNumOf(item));
         }
     }
 }
 
 function togglePC98() {
+    const pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"];
+
     for (const id of pc98) {
         const element = document.getElementById(`checkbox_${id}`);
         element.checked = !element.checked;
     }
 }
 
-function toggleWindows() {
+function toggleWindows() {  
+    const windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "Spinoff"];
+
     for (const id of windows) {
         const element = document.getElementById(`checkbox_${id}`);
         element.checked = !element.checked;
@@ -1465,29 +1463,38 @@ function toggleWindows() {
 }
 
 function toggleMale() {
-    for (var i in maleCharacters) {
-        $("#" + maleCharacters[i]).css("display", settings.maleEnabled ? "inline-block" : "none");
+    const display = (settings.maleEnabled ? "inline-block" : "none");
+
+    for (const maleCharacter of maleCharacters) {
+        document.getElementById(maleCharacter).style.display = display;
     }
 }
 
 function toggleThemes() {
-    for (var i in themeDuplicates) {
-        $("#" + themeDuplicates[i]).css("display", settings.themesEnabled ? "inline-block" : "none");
+    const display = (settings.themesEnabled ? "inline-block" : "none");
+
+    for (const themeDuplicate of themeDuplicates) {
+        document.getElementById(themeDuplicate).style.display = display;
     }
 }
 
 function saveSettingsData() {
-    var cats = categories[settings.sort], removedCategories = [], categoryName, item, confirmation, i;
+    if (!allowData()) {
+        return;
+    }
 
-    for (categoryName in cats) {
-        settings.categories[settings.sort][categoryName].enabled = $("#checkbox_" + categoryName).is(":checked");
+    const cats = categories[settings.sort];
+    let checked = {};
+    let toRemove = [];
 
-        if (!$("#checkbox_" + categoryName).is(":checked")) {
-            for (i = 0; i < cats[categoryName].chars.length; i++) {
-                item = cats[categoryName].chars[i];
+    for (const categoryName in cats) {
+        checked[categoryName] = document.getElementById(`checkbox_${categoryName}`).checked;
+        settings.categories[settings.sort][categoryName].enabled = checked;
 
+        if (!checked[categoryName]) {
+            for (const item of cats[categoryName].chars.length) {
                 if (isTiered(item)) {
-                    removedCategories.push(categoryName);
+                    toRemove.push(categoryName);
                 }
             }
         }
@@ -1495,38 +1502,36 @@ function saveSettingsData() {
         unsavedChanges = true;
     }
 
-    if (settings.sort == "characters" && !$("#male").is(":checked")) {
-        for (i in maleCharacters) {
-            if (isTiered(maleCharacters[i])) {
-                removedCategories.push(maleCharacters[i]);
+    const maleChecked = document.getElementById("male").checked;
+
+    if (settings.sort == "characters" && !maleChecked) {
+        for (const maleCharacter of maleCharacters) {
+            if (isTiered(maleCharacter)) {
+                toRemove.push(maleCharacter);
             }
         }
     }
 
-    if (removedCategories.length > 0) {
-        confirmation = confirm("This will remove characters from disabled categories from the current tiers. " +
-        "Are you sure you want to do that?");
+    if (toRemove.length > 0) {
+        const confirmation = confirm("This will remove characters from disabled categories from the current tiers. Are you sure you want to do that?");
 
         if (isMobile() || confirmation) {
-            massRemoval(removedCategories);
+            massRemoval(toRemove);
         } else {
             return;
         }
     }
 
-    for (categoryName in cats) {
-        if ($("#checkbox_" + categoryName).is(":checked") && !allTiered(categoryName)) {
-            $("#" + categoryName).css("display", "block");
-        } else {
-            $("#" + categoryName).css("display", "none");
-        }
+    for (const categoryName in cats) {
+        const display = (checked[categoryName] && !allTiered(categoryName) ? "block" : "none");
+        document.getElementById(categoryName).style.display = display;
     }
 
     if (settings.sort == "characters") {
-        settings.pc98Enabled = $("#pc98").is(":checked");
-        settings.windowsEnabled = $("#windows").is(":checked");
-        settings.maleEnabled = $("#male").is(":checked");
-        settings.themesEnabled = $("#themes").is(":checked");
+        settings.pc98Enabled = document.getElementById("pc98").checked;
+        settings.windowsEnabled = document.getElementById("windows").checked;
+        settings.maleEnabled = maleChecked;
+        settings.themesEnabled = document.getElementById("themes").checked;
         toggleMale();
         toggleThemes();
     }
@@ -1544,28 +1549,42 @@ function saveSettingsData() {
     $("#modal_inner").css("display", "none");
     $("#modal").css("display", "none");
     localStorage.setItem("settings", JSON.stringify(settings));
-    printMessage("<strong class='confirmation'>Settings saved!</strong>");
 }
 
 function toggleTierView() {
     printMessage("");
-    $("#characters").css("display", tierView ? "block" : "none");
-    $("#toggle_picker").css("display", tierView ? "inline" : "none");
+    const wrap = document.getElementById("wrap");
+
+    if (tierView) {
+        document.getElementById("characters").style.display = "block";
+        document.getElementById("toggle_picker").style.display = "inline";
+        document.getElementById("toggle_view").value = "Tier List View";
+        document.body.style.background = "url('assets/other/tiers/tiers.jpg') center no-repeat fixed";
+        document.body.style.backgroundSize = "cover";
+        wrap.style.width = (smallPicker ? "65%" : "45%");
+        wrap.style.bottom =- "";
+        wrap.style.left = "";
+        wrap.style.border = "1px solid #000";
+    } else {
+        document.getElementById("characters").style.display = "none";
+        document.getElementById("toggle_picker").style.display = "none";
+        document.getElementById("toggle_view").value = "Normal View";
+        document.body.style.background = defaultBg;
+        document.body.style.backgroundSize = "default";
+        wrap.style.width = "auto";
+        wrap.style.bottom =- "5px";
+        wrap.style.left = "5px";
+        wrap.style.border = "none";
+    }
+
     tierView = !tierView;
-    $("#toggle_view").val(tierView ? "Normal View" : "Tier List View");
-    $("#wrap").css("width", tierView ? "auto" : (smallPicker ? "65%" : "45%"));
-    $("#wrap").css("bottom", tierView ? "5px" : "");
-    $("#wrap").css("left", tierView ? "5px" : "");
-    $("#wrap").css("border", tierView ? "none" : "1px solid #000");
-    $("body").css("background", tierView ? defaultBg : "url('assets/other/tiers/tiers.jpg') center no-repeat fixed");
-    $("body").css("background-size", tierView ? "default" : "cover");
 }
 
 function togglePickerSize(event) {
     smallPicker = (event && event.data && event.data.load ? true : !smallPicker);
-    $("#wrap").css("width", smallPicker ? "65%" : "45%");
-    $("#characters").css("width", smallPicker ? "31%" : "51%");
-    $("#toggle_picker").val(smallPicker ? "Large Picker" : "Small Picker");
+    document.getElementById("wrap").style.width = (smallPicker ? "65%" : "45%");
+    document.getElementById("characters").style.width = ( smallPicker ? "31%" : "51%");
+    document.getElementById("toggle_picker").value = (smallPicker ? "Large Picker" : "Small Picker");
 
     if (smallPicker) {
         settings.picker = "small";
@@ -1574,7 +1593,7 @@ function togglePickerSize(event) {
     }
 
     if (!event || !event.data || !event.data.load) {
-        saveConfirmation({data: {noMenu: true}});
+        saveWithoutMenu();
     }
 
     printMessage("");
@@ -1619,7 +1638,7 @@ function modalEraseSingle() {
     settings.props[settings.sort].tierListColour = defaultBg;
     settings.props[settings.sort].tierHeaderWidth = defaultWidth;
     settings.props[settings.sort].tierHeaderFontSize = defaultSize;
-    $("#tier_list_caption").html("");
+    document.getElementById("tier_list_caption").innerHTML = "";
     $(".tier_content").css("background-color", defaultBg);
     $(".tier_header").css("max-width", defaultWidth + "px");
     $(".tier_header").css("font-size", defaultSize + "px");
@@ -1930,7 +1949,7 @@ function loadLegacySettings(settingsData) {
             }
         }
 
-        for (let sort of sorts) {
+        for (const sort of sorts) {
             settings.props[sort].tierListName = (settingsData[sort] && settingsData[sort].tierListName ? settingsData[sort].tierListName : "");
             settings.props[sort].tierListColour = (settingsData[sort] && settingsData[sort].tierListColour ? settingsData[sort].tierListColour : defaultBg);
             settings.props[sort].tierHeaderWidth = (settingsData[sort] && settingsData[sort].tierHeaderWidth ? settingsData[sort].tierHeaderWidth : defaultWidth);
@@ -1947,7 +1966,7 @@ function loadLegacySettings(settingsData) {
         settings.themesEnabled = (settingsData.themesEnabled ? settingsData.themesenabled: false);
         settings.sort = settingsData.sort;
     } else {
-        for (let category in settingsData) {
+        for (const category in settingsData) {
             if (category == "Other") {
                 settings.categories.characters["Manga"].enabled = settingsData[category].enabled;
                 settings.categories.characters["CD"].enabled = settingsData[category].enabled;
@@ -1959,7 +1978,7 @@ function loadLegacySettings(settingsData) {
 }
 
 function loadSettingsFromStorage() {
-    let settingsData = JSON.parse(localStorage.getItem("settings"));
+    const settingsData = JSON.parse(localStorage.getItem("settings"));
 
     if (settingsData.hasOwnProperty("gameCategories")) {
         loadLegacySettings(settingsData);
@@ -1967,7 +1986,7 @@ function loadSettingsFromStorage() {
     }
 
     if (settingsData.hasOwnProperty("categories")) {
-        for (let item in settings) {
+        for (const item in settings) {
             if (item == "categories" || item == "props") {
                 continue;
             }
@@ -1979,7 +1998,7 @@ function loadSettingsFromStorage() {
             togglePickerSize({data: {load: true}});
         }
 
-        for (let sort of sorts) {
+        for (const sort of sorts) {
             settings.categories[sort] = settingsData.categories.hasOwnProperty(sort) ? settingsData.categories[sort] : DEFAULT_SETTINGS.categories[sort];
 
             if (settingsData.props.hasOwnProperty(sort)) {
@@ -1998,12 +2017,12 @@ function setAddTierListeners() {
     $("#add_tier, #add_tier_mobile, #add_tier_list_name").off("click");
     $("#add_tier").on("click", {tierName: $("#tier_name").val()}, addTier);
     $("#add_tier_mobile").on("click", {tierName: $("#tier_name_mobile").val()}, addTier);
-    $("#add_tier_list_name").on("click", {tierListName: $("#tier_list_name").val()}, tierListName);
+    $("#add_tier_list_name").on("click", {tierListName: $("#tier_list_name").val()}, changeTierListName);
 }
 
 function detectTierListNameEnter(event) {
     if (event.key && event.key == "Enter") {
-        tierListName({data: {tierListName: $("#tier_list_name").val()}});
+        changeTierListName({data: {tierListName: $("#tier_list_name").val()}});
     } else {
         setAddTierListeners();
     }
@@ -2019,7 +2038,7 @@ function detectAddTierEnter(event) {
 
 function detectSettingsEnter(event) {
     if (event.key && event.key == "Enter") {
-        saveConfirmation();
+        saveTiersAndSettings();
     }
 }
 
@@ -2040,7 +2059,7 @@ function setEventListeners() {
     document.getElementById("tier_name").addEventListener("keyup", detectAddTierEnter, false);
     document.getElementById("tier_name_mobile").addEventListener("keyup", detectAddTierEnter, false);
     document.getElementById("tier_list_name").addEventListener("keyup", detectTierListNameEnter, false);
-    $("#save_button").on("click", {noMenu: true}, saveConfirmation);
+    document.getElementById("save_button").addEventListener("click", saveWithoutMenu, false);
     document.getElementById("import_button").addEventListener("click", importText, false);
     document.getElementById("export_button").addEventListener("click", exportText, false);
     document.getElementById("screenshot_button").addEventListener("click", takeScreenshot, false);
@@ -2048,14 +2067,15 @@ function setEventListeners() {
     document.getElementById("changelog_button").addEventListener("click", changeLog, false);
     document.getElementById("reset_button").addEventListener("click", eraseAll, false);
     document.getElementById("information_button").addEventListener("click", showInformation, false);
-    $("#save_button_mobile").on("click", {noMenu: true}, saveConfirmation);
+    document.getElementById("save_button_mobile").addEventListener("click", saveWithoutMenu, false);
     document.getElementById("menu_button").addEventListener("click", menuMobile, false);
     document.getElementById("switch_button").addEventListener("click", switchSort, false);
-    document.getElementById("characters").addEventListener("dragover dragenter", allowDrop, false);
+    document.getElementById("characters").addEventListener("dragover", allowDrop, false);
+    document.getElementById("characters").addEventListener("dragenter", allowDrop, false);
     document.getElementById("characters").addEventListener("drop", drop, false);
     document.getElementById("pc98").addEventListener("click", togglePC98, false);
     document.getElementById("windows").addEventListener("click", toggleWindows, false);
-    document.getElementById("save_settings").addEventListener("click", saveConfirmation, false);
+    document.getElementById("save_settings").addEventListener("click", saveTiersAndSettings, false);
     $(".settings_input").on("keyup", detectSettingsEnter, false);
     document.getElementById("erase_all_button").addEventListener("click", modalEraseAll, false);
     document.getElementById("erase_single_button").addEventListener("click", modalEraseSingle, false);
@@ -2100,7 +2120,7 @@ function init() {
     }
 
     const importElement = document.getElementById("import");
-    const errorElement = document.getElementById("import");
+    const errorElement = document.getElementById("error");
     const tierContent = document.querySelectorAll(".tier_content");
 
     if (importElement) {
