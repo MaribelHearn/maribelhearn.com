@@ -324,7 +324,7 @@
                 <tr id='oSA'>
                     <th>SA</th>
                     <td id='eSA' class='nmnb'></td>
-                    <td id='nSA' class='nb'></td>
+                    <td id='nSA' class='nmnb'></td>
                     <td id='hSA' class='nb'></td>
                     <td id='lSA' class='nb'></td>
                     <td id='xSA' class='nmnb' colspan='2'></td>
@@ -357,8 +357,8 @@
                     <th>DDC</th>
                     <td id='eDDC' class='nmnb'></td>
                     <td id='nDDC' class='nb'></td>
-                    <td id='hDDC' class='clear'></td>
-                    <td id='lDDC' class='clear'></td>
+                    <td id='hDDC' class='nb'></td>
+                    <td id='lDDC' class='nb'></td>
                     <td id='xDDC' class='nmnb' colspan='2'></td>
                 </tr>
                 <tr id='oLoLK'>
@@ -381,8 +381,8 @@
                     <th>WBaWC</th>
                     <td id='eWBaWC' class='nb'></td>
                     <td id='nWBaWC' class='nb'></td>
-                    <td id='hWBaWC' class='clear'></td>
-                    <td id='lWBaWC' class='clear'></td>
+                    <td id='hWBaWC' class='nb'></td>
+                    <td id='lWBaWC' class='nb'></td>
                     <td id='xWBaWC' class='nmnb' colspan='2'></td>
                 </tr>
                 <tr id='oUM'>
@@ -1511,7 +1511,7 @@
                 <td class='g'>Completed</td>
                 <td>July 31, 2012</td>
                 <td>February 6, 2016</td>
-                <td>-</td>
+                <td>May 9, 2022</td>
                 <td>No</td>
             </tr>
             <tr>
@@ -2298,7 +2298,7 @@
                 <td><strong>Hard</strong></td>
                 <td class='g'>Completed</td>
                 <td>January 30, 2014</td>
-                <td>-</td>
+                <td>June 14, 2022</td>
                 <td>-</td>
                 <td><strong><a href='https://www.youtube.com/watch?v=eD8vfG8Lklk'>1cc</a></strong></td>
             </tr>
@@ -2306,9 +2306,9 @@
                 <td><strong>Lunatic</strong></td>
                 <td class='g'>Completed</td>
                 <td>June 8, 2015</td>
+                <td>June 14, 2022</td>
                 <td>-</td>
-                <td>-</td>
-                <td><strong><a href='https://www.youtube.com/watch?v=SQev7tG6iro'>1cc</a></strong></td>
+                <td><strong><a href='https://www.youtube.com/watch?v=SQev7tG6iro'>1cc</a> <a href='https://www.youtube.com/watch?v=vUkwnvFiZr4'>NB</a></strong></td>
             </tr>
             <tr>
                 <td colspan='6'></td>
@@ -2542,7 +2542,7 @@
 			<img loading='lazy' src='assets/personal/history/games/lolk250x250.jpg' alt='LoLK'>
 		</picture>
         <p>Obtained: August 14, 2015</p>
-        <h3>Survival</h3>>
+        <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
                 <th>Difficulty</th>
@@ -3009,7 +3009,7 @@
                 <td><strong>Hard</strong></td>
                 <td class='g'>Completed</td>
                 <td>August 12, 2019</td>
-                <td>-</td>
+                <td>May 31, 2022</td>
                 <td>-</td>
                 <td>No</td>
             </tr>
@@ -3017,9 +3017,9 @@
                 <td><strong>Lunatic</strong></td>
                 <td class='g'>Completed</td>
                 <td>August 12, 2019</td>
+                <td>May 31, 2022</td>
                 <td>-</td>
-                <td>-</td>
-                <td><strong><a href='https://www.youtube.com/watch?v=HlG-4KA8QAc'>1cc</a></strong></td>
+                <td><strong><a href='https://www.youtube.com/watch?v=HlG-4KA8QAc'>1cc</a> <a href='https://www.youtube.com/watch?v=PIvW7TXwBzE'>NB</a></strong></td>
             </tr>
             <tr>
                 <td colspan='6'></td>
