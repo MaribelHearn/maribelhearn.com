@@ -125,7 +125,10 @@
     </div>
     <div id='export_text' class='modal_inner'>
         <h2>Export to Text File</h2>
-        <p><input id='copy_to_clipboard' type='button' value='Copy to Clipboard'></p>
+        <p>
+            <input id='copy_to_clipboard' type='button' value='Copy to Clipboard'>
+            <input id='text_file' type='hidden' value=''>
+        </p>
         <p>
             <a id='save_link' href='#' download='#'>
                 <input type='button' class='button' value='Save to Device'>
@@ -234,6 +237,7 @@
         <p class='name'>
             <label for='custom_name_tier'>Name</label>
             <input id='custom_name_tier' class='settings_input' type='text' value=''>
+            <input id='tier_num' type='hidden' value=''>
         </p>
         <p class='colour'>
             <label for='custom_bg_tier'>Background Colour</label>
