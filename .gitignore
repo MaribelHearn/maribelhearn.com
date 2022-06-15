@@ -21,6 +21,5 @@ replays
 
 # dev
 .vscode/
-.history/
 node_modules/
 package*.json
