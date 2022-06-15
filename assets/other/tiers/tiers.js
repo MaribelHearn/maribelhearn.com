@@ -281,17 +281,24 @@ function allTiered(categoryName) {
 
 function setPickerItemEvents(item) {
     const itemElement = document.getElementById(item);
+    itemElement.removeEventListener("dragstart", drag, false);
+    itemElement.removeEventListener("dragover", allowDrop, false);
+    itemElement.removeEventListener("dragenter", allowDrop, false);
+    itemElement.removeEventListener("click", toggleMulti, false);
     itemElement.addEventListener("dragstart", drag, false);
     itemElement.addEventListener("click", toggleMulti, false);
 
     if (isMobile()) {
+        itemElement.removeEventListener("contextmenu", preventContextMenu, false);
         itemElement.addEventListener("contextmenu", preventContextMenu, false);
     } else {
+        itemElement.removeEventListener("contextmenu", tieredContextMenu, false);
+        itemElement.removeEventListener("dblclick", addMenu, false);
         itemElement.addEventListener("dblclick", addMenu, false);
     }
 }
 
-function setTieredItemEvents(item, tierNum) {
+function setTieredItemEvents(item) {
     const itemElement = document.getElementById(item);
     itemElement.removeEventListener("dragstart", drag, false);
     itemElement.removeEventListener("dragover", allowDrop, false);
@@ -307,9 +314,9 @@ function setTieredItemEvents(item, tierNum) {
         itemElement.addEventListener("contextmenu", preventContextMenu, false);
     } else {
         itemElement.removeEventListener("contextmenu", tieredContextMenu, false);
-        itemElement.addEventListener("contextmenu", {tierNum: tierNum}, tieredContextMenu);
+        itemElement.addEventListener("contextmenu", tieredContextMenu, false);
         itemElement.removeEventListener("dblclick", addMenu, false);
-        itemElement.addEventListener("dblclick", addMenu);
+        itemElement.addEventListener("dblclick", addMenu, false);
     }
 }
 
@@ -329,11 +336,11 @@ function createTier(tierNum) {
     document.getElementById("tier_list_tbody").appendChild(tier);
     tier.appendChild(tierHeader);
     tier.appendChild(tierContent);
-    tier.addEventListener("dragstart", drag, false);
     tier.addEventListener("dragover", allowDrop, false);
     tier.addEventListener("dragenter", allowDrop, false);
     tier.addEventListener("drop", drop, false);
     tier.style.backgroundColor = settings.props[settings.sort].tierListColour;
+    tierHeader.addEventListener("dragstart", drag, false);
     tierHeader.addEventListener("click", detectLeftCtrlCombo, false);
     tierHeader.style.backgroundColor = tierList[tierNum].bg;
     tierHeader.style.color = tierList[tierNum].colour;
@@ -370,7 +377,7 @@ function reloadTiers() {
             tierEntry.id = "tier" + tierNum + "_" + tierList[tierNum].chars.indexOf(item);
             tierContent.appendChild(tierEntry);
             tierEntry.appendChild(itemElement);
-            setTieredItemEvents(item, tierNum);
+            setTieredItemEvents(item);
 
             for (const categoryName in cats) {
                 if (!document.getElementById(categoryName).innerHTML.includes(`list_${settings.sort}`)) {
@@ -467,7 +474,7 @@ function addToTier(item, tierNum, pos, noDisplay) {
         const tierEntry = document.createElement("span");
         tierEntry.id = "tier" + tierNum + "_" + tierList[tierNum].chars.length;
         document.getElementById(`tier${tierNum}`).appendChild(tierEntry);
-        setTieredItemEvents(item, tierNum);
+        setTieredItemEvents(item);
 
         if (typeof pos == "number" && pos < tierList[tierNum].chars.length && !noDisplay) {
             insertAt(item, tierNum, pos, tierList[tierNum].chars);
@@ -629,37 +636,39 @@ function moveToBack(character, tierNum) {
 }
 
 function moveItemTo(sourceItem, targetItem) {
-    var tierList = getCurrentTierList(), sourcePos = getPositionOf(sourceItem), targetPos = getPositionOf(targetItem),
-        tierNum = getTierNumOf(targetItem), tmp = $("#tier" + tierNum + "_" + sourcePos).html(), prevPos, nextPos, item, i;
-
+    console.log(`moveItemTo(${sourceItem}, ${targetItem})`);
+    const tierList = getCurrentTierList();
+    const sourcePos = getPositionOf(sourceItem);
+    const targetPos = getPositionOf(targetItem);
+    const tierNum = getTierNumOf(targetItem);
+    const tierBackup = document.getElementById("tier" + tierNum + "_" + sourcePos).firstChild;
     if (targetPos == tierList[tierNum].chars.length - 1) {
         moveToBack(sourceItem, tierNum);
         return;
     }
 
     if (sourcePos > targetPos) {
-        for (i = sourcePos; i > targetPos; i--) {
-            prevPos = i - 1;
-            $("#tier" + tierNum + "_" + i).html($("#tier" + tierNum + "_" + prevPos).html());
-            tierList[tierNum].chars[i] = tierList[tierNum].chars[prevPos];
+        for (let pos = sourcePos; pos > targetPos; pos--) {
+            const prevPos = pos - 1;
+            document.getElementById("tier" + tierNum + "_" + pos).appendChild(document.getElementById("tier" + tierNum + "_" + prevPos).firstChild);
+            tierList[tierNum].chars[pos] = tierList[tierNum].chars[prevPos];
         }
     } else if (sourcePos < targetPos) {
-        for (i = sourcePos; i < targetPos; i++) {
-            nextPos = i + 1;
-            $("#tier" + tierNum + "_" + i).html($("#tier" + tierNum + "_" + nextPos).html());
-            tierList[tierNum].chars[i] = tierList[tierNum].chars[nextPos];
+        for (let pos = sourcePos; pos < targetPos; pos++) {
+            const nextPos = pos + 1;
+            document.getElementById("tier" + tierNum + "_" + pos).appendChild(document.getElementById("tier" + tierNum + "_" + nextPos).firstChild);
+            tierList[tierNum].chars[pos] = tierList[tierNum].chars[nextPos];
         }
     } else {
         return;
     }
 
-    $("#tier" + tierNum + "_" + targetPos).html(tmp);
+    document.getElementById("tier" + tierNum + "_" + targetPos).appendChild(tierBackup);
     tierList[tierNum].chars[targetPos] = sourceItem;
     printMessage("");
 
-    for (i in tierList[tierNum].chars) {
-        item = tierList[tierNum].chars[i];
-        setTieredItemEvents(item, tierNum);
+    for (const item of tierList[tierNum].chars) {
+        setTieredItemEvents(item);
     }
 
     unsavedChanges = true;
@@ -686,9 +695,9 @@ function changeMultiSelectionTo(tierNum, pos, multi) {
 }
 
 function removeFromTier(item, tierNum, multi, noDisplay) {
-    var tierList = getCurrentTierList(), pos, counter, tmp;
+    const tierList = getCurrentTierList();
 
-    if (!item || getTierNumOf(item) !== tierNum) {
+    if (!item || getTierNumOf(item) !== Number(tierNum)) {
         return;
     }
 
@@ -698,26 +707,21 @@ function removeFromTier(item, tierNum, multi, noDisplay) {
         const itemElement = document.getElementById(item);
         itemElement.classList.remove("tiered_" + settings.sort);
         itemElement.classList.add("list_" + settings.sort);
-        $("#" + item).off("contextmenu dragenter dragover");
-
-        if (isMobile()) {
-            itemElement.addEventListener("contextmenu", preventContextMenu, false);
-        }
-
-        pos = getPositionOf(item);
-        $("#" + item + "C").append($("#" + item));
-        $("#" + getCategoryOf(item)).css("display", "block");
+        const pos = getPositionOf(item);
+        document.getElementById(`${item}C`).appendChild(itemElement);
+        setPickerItemEvents(item);
+        document.getElementById(getCategoryOf(item)).style.display = "block";
 
         if (tierNum !== false) {
-            for (counter = pos + 1; counter < tierList[tierNum].chars.length; counter += 1) {
-                tmp = getItemAt(tierNum, counter);
-                $("#tier" + tierNum + "_" + counter).remove("#" + tmp);
-                $("#tier" + tierNum + "_" + (counter - 1)).append($("#" + tmp));
+            for (let counter = pos + 1; counter < tierList[tierNum].chars.length; counter += 1) {
+                const itemBackup = document.getElementById(getItemAt(tierNum, counter));
+                document.getElementById("tier" + tierNum + "_" + (counter - 1)).appendChild(itemBackup);
             }
 
             const lastItemElement = document.getElementById(`tier${tierNum}_${tierList[tierNum].chars.length - 1}`);
             lastItemElement.parentNode.removeChild(lastItemElement);
         }
+
     }
 
     tierList[tierNum].chars.remove(item);
@@ -741,8 +745,8 @@ function changeToTier(item, tierNum, pos, multi) {
     }
 }
 
-function changeTierListName(event) {
-    const tierListName = event.data.tierListName;
+function changeTierListName() {
+    const tierListName = document.getElementById("tier_list_name").value;
     settings.props[settings.sort].tierListName = tierListName.replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
     document.getElementById("tier_list_caption").innerHTML = settings.props[settings.sort].tierListName;
     localStorage.setItem("settings", JSON.stringify(settings));
@@ -752,10 +756,8 @@ function validateTierName(tierName) {
     return tierName.length <= MAX_NAME_LENGTH;
 }
 
-function addTier(event) {
-    const noDisplay = event.data.noDisplay;
+function addTier(tierName, noDisplay) {
     const tierList = getCurrentTierList();
-    let tierName = event.data.tierName;
     let tierNum = 0;
 
     while (tierNum < Object.keys(tierList).length) {
@@ -798,12 +800,14 @@ function addTier(event) {
 }
 
 function moveTierTo(sourceTierNum, targetTierNum) {
-    var tierList = getCurrentTierList(), tmpHtml = $("#th" + sourceTierNum).html(), tmpChars = $("#tier" + sourceTierNum).html(),
-        tmp = tierList[sourceTierNum], tierNum, prevTierNum, nextTierNum, item, i;
+    const tierList = getCurrentTierList();
+    const tmpHtml = $("#th" + sourceTierNum).html();
+    const tmpChars = $("#tier" + sourceTierNum).html();
+    const tmp = tierList[sourceTierNum];
 
     if (sourceTierNum > targetTierNum) {
-        for (tierNum = sourceTierNum; tierNum > targetTierNum; tierNum--) {
-            prevTierNum = tierNum - 1;
+        for (let tierNum = sourceTierNum; tierNum > targetTierNum; tierNum--) {
+            const prevTierNum = tierNum - 1;
             $("#th" + tierNum).css("color", tierList[prevTierNum].colour);
             $("#th" + tierNum).css("background-color", tierList[prevTierNum].bg);
             $("#th" + tierNum).html($("#th" + prevTierNum).html());
@@ -811,8 +815,8 @@ function moveTierTo(sourceTierNum, targetTierNum) {
             tierList[tierNum] = tierList[prevTierNum];
         }
     } else { // sourceTierNum < targetTierNum
-        for (tierNum = sourceTierNum; tierNum < targetTierNum; tierNum++) {
-            nextTierNum = tierNum + 1;
+        for (let tierNum = sourceTierNum; tierNum < targetTierNum; tierNum++) {
+            const nextTierNum = tierNum + 1;
             $("#th" + tierNum).css("color", tierList[nextTierNum].colour);
             $("#th" + tierNum).css("background-color", tierList[nextTierNum].bg);
             $("#th" + tierNum).html($("#th" + nextTierNum).html());
@@ -822,17 +826,18 @@ function moveTierTo(sourceTierNum, targetTierNum) {
     }
 
     tierList[targetTierNum] = tmp;
-    $("#th" + targetTierNum).css("color", tmp.colour);
-    $("#th" + targetTierNum).css("background-color", tmp.bg);
+    const targetTierHeader = document.getElementById(`th${targetTierNum}`);
+    //const targetTierContent = document.getElementById(`tier${targetTierNum}`);
+    targetTierHeader.style.color = tmp.colour;
+    targetTierHeader.style.backgroundColor = tmp.bg;
     $("#th" + targetTierNum).html(tmpHtml);
     $("#tier" + targetTierNum).html(tmpChars);
     $("#tier" + targetTierNum).html($("#tier" + targetTierNum).html().replace(new RegExp("tier" + sourceTierNum + "_", "g"), "tier" + targetTierNum + "_"));
     printMessage("");
 
-    for (tierNum in tierList) {
-        for (i in tierList[tierNum].chars) {
-            item = tierList[tierNum].chars[i];
-            setTieredItemEvents(item, tierNum);
+    for (const tierNum in tierList) {
+        for (const item of tierList[tierNum].chars) {
+            setTieredItemEvents(item);
         }
     }
 
@@ -920,7 +925,7 @@ function removeTier(tierNum, skipConfirmation, noDisplay) {
 
                 if (!noDisplay) {
                     for (const item of tierList[otherTierNum - 1].chars) {
-                        setTieredItemEvents(item, otherTierNum - 1);
+                        setTieredItemEvents(item);
                     }
                 }
             }
@@ -978,8 +983,11 @@ function quickAdd(tierNum) {
     }
 }
 
-function saveSingleTierSettings(tierNum) {
+function saveSingleTierSettings() {
     emptyModal();
+    const tierList = getCurrentTierList();
+    const tierNum = document.getElementById("tier_num").value;
+    console.log(tierNum);
     const tierName = document.getElementById("custom_name_tier").value.strip().replace(/'/g, "");
     const tierBg = document.getElementById("custom_bg_tier").value;
     const tierColour = document.getElementById("custom_colour_tier").value;
@@ -997,7 +1005,9 @@ function saveSingleTierSettings(tierNum) {
     th.innerHTML = tierName;
     th.style.backgroundColor = tierBg;
     th.style.color = tierColour;
-    localStorage.setItem("settings", JSON.stringify(settings));
+    tierList[tierNum].name = tierName;
+    tierList[tierNum].bg = tierBg;
+    tierList[tierNum].colour = tierColour;
     saveTiersData();
     printMessage("<strong class='confirmation'>Tier settings saved!</strong>");
 }
@@ -1005,6 +1015,7 @@ function saveSingleTierSettings(tierNum) {
 function tierMenu(tierNum) {
     const tierList = getCurrentTierList();
     emptyModal();
+    document.getElementById("tier_num").value = tierNum;
     document.getElementById("tier_menu_header").innerHTML = "Customise Tier " + tierList[tierNum].name;
     document.getElementById("custom_name_tier").value = tierList[tierNum].name;
     document.getElementById("custom_bg_tier").value = tierList[tierNum].bg;
@@ -1042,6 +1053,7 @@ function emptyTier(tierNum) {
 }
 
 function detectRightCtrlCombo(event) {
+    event.preventDefault();
     const tierNum = event.target.id.replace("th", "");
 
     if (event.ctrlKey) {
@@ -1071,6 +1083,7 @@ function saveTiersData() {
     }
 
     localStorage.setItem("tiers", JSON.stringify(tiers));
+    unsavedChanges = false;
 }
 
 function saveTiersAndSettings() {
@@ -1087,6 +1100,7 @@ function saveWithoutMenu() {
     localStorage.setItem("settings", JSON.stringify(settings));
     localStorage.setItem("tiers", JSON.stringify(tiers));
     printMessage("<strong class='confirmation'>Tier list(s) and settings saved!</strong>");
+    unsavedChanges = false;
 }
 
 function showInformation() {
@@ -1183,7 +1197,7 @@ function parseImport(text, tierList, sort, originalSort) {
             }
 
             if (text[i].includes(':')) { // tier name
-                addTier({data: {tierName: text[i].replace(':', ""), noDisplay: noDisplay}});
+                addTier(text[i].replace(':', ""), noDisplay);
                 counter += 1;
                 i += 1;
             }
@@ -1282,8 +1296,9 @@ function importText() {
     document.getElementById("modal").style.display = "block";
 }
 
-function copyToClipboard(text) {
+function copyToClipboard() {
     emptyModal();
+    const text = document.getElementById("text_file").value;
     navigator.clipboard.writeText(text.replace(/<\/p><p>/g, "\n").strip());
     printMessage("<strong class='confirmation'>Copied to clipboard!</strong>");
 }
@@ -1330,7 +1345,8 @@ function exportText() {
     const saveLink = document.getElementById("save_link");
     saveLink.href = "data:text/plain;charset=utf-8," + encodeURIComponent(textFile);
     saveLink.download = fileName("txt");
-    document.getElementById("copy_to_clipboard").addEventListener("click", copyToClipboard(textFile), false);
+    document.getElementById("copy_to_clipboard").addEventListener("click", copyToClipboard, false);
+    document.getElementById("text_file").value = textFile;
     document.getElementById("export_text").style.display = "block";
     document.getElementById("modal").style.display = "block";
 }
@@ -1374,6 +1390,8 @@ function takeScreenshot() {
         }
 
         printMessage("<strong class='confirmation'>Girls are being screenshotted, please watch warmly...</strong>");
+        const tierListTable = document.getElementById("tier_list_tbody");
+        const tierListCaption = document.getElementById("tier_list_caption");
         html2canvas(document.body, {
             "onclone": function (doc) {
                 const wrap = doc.getElementById("wrap");
@@ -1387,12 +1405,12 @@ function takeScreenshot() {
                 tierListContainer.style.maxHeight = "none";
                 tierListContainer.style.marginLeft = "0px";
             },
-            "windowHeight": $("#tier_list_tbody").height() + $("#tier_list_caption").height() + 15,
-            "height": $("#tier_list_tbody").height() + $("#tier_list_caption").height() + 15,
+            "windowHeight": tierListTable.clientHeight + tierListCaption.clientHeight + 15,
+            "height": tierListTable.clientHeight + tierListCaption.clientHeight + 15,
             "logging": false,
             "scrollX": 0,
             "scrollY": 0
-        }).then(function(canvas) {
+        }).then(function (canvas) {
             if (!isMobile() && !isTierView) {
                 toggleTierView();
             }
@@ -1405,7 +1423,7 @@ function takeScreenshot() {
             document.getElementById("screenshot").style.display = "block";
             document.getElementById("modal").style.display = "block";
             printMessage("");
-            //$("#clipboard").on("click", {blob: base64image}, imageToClipboard);
+            //document.getElementById("clipboard").on("click", imageToClipboard, false);
         });
     } catch (e) {
         printMessage("<strong class='error'>Error: your browser is outdated. Use a different browser to screenshot your tier list.</strong>");
@@ -1566,14 +1584,25 @@ function saveSettingsData() {
         toggleThemes();
     }
 
-    settings.props[settings.sort].tierListName = $("#tier_list_name_menu").val().replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
-    settings.props[settings.sort].tierListColour = $("#tier_list_colour").val();
-    settings.props[settings.sort].tierHeaderWidth = $("#tier_header_width").val() > defaultWidth ? $("#tier_header_width").val() : defaultWidth;
-    settings.props[settings.sort].tierHeaderFontSize = $("#tier_header_font_size").val() != defaultSize ? $("#tier_header_font_size").val() : defaultSize;
-    $(".tier_header").css("width", settings.props[settings.sort].tierHeaderWidth + "px");
-    $(".tier_header").css("max-width", settings.props[settings.sort].tierHeaderWidth + "px");
-    $(".tier_header").css("font-size", settings.props[settings.sort].tierHeaderFontSize + "px");
-    $(".tier_content").css("background-color", settings.props[settings.sort].tierListColour);
+    const tierHeaders = document.querySelectorAll(".tier_header");
+    const tierContents = document.querySelectorAll(".tier_content");
+    const tierHeaderWidth = document.getElementById("tier_header_width").value;
+    const tierHeaderFontSize = document.getElementById("tier_header_font_size").value;
+    settings.props[settings.sort].tierListName = document.getElementById("tier_list_name_menu").value.replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
+    settings.props[settings.sort].tierListColour = document.getElementById("tier_list_colour").value;
+    settings.props[settings.sort].tierHeaderWidth = tierHeaderWidth > defaultWidth ? tierHeaderWidth : defaultWidth;
+    settings.props[settings.sort].tierHeaderFontSize = tierHeaderFontSize != defaultSize ? tierHeaderFontSize : defaultSize;
+
+    for (const element of tierHeaders) {
+        element.style.width = settings.props[settings.sort].tierHeaderWidth + "px";
+        element.style.maxWidth = settings.props[settings.sort].tierHeaderWidth + "px";
+        element.style.fontSize =  settings.props[settings.sort].tierHeaderFontSize + "px";
+    }
+
+    for (const element of tierContents) {
+        element.style.backgroundColor = settings.props[settings.sort].tierListColour;
+    }
+
     document.getElementById("tier_list_caption").innerHTML = settings.props[settings.sort].tierListName;
     document.getElementById("settings").style.display = "none";
     document.getElementById("modal").style.display = "none";
@@ -1657,10 +1686,11 @@ function modalEraseAll() {
 }
 
 function modalEraseSingle() {
+    emptyModal();
     clearTiers(getCurrentTierList(), settings.sort, settings.sort);
 
     for (const tierName of DEFAULT_TIER_NAMES) {
-        addTier({data: {tierName: tierName}});
+        addTier(tierName);
     }
 
     settings.props[settings.sort].tierListName = "";
@@ -1668,15 +1698,23 @@ function modalEraseSingle() {
     settings.props[settings.sort].tierHeaderWidth = defaultWidth;
     settings.props[settings.sort].tierHeaderFontSize = defaultSize;
     document.getElementById("tier_list_caption").innerHTML = "";
-    $(".tier_content").css("background-color", defaultBg);
-    $(".tier_header").css("max-width", defaultWidth + "px");
-    $(".tier_header").css("font-size", defaultSize + "px");
-    $(".tier_header").css("width", defaultWidth + "px");
+    const tierHeaders = document.querySelectorAll(".tier_header");
+    const tierContents = document.querySelectorAll(".tier_content");
+
+    for (const element of tierHeaders) {
+        element.style.width = defaultWidth + "px";
+        element.style.maxWidth = defaultWidth + "px";
+        element.style.fontSize = defaultSize + "px";
+    }
+
+    for (const element of tierContents) {
+        element.style.backgroundColor = defaultBg;
+    }
+
     localStorage.setItem("settings", JSON.stringify(settings));
-    unsavedChanges = false;
     saveTiersData();
     printMessage("<strong class='confirmation'>Reset the current tier list and its settings to their default states!</strong>");
-    emptyModal();
+    unsavedChanges = false;
 }
 
 function eraseAll() {
@@ -1823,33 +1861,15 @@ function addCategoryNamesToShots() {
     }
 }
 
-function loadTier(tiersData, tierNum, tierSort) {
-    tiers[tierSort][tierNum] = {};
-    tiers[tierSort][tierNum].name = tiersData.name;
-    tiers[tierSort][tierNum].bg = tiersData.bg;
-    tiers[tierSort][tierNum].colour = tiersData.colour;
-    tiers[tierSort][tierNum].chars = [];
+function loadTier(tiersData, tierNum, sort) {
+    tiers[sort][tierNum] = {};
+    tiers[sort][tierNum].name = tiersData.name;
+    tiers[sort][tierNum].bg = tiersData.bg;
+    tiers[sort][tierNum].colour = tiersData.colour;
+    tiers[sort][tierNum].chars = [];
 
-    if (tierSort == settings.sort) {
-        $("#tier_list_tbody").append("<tr id='tr" + tierNum + "' class='tier'><th id='th" + tierNum +
-        "' class='tier_header' draggable='true'>" + tiersData.name + "</th><td id='tier" + tierNum +
-        "' class='tier_content'></td></tr>");
-        $("#tr" + tierNum).on("dragover dragenter", allowDrop);
-        $("#tr" + tierNum).on("drop", drop);
-        $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
-        $("#th" + tierNum).on("dragstart", drag);
-        $("#th" + tierNum).css("background-color", tiers[tierSort][tierNum].bg);
-        $("#th" + tierNum).css("color", tiers[tierSort][tierNum].colour);
-        $("#th" + tierNum).css("max-width", settings.props[tierSort].tierHeaderWidth + "px");
-        $("#th" + tierNum).css("width", settings.props[tierSort].tierHeaderWidth + "px");
-        $("#th" + tierNum).css("font-size", settings.props[tierSort].tierHeaderFontSize + "px");
-
-        if (isMobile()) {
-            $("#th" + tierNum).css("height", "60px");
-            $("#th" + tierNum).on("contextmenu", preventContextMenu);
-        } else {
-            $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
-        }
+    if (sort == settings.sort) {
+        createTier(tierNum);
     }
 
     for (let item of tiersData.chars) {
@@ -1857,14 +1877,10 @@ function loadTier(tiersData, tierNum, tierSort) {
             item = "Mai PC-98";
         }
 
-        if (isMobile()) {
-            $("#" + item).off("click");
-        }
-
-        if (tierSort == settings.sort) {
+        if (sort == settings.sort) {
             addToTier(item, tierNum);
         } else {
-            tiers[tierSort][tierNum].chars.pushStrict(item);
+            tiers[sort][tierNum].chars.pushStrict(item);
         }
     }
 }
@@ -2048,43 +2064,43 @@ function loadSettingsFromStorage() {
     }
 }
 
-function setAddTierListeners() {
-    $("#add_tier, #add_tier_mobile, #add_tier_list_name").off("click");
-    $("#add_tier").on("click", {tierName: $("#tier_name").val()}, addTier);
-    $("#add_tier_mobile").on("click", {tierName: $("#tier_name_mobile").val()}, addTier);
-    $("#add_tier_list_name").on("click", {tierListName: $("#tier_list_name").val()}, changeTierListName);
+function addTierDesktop() {
+    addTier(document.getElementById("tier_name").value);
+}
+
+function addTierMobile() {
+    addTier(document.getElementById("tier_name_mobile").value);
 }
 
 function detectTierListNameEnter(event) {
     if (event.key && event.key == "Enter") {
-        changeTierListName({data: {tierListName: $("#tier_list_name").val()}});
-    } else {
-        setAddTierListeners();
+        changeTierListName(document.getElementById("tier_list_name").value);
     }
 }
 
 function detectAddTierEnter(event) {
     if (event.key && event.key == "Enter") {
-        addTier({data: {tierName: $(isMobile() ? "#tier_name_mobile" : "#tier_name").val()}});
-    } else {
-        setAddTierListeners();
+        if (isMobile()) {
+            addTierMobile();
+        } else {
+            addTierDesktop();
+        }
     }
 }
 
-function detectSettingsEnter(event) {
+/*function detectSettingsEnter(event) {
     if (event.key && event.key == "Enter") {
         saveTiersAndSettings();
     }
 }
 
-/*function detectTiersEnter(event) {
+function detectTiersEnter(event) {
     if (event.key && event.key == "Enter") {
         console.log(event.target.value);
     }
 }*/
 
 function setEventListeners() {
-    setAddTierListeners();
     document.body.addEventListener("click", closeModal, false);
     document.body.addEventListener("keyup", detectKey, false);
     document.getElementById("sort").addEventListener("change", switchSort, false);
@@ -2111,7 +2127,6 @@ function setEventListeners() {
     document.getElementById("pc98").addEventListener("click", togglePC98, false);
     document.getElementById("windows").addEventListener("click", toggleWindows, false);
     document.getElementById("save_settings").addEventListener("click", saveTiersAndSettings, false);
-    $(".settings_input").on("keyup", detectSettingsEnter, false);
     document.getElementById("erase_all_button").addEventListener("click", modalEraseAll, false);
     document.getElementById("erase_single_button").addEventListener("click", modalEraseSingle, false);
     document.getElementById("cancel_button").addEventListener("click", emptyModal, false);
@@ -2122,6 +2137,9 @@ function setEventListeners() {
     document.getElementById("settings_button_mobile").addEventListener("click", settingsMenu, false);
     document.getElementById("changelog_button_mobile").addEventListener("click", changeLog, false);
     document.getElementById("reset_button_mobile").addEventListener("click", eraseAll, false);
+    document.getElementById("add_tier").addEventListener("click", addTierDesktop, false);
+    document.getElementById("add_tier_mobile").addEventListener("click", addTierMobile, false);
+    document.getElementById("add_tier_list_name").addEventListener("click", changeTierListName, false);
     window.onbeforeunload = function () {
         if (unsavedChanges) {
             return "";
