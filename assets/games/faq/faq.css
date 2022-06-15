@@ -87,7 +87,7 @@ ol {
     overflow: hidden;
     width: 50%;
 }
-#backtomain, #files_mb {
+#back, #files_mb {
     float: left;
 }
 #files_jp {

@@ -39,7 +39,7 @@ Many games will also require vpatch or the game will have input lag. EoSD (Touho
 <h4 id='english'>How do I play in English / other languages?</h4>
 <p>Use THCRAP. See the <a href='/tools#thcrap'>Touhou Patches and Tools</a> page.</p>
 <h4 id='graphics'>Why is my game wide / pixelated / fuzzy / small?</h4>
-<p><em>See the <a href='faq/graphics'>Graphical issues</a> page.</em></p>
+<p><em>See the <a href='/faq/graphics'>Graphical issues</a> page.</em></p>
 <h4 id='lag'>Why is my game lagging a lot?</h4>
 <p>Try plugging in a controller and see if that fixes it. You do not need to actually use the controller.</p>
 <h4 id='fps'>My game is running at a very high <abbr title='frames per second'>FPS</abbr>, what do I do?</h4>
