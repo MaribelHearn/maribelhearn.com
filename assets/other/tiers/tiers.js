@@ -256,10 +256,10 @@ function isTiered(item) {
         return false;
     }
 
-    const itemClasses = document.getElementById(item).classList;
+    const tierList = getCurrentTierList();
 
-    for (const sort of sorts) {
-        if (itemClasses.contains(`tiered_${sort}`)) {
+    for (const tierNum in tierList) {
+        if (tierList[tierNum].chars.includes(item)) {
             return true;
         }
     }
@@ -280,88 +280,101 @@ function allTiered(categoryName) {
 }
 
 function setPickerItemEvents(item) {
-    const element = document.getElementById(item);
-    $("#" + item).on("dragstart", drag);
-    element.addEventListener("click", toggleMulti, false);
+    const itemElement = document.getElementById(item);
+    itemElement.addEventListener("dragstart", drag, false);
+    itemElement.addEventListener("click", toggleMulti, false);
 
-    if (!isMobile()) {
-        $("#" + item).on("dblclick", addMenu);
+    if (isMobile()) {
+        itemElement.addEventListener("contextmenu", preventContextMenu, false);
     } else {
-        element.addEventListener("contextmenu", preventContextMenu, false);
+        itemElement.addEventListener("dblclick", addMenu, false);
     }
 }
 
 function setTieredItemEvents(item, tierNum) {
-    $("#" + item).off("dblclick");
-    $("#" + item).off("contextmenu");
-    $("#" + item).off("dragstart");
-    $("#" + item).off("dragover dragenter");
-    $("#" + item).off("click");
-    $("#" + item).on("dragstart", drag);
-    $("#" + item).on("dragover dragenter", allowDrop);
-    $("#" + item).on("click", toggleMulti);
+    const itemElement = document.getElementById(item);
+    itemElement.removeEventListener("dragstart", drag, false);
+    itemElement.removeEventListener("dragover", allowDrop, false);
+    itemElement.removeEventListener("dragenter", allowDrop, false);
+    itemElement.removeEventListener("click", toggleMulti, false);
+    itemElement.addEventListener("dragstart", drag, false);
+    itemElement.addEventListener("dragover", allowDrop, false);
+    itemElement.addEventListener("dragenter", allowDrop, false);
+    itemElement.addEventListener("click", toggleMulti, false);
 
     if (isMobile()) {
-        $("#" + item).on("contextmenu", preventContextMenu);
+        itemElement.removeEventListener("contextmenu", preventContextMenu, false);
+        itemElement.addEventListener("contextmenu", preventContextMenu, false);
     } else {
-        $("#" + item).on("dblclick", addMenu);
-        $("#" + item).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
+        itemElement.removeEventListener("contextmenu", tieredContextMenu, false);
+        itemElement.addEventListener("contextmenu", {tierNum: tierNum}, tieredContextMenu);
+        itemElement.removeEventListener("dblclick", addMenu, false);
+        itemElement.addEventListener("dblclick", addMenu);
     }
 }
 
+function createTier(tierNum) {
+    const tierList = getCurrentTierList();
+    const tier = document.createElement("tr");
+    const tierHeader = document.createElement("th");
+    const tierContent = document.createElement("td");
+    tier.id = `tr${tierNum}`;
+    tier.classList.add("tier");
+    tierHeader.id = `th${tierNum}`;
+    tierHeader.draggable = true;
+    tierHeader.innerHTML = tierList[tierNum].name;
+    tierHeader.classList.add("tier_header");
+    tierContent.id = `tier${tierNum}`;
+    tierContent.classList.add("tier_content");
+    document.getElementById("tier_list_tbody").appendChild(tier);
+    tier.appendChild(tierHeader);
+    tier.appendChild(tierContent);
+    tier.addEventListener("dragstart", drag, false);
+    tier.addEventListener("dragover", allowDrop, false);
+    tier.addEventListener("dragenter", allowDrop, false);
+    tier.addEventListener("drop", drop, false);
+    tier.style.backgroundColor = settings.props[settings.sort].tierListColour;
+    tierHeader.addEventListener("click", detectLeftCtrlCombo, false);
+    tierHeader.style.backgroundColor = tierList[tierNum].bg;
+    tierHeader.style.color = tierList[tierNum].colour;
+    tierHeader.style.maxWidth = settings.props[settings.sort].tierHeaderWidth + "px";
+    tierHeader.style.width = settings.props[settings.sort].tierHeaderWidth + "px";
+    tierHeader.style.fontSize = settings.props[settings.sort].tierHeaderFontSize + "px";
+
+    if (isMobile()) {
+        tierHeader.style.height = "60px";
+    } else {
+        tierHeader.addEventListener("contextmenu", detectRightCtrlCombo, false);
+    }
+
+    return tierContent;
+}
+
 function reloadTiers() {
-    var cats = categories[settings.sort], tierList = getCurrentTierList(), tierNum, i, item, id, j;
-
-    for (i = 0; i < Object.keys(tiers).length; i++) {
-        $("#tier" + i).html("");
-    }
-
-    if (tierList.isEmpty()) {
-        return;
-    }
-
+    const cats = categories[settings.sort];
+    const tierList = getCurrentTierList();
     document.getElementById("tier_list_caption").innerHTML = settings.props[settings.sort].tierListName;
 
-    for (tierNum in tierList) {
-        tierNum = Number(tierNum);
-        $("#tier_list_tbody").append("<tr id='tr" + tierNum +
-        "' class='tier'><th id='th" + tierNum +
-        "' class='tier_header' draggable='true'>" + tierList[tierNum].name + "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr>");
-        $("#tr" + tierNum).on("dragover dragenter", allowDrop);
-        $("#tr" + tierNum).on("drop", drop);
-        $("#tr" + tierNum).on("dragstart", drag);
-        $("#tr" + tierNum).css("background-color", settings.props[settings.sort].tierListColour);
-        $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
-        $("#th" + tierNum).css("background-color", tierList[tierNum].bg);
-        $("#th" + tierNum).css("color", tierList[tierNum].colour);
-        $("#th" + tierNum).css("max-width", settings.props[settings.sort].tierHeaderWidth + "px");
-        $("#th" + tierNum).css("width", settings.props[settings.sort].tierHeaderWidth + "px");
-        $("#th" + tierNum).css("font-size", settings.props[settings.sort].tierHeaderFontSize + "px");
+    for (const tierNum in tierList) {
+        const tierContent = createTier(tierNum);
 
-        if (isMobile()) {
-            $("#th" + tierNum).css("height", "60px");
-            $("#" + item).on("contextmenu", preventContextMenu);
-        } else {
-            $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
-        }
-
-        for (i = 0; i < tierList[tierNum].chars.length; i++) {
-            item = tierList[tierNum].chars[i];
-
+        for (let item of tierList[tierNum].chars) {
             if (item == "Mai") {
                 item = "Mai PC-98";
             }
 
-            $("#" + item).removeClass("list_" + settings.sort);
-            $("#" + item).addClass("tiered_" + settings.sort);
-            id = "tier" + tierNum + "_" + i;
-            $("#tier" + tierNum).append("<span id='" + id + "'></span>");
-            $("#" + id).html($("#" + item));
+            const itemElement = document.getElementById(item);
+            itemElement.classList.remove(`list_${settings.sort}`);
+            itemElement.classList.add(`tiered_${settings.sort}`);
+            const tierEntry = document.createElement("span");
+            tierEntry.id = "tier" + tierNum + "_" + tierList[tierNum].chars.indexOf(item);
+            tierContent.appendChild(tierEntry);
+            tierEntry.appendChild(itemElement);
             setTieredItemEvents(item, tierNum);
 
-            for (j in cats) {
-                if (!$("#" + j).html().includes("list_" + settings.sort)) {
-                    $("#" + j).css("display", "none");
+            for (const categoryName in cats) {
+                if (!document.getElementById(categoryName).innerHTML.includes(`list_${settings.sort}`)) {
+                    document.getElementById(categoryName).style.display = "none";
                 }
             }
         }
@@ -398,6 +411,7 @@ function switchSort() {
         settings.sort = document.getElementById("sort").value;
     }
 
+    multiSelection = [];
     loadItems(false);
     reloadTiers();
     saveWithoutMenu();
@@ -412,14 +426,14 @@ function switchSort() {
 
 function tieredContextMenu(event) {
     event.preventDefault();
-    const item = this.id;
-    const tierNum = Number(event.data.tierNum);
+    const item = event.target.id;
+    const tierNum = event.target.parentNode.parentNode.id.replace("tier", "");
     removeFromTier(item, tierNum);
     return false;
 }
 
-function insertAt(character, tierNum, pos, chars) {
-    const element = document.getElementById(character);
+function insertAt(item, tierNum, pos, chars) {
+    const element = document.getElementById(item);
     document.getElementById(`tier${tierNum}_${pos}`).appendChild(element);
 
     for (let counter = chars.length - 1; counter >= pos; counter -= 1) {
@@ -430,52 +444,55 @@ function insertAt(character, tierNum, pos, chars) {
         chars[counter + 1] = id;
     }
 
-    chars[pos] = character;
+    chars[pos] = item;
 }
 
 function addToTier(item, tierNum, pos, noDisplay) {
-    var cats = categories[settings.sort], tierList = getCurrentTierList(), categoryName = getCategoryOf(item), id;
+    const cats = categories[settings.sort];
+    const tierList = getCurrentTierList();
+    const categoryName = getCategoryOf(item);
+    let inserted = false;
 
     if (isTiered(item)) {
         return;
     }
 
     printMessage("");
-    const itemElement = document.getElementById(item);
-    itemElement.classList.remove("selected");
-    itemElement.classList.remove(`list_${settings.sort}`);
-    itemElement.classList.add(`tiered_${settings.sort}`);
 
-    if (isMobile()) {
-        $("#" + item).on("contextmenu", preventContextMenu);
-    } else {
-        $("#" + item).on("contextmenu", {tierNum: tierNum}, tieredContextMenu);
+    if (!noDisplay) {
+        const itemElement = document.getElementById(item);
+        itemElement.classList.remove("selected");
+        itemElement.classList.remove(`list_${settings.sort}`);
+        itemElement.classList.add(`tiered_${settings.sort}`);
+        const tierEntry = document.createElement("span");
+        tierEntry.id = "tier" + tierNum + "_" + tierList[tierNum].chars.length;
+        document.getElementById(`tier${tierNum}`).appendChild(tierEntry);
+        setTieredItemEvents(item, tierNum);
+
+        if (typeof pos == "number" && pos < tierList[tierNum].chars.length && !noDisplay) {
+            insertAt(item, tierNum, pos, tierList[tierNum].chars);
+            inserted = true;
+        } else {
+            tierEntry.appendChild(itemElement);
+        }
     }
 
-    $("#" + item).on("dragover dragenter", allowDrop);
-    id = "tier" + tierNum + "_" + tierList[tierNum].chars.length;
-    $("#tier" + tierNum).append("<span id='" + id + "'></span>");
-    tieredItems.push(item);
-
-    if (typeof pos == "number" && pos < tierList[tierNum].chars.length && !noDisplay) {
-        insertAt(item, tierNum, pos, tierList[tierNum].chars);
-    } else {
-        if (!noDisplay) {
-            $("#" + id).append($("#" + item));
-        }
-
+    if (!inserted) {
         tierList[tierNum].chars.pushStrict(item);
     }
 
-    unsavedChanges = true;
-
-    for (let chara of cats[categoryName].chars) {
-        if (!isTiered(chara)) {
-            return;
+    if (!noDisplay) {
+        for (const item of cats[categoryName].chars) {
+            if (!isTiered(item)) {
+                return;
+            }
         }
+    
+        document.getElementById(categoryName).style.display = "none";
     }
-
-    $("#" + categoryName).css("display", "none");
+    
+    tieredItems.push(item);
+    unsavedChanges = true;
 }
 
 function addMultiSelection(tierNum) {
@@ -510,7 +527,7 @@ function removeMultiSelection() {
     if (multiSelection.includes(following)) {
         for (const item of multiSelection) {
             document.getElementById(item).classList.remove("selected");
-            removeFromTier(item, getTierNumOf(item));
+            removeFromTier(item, getTierNumOf(item), multi);
         }
     } else {
         for (const item of multiSelection) {
@@ -545,12 +562,10 @@ function multiSelectionToText() {
 }
 
 function addToTierMobile(event) {
-    console.log(event.target.id);
     const id = event.target.id.split('_');
     const item = id[2];
     const tierNum = id[3];
     const tierList = getCurrentTierList();
-    $("#" + item).off("click");
 
     if (typeof item == "object") { // multiselection
         following = item[0];
@@ -678,16 +693,17 @@ function removeFromTier(item, tierNum, multi, noDisplay) {
     }
 
     printMessage("");
-    const itemElement = document.getElementById(item);
-    itemElement.classList.remove("tiered_" + settings.sort);
-    itemElement.classList.add("list_" + settings.sort);
-    $("#" + item).off("contextmenu dragenter dragover");
-
-    if (isMobile()) {
-        itemElement.addEventListener("contextmenu", preventContextMenu, false);
-    }
 
     if (!noDisplay) {
+        const itemElement = document.getElementById(item);
+        itemElement.classList.remove("tiered_" + settings.sort);
+        itemElement.classList.add("list_" + settings.sort);
+        $("#" + item).off("contextmenu dragenter dragover");
+
+        if (isMobile()) {
+            itemElement.addEventListener("contextmenu", preventContextMenu, false);
+        }
+
         pos = getPositionOf(item);
         $("#" + item + "C").append($("#" + item));
         $("#" + getCategoryOf(item)).css("display", "block");
@@ -708,7 +724,7 @@ function removeFromTier(item, tierNum, multi, noDisplay) {
     tieredItems.remove(item);
 
     if (!multi && multiSelection.includes(item)) {
-        itemElement.classList.remove("selected");
+        document.getElementById(item).classList.remove("selected");
         multiSelection.remove(item);
     }
 
@@ -747,42 +763,25 @@ function addTier(event) {
     }
 
     if (tierNum >= MAX_NUMBER_OF_TIERS) {
-        printMessage("<strong class='error'>Error: the number of tiers may not exceed " + MAX_NUMBER_OF_TIERS + ".</strong>");
+        printMessage(`<strong class='error'>Error: the number of tiers may not exceed ${MAX_NUMBER_OF_TIERS}.</strong>`);
         return;
     }
 
     tierName = tierName.strip().replace(/'/g, "");
-    $(isMobile() ? "#tier_name_mobile" : "#tier_name").val(tierName);
+
+    if (isMobile()) {
+        document.getElementById("tier_name_mobile").value = tierName;
+    } else {
+        document.getElementById("tier_name").value = tierName;
+    }
 
     if (!tierName || tierName === "") {
         return;
     }
 
     if (!validateTierName(tierName)) {
-        printMessage("<strong class='error'>Error: tier names may not exceed " + MAX_NAME_LENGTH +
-        " characters.</strong>");
+        printMessage(`<strong class='error'>Error: tier names may not exceed ${MAX_NAME_LENGTH} characters.</strong>`);
         return;
-    }
-
-    if (!noDisplay) {
-        $("#tier_list_tbody").append("<tr id='tr" + tierNum + "' class='tier'>" +
-        "<th id='th" + tierNum + "' class='tier_header' draggable='true'>" + tierName +
-        "</th><td id='tier" + tierNum + "' class='tier_content'></td></tr><hr>");
-        $("#tr" + tierNum).on("dragover dragenter", allowDrop);
-        $("#tr" + tierNum).on("drop", drop);
-        $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
-        $("#th" + tierNum).on("dragstart", drag);
-        $("#th" + tierNum).css("max-width", settings.props[settings.sort].tierHeaderWidth + "px");
-        $("#th" + tierNum).css("width", settings.props[settings.sort].tierHeaderWidth + "px");
-        $("#th" + tierNum).css("font-size", settings.props[settings.sort].tierHeaderFontSize + "px");
-        $("#tier" + tierNum).css("background-color", settings.props[settings.sort].tierListColour);
-
-        if (isMobile()) {
-            $("#th" + tierNum).css("height", "60px");
-            $("#th" + tierNum).on("contextmenu", preventContextMenu);
-        } else {
-            $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
-        }
     }
 
     tierList[tierNum] = {};
@@ -790,6 +789,11 @@ function addTier(event) {
     tierList[tierNum].bg = defaultBg;
     tierList[tierNum].colour = defaultColour;
     tierList[tierNum].chars = [];
+
+    if (!noDisplay) {
+        createTier(tierNum);
+    }
+    
     unsavedChanges = true;
 }
 
@@ -836,35 +840,48 @@ function moveTierTo(sourceTierNum, targetTierNum) {
 }
 
 function removeCharacters(tierNum, noDisplay) {
-    var tierList = getCurrentTierList();
+    const tierList = getCurrentTierList();
 
     while (tierList[tierNum].chars.length > 0) {
-        removeFromTier(tierList[tierNum].chars[tierList[tierNum].chars.length - 1], tierNum, false, noDisplay);
+        const item = tierList[tierNum].chars[tierList[tierNum].chars.length - 1];
+        const multi = (noDisplay ? false : multiSelection.includes(item));
+        removeFromTier(item, tierNum, multi, noDisplay);
     }
 
     if (!noDisplay) {
-        $("#tier" + tierNum).html(""); // temporary measure against sudden double digit spans
+        document.getElementById(`tier${tierNum}`).innerHTML = ""; // temporary measure against sudden double digit spans
     }
 }
 
 function removeTierEvents(tierNum) {
-    $("#tr" + tierNum).off("dragover dragenter");
-    $("#tr" + tierNum).off("drop");
-    $("#th" + tierNum).off("click");
-    $("#th" + tierNum).off("contextmenu");
-    $("#th" + tierNum).off("dragstart");
+    const tier = document.getElementById(`tr${tierNum}`);
+    const tierHeader = document.getElementById(`th${tierNum}`);
+    tier.removeEventListener("dragover", allowDrop, false);
+    tier.removeEventListener("dragenter", allowDrop, false);
+    tier.removeEventListener("drop", drop, false);
+    tierHeader.removeEventListener("click", detectLeftCtrlCombo, false);
+    tierHeader.removeEventListener("dragstart", drag, false);
+
+    if (isMobile()) {
+        tierHeader.removeEventListener("contextmenu", preventContextMenu, false);
+    } else {
+        tierHeader.removeEventListener("contextmenu", detectRightCtrlCombo, false);
+    }
 }
 
 function setTierEvents(tierNum) {
-    $("#tr" + tierNum).on("dragover dragenter", allowDrop);
-    $("#tr" + tierNum).on("drop", drop);
-    $("#th" + tierNum).on("click", {tierNum: tierNum}, detectLeftCtrlCombo);
-    $("#th" + tierNum).on("dragstart", drag);
+    const tier = document.getElementById(`tr${tierNum}`);
+    const tierHeader = document.getElementById(`th${tierNum}`);
+    tier.addEventListener("dragover", allowDrop, false);
+    tier.addEventListener("dragenter", allowDrop, false);
+    tier.addEventListener("drop", drop, false);
+    tierHeader.addEventListener("click", detectLeftCtrlCombo, false);
+    tierHeader.addEventListener("dragstart", drag, false);
 
     if (isMobile()) {
-        $("#th" + tierNum).on("contextmenu", preventContextMenu);
+        tierHeader.addEventListener("contextmenu", preventContextMenu, false);
     } else {
-        $("#th" + tierNum).on("contextmenu", {tierNum: tierNum}, detectRightCtrlCombo);
+        tierHeader.addEventListener("contextmenu", detectRightCtrlCombo, false);
     }
 }
 
@@ -892,13 +909,19 @@ function removeTier(tierNum, skipConfirmation, noDisplay) {
         for (const otherTierNum in tierList) {
             if (otherTierNum > tierNum) {
                 removeTierEvents(otherTierNum - 1);
-                $("#tr" + (otherTierNum - 1)).html($("#tr" + otherTierNum).html().replace("th" + otherTierNum, "th" + (otherTierNum - 1)).replace("tier" + otherTierNum, "tier" + (otherTierNum - 1)));
-                $("#tier" + (otherTierNum - 1)).html($("#tier" + (otherTierNum - 1)).html().replace(new RegExp("tier" + otherTierNum + "_", "g"), "tier" + (otherTierNum - 1) + "_"));
-                tierList[otherTierNum - 1] = tierList[otherTierNum];
-                setTierEvents(otherTierNum - 1);
 
-                for (const item of tierList[otherTierNum - 1].chars) {
-                    setTieredItemEvents(item, otherTierNum - 1);
+                if (!noDisplay) {
+                    $("#tr" + (otherTierNum - 1)).html($("#tr" + otherTierNum).html().replace("th" + otherTierNum, "th" + (otherTierNum - 1)).replace("tier" + otherTierNum, "tier" + (otherTierNum - 1)));
+                    $("#tier" + (otherTierNum - 1)).html($("#tier" + (otherTierNum - 1)).html().replace(new RegExp("tier" + otherTierNum + "_", "g"), "tier" + (otherTierNum - 1) + "_"));
+                    setTierEvents(otherTierNum - 1);
+                }
+
+                tierList[otherTierNum - 1] = tierList[otherTierNum];
+
+                if (!noDisplay) {
+                    for (const item of tierList[otherTierNum - 1].chars) {
+                        setTieredItemEvents(item, otherTierNum - 1);
+                    }
                 }
             }
         }
@@ -955,9 +978,8 @@ function quickAdd(tierNum) {
     }
 }
 
-function saveSingleTierSettings(event) {
+function saveSingleTierSettings(tierNum) {
     emptyModal();
-    const tierNum = event.data.tierNum;
     const tierName = document.getElementById("custom_name_tier").value.strip().replace(/'/g, "");
     const tierBg = document.getElementById("custom_bg_tier").value;
     const tierColour = document.getElementById("custom_colour_tier").value;
@@ -967,7 +989,7 @@ function saveSingleTierSettings(event) {
     }
 
     if (!validateTierName(tierName)) {
-        document.getElementById("settings_msg_container").innerHTML = `<strong class='error'>Error: tier names may not exceed ${MAX_NAME_LENGTH} characters.</strong>`;
+        document.getElementById("tier_menu_msg_container").innerHTML = `<strong class='error'>Error: tier names may not exceed ${MAX_NAME_LENGTH} characters.</strong>`;
         return;
     }
 
@@ -987,24 +1009,18 @@ function tierMenu(tierNum) {
     document.getElementById("custom_name_tier").value = tierList[tierNum].name;
     document.getElementById("custom_bg_tier").value = tierList[tierNum].bg;
     document.getElementById("custom_colour_tier").value = tierList[tierNum].colour;
-    $("#save_tier_settings").off("click");
-    $("#save_tier_settings").on("click", {tierNum: tierNum}, saveSingleTierSettings);
-    $("#remove_tier").off("click");
-    $("#remove_tier").on("click", {tierNum: tierNum}, removeTierButton);
+    const saveTierSettings = document.getElementById("save_tier_settings");
+    saveTierSettings.removeEventListener("click", saveSingleTierSettings, false);
+    saveTierSettings.addEventListener("click", saveSingleTierSettings, false);
+    const removeTier = document.getElementById("remove_tier");
+    removeTier.removeEventListener("click", removeTierButton, false);
+    removeTier.addEventListener("click", removeTierButton, false);
     document.getElementById("tier_menu").style.display = "block";
     document.getElementById("modal").style.display = "block";
-
-    for (const otherTierNum in tierList) {
-        if (otherTierNum == tierNum) {
-            continue;
-        }
-
-        $("#tier_dropdown").append("<option value='" + otherTierNum + "'>" + tierList[otherTierNum].name + "</option>");
-    }
 }
 
 function detectLeftCtrlCombo(event) {
-    const tierNum = event.data.tierNum;
+    const tierNum = event.target.id.replace("th", "");
 
     if (event.ctrlKey) {
         quickAdd(tierNum);
@@ -1026,7 +1042,7 @@ function emptyTier(tierNum) {
 }
 
 function detectRightCtrlCombo(event) {
-    const tierNum = event.data.tierNum;
+    const tierNum = event.target.id.replace("th", "");
 
     if (event.ctrlKey) {
         emptyTier(tierNum);
@@ -1064,8 +1080,12 @@ function saveTiersAndSettings() {
 }
 
 function saveWithoutMenu() {
+    if (!allowData()) {
+        return;
+    }
+
     localStorage.setItem("settings", JSON.stringify(settings));
-    saveTiersData();
+    localStorage.setItem("tiers", JSON.stringify(tiers));
     printMessage("<strong class='confirmation'>Tier list(s) and settings saved!</strong>");
 }
 
@@ -1129,7 +1149,7 @@ function clearTiers(tierList, sort, sortBackup) {
 }
 
 function parseSettings(string, sort) {
-    var settingsArray = string.split(';');
+    const settingsArray = string.split(';');
 
     if (settingsArray.length == 3) {
         settings.props[sort].tierListName = settingsArray[0].replace(/[^a-zA-Z0-9|!|?|,|.|+|-|*@$%^&() ]/g, "");
@@ -1144,37 +1164,37 @@ function parseSettings(string, sort) {
 }
 
 function parseImport(text, tierList, sort, originalSort) {
+    const noDisplay = (sort == originalSort ? false : true);
     let alreadyAdded = [];
     let counter = -1;
-    let noDisplay = (sort == originalSort ? false : true);
     let characters;
 
     try {
         clearTiers(tierList, sort, originalSort);
 
         for (let i = 0; i < text.length; i++) {
-            if (i === 0 && sorts.includes(text[i])) {
+            if (i === 0 && sorts.includes(text[i])) { // sort on first line
                 i += 1;
             }
 
-            if (text[i].includes(';')) {
+            if (text[i].includes(';')) { // settings on first or second line
                 parseSettings(text[i], sort);
                 i += 1;
             }
 
-            if (text[i].includes(':')) {
+            if (text[i].includes(':')) { // tier name
                 addTier({data: {tierName: text[i].replace(':', ""), noDisplay: noDisplay}});
                 counter += 1;
                 i += 1;
             }
 
-            if (text[i].charAt(0) == '#') {
+            if (text[i].charAt(0) == '#') { // colouring
                 tierList[counter].bg = text[i].split(' ')[0];
                 tierList[counter].colour = text[i].split(' ')[1];
                 i += 1;
             }
 
-            if (text[i] !== "") {
+            if (text[i] !== "") { // tier list items
                 characters = text[i].split(',');
 
                 for (let item of characters) {
@@ -1185,7 +1205,7 @@ function parseImport(text, tierList, sort, originalSort) {
                     }
 
                     try {
-                        addToTier(item.removeSpaces(), counter, noDisplay);
+                        addToTier(item.removeSpaces(), counter, 0, noDisplay);
 
                         if (alreadyAdded.includes(item)) {
                             throw "Item already added";
@@ -1193,6 +1213,7 @@ function parseImport(text, tierList, sort, originalSort) {
 
                         alreadyAdded.push(item);
                     } catch (e) {
+                        console.error(`Import error: ${e.stack}`);
                         tierList[counter].chars.remove(item);
                     }
                 }
@@ -1201,7 +1222,7 @@ function parseImport(text, tierList, sort, originalSort) {
 
         return true;
     } catch (e) {
-        console.log(e);
+        console.error(`Import error: ${e.stack}`);
         return false;
     }
 }
@@ -1261,9 +1282,9 @@ function importText() {
     document.getElementById("modal").style.display = "block";
 }
 
-function copyToClipboard(event) {
+function copyToClipboard(text) {
     emptyModal();
-    navigator.clipboard.writeText(event.data.text.replace(/<\/p><p>/g, "\n").strip());
+    navigator.clipboard.writeText(text.replace(/<\/p><p>/g, "\n").strip());
     printMessage("<strong class='confirmation'>Copied to clipboard!</strong>");
 }
 
@@ -1309,15 +1330,17 @@ function exportText() {
     const saveLink = document.getElementById("save_link");
     saveLink.href = "data:text/plain;charset=utf-8," + encodeURIComponent(textFile);
     saveLink.download = fileName("txt");
-    $("#copy_to_clipboard").on("click", {text: textFile}, copyToClipboard);
+    document.getElementById("copy_to_clipboard").addEventListener("click", copyToClipboard(textFile), false);
     document.getElementById("export_text").style.display = "block";
     document.getElementById("modal").style.display = "block";
 }
 
 /*function base64toBlob(dataURI) {
-    var byteString = atob(dataURI.split(',')[1]), ab = new ArrayBuffer(byteString.length), ia = new Uint8Array(ab), i;
+    const byteString = atob(dataURI.split(',')[1]);
+    const ab = new ArrayBuffer(byteString.length);
+    let ia = new Uint8Array(ab);
 
-    for (i = 0; i < byteString.length; i++) {
+    for (let i = 0; i < byteString.length; i++) {
         ia[i] = byteString.charCodeAt(i);
     }
 
@@ -1409,6 +1432,13 @@ function showCheckboxes() {
     }
 
     settingsTable.innerHTML += "</tr>";
+
+    if (settings.sort == "characters") {
+        document.getElementById("pc98").checked = settings.pc98Enabled;
+        document.getElementById("windows").checked = settings.pc98Enabled;
+        document.getElementById("male").checked = settings.maleEnabled;
+        document.getElementById("themes").checked = settings.themesEnabled;
+    }
 }
 
 function settingsMenu() {
@@ -1544,10 +1574,9 @@ function saveSettingsData() {
     $(".tier_header").css("max-width", settings.props[settings.sort].tierHeaderWidth + "px");
     $(".tier_header").css("font-size", settings.props[settings.sort].tierHeaderFontSize + "px");
     $(".tier_content").css("background-color", settings.props[settings.sort].tierListColour);
-    $("#tier_list_caption").html(settings.props[settings.sort].tierListName);
-    $("#modal_inner").html("");
-    $("#modal_inner").css("display", "none");
-    $("#modal").css("display", "none");
+    document.getElementById("tier_list_caption").innerHTML = settings.props[settings.sort].tierListName;
+    document.getElementById("settings").style.display = "none";
+    document.getElementById("modal").style.display = "none";
     localStorage.setItem("settings", JSON.stringify(settings));
 }
 
@@ -1657,8 +1686,6 @@ function eraseAll() {
 }
 
 function drag(event) {
-    event.dataTransfer = event.originalEvent.dataTransfer;
-    event.dataTransfer.setData("text/plain", event.target.id);
     following = event.target.id;
 }
 
@@ -1689,7 +1716,7 @@ function itemOntoTier(tierNum) {
 }
 
 function dropOntoTier(event) {
-    var tierNum = Number(event.target.id.replace("th", "").replace("tier", "").replace(/_\d+/, ""));
+    const tierNum = Number(event.target.id.replace("th", "").replace("tier", "").replace(/_\d+/, ""));
 
     if (following.substring(0, 2) == "th") {
         tierOntoTier(tierNum);
@@ -1876,45 +1903,53 @@ function loadTiersFromStorage() {
 function loadItems(pageLoad) {
     const cats = categories[settings.sort];
 
-    if (!pageLoad) {
-        const items = document.getElementById("characters");
-
-        for (const categoryName in cats) {
-            const category = document.createElement("div");
-            category.id = categoryName;
-            category.classList.add("dark_bg");
-            items.appendChild(category);
+    try {
+        if (!pageLoad) {
+            const items = document.getElementById("characters");
     
-            for (const item of cats[categoryName].chars) {
-                let span = document.createElement("span");
-                let childSpan = document.createElement("span");
-                span.id = `${item}C`;
-                childSpan.id = `${item}`;
-                childSpan.classList.add("item");
-                childSpan.classList.add(`list_${settings.sort}`);
-                childSpan.draggable = true;
-                childSpan.title = addSpacing(item);
-                category.appendChild(span);
-                span.appendChild(childSpan);
-                setPickerItemEvents(item);
+            for (const categoryName in cats) {
+                const category = document.createElement("div");
+                category.id = categoryName;
+                category.classList.add("dark_bg");
+                items.appendChild(category);
+        
+                for (const item of cats[categoryName].chars) {
+                    let span = document.createElement("span");
+                    let childSpan = document.createElement("span");
+                    span.id = `${item}C`;
+                    childSpan.id = `${item}`;
+                    childSpan.classList.add("item");
+                    childSpan.classList.add(`list_${settings.sort}`);
+                    childSpan.draggable = true;
+                    childSpan.title = addSpacing(item);
+                    category.appendChild(span);
+                    span.appendChild(childSpan);
+                    setPickerItemEvents(item);
+                }
+            }
+        } else { // on page load
+            for (const categoryName in cats) {
+                for (const item of cats[categoryName].chars) {
+                    setPickerItemEvents(item);
+                    document.getElementById(item).title = addSpacing(item);
+                }
             }
         }
-    } else {
+    
         for (const categoryName in cats) {
-            for (const item of cats[categoryName].chars) {
-                setPickerItemEvents(item);
-                document.getElementById(item).title = addSpacing(item);
+            if (!settings.categories[settings.sort][categoryName].enabled) {
+                document.getElementById(categoryName).style.display = "none";
+            }
+    
+            if (settings.sort == "characters") {
+                toggleMale();
+                toggleThemes();
             }
         }
-    }
-
-    for (const categoryName in cats) {
-        if (!settings.categories[settings.sort][categoryName].enabled) {
-            document.getElementById(categoryName).style.display = "none";
-        }
-
-        toggleMale();
-        toggleThemes();
+    } catch (e) { // if load is broken due to outdated save
+        settings.sort = "characters";
+        localStorage.setItem("settings", JSON.stringify(settings));
+        location.reload();
     }
 }
 
@@ -2042,11 +2077,11 @@ function detectSettingsEnter(event) {
     }
 }
 
-function detectTiersEnter(event) {
+/*function detectTiersEnter(event) {
     if (event.key && event.key == "Enter") {
-        saveSingleTierSettings(event);
+        console.log(event.target.value);
     }
-}
+}*/
 
 function setEventListeners() {
     setAddTierListeners();
@@ -2080,7 +2115,7 @@ function setEventListeners() {
     document.getElementById("erase_all_button").addEventListener("click", modalEraseAll, false);
     document.getElementById("erase_single_button").addEventListener("click", modalEraseSingle, false);
     document.getElementById("cancel_button").addEventListener("click", emptyModal, false);
-    document.getElementById("custom_name_tier").addEventListener("keyup", detectTiersEnter, false);
+    //document.getElementById("custom_name_tier").addEventListener("keyup", detectTiersEnter, false);
     document.getElementById("import_button_mobile").addEventListener("click", importText, false);
     document.getElementById("export_button_mobile").addEventListener("click", exportText, false);
     document.getElementById("screenshot_button_mobile").addEventListener("click", takeScreenshot, false);
