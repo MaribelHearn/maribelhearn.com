@@ -45,6 +45,7 @@
                 </tr>
                 <tr id='add_tier_box_mobile'>
                     <td id='add_tier_cell_mobile' colspan='2'>
+                        <span id='msg_container_mobile'></span><br>
                         <label for='tier_name_mobile'>
                             <span class='hidden'>.</span>
                             <input id='tier_name_mobile' type='text' value=''>
@@ -280,7 +281,6 @@
 	<input id='menu_button' type='button' value='Menu'>
 	<input id='information_button' class='button_bottom' type='button' value='Information'>
 	<input id='switch_button' class='button_bottom' type='button' value='Switch Mode'>
-	<p id='msg_container_mobile'></p>
 </div>
 <div id='characters' class='dark_bg' data-html2canvas-ignore><?php
     if (!isset($_COOKIE['sort'])) {
