@@ -488,6 +488,8 @@ function addToTier(item, tierNum, pos, noDisplay) {
     if (!noDisplay) {
         for (const item of cats[categoryName].chars) {
             if (!isTiered(item)) {
+                printMessage("");
+                unsavedChanges = true;
                 return;
             }
         }
@@ -863,9 +865,12 @@ function removeCharacters(tierNum, noDisplay) {
     return removedItems;
 }
 
-function removeTierButton(event) {
-    printMessage("<strong class='confirmation'>" + getCurrentTierList()[event.data.tierNum].name + " tier removed!</strong>");
-    removeTier(event.data.tierNum);
+function removeTierButton() {
+    const tierList = getCurrentTierList();
+    const tierNum = document.getElementById("tier_num").value;
+    const tierName = tierList[tierNum].name;
+    removeTier(tierNum);
+    printMessage(`<strong class='confirmation'>${tierName} tier removed!</strong>`);
     emptyModal();
 }
 
