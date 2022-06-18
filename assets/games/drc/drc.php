@@ -63,7 +63,7 @@
             <option id='survival0' value='Survival'><?php echo _('Survival') ?></option>
         </select>
         <div id='performance'></div>
-        <label id='shottypeLabel' for='shottype'></label>
+        <label id='shottype_label' for='shottype'></label>
 		<select id='shottype'></select>
         <select id='season'>
             <option id='spring' value='Spring'><?php echo _('Spring') ?></option>
@@ -86,9 +86,9 @@
         echo _('The rubrics are the formulas and fixed values used to calculate the number of DRC points for a run. ' .
         'If you are curious about how your points are being determined, click the button below to expand.');
     ?></p>
-    <input id='scoringButton' type='button' value='<?php echo _('Show Scoring Rubrics') ?>'>
-    <input id='survivalButton' type='button' value='<?php echo _('Show Survival Rubrics') ?>'>
-    <div id='scoringRubrics'>
+    <input id='scoring_button' type='button' value='<?php echo _('Show Scoring Rubrics') ?>'>
+    <input id='survival_button' type='button' value='<?php echo _('Show Survival Rubrics') ?>'>
+    <div id='scoring_rubrics' class='rubrics'>
         <p><strong id='scoringNotes'><?php echo _('Scoring Notes') ?></strong></p>
 		<ul>
 			<li id='WRpage'><?php
@@ -271,7 +271,7 @@
         <br>
         <p><strong><a class='backToTop' href='#top'><?php echo _('Back to Top') ?></a></strong></p>
 	</div>
-	<div id='survivalRubrics'>
+	<div id='survival_rubrics' class='rubrics'>
         <p><strong id='survivalNotes'><?php echo _('Survival Notes') ?></strong></p>
 		<ul>
             <li id='maingame'>

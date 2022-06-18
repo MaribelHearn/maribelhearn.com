@@ -42,7 +42,6 @@ function directory(string $page) {
 }
 $min = (!is_localhost($_SERVER['REMOTE_ADDR']) ? '-min' : '');
 $sorttable = array('drc', 'fangame', 'gensokyo', 'lnn', 'royalflare', 'scoring', 'survival', 'thvote', 'wr');
-$jquery = array('drc');
 $canvas = array('slots', 'survival', 'tiers');
 $wr_json = array('drc', 'scoring', 'wr');
 $po2json = array('drc', 'lnn', 'wr');
@@ -52,9 +51,6 @@ $js = array();
 if (in_array($page, $canvas)) {
     array_push($js, 'js/html2canvas' . $min . '.js');
     array_push($js, 'js/polyfill_promise' . $min . '.js');
-}
-if (in_array($page, $jquery)) {
-    array_push($js, 'js/jquery' . $min . '.js');
 }
 if (in_array($page, $sorttable) && !($page == 'wr' && isset($_COOKIE['wr_old_layout'])) && !($page == 'lnn' && isset($_COOKIE['lnn_old_layout']))) {
     array_push($js, 'js/sorttable' . $min . '.js');
@@ -77,7 +73,7 @@ if ($page == 'scoring') {
     echo 'let scores = ' . file_get_contents('json/defaults.json') . ';';
 }
 if ($page == 'drc') {
-    echo 'const Rubrics = ' . file_get_contents('json/rubrics.json') . ';';
+    echo 'const rubrics = ' . file_get_contents('json/rubrics.json') . ';';
 }
 if ($page == 'lnn') {
     if (file_exists('json/lnnlist.json')) {
