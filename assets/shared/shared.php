@@ -495,7 +495,7 @@ function handle_file_upload() {
                 case UPLOAD_ERR_NO_FILE:
                     return '<strong class="error">Error: no file sent.</strong>';
                 default:
-                    return '<strong class="error">Error: the file upload failed for an unknown reason.</strong>';
+                    return '<strong class="error">Error: file upload failed for an unknown reason.</strong>';
             }
             $finfo = new finfo(FILEINFO_MIME_TYPE);
             if (false === $ext = array_search(
@@ -509,7 +509,7 @@ function handle_file_upload() {
                 return '<strong class="error">Error: invalid file format; expected plain text.</strong>';
             }
             if ($_FILES['import']['size'] > 5000) {
-                return '<strong class="error">Error: the file exceeds the upload size limit.</strong>';
+                return '<strong class="error">Error: file exceeds the upload size limit.</strong>';
             }
             if (!empty($ext)) {
                 $ext = '.' . $ext;

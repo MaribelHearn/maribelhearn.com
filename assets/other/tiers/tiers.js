@@ -1,4 +1,4 @@
-/*global $ categories html2canvas isMobile setCookie getCookie deleteCookie MobileDragDrop*/
+/*global categories html2canvas isMobile setCookie getCookie deleteCookie MobileDragDrop*/
 if (typeof MobileDragDrop !== "undefined") {
     MobileDragDrop.polyfill({
         holdToDrag: 200
@@ -107,7 +107,6 @@ const DEFAULT_SETTINGS = {
     "themesEnabled": false,
     "sort": "characters"
 };
-let tieredItems = [];
 let settings = DEFAULT_SETTINGS;
 let tiers = {};
 let multiSelection = [];
@@ -464,8 +463,6 @@ function addToTier(item, tierNum, pos, noDisplay) {
         return;
     }
 
-    printMessage("");
-
     if (!noDisplay) {
         const itemElement = document.getElementById(item);
         itemElement.classList.remove("selected");
@@ -498,7 +495,7 @@ function addToTier(item, tierNum, pos, noDisplay) {
         document.getElementById(categoryName).style.display = "none";
     }
     
-    tieredItems.push(item);
+    printMessage("");
     unsavedChanges = true;
 }
 
@@ -636,7 +633,6 @@ function moveToBack(character, tierNum) {
 }
 
 function moveItemTo(sourceItem, targetItem) {
-    console.log(`moveItemTo(${sourceItem}, ${targetItem})`);
     const tierList = getCurrentTierList();
     const sourcePos = getPositionOf(sourceItem);
     const targetPos = getPositionOf(targetItem);
@@ -665,12 +661,12 @@ function moveItemTo(sourceItem, targetItem) {
 
     document.getElementById("tier" + tierNum + "_" + targetPos).appendChild(tierBackup);
     tierList[tierNum].chars[targetPos] = sourceItem;
-    printMessage("");
 
     for (const item of tierList[tierNum].chars) {
         setTieredItemEvents(item);
     }
 
+    printMessage("");
     unsavedChanges = true;
 }
 
@@ -701,8 +697,6 @@ function removeFromTier(item, tierNum, multi, noDisplay) {
         return;
     }
 
-    printMessage("");
-
     if (!noDisplay) {
         const itemElement = document.getElementById(item);
         itemElement.classList.remove("tiered_" + settings.sort);
@@ -725,13 +719,13 @@ function removeFromTier(item, tierNum, multi, noDisplay) {
     }
 
     tierList[tierNum].chars.remove(item);
-    tieredItems.remove(item);
 
     if (!multi && multiSelection.includes(item)) {
         document.getElementById(item).classList.remove("selected");
         multiSelection.remove(item);
     }
 
+    printMessage("");
     unsavedChanges = true;
 }
 
@@ -799,95 +793,74 @@ function addTier(tierName, noDisplay) {
     unsavedChanges = true;
 }
 
+function copyTierSettings(tierList, tierNum, otherTierNum) {
+    const tierHeader = document.getElementById(`th${tierNum}`);
+    tierHeader.style.color = tierList[otherTierNum].colour;
+    tierHeader.style.backgroundColor = tierList[otherTierNum].bg;
+    tierHeader.innerHTML = tierList[otherTierNum].name;
+    tierList[tierNum].colour = tierList[otherTierNum].colour;
+    tierList[tierNum].bg = tierList[otherTierNum].bg;
+    tierList[tierNum].name = tierList[otherTierNum].name;
+}
+
 function moveTierTo(sourceTierNum, targetTierNum) {
     const tierList = getCurrentTierList();
-    const tmpHtml = $("#th" + sourceTierNum).html();
-    const tmpChars = $("#tier" + sourceTierNum).html();
-    const tmp = tierList[sourceTierNum];
+    const sourceBackup = JSON.parse(JSON.stringify(tierList[sourceTierNum]));
 
     if (sourceTierNum > targetTierNum) {
         for (let tierNum = sourceTierNum; tierNum > targetTierNum; tierNum--) {
             const prevTierNum = tierNum - 1;
-            $("#th" + tierNum).css("color", tierList[prevTierNum].colour);
-            $("#th" + tierNum).css("background-color", tierList[prevTierNum].bg);
-            $("#th" + tierNum).html($("#th" + prevTierNum).html());
-            $("#tier" + tierNum).html($("#tier" + prevTierNum).html().replace(new RegExp("tier" + prevTierNum + "_", "g"), "tier" + tierNum + "_"));
-            tierList[tierNum] = tierList[prevTierNum];
+            const removedItems = removeCharacters(prevTierNum);
+            copyTierSettings(tierList, tierNum, prevTierNum);
+
+            for (const item of removedItems) {
+                addToTier(item, tierNum);
+            }
         }
     } else { // sourceTierNum < targetTierNum
         for (let tierNum = sourceTierNum; tierNum < targetTierNum; tierNum++) {
             const nextTierNum = tierNum + 1;
-            $("#th" + tierNum).css("color", tierList[nextTierNum].colour);
-            $("#th" + tierNum).css("background-color", tierList[nextTierNum].bg);
-            $("#th" + tierNum).html($("#th" + nextTierNum).html());
-            $("#tier" + tierNum).html($("#tier" + nextTierNum).html().replace(new RegExp("tier" + nextTierNum + "_", "g"), "tier" + tierNum + "_"));
-            tierList[tierNum] = tierList[nextTierNum];
+            const removedItems = removeCharacters(nextTierNum);
+            copyTierSettings(tierList, tierNum, nextTierNum);
+
+            for (const item of removedItems) {
+                addToTier(item, tierNum);
+            }
         }
     }
 
-    tierList[targetTierNum] = tmp;
+    for (const item of sourceBackup.chars) {
+        removeFromTier(item, sourceTierNum);
+        addToTier(item, targetTierNum);
+    }
+
     const targetTierHeader = document.getElementById(`th${targetTierNum}`);
-    //const targetTierContent = document.getElementById(`tier${targetTierNum}`);
-    targetTierHeader.style.color = tmp.colour;
-    targetTierHeader.style.backgroundColor = tmp.bg;
-    $("#th" + targetTierNum).html(tmpHtml);
-    $("#tier" + targetTierNum).html(tmpChars);
-    $("#tier" + targetTierNum).html($("#tier" + targetTierNum).html().replace(new RegExp("tier" + sourceTierNum + "_", "g"), "tier" + targetTierNum + "_"));
+    targetTierHeader.style.color = sourceBackup.colour;
+    targetTierHeader.style.backgroundColor = sourceBackup.bg;
+    targetTierHeader.innerHTML = sourceBackup.name;
+    tierList[targetTierNum].colour = sourceBackup.colour;
+    tierList[targetTierNum].bg = sourceBackup.bg;
+    tierList[targetTierNum].name = sourceBackup.name;
     printMessage("");
-
-    for (const tierNum in tierList) {
-        for (const item of tierList[tierNum].chars) {
-            setTieredItemEvents(item);
-        }
-    }
-
     unsavedChanges = true;
 }
 
 function removeCharacters(tierNum, noDisplay) {
     const tierList = getCurrentTierList();
+    let removedItems = [];
 
     while (tierList[tierNum].chars.length > 0) {
         const item = tierList[tierNum].chars[tierList[tierNum].chars.length - 1];
         const multi = (noDisplay ? false : multiSelection.includes(item));
         removeFromTier(item, tierNum, multi, noDisplay);
+        removedItems.push(item);
     }
 
     if (!noDisplay) {
         document.getElementById(`tier${tierNum}`).innerHTML = ""; // temporary measure against sudden double digit spans
     }
-}
-
-function removeTierEvents(tierNum) {
-    const tier = document.getElementById(`tr${tierNum}`);
-    const tierHeader = document.getElementById(`th${tierNum}`);
-    tier.removeEventListener("dragover", allowDrop, false);
-    tier.removeEventListener("dragenter", allowDrop, false);
-    tier.removeEventListener("drop", drop, false);
-    tierHeader.removeEventListener("click", detectLeftCtrlCombo, false);
-    tierHeader.removeEventListener("dragstart", drag, false);
-
-    if (isMobile()) {
-        tierHeader.removeEventListener("contextmenu", preventContextMenu, false);
-    } else {
-        tierHeader.removeEventListener("contextmenu", detectRightCtrlCombo, false);
-    }
-}
-
-function setTierEvents(tierNum) {
-    const tier = document.getElementById(`tr${tierNum}`);
-    const tierHeader = document.getElementById(`th${tierNum}`);
-    tier.addEventListener("dragover", allowDrop, false);
-    tier.addEventListener("dragenter", allowDrop, false);
-    tier.addEventListener("drop", drop, false);
-    tierHeader.addEventListener("click", detectLeftCtrlCombo, false);
-    tierHeader.addEventListener("dragstart", drag, false);
-
-    if (isMobile()) {
-        tierHeader.addEventListener("contextmenu", preventContextMenu, false);
-    } else {
-        tierHeader.addEventListener("contextmenu", detectRightCtrlCombo, false);
-    }
+    
+    return removedItems;
 }
 
 function removeTierButton(event) {
@@ -896,11 +869,11 @@ function removeTierButton(event) {
     emptyModal();
 }
 
-function removeTier(tierNum, skipConfirmation, noDisplay) {
+function removeTier(sourceTierNum, skipConfirmation, noDisplay) {
     const tierList = getCurrentTierList();
     let confirmation = true;
 
-    if (tierList[tierNum].chars.length === 0) {
+    if (tierList[sourceTierNum].chars.length === 0) {
         skipConfirmation = true;
     }
 
@@ -909,39 +882,34 @@ function removeTier(tierNum, skipConfirmation, noDisplay) {
     }
 
     if (confirmation) {
-        removeCharacters(Number(tierNum), noDisplay);
+        const lastTierNum = Object.keys(tierList).length - 1;
+        removeCharacters(sourceTierNum, noDisplay);
 
-        for (const otherTierNum in tierList) {
-            if (otherTierNum > tierNum) {
-                removeTierEvents(otherTierNum - 1);
+        for (let tierNum = Number(sourceTierNum) + 1; tierNum <= lastTierNum; tierNum++) {
+            const prevTierNum = tierNum - 1;
 
-                if (!noDisplay) {
-                    $("#tr" + (otherTierNum - 1)).html($("#tr" + otherTierNum).html().replace("th" + otherTierNum, "th" + (otherTierNum - 1)).replace("tier" + otherTierNum, "tier" + (otherTierNum - 1)));
-                    $("#tier" + (otherTierNum - 1)).html($("#tier" + (otherTierNum - 1)).html().replace(new RegExp("tier" + otherTierNum + "_", "g"), "tier" + (otherTierNum - 1) + "_"));
-                    setTierEvents(otherTierNum - 1);
+            if (!noDisplay) {
+                const removedItems = removeCharacters(tierNum);
+                copyTierSettings(tierList, prevTierNum, tierNum);
+
+                for (const item of removedItems) {
+                    addToTier(item, prevTierNum);
                 }
-
-                tierList[otherTierNum - 1] = tierList[otherTierNum];
-
-                if (!noDisplay) {
-                    for (const item of tierList[otherTierNum - 1].chars) {
-                        setTieredItemEvents(item);
-                    }
-                }
+            } else { // noDisplay
+                tierList[prevTierNum] = tierList[tierNum];
             }
         }
 
-        const lastTierNum = Object.keys(tierList).length - 1;
         delete tierList[lastTierNum];
 
         if (!noDisplay) {
             const lastTier = document.getElementById(`tr${lastTierNum}`);
             lastTier.parentNode.removeChild(lastTier);
         }
-    }
+    }   
 
+    printMessage("");
     unsavedChanges = true;
-    return false;
 }
 
 function emptyModal() {
@@ -987,7 +955,6 @@ function saveSingleTierSettings() {
     emptyModal();
     const tierList = getCurrentTierList();
     const tierNum = document.getElementById("tier_num").value;
-    console.log(tierNum);
     const tierName = document.getElementById("custom_name_tier").value.strip().replace(/'/g, "");
     const tierBg = document.getElementById("custom_bg_tier").value;
     const tierColour = document.getElementById("custom_colour_tier").value;
@@ -1227,7 +1194,6 @@ function parseImport(text, tierList, sort, originalSort) {
 
                         alreadyAdded.push(item);
                     } catch (e) {
-                        console.error(`Import error: ${e.stack}`);
                         tierList[counter].chars.remove(item);
                     }
                 }
@@ -1236,7 +1202,7 @@ function parseImport(text, tierList, sort, originalSort) {
 
         return true;
     } catch (e) {
-        console.error(`Import error: ${e.stack}`);
+        console.error(`Import error: ${e}`);
         return false;
     }
 }
@@ -1610,7 +1576,6 @@ function saveSettingsData() {
 }
 
 function toggleTierView() {
-    printMessage("");
     const wrap = document.getElementById("wrap");
 
     if (tierView) {
@@ -1635,11 +1600,12 @@ function toggleTierView() {
         wrap.style.border = "none";
     }
 
+    printMessage("");
     tierView = !tierView;
 }
 
-function togglePickerSize(event) {
-    smallPicker = (event && event.data && event.data.load ? true : !smallPicker);
+function togglePickerSize(onLoad) {
+    smallPicker = (onLoad ? true : !smallPicker);
     document.getElementById("wrap").style.width = (smallPicker ? "65%" : "45%");
     document.getElementById("characters").style.width = ( smallPicker ? "31%" : "51%");
     document.getElementById("toggle_picker").value = (smallPicker ? "Large Picker" : "Small Picker");
@@ -1650,7 +1616,7 @@ function togglePickerSize(event) {
         delete settings.picker;
     }
 
-    if (!event || !event.data || !event.data.load) {
+    if (!onLoad) {
         saveWithoutMenu();
     }
 
@@ -2008,7 +1974,8 @@ function loadLegacySettings(settingsData) {
         }
 
         if (settingsData.picker && settingsData.picker == "small") {
-            togglePickerSize({data: {load: true}});
+            const onLoad = true;
+            togglePickerSize(onLoad);
         }
 
         settings.pc98Enabled = settingsData.pc98Enabled;
@@ -2046,7 +2013,8 @@ function loadSettingsFromStorage() {
         }
 
         if (settingsData.picker && settingsData.picker == "small") {
-            togglePickerSize({data: {load: true}});
+            const onLoad = true;
+            togglePickerSize(onLoad);
         }
 
         for (const sort of sorts) {
@@ -2088,7 +2056,7 @@ function detectAddTierEnter(event) {
     }
 }
 
-/*function detectSettingsEnter(event) {
+function detectSettingsEnter(event) {
     if (event.key && event.key == "Enter") {
         saveTiersAndSettings();
     }
@@ -2096,11 +2064,17 @@ function detectAddTierEnter(event) {
 
 function detectTiersEnter(event) {
     if (event.key && event.key == "Enter") {
-        console.log(event.target.value);
+        saveSingleTierSettings(document.getElementById("tier_num").value);
     }
-}*/
+}
 
 function setEventListeners() {
+    const settingsInput = document.querySelectorAll(".settings_input");
+
+    for (const element of settingsInput) {
+        element.addEventListener("keyup", detectSettingsEnter, false);
+    }
+
     document.body.addEventListener("click", closeModal, false);
     document.body.addEventListener("keyup", detectKey, false);
     document.getElementById("sort").addEventListener("change", switchSort, false);
@@ -2130,7 +2104,7 @@ function setEventListeners() {
     document.getElementById("erase_all_button").addEventListener("click", modalEraseAll, false);
     document.getElementById("erase_single_button").addEventListener("click", modalEraseSingle, false);
     document.getElementById("cancel_button").addEventListener("click", emptyModal, false);
-    //document.getElementById("custom_name_tier").addEventListener("keyup", detectTiersEnter, false);
+    document.getElementById("custom_name_tier").addEventListener("keyup", detectTiersEnter, false);
     document.getElementById("import_button_mobile").addEventListener("click", importText, false);
     document.getElementById("export_button_mobile").addEventListener("click", exportText, false);
     document.getElementById("screenshot_button_mobile").addEventListener("click", takeScreenshot, false);
@@ -2180,7 +2154,7 @@ function init() {
         doImport();
         importElement.parentNode.removeChild(importElement);
     } else {
-        if (errorElement && errorElement.length) {
+        if (errorElement && errorElement.value) {
             printMessage(errorElement.value);
             errorElement.parentNode.removeChild(errorElement);
         }
