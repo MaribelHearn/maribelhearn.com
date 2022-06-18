@@ -148,15 +148,16 @@ function checkValues(event) {
 }
 
 function gameChanged() {
-    checkValues({changePerf: true, changeShots: true});
+    checkValues({data: {changePerf: true, changeShots: true}});
 }
 
 function challengeChanged() {
-    checkValues({changePerf: true, changeShots: false});
+    checkValues({data: {changePerf: true, changeShots: false}});
 }
 
 function shottypeChanged() {
-    checkValues({changePerf: false, changeShots: false});
+    checkValues({data: {changePerf: false, changeShots: false}});
+    
 }
 
 function checkShottypes(alwaysChange) {
