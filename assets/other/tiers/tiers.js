@@ -1585,7 +1585,7 @@ function toggleTierView() {
         document.body.style.background = "url('assets/other/tiers/tiers.jpg') center no-repeat fixed";
         document.body.style.backgroundSize = "cover";
         wrap.style.width = (smallPicker ? "65%" : "45%");
-        wrap.style.bottom =- "";
+        wrap.style.bottom = "";
         wrap.style.left = "";
         wrap.style.border = "1px solid #000";
     } else {
@@ -1593,9 +1593,9 @@ function toggleTierView() {
         document.getElementById("toggle_picker").style.display = "none";
         document.getElementById("toggle_view").value = "Normal View";
         document.body.style.background = defaultBg;
-        document.body.style.backgroundSize = "default";
+        document.body.style.backgroundSize = "auto";
         wrap.style.width = "auto";
-        wrap.style.bottom =- "5px";
+        wrap.style.bottom = "5px";
         wrap.style.left = "5px";
         wrap.style.border = "none";
     }
@@ -1605,7 +1605,7 @@ function toggleTierView() {
 }
 
 function togglePickerSize(onLoad) {
-    smallPicker = (onLoad ? true : !smallPicker);
+    smallPicker = (onLoad === true ? true : !smallPicker);
     document.getElementById("wrap").style.width = (smallPicker ? "65%" : "45%");
     document.getElementById("characters").style.width = ( smallPicker ? "31%" : "51%");
     document.getElementById("toggle_picker").value = (smallPicker ? "Large Picker" : "Small Picker");
@@ -1616,7 +1616,7 @@ function togglePickerSize(onLoad) {
         delete settings.picker;
     }
 
-    if (!onLoad) {
+    if (onLoad !== true) {
         saveWithoutMenu();
     }
 
