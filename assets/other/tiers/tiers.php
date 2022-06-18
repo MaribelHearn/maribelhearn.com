@@ -236,7 +236,7 @@
         <h2 id='tier_menu_header'>Customise Tier</h2>
         <p class='name'>
             <label for='custom_name_tier'>Name</label>
-            <input id='custom_name_tier' class='settings_input' type='text' value=''>
+            <input id='custom_name_tier' type='text' value=''>
             <input id='tier_num' type='hidden' value=''>
         </p>
         <p class='colour'>
