@@ -12,8 +12,8 @@ $games = Array('EoSD', 'PCB', 'IN', 'PoFV', 'StB', 'MoF', 'SA', 'UFO', 'DS', 'GF
 $diffs = Array('Easy', 'Normal', 'Hard', 'Lunatic', 'Extra', 'Phantasm', 'Last Word');
 $types = Array('Normal', 'Practice', 'Spell');
 if (empty($_GET['id'])) {
-    $player = empty($_GET['player']) ? '-' : $_GET['player'];
-    $shot = empty($_GET['shot']) ? '-' : $_GET['shot'];
+    $player = empty($_GET['player']) ? '-' : htmlentities($_GET['player']);
+    $shot = empty($_GET['shot']) ? '-' : htmlentities($_GET['shot']);
     if (!empty($_GET['game']) && $_GET['game'] !== '-' && in_array($_GET['game'], $games)) {
         $game = $_GET['game'];
     } else {
