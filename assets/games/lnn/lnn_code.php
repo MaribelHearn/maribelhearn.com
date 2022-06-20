@@ -22,38 +22,6 @@ $video_lnns = array();
 $gt = 0;
 
 function lnn_type(string $game, string $lang) {
-    /*if ($lang == 'zh_CN') {
-        switch ($game) {
-            case 'PCB': return 'LNNN的数量';
-            case 'IN': return 'LNNFS的数量';
-            case 'TD': return 'LNNN的数量';
-            case 'HSiFS': return 'LNNN的数量';
-            case 'WBaWC': return 'LNNNN的数量';
-            case 'UM': return 'LNNN的数量';
-            default: return 'LNN的数量';
-        }
-    } else if ($lang == 'ja_JP') {
-        switch ($game) {
-            case 'PCB': return 'LNNNの数';
-            case 'IN': return 'LNNFSの数';
-            case 'TD': return 'LNNNの数';
-            case 'HSiFS': return 'LNNNの数';
-            case 'WBaWC': return 'LNNNNの数';
-            case 'UM': return 'LNNNの数';
-            default: return 'LNNの数';
-        }
-    } else if ($lang == 'de_DE') {
-        switch ($game) {
-            case 'PCB': return 'Anzahl LNNNs';
-            case 'IN': return 'Anzahl LNNFSs';
-            case 'UFO': return 'Anzahl LNN(N)s';
-            case 'TD': return 'Anzahl LNNNs';
-            case 'HSiFS': return 'Anzahl LNNNs';
-            case 'WBaWC': return 'Anzahl LNNNNs';
-            case 'UM': return 'Anzahl LNNNs';
-            default: return 'Anzahl LNNs';
-        }
-    } else { // English or Russian*/
     switch ($game) {
         case 'PCB': return _('No. of LNNNs');
         case 'IN': return _('No. of LNNFSs');
@@ -64,7 +32,6 @@ function lnn_type(string $game, string $lang) {
         case 'UM': return _('No. of LNNNs');
         default: return _('No. of LNNs');
     }
-    //}
 }
 
 function date_tl(string $date, string $lang) {
@@ -116,7 +83,7 @@ function replay_path(string $game, string $player, string $shot) {
         $first = $player[0];
         $last = ($type !== "" ? $type[strlen($type) - 1] : $player[strlen($player) - 1]);
     }
-    return 'replays/lnn/' . $folder . '/th' . num($game) . '_ud' . $first . $last . shot_abbr($char) . '.rpy';
+    return 'replays/lnn/' . $folder . '/th' . game_num($game) . '_ud' . $first . $last . shot_abbr($char) . '.rpy';
 }
 foreach ($lnn as $game => $data1) {
     if ($game == 'LM') {
@@ -128,7 +95,7 @@ foreach ($lnn as $game => $data1) {
         $sum += sizeof($data2);
         foreach ($data2 as $key => $player) {
             $nospaces = str_replace(' ', '', $player);
-            if (!file_exists(replay_path($game, $nospaces, $shottype)) && num($game) > 5) {
+            if (!file_exists(replay_path($game, $nospaces, $shottype)) && game_num($game) > 5) {
                 array_push($missing_replays, ($game . $nospaces . $shottype));
             }
             if (!in_array($player, $pl)) {
