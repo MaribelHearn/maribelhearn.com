@@ -49,7 +49,7 @@ function replay_path(string $game, string $diff, string $shot) {
             $diff = '0' . $diff;
         }
     }
-    return 'replays/th' . num($game) . '_ud' . substr($diff, 0, 2) . shot_abbr($shot) . '.rpy';
+    return 'replays/th' . game_num($game) . '_ud' . substr($diff, 0, 2) . shot_abbr($shot) . '.rpy';
 }
 
 function date_tl(string $date, string $lang) {
@@ -97,7 +97,7 @@ function is_later_date(string $date1, string $date2) {
 }
 
 foreach ($wr as $game => $value) {
-    $num = num($game);
+    $num = game_num($game);
     $overall[$num] = 0;
     $flag = array_fill(0, sizeof($flag), true);
     $diff_max[$game] = array();

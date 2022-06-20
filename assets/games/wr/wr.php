@@ -73,8 +73,8 @@
                     if ($game == 'StB' || $game == 'DS') {
                         continue;
                     }
-					$num = num($game);
-					echo '<tr id="' . $game . 'o"><td>' . $num . '</td><td class="' . $game . '">' . _($game) . '</td>';
+					$num = game_num($game);
+					echo '<tr id="' . $game . 'o"><td' . ($num == 128 ? ' sorttable_customkey="12.8"' : '') . '>' . $num . '</td><td class="' . $game . '">' . _($game) . '</td>';
 					echo '<td id="' . $game . 'overall0">' . ($game == 'WBaWC' || $game == 'UM' ? '<span class="cs">9,999,999,990' .
                     '<span class="tooltip truescore">' . number_format($overall[$num], 0, '.', ',') .
                     '</span></span> ' : number_format($overall[$num], 0, '.', ',')) . '</td>';
@@ -103,7 +103,7 @@
                 if ($game == 'StB' || $game == 'DS') {
                     continue;
                 }
-				$num = num($game);
+				$num = game_num($game);
 				echo '<p class="' . $game . '">' . _($game) . '</p><p>';
                 echo '<span id="' . $game . 'overall0m">' . ($game == 'WBaWC' || $game == 'UM' ? '<span class="cs">9,999,999,990' .
                 '<span class="tooltip truescore">' . number_format($overall[$num], 0, '.', ',') .
@@ -133,7 +133,7 @@
             echo '<div id="' . $game . '">';
             echo '<table id="' . $game . '_table" class="' . $game .
             't sortable"><caption><p><span id="' . $game . '_image_old" ' .
-            'class="cover sheet' . $sheet . (num($game) <= 5 ? ' cover98' : '') .
+            'class="cover sheet' . $sheet . (game_num($game) <= 5 ? ' cover98' : '') .
             '"></span> ' . full_name($game) . '</p></caption>' .
             '<thead><tr><th>' . shot_route($game) . '</th>';
             foreach ($obj as $diff => $shots) {
@@ -187,7 +187,7 @@
                         } else if (!empty($video)) {
                             $score_text = '<a class="replay" href="' . $video . '">' . $score_text . '<span class="dl_icon"></span></a>';
                         }
-                        if ($score == $overall[num($game)] && $game != 'StB' && $game != 'DS') {
+                        if ($score == $overall[game_num($game)] && $game != 'StB' && $game != 'DS') {
                             $score_text = '<strong>' . $score_text . '</strong>';
                         }
                         if ($score == $diff_max[$game][$diff][0] && $game != 'StB' && $game != 'DS') {
@@ -380,7 +380,7 @@
                 <tr>
 					<th class='general_header head'>#</th>
                     <th class='general_header player'><?php echo _('Player') ?></th>
-                    <th id='autosort' class='general_header sorttable_numeric'><?php echo _('No. of WRs') ?></th>
+                    <th class='general_header sorttable_numeric'><?php echo _('No. of WRs') ?></th>
                     <th id='differentgames' class='general_header'><?php echo _('Different games') ?></th>
                 </tr>
             </thead>
