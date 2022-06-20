@@ -124,3 +124,9 @@ a:visited.dropdown_button {
 .foot {
     border-top: 3px solid #fff;
 }
+.github_icon {
+    background-position: -1040px 0px;
+}
+.source_icon {
+    background-position: -1056px 0px;
+}

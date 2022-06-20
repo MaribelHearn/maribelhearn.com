@@ -123,6 +123,12 @@ li {
     margin: -2px;
     border: 2px solid #ddd;
 }
+.github_icon {
+    background-position: -1040px 0px;
+}
+.source_icon {
+    background-position: -1056px 0px;
+}
 .tooltip {
     visibility: hidden;
     background-color: black;
