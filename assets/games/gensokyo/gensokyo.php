@@ -60,8 +60,7 @@
         <p><input type='submit' value='Search'></p>
     </form>
     <?php
-        $tmp = explode('?', $_SERVER['REQUEST_URI']);
-        $searched = !empty($tmp[1]);
+        $searched = !empty($_SERVER['QUERY_STRING']);
         if (!empty($_GET['id'])) {
             if (!array_key_exists($_GET['id'], $reps)) {
                 echo '<p>Invalid replay ID. Please use the search functionality to find the replay(s) you are looking for.</p>';
@@ -103,7 +102,8 @@
                 }
             }
             if ($found > 0) {
-                echo '<p>' . number_format($found, 0, '.', ',') . ' results.</p>' . $table . '</tbody></table></div>';
+                $grammar = ($found !== 1 ? 's' : '');
+                echo '<p>' . number_format($found, 0, '.', ',') . ' result' . $grammar . '.</p>' . $table . '</tbody></table></div>';
             } else if (input_validity() == 2) {
                 echo '<p>No replays found.</p>';
             } else if (input_validity() == 1) {
