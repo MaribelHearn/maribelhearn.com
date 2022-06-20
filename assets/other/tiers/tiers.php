@@ -194,7 +194,7 @@
             </p>
             <p>
                 <label for='tier_header_font_size'>Tier header font size</label>
-                <input id='tier_header_font_size' class='settings_input' type='number' value=''>
+                <input id='tier_header_font_size' class='settings_input' type='number' max='72' value=''>
             </p>
             <p>To customise a tier's name and colour, click it in your tier list.</p>
             <p><input id='save_settings' type='button' value='Save Changes'></p>
