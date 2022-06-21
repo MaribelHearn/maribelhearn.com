@@ -37,7 +37,7 @@
     feel free to ask us in the TRS Discord server.</p>
     <h2>How to Upload</h2>
     <p>To upload your replay to send it to TRS, you can use a website like <a href='http://replay.lunarcast.net/'><span class='lunarcast_icon icon'></span> Lunarcast</a>.
-    This is currently the most used Touhou replay uploader in the Western community. It uses a simlar UI to the old replay uploader known as replays.gensokyo.org.</p>
+    This is currently the most used Touhou replay uploader in the Western community. It uses a similar UI to the old replay uploader known as replays.gensokyo.org.</p>
     <h2>How to Submit</h2>
     <p>Explanation of the submission form linked above, copied from the TRS Discord server.</p>
     <h3>Player name</h3>
