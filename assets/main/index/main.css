@@ -125,8 +125,6 @@ table {
 }
 #bottom {
     clear: both;
-}
-#last_modified {
     padding-top: 25px;
     font-size: 11px;
     color: #505050;
