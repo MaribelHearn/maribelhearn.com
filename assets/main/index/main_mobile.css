@@ -27,3 +27,6 @@ li {
 #desktop_hover {
     display: none;
 }
+#bottom a {
+    font-size: 12px;
+}
