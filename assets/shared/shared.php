@@ -306,7 +306,8 @@ function other_pages() {
 }
 
 function personal_pages() {
-    return '<p><a href="/history"><span class="icon history_icon"></span> History</a></p>' .
+    return '<p><a href="/about"><span class="icon"></span> About</a></p>' .
+    '<p><a href="/history"><span class="icon history_icon"></span> History</a></p>' .
     '<p><a href="/c67"><span class="icon c67_icon"></span> C67</a></p>';
 }
 
@@ -386,8 +387,6 @@ function navbar(string $page) {
         $cap = 'PoFV';
     } else if ($page == 'admin') {
         $cap = 'Admin';
-    } else if ($page == 'about') {
-        $cap = 'About Me';
     }
     $navbar = str_ireplace($cap . '</a>', $cap . '</strong>', $navbar);
     if ($page == 'admin') {
