@@ -43,7 +43,7 @@
     <h3>Player name</h3>
     <p>Your username. The name we'll display when your run will be shown.</p>
     <h3>Replay Link</h3>
-    <p>The link to your replay. For more information on where and how to upload your replay please check the section bellow regarding how to upload your replay.
+    <p>The link to your replay. For more information on where and how to upload your replay please check the section below regarding how to upload your replay.
     If your run is a fangame run or was made using specific patches please provide a YouTube link.</p>
     <h3>Game</h3>
     <p>Just check the game you played during the run. We've listed all the official Touhou games.
