@@ -93,7 +93,7 @@ while also leaving some room for unplanned bombs, so you can bomb when you mess 
 while "YYYY" is any 4 letters or digits. These files will be detected by the game if put in its replay folder. You can reach them by using the right arrow key on the Replay screen in-game.
 Note that most spinoffs consist of three digits; for example, GFW (Touhou 12.8) uses <span class='code'>th128</span> and ISC (Touhou 14.3) uses <span class='code'>th143</span>.</p>
 <p><strong>Note:</strong> MoF (Touhou 10) does not read these extra replays, meaning you can only use the default slots.</p>
-<h4 id='replayfolder'>Where I can find my replays / screenshots?</h4>
+<h4 id='replayfolder'>Where can I find my replays / screenshots?</h4>
 <p>For EoSD (Touhou 6) up to UFO (Touhou 12), replays are in the <span class='tt'>replay</span> subfolder in your game folder.
 <br>From DS (Touhou 12.5) onwards, press Win+R and run <span class='code'>%appdata%/ShanghaiAlice</span> to open the folder. Making a shortcut to it is recommended.</p>
 <p>Screenshots made using the Home or P key are in the <span class='tt'>snapshot</span> subfolder in your game folder.</p>

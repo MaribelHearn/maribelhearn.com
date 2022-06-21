@@ -100,20 +100,20 @@
     <a href='https://zerotier.com/download'>
         <span class='icon zerotier_icon'></span> Zerotier
     </a>
-    (Hamachi works as well, but is not used but the PoFV netplay community). This is what it looks like in Adonis2:</p>
+    (Hamachi works as well, but is not used by the PoFV netplay community). This is what it looks like in Adonis2:</p>
     <img class='guide' src='assets/games/pofv/host.png' alt='Hosting in Adonis2'>
     <h2 id='trouble'>Troubleshooting</h2>
     <p><strong>Adonis crashes while trying to connect to someone.</strong></p>
     <p>This means that you couldn’t connect to the host. If this happens, make sure that the host has port forwarded or
     is currently hosting via Hamachi or Zerotier.</p>
-    <p><em>=&gt; The host is hosting via Zerotier.</em></p>
+    <p><em>=&gt; The host is hosted via Zerotier.</em></p>
     <p>Make sure that you both have connected to someone already a part of the network first and then try again.
     For Zerotier to work, everyone needs to have some sort of connection to the host of the network.</p>
     <p><em>=&gt; The host has port forwarded or is 100% sure that Zerotier is working.</em></p>
     <p>Try to host by yourself and play in either compatibility mode or as an Administrator.</p>
     <p><em>=&gt; None of the above is working.</em></p>
     <p>Go into your firewall and click advanced settings and then inbound rules and
-    make sure the rules for Adonis and th09 is enabled. If you are using Zerotier make sure that is enabled as well.
+    make sure the rules for Adonis and th09 are enabled. If you are using Zerotier make sure that is enabled as well.
     (both host and person connecting needs to do this)</p>
     <img class='guide' src='assets/games/pofv/properties.png' alt='Windows Firewall properties'>
     <p><strong>The game crashes after successfully connecting to someone.</strong></p>
@@ -139,7 +139,7 @@
         <span class='code'>9 ZUN vs pbg.zip</span> to the <span class='code'>#replay-submissions</span> channel.
         This makes it much easier for the streamer to keep track of everything.</li>
         <li>All matches will be played as best of 3, until the Finals which will be played as best of 5.
-        (Finals includes Winners' Final, Losers' Final, and Grand Finals.)</li>
+        (Finals include Winners' Final, Losers' Final, and Grand Finals.)</li>
         <li>All matches will be played on Lunatic difficulty to speed up sets.</li>
         <li>All characters are allowed, but you must stay on your pick
         if you win a game while the loser may change if desired.</li>
@@ -149,7 +149,7 @@
         but not mandatory.</li>
         <li>The host will always be player one, unless both participants agree otherwise.</li>
         <li>Please use a random number generator for who picks their character first
-        if counterpicking becomes a problem on the first game.</li>
+        if counterpicking becomes a problem in the first game.</li>
         <li>Any form of smurfing or using alternate accounts will result in a ban for the next tournament.
         This disrupts seeding, both for the current tournament and future ones, and causes inaccurate results.</li>
     </ol>
