@@ -311,7 +311,7 @@ function personal_pages() {
 }
 
 function show_admin(string $token_path) {
-    return is_localhost($_SERVER['REMOTE_ADDR']) || isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents($token_path));
+    return isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents($token_path));
 }
 
 function navbar(string $page) {
@@ -323,7 +323,8 @@ function navbar(string $page) {
         $navbar .= '<a href="/admin">Admin</a> | ';
     }
 
-    $navbar .= '<a href="/about">About Me</a> | <a href="/credits">Credits</a> | <a href="/privacy">Privacy</a> ';
+    $navbar .= '<a href="/credits">Credits</a> | ';
+    $navbar .= '<a href="https://github.com/MaribelHearn/maribelhearn.com/issues/new/choose">Report Issue</a> ';
 
     if (!show_admin($token_path)) {
         $navbar .= '| <a href="https://ko-fi.com/maribelhearn42">Buy me a coffee</a>';
