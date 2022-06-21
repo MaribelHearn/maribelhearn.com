@@ -82,7 +82,7 @@
         <img loading='lazy' src='assets/personal/c67/images/final_se.jpg' alt='Final SE-attack' width='209' height='280'>
     </picture>
     <br>
-    <p class='description'>The stage 1 midboss' final (and in this case, only) SE begins.</p>
+    <p class='description'>The stage 1 midboss's final (and in this case, only) SE begins.</p>
     <p>Every boss also has a single <em>final SE</em>, which cannot be skipped and is used once their health bar
     is empty. Their health bar will be refilled with a red color when the final SE begins. If this health
     bar is emptied, it will say "-- OVER KILL --". The boss will explode and drop an item when the SE ends during
@@ -212,7 +212,7 @@
     <p>HiranoO is a gimmicky shottype. Her regular shot is the third strongest, being twice as powerful as VIVIT-W's one but weaker
     than those of VIVIT-A and HiranoS, and it bends with horizontal movement; bending to the left when you move left, and vice
     versa for right. Her focused shot uses a blue field of sight that will appear on the screen when you start focusing. When an
-    enemy or a boss enters this field, it will be targetted and bullets will be fired at it. The field moves into the opposite
+    enemy or a boss enters this field, it will be targeted and bullets will be fired at it. The field moves into the opposite
     direction of your movement, making it difficult to control. HiranoO has the slowest movement speed, being slightly
     slower than VIVIT-W, which does not help, and in addition to that, her regular shot is thin (like VIVIT-A's) and does
     not always seem to be at its full potential when firing at a bigger enemy. In contrary, HiranoO's bomb is the strongest bomb from afar,
