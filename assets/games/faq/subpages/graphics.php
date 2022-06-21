@@ -31,12 +31,12 @@ Alternatively, you can play in a window and use <a href='/faq#vpatch'>vpatch</a>
 <h4 id='intel'>Intel</h4>
 <img class='gpu' src='/assets/games/faq/subpages/intel.png' alt='Intel HD Graphics Control Panel'>
 <p>Open up Intel HD Graphics Control Panel and navigate to "General Settings". Under "Scaling", check "Maintain Aspect Ratio".</p>
-<p>If this does not fix your problem, go to "Custom Resolutions" and enter own values under "Add". Click the '+' icon in the bottom right corner to add the resolution.
+<p>If this does not fix your problem, go to "Custom Resolutions" and enter your own values under "Add". Click the '+' icon in the bottom right corner to add the resolution.
 Use this resolution when playing Touhou. Alternatively, you can play in a window and use <a href='/faq#vpatch'>vpatch</a> to scale the window to your preferred size.</p>
 <h4 id='vpatch'>vpatch</h4>
 <p><strong>Warning:</strong> When using Windows 10, playing in windowed mode increases input lag.</p>
 <p>Edit the <span class='code'>vpatch.ini</span> file in your game folder. If you want to get a fullscreen-like experience when playing windowed, set <span class='tt'>TitleBar</span>
-to <span class='tt'>0</span> to hide the window title bar. Additionally, set <span class='tt'>AlwaysOnTop</span> to <span class='tt'>1</span> to make sure the Windows task bar does
+to <span class='tt'>0</span> to hide the window title bar. Additionally, set <span class='tt'>AlwaysOnTop</span> to <span class='tt'>1</span> to make sure the Windows taskbar does
 not obscure the bottom of your game. To change the window size, adjust the values for <span class='tt'>Width</span> and <span class='tt'>Height</span> to your liking.</p>
 <p>To sum up, for a windowed game that works like fullscreen, make sure the following is set in your <span class='code'>vpatch.ini</span> file:</p>
 <p>
