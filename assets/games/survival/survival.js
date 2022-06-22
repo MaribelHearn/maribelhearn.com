@@ -370,7 +370,7 @@ function emptyModal() {
     cleanupRendering();
     document.getElementById("container").style.display = "block";
     document.getElementById("modal_inner").style.display = "none";
-    document.getElementById("results").style.display = "none";
+    document.getElementById("modal").style.display = "none";
 }
 
 function deleteLegacyCookies() {
@@ -434,7 +434,7 @@ function readLocalStorage() {
 }
 
 function closeModal(event) {
-    const modal = document.getElementById("results");
+    const modal = document.getElementById("modal");
 
     if ((event.target && event.target == modal) || (event.key && event.key == "Escape")) {
         emptyModal();
@@ -557,7 +557,7 @@ function apply() {
     fillNumberTable(numbers);
     fillCompletionTable();
     document.getElementById("modal_inner").style.display = "block";
-    document.getElementById("results").style.display = "block";
+    document.getElementById("modal").style.display = "block";
     drawOverview();
     printMessage("");
 }

@@ -109,7 +109,7 @@
         </ul>
     </div>
 </div>
-<div id='results' data-html2canvas-ignore>
+<div id='modal' data-html2canvas-ignore>
 	<div id='modal_inner'>
 		<h2><?php echo _('Progress Table') ?></h2>
 		<p id='rendering_message'><?php echo _('Rendering image...') ?></p>
