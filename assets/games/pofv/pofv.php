@@ -1,3 +1,4 @@
+<?php include_once 'assets/games/pofv/pofv_code.php' ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
     <p>This is a portal for competitive PoFV play, featuring the current tier list, a guide to help you get started with
@@ -91,17 +92,17 @@
     <p><a href='https://maribelhearn.com/mirror/PoFV-Adonis-VPatch-Goodies.zip' target='_blank'>PoFV-Adonis-VPatch-Goodies.zip</a></p>
     <p>After that, you want to extract all of the content of the <span class='code'>.zip</span> file to your PoFV game folder,
     i.e. the one that contains <span class='code'>th09.exe</span>. Your folder should look like this:</p>
-    <img class='guide' src='assets/games/pofv/folder.png' alt='PoFV folder'>
+    <img class='guide' src='assets/games/pofv/images/folder.png' alt='PoFV folder'>
     <p>Once everything has been extracted to the folder, you are ready to connect to whoever hosts at any time, using programs
     called <strong>Adonis</strong>, <strong>Adonise</strong> (English) and <strong>Adonis2</strong>.
     This is what it looks like in Adonis2, the current standard tool used by the PoFV netplay community:</p>
-    <img class='guide' src='assets/games/pofv/connect.png' alt='Connection in Adonis2'>
+    <img class='guide' src='assets/games/pofv/images/connect.png' alt='Connection in Adonis2'>
     <p>To be able to host, you need to either <a href='https://portforward.com'>port forward</a> or use
     <a href='https://zerotier.com/download'>
         <span class='icon zerotier_icon'></span> Zerotier
     </a>
     (Hamachi works as well, but is not used by the PoFV netplay community). This is what it looks like in Adonis2:</p>
-    <img class='guide' src='assets/games/pofv/host.png' alt='Hosting in Adonis2'>
+    <img class='guide' src='assets/games/pofv/images/host.png' alt='Hosting in Adonis2'>
     <h2 id='trouble'>Troubleshooting</h2>
     <p><strong>Adonis crashes while trying to connect to someone.</strong></p>
     <p>This means that you couldn’t connect to the host. If this happens, make sure that the host has port forwarded or
@@ -115,7 +116,7 @@
     <p>Go into your firewall and click advanced settings and then inbound rules and
     make sure the rules for Adonis and th09 are enabled. If you are using Zerotier make sure that is enabled as well.
     (both host and person connecting needs to do this)</p>
-    <img class='guide' src='assets/games/pofv/properties.png' alt='Windows Firewall properties'>
+    <img class='guide' src='assets/games/pofv/images/properties.png' alt='Windows Firewall properties'>
     <p><strong>The game crashes after successfully connecting to someone.</strong></p>
     <p>Try launching the game in either compatibility mode or as an Administrator.</p>
     <p><em>=&gt; It still doesn’t work with the solution above.</em></p>
@@ -165,6 +166,23 @@
     </a></p>
     <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
 </div>
-<div id='modal'>
-    <div id='modal_inner'></div>
-</div>
+<div id='modal'><?php
+    $chars = array('marisa', 'reimu', 'youmu', 'komachi', 'eiki', 'lyrica', 'medicine', 'reisen', 'lunasa', 'merlin', 'yuuka', 'sakuya', 'aya', 'tewi', 'mystia', 'cirno');
+    $json = file_get_contents('assets/games/pofv/pofv_stats.json');
+    $stats = json_decode($json, true);
+    foreach ($chars as $key => $chara) {
+        $tier = tier($chara);
+        $full_name = name($chara);
+        echo '<div id="' . $chara . '_info" class="modal_inner"><h2>' . $full_name . '</h2><table class="noborders"><tr>' .
+        '<td class="noborders"><img class="art" src="assets/games/pofv/characters/' . $chara . '.png" alt="' . $full_name . '"></td>' .
+        '<td class="noborders"><table class="stats noborders"><tr><td class="noborders">Tier</td><td class="noborders"><strong class="' . $tier . '">' . $tier . '</strong></td></tr>' .
+        '<tr><td class="noborders">Normal Speed</td><td class="noborders"><progress value="' . $stats[$chara]['speed'] . '" max="98"></td></tr>' .
+        '<tr><td class="noborders">Focused Speed</td><td class="noborders"><progress value="' . $stats[$chara]['focus'] . '" max="98"></td></tr>' .
+        '<tr><td class="noborders">Charge Speed</td><td class="noborders"><progress value="' . $stats[$chara]['charge'] . '" max="20.5"></td></tr>' .
+        '<tr><td class="noborders">Charge Delay</td><td class="noborders">' .  $stats[$chara]['delay'] . ' frames</td></tr>' .
+        '<tr><td class="noborders">Special Ability</td><td class="noborders">' . ability($chara) . '</td></tr>' .
+        '<tr><td class="noborders">Scope</td><td class="noborders">' . $stats[$chara]['scope'] . '</td></tr></table></td>' .
+        '<td class="noborders"><img class="scope" src="assets/games/pofv/scopes/' . $chara . '.jpg"></td></tr></table>' .
+        '<p class="descr">' . description($chara) . '</p></div>';
+    }
+?></div>
