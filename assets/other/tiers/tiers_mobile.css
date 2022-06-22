@@ -47,6 +47,9 @@ input[type=button]:not(.button_bottom) {
 .list_cards, .tiered_cards {
     background-image: url('../shared/spritesheets/cards_sheet60x60.png');
 }
+.thvote_icon {
+    background-position: -176px 0px;
+}
 #wrap {
     top: 5px;
     bottom: 5px;
