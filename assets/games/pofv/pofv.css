@@ -210,7 +210,7 @@ ol > li {
     .char {
         width: 80px;
         height: 80px;
-        background-image: url('../pofv/faces80x80.png');
+        background-image: url('../games/pofv/faces80x80.png');
     }
     #modal_inner {
         font-size: 11px;
