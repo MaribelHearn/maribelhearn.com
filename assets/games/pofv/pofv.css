@@ -69,7 +69,7 @@ ol > li {
     height: 120px;
     cursor: pointer;
     display: inline-block;
-    background-image: url('../games/pofv/faces.png');
+    background-image: url('../games/pofv/images/faces.png');
 }
 .hidden {
     display: none;
@@ -88,11 +88,18 @@ ol > li {
 .dropdown_content > p {
     margin: 4px;
 }
-#wrap > div:not(#topbar):not(#modal) {
-    display: inline-block;
+.modal_inner {
+    /*background-color: #fefefe;*/
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    max-height: 80%;
+    display: none;
+    overflow-y: auto;
 }
-#nav {
-    margin-bottom: 5px;
+.modal_inner > p {
+    margin-bottom: 15px;
 }
 #modal {
     font: 14px verdana, sans-serif;
@@ -107,20 +114,13 @@ ol > li {
     height: 100%;
     background-color: #000;
     background-color: rgba(0, 0, 0, .4);
-    color: #000;
+    /*color: #000;*/
 }
-#modal_inner {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%;
-    max-height: 80%;
-    display: none;
-    overflow-y: auto;
+#wrap > div:not(#topbar):not(#modal) {
+    display: inline-block;
 }
-#modal_inner > p {
-    margin-bottom: 15px;
+#nav {
+    margin-bottom: 5px;
 }
 #discord {
     white-space: nowrap;
@@ -189,12 +189,12 @@ ol > li {
     background-position: -1800px 0px;
 }
 @media only screen and (min-width: 1500px) and (max-width: 1800px) {
-    #modal_inner {
+    .modal_inner {
         width: 55%;
     }
 }
 @media only screen and (min-width: 1100px) and (max-width: 1500px) {
-    #modal_inner {
+    .modal_inner {
         width: 65%;
     }
 }
@@ -210,9 +210,9 @@ ol > li {
     .char {
         width: 80px;
         height: 80px;
-        background-image: url('../games/pofv/faces80x80.png');
+        background-image: url('../games/pofv/images/faces80x80.png');
     }
-    #modal_inner {
+    .modal_inner {
         font-size: 11px;
         width: 75%;
     }
@@ -272,7 +272,7 @@ ol > li {
     }
 }
 @media only screen and (max-width: 800px) {
-    #modal_inner {
+    .modal_inner {
         height: 80%;
         width: 90%;
     }
