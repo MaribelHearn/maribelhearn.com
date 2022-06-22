@@ -263,7 +263,9 @@ function touhou_sites() {
     '<p><a href="https://www.thspotify.moe/">' .
     '<span class="icon thspotify_icon"></span>Touhou Spotify Music</a></p>' .
     '<p><a href="https://touhouworldcup.com">' .
-    '<span class="icon twc_icon"></span> Touhou World Cup</a></p>';
+    '<span class="icon twc_icon"></span> Touhou World Cup</a></p>' .
+    '<p><a href="https://nylilsa.github.io">' .
+    '<span class="icon nylilsa_icon"></span>Nylilsa\'s Site</a></p>';
     //$navbar .= '<p><a href="https://zps-stg.github.io">' .
     //'<span class="icon zps_icon"></span>ZPS\'s Site</a></p>';
 }
