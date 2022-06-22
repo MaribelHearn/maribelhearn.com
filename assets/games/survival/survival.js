@@ -1,4 +1,4 @@
-/*global html2canvas getCookie deleteCookie*/
+/*global html2canvas isMobile getCookie deleteCookie*/
 const games = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "INFinalA", "INFinalB", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
 let vals = {};
 let unsavedChanges = false;
@@ -75,7 +75,7 @@ function fillDifficulty(difficulty, achievement) {
             tmp = achievement;
         }
 
-        if (difficulty == "Extra" && (game == "HRtP" || game == "PoDD")) {
+        if (difficulty == "Extra" && (game == "HRtP" || game == "PoDD" || game == "INFinalB")) {
             continue;
         }
 
@@ -322,22 +322,41 @@ function fileName() {
     return `touhou_survival_progress_${date.getFullYear()}_${month}_${day}_${hours}_${minutes}_${seconds}.png`;
 }
 
+function afterScreenshot(canvas) {
+    const base64 = canvas.toDataURL("image/png");
+    document.getElementById("screenshot_base64").src = base64;
+    const saveLink = document.getElementById("save_link");
+    saveLink.href = base64;
+    saveLink.download = fileName();
+    cleanupRendering();
+}
+
+function takeScreenshotMobile() {
+    html2canvas(document.getElementById("survival"), {
+        width: document.getElementById("modal_inner").offsetWidth,
+        backgroundColor: "white",
+        "logging": false
+    }).then(afterScreenshot);
+}
+
+function takeScreenshot() {
+    html2canvas(document.getElementById("survival"), {
+        backgroundColor: "white",
+        "logging": false
+    }).then(afterScreenshot);
+}
+
 function drawOverview() {
     originalContent = document.getElementById("container").innerHTML;
     prepareRendering();
 
     try {
-        html2canvas(document.getElementById("survival"), {
-            backgroundColor: "white",
-            "logging": false
-        }).then(function(canvas) {
-            const base64 = canvas.toDataURL("image/png");
-            document.getElementById("screenshot_base64").src = base64;
-            const saveLink = document.getElementById("save_link");
-            saveLink.href = base64;
-            saveLink.download = fileName();
-            cleanupRendering();
-        });
+        if (isMobile()) {
+            alert("m");
+            takeScreenshotMobile();
+        } else {
+            takeScreenshot();
+        }
     } catch (err) {
         document.getElementById("rendering_message").innerHTML = "Your browser is outdated. Use a different browser to generate an image of your survival progress table.";
     }
