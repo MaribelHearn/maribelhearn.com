@@ -91,10 +91,6 @@ if ($page == 'wr') {
         echo 'const unverifiedScores = ' . curl_get('https://maribelhearn.com/assets/shared/json/unverified.json') . ';';
     }
 }
-if ($page == 'pofv') {
-    echo 'const STATS = ' . file_get_contents('json/pofv_stats.json') . ';';
-    echo 'const DESCRIPTIONS = ' . file_get_contents('json/pofv_descriptions.json') . ';';
-}
 if ($page == 'tiers') {
     echo 'const categories = {' .
         '"characters":' . file_get_contents('json/characters.json') . ',' . 
