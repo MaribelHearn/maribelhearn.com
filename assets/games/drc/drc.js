@@ -510,6 +510,26 @@ function setLanguage(event) {
     setCookie("lang", newLanguage);
 }
 
+function setEventListeners() {
+    document.getElementById("calculate").addEventListener("click", drcPoints, false);
+    document.getElementById("scoring_button").addEventListener("click", toggleRubrics), false;
+    document.getElementById("survival_button").addEventListener("click", toggleRubrics, false);
+    document.getElementById("game").addEventListener("change", gameChanged, false);
+    document.getElementById("difficulty").addEventListener("change", changeDifficulty, false);
+    document.getElementById("challenge").addEventListener("change", challengeChanged, false);
+    document.getElementById("challenge").addEventListener("change", checkShottypes, false);
+    document.getElementById("shottype").addEventListener("change", shottypeChanged, false);
+    document.getElementById("en_GB").addEventListener("click", setLanguage, false);
+    document.getElementById("ja_JP").addEventListener("click", setLanguage, false);
+    document.getElementById("zh_CN").addEventListener("click", setLanguage, false);
+    document.getElementById("de_DE").addEventListener("click", setLanguage, false);
+    document.getElementById("calculator").style.display = "block";
+    document.getElementById("scoring_button").style.display = "inline";
+    document.getElementById("survival_button").style.display = "inline";
+    document.getElementById("scoring_rubrics").style.display = "none";
+    document.getElementById("survival_rubrics").style.display = "none";
+}
+
 function init() {
     if (getCookie("lang") == "ja_JP" || location.href.includes("?hl=jp")) {
         language = "ja_JP";
@@ -521,21 +541,7 @@ function init() {
         language = "en_US";
     }
 
-    document.getElementById("calculate").addEventListener("click", drcPoints, false);
-    document.getElementById("scoring_button").addEventListener("click", toggleRubrics), false;
-    document.getElementById("survival_button").addEventListener("click", toggleRubrics, false);
-    document.getElementById("game").addEventListener("change", gameChanged, false);
-    document.getElementById("difficulty").addEventListener("change", changeDifficulty, false);
-    document.getElementById("challenge").addEventListener("change", challengeChanged, false);
-    document.getElementById("challenge").addEventListener("change", checkShottypes, false);
-    document.getElementById("shottype").addEventListener("change", shottypeChanged, false);
-    document.getElementById("calculator").style.display = "block";
-    document.getElementById("scoring_button").style.display = "inline";
-    document.getElementById("survival_button").style.display = "inline";
-    document.getElementById("en_GB").addEventListener("click", setLanguage, false);
-    document.getElementById("ja_JP").addEventListener("click", setLanguage, false);
-    document.getElementById("zh_CN").addEventListener("click", setLanguage, false);
-    document.getElementById("de_DE").addEventListener("click", setLanguage, false);
+    setEventListeners();
     checkValues({data: {changePerf: true, changeShots: true}});
     const flags = document.querySelectorAll(".flag");
 
