@@ -362,6 +362,12 @@
                 <th>s1</th>
                 <td>Stage 1; similarly, 's2' means Stage 2, 's3' means Stage 3, etc.</td>
             </tr>
+            <tr id='term_safespot'>
+                <th>Safespot</th>
+                <td>A spot, or a larger area, inside of which the player cannot be hit by anything. There is a large grey area to the application of the term in practice, as it is not necessarily only used for singular spots;
+                it can include safe areas that require the player to move, although safer than doing the pattern in question "normally". It can even include spots or areas that are not actually completely safe,
+                just <em>mostly</em> safe.</td>
+            </tr>
             <tr id='term_shmup'>
                 <th>Shmup</th>
                 <td>Abbreviation of shoot 'em up, which is the genre of games that bullet hell is part of. <a href='#term_stg'>STG</a> has the same meaning.</td>
@@ -702,6 +708,10 @@
                 <th>YGB</th>
                 <td>"You Grow Bigger!", Shinmyoumaru's <a href='#term_survivalspell'>survival Spell Card</a>
 				in <a href='#term_ddc'>DDC</a>.</td>
+            </tr>
+            <tr id='term_yydo'>
+                <th>YYDO</th>
+                <td>"Yin-Yang Divine Orbs", Misumaru's first Spell Card in <a href='#term_um'>UM</a>.</td>
             </tr>
         </tbody>
     </table>
