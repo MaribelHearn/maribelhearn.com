@@ -28,7 +28,11 @@ $css = array(
 );
 if (isset($_GET['mobile']) && $_GET['mobile']) {
     array_push($css, 'shared_mobile' . $min . '.css');
-    array_push($css, '../' . $dir . '/' . $page . '/' . ($page == 'index' ? 'main' : $page) . '_mobile' . $min . '.css');
+    $page_specific_mobile = '../' . $dir . '/' . $page . '/' . ($page == 'index' ? 'main' : $page) . '_mobile' . $min . '.css';
+    if (file_exists($page_specific_mobile)) {
+        array_push($css, $page_specific_mobile);
+    }
+    
 }
 if ($page == 'tiers') {
     include_once 'sprite_gen.php';
