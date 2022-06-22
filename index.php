@@ -2,6 +2,7 @@
 <?php
     session_start();
     include_once 'assets/shared/shared.php';
+    require_once 'assets/shared/mobile_detect.php';
     $url = substr($_SERVER['REQUEST_URI'], 1);
 	$page = preg_split('/\?/', $url)[0];
     if (empty($page) || str_starts_with($_SERVER['REQUEST_URI'], '/') && count(array_count_values(str_split($_SERVER['REQUEST_URI']))) == 1) {
@@ -38,16 +39,10 @@
     $json = file_get_contents(str_replace('.php', '.json', $page_path));
     $data = (object) json_decode($json, true);
     $css_js_file = in_array($page, $use_index) ? 'index' : $page;
-    $has_mobile_sheet = file_exists('assets/' . $dir . '/' . $css_js_file . '/' . (in_array($page, $use_index) ? 'main' : $page) . '_mobile.css');
     $favicon_ext = file_exists('assets/' . $dir . '/' . $page . '/'. $page . '.ico') ? '.ico' : '.png';
     $favicon = 'assets/' . $page . '/' . $page . $favicon_ext;
-    if ($has_mobile_sheet) {
-        require_once 'assets/shared/mobile_detect.php';
-        $detect_device = new Mobile_Detect;
-        $is_mobile = $detect_device -> isMobile();
-    } else {
-        $is_mobile = false;
-    }
+    $detect_device = new Mobile_Detect;
+    $is_mobile = $detect_device -> isMobile();
     $css_href = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/shared/css_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile;
     $js_href = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/shared/js_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile . '&hl=' . $lang;
     $favicon_dir = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . (!in_array($page, $use_index) ? 'assets/' . $dir . '/' . $page : '');
