@@ -14,9 +14,6 @@ input[type=number] {
 .noborders {
     border: none;
 }
-.rubrics {
-    display: none;
-}
 .error {
     color: red;
 }
