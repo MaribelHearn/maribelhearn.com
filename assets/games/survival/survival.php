@@ -28,6 +28,7 @@
                 <option value='NB'><?php echo _('NB') ?></option>
                 <option value='NB+'><?php echo _('NB+') ?></option>
                 <option value='NMNB'><?php echo _('NMNB') ?></option>
+                <option value='NMNB+'><?php echo _('NMNB+') ?></option>
             </select>
             <br>
             <input id='fill_all' type='button' value='Fill All'>
@@ -132,6 +133,7 @@
 	        		<th><?php echo _('NB') ?></th>
 					<th><?php echo _('NB+') ?></th>
 					<th><?php echo _('NMNB') ?></th>
+					<th><?php echo _('NMNB+') ?></th>
 				</tr>
 			</thead>
 			<tbody id='number_table_tbody'></tbody>

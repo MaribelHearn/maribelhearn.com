@@ -59,6 +59,11 @@ input[type=button] {
 .nmnb {
     background-color: purple;
 }
+.nmnbp {
+    color: white;
+    text-align: center;
+    background-color: purple;
+}
 .in_route {
     font-size: 12px;
     color: #339;
