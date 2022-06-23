@@ -444,7 +444,11 @@ function closeModal(event) {
 function initValues() {
     for (const game in vals) {
         for (const difficulty in vals[game]) {
-            document.getElementById(game + difficulty).value = vals[game][difficulty];
+            const select = document.getElementById(game + difficulty);
+
+            if (select !== null) {
+                select.value = vals[game][difficulty];
+            }
         }
     }
 }
