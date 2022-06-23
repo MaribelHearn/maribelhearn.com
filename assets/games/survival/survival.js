@@ -22,18 +22,18 @@ for (const game of games) {
 }
 
 function gameSpecific(game, achievement) {
-    if (achievement != "NM+" && achievement != "NB+" && achievement != "NMNB") {
+    if (!achievement.includes('+')) {
         return achievement;
     }
 
     switch (game) {
-        case "PCB": return ({"NM+": "NMNBB", "NB+": "NBNBB", "NMNB": "NMNBNBB"}[achievement]);
-        case "UFO": return ({"NM+": "NMNV", "NB+": "NBNV", "NMNB": "NMNB(NV)"}[achievement]);
-        case "TD": return ({"NM+": "NMNT", "NB+": "NBNT", "NMNB": "NMNBNT"}[achievement]);
-        case "HSiFS": return ({"NM+": "NMNR", "NB+": "NBNR", "NMNB": "NMNBNR"}[achievement]);
-        case "WBaWC": return ({"NM+": "NMNHNRB", "NB+": "NBNHNRB", "NMNB": "NNNN"}[achievement]);
-        case "UM": return ({"NM+": "NMNC", "NB+": "NBNC", "NMNB": "NMNBNC"}[achievement]);
-        default: return ({"NM+": "NM", "NB+": "NB", "NMNB": "NMNB"}[achievement]);
+        case "PCB": return ({"NM+": "NMNBB", "NB+": "NBNBB", "NMNB+": "NNN"}[achievement]);
+        case "UFO": return ({"NM+": "NMNV", "NB+": "NBNV", "NMNB+": "NNN"}[achievement]);
+        case "TD": return ({"NM+": "NMNT", "NB+": "NBNT", "NMNB+": "NNN"}[achievement]);
+        case "HSiFS": return ({"NM+": "NMNR", "NB+": "NBNR", "NMNB+": "NNN"}[achievement]);
+        case "WBaWC": return ({"NM+": "NMNHNRB", "NB+": "NBNHNRB", "NMNB+": "NNNN"}[achievement]);
+        case "UM": return ({"NM+": "NMNC", "NB+": "NBNC", "NMNB+": "NNN"}[achievement]);
+        default: return ({"NM+": "NM", "NB+": "NB", "NMNB+": "NMNB"}[achievement]);
     }
 }
 
@@ -41,7 +41,7 @@ function fillGame(game, achievement) {
     for (const difficulty in vals[game]) {
         const tmp = achievement;
 
-        if (achievement == "NM+" || achievement == "NB+" || achievement == "NMNB") {
+        if (achievement == "NM+" || achievement == "NB+" || achievement == "NMNB+") {
             achievement = gameSpecific(game, achievement);
         }
 
@@ -51,7 +51,7 @@ function fillGame(game, achievement) {
     }
 
     if (game == "INFinalB") {
-        if (achievement == "NM+" || achievement == "NB+") {
+        if (achievement == "NM+" || achievement == "NB+" || achievement == "NMNB+") {
             achievement = achievement.slice(0, -1);
         }
 
@@ -69,7 +69,7 @@ function fillDifficulty(difficulty, achievement) {
     for (const game in vals) {
         let tmp;
 
-        if (achievement == "NM+" || achievement == "NB+" || achievement == "NMNB") {
+        if (achievement == "NM+" || achievement == "NB+" || achievement == "NMNB+") {
             tmp = gameSpecific(game, achievement);
         } else {
             tmp = achievement;
@@ -86,12 +86,12 @@ function fillDifficulty(difficulty, achievement) {
 
 function initAchievementCounts() {
     return {
-        "Easy": { "Not cleared": 0, "1cc": 0, "NM": 0, "NM+": 0, "NB": 0, "NB+": 0, "NMNB": 0 },
-        "Normal": { "Not cleared": 0, "1cc": 0, "NM": 0, "NM+": 0, "NB": 0, "NB+": 0, "NMNB": 0 },
-        "Hard": { "Not cleared": 0, "1cc": 0, "NM": 0, "NM+": 0, "NB": 0, "NB+": 0, "NMNB": 0 },
-        "Lunatic": { "Not cleared": 0, "1cc": 0, "NM": 0, "NM+": 0, "NB": 0, "NB+": 0, "NMNB": 0 },
-        "Extra": { "Not cleared": 0, "1cc": 0, "NM": 0, "NM+": 0, "NB": 0, "NB+": 0, "NMNB": 0 },
-        "Total": { "Not cleared": 0, "1cc": 0, "NM": 0, "NM+": 0, "NB": 0, "NB+": 0, "NMNB": 0 }
+        "Easy": { "Not cleared": 0, "1cc": 0, "NM": 0, "NM+": 0, "NB": 0, "NB+": 0, "NMNB": 0, "NMNB+": 0 },
+        "Normal": { "Not cleared": 0, "1cc": 0, "NM": 0, "NM+": 0, "NB": 0, "NB+": 0, "NMNB": 0, "NMNB+": 0 },
+        "Hard": { "Not cleared": 0, "1cc": 0, "NM": 0, "NM+": 0, "NB": 0, "NB+": 0, "NMNB": 0, "NMNB+": 0 },
+        "Lunatic": { "Not cleared": 0, "1cc": 0, "NM": 0, "NM+": 0, "NB": 0, "NB+": 0, "NMNB": 0, "NMNB+": 0 },
+        "Extra": { "Not cleared": 0, "1cc": 0, "NM": 0, "NM+": 0, "NB": 0, "NB+": 0, "NMNB": 0, "NMNB+": 0 },
+        "Total": { "Not cleared": 0, "1cc": 0, "NM": 0, "NM+": 0, "NB": 0, "NB+": 0, "NMNB": 0, "NMNB+": 0 }
     };
 }
 
@@ -145,12 +145,8 @@ function format(achievement) {
         "NBNHNRB": "nbp",
         "NBNC": "nbp",
         "NMNB": "nmnb",
-        "NMNBNBB": "nmnb",
-        "NMNB(NV)": "nmnb",
-        "NMNBNT": "nmnb",
-        "NMNBNR": "nmnb",
-        "NNNN": "nmnb",
-        "NMNBNC": "nmnb"
+        "NNN": "nmnbp",
+        "NNNN": "nmnbp"
     })[achievement];
 }
 
@@ -202,6 +198,7 @@ function needsText(achievement) {
         case "np": return true;
         case "nmp": return true;
         case "nbp": return true;
+        case "nmnbp": return true;
         default: return false;
     }
 }
@@ -352,7 +349,6 @@ function drawOverview() {
 
     try {
         if (isMobile()) {
-            alert("m");
             takeScreenshotMobile();
         } else {
             takeScreenshot();
@@ -431,6 +427,36 @@ function readLocalStorage() {
             if (vals.INFinalB.hasOwnProperty("Extra")) {
                 delete vals.INFinalB.Extra;
             }
+
+            for (const diff in vals.PCB) {
+                if (vals.PCB[diff] == "NMNBNBB") {
+                    vals.PCB[diff] = "NNN";
+                }
+            }
+
+            for (const diff in vals.UFO) {
+                if (vals.UFO[diff] == "NMNB(NV)") {
+                    vals.UFO[diff] = "NMNB";
+                }
+            }
+
+            for (const diff in vals.TD) {
+                if (vals.TD[diff] == "NMNBNT") {
+                    vals.TD[diff] = "NNN";
+                }
+            }
+
+            for (const diff in vals.HSiFS) {
+                if (vals.HSiFS[diff] == "NMNBNR") {
+                    vals.HSiFS[diff] = "NNN";
+                }
+            }
+
+            for (const diff in vals.UM) {
+                if (vals.UM[diff] == "NMNBNC") {
+                    vals.UM[diff] = "NNN";
+                }
+            }
         }
     } catch (err) {
         // do nothing
@@ -501,9 +527,12 @@ function countAchievements(numbers) {
                 } else if (value.substr(0, 2) == "NB" && value.length > 2) {
                     numbers[diff]["NB+"] += 1;
                     numbers["Total"]["NB+"] += 1;
-                } else if (value.substr(0, 4) == "NMNB" || value == "NNNN") {
+                } else if (value == "NMNB") {
                     numbers[diff]["NMNB"] += 1;
                     numbers["Total"]["NMNB"] += 1;
+                } else if (value == "NNN" || value == "NNNN") {
+                    numbers[diff]["NMNB+"] += 1;
+                    numbers["Total"]["NMNB+"] += 1;
                 } else {
                     value = (format(value) == "np" ? "1cc" : value);
                     numbers[diff][value] += 1;
