@@ -427,6 +427,10 @@ function readLocalStorage() {
                 };
                 delete vals.IN;
             }
+
+            if (vals.INFinalB.hasOwnProperty("Extra")) {
+                delete vals.INFinalB.Extra;
+            }
         }
     } catch (err) {
         // do nothing
@@ -445,10 +449,7 @@ function initValues() {
     for (const game in vals) {
         for (const difficulty in vals[game]) {
             const select = document.getElementById(game + difficulty);
-
-            if (select !== null) {
-                select.value = vals[game][difficulty];
-            }
+            select.value = vals[game][difficulty];
         }
     }
 }
