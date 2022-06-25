@@ -12,11 +12,11 @@
 	?></p>
     <h2 id='contents'><?php echo _('Contents') ?></h2>
     <div class='border'>
-        <p><a href='#vpatch'>Vpatch</a></p>
-        <p><a href='#thcrap'>THCRAP</a></p>
-        <p><a href='#enbconvertor'><?php echo _('<strong>For Windows 10:</strong> DX8 to DX9') ?></a></p>
+        <p><a href='#vpatch'><strong>Vpatch</strong></a></p>
+        <p><a href='#thprac'><strong>thprac</strong></a></p>
+        <p><a href='#thcrap'>thcrap</a></p>
+        <p><a href='#enbconvertor'><?php echo _('DX8 to DX9 converter') ?></a></p>
         <p><a href='#scorefiles'><?php echo _('Completed Scorefiles') ?></a></p>
-        <p><a href='#thprac'><strong>Thprac</strong></a></p>
         <p><a href='#spoileral'>SpoilerAL</a></p>
         <p><a href='#practools'><?php echo _('General Practice Tools') ?></a></p>
         <p><a href='#bossrush'><?php echo _('Boss Rush Patches') ?></a></p>
@@ -38,10 +38,18 @@
 		'<p>Vpatch is applicable to all official shooting games bar HSiFS, WBaWC and UM.');
 	?></p>
     <a href='https://maribelhearn.com/mirror/VsyncPatch.zip' target='_blank'><?php echo _('Download') ?></a>
+	<!-- Thprac -->
+	<hr>
+	<?php echo _('<h2 id="thprac">thprac (universal practice tool by Ack)</h2>') ?>
+	<p><?php
+		echo _('Single practice tool that works on all of the official Touhou shoot \'em up games, ' .
+		'allowing you to change settings or skip to patterns at will.');
+	?></p>
+	<a href='https://github.com/touhouworldcup/thprac#thprac' target='_blank'><?php echo _('Download') ?></a>
     <!-- English Patches -->
     <hr>
     <?php
-		echo _('<h2 id="thcrap">THCRAP (Translation patches / Modding tool) ' .
+		echo _('<h2 id="thcrap">thcrap (Translation patches / Modding tool) ' .
 		'<a id="thcrap_link" href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page" target="_blank">' .
 		'<span class="icon thcrap_icon"></span> thcrap</a></h2>');
 	?>
@@ -49,7 +57,7 @@
     <p><?php
 		echo _('Translation patches into English and many other languages, as well as countless modifications to ' .
 		'gameplay, graphics and more, plus the ability to make your own, are provided by the Touhou Community ' .
-		'Reliant Automatic Patcher (THCRAP) for all Windows Touhou games. The thpatch.net link also links to ' .
+		'Reliant Automatic Patcher (thcrap) for all Windows Touhou games. The thpatch.net link also links to ' .
 		'instructions on how to use the patcher.');
 	?></p>
 	<div>
@@ -79,14 +87,6 @@
     <p><?php echo _('All official shooting games aside from VD are included.') ?></p>
     <a href='https://maribelhearn.com/mirror/Practice%20Scorefiles.zip' target='_blank'><?php echo _('Download') ?></a>
 	<!-- Old link without WBaWC: https://mega.nz/#F!r8hWmCrD!oOkBNotI88acvlhlKUXZiA -->
-	<!-- Thprac -->
-	<hr>
-	<?php echo _('<h2 id="thprac">Thprac (universal practice tool by ACK)</h2>') ?>
-	<p><?php
-		echo _('Single practice tool that works on all of the official Touhou shoot \'em up games, ' .
-		'allowing you to change settings or skip to patterns at will.');
-	?></p>
-	<a href='https://github.com/touhouworldcup/thprac/releases/latest'><?php echo _('Download') ?></a>
     <!-- SpoilerAL -->
     <hr>
     <h2 id='spoileral'>SpoilerAL<?php if ($lang == 'ja_JP') { echo '（すぽいらーえーる）'; } ?></h2>

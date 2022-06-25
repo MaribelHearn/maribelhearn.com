@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-06-09 22:58+0200\n"
-"PO-Revision-Date: 2022-06-09 22:58+0200\n"
+"POT-Creation-Date: 2022-06-23 23:54+0200\n"
+"PO-Revision-Date: 2022-06-23 23:54+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -38,20 +38,20 @@ msgstr ""
 msgid "No. of LNNNNs"
 msgstr ""
 
-#: games/lnn/lnn.js:23 games/lnn/lnn.php:170 games/lnn/lnn.php:217
+#: games/lnn/lnn.js:23 games/lnn/lnn.php:166 games/lnn/lnn.php:213
 msgid "No. of LNNs"
 msgstr ""
 
-#: games/lnn/lnn.js:28 games/wr/wr.js:82 shared/shared.php:517
+#: games/lnn/lnn.js:28 games/wr/wr.js:82 shared/shared.php:531
 msgid "Route"
 msgstr ""
 
-#: games/lnn/lnn.js:28 games/lnn/lnn.php:147 games/wr/wr.js:82
-#: games/wr/wr.php:67 games/wr/wr.php:307 shared/shared.php:517
+#: games/lnn/lnn.js:28 games/lnn/lnn.php:143 games/wr/wr.js:82
+#: games/wr/wr.php:67 games/wr/wr.php:313 shared/shared.php:531
 msgid "Shottype"
 msgstr ""
 
-#: games/lnn/lnn.js:218
+#: games/lnn/lnn.js:216
 msgid "(All)"
 msgstr ""
 
@@ -93,79 +93,79 @@ msgstr "Все столбцы таблицы можно отсортироват
 msgid "Contents"
 msgstr "Содержание"
 
-#: games/lnn/lnn.php:24 games/lnn/lnn.php:29 games/lnn/lnn.php:44
+#: games/lnn/lnn.php:23 games/lnn/lnn.php:28 games/lnn/lnn.php:43
 msgid "LNN Lists"
 msgstr "Списки LNN"
 
-#: games/lnn/lnn.php:25 games/lnn/lnn.php:37 games/lnn/lnn.php:163
+#: games/lnn/lnn.php:24 games/lnn/lnn.php:36 games/lnn/lnn.php:159
 msgid "Overall Count"
 msgstr "Общее количество"
 
-#: games/lnn/lnn.php:26 games/lnn/lnn.php:38 games/lnn/lnn.php:210
-#: games/wr/wr.php:30 games/wr/wr.php:47 games/wr/wr.php:371
+#: games/lnn/lnn.php:25 games/lnn/lnn.php:37 games/lnn/lnn.php:206
+#: games/wr/wr.php:30 games/wr/wr.php:47 games/wr/wr.php:377
 msgid "Player Ranking"
 msgstr "Рейтинг игроков"
 
-#: games/lnn/lnn.php:36 games/lnn/lnn.php:130 games/wr/wr.php:42
-#: games/wr/wr.php:289
+#: games/lnn/lnn.php:35 games/lnn/lnn.php:126 games/wr/wr.php:42
+#: games/wr/wr.php:295
 msgid "Player Search"
 msgstr "Поиск игроков"
 
-#: games/lnn/lnn.php:61 games/lnn/lnn.php:115
+#: games/lnn/lnn.php:58 games/lnn/lnn.php:111
 msgid "(Different players)"
 msgstr ""
 
-#: games/lnn/lnn.php:61 games/lnn/lnn.php:116
+#: games/lnn/lnn.php:59 games/lnn/lnn.php:112
 msgid "Players"
 msgstr ""
 
-#: games/lnn/lnn.php:89 games/lnn/lnn.php:122 games/lnn/lnn.php:198
+#: games/lnn/lnn.php:86 games/lnn/lnn.php:118 games/lnn/lnn.php:194
 msgid "Overall"
 msgstr ""
 
-#: games/lnn/lnn.php:98
+#: games/lnn/lnn.php:94
 msgid "Click a game cover to show its list of LNNs."
 msgstr "Нажмите на обложку игры для получения ее списка LNN."
 
-#: games/lnn/lnn.php:131
+#: games/lnn/lnn.php:127
 msgid "Choose a player name from the menu below to show their LNNs."
 msgstr "Выберите имя игрока из меню ниже чтобы получить список его LNN."
 
-#: games/lnn/lnn.php:132 games/lnn/lnn.php:215 games/wr/wr.php:65
-#: games/wr/wr.php:290 games/wr/wr.php:330 games/wr/wr.php:376
+#: games/lnn/lnn.php:128 games/lnn/lnn.php:211 games/wr/wr.php:65
+#: games/wr/wr.php:296 games/wr/wr.php:336 games/wr/wr.php:382
 msgid "Player"
 msgstr ""
 
-#: games/lnn/lnn.php:146 games/lnn/lnn.php:168 games/wr/wr.php:63
+#: games/lnn/lnn.php:142 games/lnn/lnn.php:164 games/wr/wr.php:63
 msgid "Game"
 msgstr ""
 
-#: games/lnn/lnn.php:148 games/wr/wr.php:69 games/wr/wr.php:308
-#: games/wr/wr.php:331
+#: games/lnn/lnn.php:144 games/wr/wr.php:69 games/wr/wr.php:314
+#: games/wr/wr.php:337
 msgid "Replay"
 msgstr ""
 
-#: games/lnn/lnn.php:156 games/wr/wr.php:318
+#: games/lnn/lnn.php:152 games/wr/wr.php:324
 msgid "Total"
 msgstr ""
 
-#: games/lnn/lnn.php:172
+#: games/lnn/lnn.php:168
 msgid "Different players"
 msgstr ""
 
-#: games/lnn/lnn.php:203
+#: games/lnn/lnn.php:199
 msgid "Replays"
 msgstr ""
 
-#: games/lnn/lnn.php:220
+#: games/lnn/lnn.php:216
 msgid "Games LNN'd"
 msgstr ""
 
-#: games/lnn/lnn.php:234 games/lnn/lnn.php:235
+#: games/lnn/lnn.php:230 games/lnn/lnn.php:231
 msgid " (All Windows)"
 msgstr ""
 
-#: games/lnn/lnn.php:242 games/tools/tools.php:514 games/wr/wr.php:402
+#: games/lnn/lnn.php:240 games/tools/tools.php:514 games/wr/wr.php:408
 msgid "Back to Top"
 msgstr ""
 
@@ -195,11 +195,11 @@ msgstr ""
 "можно скачать по ссылке ниже (см. THCRAP). У этих патчей будет показана "
 "иконка их сайта."
 
-#: games/tools/tools.php:17
-msgid "<strong>For Windows 10:</strong> DX8 to DX9"
-msgstr "<strong>Для Windows 10: </strong>DX8 to DX9"
-
 #: games/tools/tools.php:18 games/tools/tools.php:73
+msgid "DX8 to DX9 converter"
+msgstr "Конвертер DX8 to DX9"
+
+#: games/tools/tools.php:19 games/tools/tools.php:81
 msgid "Completed Scorefiles"
 msgstr "Полные скорфайлы"
 
@@ -252,8 +252,8 @@ msgstr ""
 "улучшает опыт игры в этих играх.</p><p>Vpatch можно поставить на все "
 "официальные шмапы, кроме HSiFS, WBaWC и UM."
 
-#: games/tools/tools.php:40 games/tools/tools.php:57 games/tools/tools.php:60
-#: games/tools/tools.php:70 games/tools/tools.php:80 games/tools/tools.php:89
+#: games/tools/tools.php:40 games/tools/tools.php:48 games/tools/tools.php:65
+#: games/tools/tools.php:68 games/tools/tools.php:78 games/tools/tools.php:88
 #: games/tools/tools.php:167 games/tools/tools.php:173
 #: games/tools/tools.php:180 games/tools/tools.php:223
 #: games/tools/tools.php:226 games/tools/tools.php:229
@@ -276,41 +276,50 @@ msgstr ""
 msgid "Download"
 msgstr "Скачать"
 
-#: games/tools/tools.php:44
+#: games/tools/tools.php:43
+msgid "<h2 id=\"thprac\">thprac (universal practice tool by Ack)</h2>"
+msgstr ""
+"<h2 id=\"thprac\">thprac</h2><h3>(Универсальный инструмент для практики)</h3>"
+
+#: games/tools/tools.php:45
 msgid ""
-"<h2 id=\"thcrap\">THCRAP (Translation patches / Modding tool) <a "
+"Single practice tool that works on all of the official Touhou shoot 'em up "
+"games, allowing you to change settings or skip to patterns at will."
+msgstr ""
+"Единый инструмент для практики всех официальных Тохо шмапов, позволяющий "
+"менять параметры и пропускать до нужных паттернов."
+
+#: games/tools/tools.php:52
+msgid ""
+"<h2 id=\"thcrap\">thcrap (Translation patches / Modding tool) <a "
 "id=\"thcrap_link\" href=\"https://www.thpatch.net/wiki/Touhou_Patch_Center:"
 "Main_page\" target=\"_blank\"><span class=\"icon thcrap_icon\"></span> "
 "thcrap</a></h2>"
 msgstr ""
-"<h2 id=\"thcrap\">THCRAP <a id=\"thcrap_link\" href=\"https://www.thpatch."
+"<h2 id=\"thcrap\">thcrap <a id=\"thcrap_link\" href=\"https://www.thpatch."
 "net/wiki/Touhou_Patch_Center:Main_page\" target=\"_blank\"><span "
 "class=\"icon thcrap_icon\"></span> thcrap</a></h2><h3>(Патчи с переводом / "
 "Инструмент для моддинга)</h3>"
 
-#: games/tools/tools.php:50
+#: games/tools/tools.php:58
 msgid ""
 "Translation patches into English and many other languages, as well as "
 "countless modifications to gameplay, graphics and more, plus the ability to "
 "make your own, are provided by the Touhou Community Reliant Automatic "
-"Patcher (THCRAP) for all Windows Touhou games. The thpatch.net link also "
+"Patcher (thcrap) for all Windows Touhou games. The thpatch.net link also "
 "links to instructions on how to use the patcher."
 msgstr ""
 "Патчи с переводом на русский, украинский, английский и многие другие языки, "
 "а также бесчисленное количество модификаций геймплея, графики, и многого "
 "другого. Плюс, с возможностью сделать свой собственный патч. Это все можно "
-"сделать при помощи THCRAP, доступен для всех Windows Тохо игр. Ссылка на "
+"сделать при помощи thcrap, доступен для всех Windows Тохо игр. Ссылка на "
 "thpatch.net также содержит инструкции о том, как использовать патчер."
 
-#: games/tools/tools.php:60
+#: games/tools/tools.php:68
 msgid " (maribelhearn.com mirror)"
 msgstr " (зеркало maribelhearn.com)"
 
-#: games/tools/tools.php:65
-msgid "DX8 to DX9 converter"
-msgstr "Конвертер DX8 to DX9"
-
-#: games/tools/tools.php:67
+#: games/tools/tools.php:75
 msgid ""
 "Makes the older Touhou Windows games (EoSD, PCB, IN, PoFV and StB) run "
 "properly on Windows 10. Extract it into the folders of these games for it to "
@@ -319,7 +328,7 @@ msgstr ""
 "При помощи этого конвертера старые Тохо игры (6-9.5) могут работать "
 "правильно на Windows 10. Просто разархивируйте его в папку с игрой."
 
-#: games/tools/tools.php:75
+#: games/tools/tools.php:83
 msgid ""
 "These are (mostly) complete <span class=\"code\">score.dat</span> files "
 "useful for practice combined with other tools, as they have unlocked the "
@@ -330,22 +339,9 @@ msgstr ""
 "совместно с другими инструментами, так как в них открыты Экстра-уровень, все "
 "уровни для пратики и спеллы в Практике Спелл-карт для всех шоттипов."
 
-#: games/tools/tools.php:79
+#: games/tools/tools.php:87
 msgid "All official shooting games aside from VD are included."
 msgstr "Включены все официальные шмапы кроме VD."
-
-#: games/tools/tools.php:84
-msgid "<h2 id=\"thprac\">Thprac (universal practice tool by ACK)</h2>"
-msgstr ""
-"<h2 id=\"thprac\">Thprac</h2><h3>(Универсальный инструмент для практики)</h3>"
-
-#: games/tools/tools.php:86
-msgid ""
-"Single practice tool that works on all of the official Touhou shoot 'em up "
-"games, allowing you to change settings or skip to patterns at will."
-msgstr ""
-"Единый инструмент для практики всех официальных Тохо шмапов, позволяющий "
-"менять параметры и пропускать до нужных паттернов."
 
 #: games/tools/tools.php:94
 msgid ""
@@ -989,18 +985,6 @@ msgstr "Фикс каунтерстопа в WBaWC от "
 msgid "Allows the in-game score counter to exceed 9,999,999,990 points."
 msgstr "Позволяет счетчику очков превышать 9.999.999.990 очков."
 
-#: games/wr/wr.js:254 games/wr/wr.php:221
-msgid "World"
-msgstr ""
-
-#: games/wr/wr.js:254 games/wr/wr.php:222
-msgid "West"
-msgstr ""
-
-#: games/wr/wr.js:254 games/wr/wr.php:222
-msgid "Percentage"
-msgstr ""
-
 #: games/wr/wr.php:5
 msgid ""
 "An accurate list of Touhou world records, updated every so often. Note that "
@@ -1042,7 +1026,7 @@ msgid "World Records"
 msgstr "Мировые рекорды"
 
 #: games/wr/wr.php:28 games/wr/wr.php:29 games/wr/wr.php:43 games/wr/wr.php:45
-#: games/wr/wr.php:325 games/wr/wr.php:353
+#: games/wr/wr.php:331 games/wr/wr.php:359
 msgid "Recent Records"
 msgstr "Последние Мировые Рекорды"
 
@@ -1054,7 +1038,7 @@ msgstr "Западные рекорды"
 msgid "Dates"
 msgstr "Даты"
 
-#: games/wr/wr.php:64 games/wr/wr.php:306 games/wr/wr.php:329
+#: games/wr/wr.php:64 games/wr/wr.php:312 games/wr/wr.php:335
 msgid "Score"
 msgstr ""
 
@@ -1062,8 +1046,20 @@ msgstr ""
 msgid "Difficulty"
 msgstr ""
 
-#: games/wr/wr.php:68 games/wr/wr.php:309 games/wr/wr.php:332
+#: games/wr/wr.php:68 games/wr/wr.php:315 games/wr/wr.php:338
 msgid "Date"
+msgstr ""
+
+#: games/wr/wr.php:221 games/wr/wr.php:286
+msgid "World"
+msgstr ""
+
+#: games/wr/wr.php:222 games/wr/wr.php:287
+msgid "West"
+msgstr ""
+
+#: games/wr/wr.php:222 games/wr/wr.php:288
+msgid "Percentage"
 msgstr ""
 
 #: games/wr/wr.php:251
@@ -1078,156 +1074,156 @@ msgstr "Времена года"
 msgid "Unverified Scores"
 msgstr ""
 
-#: games/wr/wr.php:289
+#: games/wr/wr.php:295
 msgid "Choose a player name from the menu below to show their WRs."
 msgstr ""
 "Выберите имя игрока из меню ниже чтобы получить список его мировых рекордов."
 
-#: games/wr/wr.php:305 games/wr/wr.php:328
+#: games/wr/wr.php:311 games/wr/wr.php:334
 msgid "Category"
 msgstr ""
 
-#: games/wr/wr.php:377
+#: games/wr/wr.php:383
 msgid "No. of WRs"
 msgstr ""
 
-#: games/wr/wr.php:378
+#: games/wr/wr.php:384
 msgid "Different games"
 msgstr ""
 
-#: shared/shared.php:417
+#: shared/shared.php:431
 msgid "Youkai mode (Dark)"
 msgstr ""
 
-#: shared/shared.php:417
+#: shared/shared.php:431
 msgid "Human mode (Light)"
 msgstr ""
 
-#: shared/shared.php:426 shared/shared.php:433
+#: shared/shared.php:440 shared/shared.php:447
 msgid "Flag of the United Kingdom"
 msgstr "Флаг Великобритании"
 
-#: shared/shared.php:429
+#: shared/shared.php:443
 msgid "Flag of the United States"
 msgstr "Флаг США"
 
-#: shared/shared.php:437
+#: shared/shared.php:451
 msgid "Flag of Japan"
 msgstr "Флаг Японии"
 
-#: shared/shared.php:441
+#: shared/shared.php:455
 msgid "Flag of the P.R.C."
 msgstr "Флаг Китая"
 
-#: shared/shared.php:445
+#: shared/shared.php:459
 msgid "Flag of Russia"
 msgstr "Флаг России"
 
-#: shared/shared.php:449
+#: shared/shared.php:463
 msgid "Flag of Germany"
 msgstr "Флаг Германии"
 
-#: shared/shared.php:453
+#: shared/shared.php:467
 msgid "Flag of Spain"
 msgstr "Флаг Испании"
 
-#: shared/shared.php:549
+#: shared/shared.php:563
 msgid "Touhou 1 - The Highly Responsive to Prayers"
 msgstr ""
 
-#: shared/shared.php:550
+#: shared/shared.php:564
 msgid "Touhou 2 - The Story of Eastern Wonderland"
 msgstr ""
 
-#: shared/shared.php:551
+#: shared/shared.php:565
 msgid "Touhou 3 - Phantasmagoria of Dim.Dream"
 msgstr ""
 
-#: shared/shared.php:552
+#: shared/shared.php:566
 msgid "Touhou 4 - Lotus Land Story"
 msgstr ""
 
-#: shared/shared.php:553
+#: shared/shared.php:567
 msgid "Touhou 5 - Mystic Square"
 msgstr ""
 
-#: shared/shared.php:554
+#: shared/shared.php:568
 msgid "Touhou 6 - The Embodiment of Scarlet Devil"
 msgstr ""
 
-#: shared/shared.php:555
+#: shared/shared.php:569
 msgid "Touhou 7 - Perfect Cherry Blossom"
 msgstr ""
 
-#: shared/shared.php:556
+#: shared/shared.php:570
 msgid "Touhou 8 - Imperishable Night"
 msgstr ""
 
-#: shared/shared.php:557
+#: shared/shared.php:571
 msgid "Touhou 9 - Phantasmagoria of Flower View"
 msgstr ""
 
-#: shared/shared.php:558
+#: shared/shared.php:572
 msgid "Touhou 9.5 - Shoot the Bullet"
 msgstr ""
 
-#: shared/shared.php:559
+#: shared/shared.php:573
 msgid "Touhou 10 - Mountain of Faith"
 msgstr ""
 
-#: shared/shared.php:560
+#: shared/shared.php:574
 msgid "Touhou 11 - Subterranean Animism"
 msgstr ""
 
-#: shared/shared.php:561
+#: shared/shared.php:575
 msgid "Touhou 12 - Undefined Fantastic Object"
 msgstr ""
 
-#: shared/shared.php:562
+#: shared/shared.php:576
 msgid "Touhou 12.5 - Double Spoiler"
 msgstr ""
 
-#: shared/shared.php:563
+#: shared/shared.php:577
 msgid "Touhou 12.8 - Great Fairy Wars"
 msgstr ""
 
-#: shared/shared.php:564
+#: shared/shared.php:578
 msgid "Touhou 13 - Ten Desires"
 msgstr ""
 
-#: shared/shared.php:565
+#: shared/shared.php:579
 msgid "Touhou 14 - Double Dealing Character"
 msgstr ""
 
-#: shared/shared.php:566
+#: shared/shared.php:580
 msgid "Touhou 15 - Legacy of Lunatic Kingdom"
 msgstr ""
 
-#: shared/shared.php:567
+#: shared/shared.php:581
 msgid "Touhou 16 - Hidden Star in Four Seasons"
 msgstr ""
 
-#: shared/shared.php:568
+#: shared/shared.php:582
 msgid "Touhou 17 - Wily Beast and Weakest Creature"
 msgstr ""
 
-#: shared/shared.php:569
+#: shared/shared.php:583
 msgid "Touhou 18 - Unconnected Marketeers"
 msgstr ""
 
-#: shared/shared.php:589
+#: shared/shared.php:603
 msgid "Spring"
 msgstr ""
 
-#: shared/shared.php:590
+#: shared/shared.php:604
 msgid "Summer"
 msgstr ""
 
-#: shared/shared.php:591
+#: shared/shared.php:605
 msgid "Autumn"
 msgstr ""
 
-#: shared/shared.php:592
+#: shared/shared.php:606
 msgid "Winter"
 msgstr ""
 
@@ -1502,6 +1498,9 @@ msgstr ""
 #: shared/translations.php:70
 msgid "YoumuEagle"
 msgstr ""
+
+#~ msgid "<strong>For Windows 10:</strong> DX8 to DX9"
+#~ msgstr "<strong>Для Windows 10: </strong>DX8 to DX9"
 
 #~ msgid "Rules"
 #~ msgstr "Правила"
