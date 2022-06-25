@@ -1592,7 +1592,8 @@
                 <td>December 4, 2015</td>
                 <td>June 20, 2022</td>
                 <td>-</td>
-                <td><strong><a href='https://www.youtube.com/watch?v=HL9uMqNdOpU'>1cc</a></strong></td>
+                <td><strong><a href='https://www.youtube.com/watch?v=HL9uMqNdOpU'>1cc</a>
+                <a href='https://www.youtube.com/watch?v=NK9wnUwRDbI'>NB</a></strong></td>
             </tr>
             <tr>
                 <td colspan='6'></td>
