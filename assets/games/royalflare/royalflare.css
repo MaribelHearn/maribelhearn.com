@@ -11,10 +11,9 @@ table {
 table tbody:not(.ranking) {
     counter-reset: sortabletablescope;
 }
-table tbody:not(.ranking) tr:before {
+table tbody:not(.ranking) td:first-child::before {
     content: counter(sortabletablescope);
     counter-increment: sortabletablescope;
-    display: table-cell;
     vertical-align: middle;
 }
 tr:nth-child(even) {
@@ -61,9 +60,6 @@ a.scene {
 .slowdown {
     color: darkred;
     font-weight: bold;
-}
-.hidden {
-    display: none;
 }
 .nowrap {
     white-space: nowrap;

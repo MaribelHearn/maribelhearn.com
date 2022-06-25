@@ -137,6 +137,10 @@
 				</tr>
 			</thead>
 			<tbody id='number_table_tbody'></tbody>
+			<tfoot>
+				<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr id='number_table_totals'><td><strong><?php echo _('Total') ?></strong></td></tr>
+			</tfoot>
 		</table>
         <h2><?php echo _('Clear Completions') ?></h2>
 		<table id='completion_table' class='sortable'>

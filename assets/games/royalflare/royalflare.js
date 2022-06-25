@@ -4,7 +4,6 @@ function init() {
     for (const th of thElements) {
         if (th.id.includes("score")) {
             th.click();
-            th.click();
         }
     }
 

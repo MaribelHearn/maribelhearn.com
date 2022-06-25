@@ -41,7 +41,8 @@ function directory(string $page) {
     return 'games';
 }
 $min = (!is_localhost($_SERVER['REMOTE_ADDR']) ? '-min' : '');
-$sorttable = array('drc', 'fangame', 'gensokyo', 'lnn', 'royalflare', 'scoring', 'survival', 'thvote', 'wr');
+$sorttable = array('fangame', 'thvote');
+$sortable = array('gensokyo', 'lnn', 'royalflare', 'scoring', 'survival', 'wr');
 $canvas = array('slots', 'survival', 'tiers');
 $wr_json = array('drc', 'scoring', 'wr');
 $po2json = array('drc', 'lnn', 'wr');
@@ -52,8 +53,11 @@ if (in_array($page, $canvas)) {
     array_push($js, 'js/html2canvas' . $min . '.js');
     array_push($js, 'js/polyfill_promise' . $min . '.js');
 }
-if (in_array($page, $sorttable) && !($page == 'wr' && isset($_COOKIE['wr_old_layout'])) && !($page == 'lnn' && isset($_COOKIE['lnn_old_layout']))) {
+if (in_array($page, $sorttable)) {
     array_push($js, 'js/sorttable' . $min . '.js');
+}
+if (in_array($page, $sortable)) {
+    array_push($js, 'js/sortable' . $min . '.js');
 }
 if ($page == 'tiers' && isset($_GET['mobile']) && $_GET['mobile']) {
     array_push($js, 'js/polyfill_dragdrop' . $min . '.js');

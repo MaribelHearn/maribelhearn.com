@@ -15,29 +15,29 @@
         }
         echo '<h2 id="' . $diff . '">' . $diff . '</h2>';
         if ($game == 'GFW' && $diff == 'Extra') {
-            echo '<div class="overflow"><table id="' . $diff . 't" class="' . $game . 't sortable"><tr><th class="head">#</th><th id="' . $diff .
+            echo '<div class="overflow"><table id="' . $diff . 't" class="' . $game . 't sortable"><thead><tr><th class="no-sort">#</th><th id="' . $diff .
             'score">スコア<br>Score</th><th>処理落率<br>Slowdown</th><th>難易度<br>Difficulty</th>' .
-            '<th>プレイ日付<br>Play Date</th><th>名前<br>Player</th><th>コメント<br>Comment</th><th>リプレイ<br>Replay</th></tr>';
+            '<th>プレイ日付<br>Play Date</th><th>名前<br>Player</th><th>コメント<br>Comment</th><th>リプレイ<br>Replay</th></tr></thead><tbody>';
             foreach ($board as $key => $entry) {
                 if ($entry['difficulty'] == $diff) {
                     $slowdown_class = (check_slowdown($game, $entry['slowdown']) ? ' class="slowdown"' : '');
-                    echo '<tr><td class="hidden"></td><td>' . number_format($entry['score'], 0, '.', ',') . '</td><td' . $slowdown_class . '>' . $entry['slowdown'] . '</td>' .
+                    echo '<tr><td class="hidden"></td><td data-sort="' . $entry['score'] . '">' . number_format($entry['score'], 0, '.', ',') . '</td><td' . $slowdown_class . '>' . $entry['slowdown'] . '</td>' .
                     '<td>' . $entry['difficulty'] . '</td><td>' . $entry['date'] . '</td><td>' . $entry['player'] . '</td><td class="break">' . $entry['comment'] .
                     '</td><td><a href="' . $entry['replay'] . '">' . $entry['uploaded'] . '</a></td></tr>';
                 }
             }
-            echo '</table></div>';
+            echo '</tbody></table></div>';
         } else {
             foreach ($shots as $key => $shot) {
                 echo '<p id="' . $diff . $shot . '" class="shottype">' . (tl_shot(str_replace(' ', '', $shot), 'Japanese') != $shot ? tl_shot(str_replace(' ', '', $shot), 'Japanese') . ' - ' : '') . $shot .
-                '</p><div class="overflow"><table id="' . $diff . $shot . 't" class="' . $game . 't sortable"><tr><th class="head">#</th><th id="' . $diff . $shot .
+                '</p><div class="overflow"><table id="' . $diff . $shot . 't" class="' . $game . 't sortable"><thead><tr><th class="no-sort">#</th><th id="' . $diff . $shot .
                 'score">スコア<br>Score</th><th>処理落率<br>Slowdown</th>' . ($game != 'GFW' ? '<th><span class="nowrap">使用キャラ</span><br>Shottype</th>' : '<th><span class="nowrap">ルート</span><br>Route</th>') .
-                '<th>難易度<br>Difficulty</th><th>プレイ日付<br>Play Date</th><th>名前<br>Player</th>' . ($is_mobile ? '' : '<th>コメント<br>Comment</th>') . '<th>リプレイ<br>Replay</th></tr>';
+                '<th>難易度<br>Difficulty</th><th>プレイ日付<br>Play Date</th><th>名前<br>Player</th>' . ($is_mobile ? '' : '<th>コメント<br>Comment</th>') . '<th>リプレイ<br>Replay</th></tr></thead><tbody>';
                 foreach ($board as $key => $entry) {
                     $slowdown_class = (check_slowdown($game, $entry['slowdown']) ? ' class="slowdown"' : '');
                     if ($entry['difficulty'] == $diff && (($game != 'GFW' && $entry['chara'] == $shot) || ($game == 'GFW' && $entry['route'] == $shot))) {
                         if ($game != 'IN' || $diff == 'Extra' || $entry['route'] == ('Final' . $route)) {
-                            echo '<tr><td class="hidden"></td><td>' . number_format($entry['score'], 0, '.', ',') . '</td><td' . $slowdown_class . '>' . $entry['slowdown'] .
+                            echo '<tr><td></td><td data-sort="' . $entry['score'] . '">' . number_format($entry['score'], 0, '.', ',') . '</td><td' . $slowdown_class . '>' . $entry['slowdown'] .
                             '</td>' . ($game != 'GFW' ? '<td>' . tl_shot($entry['chara'], $lang) . '</td>' : '<td>' . $entry['route'] . '</td>') .
                             '<td>' . $entry['difficulty'] . ($game == 'IN' && $diff != 'Extra' ? '<br>' . (tl_term('Final' . $route, $lang)) : '') . '</td>' .
                             '<td>' . $entry['date'] . '</td><td>' . $entry['player'] . '</td>' . ($is_mobile ? '' : '<td class="break">' . $entry['comment'] . '</td>') .
@@ -45,7 +45,7 @@
                         }
                     }
                 }
-                echo '</table></div>';
+                echo '</tbody></table></div>';
             }
         }
     }

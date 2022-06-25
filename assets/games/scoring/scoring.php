@@ -147,12 +147,12 @@
 		}
 	?>
 	<div id='top_list'>
-        <table id='score_table' class='result_table'>
+        <table id='score_table' class='sortable result_table'>
             <thead>
                 <tr>
                     <th>Game + Difficulty</th>
                     <th>Shottype / Route</th>
-                    <th class='sorttable_numeric'>Score</th>
+                    <th>Score</th>
                     <th>WR Percentage</th>
                     <th>Progress Bar</th>
                     <th>WR</th>
@@ -161,7 +161,7 @@
             <tbody id='score_tbody'>
             </tbody>
         </table>
-        <table id='game_table' class='result_table'>
+        <table id='game_table' class='sortable result_table'>
             <thead>
                 <tr>
                     <th>Game</th>
