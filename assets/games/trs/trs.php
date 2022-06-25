@@ -52,7 +52,7 @@
     <p>You need to select the difficulty you used during your run.
     If you used a custom difficulty please write the name in the "Other" section.</p>
     <h3>Shottype / Routes</h3>
-    <p>Write down the shot type you used in the run, for example ReimuA, MarisaWolf or AyaSpring.
+    <p>Write down the shottype you used in the run, for example ReimuA, MarisaWolf or AyaSpring.
     If your run is a GFW run please write the route you chose instead, for example A1.</p>
     <h3>Type of run</h3>
     <p>Select the type of your run.</p>
