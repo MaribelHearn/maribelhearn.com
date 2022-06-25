@@ -44,8 +44,8 @@ function setCookie(name, value) {
 }
 
 function getCookie(name) {
-    let decodedCookies = decodeURIComponent(document.cookie);
-    let cookieArray = decodedCookies.split(';');
+    const decodedCookies = decodeURIComponent(document.cookie);
+    const cookieArray = decodedCookies.split(';');
     name += '=';
 
     for (let cookie of cookieArray) {
@@ -71,19 +71,18 @@ function deleteCookie(name) {
 
 function dark() {
     const page = location.pathname.split('/')[1];
-    let style = document.createElement("link");
+
+    if (["lnn", "gensokyo", "royalflare", "wr"].includes(page)) {
+        location.reload();
+        return;
+    }
+
+    const style = document.createElement("link");
     style.id = "dark_theme";
     style.href = (location.host != "localhost" || location.pathname.includes("error") ? "https://maribelhearn.com/" : "/") + "assets/shared/dark.css";
     style.type = "text/css";
     style.rel = "stylesheet";
     head.appendChild(style);
-
-    if (["lnn", "gensokyo", "royalflare", "wr"].includes(page)) {
-        style = document.createElement("style");
-        style.id = "dark_theme_table";
-        style.innerText = "tr:not(.west_tr):nth-child(even),tr.west_tr:nth-child(odd),#player_td{background-color:#555555;}";
-        head.appendChild(style);
-    }
 }
 
 function ready() {
