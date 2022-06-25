@@ -6,6 +6,7 @@
     "extends": "eslint:recommended",
     "rules": {
         "no-prototype-builtins": "off",
+        "no-inner-declarations": "off",
         "strict": "off",
         "curly": "warn"
     }
