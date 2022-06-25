@@ -1,4 +1,4 @@
-/*global WRs scores sorttable getCookie deleteCookie*/
+/*global WRs scores getCookie deleteCookie*/
 let unsavedChanges = false;
 
 function show(game) {
@@ -137,7 +137,7 @@ function getRow(game, diff, shot, precision) {
     return {
         "total": total,
         "categories": categories,
-        "row": `<tr><td>${game} ${diff}</td><td>${shotText}</td><td>${sep(score)}</td><td>${percentage}%</td><td><progress value='${percentage}' max='100'></progress></td><td>${wrText}</td>`
+        "row": `<tr><td>${game} ${diff}</td><td>${shotText}</td><td data-sort='${score}'>${sep(score)}</td><td>${percentage}%</td><td><progress value='${percentage}' max='100'></progress></td><td data-sort='${wr[0]}'>${wrText}</td>`
     };
 }
 
@@ -200,8 +200,6 @@ function calc() {
     document.getElementById("game_table").style.display = "table";
     document.getElementById("score_tbody").innerHTML = scoreTable;
     document.getElementById("game_tbody").innerHTML = gameTable;
-    sorttable.makeSortable(document.getElementById("score_table"));
-    sorttable.makeSortable(document.getElementById("game_table"));
 }
 
 function reset() {
@@ -282,8 +280,8 @@ function checkShown() {
 }
 
 function idToCategory(id) {
-    let result = {};
     const diffs = ["Easy", "Normal", "Hard", "Lunatic", "Extra", "Phantasm"];
+    let result = {};
 
     for (const diff of diffs) {
         if (id.includes(diff)) {

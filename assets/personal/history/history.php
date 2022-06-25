@@ -333,8 +333,8 @@
                     <th>UFO</th>
                     <td id='eUFO' class='nmnb'></td>
                     <td id='nUFO' class='nb'></td>
-                    <td id='hUFO' class='clear'></td>
-                    <td id='lUFO' class='clear'></td>
+                    <td id='hUFO' class='nb'></td>
+                    <td id='lUFO' class='nb'></td>
                     <td id='xUFO' class='nmnb' colspan='2'></td>
                 </tr>
                 <tr id='oGFW'>
@@ -1582,7 +1582,7 @@
                 <td><strong>Hard</strong></td>
                 <td class='g'>Completed</td>
                 <td>September 7, 2014</td>
-                <td>-</td>
+                <td>June 20, 2022</td>
                 <td>-</td>
                 <td><strong><a href='https://www.youtube.com/watch?v=fSJtXepouj4'>1cc</a></strong></td>
             </tr>
@@ -1590,7 +1590,7 @@
                 <td><strong>Lunatic</strong></td>
                 <td class='g'>Completed</td>
                 <td>December 4, 2015</td>
-                <td>-</td>
+                <td>June 20, 2022</td>
                 <td>-</td>
                 <td><strong><a href='https://www.youtube.com/watch?v=HL9uMqNdOpU'>1cc</a></strong></td>
             </tr>

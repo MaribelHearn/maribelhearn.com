@@ -37,13 +37,13 @@ music and works will not change when the full results are published.</p>-->
         <tr>
             <!--<th id='chars_head' class='head noborders sorttable_numeric'>#</th>-->
             <th class='sorttable_numeric'>Rank</th>
-            <th class='sorttable_numeric'>2020 rank</th>
-            <th class='sorttable_numeric'>2019 rank</th>
+            <th class='sorttable_numeric'>2020</th>
+            <th class='sorttable_numeric'>2019</th>
             <th>Name</th>
             <th class='sorttable_numeric'>Points</th>
             <th class='sorttable_numeric'>No. 1 Votes</th>
             <th class='sorttable_numeric'>Comments</th>
-            <th class='sorttable_numeric'>Supportive fanworks submitted</th>
+            <th class='sorttable_numeric'>Supportive<br>fanworks<br>submitted</th>
         </tr>
     </thead>
     <tbody>

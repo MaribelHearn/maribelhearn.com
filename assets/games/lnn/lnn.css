@@ -35,10 +35,6 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
 .general_header {
     background-color: #aaaaaa;
 }
-.head {
-    content: '';
-    display: table-cell;
-}
 .HRtPt th, .HRtPp, .HRtP {
     color: white;
     background-color: #b6423c;
@@ -180,13 +176,12 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
 #lnn_list, #player_list {
     margin-top: 10px;
 }
-#ranking.sortable tbody {
+#ranking tbody {
     counter-reset: sortabletablescope;
 }
-#ranking.sortable tbody tr::before {
+#ranking tbody td:first-child::before {
     content: counter(sortabletablescope);
     counter-increment: sortabletablescope;
-    display: table-cell;
 }
 #toggle {
     float: left;

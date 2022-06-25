@@ -154,7 +154,10 @@ function setEventListeners() {
     document.getElementById("stop").addEventListener("click", stopSlots, false);
     document.getElementById("screenshot").addEventListener("click", takeScreenshot, false);
     document.getElementById("reset").addEventListener("click", reset, false);
+    document.getElementById("change_title").addEventListener("click", titleChanged, false);
+    document.getElementById("custom_title").addEventListener("keyup", titleChanged, false);
     document.getElementById("custom_title").addEventListener("keypress", checkBannedChars, false);
+    document.getElementById("custom_title").addEventListener("onblur", titleChanged, false);
 }
 
 function updateTitle() {
@@ -172,6 +175,7 @@ function updateTitle() {
 
 function titleChanged(event) {
     const length = document.getElementById("custom_title").value.length;
+    document.getElementById("title_length").innerHTML = `${length}/${MAX_TITLE_LENGTH}`;
 
     if (event.key || event.type == "click") {
         if (event.key == "Enter" || event.type == "click") {
@@ -179,7 +183,6 @@ function titleChanged(event) {
             return;
         }
 
-        document.getElementById("title_length").innerHTML = `${length}/${MAX_TITLE_LENGTH}`;
 
         if (length > MAX_TITLE_LENGTH) {
             document.getElementById("title_length").style.color = "red";
@@ -193,8 +196,6 @@ function titleChanged(event) {
 
 function titleMenu(event) {
     const id = event.target.id.replace(/[a-z]/g, "");
-    document.getElementById("custom_title").addEventListener("keyup", titleChanged, false);
-    document.getElementById("change_title").addEventListener("click", titleChanged, false);
     document.getElementById("custom_title").value = slotTitles[id];
     document.getElementById("title_length").innerHTML = `${slotTitles[id].length}/${MAX_TITLE_LENGTH}`;
     document.getElementById("modal_title").style.display = "block";

@@ -92,7 +92,7 @@
                         } else {
                             $conditions = format_conditions($rep['conditions'], $rep['category']);
                             $table .= '<tr><td><a href="' . $_SERVER['REQUEST_URI'] . '&id=' . $key . '">' . $rep['player'] .
-                            '</a></td><td>' . $rep['category'] . '<br>' . $rep['shottype'] . '</td><td>' . $rep['score'] .
+                            '</a></td><td>' . $rep['category'] . '<br>' . $rep['shottype'] . '</td><td data-sort="' . intval(str_replace(',', '', $rep['score'])) . '">' . $rep['score'] .
                             '</td><td>' . str_replace(' ', '<br>', $rep['date']) . '</td><td>' . $rep['type'] .
                             '</td><td>' . $conditions . '</td><td><a href="' . $url . '">' . $rep['rpy'] .
                             '</a></td></tr>';

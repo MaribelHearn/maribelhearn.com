@@ -21,11 +21,11 @@
         // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
         if ($layout == 'New') {
             echo '<div id="contents_new" class="border"><p><a href="#lnns" class="lnns">' . _('LNN Lists') .
-            '</a></p><p><a href="#overall" class="overallcount">' . _('Overall Count') .
-            '</a></p><p><a href="#players" class="playerranking">' . _('Player Ranking') .
+            '</a></p><p><a href="#overall">' . _('Overall Count') .
+            '</a></p><p><a href="#players">' . _('Player Ranking') .
             '</a></p></div><noscript>';
         }
-        echo '<div id="contents" class="border"><p><a href="#lnns" class="lnns">' . _('LNN Lists') . '</a></p>';
+        echo '<div id="contents" class="border"><p><a href="#lnns">' . _('LNN Lists') . '</a></p>';
         foreach ($lnn as $game => $obj) {
             if ($game == 'LM') {
                 continue;
@@ -33,14 +33,14 @@
             echo '<p><a href="#' . $game . '">' . full_name($game) . '</a></p>';
         }
         echo '<p id="playersearchlink"><a href="#playersearch">' . _('Player Search') .
-        '</a></p><p><a href="#overall" class="overallcount">' . _('Overall Count') .
-        '</a></p><p><a href="#players" class="playerranking">' . _('Player Ranking') .
+        '</a></p><p><a href="#overall">' . _('Overall Count') .
+        '</a></p><p><a href="#players">' . _('Player Ranking') .
         '</a></p></div>';
         if ($layout == 'New') {
             echo '</noscript>';
         }
     ?>
-    <h2 id='lnns' class='lnns'><?php echo _('LNN Lists') ?></h2>
+    <h2 id='lnns'><?php echo _('LNN Lists') ?></h2>
     <?php
         // With JavaScript disabled OR lnn_old_layout cookie set, show classic all games layout
         if ($layout == 'New') {
@@ -52,10 +52,10 @@
             }
             $sum = 0;
             $all = array();
-            echo '<div id="' . $game . '"><p><table id="' . $game . 't" class="sortable">' .
+            echo '<div id="' . $game . '"><p><table id="' . $game . 't" class="' . $game . 't">' .
             '<caption><span id="' . $game . '_image_old" class="cover ' . (game_num($game) <= 5 ? 'cover98' : '') . '"></span> ' . full_name($game) . '</caption>' .
             '<thead><tr><th class="general_header">' . shot_route($game) . '</th>' .
-            '<th class="general_header sorttable_numeric">' . lnn_type($game, $lang) . '<br>' . _('(Different players)') . '</th>' .
+            '<th class="general_header nowrap">' . lnn_type($game, $lang) . '<br>' . _('(Different players)') . '</th>' .
             '<th class="general_header">' . _('Players') . '</tr></thead><tbody>';
             foreach ($obj as $shot => $players) {
                 if (strpos($shot, 'UFOs')) {
@@ -104,11 +104,11 @@
     ?>
     <div id='lnn_list'>
         <p id='fullname'></p>
-        <table id='lnn_table' class='sortable'>
+        <table id='lnn_table'>
             <thead id='lnn_thead'>
                 <tr>
                     <th id='lnn_shotroute' class='general_header'></th>
-                    <th class='general_header sorttable_numeric'><span id='lnn_restrictions'></span><br><?php _('(Different players)') ?></th>
+                    <th class='general_header nowrap'><span id='lnn_restrictions'></span><br><?php echo _('(Different players)') ?></th>
                     <th class='general_header'><?php echo _('Players') ?></th>
                 </tr>
             </thead>
@@ -125,7 +125,7 @@
     <div id='playersearch'>
         <h2><?php echo _('Player Search'); ?></h2>
 		<p id='playerlnns'><?php echo _('Choose a player name from the menu below to show their LNNs.') ?></p>
-		<label for='player' class='player'><?php echo _('Player'); ?></label>
+		<label for='player'><?php echo _('Player'); ?></label>
 		<select id='player'>
             <option value=''>...</option>
 		    <?php
@@ -139,9 +139,9 @@
 	<div id='player_list'>
 		<table class='sortable'>
 			<thead id='player_thead'><tr>
-                <th class='game'><?php echo _('Game') ; ?></th>
-                <th class='shottype'><?php echo _('Shottype'); ?></th>
-                <th class='replay'><?php echo _('Replay'); ?></th>
+                <th class='general_header'><?php echo _('Game') ; ?></th>
+                <th class='general_header'><?php echo _('Shottype'); ?></th>
+                <th class='general_header'><?php echo _('Replay'); ?></th>
             </tr></thead>
 			<tbody id='player_tbody'></tbody>
 			<tfoot id='player_tfoot'>
@@ -149,23 +149,21 @@
                     <td colspan='5'></td>
                 </tr>
                 <tr class='irregular_tr'>
-                    <td class='total'><?php echo _('Total') ?></td>
+                    <td><?php echo _('Total') ?></td>
                     <td id='player_sum' colspan='4'></td>
                 </tr>
             </tfoot>
 		</table>
 	</div>
     <div id='overall'>
-        <h2 class='overallcount'><?php echo _('Overall Count'); ?></h2>
+        <h2><?php echo _('Overall Count'); ?></h2>
         <table class='sortable'>
             <thead>
                 <tr>
-                    <th class='general_header head'>#</th>
-                    <th class='general_header game'><?php echo _('Game'); ?></th>
-                    <th class='general_header sorttable_numeric'>
-                        <span class='nooflnns'><?php echo _('No. of LNNs'); ?></span>
-                    </th>
-                    <th class='general_header sorttable_numeric'><span class='differentn'><?php echo _('Different players') ?></span></th>
+                    <th class='general_header'>#</th>
+                    <th class='general_header'><?php echo _('Game'); ?></th>
+                    <th class='general_header'><?php echo _('No. of LNNs'); ?></th>
+                    <th class='general_header'><?php echo _('Different players') ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -174,7 +172,7 @@
                         if ($game == 'LM') {
                             continue;
                         }
-                        echo '<tr><td' . (game_num($game) == 128 ? ' sorttable_customkey="12.8"' : '') . '>' . game_num($game) . '</td><td class="' . $game . '">' . _($game) . '</td>';
+                        echo '<tr><td' . (game_num($game) == 128 ? ' data-sort="12.8"' : '') . '>' . game_num($game) . '</td><td class="' . $game . '">' . _($game) . '</td>';
                         $sum = 0;
                         $game_pl = array();
                         foreach ($lnn[$game] as $shottype => $data2) {
@@ -191,30 +189,26 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td class='foot' colspan='2'><span class='overall'><?php echo _('Overall'); ?></span></td>
+                    <td class='foot' colspan='2'><?php echo _('Overall'); ?></td>
                     <td class='foot'><?php echo $gt ?></td>
                     <td class='foot'><?php echo sizeof($pl_lnn) ?></td>
                 </tr>
                 <tr>
-                    <td colspan='2'><span class='replays'><?php echo _('Replays'); ?></span></td>
+                    <td colspan='2'><?php echo _('Replays'); ?></td>
                     <td colspan='2'><?php echo sizeof(glob('replays/lnn/*/*')) + sizeof($video_lnns) ?></td>
                 </tr>
             </tfoot>
         </table>
     </div>
     <div id='players'>
-        <h2 class='playerranking'><?php echo _('Player Ranking'); ?></h2>
+        <h2><?php echo _('Player Ranking'); ?></h2>
         <table id='ranking' class='sortable'>
             <thead>
                 <tr>
-                    <th class='general_header head'>#</th>
-                    <th class='general_header player'><?php echo _('Player'); ?></th>
-                    <th class='general_header sorttable_numeric'>
-                        <span class='nooflnns'><?php echo _('No. of LNNs'); ?></span>
-                    </th>
-                    <th class='general_header sorttable_numeric'>
-                        <span class='games'><?php echo _('Games LNN\'d'); ?></span>
-                    </th>
+                    <th class='general_header no-sort'>#</th>
+                    <th class='general_header'><?php echo _('Player'); ?></th>
+                    <th class='general_header'><?php echo _('No. of LNNs'); ?></th>
+                    <th class='general_header'><?php echo _('Games LNN\'d'); ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -231,7 +225,7 @@
                         $game_lnns = $pl_lnn[$key][2] == $ALL_GAME_LNN ? $pl_lnn[$key][2] . _(' (All Windows)') : $pl_lnn[$key][2];
                         //$shot_lnns = $pl_lnn[$key][1];
                         //$game_lnns = $pl_lnn[$key][2];
-                        echo '<tr><td>' . $pl_lnn[$key][0] . '</td><td>' . $shot_lnns . '</td><td>' . $game_lnns . '</td></tr>';
+                        echo '<tr><td></td><td>' . $pl_lnn[$key][0] . '</td><td data-sort="' . $pl_lnn[$key][1] . '">' . $shot_lnns . '</td><td data-sort="' . $pl_lnn[$key][2] . '">' . $game_lnns . '</td></tr>';
                     }
                 ?>
             </tbody>
