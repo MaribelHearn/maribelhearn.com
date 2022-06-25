@@ -567,9 +567,25 @@ function multiSelectionToText() {
     return result.join(", ");
 }
 
+function getItems() {
+    let selection = document.getElementById("selection").innerHTML;
+
+    if (selection.includes(',')) {
+        selection = selection.split(", ");
+
+        for (let i =  0; i <  selection.length; i++) {
+            selection[i] = selection[i].removeSpaces();
+        }
+    } else {
+        selection = selection.removeSpaces();
+    }
+
+    return selection;
+}
+
 function addToTierMobile(event) {
     const id = event.target.id.split('_');
-    const item = id[2];
+    const item = getItems();
     const tierNum = id[3];
     const tierList = getCurrentTierList();
 
@@ -577,7 +593,7 @@ function addToTierMobile(event) {
         following = item[0];
         const chars = multiSelectionToText();
         addMultiSelection(tierNum);
-        printMessage("<strong class='confirmation'>Added " + chars + " to " + tierList[tierNum].name + "!</strong>");
+        printMessage(`<strong class='confirmation'>Added ${chars} to ${tierList[tierNum].name}!</strong>`);
         emptyModal();
         return;
     }
