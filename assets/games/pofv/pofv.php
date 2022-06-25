@@ -167,18 +167,22 @@
     <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
 </div>
 <div id='modal'><?php
+    $MIN_SPEED = 148;
+    $MIN_CHARGE = 45.5;
     $chars = array('marisa', 'reimu', 'youmu', 'komachi', 'eiki', 'lyrica', 'medicine', 'reisen', 'lunasa', 'merlin', 'yuuka', 'sakuya', 'aya', 'tewi', 'mystia', 'cirno');
     $json = file_get_contents('assets/games/pofv/pofv_stats.json');
     $stats = json_decode($json, true);
     foreach ($chars as $key => $chara) {
         $tier = tier($chara);
         $full_name = name($chara);
+        $focus = max($MIN_SPEED - $stats[$chara]['focus'], 1.5);
+        $charge = max($MIN_CHARGE - $stats[$chara]['charge'], 0.3);
         echo '<div id="' . $chara . '_info" class="modal_inner"><h2>' . $full_name . '</h2><table class="noborders"><tr>' .
         '<td class="noborders"><img class="art" src="assets/games/pofv/characters/' . $chara . '.png" alt="' . $full_name . '"></td>' .
         '<td class="noborders"><table class="stats noborders"><tr><td class="noborders">Tier</td><td class="noborders"><strong class="' . $tier . '">' . $tier . '</strong></td></tr>' .
-        '<tr><td class="noborders">Normal Speed</td><td class="noborders"><progress value="' . $stats[$chara]['speed'] . '" max="98"></td></tr>' .
-        '<tr><td class="noborders">Focused Speed</td><td class="noborders"><progress value="' . $stats[$chara]['focus'] . '" max="98"></td></tr>' .
-        '<tr><td class="noborders">Charge Speed</td><td class="noborders"><progress value="' . $stats[$chara]['charge'] . '" max="20.5"></td></tr>' .
+        '<tr><td class="noborders">Normal Speed</td><td class="noborders"><progress value="' . ($MIN_SPEED - $stats[$chara]['speed']) . '" max="98"></td></tr>' .
+        '<tr><td class="noborders">Focused Speed</td><td class="noborders"><progress value="' . $focus . '" max="98"></td></tr>' .
+        '<tr><td class="noborders">Charge Speed</td><td class="noborders"><progress value="' . $charge . '" max="20.5"></td></tr>' .
         '<tr><td class="noborders">Charge Delay</td><td class="noborders">' .  $stats[$chara]['delay'] . ' frames</td></tr>' .
         '<tr><td class="noborders">Special Ability</td><td class="noborders">' . ability($chara) . '</td></tr>' .
         '<tr><td class="noborders">Scope</td><td class="noborders">' . $stats[$chara]['scope'] . '</td></tr></table></td>' .
