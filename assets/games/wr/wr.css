@@ -231,10 +231,9 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
 #ranking.sortable tbody {
     counter-reset: sortabletablescope;
 }
-#ranking.sortable tbody tr::before {
+#ranking.sortable tbody td:first-child::before {
     content: counter(sortabletablescope);
     counter-increment: sortabletablescope;
-    display: table-cell;
 }
 #toggle {
     float: left;

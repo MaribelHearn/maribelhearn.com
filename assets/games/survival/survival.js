@@ -547,14 +547,21 @@ function countAchievements(numbers) {
 
 function fillNumberTable(numbers) {
     const tbody = document.getElementById("number_table_tbody");
+    const totals = document.getElementById("number_table_totals");
     tbody.innerHTML = "";
 
     for (const difficulty in numbers) {
         if (difficulty == "Total") {
-            tbody.innerHTML += "<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+            for (const value in numbers[difficulty]) {
+                const td = document.createElement("td");
+                td.innerHTML = numbers[difficulty][value];
+                totals.appendChild(td);
+            }
+
+            break;
         }
 
-        tbody.innerHTML += `<tr id='${difficulty}_tr'><th>${difficulty}</th></tr>`;
+        tbody.innerHTML += `<tr id='${difficulty}_tr'><td><strong>${difficulty}</strong></td></tr>`;
 
         for (const value in numbers[difficulty]) {
             document.getElementById(`${difficulty}_tr`).innerHTML += `<td>${numbers[difficulty][value]}</td>`;

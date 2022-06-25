@@ -56,28 +56,31 @@
         </p>
     </div>
     <div id='overall'>
-        <h2 class='overallrecords'><?php echo _('Overall Records') ?></h2>
+        <h2><?php echo _('Overall Records') ?></h2>
         <table class='sortable'>
-            <tr>
-                <th class='general_header'>#</th>
-                <th class='general_header game'><?php echo _('Game') ?></th>
-                <th id='score' class='general_header sorttable_numeric'><?php echo _('Score') ?></th>
-                <th class='general_header player'><?php echo _('Player') ?></th>
-                <th class='general_header difficulty'><?php echo _('Difficulty') ?></th>
-                <th class='general_header shottype'><?php echo _('Shottype') ?></th>
-                <th class='general_header date'><?php echo _('Date') ?></th>
-                <th class='general_header replay'><?php echo _('Replay') ?></th>
-            </tr>
-            <?php
+            <thead>
+                <tr>
+                    <th class='general_header'>#</th>
+                    <th class='general_header'><?php echo _('Game') ?></th>
+                    <th id='score' class='general_header'><?php echo _('Score') ?></th>
+                    <th class='general_header'><?php echo _('Player') ?></th>
+                    <th class='general_header'><?php echo _('Difficulty') ?></th>
+                    <th class='general_header'><?php echo _('Shottype') ?></th>
+                    <th class='general_header date no-sort'><?php echo _('Date') ?></th>
+                    <th class='general_header'><?php echo _('Replay') ?></th>
+                </tr>
+            </thead>
+            <tbody><?php
 				foreach ($wr as $game => $value) {
                     if ($game == 'StB' || $game == 'DS') {
                         continue;
                     }
 					$num = game_num($game);
 					echo '<tr id="' . $game . 'o"><td' . ($num == 128 ? ' sorttable_customkey="12.8"' : '') . '>' . $num . '</td><td class="' . $game . '">' . _($game) . '</td>';
-					echo '<td id="' . $game . 'overall0">' . ($game == 'WBaWC' || $game == 'UM' ? '<span class="cs">9,999,999,990' .
-                    '<span class="tooltip truescore">' . number_format($overall[$num], 0, '.', ',') .
-                    '</span></span> ' : number_format($overall[$num], 0, '.', ',')) . '</td>';
+					echo '<td id="' . $game . 'overall0" data-sort="' . $overall[$num] . '">' . ($game == 'WBaWC' || $game == 'UM'
+                            ? '<span class="cs">9,999,999,990<span class="tooltip truescore">' . number_format($overall[$num], 0, '.', ',') . '</span></span> '
+                            : number_format($overall[$num], 0, '.', ',')
+                    ) . '</td>';
                     echo '<td id="' . $game . 'overall1">' . ($overall[$num] == 0 ? '-' : $overall_player[$num]) . ($game == 'WBaWC' || $game == 'UM' ? '*' : '') . '</td>';
 					echo '<td id="' . $game . 'overall2">' . ($overall[$num] == 0 ? '-' : $overall_diff[$num]) . '</td>';
 					echo '<td id="' . $game . 'overall3">' . ($overall[$num] == 0 ? '-' : _($overall_shottype[$num])) . '</td>';
@@ -92,11 +95,11 @@
                     }
 					echo '<td id="' . $game . 'overall5">' . $replay . '</td></tr>';
 				}
-			?>
+			?></tbody>
         </table>
     </div>
     <div id='overallm'>
-        <h2 class='overallrecords'><?php echo _('Overall Records') ?></h2>
+        <h2><?php echo _('Overall Records') ?></h2>
 		<?php
             echo '<hr>';
 			foreach ($wr as $game => $value) {
@@ -115,7 +118,7 @@
 			}
 		?>
     </div>
-    <h2 id='wrs' class='worldrecords'><?php echo _('World Records') ?></h2>
+    <h2 id='wrs'><?php echo _('World Records') ?></h2>
     <?php
         // With JavaScript disabled OR wr_old_layout cookie set, show classic all games layout
         if ($layout == 'New') {
@@ -131,10 +134,8 @@
                 $diff_key = '1';
             }
             echo '<div id="' . $game . '">';
-            echo '<table id="' . $game . '_table" class="' . $game .
-            't sortable"><caption><p><span id="' . $game . '_image_old" ' .
-            'class="cover sheet' . $sheet . (game_num($game) <= 5 ? ' cover98' : '') .
-            '"></span> ' . full_name($game) . '</p></caption>' .
+            echo '<table id="' . $game . '_table" class="' . $game . 't' . ($game != 'HSiFS' ? ' sortable' : '') . '">' .
+            '<caption><p><span id="' . $game . '_image_old" class="cover sheet' . $sheet . (game_num($game) <= 5 ? ' cover98' : '') . '"></span> ' . full_name($game) . '</p></caption>' .
             '<thead><tr><th>' . shot_route($game) . '</th>';
             foreach ($obj as $diff => $shots) {
                 if ($game != 'GFW' || $diff != 'Extra') {
@@ -164,12 +165,12 @@
                     } else if ($game == 'HSiFS' && $diff == 'Extra') {
                         if (strpos($shot, 'Spring')) {
                             $shot = substr($shot, 0, -6);
-                            $score = number_format($shots[$shot][0], 0, '.', ',');
+                            $score_text = number_format($shots[$shot][0], 0, '.', ',');
                             if (file_exists(replay_path($game, $diff, $shot))) {
                                 $score = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score . '</a>';
-                                echo '<td rowspan="4">' . $score . '<span class="dl_icon"></span>';
+                                echo '<td rowspan="4">' . $score_text . '<span class="dl_icon"></span>';
                             } else {
-                                echo '<td rowspan="4">' . $score;
+                                echo '<td rowspan="4">' . $score_text;
                             }
                             echo '<br>by <em>' . $shots[$shot][1] .
                             '</em><span class="dimgrey"><br><span class="datestring_game"' .
@@ -177,8 +178,7 @@
                         }
                     } else {
                         if ($score >= $MAX_SCORE) {
-                            $score_text = '<span class="cs">' . number_format($MAX_SCORE, 0, '.', ',') .
-                            '<span class="tooltip">' . number_format($score, 0, '.', ',') . '</span></span>';
+                            $score_text = '<span class="cs">' . number_format($MAX_SCORE, 0, '.', ',') . '<span class="tooltip">' . number_format($score, 0, '.', ',') . '</span></span>';
                         } else {
                             $score_text = number_format($score, 0, '.', ',');
                         }
@@ -196,7 +196,7 @@
                         if ($score == 0) {
                             echo '<td></td>';
                         } else {
-                            echo '<td>' . $score_text . '<br>by <em>' . $player . '</em><span class="dimgrey"><br>' .
+                            echo '<td data-sort="' . $score . '">' . $score_text . '<br>by <em>' . $player . '</em><span class="dimgrey"><br>' .
                             '<span class="datestring_game">' . date_tl($date, $lang) . '</span></span></td>';
                         }
                     }
@@ -270,7 +270,7 @@
         <p id='fullname'></p>
         <p id='toggle_season'>
             <input id='seasons' type='checkbox'>
-            <label id='label_seasons' class='Seasons' for='seasons'><?php echo _('Seasons') ?></label>
+            <label id='label_seasons' for='seasons'><?php echo _('Seasons') ?></label>
         </p>
         <p id='toggle_unverified'>
             <input id='unverified' type='checkbox'>
@@ -283,9 +283,9 @@
         <table id='west'>
             <thead id='west_thead'>
                 <tr class='irregular_tr'>
-                    <th class='world'><?php echo _('World') ?></th>
-                    <th class='west'><?php echo _('West') ?></th>
-                    <th class='percentage'><?php echo _('Percentage') ?></th>
+                    <th><?php echo _('World') ?></th>
+                    <th><?php echo _('West') ?></th>
+                    <th><?php echo _('Percentage') ?></th>
                 </tr>
             </thead>
             <tbody id='west_tbody'></tbody>
@@ -293,7 +293,7 @@
 	</div>
     <div id='playersearch'>
 		<?php echo '<h2>' . _('Player Search') . '</h2><p id="playerwrs">' . _('Choose a player name from the menu below to show their WRs.') . '</p>' ?>
-		<label for='player' class='player'><?php echo _('Player') ?></label>
+		<label for='player'><?php echo _('Player') ?></label>
 		<select id='player'>
             <option value=''>...</option>
             <?php
@@ -321,7 +321,7 @@
                     <td colspan='5'></td>
                 </tr>
                 <tr class='irregular_tr'>
-                    <td class='total'><?php echo _('Total') ?></td>
+                    <td><?php echo _('Total') ?></td>
                     <td id='player_sum' colspan='4'></td>
                 </tr>
             </tfoot>
@@ -349,7 +349,7 @@
                     }
                     $space = (has_space($lang) ? ' ' : '');
                     echo '<tr><td class="' . $obj->game . 'p">' . _($obj->game) . $space . $obj->diff . $space . _($obj->shot) . '</td>' .
-                    '<td>' . number_format($obj->score, 0, '.', ',') . '</td><td>' . $obj->player . '</td>' .
+                    '<td data-sort="' . $obj->score . '">' . number_format($obj->score, 0, '.', ',') . '</td><td>' . $obj->player . '</td>' .
                     '<td>' . $replay . '</td><td class="datestring">' . date_tl($obj->date, $lang) . '</td></tr>';
                 }
             ?></tbody>
@@ -374,12 +374,12 @@
         ?><hr>
     </div>
     <div id='players'>
-        <h2 class='playerranking'><?php echo _('Player Ranking') ?></h2>
+        <h2><?php echo _('Player Ranking') ?></h2>
         <table id='ranking' class='sortable'>
             <thead>
                 <tr>
-					<th class='general_header head'>#</th>
-                    <th class='general_header player'><?php echo _('Player') ?></th>
+					<th class='general_header no-sort'>#</th>
+                    <th class='general_header'><?php echo _('Player') ?></th>
                     <th class='general_header sorttable_numeric'><?php echo _('No. of WRs') ?></th>
                     <th id='differentgames' class='general_header'><?php echo _('Different games') ?></th>
                 </tr>
@@ -393,11 +393,13 @@
                         }
                         return $val;
                     });
+                    $count = 0;
 					foreach ($pl_wr as $key => $value) {
 						if ($pl[$key] === '') {
 							continue;
 						}
-						echo '<tr><td class="hidden"></td><td>' . $pl_wr[$key][0] . '</td>';
+						echo '<tr><td></td>';
+                        echo '<td>' . $pl_wr[$key][0] . '</td>';
 						echo '<td>' . $pl_wr[$key][1] . '</td>';
                         echo '<td>' . $pl_wr[$key][2] . '</td></tr>';
 					}

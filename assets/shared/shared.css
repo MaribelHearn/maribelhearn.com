@@ -360,3 +360,29 @@ a:visited.dropdown_button {
         margin-right: 0;
     }
 }
+.sortable:not(.poll) th:not(.no-sort) {
+    cursor: pointer;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+.sortable:not(.poll) th:not(.no-sort):hover::after {
+    color: inherit;
+    font-size: 1.2em;
+    content: ' \025B8';
+}
+.sortable:not(.poll) th:not(.no-sort)::after {
+    color: transparent;
+    font-size: 1.2em;
+    content: ' \025B8';
+}
+.sortable:not(.poll) th:not(.no-sort).dir-d::after {
+    color: inherit;
+    content: ' \025BE';
+}
+.sortable:not(.poll) th:not(.no-sort).dir-u::after {
+    color: inherit;
+    content: ' \025B4';
+}
+th.no-sort {
+    pointer-events: none;
+}
