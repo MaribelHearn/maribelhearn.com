@@ -52,33 +52,38 @@ function condition_name(string $cond_abbr) {
         case 'chz': return 'Tool-Assisted Replay (not marked by original uploader)';
         case 'pa': return 'Pacifist';
         case 'co': return 'Other Condition';
+        default: return '';
     }
 }
 
-function format_conditions($conditions, string $category) {
-    $result = '';
-    if ($category != 'DS' && !empty($conditions)) {
+function format_conditions(string $conditions) {
+    if (!empty($conditions)) {
         $conditions = preg_split('/,/', $conditions);
         foreach ($conditions as $key => $cond) {
             $cond_name = condition_name($cond);
-            $result .= '<img src="assets/games/gensokyo/gif/' . $cond . '.gif" width="20" height="20" alt="' . $cond_name . '" title="' . $cond_name . '">';
+            if (!empty($cond_name)) {
+                $result .= '<img src="assets/games/gensokyo/gif/' . $cond . '.gif" width="20" height="20" alt="' . $cond_name . '" title="' . $cond_name . '">';
+            }
         }
     }
     return $result;
 }
 
-function ds_table(string $id, array $rep, string $url, string $backlink) {
-    echo '<tr><th class="general_header">Category</th><td>DS ' . $rep['slowdown'] . '</td></tr>';
-    echo '<tr><th class="general_header">Game Version</th><td>-</td></tr>';
-    echo '<tr><th class="general_header">Upload Date</th><td>' . $rep['ver'] . '</td></tr>';
-    echo '<tr><th class="general_header">Type</th><td>' . $rep['date'] . '</td></tr>';
-    echo '<tr><th class="general_header">Score</th><td>' . number_format($rep['type'], 0, ',', '.') . '</td></tr>';
-    echo '<tr><th class="general_header">Slowdown</th><td>-</td></tr>';
-    echo '<tr><th class="general_header">Shottype</th><td>' . $rep['slowdown'] . '</td></tr>';
-    echo '<tr><th class="general_header">Conditions</th><td></td></tr>';
-    echo '<tr><th class="general_header">Comment</th><td>' . $rep['conditions'] . '</td></tr>';
-    echo '<tr><th class="general_header">Download</th><td><a href="' . $url . '">' . $rep['rpy'] . '</a></td></tr>';
-    echo '</tbody><tfoot><tr><th id="back" colspan="2"><a href="' . $backlink . '">Back</a></th></tr></tfoot></table></div>';
+function ds_table_no_ver(string $id, array $rep, string $url, string $backlink) {
+    $score = intval($rep['type']);
+    echo '<div class="overflow"><table id="replay" class="sortable"><tbody>';
+    echo '<tr><th class="general_header no-sort">Player</th><td>' . $rep['player'] . '</td></tr>';
+    echo '<tr><th class="general_header no-sort">Category</th><td>' . $rep['category'] . '</td></tr>';
+    echo '<tr><th class="general_header no-sort">Game Version</th><td>1.00a</td></tr>';
+    echo '<tr><th class="general_header no-sort">Upload Date</th><td>' . substr($rep['ver'], 0, 10) . ' ' . substr($rep['ver'], 10) . '</td></tr>';
+    echo '<tr><th class="general_header no-sort">Type</th><td>' . $rep['date'] . '</td></tr>';
+    echo '<tr><th class="general_header no-sort">Score</th><td>' . number_format($rep['type'], 0, '.', ',') . '</td></tr>';
+    echo '<tr><th class="general_header no-sort">Slowdown</th><td>-</td></tr>';
+    echo '<tr><th class="general_header no-sort">Shottype</th><td>' . $rep['slowdown'] . '</td></tr>';
+    echo '<tr><th class="general_header no-sort">Conditions</th><td></td></tr>';
+    echo '<tr><th class="general_header no-sort">Comment</th><td>' . $rep['conditions'] . '</td></tr>';
+    echo '<tr><th class="general_header no-sort">Download</th><td><a href="' . $url . '">' . $rep['rpy'] . '</a></td></tr>';
+    echo '</tbody><tfoot><tr><td id="back" colspan="2"><strong><a href="' . $backlink . '">Back</a></strong></td></tr></tfoot></table></div>';
 }
 
 function replay_table(string $id, array $rep) {
@@ -91,23 +96,23 @@ function replay_table(string $id, array $rep) {
     $backlink = explode('&id', $_SERVER['REQUEST_URI'])[0];
     $conditions = format_conditions($rep['conditions'], $rep['category']);
     $url = (is_localhost($_SERVER['REMOTE_ADDR']) ? 'https://maribelhearn.com/' : '') . 'replays/gensokyo/' . $id . '/' . $rep['rpy'];
-    echo '<div class="overflow"><table id="replay" class="sortable"><tbody>';
-    echo '<tr><th class="general_header">Player</th><td id="player_td">' . $rep['player'] . '</td></tr>';
-    if ($rep['category'] == 'DS') {
-        ds_table($id, $rep, $url, $backlink);
+    if ($rep['category'] == 'DS' && $rep['ver'] != '1.00a') {
+        ds_table_no_ver($id, $rep, $url, $backlink);
         return;
     }
-    echo '<tr><th class="general_header">Category</th><td>' . $rep['category'] . '</td></tr>';
-    echo '<tr><th class="general_header">Game Version</th><td>' . $rep['ver'] . '</td></tr>';
-    echo '<tr><th class="general_header">Upload Date</th><td>' . $rep['date'] . '</td></tr>';
-    echo '<tr><th class="general_header">Type</th><td>' . $rep['type'] . '</td></tr>';
-    echo '<tr><th class="general_header">Score</th><td>' . $rep['score'] . '</td></tr>';
-    echo '<tr><th class="general_header">Slowdown</th><td>' . $rep['slowdown'] . '</td></tr>';
-    echo '<tr><th class="general_header">Shottype</th><td>' . $rep['shottype'] . '</td></tr>';
-    echo '<tr><th class="general_header">Conditions</th><td>' . $conditions . '</td></tr>';
-    echo '<tr><th class="general_header">Comment</th><td>' . $comment . '</td></tr>';
-    echo '<tr><th class="general_header">Download</th><td><a href="' . $url . '">' . $rep['rpy'] . '</a></td></tr>';
-    echo '</tbody><tfoot><tr><th id="back" colspan="2"><a href="' . $backlink . '">Back</a></th></tr></tfoot></table></div>';
+    echo '<div class="overflow"><table id="replay" class="sortable"><tbody>';
+    echo '<tr><th class="general_header no-sort">Player</th><td>' . $rep['player'] . '</td></tr>';
+    echo '<tr><th class="general_header no-sort">Category</th><td>' . $rep['category'] . '</td></tr>';
+    echo '<tr><th class="general_header no-sort">Game Version</th><td>' . $rep['ver'] . '</td></tr>';
+    echo '<tr><th class="general_header no-sort">Upload Date</th><td>' . $rep['date'] . '</td></tr>';
+    echo '<tr><th class="general_header no-sort">Type</th><td>' . $rep['type'] . '</td></tr>';
+    echo '<tr><th class="general_header no-sort">Score</th><td>' . $rep['score'] . '</td></tr>';
+    echo '<tr><th class="general_header no-sort">Slowdown</th><td>' . $rep['slowdown'] . '</td></tr>';
+    echo '<tr><th class="general_header no-sort">Shottype</th><td>' . $rep['shottype'] . '</td></tr>';
+    echo '<tr><th class="general_header no-sort">Conditions</th><td>' . $conditions . '</td></tr>';
+    echo '<tr><th class="general_header no-sort">Comment</th><td>' . $comment . '</td></tr>';
+    echo '<tr><th class="general_header no-sort">Download</th><td><a href="' . $url . '">' . $rep['rpy'] . '</a></td></tr>';
+    echo '</tbody><tfoot><tr><td id="back" colspan="2"><strong><a href="' . $backlink . '">Back</a></strong></td></tr></tfoot></table></div>';
 }
 
 function input_validity() {
