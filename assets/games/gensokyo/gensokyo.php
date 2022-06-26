@@ -82,15 +82,17 @@
                     }
                     if (!empty($rep['rpy'])) {
                         $url = (is_localhost($_SERVER['REMOTE_ADDR']) ? 'https://maribelhearn.com/' : '') . 'replays/gensokyo/' . $key . '/' . $rep['rpy'];
-                        if ($rep['category'] == 'DS') {
+                        if ($rep['category'] == 'DS' && $rep['ver'] != '1.00a') {
+                            $score = intval($rep['type']);
                             $table .= '<tr><td><a href="' . $_SERVER['REQUEST_URI'] . '&id=' . $key . '">' . $rep['player'] .
-                            '</a></td><td>' . $rep['category'] . '<br>' . $rep['slowdown'] . // shottype
-                            '</td><td>' . $rep['type'] . // score
+                            '</a></td><td>' . $rep['category'] . 'TYPE<br>' . $rep['slowdown'] . // shottype
+                            '</td><td data-sort="' . $score . '">' . number_format($score, 0, '.', ',') . // score
                             '</td><td>' . substr($rep['ver'], 0, 10) . '<br>' . substr($rep['ver'], 10) . // date
-                            '</td><td>' . $rep['date'] . '</td><td></td><td><a href="' . $url . '">' . $rep['rpy'] .
-                            '</a></td></tr>'; // date = type, conditions empty
+                            '</td><td>' . $rep['date'] . // type
+                            '</td><td>' . format_conditions($rep['shottype']) . // conditions
+                            '</td><td><a href="' . $url . '">' . $rep['rpy'] . '</a></td></tr>';
                         } else {
-                            $conditions = format_conditions($rep['conditions'], $rep['category']);
+                            $conditions = format_conditions($rep['conditions']);
                             $table .= '<tr><td><a href="' . $_SERVER['REQUEST_URI'] . '&id=' . $key . '">' . $rep['player'] .
                             '</a></td><td>' . $rep['category'] . '<br>' . $rep['shottype'] . '</td><td data-sort="' . intval(str_replace(',', '', $rep['score'])) . '">' . $rep['score'] .
                             '</td><td>' . str_replace(' ', '<br>', $rep['date']) . '</td><td>' . $rep['type'] .

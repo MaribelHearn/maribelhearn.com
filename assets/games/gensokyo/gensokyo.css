@@ -4,7 +4,7 @@ p {
 table, th, td {
     border: 1px solid black;
 }
-tr:nth-child(even), #player_td {
+tr:nth-child(even) {
     background-color: #dddddd;
 }
 form {
