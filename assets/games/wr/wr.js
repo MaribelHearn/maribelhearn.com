@@ -474,6 +474,7 @@ function showPlayerWRs(player) {
     }
 
     if (player === "") {
+        document.getElementById("player_list").style.display = "none";
         return;
     }
 

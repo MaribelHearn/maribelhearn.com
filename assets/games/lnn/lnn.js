@@ -185,7 +185,8 @@ function getPlayerLNNs(player, game) {
 function showPlayerLNNs() { // player onchange, player onselect
     const player = this.value;
 
-    if (player.trim() === "") {
+    if (player === "") {
+        document.getElementById("player_list").style.display = "none";
         return;
     }
 
