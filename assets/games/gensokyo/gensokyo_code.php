@@ -108,7 +108,11 @@ function replay_table(string $id, array $rep) {
     echo '<tr><th class="general_header no-sort">Type</th><td>' . $rep['type'] . '</td></tr>';
     echo '<tr><th class="general_header no-sort">Score</th><td>' . $rep['score'] . '</td></tr>';
     echo '<tr><th class="general_header no-sort">Slowdown</th><td>' . $rep['slowdown'] . '</td></tr>';
-    echo '<tr><th class="general_header no-sort">Shottype</th><td>' . $rep['shottype'] . '</td></tr>';
+
+    if (strpos($rep['category'], 'GFW') === false) {
+        echo '<tr><th class="general_header no-sort">Shottype</th><td>' . $rep['shottype'] . '</td></tr>';
+    }
+
     echo '<tr><th class="general_header no-sort">Conditions</th><td>' . $conditions . '</td></tr>';
     echo '<tr><th class="general_header no-sort">Comment</th><td>' . $comment . '</td></tr>';
     echo '<tr><th class="general_header no-sort">Download</th><td><a href="' . $url . '">' . $rep['rpy'] . '</a></td></tr>';
