@@ -213,6 +213,7 @@ function set_lang_cookie() {
     } else {
         if (isset($_COOKIE['lang'])) {
             $lang = str_replace('"', '', $_COOKIE['lang']);
+            $lang = (empty($lang) ? 'en_US' : $lang);
         }
     }
 
