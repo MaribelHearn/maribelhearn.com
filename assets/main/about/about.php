@@ -13,7 +13,7 @@
     likes to play shoot 'em up games seriously.</p>
     <p class='wide'>I am a nerdy person that studied Computer Science and takes keen interests in countries, travel,
     geography, history, and public transportation. Traveling is my absolute favourite activity in life. I have
-    visited 30 different countries so far, including my home country of the Netherlands, and one of my life goals is to
+    visited 31 different countries so far, including my home country of the Netherlands, and one of my life goals is to
     visit every country in Europe, as well as at least one country per continent. Of course, I also like Web development.</p>
     <figure>
         <img id='map' src='assets/main/about/countries.png' alt='Maribel&#39;s visited countries map'>
