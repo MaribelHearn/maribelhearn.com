@@ -57,6 +57,7 @@ function condition_name(string $cond_abbr) {
 }
 
 function format_conditions(string $conditions) {
+    $result = '';
     if (!empty($conditions)) {
         $conditions = preg_split('/,/', $conditions);
         foreach ($conditions as $key => $cond) {
