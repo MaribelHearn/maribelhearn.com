@@ -14,6 +14,9 @@ table, tr, th, td {
 .code {
     font-family: 'courier new';
 }
+.dead {
+    text-decoration: line-through;
+}
 .border {
     border: 1px solid black;
     margin-bottom: 15px;
