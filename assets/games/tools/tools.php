@@ -164,7 +164,7 @@
     <div>
         <p><a href='https://drive.google.com/file/d/0BwqJeqvy1nDpRGRBUy1nX0dNWVU/view' target='_blank'>SA</a> |
         <a href='https://drive.google.com/file/d/0BwqJeqvy1nDpQ1FQaUc5dDlpUEk/view' target='_blank'>UFO</a> |
-        <a href='http://www.mediafire.com/<?php echo _('Download') ?>/88ncjlua3hjrma2/th15_assist_2.2.rar' target='_blank'>LoLK</a></p>
+        <a href='http://www.mediafire.com/download/88ncjlua3hjrma2/th15_assist_2.2.rar' target='_blank'>LoLK</a></p>
     </div>
 	<p><strong><?php echo _('WBaWC Practice by ') ?><a href='https://twitter.com/Priweejt'>Priw8</a></strong></p>
 	<p><?php
@@ -226,7 +226,7 @@
     <a href='http://www.mediafire.com/download/vd08pz9ogjbhq8g/th07b.rar' target='_blank'><?php echo _('Download') ?></a>
 	<p><strong><?php echo _('WBaWC Boss Rush by ') ?>Plus</strong></p>
     <p><?php echo _('A boss rush patch for WBaWC.') ?></p>
-	<a href='https://mega.nz/#!e3wwQADS!8I4Rcr9wF-B-hV3b9wbEjGOOI9zbbz8mKj8oY86tWhY' target='_blank'><?php echo _('Download') ?></a>
+	<a class='dead' href='https://mega.nz/#!e3wwQADS!8I4Rcr9wF-B-hV3b9wbEjGOOI9zbbz8mKj8oY86tWhY' target='_blank'><?php echo _('Download') ?></a>
     <!-- Specific Pattern Practice -->
     <hr>
     <h2 id='specific'><?php echo _('Specific Pattern Practice') ?></h2>
@@ -298,7 +298,7 @@
 	<a href='https://drive.google.com/file/d/1UU6eEKDEu7n3SfZtZpV7EmGx2dDlJa0W/view?usp=sharing' target='_blank'><?php echo _('Download') ?></a>
 	<p><strong><?php echo _('DS Seija by ') ?>BurntToast12</strong></p>
 	<p><?php echo _('Replaces Aya in DS with Seija, including when she shows up as a boss.') ?></p>
-	<a href='https://mega.co.nz/#!CB4FTBwQ!JhXn6QwNeDTQu_Ys2KNt_mZlV61r8jcBF_FtVrRlcP0' target='_blank'><?php echo _('Download') ?></a>
+	<a class='dead' href='https://mega.co.nz/#!CB4FTBwQ!JhXn6QwNeDTQu_Ys2KNt_mZlV61r8jcBF_FtVrRlcP0' target='_blank'><?php echo _('Download') ?></a>
 	<p><strong><?php echo _('WBaWC (Demo) Reisen by ') ?>Kayu</strong></p>
 	<p><?php echo _('Replaces ReimuOtter with Reisen in the WBaWC demo.') ?></p>
 	<a href='https://mega.nz/#!yeABgCSJ!_tZ_8tQeYORgcqVvTh6KLN8t7jrRy685zWqwmbykHrg' target='_blank'><?php echo _('Download') ?></a>
@@ -323,7 +323,7 @@
         <p><a href='https://www.mediafire.com/file/e3sx5g9jtbell33/th12.dat' target='_blank'>HardUFO</a> |
         <a href='http://www.mediafire.com/file/usbud0rr385z2nn/th14.dat' target='_blank'>HarDDC</a></p>
     </div>
-	<p><strong><?php echo _('RNG patches by ') ?><a href='https://www.twitch.tv/dai_th' target='_blank'>Daikarasu</a></strong>
+	<p><strong><?php echo _('RNG patches by ') ?><a href='https://twitter.com/dai_karasu' target='_blank'>Daikarasu</a></strong>
 	<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> RNG</a></p>
 	<p><?php
 		echo _('A collection of modified <span class="code">.dat</span> files that randomise the patterns in the game.');
@@ -398,7 +398,7 @@
 		'savestates and has high accuracy, but requires the right configurations; can be confusing for new users. ' .
 		'The emulator is located in the bin folder with two versions, 32-bit and 64-bit (x64).');
 	?></p>
-	<a href='https://sites.google.com/site/np21win/' target='_blank'><?php echo _('Download') ?></a>
+	<a href='https://github.com/sor593/np21w' target='_blank'><?php echo _('Download') ?></a>
 	<p><strong>T98-Next</strong></p>
 	<p><?php
 		echo _('Easy-to-use emulator that will emulate the Touhou games properly without needing configuration ' .
