@@ -1355,135 +1355,51 @@
     		<th>名前<br>Player</th>
     		<th>スコア<br>Score</th>
     	</tr>
-	<tr>
-		<td>1</td>
-		<td>2008/09/18 21:29<!--<a href='/replays/royalflare/th11/th11_ud0016.rpy'>2008/09/18 21:29</a>--></td>
-		<td>Hard</td>
-		<td><?php echo tl_shot('MarisaC', $lang) ?></td>
-		<td>Miduki</td>
-		<td>545,931,830</td>
-	</tr>
-	<tr>
-		<td>2</td>
-		<td>2008/09/19 18:20<!--<a href='/replays/royalflare/th11/th11_ud004d.rpy'>2008/09/19 18:20</a>--></td>
-		<td>Hard</td>
-		<td><?php echo tl_shot('MarisaC', $lang) ?></td>
-		<td>Miduki</td>
-		<td>649,818,010</td>
-	</tr>
-	<tr>
-		<td>3</td>
-		<td><a href='/replays/royalflare/th11/th11_ud0054.rpy'>2008/09/17 21:43</a></td>
-		<td>Hard</td>
-		<td><?php echo tl_shot('MarisaC', $lang) ?></td>
-		<td>水性すらいむ</td>
-		<td>675,976,030</td>
-	</tr>
-	<tr>
-		<td>4</td>
-		<td>2008/09/19 22:40<!--<a href='/replays/royalflare/th11/th11_ud005e.rpy'>2008/09/19 22:40</a>--></td>
-		<td>Hard</td>
-		<td><?php echo tl_shot('MarisaC', $lang) ?></td>
-		<td>Miduki</td>
-		<td>774,651,790</td>
-	</tr>
-	<tr>
-		<td>5</td>
-		<td><a href='/replays/royalflare/th11/th11_ud0065.rpy'>2008/09/06 23:24</a></td>
-		<td>Hard</td>
-		<td><?php echo tl_shot('MarisaC', $lang) ?></td>
-		<td>CRB</td>
-		<td>901,863,390</td>
-	</tr>
-	<tr>
-		<td>6</td>
-		<td>2008/09/06 19:42<!--<a href='/replays/royalflare/th11/th11_ud006f.rpy'>2008/09/06 19:42</a>--></td>
-		<td>Hard</td>
-		<td><?php echo tl_shot('MarisaC', $lang) ?></td>
-		<td>MOZAN</td>
-		<td>1,051,784,550</td>
-	</tr>
-	<tr>
-		<td>7</td>
-		<td><a href='/replays/royalflare/th11/th11_ud0072.rpy'>2008/09/20 04:50</a></td>
-		<td>Hard</td>
-		<td><?php echo tl_shot('MarisaC', $lang) ?></td>
-		<td>MOZAN</td>
-		<td>1,248,777,870</td>
-	</tr>
-	<tr>
-		<td>8</td>
-		<td>2008/09/26 06:36<!--<a href='/replays/royalflare/th11/th11_ud0140.rpy'>2008/09/26 06:36</a>--></td>
-		<td>Hard</td>
-		<td><?php echo tl_shot('MarisaC', $lang) ?></td>
-		<td>DBR@瓦落多</td>
-		<td>1,366,138,550</td>
-	</tr>
-	<tr>
-		<td>9</td>
-		<td><a href='/replays/royalflare/th11/th11_ud0228.rpy'>2008/10/08 10:57</a></td>
-		<td>Hard</td>
-		<td><?php echo tl_shot('MarisaC', $lang) ?></td>
-		<td>MOZAN</td>
-		<td>1,451,833,170</td>
-	</tr>
-	<tr>
-		<td>10</td>
-		<td>2008/10/10 21:48<!--<a href='/replays/royalflare/th11/th11_ud0263.rpy'>2008/10/10 21:48</a>--></td>
-		<td>Hard</td>
-		<td><?php echo tl_shot('MarisaC', $lang) ?></td>
-		<td>MOZAN</td>
-		<td>1,517,638,310</td>
-	</tr>
-	<tr>
-		<td>11</td>
-		<td>2008/10/12 00:28<!--<a href='/replays/royalflare/th11/th11_ud0284.rpy'>2008/10/12 00:28</a>--></td>
-		<td>Hard</td>
-		<td><?php echo tl_shot('MarisaC', $lang) ?></td>
-		<td>MOZAN</td>
-		<td>1,594,818,220</td>
-	</tr>
-	<tr>
-		<td>12</td>
-		<td><a href='/replays/royalflare/th11/th11_ud02d6.rpy'>2008/10/15 05:02</a></td>
-		<td>Hard</td>
-		<td><?php echo tl_shot('MarisaC', $lang) ?></td>
-		<td>MOZAN</td>
-		<td>1,614,314,410</td>
-	</tr>
-	<tr>
-		<td>13</td>
-		<td><a href='/replays/royalflare/th11/th11_ud0857.rpy'>2009/05/31 17:54</a></td>
-		<td>Hard</td>
-		<td><?php echo tl_shot('MarisaC', $lang) ?></td>
-		<td>SELO</td>
-		<td>1,628,245,510</td>
-	</tr>
-	<tr>
-		<td>14</td>
-		<td><a href='/replays/royalflare/th11/th11_ud0993.rpy'>2009/08/23 22:09</a></td>
-		<td>Hard</td>
-		<td><?php echo tl_shot('MarisaC', $lang) ?></td>
-		<td>アラヤ</td>
-		<td>1,718,909,460</td>
-	</tr>
-	<tr>
-		<td>15</td>
-		<td><a href='/replays/royalflare/th11/th11_ud0a5d.rpy'>2009/11/03 03:40</a></td>
-		<td>Hard</td>
-		<td><?php echo tl_shot('MarisaC', $lang) ?></td>
-		<td>にゃんこ</td>
-		<td>1,841,685,280</td>
-	</tr>
-	<tr>
-		<td>16</td>
-		<td><a href='/replays/royalflare/th11/th11_ud0d96.rpy'>2010/08/05 04:50</a></td>
-		<td>Hard</td>
-		<td><?php echo tl_shot('MarisaC', $lang) ?></td>
-		<td>にゃんこ</td>
-		<td>1,919,799,160</td>
-	</tr>
-    </tbody>
+		<tr>
+			<td>1</td>
+			<td>2008/09/18 23:48<!--<a href='/replays/royalflare/th11/th11_ud0025.rpy'>2008/09/18 23:48</a>--></td>
+			<td>Normal</td>
+			<td><?php echo tl_shot('MarisaC', $lang) ?></td>
+			<td>cico</td>
+			<td>436,023,600</td>
+		</tr>
+
+		<tr>
+			<td>2</td>
+			<td><a href='/replays/royalflare/th11/th11_ud002e.rpy'>2008/09/18 16:38</a></td>
+			<td>Normal</td>
+			<td><?php echo tl_shot('MarisaC', $lang) ?></td>
+			<td>かがみん</td>
+			<td>776,103,520</td>
+		</tr>
+
+		<tr>
+			<td>3</td>
+			<td><a href='/replays/royalflare/th11/th11_ud01b5.rpy'>2008/10/02 14:33</a></td>
+			<td>Normal</td>
+			<td><?php echo tl_shot('MarisaC', $lang) ?></td>
+			<td>Atu</td>
+			<td>825,998,900</td>
+		</tr>
+
+		<tr>
+			<td>4</td>
+			<td><a href='/replays/royalflare/th11/th11_ud06c1.rpy'>2009/03/22 07:48</a></td>
+			<td>Normal</td>
+			<td><?php echo tl_shot('MarisaC', $lang) ?></td>
+			<td>にゃんこ</td>
+			<td>859,692,190</td>
+		</tr>
+
+		<tr>
+			<td>5</td>
+			<td><a href='/replays/royalflare/th11/th11_ud1113.rpy'>2012/05/07 08:42</a></td>
+			<td>Normal</td>
+			<td><?php echo tl_shot('MarisaC', $lang) ?></td>
+			<td>悠木碧</td>
+			<td>951,080,690</td>
+		</tr>
+	</tbody>
 </table>
 <h2 id='Hard'>Hard</h2>
 <p id='HardReimuA' class='shottype'>霊夢A - ReimuA</p>
