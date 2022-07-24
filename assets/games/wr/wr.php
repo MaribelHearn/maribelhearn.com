@@ -81,7 +81,7 @@
                             ? '<span class="cs">9,999,999,990<span class="tooltip truescore">' . number_format($overall[$num], 0, '.', ',') . '</span></span> '
                             : number_format($overall[$num], 0, '.', ',')
                     ) . '</td>';
-                    echo '<td id="' . $game . 'overall1">' . ($overall[$num] == 0 ? '-' : $overall_player[$num]) . ($game == 'WBaWC' || $game == 'UM' ? '*' : '') . '</td>';
+                    echo '<td id="' . $game . 'overall1">' . ($overall[$num] == 0 ? '-' : $overall_player[$num]) . '</td>';
 					echo '<td id="' . $game . 'overall2">' . ($overall[$num] == 0 ? '-' : $overall_diff[$num]) . '</td>';
 					echo '<td id="' . $game . 'overall3">' . ($overall[$num] == 0 ? '-' : _($overall_shottype[$num])) . '</td>';
 					echo '<td id="' . $game . 'overall4" class="datestring">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $lang)) . '</td>';
@@ -113,7 +113,7 @@
                 '</span></span> ' : number_format($overall[$num], 0, '.', ',')) . '</span> ';
 				echo '<span id="' . $game . 'overall2m">' . ($overall[$num] == 0 ? '-' : $overall_diff[$num]) . '</span> ';
 				echo '<span id="' . $game . 'overall3m">' . ($overall[$num] == 0 ? '-' : _($overall_shottype[$num])) . '</span> by ';
-				echo '<span id="' . $game . 'overall1m"><em>' . ($overall[$num] == 0 ? '-' : $overall_player[$num]) . ($game == 'WBaWC' || $game == 'UM' ? '*' : '') . '</em></span> ';
+				echo '<span id="' . $game . 'overall1m"><em>' . ($overall[$num] == 0 ? '-' : $overall_player[$num]) . '</em></span> ';
 				echo '<br><span id="' . $game . 'overall4m" class="datestring_player">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $lang)) . '</span></p><hr>';
 			}
 		?>
