@@ -549,6 +549,7 @@ function fillNumberTable(numbers) {
     const tbody = document.getElementById("number_table_tbody");
     const totals = document.getElementById("number_table_totals");
     tbody.innerHTML = "";
+    totals.innerHTML = "<td><strong>Total</strong></td>";
 
     for (const difficulty in numbers) {
         if (difficulty == "Total") {
