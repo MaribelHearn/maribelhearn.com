@@ -61,14 +61,14 @@ make mistakes but you will still be on pace for your goal.</p>
 Maaaaaybe, I honestly do not recommend this when you start out, however, if you improve in said game, and once you develop a good understanding of said game,
 you can start looking at the WR for reference, Knowing what is the best possible execution can also make you understand how truly works, and what you should focus on learning, but again you need some experience first.</p>
 <h4 id='prac'>Practice and Routing</h4>
-You got the replays, where to start now? The best idea is to create a route, that you can roughly follow to get the score goal you need,
+<p>You got the replays, where to start now? The best idea is to create a route, that you can roughly follow to get the score goal you need,
 a perfect execution <span class='plain_red'>SHOULDN'T</span> just barely get you the goal,
 a perfect practice execution <span class='plain_red'>SHOULD</span> allow you to score higher than your goal,
 that way you have leeway for mistakes.</p>
 <p>How do you even deal with mistakes? This heavily depends on the game,
 in some games for example an unexpected death causes no route changes, you just keep going and accept the score loss, in some games,
-a random death forces a complete re-route to get back on the original one, either that or you just skip strategies.
-Two Important things to understand are:
+a random death forces a complete re-route to get back on the original one, either that or you just skip strategies.</p>
+<p>Two Important things to understand are:</p>
 <ol>
     <li>What you SHOULDN'T DO, understand which mistakes are gonna cost you a lot.</li>
     <li>WHY replays do what they do, recognize if the deaths or bombs you see are a mistake or if they are actually routed</li>
