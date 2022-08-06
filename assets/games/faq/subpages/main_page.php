@@ -81,6 +81,8 @@ You do <em>not</em> need to see the Good Ending for a run to count as a 1cc. For
 <p><em>See the <a href='/faq/extra'>Extra Stage</a> page.</em></p>
 <h4 id='extra'>How do I get more lives / bombs?</h4>
 <p><em>See the <a href='/faq/resources'>Resources</a> page.</em></p>
+<h4 id='extra'>How do I get more lives / bombs?</h4>
+<p><em>See the <a href='/faq/scoring'>Scoring</a> page.</em></p>
 <h4 id='bombing'>When should I be bombing?</h4>
 <p>Practice the game and find out which patterns you can dodge easily and which ones you cannot. You want to plan bombs for anything that is not consistent for you,
 while also leaving some room for unplanned bombs, so you can bomb when you mess up.</p>

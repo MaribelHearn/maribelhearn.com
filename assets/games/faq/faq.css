@@ -58,6 +58,9 @@ ol {
     color: red;
     font-weight: bold;
 }
+.plain_red {
+    color: red;
+}
 .gpu {
     width: 75%;
 }
