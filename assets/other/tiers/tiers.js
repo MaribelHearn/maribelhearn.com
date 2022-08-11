@@ -1955,7 +1955,7 @@ function loadItems(pageLoad) {
     } catch (e) { // if load is broken due to outdated save
         settings.sort = "characters";
         localStorage.setItem("settings", JSON.stringify(settings));
-        location.reload();
+        console.log(e);
     }
 }
 
