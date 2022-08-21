@@ -49,9 +49,11 @@
         <p><a href='#DFK'>DoDonPachi Daifukkatsu</a></p>
         <p><a href='#SDOJ'>DoDonPachi Saidaioujou</a></p>
         <p><strong>Other Arcade Shmups</strong></p>
-        <p><a href='#Batsugun'>Batsugun Special Version</a></p>
+        <p><a href='#Batsugun'>Batsugun</a></p>
+        <p><a href='#BatsugunSP'>Batsugun Special Version</a></p>
         <p><a href='#ESP'>ESP Ra.De.</a></p>
         <p><a href='#ESPg'>Espgaluda</a></p>
+        <p><a href='#Guwange'>Guwange</a></p>
         <p><a href='#Ketsui'>Ketsui ~Kizuna Jigoku Tachi~</a></p>
         <p><a href='#MSm'>Mushihime-sama</a></p>
         <p><a href='#MSF'>Mushihime-sama Futari</a></p>
