@@ -22,6 +22,7 @@ div > div > p {
 .border {
     border: 1px solid black;
     margin-bottom: 15px;
+    display: inline-block;
 }
 .list {
     width: 250px;
@@ -131,9 +132,6 @@ div > div > p {
 }
 .dropdown_content:hover .dropdown_content {
     display: block;
-}
-#wrap > div:not(#topbar):not(#overview) {
-    display: inline-block;
 }
 #nav {
     margin-bottom: 5px;

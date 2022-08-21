@@ -3997,6 +3997,30 @@
         </table></div>
     </div>
     <div id='Batsugun'>
+        <h2>Batsugun</h2>
+		<picture>
+			<source srcset='assets/personal/history/games/batsugun250x250.webp' type='image/webp'>
+			<source srcset='assets/personal/history/games/batsugun250x250.jpg'>
+			<img loading='lazy' src='assets/personal/history/games/batsugun250x250.jpg' alt='Batsugun'>
+		</picture>
+        <p>Obtained: March 2, 2016</p>
+        <h3>Survival</h3>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>ALL</strong></td>
+                <td class='g'>Completed</td>
+                <td>August 13, 2022</td>
+                <td>No</td>
+            </tr>
+        </table></div>
+    </div>
+    <div id='BatsugunSP'>
         <h2>Batsugun Special Version</h2>
 		<picture>
 			<source srcset='assets/personal/history/games/batsugunsp250x250.webp' type='image/webp'>
@@ -4083,6 +4107,30 @@
                 <td class='g'>Completed</td>
                 <td>November 28, 2015</td>
                 <td><strong><a href='https://www.youtube.com/watch?v=WtVbxjLpAbs'>Link (YouTube)</a></strong></td>
+            </tr>
+        </table></div>
+    </div>
+    <div id='Guwange'>
+        <h2>Guwange</h2>
+		<picture>
+			<source srcset='assets/personal/history/games/guwange250x250.webp' type='image/webp'>
+			<source srcset='assets/personal/history/games/guwange250x250.jpg'>
+			<img loading='lazy' src='assets/personal/history/games/guwange250x250.jpg' alt='Guwange'>
+		</picture>
+        <p>Obtained: March 28, 2014</p>
+        <h3>Survival</h3>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>ALL</strong></td>
+                <td class='g'>Completed</td>
+                <td>August 21, 2022</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=WIsRYBmcR50'>Link (YouTube)</a></strong></td>
             </tr>
         </table></div>
     </div>
