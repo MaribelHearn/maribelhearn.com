@@ -55,8 +55,8 @@
         <p><a href='#ESPg'>Espgaluda</a></p>
         <p><a href='#Guwange'>Guwange</a></p>
         <p><a href='#Ketsui'>Ketsui ~Kizuna Jigoku Tachi~</a></p>
-        <p><a href='#MSm'>Mushihime-sama</a></p>
-        <p><a href='#MSF'>Mushihime-sama Futari</a></p>
+        <p><a href='#MSm'>Mushihimesama</a></p>
+        <p><a href='#MSF'>Mushihimesama Futari</a></p>
         <p><a href='#DSm'>Deathsmiles</a></p>
         <p><a href='#Ikaruga'>Ikaruga</a></p>
     </div>
@@ -464,20 +464,40 @@
                     <td id='1DDP' class='clear'></td>
                     <td id='2DDP' colspan='2'></td>
                 </tr>
-                <tr id='oDOJ'>
-                    <th>DOJ</th>
-                    <td id='1DOJ' class='clear'></td>
-                    <td id='2DOJ' class='attempted' colspan='2'></td>
+                <tr id='oDOJWL'>
+                    <th>DOJ WL</th>
+                    <td id='1DOJWL' class='attempted'></td>
+                    <td id='2DOJWL' colspan='2'></td>
+                </tr>
+                <tr id='oDOJBL'>
+                    <th>DOJ BL</th>
+                    <td id='1DOJBL' class='clear'></td>
+                    <td id='2DOJBL' class='attempted' colspan='2'></td>
                 </tr>
                 <tr id='oESP'>
-                    <th>ESP Ra.De.</th>
-                    <td id='1ESP' class='attempted'></td>
+                    <th class='nowrap'>ESP Ra.De.</th>
+                    <td id='1ESP' class='clear'></td>
                     <td colspan='2'>X</td>
                 </tr>
                 <tr id='oESPg'>
                     <th>Espgaluda</th>
                     <td id='1ESPg' class='clear'></td>
                     <td colspan='2'>X</td>
+                </tr>
+                <tr id='oDF'>
+                    <th class='nowrap'>Dangun Feveron</th>
+                    <td id='1DF'></td>
+                    <td colspan='2'>X</td>
+                </tr>
+                <tr id='oGuwange'>
+                    <th>Guwange</th>
+                    <td id='1Guwange' class='clear'></td>
+                    <td colspan='2'>X</td>
+                </tr>
+                <tr id='oProgear'>
+                    <th >Progear</th>
+                    <td id='1Progear'></td>
+                    <td colspan='2'></td>
                 </tr>
                 <tr id='oKetsui'>
                     <th>Ketsui</th>
@@ -487,7 +507,7 @@
                 </tr>
            </tbody>
         </table></div>
-        <h3>Mushihime-sama</h3>
+        <h3>Mushihimesama</h3>
         <div class='overflow'><table>
             <thead>
                 <tr>
@@ -4082,9 +4102,9 @@
             </tr>
             <tr>
                 <td><strong>ALL</strong></td>
-                <td>Stage 5</td>
-                <td>-</td>
-                <td>No</td>
+                <td class='g'>Completed</td>
+                <td>August 25, 2022</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=GRX63iA70Ak'>Link (YouTube)</a></strong></td>
             </tr>
         </table></div>
     </div>
@@ -4173,11 +4193,11 @@
         </table></div>
     </div>
     <div id='MSm'>
-        <h2>Mushihime-sama</h2>
+        <h2>Mushihimesama</h2>
 		<picture>
 			<source srcset='assets/personal/history/games/msm250x250.webp' type='image/webp'>
 			<source srcset='assets/personal/history/games/msm250x250.jpg'>
-			<img loading='lazy' src='assets/personal/history/games/msm250x250.jpg' alt='Mushihime-sama cover'>
+			<img loading='lazy' src='assets/personal/history/games/msm250x250.jpg' alt='Mushihimesama cover'>
 		</picture>
         <p>Obtained: November 6, 2015 (Steam)</p>
         <h3>Survival</h3>
@@ -4251,11 +4271,11 @@
         </table></div>
     </div>
     <div id='MSF'>
-        <h2>Mushihime-sama Futari</h2>
+        <h2>Mushihimesama Futari</h2>
 		<picture>
 			<source srcset='assets/personal/history/games/msf250x250.webp' type='image/webp'>
 			<source srcset='assets/personal/history/games/msf250x250.jpg'>
-			<img loading='lazy' src='assets/personal/history/games/msf250x250.jpg' alt='Mushihime-sama Futari'>
+			<img loading='lazy' src='assets/personal/history/games/msf250x250.jpg' alt='Mushihimesama Futari'>
 		</picture>
         <p>Obtained: October 29, 2013</p>
         <h3>Survival</h3>

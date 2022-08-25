@@ -30,6 +30,9 @@ div > div > p {
 .overview {
     width: 80px;
 }
+.nowrap {
+    white-space: nowrap;
+}
 .legend {
     margin: 0px;
 }
