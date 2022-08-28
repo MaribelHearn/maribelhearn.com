@@ -76,7 +76,7 @@
                         continue;
                     }
 					$num = game_num($game);
-					echo '<tr id="' . $game . 'o"><td' . ($num == 128 ? ' sorttable_customkey="12.8"' : '') . '>' . $num . '</td><td class="' . $game . '">' . _($game) . '</td>';
+					echo '<tr id="' . $game . 'o"><td' . ($num == 128 ? ' data-sort="12.8"' : '') . '>' . $num . '</td><td class="' . $game . '">' . _($game) . '</td>';
 					echo '<td id="' . $game . 'overall0" data-sort="' . $overall[$num] . '">' . ($game == 'WBaWC' || $game == 'UM'
                             ? '<span class="cs">9,999,999,990<span class="tooltip truescore">' . number_format($overall[$num], 0, '.', ',') . '</span></span> '
                             : number_format($overall[$num], 0, '.', ',')
