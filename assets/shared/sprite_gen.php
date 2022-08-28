@@ -47,7 +47,11 @@ $cards = array('LifeCard', 'SpellCard', 'FragmentedLifeCard', 'FragmentedSpellCa
 'BurstingRedFrog', 'GaleGeta', 'IdolDefenseCorps', 'PrincessKaguyasSecretStash', 'ReliableTanukiApprentice', 'DanmakuGhost', 'KiketsuMatriarchsThreat', 'MoneyIsTheBestLawyerInHell',
 'PhysicalEnhancementJizo', 'SpellBeforeTheFall', 'LuckyCatWithGoodBusinessSkills', 'YamawaroShoppingTechnique', 'DragonPipe', 'GluttonousCentipede', 'Sky-BlueMagatama', 'ScreenBorder',
 'MiracleMallet', 'KeystoneOfEndurance', 'MoonOfMadness',  'EsteemedAuthority', 'VampireFang', 'UndergroundSun', 'ItemSeason', 'HeavyBassDrum', 'Psychokinesis', 'SpiritPowerSampleBottle',
-'GreatTengusBarleyRice');
+'GreatTengusBarleyRice', 'UnleashTheGuardianHounds', 'LifeExplosionElixir',  'Life-BurningTorch', 'SheepYouWantToCount', 'Laid-BackInvertebrate', 'BeautyOfDestruction', 'DragonsPassage',
+'IrresistibleJulieFan', 'PristineSelf-Confidence', 'NoProblemForACreator', 'HastyDetourOfTheThreeCrossings', 'Too-HonestSignpost', 'StimulatingScales', 'LunaticSilence', 'BumperCropOfLife',
+'YamanbasKitchenKnife', 'CapitalistsDilemma', 'MagiciansBasicStudy', 'MoneyComesAndGoesOnItsOwn185', 'IndominableMeathead', 'NimbleFabric', 'TheRabbitThatLanded',
+'FreewheelingSeveredHead', 'Soot-coveredUchiwa', 'OffensiveJeweledPagoda', 'QuietTwinkling', 'DrunkenlyWhimsicalIbukiGourd', 'ExuberantPowerlessness', 'HundredthBlackMarket',
+'KeystoneMissile', 'ScamRabbitsFoot', 'DrenchedGiantSnake', 'SmeltsScales', 'SpareHalf-Ghost', 'TeacupMarisa', 'TeacupReimu');
 for ($i = 0; $i < count($chars); $i++) {
     $picker_x = ($i % $row_size) * $picker_offset;
     $picker_y = floor($i / $row_size) * $picker_offset;
