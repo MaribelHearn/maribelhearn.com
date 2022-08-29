@@ -64,6 +64,10 @@ input[type=button] {
     text-align: center;
     background-color: purple;
 }
+.hrtp_route {
+    font-size: 12px;
+    color: #933;
+}
 .in_route {
     font-size: 12px;
     color: #339;

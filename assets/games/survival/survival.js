@@ -1,5 +1,5 @@
 /*global html2canvas isMobile getCookie deleteCookie*/
-const games = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "INFinalA", "INFinalB", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
+const games = ["HRtPMakai", "HRtPJigoku", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "INFinalA", "INFinalB", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
 let vals = {};
 let unsavedChanges = false;
 let originalContent, completions, na;
@@ -12,7 +12,7 @@ for (const game of games) {
         "Lunatic": "N/A"
     };
 
-    if (game != "HRtP" && game != "PoDD" && game != "INFinalB") {
+    if (game != "HRtPMakai" && game != "HRtPJigoku" && game != "PoDD" && game != "INFinalB") {
         vals[game].Extra = "N/A";
     }
 
@@ -75,7 +75,7 @@ function fillDifficulty(difficulty, achievement) {
             tmp = achievement;
         }
 
-        if (difficulty == "Extra" && (game == "HRtP" || game == "PoDD" || game == "INFinalB")) {
+        if (difficulty == "Extra" && (game == "HRtPMakai" || game == "HRtPJigoku" || game == "PoDD" || game == "INFinalB")) {
             continue;
         }
 
@@ -164,12 +164,17 @@ function runQuerySelectors() {
     }
 
     const hidden = document.querySelectorAll(".hidden");
+    const hrtpRoute = document.querySelectorAll(".hrtp_route");
     const inRoute = document.querySelectorAll(".in_route");
     const noExtra = document.querySelectorAll(".no_extra");
 
     for (const element of hidden) {
         element.classList.add("overview_half");
         element.style.display = "table-cell";
+    }
+
+    for (const element of hrtpRoute) {
+        element.parentNode.removeChild(element);
     }
 
     for (const element of inRoute) {
@@ -183,7 +188,9 @@ function runQuerySelectors() {
     }
 
     const overview = document.querySelectorAll(".overview");
-    const toRemove = document.getElementById("INFinalBtr");
+    let toRemove = document.getElementById("INFinalBtr");
+    toRemove.parentNode.removeChild(toRemove);
+    toRemove = document.getElementById("HRtPJigokutr");
     toRemove.parentNode.removeChild(toRemove);
 
     for (const element of overview) {
@@ -205,7 +212,7 @@ function needsText(achievement) {
 
 function applyColours() {
     for (const game of games) {
-        if (game == "INFinalB") {
+        if (game == "HRtPJigoku" || game == "INFinalB") {
             continue;
         }
 
@@ -213,12 +220,15 @@ function applyColours() {
             const id = game + diff;
             const element = document.getElementById(id);
 
-            if (id.includes("Extra") && !id.includes("PCB") && !id.includes("IN") || !id.includes("Extra") && id != "PCBPhantasm" && !id.includes("IN")) {
+            if (id.includes("Extra") && !id.includes("PCB") && !id.includes("IN")) {
+                element.parentNode.setAttribute("colspan", 2);
+                element.parentNode.classList.add("overview");
+            } else if (!id.includes("Extra") && id != "PCBPhantasm" && !id.includes("HRtP") && !id.includes("IN")) {
                 element.parentNode.setAttribute("colspan", 2);
                 element.parentNode.classList.add("overview");
             } else if (id == "PCBExtra" || id == "PCBPhantasm") {
                 element.parentNode.classList.add("overview_half");
-            } else if (id.includes("IN") && !id.includes("Extra")) {
+            } else if (id.includes("HRtP") || id.includes("IN") && !id.includes("Extra")) {
                 element.parentNode.classList.add("overview_half");
             } else {
                 element.parentNode.classList.add("overview");
@@ -231,6 +241,17 @@ function applyColours() {
             }
     
             element.parentNode.innerHTML = (needsText(value) ? value : "");
+
+            if (id.includes("HRtPMakai")) {
+                const jigokuElement = document.getElementById(id.replace("HRtPMakai", "J"));
+                const value = vals["HRtPJigoku"][diff];
+
+                if (format(value) !== "") {
+                    jigokuElement.classList.add(format(value));
+                }
+
+                jigokuElement.innerHTML = (needsText(value) ? value : "");
+            }
 
             if (id.includes("INFinalA") && !id.includes("Extra")) {
                 const finalBelement = document.getElementById(id.replace("INFinalA", "B"));
@@ -254,6 +275,7 @@ function prepareRendering() {
     document.getElementById("Extra").setAttribute("colspan", 2);
     document.getElementById("rendering_message").style.display = "block";
     document.getElementById("legend").style.display = "table-caption";
+    document.getElementById("HRtPMakai").classList.add("bold");
     document.getElementById("INFinalA").classList.add("bold");
     document.getElementById("survival").classList.add("rendering");
     document.getElementById("survival").style.marginLeft = 0;
@@ -266,6 +288,10 @@ function prepareRendering() {
     applyColours();
 
     for (const game of games) {
+        if (game.includes("HRtP")) {
+            continue;
+        }
+
         if (game.includes("IN")) {
             continue;
         }
@@ -424,6 +450,17 @@ function readLocalStorage() {
                 delete vals.IN;
             }
 
+            if (vals.hasOwnProperty("HRtP")) {
+                vals.HRtPMakai = vals.HRtP;
+                vals.HRtPJigoku = {
+                    "Easy": "N/A",
+                    "Normal": "N/A",
+                    "Hard": "N/A",
+                    "Lunatic": "N/A"
+                };
+                delete vals.HRtP;
+            }
+
             if (vals.INFinalB.hasOwnProperty("Extra")) {
                 delete vals.INFinalB.Extra;
             }
@@ -499,6 +536,10 @@ function save() {
 }
 
 function getPercentage(game) {
+    if (game.includes("HRtP")) {
+        return 100 / (Object.keys(vals["HRtPMakai"]).length + Object.keys(vals["HRtPJigoku"]).length);
+    }
+
     if (game.includes("IN")) {
         return 100 / (Object.keys(vals["INFinalA"]).length + Object.keys(vals["INFinalB"]).length);
     }
@@ -509,16 +550,16 @@ function getPercentage(game) {
 function countAchievements(numbers) {
     for (const game in vals) {
         for (let diff in vals[game]) {
+            let gameTmp = (game.includes("IN") ? "IN" : (game.includes("HRtP") ? "HRtP" : game));
             let value = vals[game][diff];
             diff = (diff == "Phantasm" ? "Extra" : diff);
     
             if (value == "N/A") {
-                na[game] += getPercentage(game);
+                na[gameTmp] += getPercentage(game);
             } else if (value == "Not cleared") {
                 numbers[diff]["Not cleared"] += 1;
                 numbers["Total"]["Not cleared"] += 1;
             } else {
-                let gameTmp = (game.includes("IN") ? "IN" : game);
                 completions[gameTmp] += getPercentage(gameTmp);
     
                 if (value.substr(0, 2) == "NM" && value.length > 2 && value.substr(2, 2) != "NB") {
@@ -574,7 +615,15 @@ function fillCompletionTable() {
     const tbody = document.getElementById("completion_table_tbody");
     tbody.innerHTML = "";
 
-    for (let game in vals) {
+    if (na.HRtP < 100) {
+        tbody.innerHTML = `<tr><td>HRtP</td><td>${Math.round(completions["HRtP"])}%</td></tr>`;
+    }
+
+    for (const game in vals) {
+        if (game.includes("HRtP")) {
+            continue;
+        }
+
         if (game.includes("IN")) {
             continue;
         }
@@ -585,7 +634,7 @@ function fillCompletionTable() {
 
         tbody.innerHTML += `<tr><td>${game}</td><td>${Math.round(completions[game])}%</td></tr>`;
 
-        if (game == "PCB") { // otherwise IN is at the end
+        if (game == "PCB" && na.IN < 100) { // otherwise IN is at the end
             tbody.innerHTML += `<tr><td>IN</td><td>${Math.round(completions["IN"])}%</td></tr>`;
         }
     }

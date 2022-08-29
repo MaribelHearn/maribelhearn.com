@@ -48,7 +48,7 @@ table#contents, tr:not(.noborders), table:not(.poll) th:not(.noborders):not(.foo
 .does_even_score {
     color: dodgerblue;
 }
-.does_even_score_well {
+.does_even_score_well, .hrtp_route {
     color: #E768C3;
 }
 a:link.dropdown_button {

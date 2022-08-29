@@ -1,6 +1,6 @@
 <?php
-$games = ['HRtP', 'SoEW', 'PoDD', 'LLS', 'MS', 'EoSD', 'PCB', 'INFinalA', 'INFinalB',
-'PoFV', 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC', 'UM'];
+$games = ['HRtPMakai', 'HRtPJigoku', 'SoEW', 'PoDD', 'LLS', 'MS', 'EoSD', 'PCB', 'INFinalA',
+'INFinalB', 'PoFV', 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC', 'UM'];
 $diffs = ['Easy', 'Normal', 'Hard', 'Lunatic', 'Extra'];
 function achievs(string $game) {
     $achievs = ['N/A', 'Not cleared', '1cc', 'NM', 'NB', 'NMNB'];
@@ -15,10 +15,14 @@ function achievs(string $game) {
     }
 }
 function no_extra(string $game) {
-    return in_array($game, ['HRtP', 'PoDD', 'INFinalB']);
+    return in_array($game, ['HRtPMakai', 'HRtPJigoku', 'PoDD', 'INFinalB']);
 }
 function display_name(string $game) {
-    if ($game == 'INFinalA') {
+    if ($game == 'HRtPMakai') {
+        return 'HRtP <span class="hrtp_route">Makai</span>';
+    } else if ($game == 'HRtPJigoku') {
+        return 'HRtP <span class="hrtp_route">Jigoku</span>';
+    } else if ($game == 'INFinalA') {
         return 'IN <span class="in_route">FinalA</span>';
     } else if ($game == 'INFinalB') {
         return 'IN <span class="in_route">FinalB</span>';
