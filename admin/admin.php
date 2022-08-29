@@ -190,6 +190,8 @@
                     }
                 }
                 echo implode(',', $new_entries) . '">';
+            } else {
+                echo '">';
             }
         ?>
         <script nonce='<?php echo file_get_contents('../.stats/nonce') ?>' defer>document.body.style.background="url('assets/main/index/index.jpg') center no-repeat fixed";document.body.style.backgroundSize="cover"</script>
