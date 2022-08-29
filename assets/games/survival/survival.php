@@ -60,7 +60,7 @@
     					echo '<tr id="' . $game . 'tr"><td id="' . $game . '">' . display_name($game) . '</td>';
     					foreach ($diffs as $key => $diff) {
     						if (no_extra($game, $diff) && $diff == 'Extra') {
-    							if ($game != 'INFinalB') {
+    							if ($game != 'HRtPJigoku' && $game != 'INFinalB') {
     								echo '<td class="noborders"></td><td class="noborders"></td>';
     							}
 
@@ -80,6 +80,9 @@
     							echo '</select></td>';
     						} else if ($game != 'PCB' && $diff == 'Extra') {
     							echo '<td class="noborders"></td>';
+    						}
+    						if ($game == 'HRtPMakai') {
+    							echo '<td id="J' . $diff . '" class="hidden">';
     						}
     						if ($game == 'INFinalA' && $diff != 'Extra') {
     							echo '<td id="B' . $diff . '" class="hidden">';
