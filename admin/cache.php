@@ -5,10 +5,10 @@ function download_content(string $url) {
     $data = curl_exec($ch);
     $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     if ($data === false) {
-        echo 'Failed to use cURL to fetch country for ' . $ip . '<br>';
+        //echo 'Failed to use cURL to fetch country for ' . $ip . '<br>';
         return false;
     } else if ($status != 200) {
-        echo 'Error ' . $status . ' while fetching country for ' . $ip . '<br>';
+        //echo 'Error ' . $status . ' while fetching country for ' . $ip . '<br>';
         return false;
     }
     curl_close($ch);

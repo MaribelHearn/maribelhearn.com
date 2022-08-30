@@ -5,8 +5,6 @@
     require_once '../assets/shared/mobile_detect.php';
     $detect_device = new Mobile_Detect;
     $is_mobile = $detect_device -> isMobile();
-    $DISPLAY_LIMIT = 5;
-    $NEW_ENTRY_LIMIT = 45;
     $hitcount = '../.stats/' . date('d-m-Y') . '.json';
     if (file_exists($hitcount)) {
         $file = fopen($hitcount, 'r');
@@ -98,7 +96,6 @@
             <div id='wrap' class='wrap'>
                 <?php echo wrap_top() ?>
                 <p><input id='setcookie' type='button' value='Set Blocking Cookie'></p>
-                <p id='response' class='wide'>Caching new entries...</p>
                 <?php
                     if ($hitcount == 'error') {
                         echo '<p class="wide">An error occurred while reading the stats.</p>';
@@ -171,30 +168,7 @@
                 <p>You are visiting this page using <strong id='browser'></strong>.</p>
             </div>
         </main>
-        <?php
-            echo '<input id="token" type="hidden" value=' . file_get_contents('../.stats/token') . '>';
-            echo '<input id="new_cache_entries" type="hidden" value="';
-            if (isset($stats)) {
-                $new_entries = array();
-                foreach ($stats as $page => $obj) {
-                    $obj = (object) $obj;
-                    foreach ($obj->ips as $ip => $count) {
-                        if (!property_exists($cache, $ip) && !in_array($ip, $new_entries) && !is_localhost($ip)) {
-                            array_push($new_entries, $ip);
-                        }
-                        if (count($new_entries) > $NEW_ENTRY_LIMIT) {
-                            break;
-                        }
-                    }
-                    if (count($new_entries) > $NEW_ENTRY_LIMIT) {
-                        break;
-                    }
-                }
-                echo implode(',', $new_entries) . '">';
-            } else {
-                echo '">';
-            }
-        ?>
+        <?php echo '<input id="token" type="hidden" value=' . file_get_contents('../.stats/token') . '>' ?>
         <script nonce='<?php echo file_get_contents('../.stats/nonce') ?>' defer>document.body.style.background="url('assets/main/index/index.jpg') center no-repeat fixed";document.body.style.backgroundSize="cover"</script>
         <noscript><link rel='stylesheet' href='assets/shared/noscript_bg.php?page=index'></noscript>
     </body>
