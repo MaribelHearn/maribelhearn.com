@@ -61,6 +61,7 @@
     function format_image(string $country) {
         switch ($country) {
             case 'Saint Kitts and Nevis': return '';
+            case 'Palestinian Territory': return '';
             case 'United Arab Emirates': return '';
             case 'Antigua and Barbuda': return '';
             case 'Trinidad and Tobago': return '';
@@ -146,7 +147,6 @@
                                 '" max="' . $max . '"></progress></td></tr>';
                             } else {
                                 $url_country = format_country($country);
-                                var_dump($flag_url . $url_country . '-' . format_image($country) . 'icon.png');
                                 if ($country == 'Kosovo') {
                                     echo '<td><img src="https://icons.iconarchive.com/icons/wikipedia/flags/' .
                                     '16/XK-Kosovo-Flag-icon.png" alt="Flag of ' . $country . '"></td><th>' . $country .
