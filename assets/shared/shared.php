@@ -113,6 +113,7 @@ function hit(string $filename, string $status_code) {
         $ip = $_SERVER['REMOTE_ADDR'];
         $token = (file_exists($path . 'token') ? trim(file_get_contents($path . 'token')) : '');
         if (is_localhost($ip) || !isset($_COOKIE['token']) || $_COOKIE['token'] !== $token) {
+            exec('nohup php admin/cache.php ' . $ip . ' > /dev/null 2>&1 &');
             $page = str_replace('.php', '', $filename);
             if (!empty($status_code)) {
                 $page .= ' ' . $status_code;
@@ -123,7 +124,6 @@ function hit(string $filename, string $status_code) {
                 $stats[$page]->hits = 1;
                 $stats[$page]->ips = (object) array();
                 $stats[$page]->ips->{$ip} = 1;
-                exec('nohup php admin/cache.php ' . $ip . ' > /dev/null 2>&1 &');
                 $file = fopen($hitcount, 'w');
                 if (flock($file, LOCK_EX)) {
                     fwrite($file, json_encode($stats));
