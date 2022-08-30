@@ -360,6 +360,9 @@ a:visited.dropdown_button {
         margin-right: 0;
     }
 }
+.dev_instance {
+    color: #990099;
+}
 .sortable:not(.poll) th:not(.no-sort) {
     cursor: pointer;
     vertical-align: baseline;
