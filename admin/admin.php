@@ -26,8 +26,12 @@
     $countries = new ArrayObject();
     $cache_file = '../.stats/cache';
     if (file_exists($cache_file)) {
-        $json = file_get_contents($cache_file);
-        $cache = (object) json_decode($json, true);
+        $file = fopen($cache_file, 'r');
+        if (flock($file, LOCK_SH)) {
+            $json = file_get_contents($cache_file);
+            $cache = (object) json_decode($json, true);
+            flock($file, LOCK_UN);
+        }
     } else {
         $cache = (object) array();
     }
