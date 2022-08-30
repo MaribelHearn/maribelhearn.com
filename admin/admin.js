@@ -18,21 +18,5 @@ function userAgent() {
     "admin/icons/" + ua.browser.family + ".png' alt='" + ua.browser.name + " icon'> " + ua.browser.name;
 }
 
-function addCacheEntries() {
-    const entries = document.getElementById("new_cache_entries");
-    const xhr = new XMLHttpRequest();
-
-    if (!entries) {
-        document.getElementById("response").innerHTML = "No new cache entries.";
-    } else {
-        xhr.open("POST", "/admin/cache.php?entries=" + entries.value);
-        xhr.onload = function () {
-            document.getElementById("response").innerHTML = this.response;
-        };
-        xhr.send();
-    }
-}
-
 document.getElementById("setcookie").addEventListener("click", set);
-addCacheEntries();
 userAgent();

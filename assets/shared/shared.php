@@ -123,6 +123,7 @@ function hit(string $filename, string $status_code) {
                 $stats[$page]->hits = 1;
                 $stats[$page]->ips = (object) array();
                 $stats[$page]->ips->{$ip} = 1;
+                exec('php admin/cache.php ' . $ip);
                 $file = fopen($hitcount, 'w');
                 if (flock($file, LOCK_EX)) {
                     fwrite($file, json_encode($stats));

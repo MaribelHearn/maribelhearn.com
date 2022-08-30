@@ -1,6 +1,4 @@
 <?php
-$CACHE_FILE = '../.stats/cache';
-
 function download_content(string $url) {
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -24,40 +22,34 @@ function fetch_country(string $ip) {
         $data = json_decode($json, false);
         if ($data->status == 'success') {
             $country = $data->country;
-            echo 'Cached ' . $ip . '<br>';
             return $country;
-        } else {
-            echo 'Error while caching ' . $ip . '<br>';
         }
+    }
+    exit();
+}
+
+function add_cache_entry(object $cache, string $entry) {
+    global $CACHE_FILE;
+    if (property_exists($cache, $entry)) {
+        return;
+    }
+    $cache->{$entry} = fetch_country($entry);
+    $file = fopen($CACHE_FILE, 'w');
+    if (flock($file, LOCK_EX)) {
+        sleep(2);
+        fwrite($file, json_encode($cache));
+        flock($file, LOCK_UN);
     }
 }
 
-function add_cache_entries(string $path, object $cache, string $entries) {
-    $delay = 1;
-    $entries = preg_split('/,/', $entries);
-    foreach ($entries as $key => $entry) {
-        if (property_exists($cache, $entry)) {
-            echo 'Already cached ' . $entry . '<br>';
-            continue;
-        }
-        $cache->{$entry} = fetch_country($entry);
-        sleep($delay);
-        $delay = ($delay == 1 ? 2 : 1);
-    }
-    $file = fopen($path, 'w');
-    fwrite($file, json_encode($cache));
-}
-
+$CACHE_FILE = '.stats/cache';
 if (file_exists($CACHE_FILE)) {
     $json = file_get_contents($CACHE_FILE);
     $cache = (object) json_decode($json, true);
 } else {
     $cache = (object) array();
 }
-
-if ($_GET['entries']) {
-    add_cache_entries($CACHE_FILE, $cache, $_GET['entries']);
-} else {
-    echo 'No new cache entries.';
+if (array_key_exists(1, $argv)) {
+    add_cache_entry($cache, $argv[1]);
 }
 ?>
