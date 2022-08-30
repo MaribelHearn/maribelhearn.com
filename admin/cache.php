@@ -26,13 +26,14 @@ function fetch_country(string $ip) {
             return $country;
         }
     }
-    echo 'Either this IP is local or already cached';
+    echo 'Failed to fetch country (possibly local IP)';
     exit();
 }
 
 function add_cache_entry(object $cache, string $entry) {
     global $CACHE_FILE;
     if (property_exists($cache, $entry)) {
+        echo 'IP is already cached';
         return;
     }
     $cache->{$entry} = fetch_country($entry);
