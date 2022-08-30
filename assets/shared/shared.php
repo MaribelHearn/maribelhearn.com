@@ -322,7 +322,13 @@ function show_admin(string $token_path) {
 function navbar(string $page) {
     $token_path = ($page == 'admin' ? '../.stats/token' : '.stats/token');
     $navbar = '<div class="dropdown nav_left">';
-    $navbar .= '<a href="/"><span class="icon index_icon"></span> Index</a> | ';
+    $navbar .= '<a href="/"><span class="icon index_icon"></span> Index</a>';
+
+    if (is_localhost($_SERVER['REMOTE_ADDR'])) {
+        $navbar .= ' <strong class="dev_instance">(Dev)</strong>';
+    }
+
+    $navbar .= ' | ';
 
     if (show_admin($token_path)) {
         $navbar .= '<a href="/admin">Admin</a> | ';
