@@ -119,8 +119,8 @@
         <p>Note that the format should be the same as the exported text.</p>
         <p><strong>Warning:</strong> Importing can overwrite one of your current tier lists!</p>
         <form target='_self' method='post' enctype='multipart/form-data'>
-            <label for='import_button'>Upload file:</label>
-            <input id='import_button' name='import' type='file'>
+            <label for='import_file'>Upload file:</label>
+            <input id='import_file' name='import' type='file'>
             <p><input type='submit' value='Import'></p>
         </form>
     </div>
