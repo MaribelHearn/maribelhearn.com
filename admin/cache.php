@@ -50,11 +50,11 @@ $CACHE_FILE = '.stats/cache';
 if (file_exists($CACHE_FILE)) {
     $file = fopen($CACHE_FILE, 'r');
     if (flock($file, LOCK_SH)) {
-        $json = file_get_contents($CACHE_FILE);
-        $cache = (object) json_decode($json, true);
+        $json = trim(fread($file, filesize($cache_file)));
         flock($file, LOCK_UN);
     }
     fclose($file);
+    $cache = (object) json_decode($json, true);
 } else {
     $cache = (object) array();
 }
