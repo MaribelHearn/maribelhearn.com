@@ -50,7 +50,7 @@ $CACHE_FILE = '.stats/cache';
 if (file_exists($CACHE_FILE)) {
     $file = fopen($CACHE_FILE, 'r');
     if (flock($file, LOCK_SH)) {
-        $json = trim(fread($file, filesize($cache_file)));
+        $json = trim(fread($file, filesize($CACHE_FILE)));
         flock($file, LOCK_UN);
     }
     fclose($file);
