@@ -43,12 +43,18 @@ function add_cache_entry(object $cache, string $entry) {
         fwrite($file, json_encode($cache));
         flock($file, LOCK_UN);
     }
+    fclose($file);
 }
 
 $CACHE_FILE = '.stats/cache';
 if (file_exists($CACHE_FILE)) {
-    $json = file_get_contents($CACHE_FILE);
-    $cache = (object) json_decode($json, true);
+    $file = fopen($CACHE_FILE, 'r');
+    if (flock($file, LOCK_SH)) {
+        $json = file_get_contents($CACHE_FILE);
+        $cache = (object) json_decode($json, true);
+        flock($file, LOCK_UN);
+    }
+    fclose($file);
 } else {
     $cache = (object) array();
 }
