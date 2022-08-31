@@ -115,7 +115,7 @@ function getRow(game, diff, shot, precision) {
 
     const wr = WRs[game][diff][shot];
     score = parseInt(score);
-    let percentage, wrText;
+    let percentage, percentageSort, wrText;
     let categories = 0;
     let total = 0;
 
@@ -129,6 +129,7 @@ function getRow(game, diff, shot, precision) {
         percentage = score / wr[0] * 100;
         wrText = `${sep(wr[0])} by <em>${wr[1]}</em>`;
         percentage = (precision === 0 ? Math.round(percentage) : Number(percentage).toFixed(precision));
+        percentageSort = percentage * Math.pow(10, precision);
         total += Number(percentage);
         categories += 1;
     }
@@ -137,7 +138,8 @@ function getRow(game, diff, shot, precision) {
     return {
         "total": total,
         "categories": categories,
-        "row": `<tr><td>${game} ${diff}</td><td>${shotText}</td><td data-sort='${score}'>${sep(score)}</td><td>${percentage}%</td><td><progress value='${percentage}' max='100'></progress></td><td data-sort='${wr[0]}'>${wrText}</td>`
+        "row": `<tr><td>${game} ${diff}</td><td>${shotText}</td><td data-sort='${score}'>${sep(score)}</td><td data-sort='${percentageSort}'>${percentage}%</td>` +
+        `<td><progress value='${percentage}' max='100'></progress></td><td data-sort='${wr[0]}'>${wrText}</td>`
     };
 }
 
