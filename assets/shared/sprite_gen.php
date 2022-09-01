@@ -30,7 +30,8 @@ $works = array('HighlyResponsivetoPrayers', 'StoryofEasternWonderland', 'Phantas
 'WildandHornedHermit', 'CuriositiesofLotusAsia', 'ForbiddenScrollery', 'BohemianArchiveinJapaneseRed', 'PerfectMementoinStrictSense', 'TheGrimoireofMarisa', 'SymposiumofPost-mysticism',
 'AlternativeFactsinEasternUtopia', 'DollsinPseudoParadise', 'GhostlyFieldClub', 'ChangeabilityofStrangeDream', 'Retrospective53minutes', 'AkyuusUntouchedScoreVolume1',
 'AkyuusUntouchedScoreVolume2', 'AkyuusUntouchedScoreVolume3', 'AkyuusUntouchedScoreVolume4', 'AkyuusUntouchedScoreVolume5', 'MagicalAstronomy', 'UnknownFlowerMesmerizingJourney',
-'TrojanGreenAsteroid', 'Neo-traditionalismofJapan', 'DrLatencysFreakReport', 'DatelessBarOldAdam', 'GouyokuIbun', 'TheGrimoireofUsami', 'FoulDetectiveSatori', 'LotusEaters');
+'TrojanGreenAsteroid', 'Neo-traditionalismofJapan', 'DrLatencysFreakReport', 'DatelessBarOldAdam', 'GouyokuIbun', 'TheGrimoireofUsami', 'FoulDetectiveSatori', 'LotusEaters', 'Rainbow-ColoredSeptentrion',
+'HundredthBlackMarket');
 $shots = array('EoSDReimuA', 'EoSDReimuB', 'EoSDMarisaA', 'EoSDMarisaB', 'PCBReimuA', 'PCBReimuB', 'PCBMarisaA', 'PCBMarisaB', 'PCBSakuyaA', 'PCBSakuyaB', 'INBorderTeam', 'INMagicTeam', 'INScarletTeam',
 'INGhostTeam', 'INReimu', 'INYukari', 'INMarisa', 'INAlice', 'INSakuya', 'INRemilia', 'INYoumu', 'INYuyuko', 'PoFVReimu', 'PoFVMarisa', 'PoFVSakuya', 'PoFVYoumu', 'PoFVReisen', 'PoFVCirno',
 'PoFVLyrica', 'PoFVMystia', 'PoFVTewi', 'PoFVAya', 'PoFVMedicine', 'PoFVYuuka', 'PoFVKomachi', 'PoFVEiki', 'MoFReimuA', 'MoFReimuB', 'MoFReimuC', 'MoFMarisaA', 'MoFMarisaB', 'MoFMarisaC',
