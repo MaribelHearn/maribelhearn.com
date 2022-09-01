@@ -182,7 +182,7 @@
     <ul>
         <li>One of my most commonly used avatars (shown above) is a non-canon depiction of Maribel
         having gone berserk due to her powers overflowing, which is the final boss of Labyrinth of Touhou.</li>
-        <li>I use the default keyboard that came with my previous PC to play, making me one of the
+        <li>I formerly used the default keyboard that came with my previous PC to play, which made me one of the
         rare serious keyboard players <em>not</em> to use a mechanical keyboard.</li>
         <li>Linux distributions are my preferred operating systems. I have used them on my laptop since late 2014 and
         on my main PC since late 2018.</li>
