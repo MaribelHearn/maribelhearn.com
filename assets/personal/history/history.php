@@ -544,7 +544,7 @@
 				</tr>
 				<tr>
                     <th>Futari</th>
-					<td id='orMSF'></td>
+					<td id='orMSF' class='clear'></td>
 					<td id='mMSF'></td>
 					<td id='uMSF'></td>
 				</tr>
@@ -4288,9 +4288,9 @@
             </tr>
             <tr>
                 <td><strong>Original</strong></td>
-                <td>Not yet tried</td>
-                <td>-</td>
-                <td>No</td>
+                <td class='g'>Completed</td>
+                <td>August 28, 2022</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=6l-LB078DsU'>Link (YouTube)</a></strong></td>
             </tr>
             <tr>
                 <td><strong>Maniac</strong></td>
