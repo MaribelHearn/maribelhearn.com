@@ -170,7 +170,22 @@
                             }
                             $total += 1;
                         }
-                        echo '</table>';
+                        echo '</table><h2>Errors</h2><table id="errors" class="sortable"><thead><tr><th>Code</th><th>Attempted URL</th><th>Count</th></tr></thead><tbody>';
+                        foreach ($stats as $page => $obj) {
+                            if (strpos($page, 'error') === false) {
+                                continue;
+                            }
+                            $obj = (object) $obj;
+                            $obj->urls = (object) $obj->urls;
+                            foreach ($obj->urls as $url => $count) {
+                                echo '<tr>';
+                                echo '<td>' . substr($page, 6) . '</td>';
+                                echo '<td>/' . $url . '</td>';
+                                echo '<td>' . $count . '</td>';
+                                echo '</tr>';
+                            }
+                        }
+                        echo '</tbody></table>';
                     }
                 ?>
                 <p class='wide-top'>You are visiting this page using <strong id='os'></strong>.</p>
