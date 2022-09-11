@@ -126,7 +126,7 @@
                         foreach ($ip_count as $ip => $count) {
                             $entries = $cache->query('SELECT * FROM Cache WHERE IP="' .  $ip . '"');
                             $entries = $entries->fetchArray();
-                            if (in_array($ip, $entries)) {
+                            if ($entries && in_array($ip, $entries)) {
                                 $country = $entries['Country'];
                             } else if (is_localhost($ip)) {
                                 $country = 'local';
