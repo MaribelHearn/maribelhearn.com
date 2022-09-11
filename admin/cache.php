@@ -30,34 +30,26 @@ function fetch_country(string $ip) {
     exit();
 }
 
-function add_cache_entry(object $cache, string $entry) {
-    global $CACHE_FILE;
-    if (property_exists($cache, $entry)) {
-        echo 'IP is already cached';
-        return;
-    }
-    $cache->{$entry} = fetch_country($entry);
-    $file = fopen($CACHE_FILE, 'w');
-    if (flock($file, LOCK_EX)) {
-        sleep(2);
-        fwrite($file, json_encode($cache));
-        flock($file, LOCK_UN);
-    }
-    fclose($file);
+function add_cache_entry(object $cache, string $ip) {
+    $entries = $cache->query('SELECT * FROM Cache');
+    var_dump(count($entries->fetchArray()));
+    $country = fetch_country($ip);
+    $cache->exec('INSERT INTO Cache (IP, Country) VALUES ("' . $ip . '", "' . $country . '")');
 }
 
-$CACHE_FILE = '.stats/cache';
-if (file_exists($CACHE_FILE)) {
-    $file = fopen($CACHE_FILE, 'r');
-    if (flock($file, LOCK_SH)) {
-        $json = trim(fread($file, filesize($CACHE_FILE)));
-        flock($file, LOCK_UN);
+class Cache extends SQLite3 {
+    function __construct() {
+        $path = '.stats/cache.db';
+        if (!file_exists($path)) {
+            $this->open($path);
+            $this->exec('CREATE TABLE Cache ( IP varchar(15) UNIQUE, Country varchar(255) )');
+        } else {
+            $this->open($path);
+        }
     }
-    fclose($file);
-    $cache = (object) json_decode($json, true);
-} else {
-    $cache = (object) array();
 }
+
+$cache = new Cache();
 if (array_key_exists(1, $argv)) {
     add_cache_entry($cache, $argv[1]);
 }
