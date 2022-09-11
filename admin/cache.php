@@ -31,8 +31,6 @@ function fetch_country(string $ip) {
 }
 
 function add_cache_entry(object $cache, string $ip) {
-    $entries = $cache->query('SELECT * FROM Cache');
-    var_dump(count($entries->fetchArray()));
     $country = fetch_country($ip);
     $cache->exec('INSERT INTO Cache (IP, Country) VALUES ("' . $ip . '", "' . $country . '")');
 }
