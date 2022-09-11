@@ -24,6 +24,9 @@
     $status_code = empty($_GET['error']) ? '' : $_GET['error'];
     $page_path = 'assets/%dir/' . $page . '/' . $page . '.php'; // without subdir
     $page = redirect($page, $page_path, $_SERVER['REQUEST_URI'], $status_code);
+    if ($page == 'error' && empty($status_code)) {
+        $status_code = '404';
+    }
     hit($page, $status_code);
     $lang = set_lang_cookie();
     $locale = $lang . '.UTF-8';
