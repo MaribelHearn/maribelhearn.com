@@ -24,18 +24,6 @@
     }
     $ip_count = (object) array();
     $countries = new ArrayObject();
-    $cache_file = '../.stats/cache';
-    if (file_exists($cache_file)) {
-        $file = fopen($cache_file, 'r');
-        if (flock($file, LOCK_SH)) {
-            $json = trim(fread($file, filesize($cache_file)));
-            flock($file, LOCK_UN);
-        }
-        fclose($file);
-        $cache = (object) json_decode($json, true);
-    } else {
-        $cache = (object) array();
-    }
     $flag_url = 'https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/16/';
     $lang_code = 'en';
     $page = 'admin';
@@ -84,6 +72,18 @@
             default: return 'Flag-';
         }
     }
+
+    class Cache extends SQLite3 {
+        function __construct() {
+            $path = '../.stats/cache.db';
+            if (!file_exists($path)) {
+                $this->open($path);
+                $this->exec('CREATE TABLE Cache ( IP varchar(15) UNIQUE, Country varchar(255) )');
+            } else {
+                $this->open($path);
+            }
+        }
+    }
 ?>
 
     <head>
@@ -122,9 +122,12 @@
                             }
                         }
                         echo '<h2>Countries</h2><table id="countries"><tr><th>Flag</th><th>Country</th><th>Hits</th><th>Bar</th></tr>';
+                        $cache = new Cache();
                         foreach ($ip_count as $ip => $count) {
-                            if (property_exists($cache, $ip)) {
-                                $country = $cache->{$ip};
+                            $entries = $cache->query('SELECT * FROM Cache WHERE IP="' .  $ip . '"');
+                            $entries = $entries->fetchArray();
+                            if (in_array($ip, $entries)) {
+                                $country = $entries['Country'];
                             } else if (is_localhost($ip)) {
                                 $country = 'local';
                             } else {
