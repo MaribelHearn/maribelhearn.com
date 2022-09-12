@@ -111,6 +111,9 @@
                     } else {
                         echo '<h2>Page Hits</h2>';
                         foreach ($stats as $page => $obj) {
+                            if (strpos($page, 'error') !== false) {
+                                continue;
+                            }
                             $obj = (object) $obj;
                             echo '<p><strong>' . $page . '</strong> ' . $obj->hits . '</p>';
                             foreach ($obj->ips as $ip => $count) {
