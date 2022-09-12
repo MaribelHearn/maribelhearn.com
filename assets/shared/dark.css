@@ -26,7 +26,7 @@ a:visited:not(.replay):not(.i):not(.dropdown_button) {
     background-position: -632px 0px;
 }
 #checkboxes, #checkboxes td:not(.noborders), #gameTable, #gameTable th, #gameTable td, #table, #table th, #table td, .border,
-table:not(#jargontable):not(#bullettable):not(#spelltable):not(#searchtable):not(#countries):not(.noborders):not(.result):not(.center):not(.poll),
+table:not(#jargontable):not(#bullettable):not(#spelltable):not(#searchtable):not(#countries):not(#errors):not(.noborders):not(.result):not(.center):not(.poll),
 table#contents, tr:not(.noborders), table:not(.poll) th:not(.noborders):not(.foot), table:not(.poll) td:not(.noborders):not(.foot), .art {
     border: 1px solid #808080;
 }
@@ -109,9 +109,9 @@ a:visited.dropdown_button {
 .general_header {
     background-color: #888;
 }
-#contents tr, #contents th, #contents td, #responses tr, #responses th, #responses td, #jargontable th, #jargontable td,
-#spelltable th, #spelltable td, #bullettable th, #bullettable td, #schedule_table th, #schedule_table td, #results_2020 th,
-#results_2020 td, #countries tr, #countries th, #countries td, #music_links th, #music_links td, .border td, .center th, .center td {
+#contents tr, #contents th, #contents td, #responses tr, #responses th, #responses td, #jargontable th, #jargontable td, #spelltable th,
+#spelltable td, #bullettable th, #bullettable td, #schedule_table th, #schedule_table td, #results_2020 th, #results_2020 td,
+#countries th, #countries td, #errors th, #errors td, #music_links th, #music_links td, .border td, .center th, .center td {
     border: none;
 }
 #results_2020 td, #schedule_table td {
