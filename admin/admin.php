@@ -132,9 +132,9 @@
                             if ($entries && in_array($ip, $entries)) {
                                 $country = $entries['Country'];
                             } else if (is_localhost($ip)) {
-                                $country = 'local';
+                                $country = 'Local';
                             } else {
-                                $country = 'new';
+                                $country = 'Unknown';
                             }
                             if (gettype($country) == 'string') {
                                 if (!$countries->offsetExists($country)) {
