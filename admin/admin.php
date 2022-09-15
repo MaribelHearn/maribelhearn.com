@@ -102,6 +102,8 @@
         <main>
             <div id='wrap' class='wrap'>
                 <?php echo wrap_top() ?>
+                <p class='wide-top'>You are visiting this page using <strong id='os'></strong>.</p>
+                <p>You are visiting this page using <strong id='browser'></strong>.</p>
                 <p><input id='setcookie' type='button' value='Set Blocking Cookie'></p>
                 <?php
                     if ($hitcount == 'error') {
@@ -191,8 +193,6 @@
                         echo '</tbody></table>';
                     }
                 ?>
-                <p class='wide-top'>You are visiting this page using <strong id='os'></strong>.</p>
-                <p>You are visiting this page using <strong id='browser'></strong>.</p>
             </div>
         </main>
         <?php echo '<input id="token" type="hidden" value=' . file_get_contents('../.stats/token') . '>' ?>
