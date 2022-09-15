@@ -158,7 +158,7 @@ function addSpacing(item) {
             item = item.replace("to ", " to ");
         }
     } else {
-        item = item.replace("And ", "and ").replace("Its ", "its ").replace("To ", "to ").replace(" A ", " a ").replace("Of ", "of ");
+        item = item.replace("and ", " and ").replace("And ", "and ").replace("Its ", "its ").replace("To ", "to ").replace(" A ", " a ").replace("Of ", "of ");
         item = item.replace("The ", "the ").replace("Is ", "is ").replace("In ", "in ").replace("With ", "with ");
         item = item.charAt(0).toUpperCase() + item.slice(1);
     }
@@ -772,7 +772,7 @@ function changeTierListName() {
 }
 
 function validateTierName(tierName) {
-    return tierName.length <= MAX_NAME_LENGTH;
+    return tierName.length <= MAX_NAME_LENGTH && tierName.length > 0;
 }
 
 function addTier(tierName, noDisplay) {
@@ -788,7 +788,7 @@ function addTier(tierName, noDisplay) {
         return;
     }
 
-    tierName = tierName.strip().replace(/'/g, "");
+    tierName = tierName.replace(/</g, "").replace(/'/g, "");
 
     if (isMobile()) {
         document.getElementById("tier_name_mobile").value = tierName;
@@ -815,6 +815,7 @@ function addTier(tierName, noDisplay) {
         createTier(tierNum);
     }
     
+    printMessage("");
     unsavedChanges = true;
 }
 
@@ -892,8 +893,12 @@ function removeTierButton() {
     const tierList = getCurrentTierList();
     const tierNum = document.getElementById("tier_num").value;
     const tierName = tierList[tierNum].name;
-    removeTier(tierNum);
-    printMessage(`<strong class='confirmation'>${tierName} tier removed!</strong>`);
+    const isRemoved = removeTier(tierNum);
+
+    if (isRemoved) {
+        printMessage(`<strong class='confirmation'>${tierName} tier removed!</strong>`);
+    }
+
     emptyModal();
 }
 
@@ -929,6 +934,7 @@ function removeTier(sourceTierNum, skipConfirmation, noDisplay) {
         }
 
         delete tierList[lastTierNum];
+        unsavedChanges = true;
 
         if (!noDisplay) {
             const lastTier = document.getElementById(`tr${lastTierNum}`);
@@ -937,11 +943,12 @@ function removeTier(sourceTierNum, skipConfirmation, noDisplay) {
     }   
 
     printMessage("");
-    unsavedChanges = true;
+    return confirmation;
 }
 
 function emptyModal() {
     document.getElementById("modal").style.display = "none";
+    document.getElementById("tier_menu_msg_container").innerHTML = "";
     const innerModals = document.querySelectorAll(".modal_inner");
     
     for (const element of innerModals) {
@@ -980,10 +987,9 @@ function quickAdd(tierNum) {
 }
 
 function saveSingleTierSettings() {
-    emptyModal();
     const tierList = getCurrentTierList();
     const tierNum = document.getElementById("tier_num").value;
-    const tierName = document.getElementById("custom_name_tier").value.strip().replace(/'/g, "");
+    const tierName = document.getElementById("custom_name_tier").value.replace(/</g, "").replace(/'/g, "");
     const tierBg = document.getElementById("custom_bg_tier").value;
     const tierColour = document.getElementById("custom_colour_tier").value;
 
@@ -991,11 +997,13 @@ function saveSingleTierSettings() {
         return;
     }
 
+    console.log(tierName.length);
     if (!validateTierName(tierName)) {
-        document.getElementById("tier_menu_msg_container").innerHTML = `<strong class='error'>Error: tier names may not exceed ${MAX_NAME_LENGTH} characters.</strong>`;
+        document.getElementById("tier_menu_msg_container").innerHTML = `<strong class='error'>Error: tier names may not be empty, nor exceed ${MAX_NAME_LENGTH} characters.</strong>`;
         return;
     }
 
+    emptyModal();
     const th = document.getElementById(`th${tierNum}`);
     th.innerHTML = tierName;
     th.style.backgroundColor = tierBg;
