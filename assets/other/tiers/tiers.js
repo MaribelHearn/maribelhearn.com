@@ -841,7 +841,6 @@ function moveTierTo(sourceTierNum, targetTierNum) {
 
             for (let i = removedItems.length - 1; i >= 0; i--) {
                 const item = removedItems[i];
-                console.log(`[X] Adding ${item} to tier ${tierNum}`);
                 addToTier(item, tierNum);
             }
         }
@@ -853,7 +852,6 @@ function moveTierTo(sourceTierNum, targetTierNum) {
 
             for (let i = removedItems.length - 1; i >= 0; i--) {
                 const item = removedItems[i];
-                console.log(`[Y] Adding ${item} to tier ${tierNum}`);
                 addToTier(item, tierNum);
             }
         }
@@ -861,7 +859,6 @@ function moveTierTo(sourceTierNum, targetTierNum) {
 
     for (const item of sourceBackup.chars) {
         removeFromTier(item, sourceTierNum);
-        console.log(`[Z] Adding ${item} to tier ${targetTierNum}`);
         addToTier(item, targetTierNum);
     }
 
