@@ -999,7 +999,6 @@ function saveSingleTierSettings() {
         return;
     }
 
-    console.log(tierName.length);
     if (!validateTierName(tierName)) {
         document.getElementById("tier_menu_msg_container").innerHTML = `<strong class='error'>Error: tier names may not be empty, nor exceed ${MAX_NAME_LENGTH} characters.</strong>`;
         return;

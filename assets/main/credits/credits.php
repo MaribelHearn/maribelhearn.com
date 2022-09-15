@@ -63,6 +63,8 @@
         PoFV (<a href='https://www.deviantart.com/ramosfox/art/40423051-669167462' target='_blank'>Source</a>)</li>
         <li><a href='https://www.pixiv.net/member.php?id=87950' target='_blank'>りすたる</a>:
         Scoring (<a href='https://www.pixiv.net/en/artworks/40737278' target='_blank'>Source</a>)</li>
+        <li>nawo (peace):
+        Slots (<a href='https://danbooru.donmai.us/posts/959198?q=nawo_%28peace'>Source</a>)</li>
         <li><a href='https://www.pixiv.net/member.php?id=759506' target='_blank'>windtalker</a>:
         Survival (<a href='https://www.pixiv.net/en/artworks/12517505' target='_blank'>Source</a>)</li>
         <li><a href='https://www.pixiv.net/member.php?id=2025430' target='_blank'>Yakumo_Stocking</a>:
@@ -75,6 +77,6 @@
         WR (<a href='https://pbs.twimg.com/media/AsicC9bCQAAzu-H?format=jpg' target='_blank'>Source</a>)</li>
         <li><a href='https://www.pixiv.net/member.php?id=4678572' target='_blank'>ETERSIARUM</a>:
         Tiers (<a class='dead' href='https://www.pixiv.net/member_illust.php?mode=medium&illust_id=41297499' target='_blank'>Source</a>)</li>
-        <li>Unknown source: Jargon, Royalflare, Slots</li>
+        <li>Unknown source: Jargon, Royalflare</li>
     </ul>
 </div>
