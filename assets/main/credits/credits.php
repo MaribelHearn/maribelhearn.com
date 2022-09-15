@@ -27,15 +27,15 @@
     </ul>
     <h3><span class='icon flag_russia'></span> <?php echo _('Russian') ?></h3>
     <ul class='credits'>
-        <li><a href='https://www.youtube.com/channel/UC7QqmWFA-hAyrP5C1c2b-Iw'>KVS</a>: Tools, WR, LNN</li>
+        <li><a href='https://www.youtube.com/channel/UC7QqmWFA-hAyrP5C1c2b-Iw' target='_blank'>KVS</a>: Tools, WR, LNN</li>
     </ul>
     <h3><span class='icon flag_germany'></span> <?php echo _('German') ?></h3>
     <ul class='credits'>
-        <li><a href='https://twitter.com/Kawaii_Shadowii'>Kawaii_Shadowii</a>: DRC, Tools, WR, LNN</li>
+        <li><a href='https://twitter.com/Kawaii_Shadowii' target='_blank'>Kawaii_Shadowii</a>: DRC, Tools, WR, LNN</li>
     </ul>
     <h3><span class='icon flag_spain'></span> <?php echo _('Spanish') ?></h3>
     <ul class='credits'>
-        <li><a href='https://twitter.com/POfBoundaries'>Paradise of Boundaries</a>: Tools, WR, LNN</li>
+        <li><a href='https://twitter.com/POfBoundaries' target='_blank'>Paradise of Boundaries</a>: Tools, WR, LNN</li>
         <li class='sub_li'>Contributing members: Chise, Roka Enzaki, Fumiko, Wolfytonio</li>
     </ul>
     <h2><?php echo _('Character Artists') ?></h2>
@@ -64,7 +64,7 @@
         <li><a href='https://www.pixiv.net/member.php?id=87950' target='_blank'>りすたる</a>:
         Scoring (<a href='https://www.pixiv.net/en/artworks/40737278' target='_blank'>Source</a>)</li>
         <li>nawo (peace):
-        Slots (<a href='https://danbooru.donmai.us/posts/959198?q=nawo_%28peace'>Source</a>)</li>
+        Slots (<a href='https://danbooru.donmai.us/posts/959198?q=nawo_%28peace' target='_blank'>Source</a>)</li>
         <li><a href='https://www.pixiv.net/member.php?id=759506' target='_blank'>windtalker</a>:
         Survival (<a href='https://www.pixiv.net/en/artworks/12517505' target='_blank'>Source</a>)</li>
         <li><a href='https://www.pixiv.net/member.php?id=2025430' target='_blank'>Yakumo_Stocking</a>:
