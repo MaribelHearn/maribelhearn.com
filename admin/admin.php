@@ -193,6 +193,7 @@
                         echo '</tbody></table>';
                     }
                 ?>
+                <p class='wide-top'><strong><a href='#top'>Back to Top</a></strong></p>
             </div>
         </main>
         <?php echo '<input id="token" type="hidden" value=' . file_get_contents('../.stats/token') . '>' ?>
