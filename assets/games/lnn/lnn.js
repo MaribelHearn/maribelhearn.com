@@ -1,6 +1,7 @@
 /*global _ LNNs getCookie deleteCookie setCookie gameAbbr shottypeAbbr fullNameNumber*/
 const alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 let selected = "";
+let preferVideo = false;
 let missingReplays, videoLNNs;
 
 function toggleLayout() {
@@ -8,6 +9,22 @@ function toggleLayout() {
         deleteCookie("lnn_old_layout");
     } else {
         setCookie("lnn_old_layout", true);
+    }
+}
+
+function toggleVideo() {
+    preferVideo = !preferVideo;
+
+    if (preferVideo) {
+        localStorage.setItem("preferVideo", true);
+    } else {
+        localStorage.removeItem("preferVideo");
+    }
+
+    const player = document.getElementById("player").value;
+
+    if (player !== "") {
+        getPlayerLNNs(player);
     }
 }
 
@@ -153,7 +170,7 @@ function showLNNs() { // .game_img onclick
     }
 }
 
-function getPlayerLNNs(player, game) {
+function getPlayerGameLNNs(player, game) {
     let result = { "runs": [], "replays": [], "shots": [] };
 
     for (const shot in LNNs[game]) {
@@ -162,7 +179,9 @@ function getPlayerLNNs(player, game) {
             const type = shot.replace(character, "");
             result.runs.push(_(character) + (type === "" ? "" : ` (${_(type)})`));
 
-            if (gameAbbr(game) < 6 || missingReplays.includes(game + player.removeSpaces() + shot)) {
+            if (preferVideo && videoLNNs.hasOwnProperty(game + shot + player)) {
+                result.replays.push(`<a href='${videoLNNs[game + shot + player]}' target='_blank'>${videoLNNs[game + shot + player]}</a>`);
+            } else if (gameAbbr(game) < 6 || missingReplays.includes(game + player.removeSpaces() + shot)) {
                 if (videoLNNs.hasOwnProperty(game + shot + player)) {
                     result.replays.push(`<a href='${videoLNNs[game + shot + player]}' target='_blank'>${videoLNNs[game + shot + player]}</a>`);
                 } else {
@@ -182,14 +201,7 @@ function getPlayerLNNs(player, game) {
     return result;
 }
 
-function showPlayerLNNs() { // player onchange, player onselect
-    const player = this.value;
-
-    if (player === "") {
-        document.getElementById("player_list").style.display = "none";
-        return;
-    }
-
+function getPlayerLNNs(player) {
     let games = [];
     let sum = 0;
     const playerTable = document.getElementById("player_tbody");
@@ -200,7 +212,7 @@ function showPlayerLNNs() { // player onchange, player onselect
             continue;
         }
 
-        const playerLNNs = getPlayerLNNs(player, game);
+        const playerLNNs = getPlayerGameLNNs(player, game);
         const max = (game == "UFO" ? 6 : Object.keys(LNNs[game]).length);
 
         if (playerLNNs.runs.length > 0) {
@@ -227,6 +239,17 @@ function showPlayerLNNs() { // player onchange, player onselect
     document.getElementById("player_list").style.display = "block";
 }
 
+function showPlayerLNNs() { // player onchange, player onselect
+    const player = this.value;
+
+    if (player === "") {
+        document.getElementById("player_list").style.display = "none";
+        return;
+    }
+
+    getPlayerLNNs(player);
+}
+
 function setLanguage(event) {
     let newLanguage;
 
@@ -242,6 +265,7 @@ function setLanguage(event) {
 
 function setEventListeners() {
     document.getElementById("toggle_layout").addEventListener("click", toggleLayout, false);
+    document.getElementById("toggle_video").addEventListener("click", toggleVideo, false);
     document.getElementById("player").addEventListener("change", showPlayerLNNs, false);
     document.getElementById("player").addEventListener("select", showPlayerLNNs, false);
     document.getElementById("en_GB").addEventListener("click", setLanguage, false);
@@ -293,6 +317,11 @@ function init() {
     setAttributes();
     videoLNNs = parseVideos();
     missingReplays = document.getElementById("missingReplays").value;
+    
+    if (localStorage.hasOwnProperty("preferVideo")) {
+        preferVideo = Boolean(localStorage.getItem("preferVideo"));
+        document.getElementById("toggle_video").checked = preferVideo;
+    }
 }
 
 window.addEventListener("DOMContentLoaded", init, false);

@@ -135,6 +135,7 @@
 		        }
 		    ?>
 	    </select>
+        <p><input id='toggle_video' type='checkbox'><label for='toggle_video'><?php echo _('Show videos over replays') ?></label></p>
     </div>
 	<div id='player_list'>
 		<table class='sortable'>
