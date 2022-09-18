@@ -52,7 +52,10 @@
     <div id='checkboxes' class='border'>
         <p>
             <input id='dates' type='checkbox'>
-	        <label id='label_dates' for='dates' class='dates'><?php echo _('Dates') ?></label>
+	        <label for='dates'><?php echo _('Dates') ?></label>
+        </p><p>
+            <input id='toggle_video' type='checkbox'>
+            <label for='toggle_video'><?php echo _('Show videos over replays') ?></label>
         </p>
     </div>
     <div id='overall'>
@@ -313,7 +316,6 @@
                 }
 		    ?>
         </select>
-        <p><input id='toggle_video' type='checkbox'><label for='toggle_video'><?php echo _('Show videos over replays') ?></label></p>
     </div>
 	<div id='player_list'>
 		<table class='sortable'>

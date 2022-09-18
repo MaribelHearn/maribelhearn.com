@@ -44,10 +44,7 @@ function toggleVideo() {
     }
 
     const player = document.getElementById("player").value;
-
-    if (player !== "") {
-        showPlayerWRs(player);
-    }
+    location.reload();
 }
 
 function toggleDates(alreadyDisabled) {
