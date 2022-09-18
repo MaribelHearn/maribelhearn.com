@@ -354,6 +354,8 @@ function showWRtable(game, records) {
                 } else {
                     replay = replayPath(game, diff, shot);
                 }
+            } else if (!preferVideo && gameAbbr(game) >= 6 && !missingReplays.includes(game + diff + shot)) {
+                replay = replayPath(game, diff, shot);
             }
 
             if (unverifiedEnabled && unverifiedScores[game][diff][shot][0] > score) {
