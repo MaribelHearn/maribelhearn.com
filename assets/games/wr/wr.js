@@ -38,9 +38,9 @@ function toggleVideo() {
     preferVideo = !preferVideo;
 
     if (preferVideo) {
-        localStorage.setItem("preferVideo", true);
+        setCookie("prefer_video", true);
     } else {
-        localStorage.removeItem("preferVideo");
+        deleteCookie("prefer_video");
     }
 
     const player = document.getElementById("player").value;
@@ -661,8 +661,8 @@ function init() {
     setEventListeners();
     setAttributes();
     
-    if (localStorage.hasOwnProperty("preferVideo")) {
-        preferVideo = Boolean(localStorage.getItem("preferVideo"));
+    if (getCookie("prefer_video")) {
+        preferVideo = Boolean(getCookie("prefer_video"));
         document.getElementById("toggle_video").checked = preferVideo;
     }
 

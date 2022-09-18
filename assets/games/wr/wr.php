@@ -85,11 +85,13 @@
 					echo '<td id="' . $game . 'overall2">' . ($overall[$num] == 0 ? '-' : $overall_diff[$num]) . '</td>';
 					echo '<td id="' . $game . 'overall3">' . ($overall[$num] == 0 ? '-' : _($overall_shottype[$num])) . '</td>';
 					echo '<td id="' . $game . 'overall4" class="datestring">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $lang)) . '</td>';
-                    if (!empty($overall_video[$num])) {
-						$replay = '<a href="' . $overall_video[$num] . '">YouTube link</a>';
+                    if (isset($_COOKIE['prefer_video']) && !empty($overall_video[$num])) {
+						$replay = '<a href="' . $overall_video[$num] . '" target="_blank">Video link</a>';
 					} else if (file_exists(replay_path($game, $overall_diff[$num], $overall_shottype[$num]))) {
                         $path = replay_path($game, $overall_diff[$num], $overall_shottype[$num]);
                         $replay = '<a href="' . $path . '">' . substr($path, 8) . '</a>';
+                    } else if (!empty($overall_video[$num])) {
+                        $replay = '<a href="' . $overall_video[$num] . '" target="_blank">Video link</a>';
                     } else {
                         $replay = '-';
                     }
@@ -166,15 +168,20 @@
                         if (strpos($shot, 'Spring')) {
                             $shot = substr($shot, 0, -6);
                             $score_text = number_format($shots[$shot][0], 0, '.', ',');
-                            if (file_exists(replay_path($game, $diff, $shot))) {
+                            if (isset($_COOKIE['prefer_video']) && !empty($video)) {
+                                $score = '<a class="replay" href="' . $video . '" target="_blank">' . $score . '</a>';
+                                echo '<td rowspan="4">' . $score_text . '<span class="dl_icon"></span>';
+                            } else if (file_exists(replay_path($game, $diff, $shot))) {
                                 $score = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score . '</a>';
+                                echo '<td rowspan="4">' . $score_text . '<span class="dl_icon"></span>';
+                            } else if (!empty($video)) {
+                                $score = '<a class="replay" href="' . $video . '" target="_blank">' . $score . '</a>';
                                 echo '<td rowspan="4">' . $score_text . '<span class="dl_icon"></span>';
                             } else {
                                 echo '<td rowspan="4">' . $score_text;
                             }
-                            echo '<br>by <em>' . $shots[$shot][1] .
-                            '</em><span class="dimgrey"><br><span class="datestring_game"' .
-                            '>' . date_tl($shots[$shot][2], $lang) . '</span></span></td>';
+                            echo '<br>by <em>' . $shots[$shot][1] . '</em><span class="dimgrey"><br>' .
+                            '<span class="datestring_game">' . date_tl($shots[$shot][2], $lang) . '</span></span></td>';
                         }
                     } else {
                         if ($score >= $MAX_SCORE) {
@@ -182,10 +189,12 @@
                         } else {
                             $score_text = number_format($score, 0, '.', ',');
                         }
-                        if (file_exists(replay_path($game, $diff, $shot))) {
+                        if (isset($_COOKIE['prefer_video']) && !empty($video)) {
+                            $score_text = '<a class="replay" href="' . $video . '" target="_blank">' . $score_text . '<span class="dl_icon"></span></a>';
+                        } else if (file_exists(replay_path($game, $diff, $shot))) {
                             $score_text = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score_text . '<span class="dl_icon"></span></a>';
                         } else if (!empty($video)) {
-                            $score_text = '<a class="replay" href="' . $video . '">' . $score_text . '<span class="dl_icon"></span></a>';
+                            $score_text = '<a class="replay" href="' . $video . '" target="_blank">' . $score_text . '<span class="dl_icon"></span></a>';
                         }
                         if ($score == $overall[game_num($game)] && $game != 'StB' && $game != 'DS') {
                             $score_text = '<strong>' . $score_text . '</strong>';
@@ -341,11 +350,13 @@
             </tr></thead>
             <tbody id='recentbody'><?php
                 foreach ($recent as $key => $obj) {
-                    if (file_exists(replay_path($obj->game, $obj->diff, $obj->shot))) {
+                    if (isset($_COOKIE['prefer_video']) && !empty($obj->video)) {
+                        $replay = '<a href="' . $obj->video . '" target="_blank">Video link</a>';
+                    } else if (file_exists(replay_path($obj->game, $obj->diff, $obj->shot))) {
                         $path = replay_path($obj->game, $obj->diff, $obj->shot);
                         $replay = '<a href="' . $path . '">' . substr($path, 8) . '</a>';
                     } else if (!empty($obj->video)) {
-						$replay = '<a href="' . $obj->video . '">YouTube link</a>';
+						$replay = '<a href="' . $obj->video . '" target="_blank">Video link</a>';
 					} else {
                         $replay = '-';
                     }
