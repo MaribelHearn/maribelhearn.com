@@ -24,7 +24,7 @@ function toggleVideo() {
     const player = document.getElementById("player").value;
 
     if (player !== "") {
-        getPlayerLNNs(player);
+        showPlayerLNNs(player);
     }
 }
 
@@ -201,7 +201,16 @@ function getPlayerGameLNNs(player, game) {
     return result;
 }
 
-function getPlayerLNNs(player) {
+function showPlayerLNNs(player) {
+    if (typeof player == "object") {
+        player = this.value; // if event listener fired
+    }
+
+    if (player === "") {
+        document.getElementById("player_list").style.display = "none";
+        return;
+    }
+
     let games = [];
     let sum = 0;
     const playerTable = document.getElementById("player_tbody");
@@ -237,17 +246,6 @@ function getPlayerLNNs(player) {
 
     document.getElementById("player_sum").innerHTML = sum;
     document.getElementById("player_list").style.display = "block";
-}
-
-function showPlayerLNNs() { // player onchange, player onselect
-    const player = this.value;
-
-    if (player === "") {
-        document.getElementById("player_list").style.display = "none";
-        return;
-    }
-
-    getPlayerLNNs(player);
 }
 
 function setLanguage(event) {
