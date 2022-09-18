@@ -5,6 +5,7 @@ let seasonsEnabled, datesEnabled, unverifiedEnabled;
 let language = "en_GB";
 let selected = "";
 let missingReplays = "";
+let preferVideo = false;
 
 
 function getSeason(string) {
@@ -30,6 +31,22 @@ function toggleLayout() {
         deleteCookie("wr_old_layout");
     } else {
         setCookie("wr_old_layout", true);
+    }
+}
+
+function toggleVideo() {
+    preferVideo = !preferVideo;
+
+    if (preferVideo) {
+        localStorage.setItem("preferVideo", true);
+    } else {
+        localStorage.removeItem("preferVideo");
+    }
+
+    const player = document.getElementById("player").value;
+
+    if (player !== "") {
+        showPlayerWRs(player);
     }
 }
 
@@ -455,10 +472,14 @@ function addPlayerWR(playerWRs, game, diff, shot, isUnverified) {
     playerWRs.shots.push(_(shot));
     playerWRs.dates.push(`<span class='datestring_player'>${date}</span>`);
 
-    if (replay) {
+    if (preferVideo && replay) {
         playerWRs.replays.push(`<a href='${replay}'>${replay}</a>`);
     } else if (gameAbbr(game) < 6 || missingReplays.includes(game + diff + shot) || isUnverified) {
-        playerWRs.replays.push('-');
+        if (replay) {
+            playerWRs.replays.push(`<a href='${replay}' target='_blank'>${replay}</a>`);
+        } else {
+            playerWRs.replays.push('-');
+        }
     } else {
         replay = replayPath(game, diff, shot);
         tmp = replay.split('/');
@@ -571,6 +592,7 @@ function setLanguage(event) {
 function setEventListeners() {
     document.body.addEventListener("resize", updateOrientation, false);
     document.getElementById("toggle_layout").addEventListener("click", toggleLayout, false);
+    document.getElementById("toggle_video").addEventListener("click", toggleVideo, false);
     document.getElementById("player").addEventListener("change", showPlayerWRs, false);
     document.getElementById("player").addEventListener("select", showPlayerWRs, false);
     document.getElementById("en_GB").addEventListener("click", setLanguage, false);
@@ -638,6 +660,11 @@ function init() {
     missingReplaysElement.parentNode.removeChild(missingReplaysElement);
     setEventListeners();
     setAttributes();
+    
+    if (localStorage.hasOwnProperty("preferVideo")) {
+        preferVideo = Boolean(localStorage.getItem("preferVideo"));
+        document.getElementById("toggle_video").checked = preferVideo;
+    }
 
     if (!datesEnabled) {
         disableDates();

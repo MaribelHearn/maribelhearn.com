@@ -292,7 +292,8 @@
         </table>
 	</div>
     <div id='playersearch'>
-		<?php echo '<h2>' . _('Player Search') . '</h2><p id="playerwrs">' . _('Choose a player name from the menu below to show their WRs.') . '</p>' ?>
+		<h2><?php echo _('Player Search') ?></h2>
+        <p id='playerwrs'><?php echo _('Choose a player name from the menu below to show their WRs.') ?></p>
 		<label for='player'><?php echo _('Player') ?></label>
 		<select id='player'>
             <option value=''>...</option>
@@ -303,6 +304,7 @@
                 }
 		    ?>
         </select>
+        <p><input id='toggle_video' type='checkbox'><label for='toggle_video'><?php echo _('Show videos over replays') ?></label></p>
     </div>
 	<div id='player_list'>
 		<table class='sortable'>
