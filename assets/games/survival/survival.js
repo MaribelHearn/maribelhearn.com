@@ -356,16 +356,17 @@ function afterScreenshot(canvas) {
 
 function takeScreenshotMobile() {
     html2canvas(document.getElementById("survival"), {
-        width: document.getElementById("modal_inner").offsetWidth,
+        scale: 1,
+        height: document.getElementById("container").offsetHeight,
         backgroundColor: "white",
-        "logging": false
+        logging: false
     }).then(afterScreenshot);
 }
 
 function takeScreenshot() {
     html2canvas(document.getElementById("survival"), {
         backgroundColor: "white",
-        "logging": false
+        logging: false
     }).then(afterScreenshot);
 }
 
