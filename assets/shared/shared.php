@@ -463,7 +463,7 @@ function wrap_top() {
     }
     if (isset($_COOKIE)) {
         echo '<span id="hy_container" data-html2canvas-ignore><a id="hy_link" href="?theme=' . (isset($_COOKIE['theme']) ? 'light' : 'dark') .
-        '"><span id="hy"></span><p id="hy_text">' . (isset($_COOKIE['theme']) ? _('Youkai mode (Dark)') : _('Human mode (Light)')) . '</p></a></span>';
+        '"><span id="hy"></span><br><span id="hy_text">' . (isset($_COOKIE['theme']) ? _('Youkai mode (Dark)') : _('Human mode (Light)')) . '</span></a></span>';
     }
     if ($page == 'lnn' || $page == 'wr') {
         echo '<span id="toggle"><a id="toggle_layout" href="' . $page . '">' . ($layout == 'New' ? 'Old' : 'New') . ' layout</a></span>';

@@ -186,7 +186,7 @@
         '<tr><td class="noborders">Charge Delay</td><td class="noborders">' .  $stats[$chara]['delay'] . ' frames</td></tr>' .
         '<tr><td class="noborders">Special Ability</td><td class="noborders">' . ability($chara) . '</td></tr>' .
         '<tr><td class="noborders">Scope</td><td class="noborders">' . $stats[$chara]['scope'] . '</td></tr></table></td>' .
-        '<td class="noborders"><img class="scope" src="assets/games/pofv/scopes/' . $chara . '.jpg"></td></tr></table>' .
+        '<td class="noborders"><img class="scope" src="assets/games/pofv/scopes/' . $chara . '.jpg" alt="' . ucfirst($chara) . '\'s scope"></td></tr></table>' .
         '<p class="descr">' . description($chara) . '</p></div>';
     }
 ?></div>

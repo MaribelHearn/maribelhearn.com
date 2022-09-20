@@ -3117,7 +3117,7 @@
                 <td>May 4, 2021</td>
                 <td>May 17, 2021</td>
                 <td>October 31, 2021</td>
-                <td><strong><a href='https://www.youtube.com/watch?v=5jh5vc97NxE'>1cc</a>
+                <td><strong><a href='https://www.youtube.com/watch?v=5jh5vc97NxE'>1cc</a></strong></td>
 				<a href='https://www.youtube.com/watch?v=18GuAM7yOoY'>NNN</a></td>
             </tr>
         </table></div>
