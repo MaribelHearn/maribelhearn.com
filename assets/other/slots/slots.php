@@ -47,7 +47,7 @@
 </div>
 <div id='modal' data-html2canvas-ignore>
     <div id='modal_title' class='modal_inner'>
-        <h2>Change Title</h2>
+        <h2><label for='custom_title'>Change Title</label></h2>
         <p><input id='custom_title' type='text' value=''><small id='title_length'></small></p>
         <p><input id='change_title' type='button' value='Change'></p>
     </div>

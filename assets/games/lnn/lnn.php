@@ -107,7 +107,7 @@
         <table id='lnn_table'>
             <thead id='lnn_thead'>
                 <tr>
-                    <th id='lnn_shotroute' class='general_header'></th>
+                    <th id='lnn_shotroute' class='general_header'><?php echo _('Shottype') ?></th>
                     <th class='general_header nowrap'><span id='lnn_restrictions'></span><br><?php echo _('(Different players)') ?></th>
                     <th class='general_header'><?php echo _('Players') ?></th>
                 </tr>

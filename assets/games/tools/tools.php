@@ -53,7 +53,6 @@
 		'<a id="thcrap_link" href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page" target="_blank">' .
 		'<span class="icon thcrap_icon"></span> thcrap</a></h2>');
 	?>
-	</h2>
     <p><?php
 		echo _('Translation patches into English and many other languages, as well as countless modifications to ' .
 		'gameplay, graphics and more, plus the ability to make your own, are provided by the Touhou Community ' .
@@ -195,7 +194,7 @@
 		<p><a href='https://maribelhearn.com/mirror/Full%20Boss%20Rush.zip' target='_blank'><?php echo _('Full Pack') ?></a></p>
         <p><a href='https://mega.nz/#F!rswTmICb!lnVEolHezNbe4pZPopSqwA' target='_blank'>MoF</a> |
         <a href='https://mega.nz/#F!a4BCTACS!Z3gA684Me36gZK_i4y_5Dg' target='_blank'>SA</a> |
-        <a href='https://mega.nz/#F!W1AGhJaA#8Hz_laGbtFnNG0-ldTUVZg' target='_blank'>UFO</a> |
+        <a href='https://mega.nz/folder/W1AGhJaA#8Hz_laGbtFnNG0-ldTUVZg' target='_blank'>UFO</a> |
         <a href='https://mega.nz/#F!TlwUwBTb!hT-vr7hhft3dwt3slrhCEQ' target='_blank'>GFW</a> |
         <a href='https://mega.nz/#F!axJSDILb!FPNSYOddqDosZ1I1Y-9UBQ' target='_blank'>TD</a> |
         <a href='https://mega.nz/#F!K1AByK5I!7NrTie_DHQBrH5OKnIXfEg' target='_blank'>DDC</a> |

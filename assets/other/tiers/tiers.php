@@ -39,7 +39,7 @@
             <thead id='tier_list_thead' data-html2canvas-ignore>
                 <tr id='tier_list_name_tr'>
                     <td id='tier_list_name_cell' colspan='2'>
-                        <label for='tier_list_name_input'>Tier list name: </label><input id='tier_list_name' type='text' maxlength='200'>
+                        <label for='tier_list_name'>Tier list name: </label><input id='tier_list_name' type='text' maxlength='200'>
                         <input id='add_tier_list_name' type='button' value='Apply'>
                     </td>
                 </tr>
@@ -79,7 +79,7 @@
 <div id='modal' data-html2canvas-ignore>
     <div id='info_desktop' class='modal_inner'>
         <h2>Welcome!</h2>
-        <p id='instructions_text'>This page allows you to create your own Touhou tier lists. Currently, you can sort characters, works, and shottypes. Usage instructions are listed below.</p>
+        <p>This page allows you to create your own Touhou tier lists. Currently, you can sort characters, works, and shottypes. Usage instructions are listed below.</p>
         <ul id='instructions_list'>
             <li><strong>Adding Items:</strong> Drag an item onto a tier box, or the field, to add that item to it. You can also double click an item to add it to a tier, using a popup menu.</li>
             <li><strong>Moving Items:</strong> Drag an item onto another item to move that item to its location. The same double click menu that can be used in the picker can also be used for this.</li>
@@ -100,7 +100,7 @@
     </div>
     <div id='info_mobile' class='modal_inner'>
         <h3>Welcome!</h3>
-        <p id='instructions_text'>This page allows you to create your own Touhou tier lists. Currently, you can sort characters, works, and shottypes. Usage instructions are listed below.</p>
+        <p>This page allows you to create your own Touhou tier lists. Currently, you can sort characters, works, and shottypes. Usage instructions are listed below.</p>
         <ul id='instructions_list'>
             <li><strong>Adding Items:</strong> Long press and drag an item into a tier box or the field.</li>
             <li><strong>Moving Items:</strong> Long press and drag an item onto another item to move that item to its location.</li>
@@ -156,7 +156,7 @@
                 <tbody id='settings_characters_tbody'></tbody>
             </table>
             <p>
-                <label for='pc-98'>PC-98</label>
+                <label for='pc98'>PC-98</label>
                 <input id='pc98' type='checkbox'>
             </p>
             <p>
@@ -271,7 +271,7 @@
         ?>
     </div>
     <div id='add_menu_mobile' class='modal_inner'>
-        <h3 id='selection'></h3>
+        <h3 id='selection'>Selection</h3>
         <p id='selection_text'>Add to tier:</p>
         <p id='add_menu_inputs'></p>
     </div>
