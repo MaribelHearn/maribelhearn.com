@@ -175,7 +175,7 @@
 				<td>1.05</td>
 				<td>1,633,333,410</td>
 				<td>6 February 2019</td>
-				<td><a href='https://cdn.discordapp.com/attachments/229569755344928768/857279171978068028/thmhj_10.rpy'><?php echo _('Replay') ?><br>
+				<td><a href='https://cdn.discordapp.com/attachments/229569755344928768/857279171978068028/thmhj_10.rpy'><?php echo _('Replay') ?></a><br>
 				<a href='https://www.youtube.com/watch?v=9GvQe8pdhVg'><?php echo _('Video') ?></a></td>
 			</tr><tr>
 				<td>CreepyNinja</td>
@@ -214,7 +214,7 @@
 				<td>7 March 2018</td>
 				<td><a href='https://www.bilibili.com/video/av20483547'><?php echo _('Video') ?></a></td>
 			</tr>
-		</thead>
+		</tbody>
 	</table></div>
 	<div class='overflow'><table class='sortable'>
 		<caption><span class='fangame fdf2'></span> 東方幕華祭春雪篇 ~ Fantastic Danmaku Festival Part II<br><?php echo _('(No Border Breaks)') ?></caption>
@@ -329,7 +329,7 @@
 				<td>Omote</td>
 				<td>42,963,771,265</td>
 				<td>23 February 2019</td>
-				<td><a href='https://cdn.discordapp.com/attachments/175267714904883200/549591467149230108/MPP_Package_replay07.dat'><?php echo _('Replay') ?><br>
+				<td><a href='https://cdn.discordapp.com/attachments/175267714904883200/549591467149230108/MPP_Package_replay07.dat'><?php echo _('Replay') ?></a><br>
 				<a href='https://www.youtube.com/watch?v=kuagd1wUJeQ'><?php echo _('Video') ?></a></td>
 			</tr><tr>
 				<td>DarkPermafrost</td>
@@ -337,7 +337,7 @@
 				<td>Ura</td>
 				<td>11,345,581,028</td>
 				<td>2 March 2019</td>
-				<td><a href='https://cdn.discordapp.com/attachments/175267714904883200/552123320519098369/MPP_Package_replay11.dat'><?php echo _('Replay') ?><br>
+				<td><a href='https://cdn.discordapp.com/attachments/175267714904883200/552123320519098369/MPP_Package_replay11.dat'><?php echo _('Replay') ?></a><br>
 				<a href='https://www.youtube.com/watch?v=C9endry0cno'><?php echo _('Video') ?></a></td>
 			</tr>
 		</tbody>
@@ -969,7 +969,7 @@
 				<td>Maingame</td>
 				<td><u>49,426,402</u><br>by <em>nonokuro</em></td>
 				<td>4 January 2006</td>
-				<td><a href='https://www.youtube.com/watch?v=XB4AuLZAmEk'><?php echo _('Video') ?></td>
+				<td><a href='https://www.youtube.com/watch?v=XB4AuLZAmEk'><?php echo _('Video') ?></a></td>
 			</tr><tr>
 				<td>Maingame</td>
 				<td>46,815,936<br>by <em>Maribel Hearn</em></td>

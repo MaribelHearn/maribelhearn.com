@@ -20,70 +20,68 @@
         <tr>
             <th id='s' class='tier'>S</th>
             <td class='noborders'>
-                <span id='marisa' class='char' title='Marisa Kirisame'>
+                <span id='marisa' class='char' title='Marisa Kirisame'></span>
             </td>
             <td class='noborders'>
-                <span id='reimu' class='char' title='Reimu Hakurei'>
+                <span id='reimu' class='char' title='Reimu Hakurei'></span>
             </td>
             <td class='noborders'>
-                <span id='youmu' class='char' title='Youmu Konpaku'>
+                <span id='youmu' class='char' title='Youmu Konpaku'></span>
             </td>
-            <td class='hidden'></td>
         </tr>
         <tr>
             <th id='a' class='tier'>A</th>
             <td class='noborders'>
-                <span id='komachi' class='char' title='Komachi Onozuka'>
+                <span id='komachi' class='char' title='Komachi Onozuka'></span>
             </td>
             <td class='noborders'>
-                <span id='eiki' class='char' title='Eiki Shiki Yamaxanadu'>
+                <span id='eiki' class='char' title='Eiki Shiki Yamaxanadu'></span>
             </td>
             <td class='hidden'></td>
         <tr>
             <th id='b' class='tier'>B</th>
             <td class='noborders'>
-                <span id='lyrica' class='char' title='Lyrica Prismriver'>
+                <span id='lyrica' class='char' title='Lyrica Prismriver'></span>
             </td>
             <td class='noborders'>
-                <span id='medicine' class='char' title='Medicine Melancholy'>
+                <span id='medicine' class='char' title='Medicine Melancholy'></span>
             </td>
             <td class='noborders'>
-                <span id='reisen' class='char' title='Reisen Udongein Inaba'>
+                <span id='reisen' class='char' title='Reisen Udongein Inaba'></span>
             </td>
-            <td class='hidden'></td>
         </tr>
         <tr>
             <th id='c' class='tier'>C</th>
             <td class='noborders'>
-                <span id='merlin' class='char' title='Merlin Prismriver'>
+                <span id='merlin' class='char' title='Merlin Prismriver'></span>
             </td>
             <td class='noborders'>
-                <span id='lunasa' class='char' title='Lunasa Prismriver'>
+                <span id='lunasa' class='char' title='Lunasa Prismriver'></span>
             </td>
             <td class='hidden'></td>
         </tr>
         <tr>
             <th id='d' class='tier'>D</th>
             <td class='noborders'>
-                <span id='yuuka' class='char' title='Yuuka Kazami'>
+                <span id='yuuka' class='char' title='Yuuka Kazami'></span>
             </td>
             <td class='noborders'>
-                <span id='sakuya' class='char' title='Sakuya Izayoi'>
+                <span id='sakuya' class='char' title='Sakuya Izayoi'></span>
             </td>
             <td class='noborders'>
-                <span id='aya' class='char' title='Aya Shameimaru'>
+                <span id='aya' class='char' title='Aya Shameimaru'></span>
             </td>
         </tr>
         <tr>
             <th id='e' class='tier'>E</th>
             <td class='noborders'>
-                <span id='tewi' class='char' title='Tewi Inaba'>
+                <span id='tewi' class='char' title='Tewi Inaba'></span>
             </td>
             <td class='noborders'>
-                <span id='mystia' class='char' title='Mystia Lorelei'>
+                <span id='mystia' class='char' title='Mystia Lorelei'></span>
             </td>
             <td class='noborders'>
-                <span id='cirno' class='char' title='Cirno'>
+                <span id='cirno' class='char' title='Cirno'></span>
             </td>
         </tr>
     </table>
@@ -180,9 +178,9 @@
         echo '<div id="' . $chara . '_info" class="modal_inner"><h2>' . $full_name . '</h2><table class="noborders"><tr>' .
         '<td class="noborders"><img class="art" src="assets/games/pofv/characters/' . $chara . '.png" alt="' . $full_name . '"></td>' .
         '<td class="noborders"><table class="stats noborders"><tr><td class="noborders">Tier</td><td class="noborders"><strong class="' . $tier . '">' . $tier . '</strong></td></tr>' .
-        '<tr><td class="noborders">Normal Speed</td><td class="noborders"><progress value="' . ($MIN_SPEED - $stats[$chara]['speed']) . '" max="98"></td></tr>' .
-        '<tr><td class="noborders">Focused Speed</td><td class="noborders"><progress value="' . $focus . '" max="98"></td></tr>' .
-        '<tr><td class="noborders">Charge Speed</td><td class="noborders"><progress value="' . $charge . '" max="20.5"></td></tr>' .
+        '<tr><td class="noborders">Normal Speed</td><td class="noborders"><progress value="' . ($MIN_SPEED - $stats[$chara]['speed']) . '" max="98"></progress></td></tr>' .
+        '<tr><td class="noborders">Focused Speed</td><td class="noborders"><progress value="' . $focus . '" max="98"></progress></td></tr>' .
+        '<tr><td class="noborders">Charge Speed</td><td class="noborders"><progress value="' . $charge . '" max="20.5"></progress></td></tr>' .
         '<tr><td class="noborders">Charge Delay</td><td class="noborders">' .  $stats[$chara]['delay'] . ' frames</td></tr>' .
         '<tr><td class="noborders">Special Ability</td><td class="noborders">' . ability($chara) . '</td></tr>' .
         '<tr><td class="noborders">Scope</td><td class="noborders">' . $stats[$chara]['scope'] . '</td></tr></table></td>' .
