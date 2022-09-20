@@ -95,7 +95,7 @@
         <?php if ($page != 'tiers') { echo '<nav data-html2canvas-ignore><div id="nav" class="wrap">' . navbar($page) . '</div></nav>'; } ?>
         <main><?php if ($page == 'error') { include_once 'assets/main/error/error.php'; } else { include_once $page_path; } ?></main>
         <?php if (!$is_mobile || $page != 'tiers') {
-            echo '<script nonce="' . file_get_contents('.stats/nonce') . '" defer>document.body.style.background="url(\'' . ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/' . $dir . '/' . $css_js_file . '/' . $css_js_file . '.jpg\') ';
+            echo '<script nonce="' . file_get_contents('.stats/nonce') . '">document.body.style.background="url(\'' . ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/' . $dir . '/' . $css_js_file . '/' . $css_js_file . '.jpg\') ';
             echo $bg_pos . ' no-repeat fixed";document.body.style.backgroundSize="cover"</script>';
             echo '<noscript><link rel="stylesheet" href="/assets/shared/noscript_bg.php?page=' . $css_js_file . '&pos=' . $bg_pos . '"></noscript>';
         }

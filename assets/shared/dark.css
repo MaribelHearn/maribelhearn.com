@@ -1,7 +1,7 @@
 /*h1, h2, h3, label, th, td, div, p:not(#ack) {
     color: white;
 }*/
-h1, h2, h3, h4, table:not(.poll):not(.rendering), label, li, figcaption, dt, p:not(.language):not(#ack), caption:not(#legend), #nav {
+h1, h2, h3, h4, table:not(.poll):not(.rendering), label, li, figcaption, dt, p:not(.language):not(#ack), caption:not(#legend), #nav, #hy_text {
     color: white;
 }
 .rendering th, .rendering td:not(.overview):not(.overview_half), .PoDD, .PoDDp, .LLS, .LLSp, .EoSD, .EoSDp, .PCB, .PCBp, .PoFV, .PoFVp, .MoF, .MoFp, .GFW, .GFWp, .TD, .TDp, .DDC, .DDCp, .UM, .UMp {

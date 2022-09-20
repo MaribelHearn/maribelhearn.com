@@ -281,573 +281,573 @@ music and works will not change when the full results are published.</p>-->
         </tr>
     </thead>
     <tbody>
-        <tr><td>1</td><td>1</td><td>2</td><td>U.N. Owen Was Her?</a><td>11,848</td><td>2,748</td><td>1,299</td></tr>
-        <tr><td>2</td><td>2</td><td>1</td><td>Septette for a Dead Princess</a><td>9,498</td><td>1,846</td><td>790</td></tr>
-        <tr><td>3</td><td>4</td><td>-</td><td>Entrust this World to Idols ~ Idolatrize World</a><td>7,107</td><td>1,271</td><td>826</td></tr>
-        <tr><td>4</td><td>3</td><td>4</td><td>Hartmann's Youkai Girl</a><td>6,211</td><td>854</td><td>616</td></tr>
-        <tr><td>5</td><td>7</td><td>6</td><td>Reach for the Moon, Immortal Smoke</a><td>5,921</td><td>771</td><td>560</td></tr>
-        <tr><td>6</td><td>11</td><td>12</td><td>Love-Coloured Master Spark（Love-coloured Magic）</a><td>5,861</td><td>623</td><td>548</td></tr>
-        <tr><td>7</td><td>8</td><td>9</td><td>Shanghai Teahouse ~ Chinese Tea</a><td>5,431</td><td>834</td><td>458</td></tr>
-        <tr><td>8</td><td>9</td><td>8</td><td>The Gensokyo The Gods Loved</a><td>5,425</td><td>561</td><td>587</td></tr>
-        <tr><td>9</td><td>6</td><td>5</td><td>Bloom Nobly, Ink-Black Cherry Blossom ~ Border of Life</a><td>5,403</td><td>684</td><td>442</td></tr>
-        <tr><td>10</td><td>5</td><td>3</td><td>Pure Furies ~ Whereabouts of the Heart</a><td>5,098</td><td>775</td><td>547</td></tr>
-        <tr><td>11</td><td>14</td><td>15</td><td>Ghostly Band ~ Phantom Ensemble</a><td>5,082</td><td>548</td><td>501</td></tr>
-        <tr><td>12</td><td>10</td><td>7</td><td>Necrofantasia</a><td>4,580</td><td>464</td><td>412</td></tr>
-        <tr><td>13</td><td>16</td><td>19</td><td>Lunar Clock ~ Luna Dial</a><td>3,757</td><td>472</td><td>305</td></tr>
-        <tr><td>14</td><td>12</td><td>10</td><td>Broken Moon</a><td>3,693</td><td>378</td><td>338</td></tr>
-        <tr><td>15</td><td>24</td><td>25</td><td>Tomboyish Girl in Love</a><td>3,485</td><td>421</td><td>360</td></tr>
-        <tr><td>16</td><td>15</td><td>18</td><td>Native Faith</a><td>3,353</td><td>431</td><td>349</td></tr>
-        <tr><td>17</td><td>19</td><td>21</td><td>Flight in the Bamboo Cutter ~ Lunatic Princess</a><td>3,212</td><td>299</td><td>306</td></tr>
-        <tr><td>18</td><td>22</td><td>24</td><td>Maiden's Capriccio / Dream Battle</a><td>3,138</td><td>283</td><td>266</td></tr>
-        <tr><td>19</td><td>13</td><td>11</td><td>Inchlings of the Shining Needle ~ Little Princess</a><td>2,988</td><td>339</td><td>275</td></tr>
-        <tr><td>20</td><td>17</td><td>14</td><td>Satori Maiden ~ 3rd eye</a><td>2,774</td><td>342</td><td>263</td></tr>
-        <tr><td>21</td><td>25</td><td>20</td><td>Gensokyo Millennium ~ History of the Moon</a><td>2,765</td><td>276</td><td>272</td></tr>
-        <tr><td>22</td><td>20</td><td>13</td><td>Tonight Stars an Easygoing Egoist (Live ver.) ~ Egoistic Flowers.</a><td>2,759</td><td>288</td><td>256</td></tr>
-        <tr><td>23</td><td>18</td><td>16</td><td>Emotional Skyscraper ~ Cosmic Mind</a><td>2,756</td><td>294</td><td>272</td></tr>
-        <tr><td>24</td><td>27</td><td>32</td><td>Flowering Night</a><td>2,712</td><td>225</td><td>261</td></tr>
-        <tr><td>25</td><td>21</td><td>17</td><td>Last Remote</a><td>2,693</td><td>251</td><td>243</td></tr>
-        <tr><td>26</td><td>23</td><td>23</td><td>Faith Is for the Transient People</a><td>2,467</td><td>262</td><td>234</td></tr>
-        <tr><td>27</td><td>35</td><td>51</td><td>Hiroari Shoots a Strange Bird ~ Till When?</a><td>2,395</td><td>315</td><td>227</td></tr>
-        <tr><td>28</td><td>29</td><td>36</td><td>Lunatic Eyes ~ Invisible Full Moon</a><td>2,385</td><td>223</td><td>236</td></tr>
-        <tr><td>29</td><td>26</td><td>22</td><td>Desire Drive</a><td>2,375</td><td>262</td><td>238</td></tr>
-        <tr><td>30</td><td>31</td><td>35</td><td>Shanghai Alice of Meiji 17</a><td>2,249</td><td>268</td><td>192</td></tr>
-        <tr><td>31</td><td>-</td><td>-</td><td>Where Is That Bustling Marketplace Now ~ Immemorial Marketeers</a><td>2,195</td><td>250</td><td>307</td></tr>
-        <tr><td>32</td><td>28</td><td>26</td><td>The Centennial Festival for Magical Girls</a><td>2,072</td><td>190</td><td>186</td></tr>
-        <tr><td>33</td><td>33</td><td>33</td><td>Eastern Judgement in the Sixtieth Year ~ Fate of Sixty Years</a><td>2,016</td><td>210</td><td>172</td></tr>
-        <tr><td>34</td><td>39</td><td>34</td><td>Doll Judgment</a><td>2,007</td><td>181</td><td>148</td></tr>
-        <tr><td>35</td><td>38</td><td>37</td><td>Apparitions Stalk the Night</a><td>1,926</td><td>262</td><td>177</td></tr>
-        <tr><td>36</td><td>30</td><td>31</td><td>Wind God Girl</a><td>1,783</td><td>186</td><td>156</td></tr>
-        <tr><td>37</td><td>32</td><td>28</td><td>Solar Sect of Mystic Wisdom ~ Nuclear Fusion</a><td>1,724</td><td>158</td><td>156</td></tr>
-        <tr><td>38</td><td>48</td><td>54</td><td>The Maid and the Pocket Watch of Blood</a><td>1,709</td><td>176</td><td>124</td></tr>
-        <tr><td>39</td><td>34</td><td>30</td><td>Fall of Fall ~ Autumnal Waterfall</a><td>1,640</td><td>212</td><td>162</td></tr>
-        <tr><td>40</td><td>36</td><td>29</td><td>Magus Night</a><td>1,571</td><td>137</td><td>173</td></tr>
-        <tr><td>41</td><td>50</td><td>56</td><td>Locked Girl ~ The Girl's Secret Room</a><td>1,544</td><td>169</td><td>106</td></tr>
-        <tr><td>41</td><td>37</td><td>27</td><td>Secret God Matara ~ Hidden Star in All Seasons.</a><td>1,544</td><td>129</td><td>206</td></tr>
-        <tr><td>43</td><td>53</td><td>50</td><td>Catastrophe in Bhavaagra ~ Wonderful Heaven</a><td>1,539</td><td>134</td><td>131</td></tr>
-        <tr><td>44</td><td>43</td><td>55</td><td>Shoutoku Legend ~ True Administrator</a><td>1,524</td><td>196</td><td>162</td></tr>
-        <tr><td>45</td><td>56</td><td>59</td><td>Eastern Mystical Dream ~ Ancient Temple</a><td>1,493</td><td>166</td><td>136</td></tr>
-        <tr><td>46</td><td>51</td><td>45</td><td>Heian Alien</a><td>1,460</td><td>134</td><td>180</td></tr>
-        <tr><td>47</td><td>42</td><td>39</td><td>The Pierrot of the Star-Spangled Banner</a><td>1,457</td><td>81</td><td>168</td></tr>
-        <tr><td>48</td><td>44</td><td>43</td><td>Tomorrow Will Be Special, Yesterday Was Not</a><td>1,436</td><td>121</td><td>181</td></tr>
-        <tr><td>49</td><td>-</td><td>-</td><td>The Princess Who Slays Dragon Kings</a><td>1,434</td><td>79</td><td>209</td></tr>
-        <tr><td>50</td><td>47</td><td>47</td><td>Akutagawa Ryuunosuke's "Kappa" ~ Candid Friend</a><td>1,404</td><td>127</td><td>139</td></tr>
-        <tr><td>51</td><td>92</td><td>110</td><td>Bad Apple!!</a><td>1,400</td><td>185</td><td>167</td></tr>
-        <tr><td>52</td><td>45</td><td>44</td><td>The Youkai Mountain ~ Mysterious Mountain</a><td>1,394</td><td>129</td><td>138</td></tr>
-        <tr><td>53</td><td>64</td><td>53</td><td>Pandemonic Planet</a><td>1,365</td><td>128</td><td>177</td></tr>
-        <tr><td>54</td><td>46</td><td>42</td><td>Lullaby of Deserted Hell</a><td>1,287</td><td>108</td><td>128</td></tr>
-        <tr><td>55</td><td>60</td><td>68</td><td>Border of Life</a><td>1,282</td><td>101</td><td>151</td></tr>
-        <tr><td>56</td><td>49</td><td>41</td><td>The Fantastic Tales from Tono</a><td>1,278</td><td>137</td><td>140</td></tr>
-        <tr><td>57</td><td>40</td><td>45</td><td>Greenwich in the Sky</a><td>1,261</td><td>124</td><td>120</td></tr>
-        <tr><td>58</td><td>67</td><td>49</td><td>Crazy Backup Dancers</a><td>1,260</td><td>76</td><td>160</td></tr>
-        <tr><td>59</td><td>68</td><td>63</td><td>Reverse Ideology</a><td>1,230</td><td>128</td><td>135</td></tr>
-        <tr><td>60</td><td>62</td><td>52</td><td>Dichromatic Lotus Butterfly ~ Ancients / Red and White</a><td>1,179</td><td>86</td><td>143</td></tr>
-        <tr><td>61</td><td>105</td><td>115</td><td>A Dream that Is More Scarlet than Red</a><td>1,168</td><td>162</td><td>91</td></tr>
-        <tr><td>62</td><td>52</td><td>48</td><td>Primordial Beat ~ Pristine Beat</a><td>1,147</td><td>100</td><td>123</td></tr>
-        <tr><td>63</td><td>66</td><td>70</td><td>The Sea Where the Home Planet is Reflected</a><td>1,140</td><td>63</td><td>143</td></tr>
-        <tr><td>64</td><td>41</td><td>38</td><td>At the End of Spring</a><td>1,130</td><td>107</td><td>114</td></tr>
-        <tr><td>65</td><td>63</td><td>62</td><td>The Venerable Ancient Battlefield ~ Suwa Foughten Field</a><td>1,120</td><td>102</td><td>121</td></tr>
-        <tr><td>66</td><td>57</td><td>57</td><td>Dark Side of Fate</a><td>1,114</td><td>86</td><td>96</td></tr>
-        <tr><td>67</td><td>58</td><td>61</td><td>The Primal Scene of Japan the Girl Saw</a><td>1,104</td><td>80</td><td>120</td></tr>
-        <tr><td>68</td><td>55</td><td>58</td><td>Crimson Tower ~ Eastern Dream...</a><td>1,082</td><td>110</td><td>105</td></tr>
-        <tr><td>69</td><td>70</td><td>71</td><td>Because Princess Inada Is Scolding Me</a><td>1,074</td><td>78</td><td>122</td></tr>
-        <tr><td>70</td><td>82</td><td>92</td><td>A Soul as Red as a Ground Cherry</a><td>1,071</td><td>121</td><td>94</td></tr>
-        <tr><td>71</td><td>69</td><td>66</td><td>Deaf to All but the Song</a><td>1,037</td><td>73</td><td>98</td></tr>
-        <tr><td>72</td><td>59</td><td>40</td><td>The Concealed Four Seasons</a><td>1,034</td><td>77</td><td>138</td></tr>
-        <tr><td>73</td><td>81</td><td>80</td><td>The Road of the Misfortune God ~ Dark Road</a><td>1,007</td><td>75</td><td>96</td></tr>
-        <tr><td>74</td><td>61</td><td>64</td><td>Old Yuanxian</a><td>982</td><td>73</td><td>104</td></tr>
-        <tr><td>75</td><td>122</td><td>116</td><td>Sakura, Sakura ~ Japanize Dream...</a><td>958</td><td>60</td><td>97</td></tr>
-        <tr><td>76</td><td>83</td><td>74</td><td>Cinderella Cage ~ Kagome-Kagome</a><td>948</td><td>72</td><td>103</td></tr>
-        <tr><td>77</td><td>90</td><td>72</td><td>The Lost Emotion</a><td>935</td><td>95</td><td>82</td></tr>
-        <tr><td>78</td><td>74</td><td>59</td><td>Eternal Spring Dream</a><td>934</td><td>65</td><td>117</td></tr>
-        <tr><td>79</td><td>71</td><td>81</td><td>Kid's Festival ~ Innocent Treasures</a><td>926</td><td>108</td><td>96</td></tr>
-        <tr><td>80</td><td>65</td><td>66</td><td>Green-Eyed Jealousy</a><td>920</td><td>126</td><td>90</td></tr>
-        <tr><td>81</td><td>89</td><td>86</td><td>Plain Asia</a><td>913</td><td>88</td><td>100</td></tr>
-        <tr><td>82</td><td>75</td><td>78</td><td>Voyage 1969</a><td>907</td><td>75</td><td>80</td></tr>
-        <tr><td>83</td><td>87</td><td>84</td><td>A Maiden's Illusionary Funeral ~ Necro-Fantasy</a><td>882</td><td>89</td><td>77</td></tr>
-        <tr><td>83</td><td>77</td><td>65</td><td>Sleepless Night of the Eastern Country</a><td>882</td><td>72</td><td>90</td></tr>
-        <tr><td>85</td><td>-</td><td>-</td><td>Starry Mountain of Tenma</a><td>877</td><td>62</td><td>136</td></tr>
-        <tr><td>86</td><td>72</td><td>79</td><td>The Capital City of Flowers in the Sky</a><td>876</td><td>100</td><td>72</td></tr>
-        <tr><td>87</td><td>73</td><td>76</td><td>Alice in Wonderland</a><td>871</td><td>85</td><td>105</td></tr>
-        <tr><td>88</td><td>101</td><td>99</td><td>Lunate Elf</a><td>833</td><td>91</td><td>71</td></tr>
-        <tr><td>89</td><td>91</td><td>-</td><td>Joutoujin of Ceramics</a><td>817</td><td>57</td><td>122</td></tr>
-        <tr><td>90</td><td>95</td><td>96</td><td>Beware the Umbrella Left There Forever</a><td>796</td><td>77</td><td>84</td></tr>
-        <tr><td>91</td><td>53</td><td>-</td><td>Unlocated Hell</a><td>790</td><td>55</td><td>110</td></tr>
-        <tr><td>92</td><td>88</td><td>69</td><td>Last Occultism ~ Esotericist of the Present World</a><td>789</td><td>59</td><td>84</td></tr>
-        <tr><td>93</td><td>79</td><td>88</td><td>Vanishing Dream ~ Lost Dream</a><td>781</td><td>73</td><td>98</td></tr>
-        <tr><td>94</td><td>80</td><td>83</td><td>Hiroshige No.36 ~ Neo Super-Express</a><td>780</td><td>76</td><td>118</td></tr>
-        <tr><td>95</td><td>102</td><td>104</td><td>Extend Ash ~ Person of Hourai</a><td>772</td><td>63</td><td>66</td></tr>
-        <tr><td>96</td><td>85</td><td>75</td><td>Demystify Feast</a><td>766</td><td>75</td><td>110</td></tr>
-        <tr><td>97</td><td>104</td><td>109</td><td>Voile, the Magic Library</a><td>761</td><td>68</td><td>64</td></tr>
-        <tr><td>98</td><td>86</td><td>89</td><td>Illusionary Joururi</a><td>760</td><td>68</td><td>78</td></tr>
-        <tr><td>99</td><td>93</td><td>102</td><td>Interdimensional Voyage of a Ghostly Passenger Ship</a><td>756</td><td>70</td><td>82</td></tr>
-        <tr><td>100</td><td>99</td><td>93</td><td>Nostalgic Blood of the East ~ Old World</a><td>743</td><td>60</td><td>72</td></tr>
-        <tr><td>101</td><td>106</td><td>94</td><td>The Doll Maker of Bucuresti</a><td>735</td><td>61</td><td>50</td></tr>
-        <tr><td>102</td><td>76</td><td>77</td><td>Night Falls</a><td>734</td><td>47</td><td>66</td></tr>
-        <tr><td>103</td><td>96</td><td>91</td><td>Faraway 380,000-Kilometer Voyage</a><td>707</td><td>38</td><td>87</td></tr>
-        <tr><td>104</td><td>-</td><td>-</td><td>The Long-Awaited Oumagatoki</a><td>697</td><td>50</td><td>123</td></tr>
-        <tr><td>105</td><td>78</td><td>73</td><td>Mysterious Purification Rod</a><td>693</td><td>62</td><td>92</td></tr>
-        <tr><td>106</td><td>100</td><td>95</td><td>Legend of Hourai</a><td>690</td><td>115</td><td>99</td></tr>
-        <tr><td>107</td><td>94</td><td>90</td><td>Girls' Sealing Club</a><td>674</td><td>71</td><td>82</td></tr>
-        <tr><td>108</td><td>84</td><td>82</td><td>Night Sakura of Dead Spirits</a><td>666</td><td>54</td><td>72</td></tr>
-        <tr><td>109</td><td>111</td><td>105</td><td>Paradise ~ Deep Mountain</a><td>663</td><td>53</td><td>76</td></tr>
-        <tr><td>110</td><td>121</td><td>130</td><td>Walking the Streets of a Former Hell</a><td>660</td><td>36</td><td>72</td></tr>
-        <tr><td>111</td><td>103</td><td>103</td><td>Reincarnation</a><td>640</td><td>63</td><td>83</td></tr>
-        <tr><td>112</td><td>96</td><td>87</td><td>Bell of Avici ~ Infinite Nightmare</a><td>639</td><td>53</td><td>79</td></tr>
-        <tr><td>113</td><td>128</td><td>141</td><td>Omiwa Legend</a><td>619</td><td>73</td><td>79</td></tr>
-        <tr><td>114</td><td>-</td><td>-</td><td>Kitten of Great Fortune</a><td>618</td><td>32</td><td>75</td></tr>
-        <tr><td>115</td><td>108</td><td>145</td><td>Eastern Youkai Beauty</a><td>616</td><td>33</td><td>60</td></tr>
-        <tr><td>116</td><td>129</td><td>152</td><td>The Young Descendant of Tepes</a><td>615</td><td>40</td><td>49</td></tr>
-        <tr><td>117</td><td>131</td><td>124</td><td>Gensokyo, Past and Present ~ Flower Land</a><td>612</td><td>63</td><td>51</td></tr>
-        <tr><td>118</td><td>116</td><td>106</td><td>Retrospective Kyoto</a><td>604</td><td>31</td><td>60</td></tr>
-        <tr><td>119</td><td>107</td><td>101</td><td>Higan Retour ~ Riverside View</a><td>593</td><td>41</td><td>65</td></tr>
-        <tr><td>120</td><td>98</td><td>100</td><td>Eastern Heaven of Scarlet Perception</a><td>587</td><td>46</td><td>52</td></tr>
-        <tr><td>121</td><td>-</td><td>-</td><td>The Great Fantastic Underground Railway Network</a><td>572</td><td>46</td><td>96</td></tr>
-        <tr><td>122</td><td>123</td><td>118</td><td>Oni's Island in the Fairyland ~ Missing Power</a><td>558</td><td>38</td><td>58</td></tr>
-        <tr><td>122</td><td>110</td><td>98</td><td>the Grimoire of Alice</a><td>558</td><td>46</td><td>55</td></tr>
-        <tr><td>124</td><td>112</td><td>97</td><td>Ultimate Truth</a><td>535</td><td>49</td><td>60</td></tr>
-        <tr><td>125</td><td>164</td><td>177</td><td>Mystic Dream ~ Snow or Cherry Petal</a><td>533</td><td>65</td><td>41</td></tr>
-        <tr><td>126</td><td>139</td><td>146</td><td>Retribution for the Eternal Night ~ Imperishable Night</a><td>531</td><td>39</td><td>76</td></tr>
-        <tr><td>127</td><td>108</td><td>85</td><td>Illusionary White Traveler</a><td>524</td><td>29</td><td>70</td></tr>
-        <tr><td>128</td><td>138</td><td>132</td><td>The Reversed Wheel of Fortune</a><td>516</td><td>44</td><td>71</td></tr>
-        <tr><td>129</td><td>113</td><td>107</td><td>The Childlike Duo's Naturalis Historia</a><td>503</td><td>43</td><td>61</td></tr>
-        <tr><td>130</td><td>119</td><td>111</td><td>Corpse Voyage ~ Be of good cheer!</a><td>501</td><td>38</td><td>70</td></tr>
-        <tr><td>131</td><td>136</td><td>137</td><td>Lovely Mound of Cherry Blossoms ~ Flower of Japan / Japanese Flower</a><td>486</td><td>60</td><td>50</td></tr>
-        <tr><td>132</td><td>126</td><td>129</td><td>Vessel of Stars ~ Casket of Star</a><td>481</td><td>34</td><td>56</td></tr>
+        <tr><td>1</td><td>1</td><td>2</td><td>U.N. Owen Was Her?</td>11,848</td><td>2,748</td><td>1,299</td></tr>
+        <tr><td>2</td><td>2</td><td>1</td><td>Septette for a Dead Princess</td>9,498</td><td>1,846</td><td>790</td></tr>
+        <tr><td>3</td><td>4</td><td>-</td><td>Entrust this World to Idols ~ Idolatrize World</td>7,107</td><td>1,271</td><td>826</td></tr>
+        <tr><td>4</td><td>3</td><td>4</td><td>Hartmann's Youkai Girl</td>6,211</td><td>854</td><td>616</td></tr>
+        <tr><td>5</td><td>7</td><td>6</td><td>Reach for the Moon, Immortal Smoke</td>5,921</td><td>771</td><td>560</td></tr>
+        <tr><td>6</td><td>11</td><td>12</td><td>Love-Coloured Master Spark（Love-coloured Magic）</td>5,861</td><td>623</td><td>548</td></tr>
+        <tr><td>7</td><td>8</td><td>9</td><td>Shanghai Teahouse ~ Chinese Tea</td>5,431</td><td>834</td><td>458</td></tr>
+        <tr><td>8</td><td>9</td><td>8</td><td>The Gensokyo The Gods Loved</td>5,425</td><td>561</td><td>587</td></tr>
+        <tr><td>9</td><td>6</td><td>5</td><td>Bloom Nobly, Ink-Black Cherry Blossom ~ Border of Life</td>5,403</td><td>684</td><td>442</td></tr>
+        <tr><td>10</td><td>5</td><td>3</td><td>Pure Furies ~ Whereabouts of the Heart</td>5,098</td><td>775</td><td>547</td></tr>
+        <tr><td>11</td><td>14</td><td>15</td><td>Ghostly Band ~ Phantom Ensemble</td>5,082</td><td>548</td><td>501</td></tr>
+        <tr><td>12</td><td>10</td><td>7</td><td>Necrofantasia</td>4,580</td><td>464</td><td>412</td></tr>
+        <tr><td>13</td><td>16</td><td>19</td><td>Lunar Clock ~ Luna Dial</td>3,757</td><td>472</td><td>305</td></tr>
+        <tr><td>14</td><td>12</td><td>10</td><td>Broken Moon</td>3,693</td><td>378</td><td>338</td></tr>
+        <tr><td>15</td><td>24</td><td>25</td><td>Tomboyish Girl in Love</td>3,485</td><td>421</td><td>360</td></tr>
+        <tr><td>16</td><td>15</td><td>18</td><td>Native Faith</td>3,353</td><td>431</td><td>349</td></tr>
+        <tr><td>17</td><td>19</td><td>21</td><td>Flight in the Bamboo Cutter ~ Lunatic Princess</td>3,212</td><td>299</td><td>306</td></tr>
+        <tr><td>18</td><td>22</td><td>24</td><td>Maiden's Capriccio / Dream Battle</td>3,138</td><td>283</td><td>266</td></tr>
+        <tr><td>19</td><td>13</td><td>11</td><td>Inchlings of the Shining Needle ~ Little Princess</td>2,988</td><td>339</td><td>275</td></tr>
+        <tr><td>20</td><td>17</td><td>14</td><td>Satori Maiden ~ 3rd eye</td>2,774</td><td>342</td><td>263</td></tr>
+        <tr><td>21</td><td>25</td><td>20</td><td>Gensokyo Millennium ~ History of the Moon</td>2,765</td><td>276</td><td>272</td></tr>
+        <tr><td>22</td><td>20</td><td>13</td><td>Tonight Stars an Easygoing Egoist (Live ver.) ~ Egoistic Flowers.</td>2,759</td><td>288</td><td>256</td></tr>
+        <tr><td>23</td><td>18</td><td>16</td><td>Emotional Skyscraper ~ Cosmic Mind</td>2,756</td><td>294</td><td>272</td></tr>
+        <tr><td>24</td><td>27</td><td>32</td><td>Flowering Night</td>2,712</td><td>225</td><td>261</td></tr>
+        <tr><td>25</td><td>21</td><td>17</td><td>Last Remote</td>2,693</td><td>251</td><td>243</td></tr>
+        <tr><td>26</td><td>23</td><td>23</td><td>Faith Is for the Transient People</td>2,467</td><td>262</td><td>234</td></tr>
+        <tr><td>27</td><td>35</td><td>51</td><td>Hiroari Shoots a Strange Bird ~ Till When?</td>2,395</td><td>315</td><td>227</td></tr>
+        <tr><td>28</td><td>29</td><td>36</td><td>Lunatic Eyes ~ Invisible Full Moon</td>2,385</td><td>223</td><td>236</td></tr>
+        <tr><td>29</td><td>26</td><td>22</td><td>Desire Drive</td>2,375</td><td>262</td><td>238</td></tr>
+        <tr><td>30</td><td>31</td><td>35</td><td>Shanghai Alice of Meiji 17</td>2,249</td><td>268</td><td>192</td></tr>
+        <tr><td>31</td><td>-</td><td>-</td><td>Where Is That Bustling Marketplace Now ~ Immemorial Marketeers</td>2,195</td><td>250</td><td>307</td></tr>
+        <tr><td>32</td><td>28</td><td>26</td><td>The Centennial Festival for Magical Girls</td>2,072</td><td>190</td><td>186</td></tr>
+        <tr><td>33</td><td>33</td><td>33</td><td>Eastern Judgement in the Sixtieth Year ~ Fate of Sixty Years</td>2,016</td><td>210</td><td>172</td></tr>
+        <tr><td>34</td><td>39</td><td>34</td><td>Doll Judgment</td>2,007</td><td>181</td><td>148</td></tr>
+        <tr><td>35</td><td>38</td><td>37</td><td>Apparitions Stalk the Night</td>1,926</td><td>262</td><td>177</td></tr>
+        <tr><td>36</td><td>30</td><td>31</td><td>Wind God Girl</td>1,783</td><td>186</td><td>156</td></tr>
+        <tr><td>37</td><td>32</td><td>28</td><td>Solar Sect of Mystic Wisdom ~ Nuclear Fusion</td>1,724</td><td>158</td><td>156</td></tr>
+        <tr><td>38</td><td>48</td><td>54</td><td>The Maid and the Pocket Watch of Blood</td>1,709</td><td>176</td><td>124</td></tr>
+        <tr><td>39</td><td>34</td><td>30</td><td>Fall of Fall ~ Autumnal Waterfall</td>1,640</td><td>212</td><td>162</td></tr>
+        <tr><td>40</td><td>36</td><td>29</td><td>Magus Night</td>1,571</td><td>137</td><td>173</td></tr>
+        <tr><td>41</td><td>50</td><td>56</td><td>Locked Girl ~ The Girl's Secret Room</td>1,544</td><td>169</td><td>106</td></tr>
+        <tr><td>41</td><td>37</td><td>27</td><td>Secret God Matara ~ Hidden Star in All Seasons.</td>1,544</td><td>129</td><td>206</td></tr>
+        <tr><td>43</td><td>53</td><td>50</td><td>Catastrophe in Bhavaagra ~ Wonderful Heaven</td>1,539</td><td>134</td><td>131</td></tr>
+        <tr><td>44</td><td>43</td><td>55</td><td>Shoutoku Legend ~ True Administrator</td>1,524</td><td>196</td><td>162</td></tr>
+        <tr><td>45</td><td>56</td><td>59</td><td>Eastern Mystical Dream ~ Ancient Temple</td>1,493</td><td>166</td><td>136</td></tr>
+        <tr><td>46</td><td>51</td><td>45</td><td>Heian Alien</td>1,460</td><td>134</td><td>180</td></tr>
+        <tr><td>47</td><td>42</td><td>39</td><td>The Pierrot of the Star-Spangled Banner</td>1,457</td><td>81</td><td>168</td></tr>
+        <tr><td>48</td><td>44</td><td>43</td><td>Tomorrow Will Be Special, Yesterday Was Not</td>1,436</td><td>121</td><td>181</td></tr>
+        <tr><td>49</td><td>-</td><td>-</td><td>The Princess Who Slays Dragon Kings</td>1,434</td><td>79</td><td>209</td></tr>
+        <tr><td>50</td><td>47</td><td>47</td><td>Akutagawa Ryuunosuke's "Kappa" ~ Candid Friend</td>1,404</td><td>127</td><td>139</td></tr>
+        <tr><td>51</td><td>92</td><td>110</td><td>Bad Apple!!</td>1,400</td><td>185</td><td>167</td></tr>
+        <tr><td>52</td><td>45</td><td>44</td><td>The Youkai Mountain ~ Mysterious Mountain</td>1,394</td><td>129</td><td>138</td></tr>
+        <tr><td>53</td><td>64</td><td>53</td><td>Pandemonic Planet</td>1,365</td><td>128</td><td>177</td></tr>
+        <tr><td>54</td><td>46</td><td>42</td><td>Lullaby of Deserted Hell</td>1,287</td><td>108</td><td>128</td></tr>
+        <tr><td>55</td><td>60</td><td>68</td><td>Border of Life</td>1,282</td><td>101</td><td>151</td></tr>
+        <tr><td>56</td><td>49</td><td>41</td><td>The Fantastic Tales from Tono</td>1,278</td><td>137</td><td>140</td></tr>
+        <tr><td>57</td><td>40</td><td>45</td><td>Greenwich in the Sky</td>1,261</td><td>124</td><td>120</td></tr>
+        <tr><td>58</td><td>67</td><td>49</td><td>Crazy Backup Dancers</td>1,260</td><td>76</td><td>160</td></tr>
+        <tr><td>59</td><td>68</td><td>63</td><td>Reverse Ideology</td>1,230</td><td>128</td><td>135</td></tr>
+        <tr><td>60</td><td>62</td><td>52</td><td>Dichromatic Lotus Butterfly ~ Ancients / Red and White</td>1,179</td><td>86</td><td>143</td></tr>
+        <tr><td>61</td><td>105</td><td>115</td><td>A Dream that Is More Scarlet than Red</td>1,168</td><td>162</td><td>91</td></tr>
+        <tr><td>62</td><td>52</td><td>48</td><td>Primordial Beat ~ Pristine Beat</td>1,147</td><td>100</td><td>123</td></tr>
+        <tr><td>63</td><td>66</td><td>70</td><td>The Sea Where the Home Planet is Reflected</td>1,140</td><td>63</td><td>143</td></tr>
+        <tr><td>64</td><td>41</td><td>38</td><td>At the End of Spring</td>1,130</td><td>107</td><td>114</td></tr>
+        <tr><td>65</td><td>63</td><td>62</td><td>The Venerable Ancient Battlefield ~ Suwa Foughten Field</td>1,120</td><td>102</td><td>121</td></tr>
+        <tr><td>66</td><td>57</td><td>57</td><td>Dark Side of Fate</td>1,114</td><td>86</td><td>96</td></tr>
+        <tr><td>67</td><td>58</td><td>61</td><td>The Primal Scene of Japan the Girl Saw</td>1,104</td><td>80</td><td>120</td></tr>
+        <tr><td>68</td><td>55</td><td>58</td><td>Crimson Tower ~ Eastern Dream...</td>1,082</td><td>110</td><td>105</td></tr>
+        <tr><td>69</td><td>70</td><td>71</td><td>Because Princess Inada Is Scolding Me</td>1,074</td><td>78</td><td>122</td></tr>
+        <tr><td>70</td><td>82</td><td>92</td><td>A Soul as Red as a Ground Cherry</td>1,071</td><td>121</td><td>94</td></tr>
+        <tr><td>71</td><td>69</td><td>66</td><td>Deaf to All but the Song</td>1,037</td><td>73</td><td>98</td></tr>
+        <tr><td>72</td><td>59</td><td>40</td><td>The Concealed Four Seasons</td>1,034</td><td>77</td><td>138</td></tr>
+        <tr><td>73</td><td>81</td><td>80</td><td>The Road of the Misfortune God ~ Dark Road</td>1,007</td><td>75</td><td>96</td></tr>
+        <tr><td>74</td><td>61</td><td>64</td><td>Old Yuanxian</td>982</td><td>73</td><td>104</td></tr>
+        <tr><td>75</td><td>122</td><td>116</td><td>Sakura, Sakura ~ Japanize Dream...</td>958</td><td>60</td><td>97</td></tr>
+        <tr><td>76</td><td>83</td><td>74</td><td>Cinderella Cage ~ Kagome-Kagome</td>948</td><td>72</td><td>103</td></tr>
+        <tr><td>77</td><td>90</td><td>72</td><td>The Lost Emotion</td>935</td><td>95</td><td>82</td></tr>
+        <tr><td>78</td><td>74</td><td>59</td><td>Eternal Spring Dream</td>934</td><td>65</td><td>117</td></tr>
+        <tr><td>79</td><td>71</td><td>81</td><td>Kid's Festival ~ Innocent Treasures</td>926</td><td>108</td><td>96</td></tr>
+        <tr><td>80</td><td>65</td><td>66</td><td>Green-Eyed Jealousy</td>920</td><td>126</td><td>90</td></tr>
+        <tr><td>81</td><td>89</td><td>86</td><td>Plain Asia</td>913</td><td>88</td><td>100</td></tr>
+        <tr><td>82</td><td>75</td><td>78</td><td>Voyage 1969</td>907</td><td>75</td><td>80</td></tr>
+        <tr><td>83</td><td>87</td><td>84</td><td>A Maiden's Illusionary Funeral ~ Necro-Fantasy</td>882</td><td>89</td><td>77</td></tr>
+        <tr><td>83</td><td>77</td><td>65</td><td>Sleepless Night of the Eastern Country</td>882</td><td>72</td><td>90</td></tr>
+        <tr><td>85</td><td>-</td><td>-</td><td>Starry Mountain of Tenma</td>877</td><td>62</td><td>136</td></tr>
+        <tr><td>86</td><td>72</td><td>79</td><td>The Capital City of Flowers in the Sky</td>876</td><td>100</td><td>72</td></tr>
+        <tr><td>87</td><td>73</td><td>76</td><td>Alice in Wonderland</td>871</td><td>85</td><td>105</td></tr>
+        <tr><td>88</td><td>101</td><td>99</td><td>Lunate Elf</td>833</td><td>91</td><td>71</td></tr>
+        <tr><td>89</td><td>91</td><td>-</td><td>Joutoujin of Ceramics</td>817</td><td>57</td><td>122</td></tr>
+        <tr><td>90</td><td>95</td><td>96</td><td>Beware the Umbrella Left There Forever</td>796</td><td>77</td><td>84</td></tr>
+        <tr><td>91</td><td>53</td><td>-</td><td>Unlocated Hell</td>790</td><td>55</td><td>110</td></tr>
+        <tr><td>92</td><td>88</td><td>69</td><td>Last Occultism ~ Esotericist of the Present World</td>789</td><td>59</td><td>84</td></tr>
+        <tr><td>93</td><td>79</td><td>88</td><td>Vanishing Dream ~ Lost Dream</td>781</td><td>73</td><td>98</td></tr>
+        <tr><td>94</td><td>80</td><td>83</td><td>Hiroshige No.36 ~ Neo Super-Express</td>780</td><td>76</td><td>118</td></tr>
+        <tr><td>95</td><td>102</td><td>104</td><td>Extend Ash ~ Person of Hourai</td>772</td><td>63</td><td>66</td></tr>
+        <tr><td>96</td><td>85</td><td>75</td><td>Demystify Feast</td>766</td><td>75</td><td>110</td></tr>
+        <tr><td>97</td><td>104</td><td>109</td><td>Voile, the Magic Library</td>761</td><td>68</td><td>64</td></tr>
+        <tr><td>98</td><td>86</td><td>89</td><td>Illusionary Joururi</td>760</td><td>68</td><td>78</td></tr>
+        <tr><td>99</td><td>93</td><td>102</td><td>Interdimensional Voyage of a Ghostly Passenger Ship</td>756</td><td>70</td><td>82</td></tr>
+        <tr><td>100</td><td>99</td><td>93</td><td>Nostalgic Blood of the East ~ Old World</td>743</td><td>60</td><td>72</td></tr>
+        <tr><td>101</td><td>106</td><td>94</td><td>The Doll Maker of Bucuresti</td>735</td><td>61</td><td>50</td></tr>
+        <tr><td>102</td><td>76</td><td>77</td><td>Night Falls</td>734</td><td>47</td><td>66</td></tr>
+        <tr><td>103</td><td>96</td><td>91</td><td>Faraway 380,000-Kilometer Voyage</td>707</td><td>38</td><td>87</td></tr>
+        <tr><td>104</td><td>-</td><td>-</td><td>The Long-Awaited Oumagatoki</td>697</td><td>50</td><td>123</td></tr>
+        <tr><td>105</td><td>78</td><td>73</td><td>Mysterious Purification Rod</td>693</td><td>62</td><td>92</td></tr>
+        <tr><td>106</td><td>100</td><td>95</td><td>Legend of Hourai</td>690</td><td>115</td><td>99</td></tr>
+        <tr><td>107</td><td>94</td><td>90</td><td>Girls' Sealing Club</td>674</td><td>71</td><td>82</td></tr>
+        <tr><td>108</td><td>84</td><td>82</td><td>Night Sakura of Dead Spirits</td>666</td><td>54</td><td>72</td></tr>
+        <tr><td>109</td><td>111</td><td>105</td><td>Paradise ~ Deep Mountain</td>663</td><td>53</td><td>76</td></tr>
+        <tr><td>110</td><td>121</td><td>130</td><td>Walking the Streets of a Former Hell</td>660</td><td>36</td><td>72</td></tr>
+        <tr><td>111</td><td>103</td><td>103</td><td>Reincarnation</td>640</td><td>63</td><td>83</td></tr>
+        <tr><td>112</td><td>96</td><td>87</td><td>Bell of Avici ~ Infinite Nightmare</td>639</td><td>53</td><td>79</td></tr>
+        <tr><td>113</td><td>128</td><td>141</td><td>Omiwa Legend</td>619</td><td>73</td><td>79</td></tr>
+        <tr><td>114</td><td>-</td><td>-</td><td>Kitten of Great Fortune</td>618</td><td>32</td><td>75</td></tr>
+        <tr><td>115</td><td>108</td><td>145</td><td>Eastern Youkai Beauty</td>616</td><td>33</td><td>60</td></tr>
+        <tr><td>116</td><td>129</td><td>152</td><td>The Young Descendant of Tepes</td>615</td><td>40</td><td>49</td></tr>
+        <tr><td>117</td><td>131</td><td>124</td><td>Gensokyo, Past and Present ~ Flower Land</td>612</td><td>63</td><td>51</td></tr>
+        <tr><td>118</td><td>116</td><td>106</td><td>Retrospective Kyoto</td>604</td><td>31</td><td>60</td></tr>
+        <tr><td>119</td><td>107</td><td>101</td><td>Higan Retour ~ Riverside View</td>593</td><td>41</td><td>65</td></tr>
+        <tr><td>120</td><td>98</td><td>100</td><td>Eastern Heaven of Scarlet Perception</td>587</td><td>46</td><td>52</td></tr>
+        <tr><td>121</td><td>-</td><td>-</td><td>The Great Fantastic Underground Railway Network</td>572</td><td>46</td><td>96</td></tr>
+        <tr><td>122</td><td>123</td><td>118</td><td>Oni's Island in the Fairyland ~ Missing Power</td>558</td><td>38</td><td>58</td></tr>
+        <tr><td>122</td><td>110</td><td>98</td><td>the Grimoire of Alice</td>558</td><td>46</td><td>55</td></tr>
+        <tr><td>124</td><td>112</td><td>97</td><td>Ultimate Truth</td>535</td><td>49</td><td>60</td></tr>
+        <tr><td>125</td><td>164</td><td>177</td><td>Mystic Dream ~ Snow or Cherry Petal</td>533</td><td>65</td><td>41</td></tr>
+        <tr><td>126</td><td>139</td><td>146</td><td>Retribution for the Eternal Night ~ Imperishable Night</td>531</td><td>39</td><td>76</td></tr>
+        <tr><td>127</td><td>108</td><td>85</td><td>Illusionary White Traveler</td>524</td><td>29</td><td>70</td></tr>
+        <tr><td>128</td><td>138</td><td>132</td><td>The Reversed Wheel of Fortune</td>516</td><td>44</td><td>71</td></tr>
+        <tr><td>129</td><td>113</td><td>107</td><td>The Childlike Duo's Naturalis Historia</td>503</td><td>43</td><td>61</td></tr>
+        <tr><td>130</td><td>119</td><td>111</td><td>Corpse Voyage ~ Be of good cheer!</td>501</td><td>38</td><td>70</td></tr>
+        <tr><td>131</td><td>136</td><td>137</td><td>Lovely Mound of Cherry Blossoms ~ Flower of Japan / Japanese Flower</td>486</td><td>60</td><td>50</td></tr>
+        <tr><td>132</td><td>126</td><td>129</td><td>Vessel of Stars ~ Casket of Star</td>481</td><td>34</td><td>56</td></tr>
         <tr><td>133</td><td>117</td><td>-</td><td>Prince Shoutoku's Pegasus ~ Dark Pegasus<td>480</td><td>33</td><td>62</td></tr>
-        <tr><td>134</td><td>134</td><td>137</td><td>The Witches' Ball</a><td>479</td><td>24</td><td>57</td></tr>
-        <tr><td>135</td><td>137</td><td>121</td><td>Voyage 1970</a><td>471</td><td>23</td><td>70</td></tr>
-        <tr><td>135</td><td>115</td><td>114</td><td>The Rabbit Has Landed</a><td>471</td><td>27</td><td>63</td></tr>
-        <tr><td>137</td><td>120</td><td>108</td><td>UFO Romance in the Night Sky</a><td>470</td><td>41</td><td>70</td></tr>
-        <tr><td>138</td><td>133</td><td>124</td><td>Eternal Shrine Maiden</a><td>467</td><td>54</td><td>65</td></tr>
-        <tr><td>139</td><td>157</td><td>140</td><td>Unknown X ~ Unfound Adventure / Occultly Madness</a><td>465</td><td>20</td><td>47</td></tr>
-        <tr><td>140</td><td>146</td><td>128</td><td>Oriental Dark Flight</a><td>461</td><td>44</td><td>64</td></tr>
-        <tr><td>141</td><td>129</td><td>112</td><td>Bhavaagra As Seen Through a Child's Mind</a><td>450</td><td>34</td><td>44</td></tr>
-        <tr><td>142</td><td>143</td><td>136</td><td>Strawberry Crisis!!</a><td>446</td><td>37</td><td>48</td></tr>
-        <tr><td>143</td><td>124</td><td>116</td><td>Futatsuiwa from Sado</a><td>444</td><td>21</td><td>42</td></tr>
-        <tr><td>144</td><td>140</td><td>119</td><td>The Frozen Eternal Capital</a><td>441</td><td>33</td><td>60</td></tr>
-        <tr><td>145</td><td>162</td><td>154</td><td>Captain Murasa</a><td>428</td><td>34</td><td>57</td></tr>
-        <tr><td>146</td><td>125</td><td>133</td><td>A Flower-Studded Sake Dish on Mt. Ooe</a><td>423</td><td>40</td><td>55</td></tr>
-        <tr><td>147</td><td>150</td><td>123</td><td>Eternal Short-Lived Reign</a><td>418</td><td>32</td><td>39</td></tr>
-        <tr><td>148</td><td>114</td><td>126</td><td>Memory of Forgathering Dream</a><td>413</td><td>34</td><td>26</td></tr>
-        <tr><td>149</td><td>131</td><td>122</td><td>Eastern Memory of Forgathering Dream</a><td>411</td><td>34</td><td>45</td></tr>
-        <tr><td>150</td><td>127</td><td>-</td><td>Beast Metropolis</a><td>397</td><td>24</td><td>52</td></tr>
-        <tr><td>151</td><td>141</td><td>127</td><td>Heartfelt Fancy</a><td>396</td><td>34</td><td>36</td></tr>
-        <tr><td>152</td><td>152</td><td>171</td><td>Crystallized Silver</a><td>394</td><td>32</td><td>46</td></tr>
-        <tr><td>153</td><td>151</td><td>150</td><td>Faint Dream ~ Inanimate Dream</a><td>382</td><td>37</td><td>40</td></tr>
-        <tr><td>154</td><td>156</td><td>131</td><td>Flawless Clothing of the Celestials</a><td>380</td><td>24</td><td>34</td></tr>
-        <tr><td>155</td><td>-</td><td>-</td><td>The Perpetual Snow of Komakusa Blossoms</a><td>379</td><td>22</td><td>48</td></tr>
-        <tr><td>156</td><td>184</td><td>164</td><td>Stirring an Autumn Moon ~ Mooned Insect</a><td>376</td><td>41</td><td>53</td></tr>
-        <tr><td>157</td><td>148</td><td>148</td><td>Satellite Café Terrace</a><td>371</td><td>31</td><td>49</td></tr>
-        <tr><td>158</td><td>142</td><td>133</td><td>Now, Until the Moment You Die</a><td>357</td><td>21</td><td>47</td></tr>
-        <tr><td>159</td><td>160</td><td>163</td><td>Dream Palace of the Great Mausoleum</a><td>353</td><td>32</td><td>47</td></tr>
-        <tr><td>159</td><td>144</td><td>133</td><td>A Star of Hope Rises in the Blue Sky</a><td>353</td><td>27</td><td>64</td></tr>
-        <tr><td>161</td><td>135</td><td>113</td><td>Bamboo Forest of the Full Moon</a><td>352</td><td>25</td><td>54</td></tr>
-        <tr><td>162</td><td>173</td><td>165</td><td>Youkai Domination ~ Who done it?</a><td>348</td><td>23</td><td>45</td></tr>
-        <tr><td>163</td><td>-</td><td>-</td><td>Ore from the Age of the Gods</a><td>347</td><td>17</td><td>59</td></tr>
-        <tr><td>164</td><td>146</td><td>153</td><td>Heaven of Scarlet Perception</a><td>344</td><td>32</td><td>29</td></tr>
-        <tr><td>165</td><td>185</td><td>167</td><td>Dullahan Under the Willows</a><td>343</td><td>27</td><td>38</td></tr>
-        <tr><td>166</td><td>155</td><td>137</td><td>September Pumpkin</a><td>342</td><td>21</td><td>38</td></tr>
-        <tr><td>167</td><td>154</td><td>143</td><td>The Tiger-Patterned Vaisravana</a><td>336</td><td>25</td><td>31</td></tr>
-        <tr><td>167</td><td>144</td><td>146</td><td>Fires of Hokkai</a><td>336</td><td>18</td><td>32</td></tr>
-        <tr><td>169</td><td>117</td><td>-</td><td>Electric Heritage</a><td>332</td><td>7</td><td>48</td></tr>
-        <tr><td>170</td><td>171</td><td>166</td><td>Diao ye zong (Withered Leaf)</a><td>327</td><td>42</td><td>34</td></tr>
-        <tr><td>171</td><td>152</td><td>142</td><td>Spring Lane ~ Colorful Path</a><td>325</td><td>26</td><td>29</td></tr>
-        <tr><td>172</td><td>174</td><td>172</td><td>Battlefield of the Flower Threshold</a><td>322</td><td>28</td><td>45</td></tr>
-        <tr><td>173</td><td>177</td><td>176</td><td>A Never-Before-Seen World of Nightmares</a><td>316</td><td>21</td><td>51</td></tr>
-        <tr><td>174</td><td>-</td><td>-</td><td>The Obsolescent Industrial Remains</a><td>312</td><td>12</td><td>70</td></tr>
-        <tr><td>175</td><td>158</td><td>149</td><td>The Wheelchair's Future in Space</a><td>311</td><td>20</td><td>50</td></tr>
-        <tr><td>176</td><td>189</td><td>160</td><td>Yorimashi Between Dreams and Reality ~ Necro-Fantasia</a><td>304</td><td>25</td><td>31</td></tr>
-        <tr><td>177</td><td>167</td><td>161</td><td>Rural Makai City Esoteria</a><td>302</td><td>18</td><td>35</td></tr>
-        <tr><td>178</td><td>172</td><td>161</td><td>Song of the Night Sparrow ~ Night Bird</a><td>299</td><td>30</td><td>28</td></tr>
-        <tr><td>179</td><td>169</td><td>179</td><td>Bibliophile with a Deciphering Eye</a><td>298</td><td>35</td><td>47</td></tr>
-        <tr><td>180</td><td>161</td><td>156</td><td>A Midnight Fairy Dance</a><td>293</td><td>12</td><td>43</td></tr>
-        <tr><td>181</td><td>186</td><td>169</td><td>Magical Girl's Crusade</a><td>279</td><td>23</td><td>31</td></tr>
-        <tr><td>182</td><td>166</td><td>173</td><td>Romantic Children</a><td>277</td><td>22</td><td>39</td></tr>
-        <tr><td>183</td><td>149</td><td>151</td><td>A Tiny, Tiny, Clever Commander</a><td>276</td><td>32</td><td>27</td></tr>
-        <tr><td>184</td><td>180</td><td>120</td><td>Nightmare Diary</a><td>275</td><td>16</td><td>43</td></tr>
-        <tr><td>185</td><td>199</td><td>184</td><td>Let's Live in a Lovely Cemetery</a><td>274</td><td>24</td><td>41</td></tr>
-        <tr><td>186</td><td>197</td><td>185</td><td>Enigmatic Doll</a><td>269</td><td>29</td><td>36</td></tr>
-        <tr><td>187</td><td>215</td><td>231</td><td>An Eternity that Is More Transient than Scarlet</a><td>268</td><td>19</td><td>19</td></tr>
-        <tr><td>188</td><td>170</td><td>175</td><td>The Bridge People No Longer Cross</a><td>263</td><td>21</td><td>26</td></tr>
-        <tr><td>188</td><td>158</td><td>144</td><td>The Eternal Steam Engine</a><td>263</td><td>12</td><td>30</td></tr>
-        <tr><td>190</td><td>176</td><td>178</td><td>Legendary Illusion ~ Infinite Being</a><td>260</td><td>14</td><td>25</td></tr>
-        <tr><td>191</td><td>187</td><td>168</td><td>Crimson in the Black Sea ~ Legendary Fish</a><td>252</td><td>32</td><td>37</td></tr>
-        <tr><td>192</td><td>188</td><td>187</td><td>A God That Misses People ~ Romantic Fall</a><td>249</td><td>12</td><td>25</td></tr>
-        <tr><td>193</td><td>179</td><td>185</td><td>Rigid Paradise</a><td>248</td><td>19</td><td>33</td></tr>
-        <tr><td>194</td><td>181</td><td>174</td><td>The Shining Needle Castle Sinking in the Air</a><td>246</td><td>20</td><td>29</td></tr>
-        <tr><td>194</td><td>175</td><td>158</td><td>Alice Maestra</a><td>246</td><td>24</td><td>24</td></tr>
-        <tr><td>196</td><td>165</td><td>157</td><td>Great Fairy Wars ~ Fairy Wars</a><td>237</td><td>10</td><td>25</td></tr>
-        <tr><td>197</td><td>229</td><td>224</td><td>Eternal Night Vignette ~ Eastern Night.</a><td>234</td><td>19</td><td>29</td></tr>
-        <tr><td>197</td><td>193</td><td>189</td><td>Eastern Mystical Love Consultation</a><td>234</td><td>16</td><td>34</td></tr>
-        <tr><td>199</td><td>196</td><td>195</td><td>The Flowers Remain in Fantasy</a><td>231</td><td>22</td><td>27</td></tr>
-        <tr><td>199</td><td>-</td><td>-</td><td>Smoking Dragon</a><td>231</td><td>13</td><td>26</td></tr>
-        <tr><td>201</td><td>192</td><td>188</td><td>Cemetery of Onbashira ~ Grave of Being</a><td>229</td><td>15</td><td>44</td></tr>
-        <tr><td>201</td><td>-</td><td>-</td><td>Banditry Technology</a><td>229</td><td>12</td><td>29</td></tr>
-        <tr><td>203</td><td>190</td><td>181</td><td>Youkai Domination</a><td>226</td><td>21</td><td>21</td></tr>
-        <tr><td>204</td><td>-</td><td>-</td><td>Lunar Rainbow</a><td>224</td><td>5</td><td>47</td></tr>
-        <tr><td>205</td><td>201</td><td>205</td><td>Illusionary Night ~ Ghostly Eyes</a><td>222</td><td>15</td><td>20</td></tr>
-        <tr><td>205</td><td>206</td><td>216</td><td>Complete Darkness</a><td>222</td><td>20</td><td>34</td></tr>
-        <tr><td>207</td><td>182</td><td>155</td><td>Our Hisoutensoku</a><td>212</td><td>7</td><td>20</td></tr>
-        <tr><td>207</td><td>203</td><td>199</td><td>Cute Devil ~ Innocence</a><td>212</td><td>23</td><td>26</td></tr>
-        <tr><td>209</td><td>191</td><td>169</td><td>The Ground's Color is Yellow</a><td>211</td><td>9</td><td>24</td></tr>
-        <tr><td>210</td><td>204</td><td>192</td><td>Mermaid from the Uncharted Land</a><td>207</td><td>13</td><td>17</td></tr>
-        <tr><td>211</td><td>199</td><td>213</td><td>Shinkirou Orchestra</a><td>206</td><td>12</td><td>11</td></tr>
-        <tr><td>212</td><td>218</td><td>220</td><td>The Mysterious Shrine Maiden Flying Through Space</a><td>203</td><td>22</td><td>27</td></tr>
-        <tr><td>212</td><td>242</td><td>229</td><td>Blue Sea of 53 Minutes</a><td>203</td><td>24</td><td>19</td></tr>
-        <tr><td>212</td><td>182</td><td>159</td><td>Unknown Flower, Mesmerizing Journey</a><td>203</td><td>11</td><td>22</td></tr>
-        <tr><td>215</td><td>214</td><td>211</td><td>Poison Body ~ Forsaken Doll</a><td>194</td><td>18</td><td>17</td></tr>
-        <tr><td>215</td><td>163</td><td>-</td><td>Seraphic Chicken</a><td>194</td><td>11</td><td>20</td></tr>
-        <tr><td>217</td><td>207</td><td>198</td><td>Izanagi Object</a><td>192</td><td>20</td><td>22</td></tr>
-        <tr><td>218</td><td>195</td><td>191</td><td>The Dark Blowhole</a><td>189</td><td>14</td><td>32</td></tr>
-        <tr><td>218</td><td>229</td><td>235</td><td>Sleeping Terror</a><td>189</td><td>6</td><td>22</td></tr>
-        <tr><td>220</td><td>218</td><td>233</td><td>Schrödinger's Bakeneko</a><td>187</td><td>10</td><td>19</td></tr>
-        <tr><td>221</td><td>205</td><td>180</td><td>Hellfire Mantle</a><td>186</td><td>10</td><td>25</td></tr>
-        <tr><td>221</td><td>194</td><td>195</td><td>Magician's Melancholy</a><td>186</td><td>22</td><td>32</td></tr>
+        <tr><td>134</td><td>134</td><td>137</td><td>The Witches' Ball</td>479</td><td>24</td><td>57</td></tr>
+        <tr><td>135</td><td>137</td><td>121</td><td>Voyage 1970</td>471</td><td>23</td><td>70</td></tr>
+        <tr><td>135</td><td>115</td><td>114</td><td>The Rabbit Has Landed</td>471</td><td>27</td><td>63</td></tr>
+        <tr><td>137</td><td>120</td><td>108</td><td>UFO Romance in the Night Sky</td>470</td><td>41</td><td>70</td></tr>
+        <tr><td>138</td><td>133</td><td>124</td><td>Eternal Shrine Maiden</td>467</td><td>54</td><td>65</td></tr>
+        <tr><td>139</td><td>157</td><td>140</td><td>Unknown X ~ Unfound Adventure / Occultly Madness</td>465</td><td>20</td><td>47</td></tr>
+        <tr><td>140</td><td>146</td><td>128</td><td>Oriental Dark Flight</td>461</td><td>44</td><td>64</td></tr>
+        <tr><td>141</td><td>129</td><td>112</td><td>Bhavaagra As Seen Through a Child's Mind</td>450</td><td>34</td><td>44</td></tr>
+        <tr><td>142</td><td>143</td><td>136</td><td>Strawberry Crisis!!</td>446</td><td>37</td><td>48</td></tr>
+        <tr><td>143</td><td>124</td><td>116</td><td>Futatsuiwa from Sado</td>444</td><td>21</td><td>42</td></tr>
+        <tr><td>144</td><td>140</td><td>119</td><td>The Frozen Eternal Capital</td>441</td><td>33</td><td>60</td></tr>
+        <tr><td>145</td><td>162</td><td>154</td><td>Captain Murasa</td>428</td><td>34</td><td>57</td></tr>
+        <tr><td>146</td><td>125</td><td>133</td><td>A Flower-Studded Sake Dish on Mt. Ooe</td>423</td><td>40</td><td>55</td></tr>
+        <tr><td>147</td><td>150</td><td>123</td><td>Eternal Short-Lived Reign</td>418</td><td>32</td><td>39</td></tr>
+        <tr><td>148</td><td>114</td><td>126</td><td>Memory of Forgathering Dream</td>413</td><td>34</td><td>26</td></tr>
+        <tr><td>149</td><td>131</td><td>122</td><td>Eastern Memory of Forgathering Dream</td>411</td><td>34</td><td>45</td></tr>
+        <tr><td>150</td><td>127</td><td>-</td><td>Beast Metropolis</td>397</td><td>24</td><td>52</td></tr>
+        <tr><td>151</td><td>141</td><td>127</td><td>Heartfelt Fancy</td>396</td><td>34</td><td>36</td></tr>
+        <tr><td>152</td><td>152</td><td>171</td><td>Crystallized Silver</td>394</td><td>32</td><td>46</td></tr>
+        <tr><td>153</td><td>151</td><td>150</td><td>Faint Dream ~ Inanimate Dream</td>382</td><td>37</td><td>40</td></tr>
+        <tr><td>154</td><td>156</td><td>131</td><td>Flawless Clothing of the Celestials</td>380</td><td>24</td><td>34</td></tr>
+        <tr><td>155</td><td>-</td><td>-</td><td>The Perpetual Snow of Komakusa Blossoms</td>379</td><td>22</td><td>48</td></tr>
+        <tr><td>156</td><td>184</td><td>164</td><td>Stirring an Autumn Moon ~ Mooned Insect</td>376</td><td>41</td><td>53</td></tr>
+        <tr><td>157</td><td>148</td><td>148</td><td>Satellite Café Terrace</td>371</td><td>31</td><td>49</td></tr>
+        <tr><td>158</td><td>142</td><td>133</td><td>Now, Until the Moment You Die</td>357</td><td>21</td><td>47</td></tr>
+        <tr><td>159</td><td>160</td><td>163</td><td>Dream Palace of the Great Mausoleum</td>353</td><td>32</td><td>47</td></tr>
+        <tr><td>159</td><td>144</td><td>133</td><td>A Star of Hope Rises in the Blue Sky</td>353</td><td>27</td><td>64</td></tr>
+        <tr><td>161</td><td>135</td><td>113</td><td>Bamboo Forest of the Full Moon</td>352</td><td>25</td><td>54</td></tr>
+        <tr><td>162</td><td>173</td><td>165</td><td>Youkai Domination ~ Who done it?</td>348</td><td>23</td><td>45</td></tr>
+        <tr><td>163</td><td>-</td><td>-</td><td>Ore from the Age of the Gods</td>347</td><td>17</td><td>59</td></tr>
+        <tr><td>164</td><td>146</td><td>153</td><td>Heaven of Scarlet Perception</td>344</td><td>32</td><td>29</td></tr>
+        <tr><td>165</td><td>185</td><td>167</td><td>Dullahan Under the Willows</td>343</td><td>27</td><td>38</td></tr>
+        <tr><td>166</td><td>155</td><td>137</td><td>September Pumpkin</td>342</td><td>21</td><td>38</td></tr>
+        <tr><td>167</td><td>154</td><td>143</td><td>The Tiger-Patterned Vaisravana</td>336</td><td>25</td><td>31</td></tr>
+        <tr><td>167</td><td>144</td><td>146</td><td>Fires of Hokkai</td>336</td><td>18</td><td>32</td></tr>
+        <tr><td>169</td><td>117</td><td>-</td><td>Electric Heritage</td>332</td><td>7</td><td>48</td></tr>
+        <tr><td>170</td><td>171</td><td>166</td><td>Diao ye zong (Withered Leaf)</td>327</td><td>42</td><td>34</td></tr>
+        <tr><td>171</td><td>152</td><td>142</td><td>Spring Lane ~ Colorful Path</td>325</td><td>26</td><td>29</td></tr>
+        <tr><td>172</td><td>174</td><td>172</td><td>Battlefield of the Flower Threshold</td>322</td><td>28</td><td>45</td></tr>
+        <tr><td>173</td><td>177</td><td>176</td><td>A Never-Before-Seen World of Nightmares</td>316</td><td>21</td><td>51</td></tr>
+        <tr><td>174</td><td>-</td><td>-</td><td>The Obsolescent Industrial Remains</td>312</td><td>12</td><td>70</td></tr>
+        <tr><td>175</td><td>158</td><td>149</td><td>The Wheelchair's Future in Space</td>311</td><td>20</td><td>50</td></tr>
+        <tr><td>176</td><td>189</td><td>160</td><td>Yorimashi Between Dreams and Reality ~ Necro-Fantasia</td>304</td><td>25</td><td>31</td></tr>
+        <tr><td>177</td><td>167</td><td>161</td><td>Rural Makai City Esoteria</td>302</td><td>18</td><td>35</td></tr>
+        <tr><td>178</td><td>172</td><td>161</td><td>Song of the Night Sparrow ~ Night Bird</td>299</td><td>30</td><td>28</td></tr>
+        <tr><td>179</td><td>169</td><td>179</td><td>Bibliophile with a Deciphering Eye</td>298</td><td>35</td><td>47</td></tr>
+        <tr><td>180</td><td>161</td><td>156</td><td>A Midnight Fairy Dance</td>293</td><td>12</td><td>43</td></tr>
+        <tr><td>181</td><td>186</td><td>169</td><td>Magical Girl's Crusade</td>279</td><td>23</td><td>31</td></tr>
+        <tr><td>182</td><td>166</td><td>173</td><td>Romantic Children</td>277</td><td>22</td><td>39</td></tr>
+        <tr><td>183</td><td>149</td><td>151</td><td>A Tiny, Tiny, Clever Commander</td>276</td><td>32</td><td>27</td></tr>
+        <tr><td>184</td><td>180</td><td>120</td><td>Nightmare Diary</td>275</td><td>16</td><td>43</td></tr>
+        <tr><td>185</td><td>199</td><td>184</td><td>Let's Live in a Lovely Cemetery</td>274</td><td>24</td><td>41</td></tr>
+        <tr><td>186</td><td>197</td><td>185</td><td>Enigmatic Doll</td>269</td><td>29</td><td>36</td></tr>
+        <tr><td>187</td><td>215</td><td>231</td><td>An Eternity that Is More Transient than Scarlet</td>268</td><td>19</td><td>19</td></tr>
+        <tr><td>188</td><td>170</td><td>175</td><td>The Bridge People No Longer Cross</td>263</td><td>21</td><td>26</td></tr>
+        <tr><td>188</td><td>158</td><td>144</td><td>The Eternal Steam Engine</td>263</td><td>12</td><td>30</td></tr>
+        <tr><td>190</td><td>176</td><td>178</td><td>Legendary Illusion ~ Infinite Being</td>260</td><td>14</td><td>25</td></tr>
+        <tr><td>191</td><td>187</td><td>168</td><td>Crimson in the Black Sea ~ Legendary Fish</td>252</td><td>32</td><td>37</td></tr>
+        <tr><td>192</td><td>188</td><td>187</td><td>A God That Misses People ~ Romantic Fall</td>249</td><td>12</td><td>25</td></tr>
+        <tr><td>193</td><td>179</td><td>185</td><td>Rigid Paradise</td>248</td><td>19</td><td>33</td></tr>
+        <tr><td>194</td><td>181</td><td>174</td><td>The Shining Needle Castle Sinking in the Air</td>246</td><td>20</td><td>29</td></tr>
+        <tr><td>194</td><td>175</td><td>158</td><td>Alice Maestra</td>246</td><td>24</td><td>24</td></tr>
+        <tr><td>196</td><td>165</td><td>157</td><td>Great Fairy Wars ~ Fairy Wars</td>237</td><td>10</td><td>25</td></tr>
+        <tr><td>197</td><td>229</td><td>224</td><td>Eternal Night Vignette ~ Eastern Night.</td>234</td><td>19</td><td>29</td></tr>
+        <tr><td>197</td><td>193</td><td>189</td><td>Eastern Mystical Love Consultation</td>234</td><td>16</td><td>34</td></tr>
+        <tr><td>199</td><td>196</td><td>195</td><td>The Flowers Remain in Fantasy</td>231</td><td>22</td><td>27</td></tr>
+        <tr><td>199</td><td>-</td><td>-</td><td>Smoking Dragon</td>231</td><td>13</td><td>26</td></tr>
+        <tr><td>201</td><td>192</td><td>188</td><td>Cemetery of Onbashira ~ Grave of Being</td>229</td><td>15</td><td>44</td></tr>
+        <tr><td>201</td><td>-</td><td>-</td><td>Banditry Technology</td>229</td><td>12</td><td>29</td></tr>
+        <tr><td>203</td><td>190</td><td>181</td><td>Youkai Domination</td>226</td><td>21</td><td>21</td></tr>
+        <tr><td>204</td><td>-</td><td>-</td><td>Lunar Rainbow</td>224</td><td>5</td><td>47</td></tr>
+        <tr><td>205</td><td>201</td><td>205</td><td>Illusionary Night ~ Ghostly Eyes</td>222</td><td>15</td><td>20</td></tr>
+        <tr><td>205</td><td>206</td><td>216</td><td>Complete Darkness</td>222</td><td>20</td><td>34</td></tr>
+        <tr><td>207</td><td>182</td><td>155</td><td>Our Hisoutensoku</td>212</td><td>7</td><td>20</td></tr>
+        <tr><td>207</td><td>203</td><td>199</td><td>Cute Devil ~ Innocence</td>212</td><td>23</td><td>26</td></tr>
+        <tr><td>209</td><td>191</td><td>169</td><td>The Ground's Color is Yellow</td>211</td><td>9</td><td>24</td></tr>
+        <tr><td>210</td><td>204</td><td>192</td><td>Mermaid from the Uncharted Land</td>207</td><td>13</td><td>17</td></tr>
+        <tr><td>211</td><td>199</td><td>213</td><td>Shinkirou Orchestra</td>206</td><td>12</td><td>11</td></tr>
+        <tr><td>212</td><td>218</td><td>220</td><td>The Mysterious Shrine Maiden Flying Through Space</td>203</td><td>22</td><td>27</td></tr>
+        <tr><td>212</td><td>242</td><td>229</td><td>Blue Sea of 53 Minutes</td>203</td><td>24</td><td>19</td></tr>
+        <tr><td>212</td><td>182</td><td>159</td><td>Unknown Flower, Mesmerizing Journey</td>203</td><td>11</td><td>22</td></tr>
+        <tr><td>215</td><td>214</td><td>211</td><td>Poison Body ~ Forsaken Doll</td>194</td><td>18</td><td>17</td></tr>
+        <tr><td>215</td><td>163</td><td>-</td><td>Seraphic Chicken</td>194</td><td>11</td><td>20</td></tr>
+        <tr><td>217</td><td>207</td><td>198</td><td>Izanagi Object</td>192</td><td>20</td><td>22</td></tr>
+        <tr><td>218</td><td>195</td><td>191</td><td>The Dark Blowhole</td>189</td><td>14</td><td>32</td></tr>
+        <tr><td>218</td><td>229</td><td>235</td><td>Sleeping Terror</td>189</td><td>6</td><td>22</td></tr>
+        <tr><td>220</td><td>218</td><td>233</td><td>Schrödinger's Bakeneko</td>187</td><td>10</td><td>19</td></tr>
+        <tr><td>221</td><td>205</td><td>180</td><td>Hellfire Mantle</td>186</td><td>10</td><td>25</td></tr>
+        <tr><td>221</td><td>194</td><td>195</td><td>Magician's Melancholy</td>186</td><td>22</td><td>32</td></tr>
         <tr><td>223</td><td>178</td><td>-</td><td>Tortoise Dragon ~ Fortune and Misfortune<td>183</td><td>7</td><td>23</td></tr>
-        <tr><td>223</td><td>211</td><td>202</td><td>Sunny Milk's Scarlet Mist Incident</a><td>183</td><td>10</td><td>33</td></tr>
-        <tr><td>225</td><td>222</td><td>203</td><td>The Purest Sky and Sea</a><td>182</td><td>20</td><td>25</td></tr>
-        <tr><td>226</td><td>213</td><td>204</td><td>White Flag of Usa Shrine</a><td>181</td><td>10</td><td>21</td></tr>
-        <tr><td>227</td><td>232</td><td>226</td><td>Mystical Maple ~ Eternal Dream</a><td>176</td><td>12</td><td>20</td></tr>
-        <tr><td>228</td><td>216</td><td>207</td><td>Merry the Magician</a><td>174</td><td>7</td><td>27</td></tr>
-        <tr><td>229</td><td>201</td><td>194</td><td>G Free</a><td>172</td><td>10</td><td>21</td></tr>
-        <tr><td>230</td><td>220</td><td>229</td><td>Wind of Agartha</a><td>169</td><td>19</td><td>32</td></tr>
-        <tr><td>231</td><td>208</td><td>216</td><td>Gathering the Mysterious from All Around Japan</a><td>167</td><td>22</td><td>31</td></tr>
-        <tr><td>232</td><td>237</td><td>225</td><td>The Sealed-Away Youkai ~ Lost Place</a><td>166</td><td>11</td><td>17</td></tr>
-        <tr><td>233</td><td>197</td><td>182</td><td>Mist Lake</a><td>164</td><td>9</td><td>25</td></tr>
-        <tr><td>233</td><td>168</td><td>-</td><td>Jelly Stone</a><td>164</td><td>7</td><td>29</td></tr>
-        <tr><td>235</td><td>263</td><td>238</td><td>Does the Forbidden Door Lead to This World, or the World Beyond?</a><td>163</td><td>7</td><td>29</td></tr>
-        <tr><td>236</td><td>231</td><td>240</td><td>The Strange Everyday Life of the Flying Shrine Maiden</a><td>161</td><td>18</td><td>31</td></tr>
-        <tr><td>237</td><td>221</td><td>201</td><td>Lonesome Werewolf</a><td>158</td><td>10</td><td>14</td></tr>
-        <tr><td>238</td><td>224</td><td>209</td><td>Youkai Back Shrine Road</a><td>157</td><td>9</td><td>20</td></tr>
-        <tr><td>239</td><td>208</td><td>197</td><td>Welcome to the Moon Tour</a><td>153</td><td>10</td><td>23</td></tr>
-        <tr><td>240</td><td>212</td><td>226</td><td>Celestial Wizardry ~ Magical Astronomy</a><td>149</td><td>7</td><td>14</td></tr>
-        <tr><td>241</td><td>236</td><td>236</td><td>Witch of Love Potion</a><td>147</td><td>17</td><td>28</td></tr>
-        <tr><td>241</td><td>249</td><td>240</td><td>Hangover of Bedfellows Dreaming Differently</a><td>147</td><td>16</td><td>24</td></tr>
-        <tr><td>243</td><td>224</td><td>206</td><td>Strange Bird of the Moon, Illusion of the Mysterious Cat</a><td>146</td><td>16</td><td>8</td></tr>
-        <tr><td>244</td><td>251</td><td>251</td><td>Sealed Gods</a><td>144</td><td>7</td><td>25</td></tr>
-        <tr><td>244</td><td>233</td><td>208</td><td>Old Adam Bar</a><td>144</td><td>5</td><td>17</td></tr>
-        <tr><td>246</td><td>245</td><td>243</td><td>Cheat Against the Impossible Danmaku</a><td>143</td><td>11</td><td>20</td></tr>
-        <tr><td>247</td><td>252</td><td>211</td><td>The Mystery in Your Town</a><td>142</td><td>11</td><td>20</td></tr>
-        <tr><td>248</td><td>226</td><td>210</td><td>The Traditional Old Man and the Stylish Girl</a><td>141</td><td>11</td><td>14</td></tr>
-        <tr><td>249</td><td>210</td><td>199</td><td>Did You See That Shadow?</a><td>139</td><td>10</td><td>17</td></tr>
-        <tr><td>249</td><td>235</td><td>238</td><td>The Far Side of the Moon</a><td>139</td><td>10</td><td>13</td></tr>
-        <tr><td>251</td><td>226</td><td>221</td><td>Tabula rasa ~ The Empty Girl</a><td>138</td><td>18</td><td>18</td></tr>
-        <tr><td>252</td><td>223</td><td>254</td><td>Theme of Eastern Story</a><td>137</td><td>13</td><td>21</td></tr>
-        <tr><td>253</td><td>258</td><td>226</td><td>A Midsummer Fairy's Dream</a><td>134</td><td>8</td><td>18</td></tr>
-        <tr><td>253</td><td>237</td><td>183</td><td>A Pair of Divine Beasts</a><td>134</td><td>7</td><td>15</td></tr>
-        <tr><td>253</td><td>245</td><td>233</td><td>Plastic Mind</a><td>134</td><td>8</td><td>16</td></tr>
-        <tr><td>256</td><td>292</td><td>274</td><td>Watatsuki's Spell Card ~ Lunatic Blue</a><td>130</td><td>15</td><td>18</td></tr>
-        <tr><td>257</td><td>256</td><td>216</td><td>Swim in a Cherry Blossom-Colored Sea</a><td>128</td><td>4</td><td>11</td></tr>
-        <tr><td>258</td><td>253</td><td>249</td><td>Flower Viewing Mound ~ Higan Retour</a><td>127</td><td>10</td><td>15</td></tr>
-        <tr><td>259</td><td>234</td><td>193</td><td>Unforgettable, the Nostalgic Greenery</a><td>123</td><td>8</td><td>16</td></tr>
-        <tr><td>260</td><td>263</td><td>244</td><td>Youkai Modern Colony</a><td>121</td><td>8</td><td>16</td></tr>
-        <tr><td>261</td><td>255</td><td>247</td><td>Starry Sky of Small Desires</a><td>118</td><td>2</td><td>11</td></tr>
-        <tr><td>262</td><td>-</td><td>-</td><td>A Shower of Strange Occurrences</a><td>117</td><td>6</td><td>23</td></tr>
-        <tr><td>263</td><td>228</td><td>237</td><td>Curious old Shanghai tile</a><td>115</td><td>12</td><td>23</td></tr>
-        <tr><td>264</td><td>272</td><td>255</td><td>Desire Dream</a><td>114</td><td>6</td><td>12</td></tr>
-        <tr><td>264</td><td>249</td><td>244</td><td>No More Going Through Doors</a><td>114</td><td>6</td><td>18</td></tr>
-        <tr><td>266</td><td>241</td><td>214</td><td>Staking Your Life on a Prank</a><td>113</td><td>5</td><td>10</td></tr>
-        <tr><td>267</td><td>276</td><td>271</td><td>Dr. Latency's Sleepless Eyes</a><td>110</td><td>6</td><td>16</td></tr>
-        <tr><td>268</td><td>239</td><td>222</td><td>Year-Round Absorbed Curiosity</a><td>109</td><td>7</td><td>16</td></tr>
-        <tr><td>269</td><td>280</td><td>267</td><td>Treacherous Maiden ~ Judas Kiss</a><td>107</td><td>7</td><td>19</td></tr>
-        <tr><td>269</td><td>261</td><td>247</td><td>Doll of Misery</a><td>107</td><td>4</td><td>10</td></tr>
-        <tr><td>271</td><td>243</td><td>214</td><td>Romantic Escape Flight</a><td>106</td><td>6</td><td>9</td></tr>
-        <tr><td>272</td><td>277</td><td>281</td><td>Mechanical Circus ~ Reverie</a><td>105</td><td>7</td><td>21</td></tr>
-        <tr><td>273</td><td>216</td><td>-</td><td>The Lamentations Known Only by Jizo</a><td>104</td><td>2</td><td>10</td></tr>
-        <tr><td>274</td><td>239</td><td>249</td><td>Satellite TORIFUNE</a><td>103</td><td>6</td><td>10</td></tr>
-        <tr><td>275</td><td>267</td><td>261</td><td>Swordsman of a Distant Star / Angel of a Distant Star</a><td>102</td><td>5</td><td>15</td></tr>
-        <tr><td>276</td><td>247</td><td>223</td><td>Loose Rain</a><td>101</td><td>6</td><td>9</td></tr>
-        <tr><td>277</td><td>256</td><td>257</td><td>Led On by a Cow to Visit Zenkou Temple</a><td>99</td><td>7</td><td>20</td></tr>
-        <tr><td>278</td><td>273</td><td>278</td><td>Illusory Science ~ Doll's Phantom</a><td>98</td><td>5</td><td>17</td></tr>
-        <tr><td>279</td><td>260</td><td>261</td><td>The Refrain of the Lovely Great War</a><td>97</td><td>4</td><td>9</td></tr>
-        <tr><td>280</td><td>248</td><td>261</td><td>Dying in the Dendera Fields in the Night</a><td>96</td><td>3</td><td>12</td></tr>
-        <tr><td>281</td><td>302</td><td>281</td><td>Dancing Water Spray</a><td>95</td><td>9</td><td>8</td></tr>
-        <tr><td>281</td><td>-</td><td>-</td><td>A Rainbow Spanning Gensokyo</a><td>95</td><td>4</td><td>14</td></tr>
-        <tr><td>283</td><td>244</td><td>-</td><td>The Shining Law of the Strong Eating the Weak</a><td>93</td><td>7</td><td>11</td></tr>
-        <tr><td>283</td><td>258</td><td>252</td><td>A Drunkard's Lemuria</a><td>93</td><td>3</td><td>14</td></tr>
-        <tr><td>285</td><td>270</td><td>189</td><td>Lunatic Dreamer</a><td>91</td><td>2</td><td>18</td></tr>
-        <tr><td>286</td><td>273</td><td>232</td><td>Bamboo Forest in Flames</a><td>90</td><td>3</td><td>9</td></tr>
-        <tr><td>286</td><td>269</td><td>258</td><td>Green Sanatorium</a><td>90</td><td>4</td><td>9</td></tr>
-        <tr><td>288</td><td>287</td><td>269</td><td>Girl's Divinity ~ Pandora's Box</a><td>88</td><td>7</td><td>12</td></tr>
-        <tr><td>289</td><td>254</td><td>-</td><td>Silent Beast Spirits</a><td>87</td><td>3</td><td>8</td></tr>
-        <tr><td>289</td><td>306</td><td>323</td><td>Shrine of the Wind</a><td>87</td><td>10</td><td>18</td></tr>
-        <tr><td>289</td><td>266</td><td>246</td><td>Border Between Dreams and Reality</a><td>87</td><td>12</td><td>18</td></tr>
-        <tr><td>292</td><td>313</td><td>278</td><td>The Lake Reflects the Cleansed Moonlight</a><td>86</td><td>4</td><td>17</td></tr>
-        <tr><td>293</td><td>288</td><td>274</td><td>Tengu is Watching ~ Black Eyes</a><td>85</td><td>1</td><td>8</td></tr>
-        <tr><td>293</td><td>277</td><td>309</td><td>The Space Shrine Maiden Appears</a><td>85</td><td>2</td><td>14</td></tr>
-        <tr><td>295</td><td>297</td><td>290</td><td>Boys and Girls of a Science Era</a><td>83</td><td>7</td><td>7</td></tr>
-        <tr><td>296</td><td>494</td><td>452</td><td>Gensokyo Mystery Discovery</a><td>82</td><td>2</td><td>15</td></tr>
-        <tr><td>296</td><td>284</td><td>333</td><td>Fantasy Corridor</a><td>82</td><td>4</td><td>8</td></tr>
-        <tr><td>298</td><td>277</td><td>269</td><td>Fragrant Plants</a><td>81</td><td>3</td><td>4</td></tr>
-        <tr><td>299</td><td>299</td><td>326</td><td>A Dream Transcending Space-time</a><td>79</td><td>3</td><td>5</td></tr>
-        <tr><td>299</td><td>312</td><td>290</td><td>Dim. Dream</a><td>79</td><td>2</td><td>7</td></tr>
-        <tr><td>301</td><td>265</td><td>216</td><td>The Magic Straw-Hat Ksitigarbha</a><td>78</td><td>2</td><td>9</td></tr>
-        <tr><td>302</td><td>289</td><td>306</td><td>Maple Wise</a><td>77</td><td>8</td><td>12</td></tr>
-        <tr><td>302</td><td>261</td><td>242</td><td>Japanese Saga</a><td>77</td><td>7</td><td>7</td></tr>
-        <tr><td>304</td><td>295</td><td>285</td><td>Thunderclouds of Magical Power</a><td>75</td><td>2</td><td>16</td></tr>
-        <tr><td>304</td><td>340</td><td>283</td><td>Can't Sleep Because It's Nighttime</a><td>75</td><td>6</td><td>11</td></tr>
-        <tr><td>306</td><td>282</td><td>266</td><td>Ghost Lead</a><td>74</td><td>0</td><td>7</td></tr>
-        <tr><td>306</td><td>292</td><td>285</td><td>Peaceful Romancer</a><td>74</td><td>8</td><td>15</td></tr>
-        <tr><td>308</td><td>321</td><td>298</td><td>Hourai Illusion ~ far East</a><td>73</td><td>6</td><td>12</td></tr>
-        <tr><td>309</td><td>275</td><td>255</td><td>Futatsuiwa from Gensokyo</a><td>72</td><td>1</td><td>8</td></tr>
-        <tr><td>310</td><td>281</td><td>261</td><td>Skygazer</a><td>71</td><td>3</td><td>15</td></tr>
-        <tr><td>311</td><td>302</td><td>283</td><td>Tengu's Notebook ~ Mysterious Note</a><td>70</td><td>3</td><td>4</td></tr>
-        <tr><td>311</td><td>295</td><td>268</td><td>Argue for and Against</a><td>70</td><td>1</td><td>10</td></tr>
-        <tr><td>313</td><td>289</td><td>308</td><td>Magic Mirror</a><td>69</td><td>6</td><td>14</td></tr>
-        <tr><td>313</td><td>344</td><td>360</td><td>Ame-no-torifune Shrine</a><td>69</td><td>3</td><td>5</td></tr>
-        <tr><td>315</td><td>309</td><td>298</td><td>Lotus Love</a><td>68</td><td>3</td><td>11</td></tr>
-        <tr><td>316</td><td>289</td><td>338</td><td>Player's Score</a><td>67</td><td>1</td><td>13</td></tr>
-        <tr><td>316</td><td>323</td><td>309</td><td>Youkai Girl at the Gate</a><td>67</td><td>5</td><td>7</td></tr>
-        <tr><td>316</td><td>323</td><td>278</td><td>Silk Road Alice</a><td>67</td><td>4</td><td>12</td></tr>
-        <tr><td>319</td><td>346</td><td>313</td><td>The Sealed Cloud Route</a><td>66</td><td>4</td><td>6</td></tr>
-        <tr><td>319</td><td>270</td><td>253</td><td>Sky Ruin</a><td>66</td><td>5</td><td>10</td></tr>
-        <tr><td>319</td><td>294</td><td>259</td><td>Strange, Strange Instruments</a><td>66</td><td>3</td><td>12</td></tr>
-        <tr><td>322</td><td>304</td><td>298</td><td>Returning Home From the Sky ~ Sky Dream</a><td>65</td><td>1</td><td>17</td></tr>
-        <tr><td>322</td><td>309</td><td>290</td><td>The Inevitably Forbidden Game</a><td>65</td><td>4</td><td>6</td></tr>
-        <tr><td>324</td><td>282</td><td>260</td><td>Awakening of the Earth Spirits</a><td>64</td><td>2</td><td>8</td></tr>
-        <tr><td>325</td><td>317</td><td>306</td><td>Outside World Folklore</a><td>61</td><td>2</td><td>6</td></tr>
-        <tr><td>325</td><td>285</td><td>287</td><td>the Last Judgement</a><td>61</td><td>5</td><td>7</td></tr>
-        <tr><td>325</td><td>323</td><td>370</td><td>The Barrier of Ame-no-torifune Shrine</a><td>61</td><td>3</td><td>16</td></tr>
+        <tr><td>223</td><td>211</td><td>202</td><td>Sunny Milk's Scarlet Mist Incident</td>183</td><td>10</td><td>33</td></tr>
+        <tr><td>225</td><td>222</td><td>203</td><td>The Purest Sky and Sea</td>182</td><td>20</td><td>25</td></tr>
+        <tr><td>226</td><td>213</td><td>204</td><td>White Flag of Usa Shrine</td>181</td><td>10</td><td>21</td></tr>
+        <tr><td>227</td><td>232</td><td>226</td><td>Mystical Maple ~ Eternal Dream</td>176</td><td>12</td><td>20</td></tr>
+        <tr><td>228</td><td>216</td><td>207</td><td>Merry the Magician</td>174</td><td>7</td><td>27</td></tr>
+        <tr><td>229</td><td>201</td><td>194</td><td>G Free</td>172</td><td>10</td><td>21</td></tr>
+        <tr><td>230</td><td>220</td><td>229</td><td>Wind of Agartha</td>169</td><td>19</td><td>32</td></tr>
+        <tr><td>231</td><td>208</td><td>216</td><td>Gathering the Mysterious from All Around Japan</td>167</td><td>22</td><td>31</td></tr>
+        <tr><td>232</td><td>237</td><td>225</td><td>The Sealed-Away Youkai ~ Lost Place</td>166</td><td>11</td><td>17</td></tr>
+        <tr><td>233</td><td>197</td><td>182</td><td>Mist Lake</td>164</td><td>9</td><td>25</td></tr>
+        <tr><td>233</td><td>168</td><td>-</td><td>Jelly Stone</td>164</td><td>7</td><td>29</td></tr>
+        <tr><td>235</td><td>263</td><td>238</td><td>Does the Forbidden Door Lead to This World, or the World Beyond?</td>163</td><td>7</td><td>29</td></tr>
+        <tr><td>236</td><td>231</td><td>240</td><td>The Strange Everyday Life of the Flying Shrine Maiden</td>161</td><td>18</td><td>31</td></tr>
+        <tr><td>237</td><td>221</td><td>201</td><td>Lonesome Werewolf</td>158</td><td>10</td><td>14</td></tr>
+        <tr><td>238</td><td>224</td><td>209</td><td>Youkai Back Shrine Road</td>157</td><td>9</td><td>20</td></tr>
+        <tr><td>239</td><td>208</td><td>197</td><td>Welcome to the Moon Tour</td>153</td><td>10</td><td>23</td></tr>
+        <tr><td>240</td><td>212</td><td>226</td><td>Celestial Wizardry ~ Magical Astronomy</td>149</td><td>7</td><td>14</td></tr>
+        <tr><td>241</td><td>236</td><td>236</td><td>Witch of Love Potion</td>147</td><td>17</td><td>28</td></tr>
+        <tr><td>241</td><td>249</td><td>240</td><td>Hangover of Bedfellows Dreaming Differently</td>147</td><td>16</td><td>24</td></tr>
+        <tr><td>243</td><td>224</td><td>206</td><td>Strange Bird of the Moon, Illusion of the Mysterious Cat</td>146</td><td>16</td><td>8</td></tr>
+        <tr><td>244</td><td>251</td><td>251</td><td>Sealed Gods</td>144</td><td>7</td><td>25</td></tr>
+        <tr><td>244</td><td>233</td><td>208</td><td>Old Adam Bar</td>144</td><td>5</td><td>17</td></tr>
+        <tr><td>246</td><td>245</td><td>243</td><td>Cheat Against the Impossible Danmaku</td>143</td><td>11</td><td>20</td></tr>
+        <tr><td>247</td><td>252</td><td>211</td><td>The Mystery in Your Town</td>142</td><td>11</td><td>20</td></tr>
+        <tr><td>248</td><td>226</td><td>210</td><td>The Traditional Old Man and the Stylish Girl</td>141</td><td>11</td><td>14</td></tr>
+        <tr><td>249</td><td>210</td><td>199</td><td>Did You See That Shadow?</td>139</td><td>10</td><td>17</td></tr>
+        <tr><td>249</td><td>235</td><td>238</td><td>The Far Side of the Moon</td>139</td><td>10</td><td>13</td></tr>
+        <tr><td>251</td><td>226</td><td>221</td><td>Tabula rasa ~ The Empty Girl</td>138</td><td>18</td><td>18</td></tr>
+        <tr><td>252</td><td>223</td><td>254</td><td>Theme of Eastern Story</td>137</td><td>13</td><td>21</td></tr>
+        <tr><td>253</td><td>258</td><td>226</td><td>A Midsummer Fairy's Dream</td>134</td><td>8</td><td>18</td></tr>
+        <tr><td>253</td><td>237</td><td>183</td><td>A Pair of Divine Beasts</td>134</td><td>7</td><td>15</td></tr>
+        <tr><td>253</td><td>245</td><td>233</td><td>Plastic Mind</td>134</td><td>8</td><td>16</td></tr>
+        <tr><td>256</td><td>292</td><td>274</td><td>Watatsuki's Spell Card ~ Lunatic Blue</td>130</td><td>15</td><td>18</td></tr>
+        <tr><td>257</td><td>256</td><td>216</td><td>Swim in a Cherry Blossom-Colored Sea</td>128</td><td>4</td><td>11</td></tr>
+        <tr><td>258</td><td>253</td><td>249</td><td>Flower Viewing Mound ~ Higan Retour</td>127</td><td>10</td><td>15</td></tr>
+        <tr><td>259</td><td>234</td><td>193</td><td>Unforgettable, the Nostalgic Greenery</td>123</td><td>8</td><td>16</td></tr>
+        <tr><td>260</td><td>263</td><td>244</td><td>Youkai Modern Colony</td>121</td><td>8</td><td>16</td></tr>
+        <tr><td>261</td><td>255</td><td>247</td><td>Starry Sky of Small Desires</td>118</td><td>2</td><td>11</td></tr>
+        <tr><td>262</td><td>-</td><td>-</td><td>A Shower of Strange Occurrences</td>117</td><td>6</td><td>23</td></tr>
+        <tr><td>263</td><td>228</td><td>237</td><td>Curious old Shanghai tile</td>115</td><td>12</td><td>23</td></tr>
+        <tr><td>264</td><td>272</td><td>255</td><td>Desire Dream</td>114</td><td>6</td><td>12</td></tr>
+        <tr><td>264</td><td>249</td><td>244</td><td>No More Going Through Doors</td>114</td><td>6</td><td>18</td></tr>
+        <tr><td>266</td><td>241</td><td>214</td><td>Staking Your Life on a Prank</td>113</td><td>5</td><td>10</td></tr>
+        <tr><td>267</td><td>276</td><td>271</td><td>Dr. Latency's Sleepless Eyes</td>110</td><td>6</td><td>16</td></tr>
+        <tr><td>268</td><td>239</td><td>222</td><td>Year-Round Absorbed Curiosity</td>109</td><td>7</td><td>16</td></tr>
+        <tr><td>269</td><td>280</td><td>267</td><td>Treacherous Maiden ~ Judas Kiss</td>107</td><td>7</td><td>19</td></tr>
+        <tr><td>269</td><td>261</td><td>247</td><td>Doll of Misery</td>107</td><td>4</td><td>10</td></tr>
+        <tr><td>271</td><td>243</td><td>214</td><td>Romantic Escape Flight</td>106</td><td>6</td><td>9</td></tr>
+        <tr><td>272</td><td>277</td><td>281</td><td>Mechanical Circus ~ Reverie</td>105</td><td>7</td><td>21</td></tr>
+        <tr><td>273</td><td>216</td><td>-</td><td>The Lamentations Known Only by Jizo</td>104</td><td>2</td><td>10</td></tr>
+        <tr><td>274</td><td>239</td><td>249</td><td>Satellite TORIFUNE</td>103</td><td>6</td><td>10</td></tr>
+        <tr><td>275</td><td>267</td><td>261</td><td>Swordsman of a Distant Star / Angel of a Distant Star</td>102</td><td>5</td><td>15</td></tr>
+        <tr><td>276</td><td>247</td><td>223</td><td>Loose Rain</td>101</td><td>6</td><td>9</td></tr>
+        <tr><td>277</td><td>256</td><td>257</td><td>Led On by a Cow to Visit Zenkou Temple</td>99</td><td>7</td><td>20</td></tr>
+        <tr><td>278</td><td>273</td><td>278</td><td>Illusory Science ~ Doll's Phantom</td>98</td><td>5</td><td>17</td></tr>
+        <tr><td>279</td><td>260</td><td>261</td><td>The Refrain of the Lovely Great War</td>97</td><td>4</td><td>9</td></tr>
+        <tr><td>280</td><td>248</td><td>261</td><td>Dying in the Dendera Fields in the Night</td>96</td><td>3</td><td>12</td></tr>
+        <tr><td>281</td><td>302</td><td>281</td><td>Dancing Water Spray</td>95</td><td>9</td><td>8</td></tr>
+        <tr><td>281</td><td>-</td><td>-</td><td>A Rainbow Spanning Gensokyo</td>95</td><td>4</td><td>14</td></tr>
+        <tr><td>283</td><td>244</td><td>-</td><td>The Shining Law of the Strong Eating the Weak</td>93</td><td>7</td><td>11</td></tr>
+        <tr><td>283</td><td>258</td><td>252</td><td>A Drunkard's Lemuria</td>93</td><td>3</td><td>14</td></tr>
+        <tr><td>285</td><td>270</td><td>189</td><td>Lunatic Dreamer</td>91</td><td>2</td><td>18</td></tr>
+        <tr><td>286</td><td>273</td><td>232</td><td>Bamboo Forest in Flames</td>90</td><td>3</td><td>9</td></tr>
+        <tr><td>286</td><td>269</td><td>258</td><td>Green Sanatorium</td>90</td><td>4</td><td>9</td></tr>
+        <tr><td>288</td><td>287</td><td>269</td><td>Girl's Divinity ~ Pandora's Box</td>88</td><td>7</td><td>12</td></tr>
+        <tr><td>289</td><td>254</td><td>-</td><td>Silent Beast Spirits</td>87</td><td>3</td><td>8</td></tr>
+        <tr><td>289</td><td>306</td><td>323</td><td>Shrine of the Wind</td>87</td><td>10</td><td>18</td></tr>
+        <tr><td>289</td><td>266</td><td>246</td><td>Border Between Dreams and Reality</td>87</td><td>12</td><td>18</td></tr>
+        <tr><td>292</td><td>313</td><td>278</td><td>The Lake Reflects the Cleansed Moonlight</td>86</td><td>4</td><td>17</td></tr>
+        <tr><td>293</td><td>288</td><td>274</td><td>Tengu is Watching ~ Black Eyes</td>85</td><td>1</td><td>8</td></tr>
+        <tr><td>293</td><td>277</td><td>309</td><td>The Space Shrine Maiden Appears</td>85</td><td>2</td><td>14</td></tr>
+        <tr><td>295</td><td>297</td><td>290</td><td>Boys and Girls of a Science Era</td>83</td><td>7</td><td>7</td></tr>
+        <tr><td>296</td><td>494</td><td>452</td><td>Gensokyo Mystery Discovery</td>82</td><td>2</td><td>15</td></tr>
+        <tr><td>296</td><td>284</td><td>333</td><td>Fantasy Corridor</td>82</td><td>4</td><td>8</td></tr>
+        <tr><td>298</td><td>277</td><td>269</td><td>Fragrant Plants</td>81</td><td>3</td><td>4</td></tr>
+        <tr><td>299</td><td>299</td><td>326</td><td>A Dream Transcending Space-time</td>79</td><td>3</td><td>5</td></tr>
+        <tr><td>299</td><td>312</td><td>290</td><td>Dim. Dream</td>79</td><td>2</td><td>7</td></tr>
+        <tr><td>301</td><td>265</td><td>216</td><td>The Magic Straw-Hat Ksitigarbha</td>78</td><td>2</td><td>9</td></tr>
+        <tr><td>302</td><td>289</td><td>306</td><td>Maple Wise</td>77</td><td>8</td><td>12</td></tr>
+        <tr><td>302</td><td>261</td><td>242</td><td>Japanese Saga</td>77</td><td>7</td><td>7</td></tr>
+        <tr><td>304</td><td>295</td><td>285</td><td>Thunderclouds of Magical Power</td>75</td><td>2</td><td>16</td></tr>
+        <tr><td>304</td><td>340</td><td>283</td><td>Can't Sleep Because It's Nighttime</td>75</td><td>6</td><td>11</td></tr>
+        <tr><td>306</td><td>282</td><td>266</td><td>Ghost Lead</td>74</td><td>0</td><td>7</td></tr>
+        <tr><td>306</td><td>292</td><td>285</td><td>Peaceful Romancer</td>74</td><td>8</td><td>15</td></tr>
+        <tr><td>308</td><td>321</td><td>298</td><td>Hourai Illusion ~ far East</td>73</td><td>6</td><td>12</td></tr>
+        <tr><td>309</td><td>275</td><td>255</td><td>Futatsuiwa from Gensokyo</td>72</td><td>1</td><td>8</td></tr>
+        <tr><td>310</td><td>281</td><td>261</td><td>Skygazer</td>71</td><td>3</td><td>15</td></tr>
+        <tr><td>311</td><td>302</td><td>283</td><td>Tengu's Notebook ~ Mysterious Note</td>70</td><td>3</td><td>4</td></tr>
+        <tr><td>311</td><td>295</td><td>268</td><td>Argue for and Against</td>70</td><td>1</td><td>10</td></tr>
+        <tr><td>313</td><td>289</td><td>308</td><td>Magic Mirror</td>69</td><td>6</td><td>14</td></tr>
+        <tr><td>313</td><td>344</td><td>360</td><td>Ame-no-torifune Shrine</td>69</td><td>3</td><td>5</td></tr>
+        <tr><td>315</td><td>309</td><td>298</td><td>Lotus Love</td>68</td><td>3</td><td>11</td></tr>
+        <tr><td>316</td><td>289</td><td>338</td><td>Player's Score</td>67</td><td>1</td><td>13</td></tr>
+        <tr><td>316</td><td>323</td><td>309</td><td>Youkai Girl at the Gate</td>67</td><td>5</td><td>7</td></tr>
+        <tr><td>316</td><td>323</td><td>278</td><td>Silk Road Alice</td>67</td><td>4</td><td>12</td></tr>
+        <tr><td>319</td><td>346</td><td>313</td><td>The Sealed Cloud Route</td>66</td><td>4</td><td>6</td></tr>
+        <tr><td>319</td><td>270</td><td>253</td><td>Sky Ruin</td>66</td><td>5</td><td>10</td></tr>
+        <tr><td>319</td><td>294</td><td>259</td><td>Strange, Strange Instruments</td>66</td><td>3</td><td>12</td></tr>
+        <tr><td>322</td><td>304</td><td>298</td><td>Returning Home From the Sky ~ Sky Dream</td>65</td><td>1</td><td>17</td></tr>
+        <tr><td>322</td><td>309</td><td>290</td><td>The Inevitably Forbidden Game</td>65</td><td>4</td><td>6</td></tr>
+        <tr><td>324</td><td>282</td><td>260</td><td>Awakening of the Earth Spirits</td>64</td><td>2</td><td>8</td></tr>
+        <tr><td>325</td><td>317</td><td>306</td><td>Outside World Folklore</td>61</td><td>2</td><td>6</td></tr>
+        <tr><td>325</td><td>285</td><td>287</td><td>the Last Judgement</td>61</td><td>5</td><td>7</td></tr>
+        <tr><td>325</td><td>323</td><td>370</td><td>The Barrier of Ame-no-torifune Shrine</td>61</td><td>3</td><td>16</td></tr>
         <tr><td>325</td><td>356</td><td>298</td><td>AoCF opening themes<td>61</td><td>1</td><td>6</td></tr>
-        <tr><td>329</td><td>267</td><td>272</td><td>Youkai Space Travel</a><td>60</td><td>4</td><td>11</td></tr>
-        <tr><td>330</td><td>332</td><td>298</td><td>A Land Resplendent With Nature's Beauty</a><td>59</td><td>7</td><td>7</td></tr>
-        <tr><td>330</td><td>366</td><td>323</td><td>Fly above Hatoyama at night</a><td>59</td><td>4</td><td>4</td></tr>
-        <tr><td>332</td><td>346</td><td>313</td><td>Welcome to Youkai Temple</a><td>58</td><td>2</td><td>10</td></tr>
-        <tr><td>332</td><td>317</td><td>304</td><td>Legend of Aokigahara</a><td>58</td><td>2</td><td>1</td></tr>
-        <tr><td>334</td><td>351</td><td>366</td><td>A Sacred Lot</a><td>57</td><td>5</td><td>10</td></tr>
-        <tr><td>334</td><td>330</td><td>318</td><td>Eastern Strange Discourse</a><td>57</td><td>5</td><td>4</td></tr>
-        <tr><td>334</td><td>285</td><td>274</td><td>Star Voyage 2008</a><td>57</td><td>3</td><td>5</td></tr>
-        <tr><td>334</td><td>309</td><td>290</td><td>Trojan Asteroid Jungle</a><td>57</td><td>4</td><td>5</td></tr>
-        <tr><td>338</td><td>317</td><td>287</td><td>Magical Storm</a><td>56</td><td>1</td><td>14</td></tr>
-        <tr><td>338</td><td>314</td><td>326</td><td>Illusion of a Maid ~ Icemilk Magic</a><td>56</td><td>3</td><td>9</td></tr>
-        <tr><td>338</td><td>305</td><td>272</td><td>Illusionary Sputnik Night</a><td>56</td><td>1</td><td>7</td></tr>
-        <tr><td>341</td><td>332</td><td>328</td><td>Darkening Dusk</a><td>55</td><td>2</td><td>9</td></tr>
-        <tr><td>342</td><td>323</td><td>323</td><td>Evening Primrose</a><td>54</td><td>3</td><td>3</td></tr>
-        <tr><td>342</td><td>323</td><td>274</td><td>Into Backdoor</a><td>54</td><td>3</td><td>10</td></tr>
-        <tr><td>342</td><td>364</td><td>411</td><td>Eternal Full Moon</a><td>54</td><td>5</td><td>3</td></tr>
-        <tr><td>345</td><td>364</td><td>366</td><td>The Mound Where the Flowers Reflect</a><td>53</td><td>6</td><td>7</td></tr>
-        <tr><td>345</td><td>317</td><td>317</td><td>Wind Circulation ~ Wind Tour</a><td>53</td><td>2</td><td>3</td></tr>
-        <tr><td>345</td><td>377</td><td>395</td><td>This Dull World's Unchanging Pessimism</a><td>53</td><td>3</td><td>6</td></tr>
-        <tr><td>345</td><td>299</td><td>290</td><td>Flower of Past Days ~ Fairy of Flower</a><td>53</td><td>4</td><td>8</td></tr>
-        <tr><td>349</td><td>314</td><td>331</td><td>The Gods Give Us Blessed Rain ~ Sylphid Dream</a><td>52</td><td>1</td><td>5</td></tr>
-        <tr><td>349</td><td>299</td><td>296</td><td>The Tank Girl's Dream</a><td>52</td><td>4</td><td>6</td></tr>
-        <tr><td>349</td><td>-</td><td>-</td><td>The Cliff Hidden in Deep Green</a><td>52</td><td>0</td><td>13</td></tr>
-        <tr><td>352</td><td>332</td><td>343</td><td>Humans and Youkai Traversing the Canal</a><td>50</td><td>3</td><td>4</td></tr>
-        <tr><td>352</td><td>356</td><td>287</td><td>White Traveler</a><td>50</td><td>1</td><td>4</td></tr>
-        <tr><td>354</td><td>335</td><td>343</td><td>Child of Are</a><td>49</td><td>7</td><td>4</td></tr>
-        <tr><td>355</td><td>297</td><td>-</td><td>The Stone Baby and the Submerged Bovine</a><td>48</td><td>1</td><td>5</td></tr>
-        <tr><td>355</td><td>314</td><td>313</td><td>Dream of Arcadia</a><td>48</td><td>2</td><td>3</td></tr>
-        <tr><td>357</td><td>335</td><td>346</td><td>Raise the Signal Fire of Cheating</a><td>47</td><td>2</td><td>4</td></tr>
-        <tr><td>358</td><td>323</td><td>318</td><td>Spirit of Avarice</a><td>46</td><td>5</td><td>14</td></tr>
-        <tr><td>358</td><td>351</td><td>366</td><td>Forest of Dolls</a><td>46</td><td>2</td><td>9</td></tr>
-        <tr><td>358</td><td>351</td><td>333</td><td>Outsider Cocktail</a><td>46</td><td>5</td><td>10</td></tr>
-        <tr><td>358</td><td>-</td><td>-</td><td>A Rainbow-Colored World</a><td>46</td><td>1</td><td>5</td></tr>
-        <tr><td>362</td><td>335</td><td>304</td><td>Civilization of Magic / We Shall Die Together</a><td>45</td><td>6</td><td>10</td></tr>
-        <tr><td>362</td><td>360</td><td>350</td><td>Visionary Game ~ Dream War</a><td>45</td><td>7</td><td>8</td></tr>
-        <tr><td>362</td><td>373</td><td>338</td><td>The Taboo Membrane Wall</a><td>45</td><td>2</td><td>4</td></tr>
-        <tr><td>362</td><td>306</td><td>290</td><td>AN ORDEAL FROM GOD</a><td>45</td><td>1</td><td>9</td></tr>
-        <tr><td>366</td><td>390</td><td>356</td><td>The Exaggerated Castle Keep</a><td>44</td><td>1</td><td>5</td></tr>
-        <tr><td>366</td><td>335</td><td>360</td><td>Maple Dream...</a><td>44</td><td>6</td><td>12</td></tr>
-        <tr><td>366</td><td>372</td><td>343</td><td>Like the Brilliance of Fairies</a><td>44</td><td>7</td><td>7</td></tr>
-        <tr><td>369</td><td>378</td><td>381</td><td>An Ice Fairy in Spring</a><td>43</td><td>0</td><td>3</td></tr>
-        <tr><td>369</td><td>323</td><td>318</td><td>The Darkness Brought In by Swallowstone Naturalis Historia</a><td>43</td><td>2</td><td>8</td></tr>
-        <tr><td>369</td><td>340</td><td>338</td><td>End of Daylight</a><td>43</td><td>5</td><td>7</td></tr>
-        <tr><td>369</td><td>330</td><td>313</td><td>Sunny Rutile Flection</a><td>43</td><td>2</td><td>6</td></tr>
-        <tr><td>373</td><td>344</td><td>261</td><td>Sleep Sheep Parade</a><td>42</td><td>2</td><td>5</td></tr>
-        <tr><td>374</td><td>370</td><td>350</td><td>Flower of Soul ~ Another Dream...</a><td>41</td><td>4</td><td>5</td></tr>
-        <tr><td>374</td><td>378</td><td>397</td><td>Drunk as I Like</a><td>41</td><td>2</td><td>2</td></tr>
-        <tr><td>374</td><td>349</td><td>318</td><td>Occult à la Carte</a><td>41</td><td>0</td><td>2</td></tr>
-        <tr><td>374</td><td>385</td><td>370</td><td>Spirit Battle ~ Perdition crisis</a><td>41</td><td>7</td><td>5</td></tr>
-        <tr><td>378</td><td>340</td><td>318</td><td>Sailor of Time</a><td>40</td><td>1</td><td>8</td></tr>
-        <tr><td>378</td><td>356</td><td>312</td><td>Dream Express</a><td>40</td><td>5</td><td>8</td></tr>
-        <tr><td>380</td><td>335</td><td>350</td><td>A Shadow in the Blue Sky</a><td>39</td><td>2</td><td>10</td></tr>
-        <tr><td>380</td><td>349</td><td>328</td><td>Scarlet Symphony ~ Scarlet Phoneme</a><td>39</td><td>3</td><td>9</td></tr>
-        <tr><td>380</td><td>402</td><td>389</td><td>Crimson Maiden ~ Crimson Dead!!</a><td>39</td><td>7</td><td>11</td></tr>
-        <tr><td>383</td><td>385</td><td>356</td><td>The Earth Spirits' Homecoming</a><td>38</td><td>2</td><td>6</td></tr>
-        <tr><td>383</td><td>393</td><td>383</td><td>Dimension of Reverie</a><td>38</td><td>1</td><td>3</td></tr>
-        <tr><td>385</td><td>412</td><td>331</td><td>Nightmare Journal</a><td>37</td><td>2</td><td>5</td></tr>
-        <tr><td>385</td><td>356</td><td>333</td><td>Magic Shop of Raspberry</a><td>37</td><td>4</td><td>9</td></tr>
-        <tr><td>387</td><td>374</td><td>359</td><td>Shrine at the Foot of the Mountain</a><td>36</td><td>2</td><td>5</td></tr>
-        <tr><td>387</td><td>406</td><td>360</td><td>Skies Beyond the Clouds</a><td>36</td><td>2</td><td>7</td></tr>
-        <tr><td>387</td><td>360</td><td>350</td><td>Energy Daybreak ~ Future Dream...</a><td>36</td><td>3</td><td>5</td></tr>
-        <tr><td>387</td><td>306</td><td>296</td><td>The Sky Where Cherry Blossoms Flutter Down</a><td>36</td><td>1</td><td>5</td></tr>
-        <tr><td>387</td><td>363</td><td>298</td><td>Witching Dream</a><td>36</td><td>0</td><td>5</td></tr>
-        <tr><td>387</td><td>393</td><td>338</td><td>Decoration Battle</a><td>36</td><td>4</td><td>3</td></tr>
-        <tr><td>387</td><td>348</td><td>356</td><td>Dream Land</a><td>36</td><td>2</td><td>5</td></tr>
-        <tr><td>394</td><td>402</td><td>383</td><td>Angel's Legend</a><td>35</td><td>3</td><td>4</td></tr>
-        <tr><td>394</td><td>385</td><td>373</td><td>Dreamy pilot</a><td>35</td><td>2</td><td>7</td></tr>
-        <tr><td>396</td><td>366</td><td>311</td><td>Deep-Mountain Encounter</a><td>34</td><td>2</td><td>4</td></tr>
-        <tr><td>396</td><td>354</td><td>350</td><td>Hakurei ~ Eastern Wind </a><td>34</td><td>2</td><td>6</td></tr>
-        <tr><td>396</td><td>368</td><td>346</td><td>Velvet Maiden Battle ~ Velvet Battle</a><td>34</td><td>2</td><td>6</td></tr>
-        <tr><td>399</td><td>378</td><td>346</td><td>The Colorless Wind on Youkai Mountain</a><td>32</td><td>0</td><td>7</td></tr>
-        <tr><td>399</td><td>354</td><td>370</td><td>Ancient Temple of the Netherworld</a><td>32</td><td>7</td><td>4</td></tr>
-        <tr><td>401</td><td>417</td><td>414</td><td>Dream of a Spring Breeze</a><td>31</td><td>1</td><td>2</td></tr>
-        <tr><td>401</td><td>412</td><td>364</td><td>A Rose Blooming in the Underworld</a><td>31</td><td>0</td><td>1</td></tr>
-        <tr><td>401</td><td>378</td><td>366</td><td>Himorogi, Burn in Violet </a><td>31</td><td>2</td><td>3</td></tr>
-        <tr><td>401</td><td>378</td><td>377</td><td>The Gensokyo That Floats in Outer Space</a><td>31</td><td>0</td><td>6</td></tr>
-        <tr><td>401</td><td>360</td><td>333</td><td>Herselves</a><td>31</td><td>1</td><td>3</td></tr>
-        <tr><td>401</td><td>378</td><td>333</td><td>Magician of the Twilight</a><td>31</td><td>2</td><td>4</td></tr>
-        <tr><td>407</td><td>321</td><td>-</td><td>Lost River</a><td>29</td><td>0</td><td>5</td></tr>
-        <tr><td>407</td><td>438</td><td>442</td><td>Eastern Recorded Sealing of a Demon ~ Pure Land Mandala</a><td>29</td><td>3</td><td>3</td></tr>
-        <tr><td>409</td><td>370</td><td>383</td><td>Midnight Spell Card</a><td>28</td><td>0</td><td>1</td></tr>
-        <tr><td>409</td><td>406</td><td>414</td><td>The Space Shrine Maiden Returns Home</a><td>28</td><td>0</td><td>3</td></tr>
-        <tr><td>409</td><td>396</td><td>377</td><td>Two Worlds</a><td>28</td><td>2</td><td>4</td></tr>
-        <tr><td>409</td><td>378</td><td>418</td><td>Adventurer's Tavern of the Old World</a><td>28</td><td>3</td><td>1</td></tr>
-        <tr><td>413</td><td>406</td><td>431</td><td>The Moon as Seen from the Shrine</a><td>27</td><td>1</td><td>2</td></tr>
-        <tr><td>413</td><td>412</td><td>418</td><td>Orphic Poetry ~ Pseudoclassic</a><td>27</td><td>3</td><td>8</td></tr>
-        <tr><td>415</td><td>340</td><td>-</td><td>Everlasting Red Spider Lily</a><td>25</td><td>1</td><td>2</td></tr>
-        <tr><td>415</td><td>417</td><td>407</td><td>The Fairies' Adventurous Tale</a><td>25</td><td>3</td><td>3</td></tr>
-        <tr><td>417</td><td>412</td><td>407</td><td>Power of Darkness </a><td>24</td><td>2</td><td>5</td></tr>
-        <tr><td>417</td><td>390</td><td>360</td><td>Eternal Festival of Illusions</a><td>24</td><td>0</td><td>5</td></tr>
-        <tr><td>417</td><td>368</td><td>338</td><td>False Strawberry</a><td>24</td><td>0</td><td>5</td></tr>
-        <tr><td>420</td><td>458</td><td>375</td><td>Immortal Red Soul</a><td>23</td><td>2</td><td>2</td></tr>
-        <tr><td>420</td><td>421</td><td>402</td><td>Overcome a Thousand Trials</a><td>23</td><td>3</td><td>5</td></tr>
-        <tr><td>420</td><td>396</td><td>397</td><td>Hakurei Shrine Grounds</a><td>23</td><td>1</td><td>7</td></tr>
-        <tr><td>420</td><td>417</td><td>377</td><td>Maniacal Princess</a><td>23</td><td>0</td><td>4</td></tr>
-        <tr><td>420</td><td>475</td><td>395</td><td>Phantasmagoria</a><td>23</td><td>4</td><td>2</td></tr>
-        <tr><td>420</td><td>374</td><td>349</td><td>Forbidden Magic</a><td>23</td><td>1</td><td>4</td></tr>
-        <tr><td>420</td><td>434</td><td>452</td><td>End of the World ~ World's End</a><td>23</td><td>1</td><td>4</td></tr>
-        <tr><td>420</td><td>494</td><td>452</td><td>Firmament Army</a><td>23</td><td>3</td><td>2</td></tr>
-        <tr><td>428</td><td>390</td><td>397</td><td>The Positive and Negative</a><td>22</td><td>1</td><td>4</td></tr>
-        <tr><td>429</td><td>442</td><td>423</td><td>Newshound</a><td>21</td><td>1</td><td>4</td></tr>
-        <tr><td>429</td><td>399</td><td>383</td><td>Heart-Stirring Urban Legends</a><td>21</td><td>0</td><td>2</td></tr>
-        <tr><td>429</td><td>385</td><td>350</td><td>Bell of the Antipodes</a><td>21</td><td>0</td><td>4</td></tr>
-        <tr><td>429</td><td>434</td><td>382</td><td>Mushroom Waltz</a><td>21</td><td>1</td><td>2</td></tr>
-        <tr><td>429</td><td>442</td><td>328</td><td>Shining Heavenly Armillary</a><td>21</td><td>0</td><td>2</td></tr>
-        <tr><td>429</td><td>406</td><td>377</td><td>Legendary Wonderland</a><td>21</td><td>2</td><td>2</td></tr>
-        <tr><td>429</td><td>374</td><td>461</td><td>Gensokyo ~ Lotus Land Story</a><td>21</td><td>1</td><td>2</td></tr>
-        <tr><td>429</td><td>389</td><td>389</td><td>Crescent Dream</a><td>21</td><td>3</td><td>8</td></tr>
-        <tr><td>437</td><td>421</td><td>411</td><td>She's in a temper!!</a><td>20</td><td>1</td><td>5</td></tr>
-        <tr><td>437</td><td>438</td><td>423</td><td>Decisive Magic Battle! ~ Fight it out!</a><td>20</td><td>1</td><td>3</td></tr>
-        <tr><td>437</td><td>448</td><td>435</td><td>Wondrous Tales of Romance ~ Mystic Square</a><td>20</td><td>1</td><td>6</td></tr>
-        <tr><td>440</td><td>399</td><td>373</td><td>Nemesis' Stronghold</a><td>19</td><td>2</td><td>0</td></tr>
-        <tr><td>440</td><td>402</td><td>407</td><td>Disunified Field Theory of Magic</a><td>19</td><td>0</td><td>1</td></tr>
-        <tr><td>442</td><td>484</td><td>519</td><td>The Moon</a><td>18</td><td>1</td><td>1</td></tr>
-        <tr><td>442</td><td>465</td><td>472</td><td>Highly Responsive to Prayers</a><td>18</td><td>2</td><td>5</td></tr>
-        <tr><td>442</td><td>434</td><td>397</td><td>World of Empty Dreams </a><td>18</td><td>0</td><td>1</td></tr>
-        <tr><td>442</td><td>442</td><td>418</td><td>Starbow Dream</a><td>18</td><td>0</td><td>6</td></tr>
-        <tr><td>442</td><td>427</td><td>423</td><td>Illusionary Girl from Canaveral</a><td>18</td><td>3</td><td>2</td></tr>
-        <tr><td>447</td><td>438</td><td>423</td><td>Eastern Wind</a><td>17</td><td>2</td><td>1</td></tr>
-        <tr><td>447</td><td>406</td><td>383</td><td>Swift Battle</a><td>17</td><td>1</td><td>2</td></tr>
-        <tr><td>447</td><td>420</td><td>364</td><td>A Huge Shadow and a Tiny Conclusion</a><td>17</td><td>1</td><td>4</td></tr>
-        <tr><td>447</td><td>396</td><td>375</td><td>The Instant is Shorter Than Planck Time</a><td>17</td><td>1</td><td>3</td></tr>
-        <tr><td>451</td><td>424</td><td>402</td><td>Mound of Life</a><td>16</td><td>0</td><td>1</td></tr>
-        <tr><td>451</td><td>454</td><td>402</td><td>Ridiculous Game</a><td>16</td><td>0</td><td>5</td></tr>
-        <tr><td>451</td><td>406</td><td>389</td><td>The Scenery of Living Dolls</a><td>16</td><td>1</td><td>2</td></tr>
-        <tr><td>451</td><td>465</td><td>452</td><td>An Ice Fairy in Spring - still -</a><td>16</td><td>1</td><td>4</td></tr>
-        <tr><td>451</td><td>448</td><td>423</td><td>Magical Power of the Mallet</a><td>16</td><td>0</td><td>2</td></tr>
-        <tr><td>451</td><td>399</td><td>411</td><td>Castle Explorer -in the Sky-</a><td>16</td><td>1</td><td>6</td></tr>
-        <tr><td>451</td><td>402</td><td>397</td><td>Sacred Battle</a><td>16</td><td>1</td><td>5</td></tr>
-        <tr><td>451</td><td>448</td><td>407</td><td>Magic of Life</a><td>16</td><td>0</td><td>3</td></tr>
-        <tr><td>459</td><td>506</td><td>472</td><td>Scarlet Night</a><td>15</td><td>0</td><td>1</td></tr>
-        <tr><td>459</td><td>427</td><td>431</td><td>the Legend of KAGE</a><td>15</td><td>1</td><td>5</td></tr>
-        <tr><td>459</td><td>465</td><td>505</td><td>Dream Machine ~ Innocent Power</a><td>15</td><td>1</td><td>2</td></tr>
-        <tr><td>462</td><td>427</td><td>389</td><td>Lucid Dreamer</a><td>14</td><td>0</td><td>0</td></tr>
-        <tr><td>462</td><td>427</td><td>414</td><td>Blade of Banishment</a><td>14</td><td>1</td><td>2</td></tr>
-        <tr><td>462</td><td>427</td><td>423</td><td>Iris</a><td>14</td><td>1</td><td>2</td></tr>
-        <tr><td>462</td><td>454</td><td>435</td><td>Eastern Recorded Sealing of a Demon ~ A Phantom's Boisterous Dance</a><td>14</td><td>0</td><td>2</td></tr>
-        <tr><td>462</td><td>434</td><td>389</td><td>The Hide-and-Seek Lifestyle at the Shrine</a><td>14</td><td>1</td><td>5</td></tr>
-        <tr><td>462</td><td>458</td><td>418</td><td>Disastrous Gemini</a><td>14</td><td>0</td><td>3</td></tr>
-        <tr><td>462</td><td>424</td><td>452</td><td>Inventive City</a><td>14</td><td>1</td><td>1</td></tr>
-        <tr><td>469</td><td>484</td><td>418</td><td>Unexpected Visitor</a><td>13</td><td>0</td><td>1</td></tr>
-        <tr><td>469</td><td>393</td><td>383</td><td>X, the Floating Objects in the Sky</a><td>13</td><td>0</td><td>3</td></tr>
-        <tr><td>469</td><td>438</td><td>435</td><td>Spiritual Heaven</a><td>13</td><td>1</td><td>1</td></tr>
-        <tr><td>472</td><td>465</td><td>435</td><td>Usual Days</a><td>12</td><td>0</td><td>0</td></tr>
-        <tr><td>472</td><td>421</td><td>414</td><td>The Arcane Is Revealed</a><td>12</td><td>0</td><td>1</td></tr>
-        <tr><td>472</td><td>465</td><td>452</td><td>The Palanquin Ship Flies in the Sky</a><td>12</td><td>0</td><td>2</td></tr>
-        <tr><td>472</td><td>465</td><td>481</td><td>The Ravine Kappa's Technological Prowess</a><td>12</td><td>0</td><td>3</td></tr>
-        <tr><td>472</td><td>448</td><td>461</td><td>Shuusou Gyoku ~ Clockworks</a><td>12</td><td>0</td><td>4</td></tr>
-        <tr><td>477</td><td>465</td><td>472</td><td>Bad Omen</a><td>11</td><td>0</td><td>0</td></tr>
-        <tr><td>477</td><td>424</td><td>402</td><td>Morning Clouds</a><td>11</td><td>0</td><td>2</td></tr>
-        <tr><td>477</td><td>427</td><td>442</td><td>Winds of Time</a><td>11</td><td>0</td><td>1</td></tr>
-        <tr><td>477</td><td>475</td><td>461</td><td>Illusion of Flowers, Air of Scarlet Dream</a><td>11</td><td>1</td><td>0</td></tr>
-        <tr><td>477</td><td>465</td><td>472</td><td>New Illusion ~ New Fantasy</a><td>11</td><td>1</td><td>3</td></tr>
-        <tr><td>477</td><td>484</td><td>442</td><td>Warrior Maiden ~ Heart of Valkyrie</a><td>11</td><td>0</td><td>1</td></tr>
-        <tr><td>483</td><td>536</td><td>461</td><td>End of Summer</a><td>10</td><td>0</td><td>4</td></tr>
-        <tr><td>483</td><td>514</td><td>489</td><td>Solitary Place</a><td>10</td><td>1</td><td>2</td></tr>
-        <tr><td>483</td><td>484</td><td>489</td><td>The Village in the Dead of Night</a><td>10</td><td>1</td><td>1</td></tr>
-        <tr><td>483</td><td>458</td><td>431</td><td>Seven-Orb Collection Showdown</a><td>10</td><td>1</td><td>1</td></tr>
-        <tr><td>483</td><td>458</td><td>452</td><td>The Inverted Castle Lit by the Setting Sun</a><td>10</td><td>0</td><td>1</td></tr>
-        <tr><td>483</td><td>522</td><td>489</td><td>Floating with the Tide</a><td>10</td><td>0</td><td>0</td></tr>
-        <tr><td>483</td><td>454</td><td>-</td><td>Returning Home from the Underground</a><td>10</td><td>1</td><td>0</td></tr>
-        <tr><td>483</td><td>475</td><td>461</td><td>Oriental Magician</a><td>10</td><td>0</td><td>2</td></tr>
-        <tr><td>483</td><td>514</td><td>489</td><td>Dream of Eternity</a><td>10</td><td>0</td><td>0</td></tr>
-        <tr><td>483</td><td>442</td><td>423</td><td>Magical and Hopeless</a><td>10</td><td>0</td><td>3</td></tr>
-        <tr><td>493</td><td>448</td><td>461</td><td>Wanderings</a><td>9</td><td>0</td><td>0</td></tr>
-        <tr><td>493</td><td>498</td><td>481</td><td>Equality Under the Law of Dharma</a><td>9</td><td>1</td><td>2</td></tr>
-        <tr><td>493</td><td>475</td><td>431</td><td>Corridor Stretching to Eternity</a><td>9</td><td>0</td><td>1</td></tr>
-        <tr><td>493</td><td>448</td><td>442</td><td>Selene's light</a><td>9</td><td>1</td><td>2</td></tr>
-        <tr><td>493</td><td>458</td><td>435</td><td>My Maid Sweet Maid</a><td>9</td><td>1</td><td>2</td></tr>
-        <tr><td>498</td><td>484</td><td>505</td><td>Swing a Fish to Drive Away Flies</a><td>8</td><td>0</td><td>0</td></tr>
-        <tr><td>498</td><td>506</td><td>481</td><td>The Legendary Titan</a><td>8</td><td>0</td><td>1</td></tr>
-        <tr><td>498</td><td>427</td><td>461</td><td>Officially-Sanctioned Twilight Newspaper</a><td>8</td><td>1</td><td>0</td></tr>
-        <tr><td>498</td><td>442</td><td>442</td><td>Fair Scramble</a><td>8</td><td>0</td><td>0</td></tr>
-        <tr><td>498</td><td>522</td><td>505</td><td>Unnatural Nature</a><td>8</td><td>1</td><td>2</td></tr>
-        <tr><td>498</td><td>484</td><td>472</td><td>Selection</a><td>8</td><td>0</td><td>3</td></tr>
-        <tr><td>498</td><td>475</td><td>519</td><td>Game Over</a><td>8</td><td>1</td><td>1</td></tr>
-        <tr><td>498</td><td>484</td><td>461</td><td>Break the Sabbath</a><td>8</td><td>2</td><td>1</td></tr>
-        <tr><td>498</td><td>522</td><td>489</td><td>Incomplete Plot</a><td>8</td><td>0</td><td>2</td></tr>
-        <tr><td>498</td><td>475</td><td>461</td><td>Plastic Space</a><td>8</td><td>1</td><td>2</td></tr>
-        <tr><td>508</td><td>498</td><td>505</td><td>Intermezzo</a><td>7</td><td>0</td><td>0</td></tr>
-        <tr><td>508</td><td>475</td><td>-</td><td>The Animals' Rest</a><td>7</td><td>0</td><td>0</td></tr>
-        <tr><td>508</td><td>412</td><td>402</td><td>Extra Love</a><td>7</td><td>0</td><td>2</td></tr>
-        <tr><td>511</td><td>540</td><td>530</td><td>Demonic Place</a><td>6</td><td>1</td><td>1</td></tr>
-        <tr><td>511</td><td>498</td><td>461</td><td>Silence</a><td>6</td><td>0</td><td>1</td></tr>
-        <tr><td>511</td><td>506</td><td>519</td><td>Beautiful Nature Sight</a><td>6</td><td>0</td><td>1</td></tr>
-        <tr><td>511</td><td>522</td><td>519</td><td>Free and Easy</a><td>6</td><td>0</td><td>0</td></tr>
-        <tr><td>511</td><td>522</td><td>452</td><td>Youkai Temple</a><td>6</td><td>0</td><td>0</td></tr>
-        <tr><td>511</td><td>522</td><td>530</td><td>A New Wind at the Shrine</a><td>6</td><td>0</td><td>1</td></tr>
-        <tr><td>511</td><td>498</td><td>519</td><td>An Everyday Life with Balls</a><td>6</td><td>0</td><td>0</td></tr>
-        <tr><td>511</td><td>475</td><td>505</td><td>Constant and Unchanging Mazureum</a><td>6</td><td>0</td><td>0</td></tr>
-        <tr><td>511</td><td>458</td><td>489</td><td>Bet on Death</a><td>6</td><td>1</td><td>0</td></tr>
-        <tr><td>511</td><td>514</td><td>489</td><td>Those Who Live in Illusions</a><td>6</td><td>0</td><td>0</td></tr>
-        <tr><td>511</td><td>484</td><td>489</td><td>Border Land</a><td>6</td><td>0</td><td>2</td></tr>
-        <tr><td>511</td><td>484</td><td>472</td><td>Magic Formation ~ Magic Square</a><td>6</td><td>1</td><td>2</td></tr>
-        <tr><td>511</td><td>465</td><td>442</td><td>Frontal Attack</a><td>6</td><td>0</td><td>1</td></tr>
-        <tr><td>524</td><td>545</td><td>519</td><td>Today's Front-Page Headline</a><td>5</td><td>0</td><td>2</td></tr>
-        <tr><td>524</td><td>536</td><td>519</td><td>Being Things Eye To Eye</a><td>5</td><td>1</td><td>1</td></tr>
-        <tr><td>524</td><td>545</td><td>505</td><td>Two Minds of One Body</a><td>5</td><td>0</td><td>1</td></tr>
-        <tr><td>524</td><td>514</td><td>481</td><td>Forest of Tono</a><td>5</td><td>0</td><td>1</td></tr>
-        <tr><td>524</td><td>506</td><td>481</td><td>Arcadian Dream</a><td>5</td><td>0</td><td>0</td></tr>
-        <tr><td>524</td><td>465</td><td>452</td><td>Eternal Paradise</a><td>5</td><td>0</td><td>1</td></tr>
-        <tr><td>524</td><td>514</td><td>472</td><td>Mystic Dream</a><td>5</td><td>0</td><td>1</td></tr>
-        <tr><td>524</td><td>494</td><td>505</td><td>Kioh Gyoku ~ Fairy Dance</a><td>5</td><td>0</td><td>0</td></tr>
-        <tr><td>524</td><td>442</td><td>389</td><td>Holy Knight of Orléans</a><td>5</td><td>0</td><td>0</td></tr>
-        <tr><td>533</td><td>506</td><td>519</td><td>Inner Heart</a><td>4</td><td>0</td><td>0</td></tr>
-        <tr><td>533</td><td>522</td><td>481</td><td>An Unpopular Location</a><td>4</td><td>0</td><td>0</td></tr>
-        <tr><td>533</td><td>540</td><td>489</td><td>Performer Selection</a><td>4</td><td>0</td><td>3</td></tr>
-        <tr><td>533</td><td>514</td><td>505</td><td>Arrival of the Winds of the Era</a><td>4</td><td>0</td><td>0</td></tr>
-        <tr><td>533</td><td>522</td><td>481</td><td>In the Deep-Green Tanuki Forest</a><td>4</td><td>0</td><td>0</td></tr>
-        <tr><td>533</td><td>540</td><td>489</td><td>Scheming Outside the Box</a><td>4</td><td>0</td><td>2</td></tr>
-        <tr><td>533</td><td>540</td><td>505</td><td>Sunfall</a><td>4</td><td>0</td><td>2</td></tr>
-        <tr><td>533</td><td>522</td><td>481</td><td>Sealed Demon's Finale</a><td>4</td><td>0</td><td>0</td></tr>
-        <tr><td>533</td><td>498</td><td>442</td><td>Adoration of Magic</a><td>4</td><td>0</td><td>1</td></tr>
-        <tr><td>533</td><td>540</td><td>505</td><td>Eastern Blue Sky</a><td>4</td><td>0</td><td>2</td></tr>
-        <tr><td>533</td><td>494</td><td>435</td><td>Soul's Resting Place</a><td>4</td><td>0</td><td>1</td></tr>
-        <tr><td>533</td><td>458</td><td>423</td><td>Antique Terror</a><td>4</td><td>1</td><td>0</td></tr>
-        <tr><td>545</td><td>475</td><td>442</td><td>A Popular Location</a><td>3</td><td>0</td><td>1</td></tr>
-        <tr><td>545</td><td>522</td><td>489</td><td>An Unused Location</a><td>3</td><td>0</td><td>1</td></tr>
-        <tr><td>545</td><td>498</td><td>472</td><td>Forms of Manifested Folklore</a><td>3</td><td>0</td><td>0</td></tr>
-        <tr><td>545</td><td>514</td><td>519</td><td>Those Who Know the Truth</a><td>3</td><td>0</td><td>0</td></tr>
-        <tr><td>545</td><td>484</td><td>489</td><td>Each Ending</a><td>3</td><td>1</td><td>0</td></tr>
-        <tr><td>545</td><td>545</td><td>530</td><td>The One Jointly Responsible</a><td>3</td><td>0</td><td>1</td></tr>
-        <tr><td>545</td><td>506</td><td>435</td><td>The Curtain Shall Rise Soon</a><td>3</td><td>0</td><td>0</td></tr>
-        <tr><td>545</td><td>506</td><td>472</td><td>Ghostly Person's Holiday</a><td>3</td><td>1</td><td>0</td></tr>
-        <tr><td>545</td><td>522</td><td>489</td><td>Peaceful</a><td>3</td><td>0</td><td>0</td></tr>
-        <tr><td>545</td><td>522</td><td>489</td><td>Lotus Road</a><td>3</td><td>0</td><td>0</td></tr>
-        <tr><td>545</td><td>454</td><td>519</td><td>Primrose Shiver</a><td>3</td><td>0</td><td>0</td></tr>
-        <tr><td>545</td><td>498</td><td>442</td><td>Illusory Imperial Capital</a><td>3</td><td>0</td><td>1</td></tr>
-        <tr><td>545</td><td>-</td><td>-</td><td>The Sunday After the Storm</a><td>3</td><td>0</td><td>0</td></tr>
-        <tr><td>558</td><td>498</td><td>442</td><td>The Value Is Unrealized</a><td>2</td><td>0</td><td>0</td></tr>
-        <tr><td>558</td><td>522</td><td>505</td><td>Believe in Possibilities</a><td>2</td><td>0</td><td>0</td></tr>
-        <tr><td>558</td><td>545</td><td>489</td><td>An Odd Couple</a><td>2</td><td>0</td><td>1</td></tr>
-        <tr><td>558</td><td>545</td><td>505</td><td>Big Talk</a><td>2</td><td>0</td><td>1</td></tr>
-        <tr><td>558</td><td>545</td><td>530</td><td>In High Spirits</a><td>2</td><td>0</td><td>1</td></tr>
-        <tr><td>558</td><td>536</td><td>489</td><td>Days</a><td>2</td><td>0</td><td>1</td></tr>
-        <tr><td>558</td><td>514</td><td>461</td><td>Shinto Shrine</a><td>2</td><td>0</td><td>1</td></tr>
-        <tr><td>558</td><td>522</td><td>505</td><td>Titled Maid</a><td>2</td><td>0</td><td>0</td></tr>
-        <tr><td>566</td><td>506</td><td>519</td><td>Victory Demonstration</a><td>1</td><td>0</td><td>0</td></tr>
-        <tr><td>566</td><td>536</td><td>505</td><td>Endless</a><td>1</td><td>0</td><td>0</td></tr>
+        <tr><td>329</td><td>267</td><td>272</td><td>Youkai Space Travel</td>60</td><td>4</td><td>11</td></tr>
+        <tr><td>330</td><td>332</td><td>298</td><td>A Land Resplendent With Nature's Beauty</td>59</td><td>7</td><td>7</td></tr>
+        <tr><td>330</td><td>366</td><td>323</td><td>Fly above Hatoyama at night</td>59</td><td>4</td><td>4</td></tr>
+        <tr><td>332</td><td>346</td><td>313</td><td>Welcome to Youkai Temple</td>58</td><td>2</td><td>10</td></tr>
+        <tr><td>332</td><td>317</td><td>304</td><td>Legend of Aokigahara</td>58</td><td>2</td><td>1</td></tr>
+        <tr><td>334</td><td>351</td><td>366</td><td>A Sacred Lot</td>57</td><td>5</td><td>10</td></tr>
+        <tr><td>334</td><td>330</td><td>318</td><td>Eastern Strange Discourse</td>57</td><td>5</td><td>4</td></tr>
+        <tr><td>334</td><td>285</td><td>274</td><td>Star Voyage 2008</td>57</td><td>3</td><td>5</td></tr>
+        <tr><td>334</td><td>309</td><td>290</td><td>Trojan Asteroid Jungle</td>57</td><td>4</td><td>5</td></tr>
+        <tr><td>338</td><td>317</td><td>287</td><td>Magical Storm</td>56</td><td>1</td><td>14</td></tr>
+        <tr><td>338</td><td>314</td><td>326</td><td>Illusion of a Maid ~ Icemilk Magic</td>56</td><td>3</td><td>9</td></tr>
+        <tr><td>338</td><td>305</td><td>272</td><td>Illusionary Sputnik Night</td>56</td><td>1</td><td>7</td></tr>
+        <tr><td>341</td><td>332</td><td>328</td><td>Darkening Dusk</td>55</td><td>2</td><td>9</td></tr>
+        <tr><td>342</td><td>323</td><td>323</td><td>Evening Primrose</td>54</td><td>3</td><td>3</td></tr>
+        <tr><td>342</td><td>323</td><td>274</td><td>Into Backdoor</td>54</td><td>3</td><td>10</td></tr>
+        <tr><td>342</td><td>364</td><td>411</td><td>Eternal Full Moon</td>54</td><td>5</td><td>3</td></tr>
+        <tr><td>345</td><td>364</td><td>366</td><td>The Mound Where the Flowers Reflect</td>53</td><td>6</td><td>7</td></tr>
+        <tr><td>345</td><td>317</td><td>317</td><td>Wind Circulation ~ Wind Tour</td>53</td><td>2</td><td>3</td></tr>
+        <tr><td>345</td><td>377</td><td>395</td><td>This Dull World's Unchanging Pessimism</td>53</td><td>3</td><td>6</td></tr>
+        <tr><td>345</td><td>299</td><td>290</td><td>Flower of Past Days ~ Fairy of Flower</td>53</td><td>4</td><td>8</td></tr>
+        <tr><td>349</td><td>314</td><td>331</td><td>The Gods Give Us Blessed Rain ~ Sylphid Dream</td>52</td><td>1</td><td>5</td></tr>
+        <tr><td>349</td><td>299</td><td>296</td><td>The Tank Girl's Dream</td>52</td><td>4</td><td>6</td></tr>
+        <tr><td>349</td><td>-</td><td>-</td><td>The Cliff Hidden in Deep Green</td>52</td><td>0</td><td>13</td></tr>
+        <tr><td>352</td><td>332</td><td>343</td><td>Humans and Youkai Traversing the Canal</td>50</td><td>3</td><td>4</td></tr>
+        <tr><td>352</td><td>356</td><td>287</td><td>White Traveler</td>50</td><td>1</td><td>4</td></tr>
+        <tr><td>354</td><td>335</td><td>343</td><td>Child of Are</td>49</td><td>7</td><td>4</td></tr>
+        <tr><td>355</td><td>297</td><td>-</td><td>The Stone Baby and the Submerged Bovine</td>48</td><td>1</td><td>5</td></tr>
+        <tr><td>355</td><td>314</td><td>313</td><td>Dream of Arcadia</td>48</td><td>2</td><td>3</td></tr>
+        <tr><td>357</td><td>335</td><td>346</td><td>Raise the Signal Fire of Cheating</td>47</td><td>2</td><td>4</td></tr>
+        <tr><td>358</td><td>323</td><td>318</td><td>Spirit of Avarice</td>46</td><td>5</td><td>14</td></tr>
+        <tr><td>358</td><td>351</td><td>366</td><td>Forest of Dolls</td>46</td><td>2</td><td>9</td></tr>
+        <tr><td>358</td><td>351</td><td>333</td><td>Outsider Cocktail</td>46</td><td>5</td><td>10</td></tr>
+        <tr><td>358</td><td>-</td><td>-</td><td>A Rainbow-Colored World</td>46</td><td>1</td><td>5</td></tr>
+        <tr><td>362</td><td>335</td><td>304</td><td>Civilization of Magic / We Shall Die Together</td>45</td><td>6</td><td>10</td></tr>
+        <tr><td>362</td><td>360</td><td>350</td><td>Visionary Game ~ Dream War</td>45</td><td>7</td><td>8</td></tr>
+        <tr><td>362</td><td>373</td><td>338</td><td>The Taboo Membrane Wall</td>45</td><td>2</td><td>4</td></tr>
+        <tr><td>362</td><td>306</td><td>290</td><td>AN ORDEAL FROM GOD</td>45</td><td>1</td><td>9</td></tr>
+        <tr><td>366</td><td>390</td><td>356</td><td>The Exaggerated Castle Keep</td>44</td><td>1</td><td>5</td></tr>
+        <tr><td>366</td><td>335</td><td>360</td><td>Maple Dream...</td>44</td><td>6</td><td>12</td></tr>
+        <tr><td>366</td><td>372</td><td>343</td><td>Like the Brilliance of Fairies</td>44</td><td>7</td><td>7</td></tr>
+        <tr><td>369</td><td>378</td><td>381</td><td>An Ice Fairy in Spring</td>43</td><td>0</td><td>3</td></tr>
+        <tr><td>369</td><td>323</td><td>318</td><td>The Darkness Brought In by Swallowstone Naturalis Historia</td>43</td><td>2</td><td>8</td></tr>
+        <tr><td>369</td><td>340</td><td>338</td><td>End of Daylight</td>43</td><td>5</td><td>7</td></tr>
+        <tr><td>369</td><td>330</td><td>313</td><td>Sunny Rutile Flection</td>43</td><td>2</td><td>6</td></tr>
+        <tr><td>373</td><td>344</td><td>261</td><td>Sleep Sheep Parade</td>42</td><td>2</td><td>5</td></tr>
+        <tr><td>374</td><td>370</td><td>350</td><td>Flower of Soul ~ Another Dream...</td>41</td><td>4</td><td>5</td></tr>
+        <tr><td>374</td><td>378</td><td>397</td><td>Drunk as I Like</td>41</td><td>2</td><td>2</td></tr>
+        <tr><td>374</td><td>349</td><td>318</td><td>Occult à la Carte</td>41</td><td>0</td><td>2</td></tr>
+        <tr><td>374</td><td>385</td><td>370</td><td>Spirit Battle ~ Perdition crisis</td>41</td><td>7</td><td>5</td></tr>
+        <tr><td>378</td><td>340</td><td>318</td><td>Sailor of Time</td>40</td><td>1</td><td>8</td></tr>
+        <tr><td>378</td><td>356</td><td>312</td><td>Dream Express</td>40</td><td>5</td><td>8</td></tr>
+        <tr><td>380</td><td>335</td><td>350</td><td>A Shadow in the Blue Sky</td>39</td><td>2</td><td>10</td></tr>
+        <tr><td>380</td><td>349</td><td>328</td><td>Scarlet Symphony ~ Scarlet Phoneme</td>39</td><td>3</td><td>9</td></tr>
+        <tr><td>380</td><td>402</td><td>389</td><td>Crimson Maiden ~ Crimson Dead!!</td>39</td><td>7</td><td>11</td></tr>
+        <tr><td>383</td><td>385</td><td>356</td><td>The Earth Spirits' Homecoming</td>38</td><td>2</td><td>6</td></tr>
+        <tr><td>383</td><td>393</td><td>383</td><td>Dimension of Reverie</td>38</td><td>1</td><td>3</td></tr>
+        <tr><td>385</td><td>412</td><td>331</td><td>Nightmare Journal</td>37</td><td>2</td><td>5</td></tr>
+        <tr><td>385</td><td>356</td><td>333</td><td>Magic Shop of Raspberry</td>37</td><td>4</td><td>9</td></tr>
+        <tr><td>387</td><td>374</td><td>359</td><td>Shrine at the Foot of the Mountain</td>36</td><td>2</td><td>5</td></tr>
+        <tr><td>387</td><td>406</td><td>360</td><td>Skies Beyond the Clouds</td>36</td><td>2</td><td>7</td></tr>
+        <tr><td>387</td><td>360</td><td>350</td><td>Energy Daybreak ~ Future Dream...</td>36</td><td>3</td><td>5</td></tr>
+        <tr><td>387</td><td>306</td><td>296</td><td>The Sky Where Cherry Blossoms Flutter Down</td>36</td><td>1</td><td>5</td></tr>
+        <tr><td>387</td><td>363</td><td>298</td><td>Witching Dream</td>36</td><td>0</td><td>5</td></tr>
+        <tr><td>387</td><td>393</td><td>338</td><td>Decoration Battle</td>36</td><td>4</td><td>3</td></tr>
+        <tr><td>387</td><td>348</td><td>356</td><td>Dream Land</td>36</td><td>2</td><td>5</td></tr>
+        <tr><td>394</td><td>402</td><td>383</td><td>Angel's Legend</td>35</td><td>3</td><td>4</td></tr>
+        <tr><td>394</td><td>385</td><td>373</td><td>Dreamy pilot</td>35</td><td>2</td><td>7</td></tr>
+        <tr><td>396</td><td>366</td><td>311</td><td>Deep-Mountain Encounter</td>34</td><td>2</td><td>4</td></tr>
+        <tr><td>396</td><td>354</td><td>350</td><td>Hakurei ~ Eastern Wind </td>34</td><td>2</td><td>6</td></tr>
+        <tr><td>396</td><td>368</td><td>346</td><td>Velvet Maiden Battle ~ Velvet Battle</td>34</td><td>2</td><td>6</td></tr>
+        <tr><td>399</td><td>378</td><td>346</td><td>The Colorless Wind on Youkai Mountain</td>32</td><td>0</td><td>7</td></tr>
+        <tr><td>399</td><td>354</td><td>370</td><td>Ancient Temple of the Netherworld</td>32</td><td>7</td><td>4</td></tr>
+        <tr><td>401</td><td>417</td><td>414</td><td>Dream of a Spring Breeze</td>31</td><td>1</td><td>2</td></tr>
+        <tr><td>401</td><td>412</td><td>364</td><td>A Rose Blooming in the Underworld</td>31</td><td>0</td><td>1</td></tr>
+        <tr><td>401</td><td>378</td><td>366</td><td>Himorogi, Burn in Violet </td>31</td><td>2</td><td>3</td></tr>
+        <tr><td>401</td><td>378</td><td>377</td><td>The Gensokyo That Floats in Outer Space</td>31</td><td>0</td><td>6</td></tr>
+        <tr><td>401</td><td>360</td><td>333</td><td>Herselves</td>31</td><td>1</td><td>3</td></tr>
+        <tr><td>401</td><td>378</td><td>333</td><td>Magician of the Twilight</td>31</td><td>2</td><td>4</td></tr>
+        <tr><td>407</td><td>321</td><td>-</td><td>Lost River</td>29</td><td>0</td><td>5</td></tr>
+        <tr><td>407</td><td>438</td><td>442</td><td>Eastern Recorded Sealing of a Demon ~ Pure Land Mandala</td>29</td><td>3</td><td>3</td></tr>
+        <tr><td>409</td><td>370</td><td>383</td><td>Midnight Spell Card</td>28</td><td>0</td><td>1</td></tr>
+        <tr><td>409</td><td>406</td><td>414</td><td>The Space Shrine Maiden Returns Home</td>28</td><td>0</td><td>3</td></tr>
+        <tr><td>409</td><td>396</td><td>377</td><td>Two Worlds</td>28</td><td>2</td><td>4</td></tr>
+        <tr><td>409</td><td>378</td><td>418</td><td>Adventurer's Tavern of the Old World</td>28</td><td>3</td><td>1</td></tr>
+        <tr><td>413</td><td>406</td><td>431</td><td>The Moon as Seen from the Shrine</td>27</td><td>1</td><td>2</td></tr>
+        <tr><td>413</td><td>412</td><td>418</td><td>Orphic Poetry ~ Pseudoclassic</td>27</td><td>3</td><td>8</td></tr>
+        <tr><td>415</td><td>340</td><td>-</td><td>Everlasting Red Spider Lily</td>25</td><td>1</td><td>2</td></tr>
+        <tr><td>415</td><td>417</td><td>407</td><td>The Fairies' Adventurous Tale</td>25</td><td>3</td><td>3</td></tr>
+        <tr><td>417</td><td>412</td><td>407</td><td>Power of Darkness </td>24</td><td>2</td><td>5</td></tr>
+        <tr><td>417</td><td>390</td><td>360</td><td>Eternal Festival of Illusions</td>24</td><td>0</td><td>5</td></tr>
+        <tr><td>417</td><td>368</td><td>338</td><td>False Strawberry</td>24</td><td>0</td><td>5</td></tr>
+        <tr><td>420</td><td>458</td><td>375</td><td>Immortal Red Soul</td>23</td><td>2</td><td>2</td></tr>
+        <tr><td>420</td><td>421</td><td>402</td><td>Overcome a Thousand Trials</td>23</td><td>3</td><td>5</td></tr>
+        <tr><td>420</td><td>396</td><td>397</td><td>Hakurei Shrine Grounds</td>23</td><td>1</td><td>7</td></tr>
+        <tr><td>420</td><td>417</td><td>377</td><td>Maniacal Princess</td>23</td><td>0</td><td>4</td></tr>
+        <tr><td>420</td><td>475</td><td>395</td><td>Phantasmagoria</td>23</td><td>4</td><td>2</td></tr>
+        <tr><td>420</td><td>374</td><td>349</td><td>Forbidden Magic</td>23</td><td>1</td><td>4</td></tr>
+        <tr><td>420</td><td>434</td><td>452</td><td>End of the World ~ World's End</td>23</td><td>1</td><td>4</td></tr>
+        <tr><td>420</td><td>494</td><td>452</td><td>Firmament Army</td>23</td><td>3</td><td>2</td></tr>
+        <tr><td>428</td><td>390</td><td>397</td><td>The Positive and Negative</td>22</td><td>1</td><td>4</td></tr>
+        <tr><td>429</td><td>442</td><td>423</td><td>Newshound</td>21</td><td>1</td><td>4</td></tr>
+        <tr><td>429</td><td>399</td><td>383</td><td>Heart-Stirring Urban Legends</td>21</td><td>0</td><td>2</td></tr>
+        <tr><td>429</td><td>385</td><td>350</td><td>Bell of the Antipodes</td>21</td><td>0</td><td>4</td></tr>
+        <tr><td>429</td><td>434</td><td>382</td><td>Mushroom Waltz</td>21</td><td>1</td><td>2</td></tr>
+        <tr><td>429</td><td>442</td><td>328</td><td>Shining Heavenly Armillary</td>21</td><td>0</td><td>2</td></tr>
+        <tr><td>429</td><td>406</td><td>377</td><td>Legendary Wonderland</td>21</td><td>2</td><td>2</td></tr>
+        <tr><td>429</td><td>374</td><td>461</td><td>Gensokyo ~ Lotus Land Story</td>21</td><td>1</td><td>2</td></tr>
+        <tr><td>429</td><td>389</td><td>389</td><td>Crescent Dream</td>21</td><td>3</td><td>8</td></tr>
+        <tr><td>437</td><td>421</td><td>411</td><td>She's in a temper!!</td>20</td><td>1</td><td>5</td></tr>
+        <tr><td>437</td><td>438</td><td>423</td><td>Decisive Magic Battle! ~ Fight it out!</td>20</td><td>1</td><td>3</td></tr>
+        <tr><td>437</td><td>448</td><td>435</td><td>Wondrous Tales of Romance ~ Mystic Square</td>20</td><td>1</td><td>6</td></tr>
+        <tr><td>440</td><td>399</td><td>373</td><td>Nemesis' Stronghold</td>19</td><td>2</td><td>0</td></tr>
+        <tr><td>440</td><td>402</td><td>407</td><td>Disunified Field Theory of Magic</td>19</td><td>0</td><td>1</td></tr>
+        <tr><td>442</td><td>484</td><td>519</td><td>The Moon</td>18</td><td>1</td><td>1</td></tr>
+        <tr><td>442</td><td>465</td><td>472</td><td>Highly Responsive to Prayers</td>18</td><td>2</td><td>5</td></tr>
+        <tr><td>442</td><td>434</td><td>397</td><td>World of Empty Dreams </td>18</td><td>0</td><td>1</td></tr>
+        <tr><td>442</td><td>442</td><td>418</td><td>Starbow Dream</td>18</td><td>0</td><td>6</td></tr>
+        <tr><td>442</td><td>427</td><td>423</td><td>Illusionary Girl from Canaveral</td>18</td><td>3</td><td>2</td></tr>
+        <tr><td>447</td><td>438</td><td>423</td><td>Eastern Wind</td>17</td><td>2</td><td>1</td></tr>
+        <tr><td>447</td><td>406</td><td>383</td><td>Swift Battle</td>17</td><td>1</td><td>2</td></tr>
+        <tr><td>447</td><td>420</td><td>364</td><td>A Huge Shadow and a Tiny Conclusion</td>17</td><td>1</td><td>4</td></tr>
+        <tr><td>447</td><td>396</td><td>375</td><td>The Instant is Shorter Than Planck Time</td>17</td><td>1</td><td>3</td></tr>
+        <tr><td>451</td><td>424</td><td>402</td><td>Mound of Life</td>16</td><td>0</td><td>1</td></tr>
+        <tr><td>451</td><td>454</td><td>402</td><td>Ridiculous Game</td>16</td><td>0</td><td>5</td></tr>
+        <tr><td>451</td><td>406</td><td>389</td><td>The Scenery of Living Dolls</td>16</td><td>1</td><td>2</td></tr>
+        <tr><td>451</td><td>465</td><td>452</td><td>An Ice Fairy in Spring - still -</td>16</td><td>1</td><td>4</td></tr>
+        <tr><td>451</td><td>448</td><td>423</td><td>Magical Power of the Mallet</td>16</td><td>0</td><td>2</td></tr>
+        <tr><td>451</td><td>399</td><td>411</td><td>Castle Explorer -in the Sky-</td>16</td><td>1</td><td>6</td></tr>
+        <tr><td>451</td><td>402</td><td>397</td><td>Sacred Battle</td>16</td><td>1</td><td>5</td></tr>
+        <tr><td>451</td><td>448</td><td>407</td><td>Magic of Life</td>16</td><td>0</td><td>3</td></tr>
+        <tr><td>459</td><td>506</td><td>472</td><td>Scarlet Night</td>15</td><td>0</td><td>1</td></tr>
+        <tr><td>459</td><td>427</td><td>431</td><td>the Legend of KAGE</td>15</td><td>1</td><td>5</td></tr>
+        <tr><td>459</td><td>465</td><td>505</td><td>Dream Machine ~ Innocent Power</td>15</td><td>1</td><td>2</td></tr>
+        <tr><td>462</td><td>427</td><td>389</td><td>Lucid Dreamer</td>14</td><td>0</td><td>0</td></tr>
+        <tr><td>462</td><td>427</td><td>414</td><td>Blade of Banishment</td>14</td><td>1</td><td>2</td></tr>
+        <tr><td>462</td><td>427</td><td>423</td><td>Iris</td>14</td><td>1</td><td>2</td></tr>
+        <tr><td>462</td><td>454</td><td>435</td><td>Eastern Recorded Sealing of a Demon ~ A Phantom's Boisterous Dance</td>14</td><td>0</td><td>2</td></tr>
+        <tr><td>462</td><td>434</td><td>389</td><td>The Hide-and-Seek Lifestyle at the Shrine</td>14</td><td>1</td><td>5</td></tr>
+        <tr><td>462</td><td>458</td><td>418</td><td>Disastrous Gemini</td>14</td><td>0</td><td>3</td></tr>
+        <tr><td>462</td><td>424</td><td>452</td><td>Inventive City</td>14</td><td>1</td><td>1</td></tr>
+        <tr><td>469</td><td>484</td><td>418</td><td>Unexpected Visitor</td>13</td><td>0</td><td>1</td></tr>
+        <tr><td>469</td><td>393</td><td>383</td><td>X, the Floating Objects in the Sky</td>13</td><td>0</td><td>3</td></tr>
+        <tr><td>469</td><td>438</td><td>435</td><td>Spiritual Heaven</td>13</td><td>1</td><td>1</td></tr>
+        <tr><td>472</td><td>465</td><td>435</td><td>Usual Days</td>12</td><td>0</td><td>0</td></tr>
+        <tr><td>472</td><td>421</td><td>414</td><td>The Arcane Is Revealed</td>12</td><td>0</td><td>1</td></tr>
+        <tr><td>472</td><td>465</td><td>452</td><td>The Palanquin Ship Flies in the Sky</td>12</td><td>0</td><td>2</td></tr>
+        <tr><td>472</td><td>465</td><td>481</td><td>The Ravine Kappa's Technological Prowess</td>12</td><td>0</td><td>3</td></tr>
+        <tr><td>472</td><td>448</td><td>461</td><td>Shuusou Gyoku ~ Clockworks</td>12</td><td>0</td><td>4</td></tr>
+        <tr><td>477</td><td>465</td><td>472</td><td>Bad Omen</td>11</td><td>0</td><td>0</td></tr>
+        <tr><td>477</td><td>424</td><td>402</td><td>Morning Clouds</td>11</td><td>0</td><td>2</td></tr>
+        <tr><td>477</td><td>427</td><td>442</td><td>Winds of Time</td>11</td><td>0</td><td>1</td></tr>
+        <tr><td>477</td><td>475</td><td>461</td><td>Illusion of Flowers, Air of Scarlet Dream</td>11</td><td>1</td><td>0</td></tr>
+        <tr><td>477</td><td>465</td><td>472</td><td>New Illusion ~ New Fantasy</td>11</td><td>1</td><td>3</td></tr>
+        <tr><td>477</td><td>484</td><td>442</td><td>Warrior Maiden ~ Heart of Valkyrie</td>11</td><td>0</td><td>1</td></tr>
+        <tr><td>483</td><td>536</td><td>461</td><td>End of Summer</td>10</td><td>0</td><td>4</td></tr>
+        <tr><td>483</td><td>514</td><td>489</td><td>Solitary Place</td>10</td><td>1</td><td>2</td></tr>
+        <tr><td>483</td><td>484</td><td>489</td><td>The Village in the Dead of Night</td>10</td><td>1</td><td>1</td></tr>
+        <tr><td>483</td><td>458</td><td>431</td><td>Seven-Orb Collection Showdown</td>10</td><td>1</td><td>1</td></tr>
+        <tr><td>483</td><td>458</td><td>452</td><td>The Inverted Castle Lit by the Setting Sun</td>10</td><td>0</td><td>1</td></tr>
+        <tr><td>483</td><td>522</td><td>489</td><td>Floating with the Tide</td>10</td><td>0</td><td>0</td></tr>
+        <tr><td>483</td><td>454</td><td>-</td><td>Returning Home from the Underground</td>10</td><td>1</td><td>0</td></tr>
+        <tr><td>483</td><td>475</td><td>461</td><td>Oriental Magician</td>10</td><td>0</td><td>2</td></tr>
+        <tr><td>483</td><td>514</td><td>489</td><td>Dream of Eternity</td>10</td><td>0</td><td>0</td></tr>
+        <tr><td>483</td><td>442</td><td>423</td><td>Magical and Hopeless</td>10</td><td>0</td><td>3</td></tr>
+        <tr><td>493</td><td>448</td><td>461</td><td>Wanderings</td>9</td><td>0</td><td>0</td></tr>
+        <tr><td>493</td><td>498</td><td>481</td><td>Equality Under the Law of Dharma</td>9</td><td>1</td><td>2</td></tr>
+        <tr><td>493</td><td>475</td><td>431</td><td>Corridor Stretching to Eternity</td>9</td><td>0</td><td>1</td></tr>
+        <tr><td>493</td><td>448</td><td>442</td><td>Selene's light</td>9</td><td>1</td><td>2</td></tr>
+        <tr><td>493</td><td>458</td><td>435</td><td>My Maid Sweet Maid</td>9</td><td>1</td><td>2</td></tr>
+        <tr><td>498</td><td>484</td><td>505</td><td>Swing a Fish to Drive Away Flies</td>8</td><td>0</td><td>0</td></tr>
+        <tr><td>498</td><td>506</td><td>481</td><td>The Legendary Titan</td>8</td><td>0</td><td>1</td></tr>
+        <tr><td>498</td><td>427</td><td>461</td><td>Officially-Sanctioned Twilight Newspaper</td>8</td><td>1</td><td>0</td></tr>
+        <tr><td>498</td><td>442</td><td>442</td><td>Fair Scramble</td>8</td><td>0</td><td>0</td></tr>
+        <tr><td>498</td><td>522</td><td>505</td><td>Unnatural Nature</td>8</td><td>1</td><td>2</td></tr>
+        <tr><td>498</td><td>484</td><td>472</td><td>Selection</td>8</td><td>0</td><td>3</td></tr>
+        <tr><td>498</td><td>475</td><td>519</td><td>Game Over</td>8</td><td>1</td><td>1</td></tr>
+        <tr><td>498</td><td>484</td><td>461</td><td>Break the Sabbath</td>8</td><td>2</td><td>1</td></tr>
+        <tr><td>498</td><td>522</td><td>489</td><td>Incomplete Plot</td>8</td><td>0</td><td>2</td></tr>
+        <tr><td>498</td><td>475</td><td>461</td><td>Plastic Space</td>8</td><td>1</td><td>2</td></tr>
+        <tr><td>508</td><td>498</td><td>505</td><td>Intermezzo</td>7</td><td>0</td><td>0</td></tr>
+        <tr><td>508</td><td>475</td><td>-</td><td>The Animals' Rest</td>7</td><td>0</td><td>0</td></tr>
+        <tr><td>508</td><td>412</td><td>402</td><td>Extra Love</td>7</td><td>0</td><td>2</td></tr>
+        <tr><td>511</td><td>540</td><td>530</td><td>Demonic Place</td>6</td><td>1</td><td>1</td></tr>
+        <tr><td>511</td><td>498</td><td>461</td><td>Silence</td>6</td><td>0</td><td>1</td></tr>
+        <tr><td>511</td><td>506</td><td>519</td><td>Beautiful Nature Sight</td>6</td><td>0</td><td>1</td></tr>
+        <tr><td>511</td><td>522</td><td>519</td><td>Free and Easy</td>6</td><td>0</td><td>0</td></tr>
+        <tr><td>511</td><td>522</td><td>452</td><td>Youkai Temple</td>6</td><td>0</td><td>0</td></tr>
+        <tr><td>511</td><td>522</td><td>530</td><td>A New Wind at the Shrine</td>6</td><td>0</td><td>1</td></tr>
+        <tr><td>511</td><td>498</td><td>519</td><td>An Everyday Life with Balls</td>6</td><td>0</td><td>0</td></tr>
+        <tr><td>511</td><td>475</td><td>505</td><td>Constant and Unchanging Mazureum</td>6</td><td>0</td><td>0</td></tr>
+        <tr><td>511</td><td>458</td><td>489</td><td>Bet on Death</td>6</td><td>1</td><td>0</td></tr>
+        <tr><td>511</td><td>514</td><td>489</td><td>Those Who Live in Illusions</td>6</td><td>0</td><td>0</td></tr>
+        <tr><td>511</td><td>484</td><td>489</td><td>Border Land</td>6</td><td>0</td><td>2</td></tr>
+        <tr><td>511</td><td>484</td><td>472</td><td>Magic Formation ~ Magic Square</td>6</td><td>1</td><td>2</td></tr>
+        <tr><td>511</td><td>465</td><td>442</td><td>Frontal Attack</td>6</td><td>0</td><td>1</td></tr>
+        <tr><td>524</td><td>545</td><td>519</td><td>Today's Front-Page Headline</td>5</td><td>0</td><td>2</td></tr>
+        <tr><td>524</td><td>536</td><td>519</td><td>Being Things Eye To Eye</td>5</td><td>1</td><td>1</td></tr>
+        <tr><td>524</td><td>545</td><td>505</td><td>Two Minds of One Body</td>5</td><td>0</td><td>1</td></tr>
+        <tr><td>524</td><td>514</td><td>481</td><td>Forest of Tono</td>5</td><td>0</td><td>1</td></tr>
+        <tr><td>524</td><td>506</td><td>481</td><td>Arcadian Dream</td>5</td><td>0</td><td>0</td></tr>
+        <tr><td>524</td><td>465</td><td>452</td><td>Eternal Paradise</td>5</td><td>0</td><td>1</td></tr>
+        <tr><td>524</td><td>514</td><td>472</td><td>Mystic Dream</td>5</td><td>0</td><td>1</td></tr>
+        <tr><td>524</td><td>494</td><td>505</td><td>Kioh Gyoku ~ Fairy Dance</td>5</td><td>0</td><td>0</td></tr>
+        <tr><td>524</td><td>442</td><td>389</td><td>Holy Knight of Orléans</td>5</td><td>0</td><td>0</td></tr>
+        <tr><td>533</td><td>506</td><td>519</td><td>Inner Heart</td>4</td><td>0</td><td>0</td></tr>
+        <tr><td>533</td><td>522</td><td>481</td><td>An Unpopular Location</td>4</td><td>0</td><td>0</td></tr>
+        <tr><td>533</td><td>540</td><td>489</td><td>Performer Selection</td>4</td><td>0</td><td>3</td></tr>
+        <tr><td>533</td><td>514</td><td>505</td><td>Arrival of the Winds of the Era</td>4</td><td>0</td><td>0</td></tr>
+        <tr><td>533</td><td>522</td><td>481</td><td>In the Deep-Green Tanuki Forest</td>4</td><td>0</td><td>0</td></tr>
+        <tr><td>533</td><td>540</td><td>489</td><td>Scheming Outside the Box</td>4</td><td>0</td><td>2</td></tr>
+        <tr><td>533</td><td>540</td><td>505</td><td>Sunfall</td>4</td><td>0</td><td>2</td></tr>
+        <tr><td>533</td><td>522</td><td>481</td><td>Sealed Demon's Finale</td>4</td><td>0</td><td>0</td></tr>
+        <tr><td>533</td><td>498</td><td>442</td><td>Adoration of Magic</td>4</td><td>0</td><td>1</td></tr>
+        <tr><td>533</td><td>540</td><td>505</td><td>Eastern Blue Sky</td>4</td><td>0</td><td>2</td></tr>
+        <tr><td>533</td><td>494</td><td>435</td><td>Soul's Resting Place</td>4</td><td>0</td><td>1</td></tr>
+        <tr><td>533</td><td>458</td><td>423</td><td>Antique Terror</td>4</td><td>1</td><td>0</td></tr>
+        <tr><td>545</td><td>475</td><td>442</td><td>A Popular Location</td>3</td><td>0</td><td>1</td></tr>
+        <tr><td>545</td><td>522</td><td>489</td><td>An Unused Location</td>3</td><td>0</td><td>1</td></tr>
+        <tr><td>545</td><td>498</td><td>472</td><td>Forms of Manifested Folklore</td>3</td><td>0</td><td>0</td></tr>
+        <tr><td>545</td><td>514</td><td>519</td><td>Those Who Know the Truth</td>3</td><td>0</td><td>0</td></tr>
+        <tr><td>545</td><td>484</td><td>489</td><td>Each Ending</td>3</td><td>1</td><td>0</td></tr>
+        <tr><td>545</td><td>545</td><td>530</td><td>The One Jointly Responsible</td>3</td><td>0</td><td>1</td></tr>
+        <tr><td>545</td><td>506</td><td>435</td><td>The Curtain Shall Rise Soon</td>3</td><td>0</td><td>0</td></tr>
+        <tr><td>545</td><td>506</td><td>472</td><td>Ghostly Person's Holiday</td>3</td><td>1</td><td>0</td></tr>
+        <tr><td>545</td><td>522</td><td>489</td><td>Peaceful</td>3</td><td>0</td><td>0</td></tr>
+        <tr><td>545</td><td>522</td><td>489</td><td>Lotus Road</td>3</td><td>0</td><td>0</td></tr>
+        <tr><td>545</td><td>454</td><td>519</td><td>Primrose Shiver</td>3</td><td>0</td><td>0</td></tr>
+        <tr><td>545</td><td>498</td><td>442</td><td>Illusory Imperial Capital</td>3</td><td>0</td><td>1</td></tr>
+        <tr><td>545</td><td>-</td><td>-</td><td>The Sunday After the Storm</td>3</td><td>0</td><td>0</td></tr>
+        <tr><td>558</td><td>498</td><td>442</td><td>The Value Is Unrealized</td>2</td><td>0</td><td>0</td></tr>
+        <tr><td>558</td><td>522</td><td>505</td><td>Believe in Possibilities</td>2</td><td>0</td><td>0</td></tr>
+        <tr><td>558</td><td>545</td><td>489</td><td>An Odd Couple</td>2</td><td>0</td><td>1</td></tr>
+        <tr><td>558</td><td>545</td><td>505</td><td>Big Talk</td>2</td><td>0</td><td>1</td></tr>
+        <tr><td>558</td><td>545</td><td>530</td><td>In High Spirits</td>2</td><td>0</td><td>1</td></tr>
+        <tr><td>558</td><td>536</td><td>489</td><td>Days</td>2</td><td>0</td><td>1</td></tr>
+        <tr><td>558</td><td>514</td><td>461</td><td>Shinto Shrine</td>2</td><td>0</td><td>1</td></tr>
+        <tr><td>558</td><td>522</td><td>505</td><td>Titled Maid</td>2</td><td>0</td><td>0</td></tr>
+        <tr><td>566</td><td>506</td><td>519</td><td>Victory Demonstration</td>1</td><td>0</td><td>0</td></tr>
+        <tr><td>566</td><td>536</td><td>505</td><td>Endless</td>1</td><td>0</td><td>0</td></tr>
     </tbody>
 </table></div>
 <p><strong><a href='#top'>Back to Top</a></strong></p>
@@ -1867,4 +1867,4 @@ music and works will not change when the full results are published.</p>-->
     </table></div>
     <p><strong><a href='#top'>Back to Top</a></strong></p>
 </div>
-<?php?>
+<?php // language detection hack ?>
