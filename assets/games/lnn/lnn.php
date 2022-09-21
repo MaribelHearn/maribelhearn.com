@@ -147,11 +147,11 @@
 			<tbody id='player_tbody'></tbody>
 			<tfoot id='player_tfoot'>
                 <tr>
-                    <td colspan='5'></td>
+                    <td colspan='3'></td>
                 </tr>
                 <tr class='irregular_tr'>
                     <td><?php echo _('Total') ?></td>
-                    <td id='player_sum' colspan='4'></td>
+                    <td id='player_sum' colspan='2'></td>
                 </tr>
             </tfoot>
 		</table>

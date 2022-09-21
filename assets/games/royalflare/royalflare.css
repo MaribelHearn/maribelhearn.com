@@ -164,6 +164,9 @@ a.scene {
 #hy_text {
     margin: 4px 0px 0px 0px;
 }
+#games > p {
+    margin: 2px 0px 2px 0px;
+}
 @media only screen and (max-width: 1400px) {
     .wrap {
         margin-left: 0%;

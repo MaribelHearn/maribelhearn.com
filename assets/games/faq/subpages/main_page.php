@@ -69,7 +69,7 @@ delete it and try again. Otherwise, try any of the following:</p>
 <hr>
 <h2 id='gfx'>Graphical issues</h2>
 <p><em>See the page <a href='/faq/graphics'>Graphical issues</a>.</em></p>
-<p>If your game is wide, small, pixelated or otherwise not shown correctly on your screen, check out the page linked above.</em></p>
+<p>If your game is wide, small, pixelated or otherwise not shown correctly on your screen, check out the page linked above.</p>
 <hr>
 <h2 id='gameplay'>Gameplay questions</h2>
 <h4 id='clear'>What is a '1cc'?</h4>
@@ -79,9 +79,9 @@ You do <em>not</em> need to see the Good Ending for a run to count as a 1cc. For
 <p><em>See the <a href='/faq/shots'>Shottypes</a> page.</em></p>
 <h4 id='extra'>How do I unlock the Extra Stage?</h4>
 <p><em>See the <a href='/faq/extra'>Extra Stage</a> page.</em></p>
-<h4 id='extra'>How do I get more lives / bombs?</h4>
+<h4 id='res'>How do I get more lives / bombs?</h4>
 <p><em>See the <a href='/faq/resources'>Resources</a> page.</em></p>
-<h4 id='extra'>How do I play for score?</h4>
+<h4 id='score'>How do I play for score?</h4>
 <p><em>See the <a href='/faq/scoring'>Scoring</a> page.</em></p>
 <h4 id='bombing'>When should I be bombing?</h4>
 <p>Practice the game and find out which patterns you can dodge easily and which ones you cannot. You want to plan bombs for anything that is not consistent for you,
@@ -124,7 +124,7 @@ To avoid this, either use <a href='/tools#thprac'>thprac</a> or reset your run t
 <p>Desyncs can have several causes. Replays will desync if you changed your active card <em>after</em> beating a boss, or if you are using Momoyo's Centipede card.
 Starting the Extra Stage with Byakuren's Scroll card equipped will also desync your run. These issues are fixed by <a href='/tools#thprac'>thprac</a> (use the F12 menu).</p>
 <hr>
-<?php?>
+<?php // language detection hack ?>
 <!--<h4 id='cd'>How do I set up the game starting from the CD?</h4>
 <p><a href='https://www.youtube.com/watch?v=8Yt2bSh32K8'>This video</a> provides a quick explanation.</p>
 <h4 id='fps'>Why is the game running at 5000 <abbr title='frames per second'>FPS</abbr>?</h4>

@@ -235,7 +235,7 @@ Lives are used for bomb restock but more importantly to spawn bonus static otter
 which are used to hyper the same pattern more than once if there is enough time.</p>
 <h4 id='links'>Useful Links</h4>
 <p>Just a bunch of useful links in no particular order.</p>
-<p><a href='/wr''><span class='icon wr_icon'></span> Touhou World Records</a> has the world records list.</p>
+<p><a href='/wr'><span class='icon wr_icon'></span> Touhou World Records</a> has the world records list.</p>
 <p><a href='/royalflare'><span class='icon royalflare_icon'></span> Royalflare Archive</a> archives Royalflare. Royalflare was a site that used to archive replays. It shut down in early 2022. Any scoring replay reference from before 2022 can be found here.</p>
 <p>As of currently writing this guide, there is no big replay archive for everything,
 but some other helpful links to find and post replays can be <a href='http://replay.lunarcast.net/'>Lunarcast</a>
@@ -252,4 +252,4 @@ Anyone is welcome here, we have new players, old-time players, big community fig
 This server is your best chance to interact and talk with other Touhou players, it's also your best chance of trying to
 ask a good western scoring player of your category for help (assuming they are in here, which MOST are, but it's not guaranteed).</p>
 <p>Thanks for reading!</p>
-<?php?>
+<?php // language detection hack ?>

@@ -74,4 +74,4 @@ Open Task Manager, and you should be able to find it in the "Processes" tab (lik
 <h4>vpatch error</h4>
 <img class='error' src='/assets/games/faq/eosd/eosd_error_vpatch.png' alt='EoSD vpatch error message'>
 <p>A "game not found" error message given by vpatch. Make sure your EoSD executable is named <span class='code'>東方紅魔郷.exe</span>.</p>
-<?php?>
+<?php // language detection hack ?>

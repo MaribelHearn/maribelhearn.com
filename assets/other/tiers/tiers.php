@@ -80,7 +80,7 @@
     <div id='info_desktop' class='modal_inner'>
         <h2>Welcome!</h2>
         <p>This page allows you to create your own Touhou tier lists. Currently, you can sort characters, works, and shottypes. Usage instructions are listed below.</p>
-        <ul id='instructions_list'>
+        <ul class='instructions_list'>
             <li><strong>Adding Items:</strong> Drag an item onto a tier box, or the field, to add that item to it. You can also double click an item to add it to a tier, using a popup menu.</li>
             <li><strong>Moving Items:</strong> Drag an item onto another item to move that item to its location. The same double click menu that can be used in the picker can also be used for this.</li>
             <li><strong>Multi Selection:</strong> Click multiple items to drag them together, adding them to a tier in your 
@@ -101,7 +101,7 @@
     <div id='info_mobile' class='modal_inner'>
         <h3>Welcome!</h3>
         <p>This page allows you to create your own Touhou tier lists. Currently, you can sort characters, works, and shottypes. Usage instructions are listed below.</p>
-        <ul id='instructions_list'>
+        <ul class='instructions_list'>
             <li><strong>Adding Items:</strong> Long press and drag an item into a tier box or the field.</li>
             <li><strong>Moving Items:</strong> Long press and drag an item onto another item to move that item to its location.</li>
             <li><strong>Multi Selection:</strong> Tap multiple items to drag them together, adding them to a tier, in your clicking order.</li>
