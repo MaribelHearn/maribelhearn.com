@@ -8,7 +8,6 @@ If you encounter any of these issues, you are on the right page.</p>
 <p>There are two ways to address this: configuring your graphics to maintain the game's aspect ratio, or using <a href='/faq#vpatch'>vpatch</a> to play in a window scaled to your preferred size.
 <br>
 <strong>Warning:</strong> When using Windows 10, playing in windowed mode increases input lag.</p>
-</p>
 <p>If you own an NVIDIA graphics card, such as the GeForce GTX 1060 or RTX 2070, see <a href='#nvidia'>NVIDIA</a>.
 <br>
 If you own an AMD graphics card, such as the Radeon RX 580 or Radeon Vega 8, see <a href='#amd'>AMD</a>.
@@ -72,4 +71,4 @@ not obscure the bottom of your game. To change the window size, adjust the value
         <td>480</td>
     </tr>
 </table>
-<?php?>
+<?php // language detection hack ?>

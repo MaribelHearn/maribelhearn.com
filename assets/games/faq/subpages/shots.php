@@ -221,7 +221,7 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
         <th>MarisaB<br>(Patchouli)</th>
         <td><strong>Fire:</strong> forward focus shot.<br><strong>Water:</strong> spreadshot.<br><strong>Wood:</strong>
         wide spreadshot.<br><strong>Metal:</strong> sideways shot.<br><strong>Earth:</strong> backwards shot.</td>
-        <td>Can switch between 5 shottypes by tapping shoot and focus at the same time.</p>
+        <td>Can switch between 5 shottypes by tapping shoot and focus at the same time.</td>
         <td>Versatile shot. Water shot has good spread for stages.</td>
         <td>Fire shot has low shot damage. Bomb is hard to use optimally. Shot switching takes some practice.</td>
     </tr>
@@ -547,4 +547,4 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
         <td>Low shot damage.</td>
     </tr>
 </table>
-<?php?>
+<?php // language detection hack ?>

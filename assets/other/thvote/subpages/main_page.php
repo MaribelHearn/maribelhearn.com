@@ -1119,8 +1119,9 @@ music and works will not change when the full results are published.</p>-->
                 <td><strong>Hokkaido</strong></td>
                 <td>429</td>
                 <td>3.93%</td>
-            </tr><tr>
-                <td><strong>Northern Tohoku</strong><br>(Aomori, Iwate, Akita)</th>
+            </tr>
+            <tr>
+                <td><strong>Northern Tohoku</strong><br>(Aomori, Iwate, Akita)</td>
                 <td>212</td>
                 <td>1.94%</td>
             </tr>
@@ -1835,19 +1836,19 @@ music and works will not change when the full results are published.</p>-->
     <h3>10. Have you participated in the Touhou Popularity Poll before?</h3>
     <p>Valid responses: 12,316</p>
     <div class='overflow'><table class='poll table sortable'>
+        <colgroup>
+            <col class='col2'>
+            <col class='col3'>
+            <col class='col4'>
+        </colgroup>
+        <thead>
+            <tr>
+                <th class='header'>Answer</th>
+                <th class='header'>Responses</th>
+                <th class='header'>Percentage</th>
+            </tr>
+        </thead>
         <tbody>
-            <colgroup>
-                <col class='col2'>
-                <col class='col3'>
-                <col class='col4'>
-            </colgroup>
-            <thead>
-                <tr>
-                    <th class='header'>Answer</th>
-                    <th class='header'>Responses</th>
-                    <th class='header'>Percentage</th>
-                </tr>
-            </thead>
             <tr>
                 <td>Never voted before</td>
                 <td>5,563</td>

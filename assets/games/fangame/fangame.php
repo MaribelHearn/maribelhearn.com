@@ -507,7 +507,7 @@
 		</tbody>
 	</table></div>
 	<h2 id='scores'>Notable Scores</h2>
-	<h3 class='fangames'>Fangames</h2>
+	<h3 class='fangames'>Fangames</h3>
     <div class='overflow'><table class='sortable'>
     	<caption><span class='fangame sss'></span> 东方夏夜祭 ~ Shining Shooting Star</caption>
 		<thead>

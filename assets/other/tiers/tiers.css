@@ -123,6 +123,9 @@ li {
     margin: -2px;
     border: 2px solid #ddd;
 }
+.instructions_list {
+    text-align: left;
+}
 .github_icon {
     background-position: -1040px 0px;
 }
@@ -235,9 +238,6 @@ li {
 }
 #buttons_mobile, #add_tier_box_mobile {
     display: none;
-}
-#instructions_list, #instructions_mobile {
-    text-align: left;
 }
 #show {
     display: none;
