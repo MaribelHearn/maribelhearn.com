@@ -16,16 +16,13 @@ function toggleVideo() {
     preferVideo = !preferVideo;
 
     if (preferVideo) {
-        localStorage.setItem("preferVideo", true);
+        setCookie("prefer_video", true);
     } else {
-        localStorage.removeItem("preferVideo");
+        deleteCookie("prefer_video");
     }
 
     const player = document.getElementById("player").value;
-
-    if (player !== "") {
-        showPlayerLNNs(player);
-    }
+    location.reload();
 }
 
 function restrictions(game) {
@@ -180,10 +177,10 @@ function getPlayerGameLNNs(player, game) {
             result.runs.push(_(character) + (type === "" ? "" : ` (${_(type)})`));
 
             if (preferVideo && videoLNNs.hasOwnProperty(game + shot + player)) {
-                result.replays.push(`<a href='${videoLNNs[game + shot + player]}' target='_blank'>${videoLNNs[game + shot + player]}</a>`);
+                result.replays.push(`<a href='${videoLNNs[game + shot + player]}' target='_blank'>Video link</a>`);
             } else if (gameAbbr(game) < 6 || missingReplays.includes(game + player.removeSpaces() + shot)) {
                 if (videoLNNs.hasOwnProperty(game + shot + player)) {
-                    result.replays.push(`<a href='${videoLNNs[game + shot + player]}' target='_blank'>${videoLNNs[game + shot + player]}</a>`);
+                    result.replays.push(`<a href='${videoLNNs[game + shot + player]}' target='_blank'>Video link</a>`);
                 } else {
                     result.replays.push('-');
                 }
@@ -336,9 +333,9 @@ function init() {
     setAttributes();
     videoLNNs = parseVideos();
     missingReplays = document.getElementById("missing_replays").value;
-    
-    if (localStorage.hasOwnProperty("preferVideo")) {
-        preferVideo = Boolean(localStorage.getItem("preferVideo"));
+
+    if (getCookie("prefer_video")) {
+        preferVideo = Boolean(getCookie("prefer_video"));
         document.getElementById("toggle_video").checked = preferVideo;
     }
 

@@ -472,10 +472,10 @@ function addPlayerWR(playerWRs, game, diff, shot, isUnverified) {
     playerWRs.dates.push(`<span class='datestring_player'>${date}</span>`);
 
     if (preferVideo && replay) {
-        playerWRs.replays.push(`<a href='${replay}'>${replay}</a>`);
+        playerWRs.replays.push(`<a href='${replay}' target='_blank'>Video link</a>`);
     } else if (gameAbbr(game) < 6 || missingReplays.includes(game + diff + shot) || isUnverified) {
         if (replay) {
-            playerWRs.replays.push(`<a href='${replay}' target='_blank'>${replay}</a>`);
+            playerWRs.replays.push(`<a href='${replay}' target='_blank'>Video link</a>`);
         } else {
             playerWRs.replays.push('-');
         }
