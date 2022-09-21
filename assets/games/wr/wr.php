@@ -310,7 +310,7 @@
 		<select id='player'>
             <option value=''>...</option>
             <?php
-                asort($pl);
+                natcasesort($pl);
                 foreach ($pl as $key => $player) {
                     echo '<option value="' . $player . '">' . $player . '</option>';
                 }
