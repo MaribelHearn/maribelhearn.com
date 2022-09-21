@@ -41,7 +41,7 @@ function directory(string $page, array $main) {
 
 function closest_page(string $url) {
     $min_distance = PHP_INT_MAX;
-    foreach (glob('*/*/*/*') as $file) {
+    foreach (glob('assets/*/*/*') as $file) {
         if (strpos($file, '.php') && !strpos($file, '_') && $file != 'error.php') {
             $matching_file = end(preg_split('/\//', $file));
             $matching_page = str_replace('.php', '', $matching_file);
