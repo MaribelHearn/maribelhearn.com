@@ -489,12 +489,14 @@ function addPlayerWR(playerWRs, game, diff, shot, isUnverified) {
 }
 
 function showPlayerWRs(player) {
+    const playerList = document.getElementById("player_list");
+
     if (typeof player == "object") {
         player = this.value; // if event listener fired
     }
 
     if (player === "") {
-        document.getElementById("player_list").style.display = "none";
+        playerList.style.display = "none";
         return;
     }
 
@@ -543,7 +545,7 @@ function showPlayerWRs(player) {
     }
 
     if (sum === 0) {
-        document.getElementById("player_list").style.display = "none";
+        playerList.style.display = "none";
         return;
     }
 
@@ -559,7 +561,7 @@ function showPlayerWRs(player) {
     }
 
     document.getElementById("player_sum").innerHTML = sum;
-    document.getElementById("player_list").style.display = "block";
+    playerList.style.display = "block";
 }
 
 function reloadTable() {
@@ -636,6 +638,25 @@ function setAttributes() {
     }
 }
 
+function checkHash() {
+    // player in hash links to player WRs
+    if (location.hash !== "") {
+        const hash = decodeURIComponent(location.hash.substring(1));
+        const players = document.getElementById("player").children;
+
+        for (const option of players) {
+            const player = option.value;
+
+            if (hash == player) {
+                document.getElementById("player").value = player;
+                document.getElementById("playersearch").scrollIntoView();
+                showPlayerWRs(player);
+                break;
+            }
+        }
+    }
+}
+
 function init() {
     if (getCookie("lang") == "ja_JP" || location.href.includes("?hl=jp")) {
         language = "ja_JP";
@@ -659,6 +680,7 @@ function init() {
     missingReplaysElement.parentNode.removeChild(missingReplaysElement);
     setEventListeners();
     setAttributes();
+    checkHash();
     
     if (getCookie("prefer_video")) {
         preferVideo = Boolean(getCookie("prefer_video"));
@@ -673,3 +695,4 @@ function init() {
 }
 
 window.addEventListener("DOMContentLoaded", init, false);
+window.addEventListener("hashchange", checkHash, false);
