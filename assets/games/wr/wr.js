@@ -680,7 +680,6 @@ function init() {
     missingReplaysElement.parentNode.removeChild(missingReplaysElement);
     setEventListeners();
     setAttributes();
-    checkHash();
     
     if (getCookie("prefer_video")) {
         preferVideo = Boolean(getCookie("prefer_video"));
@@ -692,6 +691,8 @@ function init() {
     } else {
         document.getElementById("dates").checked = true;
     }
+
+    checkHash();
 }
 
 window.addEventListener("DOMContentLoaded", init, false);
