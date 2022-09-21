@@ -202,12 +202,14 @@ function getPlayerGameLNNs(player, game) {
 }
 
 function showPlayerLNNs(player) {
+    const playerList = document.getElementById("player_list");
+
     if (typeof player == "object") {
         player = this.value; // if event listener fired
     }
 
     if (player === "") {
-        document.getElementById("player_list").style.display = "none";
+        playerList.style.display = "none";
         return;
     }
 
@@ -240,12 +242,12 @@ function showPlayerLNNs(player) {
     }
 
     if (sum === 0) {
-        document.getElementById("player_list").style.display = "none";
+        playerList.style.display = "none";
         return;
     }
 
     document.getElementById("player_sum").innerHTML = sum;
-    document.getElementById("player_list").style.display = "block";
+    playerList.style.display = "block";
 }
 
 function setLanguage(event) {
@@ -310,11 +312,31 @@ function parseVideos() {
     return result;
 }
 
+function checkHash() {
+    // player in hash links to player LNNs
+    if (location.hash !== "") {
+        const hash = decodeURIComponent(location.hash.substring(1));
+        const players = document.getElementById("player").children;
+
+        for (const option of players) {
+            const player = option.value;
+
+            if (hash == player) {
+                document.getElementById("player").value = player;
+                document.getElementById("playersearch").scrollIntoView();
+                showPlayerLNNs(player);
+                break;
+            }
+        }
+    }
+}
+
 function init() {
     setEventListeners();
     setAttributes();
     videoLNNs = parseVideos();
-    missingReplays = document.getElementById("missingReplays").value;
+    missingReplays = document.getElementById("missing_replays").value;
+    checkHash();
     
     if (localStorage.hasOwnProperty("preferVideo")) {
         preferVideo = Boolean(localStorage.getItem("preferVideo"));
@@ -323,3 +345,4 @@ function init() {
 }
 
 window.addEventListener("DOMContentLoaded", init, false);
+window.addEventListener("hashchange", checkHash, false);

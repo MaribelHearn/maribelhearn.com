@@ -233,6 +233,6 @@
         </table>
     </div>
     <p id='back'><strong><a id='backtotop' href='#top'><?php echo _('Back to Top'); ?></a></strong></p>
-	<?php echo '<input id="missingReplays" type="hidden" value="' . implode('', $missing_replays) . '">' ?>
+	<?php echo '<input id="missing_replays" type="hidden" value="' . implode('', $missing_replays) . '">' ?>
 	<?php echo '<input id="videos" type="hidden" value="' . implode(',', $video_lnns) . '">' ?>
 </div>
