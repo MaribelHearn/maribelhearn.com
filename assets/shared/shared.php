@@ -41,9 +41,10 @@ function directory(string $page, array $main) {
 
 function closest_page(string $url) {
     $min_distance = PHP_INT_MAX;
-    foreach (glob('*/*/*') as $file) {
+    foreach (glob('*/*/*/*') as $file) {
         if (strpos($file, '.php') && !strpos($file, '_') && $file != 'error.php') {
-            $matching_page = substr(preg_split('/\//', $file)[2], 0, -4);
+            $matching_file = end(preg_split('/\//', $file));
+            $matching_page = str_replace('.php', '', $matching_file);
             $min_distance = min(levenshtein($url, $matching_page), $min_distance);
             if (levenshtein($url, $matching_page) <= $min_distance) {
                 $min_page = $matching_page;
@@ -59,6 +60,7 @@ function redirect_to_closest(string $url) {
         $min_page = $closest_page[0];
         $min_distance = $closest_page[1];
         if ($min_distance < 3 && $min_distance >= 0) {
+            echo $min_page . '<br>' . $min_distance . '<br>';
             $location = $_SERVER['SERVER_NAME'] !== 'localhost' ? 'https://maribelhearn.com/' : 'http://localhost/';
             header('Location: ' . $location . $min_page . '?redirect=' . $url);
         }
