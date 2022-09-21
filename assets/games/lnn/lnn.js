@@ -336,12 +336,13 @@ function init() {
     setAttributes();
     videoLNNs = parseVideos();
     missingReplays = document.getElementById("missing_replays").value;
-    checkHash();
     
     if (localStorage.hasOwnProperty("preferVideo")) {
         preferVideo = Boolean(localStorage.getItem("preferVideo"));
         document.getElementById("toggle_video").checked = preferVideo;
     }
+
+    checkHash();
 }
 
 window.addEventListener("DOMContentLoaded", init, false);
