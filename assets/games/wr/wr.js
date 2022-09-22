@@ -692,6 +692,12 @@ function init() {
         document.getElementById("dates").checked = true;
     }
 
+    const player = document.getElementById("player").value;
+
+    if (player !== "") {
+        showPlayerWRs(player);
+    }
+
     checkHash();
 }
 
