@@ -339,6 +339,12 @@ function init() {
         document.getElementById("toggle_video").checked = preferVideo;
     }
 
+    const player = document.getElementById("player").value;
+
+    if (player !== "") {
+        showPlayerLNNs(player);
+    }
+
     checkHash();
 }
 
