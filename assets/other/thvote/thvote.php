@@ -10,7 +10,7 @@
         } else {
             $subpage = '';
         }
-        echo '<h1>THWiki Popularity Poll 2021 Results' . ($subpage == 'extras' ? ' - Extra Statistics' : '') . '</h1>';
+        echo '<h1>THWiki Popularity Poll 2022 Results' . ($subpage == 'extras' ? ' - Extra Statistics' : '') . '</h1>';
         if (!empty($_GET['redirect'])) {
             echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
         }
