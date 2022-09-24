@@ -123,7 +123,1532 @@ music and works will not change when the full results are published.</p>-->
 <p><strong><a href='#top'>Back to Top</a></strong></p>
 <h2 id='questionnaire'>Questionnaire</h2>
 <div>
-    <div><section class="_age_1orw9_,253"><h2>01. Age</h2><p>Valid responses: 15,135<button class="_toggle_1orw9_,253">詳細表示</button></p><table class="_result_ndbud_14"><tbody><tr><th class="_alignLeft_ndbud_63">-9</th><td class="_fixnum_ndbud_88">36</td><td class="_percent_ndbud_88">0.24%</td></tr><tr><th class="_alignLeft_ndbud_63">10-14</th><td class="_fixnum_ndbud_88">2,314</td><td class="_percent_ndbud_88">15.29%</td></tr><tr><th class="_alignLeft_ndbud_63">15-19</th><td class="_fixnum_ndbud_88">5,939</td><td class="_percent_ndbud_88">39.24%</td></tr><tr><th class="_alignLeft_ndbud_63">20-24</th><td class="_fixnum_ndbud_88">3,343</td><td class="_percent_ndbud_88">22.09%</td></tr><tr><th class="_alignLeft_ndbud_63">25-29</th><td class="_fixnum_ndbud_88">1,711</td><td class="_percent_ndbud_88">11.30%</td></tr><tr><th class="_alignLeft_ndbud_63">30-34</th><td class="_fixnum_ndbud_88">912</td><td class="_percent_ndbud_88">6.03%</td></tr><tr><th class="_alignLeft_ndbud_63">35-39</th><td class="_fixnum_ndbud_88">469</td><td class="_percent_ndbud_88">3.10%</td></tr><tr><th class="_alignLeft_ndbud_63">40-44</th><td class="_fixnum_ndbud_88">223</td><td class="_percent_ndbud_88">1.47%</td></tr><tr><th class="_alignLeft_ndbud_63">45-49</th><td class="_fixnum_ndbud_88">100</td><td class="_percent_ndbud_88">0.66%</td></tr><tr><th class="_alignLeft_ndbud_63">50-</th><td class="_fixnum_ndbud_88">88</td><td class="_percent_ndbud_88">0.58%</td></tr></tbody></table></section><section><h2>02. Gender</h2><p>Valid responses: 15,625</p><table class="_result_ndbud_14"><tbody><tr><th class="_alignLeft_ndbud_63">Male</th><td class="_fixnum_ndbud_88">11,676</td><td class="_percent_ndbud_88">74.73%</td></tr><tr><th class="_alignLeft_ndbud_63">Female</th><td class="_fixnum_ndbud_88">3,392</td><td class="_percent_ndbud_88">21.71%</td></tr><tr><th class="_alignLeft_ndbud_63">Other</th><td class="_fixnum_ndbud_88">557</td><td class="_percent_ndbud_88">3.56%</td></tr></tbody></table></section><section><h2>03. Location</h2><p>Valid responses: 14,561</p><table class="_result_ndbud_14 _small_ndbud_77"><tbody><tr><th class="_alignLeft_ndbud_63">Hokkaido</th><td class="_fixnum_ndbud_88">496</td><td class="_percent_ndbud_88">3.41%</td></tr><tr><th class="_alignLeft_ndbud_63"><b>Northern Tohoku</b><br>(Aomori, Iwate, Akita)</th><td class="_fixnum_ndbud_88">280</td><td class="_percent_ndbud_88">1.92%</td></tr><tr><th class="_alignLeft_ndbud_63"><b>Southern Tohoku</b><br>(Miyagi, Yamagata, Fukushima)</th><td class="_fixnum_ndbud_88">497</td><td class="_percent_ndbud_88">3.41%</td></tr><tr><th class="_alignLeft_ndbud_63"><b>Northern Kanto</b><br>(Ibaraki, Tochigi, Gunma)</th><td class="_fixnum_ndbud_88">654</td><td class="_percent_ndbud_88">4.49%</td></tr><tr><th class="_alignLeft_ndbud_63"><b>Southern Kanto</b><br>(Saitama, Chiba, Tokyo, Kanagawa)</th><td class="_fixnum_ndbud_88">3,879</td><td class="_percent_ndbud_88">26.64%</td></tr><tr><th class="_alignLeft_ndbud_63"><b>Hokuriku</b><br>(Toyama, Ishikawa, Fukui)</th><td class="_fixnum_ndbud_88">263</td><td class="_percent_ndbud_88">1.81%</td></tr><tr><th class="_alignLeft_ndbud_63"><b>Koshinetsu</b><br>(Niigata, Yamanashi, Nagano)</th><td class="_fixnum_ndbud_88">506</td><td class="_percent_ndbud_88">3.48%</td></tr><tr><th class="_alignLeft_ndbud_63"><b>Tokai</b><br>(Aichi, Mie, Gifu, Shizuoka)</th><td class="_fixnum_ndbud_88">1,411</td><td class="_percent_ndbud_88">9.69%</td></tr><tr><th class="_alignLeft_ndbud_63"><b>Kansai</b><br>(Osaka, Kyoto, Hyogo, Nara, Shiga, Wakayama)</th><td class="_fixnum_ndbud_88">1,776</td><td class="_percent_ndbud_88">12.20%</td></tr><tr><th class="_alignLeft_ndbud_63"><b>Chugoku</b><br>(Tottori, Shimane, Okayama, Hiroshima, Yamaguchi)</th><td class="_fixnum_ndbud_88">587</td><td class="_percent_ndbud_88">4.03%</td></tr><tr><th class="_alignLeft_ndbud_63"><b>Shikoku</b><br>(Tokushima, Ehime, Kagawa, Kochi)</th><td class="_fixnum_ndbud_88">279</td><td class="_percent_ndbud_88">1.92%</td></tr><tr><th class="_alignLeft_ndbud_63"><b>Northern Kyushu</b><br>(Fukuoka, Saga, Nagasaki, Oita)</th><td class="_fixnum_ndbud_88">567</td><td class="_percent_ndbud_88">3.89%</td></tr><tr><th class="_alignLeft_ndbud_63"><b>Southern Kyushu</b><br>(Kumamoto, Miyazaki, Kagoshima, Okinawa)</th><td class="_fixnum_ndbud_88">363</td><td class="_percent_ndbud_88">2.49%</td></tr><tr><th class="_alignLeft_ndbud_63"><b>East Asia</b><br>(China, Taiwan, Korea, etc.)</th><td class="_fixnum_ndbud_88">1,225</td><td class="_percent_ndbud_88">8.41%</td></tr><tr><th class="_alignLeft_ndbud_63">Southeast Asia</th><td class="_fixnum_ndbud_88">270</td><td class="_percent_ndbud_88">1.85%</td></tr><tr><th class="_alignLeft_ndbud_63">South, Central, West Asia</th><td class="_fixnum_ndbud_88">39</td><td class="_percent_ndbud_88">0.27%</td></tr><tr><th class="_alignLeft_ndbud_63">Europe</th><td class="_fixnum_ndbud_88">482</td><td class="_percent_ndbud_88">3.31%</td></tr><tr><th class="_alignLeft_ndbud_63">Africa</th><td class="_fixnum_ndbud_88">21</td><td class="_percent_ndbud_88">0.14%</td></tr><tr><th class="_alignLeft_ndbud_63">North America</th><td class="_fixnum_ndbud_88">681</td><td class="_percent_ndbud_88">4.68%</td></tr><tr><th class="_alignLeft_ndbud_63">South America</th><td class="_fixnum_ndbud_88">222</td><td class="_percent_ndbud_88">1.52%</td></tr><tr><th class="_alignLeft_ndbud_63">Oceania</th><td class="_fixnum_ndbud_88">63</td><td class="_percent_ndbud_88">0.43%</td></tr></tbody></table></section><section><h2>04. Difficulty level 1cc'd</h2><div class="_subsection_1orw9_,257"><div class="_subject_1orw9_,261"><h3>EoSD</h3><p>Valid responses: 11,877</p></div><table class="_result_ndbud_14"><tbody><tr><th class="_alignLeft_ndbud_63">Not played</th><td class="_fixnum_ndbud_88">4,683</td><td class="_percent_ndbud_88">39.43%</td></tr><tr><th class="_alignLeft_ndbud_63">Not cleared</th><td class="_fixnum_ndbud_88">1,058</td><td class="_percent_ndbud_88">8.91%</td></tr><tr><th class="_alignLeft_ndbud_63">Easy 1cc</th><td class="_fixnum_ndbud_88">1,399</td><td class="_percent_ndbud_88">11.78%</td></tr><tr><th class="_alignLeft_ndbud_63">Normal 1cc</th><td class="_fixnum_ndbud_88">2,906</td><td class="_percent_ndbud_88">24.47%</td></tr><tr><th class="_alignLeft_ndbud_63">Hard 1cc</th><td class="_fixnum_ndbud_88">1,027</td><td class="_percent_ndbud_88">8.65%</td></tr><tr><th class="_alignLeft_ndbud_63">Lunatic 1cc</th><td class="_fixnum_ndbud_88">804</td><td class="_percent_ndbud_88">6.77%</td></tr></tbody></table></div><div class="_subsection_1orw9_,257"><div class="_subject_1orw9_,261"><h3>PCB</h3><p>Valid responses: 11,554</p></div><table class="_result_ndbud_14"><tbody><tr><th class="_alignLeft_ndbud_63">Not played</th><td class="_fixnum_ndbud_88">5,052</td><td class="_percent_ndbud_88">43.73%</td></tr><tr><th class="_alignLeft_ndbud_63">Not cleared</th><td class="_fixnum_ndbud_88">844</td><td class="_percent_ndbud_88">7.30%</td></tr><tr><th class="_alignLeft_ndbud_63">Easy 1cc</th><td class="_fixnum_ndbud_88">1,195</td><td class="_percent_ndbud_88">10.34%</td></tr><tr><th class="_alignLeft_ndbud_63">Normal 1cc</th><td class="_fixnum_ndbud_88">2,654</td><td class="_percent_ndbud_88">22.97%</td></tr><tr><th class="_alignLeft_ndbud_63">Hard 1cc</th><td class="_fixnum_ndbud_88">960</td><td class="_percent_ndbud_88">8.31%</td></tr><tr><th class="_alignLeft_ndbud_63">Lunatic 1cc</th><td class="_fixnum_ndbud_88">849</td><td class="_percent_ndbud_88">7.35%</td></tr></tbody></table></div><div class="_subsection_1orw9_,257"><div class="_subject_1orw9_,261"><h3>IN</h3><p>Valid responses: 11,491</p></div><table class="_result_ndbud_14"><tbody><tr><th class="_alignLeft_ndbud_63">Not played</th><td class="_fixnum_ndbud_88">4,926</td><td class="_percent_ndbud_88">42.87%</td></tr><tr><th class="_alignLeft_ndbud_63">Not cleared</th><td class="_fixnum_ndbud_88">668</td><td class="_percent_ndbud_88">5.81%</td></tr><tr><th class="_alignLeft_ndbud_63">Easy 1cc</th><td class="_fixnum_ndbud_88">1,317</td><td class="_percent_ndbud_88">11.46%</td></tr><tr><th class="_alignLeft_ndbud_63">Normal 1cc</th><td class="_fixnum_ndbud_88">2,705</td><td class="_percent_ndbud_88">23.54%</td></tr><tr><th class="_alignLeft_ndbud_63">Hard 1cc</th><td class="_fixnum_ndbud_88">1,026</td><td class="_percent_ndbud_88">8.93%</td></tr><tr><th class="_alignLeft_ndbud_63">Lunatic 1cc</th><td class="_fixnum_ndbud_88">849</td><td class="_percent_ndbud_88">7.39%</td></tr></tbody></table></div><div class="_subsection_1orw9_,257"><div class="_subject_1orw9_,261"><h3>PoFV</h3><p>Valid responses: 11,010</p></div><table class="_result_ndbud_14"><tbody><tr><th class="_alignLeft_ndbud_63">Not played</th><td class="_fixnum_ndbud_88">6,297</td><td class="_percent_ndbud_88">57.19%</td></tr><tr><th class="_alignLeft_ndbud_63">Not cleared</th><td class="_fixnum_ndbud_88">629</td><td class="_percent_ndbud_88">5.71%</td></tr><tr><th class="_alignLeft_ndbud_63">Easy 1cc</th><td class="_fixnum_ndbud_88">1,081</td><td class="_percent_ndbud_88">9.82%</td></tr><tr><th class="_alignLeft_ndbud_63">Normal 1cc</th><td class="_fixnum_ndbud_88">1,931</td><td class="_percent_ndbud_88">17.54%</td></tr><tr><th class="_alignLeft_ndbud_63">Hard 1cc</th><td class="_fixnum_ndbud_88">443</td><td class="_percent_ndbud_88">4.02%</td></tr><tr><th class="_alignLeft_ndbud_63">Lunatic 1cc</th><td class="_fixnum_ndbud_88">629</td><td class="_percent_ndbud_88">5.71%</td></tr></tbody></table></div><div class="_subsection_1orw9_,257"><div class="_subject_1orw9_,261"><h3>MoF</h3><p>Valid responses: 11,256</p></div><table class="_result_ndbud_14"><tbody><tr><th class="_alignLeft_ndbud_63">Not played</th><td class="_fixnum_ndbud_88">5,019</td><td class="_percent_ndbud_88">44.59%</td></tr><tr><th class="_alignLeft_ndbud_63">Not cleared</th><td class="_fixnum_ndbud_88">817</td><td class="_percent_ndbud_88">7.26%</td></tr><tr><th class="_alignLeft_ndbud_63">Easy 1cc</th><td class="_fixnum_ndbud_88">1,055</td><td class="_percent_ndbud_88">9.37%</td></tr><tr><th class="_alignLeft_ndbud_63">Normal 1cc</th><td class="_fixnum_ndbud_88">2,669</td><td class="_percent_ndbud_88">23.71%</td></tr><tr><th class="_alignLeft_ndbud_63">Hard 1cc</th><td class="_fixnum_ndbud_88">875</td><td class="_percent_ndbud_88">7.77%</td></tr><tr><th class="_alignLeft_ndbud_63">Lunatic 1cc</th><td class="_fixnum_ndbud_88">821</td><td class="_percent_ndbud_88">7.29%</td></tr></tbody></table></div><div class="_subsection_1orw9_,257"><div class="_subject_1orw9_,261"><h3>SA</h3><p>Valid responses: 11,030</p></div><table class="_result_ndbud_14"><tbody><tr><th class="_alignLeft_ndbud_63">Not played</th><td class="_fixnum_ndbud_88">5,449</td><td class="_percent_ndbud_88">49.40%</td></tr><tr><th class="_alignLeft_ndbud_63">Not cleared</th><td class="_fixnum_ndbud_88">1,026</td><td class="_percent_ndbud_88">9.30%</td></tr><tr><th class="_alignLeft_ndbud_63">Easy 1cc</th><td class="_fixnum_ndbud_88">1,252</td><td class="_percent_ndbud_88">11.35%</td></tr><tr><th class="_alignLeft_ndbud_63">Normal 1cc</th><td class="_fixnum_ndbud_88">2,041</td><td class="_percent_ndbud_88">18.50%</td></tr><tr><th class="_alignLeft_ndbud_63">Hard 1cc</th><td class="_fixnum_ndbud_88">651</td><td class="_percent_ndbud_88">5.90%</td></tr><tr><th class="_alignLeft_ndbud_63">Lunatic 1cc</th><td class="_fixnum_ndbud_88">611</td><td class="_percent_ndbud_88">5.54%</td></tr></tbody></table></div><div class="_subsection_1orw9_,257"><div class="_subject_1orw9_,261"><h3>UFO</h3><p>Valid responses: 10,845</p></div><table class="_result_ndbud_14"><tbody><tr><th class="_alignLeft_ndbud_63">Not played</th><td class="_fixnum_ndbud_88">5,977</td><td class="_percent_ndbud_88">55.11%</td></tr><tr><th class="_alignLeft_ndbud_63">Not cleared</th><td class="_fixnum_ndbud_88">938</td><td class="_percent_ndbud_88">8.65%</td></tr><tr><th class="_alignLeft_ndbud_63">Easy 1cc</th><td class="_fixnum_ndbud_88">1,020</td><td class="_percent_ndbud_88">9.41%</td></tr><tr><th class="_alignLeft_ndbud_63">Normal 1cc</th><td class="_fixnum_ndbud_88">1,979</td><td class="_percent_ndbud_88">18.25%</td></tr><tr><th class="_alignLeft_ndbud_63">Hard 1cc</th><td class="_fixnum_ndbud_88">498</td><td class="_percent_ndbud_88">4.59%</td></tr><tr><th class="_alignLeft_ndbud_63">Lunatic 1cc</th><td class="_fixnum_ndbud_88">433</td><td class="_percent_ndbud_88">3.99%</td></tr></tbody></table></div><div class="_subsection_1orw9_,257"><div class="_subject_1orw9_,261"><h3>TD</h3><p>Valid responses: 10,839</p></div><table class="_result_ndbud_14"><tbody><tr><th class="_alignLeft_ndbud_63">Not played</th><td class="_fixnum_ndbud_88">5,972</td><td class="_percent_ndbud_88">55.10%</td></tr><tr><th class="_alignLeft_ndbud_63">Not cleared</th><td class="_fixnum_ndbud_88">655</td><td class="_percent_ndbud_88">6.04%</td></tr><tr><th class="_alignLeft_ndbud_63">Easy 1cc</th><td class="_fixnum_ndbud_88">913</td><td class="_percent_ndbud_88">8.42%</td></tr><tr><th class="_alignLeft_ndbud_63">Normal 1cc</th><td class="_fixnum_ndbud_88">2,075</td><td class="_percent_ndbud_88">19.14%</td></tr><tr><th class="_alignLeft_ndbud_63">Hard 1cc</th><td class="_fixnum_ndbud_88">666</td><td class="_percent_ndbud_88">6.14%</td></tr><tr><th class="_alignLeft_ndbud_63">Lunatic 1cc</th><td class="_fixnum_ndbud_88">558</td><td class="_percent_ndbud_88">5.15%</td></tr></tbody></table></div><div class="_subsection_1orw9_,257"><div class="_subject_1orw9_,261"><h3>DDC</h3><p>Valid responses: 10,758</p></div><table class="_result_ndbud_14"><tbody><tr><th class="_alignLeft_ndbud_63">Not played</th><td class="_fixnum_ndbud_88">6,125</td><td class="_percent_ndbud_88">56.93%</td></tr><tr><th class="_alignLeft_ndbud_63">Not cleared</th><td class="_fixnum_ndbud_88">643</td><td class="_percent_ndbud_88">5.98%</td></tr><tr><th class="_alignLeft_ndbud_63">Easy 1cc</th><td class="_fixnum_ndbud_88">958</td><td class="_percent_ndbud_88">8.91%</td></tr><tr><th class="_alignLeft_ndbud_63">Normal 1cc</th><td class="_fixnum_ndbud_88">1,915</td><td class="_percent_ndbud_88">17.80%</td></tr><tr><th class="_alignLeft_ndbud_63">Hard 1cc</th><td class="_fixnum_ndbud_88">555</td><td class="_percent_ndbud_88">5.16%</td></tr><tr><th class="_alignLeft_ndbud_63">Lunatic 1cc</th><td class="_fixnum_ndbud_88">562</td><td class="_percent_ndbud_88">5.22%</td></tr></tbody></table></div><div class="_subsection_1orw9_,257"><div class="_subject_1orw9_,261"><h3>LoLK</h3><p>Valid responses: 10,808</p></div><table class="_result_ndbud_14"><tbody><tr><th class="_alignLeft_ndbud_63">Not played</th><td class="_fixnum_ndbud_88">5,977</td><td class="_percent_ndbud_88">55.30%</td></tr><tr><th class="_alignLeft_ndbud_63">Not cleared</th><td class="_fixnum_ndbud_88">796</td><td class="_percent_ndbud_88">7.36%</td></tr><tr><th class="_alignLeft_ndbud_63">Easy 1cc</th><td class="_fixnum_ndbud_88">1,040</td><td class="_percent_ndbud_88">9.62%</td></tr><tr><th class="_alignLeft_ndbud_63">Normal 1cc</th><td class="_fixnum_ndbud_88">1,854</td><td class="_percent_ndbud_88">17.15%</td></tr><tr><th class="_alignLeft_ndbud_63">Hard 1cc</th><td class="_fixnum_ndbud_88">495</td><td class="_percent_ndbud_88">4.58%</td></tr><tr><th class="_alignLeft_ndbud_63">Lunatic 1cc</th><td class="_fixnum_ndbud_88">646</td><td class="_percent_ndbud_88">5.98%</td></tr></tbody></table></div><div class="_subsection_1orw9_,257"><div class="_subject_1orw9_,261"><h3>LoLK（レガシーモード）</h3><p>Valid responses: 10,581</p></div><table class="_result_ndbud_14"><tbody><tr><th class="_alignLeft_ndbud_63">Not played</th><td class="_fixnum_ndbud_88">6,053</td><td class="_percent_ndbud_88">57.21%</td></tr><tr><th class="_alignLeft_ndbud_63">Not cleared</th><td class="_fixnum_ndbud_88">1,759</td><td class="_percent_ndbud_88">16.62%</td></tr><tr><th class="_alignLeft_ndbud_63">Easy 1cc</th><td class="_fixnum_ndbud_88">796</td><td class="_percent_ndbud_88">7.52%</td></tr><tr><th class="_alignLeft_ndbud_63">Normal 1cc</th><td class="_fixnum_ndbud_88">1,110</td><td class="_percent_ndbud_88">10.49%</td></tr><tr><th class="_alignLeft_ndbud_63">Hard 1cc</th><td class="_fixnum_ndbud_88">353</td><td class="_percent_ndbud_88">3.34%</td></tr><tr><th class="_alignLeft_ndbud_63">Lunatic 1cc</th><td class="_fixnum_ndbud_88">510</td><td class="_percent_ndbud_88">4.82%</td></tr></tbody></table></div><div class="_subsection_1orw9_,257"><div class="_subject_1orw9_,261"><h3>HSiFS</h3><p>Valid responses: 10,758</p></div><table class="_result_ndbud_14"><tbody><tr><th class="_alignLeft_ndbud_63">Not played</th><td class="_fixnum_ndbud_88">6,266</td><td class="_percent_ndbud_88">58.25%</td></tr><tr><th class="_alignLeft_ndbud_63">Not cleared</th><td class="_fixnum_ndbud_88">639</td><td class="_percent_ndbud_88">5.94%</td></tr><tr><th class="_alignLeft_ndbud_63">Easy 1cc</th><td class="_fixnum_ndbud_88">955</td><td class="_percent_ndbud_88">8.88%</td></tr><tr><th class="_alignLeft_ndbud_63">Normal 1cc</th><td class="_fixnum_ndbud_88">1,798</td><td class="_percent_ndbud_88">16.71%</td></tr><tr><th class="_alignLeft_ndbud_63">Hard 1cc</th><td class="_fixnum_ndbud_88">448</td><td class="_percent_ndbud_88">4.16%</td></tr><tr><th class="_alignLeft_ndbud_63">Lunatic 1cc</th><td class="_fixnum_ndbud_88">652</td><td class="_percent_ndbud_88">6.06%</td></tr></tbody></table></div><div class="_subsection_1orw9_,257"><div class="_subject_1orw9_,261"><h3>WBaWC</h3><p>Valid responses: 10,829</p></div><table class="_result_ndbud_14"><tbody><tr><th class="_alignLeft_ndbud_63">Not played</th><td class="_fixnum_ndbud_88">6,213</td><td class="_percent_ndbud_88">57.37%</td></tr><tr><th class="_alignLeft_ndbud_63">Not cleared</th><td class="_fixnum_ndbud_88">621</td><td class="_percent_ndbud_88">5.73%</td></tr><tr><th class="_alignLeft_ndbud_63">Easy 1cc</th><td class="_fixnum_ndbud_88">990</td><td class="_percent_ndbud_88">9.14%</td></tr><tr><th class="_alignLeft_ndbud_63">Normal 1cc</th><td class="_fixnum_ndbud_88">1,932</td><td class="_percent_ndbud_88">17.84%</td></tr><tr><th class="_alignLeft_ndbud_63">Hard 1cc</th><td class="_fixnum_ndbud_88">553</td><td class="_percent_ndbud_88">5.11%</td></tr><tr><th class="_alignLeft_ndbud_63">Lunatic 1cc</th><td class="_fixnum_ndbud_88">520</td><td class="_percent_ndbud_88">4.80%</td></tr></tbody></table></div><div class="_subsection_1orw9_,257"><div class="_subject_1orw9_,261"><h3>UM</h3><p>Valid responses: 10,904</p></div><table class="_result_ndbud_14"><tbody><tr><th class="_alignLeft_ndbud_63">Not played</th><td class="_fixnum_ndbud_88">6,053</td><td class="_percent_ndbud_88">55.51%</td></tr><tr><th class="_alignLeft_ndbud_63">Not cleared</th><td class="_fixnum_ndbud_88">636</td><td class="_percent_ndbud_88">5.83%</td></tr><tr><th class="_alignLeft_ndbud_63">Easy 1cc</th><td class="_fixnum_ndbud_88">1,162</td><td class="_percent_ndbud_88">10.66%</td></tr><tr><th class="_alignLeft_ndbud_63">Normal 1cc</th><td class="_fixnum_ndbud_88">1,838</td><td class="_percent_ndbud_88">16.86%</td></tr><tr><th class="_alignLeft_ndbud_63">Hard 1cc</th><td class="_fixnum_ndbud_88">537</td><td class="_percent_ndbud_88">4.92%</td></tr><tr><th class="_alignLeft_ndbud_63">Lunatic 1cc</th><td class="_fixnum_ndbud_88">678</td><td class="_percent_ndbud_88">6.22%</td></tr></tbody></table></div></section><section><h2>05. Publications subscribed to</h2><div class="_subsection_1orw9_,257"><div class="_subject_1orw9_,261"><h3>Curiosities of Lotus Asia</h3><p>Valid responses: 10,666</p></div><table class="_result_ndbud_14 _small_ndbud_77"><tbody><tr><th class="_alignLeft_ndbud_63">Not bought</th><td class="_fixnum_ndbud_88">8,622</td><td class="_percent_ndbud_88">80.84%</td></tr><tr><th class="_alignLeft_ndbud_63">Bought the serialization (Strange Creators of Outer World)</th><td class="_fixnum_ndbud_88">2,044</td><td class="_percent_ndbud_88">19.16%</td></tr></tbody></table></div><div class="_subsection_1orw9_,257"><div class="_subject_1orw9_,261"><h3>Lotus Eaters</h3><p>Valid responses: 10,955</p></div><table class="_result_ndbud_14 _small_ndbud_77"><tbody><tr><th class="_alignLeft_ndbud_63">Not read</th><td class="_fixnum_ndbud_88">6,069</td><td class="_percent_ndbud_88">55.40%</td></tr><tr><th class="_alignLeft_ndbud_63">Bought the serialization (Comp Ace)</th><td class="_fixnum_ndbud_88">155</td><td class="_percent_ndbud_88">1.41%</td></tr><tr><th class="_alignLeft_ndbud_63">Reading on Comic Walker</th><td class="_fixnum_ndbud_88">879</td><td class="_percent_ndbud_88">8.02%</td></tr><tr><th class="_alignLeft_ndbud_63">Reading on Niconico</th><td class="_fixnum_ndbud_88">606</td><td class="_percent_ndbud_88">5.53%</td></tr><tr><th class="_alignLeft_ndbud_63">Reading in the Touhou Garakuta magazine</th><td class="_fixnum_ndbud_88">521</td><td class="_percent_ndbud_88">4.76%</td></tr><tr><th class="_alignLeft_ndbud_63">Purchased the tankobon volumes</th><td class="_fixnum_ndbud_88">2,725</td><td class="_percent_ndbud_88">24.87%</td></tr></tbody></table></div><div class="_subsection_1orw9_,257"><div class="_subject_1orw9_,261"><h3>Foul Detective Satori</h3><p>Valid responses: 10,475</p></div><table class="_result_ndbud_14 _small_ndbud_77"><tbody><tr><th class="_alignLeft_ndbud_63">Not read</th><td class="_fixnum_ndbud_88">6,429</td><td class="_percent_ndbud_88">61.37%</td></tr><tr><th class="_alignLeft_ndbud_63">Reading on Comic Walker</th><td class="_fixnum_ndbud_88">1,090</td><td class="_percent_ndbud_88">10.41%</td></tr><tr><th class="_alignLeft_ndbud_63">Reading on Niconico</th><td class="_fixnum_ndbud_88">614</td><td class="_percent_ndbud_88">5.86%</td></tr><tr><th class="_alignLeft_ndbud_63">Reading in the Touhou Garakuta magazine</th><td class="_fixnum_ndbud_88">611</td><td class="_percent_ndbud_88">5.83%</td></tr><tr><th class="_alignLeft_ndbud_63">Purchased the tankobon volumes</th><td class="_fixnum_ndbud_88">1,731</td><td class="_percent_ndbud_88">16.53%</td></tr></tbody></table></div></section><section><h2>06. What do you like about Touhou? (Multiple answers possible)</h2><p>Valid responses: 16,870</p><table class="_result_ndbud_14"><tbody><tr><th class="_alignLeft_ndbud_63">Music</th><td class="_fixnum_ndbud_88">15,886</td><td class="_percent_ndbud_88">94.17%</td></tr><tr><th class="_alignLeft_ndbud_63">Games</th><td class="_fixnum_ndbud_88">10,658</td><td class="_percent_ndbud_88">63.18%</td></tr><tr><th class="_alignLeft_ndbud_63">Characters</th><td class="_fixnum_ndbud_88">15,467</td><td class="_percent_ndbud_88">91.68%</td></tr><tr><th class="_alignLeft_ndbud_63">Story</th><td class="_fixnum_ndbud_88">11,259</td><td class="_percent_ndbud_88">66.74%</td></tr><tr><th class="_alignLeft_ndbud_63">Universe</th><td class="_fixnum_ndbud_88">13,285</td><td class="_percent_ndbud_88">78.75%</td></tr><tr><th class="_alignLeft_ndbud_63">Fanworks</th><td class="_fixnum_ndbud_88">13,056</td><td class="_percent_ndbud_88">77.39%</td></tr><tr><th class="_alignLeft_ndbud_63">Fandom</th><td class="_fixnum_ndbud_88">7,486</td><td class="_percent_ndbud_88">44.37%</td></tr></tbody></table></section><section><h2>07. When did you discover Touhou?</h2><p>Valid responses: 15,521</p><table class="_result_ndbud_14 _small_ndbud_77"><tbody><tr><th class="_alignLeft_ndbud_63"><strong>PC-98 - Shuusou Gyoku</strong><br>(October 1995 - December 2000)</th><td class="_fixnum_ndbud_88">81</td><td class="_percent_ndbud_88">0.52%</td></tr><tr><th class="_alignLeft_ndbud_63"><strong>Shuusou Gyoku - EoSD</strong><br>(December 2000 - August 2002)</th><td class="_fixnum_ndbud_88">156</td><td class="_percent_ndbud_88">1.01%</td></tr><tr><th class="_alignLeft_ndbud_63"><strong>EoSD - PCB</strong><br>(August 2002 - August 2003)</th><td class="_fixnum_ndbud_88">413</td><td class="_percent_ndbud_88">2.66%</td></tr><tr><th class="_alignLeft_ndbud_63"><strong>PCB - IN</strong><br>(August 2003 - August 2004)</th><td class="_fixnum_ndbud_88">199</td><td class="_percent_ndbud_88">1.28%</td></tr><tr><th class="_alignLeft_ndbud_63"><strong>IN - IaMP</strong><br>(August 2004 - December 2004)</th><td class="_fixnum_ndbud_88">139</td><td class="_percent_ndbud_88">0.90%</td></tr><tr><th class="_alignLeft_ndbud_63"><strong>IaMP - PoFV</strong><br>(December 2004 - August 2005)</th><td class="_fixnum_ndbud_88">102</td><td class="_percent_ndbud_88">0.66%</td></tr><tr><th class="_alignLeft_ndbud_63"><strong>PoFV - StB</strong><br>(August 2005 - December 2005)</th><td class="_fixnum_ndbud_88">78</td><td class="_percent_ndbud_88">0.50%</td></tr><tr><th class="_alignLeft_ndbud_63"><strong>StB - PMiSS</strong><br>(December 2005 - December 2006)</th><td class="_fixnum_ndbud_88">115</td><td class="_percent_ndbud_88">0.74%</td></tr><tr><th class="_alignLeft_ndbud_63"><strong>PMiSS - MoF</strong><br>(December 2006 - August 2007)</th><td class="_fixnum_ndbud_88">406</td><td class="_percent_ndbud_88">2.62%</td></tr><tr><th class="_alignLeft_ndbud_63"><strong>MoF - SA</strong><br>(August 2007 - August 2008)</th><td class="_fixnum_ndbud_88">827</td><td class="_percent_ndbud_88">5.33%</td></tr><tr><th class="_alignLeft_ndbud_63"><strong>SA - UFO</strong><br>(August 2008 - August 2009)</th><td class="_fixnum_ndbud_88">660</td><td class="_percent_ndbud_88">4.25%</td></tr><tr><th class="_alignLeft_ndbud_63"><strong>UFO - GFW</strong><br>(August 2009 - August 2010)</th><td class="_fixnum_ndbud_88">611</td><td class="_percent_ndbud_88">3.94%</td></tr><tr><th class="_alignLeft_ndbud_63"><strong>GFW - TD</strong><br>(August 2010 - August 2011)</th><td class="_fixnum_ndbud_88">652</td><td class="_percent_ndbud_88">4.20%</td></tr><tr><th class="_alignLeft_ndbud_63"><strong>TD - SoPM</strong><br>(August 2011 - April 2012)</th><td class="_fixnum_ndbud_88">837</td><td class="_percent_ndbud_88">5.39%</td></tr><tr><th class="_alignLeft_ndbud_63"><strong>SoPM - DDC</strong><br>(April 2012 - August 2013)</th><td class="_fixnum_ndbud_88">857</td><td class="_percent_ndbud_88">5.52%</td></tr><tr><th class="_alignLeft_ndbud_63"><strong>PC-98 - ISC</strong><br>(August 2013 - May 2014)</th><td class="_fixnum_ndbud_88">1,082</td><td class="_percent_ndbud_88">6.97%</td></tr><tr><th class="_alignLeft_ndbud_63"><strong>ISC - LoLK</strong><br>(May 2014 - August 2015)</th><td class="_fixnum_ndbud_88">1,399</td><td class="_percent_ndbud_88">9.01%</td></tr><tr><th class="_alignLeft_ndbud_63"><strong>LoLK - DBOA</strong><br>(August 2015 - August 2016)</th><td class="_fixnum_ndbud_88">1,440</td><td class="_percent_ndbud_88">9.28%</td></tr><tr><th class="_alignLeft_ndbud_63"><strong>DBOA - HSiFS</strong><br>(August 2016 - August 2017)</th><td class="_fixnum_ndbud_88">1,471</td><td class="_percent_ndbud_88">9.48%</td></tr><tr><th class="_alignLeft_ndbud_63"><strong>HSiFS - WBaWC</strong><br>(August 2017 - August 2019)</th><td class="_fixnum_ndbud_88">1,966</td><td class="_percent_ndbud_88">12.67%</td></tr><tr><th class="_alignLeft_ndbud_63">WBaWC～UM（2021年5月）</th><td class="_fixnum_ndbud_88">1,239</td><td class="_percent_ndbud_88">7.98%</td></tr><tr><th class="_alignLeft_ndbud_63">UM～now</th><td class="_fixnum_ndbud_88">791</td><td class="_percent_ndbud_88">5.10%</td></tr></tbody></table></section><section><h2>08. How did you discover Touhou?</h2><p>Valid responses: 15,607</p><table class="_result_ndbud_14 _small_ndbud_77"><tbody><tr><th class="_alignLeft_ndbud_63">Offline (School, club activities, family, etc.)</th><td class="_fixnum_ndbud_88">3,283</td><td class="_percent_ndbud_88">21.04%</td></tr><tr><th class="_alignLeft_ndbud_63">Online games, online friends, chat (IRC, etc.)</th><td class="_fixnum_ndbud_88">704</td><td class="_percent_ndbud_88">4.51%</td></tr><tr><th class="_alignLeft_ndbud_63">Personal sites, blogs, news sites, etc.</th><td class="_fixnum_ndbud_88">389</td><td class="_percent_ndbud_88">2.49%</td></tr><tr><th class="_alignLeft_ndbud_63">Image sites (Pixiv, Nijie, TINAMI, SNS, etc.)</th><td class="_fixnum_ndbud_88">478</td><td class="_percent_ndbud_88">3.06%</td></tr><tr><th class="_alignLeft_ndbud_63">Anonymous boards (2ch, Futaba, etc.)</th><td class="_fixnum_ndbud_88">267</td><td class="_percent_ndbud_88">1.71%</td></tr><tr><th class="_alignLeft_ndbud_63">Niconico</th><td class="_fixnum_ndbud_88">2,127</td><td class="_percent_ndbud_88">13.63%</td></tr><tr><th class="_alignLeft_ndbud_63">Twitter</th><td class="_fixnum_ndbud_88">87</td><td class="_percent_ndbud_88">0.56%</td></tr><tr><th class="_alignLeft_ndbud_63">Magazine articles, TV programs, etc.</th><td class="_fixnum_ndbud_88">47</td><td class="_percent_ndbud_88">0.30%</td></tr><tr><th class="_alignLeft_ndbud_63">Doujinshi (Comiket, etc.)</th><td class="_fixnum_ndbud_88">86</td><td class="_percent_ndbud_88">0.55%</td></tr><tr><th class="_alignLeft_ndbud_63">Doujin stores, general bookstores, etc.</th><td class="_fixnum_ndbud_88">115</td><td class="_percent_ndbud_88">0.74%</td></tr><tr><th class="_alignLeft_ndbud_63">When looking for interesting games</th><td class="_fixnum_ndbud_88">353</td><td class="_percent_ndbud_88">2.26%</td></tr><tr><th class="_alignLeft_ndbud_63">Rhythm games that contain Touhou music</th><td class="_fixnum_ndbud_88">947</td><td class="_percent_ndbud_88">6.07%</td></tr><tr><th class="_alignLeft_ndbud_63">Other video sites</th><td class="_fixnum_ndbud_88">658</td><td class="_percent_ndbud_88">4.22%</td></tr><tr><th class="_alignLeft_ndbud_63">Fanmade mobile apps</th><td class="_fixnum_ndbud_88">450</td><td class="_percent_ndbud_88">2.88%</td></tr><tr><th class="_alignLeft_ndbud_63">YouTube</th><td class="_fixnum_ndbud_88">5,599</td><td class="_percent_ndbud_88">35.87%</td></tr><tr><th class="_alignLeft_ndbud_63">Real life events other than large-scale Touhou events</th><td class="_fixnum_ndbud_88">17</td><td class="_percent_ndbud_88">0.11%</td></tr></tbody></table></section><section><h2>09. Participation in doujin events such as Comiket and Reitaisai (multiple answers possible)</h2><p>Valid responses: 16,870</p><table class="_result_ndbud_14 _small_ndbud_77"><tbody><tr><th class="_alignLeft_ndbud_63">No participation</th><td class="_fixnum_ndbud_88">9,851</td><td class="_percent_ndbud_88">58.39%</td></tr><tr><th class="_alignLeft_ndbud_63">Bought official works</th><td class="_fixnum_ndbud_88">3,489</td><td class="_percent_ndbud_88">20.68%</td></tr><tr><th class="_alignLeft_ndbud_63">Bought doujinshi</th><td class="_fixnum_ndbud_88">4,468</td><td class="_percent_ndbud_88">26.48%</td></tr><tr><th class="_alignLeft_ndbud_63">Bought doujin music</th><td class="_fixnum_ndbud_88">3,748</td><td class="_percent_ndbud_88">22.22%</td></tr><tr><th class="_alignLeft_ndbud_63">Bought doujin games</th><td class="_fixnum_ndbud_88">2,066</td><td class="_percent_ndbud_88">12.25%</td></tr><tr><th class="_alignLeft_ndbud_63">Bought doujin goods</th><td class="_fixnum_ndbud_88">3,531</td><td class="_percent_ndbud_88">20.93%</td></tr><tr><th class="_alignLeft_ndbud_63">Bought corporate works</th><td class="_fixnum_ndbud_88">1,237</td><td class="_percent_ndbud_88">7.33%</td></tr><tr><th class="_alignLeft_ndbud_63">Distributed works (as a circle)</th><td class="_fixnum_ndbud_88">1,016</td><td class="_percent_ndbud_88">6.02%</td></tr><tr><th class="_alignLeft_ndbud_63">Staff</th><td class="_fixnum_ndbud_88">222</td><td class="_percent_ndbud_88">1.32%</td></tr><tr><th class="_alignLeft_ndbud_63">Interacted with circles and friends</th><td class="_fixnum_ndbud_88">1,811</td><td class="_percent_ndbud_88">10.74%</td></tr><tr><th class="_alignLeft_ndbud_63">Cosplayed</th><td class="_fixnum_ndbud_88">537</td><td class="_percent_ndbud_88">3.18%</td></tr><tr><th class="_alignLeft_ndbud_63">Viewed or photographed cosplay</th><td class="_fixnum_ndbud_88">1,349</td><td class="_percent_ndbud_88">8.00%</td></tr><tr><th class="_alignLeft_ndbud_63">Corporate collab events (for rhythm games, etc)</th><td class="_fixnum_ndbud_88">973</td><td class="_percent_ndbud_88">5.77%</td></tr><tr><th class="_alignLeft_ndbud_63">Performed live music</th><td class="_fixnum_ndbud_88">1,052</td><td class="_percent_ndbud_88">6.24%</td></tr></tbody></table></section><section><h2>10. Have you voted on the Touhou Popularity Poll before?</h2><p>Valid responses: 16,320</p><table class="_result_ndbud_14 _small_ndbud_77"><tbody><tr><th class="_alignLeft_ndbud_63 _fsNormal_ndbud_67">Never voted before</th><td class="_fixnum_ndbud_88">7,428</td><td class="_percent_ndbud_88">45.51%</td></tr><tr><th class="_alignLeft_ndbud_63 _fsNormal_ndbud_67">Voted 1 to 3 times</th><td class="_fixnum_ndbud_88">6,102</td><td class="_percent_ndbud_88">37.39%</td></tr><tr><th class="_alignLeft_ndbud_63 _fsNormal_ndbud_67">Voted 4 or more times</th><td class="_fixnum_ndbud_88">2,790</td><td class="_percent_ndbud_88">17.10%</td></tr></tbody></table></section></div>
+    <h3>01. Age</h3>
+    <p>Valid responses: 15,135 <button id='age_detail_button'>Show Details</button> <button id='age_summary_button'>Hide Details</button></p>
+    <div class='overflow'><table id='age_summary' class='table poll sortable'>
+        <colgroup>
+            <col class='col2'>
+            <col class='col3'>
+            <col class='col4'>
+        </colgroup>
+        <thead>
+            <tr>
+                <th class='header'>Age range</th>
+                <th class='header'>Responses</th>
+                <th class='header'>Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&lt;= 9</td>
+                <td>36</td>
+                <td>0.24%</td>
+            </tr>
+            <tr>
+                <td>10-14</td>
+                <td>2,314</td>
+                <td>15.29%</td>
+            </tr>
+            <tr>
+                <td>15-19</td>
+                <td>5,939</td>
+                <td>39.24%</td>
+            </tr>
+            <tr>
+                <td>20-24</td>
+                <td>3,343</td>
+                <td>22.09%</td>
+            </tr>
+            <tr>
+                <td>25-29</td>
+                <td>1,711</td>
+                <td>11.30%</td>
+            </tr>
+            <tr>
+                <td>30-34</td>
+                <td>912</td>
+                <td>6.03%</td>
+            </tr>
+            <tr>
+                <td>35-39</td>
+                <td>469</td>
+                <td>3.10%</td>
+            </tr>
+            <tr>
+                <td>40-44</td>
+                <td>223</td>
+                <td>1.47%</td>
+            </tr>
+            <tr>
+                <td>45-49</td>
+                <td>100</td>
+                <td>0.66%</td>
+            </tr>
+            <tr>
+                <td>&gt;= 50</td>
+                <td>88</td>
+                <td>0.58%</td>
+            </tr>
+        </tbody>
+    </table></div>
+    <div class='overflow'><table id='age_detail' class='poll table sortable'>
+        <colgroup>
+            <col class='col2'>
+            <col class='col3'>
+            <col class='col4'>
+        </colgroup>
+        <thead>
+            <tr>
+                <th class='header'>Age</th>
+                <th class='header'>Responses</th>
+                <th class='header'>Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>5</td><td>9</td><td>0.06%</td>
+            </tr>
+            <tr>
+                <td>6</td><td>1</td><td>0.01%</td>
+            </tr>
+            <tr>
+                <td>7</td><td>1</td><td>0.01%</td>
+            </tr>
+            <tr>
+                <td>8</td><td>5</td><td>0.03%</td>
+            </tr>
+            <tr>
+                <td>9</td><td>20</td><td>0.13%</td>
+            </tr>
+            <tr>
+                <td>10</td><td>79</td><td>0.52%</td>
+            </tr>
+            <tr>
+                <td>11</td><td>167</td><td>1.10%</td>
+            </tr>
+            <tr>
+                <td>12</td><td>343</td><td>2.27%</td>
+            </tr>
+            <tr><td>13</td><td>711</td><td>4.70%</td></tr><tr><td>14</td><td>1,014</td><td>6.70%</td></tr><tr><td>15</td><td>1,357</td><td>8.97%</td></tr><tr><td>16</td><td>1,374</td><td>9.08%</td></tr><tr><td>17</td><td>1,161</td><td>7.67%</td></tr><tr><td>18</td><td>1,158</td><td>7.65%</td></tr><tr><td>19</td><td>889</td><td>5.87%</td></tr><tr><td>20</td><td>925</td><td>6.11%</td></tr><tr><td>21</td><td>732</td><td>4.84%</td></tr><tr><td>22</td><td>695</td><td>4.59%</td></tr><tr><td>23</td><td>500</td><td>3.30%</td></tr><tr><td>24</td><td>491</td><td>3.24%</td></tr><tr><td>25</td><td>433</td><td>2.86%</td></tr><tr><td>26</td><td>370</td><td>2.44%</td></tr><tr><td>27</td><td>318</td><td>2.10%</td></tr><tr><td>28</td><td>321</td><td>2.12%</td></tr><tr><td>29</td><td>269</td><td>1.78%</td></tr><tr><td>30</td><td>262</td><td>1.73%</td></tr><tr><td>31</td><td>192</td><td>1.27%</td></tr><tr><td>32</td><td>178</td><td>1.18%</td></tr><tr><td>33</td><td>144</td><td>0.95%</td></tr><tr><td>34</td><td>136</td><td>0.90%</td></tr><tr><td>35</td><td>134</td><td>0.89%</td></tr><tr><td>36</td><td>94</td><td>0.62%</td></tr><tr><td>37</td><td>99</td><td>0.65%</td></tr><tr><td>38</td><td>77</td><td>0.51%</td></tr><tr><td>39</td><td>65</td><td>0.43%</td></tr><tr><td>40</td><td>64</td><td>0.42%</td></tr><tr><td>41</td><td>48</td><td>0.32%</td></tr><tr><td>42</td><td>42</td><td>0.28%</td></tr><tr><td>43</td><td>35</td><td>0.23%</td></tr><tr><td>44</td><td>34</td><td>0.22%</td></tr><tr><td>45</td><td>26</td><td>0.17%</td></tr><tr><td>46</td><td>18</td><td>0.12%</td></tr><tr><td>47</td><td>18</td><td>0.12%</td></tr><tr><td>48</td><td>21</td><td>0.14%</td></tr><tr><td>49</td><td>17</td><td>0.11%</td></tr><tr><td>50</td><td>11</td><td>0.07%</td></tr><tr><td>51</td><td>7</td><td>0.05%</td></tr><tr><td>52</td><td>8</td><td>0.05%</td></tr><tr><td>53</td><td>7</td><td>0.05%</td></tr><tr><td>54</td><td>7</td><td>0.05%</td></tr><tr><td>55</td><td>6</td><td>0.04%</td></tr><tr><td>56</td><td>5</td><td>0.03%</td></tr><tr><td>57</td><td>3</td><td>0.02%</td></tr><tr><td>58</td><td>3</td><td>0.02%</td></tr><tr><td>59</td><td>2</td><td>0.01%</td></tr><tr><td>60</td><td>1</td><td>0.01%</td></tr><tr><td>66</td><td>1</td><td>0.01%</td></tr><tr><td>69</td><td>1</td><td>0.01%</td></tr><tr><td>77</td><td>1</td><td>0.01%</td></tr><tr><td>82</td><td>1</td><td>0.01%</td></tr><tr><td>85</td><td>1</td><td>0.01%</td></tr><tr><td>93</td><td>1</td><td>0.01%</td></tr><tr><td>96</td><td>1</td><td>0.01%</td></tr><tr><td>99</td><td>2</td><td>0.01%</td></tr><tr><td>100</td><td>19</td><td>0.13%</td></tr>
+        </tbody>
+    </table></div>
+    <h3>02. Gender</h3>
+    <p>Valid responses: 15,625</p>
+    <div class='overflow'><table class='table poll sortable'>
+        <colgroup>
+            <col class='col2'>
+            <col class='col3'>
+            <col class='col4'>
+        </colgroup>
+        <thead>
+            <tr>
+                <th class='header'>Location</th>
+                <th class='header'>Responses</th>
+                <th class='header'>Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Male</td>
+                <td>11,676</td>
+                <td>74.73%</td>
+            </tr>
+            <tr>
+                <td>Female</td>
+                <td>3,392</td>
+                <td>21.71%</td>
+            </tr>
+            <tr>
+                <td>Other</td>
+                <td>557</td>
+                <td>3.56%</td>
+            </tr>
+        </tbody>
+    </table></div>
+    <h3>03. Location</h3>
+    <p>Valid responses: 14,561</p>
+    <div class='overflow'><table class='table poll sortable'>
+        <colgroup>
+            <col class='col2'>
+            <col class='col3'>
+            <col class='col4'>
+        </colgroup>
+        <thead>
+            <tr>
+                <th class='header'>Location</th>
+                <th class='header'>Responses</th>
+                <th class='header'>Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Hokkaido</strong></td>
+                <td>496</td>
+                <td>3.41%</td>
+            </tr>
+            <tr>
+                <td><strong>Northern Tohoku</strong><br>(Aomori, Iwate, Akita)</td>
+                <td>280</td>
+                <td>1.92%</td>
+            </tr>
+            <tr>
+                <td><strong>Southern Tohoku</strong><br>(Miyagi, Yamagata, Fukushima)</td>
+                <td>497</td>
+                <td>3.41%</td>
+            </tr>
+            <tr>
+                <td><strong>Northern Kanto</strong><br>(Ibaraki, Tochigi, Gunma)</td>
+                <td>654</td>
+                <td>4.49%</td>
+            </tr>
+            <tr>
+                <td><strong>Southern Kanto</strong><br>(Saitama, Chiba, Tokyo, Kanagawa)</td>
+                <td>3,879</td>
+                <td>26.64%</td>
+            </tr>
+            <tr>
+                <td><strong>Hokuriku</strong><br>(Toyama, Ishikawa, Fukui)</td>
+                <td>263</td>
+                <td>1.81%</td>
+            </tr>
+            <tr>
+                <td><strong>Koshinetsu</strong><br>(Niigata, Yamanashi, Nagano)</td>
+                <td>506</td>
+                <td>3.48%</td>
+            </tr>
+            <tr>
+                <td><strong>Tokai</strong><br>(Aichi, Mie, Gifu, Shizuoka)</td>
+                <td>1,411</td>
+                <td>9.69%</td>
+            </tr>
+            <tr>
+                <td><strong>Kansai</strong><br>(Osaka, Kyoto, Hyogo, Nara, Shiga, Wakayama)</td>
+                <td>1,776</td>
+                <td>12.20%</td>
+            </tr>
+            <tr>
+                <td><strong>Chugoku</strong><br>(Tottori, Shimane, Okayama, Hiroshima, Yamaguchi)</td>
+                <td>587</td>
+                <td>4.03%</td>
+            </tr>
+            <tr>
+                <td><strong>Shikoku</strong><br>(Tokushima, Ehime, Kagawa, Kochi)</td>
+                <td>279</td>
+                <td>1.92%</td>
+            </tr>
+            <tr>
+                <td><strong>Northern Kyushu</strong><br>(Fukuoka, Saga, Nagasaki, Oita)</td>
+                <td>567</td>
+                <td>3.89%</td>
+            </tr>
+            <tr>
+                <td><strong>Southern Kyushu</strong><br>(Kumamoto, Miyazaki, Kagoshima, Okinawa)</td>
+                <td>363</td>
+                <td>2.49%</td>
+            </tr>
+            <tr>
+                <td><strong>East Asia</strong><br>(China, Taiwan, Korea, etc.)</td>
+                <td>1,225</td>
+                <td>8.41%</td>
+            </tr>
+            <tr>
+                <td><strong>Southeast Asia</strong></td>
+                <td>270</td>
+                <td>1.85%</td>
+            </tr>
+            <tr>
+                <td><strong>South, Central, West Asia</strong></td>
+                <td>39</td>
+                <td>0.27%</td>
+            </tr>
+            <tr>
+                <td><strong>Europe</strong></td>
+                <td>482</td>
+                <td>3.31%</td>
+            </tr>
+            <tr>
+                <td><strong>Africa</strong></td>
+                <td>21</td>
+                <td>0.14%</td>
+            </tr>
+            <tr>
+                <td><strong>North America</strong></td>
+                <td>681</td>
+                <td>4.68%</td>
+            </tr>
+            <tr>
+                <td><strong>South America</strong></td>
+                <td>222</td>
+                <td>1.52%</td>
+            </tr>
+            <tr>
+                <td><strong>Oceania</strong></td>
+                <td>63</td>
+                <td>0.43%</td>
+            </tr>
+        </tbody>
+    </table></div>
+    <h3>04. Difficulty level 1cc'd</h3>
+    <div>
+        <div>
+            <h4>Touhou 6 - The Embodiment of Scarlet Devil</h4>
+            <p>Valid responses: 11,877</p>
+        </div>
+        <table class='table poll sortable'>
+            <colgroup>
+                <col class='col2'>
+                <col class='col3'>
+                <col class='col4'>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class='header'>Highest 1cc</th>
+                    <th class='header'>Responses</th>
+                    <th class='header'>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Not played</td>
+                    <td>4,683</td>
+                    <td>39.43%</td>
+                </tr>
+                <tr>
+                    <td>Not cleared</td>
+                    <td>1,058</td>
+                    <td>8.91%</td>
+                </tr>
+                <tr>
+                    <td>Easy 1cc</td>
+                    <td>1,399</td>
+                    <td>11.78%</td>
+                </tr>
+                <tr>
+                    <td>Normal 1cc</td>
+                    <td>2,906</td>
+                    <td>24.47%</td>
+                </tr>
+                <tr>
+                    <td>Hard 1cc</td>
+                    <td>1,027</td>
+                    <td>8.65%</td>
+                </tr>
+                <tr>
+                    <td>Lunatic 1cc</td>
+                    <td>804</td>
+                    <td>6.77%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div>
+            <h4>Touhou 7 - Perfect Cherry Blossom</h4>
+            <p>Valid responses: 11,554</p>
+        </div>
+        <table class='table poll sortable'>
+            <colgroup>
+                <col class='col2'>
+                <col class='col3'>
+                <col class='col4'>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class='header'>Highest 1cc</th>
+                    <th class='header'>Responses</th>
+                    <th class='header'>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Not played</td>
+                    <td>5,052</td>
+                    <td>43.73%</td>
+                </tr>
+                <tr>
+                    <td>Not cleared</td>
+                    <td>844</td>
+                    <td>7.30%</td>
+                </tr>
+                <tr>
+                    <td>Easy 1cc</td>
+                    <td>1,195</td>
+                    <td>10.34%</td>
+                </tr>
+                <tr>
+                    <td>Normal 1cc</td>
+                    <td>2,654</td>
+                    <td>22.97%</td>
+                </tr>
+                <tr>
+                    <td>Hard 1cc</td>
+                    <td>960</td>
+                    <td>8.31%</td>
+                </tr>
+                <tr>
+                    <td>Lunatic 1cc</td>
+                    <td>849</td>
+                    <td>7.35%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div>
+            <h4>Touhou 8 - Imperishable Night</h4>
+            <p>Valid responses: 11,491</p>
+        </div>
+        <table class='table poll sortable'>
+            <colgroup>
+                <col class='col2'>
+                <col class='col3'>
+                <col class='col4'>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class='header'>Highest 1cc</th>
+                    <th class='header'>Responses</th>
+                    <th class='header'>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Not played</td>
+                    <td>4,926</td>
+                    <td>42.87%</td>
+                </tr>
+                <tr>
+                    <td>Not cleared</td>
+                    <td>668</td>
+                    <td>5.81%</td>
+                </tr>
+                <tr>
+                    <td>Easy 1cc</td>
+                    <td>1,317</td>
+                    <td>11.46%</td>
+                </tr>
+                <tr>
+                    <td>Normal 1cc</td>
+                    <td>2,705</td>
+                    <td>23.54%</td>
+                </tr>
+                <tr>
+                    <td>Hard 1cc</td>
+                    <td>1,026</td>
+                    <td>8.93%</td>
+                </tr>
+                <tr>
+                    <td>Lunatic 1cc</td>
+                    <td>849</td>
+                    <td>7.39%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div>
+            <h4>Touhou 9 - Phantasmagoria of Flower View</h4>
+            <p>Valid responses: 11,010</p>
+        </div>
+        <table class='table poll sortable'>
+            <colgroup>
+                <col class='col2'>
+                <col class='col3'>
+                <col class='col4'>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class='header'>Highest 1cc</th>
+                    <th class='header'>Responses</th>
+                    <th class='header'>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Not played</td>
+                    <td>6,297</td>
+                    <td>57.19%</td>
+                </tr>
+                <tr>
+                    <td>Not cleared</td>
+                    <td>629</td>
+                    <td>5.71%</td>
+                </tr>
+                <tr>
+                    <td>Easy 1cc</td>
+                    <td>1,081</td>
+                    <td>9.82%</td>
+                </tr>
+                <tr>
+                    <td>Normal 1cc</td>
+                    <td>1,931</td>
+                    <td>17.54%</td>
+                </tr>
+                <tr>
+                    <td>Hard 1cc</td>
+                    <td>443</td>
+                    <td>4.02%</td>
+                </tr>
+                <tr>
+                    <td>Lunatic 1cc</td>
+                    <td>629</td>
+                    <td>5.71%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div>
+            <h4>Touhou 10 - Mountain of Faith</h4>
+            <p>Valid responses: 11,256</p>
+        </div>
+        <table class='table poll sortable'>
+            <colgroup>
+                <col class='col2'>
+                <col class='col3'>
+                <col class='col4'>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class='header'>Highest 1cc</th>
+                    <th class='header'>Responses</th>
+                    <th class='header'>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Not played</td>
+                    <td>5,019</td>
+                    <td>44.59%</td>
+                </tr>
+                <tr>
+                    <td>Not cleared</td>
+                    <td>817</td>
+                    <td>7.26%</td>
+                </tr>
+                <tr>
+                    <td>Easy 1cc</td>
+                    <td>1,055</td>
+                    <td>9.37%</td>
+                </tr>
+                <tr>
+                    <td>Normal 1cc</td>
+                    <td>2,669</td>
+                    <td>23.71%</td>
+                </tr>
+                <tr>
+                    <td>Hard 1cc</td>
+                    <td>875</td>
+                    <td>7.77%</td>
+                </tr>
+                <tr>
+                    <td>Lunatic 1cc</td>
+                    <td>821</td>
+                    <td>7.29%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div>
+            <h4>Touhou 11 - Subterranean Animism</h4>
+            <p>Valid responses: 11,030</p>
+        </div>
+        <table class='table poll sortable'>
+            <colgroup>
+                <col class='col2'>
+                <col class='col3'>
+                <col class='col4'>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class='header'>Highest 1cc</th>
+                    <th class='header'>Responses</th>
+                    <th class='header'>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Not played</td>
+                    <td>5,449</td>
+                    <td>49.40%</td>
+                </tr>
+                <tr>
+                    <td>Not cleared</td>
+                    <td>1,026</td>
+                    <td>9.30%</td>
+                </tr>
+                <tr>
+                    <td>Easy 1cc</td>
+                    <td>1,252</td>
+                    <td>11.35%</td>
+                </tr>
+                <tr>
+                    <td>Normal 1cc</td>
+                    <td>2,041</td>
+                    <td>18.50%</td>
+                </tr>
+                <tr>
+                    <td>Hard 1cc</td>
+                    <td>651</td>
+                    <td>5.90%</td>
+                </tr>
+                <tr>
+                    <td>Lunatic 1cc</td>
+                    <td>611</td>
+                    <td>5.54%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div>
+            <h4>Touhou 12 - Undefined Fantastic Object</h4>
+            <p>Valid responses: 10,845</p>
+        </div>
+        <table class='table poll sortable'>
+            <colgroup>
+                <col class='col2'>
+                <col class='col3'>
+                <col class='col4'>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class='header'>Highest 1cc</th>
+                    <th class='header'>Responses</th>
+                    <th class='header'>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Not played</td>
+                    <td>5,977</td>
+                    <td>55.11%</td>
+                </tr>
+                <tr>
+                    <td>Not cleared</td>
+                    <td>938</td>
+                    <td>8.65%</td>
+                </tr>
+                <tr>
+                    <td>Easy 1cc</td>
+                    <td>1,020</td>
+                    <td>9.41%</td>
+                </tr>
+                <tr>
+                    <td>Normal 1cc</td>
+                    <td>1,979</td>
+                    <td>18.25%</td>
+                </tr>
+                <tr>
+                    <td>Hard 1cc</td>
+                    <td>498</td>
+                    <td>4.59%</td>
+                </tr>
+                <tr>
+                    <td>Lunatic 1cc</td>
+                    <td>433</td>
+                    <td>3.99%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div>
+            <h4>Touhou 13 - Ten Desires</h4>
+            <p>Valid responses: 10,839</p>
+        </div>
+        <table class='table poll sortable'>
+            <colgroup>
+                <col class='col2'>
+                <col class='col3'>
+                <col class='col4'>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class='header'>Highest 1cc</th>
+                    <th class='header'>Responses</th>
+                    <th class='header'>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Not played</td>
+                    <td>5,972</td>
+                    <td>55.10%</td>
+                </tr>
+                <tr>
+                    <td>Not cleared</td>
+                    <td>655</td>
+                    <td>6.04%</td>
+                </tr>
+                <tr>
+                    <td>Easy 1cc</td>
+                    <td>913</td>
+                    <td>8.42%</td>
+                </tr>
+                <tr>
+                    <td>Normal 1cc</td>
+                    <td>2,075</td>
+                    <td>19.14%</td>
+                </tr>
+                <tr>
+                    <td>Hard 1cc</td>
+                    <td>666</td>
+                    <td>6.14%</td>
+                </tr>
+                <tr>
+                    <td>Lunatic 1cc</td>
+                    <td>558</td>
+                    <td>5.15%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div>
+            <h4>Touhou 14 - Double Dealing Character</h4>
+            <p>Valid responses: 10,758</p>
+        </div>
+        <table class='table poll sortable'>
+            <colgroup>
+                <col class='col2'>
+                <col class='col3'>
+                <col class='col4'>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class='header'>Highest 1cc</th>
+                    <th class='header'>Responses</th>
+                    <th class='header'>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Not played</td>
+                    <td>6,125</td>
+                    <td>56.93%</td>
+                </tr>
+                <tr>
+                    <td>Not cleared</td>
+                    <td>643</td>
+                    <td>5.98%</td>
+                </tr>
+                <tr>
+                    <td>Easy 1cc</td>
+                    <td>958</td>
+                    <td>8.91%</td>
+                </tr>
+                <tr>
+                    <td>Normal 1cc</td>
+                    <td>1,915</td>
+                    <td>17.80%</td>
+                </tr>
+                <tr>
+                    <td>Hard 1cc</td>
+                    <td>555</td>
+                    <td>5.16%</td>
+                </tr>
+                <tr>
+                    <td>Lunatic 1cc</td>
+                    <td>562</td>
+                    <td>5.22%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div>
+            <h4>Touhou 15 - Legacy of Lunatic Kingdom (Pointdevice Mode)</h4>
+            <p>Valid responses: 10,808</p>
+        </div>
+        <table class='table poll sortable'>
+            <colgroup>
+                <col class='col2'>
+                <col class='col3'>
+                <col class='col4'>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class='header'>Highest 1cc</th>
+                    <th class='header'>Responses</th>
+                    <th class='header'>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Not played</td>
+                    <td>5,977</td>
+                    <td>55.30%</td>
+                </tr>
+                <tr>
+                    <td>Not cleared</td>
+                    <td>796</td>
+                    <td>7.36%</td>
+                </tr>
+                <tr>
+                    <td>Easy 1cc</td>
+                    <td>1,040</td>
+                    <td>9.62%</td>
+                </tr>
+                <tr>
+                    <td>Normal 1cc</td>
+                    <td>1,854</td>
+                    <td>17.15%</td>
+                </tr>
+                <tr>
+                    <td>Hard 1cc</td>
+                    <td>495</td>
+                    <td>4.58%</td>
+                </tr>
+                <tr>
+                    <td>Lunatic 1cc</td>
+                    <td>646</td>
+                    <td>5.98%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div>
+            <h4>Touhou 15 - Legacy of Lunatic Kingdom (Legacy Mode)</h4>
+            <p>Valid responses: 10,581</p>
+        </div>
+        <table class='table poll sortable'>
+            <colgroup>
+                <col class='col2'>
+                <col class='col3'>
+                <col class='col4'>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class='header'>Highest 1cc</th>
+                    <th class='header'>Responses</th>
+                    <th class='header'>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Not played</td>
+                    <td>6,053</td>
+                    <td>57.21%</td>
+                </tr>
+                <tr>
+                    <td>Not cleared</td>
+                    <td>1,759</td>
+                    <td>16.62%</td>
+                </tr>
+                <tr>
+                    <td>Easy 1cc</td>
+                    <td>796</td>
+                    <td>7.52%</td>
+                </tr>
+                <tr>
+                    <td>Normal 1cc</td>
+                    <td>1,110</td>
+                    <td>10.49%</td>
+                </tr>
+                <tr>
+                    <td>Hard 1cc</td>
+                    <td>353</td>
+                    <td>3.34%</td>
+                </tr>
+                <tr>
+                    <td>Lunatic 1cc</td>
+                    <td>510</td>
+                    <td>4.82%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div>
+            <h4>Touhou 16 - Hidden Star in Four Seasons</h4>
+            <p>Valid responses: 10,758</p>
+        </div>
+        <table class='table poll sortable'>
+            <colgroup>
+                <col class='col2'>
+                <col class='col3'>
+                <col class='col4'>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class='header'>Highest 1cc</th>
+                    <th class='header'>Responses</th>
+                    <th class='header'>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Not played</td>
+                    <td>6,266</td>
+                    <td>58.25%</td>
+                </tr>
+                <tr>
+                    <td>Not cleared</td>
+                    <td>639</td>
+                    <td>5.94%</td>
+                </tr>
+                <tr>
+                    <td>Easy 1cc</td>
+                    <td>955</td>
+                    <td>8.88%</td>
+                </tr>
+                <tr>
+                    <td>Normal 1cc</td>
+                    <td>1,798</td>
+                    <td>16.71%</td>
+                </tr>
+                <tr>
+                    <td>Hard 1cc</td>
+                    <td>448</td>
+                    <td>4.16%</td>
+                </tr>
+                <tr>
+                    <td>Lunatic 1cc</td>
+                    <td>652</td>
+                    <td>6.06%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div>
+            <h4>Touhou 17 - Wily Beast and Weakest Creature</h4>
+            <p>Valid responses: 10,829</p>
+        </div>
+        <table class='table poll sortable'>
+            <colgroup>
+                <col class='col2'>
+                <col class='col3'>
+                <col class='col4'>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class='header'>Highest 1cc</th>
+                    <th class='header'>Responses</th>
+                    <th class='header'>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Not played</td>
+                    <td>6,213</td>
+                    <td>57.37%</td>
+                </tr>
+                <tr>
+                    <td>Not cleared</td>
+                    <td>621</td>
+                    <td>5.73%</td>
+                </tr>
+                <tr>
+                    <td>Easy 1cc</td>
+                    <td>990</td>
+                    <td>9.14%</td>
+                </tr>
+                <tr>
+                    <td>Normal 1cc</td>
+                    <td>1,932</td>
+                    <td>17.84%</td>
+                </tr>
+                <tr>
+                    <td>Hard 1cc</td>
+                    <td>553</td>
+                    <td>5.11%</td>
+                </tr>
+                <tr>
+                    <td>Lunatic 1cc</td>
+                    <td>520</td>
+                    <td>4.80%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div>
+            <h4>Touhou 18 - Unconnected Marketeers</h4>
+            <p>Valid responses: 10,904</p>
+        </div>
+        <table class='table poll sortable'>
+            <colgroup>
+                <col class='col2'>
+                <col class='col3'>
+                <col class='col4'>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class='header'>Highest 1cc</th>
+                    <th class='header'>Responses</th>
+                    <th class='header'>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Not played</td>
+                    <td>6,053</td>
+                    <td>55.51%</td>
+                </tr>
+                <tr>
+                    <td>Not cleared</td>
+                    <td>636</td>
+                    <td>5.83%</td>
+                </tr>
+                <tr>
+                    <td>Easy 1cc</td>
+                    <td>1,162</td>
+                    <td>10.66%</td>
+                </tr>
+                <tr>
+                    <td>Normal 1cc</td>
+                    <td>1,838</td>
+                    <td>16.86%</td>
+                </tr>
+                <tr>
+                    <td>Hard 1cc</td>
+                    <td>537</td>
+                    <td>4.92%</td>
+                </tr>
+                <tr>
+                    <td>Lunatic 1cc</td>
+                    <td>678</td>
+                    <td>6.22%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3>05. Publications subscribed to</h3>
+    <div>
+        <div>
+            <h4>Curiosities of Lotus Asia</h3>
+            <p>Valid responses: 10,666</p>
+        </div>
+        <div class='overflow'><table class='table poll sortable'>
+            <colgroup>
+                <col class='col2'>
+                <col class='col3'>
+                <col class='col4'>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class='header'>Answer</th>
+                    <th class='header'>Responses</th>
+                    <th class='header'>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Not bought</td>
+                    <td>8,622</td>
+                    <td>80.84%</td>
+                </tr>
+                <tr>
+                    <td>Bought the serialization (Strange Creators of Outer World)</td>
+                    <td>2,044</td>
+                    <td>19.16%</td>
+                </tr>
+            </tbody>
+        </table></div>
+    </div>
+    <div>
+        <div>
+            <h4>Lotus Eaters</h4>
+            <p>Valid responses: 10,955</p>
+        </div>
+        <div class='overflow'><table class='table poll sortable'>
+            <colgroup>
+                <col class='col2'>
+                <col class='col3'>
+                <col class='col4'>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class='header'>Answer</th>
+                    <th class='header'>Responses</th>
+                    <th class='header'>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Not read</td>
+                    <td>6,069</td>
+                    <td>55.40%</td>
+                </tr>
+                <tr>
+                    <td>Bought the serialization (Comp Ace)</td>
+                    <td>155</td>
+                    <td>1.41%</td>
+                </tr>
+                <tr>
+                    <td>Reading on Comic Walker</td>
+                    <td>879</td>
+                    <td>8.02%</td>
+                </tr>
+                <tr>
+                    <td>Reading on Niconico</td>
+                    <td>606</td>
+                    <td>5.53%</td>
+                </tr>
+                <tr>
+                    <td>Reading in the Touhou Garakuta magazine</td>
+                    <td>521</td>
+                    <td>4.76%</td>
+                </tr>
+                <tr>
+                    <td>Purchased the tankobon volumes</td>
+                    <td>2,725</td>
+                    <td>24.87%</td>
+                </tr>
+            </tbody>
+        </table></div>
+    </div>
+    <div>
+        <div>
+            <h3>Foul Detective Satori</h3>
+            <p>Valid responses: 10,475</p>
+        </div>
+        <div class='overflow'><table class='table poll sortable'>
+            <colgroup>
+                <col class='col2'>
+                <col class='col3'>
+                <col class='col4'>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class='header'>Answer</th>
+                    <th class='header'>Responses</th>
+                    <th class='header'>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Not read</td>
+                    <td>6,429</td>
+                    <td>61.37%</td>
+                </tr>
+                <tr>
+                    <td>Reading on Comic Walker</td>
+                    <td>1,090</td>
+                    <td>10.41%</td>
+                </tr>
+                <tr>
+                    <td>Reading on Niconico</td>
+                    <td>614</td>
+                    <td>5.86%</td>
+                </tr>
+                <tr>
+                    <td>Reading in the Touhou Garakuta magazine</td>
+                    <td>611</td>
+                    <td>5.83%</td>
+                </tr>
+                <tr>
+                    <td>Purchased the tankobon volumes</td>
+                    <td>1,731</td>
+                    <td>16.53%</td>
+                </tr>
+            </tbody>
+        </table></div>
+    </div>
+    <h3>06. What do you like about Touhou? (Multiple answers possible)</h3>
+    <p>Valid responses: 16,870</p>
+    <div class='overflow'><table class='poll table sortable'>
+        <colgroup>
+            <col class='col2'>
+            <col class='col3'>
+            <col class='col4'>
+        </colgroup>
+        <thead>
+            <tr>
+                <th class='header'>Aspect</th>
+                <th class='header'>Responses</th>
+                <th class='header'>Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Music</td>
+                <td>15,886</td>
+                <td>94.17%</td>
+            </tr>
+            <tr>
+                <td>Games</td>
+                <td>10,658</td>
+                <td>63.18%</td>
+            </tr>
+            <tr>
+                <td>Characters</td>
+                <td>15,467</td>
+                <td>91.68%</td>
+            </tr>
+            <tr>
+                <td>Story</td>
+                <td>11,259</td>
+                <td>66.74%</td>
+            </tr>
+            <tr>
+                <td>Universe</td>
+                <td>13,285</td>
+                <td>78.75%</td>
+            </tr>
+            <tr>
+                <td>Fanworks</td>
+                <td>13,056</td>
+                <td>77.39%</td>
+            </tr>
+            <tr>
+                <td>Fandom</td>
+                <td>7,486</td>
+                <td>44.37%</td>
+            </tr>
+        </tbody>
+    </table></div>
+    <h3>07. When did you discover Touhou?</h3>
+    <p>Valid responses: 15,521</p>
+    <div class='overflow'><table class='table poll sortable'>
+        <colgroup>
+            <col class='col2'>
+            <col class='col3'>
+            <col class='col4'>
+        </colgroup>
+        <thead>
+            <tr>
+                <th class='header'>Time period</th>
+                <th class='header'>Responses</th>
+                <th class='header'>Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>PC-98 - Shuusou Gyoku</strong><br>(October 1995 - December 2000)</td>
+                <td>81</td>
+                <td>0.52%</td>
+            </tr>
+            <tr>
+                <td><strong>Shuusou Gyoku - EoSD</strong><br>(December 2000 - August 2002)</td>
+                <td>156</td>
+                <td>1.01%</td>
+            </tr>
+            <tr>
+                <td><strong>EoSD - PCB</strong><br>(August 2002 - August 2003)</td>
+                <td>413</td>
+                <td>2.66%</td>
+            </tr>
+            <tr>
+                <td><strong>PCB - IN</strong><br>(August 2003 - August 2004)</td>
+                <td>199</td>
+                <td>1.28%</td>
+            </tr>
+            <tr>
+                <td><strong>IN - IaMP</strong><br>(August 2004 - December 2004)</td>
+                <td>139</td>
+                <td>0.90%</td>
+            </tr>
+            <tr>
+                <td><strong>IaMP - PoFV</strong><br>(December 2004 - August 2005)</td>
+                <td>102</td>
+                <td>0.66%</td>
+            </tr>
+            <tr>
+                <td><strong>PoFV - StB</strong><br>(August 2005 - December 2005)</td>
+                <td>78</td>
+                <td>0.50%</td>
+            </tr>
+            <tr>
+                <td><strong>StB - PMiSS</strong><br>(December 2005 - December 2006)</td>
+                <td>115</td>
+                <td>0.74%</td>
+            </tr>
+            <tr>
+                <td><strong>PMiSS - MoF</strong><br>(December 2006 - August 2007)</td>
+                <td>406</td>
+                <td>2.62%</td>
+            </tr>
+            <tr>
+                <td><strong>MoF - SA</strong><br>(August 2007 - August 2008)</td>
+                <td>827</td>
+                <td>5.33%</td>
+            </tr>
+            <tr>
+                <td><strong>SA - UFO</strong><br>(August 2008 - August 2009)</td>
+                <td>660</td>
+                <td>4.25%</td>
+            </tr>
+            <tr>
+                <td><strong>UFO - GFW</strong><br>(August 2009 - August 2010)</td>
+                <td>611</td>
+                <td>3.94%</td>
+            </tr>
+            <tr>
+                <td><strong>GFW - TD</strong><br>(August 2010 - August 2011)</td>
+                <td>652</td>
+                <td>4.20%</td>
+            </tr>
+            <tr>
+                <td><strong>TD - SoPM</strong><br>(August 2011 - April 2012)</td>
+                <td>837</td>
+                <td>5.39%</td>
+            </tr>
+            <tr>
+                <td><strong>SoPM - DDC</strong><br>(April 2012 - August 2013)</td>
+                <td>857</td>
+                <td>5.52%</td>
+            </tr>
+            <tr>
+                <td><strong>DDC - ISC</strong><br>(August 2013 - May 2014)</td>
+                <td>1,082</td>
+                <td>6.97%</td>
+            </tr>
+            <tr>
+                <td><strong>ISC - LoLK</strong><br>(May 2014 - August 2015)</td>
+                <td>1,399</td>
+                <td>9.01%</td>
+            </tr>
+            <tr>
+                <td><strong>LoLK - DBOA</strong><br>(August 2015 - August 2016)</td>
+                <td>1,440</td>
+                <td>9.28%</td>
+            </tr>
+            <tr>
+                <td><strong>DBOA - HSiFS</strong><br>(August 2016 - August 2017)</td>
+                <td>1,471</td>
+                <td>9.48%</td>
+            </tr>
+            <tr>
+                <td><strong>HSiFS - WBaWC</strong><br>(August 2017 - August 2019)</td>
+                <td>1,966</td>
+                <td>12.67%</td>
+            </tr>
+            <tr>
+                <td><strong>WBaWC - UM</strong><br>(August 2019 - May 2021)</td>
+                <td>1,239</td>
+                <td>7.98%</td>
+            </tr>
+            <tr>
+                <td><strong>UM - now</strong></td>
+                <td>791</td>
+                <td>5.10%</td>
+            </tr>
+        </tbody>
+    </table></div>
+    <h3>08. How did you discover Touhou?</h3>
+    <p>Valid responses: 15,607</p>
+    <div class='overflow'><table class='table poll sortable'>
+        <colgroup>
+            <col class='col2'>
+            <col class='col3'>
+            <col class='col4'>
+        </colgroup>
+        <thead>
+            <tr>
+                <th class='header'>Method of discovery</th>
+                <th class='header'>Responses</th>
+                <th class='header'>Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Offline (School, club activities, family, etc.)</td>
+                <td>3,283</td>
+                <td>21.04%</td>
+            </tr>
+            <tr>
+                <td>Online games, online friends, chat (IRC, etc.)</td>
+                <td>704</td>
+                <td>4.51%</td>
+            </tr>
+            <tr>
+                <td>Personal sites, blogs, news sites, etc.</td>
+                <td>389</td>
+                <td>2.49%</td>
+            </tr>
+            <tr>
+                <td>Image sites (Pixiv, Nijie, TINAMI, SNS, etc.)</td>
+                <td>478</td>
+                <td>3.06%</td>
+            </tr>
+            <tr>
+                <td>Anonymous boards (2ch, Futaba, etc.)</td>
+                <td>267</td>
+                <td>1.71%</td>
+            </tr>
+            <tr>
+                <td>Niconico</td>
+                <td>2,127</td>
+                <td>13.63%</td>
+            </tr>
+            <tr>
+                <td>Twitter</td>
+                <td>87</td>
+                <td>0.56%</td>
+            </tr>
+            <tr>
+                <td>Magazine articles, TV programs, etc.</td>
+                <td>47</td>
+                <td>0.30%</td>
+            </tr>
+            <tr>
+                <td>Doujinshi (Comiket, etc.)</td>
+                <td>86</td>
+                <td>0.55%</td>
+            </tr>
+            <tr>
+                <td>Doujin stores, general bookstores, etc.</td>
+                <td>115</td>
+                <td>0.74%</td>
+            </tr>
+            <tr>
+                <td>When looking for interesting games</td>
+                <td>353</td>
+                <td>2.26%</td>
+            </tr>
+            <tr>
+                <td>Rhythm games tdat contain Touhou music</td>
+                <td>947</td>
+                <td>6.07%</td>
+            </tr>
+            <tr>
+                <td>Other video sites</td>
+                <td>658</td>
+                <td>4.22%</td>
+            </tr>
+            <tr>
+                <td>Fanmade mobile apps</td>
+                <td>450</td>
+                <td>2.88%</td>
+            </tr>
+            <tr>
+                <td>YouTube</td>
+                <td>5,599</td>
+                <td>35.87%</td>
+            </tr>
+            <tr>
+                <td>Real life events otder than large-scale Touhou events</td>
+                <td>17</td>
+                <td>0.11%</td>
+            </tr>
+        </tbody>
+    </table></div>
+    <h3>09. Participation in doujin events such as Comiket and Reitaisai (multiple answers possible)</h3>
+    <p>Valid responses: 16,870</p>
+    <div class='overflow'><table class='table poll sortable'>
+        <colgroup>
+            <col class='col2'>
+            <col class='col3'>
+            <col class='col4'>
+        </colgroup>
+        <thead>
+            <tr>
+                <th class='header'>Answer</th>
+                <th class='header'>Responses</th>
+                <th class='header'>Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>No participation</td>
+                <td>9,851</td>
+                <td>58.39%</td>
+            </tr>
+            <tr>
+                <td>Bought official works</td>
+                <td>3,489</td>
+                <td>20.68%</td>
+            </tr>
+            <tr>
+                <td>Bought doujinshi</td>
+                <td>4,468</td>
+                <td>26.48%</td>
+            </tr>
+            <tr>
+                <td>Bought doujin music</td>
+                <td>3,748</td>
+                <td>22.22%</td>
+            </tr>
+            <tr>
+                <td>Bought doujin games</td>
+                <td>2,066</td>
+                <td>12.25%</td>
+            </tr>
+            <tr>
+                <td>Bought doujin goods</td>
+                <td>3,531</td>
+                <td>20.93%</td>
+            </tr>
+            <tr>
+                <td>Bought corporate works</td>
+                <td>1,237</td>
+                <td>7.33%</td>
+            </tr>
+            <tr>
+                <td>Distributed works (as a circle)</td>
+                <td>1,016</td>
+                <td>6.02%</td>
+            </tr>
+            <tr>
+                <td>Staff</td>
+                <td>222</td>
+                <td>1.32%</td>
+            </tr>
+            <tr>
+                <td>Interacted witd circles and friends</td>
+                <td>1,811</td>
+                <td>10.74%</td>
+            </tr>
+            <tr>
+                <td>Cosplayed</td>
+                <td>537</td>
+                <td>3.18%</td>
+            </tr>
+            <tr>
+                <td>Viewed or photographed cosplay</td>
+                <td>1,349</td>
+                <td>8.00%</td>
+            </tr>
+            <tr>
+                <td>Corporate collab events (for rhytdm games, etc)</td>
+                <td>973</td>
+                <td>5.77%</td>
+            </tr>
+            <tr>
+                <td>Performed live music</td>
+                <td>1,052</td>
+                <td>6.24%</td>
+            </tr>
+        </tbody>
+    </table></div>
+    <h3>10. Have you voted on the Touhou Popularity Poll before?</h3>
+    <p>Valid responses: 16,320</p>
+    <div class='overflow'><table class='table poll sortable'>
+        <colgroup>
+            <col class='col2'>
+            <col class='col3'>
+            <col class='col4'>
+        </colgroup>
+        <thead>
+            <tr>
+                <th class='header'>Answer</th>
+                <th class='header'>Responses</th>
+                <th class='header'>Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Never voted before</td>
+                <td>7,428</td>
+                <td>45.51%</td>
+            </tr>
+            <tr>
+                <td>Voted 1 to 3 times</td>
+                <td>6,102</td>
+                <td>37.39%</td>
+            </tr>
+            <tr>
+                <td>Voted 4 or more times</td>
+                <td>2,790</td>
+                <td>17.10%</td>
+            </tr>
+        </tbody>
+    </table></div>
     <p><strong><a href='#top'>Back to Top</a></strong></p>
 </div>
 <?php // language detection hack ?>
