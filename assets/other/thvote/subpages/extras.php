@@ -1,5 +1,6 @@
 <h2>Contents</h2>
-<div id='contents_extra' class='border'>
+<p>TBD</p>
+<!--<div id='contents_extra' class='border'>
     <p><a href='#jumps'>Biggest jumps</a></p>
     <p><a href='#mpg'>Music vote per maingame</a></p>
     <ul><li><a href='#mtotals'>Totals per maingame</a></li><?php
@@ -1167,4 +1168,4 @@
         <tr><td>SoEW - Touhou 2</td><td class='fextreme'>63.98%</td></tr>
     </tbody>
 </table></div>
-<p><strong><a href='#top'>Back to Top</a></strong></p>
+<p><strong><a href='#top'>Back to Top</a></strong></p>-->
