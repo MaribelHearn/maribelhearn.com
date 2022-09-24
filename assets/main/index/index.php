@@ -85,8 +85,8 @@
             <h3>Other</h3>
             <div class='page_table'>
                 <p class='link'>
-                    <a href='/thvote'><span class='icon thvote_icon'></span> THWiki Popularity Poll 2021 Results Translation</a>
-                    <span class='tooltip'>Complete English translation of the full results of the THWiki Popularity Poll held in 2021.</span>
+                    <a href='/thvote'><span class='icon thvote_icon'></span> THWiki Popularity Poll 2022 Results Translation</a>
+                    <span class='tooltip'>Complete English translation of the full results of the THWiki Popularity Poll held in 2022.</span>
                 </p>
                 <p class='link'>
                     <a href='/tiers'><span class='icon tiers_icon'></span> Touhou Tier List Creator</a>
