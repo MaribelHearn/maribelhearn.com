@@ -1,5 +1,4 @@
 <p>An English translation of the full results of the 2022 incarnation of the annual THWiki Popularity Poll, held from 16 September 2022 to 24 September 2022.</p>
-<p>Questionnaire will come a bit later, please be patient.</p>
 <!--<p>The full results, including the questionnaire, comments, and detailed statistics per character, were released on 17 January 2022.</p>-->
 <!--<p>Confusingly, "preliminary" simply means the full results without the questionnaire results.
 It does not mean the results are not final. The number of votes for the characters,
