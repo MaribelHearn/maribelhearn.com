@@ -1,12 +1,7 @@
 <h2>Contents</h2>
 <div id='contents_extra' class='border'>
     <p><a href='#jumps'>Biggest jumps</a></p>
-    <!--<p><a href='#cpg'>Character vote per maingame</a></p>
-<h2 id='cpg'>Character vote per maingame</h2>
-<h3 id='ctotals'>Totals per maingame</h3>
-<div class='overflow'><table class='poll table sortable'>
-    
-</table></div>-->
+    <p><a href='#cpg'>Character vote per maingame</a></p>
     <p><a href='#mpg'>Music vote per maingame</a></p>
     <ul><li><a href='#mtotals'>Totals per maingame</a></li><?php
         $games = ['HRtP', 'SoEW', 'PoDD', 'LLS', 'MS', 'EoSD', 'PCB', 'IN', 'PoFV', 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC', 'UM'];
@@ -188,10 +183,9 @@
         <tr><td>141</td><td>150</td><td>Ellen</td><td class='drop'>-9</td></tr>
     </tbody>
 </table></div>
-<h2 id='mpg'>Music vote per maingame</h2>
-<h3 id='mtotals'>Totals per maingame</h3>
-<div>
-    <div class='overflow'><table class='poll table sortable'>
+<h2 id='cpg'>Character vote per maingame</h2>
+<h3 id='ctotals'>Totals per maingame</h3>
+<div class='overflow'><table class='poll table sortable'>
         <colgroup>
             <col class='col2game'>
             <col class='col3'>
@@ -208,23 +202,58 @@
                 <th class='sorttable_numeric'>Comments</th>
             </tr>
         </thead>
-        <tbody>
-            <tr><td>1</td><td>EoSD</td><td>71,386</td><td>11,783</td><td>7,599</td></tr>
-            <tr><td>2</td><td>IN</td><td>40,021</td><td>4,003</td><td>3,978</td></tr></tr>
-            <tr><td>3</td><td>PCB</td><td>35,913</td><td>3,537</td><td>3,468</td></tr>
-            <tr><td>4</td><td>MoF</td><td>30,445</td><td>2,984</td><td>3,228</td></tr>
-            <tr><td>5</td><td>SA</td><td>23,804</td><td>2,652</td><td>2,448</td></tr>
-            <tr><td>6</td><td>LoLK</td><td>14,631</td><td>1,474</td><td>1,655</td></tr>
-            <tr><td>7</td><td>WBaWC</td><td>11,581</td><td>1,539</td><td>1,418</td></tr>
-            <tr><td>8</td><td>UFO</td><td>10,669</td><td>994</td><td>1,139</td></tr>
-            <tr><td>12</td><td>PoFV</td><td>9,142</td><td>775</td><td>914</td></tr>
-            <tr><td>11</td><td>TD</td><td>9,124</td><td>927</td><td>1,000</td></tr>
-            <tr><td>9</td><td>DDC</td><td>8,341</td><td>812</td><td>898</td></tr>
-            <tr><td>10</td><td>UM</td><td>7,047</td><td>465</td><td>860</td></tr>
-            <tr><td>13</td><td>HSiFS</td><td>6,022</td><td>431</td><td>771</td></tr>
-        </tbody>
-    </table></div>
-</div>
+    <tbody>
+        <tr><td>1</td><td>EoSD</td><td>67,673</td><td>11,679</td><td>13,362</td></tr>
+        <tr><td>2</td><td>PCB</td><td>43,043</td><td>3,537</td><td>3,468</td></tr>
+        <tr><td>3</td><td>Reimu &amp; Marisa</td><td>32,257</td><td>6,180</td><td>6,112</td></tr></tr>
+        <tr><td>4</td><td>SA</td><td>31,251</td><td>4,740</td><td>5,657</td></tr>
+        <tr><td>5</td><td>IN</td><td>25,835</td><td>3,439</td><td>4,532</td></tr></tr>
+        <tr><td>6</td><td>MoF</td><td>24,013</td><td>3,372</td><td>4,295</td></tr>
+        <tr><td>7</td><td>PoFV</td><td>17,370</td><td>2,233</td><td>2,854</td></tr>
+        <tr><td>8</td><td>LoLK</td><td>14,972</td><td>1,532</td><td>2,665</td></tr>
+        <tr><td>9</td><td>UFO</td><td>13,228</td><td>1,600</td><td>2,279</td></tr>
+        <tr><td>10</td><td>TD</td><td>12,633</td><td>1,583</td><td>2,349</td></tr>
+        <tr><td>11</td><td>DDC</td><td>9,646</td><td>1,200</td><td>1,823</td></tr>
+        <tr><td>12</td><td>UM</td><td>7,845</td><td>520</td><td>1,581</td></tr>
+        <tr><td>13</td><td>WBaWC</td><td>7,183</td><td>600</td><td>1,374</td></tr>
+        <tr><td>14</td><td>HSiFS</td><td>5,560</td><td>454</td><td>1,117</td></tr>
+    </tbody>
+</table></div>
+<h2 id='mpg'>Music vote per maingame</h2>
+<h3 id='mtotals'>Totals per maingame</h3>
+<div class='overflow'><table class='poll table sortable'>
+    <colgroup>
+        <col class='col2game'>
+        <col class='col3'>
+        <col class='col4'>
+        <col class='col5'>
+        <col class='col6per'>
+    </colgroup>
+    <thead>
+        <tr>
+            <th class='sorttable_numeric'>Rank</th>
+            <th>Name</th>
+            <th class='sorttable_numeric'>Points</th>
+            <th class='sorttable_numeric'>No. 1 Votes</th>
+            <th class='sorttable_numeric'>Comments</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>1</td><td>EoSD</td><td>71,386</td><td>11,783</td><td>7,599</td></tr>
+        <tr><td>2</td><td>IN</td><td>40,021</td><td>4,003</td><td>3,978</td></tr></tr>
+        <tr><td>3</td><td>PCB</td><td>35,913</td><td>3,537</td><td>3,468</td></tr>
+        <tr><td>4</td><td>MoF</td><td>30,445</td><td>2,984</td><td>3,228</td></tr>
+        <tr><td>5</td><td>SA</td><td>23,804</td><td>2,652</td><td>2,448</td></tr>
+        <tr><td>6</td><td>LoLK</td><td>14,631</td><td>1,474</td><td>1,655</td></tr>
+        <tr><td>7</td><td>WBaWC</td><td>11,581</td><td>1,539</td><td>1,418</td></tr>
+        <tr><td>8</td><td>UFO</td><td>10,669</td><td>994</td><td>1,139</td></tr>
+        <tr><td>12</td><td>PoFV</td><td>9,142</td><td>775</td><td>914</td></tr>
+        <tr><td>11</td><td>TD</td><td>9,124</td><td>927</td><td>1,000</td></tr>
+        <tr><td>9</td><td>DDC</td><td>8,341</td><td>812</td><td>898</td></tr>
+        <tr><td>10</td><td>UM</td><td>7,047</td><td>465</td><td>860</td></tr>
+        <tr><td>13</td><td>HSiFS</td><td>6,022</td><td>431</td><td>771</td></tr>
+    </tbody>
+</table></div>
 <h3 id='meosd'>Touhou 6 - The Embodiment of Scarlet Devil</h3>
 <div class='overflow'><table class='poll table sortable'>
     <colgroup>
