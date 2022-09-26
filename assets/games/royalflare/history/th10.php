@@ -314,7 +314,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasyReimuC' class='shottype'>霊夢B - ReimuB</p>
+<p id='EasyReimuC' class='shottype'>霊夢C - ReimuC</p>
 <table class='MoFt'>
     <tbody class='ranking'>
         <tr>
@@ -1065,7 +1065,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalReimuC' class='shottype'>霊夢A - ReimuC</p>
+<p id='NormalReimuC' class='shottype'>霊夢C - ReimuC</p>
 <table class='MoFt'>
     <tbody class='ranking'>
         <tr>
@@ -1080,7 +1080,7 @@
 		<td>1</td>
 		<td><a href='/replays/royalflare/th10/th10_ud0023.rpy'>2007/09/26 03:31</a></td>
 		<td>Normal</td>
-		<td><?php echo tl_shot('MarisaA', $lang) ?></td>
+		<td><?php echo tl_shot('ReimuC', $lang) ?></td>
 		<td>NAO</td>
 		<td>515,297,390</td>
 	</tr>
@@ -1088,7 +1088,7 @@
 		<td>2</td>
 		<td><a href='/replays/royalflare/th10/th10_ud003b.rpy'>2007/09/28 20:45</a></td>
 		<td>Normal</td>
-		<td><?php echo tl_shot('MarisaA', $lang) ?></td>
+		<td><?php echo tl_shot('ReimuC', $lang) ?></td>
 		<td>Lim</td>
 		<td>863,986,770</td>
 	</tr>
@@ -1096,7 +1096,7 @@
 		<td>3</td>
 		<td><a href='/replays/royalflare/th10/th10_ud00c5.rpy'>2007/10/10 23:51</a></td>
 		<td>Normal</td>
-		<td><?php echo tl_shot('MarisaA', $lang) ?></td>
+		<td><?php echo tl_shot('ReimuC', $lang) ?></td>
 		<td>SELO</td>
 		<td>960,032,540</td>
 	</tr>
@@ -1104,7 +1104,7 @@
 		<td>4</td>
 		<td><a href='/replays/royalflare/th10/th10_ud0149.rpy'>2007/10/29 18:05</a></td>
 		<td>Normal</td>
-		<td><?php echo tl_shot('MarisaA', $lang) ?></td>
+		<td><?php echo tl_shot('ReimuC', $lang) ?></td>
 		<td>KLA</td>
 		<td>1,009,294,500</td>
 	</tr>
@@ -1112,7 +1112,7 @@
 		<td>5</td>
 		<td><a href='/replays/royalflare/th10/th10_ud015e.rpy'>2007/11/02 18:48</a></td>
 		<td>Normal</td>
-		<td><?php echo tl_shot('MarisaA', $lang) ?></td>
+		<td><?php echo tl_shot('ReimuC', $lang) ?></td>
 		<td>AQUA*</td>
 		<td>1,043,946,240</td>
 	</tr>
@@ -1120,7 +1120,7 @@
 		<td>6</td>
 		<td><a href='/replays/royalflare/th10/th10_ud01b6.rpy'>2007/11/23 11:12</a></td>
 		<td>Normal</td>
-		<td><?php echo tl_shot('MarisaA', $lang) ?></td>
+		<td><?php echo tl_shot('ReimuC', $lang) ?></td>
 		<td>阿部 高和</td>
 		<td>1,393,137,340</td>
 	</tr>
@@ -1128,7 +1128,7 @@
 		<td>7</td>
 		<td><a href='/replays/royalflare/th10/th10_ud04dc.rpy'>2008/06/08 16:59</a></td>
 		<td>Normal</td>
-		<td><?php echo tl_shot('MarisaA', $lang) ?></td>
+		<td><?php echo tl_shot('ReimuC', $lang) ?></td>
 		<td>水性すらいむ</td>
 		<td>1,414,787,010</td>
 	</tr>
@@ -1136,7 +1136,7 @@
 		<td>8</td>
 		<td><a href='/replays/royalflare/th10/th10_ud08f1.rpy'>2009/01/04 12:28</a></td>
 		<td>Normal</td>
-		<td><?php echo tl_shot('MarisaA', $lang) ?></td>
+		<td><?php echo tl_shot('ReimuC', $lang) ?></td>
 		<td>水月</td>
 		<td>1,415,170,420</td>
 	</tr>
@@ -1144,7 +1144,7 @@
 		<td>9</td>
 		<td>2009/02/17 12:19<!--<a href='/replays/royalflare/th10/th10_ud09e4.rpy'>2009/02/17 12:19</a>--></td>
 		<td>Normal</td>
-		<td><?php echo tl_shot('MarisaA', $lang) ?></td>
+		<td><?php echo tl_shot('ReimuC', $lang) ?></td>
 		<td>水月</td>
 		<td>1,432,940,900</td>
 	</tr>
@@ -1152,7 +1152,7 @@
 		<td>10</td>
 		<td><a href='/replays/royalflare/th10/th10_ud0d56.rpy'>2009/08/21 16:41</a></td>
 		<td>Normal</td>
-		<td><?php echo tl_shot('MarisaA', $lang) ?></td>
+		<td><?php echo tl_shot('ReimuC', $lang) ?></td>
 		<td>GEPPO</td>
 		<td>1,553,252,040</td>
 	</tr>
@@ -1160,7 +1160,7 @@
 		<td>11</td>
 		<td><a href='/replays/royalflare/th10/th10_ud1053.rpy'>2010/04/17 01:31</a></td>
 		<td>Normal</td>
-		<td><?php echo tl_shot('MarisaA', $lang) ?></td>
+		<td><?php echo tl_shot('ReimuC', $lang) ?></td>
 		<td>yu-ku</td>
 		<td>1,629,297,870</td>
 	</tr>
@@ -1168,7 +1168,7 @@
 		<td>12</td>
 		<td><a href='/replays/royalflare/th10/th10_ud1847.rpy'>2014/11/01 22:01</a></td>
 		<td>Normal</td>
-		<td><?php echo tl_shot('MarisaA', $lang) ?></td>
+		<td><?php echo tl_shot('ReimuC', $lang) ?></td>
 		<td>ZWB</td>
 		<td>1,682,878,740</td>
 	</tr>
@@ -1624,7 +1624,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardReimuC' class='shottype'>霊夢A - ReimuC</p>
+<p id='HardReimuC' class='shottype'>霊夢C - ReimuC</p>
 <table class='MoFt'>
     <tbody class='ranking'>
         <tr>
@@ -2199,7 +2199,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticReimuC' class='shottype'>霊夢A - ReimuC</p>
+<p id='LunaticReimuC' class='shottype'>霊夢C - ReimuC</p>
 <table class='MoFt'>
     <tbody class='ranking'>
         <tr>
@@ -3046,7 +3046,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='ExtraReimuC' class='shottype'>霊夢A - ReimuC</p>
+<p id='ExtraReimuC' class='shottype'>霊夢C - ReimuC</p>
 <table class='MoFt'>
     <tbody class='ranking'>
         <tr>
