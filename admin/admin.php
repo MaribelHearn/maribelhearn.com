@@ -65,6 +65,7 @@
             case 'Aland Islands': return '';
             case 'Palestine': return '';
             case 'Dominica': return '';
+            case 'Guernsey': return '';
             case 'Estonia': return '';
             case 'Reunion': return '';
             case 'Bermuda': return '';
