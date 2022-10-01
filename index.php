@@ -3,11 +3,15 @@
     session_start();
     include_once 'assets/shared/shared.php';
     require_once 'assets/shared/mobile_detect.php';
+
+    // Determine page name
     $url = substr($_SERVER['REQUEST_URI'], 1);
 	$page = preg_split('/\?/', $url)[0];
     if (empty($page) || str_starts_with($_SERVER['REQUEST_URI'], '/') && count(array_count_values(str_split($_SERVER['REQUEST_URI']))) == 1) {
         $page = 'index';
     }
+
+    // Handle subpages
     if (strpos($page, '/') !== false) {
         $tmp = preg_split('/\//', $page);
         $subpage = $tmp[1];
@@ -21,13 +25,19 @@
     } else {
         unset($_SESSION['subpage']);
     }
+
+    // Check for redirection
     $status_code = empty($_GET['error']) ? '' : $_GET['error'];
     $page_path = 'assets/%dir/' . $page . '/' . $page . '.php'; // without subdir
     $page = redirect($page, $page_path, $_SERVER['REQUEST_URI'], $status_code);
+
+    // Record page hit
     if ($page == 'error' && empty($status_code)) {
         $status_code = '404';
     }
     hit($page, $status_code);
+
+    // Set page language
     $lang = set_lang_cookie();
     $locale = $lang . '.UTF-8';
     $page = preg_replace('/\//', '', $page);
@@ -36,6 +46,8 @@
         bindtextdomain($lang, 'locale');
         textdomain($lang);
     }
+
+    // Resource paths
     $use_index = array('index', 'about', 'credits', 'privacy', 'error');
     $dir = directory($page, $use_index);
     $page_path = 'assets/' . $dir . '/' . $page . '/' . $page . '.php';
@@ -50,6 +62,8 @@
     $js_href = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/shared/js_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile . '&hl=' . $lang;
     $favicon_dir = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . (!in_array($page, $use_index) ? 'assets/' . $dir . '/' . $page : '');
     $bg_pos = background_position($page);
+
+    // File uploads and theme changes
     $file_upload = handle_file_upload();
     if (!empty($_GET['theme'])) {
         set_theme_cookie($_GET['theme']);
@@ -94,20 +108,25 @@
     <body>
         <?php if ($page != 'tiers') { echo '<nav data-html2canvas-ignore><div id="nav" class="wrap">' . navbar($page) . '</div></nav>'; } ?>
         <main><?php if ($page == 'error') { include_once 'assets/main/error/error.php'; } else { include_once $page_path; } ?></main>
-        <?php if (!$is_mobile || $page != 'tiers') {
-            echo '<script nonce="' . file_get_contents('.stats/nonce') . '">document.body.style.background="url(\'' . ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/' . $dir . '/' . $css_js_file . '/' . $css_js_file . '.jpg\') ';
-            echo $bg_pos . ' no-repeat fixed";document.body.style.backgroundSize="cover"</script>';
-            echo '<noscript><link rel="stylesheet" href="/assets/shared/noscript_bg.php?page=' . $css_js_file . '&pos=' . $bg_pos . '"></noscript>';
-        }
-        if (isset($_SESSION) && array_key_exists('data', $_SESSION)) {
-            if (strpos($_SESSION['data'], '<') === false) {
-                echo '<input id="import" type="hidden" value="' . file_get_contents($_SESSION['data']) . '">';
-                unlink($_SESSION['data']);
-            } else if (strpos($_SESSION['data'], '<') !== false) {
-                echo '<input id="error" type="hidden" value="' . htmlentities($_SESSION['data']) . '">';
+        <?php
+            // Deferred page background
+            if (!$is_mobile || $page != 'tiers') {
+                echo '<script nonce="' . file_get_contents('.stats/nonce') . '">document.body.style.background="url(\'' . ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/' . $dir . '/' . $css_js_file . '/' . $css_js_file . '.jpg\') ';
+                echo $bg_pos . ' no-repeat fixed";document.body.style.backgroundSize="cover"</script>';
+                echo '<noscript><link rel="stylesheet" href="/assets/shared/noscript_bg.php?page=' . $css_js_file . '&pos=' . $bg_pos . '"></noscript>';
             }
-            unset($_SESSION['data']);
-        } ?>
+
+            // Session data
+            if (isset($_SESSION) && array_key_exists('data', $_SESSION)) {
+                if (strpos($_SESSION['data'], '<') === false) {
+                    echo '<input id="import" type="hidden" value="' . file_get_contents($_SESSION['data']) . '">';
+                    unlink($_SESSION['data']);
+                } else if (strpos($_SESSION['data'], '<') !== false) {
+                    echo '<input id="error" type="hidden" value="' . htmlentities($_SESSION['data']) . '">';
+                }
+                unset($_SESSION['data']);
+            }
+        ?>
     </body>
 
 </html>
