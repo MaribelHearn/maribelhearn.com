@@ -71,6 +71,9 @@ ol > li {
     display: inline-block;
     background-image: url('../games/pofv/images/faces.png');
 }
+.char:hover {
+    background-color: #bbb;
+}
 .hidden {
     display: none;
 }
@@ -124,6 +127,9 @@ ol > li {
 }
 #discord {
     white-space: nowrap;
+}
+#back {
+    margin-top: 25px;
 }
 #s {
     background: radial-gradient(#8B0000, #C54500, #FF8C00);
