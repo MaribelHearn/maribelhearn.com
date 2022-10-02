@@ -1,4 +1,5 @@
 <?php
+include_once 'assets/shared/http.php';
 $id = 0;
 if (file_exists('assets/shared/json/wrlist.json')) {
     $wrlist_json = file_get_contents('assets/shared/json/wrlist.json');
@@ -11,6 +12,7 @@ if (file_exists('assets/shared/json/wrlist.json')) {
 $rubrics_json = file_get_contents('assets/shared/json/rubrics.json');
 $WRs = json_decode($wrlist_json, true);
 $Rubrics = json_decode($rubrics_json, true);
+
 function manoku(string $str, int $len, int $offset, string $lang) {
     if ($str[$len-$offset] != '0') {
         $str = substr($str, 0, $len-$offset) . '.' . substr($str, $len-$offset, $len-1);
@@ -25,6 +27,7 @@ function manoku(string $str, int $len, int $offset, string $lang) {
     $char = ($lang == 'ja_JP' ? '億' : '亿');
     return $str . ($offset == 4 ? '万' : $char);
 }
+
 function illion(string $str, int $len, int $offset, string $lang) {
     if ($str[$len-$offset] != '0') {
         $str = substr($str, 0, $len-$offset) . '.' . substr($str, $len-$offset, $len-1);
@@ -38,9 +41,11 @@ function illion(string $str, int $len, int $offset, string $lang) {
     }
     return $str . ($offset == 6 ? 'm' : 'b');
 }
+
 function sep(int $num) {
     return number_format($num, 0, '.', ',');
 }
+
 function abbreviate(int $num, string $lang) {
     $str = strval($num);
     if ($lang == 'ja_JP' || $lang == 'zh_CN') {
@@ -59,6 +64,7 @@ function abbreviate(int $num, string $lang) {
         }
     }
 }
+
 function is_phantasmagoria(string $game) {
     return $game == 'PoDD' || $game == 'PoFV';
 }

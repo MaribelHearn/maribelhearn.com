@@ -79,7 +79,7 @@ function dark() {
 
     const style = document.createElement("link");
     style.id = "dark_theme";
-    style.href = (location.host != "localhost" || location.pathname.includes("error") ? "https://maribelhearn.com/" : "/") + "assets/shared/dark.css";
+    style.href = (location.host != "localhost" || location.pathname.includes("error") ? "https://maribelhearn.com/" : "/") + "css/dark.css";
     style.type = "text/css";
     style.rel = "stylesheet";
     head.appendChild(style);

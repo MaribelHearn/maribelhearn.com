@@ -1,4 +1,5 @@
 <?php
+include_once 'assets/shared/http.php';
 if (file_exists('assets/shared/json/gensokyo.json')) {
     $json = file_get_contents('assets/shared/json/gensokyo.json');
 } else {

@@ -1,4 +1,5 @@
 <?php
+include_once 'assets/shared/http.php';
 $ALL_LNN = 101;
 $ALL_GAME_LNN = 13;
 if (file_exists('assets/shared/json/lnnlist.json')) {

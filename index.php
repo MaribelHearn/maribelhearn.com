@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <?php
     session_start();
+    include_once 'assets/shared/http.php';
+    include_once 'assets/shared/index_utils.php';
     include_once 'assets/shared/shared.php';
+    include_once 'assets/shared/navbar.php';
     require_once 'assets/shared/mobile_detect.php';
 
     // Determine page name
@@ -45,6 +48,19 @@
         setlocale(LC_ALL, $locale);
         bindtextdomain($lang, 'locale');
         textdomain($lang);
+    }
+
+    // Background position
+    function background_position($page) {
+        $top = array('c67', 'drc', 'history', 'jargon', 'survival', 'slots', 'tools');
+        $bottom = array('fangame', 'lnn', 'scoring', 'wr');
+        if (in_array($page, $top)) {
+            return 'top';
+        } else if (in_array($page, $bottom)) {
+            return 'bottom';
+        } else {
+            return 'center';
+        }
     }
 
     // Resource paths
