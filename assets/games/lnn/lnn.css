@@ -169,7 +169,7 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
 #nav {
     margin-bottom: 5px;
 }
-#newlayout, #playersearch, #playersearchlink, #contents_new, #lnn_list, #player_list {
+#newlayout, #playersearch, #playersearchlink, #contents_new, #lnn_list, #player_list, #search_label {
     display: none;
 }
 #lnn_list, #player_list {

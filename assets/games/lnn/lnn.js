@@ -198,6 +198,12 @@ function getPlayerGameLNNs(player, game) {
     return result;
 }
 
+function setPlayer(event) {
+    const player = event.target.value;
+    document.getElementById("player").value = player;
+    showPlayerLNNs(player);
+}
+
 function showPlayerLNNs(player) {
     const playerList = document.getElementById("player_list");
 
@@ -247,6 +253,13 @@ function showPlayerLNNs(player) {
     playerList.style.display = "block";
 }
 
+function detectEnter(event) {
+    if (event.key && event.key == "Enter") {
+        const player = event.target.value;
+        showPlayerLNNs(player);
+    }
+}
+
 function setLanguage(event) {
     let newLanguage;
 
@@ -263,8 +276,10 @@ function setLanguage(event) {
 function setEventListeners() {
     document.getElementById("toggle_layout").addEventListener("click", toggleLayout, false);
     document.getElementById("toggle_video").addEventListener("click", toggleVideo, false);
+    document.getElementById("search").addEventListener("change", setPlayer, false);
+    document.getElementById("search").addEventListener("select", setPlayer, false);
     document.getElementById("player").addEventListener("change", showPlayerLNNs, false);
-    document.getElementById("player").addEventListener("select", showPlayerLNNs, false);
+    document.getElementById("player").addEventListener("keypress", detectEnter, false);
     document.getElementById("en_GB").addEventListener("click", setLanguage, false);
     document.getElementById("ja_JP").addEventListener("click", setLanguage, false);
     document.getElementById("zh_CN").addEventListener("click", setLanguage, false);

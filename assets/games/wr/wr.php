@@ -307,7 +307,9 @@
 		<h2><?php echo _('Player Search') ?></h2>
         <p id='playerwrs'><?php echo _('Choose a player name from the menu below to show their WRs.') ?></p>
 		<label for='player'><?php echo _('Player') ?></label>
-		<select id='player'>
+        <input id='player' type='text'>
+        <label class='hidden' for='search'><?php echo _('Search') ?></label>
+		<select id='search'>
             <option value=''>...</option>
             <?php
                 natcasesort($pl);

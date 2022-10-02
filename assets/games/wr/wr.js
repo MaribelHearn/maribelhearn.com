@@ -438,6 +438,12 @@ function showWRs(event) {
     }
 }
 
+function setPlayer(event) {
+    const player = event.target.value;
+    document.getElementById("player").value = player;
+    showPlayerWRs(player);
+}
+
 function addPlayerWR(playerWRs, game, diff, shot, isUnverified) {
     if (!playerWRs.cats.includes(game + diff)) {
         const space = (language != "ja_JP" && language != "zh_CN" ? " " : "");
@@ -578,6 +584,13 @@ function updateOrientation() {
     }
 }
 
+function detectEnter(event) {
+    if (event.key && event.key == "Enter") {
+        const player = event.target.value;
+        showPlayerWRs(player);
+    }
+}
+
 function setLanguage(event) {
     const newLanguage = event.target.id || event.target.parentNode.id;
 
@@ -594,8 +607,10 @@ function setEventListeners() {
     document.body.addEventListener("resize", updateOrientation, false);
     document.getElementById("toggle_layout").addEventListener("click", toggleLayout, false);
     document.getElementById("toggle_video").addEventListener("click", toggleVideo, false);
+    document.getElementById("search").addEventListener("change", setPlayer, false);
+    document.getElementById("search").addEventListener("select", setPlayer, false);
     document.getElementById("player").addEventListener("change", showPlayerWRs, false);
-    document.getElementById("player").addEventListener("select", showPlayerWRs, false);
+    document.getElementById("player").addEventListener("keypress", detectEnter, false);
     document.getElementById("en_GB").addEventListener("click", setLanguage, false);
     document.getElementById("en_US").addEventListener("click", setLanguage, false);
     document.getElementById("ja_JP").addEventListener("click", setLanguage, false);

@@ -125,8 +125,10 @@
     <div id='playersearch'>
         <h2><?php echo _('Player Search'); ?></h2>
 		<p id='playerlnns'><?php echo _('Choose a player name from the menu below to show their LNNs.') ?></p>
-		<label for='player'><?php echo _('Player'); ?></label>
-		<select id='player'>
+		<label for='player'><?php echo _('Player') ?></label>
+        <input id='player' type='text'>
+        <label id='search_label' for='search'><?php echo _('Search') ?></label>
+		<select id='search'>
             <option value=''>...</option>
 		    <?php
 		        natcasesort($pl);
@@ -140,9 +142,9 @@
 	<div id='player_list'>
 		<table class='sortable'>
 			<thead id='player_thead'><tr>
-                <th class='general_header'><?php echo _('Game') ; ?></th>
-                <th class='general_header'><?php echo _('Shottype'); ?></th>
-                <th class='general_header'><?php echo _('Replay'); ?></th>
+                <th class='general_header'><?php echo _('Game') ?></th>
+                <th class='general_header'><?php echo _('Shottype') ?></th>
+                <th class='general_header'><?php echo _('Replay') ?></th>
             </tr></thead>
 			<tbody id='player_tbody'></tbody>
 			<tfoot id='player_tfoot'>
@@ -162,8 +164,8 @@
             <thead>
                 <tr>
                     <th class='general_header'>#</th>
-                    <th class='general_header'><?php echo _('Game'); ?></th>
-                    <th class='general_header'><?php echo _('No. of LNNs'); ?></th>
+                    <th class='general_header'><?php echo _('Game') ?></th>
+                    <th class='general_header'><?php echo _('No. of LNNs') ?></th>
                     <th class='general_header'><?php echo _('Different players') ?></th>
                 </tr>
             </thead>
