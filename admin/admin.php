@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang='en'>
 <?php
+    include_once '../assets/shared/http.php';
     include_once '../assets/shared/shared.php';
+    include_once '../assets/shared/navbar.php';
     require_once '../assets/shared/mobile_detect.php';
     $detect_device = new Mobile_Detect;
     $is_mobile = $detect_device -> isMobile();

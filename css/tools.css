@@ -11,6 +11,18 @@ table {
 table, tr, th, td {
     border: none;
 }
+hr {
+    clear: both;
+}
+.main {
+    float: left;
+}
+.side {
+    float: right;
+}
+.caption {
+    font-style: italic;
+}
 .code {
     font-family: 'courier new';
 }
@@ -40,6 +52,21 @@ table, tr, th, td {
 }
 #wrap > div:not(#topbar) {
     display: inline-block;
+}
+#thprac_img {
+    background-image: url('../games/tools/thprac_small.png');
+    height: 180px;
+    width: 180px;
+}
+#thprac_img:hover {
+    background-image: url('../games/tools/thprac.png');
+    height: 720px;
+    width: 720px;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    border: 3px solid grey;
 }
 #thcrap_link {
     font: 14px verdana,sans-serif;

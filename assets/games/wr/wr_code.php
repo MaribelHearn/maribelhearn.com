@@ -1,4 +1,5 @@
 <?php
+include_once 'assets/shared/http.php';
 $MAX_SCORE = 9999999990;
 $RECENT_LIMIT = 10;
 if (file_exists('assets/shared/json/wrlist.json')) {

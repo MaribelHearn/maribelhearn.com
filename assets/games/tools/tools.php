@@ -40,12 +40,18 @@
     <a href='https://maribelhearn.com/mirror/VsyncPatch.zip' target='_blank'><?php echo _('Download') ?></a>
 	<!-- Thprac -->
 	<hr>
-	<?php echo _('<h2 id="thprac">thprac (universal practice tool by Ack)</h2>') ?>
-	<p><?php
-		echo _('Single practice tool that works on all of the official Touhou shoot \'em up games, ' .
-		'allowing you to change settings or skip to patterns at will.');
-	?></p>
-	<a href='https://github.com/touhouworldcup/thprac#thprac' target='_blank'><?php echo _('Download') ?></a>
+	<div><!--  class='main' -->
+		<?php echo _('<h2 id="thprac">thprac (universal practice tool by Ack)</h2>') ?>
+		<p>
+			<?php echo _('Single practice tool that works on all of the official Touhou shoot \'em up games, ' .
+			'allowing you to change settings or skip to patterns at will.'); ?>
+		</p>
+		<a href='https://github.com/touhouworldcup/thprac#thprac' target='_blank'><?php echo _('Download') ?></a>
+	</div>
+	<!--<div class='side'>
+		<div id='thprac_img'></div>
+		<p class='caption'><?php echo _('thprac main window') ?></p>
+	</div>-->
     <!-- English Patches -->
     <hr>
     <?php
