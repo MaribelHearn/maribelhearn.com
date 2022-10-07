@@ -37,8 +37,9 @@ function wrap_top() {
     }
     $use_index = array('index', 'about', 'credits', 'privacy', 'error');
     $dir = directory($page, $use_index);
-    $json = file_get_contents($page == 'admin' ? 'admin.json' : 'assets/' . $dir . '/' . $page . '/' . $page . '.json');
-    $data = (object) json_decode($json, true);
+    $page_tree = file_get_contents(($page == 'admin' ? '../' : '') . 'php/page_tree.json');
+    $data = (object) json_decode($page_tree, true);
+    $data = property_exists($data, $page) ? (object) $data->{$page} : (object) array();
     if (has_translation($page)) {
         echo '<div id="topbar">';
     }

@@ -67,8 +67,9 @@
     $use_index = array('index', 'about', 'credits', 'privacy', 'error');
     $dir = directory($page, $use_index);
     $page_path = 'assets/' . $dir . '/' . $page . '/' . $page . '.php';
-    $json = file_get_contents(str_replace('.php', '.json', $page_path));
-    $data = (object) json_decode($json, true);
+    $page_tree = file_get_contents('php/page_tree.json');
+    $data = (object) json_decode($page_tree, true);
+    $data = property_exists($data, $page) ? (object) $data->{$page} : (object) array();
     $css_js_file = in_array($page, $use_index) ? 'index' : $page;
     $favicon_ext = file_exists('assets/' . $dir . '/' . $page . '/'. $page . '.ico') ? '.ico' : '.png';
     $favicon = 'assets/' . $page . '/' . $page . $favicon_ext;
