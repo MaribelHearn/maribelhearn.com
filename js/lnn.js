@@ -21,7 +21,6 @@ function toggleVideo() {
         deleteCookie("prefer_video");
     }
 
-    const player = document.getElementById("player").value;
     location.reload();
 }
 
