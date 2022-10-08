@@ -1239,7 +1239,6 @@ function parseImport(text, tierList, sort, originalSort) {
 
         return true;
     } catch (e) {
-        console.error(`Import error: ${e}`);
         return false;
     }
 }
@@ -1970,7 +1969,6 @@ function loadItems(pageLoad) {
     } catch (e) { // if load is broken due to outdated save
         settings.sort = "characters";
         localStorage.setItem("settings", JSON.stringify(settings));
-        console.log(e);
     }
 }
 
