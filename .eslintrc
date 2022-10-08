@@ -7,7 +7,9 @@
     "rules": {
         "no-prototype-builtins": "off",
         "no-inner-declarations": "off",
+        "no-unused-vars": "warn",
         "no-console": "error",
+        "no-undef": "error",
         "strict": "off",
         "curly": "warn"
     }

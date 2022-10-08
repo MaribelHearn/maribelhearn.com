@@ -22,17 +22,17 @@ $po2json = array('drc', 'lnn', 'wr');
 $page = $_GET['page'];
 $js = array();
 if (in_array($page, $canvas)) {
-    array_push($js, '../../js/html2canvas' . $min . '.js');
-    array_push($js, '../../js/polyfill_promise' . $min . '.js');
+    array_push($js, '../../js/lib/html2canvas' . $min . '.js');
+    array_push($js, '../../js/lib/polyfill_promise' . $min . '.js');
 }
 if (in_array($page, $sorttable)) {
-    array_push($js, '../../js/sorttable' . $min . '.js');
+    array_push($js, '../../js/lib/sorttable' . $min . '.js');
 }
 if (in_array($page, $sortable)) {
-    array_push($js, '../../js/sortable' . $min . '.js');
+    array_push($js, '../../js/lib/sortable' . $min . '.js');
 }
 if ($page == 'tiers' && isset($_GET['mobile']) && $_GET['mobile']) {
-    array_push($js, '../../js/polyfill_dragdrop' . $min . '.js');
+    array_push($js, '../../js/lib/polyfill_dragdrop' . $min . '.js');
 } else if ($page == 'error') {
     array_push($js, 'https://maribelhearn.com/js/utils' . $min . '.js');
 } else if ($page == 'admin') {
