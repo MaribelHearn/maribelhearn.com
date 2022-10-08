@@ -29,51 +29,16 @@
     $flag_url = 'https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/16/';
     $lang_code = 'en';
     $page = 'admin';
+
     function cmp(int $a, int $b) {
         if ($a == $b) {
             return 0;
         }
         return ($a > $b) ? -1 : 1;
     }
+
     function format_country(string $country) {
-        switch ($country) {
-            case 'U.S. Virgin Islands': return 'Virgin-Islands';
-            case 'Palestine': return 'Palestinian-Territory';
-            case 'Bosnia and Herzegovina': return 'Bosnian';
-            case 'North Macedonia': return 'Macedonia';
-            case 'Czechia': return 'Czech-Republic';
-            case 'Curacao': return 'Netherlands';
-            case 'Dominica': return 'Dominicana';
-            case 'Eswatini': return 'Swaziland';
-            case 'South Korea': return 'Korea';
-            case 'Guadeloupe': return 'France';
-            case 'Croatia': return 'Croatian';
-            case 'Myanmar': return 'Burma';
-            case 'Macao': return 'Macau';
-            default: return str_replace(' ', '-', $country);
-        }
-    }
-    function format_image(string $country) {
-        switch ($country) {
-            case 'Northern Mariana Islands': return '';
-            case 'Saint Kitts and Nevis': return '';
-            case 'Palestinian Territory': return '';
-            case 'United Arab Emirates': return '';
-            case 'Antigua and Barbuda': return '';
-            case 'Trinidad and Tobago': return '';
-            case 'United Kingdom': return 'flag-';
-            case 'French Polynesia': return '';
-            case 'Faroe Islands': return '';
-            case 'Aland Islands': return '';
-            case 'Palestine': return '';
-            case 'Dominica': return '';
-            case 'Guernsey': return '';
-            case 'Estonia': return '';
-            case 'Reunion': return '';
-            case 'Bermuda': return '';
-            case 'Aruba': return '';
-            default: return 'Flag-';
-        }
+        return str_replace(' ', '-', $country);
     }
 
     class Cache extends SQLite3 {
@@ -160,21 +125,10 @@
                         foreach ($countries as $country => $count) {
                             echo '<tr>';
                             if ($country == 'Unknown' || $country == 'Local') {
-                                echo '<td></td><th>' . $country . '</th><td>' . $count . '</td><td><progress value="' . $count .
-                                '" max="' . $max . '"></progress></td></tr>';
+                                echo '<td></td><th>' . $country . '</th><td>' . $count . '</td><td><progress value="' . $count . '" max="' . $max . '"></progress></td></tr>';
                             } else {
-                                $url_country = format_country($country);
-                                if ($country == 'Kosovo') {
-                                    echo '<td><img src="https://icons.iconarchive.com/icons/wikipedia/flags/' .
-                                    '16/XK-Kosovo-Flag-icon.png" alt="Flag of ' . $country . '"></td><th>' . $country .
-                                    '</th><td>' . $count . '</td><td><progress value="' . $count . '" max="' . $max .
-                                    '"></progress></td></tr>';
-                                } else {
-                                    echo '<td><img src="' . $flag_url . $url_country .
-                                    '-' . format_image($country) . 'icon.png" alt="Flag of ' . $country .
-                                    '"></td><th>' . $country . '</th><td>' . $count . '</td><td><progress value="' . $count .
-                                    '" max="' . $max . '"></progress></td></tr>';
-                                }
+                                echo '<td><img src="assets/shared/flags/' . format_country($country) . '-Flag.png" alt="Flag of ' . $country .
+                                '"></td><th>' . $country . '</th><td>' . $count . '</td><td><progress value="' . $count . '" max="' . $max . '"></progress></td></tr>';
                             }
                             $total += 1;
                         }
