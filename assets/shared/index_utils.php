@@ -37,13 +37,6 @@ function subpage_name(string $subpage) {
         default: return ucfirst($subpage);
     }
 }
-function page_exists(string $page_path) {
-    $main = str_replace('%dir', 'main', $page_path);
-    $games = str_replace('%dir', 'games', $page_path);
-    $other = str_replace('%dir', 'other', $page_path);
-    $personal = str_replace('%dir', 'personal', $page_path);
-    return file_exists($main) || file_exists($games) || file_exists($other) || file_exists($personal);
-}
 
 function redirect(string $page, string $page_path, string $request, string $error) {
     $aliases = (object) array('rf' => 'royalflare', 'surv' => 'survival', 'score' => 'scoring', 'poll' => 'thvote');
@@ -53,7 +46,7 @@ function redirect(string $page, string $page_path, string $request, string $erro
         header('Location: ' . $location . $aliases->{$page} . '?redirect=' . $page);
         return $page;
     }
-    if (!page_exists($page_path) && $page != 'index' || !empty($error)) {
+    if (!file_exists($page_path) && $page != 'index' || !empty($error)) {
         $page = 'error';
         $url = substr($request, 1);
         $json = file_get_contents('assets/shared/json/admin.json');
