@@ -24,7 +24,7 @@ if (isset($_GET['mobile']) && $_GET['mobile']) {
 }
 if ($page == 'tiers') {
     include_once 'sprite_gen.php';
-} else if ($page == 'admin') {
+} else if ($page == 'index') {
     include_once 'flags_gen.php';
 }
 if (isset($_COOKIE['theme']) && $page != 'tiers') {
