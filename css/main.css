@@ -96,6 +96,11 @@ input[type=button] {
     z-index: 1;
     top: 100%;
 }
+.flag {
+    width: 16px;
+    height: 16px;
+    background-image: url('assets/shared/spritesheets/flags_sheet.png');
+}
 .flag_china {
     background-position: -880px 0px;
 }
