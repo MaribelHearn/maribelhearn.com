@@ -127,8 +127,8 @@
                             if ($country == 'Unknown' || $country == 'Local') {
                                 echo '<td></td><th>' . $country . '</th><td>' . $count . '</td><td><progress value="' . $count . '" max="' . $max . '"></progress></td></tr>';
                             } else {
-                                echo '<td><img src="assets/shared/flags/' . format_country($country) . '-Flag.png" alt="Flag of ' . $country .
-                                '"></td><th>' . $country . '</th><td>' . $count . '</td><td><progress value="' . $count . '" max="' . $max . '"></progress></td></tr>';
+                                echo '<td><span id="' . format_country($country) . '" class="flag"></td><th>' . $country . '</th><td>' . $count .
+                                '</td><td><progress value="' . $count . '" max="' . $max . '"></progress></td></tr>';
                             }
                             $total += 1;
                         }
