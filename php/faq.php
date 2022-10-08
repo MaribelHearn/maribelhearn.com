@@ -11,21 +11,21 @@
         if (!empty($subpage)) {
             if ($subpage == 'gfx') $subpage = 'graphics';
             if ($subpage == 'res') $subpage = 'resources';
-            $path = 'assets/games/faq/' . ($subpage == 'eosd' ? 'eosd' : 'subpages') . '/' . $subpage . '.php';
+            $path = 'php/subpages/faq/' . $subpage . '.php';
             if (file_exists($path)) {
                 include_once $path;
             } else {
                 echo '<p>No such page.</p>';
             }
         } else if (!empty($_GET['p'])) {
-            $path = 'assets/games/faq/' . ($_GET['p'] == 'eosd' ? 'eosd' : 'subpages') . '/' . $_GET['p'] . '.php';
+            $path = 'php/subpages/faq/' . $_GET['p'] . '.php';
             if (file_exists($path)) {
                 include_once $path;
             } else {
                 echo '<p>No such page.</p>';
             }
         } else {
-            include_once 'assets/games/faq/subpages/main_page.php';
+            include_once 'php/subpages/faq/main_page.php';
         }
 	?>
     <p><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>

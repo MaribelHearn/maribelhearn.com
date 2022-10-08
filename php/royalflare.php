@@ -304,7 +304,7 @@ $diffs = Array('Easy', 'Normal', 'Hard', 'Lunatic', 'Extra', 'Phantasm');
             if (strpos($subpage, '/') !== false) {
                 $tmp = preg_split('/\//', $subpage);
                 if (($tmp[0] == 'history' || $tmp[0] == 'standings') && !empty(game_to_abbr($tmp[1]))) {
-                    include_once 'assets/games/royalflare/' . $tmp[0] . '/' . $tmp[1] . '.' . ($tmp[0] == 'standings' ? 'html' : 'php');
+                    include_once 'php/subpages/royalflare/' . $tmp[0] . '/' . $tmp[1] . '.' . ($tmp[0] == 'standings' ? 'html' : 'php');
                     echo '<p><strong><a href="/royalflare/' . $tmp[1] . '">' . $tmp[1] . 'に帰る - Back to ' . $tmp[1] . '</a></strong></p>';
                 } else {
                     $exists = false;
@@ -312,20 +312,20 @@ $diffs = Array('Easy', 'Normal', 'Hard', 'Lunatic', 'Extra', 'Phantasm');
                 }
             } else {
                 if ($subpage == 'search') {
-                    include_once 'assets/games/royalflare/subpages/search.php';
+                    include_once 'php/subpages/royalflare/search.php';
                 } else if ($subpage == 'th08a') {
-                    include_once 'assets/games/royalflare/subpages/board.php';
+                    include_once 'php/subpages/royalflare/board.php';
                 } else if ($subpage == 'th16') {
-                    include_once 'assets/games/royalflare/subpages/board_th16.php';
+                    include_once 'php/subpages/royalflare/board_th16.php';
                 } else if ($subpage == 'th125') {
-                    include_once 'assets/games/royalflare/subpages/board_th125.php';
+                    include_once 'php/subpages/royalflare/board_th125.php';
                 } else if ($subpage == 'th095' || $subpage == 'th125' || $subpage == 'th143' || $subpage == 'th165') {
-                    include_once 'assets/games/royalflare/subpages/board_scene.php';
+                    include_once 'php/subpages/royalflare/board_scene.php';
                 } else {
                     if (!empty(game_to_abbr($subpage))) {
-                        include_once 'assets/games/royalflare/subpages/board.php';
-                    } else if (file_exists('assets/games/royalflare/subpages/' . $subpage . '.php')) {
-                        include_once 'assets/games/royalflare/subpages/' . $subpage . '.php';
+                        include_once 'php/subpages/royalflare/board.php';
+                    } else if (file_exists('php/subpages/royalflare/' . $subpage . '.php')) {
+                        include_once 'php/subpages/royalflare/' . $subpage . '.php';
                     } else {
                         $exists = false;
                         echo '<p>No such page.</p>';
@@ -336,7 +336,7 @@ $diffs = Array('Easy', 'Normal', 'Hard', 'Lunatic', 'Extra', 'Phantasm');
                 echo '<p><strong><a id="backtotop" href="#top">上に帰る - Back to Top</a></strong></p>';
             }
         } else {
-            include_once 'assets/games/royalflare/subpages/main_page.php';
+            include_once 'php/subpages/royalflare/main_page.php';
         }
 	?>
 </div>

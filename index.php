@@ -31,7 +31,7 @@
 
     // Check for redirection
     $status_code = empty($_GET['error']) ? '' : $_GET['error'];
-    $page_path = 'assets/%dir/' . $page . '/' . $page . '.php'; // without subdir
+    $page_path = 'php/' . $page . '.php'; // without subdir
     $page = redirect($page, $page_path, $_SERVER['REQUEST_URI'], $status_code);
 
     // Record page hit
@@ -66,7 +66,7 @@
     // Resource paths
     $use_index = array('index', 'about', 'credits', 'privacy', 'error');
     $dir = directory($page, $use_index);
-    $page_path = 'assets/' . $dir . '/' . $page . '/' . $page . '.php';
+    $page_path = 'php/' . $page . '.php';
     $page_tree = file_get_contents('php/page_tree.json');
     $data = (object) json_decode($page_tree, true);
     $data = property_exists($data, $page) ? (object) $data->{$page} : (object) array();
@@ -124,7 +124,7 @@
 
     <body>
         <?php if ($page != 'tiers') { echo '<nav data-html2canvas-ignore><div id="nav" class="wrap">' . navbar($page) . '</div></nav>'; } ?>
-        <main><?php if ($page == 'error') { include_once 'assets/main/error/error.php'; } else { include_once $page_path; } ?></main>
+        <main><?php if ($page == 'error') { include_once 'php/error.php'; } else { include_once $page_path; } ?></main>
         <?php
             // Deferred page background
             if (!$is_mobile || $page != 'tiers') {

@@ -16,19 +16,19 @@ For Intel integrated graphics, such as Intel HD Graphics 4000, commonly found on
 <br>
 For vpatch window scaling, see <a href='#vpatch'>the vpatch section</a>.
 <h4 id='nvidia'>NVIDIA</h4>
-<img class='gpu' src='/assets/games/faq/subpages/nvidia.png' alt='NVIDIA Settings window'>
+<img class='gpu' src='/assets/games/faq/graphics/nvidia.png' alt='NVIDIA Settings window'>
 <p>Open up your NVIDIA Settings and navigate to "Adjust desktop size and position". Set the scaling mode to "Aspect ratio".</p>
 <p>If this does not fix your problem, check "Override the scaling mode set by games and programs". If that also fails, try changing your resolution manually.
 Alternatively, you can play in a window and use <a href='/faq#vpatch'>vpatch</a> to scale the window to your preferred size.</p>
 <h4 id='amd'>AMD</h4>
-<img class='gpu' src='/assets/games/faq/subpages/amd.png' alt='Radeon Settings window'>
+<img class='gpu' src='/assets/games/faq/graphics/amd.png' alt='Radeon Settings window'>
 <p>Open up your Radeon Settings and navigate to the "Display" tab (see image). Enable "GPU Scaling" and set the scaling mode to "Preserve aspect ratio" to make sure
 the games will render in the correct aspect ratio (4:3).</p>
 <p>If this does not fix your problem, go to "Custom Resolutions" on the right and click "Create New".
 Adjust the values in the new window that opens to your liking.
 Alternatively, you can play in a window and use <a href='/faq#vpatch'>vpatch</a> to scale the window to your preferred size.</p>
 <h4 id='intel'>Intel</h4>
-<img class='gpu' src='/assets/games/faq/subpages/intel.png' alt='Intel HD Graphics Control Panel'>
+<img class='gpu' src='/assets/games/faq/graphics/intel.png' alt='Intel HD Graphics Control Panel'>
 <p>Open up Intel HD Graphics Control Panel and navigate to "General Settings". Under "Scaling", check "Maintain Aspect Ratio".</p>
 <p>If this does not fix your problem, go to "Custom Resolutions" and enter your own values under "Add". Click the '+' icon in the bottom right corner to add the resolution.
 Use this resolution when playing Touhou. Alternatively, you can play in a window and use <a href='/faq#vpatch'>vpatch</a> to scale the window to your preferred size.</p>

@@ -15,9 +15,9 @@
             echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
         }
         if ($subpage == 'extras') {
-            include_once 'assets/other/thvote/subpages/' . $subpage . '.php';
+            include_once 'php/subpages/thvote/' . $subpage . '.php';
         } else if (empty($subpage)) {
-            include_once 'assets/other/thvote/subpages/main_page.php';
+            include_once 'php/subpages/thvote/main_page.php';
         } else {
             echo '<p>No such page.</p>';
         }
