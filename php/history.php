@@ -421,9 +421,9 @@
                 <tr id='oBSR'>
                     <th><abbr title='Banshiryuu (C67)'>BSR</abbr></th>
                     <td id='eBSR' class='nb'></td>
-                    <td id='nBSR' class='clear'></td>
-                    <td id='hBSR' class='clear'></td>
-                    <td id='lBSR' class='clear'></td>
+                    <td id='nBSR' class='nb'></td>
+                    <td id='hBSR' class='nb'></td>
+                    <td id='lBSR' class='nb'></td>
                     <td>X</td>
                 </tr>
                 <tr id='oSMD'>
@@ -3457,31 +3457,37 @@
                 <th>Difficulty</th>
                 <th>Progress</th>
                 <th>Date of first 1cc</th>
+                <th>Date of first NB</th>
                 <th>Video</th>
             </tr>
             <tr>
                 <td><strong>Easy</strong></td>
                 <td class='g'>Completed</td>
                 <td>October 26, 2012</td>
+                <td>?, 2016</td>
                 <td>No</td>
             </tr>
             <tr>
                 <td><strong>Normal</strong></td>
                 <td class='g'>Completed</td>
                 <td>October 26, 2012</td>
+                <td>October 13, 2022</td>
                 <td>No</td>
             </tr>
             <tr>
                 <td><strong>Hard</strong></td>
                 <td class='g'>Completed</td>
                 <td>December 14, 2012</td>
+                <td>October 13, 2022</td>
                 <td><strong><a href='http://www.youtube.com/watch?v=_YLskQFOGuE&amp;list=PLVsboTfyC-K1IrHcK_zkcuqtZKCRl57b_&amp;index=1'>Link (YouTube)</a></strong></td>
             </tr>
             <tr>
                 <td><strong>Lunatic</strong></td>
                 <td class='g'>Completed</td>
                 <td>August 26, 2013</td>
-                <td><strong><a href='https://www.youtube.com/watch?v=wkgcGgzymXw'>Link (YouTube)</a></strong></td>
+                <td>October 13, 2022</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=wkgcGgzymXw'>1cc</a>
+                <a href='https://www.youtube.com/watch?v=D_RvmXgInpc'>NB</a></strong></td>
             </tr>
         </table></div>
     </div>
