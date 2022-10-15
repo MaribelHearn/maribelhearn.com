@@ -2,7 +2,7 @@
     <?php
         echo wrap_top();
         if (!empty($subpage) || !empty($_GET['p'])) {
-            echo '<span id="back"><a href="/faq">&lt;= Back to Main Page</a></span>';
+            echo '<p id="back"><a href="/faq">&lt;= Back to Main Page</a></p>';
         }
         echo '<h1>Frequently Asked Questions</h1>';
         if (!empty($_GET['redirect'])) {
