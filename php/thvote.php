@@ -6,7 +6,7 @@
             if (strpos($subpage, '/') !== false) {
                 $tmp = preg_split('/\//', $subpage);
             }
-            echo '<span id="back"><a href="/thvote">&lt;= Back to Main Page</a></span>';
+            echo '<p id="back"><a href="/thvote">&lt;= Back to Main Page</a></p>';
         } else {
             $subpage = '';
         }

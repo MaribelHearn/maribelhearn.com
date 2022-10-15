@@ -226,6 +226,7 @@ table {
 }
 #back {
     float: left;
+    margin-top: 2px;
 }
 #contents_extra {
     text-align: left;

@@ -90,7 +90,11 @@ ol {
     overflow: hidden;
     width: 50%;
 }
-#back, #files_mb {
+#back {
+    float: left;
+    margin-top: 2px;
+}
+#files_mb {
     float: left;
 }
 #files_jp {

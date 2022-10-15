@@ -286,12 +286,12 @@ $diffs = Array('Easy', 'Normal', 'Hard', 'Lunatic', 'Extra', 'Phantasm');
             if (strpos($subpage, '/') !== false) {
                 $tmp = preg_split('/\//', $subpage);
                 if (($tmp[0] == 'history' || $tmp[0] == 'standings') && !empty(game_to_abbr($tmp[1]))) {
-                    echo '<span id="back"><a href="/royalflare/' . $tmp[1] . '">&lt;= ' . $tmp[1] . 'に帰る - Back to ' . $tmp[1] . '</a></span>';
+                    echo '<p id="back"><a href="/royalflare/' . $tmp[1] . '">&lt;= ' . $tmp[1] . 'に帰る - Back to ' . $tmp[1] . '</a></p>';
                 } else {
-                    echo '<span id="back"><a href="/royalflare">&lt;= メインページに帰る - Back to Main Page</a></span>';
+                    echo '<p id="back"><a href="/royalflare">&lt;= メインページに帰る - Back to Main Page</a></p>';
                 }
             } else {
-                echo '<span id="back"><a href="/royalflare">&lt;= メインページに帰る - Back to Main Page</a></span>';
+                echo '<p id="back"><a href="/royalflare">&lt;= メインページに帰る - Back to Main Page</a></p>';
             }
         }
     ?>

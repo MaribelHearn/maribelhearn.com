@@ -160,6 +160,7 @@ a.scene {
 }
 #back {
     float: left;
+    margin-top: 2px;
 }
 #hy_text {
     margin: 4px 0px 0px 0px;
