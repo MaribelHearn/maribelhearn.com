@@ -40,8 +40,8 @@ function date_tl(string $date, string $lang) {
         return '';
     }
     $tmp = preg_split('/\//', $date);
-    $day = $tmp[0];
-    $month = $tmp[1];
+    $day = str_pad($tmp[0], 2, '0', STR_PAD_LEFT);
+    $month = str_pad($tmp[1], 2, '0', STR_PAD_LEFT);
     $year = $tmp[2];
     if ($lang == 'en_US') {
         return $month . '/' . $day . '/' . $year;

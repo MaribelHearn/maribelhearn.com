@@ -58,8 +58,8 @@ function date_tl(string $date, string $lang) {
         return '';
     }
     $tmp = preg_split('/\//', $date);
-    $day = $tmp[0];
-    $month = $tmp[1];
+    $day = str_pad($tmp[0], 2, '0', STR_PAD_LEFT);
+    $month = str_pad($tmp[1], 2, '0', STR_PAD_LEFT);
     $year = $tmp[2];
     if ($lang == 'en_US') {
         return $month . '/' . $day . '/' . $year;
@@ -199,8 +199,8 @@ foreach ($wr as $game => $value) {
             'class="overallrecords">' . _('Overall Records') . '</a></p>' .
             '<p id="overall_linkm"><a href="#overallm" class="overallrecords">' . _('Overall Records') .
             '</a></p><p><a href="#wrs" class="worldrecords">' . _('World Records') . '
-            </a></p><p id="recent_link"><a href="#recent" class="recentrecords">' . _('Recent Records') .
-            '</a></p><p id="recent_linkm"><a href="#recentm" class="recentrecords">' . _('Recent Records') .
+            </a></p><p id="recent_link"><a href="#recent" >' . _('Recent Records') .
+            '</a></p><p id="recent_linkm"><a href="#recentm">' . _('Recent Records') .
             '</a></p><p><a href="#players" class="playerranking">' . _('Player Ranking') .
             '</a></p></div><noscript>';
         }
@@ -214,9 +214,9 @@ foreach ($wr as $game => $value) {
         }
         echo '<p id="westernlink"><a href="#western">' . _('Western Records') . '</a></p>';
         echo '<p id="playersearchlink"><a href="#playerwrs">' . _('Player Search') . '</a></p>';
-        echo '<p id="recent_linkn"><a href="#recent" class="recentrecords">' . _('Recent Records') .
+        echo '<p id="recent_linkn"><a href="#recent">' . _('Recent Records') .
         '</a></p>';
-        echo '<p id="recent_linkmn"><a href="#recentm" class="recentrecords">' . _('Recent Records') .
+        echo '<p id="recent_linkmn"><a href="#recentm">' . _('Recent Records') .
         '</a></p>';
         echo '<p><a href="#players" class="playerranking">' . _('Player Ranking') . '</a></p></div>';
         if ($layout == 'New') {
