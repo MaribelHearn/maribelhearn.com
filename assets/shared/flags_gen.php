@@ -8,7 +8,7 @@ $flags = array('Afghanistan', 'Aland-Islands', 'Albania', 'Algeria', 'American-S
 'Ecuador', 'Egypt', 'El-Salvador', 'Equatorial-Guinea', 'Eritrea', 'Estonia', 'Ethiopia', 'Falkland-Islands', 'Faroe-Islands', 'Fiji', 'Finland', 'France', 'French-Polynesia', 'French-Southern-Territories',
 'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Gibraltar', 'Greece', 'Greenland', 'Grenada', 'Guadeloupe', 'Guam', 'Guatemala', 'Guernsey', 'Guinea-Bissau', 'Guinea', 'Guyana', 'Haiti', 'Honduras', 'Hong-Kong',
 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Isle-of-Man', 'Israel', 'Italy', 'Ivory-Coast', 'Jamaica', 'Jan-Mayen', 'Japan', 'Jarvis-Island', 'Jersey', 'Jordan', 'Kazakhstan', 'Kenya',
-'Kiribati', 'South-Korea', 'Kosovo', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macau', 'Macedonia', 'Madagascar', 'Malawi',
+'Kiribati', 'South-Korea', 'Kosovo', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macao', 'North Macedonia', 'Madagascar', 'Malawi',
 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall-Islands', 'Martinique', 'Mauritania', 'Mauritius', 'Mayotte', 'Mexico', 'Micronesia', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat', 'Morocco',
 'Mozambique', 'Myanmar', 'Namibia', 'Nauru', 'Nepal', 'Netherlands', 'New-Caledonia', 'New-Zealand', 'Nicaragua', 'Nigeria', 'Niger', 'Niue', 'Norfolk-Island', 'Northern-Mariana-Islands', 'North-Korea', 'Norway',
 'Oman', 'Pakistan', 'Palau', 'Palestinian-Territory', 'Panama', 'Papua-New-Guinea', 'Paraguay', 'Peru', 'Philippines', 'Pitcairn', 'Poland', 'Portugal', 'Puerto-Rico', 'Qatar', 'Reunion', 'Romania', 'Russia',
