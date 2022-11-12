@@ -28,7 +28,7 @@
                     <span class='icon flag_russia'></span>
                     <span class='icon flag_germany'></span>
                     <span class='icon flag_spain'></span>
-                    <span class='tooltip'>A collection of helpful patches and tools for the Touhou shooting games, many of which for efficient practicing.</span>
+                    <span class='tooltip'>A collection of helpful patches and tools for the Touhou shooting games, many of which are for efficient practicing.</span>
                 </p>
                 <p class='link'>
                     <a href='/wr'><span class='icon wr_icon'></span> Touhou World Records</a>
