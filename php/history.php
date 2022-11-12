@@ -133,7 +133,7 @@
                 </tr>
                 <tr>
                     <td><abbr title='Banshiryuu (C67)'>BSR</abbr> Easy</td>
-                    <td>206,254,030 (<abbr title='Highest known score'>HKS</abbr>)</td>
+                    <td>206,254,030 (WR)</td>
                     <td>HiranoS</td>
                     <td>October 21, 2019</td>
                     <td><strong><a href='https://www.youtube.com/watch?v=r-xKFTUhNP8'>Link (YouTube)</a></strong></td>
@@ -151,6 +151,13 @@
                     <td><em>N/A</em></td>
                     <td>November 17, 2017</td>
                     <td><strong><a href='https://www.youtube.com/watch?v=ALCrslNqGmo'>Link (YouTube)</a></strong></td>
+                </tr>
+                <tr>
+                    <td><abbr title='Samidare'>MRS</abbr> Normal</td>
+                    <td>999,999,999,999 (WR)</td>
+                    <td>HimekaB</td>
+                    <td>November 11, 2022</td>
+                    <td><strong><a href='https://www.youtube.com/watch?v=T0Sw1n-fBCc'>Link (YouTube)</a></strong></td>
                 </tr>
             </tbody>
         </table></div>
@@ -182,14 +189,14 @@
                 </tr>
                 <tr>
                     <td><abbr title='Mrs. Estacion'>MRS</abbr> Easy</td>
-                    <td>348,933,504,628 (<abbr title='Highest known score'>HKS</abbr>)</td>
+                    <td>348,933,504,628 (WR)</td>
                     <td>HimekaB</td>
                     <td>January 11, 2018</td>
                     <td>No</td>
                 </tr>
                 <tr>
                     <td><abbr title='Mrs. Estacion'>MRS</abbr> Special</td>
-                    <td>114,994,208,403 (<abbr title='Highest known score'>HKS</abbr>)</td>
+                    <td>114,994,208,403 (WR)</td>
                     <td>HimekaB</td>
                     <td>June 17, 2016</td>
                     <td><strong><a href='https://www.youtube.com/watch?v=hRM74eMjGuY'>Link (YouTube)</a></strong></td>
@@ -3316,23 +3323,23 @@
             <tr>
                 <td><strong>Easy</strong></td>
                 <td>VIVIT-W</td>
-                <td>116,070,140</td>
+                <td>171,286,600</td>
                 <td class='g'>Yes</td>
-                <td>May 25, 2016</td>
-                <td>No</td>
+                <td>October 23, 2022</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=ihMm1XvezWc'>Link (YouTube)</a></strong></td>
             </tr>
             <tr>
                 <td><strong>Easy</strong></td>
                 <td>VIVIT-A</td>
-                <td>140,038,330</td>
+                <td>183,385,730</td>
                 <td class='g'>Yes</td>
-                <td>August 24, 2017</td>
+                <td>November 1, 2022</td>
                 <td>No</td>
             </tr>
             <tr>
                 <td><strong>Easy</strong></td>
                 <td>HiranoS</td>
-                <td>206,254,030 (<abbr title='Highest known score'>HKS</abbr>)</td>
+                <td>206,254,030 (WR)</td>
                 <td class='g'>Yes</td>
                 <td>October 21, 2019</td>
                 <td><strong><a href='https://www.youtube.com/watch?v=r-xKFTUhNP8'>Link (YouTube)</a></strong></td>
@@ -3340,12 +3347,12 @@
             <tr>
                 <td><strong>Easy</strong></td>
                 <td>HiranoO</td>
-                <td>102,227,080</td>
+                <td>153,456,530</td>
                 <td class='g'>Yes</td>
-                <td>February 21, 2016</td>
+                <td>October 18, 2022</td>
                 <td>No</td>
             </tr>
-            <tr>
+            <!--<tr>
                 <td colspan='6'></td>
             </tr>
             <tr>
@@ -3449,7 +3456,7 @@
                 <td>No</td>
                 <td>-</td>
                 <td>No</td>
-            </tr>
+            </tr>-->
         </table></div>
         <h3>Survival</h3>
         <div class='overflow'><table>
@@ -3564,15 +3571,23 @@
             <tr>
                 <td><strong>Easy</strong></td>
                 <td>HimekaB</td>
-                <td>348,933,504,628 (<abbr title='Highest known score'>HKS</abbr>)</td>
+                <td>348,933,504,628 (WR)</td>
                 <td class='g'>Yes</td>
                 <td>January 11, 2018</td>
                 <td>No</td>
             </tr>
             <tr>
+                <td><strong>Normal</strong></td>
+                <td>HimekaB</td>
+                <td>999,999,999,999 (WR)</td>
+                <td class='g'>Yes</td>
+                <td>November 11, 2022</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=T0Sw1n-fBCc'>Link (YouTube)</a></strong></td>
+            </tr>
+            <tr>
                 <td><strong>Special</strong></td>
                 <td>HimekaB</td>
-                <td>114,994,208,403 (<abbr title='Highest known score'>HKS</abbr>)</td>
+                <td>114,994,208,403 (WR)</td>
                 <td class='g'>Yes</td>
                 <td>June 17, 2016</td>
                 <td><strong><a href='https://www.youtube.com/watch?v=hRM74eMjGuY'>Link (YouTube)</a></strong></td>
