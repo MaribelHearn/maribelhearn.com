@@ -947,6 +947,18 @@
 				<td><a href='https://www.youtube.com/watch?v=r-xKFTUhNP8'><?php echo _('Video') ?></a></td>
 			</tr><tr>
 				<td>Easy</td>
+				<td>VIVIT-W</td>
+				<td>174,205,900<br>by <em>QJC-JIN</em></td>
+				<td>9 October 2022</td>
+				<td>-</td>
+			</tr><tr>
+				<td>Easy</td>
+				<td>VIVIT-W</td>
+				<td>171,286,600<br>by <em>Maribel Hearn</em></td>
+				<td>23 October 2022</td>
+				<td><a href='https://www.youtube.com/watch?v=ihMm1XvezWc'><?php echo _('Video') ?></a></td>
+			</tr><tr>
+				<td>Easy</td>
 				<td>HiranoS</td>
 				<td>168,311,500<br>by <em>morth</em></td>
 				<td>29 September 2016</td>
@@ -1029,15 +1041,15 @@
 			</tr><tr>
 				<td>Normal</td>
 				<td>HimekaB</td>
-				<td><strong><u>813,055,575,838</u></strong><br>by <em>Tabris</em></td>
-				<td>27 July 2010</td>
-				<td><a href='http://www.nicovideo.jp/watch/sm11528998'><?php echo _('Video') ?></a></td>
+				<td><strong><u>999,999,999,999</u></strong><br>by <em>Maribel Hearn</em></td>
+				<td>11 November 2022</td>
+				<td><a href='https://www.youtube.com/watch?v=T0Sw1n-fBCc'><?php echo _('Video') ?></a></td>
 			</tr><tr>
 				<td>Special</td>
 				<td>HimekaB</td>
-				<td><u>114,994,208,403</u><br>by <em>Maribel Hearn</em></td>
-				<td>17 June 2016</td>
-				<td><a href='https://www.youtube.com/watch?v=hRM74eMjGuY'><?php echo _('Video') ?></a></td>
+				<td><u>138,648,278,805</u><br>by <em>Maribel Hearn</em></td>
+				<td>14 November 2022</td>
+				<td>-</td>
 			</tr>
 		</tbody>
     </table></div>
