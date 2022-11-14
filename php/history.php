@@ -153,7 +153,7 @@
                     <td><strong><a href='https://www.youtube.com/watch?v=ALCrslNqGmo'>Link (YouTube)</a></strong></td>
                 </tr>
                 <tr>
-                    <td><abbr title='Samidare'>MRS</abbr> Normal</td>
+                    <td><abbr title='Mrs. Estacion'>MRS</abbr> Normal</td>
                     <td>999,999,999,999 (WR)</td>
                     <td>HimekaB</td>
                     <td>November 11, 2022</td>
@@ -196,10 +196,10 @@
                 </tr>
                 <tr>
                     <td><abbr title='Mrs. Estacion'>MRS</abbr> Special</td>
-                    <td>114,994,208,403 (WR)</td>
+                    <td>138,648,278,805 (WR)</td>
                     <td>HimekaB</td>
-                    <td>June 17, 2016</td>
-                    <td><strong><a href='https://www.youtube.com/watch?v=hRM74eMjGuY'>Link (YouTube)</a></strong></td>
+                    <td>November 14, 2022</td>
+                    <td><strong><a href='https://www.youtube.com/watch?v=hRM74eMjGuY'>Old link (YouTube)</a></strong></td>
                 </tr>
             </tbody>
         </table></div>
@@ -447,7 +447,7 @@
                     <td id='nMRS' class='clear'></td>
                     <td id='hMRS' class='clear'></td>
                     <td>X</td>
-                    <td id='xMRS' class='nb'></td>
+                    <td id='xMRS' class='nmnb'></td>
                 </tr>
            </tbody>
         </table></div>
@@ -3471,7 +3471,7 @@
                 <td><strong>Easy</strong></td>
                 <td class='g'>Completed</td>
                 <td>October 26, 2012</td>
-                <td>?, 2016</td>
+                <td>June 29, 2016</td>
                 <td>No</td>
             </tr>
             <tr>
@@ -3587,10 +3587,10 @@
             <tr>
                 <td><strong>Special</strong></td>
                 <td>HimekaB</td>
-                <td>114,994,208,403 (WR)</td>
+                <td>138,648,278,805 (WR)</td>
                 <td class='g'>Yes</td>
-                <td>June 17, 2016</td>
-                <td><strong><a href='https://www.youtube.com/watch?v=hRM74eMjGuY'>Link (YouTube)</a></strong></td>
+                <td>November 14, 2022</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=hRM74eMjGuY'>Old link (YouTube)</a></strong></td>
             </tr>
         </table></div>
         <h3>Survival</h3>
@@ -3599,34 +3599,45 @@
                 <th>Difficulty</th>
                 <th>Progress</th>
                 <th>Date of first 1cc</th>
+                <th>Date of first <abbr title='No Bomb'>NB</abbr></th>
+                <th>Date of first <abbr title='No Miss No Bomb'>NMNB</abbr></th>
                 <th>Video</th>
             </tr>
             <tr>
                 <td><strong>Easy</strong></td>
                 <td class='g'>Completed</td>
                 <td>February 23, 2013 (est.)</td>
+                <td>June 9, 2016</td>
+                <td>-</td>
                 <td>No</td>
             </tr>
             <tr>
                 <td><strong>Normal</strong></td>
                 <td class='g'>Completed</td>
                 <td>February 26, 2013</td>
+                <td>-</td>
+                <td>-</td>
                 <td><strong><a href='http://www.youtube.com/watch?v=KyCaOzE6yqg&amp;list=PLVsboTfyC-K1Rbxyb0zmx1_7C0zUFCtOq&amp;index=1'>Link (YouTube)</a></strong></td>
             </tr>
             <tr>
                 <td><strong>Hard</strong></td>
                 <td class='g'>Completed</td>
                 <td>May 28, 2013</td>
+                <td>-</td>
+                <td>-</td>
                 <td><strong><a href='http://www.youtube.com/watch?v=rmJweyVclKs&amp;list=PLVsboTfyC-K2hkaResfvk2Lt4uEFcdqYd&amp;index=1'>Link (YouTube)</a></strong></td>
             </tr>
             <tr>
-                <td colspan='4'></td>
+                <td colspan='6'></td>
             </tr>
             <tr>
                 <td><strong>Special</strong></td>
                 <td class='g'>Completed</td>
                 <td>February 27, 2013</td>
-                <td><strong><a href='https://www.youtube.com/watch?v=64_UYh1nPYo'>Link (YouTube)</a></strong></td>
+                <td>May 16, 2016</td>
+                <td>November 13, 2022</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=64_UYh1nPYo'>1cc</a>
+                <a href='https://www.youtube.com/watch?v=DwkVY8sfyAo'>NMNB</a></strong></td>
             </tr>
         </table></div>
         <h3>Other achievements</h3>
