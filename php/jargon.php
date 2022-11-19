@@ -487,7 +487,7 @@
     </table>
     <h1 id='spells'>Common Spell Card / Pattern Acronyms</h1>
     <p>These acronyms for particular patterns usually refer to the Lunatic difficulty version of the abbreviated Spell Card or pattern.</p>
-    <table id='spelltable'>
+    <table id='spelltable' class='noborders'>
         <thead>
             <tr>
                 <th class='jargon'>Acronym<hr></th>
@@ -716,7 +716,7 @@
         </tbody>
     </table>
     <h1 id='bullets'>Bullet Type Names</h1>
-    <table id='bullettable'>
+    <table id='bullettable' class='noborders'>
         <thead>
             <tr>
                 <th class='jargon'>Name<hr></th>

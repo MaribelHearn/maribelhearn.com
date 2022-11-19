@@ -234,68 +234,68 @@ function description(string $chara) {
     <table class='noborders'>
         <tr>
             <th id='s' class='tier'>S</th>
-            <td class='noborders'>
+            <td>
                 <span id='marisa' class='char' title='Marisa Kirisame'></span>
             </td>
-            <td class='noborders'>
+            <td>
                 <span id='reimu' class='char' title='Reimu Hakurei'></span>
             </td>
-            <td class='noborders'>
+            <td>
                 <span id='youmu' class='char' title='Youmu Konpaku'></span>
             </td>
         </tr>
         <tr>
             <th id='a' class='tier'>A</th>
-            <td class='noborders'>
+            <td>
                 <span id='komachi' class='char' title='Komachi Onozuka'></span>
             </td>
-            <td class='noborders'>
+            <td>
                 <span id='eiki' class='char' title='Eiki Shiki Yamaxanadu'></span>
             </td>
             <td class='hidden'></td>
         <tr>
             <th id='b' class='tier'>B</th>
-            <td class='noborders'>
+            <td>
                 <span id='lyrica' class='char' title='Lyrica Prismriver'></span>
             </td>
-            <td class='noborders'>
+            <td>
                 <span id='medicine' class='char' title='Medicine Melancholy'></span>
             </td>
-            <td class='noborders'>
+            <td>
                 <span id='reisen' class='char' title='Reisen Udongein Inaba'></span>
             </td>
         </tr>
         <tr>
             <th id='c' class='tier'>C</th>
-            <td class='noborders'>
+            <td>
                 <span id='merlin' class='char' title='Merlin Prismriver'></span>
             </td>
-            <td class='noborders'>
+            <td>
                 <span id='lunasa' class='char' title='Lunasa Prismriver'></span>
             </td>
             <td class='hidden'></td>
         </tr>
         <tr>
             <th id='d' class='tier'>D</th>
-            <td class='noborders'>
+            <td>
                 <span id='yuuka' class='char' title='Yuuka Kazami'></span>
             </td>
-            <td class='noborders'>
+            <td>
                 <span id='sakuya' class='char' title='Sakuya Izayoi'></span>
             </td>
-            <td class='noborders'>
+            <td>
                 <span id='aya' class='char' title='Aya Shameimaru'></span>
             </td>
         </tr>
         <tr>
             <th id='e' class='tier'>E</th>
-            <td class='noborders'>
+            <td>
                 <span id='tewi' class='char' title='Tewi Inaba'></span>
             </td>
-            <td class='noborders'>
+            <td>
                 <span id='mystia' class='char' title='Mystia Lorelei'></span>
             </td>
-            <td class='noborders'>
+            <td>
                 <span id='cirno' class='char' title='Cirno'></span>
             </td>
         </tr>
@@ -391,15 +391,15 @@ function description(string $chara) {
         $focus = max($MIN_SPEED - $stats[$chara]['focus'], 1.5);
         $charge = max($MIN_CHARGE - $stats[$chara]['charge'], 0.3);
         echo '<div id="' . $chara . '_info" class="modal_inner"><h2>' . $full_name . '</h2><table class="noborders"><tr>' .
-        '<td class="noborders"><img class="pofv_chara_art" src="assets/games/pofv/characters/' . $chara . '.png" alt="' . $full_name . '"></td>' .
-        '<td class="noborders"><table class="stats noborders"><tr><td class="noborders">Tier</td><td class="noborders"><strong class="' . $tier . '">' . $tier . '</strong></td></tr>' .
-        '<tr><td class="noborders">Normal Speed</td><td class="noborders"><progress value="' . ($MIN_SPEED - $stats[$chara]['speed']) . '" max="98"></progress></td></tr>' .
-        '<tr><td class="noborders">Focused Speed</td><td class="noborders"><progress value="' . $focus . '" max="98"></progress></td></tr>' .
-        '<tr><td class="noborders">Charge Speed</td><td class="noborders"><progress value="' . $charge . '" max="20.5"></progress></td></tr>' .
-        '<tr><td class="noborders">Charge Delay</td><td class="noborders">' .  $stats[$chara]['delay'] . ' frames</td></tr>' .
-        '<tr><td class="noborders">Special Ability</td><td class="noborders">' . ability($chara) . '</td></tr>' .
-        '<tr><td class="noborders">Scope</td><td class="noborders">' . $stats[$chara]['scope'] . '</td></tr></table></td>' .
-        '<td class="noborders"><img class="scope" src="assets/games/pofv/scopes/' . $chara . '.jpg" alt="' . ucfirst($chara) . '\'s scope"></td></tr></table>' .
+        '<td><img class="pofv_chara_art" src="assets/games/pofv/characters/' . $chara . '.png" alt="' . $full_name . '"></td>' .
+        '<td><table class="stats noborders"><tr><td>Tier</td><td><strong class="' . $tier . '">' . $tier . '</strong></td></tr>' .
+        '<tr><td>Normal Speed</td><td><progress value="' . ($MIN_SPEED - $stats[$chara]['speed']) . '" max="98"></progress></td></tr>' .
+        '<tr><td>Focused Speed</td><td><progress value="' . $focus . '" max="98"></progress></td></tr>' .
+        '<tr><td>Charge Speed</td><td><progress value="' . $charge . '" max="20.5"></progress></td></tr>' .
+        '<tr><td>Charge Delay</td><td>' .  $stats[$chara]['delay'] . ' frames</td></tr>' .
+        '<tr><td>Special Ability</td><td>' . ability($chara) . '</td></tr>' .
+        '<tr><td>Scope</td><td>' . $stats[$chara]['scope'] . '</td></tr></table></td>' .
+        '<td><img class="scope" src="assets/games/pofv/scopes/' . $chara . '.jpg" alt="' . ucfirst($chara) . '\'s scope"></td></tr></table>' .
         '<p class="descr">' . description($chara) . '</p></div>';
     }
 ?></div>

@@ -18,12 +18,6 @@ form {
     z-index: 1;
     top: 100%;
 }
-.dropdown_content > p {
-    margin: 4px;
-}
-.dropdown_content:hover .dropdown_content {
-    display: block;
-}
 .general_header {
     background-color: #aaaaaa;
 }

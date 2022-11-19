@@ -29,6 +29,10 @@ a:link.dropdown_button {
 a:visited.dropdown_button {
     color: black;
 }
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
 table:not(.noborders), table:not(.noborders) tr, table:not(.noborders) th, table:not(.noborders) td:not(.noborders) {
     border: 1px solid black;
 }
@@ -84,6 +88,9 @@ table:not(.noborders), table:not(.noborders) tr, table:not(.noborders) th, table
 .dropdown_content {
     background-color: white;
 }
+.dropdown_content p {
+    margin: 4px;
+}
 .dropdown_content.dark_bg {
     background-color: #1b232e;
 }
@@ -96,6 +103,9 @@ table:not(.noborders), table:not(.noborders) tr, table:not(.noborders) th, table
 .dropdown_content p a {
     display: inline-block;
     width: 100%;
+}
+.dropdown_content:hover .dropdown_content {
+    display: block;
 }
 .dropdown_right {
     right: 0;

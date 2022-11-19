@@ -4,10 +4,6 @@ h1 {
 p {
     margin: 10px;
 }
-table {
-    margin-left: auto;
-    margin-right: auto;
-}
 table, th, td {
     border: 1px solid #000;
 }
@@ -45,12 +41,6 @@ table, th, td {
     position: absolute;
     z-index: 1;
     top: 100%;
-}
-.dropdown_content > p {
-    margin: 4px;
-}
-.dropdown_content:hover .dropdown_content {
-    display: block;
 }
 #nav {
     margin-bottom: 5px;
