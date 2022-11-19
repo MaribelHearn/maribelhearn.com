@@ -13,8 +13,6 @@ div > div > p {
     margin: 4px;
 }
 table {
-    margin-left: auto;
-    margin-right: auto;
     white-space: nowrap;
 }
 ol {

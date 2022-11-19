@@ -27,7 +27,7 @@ function no_extra(string $game) {
 			}
 		?>
     </div>
-    <table id='checkboxes' class='center'>
+    <table id='checkboxes'>
         <tbody>
             <tr>
                 <td>
@@ -113,7 +113,7 @@ function no_extra(string $game) {
     </table>
 	<?php
 		foreach ($games as $key => $game) {
-			echo '<div id="' . $game . '"><table class="noborders center"><caption><p><span id="' . $game . '_image" ' .
+			echo '<div id="' . $game . '"><table class="noborders"><caption><p><span id="' . $game . '_image" ' .
 			'class="cover ' . ($key < 5 ? ' cover98' : '') . '"></span> ' . full_name($game) .
 			'</p></caption><tr><th>Route</th>';
 			foreach ($diffs as $key => $diff) {

@@ -11,14 +11,6 @@ input[type=number] {
 input[type=button] {
     margin: 5px;
 }
-table.center {
-    margin-top: 15px;
-}
-.center {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 15px;
-}
 .wr {
     color: #00e;
 }
@@ -37,8 +29,6 @@ table.center {
 .result_table {
     display: none;
     margin-top: 15px;
-    margin-left: auto;
-    margin-right: auto;
 }
 .result_table, .result_table th, .result_table td {
     border: 1px solid #000;
@@ -72,12 +62,6 @@ table.center {
     z-index: 1;
     top: 100%;
 }
-.dropdown_content > p {
-    margin: 4px;
-}
-.dropdown_content:hover .dropdown_content {
-    display: block;
-}
 #nav {
     margin-bottom: 5px;
 }
@@ -91,6 +75,9 @@ table.center {
 #error {
     font-weight: bold;
     color: red;
+}
+#checkboxes {
+    margin-top: 15px;
 }
 #checkboxes tbody:after {
     content: '\200C';

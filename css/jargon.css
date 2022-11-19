@@ -12,12 +12,6 @@
     z-index: 1;
     top: 100%;
 }
-.dropdown_content:hover .dropdown_content {
-    display: block;
-}
-#wrap > div {
-    display: inline-block;
-}
 #bullettable, #jargontable, #spelltable {
     text-align: left;
 }

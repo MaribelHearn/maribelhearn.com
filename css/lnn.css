@@ -1,6 +1,4 @@
 table {
-    margin-left: auto;
-    margin-right: auto;
     border-collapse: separate;
 }
 table, th, td {
@@ -145,12 +143,6 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
     height: 11px;
     display: inline-block;
     background-image: url('../wr/dl.png');
-}
-.dropdown_content > p {
-    margin: 4px;
-}
-.dropdown_content:hover .dropdown_content {
-    display: block;
 }
 #wrap:after {
     content: "\200C";

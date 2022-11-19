@@ -1,7 +1,3 @@
-table {
-    margin-left: auto;
-    margin-right: auto;
-}
 caption {
     margin-bottom: 10px;
 }
@@ -117,12 +113,6 @@ caption {
     position: absolute;
     z-index: 1;
     top: 100%;
-}
-.dropdown_content > p {
-    margin: 4px;
-}
-.dropdown_content:hover .dropdown_content {
-    display: block;
 }
 #nav {
     margin-bottom: 5px;

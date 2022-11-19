@@ -1,10 +1,6 @@
 p {
     margin: 10px;
 }
-table {
-    margin-left: auto;
-    margin-right: auto;
-}
 table tbody:not(.ranking) {
     counter-reset: sortabletablescope;
 }
@@ -43,12 +39,6 @@ a.scene {
     position: absolute;
     z-index: 1;
     top: 100%;
-}
-.dropdown_content > p {
-    margin: 4px;
-}
-.dropdown_content:hover .dropdown_content {
-    display: block;
 }
 .head {
     content: '';
