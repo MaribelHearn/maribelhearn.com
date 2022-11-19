@@ -55,9 +55,6 @@ table, th, td {
 #nav {
     margin-bottom: 5px;
 }
-#slots, #slots tr, #slots td {
-    border: 1px solid black;
-}
 #save_link {
     text-decoration: none;
 }

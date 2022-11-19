@@ -11,6 +11,7 @@ if (!isset($_GET['page'])) {
 $min = (!is_localhost($_SERVER['REMOTE_ADDR']) ? '-min' : '');
 $page = $_GET['page'];
 $css = array(
+    '../../css/icons' . $min . '.css',
     '../../css/shared' . $min . '.css',
     '../../css/' . ($page == 'index' ? 'main' : $page) . $min . '.css'
 );

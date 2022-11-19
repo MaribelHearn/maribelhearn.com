@@ -17,7 +17,7 @@ function no_extra(string $game) {
     page, sortable tables will be generated to tell you how your scores compare to the world records.</p>
     <p>Your scores should not include any characters other than digits, dots, commas and spaces.</p>
     <h2>Contents</h2>
-    <div id='contents' class='border'>
+    <div class='contents'>
 		<?php
 			foreach ($games as $key => $game) {
 				echo '<p><a href="#' . $game . '">' . full_name($game) . '</a></p>';
@@ -27,10 +27,9 @@ function no_extra(string $game) {
 			}
 		?>
     </div>
-    <h2>Customize</h2>
     <table id='checkboxes' class='center'>
         <tbody>
-            <tr class='noborders'>
+            <tr>
                 <td>
                     <input id='HRtPc' type='checkbox' class='check' checked>
                     <label for='HRtPc'>HRtP</label>
@@ -45,7 +44,7 @@ function no_extra(string $game) {
                     <label for='LoLKc'>LoLK</label>
                 </td>
             </tr>
-            <tr class='noborders'>
+            <tr>
                 <td>
                     <input id='SoEWc' type='checkbox' class='check' checked>
                     <label for='SoEWc'>SoEW</label>
@@ -60,7 +59,7 @@ function no_extra(string $game) {
                     <label for='HSiFSc'>HSiFS</label>
                 </td>
             </tr>
-            <tr class='noborders'>
+            <tr>
                 <td>
                     <input id='PoDDc' type='checkbox' class='check' checked>
                     <label for='PoDDc'>PoDD</label>
@@ -75,7 +74,7 @@ function no_extra(string $game) {
                     <label for='WBaWCc'>WBaWC</label>
                 </td>
             </tr>
-            <tr class='noborders'>
+            <tr>
                 <td>
                     <input id='LLSc' type='checkbox' class='check' checked>
                     <label for='LLSc'>LLS</label>
@@ -90,7 +89,7 @@ function no_extra(string $game) {
 					<label for='UMc'>UM</label>
 				</td>
             </tr>
-            <tr class='noborders'>
+            <tr>
                 <td>
                     <input id='MSc' type='checkbox' class='check' checked>
                     <label for='MSc'>MS</label>
@@ -104,7 +103,7 @@ function no_extra(string $game) {
             </tr>
         </tbody>
         <tfoot>
-            <tr class='noborders'>
+            <tr>
                 <td colspan='4'>
                     <input id='all' type='checkbox' checked>
                     <label for='all'>All</label>
@@ -114,7 +113,7 @@ function no_extra(string $game) {
     </table>
 	<?php
 		foreach ($games as $key => $game) {
-			echo '<div id="' . $game . '"><table class="center"><caption><p><span id="' . $game . '_image" ' .
+			echo '<div id="' . $game . '"><table class="noborders center"><caption><p><span id="' . $game . '_image" ' .
 			'class="cover ' . ($key < 5 ? ' cover98' : '') . '"></span> ' . full_name($game) .
 			'</p></caption><tr><th>Route</th>';
 			foreach ($diffs as $key => $diff) {

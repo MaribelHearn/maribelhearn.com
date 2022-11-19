@@ -1,5 +1,5 @@
 <h2>Contents</h2>
-<div id='contents_extra' class='border'>
+<div class='contents'>
     <p><a href='#jumps'>Biggest jumps</a></p>
     <p><a href='#cpg'>Character vote per maingame</a></p>
     <p><a href='#mpg'>Music vote per maingame</a></p>
@@ -20,7 +20,7 @@
 </div>
 <h2 id='jumps'>Biggest jumps</h2>
 <p>This section lists the biggest jumps in ranking for characters (top 150 only). Click a column to sort the table by jumps, drops or whatever you like.</p>
-<div class='overflow'><table class='poll table sortable'>
+<div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
         <col class='col2game'>
         <col class='col3game'>
@@ -221,7 +221,7 @@
 </table></div>
 <h2 id='mpg'>Music vote per maingame</h2>
 <h3 id='mtotals'>Totals per maingame</h3>
-<div class='overflow'><table class='poll table sortable'>
+<div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
         <col class='col2game'>
         <col class='col3'>
@@ -255,7 +255,7 @@
     </tbody>
 </table></div>
 <h3 id='meosd'>Touhou 6 - The Embodiment of Scarlet Devil</h3>
-<div class='overflow'><table class='poll table sortable'>
+<div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
         <col class='col2game'>
         <col class='col4'>
@@ -299,7 +299,7 @@
     </tfoot>
 </table></div>
 <h3 id='mpcb'>Touhou 7 - Perfect Cherry Blossom</h3>
-<div class='overflow'><table class='poll table sortable'>
+<div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
         <col class='col2game'>
         <col class='col4'>
@@ -345,7 +345,7 @@
     </tfoot>
 </table></div>
 <h3 id='min'>Touhou 8 - Imperishable Night</h3>
-<div class='overflow'><table class='poll table sortable'>
+<div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
         <col class='col2game'>
         <col class='col4'>
@@ -392,7 +392,7 @@
     </tfoot>
 </table></div>
 <h3 id='mpofv'>Touhou 9 - Phantasmagoria of Flower View</h3>
-<div class='overflow'><table class='poll table sortable'>
+<div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
         <col class='col2game'>
         <col class='col4'>
@@ -431,7 +431,7 @@
     </tfoot>
 </table></div>
 <h3 id='mmof'>Touhou 10 - Mountain of Faith</h3>
-<div class='overflow'><table class='poll table sortable'>
+<div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
         <col class='col2game'>
         <col class='col4'>
@@ -475,7 +475,7 @@
     </tfoot>
 </table></div>
 <h3 id='msa'>Touhou 11 - Subterranean Animism</h3>
-<div class='overflow'><table class='poll table sortable'>
+<div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
         <col class='col2game'>
         <col class='col4'>
@@ -518,7 +518,7 @@
     </tfoot>
 </table></div>
 <h3 id='mufo'>Touhou 12 - Undefined Fantastic Object</h3>
-<div class='overflow'><table class='poll table sortable'>
+<div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
         <col class='col2game'>
         <col class='col4'>
@@ -561,7 +561,7 @@
     </tfoot>
 </table></div>
 <h3 id='mtd'>Touhou 13 - Ten Desires</h3>
-<div class='overflow'><table class='poll table sortable'>
+<div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
         <col class='col2game'>
         <col class='col4'>
@@ -604,7 +604,7 @@
     </tfoot>
 </table></div>
 <h3 id='mddc'>Touhou 14 - Double Dealing Character</h3>
-<div class='overflow'><table class='poll table sortable'>
+<div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
         <col class='col2game'>
         <col class='col4'>
@@ -647,7 +647,7 @@
     </tfoot>
 </table></div>
 <h3 id='mlolk'>Touhou 15 - Legacy of Lunatic Kingdom</h3>
-<div class='overflow'><table class='poll table sortable'>
+<div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
         <col class='col2game'>
         <col class='col4'>
@@ -690,7 +690,7 @@
     </tfoot>
 </table></div>
 <h3 id='mhsifs'>Touhou 16 - Hidden Star in Four Seasons</h3>
-<div class='overflow'><table class='poll table sortable'>
+<div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
         <col class='col2game'>
         <col class='col4'>
@@ -733,7 +733,7 @@
     </tfoot>
 </table></div>
 <h3 id='mwbawc'>Touhou 17 - Wily Beast and Weakest Creature</h3>
-<div class='overflow'><table class='poll table sortable'>
+<div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
         <col class='col2game'>
         <col class='col4'>
@@ -776,7 +776,7 @@
     </tfoot>
 </table></div>
 <h3 id='mum'>Touhou 18 - Unconnected Marketeers</h3>
-<div class='overflow'><table class='poll table sortable'>
+<div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
         <col class='col2game'>
         <col class='col4'>
@@ -821,7 +821,7 @@
 <p><strong><a href='#top'>Back to Top</a></strong></p>
 <!--<h2 id='gender'>Gender vote</h2>
 <h3 id='charas'>Characters</h3>
-<div class='overflow'><table class='poll table sortable'>
+<div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
         <col class='col2'>
         <col class='col4'>
@@ -895,7 +895,7 @@
 </table></div>
 <p><strong><a href='#top'>Back to Top</a></strong></p>
 <h3 id='works'>Works</h3>
-<div class='overflow'><table class='poll table sortable'>
+<div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
         <col class='col2'>
         <col class='col4'>

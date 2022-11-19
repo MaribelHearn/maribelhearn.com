@@ -10,8 +10,8 @@
 		'translation patcher and modding tool</a>, which can also be downloaded using our mirror below ' .
 		'(see THCRAP section). These patches will have the favicon of their site next to them.');
 	?></p>
-    <h2 id='contents'><?php echo _('Contents') ?></h2>
-    <div class='border'>
+    <h2><?php echo _('Contents') ?></h2>
+    <div class='contents'>
         <p><a href='#vpatch'><strong>Vpatch</strong></a></p>
         <p><a href='#thprac'><strong>thprac</strong></a></p>
         <p><a href='#thcrap'>thcrap</a></p>

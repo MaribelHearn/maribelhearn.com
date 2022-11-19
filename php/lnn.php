@@ -136,16 +136,16 @@ foreach ($lnn as $game => $data1) {
 	?></p>
     <p id='tables'><?php echo _('All of the table columns are sortable.') ?></p>
     <p id='lastupdate'><?php echo (isset($lnn['LM']) ? format_lm($lnn['LM'], $lang) : '') ?></p>
-    <h2 id='contents_header'><?php echo _('Contents') ?></h2>
+    <h2><?php echo _('Contents') ?></h2>
     <?php
         // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
         if ($layout == 'New') {
-            echo '<div id="contents_new" class="border"><p><a href="#lnns" class="lnns">' . _('LNN Lists') .
+            echo '<div id="contents_new" class="contents"><p><a href="#lnns" class="lnns">' . _('LNN Lists') .
             '</a></p><p><a href="#overall">' . _('Overall Count') .
             '</a></p><p><a href="#players">' . _('Player Ranking') .
             '</a></p></div><noscript>';
         }
-        echo '<div id="contents" class="border"><p><a href="#lnns">' . _('LNN Lists') . '</a></p>';
+        echo '<div class="contents"><p><a href="#lnns">' . _('LNN Lists') . '</a></p>';
         foreach ($lnn as $game => $obj) {
             if ($game == 'LM') {
                 continue;

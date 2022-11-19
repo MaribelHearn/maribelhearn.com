@@ -44,19 +44,12 @@ ol > li {
 .flag_france {
     background-position: -896px 0px;
 }
-.art {
+.pofv_chara_art {
     border: 1px solid black;
 }
 .scope {
     height: 300px;
     width: 187px;
-}
-.border {
-    border: 1px solid black;
-    margin-bottom: 15px;
-}
-.noborders {
-    border: none;
 }
 .code {
     font-family: 'courier new';

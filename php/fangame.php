@@ -5,8 +5,8 @@
     <p id='tables'><?php echo _('All of the table columns are sortable.') ?></p>
     <p id='noreup'><?php echo _('The replays or videos provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.') ?></p>
     <p id='lastupdate'><?php echo _('Accomplishments are current as of 9 June 2022.') ?></p>
-    <h2 id='contents_header'><?php echo _('Contents') ?></h2>
-    <div id='contents' class='border'>
+    <h2><?php echo _('Contents') ?></h2>
+    <div class='contents'>
 		<p><a href='#lnns'><?php echo _('LNN Clears') ?></a></p>
         <p><a href='#scores'><?php echo _('Notable Scores') ?></a></p>
     </div>

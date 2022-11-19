@@ -1,10 +1,8 @@
-/*h1, h2, h3, label, th, td, div, p:not(#ack) {
-    color: white;
-}*/
 h1, h2, h3, h4, table:not(.poll):not(.rendering), label, li, figcaption, dt, p:not(.language):not(#ack), caption:not(#legend), #nav, #hy_text {
     color: white;
 }
-.rendering th, .rendering td:not(.overview):not(.overview_half), .PoDD, .PoDDp, .LLS, .LLSp, .EoSD, .EoSDp, .PCB, .PCBp, .PoFV, .PoFVp, .MoF, .MoFp, .GFW, .GFWp, .TD, .TDp, .DDC, .DDCp, .UM, .UMp {
+.rendering th, .rendering td:not(.overview):not(.overview_half), .PoDD, .PoDDp, .LLS, .LLSp, .EoSD, .EoSDp, .PCB, .PCBp, .PoFV, .PoFVp, .MoF, .MoFp, .GFW, .GFWp, .TD, .TDp, .DDC, .DDCp, .UM, .UMp,
+.PoDDt th, .LLSt th, .EoSDt th, .PCBt th, .PoFVt th, .MoFt th, .GFWt th, .DDCt th, .tier th, .tier {
     color: black;
 }
 body, div:not(.dropdown):not(.dropdown_content):not(.nav_right):not(.dark_bg) {
@@ -25,13 +23,8 @@ a:visited:not(.replay):not(.i):not(.dropdown_button) {
 #hy {
     background-position: -632px 0px;
 }
-#checkboxes, #checkboxes td:not(.noborders), #gameTable, #gameTable th, #gameTable td, #table, #table th, #table td, .border,
-table:not(#jargontable):not(#bullettable):not(#spelltable):not(#searchtable):not(#countries):not(#errors):not(.noborders):not(.result):not(.center):not(.poll),
-table#contents, tr:not(.noborders), table:not(.poll) th:not(.noborders):not(.foot), table:not(.poll) td:not(.noborders):not(.foot), .art {
+.contents, .pofv_chara_art, table:not(.noborders), table:not(.noborders) tr, table:not(.noborders) th, table:not(.noborders) td:not(.noborders) {
     border: 1px solid #808080;
-}
-.PoDDt th, .LLSt th, .EoSDt th, .PCBt th, .PoFVt th, .MoFt th, .GFWt th, .TDt th, .DDCt th, .tier th, .tier {
-    color: black;
 }
 .Winter, .FinalA, .FinalB, .in_route {
     color: cyan;
@@ -51,10 +44,7 @@ table#contents, tr:not(.noborders), table:not(.poll) th:not(.noborders):not(.foo
 .does_even_score_well, .hrtp_route {
     color: #E768C3;
 }
-a:link.dropdown_button {
-    color: white;
-}
-a:visited.dropdown_button {
+a:link.dropdown_button, a:visited.dropdown_button {
     color: white;
 }
 .dropdown_content {
@@ -108,14 +98,6 @@ a:visited.dropdown_button {
 }
 .general_header {
     background-color: #888;
-}
-#contents tr, #contents th, #contents td, #responses tr, #responses th, #responses td, #jargontable th, #jargontable td, #spelltable th,
-#spelltable td, #bullettable th, #bullettable td, #schedule_table th, #schedule_table td, #results_2020 th, #results_2020 td,
-#countries th, #countries td, #errors th, #errors td, #music_links th, #music_links td, .border td, .center th, .center td {
-    border: none;
-}
-#results_2020 td, #schedule_table td {
-    border-top: 1px solid white;
 }
 #hy_link {
     color: white;

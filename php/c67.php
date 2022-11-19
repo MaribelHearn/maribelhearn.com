@@ -3,21 +3,20 @@
     <p>This page covers the scoring system and mechanics of the Comiket 67 release of Seihou Banshiryuu.</p>
     <img id='boxart' src='assets/personal/c67/boxart.jpg' alt='Banshiryuu Cover' width='280' height='280'>
     <hr>
-    <h2 id='contents'>Contents</h2>
-    <ol id='toc' class='border'>
-        <li><a href='#items'>Items</a></li>
-        <li><a href='#grazing'>Grazing</a></li>
-        <li><a href='#se'>Special Equipment</a></li>
-        <li><a href='#shottypes'>Shottypes</a>
-            <ol type='I'>
-                <li><a href='#vivitw'>VIVIT-W</a></li>
-                <li><a href='#vivita'>VIVIT-A</a></li>
-                <li><a href='#hiranos'>HiranoS</a></li>
-                <li><a href='#hiranoo'>HiranoO</a></li>
-                <li><a href='#comparison'>Comparison</a></li>
-            </ol>
-        </li>
-    </ol>
+    <h2>Contents</h2>
+    <div class='contents'>
+        <p><a href='#items'>Items</a></p>
+        <p><a href='#grazing'>Grazing</a></p>
+        <p><a href='#se'>Special Equipment</a></p>
+        <p><a href='#shottypes'>Shottypes</a></p>
+        <ol type='I'>
+            <li><a href='#vivitw'>VIVIT-W</a></li>
+            <li><a href='#vivita'>VIVIT-A</a></li>
+            <li><a href='#hiranos'>HiranoS</a></li>
+            <li><a href='#hiranoo'>HiranoO</a></li>
+            <li><a href='#comparison'>Comparison</a></li>
+        </ol>
+    </div>
     <hr>
     <h2 id='items'>Items</h2>
     <img loading='lazy' src='assets/personal/c67/item_rank.jpg' alt='Point item sprites' width='219' height='38'>

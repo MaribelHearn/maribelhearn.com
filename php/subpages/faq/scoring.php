@@ -5,7 +5,7 @@ This guide will contain basic information and some of the methods that you shoul
 <p>English is not my first language so please excuse any weird mistakes that you may read here.
 Also if you have suggestions about something I should add or change please contact me, criticism is welcome.</p>
 <h4>Contents</h4>
-<div class='border'>
+<div class='contents'>
     <p><a href='#intro'>Introduction</a></p>
     <p><a href='#goal'>Goal Setting and Replay Gathering</a></p>
     <p><a href='#prac'>Practice and Routing</a></p>

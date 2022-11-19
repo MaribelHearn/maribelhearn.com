@@ -9,14 +9,6 @@ table, th, td {
 tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
     background-color: #dddddd;
 }
-.border {
-    border: 1px solid black;
-    display: inline-block;
-    margin-bottom: 15px;
-}
-.noborders {
-    border: none;
-}
 .nowrap {
     white-space: nowrap;
 }
@@ -187,9 +179,6 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
 }
 #HRtPt, #SoEWt {
     width: 400px;
-}
-#contents > p, #contents_new > p {
-    margin: 4px;
 }
 #HRtP_image, #HRtP_image_old {
     background-position: 0px 0px;

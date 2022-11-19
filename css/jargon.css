@@ -1,11 +1,3 @@
-div > div > p {
-    margin: 4px;
-}
-.border {
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid black;
-}
 .jargon {
     width: 150px;
 }
