@@ -220,7 +220,7 @@ function description(string $chara) {
     netplay, and links to relevant resources as well as the rules of tournaments for the game, held at the
     <a id='discord' href='https://discord.gg/2QPPPpE'><span class='icon discord_icon'></span> Phantasmagoria Netplay Discord server</a>.</p>
     <h2>Contents</h2>
-    <div class='border'>
+    <div class='contents'>
         <p><a href='#tiers'>Tier List</a></p>
         <p><a href='#guide'>Netplay Guide</a></p>
         <p><a href='#trouble'>Troubleshooting</a></p>
@@ -391,7 +391,7 @@ function description(string $chara) {
         $focus = max($MIN_SPEED - $stats[$chara]['focus'], 1.5);
         $charge = max($MIN_CHARGE - $stats[$chara]['charge'], 0.3);
         echo '<div id="' . $chara . '_info" class="modal_inner"><h2>' . $full_name . '</h2><table class="noborders"><tr>' .
-        '<td class="noborders"><img class="art" src="assets/games/pofv/characters/' . $chara . '.png" alt="' . $full_name . '"></td>' .
+        '<td class="noborders"><img class="pofv_chara_art" src="assets/games/pofv/characters/' . $chara . '.png" alt="' . $full_name . '"></td>' .
         '<td class="noborders"><table class="stats noborders"><tr><td class="noborders">Tier</td><td class="noborders"><strong class="' . $tier . '">' . $tier . '</strong></td></tr>' .
         '<tr><td class="noborders">Normal Speed</td><td class="noborders"><progress value="' . ($MIN_SPEED - $stats[$chara]['speed']) . '" max="98"></progress></td></tr>' .
         '<tr><td class="noborders">Focused Speed</td><td class="noborders"><progress value="' . $focus . '" max="98"></progress></td></tr>' .

@@ -4,9 +4,9 @@
 It does not mean the results are not final. The number of votes for the characters,
 music and works will not change when the full results are published.</p>-->
 <p>All of the table columns are sortable.</p>
-<p>Source: <a href='http://toho-vote.info/'>http://toho-vote.info/</a></p>
+<p>Source: <a href='https://toho-vote.info/'>https://toho-vote.info/</a></p>
 <h2>Contents</h2>
-<div id='contents' class='border'>
+<div class='contents'>
     <p><a href='#characters'>Characters</a></p>
     <p><a href='#music'>Music</a></p>
     <p><a href='#works'>Works</a></p>
@@ -15,13 +15,13 @@ music and works will not change when the full results are published.</p>-->
     <p><a href='/thvote/extras'>Extra Statistics (separate page)</a></p>
 </div>
 <h2>Valid responses</h2>
-<div id='responses' class='border'>
+<div class='contents'>
     <p>Characters: 51,652 <small>(in 2021: 40,363; in 2020: 34,573; in 2019: 23,883)</small></p>
     <p>Music: 37,659 <small>(in 2021: 30,104; in 2020: 25,919; in 2019: 17,951)</small></p>
     <p>Works: 28,558 <small>(in 2021: 23,047; in 2020: 19,274; in 2019: 13,946)</small></p>
 </div>
 <h2 id='characters'>Characters</h2>
-<div class='overflow'><table class='poll table sortable'>
+<div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
         <!--<col class='col1'>-->
         <col class='col2game'>
@@ -259,7 +259,7 @@ music and works will not change when the full results are published.</p>-->
 </table></div>
 <p><strong><a href='#top'>Back to Top</a></strong></p>
 <h2 id='music'>Music</h2>
-<div class='overflow'><table class='poll table sortable'>
+<div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
         <!--<col class='col1'>-->
         <col class='col2game'>
@@ -866,7 +866,7 @@ music and works will not change when the full results are published.</p>-->
 </table></div>
 <p><strong><a href='#top'>Back to Top</a></strong></p>
 <h2 id='works'>Works</h2>
-<div class='overflow'><table class='poll table sortable'>
+<div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
         <!--<col class='col1'>-->
         <col class='col2game'>
@@ -954,7 +954,7 @@ music and works will not change when the full results are published.</p>-->
 <div>
     <h3>01. Age</h3>
     <p>Valid responses: 15,135 <button id='age_detail_button'>Show Details</button> <button id='age_summary_button'>Hide Details</button></p>
-    <div class='overflow'><table id='age_summary' class='table poll sortable'>
+    <div class='overflow'><table id='age_summary' class='poll table sortable noborders'>
         <colgroup>
             <col class='col2'>
             <col class='col3'>
@@ -1020,7 +1020,7 @@ music and works will not change when the full results are published.</p>-->
             </tr>
         </tbody>
     </table></div>
-    <div class='overflow'><table id='age_detail' class='poll table sortable'>
+    <div class='overflow'><table id='age_detail' class='poll table sortable noborders'>
         <colgroup>
             <col class='col2'>
             <col class='col3'>
@@ -1103,7 +1103,7 @@ music and works will not change when the full results are published.</p>-->
     </table></div>
     <h3>02. Gender</h3>
     <p>Valid responses: 15,625</p>
-    <div class='overflow'><table class='table poll sortable'>
+    <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
             <col class='col2'>
             <col class='col3'>
@@ -1136,7 +1136,7 @@ music and works will not change when the full results are published.</p>-->
     </table></div>
     <h3>03. Location</h3>
     <p>Valid responses: 14,561</p>
-    <div class='overflow'><table class='table poll sortable'>
+    <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
             <col class='col2'>
             <col class='col3'>
@@ -1263,7 +1263,7 @@ music and works will not change when the full results are published.</p>-->
             <h4>Touhou 6 - The Embodiment of Scarlet Devil</h4>
             <p>Valid responses: 11,877</p>
         </div>
-        <table class='table poll sortable'>
+        <table class='poll table sortable noborders'>
             <colgroup>
                 <col class='col2'>
                 <col class='col3'>
@@ -1315,7 +1315,7 @@ music and works will not change when the full results are published.</p>-->
             <h4>Touhou 7 - Perfect Cherry Blossom</h4>
             <p>Valid responses: 11,554</p>
         </div>
-        <table class='table poll sortable'>
+        <table class='poll table sortable noborders'>
             <colgroup>
                 <col class='col2'>
                 <col class='col3'>
@@ -1367,7 +1367,7 @@ music and works will not change when the full results are published.</p>-->
             <h4>Touhou 8 - Imperishable Night</h4>
             <p>Valid responses: 11,491</p>
         </div>
-        <table class='table poll sortable'>
+        <table class='poll table sortable noborders'>
             <colgroup>
                 <col class='col2'>
                 <col class='col3'>
@@ -1419,7 +1419,7 @@ music and works will not change when the full results are published.</p>-->
             <h4>Touhou 9 - Phantasmagoria of Flower View</h4>
             <p>Valid responses: 11,010</p>
         </div>
-        <table class='table poll sortable'>
+        <table class='poll table sortable noborders'>
             <colgroup>
                 <col class='col2'>
                 <col class='col3'>
@@ -1471,7 +1471,7 @@ music and works will not change when the full results are published.</p>-->
             <h4>Touhou 10 - Mountain of Faith</h4>
             <p>Valid responses: 11,256</p>
         </div>
-        <table class='table poll sortable'>
+        <table class='poll table sortable noborders'>
             <colgroup>
                 <col class='col2'>
                 <col class='col3'>
@@ -1523,7 +1523,7 @@ music and works will not change when the full results are published.</p>-->
             <h4>Touhou 11 - Subterranean Animism</h4>
             <p>Valid responses: 11,030</p>
         </div>
-        <table class='table poll sortable'>
+        <table class='poll table sortable noborders'>
             <colgroup>
                 <col class='col2'>
                 <col class='col3'>
@@ -1575,7 +1575,7 @@ music and works will not change when the full results are published.</p>-->
             <h4>Touhou 12 - Undefined Fantastic Object</h4>
             <p>Valid responses: 10,845</p>
         </div>
-        <table class='table poll sortable'>
+        <table class='poll table sortable noborders'>
             <colgroup>
                 <col class='col2'>
                 <col class='col3'>
@@ -1627,7 +1627,7 @@ music and works will not change when the full results are published.</p>-->
             <h4>Touhou 13 - Ten Desires</h4>
             <p>Valid responses: 10,839</p>
         </div>
-        <table class='table poll sortable'>
+        <table class='poll table sortable noborders'>
             <colgroup>
                 <col class='col2'>
                 <col class='col3'>
@@ -1679,7 +1679,7 @@ music and works will not change when the full results are published.</p>-->
             <h4>Touhou 14 - Double Dealing Character</h4>
             <p>Valid responses: 10,758</p>
         </div>
-        <table class='table poll sortable'>
+        <table class='poll table sortable noborders'>
             <colgroup>
                 <col class='col2'>
                 <col class='col3'>
@@ -1731,7 +1731,7 @@ music and works will not change when the full results are published.</p>-->
             <h4>Touhou 15 - Legacy of Lunatic Kingdom (Pointdevice Mode)</h4>
             <p>Valid responses: 10,808</p>
         </div>
-        <table class='table poll sortable'>
+        <table class='poll table sortable noborders'>
             <colgroup>
                 <col class='col2'>
                 <col class='col3'>
@@ -1783,7 +1783,7 @@ music and works will not change when the full results are published.</p>-->
             <h4>Touhou 15 - Legacy of Lunatic Kingdom (Legacy Mode)</h4>
             <p>Valid responses: 10,581</p>
         </div>
-        <table class='table poll sortable'>
+        <table class='poll table sortable noborders'>
             <colgroup>
                 <col class='col2'>
                 <col class='col3'>
@@ -1835,7 +1835,7 @@ music and works will not change when the full results are published.</p>-->
             <h4>Touhou 16 - Hidden Star in Four Seasons</h4>
             <p>Valid responses: 10,758</p>
         </div>
-        <table class='table poll sortable'>
+        <table class='poll table sortable noborders'>
             <colgroup>
                 <col class='col2'>
                 <col class='col3'>
@@ -1887,7 +1887,7 @@ music and works will not change when the full results are published.</p>-->
             <h4>Touhou 17 - Wily Beast and Weakest Creature</h4>
             <p>Valid responses: 10,829</p>
         </div>
-        <table class='table poll sortable'>
+        <table class='poll table sortable noborders'>
             <colgroup>
                 <col class='col2'>
                 <col class='col3'>
@@ -1939,7 +1939,7 @@ music and works will not change when the full results are published.</p>-->
             <h4>Touhou 18 - Unconnected Marketeers</h4>
             <p>Valid responses: 10,904</p>
         </div>
-        <table class='table poll sortable'>
+        <table class='poll table sortable noborders'>
             <colgroup>
                 <col class='col2'>
                 <col class='col3'>
@@ -1992,7 +1992,7 @@ music and works will not change when the full results are published.</p>-->
             <h4>Curiosities of Lotus Asia</h3>
             <p>Valid responses: 10,666</p>
         </div>
-        <div class='overflow'><table class='table poll sortable'>
+        <div class='overflow'><table class='poll table sortable noborders'>
             <colgroup>
                 <col class='col2'>
                 <col class='col3'>
@@ -2024,7 +2024,7 @@ music and works will not change when the full results are published.</p>-->
             <h4>Lotus Eaters</h4>
             <p>Valid responses: 10,955</p>
         </div>
-        <div class='overflow'><table class='table poll sortable'>
+        <div class='overflow'><table class='poll table sortable noborders'>
             <colgroup>
                 <col class='col2'>
                 <col class='col3'>
@@ -2076,7 +2076,7 @@ music and works will not change when the full results are published.</p>-->
             <h3>Foul Detective Satori</h3>
             <p>Valid responses: 10,475</p>
         </div>
-        <div class='overflow'><table class='table poll sortable'>
+        <div class='overflow'><table class='poll table sortable noborders'>
             <colgroup>
                 <col class='col2'>
                 <col class='col3'>
@@ -2120,7 +2120,7 @@ music and works will not change when the full results are published.</p>-->
     </div>
     <h3>06. What do you like about Touhou? (Multiple answers possible)</h3>
     <p>Valid responses: 16,870</p>
-    <div class='overflow'><table class='poll table sortable'>
+    <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
             <col class='col2'>
             <col class='col3'>
@@ -2173,7 +2173,7 @@ music and works will not change when the full results are published.</p>-->
     </table></div>
     <h3>07. When did you discover Touhou?</h3>
     <p>Valid responses: 15,521</p>
-    <div class='overflow'><table class='table poll sortable'>
+    <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
             <col class='col2'>
             <col class='col3'>
@@ -2301,7 +2301,7 @@ music and works will not change when the full results are published.</p>-->
     </table></div>
     <h3>08. How did you discover Touhou?</h3>
     <p>Valid responses: 15,607</p>
-    <div class='overflow'><table class='table poll sortable'>
+    <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
             <col class='col2'>
             <col class='col3'>
@@ -2399,7 +2399,7 @@ music and works will not change when the full results are published.</p>-->
     </table></div>
     <h3>09. Participation in doujin events such as Comiket and Reitaisai (multiple answers possible)</h3>
     <p>Valid responses: 16,870</p>
-    <div class='overflow'><table class='table poll sortable'>
+    <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
             <col class='col2'>
             <col class='col3'>
@@ -2487,7 +2487,7 @@ music and works will not change when the full results are published.</p>-->
     </table></div>
     <h3>10. Have you voted on the Touhou Popularity Poll before?</h3>
     <p>Valid responses: 16,320</p>
-    <div class='overflow'><table class='table poll sortable'>
+    <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
             <col class='col2'>
             <col class='col3'>

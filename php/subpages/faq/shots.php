@@ -3,7 +3,7 @@
 Some basic information on the shottypes is provided and they are evaluated based on how good they are <em>for a first clear</em>.
 Keep in mind that these evaluations do <em>not</em> necessarily translate to different types of goals, such as scoring or a No Bombs clear.</p>
 <p>In Touhou 7 to 15, Reimu has a smaller hitbox than other characters, as well as Yukari in IN (Touhou 8), but this is <em>almost irrelevant</em> for a first 1cc.</p>
-<div class='border'>
+<div class='contents'>
     <p><a href='#eosd'>Touhou 6: Embodiment of Scarlet Devil</a></p>
     <p><a href='#pcb'>Touhou 7: Perfect Cherry Blossom</a></p>
     <p><a href='#in'>Touhou 8: Imperishable Night</a></p>

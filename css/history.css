@@ -2,15 +2,8 @@ table {
     margin-left: auto;
     margin-right: auto;
 }
-table, tr, th, td {
-    border: 1px solid black;
-    text-align: center;
-}
 caption {
     margin-bottom: 10px;
-}
-div > div > p {
-    margin: 4px;
 }
 .hidden {
     border: none;
@@ -18,11 +11,6 @@ div > div > p {
 }
 .separator {
     margin-top: 16px;
-}
-.border {
-    border: 1px solid black;
-    margin-bottom: 15px;
-    display: inline-block;
 }
 .list {
     width: 250px;

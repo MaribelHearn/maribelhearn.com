@@ -34,7 +34,7 @@
 		<p id='msg_container'></p>
     </div>
     <div id='tier_list_container' class='dark_bg'>
-        <table id='tier_list_table'>
+        <table id='tier_list_table' class='noborders'>
 			<caption id='tier_list_caption'></caption>
             <thead id='tier_list_thead' data-html2canvas-ignore>
                 <tr id='tier_list_name_tr'>
@@ -152,7 +152,7 @@
         <h2>Settings</h2>
         <div id='settings_characters'>
             Include items in the following works of first appearance:
-            <table id='settings_characters_table'>
+            <table id='settings_characters_table' class='noborders'>
                 <tbody id='settings_characters_tbody'></tbody>
             </table>
             <p>

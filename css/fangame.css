@@ -9,9 +9,6 @@ table {
     margin-left: auto;
     margin-right: auto;
 }
-table, th, td {
-    border: 1px solid black;
-}
 .fangame {
     background: url('../shared/spritesheets/fangame_sheet.png');
     display: inline-block;
@@ -86,10 +83,6 @@ table, th, td {
 }
 .msd {
     background-position: -1100px 0px;
-}
-.border {
-    border: 1px solid black;
-    margin-bottom: 15px;
 }
 .dead {
     text-decoration: line-through;

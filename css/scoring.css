@@ -14,10 +14,6 @@ input[type=button] {
 table.center {
     margin-top: 15px;
 }
-.border {
-    display: inline-block;
-    border: 1px solid black;
-}
 .center {
     margin-left: auto;
     margin-right: auto;
@@ -34,9 +30,6 @@ table.center {
 }
 .cover98 {
     border: 1px solid #000;
-}
-.noborders {
-    border: none;
 }
 .label {
     display: none;
@@ -98,9 +91,6 @@ table.center {
 #error {
     font-weight: bold;
     color: red;
-}
-#checkboxes, #checkboxes td:not(.noborders) {
-    border: 1px solid #000;
 }
 #checkboxes tbody:after {
     content: '\200C';

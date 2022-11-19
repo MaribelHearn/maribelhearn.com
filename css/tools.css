@@ -29,10 +29,6 @@ hr {
 .dead {
     text-decoration: line-through;
 }
-.border {
-    border: 1px solid black;
-    margin-bottom: 15px;
-}
 .wide-top {
     margin-top: 10px;
 }

@@ -1,7 +1,7 @@
 <p>This page answers some of the most frequently asked questions about the Touhou shoot 'em up games by beginning players.</p>
 <p>If you are looking for information about the fighters, you are on the wrong website. See <a href='https://hisouten.koumakan.jp/wiki/Introduction'>hisouten.koumakan.jp</a> for Hisoutensoku (Touhou 12.3).</p>
 <h2>Contents</h2>
-<div class='border'>
+<div class='contents'>
     <p><a href='#getstarted'>Getting started</a></p>
     <p><a href='#where'>Where do I get the games?</a></p>
     <p><a href='#setup'>Setting up</a></p>

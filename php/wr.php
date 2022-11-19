@@ -191,11 +191,11 @@ foreach ($wr as $game => $value) {
         echo _('If you toggle Unverified Scores, this will show scores that are higher than the World Record, but lack replay or video proof.');
     ?></p>
     <p id='lastupdate'><?php echo format_lm($lm, $lang) ?></p>
-    <h2 id='contents_header'><?php echo _('Contents') ?></h2>
+    <h2><?php echo _('Contents') ?></h2>
     <?php
         // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
         if ($layout == 'New') {
-            echo '<div id="contents_new" class="border"><p id="overall_link"><a href="#overall" ' .
+            echo '<div id="contents_new" class="contents"><p id="overall_link"><a href="#overall" ' .
             'class="overallrecords">' . _('Overall Records') . '</a></p>' .
             '<p id="overall_linkm"><a href="#overallm" class="overallrecords">' . _('Overall Records') .
             '</a></p><p><a href="#wrs" class="worldrecords">' . _('World Records') . '
@@ -204,7 +204,7 @@ foreach ($wr as $game => $value) {
             '</a></p><p><a href="#players" class="playerranking">' . _('Player Ranking') .
             '</a></p></div><noscript>';
         }
-        echo '<div id="contents" class="border"><p id="overall_linkn"><a href="#overall" ' .
+        echo '<div class="contents"><p id="overall_linkn"><a href="#overall" ' .
         'class="overallrecords">' . _('Overall Records') . '</a></p>' .
         '<p id="overall_linkmn"><a href="#overallm" class="overallrecords">' . _('Overall Records') .
         '</a></p><p><a href="#wrs" class="worldrecords">' . _('World Records') . '
@@ -223,7 +223,7 @@ foreach ($wr as $game => $value) {
             echo '</noscript>';
         }
     ?>
-    <div id='checkboxes' class='border'>
+    <div id='checkboxes' class='contents'>
         <p>
             <input id='dates' type='checkbox'>
 	        <label for='dates'><?php echo _('Dates') ?></label>

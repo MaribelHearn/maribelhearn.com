@@ -43,7 +43,7 @@
     include Labyrinth of Touhou, Seihou Shuusou Gyoku, Samidare, Dodonpachi Saidaioujou, Mushihime-sama as well as Futari,
     Great Fairy Wars, Subterranean Animism, Shining Shooting Star, Mrs. Estacion, eXceed 3rd, Guwange and Ikaruga;
     many more follow suit. Some of my favourite themes are listed in the table below.</p>
-    <table id='music_links' class='center'>
+    <table id='music_links' class='noborders center'>
         <thead>
             <tr>
                 <th>Link</th>

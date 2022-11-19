@@ -2,9 +2,6 @@ table {
     margin-right: auto;
     margin-left: auto;
 }
-table, tr, th, td {
-    border: 1px solid black;
-}
 input[type=button] {
     margin: 5px 5px 0 5px;
 }
@@ -71,9 +68,6 @@ input[type=button] {
 .in_route {
     font-size: 12px;
     color: #339;
-}
-.noborders {
-    border: none;
 }
 .tooltip {
     visibility: hidden;

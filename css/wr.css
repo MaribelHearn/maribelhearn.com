@@ -77,16 +77,6 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
 .unver {
     color: darkred;
 }
-.border {
-    border: 1px solid black;
-    display: inline-block;
-    margin-bottom: 15px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.noborders {
-    border: none;
-}
 .dimgrey {
     color: #696969;
 }
@@ -113,9 +103,6 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
 }
 .cover98 {
     border: 1px solid #000;
-}
-.noborders {
-    border: none;
 }
 .Spring {
     color: #990099;
@@ -196,8 +183,7 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
     content: '';
     display: table-cell;
 }
-.hidden, #overall_linkm, #overall_linkmn, #overallm, #wr_list, #player_list, #player_search, #checkboxes,
-#seasontoggle, #newlayout, #playersearchlink, #contents_new, #recent_linkm, #recent_linkmn, #recentm {
+.hidden, #overall_linkm, #overall_linkmn, #overallm, #wr_list, #player_list, #player_search, #seasontoggle, #newlayout, #playersearchlink, #contents_new, #recent_linkm, #recent_linkmn, #recentm {
     display: none;
 }
 .dropdown_content > p {
@@ -223,9 +209,6 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
 }
 #checkboxes, #ranking {
     margin-top: 15px;
-}
-#checkboxes {
-    padding-right: 3px;
 }
 #ranking.sortable tbody {
     counter-reset: sortabletablescope;

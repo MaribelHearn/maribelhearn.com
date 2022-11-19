@@ -2,12 +2,12 @@
     <?php echo wrap_top() ?>
     <p>This list contains explanations for terms and acronyms used in the community of Touhou players. It also contains general gaming and shoot 'em up terms that are relevant to Touhou.</p>
     <h2>Contents</h2>
-    <div id='contents' class='border'>
+    <div class='contents'>
         <p><a href='#spells'>Spell Card / Pattern Acronyms</a></p>
         <p><a href='#bullets'>Bullet Type Names</a></p>
     </div>
     <h2 id='main'>Gameplay Related Terms</h2>
-    <table id='jargontable'>
+    <table id='jargontable' class='noborders'>
         <thead>
             <tr>
                 <th class='jargon'>Jargon<hr></th>

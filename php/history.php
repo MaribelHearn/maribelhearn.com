@@ -4,8 +4,8 @@
     <p>I am a bullet hell player who mostly plays for score and mains Touhou 13: Ten Desires.
 	I have also scored Touhou 16: Hidden Star in Four Seasons, Seihou Banshiryuu C67 and Samidare.</p>
     <hr>
-    <h2 id='contents'>Contents</h2>
-    <div class='border'>
+    <h2>Contents</h2>
+    <div class='contents'>
         <p><a href='#overview'>High Scores</a></p>
         <p><a href='#survival'>Survival</a></p>
         <p><strong>Touhou Project Shmups</strong></p>
