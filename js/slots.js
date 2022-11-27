@@ -73,17 +73,21 @@ function closeModal(event) {
     }
 }
 
-function startSlots() {
+function setMessage(message) {
+    document.getElementById("message").innerHTML = message;
+}
+
+function toggleSlots() {
     if (running) {
+        clearInterval(running);
+        running = undefined;
+        document.getElementById("insert_coin").value = "Insert Coin";
         return;
     }
 
     running = setInterval(tick, SPEED);
-}
-
-function stopSlots() {
-    clearInterval(running);
-    running = undefined;
+    document.getElementById("insert_coin").value = "Stop";
+    setMessage("");
 }
 
 function fileName() {
@@ -105,6 +109,7 @@ function takeScreenshot() {
     const width = document.getElementById("table").offsetWidth + 20;
     const height = document.getElementById("table").offsetHeight + (isMobile() ? 20 : 0);
     const windowHeight = height + (isMobile() ? 15 : 0);
+    setMessage("");
 
     try {
         html2canvas(document.body, {
@@ -138,6 +143,8 @@ function reset() {
     for (let i = 0; i < NUMBER_OF_SLOTS; i++) {
         document.getElementById(`title${i}`).innerHTML = slotTitles[i];
     }
+
+    setMessage("Reset the titles!");
 }
 
 function checkBannedChars(event) {
@@ -150,8 +157,7 @@ function checkBannedChars(event) {
 function setEventListeners() {
     document.body.addEventListener("click", closeModal, false);
     document.body.addEventListener("keyup", closeModal, false);
-    document.getElementById("start").addEventListener("click", startSlots, false);
-    document.getElementById("stop").addEventListener("click", stopSlots, false);
+    document.getElementById("insert_coin").addEventListener("click", toggleSlots, false);
     document.getElementById("screenshot").addEventListener("click", takeScreenshot, false);
     document.getElementById("reset").addEventListener("click", reset, false);
     document.getElementById("change_title").addEventListener("click", titleChanged, false);
@@ -170,6 +176,7 @@ function updateTitle() {
     document.getElementById(`title${currentID}`).innerHTML = title;
     slotTitles[currentID] = title;
     localStorage.setItem("slotTitles", JSON.stringify(slotTitles));
+    setMessage("");
     emptyModal();
 }
 
@@ -200,6 +207,7 @@ function titleMenu(event) {
     document.getElementById("title_length").innerHTML = `${slotTitles[id].length}/${MAX_TITLE_LENGTH}`;
     document.getElementById("modal_title").style.display = "block";
     document.getElementById("modal").style.display = "block";
+    setMessage("");
     currentID = id;
 }
 

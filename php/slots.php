@@ -2,12 +2,12 @@
     <?php echo wrap_top() ?>
         <p>Click any of the slot title texts to change what it says.</p>
         <p>
-            <input id='start' type='button' value='Insert Coin'>
-            <input id='stop' type='button' value='Stop'>
+            <input id='insert_coin' type='button' value='Insert Coin'>
             <input id='screenshot' type='button' value='Screenshot'>
             <input id='reset' type='button' value='Reset Titles'>
         </p>
     </div>
+    <p id='message'></p>
     <table id='table'>
         <tr>
             <td id='title0' class='title'>You are a ...</td>
