@@ -260,7 +260,7 @@ function generate_nonce() {
     $number_of_chars = 62;
     $nonce = '';
     for ($i = 0; $i < 32; $i++) {
-        $nonce .= $chars[rand(0, $number_of_chars)];
+        $nonce .= $chars[rand(0, $number_of_chars - 1)];
     }
     $file = fopen('.stats/nonce', 'w');
     if (flock($file, LOCK_EX)) {
