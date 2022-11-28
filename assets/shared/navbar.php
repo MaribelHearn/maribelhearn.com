@@ -70,7 +70,7 @@ function personal_pages() {
 }
 
 function show_admin(string $token_path) {
-    return isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents($token_path));
+    return is_localhost($_SERVER['REMOTE_ADDR']) || isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents($token_path));
 }
 
 function navbar(string $page) {
