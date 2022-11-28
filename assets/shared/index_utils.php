@@ -44,7 +44,7 @@ function redirect(string $page, string $page_path, string $request, string $erro
     if (property_exists($aliases, $page)) {
         $location = $_SERVER['SERVER_NAME'] !== 'localhost' ? 'https://maribelhearn.com/' : 'http://localhost/';
         header('Location: ' . $location . $aliases->{$page} . '?redirect=' . $page);
-        return $page;
+        return $aliases->{$page};
     }
     if (!file_exists($page_path) && $page != 'index' || !empty($error)) {
         $page = 'error';
