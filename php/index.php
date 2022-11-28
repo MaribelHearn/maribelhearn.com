@@ -125,6 +125,6 @@
     </div>
     <div id='bottom'>
         <p><a href='/privacy'>Privacy Policy</a></p>
-        <p id='last_modified'>Last updated at <?php echo date('Y-m-d H:i:s', filemtime('.git/FETCH_HEAD')) . ' ' . date('T') ?></p>
+        <?php if (file_exists('.git/FETCH_HEAD')) { echo '<p id="last_modified">Last updated at ' . date('Y-m-d H:i:s', filemtime('.git/FETCH_HEAD')) . ' ' . date('T') . '</p>'; } ?>
     </div>
 </div>
