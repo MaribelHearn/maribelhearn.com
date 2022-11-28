@@ -1,7 +1,8 @@
 <?php
 function closest_page(string $url) {
     $min_distance = PHP_INT_MAX;
-    foreach (glob('assets/*/*/*') as $file) {
+    $min_page = '';
+    foreach (glob('php/*') as $file) {
         if (strpos($file, '.php') && !strpos($file, '_') && $file != 'error.php') {
             $matching_file = preg_split('/\//', $file);
             $matching_file = end($matching_file);
@@ -20,8 +21,7 @@ function redirect_to_closest(string $url) {
         $closest_page = closest_page($url);
         $min_page = $closest_page[0];
         $min_distance = $closest_page[1];
-        if ($min_distance < 3 && $min_distance >= 0) {
-            echo $min_page . '<br>' . $min_distance . '<br>';
+        if (!empty($min_page) && $min_distance < 3 && $min_distance >= 0) {
             $location = $_SERVER['SERVER_NAME'] !== 'localhost' ? 'https://maribelhearn.com/' : 'http://localhost/';
             header('Location: ' . $location . $min_page . '?redirect=' . $url);
         }
@@ -49,11 +49,13 @@ function redirect(string $page, string $page_path, string $request, string $erro
     if (!file_exists($page_path) && $page != 'index' || !empty($error)) {
         $page = 'error';
         $url = substr($request, 1);
-        $json = file_get_contents('assets/shared/json/admin.json');
-        $data = json_decode($json, true);
-        if (isset($data[$url])) {
-            header('Location: ' . $data[$url]);
-            exit();
+        if (file_exists('assets/shared/json/admin.json')) {
+            $json = file_get_contents('assets/shared/json/admin.json');
+            $data = json_decode($json, true);
+            if (isset($data[$url])) {
+                header('Location: ' . $data[$url]);
+                exit();
+            }
         }
         redirect_to_closest($url);
     }
