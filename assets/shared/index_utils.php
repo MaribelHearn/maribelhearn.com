@@ -22,7 +22,7 @@ function redirect_to_closest(string $url) {
         $min_page = $closest_page[0];
         $min_distance = $closest_page[1];
         if (!empty($min_page) && $min_distance < 3 && $min_distance >= 0) {
-            $location = $_SERVER['SERVER_NAME'] !== 'localhost' ? 'https://maribelhearn.com/' : 'http://localhost/';
+            $location = is_localhost($_SERVER['REMOTE_ADDR']) ? 'http://localhost/' : 'https://maribelhearn.com/';
             header('Location: ' . $location . $min_page . '?redirect=' . $url);
             exit();
         }
@@ -43,7 +43,7 @@ function redirect(string $page, string $page_path, string $request, string $erro
     $aliases = (object) array('rf' => 'royalflare', 'surv' => 'survival', 'score' => 'scoring', 'poll' => 'thvote');
     $page_path = preg_split('/\?/', $page_path)[0];
     if (property_exists($aliases, $page)) {
-        $location = $_SERVER['SERVER_NAME'] !== 'localhost' ? 'https://maribelhearn.com/' : 'http://localhost/';
+        $location = is_localhost($_SERVER['REMOTE_ADDR']) ? 'http://localhost/' : 'https://maribelhearn.com/';
         header('Location: ' . $location . $aliases->{$page} . '?redirect=' . $page);
         return $aliases->{$page};
     }
