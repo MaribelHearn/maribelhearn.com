@@ -24,6 +24,7 @@ function redirect_to_closest(string $url) {
         if (!empty($min_page) && $min_distance < 3 && $min_distance >= 0) {
             $location = $_SERVER['SERVER_NAME'] !== 'localhost' ? 'https://maribelhearn.com/' : 'http://localhost/';
             header('Location: ' . $location . $min_page . '?redirect=' . $url);
+            exit();
         }
     }
 }
