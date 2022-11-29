@@ -6,6 +6,7 @@ It also hosts a tool to create Touhou tier lists, as well as an English translat
 Prerequisites:
 * PHP (version 8 or newer)
 * gettext module
+* sqlite3 module
 
 First, clone the repository in whatever way you prefer and navigate to its directory.
 ```
@@ -28,3 +29,11 @@ This error means that the PHP gettext module is not enabled. To enable it, open 
 ;extension=gettext
 ```
 Uncomment it by removing the semicolon at the front, then save the file. PHP will detect the change and run the gettext module.
+```
+[500]: GET /admin/admin.php - Uncaught Error: Class "SQLite3" not found 
+```
+This error means that the PHP sqlite3 module is not enabled. To enable it, open up your `php.ini` file and search for "sqlite3". You should find the following line:
+```
+;extension=sqlite3
+```
+Uncomment it by removing the semicolon at the front, then save the file. PHP will detect the change and run the sqlite3 module.
