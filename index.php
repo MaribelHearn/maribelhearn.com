@@ -131,7 +131,7 @@
         <?php
             // Define nonce
             if (!file_exists('.stats/nonce')) {
-                $nonce = generate_nonce();
+                $nonce = generate_string();
             } else {
                 $nonce = file_get_contents('.stats/nonce');
             }
