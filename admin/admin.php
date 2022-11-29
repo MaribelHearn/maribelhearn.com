@@ -157,7 +157,16 @@
                 <p class='wide-top'><strong><a href='#top'>Back to Top</a></strong></p>
             </div>
         </main>
-        <?php echo '<input id="token" type="hidden" value=' . file_get_contents('../.stats/token') . '>' ?>
+        <?php
+            // Define token
+            if (!file_exists('../.stats/token')) {
+                $token = generate_string('token');
+            } else {
+                $token = file_get_contents('../.stats/token');
+            }
+
+            echo '<input id="token" type="hidden" value=' . $token . '>';
+        ?>
         <script nonce='<?php echo file_get_contents('../.stats/nonce') ?>' defer>document.body.style.background="url('assets/main/index/index.jpg') center no-repeat fixed";document.body.style.backgroundSize="cover"</script>
         <noscript><link rel='stylesheet' href='assets/shared/noscript_bg.php?page=index'></noscript>
     </body>

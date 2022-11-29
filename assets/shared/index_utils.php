@@ -261,19 +261,4 @@ function handle_file_upload() {
         }
     }
 }
-
-function generate_nonce() {
-    $chars = '1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
-    $number_of_chars = 62;
-    $nonce = '';
-    for ($i = 0; $i < 32; $i++) {
-        $nonce .= $chars[rand(0, $number_of_chars - 1)];
-    }
-    $file = fopen('.stats/nonce', 'w');
-    if (flock($file, LOCK_EX)) {
-        fwrite($file, $nonce);
-        flock($file, LOCK_UN);
-    }
-    return $nonce;
-}
 ?>

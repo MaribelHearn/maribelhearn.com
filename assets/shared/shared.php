@@ -262,4 +262,20 @@ function shot_abbr(string $shot) {
         default: return '';
     }
 }
+
+function generate_string(string $type = 'nonce') {
+    $chars = '1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
+    $number_of_chars = 62;
+    $str = '';
+    for ($i = 0; $i < 32; $i++) {
+        $str .= $chars[rand(0, $number_of_chars - 1)];
+    }
+    $dir = ($type == 'token' ? '../' : '') . '.stats/';
+    $file = fopen($dir . $type, 'w');
+    if (flock($file, LOCK_EX)) {
+        fwrite($file, $str);
+        flock($file, LOCK_UN);
+    }
+    return $str;
+}
 ?>
