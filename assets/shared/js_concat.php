@@ -36,7 +36,9 @@ if ($page == 'tiers' && isset($_GET['mobile']) && $_GET['mobile']) {
 } else if ($page == 'error') {
     array_push($js, 'https://maribelhearn.com/js/utils' . $min . '.js');
 } else if ($page == 'admin') {
-    array_push($js, '../../admin/detect.js');
+    if (file_exists('../../admin/detect.js')) {
+        array_push($js, '../../admin/detect.js');
+    }
     array_push($js, '../../admin/admin.js');
 }
 if ($page != 'error') {

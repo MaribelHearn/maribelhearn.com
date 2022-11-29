@@ -69,9 +69,13 @@
 		</nav>
         <main>
             <div id='wrap' class='wrap'>
-                <?php echo wrap_top() ?>
-                <p class='wide-top'>You are visiting this page using <strong id='os'></strong>.</p>
-                <p>You are visiting this page using <strong id='browser'></strong>.</p>
+                <?php 
+                    echo wrap_top();
+                    if (file_exists('detect.js')) {
+                        echo '<p class="wide-top">You are visiting this page using <strong id="os"></strong>.</p>' .
+                        '<p>You are visiting this page using <strong id="browser"></strong>.</p>';
+                    }
+                ?>
                 <p><input id='setcookie' type='button' value='Set Blocking Cookie'></p>
                 <?php
                     if ($hitcount == 'error') {
