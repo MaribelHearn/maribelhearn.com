@@ -38,6 +38,9 @@
     if ($page == 'error' && empty($status_code)) {
         $status_code = '404';
     }
+    if (!empty($status_code)) {
+        http_response_code(intval($status_code));
+    }
     hit($page, $status_code);
 
     // Set page language
