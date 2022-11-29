@@ -49,7 +49,7 @@ function redirect(string $page, string $page_path, string $request, string $erro
     }
     if (!file_exists($page_path) && $page == 'admin' && is_localhost($_SERVER['REMOTE_ADDR'])) {
         header('Location: http://localhost/admin/admin.php');
-        return 'admin';
+        exit();
     }
     if (!file_exists($page_path) && $page != 'index' || !empty($error)) {
         $page = 'error';
