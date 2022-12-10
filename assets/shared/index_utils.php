@@ -39,7 +39,7 @@ function subpage_name(string $subpage) {
     }
 }
 
-function redirect(string $page, string $page_path, string $request, string $error) {
+function redirect(string $page, string $page_path, string $error) {
     $aliases = (object) array('rf' => 'royalflare', 'surv' => 'survival', 'score' => 'scoring', 'poll' => 'thvote');
     $page_path = preg_split('/\?/', $page_path)[0];
     if (property_exists($aliases, $page)) {
@@ -53,12 +53,14 @@ function redirect(string $page, string $page_path, string $request, string $erro
     }
     if (!file_exists($page_path) && $page != 'index' || !empty($error)) {
         $page = 'error';
-        $url = substr($request, 1);
+        $request = substr($_SERVER['REQUEST_URI'], 1);
+        $query = '?' . $_SERVER['QUERY_STRING'];
+        $url = str_replace($query, '', $request);
         if (file_exists('assets/shared/json/admin.json')) {
             $json = file_get_contents('assets/shared/json/admin.json');
             $data = json_decode($json, true);
             if (isset($data[$url])) {
-                header('Location: ' . $data[$url]);
+                header('Location: ' . $data[$url] . $query);
                 exit();
             }
         }
