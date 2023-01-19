@@ -340,6 +340,10 @@
 				the <a href='#term_poc'>PoC</a>. Most games have a system that allows the player to increase
 				this value in some way.</td>
             </tr>
+            <tr id='term_ragephase'>
+                <th>Rage phase</th>
+                <td>A (very) hard phase of a Spell Card that starts when you get close to timing it out. They typically start when the timer is at 30 seconds.</td>
+            </tr>
             <tr id='term_resources'>
                 <th>Resources</th>
                 <td>Extra lives and bombs, the tools given to you to survive through a game with. Making good use of them is known as 'resource management'.
@@ -641,9 +645,17 @@
                 <th>QED</th>
                 <td>QED "Ripples of 495 Years", Flandre's final Spell Card in <a href='#term_eosd'>EoSD</a>.</td>
             </tr>
+            <tr id='term_rain'>
+                <th>Rain</th>
+                <td>The section of <a href='#term_lolk'>LoLK</a> Stage 6 where blue bullets spawn in a rain pattern, combined with aimed red stars.</td>
+            </tr>
             <tr id='term_rings'>
                 <th>Rings</th>
-                <td>Mokou's final non in <a href='#term_in'>IN</a>. Also commonly called 'Rings of Death'.</td>
+                <td>The final section of <a href='#term_lls'>LLS</a> Stage 5.</td>
+            </tr>
+            <tr id='term_ringsofdeath'>
+                <th>Rings of Death</th>
+                <td>Mokou's final non in <a href='#term_in'>IN</a>.</td>
             </tr>
             <tr id='term_rb'>
                 <th>RB</th>
