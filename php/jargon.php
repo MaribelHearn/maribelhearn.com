@@ -342,7 +342,7 @@
             </tr>
             <tr id='term_ragephase'>
                 <th>Rage phase</th>
-                <td>A (very) hard phase of a Spell Card that starts when you get close to timing it out. They typically start when the timer is at 30 seconds.</td>
+                <td>See <a href='#term_timeoutphase'>timeout phase</a>.</td>
             </tr>
             <tr id='term_resources'>
                 <th>Resources</th>
@@ -442,6 +442,11 @@
                 <th>Timeout</th>
                 <td>Surviving a pattern until the time is up. <a href='#term_survivalspell'>Survival spells</a>,
                 Spell Cards that force this on the player, are also called timeout spells.</td>
+            </tr>
+            <tr id='term_timeoutphase'>
+                <th>Timeout phase</th>
+                <td>A (very) hard phase of a Spell Card that starts when you get close to timing it out. They typically start when the timer is at 30 seconds
+                and they are typically found on final Spell Cards in final boss or Extra boss fights.</td>
             </tr>
             <tr id='term_token'>
                 <th>Token</th>
