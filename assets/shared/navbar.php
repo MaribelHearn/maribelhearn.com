@@ -19,7 +19,7 @@ function touhou_sites() {
     '<p><a href="https://www.thspotify.moe/">' .
     '<span class="icon thspotify_icon"></span>Touhou Spotify Music</a></p>' .
     '<p><a href="https://touhouworldcup.com">' .
-    '<span class="icon twc_icon"></span> Touhou World Cup</a></p>' .
+    '<span class="icon twc_icon"></span>Touhou World Cup</a></p>' .
     '<p><a href="https://nylilsa.github.io">' .
     '<span class="icon nylilsa_icon"></span>Nylilsa\'s Site</a></p>';
     //$navbar .= '<p><a href="https://zps-stg.github.io">' .
@@ -42,31 +42,31 @@ function own_sites() {
 }
 
 function game_pages() {
-    return '<p><a href="/scoring"><span class="icon scoring_icon"></span> Scoring</a></p>' .
-    '<p><a href="/survival"><span class="icon survival_icon"></span> Survival</a></p>' .
-    '<p><a href="/drc"><span class="icon drc_icon"></span> DRC</a></p>' .
-    '<p><a href="/tools"><span class="icon tools_icon"></span> Tools</a></p>' .
-    '<p><a href="/wr"><span class="icon wr_icon"></span> WR</a></p>' .
-    '<p><a href="/lnn"><span class="icon lnn_icon"></span> LNN</a></p>' .
-    '<p><a href="/jargon"><span class="icon jargon_icon"></span> Jargon</a></p>' .
-    '<p><a href="/trs"><span class="icon trs_icon"></span> TRS</a></p>' .
-    '<p><a href="/gensokyo"><span class="icon gensokyo_icon"></span> Gensokyo</a></p>' .
-    '<p><a href="/pofv"><span class="icon pofv_icon"></span> PoFV</a></p>' .
-    '<p><a href="/fangame"><span class="icon fangame_icon"></span> Fangame</a></p>' .
-    '<p><a href="/faq"><span class="icon faq_icon"></span> FAQ</a></p>' .
-    '<p><a href="/royalflare"><span class="icon royalflare_icon"></span> Royalflare</a></p>';
+    return '<p><a href="/scoring"><span class="icon scoring_icon"></span>Scoring</a></p>' .
+    '<p><a href="/survival"><span class="icon survival_icon"></span>Survival</a></p>' .
+    '<p><a href="/drc"><span class="icon drc_icon"></span>DRC</a></p>' .
+    '<p><a href="/tools"><span class="icon tools_icon"></span>Tools</a></p>' .
+    '<p><a href="/wr"><span class="icon wr_icon"></span>WR</a></p>' .
+    '<p><a href="/lnn"><span class="icon lnn_icon"></span>LNN</a></p>' .
+    '<p><a href="/jargon"><span class="icon jargon_icon"></span>Jargon</a></p>' .
+    '<p><a href="/trs"><span class="icon trs_icon"></span>TRS</a></p>' .
+    '<p><a href="/gensokyo"><span class="icon gensokyo_icon"></span>Gensokyo</a></p>' .
+    '<p><a href="/pofv"><span class="icon pofv_icon"></span>PoFV</a></p>' .
+    '<p><a href="/fangame"><span class="icon fangame_icon"></span>Fangame</a></p>' .
+    '<p><a href="/faq"><span class="icon faq_icon"></span>FAQ</a></p>' .
+    '<p><a href="/royalflare"><span class="icon royalflare_icon"></span>Royalflare</a></p>';
 }
 
 function other_pages() {
-    return '<p><a href="/thvote"><span class="icon thvote_icon"></span> Poll</a></p>' .
-    '<p><a href="/tiers"><span class="icon tiers_icon"></span> Tiers</a></p>' .
-    '<p><a href="/slots"><span class="icon slots_icon"></span> Slots</a></p>';
+    return '<p><a href="/thvote"><span class="icon thvote_icon"></span>Poll</a></p>' .
+    '<p><a href="/tiers"><span class="icon tiers_icon"></span>Tiers</a></p>' .
+    '<p><a href="/slots"><span class="icon slots_icon"></span>Slots</a></p>';
 }
 
 function personal_pages() {
-    return '<p><a href="/about"><span class="icon"></span> About</a></p>' .
-    '<p><a href="/history"><span class="icon history_icon"></span> History</a></p>' .
-    '<p><a href="/c67"><span class="icon c67_icon"></span> C67</a></p>';
+    return '<p><a href="/about"><span class="icon"></span>About</a></p>' .
+    '<p><a href="/history"><span class="icon history_icon"></span>History</a></p>' .
+    '<p><a href="/c67"><span class="icon c67_icon"></span>C67</a></p>';
 }
 
 function show_admin(string $token_path) {
