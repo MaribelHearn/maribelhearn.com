@@ -53,6 +53,7 @@
         <p><a href='#BatsugunSP'>Batsugun Special Version</a></p>
         <p><a href='#ESP'>ESP Ra.De.</a></p>
         <p><a href='#ESPg'>Espgaluda</a></p>
+        <p><a href='#ESP2'>Espgaluda II</a></p>
         <p><a href='#Guwange'>Guwange</a></p>
         <p><a href='#Ketsui'>Ketsui ~Kizuna Jigoku Tachi~</a></p>
         <p><a href='#MSm'>Mushihimesama</a></p>
@@ -495,6 +496,11 @@
                 </tr>
                 <tr id='oESPg'>
                     <th>Espgaluda</th>
+                    <td id='1ESPg' class='clear'></td>
+                    <td colspan='2'>X</td>
+                </tr>
+                <tr id='oESP2'>
+                    <th>Espgaluda II</th>
                     <td id='1ESPg' class='clear'></td>
                     <td colspan='2'>X</td>
                 </tr>
@@ -4012,6 +4018,26 @@
                 <td class='g'>Completed</td>
                 <td>November 28, 2015</td>
                 <td><strong><a href='https://www.youtube.com/watch?v=WtVbxjLpAbs'>Link (YouTube)</a></strong></td>
+            </tr>
+        </table></div>
+    </div>
+    <div id='ESP2'>
+        <h2>Espgaluda II</h2>
+		<img loading='lazy' src='assets/personal/history/games/esp2250x250.jpg' alt='Espgaluda II cover'>
+        <p>Obtained: March 28, 2014</p>
+        <h3>Survival</h3>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>ALL</strong></td>
+                <td class='g'>Completed</td>
+                <td>January 23, 2023</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=-c_ks7Sgc8o'>Link (YouTube)</a></strong></td>
             </tr>
         </table></div>
     </div>
