@@ -590,7 +590,7 @@ foreach ($wr as $game => $value) {
 							continue;
 						}
 						echo '<tr><td></td>';
-                        echo '<td>' . $pl_wr[$key][0] . '</td>';
+                        echo '<td><a href="#' . $pl_wr[$key][0] . '">' . $pl_wr[$key][0] . '</a></td>';
 						echo '<td>' . $pl_wr[$key][1] . '</td>';
                         echo '<td>' . $pl_wr[$key][2] . '</td></tr>';
 					}
