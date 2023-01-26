@@ -656,7 +656,7 @@ function checkHash() {
     // player in hash links to player WRs
     if (location.hash !== "") {
         const hash = decodeURIComponent(location.hash.substring(1));
-        const players = document.getElementById("player").children;
+        const players = document.getElementById("search").children;
 
         for (const option of players) {
             const player = option.value;
