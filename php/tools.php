@@ -37,7 +37,7 @@
 		'experience. It allows you to set a custom screen resolution as well.</p>' .
 		'<p>Vpatch is applicable to all official shooting games bar HSiFS, WBaWC and UM.');
 	?></p>
-    <a href='https://maribelhearn.com/mirror/VsyncPatch.zip' target='_blank'><?php echo _('Download') ?></a>
+    <p><a href='https://maribelhearn.com/mirror/VsyncPatch.zip' target='_blank'><?php echo _('Download') ?></a></p>
 	<!-- Thprac -->
 	<hr>
 	<div><!--  class='main' -->
@@ -46,7 +46,7 @@
 			<?php echo _('Single practice tool that works on all of the official Touhou shoot \'em up games, ' .
 			'allowing you to change settings or skip to patterns at will.'); ?>
 		</p>
-		<a href='https://github.com/touhouworldcup/thprac#thprac' target='_blank'><?php echo _('Download') ?></a>
+		<p><a href='https://github.com/touhouworldcup/thprac#thprac' target='_blank'><?php echo _('Download') ?></a></p>
 	</div>
 	<!--<div class='side'>
 		<div id='thprac_img'></div>
@@ -66,10 +66,10 @@
 		'instructions on how to use the patcher.');
 	?></p>
 	<div>
-    	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Download' target='_blank'>
+    	<p><p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Download' target='_blank'>
 			<?php echo _('Download') ?> (thpatch.net)
 		</a></p>
-    	<p><a href='https://maribelhearn.com/mirror/thcrap.zip' target='_blank'><?php
+    	<p><p><a href='https://maribelhearn.com/mirror/thcrap.zip' target='_blank'><?php
 			echo _('Download') . _(' (maribelhearn.com mirror)')
 		?></a></p>
 	</div>
@@ -80,7 +80,7 @@
 		echo _('Makes the older Touhou Windows games (EoSD, PCB, IN, PoFV and StB) run properly on Windows 10. ' .
 		'Extract it into the folders of these games for it to take effect.');
 	?></p>
-    <a href='http://enbdev.com/convertor_dx8_dx9_v0036.htm' target='_blank'><?php echo _('Download') ?></a>
+    <p><a href='http://enbdev.com/convertor_dx8_dx9_v0036.htm' target='_blank'><?php echo _('Download') ?></a></p>
     <!-- Scorefiles for Practice -->
     <hr>
     <h2 id='scorefiles'><?php echo _('Completed Scorefiles') ?></h2>
@@ -90,7 +90,7 @@
 		'for all shottypes.');
 	?></p>
     <p><?php echo _('All official shooting games aside from VD are included.') ?></p>
-    <a href='https://maribelhearn.com/mirror/Practice%20Scorefiles.zip' target='_blank'><?php echo _('Download') ?></a>
+    <p><a href='https://maribelhearn.com/mirror/Practice%20Scorefiles.zip' target='_blank'><?php echo _('Download') ?></a></p>
 	<!-- Old link without WBaWC: https://mega.nz/#F!r8hWmCrD!oOkBNotI88acvlhlKUXZiA -->
     <!-- SpoilerAL -->
     <hr>
@@ -175,14 +175,14 @@
 	<p><?php
 		echo _('Allows skipping to any part of the game, similar to Riri\'s practice tools, using an in-game menu.');
 	?></p>
-	<a href='https://priw8.github.io/#s=patches/prac' target='_blank'><?php echo _('Download') ?></a>
+	<p><a href='https://priw8.github.io/#s=patches/prac' target='_blank'><?php echo _('Download') ?></a></p>
     <p><strong><?php echo _('GFW "Brown Label" Practice by ') ?><a href='https://twitter.com/eerokurkisuo'>MegaPulse</a></strong></p>
     <p><?php
 		echo _('Modified <span class="code">.dat</span> files that allow you to practice specific stages of ' .
 		'any route in the game. Select A in-game for full stage practice, B for midboss and boss and C ' .
 		'for boss only. Refer to the readme file for further information.');
 	?></p>
-    <a href='https://mega.nz/#!8LgRVLxa!TQpU7xqurMF9JgWloQAHORx6XhswuK_NaaCk1gStWfs' target='_blank'><?php echo _('Download') ?></a>
+    <p><a href='https://mega.nz/#!8LgRVLxa!TQpU7xqurMF9JgWloQAHORx6XhswuK_NaaCk1gStWfs' target='_blank'><?php echo _('Download') ?></a></p>
     <!-- Boss Rush Patches -->
     <hr>
     <h2 id='bossrush'><?php echo _('Boss Rush Patches') ?></h2>
@@ -225,13 +225,13 @@
     </div>
     <p><strong><?php echo _('EoSD Boss Rush by ')?><a href='https://twitter.com/mdude33' target='_blank'>Dass</a></strong></p>
     <p><?php echo _('Another boss rush patch for EoSD, also including \'Patchouli Rush\'.') ?></p>
-    <a href='https://mega.nz/#!r88gwA7C!I2xVHGBbyh9KVVn3h_aiKDfPhl8fC9ajZscqzES7UFY' target='_blank'><?php echo _('Download') ?></a>
+    <p><a href='https://mega.nz/#!r88gwA7C!I2xVHGBbyh9KVVn3h_aiKDfPhl8fC9ajZscqzES7UFY' target='_blank'><?php echo _('Download') ?></a></p>
     <p><strong><?php echo _('PCB Boss Rush by rsy_type1 and ') ?><a href='https://twitter.com/chirpeh13' target='_blank'>Chirpy</a></strong></p>
     <p><?php echo _('A boss rush patch for PCB.') ?></p>
-    <a href='http://www.mediafire.com/download/vd08pz9ogjbhq8g/th07b.rar' target='_blank'><?php echo _('Download') ?></a>
+    <p><a href='http://www.mediafire.com/download/vd08pz9ogjbhq8g/th07b.rar' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong><?php echo _('WBaWC Boss Rush by ') ?>Plus</strong></p>
     <p><?php echo _('A boss rush patch for WBaWC.') ?></p>
-	<a class='dead' href='https://mega.nz/#!e3wwQADS!8I4Rcr9wF-B-hV3b9wbEjGOOI9zbbz8mKj8oY86tWhY' target='_blank'><?php echo _('Download') ?></a>
+	<a class='dead' href='https://mega.nz/#!e3wwQADS!8I4Rcr9wF-B-hV3b9wbEjGOOI9zbbz8mKj8oY86tWhY' target='_blank'><?php echo _('Download') ?></a></p>
     <!-- Specific Pattern Practice -->
     <hr>
     <h2 id='specific'><?php echo _('Specific Pattern Practice') ?></h2>
@@ -241,17 +241,17 @@
 	?></p>
     <p><strong><?php echo _('Books Practice for EoSD by ') ?><a href='https://www.twitch.tv/akaldar' target='_blank'>Akaldar</a></strong></p>
     <p><?php echo _('Repeats the Stage 4 Books section for easy practicing.') ?></p>
-    <a href='https://mega.nz/#!sIhRFD7b!EKKnhhxKX2NQQg0jGaT1t3eAS7x5pcISSKr0abINvgM' target='_blank'><?php echo _('Download') ?></a>
+    <p><a href='https://mega.nz/#!sIhRFD7b!EKKnhhxKX2NQQg0jGaT1t3eAS7x5pcISSKr0abINvgM' target='_blank'><?php echo _('Download') ?></a></p>
     <p><strong><?php echo _('VoWG + PWG Practice for MoF by ') ?><a href='https://twitter.com/chirpeh13' target='_blank'>Chirpy</a></strong></p>
     <p><?php
 		echo _('Makes Kanako skip to Virtue of Wind God (her final spell) and makes Aya skip to ' .
 		'Peerless Wind God (her timeout spell), which will also repeat itself indefinitely.');
 	?></p>
-    <a href='https://maribelhearn.com/mirror/th10vowg_pwg.dat' target='_blank'><?php echo _('Download') ?></a>
+    <p><a href='https://maribelhearn.com/mirror/th10vowg_pwg.dat' target='_blank'><?php echo _('Download') ?></a></p>
 	<!-- Dead link: https://www.dropbox.com/s/2u2fam39uya0zil/th10vowg%2Bpwg.dat?dl=0 -->
     <p><strong><?php echo _('IN Nonspell Practice') ?></strong></p>
     <p><?php echo _('Patch that lets you practice nonspells in IN.') ?></p>
-    <a href='https://mega.nz/#!y9IwiD4A!aI-tS2lNbDWeu-FnA41lc76xtnkUjHNdYwyg4dyBkrs' target='_blank'><?php echo _('Download') ?></a>
+    <p><a href='https://mega.nz/#!y9IwiD4A!aI-tS2lNbDWeu-FnA41lc76xtnkUjHNdYwyg4dyBkrs' target='_blank'><?php echo _('Download') ?></a></p>
     <p><strong><?php echo _('Timeout Phase Collection by ') ?><a href='https://twitter.com/ReformedSmol' target='_blank'>Martin</a></strong></p>
     <p><?php
 		echo _('Patches for practicing the timeout phases of the final spells on Lunatic and Extra from MoF to ' .
@@ -270,46 +270,46 @@
     <h2 id='shottypes'><?php echo _('Shottype Modifications') ?></h2>
 	<p><strong><?php echo _('MoF Reisen by ') ?>Kayu</strong></p>
 	<p><?php echo _('Replaces ReimuC with Reisen in MoF.') ?></p>
-	<a href='https://mega.nz/#!SXYHzIAL!ybiykqvDKGJ-WB99fd1NzsXWh_F5l9N0VZN6IVyvZ8o' target='_blank'><?php echo _('Download') ?></a>
+	<p><a href='https://mega.nz/#!SXYHzIAL!ybiykqvDKGJ-WB99fd1NzsXWh_F5l9N0VZN6IVyvZ8o' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong><?php echo _('UFO Tsubakura mod by ') ?><a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-	<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th12tsuba</a></p>
+	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th12tsuba</a></p>
 	<p><?php
 		echo _('Replaces both Reimu shottypes in UFO with Tsubakura shottypes, a character from the ' .
 		'Len\'en series. Also changes the dialogues and endings.');
 	?></p>
-	<a href='https://mega.nz/#!10JzTKBC!GLi2MJZADsRPqdn1b9knvLfJknXepM69vHJ01-XjJ7s' target='_blank'><?php echo _('Download') ?></a>
+	<p><a href='https://mega.nz/#!10JzTKBC!GLi2MJZADsRPqdn1b9knvLfJknXepM69vHJ01-XjJ7s' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong><?php echo _('DDC Sanae by ') ?><a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-	<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th14sanae</a></p>
+	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th14sanae</a></p>
 	<p><?php
 		echo _('Replaces ReimuB with Sanae in DDC.');
 	?></p>
-	<a href='https://mega.nz/#!oh4lBA4C!Fq7UV5LfQulUaCAubGRk_LMLOeR4nfE9CdMa0OQZryA' target='_blank'><?php echo _('Download') ?></a>
+	<p><a href='https://mega.nz/#!oh4lBA4C!Fq7UV5LfQulUaCAubGRk_LMLOeR4nfE9CdMa0OQZryA' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong><?php echo _('HSiFS Sanae by ') ?><a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-	<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th16sanae</a></p>
+	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th16sanae</a></p>
 	<p><?php
 		echo _('Replaces Marisa with Sanae in HSiFS.');
 	?></p>
-	<a href='https://mega.nz/#!lsBQxSwB!X-YB1uwIN1u8CRYjU-2HZnjhb7zrFE5WvQFZru-CXr8' target='_blank'><?php echo _('Download') ?></a>
+	<p><a href='https://mega.nz/#!lsBQxSwB!X-YB1uwIN1u8CRYjU-2HZnjhb7zrFE5WvQFZru-CXr8' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong><?php echo _('LoLK Sakuya by ') ?><a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-	<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th15sakuya</a></p>
+	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th15sakuya</a></p>
 	<p><?php
 		echo _('Replaces Reisen with Sakuya in LoLK.');
 	?></p>
-	<a href='https://mega.nz/#!1s5GHIqI!sSPZm0FZCxE_EL0jzGqC4oheH5Xs7-MmlbjARxqbzQY' target='_blank'><?php echo _('Download') ?></a>
+	<p><a href='https://mega.nz/#!1s5GHIqI!sSPZm0FZCxE_EL0jzGqC4oheH5Xs7-MmlbjARxqbzQY' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong><?php echo _('TD Yuuka by ') ?>Gamer251</strong></p>
 	<p><?php
 		echo _('Replaces Marisa with Yuuka in TD. Also changes the dialogues.');
 	?></p>
-	<a href='https://drive.google.com/file/d/1UU6eEKDEu7n3SfZtZpV7EmGx2dDlJa0W/view?usp=sharing' target='_blank'><?php echo _('Download') ?></a>
+	<p><a href='https://drive.google.com/file/d/1UU6eEKDEu7n3SfZtZpV7EmGx2dDlJa0W/view?usp=sharing' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong><?php echo _('DS Seija by ') ?>BurntToast12</strong></p>
 	<p><?php echo _('Replaces Aya in DS with Seija, including when she shows up as a boss.') ?></p>
-	<a class='dead' href='https://mega.co.nz/#!CB4FTBwQ!JhXn6QwNeDTQu_Ys2KNt_mZlV61r8jcBF_FtVrRlcP0' target='_blank'><?php echo _('Download') ?></a>
+	<p><a class='dead' href='https://mega.co.nz/#!CB4FTBwQ!JhXn6QwNeDTQu_Ys2KNt_mZlV61r8jcBF_FtVrRlcP0' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong><?php echo _('WBaWC (Demo) Reisen by ') ?>Kayu</strong></p>
 	<p><?php echo _('Replaces ReimuOtter with Reisen in the WBaWC demo.') ?></p>
-	<a href='https://mega.nz/#!yeABgCSJ!_tZ_8tQeYORgcqVvTh6KLN8t7jrRy685zWqwmbykHrg' target='_blank'><?php echo _('Download') ?></a>
+	<p><a href='https://mega.nz/#!yeABgCSJ!_tZ_8tQeYORgcqVvTh6KLN8t7jrRy685zWqwmbykHrg' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong><?php echo _('WBaWC Narumi by ') ?>Kayu</strong></p>
 	<p><?php echo _('Adds Narumi to WBaWC as a shottype.') ?></p>
-	<a href='https://mega.nz/#!nToG2QpA!t20hP8GMBB3cOqncqePXcwRo5qpRDDwXqzLPilyfiVw' target='_blank'><?php echo _('Download') ?></a>
+	<p><a href='https://mega.nz/#!nToG2QpA!t20hP8GMBB3cOqncqePXcwRo5qpRDDwXqzLPilyfiVw' target='_blank'><?php echo _('Download') ?></a></p>
     <!-- Hard Mode / Ultra Patches -->
     <hr>
     <h2 id='hardultra'><?php echo _('Hard Mode / Ultra Patches') ?></h2>
@@ -329,11 +329,11 @@
         <a href='http://www.mediafire.com/file/usbud0rr385z2nn/th14.dat' target='_blank'>HarDDC</a></p>
     </div>
 	<p><strong><?php echo _('RNG patches by ') ?><a href='https://twitter.com/dai_karasu' target='_blank'>Daikarasu</a></strong>
-	<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> RNG</a></p>
+	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> RNG</a></p>
 	<p><?php
 		echo _('A collection of modified <span class="code">.dat</span> files that randomise the patterns in the game.');
 	?></p>
-	<a href='https://mega.nz/folder/AY8iWQyZ#ItObpMjIGEfOXPZyCXAJfA/folder/lckTxKYa' target='_blank'><?php echo _('Download') ?></a>
+	<p><a href='https://mega.nz/folder/AY8iWQyZ#ItObpMjIGEfOXPZyCXAJfA/folder/lckTxKYa' target='_blank'><?php echo _('Download') ?></a></p>
     <p><strong><?php echo _('IN Double Stage ') ?>4/6</strong></p>
     <p><?php
 		echo _('Allows you to play 4A, 4B, 6A and 6B in a single run. Optionally also includes Extra at the end.');
@@ -346,23 +346,23 @@
     <p><?php
 		echo _('An alternate HSiFS Ultra patch that also increases density.');
 	?></p>
-    <a href='https://mega.nz/#!LxNAQbyB!a2qOOOgYQ8-NwTWvLSgcykBXsEmhgy6IDpdEdxlG-90' target='_blank'><?php echo _('Download') ?></a>
+    <p><a href='https://mega.nz/#!LxNAQbyB!a2qOOOgYQ8-NwTWvLSgcykBXsEmhgy6IDpdEdxlG-90' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong>"LoDDK" by <a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-	<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> LoDDK</a></p>
+	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> LoDDK</a></p>
 	<p><?php
 		echo _('Combines LoLK with DDC, making each boss fight a dual boss fight against the bosses of both games.' .
 		'It removes all stage portions, effectively making it a boss rush, and also combines the HUDs of both games.');
 	?></p>
-	<a href='https://priw8.github.io/#s=patches/loddk' target='_blank'><?php echo _('Download') ?></a>
+	<p><a href='https://priw8.github.io/#s=patches/loddk' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong><?php echo _('OC Patches by ') ?><a href='https://www.twitch.tv/bravidunno'>Bravi</a></strong>
-	<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> BraviOCOkina</a></p>
+	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> BraviOCOkina</a></p>
 	<p><?php
 		echo _('Remastered version of Stage 6 and harder version of Extra in HSiFS, including an original character ' .
 		'replacing Okina and alternate story along with pattern, bullet type, stage music and graphical changes. ' .
 		'There is another patch with the same OC replacement and pattern modding for VD on the Okina scenes on ' .
 		'the same download page.');
 	?></p>
-	<a href='https://mega.nz/file/ouQEjJ7a#VpBj9EnbNbT3s1uba126AYZzggXz4Zb8jowSujitfdo' target='_blank'><?php echo _('Downloads') ?></a>
+	<p><a href='https://mega.nz/file/ouQEjJ7a#VpBj9EnbNbT3s1uba126AYZzggXz4Zb8jowSujitfdo' target='_blank'><?php echo _('Downloads') ?></a>
     <!-- Graphical Patches -->
     <hr>
     <h2 id='graphical'><?php echo _('Graphical Patches') ?></h2>
@@ -393,7 +393,7 @@
 	<p><?php
 		echo _('Makes MoF, SA, UFO and TD play in the arcade-style vertical resolution, also known as TATE.');
 	?></p>
-	<a href='https://bygzam.up.seesaa.net/zip/th_pivot_dx9-110924.zip' target='_blank'><?php echo _('Download') ?></a>
+	<p><a href='https://bygzam.up.seesaa.net/zip/th_pivot_dx9-110924.zip' target='_blank'><?php echo _('Download') ?></a></p>
     <!-- Emulators -->
     <hr>
     <h2 id='emulators'><?php echo _('PC-98 Emulators') ?></h2>
@@ -403,13 +403,13 @@
 		'savestates and has high accuracy, but requires the right configurations; can be confusing for new users. ' .
 		'The emulator is located in the bin folder with two versions, 32-bit and 64-bit (x64).');
 	?></p>
-	<a href='https://github.com/sor593/np21w' target='_blank'><?php echo _('Download') ?></a>
+	<p><a href='https://github.com/sor593/np21w' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong>T98-Next</strong></p>
 	<p><?php
 		echo _('Easy-to-use emulator that will emulate the Touhou games properly without needing configuration ' .
 		'of any kind, but less feature-rich, and allows 8 active savestates at a time, 4 of which through hotkeys.');
 	?></p>
-	<a href='http://www.mediafire.com/file/myjyjyett2d/T98+english.rar' target='_blank'><?php echo _('Download') ?></a>
+	<p><a href='http://www.mediafire.com/file/myjyjyett2d/T98+english.rar' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong>Anex86</strong></p>
 	<p><?php
 		echo _('This emulator has low system requirements and can run even on very old computers. ' .
@@ -417,7 +417,7 @@
 		'Allows for 8 savestates and requires a separate font file, linked below.');
 	?></p>
 	<div>
-		<p><a href='https://www.zophar.net/download_file/2133'><?php echo _('Download') ?></a></p>
+		<p><a href='https://www.zophar.net/download_file/2133'><?php echo _('Download') ?></a></p></p>
 		<p><a href='https://www.zophar.net/download_file/2134'><?php echo _('Font') ?></a></p>
 	</div>
 	<p><strong>DOSBox-X</strong></p>
@@ -426,7 +426,7 @@
 		'under not only Windows, but also Mac and Linux. A list of downloads for each system can be found ' .
 		'via the link below.');
 	?></p>
-	<a href='https://github.com/joncampbell123/dosbox-x/releases' target='_blank'><?php echo _('Downloads') ?> (GitHub)</a>
+	<p><a href='https://github.com/joncampbell123/dosbox-x/releases' target='_blank'><?php echo _('Downloads') ?> (GitHub)</a>
     <!-- Miscellaneous -->
     <hr>
     <h2 id='miscellaneous'><?php echo _('Miscellaneous') ?></h2>
@@ -435,36 +435,36 @@
 		echo _('A tool that tracks in-game data such as misses, bombs, etc, thus calculating ' .
 		'<a href="drc">DRC</a> points for both survival and scoring during a Touhou run.');
 	?></p>
-	<a href='https://github.com/hoangcaominh/RealTimeDRCPointsDisplayer/releases/latest' target='_blank'><?php echo _('Download') ?></a>
+	<p><a href='https://github.com/hoangcaominh/RealTimeDRCPointsDisplayer/releases/latest' target='_blank'><?php echo _('Download') ?></a></p>
     <p><strong><?php echo _('MS Black Label by ') ?><a href='https://twitter.com/spaztron64' target='_blank'>Spaztron64</a></strong></p>
     <p><?php echo _('Increases the graze cap from 999 to 65536.') ?></p>
-    <a href='https://maribelhearn.com/mirror/MSBL.zip' target='_blank'><?php echo _('Download') ?></a>
+	<p><a href='https://maribelhearn.com/mirror/MSBL.zip' target='_blank'><?php echo _('Download') ?></a></p>
     <p><strong><?php echo _('EoSD Capture History Tracker by ') ?><a href='https://twitter.com/TrickOfHat' target='_blank'>TrickOfHat</a></strong></p>
     <p><?php
 		echo _('Command-line tool that allows you to track how many times you captured spells in EoSD. ' .
 		'Includes Stage 4 Books and Play Time tracking, as well as allowing for multiple save files.');
 	?></p>
     <div>
-        <p><a href='https://mega.nz/#!URxkUSAa!bmKsMnqX8XZxovn9TY1njoa0-2nnC57Sl15KJWs_iy0' target='_blank'><?php echo _('Download') ?></a></p>
+        <p><a href='https://mega.nz/#!URxkUSAa!bmKsMnqX8XZxovn9TY1njoa0-2nnC57Sl15KJWs_iy0' target='_blank'><?php echo _('Download') ?></a></p></p>
         <p><a href='https://cdn.discordapp.com/attachments/414701108854915072/435727033725878272/EoSD_History_Recorder.rar'>Source code</a></p>
     </div>
     <p><strong><?php
         echo _('PoFV Play Time Recorder by ');
 	?><a href='https://twitter.com/TrickOfHat' target='_blank'>TrickOfHat</a></strong></p>
     <p><?php echo _('Keeps track of your play time in PoFV.') ?></p>
-    <a href='https://mega.nz/#!JB4jHJhb!zXa3s_SsAv5P7A1Ua65bGyAJVc76n6iq0KEXWpwJxJE' target='_blank'><?php echo _('Download') ?></a>
+    <p><a href='https://mega.nz/#!JB4jHJhb!zXa3s_SsAv5P7A1Ua65bGyAJVc76n6iq0KEXWpwJxJE' target='_blank'><?php echo _('Download') ?></a></p>
     <p><strong><?php echo _('PoFV Replay Save Crash Fixer') ?></strong></p>
     <p><?php
 		echo _('Launching this alongside the game fixes the bug that makes the game crash whenever you save a replay.');
 	?></p>
-    <a href='https://maribelhearn.com/mirror/th09saverpyfix.zip' target='_blank'><?php echo _('Download') ?></a>
+    <p><a href='https://maribelhearn.com/mirror/th09saverpyfix.zip' target='_blank'><?php echo _('Download') ?></a></p>
     <p><strong><?php echo _('TD Arrange Patch by ') ?><a href='https://twitter.com/qu_ark' target='_blank'>Nereid</a></strong></p>
     <p><?php
 		echo _('Modification of TD that removes the invincibility from trances, ' .
 		'instead allowing you to use them starting at 1/3 full gauge.');
 	?></p>
     <div>
-        <p><a href='https://kawashi.ro/th13arr.zip'><?php echo _('Download') ?></a></p>
+        <p><a href='https://kawashi.ro/th13arr.zip'><?php echo _('Download') ?></a></p></p>
         <p><a href='https://pastebin.com/1jD5GZRe' target='_blank'>Readme</a></p>
     </div>
     <p><strong><?php
@@ -473,7 +473,7 @@
     <p><?php
 		echo _('Lets you start with your season level at 6.');
 	?></p>
-    <a href='https://mega.nz/#!HxJRQKKR!MCaZzfVoamBmhvCkVmITQy7nI7WYX8M3FLEYncXNsxs' target='_blank'><?php echo _('Download') ?></a>
+    <p><a href='https://mega.nz/#!HxJRQKKR!MCaZzfVoamBmhvCkVmITQy7nI7WYX8M3FLEYncXNsxs' target='_blank'><?php echo _('Download') ?></a></p>
     <p><strong><?php
 		echo _('Polished Shooting Star by ');
 	?>YoshiWeegee</strong></p>
@@ -483,14 +483,14 @@
 		'which makes certain patterns extremely fast until a full run is played or a replay of one of certain ' .
 		'stages is watched.');
 	?></p>
-    <a href='https://github.com/yoshiweegee/PolishedShootingStar/archive/master.zip' target='_blank'><?php echo _('Download') ?></a>
+    <p><a href='https://github.com/yoshiweegee/PolishedShootingStar/archive/master.zip' target='_blank'><?php echo _('Download') ?></a></p>
     <p><strong><?php
 		echo _('Input Display by ');
 	?><a href='https://twitter.com/drakeirving' target='_blank'>Drake</a></strong></p>
     <p><?php
 		echo _('Shows your button presses. Works on both gameplay and replays.');
 	?></p>
-    <a href='https://mega.nz/#!Fl8zzIbA!5uVB1uDruZ-tFEc7AWilNmmuXCmx0YgAzghrsU1lsPo' target='_blank'><?php echo _('Download') ?></a>
+    <p><a href='https://mega.nz/#!Fl8zzIbA!5uVB1uDruZ-tFEc7AWilNmmuXCmx0YgAzghrsU1lsPo' target='_blank'><?php echo _('Download') ?></a></p>
     <p><strong><?php
 		echo _('LoLK Pointdevice no power loss by ');
 	?><a href='https://www.youtube.com/channel/UChyVpooBi31k3xPbWYsoq3w' target='_blank'>32th System</a></strong></p>
@@ -498,23 +498,23 @@
 		echo _('Disables the 0.01 power loss mechanic of Pointdevice Mode in LoLK, ' .
 		'making sure you never lose power upon restarting a chapter.');
 	?></p>
-    <a href='https://drive.google.com/file/d/1VibcZoC-V0VI6cRw7r507dfimP9Dif1d' target='_blank'><?php echo _('Download') ?></a>
+    <p><a href='https://drive.google.com/file/d/1VibcZoC-V0VI6cRw7r507dfimP9Dif1d' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong><?php
 		echo _('HSiFS UFO mod by ');
 	?><a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-	<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th16ufos</a></p>
+	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th16ufos</a></p>
 	<p><?php
 		echo _('Adds UFOs to HSiFS.');
 	?></p>
-	<a href='https://priw8.github.io/#s=patches/uffs' target='_blank'><?php echo _('Download') ?></a>
+	<p><a href='https://priw8.github.io/#s=patches/uffs' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong><?php
 		echo _('WBaWC score cap mod by ');
 	?><a href='https://www.youtube.com/channel/UChyVpooBi31k3xPbWYsoq3w' target='_blank'>32th System</a></strong>
-	<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> score_uncap</a></p>
+	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> score_uncap</a></p>
 	<p><?php
 		echo _('Allows the in-game score counter to exceed 9,999,999,990 points.');
 	?></p>
-	<a href='https://maribelhearn.com/mirror/th17_score_uncap.zip' target='_blank'><?php echo _('Download') ?></a>
+	<p><a href='https://maribelhearn.com/mirror/th17_score_uncap.zip' target='_blank'><?php echo _('Download') ?></a></p>
 	<hr>
-    <p id='back'><strong><a id='backtotop' href='#top'><?php echo _('Back to Top') ?></a></strong></p>
+    <footer><strong><a href='#top'><?php echo _('Back to Top') ?></a></strong></p>
 </div>

@@ -1,6 +1,6 @@
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
-    <p>This page covers the scoring system and mechanics of the Comiket 67 release of Seihou Banshiryuu.</p>
+    <p class='center'>This page covers the scoring system and mechanics of the Comiket 67 release of Seihou Banshiryuu.</p>
     <img id='boxart' src='assets/personal/c67/boxart.jpg' alt='Banshiryuu Cover' width='280' height='280'>
     <hr>
     <h2>Contents</h2>
@@ -38,6 +38,7 @@
     as is depicted in the above screenshot. Bullets can be grazed only once, while lasers can be grazed indefinitely.
     For each graze point, 300 points are added to your score.</p>
     <hr>
+    <h2 id='se'>Special Equipment (SE)</h2>
     <img loading='lazy' src='assets/personal/c67/normal_se.jpg' alt='SE-attack' width='210' height='280'>
     <p>Bosses and midbosses may use <em>SE attacks</em>. They have a set duration and the boss is invincible during one,
     as denoted by the text "-- ABSOLUTE DEFEND --" displayed on their health bar. During an SE, you should
@@ -218,5 +219,5 @@
         </tr>
     </table></div>
     <p>* Much higher than any other bomb in practice (if used on top of an enemy or boss)</p>
-    <p><strong><a href='#top'>Back to Top</a></strong></p>
+    <footer><strong><a href='#top'>Back to Top</a></strong></footer>
 </div>

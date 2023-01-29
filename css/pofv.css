@@ -11,10 +11,6 @@ abbr > img {
     width: 120px;
     height: 120px;
 }
-ol {
-    margin-left: 15%;
-    margin-right: 15%;
-}
 ol > li {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -92,7 +88,6 @@ ol > li {
 }
 #modal {
     font: 14px verdana, sans-serif;
-    text-align: center;
     display: none;
     position: fixed;
     z-index: 1;
@@ -105,17 +100,11 @@ ol > li {
     background-color: rgba(0, 0, 0, .4);
     /*color: #000;*/
 }
-#wrap > div:not(#topbar):not(#modal) {
-    display: inline-block;
-}
 #nav {
     margin-bottom: 5px;
 }
 #discord {
     white-space: nowrap;
-}
-#back {
-    margin-top: 25px;
 }
 #s {
     background: radial-gradient(#8B0000, #C54500, #FF8C00);

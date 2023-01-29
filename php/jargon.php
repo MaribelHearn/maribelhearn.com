@@ -855,5 +855,5 @@
             </tr>
         </tbody>
     </table>
-    <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
+    <footer><strong><a href='#top'>Back to Top</a></strong></footer>
 </div>

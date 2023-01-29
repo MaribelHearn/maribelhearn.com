@@ -178,10 +178,7 @@
     <p class='wide-top'>* Rengoku Teien is a group of composers that produces royalty-free music; Labyrinth of Touhou simply uses it, among music by other composers.</p>
     <p class='wide-top'>Vertigo is possibly my favourite piece of music of all time.</p>
     <h2 id='trivia'>Trivia</h2>
-    <img id='avatar' src='assets/main/about/maribelb.jpg' alt='One of Maribel&#39;s avatars'>
     <ul>
-        <li>One of my most commonly used avatars (shown above) is a non-canon depiction of Maribel
-        having gone berserk due to her powers overflowing, which is the final boss of Labyrinth of Touhou.</li>
         <li>I formerly used the default keyboard that came with my previous PC to play, which made me one of the
         rare serious keyboard players <em>not</em> to use a mechanical keyboard.</li>
         <li>Linux distributions are my preferred operating systems. I have used them on my laptop since late 2014 and
@@ -197,5 +194,5 @@
         <img id='tiers' src='assets/main/about/tiers.png' alt='Maribel&#39;s Touhou character tier list'>
         <figcaption><em>Touhou character tier list as of 6 November 2021</em></figcaption>
     </figure>
-    <p class='wide-top'><strong><a href='#top'>Back to Top</a></strong></p>
+    <footer class='wide-top'><strong><a href='#top'>Back to Top</a></strong></footer>
 </div>

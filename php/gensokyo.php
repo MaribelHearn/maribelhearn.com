@@ -244,25 +244,28 @@ function check_conditions(array $rep, string $player, string $shot, string $game
                 ?>
             </select>
         </p>
-        <p id='conditions'>
-            <span><label for='nd'><img src='assets/games/gensokyo/gif/nd.gif' title='No Deaths' alt='No Deaths icon'></label><br>
+        <section id='conditions'>
+            <span><label for='nd'><img src='assets/games/gensokyo/gif/nd.gif' title='No Deaths' alt='No Deaths icon'></label>
             <input id='nd' name='nd' type='checkbox'<?php echo !empty($_GET['nd']) && $_GET['nd'] == 'on' ? ' checked' : '' ?>></span>
-            <span><label for='nb'><img src='assets/games/gensokyo/gif/nb.gif' title='No Bomb Usage' alt='No Bombs icon'></label><br>
+            <span><label for='nb'><img src='assets/games/gensokyo/gif/nb.gif' title='No Bomb Usage' alt='No Bombs icon'></label>
             <input id='nb' name='nb' type='checkbox'<?php echo !empty($_GET['nb']) && $_GET['nb'] == 'on' ? ' checked' : '' ?>></span>
-            <span><label for='nf'><img src='assets/games/gensokyo/gif/nf.gif' title='No Focused Movement' alt='No Focus icon'></label><br>
+            <span><label for='nf'><img src='assets/games/gensokyo/gif/nf.gif' title='No Focused Movement' alt='No Focus icon'></label>
             <input id='nf' name='nf' type='checkbox'<?php echo !empty($_GET['nf']) && $_GET['nf'] == 'on' ? ' checked' : '' ?>></span>
-            <span><label for='nv'><img src='assets/games/gensokyo/gif/nv.gif' title='No Vertical Movement' alt='No Vertical icon'></label><br>
+            <span><label for='nv'><img src='assets/games/gensokyo/gif/nv.gif' title='No Vertical Movement' alt='No Vertical icon'></label>
             <input id='nv' name='nv' type='checkbox'<?php echo !empty($_GET['nv']) && $_GET['nv'] == 'on' ? ' checked' : '' ?>></span>
-            <span><label for='tas'><img src='assets/games/gensokyo/gif/tas.gif' title='Tool-Assisted Replay' alt='TAS icon'></label><br>
+            <span><label for='tas'><img src='assets/games/gensokyo/gif/tas.gif' title='Tool-Assisted Replay' alt='TAS icon'></label>
             <input id='tas' name='tas' type='checkbox'<?php echo !empty($_GET['tas']) && $_GET['tas'] == 'on' ? ' checked' : '' ?>></span>
-            <span><label for='chz'><img src='assets/games/gensokyo/gif/chz.gif' title='Tool-Assisted Replay (not marked by original uploader)' alt='Cheater icon'></label><br>
+            <span><label for='chz'><img src='assets/games/gensokyo/gif/chz.gif' title='Tool-Assisted Replay (not marked by original uploader)' alt='Cheater icon'></label>
             <input id='chz' name='chz' type='checkbox'<?php echo !empty($_GET['chz']) && $_GET['chz'] == 'on' ? ' checked' : '' ?>></span>
-            <span><label for='pa'><img src='assets/games/gensokyo/gif/pa.gif' title='Pacifist' alt='Pacifist icon'></label><br>
+            <span><label for='pa'><img src='assets/games/gensokyo/gif/pa.gif' title='Pacifist' alt='Pacifist icon'></label>
             <input id='pa' name='pa' type='checkbox'<?php echo !empty($_GET['pa']) && $_GET['pa'] == 'on' ? ' checked' : '' ?>></span>
-            <span><label for='co'><img src='assets/games/gensokyo/gif/co.gif' title='Other Condition' alt='Other icon'></label><br>
+            <span><label for='co'><img src='assets/games/gensokyo/gif/co.gif' title='Other Condition' alt='Other icon'></label>
             <input id='co' name='co' type='checkbox'<?php echo !empty($_GET['co']) && $_GET['co'] == 'on' ? ' checked' : '' ?>></span>
-        </p>
-        <p><input type='submit' value='Search'></p>
+        </section>
+        <br>
+        <section>
+            <input type='submit' value='Search'>
+        </section>
     </form>
     <?php
         $searched = !empty($_SERVER['QUERY_STRING']);
@@ -314,15 +317,15 @@ function check_conditions(array $rep, string $player, string $shot, string $game
             }
             if ($found > 0) {
                 $grammar = ($found !== 1 ? 's' : '');
-                echo '<p>' . number_format($found, 0, '.', ',') . ' result' . $grammar . '.</p>' . $table . '</tbody></table></div>';
+                echo '<p class="center">' . number_format($found, 0, '.', ',') . ' result' . $grammar . '.</p>' . $table . '</tbody></table></div>';
             } else if (input_validity() == 2) {
-                echo '<p>No replays found.</p>';
+                echo '<p class="center">No replays found.</p>';
             } else if (input_validity() == 1) {
-                echo '<p>Invalid search. Please provide more than one character for the player name or shot name.</p>';
+                echo '<p class="center">Invalid search. Please provide more than one character for the player name or shot name.</p>';
             } else {
-                echo '<p>Invalid search. Please provide a search query.</p>';
+                echo '<p class="center">Invalid search. Please provide a search query.</p>';
             }
         }
     ?>
-    <p><strong><a id='backtotop' href='#nav'>Back to Top</a></strong></p>
+    <footer><strong><a href='#nav'>Back to Top</a></strong></footer>
 </div>

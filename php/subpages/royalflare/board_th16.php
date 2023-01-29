@@ -28,12 +28,12 @@
             }
             if (substr($shot, -6) == 'Spring') {
                 $temp_shot = preg_replace('/Spring/', '', $shot);
-                echo '<p id="' . $diff . $temp_shot . '" class="shottype">' . tl_shot($shot, 'Japanese') . ' - ' . $shot . '</p>';
+                echo '<h3 id="' . $diff . $temp_shot . '" class="shottype">' . tl_shot($shot, 'Japanese') . ' - ' . $shot . '</h3>';
             } else if (substr($shot, -5) == 'Extra') {
                 $shot = preg_replace('/Extra/', '', $shot);
-                echo '<p id="' . $diff . $shot . '" class="shottype">' . tl_shot($shot, 'Japanese') . ' - ' . $shot . '</p>';
+                echo '<h3 id="' . $diff . $shot . '" class="shottype">' . tl_shot($shot, 'Japanese') . ' - ' . $shot . '</h3>';
             } else {
-                echo '<p id="' . $diff . $shot . '" class="shottype">' . tl_shot($shot, 'Japanese') . ' - ' . $shot . '</p>';
+                echo '<h3 id="' . $diff . $shot . '" class="shottype">' . tl_shot($shot, 'Japanese') . ' - ' . $shot . '</h3>';
             }
             echo '<div class="overflow"><table id="' . $diff . $shot . 't" class="' . $game . 't sortable"><thead><tr><th class="no-sort">#</th><th id="' . $diff . $shot .
             'score">スコア<br>Score</th><th>処理落率<br>Slowdown</th><th>使用キャラ<br>Shottype</th><th>難易度<br>Difficulty</th>' .

@@ -23,7 +23,7 @@ function error_text($error_code) {
 ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
-    <p><strong><?php
+    <p class='center'><strong><?php
         $supported_errors = ['400', '401', '403', '500', '503'];
         if ($error_code == '404' || !in_array($error_code, $supported_errors)) {
             $description = '404 Not Found';
@@ -39,5 +39,5 @@ function error_text($error_code) {
             echo error_title($error_code);
         }
     ?></strong></p>
-    <p class='wide'><?php echo error_text($error_code) ?></p>
+    <p class='wide center'><?php echo error_text($error_code) ?></p>
 </div>

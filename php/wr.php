@@ -477,21 +477,23 @@ foreach ($wr as $game => $value) {
             <tbody id='west_tbody'></tbody>
         </table>
 	</div>
-    <div id='playersearch'>
+    <div id='player_search'>
 		<h2><?php echo _('Player Search') ?></h2>
-        <p id='playerwrs'><?php echo _('Choose a player name from the menu below to show their WRs.') ?></p>
-		<label for='player'><?php echo _('Player') ?></label>
-        <input id='player' type='text'>
-        <label class='hidden' for='search'><?php echo _('Search') ?></label>
-		<select id='search'>
-            <option value=''>...</option>
-            <?php
-                natcasesort($pl);
-                foreach ($pl as $key => $player) {
-                    echo '<option value="' . $player . '">' . $player . '</option>';
-                }
-		    ?>
-        </select>
+        <p id='playerwrs' class='center'><?php echo _('Choose a player name from the menu below to show their WRs.') ?></p>
+        <section>
+            <label for='player'><?php echo _('Player') ?></label>
+            <input id='player' type='text'>
+            <label class='hidden' for='search'><?php echo _('Search') ?></label>
+            <select id='search'>
+                <option value=''>...</option>
+                <?php
+                    natcasesort($pl);
+                    foreach ($pl as $key => $player) {
+                        echo '<option value="' . $player . '">' . $player . '</option>';
+                    }
+                ?>
+            </select>
+        </section>
     </div>
 	<div id='player_list'>
 		<table class='sortable'>
@@ -598,6 +600,6 @@ foreach ($wr as $game => $value) {
 			</tbody>
         </table>
     </div>
-    <p id='back'><strong><a id='backtotop' href='#top'><?php echo _('Back to Top') ?></a></strong></p>
+    <footer><strong><a href='#top'><?php echo _('Back to Top') ?></a></strong></footer>
 	<?php echo '<input id="missing_replays" type="hidden" value="' . implode('', $missing_replays) . '">' ?>
 </div>

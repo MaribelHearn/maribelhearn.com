@@ -179,6 +179,9 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
 .hidden, #overall_linkm, #overall_linkmn, #overallm, #wr_list, #player_list, #player_search, #seasontoggle, #newlayout, #playersearchlink, #contents_new, #recent_linkm, #recent_linkmn, #recentm {
     display: none;
 }
+#newlayout, #player_search {
+    text-align: center;
+}
 #wrap:after {
     content: '\200C';
     display: block;

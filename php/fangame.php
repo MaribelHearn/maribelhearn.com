@@ -1074,5 +1074,5 @@
 			</tr>
 		</tbody>
 	</table></div>
-    <p id='back'><strong><a href='#top'><?php echo _('Back to Top') ?></a></strong></p>
+    <footer><strong><a href='#top'><?php echo _('Back to Top') ?></a></strong></footer>
 </div>

@@ -377,7 +377,7 @@ function description(string $chara) {
     <p><a href='https://cerise.moe/pofv.html'>
         <span class='icon flag_france'></span> French Guide
     </a></p>
-    <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
+    <footer><strong><a href='#top'>Back to Top</a></strong></footer>
 </div>
 <div id='modal'><?php
     $MIN_SPEED = 148;
