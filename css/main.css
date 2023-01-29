@@ -43,6 +43,9 @@ input[type=button] {
 .dead {
     text-decoration: line-through;
 }
+.admin_icon {
+    display: inline;
+}
 .pages_left {
     float: left;
     width: 50%;
