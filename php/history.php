@@ -243,7 +243,7 @@
 					</tr>
 			</tbody>
 		</table></div>
-        <p>An empty cell means that the difficulty or achievement has not been tried (yet),<br>and an 'X' means the difficulty or achievement does not exist in the game.</p>
+        <p>An empty cell means that the difficulty or achievement has not been tried (yet), and an 'X' means the difficulty or achievement does not exist in the game.</p>
         <h3>Touhou</h3>
         <div class='overflow'><table>
             <thead>
@@ -620,7 +620,7 @@
     <div id='SoEW'>
         <h2>TH02 - Story of Eastern Wonderland</h2>
 		<img loading='lazy' src='assets/personal/history/games/soew250x250.jpg' alt='SoEW'>
-        <p>Obtained: March 28, 2012</p>
+        <p class='center'>Obtained: March 28, 2012</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -667,7 +667,7 @@
     <div id='PoDD'>
         <h2>TH03 - Phantasmagoria of Dim.Dream</h2>
         <img loading='lazy' src='assets/personal/history/games/podd250x250.jpg' alt='PoDD'>
-        <p>Obtained: March 28, 2012</p>
+        <p class='center'>Obtained: March 28, 2012</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -705,7 +705,7 @@
     <div id='LLS'>
         <h2>TH04 - Lotus Land Story</h2>
 		<img loading='lazy' src='assets/personal/history/games/lls250x250.jpg' alt='LLS'>
-        <p>Obtained: March 28, 2012</p>
+        <p class='center'>Obtained: March 28, 2012</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -764,7 +764,7 @@
     <div id='MS'>
         <h2>TH05 - Mystic Square</h2>
 		<img loading='lazy' src='assets/personal/history/games/ms250x250.jpg' alt='MS'>
-        <p>Obtained: March 28, 2012</p>
+        <p class='center'>Obtained: March 28, 2012</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -823,7 +823,7 @@
     <div id='EoSD'>
         <h2>TH06 - The Embodiment of Scarlet Devil</h2>
 		<img loading='lazy' src='assets/personal/history/games/eosd250x250.jpg' alt='EoSD'>
-        <p>Obtained: September 28, 2011</p>
+        <p class='center'>Obtained: September 28, 2011</p>
         <h3>Scoring</h3>
         <div class='overflow'><table>
             <tr>
@@ -961,7 +961,7 @@
     <div id='PCB'>
         <h2>TH07 - Perfect Cherry Blossom</h2>
 		<img loading='lazy' src='assets/personal/history/games/pcb250x250.jpg' alt='PCB'>
-		<p>Obtained: November 2, 2011</p>
+		<p class='center'>Obtained: November 2, 2011</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -1053,7 +1053,7 @@
     <div id='IN'>
         <h2>TH08 - Imperishable Night</h2>
 		<img loading='lazy' src='assets/personal/history/games/in250x250.jpg' alt='IN'>
-        <p>Obtained: November 2, 2011</p>
+        <p class='center'>Obtained: November 2, 2011</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -1184,7 +1184,7 @@
     <div id='PoFV'>
         <h2>TH09 - Phantasmagoria of Flower View</h2>
 		<img loading='lazy' src='assets/personal/history/games/pofv250x250.jpg' alt='PoFV'>
-        <p>Obtained: November 2, 2011</p>
+        <p class='center'>Obtained: November 2, 2011</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -1243,7 +1243,7 @@
     <div id='StB'>
         <h2>TH9.5 Shoot the Bullet</h2>
 		<img loading='lazy' src='assets/personal/history/games/stb250x250.jpg' alt='StB'>
-        <p>Obtained: April 14, 2012</p>
+        <p class='center'>Obtained: April 14, 2012</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -1409,7 +1409,7 @@
     <div id='MoF'>
         <h2>TH10 - Mountain of Faith</h2>
 		<img loading='lazy' src='assets/personal/history/games/mof250x250.jpg' alt='MoF'>
-        <p>Obtained: December 10, 2011 (est.)</p>
+        <p class='center'>Obtained: December 10, 2011 (est.)</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -1485,7 +1485,7 @@
     <div id='SA'>
         <h2>TH11 - Subterranean Animism</h2>
 		<img loading='lazy' src='assets/personal/history/games/sa250x250.jpg' alt='SA'>
-        <p>Obtained: November 16, 2011 (est.)</p>
+        <p class='center'>Obtained: November 16, 2011 (est.)</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -1545,7 +1545,7 @@
     <div id='UFO'>
         <h2>TH12 - Undefined Fantastic Object</h2>
 		<img loading='lazy' src='assets/personal/history/games/ufo250x250.jpg' alt='UFO'>
-        <p>Obtained: December 14, 2011 (demo by mistake, est.); December 21, 2011 (est.)</p>
+        <p class='center'>Obtained: December 14, 2011 (demo by mistake, est.); December 21, 2011 (est.)</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -1606,7 +1606,7 @@
     <div id='DS'>
         <h2>TH12.5 Double Spoiler</h2>
 		<img loading='lazy' src='assets/personal/history/games/ds250x250.jpg' alt='DS'>
-        <p>Obtained: April 14, 2012</p>
+        <p class='center'>Obtained: April 14, 2012</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -1991,7 +1991,7 @@
     <div id='GFW'>
         <h2>TH12.8 - Great Fairy Wars</h2>
 		<img loading='lazy' src='assets/personal/history/games/gfw250x250.jpg' alt='GFW'>
-        <p>Obtained: April 14, 2012</p>
+        <p class='center'>Obtained: April 14, 2012</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -2106,7 +2106,7 @@
     <div id='TD'>
         <h2>TH13 - Ten Desires</h2>
 		<img loading='lazy' src='assets/personal/history/games/td250x250.jpg' alt='TD'>
-        <p>Obtained: February 3, 2012 (est.)</p>
+        <p class='center'>Obtained: February 3, 2012 (est.)</p>
         <h3>Scoring</h3>
         <div class='overflow'><table>
             <tr>
@@ -2246,7 +2246,7 @@
     <div id='DDC'>
         <h2>TH14 - Double Dealing Character</h2>
 		<img loading='lazy' src='assets/personal/history/games/ddc250x250.jpg' alt='DDC'>
-        <p>Obtained: August 12, 2013</p>
+        <p class='center'>Obtained: August 12, 2013</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -2344,7 +2344,7 @@
     <div id='ISC'>
         <h2>TH14.3 - Impossible Spell Card</h2>
 		<img loading='lazy' src='assets/personal/history/games/isc250x250.jpg' alt='ISC'>
-        <p>Obtained: May 11, 2014</p>
+        <p class='center'>Obtained: May 11, 2014</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -2512,7 +2512,7 @@
     <div id='LoLK'>
         <h2>TH15 - Legacy of Lunatic Kingdom</h2>
 		<img loading='lazy' src='assets/personal/history/games/lolk250x250.jpg' alt='LoLK'>
-        <p>Obtained: August 14, 2015</p>
+        <p class='center'>Obtained: August 14, 2015</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -2605,7 +2605,7 @@
     <div id='HSiFS'>
         <h2>TH16 - Hidden Star in Four Seasons</h2>
 		<img loading='lazy' src='assets/personal/history/games/hsifs250x250.jpg' alt='HSiFS'>
-        <p>Obtained: August 11, 2017</p>
+        <p class='center'>Obtained: August 11, 2017</p>
         <h3>Scoring</h3>
         <div class='overflow'><table>
             <tr>
@@ -2685,7 +2685,7 @@
     <div id='VD'>
         <h2>TH16.5 - Violet Detector</h2>
 		<img loading='lazy' src='assets/personal/history/games/vd250x250.jpg' alt='VD'>
-        <p>Obtained: August 29, 2018</p>
+        <p class='center'>Obtained: August 29, 2018</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -2937,7 +2937,7 @@
     <div id='WBaWC'>
         <h2>TH17 - Wily Beast and Weakest Creature</h2>
 		<img loading='lazy' src='assets/personal/history/games/wbawc250x250.jpg' alt='WBaWC'>
-        <p>Obtained: August 12, 2019</p>
+        <p class='center'>Obtained: August 12, 2019</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -2997,7 +2997,7 @@
     <div id='UM'>
         <h2>TH18 - Unconnected Marketeers</h2>
 		<img loading='lazy' src='assets/personal/history/games/um250x250.jpg' alt='UM'>
-        <p>Obtained: May 3, 2021</p>
+        <p class='center'>Obtained: May 3, 2021</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -3057,7 +3057,7 @@
     <div id='SSS'>
         <h2>Shining Shooting Star</h2>
 		<img loading='lazy' src='assets/personal/history/games/sss250x250.jpg' alt='SSS'>
-        <p>Obtained: April 27, 2017</p>
+        <p class='center'>Obtained: April 27, 2017</p>
         <h3>Scoring</h3>
         <div class='overflow'><table>
             <tr>
@@ -3143,7 +3143,7 @@
     <div id='eX1'>
         <h2>eXceed - Gun Bullet Children</h2>
 		<img loading='lazy' src='assets/personal/history/games/ex1250x250.jpg' alt='eXceed Gun Bullet Children'>
-        <p>Obtained: December 27, 2015 (Steam)</p>
+        <p class='center'>Obtained: December 27, 2015 (Steam)</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -3175,7 +3175,7 @@
     <div id='eX2'>
         <h2>eXceed 2nd - Vampire REX</h2>
 		<img loading='lazy' src='assets/personal/history/games/ex2250x250.jpg' alt='eXceed 2nd Vampire REX'>
-        <p>Obtained: December 27, 2015 (Steam)</p>
+        <p class='center'>Obtained: December 27, 2015 (Steam)</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -3213,7 +3213,7 @@
     <div id='eX3'>
         <h2>eXceed 3rd - Jade Penetrate Black Package</h2>
 		<img loading='lazy' src='assets/personal/history/games/ex3250x250.jpg' alt='eXceed 3rd Jade Penetrate Black Package'>
-        <p>Obtained: December 27, 2015 (Steam)</p>
+        <p class='center'>Obtained: December 27, 2015 (Steam)</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -3275,7 +3275,7 @@
     <div id='SG'>
         <h2>SH01 - Shuusou Gyoku</h2>
 		<img loading='lazy' src='assets/personal/history/games/sg250x250.jpg' alt='Shuusou Gyoku'>
-        <p>Obtained: November 30, 2012</p>
+        <p class='center'>Obtained: November 30, 2012</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -3322,7 +3322,7 @@
     <div id='BSR'>
         <h2>SH03 - Banshiryuu (C67)</h2>
 		<img loading='lazy' src='assets/personal/history/games/bsr250x250.jpg' alt='Banshiryuu C67'>
-        <p>Obtained: September 7, 2012</p>
+        <p class='center'>Obtained: September 7, 2012</p>
         <h3>Scoring</h3>
         <div class='overflow'><table>
             <tr>
@@ -3514,7 +3514,7 @@
     <div id='SMD'>
         <h2>Samidare</h2>
 		<img loading='lazy' src='assets/personal/history/games/smd250x250.jpg' alt='Samidare'>
-        <p>Obtained: October 10, 2012</p>
+        <p class='center'>Obtained: October 10, 2012</p>
         <h3>Scoring</h3>
         <div class='overflow'><table>
             <tr>
@@ -3570,7 +3570,7 @@
     <div id='MRS'>
         <h2>Mrs. Estacion</h2>
 		<img loading='lazy' src='assets/personal/history/games/mrs250x250.jpg' alt='Mrs. Estacion'>
-        <p>Obtained: February 23, 2013</p>
+        <p class='center'>Obtained: February 23, 2013</p>
         <h3>Scoring</h3>
         <div class='overflow'><table>
             <tr>
@@ -3672,7 +3672,7 @@
     <div id='DP'>
         <h2>Donpachi</h2>
 		<img loading='lazy' src='assets/personal/history/games/dp250x250.jpg' alt='Donpachi'>
-        <p>Obtained: March 18, 2014</p>
+        <p class='center'>Obtained: March 18, 2014</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -3698,7 +3698,7 @@
     <div id='DDP'>
         <h2>Dodonpachi</h2>
 		<img loading='lazy' src='assets/personal/history/games/ddp250x250.jpg' alt='Dodonpachi'>
-        <p>Obtained: March 18, 2014</p>
+        <p class='center'>Obtained: March 18, 2014</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -3724,7 +3724,7 @@
     <div id='DOJ'>
         <h2>Dodonpachi Daioujou</h2>
 		<img loading='lazy' src='assets/personal/history/games/doj250x250.jpg' alt='Dodonpachi Daioujou'>
-        <p>Obtained: November 3, 2012</p>
+        <p class='center'>Obtained: November 3, 2012</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -3762,7 +3762,7 @@
     <div id='DFK'>
         <h2>Dodonpachi Daifukkatsu</h2>
 		<img loading='lazy' src='assets/personal/history/games/dfk250x250.jpg' alt='Dodonpachi Daifukkatsu'>
-        <p>Obtained: October 8, 2013 (X360), October 14, 2016 (Steam)</p>
+        <p class='center'>Obtained: October 8, 2013 (X360), October 14, 2016 (Steam)</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -3888,7 +3888,7 @@
     <div id='SDOJ'>
         <h2>Dodonpachi Saidaioujou</h2>
 		<img loading='lazy' src='assets/personal/history/games/sdoj250x250.jpg' alt='Dodonpachi Saidaioujou'>
-        <p>Obtained: October 29, 2013</p>
+        <p class='center'>Obtained: October 29, 2013</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -3926,7 +3926,7 @@
     <div id='Batsugun'>
         <h2>Batsugun</h2>
 		<img loading='lazy' src='assets/personal/history/games/batsugun250x250.jpg' alt='Batsugun'>
-        <p>Obtained: March 2, 2016</p>
+        <p class='center'>Obtained: March 2, 2016</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -3946,7 +3946,7 @@
     <div id='BatsugunSP'>
         <h2>Batsugun Special Version</h2>
 		<img loading='lazy' src='assets/personal/history/games/batsugunsp250x250.jpg' alt='Batsugun Special Version'>
-        <p>Obtained: March 2, 2016</p>
+        <p class='center'>Obtained: March 2, 2016</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -3984,7 +3984,7 @@
     <div id='ESP'>
         <h2>ESP Ra.De.</h2>
 		<img loading='lazy' src='assets/personal/history/games/esp250x250.jpg' alt='ESP Ra.De.'>
-        <p>Obtained: March 28, 2014</p>
+        <p class='center'>Obtained: March 28, 2014</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -4004,7 +4004,7 @@
     <div id='ESPg'>
         <h2>Espgaluda</h2>
 		<img loading='lazy' src='assets/personal/history/games/espg250x250.jpg' alt='Espgaluda cover'>
-        <p>Obtained: March 28, 2014</p>
+        <p class='center'>Obtained: March 28, 2014</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -4024,7 +4024,7 @@
     <div id='ESP2'>
         <h2>Espgaluda II</h2>
 		<img loading='lazy' src='assets/personal/history/games/esp2250x250.jpg' alt='Espgaluda II cover'>
-        <p>Obtained: March 28, 2014</p>
+        <p class='center'>Obtained: March 28, 2014</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -4044,7 +4044,7 @@
     <div id='Guwange'>
         <h2>Guwange</h2>
 		<img loading='lazy' src='assets/personal/history/games/guwange250x250.jpg' alt='Guwange'>
-        <p>Obtained: March 28, 2014</p>
+        <p class='center'>Obtained: March 28, 2014</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -4064,7 +4064,7 @@
     <div id='Ketsui'>
         <h2>Ketsui ~Kizuna Jigoku Tachi~</h2>
 		<img loading='lazy' src='assets/personal/history/games/ket250x250.jpg' alt='Ketsui'>
-        <p>Obtained: December 1, 2012</p>
+        <p class='center'>Obtained: December 1, 2012</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -4096,7 +4096,7 @@
     <div id='MSm'>
         <h2>Mushihimesama</h2>
 		<img loading='lazy' src='assets/personal/history/games/msm250x250.jpg' alt='Mushihimesama cover'>
-        <p>Obtained: November 6, 2015 (Steam)</p>
+        <p class='center'>Obtained: November 6, 2015 (Steam)</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -4170,7 +4170,7 @@
     <div id='MSF'>
         <h2>Mushihimesama Futari</h2>
 		<img loading='lazy' src='assets/personal/history/games/msf250x250.jpg' alt='Mushihimesama Futari'>
-        <p>Obtained: October 29, 2013</p>
+        <p class='center'>Obtained: October 29, 2013</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -4256,7 +4256,7 @@
     <div id='DSm'>
         <h2>Deathsmiles</h2>
 		<img loading='lazy' src='assets/personal/history/games/dsm250x250.jpg' alt='Deathsmiles'>
-        <p>Obtained: October 8, 2013 (X360); March 11, 2016 (Steam)</p>
+        <p class='center'>Obtained: October 8, 2013 (X360); March 11, 2016 (Steam)</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -4321,7 +4321,7 @@
     <div id='Ikaruga'>
         <h2>Ikaruga</h2>
 		<img loading='lazy' src='assets/personal/history/games/ikaruga250x250.jpg' alt='Ikaruga'>
-        <p>Obtained: December 5, 2015 (Steam)</p>
+        <p class='center'>Obtained: December 5, 2015 (Steam)</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -4353,7 +4353,7 @@
     <div id='CCWI'>
         <h2>Crimzon Clover</h2>
 		<img loading='lazy' src='assets/personal/history/games/ccwi250x250.jpg' alt='Crimzon Clover World Ignition'>
-        <p>Obtained: December 5, 2015 (Steam)</p>
+        <p class='center'>Obtained: December 5, 2015 (Steam)</p>
         <h3>Survival</h3>
         <div class='overflow'><table>
             <tr>
@@ -4403,5 +4403,5 @@
             </tr>
         </table></div>
     </div>
-    <p><strong><a href='#top'>Back to Top</a></strong></p>
+    <footer><strong><a href='#top'>Back to Top</a></strong></footer>
 </div>

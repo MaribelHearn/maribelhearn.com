@@ -286,12 +286,12 @@ $diffs = Array('Easy', 'Normal', 'Hard', 'Lunatic', 'Extra', 'Phantasm');
             if (strpos($subpage, '/') !== false) {
                 $tmp = preg_split('/\//', $subpage);
                 if (($tmp[0] == 'history' || $tmp[0] == 'standings') && !empty(game_to_abbr($tmp[1]))) {
-                    echo '<p id="back"><a href="/royalflare/' . $tmp[1] . '">&lt;= ' . $tmp[1] . 'に帰る - Back to ' . $tmp[1] . '</a></p>';
+                    echo '<aside id="back"><a href="/royalflare/' . $tmp[1] . '">&lt;= ' . $tmp[1] . 'に帰る - Back to ' . $tmp[1] . '</a></aside>';
                 } else {
-                    echo '<p id="back"><a href="/royalflare">&lt;= メインページに帰る - Back to Main Page</a></p>';
+                    echo '<aside id="back"><a href="/royalflare">&lt;= メインページに帰る - Back to Main Page</a></aside>';
                 }
             } else {
-                echo '<p id="back"><a href="/royalflare">&lt;= メインページに帰る - Back to Main Page</a></p>';
+                echo '<aside id="back"><a href="/royalflare">&lt;= メインページに帰る - Back to Main Page</a></aside>';
             }
         }
     ?>
@@ -333,7 +333,7 @@ $diffs = Array('Easy', 'Normal', 'Hard', 'Lunatic', 'Extra', 'Phantasm');
                 }
             }
             if ($exists && strpos($subpage, 'standings') === false) {
-                echo '<p><strong><a id="backtotop" href="#top">上に帰る - Back to Top</a></strong></p>';
+                echo '<footer><strong><a href="#top">上に帰る - Back to Top</a></strong></footer>';
             }
         } else {
             include_once 'php/subpages/royalflare/main_page.php';

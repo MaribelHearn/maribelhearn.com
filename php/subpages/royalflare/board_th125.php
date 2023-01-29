@@ -31,7 +31,7 @@
         echo '<h2 id="' . $stage . '">Stage ' . format_stage('DS', $stage) . '</h2>';
         $scene_count = $scenes->{'DS'}[$stage - 1];
         for ($scene = 1; $scene <= $scene_count; $scene++) {
-            echo '<p id="' . $stage . '-' . $scene . '" class="shottype">Scene ' . format_stage('DS', $stage) . '-' . $scene . '</p>';
+            echo '<h3 id="' . $stage . '-' . $scene . '" class="shottype">Scene ' . format_stage('DS', $stage) . '-' . $scene . '</h3>';
             ds_table($board, $stage, $scene, 'Aya', $lang);
             if ($stage < 14 || $scene > 4) {
                 ds_table($board, $stage, $scene, 'Hatate', $lang);

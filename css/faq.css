@@ -68,9 +68,6 @@ ol {
     width: 50px;
     height: 50px;
 }
-#wrap > div:not(#topbar) {
-    display: inline-block;
-}
 #nav {
     margin-bottom: 5px;
 }

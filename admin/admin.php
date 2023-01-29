@@ -72,16 +72,18 @@
                 <?php 
                     echo wrap_top();
                     if (file_exists('detect.js')) {
-                        echo '<p class="wide-top">You are visiting this page using <strong id="os"></strong>.</p>' .
-                        '<p>You are visiting this page using <strong id="browser"></strong>.</p>';
+                        echo '<p class="wide-top center">You are visiting this page using <strong id="os"></strong>.</p>' .
+                        '<p class="center">You are visiting this page using <strong id="browser"></strong>.</p>';
                     }
                 ?>
-                <p><input id='setcookie' type='button' value='Set Blocking Cookie'></p>
+                <section>
+                    <input id='setcookie' type='button' value='Set Blocking Cookie'>
+                </section>
                 <?php
                     if ($hitcount == 'error') {
-                        echo '<p class="wide">An error occurred while reading the stats.</p>';
+                        echo '<p class="wide center">An error occurred while reading the stats.</p>';
                     } else if ($hitcount == 'empty') {
-                        echo '<p class="wide">No stats for today yet.</p>';
+                        echo '<p class="wide center">No stats for today yet.</p>';
                     } else {
                         echo '<h2>Page Hits</h2>';
                         foreach ($stats as $page => $obj) {
@@ -89,7 +91,7 @@
                                 continue;
                             }
                             $obj = (object) $obj;
-                            echo '<p><strong>' . $page . '</strong> ' . $obj->hits . '</p>';
+                            echo '<p class="center"><strong>' . $page . '</strong> ' . $obj->hits . '</p>';
                             foreach ($obj->ips as $ip => $count) {
                                 if (!property_exists($ip_count, $ip)) {
                                     $ip_count->{$ip} = $count;
@@ -154,7 +156,7 @@
                         echo '</tbody></table>';
                     }
                 ?>
-                <p class='wide-top'><strong><a href='#top'>Back to Top</a></strong></p>
+                <footer><strong><a href='#top'>Back to Top</a></strong></footer>
             </div>
         </main>
         <?php

@@ -818,7 +818,7 @@
         <tr><th colspan='3'>Total</th><td>7,047</td><td>465</td><td>860</td></tr>
     </tfoot>
 </table></div>
-<p><strong><a href='#top'>Back to Top</a></strong></p>
+<footer><strong><a href='#top'>Back to Top</a></strong></footer>
 <!--<h2 id='gender'>Gender vote</h2>
 <h3 id='charas'>Characters</h3>
 <div class='overflow'><table class='poll table sortable noborders'>
@@ -963,4 +963,4 @@
         <tr><td>SoEW - Touhou 2</td><td class='fextreme'>63.98%</td></tr>
     </tbody>
 </table></div>
-<p><strong><a href='#top'>Back to Top</a></strong></p>-->
+<footer><strong><a href='#top'>Back to Top</a></strong></footer>-->

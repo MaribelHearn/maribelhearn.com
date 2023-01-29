@@ -152,7 +152,7 @@ foreach ($lnn as $game => $data1) {
             }
             echo '<p><a href="#' . $game . '">' . full_name($game) . '</a></p>';
         }
-        echo '<p id="playersearchlink"><a href="#playersearch">' . _('Player Search') .
+        echo '<p id="playersearchlink"><a href="#player_search">' . _('Player Search') .
         '</a></p><p><a href="#overall">' . _('Overall Count') .
         '</a></p><p><a href="#players">' . _('Player Ranking') .
         '</a></p></div>';
@@ -242,7 +242,7 @@ foreach ($lnn as $game => $data1) {
             </tfoot>
         </table>
     </div>
-    <div id='playersearch'>
+    <div id='player_search'>
         <h2><?php echo _('Player Search'); ?></h2>
 		<p id='playerlnns'><?php echo _('Choose a player name from the menu below to show their LNNs.') ?></p>
 		<label for='player'><?php echo _('Player') ?></label>
@@ -355,7 +355,7 @@ foreach ($lnn as $game => $data1) {
             </tbody>
         </table>
     </div>
-    <p id='back'><strong><a id='backtotop' href='#top'><?php echo _('Back to Top'); ?></a></strong></p>
+    <footer><strong><a href='#top'><?php echo _('Back to Top'); ?></a></strong></footer>
 	<?php echo '<input id="missing_replays" type="hidden" value="' . implode('', $missing_replays) . '">' ?>
 	<?php echo '<input id="videos" type="hidden" value="' . implode(',', $video_lnns) . '">' ?>
 </div>

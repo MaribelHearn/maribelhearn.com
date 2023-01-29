@@ -5,6 +5,13 @@
          url('/assets/shared/fonts/Felipa-Regular.woff') format('woff'),
          url('/assets/shared/fonts/Felipa-Regular.ttf') format('ttf');
 }
+p, ol, ul {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+h1, h2, h3, h4 {
+    text-align: center;
+}
 h1 {
     font-family: Felipa;
     font-size: 48px;
@@ -17,6 +24,13 @@ h2 {
 h3 {
     font-family: Felipa;
     font-size: 24px;
+}
+figure, section, table, #topbar {
+    text-align: center;
+}
+footer {
+    text-align: center;
+    padding-bottom: 10px;
 }
 div:not(.dropdown):not(.dropdown_content):not(.nav_right):not(.dark_bg) {
     background-color: #fff;
@@ -36,16 +50,25 @@ table {
 table:not(.noborders), table:not(.noborders) tr, table:not(.noborders) th, table:not(.noborders) td:not(.noborders) {
     border: 1px solid black;
 }
-.noborders {
-    border: none;
-}
-.contents {
-    display: inline-block;
-    border: 1px solid black;
+img {
+    display: block;
     margin-left: auto;
     margin-right: auto;
 }
-.contents * {
+.noborders {
+    border: none;
+}
+.center {
+    text-align: center;
+    padding: 0px 0px 0px 0px;
+}
+.contents, #contents_new {
+    display: block;
+    border: 1px solid black;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+.contents *, #contents_new * {
     margin: 4px;
 }
 .flag {
@@ -54,6 +77,7 @@ table:not(.noborders), table:not(.noborders) tr, table:not(.noborders) th, table
 .language {
     margin-top: 0px;
     margin-left: 3px;
+    padding: 0px 0px 0px 0px;
 }
 .icon {
     background-image: url('/assets/shared/spritesheets/icon_sheet.png');
@@ -67,7 +91,11 @@ table:not(.noborders), table:not(.noborders) tr, table:not(.noborders) th, table
 .dropdowns {
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
     width: 50%;
+}
+.dropdowns p {
+    text-align: left;
 }
 .dropdown {
     position: relative;
@@ -90,6 +118,7 @@ table:not(.noborders), table:not(.noborders) tr, table:not(.noborders) th, table
 }
 .dropdown_content p {
     margin: 4px;
+    padding: 0px 0px 0px 0px;
 }
 .dropdown_content.dark_bg {
     background-color: #1b232e;
@@ -124,7 +153,7 @@ table:not(.noborders), table:not(.noborders) tr, table:not(.noborders) th, table
 }
 .wrap {
     border: 1px solid #000;
-    text-align: center;
+    text-align: left;
     margin-left: 24%;
     margin-right: 24%;
     font: 14px verdana, sans-serif;
@@ -154,6 +183,7 @@ table:not(.noborders), table:not(.noborders) tr, table:not(.noborders) th, table
     position: relative;
     cursor: pointer;
     float: right;
+    text-align: center;
 }
 #hy_container .tooltip {
     width: 150px;

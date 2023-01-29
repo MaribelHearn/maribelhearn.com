@@ -39,9 +39,6 @@ hr {
     z-index: 1;
     top: 100%;
 }
-#wrap > div:not(#topbar) {
-    display: inline-block;
-}
 #thprac_img {
     background-image: url('../games/tools/thprac_small.png');
     height: 180px;

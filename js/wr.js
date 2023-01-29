@@ -630,11 +630,11 @@ function setEventListeners() {
 function setAttributes() {
     if (!getCookie("wr_old_layout")) {
         document.getElementById("newlayout").style.display = "block";
-        document.getElementById("contents_new").style.display = "inline-block";
+        document.getElementById("contents_new").style.display = "block";
     }
     
     document.getElementById("playersearch").style.display = "block";
-    document.getElementById("checkboxes").style.display = "table";
+    document.getElementById("checkboxes").style.display = "block";
     const flags = document.querySelectorAll(".flag");
     const westernRecordsLink = document.getElementById("westernlink");
     const playerSearchLink = document.getElementById("playersearchlink");

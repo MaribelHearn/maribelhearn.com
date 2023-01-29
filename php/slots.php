@@ -1,11 +1,11 @@
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
-        <p>Click any of the slot title texts to change what it says.</p>
-        <p>
+        <p class='center'>Click any of the slot title texts to change what it says.</p>
+        <section>
             <input id='insert_coin' type='button' value='Insert Coin'>
             <input id='screenshot' type='button' value='Screenshot'>
             <input id='reset' type='button' value='Reset Titles'>
-        </p>
+        </section>
     </div>
     <p id='message'></p>
     <table id='table'>
@@ -40,10 +40,10 @@
             <td id='slot8' class='slot charslot'></td>
         </tr>
     </table>
-    <div id='bottom' data-html2canvas-ignore>
+    <footer data-html2canvas-ignore>
         <p>Credit to an unknown original creator for the idea of this randomiser.</p>
         <p>Originally known as Touhou Click and Drag Game.</p>
-    </div>
+    </footer>
 </div>
 <div id='modal' data-html2canvas-ignore>
     <div id='modal_title' class='modal_inner'>

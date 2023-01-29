@@ -38,6 +38,9 @@ input[type=number] {
 #route, #season, #calculator, #scoring_button, #survival_button {
     display: none;
 }
+#calculator {
+    text-align: center;
+}
 @media only screen and (min-width: 800px) and (max-width: 1100px) {
     h1 {
         margin-bottom: 15px;

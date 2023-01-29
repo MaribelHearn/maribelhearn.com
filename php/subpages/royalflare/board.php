@@ -29,8 +29,8 @@
             echo '</tbody></table></div>';
         } else {
             foreach ($shots as $key => $shot) {
-                echo '<p id="' . $diff . $shot . '" class="shottype">' . (tl_shot(str_replace(' ', '', $shot), 'Japanese') != $shot ? tl_shot(str_replace(' ', '', $shot), 'Japanese') . ' - ' : '') . $shot .
-                '</p><div class="overflow"><table id="' . $diff . $shot . 't" class="' . $game . 't sortable"><thead><tr><th class="no-sort">#</th><th id="' . $diff . $shot .
+                echo '<h3 id="' . $diff . $shot . '" class="shottype">' . (tl_shot(str_replace(' ', '', $shot), 'Japanese') != $shot ? tl_shot(str_replace(' ', '', $shot), 'Japanese') . ' - ' : '') . $shot .
+                '</h3><div class="overflow"><table id="' . $diff . $shot . 't" class="' . $game . 't sortable"><thead><tr><th class="no-sort">#</th><th id="' . $diff . $shot .
                 'score">スコア<br>Score</th><th>処理落率<br>Slowdown</th>' . ($game != 'GFW' ? '<th><span class="nowrap">使用キャラ</span><br>Shottype</th>' : '<th><span class="nowrap">ルート</span><br>Route</th>') .
                 '<th>難易度<br>Difficulty</th><th>プレイ日付<br>Play Date</th><th>名前<br>Player</th>' . ($is_mobile ? '' : '<th>コメント<br>Comment</th>') . '<th>リプレイ<br>Replay</th></tr></thead><tbody>';
                 foreach ($board as $key => $entry) {

@@ -10,10 +10,9 @@ li {
 }
 .description {
     font-size: 12px;
-}
-.description {
     margin: 2px;
     font-style: italic;
+    text-align: center;
 }
 .tooltip {
     visibility: hidden;

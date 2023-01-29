@@ -181,13 +181,17 @@ function no_extra(string $game) {
             </tbody>
         </table>
     </div>
-    <p><label for='precision'>Number of decimals:</label> <input id='precision' type='number' value='0' min='0' max='5' step='1'></p>
-    <p id='message'></p>
-    <p id='error'></p>
-	<p>
+    <br>
+    <section>
+        <label for='precision'>Number of decimals:</label>
+        <input id='precision' type='number' value='0' min='0' max='5' step='1'>
+    </section>
+    <p id='message' class='center'></p>
+    <p id='error' class='center'></p>
+	<section>
         <input id='save' type='button' value='Save'>
         <input id='calc' type='button' value='Calculate'>
         <input id='reset' type='button' value='Reset'>
-    </p>
-    <p id='back'><strong><a id='backtotop' href='#top'>Back to Top</a></strong></p>
+    </section>
+    <footer><strong><a href='#top'>Back to Top</a></strong></footer>
 </div>

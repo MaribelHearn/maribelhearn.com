@@ -36,8 +36,8 @@ function display_name(string $game) {
         <noscript><?php echo _('<strong>Notice:</strong> this page requires JavaScript.') ?></noscript>
 		<p><?php echo _('Fill in the best survivals you have pulled off in the table below. If you leave a dropdown menu on the N/A option, it will not be factored in. ' .
         'When you click Apply, three different tables indicating your survival progress will be generated. The main survival progress table is an image and can be copied or saved to your device. ' .
-        'Use the below selectors to fill up many achievements at once, either by game or by difficulty. See <a href="#acronyms">the bottom of this page</a> for an explanation of the acronyms.') ?></p>
-        <p>
+        'Use the below selectors to fill up many achievements at once, either by game or by difficulty. See the bottom of this page for an explanation of the acronyms.') ?></p>
+        <section>
             <label for='fillGameDifficulty'><?php echo _('Game / Difficulty') ?></label>
             <select id='fillGameDifficulty'>
 				<?php
@@ -64,7 +64,7 @@ function display_name(string $game) {
             </select>
             <br>
             <input id='fill_all' type='button' value='Fill All'>
-        </p>
+		</section>
     </div>
     <div id='container' class='overflow'>
         <table id='survival'>
@@ -127,8 +127,12 @@ function display_name(string $game) {
     	</table>
     </div>
     <div id='bottom' data-html2canvas-ignore>
-        <p><input id='save' type='button' value='Save'><input id='apply' type='button' value='Generate Tables'><input id='reset' type='button' value='Reset'></p>
-        <p id='message'></p>
+        <section>
+			<input id='save' type='button' value='Save'>
+			<input id='apply' type='button' value='Generate Tables'>
+			<input id='reset' type='button' value='Reset'>
+		</section>
+        <p id='message' class='center'></p>
         <h2 id='acronyms'><?php echo _('Acronyms') ?></h2>
         <ul>
             <li><strong><?php echo _('NM:') ?></strong> <?php echo _('No Miss. Clear without dying.') ?></li>

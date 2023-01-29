@@ -7,6 +7,9 @@ tr:nth-child(even) {
 form {
     margin-bottom: 10px;
 }
+label > img {
+    padding-bottom: 4px;
+}
 .tooltip {
     visibility: hidden;
     background-color: black;

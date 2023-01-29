@@ -156,8 +156,10 @@ function is_phantasmagoria(string $game) {
         echo _('The rubrics are the formulas and fixed values used to calculate the number of DRC points for a run. ' .
         'If you are curious about how your points are being determined, click the button below to expand.');
     ?></p>
-    <input id='scoring_button' type='button' value='<?php echo _('Show Scoring Rubrics') ?>'>
-    <input id='survival_button' type='button' value='<?php echo _('Show Survival Rubrics') ?>'>
+	<section>
+		<input id='scoring_button' type='button' value='<?php echo _('Show Scoring Rubrics') ?>'>
+		<input id='survival_button' type='button' value='<?php echo _('Show Survival Rubrics') ?>'>
+	</section>
     <div id='scoring_rubrics' class='rubrics'>
         <p><strong id='scoringNotes'><?php echo _('Scoring Notes') ?></strong></p>
 		<ul>
@@ -339,7 +341,7 @@ function is_phantasmagoria(string $game) {
 			</tbody>
         </table></div>
         <br>
-        <p><strong><a class='backToTop' href='#top'><?php echo _('Back to Top') ?></a></strong></p>
+        <footer><strong><a href='#top'><?php echo _('Back to Top') ?></a></strong></footer>
 	</div>
 	<div id='survival_rubrics' class='rubrics'>
         <p><strong id='survivalNotes'><?php echo _('Survival Notes') ?></strong></p>
@@ -459,7 +461,7 @@ function is_phantasmagoria(string $game) {
 			</tbody>
         </table></div>
         <br>
-        <p><strong><a class='backToTop' href='#top'><?php echo _('Back to Top') ?></a></strong></p>
+        <footer><strong><a href='#top'><?php echo _('Back to Top') ?></a></strong></footer>
     </div>
 	<input id='shots' type='hidden' value='<?php
 		$shots = '{';

@@ -295,10 +295,10 @@ function setEventListeners() {
 function setAttributes() {
     if (!getCookie("lnn_old_layout")) {
         document.getElementById("newlayout").style.display = "block";
-        document.getElementById("contents_new").style.display = "inline-block";
+        document.getElementById("contents_new").style.display = "block";
     }
 
-    document.getElementById("playersearch").style.display = "block";
+    document.getElementById("player_search").style.display = "block";
     const flags = document.querySelectorAll(".flag");
     const playerSearchLink = document.getElementById("playersearchlink");
 
