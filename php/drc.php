@@ -143,7 +143,9 @@ function is_phantasmagoria(string $game) {
         </select>
 		<div id='drcpoints'></div>
         <div id='error'></div>
-		<p><input id='calculate' type='button' value='<?php echo _('Calculate') ?>'></p>
+		<section>
+			<input id='calculate' type='button' value='<?php echo _('Calculate') ?>'>
+		</section>
 	</div>
     <h2 id='rulesText'><?php echo _('Rules') ?></h2>
 	<ol>
