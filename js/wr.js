@@ -633,7 +633,7 @@ function setAttributes() {
         document.getElementById("contents_new").style.display = "block";
     }
     
-    document.getElementById("playersearch").style.display = "block";
+    document.getElementById("player_search").style.display = "block";
     document.getElementById("checkboxes").style.display = "block";
     const flags = document.querySelectorAll(".flag");
     const westernRecordsLink = document.getElementById("westernlink");
@@ -663,7 +663,7 @@ function checkHash() {
 
             if (hash == player) {
                 document.getElementById("player").value = player;
-                document.getElementById("playersearch").scrollIntoView();
+                document.getElementById("player_search").scrollIntoView();
                 showPlayerWRs(player);
                 break;
             }

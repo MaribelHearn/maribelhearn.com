@@ -334,7 +334,7 @@ function checkHash() {
 
             if (hash == player) {
                 document.getElementById("player").value = player;
-                document.getElementById("playersearch").scrollIntoView();
+                document.getElementById("player_search").scrollIntoView();
                 showPlayerLNNs(player);
                 break;
             }
