@@ -9,14 +9,14 @@
 <p>These three problems will be addressed, in order, by the following three sections. For the vast majority of people, this will be enough to get EoSD to run well.</p>
 <h4 id='files'>File names</h4>
 <div id='eosd_files'>
-    <p id='files_mb'>
-        <img src='/assets/games/faq/eosd/eosd_files_mb.png' alt='Mojibake EoSD file names'>
-        <br><em><span class='red'>Wrong</span> file names</em>
-    </p>
-    <p id='files_jp'>
-        <img src='/assets/games/faq/eosd/eosd_files_jp.png' alt='EoSD file names in Japanese'>
-        <br><em><span class='green'>Correct</span> file names</em>
-    </p>
+    <figure id='files_mb'>
+        <img src='/assets/games/faq/eosd/eosd_files_mb.png' class='eosd_files' alt='Mojibake EoSD file names'>
+        <figcaption><em><span class='red'>Wrong</span> file names</em></figcaption>
+    </figure>
+    <figure id='files_jp'>
+        <img src='/assets/games/faq/eosd/eosd_files_jp.png' class='eosd_files' alt='EoSD file names in Japanese'>
+        <figcaption><em><span class='green'>Correct</span> file names</em></figcaption>
+    </figure>
 </div>
 <div id='files_text'>
     <p>The file names are supposed to look like the image on the right, but many people have something that looks like the left image.
