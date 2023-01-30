@@ -453,15 +453,15 @@ foreach ($wr as $game => $value) {
         }
 	?>
 	<div id='wr_list'>
-        <p id='fullname'></p>
-        <p id='toggle_season'>
+        <p id='fullname' class='center'></p>
+        <section id='toggle_season'>
             <input id='seasons' type='checkbox'>
             <label id='label_seasons' for='seasons'><?php echo _('Seasons') ?></label>
-        </p>
-        <p id='toggle_unverified'>
+        </section>
+        <section id='toggle_unverified'>
             <input id='unverified' type='checkbox'>
             <label id='label_unverified' for='unverified' class='unverified'><?php echo _('Unverified Scores') ?></label>
-        </p>
+        </section>
         <table id='world' class='sortable'>
             <thead id='world_thead'></thead>
             <tbody id='world_tbody'></tbody>

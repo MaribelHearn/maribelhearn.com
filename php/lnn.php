@@ -223,7 +223,7 @@ foreach ($lnn as $game => $data1) {
         }
     ?>
     <div id='lnn_list'>
-        <p id='fullname'></p>
+        <p id='fullname' class='center'></p>
         <table id='lnn_table'>
             <thead id='lnn_thead'>
                 <tr>
