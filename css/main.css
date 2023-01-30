@@ -63,10 +63,18 @@ input[type=button] {
 .link {
     position: relative;
 }
-.link .tooltip {
-    margin-left: -60px;
+/* temporary */
+.link a {
+    width: 100%;
+}
+.link a:hover {
+    background-color: #bbb;
+}
+.tooltip {
+    display: none;
+}
+/*.link .tooltip {
     width: 300px;
-    left: 80%;
 }
 .link:hover .tooltip {
     visibility: visible;
@@ -90,7 +98,8 @@ input[type=button] {
     position: absolute;
     z-index: 1;
     top: 100%;
-}
+    left: 0%;
+}*/
 .flag {
     width: 16px;
     height: 16px;
