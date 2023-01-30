@@ -50,7 +50,7 @@ a:link.dropdown_button, a:visited.dropdown_button {
 .dropdown_content {
     background-color: #202020;
 }
-.dropdown_content p a:hover {
+.dropdown_content p a:hover, .link a:hover {
     background-color: #555;
 }
 .page_table {

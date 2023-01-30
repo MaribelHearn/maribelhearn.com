@@ -185,13 +185,6 @@ img {
     float: right;
     text-align: center;
 }
-#hy_container .tooltip {
-    width: 150px;
-    left: 0%;
-}
-#hy_container:hover .tooltip {
-    visibility: visible;
-}
 #hy_text {
     margin-top: 4px;
 }
