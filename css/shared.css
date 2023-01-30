@@ -217,8 +217,9 @@ img {
     li {
         text-align: left;
     }
-    ul, ol {
+    p, ul, ol {
         padding-left: 0px;
+        padding-right: 0px;
     }
     input, select {
         font-size: 11px;

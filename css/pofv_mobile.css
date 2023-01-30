@@ -22,11 +22,11 @@
         height: 60px;
         background-image: url('../games/pofv/images/faces60x60.png');
     }
-    .art, .scope {
+    .pofv_chara_art, .scope {
         display: none;
     }
     .modal_inner {
-        height: 50%;
+        height: 65%;
     }
     #marisa {
         background-position: -60px 0px;
