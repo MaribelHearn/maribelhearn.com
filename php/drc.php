@@ -94,55 +94,59 @@ function is_phantasmagoria(string $game) {
 	<div id='calculator'>
         <p id='drcScores'><?php echo _('Scores can only contain digits, commas, dots and spaces. Survival runs are assumed to have cleared, scoring runs not.') ?></p>
         <p id='notify'></p>
-        <label id='category' for='game'><?php echo _('Category') ?></label>
-        <select id='game'>
-            <option id='hrtp' value='HRtP'><?php echo _('HRtP') ?></option>
-            <option id='soew' value='SoEW'><?php echo _('SoEW') ?></option>
-            <option id='podd' value='PoDD'><?php echo _('PoDD') ?></option>
-            <option id='lls' value='LLS'><?php echo _('LLS') ?></option>
-            <option id='ms' value='MS'><?php echo _('MS') ?></option>
-            <option id='eosd' value='EoSD'><?php echo _('EoSD') ?></option>
-            <option id='pcb' value='PCB'><?php echo _('PCB') ?></option>
-            <option id='in' value='IN'><?php echo _('IN') ?></option>
-            <option id='pofv' value='PoFV'><?php echo _('PoFV') ?></option>
-            <option id='mof' value='MoF'><?php echo _('MoF') ?></option>
-            <option id='sa' value='SA'><?php echo _('SA') ?></option>
-            <option id='ufo' value='UFO'><?php echo _('UFO') ?></option>
-            <option id='ds' value='DS'><?php echo _('DS') ?></option>
-            <option id='gfw' value='GFW'><?php echo _('GFW') ?></option>
-            <option id='td' value='TD'><?php echo _('TD') ?></option>
-            <option id='ddc' value='DDC'><?php echo _('DDC') ?></option>
-            <option id='lolk' value='LoLK'><?php echo _('LoLK') ?></option>
-            <option id='hsifs' value='HSiFS'><?php echo _('HSiFS') ?></option>
-            <option id='wbawc' value='WBaWC'><?php echo _('WBaWC') ?></option>
-            <option id='um' value='UM'><?php echo _('UM') ?></option>
-        </select>
-        <select id='difficulty'>
-            <option>Easy</option>
-            <option>Normal</option>
-            <option>Hard</option>
-            <option>Lunatic</option>
-            <option>Extra</option>
-        </select>
-        <select id='route'>
-            <option id='finala' value='FinalA'><?php echo _('FinalA') ?></option>
-            <option id='finalb' value='FinalB'><?php echo _('FinalB') ?></option>
-        </select>
-        <select id='challenge'>
-            <option id='scoring0' value='Scoring'><?php echo _('Scoring') ?></option>
-            <option id='survival0' value='Survival'><?php echo _('Survival') ?></option>
-        </select>
-        <div id='performance'></div>
-        <label id='shottype_label' for='shottype'></label>
-		<select id='shottype'></select>
-        <select id='season'>
-            <option id='spring' value='Spring'><?php echo _('Spring') ?></option>
-            <option id='summer' value='Summer'><?php echo _('Summer') ?></option>
-            <option id='autumn' value='Autumn'><?php echo _('Autumn') ?></option>
-            <option id='winter' value='Winter'><?php echo _('Winter') ?></option>
-        </select>
-		<div id='drcpoints'></div>
-        <div id='error'></div>
+		<section>
+			<label id='category' for='game'><?php echo _('Category') ?></label>
+			<select id='game'>
+				<option id='hrtp' value='HRtP'><?php echo _('HRtP') ?></option>
+				<option id='soew' value='SoEW'><?php echo _('SoEW') ?></option>
+				<option id='podd' value='PoDD'><?php echo _('PoDD') ?></option>
+				<option id='lls' value='LLS'><?php echo _('LLS') ?></option>
+				<option id='ms' value='MS'><?php echo _('MS') ?></option>
+				<option id='eosd' value='EoSD'><?php echo _('EoSD') ?></option>
+				<option id='pcb' value='PCB'><?php echo _('PCB') ?></option>
+				<option id='in' value='IN'><?php echo _('IN') ?></option>
+				<option id='pofv' value='PoFV'><?php echo _('PoFV') ?></option>
+				<option id='mof' value='MoF'><?php echo _('MoF') ?></option>
+				<option id='sa' value='SA'><?php echo _('SA') ?></option>
+				<option id='ufo' value='UFO'><?php echo _('UFO') ?></option>
+				<option id='ds' value='DS'><?php echo _('DS') ?></option>
+				<option id='gfw' value='GFW'><?php echo _('GFW') ?></option>
+				<option id='td' value='TD'><?php echo _('TD') ?></option>
+				<option id='ddc' value='DDC'><?php echo _('DDC') ?></option>
+				<option id='lolk' value='LoLK'><?php echo _('LoLK') ?></option>
+				<option id='hsifs' value='HSiFS'><?php echo _('HSiFS') ?></option>
+				<option id='wbawc' value='WBaWC'><?php echo _('WBaWC') ?></option>
+				<option id='um' value='UM'><?php echo _('UM') ?></option>
+			</select>
+			<select id='difficulty'>
+				<option>Easy</option>
+				<option>Normal</option>
+				<option>Hard</option>
+				<option>Lunatic</option>
+				<option>Extra</option>
+			</select>
+			<select id='route'>
+				<option id='finala' value='FinalA'><?php echo _('FinalA') ?></option>
+				<option id='finalb' value='FinalB'><?php echo _('FinalB') ?></option>
+			</select>
+			<select id='challenge'>
+				<option id='scoring0' value='Scoring'><?php echo _('Scoring') ?></option>
+				<option id='survival0' value='Survival'><?php echo _('Survival') ?></option>
+			</select>
+			<div id='performance'></div>
+			<label id='shottype_label' for='shottype'></label>
+			<select id='shottype'></select>
+			<select id='season'>
+				<option id='spring' value='Spring'><?php echo _('Spring') ?></option>
+				<option id='summer' value='Summer'><?php echo _('Summer') ?></option>
+				<option id='autumn' value='Autumn'><?php echo _('Autumn') ?></option>
+				<option id='winter' value='Winter'><?php echo _('Winter') ?></option>
+			</select>
+		</section>
+		<section>
+			<div id='drcpoints'></div>
+			<div id='error'></div>
+		</section>
 		<section>
 			<input id='calculate' type='button' value='<?php echo _('Calculate') ?>'>
 		</section>
