@@ -28,5 +28,5 @@
             include_once 'php/subpages/faq/main_page.php';
         }
 	?>
-    <footer><strong><a id='backtotop' href='#top'>Back to Top</a></strong></footer>
+    <footer><strong><a href='#top'>Back to Top</a></strong></footer>
 </div>
