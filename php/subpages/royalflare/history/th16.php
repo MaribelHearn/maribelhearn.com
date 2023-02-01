@@ -1,4 +1,4 @@
-<p>Note that the original Royalflare leaderboard was not separated by season, so neither is this history.</p>
+<h3>Note that the original Royalflare leaderboard was not separated by season, so neither is this history.</h3>
 <div><?php
     foreach ($diffs as $key => $diff) {
         if ($diff == 'Phantasm') {
@@ -16,7 +16,7 @@
     }
 ?></div>
 <h2 id='Easy'>Easy</h2>
-<p id='EasyReimu' class='shottype'>霊夢 - Reimu</p>
+<h3 id='EasyReimu' class='shottype'>霊夢 - Reimu</h3>
 <table class='HSiFSt'>
     <tbody class='ranking'>
         <tr>
@@ -101,7 +101,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasyMarisa' class='shottype'>魔理沙 - Marisa</p>
+<h3 id='EasyMarisa' class='shottype'>魔理沙 - Marisa</h3>
 <table class='HSiFSt'>
     <tbody class='ranking'>
         <tr>
@@ -274,7 +274,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasyCirno' class='shottype'>チルノ - Cirno</p>
+<h3 id='EasyCirno' class='shottype'>チルノ - Cirno</h3>
 <table class='HSiFSt'>
     <tbody class='ranking'>
         <tr>
@@ -511,7 +511,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasyAya' class='shottype'>文 - Aya</p>
+<h3 id='EasyAya' class='shottype'>文 - Aya</h3>
 <table class='HSiFSt'>
     <tbody class='ranking'>
         <tr>
@@ -725,7 +725,7 @@
     </tbody>
 </table>
 <h2 id='Normal'>Normal</h2>
-<p id='NormalReimu' class='shottype'>霊夢 - Reimu</p>
+<h3 id='NormalReimu' class='shottype'>霊夢 - Reimu</h3>
 <table class='HSiFSt'>
     <tbody class='ranking'>
         <tr>
@@ -770,7 +770,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalMarisa' class='shottype'>魔理沙 - Marisa</p>
+<h3 id='NormalMarisa' class='shottype'>魔理沙 - Marisa</h3>
 <table class='HSiFSt'>
     <tbody class='ranking'>
         <tr>
@@ -823,7 +823,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalCirno' class='shottype'>チルノ - Cirno</p>
+<h3 id='NormalCirno' class='shottype'>チルノ - Cirno</h3>
 <table class='HSiFSt'>
     <tbody class='ranking'>
         <tr>
@@ -924,7 +924,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalAya' class='shottype'>文 - Aya</p>
+<h3 id='NormalAya' class='shottype'>文 - Aya</h3>
 <table class='HSiFSt'>
     <tbody class='ranking'>
         <tr>
@@ -1050,7 +1050,7 @@
     </tbody>
 </table>
 <h2 id='Hard'>Hard</h2>
-<p id='HardReimu' class='shottype'>霊夢 - Reimu</p>
+<h3 id='HardReimu' class='shottype'>霊夢 - Reimu</h3>
 <table class='HSiFSt'>
     <tbody class='ranking'>
         <tr>
@@ -1103,7 +1103,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardMarisa' class='shottype'>魔理沙 - Marisa</p>
+<h3 id='HardMarisa' class='shottype'>魔理沙 - Marisa</h3>
 <table class='HSiFSt'>
     <tbody class='ranking'>
         <tr>
@@ -1164,7 +1164,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardCirno' class='shottype'>チルノ - Cirno</p>
+<h3 id='HardCirno' class='shottype'>チルノ - Cirno</h3>
 <table class='HSiFSt'>
     <tbody class='ranking'>
         <tr>
@@ -1233,7 +1233,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardAya' class='shottype'>文 - Aya</p>
+<h3 id='HardAya' class='shottype'>文 - Aya</h3>
 <table class='HSiFSt'>
     <tbody class='ranking'>
         <tr>
@@ -1287,7 +1287,7 @@
     </tbody>
 </table>
 <h2 id='Lunatic'>Lunatic</h2>
-<p id='LunaticReimu' class='shottype'>霊夢 - Reimu</p>
+<h3 id='LunaticReimu' class='shottype'>霊夢 - Reimu</h3>
 <table class='HSiFSt'>
     <tbody class='ranking'>
         <tr>
@@ -1428,7 +1428,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticMarisa' class='shottype'>魔理沙 - Marisa</p>
+<h3 id='LunaticMarisa' class='shottype'>魔理沙 - Marisa</h3>
 <table class='HSiFSt'>
     <tbody class='ranking'>
         <tr>
@@ -1537,7 +1537,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticCirno' class='shottype'>チルノ - Cirno</p>
+<h3 id='LunaticCirno' class='shottype'>チルノ - Cirno</h3>
 <table class='HSiFSt'>
     <tbody class='ranking'>
         <tr>
@@ -1662,7 +1662,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticAya' class='shottype'>文 - Aya</p>
+<h3 id='LunaticAya' class='shottype'>文 - Aya</h3>
 <table class='HSiFSt'>
     <tbody class='ranking'>
         <tr>
@@ -1780,7 +1780,7 @@
     </tbody>
 </table>
 <h2 id='Extra'>Extra</h2>
-<p id='ExtraReimu' class='shottype'>霊夢 - Reimu</p>
+<h3 id='ExtraReimu' class='shottype'>霊夢 - Reimu</h3>
 <table class='HSiFSt'>
     <tbody class='ranking'>
         <tr>
@@ -1969,7 +1969,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='ExtraMarisa' class='shottype'>魔理沙 - Marisa</p>
+<h3 id='ExtraMarisa' class='shottype'>魔理沙 - Marisa</h3>
 <table class='HSiFSt'>
     <tbody class='ranking'>
         <tr>
@@ -2046,7 +2046,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='ExtraCirno' class='shottype'>チルノ - Cirno</p>
+<h3 id='ExtraCirno' class='shottype'>チルノ - Cirno</h3>
 <table class='HSiFSt'>
     <tbody class='ranking'>
         <tr>
@@ -2123,7 +2123,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='ExtraAya' class='shottype'>文 - Aya</p>
+<h3 id='ExtraAya' class='shottype'>文 - Aya</h3>
 <table class='HSiFSt'>
     <tbody class='ranking'>
         <tr>

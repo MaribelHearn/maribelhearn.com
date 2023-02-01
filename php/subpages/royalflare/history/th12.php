@@ -1,6 +1,6 @@
 <?php links($game, $diffs, $shots) ?>
 <h2 id='Easy'>Easy</h2>
-<p id='EasyReimuA' class='shottype'>霊夢A - ReimuA</p>
+<h3 id='EasyReimuA' class='shottype'>霊夢A - ReimuA</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -77,7 +77,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasyReimuB' class='shottype'>霊夢B - ReimuB</p>
+<h3 id='EasyReimuB' class='shottype'>霊夢B - ReimuB</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -154,7 +154,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasyMarisaA' class='shottype'>魔理沙A - MarisaA</p>
+<h3 id='EasyMarisaA' class='shottype'>魔理沙A - MarisaA</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -223,7 +223,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasyMarisaB' class='shottype'>魔理沙B - MarisaB</p>
+<h3 id='EasyMarisaB' class='shottype'>魔理沙B - MarisaB</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -380,7 +380,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasySanaeA' class='shottype'>早苗A - SanaeA</p>
+<h3 id='EasySanaeA' class='shottype'>早苗A - SanaeA</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -537,7 +537,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasySanaeB' class='shottype'>早苗B - SanaeB</p>
+<h3 id='EasySanaeB' class='shottype'>早苗B - SanaeB</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -695,7 +695,7 @@
     </tbody>
 </table>
 <h2 id='Normal'>Normal</h2>
-<p id='NormalReimuA' class='shottype'>霊夢A - ReimuA</p>
+<h3 id='NormalReimuA' class='shottype'>霊夢A - ReimuA</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -820,7 +820,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalReimuB' class='shottype'>霊夢B - ReimuB</p>
+<h3 id='NormalReimuB' class='shottype'>霊夢B - ReimuB</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -977,7 +977,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalMarisaA' class='shottype'>魔理沙A - MarisaA</p>
+<h3 id='NormalMarisaA' class='shottype'>魔理沙A - MarisaA</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -1070,7 +1070,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalMarisaB' class='shottype'>魔理沙B - MarisaB</p>
+<h3 id='NormalMarisaB' class='shottype'>魔理沙B - MarisaB</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -1139,7 +1139,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalSanaeA' class='shottype'>早苗A - SanaeA</p>
+<h3 id='NormalSanaeA' class='shottype'>早苗A - SanaeA</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -1240,7 +1240,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalSanaeB' class='shottype'>早苗B - SanaeB</p>
+<h3 id='NormalSanaeB' class='shottype'>早苗B - SanaeB</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -1382,7 +1382,7 @@
     </tbody>
 </table>
 <h2 id='Hard'>Hard</h2>
-<p id='HardReimuA' class='shottype'>霊夢A - ReimuA</p>
+<h3 id='HardReimuA' class='shottype'>霊夢A - ReimuA</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -1491,7 +1491,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardReimuB' class='shottype'>霊夢B - ReimuB</p>
+<h3 id='HardReimuB' class='shottype'>霊夢B - ReimuB</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -1600,7 +1600,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardMarisaA' class='shottype'>魔理沙A - MarisaA</p>
+<h3 id='HardMarisaA' class='shottype'>魔理沙A - MarisaA</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -1725,7 +1725,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardMarisaB' class='shottype'>魔理沙B - MarisaB</p>
+<h3 id='HardMarisaB' class='shottype'>魔理沙B - MarisaB</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -1890,7 +1890,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardSanaeA' class='shottype'>早苗A - SanaeA</p>
+<h3 id='HardSanaeA' class='shottype'>早苗A - SanaeA</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -2015,7 +2015,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardSanaeB' class='shottype'>早苗B - SanaeB</p>
+<h3 id='HardSanaeB' class='shottype'>早苗B - SanaeB</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -2133,7 +2133,7 @@
     </tbody>
 </table>
 <h2 id='Lunatic'>Lunatic</h2>
-<p id='LunaticReimuA' class='shottype'>霊夢A - ReimuA</p>
+<h3 id='LunaticReimuA' class='shottype'>霊夢A - ReimuA</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -2282,7 +2282,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticReimuB' class='shottype'>霊夢B - ReimuB</p>
+<h3 id='LunaticReimuB' class='shottype'>霊夢B - ReimuB</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -2407,7 +2407,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticMarisaA' class='shottype'>魔理沙A - MarisaA</p>
+<h3 id='LunaticMarisaA' class='shottype'>魔理沙A - MarisaA</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -2524,7 +2524,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticMarisaB' class='shottype'>魔理沙B - MarisaB</p>
+<h3 id='LunaticMarisaB' class='shottype'>魔理沙B - MarisaB</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -2609,7 +2609,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticSanaeA' class='shottype'>早苗A - SanaeA</p>
+<h3 id='LunaticSanaeA' class='shottype'>早苗A - SanaeA</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -2710,7 +2710,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticSanaeB' class='shottype'>早苗B - SanaeB</p>
+<h3 id='LunaticSanaeB' class='shottype'>早苗B - SanaeB</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -2924,7 +2924,7 @@
     </tbody>
 </table>
 <h2 id='Extra'>Extra</h2>
-<p id='ExtraReimuA' class='shottype'>霊夢A - ReimuA</p>
+<h3 id='ExtraReimuA' class='shottype'>霊夢A - ReimuA</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -3201,7 +3201,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='ExtraReimuB' class='shottype'>霊夢B - ReimuB</p>
+<h3 id='ExtraReimuB' class='shottype'>霊夢B - ReimuB</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -3374,7 +3374,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='ExtraMarisaA' class='shottype'>魔理沙A - MarisaA</p>
+<h3 id='ExtraMarisaA' class='shottype'>魔理沙A - MarisaA</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -3539,7 +3539,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='ExtraMarisaB' class='shottype'>魔理沙B - MarisaB</p>
+<h3 id='ExtraMarisaB' class='shottype'>魔理沙B - MarisaB</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -3760,7 +3760,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='ExtraSanaeA' class='shottype'>早苗A - SanaeA</p>
+<h3 id='ExtraSanaeA' class='shottype'>早苗A - SanaeA</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
@@ -3901,7 +3901,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='ExtraSanaeB' class='shottype'>早苗B - SanaeB</p>
+<h3 id='ExtraSanaeB' class='shottype'>早苗B - SanaeB</h3>
 <table class='UFOt'>
     <tbody class='ranking'>
         <tr>
