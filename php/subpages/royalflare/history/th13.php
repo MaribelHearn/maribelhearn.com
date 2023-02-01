@@ -1,6 +1,6 @@
 <?php links($game, $diffs, $shots) ?>
 <h2 id='Easy'>Easy</h2>
-<p id='EasyReimu' class='shottype'>霊夢 - Reimu</p>
+<h3 id='EasyReimu' class='shottype'>霊夢 - Reimu</h3>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -293,7 +293,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasyMarisa' class='shottype'>魔理沙 - Marisa/p>
+<h3 id='EasyMarisa' class='shottype'>魔理沙 - Marisa/p>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -450,7 +450,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasySanae' class='shottype'>早苗 - Sanae</p>
+<h3 id='EasySanae' class='shottype'>早苗 - Sanae</h3>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -615,7 +615,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasyYoumu' class='shottype'>妖夢 - Youmu</p>
+<h3 id='EasyYoumu' class='shottype'>妖夢 - Youmu</h3>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -789,7 +789,7 @@
     </tbody>
 </table>
 <h2 id='Normal'>Normal</h2>
-<p id='NormalReimu' class='shottype'>霊夢 - Reimu</p>
+<h3 id='NormalReimu' class='shottype'>霊夢 - Reimu</h3>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -1026,7 +1026,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalMarisa' class='shottype'>魔理沙 - Marisa/p>
+<h3 id='NormalMarisa' class='shottype'>魔理沙 - Marisa/p>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -1183,7 +1183,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalSanae' class='shottype'>早苗 - Sanae</p>
+<h3 id='NormalSanae' class='shottype'>早苗 - Sanae</h3>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -1340,7 +1340,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalYoumu' class='shottype'>妖夢 - Youmu</p>
+<h3 id='NormalYoumu' class='shottype'>妖夢 - Youmu</h3>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -1522,7 +1522,7 @@
     </tbody>
 </table>
 <h2 id='Hard'>Hard</h2>
-<p id='HardReimu' class='shottype'>霊夢 - Reimu</p>
+<h3 id='HardReimu' class='shottype'>霊夢 - Reimu</h3>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -1863,7 +1863,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardMarisa' class='shottype'>魔理沙 - Marisa/p>
+<h3 id='HardMarisa' class='shottype'>魔理沙 - Marisa/p>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -2076,7 +2076,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardSanae' class='shottype'>早苗 - Sanae</p>
+<h3 id='HardSanae' class='shottype'>早苗 - Sanae</h3>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -2305,7 +2305,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardYoumu' class='shottype'>妖夢 - Youmu</p>
+<h3 id='HardYoumu' class='shottype'>妖夢 - Youmu</h3>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -2519,7 +2519,7 @@
     </tbody>
 </table>
 <h2 id='Lunatic'>Lunatic</h2>
-<p id='LunaticReimu' class='shottype'>霊夢 - Reimu</p>
+<h3 id='LunaticReimu' class='shottype'>霊夢 - Reimu</h3>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -2676,7 +2676,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticMarisa' class='shottype'>魔理沙 - Marisa/p>
+<h3 id='LunaticMarisa' class='shottype'>魔理沙 - Marisa/p>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -2801,7 +2801,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticSanae' class='shottype'>早苗 - Sanae</p>
+<h3 id='LunaticSanae' class='shottype'>早苗 - Sanae</h3>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -3014,7 +3014,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticYoumu' class='shottype'>妖夢 - Youmu</p>
+<h3 id='LunaticYoumu' class='shottype'>妖夢 - Youmu</h3>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -3236,7 +3236,7 @@
     </tbody>
 </table>
 <h2 id='Extra'>Extra</h2>
-<p id='ExtraReimu' class='shottype'>霊夢 - Reimu</p>
+<h3 id='ExtraReimu' class='shottype'>霊夢 - Reimu</h3>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -3369,7 +3369,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='ExtraMarisa' class='shottype'>魔理沙 - Marisa/p>
+<h3 id='ExtraMarisa' class='shottype'>魔理沙 - Marisa/p>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -3542,7 +3542,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='ExtraSanae' class='shottype'>早苗 - Sanae</p>
+<h3 id='ExtraSanae' class='shottype'>早苗 - Sanae</h3>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -3707,7 +3707,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='ExtraYoumu' class='shottype'>妖夢 - Youmu</p>
+<h3 id='ExtraYoumu' class='shottype'>妖夢 - Youmu</h3>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>

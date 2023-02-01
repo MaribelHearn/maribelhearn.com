@@ -1,6 +1,6 @@
 <?php links($game, $diffs, $shots) ?>
 <h2 id='Easy'>Easy</h2>
-<p id='EasyA-1' class='shottype'>A-1</p>
+<h3 id='EasyA-1' class='shottype'>A-1</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -125,7 +125,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasyA-2' class='shottype'>A-2</p>
+<h3 id='EasyA-2' class='shottype'>A-2</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -298,7 +298,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasyB-1' class='shottype'>B-1</p>
+<h3 id='EasyB-1' class='shottype'>B-1</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -439,7 +439,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasyB-2' class='shottype'>B-2</p>
+<h3 id='EasyB-2' class='shottype'>B-2</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -580,7 +580,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasyC-1' class='shottype'>C-1</p>
+<h3 id='EasyC-1' class='shottype'>C-1</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -769,7 +769,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasyC-2' class='shottype'>C-2</p>
+<h3 id='EasyC-2' class='shottype'>C-2</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -951,7 +951,7 @@
     </tbody>
 </table>
 <h2 id='Normal'>Normal</h2>
-<p id='NormalA-1' class='shottype'>A-1</p>
+<h3 id='NormalA-1' class='shottype'>A-1</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -1140,7 +1140,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalA-2' class='shottype'>A-2</p>
+<h3 id='NormalA-2' class='shottype'>A-2</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -1409,7 +1409,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalB-1' class='shottype'>B-1</p>
+<h3 id='NormalB-1' class='shottype'>B-1</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -1590,7 +1590,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalB-2' class='shottype'>B-2</p>
+<h3 id='NormalB-2' class='shottype'>B-2</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -1747,7 +1747,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalC-1' class='shottype'>C-1</p>
+<h3 id='NormalC-1' class='shottype'>C-1</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -1928,7 +1928,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalC-2' class='shottype'>C-2</p>
+<h3 id='NormalC-2' class='shottype'>C-2</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -2094,7 +2094,7 @@
     </tbody>
 </table>
 <h2 id='Hard'>Hard</h2>
-<p id='HardA-1' class='shottype'>A-1</p>
+<h3 id='HardA-1' class='shottype'>A-1</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -2227,7 +2227,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardA-2' class='shottype'>A-2</p>
+<h3 id='HardA-2' class='shottype'>A-2</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -2384,7 +2384,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardB-1' class='shottype'>B-1</p>
+<h3 id='HardB-1' class='shottype'>B-1</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -2533,7 +2533,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardB-2' class='shottype'>B-2</p>
+<h3 id='HardB-2' class='shottype'>B-2</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -2666,7 +2666,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardC-1' class='shottype'>C-1</p>
+<h3 id='HardC-1' class='shottype'>C-1</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -2799,7 +2799,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardC-2' class='shottype'>C-2</p>
+<h3 id='HardC-2' class='shottype'>C-2</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -2949,7 +2949,7 @@
     </tbody>
 </table>
 <h2 id='Lunatic'>Lunatic</h2>
-<p id='LunaticA-1' class='shottype'>A-1</p>
+<h3 id='LunaticA-1' class='shottype'>A-1</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -3202,7 +3202,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticA-2' class='shottype'>A-2</p>
+<h3 id='LunaticA-2' class='shottype'>A-2</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -3399,7 +3399,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticB-1' class='shottype'>B-1</p>
+<h3 id='LunaticB-1' class='shottype'>B-1</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -3588,7 +3588,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticB-2' class='shottype'>B-2</p>
+<h3 id='LunaticB-2' class='shottype'>B-2</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -3745,7 +3745,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticC-1' class='shottype'>C-1</p>
+<h3 id='LunaticC-1' class='shottype'>C-1</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>
@@ -3886,7 +3886,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticC-2' class='shottype'>C-2</p>
+<h3 id='LunaticC-2' class='shottype'>C-2</h3>
 <table class='GFWt'>
     <tbody class='ranking'>
         <tr>

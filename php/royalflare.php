@@ -305,7 +305,7 @@ $diffs = Array('Easy', 'Normal', 'Hard', 'Lunatic', 'Extra', 'Phantasm');
                 $tmp = preg_split('/\//', $subpage);
                 if (($tmp[0] == 'history' || $tmp[0] == 'standings') && !empty(game_to_abbr($tmp[1]))) {
                     include_once 'php/subpages/royalflare/' . $tmp[0] . '/' . $tmp[1] . '.' . ($tmp[0] == 'standings' ? 'html' : 'php');
-                    echo '<p><strong><a href="/royalflare/' . $tmp[1] . '">' . $tmp[1] . 'に帰る - Back to ' . $tmp[1] . '</a></strong></p>';
+                    echo '<footer><strong><a href="/royalflare/' . $tmp[1] . '">' . $tmp[1] . 'に帰る - Back to ' . $tmp[1] . '</a></strong></footer>';
                 } else {
                     $exists = false;
                     echo '<p>No such page.</p>';

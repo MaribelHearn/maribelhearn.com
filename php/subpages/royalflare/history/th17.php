@@ -1,6 +1,6 @@
 <?php links($game, $diffs, $shots) ?>
 <h2 id='Easy'>Easy</h2>
-<p id='EasyReimuWolf' class='shottype'>霊夢W - ReimuWolf</p>
+<h3 id='EasyReimuWolf' class='shottype'>霊夢W - ReimuWolf</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -93,7 +93,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasyReimuOtter' class='shottype'>霊夢O - ReimuOtter</p>
+<h3 id='EasyReimuOtter' class='shottype'>霊夢O - ReimuOtter</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -242,7 +242,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasyReimuEagle' class='shottype'>霊夢E - ReimuEagle</p>
+<h3 id='EasyReimuEagle' class='shottype'>霊夢E - ReimuEagle</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -319,7 +319,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasyMarisaWolf' class='shottype'>魔理沙W - MarisaWolf</p>
+<h3 id='EasyMarisaWolf' class='shottype'>魔理沙W - MarisaWolf</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -396,7 +396,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasyMarisaOtter' class='shottype'>魔理沙O - MarisaOtter</p>
+<h3 id='EasyMarisaOtter' class='shottype'>魔理沙O - MarisaOtter</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -529,7 +529,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasyMarisaEagle' class='shottype'>魔理沙E - MarisaEagle</p>
+<h3 id='EasyMarisaEagle' class='shottype'>魔理沙E - MarisaEagle</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -590,7 +590,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasyYoumuWolf' class='shottype'>妖夢W - YoumuWolf</p>
+<h3 id='EasyYoumuWolf' class='shottype'>妖夢W - YoumuWolf</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -651,7 +651,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasyYoumuOtter' class='shottype'>妖夢O - YoumuOtter</p>
+<h3 id='EasyYoumuOtter' class='shottype'>妖夢O - YoumuOtter</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -744,7 +744,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='EasyYoumuEagle' class='shottype'>妖夢E - YoumuEagle</p>
+<h3 id='EasyYoumuEagle' class='shottype'>妖夢E - YoumuEagle</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -814,7 +814,7 @@
     </tbody>
 </table>
 <h2 id='Normal'>Normal</h2>
-<p id='NormalReimuWolf' class='shottype'>霊夢W - ReimuWolf</p>
+<h3 id='NormalReimuWolf' class='shottype'>霊夢W - ReimuWolf</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -875,7 +875,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalReimuOtter' class='shottype'>霊夢O - ReimuOtter</p>
+<h3 id='NormalReimuOtter' class='shottype'>霊夢O - ReimuOtter</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -992,7 +992,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalReimuEagle' class='shottype'>霊夢E - ReimuEagle</p>
+<h3 id='NormalReimuEagle' class='shottype'>霊夢E - ReimuEagle</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -1045,7 +1045,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalMarisaWolf' class='shottype'>魔理沙W - MarisaWolf</p>
+<h3 id='NormalMarisaWolf' class='shottype'>魔理沙W - MarisaWolf</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -1138,7 +1138,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalMarisaOtter' class='shottype'>魔理沙O - MarisaOtter</p>
+<h3 id='NormalMarisaOtter' class='shottype'>魔理沙O - MarisaOtter</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -1287,7 +1287,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalMarisaEagle' class='shottype'>魔理沙E - MarisaEagle</p>
+<h3 id='NormalMarisaEagle' class='shottype'>魔理沙E - MarisaEagle</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -1380,7 +1380,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalYoumuWolf' class='shottype'>妖夢W - YoumuWolf</p>
+<h3 id='NormalYoumuWolf' class='shottype'>妖夢W - YoumuWolf</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -1465,7 +1465,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalYoumuOtter' class='shottype'>妖夢O - YoumuOtter</p>
+<h3 id='NormalYoumuOtter' class='shottype'>妖夢O - YoumuOtter</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -1662,7 +1662,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='NormalYoumuEagle' class='shottype'>妖夢E - YoumuEagle</p>
+<h3 id='NormalYoumuEagle' class='shottype'>妖夢E - YoumuEagle</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -1756,7 +1756,7 @@
     </tbody>
 </table>
 <h2 id='Hard'>Hard</h2>
-<p id='HardReimuWolf' class='shottype'>霊夢W - ReimuWolf</p>
+<h3 id='HardReimuWolf' class='shottype'>霊夢W - ReimuWolf</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -1817,7 +1817,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardReimuOtter' class='shottype'>霊夢O - ReimuOtter</p>
+<h3 id='HardReimuOtter' class='shottype'>霊夢O - ReimuOtter</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -1886,7 +1886,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardReimuEagle' class='shottype'>霊夢E - ReimuEagle</p>
+<h3 id='HardReimuEagle' class='shottype'>霊夢E - ReimuEagle</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -1931,7 +1931,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardMarisaWolf' class='shottype'>魔理沙W - MarisaWolf</p>
+<h3 id='HardMarisaWolf' class='shottype'>魔理沙W - MarisaWolf</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -1992,7 +1992,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardMarisaOtter' class='shottype'>魔理沙O - MarisaOtter</p>
+<h3 id='HardMarisaOtter' class='shottype'>魔理沙O - MarisaOtter</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -2133,7 +2133,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardMarisaEagle' class='shottype'>魔理沙E - MarisaEagle</p>
+<h3 id='HardMarisaEagle' class='shottype'>魔理沙E - MarisaEagle</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -2194,7 +2194,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardYoumuWolf' class='shottype'>妖夢W - YoumuWolf</p>
+<h3 id='HardYoumuWolf' class='shottype'>妖夢W - YoumuWolf</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -2255,7 +2255,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardYoumuOtter' class='shottype'>妖夢O - YoumuOtter</p>
+<h3 id='HardYoumuOtter' class='shottype'>妖夢O - YoumuOtter</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -2332,7 +2332,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='HardYoumuEagle' class='shottype'>妖夢E - YoumuEagle</p>
+<h3 id='HardYoumuEagle' class='shottype'>妖夢E - YoumuEagle</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -2386,7 +2386,7 @@
     </tbody>
 </table>
 <h2 id='Lunatic'>Lunatic</h2>
-<p id='LunaticReimuWolf' class='shottype'>霊夢W - ReimuWolf</p>
+<h3 id='LunaticReimuWolf' class='shottype'>霊夢W - ReimuWolf</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -2455,7 +2455,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticReimuOtter' class='shottype'>霊夢O - ReimuOtter</p>
+<h3 id='LunaticReimuOtter' class='shottype'>霊夢O - ReimuOtter</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -2524,7 +2524,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticReimuEagle' class='shottype'>霊夢E - ReimuEagle</p>
+<h3 id='LunaticReimuEagle' class='shottype'>霊夢E - ReimuEagle</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -2593,7 +2593,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticMarisaWolf' class='shottype'>魔理沙W - MarisaWolf</p>
+<h3 id='LunaticMarisaWolf' class='shottype'>魔理沙W - MarisaWolf</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -2662,7 +2662,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticMarisaOtter' class='shottype'>魔理沙O - MarisaOtter</p>
+<h3 id='LunaticMarisaOtter' class='shottype'>魔理沙O - MarisaOtter</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -2723,7 +2723,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticMarisaEagle' class='shottype'>魔理沙E - MarisaEagle</p>
+<h3 id='LunaticMarisaEagle' class='shottype'>魔理沙E - MarisaEagle</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -2784,7 +2784,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticYoumuWolf' class='shottype'>妖夢W - YoumuWolf</p>
+<h3 id='LunaticYoumuWolf' class='shottype'>妖夢W - YoumuWolf</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -2877,7 +2877,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticYoumuOtter' class='shottype'>妖夢O - YoumuOtter</p>
+<h3 id='LunaticYoumuOtter' class='shottype'>妖夢O - YoumuOtter</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -3018,7 +3018,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='LunaticYoumuEagle' class='shottype'>妖夢E - YoumuEagle</p>
+<h3 id='LunaticYoumuEagle' class='shottype'>妖夢E - YoumuEagle</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -3096,7 +3096,7 @@
     </tbody>
 </table>
 <h2 id='Extra'>Extra</h2>
-<p id='ExtraReimuWolf' class='shottype'>霊夢W - ReimuWolf</p>
+<h3 id='ExtraReimuWolf' class='shottype'>霊夢W - ReimuWolf</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -3181,7 +3181,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='ExtraReimuOtter' class='shottype'>霊夢O - ReimuOtter</p>
+<h3 id='ExtraReimuOtter' class='shottype'>霊夢O - ReimuOtter</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -3226,7 +3226,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='ExtraReimuEagle' class='shottype'>霊夢E - ReimuEagle</p>
+<h3 id='ExtraReimuEagle' class='shottype'>霊夢E - ReimuEagle</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -3287,7 +3287,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='ExtraMarisaWolf' class='shottype'>魔理沙W - MarisaWolf</p>
+<h3 id='ExtraMarisaWolf' class='shottype'>魔理沙W - MarisaWolf</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -3348,7 +3348,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='ExtraMarisaOtter' class='shottype'>魔理沙O - MarisaOtter</p>
+<h3 id='ExtraMarisaOtter' class='shottype'>魔理沙O - MarisaOtter</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -3449,7 +3449,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='ExtraMarisaEagle' class='shottype'>魔理沙E - MarisaEagle</p>
+<h3 id='ExtraMarisaEagle' class='shottype'>魔理沙E - MarisaEagle</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -3518,7 +3518,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='ExtraYoumuWolf' class='shottype'>妖夢W - YoumuWolf</p>
+<h3 id='ExtraYoumuWolf' class='shottype'>妖夢W - YoumuWolf</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -3571,7 +3571,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='ExtraYoumuOtter' class='shottype'>妖夢O - YoumuOtter</p>
+<h3 id='ExtraYoumuOtter' class='shottype'>妖夢O - YoumuOtter</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
@@ -3688,7 +3688,7 @@
 	</tr>
     </tbody>
 </table>
-<p id='ExtraYoumuEagle' class='shottype'>妖夢E - YoumuEagle</p>
+<h3 id='ExtraYoumuEagle' class='shottype'>妖夢E - YoumuEagle</h3>
 <table class='WBaWCt'>
     <tbody class='ranking'>
         <tr>
