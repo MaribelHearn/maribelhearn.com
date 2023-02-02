@@ -76,6 +76,7 @@
                         '<p class="center">You are visiting this page using <strong id="browser"></strong>.</p>';
                     }
                 ?>
+                <p class='center'>PHP Version: <?php echo phpversion() ?></p>
                 <section>
                     <input id='setcookie' type='button' value='Set Blocking Cookie'>
                 </section>
