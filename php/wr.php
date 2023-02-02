@@ -1,5 +1,4 @@
 <?php
-include_once 'assets/shared/http.php';
 $MAX_SCORE = 9999999990;
 $RECENT_LIMIT = 10;
 if (file_exists('assets/shared/json/wrlist.json')) {
@@ -61,7 +60,9 @@ function date_tl(string $date, string $lang) {
     $day = str_pad($tmp[0], 2, '0', STR_PAD_LEFT);
     $month = str_pad($tmp[1], 2, '0', STR_PAD_LEFT);
     $year = $tmp[2];
-    if ($lang == 'en_US') {
+    if ($lang == 'raw') { // raw YMD; used for sorting
+        return $year . $month . $day;
+    } else if ($lang == 'en_US') {
         return $month . '/' . $day . '/' . $year;
     } else if ($lang == 'ja_JP' || $lang == 'zh_CN') {
         return $year . '年' . $month . '月' . $day . '日';
@@ -243,7 +244,7 @@ foreach ($wr as $game => $value) {
                     <th class='general_header'><?php echo _('Player') ?></th>
                     <th class='general_header'><?php echo _('Difficulty') ?></th>
                     <th class='general_header'><?php echo _('Shottype') ?></th>
-                    <th class='general_header date no-sort'><?php echo _('Date') ?></th>
+                    <th class='general_header date'><?php echo _('Date') ?></th>
                     <th class='general_header'><?php echo _('Replay') ?></th>
                 </tr>
             </thead>
@@ -261,7 +262,7 @@ foreach ($wr as $game => $value) {
                     echo '<td id="' . $game . 'overall1">' . ($overall[$num] == 0 ? '-' : $overall_player[$num]) . '</td>';
 					echo '<td id="' . $game . 'overall2">' . ($overall[$num] == 0 ? '-' : $overall_diff[$num]) . '</td>';
 					echo '<td id="' . $game . 'overall3">' . ($overall[$num] == 0 ? '-' : _($overall_shottype[$num])) . '</td>';
-					echo '<td id="' . $game . 'overall4" class="datestring">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $lang)) . '</td>';
+					echo '<td id="' . $game . 'overall4" class="datestring" data-sort="' . date_tl($overall_date[$num], 'raw') . '">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $lang)) . '</td>';
                     if (isset($_COOKIE['prefer_video']) && !empty($overall_video[$num])) {
 						$replay = '<a href="' . $overall_video[$num] . '" target="_blank">Video link</a>';
 					} else if (file_exists(replay_path($game, $overall_diff[$num], $overall_shottype[$num]))) {
@@ -541,9 +542,13 @@ foreach ($wr as $game => $value) {
                         $replay = '-';
                     }
                     $space = (has_space($lang) ? ' ' : '');
-                    echo '<tr><td class="' . $obj->game . 'p">' . _($obj->game) . $space . $obj->diff . $space . _($obj->shot) . '</td>' .
-                    '<td data-sort="' . $obj->score . '">' . number_format($obj->score, 0, '.', ',') . '</td><td>' . $obj->player . '</td>' .
-                    '<td>' . $replay . '</td><td class="datestring">' . date_tl($obj->date, $lang) . '</td></tr>';
+                    echo '<tr>' .
+                    '<td class="' . $obj->game . 'p">' . _($obj->game) . $space . $obj->diff . $space . _($obj->shot) . '</td>' .
+                    '<td data-sort="' . $obj->score . '">' . number_format($obj->score, 0, '.', ',') . '</td>' .
+                    '<td>' . $obj->player . '</td>' .
+                    '<td>' . $replay . '</td>' .
+                    '<td class="datestring" data-sort="' . date_tl($obj->date, 'raw') . '">' . date_tl($obj->date, $lang) . '</td>' .
+                    '</tr>';
                 }
             ?></tbody>
         </table>
