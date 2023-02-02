@@ -23,7 +23,7 @@ a:visited:not(.replay):not(.i):not(.dropdown_button) {
 #hy {
     background-position: -632px 0px;
 }
-.contents, .pofv_chara_art, table:not(.noborders), table:not(.noborders) tr, table:not(.noborders) th, table:not(.noborders) td:not(.noborders) {
+.contents, #contents_new, .pofv_chara_art, table:not(.noborders), table:not(.noborders) tr, table:not(.noborders) th, table:not(.noborders) td:not(.noborders) {
     border: 1px solid #808080;
 }
 .Winter, .FinalA, .FinalB, .in_route {
