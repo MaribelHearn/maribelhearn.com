@@ -231,7 +231,7 @@
     <p><a href='http://www.mediafire.com/download/vd08pz9ogjbhq8g/th07b.rar' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong><?php echo _('WBaWC Boss Rush by ') ?>Plus</strong></p>
     <p><?php echo _('A boss rush patch for WBaWC.') ?></p>
-	<a class='dead' href='https://mega.nz/#!e3wwQADS!8I4Rcr9wF-B-hV3b9wbEjGOOI9zbbz8mKj8oY86tWhY' target='_blank'><?php echo _('Download') ?></a></p>
+	<p><a class='dead' href='https://mega.nz/#!e3wwQADS!8I4Rcr9wF-B-hV3b9wbEjGOOI9zbbz8mKj8oY86tWhY' target='_blank'><?php echo _('Download') ?></a></p>
     <!-- Specific Pattern Practice -->
     <hr>
     <h2 id='specific'><?php echo _('Specific Pattern Practice') ?></h2>
@@ -272,26 +272,26 @@
 	<p><?php echo _('Replaces ReimuC with Reisen in MoF.') ?></p>
 	<p><a href='https://mega.nz/#!SXYHzIAL!ybiykqvDKGJ-WB99fd1NzsXWh_F5l9N0VZN6IVyvZ8o' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong><?php echo _('UFO Tsubakura mod by ') ?><a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th12tsuba</a></p>
+	<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th12tsuba</a></p>
 	<p><?php
 		echo _('Replaces both Reimu shottypes in UFO with Tsubakura shottypes, a character from the ' .
 		'Len\'en series. Also changes the dialogues and endings.');
 	?></p>
 	<p><a href='https://mega.nz/#!10JzTKBC!GLi2MJZADsRPqdn1b9knvLfJknXepM69vHJ01-XjJ7s' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong><?php echo _('DDC Sanae by ') ?><a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th14sanae</a></p>
+	<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th14sanae</a></p>
 	<p><?php
 		echo _('Replaces ReimuB with Sanae in DDC.');
 	?></p>
 	<p><a href='https://mega.nz/#!oh4lBA4C!Fq7UV5LfQulUaCAubGRk_LMLOeR4nfE9CdMa0OQZryA' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong><?php echo _('HSiFS Sanae by ') ?><a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th16sanae</a></p>
+	<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th16sanae</a></p>
 	<p><?php
 		echo _('Replaces Marisa with Sanae in HSiFS.');
 	?></p>
 	<p><a href='https://mega.nz/#!lsBQxSwB!X-YB1uwIN1u8CRYjU-2HZnjhb7zrFE5WvQFZru-CXr8' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong><?php echo _('LoLK Sakuya by ') ?><a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th15sakuya</a></p>
+	<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th15sakuya</a></p>
 	<p><?php
 		echo _('Replaces Reisen with Sakuya in LoLK.');
 	?></p>
@@ -329,7 +329,7 @@
         <a href='http://www.mediafire.com/file/usbud0rr385z2nn/th14.dat' target='_blank'>HarDDC</a></p>
     </div>
 	<p><strong><?php echo _('RNG patches by ') ?><a href='https://twitter.com/dai_karasu' target='_blank'>Daikarasu</a></strong>
-	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> RNG</a></p>
+	<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> RNG</a></p>
 	<p><?php
 		echo _('A collection of modified <span class="code">.dat</span> files that randomise the patterns in the game.');
 	?></p>
@@ -348,14 +348,14 @@
 	?></p>
     <p><a href='https://mega.nz/#!LxNAQbyB!a2qOOOgYQ8-NwTWvLSgcykBXsEmhgy6IDpdEdxlG-90' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong>"LoDDK" by <a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> LoDDK</a></p>
+	<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> LoDDK</a></p>
 	<p><?php
 		echo _('Combines LoLK with DDC, making each boss fight a dual boss fight against the bosses of both games.' .
 		'It removes all stage portions, effectively making it a boss rush, and also combines the HUDs of both games.');
 	?></p>
 	<p><a href='https://priw8.github.io/#s=patches/loddk' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong><?php echo _('OC Patches by ') ?><a href='https://www.twitch.tv/bravidunno'>Bravi</a></strong>
-	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> BraviOCOkina</a></p>
+	<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> BraviOCOkina</a></p>
 	<p><?php
 		echo _('Remastered version of Stage 6 and harder version of Extra in HSiFS, including an original character ' .
 		'replacing Okina and alternate story along with pattern, bullet type, stage music and graphical changes. ' .
@@ -502,7 +502,7 @@
 	<p><strong><?php
 		echo _('HSiFS UFO mod by ');
 	?><a href='https://twitter.com/Priweejt' target='_blank'>Priw8</a></strong>
-	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th16ufos</a></p>
+	<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> th16ufos</a></p>
 	<p><?php
 		echo _('Adds UFOs to HSiFS.');
 	?></p>
@@ -510,7 +510,7 @@
 	<p><strong><?php
 		echo _('WBaWC score cap mod by ');
 	?><a href='https://www.youtube.com/channel/UChyVpooBi31k3xPbWYsoq3w' target='_blank'>32th System</a></strong>
-	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> score_uncap</a></p>
+	<a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Servers' target='_blank'><span class='icon thcrap_icon'></span> score_uncap</a></p>
 	<p><?php
 		echo _('Allows the in-game score counter to exceed 9,999,999,990 points.');
 	?></p>
