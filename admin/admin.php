@@ -101,7 +101,7 @@
                                 }
                             }
                         }
-                        echo '<h2>Countries</h2><table id="countries" class="noborders"><tr><th>Flag</th><th>Country</th><th>Hits</th><th>Bar</th></tr>';
+                        echo '<h2>Countries</h2><table id="countries" class="sortable noborders"><thead><tr><th class="no-sort">Flag</th><th>Country</th><th>Hits</th><th class="no-sort">Bar</th></tr></thead><tbody>';
                         $cache = new Cache();
                         foreach ($ip_count as $ip => $count) {
                             $entries = $cache->query('SELECT * FROM Cache WHERE IP="' .  $ip . '"');
@@ -139,7 +139,7 @@
                             }
                             $total += 1;
                         }
-                        echo '</table><h2>Errors</h2><table id="errors" class="noborders sortable"><thead><tr><th>Code</th><th>Attempted URL</th><th>Count</th></tr></thead><tbody>';
+                        echo '</tbody></table><h2>Errors</h2><table id="errors" class="noborders sortable"><thead><tr><th>Code</th><th>Attempted URL</th><th>Count</th></tr></thead><tbody>';
                         foreach ($stats as $page => $obj) {
                             if (strpos($page, 'error') === false) {
                                 continue;
