@@ -48,9 +48,6 @@ input[type=button] {
 .border p {
     margin: 4px;
 }
-.wide {
-    padding: 5px;
-}
 .tooltip {
     visibility: hidden;
     background-color: black;

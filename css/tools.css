@@ -23,11 +23,8 @@ hr {
 .dead {
     text-decoration: line-through;
 }
-.wide-top {
-    margin-top: 10px;
-}
 .wide-bottom {
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 .tooltip {
     visibility: hidden;

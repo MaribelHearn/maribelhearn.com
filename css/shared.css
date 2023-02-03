@@ -88,6 +88,9 @@ img {
 .overflow {
     overflow-x: auto;
 }
+.wide-top {
+    margin-top: 25px;
+}
 .dropdowns {
     margin-left: auto;
     margin-right: auto;
