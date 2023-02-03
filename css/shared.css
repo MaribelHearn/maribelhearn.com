@@ -31,6 +31,7 @@ figure, section, table, #topbar {
 footer {
     text-align: center;
     padding-bottom: 10px;
+    margin-top: 10px;
 }
 div:not(.dropdown):not(.dropdown_content):not(.nav_right):not(.dark_bg) {
     background-color: #fff;
