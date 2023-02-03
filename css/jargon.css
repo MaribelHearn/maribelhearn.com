@@ -1,3 +1,13 @@
+tr:not(:first-child):not(:last-child) td {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+tr:first-child td {
+    padding-bottom: 3px;
+}
+tr:last-child td {
+    padding-top: 3px;
+}
 .jargon {
     width: 150px;
 }
