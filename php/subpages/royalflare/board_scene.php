@@ -16,7 +16,7 @@
         for ($scene = 1; $scene <= $scene_count; $scene++) {
             $table = '';
             $count = 0;
-            echo '<p id="' . $stage . '-' . $scene . '" class="wide shottype">' . ($game != 'VD' ? 'Scene ' : '') . format_stage($game, $stage) . '-' . $scene . '</p>';
+            echo '<h3 id="' . $stage . '-' . $scene . '" class="shottype">' . ($game != 'VD' ? 'Scene ' : '') . format_stage($game, $stage) . '-' . $scene . '</h3>';
             $table .= '<div class="overflow"><table id="' . $stage . '-' . $scene . 't" class="' . $game . 't sortable">' .
             '<thead><tr><th class="head">#</th><th id="' . $stage . '-' . $scene . 'score">スコア<br>Score</th><th>処理落率<br>Slowdown</th><th><span class="nowrap">撮影対象</span><br>Scene</th>' .
             '<th>プレイ日付<br>Play Date</th><th>名前<br>Player</th><th>コメント<br>Comment</th><th>リプレイ<br>Replay</th></tr></thead><tbody>';
@@ -33,7 +33,7 @@
             if ($count > 0) {
                 echo $table;
             } else {
-                echo '<p class="nodata">登録データがありません。<br>There is no registration data.</p>';
+                echo '<p class="center nodata">登録データがありません。<br>There is no registration data.</p>';
             }
         }
     }

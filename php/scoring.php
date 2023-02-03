@@ -22,7 +22,7 @@ function no_extra(string $game) {
 			foreach ($games as $key => $game) {
 				echo '<p><a href="#' . $game . '">' . full_name($game) . '</a></p>';
 				if ($game == 'MS') {
-					echo '<p class="wide"> </p>';
+					echo '<p class="wide-top"> </p>';
 				}
 			}
 		?>

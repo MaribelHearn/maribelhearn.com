@@ -57,9 +57,6 @@ a.scene {
 .break {
     word-break: break-all;
 }
-.wide {
-    margin-top: 20px;
-}
 .nodata {
     margin-bottom: 20px;
 }
