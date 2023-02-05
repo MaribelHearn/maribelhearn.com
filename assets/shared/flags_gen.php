@@ -2,7 +2,7 @@
 $row_size = 16;
 $offset = -16;
 $flags = array('Afghanistan', 'Aland-Islands', 'Albania', 'Algeria', 'American-Samoa', 'Andorra', 'Angola', 'Anguilla', 'Antigua-and-Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan',
-'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnian', 'Botswana', 'Bouvet-Island', 'Brazil', 'British-Indian-Ocean-Territory',
+'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia-and-Herzegovina', 'Botswana', 'Bouvet-Island', 'Brazil', 'British-Indian-Ocean-Territory',
 'British-Virgin-Islands', 'Brunei', 'Bulgaria', 'Burkina-Faso', 'Burundi', 'Cambodia', 'Cameroon', 'Canada', 'Cape-Verde', 'Cayman-Islands', 'Central-African-Republic', 'Chad', 'Chile', 'China', 'Christmas-Island',
 'Cocos-Islands', 'Colombia', 'Comoros', 'Congo-Kinshasa', 'Republic-of-the-Congo', 'Cook-Islands', 'Costa-Rica', 'Croatia', 'Cuba', 'Cyprus', 'Czechia', 'Denmark', 'Djibouti', 'Dominica', 'Dominican-Republic', 'East-Timor',
 'Ecuador', 'Egypt', 'El-Salvador', 'Equatorial-Guinea', 'Eritrea', 'Estonia', 'Ethiopia', 'Falkland-Islands', 'Faroe-Islands', 'Fiji', 'Finland', 'France', 'French-Polynesia', 'French-Southern-Territories',
