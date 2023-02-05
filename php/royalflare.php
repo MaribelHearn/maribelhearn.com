@@ -237,14 +237,14 @@ function tl_term(string $term, string $lang) {
 
 if (!empty($_SESSION['subpage'])) {
     $subpage = $_SESSION['subpage'];
-    if (substr($subpage, 0, 2) == 'th') {
+    if (file_exists('assets/games/royalflare/json/' . $subpage . '.json')) {
         if ($subpage == 'th08a') {
             $subpage = 'th08';
         }
         $game = game_to_abbr($subpage);
         $board = get_board($subpage);
         $shots = get_shots($game);
-    } else if (strpos($subpage, 'history') !== false) {
+    } else if (strpos($subpage, 'history') !== false && strpos($subpage, '/') !== false) {
         $game = game_to_abbr(preg_split('/\//', $subpage)[1]);
         $shots = get_shots($game);
     }
@@ -308,7 +308,7 @@ $diffs = Array('Easy', 'Normal', 'Hard', 'Lunatic', 'Extra', 'Phantasm');
                     echo '<footer><strong><a href="/royalflare/' . $tmp[1] . '">' . $tmp[1] . 'に帰る - Back to ' . $tmp[1] . '</a></strong></footer>';
                 } else {
                     $exists = false;
-                    echo '<p>No such page.</p>';
+                    echo '<p class="center">No such page.</p>';
                 }
             } else {
                 if ($subpage == 'search') {
@@ -328,7 +328,7 @@ $diffs = Array('Easy', 'Normal', 'Hard', 'Lunatic', 'Extra', 'Phantasm');
                         include_once 'php/subpages/royalflare/' . $subpage . '.php';
                     } else {
                         $exists = false;
-                        echo '<p>No such page.</p>';
+                        echo '<p class="center">No such page.</p>';
                     }
                 }
             }

@@ -81,27 +81,29 @@
     function results(string $player, string $game, string $diff, string $shot, string $comment, bool $gamecol) {
         global $lang, $is_mobile;
         $table = '';
-        $board = get_board($game);
-        foreach ($board as $key => $entry) {
-            if (check_conditions($entry, $player, $game, $diff, $shot, $comment)) {
-                if (!empty($entry['chara'])) {
-                    $tmp_shot = $entry['chara'];
-                } else if (!empty($entry['route'])) {
-                    $tmp_shot = $entry['route'];
-                } else {
-                    $tmp_shot = '-';
+        if (file_exists('assets/games/royalflare/json/' . $game . '.json')) {
+            $board = get_board($game);
+            foreach ($board as $key => $entry) {
+                if (check_conditions($entry, $player, $game, $diff, $shot, $comment)) {
+                    if (!empty($entry['chara'])) {
+                        $tmp_shot = $entry['chara'];
+                    } else if (!empty($entry['route'])) {
+                        $tmp_shot = $entry['route'];
+                    } else {
+                        $tmp_shot = '-';
+                    }
+                    if ($game == 'th095' || $game == 'th125' || $game == 'th143' || $game == 'th165') {
+                        $tmp_diff = (empty($entry['stage']) ? '-' : $entry['stage']);
+                    } else {
+                        $tmp_diff = (empty($entry['difficulty']) ? '-' : $entry['difficulty']);
+                    }
+                    $slowdown_class = (check_slowdown($game, $entry['slowdown']) ? ' class="slowdown"' : '');
+                    $table .= '<tr><td></td>' . ($gamecol ? '<td class=' . game_to_abbr($game) . '>' . $game . '</td>' : '') .
+                    '<td data-sort="' . $entry['score'] . '">' . number_format($entry['score'], 0, '.', ',') . '</td><td' . $slowdown_class . '>' . $entry['slowdown'] . '</td>' .
+                    '<td>' . tl_shot($tmp_shot, $lang) . '</td><td>' . $tmp_diff . ($game == 'th08' && $tmp_diff != 'Extra' ? '<br>' . tl_term($entry['route'], $lang) : '') . '</td>' .
+                    '<td>' . $entry['date'] . '</td><td>' . $entry['player'] . '</td>' . ($is_mobile ? '' : '<td class="break">' . $entry['comment'] . '</td>') .
+                    '<td><a href="' . $entry['replay'] . '">' . (empty($entry['uploaded']) ? preg_split('/ /', $entry['date'])[0] : $entry['uploaded']) . '</a></td></tr>';
                 }
-                if ($game == 'th095' || $game == 'th125' || $game == 'th143' || $game == 'th165') {
-                    $tmp_diff = (empty($entry['stage']) ? '-' : $entry['stage']);
-                } else {
-                    $tmp_diff = (empty($entry['difficulty']) ? '-' : $entry['difficulty']);
-                }
-                $slowdown_class = (check_slowdown($game, $entry['slowdown']) ? ' class="slowdown"' : '');
-                $table .= '<tr><td></td>' . ($gamecol ? '<td class=' . game_to_abbr($game) . '>' . $game . '</td>' : '') .
-                '<td data-sort="' . $entry['score'] . '">' . number_format($entry['score'], 0, '.', ',') . '</td><td' . $slowdown_class . '>' . $entry['slowdown'] . '</td>' .
-                '<td>' . tl_shot($tmp_shot, $lang) . '</td><td>' . $tmp_diff . ($game == 'th08' && $tmp_diff != 'Extra' ? '<br>' . tl_term($entry['route'], $lang) : '') . '</td>' .
-                '<td>' . $entry['date'] . '</td><td>' . $entry['player'] . '</td>' . ($is_mobile ? '' : '<td class="break">' . $entry['comment'] . '</td>') .
-                '<td><a href="' . $entry['replay'] . '">' . (empty($entry['uploaded']) ? preg_split('/ /', $entry['date'])[0] : $entry['uploaded']) . '</a></td></tr>';
             }
         }
         return $table;
