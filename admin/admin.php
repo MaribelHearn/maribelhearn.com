@@ -132,7 +132,7 @@
                         foreach ($countries as $country => $count) {
                             echo '<tr>';
                             if ($country == 'Unknown' || $country == 'Local') {
-                                echo '<td></td><th>' . $country . '</th><td>' . $count . '</td><td><progress value="' . $count . '" max="' . $max . '"></progress></td></tr>';
+                                echo '<td></td><td><strong>' . $country . '</strong></td><td>' . $count . '</td><td><progress value="' . $count . '" max="' . $max . '"></progress></td></tr>';
                             } else {
                                 echo '<td><span id="' . format_country($country) . '" class="flag"></td><th>' . $country . '</th><td>' . $count .
                                 '</td><td><progress value="' . $count . '" max="' . $max . '"></progress></td></tr>';
