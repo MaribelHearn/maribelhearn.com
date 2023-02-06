@@ -293,7 +293,7 @@
 	</tr>
     </tbody>
 </table>
-<h3 id='EasyMarisa' class='shottype'>魔理沙 - Marisa/p>
+<h3 id='EasyMarisa' class='shottype'>魔理沙 - Marisa</h3>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -1026,7 +1026,7 @@
 	</tr>
     </tbody>
 </table>
-<h3 id='NormalMarisa' class='shottype'>魔理沙 - Marisa/p>
+<h3 id='NormalMarisa' class='shottype'>魔理沙 - Marisa</h3>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -1863,7 +1863,7 @@
 	</tr>
     </tbody>
 </table>
-<h3 id='HardMarisa' class='shottype'>魔理沙 - Marisa/p>
+<h3 id='HardMarisa' class='shottype'>魔理沙 - Marisa</h3>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -2676,7 +2676,7 @@
 	</tr>
     </tbody>
 </table>
-<h3 id='LunaticMarisa' class='shottype'>魔理沙 - Marisa/p>
+<h3 id='LunaticMarisa' class='shottype'>魔理沙 - Marisa</h3>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
@@ -3369,7 +3369,7 @@
 	</tr>
     </tbody>
 </table>
-<h3 id='ExtraMarisa' class='shottype'>魔理沙 - Marisa/p>
+<h3 id='ExtraMarisa' class='shottype'>魔理沙 - Marisa</h3>
 <table class='TDt'>
     <tbody class='ranking'>
         <tr>
