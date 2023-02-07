@@ -134,7 +134,7 @@
                             if ($country == 'Unknown' || $country == 'Local') {
                                 echo '<td></td><td><strong>' . $country . '</strong></td><td>' . $count . '</td><td><progress value="' . $count . '" max="' . $max . '"></progress></td></tr>';
                             } else {
-                                echo '<td><span id="' . format_country($country) . '" class="flag"></td><th>' . $country . '</th><td>' . $count .
+                                echo '<td><span id="' . format_country($country) . '" class="flag"></td><td><strong>' . $country . '</strong></td><td>' . $count .
                                 '</td><td><progress value="' . $count . '" max="' . $max . '"></progress></td></tr>';
                             }
                             $total += 1;
