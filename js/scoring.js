@@ -1,5 +1,6 @@
 /*global WRs scores getCookie deleteCookie*/
 let unsavedChanges = false;
+let precision = 0;
 
 function show(game) {
     document.getElementById(game).style.display = "block";
@@ -80,15 +81,6 @@ function save() {
     printMessage("Scores saved!");
 }
 
-function verifyConditions(precision) {
-    if (isNaN(precision) || precision < 0 || precision > 5) {
-        printError("Invalid precision; minimum is 0, maximum is 5.");
-        return false;
-    }
-
-    return true;
-}
-
 function parseScore(game, diff, shot) {
     return document.getElementById(game + diff + shot).value.replace(/,/g, "").replace(/\./g, "").replace(/ /g, "");
 }
@@ -142,12 +134,6 @@ function getRow(game, diff, shot, precision) {
 
 function calc() {
     clearMessages();
-    const precision = parseInt(document.getElementById("precision").value);
-
-    if (!verifyConditions(precision)) {
-        return;
-    }
-
     let averages = {};
     let scoreTable = "";
     let gameTable = "";
@@ -308,6 +294,19 @@ function scoreChanged() {
     unsavedChanges = true;
 }
 
+function precisionChanged() {
+    clearMessages();
+
+    if (!document.getElementById("precision").checkValidity()) {
+        document.getElementById("calc").removeEventListener("click", calc, false);
+        printError("Invalid precision; minimum is 0, maximum is 5.");
+        return;
+    }
+
+    document.getElementById("calc").addEventListener("click", calc, false);
+    precision = parseInt(this.value);
+}
+
 function setEventListeners() {
     document.getElementById("save").addEventListener("click", save, false);
     document.getElementById("calc").addEventListener("click", calc, false);
@@ -317,6 +316,11 @@ function setEventListeners() {
     const check = document.querySelectorAll(".check");
 
     for (const element of input) {
+        if (element.id == "precision") {
+            element.addEventListener("change", precisionChanged, false);
+            continue;
+        }
+
         element.addEventListener("change", scoreChanged, false);
     }
 
@@ -336,7 +340,7 @@ function init() {
     }
 
     if (localStorage.hasOwnProperty("precision")) {
-        document.getElementById("precision").value = Number(localStorage.getItem("precision"));
+        precision = document.getElementById("precision").value = parseInt(localStorage.getItem("precision"));
     }
 
     setEventListeners();

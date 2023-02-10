@@ -111,7 +111,7 @@ function no_extra(string $game) {
             </tr>
         </tfoot>
     </table>
-	<?php
+    <form><?php
 		foreach ($games as $key => $game) {
 			echo '<div id="' . $game . '"><table class="noborders"><caption><p><span id="' . $game . '_image" ' .
 			'class="cover ' . ($key < 5 ? ' cover98' : '') . '"></span> ' . full_name($game) .
@@ -154,7 +154,19 @@ function no_extra(string $game) {
 			}
 			echo '</table></div>';
 		}
-	?>
+	    ?>
+        <section>
+            <label for='precision'>Number of decimals:</label>
+            <input id='precision' type='number' value='0' min='0' max='5' step='1'>
+        </section>
+        <p id='message' class='center'></p>
+        <p id='error' class='center'></p>
+        <section>
+            <input id='save' type='button' value='Save'>
+            <input id='calc' type='button' value='Calculate'>
+            <input id='reset' type='button' value='Reset'>
+        </section>
+    </form>
 	<div id='top_list'>
         <table id='score_table' class='sortable result_table'>
             <thead>
@@ -181,17 +193,5 @@ function no_extra(string $game) {
             </tbody>
         </table>
     </div>
-    <br>
-    <section>
-        <label for='precision'>Number of decimals:</label>
-        <input id='precision' type='number' value='0' min='0' max='5' step='1'>
-    </section>
-    <p id='message' class='center'></p>
-    <p id='error' class='center'></p>
-	<section>
-        <input id='save' type='button' value='Save'>
-        <input id='calc' type='button' value='Calculate'>
-        <input id='reset' type='button' value='Reset'>
-    </section>
     <footer><strong><a href='#top'>Back to Top</a></strong></footer>
 </div>
