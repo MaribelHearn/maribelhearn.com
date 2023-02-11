@@ -12,10 +12,10 @@ function set() {
 
 function userAgent() {
     const ua = detect.parse(navigator.userAgent);
-    document.getElementById("os").innerHTML = "<img class='admin_icon' src='" + (location.host == "maribelhearn.com" ? "https://maribelhearn.com/" : "") +
-    "admin/icons/" + ua.os.name + ".png' alt='" + ua.os.name + " icon'> " + ua.os.name;
-    document.getElementById("browser").innerHTML = "<img class='admin_icon' src='" + (location.host == "maribelhearn.com" ? "https://maribelhearn.com/" : "") +
-    "admin/icons/" + ua.browser.family + ".png' alt='" + ua.browser.name + " icon'> " + ua.browser.name;
+    const host = (location.host == "maribelhearn.com" ? "https://maribelhearn.com/" : "");
+    
+    document.getElementById("os").innerHTML = `<img class='admin_icon' src='${host}admin/icons/${ua.os.name}.png' alt='${ua.os.name} icon'> ${ua.os.name}`;
+    document.getElementById("browser").innerHTML = `<img class='admin_icon' src='${host}admin/icons/${ua.browser.family}.png' alt='${ua.browser.name} icon'> ${ua.browser.name}`;
 }
 
 document.getElementById("setcookie").addEventListener("click", set);
