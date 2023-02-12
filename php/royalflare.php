@@ -243,7 +243,9 @@ if (!empty($_SESSION['subpage'])) {
         }
         $game = game_to_abbr($subpage);
         $board = get_board($subpage);
-        $shots = get_shots($game);
+        if ($game != 'hellsinker' && $game != 'alcostg') {
+            $shots = get_shots($game);
+        }
     } else if (strpos($subpage, 'history') !== false && strpos($subpage, '/') !== false) {
         $game = game_to_abbr(preg_split('/\//', $subpage)[1]);
         $shots = get_shots($game);
