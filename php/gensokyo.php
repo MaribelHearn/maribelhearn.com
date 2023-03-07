@@ -9,7 +9,7 @@ if (file_exists('assets/shared/json/gensokyo.json')) {
     }
 }
 $reps = json_decode($json, true);
-$games = Array('EoSD', 'PCB', 'IN', 'PoFV', 'StB', 'MoF', 'SA', 'UFO', 'DS', 'GFW', 'TD');
+$games = Array('EoSD', 'PCB', 'IN', 'PoFV', 'StB', 'MoF', 'SA', 'UFO', 'DS', 'GFW', 'TD', 'DDC');
 $diffs = Array('Easy', 'Normal', 'Hard', 'Lunatic', 'Extra', 'Phantasm', 'Last Word');
 $types = Array('Normal', 'Practice', 'Spell');
 if (empty($_GET['id'])) {
