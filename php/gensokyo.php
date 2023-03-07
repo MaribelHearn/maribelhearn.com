@@ -155,7 +155,11 @@ function check_conditions(array $rep, string $player, string $shot, string $game
             return false;
         }
     }
-    if (!empty($game) && $game != '-' && strpos($rep['category'], $game) !== 0) {
+    // extra if-statement such that searching TD also returns DDC results
+    if ($game == 'TD' && strpos($rep['category'], $game) === false && strpos($rep['category'], 'DDC') === false) {
+        return false;
+    }
+    if (!empty($game) && $game != '-' && $game != 'TD' && strpos($rep['category'], $game) !== 0) {
         return false;
     }
     if (!empty($type) && $type != '-' && strpos($rep['type'], $type) === false) {
