@@ -145,6 +145,14 @@ input[type=button] {
 #music_links {
     text-align: left;
 }
+#errors {
+    table-layout: fixed;
+    width: 100%;
+}
+#errors td {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
 @media only screen and (max-width: 1100px) {
     .page_table > .link > .tooltip {
         width: 200px;
