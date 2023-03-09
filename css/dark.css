@@ -114,6 +114,9 @@ a:link.dropdown_button, a:visited.dropdown_button {
 .thvote_icon {
     background-position: -1072px 0px;
 }
+.matrix_icon {
+    background-position: -1104px 0px;
+}
 .dev_instance {
     color: #ff69b4;
 }

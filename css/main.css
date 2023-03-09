@@ -153,6 +153,9 @@ input[type=button] {
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
+#contact {
+    list-style: none;
+}
 @media only screen and (max-width: 1100px) {
     .page_table > .link > .tooltip {
         width: 200px;

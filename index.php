@@ -67,7 +67,7 @@
     }
 
     // Resource paths
-    $use_index = array('index', 'about', 'credits', 'privacy', 'error');
+    $use_index = array('index', 'about', 'contact', 'credits', 'privacy', 'error');
     $dir = directory($page, $use_index);
     $page_path = 'php/' . $page . '.php';
     $page_tree = file_get_contents('php/page_tree.json');
