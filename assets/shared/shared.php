@@ -35,7 +35,7 @@ function wrap_top() {
     if (empty($page)) {
         $page = 'index';
     }
-    $use_index = array('index', 'about', 'credits', 'privacy', 'error');
+    $use_index = array('index', 'about', 'contact', 'credits', 'privacy', 'error');
     $dir = directory($page, $use_index);
     $page_tree = file_get_contents(($page == 'admin' ? '../' : '') . 'php/page_tree.json');
     $data = (object) json_decode($page_tree, true);
