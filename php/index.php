@@ -116,7 +116,7 @@
         <div id='special_thanks'>
             <h2>Special Thanks</h2>
             <p class='wide center'>Many thanks to my awesome supporters for covering server costs!</p>
-            <p class='center'>Taishisamaaa, Omega, MeFigaYoma, Sodamachine, guy, 32th System, Redaction, Kawaii_Shadowii, Isaac, yeashie, めいたむ and anonymous supporters</p>
+            <p class='center'>Taishisamaaa, Omega, MeFigaYoma, Sodamachine, guy, 32th System, Redaction, Kawaii_Shadowii, Isaac, yeashie, めいたむ, hakatashi and anonymous supporters</p>
         </div>
     </div>
     <footer id='bottom'>
