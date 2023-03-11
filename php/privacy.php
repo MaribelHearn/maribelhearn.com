@@ -54,7 +54,7 @@
     <h2>Contact Us</h2>
     <p>If you have any questions about this Privacy Policy, please contact us:</p>
     <ul>
-        <li>By email: maribelhearn42@gmail.com</li>
+        <li>By email: maribelhearn@disroot.org</li>
     </ul>
 
     <footer><strong><a href='#top'>Back to Top</a></strong></footer>
