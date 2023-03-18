@@ -2037,6 +2037,7 @@
                 <a href='https://www.youtube.com/watch?v=LzCVVaBQczw'>A1 NN</a>
                 <a href='https://www.youtube.com/watch?v=fBNmdo5sUYc'>A2 NN</a>
 				<a href='https://www.youtube.com/watch?v=Oyy2yNKW_xY'>B2 NN</a>
+                <a href='https://www.youtube.com/watch?v=jrIVJpfKa-4'>C1 NN</a>
                 <a href='https://www.youtube.com/watch?v=P65bA6p9oIM'>C2 NN</a></strong></td>
             </tr>
             <tr>
@@ -2064,25 +2065,25 @@
                 <th>Easy</th>
                 <td>All</td>
                 <td>All</td>
-                <td>A1, A2, B2, C2</td>
+                <td>A1, A2, B2, C1, C2</td>
             </tr>
             <tr>
                 <th>Normal</th>
                 <td>All</td>
                 <td>All</td>
-                <td>A1, A2, B2, C2</td>
+                <td>A1, A2, B2, C1, C2</td>
             </tr>
             <tr>
                 <th>Hard</th>
                 <td>All</td>
                 <td>All</td>
-                <td>A1, A2, B2, C2</td>
+                <td>A1, A2, B2, C1, C2</td>
             </tr>
             <tr>
                 <th>Lunatic</th>
                 <td>All</td>
                 <td>All</td>
-                <td>A1, A2, B2, C2</td>
+                <td>A1, A2, B2, C1, C2</td>
             </tr>
         </table></div>
         <h3>Other achievements</h3>
