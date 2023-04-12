@@ -32,7 +32,7 @@
                 echo '<h3 id="' . $diff . $shot . '" class="shottype">' . (tl_shot(str_replace(' ', '', $shot), 'Japanese') != $shot ? tl_shot(str_replace(' ', '', $shot), 'Japanese') . ' - ' : '') . $shot .
                 '</h3><div class="overflow"><table id="' . $diff . $shot . 't" class="' . $game . 't sortable"><thead><tr><th class="no-sort">#</th><th id="' . $diff . $shot .
                 'score">スコア<br>Score</th><th>処理落率<br>Slowdown</th>' . ($game != 'GFW' ? '<th><span class="nowrap">使用キャラ</span><br>Shottype</th>' : '<th><span class="nowrap">ルート</span><br>Route</th>') .
-                '<th>難易度<br>Difficulty</th><th>プレイ日付<br>Play Date</th><th>名前<br>Player</th>' . ($is_mobile ? '' : '<th>コメント<br>Comment</th>') . '<th>リプレイ<br>Replay</th></tr></thead><tbody>';
+                '<th>難易度<br>Difficulty</th><th>プレイ日付<br>Play Date</th><th>名前<br>Player</th><th>コメント<br>Comment</th><th>リプレイ<br>Replay</th></tr></thead><tbody>';
                 foreach ($board as $key => $entry) {
                     $slowdown_class = (check_slowdown($game, $entry['slowdown']) ? ' class="slowdown"' : '');
                     if ($entry['difficulty'] == $diff && (($game != 'GFW' && $entry['chara'] == $shot) || ($game == 'GFW' && $entry['route'] == $shot))) {
@@ -40,7 +40,7 @@
                             echo '<tr><td></td><td data-sort="' . $entry['score'] . '">' . number_format($entry['score'], 0, '.', ',') . '</td><td' . $slowdown_class . '>' . $entry['slowdown'] .
                             '</td>' . ($game != 'GFW' ? '<td>' . tl_shot($entry['chara'], $lang) . '</td>' : '<td>' . $entry['route'] . '</td>') .
                             '<td>' . $entry['difficulty'] . ($game == 'IN' && $diff != 'Extra' ? '<br>' . (tl_term('Final' . $route, $lang)) : '') . '</td>' .
-                            '<td>' . $entry['date'] . '</td><td>' . $entry['player'] . '</td>' . ($is_mobile ? '' : '<td class="break">' . $entry['comment'] . '</td>') .
+                            '<td>' . $entry['date'] . '</td><td>' . $entry['player'] . '</td><td class="break">' . $entry['comment'] . '</td>' .
                             '<td><a href="' . $entry['replay'] . '">' . (empty($entry['uploaded']) ? $entry['date'] : $entry['uploaded']) . '</a></td></tr>';
                         }
                     }

@@ -15,13 +15,13 @@
         echo '<div class="overflow"><table id="' . $stage . '-' . $scene . 't" class="' . 'DS' . 't' . ($shottype == 'Hatate' ? ' hatate' : '') .
         ' sortable"><thead><tr><th class="no-sort">#</th><th id="' . $stage . '-' . $scene . 'score">スコア<br>Score</th>' .
         '<th>処理落率<br>Slowdown</th><th><span class="nowrap">使用キャラ</span><br>Shottype</th><th><span class="nowrap">撮影対象</span><br>Scene</th>' .
-        '<th>プレイ日付<br>Play Date</th><th>名前<br>Player</th>' . ($is_mobile ? '' : '<th>コメント<br>Comment</th>') . '<th>リプレイ<br>Replay</th></tr></thead><tbody>';
+        '<th>プレイ日付<br>Play Date</th><th>名前<br>Player</th><th>コメント<br>Comment</th><th>リプレイ<br>Replay</th></tr></thead><tbody>';
         foreach ($board as $key => $entry) {
             if ($entry['stage'] == format_stage('DS', $stage) . '-' . $scene && $entry['chara'] == $shottype) {
                 $slowdown_class = (check_slowdown('DS', $entry['slowdown']) ? ' class="slowdown"' : '');
                 echo '<tr><td></td><td data-sort="' . $entry['score'] . '">' . number_format($entry['score'], 0, '.', ',') . '</td><td' . $slowdown_class . '>' . $entry['slowdown'] . '</td>' .
                 '<td>' . tl_shot($shottype, $lang) . '</td><td>' . $entry['stage'] . '</td><td>' . $entry['date'] . '</td><td>' . $entry['player'] .
-                '</td>' . ($is_mobile ? '' : '<td class="break">' . $entry['comment'] . '</td>') . '<td><a href="' . $entry['replay'] . '">' . $entry['uploaded'] . '</a></td></tr>';
+                '</td><td class="break">' . $entry['comment'] . '</td><td><a href="' . $entry['replay'] . '">' . $entry['uploaded'] . '</a></td></tr>';
             }
         }
         echo '</tbody></table></div>';
