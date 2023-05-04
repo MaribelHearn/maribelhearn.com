@@ -74,14 +74,8 @@ function date_tl(string $date, string $lang) {
 }
 
 function format_lm(string $lm, string $lang) {
-    switch ($lang) {
-        case 'ja_JP': return '<span id="lm">' . date_tl($lm, $lang) . '</span>現在の世界記録です。';
-        case 'zh_CN': return '世界记录更新于<span id="lm">' . date_tl($lm, $lang) . '</span>。';
-        case 'ru_RU': return 'Рекорды актуальны на <span id="lm">' . date_tl($lm, $lang) . '</span>.';
-        case 'de_DE': return 'Die Weltrekorde sind ab <span id="lm">' . date_tl($lm, $lang) . '</span> aktuell.';
-        case 'es_ES': return 'Los Récords Mundiales están actualizados hasta el <span id="lm">' . date_tl($lm, $lang) . '</span>.';
-        default: return 'World records are current as of <span id="lm">' . date_tl($lm, $lang) . '</span>.';
-    }
+    $result = _('World records are current as of <span id="lm">%date</span>.');
+    return str_replace('%date', date_tl($lm, $lang), $result);
 }
 
 function is_later_date(string $date1, string $date2) {
