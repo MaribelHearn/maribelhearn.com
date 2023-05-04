@@ -110,6 +110,7 @@ foreach ($wr as $game => $value) {
             $player = $array[1];
             $date = $array[2];
             $video = empty($array[3]) ? '' : $array[3];
+            // check for overall record 
             if ($score >= $overall[$num]) {
                 $overall[$num] = $score;
                 $overall_diff[$num] = $diff;
@@ -118,12 +119,15 @@ foreach ($wr as $game => $value) {
                 $overall_date[$num] = $date;
                 $overall_video[$num] = $video;
             }
+            // check for diff record
             if ($score > $diff_max[$game][$diff][0]) {
                 $diff_max[$game][$diff] = [$score, $player, $shot];
             }
+            // check for missing replay
             if (!file_exists(replay_path($game, $diff, $shot)) && $num > 5) {
                 array_push($missing_replays, ($game . $diff . $shot));
             }
+            // add to player WR array
             if (!in_array($player, $pl)) {
                 array_push($pl, $player);
                 array_push($pl_wr, array($player, 1, 1));
@@ -136,43 +140,25 @@ foreach ($wr as $game => $value) {
                     $flag[$key] = false;
                 }
             }
+            // make sure last modified date equals newest record date
             if (is_later_date($date, $lm)) {
                 $lm = $date;
             }
-            if (count($recent) < $RECENT_LIMIT) {
-                $new_obj = (object) [
-                    'game' => $game,
-                    'diff' => $diff,
-                    'shot' => $shot,
-                    'score' => $score,
-                    'player' => $player,
-                    'date' => $date,
-                    'video' => $video,
-                ];
-                array_push($recent, $new_obj);
-            } else {
-                foreach ($recent as $key => $obj) {
-                    if (is_later_date($date, $obj->date)) {
-                        $new_obj = (object) [
-                            'game' => $game,
-                            'diff' => $diff,
-                            'shot' => $shot,
-                            'score' => $score,
-                            'player' => $player,
-                            'date' => $date,
-                            'video' => $video,
-                        ];
-                        for ($i = $RECENT_LIMIT - 1; $i > $key; $i--) {
-                            $recent[$i] = $recent[$i - 1];
-                        }
-                        $recent[$key] = $new_obj;
-                        break;
-                    }
-                }
-            }
+            // add to recent records
+            array_push($recent, (object) [
+                'game' => $game,
+                'diff' => $diff,
+                'shot' => $shot,
+                'score' => $score,
+                'player' => $player,
+                'date' => $date,
+                'video' => $video,
+            ]);
         }
     }
 }
+// sort recent records by date
+usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
 ?>
 <div id='wrap' class='wrap'>
 	<?php echo wrap_top() ?>
@@ -530,6 +516,7 @@ foreach ($wr as $game => $value) {
                 <th class='general_header datestring'><?php echo _('Date') ?></th>
             </tr></thead>
             <tbody id='recentbody'><?php
+                $i = 0;
                 foreach ($recent as $key => $obj) {
                     if (isset($_COOKIE['prefer_video']) && !empty($obj->video)) {
                         $replay = '<a href="' . $obj->video . '" target="_blank">Video link</a>';
@@ -549,6 +536,10 @@ foreach ($wr as $game => $value) {
                     '<td>' . $replay . '</td>' .
                     '<td class="datestring" data-sort="' . date_tl($obj->date, 'raw') . '">' . date_tl($obj->date, $lang) . '</td>' .
                     '</tr>';
+                    $i++;
+                    if ($i == $RECENT_LIMIT) {
+                        break;
+                    }
                 }
             ?></tbody>
         </table>
