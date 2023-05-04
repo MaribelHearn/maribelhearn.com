@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-05-04 19:47+0200\n"
-"PO-Revision-Date: 2023-05-04 19:49+0200\n"
+"POT-Creation-Date: 2023-05-04 21:18+0200\n"
+"PO-Revision-Date: 2023-05-04 21:21+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -58,13 +58,13 @@ msgstr "Flagge von Deutschland"
 msgid "Flag of Spain"
 msgstr "Flagge von Spanien"
 
-#: assets/shared/shared.php:109 js/drc.js:186 js/lnn.js:41 js/wr.js:95
+#: assets/shared/shared.php:109 js/drc.js:186 js/lnn.js:41 js/wr.js:105
 msgid "Route"
 msgstr ""
 
-#: assets/shared/shared.php:109 js/drc.js:188 js/lnn.js:41 js/wr.js:95
-#: php/drc.php:454 php/lnn.php:230 php/lnn.php:266 php/wr.php:226
-#: php/wr.php:485
+#: assets/shared/shared.php:109 js/drc.js:188 js/lnn.js:41 js/wr.js:105
+#: php/drc.php:454 php/lnn.php:230 php/lnn.php:266 php/wr.php:231
+#: php/wr.php:490
 msgid "Shottype"
 msgstr "Shot Type"
 
@@ -501,7 +501,7 @@ msgstr ""
 msgid "Releases"
 msgstr ""
 
-#: js/drc.js:140 php/wr.php:223 php/wr.php:484 php/wr.php:507
+#: js/drc.js:140 php/wr.php:228 php/wr.php:489 php/wr.php:512
 msgid "Score"
 msgstr "Punktanzahl"
 
@@ -624,7 +624,7 @@ msgstr ""
 "Survival-Runs wird davon ausgegangen, dass sie komplett durchgespielt "
 "wurden, bei Scoring Runs nicht."
 
-#: php/drc.php:98 php/wr.php:483 php/wr.php:506
+#: php/drc.php:98 php/wr.php:488 php/wr.php:511
 msgid "Category"
 msgstr "Kategorie"
 
@@ -826,7 +826,7 @@ msgid "||Max * (Score/WR)^Exp||"
 msgstr ""
 
 #: php/drc.php:207 php/drc.php:391 php/drc.php:425 php/lnn.php:265
-#: php/lnn.php:287 php/wr.php:222
+#: php/lnn.php:287 php/wr.php:227
 msgid "Game"
 msgstr "Spiel"
 
@@ -931,7 +931,7 @@ msgid "Threshold 3"
 msgstr "Schwellenwert 3"
 
 #: php/drc.php:350 php/drc.php:470 php/lnn.php:358 php/tools.php:519
-#: php/wr.php:593
+#: php/wr.php:598
 msgid "Back to Top"
 msgstr "Zurück zum Anfang"
 
@@ -1081,11 +1081,11 @@ msgid "Overall Count"
 msgstr "Gesamtzahl"
 
 #: php/lnn.php:145 php/lnn.php:157 php/lnn.php:327 php/wr.php:185
-#: php/wr.php:202 php/wr.php:560
+#: php/wr.php:202 php/wr.php:565
 msgid "Player Ranking"
 msgstr "Spieler-Ranking"
 
-#: php/lnn.php:155 php/lnn.php:246 php/wr.php:197 php/wr.php:462
+#: php/lnn.php:155 php/lnn.php:246 php/wr.php:197 php/wr.php:467
 msgid "Player Search"
 msgstr "Spieler-Suche"
 
@@ -1111,12 +1111,12 @@ msgstr ""
 "Wähle einen Spielernamen aus dem untenstehenden Menü aus, um dessen LNNs "
 "anzuzeigen."
 
-#: php/lnn.php:248 php/lnn.php:332 php/wr.php:224 php/wr.php:465 php/wr.php:508
-#: php/wr.php:565
+#: php/lnn.php:248 php/lnn.php:332 php/wr.php:229 php/wr.php:470 php/wr.php:513
+#: php/wr.php:570
 msgid "Player"
 msgstr "Spieler"
 
-#: php/lnn.php:250 php/wr.php:467
+#: php/lnn.php:250 php/wr.php:472
 #, fuzzy
 #| msgid "Player Search"
 msgid "Search"
@@ -1126,11 +1126,11 @@ msgstr "Spieler-Suche"
 msgid "Show videos over replays"
 msgstr ""
 
-#: php/lnn.php:267 php/wr.php:228 php/wr.php:486 php/wr.php:509
+#: php/lnn.php:267 php/wr.php:233 php/wr.php:491 php/wr.php:514
 msgid "Replay"
 msgstr ""
 
-#: php/lnn.php:275 php/wr.php:496
+#: php/lnn.php:275 php/wr.php:501
 msgid "Total"
 msgstr "Gesamt"
 
@@ -2039,21 +2039,21 @@ msgid ""
 "the World Record, but lack replay or video proof."
 msgstr ""
 
-#: php/wr.php:180 php/wr.php:181 php/wr.php:189 php/wr.php:190 php/wr.php:217
-#: php/wr.php:262
+#: php/wr.php:180 php/wr.php:181 php/wr.php:189 php/wr.php:190 php/wr.php:222
+#: php/wr.php:267
 msgid "Overall Records"
 msgstr "Gesamtrekorde"
 
-#: php/wr.php:182 php/wr.php:191 php/wr.php:281
+#: php/wr.php:182 php/wr.php:191 php/wr.php:286
 msgid "World Records"
 msgstr "Weltrekorde"
 
-#: php/wr.php:183 php/wr.php:184 php/wr.php:198 php/wr.php:200 php/wr.php:503
-#: php/wr.php:542
+#: php/wr.php:183 php/wr.php:184 php/wr.php:198 php/wr.php:200 php/wr.php:508
+#: php/wr.php:547
 msgid "Recent Records"
 msgstr "Neueste Rekorde"
 
-#: php/wr.php:196 php/wr.php:385
+#: php/wr.php:196 php/wr.php:390
 msgid "Western Records"
 msgstr "Westliche Rekorde"
 
@@ -2061,48 +2061,56 @@ msgstr "Westliche Rekorde"
 msgid "Dates"
 msgstr "Daten"
 
-#: php/wr.php:225
+#: php/wr.php:215
+msgid "Number of Recent Records"
+msgstr "Anzahl der neuesten Rekorden"
+
+#: php/wr.php:218
+msgid "Save Changes"
+msgstr "Änderungen speichern"
+
+#: php/wr.php:230
 msgid "Difficulty"
 msgstr "Schwierigkeitsgrad"
 
-#: php/wr.php:227 php/wr.php:487 php/wr.php:510
+#: php/wr.php:232 php/wr.php:492 php/wr.php:515
 msgid "Date"
 msgstr "Datum"
 
-#: php/wr.php:388 php/wr.php:453
+#: php/wr.php:393 php/wr.php:458
 msgid "World"
 msgstr "Weltweit"
 
-#: php/wr.php:389 php/wr.php:454
+#: php/wr.php:394 php/wr.php:459
 msgid "West"
 msgstr "Westen"
 
-#: php/wr.php:389 php/wr.php:455
+#: php/wr.php:394 php/wr.php:460
 msgid "Percentage"
 msgstr "Prozent"
 
-#: php/wr.php:418
+#: php/wr.php:423
 msgid "Click a game cover to show its list of world records."
 msgstr "Klick auf ein Spielcover, um die Liste der Weltrekorde anzuzeigen."
 
-#: php/wr.php:440
+#: php/wr.php:445
 msgid "Seasons"
 msgstr "Jahreszeiten"
 
-#: php/wr.php:444
+#: php/wr.php:449
 msgid "Unverified Scores"
 msgstr ""
 
-#: php/wr.php:463
+#: php/wr.php:468
 msgid "Choose a player name from the menu below to show their WRs."
 msgstr ""
 "Wähle einen Spielernamen aus dem unten stehenden Menü, um die WRs anzuzeigen."
 
-#: php/wr.php:566
+#: php/wr.php:571
 msgid "No. of WRs"
 msgstr "Anzahl WRs"
 
-#: php/wr.php:567
+#: php/wr.php:572
 msgid "Different games"
 msgstr "Verschiedene Spiele"
 
