@@ -200,6 +200,9 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
 #checkboxes, #ranking {
     margin-top: 15px;
 }
+#recent_limit {
+    width: 50px;
+}
 #ranking.sortable tbody {
     counter-reset: sortabletablescope;
 }

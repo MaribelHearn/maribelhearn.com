@@ -1,6 +1,6 @@
 <?php
 $MAX_SCORE = 9999999990;
-$RECENT_LIMIT = 10;
+$RECENT_LIMIT = max(isset($_COOKIE['recent_limit']) ? floor($_COOKIE['recent_limit']) : 10, 1);
 if (file_exists('assets/shared/json/wrlist.json')) {
     $json = file_get_contents('assets/shared/json/wrlist.json');
     $west_json = file_get_contents('assets/shared/json/bestinthewest.json');
@@ -211,6 +211,11 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
         </p><p>
             <input id='toggle_video' type='checkbox'>
             <label for='toggle_video'><?php echo _('Show videos over replays') ?></label>
+        </p><p>
+            <label for='recent_limit'><?php echo _('Number of Recent Records') ?></label>
+            <input id='recent_limit' type='number' value='<?php echo (isset($_COOKIE['recent_limit']) ? $_COOKIE['recent_limit'] : 10) ?>' min=1>
+        </p><p>
+            <input id='save_changes' type='button' value='<?php echo _('Save Changes') ?>'>
         </p>
     </div>
     <div id='overall'>
