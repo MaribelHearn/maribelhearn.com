@@ -42,7 +42,17 @@ function toggleVideo() {
     } else {
         deleteCookie("prefer_video");
     }
+}
 
+function setRecentLimit(event) {
+    if (event.target.value == 10) {
+        deleteCookie("recent_limit");
+    } else {
+        setCookie("recent_limit", Math.max(parseInt(event.target.value), 1));
+    }
+}
+
+function saveChanges() {
     location.reload();
 }
 
@@ -606,6 +616,9 @@ function setEventListeners() {
     document.body.addEventListener("resize", updateOrientation, false);
     document.getElementById("toggle_layout").addEventListener("click", toggleLayout, false);
     document.getElementById("toggle_video").addEventListener("click", toggleVideo, false);
+    document.getElementById("recent_limit").addEventListener("keyup", setRecentLimit, false);
+    document.getElementById("recent_limit").addEventListener("mouseup", setRecentLimit, false);
+    document.getElementById("save_changes").addEventListener("click", saveChanges, false);
     document.getElementById("search").addEventListener("change", setPlayer, false);
     document.getElementById("search").addEventListener("select", setPlayer, false);
     document.getElementById("player").addEventListener("change", showPlayerWRs, false);
