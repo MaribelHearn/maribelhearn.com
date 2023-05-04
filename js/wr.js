@@ -45,10 +45,12 @@ function toggleVideo() {
 }
 
 function setRecentLimit(event) {
-    if (event.target.value == 10) {
+    let limit = Math.max(parseInt(event.target.value), 1);
+
+    if (limit == 10 || isNaN(limit)) {
         deleteCookie("recent_limit");
     } else {
-        setCookie("recent_limit", Math.max(parseInt(event.target.value), 1));
+        setCookie("recent_limit", limit);
     }
 }
 
