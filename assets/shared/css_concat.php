@@ -25,6 +25,13 @@ if (isset($_GET['mobile']) && $_GET['mobile']) {
 }
 if ($page == 'tiers') {
     include_once 'sprite_gen.php';
+    if (!isset($_COOKIE['sort'])) {
+        if (isset($_GET['mobile']) && $_GET['mobile']) {
+            echo '#modal{display:block!important;}#info_mobile{display:block;}';
+        } else {
+            echo '#modal{display:block!important;}#info_desktop{display:block;}';
+        }
+    }
 } else if ($page == 'index') {
     include_once 'flags_gen.php';
 }

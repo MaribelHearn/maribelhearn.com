@@ -112,6 +112,7 @@ let tiers = {};
 let multiSelection = [];
 let following = "";
 let tierView = false;
+let firstTime = false;
 let smallPicker = false;
 let unsavedChanges = false;
 
@@ -403,6 +404,8 @@ function initialise() {
             loadTier(tiers[sort][tierNum], Number(tierNum), sort);
         }
     }
+
+    setCookie("sort", settings.sort);
 }
 
 function printMessage(message) {
@@ -949,7 +952,12 @@ function removeTier(sourceTierNum, skipConfirmation, noDisplay) {
 }
 
 function emptyModal() {
-    document.getElementById("modal").style.display = "none";
+    if (firstTime) {
+        document.getElementById("modal").style.cssText = "display: none !important;";
+    } else {
+        document.getElementById("modal").style.display = "none";
+    }
+    
     document.getElementById("tier_menu_msg_container").innerHTML = "";
     const innerModals = document.querySelectorAll(".modal_inner");
     
@@ -2176,8 +2184,11 @@ function init() {
     document.getElementById("sort").value = settings.sort;
     loadItems(true);
 
+    if (!getCookie("sort")) {
+        firstTime = true;
+    }
+
     if (!localStorage.tiers && !localStorage.gameTiers && !localStorage.shotTiers) {
-        showInformation();
         initialise();
     } else {
         loadTiersFromStorage();
