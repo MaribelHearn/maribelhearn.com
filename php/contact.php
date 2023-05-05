@@ -1,6 +1,5 @@
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
-    <h1>Contact</h1>
     <p>Do you want to report an issue? Or perhaps you want to suggest an improvement to the website?</p>
     <p class='wide-top'>You can inform me in one of the following ways:</p>
     <ul id='contact' class='wide-top'>
