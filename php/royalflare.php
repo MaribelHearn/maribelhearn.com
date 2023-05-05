@@ -40,7 +40,7 @@ function game_to_abbr(string $game) {
         case 'th165': return 'VD';
         case 'th17': return 'WBaWC';
         case 'th18': return 'UM';
-        default: return '';
+        default: return $game;
     }
 }
 
@@ -324,7 +324,7 @@ $diffs = Array('Easy', 'Normal', 'Hard', 'Lunatic', 'Extra', 'Phantasm');
                 } else if ($subpage == 'th095' || $subpage == 'th125' || $subpage == 'th143' || $subpage == 'th165') {
                     include_once 'php/subpages/royalflare/board_scene.php';
                 } else {
-                    if (!empty(game_to_abbr($subpage))) {
+                    if (game_to_abbr($subpage) != 'alcostg' && game_to_abbr($subpage) != 'hellsinker') {
                         include_once 'php/subpages/royalflare/board.php';
                     } else if (file_exists('php/subpages/royalflare/' . $subpage . '.php')) {
                         include_once 'php/subpages/royalflare/' . $subpage . '.php';
