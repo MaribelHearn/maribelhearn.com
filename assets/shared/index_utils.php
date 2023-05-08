@@ -3,7 +3,7 @@ function closest_page(string $url) {
     $min_distance = PHP_INT_MAX;
     $min_page = '';
     foreach (glob('php/*') as $file) {
-        if (strpos($file, '.php') && !strpos($file, '_') && $file != 'error.php') {
+        if (strpos($file, '.php') && !strpos($file, '_') && $file != 'error.php' && $file != 'index.php') {
             $matching_file = preg_split('/\//', $file);
             $matching_file = end($matching_file);
             $matching_page = str_replace('.php', '', $matching_file);
