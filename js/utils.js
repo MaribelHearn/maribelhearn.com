@@ -66,7 +66,7 @@ function getCookie(name) {
 }
 
 function deleteCookie(name) {
-    document.cookie = name + "=;expires=" + MIN_AGE + ";path=/;";
+    document.cookie = name + "=;expires=" + MIN_AGE + ";path=/;sameSite=Strict;";
 }
 
 function dark() {
