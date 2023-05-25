@@ -76,6 +76,10 @@
                 <th>Ex</th>
                 <td>Extra; the Extra Stage.</td>
             </tr>
+            <tr id='term_extend'>
+                <th>Extend</th>
+                <td>An extra life; a 1up.</td>
+            </tr>
             <tr id='term_exnn'>
                 <th>ExNN</th>
                 <td>Extra No Miss No Bomb; a <a href='#term_1cc'>1cc</a> of some Extra Stage without dying or using bombs.
@@ -89,6 +93,10 @@
 				<th>FW</th>
 				<td>See <a href='#term_gfw'>GFW</a>.</td>
 			</tr>
+            <tr id='term_graze'>
+                <th>Graze</th>
+                <td>Having a bullet come very close to your hitbox, which means it touches your 'grazebox', a hitbox larger than your main hitbox that is used to detect grazing.</td>
+            </tr>
 			<tr id='term_gfw'>
 				<th>GFW</th>
 				<td>Touhou 12.8: Great Fairy Wars.</td>
@@ -97,18 +105,14 @@
                 <th>GO</th>
                 <td>(Uncommon) Game over. Not to be confused with <a href='#term_go'>"Good Omen"</a>, a Spell Card.</td>
             </tr>
-            <tr id='term_graze'>
-                <th>Graze</th>
-                <td>Having a bullet come very close to your hitbox, which means it touches your 'grazebox', a hitbox larger than your main hitbox that is used to detect grazing.</td>
-            </tr>
-            <tr id='term_hrtp'>
-                <th>HRtP</th>
-                <td>Touhou 1: Highly Responsive to Prayers.</td>
-            </tr>
             <tr id='term_hitbox'>
                 <th>Hitbox</th>
                 <td>The part of a sprite that is used for collision detection; that is, the part of the player character or an enemy that can get hit, and the part of a bullet that kills you when touched.
                 In Touhou, hitboxes of a sprite are smaller than the full size of the sprite.</td>
+            </tr>
+            <tr id='term_hrtp'>
+                <th>HRtP</th>
+                <td>Touhou 1: Highly Responsive to Prayers.</td>
             </tr>
 			<tr id='term_hsifs'>
 				<th>HSiFS</th>
@@ -119,21 +123,17 @@
                 <td>Invincibility frames; frames during which something does not take any hits. Your player character has a number of I-frames after a death, as well as during a bomb.
                 Under certain circumstances, some enemy characters can also have I-frames.</td>
             </tr>
-            <tr id='term_isc'>
-                <th>ISC</th>
-                <td>Touhou 14.3: Impossible Spell Card.</td>
-            </tr>
 			<tr id='term_in'>
 				<th>IN</th>
 				<td>Touhou 8: Imperishable Night.</td>
 			</tr>
+            <tr id='term_isc'>
+                <th>ISC</th>
+                <td>Touhou 14.3: Impossible Spell Card.</td>
+            </tr>
             <tr id='term_lls'>
                 <th>LLS</th>
                 <td>Touhou 4: Lotus Land Story.</td>
-            </tr>
-            <tr id='term_lolk'>
-                <th>LoLK</th>
-                <td>Touhou 15: Legacy of Lunatic Kingdom.</td>
             </tr>
             <tr id='term_lnb'>
                 <th>LNB</th>
@@ -143,6 +143,10 @@
                 <th>LNN</th>
                 <td>Lunatic No Miss No Bomb; a <a href='#term_1cc'>1cc</a> of some game on Lunatic difficulty without dying or using bombs.
 				A third 'N' is appended if there is a game-specific third restriction.</td>
+            </tr>
+            <tr id='term_lolk'>
+                <th>LoLK</th>
+                <td>Touhou 15: Legacy of Lunatic Kingdom.</td>
             </tr>
             <tr id='term_ls'>
                 <th>LS</th>
@@ -290,6 +294,14 @@
                 <th>OD</th>
                 <td>Overdrive; the difficulty above Lunatic that is used for a select few unlockable Spell Cards in <a href='#term_td'>TD</a>.</td>
             </tr>
+            <tr id='term_pb'>
+                <th>PB</th>
+                <td>Personal Best; someone's highest score or best survival in a specific category.</td>
+            </tr>
+			<tr id='term_pcb'>
+				<th>PCB</th>
+				<td>Touhou 7: Perfect Cherry Blossom.</td>
+			</tr>
             <tr id='term_perfect'>
                 <th>Perfect</th>
                 <td>See <a href='#term_nmnb'>NMNB</a> or <a href='#term_nnn'>NNN</a>.</td>
@@ -306,9 +318,12 @@
                 <th>Ph</th>
                 <td>Phantasm; the Phantasm Stage in <a href='#term_pcb'>PCB</a>.</td>
             </tr>
-            <tr id='term_podd'>
-                <th>PoDD</th>
-                <td>Touhou 3: Phantasmagoria of Dim.Dream.</td>
+            <tr id='term_piv'>
+                <th>PIV</th>
+                <td>Point Item Value; the number of points awarded for collecting a point item (blue item).
+				The higher up on the screen you are, the higher the value is, with the maximum value at
+				the <a href='#term_poc'>PoC</a>. Most games have a system that allows the player to increase
+				this value in some way.</td>
             </tr>
             <tr id='term_pointblanking'>
                 <th>Pointblanking</th>
@@ -321,25 +336,14 @@
 				this does not work on spirits. Also used as a verb, e.g. 'poccing', to mean collecting
 				items this way.</td>
             </tr>
+            <tr id='term_podd'>
+                <th>PoDD</th>
+                <td>Touhou 3: Phantasmagoria of Dim.Dream.</td>
+            </tr>
 			<tr id='term_pofv'>
 				<th>PoFV</th>
 				<td>Touhou 9: Phantasmagoria of Flower View.</td>
 			</tr>
-            <tr id='term_pb'>
-                <th>PB</th>
-                <td>Personal Best; someone's highest score or best survival in a specific category.</td>
-            </tr>
-			<tr id='term_pcb'>
-				<th>PCB</th>
-				<td>Touhou 7: Perfect Cherry Blossom.</td>
-			</tr>
-            <tr id='term_piv'>
-                <th>PIV</th>
-                <td>Point Item Value; the number of points awarded for collecting a point item (blue item).
-				The higher up on the screen you are, the higher the value is, with the maximum value at
-				the <a href='#term_poc'>PoC</a>. Most games have a system that allows the player to increase
-				this value in some way.</td>
-            </tr>
             <tr id='term_ragephase'>
                 <th>Rage phase</th>
                 <td>See <a href='#term_timeoutphase'>timeout phase</a>.</td>
@@ -366,11 +370,19 @@
                 <th>s1</th>
                 <td>Stage 1; similarly, 's2' means Stage 2, 's3' means Stage 3, etc.</td>
             </tr>
+			<tr id='term_sa'>
+				<th>SA</th>
+				<td>Touhou 11: Subterranean Animism.</td>
+			</tr>
             <tr id='term_safespot'>
                 <th>Safespot</th>
                 <td>A spot, or a larger area, inside of which the player cannot be hit by anything. There is a large grey area to the application of the term in practice, as it is not necessarily only used for singular spots;
                 it can include safe areas that require the player to move, although safer than doing the pattern in question "normally". It can even include spots or areas that are not actually completely safe,
                 just <em>mostly</em> safe.</td>
+            </tr>
+            <tr id='term_scb'>
+                <th>SCB</th>
+                <td>Spell Card Bonus; the score awarded from <a href='#term_capture'>capturing</a> a Spell Card.</td>
             </tr>
             <tr id='term_shmup'>
                 <th>Shmup</th>
@@ -397,15 +409,19 @@
                 <th>Static</th>
                 <td>A bullet pattern that is always the exact same, and thus can be <a href='#term_route'>routed</a>.</td>
             </tr>
+			<tr id='term_stb'>
+				<th>StB</th>
+				<td>Touhou 9.5: Shoot the Bullet.</td>
+			</tr>
+            <tr id='term_stg'>
+                <th>STG</th>
+                <td><strong>S</strong>hoo<strong>t</strong>ing <strong>G</strong>ame; an acronym used to refer to shoot 'em up games, just as <a href='#term_shmup'>shmup</a> does. Used primarily by Japanese players.</td>
+            </tr>
             <tr id='term_streaming'>
                 <th>Streaming</th>
                 <td>Tapping into a certain direction to dodge aimed bullets, making them move behind you in a stream-like fashion. This can be done either horizontally or vertically.
                 If a player comes close to either edge of the screen while doing this, they will want to <a href='#term_restreaming'>restream</a> the pattern.</td>
             </tr>
-			<tr id='term_stb'>
-				<th>StB</th>
-				<td>Touhou 9.5: Shoot the Bullet.</td>
-			</tr>
             <tr id='term_suicidebullets'>
                 <th>Suicide bullets</th>
                 <td>Extra bullets fired by an enemy when it dies, usually aimed at the player.
@@ -417,17 +433,14 @@
                 forcing the player to survive until the time is up, which is referred to as a <a href='#term_timeout'>timeout</a>.
                 Because of this, such a spell is also known as a 'timeout spell'.</td>
             </tr>
-			<tr id='term_sa'>
-				<th>SA</th>
-				<td>Touhou 11: Subterranean Animism.</td>
-			</tr>
-            <tr id='term_scb'>
-                <th>SCB</th>
-                <td>Spell Card Bonus; the score awarded from <a href='#term_capture'>capturing</a> a Spell Card.</td>
+            <tr id='term_tas'>
+                <th>TAS</th>
+                <td>Tool-Assisted Superplay; used to refer not to speedruns, but to runs that used external tools, such as slowing down the game, savestates and <a href='#term_pausebuffering'>pause buffering</a>,
+                which is often done to see what is theoretically possible in a game.</td>
             </tr>
-            <tr id='term_stg'>
-                <th>STG</th>
-                <td><strong>S</strong>hoo<strong>t</strong>ing <strong>G</strong>ame; an acronym used to refer to shoot 'em up games, just as <a href='#term_shmup'>shmup</a> does. Used primarily by Japanese players.</td>
+            <tr id='term_td'>
+                <th>TD</th>
+                <td>Touhou 13: Ten Desires.</td>
             </tr>
             <tr id='term_thcrap'>
                 <th>Thcrap</th>
@@ -437,6 +450,10 @@
             <tr id='term_thprac'>
                 <th>Thprac</th>
                 <td>Universal practice tool; see <a href='tools#thprac'>Touhou Patches and Tools</a> for more information. Not to be confused with <a href='#term_thcrap'>thcrap</a>.</td>
+            </tr>
+            <tr id='term_timelock'>
+                <th>Timelock</th>
+                <td>A feature in <a href='#term_thprac'>thprac</a> that allows the player to lock the timer on a boss pattern, so that it never ends. Typically used to practice dodging skills.</td>
             </tr>
             <tr id='term_timeout'>
                 <th>Timeout</th>
@@ -448,29 +465,14 @@
                 <td>A (very) hard phase of a Spell Card that starts when you get close to timing it out. They typically start when the timer is at 30 seconds
                 and they are typically found on final Spell Cards in final boss or Extra boss fights.</td>
             </tr>
-            <tr id='term_token'>
-                <th>Token</th>
-                <td>Refers to either a small <a href='#term_ufo'>UFO</a> or a beast
-				in <a href='#term_wbawc'>WBaWC</a>, both of which float around the screen.</td>
-            </tr>
-            <tr id='term_tas'>
-                <th>TAS</th>
-                <td>Tool-Assisted Speedrun; used to refer not to speedruns, but to runs that used cheats, such as slowing down the game, using savestates and <a href='#term_pausebuffering'>pause buffering</a>,
-                which is often done to see what is theoretically possible in a game.</td>
-            </tr>
-            <tr id='term_td'>
-                <th>TD</th>
-                <td>Touhou 13: Ten Desires.</td>
-            </tr>
             <tr id='term_to'>
                 <th>TO</th>
                 <td>(Uncommon) see <a href='#term_timeout'>timeout</a>.</td>
             </tr>
-            <tr id='term_underflow'>
-                <th>Underflow</th>
-                <td>When a negative number is converted to a format that does not have negative numbers, causing a very high positive number. Notoriously occurs in <a href='#term_ddc'>DDC</a>
-                and  <a href='#term_isc'>ISC</a>, in which the Spell Card Bonus can be made negative, which, if the score becomes negative when the bonus is added, increases the score to 9,999,999,990,
-                a <a href='#term_counterstop'>counterstop</a>. Not to be confused with <a href='#term_overflow'>overflow</a>.</td>
+            <tr id='term_token'>
+                <th>Token</th>
+                <td>Refers to either a small <a href='#term_ufo'>UFO</a> or a beast
+				in <a href='#term_wbawc'>WBaWC</a>, both of which float around the screen.</td>
             </tr>
 			<tr id='term_ufo'>
 				<th>UFO</th>
@@ -480,14 +482,20 @@
                 <th>UM</th>
                 <td>Touhou 18: Unconnected Marketeers.</td>
             </tr>
-            <tr id='term_wall'>
-                <th>Wall</th>
-                <td>A cluster of bullets with no space that a hitbox can pass through in between them, although it can also refer to a cluster of bullets that <em>looks</em> like that.</td>
+            <tr id='term_underflow'>
+                <th>Underflow</th>
+                <td>When a negative number is converted to a format that does not have negative numbers, causing a very high positive number. Notoriously occurs in <a href='#term_ddc'>DDC</a>
+                and  <a href='#term_isc'>ISC</a>, in which the Spell Card Bonus can be made negative, which, if the score becomes negative when the bonus is added, increases the score to 9,999,999,990,
+                a <a href='#term_counterstop'>counterstop</a>. Not to be confused with <a href='#term_overflow'>overflow</a>.</td>
             </tr>
 			<tr id='term_vd'>
 				<th>VD</th>
 				<td>Touhou 16.5: Violet Detector.</td>
 			</tr>
+            <tr id='term_wall'>
+                <th>Wall</th>
+                <td>A cluster of bullets with no space that a hitbox can pass through in between them, although it can also refer to a cluster of bullets that <em>looks</em> like that.</td>
+            </tr>
             <tr id='term_wbawc'>
                 <th>WBaWC</th>
                 <td>Touhou 17: Wily Beast and Weakest Creature.</td>
@@ -508,18 +516,6 @@
                 <th>AoJ</th>
                 <td>"Aura of Justice", Shou's second spell in <a href='#term_ufo'>UFO</a>.</td>
             </tr>
-            <tr id='term_books'>
-                <th>Books</th>
-                <td>The section of <a href='#term_eosd'>EoSD</a> Stage 4 where books spawn in random locations and repeatedly shoot green bullets.</td>
-            </tr>
-            <tr id='term_bolad'>
-                <th>BoLaD</th>
-                <td>"Border of Life and Death", Yukari's semifinal Spell Card in <a href='#term_pcb'>PCB</a>.</td>
-            </tr>
-            <tr id='term_bowap'>
-                <th>BoWaP</th>
-                <td>"Border of Wave and Particle", Satori's final Spell Card if you use ReimuA in <a href='#term_sa'>SA</a>.</td>
-            </tr>
             <tr id='term_bd'>
                 <th>BD</th>
                 <td>"Buddhist Diamond", Kaguya's second Spell Card in <a href='#term_in'>IN</a>.</td>
@@ -531,6 +527,18 @@
             <tr id='term_bls'>
                 <th>BLS</th>
                 <td>"Blue Lady Show", Raiko's <a href='#term_survivalspell'>survival Spell Card</a> in <a href='#term_ddc'>DDC</a>.</td>
+            </tr>
+            <tr id='term_bolad'>
+                <th>BoLaD</th>
+                <td>"Border of Life and Death", Yukari's semifinal Spell Card in <a href='#term_pcb'>PCB</a>.</td>
+            </tr>
+            <tr id='term_books'>
+                <th>Books</th>
+                <td>The section of <a href='#term_eosd'>EoSD</a> Stage 4 where books spawn in random locations and repeatedly shoot green bullets.</td>
+            </tr>
+            <tr id='term_bowap'>
+                <th>BoWaP</th>
+                <td>"Border of Wave and Particle", Satori's final Spell Card if you use ReimuA in <a href='#term_sa'>SA</a>.</td>
             </tr>
             <tr id='term_catswalk'>
                 <th>Cats Walk</th>
@@ -552,13 +560,13 @@
                 <th>FIN</th>
                 <td>"Flying Insect's Nest", Satori's second ReimuA-specific Spell Card in <a href='#term_sa'>SA</a>.</td>
             </tr>
-            <tr id='term_ghostwheels'>
-                <th>Ghost Wheels</th>
-                <td>"The Needles of Yore and the Vengeful Spirits in Pain", Rin's third Spell Card in <a href='#term_sa'>SA</a>. Also known as 'needles' or just 'wheels'.</td>
-            </tr>
             <tr id='term_gc'>
                 <th>GC</th>
                 <td>"Geometric Creature", Keiki's penultimate Spell Card in <a href='#term_wbawc'>WBaWC</a>.</td>
+            </tr>
+            <tr id='term_ghostwheels'>
+                <th>Ghost Wheels</th>
+                <td>"The Needles of Yore and the Vengeful Spirits in Pain", Rin's third Spell Card in <a href='#term_sa'>SA</a>. Also known as 'needles' or just 'wheels'.</td>
             </tr>
             <tr id='term_go'>
                 <th>GO</th>
@@ -654,6 +662,10 @@
                 <th>Rain</th>
                 <td>The section of <a href='#term_lolk'>LoLK</a> Stage 6 where blue bullets spawn in a rain pattern, combined with aimed red stars.</td>
             </tr>
+            <tr id='term_rb'>
+                <th>RB</th>
+                <td>"Resurrection Butterfly", Yuyuko's final Spell Card in <a href='#term_pcb'>PCB</a>.</td>
+            </tr>
             <tr id='term_rings'>
                 <th>Rings</th>
                 <td>The final section of <a href='#term_lls'>LLS</a> Stage 5.</td>
@@ -661,10 +673,6 @@
             <tr id='term_ringsofdeath'>
                 <th>Rings of Death</th>
                 <td>Mokou's final non in <a href='#term_in'>IN</a>.</td>
-            </tr>
-            <tr id='term_rb'>
-                <th>RB</th>
-                <td>"Resurrection Butterfly", Yuyuko's final Spell Card in <a href='#term_pcb'>PCB</a>.</td>
             </tr>
             <tr id='term_rrop'>
                 <th>RRoP</th>
