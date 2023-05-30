@@ -317,7 +317,7 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
         margin-top: 5px;
     }
     #description {
-        padding-left: 25px;
-        padding-right: 25px;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 }
