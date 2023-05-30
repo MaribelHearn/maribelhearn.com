@@ -546,6 +546,7 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
     <div id='recentm'>
         <h2><?php echo _('Recent Records') ?></h2>
         <?php
+            $i = 0;
             foreach ($recent as $key => $obj) {
                 echo '<hr>';
                 if (file_exists(replay_path($obj->game, $obj->diff, $obj->shot))) {
@@ -558,6 +559,10 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
                 echo '<p class="' . $obj->game . '">' . _($obj->game) . $space . $obj->diff . $space . _($obj->shot) . '</p>' .
                 '<p>' . number_format($obj->score, 0, '.', ',') . ' by <em>' . $obj->player . '</em><br>' .
                 '<span class="datestring_player">' . date_tl($obj->date, $lang) . '</span></p>';
+                $i++;
+                if ($i == $RECENT_LIMIT) {
+                    break;
+                }
             }
         ?><hr>
     </div>
