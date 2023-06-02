@@ -236,7 +236,8 @@ function tl_term(string $term, string $lang) {
 }
 
 if (!empty($_SESSION['subpage'])) {
-    $subpage = $_SESSION['subpage'];
+    $subpage = strtok($_SESSION['subpage'], '?');
+    $subpage = strtok($subpage, '&');
     if (file_exists('assets/games/royalflare/json/' . $subpage . '.json') || $subpage == 'th08a') {
         if ($subpage == 'th08a') {
             $subpage = 'th08';
