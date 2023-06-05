@@ -302,10 +302,6 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
         margin-left: 8%;
         margin-right: 8%;
     }
-    #description {
-        padding-left: 50px;
-        padding-right: 50px;
-    }
 }
 @media only screen and (max-width: 800px) {
     h1 {
