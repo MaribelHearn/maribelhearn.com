@@ -11,7 +11,7 @@ $flags = array('Afghanistan', 'Aland-Islands', 'Albania', 'Algeria', 'American-S
 'Kiribati', 'South-Korea', 'Kosovo', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macao', 'North-Macedonia', 'Madagascar', 'Malawi',
 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall-Islands', 'Martinique', 'Mauritania', 'Mauritius', 'Mayotte', 'Mexico', 'Micronesia', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat', 'Morocco',
 'Mozambique', 'Myanmar', 'Namibia', 'Nauru', 'Nepal', 'Netherlands', 'New-Caledonia', 'New-Zealand', 'Nicaragua', 'Nigeria', 'Niger', 'Niue', 'Norfolk-Island', 'North-Korea', 'Northern-Mariana-Islands', 'Norway',
-'Oman', 'Pakistan', 'Palau', 'Palestinian-Territory', 'Panama', 'Papua-New-Guinea', 'Paraguay', 'Peru', 'Philippines', 'Pitcairn', 'Poland', 'Portugal', 'Puerto-Rico', 'Qatar', 'Reunion', 'Romania', 'Russia',
+'Oman', 'Pakistan', 'Palau', 'Palestine', 'Panama', 'Papua-New-Guinea', 'Paraguay', 'Peru', 'Philippines', 'Pitcairn', 'Poland', 'Portugal', 'Puerto-Rico', 'Qatar', 'Reunion', 'Romania', 'Russia',
 'Rwanda', 'Saint-Barthelemy', 'Saint-Helena-Dependencies', 'Saint-Helena', 'Saint-Kitts-and-Nevis', 'Saint-Lucia', 'Saint-Martin', 'Saint-Pierre-and-Miquelon', 'Saint-Vincent-and-the-Grenadines', 'Samoa',
 'San-Marino', 'Sao-Tome-and-Principe', 'Saudi-Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra-Leone', 'Singapore', 'Slovakia', 'Slovenia', 'Solomon-Islands', 'Somalia', 'South-Africa', 'South-Georgia', 'Spain',
 'Sri-Lanka', 'Sudan', 'Suriname', 'Svalbard', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', 'Timor-Leste', 'Togo', 'Tokelau', 'Tonga', 'Trinidad-and-Tobago',
