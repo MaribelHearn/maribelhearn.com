@@ -755,12 +755,7 @@ function removeFromTier(item, tierNum, multi, noDisplay) {
 
 function changeToTier(item, tierNum, pos, multi) {
     removeFromTier(item, getTierNumOf(item), multi);
-
-    if (isMobile()) {
-        addToTierMobile({target: {id: `mobile_add_${item}_${tierNum}`}});
-    } else {
-        addToTier(item, tierNum, pos);
-    }
+    addToTier(item, tierNum, pos);
 }
 
 function escapeHTML(string) {
