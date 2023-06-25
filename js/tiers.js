@@ -1801,9 +1801,14 @@ function drop(event) {
 
     if (event.target.id.substring(0, 2) === "th" || event.target.id.substring(0, 4) === "tier") {
         dropOntoTier(event);
-    } else if (isTiered(event.target.id) && following.substring(0, 2) != "th") {
+    }
+    else if (isTiered(event.target.id) && following.substring(0, 2) != "th") {
         itemOntoTieredItem(event);
-    } else if ((isItem(event.target.id) || isCategory(event.target.id) || event.target.id === "characters") && isTiered(following)) {
+    }
+    else if ((isItem(event.target.id) || isCategory(event.target.id) || event.target.id === "characters") && isTiered(following)) {
+        tieredItemOntoPicker();
+    }
+    else if (isMobile() && event.target.id == "wrap") {
         tieredItemOntoPicker();
     }
 
@@ -2138,6 +2143,9 @@ function setEventListeners() {
     document.getElementById("characters").addEventListener("dragover", allowDrop, false);
     document.getElementById("characters").addEventListener("dragenter", allowDrop, false);
     document.getElementById("characters").addEventListener("drop", drop, false);
+    document.getElementById("wrap").addEventListener("dragover", allowDrop, false);
+    document.getElementById("wrap").addEventListener("dragenter", allowDrop, false);
+    document.getElementById("wrap").addEventListener("drop", drop, false);
     document.getElementById("pc98").addEventListener("click", togglePC98, false);
     document.getElementById("windows").addEventListener("click", toggleWindows, false);
     document.getElementById("save_settings").addEventListener("click", saveTiersAndSettings, false);
