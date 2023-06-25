@@ -68,9 +68,9 @@ input[type=button]:not(.button_bottom) {
     text-align: center;
     width: 75%;
     margin-left: 72px;
-    height: 75px;
+    height: 65px;
     padding-top: 5px;
-    bottom: 10px;
+    bottom: 0px;
 }
 #add_tier_box_mobile {
     display: table-row;
