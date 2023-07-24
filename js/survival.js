@@ -1,5 +1,5 @@
 /*global html2canvas isMobile getCookie deleteCookie*/
-const games = ["HRtPMakai", "HRtPJigoku", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "INFinalA", "INFinalB", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
+const games = ["HRtPMakai", "HRtPJigoku", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "INFinalA", "INFinalB", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLKLegacy", "LoLKPointdevice", "HSiFS", "WBaWC", "UM"];
 let vals = {};
 let unsavedChanges = false;
 let originalContent, completions, na;
@@ -12,7 +12,7 @@ for (const game of games) {
         "Lunatic": "N/A"
     };
 
-    if (game != "HRtPMakai" && game != "HRtPJigoku" && game != "PoDD" && game != "INFinalB") {
+    if (game != "HRtPMakai" && game != "HRtPJigoku" && game != "PoDD" && game != "INFinalB" && game != "LoLKPointdevice") {
         vals[game].Extra = "N/A";
     }
 
@@ -58,6 +58,15 @@ function fillGame(game, achievement) {
         document.getElementById("INFinalAExtra").value = achievement;
         vals["INFinalA"]["Extra"] = achievement;
     }
+
+    if (game == "LoLKPointdevice") {
+        if (achievement == "NM+" || achievement == "NB+" || achievement == "NMNB+") {
+            achievement = achievement.slice(0, -1);
+        }
+
+        document.getElementById("LoLKLegacyExtra").value = achievement;
+        vals["LoLKLegacy"]["Extra"] = achievement;
+    }
 }
 
 function fillDifficulty(difficulty, achievement) {
@@ -75,7 +84,7 @@ function fillDifficulty(difficulty, achievement) {
             tmp = achievement;
         }
 
-        if (difficulty == "Extra" && (game == "HRtPMakai" || game == "HRtPJigoku" || game == "PoDD" || game == "INFinalB")) {
+        if (difficulty == "Extra" && (game == "HRtPMakai" || game == "HRtPJigoku" || game == "PoDD" || game == "INFinalB" || game == "LoLKPointdevice")) {
             continue;
         }
 
@@ -166,6 +175,7 @@ function runQuerySelectors() {
     const hidden = document.querySelectorAll(".hidden");
     const hrtpRoute = document.querySelectorAll(".hrtp_route");
     const inRoute = document.querySelectorAll(".in_route");
+    const lolkMode = document.querySelectorAll(".lolk_mode");
     const noExtra = document.querySelectorAll(".no_extra");
 
     for (const element of hidden) {
@@ -181,6 +191,10 @@ function runQuerySelectors() {
         element.parentNode.removeChild(element);
     }
 
+    for (const element of lolkMode) {
+        element.parentNode.removeChild(element);
+    }
+
     for (const element of noExtra) {
         element.setAttribute("colspan", 2);
         element.innerHTML = "X";
@@ -191,6 +205,8 @@ function runQuerySelectors() {
     let toRemove = document.getElementById("INFinalBtr");
     toRemove.parentNode.removeChild(toRemove);
     toRemove = document.getElementById("HRtPJigokutr");
+    toRemove.parentNode.removeChild(toRemove);
+    toRemove = document.getElementById("LoLKPointdevicetr");
     toRemove.parentNode.removeChild(toRemove);
 
     for (const element of overview) {
@@ -212,7 +228,7 @@ function needsText(achievement) {
 
 function applyColours() {
     for (const game of games) {
-        if (game == "HRtPJigoku" || game == "INFinalB") {
+        if (game == "HRtPJigoku" || game == "INFinalB" || game == "LoLKPointdevice") {
             continue;
         }
 
@@ -223,12 +239,12 @@ function applyColours() {
             if (id.includes("Extra") && !id.includes("PCB") && !id.includes("IN")) {
                 element.parentNode.setAttribute("colspan", 2);
                 element.parentNode.classList.add("overview");
-            } else if (!id.includes("Extra") && id != "PCBPhantasm" && !id.includes("HRtP") && !id.includes("IN")) {
+            } else if (!id.includes("Extra") && id != "PCBPhantasm" && !id.includes("HRtP") && !id.includes("IN") && !id.includes("LoLK")) {
                 element.parentNode.setAttribute("colspan", 2);
                 element.parentNode.classList.add("overview");
             } else if (id == "PCBExtra" || id == "PCBPhantasm") {
                 element.parentNode.classList.add("overview_half");
-            } else if (id.includes("HRtP") || id.includes("IN") && !id.includes("Extra")) {
+            } else if (id.includes("HRtP") || id.includes("IN") || id.includes("LoLK") && !id.includes("Extra")) {
                 element.parentNode.classList.add("overview_half");
             } else {
                 element.parentNode.classList.add("overview");
@@ -263,6 +279,17 @@ function applyColours() {
 
                 finalBelement.innerHTML = (needsText(value) ? value : "");
             }
+
+            if (id.includes("LoLKLegacy") && !id.includes("Extra")) {
+                const finalBelement = document.getElementById(id.replace("LoLKLegacy", "L"));
+                const value = vals["LoLKPointdevice"][diff];
+
+                if (format(value) !== "") {
+                    finalBelement.classList.add(format(value));
+                }
+
+                finalBelement.innerHTML = (needsText(value) ? value : "");
+            }
         }
     }
 }
@@ -277,6 +304,7 @@ function prepareRendering() {
     document.getElementById("legend").style.display = "table-caption";
     document.getElementById("HRtPMakai").classList.add("bold");
     document.getElementById("INFinalA").classList.add("bold");
+    document.getElementById("LoLKLegacy").classList.add("bold");
     document.getElementById("survival").classList.add("rendering");
     document.getElementById("survival").style.marginLeft = 0;
     document.getElementById("wrap").style.marginLeft = 0;
@@ -284,6 +312,8 @@ function prepareRendering() {
     document.getElementById("container").style.backgroundColor = "white";
     document.getElementById("INFinalAExtra").parentNode.setAttribute("rowspan", 1);
     document.getElementById("INFinalAExtra").parentNode.setAttribute("colspan", 2);
+    document.getElementById("LoLKLegacyExtra").parentNode.setAttribute("rowspan", 1);
+    document.getElementById("LoLKLegacyExtra").parentNode.setAttribute("colspan", 2);
     runQuerySelectors();
     applyColours();
 
@@ -293,6 +323,10 @@ function prepareRendering() {
         }
 
         if (game.includes("IN")) {
+            continue;
+        }
+
+        if (game.includes("LoLK")) {
             continue;
         }
 
@@ -462,6 +496,17 @@ function readLocalStorage() {
                 delete vals.HRtP;
             }
 
+            if (vals.hasOwnProperty("LoLK")) {
+                vals.LoLKLegacy = vals.LoLK;
+                vals.LoLKPointdevice = {
+                    "Easy": "N/A",
+                    "Normal": "N/A",
+                    "Hard": "N/A",
+                    "Lunatic": "N/A"
+                };
+                delete vals.LoLK;
+            }
+
             if (vals.INFinalB.hasOwnProperty("Extra")) {
                 delete vals.INFinalB.Extra;
             }
@@ -545,13 +590,17 @@ function getPercentage(game) {
         return 100 / (Object.keys(vals["INFinalA"]).length + Object.keys(vals["INFinalB"]).length);
     }
 
+    if (game.includes("LoLK")) {
+        return 100 / (Object.keys(vals["LoLKLegacy"]).length + Object.keys(vals["LoLKPointdevice"]).length);
+    }
+
     return 100 / Object.keys(vals[game]).length;
 }
 
 function countAchievements(numbers) {
     for (const game in vals) {
         for (let diff in vals[game]) {
-            let gameTmp = (game.includes("IN") ? "IN" : (game.includes("HRtP") ? "HRtP" : game));
+            let gameTmp = (game.includes("LoLK") ? "LoLK" : (game.includes("IN") ? "IN" : (game.includes("HRtP") ? "HRtP" : game)));
             let value = vals[game][diff];
             diff = (diff == "Phantasm" ? "Extra" : diff);
     
@@ -626,6 +675,10 @@ function fillCompletionTable() {
         }
 
         if (game.includes("IN")) {
+            continue;
+        }
+
+        if (game.includes("LoLK")) {
             continue;
         }
 

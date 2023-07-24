@@ -1,6 +1,6 @@
 <?php
 $games = ['HRtPMakai', 'HRtPJigoku', 'SoEW', 'PoDD', 'LLS', 'MS', 'EoSD', 'PCB', 'INFinalA',
-'INFinalB', 'PoFV', 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC', 'UM'];
+'INFinalB', 'PoFV', 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLKLegacy', 'LoLKPointdevice', 'HSiFS', 'WBaWC', 'UM'];
 $diffs = ['Easy', 'Normal', 'Hard', 'Lunatic', 'Extra'];
 function achievs(string $game) {
     $achievs = ['N/A', 'Not cleared', '1cc', 'NM', 'NB', 'NMNB'];
@@ -15,7 +15,7 @@ function achievs(string $game) {
     }
 }
 function no_extra(string $game) {
-    return in_array($game, ['HRtPMakai', 'HRtPJigoku', 'PoDD', 'INFinalB']);
+    return in_array($game, ['HRtPMakai', 'HRtPJigoku', 'PoDD', 'INFinalB', 'LoLKPointdevice']);
 }
 function display_name(string $game) {
     if ($game == 'HRtPMakai') {
@@ -26,6 +26,10 @@ function display_name(string $game) {
         return 'IN <span class="in_route">FinalA</span>';
     } else if ($game == 'INFinalB') {
         return 'IN <span class="in_route">FinalB</span>';
+    } else if ($game == 'LoLKLegacy') {
+        return 'LoLK <span class="lolk_mode">Legacy</span>';
+    } else if ($game == 'LoLKPointdevice') {
+        return 'LoLK <span class="lolk_mode">Pointdevice</span>';
     } else {
         return $game;
     }
@@ -92,13 +96,13 @@ function display_name(string $game) {
     					echo '<tr id="' . $game . 'tr"><td id="' . $game . '">' . display_name($game) . '</td>';
     					foreach ($diffs as $key => $diff) {
     						if (no_extra($game, $diff) && $diff == 'Extra') {
-    							if ($game != 'HRtPJigoku' && $game != 'INFinalB') {
+    							if ($game != 'HRtPJigoku' && $game != 'INFinalB' && $game != 'LoLKPointdevice') {
     								echo '<td class="noborders"></td><td class="noborders"></td>';
     							}
 
     							continue;
     						}
-    						echo ($game == 'INFinalA' && $diff == 'Extra' ? '<td rowspan="2">' : '<td>');
+    						echo (($game == 'INFinalA' || $game == 'LoLKLegacy') && $diff == 'Extra' ? '<td rowspan="2">' : '<td>');
     						echo '<select id="' . $game . $diff . '" class="category">';
     						foreach ($achievs as $key => $achiev) {
     							echo '<option>' . _($achiev) . '</option>';
@@ -118,6 +122,9 @@ function display_name(string $game) {
     						}
     						if ($game == 'INFinalA' && $diff != 'Extra') {
     							echo '<td id="B' . $diff . '" class="hidden">';
+    						}
+    						if ($game == 'LoLKLegacy' && $diff != 'Extra') {
+    							echo '<td id="L' . $diff . '" class="hidden">';
     						}
     					}
     					echo '</tr>';
