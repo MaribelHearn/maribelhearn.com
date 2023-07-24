@@ -424,10 +424,12 @@ function printMessage(message) {
 }
 
 function emptyModal() {
-    cleanupRendering();
-    document.getElementById("container").style.display = "block";
-    document.getElementById("modal_inner").style.display = "none";
-    document.getElementById("modal").style.display = "none";
+    if (document.getElementById("modal_inner").style.display == "block") {
+        cleanupRendering();
+        document.getElementById("container").style.display = "block";
+        document.getElementById("modal_inner").style.display = "none";
+        document.getElementById("modal").style.display = "none";
+    }
 }
 
 function deleteLegacyCookies() {
