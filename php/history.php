@@ -25,6 +25,7 @@
         <p><a href='#GFW'>Touhou 12.8 - Great Fairy Wars</a></p>
         <p><a href='#TD'>Touhou 13 - Ten Desires</a></p>
         <p><a href='#DDC'>Touhou 14 - Double Dealing Character</a></p>
+        <p><a href='#ISC'>Touhou 14.3 - Impossible Spell Card</a></p>
         <p><a href='#LoLK'>Touhou 15 - Legacy of Lunatic Kingdom</a></p>
         <p><a href='#HSiFS'>Touhou 16 - Hidden Star in Four Seasons</a></p>
         <p><a href='#VD'>Touhou 16.5 - Violet Detector</a></p>
@@ -2360,8 +2361,8 @@
             </tr>
             <tr>
                 <td><strong>No Items</strong></td>
-                <td>74/75</td>
-                <td>-</td>
+                <td class='g'>75/75</td>
+                <td>July 30, 2023</td>
             </tr>
         </table></div>
         <h3>No Items Clear Progress</h3>
@@ -2501,7 +2502,7 @@
                 <td class='y'><strong><a class='i' href='https://www.youtube.com/watch?v=AOWmiWJWqd4'>Y</a></strong></td>
                 <td class='y'><strong><a class='i' href='https://www.youtube.com/watch?v=JciKDLK_Zpk'>Y</a></strong></td>
                 <td class='y'><strong><a class='i' href='https://www.youtube.com/watch?v=ySrG7twIlfU'>Y</a></strong></td>
-                <td class='r'><strong>N</strong></td>
+                <td class='y'><strong><a class='i' href='https://www.youtube.com/watch?v=veaDCtNodlc'>Y</a></strong></td>
                 <td class='y'><strong><a class='i' href='https://www.youtube.com/watch?v=LkTq3-YV-wQ'>Y</a></strong></td>
                 <td class='y'><strong><a class='i' href='https://www.youtube.com/watch?v=K7R1o5Z1KJI'>Y</a></strong></td>
                 <td class='y'><strong><a class='i' href='https://www.youtube.com/watch?v=_3lnTs3stOo'>Y</a></strong></td>
