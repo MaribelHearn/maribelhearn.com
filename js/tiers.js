@@ -1747,6 +1747,10 @@ function tierOntoTier(tierNum) {
 }
 
 function itemOntoTier(tierNum) {
+    if (following === "") { // duplicate from wrap drop event
+        return;
+    }
+
     if (multiSelection.length > 0 && multiSelection.includes(following)) {
         addMultiSelection(tierNum);
     } else {
