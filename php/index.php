@@ -113,10 +113,6 @@
                 </li>
             </ul>
         </div>
-        <div id='touhou_world_cup'>
-            <h2>Touhou World Cup 2023</h2>
-            <p class='wide center'>Touhou World Cup 2023 is currently ongoing! Visit <span class='icon twc_icon'></span> <a href='https://touhouworldcup.com'>touhouworldcup.com</a> for more information.</p>
-        </div>
         <div id='special_thanks'>
             <h2>Special Thanks</h2>
             <p class='wide center'>Many thanks to my awesome supporters for covering server costs!</p>
