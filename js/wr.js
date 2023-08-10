@@ -131,6 +131,10 @@ function percentageClass(percentage) {
 }
 
 function formatUnverified(score) {
+    if (score.includes("cs")) {
+        return `<span class='unver'>${score}</span>`;
+    }
+
     return `<span class='unver_container'><span class='unver'>${score}</span><span class='tooltip'>Unverified</span></span>`;
 }
 
