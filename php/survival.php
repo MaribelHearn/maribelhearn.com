@@ -1,6 +1,6 @@
 <?php
-$games = ['HRtPMakai', 'HRtPJigoku', 'SoEW', 'PoDD', 'LLS', 'MS', 'EoSD', 'PCB', 'INFinalA',
-'INFinalB', 'PoFV', 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLKLegacy', 'LoLKPointdevice', 'HSiFS', 'WBaWC', 'UM'];
+$games = ['HRtPMakai', 'HRtPJigoku', 'SoEW', 'PoDD', 'LLS', 'MS', 'EoSD', 'PCB', 'INFinalA', 'INFinalB', 'PoFV',
+'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLKLegacy', 'LoLKPointdevice', 'HSiFS', 'WBaWC', 'UM', 'UDoALG'];
 $diffs = ['Easy', 'Normal', 'Hard', 'Lunatic', 'Extra'];
 function achievs(string $game) {
     $achievs = ['N/A', 'Not cleared', '1cc', 'NM', 'NB', 'NMNB'];

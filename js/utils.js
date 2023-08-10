@@ -174,7 +174,8 @@ function gameAbbr(game) {
         "LoLK": 15,
         "HSiFS": 16,
         "WBaWC": 17,
-        "UM": 18
+        "UM": 18,
+        "UDoALG": 19
     })[game];
 }
 
@@ -200,7 +201,8 @@ function fullNameNumber(game) {
         "LoLK": _("Touhou 15 - Legacy of Lunatic Kingdom"),
         "HSiFS": _("Touhou 16 - Hidden Star in Four Seasons"),
         "WBaWC": _("Touhou 17 - Wily Beast and Weakest Creature"),
-        "UM": _("Touhou 18 - Unconnected Marketeers")
+        "UM": _("Touhou 18 - Unconnected Marketeers"),
+        "UDoALG": _("Touhou 19 - Unfinished Dream of All Living Ghost")
     }[game]);
 }
 

@@ -132,6 +132,7 @@ function game_num(string $game) {
         case 'HSiFS': return 16;
         case 'WBaWC': return 17;
         case 'UM': return 18;
+        case 'UDoALG': return 19;
         default: return 0;
     }
 }
@@ -159,6 +160,7 @@ function full_name(string $game) {
         case 'HSiFS': return _('Touhou 16 - Hidden Star in Four Seasons');
         case 'WBaWC': return _('Touhou 17 - Wily Beast and Weakest Creature');
         case 'UM': return _('Touhou 18 - Unconnected Marketeers');
+        case 'UDoALG': return _('Touhou 19 - Unfinished Dream of All Living Ghost');
         default: return 'Unknown';
     }
 }

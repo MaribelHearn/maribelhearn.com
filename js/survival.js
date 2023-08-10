@@ -1,5 +1,5 @@
 /*global html2canvas isMobile getCookie deleteCookie*/
-const games = ["HRtPMakai", "HRtPJigoku", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "INFinalA", "INFinalB", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLKLegacy", "LoLKPointdevice", "HSiFS", "WBaWC", "UM"];
+const games = ["HRtPMakai", "HRtPJigoku", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "INFinalA", "INFinalB", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLKLegacy", "LoLKPointdevice", "HSiFS", "WBaWC", "UM", "UDoALG"];
 let vals = {};
 let unsavedChanges = false;
 let originalContent, completions, na;
@@ -124,7 +124,8 @@ function initGameCounts() {
         "LoLK": 0,
         "HSiFS": 0,
         "WBaWC": 0,
-        "UM": 0
+        "UM": 0,
+        "UDoALG": 0
     };
 }
 
