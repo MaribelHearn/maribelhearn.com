@@ -523,6 +523,10 @@ function readLocalStorage() {
                 delete vals.INFinalB.Extra;
             }
 
+            if (vals.UDoALG.hasOwnProperty("Extra")) {
+                delete vals.UDoALG.Extra;
+            }
+
             for (const diff in vals.PCB) {
                 if (vals.PCB[diff] == "NMNBNBB") {
                     vals.PCB[diff] = "NNN";
