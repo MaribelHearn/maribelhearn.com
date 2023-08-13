@@ -12,7 +12,7 @@ for (const game of games) {
         "Lunatic": "N/A"
     };
 
-    if (game != "HRtPMakai" && game != "HRtPJigoku" && game != "PoDD" && game != "INFinalB" && game != "LoLKPointdevice") {
+    if (game != "HRtPMakai" && game != "HRtPJigoku" && game != "PoDD" && game != "INFinalB" && game != "LoLKPointdevice" && game != "UDoALG") {
         vals[game].Extra = "N/A";
     }
 
