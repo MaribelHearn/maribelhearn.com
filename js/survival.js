@@ -477,6 +477,15 @@ function readLocalStorage() {
                 };
             }
 
+            if (!vals.hasOwnProperty("UDoALG")) {
+                vals.UDoALG = {
+                    "Easy": "N/A",
+                    "Normal": "N/A",
+                    "Hard": "N/A",
+                    "Lunatic": "N/A"
+                };
+            }
+
             if (vals.hasOwnProperty("IN")) {
                 vals.INFinalA = vals.IN;
                 vals.INFinalB = {

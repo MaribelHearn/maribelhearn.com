@@ -15,7 +15,7 @@ function achievs(string $game) {
     }
 }
 function no_extra(string $game) {
-    return in_array($game, ['HRtPMakai', 'HRtPJigoku', 'PoDD', 'INFinalB', 'LoLKPointdevice']);
+    return in_array($game, ['HRtPMakai', 'HRtPJigoku', 'PoDD', 'INFinalB', 'LoLKPointdevice', 'UDoALG']);
 }
 function display_name(string $game) {
     if ($game == 'HRtPMakai') {
