@@ -97,7 +97,7 @@ foreach ($lnn as $game => $data1) {
         foreach ($data2 as $key => $player) {
             $nospaces = str_replace(' ', '', $player);
             if (!file_exists(replay_path($game, $nospaces, $shottype)) && game_num($game) > 5) {
-                array_push($missing_replays, ($game . $nospaces . $shottype));
+                array_push($missing_replays, ($game . $shottype . $nospaces));
             }
             if (!in_array($player, $pl)) {
                 array_push($pl, $player);
@@ -117,6 +117,14 @@ foreach ($lnn as $game => $data1) {
         }
     }
     $gt += $sum;
+}
+$missing_runs = $missing_replays;
+for ($i = 0; $i < sizeof($video_lnns); $i++) {
+    $entry = preg_split('/;/', $video_lnns[$i])[0];
+    if (in_array($entry, $missing_runs)) {
+        $key = array_search($entry, $missing_runs);
+        unset($missing_runs[$key]);
+    }
 }
 ?>
 <div id='wrap' class='wrap'>
@@ -318,7 +326,7 @@ foreach ($lnn as $game => $data1) {
                 </tr>
                 <tr>
                     <td colspan='2'><?php echo _('Replays'); ?></td>
-                    <td colspan='2'><?php echo sizeof(glob('replays/lnn/*/*')) + sizeof($video_lnns) ?></td>
+                    <td colspan='2'><?php echo sizeof($missing_runs); ?></td>
                 </tr>
             </tfoot>
         </table>

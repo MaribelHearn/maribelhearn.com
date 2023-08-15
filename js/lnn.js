@@ -177,7 +177,7 @@ function getPlayerGameLNNs(player, game) {
 
             if (preferVideo && videoLNNs.hasOwnProperty(game + shot + player)) {
                 result.replays.push(`<a href='${videoLNNs[game + shot + player]}' target='_blank'>Video link</a>`);
-            } else if (gameAbbr(game) < 6 || missingReplays.includes(game + player.removeSpaces() + shot)) {
+            } else if (gameAbbr(game) < 6 || missingReplays.includes(game + shot + player.removeSpaces())) {
                 if (videoLNNs.hasOwnProperty(game + shot + player)) {
                     result.replays.push(`<a href='${videoLNNs[game + shot + player]}' target='_blank'>Video link</a>`);
                 } else {
