@@ -331,7 +331,6 @@ for ($i = 0; $i < sizeof($video_lnns); $i++) {
             </tfoot>
         </table>
     </div>
-    <p><?php var_dump($missing_runs); ?></p>
     <div id='players'>
         <h2><?php echo _('Player Ranking'); ?></h2>
         <table id='ranking' class='sortable'>
