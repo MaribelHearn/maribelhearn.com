@@ -326,7 +326,7 @@ for ($i = 0; $i < sizeof($video_lnns); $i++) {
                 </tr>
                 <tr>
                     <td colspan='2'><?php echo _('Replays'); ?></td>
-                    <td colspan='2'><?php echo sizeof($pl_lnn) - sizeof($missing_runs); ?></td>
+                    <td colspan='2'><?php echo $gt - sizeof($missing_runs); ?></td>
                 </tr>
             </tfoot>
         </table>
