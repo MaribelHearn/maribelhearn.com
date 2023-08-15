@@ -175,11 +175,11 @@ function getPlayerGameLNNs(player, game) {
             const type = shot.replace(character, "");
             result.runs.push(_(character) + (type === "" ? "" : ` (${_(type)})`));
 
-            if (preferVideo && videoLNNs.hasOwnProperty(game + shot + player)) {
-                result.replays.push(`<a href='${videoLNNs[game + shot + player]}' target='_blank'>Video link</a>`);
+            if (preferVideo && videoLNNs.hasOwnProperty(game + shot + player.removeSpaces())) {
+                result.replays.push(`<a href='${videoLNNs[game + shot + player.removeSpaces()]}' target='_blank'>Video link</a>`);
             } else if (gameAbbr(game) < 6 || missingReplays.includes(game + shot + player.removeSpaces())) {
-                if (videoLNNs.hasOwnProperty(game + shot + player)) {
-                    result.replays.push(`<a href='${videoLNNs[game + shot + player]}' target='_blank'>Video link</a>`);
+                if (videoLNNs.hasOwnProperty(game + shot + player.removeSpaces())) {
+                    result.replays.push(`<a href='${videoLNNs[game + shot + player.removeSpaces()]}' target='_blank'>Video link</a>`);
                 } else {
                     result.replays.push('-');
                 }

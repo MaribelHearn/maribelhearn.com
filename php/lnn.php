@@ -112,7 +112,7 @@ foreach ($lnn as $game => $data1) {
                 }
             }
             if (!empty($lnn_videos[$game][$shottype][$player])) {
-                array_push($video_lnns, $game . $shottype . $player . ';' . $lnn_videos[$game][$shottype][$player]);
+                array_push($video_lnns, $game . $shottype . $nospaces . ';' . $lnn_videos[$game][$shottype][$player]);
             }
         }
     }
@@ -326,11 +326,12 @@ for ($i = 0; $i < sizeof($video_lnns); $i++) {
                 </tr>
                 <tr>
                     <td colspan='2'><?php echo _('Replays'); ?></td>
-                    <td colspan='2'><?php echo sizeof($pl_lnn) - sizeof($missing_runs); ?></td>
+                    <td colspan='2'><?php echo sizeof($missing_runs); ?></td>
                 </tr>
             </tfoot>
         </table>
     </div>
+    <p><?php var_dump($missing_runs); ?></p>
     <div id='players'>
         <h2><?php echo _('Player Ranking'); ?></h2>
         <table id='ranking' class='sortable'>
