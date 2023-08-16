@@ -1,7 +1,10 @@
 /**
- * sortable 1.0
+ * sortable v2.3.0
  *
- * Makes html tables sortable, ie9+
+ * https://www.npmjs.com/package/sortable-tablesort
+ * https://github.com/tofsjonas/sortable
+ *
+ * Makes html tables sortable, No longer ie9+ 😢
  *
  * Styling is done in css.
  *
@@ -33,89 +36,94 @@
  * For more information, please refer to <http://unlicense.org>
  *
  */
-
-// sort is super fast, even with huge tables, so that is probably not the issue
-// Not solved with documentFragment, same issue... :(
-// My guess is that it is simply too much to hold in memory, since
-// it freezes even before sortable is called if the table is too big in index.html
-
 document.addEventListener('click', function (e) {
-  try {
-    // allows for elements inside TH
-    function findElementRecursive(element, tag) {
-      return element.nodeName === tag ? element : findElementRecursive(element.parentNode, tag)
-    }
-
-    var down_class = ' dir-d '
-    var up_class = ' dir-u '
-    var regex_dir = / dir-(u|d) /
-    var regex_table = /\bsortable\b/
-    var alt_sort = e.shiftKey || e.altKey
-    var element = findElementRecursive(e.target, 'TH')
-    var tr = findElementRecursive(element, 'TR')
-    var table = findElementRecursive(tr, 'TABLE')
-
-    function reClassify(element, dir) {
-      element.className = element.className.replace(regex_dir, '') + dir
-    }
-
-    function getValue(element) {
-      // If you aren't using data-sort and want to make it just the tiniest bit smaller/faster
-      // comment this line and uncomment the next one
-      return (
-        (alt_sort && element.getAttribute('data-sort-alt')) || element.getAttribute('data-sort') || element.innerText
-      )
-      // return element.innerText
-    }
-    if (regex_table.test(table.className)) {
-      var column_index
-      var nodes = tr.cells
-
-      // reset thead cells and get column index
-      for (var i = 0; i < nodes.length; i++) {
-        if (nodes[i] === element) {
-          column_index = i
-        } else {
-          reClassify(nodes[i], '')
+    try {
+        // allows for elements inside TH
+        function findElementRecursive(element, tag) {
+            return element.nodeName === tag ? element : findElementRecursive(element.parentNode, tag);
         }
-      }
-
-      var dir = down_class
-
-      // check if we're sorting up or down, and update the css accordingly
-      if (element.className.indexOf(down_class) !== -1) {
-        dir = up_class
-      }
-
-      reClassify(element, dir)
-
-      // extract all table rows, so the sorting can start.
-      var org_tbody = table.tBodies[0]
-
-      // get the array rows in an array, so we can sort them...
-      var rows = [].slice.call(org_tbody.rows, 0)
-
-      var reverse = dir === up_class
-
-      // sort them using custom built in array sort.
-      rows.sort(function (a, b) {
-        var x = getValue((reverse ? a : b).cells[column_index])
-        var y = getValue((reverse ? b : a).cells[column_index])
-        return isNaN(x - y) ? x.localeCompare(y) : x - y
-      })
-
-      // Make a clone without content
-      var clone_tbody = org_tbody.cloneNode()
-
-      // Build a sorted table body and replace the old one.
-      while (rows.length) {
-        clone_tbody.appendChild(rows.splice(0, 1)[0])
-      }
-
-      // And finally insert the end result
-      table.replaceChild(clone_tbody, org_tbody)
+        var descending_th_class_1 = 'dir-d';
+        var ascending_th_class_1 = 'dir-u';
+        var ascending_table_sort_class = 'asc';
+        var no_sort_class = 'no-sort';
+        var null_last_class = 'n-last';
+        var table_class_name = 'sortable';
+        var alt_sort_1 = e.shiftKey || e.altKey;
+        var element = findElementRecursive(e.target, 'TH');
+        var tr = element.parentNode;
+        var thead = tr.parentNode;
+        var table = thead.parentNode;
+        function reClassify(element, dir) {
+            element.classList.remove(descending_th_class_1);
+            element.classList.remove(ascending_th_class_1);
+            if (dir)
+                element.classList.add(dir);
+        }
+        function getValue(element) {
+            var value = (alt_sort_1 && element.dataset.sortAlt) || element.dataset.sort || element.textContent;
+            return value;
+        }
+        if (thead.nodeName === 'THEAD' && // sortable only triggered in `thead`
+            table.classList.contains(table_class_name) &&
+            !element.classList.contains(no_sort_class) // .no-sort is now core functionality, no longer handled in CSS
+        ) {
+            var column_index_1;
+            var nodes = tr.cells;
+            var tiebreaker_1 = parseInt(element.dataset.sortTbr);
+            // Reset thead cells and get column index
+            for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i] === element) {
+                    column_index_1 = parseInt(element.dataset.sortCol) || i;
+                }
+                else {
+                    reClassify(nodes[i], '');
+                }
+            }
+            var dir = descending_th_class_1;
+            // Check if we're sorting ascending or descending
+            if (element.classList.contains(descending_th_class_1) ||
+                (table.classList.contains(ascending_table_sort_class) && !element.classList.contains(ascending_th_class_1))) {
+                dir = ascending_th_class_1;
+            }
+            // Update the `th` class accordingly
+            reClassify(element, dir);
+            var reverse_1 = dir === ascending_th_class_1;
+            var sort_null_last_1 = table.classList.contains(null_last_class);
+            var compare_1 = function (a, b, index) {
+                var x = getValue(b.cells[index]);
+                var y = getValue(a.cells[index]);
+                if (sort_null_last_1) {
+                    if (x === '' && y !== '') {
+                        return -1;
+                    }
+                    if (y === '' && x !== '') {
+                        return 1;
+                    }
+                }
+                var temp = parseFloat(x) - parseFloat(y);
+                var bool = isNaN(temp) ? x.localeCompare(y) : temp;
+                return reverse_1 ? -bool : bool;
+            };
+            // loop through all tbodies and sort them
+            for (var i = 0; i < table.tBodies.length; i++) {
+                var org_tbody = table.tBodies[i];
+                // Put the array rows in an array, so we can sort them...
+                var rows = [].slice.call(org_tbody.rows, 0);
+                // Sort them using Array.prototype.sort()
+                rows.sort(function (a, b) {
+                    var bool = compare_1(a, b, column_index_1);
+                    return bool === 0 && !isNaN(tiebreaker_1) ? compare_1(a, b, tiebreaker_1) : bool;
+                });
+                // Make an empty clone
+                var clone_tbody = org_tbody.cloneNode();
+                // Put the sorted rows inside the clone
+                clone_tbody.append.apply(clone_tbody, rows);
+                // And finally replace the unsorted tbody with the sorted one
+                table.replaceChild(clone_tbody, org_tbody);
+            }
+        }
     }
-  } catch (error) {
-    // console.log(error)
-  }
+    catch (error) {
+        // console.log(error)
+    }
 });
