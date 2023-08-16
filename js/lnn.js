@@ -1,5 +1,6 @@
 /*global _ LNNs getCookie deleteCookie setCookie gameAbbr shottypeAbbr fullNameNumber*/
 const alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+let language = "en_GB";
 let selected = "";
 let preferVideo = false;
 let missingReplays, videoLNNs;
@@ -103,7 +104,7 @@ function showLNNtable(game) {
             lnnTable.innerHTML += `<tr><td class='nowrap'>${_(shot)}</td><td id='${shot}n'></td><td id='${shot}'></td>`;
         }
 
-        for (const player of LNNs[game][shot]) {
+        for (const player in LNNs[game][shot]) {
             shotPlayers.push(player);
             players.pushStrict(player);
             shotCount += 1;
@@ -111,7 +112,7 @@ function showLNNtable(game) {
         }
 
         if (game == "UFO") {
-            for (const player of LNNs[game][shot + "UFOs"]) {
+            for (const player in LNNs[game][shot + "UFOs"]) {
                 shotPlayers.pushStrict(player + " (UFOs)");
                 players.pushStrict(player);
                 shotCount += 1;
@@ -166,14 +167,38 @@ function showLNNs() { // .game_img onclick
     }
 }
 
+function formatDate(date) {
+    if (language == "ja_JP" || language == "zh_CN") {
+        return date.toLocaleString(language.replace('_', '-'), {"dateStyle": "long"});
+    } else {
+        return date.toLocaleString(language.replace('_', '-'), {"year": "numeric", "month": "2-digit", "day": "2-digit"});
+    }
+}
+
 function getPlayerGameLNNs(player, game) {
-    let result = { "runs": [], "replays": [], "shots": [] };
+    let result = { "runs": [], "replays": [], "shots": [], "dates": [], "earliest": new Date("9999/12/31") };
 
     for (const shot in LNNs[game]) {
-        if (LNNs[game][shot].includes(player)) {
+        if (LNNs[game][shot].hasOwnProperty(player)) {
             const character = shot.replace(/(FinalA|FinalB|UFOs)/g, "");
             const type = shot.replace(character, "");
+            let date = LNNs[game][shot][player];
+            
+            if (date=== "") {
+                date = '-';
+            } else {
+                date = new Date(LNNs[game][shot][player].split('/').reverse().join('/'));
+            }
+
             result.runs.push(_(character) + (type === "" ? "" : ` (${_(type)})`));
+
+            if (date !== "") {
+                result.dates.push(formatDate(date));
+
+                if (date < result.earliest) {
+                    result.earliest = date;
+                }
+            }
 
             if (preferVideo && videoLNNs.hasOwnProperty(game + shot + player.removeSpaces())) {
                 result.replays.push(`<a href='${videoLNNs[game + shot + player.removeSpaces()]}' target='_blank'>Video link</a>`);
@@ -190,9 +215,16 @@ function getPlayerGameLNNs(player, game) {
             }
 
             result.shots.pushStrict(shot.replace("UFOs", ""));
+
+            if (result.dates.length > 1) {
+                for (let i = 0; i < result.dates.length; i++) {
+                    if (result.dates[i] == formatDate(result.earliest)) {
+                        result.dates[i] = `<em>${result.dates[i]}</em>`;
+                    }
+                }
+            }
         }
     }
-
 
     return result;
 }
@@ -231,9 +263,14 @@ function showPlayerLNNs(player) {
         if (playerLNNs.runs.length > 0) {
             games.push(game);
             sum += playerLNNs.runs.length;
-            playerTable.innerHTML += `<tr><td id='${game}l' class='${game}'>${_(game)}</td><td id='${game}s'></td><td id='${game}r'></td></tr>`;
+            playerTable.innerHTML += `<tr><td id='${game}l' class='${game}'>${_(game)}</td><td id='${game}s'></td><td id='${game}r'><td id='${game}d'></td></tr>`;
             document.getElementById(`${game}s`).innerHTML = playerLNNs.runs.join("<br>");
             document.getElementById(`${game}r`).innerHTML = playerLNNs.replays.join("<br>");
+            document.getElementById(`${game}d`).innerHTML = playerLNNs.dates.join("<br>");
+
+            if (playerLNNs.dates.length > 0) {
+                document.getElementById(`${game}d`).setAttribute("data-sort", playerLNNs.earliest.toISOString().split("T")[0].replace(/-/g, ""));
+            }
         }
 
         const lnnShots = document.getElementById(`${game}l`);
@@ -277,7 +314,6 @@ function setEventListeners() {
     document.getElementById("toggle_video").addEventListener("click", toggleVideo, false);
     document.getElementById("search").addEventListener("change", setPlayer, false);
     document.getElementById("search").addEventListener("select", setPlayer, false);
-    document.getElementById("player").addEventListener("change", showPlayerLNNs, false);
     document.getElementById("player").addEventListener("keypress", detectEnter, false);
     document.getElementById("en_GB").addEventListener("click", setLanguage, false);
     document.getElementById("ja_JP").addEventListener("click", setLanguage, false);
@@ -343,6 +379,20 @@ function checkHash() {
 }
 
 function init() {
+    if (getCookie("lang") == "ja_JP" || location.href.includes("?hl=jp")) {
+        language = "ja_JP";
+    } else if (getCookie("lang") == "zh_CN" || location.href.includes("?hl=zh")) {
+        language = "zh_CN";
+    } else if (getCookie("lang") == "ru_RU" || location.href.includes("?hl=ru")) {
+        language = "ru_RU";
+    } else if (getCookie("lang") == "de_DE" || location.href.includes("?hl=de")) {
+        language = "de_DE";
+    } else if (getCookie("lang") == "es_ES" || location.href.includes("?hl=es")) {
+        language = "es_ES";
+    } else if (getCookie("lang") == "en_US" || location.href.includes("?hl=en-us")) {
+        language = "en_US";
+    }
+
     setEventListeners();
     setAttributes();
     videoLNNs = parseVideos();

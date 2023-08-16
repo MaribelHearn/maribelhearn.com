@@ -94,7 +94,7 @@ foreach ($lnn as $game => $data1) {
     $flag = array_fill(0, sizeof($flag), true);
     foreach ($data1 as $shottype => $data2) {
         $sum += sizeof($data2);
-        foreach ($data2 as $key => $player) {
+        foreach ($data2 as $player => $date) {
             $nospaces = str_replace(' ', '', $player);
             if (!file_exists(replay_path($game, $nospaces, $shottype)) && game_num($game) > 5) {
                 array_push($missing_replays, ($game . $shottype . $nospaces));
@@ -174,7 +174,7 @@ for ($i = 0; $i < sizeof($video_lnns); $i++) {
         if ($layout == 'New') {
             echo '<noscript>';
         }
-        foreach ($lnn as $game => $obj) {
+        foreach ($lnn as $game => $shots) {
             if ($game == 'LM') {
                 continue;
             }
@@ -185,20 +185,21 @@ for ($i = 0; $i < sizeof($video_lnns); $i++) {
             '<thead><tr><th class="general_header">' . shot_route($game) . '</th>' .
             '<th class="general_header nowrap">' . lnn_type($game, $lang) . '<br>' . _('(Different players)') . '</th>' .
             '<th class="general_header">' . _('Players') . '</tr></thead><tbody>';
-            foreach ($obj as $shot => $players) {
+            foreach ($shots as $shot => $obj) {
                 if (strpos($shot, 'UFOs')) {
                     continue;
                 }
+                $players = array_keys($obj);
                 $count = sizeof($players);
                 $sum += $count;
                 $all = array_merge($all, $players);
                 if ($game == 'UFO') {
-                    $count += sizeof($obj[$shot . 'UFOs']);
+                    $count += sizeof($shots[$shot . 'UFOs']);
                 }
                 sort($players);
                 echo '<tr><td class="nowrap">' . format_shot($game, $shot) . '</td><td>' . $count . '</td><td>' . implode(', ', $players);
                 if ($game == 'UFO') {
-                    $players = $obj[$shot . 'UFOs'];
+                    $players = array_keys($shots[$shot . 'UFOs']);
                     $sum += sizeof($players);
                     $all = array_merge($all, $players);
                     for ($i = 0; $i < sizeof($players); $i++) {
@@ -268,20 +269,21 @@ for ($i = 0; $i < sizeof($video_lnns); $i++) {
         <p><input id='toggle_video' type='checkbox'><label for='toggle_video'><?php echo _('Show videos over replays') ?></label></p>
     </div>
 	<div id='player_list'>
-		<table class='sortable'>
+		<table class='sortable asc'>
 			<thead id='player_thead'><tr>
                 <th class='general_header'><?php echo _('Game') ?></th>
                 <th class='general_header'><?php echo _('Shottype') ?></th>
                 <th class='general_header'><?php echo _('Replay') ?></th>
+                <th class='general_header'><?php echo _('Date') ?></th>
             </tr></thead>
 			<tbody id='player_tbody'></tbody>
 			<tfoot id='player_tfoot'>
                 <tr>
-                    <td colspan='3'></td>
+                    <td colspan='4'></td>
                 </tr>
                 <tr class='irregular_tr'>
                     <td><?php echo _('Total') ?></td>
-                    <td id='player_sum' colspan='2'></td>
+                    <td id='player_sum' colspan='3'></td>
                 </tr>
             </tfoot>
 		</table>
@@ -308,9 +310,9 @@ for ($i = 0; $i < sizeof($video_lnns); $i++) {
                         $game_pl = array();
                         foreach ($lnn[$game] as $shottype => $data2) {
                             $sum += sizeof($lnn[$game][$shottype]);
-                            foreach ($lnn[$game][$shottype] as $player => $data3) {
-                                if (!in_array($data3, $game_pl)) {
-                                    array_push($game_pl, $data3);
+                            foreach ($lnn[$game][$shottype] as $player => $date) {
+                                if (!in_array($player, $game_pl)) {
+                                    array_push($game_pl, $player);
                                 }
                             }
                         }
