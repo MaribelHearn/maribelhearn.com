@@ -297,14 +297,13 @@ function detectEnter(event) {
 }
 
 function setLanguage(event) {
-    let newLanguage;
+    const newLanguage = event.target.id || event.target.parentNode.id;
 
-    if (event.target.id == "en_GB" || event.target.parentNode.id == "en_GB") {
-        newLanguage = (getCookie("lang") == "en_US" ? "en_US" : "en_GB");
-    } else {
-        newLanguage = event.target.id || event.target.parentNode.id;
+    if (language == newLanguage) {
+        return;
     }
 
+    language = newLanguage;
     location.href = location.href.split('#')[0].split('?')[0];
     setCookie("lang", newLanguage);
 }
