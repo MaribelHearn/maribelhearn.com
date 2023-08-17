@@ -1,4 +1,8 @@
 /*global html2canvas isMobile getCookie deleteCookie*/
+String.prototype.strip = function () {
+    return this.replace(/<\/?[^>]*>/g, "");
+};
+
 const games = ["HRtPMakai", "HRtPJigoku", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "INFinalA", "INFinalB", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLKLegacy", "LoLKPointdevice", "HSiFS", "WBaWC", "UM", "UDoALG"];
 let vals = {};
 let unsavedChanges = false;
@@ -370,22 +374,23 @@ function cleanupRendering() {
     setEventListenersSelect();
 }
 
-function fileName() {
+function fileName(extension) {
     const date = new Date();
     const month = (date.getMonth() + 1).toLocaleString("en-US", {minimumIntegerDigits: 2});
     const day = (date.getDate()).toLocaleString("en-US", {minimumIntegerDigits: 2});
     const hours = (date.getHours()).toLocaleString("en-US", {minimumIntegerDigits: 2});
     const minutes = (date.getMinutes()).toLocaleString("en-US", {minimumIntegerDigits: 2});
     const seconds = (date.getSeconds()).toLocaleString("en-US", {minimumIntegerDigits: 2});
-    return `touhou_survival_progress_${date.getFullYear()}_${month}_${day}_${hours}_${minutes}_${seconds}.png`;
+    return `touhou_survival_progress_${date.getFullYear()}_${month}_${day}_${hours}_${minutes}_${seconds}.${extension}`;
 }
+
 
 function afterScreenshot(canvas) {
     const base64 = canvas.toDataURL("image/png");
     document.getElementById("screenshot_base64").src = base64;
-    const saveLink = document.getElementById("save_link");
+    const saveLink = document.getElementById("screenshot_link");
     saveLink.href = base64;
-    saveLink.download = fileName();
+    saveLink.download = fileName("png");
     cleanupRendering();
 }
 
@@ -421,15 +426,15 @@ function drawOverview() {
 }
 
 function printMessage(message) {
-    document.getElementById("message").innerHTML = `<strong class='message'>${message}</strong>`;
+    document.getElementById("message").innerHTML = message;
 }
 
 function emptyModal() {
-    if (document.getElementById("modal_inner").style.display == "block") {
-        cleanupRendering();
-        document.getElementById("container").style.display = "block";
-        document.getElementById("modal_inner").style.display = "none";
-        document.getElementById("modal").style.display = "none";
+    document.getElementById("modal").style.display = "none";
+    const innerModals = document.querySelectorAll(".modal_inner");
+    
+    for (const element of innerModals) {
+        element.style.display = "none";
     }
 }
 
@@ -594,7 +599,7 @@ function save() {
     localStorage.setItem("saveSurvivalData", true);
     localStorage.setItem("vals", JSON.stringify(vals));
     unsavedChanges = false;
-    printMessage("Survival table saved!");
+    printMessage("<strong class='message'>Survival table saved!</strong>");
 }
 
 function getPercentage(game) {
@@ -717,10 +722,47 @@ function apply() {
     numbers = countAchievements(numbers);
     fillNumberTable(numbers);
     fillCompletionTable();
-    document.getElementById("modal_inner").style.display = "block";
+    document.getElementById("results").style.display = "block";
     document.getElementById("modal").style.display = "block";
     drawOverview();
     printMessage("");
+}
+
+function importText() {
+    emptyModal();
+    printMessage("");
+    document.getElementById("import_text").style.display = "block";
+    document.getElementById("modal").style.display = "block";
+}
+
+function copyToClipboard() {
+    emptyModal();
+    const text = document.getElementById("text_file").value;
+    navigator.clipboard.writeText(text.replace(/<\/p><p>/g, "\n").strip());
+    printMessage("<strong class='message'>Copied to clipboard!</strong>");
+}
+function exportText() {
+    emptyModal();
+    printMessage("");
+    let textFile = "";
+
+    for (const game in vals) {
+        textFile += `${game}:\n`;
+
+        for (const diff in vals[game]) {
+            textFile += `${diff}: ${vals[game][diff]}\n`;
+        }
+
+        textFile += '\n';
+    }
+
+    const saveLink = document.getElementById("save_link");
+    saveLink.href = "data:text/plain;charset=utf-8," + encodeURIComponent(textFile);
+    saveLink.download = fileName("txt");
+    document.getElementById("copy_to_clipboard").addEventListener("click", copyToClipboard, false);
+    document.getElementById("text_file").value = textFile;
+    document.getElementById("export_text").style.display = "block";
+    document.getElementById("modal").style.display = "block";
 }
 
 function reset() {
@@ -738,7 +780,7 @@ function reset() {
     }
 
     unsavedChanges = false;
-    printMessage("Reset the survival table to its default state!");
+    printMessage("<strong class='message'>Reset the survival table to its default state!</strong>");
 }
 
 function setProgress() {
@@ -768,9 +810,64 @@ function setEventListeners() {
     document.getElementById("fill_all").addEventListener("click", fillAll, false);
     document.getElementById("save").addEventListener("click", save, false);
     document.getElementById("apply").addEventListener("click", apply, false);
+    document.getElementById("import_button").addEventListener("click", importText, false);
+    document.getElementById("export").addEventListener("click", exportText, false);
     document.getElementById("reset").addEventListener("click", reset, false);
     document.getElementById("close").addEventListener("click", emptyModal, false);
     setEventListenersSelect();
+}
+
+function achievs(game) {
+    const achievs = ["n/a", "not cleared", "1cc", "nm", "nb", "nmnb"];
+
+    switch (game) {
+        case "PCB": return achievs.concat(["nbb", "nmnbb", "nbnbb", "nnn"]);
+        case "UFO": return achievs.concat(["nv", "nmnv", "nbnv", "nnn"]);
+        case "TD": return achievs.concat(["nt", "nmnt", "nbnt", "nnn"]);
+        case "HSiFS": return achievs.concat(["nr", "nmnr", "nbnr", "nnn"]);
+        case "WBaWC": return achievs.concat( ["nhnrb", "nmnhnrb", "nbnhnrb", "nnnn"]);
+        case "UM": return achievs.concat(["nc", "nmnc", "nbnc", "nnn"]);
+        default: return achievs;
+    }
+}
+
+function doImport() {
+    const text = document.getElementById("import").value.trim().split('\n');
+    let game;
+    let difficulty;
+    let achievement;
+
+    for (const line of text) {
+        if (line === "") {
+            continue;
+        }
+
+        let value = line.replace(':', "");
+
+        if (games.includes(value)) {
+            game = value;
+            continue;
+        } else if (!game) {
+            printMessage("<strong class='error'>Error: invalid survival progress. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
+            return;
+        }
+
+        value = value.split(' ');
+        difficulty = value[0];
+        achievement = value[1];
+
+        if (vals[game].hasOwnProperty(difficulty) && achievs(game).includes(achievement)) {
+            vals[game][difficulty] = achievement;
+            continue;
+        } else {
+            printMessage("<strong class='error'>Error: invalid survival progress. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
+            return;
+        }
+    }
+
+    save();
+    initValues();
+    printMessage("<strong class='message'>Survival progress successfully imported!</strong>");
 }
 
 function init() {
@@ -778,6 +875,19 @@ function init() {
     readLocalStorage();
     initValues();
     setEventListeners();
+    const importElement = document.getElementById("import");
+    const errorElement = document.getElementById("error");
+
+    if (importElement) {
+        doImport();
+        importElement.parentNode.removeChild(importElement);
+    } else {
+        if (errorElement && errorElement.value) {
+            printMessage(errorElement.value);
+            errorElement.parentNode.removeChild(errorElement);
+        }
+    }
+
     window.onbeforeunload = function () {
         if (unsavedChanges) {
             return "";

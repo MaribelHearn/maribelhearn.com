@@ -25,6 +25,9 @@ input[type=button] {
 .message {
     color: green;
 }
+.error {
+    color: orange;
+}
 .clear {
     background-color: green;
 }
@@ -80,32 +83,14 @@ input[type=button] {
     z-index: 1;
     top: 100%;
 }
-#nav {
-    margin-bottom: 5px;
-}
-#legend {
+.modal_inner {
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 85%;
+    max-height: 85%;
     display: none;
-}
-#overview_container, #dummy {
-    display: none;
-}
-#completion_table, #close {
-    margin-bottom: 15px;
-}
-#save_link {
-    text-decoration: none;
-}
-#dummysub {
-    width: 1000px;
-    height: 20px;
-}
-#survival {
-    overflow: auto;
-}
-#base64 {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    overflow-y: auto;
 }
 #modal {
     font: 14px verdana, sans-serif;
@@ -122,15 +107,32 @@ input[type=button] {
     background-color: rgba(0,0,0,.4);
     /*color: #000;*/
 }
-#modal_inner {
-    /*background-color: #fefefe;*/
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 85%;
-    max-height: 85%;
+#nav {
+    margin-bottom: 5px;
+}
+#legend {
     display: none;
-    overflow-y: auto;
+}
+#overview_container, #dummy {
+    display: none;
+}
+#completion_table, #close {
+    margin-bottom: 15px;
+}
+#save_link, #screenshot_link {
+    text-decoration: none;
+}
+#dummysub {
+    width: 1000px;
+    height: 20px;
+}
+#survival {
+    overflow: auto;
+}
+#base64 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 @media only screen and (min-width: 1500px) and (max-width: 1700px) {
     .wrap {
@@ -159,7 +161,7 @@ input[type=button] {
         margin-left: 8%;
         margin-right: 8%;
     }
-    #modal_inner {
+    .modal_inner {
         font-size: 11px;
     }
 }
@@ -168,7 +170,7 @@ input[type=button] {
         margin-bottom: 15px;
         clear: both;
     }
-    #modal_inner {
+    .modal_inner {
         font-size: 11px;
     }
     #container, #dummy {

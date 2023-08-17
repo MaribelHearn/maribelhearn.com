@@ -42,33 +42,13 @@ function display_name(string $game) {
         'When you click Apply, three different tables indicating your survival progress will be generated. The main survival progress table is an image and can be copied or saved to your device. ' .
         'Use the below selectors to fill up many achievements at once, either by game or by difficulty. See the bottom of this page for an explanation of the acronyms.') ?></p>
         <section>
-            <label for='fillGameDifficulty'><?php echo _('Game / Difficulty') ?></label>
-            <select id='fillGameDifficulty'>
-				<?php
-					foreach ($games as $key => $game) {
-						echo '<option>' . _($game) . '</option>';
-					}
-					foreach ($diffs as $key => $diff) {
-						echo '<option>' . $diff . '</option>';
-					}
-				?>
-            </select>
-            <br>
-            <label for='fillAchievement'><?php echo _('Achievement') ?></label>
-            <select id='fillAchievement'>
-                <option value='N/A'><?php echo _('N/A') ?></option>
-                <option value='Not cleared'><?php echo _('Not cleared') ?></option>
-                <option value='1cc'><?php echo _('1cc') ?></option>
-                <option value='NM'><?php echo _('NM') ?></option>
-                <option value='NM+'><?php echo _('NM+') ?></option>
-                <option value='NB'><?php echo _('NB') ?></option>
-                <option value='NB+'><?php echo _('NB+') ?></option>
-                <option value='NMNB'><?php echo _('NMNB') ?></option>
-                <option value='NMNB+'><?php echo _('NMNB+') ?></option>
-            </select>
-            <br>
-            <input id='fill_all' type='button' value='Fill All'>
+			<input id='save' type='button' value='Save'>
+			<input id='apply' type='button' value='Generate Tables'>
+        	<input id='import_button' type='button' value='Import'>
+        	<input id='export' type='button' value='Export'>
+			<input id='reset' type='button' value='Reset'>
 		</section>
+        <p id='message' class='center'></p>
     </div>
     <div id='container' class='overflow'>
         <table id='survival'>
@@ -135,11 +115,33 @@ function display_name(string $game) {
     </div>
     <div id='bottom' data-html2canvas-ignore>
         <section>
-			<input id='save' type='button' value='Save'>
-			<input id='apply' type='button' value='Generate Tables'>
-			<input id='reset' type='button' value='Reset'>
+            <label for='fillGameDifficulty'><?php echo _('Game / Difficulty') ?></label>
+            <select id='fillGameDifficulty'>
+				<?php
+					foreach ($games as $key => $game) {
+						echo '<option>' . _($game) . '</option>';
+					}
+					foreach ($diffs as $key => $diff) {
+						echo '<option>' . $diff . '</option>';
+					}
+				?>
+            </select>
+            <br>
+            <label for='fillAchievement'><?php echo _('Achievement') ?></label>
+            <select id='fillAchievement'>
+                <option value='N/A'><?php echo _('N/A') ?></option>
+                <option value='Not cleared'><?php echo _('Not cleared') ?></option>
+                <option value='1cc'><?php echo _('1cc') ?></option>
+                <option value='NM'><?php echo _('NM') ?></option>
+                <option value='NM+'><?php echo _('NM+') ?></option>
+                <option value='NB'><?php echo _('NB') ?></option>
+                <option value='NB+'><?php echo _('NB+') ?></option>
+                <option value='NMNB'><?php echo _('NMNB') ?></option>
+                <option value='NMNB+'><?php echo _('NMNB+') ?></option>
+            </select>
+            <br>
+            <input id='fill_all' type='button' value='Fill All'>
 		</section>
-        <p id='message' class='center'></p>
         <h2 id='acronyms'><?php echo _('Acronyms') ?></h2>
         <ul>
             <li><strong><?php echo _('NM:') ?></strong> <?php echo _('No Miss. Clear without dying.') ?></li>
@@ -157,11 +159,11 @@ function display_name(string $game) {
     </div>
 </div>
 <div id='modal' data-html2canvas-ignore>
-	<div id='modal_inner'>
+	<div id='results' class='modal_inner'>
 		<h2><?php echo _('Progress Table') ?></h2>
 		<p id='rendering_message'><?php echo _('Rendering image...') ?></p>
 		<div id='screenshot'>
-            <a id='save_link' href='' download=''>
+            <a id='screenshot_link' href='' download=''>
                 <input type='button' value='Save to Device'>
             </a>
             <input id='close' type='button' value='Close'>
@@ -199,4 +201,26 @@ function display_name(string $game) {
 			<tbody id='completion_table_tbody'></tbody>
 		</table>
 	</div>
+    <div id='import_text' class='modal_inner'>
+        <h2>Import from Text File</h2>
+        <p>Note that the format should be the same as the exported text.</p>
+        <p><strong>Warning:</strong> Importing can overwrite your current survival progress!</p>
+        <form target='_self' method='post' enctype='multipart/form-data'>
+            <label for='import_file'>Upload file:</label>
+            <input id='import_file' name='import' type='file'>
+            <p><input type='submit' value='Import'></p>
+        </form>
+    </div>
+    <div id='export_text' class='modal_inner'>
+        <h2>Export to Text File</h2>
+        <p>
+            <input id='copy_to_clipboard' type='button' value='Copy to Clipboard'>
+            <input id='text_file' type='hidden' value=''>
+        </p>
+        <p>
+            <a id='save_link' href='#' download='#'>
+                <input type='button' class='button' value='Save to Device'>
+            </a>
+        </p>
+    </div>
 </div>
