@@ -52,7 +52,7 @@ function wrap_top() {
     }
     if (has_translation($page)) {
         echo '<div id="languages">';
-        if ($page == 'wr') {
+        if ($page == 'wr' || $page == 'lnn') {
             echo '<a id="en_GB" class="flag" href="wr?hl=en-gb">' .
             '<img class="flag_en" src="assets/shared/langs/uk.png" alt="' . _('Flag of the United Kingdom') . '">' .
             '<p class="language">English (UK)</p></a>' .

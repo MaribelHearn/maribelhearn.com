@@ -316,6 +316,7 @@ function setEventListeners() {
     document.getElementById("search").addEventListener("select", setPlayer, false);
     document.getElementById("player").addEventListener("keypress", detectEnter, false);
     document.getElementById("en_GB").addEventListener("click", setLanguage, false);
+    document.getElementById("en_US").addEventListener("click", setLanguage, false);
     document.getElementById("ja_JP").addEventListener("click", setLanguage, false);
     document.getElementById("zh_CN").addEventListener("click", setLanguage, false);
     document.getElementById("ru_RU").addEventListener("click", setLanguage, false);
