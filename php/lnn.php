@@ -55,15 +55,10 @@ function date_tl(string $date, string $lang) {
 }
 
 function format_lm(string $lm, string $lang) {
-    switch ($lang) {
-        case 'ja_JP': return '<span id="lm">' . date_tl($lm, $lang) . '</span>現在のLNN記録です。';
-        case 'zh_CN': return 'LNN更新于<span id="lm">' . date_tl($lm, $lang) . '</span>。';
-        case 'ru_RU': return 'Список LNN\'ов актуален на ' . date_tl($lm, $lang) . '</span>.';
-        case 'de_DE': return 'Die LNNs sind ab ' . date_tl($lm, $lang) . ' aktuell.</span>';
-        case 'es_ES': return 'Los LNNs están actualizados hasta el ' . date_tl($lm, $lang) . '.</span>';
-        default: return 'LNNs are current as of <span id="lm">' . date_tl($lm, $lang) . '</span>.';
-    }
+    $result = _('LNNs are current as of <span id="lm">%date</span>.');
+    return str_replace('%date', date_tl($lm, $lang), $result);
 }
+
 function replay_path(string $game, string $player, string $shot) {
     $ALPHA_NUMS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     $char = preg_replace('/(FinalA|FinalB|UFOs)/i', '', $shot);

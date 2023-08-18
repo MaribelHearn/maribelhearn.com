@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-05-04 21:18+0200\n"
-"PO-Revision-Date: 2023-05-04 21:18+0200\n"
+"POT-Creation-Date: 2023-08-18 09:43+0200\n"
+"PO-Revision-Date: 2023-08-18 09:43+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_GB\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-Poedit-Basepath: ../../..\n"
 "X-Poedit-SearchPath-0: assets/shared/shared.php\n"
 "X-Poedit-SearchPath-1: assets/shared/translations.php\n"
@@ -59,113 +59,117 @@ msgstr ""
 msgid "Flag of Spain"
 msgstr ""
 
-#: assets/shared/shared.php:109 js/drc.js:186 js/lnn.js:41 js/wr.js:105
+#: assets/shared/shared.php:109 js/drc.js:186 js/lnn.js:42 js/wr.js:107
 msgid "Route"
 msgstr ""
 
-#: assets/shared/shared.php:109 js/drc.js:188 js/lnn.js:41 js/wr.js:105
-#: php/drc.php:454 php/lnn.php:230 php/lnn.php:266 php/wr.php:231
+#: assets/shared/shared.php:109 js/drc.js:188 js/lnn.js:42 js/wr.js:107
+#: php/drc.php:454 php/lnn.php:242 php/lnn.php:278 php/wr.php:231
 #: php/wr.php:490
 msgid "Shottype"
 msgstr ""
 
-#: assets/shared/shared.php:141
+#: assets/shared/shared.php:142
 msgid "Touhou 1 - The Highly Responsive to Prayers"
 msgstr ""
 
-#: assets/shared/shared.php:142
+#: assets/shared/shared.php:143
 msgid "Touhou 2 - The Story of Eastern Wonderland"
 msgstr ""
 
-#: assets/shared/shared.php:143
+#: assets/shared/shared.php:144
 msgid "Touhou 3 - Phantasmagoria of Dim.Dream"
 msgstr ""
 
-#: assets/shared/shared.php:144
+#: assets/shared/shared.php:145
 msgid "Touhou 4 - Lotus Land Story"
 msgstr ""
 
-#: assets/shared/shared.php:145
+#: assets/shared/shared.php:146
 msgid "Touhou 5 - Mystic Square"
 msgstr ""
 
-#: assets/shared/shared.php:146
+#: assets/shared/shared.php:147
 msgid "Touhou 6 - The Embodiment of Scarlet Devil"
 msgstr ""
 
-#: assets/shared/shared.php:147
+#: assets/shared/shared.php:148
 msgid "Touhou 7 - Perfect Cherry Blossom"
 msgstr ""
 
-#: assets/shared/shared.php:148
+#: assets/shared/shared.php:149
 msgid "Touhou 8 - Imperishable Night"
 msgstr ""
 
-#: assets/shared/shared.php:149
+#: assets/shared/shared.php:150
 msgid "Touhou 9 - Phantasmagoria of Flower View"
 msgstr ""
 
-#: assets/shared/shared.php:150
+#: assets/shared/shared.php:151
 msgid "Touhou 9.5 - Shoot the Bullet"
 msgstr ""
 
-#: assets/shared/shared.php:151
+#: assets/shared/shared.php:152
 msgid "Touhou 10 - Mountain of Faith"
 msgstr ""
 
-#: assets/shared/shared.php:152
+#: assets/shared/shared.php:153
 msgid "Touhou 11 - Subterranean Animism"
 msgstr ""
 
-#: assets/shared/shared.php:153
+#: assets/shared/shared.php:154
 msgid "Touhou 12 - Undefined Fantastic Object"
 msgstr ""
 
-#: assets/shared/shared.php:154
+#: assets/shared/shared.php:155
 msgid "Touhou 12.5 - Double Spoiler"
 msgstr ""
 
-#: assets/shared/shared.php:155
+#: assets/shared/shared.php:156
 msgid "Touhou 12.8 - Great Fairy Wars"
 msgstr ""
 
-#: assets/shared/shared.php:156
+#: assets/shared/shared.php:157
 msgid "Touhou 13 - Ten Desires"
 msgstr ""
 
-#: assets/shared/shared.php:157
+#: assets/shared/shared.php:158
 msgid "Touhou 14 - Double Dealing Character"
 msgstr ""
 
-#: assets/shared/shared.php:158
+#: assets/shared/shared.php:159
 msgid "Touhou 15 - Legacy of Lunatic Kingdom"
 msgstr ""
 
-#: assets/shared/shared.php:159
+#: assets/shared/shared.php:160
 msgid "Touhou 16 - Hidden Star in Four Seasons"
 msgstr ""
 
-#: assets/shared/shared.php:160
+#: assets/shared/shared.php:161
 msgid "Touhou 17 - Wily Beast and Weakest Creature"
 msgstr ""
 
-#: assets/shared/shared.php:161
+#: assets/shared/shared.php:162
 msgid "Touhou 18 - Unconnected Marketeers"
 msgstr ""
 
-#: assets/shared/shared.php:181 php/drc.php:140
+#: assets/shared/shared.php:163
+msgid "Touhou 19 - Unfinished Dream of All Living Ghost"
+msgstr ""
+
+#: assets/shared/shared.php:183 php/drc.php:140
 msgid "Spring"
 msgstr ""
 
-#: assets/shared/shared.php:182 php/drc.php:141
+#: assets/shared/shared.php:184 php/drc.php:141
 msgid "Summer"
 msgstr ""
 
-#: assets/shared/shared.php:183 php/drc.php:142
+#: assets/shared/shared.php:185 php/drc.php:142
 msgid "Autumn"
 msgstr ""
 
-#: assets/shared/shared.php:184 php/drc.php:143
+#: assets/shared/shared.php:186 php/drc.php:143
 msgid "Winter"
 msgstr ""
 
@@ -536,28 +540,28 @@ msgstr ""
 msgid "block"
 msgstr ""
 
-#: js/lnn.js:29 js/lnn.js:32 js/lnn.js:33 js/lnn.js:35 php/lnn.php:27
+#: js/lnn.js:30 js/lnn.js:33 js/lnn.js:34 js/lnn.js:36 php/lnn.php:27
 #: php/lnn.php:30 php/lnn.php:31 php/lnn.php:33
 msgid "No. of LNNNs"
 msgstr ""
 
-#: js/lnn.js:30 php/lnn.php:28
+#: js/lnn.js:31 php/lnn.php:28
 msgid "No. of LNNFSs"
 msgstr ""
 
-#: js/lnn.js:31 php/lnn.php:29
+#: js/lnn.js:32 php/lnn.php:29
 msgid "No. of LNN(N)s"
 msgstr ""
 
-#: js/lnn.js:34 php/lnn.php:32
+#: js/lnn.js:35 php/lnn.php:32
 msgid "No. of LNNNNs"
 msgstr ""
 
-#: js/lnn.js:36 php/lnn.php:34 php/lnn.php:288 php/lnn.php:333
+#: js/lnn.js:37 php/lnn.php:34 php/lnn.php:301 php/lnn.php:346
 msgid "No. of LNNs"
 msgstr ""
 
-#: js/lnn.js:242
+#: js/lnn.js:279
 msgid "(All)"
 msgstr ""
 
@@ -783,8 +787,8 @@ msgstr ""
 msgid "||Max * (Score/WR)^Exp||"
 msgstr ""
 
-#: php/drc.php:207 php/drc.php:391 php/drc.php:425 php/lnn.php:265
-#: php/lnn.php:287 php/wr.php:227
+#: php/drc.php:207 php/drc.php:391 php/drc.php:425 php/lnn.php:277
+#: php/lnn.php:300 php/wr.php:227
 msgid "Game"
 msgstr ""
 
@@ -877,8 +881,8 @@ msgstr ""
 msgid "Threshold 3"
 msgstr ""
 
-#: php/drc.php:350 php/drc.php:470 php/lnn.php:358 php/tools.php:519
-#: php/wr.php:598
+#: php/drc.php:350 php/drc.php:470 php/lnn.php:371 php/tools.php:519
+#: php/wr.php:603
 msgid "Back to Top"
 msgstr ""
 
@@ -959,7 +963,12 @@ msgstr ""
 msgid "Multiplier"
 msgstr ""
 
-#: php/lnn.php:125
+#: php/lnn.php:66
+#, php-format
+msgid "LNNs are current as of <span id=\"lm\">%date</span>."
+msgstr ""
+
+#: php/lnn.php:136
 msgid ""
 "A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. "
 "For every shottype in a game, tables will tell you which players have done "
@@ -967,7 +976,7 @@ msgid ""
 "shottype, those are not factored in."
 msgstr ""
 
-#: php/lnn.php:130
+#: php/lnn.php:141
 msgid ""
 "Extra conditions are required for PCB, TD, HSiFS, WBaWC and UM; these are No "
 "Border Breaks for PCB, No Trance for TD, No Release for HSiFS, No Berserk "
@@ -978,85 +987,89 @@ msgid ""
 "is assumed to capture all Last Spells and is referred to as LNNFS."
 msgstr ""
 
-#: php/lnn.php:137 php/wr.php:166
+#: php/lnn.php:148 php/wr.php:166
 msgid "All of the table columns are sortable."
 msgstr ""
 
-#: php/lnn.php:139 php/tools.php:13 php/wr.php:175
+#: php/lnn.php:150 php/tools.php:13 php/wr.php:175
 msgid "Contents"
 msgstr ""
 
-#: php/lnn.php:143 php/lnn.php:148 php/lnn.php:163
+#: php/lnn.php:154 php/lnn.php:159 php/lnn.php:174
 msgid "LNN Lists"
 msgstr ""
 
-#: php/lnn.php:144 php/lnn.php:156 php/lnn.php:282
+#: php/lnn.php:155 php/lnn.php:167 php/lnn.php:295
 msgid "Overall Count"
 msgstr ""
 
-#: php/lnn.php:145 php/lnn.php:157 php/lnn.php:327 php/wr.php:185
-#: php/wr.php:202 php/wr.php:565
+#: php/lnn.php:156 php/lnn.php:168 php/lnn.php:340 php/wr.php:185
+#: php/wr.php:202 php/wr.php:570
 msgid "Player Ranking"
 msgstr ""
 
-#: php/lnn.php:155 php/lnn.php:246 php/wr.php:197 php/wr.php:467
+#: php/lnn.php:166 php/lnn.php:258 php/wr.php:197 php/wr.php:467
 msgid "Player Search"
 msgstr ""
 
-#: php/lnn.php:178 php/lnn.php:231
+#: php/lnn.php:189 php/lnn.php:243
 msgid "(Different players)"
 msgstr ""
 
-#: php/lnn.php:179 php/lnn.php:232
+#: php/lnn.php:190 php/lnn.php:244
 msgid "Players"
 msgstr ""
 
-#: php/lnn.php:206 php/lnn.php:238 php/lnn.php:315
+#: php/lnn.php:218 php/lnn.php:250 php/lnn.php:328
 msgid "Overall"
 msgstr ""
 
-#: php/lnn.php:214
+#: php/lnn.php:226
 msgid "Click a game cover to show its list of LNNs."
 msgstr ""
 
-#: php/lnn.php:247
+#: php/lnn.php:259
 msgid "Choose a player name from the menu below to show their LNNs."
 msgstr ""
 
-#: php/lnn.php:248 php/lnn.php:332 php/wr.php:229 php/wr.php:470 php/wr.php:513
-#: php/wr.php:570
+#: php/lnn.php:260 php/lnn.php:345 php/wr.php:229 php/wr.php:470 php/wr.php:513
+#: php/wr.php:575
 msgid "Player"
 msgstr ""
 
-#: php/lnn.php:250 php/wr.php:472
+#: php/lnn.php:262 php/wr.php:472
 msgid "Search"
 msgstr ""
 
-#: php/lnn.php:260 php/wr.php:213
+#: php/lnn.php:272 php/wr.php:213
 msgid "Show videos over replays"
 msgstr ""
 
-#: php/lnn.php:267 php/wr.php:233 php/wr.php:491 php/wr.php:514
+#: php/lnn.php:279 php/wr.php:233 php/wr.php:491 php/wr.php:514
 msgid "Replay"
 msgstr ""
 
-#: php/lnn.php:275 php/wr.php:501
+#: php/lnn.php:280 php/wr.php:232 php/wr.php:492 php/wr.php:515
+msgid "Date"
+msgstr ""
+
+#: php/lnn.php:288 php/wr.php:501
 msgid "Total"
 msgstr ""
 
-#: php/lnn.php:289
+#: php/lnn.php:302
 msgid "Different players"
 msgstr ""
 
-#: php/lnn.php:320
+#: php/lnn.php:333
 msgid "Replays"
 msgstr ""
 
-#: php/lnn.php:334
+#: php/lnn.php:347
 msgid "Games LNN'd"
 msgstr ""
 
-#: php/lnn.php:347 php/lnn.php:348
+#: php/lnn.php:360 php/lnn.php:361
 msgid " (All Windows)"
 msgstr ""
 
@@ -2077,10 +2090,6 @@ msgstr ""
 msgid "Difficulty"
 msgstr ""
 
-#: php/wr.php:232 php/wr.php:492 php/wr.php:515
-msgid "Date"
-msgstr ""
-
 #: php/wr.php:393 php/wr.php:458
 msgid "World"
 msgstr ""
@@ -2109,11 +2118,11 @@ msgstr ""
 msgid "Choose a player name from the menu below to show their WRs."
 msgstr ""
 
-#: php/wr.php:571
+#: php/wr.php:576
 msgid "No. of WRs"
 msgstr ""
 
-#: php/wr.php:572
+#: php/wr.php:577
 msgid "Different games"
 msgstr ""
 
