@@ -120,8 +120,8 @@ function addSpacing(item) {
     const sort = whichSort(item);
 
     if (sort == "shots") {
-        if (item.includes("HSiFS") || item.includes("WBaWC")) {
-            return item.replace("HSiFS", "HSiFS ").replace("WBaWC", "WBaWC ");
+        if (item.includes("HSiFS") || item.includes("WBaWC") || item.includes("UDoALG")) {
+            return item.replace("HSiFS", "HSiFS ").replace("WBaWC", "WBaWC ").replace("UDoALG", "UDoALG ");
         }
 
         return item.replace(item.match(/[A-Z][A-Z][a-z]/)[0], item.match(/[A-Z][A-Z][a-z]/)[0].substr(0, 1) + " " + item.match(/[A-Z][A-Z][a-z]/)[0].substr(1)).replace("Team", " Team");

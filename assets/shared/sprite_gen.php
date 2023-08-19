@@ -41,7 +41,8 @@ $shots = array('EoSDReimuA', 'EoSDReimuB', 'EoSDMarisaA', 'EoSDMarisaB', 'PCBRei
 'HSiFSMarisaSummer', 'HSiFSMarisaAutumn', 'HSiFSMarisaWinter', 'WBaWCReimuWolf', 'WBaWCReimuOtter', 'WBaWCReimuEagle', 'WBaWCMarisaWolf', 'WBaWCMarisaOtter', 'WBaWCMarisaEagle',
 'WBaWCYoumuWolf', 'WBaWCYoumuOtter', 'WBaWCYoumuEagle', 'UMReimu', 'UMMarisa', 'UMSakuya', 'UMSanae', 'SoEWReimuA', 'SoEWReimuB', 'SoEWReimuC', 'PoDDReimu', 'PoDDMima', 'PoDDMarisa',
 'PoDDEllen', 'PoDDKotohime', 'PoDDKana', 'PoDDRikako', 'PoDDChiyuri', 'PoDDYumemi', 'LLSReimuA', 'LLSReimuB', 'LLSMarisaA', 'LLSMarisaB', 'MSReimu', 'MSMarisa', 'MSMima', 'MSYuuka',
-'PoFVMerlin', 'PoFVLunasa', 'HSiFSReimuExtra', 'HSiFSCirnoExtra', 'HSiFSAyaExtra', 'HSiFSMarisaExtra');
+'PoFVMerlin', 'PoFVLunasa', 'HSiFSReimuExtra', 'HSiFSCirnoExtra', 'HSiFSAyaExtra', 'HSiFSMarisaExtra', 'UDoALGReimu', 'UDoALGMarisa', 'UDoALGSanae', 'UDoALGRan', 'UDoALGAunn', 'UDoALGNazrin',
+'UDoALGSeiran', 'UDoALGRin', 'UDoALGTsukasa', 'UDoALGMamizou', 'UDoALGYachie', 'UDoALGSaki', 'UDoALGYuuma', 'UDoALGSuika', 'UDoALGBiten', 'UDoALGEnoko', 'UDoALGChiyari', 'UDoALGHisami', 'UDoALGZanmu');
 $cards = array('LifeCard', 'SpellCard', 'FragmentedLifeCard', 'FragmentedSpellCard', 'MoneyComesAndGoesOnItsOwn', 'Ringo-BrandDango', 'PhoenixsTail', 'Yin-YangOrb', 'Yin-YangOrbNeedle',
 'Mini-Hakkero', 'Mini-HakkeroMissile', 'MaidKnife', 'MaidKnifeRicochet', 'SafeReturnAmulet', 'ShedSnakeskinAmulet', 'Half-HalfGhost', 'ShanghaiDoll', 'IceFairy', 'BackDoor', 'AnnoyingUFO',
 'AncientMagatama', 'BlankCard', 'MisersAdvice', 'OfferingsToASacredMountain', 'DeathAvoidanceElixir', 'LuckyRabbitsFoot', 'LawOfTheSurvivalOfTheFittest', 'SutraOfDharmaticPower', 'PebbleHat',
