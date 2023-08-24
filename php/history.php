@@ -31,6 +31,7 @@
         <p><a href='#VD'>Touhou 16.5 - Violet Detector</a></p>
         <p><a href='#WBaWC'>Touhou 17 - Wily Beast and Weakest Creature</a></p>
         <p><a href='#UM'>Touhou 18 - Unconnected Marketeers</a></p>
+        <p><a href='#UDoALG'>Touhou 19 - Unfinished Dream of All Living Ghost</a></p>
         <p><strong>Touhou Fangames</strong></p>
         <p><a href='#SSS'>Shining Shooting Star</a></p>
         <p><strong>eXceed Shmups</strong></p>
@@ -268,10 +269,10 @@
                 </tr>
                 <tr id='oPoDD'>
                     <th>PoDD</th>
-                    <td id='ePoDD' class='attempted'></td>
-                    <td id='nPoDD' class='attempted'></td>
-                    <td id='hPoDD' class='attempted'></td>
-                    <td id='lPoDD' class='attempted'></td>
+                    <td id='ePoDD' class='clear'></td>
+                    <td id='nPoDD' class='clear'></td>
+                    <td id='hPoDD' class='clear'></td>
+                    <td id='lPoDD' class='clear'></td>
                     <td colspan='2'>X</td>
                 </tr>
                 <tr id='oLLS'>
@@ -410,6 +411,14 @@
                     <td id='hUM' class='nb'></td>
                     <td id='lUM' class='nb'></td>
                     <td id='xUM' class='nmnb' colspan='2'></td>
+                </tr>
+                <tr id='oUDoALG'>
+                    <th>UDoALG</th>
+                    <td id='eUM' class='nmnb'></td>
+                    <td id='nUM' class='nmnb'></td>
+                    <td id='hUM' class='nmnb'></td>
+                    <td id='lUM' class='nmnb'></td>
+                    <td colspan='2'>X</td>
                 </tr>
             </tbody>
         </table></div>
@@ -679,27 +688,27 @@
             </tr>
             <tr>
                 <td><strong>Easy</strong></td>
-                <td>Stage 9</td>
-                <td>-</td>
+                <td class='g'>Completed</td>
+                <td>August 21, 2023</td>
                 <td>No</td>
             </tr>
             <tr>
                 <td><strong>Normal</strong></td>
-                <td>Stage 9</td>
-                <td>-</td>
+                <td class='g'>Completed</td>
+                <td>August 21, 2023</td>
                 <td>No</td>
             </tr>
             <tr>
                 <td><strong>Hard</strong></td>
-                <td>Not yet tried</td>
-                <td>-</td>
+                <td class='g'>Completed</td>
+                <td>August 21, 2023</td>
                 <td>No</td>
             </tr>
             <tr>
                 <td><strong>Lunatic</strong></td>
-                <td>Not yet tried</td>
-                <td>-</td>
-                <td>No</td>
+                <td class='g'>Completed</td>
+                <td>August 23, 2023</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=UYi-j5LIpx8'>1cc</a></strong></td>
             </tr>
         </table></div>
     </div>
@@ -3054,6 +3063,54 @@
                 <td>October 31, 2021</td>
                 <td><strong><a href='https://www.youtube.com/watch?v=5jh5vc97NxE'>1cc</a>
 				<a href='https://www.youtube.com/watch?v=18GuAM7yOoY'>NNN</a></strong></td>
+            </tr>
+        </table></div>
+    </div>
+    <div id='UDoALG'>
+        <h2>TH19 - Unfinished Dream of All Living Ghost</h2>
+		<img loading='lazy' src='assets/personal/history/games/udoalg250x250.jpg' alt='UDoALG'>
+        <p class='center'>Obtained: August 16, 2023</p>
+        <h3>Survival</h3>
+        <div class='overflow'><table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Progress</th>
+                <th>Date of first 1cc</th>
+                <th>Date of first <abbr title='No Bomb'>NB</abbr></th>
+                <th>Date of first <abbr title='No Miss No Bomb'>NMNB</abbr></th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td><strong>Easy</strong></td>
+                <td class='g'>Completed</td>
+                <td>August 16, 2023</td>
+                <td>August 17, 2023</td>
+                <td>August 18, 2023</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Normal</strong></td>
+                <td class='g'>Completed</td>
+                <td>August 16, 2023</td>
+                <td>August 17, 2023</td>
+                <td>August 18, 2023</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Hard</strong></td>
+                <td class='g'>Completed</td>
+                <td>August 16, 2023</td>
+                <td>August 17, 2023</td>
+                <td>August 18, 2023</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><strong>Lunatic</strong></td>
+                <td class='g'>Completed</td>
+                <td>August 16, 2023</td>
+                <td>August 17, 2023</td>
+                <td>August 18, 2023</td>
+                <td>No</td>
             </tr>
         </table></div>
     </div>
