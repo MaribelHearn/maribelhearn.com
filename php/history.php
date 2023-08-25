@@ -281,7 +281,7 @@
                     <td id='nLLS' class='nb'></td>
                     <td id='hLLS' class='nb'></td>
                     <td id='lLLS' class='nb'></td>
-                    <td id='xLLS' class='nb' colspan='2'></td>
+                    <td id='xLLS' class='nmnb' colspan='2'></td>
                 </tr>
                 <tr id='oMS'>
                     <th>MS</th>
@@ -289,7 +289,7 @@
                     <td id='nMS' class='nb'></td>
                     <td id='hMS' class='nb'></td>
                     <td id='lMS' class='nb'></td>
-                    <td id='xMS' class='nb' colspan='2'></td>
+                    <td id='xMS' class='nmnb' colspan='2'></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -766,8 +766,9 @@
                 <td class='g'>Completed</td>
                 <td>August 27, 2014</td>
                 <td>October 29, 2016</td>
-                <td>-</td>
-                <td><strong><a href='https://www.youtube.com/watch?v=twsuyg2icSc'>1cc (YouTube)</a></strong></td>
+                <td>August 25, 2023</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=twsuyg2icSc'>1cc (YouTube)</a></strong><br>
+                <strong><a href='https://www.youtube.com/watch?v=IM61MvvgBfI'>NMNB (YouTube)</a></strong></td>
             </tr>
         </table></div>
     </div>
@@ -825,8 +826,9 @@
                 <td class='g'>Completed</td>
                 <td>August 31, 2013</td>
                 <td>October 28, 2016</td>
-                <td>-</td>
-                <td><strong><a href='https://www.youtube.com/watch?v=xeSdNE86Bc8'>1cc (YouTube)</a></strong></td>
+                <td>August 26, 2023</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=xeSdNE86Bc8'>1cc (YouTube)</a></strong><br>
+                <strong><a href='https://www.youtube.com/watch?v=sf-k0gJ0Cak'>NMNB (YouTube)</a></strong></td>
             </tr>
         </table></div>
     </div>
