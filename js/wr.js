@@ -7,7 +7,6 @@ let selected = "";
 let missingReplays = "";
 let preferVideo = false;
 
-
 function getSeason(string) {
     return string.replace("Reimu", "").replace("Cirno", "").replace("Aya", "").replace("Marisa", "");
 }
@@ -47,7 +46,7 @@ function toggleVideo() {
 function setRecentLimit(event) {
     let limit = Math.max(parseInt(event.target.value), 1);
 
-    if (limit == 10 || isNaN(limit)) {
+    if (limit == 15 || isNaN(limit)) {
         deleteCookie("recent_limit");
     } else {
         setCookie("recent_limit", limit);

@@ -29,7 +29,7 @@ function toggleVideo() {
 function setRecentLimit(event) {
     let limit = Math.max(parseInt(event.target.value), 1);
 
-    if (limit == 10 || isNaN(limit)) {
+    if (limit == 15 || isNaN(limit)) {
         deleteCookie("recent_limit");
     } else {
         setCookie("recent_limit", limit);
