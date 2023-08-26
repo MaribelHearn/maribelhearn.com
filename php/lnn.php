@@ -2,6 +2,7 @@
 include_once 'assets/shared/http.php';
 $ALL_LNN = 101;
 $ALL_GAME_LNN = 13;
+$RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_limit']), 1) : 10;
 if (file_exists('assets/shared/json/lnnlist.json')) {
     $json = file_get_contents('assets/shared/json/lnnlist.json');
     $video_json = file_get_contents('assets/shared/json/lnnvideos.json');
@@ -12,6 +13,9 @@ if (file_exists('assets/shared/json/lnnlist.json')) {
         die('Download failed!');
     }
 }
+if (isset($_GET['date'])) {
+    $date_limit = preg_replace('/\//', '-', $_GET['date']);
+}
 $lnn = json_decode($json, true);
 $lnn_videos = json_decode($video_json, true);
 $layout = (isset($_COOKIE['lnn_old_layout']) ? 'Old' : 'New');
@@ -20,7 +24,7 @@ $pl_lnn = array();
 $flag = array();
 $missing_replays = array();
 $video_lnns = array();
-$gt = 0;
+$recent = array();
 
 function lnn_type(string $game, string $lang) {
     switch ($game) {
@@ -59,6 +63,21 @@ function format_lm(string $lm, string $lang) {
     return str_replace('%date', date_tl($lm, $lang), $result);
 }
 
+function is_later_date(string $date1, string $date2) {
+    if (empty($date1) || empty($date2)) {
+        return true;
+    }
+
+    $date2 = preg_replace('/-/', '/', $date2);
+    $date1 = preg_split('/\//', $date1);
+    $date2 = preg_split('/\//', $date2);
+    $year = $date1[2]; $month = $date1[1]; $day = $date1[0];
+    $cond1 = $year > $date2[2];
+    $cond2 = $year == $date2[2] && $month > $date2[1];
+    $cond3 = $year == $date2[2] && $month == $date2[1] && $day > $date2[0];
+    return $cond1 || $cond2 || $cond3;
+}
+
 function replay_path(string $game, string $player, string $shot) {
     $ALPHA_NUMS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     $char = preg_replace('/(FinalA|FinalB|UFOs)/i', '', $shot);
@@ -81,6 +100,8 @@ function replay_path(string $game, string $player, string $shot) {
     }
     return 'replays/lnn/' . $folder . '/th' . game_num($game) . '_ud' . $first . $last . shot_abbr($char) . '.rpy';
 }
+
+$gt = 0;
 foreach ($lnn as $game => $data1) {
     if ($game == 'LM') {
         continue;
@@ -88,8 +109,12 @@ foreach ($lnn as $game => $data1) {
     $sum = 0;
     $flag = array_fill(0, sizeof($flag), true);
     foreach ($data1 as $shottype => $data2) {
-        $sum += sizeof($data2);
         foreach ($data2 as $player => $date) {
+            if (isset($date_limit) && is_later_date($date, $date_limit)) {
+                unset($lnn[$game][$shottype][$player]);
+                unset($data2[$player]);
+                continue;
+            }
             $nospaces = str_replace(' ', '', $player);
             if (!file_exists(replay_path($game, $nospaces, $shottype)) && game_num($game) > 5) {
                 array_push($missing_replays, ($game . $shottype . $nospaces));
@@ -107,9 +132,21 @@ foreach ($lnn as $game => $data1) {
                 }
             }
             if (!empty($lnn_videos[$game][$shottype][$player])) {
-                array_push($video_lnns, $game . $shottype . $nospaces . ';' . $lnn_videos[$game][$shottype][$player]);
+                $video = $lnn_videos[$game][$shottype][$player];
+                array_push($video_lnns, $game . $shottype . $nospaces . ';' . $video);
+            } else {
+                $video = '';
             }
+            // add to recent LNNs
+            array_push($recent, (object) [
+                'game' => $game,
+                'shot' => $shottype,
+                'player' => $player,
+                'date' => $date,
+                'video' => $video,
+            ]);
         }
+        $sum += sizeof($data2);
     }
     $gt += $sum;
 }
@@ -121,6 +158,8 @@ for ($i = 0; $i < sizeof($video_lnns); $i++) {
         unset($missing_runs[$key]);
     }
 }
+// sort recent LNNs by date
+usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
 ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
@@ -144,6 +183,7 @@ for ($i = 0; $i < sizeof($video_lnns); $i++) {
         // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
         if ($layout == 'New') {
             echo '<div id="contents_new" class="contents"><p><a href="#lnns" class="lnns">' . _('LNN Lists') .
+            '</a></p><p><a href="#recent">' . _('Recent LNNs') .
             '</a></p><p><a href="#overall">' . _('Overall Count') .
             '</a></p><p><a href="#players">' . _('Player Ranking') .
             '</a></p></div><noscript>';
@@ -156,6 +196,7 @@ for ($i = 0; $i < sizeof($video_lnns); $i++) {
             echo '<p><a href="#' . $game . '">' . full_name($game) . '</a></p>';
         }
         echo '<p id="playersearchlink"><a href="#player_search">' . _('Player Search') .
+        '</a></p><p><a href="#recent">' . _('Recent LNNs') .
         '</a></p><p><a href="#overall">' . _('Overall Count') .
         '</a></p><p><a href="#players">' . _('Player Ranking') .
         '</a></p></div>';
@@ -163,6 +204,18 @@ for ($i = 0; $i < sizeof($video_lnns); $i++) {
             echo '</noscript>';
         }
     ?>
+    <div id='checkboxes' class='contents'>
+
+        <p>
+            <input id='toggle_video' type='checkbox'>
+            <label for='toggle_video'><?php echo _('Show videos over replays') ?></label>
+        </p><p>
+            <label for='recent_limit'><?php echo _('Number of Recent LNNs') ?></label>
+            <input id='recent_limit' type='number' value='<?php echo (isset($_COOKIE['recent_limit']) ? $_COOKIE['recent_limit'] : 10) ?>' min=1>
+        </p><p>
+            <input id='save_changes' type='button' value='<?php echo _('Save Changes') ?>'>
+        </p>
+    </div>
     <h2 id='lnns'><?php echo _('LNN Lists') ?></h2>
     <?php
         // With JavaScript disabled OR lnn_old_layout cookie set, show classic all games layout
@@ -261,7 +314,6 @@ for ($i = 0; $i < sizeof($video_lnns); $i++) {
 		        }
 		    ?>
 	    </select>
-        <p><input id='toggle_video' type='checkbox'><label for='toggle_video'><?php echo _('Show videos over replays') ?></label></p>
     </div>
 	<div id='player_list'>
 		<table class='sortable asc'>
@@ -283,6 +335,46 @@ for ($i = 0; $i < sizeof($video_lnns); $i++) {
             </tfoot>
 		</table>
 	</div>
+    <div id='recent'>
+        <h2><?php echo _('Recent LNNs') ?></h2>
+        <table class='sortable'>
+            <thead id='recenthead'><tr>
+                <th class='general_header'><?php echo _('Category')  ?></th>
+                <th class='general_header'><?php echo _('Player') ?></th>
+                <th class='general_header'><?php echo _('Replay') ?></th>
+                <th class='general_header'><?php echo _('Date') ?></th>
+            </tr></thead>
+            <tbody id='recentbody'><?php
+                $i = 0;
+                foreach ($recent as $key => $obj) {
+                    if (isset($_COOKIE['prefer_video']) && !empty($obj->video)) {
+                        $replay = '<a href="' . $obj->video . '" target="_blank">Video link</a>';
+                    } else if (file_exists(replay_path($obj->game, $obj->player, $obj->shot))) {
+                        $path = replay_path($obj->game, $obj->player, $obj->shot);
+                        $path_parts = preg_split('/\//', $path);
+                        $replay = '<a href="' . $path . '">' . $path_parts[3] . '</a>';
+                    } else if (!empty($obj->video)) {
+						$replay = '<a href="' . $obj->video . '" target="_blank">Video link</a>';
+					} else {
+                        $replay = '-';
+                    }
+                    $space = (has_space($lang) ? ' ' : '');
+                    $shot = preg_replace('/(FinalA|FinalB|UFOs)/', '', $obj->shot);
+                    $type = str_replace($shot, '', $obj->shot);
+                    echo '<tr>' .
+                    '<td class="' . $obj->game . 'p">' . _($obj->game) . $space . _($shot) . (!empty($type) ? $space . _($type) : '') . '</td>' .
+                    '<td>' . $obj->player . '</td>' .
+                    '<td>' . $replay . '</td>' .
+                    '<td data-sort="' . date_tl($obj->date, 'raw') . '">' . date_tl($obj->date, $lang) . '</td>' .
+                    '</tr>';
+                    $i++;
+                    if ($i == $RECENT_LIMIT) {
+                        break;
+                    }
+                }
+            ?></tbody>
+        </table>
+    </div>
     <div id='overall'>
         <h2><?php echo _('Overall Count'); ?></h2>
         <table class='sortable'>
@@ -300,18 +392,20 @@ for ($i = 0; $i < sizeof($video_lnns); $i++) {
                         if ($game == 'LM') {
                             continue;
                         }
-                        echo '<tr><td' . (game_num($game) == 128 ? ' data-sort="12.8"' : '') . '>' . game_num($game) . '</td><td class="' . $game . '">' . _($game) . '</td>';
                         $sum = 0;
                         $game_pl = array();
                         foreach ($lnn[$game] as $shottype => $data2) {
-                            $sum += sizeof($lnn[$game][$shottype]);
                             foreach ($lnn[$game][$shottype] as $player => $date) {
                                 if (!in_array($player, $game_pl)) {
                                     array_push($game_pl, $player);
                                 }
                             }
+                            $sum += sizeof($lnn[$game][$shottype]);
                         }
-                        echo '<td>' . $sum . '</td><td>' . sizeof($game_pl) . '</td></tr>';
+                        if (game_num($game) < 6 || $sum > 0) {
+                            echo '<tr><td' . (game_num($game) == 128 ? ' data-sort="12.8"' : '') . '>' . game_num($game) . '</td><td class="' . $game . '">' . _($game) . '</td>';
+                            echo '<td>' . $sum . '</td><td>' . sizeof($game_pl) . '</td></tr>';
+                        }
                     }
                 ?>
             </tbody>

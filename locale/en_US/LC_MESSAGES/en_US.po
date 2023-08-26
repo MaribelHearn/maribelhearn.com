@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-08-18 09:43+0200\n"
-"PO-Revision-Date: 2023-08-18 09:43+0200\n"
+"POT-Creation-Date: 2023-08-26 13:40+0200\n"
+"PO-Revision-Date: 2023-08-26 13:40+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -59,12 +59,12 @@ msgstr ""
 msgid "Flag of Spain"
 msgstr ""
 
-#: assets/shared/shared.php:109 js/drc.js:186 js/lnn.js:42 js/wr.js:107
+#: assets/shared/shared.php:109 js/drc.js:186 js/lnn.js:57 js/wr.js:107
 msgid "Route"
 msgstr ""
 
-#: assets/shared/shared.php:109 js/drc.js:188 js/lnn.js:42 js/wr.js:107
-#: php/drc.php:454 php/lnn.php:242 php/lnn.php:278 php/wr.php:231
+#: assets/shared/shared.php:109 js/drc.js:188 js/lnn.js:57 js/wr.js:107
+#: php/drc.php:454 php/lnn.php:287 php/lnn.php:322 php/wr.php:231
 #: php/wr.php:490
 msgid "Shottype"
 msgstr ""
@@ -540,28 +540,28 @@ msgstr ""
 msgid "block"
 msgstr ""
 
-#: js/lnn.js:30 js/lnn.js:33 js/lnn.js:34 js/lnn.js:36 php/lnn.php:27
-#: php/lnn.php:30 php/lnn.php:31 php/lnn.php:33
+#: js/lnn.js:45 js/lnn.js:48 js/lnn.js:49 js/lnn.js:51 php/lnn.php:31
+#: php/lnn.php:34 php/lnn.php:35 php/lnn.php:37
 msgid "No. of LNNNs"
 msgstr ""
 
-#: js/lnn.js:31 php/lnn.php:28
+#: js/lnn.js:46 php/lnn.php:32
 msgid "No. of LNNFSs"
 msgstr ""
 
-#: js/lnn.js:32 php/lnn.php:29
+#: js/lnn.js:47 php/lnn.php:33
 msgid "No. of LNN(N)s"
 msgstr ""
 
-#: js/lnn.js:35 php/lnn.php:32
+#: js/lnn.js:50 php/lnn.php:36
 msgid "No. of LNNNNs"
 msgstr ""
 
-#: js/lnn.js:37 php/lnn.php:34 php/lnn.php:301 php/lnn.php:346
+#: js/lnn.js:52 php/lnn.php:38 php/lnn.php:383 php/lnn.php:430
 msgid "No. of LNNs"
 msgstr ""
 
-#: js/lnn.js:279
+#: js/lnn.js:294
 msgid "(All)"
 msgstr ""
 
@@ -604,7 +604,7 @@ msgid ""
 "assumed to have cleared, scoring runs not."
 msgstr ""
 
-#: php/drc.php:98 php/wr.php:488 php/wr.php:511
+#: php/drc.php:98 php/lnn.php:342 php/wr.php:488 php/wr.php:511
 msgid "Category"
 msgstr ""
 
@@ -787,8 +787,8 @@ msgstr ""
 msgid "||Max * (Score/WR)^Exp||"
 msgstr ""
 
-#: php/drc.php:207 php/drc.php:391 php/drc.php:425 php/lnn.php:277
-#: php/lnn.php:300 php/wr.php:227
+#: php/drc.php:207 php/drc.php:391 php/drc.php:425 php/lnn.php:321
+#: php/lnn.php:382 php/wr.php:227
 msgid "Game"
 msgstr ""
 
@@ -881,7 +881,7 @@ msgstr ""
 msgid "Threshold 3"
 msgstr ""
 
-#: php/drc.php:350 php/drc.php:470 php/lnn.php:371 php/tools.php:519
+#: php/drc.php:350 php/drc.php:470 php/lnn.php:455 php/tools.php:519
 #: php/wr.php:603
 msgid "Back to Top"
 msgstr ""
@@ -963,12 +963,12 @@ msgstr ""
 msgid "Multiplier"
 msgstr ""
 
-#: php/lnn.php:66
+#: php/lnn.php:62
 #, php-format
 msgid "LNNs are current as of <span id=\"lm\">%date</span>."
 msgstr ""
 
-#: php/lnn.php:136
+#: php/lnn.php:167
 msgid ""
 "A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. "
 "For every shottype in a game, tables will tell you which players have done "
@@ -976,7 +976,7 @@ msgid ""
 "shottype, those are not factored in."
 msgstr ""
 
-#: php/lnn.php:141
+#: php/lnn.php:172
 msgid ""
 "Extra conditions are required for PCB, TD, HSiFS, WBaWC and UM; these are No "
 "Border Breaks for PCB, No Trance for TD, No Release for HSiFS, No Berserk "
@@ -987,89 +987,101 @@ msgid ""
 "is assumed to capture all Last Spells and is referred to as LNNFS."
 msgstr ""
 
-#: php/lnn.php:148 php/wr.php:166
+#: php/lnn.php:179 php/wr.php:166
 msgid "All of the table columns are sortable."
 msgstr ""
 
-#: php/lnn.php:150 php/tools.php:13 php/wr.php:175
+#: php/lnn.php:181 php/tools.php:13 php/wr.php:175
 msgid "Contents"
 msgstr ""
 
-#: php/lnn.php:154 php/lnn.php:159 php/lnn.php:174
+#: php/lnn.php:185 php/lnn.php:191 php/lnn.php:219
 msgid "LNN Lists"
 msgstr ""
 
-#: php/lnn.php:155 php/lnn.php:167 php/lnn.php:295
+#: php/lnn.php:186 php/lnn.php:199 php/lnn.php:339
+msgid "Recent LNNs"
+msgstr ""
+
+#: php/lnn.php:187 php/lnn.php:200 php/lnn.php:377
 msgid "Overall Count"
 msgstr ""
 
-#: php/lnn.php:156 php/lnn.php:168 php/lnn.php:340 php/wr.php:185
+#: php/lnn.php:188 php/lnn.php:201 php/lnn.php:424 php/wr.php:185
 #: php/wr.php:202 php/wr.php:570
 msgid "Player Ranking"
 msgstr ""
 
-#: php/lnn.php:166 php/lnn.php:258 php/wr.php:197 php/wr.php:467
+#: php/lnn.php:198 php/lnn.php:303 php/wr.php:197 php/wr.php:467
 msgid "Player Search"
 msgstr ""
 
-#: php/lnn.php:189 php/lnn.php:243
-msgid "(Different players)"
-msgstr ""
-
-#: php/lnn.php:190 php/lnn.php:244
-msgid "Players"
-msgstr ""
-
-#: php/lnn.php:218 php/lnn.php:250 php/lnn.php:328
-msgid "Overall"
-msgstr ""
-
-#: php/lnn.php:226
-msgid "Click a game cover to show its list of LNNs."
-msgstr ""
-
-#: php/lnn.php:259
-msgid "Choose a player name from the menu below to show their LNNs."
-msgstr ""
-
-#: php/lnn.php:260 php/lnn.php:345 php/wr.php:229 php/wr.php:470 php/wr.php:513
-#: php/wr.php:575
-msgid "Player"
-msgstr ""
-
-#: php/lnn.php:262 php/wr.php:472
-msgid "Search"
-msgstr ""
-
-#: php/lnn.php:272 php/wr.php:213
+#: php/lnn.php:211 php/wr.php:213
 msgid "Show videos over replays"
 msgstr ""
 
-#: php/lnn.php:279 php/wr.php:233 php/wr.php:491 php/wr.php:514
+#: php/lnn.php:213
+msgid "Number of Recent LNNs"
+msgstr ""
+
+#: php/lnn.php:216 php/wr.php:218
+msgid "Save Changes"
+msgstr ""
+
+#: php/lnn.php:234 php/lnn.php:288
+msgid "(Different players)"
+msgstr ""
+
+#: php/lnn.php:235 php/lnn.php:289
+msgid "Players"
+msgstr ""
+
+#: php/lnn.php:263 php/lnn.php:295 php/lnn.php:412
+msgid "Overall"
+msgstr ""
+
+#: php/lnn.php:271
+msgid "Click a game cover to show its list of LNNs."
+msgstr ""
+
+#: php/lnn.php:304
+msgid "Choose a player name from the menu below to show their LNNs."
+msgstr ""
+
+#: php/lnn.php:305 php/lnn.php:343 php/lnn.php:429 php/wr.php:229
+#: php/wr.php:470 php/wr.php:513 php/wr.php:575
+msgid "Player"
+msgstr ""
+
+#: php/lnn.php:307 php/wr.php:472
+msgid "Search"
+msgstr ""
+
+#: php/lnn.php:323 php/lnn.php:344 php/wr.php:233 php/wr.php:491 php/wr.php:514
 msgid "Replay"
 msgstr ""
 
-#: php/lnn.php:280 php/wr.php:232 php/wr.php:492 php/wr.php:515
+#: php/lnn.php:324 php/lnn.php:345 php/wr.php:232 php/wr.php:492 php/wr.php:515
 msgid "Date"
 msgstr ""
 
-#: php/lnn.php:288 php/wr.php:501
+#: php/lnn.php:332 php/wr.php:501
 msgid "Total"
 msgstr ""
 
-#: php/lnn.php:302
+#: php/lnn.php:384
 msgid "Different players"
 msgstr ""
 
-#: php/lnn.php:333
+#: php/lnn.php:417
 msgid "Replays"
 msgstr ""
 
-#: php/lnn.php:347
+#: php/lnn.php:431
 msgid "Games LNN'd"
 msgstr ""
 
-#: php/lnn.php:360 php/lnn.php:361
+#: php/lnn.php:444 php/lnn.php:445
 msgid " (All Windows)"
 msgstr ""
 
@@ -2080,10 +2092,6 @@ msgstr ""
 
 #: php/wr.php:215
 msgid "Number of Recent Records"
-msgstr ""
-
-#: php/wr.php:218
-msgid "Save Changes"
 msgstr ""
 
 #: php/wr.php:230

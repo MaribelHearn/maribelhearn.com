@@ -2,6 +2,7 @@
 const alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 let language = "en_GB";
 let selected = "";
+//let dateLimit = "";
 let preferVideo = false;
 let missingReplays, videoLNNs;
 
@@ -22,6 +23,20 @@ function toggleVideo() {
         deleteCookie("prefer_video");
     }
 
+    location.reload();
+}
+
+function setRecentLimit(event) {
+    let limit = Math.max(parseInt(event.target.value), 1);
+
+    if (limit == 10 || isNaN(limit)) {
+        deleteCookie("recent_limit");
+    } else {
+        setCookie("recent_limit", limit);
+    }
+}
+
+function saveChanges() {
     location.reload();
 }
 
@@ -311,6 +326,9 @@ function setLanguage(event) {
 function setEventListeners() {
     document.getElementById("toggle_layout").addEventListener("click", toggleLayout, false);
     document.getElementById("toggle_video").addEventListener("click", toggleVideo, false);
+    document.getElementById("recent_limit").addEventListener("keyup", setRecentLimit, false);
+    document.getElementById("recent_limit").addEventListener("mouseup", setRecentLimit, false);
+    document.getElementById("save_changes").addEventListener("click", saveChanges, false);
     document.getElementById("search").addEventListener("change", setPlayer, false);
     document.getElementById("search").addEventListener("select", setPlayer, false);
     document.getElementById("player").addEventListener("keypress", detectEnter, false);
@@ -378,6 +396,27 @@ function checkHash() {
     }
 }
 
+/*function checkDateLimit() {
+    if (!document.location.search) {
+        return;
+    }
+
+    const queryString = document.location.search;
+    const parts = queryString.split("=");
+    const query = parts[0];
+    const date = parts[1];
+
+    if (query != "?date") {
+        return;
+    }
+
+    if (!/[0-9]{2}-[0-9]{2}-[0-9]{4}/.test(date)) {
+        return;
+    }
+
+    dateLimit = date;
+}*/
+
 function init() {
     if (getCookie("lang") == "ja_JP" || location.href.includes("?hl=jp")) {
         language = "ja_JP";
@@ -410,6 +449,7 @@ function init() {
     }
 
     checkHash();
+    //checkDateLimit();
 }
 
 window.addEventListener("DOMContentLoaded", init, false);
