@@ -213,7 +213,7 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
             <label for='toggle_video'><?php echo _('Show videos over replays') ?></label>
         </p><p>
             <label for='recent_limit'><?php echo _('Number of Recent Records') ?></label>
-            <input id='recent_limit' type='number' value='<?php echo (isset($_COOKIE['recent_limit']) ? $_COOKIE['recent_limit'] : 10) ?>' min=1>
+            <input id='recent_limit' type='number' value='<?php echo (isset($_COOKIE['recent_limit']) ? $_COOKIE['recent_limit'] : 15) ?>' min=1>
         </p><p>
             <input id='save_changes' type='button' value='<?php echo _('Save Changes') ?>'>
         </p>
