@@ -137,14 +137,16 @@ foreach ($lnn as $game => $data1) {
             } else {
                 $video = '';
             }
-            // add to recent LNNs
-            array_push($recent, (object) [
-                'game' => $game,
-                'shot' => $shottype,
-                'player' => $player,
-                'date' => $date,
-                'video' => $video,
-            ]);
+            // add to recent LNNs if dated
+            if (!empty($date)) {
+                array_push($recent, (object) [
+                    'game' => $game,
+                    'shot' => $shottype,
+                    'player' => $player,
+                    'date' => $date,
+                    'video' => $video,
+                ]);
+            }
         }
         $sum += sizeof($data2);
     }
