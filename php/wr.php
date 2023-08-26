@@ -1,6 +1,6 @@
 <?php
 $MAX_SCORE = 9999999990;
-$RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_limit']), 1) : 10;
+$RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_limit']), 1) : 15;
 if (file_exists('assets/shared/json/wrlist.json')) {
     $json = file_get_contents('assets/shared/json/wrlist.json');
     $west_json = file_get_contents('assets/shared/json/bestinthewest.json');
