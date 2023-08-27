@@ -265,7 +265,7 @@
                     <td id='nSoEW' class='clear'></td>
                     <td id='hSoEW' class='clear'></td>
                     <td id='lSoEW' class='clear'></td>
-                    <td id='xSoEW' class='clear' colspan='2'></td>
+                    <td id='xSoEW' class='nmnb' colspan='2'></td>
                 </tr>
                 <tr id='oPoDD'>
                     <th>PoDD</th>
@@ -637,30 +637,40 @@
                 <th>Difficulty</th>
                 <th>Progress</th>
                 <th>Date of first 1cc</th>
+                <th>Date of first <abbr title='No Bomb'>NB</abbr></th>
+                <th>Date of first <abbr title='No Miss No Bomb'>NMNB</abbr></th>
                 <th>Video</th>
             </tr>
             <tr>
                 <td><strong>Easy</strong></td>
                 <td class='g'>Completed</td>
                 <td>February 1, 2014</td>
+                <td>-</td>
+                <td>-</td>
                 <td>No</td>
             </tr>
             <tr>
                 <td><strong>Normal</strong></td>
                 <td class='g'>Completed</td>
                 <td>February 1, 2014</td>
+                <td>-</td>
+                <td>-</td>
                 <td>No</td>
             </tr>
             <tr>
                 <td><strong>Hard</strong></td>
                 <td class='g'>Completed</td>
                 <td>October 21, 2018</td>
+                <td>-</td>
+                <td>-</td>
                 <td>No</td>
             </tr>
             <tr>
                 <td><strong>Lunatic</strong></td>
                 <td class='g'>Completed</td>
                 <td>October 21, 2018</td>
+                <td>-</td>
+                <td>-</td>
                 <td>No</td>
             </tr>
             <tr>
@@ -670,7 +680,9 @@
                 <td><strong>Extra</strong></td>
                 <td class='g'>Completed</td>
                 <td>November 2, 2016</td>
-                <td>No</td>
+                <td>August 27, 2023</td>
+                <td>August 27, 2023</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=u2ymHXTSwE0'>NMNB</a></strong></td>
             </tr>
         </table></div>
     </div>
