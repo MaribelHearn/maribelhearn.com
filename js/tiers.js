@@ -982,7 +982,7 @@ function quickAdd(tierNum) {
 
     for (const categoryName in cats) {
         if (settings.categories[settings.sort][categoryName].enabled) {
-            for (const item of cats[categoryName].chars.length) {
+            for (const item of cats[categoryName].chars) {
                 if (!isTiered(item)) {
                     addToTier(item, tierNum);
                 }
@@ -1383,6 +1383,22 @@ function imageToClipboard(event) {
     printMessage("<strong class='confirmation'>Copied to clipboard!</strong>");
 }*/
 
+function longestTier() {
+    const tierList = getCurrentTierList();
+    let longest = 0;
+    let length;
+
+    for (const tier in tierList) {
+        length = tierList[tier].chars.length;
+
+        if (length > longest) {
+            longest = length;
+        }
+    }
+
+    return longest;
+}
+
 function takeScreenshot() {
     try {
         const isTierView = tierView;
@@ -1394,21 +1410,33 @@ function takeScreenshot() {
         printMessage("<strong class='confirmation'>Girls are being screenshotted, please watch warmly...</strong>");
         const tierListTable = document.getElementById("tier_list_tbody");
         const tierListCaption = document.getElementById("tier_list_caption");
+        const tierListWidth = 50 + (1 + longestTier()) * (isMobile() ? 60 : 120);
+        const clientWidth = tierListTable.clientWidth + tierListCaption.clientWidth + 15;
+        const width = Math.min(tierListWidth, clientWidth);
         html2canvas(document.body, {
             "onclone": function (doc) {
+                const body = doc.getElementsByTagName("body")[0];
                 const wrap = doc.getElementById("wrap");
                 const tierListContainer = doc.getElementById("tier_list_container");
-                doc.getElementsByTagName("body")[0].style.backgroundImage = "none";
-                wrap.style.width = "100%";
+                body.style.backgroundImage = "none";
+                body.style.width = width + "px";
+                wrap.style.width = width + "px";
+                wrap.style.margin = "-5px";
                 wrap.style.height = "auto";
                 wrap.style.maxHeight = "none";
-                tierListContainer.style.width = "98%";
+                tierListContainer.style.width = width + "px";
                 tierListContainer.style.height = "auto";
                 tierListContainer.style.maxHeight = "none";
                 tierListContainer.style.marginLeft = "0px";
+
+                if (isMobile()) {
+                    wrap.style.marginLeft = "-15px";
+                }
             },
-            "windowHeight": tierListTable.clientHeight + tierListCaption.clientHeight + 15,
-            "height": tierListTable.clientHeight + tierListCaption.clientHeight + 15,
+            "windowHeight": tierListTable.clientHeight + tierListCaption.clientHeight + (isMobile() ? 7 : 15),
+            "height": tierListTable.clientHeight + tierListCaption.clientHeight + (isMobile() ? 7 : 15),
+            "windowWidth": width,
+            "width": width,
             "logging": false,
             "scrollX": 0,
             "scrollY": 0

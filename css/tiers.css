@@ -248,8 +248,8 @@ li {
      margin: 10px;
 }
 #screenshot_base64 {
-    width: 95%;
-    height: 50%;
+    width: 25%;
+    height: 25%;
 }
 #erase_all_button, #erase_single_button, #cancel_button {
     margin: 10px;
