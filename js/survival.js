@@ -429,6 +429,15 @@ function printMessage(message) {
     document.getElementById("message").innerHTML = message;
 }
 
+function printError(error) {
+    document.getElementById("error_message").innerHTML = error;
+}
+
+function clearMessages() {
+    printMessage("");
+    printError("");
+}
+
 function emptyModal() {
     document.getElementById("modal").style.display = "none";
     const innerModals = document.querySelectorAll(".modal_inner");
@@ -599,7 +608,7 @@ function save() {
     localStorage.setItem("saveSurvivalData", true);
     localStorage.setItem("vals", JSON.stringify(vals));
     unsavedChanges = false;
-    printMessage("<strong class='message'>Survival table saved!</strong>");
+    printMessage("<strong>Survival table saved!</strong>");
 }
 
 function getPercentage(game) {
@@ -725,12 +734,12 @@ function apply() {
     document.getElementById("results").style.display = "block";
     document.getElementById("modal").style.display = "block";
     drawOverview();
-    printMessage("");
+    clearMessages();
 }
 
 function importText() {
     emptyModal();
-    printMessage("");
+    clearMessages();
     document.getElementById("import_text").style.display = "block";
     document.getElementById("modal").style.display = "block";
 }
@@ -739,11 +748,11 @@ function copyToClipboard() {
     emptyModal();
     const text = document.getElementById("text_file").value;
     navigator.clipboard.writeText(text.replace(/<\/p><p>/g, "\n").strip());
-    printMessage("<strong class='message'>Copied to clipboard!</strong>");
+    printMessage("<strong>Copied to clipboard!</strong>");
 }
 function exportText() {
     emptyModal();
-    printMessage("");
+    clearMessages();
     let textFile = "";
 
     for (const game in vals) {
@@ -780,7 +789,7 @@ function reset() {
     }
 
     unsavedChanges = false;
-    printMessage("<strong class='message'>Reset the survival table to its default state!</strong>");
+    printMessage("<strong>Reset the survival table to its default state!</strong>");
 }
 
 function setProgress() {
@@ -848,7 +857,7 @@ function doImport() {
             game = value;
             continue;
         } else if (!game) {
-            printMessage("<strong class='error'>Error: invalid survival progress. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
+            printError("<strong>Error: invalid survival progress. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
             return;
         }
 
@@ -860,14 +869,14 @@ function doImport() {
             vals[game][difficulty] = achievement;
             continue;
         } else {
-            printMessage("<strong class='error'>Error: invalid survival progress. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
+            printError("<strong>Error: invalid survival progress. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
             return;
         }
     }
 
     save();
     initValues();
-    printMessage("<strong class='message'>Survival progress successfully imported!</strong>");
+    printMessage("<strong>Survival progress successfully imported!</strong>");
 }
 
 function init() {
@@ -883,7 +892,7 @@ function init() {
         importElement.parentNode.removeChild(importElement);
     } else {
         if (errorElement && errorElement.value) {
-            printMessage(errorElement.value);
+            printError(errorElement.value);
             errorElement.parentNode.removeChild(errorElement);
         }
     }

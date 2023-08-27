@@ -160,7 +160,7 @@ function no_extra(string $game) {
             <input id='precision' type='number' value='0' min='0' max='5' step='1'>
         </section>
         <p id='message' class='center'></p>
-        <p id='error' class='center'></p>
+        <p id='error_message' class='center'></p>
         <section>
             <input id='save' type='button' value='Save'>
             <input id='calc' type='button' value='Calculate'>

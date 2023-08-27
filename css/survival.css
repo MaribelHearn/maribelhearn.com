@@ -22,12 +22,6 @@ input[type=button] {
 .bold {
     font-weight: bold;
 }
-.message {
-    color: green;
-}
-.error {
-    color: orange;
-}
 .clear {
     background-color: green;
 }
@@ -110,11 +104,16 @@ input[type=button] {
 #nav {
     margin-bottom: 5px;
 }
-#legend {
+#legend, #overview_container, #dummy {
     display: none;
 }
-#overview_container, #dummy {
-    display: none;
+#message {
+    font-weight: bold;
+    color: green;
+}
+#error_message {
+    font-weight: bold;
+    color: orange;
 }
 #completion_table, #close {
     margin-bottom: 15px;

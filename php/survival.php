@@ -49,6 +49,7 @@ function display_name(string $game) {
 			<input id='reset' type='button' value='Reset'>
 		</section>
         <p id='message' class='center'></p>
+        <p id='error_message' class='center'></p>
     </div>
     <div id='container' class='overflow'>
         <table id='survival'>

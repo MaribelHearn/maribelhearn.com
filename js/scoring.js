@@ -70,7 +70,7 @@ function printMessage(message) {
 }
 
 function printError(error) {
-    document.getElementById("error").innerHTML = error;
+    document.getElementById("error_message").innerHTML = error;
 }
 
 function clearMessages() {
@@ -230,7 +230,7 @@ function copyToClipboard() {
     emptyModal();
     const text = document.getElementById("text_file").value;
     navigator.clipboard.writeText(text.replace(/<\/p><p>/g, "\n").strip());
-    printMessage("<strong class='message'>Copied to clipboard!</strong>");
+    printMessage("<strong>Copied to clipboard!</strong>");
 }
 
 function exportText() {
@@ -436,7 +436,7 @@ function doImport() {
             diff = value;
             continue;
         } else if (!game) {
-            printError("<strong class='error'>Error: invalid high scores. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
+            printError("<strong>Error: invalid high scores. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
             return;
         }
 
@@ -445,7 +445,7 @@ function doImport() {
         score = parseInt(value[1]);
 
         if (isNaN(score) || score < 0) {
-            printError("<strong class='error'>Error: invalid high scores. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
+            printError("<strong>Error: invalid high scores. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
             return;
         }
 
@@ -453,7 +453,7 @@ function doImport() {
             scores[game][diff][shot] = score;
             continue;
         } else {
-            printError("<strong class='error'>Error: invalid high scores. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
+            printError("<strong>Error: invalid high scores. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
             return;
         }
     }
@@ -461,7 +461,7 @@ function doImport() {
     save();
     showScores();
     checkShown();
-    printMessage("<strong class='message'>High scores successfully imported!</strong>");
+    printMessage("<strong>High scores successfully imported!</strong>");
 }
 
 function init() {

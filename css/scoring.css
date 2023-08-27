@@ -93,13 +93,9 @@ input[type=button] {
     font-weight: bold;
     color: green;
 }
-#error {
+#error_message {
     font-weight: bold;
     color: orange;
-}
-#error {
-    font-weight: bold;
-    color: red;
 }
 #checkboxes {
     margin-top: 15px;
