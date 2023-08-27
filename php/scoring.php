@@ -164,6 +164,8 @@ function no_extra(string $game) {
         <section>
             <input id='save' type='button' value='Save'>
             <input id='calc' type='button' value='Calculate'>
+        	<input id='import_button' type='button' value='Import'>
+        	<input id='export' type='button' value='Export'>
             <input id='reset' type='button' value='Reset'>
         </section>
     </form>
@@ -194,4 +196,28 @@ function no_extra(string $game) {
         </table>
     </div>
     <footer><strong><a href='#top'>Back to Top</a></strong></footer>
+</div>
+<div id='modal'>
+    <div id='import_text' class='modal_inner'>
+        <h2>Import from Text File</h2>
+        <p>Note that the format should be the same as the exported text.</p>
+        <p><strong>Warning:</strong> Importing can overwrite your current scores!</p>
+        <form target='_self' method='post' enctype='multipart/form-data'>
+            <label for='import_file'>Upload file:</label>
+            <input id='import_file' name='import' type='file'>
+            <p><input type='submit' value='Import'></p>
+        </form>
+    </div>
+    <div id='export_text' class='modal_inner'>
+        <h2>Export to Text File</h2>
+        <p>
+            <input id='copy_to_clipboard' type='button' value='Copy to Clipboard'>
+            <input id='text_file' type='hidden' value=''>
+        </p>
+        <p>
+            <a id='save_link' href='#' download='#'>
+                <input type='button' class='button' value='Save to Device'>
+            </a>
+        </p>
+    </div>
 </div>

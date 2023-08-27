@@ -248,7 +248,7 @@ function handle_file_upload() {
             )) {
                 return '<strong class="error">Error: invalid file format; expected plain text.</strong>';
             }
-            if ($_FILES['import']['size'] > 5000) {
+            if ($_FILES['import']['size'] > 12000) {
                 return '<strong class="error">Error: file exceeds the upload size limit.</strong>';
             }
             if (!empty($ext)) {

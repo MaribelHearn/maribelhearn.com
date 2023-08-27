@@ -1,6 +1,20 @@
 /*global WRs scores getCookie deleteCookie*/
+String.prototype.strip = function () {
+    return this.replace(/<\/?[^>]*>/g, "");
+};
+
+const games = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
+const diffs = ["Easy", "Normal", "Hard", "Lunatic", "Extra", "Phantasm"];
 let unsavedChanges = false;
 let precision = 0;
+
+function closeModal(event) {
+    const modal = document.getElementById("modal");
+
+    if ((event.target && event.target == modal) || (event.key && event.key == "Escape")) {
+        emptyModal();
+    }
+}
 
 function show(game) {
     document.getElementById(game).style.display = "block";
@@ -30,7 +44,6 @@ function checkGame() {
 }
 
 function checkAll() {
-    const games = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
     const checked = document.getElementById("all").checked;
 
     if (checked) {
@@ -187,6 +200,67 @@ function calc() {
     document.getElementById("game_tbody").innerHTML = gameTable;
 }
 
+function emptyModal() {
+    document.getElementById("modal").style.display = "none";
+    const innerModals = document.querySelectorAll(".modal_inner");
+    
+    for (const element of innerModals) {
+        element.style.display = "none";
+    }
+}
+
+function importText() {
+    emptyModal();
+    clearMessages();
+    document.getElementById("import_text").style.display = "block";
+    document.getElementById("modal").style.display = "block";
+}
+
+function fileName(extension) {
+    const date = new Date();
+    const month = (date.getMonth() + 1).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    const day = (date.getDate()).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    const hours = (date.getHours()).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    const minutes = (date.getMinutes()).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    const seconds = (date.getSeconds()).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    return `touhou_high_scores_${date.getFullYear()}_${month}_${day}_${hours}_${minutes}_${seconds}.${extension}`;
+}
+
+function copyToClipboard() {
+    emptyModal();
+    const text = document.getElementById("text_file").value;
+    navigator.clipboard.writeText(text.replace(/<\/p><p>/g, "\n").strip());
+    printMessage("<strong class='message'>Copied to clipboard!</strong>");
+}
+
+function exportText() {
+    emptyModal();
+    clearMessages();
+    let textFile = "";
+
+    for (const game in scores) {
+        textFile += `${game}:\n`;
+
+        for (const diff in scores[game]) {
+            textFile += `  ${diff}:\n`;
+
+            for (const shot in scores[game][diff]) {
+                textFile += `    ${shot}: ${scores[game][diff][shot]}\n`;
+            }
+        }
+
+        textFile += '\n';
+    }
+
+    const saveLink = document.getElementById("save_link");
+    saveLink.href = "data:text/plain;charset=utf-8," + encodeURIComponent(textFile);
+    saveLink.download = fileName("txt");
+    document.getElementById("copy_to_clipboard").addEventListener("click", copyToClipboard, false);
+    document.getElementById("text_file").value = textFile;
+    document.getElementById("export_text").style.display = "block";
+    document.getElementById("modal").style.display = "block";
+}
+
 function reset() {
     clearMessages();
     const confirmation = confirm("Are you sure you want to erase all your scores?");
@@ -238,12 +312,16 @@ function loadScores() {
 
         if (data) {
             scores[game] = JSON.parse(data);
+        }
+    }
+}
 
-            for (const diff in scores[game]) {
-                for (const shot in scores[game][diff]) {
-                    if (scores[game][diff][shot] !== 0) {
-                        document.getElementById(game + diff + shot).value = sep(scores[game][diff][shot]);
-                    }
+function showScores() {
+    for (const game in scores) {
+        for (const diff in scores[game]) {
+            for (const shot in scores[game][diff]) {
+                if (scores[game][diff][shot]) {
+                    document.getElementById(game + diff + shot).value = sep(scores[game][diff][shot]);
                 }
             }
         }
@@ -282,6 +360,10 @@ function idToCategory(id) {
 }
 
 function scoreChanged() {
+    if (this.id == "import_file") {
+        return;
+    }
+
     const category = idToCategory(this.id);
     const score = parseScore(category.game, category.diff, category.shot);
     const valid = validateScore(score);
@@ -308,8 +390,12 @@ function precisionChanged() {
 }
 
 function setEventListeners() {
+    document.body.addEventListener("click", closeModal, false);
+    document.body.addEventListener("keyup", closeModal, false);
     document.getElementById("save").addEventListener("click", save, false);
     document.getElementById("calc").addEventListener("click", calc, false);
+    document.getElementById("import_button").addEventListener("click", importText, false);
+    document.getElementById("export").addEventListener("click", exportText, false);
     document.getElementById("reset").addEventListener("click", reset, false);
     document.getElementById("all").addEventListener("click", checkAll, false);
     const input = document.querySelectorAll("input");
@@ -329,14 +415,76 @@ function setEventListeners() {
     }
 }
 
+function doImport() {
+    const text = document.getElementById("import").value.trim().split('\n');
+    let game;
+    let diff;
+    let shot;
+    let score;
+
+    for (const line of text) {
+        if (line === "") {
+            continue;
+        }
+
+        let value = line.replace(':', "").trim();
+
+        if (games.includes(value)) {
+            game = value;
+            continue;
+        } else if (diffs.includes(value)) {
+            diff = value;
+            continue;
+        } else if (!game) {
+            printError("<strong class='error'>Error: invalid high scores. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
+            return;
+        }
+
+        value = value.split(' ');
+        shot = value[0];
+        score = parseInt(value[1]);
+
+        if (isNaN(score) || score < 0) {
+            printError("<strong class='error'>Error: invalid high scores. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
+            return;
+        }
+
+        if (scores[game].hasOwnProperty(diff)) {
+            scores[game][diff][shot] = score;
+            continue;
+        } else {
+            printError("<strong class='error'>Error: invalid high scores. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
+            return;
+        }
+    }
+
+    save();
+    showScores();
+    checkShown();
+    printMessage("<strong class='message'>High scores successfully imported!</strong>");
+}
+
 function init() {
     deleteLegacyCookies();
+    const importElement = document.getElementById("import");
+    const errorElement = document.getElementById("error");
 
-    try {
-        loadScores();
-        checkShown();
-    } catch (e) {
-        // do nothing
+    if (importElement) {
+        doImport();
+        importElement.parentNode.removeChild(importElement);
+    } else {
+        if (errorElement && errorElement.value) {
+            printMessage(errorElement.value);
+            errorElement.parentNode.removeChild(errorElement);
+        }
+
+        try {
+            loadScores();
+            showScores();
+            checkShown();
+        } catch (e) {
+            // do nothing
+        }
     }
 
     if (localStorage.hasOwnProperty("precision")) {

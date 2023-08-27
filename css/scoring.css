@@ -59,6 +59,30 @@ input[type=button] {
     z-index: 1;
     top: 100%;
 }
+.modal_inner {
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 85%;
+    max-height: 85%;
+    display: none;
+    overflow-y: auto;
+}
+#modal {
+    font: 14px verdana, sans-serif;
+    text-align: center;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 3%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    background-color: rgba(0,0,0,.4);
+    /*color: #000;*/
+}
 #nav {
     margin-bottom: 5px;
 }
@@ -68,6 +92,10 @@ input[type=button] {
 #message {
     font-weight: bold;
     color: green;
+}
+#error {
+    font-weight: bold;
+    color: orange;
 }
 #error {
     font-weight: bold;
