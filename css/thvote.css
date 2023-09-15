@@ -190,6 +190,9 @@
 .hidden, #age_detail, #age_summary_button {
     display: none;
 }
+.guide {
+    width: 75%;
+}
 .tooltip {
     visibility: hidden;
     background-color: black;
