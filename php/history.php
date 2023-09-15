@@ -383,9 +383,9 @@
                 <tr id='oLoLK'>
                     <th>LoLK</th>
                     <td id='eLoLK' class='nb'></td>
-                    <td id='nLoLK' class='clear'></td>
-                    <td id='hLoLK' class='clear'></td>
-                    <td id='lLoLK' class='clear'></td>
+                    <td id='nLoLK' class='nb'></td>
+                    <td id='hLoLK' class='nb'></td>
+                    <td id='lLoLK' class='nb'></td>
                     <td id='xLoLK' class='nb' colspan='2'></td>
                 </tr>
                 <tr id='oHSiFS'>
@@ -2561,7 +2561,7 @@
                 <td><strong>Normal</strong></td>
                 <td class='g'>Completed</td>
                 <td>August 16, 2015</td>
-                <td>-</td>
+                <td>September 15, 2023</td>
                 <td>-</td>
                 <td>No</td>
             </tr>
@@ -2569,7 +2569,7 @@
                 <td><strong>Hard</strong></td>
                 <td class='g'>Completed</td>
                 <td>August 16, 2015</td>
-                <td>-</td>
+                <td>September 15, 2023</td>
                 <td>-</td>
                 <td>No</td>
             </tr>
@@ -2577,9 +2577,10 @@
                 <td><strong>Lunatic</strong></td>
                 <td class='g'>Completed</td>
                 <td>August 19, 2015</td>
+                <td>September 15, 2023</td>
                 <td>-</td>
-                <td>-</td>
-                <td><strong><a href='https://www.youtube.com/watch?v=FdS7l--Hc1c'>1cc</a></strong></td>
+                <td><strong><a href='https://www.youtube.com/watch?v=FdS7l--Hc1c'>1cc</a>
+                <a href='https://www.youtube.com/watch?v=WNsdMOBCzNs'>NB</a></strong></td>
             </tr>
             <tr>
                 <td colspan='6'></td>
