@@ -46,6 +46,6 @@ See below for a translation of the surrounding text.</p>
 <img src='../assets/other/thvote/touhou_station.jpg' alt='Touhou Station checkbox'>
 <h3>Regarding featuring your work on Touhou Station</h3>
 <p>We are planning to feature some of the submitted works during the Touhou Station broadcast planned for the 30th of September at 20:00 (JST).
-If you afree to having your work featured on stream, please check the box below.</p>
+If you are free to having your work featured on stream, please check the box below.</p>
 <p>You can still submit works even if you disagree to having them shown on stream.
 We will not publish your agreement/disagreement to have your works featured.</p>

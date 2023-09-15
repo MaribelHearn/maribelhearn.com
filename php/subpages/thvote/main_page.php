@@ -6,7 +6,7 @@ music and works will not change when the full results are published.</p>-->
 <p>All of the table columns are sortable.</p>
 <p>Source: <a href='https://toho-vote.info/'>https://toho-vote.info/</a></p>
 <h2>How do I vote?</h2>
-<p>Please have a look at this English-translated <a href='/thvote/guide'>voting guide</a>.</p>
+<p>Please have a look at the <a href='/thvote/guide'>voting guide</a>.</p>
 <h2>Contents</h2>
 <div class='contents'>
     <p><a href='#characters'>Characters</a></p>
