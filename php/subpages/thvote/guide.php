@@ -20,7 +20,7 @@
 <img src='../assets/other/thvote/support_works.jpg' alt='Support Works menu item'>
 <p>On this page, scroll to the very bottom, where you will find the submission form. See below for English translations of the page and the form.</p>
 <h3>What are support works?</h3>					
-<p>Here's a support link where people can freely register their works.							
+<p>(Translation) Here's a support link where people can freely register their works.							
 Please feel free to register URLs of illustrations, videos, and other works to show support for your favourite characters.							
 Liven up the popularity poll with your support!</p>
 <p>We will begin accepting submissions from the 10th of September.</p>
@@ -45,7 +45,7 @@ Liven up the popularity poll with your support!</p>
 See below for a translation of the surrounding text.</p>
 <img src='../assets/other/thvote/touhou_station.jpg' alt='Touhou Station checkbox'>
 <h3>Regarding featuring your work on Touhou Station</h3>
-<p>We are planning to feature some of the submitted works during the Touhou Station broadcast planned for the 30th of September at 20:00 (JST).
+<p>(Translation) We are planning to feature some of the submitted works during the Touhou Station broadcast planned for the 30th of September at 20:00 (JST).
 If you are free to having your work featured on stream, please check the box below.</p>
 <p>You can still submit works even if you disagree to having them shown on stream.
 We will not publish your agreement/disagreement to have your works featured.</p>
