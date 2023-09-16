@@ -13,8 +13,13 @@
 <img class='guide' src='../assets/other/thvote/id.jpg' alt='Email form'>
 <p>If you used the "Issue Voting ID" method, it might take some time, but you should receive an email containig your voting ID. You will use this voting ID to fill in your votes.</p>
 <h2 id='voting'>Voting</h2>
-<p><!--After issuing your ID, click on "Vote Now" in the navigation menu on the left.--></p>
-<p>[WIP]</p>
+<p>After issuing your ID, click on "Vote Now" either at the bottom of the main page, or in the navigation menu on the left.<br>Choose your category from the big buttons to start voting!</p>
+<img src='../assets/other/thvote/voting.jpg' alt='Voting form'>
+<p>Each voting form will look like this. The first textbox is for your voting ID. The second one is, optionally, your nickname.</p>
+<p>You can type in character names in English, and it will show the Japanese name of the character that matches your input. The first one gets 2 points, all others get 1 point. The second textbox for each item is optional; you can fill in additional comments there.</p>
+<p>Voting for music is a bit more complicated, but they are at least in chronological order, and since some of them have English subtitles, that helps a lot in searching for the one you want.</p>
+<p>For the questionnaire, there is a translation of the 2022 iteration  on the main page on this site: <a href='/thvote#questionnaire'>https://maribelhearn.com/thvote#questionnaire</a>.</p>
+<p>At the bottom, there is a checkbox. If you check it, you agree to potentially having your comments featured on the <strong>Touhou Station stream</strong>. Leave it unchecked if you do not want to be part of it.</p>
 <h2 id='fanworks'>Submitting supporting fanworks</h2>
 <p>To submit a supporting fanwork for a character, navigate to "Support Works" using the navigation menu on the left.</p>
 <img src='../assets/other/thvote/support_works.jpg' alt='Support Works menu item'>
