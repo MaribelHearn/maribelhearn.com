@@ -1,5 +1,5 @@
 <p>Unfortunately, the Touhou Popularity Poll is still Japanese-only this year. There <em>should</em> be support for English by next year though. At least the important buttons are translated, but this guide is there to help you.</p>
-<p>Credit goes to <a href='https://twitter.com/richard_effendi'>IceFairy</a> for the English translations used in this guide.</p>
+<p>Credit goes to <a href='https://twitter.com/richard_effendi' target='_blank'>IceFairy</a> for the English translations used in this guide.</p>
 <h2>Contents</h2>
 <div class='contents'>
     <p><a href='#signup'>Sign-up</a></p>
@@ -40,12 +40,13 @@ Liven up the popularity poll with your support!</p>
     <li>We might edit the tags a work is submitted with;</li>
     <li>The rights of submitted works belong to their respective creators.</li>
 </ul>
-<img src='../assets/other/thvote/support_form.png' alt='Support Works submission form'>
+<img class='guide_mobile' src='../assets/other/thvote/support_form.png' alt='Support Works submission form'>
 <p>At the bottom of the form, there is a checkbox. If you check it, you agree to potentially having your work featured on the <strong>Touhou Station stream</strong>. Leave it unchecked if you do not want to be part of it.
 See below for a translation of the surrounding text.</p>
-<img src='../assets/other/thvote/touhou_station.jpg' alt='Touhou Station checkbox'>
+<img class='guide_mobile' src='../assets/other/thvote/touhou_station.jpg' alt='Touhou Station checkbox'>
 <h3>Regarding featuring your work on Touhou Station</h3>
 <p>(Translation) We are planning to feature some of the submitted works during the Touhou Station broadcast planned for the 30th of September at 20:00 (JST).
 If you are free to having your work featured on stream, please check the box below.</p>
 <p>You can still submit works even if you disagree to having them shown on stream.
 We will not publish your agreement/disagreement to have your works featured.</p>
+<p><strong><a href='#top'>Back to Top</a></strong></p>

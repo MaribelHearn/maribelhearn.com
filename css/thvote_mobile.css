@@ -1,6 +1,9 @@
 body {
     background: #6a2e2d;
 }
+.guide_mobile {
+    width: 75%;
+}
 #back {
     float: none;
 }
