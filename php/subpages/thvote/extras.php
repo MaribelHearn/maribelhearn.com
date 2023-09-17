@@ -185,7 +185,7 @@
 </table></div>
 <h2 id='cpg'>Character vote per maingame</h2>
 <h3 id='ctotals'>Totals per maingame</h3>
-<div class='overflow'><table class='poll table sortable'>
+<div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
             <col class='col2game'>
             <col class='col3'>
