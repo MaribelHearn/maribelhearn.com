@@ -22,7 +22,7 @@ $chars = array('MarisaKirisame', 'ReimuHakurei', 'Elis', 'Kikuri', 'Konngara', '
 'SakiKurokoma', 'UrumiUshizaki', 'YachieKicchou', 'YuumaToutetsu', 'ChimataTenkyuu', 'MegumuIizunamaru', 'MikeGoutokuji', 'MisumaruTamatsukuri', 'MomoyoHimemushi', 'SannyoKomakusa',
 'TakaneYamashiro', 'TsukasaKudamaki', 'FortuneTeller', 'HiedanoAkyuu', 'KasenIbaraki', 'KosuzuMotoori', 'MiyoiOkunoda', 'ReisenII', 'RinnosukeMorichika', 'Tokiko', 'WatatsukinoToyohime',
 'WatatsukinoYorihime', 'MaribelHearn', 'RenkoUsami', 'AlicePC-98Extra', 'FiveMagicStones', 'KaguyaHouraisanLastSpells', 'MarisaKirisameGFW', 'MarisaPC-98LLS', 'OkinaMataraExtra', 'YukiandMai',
-'YuukaPC-98Stage5', 'YuyukoSaigyoujiResurrectionButterfly', 'YuyukoSaigyoujiTD');
+'YuukaPC-98Stage5', 'YuyukoSaigyoujiResurrectionButterfly', 'YuyukoSaigyoujiTD', 'SonBiten', 'EnokoMitsugashira', 'ChiyariTenkajin', 'HisamiYomotsu', 'ZanmuNippaku');
 $works = array('HighlyResponsivetoPrayers', 'StoryofEasternWonderland', 'PhantasmagoriaofDimDream', 'LotusLandStory', 'MysticSquare', 'EmbodimentofScarletDevil', 'PerfectCherryBlossom', 'ImmaterialandMissingPower',
 'ImperishableNight', 'PhantasmagoriaofFlowerView', 'ShoottheBullet', 'MountainofFaith', 'ScarletWeatherRhapsody', 'SubterraneanAnimism', 'UndefinedFantasticObject', 'TouhouHisoutensoku',
 'DoubleSpoiler', 'GreatFairyWars', 'TenDesires', 'HopelessMasquerade', 'DoubleDealingCharacter', 'ImpossibleSpellCard', 'UrbanLegendinLimbo', 'LegacyofLunaticKingdom',

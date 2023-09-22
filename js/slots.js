@@ -2,7 +2,8 @@
 const SPECIES = ["Human", "Magician", "Devil", "Ghost", "Yuki-onna", "Night sparrow", "Tengu", "Kappa",
 "Tsurube-otoshi", "Tsuchigumo", "Hashihime", "Satori", "Shuchuu", "Tsukumogami", "Nyuudou",
 "Nue", "Daidarabotchi", "Yamabiko", "Zombie", "Gashadokuro", "Kirin", "Wanyuudou", "Katawa-guruma",
-"Zashiki-warashi", "Hobgoblin", "Enenra", "Mermaid", "Rokurokubi", "Amanojaku", "Baku", "Yamanba"];
+"Zashiki-warashi", "Hobgoblin", "Enenra", "Mermaid", "Rokurokubi", "Amanojaku", "Baku", "Yamanba",
+"Komainu", "Haniwa", "Oomukade", "Sarugami", "Tenkajin"];
 const NUMBERS = ["None", "1", "2", "3", "4", "5+"];
 const OFFSET = -120;
 const ROW_SIZE = 9;
@@ -15,7 +16,7 @@ let slots = [];
 let running, currentID;
 
 function randomiseImage(max, slot, previous) {
-    slots[slot] = Math.floor(Math.random() * (max - 1));
+    slots[slot] = Math.floor(Math.random() * (max));
 
     if (slots[slot] == previous) {
         slots[slot] = (slots[slot] + 1) % max;
@@ -23,6 +24,14 @@ function randomiseImage(max, slot, previous) {
 
     let x = (slots[slot] % ROW_SIZE) * OFFSET;
     let y = Math.floor(slots[slot] / ROW_SIZE) * OFFSET;
+
+    if (x <= -120 && y == -2160) {
+        slots[slot] += 10;
+        x = (slots[slot] % ROW_SIZE) * OFFSET;
+        y = Math.floor(slots[slot] / ROW_SIZE) * OFFSET;
+        slots[slot] -= 10;
+    }
+
     document.getElementById(`slot${slot}`).style.backgroundPosition = `${x}px ${y}px`;
 
     if (max == CHARS.length) {
