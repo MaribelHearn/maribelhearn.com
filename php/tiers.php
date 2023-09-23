@@ -121,16 +121,16 @@
         <form target='_self' method='post' enctype='multipart/form-data'>
             <label for='import_file'>Upload file:</label>
             <input id='import_file' name='import' type='file'>
-            <p><input type='submit' value='Import'></p>
+            <p class='mobile_button_p'><input type='submit' value='Import'></p>
         </form>
     </div>
     <div id='export_text' class='modal_inner'>
         <h2>Export to Text File</h2>
-        <p>
+        <p class='mobile_button_p'>
             <input id='copy_to_clipboard' type='button' value='Copy to Clipboard'>
             <input id='text_file' type='hidden' value=''>
         </p>
-        <p>
+        <p class='mobile_button_p'>
             <a id='save_link' href='#' download='#'>
                 <input type='button' class='button' value='Save to Device'>
             </a>
@@ -138,7 +138,7 @@
     </div>
     <div id='screenshot' class='modal_inner'>
         <h2>Screenshot</h2>
-        <p>
+        <p class='mobile_button_p'>
             <a id='screenshot_link' href='#' download='#'>
                 <input type='button' class='button' value='Save to Device'>
             </a>
@@ -197,7 +197,7 @@
                 <input id='tier_header_font_size' class='settings_input' type='number' max='72' value=''>
             </p>
             <p>To customise a tier's name and colour, click it in your tier list.</p>
-            <p><input id='save_settings' type='button' value='Save Changes'></p>
+            <p class='mobile_button_p'><input id='save_settings' type='button' value='Save Changes'></p>
             <p id='settings_msg_container'></p>
         </div>
     </div>
@@ -222,6 +222,8 @@
             <li>20/07/2021: Shottypes added</li>
             <li>06/11/2021: Yuuma Toutetsu added</li>
             <li>01/01/2022: Import and export to text now uses files</li>
+            <li>19/08/2023: UDoALG shottypes added</li>
+            <li>22/09/2023: UDoALG characters added</li>
         </ul>
     </div>
     <div id='reset' class='modal_inner'>
@@ -229,9 +231,9 @@
         <p>Are you sure you want to reset your tier lists and settings to the defaults?</p>
         <p><strong>Erase All</strong> will permanently erase all of your loaded tier lists and settings.</p>
         <p><strong>Erase Current Tier List</strong> will only erase the tier list that is currently open.</p>
-        <p><input id='erase_all_button' class='mobile_button' type='button' value='Erase All'></p>
-        <p><input id='erase_single_button' class='mobile_button' type='button' value='Erase Current Tier List'></p>
-        <p><input id='cancel_button' class='mobile_button' type='button' value='Cancel'></p>
+        <p class='mobile_button_p'><input id='erase_all_button' class='mobile_button' type='button' value='Erase All'></p>
+        <p class='mobile_button_p'><input id='erase_single_button' class='mobile_button' type='button' value='Erase Current Tier List'></p>
+        <p class='mobile_button_p'><input id='cancel_button' class='mobile_button' type='button' value='Cancel'></p>
     </div>
     <div id='tier_menu' class='modal_inner'>
         <h2 id='tier_menu_header'>Customise Tier</h2>

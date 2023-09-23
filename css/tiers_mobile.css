@@ -50,6 +50,9 @@ input[type=button]:not(.button_bottom) {
 .thvote_icon {
     background-position: -176px 0px;
 }
+.mobile_button_p {
+    text-align: center;
+}
 #wrap {
     top: 5px;
     bottom: 5px;
@@ -104,6 +107,13 @@ input[type=button]:not(.button_bottom) {
 }
 #import {
     height: 270px;
+}
+#save_link {
+    margin: 0px;
+}
+#screenshot_base64 {
+    width: 85%;
+    height: 85%;
 }
 @media only screen and (orientation: portrait) {
     #modal {
