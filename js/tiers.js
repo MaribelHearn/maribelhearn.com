@@ -983,7 +983,7 @@ function quickAdd(tierNum) {
     for (const categoryName in cats) {
         if (settings.categories[settings.sort][categoryName].enabled) {
             for (const item of cats[categoryName].chars) {
-                if (!isTiered(item)) {
+                if (!isTiered(item) && (!themeDuplicates.includes(item) || settings.themesEnabled)) {
                     addToTier(item, tierNum);
                 }
             }
@@ -1383,6 +1383,35 @@ function imageToClipboard(event) {
     printMessage("<strong class='confirmation'>Copied to clipboard!</strong>");
 }*/
 
+function tieredCharacters() {
+    const tierList = getCurrentTierList();
+    let result = 0;
+
+    for (const tier in tierList) {
+        result += tierList[tier].chars.length;
+    }
+
+    return result;
+}
+
+function tierListHeight() {
+    const MAX_ITEMS = tieredCharacters() >= 84 ? 15 : 10;
+    const tierList = getCurrentTierList();
+    const multiplier = isMobile() ? 60 : 120;
+    const padding = 8;
+    let height = 0;
+
+    for (const tier in tierList) {
+        const tierHeight = Math.max(1, Math.ceil(tierList[tier].chars.length / MAX_ITEMS));
+        const difference = padding + (tierHeight > 1 ? (tierHeight - 1) * (padding / 2) : 0);
+        height += tierHeight * multiplier + difference;
+    }
+
+    height += document.getElementById("tier_list_caption").clientHeight;
+    height += 15;
+    return height;
+}
+
 function longestTier() {
     const tierList = getCurrentTierList();
     let longest = 0;
@@ -1399,7 +1428,43 @@ function longestTier() {
     return longest;
 }
 
+function prepareScreenshot(width) {
+    const body = document.getElementsByTagName("body")[0];
+    const wrap = document.getElementById("wrap");
+    const tierListContainer = document.getElementById("tier_list_container");
+    body.style.width = width + "px";
+    wrap.style.width = width + "px";
+    wrap.style.margin = "-5px";
+    wrap.style.height = "auto";
+    wrap.style.maxHeight = "none";
+    tierListContainer.style.width = width + "px";
+    tierListContainer.style.height = "auto";
+    tierListContainer.style.maxHeight = "none";
+    tierListContainer.style.marginLeft = "0px";
+
+    if (isMobile()) {
+        wrap.style.marginLeft = "-15px";
+    }
+}
+
+function cleanupScreenshot() {
+    const body = document.getElementsByTagName("body")[0];
+    const wrap = document.getElementById("wrap");
+    const tierListContainer = document.getElementById("tier_list_container");
+    body.style.width = "";
+    wrap.style = "";
+    wrap.style.width = "100%";
+    tierListContainer.style = "";
+
+    if (isMobile()) {
+        wrap.style.marginLeft = "";
+    }
+}
+
 function takeScreenshot() {
+    const BASE = (tieredCharacters() >= 84 ? 15 : 10) + 1;
+    const MAX_WIDTH = defaultWidth * BASE + 15;
+
     try {
         const isTierView = tierView;
 
@@ -1408,43 +1473,20 @@ function takeScreenshot() {
         }
 
         printMessage("<strong class='confirmation'>Girls are being screenshotted, please watch warmly...</strong>");
-        const tierListTable = document.getElementById("tier_list_tbody");
-        const tierListCaption = document.getElementById("tier_list_caption");
         const tierListWidth = 50 + (1 + longestTier()) * (isMobile() ? 60 : 120);
-        const clientWidth = tierListTable.clientWidth + tierListCaption.clientWidth + 15;
-        const width = Math.min(tierListWidth, clientWidth);
+        const width = Math.min(tierListWidth, MAX_WIDTH);
+        const height = tierListHeight();
+        prepareScreenshot(width);
+        
         html2canvas(document.body, {
-            "onclone": function (doc) {
-                const body = doc.getElementsByTagName("body")[0];
-                const wrap = doc.getElementById("wrap");
-                const tierListContainer = doc.getElementById("tier_list_container");
-                body.style.backgroundImage = "none";
-                body.style.width = width + "px";
-                wrap.style.width = width + "px";
-                wrap.style.margin = "-5px";
-                wrap.style.height = "auto";
-                wrap.style.maxHeight = "none";
-                tierListContainer.style.width = width + "px";
-                tierListContainer.style.height = "auto";
-                tierListContainer.style.maxHeight = "none";
-                tierListContainer.style.marginLeft = "0px";
-
-                if (isMobile()) {
-                    wrap.style.marginLeft = "-15px";
-                }
-            },
-            "windowHeight": tierListTable.clientHeight + tierListCaption.clientHeight + (isMobile() ? 7 : 15),
-            "height": tierListTable.clientHeight + tierListCaption.clientHeight + (isMobile() ? 7 : 15),
+            "windowHeight": height,
+            "height": height,
             "windowWidth": width,
             "width": width,
             "logging": false,
             "scrollX": 0,
             "scrollY": 0
         }).then(function (canvas) {
-            if (!isMobile() && !isTierView) {
-                toggleTierView();
-            }
-
             emptyModal();
             const base64image = canvas.toDataURL("image/png");
             const saveLink = document.getElementById("screenshot_link");
@@ -1453,8 +1495,13 @@ function takeScreenshot() {
             document.getElementById("screenshot_base64").src = base64image;
             document.getElementById("screenshot").style.display = "block";
             document.getElementById("modal").style.display = "block";
+            cleanupScreenshot();
             printMessage("");
             //document.getElementById("clipboard").on("click", imageToClipboard, false);
+
+            if (!isMobile() && !isTierView) {
+                toggleTierView();
+            }
         });
     } catch (e) {
         printMessage("<strong class='error'>Error: your browser is outdated. Use a different browser to screenshot your tier list.</strong>");
