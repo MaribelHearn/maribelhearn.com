@@ -196,6 +196,10 @@
                 <label for='tier_header_font_size'>Tier header font size</label>
                 <input id='tier_header_font_size' class='settings_input' type='number' max='72' value=''>
             </p>
+            <p>
+                <label for='screenshot_width'>Screenshot width (by number of items)</label>
+                <input id='screenshot_width' class='settings_input' type='number' min='1' value=''>
+            </p>
             <p>To customise a tier's name and colour, click it in your tier list.</p>
             <p class='mobile_button_p'><input id='save_settings' type='button' value='Save Changes'></p>
             <p id='settings_msg_container'></p>

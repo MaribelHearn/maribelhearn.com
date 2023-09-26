@@ -48,7 +48,8 @@ const DEFAULT_PROPS = {
     "tierListName": "",
     "tierListColour": defaultBg,
     "tierHeaderWidth": defaultWidth,
-    "tierHeaderFontSize": defaultSize
+    "tierHeaderFontSize": defaultSize,
+    "screenshotWidth": "",
 };
 const DEFAULT_SETTINGS = {
     "categories": {
@@ -80,25 +81,29 @@ const DEFAULT_SETTINGS = {
             "tierListName": "",
             "tierListColour": defaultBg,
             "tierHeaderWidth": defaultWidth,
-            "tierHeaderFontSize": defaultSize
+            "tierHeaderFontSize": defaultSize,
+            "screenshotWidth": ""
         },
         "works": {
             "tierListName": "",
             "tierListColour": defaultBg,
             "tierHeaderWidth": defaultWidth,
-            "tierHeaderFontSize": defaultSize
+            "tierHeaderFontSize": defaultSize,
+            "screenshotWidth": ""
         },
         "shots": {
             "tierListName": "",
             "tierListColour": defaultBg,
             "tierHeaderWidth": defaultWidth,
-            "tierHeaderFontSize": defaultSize
+            "tierHeaderFontSize": defaultSize,
+            "screenshotWidth": ""
         },
         "cards": {
             "tierListName": "",
             "tierListColour": defaultBg,
             "tierHeaderWidth": defaultWidth,
-            "tierHeaderFontSize": defaultSize
+            "tierHeaderFontSize": defaultSize,
+            "screenshotWidth": ""
         }
     },
     "pc98Enabled": true,
@@ -1176,11 +1181,17 @@ function parseSettings(string, sort) {
         settings.props[sort].tierListName = escapeHTML(settingsArray[0]);
         settings.props[sort].tierHeaderWidth = settingsArray[1];
         settings.props[sort].tierHeaderFontSize = settingsArray[2];
+    } else if (settingsArray.length == 4) {
+        settings.props[sort].tierListName = escapeHTML(settingsArray[0]);
+        settings.props[sort].tierListColour = settingsArray[1];
+        settings.props[sort].tierHeaderWidth = settingsArray[2];
+        settings.props[sort].tierHeaderFontSize = settingsArray[3];
     } else {
         settings.props[sort].tierListName = escapeHTML(settingsArray[0]);
         settings.props[sort].tierListColour = settingsArray[1];
         settings.props[sort].tierHeaderWidth = settingsArray[2];
         settings.props[sort].tierHeaderFontSize = settingsArray[3];
+        settings.props[sort].screenshotWidth = settingsArray[4];
     }
 }
 
@@ -1332,7 +1343,8 @@ function exportText() {
     "\n" + (settings.props[settings.sort].tierListName ? settings.props[settings.sort].tierListName : "-") +
     ";" + settings.props[settings.sort].tierListColour +
     ";" + settings.props[settings.sort].tierHeaderWidth +
-    ";" + settings.props[settings.sort].tierHeaderFontSize;
+    ";" + settings.props[settings.sort].tierHeaderFontSize +
+    ";" + settings.props[settings.sort].screenshotWidth;
 
     for (const tierNum in tierList) {
         textFile += "\n" + tierList[tierNum].name + ":\n" + tierList[tierNum].bg + " " + tierList[tierNum].colour + "\n";
@@ -1383,7 +1395,17 @@ function imageToClipboard(event) {
     printMessage("<strong class='confirmation'>Copied to clipboard!</strong>");
 }*/
 
-function tieredCharacters() {
+function getScreenshotWidth() {
+    let screenshotWidth = settings.props[settings.sort].screenshotWidth;
+
+    if (screenshotWidth === "") {
+        return atLeastHalfTiered() ? 15 : 10;
+    }
+    
+    return screenshotWidth;
+}
+
+function tieredItems() {
     const tierList = getCurrentTierList();
     let result = 0;
 
@@ -1394,8 +1416,24 @@ function tieredCharacters() {
     return result;
 }
 
+function atLeastHalfTiered() {
+    const tiered = tieredItems();
+    const category = categories[settings.sort];
+    let groupSize = 0;
+
+    for (const group in category) {
+        groupSize += category[group].chars.length;
+    }
+
+    if (settings.sort == "characters" && !settings.themesEnabled) {
+        groupSize -= themeDuplicates.length;
+    }
+
+    return tiered >= (groupSize / 2);
+}
+
 function tierListHeight() {
-    const MAX_ITEMS = tieredCharacters() >= 84 ? 15 : 10;
+    const MAX_ITEMS = getScreenshotWidth();
     const tierList = getCurrentTierList();
     const multiplier = isMobile() ? 60 : 120;
     const padding = 8;
@@ -1462,7 +1500,7 @@ function cleanupScreenshot() {
 }
 
 function takeScreenshot() {
-    const BASE = (tieredCharacters() >= 84 ? 15 : 10) + 1;
+    const BASE = getScreenshotWidth() + 1;
     const MAX_WIDTH = defaultWidth * BASE + 15;
 
     try {
@@ -1549,6 +1587,7 @@ function settingsMenu() {
     document.getElementById("tier_header_width").value = settings.props[settings.sort].tierHeaderWidth;
     document.getElementById("tier_header_width").min = defaultWidth;
     document.getElementById("tier_header_font_size").value = settings.props[settings.sort].tierHeaderFontSize;
+    document.getElementById("screenshot_width").value = getScreenshotWidth();
     document.getElementById("settings").style.display = "block";
     document.getElementById("modal").style.display = "block";
 }
@@ -1667,10 +1706,12 @@ function saveSettingsData() {
     const tierContents = document.querySelectorAll(".tier_content");
     const tierHeaderWidth = document.getElementById("tier_header_width").value;
     const tierHeaderFontSize = Math.min(document.getElementById("tier_header_font_size").value, fontSizeLimit);
+    const screenshotWidth = document.getElementById("screenshot_width").value;
     settings.props[settings.sort].tierListName = escapeHTML(document.getElementById("tier_list_name_menu").value);
     settings.props[settings.sort].tierListColour = document.getElementById("tier_list_colour").value;
     settings.props[settings.sort].tierHeaderWidth = tierHeaderWidth > defaultWidth ? tierHeaderWidth : defaultWidth;
     settings.props[settings.sort].tierHeaderFontSize = tierHeaderFontSize != defaultSize ? tierHeaderFontSize : defaultSize;
+    settings.props[settings.sort].screenshotWidth = Math.max(parseInt(screenshotWidth), 1);
 
     for (const element of tierHeaders) {
         element.style.width = settings.props[settings.sort].tierHeaderWidth + "px";
@@ -1777,6 +1818,7 @@ function modalEraseSingle() {
     settings.props[settings.sort].tierListColour = defaultBg;
     settings.props[settings.sort].tierHeaderWidth = defaultWidth;
     settings.props[settings.sort].tierHeaderFontSize = defaultSize;
+    settings.props[settings.sort].screenshotWidth = "";
     document.getElementById("tier_list_caption").innerHTML = "";
     const tierHeaders = document.querySelectorAll(".tier_header");
     const tierContents = document.querySelectorAll(".tier_content");
@@ -2095,6 +2137,7 @@ function loadLegacySettings(settingsData) {
             settings.props[sort].tierListColour = (settingsData[sort] && settingsData[sort].tierListColour ? settingsData[sort].tierListColour : defaultBg);
             settings.props[sort].tierHeaderWidth = (settingsData[sort] && settingsData[sort].tierHeaderWidth ? settingsData[sort].tierHeaderWidth : defaultWidth);
             settings.props[sort].tierHeaderFontSize = (settingsData[sort] && settingsData[sort].tierHeaderFontSize ? settingsData[sort].tierHeaderFontSize : defaultSize);
+            settings.props[sort].screenshotWidth = (settingsData[sort] && settingsData[sort].screenshotWidth ? settingsData[sort].screenshotWidth : "");
         }
 
         if (settingsData.picker && settingsData.picker == "small") {
@@ -2149,6 +2192,7 @@ function loadSettingsFromStorage() {
                 settings.props[sort].tierListColour = (settingsData.props[sort].tierListColour ? settingsData.props[sort].tierListColour : defaultBg);
                 settings.props[sort].tierHeaderWidth = (settingsData.props[sort].tierHeaderWidth ? settingsData.props[sort].tierHeaderWidth : defaultWidth);
                 settings.props[sort].tierHeaderFontSize = (settingsData.props[sort].tierHeaderFontSize ? settingsData.props[sort].tierHeaderFontSize : defaultSize);
+                settings.props[sort].screenshotWidth = (settingsData.props[sort].screenshotWidth ? settingsData.props[sort].screenshotWidth : "");
             } else {
                 settings.props[sort] = DEFAULT_PROPS;
             }
