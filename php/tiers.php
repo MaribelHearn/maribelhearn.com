@@ -174,7 +174,7 @@
         </div>
         <div id='settings_other'>
             Include items in the following categories:
-            <table id='settings_table'>
+            <table id='settings_table' class='noborders'>
                 <tbody id='settings_tbody'></tbody>
             </table>
         </div>
