@@ -12,7 +12,7 @@
         <col class='col5'>
     </colgroup>
     <thead>
-        <tr><th>Previous Rank</th><th>Current Rank</th><th>Character</th><th id='change' class='sorttable_numeric'>Change</th></tr>
+        <tr><th>Current Rank</th><th>Previous Rank</th><th>Character</th><th id='change' class='sorttable_numeric'>Change</th></tr>
     </thead>
     <tbody>
         <tr><td>1</td><td>2</td><td>Marisa Kirisame</td><td class='jump'>1</td></tr>
