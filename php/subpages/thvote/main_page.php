@@ -133,7 +133,8 @@ music and works will not change when the full results are published.</p>-->
                 <td>&lt;= 9</td>
                 <td>32</td>
                 <td>0.21%</td>
-            </tr><tr>
+            </tr>
+            <tr>
                 <td>10-14</td>
                 <td>2,243</td>
                 <td>14.69%</td>
@@ -142,7 +143,42 @@ music and works will not change when the full results are published.</p>-->
                 <td>15-19</td>
                 <td>6,091</td>
                 <td>39.88%</td>
-            </tr><tr><td>20-24</td><td>3,442</td><td>22.54%</td></tr><tr><td>25-29</td><td>1,660</td><td>10.87%</td></tr><tr><td>30-34</td><td>865</td><td>5.66%</td></tr><tr><td>35-39</td><td>465</td><td>3.04%</td></tr><tr><td>40-44</td><td>259</td><td>1.70%</td></tr><tr><td>45-49</td><td>109</td><td>0.71%</td></tr><tr><td>&gt;= 50</td><td>107</td><td>0.70%</td></tr>
+            </tr>
+            <tr>
+                <td>20-24</td>
+                <td>3,442</td>
+                <td>22.54%</td>
+            </tr>
+            <tr>
+                <td>25-29</td>
+                <td>1,660</td>
+                <td>10.87%</td>
+            </tr>
+            <tr>
+                <td>30-34</td>
+                <td>865</td>
+                <td>5.66%</td>
+            </tr>
+            <tr>
+                <td>35-39</td>
+                <td>465</td>
+                <td>3.04%</td>
+            </tr>
+            <tr>
+                <td>40-44</td>
+                <td>259</td>
+                <td>1.70%</td>
+            </tr>
+            <tr>
+                <td>45-49</td>
+                <td>109</td>
+                <td>0.71%</td>
+            </tr>
+            <tr>
+                <td>&gt;= 50</td>
+                <td>107</td>
+                <td>0.70%</td>
+            </tr>
         </tbody>
     </table></div>
     <div class='overflow'><table id='age_detail' class='poll table sortable noborders'>
@@ -159,7 +195,341 @@ music and works will not change when the full results are published.</p>-->
             </tr>
         </thead>
         <tbody>
-            <tr><td>5</td><td>8</td><td>0.05%</td></tr><tr><td>6</td><td>1</td><td>0.01%</td></tr><tr><td>7</td><td>4</td><td>0.03%</td></tr><tr><td>8</td><td>6</td><td>0.04%</td></tr><tr><td>9</td><td>13</td><td>0.09%</td></tr><tr><td>10</td><td>79</td><td>0.52%</td></tr><tr><td>11</td><td>177</td><td>1.16%</td></tr><tr><td>12</td><td>363</td><td>2.38%</td></tr><tr><td>13</td><td>693</td><td>4.54%</td></tr><tr><td>14</td><td>931</td><td>6.10%</td></tr><tr><td>15</td><td>1,295</td><td>8.48%</td></tr><tr><td>16</td><td>1,369</td><td>8.96%</td></tr><tr><td>17</td><td>1,254</td><td>8.21%</td></tr><tr><td>18</td><td>1,201</td><td>7.86%</td></tr><tr><td>19</td><td>972</td><td>6.36%</td></tr><tr><td>20</td><td>949</td><td>6.21%</td></tr><tr><td>21</td><td>724</td><td>4.74%</td></tr><tr><td>22</td><td>664</td><td>4.35%</td></tr><tr><td>23</td><td>642</td><td>4.20%</td></tr><tr><td>24</td><td>463</td><td>3.03%</td></tr><tr><td>25</td><td>437</td><td>2.86%</td></tr><tr><td>26</td><td>335</td><td>2.19%</td></tr><tr><td>27</td><td>309</td><td>2.02%</td></tr><tr><td>28</td><td>295</td><td>1.93%</td></tr><tr><td>29</td><td>284</td><td>1.86%</td></tr><tr><td>30</td><td>245</td><td>1.60%</td></tr><tr><td>31</td><td>197</td><td>1.29%</td></tr><tr><td>32</td><td>160</td><td>1.05%</td></tr><tr><td>33</td><td>140</td><td>0.92%</td></tr><tr><td>34</td><td>123</td><td>0.81%</td></tr><tr><td>35</td><td>121</td><td>0.79%</td></tr><tr><td>36</td><td>100</td><td>0.65%</td></tr><tr><td>37</td><td>95</td><td>0.62%</td></tr><tr><td>38</td><td>84</td><td>0.55%</td></tr><tr><td>39</td><td>65</td><td>0.43%</td></tr><tr><td>40</td><td>83</td><td>0.54%</td></tr><tr><td>41</td><td>52</td><td>0.34%</td></tr><tr><td>42</td><td>46</td><td>0.30%</td></tr><tr><td>43</td><td>39</td><td>0.26%</td></tr><tr><td>44</td><td>39</td><td>0.26%</td></tr><tr><td>45</td><td>32</td><td>0.21%</td></tr><tr><td>46</td><td>28</td><td>0.18%</td></tr><tr><td>47</td><td>25</td><td>0.16%</td></tr><tr><td>48</td><td>11</td><td>0.07%</td></tr><tr><td>49</td><td>13</td><td>0.09%</td></tr><tr><td>50</td><td>21</td><td>0.14%</td></tr><tr><td>51</td><td>8</td><td>0.05%</td></tr><tr><td>52</td><td>9</td><td>0.06%</td></tr><tr><td>53</td><td>10</td><td>0.07%</td></tr><tr><td>54</td><td>4</td><td>0.03%</td></tr><tr><td>55</td><td>6</td><td>0.04%</td></tr><tr><td>56</td><td>3</td><td>0.02%</td></tr><tr><td>57</td><td>3</td><td>0.02%</td></tr><tr><td>58</td><td>1</td><td>0.01%</td></tr><tr><td>59</td><td>1</td><td>0.01%</td></tr><tr><td>60</td><td>3</td><td>0.02%</td></tr><tr><td>65</td><td>1</td><td>0.01%</td></tr><tr><td>69</td><td>1</td><td>0.01%</td></tr><tr><td>72</td><td>1</td><td>0.01%</td></tr><tr><td>74</td><td>1</td><td>0.01%</td></tr><tr><td>79</td><td>1</td><td>0.01%</td></tr><tr><td>89</td><td>1</td><td>0.01%</td></tr><tr><td>93</td><td>1</td><td>0.01%</td></tr><tr><td>96</td><td>1</td><td>0.01%</td></tr><tr><td>97</td><td>1</td><td>0.01%</td></tr><tr><td>99</td><td>1</td><td>0.01%</td></tr><tr><td>100</td><td>28</td><td>0.18%</td></tr>
+            <tr>
+                <td>5</td>
+                <td>8</td>
+                <td>0.05%</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>1</td>
+                <td>0.01%</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>4</td>
+                <td>0.03%</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>6</td>
+                <td>0.04%</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>13</td>
+                <td>0.09%</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>79</td>
+                <td>0.52%</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>177</td>
+                <td>1.16%</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>363</td>
+                <td>2.38%</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>693</td>
+                <td>4.54%</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>931</td>
+                <td>6.10%</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>1,295</td>
+                <td>8.48%</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>1,369</td>
+                <td>8.96%</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>1,254</td>
+                <td>8.21%</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>1,201</td>
+                <td>7.86%</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>972</td>
+                <td>6.36%</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>949</td>
+                <td>6.21%</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>724</td>
+                <td>4.74%</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>664</td>
+                <td>4.35%</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>642</td>
+                <td>4.20%</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>463</td>
+                <td>3.03%</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>437</td>
+                <td>2.86%</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>335</td>
+                <td>2.19%</td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td>309</td>
+                <td>2.02%</td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td>295</td>
+                <td>1.93%</td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td>284</td>
+                <td>1.86%</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>245</td>
+                <td>1.60%</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td>197</td>
+                <td>1.29%</td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td>160</td>
+                <td>1.05%</td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td>140</td>
+                <td>0.92%</td>
+            </tr>
+            <tr>
+                <td>34</td>
+                <td>123</td>
+                <td>0.81%</td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td>121</td>
+                <td>0.79%</td>
+            </tr>
+            <tr>
+                <td>36</td>
+                <td>100</td>
+                <td>0.65%</td>
+            </tr>
+            <tr>
+                <td>37</td>
+                <td>95</td>
+                <td>0.62%</td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td>84</td>
+                <td>0.55%</td>
+            </tr>
+            <tr>
+                <td>39</td>
+                <td>65</td>
+                <td>0.43%</td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td>83</td>
+                <td>0.54%</td>
+            </tr>
+            <tr>
+                <td>41</td>
+                <td>52</td>
+                <td>0.34%</td>
+            </tr>
+            <tr>
+                <td>42</td>
+                <td>46</td>
+                <td>0.30%</td>
+            </tr>
+            <tr>
+                <td>43</td>
+                <td>39</td>
+                <td>0.26%</td>
+            </tr>
+            <tr>
+                <td>44</td>
+                <td>39</td>
+                <td>0.26%</td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td>32</td>
+                <td>0.21%</td>
+            </tr>
+            <tr>
+                <td>46</td>
+                <td>28</td>
+                <td>0.18%</td>
+            </tr>
+            <tr>
+                <td>47</td>
+                <td>25</td>
+                <td>0.16%</td>
+            </tr>
+            <tr>
+                <td>48</td>
+                <td>11</td>
+                <td>0.07%</td>
+            </tr>
+            <tr>
+                <td>49</td>
+                <td>13</td>
+                <td>0.09%</td>
+            </tr>
+            <tr>
+                <td>50</td>
+                <td>21</td>
+                <td>0.14%</td>
+            </tr>
+            <tr>
+                <td>51</td>
+                <td>8</td>
+                <td>0.05%</td>
+            </tr>
+            <tr>
+                <td>52</td>
+                <td>9</td>
+                <td>0.06%</td>
+            </tr>
+            <tr>
+                <td>53</td>
+                <td>10</td>
+                <td>0.07%</td>
+            </tr>
+            <tr>
+                <td>54</td>
+                <td>4</td>
+                <td>0.03%</td>
+            </tr>
+            <tr>
+                <td>55</td>
+                <td>6</td>
+                <td>0.04%</td>
+            </tr>
+            <tr>
+                <td>56</td>
+                <td>3</td>
+                <td>0.02%</td>
+            </tr>
+            <tr>
+                <td>57</td>
+                <td>3</td>
+                <td>0.02%</td>
+            </tr>
+            <tr>
+                <td>58</td>
+                <td>1</td>
+                <td>0.01%</td>
+            </tr>
+            <tr>
+                <td>59</td>
+                <td>1</td>
+                <td>0.01%</td>
+            </tr>
+            <tr>
+                <td>60</td>
+                <td>3</td>
+                <td>0.02%</td>
+            </tr>
+            <tr>
+                <td>65</td>
+                <td>1</td>
+                <td>0.01%</td>
+            </tr>
+            <tr>
+                <td>69</td>
+                <td>1</td>
+                <td>0.01%</td>
+            </tr>
+            <tr>
+                <td>72</td>
+                <td>1</td>
+                <td>0.01%</td>
+            </tr>
+            <tr>
+                <td>74</td>
+                <td>1</td>
+                <td>0.01%</td>
+            </tr>
+            <tr>
+                <td>79</td>
+                <td>1</td>
+                <td>0.01%</td>
+            </tr>
+            <tr>
+                <td>89</td>
+                <td>1</td>
+                <td>0.01%</td>
+            </tr>
+            <tr>
+                <td>93</td>
+                <td>1</td>
+                <td>0.01%</td>
+            </tr>
+            <tr>
+                <td>96</td>
+                <td>1</td>
+                <td>0.01%</td>
+            </tr>
+            <tr>
+                <td>97</td>
+                <td>1</td>
+                <td>0.01%</td>
+            </tr>
+            <tr>
+                <td>99</td>
+                <td>1</td>
+                <td>0.01%</td>
+            </tr>
+            <tr>
+                <td>100</td>
+                <td>28</td>
+                <td>0.18%</td>
+            </tr>
         </tbody>
     </table></div>
     <h2>02. Gender</h2>
@@ -217,80 +587,67 @@ music and works will not change when the full results are published.</p>-->
 				<td>3.31%</td>
 			</tr>
 			<tr>
-				<td><b>Northern Tohoku</b>
-					<br>(Aomori, Iwate, Akita)</td>
+				<td><b>Northern Tohoku</b><br>(Aomori, Iwate, Akita)</td>
 				<td>277</td>
 				<td>1.87%</td>
 			</tr>
 			<tr>
-				<td><b>Southern Tohoku</b>
-					<br>(Miyagi, Yamagata, Fukushima)</td>
+				<td><b>Southern Tohoku</b><br>(Miyagi, Yamagata, Fukushima)</td>
 				<td>469</td>
 				<td>3.17%</td>
 			</tr>
 			<tr>
-				<td><b>Northern Kanto</b>
-					<br>(Ibaraki, Tochigi, Gunma)</td>
+				<td><b>Northern Kanto</b><br>(Ibaraki, Tochigi, Gunma)</td>
 				<td>599</td>
 				<td>4.05%</td>
 			</tr>
 			<tr>
-				<td><b>Southern Kanto</b>
-					<br>(Saitama, Chiba, Tokyo, Kanagawa)</td>
+				<td><b>Southern Kanto</b><br>(Saitama, Chiba, Tokyo, Kanagawa)</td>
 				<td>3,559</td>
 				<td>24.04%</td>
 			</tr>
 			<tr>
-				<td><b>Hokuriku</b>
-					<br>(Toyama, Ishikawa, Fukui)</td>
+				<td><b>Hokuriku</b><br>(Toyama, Ishikawa, Fukui)</td>
 				<td>262</td>
 				<td>1.77%</td>
 			</tr>
 			<tr>
-				<td><b>Koshinetsu</b>
-					<br>(Niigata, Yamanashi, Nagano)</td>
+				<td><b>Koshinetsu</b><br>(Niigata, Yamanashi, Nagano)</td>
 				<td>453</td>
 				<td>3.06%</td>
 			</tr>
 			<tr>
-				<td><b>Tokai</b>
-					<br>(Aichi, Mie, Gifu, Shizuoka)</td>
+				<td><b>Tokai</b><br>(Aichi, Mie, Gifu, Shizuoka)</td>
 				<td>1,280</td>
 				<td>8.64%</td>
 			</tr>
 			<tr>
-				<td><b>Kansai</b>
-					<br>(Osaka, Kyoto, Hyogo, Nara, Shiga, Wakayama)</td>
+				<td><b>Kansai</b><br>(Osaka, Kyoto, Hyogo, Nara, Shiga, Wakayama)</td>
 				<td>1,682</td>
 				<td>11.36%</td>
 			</tr>
 			<tr>
-				<td><b>Chugoku</b>
-					<br>(Tottori, Shimane, Okayama, Hiroshima, Yamaguchi)</td>
+				<td><b>Chugoku</b><br>(Tottori, Shimane, Okayama, Hiroshima, Yamaguchi)</td>
 				<td>559</td>
 				<td>3.78%</td>
 			</tr>
 			<tr>
-				<td><b>Shikoku</b>
-					<br>(Tokushima, Ehime, Kagawa, Kochi)</td>
+				<td><b>Shikoku</b><br>(Tokushima, Ehime, Kagawa, Kochi)</td>
 				<td>260</td>
 				<td>1.76%</td>
 			</tr>
 			<tr>
-				<td><b>Northern Kyushu</b>
-					<br>(Fukuoka, Saga, Nagasaki, Oita)</td>
+				<td><b>Northern Kyushu</b><br>(Fukuoka, Saga, Nagasaki, Oita)</td>
 				<td>548</td>
 				<td>3.70%</td>
 			</tr>
 			<tr>
-				<td><b>Southern Kyushu</b>
-					<br>(Kumamoto, Miyazaki, Kagoshima, Okinawa)</td>
+				<td><b>Southern Kyushu</b><br>(Kumamoto, Miyazaki, Kagoshima, Okinawa)</td>
 				<td>324</td>
 				<td>2.19%</td>
 			</tr>
 			<tr>
-				<td><b>East Asia</b>
-					<br>(China, Taiwan, Korea, etc.)</td>
+				<td><b>East Asia</b><br>(China, Taiwan, Korea, etc.)</td>
 				<td>2,075</td>
 				<td>14.01%</td>
 			</tr>
@@ -334,7 +691,7 @@ music and works will not change when the full results are published.</p>-->
 	<h2>04. Difficulty level 1cc'd</h2>
 	<div>
 		<div>
-			<h3>EoSD</h3>
+			<h3>Touhou 6 - The Embodiment of Scarlet Devil</h3>
 			<p class='center'>Valid responses: 11,994</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -386,7 +743,7 @@ music and works will not change when the full results are published.</p>-->
 	</div>
 	<div>
 		<div>
-			<h3>PCB</h3>
+			<h3>Touhou 7 - Perfect Cherry Blossom</h3>
 			<p class='center'>Valid responses: 11,726</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -438,7 +795,7 @@ music and works will not change when the full results are published.</p>-->
 	</div>
 	<div>
 		<div>
-			<h3>IN</h3>
+			<h3>Touhou 8 - Imperishable Night</h3>
 			<p class='center'>Valid responses: 11,622</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -490,7 +847,7 @@ music and works will not change when the full results are published.</p>-->
 	</div>
 	<div>
 		<div>
-			<h3>PoFV</h3>
+			<h3>Touhou 9 - Phantasmagoria of Flower View</h3>
 			<p class='center'>Valid responses: 11,164</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -542,7 +899,7 @@ music and works will not change when the full results are published.</p>-->
 	</div>
 	<div>
 		<div>
-			<h3>MoF</h3>
+			<h3>Touhou 10 - Mountain of Faith</h3>
 			<p class='center'>Valid responses: 11,409</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -594,7 +951,7 @@ music and works will not change when the full results are published.</p>-->
 	</div>
 	<div>
 		<div>
-			<h3>SA</h3>
+			<h3>Touhou 11 - Subterranean Animism</h3>
 			<p class='center'>Valid responses: 11,158</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -646,7 +1003,7 @@ music and works will not change when the full results are published.</p>-->
 	</div>
 	<div>
 		<div>
-			<h3>UFO</h3>
+			<h3>Touhou 12 - Undefined Fantastic Object</h3>
 			<p class='center'>Valid responses: 10,933</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -698,7 +1055,7 @@ music and works will not change when the full results are published.</p>-->
 	</div>
 	<div>
 		<div>
-			<h3>TD</h3>
+			<h3>Touhou 13 - Ten Desires</h3>
 			<p class='center'>Valid responses: 10,893</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -750,7 +1107,7 @@ music and works will not change when the full results are published.</p>-->
 	</div>
 	<div>
 		<div>
-			<h3>DDC</h3>
+			<h3>Touhou 14 - Double Dealing Character</h3>
 			<p class='center'>Valid responses: 10,839</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -802,7 +1159,7 @@ music and works will not change when the full results are published.</p>-->
 	</div>
 	<div>
 		<div>
-			<h3>LoLK (Pointdevice)</h3>
+			<h3>Touhou 15 - Legacy of Lunatic Kingdom (Pointdevice)</h3>
 			<p class='center'>Valid responses: 10,822</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -854,7 +1211,7 @@ music and works will not change when the full results are published.</p>-->
 	</div>
 	<div>
 		<div>
-			<h3>LoLK (Legacy)</h3>
+			<h3>Touhou 15 - Legacy of Lunatic Kingdom (Legacy)</h3>
 			<p class='center'>Valid responses: 10,619</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -906,7 +1263,7 @@ music and works will not change when the full results are published.</p>-->
 	</div>
 	<div>
 		<div>
-			<h3>HSiFS</h3>
+			<h3>Touhou 16 - Hidden Star in Four Seasons</h3>
 			<p class='center'>Valid responses: 10,827</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -958,7 +1315,7 @@ music and works will not change when the full results are published.</p>-->
 	</div>
 	<div>
 		<div>
-			<h3>WBaWC</h3>
+			<h3>Touhou 17: Wily Beast and Weakest Creature</h3>
 			<p class='center'>Valid responses: 10,830</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1010,7 +1367,7 @@ music and works will not change when the full results are published.</p>-->
 	</div>
 	<div>
 		<div>
-			<h3>UM</h3>
+			<h3>Touhou 18: Unconnected Marketeers</h3>
 			<p class='center'>Valid responses: 10,878</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1062,7 +1419,7 @@ music and works will not change when the full results are published.</p>-->
 	</div>
 	<div>
 		<div>
-			<h3>UDoALG</h3>
+			<h3>Touhou 19: Unfinished Dream of All Living Ghost</h3>
 			<p class='center'>Valid responses: 10,872</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1355,152 +1712,127 @@ music and works will not change when the full results are published.</p>-->
         </thead>
 		<tbody>
 			<tr>
-				<td><strong>PC-98 - Shuusou Gyoku</strong>
-					<br>(October 1995 - December 2000)</td>
+				<td><strong>PC-98 - Shuusou Gyoku</strong><br>(October 1995 - December 2000)</td>
 				<td>65</td>
 				<td>0.42%</td>
 			</tr>
 			<tr>
-				<td><strong>Shuusou Gyoku - EoSD</strong>
-					<br>(December 2000 - August 2002)</td>
+				<td><strong>Shuusou Gyoku - EoSD</strong><br>(December 2000 - August 2002)</td>
 				<td>125</td>
 				<td>0.81%</td>
 			</tr>
 			<tr>
-				<td><strong>EoSD - PCB</strong>
-					<br>(August 2002 - August 2003)</td>
+				<td><strong>EoSD - PCB</strong><br>(August 2002 - August 2003)</td>
 				<td>325</td>
 				<td>2.11%</td>
 			</tr>
 			<tr>
-				<td><strong>PCB - IN</strong>
-					<br>(August 2003 - August 2004)</td>
+				<td><strong>PCB - IN</strong><br>(August 2003 - August 2004)</td>
 				<td>177</td>
 				<td>1.15%</td>
 			</tr>
 			<tr>
-				<td><strong>IN - IaMP</strong>
-					<br>(August 2004 - December 2004)</td>
+				<td><strong>IN - IaMP</strong><br>(August 2004 - December 2004)</td>
 				<td>144</td>
 				<td>0.94%</td>
 			</tr>
 			<tr>
-				<td><strong>IaMP - PoFV</strong>
-					<br>(December 2004 - August 2005)</td>
+				<td><strong>IaMP - PoFV</strong><br>(December 2004 - August 2005)</td>
 				<td>96</td>
 				<td>0.62%</td>
 			</tr>
 			<tr>
-				<td><strong>PoFV - StB</strong>
-					<br>(August 2005 - December 2005)</td>
+				<td><strong>PoFV - StB</strong><br>(August 2005 - December 2005)</td>
 				<td>64</td>
 				<td>0.42%</td>
 			</tr>
 			<tr>
-				<td><strong>StB - PMiSS</strong>
-					<br>(December 2005 - December 2006)</td>
+				<td><strong>StB - PMiSS</strong><br>(December 2005 - December 2006)</td>
 				<td>102</td>
 				<td>0.66%</td>
 			</tr>
 			<tr>
-				<td><strong>PMiSS - MoF</strong>
-					<br>(December 2006 - August 2007)</td>
+				<td><strong>PMiSS - MoF</strong><br>(December 2006 - August 2007)</td>
 				<td>325</td>
 				<td>2.11%</td>
 			</tr>
 			<tr>
-				<td><strong>MoF - SA</strong>
-					<br>(August 2007 - August 2008)</td>
+				<td><strong>MoF - SA</strong><br>(August 2007 - August 2008)</td>
 				<td>741</td>
 				<td>4.82%</td>
 			</tr>
 			<tr>
-				<td><strong>SA - UFO</strong>
-					<br>(August 2008 - August 2009)</td>
+				<td><strong>SA - UFO</strong><br>(August 2008 - August 2009)</td>
 				<td>573</td>
 				<td>3.73%</td>
 			</tr>
 			<tr>
-				<td><strong>UFO - GFW</strong>
-					<br>(August 2009 - August 2010)</td>
+				<td><strong>UFO - GFW</strong><br>(August 2009 - August 2010)</td>
 				<td>508</td>
 				<td>3.30%</td>
 			</tr>
 			<tr>
-				<td><strong>GFW - TD</strong>
-					<br>(August 2010 - August 2011)</td>
+				<td><strong>GFW - TD</strong><br>(August 2010 - August 2011)</td>
 				<td>517</td>
 				<td>3.36%</td>
 			</tr>
 			<tr>
-				<td><strong>TD - SoPM</strong>
-					<br>(August 2011 - April 2012)</td>
+				<td><strong>TD - SoPM</strong><br>(August 2011 - April 2012)</td>
 				<td>663</td>
 				<td>4.31%</td>
 			</tr>
 			<tr>
-				<td><strong>SoPM - DDC</strong>
-					<br>(April 2012 - August 2013)</td>
+				<td><strong>SoPM - DDC</strong><br>(April 2012 - August 2013)</td>
 				<td>809</td>
 				<td>5.26%</td>
 			</tr>
 			<tr>
-				<td><strong>DDC - ISC</strong>
-					<br>(August 2013 - May 2014)</td>
+				<td><strong>DDC - ISC</strong><br>(August 2013 - May 2014)</td>
 				<td>928</td>
 				<td>6.04%</td>
 			</tr>
 			<tr>
-				<td><strong>ISC - LoLK</strong>
-					<br>(May 2014 - August 2015)</td>
+				<td><strong>ISC - LoLK</strong><br>(May 2014 - August 2015)</td>
 				<td>1,211</td>
 				<td>7.88%</td>
 			</tr>
 			<tr>
-				<td><strong>LoLK - DBOA</strong>
-					<br>(August 2015 - August 2016)</td>
+				<td><strong>LoLK - DBOA</strong><br>(August 2015 - August 2016)</td>
 				<td>1,180</td>
 				<td>7.67%</td>
 			</tr>
 			<tr>
-				<td><strong>DBOA - HSiFS</strong>
-					<br>(August 2016 - August 2017)</td>
+				<td><strong>DBOA - HSiFS</strong><br>(August 2016 - August 2017)</td>
 				<td>1,075</td>
 				<td>6.99%</td>
 			</tr>
 			<tr>
-				<td><strong>HSiFS - VD</strong>
-					<br>(August 2017 - August 2018)</td>
+				<td><strong>HSiFS - VD</strong><br>(August 2017 - August 2018)</td>
 				<td>1,160</td>
 				<td>7.54%</td>
 			</tr>
 			<tr>
-				<td><strong>VD - WBaWC</strong>
-					<br>(August 2018 - August 2019)</td>
+				<td><strong>VD - WBaWC</strong><br>(August 2018 - August 2019)</td>
 				<td>1,423</td>
 				<td>9.25%</td>
 			</tr>
 			<tr>
-				<td><strong>WBaWC - UM</strong>
-					<br>(August 2019 - May 2021)</td>
+				<td><strong>WBaWC - UM</strong><br>(August 2019 - May 2021)</td>
 				<td>1,905</td>
 				<td>12.39%</td>
 			</tr>
 			<tr>
-				<td><strong>UM - 100BM</strong>
-					<br>(May 2021, August 2022)</td>
+				<td><strong>UM - 100BM</strong><br>(May 2021, August 2022)</td>
 				<td>970</td>
 				<td>6.31%</td>
 			</tr>
 			<tr>
-				<td><strong>100BM - UDoALG</strong>
-					<br>(August 2022 - August 2023)</td>
+				<td><strong>100BM - UDoALG</strong><br>(August 2022 - August 2023)</td>
 				<td>205</td>
 				<td>1.33%</td>
 			</tr>
 			<tr>
-				<td><strong>UDoALG - now</strong>
-					<br>(August 2023 - September 2023)</td>
+				<td><strong>UDoALG - now</strong><br>(August 2023 - September 2023)</td>
 				<td>85</td>
 				<td>0.55%</td>
 			</tr>
