@@ -611,7 +611,7 @@ music and works will not change when the full results are published.</p>-->
         </tr>
         <tr>
             <td>57</td>
-            <td>55</td>
+            <td>54</td>
             <td>67</td>
             <td>Koakuma</td>
             <td>1,628</td>
