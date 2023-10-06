@@ -1,12 +1,18 @@
 # Maribel Hearn's Web Portal
+
 This website provides a collection of conveninent Web pages that is primarily targetted at the Touhou gameplay community, such as the current world records, patch and tool downloads, and explanations of community jargon.
 It also hosts a tool to create Touhou tier lists, as well as an English translation of the results of the annual Japanese Touhou popularity poll.
 
 ## How to run
+
 Prerequisites:
 * PHP (version 8 or newer)
-* gettext module
-* sqlite3 module
+
+Required PHP modules:
+* curl
+* gettext
+* mbstring
+* sqlite3
 
 First, clone the repository in whatever way you prefer and navigate to its directory.
 ```
@@ -19,21 +25,3 @@ php -S 127.0.0.1:8000
 ```
 Connect to `http://127.0.0.1:8000` using your browser. You can also specify a port other than 8000.
 If you want, you can use a Web server such as [Apache](https://apache.org/) or [Nginx](https://nginx.org/) to host the site.
-
-## Troubleshooting
-```
-[500]: GET / - Uncaught Error: Call to undefined function bindtextdomain()
-```
-This error means that the PHP gettext module is not enabled. To enable it, open up your `php.ini` file and search for "gettext". You should find the following line:
-```
-;extension=gettext
-```
-Uncomment it by removing the semicolon at the front, then save the file. PHP will detect the change and run the gettext module.
-```
-[500]: GET /admin/admin.php - Uncaught Error: Class "SQLite3" not found 
-```
-This error means that the PHP sqlite3 module is not enabled. To enable it, open up your `php.ini` file and search for "sqlite3". You should find the following line:
-```
-;extension=sqlite3
-```
-Uncomment it by removing the semicolon at the front, then save the file. PHP will detect the change and run the sqlite3 module.
