@@ -53,9 +53,11 @@ function redirect(string $page, string $page_path, string $error) {
     }
     if (!file_exists($page_path) && $page != 'index' || !empty($error)) {
         $page = 'error';
-        $request = substr($_SERVER['REQUEST_URI'], 1);
-        $query = $_SERVER['QUERY_STRING'];
-        $url = str_replace('?' . $query, '', $request);
+        $url = substr($_SERVER['REQUEST_URI'], 1);
+        if (isset($_SERVER['QUERY_STRING'])) {
+            $query = $_SERVER['QUERY_STRING'];
+            $url = str_replace('?' . $query, '', $url);
+        }
         if (file_exists('assets/shared/json/admin.json')) {
             $json = file_get_contents('assets/shared/json/admin.json');
             $data = json_decode($json, true);
