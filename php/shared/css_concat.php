@@ -3,7 +3,7 @@ header('Content-type: text/css');
 if (file_exists('http.php')) {
     include_once 'http.php';
 } else {
-    include_once '../assets/shared/http.php';
+    include_once '../php/shared/http.php';
 }
 if (!isset($_GET['page'])) {
     exit();
@@ -43,7 +43,7 @@ if (isset($_COOKIE['theme']) && $page != 'tiers') {
     }
 }
 if ($page == 'tiers') {
-    array_push($css, '../other/tiers/tiers_override.css');
+    array_push($css, '../../assets/other/tiers/tiers_override.css');
 }
 foreach ($css as $css_file) {
     $css_content = file_get_contents($css_file);

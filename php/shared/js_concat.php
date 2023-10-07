@@ -3,7 +3,7 @@ header('Content-type: text/javascript');
 if (file_exists('http.php')) {
     include_once 'http.php';
 } else {
-    include_once '../assets/shared/http.php';
+    include_once '../php/shared/http.php';
 }
 if (isset($_SERVER['HTTP_ACCEPT_ENCODING']) && substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')) {
     ob_start('ob_gzhandler');
@@ -48,44 +48,44 @@ if (file_exists('../../js/' . $page . $min . '.js')) {
     array_push($js, '../../js/' . $page . $min . '.js');
 }
 if ($page == 'scoring') {
-    echo 'let scores = ' . file_get_contents('json/defaults.json') . ';';
+    echo 'let scores = ' . file_get_contents('../../json/defaults.json') . ';';
 }
 if ($page == 'drc') {
-    echo 'const rubrics = ' . file_get_contents('json/rubrics.json') . ';';
+    echo 'const rubrics = ' . file_get_contents('../../json/rubrics.json') . ';';
 }
 if ($page == 'lnn') {
-    if (file_exists('json/lnnlist.json')) {
-        echo 'const LNNs = ' . file_get_contents('json/lnnlist.json') . ';';
+    if (file_exists('../../json/lnnlist.json')) {
+        echo 'const LNNs = ' . file_get_contents('../../json/lnnlist.json') . ';';
     } else {
-        echo 'const LNNs = ' . curl_get('https://maribelhearn.com/assets/shared/json/lnnlist.json') . ';';
+        echo 'const LNNs = ' . curl_get('https://maribelhearn.com/json/lnnlist.json') . ';';
     }
 }
 if ($page == 'wr') {
-    if (file_exists('json/bestinthewest.json')) {
-        echo 'const westScores = ' . file_get_contents('json/bestinthewest.json') . ';';
-        echo 'const unverifiedScores = ' . file_get_contents('json/unverified.json') . ';';
+    if (file_exists('../../json/bestinthewest.json')) {
+        echo 'const westScores = ' . file_get_contents('../../json/bestinthewest.json') . ';';
+        echo 'const unverifiedScores = ' . file_get_contents('../../json/unverified.json') . ';';
     } else {
-        echo 'const westScores = ' . curl_get('https://maribelhearn.com/assets/shared/json/bestinthewest.json') . ';';
-        echo 'const unverifiedScores = ' . curl_get('https://maribelhearn.com/assets/shared/json/unverified.json') . ';';
+        echo 'const westScores = ' . curl_get('https://maribelhearn.com/json/bestinthewest.json') . ';';
+        echo 'const unverifiedScores = ' . curl_get('https://maribelhearn.com/json/unverified.json') . ';';
     }
 }
 if ($page == 'tiers') {
     echo 'const categories = {' .
-        '"characters":' . file_get_contents('json/characters.json') . ',' . 
-        '"works":' . file_get_contents('json/works.json') . ',' .
-        '"shots":' . file_get_contents('json/shots.json') . ',' .
-        '"cards":' . file_get_contents('json/cards.json') .
+        '"characters":' . file_get_contents('../../json/characters.json') . ',' . 
+        '"works":' . file_get_contents('../../json/works.json') . ',' .
+        '"shots":' . file_get_contents('../../json/shots.json') . ',' .
+        '"cards":' . file_get_contents('../../json/cards.json') .
     '};';
 }
 if ($page == 'slots') {
-    echo 'const CHARS = ' . file_get_contents('json/charpos.json') . ';';
-    echo 'const LOCATIONS = ' . file_get_contents('json/locations.json') . ';';
+    echo 'const CHARS = ' . file_get_contents('../../json/charpos.json') . ';';
+    echo 'const LOCATIONS = ' . file_get_contents('../../json/locations.json') . ';';
 }
 if (in_array($page, $wr_json)) {
     if (file_exists('json/wrlist.json')) {
-        echo 'const WRs = ' . file_get_contents('json/wrlist.json') . ';';
+        echo 'const WRs = ' . file_get_contents('../../json/wrlist.json') . ';';
     } else {
-        echo 'const WRs = ' . curl_get('https://maribelhearn.com/assets/shared/json/wrlist.json') . ';';
+        echo 'const WRs = ' . curl_get('https://maribelhearn.com/json/wrlist.json') . ';';
     }
 }
 if (in_array($page, $po2json) && !empty($_GET['hl'])) {

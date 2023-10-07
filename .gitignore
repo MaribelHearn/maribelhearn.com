@@ -1,6 +1,6 @@
 # data files
-assets/shared/json/gensokyo.json
-assets/shared/json/admin.json
+json/gensokyo.json
+json/admin.json
 bestinthewest.json
 unverified.json
 lnnvideos.json

@@ -1,15 +1,15 @@
 <?php
-include_once 'assets/shared/http.php';
+include_once 'php/shared/http.php';
 $id = 0;
-if (file_exists('assets/shared/json/wrlist.json')) {
-    $wrlist_json = file_get_contents('assets/shared/json/wrlist.json');
+if (file_exists('json/wrlist.json')) {
+    $wrlist_json = file_get_contents('json/wrlist.json');
 } else {
-    $wrlist_json = curl_get('https://maribelhearn.com/assets/shared/json/wrlist.json');
+    $wrlist_json = curl_get('https://maribelhearn.com/json/wrlist.json');
     if ($wrlist_json === false) {
         die('Download failed!');
     }
 }
-$rubrics_json = file_get_contents('assets/shared/json/rubrics.json');
+$rubrics_json = file_get_contents('json/rubrics.json');
 $WRs = json_decode($wrlist_json, true);
 $Rubrics = json_decode($rubrics_json, true);
 

@@ -1,12 +1,12 @@
 <?php
 $MAX_SCORE = 9999999990;
 $RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_limit']), 1) : 15;
-if (file_exists('assets/shared/json/wrlist.json')) {
-    $json = file_get_contents('assets/shared/json/wrlist.json');
-    $west_json = file_get_contents('assets/shared/json/bestinthewest.json');
+if (file_exists('json/wrlist.json')) {
+    $json = file_get_contents('json/wrlist.json');
+    $west_json = file_get_contents('json/bestinthewest.json');
 } else {
-    $json = curl_get('https://maribelhearn.com/assets/shared/json/wrlist.json');
-    $west_json = curl_get('https://maribelhearn.com/assets/shared/json/bestinthewest.json');
+    $json = curl_get('https://maribelhearn.com/json/wrlist.json');
+    $west_json = curl_get('https://maribelhearn.com/json/bestinthewest.json');
     if ($json === false || $west_json === false) {
         die('Download failed!');
     }

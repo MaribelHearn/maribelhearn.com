@@ -11,7 +11,7 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
     white-space: nowrap;
 }
 .cover, .game_img {
-    background-image: url('../shared/spritesheets/game_sheet50x50.png');
+    background-image: url('/assets/shared/spritesheets/game_sheet50x50.png');
     display: inline-block;
     height: 50px;
     width: 50px;
@@ -142,7 +142,7 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
     width: 11px;
     height: 11px;
     display: inline-block;
-    background-image: url('../wr/dl.png');
+    background-image: url('/assets/games/wr/dl.png');
 }
 #wrap:after {
     content: "\200C";

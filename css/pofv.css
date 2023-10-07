@@ -54,7 +54,7 @@ ol > li {
     height: 120px;
     cursor: pointer;
     display: inline-block;
-    background-image: url('../games/pofv/images/faces.png');
+    background-image: url('/assets/games/pofv/images/faces.png');
 }
 .char:hover {
     background-color: #bbb;
@@ -191,7 +191,7 @@ ol > li {
     .char {
         width: 80px;
         height: 80px;
-        background-image: url('../games/pofv/images/faces80x80.png');
+        background-image: url('/assets/games/pofv/images/faces80x80.png');
     }
     .modal_inner {
         font-size: 11px;

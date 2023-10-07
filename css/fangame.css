@@ -6,7 +6,7 @@ h2 {
     margin-bottom: 20px;
 }
 .fangame {
-    background: url('../shared/spritesheets/fangame_sheet.png');
+    background: url('/assets/shared/spritesheets/fangame_sheet.png');
     display: inline-block;
     width: 50px;
     height: 50px;

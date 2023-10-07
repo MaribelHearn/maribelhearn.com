@@ -101,7 +101,7 @@ input[type=button] {
 .flag {
     width: 16px;
     height: 16px;
-    background-image: url('../shared/spritesheets/flags_sheet.png');
+    background-image: url('/assets/shared/spritesheets/flags_sheet.png');
 }
 .flag_china {
     background-position: -880px 0px;

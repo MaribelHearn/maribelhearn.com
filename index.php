@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <?php
     session_start();
-    include_once 'assets/shared/http.php';
-    include_once 'assets/shared/index_utils.php';
-    include_once 'assets/shared/shared.php';
-    include_once 'assets/shared/navbar.php';
-    require_once 'assets/shared/mobile_detect.php';
+    include_once 'php/shared/http.php';
+    include_once 'php/shared/index_utils.php';
+    include_once 'php/shared/shared.php';
+    include_once 'php/shared/navbar.php';
+    require_once 'php/shared/mobile_detect.php';
 
     // Determine page name
     $url = substr($_SERVER['REQUEST_URI'], 1);
@@ -78,8 +78,8 @@
     $favicon = 'assets/' . $page . '/' . $page . $favicon_ext;
     $detect_device = new Mobile_Detect;
     $is_mobile = $detect_device -> isMobile();
-    $css_href = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/shared/css_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile;
-    $js_href = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/shared/js_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile . '&hl=' . $lang;
+    $css_href = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'php/shared/css_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile;
+    $js_href = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'php/shared/js_concat.php?page=' . $css_js_file . '&mobile=' . $is_mobile . '&hl=' . $lang;
     $favicon_dir = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . (!in_array($page, $use_index) ? 'assets/' . $dir . '/' . $page : '');
     $bg_pos = background_position($page);
 
@@ -141,7 +141,7 @@
             if (!$is_mobile || $page != 'slots' && $page != 'thvote' && $page != 'tiers') {
                 echo '<script nonce="' . $nonce . '">document.body.style.background="url(\'' . ($page == 'error' ? 'https://maribelhearn.com/' : '/') . 'assets/' . $dir . '/' . $css_js_file . '/' . $css_js_file . '.jpg\') ';
                 echo $bg_pos . ' no-repeat fixed";document.body.style.backgroundSize="cover"</script>';
-                echo '<noscript><link rel="stylesheet" href="/assets/shared/noscript_bg.php?page=' . $css_js_file . '&pos=' . $bg_pos . '"></noscript>';
+                echo '<noscript><link rel="stylesheet" href="/php/shared/noscript_bg.php?page=' . $css_js_file . '&pos=' . $bg_pos . '"></noscript>';
             }
 
             // Session data

@@ -1,14 +1,14 @@
 <?php
-include_once 'assets/shared/http.php';
+include_once 'php/shared/http.php';
 $ALL_LNN = 101;
 $ALL_GAME_LNN = 13;
 $RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_limit']), 1) : 15;
-if (file_exists('assets/shared/json/lnnlist.json')) {
-    $json = file_get_contents('assets/shared/json/lnnlist.json');
-    $video_json = file_get_contents('assets/shared/json/lnnvideos.json');
+if (file_exists('json/lnnlist.json')) {
+    $json = file_get_contents('json/lnnlist.json');
+    $video_json = file_get_contents('json/lnnvideos.json');
 } else {
-    $json = curl_get('https://maribelhearn.com/assets/shared/json/lnnlist.json');
-    $video_json = curl_get('https://maribelhearn.com/assets/shared/json/lnnvideos.json');
+    $json = curl_get('https://maribelhearn.com/json/lnnlist.json');
+    $video_json = curl_get('https://maribelhearn.com/json/lnnvideos.json');
     if ($json === false || $video_json === false) {
         die('Download failed!');
     }

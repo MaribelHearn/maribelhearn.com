@@ -11,11 +11,15 @@ function set() {
 }
 
 function userAgent() {
-    const ua = detect.parse(navigator.userAgent);
-    const host = (location.host == "maribelhearn.com" ? "https://maribelhearn.com/" : "");
-    
-    document.getElementById("os").innerHTML = `<img class='admin_icon' src='${host}admin/icons/${ua.os.name}.png' alt='${ua.os.name} icon'> ${ua.os.name}`;
-    document.getElementById("browser").innerHTML = `<img class='admin_icon' src='${host}admin/icons/${ua.browser.family}.png' alt='${ua.browser.name} icon'> ${ua.browser.name}`;
+    try {
+        const ua = detect.parse(navigator.userAgent);
+        const host = (location.host == "maribelhearn.com" ? "https://maribelhearn.com/" : "");
+        
+        document.getElementById("os").innerHTML = `<img class='admin_icon' src='${host}admin/icons/${ua.os.name}.png' alt='${ua.os.name} icon'> ${ua.os.name}`;
+        document.getElementById("browser").innerHTML = `<img class='admin_icon' src='${host}admin/icons/${ua.browser.family}.png' alt='${ua.browser.name} icon'> ${ua.browser.name}`;
+    } catch (err) {
+        // do nothing
+    }
 }
 
 document.getElementById("setcookie").addEventListener("click", set);

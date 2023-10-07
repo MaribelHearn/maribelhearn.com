@@ -38,12 +38,12 @@ hr {
     top: 100%;
 }
 #thprac_img {
-    background-image: url('../games/tools/thprac_small.png');
+    background-image: url('/assets/games/tools/thprac_small.png');
     height: 180px;
     width: 180px;
 }
 #thprac_img:hover {
-    background-image: url('../games/tools/thprac.png');
+    background-image: url('/assets/games/tools/thprac.png');
     height: 720px;
     width: 720px;
     z-index: 1;

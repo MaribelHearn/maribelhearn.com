@@ -53,42 +53,42 @@ li {
 .list_characters {
     width: 80px;
     height: 80px;
-    background-image: url('../shared/spritesheets/characters_sheet80x80.png');
+    background-image: url('/assets/shared/spritesheets/characters_sheet80x80.png');
 }
 .tiered_characters {
     width: 120px;
     height: 120px;
-    background-image: url('../shared/spritesheets/characters_sheet.png');
+    background-image: url('/assets/shared/spritesheets/characters_sheet.png');
 }
 .list_works {
     width: 80px;
     height: 80px;
-    background-image: url('../shared/spritesheets/works_sheet80x80.png');
+    background-image: url('/assets/shared/spritesheets/works_sheet80x80.png');
 }
 .tiered_works {
     width: 120px;
     height: 120px;
-    background-image: url('../shared/spritesheets/works_sheet.png');
+    background-image: url('/assets/shared/spritesheets/works_sheet.png');
 }
 .list_shots {
     width: 80px;
     height: 80px;
-    background-image: url('../shared/spritesheets/shots_sheet80x80.png');
+    background-image: url('/assets/shared/spritesheets/shots_sheet80x80.png');
 }
 .tiered_shots {
     width: 120px;
     height: 120px;
-    background-image: url('../shared/spritesheets/shots_sheet.png');
+    background-image: url('/assets/shared/spritesheets/shots_sheet.png');
 }
 .list_cards {
     width: 64px;
     height: 80px;
-    background-image: url('../shared/spritesheets/cards_sheet80x80.png');
+    background-image: url('/assets/shared/spritesheets/cards_sheet80x80.png');
 }
 .tiered_cards {
     width: 96px;
     height: 120px;
-    background-image: url('../shared/spritesheets/cards_sheet.png');
+    background-image: url('/assets/shared/spritesheets/cards_sheet.png');
 }
 .thin {
     margin: 2px;

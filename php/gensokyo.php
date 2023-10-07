@@ -1,9 +1,9 @@
 <?php
-include_once 'assets/shared/http.php';
-if (file_exists('assets/shared/json/gensokyo.json')) {
-    $json = file_get_contents('assets/shared/json/gensokyo.json');
+include_once 'php/shared/http.php';
+if (file_exists('json/gensokyo.json')) {
+    $json = file_get_contents('json/gensokyo.json');
 } else {
-    $json = curl_get('https://maribelhearn.com/assets/shared/json/gensokyo.json');
+    $json = curl_get('https://maribelhearn.com/json/gensokyo.json');
     if ($json === false) {
         die('Download failed!');
     }

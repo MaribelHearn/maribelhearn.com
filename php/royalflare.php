@@ -5,7 +5,7 @@ function get_board(string $game) {
 }
 
 function get_shots($game) {
-    $json = file_get_contents('assets/shared/json/shots.json');
+    $json = file_get_contents('json/shots.json');
     $shots = json_decode($json, true);
     if ($game == 'StB') {
         return Array('Aya');

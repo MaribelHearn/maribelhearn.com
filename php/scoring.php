@@ -1,5 +1,5 @@
 <?php
-$json = file_get_contents('assets/shared/json/defaults.json');
+$json = file_get_contents('json/defaults.json');
 $wr = json_decode($json, true);
 $games = ['HRtP', 'SoEW', 'PoDD', 'LLS', 'MS', 'EoSD', 'PCB', 'IN', 'PoFV',
 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC', 'UM'];

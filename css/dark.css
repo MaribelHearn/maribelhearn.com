@@ -61,7 +61,7 @@ a:link.dropdown_button, a:visited.dropdown_button {
     color: #999999;
 }
 .dl_icon {
-    background-image: url('../games/wr/dl_white.png');
+    background-image: url('/assets/games/wr/dl_white.png');
 }
 .Spring {
     color: fuchsia;

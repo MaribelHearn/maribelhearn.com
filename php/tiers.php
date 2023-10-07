@@ -294,7 +294,7 @@
     } else {
         $sort = $_COOKIE['sort'];
     }
-    $json = file_get_contents('assets/shared/json/' . $sort . '.json');
+    $json = file_get_contents('json/' . $sort . '.json');
     $cats = json_decode($json, true);
     foreach ($cats as $categoryName => $category) {
         echo '<div id="' . $categoryName . '" class="dark_bg">';

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang='en'>
 <?php
-    include_once '../assets/shared/http.php';
-    include_once '../assets/shared/shared.php';
-    include_once '../assets/shared/navbar.php';
-    require_once '../assets/shared/mobile_detect.php';
+    include_once '../php/shared/http.php';
+    include_once '../php/shared/shared.php';
+    include_once '../php/shared/navbar.php';
+    require_once '../php/shared/mobile_detect.php';
     $detect_device = new Mobile_Detect;
     $is_mobile = $detect_device -> isMobile();
     $hitcount = '../.stats/' . date('d-m-Y') . '.json';
@@ -58,9 +58,9 @@
 		<title>Admin Panel - Maribel Hearn's Touhou Portal</title>
 		<meta charset='UTF-8'>
 		<meta name='viewport' content='width=device-width'>
-        <link rel='stylesheet' type='text/css' href='../assets/shared/css_concat.php?page=index&mobile=<?php echo $is_mobile ?>'>
+        <link rel='stylesheet' type='text/css' href='../php/shared/css_concat.php?page=index&mobile=<?php echo $is_mobile ?>'>
 		<link rel='icon' type='image/x-icon' href='../favicon.ico'>
-        <script src='../assets/shared/js_concat.php?page=admin' defer></script>
+        <script src='../php/shared/js_concat.php?page=admin' defer></script>
     </head>
 
     <body>
@@ -171,7 +171,7 @@
             echo '<input id="token" type="hidden" value=' . $token . '>';
         ?>
         <script nonce='<?php echo file_get_contents('../.stats/nonce') ?>' defer>document.body.style.background="url('assets/main/index/index.jpg') center no-repeat fixed";document.body.style.backgroundSize="cover"</script>
-        <noscript><link rel='stylesheet' href='assets/shared/noscript_bg.php?page=index'></noscript>
+        <noscript><link rel='stylesheet' href='php/shared/noscript_bg.php?page=index'></noscript>
     </body>
 
 </html>

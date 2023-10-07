@@ -20,7 +20,7 @@
     .char {
         width: 60px;
         height: 60px;
-        background-image: url('../games/pofv/images/faces60x60.png');
+        background-image: url('/assets/games/pofv/images/faces60x60.png');
     }
     .pofv_chara_art, .scope {
         display: none;

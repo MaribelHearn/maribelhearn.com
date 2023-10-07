@@ -13,12 +13,12 @@ table, th, td {
     height: 115px;
 }
 .charslot {
-    background-image: url('../shared/spritesheets/characters_sheet.png');
+    background-image: url('/assets/shared/spritesheets/characters_sheet.png');
     background-position: -1080px -2400px;
     vertical-align: bottom;
 }
 .locslot {
-    background-image: url('../other/slots/locations_sheet.png');
+    background-image: url('/assets/other/slots/locations_sheet.png');
     background-position: -3960px 0;
     vertical-align: bottom;
 }
