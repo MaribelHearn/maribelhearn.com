@@ -13,7 +13,7 @@
         $subpage_title = (object) array();
         $subpage_title->extras = 'Extra Statistics';
         $subpage_title->guide = 'Voting Guide';
-        echo '<h1>THWiki Popularity Poll 2023 Results' . (!empty($subpage) ? ' - ' . $subpage_title->{$subpage} : '') . '</h1>';
+        echo '<h1>THWiki Popularity Poll 2023 Results' . (!empty($subpage) && property_exists($subpage_title, $subpage) ? ' - ' . $subpage_title->{$subpage} : '') . '</h1>';
         if (!empty($_GET['redirect'])) {
             echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
         }
