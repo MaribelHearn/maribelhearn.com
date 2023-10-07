@@ -79,7 +79,7 @@ function ds_table_no_ver(string $id, array $rep, string $url, string $backlink) 
     echo '<tr><th class="general_header no-sort">Game Version</th><td>1.00a</td></tr>';
     echo '<tr><th class="general_header no-sort">Upload Date</th><td>' . substr($rep['ver'], 0, 10) . ' ' . substr($rep['ver'], 10) . '</td></tr>';
     echo '<tr><th class="general_header no-sort">Type</th><td>' . $rep['date'] . '</td></tr>';
-    echo '<tr><th class="general_header no-sort">Score</th><td>' . number_format($rep['type'], 0, '.', ',') . '</td></tr>';
+    echo '<tr><th class="general_header no-sort">Score</th><td>' . number_format($score, 0, '.', ',') . '</td></tr>';
     echo '<tr><th class="general_header no-sort">Slowdown</th><td>-</td></tr>';
     echo '<tr><th class="general_header no-sort">Shottype</th><td>' . $rep['slowdown'] . '</td></tr>';
     echo '<tr><th class="general_header no-sort">Conditions</th><td></td></tr>';
