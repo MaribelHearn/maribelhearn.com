@@ -1920,6 +1920,10 @@ function tieredItemOntoPicker() {
 function drop(event) {
     event.preventDefault();
 
+    if (!following) {
+        return;
+    }
+
     if (event.target.id.substring(0, 2) === "th" || event.target.id.substring(0, 4) === "tier") {
         dropOntoTier(event);
     }
