@@ -228,6 +228,7 @@
             <li>01/01/2022: Import and export to text now uses files</li>
             <li>19/08/2023: UDoALG shottypes added</li>
             <li>22/09/2023: UDoALG characters added</li>
+            <li>05/11/2023: Mizuchi Miyadeguchi added</li>
         </ul>
     </div>
     <div id='reset' class='modal_inner'>
