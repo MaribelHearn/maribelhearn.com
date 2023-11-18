@@ -38,6 +38,9 @@
     }
 
     function format_country(string $country) {
+        if ($country == 'The Netherlands') {
+            return str_replace('The ', '', $country);
+        }
         return str_replace(' ', '-', $country);
     }
 
