@@ -2215,7 +2215,7 @@
                 <td class='g'>Completed</td>
                 <td>May 4, 2013</td>
                 <td>January 3, 2016</td>
-                <td>-</td>
+                <td>December 4, 2023</td>
                 <td><strong><a href='http://www.youtube.com/watch?v=7XJDAK8HEiI&amp;list=PLVsboTfyC-K3qwk_9hlcIqc87mi7oVu-E&amp;index=1'>1cc</a></strong></td>
             </tr>
             <tr>
@@ -2223,9 +2223,10 @@
                 <td class='g'>Completed</td>
                 <td>June 3, 2015</td>
                 <td>January 2, 2019</td>
-                <td>-</td>
+                <td>December 4, 2023</td>
                 <td><strong><a href='https://www.youtube.com/watch?v=IdMYR09Nqgw'>1cc</a>
-				<a href='https://www.youtube.com/watch?v=NLg-j9dB5j0'>NBNT</a></strong></td>
+				<a href='https://www.youtube.com/watch?v=NLg-j9dB5j0'>NBNT</a>
+                <a href='https://www.youtube.com/watch?v=swklLykWNAE'>NNN</a></strong></td>
             </tr>
             <tr>
                 <td colspan='6'></td>
