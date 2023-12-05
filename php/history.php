@@ -368,8 +368,8 @@
                     <th>TD</th>
                     <td id='eTD' class='nmnb'></td>
                     <td id='nTD' class='nmnb'></td>
-                    <td id='hTD' class='nb'></td>
-                    <td id='lTD' class='nb'></td>
+                    <td id='hTD' class='nmnb'></td>
+                    <td id='lTD' class='nmnb'></td>
                     <td id='xTD' class='nmnb' colspan='2'></td>
                 </tr>
                 <tr id='oDDC'>
