@@ -350,7 +350,7 @@
                 <td><?php echo _('Random Number Generator; used to refer to random bullet patterns, which, because of their randomness, do not have a <a href="#term_route">route</a>.')?></td>
             </tr>
             <tr id='term_route'>
-                <th><?php echo _('Route')?></th>
+                <th>Route</th>
                 <td><?php echo _('A specific path used to navigate through one or more bullet patterns. The routing approach is used on both <a href="#term_static">static</a> patterns and patterns aimed at you.')?></td>
             </tr>
             <tr id='term_s1'>
