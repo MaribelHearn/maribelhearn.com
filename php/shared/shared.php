@@ -20,9 +20,9 @@ function directory(string $page, array $main) {
 
 function has_translation(string $page, string $lang = '-') {
     $langs = new ArrayObject();
-    $langs['-'] = Array('drc', 'lnn', 'pofv', 'tools', 'wr');
+    $langs['-'] = Array('drc', 'jargon', 'lnn', 'pofv', 'tools', 'wr');
     $langs['ja'] = Array('drc', 'lnn', 'tools', 'wr');
-    $langs['zh'] = Array('drc', 'lnn', 'pofv', 'wr');
+    $langs['zh'] = Array('drc', 'jargon', 'lnn', 'pofv', 'wr');
     $langs['ru'] = Array('lnn', 'tools', 'wr');
     $langs['de'] = Array('drc', 'lnn', 'tools', 'wr');
     $langs['es'] = Array('lnn', 'tools', 'wr');
