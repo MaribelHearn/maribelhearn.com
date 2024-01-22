@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-01-21 14:58+0100\n"
-"PO-Revision-Date: 2024-01-21 14:59+0100\n"
+"POT-Creation-Date: 2024-01-22 22:16+0100\n"
+"PO-Revision-Date: 2024-01-22 22:17+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -88,8 +88,7 @@ msgstr ""
 msgid "Score"
 msgstr "分数"
 
-#: js/drc.js:186 js/lnn.js:57 js/wr.js:106 php/jargon.php:353
-#: php/shared/shared.php:109
+#: js/drc.js:186 js/lnn.js:57 js/wr.js:106 php/shared/shared.php:109
 msgid "Route"
 msgstr "路线"
 
@@ -2202,7 +2201,7 @@ msgstr "Rings"
 
 #: php/jargon.php:647
 msgid "The final section of <a href=\"#term_lls\">LLS</a> Stage 5."
-msgstr "<a href=\"#term_lls\">幻想乡</a>中，五面道中闭幕。"
+msgstr "波纹阵；<a href=\"#term_lls\">幻想乡</a>中，五面道中闭幕。"
 
 #: php/jargon.php:650
 msgid "Rings of Death"
