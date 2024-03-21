@@ -153,6 +153,13 @@ function showLNNtable(game) {
         }
     }
 
+    if (game == "UDoALG") {
+        document.getElementById("Reimu").innerHTML = '-';
+        document.getElementById("Reimun").innerHTML = '-';
+        document.getElementById("Chiyari").innerHTML = '-';
+        document.getElementById("Chiyarin").innerHTML = '-';
+    }
+
     players.sort();
     const total = document.getElementById("total");
     total.innerHTML = "";
