@@ -224,14 +224,18 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
         if ($layout == 'New') {
             echo '<noscript>';
         }
+        $sheet = '_1';
         foreach ($lnn as $game => $shots) {
             if ($game == 'LM') {
                 continue;
             }
+            if ($game == 'MoF' || $game == 'GFW') {
+                $sheet = '_2';
+            }
             $sum = 0;
             $all = array();
             echo '<div id="' . $game . '"><p><table id="' . $game . 't" class="' . $game . 't">' .
-            '<caption><span id="' . $game . '_image_old" class="cover ' . (game_num($game) <= 5 ? 'cover98' : '') . '"></span> ' . full_name($game) . '</caption>' .
+            '<caption><span id="' . $game . '_image_old" class="cover sheet' . $sheet . (game_num($game) <= 5 ? ' cover98' : '') . '"></span> ' . full_name($game) . '</caption>' .
             '<thead><tr><th class="general_header">' . shot_route($game) . '</th>' .
             '<th class="general_header nowrap">' . lnn_type($game, $lang) . '<br>' . _('(Different players)') . '</th>' .
             '<th class="general_header">' . _('Players') . '</tr></thead><tbody>';
@@ -271,12 +275,22 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
         // With lnn_old_layout cookie NOT set, show game image layout (CSS hides it with JavaScript disabled)
         if ($layout == 'New') {
             echo '<div id="newlayout"><p id="clickgame">' . _('Click a game cover to show its list of LNNs.') . '</p>';
+            $second_row = false;
 		    foreach ($lnn as $game => $value) {
 		        if ($game == 'LM') {
 		            continue;
 	            }
-		        echo '<span class="game_image"><span id="' . $game . '_image" class="game_img"></span>' .
-                '<span class="full_name tooltip">' . full_name($game) . '</span></span>';
+                if ($game == 'MoF') {
+                    $second_row = true;
+                    echo '<br>';
+                }
+                if (!$second_row) {
+                    echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_1"></span>' .
+                    '<span class="full_name tooltip">' . full_name($game) . '</span></span>';
+                } else {
+                    echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_2"></span>' .
+                    '<span class="full_name tooltip">' . full_name($game) . '</span></span>';
+                }
 		    }
             echo '</div>';
         }

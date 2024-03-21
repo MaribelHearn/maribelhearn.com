@@ -11,13 +11,18 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
     white-space: nowrap;
 }
 .cover, .game_img {
-    background-image: url('/assets/shared/spritesheets/game_sheet50x50.png');
     display: inline-block;
     height: 50px;
     width: 50px;
 }
 .game_img {
     cursor: pointer;
+}
+.sheet_1 {
+    background-image: url('/assets/shared/spritesheets/game_sheet50x50_1.png');
+}
+.sheet_2 {
+    background-image: url('/assets/shared/spritesheets/game_sheet50x50_2.png');
 }
 .cover98 {
     border: 1px solid #000;
@@ -90,6 +95,9 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
 }
 .UMt th, .UMp, .UM {
     background-color: #23fcb1;
+}
+.UDoALGt th, .UDoALGp, .UDoALG {
+    background-color: #f0e68c;
 }
 .FinalA, .FinalB, .in_route {
     font-size: 12px;
@@ -203,34 +211,37 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
     background-position: -400px 0px;
 }
 #MoF_image, #MoF_image_old {
-    background-position: -450px 0px;
+    background-position: 0px 0px;
 }
 #SA_image, #SA_image_old {
-    background-position: -500px 0px;
+    background-position: -50px 0px;
 }
 #UFO_image, #UFO_image_old {
-    background-position: -550px 0px;
+    background-position: -100px 0px;
 }
 #GFW_image, #GFW_image_old {
-    background-position: -600px 0px;
+    background-position: -200px 0px;
 }
 #TD_image, #TD_image_old {
-    background-position: -650px 0px;
+    background-position: -250px 0px;
 }
 #DDC_image, #DDC_image_old {
-    background-position: -700px 0px;
+    background-position: -300px 0px;
 }
 #LoLK_image, #LoLK_image_old {
-    background-position: -750px 0px;
+    background-position: -350px 0px;
 }
 #HSiFS_image, #HSiFS_image_old {
-    background-position: -800px 0px;
+    background-position: -400px 0px;
 }
 #WBaWC_image, #WBaWC_image_old {
-    background-position: -850px 0px;
+    background-position: -450px 0px;
 }
 #UM_image, #UM_image_old {
-    background-position: -900px 0px;
+    background-position: -500px 0px;
+}
+#UDoALG_image, #UDoALG_image_old {
+    background-position: -550px 0px;
 }
 @media only screen and (min-width: 800px) and (max-width: 1100px) {
     h1 {
