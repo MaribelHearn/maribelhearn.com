@@ -460,7 +460,7 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
                     });
                     foreach ($pl_lnn as $key => $value) {
                         $shot_lnns = $pl_lnn[$key][1] == $ALL_LNN ? $pl_lnn[$key][1] . _(' (All Windows)') : $pl_lnn[$key][1];
-                        $game_lnns = $pl_lnn[$key][2] == $ALL_GAME_LNN ? $pl_lnn[$key][2] . _(' (All Windows)') : $pl_lnn[$key][2];
+                        $game_lnns = $pl_lnn[$key][2] >= $ALL_GAME_LNN ? $pl_lnn[$key][2] . _(' (All Windows)') : $pl_lnn[$key][2];
                         echo '<tr><td></td>';
                         echo '<td><a href="#' . $pl_lnn[$key][0] . '">' . $pl_lnn[$key][0] . '</a></td>';
                         echo '<td data-sort="' . $pl_lnn[$key][1] . '">' . $shot_lnns . '</td>';
