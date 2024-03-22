@@ -120,18 +120,18 @@ foreach ($lnn as $game => $data1) {
             if (!file_exists(replay_path($game, $nospaces, $shottype)) && game_num($game) > 5) {
                 array_push($missing_replays, ($game . $shottype . $nospaces));
             }
-            if (!in_array($game, $pvp)) {
-                if (!in_array($player, $pl)) {
-                    array_push($pl, $player);
+            if (!in_array($player, $pl)) {
+                array_push($pl, $player);
+                array_push($flag, false);
+                if (!in_array($game, $pvp)) {
                     array_push($pl_lnn, array($player, 1, 1));
-                    array_push($flag, false);
-                } else {
-                    $key = array_search($player, $pl);
-                    $pl_lnn[$key][1] += 1;
-                    if ($flag[$key]) {
-                        $pl_lnn[$key][2] += 1;
-                        $flag[$key] = false;
-                    }
+                }
+            } else if (!in_array($game, $pvp)) {
+                $key = array_search($player, $pl);
+                $pl_lnn[$key][1] += 1;
+                if ($flag[$key]) {
+                    $pl_lnn[$key][2] += 1;
+                    $flag[$key] = false;
                 }
             }
             if (!empty($lnn_videos[$game][$shottype][$player])) {
