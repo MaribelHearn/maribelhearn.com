@@ -16,6 +16,7 @@ if (file_exists('json/lnnlist.json')) {
 if (isset($_GET['date'])) {
     $date_limit = preg_replace('/\//', '-', $_GET['date']);
 }
+$pvp = ['PoDD', 'UDoALG'];
 $lnn = json_decode($json, true);
 $lnn_videos = json_decode($video_json, true);
 $layout = (isset($_COOKIE['lnn_old_layout']) ? 'Old' : 'New');
@@ -119,16 +120,18 @@ foreach ($lnn as $game => $data1) {
             if (!file_exists(replay_path($game, $nospaces, $shottype)) && game_num($game) > 5) {
                 array_push($missing_replays, ($game . $shottype . $nospaces));
             }
-            if (!in_array($player, $pl)) {
-                array_push($pl, $player);
-                array_push($pl_lnn, array($player, 1, 1));
-                array_push($flag, false);
-            } else {
-                $key = array_search($player, $pl);
-                $pl_lnn[$key][1] += 1;
-                if ($flag[$key]) {
-                    $pl_lnn[$key][2] += 1;
-                    $flag[$key] = false;
+            if (!in_array($game, $pvp)) {
+                if (!in_array($player, $pl)) {
+                    array_push($pl, $player);
+                    array_push($pl_lnn, array($player, 1, 1));
+                    array_push($flag, false);
+                } else {
+                    $key = array_search($player, $pl);
+                    $pl_lnn[$key][1] += 1;
+                    if ($flag[$key]) {
+                        $pl_lnn[$key][2] += 1;
+                        $flag[$key] = false;
+                    }
                 }
             }
             if (!empty($lnn_videos[$game][$shottype][$player])) {
@@ -150,7 +153,9 @@ foreach ($lnn as $game => $data1) {
         }
         $sum += sizeof($data2);
     }
-    $gt += $sum;
+    if (!in_array($game, $pvp)) {
+        $gt += $sum;
+    }
 }
 $missing_runs = $missing_replays;
 for ($i = 0; $i < sizeof($video_lnns); $i++) {
@@ -185,6 +190,7 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
         // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
         if ($layout == 'New') {
             echo '<div id="contents_new" class="contents"><p><a href="#lnns" class="lnns">' . _('LNN Lists') .
+            '</a></p><p><a href="#player_search">' . _('Player Search') .
             '</a></p><p><a href="#recent">' . _('Recent LNNs') .
             '</a></p><p><a href="#overall">' . _('Overall Count') .
             '</a></p><p><a href="#players">' . _('Player Ranking') .
@@ -197,7 +203,7 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
             }
             echo '<p><a href="#' . $game . '">' . full_name($game) . '</a></p>';
         }
-        echo '<p id="playersearchlink"><a href="#player_search">' . _('Player Search') .
+        echo '<p><a href="#player_search">' . _('Player Search') .
         '</a></p><p><a href="#recent">' . _('Recent LNNs') .
         '</a></p><p><a href="#overall">' . _('Overall Count') .
         '</a></p><p><a href="#players">' . _('Player Ranking') .
@@ -207,7 +213,6 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
         }
     ?>
     <div id='checkboxes' class='contents'>
-
         <p>
             <input id='toggle_video' type='checkbox'>
             <label for='toggle_video'><?php echo _('Show videos over replays') ?></label>
@@ -277,7 +282,7 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
             echo '<div id="newlayout"><p id="clickgame">' . _('Click a game cover to show its list of LNNs.') . '</p>';
             $second_row = false;
 		    foreach ($lnn as $game => $value) {
-		        if ($game == 'LM') {
+		        if ($game == 'LM' || in_array($game, $pvp)) {
 		            continue;
 	            }
                 if ($game == 'MoF') {
@@ -292,29 +297,21 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
                     '<span class="full_name tooltip">' . full_name($game) . '</span></span>';
                 }
 		    }
+            echo '<br><br>';
+            foreach ($pvp as $key => $game) {
+                echo '<span class="game_image"><span id="' . $game . '_image" class="game_img ' . ($game == 'UDoALG' ? 'sheet_2' : 'sheet_1') . '"></span>' .
+                '<span class="full_name tooltip">' . full_name($game) . '</span></span>';
+            }
+            echo '</div>';
+            echo '<div id="lnn_list"><p id="fullname" class="center"></p><table id="lnn_table">';
+            echo '<thead id="lnn_thead"><tr><th id="lnn_shotroute" class="general_header">' . _('Shottype') . '</th>';
+            echo '<th class="general_header nowrap"><span id="lnn_restrictions"></span><br>' . _('(Different players)') . '</th>';
+            echo '<th class="general_header">' . _('Players') . '</th>';
+            echo '</tr></thead><tbody id="lnn_tbody"></tbody><tfoot id="lnn_tfoot"><tr>';
+            echo '<td id="lnn_overall" class="foot">' . _('Overall') . '</td><td id="count" class="foot"></td><td id="total" class="foot"></td></tr></tfoot></table>';
             echo '</div>';
         }
     ?>
-    <div id='lnn_list'>
-        <p id='fullname' class='center'></p>
-        <table id='lnn_table'>
-            <thead id='lnn_thead'>
-                <tr>
-                    <th id='lnn_shotroute' class='general_header'><?php echo _('Shottype') ?></th>
-                    <th class='general_header nowrap'><span id='lnn_restrictions'></span><br><?php echo _('(Different players)') ?></th>
-                    <th class='general_header'><?php echo _('Players') ?></th>
-                </tr>
-            </thead>
-            <tbody id='lnn_tbody'></tbody>
-            <tfoot id='lnn_tfoot'>
-                <tr>
-                    <td id='lnn_overall' class='foot'><?php echo _('Overall') ?></td>
-                    <td id='count' class='foot'></td>
-                    <td id='total' class='foot'></td>
-                </tr>
-            </tfoot>
-        </table>
-    </div>
     <div id='player_search'>
         <h2><?php echo _('Player Search'); ?></h2>
 		<p id='playerlnns'><?php echo _('Choose a player name from the menu below to show their LNNs.') ?></p>
@@ -405,7 +402,7 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
             <tbody>
                 <?php
                     foreach ($lnn as $game => $data1) {
-                        if ($game == 'LM') {
+                        if ($game == 'LM' || in_array($game, $pvp)) {
                             continue;
                         }
                         $sum = 0;
