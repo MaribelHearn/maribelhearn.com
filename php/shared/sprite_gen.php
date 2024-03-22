@@ -8,52 +8,63 @@ $mobile_offset = -60;
 $cards_offset = -96;
 $cards_picker_offset = -64;
 $cards_mobile_offset = -48;
-$chars = array('MarisaKirisame', 'ReimuHakurei', 'Elis', 'Kikuri', 'Konngara', 'Mima', 'ReimuPC-98', 'Sariel', 'SinGyokuF', 'SinGyokuM', 'YuugenMagan', 'EvilEyeSigma', 'Genjii', 'MarisaPC-98', 'Meira', 'Rika',
-'ChiyuriKitashirakawa', 'Ellen', 'KanaAnaberal', 'Kotohime', 'Mimi-chan', 'RikakoAsakura', 'Ruukoto', 'YumemiOkazaki', 'Elly', 'Gengetsu', 'Kurumi', 'Mugetsu', 'Orange', 'YuukaPC-98', 'AlicePC-98',
-'Luize', 'MaiPC-98', 'Sara', 'Shinki', 'Yuki', 'Yumeko', 'Cirno', 'Daiyousei', 'FlandreScarlet', 'HongMeiling', 'Koakuma', 'PatchouliKnowledge', 'RemiliaScarlet', 'Rumia', 'SakuyaIzayoi',
-'AliceMargatroid', 'Chen', 'LettyWhiterock', 'LilyWhite', 'LunasaPrismriver', 'LyricaPrismriver', 'MerlinPrismriver', 'RanYakumo', 'YoumuKonpaku', 'YukariYakumo', 'YuyukoSaigyouji', 'SuikaIbuki',
-'EirinYagokoro', 'FujiwaranoMokou', 'KaguyaHouraisan', 'KeineKamishirasawa', 'MystiaLorelei', 'ReisenUdongeinInaba', 'TewiInaba', 'WriggleNightbug', 'AyaShameimaru', 'EikiShikiYamaxanadu', 'KomachiOnozuka',
-'MedicineMelancholy', 'YuukaKazami', 'HinaKagiyama', 'KanakoYasaka', 'MinorikoAki', 'MomijiInubashiri', 'NitoriKawashiro', 'SanaeKochiya', 'ShizuhaAki', 'SuwakoMoriya', 'IkuNagae',
-'TenshiHinanawi', 'Kisume', 'KoishiKomeiji', 'ParseeMizuhashi', 'RinKaenbyou', 'SatoriKomeiji', 'UtsuhoReiuji', 'YamameKurodani', 'YuugiHoshiguma', 'ByakurenHijiri', 'IchirinKumoi', 'KogasaTatara',
-'MinamitsuMurasa', 'Nazrin', 'NueHoujuu', 'ShouToramaru', 'Unzan', 'Hisoutensoku', 'HatateHimekaidou', 'LunaChild', 'StarSapphire', 'SunnyMilk', 'KyoukoKasodani', 'MamizouFutatsuiwa',
-'MononobenoFuto', 'SeigaKaku', 'SoganoTojiko', 'ToyosatomiminoMiko', 'YoshikaMiyako', 'HatanoKokoro', 'BenbenTsukumo', 'KagerouImaizumi', 'RaikoHorikawa', 'SeijaKijin', 'Sekibanki', 'ShinmyoumaruSukuna',
-'Wakasagihime', 'YatsuhashiTsukumo', 'SumirekoUsami', 'Clownpiece', 'DoremySweet', 'HecatiaLapislazuli', 'Junko', 'Ringo', 'SagumeKishin', 'Seiran', 'JoonYorigami', 'ShionYorigami',
-'AunnKomano', 'EternityLarva', 'MaiTeireida', 'NarumiYatadera', 'NemunoSakata', 'OkinaMatara', 'SatonoNishida', 'EikaEbisu', 'KeikiHaniyasushin', 'KutakaNiwatari', 'MayumiJoutouguu',
-'SakiKurokoma', 'UrumiUshizaki', 'YachieKicchou', 'YuumaToutetsu', 'ChimataTenkyuu', 'MegumuIizunamaru', 'MikeGoutokuji', 'MisumaruTamatsukuri', 'MomoyoHimemushi', 'SannyoKomakusa',
-'TakaneYamashiro', 'TsukasaKudamaki', 'FortuneTeller', 'HiedanoAkyuu', 'KasenIbaraki', 'KosuzuMotoori', 'MiyoiOkunoda', 'ReisenII', 'RinnosukeMorichika', 'Tokiko', 'WatatsukinoToyohime',
-'WatatsukinoYorihime', 'MaribelHearn', 'RenkoUsami', 'AlicePC-98Extra', 'FiveMagicStones', 'KaguyaHouraisanLastSpells', 'MarisaKirisameGFW', 'MarisaPC-98LLS', 'OkinaMataraExtra', 'YukiandMai',
-'YuukaPC-98Stage5', 'YuyukoSaigyoujiResurrectionButterfly', 'YuyukoSaigyoujiTD', 'SonBiten', 'EnokoMitsugashira', 'ChiyariTenkajin', 'HisamiYomotsu', 'ZanmuNippaku', 'MizuchiMiyadeguchi');
-$works = array('HighlyResponsivetoPrayers', 'StoryofEasternWonderland', 'PhantasmagoriaofDimDream', 'LotusLandStory', 'MysticSquare', 'EmbodimentofScarletDevil', 'PerfectCherryBlossom', 'ImmaterialandMissingPower',
-'ImperishableNight', 'PhantasmagoriaofFlowerView', 'ShoottheBullet', 'MountainofFaith', 'ScarletWeatherRhapsody', 'SubterraneanAnimism', 'UndefinedFantasticObject', 'TouhouHisoutensoku',
-'DoubleSpoiler', 'GreatFairyWars', 'TenDesires', 'HopelessMasquerade', 'DoubleDealingCharacter', 'ImpossibleSpellCard', 'UrbanLegendinLimbo', 'LegacyofLunaticKingdom',
-'AntinomyofCommonFlowers', 'HiddenStarinFourSeasons', 'VioletDetector', 'WilyBeastandWeakestCreature', 'UnconnectedMarketeers', 'TouhouSangetsusei', 'TouhouBougetsushou',
-'WildandHornedHermit', 'CuriositiesofLotusAsia', 'ForbiddenScrollery', 'BohemianArchiveinJapaneseRed', 'PerfectMementoinStrictSense', 'TheGrimoireofMarisa', 'SymposiumofPost-mysticism',
-'AlternativeFactsinEasternUtopia', 'DollsinPseudoParadise', 'GhostlyFieldClub', 'ChangeabilityofStrangeDream', 'Retrospective53minutes', 'AkyuusUntouchedScoreVolume1',
-'AkyuusUntouchedScoreVolume2', 'AkyuusUntouchedScoreVolume3', 'AkyuusUntouchedScoreVolume4', 'AkyuusUntouchedScoreVolume5', 'MagicalAstronomy', 'UnknownFlowerMesmerizingJourney',
-'TrojanGreenAsteroid', 'Neo-traditionalismofJapan', 'DrLatencysFreakReport', 'DatelessBarOldAdam', 'GouyokuIbun', 'TheGrimoireofUsami', 'FoulDetectiveSatori', 'LotusEaters', 'Rainbow-ColoredSeptentrion',
-'HundredthBlackMarket', 'UnfinishedDreamofAllLivingGhost');
-$shots = array('EoSDReimuA', 'EoSDReimuB', 'EoSDMarisaA', 'EoSDMarisaB', 'PCBReimuA', 'PCBReimuB', 'PCBMarisaA', 'PCBMarisaB', 'PCBSakuyaA', 'PCBSakuyaB', 'INBorderTeam', 'INMagicTeam', 'INScarletTeam',
-'INGhostTeam', 'INReimu', 'INYukari', 'INMarisa', 'INAlice', 'INSakuya', 'INRemilia', 'INYoumu', 'INYuyuko', 'PoFVReimu', 'PoFVMarisa', 'PoFVSakuya', 'PoFVYoumu', 'PoFVReisen', 'PoFVCirno',
-'PoFVLyrica', 'PoFVMystia', 'PoFVTewi', 'PoFVAya', 'PoFVMedicine', 'PoFVYuuka', 'PoFVKomachi', 'PoFVEiki', 'MoFReimuA', 'MoFReimuB', 'MoFReimuC', 'MoFMarisaA', 'MoFMarisaB', 'MoFMarisaC',
-'SAReimuA', 'SAReimuB', 'SAReimuC', 'SAMarisaA', 'SAMarisaB', 'SAMarisaC', 'UFOReimuA', 'UFOReimuB', 'UFOMarisaA', 'UFOMarisaB', 'UFOSanaeA', 'UFOSanaeB', 'TDReimu', 'TDMarisa', 'TDSanae',
-'TDYoumu', 'DDCReimuA', 'DDCReimuB', 'DDCMarisaA', 'DDCMarisaB', 'DDCSakuyaA', 'DDCSakuyaB', 'LoLKReimu', 'LoLKMarisa', 'LoLKSanae', 'LoLKReisen', 'HSiFSReimuSpring', 'HSiFSReimuSummer', 'HSiFSReimuAutumn',
-'HSiFSReimuWinter', 'HSiFSCirnoSpring', 'HSiFSCirnoSummer', 'HSiFSCirnoAutumn', 'HSiFSCirnoWinter', 'HSiFSAyaSpring', 'HSiFSAyaSummer', 'HSiFSAyaAutumn', 'HSiFSAyaWinter', 'HSiFSMarisaSpring',
-'HSiFSMarisaSummer', 'HSiFSMarisaAutumn', 'HSiFSMarisaWinter', 'WBaWCReimuWolf', 'WBaWCReimuOtter', 'WBaWCReimuEagle', 'WBaWCMarisaWolf', 'WBaWCMarisaOtter', 'WBaWCMarisaEagle',
-'WBaWCYoumuWolf', 'WBaWCYoumuOtter', 'WBaWCYoumuEagle', 'UMReimu', 'UMMarisa', 'UMSakuya', 'UMSanae', 'SoEWReimuA', 'SoEWReimuB', 'SoEWReimuC', 'PoDDReimu', 'PoDDMima', 'PoDDMarisa',
-'PoDDEllen', 'PoDDKotohime', 'PoDDKana', 'PoDDRikako', 'PoDDChiyuri', 'PoDDYumemi', 'LLSReimuA', 'LLSReimuB', 'LLSMarisaA', 'LLSMarisaB', 'MSReimu', 'MSMarisa', 'MSMima', 'MSYuuka',
-'PoFVMerlin', 'PoFVLunasa', 'HSiFSReimuExtra', 'HSiFSCirnoExtra', 'HSiFSAyaExtra', 'HSiFSMarisaExtra', 'UDoALGReimu', 'UDoALGMarisa', 'UDoALGSanae', 'UDoALGRan', 'UDoALGAunn', 'UDoALGNazrin',
-'UDoALGSeiran', 'UDoALGRin', 'UDoALGTsukasa', 'UDoALGMamizou', 'UDoALGYachie', 'UDoALGSaki', 'UDoALGYuuma', 'UDoALGSuika', 'UDoALGBiten', 'UDoALGEnoko', 'UDoALGChiyari', 'UDoALGHisami', 'UDoALGZanmu');
-$cards = array('LifeCard', 'SpellCard', 'FragmentedLifeCard', 'FragmentedSpellCard', 'MoneyComesAndGoesOnItsOwn', 'Ringo-BrandDango', 'PhoenixsTail', 'Yin-YangOrb', 'Yin-YangOrbNeedle',
-'Mini-Hakkero', 'Mini-HakkeroMissile', 'MaidKnife', 'MaidKnifeRicochet', 'SafeReturnAmulet', 'ShedSnakeskinAmulet', 'Half-HalfGhost', 'ShanghaiDoll', 'IceFairy', 'BackDoor', 'AnnoyingUFO',
-'AncientMagatama', 'BlankCard', 'MisersAdvice', 'OfferingsToASacredMountain', 'DeathAvoidanceElixir', 'LuckyRabbitsFoot', 'LawOfTheSurvivalOfTheFittest', 'SutraOfDharmaticPower', 'PebbleHat',
-'BurstingRedFrog', 'GaleGeta', 'IdolDefenseCorps', 'PrincessKaguyasSecretStash', 'ReliableTanukiApprentice', 'DanmakuGhost', 'KiketsuMatriarchsThreat', 'MoneyIsTheBestLawyerInHell',
-'PhysicalEnhancementJizo', 'SpellBeforeTheFall', 'LuckyCatWithGoodBusinessSkills', 'YamawaroShoppingTechnique', 'DragonPipe', 'GluttonousCentipede', 'Sky-BlueMagatama', 'ScreenBorder',
-'MiracleMallet', 'KeystoneOfEndurance', 'MoonOfMadness',  'EsteemedAuthority', 'VampireFang', 'UndergroundSun', 'ItemSeason', 'HeavyBassDrum', 'Psychokinesis', 'SpiritPowerSampleBottle',
-'GreatTengusBarleyRice', 'UnleashTheGuardianHounds', 'LifeExplosionElixir',  'Life-BurningTorch', 'SheepYouWantToCount', 'Laid-BackInvertebrate', 'BeautyOfDestruction', 'DragonsPassage',
-'IrresistibleJulieFan', 'PristineSelf-Confidence', 'NoProblemForACreator', 'HastyDetourOfTheThreeCrossings', 'Too-HonestSignpost', 'StimulatingScales', 'LunaticSilence', 'BumperCropOfLife',
-'YamanbasKitchenKnife', 'CapitalistsDilemma', 'MagiciansBasicStudy', 'MoneyComesAndGoesOnItsOwn185', 'IndominableMeathead', 'NimbleFabric', 'TheRabbitThatLanded',
-'FreewheelingSeveredHead', 'Soot-coveredUchiwa', 'OffensiveJeweledPagoda', 'QuietTwinkling', 'DrunkenlyWhimsicalIbukiGourd', 'ExuberantPowerlessness', 'HundredthBlackMarket',
-'KeystoneMissile', 'ScamRabbitsFoot', 'DrenchedGiantSnake', 'SmeltsScales', 'SpareHalf-Ghost', 'TeacupMarisa', 'TeacupReimu');
+$chars = array(
+    'MarisaKirisame', 'ReimuHakurei', 'Elis', 'Kikuri', 'Konngara', 'Mima', 'ReimuPC-98', 'Sariel', 'SinGyokuF', 'SinGyokuM', 'YuugenMagan', 'EvilEyeSigma', 'Genjii', 'MarisaPC-98', 'Meira', 'Rika',
+    'ChiyuriKitashirakawa', 'Ellen', 'KanaAnaberal', 'Kotohime', 'Mimi-chan', 'RikakoAsakura', 'Ruukoto', 'YumemiOkazaki', 'Elly', 'Gengetsu', 'Kurumi', 'Mugetsu', 'Orange', 'YuukaPC-98', 'AlicePC-98',
+    'Luize', 'MaiPC-98', 'Sara', 'Shinki', 'Yuki', 'Yumeko', 'Cirno', 'Daiyousei', 'FlandreScarlet', 'HongMeiling', 'Koakuma', 'PatchouliKnowledge', 'RemiliaScarlet', 'Rumia', 'SakuyaIzayoi',
+    'AliceMargatroid', 'Chen', 'LettyWhiterock', 'LilyWhite', 'LunasaPrismriver', 'LyricaPrismriver', 'MerlinPrismriver', 'RanYakumo', 'YoumuKonpaku', 'YukariYakumo', 'YuyukoSaigyouji', 'SuikaIbuki',
+    'EirinYagokoro', 'FujiwaranoMokou', 'KaguyaHouraisan', 'KeineKamishirasawa', 'MystiaLorelei', 'ReisenUdongeinInaba', 'TewiInaba', 'WriggleNightbug', 'AyaShameimaru', 'EikiShikiYamaxanadu', 'KomachiOnozuka',
+    'MedicineMelancholy', 'YuukaKazami', 'HinaKagiyama', 'KanakoYasaka', 'MinorikoAki', 'MomijiInubashiri', 'NitoriKawashiro', 'SanaeKochiya', 'ShizuhaAki', 'SuwakoMoriya', 'IkuNagae',
+    'TenshiHinanawi', 'Kisume', 'KoishiKomeiji', 'ParseeMizuhashi', 'RinKaenbyou', 'SatoriKomeiji', 'UtsuhoReiuji', 'YamameKurodani', 'YuugiHoshiguma', 'ByakurenHijiri', 'IchirinKumoi', 'KogasaTatara',
+    'MinamitsuMurasa', 'Nazrin', 'NueHoujuu', 'ShouToramaru', 'Unzan', 'Hisoutensoku', 'HatateHimekaidou', 'LunaChild', 'StarSapphire', 'SunnyMilk', 'KyoukoKasodani', 'MamizouFutatsuiwa',
+    'MononobenoFuto', 'SeigaKaku', 'SoganoTojiko', 'ToyosatomiminoMiko', 'YoshikaMiyako', 'HatanoKokoro', 'BenbenTsukumo', 'KagerouImaizumi', 'RaikoHorikawa', 'SeijaKijin', 'Sekibanki', 'ShinmyoumaruSukuna',
+    'Wakasagihime', 'YatsuhashiTsukumo', 'SumirekoUsami', 'Clownpiece', 'DoremySweet', 'HecatiaLapislazuli', 'Junko', 'Ringo', 'SagumeKishin', 'Seiran', 'JoonYorigami', 'ShionYorigami',
+    'AunnKomano', 'EternityLarva', 'MaiTeireida', 'NarumiYatadera', 'NemunoSakata', 'OkinaMatara', 'SatonoNishida', 'EikaEbisu', 'KeikiHaniyasushin', 'KutakaNiwatari', 'MayumiJoutouguu',
+    'SakiKurokoma', 'UrumiUshizaki', 'YachieKicchou', 'YuumaToutetsu', 'ChimataTenkyuu', 'MegumuIizunamaru', 'MikeGoutokuji', 'MisumaruTamatsukuri', 'MomoyoHimemushi', 'SannyoKomakusa',
+    'TakaneYamashiro', 'TsukasaKudamaki', 'FortuneTeller', 'HiedanoAkyuu', 'KasenIbaraki', 'KosuzuMotoori', 'MiyoiOkunoda', 'ReisenII', 'RinnosukeMorichika', 'Tokiko', 'WatatsukinoToyohime',
+    'WatatsukinoYorihime', 'MaribelHearn', 'RenkoUsami', 'AlicePC-98Extra', 'FiveMagicStones', 'KaguyaHouraisanLastSpells', 'MarisaKirisameGFW', 'MarisaPC-98LLS', 'OkinaMataraExtra', 'YukiandMai',
+    'YuukaPC-98Stage5', 'YuyukoSaigyoujiResurrectionButterfly', 'YuyukoSaigyoujiTD', 'SonBiten', 'EnokoMitsugashira', 'ChiyariTenkajin', 'HisamiYomotsu', 'ZanmuNippaku', 'MizuchiMiyadeguchi'
+);
+$works = array(
+    'HighlyResponsivetoPrayers', 'StoryofEasternWonderland', 'PhantasmagoriaofDimDream', 'LotusLandStory', 'MysticSquare', 'EmbodimentofScarletDevil', 'PerfectCherryBlossom', 'ImmaterialandMissingPower',
+    'ImperishableNight', 'PhantasmagoriaofFlowerView', 'ShoottheBullet', 'MountainofFaith', 'ScarletWeatherRhapsody', 'SubterraneanAnimism', 'UndefinedFantasticObject', 'TouhouHisoutensoku',
+    'DoubleSpoiler', 'GreatFairyWars', 'TenDesires', 'HopelessMasquerade', 'DoubleDealingCharacter', 'ImpossibleSpellCard', 'UrbanLegendinLimbo', 'LegacyofLunaticKingdom',
+    'AntinomyofCommonFlowers', 'HiddenStarinFourSeasons', 'VioletDetector', 'WilyBeastandWeakestCreature', 'UnconnectedMarketeers', 'TouhouSangetsusei', 'TouhouBougetsushou',
+    'WildandHornedHermit', 'CuriositiesofLotusAsia', 'ForbiddenScrollery', 'BohemianArchiveinJapaneseRed', 'PerfectMementoinStrictSense', 'TheGrimoireofMarisa', 'SymposiumofPost-mysticism',
+    'AlternativeFactsinEasternUtopia', 'DollsinPseudoParadise', 'GhostlyFieldClub', 'ChangeabilityofStrangeDream', 'Retrospective53minutes', 'AkyuusUntouchedScoreVolume1',
+    'AkyuusUntouchedScoreVolume2', 'AkyuusUntouchedScoreVolume3', 'AkyuusUntouchedScoreVolume4', 'AkyuusUntouchedScoreVolume5', 'MagicalAstronomy', 'UnknownFlowerMesmerizingJourney',
+    'TrojanGreenAsteroid', 'Neo-traditionalismofJapan', 'DrLatencysFreakReport', 'DatelessBarOldAdam', 'GouyokuIbun', 'TheGrimoireofUsami', 'FoulDetectiveSatori', 'LotusEaters', 'Rainbow-ColoredSeptentrion',
+    'HundredthBlackMarket', 'UnfinishedDreamofAllLivingGhost'
+);
+$shots = array(
+    'EoSDReimuA', 'EoSDReimuB', 'EoSDMarisaA', 'EoSDMarisaB', 'PCBReimuA', 'PCBReimuB', 'PCBMarisaA', 'PCBMarisaB', 'PCBSakuyaA', 'PCBSakuyaB', 'INBorderTeam', 'INMagicTeam', 'INScarletTeam',
+    'INGhostTeam', 'INReimu', 'INYukari', 'INMarisa', 'INAlice', 'INSakuya', 'INRemilia', 'INYoumu', 'INYuyuko', 'PoFVReimu', 'PoFVMarisa', 'PoFVSakuya', 'PoFVYoumu', 'PoFVReisen', 'PoFVCirno',
+    'PoFVLyrica', 'PoFVMystia', 'PoFVTewi', 'PoFVAya', 'PoFVMedicine', 'PoFVYuuka', 'PoFVKomachi', 'PoFVEiki', 'MoFReimuA', 'MoFReimuB', 'MoFReimuC', 'MoFMarisaA', 'MoFMarisaB', 'MoFMarisaC',
+    'SAReimuA', 'SAReimuB', 'SAReimuC', 'SAMarisaA', 'SAMarisaB', 'SAMarisaC', 'UFOReimuA', 'UFOReimuB', 'UFOMarisaA', 'UFOMarisaB', 'UFOSanaeA', 'UFOSanaeB', 'TDReimu', 'TDMarisa', 'TDSanae',
+    'TDYoumu', 'DDCReimuA', 'DDCReimuB', 'DDCMarisaA', 'DDCMarisaB', 'DDCSakuyaA', 'DDCSakuyaB', 'LoLKReimu', 'LoLKMarisa', 'LoLKSanae', 'LoLKReisen', 'HSiFSReimuSpring', 'HSiFSReimuSummer', 'HSiFSReimuAutumn',
+    'HSiFSReimuWinter', 'HSiFSCirnoSpring', 'HSiFSCirnoSummer', 'HSiFSCirnoAutumn', 'HSiFSCirnoWinter', 'HSiFSAyaSpring', 'HSiFSAyaSummer', 'HSiFSAyaAutumn', 'HSiFSAyaWinter', 'HSiFSMarisaSpring',
+    'HSiFSMarisaSummer', 'HSiFSMarisaAutumn', 'HSiFSMarisaWinter', 'WBaWCReimuWolf', 'WBaWCReimuOtter', 'WBaWCReimuEagle', 'WBaWCMarisaWolf', 'WBaWCMarisaOtter', 'WBaWCMarisaEagle',
+    'WBaWCYoumuWolf', 'WBaWCYoumuOtter', 'WBaWCYoumuEagle', 'UMReimu', 'UMMarisa', 'UMSakuya', 'UMSanae', 'SoEWReimuA', 'SoEWReimuB', 'SoEWReimuC', 'PoDDReimu', 'PoDDMima', 'PoDDMarisa',
+    'PoDDEllen', 'PoDDKotohime', 'PoDDKana', 'PoDDRikako', 'PoDDChiyuri', 'PoDDYumemi', 'LLSReimuA', 'LLSReimuB', 'LLSMarisaA', 'LLSMarisaB', 'MSReimu', 'MSMarisa', 'MSMima', 'MSYuuka',
+    'PoFVMerlin', 'PoFVLunasa', 'HSiFSReimuExtra', 'HSiFSCirnoExtra', 'HSiFSAyaExtra', 'HSiFSMarisaExtra', 'UDoALGReimu', 'UDoALGMarisa', 'UDoALGSanae', 'UDoALGRan', 'UDoALGAunn', 'UDoALGNazrin',
+    'UDoALGSeiran', 'UDoALGRin', 'UDoALGTsukasa', 'UDoALGMamizou', 'UDoALGYachie', 'UDoALGSaki', 'UDoALGYuuma', 'UDoALGSuika', 'UDoALGBiten', 'UDoALGEnoko', 'UDoALGChiyari', 'UDoALGHisami', 'UDoALGZanmu'
+);
+$cards = array(
+    'LifeCard', 'SpellCard', 'FragmentedLifeCard', 'FragmentedSpellCard', 'MoneyComesAndGoesOnItsOwn', 'Ringo-BrandDango', 'PhoenixsTail', 'Yin-YangOrb', 'Yin-YangOrbNeedle',
+    'Mini-Hakkero', 'Mini-HakkeroMissile', 'MaidKnife', 'MaidKnifeRicochet', 'SafeReturnAmulet', 'ShedSnakeskinAmulet', 'Half-HalfGhost', 'ShanghaiDoll', 'IceFairy', 'BackDoor', 'AnnoyingUFO',
+    'AncientMagatama', 'BlankCard', 'MisersAdvice', 'OfferingsToASacredMountain', 'DeathAvoidanceElixir', 'LuckyRabbitsFoot', 'LawOfTheSurvivalOfTheFittest', 'SutraOfDharmaticPower', 'PebbleHat',
+    'BurstingRedFrog', 'GaleGeta', 'IdolDefenseCorps', 'PrincessKaguyasSecretStash', 'ReliableTanukiApprentice', 'DanmakuGhost', 'KiketsuMatriarchsThreat', 'MoneyIsTheBestLawyerInHell',
+    'PhysicalEnhancementJizo', 'SpellBeforeTheFall', 'LuckyCatWithGoodBusinessSkills', 'YamawaroShoppingTechnique', 'DragonPipe', 'GluttonousCentipede', 'Sky-BlueMagatama', 'ScreenBorder',
+    'MiracleMallet', 'KeystoneOfEndurance', 'MoonOfMadness',  'EsteemedAuthority', 'VampireFang', 'UndergroundSun', 'ItemSeason', 'HeavyBassDrum', 'Psychokinesis', 'SpiritPowerSampleBottle',
+    'GreatTengusBarleyRice', 'UnleashTheGuardianHounds', 'LifeExplosionElixir',  'Life-BurningTorch', 'SheepYouWantToCount', 'Laid-BackInvertebrate', 'BeautyOfDestruction', 'DragonsPassage',
+    'IrresistibleJulieFan', 'PristineSelf-Confidence', 'NoProblemForACreator', 'HastyDetourOfTheThreeCrossings', 'Too-HonestSignpost', 'StimulatingScales', 'LunaticSilence', 'BumperCropOfLife',
+    'YamanbasKitchenKnife', 'CapitalistsDilemma', 'MagiciansBasicStudy', 'MoneyComesAndGoesOnItsOwn185', 'IndominableMeathead', 'NimbleFabric', 'TheRabbitThatLanded',
+    'FreewheelingSeveredHead', 'Soot-coveredUchiwa', 'OffensiveJeweledPagoda', 'QuietTwinkling', 'DrunkenlyWhimsicalIbukiGourd', 'ExuberantPowerlessness', 'HundredthBlackMarket',
+    'KeystoneMissile', 'ScamRabbitsFoot', 'DrenchedGiantSnake', 'SmeltsScales', 'SpareHalf-Ghost', 'TeacupMarisa', 'TeacupReimu', 'BlankCard185', 'PrincessKaguyasSecretStash185', 'IdolDefenseCorps185',
+    'PhysicalEnhancementJizo185', 'SutraOfDharmaticPower185', 'GaleGeta185', 'MoneyIsTheBestLawyerInHell185', 'LawOfTheSurvivalOfTheFittest185', 'ReliableTanukiApprentice185', 'DragonPipe185', 'GluttonousCentipede185', 'EsteemedAuthority185', 'UndergroundSun185',
+    'ItemSeason185', 'SpiritPowerSampleBottle185', 'GreatTengusBarleyRice185', 'Ringo-BrandDango185', 'AppreciatedTalisman', 'HoardersAdvice', 'UnleashTheGuardianHounds19', 'NazrinRods', 'TheCityRabbitThatLanded', 'BakenekosShikiPaperFrontFacing', 'BakenekosShikiPaperSideFacing', 'PhantomTransportCart', 'MakePeaceWithCats', 'Fox-FilledTube', 'SmokeBreak', 'OtterlyExcited', 'Full-BelliedBeastSpirits', 'PreyAnimalsTerror', 'AccompanyingGourd', 'PolesAreForThrowing', 'KiketsuFamilyTitle', 'UsefulDangerousBearTrap', 'KeigaFamilyMember', 'Curse-SoakedBlood', 'ChupacabraPopularity', 'AmurGrapesOfDisgrace', 'LoathsomeRoadToYomi', 'HeartlessLand', 'AggressionIsTheSpiceOfHell'
+
+);
 for ($i = 0; $i < count($chars); $i++) {
     $picker_x = ($i % $row_size) * $picker_offset;
     $picker_y = floor($i / $row_size) * $picker_offset;
@@ -110,4 +121,3 @@ for ($i = 0; $i < count($cards); $i++) {
     echo '#' . $cards[$i] . '.list_cards{background-position:' . $picker_x . 'px ' . $picker_y . 'px}';
     echo '#' . $cards[$i] . '.tiered_cards{background-position:' . $tiered_x . 'px ' . $tiered_y . 'px}';
 }
-?>

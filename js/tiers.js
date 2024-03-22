@@ -73,7 +73,7 @@ const DEFAULT_SETTINGS = {
             "UM": { enabled: true }
         },
         "cards": {
-            "Item": { enabled: true }, "Equipment": { enabled: true }, "Passive": { enabled: true }, "Active": { enabled: true }, "Touhou185": { enabled: true }
+            "Touhou18": { enabled: true }, "Touhou185": { enabled: true }, "Touhou19": { enabled: true}
         }
     },
     "props": {

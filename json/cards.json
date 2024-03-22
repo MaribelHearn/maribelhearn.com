@@ -1,5 +1,5 @@
 {
-    "Item": {
+    "Touhou18": {
         "chars": [
             "LifeCard",
             "SpellCard",
@@ -7,11 +7,7 @@
             "FragmentedSpellCard",
             "MoneyComesAndGoesOnItsOwn",
             "Ringo-BrandDango",
-            "PhoenixsTail"
-        ]
-    },
-    "Equipment": {
-        "chars": [
+            "PhoenixsTail",
             "Yin-YangOrb",
             "Yin-YangOrbNeedle",
             "Mini-Hakkero",
@@ -25,11 +21,7 @@
             "IceFairy",
             "BackDoor",
             "AnnoyingUFO",
-            "AncientMagatama"
-        ]
-    },
-    "Passive": {
-        "chars": [
+            "AncientMagatama",
             "BlankCard",
             "MisersAdvice",
             "OfferingsToASacredMountain",
@@ -52,11 +44,7 @@
             "YamawaroShoppingTechnique",
             "DragonPipe",
             "GluttonousCentipede",
-            "Sky-BlueMagatama"
-        ]
-    },
-    "Active": {
-        "chars": [
+            "Sky-BlueMagatama",
             "ScreenBorder",
             "MiracleMallet",
             "KeystoneOfEndurance",
@@ -108,7 +96,53 @@
             "SmeltsScales",
             "Too-HonestSignpost",
             "HastyDetourOfTheThreeCrossings",
-            "NimbleFabric"
+            "NimbleFabric",
+            "BlankCard185",
+            "PrincessKaguyasSecretStash185",
+            "IdolDefenseCorps185",
+            "PhysicalEnhancementJizo185",
+            "SutraOfDharmaticPower185",
+            "GaleGeta185",
+            "MoneyIsTheBestLawyerInHell185",
+            "LawOfTheSurvivalOfTheFittest185",
+            "ReliableTanukiApprentice185",
+            "DragonPipe185",
+            "GluttonousCentipede185",
+            "EsteemedAuthority185",
+            "UndergroundSun185",
+            "ItemSeason185",
+            "SpiritPowerSampleBottle185",
+            "GreatTengusBarleyRice185",
+            "Ringo-BrandDango185"
+        ]
+    },
+    "Touhou19": {
+        "chars": [
+            "AppreciatedTalisman",
+            "HoardersAdvice",
+            "UnleashTheGuardianHounds19",
+            "NazrinRods",
+            "TheCityRabbitThatLanded",
+            "BakenekosShikiPaperFrontFacing",
+            "BakenekosShikiPaperSideFacing",
+            "PhantomTransportCart",
+            "MakePeaceWithCats",
+            "Fox-FilledTube",
+            "SmokeBreak",
+            "OtterlyExcited",
+            "Full-BelliedBeastSpirits",
+            "PreyAnimalsTerror",
+            "AccompanyingGourd",
+            "PolesAreForThrowing",
+            "KiketsuFamilyTitle",
+            "UsefulDangerousBearTrap",
+            "KeigaFamilyMember",
+            "Curse-SoakedBlood",
+            "ChupacabraPopularity",
+            "AmurGrapesOfDisgrace",
+            "LoathsomeRoadToYomi",
+            "HeartlessLand",
+            "AggressionIsTheSpiceOfHell"
         ]
     }
 }
