@@ -1,5 +1,6 @@
 /*global _ LNNs getCookie deleteCookie setCookie gameAbbr shottypeAbbr fullNameNumber*/
 const alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+const banList = ["Reimu", "Marisa", "Sanae", "Seiran", "Biten", "Enoko", "Chiyari"];
 let language = "en_GB";
 let selected = "";
 //let dateLimit = "";
@@ -154,10 +155,10 @@ function showLNNtable(game) {
     }
 
     if (game == "UDoALG") {
-        document.getElementById("Reimu").innerHTML = '-';
-        document.getElementById("Reimun").innerHTML = '-';
-        document.getElementById("Chiyari").innerHTML = '-';
-        document.getElementById("Chiyarin").innerHTML = '-';
+        for (const chara of banList) {
+            document.getElementById(chara).innerHTML = '-';
+            document.getElementById(`${chara}n`).innerHTML = '-';
+        }
     }
 
     players.sort();
