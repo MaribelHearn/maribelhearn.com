@@ -14,5 +14,5 @@ if (in_array($page, $main)) {
 } else {
     $directory = 'games';
 }
-echo 'body{background:url("../' . $directory . '/' . $page . '/' . $page . '.jpg") ' . $pos . ' no-repeat fixed;background-size:cover}';
+echo 'body{background:url("/assets/' . $directory . '/' . $page . '/' . $page . '.jpg") ' . $pos . ' no-repeat fixed;background-size:cover}';
 ?>
