@@ -126,12 +126,16 @@ foreach ($lnn as $game => $data1) {
                 if (!in_array($game, $pvp)) {
                     array_push($pl_lnn, array($player, 1, 1));
                 }
-            } else if (!in_array($game, $pvp)) {
+            } else {
                 $key = array_search($player, $pl);
-                $pl_lnn[$key][1] += 1;
+                if (!in_array($game, $pvp)) {
+                    $pl_lnn[$key][1] += 1;
+                }
                 if ($flag[$key]) {
-                    $pl_lnn[$key][2] += 1;
                     $flag[$key] = false;
+                    if (!in_array($game, $pvp)) {
+                        $pl_lnn[$key][2] += 1;
+                    }
                 }
             }
             if (!empty($lnn_videos[$game][$shottype][$player])) {
@@ -456,6 +460,9 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
                         return $val;
                     });
                     foreach ($pl_lnn as $key => $value) {
+                        if (empty($pl_lnn[$key][0])) {
+                            continue;
+                        }
                         $shot_lnns = $pl_lnn[$key][1] == $ALL_LNN ? $pl_lnn[$key][1] . _(' (All Windows)') : $pl_lnn[$key][1];
                         $game_lnns = $pl_lnn[$key][2] >= $ALL_GAME_LNN ? $pl_lnn[$key][2] . _(' (All Windows)') : $pl_lnn[$key][2];
                         echo '<tr><td></td>';
