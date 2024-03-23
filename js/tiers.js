@@ -138,8 +138,6 @@ function addSpacing(item) {
         return "Retrospective 53 minutes";
     } else if (item == "AnnoyingUFO") {
         return "Annoying UFO";
-    } else if (item == "MoneyComesAndGoesOnItsOwn185") {
-        return "Money Comes and Goes on its Own (Touhou 18.5)";
     } else if (clans.includes(item)) {
         return item.substr(0, item.lastIndexOf("no")) + " " + item.substr(item.lastIndexOf("no"), 2) + " " + item.substr(item.lastIndexOf("no") + 2);
     }
@@ -165,7 +163,7 @@ function addSpacing(item) {
         }
     } else {
         item = item.replace("and ", " and ").replace("And ", "and ").replace("Its ", "its ").replace("To ", "to ").replace(" A ", " a ").replace("Of ", "of ");
-        item = item.replace("The ", "the ").replace("Is ", "is ").replace("In ", "in ").replace("With ", "with ");
+        item = item.replace("The ", "the ").replace("Is ", "is ").replace("In ", "in ").replace("With ", "with ").replace("1 8 5", "(Touhou 18.5)");
         item = item.charAt(0).toUpperCase() + item.slice(1);
     }
 
