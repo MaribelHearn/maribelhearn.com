@@ -48,7 +48,9 @@ function date_tl(string $date, string $lang) {
     $day = str_pad($tmp[0], 2, '0', STR_PAD_LEFT);
     $month = str_pad($tmp[1], 2, '0', STR_PAD_LEFT);
     $year = $tmp[2];
-    if ($lang == 'en_US') {
+    if ($lang == 'raw') { // raw YMD; used for sorting
+        return $year . $month . $day;
+    } else if ($lang == 'en_US') {
         return $month . '/' . $day . '/' . $year;
     } else if ($lang == 'ja_JP' || $lang == 'zh_CN') {
         return $year . '年' . $month . '月' . $day . '日';
