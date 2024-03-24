@@ -66,6 +66,14 @@ input[type=button] {
     font-size: 12px;
     color: #737;
 }
+.message {
+    font-weight: bold;
+    color: green;
+}
+.error_message {
+    font-weight: bold;
+    color: orange;
+}
 .tooltip {
     visibility: hidden;
     background-color: black;
@@ -80,7 +88,6 @@ input[type=button] {
 .dropdown-check-list {
     display: inline-block;
 }
-  
 .dropdown-check-list .anchor {
     position: relative;
     cursor: pointer;
@@ -88,7 +95,6 @@ input[type=button] {
     padding: 5px 50px 5px 10px;
     border: 1px solid #ccc;
 }
-  
 .dropdown-check-list .anchor:after {
     position: absolute;
     content: "";
@@ -103,7 +109,6 @@ input[type=button] {
     -webkit-transform: rotate(-135deg);
     transform: rotate(-135deg);
 }
-  
 .dropdown-check-list.visible .anchor:after {
     -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -111,12 +116,10 @@ input[type=button] {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
 }
-  
 .dropdown-check-list .anchor:active:after {
     right: 8px;
     top: 21%;
 }
-  
 .dropdown-check-list ul.category {
     padding: 2px;
     display: none;
@@ -124,15 +127,12 @@ input[type=button] {
     border: 1px solid #ccc;
     border-top: none;
 }
-
 .dropdown-check-list ul.category li {
     list-style: none;
 }
-
 /*.dropdown-check-list.visible .anchor {
     color: #0094ff;
 }*/
-
 .dropdown-check-list.visible .category {
     display: block;
 }
@@ -165,14 +165,6 @@ input[type=button] {
 }
 #legend, #overview_container, #dummy {
     display: none;
-}
-#message {
-    font-weight: bold;
-    color: green;
-}
-#error_message {
-    font-weight: bold;
-    color: orange;
 }
 #completion_table, #close {
     margin-bottom: 15px;

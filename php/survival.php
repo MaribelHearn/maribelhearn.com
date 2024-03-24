@@ -48,8 +48,8 @@ function display_name(string $game) {
         	<input id='export' type='button' value='Export'>
 			<input id='reset' type='button' value='Reset'>
 		</section>
-        <p id='message' class='center'></p>
-        <p id='error_message' class='center'></p>
+        <p id='message' class='message center'></p>
+        <p id='error_message' class='error_message center'></p>
     </div>
     <div id='container' class='overflow'>
         <table id='survival'>
@@ -162,12 +162,13 @@ function display_name(string $game) {
 <div id='modal' data-html2canvas-ignore>
 	<div id='results' class='modal_inner'>
 		<h2><?php echo _('Progress Table') ?></h2>
-		<p id='rendering_message'><?php echo _('Rendering image...') ?></p>
 		<div id='screenshot'>
             <a id='screenshot_link' href='' download=''>
                 <input type='button' value='Save to Device'>
             </a>
+            <input id='clipboard' type='button' value='Copy to Clipboard'>
             <input id='close' type='button' value='Close'>
+		    <p id='rendering_message'></p>
             <p><img id='screenshot_base64' src='' alt='Survival progress table'></p>
         </div>
         <h2><?php echo _('Numbers of Achievements') ?></h2>

@@ -1,4 +1,4 @@
-/*global html2canvas isMobile getCookie deleteCookie*/
+/*global html2canvas isMobile getCookie deleteCookie ClipboardItem*/
 String.prototype.strip = function () {
     return this.replace(/<\/?[^>]*>/g, "");
 };
@@ -334,7 +334,6 @@ function prepareRendering() {
     document.getElementById("Hard").setAttribute("colspan", 2);
     document.getElementById("Lunatic").setAttribute("colspan", 2);
     document.getElementById("Extra").setAttribute("colspan", 2);
-    document.getElementById("rendering_message").style.display = "block";
     document.getElementById("legend").style.display = "table-caption";
     document.getElementById("HRtPMakai").classList.add("bold");
     document.getElementById("INFinalA").classList.add("bold");
@@ -392,7 +391,6 @@ function cleanupRendering() {
     document.getElementById("wrap").style.marginLeft = marginLeft();
     document.getElementById("wrap").removeAttribute("style");
     document.getElementById("container").removeAttribute("style");
-    document.getElementById("rendering_message").style.display = "none";
     document.getElementById("legend").style.display = "none";
 
     for (const id of toDisplay) {
@@ -450,7 +448,7 @@ function drawOverview() {
             takeScreenshot();
         }
     } catch (err) {
-        document.getElementById("rendering_message").innerHTML = "Your browser is outdated. Use a different browser to generate an image of your survival progress table.";
+        printRenderMessage("<strong class='error_message'>Your browser is outdated. Use a different browser to generate an image of your survival progress table.</strong>");
     }
 }
 
@@ -462,9 +460,14 @@ function printError(error) {
     document.getElementById("error_message").innerHTML = error;
 }
 
+function printRenderMessage(message) {
+    document.getElementById("rendering_message").innerHTML = message;
+}
+
 function clearMessages() {
     printMessage("");
     printError("");
+    printRenderMessage("");
 }
 
 function emptyModal() {
@@ -834,6 +837,42 @@ function copyToClipboard() {
     navigator.clipboard.writeText(text.replace(/<\/p><p>/g, "\n").strip());
     printMessage("<strong>Copied to clipboard!</strong>");
 }
+
+const base64toBlob = (b64Data, contentType='', sliceSize=512) => {
+    const byteCharacters = atob(b64Data);
+    const byteArrays = [];
+  
+    for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+        const slice = byteCharacters.slice(offset, offset + sliceSize);
+    
+        const byteNumbers = new Array(slice.length);
+        for (let i = 0; i < slice.length; i++) {
+            byteNumbers[i] = slice.charCodeAt(i);
+        }
+    
+        const byteArray = new Uint8Array(byteNumbers);
+        byteArrays.push(byteArray);
+    }
+      
+    const blob = new Blob(byteArrays, {type: contentType});
+    return blob;
+}
+
+function imageToClipboard() {
+    try {
+        const base64 = document.getElementById("screenshot_base64").src.slice(22);
+        const blob = base64toBlob(base64, "image/png");
+        navigator.clipboard.write([
+            new ClipboardItem({
+                [blob.type]: blob,
+            })
+        ]);
+        printRenderMessage("<strong class='message'>Copied to clipboard!</strong>");
+    } catch (err) {
+        printRenderMessage("<strong class='error_message'>Your browser does not support image to clipboard.</strong>");
+    }
+}
+
 function exportText() {
     emptyModal();
     clearMessages();
@@ -991,6 +1030,7 @@ function setEventListeners() {
     document.getElementById("import_button").addEventListener("click", importText, false);
     document.getElementById("export").addEventListener("click", exportText, false);
     document.getElementById("reset").addEventListener("click", reset, false);
+    document.getElementById("clipboard").addEventListener("click", imageToClipboard, false);
     document.getElementById("close").addEventListener("click", emptyModal, false);
     setEventListenersSelect();
 }
