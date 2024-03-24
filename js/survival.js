@@ -156,36 +156,39 @@ function initGameCounts() {
 }
 
 function format(achievement) {
-    return ({
-        "N/A": "",
-        "Not cleared": "",
-        "1cc": "clear",
-        "NM": "nm",
-        "NB": "nb",
-        "NBB": "np",
-        "NV": "np",
-        "NT": "np",
-        "NR": "np",
-        "NH": "np",
-        "NRB": "np",
-        "NHNRB": "np",
-        "NC": "np",
-        "NMNBB": "nmp",
-        "NMNV": "nmp",
-        "NMNT": "nmp",
-        "NMNR": "nmp",
-        "NMNHNRB": "nmp",
-        "NMNC": "nmp",
-        "NBNBB": "nbp",
-        "NBNV": "nbp",
-        "NBNT": "nbp",
-        "NBNR": "nbp",
-        "NBNHNRB": "nbp",
-        "NBNC": "nbp",
-        "NMNB": "nmnb",
-        "NNN": "nmnbp",
-        "NNNN": "nmnbp"
-    })[achievement];
+    if (achievement == "N/A" || achievement == "Not cleared") {
+        return "";
+    }
+
+    if (achievement == "1cc") {
+        return "clear";
+    }
+
+    if (achievement == "NM") {
+        return "nm";
+    }
+
+    if (achievement == "NB") {
+        return "nb";
+    }
+
+    if (achievement == "NMNB") {
+        return "nmnb";
+    }
+
+    if (achievement == "NNN" || achievement == "NNNN") {
+        return "nmnbp";
+    }
+
+    if (achievement.length >= 4 && achievement.includes("NM")) {
+        return "nmp";
+    }
+
+    if (achievement.length >= 4 && achievement.includes("NB")) {
+        return "nbp";
+    }
+
+    return "np";
 }
 
 function runQuerySelectors() {
