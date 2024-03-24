@@ -105,6 +105,10 @@ a:link.dropdown_button, a:visited.dropdown_button {
 .foot {
     border-top: 3px solid #fff;
 }
+.dropdown-check-list .anchor::after {
+    border-left: 2px solid white;
+    border-top: 2px solid white;
+}
 .github_icon {
     background-position: -1040px 0px;
 }
