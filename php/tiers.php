@@ -139,14 +139,15 @@
     <div id='screenshot' class='modal_inner'>
         <h2>Screenshot</h2>
         <p class='mobile_button_p'>
+            <input id='image_to_clipboard' type='button' value='Copy to Clipboard'>
+        </p>
+        <p class='mobile_button_p'>
             <a id='screenshot_link' href='#' download='#'>
                 <input type='button' class='button' value='Save to Device'>
             </a>
         </p>
-        <!--<p><input id='clipboard' type='button' class='button' value='Copy to Clipboard'></p>-->
-        <p>
-            <img id='screenshot_base64' src='' alt='Tier list screenshot'>
-        </p>
+        <p id='screenshot_msg_container'></p>
+        <p><img id='screenshot_base64' src='' alt='Tier list screenshot'></p>
     </div>
     <div id='settings' class='modal_inner'>
         <h2>Settings</h2>

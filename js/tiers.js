@@ -1,4 +1,4 @@
-/*global categories html2canvas isMobile setCookie getCookie deleteCookie MobileDragDrop*/
+/*global categories html2canvas isMobile setCookie getCookie deleteCookie MobileDragDrop ClipboardItem*/
 if (typeof MobileDragDrop !== "undefined") {
     MobileDragDrop.polyfill({
         holdToDrag: 200
@@ -957,6 +957,7 @@ function emptyModal() {
     }
     
     document.getElementById("tier_menu_msg_container").innerHTML = "";
+    document.getElementById("screenshot_msg_container").innerHTML = "";
     const innerModals = document.querySelectorAll(".modal_inner");
     
     for (const element of innerModals) {
@@ -1317,6 +1318,42 @@ function copyToClipboard() {
     printMessage("<strong class='confirmation'>Copied to clipboard!</strong>");
 }
 
+function base64toBlob(b64Data, contentType) {
+    const sliceSize = 512;
+    const byteCharacters = atob(b64Data);
+    const byteArrays = [];
+  
+    for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+        const slice = byteCharacters.slice(offset, offset + sliceSize);
+    
+        const byteNumbers = new Array(slice.length);
+        for (let i = 0; i < slice.length; i++) {
+            byteNumbers[i] = slice.charCodeAt(i);
+        }
+    
+        const byteArray = new Uint8Array(byteNumbers);
+        byteArrays.push(byteArray);
+    }
+      
+    const blob = new Blob(byteArrays, {type: contentType});
+    return blob;
+}
+
+function imageToClipboard() {
+    try {
+        const base64 = document.getElementById("screenshot_base64").src.slice(22);
+        const blob = base64toBlob(base64, "image/png");
+        navigator.clipboard.write([
+            new ClipboardItem({
+                [blob.type]: blob,
+            })
+        ]);
+        document.getElementById("screenshot_msg_container").innerHTML = "<strong class='confirmation'>Copied to clipboard!</strong>";
+    } catch (err) {
+        document.getElementById("screenshot_msg_container").innerHTML = "<strong class='error'>Your browser does not support image to clipboard.</strong>";
+    }
+}
+
 function fileName(extension) {
     const date = new Date();
     const month = (date.getMonth() + 1).toLocaleString("en-US", {minimumIntegerDigits: 2});
@@ -1364,34 +1401,6 @@ function exportText() {
     document.getElementById("export_text").style.display = "block";
     document.getElementById("modal").style.display = "block";
 }
-
-/*function base64toBlob(dataURI) {
-    const byteString = atob(dataURI.split(',')[1]);
-    const ab = new ArrayBuffer(byteString.length);
-    let ia = new Uint8Array(ab);
-
-    for (let i = 0; i < byteString.length; i++) {
-        ia[i] = byteString.charCodeAt(i);
-    }
-
-    return new Blob([ab], {type: "image/png"});
-}
-
-function imageToClipboard(event) {
-    try {
-        navigator.clipboard.write([
-            new ClipboardItem({
-                "image/png": base64toBlob(event.data.blob)
-            })
-        ]);
-    } catch (e) {
-        emptyModal();
-        alert("Your browser does not support image to clipboard functionality. On Firefox, go to about:config and set dom.events.asyncClipboard.clipboardItem to true.");
-        return;
-    }
-    emptyModal();
-    printMessage("<strong class='confirmation'>Copied to clipboard!</strong>");
-}*/
 
 function getScreenshotWidth() {
     let screenshotWidth = settings.props[settings.sort].screenshotWidth;
@@ -1528,12 +1537,12 @@ function takeScreenshot() {
             const saveLink = document.getElementById("screenshot_link");
             saveLink.href = base64image;
             saveLink.download = fileName("png");
+            document.getElementById("image_to_clipboard").addEventListener("click", imageToClipboard, false);
             document.getElementById("screenshot_base64").src = base64image;
             document.getElementById("screenshot").style.display = "block";
             document.getElementById("modal").style.display = "block";
             cleanupScreenshot();
             printMessage("");
-            //document.getElementById("clipboard").on("click", imageToClipboard, false);
 
             if (!isMobile() && !isTierView) {
                 toggleTierView();
