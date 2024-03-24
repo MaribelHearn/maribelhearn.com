@@ -838,7 +838,8 @@ function copyToClipboard() {
     printMessage("<strong>Copied to clipboard!</strong>");
 }
 
-const base64toBlob = (b64Data, contentType='', sliceSize=512) => {
+function base64toBlob(b64Data, contentType) {
+    const sliceSize = 512;
     const byteCharacters = atob(b64Data);
     const byteArrays = [];
   
