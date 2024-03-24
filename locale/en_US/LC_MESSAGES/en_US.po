@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-08-26 13:40+0200\n"
-"PO-Revision-Date: 2023-08-26 13:40+0200\n"
+"POT-Creation-Date: 2024-03-24 17:31+0100\n"
+"PO-Revision-Date: 2024-03-24 17:31+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -10,440 +10,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-Poedit-Basepath: ../../..\n"
-"X-Poedit-SearchPath-0: assets/shared/translations.php\n"
-"X-Poedit-SearchPath-1: assets/shared/shared.php\n"
-"X-Poedit-SearchPath-2: php/drc.php\n"
-"X-Poedit-SearchPath-3: php/lnn.php\n"
-"X-Poedit-SearchPath-4: php/tools.php\n"
-"X-Poedit-SearchPath-5: php/wr.php\n"
-"X-Poedit-SearchPath-6: js/drc.js\n"
-"X-Poedit-SearchPath-7: js/lnn.js\n"
-"X-Poedit-SearchPath-8: js/wr.js\n"
-"X-Poedit-SearchPath-9: php/pofv.php\n"
-
-#: assets/shared/shared.php:48
-msgid "Youkai mode (Dark)"
-msgstr ""
-
-#: assets/shared/shared.php:48
-msgid "Human mode (Light)"
-msgstr ""
-
-#: assets/shared/shared.php:57 assets/shared/shared.php:64
-msgid "Flag of the United Kingdom"
-msgstr ""
-
-#: assets/shared/shared.php:60
-msgid "Flag of the United States"
-msgstr ""
-
-#: assets/shared/shared.php:68
-msgid "Flag of Japan"
-msgstr ""
-
-#: assets/shared/shared.php:72
-msgid "Flag of the P.R.C."
-msgstr ""
-
-#: assets/shared/shared.php:76
-msgid "Flag of Russia"
-msgstr ""
-
-#: assets/shared/shared.php:80
-msgid "Flag of Germany"
-msgstr ""
-
-#: assets/shared/shared.php:84
-msgid "Flag of Spain"
-msgstr ""
-
-#: assets/shared/shared.php:109 js/drc.js:186 js/lnn.js:57 js/wr.js:107
-msgid "Route"
-msgstr ""
-
-#: assets/shared/shared.php:109 js/drc.js:188 js/lnn.js:57 js/wr.js:107
-#: php/drc.php:454 php/lnn.php:287 php/lnn.php:322 php/wr.php:231
-#: php/wr.php:490
-msgid "Shottype"
-msgstr ""
-
-#: assets/shared/shared.php:142
-msgid "Touhou 1 - The Highly Responsive to Prayers"
-msgstr ""
-
-#: assets/shared/shared.php:143
-msgid "Touhou 2 - The Story of Eastern Wonderland"
-msgstr ""
-
-#: assets/shared/shared.php:144
-msgid "Touhou 3 - Phantasmagoria of Dim.Dream"
-msgstr ""
-
-#: assets/shared/shared.php:145
-msgid "Touhou 4 - Lotus Land Story"
-msgstr ""
-
-#: assets/shared/shared.php:146
-msgid "Touhou 5 - Mystic Square"
-msgstr ""
-
-#: assets/shared/shared.php:147
-msgid "Touhou 6 - The Embodiment of Scarlet Devil"
-msgstr ""
-
-#: assets/shared/shared.php:148
-msgid "Touhou 7 - Perfect Cherry Blossom"
-msgstr ""
-
-#: assets/shared/shared.php:149
-msgid "Touhou 8 - Imperishable Night"
-msgstr ""
-
-#: assets/shared/shared.php:150
-msgid "Touhou 9 - Phantasmagoria of Flower View"
-msgstr ""
-
-#: assets/shared/shared.php:151
-msgid "Touhou 9.5 - Shoot the Bullet"
-msgstr ""
-
-#: assets/shared/shared.php:152
-msgid "Touhou 10 - Mountain of Faith"
-msgstr ""
-
-#: assets/shared/shared.php:153
-msgid "Touhou 11 - Subterranean Animism"
-msgstr ""
-
-#: assets/shared/shared.php:154
-msgid "Touhou 12 - Undefined Fantastic Object"
-msgstr ""
-
-#: assets/shared/shared.php:155
-msgid "Touhou 12.5 - Double Spoiler"
-msgstr ""
-
-#: assets/shared/shared.php:156
-msgid "Touhou 12.8 - Great Fairy Wars"
-msgstr ""
-
-#: assets/shared/shared.php:157
-msgid "Touhou 13 - Ten Desires"
-msgstr ""
-
-#: assets/shared/shared.php:158
-msgid "Touhou 14 - Double Dealing Character"
-msgstr ""
-
-#: assets/shared/shared.php:159
-msgid "Touhou 15 - Legacy of Lunatic Kingdom"
-msgstr ""
-
-#: assets/shared/shared.php:160
-msgid "Touhou 16 - Hidden Star in Four Seasons"
-msgstr ""
-
-#: assets/shared/shared.php:161
-msgid "Touhou 17 - Wily Beast and Weakest Creature"
-msgstr ""
-
-#: assets/shared/shared.php:162
-msgid "Touhou 18 - Unconnected Marketeers"
-msgstr ""
-
-#: assets/shared/shared.php:163
-msgid "Touhou 19 - Unfinished Dream of All Living Ghost"
-msgstr ""
-
-#: assets/shared/shared.php:183 php/drc.php:140
-msgid "Spring"
-msgstr ""
-
-#: assets/shared/shared.php:184 php/drc.php:141
-msgid "Summer"
-msgstr ""
-
-#: assets/shared/shared.php:185 php/drc.php:142
-msgid "Autumn"
-msgstr ""
-
-#: assets/shared/shared.php:186 php/drc.php:143
-msgid "Winter"
-msgstr ""
-
-#: assets/shared/translations.php:2
-msgid "Makai"
-msgstr ""
-
-#: assets/shared/translations.php:3
-msgid "Jigoku"
-msgstr ""
-
-#: assets/shared/translations.php:4
-msgid "ReimuA"
-msgstr ""
-
-#: assets/shared/translations.php:5
-msgid "ReimuB"
-msgstr ""
-
-#: assets/shared/translations.php:6
-msgid "ReimuC"
-msgstr ""
-
-#: assets/shared/translations.php:7
-msgid "Mima"
-msgstr ""
-
-#: assets/shared/translations.php:8
-msgid "Ellen"
-msgstr ""
-
-#: assets/shared/translations.php:9
-msgid "Kotohime"
-msgstr ""
-
-#: assets/shared/translations.php:10
-msgid "Kana"
-msgstr ""
-
-#: assets/shared/translations.php:11
-msgid "Rikako"
-msgstr ""
-
-#: assets/shared/translations.php:12
-msgid "Chiyuri"
-msgstr ""
-
-#: assets/shared/translations.php:13
-msgid "Yumemi"
-msgstr ""
-
-#: assets/shared/translations.php:14
-msgid "MarisaA"
-msgstr ""
-
-#: assets/shared/translations.php:15
-msgid "MarisaB"
-msgstr ""
-
-#: assets/shared/translations.php:16
-msgid "SakuyaA"
-msgstr ""
-
-#: assets/shared/translations.php:17
-msgid "SakuyaB"
-msgstr ""
-
-#: assets/shared/translations.php:18
-msgid "BorderTeam"
-msgstr "Border Team"
-
-#: assets/shared/translations.php:19
-msgid "MagicTeam"
-msgstr "Magic Team"
-
-#: assets/shared/translations.php:20
-msgid "ScarletTeam"
-msgstr "Scarlet Team"
-
-#: assets/shared/translations.php:21
-msgid "GhostTeam"
-msgstr "Ghost Team"
-
-#: assets/shared/translations.php:22
-msgid "Reimu"
-msgstr ""
-
-#: assets/shared/translations.php:23
-msgid "Marisa"
-msgstr ""
-
-#: assets/shared/translations.php:24
-msgid "Sakuya"
-msgstr ""
-
-#: assets/shared/translations.php:25 assets/shared/translations.php:30
-msgid "Youmu"
-msgstr ""
-
-#: assets/shared/translations.php:26
-msgid "Yukari"
-msgstr ""
-
-#: assets/shared/translations.php:27
-msgid "Alice"
-msgstr ""
-
-#: assets/shared/translations.php:28
-msgid "Remilia"
-msgstr ""
-
-#: assets/shared/translations.php:29
-msgid "Yuyuko"
-msgstr ""
-
-#: assets/shared/translations.php:31
-msgid "Reisen"
-msgstr ""
-
-#: assets/shared/translations.php:32
-msgid "Cirno"
-msgstr ""
-
-#: assets/shared/translations.php:33
-msgid "Lyrica"
-msgstr ""
-
-#: assets/shared/translations.php:34
-msgid "Mystia"
-msgstr ""
-
-#: assets/shared/translations.php:35
-msgid "Tewi"
-msgstr ""
-
-#: assets/shared/translations.php:36
-msgid "Aya"
-msgstr ""
-
-#: assets/shared/translations.php:37
-msgid "Medicine"
-msgstr ""
-
-#: assets/shared/translations.php:38
-msgid "Yuuka"
-msgstr ""
-
-#: assets/shared/translations.php:39
-msgid "Komachi"
-msgstr ""
-
-#: assets/shared/translations.php:40
-msgid "Eiki"
-msgstr ""
-
-#: assets/shared/translations.php:41
-msgid "MarisaC"
-msgstr ""
-
-#: assets/shared/translations.php:42
-msgid "SanaeA"
-msgstr ""
-
-#: assets/shared/translations.php:43
-msgid "SanaeB"
-msgstr ""
-
-#: assets/shared/translations.php:44
-msgid "Hatate"
-msgstr ""
-
-#: assets/shared/translations.php:45
-msgid "Sanae"
-msgstr ""
-
-#: assets/shared/translations.php:46
-msgid "ReimuSpring"
-msgstr ""
-
-#: assets/shared/translations.php:47
-msgid "CirnoSpring"
-msgstr ""
-
-#: assets/shared/translations.php:48
-msgid "AyaSpring"
-msgstr ""
-
-#: assets/shared/translations.php:49
-msgid "MarisaSpring"
-msgstr ""
-
-#: assets/shared/translations.php:50
-msgid "ReimuSummer"
-msgstr ""
-
-#: assets/shared/translations.php:51
-msgid "CirnoSummer"
-msgstr ""
-
-#: assets/shared/translations.php:52
-msgid "AyaSummer"
-msgstr ""
-
-#: assets/shared/translations.php:53
-msgid "MarisaSummer"
-msgstr ""
-
-#: assets/shared/translations.php:54
-msgid "ReimuAutumn"
-msgstr ""
-
-#: assets/shared/translations.php:55
-msgid "CirnoAutumn"
-msgstr ""
-
-#: assets/shared/translations.php:56
-msgid "AyaAutumn"
-msgstr ""
-
-#: assets/shared/translations.php:57
-msgid "MarisaAutumn"
-msgstr ""
-
-#: assets/shared/translations.php:58
-msgid "ReimuWinter"
-msgstr ""
-
-#: assets/shared/translations.php:59
-msgid "CirnoWinter"
-msgstr ""
-
-#: assets/shared/translations.php:60
-msgid "AyaWinter"
-msgstr ""
-
-#: assets/shared/translations.php:61
-msgid "MarisaWinter"
-msgstr ""
-
-#: assets/shared/translations.php:62
-msgid "ReimuWolf"
-msgstr ""
-
-#: assets/shared/translations.php:63
-msgid "ReimuOtter"
-msgstr ""
-
-#: assets/shared/translations.php:64
-msgid "ReimuEagle"
-msgstr ""
-
-#: assets/shared/translations.php:65
-msgid "MarisaWolf"
-msgstr ""
-
-#: assets/shared/translations.php:66
-msgid "MarisaOtter"
-msgstr ""
-
-#: assets/shared/translations.php:67
-msgid "MarisaEagle"
-msgstr ""
-
-#: assets/shared/translations.php:68
-msgid "YoumuWolf"
-msgstr ""
-
-#: assets/shared/translations.php:69
-msgid "YoumuOtter"
-msgstr ""
-
-#: assets/shared/translations.php:70
-msgid "YoumuEagle"
-msgstr ""
+"X-Poedit-SearchPath-0: php/drc.php\n"
+"X-Poedit-SearchPath-1: php/lnn.php\n"
+"X-Poedit-SearchPath-2: php/tools.php\n"
+"X-Poedit-SearchPath-3: php/wr.php\n"
+"X-Poedit-SearchPath-4: js/drc.js\n"
+"X-Poedit-SearchPath-5: js/lnn.js\n"
+"X-Poedit-SearchPath-6: js/wr.js\n"
+"X-Poedit-SearchPath-7: php/pofv.php\n"
+"X-Poedit-SearchPath-8: php/shared/shared.php\n"
+"X-Poedit-SearchPath-9: php/shared/translations.php\n"
 
 #: js/drc.js:36
 msgid "Important Notice:"
@@ -508,6 +86,15 @@ msgstr ""
 msgid "Score"
 msgstr ""
 
+#: js/drc.js:186 js/lnn.js:58 js/wr.js:106 php/shared/shared.php:109
+msgid "Route"
+msgstr ""
+
+#: js/drc.js:188 js/lnn.js:58 js/wr.js:106 php/drc.php:454 php/lnn.php:313
+#: php/lnn.php:341 php/shared/shared.php:109 php/wr.php:231 php/wr.php:490
+msgid "Shottype"
+msgstr ""
+
 #: js/drc.js:210 js/drc.js:367 js/drc.js:370 js/drc.js:449
 msgid "Error: "
 msgstr ""
@@ -540,28 +127,28 @@ msgstr ""
 msgid "block"
 msgstr ""
 
-#: js/lnn.js:45 js/lnn.js:48 js/lnn.js:49 js/lnn.js:51 php/lnn.php:31
-#: php/lnn.php:34 php/lnn.php:35 php/lnn.php:37
+#: js/lnn.js:46 js/lnn.js:49 js/lnn.js:50 js/lnn.js:52 php/lnn.php:32
+#: php/lnn.php:35 php/lnn.php:36 php/lnn.php:38
 msgid "No. of LNNNs"
 msgstr ""
 
-#: js/lnn.js:46 php/lnn.php:32
+#: js/lnn.js:47 php/lnn.php:33
 msgid "No. of LNNFSs"
 msgstr ""
 
-#: js/lnn.js:47 php/lnn.php:33
+#: js/lnn.js:48 php/lnn.php:34
 msgid "No. of LNN(N)s"
 msgstr ""
 
-#: js/lnn.js:50 php/lnn.php:36
+#: js/lnn.js:51 php/lnn.php:37
 msgid "No. of LNNNNs"
 msgstr ""
 
-#: js/lnn.js:52 php/lnn.php:38 php/lnn.php:383 php/lnn.php:430
+#: js/lnn.js:53 php/lnn.php:39 php/lnn.php:404 php/lnn.php:451
 msgid "No. of LNNs"
 msgstr ""
 
-#: js/lnn.js:294
+#: js/lnn.js:302
 msgid "(All)"
 msgstr ""
 
@@ -604,7 +191,7 @@ msgid ""
 "assumed to have cleared, scoring runs not."
 msgstr ""
 
-#: php/drc.php:98 php/lnn.php:342 php/wr.php:488 php/wr.php:511
+#: php/drc.php:98 php/lnn.php:361 php/wr.php:488 php/wr.php:511
 msgid "Category"
 msgstr ""
 
@@ -704,6 +291,22 @@ msgstr ""
 msgid "Survival"
 msgstr ""
 
+#: php/drc.php:140 php/shared/shared.php:183
+msgid "Spring"
+msgstr ""
+
+#: php/drc.php:141 php/shared/shared.php:184
+msgid "Summer"
+msgstr ""
+
+#: php/drc.php:142 php/shared/shared.php:185
+msgid "Autumn"
+msgstr ""
+
+#: php/drc.php:143 php/shared/shared.php:186
+msgid "Winter"
+msgstr ""
+
 #: php/drc.php:151
 msgid "Calculate"
 msgstr ""
@@ -787,8 +390,8 @@ msgstr ""
 msgid "||Max * (Score/WR)^Exp||"
 msgstr ""
 
-#: php/drc.php:207 php/drc.php:391 php/drc.php:425 php/lnn.php:321
-#: php/lnn.php:382 php/wr.php:227
+#: php/drc.php:207 php/drc.php:391 php/drc.php:425 php/lnn.php:340
+#: php/lnn.php:403 php/wr.php:227
 msgid "Game"
 msgstr ""
 
@@ -881,7 +484,7 @@ msgstr ""
 msgid "Threshold 3"
 msgstr ""
 
-#: php/drc.php:350 php/drc.php:470 php/lnn.php:455 php/tools.php:519
+#: php/drc.php:350 php/drc.php:470 php/lnn.php:479 php/tools.php:519
 #: php/wr.php:603
 msgid "Back to Top"
 msgstr ""
@@ -963,12 +566,12 @@ msgstr ""
 msgid "Multiplier"
 msgstr ""
 
-#: php/lnn.php:62
+#: php/lnn.php:65
 #, php-format
 msgid "LNNs are current as of <span id=\"lm\">%date</span>."
 msgstr ""
 
-#: php/lnn.php:167
+#: php/lnn.php:180
 msgid ""
 "A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. "
 "For every shottype in a game, tables will tell you which players have done "
@@ -976,7 +579,7 @@ msgid ""
 "shottype, those are not factored in."
 msgstr ""
 
-#: php/lnn.php:172
+#: php/lnn.php:185
 msgid ""
 "Extra conditions are required for PCB, TD, HSiFS, WBaWC and UM; these are No "
 "Border Breaks for PCB, No Trance for TD, No Release for HSiFS, No Berserk "
@@ -987,101 +590,102 @@ msgid ""
 "is assumed to capture all Last Spells and is referred to as LNNFS."
 msgstr ""
 
-#: php/lnn.php:179 php/wr.php:166
+#: php/lnn.php:192 php/wr.php:166
 msgid "All of the table columns are sortable."
 msgstr ""
 
-#: php/lnn.php:181 php/tools.php:13 php/wr.php:175
+#: php/lnn.php:194 php/tools.php:13 php/wr.php:175
 msgid "Contents"
 msgstr ""
 
-#: php/lnn.php:185 php/lnn.php:191 php/lnn.php:219
+#: php/lnn.php:198 php/lnn.php:205 php/lnn.php:232
 msgid "LNN Lists"
 msgstr ""
 
-#: php/lnn.php:186 php/lnn.php:199 php/lnn.php:339
+#: php/lnn.php:199 php/lnn.php:212 php/lnn.php:322 php/wr.php:197
+#: php/wr.php:467
+msgid "Player Search"
+msgstr ""
+
+#: php/lnn.php:200 php/lnn.php:213 php/lnn.php:358
 msgid "Recent LNNs"
 msgstr ""
 
-#: php/lnn.php:187 php/lnn.php:200 php/lnn.php:377
+#: php/lnn.php:201 php/lnn.php:214 php/lnn.php:398
 msgid "Overall Count"
 msgstr ""
 
-#: php/lnn.php:188 php/lnn.php:201 php/lnn.php:424 php/wr.php:185
+#: php/lnn.php:202 php/lnn.php:215 php/lnn.php:445 php/wr.php:185
 #: php/wr.php:202 php/wr.php:570
 msgid "Player Ranking"
 msgstr ""
 
-#: php/lnn.php:198 php/lnn.php:303 php/wr.php:197 php/wr.php:467
-msgid "Player Search"
-msgstr ""
-
-#: php/lnn.php:211 php/wr.php:213
+#: php/lnn.php:224 php/wr.php:213
 msgid "Show videos over replays"
 msgstr ""
 
-#: php/lnn.php:213
+#: php/lnn.php:226
 msgid "Number of Recent LNNs"
 msgstr ""
 
-#: php/lnn.php:216 php/wr.php:218
+#: php/lnn.php:229 php/wr.php:218
 msgid "Save Changes"
 msgstr ""
 
-#: php/lnn.php:234 php/lnn.php:288
+#: php/lnn.php:251 php/lnn.php:314
 msgid "(Different players)"
 msgstr ""
 
-#: php/lnn.php:235 php/lnn.php:289
+#: php/lnn.php:252 php/lnn.php:315
 msgid "Players"
 msgstr ""
 
-#: php/lnn.php:263 php/lnn.php:295 php/lnn.php:412
+#: php/lnn.php:280 php/lnn.php:317 php/lnn.php:433
 msgid "Overall"
 msgstr ""
 
-#: php/lnn.php:271
+#: php/lnn.php:288
 msgid "Click a game cover to show its list of LNNs."
 msgstr ""
 
-#: php/lnn.php:304
+#: php/lnn.php:323
 msgid "Choose a player name from the menu below to show their LNNs."
 msgstr ""
 
-#: php/lnn.php:305 php/lnn.php:343 php/lnn.php:429 php/wr.php:229
+#: php/lnn.php:324 php/lnn.php:362 php/lnn.php:450 php/wr.php:229
 #: php/wr.php:470 php/wr.php:513 php/wr.php:575
 msgid "Player"
 msgstr ""
 
-#: php/lnn.php:307 php/wr.php:472
+#: php/lnn.php:326 php/wr.php:472
 msgid "Search"
 msgstr ""
 
-#: php/lnn.php:323 php/lnn.php:344 php/wr.php:233 php/wr.php:491 php/wr.php:514
+#: php/lnn.php:342 php/lnn.php:363 php/wr.php:233 php/wr.php:491 php/wr.php:514
 msgid "Replay"
 msgstr ""
 
-#: php/lnn.php:324 php/lnn.php:345 php/wr.php:232 php/wr.php:492 php/wr.php:515
+#: php/lnn.php:343 php/lnn.php:364 php/wr.php:232 php/wr.php:492 php/wr.php:515
 msgid "Date"
 msgstr ""
 
-#: php/lnn.php:332 php/wr.php:501
+#: php/lnn.php:351 php/wr.php:501
 msgid "Total"
 msgstr ""
 
-#: php/lnn.php:384
+#: php/lnn.php:405
 msgid "Different players"
 msgstr ""
 
-#: php/lnn.php:417
+#: php/lnn.php:438
 msgid "Replays"
 msgstr ""
 
-#: php/lnn.php:431
+#: php/lnn.php:452
 msgid "Games LNN'd"
 msgstr ""
 
-#: php/lnn.php:444 php/lnn.php:445
+#: php/lnn.php:468 php/lnn.php:469
 msgid " (All Windows)"
 msgstr ""
 
@@ -1338,6 +942,470 @@ msgid ""
 "situations, knowing the bomb will save you anyway if you get hit. "
 "Altogether, her offense is pathetic and her terrible scope cripples her "
 "defense, making her one of the least viable characters in the game."
+msgstr ""
+
+#: php/shared/shared.php:48
+msgid "Youkai mode (Dark)"
+msgstr ""
+
+#: php/shared/shared.php:48
+msgid "Human mode (Light)"
+msgstr ""
+
+#: php/shared/shared.php:57 php/shared/shared.php:64
+msgid "Flag of the United Kingdom"
+msgstr ""
+
+#: php/shared/shared.php:60
+msgid "Flag of the United States"
+msgstr ""
+
+#: php/shared/shared.php:68
+msgid "Flag of Japan"
+msgstr ""
+
+#: php/shared/shared.php:72
+msgid "Flag of the P.R.C."
+msgstr ""
+
+#: php/shared/shared.php:76
+msgid "Flag of Russia"
+msgstr ""
+
+#: php/shared/shared.php:80
+msgid "Flag of Germany"
+msgstr ""
+
+#: php/shared/shared.php:84
+msgid "Flag of Spain"
+msgstr ""
+
+#: php/shared/shared.php:142
+msgid "Touhou 1 - The Highly Responsive to Prayers"
+msgstr ""
+
+#: php/shared/shared.php:143
+msgid "Touhou 2 - The Story of Eastern Wonderland"
+msgstr ""
+
+#: php/shared/shared.php:144
+msgid "Touhou 3 - Phantasmagoria of Dim.Dream"
+msgstr ""
+
+#: php/shared/shared.php:145
+msgid "Touhou 4 - Lotus Land Story"
+msgstr ""
+
+#: php/shared/shared.php:146
+msgid "Touhou 5 - Mystic Square"
+msgstr ""
+
+#: php/shared/shared.php:147
+msgid "Touhou 6 - The Embodiment of Scarlet Devil"
+msgstr ""
+
+#: php/shared/shared.php:148
+msgid "Touhou 7 - Perfect Cherry Blossom"
+msgstr ""
+
+#: php/shared/shared.php:149
+msgid "Touhou 8 - Imperishable Night"
+msgstr ""
+
+#: php/shared/shared.php:150
+msgid "Touhou 9 - Phantasmagoria of Flower View"
+msgstr ""
+
+#: php/shared/shared.php:151
+msgid "Touhou 9.5 - Shoot the Bullet"
+msgstr ""
+
+#: php/shared/shared.php:152
+msgid "Touhou 10 - Mountain of Faith"
+msgstr ""
+
+#: php/shared/shared.php:153
+msgid "Touhou 11 - Subterranean Animism"
+msgstr ""
+
+#: php/shared/shared.php:154
+msgid "Touhou 12 - Undefined Fantastic Object"
+msgstr ""
+
+#: php/shared/shared.php:155
+msgid "Touhou 12.5 - Double Spoiler"
+msgstr ""
+
+#: php/shared/shared.php:156
+msgid "Touhou 12.8 - Great Fairy Wars"
+msgstr ""
+
+#: php/shared/shared.php:157
+msgid "Touhou 13 - Ten Desires"
+msgstr ""
+
+#: php/shared/shared.php:158
+msgid "Touhou 14 - Double Dealing Character"
+msgstr ""
+
+#: php/shared/shared.php:159
+msgid "Touhou 15 - Legacy of Lunatic Kingdom"
+msgstr ""
+
+#: php/shared/shared.php:160
+msgid "Touhou 16 - Hidden Star in Four Seasons"
+msgstr ""
+
+#: php/shared/shared.php:161
+msgid "Touhou 17 - Wily Beast and Weakest Creature"
+msgstr ""
+
+#: php/shared/shared.php:162
+msgid "Touhou 18 - Unconnected Marketeers"
+msgstr ""
+
+#: php/shared/shared.php:163
+msgid "Touhou 19 - Unfinished Dream of All Living Ghost"
+msgstr ""
+
+#: php/shared/translations.php:2
+msgid "Makai"
+msgstr ""
+
+#: php/shared/translations.php:3
+msgid "Jigoku"
+msgstr ""
+
+#: php/shared/translations.php:4
+msgid "ReimuA"
+msgstr ""
+
+#: php/shared/translations.php:5
+msgid "ReimuB"
+msgstr ""
+
+#: php/shared/translations.php:6
+msgid "ReimuC"
+msgstr ""
+
+#: php/shared/translations.php:7
+msgid "Mima"
+msgstr ""
+
+#: php/shared/translations.php:8
+msgid "Ellen"
+msgstr ""
+
+#: php/shared/translations.php:9
+msgid "Kotohime"
+msgstr ""
+
+#: php/shared/translations.php:10
+msgid "Kana"
+msgstr ""
+
+#: php/shared/translations.php:11
+msgid "Rikako"
+msgstr ""
+
+#: php/shared/translations.php:12
+msgid "Chiyuri"
+msgstr ""
+
+#: php/shared/translations.php:13
+msgid "Yumemi"
+msgstr ""
+
+#: php/shared/translations.php:14
+msgid "MarisaA"
+msgstr ""
+
+#: php/shared/translations.php:15
+msgid "MarisaB"
+msgstr ""
+
+#: php/shared/translations.php:16
+msgid "SakuyaA"
+msgstr ""
+
+#: php/shared/translations.php:17
+msgid "SakuyaB"
+msgstr ""
+
+#: php/shared/translations.php:18
+msgid "BorderTeam"
+msgstr "Border Team"
+
+#: php/shared/translations.php:19
+msgid "MagicTeam"
+msgstr "Magic Team"
+
+#: php/shared/translations.php:20
+msgid "ScarletTeam"
+msgstr "Scarlet Team"
+
+#: php/shared/translations.php:21
+msgid "GhostTeam"
+msgstr "Ghost Team"
+
+#: php/shared/translations.php:22
+msgid "Reimu"
+msgstr ""
+
+#: php/shared/translations.php:23
+msgid "Marisa"
+msgstr ""
+
+#: php/shared/translations.php:24
+msgid "Sakuya"
+msgstr ""
+
+#: php/shared/translations.php:25 php/shared/translations.php:30
+msgid "Youmu"
+msgstr ""
+
+#: php/shared/translations.php:26
+msgid "Yukari"
+msgstr ""
+
+#: php/shared/translations.php:27
+msgid "Alice"
+msgstr ""
+
+#: php/shared/translations.php:28
+msgid "Remilia"
+msgstr ""
+
+#: php/shared/translations.php:29
+msgid "Yuyuko"
+msgstr ""
+
+#: php/shared/translations.php:31
+msgid "Reisen"
+msgstr ""
+
+#: php/shared/translations.php:32
+msgid "Cirno"
+msgstr ""
+
+#: php/shared/translations.php:33
+msgid "Lyrica"
+msgstr ""
+
+#: php/shared/translations.php:34
+msgid "Mystia"
+msgstr ""
+
+#: php/shared/translations.php:35
+msgid "Tewi"
+msgstr ""
+
+#: php/shared/translations.php:36
+msgid "Aya"
+msgstr ""
+
+#: php/shared/translations.php:37
+msgid "Medicine"
+msgstr ""
+
+#: php/shared/translations.php:38
+msgid "Yuuka"
+msgstr ""
+
+#: php/shared/translations.php:39
+msgid "Komachi"
+msgstr ""
+
+#: php/shared/translations.php:40
+msgid "Eiki"
+msgstr ""
+
+#: php/shared/translations.php:41
+msgid "MarisaC"
+msgstr ""
+
+#: php/shared/translations.php:42
+msgid "SanaeA"
+msgstr ""
+
+#: php/shared/translations.php:43
+msgid "SanaeB"
+msgstr ""
+
+#: php/shared/translations.php:44
+msgid "Hatate"
+msgstr ""
+
+#: php/shared/translations.php:45
+msgid "Sanae"
+msgstr ""
+
+#: php/shared/translations.php:46
+msgid "ReimuSpring"
+msgstr ""
+
+#: php/shared/translations.php:47
+msgid "CirnoSpring"
+msgstr ""
+
+#: php/shared/translations.php:48
+msgid "AyaSpring"
+msgstr ""
+
+#: php/shared/translations.php:49
+msgid "MarisaSpring"
+msgstr ""
+
+#: php/shared/translations.php:50
+msgid "ReimuSummer"
+msgstr ""
+
+#: php/shared/translations.php:51
+msgid "CirnoSummer"
+msgstr ""
+
+#: php/shared/translations.php:52
+msgid "AyaSummer"
+msgstr ""
+
+#: php/shared/translations.php:53
+msgid "MarisaSummer"
+msgstr ""
+
+#: php/shared/translations.php:54
+msgid "ReimuAutumn"
+msgstr ""
+
+#: php/shared/translations.php:55
+msgid "CirnoAutumn"
+msgstr ""
+
+#: php/shared/translations.php:56
+msgid "AyaAutumn"
+msgstr ""
+
+#: php/shared/translations.php:57
+msgid "MarisaAutumn"
+msgstr ""
+
+#: php/shared/translations.php:58
+msgid "ReimuWinter"
+msgstr ""
+
+#: php/shared/translations.php:59
+msgid "CirnoWinter"
+msgstr ""
+
+#: php/shared/translations.php:60
+msgid "AyaWinter"
+msgstr ""
+
+#: php/shared/translations.php:61
+msgid "MarisaWinter"
+msgstr ""
+
+#: php/shared/translations.php:62
+msgid "ReimuWolf"
+msgstr ""
+
+#: php/shared/translations.php:63
+msgid "ReimuOtter"
+msgstr ""
+
+#: php/shared/translations.php:64
+msgid "ReimuEagle"
+msgstr ""
+
+#: php/shared/translations.php:65
+msgid "MarisaWolf"
+msgstr ""
+
+#: php/shared/translations.php:66
+msgid "MarisaOtter"
+msgstr ""
+
+#: php/shared/translations.php:67
+msgid "MarisaEagle"
+msgstr ""
+
+#: php/shared/translations.php:68
+msgid "YoumuWolf"
+msgstr ""
+
+#: php/shared/translations.php:69
+msgid "YoumuOtter"
+msgstr ""
+
+#: php/shared/translations.php:70
+msgid "YoumuEagle"
+msgstr ""
+
+#: php/shared/translations.php:71
+msgid "Ran"
+msgstr ""
+
+#: php/shared/translations.php:72
+msgid "Aunn"
+msgstr ""
+
+#: php/shared/translations.php:73
+msgid "Nazrin"
+msgstr ""
+
+#: php/shared/translations.php:74
+msgid "Seiran"
+msgstr ""
+
+#: php/shared/translations.php:75
+msgid "Rin"
+msgstr ""
+
+#: php/shared/translations.php:76
+msgid "Tsukasa"
+msgstr ""
+
+#: php/shared/translations.php:77
+msgid "Mamizou"
+msgstr ""
+
+#: php/shared/translations.php:78
+msgid "Yachie"
+msgstr ""
+
+#: php/shared/translations.php:79
+msgid "Saki"
+msgstr ""
+
+#: php/shared/translations.php:80
+msgid "Yuuma"
+msgstr ""
+
+#: php/shared/translations.php:81
+msgid "Suika"
+msgstr ""
+
+#: php/shared/translations.php:82
+msgid "Biten"
+msgstr ""
+
+#: php/shared/translations.php:83
+msgid "Enoko"
+msgstr ""
+
+#: php/shared/translations.php:84
+msgid "Chiyari"
+msgstr ""
+
+#: php/shared/translations.php:85
+msgid "Hisami"
+msgstr ""
+
+#: php/shared/translations.php:86
+msgid "Zanmu"
+msgstr ""
+
+#: php/shared/translations.php:87
+msgid "UDoALG"
 msgstr ""
 
 #: php/tools.php:4
