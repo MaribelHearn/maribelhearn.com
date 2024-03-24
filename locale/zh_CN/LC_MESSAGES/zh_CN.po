@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-01-22 22:16+0100\n"
-"PO-Revision-Date: 2024-01-22 22:17+0100\n"
+"POT-Creation-Date: 2024-03-24 17:14+0100\n"
+"PO-Revision-Date: 2024-03-24 17:15+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-Poedit-Basepath: ../../..\n"
 "X-Poedit-SearchPath-0: php/drc.php\n"
 "X-Poedit-SearchPath-1: php/lnn.php\n"
@@ -88,12 +88,12 @@ msgstr ""
 msgid "Score"
 msgstr "分数"
 
-#: js/drc.js:186 js/lnn.js:57 js/wr.js:106 php/shared/shared.php:109
+#: js/drc.js:186 js/lnn.js:58 js/wr.js:106 php/shared/shared.php:109
 msgid "Route"
 msgstr "路线"
 
-#: js/drc.js:188 js/lnn.js:57 js/wr.js:106 php/drc.php:454 php/lnn.php:289
-#: php/lnn.php:324 php/shared/shared.php:109 php/wr.php:231 php/wr.php:490
+#: js/drc.js:188 js/lnn.js:58 js/wr.js:106 php/drc.php:454 php/lnn.php:313
+#: php/lnn.php:341 php/shared/shared.php:109 php/wr.php:231 php/wr.php:490
 msgid "Shottype"
 msgstr "机体"
 
@@ -129,28 +129,28 @@ msgstr ""
 msgid "block"
 msgstr ""
 
-#: js/lnn.js:45 js/lnn.js:48 js/lnn.js:49 js/lnn.js:51 php/lnn.php:31
-#: php/lnn.php:34 php/lnn.php:35 php/lnn.php:37
+#: js/lnn.js:46 js/lnn.js:49 js/lnn.js:50 js/lnn.js:52 php/lnn.php:32
+#: php/lnn.php:35 php/lnn.php:36 php/lnn.php:38
 msgid "No. of LNNNs"
 msgstr "LNNN的数量"
 
-#: js/lnn.js:46 php/lnn.php:32
+#: js/lnn.js:47 php/lnn.php:33
 msgid "No. of LNNFSs"
 msgstr "LNNFS的数量"
 
-#: js/lnn.js:47 php/lnn.php:33
+#: js/lnn.js:48 php/lnn.php:34
 msgid "No. of LNN(N)s"
 msgstr "LNN(N)的数量"
 
-#: js/lnn.js:50 php/lnn.php:36
+#: js/lnn.js:51 php/lnn.php:37
 msgid "No. of LNNNNs"
 msgstr "LNNNN的数量"
 
-#: js/lnn.js:52 php/lnn.php:38 php/lnn.php:387 php/lnn.php:434
+#: js/lnn.js:53 php/lnn.php:39 php/lnn.php:404 php/lnn.php:451
 msgid "No. of LNNs"
 msgstr "LNN的数量"
 
-#: js/lnn.js:294
+#: js/lnn.js:302
 msgid "(All)"
 msgstr "（全）"
 
@@ -202,7 +202,7 @@ msgid ""
 msgstr ""
 "分数可包含数字、逗号、句号、空格。生存向将会被假定为已通关，打分则不会。"
 
-#: php/drc.php:98 php/lnn.php:344 php/wr.php:488 php/wr.php:511
+#: php/drc.php:98 php/lnn.php:361 php/wr.php:488 php/wr.php:511
 msgid "Category"
 msgstr "项目"
 
@@ -411,8 +411,8 @@ msgstr ""
 msgid "||Max * (Score/WR)^Exp||"
 msgstr "||最大值 *（得分 / 世界纪录）^ 指数||"
 
-#: php/drc.php:207 php/drc.php:391 php/drc.php:425 php/lnn.php:323
-#: php/lnn.php:386 php/wr.php:227
+#: php/drc.php:207 php/drc.php:391 php/drc.php:425 php/lnn.php:340
+#: php/lnn.php:403 php/wr.php:227
 msgid "Game"
 msgstr "游戏"
 
@@ -509,7 +509,7 @@ msgstr "第二阈值"
 msgid "Threshold 3"
 msgstr "第三阈值"
 
-#: php/drc.php:350 php/drc.php:470 php/jargon.php:839 php/lnn.php:459
+#: php/drc.php:350 php/drc.php:470 php/jargon.php:839 php/lnn.php:479
 #: php/wr.php:603
 msgid "Back to Top"
 msgstr "回到顶部"
@@ -611,7 +611,7 @@ msgstr ""
 "这个网页收录了西方的东方Project玩家社区中使用的术语和缩写。同时，也会收录一些"
 "与东方相关的通用游戏术语和STG术语。"
 
-#: php/jargon.php:4 php/lnn.php:183 php/wr.php:175
+#: php/jargon.php:4 php/lnn.php:194 php/wr.php:175
 msgid "Contents"
 msgstr "内容"
 
@@ -2516,12 +2516,12 @@ msgstr "星弹（大）"
 msgid "Star (small)"
 msgstr "星弹（小）"
 
-#: php/lnn.php:62
+#: php/lnn.php:65
 #, php-format
 msgid "LNNs are current as of <span id=\"lm\">%date</span>."
 msgstr "LNN更新于<span id=\"lm\">%date</span>。"
 
-#: php/lnn.php:169
+#: php/lnn.php:180
 msgid ""
 "A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. "
 "For every shottype in a game, tables will tell you which players have done "
@@ -2532,7 +2532,7 @@ msgstr ""
 "新。每作游戏的每个机体有一行显示打出LNN的玩家。如果某一位玩家用一个机体打出多"
 "次LNN，只算一次，其余次数不算入统计。"
 
-#: php/lnn.php:174
+#: php/lnn.php:185
 msgid ""
 "Extra conditions are required for PCB, TD, HSiFS, WBaWC and UM; these are No "
 "Border Breaks for PCB, No Trance for TD, No Release for HSiFS, No Berserk "
@@ -2547,97 +2547,98 @@ msgstr ""
 "第三个N代表着附加的条件。星莲船的附加条件（不开飞碟）由于对难度没有大量的影"
 "响，可以自选。永夜抄的LNN必须收取所有LSC，称做LNNFS。"
 
-#: php/lnn.php:181 php/wr.php:166
+#: php/lnn.php:192 php/wr.php:166
 msgid "All of the table columns are sortable."
 msgstr "点击任何标题即可排序表格内容。"
 
-#: php/lnn.php:187 php/lnn.php:193 php/lnn.php:221
+#: php/lnn.php:198 php/lnn.php:205 php/lnn.php:232
 msgid "LNN Lists"
 msgstr "LNN列表"
 
-#: php/lnn.php:188 php/lnn.php:201 php/lnn.php:341
+#: php/lnn.php:199 php/lnn.php:212 php/lnn.php:322 php/wr.php:197
+#: php/wr.php:467
+msgid "Player Search"
+msgstr "玩家搜寻"
+
+#: php/lnn.php:200 php/lnn.php:213 php/lnn.php:358
 msgid "Recent LNNs"
 msgstr "最近LNN"
 
-#: php/lnn.php:189 php/lnn.php:202 php/lnn.php:381
+#: php/lnn.php:201 php/lnn.php:214 php/lnn.php:398
 msgid "Overall Count"
 msgstr "总数"
 
-#: php/lnn.php:190 php/lnn.php:203 php/lnn.php:428 php/wr.php:185
+#: php/lnn.php:202 php/lnn.php:215 php/lnn.php:445 php/wr.php:185
 #: php/wr.php:202 php/wr.php:570
 msgid "Player Ranking"
 msgstr "玩家排行"
 
-#: php/lnn.php:200 php/lnn.php:305 php/wr.php:197 php/wr.php:467
-msgid "Player Search"
-msgstr "玩家搜寻"
-
-#: php/lnn.php:213 php/wr.php:213
+#: php/lnn.php:224 php/wr.php:213
 msgid "Show videos over replays"
 msgstr ""
 
-#: php/lnn.php:215
+#: php/lnn.php:226
 msgid "Number of Recent LNNs"
 msgstr "最近LNN的数量"
 
-#: php/lnn.php:218 php/wr.php:218
+#: php/lnn.php:229 php/wr.php:218
 msgid "Save Changes"
 msgstr "保存更改"
 
-#: php/lnn.php:236 php/lnn.php:290
+#: php/lnn.php:251 php/lnn.php:314
 msgid "(Different players)"
 msgstr "（玩家）"
 
-#: php/lnn.php:237 php/lnn.php:291
+#: php/lnn.php:252 php/lnn.php:315
 msgid "Players"
 msgstr "玩家"
 
-#: php/lnn.php:265 php/lnn.php:297 php/lnn.php:416
+#: php/lnn.php:280 php/lnn.php:317 php/lnn.php:433
 msgid "Overall"
 msgstr "合計"
 
-#: php/lnn.php:273
+#: php/lnn.php:288
 msgid "Click a game cover to show its list of LNNs."
 msgstr "单击游戏处查看LNN列表。"
 
-#: php/lnn.php:306
+#: php/lnn.php:323
 msgid "Choose a player name from the menu below to show their LNNs."
 msgstr "在以下的菜单选择玩家的名字则可查看其LNN。"
 
-#: php/lnn.php:307 php/lnn.php:345 php/lnn.php:433 php/wr.php:229
+#: php/lnn.php:324 php/lnn.php:362 php/lnn.php:450 php/wr.php:229
 #: php/wr.php:470 php/wr.php:513 php/wr.php:575
 msgid "Player"
 msgstr "玩家"
 
-#: php/lnn.php:309 php/wr.php:472
+#: php/lnn.php:326 php/wr.php:472
 msgid "Search"
 msgstr ""
 
-#: php/lnn.php:325 php/lnn.php:346 php/wr.php:233 php/wr.php:491 php/wr.php:514
+#: php/lnn.php:342 php/lnn.php:363 php/wr.php:233 php/wr.php:491 php/wr.php:514
 msgid "Replay"
 msgstr "Rep"
 
-#: php/lnn.php:326 php/lnn.php:347 php/wr.php:232 php/wr.php:492 php/wr.php:515
+#: php/lnn.php:343 php/lnn.php:364 php/wr.php:232 php/wr.php:492 php/wr.php:515
 msgid "Date"
 msgstr "日期"
 
-#: php/lnn.php:334 php/wr.php:501
+#: php/lnn.php:351 php/wr.php:501
 msgid "Total"
 msgstr "合計"
 
-#: php/lnn.php:388
+#: php/lnn.php:405
 msgid "Different players"
 msgstr "玩家"
 
-#: php/lnn.php:421
+#: php/lnn.php:438
 msgid "Replays"
 msgstr "Rep"
 
-#: php/lnn.php:435
+#: php/lnn.php:452
 msgid "Games LNN'd"
 msgstr "游戏"
 
-#: php/lnn.php:448 php/lnn.php:449
+#: php/lnn.php:468 php/lnn.php:469
 msgid " (All Windows)"
 msgstr "（全Windows）"
 
@@ -3386,6 +3387,74 @@ msgstr "妖梦獭"
 #: php/shared/translations.php:70
 msgid "YoumuEagle"
 msgstr "妖梦鹰"
+
+#: php/shared/translations.php:71
+msgid "Ran"
+msgstr "蓝"
+
+#: php/shared/translations.php:72
+msgid "Aunn"
+msgstr "阿吽"
+
+#: php/shared/translations.php:73
+msgid "Nazrin"
+msgstr "娜兹玲"
+
+#: php/shared/translations.php:74
+msgid "Seiran"
+msgstr "清兰"
+
+#: php/shared/translations.php:75
+msgid "Rin"
+msgstr "燐"
+
+#: php/shared/translations.php:76
+msgid "Tsukasa"
+msgstr "典"
+
+#: php/shared/translations.php:77
+msgid "Mamizou"
+msgstr "猯藏"
+
+#: php/shared/translations.php:78
+msgid "Yachie"
+msgstr "八千慧"
+
+#: php/shared/translations.php:79
+msgid "Saki"
+msgstr "早鬼"
+
+#: php/shared/translations.php:80
+msgid "Yuuma"
+msgstr "尤魔"
+
+#: php/shared/translations.php:81
+msgid "Suika"
+msgstr "萃香"
+
+#: php/shared/translations.php:82
+msgid "Biten"
+msgstr "美天"
+
+#: php/shared/translations.php:83
+msgid "Enoko"
+msgstr "慧之子"
+
+#: php/shared/translations.php:84
+msgid "Chiyari"
+msgstr "血枪"
+
+#: php/shared/translations.php:85
+msgid "Hisami"
+msgstr "日狭美"
+
+#: php/shared/translations.php:86
+msgid "Zanmu"
+msgstr "残无"
+
+#: php/shared/translations.php:87
+msgid "UDoALG"
+msgstr "兽"
 
 #: php/wr.php:77
 #, php-format
