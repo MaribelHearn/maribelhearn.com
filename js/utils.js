@@ -32,7 +32,7 @@ function _(text) {
         return text;
     }
 
-    return !TRANSLATIONS[text] || TRANSLATIONS[text][1] === "" ? text : TRANSLATIONS[text][1];
+    return !TRANSLATIONS[text] || TRANSLATIONS[text] === "" ? text : TRANSLATIONS[text];
 }
 
 function isMobile() {
