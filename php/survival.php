@@ -38,7 +38,7 @@ function display_name(string $game) {
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
         <noscript><?php echo _('<strong>Notice:</strong> this page requires JavaScript.') ?></noscript>
-		<p><?php echo _('Fill in the best survivals you have pulled off in the table below. If you leave a dropdown menu on the N/A option, it will not be factored in. ' .
+		<p><?php echo _('Fill in the best survivals you have pulled off in the table below. If you leave all checkboxes empty in a category, that category will not be factored in. ' .
         'When you click Apply, three different tables indicating your survival progress will be generated. The main survival progress table is an image and can be copied or saved to your device. ' .
         'Use the below selectors to fill up many achievements at once, either by game or by difficulty. See the bottom of this page for an explanation of the acronyms.') ?></p>
         <section>
