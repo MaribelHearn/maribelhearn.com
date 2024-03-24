@@ -2137,11 +2137,6 @@ msgstr "ゲーム"
 #~ "reuploaded to any replay uploading services."
 #~ msgstr "リプレイファイルの二次利用は禁止致します。"
 
-#, fuzzy
-#~| msgid "Contents"
-#~ msgid "Contributors"
-#~ msgstr "内容"
-
 #~ msgid ""
 #~ "A Chinese Ultra patch for LoLK, which does <em>not</em> have autobomb, "
 #~ "but it doubles your shot power instead."

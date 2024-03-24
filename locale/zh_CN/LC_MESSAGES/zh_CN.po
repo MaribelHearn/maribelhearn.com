@@ -3565,36 +3565,6 @@ msgstr "游戏"
 #~ msgid "VD"
 #~ msgstr "噩"
 
-#, fuzzy
-#~| msgid "Shottype Multipliers"
-#~ msgid "Shottype Modifications"
-#~ msgstr "机体系数"
-
-#, fuzzy
-#~| msgid "Reisen"
-#~ msgid "MoF Reisen by "
-#~ msgstr "铃仙"
-
-#, fuzzy
-#~| msgid "Touhou 7 - Perfect Cherry Blossom"
-#~ msgid "Paint Cherry Blossom"
-#~ msgstr "东方妖妖梦　～ Perfect Cherry Blossom"
-
-#, fuzzy
-#~| msgid "Touhou 16 - Hidden Star in Four Seasons"
-#~ msgid "Painting Stars in Four Seasons"
-#~ msgstr "东方天空璋　～ Hidden Star in Four Seasons"
-
-#, fuzzy
-#~| msgid "Touhou 12 - Undefined Fantastic Object"
-#~ msgid "Undefined Fantastic Emoji"
-#~ msgstr "东方星莲船　～ Undefined Fantastic Object"
-
-#, fuzzy
-#~| msgid "Touhou 15 - Legacy of Lunatic Kingdom"
-#~ msgid "Legacy of Lunatic Christmas"
-#~ msgstr "东方绀珠传　～ Legacy of Lunatic Kingdom"
-
 #~ msgid "MarisaAlice"
 #~ msgstr "咏唱组"
 
