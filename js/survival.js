@@ -49,7 +49,15 @@ function fillGame(game, achievement) {
             achievement = gameSpecific(game, achievement);
         }
 
-        document.getElementById(game + difficulty).value = achievement;
+        const category = game + difficulty;
+        const checkboxes = document.querySelectorAll(`#${category} input[type='checkbox']`);
+        const boxesToCheck = progressToCheckboxes(game, achievement);
+
+        for (const element of checkboxes) {
+            element.checked = boxesToCheck.includes(element.value);
+        }
+
+        document.getElementById(category + "a").innerHTML = achievement;
         vals[game][difficulty] = achievement;
         achievement = tmp;
     }
@@ -59,7 +67,7 @@ function fillGame(game, achievement) {
             achievement = achievement.slice(0, -1);
         }
 
-        document.getElementById("INFinalAExtra").value = achievement;
+        document.getElementById("INFinalAExtraa").innerHTML = achievement;
         vals["INFinalA"]["Extra"] = achievement;
     }
 
@@ -68,15 +76,21 @@ function fillGame(game, achievement) {
             achievement = achievement.slice(0, -1);
         }
 
-        document.getElementById("LoLKLegacyExtra").value = achievement;
+        document.getElementById("LoLKLegacyExtraa").innerHTML = achievement;
         vals["LoLKLegacy"]["Extra"] = achievement;
     }
 }
 
 function fillDifficulty(difficulty, achievement) {
     if (difficulty == "Extra") {
-        document.getElementById("PCBPhantasm").value = gameSpecific("PCB", achievement);
+        document.getElementById("PCBPhantasma").innerHTML = gameSpecific("PCB", achievement);
         vals.PCB.Phantasm = gameSpecific("PCB", achievement);
+        const checkboxes = document.querySelectorAll("#PCBPhantasm input[type='checkbox']");
+        const boxesToCheck = progressToCheckboxes("PCB", achievement);
+
+        for (const element of checkboxes) {
+            element.checked = boxesToCheck.includes(element.value);
+        }
     }
 
     for (const game in vals) {
@@ -92,7 +106,15 @@ function fillDifficulty(difficulty, achievement) {
             continue;
         }
 
-        document.getElementById(game + difficulty).value = tmp;
+        const category = game + difficulty;
+        const checkboxes = document.querySelectorAll(`#${category} input[type='checkbox']`);
+        const boxesToCheck = progressToCheckboxes(game, tmp);
+
+        for (const element of checkboxes) {
+            element.checked = boxesToCheck.includes(element.value);
+        }
+
+        document.getElementById(category + "a").innerHTML = tmp;
         vals[game][difficulty] = tmp;
     }
 }
@@ -144,6 +166,8 @@ function format(achievement) {
         "NV": "np",
         "NT": "np",
         "NR": "np",
+        "NH": "np",
+        "NRB": "np",
         "NHNRB": "np",
         "NC": "np",
         "NMNBB": "nmp",
@@ -242,26 +266,28 @@ function applyColours() {
             const element = document.getElementById(id);
 
             if (id.includes("Extra") && !id.includes("PCB") && !id.includes("IN")) {
-                element.parentNode.setAttribute("colspan", 2);
-                element.parentNode.classList.add("overview");
+                element.parentNode.parentNode.setAttribute("colspan", 2);
+                element.parentNode.parentNode.classList.add("overview");
             } else if (!id.includes("Extra") && id != "PCBPhantasm" && !id.includes("HRtP") && !id.includes("IN") && !id.includes("LoLK")) {
-                element.parentNode.setAttribute("colspan", 2);
-                element.parentNode.classList.add("overview");
+                element.parentNode.parentNode.setAttribute("colspan", 2);
+                element.parentNode.parentNode.classList.add("overview");
             } else if (id == "PCBExtra" || id == "PCBPhantasm") {
-                element.parentNode.classList.add("overview_half");
+                element.parentNode.parentNode.classList.add("overview_half");
             } else if (id.includes("HRtP") || id.includes("IN") || id.includes("LoLK") && !id.includes("Extra")) {
-                element.parentNode.classList.add("overview_half");
+                element.parentNode.parentNode.classList.add("overview_half");
             } else {
-                element.parentNode.classList.add("overview");
+                element.parentNode.parentNode.classList.add("overview");
             }
     
-            const value = element.value;
+            const checkboxes = document.querySelectorAll(`#${id} input[type='checkbox']`);
+            const checkedBoxes = getCheckedBoxes(checkboxes);
+            const value = determineProgress(game, checkedBoxes);
     
             if (format(value) !== "") {
-                element.parentNode.classList.add(format(value));
+                element.parentNode.parentNode.classList.add(format(value));
             }
     
-            element.parentNode.innerHTML = (needsText(value) ? value : "");
+            element.parentNode.parentNode.innerHTML = (needsText(value) ? value : "");
 
             if (id.includes("HRtPMakai")) {
                 const jigokuElement = document.getElementById(id.replace("HRtPMakai", "J"));
@@ -286,14 +312,14 @@ function applyColours() {
             }
 
             if (id.includes("LoLKLegacy") && !id.includes("Extra")) {
-                const finalBelement = document.getElementById(id.replace("LoLKLegacy", "L"));
+                const legacyElement = document.getElementById(id.replace("LoLKLegacy", "L"));
                 const value = vals["LoLKPointdevice"][diff];
 
                 if (format(value) !== "") {
-                    finalBelement.classList.add(format(value));
+                    legacyElement.classList.add(format(value));
                 }
 
-                finalBelement.innerHTML = (needsText(value) ? value : "");
+                legacyElement.innerHTML = (needsText(value) ? value : "");
             }
         }
     }
@@ -315,10 +341,10 @@ function prepareRendering() {
     document.getElementById("wrap").style.marginLeft = 0;
     document.getElementById("wrap").style.backgroundColor = "white";
     document.getElementById("container").style.backgroundColor = "white";
-    document.getElementById("INFinalAExtra").parentNode.setAttribute("rowspan", 1);
-    document.getElementById("INFinalAExtra").parentNode.setAttribute("colspan", 2);
-    document.getElementById("LoLKLegacyExtra").parentNode.setAttribute("rowspan", 1);
-    document.getElementById("LoLKLegacyExtra").parentNode.setAttribute("colspan", 2);
+    document.getElementById("INFinalAExtra").parentNode.parentNode.setAttribute("rowspan", 1);
+    document.getElementById("INFinalAExtra").parentNode.parentNode.setAttribute("colspan", 2);
+    document.getElementById("LoLKLegacyExtra").parentNode.parentNode.setAttribute("rowspan", 1);
+    document.getElementById("LoLKLegacyExtra").parentNode.parentNode.setAttribute("colspan", 2);
     runQuerySelectors();
     applyColours();
 
@@ -584,11 +610,62 @@ function closeModal(event) {
     }
 }
 
+function progressToCheckboxes(game, progress) {
+    let boxesToCheck = [];
+
+    if (progress == "N/A") {
+        return [];
+    }
+
+    if (progress == "Not cleared" || progress == "1cc" || progress.length == "2" || progress == "NBB" || progress == "NRB") {
+        return [progress];
+    }
+
+    if (progress == "NNN" || progress == "NNNN") {
+        return ["NM", "NB", "NBB", "NV", "NT", "NR", "NH", "NRB", "NC"];
+    }
+
+    if (progress.includes("NM")) {
+        boxesToCheck.push("NM");
+        progress = progress.replace("NM", "");
+    }
+
+    if (progress.includes("NB")) {
+        boxesToCheck.push("NB");
+        progress = progress.replace("NB", "");
+    }
+
+    if (progress.includes("NH")) {
+        boxesToCheck.push("NH");
+        progress = progress.replace("NH", "");
+    }
+
+    if (progress.includes("NRB")) {
+        boxesToCheck.push("NRB");
+        progress = progress.replace("NRB", "");
+    }
+
+    if (progress.length > 0) {
+        boxesToCheck.push(progress);
+    }
+
+    return boxesToCheck;
+}
+
 function initValues() {
     for (const game in vals) {
         for (const difficulty in vals[game]) {
-            const select = document.getElementById(game + difficulty);
-            select.value = vals[game][difficulty];
+            const category = game + difficulty;
+            const checkboxes = document.querySelectorAll(`#${category} input[type='checkbox']`);
+            const progress = vals[game][difficulty];
+            const boxesToCheck = progressToCheckboxes(game, progress);
+            
+            for (const element of checkboxes) {
+                if (boxesToCheck.includes(element.value)) {
+                    element.checked = true;
+                    document.getElementById(category + "a").innerHTML = progress;
+                }
+            }
         }
     }
 }
@@ -712,15 +789,19 @@ function fillCompletionTable() {
             continue;
         }
 
+        if (game == "PCB" && na.IN < 100) { // otherwise IN is at the end
+            tbody.innerHTML += `<tr><td>IN</td><td>${Math.round(completions["IN"])}%</td></tr>`;
+        }
+
+        if (game == "DDC" && na.LoLK < 100) {
+            tbody.innerHTML += `<tr><td>LoLK</td><td>${Math.round(completions["LoLK"])}%</td></tr>`;
+        }
+
         if (Math.round(na[game]) == 100) {
             continue;
         }
 
         tbody.innerHTML += `<tr><td>${game}</td><td>${Math.round(completions[game])}%</td></tr>`;
-
-        if (game == "PCB" && na.IN < 100) { // otherwise IN is at the end
-            tbody.innerHTML += `<tr><td>IN</td><td>${Math.round(completions["IN"])}%</td></tr>`;
-        }
     }
 }
 
@@ -784,7 +865,14 @@ function reset() {
     for (const game in vals) {
         for (const difficulty in vals[game]) {
             vals[game][difficulty] = "N/A";
-            document.getElementById(game + difficulty).value = "N/A";
+            const category = game + difficulty;
+            const checkboxes = document.querySelectorAll(`#${category} input[type='checkbox']`);
+
+            for (const element of checkboxes) {
+                element.checked = false;
+            }
+
+            document.getElementById(category + "a").innerHTML = "Select";
         }
     }
 
@@ -792,20 +880,98 @@ function reset() {
     printMessage("<strong>Reset the survival table to its default state!</strong>");
 }
 
+function uncheckProgress(checkboxes) {
+    for (const element of checkboxes) {
+        if (element.value != "Not cleared") {
+            element.checked = false;
+        }
+    }
+}
+
+function uncheckNotCleared(checkboxes) {
+    checkboxes[0].checked = false;
+}
+
+function getCheckedBoxes(checkboxes) {
+    let checkedBoxes = [];
+
+    for (const element of checkboxes) {
+        if (element.checked) {
+            checkedBoxes.push(element.value);
+        }
+    }
+
+    return checkedBoxes;
+}
+
+function determineProgress(game, checkedBoxes) {
+    const thirdCondition = ["PCB", "UFO", "TD", "HSiFS", "WBaWC", "UM"];
+
+    if (checkedBoxes.length === 0) {
+        return "N/A";
+    }
+
+    if (checkedBoxes.length === 1) {
+        return checkedBoxes[0];
+    }
+
+    if (checkedBoxes.includes("1cc")) {
+        checkedBoxes.splice(checkedBoxes.indexOf("1cc"), 1);
+    }
+
+    if (checkedBoxes.length === 1) {
+        return checkedBoxes[0];
+    }
+
+    if (!thirdCondition.includes(game) && checkedBoxes.length == 2) {
+        return "NMNB";
+    }
+
+    if (game != "WBaWC" && checkedBoxes.length == 3) {
+        return "NNN";
+    }
+
+    if (game == "WBaWC" && checkedBoxes.length == 4) {
+        return "NNNN";
+    }
+
+    return checkedBoxes.join("");
+}
+
 function setProgress() {
-    const category = this.id;
-    const val = this.value;
+    const category = this.parentNode.parentNode.id;
+    const checkboxes = document.querySelectorAll(`#${category} input[type='checkbox']`);
+
+    if (this.value == "Not cleared") {
+        uncheckProgress(checkboxes);
+    } else {
+        uncheckNotCleared(checkboxes);
+    }
+
     const difficulty = category.match(/Easy|Normal|Hard|Lunatic|Extra|Phantasm/)[0];
     const game = category.replace(difficulty, "");
-    vals[game][difficulty] = val;
+    const checkedBoxes = getCheckedBoxes(checkboxes);
+    const progress = determineProgress(game, checkedBoxes);
+
+    document.getElementById(category + "a").innerHTML = (progress == "N/A" ? "Select" : progress);
+    vals[game][difficulty] = progress;
+
+    unsavedChanges = true;
 }
 
 function setEventListenersSelect() {
-    const select = document.querySelectorAll("select");
-    const categories = document.querySelectorAll(".category");
+    const select = document.querySelectorAll(".dropdown-check-list");
+    const categories = document.querySelectorAll("input[type='checkbox']");
 
     for (const element of select) {
-        element.addEventListener("click", function () { unsavedChanges = true }, false);
+        //
+        element.getElementsByClassName("anchor")[0].addEventListener("click", function() {
+            if (element.classList.contains("visible")) {
+                element.classList.remove("visible");
+            } else {
+                element.classList.add("visible");
+            }
+        });
     }
 
     for (const element of categories) {
@@ -865,7 +1031,7 @@ function doImport() {
         difficulty = value[0];
         achievement = value[1];
 
-        if (vals[game].hasOwnProperty(difficulty) && achievs(game).includes(achievement)) {
+        if (vals[game].hasOwnProperty(difficulty) && achievs(game).includes(achievement.toLowerCase())) {
             vals[game][difficulty] = achievement;
             continue;
         } else {

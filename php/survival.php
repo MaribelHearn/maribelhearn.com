@@ -3,14 +3,14 @@ $games = ['HRtPMakai', 'HRtPJigoku', 'SoEW', 'PoDD', 'LLS', 'MS', 'EoSD', 'PCB',
 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLKLegacy', 'LoLKPointdevice', 'HSiFS', 'WBaWC', 'UM', 'UDoALG'];
 $diffs = ['Easy', 'Normal', 'Hard', 'Lunatic', 'Extra'];
 function achievs(string $game) {
-    $achievs = ['N/A', 'Not cleared', '1cc', 'NM', 'NB', 'NMNB'];
+    $achievs = ['Not cleared', '1cc', 'NM', 'NB'];
     switch ($game) {
-        case 'PCB': return array_merge($achievs, ['NBB', 'NMNBB', 'NBNBB', 'NNN']);
-        case 'UFO': return array_merge($achievs, ['NV', 'NMNV', 'NBNV', 'NNN']);
-        case 'TD': return array_merge($achievs, ['NT', 'NMNT', 'NBNT', 'NNN']);
-        case 'HSiFS': return array_merge($achievs, ['NR', 'NMNR', 'NBNR', 'NNN']);
-        case 'WBaWC': return array_merge($achievs, ['NHNRB', 'NMNHNRB', 'NBNHNRB', 'NNNN']);
-        case 'UM': return array_merge($achievs, ['NC', 'NMNC', 'NBNC', 'NNN']);
+        case 'PCB': return array_merge($achievs, ['NBB']);
+        case 'UFO': return array_merge($achievs, ['NV']);
+        case 'TD': return array_merge($achievs, ['NT']);
+        case 'HSiFS': return array_merge($achievs, ['NR']);
+        case 'WBaWC': return array_merge($achievs, ['NH', 'NRB']);
+        case 'UM': return array_merge($achievs, ['NC']);
         default: return $achievs;
     }
 }
@@ -84,17 +84,17 @@ function display_name(string $game) {
     							continue;
     						}
     						echo (($game == 'INFinalA' || $game == 'LoLKLegacy') && $diff == 'Extra' ? '<td rowspan="2">' : '<td>');
-    						echo '<select id="' . $game . $diff . '" class="category">';
+    						echo '<div class="dropdown-check-list" tabindex="100"><span id="' . $game . $diff . 'a" class="anchor">Select</span><ul id="' . $game . $diff . '" class="category">';
     						foreach ($achievs as $key => $achiev) {
-    							echo '<option>' . _($achiev) . '</option>';
+    							echo '<li><input type="checkbox" value="' . $achiev . '">' . _($achiev) . '</li>';
     						}
-    						echo '</select></td>';
+    						echo '</ul></div></td>';
     						if ($game == 'PCB' && $diff == 'Extra') {
-    							echo '<td><select id="PCBPhantasm" class="category">';
+    							echo '<td><div class="dropdown-check-list" tabindex="100"><span id="PCBPhantasma" class="anchor">Select</span><ul id="PCBPhantasm" class="category">';
     							foreach ($achievs as $key => $achiev) {
-    								echo '<option>' . _($achiev) . '</option>';
+    								echo '<li><input type="checkbox" value="' . $achiev . '">' . _($achiev) . '</li>';
     							}
-    							echo '</select></td>';
+    							echo '</ul></div></td>';
     						} else if ($game != 'PCB' && $diff == 'Extra') {
     							echo '<td class="noborders"></td>';
     						}
