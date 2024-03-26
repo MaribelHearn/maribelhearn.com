@@ -44,6 +44,9 @@ a:visited:not(.replay):not(.i):not(.dropdown_button) {
 .does_even_score_well, .hrtp_route {
     color: #E768C3;
 }
+.lolk_mode {
+    color: #9370DB;
+}
 a:link.dropdown_button, a:visited.dropdown_button {
     color: white;
 }
