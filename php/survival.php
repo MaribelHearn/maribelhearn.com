@@ -209,14 +209,14 @@ function display_name(string $game) {
         <table id='stb' class='progress_table'>
             <thead>
                 <tr>
-                    <th><?php echo _('Stage') ?></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th>
+                    <th><?php echo _('Stage') ?></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th class='scene_th'>9</th>
                 </tr>
             </thead>
             <tbody><?php
                 foreach ($stb as $stage => $scenes) {
                     echo '<tr><th>' . $stage . '</th>';
-                    for ($i = 0; $i < $scenes; $i++) {
-                        echo '<td class="stb_td scene_td"><input type="checkbox" id="stb' . $stage . '-' . ($i + 1) . '" class="checkbox_scene"></td>';
+                    for ($i = 1; $i <= $scenes; $i++) {
+                        echo '<td class="stb_td scene_td"><input type="checkbox" id="stb' . $stage . '-' . $i . '" class="checkbox_scene"></td>';
                     }
                     echo '</tr>';
                 }
@@ -251,19 +251,19 @@ function display_name(string $game) {
     		</caption>
             <thead>
                 <tr>
-                    <th><?php echo _('Stage') ?></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th>
+                    <th><?php echo _('Stage') ?></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th class='scene_th'>9</th>
                 </tr>
             </thead>
             <tbody><?php
                 foreach ($ds as $stage => $scenes) {
                     echo '<tr><th>' . $stage . '</th>';
-                    for ($i = 0; $i < $scenes; $i++) {
-                        echo '<td class="ds_td scene_td"><div class="dropdown-check-list" tabindex="100"><span id="ds' . $stage . '-' . ($i + 1) . 'a" class="anchor">Select</span><ul id="ds' . $stage . '-' . ($i + 1) . '" class="category">';
+                    for ($i = 1; $i <= $scenes; $i++) {
+                        echo '<td class="ds_td scene_td"><div class="dropdown-check-list" tabindex="100"><span id="ds' . $stage . '-' . $i . 'a" class="anchor">Select</span><ul id="ds' . $stage . '-' . $i . '" class="category">';
                         if ($stage != 'SP' || $i < 4) {
-                            echo '<li><input type="checkbox" value="' . _('Aya') . '" id="ds' . $stage . '-' . ($i + 1) . '0"><label for="ds' . $stage . '-' . ($i + 1) . '0">' . _('Aya') . '</label></li>';
+                            echo '<li><input type="checkbox" value="' . _('Aya') . '" id="ds' . $stage . '-' . $i . '0"><label for="ds' . $stage . '-' . $i . '0">' . _('Aya') . '</label></li>';
                         }
                         if ($stage != 'SP' || $i >= 4) {
-                            echo '<li><input type="checkbox" value="' . _('Hatate') . '" id="ds' . $stage . '-' . ($i + 1) . '1"><label for="ds' . $stage . '-' . ($i + 1) . '1">' . _('Hatate') . '</label></li>';
+                            echo '<li><input type="checkbox" value="' . _('Hatate') . '" id="ds' . $stage . '-' . $i . '1"><label for="ds' . $stage . '-' . $i . '1">' . _('Hatate') . '</label></li>';
                             echo '</ul></div></td>';
                         }
                     }
@@ -302,16 +302,16 @@ function display_name(string $game) {
     		</caption>
             <thead>
                 <tr>
-                    <th><?php echo _('Day') ?></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+                    <th><?php echo _('Day') ?></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class='scene_th'>10</th>
                 </tr>
             </thead>
             <tbody><?php
                 foreach ($isc as $stage => $scenes) {
                     echo '<tr><th>' . $stage . '</th>';
-                    for ($i = 0; $i < $scenes; $i++) {
-                        echo '<td class="isc_td scene_td"><div class="dropdown-check-list" tabindex="100"><span id="isc' . $stage . '-' . ($i + 1) . 'a" class="anchor">Select</span><ul id="isc' . $stage . '-' . ($i + 1) . '" class="category">';
-                        echo '<li><input type="checkbox" value="' . _('Clear') . '" id="isc' . $stage . '-' . ($i + 1) . '0"><label for="isc' . $stage . '-' . ($i + 1) . '0">' . _('Clear') . '</label></li>';
-                        echo '<li><input type="checkbox" value="' . _('No Items') . '" id="isc' . $stage . '-' . ($i + 1) . '1"><label for="isc' . $stage . '-' . ($i + 1) . '1">' . _('No Items') . '</label></li>';
+                    for ($i = 1; $i <= $scenes; $i++) {
+                        echo '<td class="isc_td scene_td"><div class="dropdown-check-list" tabindex="100"><span id="isc' . $stage . '-' . $i . 'a" class="anchor">Select</span><ul id="isc' . $stage . '-' . $i . '" class="category">';
+                        echo '<li><input type="checkbox" value="' . _('Clear') . '" id="isc' . $stage . '-' . $i . '0"><label for="isc' . $stage . '-' . $i . '0">' . _('Clear') . '</label></li>';
+                        echo '<li><input type="checkbox" value="' . _('No Items') . '" id="isc' . $stage . '-' . $i . '1"><label for="isc' . $stage . '-' . $i . '1">' . _('No Items') . '</label></li>';
                         echo '</ul></div></td>';
                     }
                     echo '</tr>';
@@ -342,14 +342,14 @@ function display_name(string $game) {
         <table id='vd' class='progress_table'>
             <thead>
                 <tr>
-                    <th><?php echo _('Day') ?></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th>
+                    <th><?php echo _('Day') ?></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th class='scene_th'>7</th>
                 </tr>
             </thead>
             <tbody><?php
                 foreach ($vd as $stage => $scenes) {
                     echo '<tr><th>' . $stage . '</th>';
-                    for ($i = 0; $i < $scenes; $i++) {
-                        echo '<td class="vd_td scene_td"><input type="checkbox" id="vd' . $stage . '-' . ($i + 1) . '" class="checkbox_scene"></td>';
+                    for ($i = 1; $i <= $scenes; $i++) {
+                        echo '<td class="vd_td scene_td"><input type="checkbox" id="vd' . $stage . '-' . $i . '" class="checkbox_scene"></td>';
                     }
                     echo '</tr>';
                 }

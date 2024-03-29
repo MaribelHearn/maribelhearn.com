@@ -4,7 +4,7 @@ input[type=button] {
 section {
     margin-top: 5px;
 }
-.rendering td:last-child:not(.overview_half):not(.scene_td), .rendering th:last-child:not(.overview_half), .hidden {
+.rendering td:last-child:not(.overview_half):not(.scene_td), .rendering th:last-child:not(.overview_half):not(.scene_th), .hidden {
     display: none;
 }
 .rendering {
