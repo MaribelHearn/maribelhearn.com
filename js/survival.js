@@ -1215,6 +1215,8 @@ function determineProgress(game, checkedBoxes) {
     if (game == "WBaWC" && checkedBoxes.length == 4) {
         return "NNNN";
     }
+
+    return checkedBoxes.join("");
 }
 
 function determineSceneProgress(category, checkedBoxes) {
