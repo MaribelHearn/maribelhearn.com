@@ -812,6 +812,9 @@ function fillAll() {
     } else {
         fillDifficulty(value, achievement);
     }
+
+    unsavedChanges = true;
+    clearMessages();
 }
 
 function fillScene() {
@@ -825,6 +828,9 @@ function fillScene() {
             document.getElementById(scene).checked = progress == "1cc";
         }
     }
+
+    unsavedChanges = true;
+    clearMessages();
 }
 
 function fillSceneAlt() {
@@ -853,6 +859,9 @@ function fillSceneAlt() {
             }
         }
     }
+
+    unsavedChanges = true;
+    clearMessages();
 }
 
 function save() {
@@ -1269,6 +1278,7 @@ function setProgress() {
     document.getElementById(category + "a").innerHTML = (progress == "N/A" ? "Select" : progress);
     vals[game][difficulty] = progress;
     unsavedChanges = true;
+    clearMessages();
 }
 
 function setEventListenersSelect() {
