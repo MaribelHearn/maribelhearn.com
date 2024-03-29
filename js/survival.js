@@ -171,7 +171,7 @@ function initGameCounts() {
 }
 
 function format(achievement) {
-    if (achievement == "N/A" || achievement == "Not cleared") {
+    if (!achievement || achievement == "N/A" || achievement == "Not cleared") {
         return "";
     }
 
