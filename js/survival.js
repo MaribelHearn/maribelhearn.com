@@ -1,10 +1,25 @@
-/*global html2canvas isMobile getCookie deleteCookie ClipboardItem*/
+/*global _ vals sceneVals html2canvas isMobile getCookie deleteCookie ClipboardItem*/
 String.prototype.strip = function () {
     return this.replace(/<\/?[^>]*>/g, "");
 };
 
 const games = ["HRtPMakai", "HRtPJigoku", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "INFinalA", "INFinalB", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLKLegacy", "LoLKPointdevice", "HSiFS", "WBaWC", "UM", "UDoALG"];
-let vals = {};
+const stbScenes = 85;
+const ayaScenes = 103;
+const hatateScenes = 104;
+const iscScenes = 75;
+const vdScenes = 103;
+const spAya = ["dsSP-1", "dsSP-2", "dsSP-3", "dsSP-4"];
+const screenshotOptions = {
+    backgroundColor: "white",
+    logging: false
+};
+const screenshotOptionsMobile = {
+    scale: 1,
+    height: document.getElementById("container").offsetHeight,
+    backgroundColor: "white",
+    logging: false
+};
 let unsavedChanges = false;
 let originalContent, completions, na;
 
@@ -160,7 +175,7 @@ function format(achievement) {
         return "";
     }
 
-    if (achievement == "1cc") {
+    if (achievement == "1cc" || achievement == "Clear" || achievement == "Aya") {
         return "clear";
     }
 
@@ -168,11 +183,11 @@ function format(achievement) {
         return "nm";
     }
 
-    if (achievement == "NB") {
+    if (achievement == "NB" || achievement == "Hatate") {
         return "nb";
     }
 
-    if (achievement == "NMNB") {
+    if (achievement == "NMNB" || achievement == "Both" || achievement == "No Items") {
         return "nmnb";
     }
 
@@ -192,6 +207,13 @@ function format(achievement) {
 }
 
 function runQuerySelectors() {
+    const tables = document.querySelectorAll(".progress_table");
+
+    for (const table of tables) {
+        table.classList.add("rendering");
+        table.style.marginLeft = 0;
+    }
+
     const toHide = ["nav", "hy_container", "content", "bottom"];
     const noBorders = document.querySelectorAll(".noborders");
 
@@ -202,6 +224,12 @@ function runQuerySelectors() {
     for (const element of noBorders) {
         element.classList.add("overview");
         element.classList.add("no_extra");
+    }
+
+    const scenes = document.querySelectorAll(".stb_td, .ds_td, .isc_td, .vd_td");
+
+    for (const scene of scenes) {
+        scene.classList.add("overview");
     }
 
     const hidden = document.querySelectorAll(".hidden");
@@ -326,6 +354,25 @@ function applyColours() {
             }
         }
     }
+
+    for (const scene in sceneVals) {
+        const element = document.getElementById(scene);
+        const value = sceneVals[scene];
+
+        if (scene.includes("stb") || scene.includes("vd")) {
+            if (format(value) !== "") {
+                element.parentNode.classList.add(format(value));
+            }
+
+            element.parentNode.innerHTML = "";
+        } else {
+            if (format(value) !== "") {
+                element.parentNode.parentNode.classList.add(format(sceneVals[scene]));
+            }
+
+            element.parentNode.parentNode.innerHTML = "";
+        }
+    }
 }
 
 function prepareRendering() {
@@ -335,11 +382,11 @@ function prepareRendering() {
     document.getElementById("Lunatic").setAttribute("colspan", 2);
     document.getElementById("Extra").setAttribute("colspan", 2);
     document.getElementById("legend").style.display = "table-caption";
+    document.getElementById("legendDS").style.display = "table-caption";
+    document.getElementById("legendISC").style.display = "table-caption";
     document.getElementById("HRtPMakai").classList.add("bold");
     document.getElementById("INFinalA").classList.add("bold");
     document.getElementById("LoLKLegacy").classList.add("bold");
-    document.getElementById("survival").classList.add("rendering");
-    document.getElementById("survival").style.marginLeft = 0;
     document.getElementById("wrap").style.marginLeft = 0;
     document.getElementById("wrap").style.backgroundColor = "white";
     document.getElementById("container").style.backgroundColor = "white";
@@ -418,23 +465,6 @@ function afterScreenshot(canvas) {
     const saveLink = document.getElementById("screenshot_link");
     saveLink.href = base64;
     saveLink.download = fileName("png");
-    cleanupRendering();
-}
-
-function takeScreenshotMobile() {
-    html2canvas(document.getElementById("survival"), {
-        scale: 1,
-        height: document.getElementById("container").offsetHeight,
-        backgroundColor: "white",
-        logging: false
-    }).then(afterScreenshot);
-}
-
-function takeScreenshot() {
-    html2canvas(document.getElementById("survival"), {
-        backgroundColor: "white",
-        logging: false
-    }).then(afterScreenshot);
 }
 
 function drawOverview() {
@@ -443,31 +473,80 @@ function drawOverview() {
 
     try {
         if (isMobile()) {
-            takeScreenshotMobile();
+            html2canvas(document.getElementById("survival"), screenshotOptionsMobile).then(afterScreenshot);
         } else {
-            takeScreenshot();
+            html2canvas(document.getElementById("survival"), screenshotOptions).then(afterScreenshot);
         }
+
+        return true;
     } catch (err) {
-        printRenderMessage("<strong class='error_message'>Your browser is outdated. Use a different browser to generate an image of your survival progress table.</strong>");
+        printError("<strong class='error_message'>Your browser is outdated. Use a different browser to generate an image of your survival progress table.</strong>");
+        return false;
     }
 }
 
+function afterStB(canvas) {
+    const base64 = canvas.toDataURL("image/png");
+    document.getElementById("stb_base64").src = base64;
+    const saveLink = document.getElementById("stb_link");
+    saveLink.href = base64;
+    saveLink.download = fileName("png");
+}
+
+function afterDS(canvas) {
+    const base64 = canvas.toDataURL("image/png");
+    document.getElementById("ds_base64").src = base64;
+    const saveLink = document.getElementById("ds_link");
+    saveLink.href = base64;
+    saveLink.download = fileName("png");
+}
+
+function afterISC(canvas) {
+    const base64 = canvas.toDataURL("image/png");
+    document.getElementById("isc_base64").src = base64;
+    const saveLink = document.getElementById("isc_link");
+    saveLink.href = base64;
+    saveLink.download = fileName("png");
+}
+
+function afterVD(canvas) {
+    const base64 = canvas.toDataURL("image/png");
+    document.getElementById("vd_base64").src = base64;
+    const saveLink = document.getElementById("vd_link");
+    saveLink.href = base64;
+    saveLink.download = fileName("png");
+    cleanupRendering();
+}
+
 function printMessage(message) {
-    document.getElementById("message").innerHTML = message;
+    const p = document.querySelectorAll(".message");
+
+    for (const el of p) {
+        el.innerHTML = message;
+    }
 }
 
 function printError(error) {
-    document.getElementById("error_message").innerHTML = error;
+    const p = document.querySelectorAll(".error_message");
+
+    for (const el of p) {
+        el.innerHTML = error;
+    }
 }
 
-function printRenderMessage(message) {
-    document.getElementById("rendering_message").innerHTML = message;
+function printRenderMessage(id, message) {
+    document.getElementById(id).innerHTML = message;
 }
 
 function clearMessages() {
     printMessage("");
     printError("");
-    printRenderMessage("");
+
+    const p = document.querySelectorAll(".rendering_message");
+
+    for (const el of p) {
+        printRenderMessage(el.id, "");
+    }
 }
 
 function emptyModal() {
@@ -500,7 +579,7 @@ function readLocalStorage() {
     try {
         const data = localStorage.getItem("vals");
 
-        if (data) {
+        if (data && data !== "{}") {
             vals = JSON.parse(data);
 
             if (!vals.hasOwnProperty("WBaWC")) {
@@ -603,6 +682,12 @@ function readLocalStorage() {
                 }
             }
         }
+
+        const sceneData = localStorage.getItem("sceneVals");
+
+        if (sceneData && sceneData != "{}") {
+            sceneVals = JSON.parse(sceneData);
+        }
     } catch (err) {
         // do nothing
     }
@@ -613,6 +698,17 @@ function closeModal(event) {
 
     if ((event.target && event.target == modal) || (event.key && event.key == "Escape")) {
         emptyModal();
+    }
+
+    // hotkeys
+    if (modal.style.display != "block" && event.key) {
+        switch (event.key) {
+            case 's': save(); break;
+            case 't': apply(); break;
+            case 'i': importText(); break;
+            case 'e': exportText(); break;
+            case 'r': reset(); break;
+        }
     }
 }
 
@@ -658,6 +754,18 @@ function progressToCheckboxes(game, progress) {
     return boxesToCheck;
 }
 
+function progressToCheckboxesScene(scene, progress) {
+    if (progress == "Not cleared") {
+        return [];
+    }
+
+    if (progress == "Both") {
+        return ["Aya", "Hatate"];
+    }
+
+    return [progress];
+}
+
 function initValues() {
     for (const game in vals) {
         for (const difficulty in vals[game]) {
@@ -674,6 +782,25 @@ function initValues() {
             }
         }
     }
+
+    for (const scene in sceneVals) {
+        const progress = sceneVals[scene];
+
+        if (scene.includes("stb") || scene.includes("vd")) {
+            document.getElementById(scene).checked = progress == "1cc";
+            continue;
+        }
+
+        const checkboxes = document.querySelectorAll(`#${scene} input[type='checkbox']`);
+        const boxesToCheck = progressToCheckboxesScene(scene, progress);
+
+        for (const element of checkboxes) {
+            if (boxesToCheck.includes(element.value)) {
+                element.checked = true;
+                document.getElementById(scene + "a").innerHTML = progress;
+            }
+        }
+    }
 }
 
 function fillAll() {
@@ -687,11 +814,53 @@ function fillAll() {
     }
 }
 
+function fillScene() {
+    const game = this.getAttribute("data_id");
+    const progress = document.getElementById(`fill_${game}_progress`).value;
+    const stage = document.getElementById(`fill_${game}_stage`).value.replace(_("Stage "), "");
+
+    for (const scene in sceneVals) {
+        if (scene.includes(game) && scene.replace(game, "").slice(0, -2) == stage) {
+            sceneVals[scene] = progress;
+            document.getElementById(scene).checked = progress == "1cc";
+        }
+    }
+}
+
+function fillSceneAlt() {
+    const game = this.getAttribute("data_id");
+    const progress = document.getElementById(`fill_${game}_progress`).value;
+    const stage = document.getElementById(`fill_${game}_stage`).value.replace(_("Stage "), "").replace(_("Day "), "");
+    
+    for (const scene in sceneVals) {
+        if (scene.includes(game) && scene.replace(game, "").slice(0, -2) == stage || stage == "10" && scene.includes("10-10")) {
+            const checkboxes = document.querySelectorAll(`#${scene} input[type='checkbox']`);
+            const boxesToCheck = progressToCheckboxesScene(scene, progress);
+
+            for (const element of checkboxes) {
+                element.checked = boxesToCheck.includes(element.value);
+                document.getElementById(scene + "a").innerHTML = (progress == "Not cleared" ? "Select" : progress);
+
+                if (scene.includes("SP") && progress != "Not cleared") {
+                    document.getElementById(scene + "a").innerHTML = spAya.includes(scene) ? "Aya" : "Hatate";
+                }
+            }
+
+            sceneVals[scene] = progress;
+            
+            if (scene.includes("SP") && progress != "Not cleared") {
+                sceneVals[scene] = spAya.includes(scene) ? "Aya" : "Hatate";
+            }
+        }
+    }
+}
+
 function save() {
     localStorage.setItem("saveSurvivalData", true);
     localStorage.setItem("vals", JSON.stringify(vals));
+    localStorage.setItem("sceneVals", JSON.stringify(sceneVals));
     unsavedChanges = false;
-    printMessage("<strong>Survival table saved!</strong>");
+    printMessage("<strong class='message'>Survival table saved!</strong>");
 }
 
 function getPercentage(game) {
@@ -774,7 +943,7 @@ function fillNumberTable(numbers) {
     }
 }
 
-function fillCompletionTable() {
+function fillCompletionTables() {
     const tbody = document.getElementById("completion_table_tbody");
     tbody.innerHTML = "";
 
@@ -809,6 +978,34 @@ function fillCompletionTable() {
 
         tbody.innerHTML += `<tr><td>${game}</td><td>${Math.round(completions[game])}%</td></tr>`;
     }
+
+    let stb = 0;
+    let aya = 0;
+    let hatate = 0;
+    let isc = 0;
+    let noItems = 0;
+    let vd = 0;
+
+    for (const scene in sceneVals) {
+        if (scene.includes("stb")) {
+            stb += sceneVals[scene] == "1cc" ? 1 : 0;
+        } else if (scene.includes("ds")) {
+            aya += sceneVals[scene] == "Aya" || sceneVals[scene] == "Both" ? 1 : 0;
+            hatate += sceneVals[scene] == "Hatate" || sceneVals[scene] == "Both" ? 1 : 0;
+        } else if (scene.includes("isc")) {
+            isc += sceneVals[scene] == "Clear" || sceneVals[scene] == "No Items" ? 1 : 0;
+            noItems += sceneVals[scene] == "No Items" ? 1 : 0;
+        } else if (scene.includes("vd")) {
+            vd += sceneVals[scene] == "1cc" ? 1 : 0;
+        }
+    }
+
+    document.getElementById("completion_stb").innerHTML = stb + " / " + stbScenes;
+    document.getElementById("completion_aya").innerHTML = aya + " / " + ayaScenes;
+    document.getElementById("completion_hatate").innerHTML = hatate + " / " + hatateScenes;
+    document.getElementById("completion_isc").innerHTML = isc + " / " + iscScenes;
+    document.getElementById("completion_noitems").innerHTML = noItems + " / " + iscScenes;
+    document.getElementById("completion_vd").innerHTML = vd + " / " + vdScenes;
 }
 
 function apply() {
@@ -817,10 +1014,19 @@ function apply() {
     completions = initGameCounts();
     numbers = countAchievements(numbers);
     fillNumberTable(numbers);
-    fillCompletionTable();
+    fillCompletionTables();
     document.getElementById("results").style.display = "block";
     document.getElementById("modal").style.display = "block";
-    drawOverview();
+    window.scrollTo(0, 0);
+    const success = drawOverview();
+
+    if (success) {
+        html2canvas(document.getElementById("stb"), screenshotOptions).then(afterStB);
+        html2canvas(document.getElementById("ds"), screenshotOptions).then(afterDS);
+        html2canvas(document.getElementById("isc"), screenshotOptions).then(afterISC);
+        html2canvas(document.getElementById("vd"), screenshotOptions).then(afterVD);
+    }
+
     clearMessages();
 }
 
@@ -835,7 +1041,7 @@ function copyToClipboard() {
     emptyModal();
     const text = document.getElementById("text_file").value;
     navigator.clipboard.writeText(text.replace(/<\/p><p>/g, "\n").strip());
-    printMessage("<strong>Copied to clipboard!</strong>");
+    printMessage("<strong class='message'>Copied to clipboard!</strong>");
 }
 
 function base64toBlob(b64Data, contentType) {
@@ -860,17 +1066,19 @@ function base64toBlob(b64Data, contentType) {
 }
 
 function imageToClipboard() {
+    const id = this.getAttribute("data_id");
+
     try {
-        const base64 = document.getElementById("screenshot_base64").src.slice(22);
+        const base64 = document.getElementById(id).src.slice(22);
         const blob = base64toBlob(base64, "image/png");
         navigator.clipboard.write([
             new ClipboardItem({
                 [blob.type]: blob,
             })
         ]);
-        printRenderMessage("<strong class='message'>Copied to clipboard!</strong>");
+        printRenderMessage(this.id.replace("clipboard", "rendering_message"), "<strong class='message'>Copied to clipboard!</strong>");
     } catch (err) {
-        printRenderMessage("<strong class='error_message'>Your browser does not support image to clipboard.</strong>");
+        printRenderMessage(this.id.replace("clipboard", "rendering_message"), "<strong class='error_message'>Your browser does not support image to clipboard.</strong>");
     }
 }
 
@@ -903,24 +1111,41 @@ function reset() {
 
     if (confirmation) {
         localStorage.removeItem("vals");
-    }
+        localStorage.removeItem("sceneVals");
 
-    for (const game in vals) {
-        for (const difficulty in vals[game]) {
-            vals[game][difficulty] = "N/A";
-            const category = game + difficulty;
-            const checkboxes = document.querySelectorAll(`#${category} input[type='checkbox']`);
-
-            for (const element of checkboxes) {
-                element.checked = false;
+        for (const game in vals) {
+            for (const difficulty in vals[game]) {
+                vals[game][difficulty] = "N/A";
+                const category = game + difficulty;
+                const checkboxes = document.querySelectorAll(`#${category} input[type='checkbox']`);
+    
+                for (const element of checkboxes) {
+                    element.checked = false;
+                }
+    
+                document.getElementById(category + "a").innerHTML = "Select";
             }
-
-            document.getElementById(category + "a").innerHTML = "Select";
         }
+    
+        for (const scene in sceneVals) {
+            sceneVals[scene] = "Not cleared";
+    
+            if (scene.includes("stb") || scene.includes("vd")) {
+                document.getElementById(scene).checked = false;
+            } else {
+                const checkboxes = document.querySelectorAll(`#${scene} input[type='checkbox']`);
+    
+                for (const element of checkboxes) {
+                    element.checked = false;
+                }
+    
+                document.getElementById(scene + "a").innerHTML = "Select";
+            }
+        }
+    
+        unsavedChanges = false;
+        printMessage("<strong class='message'>Reset the survival table to its default state!</strong>");
     }
-
-    unsavedChanges = false;
-    printMessage("<strong>Reset the survival table to its default state!</strong>");
 }
 
 function uncheckProgress(checkboxes) {
@@ -966,6 +1191,10 @@ function determineProgress(game, checkedBoxes) {
         return checkedBoxes[0];
     }
 
+    if (game == "DS" && checkedBoxes.length == 2) {
+        return "Both";
+    }
+
     if (!thirdCondition.includes(game) && checkedBoxes.length == 2) {
         return "NMNB";
     }
@@ -977,18 +1206,59 @@ function determineProgress(game, checkedBoxes) {
     if (game == "WBaWC" && checkedBoxes.length == 4) {
         return "NNNN";
     }
+}
 
-    return checkedBoxes.join("");
+function determineSceneProgress(category, checkedBoxes) {
+    if (checkedBoxes.length === 0) {
+        return "Not cleared";
+    }
+
+    if (category.includes("ds") && checkedBoxes.length >= 2) {
+        return "Both";
+    }
+
+    if (category.includes("isc") && checkedBoxes.length >= 2) {
+        return "No Items";
+    
+    }
+
+    return checkedBoxes[0];
 }
 
 function setProgress() {
-    const category = this.parentNode.parentNode.id;
+    let category;
+    let sceneGame = false;
+
+    if (this.id.includes("stb") || this.id.includes("ds") || this.id.includes("isc") || this.id.includes("vd")) {
+        category = this.id;
+        sceneGame = true;
+    } else {
+        category = this.parentNode.parentNode.id;
+    }
+
+    if (category.includes("stb") || category.includes("vd")) {
+        sceneVals[category] = this.checked ? "1cc" : "Not cleared";
+        unsavedChanges = true;
+        return;
+    } else if (sceneGame) {
+        category = category.slice(0, -1);
+    }
+
     const checkboxes = document.querySelectorAll(`#${category} input[type='checkbox']`);
 
     if (this.value == "Not cleared") {
         uncheckProgress(checkboxes);
-    } else {
+    } else if (!sceneGame) {
         uncheckNotCleared(checkboxes);
+    }
+
+    if (sceneGame) {
+        const checkedBoxes = getCheckedBoxes(checkboxes);
+        const progress = determineSceneProgress(category, checkedBoxes);
+        document.getElementById(category + "a").innerHTML = (progress == "Not cleared" ? "Select" : progress);
+        sceneVals[category] = progress;
+        unsavedChanges = true;
+        return;
     }
 
     const difficulty = category.match(/Easy|Normal|Hard|Lunatic|Extra|Phantasm/)[0];
@@ -998,7 +1268,6 @@ function setProgress() {
 
     document.getElementById(category + "a").innerHTML = (progress == "N/A" ? "Select" : progress);
     vals[game][difficulty] = progress;
-
     unsavedChanges = true;
 }
 
@@ -1007,7 +1276,6 @@ function setEventListenersSelect() {
     const categories = document.querySelectorAll("input[type='checkbox']");
 
     for (const element of select) {
-        //
         element.getElementsByClassName("anchor")[0].addEventListener("click", function() {
             if (element.classList.contains("visible")) {
                 element.classList.remove("visible");
@@ -1020,19 +1288,27 @@ function setEventListenersSelect() {
     for (const element of categories) {
         element.addEventListener("change", setProgress, false);
     }
+
+    document.getElementById("fill_all").addEventListener("click", fillAll, false);
+    document.getElementById("fill_stb").addEventListener("click", fillScene, false);
+    document.getElementById("fill_ds").addEventListener("click", fillSceneAlt, false);
+    document.getElementById("fill_isc").addEventListener("click", fillSceneAlt, false);
+    document.getElementById("fill_vd").addEventListener("click", fillScene, false);
 }
 
 function setEventListeners() {
     document.body.addEventListener("click", closeModal, false);
     document.body.addEventListener("keyup", closeModal, false);
-    document.getElementById("fill_all").addEventListener("click", fillAll, false);
     document.getElementById("save").addEventListener("click", save, false);
     document.getElementById("apply").addEventListener("click", apply, false);
     document.getElementById("import_button").addEventListener("click", importText, false);
     document.getElementById("export").addEventListener("click", exportText, false);
     document.getElementById("reset").addEventListener("click", reset, false);
     document.getElementById("clipboard").addEventListener("click", imageToClipboard, false);
-    document.getElementById("close").addEventListener("click", emptyModal, false);
+    document.getElementById("clipboard_stb").addEventListener("click", imageToClipboard, false);
+    document.getElementById("clipboard_ds").addEventListener("click", imageToClipboard, false);
+    document.getElementById("clipboard_isc").addEventListener("click", imageToClipboard, false);
+    document.getElementById("clipboard_vd").addEventListener("click", imageToClipboard, false);
     setEventListenersSelect();
 }
 
@@ -1067,7 +1343,7 @@ function doImport() {
             game = value;
             continue;
         } else if (!game) {
-            printError("<strong>Error: invalid survival progress. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
+            printError("<strong class='error_message'>Error: invalid survival progress. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
             return;
         }
 
@@ -1079,14 +1355,14 @@ function doImport() {
             vals[game][difficulty] = achievement;
             continue;
         } else {
-            printError("<strong>Error: invalid survival progress. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
+            printError("<strong class='error_message'>Error: invalid survival progress. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
             return;
         }
     }
 
     save();
     initValues();
-    printMessage("<strong>Survival progress successfully imported!</strong>");
+    printMessage("<strong class='message'>Survival progress successfully imported!</strong>");
 }
 
 function init() {
@@ -1102,7 +1378,7 @@ function init() {
         importElement.parentNode.removeChild(importElement);
     } else {
         if (errorElement && errorElement.value) {
-            printError(errorElement.value);
+            printError(`<strong class='error_message'>${errorElement.value}</strong>`);
             errorElement.parentNode.removeChild(errorElement);
         }
     }

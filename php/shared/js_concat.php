@@ -47,8 +47,12 @@ if ($page != 'error') {
 if (file_exists('../../js/' . $page . $min . '.js')) {
     array_push($js, '../../js/' . $page . $min . '.js');
 }
+if ($page == 'survival') {
+    echo 'let vals = ' . file_get_contents('../../json/defaults_survival.json') . ';';
+    echo 'let sceneVals = ' . file_get_contents('../../json/defaults_scenes.json') . ';';
+}
 if ($page == 'scoring') {
-    echo 'let scores = ' . file_get_contents('../../json/defaults.json') . ';';
+    echo 'let scores = ' . file_get_contents('../../json/defaults_scoring.json') . ';';
 }
 if ($page == 'drc') {
     echo 'const rubrics = ' . file_get_contents('../../json/rubrics.json') . ';';

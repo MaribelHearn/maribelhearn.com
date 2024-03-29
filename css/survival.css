@@ -1,7 +1,10 @@
 input[type=button] {
     margin: 5px 5px 0 5px;
 }
-.rendering td:last-child:not(.overview_half), .rendering th:last-child:not(.overview_half), .hidden {
+section {
+    margin-top: 5px;
+}
+.rendering td:last-child:not(.overview_half):not(.scene_td), .rendering th:last-child:not(.overview_half), .hidden {
     display: none;
 }
 .rendering {
@@ -73,6 +76,13 @@ input[type=button] {
 .error_message {
     font-weight: bold;
     color: orange;
+}
+.device_link {
+    text-decoration: none;
+}
+.checkbox_scene {
+    width: 30px;
+    height: 30px;
 }
 .tooltip {
     visibility: hidden;
@@ -163,14 +173,24 @@ input[type=button] {
 #nav {
     margin-bottom: 5px;
 }
-#legend, #overview_container, #dummy {
+#buttons {
+    border: 1px solid #000;
+    text-align: left;
+    font: 14px verdana, sans-serif;
+    opacity: 0.8;
+    padding-bottom: 15px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+}
+#hotkeys {
+    margin-left: 30px;
+}
+#overview_container, #dummy, caption {
     display: none;
 }
 #completion_table, #close {
     margin-bottom: 15px;
-}
-#save_link, #screenshot_link {
-    text-decoration: none;
 }
 #dummysub {
     width: 1000px;
