@@ -7,6 +7,7 @@
     "rules": {
         "no-prototype-builtins": "off",
         "no-inner-declarations": "off",
+        "no-global-assign": "off",
         "no-unused-vars": "warn",
         "no-console": "error",
         "no-undef": "error",
