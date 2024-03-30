@@ -111,6 +111,16 @@ function display_name(string $game) {
             <li><?php echo _('Export: E') ?></li>
             <li><?php echo _('Reset: R') ?></li>
         </ul>
+        <div id='buttons'>
+            <section>
+                <input id='save' type='button' value='Save'>
+                <input id='apply' type='button' value='Generate Tables'>
+                <br id='buttons_br'>
+                <input id='import_button' type='button' value='Import'>
+                <input id='export' type='button' value='Export'>
+                <input id='reset' type='button' value='Reset'>
+            </section>
+        </div>
         <p class='message center'></p>
         <p class='error_message center'></p>
     </div>
@@ -507,13 +517,4 @@ function display_name(string $game) {
             </a>
         </p>
     </div>
-</div>
-<div id='buttons'>
-    <section>
-        <input id='save' type='button' value='Save'>
-        <input id='apply' type='button' value='Generate Tables'>
-        <input id='import_button' type='button' value='Import'>
-        <input id='export' type='button' value='Export'>
-        <input id='reset' type='button' value='Reset'>
-    </section>
 </div>

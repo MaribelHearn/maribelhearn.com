@@ -16,6 +16,13 @@ input, table {
 #results {
     font-size: 11px;
 }
+#buttons {
+    position: relative;
+    border: none;
+    padding-bottom: 0px;
+    top: auto;
+    left: auto;
+}
 .in_route {
     font-size: 9px;
 }
