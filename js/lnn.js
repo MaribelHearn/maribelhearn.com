@@ -4,7 +4,6 @@ const banList = ["Reimu", "Marisa", "Sanae", "Seiran", "Biten", "Enoko", "Chiyar
 let language = "en_GB";
 let selected = "";
 //let dateLimit = "";
-let preferVideo = false;
 let missingReplays, videoLNNs;
 
 function toggleLayout() {
@@ -13,18 +12,6 @@ function toggleLayout() {
     } else {
         setCookie("lnn_old_layout", true);
     }
-}
-
-function toggleVideo() {
-    preferVideo = !preferVideo;
-
-    if (preferVideo) {
-        setCookie("prefer_video", true);
-    } else {
-        deleteCookie("prefer_video");
-    }
-
-    location.reload();
 }
 
 function setRecentLimit(event) {
@@ -199,7 +186,7 @@ function formatDate(date) {
 }
 
 function getPlayerGameLNNs(player, game) {
-    let result = { "runs": [], "replays": [], "shots": [], "dates": [], "earliest": new Date("9999/12/31") };
+    let result = { "runs": [], "replays": [], "videos": [], "shots": [], "dates": [], "earliest": new Date("9999/12/31") };
 
     for (const shot in LNNs[game]) {
         if (LNNs[game][shot].hasOwnProperty(player)) {
@@ -223,14 +210,14 @@ function getPlayerGameLNNs(player, game) {
                 }
             }
 
-            if (preferVideo && videoLNNs.hasOwnProperty(game + shot + player.removeSpaces())) {
-                result.replays.push(`<a href='${videoLNNs[game + shot + player.removeSpaces()]}' target='_blank'>Video link</a>`);
-            } else if (gameAbbr(game) < 6 || missingReplays.includes(game + shot + player.removeSpaces())) {
-                if (videoLNNs.hasOwnProperty(game + shot + player.removeSpaces())) {
-                    result.replays.push(`<a href='${videoLNNs[game + shot + player.removeSpaces()]}' target='_blank'>Video link</a>`);
-                } else {
-                    result.replays.push('-');
-                }
+            if (videoLNNs.hasOwnProperty(game + shot + player.removeSpaces())) {
+                result.videos.push(`<a href='${videoLNNs[game + shot + player.removeSpaces()]}' target='_blank'>Video link</a>`);
+            } else {
+                result.videos.push('-');
+            }
+
+            if (gameAbbr(game) < 6 || missingReplays.includes(game + shot + player.removeSpaces())) {
+                result.replays.push('-');
             } else {
                 const replay = replayPath(game, player, character, type);
                 const replayArray = replay.split('/');
@@ -286,9 +273,10 @@ function showPlayerLNNs(player) {
         if (playerLNNs.runs.length > 0) {
             games.push(game);
             sum += playerLNNs.runs.length;
-            playerTable.innerHTML += `<tr><td id='${game}l' class='${game}'>${_(game)}</td><td id='${game}s'></td><td id='${game}r'><td id='${game}d'></td></tr>`;
+            playerTable.innerHTML += `<tr><td id='${game}l' class='${game}'>${_(game)}</td><td id='${game}s'></td><td id='${game}r'></td><td id='${game}v'></td><td id='${game}d'></td></tr>`;
             document.getElementById(`${game}s`).innerHTML = playerLNNs.runs.join("<br>");
             document.getElementById(`${game}r`).innerHTML = playerLNNs.replays.join("<br>");
+            document.getElementById(`${game}v`).innerHTML = playerLNNs.videos.join("<br>");
             document.getElementById(`${game}d`).innerHTML = playerLNNs.dates.join("<br>");
 
             if (playerLNNs.dates.length > 0) {
@@ -333,7 +321,6 @@ function setLanguage(event) {
 
 function setEventListeners() {
     document.getElementById("toggle_layout").addEventListener("click", toggleLayout, false);
-    document.getElementById("toggle_video").addEventListener("click", toggleVideo, false);
     document.getElementById("recent_limit").addEventListener("keyup", setRecentLimit, false);
     document.getElementById("recent_limit").addEventListener("mouseup", setRecentLimit, false);
     document.getElementById("save_changes").addEventListener("click", saveChanges, false);
@@ -445,9 +432,9 @@ function init() {
     videoLNNs = parseVideos();
     missingReplays = document.getElementById("missing_replays").value;
 
+    // legacy video toggle
     if (getCookie("prefer_video")) {
-        preferVideo = Boolean(getCookie("prefer_video"));
-        document.getElementById("toggle_video").checked = preferVideo;
+        deleteCookie("prefer_video");
     }
 
     const player = document.getElementById("player").value;

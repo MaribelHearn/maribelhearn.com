@@ -220,9 +220,6 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
     ?>
     <div id='checkboxes' class='contents'>
         <p>
-            <input id='toggle_video' type='checkbox'>
-            <label for='toggle_video'><?php echo _('Show videos over replays') ?></label>
-        </p><p>
             <label for='recent_limit'><?php echo _('Number of Recent LNNs') ?></label>
             <input id='recent_limit' type='number' value='<?php echo (isset($_COOKIE['recent_limit']) ? $_COOKIE['recent_limit'] : 15) ?>' min=1>
         </p><p>
@@ -340,16 +337,17 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
                 <th class='general_header'><?php echo _('Game') ?></th>
                 <th class='general_header'><?php echo _('Shottype') ?></th>
                 <th class='general_header'><?php echo _('Replay') ?></th>
+                <th class='general_header'><?php echo _('Video') ?></th>
                 <th class='general_header'><?php echo _('Date') ?></th>
             </tr></thead>
 			<tbody id='player_tbody'></tbody>
 			<tfoot id='player_tfoot'>
                 <tr>
-                    <td colspan='4'></td>
+                    <td colspan='5'></td>
                 </tr>
                 <tr class='irregular_tr'>
                     <td><?php echo _('Total') ?></td>
-                    <td id='player_sum' colspan='3'></td>
+                    <td id='player_sum' colspan='4'></td>
                 </tr>
             </tfoot>
 		</table>
@@ -361,20 +359,22 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
                 <th class='general_header'><?php echo _('Category')  ?></th>
                 <th class='general_header'><?php echo _('Player') ?></th>
                 <th class='general_header'><?php echo _('Replay') ?></th>
+                <th class='general_header'><?php echo _('Video') ?></th>
                 <th class='general_header'><?php echo _('Date') ?></th>
             </tr></thead>
             <tbody id='recentbody'><?php
                 $i = 0;
                 foreach ($recent as $key => $obj) {
-                    if (isset($_COOKIE['prefer_video']) && !empty($obj->video)) {
-                        $replay = '<a href="' . $obj->video . '" target="_blank">Video link</a>';
-                    } else if (file_exists(replay_path($obj->game, $obj->player, $obj->shot))) {
+                    if (!empty($obj->video)) {
+                        $video = '<a href="' . $obj->video . '" target="_blank">Video link</a>';
+                    } else {
+                        $video = '-';
+                    }
+                    if (file_exists(replay_path($obj->game, $obj->player, $obj->shot))) {
                         $path = replay_path($obj->game, $obj->player, $obj->shot);
                         $path_parts = preg_split('/\//', $path);
                         $replay = '<a href="' . $path . '">' . $path_parts[3] . '</a>';
-                    } else if (!empty($obj->video)) {
-						$replay = '<a href="' . $obj->video . '" target="_blank">Video link</a>';
-					} else {
+                    } else {
                         $replay = '-';
                     }
                     $space = (has_space($lang) ? ' ' : '');
@@ -384,6 +384,7 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
                     '<td class="' . $obj->game . 'p">' . _($obj->game) . $space . _($shot) . (!empty($type) ? $space . _($type) : '') . '</td>' .
                     '<td>' . $obj->player . '</td>' .
                     '<td>' . $replay . '</td>' .
+                    '<td>' . $video . '</td>' .
                     '<td data-sort="' . date_tl($obj->date, 'raw') . '">' . date_tl($obj->date, $lang) . '</td>' .
                     '</tr>';
                     $i++;
