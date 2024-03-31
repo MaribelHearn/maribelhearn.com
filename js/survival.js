@@ -1106,6 +1106,14 @@ function exportText() {
         textFile += '\n';
     }
 
+    textFile += "Scene games:\n\n";
+
+    for (const scene in sceneVals) {
+        textFile += `${scene}: ${sceneVals[scene]}\n`;
+    }
+
+    textFile += '\n';
+
     const saveLink = document.getElementById("save_link");
     saveLink.href = "data:text/plain;charset=utf-8," + encodeURIComponent(textFile);
     saveLink.download = fileName("txt");
@@ -1340,7 +1348,9 @@ function achievs(game) {
 
 function doImport() {
     const text = document.getElementById("import").value.trim().split('\n');
+    let scenes = false;
     let game;
+    let scene;
     let difficulty;
     let achievement;
 
@@ -1349,10 +1359,21 @@ function doImport() {
             continue;
         }
 
+        if (scenes) {
+            let value = line.split(':');
+            scene = value[0].trim();
+            achievement = value[1].trim();
+            sceneVals[scene] = achievement;
+            continue;
+        }
+
         let value = line.replace(':', "");
 
         if (games.includes(value)) {
             game = value;
+            continue;
+        } else if (value == "Scene games") {
+            scenes = true;
             continue;
         } else if (!game) {
             printError("<strong class='error_message'>Error: invalid survival progress. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");

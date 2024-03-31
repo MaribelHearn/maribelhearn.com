@@ -496,7 +496,7 @@ function display_name(string $game) {
 	</div>
     <div id='import_text' class='modal_inner'>
         <h2>Import from Text File</h2>
-        <p>Note that the format should be the same as the exported text. The scene games are currently not supported yet.</p>
+        <p>Note that the format should be the same as the exported text.</p>
         <p><strong>Warning:</strong> Importing can overwrite your current survival progress!</p>
         <form target='_self' method='post' enctype='multipart/form-data'>
             <label for='import_file'>Upload file:</label>
@@ -506,7 +506,6 @@ function display_name(string $game) {
     </div>
     <div id='export_text' class='modal_inner'>
         <h2>Export to Text File</h2>
-        <p>The scene games are currently not supported yet.</p>
         <p>
             <input id='copy_to_clipboard' type='button' value='Copy to Clipboard'>
             <input id='text_file' type='hidden' value=''>
