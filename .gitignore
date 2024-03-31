@@ -19,9 +19,6 @@ wrlist.json
 # replay dir
 replays
 
-# uploads dir
-assets/other/tiers/uploads
-
 # dev
 .vscode/
 node_modules/
