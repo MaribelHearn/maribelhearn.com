@@ -1455,30 +1455,6 @@ function longestTier() {
     return longest;
 }
 
-function prepareScreenshot() {
-    const wrap = document.getElementById("wrap");
-
-    if (isMobile()) {
-        document.getElementById("tier_list_container").classList.add("screenshot_margin");
-        //wrap.style.top = "";
-        //wrap.style.bottom = "";
-        //wrap.style.right = "";
-        //wrap.style.left = "";
-    }
-}
-
-function cleanupScreenshot() {
-    const wrap = document.getElementById("wrap");
-
-    if (isMobile()) {
-        document.getElementById("tier_list_container").classList.remove("screenshot_margin");
-        //wrap.style.top = "5px";
-        //wrap.style.bottom = "5px";
-        //wrap.style.right = "5px";
-        //wrap.style.left = "5px";
-    }
-}
-
 function takeScreenshot() {
     try {
         const isTierView = tierView;
@@ -1491,15 +1467,12 @@ function takeScreenshot() {
         const tierListTable = document.getElementById("tier_list_table");
         const positionInfo = tierListTable.getBoundingClientRect();
         const height = positionInfo.height;
-        let width;
+        const width = longestTier() * (isMobile() ? 60 : 120) + parseInt(settings.props[settings.sort].tierHeaderWidth) + 50;
 
-        //if (isMobile()) {
-            //width = positionInfo.width + 25;
-        //} else {
-            width = longestTier() * (isMobile() ? 60 : 120) + parseInt(settings.props[settings.sort].tierHeaderWidth) + 50;
-        //}
+        if (isMobile()) {
+            document.getElementById("tier_list_container").classList.add("screenshot_margin");
+        }
 
-        prepareScreenshot();
         html2canvas(document.body, {
             "width": width,
             "windowWidth": width,
@@ -1518,7 +1491,11 @@ function takeScreenshot() {
             document.getElementById("screenshot_base64").src = base64image;
             document.getElementById("screenshot").style.display = "block";
             document.getElementById("modal").style.display = "block";
-            cleanupScreenshot();
+
+            if (isMobile()) {
+                document.getElementById("tier_list_container").classList.remove("screenshot_margin");
+            }
+
             printMessage("");
 
             if (!isMobile() && !isTierView) {
