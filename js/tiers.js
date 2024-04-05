@@ -1456,6 +1456,9 @@ function longestTier() {
 }
 
 function takeScreenshot() {
+    const BASE = getScreenshotWidth() + 1;
+    const MAX_WIDTH = defaultWidth * BASE + 15;
+
     try {
         const isTierView = tierView;
 
@@ -1466,8 +1469,14 @@ function takeScreenshot() {
         printMessage("<strong class='confirmation'>Girls are being screenshotted, please watch warmly...</strong>");
         const tierListTable = document.getElementById("tier_list_table");
         const positionInfo = tierListTable.getBoundingClientRect();
-        const height = positionInfo.height;
-        const width = longestTier() * (isMobile() ? 60 : 120) + parseInt(settings.props[settings.sort].tierHeaderWidth) + 50;
+        let width = longestTier() * (isMobile() ? 60 : 120) + parseInt(settings.props[settings.sort].tierHeaderWidth) + 50;
+        const diff = Math.floor(width / MAX_WIDTH);
+        width = Math.min(width, MAX_WIDTH);
+        let height = positionInfo.height;
+
+        if (diff > 1) {
+            height += 120 * diff;
+        }
 
         if (isMobile()) {
             document.getElementById("tier_list_container").classList.add("screenshot_margin");
