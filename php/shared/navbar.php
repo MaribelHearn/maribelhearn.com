@@ -1,7 +1,7 @@
 <?php
 function touhou_sites() {
     return '<p><a href="https://en.touhouwiki.net">' .
-    '<span class="icon wiki_icon"></span>Touhou Wiki</a></p>' .
+    '<span class="icon thwiki_icon"></span>Touhou Wiki</a></p>' .
     '<p><a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page">' .
     '<span class="icon thcrap_icon"></span>THPatch</a></p>' .
     '<p><a href="http://replay.lunarcast.net">' .
@@ -54,7 +54,8 @@ function game_pages() {
     '<p><a href="/pofv"><span class="icon pofv_icon"></span>PoFV</a></p>' .
     '<p><a href="/fangame"><span class="icon fangame_icon"></span>Fangame</a></p>' .
     '<p><a href="/faq"><span class="icon faq_icon"></span>FAQ</a></p>' .
-    '<p><a href="/royalflare"><span class="icon royalflare_icon"></span>Royalflare</a></p>';
+    '<p><a href="/royalflare"><span class="icon royalflare_icon"></span>Royalflare</a></p>' .
+    '<p><a href="https://wiki.maribelhearn.com"><span class="icon wiki_icon"></span>Wiki</a></p>';
 }
 
 function other_pages() {

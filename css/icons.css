@@ -109,7 +109,7 @@
 .fangame_icon {
     background-position: -832px 0px;
 }
-.wiki_icon {
+.thwiki_icon {
     background-position: -848px 0px;
 }
 .faq_icon {
@@ -132,4 +132,7 @@
 }
 .zps_icon {
     background-position: -1152px 0px;
+}
+.wiki_icon {
+    background-position: -1168px 0px;
 }

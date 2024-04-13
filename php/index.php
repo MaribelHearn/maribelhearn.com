@@ -114,6 +114,10 @@
                 </li>
             </ul>
         </div>
+        <div>
+            <h2>Danmaku Gameplay Wiki</h2>
+            <p class='wide center'><a href='https://wiki.maribelhearn.com'><span class='icon wiki_icon'></span> The Danmaku Gameplay Wiki</a> is now live! You can browse gameplay knowledge or help out by adding more information.</p>
+        </div>
         <div id='special_thanks'>
             <h2>Special Thanks</h2>
             <p class='wide center'>Many thanks to my awesome supporters for covering server costs!</p>
