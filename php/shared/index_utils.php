@@ -47,10 +47,6 @@ function redirect(string $page, string $page_path, string $error) {
         header('Location: ' . $location . $aliases->{$page} . '?redirect=' . $page);
         return $aliases->{$page};
     }
-    if (!file_exists($page_path) && $page == 'admin' && is_localhost($_SERVER['REMOTE_ADDR'])) {
-        header('Location: http://localhost/admin/admin.php');
-        exit();
-    }
     if (!file_exists($page_path) && $page != 'index' || !empty($error)) {
         $page = 'error';
         $url = substr($_SERVER['REQUEST_URI'], 1);

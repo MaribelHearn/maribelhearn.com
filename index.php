@@ -18,11 +18,12 @@
     if (strpos($page, '/') !== false) {
         $tmp = preg_split('/\//', $page);
         $subpage = $tmp[1];
-        $page = $tmp[0];
-        if ($page == 'royalflare' || $page == 'thvote' || $page == 'faq') {
+        $mainpage = $tmp[0];
+        if ($mainpage == 'royalflare' || $mainpage == 'thvote' || $mainpage == 'faq') {
             if (count($tmp) == 3) {
                 $subpage .= '/' . $tmp[2];
             }
+            $page = $mainpage;
             $_SESSION['subpage'] = $subpage;
         }
     } else {
@@ -41,9 +42,7 @@
     if (!empty($status_code)) {
         http_response_code(intval($status_code));
     }
-    if ($status_code != '404') {
-        hit($page, $status_code);
-    }
+    hit($page, $status_code);
 
     // Set page language
     $lang = set_lang_cookie();
