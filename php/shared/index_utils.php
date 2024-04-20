@@ -81,8 +81,8 @@ function hit(string $filename, string $status_code) {
         if (is_localhost($ip) || !isset($_COOKIE['token']) || $_COOKIE['token'] !== $token) {
             if (file_exists($ip_log) && !in_array($ip, explode(',', file_get_contents($ip_log)))) {
                 exec('nohup php admin/cache.php ' . $ip . ' > /dev/null 2>&1 &');
+                file_put_contents($path . 'ips.log', $ip . ',', LOCK_EX | FILE_APPEND);
             }
-            file_put_contents($path . 'ips.log', $ip . ',', LOCK_EX | FILE_APPEND);
             $page = str_replace('.php', '', $filename);
             if (!empty($status_code)) {
                 $page .= ' ' . $status_code;
