@@ -5,7 +5,7 @@ let seasonsEnabled, datesEnabled, unverifiedEnabled;
 let language = "en_GB";
 let selected = "";
 let missingReplays = "";
-let preferVideo = false;
+let videoEnabled = false;
 
 function getSeason(string) {
     return string.replace("Reimu", "").replace("Cirno", "").replace("Aya", "").replace("Marisa", "");
@@ -34,13 +34,9 @@ function toggleLayout() {
 }
 
 function toggleVideo() {
-    preferVideo = !preferVideo;
-
-    if (preferVideo) {
-        setCookie("prefer_video", true);
-    } else {
-        deleteCookie("prefer_video");
-    }
+    videoEnabled = !videoEnabled;
+    videoEnabled ? setCookie("video_enabled", true) : deleteCookie("video_enabled");
+    reloadTable();
 }
 
 function setRecentLimit(event) {
@@ -368,7 +364,7 @@ function showWRtable(game, records) {
                 } else {
                     replay = replayPath(game, diff, shot);
                 }
-            } else if (!preferVideo && gameAbbr(game) >= 6 && !missingReplays.includes(game + diff + shot)) {
+            } else if (!videoEnabled && gameAbbr(game) >= 6 && !missingReplays.includes(game + diff + shot)) {
                 replay = replayPath(game, diff, shot);
             }
 
@@ -466,6 +462,7 @@ function addPlayerWR(playerWRs, game, diff, shot, isUnverified) {
                 `<td id='${game + diff}s'></td>` +
                 `<td id='${game + diff}t'></td>` +
                 `<td id='${game + diff}r'></td>` +
+                `<td id='${game + diff}v'></td>` +
                 `<td id='${game + diff}d' class='date_empty'></td>` +
                 `</tr>`;
         playerWRs.cats.push(game + diff);
@@ -477,13 +474,12 @@ function addPlayerWR(playerWRs, game, diff, shot, isUnverified) {
             : sep(wr)
     );
     let date = formatDate(WRs[game][diff][shot][2]);
-    let replay = WRs[game][diff][shot][3];
-    let tmp;
+    let video = WRs[game][diff][shot][3];
 
     if (isUnverified) {
         score = formatUnverified(sep(unverifiedScores[game][diff][shot][0]));
         date = formatDate(unverifiedScores[game][diff][shot][2]);
-        replay = "";
+        video = "";
     }
 
     playerWRs.raw.push(wr);
@@ -491,18 +487,17 @@ function addPlayerWR(playerWRs, game, diff, shot, isUnverified) {
     playerWRs.shots.push(_(shot));
     playerWRs.dates.push(`<span class='datestring_player'>${date}</span>`);
 
-    if (preferVideo && replay) {
-        playerWRs.replays.push(`<a href='${replay}' target='_blank'>Video link</a>`);
-    } else if (gameAbbr(game) < 6 || missingReplays.includes(game + diff + shot) || isUnverified) {
-        if (replay) {
-            playerWRs.replays.push(`<a href='${replay}' target='_blank'>Video link</a>`);
-        } else {
-            playerWRs.replays.push('-');
-        }
-    } else {
-        replay = replayPath(game, diff, shot);
-        tmp = replay.split('/');
+    if (gameAbbr(game) > 5 && !missingReplays.includes(game + diff + shot) && !isUnverified) {
+        const replay = replayPath(game, diff, shot);
+        const tmp = replay.split('/');
         playerWRs.replays.push(`<a href='${location.origin}/${replay}'>${tmp[tmp.length - 1]}</a>`);
+    } else {
+        playerWRs.replays.push('-');
+    }
+    if (video) {
+        playerWRs.videos.push(`<a href='${video}' target='_blank'>Video link</a>`);
+    } else {
+        playerWRs.videos.push('-');
     }
 
     return playerWRs;
@@ -520,7 +515,7 @@ function showPlayerWRs(player) {
         return;
     }
 
-    let playerWRs = {"raw": [], "scores": [], "shots": [], "replays": [], "dates": [], "cats": []};
+    let playerWRs = {"raw": [], "scores": [], "shots": [], "replays": [], "videos": [], "dates": [], "cats": []};
     let sum = 0;
     document.getElementById("player_tbody").innerHTML = "";
 
@@ -551,10 +546,12 @@ function showPlayerWRs(player) {
             const scores = document.getElementById(`${game + diff}s`);
             const shots = document.getElementById(`${game + diff}t`);
             const replays = document.getElementById(`${game + diff}r`);
+            const videos = document.getElementById(`${game + diff}v`);
             const dates = document.getElementById(`${game + diff}d`);
             scores.innerHTML = playerWRs.scores.join("<br>");
             shots.innerHTML = playerWRs.shots.join("<br>");
             replays.innerHTML = playerWRs.replays.join("<br>");
+            videos.innerHTML = playerWRs.videos.join("<br>");
             dates.innerHTML = playerWRs.dates.join("<br>");
             playerWRs.raw = [];
             playerWRs.scores = [];
@@ -620,7 +617,6 @@ function setLanguage(event) {
 function setEventListeners() {
     document.body.addEventListener("resize", updateOrientation, false);
     document.getElementById("toggle_layout").addEventListener("click", toggleLayout, false);
-    document.getElementById("toggle_video").addEventListener("click", toggleVideo, false);
     document.getElementById("recent_limit").addEventListener("keyup", setRecentLimit, false);
     document.getElementById("recent_limit").addEventListener("mouseup", setRecentLimit, false);
     document.getElementById("save_changes").addEventListener("click", saveChanges, false);
@@ -638,6 +634,7 @@ function setEventListeners() {
     document.getElementById("dates").addEventListener("click", toggleDates, false);
     document.getElementById("seasons").addEventListener("click", toggleSeasons, false);
     document.getElementById("unverified").addEventListener("click", toggleUnverified, false);
+    document.getElementById("toggle_video").addEventListener("click", toggleVideo, false);
     const gameImg = document.querySelectorAll(".game_img");
 
     for (const element of gameImg) {
@@ -712,10 +709,10 @@ function init() {
     missingReplaysElement.parentNode.removeChild(missingReplaysElement);
     setEventListeners();
     setAttributes();
-    
+
     if (getCookie("prefer_video")) {
-        preferVideo = Boolean(getCookie("prefer_video"));
-        document.getElementById("toggle_video").checked = preferVideo;
+        videoEnabled = Boolean(getCookie("prefer_video"));
+        document.getElementById("toggle_video").checked = videoEnabled;
     }
 
     if (!datesEnabled) {

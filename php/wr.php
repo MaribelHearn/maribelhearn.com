@@ -209,9 +209,6 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
             <input id='dates' type='checkbox'>
 	        <label for='dates'><?php echo _('Dates') ?></label>
         </p><p>
-            <input id='toggle_video' type='checkbox'>
-            <label for='toggle_video'><?php echo _('Show videos over replays') ?></label>
-        </p><p>
             <label for='recent_limit'><?php echo _('Number of Recent Records') ?></label>
             <input id='recent_limit' type='number' value='<?php echo (isset($_COOKIE['recent_limit']) ? $_COOKIE['recent_limit'] : 15) ?>' min=1>
         </p><p>
@@ -229,8 +226,9 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
                     <th class='general_header'><?php echo _('Player') ?></th>
                     <th class='general_header'><?php echo _('Difficulty') ?></th>
                     <th class='general_header'><?php echo _('Shottype') ?></th>
-                    <th class='general_header date'><?php echo _('Date') ?></th>
                     <th class='general_header'><?php echo _('Replay') ?></th>
+                    <th class='general_header'><?php echo _('Video') ?></th>
+                    <th class='general_header date'><?php echo _('Date') ?></th>
                 </tr>
             </thead>
             <tbody><?php
@@ -247,18 +245,20 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
                     echo '<td id="' . $game . 'overall1">' . ($overall[$num] == 0 ? '-' : $overall_player[$num]) . '</td>';
 					echo '<td id="' . $game . 'overall2">' . ($overall[$num] == 0 ? '-' : $overall_diff[$num]) . '</td>';
 					echo '<td id="' . $game . 'overall3">' . ($overall[$num] == 0 ? '-' : _($overall_shottype[$num])) . '</td>';
-					echo '<td id="' . $game . 'overall4" class="datestring" data-sort="' . date_tl($overall_date[$num], 'raw') . '">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $lang)) . '</td>';
-                    if (isset($_COOKIE['prefer_video']) && !empty($overall_video[$num])) {
-						$replay = '<a href="' . $overall_video[$num] . '" target="_blank">Video link</a>';
-					} else if (file_exists(replay_path($game, $overall_diff[$num], $overall_shottype[$num]))) {
+                    if (!empty($overall_video[$num])) {
+						$video = '<a href="' . $overall_video[$num] . '" target="_blank">Video link</a>';
+					} else {
+                        $video = '-';
+                    }
+                    if (file_exists(replay_path($game, $overall_diff[$num], $overall_shottype[$num]))) {
                         $path = replay_path($game, $overall_diff[$num], $overall_shottype[$num]);
                         $replay = '<a href="' . $path . '">' . substr($path, 8) . '</a>';
-                    } else if (!empty($overall_video[$num])) {
-                        $replay = '<a href="' . $overall_video[$num] . '" target="_blank">Video link</a>';
                     } else {
                         $replay = '-';
                     }
-					echo '<td id="' . $game . 'overall5">' . $replay . '</td></tr>';
+					echo '<td id="' . $game . 'overall4">' . $replay . '</td>';
+					echo '<td id="' . $game . 'overall5">' . $video . '</td>';
+					echo '<td id="' . $game . 'overall6" class="datestring" data-sort="' . date_tl($overall_date[$num], 'raw') . '">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $lang)) . '</td></tr>';
 				}
 			?></tbody>
         </table>
@@ -446,7 +446,10 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
         </section>
         <section id='toggle_unverified'>
             <input id='unverified' type='checkbox'>
-            <label id='label_unverified' for='unverified' class='unverified'><?php echo _('Unverified Scores') ?></label>
+            <label id='label_unverified' for='unverified' class='unverified'><?php echo _('Unverified scores') ?></label>
+            <br>
+            <input id='toggle_video' type='checkbox'>
+            <label id='label_video' for='toggle_video'><?php echo _('Link videos over replays') ?></label>
         </section>
         <table id='world' class='sortable'>
             <thead id='world_thead'></thead>
@@ -489,17 +492,18 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
                     <th class='general_header'><?php echo _('Score') ?></th>
                     <th class='general_header'><?php echo _('Shottype') ?></th>
                     <th class='general_header'><?php echo _('Replay') ?></th>
+                    <th class='general_header'><?php echo _('Video') ?></th>
                     <th class='general_header datestring'><?php echo _('Date') ?></th>
                 </tr>
             </thead>
 			<tbody id='player_tbody'></tbody>
 			<tfoot id='player_tfoot'>
                 <tr>
-                    <td colspan='5'></td>
+                    <td colspan='6'></td>
                 </tr>
                 <tr class='irregular_tr'>
                     <td><?php echo _('Total') ?></td>
-                    <td id='player_sum' colspan='4'></td>
+                    <td id='player_sum' colspan='5'></td>
                 </tr>
             </tfoot>
 		</table>
@@ -512,20 +516,22 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
                 <th class='general_header'><?php echo _('Score') ?></th>
                 <th class='general_header'><?php echo _('Player') ?></th>
                 <th class='general_header'><?php echo _('Replay') ?></th>
+                <th class='general_header'><?php echo _('Video') ?></th>
                 <th class='general_header datestring'><?php echo _('Date') ?></th>
             </tr></thead>
             <tbody id='recentbody'><?php
                 $i = 0;
                 foreach ($recent as $key => $obj) {
-                    if (isset($_COOKIE['prefer_video']) && !empty($obj->video)) {
-                        $replay = '<a href="' . $obj->video . '" target="_blank">Video link</a>';
-                    } else if (file_exists(replay_path($obj->game, $obj->diff, $obj->shot))) {
+                    if (file_exists(replay_path($obj->game, $obj->diff, $obj->shot))) {
                         $path = replay_path($obj->game, $obj->diff, $obj->shot);
                         $replay = '<a href="' . $path . '">' . substr($path, 8) . '</a>';
-                    } else if (!empty($obj->video)) {
-						$replay = '<a href="' . $obj->video . '" target="_blank">Video link</a>';
-					} else {
-                        $replay = '-';
+                    } else {
+						$replay = '-';
+                    }
+                    if (!empty($obj->video)) {
+                        $video = '<a href="' . $obj->video . '" target="_blank">Video link</a>';
+                    } else {
+                        $video = '-';
                     }
                     $space = (has_space($lang) ? ' ' : '');
                     echo '<tr>' .
@@ -533,6 +539,7 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
                     '<td data-sort="' . $obj->score . '">' . number_format($obj->score, 0, '.', ',') . '</td>' .
                     '<td>' . $obj->player . '</td>' .
                     '<td>' . $replay . '</td>' .
+                    '<td>' . $video . '</td>' .
                     '<td class="datestring" data-sort="' . date_tl($obj->date, 'raw') . '">' . date_tl($obj->date, $lang) . '</td>' .
                     '</tr>';
                     $i++;
