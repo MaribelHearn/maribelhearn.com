@@ -93,10 +93,6 @@ function hit(string $filename, string $status_code) {
                 $stats[$page]->hits = 1;
                 $stats[$page]->ips = (object) array();
                 $stats[$page]->ips->{$ip} = 1;
-                if (!empty($status_code)) {
-                    $stats[$page]->urls = (object) array();
-                    $stats[$page]->urls->{$url} = 1;
-                }
                 $file = fopen($hitcount, 'w');
                 if (flock($file, LOCK_EX)) {
                     fwrite($file, json_encode($stats));
@@ -117,33 +113,11 @@ function hit(string $filename, string $status_code) {
                         } else {
                             $stats[$page]->ips->{$ip} = 1;
                         }
-                        if (!empty($status_code)) {
-                            if (!property_exists($stats[$page], 'urls')) {
-                                $stats[$page]->urls = (object) array();
-                            }
-                            $stats[$page]->urls = (object) $stats[$page]->urls;
-                            if (property_exists($stats[$page]->urls, $url)) {
-                                $stats[$page]->urls->{$url} += 1;
-                            } else {
-                                $stats[$page]->urls->{$url} = 1;
-                            }
-                        }
                     } else {
                         $stats[$page] = (object) array();
                         $stats[$page]->hits = 1;
                         $stats[$page]->ips = (object) array();
                         $stats[$page]->ips->{$ip} = 1;
-                        if (!empty($status_code)) {
-                            if (!property_exists($stats[$page], 'urls')) {
-                                $stats[$page]->urls = (object) array();
-                            }
-                            $stats[$page]->urls = (object) $stats[$page]->urls;
-                            if (property_exists($stats[$page]->urls, $url)) {
-                                $stats[$page]->urls->{$url} += 1;
-                            } else {
-                                $stats[$page]->urls->{$url} = 1;
-                            }
-                        }
                     }
                     ftruncate($file, 0);
                     rewind($file);
