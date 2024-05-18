@@ -27,7 +27,7 @@
     </ul>
     <h3><span class='icon flag_russia'></span> <?php echo _('Russian') ?></h3>
     <ul class='credits'>
-        <li><a href='https://www.youtube.com/channel/UC7QqmWFA-hAyrP5C1c2b-Iw' target='_blank'>KVS</a>: Tools, WR, LNN</li>
+        <li><a href='https://www.youtube.com/channel/UCNPSmt1Jpm-SbyrhlIWhmUw' target='_blank'>Acaride</a>: Tools, WR, LNN</li>
     </ul>
     <h3><span class='icon flag_germany'></span> <?php echo _('German') ?></h3>
     <ul class='credits'>
