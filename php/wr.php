@@ -246,7 +246,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
                         echo '<td id="' . $game . 'overall3">' . ($wr['score'] == 0 ? '-' : _($wr['category']['shot'])) . '</td>';
                         if (!empty($wr['replay'])) {
                             $chunks = preg_split('/\//', $wr['replay']);
-                            $replay = '<a href="' . $wr['replay'] . '">' . $chunks[count($chunks) - 1] . '</a>';
+                            $replay = '<a href="' . str_replace('/replays', '/media/replays', $wr['replay']) . '">' . $chunks[count($chunks) - 1] . '</a>';
                         } else {
                             $replay = '-';
                         }
@@ -541,7 +541,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
                             $replay = '-';
                         } else {
                             $chunks = preg_split('/\//', $data['replay']);
-                            $replay = '<a href="' . $data['replay'] . '">' . $chunks[count($chunks) - 1] . '</a>';
+                            $replay = '<a href="' . str_replace('/replays', '/media/replays', $data['replay']) . '">' . $chunks[count($chunks) - 1] . '</a>';
                         }
                         if (empty($data['video'])) {
                             $video = '-';
