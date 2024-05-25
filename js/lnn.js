@@ -150,12 +150,12 @@ function showLNNtable(game, LNNs) {
 
     document.getElementById(`${currentShot}${currentRoute}n`).innerHTML = shotCount;
 
-    if (game == "UDoALG") {
+    /*if (game == "UDoALG") {
         for (const chara of banList) {
             document.getElementById(chara).innerHTML = '-';
             document.getElementById(`${chara}n`).innerHTML = '-';
         }
-    }
+    }*/
 
     players.sort();
     const total = document.getElementById("total");
