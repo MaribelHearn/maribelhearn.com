@@ -341,7 +341,7 @@ function showWRtable(game, records) {
         }
 
         if (data.replay) {
-            text = `<a class='replay' href='${data.replay}'>${text}<span class='dl_icon'></span></a>`;
+            text = `<a class='replay' href='${data.replay.replace("/replays", "/media/replays")}'>${text}<span class='dl_icon'></span></a>`;
         }
 
         text += `<br>by <em>${player}</em>`;
