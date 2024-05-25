@@ -1,7 +1,7 @@
 <?php
-include_once 'php/shared/http.php';
+global $API_BASE;
 $id = 0;
-$games = curl_get('http://localhost/api/v1/game/');
+$games = curl_get($API_BASE . '/api/v1/game/');
 if ($games === false || strpos($games, 'Internal Server Error') !== false) {
 	die('Download failed!');
 }
