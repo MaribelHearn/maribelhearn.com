@@ -283,10 +283,15 @@ function getWesternRecords(game, overalls) {
 }
 
 function getWRs(game) {
+    const gameImg = document.querySelectorAll(".game_img");
     let verification = "";
 
     if (!unverifiedEnabled) {
         verification = "&verified=true";
+    }
+
+    for (const element of gameImg) {
+        element.removeEventListener("click", showWRs);
     }
 
     const xhr = new XMLHttpRequest();
@@ -299,6 +304,10 @@ function getWRs(game) {
                 showWRtable(game, records);
                 const overalls = highlightBests(game, records);
                 getWesternRecords(game, overalls);
+            
+                for (const element of gameImg) {
+                    element.addEventListener("click", showWRs, false);
+                }
             }
         }
     }

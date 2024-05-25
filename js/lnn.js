@@ -63,6 +63,12 @@ function prepareShowLNNs(game) {
 }
 
 function getLNNs(game) {
+    const gameImg = document.querySelectorAll(".game_img");
+
+    for (const element of gameImg) {
+        element.removeEventListener("click", showLNNs);
+    }
+
     const xhr = new XMLHttpRequest();
     xhr.open('GET', `${API_BASE}/api/v1/replay/?type=LNN&game=${game}`);
     xhr.onreadystatechange = function () {
@@ -70,6 +76,10 @@ function getLNNs(game) {
             if (this.status === 200) {
                 const LNNs = JSON.parse(this.response);
                 showLNNtable(game, LNNs);
+            
+                for (const element of gameImg) {
+                    element.addEventListener("click", showLNNs, false);
+                }
             }
         }
     }
