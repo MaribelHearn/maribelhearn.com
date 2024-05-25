@@ -1,10 +1,9 @@
-/*global _ LNNs getCookie deleteCookie setCookie gameAbbr shottypeAbbr fullNameNumber*/
-const alphaNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+/*global _ getCookie deleteCookie setCookie fullNameNumber*/
+const API_BASE = location.hostname.includes("maribelhearn.com") ? "https://maribelhearn.com" : "http://localhost";
 const banList = ["Reimu", "Marisa", "Sanae", "Seiran", "Biten", "Enoko", "Chiyari"];
 let language = "en_GB";
 let selected = "";
-//let dateLimit = "";
-let missingReplays, videoLNNs;
+let shots = {};
 
 function toggleLayout() {
     if (getCookie("lnn_old_layout")) {
@@ -45,28 +44,6 @@ function shotRoute(game) {
     return game == "HRtP" || game == "GFW" ? _("Route") : _("Shottype");
 }
 
-function replayPath(game, player, character, type) {
-    const folder = player.removeSpaces();
-    let first = player.charAt(0);
-    let last = player.charAt(player.length - 1);
-    player = player.replace(/[^0-9a-z]/gi, "");
-
-    if (!/[0-9a-z]/gi.test(player)) {
-        first = alphaNums.charAt(folder.length - 1);
-
-        if (first == last) {
-            last = (type !== "" ? type.charAt(type.length - 1) : alphaNums.charAt(folder.length - 1));
-        } else {
-            last = (type !== "" ? type.charAt(type.length - 1) : alphaNums.charAt(folder.length));
-        }
-    } else {
-        first = player.charAt(0);
-        last = (type !== "" ? type.charAt(type.length - 1) : player.charAt(player.length - 1));
-    }
-
-    return `replays/lnn/${folder}/th${gameAbbr(game)}_ud${first + last + shottypeAbbr(character)}.rpy`;
-}
-
 function prepareShowLNNs(game) {
     if (selected !== "") {
         const selectedImg = document.getElementById(`${selected}_image`);
@@ -85,61 +62,83 @@ function prepareShowLNNs(game) {
     document.getElementById("lnn_tbody").innerHTML = "";
 }
 
-function showLNNtable(game) {
+function getLNNs(game) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `${API_BASE}/api/v1/replay/?type=LNN&game=${game}`);
+    xhr.onreadystatechange = function () {
+        if (this.readyState === 4) {
+            if (this.status === 200) {
+                const LNNs = JSON.parse(this.response);
+                showLNNtable(game, LNNs);
+            }
+        }
+    }
+
+    xhr.send();
+}
+
+function showLNNtable(game, LNNs) {
     const lnnTable = document.getElementById("lnn_tbody");
     let players = [];
     let gameCount = 0;
+    let shotCount = 0;
+    let currentShot = "";
+    let currentRoute = "";
 
-    for (const shot in LNNs[game]) {
-        if (shot.includes("UFOs")) {
-            continue;
-        }
+    for (const lnn of LNNs) {
+        const player = lnn.player;
+        const shot = lnn.category.shot;
+        let route = lnn.category.route;
 
         let shotPlayers = [];
-        let shotCount = 0;
 
-        if (game == "IN" || game == "HSiFS") {
-            const character = shot.slice(0, -6);
-            const type = shot.slice(-6);
-            lnnTable.innerHTML += `<tr><td class='nowrap'><span class='${character}'>${_(character)}</span>` +
-                    `<span class='${type}'>${_(type)}</span></td><td id='${shot}n'></td><td id='${shot}'></td>`;
-        } else {
-            lnnTable.innerHTML += `<tr><td class='nowrap'>${_(shot)}</td><td id='${shot}n'></td><td id='${shot}'></td>`;
+        let chara = shot;
+
+        if (game == "HSiFS") {
+            const tmp = shot.slice(0, -6);
+            route = shot.replace(tmp, "");
+            chara = tmp;
         }
 
-        for (const player in LNNs[game][shot]) {
-            shotPlayers.push(player);
-            players.pushStrict(player);
-            shotCount += 1;
-            gameCount += 1;
-        }
-
-        if (game == "UFO") {
-            for (const player in LNNs[game][shot + "UFOs"]) {
-                shotPlayers.pushStrict(player + " (UFOs)");
-                players.pushStrict(player);
-                shotCount += 1;
-                gameCount += 1;
+        if (currentShot != shot || game != "UFO" && currentRoute != route) {
+            if (currentShot !== "") {
+                document.getElementById(`${currentShot}${currentRoute}n`).innerHTML = shotCount;
+                shotCount = 0;
             }
+
+            if (game == "IN" || game == "HSiFS") {
+                currentRoute = route;
+                lnnTable.innerHTML += `<tr><td class='nowrap'><span class='${chara}'>${_(chara)}</span>` +
+                        `<span class='${route}'>${_(route)}</span></td><td id='${shot}${route}n'></td><td id='${shot}${route}'></td>`;
+            } else {
+                lnnTable.innerHTML += `<tr><td class='nowrap'>${_(shot)}</td><td id='${shot}n'></td><td id='${shot}'></td>`;
+            }
+
+            currentShot = shot;
         }
+
+        shotPlayers.push(player);
+        players.pushStrict(player);
+        shotCount += 1;
+        gameCount += 1;
 
         shotPlayers.sort();
-        document.getElementById(`${shot}n`).innerHTML = shotCount;
-
-        if (shotCount === 0) {
-            continue;
-        }
-
-        const shotElement = document.getElementById(`${shot}`);
+        const shotElement = document.getElementById(`${shot}${currentRoute}`);
 
         for (const shotPlayer of shotPlayers) {
             shotElement.innerHTML += `, ${shotPlayer}`;
+            
+            if (route == "UFOs") {
+                shotElement.innerHTML += " (UFOs)";
+            }
         }
 
         if (shotElement.innerHTML.substring(0, 2) == ", ") {
             shotElement.innerHTML = shotElement.innerHTML.replace(", ", "");
         }
     }
+
+    document.getElementById(`${currentShot}${currentRoute}n`).innerHTML = shotCount;
 
     if (game == "UDoALG") {
         for (const chara of banList) {
@@ -165,7 +164,7 @@ function showLNNs() { // .game_img onclick
 
     if (game != selected) {
         prepareShowLNNs(game);
-        showLNNtable(game);
+        getLNNs(game);
         document.getElementById("lnn_list").style.display = "block";
     } else {
         const gameImg = document.getElementById(`${game}_image`);
@@ -185,125 +184,118 @@ function formatDate(date) {
     }
 }
 
-function getPlayerGameLNNs(player, game) {
-    let result = { "runs": [], "replays": [], "videos": [], "shots": [], "dates": [], "earliest": new Date("9999/12/31") };
-
-    for (const shot in LNNs[game]) {
-        if (LNNs[game][shot].hasOwnProperty(player)) {
-            const character = shot.replace(/(FinalA|FinalB|UFOs)/g, "");
-            const type = shot.replace(character, "");
-            let date = LNNs[game][shot][player];
-            
-            if (date=== "") {
-                date = '-';
-            } else {
-                date = new Date(LNNs[game][shot][player].split('/').reverse().join('/'));
-            }
-
-            result.runs.push(_(character) + (type === "" ? "" : ` (${_(type)})`));
-
-            if (date !== "") {
-                result.dates.push(formatDate(date));
-
-                if (date < result.earliest) {
-                    result.earliest = date;
-                }
-            }
-
-            if (videoLNNs.hasOwnProperty(game + shot + player.removeSpaces())) {
-                result.videos.push(`<a href='${videoLNNs[game + shot + player.removeSpaces()]}' target='_blank'>Video link</a>`);
-            } else {
-                result.videos.push('-');
-            }
-
-            if (gameAbbr(game) < 6 || missingReplays.includes(game + shot + player.removeSpaces())) {
-                result.replays.push('-');
-            } else {
-                const replay = replayPath(game, player, character, type);
-                const replayArray = replay.split('/');
-                result.replays.push(`<a href='${location.origin}/${replay}'>${replayArray[replayArray.length - 1]}</a>`);
-            }
-
-            result.shots.pushStrict(shot.replace("UFOs", ""));
-
-            if (result.dates.length > 1) {
-                for (let i = 0; i < result.dates.length; i++) {
-                    if (result.dates[i] == formatDate(result.earliest)) {
-                        result.dates[i] = `<em>${result.dates[i]}</em>`;
-                    }
-                }
-            }
-        }
-    }
-
-    return result;
-}
-
 function setPlayer(event) {
     const player = event.target.value;
     document.getElementById("player").value = player;
-    showPlayerLNNs(player);
+    getPlayerLNNs(player);
 }
 
-function showPlayerLNNs(player) {
+function showPlayerLNNs(player, LNNs) {
     const playerList = document.getElementById("player_list");
-
-    if (typeof player == "object") {
-        player = this.value; // if event listener fired
-    }
 
     if (player === "") {
         playerList.style.display = "none";
         return;
     }
 
-    let games = [];
-    let sum = 0;
+    let numberOfLNNs = 0;
+    let currentGame = "";
+    let first;
     const playerTable = document.getElementById("player_tbody");
     playerTable.innerHTML = "";
 
-    for (const game in LNNs) {
-        if (game == "LM") {
-            continue;
-        }
+    for (const data of LNNs) {
+        const game = data.category.game;
+        let replay, video, date;
 
-        const playerLNNs = getPlayerGameLNNs(player, game);
-        const max = (game == "UFO" ? 6 : Object.keys(LNNs[game]).length);
-
-        if (playerLNNs.runs.length > 0) {
-            games.push(game);
-            sum += playerLNNs.runs.length;
-            playerTable.innerHTML += `<tr><td id='${game}l' class='${game}'>${_(game)}</td><td id='${game}s'></td><td id='${game}r'></td><td id='${game}v'></td><td id='${game}d'></td></tr>`;
-            document.getElementById(`${game}s`).innerHTML = playerLNNs.runs.join("<br>");
-            document.getElementById(`${game}r`).innerHTML = playerLNNs.replays.join("<br>");
-            document.getElementById(`${game}v`).innerHTML = playerLNNs.videos.join("<br>");
-            document.getElementById(`${game}d`).innerHTML = playerLNNs.dates.join("<br>");
-
-            if (playerLNNs.dates.length > 0) {
-                document.getElementById(`${game}d`).setAttribute("data-sort", playerLNNs.earliest.toISOString().split("T")[0].replace(/-/g, ""));
+        if (currentGame != game) {
+            if (currentGame !== "") {
+                document.getElementById(`${currentGame}d`).setAttribute("data-sort", first.toISOString().split("T")[0].replace(/-/g, ""));
             }
+
+            currentGame = game;
+            playerTable.innerHTML += `<tr><td id='${game}l' class='${game}'>${_(game)}</td><td id='${game}s'></td><td id='${game}r'></td><td id='${game}v'></td><td id='${game}d'></td></tr>`;
+            first = new Date("9999/12/31");
         }
+
+        if (!data.replay) {
+            replay = '-';
+        } else {
+            replay = `<a href='${data.replay}'>${data.replay.split('/')[data.replay.split('/').length - 1]}</a>`;
+        }
+
+        if (!data.video) {
+            video = '-';
+        } else {
+            video = `<a href='${data.video}'>Video link</a>`;
+        }
+
+        if (new Date(data.date) < first) {
+            first = new Date(data.date);
+        }
+
+        date = formatDate(new Date(data.date));
+
+        if (date == "01/01/1970") {
+            date = _("Unknown");
+        }
+
+
+        document.getElementById(`${game}s`).innerHTML += _(data.category.shot);
+
+        if (game == "IN") {
+            document.getElementById(`${game}s`).innerHTML += `<span class='${data.category.route}'>${_(data.category.route)}</span>`;
+        }
+
+        if (game == "UFO" && data.category.route == "UFOs") {
+            document.getElementById(`${game}s`).innerHTML += " (UFOs)";
+        }
+
+        document.getElementById(`${game}s`).innerHTML += "<br>";
+        document.getElementById(`${game}r`).innerHTML += replay + "<br>";
+        document.getElementById(`${game}v`).innerHTML += video + "<br>";
+        document.getElementById(`${game}d`).innerHTML += date + "<br>";
+        numberOfLNNs += 1;
 
         const lnnShots = document.getElementById(`${game}l`);
 
-        if (playerLNNs.shots.length == max) {
+        if (shots[game] && document.getElementById(`${game}s`).children.length == shots[game].length) {
             lnnShots.innerHTML += `<br><strong>${_("(All)")}</strong>`;
         }
     }
 
-    if (sum === 0) {
+    if (numberOfLNNs === 0) {
         playerList.style.display = "none";
         return;
     }
 
-    document.getElementById("player_sum").innerHTML = sum;
+    document.getElementById("player_sum").innerHTML = numberOfLNNs;
     playerList.style.display = "block";
+}
+
+function getPlayerLNNs(player) {
+    if (typeof player == "object") {
+        player = this.value; // if event listener fired
+    }
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=game&player=${encodeURIComponent(player)}&type=LNN`);
+    xhr.onreadystatechange = function () {
+        if (this.readyState === 4) {
+            if (this.status === 200) {
+                const LNNs = JSON.parse(this.response);
+                showPlayerLNNs(player, LNNs);
+            }
+        }
+    }
+
+    xhr.send();
 }
 
 function detectEnter(event) {
     if (event.key && event.key == "Enter") {
         const player = event.target.value;
-        showPlayerLNNs(player);
+        getPlayerLNNs(player);
     }
 }
 
@@ -360,18 +352,6 @@ function setAttributes() {
     }
 }
 
-function parseVideos() {
-    const videos = document.getElementById("videos").value.split(',');
-    let result = {};
-
-    for (let video of videos) {
-        video = video.split(';');
-        result[video[0]] = video[1];
-    }
-
-    return result;
-}
-
 function checkHash() {
     // player in hash links to player LNNs
     if (location.hash !== "") {
@@ -384,33 +364,12 @@ function checkHash() {
             if (hash == player) {
                 document.getElementById("player").value = player;
                 document.getElementById("player_search").scrollIntoView();
-                showPlayerLNNs(player);
+                getPlayerLNNs(player);
                 break;
             }
         }
     }
 }
-
-/*function checkDateLimit() {
-    if (!document.location.search) {
-        return;
-    }
-
-    const queryString = document.location.search;
-    const parts = queryString.split("=");
-    const query = parts[0];
-    const date = parts[1];
-
-    if (query != "?date") {
-        return;
-    }
-
-    if (!/[0-9]{2}-[0-9]{2}-[0-9]{4}/.test(date)) {
-        return;
-    }
-
-    dateLimit = date;
-}*/
 
 function init() {
     if (getCookie("lang") == "ja_JP" || location.href.includes("?hl=jp")) {
@@ -429,8 +388,6 @@ function init() {
 
     setEventListeners();
     setAttributes();
-    videoLNNs = parseVideos();
-    missingReplays = document.getElementById("missing_replays").value;
 
     // legacy video toggle
     if (getCookie("prefer_video")) {
@@ -439,12 +396,19 @@ function init() {
 
     const player = document.getElementById("player").value;
 
+    try {
+        shots = JSON.parse(document.getElementById("shots").value);
+        shots.HSiFS.remove(["Reimu", "Cirno", "Aya", "Marisa"]);
+    } catch (err) {
+        // do nothing
+    }    
+
     if (player !== "") {
-        showPlayerLNNs(player);
+        getPlayerLNNs(player);
     }
 
     checkHash();
-    //checkDateLimit();
+    document.getElementById("number_of_lnns").click();
 }
 
 window.addEventListener("DOMContentLoaded", init, false);

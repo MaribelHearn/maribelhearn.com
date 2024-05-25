@@ -1,13 +1,5 @@
 <?php
-$json = file_get_contents('json/defaults_scoring.json');
-$wr = json_decode($json, true);
-$games = ['HRtP', 'SoEW', 'PoDD', 'LLS', 'MS', 'EoSD', 'PCB', 'IN', 'PoFV',
-'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC', 'UM'];
-$diffs = ['Easy', 'Normal', 'Hard', 'Lunatic', 'Extra'];
-
-function no_extra(string $game) {
-    return in_array($game, ['HRtP', 'PoDD', 'GFW']);
-}
+include_once 'php/shared/http.php';
 ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
@@ -19,12 +11,16 @@ function no_extra(string $game) {
     <h2>Contents</h2>
     <div class='contents'>
 		<?php
-			foreach ($games as $key => $game) {
-				echo '<p><a href="#' . $game . '">' . full_name($game) . '</a></p>';
-				if ($game == 'MS') {
-					echo '<p class="wide-top"> </p>';
-				}
-			}
+            $games = curl_get('http://localhost/api/v1/game/');
+            if (strpos($games, 'Internal Server Error') === false) {
+                $games = json_decode($games, true);
+                foreach ($games as $key => $data) {
+                    if ($data['short_name'] == 'UDoALG') {
+                        continue;
+                    }
+                    echo '<p><a href="#' . $data['short_name'] . '">' . $data['full_name'] . '</a></p>';
+                }
+            }
 		?>
     </div>
     <table id='checkboxes'>
@@ -112,48 +108,62 @@ function no_extra(string $game) {
         </tfoot>
     </table>
     <form><?php
-		foreach ($games as $key => $game) {
-			echo '<div id="' . $game . '"><table class="noborders"><caption><p><span id="' . $game . '_image" ' .
-			'class="cover ' . ($key < 5 ? ' cover98' : '') . '"></span> ' . full_name($game) .
-			'</p></caption><tr><th>Route</th>';
-			foreach ($diffs as $key => $diff) {
-				if (no_extra($game) && $diff == 'Extra') {
-					break;
-				}
-				echo '<th>' . $diff . '</th>';
-				if ($game == 'PCB' && $diff == 'Extra') {
-					echo '<th>Phantasm</th>';
-				}
-			}
-			foreach ($wr[$game]['Easy'] as $shot => $value) {
-				echo '<tr><td>' . $shot . '</td>';
-				foreach ($diffs as $key => $diff) {
-					if (no_extra($game) && $diff == 'Extra') {
-						break;
-					}
-					if ($game == 'HSiFS' && $diff == 'Extra' && substr($shot, -6) != 'Spring') {
-						echo '<td></td>';
-						continue;
-					} else if ($game == 'HSiFS' && $diff == 'Extra') {
-						$shot = substr($shot, 0, -6);
-					}
-					echo '<td' . ($diff == 'Hard' || $diff == 'Extra' ? ' class="break"' : '') .
-					'><label for="' . $game . $diff . $shot . '" class="label">' . $diff .
-					'</label><input id="' . $game . $diff . $shot . '" type="text"></td>';
-					if ($game == 'PCB' && $diff == 'Extra') {
-						$diff = 'Phantasm';
-						echo '<td><label for="' . $game . $diff . $shot . '" class="label">' . $diff .
-						'</label><input id="' . $game . $diff . $shot . '" type="text"></td>';
-					}
-				}
-				echo '</tr>';
-			}
-			if ($game == 'GFW') {
-				echo '<tr><td><label for="GFWExtra-">Extra</label></td>' .
-				'<td id="GFWExtra" colspan="4"><input id="GFWExtra-" type="text"></td></tr>';
-			}
-			echo '</table></div>';
-		}
+        if (gettype($games) != 'string' || strpos($games, 'Internal Server Error') === false) {
+            foreach ($games as $key => $data) {
+                $game = $data['short_name'];
+                if ($game == 'UDoALG') {
+                    continue;
+                }
+                echo '<div id="' . $game . '"><table class="noborders"><caption><p><span id="' . $game . '_image" ' .
+                'class="cover ' . ($data['number'] <= 5 ? ' cover98' : '') . '"></span> ' . $data['full_name'] .
+                '</p></caption><tr><th>' . shot_route($game) . '</th>';
+                $categories = $data['shots'][0]['categories'];
+                foreach ($categories as $key => $category_data) {
+                    if ($category_data['type'] == 'LNN') {
+                        continue;
+                    }
+                    $diff = $category_data['difficulty'];
+                    if ($game == 'GFW' && $diff == 'Extra') {
+                        continue;
+                    }
+                    echo '<th>' . $diff . '</th>';
+                }
+                if ($game == 'HSiFS') {
+                    echo '<th>Extra</th>';
+                }
+                echo '</tr>';
+                foreach ($data['shots'] as $key => $shot_data) {
+                    $shot = $shot_data['name'];
+                    if ($game == 'HSiFS' && strlen($shot) <= 6) {
+                        continue;
+                    }
+                    echo '<tr><td>' . $shot . '</td>';
+                    foreach ($shot_data['categories'] as $key => $category_data) {
+                        if ($category_data['type'] == 'LNN') {
+                            continue;
+                        }
+                        $diff = $category_data['difficulty'];
+                        if (($game == 'GFW' || $game == 'HSiFS') && $diff == 'Extra') {
+                            continue;
+                        }
+                        $shot = str_replace(' ', '', $shot);
+                        echo '<td' . ($diff == 'Hard' || $diff == 'Extra' ? ' class="break"' : '') . '>' .
+                        '<label for="' . $game . $diff . $shot . '" class="label">' . $diff . '</label>' .
+                        '<input id="' . $game . $diff . $shot . '" type="text"></td>';
+                        if ($game == 'HSiFS' && $diff == 'Lunatic' && strpos($shot, 'Spring') !== false) {
+                            $shot = str_replace('Spring', '', $shot);
+                            echo '<td class="break"><label for="' . $game . 'Extra' . $shot . '" class="label">Extra</label>' .
+                            '<input id="' . $game . 'Extra' . $shot . '" type="text"></td>';
+                        }
+                    }
+                    echo '</tr>';
+                }
+                if ($game == 'GFW') {
+                    echo '<tr><td><label for="GFWExtra-">Extra</label></td><td id="GFWExtra" colspan="4"><input id="GFWExtra-" type="text"></td></tr>';
+                }
+                echo '</table></div>';
+            }
+        }
 	    ?>
         <section>
             <label for='precision'>Number of decimals:</label>

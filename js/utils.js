@@ -27,6 +27,26 @@ Object.defineProperty(Array.prototype, "pushStrict", {
     }
 });
 
+Object.defineProperty(Array.prototype, "remove", {
+    configurable: true,
+    enumerable: false,
+    value: function (value) {
+        if (typeof value === "object") {
+            for (const item of value) {
+                if (this.indexOf(item) != -1) {
+                    this.splice(this.indexOf(item), 1);
+                }
+            }
+
+            return;
+        }
+
+        if (this.indexOf(value) != -1) {
+            this.splice(this.indexOf(value), 1);
+        }
+    }
+});
+
 function _(text) {
     if (!["/drc", "/lnn", "/wr"].includes(location.pathname)) {
         return text;
@@ -92,7 +112,7 @@ function ready() {
 
     done = true;
 
-    if (localStorage.theme) { // legacy
+    if (localStorage.theme && localStorage.theme == "dark") { // legacy
         setCookie("theme", "dark");
         localStorage.removeItem("theme");
         document.getElementById("hy_text").innerHTML = _("Youkai mode (Dark)");

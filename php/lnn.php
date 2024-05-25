@@ -1,31 +1,10 @@
 <?php
-include_once 'php/shared/http.php';
+global $API_BASE;
 $ALL_LNN = 101;
 $ALL_GAME_LNN = 13;
 $RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_limit']), 1) : 15;
-if (file_exists('json/lnnlist.json')) {
-    $json = file_get_contents('json/lnnlist.json');
-    $video_json = file_get_contents('json/lnnvideos.json');
-} else {
-    $json = curl_get('https://maribelhearn.com/json/lnnlist.json');
-    $video_json = curl_get('https://maribelhearn.com/json/lnnvideos.json');
-    if ($json === false || $video_json === false) {
-        die('Download failed!');
-    }
-}
-if (isset($_GET['date'])) {
-    $date_limit = preg_replace('/\//', '-', $_GET['date']);
-}
-$pvp = ['PoDD', 'UDoALG'];
-$lnn = json_decode($json, true);
-$lnn_videos = json_decode($video_json, true);
 $layout = (isset($_COOKIE['lnn_old_layout']) ? 'Old' : 'New');
-$pl = array();
-$pl_lnn = array();
-$flag = array();
-$missing_replays = array();
-$video_lnns = array();
-$recent = array();
+$pvp = ['PoDD', 'UDoALG'];
 
 function lnn_type(string $game, string $lang) {
     switch ($game) {
@@ -40,14 +19,15 @@ function lnn_type(string $game, string $lang) {
     }
 }
 
-function date_tl(string $date, string $lang) {
-    if ($date == '') {
-        return '';
+function date_tl($date, string $lang) {
+    if (empty($date) || $date == '') {
+        return _('Unknown');
     }
-    $tmp = preg_split('/\//', $date);
-    $day = str_pad($tmp[0], 2, '0', STR_PAD_LEFT);
+    $tmp = preg_replace('/-/', '/', $date);
+    $tmp = preg_split('/\//', $tmp);
+    $day = str_pad($tmp[2], 2, '0', STR_PAD_LEFT);
     $month = str_pad($tmp[1], 2, '0', STR_PAD_LEFT);
-    $year = $tmp[2];
+    $year = $tmp[0];
     if ($lang == 'raw') { // raw YMD; used for sorting
         return $year . $month . $day;
     } else if ($lang == 'en_US') {
@@ -66,113 +46,20 @@ function format_lm(string $lm, string $lang) {
     return str_replace('%date', date_tl($lm, $lang), $result);
 }
 
-function is_later_date(string $date1, string $date2) {
-    if (empty($date1) || empty($date2)) {
-        return true;
-    }
-
-    $date2 = preg_replace('/-/', '/', $date2);
-    $date1 = preg_split('/\//', $date1);
-    $date2 = preg_split('/\//', $date2);
-    $year = $date1[2]; $month = $date1[1]; $day = $date1[0];
-    $cond1 = $year > $date2[2];
-    $cond2 = $year == $date2[2] && $month > $date2[1];
-    $cond3 = $year == $date2[2] && $month == $date2[1] && $day > $date2[0];
-    return $cond1 || $cond2 || $cond3;
+$last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&type=LNN&limit=1');
+if (strpos($last_modified, 'Internal Server Error') === false) {
+    $last_modified = json_decode($last_modified, true);
+    $last_modified = $last_modified['results'][0]['date'];
+} else {
+    $last_modified = '';
 }
-
-function replay_path(string $game, string $player, string $shot) {
-    $ALPHA_NUMS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    $char = preg_replace('/(FinalA|FinalB|UFOs)/i', '', $shot);
-    $type = str_replace($char, '', $shot);
-    $folder = str_replace(' ', '', $player);
-    $first = $player[0];
-    $last = $player[strlen($player) - 1];
-    $player = preg_replace('/[^a-z\d ]/i', '', $player);
-    if (!preg_match('/[a-z\d ]/i', $player)) {
-        if ($first == $last) {
-            $first = $ALPHA_NUMS[mb_strlen($folder) - 1];
-            $last = ($type !== "" ? $type[mb_strlen($type) - 1] : $ALPHA_NUMS[mb_strlen($folder) - 1]);
-        } else {
-            $first = $ALPHA_NUMS[mb_strlen($folder) - 1];
-            $last = ($type !== "" ? $type[mb_strlen($type) - 1] : $ALPHA_NUMS[mb_strlen($folder)]);
-        }
-    } else {
-        $first = $player[0];
-        $last = ($type !== "" ? $type[strlen($type) - 1] : $player[strlen($player) - 1]);
-    }
-    return 'replays/lnn/' . $folder . '/th' . game_num($game) . '_ud' . $first . $last . shot_abbr($char) . '.rpy';
-}
-
-$gt = 0;
-foreach ($lnn as $game => $data1) {
-    if ($game == 'LM') {
-        continue;
-    }
-    $sum = 0;
-    $flag = array_fill(0, sizeof($flag), true);
-    foreach ($data1 as $shottype => $data2) {
-        foreach ($data2 as $player => $date) {
-            if (isset($date_limit) && is_later_date($date, $date_limit)) {
-                unset($lnn[$game][$shottype][$player]);
-                unset($data2[$player]);
-                continue;
-            }
-            $nospaces = str_replace(' ', '', $player);
-            if (!file_exists(replay_path($game, $nospaces, $shottype)) && game_num($game) > 5) {
-                array_push($missing_replays, ($game . $shottype . $nospaces));
-            }
-            if (!in_array($player, $pl)) {
-                array_push($pl, $player);
-                array_push($flag, false);
-                if (!in_array($game, $pvp)) {
-                    array_push($pl_lnn, array($player, 1, 1));
-                }
-            } else {
-                $key = array_search($player, $pl);
-                if (!in_array($game, $pvp)) {
-                    $pl_lnn[$key][1] += 1;
-                }
-                if ($flag[$key]) {
-                    $flag[$key] = false;
-                    if (!in_array($game, $pvp)) {
-                        $pl_lnn[$key][2] += 1;
-                    }
-                }
-            }
-            if (!empty($lnn_videos[$game][$shottype][$player])) {
-                $video = $lnn_videos[$game][$shottype][$player];
-                array_push($video_lnns, $game . $shottype . $nospaces . ';' . $video);
-            } else {
-                $video = '';
-            }
-            // add to recent LNNs if dated
-            if (!empty($date)) {
-                array_push($recent, (object) [
-                    'game' => $game,
-                    'shot' => $shottype,
-                    'player' => $player,
-                    'date' => $date,
-                    'video' => $video,
-                ]);
-            }
-        }
-        $sum += sizeof($data2);
-    }
-    if (!in_array($game, $pvp)) {
-        $gt += $sum;
-    }
-}
-$missing_runs = $missing_replays;
-for ($i = 0; $i < sizeof($video_lnns); $i++) {
-    $entry = preg_split('/;/', $video_lnns[$i])[0];
-    if (in_array($entry, $missing_runs)) {
-        $key = array_search($entry, $missing_runs);
-        unset($missing_runs[$key]);
-    }
-}
-// sort recent LNNs by date
-usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
+$number_of_lnns = (object) [];
+$number_of_players = (object) [];
+$player_lnns = (object) [];
+$player_games = (object) [];
+$pvp_full_names = [];
+$total_players = 0;
+$missing_runs = 0;
 ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
@@ -190,7 +77,7 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
         'is referred to as LNNFS.');
 	?></p>
     <p id='tables'><?php echo _('All of the table columns are sortable.') ?></p>
-    <p id='lastupdate'><?php echo (isset($lnn['LM']) ? format_lm($lnn['LM'], $lang) : '') ?></p>
+    <p id='lastupdate'><?php echo (!empty($last_modified) ? format_lm($last_modified, $lang) : '') ?></p>
     <h2><?php echo _('Contents') ?></h2>
     <?php
         // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
@@ -203,11 +90,12 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
             '</a></p></div><noscript>';
         }
         echo '<div class="contents"><p><a href="#lnns">' . _('LNN Lists') . '</a></p>';
-        foreach ($lnn as $game => $obj) {
-            if ($game == 'LM') {
-                continue;
+        $games = curl_get($API_BASE . '/api/v1/game/');
+        if (strpos($games, 'Internal Server Error') === false) {
+            $games = json_decode($games, true);
+            foreach ($games as $key => $data) {
+                echo '<p><a href="#' . $data['short_name'] . '">' . $data['full_name'] . '</a></p>';
             }
-            echo '<p><a href="#' . $game . '">' . full_name($game) . '</a></p>';
         }
         echo '<p><a href="#player_search">' . _('Player Search') .
         '</a></p><p><a href="#recent">' . _('Recent LNNs') .
@@ -233,49 +121,78 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
             echo '<noscript>';
         }
         $sheet = '_1';
-        foreach ($lnn as $game => $shots) {
-            if ($game == 'LM') {
-                continue;
-            }
-            if ($game == 'MoF' || $game == 'GFW') {
-                $sheet = '_2';
-            }
-            $sum = 0;
-            $all = array();
-            echo '<div id="' . $game . '"><p><table id="' . $game . 't" class="' . $game . 't">' .
-            '<caption><span id="' . $game . '_image_old" class="cover sheet' . $sheet . (game_num($game) <= 5 ? ' cover98' : '') . '"></span> ' . full_name($game) . '</caption>' .
-            '<thead><tr><th class="general_header">' . shot_route($game) . '</th>' .
-            '<th class="general_header nowrap">' . lnn_type($game, $lang) . '<br>' . _('(Different players)') . '</th>' .
-            '<th class="general_header">' . _('Players') . '</tr></thead><tbody>';
-            foreach ($shots as $shot => $obj) {
-                if (strpos($shot, 'UFOs')) {
-                    continue;
+        $lnn = curl_get($API_BASE . '/api/v1/replay/?ordering=game&type=LNN');
+        $games_seen = [];
+        if (strpos($lnn, 'Internal Server Error') === false) {
+            $lnn = json_decode($lnn, true);
+            foreach ($lnn as $key => $data) {
+                $player = $data['player'];
+                $game = $data['category']['game'];
+                $shot = $data['category']['shot'];
+                $route = $data['category']['route'];
+                if ($game == 'MoF' || $game == 'GFW') {
+                    $sheet = '_2';
                 }
-                $players = array_keys($obj);
-                $count = sizeof($players);
-                $sum += $count;
-                $all = array_merge($all, $players);
-                if ($game == 'UFO') {
-                    $count += sizeof($shots[$shot . 'UFOs']);
-                }
-                sort($players);
-                echo '<tr><td class="nowrap">' . format_shot($game, $shot) . '</td><td>' . $count . '</td><td>' . implode(', ', $players);
-                if ($game == 'UFO') {
-                    $players = array_keys($shots[$shot . 'UFOs']);
-                    $sum += sizeof($players);
-                    $all = array_merge($all, $players);
-                    for ($i = 0; $i < sizeof($players); $i++) {
-                        $players[$i] .= ' (UFOs)';
+                if (!in_array($game, $games_seen)) {
+                    if (!empty($games_seen)) {
+                        $players_shot = array_unique($players_shot);
+                        sort($players_shot);
+                        echo '<td>' . count($players_shot) . '</td><td>' . implode(', ', $players_shot) . '</td></tr>';
+                        $prev_game = end($games_seen);
+                        $number_of_lnns->{$prev_game} = count($players_game);
+                        $players_game = array_unique($players_game);
+                        $number_of_players->{$prev_game} = count($players_game);
+                        sort($players_game);
+                        echo '</tbody><tfoot><tr><td class="foot">' . _('Overall') . '</td><td class="foot">' . $number_of_lnns->{$prev_game} . ' (' . $number_of_players->{$prev_game} . ')</td>' .
+                        '<td class="foot">' . implode(', ', $players_game) . '</td></tr></tfoot></table></div>';
                     }
-                    sort($players);
-                    echo (sizeof($players) > 0 ? ', ' : '') . implode(', ', $players);
+                    array_push($games_seen, $game);
+                    $shots_seen = [];
+                    $players_game = [];
+                    echo '<div id="' . $game . '"><p><table id="' . $game . 't" class="' . $game . 't">' .
+                    '<caption><span id="' . $game . '_image_old" class="cover sheet' . $sheet . (game_num($game) <= 5 ? ' cover98' : '') . '"></span> ' . full_name($game) . '</caption>' .
+                    '<thead><tr><th class="general_header">' . shot_route($game) . '</th>' .
+                    '<th class="general_header nowrap">' . lnn_type($game, $lang) . '<br>' . _('(Different players)') . '</th>' .
+                    '<th class="general_header">' . _('Players') . '</tr></thead><tbody>';
                 }
-                echo '</td></tr>';
+                if (!in_array($shot, $shots_seen)) {
+                    if (!empty($shots_seen)) {
+                        $players_shot = array_unique($players_shot);
+                        sort($players_shot);
+                        echo '<td>' . count($players_shot) . '</td><td>' . implode(', ', $players_shot) . '</td></tr>';
+                    }
+                    array_push($shots_seen, $shot);
+                    $players_shot = [];
+                    echo '<tr><td class="nowrap">' . format_shot($game, $shot) . '</td>';
+                }
+                if (!in_array($game, $pvp)) {
+                    if (!isset($player_lnns->{$player})) {
+                        $player_lnns->{$player} = 1;
+                        $player_games->{$player} = [$game];
+                    } else {
+                        $player_lnns->{$player} += 1;
+                        array_push($player_games->{$player}, $game);
+                    }
+                }
+                if ($route == 'UFOs') {
+                    array_push($players_shot, $player . ' (UFOs)');
+                } else {
+                    array_push($players_shot, $player);
+                }
+                array_push($players_game, $player);
+                if (empty($data['replay']) && empty($data['video'])) {
+                    $missing_runs += 1;
+                }
             }
-            $all = array_unique($all);
-            sort($all);
-            echo '</tbody><tfoot><tr><td class="foot">' . _('Overall') . '</td><td class="foot">' . $sum . ' (' . sizeof($all) . ')</td>' .
-            '<td class="foot">' . implode(', ', $all) . '</td></tr></tfoot></table></div>';
+            $players_shot = array_unique($players_shot);
+            sort($players_shot);
+            echo '<td>' . count($players_shot) . '</td><td>' . implode(',', $players_shot) . '</td></tr>';
+            $number_of_lnns->{$game} = count($players_game);
+            $players_game = array_unique($players_game);
+            $number_of_players->{$game} = count($players_game);
+            sort($players_game);
+            echo '</tbody><tfoot><tr><td class="foot">' . _('Overall') . '</td><td class="foot">' . $number_of_lnns->{$game} . ' (' . $number_of_players->{$game} . ')</td>' .
+            '<td class="foot">' . implode(', ', $players_game) . '</td></tr></tfoot></table></div>';
         }
         if ($layout == 'New') {
             echo '</noscript>';
@@ -284,35 +201,43 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
         if ($layout == 'New') {
             echo '<div id="newlayout"><p id="clickgame">' . _('Click a game cover to show its list of LNNs.') . '</p>';
             $second_row = false;
-		    foreach ($lnn as $game => $value) {
-		        if ($game == 'LM' || in_array($game, $pvp)) {
-		            continue;
-	            }
-                if ($game == 'MoF') {
-                    $second_row = true;
-                    echo '<br>';
+            if (gettype($games) != 'string' || strpos($games, 'Internal Server Error') === false) {
+                foreach ($games as $key => $data) {
+                    $game = $data['short_name'];
+                    $full_name = $data['full_name'];
+                    if (in_array($game, $pvp)) {
+                        array_push($pvp_full_names, $full_name);
+                        continue;
+                    }
+                    if ($game == 'PoFV') {
+                        continue;
+                    }
+                    if ($game == 'MoF') {
+                        $second_row = true;
+                        echo '<br>';
+                    }
+                    if (!$second_row) {
+                        echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_1"></span>' .
+                        '<span class="full_name tooltip">' . $full_name . '</span></span>';
+                    } else {
+                        echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_2"></span>' .
+                        '<span class="full_name tooltip">' . $full_name . '</span></span>';
+                    }
                 }
-                if (!$second_row) {
-                    echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_1"></span>' .
-                    '<span class="full_name tooltip">' . full_name($game) . '</span></span>';
-                } else {
-                    echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_2"></span>' .
-                    '<span class="full_name tooltip">' . full_name($game) . '</span></span>';
+                echo '<br><br>';
+                foreach ($pvp as $key => $game) {
+                    echo '<span class="game_image"><span id="' . $game . '_image" class="game_img ' . ($game == 'UDoALG' ? 'sheet_2' : 'sheet_1') . '"></span>' .
+                    '<span class="full_name tooltip">' . $pvp_full_names[$key] . '</span></span>';
                 }
-		    }
-            echo '<br><br>';
-            foreach ($pvp as $key => $game) {
-                echo '<span class="game_image"><span id="' . $game . '_image" class="game_img ' . ($game == 'UDoALG' ? 'sheet_2' : 'sheet_1') . '"></span>' .
-                '<span class="full_name tooltip">' . full_name($game) . '</span></span>';
+                echo '</div>';
+                echo '<div id="lnn_list"><p id="fullname" class="center"></p><table id="lnn_table">';
+                echo '<thead id="lnn_thead"><tr><th id="lnn_shotroute" class="general_header">' . _('Shottype') . '</th>';
+                echo '<th class="general_header nowrap"><span id="lnn_restrictions"></span><br>' . _('(Different players)') . '</th>';
+                echo '<th class="general_header">' . _('Players') . '</th>';
+                echo '</tr></thead><tbody id="lnn_tbody"></tbody><tfoot id="lnn_tfoot"><tr>';
+                echo '<td id="lnn_overall" class="foot">' . _('Overall') . '</td><td id="count" class="foot"></td><td id="total" class="foot"></td></tr></tfoot></table>';
+                echo '</div>';
             }
-            echo '</div>';
-            echo '<div id="lnn_list"><p id="fullname" class="center"></p><table id="lnn_table">';
-            echo '<thead id="lnn_thead"><tr><th id="lnn_shotroute" class="general_header">' . _('Shottype') . '</th>';
-            echo '<th class="general_header nowrap"><span id="lnn_restrictions"></span><br>' . _('(Different players)') . '</th>';
-            echo '<th class="general_header">' . _('Players') . '</th>';
-            echo '</tr></thead><tbody id="lnn_tbody"></tbody><tfoot id="lnn_tfoot"><tr>';
-            echo '<td id="lnn_overall" class="foot">' . _('Overall') . '</td><td id="count" class="foot"></td><td id="total" class="foot"></td></tr></tfoot></table>';
-            echo '</div>';
         }
     ?>
     <div id='player_search'>
@@ -324,10 +249,16 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
 		<select id='search'>
             <option value=''>...</option>
 		    <?php
-		        natcasesort($pl);
-		        foreach ($pl as $key => $player) {
-		            echo '<option value="' . $player . '">' . $player . '</option>';
-		        }
+                $players = curl_get($API_BASE . '/api/v1/replay/players/');
+                if (strpos($players, 'Internal Server Error') === false) {
+                    $players = json_decode($players, true);
+                    $players = $players['lnn'];
+                    natcasesort($players);
+                    foreach ($players as $key => $player) {
+                        echo '<option value="' . $player . '">' . $player . '</option>';
+                        $total_players += 1;
+                    }
+                }
 		    ?>
 	    </select>
     </div>
@@ -363,33 +294,34 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
                 <th class='general_header'><?php echo _('Date') ?></th>
             </tr></thead>
             <tbody id='recentbody'><?php
-                $i = 0;
-                foreach ($recent as $key => $obj) {
-                    if (!empty($obj->video)) {
-                        $video = '<a href="' . $obj->video . '" target="_blank">Video link</a>';
-                    } else {
-                        $video = '-';
-                    }
-                    if (file_exists(replay_path($obj->game, $obj->player, $obj->shot))) {
-                        $path = replay_path($obj->game, $obj->player, $obj->shot);
-                        $path_parts = preg_split('/\//', $path);
-                        $replay = '<a href="' . $path . '">' . $path_parts[3] . '</a>';
-                    } else {
-                        $replay = '-';
-                    }
-                    $space = (has_space($lang) ? ' ' : '');
-                    $shot = preg_replace('/(FinalA|FinalB|UFOs)/', '', $obj->shot);
-                    $type = str_replace($shot, '', $obj->shot);
-                    echo '<tr>' .
-                    '<td class="' . $obj->game . 'p">' . _($obj->game) . $space . _($shot) . (!empty($type) ? $space . _($type) : '') . '</td>' .
-                    '<td>' . $obj->player . '</td>' .
-                    '<td>' . $replay . '</td>' .
-                    '<td>' . $video . '</td>' .
-                    '<td data-sort="' . date_tl($obj->date, 'raw') . '">' . date_tl($obj->date, $lang) . '</td>' .
-                    '</tr>';
-                    $i++;
-                    if ($i == $RECENT_LIMIT) {
-                        break;
+                $recent = curl_get($API_BASE . '/api/v1/replay/?limit=' . $RECENT_LIMIT . '&ordering=-date&type=LNN');
+                if (strpos($recent, 'Internal Server Error') === false) {
+                    $recent = json_decode($recent, true);
+                    $recent = $recent['results'];
+                    foreach ($recent as $key => $data) {
+                        if (empty($data['date'])) {
+                            continue;
+                        }
+                        $date = date_tl($data['date'], $lang);
+                        $date_raw = date_tl($data['date'], 'raw');
+                        if (empty($data['replay'])) {
+                            $replay = '-';
+                        } else {
+                            $chunks = preg_split('/\//', $data['replay']);
+                            $replay = '<a href="' . $data['replay'] . '">' . $chunks[count($chunks) - 1] . '</a>';
+                        }
+                        if (empty($data['video'])) {
+                            $video = '-';
+                        } else {
+                            $video = '<a href="' . $data['video'] . '">Video link</a>';
+                        }
+                        echo '<tr>';
+                        echo '<td class="' . $data['category']['game'] . 'p">' . $data['category']['game'] . ' ' . $data['category']['shot'] . '</td>';
+                        echo '<td>' . $data['player'] . '</td>';
+                        echo '<td>' . $replay . '</td>';
+                        echo '<td>' . $video . '</td>';
+                        echo '<td data-sort="' . $date_raw . '">' . $date . '</td>';
+                        echo '</tr>';
                     }
                 }
             ?></tbody>
@@ -408,76 +340,70 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
             </thead>
             <tbody>
                 <?php
-                    foreach ($lnn as $game => $data1) {
-                        if ($game == 'LM' || in_array($game, $pvp)) {
-                            continue;
-                        }
-                        $sum = 0;
-                        $game_pl = array();
-                        foreach ($lnn[$game] as $shottype => $data2) {
-                            foreach ($lnn[$game][$shottype] as $player => $date) {
-                                if (!in_array($player, $game_pl)) {
-                                    array_push($game_pl, $player);
-                                }
+                    $total_lnns = 0;
+                    if (!empty($number_of_lnns)) {
+                        foreach ($number_of_lnns as $game => $count) {
+                            if (in_array($game, $pvp)) {
+                                continue;
                             }
-                            $sum += sizeof($lnn[$game][$shottype]);
-                        }
-                        if (game_num($game) < 6 || $sum > 0) {
-                            echo '<tr><td' . (game_num($game) == 128 ? ' data-sort="12.8"' : '') . '>' . game_num($game) . '</td><td class="' . $game . '">' . _($game) . '</td>';
-                            echo '<td>' . $sum . '</td><td>' . sizeof($game_pl) . '</td></tr>';
+                            if (game_num($game) < 6 || $count > 0) {
+                                echo '<tr><td' . (game_num($game) == 128 ? ' data-sort="12.8"' : '') . '>' . game_num($game) . '</td><td class="' . $game . '">' . _($game) . '</td>';
+                                echo '<td>' . $number_of_lnns->{$game} . '</td><td>' . $number_of_players->{$game} . '</td></tr>';
+                                $total_lnns += $number_of_lnns->{$game};
+                            }
                         }
                     }
                 ?>
             </tbody>
             <tfoot>
                 <tr>
-                    <td class='foot' colspan='2'><?php echo _('Overall'); ?></td>
-                    <td class='foot'><?php echo $gt ?></td>
-                    <td class='foot'><?php echo sizeof($pl_lnn) ?></td>
+                    <td class='foot' colspan='2'><?php echo _('Overall') ?></td>
+                    <td class='foot'><?php echo $total_lnns ?></td>
+                    <td class='foot'><?php echo $total_players ?></td>
                 </tr>
                 <tr>
-                    <td colspan='2'><?php echo _('Replays'); ?></td>
-                    <td colspan='2'><?php echo $gt - sizeof($missing_runs); ?></td>
+                    <td colspan='2'><?php echo _('Replays') ?></td>
+                    <td colspan='2'><?php echo $total_lnns - $missing_runs ?></td>
                 </tr>
             </tfoot>
         </table>
     </div>
     <div id='players'>
-        <h2><?php echo _('Player Ranking'); ?></h2>
+        <h2><?php echo _('Player Ranking') ?></h2>
         <table id='ranking' class='sortable'>
             <thead>
                 <tr>
                     <th class='general_header no-sort'>#</th>
                     <th class='general_header'><?php echo _('Player'); ?></th>
-                    <th class='general_header'><?php echo _('No. of LNNs'); ?></th>
+                    <th id='number_of_lnns' class='general_header'><?php echo _('No. of LNNs'); ?></th>
                     <th class='general_header'><?php echo _('Games LNN\'d'); ?></th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                    uasort($pl_lnn, function($a, $b) {
-                        $val = $b[1] <=> $a[1];
-                        if ($val == 0) {
-                            $val = $b[2] <=> $a[2];
-                        }
-                        return $val;
-                    });
-                    foreach ($pl_lnn as $key => $value) {
-                        if (empty($pl_lnn[$key][0])) {
-                            continue;
-                        }
-                        $shot_lnns = $pl_lnn[$key][1] == $ALL_LNN ? $pl_lnn[$key][1] . _(' (All Windows)') : $pl_lnn[$key][1];
-                        $game_lnns = $pl_lnn[$key][2] >= $ALL_GAME_LNN ? $pl_lnn[$key][2] . _(' (All Windows)') : $pl_lnn[$key][2];
+                    foreach ($player_lnns as $player => $count) {
+                        $player_games->{$player} = count(array_unique($player_games->{$player}));
+                        $shot_lnns = $player_lnns->{$player} == $ALL_LNN ? $player_lnns->{$player} . _(' (All Windows)') : $player_lnns->{$player};
+                        $game_lnns = $player_games->{$player} >= $ALL_GAME_LNN ? $player_games->{$player} . _(' (All Windows)') : $player_games->{$player};
                         echo '<tr><td></td>';
-                        echo '<td><a href="#' . $pl_lnn[$key][0] . '">' . $pl_lnn[$key][0] . '</a></td>';
-                        echo '<td data-sort="' . $pl_lnn[$key][1] . '">' . $shot_lnns . '</td>';
-                        echo '<td data-sort="' . $pl_lnn[$key][2] . '">' . $game_lnns . '</td></tr>';
+                        echo '<td><a href="#' . urlencode($player) . '">' . $player . '</a></td>';
+                        echo '<td data-sort="' . $player_lnns->{$player} . '">' . $shot_lnns . '</td>';
+                        echo '<td data-sort="' . $player_games->{$player} . '">' . $game_lnns . '</td></tr>';
                     }
                 ?>
             </tbody>
         </table>
     </div>
     <footer><strong><a href='#top'><?php echo _('Back to Top'); ?></a></strong></footer>
-	<?php echo '<input id="missing_replays" type="hidden" value="' . implode('', $missing_replays) . '">' ?>
-	<?php echo '<input id="videos" type="hidden" value="' . implode(',', $video_lnns) . '">' ?>
+	<input id='shots' type='hidden' value='<?php
+		$shots = '{';
+		foreach ($games as $key => $data) {
+			$shots .= '"' . $data['short_name'] . '":[';
+			foreach ($data['shots'] as $key => $shot) {
+				$shots .= '"' . $shot['name'] . '",';
+			}
+			$shots = substr($shots, 0, -1) . '],';
+		}
+		echo substr($shots, 0, -1) . '}';
+	?>'>
 </div>

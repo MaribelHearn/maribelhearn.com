@@ -26,3 +26,7 @@ assets/other/tiers/uploads/*
 .vscode/
 node_modules/
 package*.json
+
+# django
+media/
+static/

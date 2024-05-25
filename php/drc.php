@@ -1,16 +1,12 @@
 <?php
 include_once 'php/shared/http.php';
 $id = 0;
-if (file_exists('json/wrlist.json')) {
-    $wrlist_json = file_get_contents('json/wrlist.json');
-} else {
-    $wrlist_json = curl_get('https://maribelhearn.com/json/wrlist.json');
-    if ($wrlist_json === false) {
-        die('Download failed!');
-    }
+$games = curl_get('http://localhost/api/v1/game/');
+if ($games === false || strpos($games, 'Internal Server Error') !== false) {
+	die('Download failed!');
 }
 $rubrics_json = file_get_contents('json/rubrics.json');
-$WRs = json_decode($wrlist_json, true);
+$games = json_decode($games, true);
 $Rubrics = json_decode($rubrics_json, true);
 
 function manoku(string $str, int $len, int $offset, string $lang) {
@@ -471,10 +467,10 @@ function is_phantasmagoria(string $game) {
     </div>
 	<input id='shots' type='hidden' value='<?php
 		$shots = '{';
-		foreach ($WRs as $game => $value) {
-			$shots .= '"' . $game . '":[';
-			foreach ($WRs[$game]['Easy'] as $shot => $value) {
-				$shots .= '"' . $shot . '",';
+		foreach ($games as $key => $data) {
+			$shots .= '"' . $data['short_name'] . '":[';
+			foreach ($data['shots'] as $key => $shot) {
+				$shots .= '"' . $shot['name'] . '",';
 			}
 			$shots = substr($shots, 0, -1) . '],';
 		}

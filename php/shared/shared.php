@@ -109,6 +109,10 @@ function shot_route(string $game) {
     return $game == 'HRtP' || $game == 'GFW' ? _('Route') : _('Shottype');
 }
 
+function no_extra(string $game) {
+    return $game == 'HRtP' || $game == 'PoDD' || $game == 'UDoALG';
+}
+
 function game_num(string $game) {
     switch ($game) {
         case 'HRtP': return 1;

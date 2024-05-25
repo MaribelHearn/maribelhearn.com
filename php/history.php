@@ -491,7 +491,7 @@
                 </tr>
                 <tr id='oDOJWL'>
                     <th>DOJ WL</th>
-                    <td id='1DOJWL' class='attempted'></td>
+                    <td id='1DOJWL' class='clear'></td>
                     <td id='2DOJWL' colspan='2'></td>
                 </tr>
                 <tr id='oDOJBL'>
@@ -3823,8 +3823,8 @@
             </tr>
             <tr>
                 <td><strong>1-ALL (WL)</strong></td>
-                <td>Stage 1-5</td>
-                <td>-</td>
+                <td class='g'>Completed</td>
+                <td>May 19, 2024</td>
                 <td>No</td>
             </tr>
             <tr>
@@ -3855,7 +3855,7 @@
             </tr>
             <tr>
                 <td><strong>2-ALL (Omote Loop)</strong></td>
-                <td>Practicing</td>
+                <td>Not yet tried</td>
                 <td>-</td>
                 <td>No</td>
             </tr>

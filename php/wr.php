@@ -1,32 +1,8 @@
 <?php
+global $API_BASE;
 $MAX_SCORE = 9999999990;
 $RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_limit']), 1) : 15;
-if (file_exists('json/wrlist.json')) {
-    $json = file_get_contents('json/wrlist.json');
-    $west_json = file_get_contents('json/bestinthewest.json');
-} else {
-    $json = curl_get('https://maribelhearn.com/json/wrlist.json');
-    $west_json = curl_get('https://maribelhearn.com/json/bestinthewest.json');
-    if ($json === false || $west_json === false) {
-        die('Download failed!');
-    }
-}
-$wr = json_decode($json, true);
-$west = json_decode($west_json, true);
 $layout = (isset($_COOKIE['wr_old_layout']) ? 'Old' : 'New');
-$overall = array(0);
-$overall_player = array(0);
-$overall_diff = array(0);
-$overall_shottype = array(0);
-$overall_date = array(0);
-$overall_video = array(0);
-$missing_replays = array();
-$diff_max = array();
-$pl = array();
-$pl_wr = array();
-$flag = array();
-$recent = array();
-$lm = '0/0/0';
 
 function pc_class(int $pc) {
     if ($pc < 50) {
@@ -42,24 +18,15 @@ function pc_class(int $pc) {
     }
 }
 
-function replay_path(string $game, string $diff, string $shot) {
-    if ($game == 'StB') {
-        $shot = '0' . $shot;
-        if (strlen($diff) == 1) {
-            $diff = '0' . $diff;
-        }
+function date_tl($date, string $lang) {
+    if (empty($date) || $date == '') {
+        return _('Unknown');
     }
-    return 'replays/th' . game_num($game) . '_ud' . substr($diff, 0, 2) . shot_abbr($shot) . '.rpy';
-}
-
-function date_tl(string $date, string $lang) {
-    if ($date == '') {
-        return '';
-    }
-    $tmp = preg_split('/\//', $date);
-    $day = str_pad($tmp[0], 2, '0', STR_PAD_LEFT);
+    $tmp = preg_replace('/-/', '/', $date);
+    $tmp = preg_split('/\//', $tmp);
+    $day = str_pad($tmp[2], 2, '0', STR_PAD_LEFT);
     $month = str_pad($tmp[1], 2, '0', STR_PAD_LEFT);
-    $year = $tmp[2];
+    $year = $tmp[0];
     if ($lang == 'raw') { // raw YMD; used for sorting
         return $year . $month . $day;
     } else if ($lang == 'en_US') {
@@ -78,81 +45,103 @@ function format_lm(string $lm, string $lang) {
     return str_replace('%date', date_tl($lm, $lang), $result);
 }
 
-function is_later_date(string $date1, string $date2) {
-    if (strpos($date1, '?')) {
-        return false;
-    }
-
-    $date1 = preg_split('/\//', $date1);
-    $date2 = preg_split('/\//', $date2);
-    $year = $date1[2]; $month = $date1[1]; $day = $date1[0];
-    $cond1 = $year > $date2[2];
-    $cond2 = $year == $date2[2] && $month > $date2[1];
-    $cond3 = $year == $date2[2] && $month == $date2[1] && $day >= $date2[0];
-    return $cond1 || $cond2 || $cond3;
+$last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&type=Score&limit=1');
+if (strpos($last_modified, 'Internal Server Error') === false) {
+    $last_modified = json_decode($last_modified, true);
+    $last_modified = $last_modified['results'][0]['date'];
+} else {
+    $last_modified = '';
 }
+$wrs = [];
+$west = [];
+$player_wrs = (object) [];
+$player_games = (object) [];
+$overall = (object) [];
+$diff_max = (object) [];
 
-foreach ($wr as $game => $value) {
-    $num = game_num($game);
-    $overall[$num] = 0;
-    $flag = array_fill(0, sizeof($flag), true);
-    $diff_max[$game] = array();
-    foreach ($wr[$game] as $diff => $value) {
-        $diff_max[$game][$diff] = [0, '', ''];
-        foreach ($wr[$game][$diff] as $shot => $array) {
-            $score = $array[0];
-            $player = $array[1];
-            $date = $array[2];
-            $video = empty($array[3]) ? '' : $array[3];
-            // check for overall record 
-            if ($score >= $overall[$num]) {
-                $overall[$num] = $score;
-                $overall_diff[$num] = $diff;
-                $overall_shottype[$num] = $shot;
-                $overall_player[$num] = $player;
-                $overall_date[$num] = $date;
-                $overall_video[$num] = $video;
-            }
-            // check for diff record
-            if ($score > $diff_max[$game][$diff][0]) {
-                $diff_max[$game][$diff] = [$score, $player, $shot];
-            }
-            // check for missing replay
-            if (!file_exists(replay_path($game, $diff, $shot)) && $num > 5) {
-                array_push($missing_replays, ($game . $diff . $shot));
-            }
-            // add to player WR array
-            if (!in_array($player, $pl)) {
-                array_push($pl, $player);
-                array_push($pl_wr, array($player, 1, 1));
-                array_push($flag, false);
-            } else {
-                $key = array_search($array[1], $pl);
-                $pl_wr[$key][1] += 1;
-                if ($flag[$key]) {
-                    $pl_wr[$key][2] += 1;
-                    $flag[$key] = false;
-                }
-            }
-            // make sure last modified date equals newest record date
-            if (is_later_date($date, $lm)) {
-                $lm = $date;
-            }
-            // add to recent records
-            array_push($recent, (object) [
-                'game' => $game,
-                'diff' => $diff,
-                'shot' => $shot,
-                'score' => $score,
-                'player' => $player,
-                'date' => $date,
-                'video' => $video,
-            ]);
+$wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game&type=Score&region=Eastern&verified=true');
+$games_seen = [];
+if (strpos($wr_data, 'Internal Server Error') === false) {
+    $wr_data = json_decode($wr_data, true);
+    foreach ($wr_data as $key => $data) {
+        $score = $data['score'];
+        $player = $data['player'];
+        $date = $data['date'];
+        $replay = $data['replay'];
+        $video = $data['video'];
+        $game = $data['category']['game'];
+        $diff = $data['category']['difficulty'];
+        $shot = $data['category']['shot'];
+        if (!in_array($game, $games_seen)) {
+            $wrs[$game] = [];
+            $diffs_seen = [];
+            $shots_seen = [];
+            $overall->{$game} = 0;
+            $diff_max->{$game} = (object) [];
+            array_push($games_seen, $game);
         }
+        if (!in_array($diff, $diffs_seen)) {
+            $wrs[$game][$diff] = [];
+            $diff_max->{$game}->{$diff} = [];
+            array_push($diffs_seen, $diff);
+        }
+        if (!in_array($shot, $shots_seen)) {
+            $wrs[$game][$diff][$shot] = [];
+            array_push($shots_seen, $shot);
+        }
+        if (empty($wrs[$game][$diff][$shot]) || $score > $wrs[$game][$diff][$shot][0]) {
+            $wrs[$game][$diff][$shot] = [$score, $player, $date];
+        }
+        if (!empty($replay)) {
+            array_push($wrs[$game][$diff][$shot], $replay);
+        } else {
+            array_push($wrs[$game][$diff][$shot], '');
+        }
+        if (!empty($video)) {
+            array_push($wrs[$game][$diff][$shot], $video);
+        }
+        if (empty($overall->{$game}) || $score >= $overall->{$game}['score']) {
+            $overall->{$game} = $data;
+        }
+        if (empty($diff_max->{$game}->{$diff}) || $score >= $diff_max->{$game}->{$diff}['score']) {
+            $diff_max->{$game}->{$diff} = $data;
+            $diff_max->{$game}->{$diff}['shottype'] = $shot;
+        }
+        if (!isset($player_wrs->{$player})) {
+            $player_wrs->{$player} = 1;
+        } else {
+            $player_wrs->{$player} += 1;
+        }
+        if (!isset($player_games->{$player})) {
+            $player_games->{$player} = [];
+        }
+        array_push($player_games->{$player}, $game);
     }
 }
-// sort recent records by date
-usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
+
+$west_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty&type=Score&region=Western');
+$games_seen = [];
+if (strpos($west_data, 'Internal Server Error') === false) {
+    $west_data = json_decode($west_data, true);
+    foreach ($west_data as $key => $data) {
+        $score = $data['score'];
+        $player = $data['player'];
+        $game = $data['category']['game'];
+        $diff = $data['category']['difficulty'];
+        $shot = $data['category']['shot'];
+        if (!in_array($game, $games_seen)) {
+            $west[$game] = [];
+            $diffs_seen = [];
+            array_push($games_seen, $game);
+        }
+        if (!in_array($diff, $diffs_seen)) {
+            $west[$game][$diff] = [];
+            array_push($diffs_seen, $diff);
+        }
+        $west[$game][$diff] = [$score, $player, $shot];
+    }
+}
+
 ?>
 <div id='wrap' class='wrap'>
 	<?php echo wrap_top() ?>
@@ -171,7 +160,7 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
     <p id='unver'><?php
         echo _('If you toggle Unverified Scores, this will show scores that are higher than the World Record, but lack replay or video proof.');
     ?></p>
-    <p id='lastupdate'><?php echo format_lm($lm, $lang) ?></p>
+    <p id='lastupdate'><?php echo (!empty($last_modified) ? format_lm($last_modified, $lang) : '') ?></p>
     <h2><?php echo _('Contents') ?></h2>
     <?php
         // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
@@ -190,8 +179,15 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
         '<p id="overall_linkmn"><a href="#overallm" class="overallrecords">' . _('Overall Records') .
         '</a></p><p><a href="#wrs" class="worldrecords">' . _('World Records') . '
         </a></p>';
-        foreach ($wr as $game => $value) {
-            echo '<p><a href="#' . $game . '">' . full_name($game) . '</a></p>';
+        $games = curl_get($API_BASE . '/api/v1/game/');
+        if (strpos($games, 'Internal Server Error') === false) {
+            $games = json_decode($games, true);
+            foreach ($games as $key => $data) {
+                if ($data['short_name'] == 'UDoALG') {
+                    continue;
+                }
+                echo '<p><a href="#' . $data['short_name'] . '">' . $data['full_name'] . '</a></p>';
+            }
         }
         echo '<p id="westernlink"><a href="#western">' . _('Western Records') . '</a></p>';
         echo '<p id="playersearchlink"><a href="#playerwrs">' . _('Player Search') . '</a></p>';
@@ -220,7 +216,7 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
         <table class='sortable'>
             <thead>
                 <tr>
-                    <th class='general_header'>#</th>
+                    <th id='game_number' class='general_header'>#</th>
                     <th class='general_header'><?php echo _('Game') ?></th>
                     <th id='score' class='general_header'><?php echo _('Score') ?></th>
                     <th class='general_header'><?php echo _('Player') ?></th>
@@ -232,42 +228,46 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
                 </tr>
             </thead>
             <tbody><?php
-				foreach ($wr as $game => $value) {
-                    if ($game == 'StB' || $game == 'DS') {
-                        continue;
+                if (gettype($games) != 'string' || strpos($games, 'Internal Server Error') === false) {
+                    foreach ($games as $key => $data) {
+                        $game = $data['short_name'];
+                        $num = $data['number'];
+                        if ($game == 'UDoALG') {
+                            continue;
+                        }
+                        $wr = $overall->{$game};
+                        echo '<tr id="' . $game . 'o"><td' . ($num == 128 ? ' data-sort="12.8"' : '') . '>' . $num . '</td><td class="' . $game . '">' . _($game) . '</td>';
+                        echo '<td id="' . $game . 'overall0" data-sort="' . $wr['score'] . '">' . ($game == 'WBaWC' || $game == 'UM'
+                                ? '<span class="cs">9,999,999,990<span class="tooltip truescore">' . number_format($wr['score'], 0, '.', ',') . '</span></span> '
+                                : number_format($wr['score'], 0, '.', ',')
+                        ) . '</td>';
+                        echo '<td id="' . $game . 'overall1">' . ($wr['score'] == 0 ? '-' : $wr['player']) . '</td>';
+                        echo '<td id="' . $game . 'overall2">' . ($wr['score'] == 0 ? '-' : $wr['category']['difficulty']) . '</td>';
+                        echo '<td id="' . $game . 'overall3">' . ($wr['score'] == 0 ? '-' : _($wr['category']['shot'])) . '</td>';
+                        if (!empty($wr['replay'])) {
+                            $chunks = preg_split('/\//', $wr['replay']);
+                            $replay = '<a href="' . $wr['replay'] . '">' . $chunks[count($chunks) - 1] . '</a>';
+                        } else {
+                            $replay = '-';
+                        }
+                        if (!empty($wr['video'])) {
+                            $video = '<a href="' . $wr['video'] . '" target="_blank">Video link</a>';
+                        } else {
+                            $video = '-';
+                        }
+                        echo '<td id="' . $game . 'overall4">' . $replay . '</td>';
+                        echo '<td id="' . $game . 'overall5">' . $video . '</td>';
+                        echo '<td id="' . $game . 'overall6" class="datestring" data-sort="' . date_tl($wr['date'], 'raw') . '">' . ($wr['score'] == 0 ? '-' : date_tl($wr['date'], $lang)) . '</td></tr>';
                     }
-					$num = game_num($game);
-					echo '<tr id="' . $game . 'o"><td' . ($num == 128 ? ' data-sort="12.8"' : '') . '>' . $num . '</td><td class="' . $game . '">' . _($game) . '</td>';
-					echo '<td id="' . $game . 'overall0" data-sort="' . $overall[$num] . '">' . ($game == 'WBaWC' || $game == 'UM'
-                            ? '<span class="cs">9,999,999,990<span class="tooltip truescore">' . number_format($overall[$num], 0, '.', ',') . '</span></span> '
-                            : number_format($overall[$num], 0, '.', ',')
-                    ) . '</td>';
-                    echo '<td id="' . $game . 'overall1">' . ($overall[$num] == 0 ? '-' : $overall_player[$num]) . '</td>';
-					echo '<td id="' . $game . 'overall2">' . ($overall[$num] == 0 ? '-' : $overall_diff[$num]) . '</td>';
-					echo '<td id="' . $game . 'overall3">' . ($overall[$num] == 0 ? '-' : _($overall_shottype[$num])) . '</td>';
-                    if (!empty($overall_video[$num])) {
-						$video = '<a href="' . $overall_video[$num] . '" target="_blank">Video link</a>';
-					} else {
-                        $video = '-';
-                    }
-                    if (file_exists(replay_path($game, $overall_diff[$num], $overall_shottype[$num]))) {
-                        $path = replay_path($game, $overall_diff[$num], $overall_shottype[$num]);
-                        $replay = '<a href="' . $path . '">' . substr($path, 8) . '</a>';
-                    } else {
-                        $replay = '-';
-                    }
-					echo '<td id="' . $game . 'overall4">' . $replay . '</td>';
-					echo '<td id="' . $game . 'overall5">' . $video . '</td>';
-					echo '<td id="' . $game . 'overall6" class="datestring" data-sort="' . date_tl($overall_date[$num], 'raw') . '">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $lang)) . '</td></tr>';
-				}
+                }
 			?></tbody>
         </table>
     </div>
     <div id='overallm'>
         <h2><?php echo _('Overall Records') ?></h2>
 		<?php
-            echo '<hr>';
-			foreach ($wr as $game => $value) {
+            /*echo '<hr>';
+			foreach ($wrs as $game => $value) {
                 if ($game == 'StB' || $game == 'DS') {
                     continue;
                 }
@@ -280,7 +280,7 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
 				echo '<span id="' . $game . 'overall3m">' . ($overall[$num] == 0 ? '-' : _($overall_shottype[$num])) . '</span> by ';
 				echo '<span id="' . $game . 'overall1m"><em>' . ($overall[$num] == 0 ? '-' : $overall_player[$num]) . '</em></span> ';
 				echo '<br><span id="' . $game . 'overall4m" class="datestring_player">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $lang)) . '</span></p><hr>';
-			}
+			}*/
 		?>
     </div>
     <h2 id='wrs'><?php echo _('World Records') ?></h2>
@@ -291,7 +291,7 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
         }
         $sheet = '_1';
         $diff_key = 'Easy';
-        foreach ($wr as $game => $obj) {
+        foreach ($wrs as $game => $obj) {
             if ($game == 'MoF' || $game == 'GFW') {
                 $sheet = '_2';
                 $diff_key = 'Easy';
@@ -318,11 +318,13 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
                         $score = $shots[$shot][0];
                         $player = $shots[$shot][1];
                         $date = $shots[$shot][2];
-                        $video = empty($shots[$shot][3]) ? '' : $shots[$shot][3];
+                        $replay = $shots[$shot][3];
+                        $video = empty($shots[$shot][4]) ? '' : $shots[$shot][4];
                     } else {
                         $score = 0;
                         $player = '';
                         $date = '';
+                        $replay = '';
                         $video = '';
                     }
                     if ($game == 'GFW' && $diff == 'Extra') {
@@ -334,8 +336,8 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
                             if (isset($_COOKIE['prefer_video']) && !empty($video)) {
                                 $score = '<a class="replay" href="' . $video . '" target="_blank">' . $score . '</a>';
                                 echo '<td rowspan="4">' . $score_text . '<span class="dl_icon"></span>';
-                            } else if (file_exists(replay_path($game, $diff, $shot))) {
-                                $score = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score . '</a>';
+                            } else if (!empty($replay)) {
+                                $score = '<a class="replay" href="' . $replay . '">' . $score . '</a>';
                                 echo '<td rowspan="4">' . $score_text . '<span class="dl_icon"></span>';
                             } else if (!empty($video)) {
                                 $score = '<a class="replay" href="' . $video . '" target="_blank">' . $score . '</a>';
@@ -354,15 +356,15 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
                         }
                         if (isset($_COOKIE['prefer_video']) && !empty($video)) {
                             $score_text = '<a class="replay" href="' . $video . '" target="_blank">' . $score_text . '<span class="dl_icon"></span></a>';
-                        } else if (file_exists(replay_path($game, $diff, $shot))) {
-                            $score_text = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score_text . '<span class="dl_icon"></span></a>';
+                        } else if (!empty($replay)) {
+                            $score_text = '<a class="replay" href="' . $replay . '">' . $score_text . '<span class="dl_icon"></span></a>';
                         } else if (!empty($video)) {
                             $score_text = '<a class="replay" href="' . $video . '" target="_blank">' . $score_text . '<span class="dl_icon"></span></a>';
                         }
-                        if ($score == $overall[game_num($game)] && $game != 'StB' && $game != 'DS') {
+                        if ($score == $overall->{$game}['score'] && $game != 'StB' && $game != 'DS') {
                             $score_text = '<strong>' . $score_text . '</strong>';
                         }
-                        if ($score == $diff_max[$game][$diff][0] && $game != 'StB' && $game != 'DS') {
+                        if ($score == $diff_max->{$game}->{$diff}['score'] && $game != 'StB' && $game != 'DS') {
                             $score_text = '<u>' . $score_text . '</u>';
                         }
                         if ($score == 0) {
@@ -376,12 +378,12 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
                 echo '</tr>';
             }
             if ($game == 'GFW') {
-                $score = number_format($obj['Extra']['-'][0], 0, '.', ',');
-                if (file_exists(replay_path($game, $diff, $shot))) {
+                $score = number_format($obj['Extra']['A1'][0], 0, '.', ',');
+                if (!empty($replay)) {
                     $score = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score . '<span class="dl_icon"></span></a>';
                 }
-                echo '<tr><td>Extra</td><td colspan="4">' . $score . '<br>by <em>' . $obj['Extra']['-'][1] .
-                '</em><span class="dimgrey"><br><span class="datestring_game">' . date_tl($obj['Extra']['-'][2], $lang) .
+                echo '<tr><td>Extra</td><td colspan="4">' . $score . '<br>by <em>' . $obj['Extra']['A1'][1] .
+                '</em><span class="dimgrey"><br><span class="datestring_game">' . date_tl($obj['Extra']['A1'][2], $lang) .
                 '</span></span></td></tr>';
             }
             echo '</tbody></table></div>';
@@ -394,21 +396,21 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
             '</th><th>' . _('West') . '</th><th>' . _('Percentage') . '</th></tr>';
             foreach ($obj as $diff => $shots) {
                 $westt = $west[$game][$diff];
-                $world = $diff_max[$game][$diff];
-                if ($westt[0] == $world[0]) {
+                $world = $diff_max->{$game}->{$diff};
+                if ($westt[0] == $world['score']) {
                     $percentage = 100;
                 } else {
-                    $percentage = number_format((float) $westt[0] / $world[0] * 100, 2, '.', ',');
+                    $percentage = number_format((float) $westt[0] / $world['score'] * 100, 2, '.', ',');
                 }
-                if ($world[0] >= $MAX_SCORE) {
-                    $world_text = '<abbr title="' . number_format($world[0], 0, '.', ',') .
+                if ($world['score'] >= $MAX_SCORE) {
+                    $world_text = '<abbr title="' . number_format($world['score'], 0, '.', ',') .
                     '">' . number_format($MAX_SCORE, 0, '.', ',') . '</abbr>';
                 } else {
-                    $world_text = number_format($world[0], 0, '.', ',');
+                    $world_text = number_format($world['score'], 0, '.', ',');
                 }
                 echo '<tr class="irregular_tr"><td colspan="3">' . $diff . '</td></tr>' .
                 '<tr class="irregular_tr"><td>' . $world_text .
-                '<br>by <em>' . $world[1] . '</em><br>(' . _($world[2]) .
+                '<br>by <em>' . $world['player'] . '</em><br>(' . _($world['shottype']) .
                 ')</td><td>' . number_format($westt[0], 0, '.', ',') .
                 '<br>by <em>' . $westt[1] . '</em><br>(' . (empty($westt[2]) ? $westt[2] : _($westt[2])) .
                 ')</td><td class="' . pc_class($percentage) . '">(' . $percentage . '%)</td></tr>';
@@ -422,17 +424,24 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
         if ($layout == 'New') {
             echo '<div id="newlayout"><p id="clickgame">' . _('Click a game cover to show its list of world records.') . '</p>';
             $second_row = false;
-		    foreach ($wr as $game => $value) {
-                if ($game == 'MoF') {
-                    $second_row = true;
-                    echo '<br>';
-                }
-                if (!$second_row) {
-                    echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_1"></span>' .
-                    '<span class="_ tooltip">' . full_name($game) . '</span></span>';
-                } else {
-                    echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_2"></span>' .
-                    '<span class="_ tooltip">' . full_name($game) . '</span></span>';
+            if (gettype($games) != 'string' || strpos($games, 'Internal Server Error') === false) {
+                foreach ($games as $key => $data) {
+                    $game = $data['short_name'];
+                    $full_name = $data['full_name'];
+                    if ($game == 'UDoALG') {
+                        continue;
+                    }
+                    if ($game == 'MoF') {
+                        $second_row = true;
+                        echo '<br>';
+                    }
+                    if (!$second_row) {
+                        echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_1"></span>' .
+                        '<span class="full_name tooltip">' . $full_name . '</span></span>';
+                    } else {
+                        echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_2"></span>' .
+                        '<span class="full_name tooltip">' . $full_name . '</span></span>';
+                    }
                 }
             }
             echo '</div>';
@@ -440,10 +449,6 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
 	?>
 	<div id='wr_list'>
         <p id='fullname' class='center'></p>
-        <section id='toggle_season'>
-            <input id='seasons' type='checkbox'>
-            <label id='label_seasons' for='seasons'><?php echo _('Seasons') ?></label>
-        </section>
         <section id='toggle_unverified'>
             <input id='unverified' type='checkbox'>
             <label id='label_unverified' for='unverified' class='unverified'><?php echo _('Unverified scores') ?></label>
@@ -476,9 +481,14 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
             <select id='search'>
                 <option value=''>...</option>
                 <?php
-                    natcasesort($pl);
-                    foreach ($pl as $key => $player) {
-                        echo '<option value="' . $player . '">' . $player . '</option>';
+                    $players = curl_get($API_BASE . '/api/v1/replay/players/?region=Eastern');
+                    if (strpos($players, 'Internal Server Error') === false) {
+                        $players = json_decode($players, true);
+                        $players = $players['score'];
+                        natcasesort($players);
+                        foreach ($players as $key => $player) {
+                            echo '<option value="' . $player . '">' . $player . '</option>';
+                        }
                     }
                 ?>
             </select>
@@ -520,31 +530,32 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
                 <th class='general_header datestring'><?php echo _('Date') ?></th>
             </tr></thead>
             <tbody id='recentbody'><?php
-                $i = 0;
-                foreach ($recent as $key => $obj) {
-                    if (file_exists(replay_path($obj->game, $obj->diff, $obj->shot))) {
-                        $path = replay_path($obj->game, $obj->diff, $obj->shot);
-                        $replay = '<a href="' . $path . '">' . substr($path, 8) . '</a>';
-                    } else {
-						$replay = '-';
-                    }
-                    if (!empty($obj->video)) {
-                        $video = '<a href="' . $obj->video . '" target="_blank">Video link</a>';
-                    } else {
-                        $video = '-';
-                    }
-                    $space = (has_space($lang) ? ' ' : '');
-                    echo '<tr>' .
-                    '<td class="' . $obj->game . 'p">' . _($obj->game) . $space . $obj->diff . $space . _($obj->shot) . '</td>' .
-                    '<td data-sort="' . $obj->score . '">' . number_format($obj->score, 0, '.', ',') . '</td>' .
-                    '<td>' . $obj->player . '</td>' .
-                    '<td>' . $replay . '</td>' .
-                    '<td>' . $video . '</td>' .
-                    '<td class="datestring" data-sort="' . date_tl($obj->date, 'raw') . '">' . date_tl($obj->date, $lang) . '</td>' .
-                    '</tr>';
-                    $i++;
-                    if ($i == $RECENT_LIMIT) {
-                        break;
+                $recent = curl_get($API_BASE . '/api/v1/replay/?limit=' . $RECENT_LIMIT . '&ordering=-date&type=Score&region=Eastern&verified=true');
+                if (strpos($recent, 'Internal Server Error') === false) {
+                    $recent = json_decode($recent, true);
+                    $recent = $recent['results'];
+                    foreach ($recent as $key => $data) {
+                        $date = date_tl($data['date'], $lang);
+                        $date_raw = date_tl($data['date'], 'raw');
+                        if (empty($data['replay'])) {
+                            $replay = '-';
+                        } else {
+                            $chunks = preg_split('/\//', $data['replay']);
+                            $replay = '<a href="' . $data['replay'] . '">' . $chunks[count($chunks) - 1] . '</a>';
+                        }
+                        if (empty($data['video'])) {
+                            $video = '-';
+                        } else {
+                            $video = '<a href="' . $data['video'] . '">Video link</a>';
+                        }
+                        echo '<tr>';
+                        echo '<td class="' . $data['category']['game'] . 'p">' . $data['category']['game'] . ' ' . $data['category']['difficulty'] . ' ' . $data['category']['shot'] . '</td>';
+                        echo '<td>' . number_format($data['score'], 0, '.', ',') . '</td>';
+                        echo '<td>' . $data['player'] . '</td>';
+                        echo '<td>' . $replay . '</td>';
+                        echo '<td>' . $video . '</td>';
+                        echo '<td data-sort="' . $date_raw . '">' . $date . '</td>';
+                        echo '</tr>';
                     }
                 }
             ?></tbody>
@@ -553,24 +564,25 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
     <div id='recentm'>
         <h2><?php echo _('Recent Records') ?></h2>
         <?php
-            $i = 0;
-            foreach ($recent as $key => $obj) {
-                echo '<hr>';
-                if (file_exists(replay_path($obj->game, $obj->diff, $obj->shot))) {
-                    $path = replay_path($obj->game, $obj->diff, $obj->shot);
-                    $replay = '<a href="' . $path . '">' . substr($path, 8) . '</a>';
-                } else {
-                    $replay = '-';
+            /*if (gettype($recent) != 'string' || strpos($recent, 'Internal Server Error') === false) {
+                foreach ($recent as $key => $data) {
+                    $date = date_tl($data['date'], $lang);
+                    $date_raw = date_tl($data['date'], 'raw');
+                    if (empty($data['replay'])) {
+                        $replay = '-';
+                    } else {
+                        $replay = '<a href="' . $data['replay'] . '">' . preg_split('/\//', $data['replay'])[5] . '</a>';
+                    }
+                    if (empty($data['video'])) {
+                        $video = '-';
+                    } else {
+                        $video = '<a href="' . $data['video'] . '">Video link</a>';
+                    }
+                    echo '<p class="' . $data['category']['game'] . '">' . _($data['category']['game']) . ' ' . $data['category']['difficulty'] . ' ' . $data['category']['shot'] . '</p>' .
+                    '<p>' . number_format($data['score'], 0, '.', ',') . ' by <em>' . $data['player'] . '</em><br>' .
+                    '<span class="datestring_player">' . date_tl($data['date'], $lang) . '</span></p>';
                 }
-                $space = (has_space($lang) ? ' ' : '');
-                echo '<p class="' . $obj->game . '">' . _($obj->game) . $space . $obj->diff . $space . _($obj->shot) . '</p>' .
-                '<p>' . number_format($obj->score, 0, '.', ',') . ' by <em>' . $obj->player . '</em><br>' .
-                '<span class="datestring_player">' . date_tl($obj->date, $lang) . '</span></p>';
-                $i++;
-                if ($i == $RECENT_LIMIT) {
-                    break;
-                }
-            }
+            }*/
         ?><hr>
     </div>
     <div id='players'>
@@ -580,33 +592,59 @@ usort($recent, fn($a, $b) => is_later_date($a->date, $b->date) ? -1 : 1);
                 <tr>
 					<th class='general_header no-sort'>#</th>
                     <th class='general_header'><?php echo _('Player') ?></th>
-                    <th class='general_header sorttable_numeric'><?php echo _('No. of WRs') ?></th>
+                    <th id='number_of_wrs' class='general_header sorttable_numeric'><?php echo _('No. of WRs') ?></th>
                     <th id='differentgames' class='general_header'><?php echo _('Different games') ?></th>
                 </tr>
             </thead>
             <tbody>
 				<?php
-                    uasort($pl_wr, function($a, $b) {
-                        $val = $b[1] <=> $a[1];
-                        if ($val == 0) {
-                            $val = $b[2] <=> $a[2];
-                        }
-                        return $val;
-                    });
-                    $count = 0;
-					foreach ($pl_wr as $key => $value) {
-						if ($pl[$key] === '') {
-							continue;
-						}
-						echo '<tr><td></td>';
-                        echo '<td><a href="#' . $pl_wr[$key][0] . '">' . $pl_wr[$key][0] . '</a></td>';
-						echo '<td>' . $pl_wr[$key][1] . '</td>';
-                        echo '<td>' . $pl_wr[$key][2] . '</td></tr>';
-					}
+                    foreach ($player_wrs as $player => $count) {
+                        $player_games->{$player} = count(array_unique($player_games->{$player}));
+                        echo '<tr><td></td>';
+                        echo '<td><a href="#' . urlencode($player) . '">' . $player . '</a></td>';
+                        echo '<td data-sort="' . $player_wrs->{$player} . '">' . $player_wrs->{$player} . '</td>';
+                        echo '<td data-sort="' . $player_games->{$player} . '">' . $player_games->{$player} . '</td></tr>';
+                    }
 				?>
 			</tbody>
         </table>
     </div>
     <footer><strong><a href='#top'><?php echo _('Back to Top') ?></a></strong></footer>
-	<?php echo '<input id="missing_replays" type="hidden" value="' . implode('', $missing_replays) . '">' ?>
+	<input id='diffs' type='hidden' value='<?php
+		$diffs = '{';
+		foreach ($games as $key => $data) {
+            if ($data['short_name'] == 'UDoALG') {
+                continue;
+            }
+			$diffs .= '"' . $data['short_name'] . '":[';
+			foreach ($data['shots'][0]['categories'] as $key => $category) {
+                if ($category['type'] == 'LNN') {
+                    continue;
+                }
+                if ($category['region'] == 'Western') {
+                    continue;
+                }
+				$diffs .= '"' . $category['difficulty'] . '",';
+			}
+            if ($data['short_name'] == 'HSiFS') {
+                $diffs .= '"Extra",';
+            }
+			$diffs = substr($diffs, 0, -1) . '],';
+		}
+		echo substr($diffs, 0, -1) . '}';
+	?>'>
+	<input id='shots' type='hidden' value='<?php
+		$shots = '{';
+		foreach ($games as $key => $data) {
+			$shots .= '"' . $data['short_name'] . '":[';
+			foreach ($data['shots'] as $key => $shot) {
+                if ($data['short_name'] == 'HSiFS' && strlen($shot['name']) <= 6) {
+                    continue;
+                }
+				$shots .= '"' . $shot['name'] . '",';
+			}
+			$shots = substr($shots, 0, -1) . '],';
+		}
+		echo substr($shots, 0, -1) . '}';
+	?>'>
 </div>

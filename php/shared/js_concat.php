@@ -17,7 +17,6 @@ $min = (!is_localhost($_SERVER['REMOTE_ADDR']) ? '-min' : '');
 $sorttable = array('thvote');
 $sortable = array('admin', 'fangame', 'gensokyo', 'lnn', 'royalflare', 'scoring', 'survival', 'wr');
 $canvas = array('slots', 'survival', 'tiers');
-$wr_json = array('drc', 'scoring', 'wr');
 $po2json = array('drc', 'lnn', 'wr');
 $page = $_GET['page'];
 $js = array();
@@ -57,13 +56,6 @@ if ($page == 'scoring') {
 if ($page == 'drc') {
     echo 'const rubrics = ' . file_get_contents('../../json/rubrics.json') . ';';
 }
-if ($page == 'lnn') {
-    if (file_exists('../../json/lnnlist.json')) {
-        echo 'const LNNs = ' . file_get_contents('../../json/lnnlist.json') . ';';
-    } else {
-        echo 'const LNNs = ' . curl_get('https://maribelhearn.com/json/lnnlist.json') . ';';
-    }
-}
 if ($page == 'wr') {
     if (file_exists('../../json/bestinthewest.json')) {
         echo 'const westScores = ' . file_get_contents('../../json/bestinthewest.json') . ';';
@@ -84,13 +76,6 @@ if ($page == 'tiers') {
 if ($page == 'slots') {
     echo 'const CHARS = ' . file_get_contents('../../json/charpos.json') . ';';
     echo 'const LOCATIONS = ' . file_get_contents('../../json/locations.json') . ';';
-}
-if (in_array($page, $wr_json)) {
-    if (file_exists('json/wrlist.json')) {
-        echo 'const WRs = ' . file_get_contents('../../json/wrlist.json') . ';';
-    } else {
-        echo 'const WRs = ' . curl_get('https://maribelhearn.com/json/wrlist.json') . ';';
-    }
 }
 if (in_array($page, $po2json) && !empty($_GET['hl'])) {
     $langs = array('en_GB', 'en_US', 'ja_JP', 'zh_CN', 'ru_RU', 'de_DE', 'es_ES');
