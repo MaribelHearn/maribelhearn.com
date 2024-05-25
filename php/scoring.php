@@ -1,5 +1,5 @@
 <?php
-include_once 'php/shared/http.php';
+global $API_BASE;
 ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
@@ -11,7 +11,7 @@ include_once 'php/shared/http.php';
     <h2>Contents</h2>
     <div class='contents'>
 		<?php
-            $games = curl_get('http://localhost/api/v1/game/');
+            $games = curl_get($API_BASE . '/api/v1/game/');
             if (strpos($games, 'Internal Server Error') === false) {
                 $games = json_decode($games, true);
                 foreach ($games as $key => $data) {
