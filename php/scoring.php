@@ -119,7 +119,7 @@ global $API_BASE;
                 '</p></caption><tr><th>' . shot_route($game) . '</th>';
                 $categories = $data['shots'][0]['categories'];
                 foreach ($categories as $key => $category_data) {
-                    if ($category_data['type'] == 'LNN') {
+                    if ($category_data['type'] == 'LNN' || $category_data['region'] == 'Western') {
                         continue;
                     }
                     $diff = $category_data['difficulty'];
@@ -139,7 +139,7 @@ global $API_BASE;
                     }
                     echo '<tr><td>' . $shot . '</td>';
                     foreach ($shot_data['categories'] as $key => $category_data) {
-                        if ($category_data['type'] == 'LNN') {
+                        if ($category_data['type'] == 'LNN' || $category_data['region'] == 'Western') {
                             continue;
                         }
                         $diff = $category_data['difficulty'];
