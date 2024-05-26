@@ -56,15 +56,6 @@ if ($page == 'scoring') {
 if ($page == 'drc') {
     echo 'const rubrics = ' . file_get_contents('../../json/rubrics.json') . ';';
 }
-if ($page == 'wr') {
-    if (file_exists('../../json/bestinthewest.json')) {
-        echo 'const westScores = ' . file_get_contents('../../json/bestinthewest.json') . ';';
-        echo 'const unverifiedScores = ' . file_get_contents('../../json/unverified.json') . ';';
-    } else {
-        echo 'const westScores = ' . curl_get('https://maribelhearn.com/json/bestinthewest.json') . ';';
-        echo 'const unverifiedScores = ' . curl_get('https://maribelhearn.com/json/unverified.json') . ';';
-    }
-}
 if ($page == 'tiers') {
     echo 'const categories = {' .
         '"characters":' . file_get_contents('../../json/characters.json') . ',' . 
