@@ -481,7 +481,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
             <select id='search'>
                 <option value=''>...</option>
                 <?php
-                    $players = curl_get($API_BASE . '/api/v1/replay/players/?region=Eastern');
+                    $players = curl_get($API_BASE . '/api/v1/replay/players/?region=Eastern&verified=true');
                     if (strpos($players, 'Internal Server Error') === false) {
                         $players = json_decode($players, true);
                         $players = $players['score'];
