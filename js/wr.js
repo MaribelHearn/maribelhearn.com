@@ -620,6 +620,7 @@ function checkHash() {
 
             if (hash == player) {
                 document.getElementById("player").value = player;
+                document.getElementById("search").value = player;
                 document.getElementById("player_search").scrollIntoView();
                 getPlayerWRs(player);
                 break;

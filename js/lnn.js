@@ -1,6 +1,6 @@
 /*global _ getCookie deleteCookie setCookie fullNameNumber*/
 const API_BASE = location.hostname.includes("maribelhearn.com") ? "https://maribelhearn.com" : "http://localhost";
-const banList = ["Reimu", "Marisa", "Sanae", "Seiran", "Biten", "Enoko", "Chiyari"];
+//const banList = ["Reimu", "Marisa", "Sanae", "Seiran", "Biten", "Enoko", "Chiyari"];
 let language = "en_GB";
 let selected = "";
 let shots = {};
@@ -373,6 +373,7 @@ function checkHash() {
 
             if (hash == player) {
                 document.getElementById("player").value = player;
+                document.getElementById("search").value = player;
                 document.getElementById("player_search").scrollIntoView();
                 getPlayerLNNs(player);
                 break;
