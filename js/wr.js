@@ -322,13 +322,10 @@ function showWRtable(game, records) {
         const score = data.score;
         const player = data.player;
         const date = formatDate(data.date);
-        //let video = data.video;
 
         const diff = data.category.difficulty;
         const shot = data.category.shot;
-        //let isUnverified = false;
 
-        //const chara = getCharacter(shot);
         let id = game + diff + shot;
 
         if (score <= currentScore[id]) {
@@ -349,8 +346,12 @@ function showWRtable(game, records) {
             text = formatUnverified(text);
         }
 
-        if (data.replay) {
-            text = `<a class='replay' href='${data.replay.replace("/replays", "/media/replays")}'>${text}<span class='dl_icon'></span></a>`;
+        if (videoEnabled && data.video) {
+            text = `<a class='replay' href='${data.video}'>${text}<span class='dl_icon'></span></a>`;
+        } else if (data.replay) {
+            text = `<a class='replay' href='${data.replay.replace("com/replays", "com/media/replays")}'>${text}<span class='dl_icon'></span></a>`;
+        } else if (data.video) {
+            text = `<a class='replay' href='${data.video}'>${text}<span class='dl_icon'></span></a>`;
         }
 
         text += `<br>by <em>${player}</em>`;
