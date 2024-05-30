@@ -294,7 +294,7 @@ $missing_runs = 0;
                 <th class='general_header'><?php echo _('Date') ?></th>
             </tr></thead>
             <tbody id='recentbody'><?php
-                $recent = curl_get($API_BASE . '/api/v1/replay/?limit=' . $RECENT_LIMIT . '&ordering=-date&type=LNN');
+                $recent = curl_get($API_BASE . '/api/v1/replay/?limit=' . $RECENT_LIMIT . '&ordering=-date&date__isnull=False&type=LNN');
                 if (strpos($recent, 'Internal Server Error') === false) {
                     $recent = json_decode($recent, true);
                     $recent = $recent['results'];
