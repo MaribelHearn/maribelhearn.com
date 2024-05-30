@@ -121,7 +121,7 @@ $missing_runs = 0;
             echo '<noscript>';
         }
         $sheet = '_1';
-        $lnn = curl_get($API_BASE . '/api/v1/replay/?ordering=game&type=LNN');
+        $lnn = curl_get($API_BASE . '/api/v1/replay/?ordering=game,shot&type=LNN');
         $games_seen = [];
         if (strpos($lnn, 'Internal Server Error') === false) {
             $lnn = json_decode($lnn, true);
