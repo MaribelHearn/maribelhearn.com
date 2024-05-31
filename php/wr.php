@@ -245,7 +245,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
                             $replay = '-';
                         }
                         if (!empty($wr['video'])) {
-                            $video = '<a href="' . $wr['video'] . '" target="_blank">Video link</a>';
+                            $video = '<a href="' . $wr['video'] . '" target="_blank">' . _('Link') . '</a>';
                         } else {
                             $video = '-';
                         }
@@ -523,7 +523,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
                             if (empty($data['video'])) {
                                 $video = '-';
                             } else {
-                                $video = '<a href="' . $data['video'] . '">Video link</a>';
+                                $video = '<a href="' . $data['video'] . '">' . _('Link') . '</a>';
                             }
                             echo '<tr>';
                             echo '<td class="' . $data['category']['game'] . 'p">' . $data['category']['game'] . ' ' . $data['category']['difficulty'] . ' ' . $data['category']['shot'] . '</td>';
