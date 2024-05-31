@@ -1,4 +1,4 @@
-/*global _ MAX_SCORE isMobile setCookie getCookie deleteCookie sep fullNameNumber*/
+/*global _ MAX_SCORE setCookie getCookie deleteCookie sep fullNameNumber*/
 const API_BASE = location.hostname.includes("maribelhearn.com") ? "https://maribelhearn.com" : "http://localhost";
 const all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
 const hsifsExtraShots = ["Reimu", "Cirno", "Aya", "Marisa"];
@@ -13,10 +13,6 @@ function getSeason(string) {
 
 function getCharacter(string) {
     return string.replace("Spring", "").replace("Summer", "").replace("Autumn", "").replace("Winter", "");
-}
-
-function isPortrait() {
-    return window.innerHeight > window.innerWidth && isMobile();
 }
 
 function toggleLayout() {
@@ -62,11 +58,6 @@ function toggleDates(alreadyDisabled) {
         }
 
         document.getElementById(`${game}overall6`).style.display = display;
-        const overallMobile = document.getElementById(`${game}overallm`);
-    
-        if (overallMobile) {
-            overallMobile.style.display = display;
-        }
     }
     
     const dateStrings = document.querySelectorAll(".date, .date_empty, .datestring, .datestring_game");
@@ -118,69 +109,36 @@ function formatUnverified(score) {
     return `<span class='unver_container'><span class='unver'>${score}</span><span class='tooltip'>Unverified</span></span>`;
 }
 
-/*function appendShottypeHeaderPortrait(game, diff, shot) {
-    if (game == "HSiFS" && diff != "Extra") {
-        document.getElementById("world_tbody").innerHTML += `<tr id='${shot + diff}'><td>${_(getCharacter(shot))}<span class='${getSeason(shot)}'>${_(getSeason(shot))}</span></td></tr>`;
-    } else {
-        document.getElementById("world_tbody").innerHTML += `<tr id='${shot + diff}'><td>${_(shot)}</td></tr>`;
-    }
-}*/
-
 function appendShottypeHeaders(game, shots) {
     const worldTable = document.getElementById("world_tbody");
     worldTable.innerHTML = "";
+    document.getElementById("world_thead").innerHTML = `<tr id='world_thead_tr'><th>${shotRoute(game)}</th></tr>`;
 
-    /*if (isPortrait()) {
-        for (const diff in WRs[game]) {
-            worldTable.innerHTML += `<tr><th>${shotRoute(game)}</th><th class='${diff}'>${diff}</th></tr>`;
-
-            if (game == "HSiFS" && diff == "Extra") {
-                shots = hsifsExtraShots;
-            }
-            
-            if (game != "GFW" || diff != "Extra") {
-                for (const shot of shots) {
-                    appendShottypeHeaderPortrait(game, diff, shot);
-                }
-            }
+    for (const shot of shots) {
+        if (game == "HSiFS") {
+            worldTable.innerHTML += `<tr id='${shot}'><td>${_(getCharacter(shot))}<span class='${getSeason(shot)}'>${_(getSeason(shot))}</span></td></tr>`;
+        } else {
+            worldTable.innerHTML += `<tr id='${shot}'><td>${_(shot)}</td></tr>`;
         }
-    } else {*/
-        document.getElementById("world_thead").innerHTML = `<tr id='world_thead_tr'><th>${shotRoute(game)}</th></tr>`;
-
-        for (const shot of shots) {
-            if (game == "HSiFS") {
-                worldTable.innerHTML += `<tr id='${shot}'><td>${_(getCharacter(shot))}<span class='${getSeason(shot)}'>${_(getSeason(shot))}</span></td></tr>`;
-            } else {
-                worldTable.innerHTML += `<tr id='${shot}'><td>${_(shot)}</td></tr>`;
-            }
-        }
-    //}
+    }
 }
 
 function appendDifficultyHeaders(game, diff, shots) {
     const worldTableHeaderRow = document.getElementById("world_thead_tr");
 
     if (game == "GFW" && diff == "Extra") {
-        const colspan = (isPortrait() ? "" : " colspan='4'");
-        document.getElementById("world_tbody").innerHTML += `<tr id='Extra'><td>Extra</td><td id='GFWExtra-'${colspan}></td></tr>`;
+        document.getElementById("world_tbody").innerHTML += `<tr id='Extra'><td>Extra</td><td id='GFWExtra-' colspan='4'></td></tr>`;
     } else if (game == "HSiFS" && diff == "Extra") {
-        if (!isPortrait()) {
-            worldTableHeaderRow.innerHTML += "<th class='sorttable_numeric'>Extra</th>";
-        }
+        worldTableHeaderRow.innerHTML += "<th class='sorttable_numeric'>Extra</th>";
 
         for (const shot of hsifsExtraShots) {
-            const id = (isPortrait() ? `${shot}${diff}` : `${shot}Spring`);
-            const rowspan = (isPortrait() ? "" : " rowspan='4'");
-            document.getElementById(id).innerHTML += `<td id='${game + diff + shot}'${rowspan}></td>`;
+            document.getElementById(`${shot}Spring`).innerHTML += `<td id='${game + diff + shot}' rowspan='4'></td>`;
         }
     } else {
-        if (!isPortrait()) {
-            worldTableHeaderRow.innerHTML += `<th class='sorttable_numeric'>${diff}</th>`;
-        }
+        worldTableHeaderRow.innerHTML += `<th class='sorttable_numeric'>${diff}</th>`;
 
         for (const shot of shots) {
-            const id = (isPortrait() ? shot + diff : shot);
-            document.getElementById(id).innerHTML += `<td id='${game + diff + shot}'></td>`;
+            document.getElementById(shot).innerHTML += `<td id='${game + diff + shot}'></td>`;
         }
     }
 }
@@ -364,6 +322,10 @@ function showWRtable(game, records) {
             id = "GFWExtra-";
         }
 
+        if (game == "HSiFS" && diff == "Extra") {
+            id += "";
+        }
+
         document.getElementById(id).innerHTML = text;
         currentScore[id] = score;
     }
@@ -514,12 +476,6 @@ function reloadTable() {
     }
 }
 
-function updateOrientation() {
-    if (isMobile()) {
-        reloadTable();
-    }
-}
-
 function getPlayerWRs(player) {
     if (typeof player == "object") {
         player = this.value; // if event listener fired
@@ -559,7 +515,6 @@ function setLanguage(event) {
 }
 
 function setEventListeners() {
-    document.body.addEventListener("resize", updateOrientation, false);
     document.getElementById("toggle_layout").addEventListener("click", toggleLayout, false);
     document.getElementById("recent_limit").addEventListener("keyup", setRecentLimit, false);
     document.getElementById("recent_limit").addEventListener("mouseup", setRecentLimit, false);

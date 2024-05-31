@@ -288,7 +288,6 @@ if (strpos($west_data, 'Internal Server Error') === false) {
                 for ($j = 0; $j < sizeof($obj); $j++) {
                     $diff = array_keys($obj)[$j];
                     $shots = $obj[array_keys($obj)[$j]];
-                    //var_dump($shots);echo '<br><br>';
                     if (isset($shots[$shot])) {
                         $score = $shots[$shot][0];
                         $player = $shots[$shot][1];
@@ -431,10 +430,12 @@ if (strpos($west_data, 'Internal Server Error') === false) {
             <input id='toggle_video' type='checkbox'>
             <label id='label_video' for='toggle_video'><?php echo _('Link videos over replays') ?></label>
         </section>
-        <table id='world' class='sortable'>
-            <thead id='world_thead'></thead>
-            <tbody id='world_tbody'></tbody>
-        </table>
+        <div class='overflow_mobile'>
+            <table id='world' class='sortable'>
+                <thead id='world_thead'></thead>
+                <tbody id='world_tbody'></tbody>
+            </table>
+        </div>
         <table id='west'>
             <thead id='west_thead'>
                 <tr class='irregular_tr'>
@@ -469,7 +470,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
             </select>
         </section>
     </div>
-	<div id='player_list'>
+	<div id='player_list' class='overflow_mobile'>
 		<table class='sortable'>
 			<thead id='player_thead'>
                 <tr>
@@ -495,46 +496,48 @@ if (strpos($west_data, 'Internal Server Error') === false) {
 	</div>
     <div id='recent'>
         <h2><?php echo _('Recent Records') ?></h2>
-        <div class='overflow_mobile'><table class='sortable'>
-            <thead id='recenthead'><tr>
-                <th class='general_header'><?php echo _('Category')  ?></th>
-                <th class='general_header'><?php echo _('Score') ?></th>
-                <th class='general_header'><?php echo _('Player') ?></th>
-                <th class='general_header'><?php echo _('Replay') ?></th>
-                <th class='general_header'><?php echo _('Video') ?></th>
-                <th class='general_header datestring'><?php echo _('Date') ?></th>
-            </tr></thead>
-            <tbody id='recentbody'><?php
-                $recent = curl_get($API_BASE . '/api/v1/replay/?limit=' . $RECENT_LIMIT . '&ordering=-date&type=Score&region=Eastern&verified=true');
-                if (strpos($recent, 'Internal Server Error') === false) {
-                    $recent = json_decode($recent, true);
-                    $recent = $recent['results'];
-                    foreach ($recent as $key => $data) {
-                        $date = date_tl($data['date'], $lang);
-                        $date_raw = date_tl($data['date'], 'raw');
-                        if (empty($data['replay'])) {
-                            $replay = '-';
-                        } else {
-                            $chunks = preg_split('/\//', $data['replay']);
-                            $replay = '<a href="' . str_replace('/replays', '/media/replays', $data['replay']) . '">' . $chunks[count($chunks) - 1] . '</a>';
+        <div class='overflow_mobile'>
+            <table class='sortable'>
+                <thead id='recenthead'><tr>
+                    <th class='general_header'><?php echo _('Category')  ?></th>
+                    <th class='general_header'><?php echo _('Score') ?></th>
+                    <th class='general_header'><?php echo _('Player') ?></th>
+                    <th class='general_header'><?php echo _('Replay') ?></th>
+                    <th class='general_header'><?php echo _('Video') ?></th>
+                    <th class='general_header datestring'><?php echo _('Date') ?></th>
+                </tr></thead>
+                <tbody id='recentbody'><?php
+                    $recent = curl_get($API_BASE . '/api/v1/replay/?limit=' . $RECENT_LIMIT . '&ordering=-date&type=Score&region=Eastern&verified=true');
+                    if (strpos($recent, 'Internal Server Error') === false) {
+                        $recent = json_decode($recent, true);
+                        $recent = $recent['results'];
+                        foreach ($recent as $key => $data) {
+                            $date = date_tl($data['date'], $lang);
+                            $date_raw = date_tl($data['date'], 'raw');
+                            if (empty($data['replay'])) {
+                                $replay = '-';
+                            } else {
+                                $chunks = preg_split('/\//', $data['replay']);
+                                $replay = '<a href="' . str_replace('/replays', '/media/replays', $data['replay']) . '">' . $chunks[count($chunks) - 1] . '</a>';
+                            }
+                            if (empty($data['video'])) {
+                                $video = '-';
+                            } else {
+                                $video = '<a href="' . $data['video'] . '">Video link</a>';
+                            }
+                            echo '<tr>';
+                            echo '<td class="' . $data['category']['game'] . 'p">' . $data['category']['game'] . ' ' . $data['category']['difficulty'] . ' ' . $data['category']['shot'] . '</td>';
+                            echo '<td>' . number_format($data['score'], 0, '.', ',') . '</td>';
+                            echo '<td>' . $data['player'] . '</td>';
+                            echo '<td>' . $replay . '</td>';
+                            echo '<td>' . $video . '</td>';
+                            echo '<td data-sort="' . $date_raw . '">' . $date . '</td>';
+                            echo '</tr>';
                         }
-                        if (empty($data['video'])) {
-                            $video = '-';
-                        } else {
-                            $video = '<a href="' . $data['video'] . '">Video link</a>';
-                        }
-                        echo '<tr>';
-                        echo '<td class="' . $data['category']['game'] . 'p">' . $data['category']['game'] . ' ' . $data['category']['difficulty'] . ' ' . $data['category']['shot'] . '</td>';
-                        echo '<td>' . number_format($data['score'], 0, '.', ',') . '</td>';
-                        echo '<td>' . $data['player'] . '</td>';
-                        echo '<td>' . $replay . '</td>';
-                        echo '<td>' . $video . '</td>';
-                        echo '<td data-sort="' . $date_raw . '">' . $date . '</td>';
-                        echo '</tr>';
                     }
-                }
-            ?></tbody>
-        </table></div>
+                ?></tbody>
+            </table>
+        </div>
     </div>
     <div id='players'>
         <h2><?php echo _('Player Ranking') ?></h2>
