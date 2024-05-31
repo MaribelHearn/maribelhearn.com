@@ -1,31 +1,8 @@
 #toggle_layout {
     display: none;
 }
-@media only screen and (orientation: portrait) {
-    #recent {
-        display: none;
-    }
-    #recentm {
-        display: block;
-    }
-    #recentm p {
-        margin: 2px;
-    }
-    #recent_link, #recent_linkn {
-        display: none;
-    }
-     #recent_linkm, #recent_linkmn {
-        display: table-row;
-    }
-}
 @media only screen and (orientation: landscape) {
     .PCBt {
         font-size: 9px;
-    }
-    #recent_link, #recent_linkn {
-        display: table-row;
-    }
-    #recent_linkm, #recent_linkmn {
-        display: none;
     }
 }

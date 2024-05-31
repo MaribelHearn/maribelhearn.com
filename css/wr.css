@@ -176,7 +176,7 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
     content: '';
     display: table-cell;
 }
-.hidden, #wr_list, #player_list, #player_search, #seasontoggle, #newlayout, #playersearchlink, #contents_new, #recent_linkm, #recent_linkmn, #recentm {
+.hidden, #wr_list, #player_list, #player_search, #seasontoggle, #newlayout, #playersearchlink, #contents_new {
     display: none;
 }
 #newlayout, #player_search {

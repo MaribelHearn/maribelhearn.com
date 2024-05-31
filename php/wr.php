@@ -501,7 +501,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
 	</div>
     <div id='recent'>
         <h2><?php echo _('Recent Records') ?></h2>
-        <table class='sortable'>
+        <div class='overflow'><table class='sortable'>
             <thead id='recenthead'><tr>
                 <th class='general_header'><?php echo _('Category')  ?></th>
                 <th class='general_header'><?php echo _('Score') ?></th>
@@ -540,31 +540,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
                     }
                 }
             ?></tbody>
-        </table>
-    </div>
-    <div id='recentm'>
-        <h2><?php echo _('Recent Records') ?></h2>
-        <?php
-            /*if (gettype($recent) != 'string' || strpos($recent, 'Internal Server Error') === false) {
-                foreach ($recent as $key => $data) {
-                    $date = date_tl($data['date'], $lang);
-                    $date_raw = date_tl($data['date'], 'raw');
-                    if (empty($data['replay'])) {
-                        $replay = '-';
-                    } else {
-                        $replay = '<a href="' . $data['replay'] . '">' . preg_split('/\//', $data['replay'])[5] . '</a>';
-                    }
-                    if (empty($data['video'])) {
-                        $video = '-';
-                    } else {
-                        $video = '<a href="' . $data['video'] . '">Video link</a>';
-                    }
-                    echo '<p class="' . $data['category']['game'] . '">' . _($data['category']['game']) . ' ' . $data['category']['difficulty'] . ' ' . $data['category']['shot'] . '</p>' .
-                    '<p>' . number_format($data['score'], 0, '.', ',') . ' by <em>' . $data['player'] . '</em><br>' .
-                    '<span class="datestring_player">' . date_tl($data['date'], $lang) . '</span></p>';
-                }
-            }*/
-        ?><hr>
+        </table></div>
     </div>
     <div id='players'>
         <h2><?php echo _('Player Ranking') ?></h2>
