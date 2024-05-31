@@ -165,19 +165,16 @@ if (strpos($west_data, 'Internal Server Error') === false) {
     <?php
         // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
         if ($layout == 'New') {
-            echo '<div id="contents_new" class="contents"><p id="overall_link"><a href="#overall" ' .
-            'class="overallrecords">' . _('Overall Records') . '</a></p>' .
-            '<p id="overall_linkm"><a href="#overallm" class="overallrecords">' . _('Overall Records') .
-            '</a></p><p><a href="#wrs" class="worldrecords">' . _('World Records') . '
-            </a></p><p id="recent_link"><a href="#recent" >' . _('Recent Records') .
-            '</a></p><p id="recent_linkm"><a href="#recentm">' . _('Recent Records') .
-            '</a></p><p><a href="#players" class="playerranking">' . _('Player Ranking') .
-            '</a></p></div><noscript>';
+            echo '<div id="contents_new" class="contents">' .
+            '<p><a href="#overall" class="overallrecords">' . _('Overall Records') . '</a></p>' .
+            '<p><a href="#wrs" class="worldrecords">' . _('World Records') . '</a></p>' .
+            '<p><a href="#recent" >' . _('Recent Records') . '</a></p>' .
+            '<p><a href="#players" class="playerranking">' . _('Player Ranking') . '</a></p>' .
+            '</div><noscript>';
         }
-        echo '<div class="contents"><p id="overall_linkn"><a href="#overall" ' .
-        'class="overallrecords">' . _('Overall Records') . '</a></p>' .
-        '<p id="overall_linkmn"><a href="#overallm" class="overallrecords">' . _('Overall Records') .
-        '</a></p><p><a href="#wrs" class="worldrecords">' . _('World Records') . '
+        echo '<div class="contents">' .
+        '<p><a href="#overall" class="overallrecords">' . _('Overall Records') . '</a></p>' .
+        '<p><a href="#wrs" class="worldrecords">' . _('World Records') . '
         </a></p>';
         $games = curl_get($API_BASE . '/api/v1/game/');
         if (strpos($games, 'Internal Server Error') === false) {
@@ -191,10 +188,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
         }
         echo '<p id="westernlink"><a href="#western">' . _('Western Records') . '</a></p>';
         echo '<p id="playersearchlink"><a href="#playerwrs">' . _('Player Search') . '</a></p>';
-        echo '<p id="recent_linkn"><a href="#recent">' . _('Recent Records') .
-        '</a></p>';
-        echo '<p id="recent_linkmn"><a href="#recentm">' . _('Recent Records') .
-        '</a></p>';
+        echo '<p><a href="#recent">' . _('Recent Records') . '</a></p>';
         echo '<p><a href="#players" class="playerranking">' . _('Player Ranking') . '</a></p></div>';
         if ($layout == 'New') {
             echo '</noscript>';
