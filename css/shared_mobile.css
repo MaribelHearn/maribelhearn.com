@@ -12,6 +12,9 @@ p {
 .dropdown_content {
     margin-top: 5px;
 }
+.overflow_mobile {
+    overflow-x: auto;
+}
 #languages {
     margin-top: 10px;
     width: 100%;

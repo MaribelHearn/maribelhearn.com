@@ -213,7 +213,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
     </div>
     <div id='overall'>
         <h2><?php echo _('Overall Records') ?></h2>
-        <div class='overflow'><table class='sortable'>
+        <div class='overflow_mobile'><table class='sortable'>
             <thead>
                 <tr>
                     <th id='game_number' class='general_header'>#</th>
@@ -501,7 +501,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
 	</div>
     <div id='recent'>
         <h2><?php echo _('Recent Records') ?></h2>
-        <div class='overflow'><table class='sortable'>
+        <div class='overflow_mobile'><table class='sortable'>
             <thead id='recenthead'><tr>
                 <th class='general_header'><?php echo _('Category')  ?></th>
                 <th class='general_header'><?php echo _('Score') ?></th>
