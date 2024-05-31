@@ -289,7 +289,7 @@ $missing_runs = 0;
             <thead id='recenthead'><tr>
                 <th class='general_header'><?php echo _('Category')  ?></th>
                 <th class='general_header'><?php echo _('Player') ?></th>
-                <th class='general_header'><?php echo _('Replay') ?></th>
+                <th class='general_header no_mobile'><?php echo _('Replay') ?></th>
                 <th class='general_header'><?php echo _('Video') ?></th>
                 <th class='general_header'><?php echo _('Date') ?></th>
             </tr></thead>
@@ -313,12 +313,16 @@ $missing_runs = 0;
                         if (empty($data['video'])) {
                             $video = '-';
                         } else {
-                            $video = '<a href="' . $data['video'] . '">Video link</a>';
+                            $video = '<a href="' . $data['video'] . '">' . _('Link') . '</a>';
+                        }
+                        $space = '';
+                        if ($lang != 'ja_JP' && $lang != 'zh_CN') {
+                            $space = ' ';
                         }
                         echo '<tr>';
-                        echo '<td class="' . $data['category']['game'] . 'p">' . $data['category']['game'] . ' ' . $data['category']['shot'] . '</td>';
+                        echo '<td class="' . $data['category']['game'] . 'p">' . $data['category']['game'] . $space . $data['category']['shot'] . '</td>';
                         echo '<td>' . $data['player'] . '</td>';
-                        echo '<td>' . $replay . '</td>';
+                        echo '<td class="no_mobile">' . $replay . '</td>';
                         echo '<td>' . $video . '</td>';
                         echo '<td data-sort="' . $date_raw . '">' . $date . '</td>';
                         echo '</tr>';
