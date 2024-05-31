@@ -2,19 +2,19 @@
     display: none;
 }
 @media only screen and (orientation: portrait) {
-    #overall, #recent {
+    #recent {
         display: none;
     }
-    #overallm, #recentm {
+    #recentm {
         display: block;
     }
-    #overallm p, #recentm p {
+    #recentm p {
         margin: 2px;
     }
-    #overall_link, #overall_linkn, #recent_link, #recent_linkn {
+    #recent_link, #recent_linkn {
         display: none;
     }
-    #overall_linkm, #overall_linkmn, #recent_linkm, #recent_linkmn {
+     #recent_linkm, #recent_linkmn {
         display: table-row;
     }
 }
@@ -22,10 +22,10 @@
     .PCBt {
         font-size: 9px;
     }
-    #overall_link, #overall_linkn, #recent_link, #recent_linkn {
+    #recent_link, #recent_linkn {
         display: table-row;
     }
-    #overall_linkm, #overall_linkmn, #recent_linkm, #recent_linkmn {
+    #recent_linkm, #recent_linkmn {
         display: none;
     }
 }

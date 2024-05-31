@@ -263,26 +263,6 @@ if (strpos($west_data, 'Internal Server Error') === false) {
 			?></tbody>
         </table>
     </div>
-    <div id='overallm'>
-        <h2><?php echo _('Overall Records') ?></h2>
-		<?php
-            /*echo '<hr>';
-			foreach ($wrs as $game => $value) {
-                if ($game == 'StB' || $game == 'DS') {
-                    continue;
-                }
-				$num = game_num($game);
-				echo '<p class="' . $game . '">' . _($game) . '</p><p>';
-                echo '<span id="' . $game . 'overall0m">' . ($game == 'WBaWC' || $game == 'UM' ? '<span class="cs">9,999,999,990' .
-                '<span class="tooltip truescore">' . number_format($overall[$num], 0, '.', ',') .
-                '</span></span> ' : number_format($overall[$num], 0, '.', ',')) . '</span> ';
-				echo '<span id="' . $game . 'overall2m">' . ($overall[$num] == 0 ? '-' : $overall_diff[$num]) . '</span> ';
-				echo '<span id="' . $game . 'overall3m">' . ($overall[$num] == 0 ? '-' : _($overall_shottype[$num])) . '</span> by ';
-				echo '<span id="' . $game . 'overall1m"><em>' . ($overall[$num] == 0 ? '-' : $overall_player[$num]) . '</em></span> ';
-				echo '<br><span id="' . $game . 'overall4m" class="datestring_player">' . ($overall[$num] == 0 ? '-' : date_tl($overall_date[$num], $lang)) . '</span></p><hr>';
-			}*/
-		?>
-    </div>
     <h2 id='wrs'><?php echo _('World Records') ?></h2>
     <?php
         // With JavaScript disabled OR wr_old_layout cookie set, show classic all games layout
