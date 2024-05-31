@@ -59,7 +59,7 @@ $player_games = (object) [];
 $overall = (object) [];
 $diff_max = (object) [];
 
-$wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game&type=Score&region=Eastern&verified=true');
+$wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty&type=Score&region=Eastern&verified=true');
 $games_seen = [];
 if (strpos($wr_data, 'Internal Server Error') === false) {
     $wr_data = json_decode($wr_data, true);
@@ -328,7 +328,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
                         $video = '';
                     }
                     if ($game == 'GFW' && $diff == 'Extra') {
-                        break;
+                        continue;
                     } else if ($game == 'HSiFS' && $diff == 'Extra') {
                         if (strpos($shot, 'Spring')) {
                             $shot = substr($shot, 0, -6);
@@ -380,7 +380,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
             if ($game == 'GFW') {
                 $score = number_format($obj['Extra']['A1'][0], 0, '.', ',');
                 if (!empty($replay)) {
-                    $score = '<a class="replay" href="' . replay_path($game, $diff, $shot) . '">' . $score . '<span class="dl_icon"></span></a>';
+                    $score = '<a class="replay" href="' .$replay . '">' . $score . '<span class="dl_icon"></span></a>';
                 }
                 echo '<tr><td>Extra</td><td colspan="4">' . $score . '<br>by <em>' . $obj['Extra']['A1'][1] .
                 '</em><span class="dimgrey"><br><span class="datestring_game">' . date_tl($obj['Extra']['A1'][2], $lang) .
