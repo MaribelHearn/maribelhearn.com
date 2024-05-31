@@ -59,7 +59,7 @@ $player_games = (object) [];
 $overall = (object) [];
 $diff_max = (object) [];
 
-$wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty&type=Score&region=Eastern&verified=true');
+$wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty,shot&type=Score&region=Eastern&verified=true');
 $games_seen = [];
 if (strpos($wr_data, 'Internal Server Error') === false) {
     $wr_data = json_decode($wr_data, true);
@@ -314,6 +314,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
                 for ($j = 0; $j < sizeof($obj); $j++) {
                     $diff = array_keys($obj)[$j];
                     $shots = $obj[array_keys($obj)[$j]];
+                    //var_dump($shots);echo '<br><br>';
                     if (isset($shots[$shot])) {
                         $score = $shots[$shot][0];
                         $player = $shots[$shot][1];
