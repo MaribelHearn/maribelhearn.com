@@ -308,7 +308,7 @@ $missing_runs = 0;
                             $replay = '-';
                         } else {
                             $chunks = preg_split('/\//', $data['replay']);
-                            $replay = '<a href="' . str_replace('/replays', '/media/replays', $data['replay']) . '">' . $chunks[count($chunks) - 1] . '</a>';
+                            $replay = '<a href="' . $data['replay'] . '">' . $chunks[count($chunks) - 1] . '</a>';
                         }
                         if (empty($data['video'])) {
                             $video = '-';
