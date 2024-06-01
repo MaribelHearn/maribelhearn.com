@@ -1,5 +1,37 @@
 <?php
 global $API_BASE;
+$wrs = [];
+$games_seen = [];
+$diffs_seen = [];
+$shots_seen = [];
+$wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty,shot&type=Score&region=Eastern&verified=true');
+if (strpos($wr_data, 'Internal Server Error') === false) {
+    $wr_data = json_decode($wr_data, true);
+    foreach ($wr_data as $key => $data) {
+        $score = $data['score'];
+        $player = $data['player'];
+        $game = $data['category']['game'];
+        $diff = $data['category']['difficulty'];
+        $shot = $data['category']['shot'];
+        if (!in_array($game, $games_seen)) {
+            $wrs[$game] = [];
+            $diffs_seen = [];
+            $shots_seen = [];
+            array_push($games_seen, $game);
+        }
+        if (!in_array($diff, $diffs_seen)) {
+            $wrs[$game][$diff] = [];
+            array_push($diffs_seen, $diff);
+        }
+        if (!in_array($shot, $shots_seen)) {
+            $wrs[$game][$diff][$shot] = [];
+            array_push($shots_seen, $shot);
+        }
+        if (empty($wrs[$game][$diff][$shot]) || $score > $wrs[$game][$diff][$shot][0]) {
+            $wrs[$game][$diff][$shot] = [$score, $player];
+        }
+    }
+}
 ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
@@ -146,7 +178,6 @@ global $API_BASE;
                         if (($game == 'GFW' || $game == 'HSiFS') && $diff == 'Extra') {
                             continue;
                         }
-                        $shot = str_replace(' ', '', $shot);
                         echo '<td' . ($diff == 'Hard' || $diff == 'Extra' ? ' class="break"' : '') . '>' .
                         '<label for="' . $game . $diff . $shot . '" class="label">' . $diff . '</label>' .
                         '<input id="' . $game . $diff . $shot . '" type="text"></td>';
@@ -159,7 +190,7 @@ global $API_BASE;
                     echo '</tr>';
                 }
                 if ($game == 'GFW') {
-                    echo '<tr><td><label for="GFWExtra-">Extra</label></td><td id="GFWExtra" colspan="4"><input id="GFWExtra-" type="text"></td></tr>';
+                    echo '<tr><td><label for="GFWExtraA1">Extra</label></td><td id="GFWExtra" colspan="4"><input id="GFWExtraA1" type="text"></td></tr>';
                 }
                 echo '</table></div>';
             }
@@ -230,4 +261,5 @@ global $API_BASE;
             </a>
         </p>
     </div>
+	<input id='WRs' type='hidden' value='<?php echo json_encode($wrs); ?>'>
 </div>

@@ -1,4 +1,4 @@
-/*global WRs scores getCookie deleteCookie*/
+/*global scores getCookie deleteCookie*/
 String.prototype.strip = function () {
     return this.replace(/<\/?[^>]*>/g, "");
 };
@@ -7,6 +7,7 @@ const games = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV",
 const diffs = ["Easy", "Normal", "Hard", "Lunatic", "Extra", "Phantasm"];
 let unsavedChanges = false;
 let precision = 0;
+let WRs = {};
 
 function closeModal(event) {
     const modal = document.getElementById("modal");
@@ -491,6 +492,11 @@ function init() {
         precision = document.getElementById("precision").value = parseInt(localStorage.getItem("precision"));
     }
 
+    try {
+        WRs = JSON.parse(document.getElementById("WRs").value);
+    } catch (e) {
+        // do nothing
+    }
     setEventListeners();
     window.onbeforeunload = function () {
         if (unsavedChanges) {
