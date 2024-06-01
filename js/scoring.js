@@ -129,7 +129,7 @@ function getRow(game, diff, shot, precision) {
     let categories = 0;
     let total = 0;
 
-    if (wr[0] === 0) {
+    if (wr[0] == 0) {
         percentage = '-';
         wrText = '-';
     } else {
