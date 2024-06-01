@@ -178,6 +178,7 @@ if (strpos($wr_data, 'Internal Server Error') === false) {
                         if (($game == 'GFW' || $game == 'HSiFS') && $diff == 'Extra') {
                             continue;
                         }
+                        $shot = str_replace(' ', '', $shot);
                         echo '<td' . ($diff == 'Hard' || $diff == 'Extra' ? ' class="break"' : '') . '>' .
                         '<label for="' . $game . $diff . $shot . '" class="label">' . $diff . '</label>' .
                         '<input id="' . $game . $diff . $shot . '" type="text"></td>';

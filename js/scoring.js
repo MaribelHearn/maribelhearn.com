@@ -96,6 +96,10 @@ function save() {
 }
 
 function parseScore(game, diff, shot) {
+    if (shot.includes(" Team")) {
+        shot = shot.replace(" Team", "Team");
+    }
+
     return document.getElementById(game + diff + shot).value.replace(/,/g, "").replace(/\./g, "").replace(/ /g, "");
 }
 
@@ -320,9 +324,15 @@ function loadScores() {
 function showScores() {
     for (const game in scores) {
         for (const diff in scores[game]) {
-            for (const shot in scores[game][diff]) {
+            for (let shot in scores[game][diff]) {
                 if (scores[game][diff][shot]) {
-                    document.getElementById(game + diff + shot).value = sep(scores[game][diff][shot]);
+                    const score = sep(scores[game][diff][shot]);
+
+                    if (game == "GFW" && diff == "Extra" && shot == '-') {
+                        shot = "A1"; // legacy
+                    }
+
+                    document.getElementById(game + diff + shot).value = score;
                 }
             }
         }
