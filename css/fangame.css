@@ -97,6 +97,14 @@ h2 {
     z-index: 1;
     top: 100%;
 }
+#lastupdate {
+    background-color: lightsalmon;
+    font-size: 24px;
+    font-weight: bold;
+}
+#sheet_link {
+    white-space: nowrap;
+}
 @media only screen and (min-width: 1100px) and (max-width: 1400px) {
     .ack_br {
         display: inline;

@@ -4,7 +4,9 @@
     'For LNNs, any additional survival condition(s) are listed with the game titles.') ?></p>
     <p id='tables'><?php echo _('All of the table columns are sortable.') ?></p>
     <p id='noreup'><?php echo _('The replays or videos provided are <strong>not</strong> meant to be reuploaded to any replay uploading services.') ?></p>
-    <p id='lastupdate'><?php echo _('Accomplishments are current as of 9 June 2022.') ?></p>
+    <p id='lastupdate'>This page is no longer maintained as of 2022. Use DarkPermafrost's achievement sheet instead: <span id='sheet_link'>
+		<span class='icon sheets_icon'></span> <a href='https://docs.google.com/spreadsheets/d/1FGBYLdoTBx0dX8yYB0QHcVymQs16OIFov0fWyA-q2WE/edit?usp=sharing'>Fangame survival runs</a>
+	</span></p>
     <h2><?php echo _('Contents') ?></h2>
     <div class='contents'>
 		<p><a href='#lnns'><?php echo _('LNN Clears') ?></a></p>
