@@ -46,7 +46,7 @@ function format_lm(string $lm, string $lang) {
     return str_replace('%date', date_tl($lm, $lang), $result);
 }
 
-$last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&type=LNN&limit=1');
+$last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&date__isnull=False&type=LNN&limit=1');
 if (strpos($last_modified, 'Internal Server Error') === false) {
     $last_modified = json_decode($last_modified, true);
     $last_modified = $last_modified['results'][0]['date'];
