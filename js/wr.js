@@ -421,7 +421,7 @@ function showPlayerWRs(player, records) {
         if (!data.replay) {
             replay = '-';
         } else {
-            replay = `<a href='${data.replay.replace("/replays", "/media/replays")}'>${data.replay.split('/')[data.replay.split('/').length - 1]}</a>`;
+            replay = `<a href='${data.replay}'>${data.replay.split('/')[data.replay.split('/').length - 1]}</a>`;
         }
 
         if (!data.video) {
