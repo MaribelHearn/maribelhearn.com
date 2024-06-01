@@ -129,7 +129,7 @@ function getRow(game, diff, shot, precision) {
     let categories = 0;
     let total = 0;
 
-    if (wr[0] == 0) {
+    if (wr[0] === 0) {
         percentage = '-';
         wrText = '-';
     } else {
@@ -325,7 +325,7 @@ function showScores() {
     for (const game in scores) {
         for (const diff in scores[game]) {
             for (let shot in scores[game][diff]) {
-                if (scores[game][diff][shot]) {
+                if (scores[game][diff][shot] != 0) {
                     const score = sep(scores[game][diff][shot]);
 
                     if (game == "GFW" && diff == "Extra" && shot == '-') {
