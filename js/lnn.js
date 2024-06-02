@@ -69,7 +69,7 @@ function getLNNs(game) {
     }
 
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/replay/?type=LNN&ordering=shot,route&game=${game}`);
+    xhr.open('GET', `${API_BASE}/api/v1/replay/?type=LNN&ordering=shot,route,player&game=${game}`);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200) {
