@@ -160,6 +160,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
     <p id='unver'><?php
         echo _('If you toggle Unverified Scores, this will show scores that are higher than the World Record, but lack replay or video proof.');
     ?></p>
+    <p id='updaters'><?php echo _('For updates, you can contact <a href="https://twitter.com/MaribelHearn42" target="_blank">me</a> or <a href="https://www.youtube.com/@KirbyComment" target="_blank">KirbyComment</a>.') ?></p>
     <p id='lastupdate'><?php echo (!empty($last_modified) ? format_lm($last_modified, $lang) : '') ?></p>
     <h2><?php echo _('Contents') ?></h2>
     <?php

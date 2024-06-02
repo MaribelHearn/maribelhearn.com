@@ -77,6 +77,8 @@ $missing_runs = 0;
         'is referred to as LNNFS.');
 	?></p>
     <p id='tables'><?php echo _('All of the table columns are sortable.') ?></p>
+    <p id='updaters'><?php echo _('For updates, you can contact <a href="https://twitter.com/MaribelHearn42" target="_blank">me</a>, ' .
+            '<a href="https://www.youtube.com/@valivanvan" target="_blank">crazy4pokemon</a> or <a href="https://www.youtube.com/@allenko1122" target="_blank">AllenKO</a>.') ?></p>
     <p id='lastupdate'><?php echo (!empty($last_modified) ? format_lm($last_modified, $lang) : '') ?></p>
     <h2><?php echo _('Contents') ?></h2>
     <?php
