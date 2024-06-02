@@ -16,6 +16,7 @@
         <p><a href='#thprac'><strong>thprac</strong></a></p>
         <p><a href='#thcrap'>thcrap</a></p>
         <p><a href='#enbconvertor'><?php echo _('DX8 to DX9 converter') ?></a></p>
+        <p><a href='#thd3d8mitigation'>thd3d8mitigation</a></p>
         <p><a href='#scorefiles'><?php echo _('Completed Scorefiles') ?></a></p>
         <p><a href='#spoileral'>SpoilerAL</a></p>
         <p><a href='#practools'><?php echo _('General Practice Tools') ?></a></p>
@@ -81,6 +82,16 @@
 		'Extract it into the folders of these games for it to take effect.');
 	?></p>
     <p><a href='http://enbdev.com/convertor_dx8_dx9_v0036.htm' target='_blank'><?php echo _('Download') ?></a></p>
+    <!-- thd3d8mitigation -->
+    <hr>
+    <h2 id='thd3d8mitigation'>thd3d8mitigation</h2>
+    <p><?php
+		echo _('Makes the older Touhou Windows games (EoSD, PCB, IN, PoFV and StB) run properly on Windows 10/11 with minimal modification.');
+	?></p>
+    <div>
+	<p><p><a href='https://postfixnotation.org/blog/1/' target='_blank'><?php echo _('Download') ?></a></p>
+	<p><p><a href='https://github.com/simon-i1-h/thd3d8mitigation/releases' target='_blank'><?php echo _('Download') ?> (GitHub)</a></p>
+    </div>
     <!-- Scorefiles for Practice -->
     <hr>
     <h2 id='scorefiles'><?php echo _('Completed Scorefiles') ?></h2>
