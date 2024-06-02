@@ -1,6 +1,5 @@
 /*global _ getCookie deleteCookie setCookie fullNameNumber*/
 const API_BASE = location.hostname.includes("maribelhearn.com") ? "https://maribelhearn.com" : "http://localhost";
-//const banList = ["Reimu", "Marisa", "Sanae", "Seiran", "Biten", "Enoko", "Chiyari"];
 let language = "en_GB";
 let selected = "";
 let shots = {};
@@ -70,7 +69,7 @@ function getLNNs(game) {
     }
 
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/replay/?type=LNN&ordering=shot&game=${game}`);
+    xhr.open('GET', `${API_BASE}/api/v1/replay/?type=LNN&ordering=shot,route&game=${game}`);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200) {
@@ -149,13 +148,6 @@ function showLNNtable(game, LNNs) {
     }
 
     document.getElementById(`${currentShot}${currentRoute}n`).innerHTML = shotCount;
-
-    /*if (game == "UDoALG") {
-        for (const chara of banList) {
-            document.getElementById(chara).innerHTML = '-';
-            document.getElementById(`${chara}n`).innerHTML = '-';
-        }
-    }*/
 
     players.sort();
     const total = document.getElementById("total");
