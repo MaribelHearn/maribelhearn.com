@@ -322,7 +322,7 @@ $missing_runs = 0;
                             $space = ' ';
                         }
                         echo '<tr>';
-                        echo '<td class="' . $data['category']['game'] . 'p">' . $data['category']['game'] . $space . $data['category']['shot'] . '</td>';
+                        echo '<td class="' . $data['category']['game'] . 'p">' . _($data['category']['game']) . $space . _($data['category']['shot']) . '</td>';
                         echo '<td>' . $data['player'] . '</td>';
                         echo '<td class="no_mobile">' . $replay . '</td>';
                         echo '<td>' . $video . '</td>';

@@ -526,8 +526,12 @@ if (strpos($west_data, 'Internal Server Error') === false) {
                             } else {
                                 $video = '<a href="' . $data['video'] . '">' . _('Link') . '</a>';
                             }
+                            $space = '';
+                            if ($lang != 'ja_JP' && $lang != 'zh_CN') {
+                                $space = ' ';
+                            }
                             echo '<tr>';
-                            echo '<td class="' . $data['category']['game'] . 'p">' . $data['category']['game'] . ' ' . $data['category']['difficulty'] . ' ' . $data['category']['shot'] . '</td>';
+                            echo '<td class="' . $data['category']['game'] . 'p">' . _($data['category']['game']) . $space . _($data['category']['difficulty']) . $space . _($data['category']['shot']) . '</td>';
                             echo '<td>' . number_format($data['score'], 0, '.', ',') . '</td>';
                             echo '<td>' . $data['player'] . '</td>';
                             echo '<td>' . $replay . '</td>';
