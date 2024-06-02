@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-06-02 13:43+0200\n"
-"PO-Revision-Date: 2024-06-02 13:44+0200\n"
+"POT-Creation-Date: 2024-06-02 14:12+0200\n"
+"PO-Revision-Date: 2024-06-02 14:14+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -147,15 +147,19 @@ msgstr "LNNの数"
 
 #: js/lnn.js:232 js/wr.js:430 php/lnn.php:318 php/wr.php:249 php/wr.php:527
 msgid "Link"
-msgstr ""
+msgstr "リンク"
 
-#: js/lnn.js:242 js/wr.js:440 php/lnn.php:24 php/wr.php:23
+#: js/lnn.js:239 js/wr.js:437 php/lnn.php:24 php/wr.php:23
 msgid "Unknown"
-msgstr ""
+msgstr "不明"
 
-#: js/lnn.js:265
+#: js/lnn.js:260
 msgid "(All)"
 msgstr "（全）"
+
+#: js/wr.js:409 php/shared/translations.php:88
+msgid " "
+msgstr ""
 
 #: php/drc.php:71
 msgid ""
@@ -731,7 +735,7 @@ msgstr "プレイヤー"
 
 #: php/lnn.php:250 php/wr.php:457
 msgid "Search"
-msgstr ""
+msgstr "探索"
 
 #: php/lnn.php:272 php/lnn.php:294 php/wr.php:220 php/wr.php:481 php/wr.php:506
 msgid "Replay"
@@ -739,7 +743,7 @@ msgstr "リプレイ"
 
 #: php/lnn.php:273 php/lnn.php:295 php/wr.php:221 php/wr.php:482 php/wr.php:507
 msgid "Video"
-msgstr ""
+msgstr "ビデオ"
 
 #: php/lnn.php:274 php/lnn.php:296 php/wr.php:222 php/wr.php:483 php/wr.php:508
 msgid "Date"

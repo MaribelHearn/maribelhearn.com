@@ -317,12 +317,8 @@ $missing_runs = 0;
                         } else {
                             $video = '<a href="' . $data['video'] . '">' . _('Link') . '</a>';
                         }
-                        $space = '';
-                        if ($lang != 'ja_JP' && $lang != 'zh_CN') {
-                            $space = ' ';
-                        }
                         echo '<tr>';
-                        echo '<td class="' . $data['category']['game'] . 'p">' . _($data['category']['game']) . $space . _($data['category']['shot']) . '</td>';
+                        echo '<td class="' . $data['category']['game'] . 'p">' . _($data['category']['game']) . _(' ') . _($data['category']['shot']) . '</td>';
                         echo '<td>' . $data['player'] . '</td>';
                         echo '<td class="no_mobile">' . $replay . '</td>';
                         echo '<td>' . $video . '</td>';

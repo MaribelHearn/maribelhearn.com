@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-06-02 13:43+0200\n"
-"PO-Revision-Date: 2024-06-02 13:43+0200\n"
+"POT-Creation-Date: 2024-06-02 14:16+0200\n"
+"PO-Revision-Date: 2024-06-02 14:16+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -150,13 +150,17 @@ msgstr ""
 msgid "Link"
 msgstr ""
 
-#: js/lnn.js:242 js/wr.js:440 php/lnn.php:24 php/wr.php:23
+#: js/lnn.js:239 js/wr.js:437 php/lnn.php:24 php/wr.php:23
 msgid "Unknown"
 msgstr ""
 
-#: js/lnn.js:265
+#: js/lnn.js:260
 msgid "(All)"
 msgstr ""
+
+#: js/wr.js:409 php/shared/translations.php:88
+msgid " "
+msgstr " "
 
 #: php/drc.php:71
 msgid ""

@@ -406,7 +406,7 @@ function showPlayerWRs(player, records) {
 
             currentGame = game;
             currentDiff = diff;
-            playerTable.innerHTML += `<tr><td class='${game}p'>${_(game)} ${diff}</td><td id='${game}${diff}s'></td><td id='${game}${diff}t'></td><td id='${game}${diff}r'></td><td id='${game}${diff}v'></td><td id='${game}${diff}d'></td></tr>`;
+            playerTable.innerHTML += `<tr><td class='${game}p'>${_(game)}${_(' ')}${diff}</td><td id='${game}${diff}s'></td><td id='${game}${diff}t'></td><td id='${game}${diff}r'></td><td id='${game}${diff}v'></td><td id='${game}${diff}d'></td></tr>`;
             first = new Date("9999/12/31");
         } else if (currentDiff != diff) {
             if (currentGame !== "" && currentDiff !== "") {
@@ -434,11 +434,7 @@ function showPlayerWRs(player, records) {
             first = new Date(data.date);
         }
 
-        date = formatDate(new Date(data.date));
-
-        if (date == "01/01/1970") {
-            date = _("Unknown");
-        }
+        date = (!data.date ? _("Unknown") : formatDate(new Date(data.date)));
 
         document.getElementById(`${game}${diff}s`).innerHTML += sep(data.score) + "<br>";
         document.getElementById(`${game}${diff}t`).innerHTML += _(data.category.shot) + "<br>";

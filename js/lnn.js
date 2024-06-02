@@ -236,12 +236,7 @@ function showPlayerLNNs(player, LNNs) {
             first = new Date(data.date);
         }
 
-        date = formatDate(new Date(data.date));
-
-        if (date == "01/01/1970") {
-            date = _("Unknown");
-        }
-
+        date = (!data.date ? _("Unknown") : formatDate(new Date(data.date)));
 
         document.getElementById(`${game}s`).innerHTML += _(data.category.shot);
 
