@@ -255,8 +255,13 @@ function showPlayerLNNs(player, LNNs) {
         numberOfLNNs += 1;
 
         const lnnShots = document.getElementById(`${game}l`);
+        let gameShots = shots[game].length;
 
-        if (shots[game] && document.getElementById(`${game}s`).children.length == shots[game].length) {
+        if (game == "IN") {
+            gameShots *= 4; // span elements are also children
+        }
+
+        if (shots[game] && document.getElementById(`${game}s`).children.length == gameShots) {
             lnnShots.innerHTML += `<br><strong>${_("(All)")}</strong>`;
         }
     }
