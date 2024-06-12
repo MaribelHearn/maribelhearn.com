@@ -1,5 +1,6 @@
 /*global _ getCookie deleteCookie setCookie fullNameNumber*/
 const API_BASE = location.hostname.includes("maribelhearn.com") ? "https://maribelhearn.com" : "http://localhost";
+const banList = ["Reimu", "Marisa", "Sanae", "Seiran", "Biten", "Enoko", "Chiyari"];
 let language = "en_GB";
 let selected = "";
 let shots = {};
@@ -148,6 +149,18 @@ function showLNNtable(game, LNNs) {
     }
 
     document.getElementById(`${currentShot}${currentRoute}n`).innerHTML = shotCount;
+
+    if (game == "UDoALG") {
+        for (const chara of banList) {
+            const element1 = document.getElementById(chara);
+            const element2 = document.getElementById(`${chara}n`);
+
+            if (element1 && element2) {
+                element1.innerHTML = element2.innerHTML = '-';
+            }
+            
+        }
+    }
 
     players.sort();
     const total = document.getElementById("total");
