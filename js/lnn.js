@@ -130,7 +130,10 @@ function showLNNtable(game, LNNs) {
         shotPlayers.push(player);
         players.pushStrict(player);
         shotCount += 1;
-        gameCount += 1;
+
+        if (game != "UDoALG" || !banList.includes(shot)) {
+            gameCount += 1;
+        }
 
         shotPlayers.sort();
         const shotElement = document.getElementById(`${shot}${currentRoute}`);
