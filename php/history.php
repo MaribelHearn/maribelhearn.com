@@ -149,6 +149,13 @@
                     <td><strong><a href='https://www.youtube.com/watch?v=U_JRV7y7UNk'>Link (YouTube)</a></strong></td>
                 </tr>
                 <tr>
+                    <td><abbr title='Banshiryuu (C67)'>BSR</abbr> Easy</td>
+                    <td>191,469,830</td>
+                    <td>VIVIT-A</td>
+                    <td>June 21, 2024</td>
+                    <td><strong><a href='https://www.youtube.com/watch?v=7x-BYzjZmRY'>Link (YouTube)</a></strong></td>
+                </tr>
+                <tr>
                     <td><abbr title='Samidare'>SMD</abbr></td>
                     <td>46,815,936</td>
                     <td><em>N/A</em></td>
@@ -3420,10 +3427,10 @@
             <tr>
                 <td><strong>Easy</strong></td>
                 <td>VIVIT-A</td>
-                <td>183,385,730</td>
+                <td>191,469,830</td>
                 <td class='g'>Yes</td>
-                <td>November 1, 2022</td>
-                <td>No</td>
+                <td>June 21, 2024</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=7x-BYzjZmRY'>Link (YouTube)</a></strong></td>
             </tr>
             <tr>
                 <td><strong>Easy</strong></td>
