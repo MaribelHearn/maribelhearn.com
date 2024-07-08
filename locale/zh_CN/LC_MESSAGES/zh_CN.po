@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-06-02 14:14+0200\n"
-"PO-Revision-Date: 2024-06-02 14:15+0200\n"
+"POT-Creation-Date: 2024-07-08 19:18+0200\n"
+"PO-Revision-Date: 2024-07-08 19:18+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -88,11 +88,11 @@ msgstr ""
 msgid "Score"
 msgstr "分数"
 
-#: js/drc.js:186 js/lnn.js:43 js/wr.js:87 php/shared/shared.php:109
+#: js/drc.js:186 js/lnn.js:44 js/wr.js:87 php/shared/shared.php:109
 msgid "Route"
 msgstr "路线"
 
-#: js/drc.js:188 js/lnn.js:43 js/wr.js:87 php/drc.php:450 php/lnn.php:236
+#: js/drc.js:188 js/lnn.js:44 js/wr.js:87 php/drc.php:450 php/lnn.php:236
 #: php/lnn.php:271 php/shared/shared.php:109 php/wr.php:219 php/wr.php:480
 msgid "Shottype"
 msgstr "机体"
@@ -129,40 +129,40 @@ msgstr ""
 msgid "block"
 msgstr ""
 
-#: js/lnn.js:31 js/lnn.js:34 js/lnn.js:35 js/lnn.js:37 php/lnn.php:11
+#: js/lnn.js:32 js/lnn.js:35 js/lnn.js:36 js/lnn.js:38 php/lnn.php:11
 #: php/lnn.php:14 php/lnn.php:15 php/lnn.php:17
 msgid "No. of LNNNs"
 msgstr "LNNN的数量"
 
-#: js/lnn.js:32 php/lnn.php:12
+#: js/lnn.js:33 php/lnn.php:12
 msgid "No. of LNNFSs"
 msgstr "LNNFS的数量"
 
-#: js/lnn.js:33 php/lnn.php:13
+#: js/lnn.js:34 php/lnn.php:13
 msgid "No. of LNN(N)s"
 msgstr "LNN(N)的数量"
 
-#: js/lnn.js:36 php/lnn.php:16
+#: js/lnn.js:37 php/lnn.php:16
 msgid "No. of LNNNNs"
 msgstr "LNNNN的数量"
 
-#: js/lnn.js:38 php/lnn.php:18 php/lnn.php:343 php/lnn.php:384
+#: js/lnn.js:39 php/lnn.php:18 php/lnn.php:339 php/lnn.php:380
 msgid "No. of LNNs"
 msgstr "LNN的数量"
 
-#: js/lnn.js:232 js/wr.js:430 php/lnn.php:318 php/wr.php:249 php/wr.php:527
+#: js/lnn.js:248 js/wr.js:430 php/lnn.php:318 php/wr.php:249 php/wr.php:527
 msgid "Link"
 msgstr "链接"
 
-#: js/lnn.js:239 js/wr.js:437 php/lnn.php:24 php/wr.php:23
+#: js/lnn.js:255 js/wr.js:437 php/lnn.php:24 php/wr.php:23
 msgid "Unknown"
 msgstr "未知"
 
-#: js/lnn.js:260
+#: js/lnn.js:281
 msgid "(All)"
 msgstr "（全）"
 
-#: js/wr.js:409 php/shared/translations.php:88
+#: js/wr.js:409 php/lnn.php:321 php/wr.php:530
 msgid " "
 msgstr ""
 
@@ -424,7 +424,7 @@ msgid "||Max * (Score/WR)^Exp||"
 msgstr "||最大值 *（得分 / 世界纪录）^ 指数||"
 
 #: php/drc.php:203 php/drc.php:387 php/drc.php:421 php/lnn.php:270
-#: php/lnn.php:342 php/wr.php:215
+#: php/lnn.php:338 php/wr.php:215
 msgid "Game"
 msgstr "游戏"
 
@@ -521,8 +521,8 @@ msgstr "第二阈值"
 msgid "Threshold 3"
 msgstr "第三阈值"
 
-#: php/drc.php:346 php/drc.php:466 php/jargon.php:839 php/lnn.php:403
-#: php/wr.php:571
+#: php/drc.php:346 php/drc.php:466 php/jargon.php:839 php/lnn.php:399
+#: php/wr.php:567
 msgid "Back to Top"
 msgstr "回到顶部"
 
@@ -2566,9 +2566,10 @@ msgstr "点击任何标题即可排序表格内容。"
 #: php/lnn.php:80
 msgid ""
 "For updates, you can contact <a href=\"https://twitter.com/MaribelHearn42\" "
-"target=\"_blank\">me</a>, <a href=\"https://www.youtube.com/@valivanvan\" "
-"target=\"_blank\">crazy4pokemon</a> or <a href=\"https://www.youtube.com/"
-"@allenko1122\" target=\"_blank\">AllenKO</a>."
+"target=\"_blank\">me</a>, <a href=\"https://x.com/CaoMinh_Touhou\" "
+"target=\"_blank\">Hoàng Cao Minh</a>, <a href=\"https://www.youtube.com/"
+"@valivanvan\" target=\"_blank\">crazy4pokemon</a> or <a href=\"https://www."
+"youtube.com/@allenko1122\" target=\"_blank\">AllenKO</a>."
 msgstr ""
 
 #: php/lnn.php:87 php/lnn.php:94 php/lnn.php:119
@@ -2583,12 +2584,12 @@ msgstr "玩家搜寻"
 msgid "Recent LNNs"
 msgstr "最近LNN"
 
-#: php/lnn.php:90 php/lnn.php:104 php/lnn.php:337
+#: php/lnn.php:90 php/lnn.php:104 php/lnn.php:333
 msgid "Overall Count"
 msgstr "总数"
 
-#: php/lnn.php:91 php/lnn.php:105 php/lnn.php:378 php/wr.php:173 php/wr.php:193
-#: php/wr.php:548
+#: php/lnn.php:91 php/lnn.php:105 php/lnn.php:374 php/wr.php:173 php/wr.php:193
+#: php/wr.php:544
 msgid "Player Ranking"
 msgstr "玩家排行"
 
@@ -2600,7 +2601,7 @@ msgstr "最近LNN的数量"
 msgid "Save Changes"
 msgstr "保存更改"
 
-#: php/lnn.php:148 php/lnn.php:196 php/lnn.php:240 php/lnn.php:366
+#: php/lnn.php:148 php/lnn.php:196 php/lnn.php:240 php/lnn.php:362
 msgid "Overall"
 msgstr "合計"
 
@@ -2620,8 +2621,8 @@ msgstr "单击游戏处查看LNN列表。"
 msgid "Choose a player name from the menu below to show their LNNs."
 msgstr "在以下的菜单选择玩家的名字则可查看其LNN。"
 
-#: php/lnn.php:248 php/lnn.php:293 php/lnn.php:383 php/wr.php:217
-#: php/wr.php:455 php/wr.php:505 php/wr.php:553
+#: php/lnn.php:248 php/lnn.php:293 php/lnn.php:379 php/wr.php:217
+#: php/wr.php:455 php/wr.php:505 php/wr.php:549
 msgid "Player"
 msgstr "玩家"
 
@@ -2645,19 +2646,19 @@ msgstr "日期"
 msgid "Total"
 msgstr "合計"
 
-#: php/lnn.php:344
+#: php/lnn.php:340
 msgid "Different players"
 msgstr "玩家"
 
-#: php/lnn.php:371
+#: php/lnn.php:367
 msgid "Replays"
 msgstr "Rep"
 
-#: php/lnn.php:385
+#: php/lnn.php:381
 msgid "Games LNN'd"
 msgstr "游戏"
 
-#: php/lnn.php:392 php/lnn.php:393
+#: php/lnn.php:388 php/lnn.php:389
 msgid " (All Windows)"
 msgstr "（全Windows）"
 
@@ -3133,7 +3134,7 @@ msgstr "东方虹龙洞　～ Unconnected Marketeers"
 
 #: php/shared/shared.php:163
 msgid "Touhou 19 - Unfinished Dream of All Living Ghost"
-msgstr "东方兽王园　～ Unfinished Dream of All Living Ghost"
+msgstr "东方兽王园　～ Unfinished Dream of All Living Ghost（v1.00a）"
 
 #: php/shared/translations.php:2
 msgid "Makai"
@@ -3572,11 +3573,11 @@ msgstr ""
 msgid "Choose a player name from the menu below to show their WRs."
 msgstr "在以下的菜单选择玩家的名字则可查看其WR。"
 
-#: php/wr.php:554
+#: php/wr.php:550
 msgid "No. of WRs"
 msgstr "WR数量"
 
-#: php/wr.php:555
+#: php/wr.php:551
 msgid "Different games"
 msgstr "游戏"
 

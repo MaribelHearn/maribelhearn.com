@@ -206,7 +206,7 @@ $missing_runs = 0;
             if (gettype($games) != 'string' || strpos($games, 'Internal Server Error') === false) {
                 foreach ($games as $key => $data) {
                     $game = $data['short_name'];
-                    $full_name = $data['full_name'];
+                    $full_name = full_name($data['short_name']);
                     if (in_array($game, $pvp)) {
                         array_push($pvp_full_names, $full_name);
                         continue;
