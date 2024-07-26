@@ -269,10 +269,10 @@ function display_name(string $game) {
                     echo '<tr><th>' . $stage . '</th>';
                     for ($i = 1; $i <= $scenes; $i++) {
                         echo '<td class="ds_td scene_td"><div class="dropdown-check-list" tabindex="100"><span id="ds' . $stage . '-' . $i . 'a" class="anchor">Select</span><ul id="ds' . $stage . '-' . $i . '" class="category">';
-                        if ($stage != 'SP' || $i < 4) {
+                        if ($stage != 'SP' || $i < 5) {
                             echo '<li><input type="checkbox" value="' . _('Aya') . '" id="ds' . $stage . '-' . $i . '0"><label for="ds' . $stage . '-' . $i . '0">' . _('Aya') . '</label></li>';
                         }
-                        if ($stage != 'SP' || $i >= 4) {
+                        if ($stage != 'SP' || $i >= 5) {
                             echo '<li><input type="checkbox" value="' . _('Hatate') . '" id="ds' . $stage . '-' . $i . '1"><label for="ds' . $stage . '-' . $i . '1">' . _('Hatate') . '</label></li>';
                             echo '</ul></div></td>';
                         }
