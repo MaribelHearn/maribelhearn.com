@@ -5,7 +5,7 @@ h1, h2, h3, h4, table:not(.poll):not(.rendering), label, li, figcaption, dt, p:n
 .PoDDt th, .LLSt th, .EoSDt th, .PCBt th, .PoFVt th, .MoFt th, .GFWt th, .DDCt th, .UMt th, .UDoALGt th, .tier th, .tier {
     color: black;
 }
-body, div:not(.dropdown):not(.dropdown_content):not(.nav_right):not(.dark_bg):not(.dropdowns):not(.ext_menu):not(#ext_mobile) {
+body, div:not(.dropdown):not(.dropdown_content):not(.nav_right):not(.dark_bg):not(.dropdowns):not(.ext_menu):not(#ext_mobile):not(#ext_desktop):not(#modal) {
     background-color: #202020;
 }
 a:link:not(.replay):not(.i):not(.dropdown_button) {
