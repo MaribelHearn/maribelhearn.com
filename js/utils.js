@@ -89,6 +89,10 @@ function deleteCookie(name) {
     document.cookie = name + "=;expires=" + MIN_AGE + ";path=/;sameSite=Strict;";
 }
 
+function isLocalhost(host) {
+    return host == "localhost" || host.startsWith("192.168");
+}
+
 function dark() {
     const page = location.pathname.split('/')[1];
 
@@ -99,7 +103,7 @@ function dark() {
 
     const style = document.createElement("link");
     style.id = "dark_theme";
-    style.href = (location.host != "localhost" || location.pathname.includes("error") ? "https://maribelhearn.com/" : "/") + "css/dark.css";
+    style.href = (!isLocalhost(location.host) || location.pathname.includes("error") ? "https://maribelhearn.com/" : "/") + "css/dark.css";
     style.type = "text/css";
     style.rel = "stylesheet";
     head.appendChild(style);
