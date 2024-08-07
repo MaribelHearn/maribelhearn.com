@@ -1,4 +1,21 @@
 <?php
+function affiliate_sites() {
+    return '<p><a href="https://touhouworldcup.com">' .
+    '<span class="icon twc_icon"></span>Touhou World Cup</a></p>' .
+    '<p><a href="https://www.thspotify.moe/">' .
+    '<span class="icon thspotify_icon"></span>Touhou Spotify Music</a></p>' .
+    '<p><a href="https://priw8.github.io">' .
+    '<span class="icon priw8_icon"></span>Priw8\'s Site</a></p>' .
+    '<p><a href="https://exphp.github.io/thpages">' .
+    '<span class="icon exphp_icon"></span>ExpHP\'s Site</a></p>' .
+    '<p><a href="https://gensakudan.com/">' .
+    '<span class="icon gsd_icon"></span>Retrograde Road</a></p>' .
+    '<p><a href="https://nylilsa.github.io">' .
+    '<span class="icon nylilsa_icon"></span>Nylilsa\'s Site</a></p>' .
+    '<p><a href="https://zps-stg.github.io">' .
+    '<span class="icon zps_icon"></span>ZPS\'s Site</a></p>';
+}
+
 function touhou_sites() {
     return '<p><a href="https://en.touhouwiki.net">' .
     '<span class="icon thwiki_icon"></span>Touhou Wiki</a></p>' .
@@ -8,22 +25,8 @@ function touhou_sites() {
     '<span class="icon lunarcast_icon"></span>Lunarcast</a></p>' .
     '<p><a href="https://thscore.pndsng.com/index.php">' .
     '<span class="icon pndsng_icon"></span>PND List</a></p>' .
-    '<p><a href="https://priw8.github.io">' .
-    '<span class="icon priw8_icon"></span>Priw8\'s Site</a></p>' .
-    '<p><a href="https://exphp.github.io/thpages">' .
-    '<span class="icon exphp_icon"></span>ExpHP\'s Site</a></p>' .
     '<p><a href="https://wikiwiki.jp/thscorekg/">' .
-    '<span class="icon kg_icon"></span>KG\'s Site</a></p>' .
-    '<p><a href="https://gensakudan.com/">' .
-    '<span class="icon gsd_icon"></span>Retrograde Road</a></p>' .
-    '<p><a href="https://www.thspotify.moe/">' .
-    '<span class="icon thspotify_icon"></span>Touhou Spotify Music</a></p>' .
-    '<p><a href="https://touhouworldcup.com">' .
-    '<span class="icon twc_icon"></span>Touhou World Cup</a></p>' .
-    '<p><a href="https://nylilsa.github.io">' .
-    '<span class="icon nylilsa_icon"></span>Nylilsa\'s Site</a></p>' .
-    '<p><a href="https://zps-stg.github.io">' .
-    '<span class="icon zps_icon"></span>ZPS\'s Site</a></p>';
+    '<span class="icon kg_icon"></span>KG\'s Site</a></p>';
 }
 
 function own_sites() {
@@ -98,6 +101,12 @@ function navbar(string $page) {
 
     $navbar .= '</div><div class="nav_right">';
         $navbar .= '<div class="dropdown">';
+            $navbar .= '<a href="#" class="dropdown_button">Affiliates&#x25BF;</a>';
+            $navbar .= '<div class="dropdown_content dropdown_right' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
+                $navbar .= affiliate_sites();
+            $navbar .= '</div>';
+        $navbar .= '</div> ';
+        $navbar .= '<div class="dropdown">';
             $navbar .= '<a href="#" class="dropdown_button">Touhou Sites&#x25BF;</a>';
             $navbar .= '<div class="dropdown_content dropdown_right' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
                 $navbar .= touhou_sites();
@@ -111,39 +120,69 @@ function navbar(string $page) {
         $navbar .= '</div>';
     $navbar .= '</div>';
     $navbar .= '<div class="dropdowns' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
-        $navbar .= '<div class="dropdown">';
-            $navbar .= '<a href="#" class="dropdown_button">Games&#x25BF;</a>';
-            $navbar .= '<div class="dropdown_content' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
-                $navbar .= game_pages();
-            $navbar .= '</div>';
-        $navbar .= '</div> ';
-        $navbar .= '<div class="dropdown">';
-            $navbar .= '<a href="#" class="dropdown_button">Other&#x25BF;</a>';
-            $navbar .= '<div class="dropdown_content' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
-                $navbar .= other_pages();
-            $navbar .= '</div>';
-        $navbar .= '</div> ';
-        $navbar .= '<div class="dropdown">';
-            $navbar .= '<a href="#" class="dropdown_button">Personal&#x25BF;</a>';
-            $navbar .= '<div class="dropdown_content' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
-                $navbar .= personal_pages();
-            $navbar .= '</div>';
-        $navbar .= '</div> ';
-        $navbar .= '<div id="ext_mobile"' . ($page == 'tiers' ? ' class="dark_bg"' : '') . '>';
+        $navbar .= '<div id="ext_desktop">';
             $navbar .= '<div class="dropdown">';
-                $navbar .= '<a href="#" class="dropdown_button">Touhou Sites&#x25BF;</a>';
-                $navbar .= '<div class="dropdown_content dropdown_right' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
-                    $navbar .= touhou_sites();
+                $navbar .= '<a href="#" class="dropdown_button">Games&#x25BF;</a>';
+                $navbar .= '<div class="dropdown_content' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
+                    $navbar .= game_pages();
                 $navbar .= '</div>';
             $navbar .= '</div> ';
             $navbar .= '<div class="dropdown">';
-                $navbar .= '<a href="#" class="dropdown_button">Links&#x25BF;</a>';
-                $navbar .= '<div class="dropdown_content dropdown_right' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
-                    $navbar .= own_sites();
+                $navbar .= '<a href="#" class="dropdown_button">Other&#x25BF;</a>';
+                $navbar .= '<div class="dropdown_content' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
+                    $navbar .= other_pages();
+                $navbar .= '</div>';
+            $navbar .= '</div> ';
+            $navbar .= '<div class="dropdown">';
+                $navbar .= '<a href="#" class="dropdown_button">Personal&#x25BF;</a>';
+                $navbar .= '<div class="dropdown_content' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
+                    $navbar .= personal_pages();
+                $navbar .= '</div>';
+            $navbar .= '</div>';
+        $navbar .= '</div>';
+        $navbar .= '<div id="ext_mobile">';
+            $navbar .= '<label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>';
+            $navbar .= '<div class="ext_menu dropdown_right ' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
+                $navbar .= '<div class="dropdown">';
+                    $navbar .= '<a href="#" class="dropdown_button">&#x25C3; Games</a>';
+                    $navbar .= '<div class="dropdown_content' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
+                        $navbar .= game_pages();
+                    $navbar .= '</div>';
+                $navbar .= '</div>';
+                $navbar .= '<div class="dropdown">';
+                    $navbar .= '<a href="#" class="dropdown_button">&#x25C3; Other</a>';
+                    $navbar .= '<div class="dropdown_content' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
+                        $navbar .= other_pages();
+                    $navbar .= '</div>';
+                $navbar .= '</div>';
+                $navbar .= '<div class="dropdown">';
+                    $navbar .= '<a href="#" class="dropdown_button">&#x25C3; Personal</a>';
+                    $navbar .= '<div class="dropdown_content' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
+                        $navbar .= personal_pages();
+                    $navbar .= '</div>';
+                $navbar .= '</div>';
+                $navbar .= '<div class="dropdown">';
+                    $navbar .= '<a href="#" class="dropdown_button">&#x25C3; Affiliates</a>';
+                    $navbar .= '<div class="dropdown_content' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
+                        $navbar .= affiliate_sites();
+                    $navbar .= '</div>';
+                $navbar .= '</div>';
+                $navbar .= '<div class="dropdown">';
+                    $navbar .= '<a href="#" class="dropdown_button">&#x25C3; Touhou Sites</a>';
+                    $navbar .= '<div class="dropdown_content' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
+                        $navbar .= touhou_sites();
+                    $navbar .= '</div>';
+                $navbar .= '</div>';
+                $navbar .= '<div class="dropdown">';
+                    $navbar .= '<a href="#" class="dropdown_button">&#x25C3; Links</a>';
+                    $navbar .= '<div class="dropdown_content' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
+                        $navbar .= own_sites();
+                    $navbar .= '</div>';
                 $navbar .= '</div>';
             $navbar .= '</div>';
         $navbar .= '</div>';
     $navbar .= '</div>';
+    $navbar .= '<div id="ext_mobile_spacer"></div>';
     $navbar = str_replace('<a href="' . ($page == 'index' ? '/' : '/' . $page) . '">', '<strong>', $navbar);
     $cap = strlen($page) < 4 ? strtoupper($page) : ucfirst($page);
     if ($page == 'thvote') {

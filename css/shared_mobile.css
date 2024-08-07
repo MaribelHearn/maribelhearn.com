@@ -9,11 +9,114 @@ p {
     margin-right: 5px;
     width: 100%;
 }
-.dropdown_content {
-    margin-top: 5px;
-}
 .overflow_mobile {
     overflow-x: auto;
+}
+.nav_left {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: initial;
+}
+.dropdown_content {
+    margin-top: 0px;
+    top: 0px;
+}
+.dropdowns {
+    width: initial;
+}
+#ext_desktop {
+    display: none;
+}
+#ext_mobile {
+    float: right;
+}
+#ext_mobile:hover .ext_menu {
+    display: block;
+}
+.ext_menu {
+    margin-top: 40px;
+    margin-right: 8px;
+    display: none;
+    position: absolute;
+    border: 1px solid #000;
+    min-width: 120px;
+    opacity: 1.0;
+    z-index: 1;
+    background-color: white;
+}
+.ext_menu .dropdown {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding: 0px;
+}
+.ext_menu.dark_bg {
+    background-color: #1b232e;
+}
+.ext_menu .dropdown > a:hover {
+    font-weight: bold;
+}
+.ext_menu .dropdown_content a:hover {
+    background-color: #bbb;
+}
+.ext_menu div a {
+    display: inline-block;
+    width: 100%;
+}
+.ext_menu div p {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.ext_menu .dropdown {
+    width: 100%;
+    left: 0px;
+}
+.ext_menu .dropdown:hover .dropdown_content {
+    display: block;
+    min-width: 150px;
+    top: -7px;
+}
+#ext_mobile .menu-icon {
+	padding: 19px 15px;
+	position: relative;
+	float: right;
+	cursor: pointer;
+}
+#ext_mobile .menu-icon .nav-icon {
+	background-color: black;
+	display: block;
+	height: 2px;
+	width: 18px;
+	position: relative;
+}
+#ext_mobile .menu-icon .nav-icon:before {
+	background-color: black;
+	content: "";
+	display: block;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 5px;
+}
+#ext_mobile .menu-icon .nav-icon:after {
+	background-color: black;
+	content: "";
+	display: block;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	bottom: 5px;
+}
+#ext_mobile .dropdown {
+    display: block;
+    margin-right: 8px;
+}
+#ext_mobile .dropdown_content:not(.ext_menu) {
+    right: 120px;
+}
+#ext_mobile_spacer {
+    clear: both;
 }
 #languages {
     margin-top: 10px;

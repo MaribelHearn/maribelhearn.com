@@ -33,7 +33,7 @@ footer {
     padding-bottom: 10px;
     margin-top: 10px;
 }
-div:not(.dropdown):not(.dropdown_content):not(.nav_right):not(.dark_bg) {
+div:not(.dropdown):not(.dropdown_content):not(.nav_right):not(.dark_bg):not(.dropdowns):not(.ext_menu):not(#ext_mobile) {
     background-color: #fff;
     margin-bottom: 5px;
     margin-top: 5px;
@@ -116,8 +116,6 @@ img {
     min-width: 120px;
     opacity: 1.0;
     z-index: 1;
-}
-.dropdown_content {
     background-color: white;
 }
 .dropdown_content p {
