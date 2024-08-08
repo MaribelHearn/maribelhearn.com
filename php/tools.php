@@ -265,6 +265,9 @@
 			echo _('HSiFS season finals and Extra final');
 		?></a></p>
     </div>
+	<p><strong><?php echo _('Star Sapphire First Non Practice by ') ?><a href='https://twitter.com/eerokurkisuo' target='_blank'>MegaPulse</a></strong></p>
+	<p><?php echo _('Gives Star\'s first non from Route A1 Stage 2 infinite health. This will produce an infinite amount of rings, since the nonspell adds more rings every wave. The stage background from Route A2 is used.') ?></p>
+	<p><a href='https://mega.nz/file/0DAVjJjT#Gb279_wmj8ZOkkrVdcgTLQkH6151slKEIsbVWKaDuDY' target='_blank'><?php echo _('Download') ?></a></p>
     <!-- Shottype Modifications -->
     <hr>
     <h2 id='shottypes'><?php echo _('Shottype Modifications') ?></h2>
