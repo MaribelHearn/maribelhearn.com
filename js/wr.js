@@ -2,10 +2,10 @@
 const API_BASE = location.hostname.includes("maribelhearn.com") ? "https://maribelhearn.com" : "http://localhost";
 const all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
 const hsifsExtraShots = ["Reimu", "Cirno", "Aya", "Marisa"];
-let datesEnabled, unverifiedEnabled;
 let language = "en_GB";
 let selected = "";
 let videoEnabled = false;
+let unverifiedEnabled = false;
 
 function getSeason(string) {
     return string.replace("Reimu", "").replace("Cirno", "").replace("Aya", "").replace("Marisa", "");
@@ -43,44 +43,10 @@ function saveChanges() {
     location.reload();
 }
 
-function toggleDates(alreadyDisabled) {
-    if (alreadyDisabled !== true) {
-        datesEnabled = !datesEnabled;
-        datesEnabled ? localStorage.setItem("datesEnabled", true) : localStorage.removeItem("datesEnabled");
-    }
-
-    const display = (datesEnabled ? "table-cell" : "none");
-    const displayPlayer = (datesEnabled ? "inline" : "none");
-
-    for (const game of all) {
-        if (game == "overall") {
-            continue;
-        }
-
-        document.getElementById(`${game}overall6`).style.display = display;
-    }
-    
-    const dateStrings = document.querySelectorAll(".date, .date_empty, .datestring, .datestring_game");
-    const playerDateStrings = document.querySelectorAll(".datestring_player");
-
-    for (const dateString of dateStrings) {
-        dateString.style.display = display;
-    }
-
-    for (const playerDateString of playerDateStrings) {
-        playerDateString.style.display = displayPlayer;
-    }
-}
-
 function toggleUnverified() {
     unverifiedEnabled = !unverifiedEnabled;
     unverifiedEnabled ? localStorage.setItem("unverifiedEnabled", true) : localStorage.removeItem("unverifiedEnabled");
     reloadTable();
-}
-
-function disableDates() {
-    const alreadyDisabled = true;
-    toggleDates(alreadyDisabled);
 }
 
 function shotRoute(game) {
@@ -314,8 +280,8 @@ function showWRtable(game, records) {
 
         text += `<br>by <em>${player}</em>`;
 
-        if (date && datesEnabled && date != "01/01/1970") {
-            text += `<span class='dimgrey'><br><span class='datestring_game'>${date}</span></span>`;
+        if (date && date != "01/01/1970") {
+            text += `<span class='dimgrey'><br>${date}</span>`;
         }
 
         if (game == "GFW" && diff == "Extra") {
@@ -449,17 +415,6 @@ function showPlayerWRs(player, records) {
         return;
     }
 
-    const dateEmpty = document.querySelectorAll(".date_empty");
-    const dateStringPlayer = document.querySelectorAll(".datestring_player");
-
-    for (const element of dateEmpty) {
-        element.style.display = (datesEnabled ? "table-cell" : "none");
-    }
-
-    for (const element of dateStringPlayer) {
-        element.style.display = (datesEnabled ? "inline" : "none");
-    }
-
     document.getElementById("player_sum").innerHTML = numberOfWRs;
     playerList.style.display = "block";
 }
@@ -526,7 +481,6 @@ function setEventListeners() {
     document.getElementById("ru_RU").addEventListener("click", setLanguage, false);
     document.getElementById("de_DE").addEventListener("click", setLanguage, false);
     document.getElementById("es_ES").addEventListener("click", setLanguage, false);
-    document.getElementById("dates").addEventListener("click", toggleDates, false);
     document.getElementById("unverified").addEventListener("click", toggleUnverified, false);
     document.getElementById("toggle_video").addEventListener("click", toggleVideo, false);
     const gameImg = document.querySelectorAll(".game_img");
@@ -596,7 +550,6 @@ function init() {
         language = "en_US";
     }
 
-    datesEnabled = localStorage.getItem("datesEnabled") ? true : false;
     unverifiedEnabled = localStorage.getItem("unverifiedEnabled") ? true : false;
     setEventListeners();
     setAttributes();
@@ -604,12 +557,6 @@ function init() {
     if (getCookie("prefer_video")) {
         videoEnabled = Boolean(getCookie("prefer_video"));
         document.getElementById("toggle_video").checked = videoEnabled;
-    }
-
-    if (!datesEnabled) {
-        disableDates();
-    } else {
-        document.getElementById("dates").checked = true;
     }
 
     const player = document.getElementById("player").value;

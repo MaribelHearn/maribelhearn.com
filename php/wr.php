@@ -197,9 +197,6 @@ if (strpos($west_data, 'Internal Server Error') === false) {
     ?>
     <div id='checkboxes' class='contents'>
         <p>
-            <input id='dates' type='checkbox'>
-	        <label for='dates'><?php echo _('Dates') ?></label>
-        </p><p>
             <label for='recent_limit'><?php echo _('Number of Recent Records') ?></label>
             <input id='recent_limit' type='number' value='<?php echo (isset($_COOKIE['recent_limit']) ? $_COOKIE['recent_limit'] : 15) ?>' min=1>
         </p><p>
@@ -252,7 +249,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
                         }
                         echo '<td id="' . $game . 'overall4">' . $replay . '</td>';
                         echo '<td id="' . $game . 'overall5">' . $video . '</td>';
-                        echo '<td id="' . $game . 'overall6" class="datestring" data-sort="' . date_tl($wr['date'], 'raw') . '">' . ($wr['score'] == 0 ? '-' : date_tl($wr['date'], $lang)) . '</td></tr>';
+                        echo '<td id="' . $game . 'overall6" data-sort="' . date_tl($wr['date'], 'raw') . '">' . ($wr['score'] == 0 ? '-' : date_tl($wr['date'], $lang)) . '</td></tr>';
                     }
                 }
 			?></tbody>
@@ -320,8 +317,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
                             } else {
                                 echo '<td rowspan="4">' . $score_text;
                             }
-                            echo '<br>by <em>' . $shots[$shot][1] . '</em><span class="dimgrey"><br>' .
-                            '<span class="datestring_game">' . date_tl($shots[$shot][2], $lang) . '</span></span></td>';
+                            echo '<br>by <em>' . $shots[$shot][1] . '</em><span class="dimgrey"><br>' . date_tl($shots[$shot][2], $lang) . '</span></td>';
                         }
                     } else {
                         if ($score >= $MAX_SCORE) {
@@ -345,8 +341,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
                         if ($score == 0) {
                             echo '<td></td>';
                         } else {
-                            echo '<td data-sort="' . $score . '">' . $score_text . '<br>by <em>' . $player . '</em><span class="dimgrey"><br>' .
-                            '<span class="datestring_game">' . date_tl($date, $lang) . '</span></span></td>';
+                            echo '<td data-sort="' . $score . '">' . $score_text . '<br>by <em>' . $player . '</em><span class="dimgrey"><br>' . date_tl($date, $lang) . '</span></td>';
                         }
                     }
                 }
@@ -358,8 +353,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
                     $score = '<a class="replay" href="' .$replay . '">' . $score . '<span class="dl_icon"></span></a>';
                 }
                 echo '<tr><td>Extra</td><td colspan="4">' . $score . '<br>by <em>' . $obj['Extra']['A1'][1] .
-                '</em><span class="dimgrey"><br><span class="datestring_game">' . date_tl($obj['Extra']['A1'][2], $lang) .
-                '</span></span></td></tr>';
+                '</em><span class="dimgrey"><br>' . date_tl($obj['Extra']['A1'][2], $lang) . '</span></td></tr>';
             }
             echo '</tbody></table></div>';
         }
@@ -480,7 +474,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
                     <th class='general_header'><?php echo _('Shottype') ?></th>
                     <th class='general_header'><?php echo _('Replay') ?></th>
                     <th class='general_header'><?php echo _('Video') ?></th>
-                    <th class='general_header datestring'><?php echo _('Date') ?></th>
+                    <th class='general_header'><?php echo _('Date') ?></th>
                 </tr>
             </thead>
 			<tbody id='player_tbody'></tbody>
@@ -505,7 +499,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
                     <th class='general_header'><?php echo _('Player') ?></th>
                     <th class='general_header'><?php echo _('Replay') ?></th>
                     <th class='general_header'><?php echo _('Video') ?></th>
-                    <th class='general_header datestring'><?php echo _('Date') ?></th>
+                    <th class='general_header'><?php echo _('Date') ?></th>
                 </tr></thead>
                 <tbody id='recentbody'><?php
                     $recent = curl_get($API_BASE . '/api/v1/replay/?limit=' . $RECENT_LIMIT . '&ordering=-date&type=Score&region=Eastern&verified=true');

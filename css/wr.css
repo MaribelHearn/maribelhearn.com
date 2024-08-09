@@ -210,13 +210,6 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
     content: counter(sortabletablescope);
     counter-increment: sortabletablescope;
 }
-#toggle {
-    float: left;
-}
-#dates {
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
 #contents > p, #contents_new > p {
     margin: 4px;
 }
