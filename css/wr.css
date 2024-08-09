@@ -210,6 +210,9 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
     content: counter(sortabletablescope);
     counter-increment: sortabletablescope;
 }
+#toggle_layout {
+    float: left;
+}
 #contents > p, #contents_new > p {
     margin: 4px;
 }
