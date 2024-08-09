@@ -21,7 +21,7 @@
 <img src='../assets/other/thvote/autofill.png' alt='Character name autocomplete'>
 <p>The first one gets 2 points, all others get 1 point. The second textbox for each item is optional; you can fill in additional comments there.</p>
 <p>Voting for music is a bit more complicated, but they are at least in chronological order, and since some of them have English subtitles, that helps a lot in searching for the one you want. Using machine translators such as Google Translate is also a good idea here.</p>
-<p>For the questionnaire, there is a translation of the 2022 iteration  on the main page on this site: <a href='/thvote#questionnaire'>https://maribelhearn.com/thvote#questionnaire</a>.</p>
+<p>For the questionnaire, there is a translation of the 2023 iteration  on the main page on this site: <a href='/thvote#questionnaire'>https://maribelhearn.com/thvote#questionnaire</a>.</p>
 <p>At the bottom, there is a checkbox. If you check it, you agree to potentially having your comments featured on the <strong>Touhou Station stream</strong>. Leave it unchecked if you do not want to be part of it.</p>
 <h2 id='fanworks'>Submitting supporting fanworks</h2>
 <p>To submit a supporting fanwork for a character, navigate to "Support Works" using the navigation menu on the left.</p>
