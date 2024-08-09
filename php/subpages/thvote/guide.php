@@ -1,4 +1,4 @@
-<p>Unfortunately, the Touhou Popularity Poll is still Japanese-only this year. There <em>should</em> be support for English by next year though. At least the important buttons are translated, but this guide is there to help you.</p>
+<p>There is <strong>partial English support</strong> this year! The names of all characters, music themes and games/works are now listed in English! The signup and questionnaire are unfortunately still Japanese-only. At least the important buttons are translated, but this guide is there to help you.</p>
 <p>Credit goes to <a href='https://twitter.com/richard_effendi' target='_blank'>IceFairy</a> for the English translations used in this guide.</p>
 <p>Touhou Popularity Poll website: <a href='https://toho-vote.info/'>https://toho-vote.info/</a></p>
 <h2>Contents</h2>
@@ -39,7 +39,7 @@ Liven up the popularity poll with your support!</p>
     <li>You can submit as many works as you want in any format; manga, fanfic, music, video, etc.;</li>
     <li>You can only submit your own work;</li>							
     <li>Please only submit completed works. Refrain from submitting unfinished works;</li>
-    <li>Please submit works that were made after the previous poll (September of 2022);</li>
+    <li>Please submit works that were made after the previous poll (September of 2023);</li>
     <li>While there are no limitations on word count, please refrain from submitting a simple support comment;</li>
     <li>Please refrain from submitting works with requests such as "I'll do 〇〇〇 (If this character gets within 〇〇th place / if you vote for 〇〇〇)";</li>
     <li>We do not provide a platform to upload your works. Please upload the works on your own website or a different website and then submit a link to that work;</li>
@@ -53,7 +53,7 @@ Liven up the popularity poll with your support!</p>
 See below for a translation of the surrounding text.</p>
 <img class='guide_mobile' src='../assets/other/thvote/touhou_station.jpg' alt='Touhou Station checkbox'>
 <h3>Regarding featuring your work on Touhou Station</h3>
-<p>(Translation) We are planning to feature some of the submitted works during the Touhou Station broadcast planned for the 30th of September at 20:00 (JST).
+<p>(Translation) We are planning to feature some of the submitted works during the Touhou Station broadcast planned for a later date.
 If you are free to having your work featured on stream, please check the box below.</p>
 <p>You can still submit works even if you disagree to having them shown on stream.
 We will not publish your agreement/disagreement to have your works featured.</p>

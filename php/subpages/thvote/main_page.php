@@ -1,12 +1,13 @@
 <p>An English translation of the full results of the 2023 incarnation of the annual THWiki Popularity Poll, held from 16 September 2023 to 30 September 2023.</p>
+<p>The 2024 poll is currently ongoing and it has <strong>partial English support!</strong> See the guide page linked below for more information.</p>
 <!--<p>The full results, including the questionnaire, comments, and detailed statistics per character, were released on 17 January 2022.</p>-->
 <!--<p>Confusingly, "preliminary" simply means the full results without the questionnaire results.
 It does not mean the results are not final. The number of votes for the characters,
 music and works will not change when the full results are published.</p>-->
 <p>All of the table columns are sortable.</p>
 <p>Source: <a href='https://toho-vote.info/'>https://toho-vote.info/</a></p>
-<!--<h2>How do I vote?</h2>
-<p>Please have a look at the <a href='/thvote/guide'>voting guide</a>.</p>-->
+<h2>How do I vote?</h2>
+<p>Please have a look at the <a href='/thvote/guide'>voting guide</a>.</p>
 <h2>Contents</h2>
 <div class='contents'>
     <p><a href='#characters'>Characters</a></p>
