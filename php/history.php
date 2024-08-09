@@ -156,6 +156,13 @@
                     <td><strong><a href='https://www.youtube.com/watch?v=7x-BYzjZmRY'>Link (YouTube)</a></strong></td>
                 </tr>
                 <tr>
+                    <td><abbr title='Banshiryuu (C67)'>BSR</abbr> Easy</td>
+                    <td>171,412,780</td>
+                    <td>HiranoO</td>
+                    <td>July 13, 2024</td>
+                    <td>No</td>
+                </tr>
+                <tr>
                     <td><abbr title='Samidare'>SMD</abbr></td>
                     <td>46,815,936</td>
                     <td><em>N/A</em></td>
@@ -3443,10 +3450,10 @@
             <tr>
                 <td><strong>Easy</strong></td>
                 <td>HiranoO</td>
-                <td>153,456,530</td>
+                <td>182,015,380</td>
                 <td class='g'>Yes</td>
-                <td>October 18, 2022</td>
-                <td>No</td>
+                <td>August 4, 2024</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=AN8BbsKtbC8'>Link (YouTube)</a></strong></td>
             </tr>
             <!--<tr>
                 <td colspan='6'></td>
