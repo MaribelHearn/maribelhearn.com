@@ -1,6 +1,5 @@
 /*global _ MAX_SCORE setCookie getCookie deleteCookie sep fullNameNumber*/
 const API_BASE = location.hostname.includes("maribelhearn.com") ? "https://maribelhearn.com" : "http://localhost";
-const all = ["overall", "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
 const hsifsExtraShots = ["Reimu", "Cirno", "Aya", "Marisa"];
 let language = "en_GB";
 let selected = "";
@@ -219,7 +218,7 @@ function getWRs(game) {
     }
 
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/replay/?type=Score&game=${game}&ordering=-score&region=Eastern${verification}`);
+    xhr.open('GET', `${API_BASE}/api/v1/replay/?type=Score&game=${game}&ordering=-date&region=Eastern${verification}`);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200) {
