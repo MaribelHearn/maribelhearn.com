@@ -377,10 +377,16 @@ if (strpos($west_data, 'Internal Server Error') === false) {
                 } else {
                     $world_text = number_format($world['score'], 0, '.', ',');
                 }
+                if ($westt[0] >= $MAX_SCORE) {
+                    $west_text = '<abbr title="' . number_format($westt[0], 0, '.', ',') .
+                    '">' . number_format($MAX_SCORE, 0, '.', ',') . '</abbr>';
+                } else {
+                    $west_text = number_format($westt[0], 0, '.', ',');
+                }
                 echo '<tr class="irregular_tr"><td colspan="3">' . $diff . '</td></tr>' .
                 '<tr class="irregular_tr"><td>' . $world_text .
                 '<br>by <em>' . $world['player'] . '</em><br>(' . _($world['shottype']) .
-                ')</td><td>' . number_format($westt[0], 0, '.', ',') .
+                ')</td><td>' . $west_text .
                 '<br>by <em>' . $westt[1] . '</em><br>(' . (empty($westt[2]) ? $westt[2] : _($westt[2])) .
                 ')</td><td class="' . pc_class($percentage) . '">(' . $percentage . '%)</td></tr>';
             }
