@@ -12,15 +12,14 @@
 <p>You can sign up for the Touhou Popularity Poll by clicking "Issue Voting ID". You will then fill in your email in the first textbox, and optionally your previous voting ID in the second textbox (see below).</p>
 <p>Of course, you can also sign up with Google or Twitter if you so desire.</p>
 <img class='guide' src='../assets/other/thvote/id.jpg' alt='Email form'>
-<p>If you used the "Issue Voting ID" method, it might take some time, but you should receive an email containig your voting ID. You will use this voting ID to fill in your votes.</p>
+<p>If you used the "Issue Voting ID" method, it might take some time, but you should receive an email containing your voting ID. You will use this voting ID to fill in your votes.</p>
 <h2 id='voting'>Voting</h2>
 <p>After issuing your ID, click on "Vote Now" either at the bottom of the main page, or in the navigation menu on the left.<br>Choose your category from the big buttons to start voting!</p>
 <img class='guide_mobile' src='../assets/other/thvote/voting.jpg' alt='Voting form'>
 <p>Each voting form will look like this. The first textbox is for your voting ID. The second one is, optionally, your nickname.</p>
-<p>You can type in character names in English, and it will show the Japanese name of the character that matches your input.</p>
-<img src='../assets/other/thvote/autofill.png' alt='Character name autocomplete'>
+<p>The characters, music and works are <strong>in English</strong> as of this year! This makes voting much easier. Everything is chronologically ordered.</p>
+<img class='guide_mobile' src='../assets/other/thvote/voting_english.png' alt='English voting'>
 <p>The first one gets 2 points, all others get 1 point. The second textbox for each item is optional; you can fill in additional comments there.</p>
-<p>Voting for music is a bit more complicated, but they are at least in chronological order, and since some of them have English subtitles, that helps a lot in searching for the one you want. Using machine translators such as Google Translate is also a good idea here.</p>
 <p>For the questionnaire, there is a translation of the 2023 iteration  on the main page on this site: <a href='/thvote#questionnaire'>https://maribelhearn.com/thvote#questionnaire</a>.</p>
 <p>At the bottom, there is a checkbox. If you check it, you agree to potentially having your comments featured on the <strong>Touhou Station stream</strong>. Leave it unchecked if you do not want to be part of it.</p>
 <h2 id='fanworks'>Submitting supporting fanworks</h2>
