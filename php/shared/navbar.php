@@ -2,18 +2,18 @@
 function affiliate_sites() {
     return '<p><a href="https://touhouworldcup.com">' .
     '<span class="icon twc_icon"></span>Touhou World Cup</a></p>' .
-    '<p><a href="https://www.thspotify.moe/">' .
-    '<span class="icon thspotify_icon"></span>Touhou Spotify Music</a></p>' .
     '<p><a href="https://priw8.github.io">' .
-    '<span class="icon priw8_icon"></span>Priw8\'s Site</a></p>' .
+    '<span class="icon priw8_icon"></span>Priw8\'s site</a></p>' .
     '<p><a href="https://exphp.github.io/thpages">' .
-    '<span class="icon exphp_icon"></span>ExpHP\'s Site</a></p>' .
+    '<span class="icon exphp_icon"></span>ExpHP\'s site</a></p>' .
     '<p><a href="https://gensakudan.com/">' .
     '<span class="icon gsd_icon"></span>Retrograde Road</a></p>' .
     '<p><a href="https://nylilsa.github.io">' .
-    '<span class="icon nylilsa_icon"></span>Nylilsa\'s Site</a></p>' .
+    '<span class="icon nylilsa_icon"></span>Nylilsa\'s site</a></p>' .
     '<p><a href="https://zps-stg.github.io">' .
-    '<span class="icon zps_icon"></span>ZPS\'s Site</a></p>';
+    '<span class="icon zps_icon"></span>ZPS\'s site</a></p>' .
+    '<p><a href="https://touhou-memories.com/">' .
+    '<span class="icon memories_icon"></span>touhou-memories</a></p>';
 }
 
 function touhou_sites() {
