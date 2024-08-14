@@ -298,7 +298,7 @@ function showWRtable(game, records) {
 
 function highlightBests(game, records) {
     const overalls = {};
-    const sortedRecords = records.sort(function (a, b) { return a.score <= b.score; });
+    const sortedRecords = records.sort(function (a, b) { return b.score - a.score; });
     const overallRecord = document.getElementById(game + sortedRecords[0].category.difficulty + sortedRecords[0].category.shot);
     overallRecord.innerHTML = "<u><strong>" + overallRecord.innerHTML.replace("<br>", "</strong></u><br>");
     overalls[sortedRecords[0].category.difficulty] = sortedRecords[0];
