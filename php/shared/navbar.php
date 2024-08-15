@@ -21,6 +21,8 @@ function touhou_sites() {
     '<span class="icon thwiki_icon"></span>Touhou Wiki</a></p>' .
     '<p><a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page">' .
     '<span class="icon thcrap_icon"></span>THPatch</a></p>' .
+    '<p><a href="https://www.silentselene.net/">' .
+    '<span class="icon ss_icon"></span>Silent Selene</a></p>' .
     '<p><a href="http://replay.lunarcast.net">' .
     '<span class="icon lunarcast_icon"></span>Lunarcast</a></p>' .
     '<p><a href="https://thscore.pndsng.com/index.php">' .
