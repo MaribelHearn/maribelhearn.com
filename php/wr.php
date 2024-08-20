@@ -91,6 +91,14 @@ if (strpos($wr_data, 'Internal Server Error') === false) {
         }
         if (empty($wrs[$game][$diff][$shot]) || $score > $wrs[$game][$diff][$shot][0]) {
             $wrs[$game][$diff][$shot] = [$score, $player, $date];
+            if (!isset($player_wrs->{$player})) {
+                $player_wrs->{$player} = 1;
+            } else {
+                $player_wrs->{$player} += 1;
+            }
+            if (!isset($player_games->{$player})) {
+                $player_games->{$player} = [];
+            }
         }
         if (!empty($replay)) {
             array_push($wrs[$game][$diff][$shot], $replay);
@@ -106,14 +114,6 @@ if (strpos($wr_data, 'Internal Server Error') === false) {
         if (empty($diff_max->{$game}->{$diff}) || $score >= $diff_max->{$game}->{$diff}['score']) {
             $diff_max->{$game}->{$diff} = $data;
             $diff_max->{$game}->{$diff}['shottype'] = $shot;
-        }
-        if (!isset($player_wrs->{$player})) {
-            $player_wrs->{$player} = 1;
-        } else {
-            $player_wrs->{$player} += 1;
-        }
-        if (!isset($player_games->{$player})) {
-            $player_games->{$player} = [];
         }
         array_push($player_games->{$player}, $game);
     }
