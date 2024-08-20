@@ -92,13 +92,13 @@ if (strpos($wr_data, 'Internal Server Error') === false) {
         if (empty($wrs[$game][$diff][$shot]) || $score > $wrs[$game][$diff][$shot][0]) {
             $wrs[$game][$diff][$shot] = [$score, $player, $date];
             if (!isset($player_wrs->{$player})) {
-                $player_wrs->{$player} = 1;
-            } else {
-                $player_wrs->{$player} += 1;
+                $player_wrs->{$player} = [];
             }
+            array_push($player_wrs->{$player}, $game + $diff + $shot);
             if (!isset($player_games->{$player})) {
                 $player_games->{$player} = [];
             }
+            array_push($player_games->{$player}, $game);
         }
         if (!empty($replay)) {
             array_push($wrs[$game][$diff][$shot], $replay);
@@ -115,7 +115,6 @@ if (strpos($wr_data, 'Internal Server Error') === false) {
             $diff_max->{$game}->{$diff} = $data;
             $diff_max->{$game}->{$diff}['shottype'] = $shot;
         }
-        array_push($player_games->{$player}, $game);
     }
 }
 
@@ -554,6 +553,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
             <tbody>
 				<?php
                     foreach ($player_wrs as $player => $count) {
+                        $player_wrs->{$player} = count(array_unique($player_wrs->{$player}));
                         $player_games->{$player} = count(array_unique($player_games->{$player}));
                         echo '<tr><td></td>';
                         echo '<td><a href="#' . urlencode($player) . '">' . $player . '</a></td>';
