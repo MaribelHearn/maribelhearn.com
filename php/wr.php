@@ -94,7 +94,7 @@ if (strpos($wr_data, 'Internal Server Error') === false) {
             if (!isset($player_wrs->{$player})) {
                 $player_wrs->{$player} = [];
             }
-            array_push($player_wrs->{$player}, $game + $diff + $shot);
+            array_push($player_wrs->{$player}, $game . $diff . $shot);
             if (!isset($player_games->{$player})) {
                 $player_games->{$player} = [];
             }
