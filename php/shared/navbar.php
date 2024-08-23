@@ -79,8 +79,14 @@ function show_admin(string $token_path) {
     return is_localhost($_SERVER['REMOTE_ADDR']) || isset($_COOKIE['token']) && $_COOKIE['token'] == trim(file_get_contents($token_path));
 }
 
+function show_db(string $db_cookie_path) {
+    $name = file_get_contents($db_cookie_path);
+    return is_localhost($_SERVER['REMOTE_ADDR']) || isset($_COOKIE[$name]) && strlen($_COOKIE[$name]) == 32;
+}
+
 function navbar(string $page) {
     $token_path = ($page == 'admin' ? '../.stats/token' : '.stats/token');
+    $db_cookie_path = ($page == 'admin' ? '../.stats/db_cookie' : '.stats/db_cookie');
     $navbar = '<div class="dropdown nav_left">';
     $navbar .= '<a href="/"><span class="icon index_icon"></span> Index</a>';
 
@@ -92,6 +98,10 @@ function navbar(string $page) {
 
     if (show_admin($token_path)) {
         $navbar .= '<a href="/admin">Admin</a> | ';
+    }
+
+    if (show_db($db_cookie_path)) {
+        $navbar .= '<a href="/db/">Database</a> | ';
     }
 
     $navbar .= '<a href="/credits">Credits</a> | ';
@@ -142,7 +152,35 @@ function navbar(string $page) {
                 $navbar .= '</div>';
             $navbar .= '</div>';
         $navbar .= '</div>';
-        $navbar .= '<div id="ext_mobile">';
+        /*$navbar .= '<div id="languages_mobile" class="ext_mobile">';
+            $navbar .= '<img class="lang-icon" src="/assets/shared/langs/lang.png">';
+            $navbar .= '<div class="ext_menu dropdown_right ' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
+                $navbar .= '<ul id="lang_list">';
+                    $navbar .= '<li class="subpage flag_container ' . ($lang == 'en_GB' ? 'selected' : '') . '"><a id="en_GB" class="language" href="?hl=en-gb">';
+                        $navbar .= '<span class="flag"><img class="flag_img" src="/assets/icons/uk.png" alt="' . _('Flag of the United Kingdom') . '"> English (UK)</span>';
+                    $navbar .= '</a></li>';
+                    $navbar .= '<li class="subpage flag_container ' . ($lang == 'en_US' ? 'selected' : '') . '"><a id="en_US" class="language" href="?hl=en-us">';
+                        $navbar .= '<span class="flag"><img class="flag_img" src="/assets/icons/us.png" alt="' . _('Flag of the United States') . '"> English (US)</span>';
+                    $navbar .= '</a></li>';
+                    $navbar .= '<li class="subpage flag_container ' . ($lang == 'ja_JP' ? 'selected' : '') . '"><a id="ja_JP" class="language" href="?hl=ja">';
+                        $navbar .= '<span class="flag"><img class="flag_img" src="/assets/icons/japan.png" alt="' . _('Flag of Japan') . '"> 日本語</span>';
+                    $navbar .= '</a></li>';
+                    $navbar .= '<li class="subpage flag_container ' . ($lang == 'zh_CN' ? 'selected' : '') . '"><a id="zh_CN" class="language" href="?hl=zh">';
+                        $navbar .= '<span class="flag"><img class="flag_img" src="/assets/icons/china.png" alt="' . _('Flag of the P.R.C.') . '"> 简体中文</span>';
+                    $navbar .= '</a></li>';
+                    $navbar .= '<li class="subpage flag_container ' . ($lang == 'ru_RU' ? 'selected' : '') . '"><a id="ru_RU" class="language" href="?hl=ru">';
+                        $navbar .= '<span class="flag"><img class="flag_img" src="/assets/icons/russia.png" alt="' . _('Flag of Russia') . '"> Русский</span>';
+                    $navbar .= '</a></li>';
+                    $navbar .= '<li class="subpage flag_container ' . ($lang == 'de_DE' ? 'selected' : '') . '"><a id="de_DE" class="language" href="?hl=de">';
+                        $navbar .= '<span class="flag"><img class="flag_img" src="/assets/icons/germany.png" alt="' . _('Flag of Germany') . '"> Deutsch</span>';
+                    $navbar .= '</a></li>';
+                    $navbar .= '<li class="subpage flag_container ' . ($lang == 'es_ES' ? 'selected' : '') . '"><a id="es_ES" class="language" href="?hl=es">';
+                        $navbar .= '<span class="flag"><img class="flag_img" src="/assets/icons/spain.png" alt="' . _('Flag of Spain') . '"> Español</span>';
+                    $navbar .= '</a></li>';
+                $navbar .= '</ul>';
+            $navbar .= '</div>';
+        $navbar .= '</div>';*/
+        $navbar .= '<div id="ext_mobile" class="ext_mobile">';
             $navbar .= '<label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>';
             $navbar .= '<div class="ext_menu dropdown_right ' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
                 $navbar .= '<div class="dropdown">';
