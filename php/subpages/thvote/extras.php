@@ -4,7 +4,8 @@
     <p><a href='#cpg'>Character vote per maingame</a></p>
 </div>
 <h2 id='jumps'>Biggest jumps</h2>
-<p>This section lists the biggest jumps in ranking for characters since last year (top 150 only). Click a column to sort the table by jumps, drops or whatever you like.</p>
+<p>Coming soon!</p>
+<!--<p>This section lists the biggest jumps in ranking for characters since last year (top 150 only). Click a column to sort the table by jumps, drops or whatever you like.</p>
 <div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
         <col class='col2game'>
@@ -168,9 +169,10 @@
         <tr><td>150</td><td>144</td><td>Konngara</td><td class='drop'>-6</td></tr>
     </tbody>
 </table></div>
-<p class='center'><strong><a href='#top'>Back to Top</a></strong></p>
+<p class='center'><strong><a href='#top'>Back to Top</a></strong></p>-->
 <h2 id='cpg'>Character vote per maingame</h2>
-<h3 id='ctotals'>Totals per maingame</h3>
+<p>Coming soon!</p>
+<!--<h3 id='ctotals'>Totals per maingame</h3>
 <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
             <col class='col2game'>
@@ -635,4 +637,4 @@
         <tr><td>78</td><td>Son Biten</td><td>1,269</td><td>55</td><td>321</td><td>2</td></tr>
     </tbody>
 </table></div>
-<footer><strong><a href='#top'>Back to Top</a></strong></footer>
+<footer><strong><a href='#top'>Back to Top</a></strong></footer>-->

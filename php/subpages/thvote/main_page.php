@@ -1,23 +1,16 @@
-<p>An English translation of the full results of the 2023 incarnation of the annual THWiki Popularity Poll, held from 16 September 2023 to 30 September 2023.</p>
-<p>The 2024 poll is currently ongoing and it has <strong>partial English support!</strong> See the guide page linked below for more information.</p>
+<p>An English translation of the full results of the 2024 incarnation of the annual THWiki Popularity Poll, held from 8 August 2024 to 23 August 2024.</p>
+<!--<p>The 2024 poll is currently ongoing and it has <strong>partial English support!</strong> See the guide page linked below for more information.</p>-->
 <!--<p>The full results, including the questionnaire, comments, and detailed statistics per character, were released on 17 January 2022.</p>-->
 <!--<p>Confusingly, "preliminary" simply means the full results without the questionnaire results.
 It does not mean the results are not final. The number of votes for the characters,
 music and works will not change when the full results are published.</p>-->
-<p>All of the table columns are sortable.</p>
-<p>Source: <a href='https://toho-vote.info/'>https://toho-vote.info/</a></p>
+<!--<p>All of the table columns are sortable.</p>-->
+<!--<p>Source: <a href='https://toho-vote.info/'>https://toho-vote.info/</a></p>
 <h2>How do I vote?</h2>
-<p>Please have a look at the <a href='/thvote/guide'>voting guide</a>.</p>
-<h2>Contents</h2>
-<div class='contents'>
-    <p><a href='#characters'>Characters</a></p>
-    <p><a href='#music'>Music</a></p>
-    <p><a href='#works'>Works</a></p>
-    <p><a href='#questionnaire'>Questionnaire</a></p>
-    <br>
-    <p><a href='/thvote/extras'>Extra Statistics (separate page)</a></p>
-</div>
-<h2>Valid responses</h2>
+<p>Please have a look at the <a href='/thvote/guide'>voting guide</a>.</p>-->
+<p>The official site now has <strong>English translated results!</strong> Go here to read them: <a href='https://toho-vote.info/'>https://toho-vote.info/</a></p>
+<p>The questionnaire results are still in Japanese, however. The questionnaire translation on this page and the Extra Statistics section are coming soon.</p>
+<!--<h2>Valid responses</h2>
 <div class='contents'>
     <p>Characters: 52,447 <small>(in 2022: 51,652; in 2021: 40,363)</small></p>
     <p>Music: 36,451 <small>(in 2022: 37,659; in 2021: 30,104)</small></p>
@@ -26,7 +19,6 @@ music and works will not change when the full results are published.</p>-->
 <h2 id='characters'>Characters</h2>
 <div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
-        <!--<col class='col1'>-->
         <col class='col2game'>
         <col class='col3game'>
         <col class='col4game'>
@@ -38,7 +30,6 @@ music and works will not change when the full results are published.</p>-->
     </colgroup>
     <thead>
         <tr>
-            <!--<th id='chars_head' class='head noborders sorttable_numeric'>#</th>-->
             <th class='sorttable_numeric'>Rank</th>
             <th class='sorttable_numeric'>2022 rank</th>
             <th class='sorttable_numeric'>2021 rank</th>
@@ -2216,7 +2207,7 @@ music and works will not change when the full results are published.</p>-->
 <h2 id='music'>Music</h2>
 <div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
-        <!--<col class='col1'>-->
+        <col class='col1'>
         <col class='col2game'>
         <col class='col3game'>
         <col class='col4game'>
@@ -2227,7 +2218,7 @@ music and works will not change when the full results are published.</p>-->
     </colgroup>
     <thead>
         <tr>
-            <!--<th id='music_head' class='head noborders sorttable_numeric'>#</th>-->
+            <th id='music_head' class='head noborders sorttable_numeric'>#</th>
             <th class='sorttable_numeric'>Rank</th>
             <th class='sorttable_numeric'>2022 rank</th>
             <th class='sorttable_numeric'>2021 rank</th>
@@ -7599,7 +7590,6 @@ music and works will not change when the full results are published.</p>-->
 <h2 id='works'>Works</h2>
 <div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
-        <!--<col class='col1'>-->
         <col class='col2game'>
         <col class='col3game'>
         <col class='col4game'>
@@ -7610,7 +7600,6 @@ music and works will not change when the full results are published.</p>-->
     </colgroup>
     <thead>
         <tr>
-            <!--<th id='works_head' class='head noborders sorttable_numeric'>#</th>-->
             <th class='sorttable_numeric'>Rank</th>
             <th class='sorttable_numeric'>2022 rank</th>
             <th class='sorttable_numeric'>2021 rank</th>
@@ -10165,5 +10154,5 @@ music and works will not change when the full results are published.</p>-->
 		</tbody>
 	</table></div>
     <footer><strong><a href='#top'>Back to Top</a></strong></footer>
-</div>
+</div>-->
 <?php // language detection hack ?>
