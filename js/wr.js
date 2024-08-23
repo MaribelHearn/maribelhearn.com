@@ -432,7 +432,7 @@ function getPlayerWRs(player) {
     }
 
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=game,difficulty&player=${encodeURIComponent(player)}&type=Score&region=Eastern&verified=true`);
+    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=game,difficulty&player=${encodeURIComponent(player)}&type=Score&region=Eastern&verified=true&historical=false`);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200) {
