@@ -15,7 +15,7 @@ music and works will not change when the full results are published.</p>-->
     <p><a href='#characters'>Characters</a></p>
     <p><a href='#music'>Music</a></p>
     <p><a href='#works'>Works</a></p>
-    <p><!--<a href='#questionnaire'>Questionnaire</a>-->Questionnaire COMING SOON</p>
+    <p><a href='#questionnaire'>Questionnaire</a></p>
     <br>
     <p><!--<a href='/thvote/extras'></a>-->Extra Statistics (separate page) COMING SOON</p>
 </div>
@@ -108,9 +108,9 @@ music and works will not change when the full results are published.</p>-->
     </tbody>
 </table></div>
 <p class='center'><strong><a href='#top'>Back to Top</a></strong></p>
-<!--
 <h2 id='questionnaire'>Questionnaire</h2>
 <div>
+<section>
     <h2>01. Age</h2>
     <p class='center'>Valid responses: 15,273 <button id='age_detail_button'>Show Details</button> <button id='age_summary_button'>Hide Details</button></p>
     <div class='overflow'><table id='age_summary' class='poll table sortable noborders'>
@@ -196,6 +196,8 @@ music and works will not change when the full results are published.</p>-->
             <tr><td>5</td><td>9</td><td>0.06%</td></tr><tr><td>6</td><td>3</td><td>0.02%</td></tr><tr><td>7</td><td>3</td><td>0.02%</td></tr><tr><td>8</td><td>14</td><td>0.09%</td></tr><tr><td>9</td><td>33</td><td>0.21%</td></tr><tr><td>10</td><td>99</td><td>0.62%</td></tr><tr><td>11</td><td>247</td><td>1.54%</td></tr><tr><td>12</td><td>488</td><td>3.04%</td></tr><tr><td>13</td><td>836</td><td>5.22%</td></tr><tr><td>14</td><td>1,027</td><td>6.41%</td></tr><tr><td>15</td><td>1,298</td><td>8.10%</td></tr><tr><td>16</td><td>1,509</td><td>9.41%</td></tr><tr><td>17</td><td>1,400</td><td>8.73%</td></tr><tr><td>18</td><td>1,384</td><td>8.63%</td></tr><tr><td>19</td><td>927</td><td>5.78%</td></tr><tr><td>20</td><td>881</td><td>5.50%</td></tr><tr><td>21</td><td>727</td><td>4.54%</td></tr><tr><td>22</td><td>628</td><td>3.92%</td></tr><tr><td>23</td><td>516</td><td>3.22%</td></tr><tr><td>24</td><td>546</td><td>3.41%</td></tr><tr><td>25</td><td>399</td><td>2.49%</td></tr><tr><td>26</td><td>360</td><td>2.25%</td></tr><tr><td>27</td><td>299</td><td>1.87%</td></tr><tr><td>28</td><td>297</td><td>1.85%</td></tr><tr><td>29</td><td>266</td><td>1.66%</td></tr><tr><td>30</td><td>269</td><td>1.68%</td></tr><tr><td>31</td><td>192</td><td>1.20%</td></tr><tr><td>32</td><td>174</td><td>1.09%</td></tr><tr><td>33</td><td>138</td><td>0.86%</td></tr><tr><td>34</td><td>127</td><td>0.79%</td></tr><tr><td>35</td><td>127</td><td>0.79%</td></tr><tr><td>36</td><td>99</td><td>0.62%</td></tr><tr><td>37</td><td>93</td><td>0.58%</td></tr><tr><td>38</td><td>71</td><td>0.44%</td></tr><tr><td>39</td><td>64</td><td>0.40%</td></tr><tr><td>40</td><td>65</td><td>0.41%</td></tr><tr><td>41</td><td>49</td><td>0.31%</td></tr><tr><td>42</td><td>52</td><td>0.32%</td></tr><tr><td>43</td><td>48</td><td>0.30%</td></tr><tr><td>44</td><td>31</td><td>0.19%</td></tr><tr><td>45</td><td>39</td><td>0.24%</td></tr><tr><td>46</td><td>24</td><td>0.15%</td></tr><tr><td>47</td><td>22</td><td>0.14%</td></tr><tr><td>48</td><td>23</td><td>0.14%</td></tr><tr><td>49</td><td>14</td><td>0.09%</td></tr><tr><td>50</td><td>14</td><td>0.09%</td></tr><tr><td>51</td><td>14</td><td>0.09%</td></tr><tr><td>52</td><td>9</td><td>0.06%</td></tr><tr><td>53</td><td>9</td><td>0.06%</td></tr><tr><td>54</td><td>11</td><td>0.07%</td></tr><tr><td>55</td><td>3</td><td>0.02%</td></tr><tr><td>56</td><td>6</td><td>0.04%</td></tr><tr><td>57</td><td>6</td><td>0.04%</td></tr><tr><td>58</td><td>2</td><td>0.01%</td></tr><tr><td>59</td><td>3</td><td>0.02%</td></tr><tr><td>60</td><td>3</td><td>0.02%</td></tr><tr><td>61</td><td>1</td><td>0.01%</td></tr><tr><td>62</td><td>3</td><td>0.02%</td></tr><tr><td>63</td><td>2</td><td>0.01%</td></tr><tr><td>64</td><td>1</td><td>0.01%</td></tr><tr><td>66</td><td>1</td><td>0.01%</td></tr><tr><td>69</td><td>1</td><td>0.01%</td></tr><tr><td>79</td><td>1</td><td>0.01%</td></tr><tr><td>86</td><td>1</td><td>0.01%</td></tr><tr><td>88</td><td>1</td><td>0.01%</td></tr><tr><td>96</td><td>1</td><td>0.01%</td></tr><tr><td>97</td><td>1</td><td>0.01%</td></tr><tr><td>99</td><td>1</td><td>0.01%</td></tr><tr><td>100</td><td>18</td><td>0.11%</td></tr>
         </tbody>
     </table></div>
+</section>
+<section>
     <h2>02. Gender</h2>
     <p class='center'>Valid responses: 15,591</p>
     <div class='overflow'><table class='poll table sortable noborders'>
@@ -229,6 +231,8 @@ music and works will not change when the full results are published.</p>-->
             </tr>
         </tbody>
     </table></div>
+</section>
+<section>
 	<h2>03. Location</h2>
 	<p class='center'>Valid responses: 14,807</p>
     <div class='overflow'><table class='poll table sortable noborders'>
@@ -352,11 +356,13 @@ music and works will not change when the full results are published.</p>-->
 			</tr>
 		</tbody>
 	</table></div>
+</section>
+<section>
 	<h2>04. Difficulty level 1cc'd</h2>
 	<div>
 		<div>
 			<h3>Touhou 6 - The Embodiment of Scarlet Devil</h3>
-			<p class='center'>Valid responses: 11,994</p>
+			<p class='center'>Valid responses: 12,692</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
             <colgroup>
@@ -371,44 +377,44 @@ music and works will not change when the full results are published.</p>-->
                     <th class='header'>Percentage</th>
                 </tr>
             </thead>
-			<tbody>
-				<tr>
-					<td>Not played</td>
-					<td>4,355</td>
-					<td>36.31%</td>
-				</tr>
-				<tr>
-					<td>Not cleared</td>
-					<td>1,127</td>
-					<td>9.40%</td>
-				</tr>
-				<tr>
-					<td>Easy 1cc</td>
-					<td>1,537</td>
-					<td>12.81%</td>
-				</tr>
-				<tr>
-					<td>Normal 1cc</td>
-					<td>3,177</td>
-					<td>26.49%</td>
-				</tr>
-				<tr>
-					<td>Hard 1cc</td>
-					<td>971</td>
-					<td>8.10%</td>
-				</tr>
-				<tr>
-					<td>Lunatic 1cc</th>
-					<td>827</td>
-					<td>6.90%</td>
-				</tr>
-			</tbody>
-		</table></div>
-	</div>
-	<div>
+            <tbody>
+                <tr>
+                    <th>Not played</th>
+                    <td>4,720</td>
+                    <td>37.19%</td>
+                </tr>
+                <tr>
+                    <th>Not cleared</th>
+                    <td>1,241</td>
+                    <td>9.78%</td>
+                </tr>
+                <tr>
+                    <th>Easy 1cc</th>
+                    <td>1,565</td>
+                    <td>12.33%</td>
+                </tr>
+                <tr>
+                    <th>Normal 1cc</th>
+                    <td>3,253</td>
+                    <td>25.63%</td>
+                </tr>
+                <tr>
+                    <th>Hard 1cc</th>
+                    <td>977</td>
+                    <td>7.70%</td>
+                </tr>
+                <tr>
+                    <th>Lunatic 1cc</th>
+                    <td>936</td>
+                    <td>7.37%</td>
+                </tr>
+            </tbody>
+        </table></div>
+    </div>
+    <div>
 		<div>
 			<h3>Touhou 7 - Perfect Cherry Blossom</h3>
-			<p class='center'>Valid responses: 11,726</p>
+			<p class='center'>Valid responses: 12,376</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
             <colgroup>
@@ -423,44 +429,44 @@ music and works will not change when the full results are published.</p>-->
                     <th class='header'>Percentage</th>
                 </tr>
             </thead>
-			<tbody>
-				<tr>
-					<td>Not played</td>
-					<td>4,736</td>
-					<td>40.39%</td>
-				</tr>
-				<tr>
-					<td>Not cleared</td>
-					<td>955</td>
-					<td>8.14%</td>
-				</tr>
-				<tr>
-					<td>Easy 1cc</td>
-					<td>1,295</td>
-					<td>11.04%</td>
-				</tr>
-				<tr>
-					<td>Normal 1cc</td>
-					<td>2,835</td>
-					<td>24.18%</td>
-				</tr>
-				<tr>
-					<td>Hard 1cc</td>
-					<td>990</td>
-					<td>8.44%</td>
-				</tr>
-				<tr>
-					<td>Lunatic 1cc</td>
-					<td>915</td>
-					<td>7.80%</td>
-				</tr>
-			</tbody>
-		</table></div>
-	</div>
-	<div>
+            <tbody>
+                <tr>
+                    <th>Not played</th>
+                    <td>5,140</td>
+                    <td>41.53%</td>
+                </tr>
+                <tr>
+                    <th>Not cleared</th>
+                    <td>1,036</td>
+                    <td>8.37%</td>
+                </tr>
+                <tr>
+                    <th>Easy 1cc</th>
+                    <td>1,324</td>
+                    <td>10.70%</td>
+                </tr>
+                <tr>
+                    <th>Normal 1cc</th>
+                    <td>2,933</td>
+                    <td>23.70%</td>
+                </tr>
+                <tr>
+                    <th>Hard 1cc</th>
+                    <td>943</td>
+                    <td>7.62%</td>
+                </tr>
+                <tr>
+                    <th>Lunatic 1cc</th>
+                    <td>1,000</td>
+                    <td>8.08%</td>
+                </tr>
+            </tbody>
+        </table></div>
+    </div>
+    <div>
 		<div>
 			<h3>Touhou 8 - Imperishable Night</h3>
-			<p class='center'>Valid responses: 11,622</p>
+			<p class='center'>Valid responses: 12,375</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
             <colgroup>
@@ -475,44 +481,44 @@ music and works will not change when the full results are published.</p>-->
                     <th class='header'>Percentage</th>
                 </tr>
             </thead>
-			<tbody>
-				<tr>
-					<td>Not played</td>
-					<td>4,556</td>
-					<td>39.20%</td>
-				</tr>
-				<tr>
-					<td>Not cleared</td>
-					<td>690</td>
-					<td>5.94%</td>
-				</tr>
-				<tr>
-					<td>Easy 1cc</td>
-					<td>1,413</td>
-					<td>12.16%</td>
-				</tr>
-				<tr>
-					<td>Normal 1cc</td>
-					<td>3,018</td>
-					<td>25.97%</td>
-				</tr>
-				<tr>
-					<td>Hard 1cc</td>
-					<td>1,005</td>
-					<td>8.65%</td>
-				</tr>
-				<tr>
-					<td>Lunatic 1cc</td>
-					<td>940</td>
-					<td>8.09%</td>
-				</tr>
-			</tbody>
-		</table></div>
-	</div>
-	<div>
+            <tbody>
+                <tr>
+                    <th>Not played</th>
+                    <td>4,894</td>
+                    <td>39.55%</td>
+                </tr>
+                <tr>
+                    <th>Not cleared</th>
+                    <td>758</td>
+                    <td>6.13%</td>
+                </tr>
+                <tr>
+                    <th>Easy 1cc</th>
+                    <td>1,609</td>
+                    <td>13.00%</td>
+                </tr>
+                <tr>
+                    <th>Normal 1cc</th>
+                    <td>3,043</td>
+                    <td>24.59%</td>
+                </tr>
+                <tr>
+                    <th>Hard 1cc</th>
+                    <td>1,051</td>
+                    <td>8.49%</td>
+                </tr>
+                <tr>
+                    <th>Lunatic 1cc</th>
+                    <td>1,020</td>
+                    <td>8.24%</td>
+                </tr>
+            </tbody>
+        </table></div>
+    </div>
+    <div>
 		<div>
 			<h3>Touhou 9 - Phantasmagoria of Flower View</h3>
-			<p class='center'>Valid responses: 11,164</p>
+			<p class='center'>Valid responses: 11,770</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
             <colgroup>
@@ -527,44 +533,44 @@ music and works will not change when the full results are published.</p>-->
                     <th class='header'>Percentage</th>
                 </tr>
             </thead>
-			<tbody>
-				<tr>
-					<td>Not played</td>
-					<td>6,069</td>
-					<td>54.36%</td>
-				</tr>
-				<tr>
-					<td>Not cleared</td>
-					<td>663</td>
-					<td>5.94%</td>
-				</tr>
-				<tr>
-					<td>Easy 1cc</td>
-					<td>1,171</td>
-					<td>10.49%</td>
-				</tr>
-				<tr>
-					<td>Normal 1cc</td>
-					<td>2,137</td>
-					<td>19.14%</td>
-				</tr>
-				<tr>
-					<td>Hard 1cc</td>
-					<td>417</td>
-					<td>3.74%</td>
-				</tr>
-				<tr>
-					<td>Lunatic 1cc</td>
-					<td>707</td>
-					<td>6.33%</td>
-				</tr>
-			</tbody>
-		</table></div>
-	</div>
-	<div>
+            <tbody>
+                <tr>
+                    <th>Not played</th>
+                    <td>6,557</td>
+                    <td>55.71%</td>
+                </tr>
+                <tr>
+                    <th>Not cleared</th>
+                    <td>698</td>
+                    <td>5.93%</td>
+                </tr>
+                <tr>
+                    <th>Easy 1cc</th>
+                    <td>1,143</td>
+                    <td>9.71%</td>
+                </tr>
+                <tr>
+                    <th>Normal 1cc</th>
+                    <td>2,138</td>
+                    <td>18.16%</td>
+                </tr>
+                <tr>
+                    <th>Hard 1cc</th>
+                    <td>463</td>
+                    <td>3.93%</td>
+                </tr>
+                <tr>
+                    <th>Lunatic 1cc</th>
+                    <td>771</td>
+                    <td>6.55%</td>
+                </tr>
+            </tbody>
+        </table></div>
+    </div>
+    <div>
 		<div>
 			<h3>Touhou 10 - Mountain of Faith</h3>
-			<p class='center'>Valid responses: 11,409</p>
+			<p class='center'>Valid responses: 12,075</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
             <colgroup>
@@ -579,44 +585,44 @@ music and works will not change when the full results are published.</p>-->
                     <th class='header'>Percentage</th>
                 </tr>
             </thead>
-			<tbody>
-				<tr>
-					<td>Not played</td>
-					<td>4,636</td>
-					<td>40.63%</td>
-				</tr>
-				<tr>
-					<td>Not cleared</td>
-					<td>877</td>
-					<td>7.69%</td>
-				</tr>
-				<tr>
-					<td>Easy 1cc</td>
-					<td>1,178</td>
-					<td>10.33%</td>
-				</tr>
-				<tr>
-					<td>Normal 1cc</td>
-					<td>2,904</td>
-					<td>25.45%</td>
-				</tr>
-				<tr>
-					<td>Hard 1cc</td>
-					<td>920</td>
-					<td>8.06%</td>
-				</tr>
-				<tr>
-					<td>Lunatic 1cc</td>
-					<td>894</td>
-					<td>7.84%</td>
-				</tr>
-			</tbody>
-		</table></div>
-	</div>
-	<div>
+            <tbody>
+                <tr>
+                    <th>Not played</th>
+                    <td>4,957</td>
+                    <td>41.05%</td>
+                </tr>
+                <tr>
+                    <th>Not cleared</th>
+                    <td>1,007</td>
+                    <td>8.34%</td>
+                </tr>
+                <tr>
+                    <th>Easy 1cc</th>
+                    <td>1,259</td>
+                    <td>10.43%</td>
+                </tr>
+                <tr>
+                    <th>Normal 1cc</th>
+                    <td>2,970</td>
+                    <td>24.60%</td>
+                </tr>
+                <tr>
+                    <th>Hard 1cc</th>
+                    <td>929</td>
+                    <td>7.69%</td>
+                </tr>
+                <tr>
+                    <th>Lunatic 1cc</th>
+                    <td>953</td>
+                    <td>7.89%</td>
+                </tr>
+            </tbody>
+        </table></div>
+    </div>
+    <div>
 		<div>
 			<h3>Touhou 11 - Subterranean Animism</h3>
-			<p class='center'>Valid responses: 11,158</p>
+			<p class='center'>Valid responses: 11,789</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
             <colgroup>
@@ -631,44 +637,44 @@ music and works will not change when the full results are published.</p>-->
                     <th class='header'>Percentage</th>
                 </tr>
             </thead>
-			<tbody>
-				<tr>
-					<td>Not played</td>
-					<td>5,100</td>
-					<td>45.71%</td>
-				</tr>
-				<tr>
-					<td>Not cleared</td>
-					<td>1,198</td>
-					<td>10.74%</td>
-				</tr>
-				<tr>
-					<td>Easy 1cc</td>
-					<td>1,319</td>
-					<td>11.82%</td>
-				</tr>
-				<tr>
-					<td>Normal 1cc</td>
-					<td>2,225</td>
-					<td>19.94%</td>
-				</tr>
-				<tr>
-					<td>Hard 1cc</td>
-					<td>651</td>
-					<td>5.83%</td>
-				</tr>
-				<tr>
-					<td>Lunatic 1cc</td>
-					<td>665</td>
-					<td>5.96%</td>
-				</tr>
-			</tbody>
-		</table></div>
-	</div>
-	<div>
+            <tbody>
+                <tr>
+                    <th>Not played</th>
+                    <td>5,482</td>
+                    <td>46.50%</td>
+                </tr>
+                <tr>
+                    <th>Not cleared</th>
+                    <td>1,281</td>
+                    <td>10.87%</td>
+                </tr>
+                <tr>
+                    <th>Easy 1cc</th>
+                    <td>1,381</td>
+                    <td>11.71%</td>
+                </tr>
+                <tr>
+                    <th>Normal 1cc</th>
+                    <td>2,203</td>
+                    <td>18.69%</td>
+                </tr>
+                <tr>
+                    <th>Hard 1cc</th>
+                    <td>672</td>
+                    <td>5.70%</td>
+                </tr>
+                <tr>
+                    <th>Lunatic 1cc</th>
+                    <td>770</td>
+                    <td>6.53%</td>
+                </tr>
+            </tbody>
+        </table></div>
+    </div>
+    <div>
 		<div>
 			<h3>Touhou 12 - Undefined Fantastic Object</h3>
-			<p class='center'>Valid responses: 10,933</p>
+			<p class='center'>Valid responses: 11,555</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
             <colgroup>
@@ -683,44 +689,44 @@ music and works will not change when the full results are published.</p>-->
                     <th class='header'>Percentage</th>
                 </tr>
             </thead>
-			<tbody>
-				<tr>
-					<td>Not played</td>
-					<td>5,699</td>
-					<td>52.13%</td>
-				</tr>
-				<tr>
-					<td>Not cleared</td>
-					<td>1,120</td>
-					<td>10.24%</td>
-				</tr>
-				<tr>
-					<td>Easy 1cc</td>
-					<td>1,059</td>
-					<td>9.69%</td>
-				</tr>
-				<tr>
-					<td>Normal 1cc</td>
-					<td>2,095</td>
-					<td>19.16%</td>
-				</tr>
-				<tr>
-					<td>Hard 1cc</td>
-					<td>510</td>
-					<td>4.66%</td>
-				</tr>
-				<tr>
-					<td>Lunatic 1cc</td>
-					<td>450</td>
-					<td>4.12%</td>
-				</tr>
-			</tbody>
-		</table></div>
-	</div>
-	<div>
+            <tbody>
+                <tr>
+                    <th>Not played</th>
+                    <td>6,232</td>
+                    <td>53.93%</td>
+                </tr>
+                <tr>
+                    <th>Not cleared</th>
+                    <td>1,137</td>
+                    <td>9.84%</td>
+                </tr>
+                <tr>
+                    <th>Easy 1cc</th>
+                    <td>1,088</td>
+                    <td>9.42%</td>
+                </tr>
+                <tr>
+                    <th>Normal 1cc</th>
+                    <td>2,051</td>
+                    <td>17.75%</td>
+                </tr>
+                <tr>
+                    <th>Hard 1cc</th>
+                    <td>519</td>
+                    <td>4.49%</td>
+                </tr>
+                <tr>
+                    <th>Lunatic 1cc</th>
+                    <td>528</td>
+                    <td>4.57%</td>
+                </tr>
+            </tbody>
+        </table></div>
+    </div>
+    <div>
 		<div>
 			<h3>Touhou 13 - Ten Desires</h3>
-			<p class='center'>Valid responses: 10,893</p>
+			<p class='center'>Valid responses: 11,513</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
             <colgroup>
@@ -735,44 +741,44 @@ music and works will not change when the full results are published.</p>-->
                     <th class='header'>Percentage</th>
                 </tr>
             </thead>
-			<tbody>
-				<tr>
-					<td>Not played</td>
-					<td>5,682</td>
-					<td>52.16%</td>
-				</tr>
-				<tr>
-					<td>Not cleared</td>
-					<td>721</td>
-					<td>6.62%</td>
-				</tr>
-				<tr>
-					<td>Easy 1cc</td>
-					<td>1,011</td>
-					<td>9.28%</td>
-				</tr>
-				<tr>
-					<td>Normal 1cc</td>
-					<td>2,207</td>
-					<td>20.26%</td>
-				</tr>
-				<tr>
-					<td>Hard 1cc</td>
-					<td>648</td>
-					<td>5.95%</td>
-				</tr>
-				<tr>
-					<td>Lunatic 1cc</td>
-					<td>624</td>
-					<td>5.73%</td>
-				</tr>
-			</tbody>
-		</table></div>
-	</div>
-	<div>
+            <tbody>
+                <tr>
+                    <th>Not played</th>
+                    <td>6,232</td>
+                    <td>54.13%</td>
+                </tr>
+                <tr>
+                    <th>Not cleared</th>
+                    <td>736</td>
+                    <td>6.39%</td>
+                </tr>
+                <tr>
+                    <th>Easy 1cc</th>
+                    <td>1,034</td>
+                    <td>8.98%</td>
+                </tr>
+                <tr>
+                    <th>Normal 1cc</th>
+                    <td>2,182</td>
+                    <td>18.95%</td>
+                </tr>
+                <tr>
+                    <th>Hard 1cc</th>
+                    <td>667</td>
+                    <td>5.79%</td>
+                </tr>
+                <tr>
+                    <th>Lunatic 1cc</th>
+                    <td>662</td>
+                    <td>5.75%</td>
+                </tr>
+            </tbody>
+        </table></div>
+    </div>
+    <div>
 		<div>
 			<h3>Touhou 14 - Double Dealing Character</h3>
-			<p class='center'>Valid responses: 10,839</p>
+			<p class='center'>Valid responses: 11,478</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
             <colgroup>
@@ -787,44 +793,44 @@ music and works will not change when the full results are published.</p>-->
                     <th class='header'>Percentage</th>
                 </tr>
             </thead>
-			<tbody>
-				<tr>
-					<td>Not played</td>
-					<td>5,766</td>
-					<td>53.20%</td>
-				</tr>
-				<tr>
-					<td>Not cleared</td>
-					<td>787</td>
-					<td>7.26%</td>
-				</tr>
-				<tr>
-					<td>Easy 1cc</td>
-					<td>1,045</td>
-					<td>9.64%</td>
-				</tr>
-				<tr>
-					<td>Normal 1cc</td>
-					<td>2,041</td>
-					<td>18.83%</td>
-				</tr>
-				<tr>
-					<td>Hard 1cc</td>
-					<td>585</td>
-					<td>5.40%</td>
-				</tr>
-				<tr>
-					<td>Lunatic 1cc</td>
-					<td>615</td>
-					<td>5.67%</td>
-				</tr>
-			</tbody>
-		</table></div>
-	</div>
-	<div>
+            <tbody>
+                <tr>
+                    <th>Not played</th>
+                    <td>6,351</td>
+                    <td>55.33%</td>
+                </tr>
+                <tr>
+                    <th>Not cleared</th>
+                    <td>787</td>
+                    <td>6.86%</td>
+                </tr>
+                <tr>
+                    <th>Easy 1cc</th>
+                    <td>1,080</td>
+                    <td>9.41%</td>
+                </tr>
+                <tr>
+                    <th>Normal 1cc</th>
+                    <td>2,021</td>
+                    <td>17.61%</td>
+                </tr>
+                <tr>
+                    <th>Hard 1cc</th>
+                    <td>566</td>
+                    <td>4.93%</td>
+                </tr>
+                <tr>
+                    <th>Lunatic 1cc</th>
+                    <td>673</td>
+                    <td>5.86%</td>
+                </tr>
+            </tbody>
+        </table></div>
+    </div>
+    <div>
 		<div>
 			<h3>Touhou 15 - Legacy of Lunatic Kingdom (Pointdevice)</h3>
-			<p class='center'>Valid responses: 10,822</p>
+			<p class='center'>Valid responses: 11,482</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
             <colgroup>
@@ -839,44 +845,44 @@ music and works will not change when the full results are published.</p>-->
                     <th class='header'>Percentage</th>
                 </tr>
             </thead>
-			<tbody>
-				<tr>
-					<td>Not played</td>
-					<td>5,543</td>
-					<td>51.22%</td>
-				</tr>
-				<tr>
-					<td>Not cleared</td>
-					<td>926</td>
-					<td>8.56%</td>
-				</tr>
-				<tr>
-					<td>Easy 1cc</td>
-					<td>1,096</td>
-					<td>10.13%</td>
-				</tr>
-				<tr>
-					<td>Normal 1cc</td>
-					<td>1,991</td>
-					<td>18.40%</td>
-				</tr>
-				<tr>
-					<td>Hard 1cc</td>
-					<td>511</td>
-					<td>4.72%</td>
-				</tr>
-				<tr>
-					<td>Lunatic 1cc</td>
-					<td>755</td>
-					<td>6.98%</td>
-				</tr>
-			</tbody>
-		</table></div>
-	</div>
-	<div>
+            <tbody>
+                <tr>
+                    <th>Not played</th>
+                    <td>6,087</td>
+                    <td>53.01%</td>
+                </tr>
+                <tr>
+                    <th>Not cleared</th>
+                    <td>972</td>
+                    <td>8.47%</td>
+                </tr>
+                <tr>
+                    <th>Easy 1cc</th>
+                    <td>1,118</td>
+                    <td>9.74%</td>
+                </tr>
+                <tr>
+                    <th>Normal 1cc</th>
+                    <td>1,997</td>
+                    <td>17.39%</td>
+                </tr>
+                <tr>
+                    <th>Hard 1cc</th>
+                    <td>512</td>
+                    <td>4.46%</td>
+                </tr>
+                <tr>
+                    <th>Lunatic 1cc</th>
+                    <td>796</td>
+                    <td>6.93%</td>
+                </tr>
+            </tbody>
+        </table></div>
+    </div>
+    <div>
 		<div>
 			<h3>Touhou 15 - Legacy of Lunatic Kingdom (Legacy)</h3>
-			<p class='center'>Valid responses: 10,619</p>
+			<p class='center'>Valid responses: 11,306</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
             <colgroup>
@@ -891,44 +897,44 @@ music and works will not change when the full results are published.</p>-->
                     <th class='header'>Percentage</th>
                 </tr>
             </thead>
-			<tbody>
-				<tr>
-					<td>Not played</td>
-					<td>5,631</td>
-					<td>53.03%</td>
-				</tr>
-				<tr>
-					<td>Not cleared</td>
-					<td>1,934</td>
-					<td>18.21%</td>
-				</tr>
-				<tr>
-					<td>Easy 1cc</td>
-					<td>865</td>
-					<td>8.15%</td>
-				</tr>
-				<tr>
-					<td>Normal 1cc</td>
-					<td>1,273</td>
-					<td>11.99%</td>
-				</tr>
-				<tr>
-					<td>Hard 1cc</td>
-					<td>309</td>
-					<td>2.91%</td>
-				</tr>
-				<tr>
-					<td>Lunatic 1cc</td>
-					<td>607</td>
-					<td>5.72%</td>
-				</tr>
-			</tbody>
-		</table></div>
-	</div>
-	<div>
+            <tbody>
+                <tr>
+                    <th>Not played</th>
+                    <td>6,168</td>
+                    <td>54.56%</td>
+                </tr>
+                <tr>
+                    <th>Not cleared</th>
+                    <td>1,988</td>
+                    <td>17.58%</td>
+                </tr>
+                <tr>
+                    <th>Easy 1cc</th>
+                    <td>883</td>
+                    <td>7.81%</td>
+                </tr>
+                <tr>
+                    <th>Normal 1cc</th>
+                    <td>1,278</td>
+                    <td>11.30%</td>
+                </tr>
+                <tr>
+                    <th>Hard 1cc</th>
+                    <td>344</td>
+                    <td>3.04%</td>
+                </tr>
+                <tr>
+                    <th>Lunatic 1cc</th>
+                    <td>645</td>
+                    <td>5.70%</td>
+                </tr>
+            </tbody>
+        </table></div>
+    </div>
+    <div>
 		<div>
 			<h3>Touhou 16 - Hidden Star in Four Seasons</h3>
-			<p class='center'>Valid responses: 10,827</p>
+			<p class='center'>Valid responses: 11,437</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
             <colgroup>
@@ -943,44 +949,44 @@ music and works will not change when the full results are published.</p>-->
                     <th class='header'>Percentage</th>
                 </tr>
             </thead>
-			<tbody>
-				<tr>
-					<td>Not played</td>
-					<td>5,885</td>
-					<td>54.35%</td>
-				</tr>
-				<tr>
-					<td>Not cleared</td>
-					<td>696</td>
-					<td>6.43%</td>
-				</tr>
-				<tr>
-					<td>Easy 1cc</td>
-					<td>1,110</td>
-					<td>10.25%</td>
-				</tr>
-				<tr>
-					<td>Normal 1cc</td>
-					<td>1,960</td>
-					<td>18.10%</td>
-				</tr>
-				<tr>
-					<td>Hard 1cc</td>
-					<td>435</td>
-					<td>4.02%</td>
-				</tr>
-				<tr>
-					<td>Lunatic 1cc</td>
-					<td>741</td>
-					<td>6.84%</td>
-				</tr>
-			</tbody>
-		</table></div>
-	</div>
-	<div>
+            <tbody>
+                <tr>
+                    <th>Not played</th>
+                    <td>6,379</td>
+                    <td>55.78%</td>
+                </tr>
+                <tr>
+                    <th>Not cleared</th>
+                    <td>716</td>
+                    <td>6.26%</td>
+                </tr>
+                <tr>
+                    <th>Easy 1cc</th>
+                    <td>1,139</td>
+                    <td>9.96%</td>
+                </tr>
+                <tr>
+                    <th>Normal 1cc</th>
+                    <td>1,957</td>
+                    <td>17.11%</td>
+                </tr>
+                <tr>
+                    <th>Hard 1cc</th>
+                    <td>446</td>
+                    <td>3.90%</td>
+                </tr>
+                <tr>
+                    <th>Lunatic 1cc</th>
+                    <td>800</td>
+                    <td>6.99%</td>
+                </tr>
+            </tbody>
+        </table></div>
+    </div>
+    <div>
 		<div>
 			<h3>Touhou 17: Wily Beast and Weakest Creature</h3>
-			<p class='center'>Valid responses: 10,830</p>
+			<p class='center'>Valid responses: 11,479</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
             <colgroup>
@@ -995,44 +1001,44 @@ music and works will not change when the full results are published.</p>-->
                     <th class='header'>Percentage</th>
                 </tr>
             </thead>
-			<tbody>
-				<tr>
-					<td>Not played</td>
-					<td>5,834</td>
-					<td>53.87%</td>
-				</tr>
-				<tr>
-					<td>Not cleared</td>
-					<td>684</td>
-					<td>6.32%</td>
-				</tr>
-				<tr>
-					<td>Easy 1cc</td>
-					<td>1,150</td>
-					<td>10.62%</td>
-				</tr>
-				<tr>
-					<td>Normal 1cc</td>
-					<td>2,029</td>
-					<td>18.73%</td>
-				</tr>
-				<tr>
-					<td>Hard 1cc</td>
-					<td>521</td>
-					<td>4.81%</td>
-				</tr>
-				<tr>
-					<td>Lunatic 1cc</td>
-					<td>612</td>
-					<td>5.65%</td>
-				</tr>
-			</tbody>
-		</table></div>
-	</div>
-	<div>
+            <tbody>
+                <tr>
+                    <th>Not played</th>
+                    <td>6,463</td>
+                    <td>56.30%</td>
+                </tr>
+                <tr>
+                    <th>Not cleared</th>
+                    <td>676</td>
+                    <td>5.89%</td>
+                </tr>
+                <tr>
+                    <th>Easy 1cc</th>
+                    <td>1,131</td>
+                    <td>9.85%</td>
+                </tr>
+                <tr>
+                    <th>Normal 1cc</th>
+                    <td>2,019</td>
+                    <td>17.59%</td>
+                </tr>
+                <tr>
+                    <th>Hard 1cc</th>
+                    <td>519</td>
+                    <td>4.52%</td>
+                </tr>
+                <tr>
+                    <th>Lunatic 1cc</th>
+                    <td>671</td>
+                    <td>5.85%</td>
+                </tr>
+            </tbody>
+        </table></div>
+    </div>
+    <div>
 		<div>
 			<h3>Touhou 18: Unconnected Marketeers</h3>
-			<p class='center'>Valid responses: 10,878</p>
+			<p class='center'>Valid responses: 11,534</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
             <colgroup>
@@ -1047,44 +1053,44 @@ music and works will not change when the full results are published.</p>-->
                     <th class='header'>Percentage</th>
                 </tr>
             </thead>
-			<tbody>
-				<tr>
-					<td>Not played</td>
-					<td>5,711</td>
-					<td>52.50%</td>
-				</tr>
-				<tr>
-					<td>Not cleared</td>
-					<td>658</td>
-					<td>6.05%</td>
-				</tr>
-				<tr>
-					<td>Easy 1cc</td>
-					<td>1,228</td>
-					<td>11.29%</td>
-				</tr>
-				<tr>
-					<td>Normal 1cc</td>
-					<td>1,960</td>
-					<td>18.02%</td>
-				</tr>
-				<tr>
-					<td>Hard 1cc</td>
-					<td>542</td>
-					<td>4.98%</td>
-				</tr>
-				<tr>
-					<td>Lunatic 1cc</td>
-					<td>779</td>
-					<td>7.16%</td>
-				</tr>
-			</tbody>
-		</table></div>
-	</div>
-	<div>
+            <tbody>
+                <tr>
+                    <th>Not played</th>
+                    <td>6,383</td>
+                    <td>55.34%</td>
+                </tr>
+                <tr>
+                    <th>Not cleared</th>
+                    <td>674</td>
+                    <td>5.84%</td>
+                </tr>
+                <tr>
+                    <th>Easy 1cc</th>
+                    <td>1,148</td>
+                    <td>9.95%</td>
+                </tr>
+                <tr>
+                    <th>Normal 1cc</th>
+                    <td>1,941</td>
+                    <td>16.83%</td>
+                </tr>
+                <tr>
+                    <th>Hard 1cc</th>
+                    <td>538</td>
+                    <td>4.66%</td>
+                </tr>
+                <tr>
+                    <th>Lunatic 1cc</th>
+                    <td>850</td>
+                    <td>7.37%</td>
+                </tr>
+            </tbody>
+        </table></div>
+    </div>
+    <div>
 		<div>
 			<h3>Touhou 19: Unfinished Dream of All Living Ghost</h3>
-			<p class='center'>Valid responses: 10,872</p>
+			<p class='center'>Valid responses: 11,526</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
             <colgroup>
@@ -1099,43 +1105,64 @@ music and works will not change when the full results are published.</p>-->
                     <th class='header'>Percentage</th>
                 </tr>
             </thead>
-			<tbody>
-				<tr>
-					<td>Not played</td>
-					<td>6,140</td>
-					<td>56.48%</td>
-				</tr>
-				<tr>
-					<td>Not cleared</td>
-					<td>656</td>
-					<td>6.03%</td>
-				</tr>
-				<tr>
-					<td>Easy 1cc</td>
-					<td>838</td>
-					<td>7.71%</td>
-				</tr>
-				<tr>
-					<td>Normal 1cc</td>
-					<td>2,033</td>
-					<td>18.70%</td>
-				</tr>
-				<tr>
-					<td>Hard 1cc</td>
-					<td>405</td>
-					<td>3.73%</td>
-				</tr>
-				<tr>
-					<td>Lunatic 1cc</td>
-					<td>800</td>
-					<td>7.36%</td>
-				</tr>
-			</tbody>
-		</table></div>
-	</div>
+            <tbody>
+                <tr>
+                    <th>Not played</th>
+                    <td>6,676</td>
+                    <td>57.92%</td>
+                </tr>
+                <tr>
+                    <th>Not cleared</th>
+                    <td>642</td>
+                    <td>5.57%</td>
+                </tr>
+                <tr>
+                    <th>Easy 1cc</th>
+                    <td>894</td>
+                    <td>7.76%</td>
+                </tr>
+                <tr>
+                    <th>Normal 1cc</th>
+                    <td>1,979</td>
+                    <td>17.17%</td>
+                </tr>
+                <tr>
+                    <th>Hard 1cc</th>
+                    <td>427</td>
+                    <td>3.70%</td>
+                </tr>
+                <tr>
+                    <th>Lunatic 1cc</th>
+                    <td>908</td>
+                    <td>7.88%</td>
+                </tr>
+            </tbody>
+        </table></div>
+    </div>
 </section>
 <section>
-	<h2>05. How you purchased the games</h2>
+	<h2>05. Sidegames played (spin-offs)</h2>
+	<p class='center'>Valid responses: 9,174</p>
+    <div class='overflow'><table class='poll table sortable noborders'>
+        <colgroup>
+            <col class='col2'>
+            <col class='col3'>
+            <col class='col4'>
+        </colgroup>
+        <thead>
+            <tr>
+                <th class='header'>Answer</th>
+                <th class='header'>Responses</th>
+                <th class='header'>Percentage</th>
+            </tr>
+        </thead>
+		<tbody>
+            <tr><td>IaMP</td><td>3,367</td><td>36.70%</td></tr><tr><td>StB</td><td>3,850</td><td>41.97%</td></tr><tr><td>SWR</td><td>4,199</td><td>45.77%</td></tr><tr><td>Hisoutensoku</td><td>4,502</td><td>49.07%</td></tr><tr><td>DS</td><td>3,131</td><td>34.13%</td></tr><tr><td>GFW</td><td>3,663</td><td>39.93%</td></tr><tr><td>HM</td><td>2,915</td><td>31.77%</td></tr><tr><td>ISC</td><td>3,330</td><td>36.30%</td></tr><tr><td>ULiL</td><td>3,106</td><td>33.86%</td></tr><tr><td>AoCF</td><td>4,595</td><td>50.09%</td></tr><tr><td>VD</td><td>2,677</td><td>29.18%</td></tr><tr><td>SFW</td><td>3,559</td><td>38.79%</td></tr><tr><td>HBM</td><td>3,156</td><td>34.40%</td></tr>
+		</tbody>
+	</table></div>
+</section>
+<section>
+	<h2>06. How you purchased the games</h2>
 	<p class='center'>Valid responses: 10,320</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -1153,24 +1180,24 @@ music and works will not change when the full results are published.</p>-->
 		<tbody>
 			<tr>
 				<td>CD-ROM</td>
-				<td>4,255</td>
-				<td>41.23%</td>
+				<td>4,246</td>
+				<td>39.88%</td>
 			</tr>
 			<tr>
 				<td>Download</td>
-				<td>4,256</td>
-				<td>41.24%</td>
+				<td>4,378</td>
+				<td>41.12%</td>
 			</tr>
 			<tr>
 				<td>Both</td>
-				<td>1,809</td>
-				<td>17.53%</td>
+				<td>2,022</td>
+				<td>18.99%</td>
 			</tr>
 		</tbody>
 	</table></div>
 </section>
 <section>
-	<h2>06. Publications subscribed to</h2>
+	<h2>07. Publications subscribed to</h2>
 	<div>
 		<div>
 			<h3>Curiosities of Lotus Asia</h3>
@@ -1192,13 +1219,13 @@ music and works will not change when the full results are published.</p>-->
 			<tbody>
 				<tr>
 					<td>Not bought</td>
-					<td>8,680</td>
-					<td>81.77%</td>
+					<td>8,613</td>
+					<td>79.82%</td>
 				</tr>
 				<tr>
 					<td>Bought the serialization (Strange Creators of Outer World)</td>
-					<td>1,935</td>
-					<td>18.23%</td>
+					<td>2,178</td>
+					<td>20.18%</td>
 				</tr>
 			</tbody>
 		</table></div>
@@ -1224,33 +1251,33 @@ music and works will not change when the full results are published.</p>-->
 			<tbody>
 				<tr>
 					<td>Not read</td>
-					<td>5,592</td>
-					<td>50.98%</td>
+					<td>5,405</td>
+					<td>47.86%</td>
 				</tr>
 				<tr>
 					<td>Bought the serialization (Comp Ace)</td>
-					<td>157</td>
-					<td>1.43%</td>
+					<td>198</td>
+					<td>1.75%</td>
 				</tr>
 				<tr>
 					<td>Reading on Comic Walker</td>
-					<td>922</td>
-					<td>8.40%</td>
+					<td>831</td>
+					<td>7.36%</td>
 				</tr>
 				<tr>
 					<td>Reading on Niconico</td>
-					<td>615</td>
-					<td>5.61%</td>
+					<td>700</td>
+					<td>6.20%</td>
 				</tr>
 				<tr>
 					<td>Reading in the Touhou Garakuta magazine</td>
-					<td>499</td>
-					<td>4.55%</td>
+					<td>615</td>
+					<td>5.45%</td>
 				</tr>
 				<tr>
 					<td>Bought the tankobon volumes</td>
-					<td>3,185</td>
-					<td>29.03%</td>
+					<td>3,545</td>
+					<td>31.39%</td>
 				</tr>
 			</tbody>
 		</table></div>
@@ -1276,35 +1303,35 @@ music and works will not change when the full results are published.</p>-->
 			<tbody>
 				<tr>
 					<td>Not read</td>
-					<td>6,175</td>
-					<td>57.68%</td>
+					<td>6,056</td>
+					<td>55.12%</td>
 				</tr>
 				<tr>
 					<td>Reading on Comic Walker</td>
-					<td>1,174</td>
-					<td>10.97%</td>
+					<td>1,162</td>
+					<td>10.58%</td>
 				</tr>
 				<tr>
 					<td>Reading on Niconico</td>
-					<td>655</td>
-					<td>6.12%</td>
+					<td>745</td>
+					<td>6.78%</td>
 				</tr>
 				<tr>
 					<td>Reading in the Touhou Garakuta magazine</td>
-					<td>590</td>
-					<td>5.51%</td>
+					<td>770</td>
+					<td>7.01%</td>
 				</tr>
 				<tr>
 					<td>Bought the tankobon volumes</td>
-					<td>2,111</td>
-					<td>19.72%</td>
+					<td>2,253</td>
+					<td>20.51%</td>
 				</tr>
 			</tbody>
 		</table></div>
 	</div>
 </section>
 <section>
-	<h2>07. What do you like about Touhou? (multiple answers possible)</h2>
+	<h2>08. What do you like about Touhou? (multiple answers possible)</h2>
 	<p class='center'>Valid responses: 16,670</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -1322,44 +1349,44 @@ music and works will not change when the full results are published.</p>-->
 		<tbody>
 			<tr>
 				<td>Music</td>
-				<td>15,617</td>
-				<td>93.68%</td>
+				<td>15,968</td>
+				<td>96.30%</td>
 			</tr>
 			<tr>
 				<td>Games</td>
-				<td>10,362</td>
-				<td>62.16%</td>
+				<td>10,756</td>
+				<td>64.87%</td>
 			</tr>
 			<tr>
 				<td>Characters</td>
-				<td>14,983</td>
-				<td>89.88%</td>
+				<td>15,126</td>
+				<td>91.22%</td>
 			</tr>
 			<tr>
 				<td>Story</td>
-				<td>11,305</td>
-				<td>67.82%</td>
+				<td>11,561</td>
+				<td>69.72%</td>
 			</tr>
 			<tr>
 				<td>Worldbuilding</td>
-				<td>13,162</td>
-				<td>78.96%</td>
+				<td>13,481</td>
+				<td>81.30%</td>
 			</tr>
 			<tr>
 				<td>Fanworks</td>
-				<td>13,035</td>
-				<td>78.19%</td>
+				<td>13,482</td>
+				<td>81.31%</td>
 			</tr>
 			<tr>
 				<td>Fandom</td>
-				<td>7,745</td>
-				<td>46.46%</td>
+				<td>8,159</td>
+				<td>49.20%</td>
 			</tr>
 		</tbody>
 	</table></div>
 </section>
 <section>
-	<h2>08. When did you discover Touhou?</h2>
+	<h2>09. When did you discover Touhou?</h2>
 	<p class='center'>Valid responses: 15,376</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -1375,136 +1402,12 @@ music and works will not change when the full results are published.</p>-->
             </tr>
         </thead>
 		<tbody>
-			<tr>
-				<td><strong>PC-98 - Shuusou Gyoku</strong><br>(October 1995 - December 2000)</td>
-				<td>65</td>
-				<td>0.42%</td>
-			</tr>
-			<tr>
-				<td><strong>Shuusou Gyoku - EoSD</strong><br>(December 2000 - August 2002)</td>
-				<td>125</td>
-				<td>0.81%</td>
-			</tr>
-			<tr>
-				<td><strong>EoSD - PCB</strong><br>(August 2002 - August 2003)</td>
-				<td>325</td>
-				<td>2.11%</td>
-			</tr>
-			<tr>
-				<td><strong>PCB - IN</strong><br>(August 2003 - August 2004)</td>
-				<td>177</td>
-				<td>1.15%</td>
-			</tr>
-			<tr>
-				<td><strong>IN - IaMP</strong><br>(August 2004 - December 2004)</td>
-				<td>144</td>
-				<td>0.94%</td>
-			</tr>
-			<tr>
-				<td><strong>IaMP - PoFV</strong><br>(December 2004 - August 2005)</td>
-				<td>96</td>
-				<td>0.62%</td>
-			</tr>
-			<tr>
-				<td><strong>PoFV - StB</strong><br>(August 2005 - December 2005)</td>
-				<td>64</td>
-				<td>0.42%</td>
-			</tr>
-			<tr>
-				<td><strong>StB - PMiSS</strong><br>(December 2005 - December 2006)</td>
-				<td>102</td>
-				<td>0.66%</td>
-			</tr>
-			<tr>
-				<td><strong>PMiSS - MoF</strong><br>(December 2006 - August 2007)</td>
-				<td>325</td>
-				<td>2.11%</td>
-			</tr>
-			<tr>
-				<td><strong>MoF - SA</strong><br>(August 2007 - August 2008)</td>
-				<td>741</td>
-				<td>4.82%</td>
-			</tr>
-			<tr>
-				<td><strong>SA - UFO</strong><br>(August 2008 - August 2009)</td>
-				<td>573</td>
-				<td>3.73%</td>
-			</tr>
-			<tr>
-				<td><strong>UFO - GFW</strong><br>(August 2009 - August 2010)</td>
-				<td>508</td>
-				<td>3.30%</td>
-			</tr>
-			<tr>
-				<td><strong>GFW - TD</strong><br>(August 2010 - August 2011)</td>
-				<td>517</td>
-				<td>3.36%</td>
-			</tr>
-			<tr>
-				<td><strong>TD - SoPM</strong><br>(August 2011 - April 2012)</td>
-				<td>663</td>
-				<td>4.31%</td>
-			</tr>
-			<tr>
-				<td><strong>SoPM - DDC</strong><br>(April 2012 - August 2013)</td>
-				<td>809</td>
-				<td>5.26%</td>
-			</tr>
-			<tr>
-				<td><strong>DDC - ISC</strong><br>(August 2013 - May 2014)</td>
-				<td>928</td>
-				<td>6.04%</td>
-			</tr>
-			<tr>
-				<td><strong>ISC - LoLK</strong><br>(May 2014 - August 2015)</td>
-				<td>1,211</td>
-				<td>7.88%</td>
-			</tr>
-			<tr>
-				<td><strong>LoLK - DBOA</strong><br>(August 2015 - August 2016)</td>
-				<td>1,180</td>
-				<td>7.67%</td>
-			</tr>
-			<tr>
-				<td><strong>DBOA - HSiFS</strong><br>(August 2016 - August 2017)</td>
-				<td>1,075</td>
-				<td>6.99%</td>
-			</tr>
-			<tr>
-				<td><strong>HSiFS - VD</strong><br>(August 2017 - August 2018)</td>
-				<td>1,160</td>
-				<td>7.54%</td>
-			</tr>
-			<tr>
-				<td><strong>VD - WBaWC</strong><br>(August 2018 - August 2019)</td>
-				<td>1,423</td>
-				<td>9.25%</td>
-			</tr>
-			<tr>
-				<td><strong>WBaWC - UM</strong><br>(August 2019 - May 2021)</td>
-				<td>1,905</td>
-				<td>12.39%</td>
-			</tr>
-			<tr>
-				<td><strong>UM - 100BM</strong><br>(May 2021, August 2022)</td>
-				<td>970</td>
-				<td>6.31%</td>
-			</tr>
-			<tr>
-				<td><strong>100BM - UDoALG</strong><br>(August 2022 - August 2023)</td>
-				<td>205</td>
-				<td>1.33%</td>
-			</tr>
-			<tr>
-				<td><strong>UDoALG - now</strong><br>(August 2023 - September 2023)</td>
-				<td>85</td>
-				<td>0.55%</td>
-			</tr>
+            <tr><td><strong>PC-98 - Shuusou Gyoku</strong><br>(October 1995 - December 2000)</td><td>60</td><td>0.38%</td></tr><tr><td><strong>Shuusou Gyoku - EoSD</strong><br>(December 2000 - August 2002)</td><td>130</td><td>0.82%</td></tr><tr><td><strong>EoSD - PCB</strong><br>(August 2002 - August 2003)</td><td>319</td><td>2.02%</td></tr><tr><td><strong>PCB - IN</strong><br>(August 2003 - August 2004)</td><td>172</td><td>1.09%</td></tr><tr><td><strong>IN - IaMP</strong><br>(August 2004 - December 2004)</td><td>159</td><td>1.01%</td></tr><tr><td><strong>IaMP - PoFV</strong><br>(December 2004 - August 2005)</td><td>66</td><td>0.42%</td></tr><tr><td><strong>PoFV - StB</strong><br>(August 2005 - December 2005)</td><td>72</td><td>0.46%</td></tr><tr><td><strong>StB - PMiSS</strong><br>(December 2005 - December 2006)</td><td>105</td><td>0.67%</td></tr><tr><td><strong>PMiSS - MoF</strong><br>(December 2006 - August 2007)</td><td>287</td><td>1.82%</td></tr><tr><td><strong>MoF - SA</strong><br>(August 2007 - August 2008)</td><td>646</td><td>4.09%</td></tr><tr><td><strong>SA - UFO</strong><br>(August 2008 - August 2009)</td><td>507</td><td>3.21%</td></tr><tr><td><strong>UFO - GFW</strong><br>(August 2009 - August 2010)</td><td>407</td><td>2.58%</td></tr><tr><td><strong>GFW - TD</strong><br>(August 2010 - August 2011)</td><td>444</td><td>2.81%</td></tr><tr><td><strong>TD - SoPM</strong><br>(August 2011 - April 2012)</td><td>576</td><td>3.65%</td></tr><tr><td><strong>SoPM - DDC</strong><br>(April 2012 - August 2013)</td><td>627</td><td>3.97%</td></tr><tr><td><strong>DDC - ISC</strong><br>(August 2013 - May 2014)</td><td>886</td><td>5.61%</td></tr><tr><td><strong>ISC - LoLK</strong><br>(May 2014 - August 2015)</td><td>976</td><td>6.18%</td></tr><tr><td><strong>LoLK - DBOA</strong><br>(August 2015 - August 2016)</td><td>1,096</td><td>6.94%</td></tr><tr><td><strong>DBOA - HSiFS</strong><br>(August 2016 - August 2017)</td><td>1,041</td><td>6.60%</td></tr><tr><td><strong>HSiFS - VD</strong><br>(August 2017 - August 2018)</td><td>1,228</td><td>7.78%</td></tr><tr><td><strong>VD - WBaWC</strong><br>(August 2018 - August 2019)</td><td>1,556</td><td>9.86%</td></tr><tr><td><strong>WBaWC - UM</strong><br>(August 2019 - May 2021)</td><td>2,123</td><td>13.45%</td></tr><tr><td><strong>UM - 100BM</strong><br>(May 2021, August 2022)</td><td>1,120</td><td>7.10%</td></tr><tr><td><strong>100BM - UDoALG</strong><br>(August 2022 - August 2023)</td><td>615</td><td>3.90%</td></tr><tr><td><strong>UDoALG - now</strong><br>(August 2023 - August 2024)</td><td>565</td><td>3.58%</td></tr>
 		</tbody>
 	</table></div>
 </section>
 <section>
-	<h2>09. How did you discover Touhou?</h2>
+	<h2>10. How did you discover Touhou?</h2>
 	<p class='center'>Valid responses: 15,400</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -1522,78 +1425,78 @@ music and works will not change when the full results are published.</p>-->
 		<tbody>
 			<tr>
 				<td>Offline (School, club activities, family, etc.)</td>
-				<td>2,973</td>
-				<td>19.31%</td>
+				<td>2,859</td>
+				<td>18.03%</td>
 			</tr>
 			<tr>
 				<td>Online games, online friends, chat (IRC, etc.)</td>
-				<td>787</td>
-				<td>5.11%</td>
+				<td>859</td>
+				<td>5.42%</td>
 			</tr>
 			<tr>
 				<td>Personal sites, blogs, news sites, etc.</td>
-				<td>440</td>
-				<td>2.86%</td>
+				<td>514</td>
+				<td>3.24%</td>
 			</tr>
 			<tr>
 				<td>Image sites (Pixiv, Nijie, TINAMI, SNS, etc.)</td>
-				<td>514</td>
-				<td>3.34%</td>
+				<td>464</td>
+				<td>2.93%</td>
 			</tr>
 			<tr>
 				<td>Anonymous boards (2ch, Futaba, etc.)</td>
-				<td>225</td>
-				<td>1.46%</td>
+				<td>229</td>
+				<td>1.44%</td>
 			</tr>
 			<tr>
 				<td>Niconico</td>
-				<td>1,883</td>
-				<td>12.23%</td>
+				<td>1,723</td>
+				<td>10.87%</td>
 			</tr>
 			<tr>
 				<td>Twitter and Tiktok</td>
-				<td>79</td>
-				<td>0.51%</td>
+				<td>77</td>
+				<td>0.49%</td>
 			</tr>
 			<tr>
 				<td>Magazine articles, TV programs, etc.</td>
-				<td>45</td>
-				<td>0.29%</td>
+				<td>58</td>
+				<td>0.37%</td>
 			</tr>
 			<tr>
 				<td>Doujinshi (Comiket, etc.)</td>
-				<td>82</td>
-				<td>0.53%</td>
+				<td>71</td>
+				<td>0.45%</td>
 			</tr>
 			<tr>
 				<td>Doujin stores, general bookstores, etc.</td>
-				<td>122</td>
-				<td>0.79%</td>
+				<td>120</td>
+				<td>0.76%</td>
 			</tr>
 			<tr>
 				<td>When looking for interesting games</td>
-				<td>382</td>
-				<td>2.48%</td>
+				<td>415</td>
+				<td>2.62%</td>
 			</tr>
 			<tr>
 				<td>Rhythm games that contain Touhou music</td>
-				<td>920</td>
-				<td>5.97%</td>
+				<td>1,007</td>
+				<td>6.35%</td>
 			</tr>
 			<tr>
 				<td>Other video sites</td>
-				<td>594</td>
-				<td>3.86%</td>
+				<td>743</td>
+				<td>4.69%</td>
 			</tr>
 			<tr>
 				<td>Fanmade mobile apps</td>
-				<td>569</td>
-				<td>3.69%</td>
+				<td>653</td>
+				<td>4.12%</td>
 			</tr>
 			<tr>
 				<td>YouTube</td>
-				<td>5,769</td>
-				<td>37.46%</td>
+				<td>6,048</td>
+				<td>38.14%</td>
 			</tr>
 			<tr>
 				<td>Real life events other than large-scale Touhou events</td>
@@ -1604,7 +1507,7 @@ music and works will not change when the full results are published.</p>-->
 	</table></div>
 </section>
 <section>
-	<h2>10. Participation in doujin events such as Comiket and Reitaisai (multiple answers possible)</h2>
+	<h2>11. Participation in doujin events such as Comiket and Reitaisai (multiple answers possible)</h2>
 	<p class='center'>Valid responses: 16,670</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -1622,77 +1525,79 @@ music and works will not change when the full results are published.</p>-->
 		<tbody>
 			<tr>
 				<td>No participation</td>
-				<td>9,138</td>
-				<td>54.82%</td>
+				<td>8,862</td>
+				<td>57.38%</td>
 			</tr>
 			<tr>
 				<td>Bought official works</td>
-				<td>3,685</td>
-				<td>22.11%</td>
+				<td>3,955</td>
+				<td>25.61%</td>
 			</tr>
 			<tr>
 				<td>Bought doujinshi</td>
-				<td>4,838</td>
-				<td>29.02%</td>
+				<td>5,190</td>
+				<td>33.61%</td>
 			</tr>
 			<tr>
 				<td>Bought doujin music</td>
-				<td>3,899</td>
-				<td>23.39%</td>
+				<td>4,147</td>
+				<td>26.85%</td>
 			</tr>
 			<tr>
 				<td>Bought doujin games</td>
-				<td>2,049</td>
-				<td>12.29%</td>
+				<td>2,154</td>
+				<td>13.95%</td>
 			</tr>
 			<tr>
 				<td>Bought doujin goods</td>
-				<td>3,839</td>
-				<td>23.03%</td>
+				<td>4,427</td>
+				<td>28.66%</td>
 			</tr>
 			<tr>
 				<td>Bought corporate works</td>
-				<td>1,346</td>
-				<td>8.07%</td>
+				<td>1,568</td>
+				<td>10.15%</td>
 			</tr>
 			<tr>
 				<td>Distributed works (as a circle)</td>
-				<td>1,039</td>
-				<td>6.23%</td>
+				<td>1,231</td>
+				<td>7.97%</td>
 			</tr>
 			<tr>
 				<td>Staff</td>
-				<td>316</td>
-				<td>1.90%</td>
+				<td>343</td>
+				<td>2.22%</td>
 			</tr>
 			<tr>
 				<td>Interacted with circles and friends</td>
-				<td>2,131</td>
-				<td>12.78%</td>
+				<td>2,564</td>
+				<td>16.60%</td>
 			</tr>
 			<tr>
 				<td>Cosplayed</td>
-				<td>702</td>
-				<td>4.21%</td>
+				<td>938</td>
+				<td>6.07%</td>
 			</tr>
 			<tr>
 				<td>Viewed or photographed cosplay</td>
-				<td>1,521</td>
-				<td>9.12%</td>
+				<td>1,730</td>
+				<td>11.20%</td>
 			</tr>
 			<tr>
 				<td>Corporate collab events (for rhythm games, etc)</td>
-				<td>928</td>
-				<td>5.57%</td>
+				<td>1,071</td>
+				<td>6.93%</td>
 			</tr>
 			<tr>
 				<td>Performed live music</td>
-				<td>1,439</td>
-				<td>8.63%</td>
+				<td>1,669</td>
+				<td>10.81%</td>
 			</tr>
 		</tbody>
 	</table></div>
-	<h2>11. Participation in Touhou-related events (multiple answers possible)</h2>
+</section>
+<section>
+	<h2>12. Participation in Touhou-related events (multiple answers possible)</h2>
 	<p class='center'>Valid responses: 16,670</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -1710,47 +1615,249 @@ music and works will not change when the full results are published.</p>-->
 		<tbody>
 			<tr>
 				<td>Doujin conventions (Reitaisai, etc.)</td>
-				<td>4,955</td>
-				<td>29.72%</td>
+				<td>5,170</td>
+				<td>66.59%</td>
 			</tr>
 			<tr>
 				<td>Touhou original game competitions (UDoALG, Soku, etc.)</td>
-				<td>767</td>
-				<td>4.60%</td>
+				<td>796</td>
+				<td>10.25%</td>
 			</tr>
 			<tr>
 				<td>Doujinshi reading clubs</td>
-				<td>644</td>
-				<td>3.86%</td>
+				<td>652</td>
+				<td>8.40%</td>
 			</tr>
 			<tr>
 				<td>Slide presentations (reviews, introductions, etc.)</td>
-				<td>443</td>
-				<td>2.66%</td>
+				<td>458</td>
+				<td>5.90%</td>
 			</tr>
 			<tr>
 				<td>Live music events (organised by arrangement circles, etc.)</td>
-				<td>1,498</td>
-				<td>8.99%</td>
+				<td>1,610</td>
+				<td>20.74%</td>
 			</tr>
 			<tr>
 				<td>Club events (DJ events, etc.)</td>
-				<td>571</td>
-				<td>3.43%</td>
+				<td>611</td>
+				<td>7.87%</td>
 			</tr>
 			<tr>
 				<td>Corporate events (Atre collabs, The Touhou Exhibition, etc.)</td>
-				<td>2,592</td>
-				<td>15.55%</td>
+				<td>2,860</td>
+				<td>36.84%</td>
 			</tr>
 			<tr>
 				<td>Online events (immediate sale, slide presentation, song relay streams, etc.)</td>
-				<td>2,441</td>
-				<td>14.64%</td>
+				<td>2,212</td>
+				<td>28.49%</td>
 			</tr>
 		</tbody>
 	</table></div>
-	<h2>12. Have you voted on the Touhou Popularity Poll before?</h2>
+</section>
+<section>
+	<h2>13. How many people can you talk about Touhou to in real life?</h2>
+	<p class='center'>Valid responses: 15,671</p>
+    <div class='overflow'><table class='poll table sortable noborders'>
+        <colgroup>
+            <col class='col2'>
+            <col class='col3'>
+            <col class='col4'>
+        </colgroup>
+        <thead>
+            <tr>
+                <th class='header'>Answer</th>
+                <th class='header'>Responses</th>
+                <th class='header'>Percentage</th>
+            </tr>
+        </thead>
+		<tbody>
+			<tr>
+				<td>Nobody</td>
+				<td>3,519</td>
+				<td>22.46%</td>
+			</tr>
+			<tr>
+				<td>1 to 3 people</td>
+				<td>7,777</td>
+				<td>49.63%</td>
+			</tr>
+			<tr>
+				<td>4 to 6 people</td>
+				<td>2,634</td>
+				<td>16.81%</td>
+			</tr>
+			<tr>
+				<td>7 to 9 people</td>
+				<td>429</td>
+				<td>2.74%</td>
+			</tr>
+			<tr>
+				<td>10 or more people</td>
+				<td>1,312</td>
+				<td>8.37%</td>
+			</tr>
+		</tbody>
+	</table></div>
+</section>
+<section>
+	<h2>14. What have you done since the previous Touhou Popularity Poll (September 2023)?</h2>
+	<p class='center'>Valid responses: 15,221</p>
+    <div class='overflow'><table class='poll table sortable noborders'>
+        <colgroup>
+            <col class='col2'>
+            <col class='col3'>
+            <col class='col4'>
+        </colgroup>
+        <thead>
+            <tr>
+                <th class='header'>Answer</th>
+                <th class='header'>Responses</th>
+                <th class='header'>Percentage</th>
+            </tr>
+        </thead>
+		<tbody>
+			<tr>
+				<td>Played the official game</td>
+				<td>9,520</td>
+				<td>62.55%</td>
+			</tr>
+			<tr>
+				<td>Read the official print works</td>
+				<td>8,733</td>
+				<td>57.37%</td>
+			</tr>
+			<tr>
+				<td>Played the mobile games</td>
+				<td>9,055</td>
+				<td>59.49%</td>
+			</tr>
+			<tr>
+				<td>Bought commercial products</td>
+                <td>6,429</td>
+                <td>42.24%</td>
+			</tr>
+			<tr>
+                <td>Played games that have collaboration with Touhou (such as rhythm games)</td>
+                <td>7,124</td>
+                <td>46.80%</td>
+            </tr>
+            <tr>
+                <td>Looked at illustrations</td>
+                <td>11,323</td>
+                <td>74.39%</td>
+            </tr>
+            <tr>
+                <td>Read doujin works (including novels)</td>
+                <td>9,167</td>
+                <td>60.23%</td>
+            </tr>
+            <tr>
+                <td>Listened to arrangements</td>
+                <td>12,528</td>
+                <td>82.31%</td>
+            </tr>
+            <tr>
+                <td>Played doujin games</td>
+                <td>6,509</td>
+                <td>42.76%</td>
+            </tr>
+            <tr>
+                <td>Watched doujin videos</td>
+                <td>7,210</td>
+                <td>47.37%</td>
+            </tr>
+            <tr>
+                <td>Bought doujin merchandise</td>
+                <td>5,733</td>
+                <td>37.67%</td>
+            </tr>
+            <tr>
+                <td>Participated at Touhou related events</td>
+                <td>4,427</td>
+                <td>29.08%</td>
+            </tr>
+            <tr>
+                <td>Saw or took photos of cosplays</td>
+                <td>2,204</td>
+                <td>14.48%</td>
+            </tr>
+            <tr>
+                <td>Got involved with the creation of the official games</td>
+                <td>185</td>
+                <td>1.22%</td>
+            </tr>
+            <tr>
+                <td>Got involved with the creation of the official print works</td>
+                <td>154</td>
+                <td>1.01%</td>
+            </tr>
+            <tr>
+                <td>Got involved with the creation of the mobile games</td>
+                <td>184</td>
+                <td>1.21%</td>
+            </tr>
+            <tr>
+                <td>Got involved with the creation of commercial goods</td>
+                <td>135</td>
+                <td>0.89%</td>
+            </tr>
+            <tr>
+                <td>Got involved with game collaboration such as rhythm games</td>
+                <td>206</td>
+                <td>1.35%</td>
+            </tr>
+            <tr>
+                <td>Made an illustration</td>
+                <td>2,980</td>
+                <td>19.58%</td>
+            </tr>
+            <tr>
+                <td>Made a doujin work (including novels)</td>
+                <td>880</td>
+                <td>5.78%</td>
+            </tr>
+            <tr>
+                <td>Made a doujin song arrangement</td>
+                <td>654</td>
+                <td>4.30%</td>
+            </tr>
+            <tr>
+                <td>Made a doujin game</td>
+                <td>255</td>
+                <td>1.68%</td>
+            </tr>
+            <tr>
+                <td>Made a doujin video</td>
+                <td>394</td>
+                <td>2.59%</td>
+            </tr>
+            <tr>
+                <td>Made doujin merchandise</td>
+                <td>386</td>
+                <td>2.54%</td>
+            </tr>
+            <tr>
+                <td>Participated as a circle in a convention</td>
+                <td>664</td>
+                <td>4.36%</td>
+            </tr>
+            <tr>
+                <td>Held or got involved with a Touhou event (including as staff)</td>
+                <td>268</td>
+                <td>1.76%</td>
+            </tr>
+            <tr>
+                <td>Done cosplay</td>
+                <td>856</td>
+                <td>5.62%</td>
+            </tr>
+		</tbody>
+	</table></div>
+</section>
+<section>
+	<h2>15. Have you voted on the Touhou Popularity Poll before?</h2>
 	<p class='center'>Valid responses: 15,880</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -1768,31 +1875,32 @@ music and works will not change when the full results are published.</p>-->
 		<tbody>
 			<tr>
 				<td>Never voted before</td>
-				<td>5,468</td>
-				<td>34.43%</td>
+				<td>6,168</td>
+				<td>37.54%</td>
 			</tr>
 			<tr>
 				<td>Voted 1 to 3 times</td>
-				<td>7,187</td>
-				<td>45.26%</td>
+				<td>7,018</td>
+				<td>42.72%</td>
 			</tr>
 			<tr>
 				<td>Voted 4 to 6 times</td>
-				<td>2,116</td>
-				<td>13.32%</td>
+				<td>2,089</td>
+				<td>12.72%</td>
 			</tr>
 			<tr>
 				<td>Voted 7 to 9 times</td>
-				<td>640</td>
-				<td>4.03%</td>
+				<td>561</td>
+				<td>3.41%</td>
 			</tr>
 			<tr>
 				<td>Voted 10 or more times</td>
-				<td>469</td>
-				<td>2.95%</td>
+				<td>593</td>
+				<td>3.61%</td>
 			</tr>
 		</tbody>
 	</table></div>
     <footer><strong><a href='#top'>Back to Top</a></strong></footer>
-</div>-->
+</section>
+</div>
 <?php // language detection hack ?>
