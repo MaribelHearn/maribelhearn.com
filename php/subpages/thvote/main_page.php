@@ -15,15 +15,15 @@ music and works will not change when the full results are published.</p>-->
     <p><a href='#characters'>Characters</a></p>
     <p><a href='#music'>Music</a></p>
     <p><a href='#works'>Works</a></p>
-    <p><!--<a href='#questionnaire'></a>-->Questionnaire COMING SOON</p>
+    <p><!--<a href='#questionnaire'>Questionnaire</a>-->Questionnaire COMING SOON</p>
     <br>
     <p><!--<a href='/thvote/extras'></a>-->Extra Statistics (separate page) COMING SOON</p>
 </div>
 <h2>Valid responses</h2>
 <div class='contents'>
-    <p>Characters: 52,447 <small>(in 2022: 51,652; in 2021: 40,363)</small></p>
-    <p>Music: 36,451 <small>(in 2022: 37,659; in 2021: 30,104)</small></p>
-    <p>Works: 28,171 <small>(in 2022: 28,558; in 2021: 23,047)</small></p>
+    <p>Characters: 56,855 <small>(in 2023: 52,447; in 2022: 51,652; in 2021: 40,363)</small></p>
+    <p>Music: 37,742 <small>(in 2023: 36,451; in 2022: 37,659; in 2021: 30,104)</small></p>
+    <p>Works: 29,083 <small>(in 2023: 28,171; in 2022: 28,558; in 2021: 23,047)</small></p>
 </div>
 <h2 id='characters'>Characters</h2>
 <div class='overflow'><table class='poll table sortable noborders'>
@@ -107,8 +107,13 @@ music and works will not change when the full results are published.</p>-->
         <tr><td>1</td><td>1</td><td>1</td><td><span>EoSD</span></td><td>19,883</td><td>6,716</td><td>2,185</td></tr><tr><td>2</td><td>2</td><td>2</td><td><span>IN</span></td><td>16,336</td><td>3,884</td><td>1,604</td></tr><tr><td>3</td><td>3</td><td>3</td><td><span>PCB</span></td><td>12,641</td><td>2,563</td><td>1,298</td></tr><tr><td>4</td><td>4</td><td>4</td><td><span>MoF</span></td><td>11,541</td><td>2,368</td><td>1,226</td></tr><tr><td>5</td><td>5</td><td>5</td><td><span>SA</span></td><td>9,899</td><td>1,954</td><td>1,015</td></tr><tr><td>6</td><td>6</td><td>6</td><td><span>LoLK</span></td><td>6,675</td><td>1,242</td><td>739</td></tr><tr><td>7</td><td>9</td><td>10</td><td><span>UFO</span></td><td>3,684</td><td>656</td><td>436</td></tr><tr><td>8</td><td>8</td><td>7</td><td><span>UM</span></td><td>3,465</td><td>539</td><td>414</td></tr><tr><td>9</td><td>14</td><td>12</td><td><span>PoFV</span></td><td>3,122</td><td>460</td><td>351</td></tr><tr><td>10</td><td>11</td><td>11</td><td><span>TD</span></td><td>3,079</td><td>666</td><td>328</td></tr><tr><td>11</td><td>15</td><td>18</td><td><span>Hisoutensoku</span></td><td>2,904</td><td>449</td><td>278</td></tr><tr><td>12</td><td>16</td><td>15</td><td><span>AoCF</span></td><td>2,863</td><td>414</td><td>355</td></tr><tr><td>13</td><td>12</td><td>9</td><td><span>Wild and Horned Hermit</span></td><td>2,851</td><td>392</td><td>322</td></tr><tr><td>14</td><td>10</td><td>8</td><td><span>WBaWC</span></td><td>2,846</td><td>429</td><td>343</td></tr><tr><td>15</td><td>13</td><td>14</td><td><span>DDC</span></td><td>2,831</td><td>541</td><td>320</td></tr><tr><td>16</td><td>7</td><td>-</td><td><span>UDoALG</span></td><td>2,775</td><td>299</td><td>386</td></tr><tr><td>17</td><td>17</td><td>13</td><td><span>Forbidden Scrollery</span></td><td>2,617</td><td>344</td><td>273</td></tr><tr><td>18</td><td>18</td><td>16</td><td><span>LLS</span></td><td>2,598</td><td>591</td><td>211</td></tr><tr><td>19</td><td>19</td><td>17</td><td><span>HSiFS</span></td><td>2,318</td><td>376</td><td>263</td></tr><tr><td>20</td><td>25</td><td>25</td><td><span>Cheating Detective Satori</span></td><td>2,159</td><td>232</td><td>329</td></tr><tr><td>21</td><td>20</td><td>23</td><td><span>Dolls in Pseudo Paradise</span></td><td>2,080</td><td>309</td><td>261</td></tr><tr><td>22</td><td>22</td><td>24</td><td><span>Lotus Eaters</span></td><td>1,936</td><td>201</td><td>264</td></tr><tr><td>23</td><td>23</td><td>19</td><td><span>SWR</span></td><td>1,756</td><td>281</td><td>131</td></tr><tr><td>24</td><td>27</td><td>26</td><td><span>HRtP</span></td><td>1,598</td><td>308</td><td>263</td></tr><tr><td>25</td><td>21</td><td>22</td><td><span>Gouyoku Ibun</span></td><td>1,582</td><td>145</td><td>199</td></tr><tr><td>26</td><td>24</td><td>20</td><td><span>Touhou Bougetsushou</span></td><td>1,468</td><td>131</td><td>216</td></tr><tr><td>27</td><td>26</td><td>27</td><td><span>Touhou Sangetsusei</span></td><td>1,456</td><td>203</td><td>165</td></tr><tr><td>28</td><td>28</td><td>29</td><td><span>Magical Astronomy</span></td><td>1,350</td><td>136</td><td>147</td></tr><tr><td>29</td><td>34</td><td>31</td><td><span>MS</span></td><td>1,262</td><td>190</td><td>146</td></tr><tr><td>30</td><td>-</td><td>-</td><td><span>Taboo Japan Disentanglement</span></td><td>1,162</td><td>153</td><td>202</td></tr><tr><td>31</td><td>33</td><td>39</td><td><span>Retrospective 53 minutes</span></td><td>1,119</td><td>111</td><td>125</td></tr><tr><td>32</td><td>32</td><td>34</td><td><span>PoDD</span></td><td>1,068</td><td>162</td><td>98</td></tr><tr><td>33</td><td>38</td><td>37</td><td><span>GFW</span></td><td>1,058</td><td>124</td><td>129</td></tr><tr><td>34</td><td>41</td><td>38</td><td><span>SoEW</span></td><td>1,031</td><td>153</td><td>105</td></tr><tr><td>35</td><td>29</td><td>30</td><td><span>ISC</span></td><td>1,016</td><td>115</td><td>123</td></tr><tr><td>36</td><td>30</td><td>33</td><td><span>Perfect Memento in Strict Sense / Symposium of Post-mysticism</span></td><td>946</td><td>78</td><td>133</td></tr><tr><td>37</td><td>39</td><td>36</td><td><span>StB</span></td><td>940</td><td>132</td><td>110</td></tr><tr><td>38</td><td>35</td><td>35</td><td><span>HM</span></td><td>917</td><td>138</td><td>100</td></tr><tr><td>39</td><td>36</td><td>28</td><td><span>ULiL</span></td><td>879</td><td>79</td><td>109</td></tr><tr><td>40</td><td>40</td><td>32</td><td><span>IaMP</span></td><td>858</td><td>110</td><td>88</td></tr><tr><td>41</td><td>31</td><td>21</td><td><span>100BM</span></td><td>835</td><td>95</td><td>136</td></tr><tr><td>42</td><td>37</td><td>40</td><td><span>Curiosities of Lotus Asia</span></td><td>746</td><td>113</td><td>102</td></tr><tr><td>43</td><td>42</td><td>42</td><td><span>Ghostly Field Club</span></td><td>654</td><td>76</td><td>73</td></tr><tr><td>44</td><td>44</td><td>41</td><td><span>DS</span></td><td>563</td><td>45</td><td>67</td></tr><tr><td>45</td><td>42</td><td>43</td><td><span>Changeability of Strange Dream</span></td><td>557</td><td>44</td><td>48</td></tr><tr><td>46</td><td>45</td><td>45</td><td><span>The Grimoire of Marisa</span></td><td>404</td><td>50</td><td>38</td></tr><tr><td>47</td><td>46</td><td>44</td><td><span>The Grimoire of Usami</span></td><td>369</td><td>24</td><td>39</td></tr><tr><td>48</td><td>48</td><td>46</td><td><span>VD</span></td><td>364</td><td>27</td><td>43</td></tr><tr><td>49</td><td>49</td><td>48</td><td><span>Dr. Latency's Freak Report</span></td><td>337</td><td>17</td><td>35</td></tr><tr><td>50</td><td>47</td><td>47</td><td><span>Neo-traditionalism of Japan</span></td><td>335</td><td>34</td><td>40</td></tr><tr><td>51</td><td>50</td><td>51</td><td><span>Alternative Facts in Eastern Utopia</span></td><td>326</td><td>22</td><td>41</td></tr><tr><td>52</td><td>54</td><td>53</td><td><span>Akyuu's Untouched Score</span></td><td>318</td><td>26</td><td>46</td></tr><tr><td>53</td><td>52</td><td>49</td><td><span>Trojan Green Asteroid</span></td><td>310</td><td>20</td><td>32</td></tr><tr><td>54</td><td>51</td><td>52</td><td><span>Bohemian Archive in Japanese Red</span></td><td>279</td><td>22</td><td>39</td></tr><tr><td>55</td><td>53</td><td>50</td><td><span>Dateless Bar "Old Adam"</span></td><td>274</td><td>20</td><td>32</td></tr><tr><td>56</td><td>55</td><td>54</td><td><span>Unknown Flower, Mesmerizing Journey</span></td><td>228</td><td>21</td><td>21</td></tr><tr><td>57</td><td>56</td><td>55</td><td><span>Who's Who of Humans &amp; Youkai - Everlasting Edition</span></td><td>227</td><td>33</td><td>12</td></tr><tr><td>58</td><td>57</td><td>56</td><td><span>Who's Who of Humans &amp; Youkai - Dusk Edition</span></td><td>173</td><td>16</td><td>9</td></tr><tr><td>59</td><td>58</td><td>57</td><td><span>Rainbow-colored Septentrion</span></td><td>92</td><td>4</td><td>11</td></tr>
     </tbody>
 </table></div>
+<p class='center'><strong><a href='#top'>Back to Top</a></strong></p>
 <!--
-<div class='overflow'><table id='age_detail' class='poll table sortable noborders'>
+<h2 id='questionnaire'>Questionnaire</h2>
+<div>
+    <h2>01. Age</h2>
+    <p class='center'>Valid responses: 15,273 <button id='age_detail_button'>Show Details</button> <button id='age_summary_button'>Hide Details</button></p>
+    <div class='overflow'><table id='age_summary' class='poll table sortable noborders'>
         <colgroup>
             <col class='col2'>
             <col class='col3'>
@@ -123,340 +128,72 @@ music and works will not change when the full results are published.</p>-->
         </thead>
         <tbody>
             <tr>
-                <td>5</td>
-                <td>8</td>
-                <td>0.05%</td>
+                <td>&lt;= 9</td>
+                <td>62</td>
+                <td>0.39%</td>
             </tr>
             <tr>
-                <td>6</td>
-                <td>1</td>
-                <td>0.01%</td>
+                <td>10-14</td>
+                <td>2,697</td>
+                <td>16.82%</td>
             </tr>
             <tr>
-                <td>7</td>
-                <td>4</td>
-                <td>0.03%</td>
+                <td>15-19</td>
+                <td>6,518</td>
+                <td>40.66%</td>
             </tr>
             <tr>
-                <td>8</td>
-                <td>6</td>
-                <td>0.04%</td>
+                <td>20-24</td>
+                <td>3,298</td>
+                <td>20.57%</td>
             </tr>
             <tr>
-                <td>9</td>
-                <td>13</td>
-                <td>0.09%</td>
+                <td>25-29</td>
+                <td>1,621</td>
+                <td>10.11%</td>
             </tr>
             <tr>
-                <td>10</td>
-                <td>79</td>
-                <td>0.52%</td>
+                <td>30-34</td>
+                <td>900</td>
+                <td>5.61%</td>
             </tr>
             <tr>
-                <td>11</td>
-                <td>177</td>
-                <td>1.16%</td>
+                <td>35-39</td>
+                <td>454</td>
+                <td>2.83%</td>
             </tr>
             <tr>
-                <td>12</td>
-                <td>363</td>
-                <td>2.38%</td>
-            </tr>
-            <tr>
-                <td>13</td>
-                <td>693</td>
-                <td>4.54%</td>
-            </tr>
-            <tr>
-                <td>14</td>
-                <td>931</td>
-                <td>6.10%</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>1,295</td>
-                <td>8.48%</td>
-            </tr>
-            <tr>
-                <td>16</td>
-                <td>1,369</td>
-                <td>8.96%</td>
-            </tr>
-            <tr>
-                <td>17</td>
-                <td>1,254</td>
-                <td>8.21%</td>
-            </tr>
-            <tr>
-                <td>18</td>
-                <td>1,201</td>
-                <td>7.86%</td>
-            </tr>
-            <tr>
-                <td>19</td>
-                <td>972</td>
-                <td>6.36%</td>
-            </tr>
-            <tr>
-                <td>20</td>
-                <td>949</td>
-                <td>6.21%</td>
-            </tr>
-            <tr>
-                <td>21</td>
-                <td>724</td>
-                <td>4.74%</td>
-            </tr>
-            <tr>
-                <td>22</td>
-                <td>664</td>
-                <td>4.35%</td>
-            </tr>
-            <tr>
-                <td>23</td>
-                <td>642</td>
-                <td>4.20%</td>
-            </tr>
-            <tr>
-                <td>24</td>
-                <td>463</td>
-                <td>3.03%</td>
-            </tr>
-            <tr>
-                <td>25</td>
-                <td>437</td>
-                <td>2.86%</td>
-            </tr>
-            <tr>
-                <td>26</td>
-                <td>335</td>
-                <td>2.19%</td>
-            </tr>
-            <tr>
-                <td>27</td>
-                <td>309</td>
-                <td>2.02%</td>
-            </tr>
-            <tr>
-                <td>28</td>
-                <td>295</td>
-                <td>1.93%</td>
-            </tr>
-            <tr>
-                <td>29</td>
-                <td>284</td>
-                <td>1.86%</td>
-            </tr>
-            <tr>
-                <td>30</td>
+                <td>40-44</td>
                 <td>245</td>
-                <td>1.60%</td>
+                <td>1.53%</td>
             </tr>
             <tr>
-                <td>31</td>
-                <td>197</td>
-                <td>1.29%</td>
+                <td>45-49</td>
+                <td>122</td>
+                <td>0.76%</td>
             </tr>
             <tr>
-                <td>32</td>
-                <td>160</td>
-                <td>1.05%</td>
+                <td>&gt;= 50</td>
+                <td>113</td>
+                <td>0.70%</td>
             </tr>
+        </tbody>
+    </table></div>
+    <div class='overflow'><table id='age_detail' class='poll table sortable noborders'>
+        <colgroup>
+            <col class='col2'>
+            <col class='col3'>
+            <col class='col4'>
+        </colgroup>
+        <thead>
             <tr>
-                <td>33</td>
-                <td>140</td>
-                <td>0.92%</td>
+                <th class='header'>Age range</th>
+                <th class='header'>Responses</th>
+                <th class='header'>Percentage</th>
             </tr>
-            <tr>
-                <td>34</td>
-                <td>123</td>
-                <td>0.81%</td>
-            </tr>
-            <tr>
-                <td>35</td>
-                <td>121</td>
-                <td>0.79%</td>
-            </tr>
-            <tr>
-                <td>36</td>
-                <td>100</td>
-                <td>0.65%</td>
-            </tr>
-            <tr>
-                <td>37</td>
-                <td>95</td>
-                <td>0.62%</td>
-            </tr>
-            <tr>
-                <td>38</td>
-                <td>84</td>
-                <td>0.55%</td>
-            </tr>
-            <tr>
-                <td>39</td>
-                <td>65</td>
-                <td>0.43%</td>
-            </tr>
-            <tr>
-                <td>40</td>
-                <td>83</td>
-                <td>0.54%</td>
-            </tr>
-            <tr>
-                <td>41</td>
-                <td>52</td>
-                <td>0.34%</td>
-            </tr>
-            <tr>
-                <td>42</td>
-                <td>46</td>
-                <td>0.30%</td>
-            </tr>
-            <tr>
-                <td>43</td>
-                <td>39</td>
-                <td>0.26%</td>
-            </tr>
-            <tr>
-                <td>44</td>
-                <td>39</td>
-                <td>0.26%</td>
-            </tr>
-            <tr>
-                <td>45</td>
-                <td>32</td>
-                <td>0.21%</td>
-            </tr>
-            <tr>
-                <td>46</td>
-                <td>28</td>
-                <td>0.18%</td>
-            </tr>
-            <tr>
-                <td>47</td>
-                <td>25</td>
-                <td>0.16%</td>
-            </tr>
-            <tr>
-                <td>48</td>
-                <td>11</td>
-                <td>0.07%</td>
-            </tr>
-            <tr>
-                <td>49</td>
-                <td>13</td>
-                <td>0.09%</td>
-            </tr>
-            <tr>
-                <td>50</td>
-                <td>21</td>
-                <td>0.14%</td>
-            </tr>
-            <tr>
-                <td>51</td>
-                <td>8</td>
-                <td>0.05%</td>
-            </tr>
-            <tr>
-                <td>52</td>
-                <td>9</td>
-                <td>0.06%</td>
-            </tr>
-            <tr>
-                <td>53</td>
-                <td>10</td>
-                <td>0.07%</td>
-            </tr>
-            <tr>
-                <td>54</td>
-                <td>4</td>
-                <td>0.03%</td>
-            </tr>
-            <tr>
-                <td>55</td>
-                <td>6</td>
-                <td>0.04%</td>
-            </tr>
-            <tr>
-                <td>56</td>
-                <td>3</td>
-                <td>0.02%</td>
-            </tr>
-            <tr>
-                <td>57</td>
-                <td>3</td>
-                <td>0.02%</td>
-            </tr>
-            <tr>
-                <td>58</td>
-                <td>1</td>
-                <td>0.01%</td>
-            </tr>
-            <tr>
-                <td>59</td>
-                <td>1</td>
-                <td>0.01%</td>
-            </tr>
-            <tr>
-                <td>60</td>
-                <td>3</td>
-                <td>0.02%</td>
-            </tr>
-            <tr>
-                <td>65</td>
-                <td>1</td>
-                <td>0.01%</td>
-            </tr>
-            <tr>
-                <td>69</td>
-                <td>1</td>
-                <td>0.01%</td>
-            </tr>
-            <tr>
-                <td>72</td>
-                <td>1</td>
-                <td>0.01%</td>
-            </tr>
-            <tr>
-                <td>74</td>
-                <td>1</td>
-                <td>0.01%</td>
-            </tr>
-            <tr>
-                <td>79</td>
-                <td>1</td>
-                <td>0.01%</td>
-            </tr>
-            <tr>
-                <td>89</td>
-                <td>1</td>
-                <td>0.01%</td>
-            </tr>
-            <tr>
-                <td>93</td>
-                <td>1</td>
-                <td>0.01%</td>
-            </tr>
-            <tr>
-                <td>96</td>
-                <td>1</td>
-                <td>0.01%</td>
-            </tr>
-            <tr>
-                <td>97</td>
-                <td>1</td>
-                <td>0.01%</td>
-            </tr>
-            <tr>
-                <td>99</td>
-                <td>1</td>
-                <td>0.01%</td>
-            </tr>
-            <tr>
-                <td>100</td>
-                <td>28</td>
-                <td>0.18%</td>
-            </tr>
+        </thead>
+        <tbody>
+            <tr><td>5</td><td>9</td><td>0.06%</td></tr><tr><td>6</td><td>3</td><td>0.02%</td></tr><tr><td>7</td><td>3</td><td>0.02%</td></tr><tr><td>8</td><td>14</td><td>0.09%</td></tr><tr><td>9</td><td>33</td><td>0.21%</td></tr><tr><td>10</td><td>99</td><td>0.62%</td></tr><tr><td>11</td><td>247</td><td>1.54%</td></tr><tr><td>12</td><td>488</td><td>3.04%</td></tr><tr><td>13</td><td>836</td><td>5.22%</td></tr><tr><td>14</td><td>1,027</td><td>6.41%</td></tr><tr><td>15</td><td>1,298</td><td>8.10%</td></tr><tr><td>16</td><td>1,509</td><td>9.41%</td></tr><tr><td>17</td><td>1,400</td><td>8.73%</td></tr><tr><td>18</td><td>1,384</td><td>8.63%</td></tr><tr><td>19</td><td>927</td><td>5.78%</td></tr><tr><td>20</td><td>881</td><td>5.50%</td></tr><tr><td>21</td><td>727</td><td>4.54%</td></tr><tr><td>22</td><td>628</td><td>3.92%</td></tr><tr><td>23</td><td>516</td><td>3.22%</td></tr><tr><td>24</td><td>546</td><td>3.41%</td></tr><tr><td>25</td><td>399</td><td>2.49%</td></tr><tr><td>26</td><td>360</td><td>2.25%</td></tr><tr><td>27</td><td>299</td><td>1.87%</td></tr><tr><td>28</td><td>297</td><td>1.85%</td></tr><tr><td>29</td><td>266</td><td>1.66%</td></tr><tr><td>30</td><td>269</td><td>1.68%</td></tr><tr><td>31</td><td>192</td><td>1.20%</td></tr><tr><td>32</td><td>174</td><td>1.09%</td></tr><tr><td>33</td><td>138</td><td>0.86%</td></tr><tr><td>34</td><td>127</td><td>0.79%</td></tr><tr><td>35</td><td>127</td><td>0.79%</td></tr><tr><td>36</td><td>99</td><td>0.62%</td></tr><tr><td>37</td><td>93</td><td>0.58%</td></tr><tr><td>38</td><td>71</td><td>0.44%</td></tr><tr><td>39</td><td>64</td><td>0.40%</td></tr><tr><td>40</td><td>65</td><td>0.41%</td></tr><tr><td>41</td><td>49</td><td>0.31%</td></tr><tr><td>42</td><td>52</td><td>0.32%</td></tr><tr><td>43</td><td>48</td><td>0.30%</td></tr><tr><td>44</td><td>31</td><td>0.19%</td></tr><tr><td>45</td><td>39</td><td>0.24%</td></tr><tr><td>46</td><td>24</td><td>0.15%</td></tr><tr><td>47</td><td>22</td><td>0.14%</td></tr><tr><td>48</td><td>23</td><td>0.14%</td></tr><tr><td>49</td><td>14</td><td>0.09%</td></tr><tr><td>50</td><td>14</td><td>0.09%</td></tr><tr><td>51</td><td>14</td><td>0.09%</td></tr><tr><td>52</td><td>9</td><td>0.06%</td></tr><tr><td>53</td><td>9</td><td>0.06%</td></tr><tr><td>54</td><td>11</td><td>0.07%</td></tr><tr><td>55</td><td>3</td><td>0.02%</td></tr><tr><td>56</td><td>6</td><td>0.04%</td></tr><tr><td>57</td><td>6</td><td>0.04%</td></tr><tr><td>58</td><td>2</td><td>0.01%</td></tr><tr><td>59</td><td>3</td><td>0.02%</td></tr><tr><td>60</td><td>3</td><td>0.02%</td></tr><tr><td>61</td><td>1</td><td>0.01%</td></tr><tr><td>62</td><td>3</td><td>0.02%</td></tr><tr><td>63</td><td>2</td><td>0.01%</td></tr><tr><td>64</td><td>1</td><td>0.01%</td></tr><tr><td>66</td><td>1</td><td>0.01%</td></tr><tr><td>69</td><td>1</td><td>0.01%</td></tr><tr><td>79</td><td>1</td><td>0.01%</td></tr><tr><td>86</td><td>1</td><td>0.01%</td></tr><tr><td>88</td><td>1</td><td>0.01%</td></tr><tr><td>96</td><td>1</td><td>0.01%</td></tr><tr><td>97</td><td>1</td><td>0.01%</td></tr><tr><td>99</td><td>1</td><td>0.01%</td></tr><tr><td>100</td><td>18</td><td>0.11%</td></tr>
         </tbody>
     </table></div>
     <h2>02. Gender</h2>
@@ -477,18 +214,18 @@ music and works will not change when the full results are published.</p>-->
         <tbody>
             <tr>
                 <td>Male</td>
-                <td>11,680</td>
-                <td>74.92%</td>
+                <td>11,969</td>
+                <td>73.47%</td>
             </tr>
             <tr>
                 <td>Female</td>
-                <td>3,373</td>
-                <td>21.63%</td>
+                <td>3,764</td>
+                <td>23.10%</td>
             </tr>
             <tr>
                 <td>Other</td>
-                <td>538</td>
-                <td>3.45%</td>
+                <td>559</td>
+                <td>3.43%</td>
             </tr>
         </tbody>
     </table></div>
@@ -510,108 +247,108 @@ music and works will not change when the full results are published.</p>-->
 		<tbody>
 			<tr>
 				<td>Hokkaido</td>
-				<td>490</td>
-				<td>3.31%</td>
+				<td>484</td>
+				<td>3.11%</td>
 			</tr>
 			<tr>
 				<td><b>Northern Tohoku</b><br>(Aomori, Iwate, Akita)</td>
-				<td>277</td>
-				<td>1.87%</td>
+				<td>248</td>
+				<td>1.59%</td>
 			</tr>
 			<tr>
 				<td><b>Southern Tohoku</b><br>(Miyagi, Yamagata, Fukushima)</td>
-				<td>469</td>
-				<td>3.17%</td>
+				<td>446</td>
+				<td>2.86%</td>
 			</tr>
 			<tr>
 				<td><b>Northern Kanto</b><br>(Ibaraki, Tochigi, Gunma)</td>
-				<td>599</td>
-				<td>4.05%</td>
+				<td>626</td>
+				<td>4.02%</td>
 			</tr>
 			<tr>
 				<td><b>Southern Kanto</b><br>(Saitama, Chiba, Tokyo, Kanagawa)</td>
-				<td>3,559</td>
-				<td>24.04%</td>
+				<td>3,683</td>
+				<td>23.65%</td>
 			</tr>
 			<tr>
 				<td><b>Hokuriku</b><br>(Toyama, Ishikawa, Fukui)</td>
-				<td>262</td>
-				<td>1.77%</td>
+				<td>253</td>
+				<td>1.62%</td>
 			</tr>
 			<tr>
 				<td><b>Koshinetsu</b><br>(Niigata, Yamanashi, Nagano)</td>
-				<td>453</td>
-				<td>3.06%</td>
+				<td>466</td>
+				<td>2.99%</td>
 			</tr>
 			<tr>
 				<td><b>Tokai</b><br>(Aichi, Mie, Gifu, Shizuoka)</td>
-				<td>1,280</td>
-				<td>8.64%</td>
+				<td>1,354</td>
+				<td>8.69%</td>
 			</tr>
 			<tr>
 				<td><b>Kansai</b><br>(Osaka, Kyoto, Hyogo, Nara, Shiga, Wakayama)</td>
-				<td>1,682</td>
-				<td>11.36%</td>
+				<td>1,622</td>
+				<td>10.41%</td>
 			</tr>
 			<tr>
 				<td><b>Chugoku</b><br>(Tottori, Shimane, Okayama, Hiroshima, Yamaguchi)</td>
-				<td>559</td>
-				<td>3.78%</td>
+				<td>630</td>
+				<td>4.04%</td>
 			</tr>
 			<tr>
 				<td><b>Shikoku</b><br>(Tokushima, Ehime, Kagawa, Kochi)</td>
-				<td>260</td>
-				<td>1.76%</td>
+				<td>261</td>
+				<td>1.68%</td>
 			</tr>
 			<tr>
 				<td><b>Northern Kyushu</b><br>(Fukuoka, Saga, Nagasaki, Oita)</td>
-				<td>548</td>
-				<td>3.70%</td>
+				<td>487</td>
+				<td>3.13%</td>
 			</tr>
 			<tr>
 				<td><b>Southern Kyushu</b><br>(Kumamoto, Miyazaki, Kagoshima, Okinawa)</td>
-				<td>324</td>
-				<td>2.19%</td>
+				<td>297</td>
+				<td>1.91%</td>
 			</tr>
 			<tr>
 				<td><b>East Asia</b><br>(China, Taiwan, Korea, etc.)</td>
-				<td>2,075</td>
-				<td>14.01%</td>
+				<td>2,410</td>
+				<td>15.47%</td>
 			</tr>
 			<tr>
 				<td>Southeast Asia</td>
-				<td>285</td>
-				<td>1.92%</td>
+				<td>295</td>
+				<td>1.89%</td>
 			</tr>
 			<tr>
 				<td>South, Central, West Asia</td>
-				<td>71</td>
-				<td>0.48%</td>
+				<td>94</td>
+				<td>0.60%</td>
 			</tr>
 			<tr>
 				<td>Europe</td>
-				<td>525</td>
-				<td>3.55%</td>
+				<td>670</td>
+				<td>4.30%</td>
 			</tr>
 			<tr>
 				<td>Africa</td>
 				<td>31</td>
-				<td>0.21%</td>
+				<td>0.20%</td>
 			</tr>
 			<tr>
 				<td>North America</td>
-				<td>771</td>
-				<td>5.21%</td>
+				<td>900</td>
+				<td>5.78%</td>
 			</tr>
 			<tr>
 				<td>South America</td>
-				<td>203</td>
-				<td>1.37%</td>
+				<td>239</td>
+				<td>1.53%</td>
 			</tr>
 			<tr>
 				<td>Oceania</td>
-				<td>84</td>
-				<td>0.57%</td>
+				<td>79</td>
+				<td>0.51%</td>
 			</tr>
 		</tbody>
 	</table></div>
@@ -2055,7 +1792,7 @@ music and works will not change when the full results are published.</p>-->
 				<td>2.95%</td>
 			</tr>
 		</tbody>
-	</table></div>-->
+	</table></div>
     <footer><strong><a href='#top'>Back to Top</a></strong></footer>
-</div>
+</div>-->
 <?php // language detection hack ?>
