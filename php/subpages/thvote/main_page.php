@@ -1304,7 +1304,7 @@ music and works will not change when the full results are published.</p>-->
             <td>126</td>
             <td>-</td>
             <td>-</td>
-            <td>C62 Circle Cut Girl</td>
+            <td>C62 Circle Cut Girl (Rin Satsuki)</td>
             <td>420</td>
             <td>65</td>
             <td>129</td>

@@ -141,7 +141,7 @@
         <tr><td>123</td><td>124</td><td>Ichirin Kumoi</td><td class='jump'>+1</td></tr>
         <tr><td>124</td><td>116</td><td>Mike Goutokuji</td><td class='drop'>-8</td></tr>
         <tr><td>125</td><td>119</td><td>Lyrica Prismriver</td><td class='drop'>-6</td></tr>
-        <tr><td>126</td><td>-</td><td>C62 Circle Cut Girl</td><td class='stable'>0</td></tr>
+        <tr><td>126</td><td>-</td><td>C62 Circle Cut Girl (Rin Satsuki)</td><td class='stable'>0</td></tr>
         <tr><td>127</td><td>123</td><td>Benben Tsukumo</td><td class='drop'>-4</td></tr>
         <tr><td>128</td><td>122</td><td>Unnamed Book-Reading Youkai (Tokiko)</td><td class='drop'>-6</td></tr>
         <tr><td>129</td><td>126</td><td>Satono Nishida</td><td class='drop'>-3</td></tr>
