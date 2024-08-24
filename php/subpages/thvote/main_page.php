@@ -17,7 +17,7 @@ music and works will not change when the full results are published.</p>-->
     <p><a href='#works'>Works</a></p>
     <p><a href='#questionnaire'>Questionnaire</a></p>
     <br>
-    <p><!--<a href='/thvote/extras'></a>-->Extra Statistics (separate page) COMING SOON</p>
+    <p><a href='/thvote/extras'></a>Extra Statistics (separate page)</p>
 </div>
 <h2>Valid responses</h2>
 <div class='contents'>
