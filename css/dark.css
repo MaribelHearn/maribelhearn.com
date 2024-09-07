@@ -108,6 +108,12 @@ a:link.dropdown_button, a:visited.dropdown_button {
 #hy_link {
     color: white;
 }
+#lang_icon {
+    display: none;
+}
+#lang_icon_dark {
+    display: inline;
+}
 .foot {
     border-top: 3px solid #fff;
 }

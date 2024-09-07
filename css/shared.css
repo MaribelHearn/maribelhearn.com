@@ -33,7 +33,7 @@ footer {
     padding-bottom: 10px;
     margin-top: 10px;
 }
-div:not(.dropdown):not(.dropdown_content):not(.nav_right):not(.dark_bg):not(.dropdowns):not(.ext_menu):not(#ext_mobile):not(#ext_desktop):not(#modal) {
+div:not(.dropdown):not(.dropdown_content):not(.nav_right):not(.dark_bg):not(.dropdowns):not(.ext_menu):not(.ext_mobile):not(#ext_desktop):not(#modal) {
     background-color: #fff;
     margin-bottom: 5px;
     margin-top: 5px;
@@ -170,7 +170,7 @@ img {
     margin-top: 5px;
     margin-bottom: 5px;
 }
-#ext_mobile {
+#ext_mobile, #languages_mobile {
     display: none;
 }
 #languages {

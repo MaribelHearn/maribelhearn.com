@@ -27,14 +27,14 @@ p {
 #ext_desktop {
     display: none;
 }
-#ext_mobile {
+.ext_mobile {
+    display: block;
     float: right;
 }
-#ext_mobile:hover .ext_menu {
+.ext_mobile:hover .ext_menu {
     display: block;
 }
 .ext_menu {
-    margin-top: 40px;
     margin-right: 8px;
     display: none;
     position: absolute;
@@ -43,6 +43,9 @@ p {
     opacity: 1.0;
     z-index: 1;
     background-color: white;
+}
+#ext_mobile .ext_menu {
+    margin-top: 40px;
 }
 .ext_menu .dropdown {
     margin-top: 12px;
@@ -76,6 +79,14 @@ p {
     display: block;
     min-width: 150px;
     top: -7px;
+}
+.lang_icon {
+    position: relative;
+    cursor: pointer;
+    padding: 12px;
+}
+#lang_icon_dark {
+    display: none;
 }
 #ext_mobile .menu-icon {
 	padding: 19px 15px;
@@ -119,6 +130,15 @@ p {
     clear: both;
 }
 #languages {
-    margin-top: 10px;
-    width: 100%;
+    display: none;
+}
+#languages_mobile {
+    display: block;
+}
+#lang_list {
+    list-style: none;
+    margin-top: 0px;
+}
+#lang_list li {
+    text-align: center;
 }

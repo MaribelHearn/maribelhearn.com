@@ -96,12 +96,12 @@ function navbar(string $page) {
 
     $navbar .= ' | ';
 
-    if (show_admin($token_path)) {
+    /*if (show_admin($token_path)) {
         $navbar .= '<a href="/admin">Admin</a> | ';
-    }
+    }*/
 
     if (show_db($db_cookie_path)) {
-        $navbar .= '<a href="/db/">Database</a> | ';
+        $navbar .= '<a href="/db/">DB</a> | ';
     }
 
     $navbar .= '<a href="/credits">Credits</a> | ';
@@ -152,34 +152,6 @@ function navbar(string $page) {
                 $navbar .= '</div>';
             $navbar .= '</div>';
         $navbar .= '</div>';
-        /*$navbar .= '<div id="languages_mobile" class="ext_mobile">';
-            $navbar .= '<img class="lang-icon" src="/assets/shared/langs/lang.png">';
-            $navbar .= '<div class="ext_menu dropdown_right ' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
-                $navbar .= '<ul id="lang_list">';
-                    $navbar .= '<li class="subpage flag_container ' . ($lang == 'en_GB' ? 'selected' : '') . '"><a id="en_GB" class="language" href="?hl=en-gb">';
-                        $navbar .= '<span class="flag"><img class="flag_img" src="/assets/icons/uk.png" alt="' . _('Flag of the United Kingdom') . '"> English (UK)</span>';
-                    $navbar .= '</a></li>';
-                    $navbar .= '<li class="subpage flag_container ' . ($lang == 'en_US' ? 'selected' : '') . '"><a id="en_US" class="language" href="?hl=en-us">';
-                        $navbar .= '<span class="flag"><img class="flag_img" src="/assets/icons/us.png" alt="' . _('Flag of the United States') . '"> English (US)</span>';
-                    $navbar .= '</a></li>';
-                    $navbar .= '<li class="subpage flag_container ' . ($lang == 'ja_JP' ? 'selected' : '') . '"><a id="ja_JP" class="language" href="?hl=ja">';
-                        $navbar .= '<span class="flag"><img class="flag_img" src="/assets/icons/japan.png" alt="' . _('Flag of Japan') . '"> 日本語</span>';
-                    $navbar .= '</a></li>';
-                    $navbar .= '<li class="subpage flag_container ' . ($lang == 'zh_CN' ? 'selected' : '') . '"><a id="zh_CN" class="language" href="?hl=zh">';
-                        $navbar .= '<span class="flag"><img class="flag_img" src="/assets/icons/china.png" alt="' . _('Flag of the P.R.C.') . '"> 简体中文</span>';
-                    $navbar .= '</a></li>';
-                    $navbar .= '<li class="subpage flag_container ' . ($lang == 'ru_RU' ? 'selected' : '') . '"><a id="ru_RU" class="language" href="?hl=ru">';
-                        $navbar .= '<span class="flag"><img class="flag_img" src="/assets/icons/russia.png" alt="' . _('Flag of Russia') . '"> Русский</span>';
-                    $navbar .= '</a></li>';
-                    $navbar .= '<li class="subpage flag_container ' . ($lang == 'de_DE' ? 'selected' : '') . '"><a id="de_DE" class="language" href="?hl=de">';
-                        $navbar .= '<span class="flag"><img class="flag_img" src="/assets/icons/germany.png" alt="' . _('Flag of Germany') . '"> Deutsch</span>';
-                    $navbar .= '</a></li>';
-                    $navbar .= '<li class="subpage flag_container ' . ($lang == 'es_ES' ? 'selected' : '') . '"><a id="es_ES" class="language" href="?hl=es">';
-                        $navbar .= '<span class="flag"><img class="flag_img" src="/assets/icons/spain.png" alt="' . _('Flag of Spain') . '"> Español</span>';
-                    $navbar .= '</a></li>';
-                $navbar .= '</ul>';
-            $navbar .= '</div>';
-        $navbar .= '</div>';*/
         $navbar .= '<div id="ext_mobile" class="ext_mobile">';
             $navbar .= '<label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>';
             $navbar .= '<div class="ext_menu dropdown_right ' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
@@ -221,6 +193,49 @@ function navbar(string $page) {
                 $navbar .= '</div>';
             $navbar .= '</div>';
         $navbar .= '</div>';
+        if (has_translation($page)) {
+            $navbar .= '<div id="languages_mobile" class="ext_mobile">';
+                $navbar .= '<img id="lang_icon" class="lang_icon" src="/assets/shared/langs/lang.png">';
+                $navbar .= '<img id="lang_icon_dark" class="lang_icon" src="/assets/shared/langs/lang_dark.png">';
+                $navbar .= '<div class="ext_menu dropdown_right ' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
+                    $navbar .= '<ul id="lang_list">';
+                        $navbar .= '<li class="subpage flag_container ' . ($lang == 'en_GB' ? 'selected' : '') . '"><a id="en_GB" class="language" href="?hl=en-gb">';
+                            $navbar .= '<span><img class="flag_img" src="/assets/shared/langs/uk.png" alt="' . _('Flag of the United Kingdom') . '"> English (UK)</span>';
+                        $navbar .= '</a></li>';
+                        if ($page == 'wr' || $page == 'lnn') {
+                            $navbar .= '<li class="subpage flag_container ' . ($lang == 'en_US' ? 'selected' : '') . '"><a id="en_US" class="language" href="?hl=en-us">';
+                                $navbar .= '<span><img class="flag_img" src="/assets/shared/langs/us.png" alt="' . _('Flag of the United States') . '"> English (US)</span>';
+                            $navbar .= '</a></li>';
+                        }
+                        if (has_translation($page, 'ja')) {
+                            $navbar .= '<li class="subpage flag_container ' . ($lang == 'ja_JP' ? 'selected' : '') . '"><a id="ja_JP" class="language" href="?hl=jp">';
+                                $navbar .= '<span><img class="flag_img" src="/assets/shared/langs/japan.png" alt="' . _('Flag of Japan') . '"> 日本語</span>';
+                            $navbar .= '</a></li>';
+                        }
+                        if (has_translation($page, 'zh')) {
+                            $navbar .= '<li class="subpage flag_container ' . ($lang == 'zh_CN' ? 'selected' : '') . '"><a id="zh_CN" class="language" href="?hl=zh">';
+                                $navbar .= '<span><img class="flag_img" src="/assets/shared/langs/china.png" alt="' . _('Flag of the P.R.C.') . '"> 简体中文</span>';
+                            $navbar .= '</a></li>';
+                        }
+                        if (has_translation($page, 'ru')) {
+                            $navbar .= '<li class="subpage flag_container ' . ($lang == 'ru_RU' ? 'selected' : '') . '"><a id="ru_RU" class="language" href="?hl=ru">';
+                                $navbar .= '<span><img class="flag_img" src="/assets/shared/langs/russia.png" alt="' . _('Flag of Russia') . '"> Русский</span>';
+                            $navbar .= '</a></li>';
+                        }
+                        if (has_translation($page, 'de')) {
+                            $navbar .= '<li class="subpage flag_container ' . ($lang == 'de_DE' ? 'selected' : '') . '"><a id="de_DE" class="language" href="?hl=de">';
+                                $navbar .= '<span><img class="flag_img" src="/assets/shared/langs/germany.png" alt="' . _('Flag of Germany') . '"> Deutsch</span>';
+                            $navbar .= '</a></li>';
+                        }
+                        if (has_translation($page, 'es')) {
+                            $navbar .= '<li class="subpage flag_container ' . ($lang == 'es_ES' ? 'selected' : '') . '"><a id="es_ES" class="language" href="?hl=es">';
+                                $navbar .= '<span><img class="flag_img" src="/assets/shared/langs/spain.png" alt="' . _('Flag of Spain') . '"> Español</span>';
+                            $navbar .= '</a></li>';
+                        }
+                    $navbar .= '</ul>';
+                $navbar .= '</div>';
+            $navbar .= '</div>';
+        }
     $navbar .= '</div>';
     $navbar .= '<div id="ext_mobile_spacer"></div>';
     $navbar = str_replace('<a href="' . ($page == 'index' ? '/' : '/' . $page) . '">', '<strong>', $navbar);
