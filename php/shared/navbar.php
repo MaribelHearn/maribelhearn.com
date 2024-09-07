@@ -85,6 +85,7 @@ function show_db(string $db_cookie_path) {
 }
 
 function navbar(string $page) {
+    global $lang;
     $token_path = ($page == 'admin' ? '../.stats/token' : '.stats/token');
     $db_cookie_path = ($page == 'admin' ? '../.stats/db_cookie' : '.stats/db_cookie');
     $navbar = '<div class="dropdown nav_left">';

@@ -85,6 +85,12 @@ p {
     cursor: pointer;
     padding: 12px;
 }
+.selected {
+    font-weight: bold;
+}
+.selected a {
+    text-decoration: none;
+}
 #lang_icon_dark {
     display: none;
 }
