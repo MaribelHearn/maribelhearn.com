@@ -1,3 +1,9 @@
+.truescore {
+    width: auto;
+}
+.truescores, .full_name {
+    width: auto;
+}
 #toggle_layout {
     display: none;
 }
