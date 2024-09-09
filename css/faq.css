@@ -1,8 +1,3 @@
-div:not(.dropdown):not(.dropdown_content):not(.nav_right) {
-    background-color: #fff;
-    margin-bottom: 5px;
-    margin-top: 5px;
-}
 a:link.dropdown_button {
     color: black;
 }
@@ -67,9 +62,6 @@ ol {
     display: inline-block;
     width: 50px;
     height: 50px;
-}
-#nav {
-    margin-bottom: 5px;
 }
 #contents {
     margin-left: auto;
