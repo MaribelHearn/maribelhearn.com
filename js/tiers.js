@@ -928,7 +928,8 @@ function removeTier(sourceTierNum, skipConfirmation, noDisplay) {
                 const removedItems = removeCharacters(tierNum);
                 copyTierSettings(tierList, prevTierNum, tierNum);
 
-                for (const item of removedItems) {
+                for (let i = removedItems.length - 1; i >= 0; i--) {
+                    const item = removedItems[i];
                     addToTier(item, prevTierNum);
                 }
             } else { // noDisplay
