@@ -26,7 +26,7 @@ function charInfo() {
 function setLanguage(event) {
     let newLanguage;
 
-    if (event.target.id == "en_GB" || event.target.parentNode.id == "en_GB") {
+    if (event.target.getAttribute("data-lang") == "en_GB" || event.target.parentNode.getAttribute("data-lang") == "en_GB") {
         newLanguage = (getCookie("lang") == "en_US" ? "en_US" : "en_GB");
     } else {
         newLanguage = "zh_CN";
@@ -40,16 +40,16 @@ function init() {
     document.body.addEventListener("click", closeModal, false);
     document.body.addEventListener("keyup", closeModal, false);
     document.getElementById("en_GB").addEventListener('click', setLanguage, false);
-    document.getElementById("zh_CN").addEventListener("click", setLanguage, false);
     const chars = document.querySelectorAll(".char");
-    const flags = document.querySelectorAll(".flag");
+    const flags = document.querySelectorAll(".flag, .language");
 
     for (const chara of chars) {
         chara.addEventListener("click", charInfo, false);
     }
 
-    for (const flag of flags) {
-        flag.setAttribute("href", "");
+    for (const element of flags) {
+        element.setAttribute("href", "");
+        element.addEventListener("click", setLanguage, false);
     }
 }
 

@@ -53,34 +53,34 @@ function wrap_top() {
     if (has_translation($page)) {
         echo '<div id="languages">';
         if ($page == 'wr' || $page == 'lnn') {
-            echo '<a id="en_GB" class="flag" href="wr?hl=en-gb">' .
+            echo '<a data-lang="en_GB" class="flag" href="' . $page . '?hl=en-gb">' .
             '<img class="flag_en" src="assets/shared/langs/uk.png" alt="' . _('Flag of the United Kingdom') . '">' .
             '<p class="language">English (UK)</p></a>' .
-            '<a id="en_US" class="flag" href="wr?hl=en-us">' .
+            '<a data-lang="en_US" class="flag" href="' . $page . '?hl=en-us">' .
             '<img class="flag_en" src="assets/shared/langs/us.png" alt="' . _('Flag of the United States') . '">' .
             '<p class="language">English (US)</p></a> ';
         } else {
-            echo '<a id="en_GB" class="flag" href="' . $page . '?hl=en">' .
+            echo '<a data-lang="en_GB" class="flag" href="' . $page . '?hl=en">' .
             '<img class="flag_en" src="assets/shared/langs/uk.png" alt="' . _('Flag of the United Kingdom') . '"><p class="language">English</p></a> ';
         }
         if (has_translation($page, 'ja')) {
-            echo '<a id="ja_JP" class="flag" href="' . $page . '?hl=jp">' .
+            echo '<a data-lang="ja_JP" class="flag" href="' . $page . '?hl=jp">' .
             '<img src="assets/shared/langs/japan.png" alt="' . _('Flag of Japan') . '"><p class="language">日本語</p></a> ';
         }
         if (has_translation($page, 'zh')) {
-            echo '<a id="zh_CN" class="flag" href="' . $page . '?hl=zh">' .
+            echo '<a data-lang="zh_CN" class="flag" href="' . $page . '?hl=zh">' .
             '<img src="assets/shared/langs/china.png" alt="' . _('Flag of the P.R.C.') . '"><p class="language">简体中文</p></a> ';
         }
         if (has_translation($page, 'ru')) {
-            echo '<a id="ru_RU" class="flag" href="' . $page . '?hl=ru">' .
+            echo '<a data-lang="ru_RU" class="flag" href="' . $page . '?hl=ru">' .
             '<img src="assets/shared/langs/russia.png" alt="' . _('Flag of Russia') . '"><p class="language">Русский</p></a>';
         }
         if (has_translation($page, 'de')) {
-            echo '<a id="de_DE" class="flag" href="' . $page . '?hl=de">' .
+            echo '<a data-lang="de_DE" class="flag" href="' . $page . '?hl=de">' .
             '<img src="assets/shared/langs/germany.png" alt="' . _('Flag of Germany') . '"><p class="language">Deutsch</p></a>';
         }
         if (has_translation($page, 'es')) {
-            echo '<a id="es_ES" class="flag" href="' . $page . '?hl=es">' .
+            echo '<a data-lang="es_ES" class="flag" href="' . $page . '?hl=es">' .
             '<img src="assets/shared/langs/spain.png" alt="' . _('Flag of Spain') . '"><p class="language">Español</p></a>';
         }
         echo '</div>';

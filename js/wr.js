@@ -453,7 +453,7 @@ function detectEnter(event) {
 }
 
 function setLanguage(event) {
-    const newLanguage = event.target.id || event.target.parentNode.id;
+    const newLanguage = event.target.getAttribute("data-lang") || event.target.parentNode.getAttribute("data-lang");
 
     if (language == newLanguage) {
         return;
@@ -473,19 +473,19 @@ function setEventListeners() {
     document.getElementById("search").addEventListener("select", setPlayer, false);
     document.getElementById("player").addEventListener("change", getPlayerWRs, false);
     document.getElementById("player").addEventListener("keypress", detectEnter, false);
-    document.getElementById("en_GB").addEventListener("click", setLanguage, false);
-    document.getElementById("en_US").addEventListener("click", setLanguage, false);
-    document.getElementById("ja_JP").addEventListener("click", setLanguage, false);
-    document.getElementById("zh_CN").addEventListener("click", setLanguage, false);
-    document.getElementById("ru_RU").addEventListener("click", setLanguage, false);
-    document.getElementById("de_DE").addEventListener("click", setLanguage, false);
-    document.getElementById("es_ES").addEventListener("click", setLanguage, false);
     document.getElementById("unverified").addEventListener("click", toggleUnverified, false);
     document.getElementById("toggle_video").addEventListener("click", toggleVideo, false);
     const gameImg = document.querySelectorAll(".game_img");
 
     for (const element of gameImg) {
         element.addEventListener("click", showWRs, false);
+    }
+
+    const flags = document.querySelectorAll(".flag, .language");
+
+    for (const element of flags) {
+        element.setAttribute("href", "");
+        element.addEventListener("click", setLanguage, false);
     }
 }
 

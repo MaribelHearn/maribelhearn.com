@@ -479,30 +479,14 @@ function toggleRubrics(event) {
     document.getElementById(event.target.id).value = _(`${rubricsElement.style.display == "block" ? "Hide" : "Show"} ${cap(challenge)} Rubrics`);
 }
 
-/*function updateCountdown() {
-    const countdownElement = document.getElementById("countdown");
-    const countdownDate = Date.UTC("2019", "5", "17", "14", "00", "0");
-    const now = new Date().getTime();
-    const distance = countdownDate - now;
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    countdownElement.innerHTML = `DRC End<br>${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-    if (distance < 0) {
-        countdownElement.innerHTML = "";
-        clearInterval(step);
-    }
-}*/
-
 function setLanguage(event) {
+    event.preventDefault();
     let newLanguage;
 
-    if (event.target.id == "en_GB" || event.target.parentNode.id == "en_GB") {
+    if (event.target.getAttribute("data-lang") == "en_GB" || event.target.parentNode.getAttribute("data-lang") == "en_GB") {
         newLanguage = (getCookie("lang") == "en_US" ? "en_US" : "en_GB");
     } else {
-        newLanguage = event.target.id || event.target.parentNode.id;
+        newLanguage = event.target.getAttribute("data-lang") || event.target.parentNode.getAttribute("data-lang");
     }
 
     language = newLanguage;
@@ -519,10 +503,6 @@ function setEventListeners() {
     document.getElementById("challenge").addEventListener("change", challengeChanged, false);
     document.getElementById("challenge").addEventListener("change", checkShottypes, false);
     document.getElementById("shottype").addEventListener("change", shottypeChanged, false);
-    document.getElementById("en_GB").addEventListener("click", setLanguage, false);
-    document.getElementById("ja_JP").addEventListener("click", setLanguage, false);
-    document.getElementById("zh_CN").addEventListener("click", setLanguage, false);
-    document.getElementById("de_DE").addEventListener("click", setLanguage, false);
     document.getElementById("calculator").style.display = "block";
     document.getElementById("scoring_button").style.display = "inline";
     document.getElementById("survival_button").style.display = "inline";
@@ -543,10 +523,11 @@ function init() {
 
     setEventListeners();
     checkValues({data: {changePerf: true, changeShots: true}});
-    const flags = document.querySelectorAll(".flag");
+    const flags = document.querySelectorAll(".flag, .language");
 
-    for (const flag of flags) {
-        flag.setAttribute("href", "");
+    for (const element of flags) {
+        element.setAttribute("href", "");
+        element.addEventListener("click", setLanguage, false);
     }
 
     //step = setInterval(updateCountdown, 1000);
