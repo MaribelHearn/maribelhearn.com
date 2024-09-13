@@ -291,11 +291,11 @@ function showWRtable(game, records) {
         }
 
         if (videoEnabled && data.video) {
-            text = `<a class='replay' href='${data.video}'>${text}<span class='dl_icon'></span></a>`;
+            text = `<a class='replay' href='${data.video}' target='_blank'>${text}<span class='dl_icon'></span></a>`;
         } else if (data.replay) {
             text = `<a class='replay' href='${data.replay.replace("com/replays", "com/media/replays")}'>${text}<span class='dl_icon'></span></a>`;
         } else if (data.video) {
-            text = `<a class='replay' href='${data.video}'>${text}<span class='dl_icon'></span></a>`;
+            text = `<a class='replay' href='${data.video}' target='_blank'>${text}<span class='dl_icon'></span></a>`;
         }
 
         text += `<br>by <em>${player}</em>`;
