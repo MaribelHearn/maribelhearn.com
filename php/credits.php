@@ -8,7 +8,7 @@
         <li><a href='https://www.youtube.com/@valivanvan' target='_blank'>crazy4pokemon</a>: LNN updates</li>
         <li><a href='https://www.youtube.com/@allenko1122' target='_blank'>AllenKO</a>: LNN updates</li>
         <li>kagami: Database</li>
-		<li><a href='https://www.youtube.com/channel/UCqKACPKvHg6Ub-kb8rlkrhQ' target='_blank'>Nylilsa</a>: Testing</li>
+		<li><a href='https://www.youtube.com/channel/UCqKACPKvHg6Ub-kb8rlkrhQ' target='_blank'>Nylilsa</a>: WR history, testing</li>
         <li><a href='https://github.com/32th-System' target='_blank'>32th System</a>: Royalflare JSON data</li>
 		<li><a href='https://twitter.com/TheDukeofBooms' target='_blank'>ZXNova</a>: Most Dairi face crops</li>
 		<li><a href='https://twitter.com/CuprianLycoris' target='_blank'>Cuprian Lycoris</a>: Most ZUN face crops</li>
