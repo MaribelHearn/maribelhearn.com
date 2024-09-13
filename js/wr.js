@@ -696,8 +696,8 @@ function init() {
     setEventListeners();
     setAttributes();
 
-    if (getCookie("prefer_video")) {
-        videoEnabled = Boolean(getCookie("prefer_video"));
+    if (getCookie("video_enabled")) {
+        videoEnabled = Boolean(getCookie("video_enabled"));
         document.getElementById("toggle_video").checked = videoEnabled;
     }
 
