@@ -245,7 +245,7 @@ function showPlayerLNNs(player, LNNs) {
         if (!data.video) {
             video = '-';
         } else {
-            video = `<a href='${data.video}'>${_("Link")}</a>`;
+            video = `<a href='${data.video}' target='_blank'>${_("Link")}</a>`;
         }
 
         if (new Date(data.date) < first) {
