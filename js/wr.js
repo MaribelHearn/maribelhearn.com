@@ -135,8 +135,11 @@ function prepareShowWR(game) {
     }
 
     const wrTable = document.getElementById("world");
+    const westTable = document.getElementById("west");
     wrTable.classList.remove(`${selected}t`);
     wrTable.classList.add(`${game}t`);
+    westTable.classList.remove(`${selected}t`);
+    westTable.classList.add(`${game}t`);
     selected = game;
     document.getElementById(`${game}_image`).style.border = "3px solid gold";
     document.getElementById("fullname").innerHTML = fullNameNumber(game);
