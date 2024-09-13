@@ -176,10 +176,10 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
     content: '';
     display: table-cell;
 }
-.hidden, #wr_list, #player_list, #player_search, #seasontoggle, #newlayout, #playersearchlink, #contents_new {
+.hidden, #wr_list, #west, #player_list, #player_search, #history_list, #history_list_old, #seasontoggle, #newlayout, #playersearchlink, #contents_new {
     display: none;
 }
-#newlayout, #player_search {
+#newlayout, #player_search, #no_history, #no_history_old {
     text-align: center;
 }
 #wrap:after {

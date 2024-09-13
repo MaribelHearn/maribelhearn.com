@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-07-08 19:18+0200\n"
-"PO-Revision-Date: 2024-07-08 19:18+0200\n"
+"POT-Creation-Date: 2024-09-13 13:06+0200\n"
+"PO-Revision-Date: 2024-09-13 13:07+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -84,16 +84,18 @@ msgstr ""
 msgid "Releases"
 msgstr ""
 
-#: js/drc.js:140 php/wr.php:216 php/wr.php:479 php/wr.php:504
+#: js/drc.js:140 php/wr.php:213 php/wr.php:466 php/wr.php:506 php/wr.php:531
+#: php/wr.php:605
 msgid "Score"
 msgstr "分数"
 
-#: js/drc.js:186 js/lnn.js:44 js/wr.js:87 php/shared/shared.php:109
+#: js/drc.js:186 js/lnn.js:44 js/wr.js:59 php/shared/shared.php:109
 msgid "Route"
 msgstr "路线"
 
-#: js/drc.js:188 js/lnn.js:44 js/wr.js:87 php/drc.php:450 php/lnn.php:236
-#: php/lnn.php:271 php/shared/shared.php:109 php/wr.php:219 php/wr.php:480
+#: js/drc.js:188 js/lnn.js:44 js/wr.js:59 php/drc.php:450 php/lnn.php:236
+#: php/lnn.php:271 php/shared/shared.php:109 php/wr.php:216 php/wr.php:468
+#: php/wr.php:507 php/wr.php:607
 msgid "Shottype"
 msgstr "机体"
 
@@ -150,11 +152,12 @@ msgstr "LNNNN的数量"
 msgid "No. of LNNs"
 msgstr "LNN的数量"
 
-#: js/lnn.js:248 js/wr.js:430 php/lnn.php:318 php/wr.php:249 php/wr.php:527
+#: js/lnn.js:248 js/wr.js:445 js/wr.js:509 php/lnn.php:318 php/wr.php:246
+#: php/wr.php:554
 msgid "Link"
 msgstr "链接"
 
-#: js/lnn.js:255 js/wr.js:437 php/lnn.php:24 php/wr.php:23
+#: js/lnn.js:255 js/wr.js:452 js/wr.js:512 php/lnn.php:24 php/wr.php:23
 msgid "Unknown"
 msgstr "未知"
 
@@ -162,7 +165,7 @@ msgstr "未知"
 msgid "(All)"
 msgstr "（全）"
 
-#: js/wr.js:409 php/lnn.php:321 php/wr.php:530
+#: js/wr.js:424 php/lnn.php:321 php/wr.php:557 php/wr.php:587
 msgid " "
 msgstr ""
 
@@ -214,7 +217,7 @@ msgid ""
 msgstr ""
 "分数可包含数字、逗号、句号、空格。生存向将会被假定为已通关，打分则不会。"
 
-#: php/drc.php:94 php/lnn.php:292 php/wr.php:478 php/wr.php:503
+#: php/drc.php:94 php/lnn.php:292 php/wr.php:505 php/wr.php:530 php/wr.php:578
 msgid "Category"
 msgstr "项目"
 
@@ -424,7 +427,7 @@ msgid "||Max * (Score/WR)^Exp||"
 msgstr "||最大值 *（得分 / 世界纪录）^ 指数||"
 
 #: php/drc.php:203 php/drc.php:387 php/drc.php:421 php/lnn.php:270
-#: php/lnn.php:338 php/wr.php:215
+#: php/lnn.php:338 php/wr.php:212
 msgid "Game"
 msgstr "游戏"
 
@@ -522,7 +525,7 @@ msgid "Threshold 3"
 msgstr "第三阈值"
 
 #: php/drc.php:346 php/drc.php:466 php/jargon.php:839 php/lnn.php:399
-#: php/wr.php:567
+#: php/wr.php:641
 msgid "Back to Top"
 msgstr "回到顶部"
 
@@ -623,7 +626,7 @@ msgstr ""
 "这个网页收录了西方的东方Project玩家社区中使用的术语和缩写。同时，也会收录一些"
 "与东方相关的通用游戏术语和STG术语。"
 
-#: php/jargon.php:4 php/lnn.php:83 php/wr.php:165
+#: php/jargon.php:4 php/lnn.php:83 php/wr.php:164
 msgid "Contents"
 msgstr "内容"
 
@@ -2559,7 +2562,7 @@ msgstr ""
 "第三个N代表着附加的条件。星莲船的附加条件（不开飞碟）由于对难度没有大量的影"
 "响，可以自选。永夜抄的LNN必须收取所有LSC，称做LNNFS。"
 
-#: php/lnn.php:79 php/wr.php:155
+#: php/lnn.php:79 php/wr.php:154
 msgid "All of the table columns are sortable."
 msgstr "点击任何标题即可排序表格内容。"
 
@@ -2576,7 +2579,7 @@ msgstr ""
 msgid "LNN Lists"
 msgstr "LNN列表"
 
-#: php/lnn.php:88 php/lnn.php:102 php/lnn.php:246 php/wr.php:191 php/wr.php:452
+#: php/lnn.php:88 php/lnn.php:102 php/lnn.php:246 php/wr.php:190 php/wr.php:479
 msgid "Player Search"
 msgstr "玩家搜寻"
 
@@ -2588,8 +2591,8 @@ msgstr "最近LNN"
 msgid "Overall Count"
 msgstr "总数"
 
-#: php/lnn.php:91 php/lnn.php:105 php/lnn.php:374 php/wr.php:173 php/wr.php:193
-#: php/wr.php:544
+#: php/lnn.php:91 php/lnn.php:105 php/lnn.php:374 php/wr.php:172 php/wr.php:193
+#: php/wr.php:617
 msgid "Player Ranking"
 msgstr "玩家排行"
 
@@ -2597,7 +2600,7 @@ msgstr "玩家排行"
 msgid "Number of Recent LNNs"
 msgstr "最近LNN的数量"
 
-#: php/lnn.php:116 php/wr.php:206
+#: php/lnn.php:116 php/wr.php:203
 msgid "Save Changes"
 msgstr "保存更改"
 
@@ -2621,28 +2624,31 @@ msgstr "单击游戏处查看LNN列表。"
 msgid "Choose a player name from the menu below to show their LNNs."
 msgstr "在以下的菜单选择玩家的名字则可查看其LNN。"
 
-#: php/lnn.php:248 php/lnn.php:293 php/lnn.php:379 php/wr.php:217
-#: php/wr.php:455 php/wr.php:505 php/wr.php:549
+#: php/lnn.php:248 php/lnn.php:293 php/lnn.php:379 php/wr.php:214
+#: php/wr.php:467 php/wr.php:482 php/wr.php:532 php/wr.php:606 php/wr.php:622
 msgid "Player"
 msgstr "玩家"
 
-#: php/lnn.php:250 php/wr.php:457
+#: php/lnn.php:250 php/wr.php:484
 msgid "Search"
 msgstr "搜索"
 
-#: php/lnn.php:272 php/lnn.php:294 php/wr.php:220 php/wr.php:481 php/wr.php:506
+#: php/lnn.php:272 php/lnn.php:294 php/wr.php:217 php/wr.php:469 php/wr.php:508
+#: php/wr.php:533 php/wr.php:608
 msgid "Replay"
 msgstr "Rep"
 
-#: php/lnn.php:273 php/lnn.php:295 php/wr.php:221 php/wr.php:482 php/wr.php:507
+#: php/lnn.php:273 php/lnn.php:295 php/wr.php:218 php/wr.php:470 php/wr.php:509
+#: php/wr.php:534 php/wr.php:609
 msgid "Video"
 msgstr "视频"
 
-#: php/lnn.php:274 php/lnn.php:296 php/wr.php:222 php/wr.php:483 php/wr.php:508
+#: php/lnn.php:274 php/lnn.php:296 php/wr.php:219 php/wr.php:471 php/wr.php:510
+#: php/wr.php:535 php/wr.php:610
 msgid "Date"
 msgstr "日期"
 
-#: php/lnn.php:282 php/wr.php:492
+#: php/lnn.php:282 php/wr.php:519
 msgid "Total"
 msgstr "合計"
 
@@ -3481,7 +3487,7 @@ msgstr "兽"
 msgid "World records are current as of <span id=\"lm\">%date</span>."
 msgstr "世界记录更新于<span id=\"lm\">%date</span>。"
 
-#: php/wr.php:149
+#: php/wr.php:148
 msgid ""
 "An accurate list of Touhou world records, updated every so often. Note that "
 "the player ranking at the bottom does not take into account how strong "
@@ -3492,68 +3498,68 @@ msgstr ""
 "的玩家排行榜只算玩家们得到的记录有多少，并不算记录的强度。目前数据并不包括摄"
 "影游戏。"
 
-#: php/wr.php:154
+#: php/wr.php:153
 msgid ""
 "Click a score to download the corresponding replay, if there is one "
 "available. "
 msgstr "点击任何分数即可下载对应的rep。"
 
-#: php/wr.php:158
+#: php/wr.php:157
 msgid ""
 "The replays provided are <strong>not</strong> meant to be reuploaded to any "
 "replay uploading services."
 msgstr "请勿将rep上传到别的存rep网站。"
 
-#: php/wr.php:161
+#: php/wr.php:160
 msgid ""
 "If you toggle Unverified Scores, this will show scores that are higher than "
 "the World Record, but lack replay or video proof."
 msgstr ""
 
-#: php/wr.php:163
+#: php/wr.php:162
 msgid ""
 "For updates, you can contact <a href=\"https://twitter.com/MaribelHearn42\" "
 "target=\"_blank\">me</a> or <a href=\"https://www.youtube.com/"
 "@KirbyComment\" target=\"_blank\">KirbyComment</a>."
 msgstr ""
 
-#: php/wr.php:170 php/wr.php:177 php/wr.php:210
+#: php/wr.php:169 php/wr.php:176 php/wr.php:207
 msgid "Overall Records"
 msgstr "整体世界纪录"
 
-#: php/wr.php:171 php/wr.php:178 php/wr.php:261
+#: php/wr.php:170 php/wr.php:177 php/wr.php:258
 msgid "World Records"
 msgstr "世界纪录"
 
-#: php/wr.php:172 php/wr.php:192 php/wr.php:499
+#: php/wr.php:171 php/wr.php:191 php/wr.php:526
 msgid "Recent Records"
 msgstr "最近世界纪录"
 
-#: php/wr.php:190 php/wr.php:367
+#: php/wr.php:189 php/wr.php:361
 msgid "Western Records"
 msgstr "西方纪录"
 
-#: php/wr.php:201
-msgid "Dates"
-msgstr "日期"
+#: php/wr.php:192 php/wr.php:576
+msgid "History"
+msgstr "历史"
 
-#: php/wr.php:203
+#: php/wr.php:200
 msgid "Number of Recent Records"
 msgstr "最近世界纪录的数量"
 
-#: php/wr.php:218
+#: php/wr.php:215
 msgid "Difficulty"
 msgstr "难度"
 
-#: php/wr.php:370 php/wr.php:443
+#: php/wr.php:364 php/wr.php:446
 msgid "World"
 msgstr "世界"
 
-#: php/wr.php:371 php/wr.php:444
+#: php/wr.php:365 php/wr.php:447
 msgid "West"
 msgstr "西方"
 
-#: php/wr.php:371 php/wr.php:445
+#: php/wr.php:365 php/wr.php:448
 msgid "Percentage"
 msgstr "百分"
 
@@ -3562,24 +3568,39 @@ msgid "Click a game cover to show its list of world records."
 msgstr "单击游戏处查看世界纪录列表。"
 
 #: php/wr.php:429
+msgid "Show Western records"
+msgstr "显示西方纪录"
+
+#: php/wr.php:432
 msgid "Unverified scores"
 msgstr ""
 
-#: php/wr.php:432
+#: php/wr.php:435
 msgid "Link videos over replays"
 msgstr ""
 
-#: php/wr.php:453
+#: php/wr.php:455
+msgid "Browse History"
+msgstr ""
+
+#: php/wr.php:462 php/wr.php:601
+msgid "No history available."
+msgstr ""
+
+#: php/wr.php:480
 msgid "Choose a player name from the menu below to show their WRs."
 msgstr "在以下的菜单选择玩家的名字则可查看其WR。"
 
-#: php/wr.php:550
+#: php/wr.php:623
 msgid "No. of WRs"
 msgstr "WR数量"
 
-#: php/wr.php:551
+#: php/wr.php:624
 msgid "Different games"
 msgstr "游戏"
+
+#~ msgid "Dates"
+#~ msgstr "日期"
 
 #~ msgid "Seasons"
 #~ msgstr "季節"

@@ -52,6 +52,10 @@ function _(text) {
         return text;
     }
 
+    if (text === ' ') {
+        return TRANSLATIONS[' '];
+    }
+
     return !TRANSLATIONS[text] || TRANSLATIONS[text] === "" ? text : TRANSLATIONS[text];
 }
 

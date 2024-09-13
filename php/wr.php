@@ -59,7 +59,7 @@ $player_games = (object) [];
 $overall = (object) [];
 $diff_max = (object) [];
 
-$wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty,shot&type=Score&region=Eastern&verified=true');
+$wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty,shot&type=Score&region=Eastern&verified=true&historical=false');
 $games_seen = [];
 if (strpos($wr_data, 'Internal Server Error') === false) {
     $wr_data = json_decode($wr_data, true);
@@ -189,6 +189,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
         echo '<p id="westernlink"><a href="#western">' . _('Western Records') . '</a></p>';
         echo '<p id="playersearchlink"><a href="#playerwrs">' . _('Player Search') . '</a></p>';
         echo '<p><a href="#recent">' . _('Recent Records') . '</a></p>';
+        echo '<p><a href="#history_old">' . _('History') . '</a></p>';
         echo '<p><a href="#players" class="playerranking">' . _('Player Ranking') . '</a></p></div>';
         if ($layout == 'New') {
             echo '</noscript>';
@@ -423,9 +424,12 @@ if (strpos($west_data, 'Internal Server Error') === false) {
 	?>
 	<div id='wr_list'>
         <p id='fullname' class='center'></p>
-        <section id='toggle_unverified'>
+        <section>
+            <input id='western' type='checkbox'>
+            <label id='label_western' for='western'><?php echo _('Show Western records') ?></label>
+            <br>
             <input id='unverified' type='checkbox'>
-            <label id='label_unverified' for='unverified' class='unverified'><?php echo _('Unverified scores') ?></label>
+            <label id='label_unverified' for='unverified'><?php echo _('Unverified scores') ?></label>
             <br>
             <input id='toggle_video' type='checkbox'>
             <label id='label_video' for='toggle_video'><?php echo _('Link videos over replays') ?></label>
@@ -446,6 +450,30 @@ if (strpos($west_data, 'Internal Server Error') === false) {
             </thead>
             <tbody id='west_tbody'></tbody>
         </table>
+        <div id='history'>
+            <section>
+                <label for='history_category'><?php echo _('Browse History') ?></label>
+                <select id='history_category'>
+                    <option value=''>...</option>
+                </select>
+            </section>
+        </div>
+        <div id='history_list' class='overflow_mobile'>
+            <p id='no_history'><?php echo _('No history available.') ?></p>
+            <table id='history_table' class='sortable'>
+                <thead id='history_thead'>
+                    <tr>
+                        <th class='general_header'><?php echo _('Score') ?></th>
+                        <th class='general_header'><?php echo _('Player') ?></th>
+                        <th class='general_header'><?php echo _('Shottype') ?></th>
+                        <th class='general_header'><?php echo _('Replay') ?></th>
+                        <th class='general_header'><?php echo _('Video') ?></th>
+                        <th class='general_header'><?php echo _('Date') ?></th>
+                    </tr>
+                </thead>
+                <tbody id='history_tbody'></tbody>
+            </table>
+        </div>
 	</div>
     <div id='player_search'>
 		<h2><?php echo _('Player Search') ?></h2>
@@ -538,6 +566,53 @@ if (strpos($west_data, 'Internal Server Error') === false) {
                 ?></tbody>
             </table>
         </div>
+    </div>
+    <?php
+        if ($layout == 'New') {
+            echo '<noscript>';
+        }
+    ?>
+    <div id='history_old'>
+        <h2><?php echo _('History') ?></h2>
+        <section>
+            <label for='history_category_old'><?php echo _('Category') ?></label>
+            <select id='history_category_old'>
+                <option value=''>...</option>
+                <?php
+                    $categories = curl_get($API_BASE . '/api/v1/category/?type=Score&region=Eastern');
+                    if (strpos($categories, 'Internal Server Error') === false) {
+                        $categories = json_decode($categories, true);
+                        natcasesort($categories);
+                        foreach ($categories as $key => $category) {
+                            $category_val = $category['game'] . ' ' . $category['difficulty'] . ' ' . $category['shot'];
+                            $category_str = _($category['game']) . _(' ') . _($category['difficulty']) . _(' ') . _($category['shot']);
+                            echo '<option value="' . $category_val . '">' . $category_str . '</option>';
+                        }
+                    }
+                ?>
+            </select>
+        </section>
+    </div>
+    <?php
+        if ($layout == 'New') {
+            echo '</noscript>';
+        }
+    ?>
+    <div id='history_list_old' class='overflow_mobile'>
+        <p id='no_history_old'><?php echo _('No history available.') ?></p>
+        <table id='history_table_old' class='sortable'>
+            <thead>
+                <tr>
+                    <th class='general_header'><?php echo _('Score') ?></th>
+                    <th class='general_header'><?php echo _('Player') ?></th>
+                    <th class='general_header'><?php echo _('Shottype') ?></th>
+                    <th class='general_header'><?php echo _('Replay') ?></th>
+                    <th class='general_header'><?php echo _('Video') ?></th>
+                    <th class='general_header'><?php echo _('Date') ?></th>
+                </tr>
+            </thead>
+            <tbody id='history_tbody_old'></tbody>
+        </table>
     </div>
     <div id='players'>
         <h2><?php echo _('Player Ranking') ?></h2>

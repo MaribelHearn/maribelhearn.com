@@ -4,6 +4,7 @@ const hsifsExtraShots = ["Reimu", "Cirno", "Aya", "Marisa"];
 let language = "en_GB";
 let selected = "";
 let videoEnabled = false;
+let westernEnabled = false;
 let unverifiedEnabled = false;
 
 function getSeason(string) {
@@ -40,6 +41,12 @@ function setRecentLimit(event) {
 
 function saveChanges() {
     location.reload();
+}
+
+function toggleWestern() {
+    westernEnabled = !westernEnabled;
+    westernEnabled ? localStorage.setItem("westernEnabled", true) : localStorage.removeItem("westernEnabled");
+    reloadTable();
 }
 
 function toggleUnverified() {
@@ -113,6 +120,10 @@ function prepareShowWR(game) {
     const diffs = JSON.parse(document.getElementById("diffs").value)[game];
     const shots = JSON.parse(document.getElementById("shots").value)[game];
 
+    if (westernEnabled) {
+        document.getElementById("western").checked = true;
+    }
+
     if (unverifiedEnabled) {
         document.getElementById("unverified").checked = true;
     }
@@ -151,14 +162,13 @@ function showWesternRecords(game, overalls, westScores) {
         return;
     }*/
 
+    const west = document.getElementById("west");
     const westTable = document.getElementById("west_tbody");
     westTable.innerHTML = "";
 
     if (westScores.length === 0) {
-        document.getElementById("west").style.display = "none";
+        west.style.display = "none";
         return;
-    } else {
-        document.getElementById("west").style.display = "table";
     }
 
     for (const data of westScores) {
@@ -188,6 +198,8 @@ function showWesternRecords(game, overalls, westScores) {
         westTable.innerHTML += `<tr class='irregular_tr'><td>${world}<br>by <em>${worldPlayer}</em>${worldShot}</td>` +
                 `<td>${west}<br>by <em>${westPlayer}</em>${westShot}</td><td class='${percentageClass(percentage)}'>(${percentageText}%)</td></tr>`;
     }
+
+    west.style.display = "table";
 }
 
 function getWesternRecords(game, overalls) {
@@ -218,7 +230,7 @@ function getWRs(game) {
     }
 
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/replay/?type=Score&game=${game}&ordering=-date&region=Eastern${verification}`);
+    xhr.open('GET', `${API_BASE}/api/v1/replay/?type=Score&game=${game}&ordering=-date&region=Eastern&historical=false${verification}`);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200) {
@@ -226,7 +238,13 @@ function getWRs(game) {
                 prepareShowWR(game);
                 showWRtable(game, records);
                 const overalls = highlightBests(game, records);
-                getWesternRecords(game, overalls);
+                getHistoryCategories(game);
+
+                if (westernEnabled) {
+                    getWesternRecords(game, overalls);
+                } else {
+                    document.getElementById("west").style.display = "none";
+                }
             
                 for (const element of gameImg) {
                     element.addEventListener("click", showWRs, false);
@@ -322,12 +340,44 @@ function highlightBests(game, records) {
     return overalls;
 }
 
+function getHistoryCategories(game) {
+    const historyCategory = document.getElementById("history_category");
+    historyCategory.innerHTML = "<option value=''>...</option>";
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `${API_BASE}/api/v1/category/?game=${game}&type=Score&region=Eastern`);
+    xhr.onreadystatechange = function () {
+        if (this.readyState === 4) {
+            if (this.status === 200) {
+                const categories = JSON.parse(this.response);
+                
+                for (const category of categories) {
+                    if (game == "GFW" && category.difficulty == "Extra") {
+                        continue;
+                    }
+
+                    const categoryString = `${game} ${category.difficulty} ${category.shot}`;
+                    historyCategory.innerHTML += `<option value='${categoryString}'>${_(category.difficulty)}${_(' ')}${_(category.shot)}</option>`;
+
+                    if (game == "GFW" && category.difficulty == "Lunatic" && category.shot == "C2") {
+                        historyCategory.innerHTML += `<option value='GFW Extra A1'>Extra</option>`;
+                    }
+                }
+            }
+        }
+    }
+
+    xhr.send();
+}
+
 function showWRs(event) {
     const game = event.data ? event.data.game : this.id.replace("_image", "");
 
     if (game != selected) {
         getWRs(game);
         document.getElementById("wr_list").style.display = "block";
+        document.getElementById("history_table").classList.remove(`${selected}t`);
+        document.getElementById("history_list").style.display = "none";
     } else {
         const gameImg = document.getElementById(`${game}_image`);
         const border = (gameImg.classList.contains("cover98") ? "1px solid black" : "none");
@@ -335,6 +385,14 @@ function showWRs(event) {
         document.getElementById("world").classList.remove(`${game}t`);
         document.getElementById("wr_list").style.display = "none";
         selected = "";
+    }
+}
+
+function reloadTable() {
+    if (selected !== "") {
+        const game = selected;
+        selected = "";
+        showWRs({ data: { game: game } });
     }
 }
 
@@ -392,7 +450,7 @@ function showPlayerWRs(player, records) {
         if (!data.video) {
             video = '-';
         } else {
-            video = `<a href='${data.video}'>${_("Link")}</a>`;
+            video = `<a href='${data.video}' target='_blank'>${_("Link")}</a>`;
         }
 
         if (new Date(data.date) < first) {
@@ -418,14 +476,6 @@ function showPlayerWRs(player, records) {
     playerList.style.display = "block";
 }
 
-function reloadTable() {
-    if (selected !== "") {
-        const game = selected;
-        selected = "";
-        showWRs({ data: { game: game } });
-    }
-}
-
 function getPlayerWRs(player) {
     if (typeof player == "object") {
         player = this.value; // if event listener fired
@@ -438,6 +488,88 @@ function getPlayerWRs(player) {
             if (this.status === 200) {
                 const records = JSON.parse(this.response);
                 showPlayerWRs(player, records);
+            }
+        }
+    }
+
+    xhr.send();
+}
+
+function showHistory(category, game, records, idSuffix) {
+    const noHistory = document.getElementById(`no_history${idSuffix}`);
+    const historyTable = document.getElementById(`history_table${idSuffix}`);
+    const historyBody = document.getElementById(`history_tbody${idSuffix}`);
+    let numberOfWRs = 0;
+    historyBody.innerHTML = "";
+
+    for (const data of records) {
+        let replay, video, shot, date;
+
+        if (!data.replay) {
+            replay = '-';
+        } else {
+            replay = `<a href='${data.replay}'>${data.replay.split('/')[data.replay.split('/').length - 1]}</a>`;
+        }
+
+        if (!data.video) {
+            video = '-';
+        } else {
+            video = `<a href='${data.video}' target='_blank'>${_("Link")}</a>`;
+        }
+
+        shot = (game == "GFW" && data.category.difficulty == "Extra" ? '-' : _(data.category.shot));
+        date = (!data.date ? _("Unknown") : formatDate(new Date(data.date)));
+        historyBody.innerHTML += "<tr id='" + data.score + "'></tr>";
+        document.getElementById(data.score).innerHTML = `<td>${sep(data.score)}</td>`;
+        document.getElementById(data.score).innerHTML += `<td>${data.player}</td>`;
+        document.getElementById(data.score).innerHTML += `<td>${shot}</td>`;
+        document.getElementById(data.score).innerHTML += `<td>${replay}</td>`;
+        document.getElementById(data.score).innerHTML += `<td>${video}</td>`;
+        document.getElementById(data.score).innerHTML += `<td>${date}</td>`;
+        numberOfWRs += 1;
+    }
+
+    if (numberOfWRs === 0) {
+        noHistory.style.display = "block";
+        historyTable.style.display = "none";
+        return;
+    }
+
+    if (historyTable.classList.length > 1) {
+        historyTable.classList.remove(historyTable.classList[1]);
+    }
+
+    noHistory.style.display = "none";
+    historyTable.classList.add(`${game}t`);
+    historyTable.style.display = "table";
+}
+
+function getHistory(category) {
+    let idSuffix;
+
+    if (typeof category == "object") {
+        category = this.value; // if event listener fired
+        idSuffix = this.id.includes("old") ? "_old" : "";
+    }
+
+    if (category === "") {
+        document.getElementById(`history_list${idSuffix}`).style.display = "none";
+        return;
+    }
+
+    document.getElementById(`history_list${idSuffix}`).style.display = "block";
+
+    const tmp = category.split(' ');
+    const game = tmp[0];
+    const diff = tmp[1];
+    const shot = tmp[2];
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=-score&game=${game}&shot=${shot}&difficulty=${diff}&type=Score&region=Eastern&verified=true&historical=true`);
+    xhr.onreadystatechange = function () {
+        if (this.readyState === 4) {
+            if (this.status === 200) {
+                const records = JSON.parse(this.response);
+                showHistory(category, game, records, idSuffix);
             }
         }
     }
@@ -473,8 +605,15 @@ function setEventListeners() {
     document.getElementById("search").addEventListener("select", setPlayer, false);
     document.getElementById("player").addEventListener("change", getPlayerWRs, false);
     document.getElementById("player").addEventListener("keypress", detectEnter, false);
+    document.getElementById("western").addEventListener("click", toggleWestern, false);
     document.getElementById("unverified").addEventListener("click", toggleUnverified, false);
     document.getElementById("toggle_video").addEventListener("click", toggleVideo, false);
+    document.getElementById("history_category").addEventListener("change", getHistory, false);
+
+    if (document.getElementById("history_category_old")) {
+        document.getElementById("history_category_old").addEventListener("change", getHistory, false);
+    }
+
     const gameImg = document.querySelectorAll(".game_img");
 
     for (const element of gameImg) {
@@ -549,6 +688,7 @@ function init() {
         language = "en_US";
     }
 
+    westernEnabled = localStorage.getItem("westernEnabled") ? true : false;
     unverifiedEnabled = localStorage.getItem("unverifiedEnabled") ? true : false;
     setEventListeners();
     setAttributes();
