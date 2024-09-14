@@ -317,8 +317,13 @@ $missing_runs = 0;
                         } else {
                             $video = '<a href="' . $data['video'] . '">' . _('Link') . '</a>';
                         }
+                        if (empty($data['category']['route'])) {
+                            $route = '';
+                        } else {
+                            $route = _(' ') . _($data['category']['route']);
+                        }
                         echo '<tr>';
-                        echo '<td class="' . $data['category']['game'] . 'p">' . _($data['category']['game']) . _(' ') . _($data['category']['shot']) . '</td>';
+                        echo '<td class="' . $data['category']['game'] . 'p">' . _($data['category']['game']) . _(' ') . _($data['category']['shot'])  . $route . '</td>';
                         echo '<td>' . $data['player'] . '</td>';
                         echo '<td class="no_mobile">' . $replay . '</td>';
                         echo '<td>' . $video . '</td>';
