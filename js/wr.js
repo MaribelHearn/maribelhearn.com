@@ -562,10 +562,12 @@ function getHistory(category) {
 
     document.getElementById(`history_list${idSuffix}`).style.display = "block";
 
-    const tmp = category.split(' ');
+    let tmp = category.split(' ');
     const game = tmp[0];
     const diff = tmp[1];
-    const shot = tmp[2];
+    tmp.splice(0, 1);
+    tmp.splice(0, 1);
+    const shot = tmp.join(' ');
     const xhr = new XMLHttpRequest();
     xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=-score&game=${game}&shot=${shot}&difficulty=${diff}&type=Score&region=Eastern&verified=true&historical=true`);
     xhr.onreadystatechange = function () {
