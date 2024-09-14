@@ -257,6 +257,9 @@ $missing_runs = 0;
                     $players = $players['lnn'];
                     natcasesort($players);
                     foreach ($players as $key => $player) {
+                        if ($player == '-') {
+                            continue;
+                        }
                         echo '<option value="' . $player . '">' . $player . '</option>';
                         $total_players += 1;
                     }
