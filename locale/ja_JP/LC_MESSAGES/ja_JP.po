@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-09-13 13:23+0200\n"
-"PO-Revision-Date: 2024-09-13 13:27+0200\n"
+"POT-Creation-Date: 2024-09-14 10:28+0200\n"
+"PO-Revision-Date: 2024-09-14 10:29+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -79,8 +79,8 @@ msgstr ""
 msgid "Releases"
 msgstr ""
 
-#: js/drc.js:140 php/wr.php:213 php/wr.php:466 php/wr.php:506 php/wr.php:531
-#: php/wr.php:605
+#: js/drc.js:140 php/wr.php:216 php/wr.php:469 php/wr.php:509 php/wr.php:534
+#: php/wr.php:609
 msgid "Score"
 msgstr "スコア"
 
@@ -89,8 +89,8 @@ msgid "Route"
 msgstr "ルート"
 
 #: js/drc.js:188 js/lnn.js:44 js/wr.js:59 php/drc.php:450 php/lnn.php:236
-#: php/lnn.php:271 php/shared/shared.php:109 php/wr.php:216 php/wr.php:468
-#: php/wr.php:507 php/wr.php:607
+#: php/lnn.php:274 php/shared/shared.php:109 php/wr.php:219 php/wr.php:471
+#: php/wr.php:510 php/wr.php:611
 msgid "Shottype"
 msgstr "キャラ"
 
@@ -143,16 +143,16 @@ msgstr "LNN(N)の数"
 msgid "No. of LNNNNs"
 msgstr "LNNNNの数"
 
-#: js/lnn.js:39 php/lnn.php:18 php/lnn.php:339 php/lnn.php:380
+#: js/lnn.js:39 php/lnn.php:18 php/lnn.php:347 php/lnn.php:388
 msgid "No. of LNNs"
 msgstr "LNNの数"
 
-#: js/lnn.js:248 js/wr.js:445 js/wr.js:509 php/lnn.php:318 php/wr.php:246
-#: php/wr.php:554
+#: js/lnn.js:248 js/wr.js:456 js/wr.js:520 php/lnn.php:321 php/wr.php:249
+#: php/wr.php:557
 msgid "Link"
 msgstr "リンク"
 
-#: js/lnn.js:255 js/wr.js:452 js/wr.js:512 php/lnn.php:24 php/wr.php:23
+#: js/lnn.js:255 js/wr.js:463 js/wr.js:524 php/lnn.php:24 php/wr.php:23
 msgid "Unknown"
 msgstr "不明"
 
@@ -160,7 +160,8 @@ msgstr "不明"
 msgid "(All)"
 msgstr "（全）"
 
-#: js/wr.js:424 php/lnn.php:321 php/wr.php:557 php/wr.php:587
+#: js/wr.js:363 js/wr.js:435 php/lnn.php:326 php/lnn.php:329 php/wr.php:560
+#: php/wr.php:591
 msgid " "
 msgstr ""
 
@@ -219,7 +220,7 @@ msgstr ""
 "スコアは桁、カンマ、ドット、スペースを含めることができます。クリア重視ではク"
 "リアする必要があります。稼ぎではクリアしなくてもよいです。"
 
-#: php/drc.php:94 php/lnn.php:292 php/wr.php:505 php/wr.php:530 php/wr.php:578
+#: php/drc.php:94 php/lnn.php:295 php/wr.php:508 php/wr.php:533 php/wr.php:581
 msgid "Category"
 msgstr "カテゴリー"
 
@@ -436,8 +437,8 @@ msgstr ""
 msgid "||Max * (Score/WR)^Exp||"
 msgstr "||最大点 * (スコア / 世界記録) ^ 冪指数||"
 
-#: php/drc.php:203 php/drc.php:387 php/drc.php:421 php/lnn.php:270
-#: php/lnn.php:338 php/wr.php:212
+#: php/drc.php:203 php/drc.php:387 php/drc.php:421 php/lnn.php:273
+#: php/lnn.php:346 php/wr.php:215
 msgid "Game"
 msgstr "ゲーム"
 
@@ -535,8 +536,8 @@ msgstr "閾値2"
 msgid "Threshold 3"
 msgstr "閾値3"
 
-#: php/drc.php:346 php/drc.php:466 php/lnn.php:399 php/tools.php:522
-#: php/wr.php:641
+#: php/drc.php:346 php/drc.php:466 php/lnn.php:407 php/tools.php:522
+#: php/wr.php:645
 msgid "Back to Top"
 msgstr "上に帰る"
 
@@ -684,7 +685,7 @@ msgstr ""
 "youtube.com/@allenko1122\" target=\"_blank\">AllenKOさん</a>を連絡して下さ"
 "い。"
 
-#: php/lnn.php:83 php/tools.php:13 php/wr.php:164
+#: php/lnn.php:83 php/tools.php:13 php/wr.php:167
 msgid "Contents"
 msgstr "内容"
 
@@ -692,20 +693,20 @@ msgstr "内容"
 msgid "LNN Lists"
 msgstr "LNNリスト"
 
-#: php/lnn.php:88 php/lnn.php:102 php/lnn.php:246 php/wr.php:190 php/wr.php:479
+#: php/lnn.php:88 php/lnn.php:102 php/lnn.php:246 php/wr.php:193 php/wr.php:482
 msgid "Player Search"
 msgstr "プレイヤーを捜す"
 
-#: php/lnn.php:89 php/lnn.php:103 php/lnn.php:289
+#: php/lnn.php:89 php/lnn.php:103 php/lnn.php:292
 msgid "Recent LNNs"
 msgstr "最近のLNN"
 
-#: php/lnn.php:90 php/lnn.php:104 php/lnn.php:333
+#: php/lnn.php:90 php/lnn.php:104 php/lnn.php:341
 msgid "Overall Count"
 msgstr "総数"
 
-#: php/lnn.php:91 php/lnn.php:105 php/lnn.php:374 php/wr.php:172 php/wr.php:193
-#: php/wr.php:617
+#: php/lnn.php:91 php/lnn.php:105 php/lnn.php:382 php/wr.php:175 php/wr.php:196
+#: php/wr.php:621
 msgid "Player Ranking"
 msgstr "プレイヤーのランキング"
 
@@ -713,11 +714,11 @@ msgstr "プレイヤーのランキング"
 msgid "Number of Recent LNNs"
 msgstr "最近のLNNの数"
 
-#: php/lnn.php:116 php/wr.php:203
+#: php/lnn.php:116 php/wr.php:206
 msgid "Save Changes"
 msgstr "変更をセーブ"
 
-#: php/lnn.php:148 php/lnn.php:196 php/lnn.php:240 php/lnn.php:362
+#: php/lnn.php:148 php/lnn.php:196 php/lnn.php:240 php/lnn.php:370
 msgid "Overall"
 msgstr "合計"
 
@@ -738,47 +739,47 @@ msgid "Choose a player name from the menu below to show their LNNs."
 msgstr ""
 "個人のLNNを表示するには、下記のメニューからプレイヤー名を選んでください。"
 
-#: php/lnn.php:248 php/lnn.php:293 php/lnn.php:379 php/wr.php:214
-#: php/wr.php:467 php/wr.php:482 php/wr.php:532 php/wr.php:606 php/wr.php:622
+#: php/lnn.php:248 php/lnn.php:296 php/lnn.php:387 php/wr.php:217
+#: php/wr.php:470 php/wr.php:485 php/wr.php:535 php/wr.php:610 php/wr.php:626
 msgid "Player"
 msgstr "プレイヤー"
 
-#: php/lnn.php:250 php/wr.php:484
+#: php/lnn.php:250 php/wr.php:487
 msgid "Search"
 msgstr "探索"
 
-#: php/lnn.php:272 php/lnn.php:294 php/wr.php:217 php/wr.php:469 php/wr.php:508
-#: php/wr.php:533 php/wr.php:608
+#: php/lnn.php:275 php/lnn.php:297 php/wr.php:220 php/wr.php:472 php/wr.php:511
+#: php/wr.php:536 php/wr.php:612
 msgid "Replay"
 msgstr "リプレイ"
 
-#: php/lnn.php:273 php/lnn.php:295 php/wr.php:218 php/wr.php:470 php/wr.php:509
-#: php/wr.php:534 php/wr.php:609
+#: php/lnn.php:276 php/lnn.php:298 php/wr.php:221 php/wr.php:473 php/wr.php:512
+#: php/wr.php:537 php/wr.php:613
 msgid "Video"
 msgstr "ビデオ"
 
-#: php/lnn.php:274 php/lnn.php:296 php/wr.php:219 php/wr.php:471 php/wr.php:510
-#: php/wr.php:535 php/wr.php:610
+#: php/lnn.php:277 php/lnn.php:299 php/wr.php:222 php/wr.php:474 php/wr.php:513
+#: php/wr.php:538 php/wr.php:614
 msgid "Date"
 msgstr "日付"
 
-#: php/lnn.php:282 php/wr.php:519
+#: php/lnn.php:285 php/wr.php:522
 msgid "Total"
 msgstr "合計"
 
-#: php/lnn.php:340
+#: php/lnn.php:348
 msgid "Different players"
 msgstr "プレイヤー"
 
-#: php/lnn.php:367
+#: php/lnn.php:375
 msgid "Replays"
 msgstr "リプレイ"
 
-#: php/lnn.php:381
+#: php/lnn.php:389
 msgid "Games LNN'd"
 msgstr "ゲーム"
 
-#: php/lnn.php:388 php/lnn.php:389
+#: php/lnn.php:396 php/lnn.php:397
 msgid " (All Windows)"
 msgstr "（全Windows）"
 
@@ -2093,7 +2094,7 @@ msgid ""
 "the World Record, but lack replay or video proof."
 msgstr ""
 "「非公開スコア」にすると、動画やリプレイなどなしの世界記録より高いスコアも表"
-"示できる。"
+"示できます。"
 
 #: php/wr.php:162
 msgid ""
@@ -2103,82 +2104,90 @@ msgid ""
 msgstr ""
 "更新があれば、<a href=\"https://twitter.com/MaribelHearn42\" "
 "target=\"_blank\">管理者</a>・<a href=\"https://www.youtube.com/"
-"@KirbyComment\" target=\"_blank\">KirbyCommentさん</a>を連絡して下さい。"
+"@KirbyComment\" target=\"_blank\">KirbyCommentさん</a>を連絡して下さい。でき"
+"ます"
 
-#: php/wr.php:169 php/wr.php:176 php/wr.php:207
+#: php/wr.php:164
+msgid ""
+"The world record history from before September 2024 was assembled using the "
+"research at <a href=\"https://nylilsa.github.io\" "
+"target=\"_blank\">Nylilsa's GitHub page.</a>"
+msgstr ""
+
+#: php/wr.php:172 php/wr.php:179 php/wr.php:210
 msgid "Overall Records"
 msgstr "各作品世界記録一覧"
 
-#: php/wr.php:170 php/wr.php:177 php/wr.php:258
+#: php/wr.php:173 php/wr.php:180 php/wr.php:261
 msgid "World Records"
 msgstr "世界記録"
 
-#: php/wr.php:171 php/wr.php:191 php/wr.php:526
+#: php/wr.php:174 php/wr.php:194 php/wr.php:529
 msgid "Recent Records"
 msgstr "最近の世界記録"
 
-#: php/wr.php:189 php/wr.php:361
+#: php/wr.php:192 php/wr.php:364
 msgid "Western Records"
 msgstr "海外記録"
 
-#: php/wr.php:192 php/wr.php:576
+#: php/wr.php:195 php/wr.php:579
 msgid "History"
 msgstr "履歴"
 
-#: php/wr.php:200
+#: php/wr.php:203
 msgid "Number of Recent Records"
 msgstr "最近の世界記録の数"
 
-#: php/wr.php:215
+#: php/wr.php:218
 msgid "Difficulty"
 msgstr "難易度"
 
-#: php/wr.php:364 php/wr.php:446
+#: php/wr.php:367 php/wr.php:449
 msgid "World"
 msgstr "世界"
 
-#: php/wr.php:365 php/wr.php:447
+#: php/wr.php:368 php/wr.php:450
 msgid "West"
 msgstr "海外"
 
-#: php/wr.php:365 php/wr.php:448
+#: php/wr.php:368 php/wr.php:451
 msgid "Percentage"
 msgstr "割合"
 
-#: php/wr.php:400
+#: php/wr.php:403
 msgid "Click a game cover to show its list of world records."
 msgstr "世界記録リストはゲームをクリック。"
 
-#: php/wr.php:429
+#: php/wr.php:432
 msgid "Show Western records"
 msgstr "海外記録を見せて"
 
-#: php/wr.php:432
+#: php/wr.php:435
 msgid "Unverified scores"
 msgstr "非公開スコア"
 
-#: php/wr.php:435
+#: php/wr.php:438
 msgid "Link videos over replays"
 msgstr "リプレイより動画を表示"
 
-#: php/wr.php:455
+#: php/wr.php:458
 msgid "Browse History"
 msgstr "部門の履歴を参照"
 
-#: php/wr.php:462 php/wr.php:601
+#: php/wr.php:465 php/wr.php:605
 msgid "No history available."
 msgstr "履歴はありません。"
 
-#: php/wr.php:480
+#: php/wr.php:483
 msgid "Choose a player name from the menu below to show their WRs."
 msgstr ""
 "個人のWRを表示するには、下記のメニューからプレイヤー名を選んでください。"
 
-#: php/wr.php:623
+#: php/wr.php:627
 msgid "No. of WRs"
 msgstr "WR数"
 
-#: php/wr.php:624
+#: php/wr.php:628
 msgid "Different games"
 msgstr "ゲーム"
 
