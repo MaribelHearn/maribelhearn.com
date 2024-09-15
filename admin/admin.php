@@ -81,12 +81,15 @@
                     <input id='setcookie' type='button' value='Set Blocking Cookie'>
                 </section>
                 <h2>Cookie Editor</h2>
-                <table id='cookies'>
-                    <tr>
-                        <th>Name</th>
-                        <th>Value</th>
-                        <th>Delete</th>
-                    </tr>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Value</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id='cookies'></tbody>
                 </table>
                 <section>
                     <input id='savecookie' type='button' value='Save'>
