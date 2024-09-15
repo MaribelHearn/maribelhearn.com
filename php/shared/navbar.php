@@ -85,7 +85,7 @@ function show_db(string $db_cookie_path) {
 }
 
 function navbar(string $page) {
-    global $lang;
+    global $lang, $is_mobile;
     $token_path = ($page == 'admin' ? '../.stats/token' : '.stats/token');
     $db_cookie_path = ($page == 'admin' ? '../.stats/db_cookie' : '.stats/db_cookie');
     $navbar = '<div class="dropdown nav_left">';
@@ -97,12 +97,12 @@ function navbar(string $page) {
 
     $navbar .= ' | ';
 
-    /*if (show_admin($token_path)) {
+    if (!$is_mobile && show_admin($token_path)) {
         $navbar .= '<a href="/admin">Admin</a> | ';
-    }*/
+    }
 
     if (show_db($db_cookie_path)) {
-        $navbar .= '<a href="/db/">DB</a> | ';
+        $navbar .= '<a href="/db/">' . ($is_mobile ? 'DB' : 'Database') . '</a> | ';
     }
 
     $navbar .= '<a href="/credits">Credits</a> | ';
