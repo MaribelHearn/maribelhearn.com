@@ -80,6 +80,17 @@
                 <section>
                     <input id='setcookie' type='button' value='Set Blocking Cookie'>
                 </section>
+                <h2>Cookie Editor</h2>
+                <table id='cookies'>
+                    <tr>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Delete</th>
+                    </tr>
+                </table>
+                <section>
+                    <input id='savecookie' type='button' value='Save'>
+                </section>
                 <?php
                     if ($hitcount == 'error') {
                         echo '<p class="wide center">An error occurred while reading the stats.</p>';

@@ -21,6 +21,10 @@ p {
 input[type=button] {
     margin-top: 4px;
 }
+input[type=button].delete {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
 .wide {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -123,6 +127,9 @@ input[type=button] {
 }
 .flag_spain {
     background-position: -1024px 0px;
+}
+.cookie {
+    width: 250px;
 }
 #nav {
     margin-bottom: 5px;
