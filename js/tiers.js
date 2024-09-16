@@ -1229,7 +1229,8 @@ function parseImport(text, tierList, sort, originalSort) {
             if (text[i] !== "") { // tier list items
                 characters = text[i].split(',');
 
-                for (let item of characters) {
+                for (let j = 0; j < characters.length; j++) {
+                    item = characters[j];
                     item = item.trim();
 
                     if (item == "Mai") {
@@ -1237,7 +1238,7 @@ function parseImport(text, tierList, sort, originalSort) {
                     }
 
                     try {
-                        addToTier(item.removeSpaces(), counter, 0, noDisplay);
+                        addToTier(item.removeSpaces(), counter, j, noDisplay);
 
                         if (alreadyAdded.includes(item)) {
                             throw "Item already added";
