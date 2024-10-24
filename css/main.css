@@ -186,4 +186,7 @@ input[type=button].delete {
     #avatar {
         width: 95%;
     }
+    .cookie {
+        width: 200px;
+    }
 }
