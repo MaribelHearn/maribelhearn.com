@@ -85,7 +85,7 @@ $missing_runs = 0;
         // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
         if ($layout == 'New') {
             echo '<div id="contents_new" class="contents"><p><a href="#lnns" class="lnns">' . _('LNN Lists') .
-            '</a></p><p><a href="#player_search">' . _('Player Search') .
+            '</a></p><p><a href="#player_search">' . _('Search') .
             '</a></p><p><a href="#recent">' . _('Recent LNNs') .
             '</a></p><p><a href="#overall">' . _('Overall Count') .
             '</a></p><p><a href="#players">' . _('Player Ranking') .
@@ -99,7 +99,7 @@ $missing_runs = 0;
                 echo '<p><a href="#' . $data['short_name'] . '">' . $data['full_name'] . '</a></p>';
             }
         }
-        echo '<p><a href="#player_search">' . _('Player Search') .
+        echo '<p><a href="#player_search">' . _('Search') .
         '</a></p><p><a href="#recent">' . _('Recent LNNs') .
         '</a></p><p><a href="#overall">' . _('Overall Count') .
         '</a></p><p><a href="#players">' . _('Player Ranking') .
@@ -242,52 +242,78 @@ $missing_runs = 0;
             }
         }
     ?>
-    <div id='player_search'>
-        <h2><?php echo _('Player Search'); ?></h2>
+    <div id='search'>
+        <h2><?php echo _('Search'); ?></h2>
 		<p id='playerlnns'><?php echo _('Choose a player name from the menu below to show their LNNs.') ?></p>
-		<label for='player'><?php echo _('Player') ?></label>
-        <input id='player' type='text'>
-        <label id='search_label' for='search'><?php echo _('Search') ?></label>
-		<select id='search'>
-            <option value=''>...</option>
-		    <?php
-                $players = curl_get($API_BASE . '/api/v1/replay/players/');
-                if (strpos($players, 'Internal Server Error') === false) {
-                    $players = json_decode($players, true);
-                    $players = $players['lnn'];
-                    natcasesort($players);
-                    foreach ($players as $key => $player) {
-                        if ($player == '-') {
-                            continue;
+        <section>
+            <label for='player'><?php echo _('Player') ?></label>
+            <input id='player' type='text'>
+            <label class='search_label' for='search'><?php echo _('Search') ?></label>
+            <select id='search_player'>
+                <option value=''>...</option>
+                <?php
+                    $players = curl_get($API_BASE . '/api/v1/replay/players/');
+                    if (strpos($players, 'Internal Server Error') === false) {
+                        $players = json_decode($players, true);
+                        $players = $players['lnn'];
+                        natcasesort($players);
+                        foreach ($players as $key => $player) {
+                            if ($player == '-') {
+                                continue;
+                            }
+                            echo '<option value="' . $player . '">' . $player . '</option>';
+                            $total_players += 1;
                         }
-                        echo '<option value="' . $player . '">' . $player . '</option>';
-                        $total_players += 1;
                     }
-                }
-		    ?>
-	    </select>
+                ?>
+            </select>
+        </section>
+        <section id='category_search'>
+            <label for='category'><?php echo _('Category') ?></label>
+            <input id='category' type='text'>
+            <label class='search_label' for='search_category'><?php echo _('Search') ?></label>
+            <select id='search_category'>
+                <option value=''>...</option>
+                <?php
+                    $categories = curl_get($API_BASE . '/api/v1/category/?type=LNN&region=Eastern');
+                    if (strpos($categories, 'Internal Server Error') === false) {
+                        $categories = json_decode($categories, true);
+                        foreach ($categories as $key => $category) {
+                            $category_id = $category['game'] . ' ' . $category['shot'];
+                            $category_name = _($category['game']) . ' ' . _($category['shot']);
+                            if (!empty($category['route'])) {
+                                $category_id .= ' ' . $category['route'];
+                                $category_name .= ' ' . _($category['route']);
+                            }
+                            echo '<option value="' . $category_id . '">' . $category_name . '</option>';
+                        }
+                    }
+                ?>
+            </select>
+        </section>
     </div>
-	<div id='player_list'>
+	<div id='search_results'>
 		<table class='sortable asc'>
-			<thead id='player_thead'><tr>
-                <th class='general_header'><?php echo _('Game') ?></th>
-                <th class='general_header'><?php echo _('Shottype') ?></th>
+			<thead id='search_thead'><tr>
+                <th id='first_header' class='general_header'><?php echo _('Game') ?></th>
+                <th id='second_header' class='general_header'><?php echo _('Shottype') ?></th>
                 <th class='general_header'><?php echo _('Replay') ?></th>
                 <th class='general_header'><?php echo _('Video') ?></th>
                 <th class='general_header'><?php echo _('Date') ?></th>
             </tr></thead>
-			<tbody id='player_tbody'></tbody>
-			<tfoot id='player_tfoot'>
+			<tbody id='search_tbody'></tbody>
+			<tfoot id='search_tfoot'>
                 <tr>
                     <td colspan='5'></td>
                 </tr>
                 <tr class='irregular_tr'>
                     <td><?php echo _('Total') ?></td>
-                    <td id='player_sum' colspan='4'></td>
+                    <td id='search_sum' colspan='4'></td>
                 </tr>
             </tfoot>
 		</table>
 	</div>
+    <p id='empty_results' class='center'><?php echo _('There are currently no LNNs in that category.'); ?></p>
     <div id='recent'>
         <h2><?php echo _('Recent LNNs') ?></h2>
         <table class='sortable'>
