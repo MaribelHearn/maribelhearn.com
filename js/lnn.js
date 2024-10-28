@@ -330,7 +330,7 @@ function splitCategory(category, translate) {
         shot = route;
         route = undefined;
     } else {
-        shot = parts.join(_(' '));
+        shot = parts.join(' ');
     }
 
     let result = [];
@@ -361,7 +361,7 @@ function setCategory(event) {
 
     const categoryName = splitCategory(category, true);
 
-    document.getElementById("category").value = categoryName.join(_(' '));
+    document.getElementById("category").value = categoryName.join(' ');
     getCategoryLNNs(category);
 }
 
