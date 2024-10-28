@@ -244,7 +244,7 @@ $missing_runs = 0;
     ?>
     <div id='search'>
         <h2><?php echo _('Search'); ?></h2>
-		<p id='playerlnns'><?php echo _('Choose a player name from the menu below to show their LNNs.') ?></p>
+		<p id='playerlnns'><?php echo _('Choose a player or category from the menus below to show their LNNs.') ?></p>
         <section>
             <label for='player'><?php echo _('Player') ?></label>
             <input id='player' type='text'>
