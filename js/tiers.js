@@ -1199,7 +1199,7 @@ function parseImport(text, tierList, sort, originalSort) {
     const noDisplay = (sort == originalSort ? false : true);
     let alreadyAdded = [];
     let counter = -1;
-    let characters;
+    let characters, item;
 
     try {
         clearTiers(tierList, sort, originalSort);
@@ -1896,7 +1896,7 @@ function drop(event) {
         return;
     }
 
-    if (event.target.id.substring(0, 2) === "th" || event.target.id.substring(0, 4) === "tier") {
+    if (event.target.id.substring(0, 2) === "th" || event.target.id.substring(0, 4) === "tier" && event.target.id !== "tier_list_table") {
         dropOntoTier(event);
     }
     else if (isTiered(event.target.id) && following.substring(0, 2) != "th") {
