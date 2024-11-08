@@ -39,7 +39,6 @@ function setLanguage(event) {
 function init() {
     document.body.addEventListener("click", closeModal, false);
     document.body.addEventListener("keyup", closeModal, false);
-    document.getElementById("en_GB").addEventListener('click', setLanguage, false);
     const chars = document.querySelectorAll(".char");
     const flags = document.querySelectorAll(".flag, .language");
 
