@@ -97,6 +97,10 @@
                     <a href='/slots'><span class='icon slots_icon'></span> Touhou Slot Machine</a>
                     <span class='tooltip'>Touhou randomizer based on Touhou Click and Drag Game, with customisation options.</span>
                 </li>
+                <li class='link'>
+                    <a href='/touhoumon'><span class='icon touhoumon_icon'></span> Touhou Puppet Play (Touhoumon)</a>
+                    <span class='tooltip'>Portal for the Touhou Puppet Play series, with links to communities and resources.</span>
+                </li>
             </ul>
             <h3>Personal</h3>
             <ul class='page_table'>

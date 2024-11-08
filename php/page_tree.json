@@ -97,6 +97,11 @@
         "description": "Download links for Touhou patches and tools, including vpatch, thprac, boss rushes and other practice utilities.",
         "keywords": "touhou, touhou project, 東方, 东方, tool, tools, patch, patches, scorefile, score file, scorefiles, score files, practice, spoileral, boss rush, bossrush, ultra, vpatch, thprac, thcrap"
     },
+    "touhoumon": {
+        "title": "Touhou Puppet Play",
+        "description": "Portal for the Touhou Puppet Play series, with links to communities and resources.",
+        "keywords": "touhou, touhou project, touhoumon, touhou puppet play, tpp, touhou puppet dance performance, tpdp, gensou ningyougeki, ningyougeki, gensou ningyou enbu, touhoumon purple, touhoumon another world, touhoumon world link, touhoumon heartgold, touhoumon showdown"
+    },
     "trs": {
         "title": "Touhou Replay Showcase",
         "description": "Read about the weekly Touhou Replay Showcase Twitch streams.",

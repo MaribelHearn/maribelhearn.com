@@ -66,7 +66,8 @@ function game_pages() {
 function other_pages() {
     return '<p><a href="/thvote"><span class="icon thvote_icon"></span>Poll</a></p>' .
     '<p><a href="/tiers"><span class="icon tiers_icon"></span>Tiers</a></p>' .
-    '<p><a href="/slots"><span class="icon slots_icon"></span>Slots</a></p>';
+    '<p><a href="/slots"><span class="icon slots_icon"></span>Slots</a></p>' .
+    '<p><a href="/touhoumon"><span class="icon touhoumon_icon"></span>Touhoumon</a></p>';
 }
 
 function personal_pages() {

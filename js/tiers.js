@@ -1469,16 +1469,18 @@ function takeScreenshot() {
         }
 
         printMessage("<strong class='confirmation'>Girls are being screenshotted, please watch warmly...</strong>");
-        const tierListTable = document.getElementById("tier_list_table");
-        const positionInfo = tierListTable.getBoundingClientRect();
+        const tierListTable = document.getElementById("tier_list_tbody");
         let width = longestTier() * (isMobile() ? 60 : 120) + parseInt(settings.props[settings.sort].tierHeaderWidth) + 50;
-        const diff = Math.floor(width / MAX_WIDTH);
-        width = Math.min(width, MAX_WIDTH);
-        let height = positionInfo.height;
+        console.log(width, MAX_WIDTH);
 
-        if (diff > 1) {
-            height += 120 * diff;
+        if (width > MAX_WIDTH) {
+            document.getElementById("tier_list_table").style.tableLayout = "fixed";
+            document.getElementById("tier_list_table").style.width = MAX_WIDTH;
         }
+
+        const positionInfo = tierListTable.getBoundingClientRect();
+        width = Math.min(width, MAX_WIDTH);
+        let height = positionInfo.height + 50;
 
         if (isMobile()) {
             document.getElementById("tier_list_container").classList.add("screenshot_margin");
@@ -1508,6 +1510,8 @@ function takeScreenshot() {
             }
 
             printMessage("");
+            document.getElementById("tier_list_table").style.removeProperty("table-layout");
+            document.getElementById("tier_list_table").style.removeProperty("width");
 
             if (!isMobile() && !isTierView) {
                 toggleTierView();

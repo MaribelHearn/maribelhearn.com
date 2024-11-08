@@ -6,7 +6,7 @@ function has_space(string $lang) {
 }
 
 function directory(string $page, array $main) {
-    $other = array('thvote', 'tiers', 'slots');
+    $other = array('thvote', 'tiers', 'slots', 'touhoumon');
     $personal = array('history', 'c67');
     if (in_array($page, $main)) {
         return 'main';
