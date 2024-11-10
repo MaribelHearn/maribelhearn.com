@@ -448,8 +448,7 @@
 		'Includes Stage 4 Books and Play Time tracking, as well as allowing for multiple save files.');
 	?></p>
     <div>
-        <p><a href='https://mega.nz/#!URxkUSAa!bmKsMnqX8XZxovn9TY1njoa0-2nnC57Sl15KJWs_iy0' target='_blank'><?php echo _('Download') ?></a></p></p>
-        <p><a href='https://cdn.discordapp.com/attachments/414701108854915072/435727033725878272/EoSD_History_Recorder.rar'>Source code</a></p>
+        <p><a href='https://mega.nz/file/RIhCRDLB#2PElQfJqi9Mg5JV-1x8AKsQDzcbo51flK2Lxytt-s_k' target='_blank'><?php echo _('Download') ?></a></p></p>
     </div>
     <p><strong><?php
         echo _('PoFV Play Time Recorder by ');
