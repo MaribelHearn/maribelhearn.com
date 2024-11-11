@@ -170,13 +170,31 @@ input[type=button].delete {
         left: 30%;
     }
 }
-@media only screen and (min-width: 800px) and (max-width: 1100px) {
+@media only screen and (min-width: 2000px) and (max-width: 2300px) {
+    ul {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+@media only screen and (min-width: 1800px) and (max-width: 2000px) {
+    ul {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+@media only screen and (min-width: 1400px) and (max-width: 1800px) {
     ul {
         padding: 0px;
     }
-    .wrap {
-        margin-left: 10%;
-        margin-right: 10%;
+}
+@media only screen and (min-width: 1100px) and (max-width: 1400px) {
+    ul {
+        padding: 0px;
+    }
+}
+@media only screen and (min-width: 800px) and (max-width: 1100px) {
+    ul {
+        padding: 0px;
     }
     #avatar {
         width: 95%;
