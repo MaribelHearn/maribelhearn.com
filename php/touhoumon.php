@@ -21,11 +21,11 @@
         Modified Pokemon Showdown server for playing Touhoumon competitively
     </p>
     <p>
-        <a href='https://discord.gg/m4U9VDKq' target='_blank'><span class='icon discord_icon'></span> Tippy Dippy 4.1</a><br>
+        <a href='https://discord.gg/0zGPQXeHpqbyVYTa' target='_blank'><span class='icon discord_icon'></span> Tippy Dippy 4.1</a><br>
         Discord server for both Touhoumon and TPDP
     </p>
     <p>
-        <a href='https://discord.gg/fnrHFrdN' target='_blank'><span class='icon discord_icon'></span> Touhoumon Purple</a><br>
+        <a href='https://discord.gg/vMfMYms6Tg' target='_blank'><span class='icon discord_icon'></span> Touhoumon Purple</a><br>
         Discord server for Touhoumon Purple and the development of Touhoumon Koishowdown
     </p>
     <p>
