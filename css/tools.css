@@ -8,6 +8,9 @@ h3 {
 hr {
     clear: both;
 }
+ul {
+    padding-left: 20%;
+}
 .main {
     float: left;
 }

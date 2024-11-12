@@ -16,16 +16,19 @@
         <p><a href='#thprac'><strong>thprac</strong></a></p>
         <p><a href='#thcrap'>thcrap</a></p>
         <p><a href='#enbconvertor'><?php echo _('DX8 to DX9 converter') ?></a></p>
-        <p><a href='#scorefiles'><?php echo _('Completed Scorefiles') ?></a></p>
-        <p><a href='#spoileral'>SpoilerAL</a></p>
-        <p><a href='#practools'><?php echo _('General Practice Tools') ?></a></p>
-        <p><a href='#bossrush'><?php echo _('Boss Rush Patches') ?></a></p>
-        <p><a href='#specific'><?php echo _('Specific Pattern Practice') ?></a></p>
         <p><a href='#shottypes'><?php echo _('Shottype Modifications') ?></a></p>
         <p><a href='#hardultra'><?php echo _('Hard Mode / Ultra Patches') ?></a></p>
         <p><a href='#graphical'><?php echo _('Graphical Patches') ?></a></p>
         <p><a href='#emulators'><?php echo _('PC-98 Emulators') ?></a></p>
         <p><a href='#miscellaneous'><?php echo _('Miscellaneous') ?></a></p>
+        <p><a href='#legacy'><?php echo _('Deprecated') ?></a></p>
+		<ul>
+			<li><a href='#scorefiles'><?php echo _('Completed Scorefiles') ?></a></li>
+			<li><a href='#spoileral'>SpoilerAL<?php if ($lang == 'ja_JP') { echo '（すぽいらーえーる）'; } ?></a></li>
+			<li><a href='#practools'><?php echo _('General Practice Tools') ?></a></li>
+			<li><a href='#bossrush'><?php echo _('Boss Rush Patches') ?></a></li>
+			<li><a href='#specific'><?php echo _('Specific Pattern Practice') ?></a></li>
+		</ul>
     </div>
     <!-- Vpatch -->
     <hr>
@@ -81,193 +84,6 @@
 		'Extract it into the folders of these games for it to take effect.');
 	?></p>
     <p><a href='http://enbdev.com/convertor_dx8_dx9_v0036.htm' target='_blank'><?php echo _('Download') ?></a></p>
-    <!-- Scorefiles for Practice -->
-    <hr>
-    <h2 id='scorefiles'><?php echo _('Completed Scorefiles') ?></h2>
-    <p><?php
-		echo _('These are (mostly) complete <span class="code">score.dat</span> files useful for practice combined ' .
-		'with other tools, as they have unlocked the Extra Stage, every practice stage and spell in Spell Practice ' .
-		'for all shottypes.');
-	?></p>
-    <p><?php echo _('All official shooting games aside from VD are included.') ?></p>
-    <p><a href='https://maribelhearn.com/mirror/Practice%20Scorefiles.zip' target='_blank'><?php echo _('Download') ?></a></p>
-	<!-- Old link without WBaWC: https://mega.nz/#F!r8hWmCrD!oOkBNotI88acvlhlKUXZiA -->
-    <!-- SpoilerAL -->
-    <hr>
-    <h2 id='spoileral'>SpoilerAL<?php if ($lang == 'ja_JP') { echo '（すぽいらーえーる）'; } ?></h2>
-    <p><?php
-		echo _('Japanese program that can load <span class="code">.ssg</span> files that modify the game while it is running, ' .
-		'allowing for practice options as well as cheats. SpoilerAL SSGs require the <em>original Japanese ' .
-		'versions</em> of the games to work. The 4.6 SSGs have practice options such as skipping to a specific ' .
-		'frame of the game or a specific spell, while the niL SSGs have cheat options such as invincibility. ' .
-		'There is also a separate MoF SSG made by <a href="https://www.twitch.tv/akaldar" target="_blank">Akaldar</a> ' .
-		'for efficient practice in that game specifically, a separate GFW SSG, as well as a TD SSG specifically ' .
-		'designed for efficient scoring practice, made by Leo, a DDC SSG and a LoLK Chapter Practice SSG by ' .
-		'<a href="https://www.youtube.com/channel/UChyVpooBi31k3xPbWYsoq3w" target="_blank">32th System</a> and separate HSiFS SSGs ' .
-		'with cheat options. Be wary of an occasional menu bug that causes an SSG to duplicate itself and ' .
-		'make other SSGs invisible.');
-	?></p>
-    <div>
-        <p><a href='http://wcs.main.jp/index/software/spal/' target='_blank'><?php echo _('Main Program') ?></a></p>
-		<p class='wide-top'><a href='https://maribelhearn.com/mirror/4.6_SSGs.zip' target='_blank'><?php echo _('SSG Pack (4.6)') ?></a></p>
-        <p class='wide-bottom'><a href='http://thusagi.starfree.jp/ssg/th06ssg.zip' target='_blank'>EoSD</a> |
-        <a href='http://thusagi.starfree.jp/ssg/th07ssg.zip' target='_blank'>PCB</a> |
-        <a href='http://thusagi.starfree.jp/ssg/th08ssg.zip' target='_blank'>IN</a> |
-        <a href='http://thusagi.starfree.jp/ssg/th12ssg.zip' target='_blank'>UFO</a> |
-        <a href='http://thusagi.starfree.jp/ssg/th16ssg.zip' target='_blank'>HSiFS</a></p>
-		<p><a href='https://mega.nz/#!OpxFSSJB!2eUH91vJAF_ejq7S5r3x5Jx7GYCP67LSSo4BuXhoDa4' target='_blank'><?php
-            echo _('SSG Pack (niL)')
-        ?></a></p>
-        <p><a href='https://cdn.wikiwiki.jp/to/w/let/etc/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%81%AA%E3%81%A9/SpoilerAL%E7%94%A8%E3%81%AESSG%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/::attach/th_ssg20080502.zip?rev=8b2466505ba323da7fc610fad805213f&t=20120111011846'><?php
-			echo _('SSG Pack (LET)')
-        ?></a></p>
-        <p class='wide-bottom'><a href='http://www.mediafire.com/file/a4g4awdp4ll5a4n/SSG.zip' target='_blank'><?php
-            echo _('SSG Pack (niL, English translated)')
-        ?></a></p>
-        <p><a href='https://mega.nz/#!QUBTEB5J!idRbiOfr_BKFpMBy9e5qU5Ow1xPkxplVbR72G6Ud0KI' target='_blank'><?php
-            echo _('MoF SSG by Akaldar')
-        ?></a></p>
-        <p><a href='https://mega.nz/#!BJwhwYRB!5Zgr6redSWbA2v2vco0b7k00XH-BIeTAPUnW28gI-20' target='_blank'><?php
-            echo _('GFW SSG (English translated)')
-        ?></a></p>
-        <p><a href='https://drive.google.com/open?id=1Qs4jOBkDH3dN7tI5X2cJRzd_awZFf80d' target='_blank'><?php
-			echo _('TD Scoring SSG by Leo (English translated)')
-		?></a></p>
-		<p><a href='https://maribelhearn.com/mirror/th16_score.ssg' target='_blank'><?php
-			echo _('HSiFS Scoring SSG by Sonitsuku')
-		?></a></p>
-        <p><a href='https://gitlab.com/32th/th14ssg' target='_blank'><?php
-			echo _('DDC SSG by 32th System')
-		?></a></p>
-		<p><a href='https://mega.nz/#!cAwknKTB!3PCN0me2Q3uTXwo4VgfBIouOqf5W0spBEhZwwR2uNfA' target='_blank'><?php
-			echo _('LoLK SSG by CreepyNinja')
-		?></a></p>
-        <p><a href='https://gitlab.com/32th/th15ssg' target='_blank'><?php
-			echo _('LoLK Chapter Practice SSG by 32th System')
-		?></a></p>
-        <p><a href='https://drive.google.com/open?id=1YqL8QSrnvDepMnkKUNPIBJVaJ2XWwZhP' target='_blank'><?php
-			echo _('HSiFS SSG (cheats, English translated)')
-		?></a></p>
-        <p><a href='https://drive.google.com/open?id=1R8YcGWBE1c4jLy2RGfjuqtrpZzR26XA-' target='_blank'><?php
-			echo _('Alternative HSiFS SSG (English translated)')
-		?></a></p>
-    </div>
-    <!-- General Practice Tools -->
-    <hr>
-    <h2 id='practools'><?php echo _('General Practice Tools') ?></h2>
-    <p><?php
-		echo _('Patches intended for efficient practice in one or more games, ' .
-		'allowing the player to skip to patterns or changing power and such.');
-	?></p>
-	<p><strong><?php echo _('Practice Tools by ') ?><a href='https://twitter.com/Ririanly'>Riri</a></strong></p>
-    <p><?php
-		echo _('Tools that allow you to skip to specific patterns in SA, UFO and LoLK, also allowing for other ' .
-		'settings like your current power. The UFO and LoLK tools are external programs, while the SA tool ' .
-		'is a modification of the program. The LoLK one was made for v1.00a but mostly functions properly ' .
-		'on v1.00b as well.');
-	?></p>
-    <div>
-        <p><a href='https://drive.google.com/file/d/0BwqJeqvy1nDpRGRBUy1nX0dNWVU/view' target='_blank'>SA</a> |
-        <a href='https://drive.google.com/file/d/0BwqJeqvy1nDpQ1FQaUc5dDlpUEk/view' target='_blank'>UFO</a> |
-        <a href='http://www.mediafire.com/download/88ncjlua3hjrma2/th15_assist_2.2.rar' target='_blank'>LoLK</a></p>
-    </div>
-	<p><strong><?php echo _('WBaWC Practice by ') ?><a href='https://twitter.com/Priweejt'>Priw8</a></strong></p>
-	<p><?php
-		echo _('Allows skipping to any part of the game, similar to Riri\'s practice tools, using an in-game menu.');
-	?></p>
-	<p><a href='https://priw8.github.io/#s=patches/prac' target='_blank'><?php echo _('Download') ?></a></p>
-    <p><strong><?php echo _('GFW "Brown Label" Practice by ') ?><a href='https://twitter.com/eerokurkisuo'>MegaPulse</a></strong></p>
-    <p><?php
-		echo _('Modified <span class="code">.dat</span> files that allow you to practice specific stages of ' .
-		'any route in the game. Select A in-game for full stage practice, B for midboss and boss and C ' .
-		'for boss only. Refer to the readme file for further information.');
-	?></p>
-    <p><a href='https://mega.nz/#!8LgRVLxa!TQpU7xqurMF9JgWloQAHORx6XhswuK_NaaCk1gStWfs' target='_blank'><?php echo _('Download') ?></a></p>
-    <!-- Boss Rush Patches -->
-    <hr>
-    <h2 id='bossrush'><?php echo _('Boss Rush Patches') ?></h2>
-    <p><?php
-		echo _('Modifications to the main <span class="code">.dat</span> files of the games that skip ' .
-		'stage portions, allowing you to efficiently practice boss battles. The skipping applies to ' .
-		'both full runs and practice runs.');
-	?></p>
-    <p><strong><?php echo _('Boss Rush Patches by ') ?><a href='https://twitter.com/ReformedSmol' target='_blank'>Martin</a></strong></p>
-    <p><?php
-		echo _('All midbosses and bosses are included, everything else being kept the same. ' .
-		'There are also \'boss-only\' versions that do skip the midbosses.');
-	?></p>
-    <div>
-		<p><a href='https://maribelhearn.com/mirror/Full%20Boss%20Rush.zip' target='_blank'><?php echo _('Full Pack') ?></a></p>
-        <p><a href='https://mega.nz/#F!rswTmICb!lnVEolHezNbe4pZPopSqwA' target='_blank'>MoF</a> |
-        <a href='https://mega.nz/#F!a4BCTACS!Z3gA684Me36gZK_i4y_5Dg' target='_blank'>SA</a> |
-        <a href='https://mega.nz/folder/W1AGhJaA#8Hz_laGbtFnNG0-ldTUVZg' target='_blank'>UFO</a> |
-        <a href='https://mega.nz/#F!TlwUwBTb!hT-vr7hhft3dwt3slrhCEQ' target='_blank'>GFW</a> |
-        <a href='https://mega.nz/#F!axJSDILb!FPNSYOddqDosZ1I1Y-9UBQ' target='_blank'>TD</a> |
-        <a href='https://mega.nz/#F!K1AByK5I!7NrTie_DHQBrH5OKnIXfEg' target='_blank'>DDC</a> |
-        <a href='https://mega.nz/#F!npwSGaJC!pNfJemXgehNGbif2L-d6zQ' target='_blank'>LoLK</a> |
-        <a href='https://maribelhearn.com/mirror/HSiFS%20Boss%20Rush%20v1.0.zip' target='_blank'>HSiFS</a></p>
-		<!--
-		Old link boss-rush: https://mega.nz/#!60JyGaTB!HOQPcI7Pq6MiEMKqI-Ucv49CxoqJ8Sc1d3u5s4wNS94
-		Old link boss-only: https://mega.nz/#!Ogh3hD5B!PT6aGiyqhGAS1r4Y0IfjLTP3hDtRKa1qGi3zi6XjaOA
-		Old link full pack: https://mega.nz/#F!i0I0BIaI!A3wHnQYX2xFUTKS1po1GDw
-		-->
-    </div>
-    <p><strong><?php echo _('Boss Rush Patches by ') ?><a href='https://twitter.com/drakeirving' target='_blank'>Drake</a></strong></p>
-    <p><?php
-		echo _('Patches for SA and UFO that not only remove stage portions, but also bombs. ' .
-		'The SA one includes turning Stage 4 into \'Satori Rush\', where you fight every single one ' .
-		'of her Spell Cards. Note that the safe areas on Border of Wave and Particle and Utsuho\'s ' .
-		'3rd spell are removed in this patch.');
-	?></p>
-    <div>
-        <p><a href='https://mega.nz/#!85MACTBK!wBZpEyv5rWp7_qwHTQCqa7F_4hFNF5JOpjh4JS5iSGY' target='_blank'>SA</a> |
-        <a href='https://mega.nz/#!lskyiIzZ!yJB6HLwRQnXs4wO9BmHNxkVtrKrdoKhM-GmMEBRy0ro' target='_blank'>UFO</a></p>
-    </div>
-    <p><strong><?php echo _('EoSD Boss Rush by ')?><a href='https://twitter.com/mdude33' target='_blank'>Dass</a></strong></p>
-    <p><?php echo _('Another boss rush patch for EoSD, also including \'Patchouli Rush\'.') ?></p>
-    <p><a href='https://mega.nz/#!r88gwA7C!I2xVHGBbyh9KVVn3h_aiKDfPhl8fC9ajZscqzES7UFY' target='_blank'><?php echo _('Download') ?></a></p>
-    <p><strong><?php echo _('PCB Boss Rush by rsy_type1 and ') ?><a href='https://twitter.com/chirpeh13' target='_blank'>Chirpy</a></strong></p>
-    <p><?php echo _('A boss rush patch for PCB.') ?></p>
-    <p><a href='http://www.mediafire.com/download/vd08pz9ogjbhq8g/th07b.rar' target='_blank'><?php echo _('Download') ?></a></p>
-	<p><strong><?php echo _('WBaWC Boss Rush by ') ?>Plus</strong></p>
-    <p><?php echo _('A boss rush patch for WBaWC.') ?></p>
-	<p><a class='dead' href='https://mega.nz/#!e3wwQADS!8I4Rcr9wF-B-hV3b9wbEjGOOI9zbbz8mKj8oY86tWhY' target='_blank'><?php echo _('Download') ?></a></p>
-    <!-- Specific Pattern Practice -->
-    <hr>
-    <h2 id='specific'><?php echo _('Specific Pattern Practice') ?></h2>
-    <p><?php
-		echo _('Patches intended for practicing one or a few specific patterns in a game. ' .
-		'Usually <span class="code">.dat</span> modifications.');
-	?></p>
-    <p><strong><?php echo _('Books Practice for EoSD by ') ?><a href='https://www.twitch.tv/akaldar' target='_blank'>Akaldar</a></strong></p>
-    <p><?php echo _('Repeats the Stage 4 Books section for easy practicing.') ?></p>
-    <p><a href='https://mega.nz/#!sIhRFD7b!EKKnhhxKX2NQQg0jGaT1t3eAS7x5pcISSKr0abINvgM' target='_blank'><?php echo _('Download') ?></a></p>
-    <p><strong><?php echo _('VoWG + PWG Practice for MoF by ') ?><a href='https://twitter.com/chirpeh13' target='_blank'>Chirpy</a></strong></p>
-    <p><?php
-		echo _('Makes Kanako skip to Virtue of Wind God (her final spell) and makes Aya skip to ' .
-		'Peerless Wind God (her timeout spell), which will also repeat itself indefinitely.');
-	?></p>
-    <p><a href='https://maribelhearn.com/mirror/th10vowg_pwg.dat' target='_blank'><?php echo _('Download') ?></a></p>
-	<!-- Dead link: https://www.dropbox.com/s/2u2fam39uya0zil/th10vowg%2Bpwg.dat?dl=0 -->
-    <p><strong><?php echo _('IN Nonspell Practice') ?></strong></p>
-    <p><?php echo _('Patch that lets you practice nonspells in IN.') ?></p>
-    <p><a href='https://mega.nz/#!y9IwiD4A!aI-tS2lNbDWeu-FnA41lc76xtnkUjHNdYwyg4dyBkrs' target='_blank'><?php echo _('Download') ?></a></p>
-    <p><strong><?php echo _('Timeout Phase Collection by ') ?><a href='https://twitter.com/ReformedSmol' target='_blank'>Martin</a></strong></p>
-    <p><?php
-		echo _('Patches for practicing the timeout phases of the final spells on Lunatic and Extra from MoF to ' .
-		'HSiFS, plus Devil\'s Recitation, but not including GFW Stage 3 final spells.');
-	?></p>
-    <div>
-        <p><a href='https://mega.nz/#F!yhwiWaTD!4AE7YYzsfixx1yXIGFcbdg' target='_blank'><?php
-			echo _('MoF to LoLK');
-		?></a></p>
-        <p><a href='https://mega.nz/#!a4x2VIxa!zwwwT0PXDjKgjt8wfhp6n3mbrOH9N7OsNZ8MkgH7v_c' target='_blank'><?php
-			echo _('HSiFS season finals and Extra final');
-		?></a></p>
-    </div>
-	<p><strong><?php echo _('Star Sapphire First Non Practice by ') ?><a href='https://twitter.com/eerokurkisuo' target='_blank'>MegaPulse</a></strong></p>
-	<p><?php echo _('Gives Star\'s first non from Route A1 Stage 2 infinite health. This will produce an infinite amount of rings, since the nonspell adds more rings every wave. The stage background from Route A2 is used.') ?></p>
-	<p><a href='https://mega.nz/file/0DAVjJjT#Gb279_wmj8ZOkkrVdcgTLQkH6151slKEIsbVWKaDuDY' target='_blank'><?php echo _('Download') ?></a></p>
     <!-- Shottype Modifications -->
     <hr>
     <h2 id='shottypes'><?php echo _('Shottype Modifications') ?></h2>
@@ -517,6 +333,191 @@
 		echo _('Allows the in-game score counter to exceed 9,999,999,990 points.');
 	?></p>
 	<p><a href='https://maribelhearn.com/mirror/th17_score_uncap.zip' target='_blank'><?php echo _('Download') ?></a></p>
+	<!-- Legacy / Deprecated -->
+	<hr>
+    <h2 id='legacy'><?php echo _('Deprecated') ?></h2>
+    <!-- Scorefiles for Practice -->
+    <h3 id='scorefiles'><?php echo _('Completed Scorefiles') ?></h3>
+    <p><?php
+		echo _('These are (mostly) complete <span class="code">score.dat</span> files useful for practice combined ' .
+		'with other tools, as they have unlocked the Extra Stage, every practice stage and spell in Spell Practice ' .
+		'for all shottypes.');
+	?></p>
+    <p><?php echo _('All official shooting games aside from VD are included.') ?></p>
+    <p><a href='https://maribelhearn.com/mirror/Practice%20Scorefiles.zip' target='_blank'><?php echo _('Download') ?></a></p>
+	<!-- Old link without WBaWC: https://mega.nz/#F!r8hWmCrD!oOkBNotI88acvlhlKUXZiA -->
+    <!-- SpoilerAL -->
+    <h3 id='spoileral'>SpoilerAL<?php if ($lang == 'ja_JP') { echo '（すぽいらーえーる）'; } ?></h3>
+    <p><?php
+		echo _('Japanese program that can load <span class="code">.ssg</span> files that modify the game while it is running, ' .
+		'allowing for practice options as well as cheats. SpoilerAL SSGs require the <em>original Japanese ' .
+		'versions</em> of the games to work. The 4.6 SSGs have practice options such as skipping to a specific ' .
+		'frame of the game or a specific spell, while the niL SSGs have cheat options such as invincibility. ' .
+		'There is also a separate MoF SSG made by <a href="https://www.twitch.tv/akaldar" target="_blank">Akaldar</a> ' .
+		'for efficient practice in that game specifically, a separate GFW SSG, as well as a TD SSG specifically ' .
+		'designed for efficient scoring practice, made by Leo, a DDC SSG and a LoLK Chapter Practice SSG by ' .
+		'<a href="https://www.youtube.com/channel/UChyVpooBi31k3xPbWYsoq3w" target="_blank">32th System</a> and separate HSiFS SSGs ' .
+		'with cheat options. Be wary of an occasional menu bug that causes an SSG to duplicate itself and ' .
+		'make other SSGs invisible.');
+	?></p>
+    <div>
+        <p><a href='http://wcs.main.jp/index/software/spal/' target='_blank'><?php echo _('Main Program') ?></a></p>
+		<p class='wide-top'><a href='https://maribelhearn.com/mirror/4.6_SSGs.zip' target='_blank'><?php echo _('SSG Pack (4.6)') ?></a></p>
+        <p class='wide-bottom'><a href='http://thusagi.starfree.jp/ssg/th06ssg.zip' target='_blank'>EoSD</a> |
+        <a href='http://thusagi.starfree.jp/ssg/th07ssg.zip' target='_blank'>PCB</a> |
+        <a href='http://thusagi.starfree.jp/ssg/th08ssg.zip' target='_blank'>IN</a> |
+        <a href='http://thusagi.starfree.jp/ssg/th12ssg.zip' target='_blank'>UFO</a> |
+        <a href='http://thusagi.starfree.jp/ssg/th16ssg.zip' target='_blank'>HSiFS</a></p>
+		<p><a href='https://mega.nz/#!OpxFSSJB!2eUH91vJAF_ejq7S5r3x5Jx7GYCP67LSSo4BuXhoDa4' target='_blank'><?php
+            echo _('SSG Pack (niL)')
+        ?></a></p>
+        <p><a href='https://cdn.wikiwiki.jp/to/w/let/etc/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%81%AA%E3%81%A9/SpoilerAL%E7%94%A8%E3%81%AESSG%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/::attach/th_ssg20080502.zip?rev=8b2466505ba323da7fc610fad805213f&t=20120111011846'><?php
+			echo _('SSG Pack (LET)')
+        ?></a></p>
+        <p class='wide-bottom'><a href='http://www.mediafire.com/file/a4g4awdp4ll5a4n/SSG.zip' target='_blank'><?php
+            echo _('SSG Pack (niL, English translated)')
+        ?></a></p>
+        <p><a href='https://mega.nz/#!QUBTEB5J!idRbiOfr_BKFpMBy9e5qU5Ow1xPkxplVbR72G6Ud0KI' target='_blank'><?php
+            echo _('MoF SSG by Akaldar')
+        ?></a></p>
+        <p><a href='https://mega.nz/#!BJwhwYRB!5Zgr6redSWbA2v2vco0b7k00XH-BIeTAPUnW28gI-20' target='_blank'><?php
+            echo _('GFW SSG (English translated)')
+        ?></a></p>
+        <p><a href='https://drive.google.com/open?id=1Qs4jOBkDH3dN7tI5X2cJRzd_awZFf80d' target='_blank'><?php
+			echo _('TD Scoring SSG by Leo (English translated)')
+		?></a></p>
+		<p><a href='https://maribelhearn.com/mirror/th16_score.ssg' target='_blank'><?php
+			echo _('HSiFS Scoring SSG by Sonitsuku')
+		?></a></p>
+        <p><a href='https://gitlab.com/32th/th14ssg' target='_blank'><?php
+			echo _('DDC SSG by 32th System')
+		?></a></p>
+		<p><a href='https://mega.nz/#!cAwknKTB!3PCN0me2Q3uTXwo4VgfBIouOqf5W0spBEhZwwR2uNfA' target='_blank'><?php
+			echo _('LoLK SSG by CreepyNinja')
+		?></a></p>
+        <p><a href='https://gitlab.com/32th/th15ssg' target='_blank'><?php
+			echo _('LoLK Chapter Practice SSG by 32th System')
+		?></a></p>
+        <p><a href='https://drive.google.com/open?id=1YqL8QSrnvDepMnkKUNPIBJVaJ2XWwZhP' target='_blank'><?php
+			echo _('HSiFS SSG (cheats, English translated)')
+		?></a></p>
+        <p><a href='https://drive.google.com/open?id=1R8YcGWBE1c4jLy2RGfjuqtrpZzR26XA-' target='_blank'><?php
+			echo _('Alternative HSiFS SSG (English translated)')
+		?></a></p>
+    </div>
+    <!-- General Practice Tools -->
+    <h3 id='practools'><?php echo _('General Practice Tools') ?></h3>
+    <p><?php
+		echo _('Patches intended for efficient practice in one or more games, ' .
+		'allowing the player to skip to patterns or changing power and such.');
+	?></p>
+	<p><strong><?php echo _('Practice Tools by ') ?><a href='https://twitter.com/Ririanly'>Riri</a></strong></p>
+    <p><?php
+		echo _('Tools that allow you to skip to specific patterns in SA, UFO and LoLK, also allowing for other ' .
+		'settings like your current power. The UFO and LoLK tools are external programs, while the SA tool ' .
+		'is a modification of the program. The LoLK one was made for v1.00a but mostly functions properly ' .
+		'on v1.00b as well.');
+	?></p>
+    <div>
+        <p><a href='https://drive.google.com/file/d/0BwqJeqvy1nDpRGRBUy1nX0dNWVU/view' target='_blank'>SA</a> |
+        <a href='https://drive.google.com/file/d/0BwqJeqvy1nDpQ1FQaUc5dDlpUEk/view' target='_blank'>UFO</a> |
+        <a href='http://www.mediafire.com/download/88ncjlua3hjrma2/th15_assist_2.2.rar' target='_blank'>LoLK</a></p>
+    </div>
+	<p><strong><?php echo _('WBaWC Practice by ') ?><a href='https://twitter.com/Priweejt'>Priw8</a></strong></p>
+	<p><?php
+		echo _('Allows skipping to any part of the game, similar to Riri\'s practice tools, using an in-game menu.');
+	?></p>
+	<p><a href='https://priw8.github.io/#s=patches/prac' target='_blank'><?php echo _('Download') ?></a></p>
+    <p><strong><?php echo _('GFW "Brown Label" Practice by ') ?><a href='https://twitter.com/eerokurkisuo'>MegaPulse</a></strong></p>
+    <p><?php
+		echo _('Modified <span class="code">.dat</span> files that allow you to practice specific stages of ' .
+		'any route in the game. Select A in-game for full stage practice, B for midboss and boss and C ' .
+		'for boss only. Refer to the readme file for further information.');
+	?></p>
+    <p><a href='https://mega.nz/#!8LgRVLxa!TQpU7xqurMF9JgWloQAHORx6XhswuK_NaaCk1gStWfs' target='_blank'><?php echo _('Download') ?></a></p>
+    <!-- Boss Rush Patches -->
+    <h3 id='bossrush'><?php echo _('Boss Rush Patches') ?></h3>
+    <p><?php
+		echo _('Modifications to the main <span class="code">.dat</span> files of the games that skip ' .
+		'stage portions, allowing you to efficiently practice boss battles. The skipping applies to ' .
+		'both full runs and practice runs.');
+	?></p>
+    <p><strong><?php echo _('Boss Rush Patches by ') ?><a href='https://twitter.com/ReformedSmol' target='_blank'>Martin</a></strong></p>
+    <p><?php
+		echo _('All midbosses and bosses are included, everything else being kept the same. ' .
+		'There are also \'boss-only\' versions that do skip the midbosses.');
+	?></p>
+    <div>
+		<p><a href='https://maribelhearn.com/mirror/Full%20Boss%20Rush.zip' target='_blank'><?php echo _('Full Pack') ?></a></p>
+        <p><a href='https://mega.nz/#F!rswTmICb!lnVEolHezNbe4pZPopSqwA' target='_blank'>MoF</a> |
+        <a href='https://mega.nz/#F!a4BCTACS!Z3gA684Me36gZK_i4y_5Dg' target='_blank'>SA</a> |
+        <a href='https://mega.nz/folder/W1AGhJaA#8Hz_laGbtFnNG0-ldTUVZg' target='_blank'>UFO</a> |
+        <a href='https://mega.nz/#F!TlwUwBTb!hT-vr7hhft3dwt3slrhCEQ' target='_blank'>GFW</a> |
+        <a href='https://mega.nz/#F!axJSDILb!FPNSYOddqDosZ1I1Y-9UBQ' target='_blank'>TD</a> |
+        <a href='https://mega.nz/#F!K1AByK5I!7NrTie_DHQBrH5OKnIXfEg' target='_blank'>DDC</a> |
+        <a href='https://mega.nz/#F!npwSGaJC!pNfJemXgehNGbif2L-d6zQ' target='_blank'>LoLK</a> |
+        <a href='https://maribelhearn.com/mirror/HSiFS%20Boss%20Rush%20v1.0.zip' target='_blank'>HSiFS</a></p>
+		<!--
+		Old link boss-rush: https://mega.nz/#!60JyGaTB!HOQPcI7Pq6MiEMKqI-Ucv49CxoqJ8Sc1d3u5s4wNS94
+		Old link boss-only: https://mega.nz/#!Ogh3hD5B!PT6aGiyqhGAS1r4Y0IfjLTP3hDtRKa1qGi3zi6XjaOA
+		Old link full pack: https://mega.nz/#F!i0I0BIaI!A3wHnQYX2xFUTKS1po1GDw
+		-->
+    </div>
+    <p><strong><?php echo _('Boss Rush Patches by ') ?><a href='https://twitter.com/drakeirving' target='_blank'>Drake</a></strong></p>
+    <p><?php
+		echo _('Patches for SA and UFO that not only remove stage portions, but also bombs. ' .
+		'The SA one includes turning Stage 4 into \'Satori Rush\', where you fight every single one ' .
+		'of her Spell Cards. Note that the safe areas on Border of Wave and Particle and Utsuho\'s ' .
+		'3rd spell are removed in this patch.');
+	?></p>
+    <div>
+        <p><a href='https://mega.nz/#!85MACTBK!wBZpEyv5rWp7_qwHTQCqa7F_4hFNF5JOpjh4JS5iSGY' target='_blank'>SA</a> |
+        <a href='https://mega.nz/#!lskyiIzZ!yJB6HLwRQnXs4wO9BmHNxkVtrKrdoKhM-GmMEBRy0ro' target='_blank'>UFO</a></p>
+    </div>
+    <p><strong><?php echo _('EoSD Boss Rush by ')?><a href='https://twitter.com/mdude33' target='_blank'>Dass</a></strong></p>
+    <p><?php echo _('Another boss rush patch for EoSD, also including \'Patchouli Rush\'.') ?></p>
+    <p><a href='https://mega.nz/#!r88gwA7C!I2xVHGBbyh9KVVn3h_aiKDfPhl8fC9ajZscqzES7UFY' target='_blank'><?php echo _('Download') ?></a></p>
+    <p><strong><?php echo _('PCB Boss Rush by rsy_type1 and ') ?><a href='https://twitter.com/chirpeh13' target='_blank'>Chirpy</a></strong></p>
+    <p><?php echo _('A boss rush patch for PCB.') ?></p>
+    <p><a href='http://www.mediafire.com/download/vd08pz9ogjbhq8g/th07b.rar' target='_blank'><?php echo _('Download') ?></a></p>
+	<p><strong><?php echo _('WBaWC Boss Rush by ') ?>Plus</strong></p>
+    <p><?php echo _('A boss rush patch for WBaWC.') ?></p>
+	<p><a class='dead' href='https://mega.nz/#!e3wwQADS!8I4Rcr9wF-B-hV3b9wbEjGOOI9zbbz8mKj8oY86tWhY' target='_blank'><?php echo _('Download') ?></a></p>
+    <!-- Specific Pattern Practice -->
+    <h3 id='specific'><?php echo _('Specific Pattern Practice') ?></h3>
+    <p><?php
+		echo _('Patches intended for practicing one or a few specific patterns in a game. ' .
+		'Usually <span class="code">.dat</span> modifications.');
+	?></p>
+    <p><strong><?php echo _('Books Practice for EoSD by ') ?><a href='https://www.twitch.tv/akaldar' target='_blank'>Akaldar</a></strong></p>
+    <p><?php echo _('Repeats the Stage 4 Books section for easy practicing.') ?></p>
+    <p><a href='https://mega.nz/#!sIhRFD7b!EKKnhhxKX2NQQg0jGaT1t3eAS7x5pcISSKr0abINvgM' target='_blank'><?php echo _('Download') ?></a></p>
+    <p><strong><?php echo _('VoWG + PWG Practice for MoF by ') ?><a href='https://twitter.com/chirpeh13' target='_blank'>Chirpy</a></strong></p>
+    <p><?php
+		echo _('Makes Kanako skip to Virtue of Wind God (her final spell) and makes Aya skip to ' .
+		'Peerless Wind God (her timeout spell), which will also repeat itself indefinitely.');
+	?></p>
+    <p><a href='https://maribelhearn.com/mirror/th10vowg_pwg.dat' target='_blank'><?php echo _('Download') ?></a></p>
+	<!-- Dead link: https://www.dropbox.com/s/2u2fam39uya0zil/th10vowg%2Bpwg.dat?dl=0 -->
+    <p><strong><?php echo _('IN Nonspell Practice') ?></strong></p>
+    <p><?php echo _('Patch that lets you practice nonspells in IN.') ?></p>
+    <p><a href='https://mega.nz/#!y9IwiD4A!aI-tS2lNbDWeu-FnA41lc76xtnkUjHNdYwyg4dyBkrs' target='_blank'><?php echo _('Download') ?></a></p>
+    <p><strong><?php echo _('Timeout Phase Collection by ') ?><a href='https://twitter.com/ReformedSmol' target='_blank'>Martin</a></strong></p>
+    <p><?php
+		echo _('Patches for practicing the timeout phases of the final spells on Lunatic and Extra from MoF to ' .
+		'HSiFS, plus Devil\'s Recitation, but not including GFW Stage 3 final spells.');
+	?></p>
+    <div>
+        <p><a href='https://mega.nz/#F!yhwiWaTD!4AE7YYzsfixx1yXIGFcbdg' target='_blank'><?php
+			echo _('MoF to LoLK');
+		?></a></p>
+        <p><a href='https://mega.nz/#!a4x2VIxa!zwwwT0PXDjKgjt8wfhp6n3mbrOH9N7OsNZ8MkgH7v_c' target='_blank'><?php
+			echo _('HSiFS season finals and Extra final');
+		?></a></p>
+    </div>
+	<p><strong><?php echo _('Star Sapphire First Non Practice by ') ?><a href='https://twitter.com/eerokurkisuo' target='_blank'>MegaPulse</a></strong></p>
+	<p><?php echo _('Gives Star\'s first non from Route A1 Stage 2 infinite health. This will produce an infinite amount of rings, since the nonspell adds more rings every wave. The stage background from Route A2 is used.') ?></p>
+	<p><a href='https://mega.nz/file/0DAVjJjT#Gb279_wmj8ZOkkrVdcgTLQkH6151slKEIsbVWKaDuDY' target='_blank'><?php echo _('Download') ?></a></p>
 	<hr>
     <footer><strong><a href='#top'><?php echo _('Back to Top') ?></a></strong></p>
 </div>
