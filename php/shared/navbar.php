@@ -34,8 +34,8 @@ function touhou_sites() {
 function own_sites() {
     return '<p><a href="https://www.youtube.com/c/MaribelHearn">' .
     '<span class="icon youtube_icon"></span>YouTube</a></p>' .
-    '<p><a href="https://twitter.com/MaribelHearn42">' .
-    '<span class="icon twitter_icon"></span>Twitter</a></p>' .
+    '<p><a href="https://bsky.app/profile/maribelhearn42.bsky.social">' .
+    '<span class="icon bluesky_icon"></span>Bluesky</a></p>' .
     '<p><a href="https://www.twitch.tv/maribel_hearn">' .
     '<span class="icon twitch_icon"></span>Twitch</a></p>' .
     '<p><a href="https://steamcommunity.com/id/maribelhearn42">' .

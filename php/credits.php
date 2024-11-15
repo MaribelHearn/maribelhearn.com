@@ -46,7 +46,7 @@
     <h2><?php echo _('Character Artists') ?></h2>
     <ul class='credits'>
         <li><a href='https://www.pixiv.net/member.php?id=4920496' target='_blank'>Dairi</a>: Tiers, Slots</li>
-        <li><a href='https://twitter.com/korindo' target='_blank'>ZUN</a>: PoFV, Tiers</li>
+        <li><a href='https://bsky.app/profile/shanghai-alice.com' target='_blank'>ZUN</a>: PoFV, Tiers</li>
     </ul>
     <h2><?php echo _('Background Artists') ?></h2>
     <ul class='credits'>
