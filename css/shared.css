@@ -198,11 +198,6 @@ img {
     color: black;
     text-decoration: none;
 }
-@media only screen and (max-width: 1100px) and (max-height: 1100px) {
-    #wrap {
-        font-size: 11px;
-    }
-}
 @media only screen and (max-width: 800px) {
     h1 {
         font-size: 36px;
@@ -252,18 +247,18 @@ img {
         margin-right: 20%;
     }
 }
-@media only screen and (min-width: 1100px) and (max-width: 1400px) {
+@media only screen and (min-width: 1100px) and (max-width: 1400px) and (max-height: 2440px) {
     .wrap {
         margin-left: 15%;
         margin-right: 15%;
     }
 }
-@media only screen and (max-width: 1100px) {
-    #wrap {
+@media only screen and (max-width: 1100px) and (max-height: 1100px) {
+    .wrap {
         font-size: 12px;
     }
 }
-@media only screen and (min-width: 800px) and (max-width: 1100px) {
+@media only screen and (min-width: 800px) and (max-width: 1100px) and (max-height: 1680px) {
     .wrap {
         margin-left: 10%;
         margin-right: 10%;
