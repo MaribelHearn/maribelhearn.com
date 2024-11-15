@@ -70,10 +70,14 @@ function other_pages() {
     '<p><a href="/touhoumon"><span class="icon touhoumon_icon"></span>Touhoumon</a></p>';
 }
 
-function personal_pages() {
-    return '<p><a href="/about"><span class="icon"></span>About</a></p>' .
+function personal_pages(bool $is_mobile, string $token_path) {
+    $personal_pages = '<p><a href="/about"><span class="icon"></span>About</a></p>' .
     '<p><a href="/history"><span class="icon history_icon"></span>History</a></p>' .
     '<p><a href="/c67"><span class="icon c67_icon"></span>C67</a></p>';
+    if ($is_mobile && show_admin($token_path)) {
+        $personal_pages = '<p><a href="/admin"><span class="icon"></span>Admin</a></p>' . $personal_pages;
+    }
+    return $personal_pages;
 }
 
 function show_admin(string $token_path) {
@@ -150,7 +154,7 @@ function navbar(string $page) {
             $navbar .= '<div class="dropdown">';
                 $navbar .= '<a href="#" class="dropdown_button">Personal&#x25BF;</a>';
                 $navbar .= '<div class="dropdown_content' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
-                    $navbar .= personal_pages();
+                    $navbar .= personal_pages($is_mobile, $token_path);
                 $navbar .= '</div>';
             $navbar .= '</div>';
         $navbar .= '</div>';
@@ -172,7 +176,7 @@ function navbar(string $page) {
                 $navbar .= '<div class="dropdown">';
                     $navbar .= '<a href="#" class="dropdown_button">&#x25C3; Personal</a>';
                     $navbar .= '<div class="dropdown_content' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
-                        $navbar .= personal_pages();
+                        $navbar .= personal_pages($is_mobile, $token_path);
                     $navbar .= '</div>';
                 $navbar .= '</div>';
                 $navbar .= '<div class="dropdown">';
