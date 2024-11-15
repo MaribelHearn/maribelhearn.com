@@ -125,6 +125,34 @@ function display_name(string $game) {
         <p class='error_message center'></p>
     </div>
     <div id='container' class='overflow'>
+        <section>
+            <label for='fillGameDifficulty'><?php echo _('Game / Difficulty') ?></label>
+            <select id='fillGameDifficulty'>
+				<?php
+					foreach ($games as $key => $game) {
+						echo '<option>' . _($game) . '</option>';
+					}
+					foreach ($diffs as $key => $diff) {
+						echo '<option>' . $diff . '</option>';
+					}
+				?>
+            </select>
+            <br>
+            <label for='fillAchievement'><?php echo _('Achievement') ?></label>
+            <select id='fillAchievement'>
+                <option value='N/A'><?php echo _('N/A') ?></option>
+                <option value='Not cleared'><?php echo _('Not cleared') ?></option>
+                <option value='1cc'><?php echo _('1cc') ?></option>
+                <option value='NM'><?php echo _('NM') ?></option>
+                <option value='NM+'><?php echo _('NM+') ?></option>
+                <option value='NB'><?php echo _('NB') ?></option>
+                <option value='NB+'><?php echo _('NB+') ?></option>
+                <option value='NMNB'><?php echo _('NMNB') ?></option>
+                <option value='NMNB+'><?php echo _('NMNB+') ?></option>
+            </select>
+            <br>
+            <input id='fill_all' type='button' value='Fill All'>
+		</section>
         <table id='survival' class='progress_table'>
             <caption id='legend' class='legend_surv'>
     			<span class='legend clear'></span> <?php echo _('1cc') ?>
@@ -184,54 +212,10 @@ function display_name(string $game) {
                 }
             ?></tbody>
     	</table>
-        <section>
-            <label for='fillGameDifficulty'><?php echo _('Game / Difficulty') ?></label>
-            <select id='fillGameDifficulty'>
-				<?php
-					foreach ($games as $key => $game) {
-						echo '<option>' . _($game) . '</option>';
-					}
-					foreach ($diffs as $key => $diff) {
-						echo '<option>' . $diff . '</option>';
-					}
-				?>
-            </select>
-            <br>
-            <label for='fillAchievement'><?php echo _('Achievement') ?></label>
-            <select id='fillAchievement'>
-                <option value='N/A'><?php echo _('N/A') ?></option>
-                <option value='Not cleared'><?php echo _('Not cleared') ?></option>
-                <option value='1cc'><?php echo _('1cc') ?></option>
-                <option value='NM'><?php echo _('NM') ?></option>
-                <option value='NM+'><?php echo _('NM+') ?></option>
-                <option value='NB'><?php echo _('NB') ?></option>
-                <option value='NB+'><?php echo _('NB+') ?></option>
-                <option value='NMNB'><?php echo _('NMNB') ?></option>
-                <option value='NMNB+'><?php echo _('NMNB+') ?></option>
-            </select>
-            <br>
-            <input id='fill_all' type='button' value='Fill All'>
-		</section>
         <h2><?php echo _('Touhou 9.5 - Shoot the Bullet') ?></h2>
         <p class='center'><?php echo _('Tick scenes that you have cleared.') ?></p>
         <p class='message center'></p>
         <p class='error_message center'></p>
-        <table id='stb' class='progress_table'>
-            <thead>
-                <tr>
-                    <th><?php echo _('Stage') ?></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th class='scene_th'>9</th>
-                </tr>
-            </thead>
-            <tbody><?php
-                foreach ($stb as $stage => $scenes) {
-                    echo '<tr><th>' . $stage . '</th>';
-                    for ($i = 1; $i <= $scenes; $i++) {
-                        echo '<td class="stb_td scene_td"><input type="checkbox" id="stb' . $stage . '-' . $i . '" class="checkbox_scene"></td>';
-                    }
-                    echo '</tr>';
-                }
-            ?></tbody>
-        </table>
         <section>
             <label for='fill_stb_stage'><?php echo _('Stage') ?></label>
             <select id='fill_stb_stage'><?php
@@ -249,10 +233,46 @@ function display_name(string $game) {
             <br>
             <input id='fill_stb' type='button' value='Fill All' data_id='stb'>
         </section>
+        <table id='stb' class='progress_table'>
+            <thead>
+                <tr>
+                    <th><?php echo _('Stage') ?></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th class='scene_th'>9</th>
+                </tr>
+            </thead>
+            <tbody><?php
+                foreach ($stb as $stage => $scenes) {
+                    echo '<tr><th>' . $stage . '</th>';
+                    for ($i = 1; $i <= $scenes; $i++) {
+                        echo '<td class="stb_td scene_td"><input type="checkbox" id="stb' . $stage . '-' . $i . '" class="checkbox_scene"></td>';
+                    }
+                    echo '</tr>';
+                }
+            ?></tbody>
+        </table>
         <h2><?php echo _('Touhou 12.5 - Double Spoiler') ?></h2>
         <p class='center'><?php echo _('You can specify whether you have cleared a scene with Aya or Hatate.') ?></p>
         <p class='message center'></p>
         <p class='error_message center'></p>
+        <section>
+            <label for='fill_ds_stage'><?php echo _('Stage') ?></label>
+            <select id='fill_ds_stage'><?php
+                for ($i = 1; $i <= 12; $i++) {
+                    echo '<option>' . _('Stage ' . $i) . '</option>';
+                }
+                echo '<option>Stage EX</option>';
+                echo '<option>Stage SP</option>';
+            ?></select>
+            <br>
+            <label for='fill_ds_progress'><?php echo _('Achievement') ?></label>
+            <select id='fill_ds_progress'>
+                <option value='Aya'><?php echo _('Aya') ?></option>
+                <option value='Hatate'><?php echo _('Hatate') ?></option>
+                <option value='Both'><?php echo _('Both') ?></option>
+                <option value='Not cleared'><?php echo _('Not cleared') ?></option>
+            </select>
+            <br>
+            <input id='fill_ds' type='button' value='Fill All' data_id='ds'>
+        </section>
         <table id='ds' class='progress_table'>
             <caption id='legendDS' class='legend_surv'>
     			<span class='legend clear'></span> <?php echo _('Aya') ?>
@@ -281,30 +301,27 @@ function display_name(string $game) {
                 }
             ?></tbody>
         </table>
-        <section>
-            <label for='fill_ds_stage'><?php echo _('Stage') ?></label>
-            <select id='fill_ds_stage'><?php
-                for ($i = 1; $i <= 12; $i++) {
-                    echo '<option>' . _('Stage ' . $i) . '</option>';
-                }
-                echo '<option>Stage EX</option>';
-                echo '<option>Stage SP</option>';
-            ?></select>
-            <br>
-            <label for='fill_ds_progress'><?php echo _('Achievement') ?></label>
-            <select id='fill_ds_progress'>
-                <option value='Aya'><?php echo _('Aya') ?></option>
-                <option value='Hatate'><?php echo _('Hatate') ?></option>
-                <option value='Both'><?php echo _('Both') ?></option>
-                <option value='Not cleared'><?php echo _('Not cleared') ?></option>
-            </select>
-            <br>
-            <input id='fill_ds' type='button' value='Fill All' data_id='ds'>
-        </section>
         <h2><?php echo _('Touhou 14.3 - Impossible Spell Card') ?></h2>
         <p class='center'><?php echo _('You can specify No Items clears as well as regular ones.') ?></p>
         <p class='message center'></p>
         <p class='error_message center'></p>
+        <section>
+            <label for='fill_isc_stage'><?php echo _('Stage') ?></label>
+            <select id='fill_isc_stage'><?php
+                for ($i = 1; $i <= 10; $i++) {
+                    echo '<option>' . _('Day ' . $i) . '</option>';
+                }
+            ?></select>
+            <br>
+            <label for='fill_isc_progress'><?php echo _('Achievement') ?></label>
+            <select id='fill_isc_progress'>
+                <option value='Clear'><?php echo _('Clear') ?></option>
+                <option value='No Items'><?php echo _('No Items') ?></option>
+                <option value='Not cleared'><?php echo _('Not cleared') ?></option>
+            </select>
+            <br>
+            <input id='fill_isc' type='button' value='Fill All' data_id='isc'>
+        </section>
         <table id='isc' class='progress_table'>
             <caption id='legendISC' class='legend_surv'>
     			<span class='legend clear'></span> <?php echo _('Clear') ?>
@@ -328,43 +345,10 @@ function display_name(string $game) {
                 }
             ?></tbody>
         </table>
-        <section>
-            <label for='fill_isc_stage'><?php echo _('Stage') ?></label>
-            <select id='fill_isc_stage'><?php
-                for ($i = 1; $i <= 10; $i++) {
-                    echo '<option>' . _('Day ' . $i) . '</option>';
-                }
-            ?></select>
-            <br>
-            <label for='fill_isc_progress'><?php echo _('Achievement') ?></label>
-            <select id='fill_isc_progress'>
-                <option value='Clear'><?php echo _('Clear') ?></option>
-                <option value='No Items'><?php echo _('No Items') ?></option>
-                <option value='Not cleared'><?php echo _('Not cleared') ?></option>
-            </select>
-            <br>
-            <input id='fill_isc' type='button' value='Fill All' data_id='isc'>
-        </section>
         <h2><?php echo _('Touhou 16.5 - Violet Detector') ?></h2>
         <p class='center'><?php echo _('Tick scenes that you have cleared.') ?></p>
         <p class='message center'></p>
         <p class='error_message center'></p>
-        <table id='vd' class='progress_table'>
-            <thead>
-                <tr>
-                    <th><?php echo _('Day') ?></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th class='scene_th'>7</th>
-                </tr>
-            </thead>
-            <tbody><?php
-                foreach ($vd as $stage => $scenes) {
-                    echo '<tr><th>' . $stage . '</th>';
-                    for ($i = 1; $i <= $scenes; $i++) {
-                        echo '<td class="vd_td scene_td"><input type="checkbox" id="vd' . $stage . '-' . $i . '" class="checkbox_scene"></td>';
-                    }
-                    echo '</tr>';
-                }
-            ?></tbody>
-        </table>
         <section>
             <label for='fill_vd_stage'><?php echo _('Stage') ?></label>
             <select id='fill_vd_stage'><?php
@@ -381,6 +365,22 @@ function display_name(string $game) {
             <br>
             <input id='fill_vd' type='button' value='Fill All' data_id='vd'>
         </section>
+        <table id='vd' class='progress_table'>
+            <thead>
+                <tr>
+                    <th><?php echo _('Day') ?></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th class='scene_th'>7</th>
+                </tr>
+            </thead>
+            <tbody><?php
+                foreach ($vd as $stage => $scenes) {
+                    echo '<tr><th>' . $stage . '</th>';
+                    for ($i = 1; $i <= $scenes; $i++) {
+                        echo '<td class="vd_td scene_td"><input type="checkbox" id="vd' . $stage . '-' . $i . '" class="checkbox_scene"></td>';
+                    }
+                    echo '</tr>';
+                }
+            ?></tbody>
+        </table>
     </div>
     <div id='bottom' data-html2canvas-ignore>
         <h2 id='acronyms'><?php echo _('Acronyms') ?></h2>
