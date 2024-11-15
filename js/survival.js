@@ -415,6 +415,17 @@ function prepareRendering() {
     applyColours();
 
     for (const game of games) {
+        const route = (game.includes("LoLK") ? "Legacy" : (game.includes("IN") ? "FinalA" : (game.includes("HRtP") ? "Makai" : "")));
+
+        if (Math.round(na[game.replace(route, "")]) == 100) {
+            const element = document.getElementById(game + "tr");
+
+            if (element) {
+                element.parentNode.removeChild(element);
+                continue;
+            }
+        }
+
         if (game.includes("HRtP")) {
             continue;
         }
