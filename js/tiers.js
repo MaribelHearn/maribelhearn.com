@@ -1471,7 +1471,6 @@ function takeScreenshot() {
         printMessage("<strong class='confirmation'>Girls are being screenshotted, please watch warmly...</strong>");
         const tierListTable = document.getElementById("tier_list_tbody");
         let width = longestTier() * (isMobile() ? 60 : 120) + parseInt(settings.props[settings.sort].tierHeaderWidth) + 50;
-        console.log(width, MAX_WIDTH);
 
         if (width > MAX_WIDTH) {
             document.getElementById("tier_list_table").style.tableLayout = "fixed";

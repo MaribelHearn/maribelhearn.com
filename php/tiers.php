@@ -271,11 +271,12 @@
         <h3>Navigation</h3>
         <p><a href='/'><span class='icon index_icon'></span> Index</a></p>
         <?php
+            global $is_mobile;
             echo game_pages();
             $other_pages = other_pages();
             $other_pages = str_replace('<a href="/tiers">', '<strong>', $other_pages);
             echo str_replace('Tiers</a>', 'Tiers</strong>', $other_pages);
-            echo personal_pages();
+            echo personal_pages($is_mobile, '.stats/token');
         ?>
     </div>
     <div id='add_menu_mobile' class='modal_inner'>
