@@ -22,6 +22,7 @@ const screenshotOptionsMobile = {
 };
 let unsavedChanges = false;
 let originalContent, completions, na;
+let pointdeviceNA = 0;
 
 for (const game of games) {
     vals[game] = {
@@ -269,6 +270,14 @@ function runQuerySelectors() {
     toRemove = document.getElementById("LoLKPointdevicetr");
     toRemove.parentNode.removeChild(toRemove);
 
+    if (pointdeviceNA == 4) {
+        toRemove = document.querySelectorAll("#LoLKLegacytr .hidden");
+
+        for (const element of toRemove) {
+            element.parentNode.removeChild(element);
+        }
+    }
+
     for (const element of overview) {
         element.setAttribute("rowspan", 1);
     }
@@ -304,7 +313,7 @@ function applyColours() {
                 element.parentNode.parentNode.classList.add("overview");
             } else if (id == "PCBExtra" || id == "PCBPhantasm") {
                 element.parentNode.parentNode.classList.add("overview_half");
-            } else if (id.includes("HRtP") || id.includes("IN") || id.includes("LoLK") && !id.includes("Extra")) {
+            } else if (id.includes("HRtP") || id.includes("IN") || id.includes("LoLK") && !id.includes("Extra") && pointdeviceNA < 4) {
                 element.parentNode.parentNode.classList.add("overview_half");
             } else {
                 element.parentNode.parentNode.classList.add("overview");
@@ -342,7 +351,7 @@ function applyColours() {
                 finalBelement.innerHTML = (needsText(value) ? value : "");
             }
 
-            if (id.includes("LoLKLegacy") && !id.includes("Extra")) {
+            if (id.includes("LoLKLegacy") && !id.includes("Extra") && pointdeviceNA < 4) {
                 const legacyElement = document.getElementById(id.replace("LoLKLegacy", "L"));
                 const value = vals["LoLKPointdevice"][diff];
 
@@ -392,8 +401,16 @@ function prepareRendering() {
     document.getElementById("container").style.backgroundColor = "white";
     document.getElementById("INFinalAExtra").parentNode.parentNode.setAttribute("rowspan", 1);
     document.getElementById("INFinalAExtra").parentNode.parentNode.setAttribute("colspan", 2);
-    document.getElementById("LoLKLegacyExtra").parentNode.parentNode.setAttribute("rowspan", 1);
     document.getElementById("LoLKLegacyExtra").parentNode.parentNode.setAttribute("colspan", 2);
+
+    if (pointdeviceNA == 4) {
+        document.getElementById("LoLKLegacyEasy").parentNode.parentNode.setAttribute("colspan", 2);
+        document.getElementById("LoLKLegacyNormal").parentNode.parentNode.setAttribute("colspan", 2);
+        document.getElementById("LoLKLegacyHard").parentNode.parentNode.setAttribute("colspan", 2);
+        document.getElementById("LoLKLegacyLunatic").parentNode.parentNode.setAttribute("colspan", 2);
+        document.getElementById("LoLKLegacyExtra").parentNode.parentNode.removeAttribute("rowspan");
+    }
+
     runQuerySelectors();
     applyColours();
 
@@ -889,6 +906,8 @@ function getPercentage(game) {
 }
 
 function countAchievements(numbers) {
+    pointdeviceNA = 0;
+
     for (const game in vals) {
         for (let diff in vals[game]) {
             let gameTmp = (game.includes("LoLK") ? "LoLK" : (game.includes("IN") ? "IN" : (game.includes("HRtP") ? "HRtP" : game)));
@@ -897,6 +916,9 @@ function countAchievements(numbers) {
     
             if (value == "N/A") {
                 na[gameTmp] += getPercentage(game);
+                if (game == "LoLKPointdevice") {
+                    pointdeviceNA += 1;
+                }
             } else if (value == "Not cleared") {
                 numbers[diff]["Not cleared"] += 1;
                 numbers["Total"]["Not cleared"] += 1;
@@ -922,6 +944,10 @@ function countAchievements(numbers) {
                 }
             }
         }
+    }
+
+    if (pointdeviceNA == 4 && parseInt(completions["LoLK"]) == 55) {
+        completions["LoLK"] = 100;
     }
 
     return numbers;
