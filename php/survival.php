@@ -183,7 +183,7 @@ function display_name(string $game) {
 
                             continue;
                         }
-                        echo (($game == 'INFinalA' || $game == 'LoLKLegacy') && $diff == 'Extra' ? '<td rowspan="2">' : '<td>');
+                        echo (($game == 'INFinalA') && $diff == 'Extra' ? '<td rowspan="2">' : '<td>');
                         echo '<div class="dropdown-check-list" tabindex="100"><span id="' . $game . $diff . 'a" class="anchor">Select</span><ul id="' . $game . $diff . '" class="category">';
                         foreach ($achievs as $key => $achiev) {
                             echo '<li><input type="checkbox" value="' . $achiev . '" id="' . $game . $diff . $key . '"><label for="' . $game . $diff . $key . '">' . _($achiev) . '</label></li>';

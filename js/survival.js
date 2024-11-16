@@ -408,7 +408,6 @@ function prepareRendering() {
         document.getElementById("LoLKLegacyNormal").parentNode.parentNode.setAttribute("colspan", 2);
         document.getElementById("LoLKLegacyHard").parentNode.parentNode.setAttribute("colspan", 2);
         document.getElementById("LoLKLegacyLunatic").parentNode.parentNode.setAttribute("colspan", 2);
-        document.getElementById("LoLKLegacyExtra").parentNode.parentNode.removeAttribute("rowspan");
     }
 
     runQuerySelectors();
