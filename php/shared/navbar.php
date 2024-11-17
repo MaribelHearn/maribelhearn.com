@@ -53,7 +53,6 @@ function game_pages() {
     '<p><a href="/tools"><span class="icon tools_icon"></span>Tools</a></p>' .
     '<p><a href="/wr"><span class="icon wr_icon"></span>WR</a></p>' .
     '<p><a href="/lnn"><span class="icon lnn_icon"></span>LNN</a></p>' .
-    '<p><a href="/jargon"><span class="icon jargon_icon"></span>Jargon</a></p>' .
     '<p><a href="/trs"><span class="icon trs_icon"></span>TRS</a></p>' .
     '<p><a href="/gensokyo"><span class="icon gensokyo_icon"></span>Gensokyo</a></p>' .
     '<p><a href="/pofv"><span class="icon pofv_icon"></span>PoFV</a></p>' .

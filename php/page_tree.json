@@ -44,11 +44,6 @@
         "keywords": "touhou, touhou project, 東方, 东方, wrs, world records, lnns, lunatic, popularity poll, tiers, tier list, sorter, creator, tools, practice, vpatch, spoileral, thprac, thcrap, drc, dodging rain competition",
         "favicon": "favicon.ico"
     },
-    "jargon": {
-        "title": "Touhou Community Jargon",
-        "description": "Explanations of Touhou gameplay community jargon, such as achievements and Spell Card acronyms.",
-        "keywords": "touhou, touhou project, community, jargon, terms, terminology, acronyms, abbreviations"
-    },
     "lnn": {
         "title": "Touhou Lunatic No Miss No Bombs",
         "description": "List of Touhou Lunatic no miss no bomb (LNN) runs, clears that never die or bomb.",

@@ -50,11 +50,6 @@
                     runs of the Touhou shooting games are listed here.</span>
                 </li>
                 <li class='link'>
-                    <a href='/jargon'><span class='icon jargon_icon'></span> Touhou Community Jargon</a>
-                    <span class='icon flag_china'></span>
-                    <span class='tooltip'>List of terminology used by the Touhou community, including but not limited to common acronyms for Spell Cards.</span>
-                </li>
-                <li class='link'>
                     <a href='/trs'><span class='icon trs_icon'></span> Touhou Replay Showcase</a>
                     <span class='tooltip'>Read about the weekly Touhou Replay Showcase Twitch streams.</span>
                 </li>

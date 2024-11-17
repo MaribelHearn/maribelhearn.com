@@ -35,12 +35,19 @@ function subpage_name(string $subpage) {
         case 'gfx': return 'Graphics';
         case 'res': return 'Resources';
         case 'extras': return 'Extra Statistics';
+        case 'jargon': return 'Touhou Community Jargon';
         default: return ucfirst($subpage);
     }
 }
 
 function redirect(string $page, string $page_path, string $error) {
-    $aliases = (object) array('rf' => 'royalflare', 'surv' => 'survival', 'score' => 'scoring', 'poll' => 'thvote');
+    $aliases = (object) array(
+        'jargon' => 'faq/jargon',
+        'rf' => 'royalflare',
+        'surv' => 'survival',
+        'score' => 'scoring',
+        'poll' => 'thvote'
+    );
     $page_path = preg_split('/\?/', $page_path)[0];
     if (property_exists($aliases, $page)) {
         $location = is_localhost($_SERVER['REMOTE_ADDR']) ? 'http://localhost/' : 'https://maribelhearn.com/';

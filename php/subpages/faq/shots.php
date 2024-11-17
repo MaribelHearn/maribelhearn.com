@@ -33,8 +33,8 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
     </tr>
     <tr>
         <th>ReimuB<br>(Needle)</th>
-        <td>Forward focus shot with a <a href='/jargon#term_shotgunning'>shotgun</a>.</td>
-        <td>High shot damage, especially when <a href='/jargon#term_shotgunning'>up close</a>.</td>
+        <td>Forward focus shot with a <a href='/faq/jargon#term_shotgunning'>shotgun</a>.</td>
+        <td>High shot damage, especially when <a href='/faq/jargon#term_shotgunning'>up close</a>.</td>
         <td>Weak bomb with short invincibility.</td>
     </tr>
     <tr>
@@ -66,8 +66,8 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
     </tr>
     <tr>
         <th>ReimuB<br>(Needle)</th>
-        <td>Forward focus shot with a <a href='/jargon#term_shotgunning'>shotgun</a>.</td>
-        <td>High shot damage, especially when <a href='/jargon#term_shotgunning'>up close</a>. Strong bombs when placed on top of enemies.</td>
+        <td>Forward focus shot with a <a href='/faq/jargon#term_shotgunning'>shotgun</a>.</td>
+        <td>High shot damage, especially when <a href='/faq/jargon#term_shotgunning'>up close</a>. Strong bombs when placed on top of enemies.</td>
         <td>Unfocused bombs do little damage and focused bombs can do 0 damage if placed far from enemies. Very slow movement speed, which makes collecting items harder.</td>
     </tr>
     <tr>
@@ -114,7 +114,7 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
     <tr>
         <th>Magic Team<br>(Marisa &amp; Alice)</th>
         <td><strong>Unfocus:</strong><br>Forward focus shot.<br><strong>Focus:</strong><br>Forward focus shot with piercing.</td>
-        <td>Can <a href='/jargon#term_poc'>PoC</a> at any power level.</td>
+        <td>Can <a href='/faq/jargon#term_poc'>PoC</a> at any power level.</td>
         <td>High shot damage for both unfocus and focus. Has the infamous "Malice Cannon" trick, where mashing shift deals crazy high damage.</td>
         <td>Weak bomb with short invincibility. Alice has almost no horizontal range and Marisa also has limited horizontal range.</td>
     </tr>
@@ -156,7 +156,7 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
     <tr>
         <th>ReimuC<br>(Spread)</th>
         <td>Spreadshot.</td>
-        <td>Easier stages. High shot damage when <a href='/jargon#term_shotgunning'>up close</a>.</td>
+        <td>Easier stages. High shot damage when <a href='/faq/jargon#term_shotgunning'>up close</a>.</td>
         <td>Very low shot damage from far away. Her damage up close is situational and rarely usable.</td>
     </tr>
     <tr>
@@ -214,7 +214,7 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
         <th>MarisaA<br>(Alice)</th>
         <td>Forward focus shot unfocused, spreadshot focused.</td>
         <td>Can hold up to 8 bombs and gets bombs faster.</td>
-        <td>High shot damage. Good spread. Has more bombs. Bombs are strong when <a href='/jargon#term_shotgunning'>up close</a>.</td>
+        <td>High shot damage. Good spread. Has more bombs. Bombs are strong when <a href='/faq/jargon#term_shotgunning'>up close</a>.</td>
         <td>Bomb needs to be used up close for good damage, loses more power after dying compared to other shots.</td>
     </tr>
     <tr>
@@ -262,7 +262,7 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
     <tr>
         <th>MarisaB<br>(Wave)</th>
         <td>Omnidirectional shot.</td>
-        <td>Decent <a href='/jargon#term_shotgunning'>shotgun</a> when focused and all waves hit. Excellent bomb for UFO collection, good screen clear.</td>
+        <td>Decent <a href='/faq/jargon#term_shotgunning'>shotgun</a> when focused and all waves hit. Excellent bomb for UFO collection, good screen clear.</td>
         <td>Worst bomb for survival: horrible damage and short invincibility. Low shot damage from a distance, suffers especially lategame. Back shot barely has additional value.</td>
     </tr>
     <tr>
@@ -275,7 +275,7 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
         <th>SanaeB<br>(Frog)</th>
         <td>Spreadshot with forward focus.</td>
         <td>Spread and splash damage are excellent in most stages. Strongest bomb in the game for both UFO collection and bosses.
-        Her <a href='/jargon#term_shotgunning'>shotgun</a> gives her the highest shot damage in the game.</td>
+        Her <a href='/faq/jargon#term_shotgunning'>shotgun</a> gives her the highest shot damage in the game.</td>
         <td>Power loss affects her more than anyone else: focused shot at 3 power and less is underwhelming compared to 4 power.</td>
     </tr>
 </table>
@@ -296,13 +296,13 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
     <tr>
         <th>Marisa<br>(Missile/Laser)</th>
         <td><strong>Unfocus:</strong><br>Slight spreadshot.<br><strong>Focus:</strong><br>Forward focus shot.</td>
-        <td>Decent shot damage. High shot damage when <a href='/jargon#term_shotgunning'>up close</a>. Very strong bomb and trance.</td>
+        <td>Decent shot damage. High shot damage when <a href='/faq/jargon#term_shotgunning'>up close</a>. Very strong bomb and trance.</td>
         <td>Lack of homing or range can make some attacks harder. Shotgun is not always usable.</td>
     </tr>
     <tr>
         <th>Sanae<br>(Helix/Spread)</th>
         <td><strong>Unfocus:</strong><br>Spreadshot.<br><strong>Focus:</strong><br>Helix pattern forward focus shot.</td>
-        <td>Spreadshot helps with some stage sections. Decent <a href='/jargon#term_shotgunning'>shotgun</a>. Gains more gauge from blue spirits.</td>
+        <td>Spreadshot helps with some stage sections. Decent <a href='/faq/jargon#term_shotgunning'>shotgun</a>. Gains more gauge from blue spirits.</td>
         <td>Weak trance. Low shot damage, also nullifying most of the gain from blue spirits. Focused shot can completely miss bosses.</td>
     </tr>
     <tr>
@@ -334,7 +334,7 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
     </tr>
     <tr>
         <th>MarisaA<br>(Flamethrower)</th>
-        <td><strong>Unfocus:</strong><br>Slight spreadshot.<br><strong>Focus:</strong><br><a href='/jargon#term_shotgunning'>Shotgun</a> shot.</td>
+        <td><strong>Unfocus:</strong><br>Slight spreadshot.<br><strong>Focus:</strong><br><a href='/faq/jargon#term_shotgunning'>Shotgun</a> shot.</td>
         <td>Very high shot damage when used up close. Very strong bomb.</td>
         <td>Focused shot has low damage if not in close range. Harder stages.</td>
     </tr>
@@ -409,7 +409,7 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
     <tr>
         <th>Cirno</th>
         <td>Spreadshot.</td>
-        <td>Strong bomb with free movement for easy season item collection. Has a <a href='/jargon#term_shotgunning'>shotgun</a>.</td>
+        <td>Strong bomb with free movement for easy season item collection. Has a <a href='/faq/jargon#term_shotgunning'>shotgun</a>.</td>
         <td>Low shot damage. Shotgun is finicky and not usable often.</td>
     </tr>
     <tr>
@@ -510,7 +510,7 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
     <tr>
         <th>YoumuEagle</th>
         <td><strong>Unfocus:</strong><br>Tracing shot, options follow your movement (powered up).<br><strong>Focus:</strong><br>Charged melee "sword slashing" shot (<em>bugged</em>, very weak).</td>
-        <td>Longer eagle hypers. Strong unfocused <a href='/jargon#term_shotgunning'>shotgun</a>.</td>
+        <td>Longer eagle hypers. Strong unfocused <a href='/faq/jargon#term_shotgunning'>shotgun</a>.</td>
         <td>Slashes are extremely weak due to a bug. Relies on unfocusing. Very hard to use.</td>
     </tr>
 </table>

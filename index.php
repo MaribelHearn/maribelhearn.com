@@ -56,7 +56,7 @@
 
     // Background position
     function background_position($page) {
-        $top = array('c67', 'drc', 'history', 'jargon', 'survival', 'slots', 'tools');
+        $top = array('c67', 'drc', 'history', 'survival', 'slots', 'tools');
         $bottom = array('fangame', 'lnn', 'scoring', 'wr');
         if (in_array($page, $top)) {
             return 'top';
@@ -123,7 +123,6 @@
         <?php if (!in_array($page, $use_index)) { echo '<link rel="icon" type="image/' . ($favicon_ext == '.ico' ? 'x-icon' : 'png') . '" href="' . $favicon_dir . '/' . $page . $favicon_ext . '">'; } ?>
         <link rel='manifest' href='/site.webmanifest'>
         <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5'>
-        <link rel='me' href='https://mastodon.social/@maribelhearn'>
         <script src='<?php echo $js_href ?>' defer></script>
     </head>
 

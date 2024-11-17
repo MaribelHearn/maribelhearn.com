@@ -72,9 +72,10 @@ delete it and try again. Otherwise, try any of the following:</p>
 <p>If your game is wide, small, pixelated or otherwise not shown correctly on your screen, check out the page linked above.</p>
 <hr>
 <h2 id='gameplay'>Gameplay questions</h2>
-<h4 id='clear'>What is a '1cc'?</h4>
+<h4 id='clear'>What is a '1cc'? What does 'LNB' mean?</h4>
+<p><em>See the <a href='/faq/jargon'>Touhou Community Jargon</a> page.</em></p>
 <p>1cc stands for <strong>1 credit clear</strong> and is also regularly called "clear", verb "clearing". This means beating the game without using any continues.
-You do <em>not</em> need to see the Good Ending for a run to count as a 1cc. For more explanations of gameplay community terminology, see the <a href='/jargon'>Touhou Community Jargon</a> page.</p>
+You do <em>not</em> need to see the Good Ending for a run to count as a 1cc.</p>
 <h4 id='best'>Who is the best character / shottype?</h4>
 <p><em>See the <a href='/faq/shots'>Shottypes</a> page.</em></p>
 <h4 id='extra'>How do I unlock the Extra Stage?</h4>

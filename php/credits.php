@@ -62,8 +62,8 @@
         Gensokyo (<a href='https://h-yde.deviantart.com/art/Saigyou-Ayakashi-Blooming-481057167' target='_blank'>Source</a>)</li>
         <li><a href='https://www.pixiv.net/member.php?id=2263353' target='_blank'>RAT_Huang</a> <span class='warning'>(R-18)</span>:
         History (<a href='https://www.pixiv.net/en/artworks/38716068' target='_blank'>Source</a>)</li>
-        <li><a href='https://www.pixiv.net/member.php?id=27691' target='_blank'>結城辰也</a>:
-        Jargon (<a href='https://www.pixiv.net/en/artworks/2217502' target='_blank'>Source</a>)</li>
+        <!--<li><a href='https://www.pixiv.net/member.php?id=27691' target='_blank'>結城辰也</a>:
+        Jargon (<a href='https://www.pixiv.net/en/artworks/2217502' target='_blank'>Source</a>)</li>-->
         <li><a href='https://www.pixiv.net/member.php?id=1111435' target='_blank'>C.Z</a>:
         LNN (<a href='https://www.pixiv.net/en/artworks/26565744' target='_blank'>Source</a>)</li>
         <li><a href='https://www.pixiv.net/member.php?id=21613' target='_blank'>Kong Xian</a>:

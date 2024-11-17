@@ -4,6 +4,12 @@
 .eosd_files {
     width: 100px;
 }
+.jargon {
+    width: auto;
+}
+#jargontable, #spelltable {
+    text-align: initial;
+}
 #back {
     float: none;
 }
