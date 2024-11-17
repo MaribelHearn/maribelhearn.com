@@ -159,7 +159,7 @@ function navbar(string $page) {
             $navbar .= '</div>';
         $navbar .= '</div>';
         $navbar .= '<div id="ext_mobile" class="ext_mobile">';
-            $navbar .= '<label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>';
+            $navbar .= '<span class="menu-icon"><span class="nav-icon"></span></span>';
             $navbar .= '<div class="ext_menu dropdown_right ' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
                 $navbar .= '<div class="dropdown">';
                     $navbar .= '<a href="#" class="dropdown_button">&#x25C3; Games</a>';
