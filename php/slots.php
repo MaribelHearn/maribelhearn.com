@@ -54,6 +54,6 @@
     <div id='modal_screenshot' class='modal_inner'>
         <h2>Screenshot</h2>
         <p><a id='save_link' href='' download=''><input type='button' value='Save to Device'></a></p>
-        <p><img id='screenshot_base64' src='' alt='Slot machine screenshot'></p>
+        <p><img id='screenshot_base64' src='#' alt='Slot machine screenshot'></p>
     </div>
 </div>

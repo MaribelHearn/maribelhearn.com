@@ -90,7 +90,7 @@ function is_phantasmagoria(string $game) {
 	<div id='calculator'>
         <p id='drcScores'><?php echo _('Scores can only contain digits, commas, dots and spaces. Survival runs are assumed to have cleared, scoring runs not.') ?></p>
         <p id='notify'></p>
-		<section>
+		<div class='center'>
 			<label id='category' for='game'><?php echo _('Category') ?></label>
 			<select id='game'>
 				<option id='hrtp' value='HRtP'><?php echo _('HRtP') ?></option>
@@ -138,14 +138,14 @@ function is_phantasmagoria(string $game) {
 				<option id='autumn' value='Autumn'><?php echo _('Autumn') ?></option>
 				<option id='winter' value='Winter'><?php echo _('Winter') ?></option>
 			</select>
-		</section>
-		<section>
+		</div>
+		<div class='center'>
 			<div id='drcpoints'></div>
 			<div id='error'></div>
-		</section>
-		<section>
+		</div>
+		<div class='center'>
 			<input id='calculate' type='button' value='<?php echo _('Calculate') ?>'>
-		</section>
+		</div>
 	</div>
     <h2 id='rulesText'><?php echo _('Rules') ?></h2>
 	<ol>
@@ -158,10 +158,10 @@ function is_phantasmagoria(string $game) {
         echo _('The rubrics are the formulas and fixed values used to calculate the number of DRC points for a run. ' .
         'If you are curious about how your points are being determined, click the button below to expand.');
     ?></p>
-	<section>
+	<div class='center'>
 		<input id='scoring_button' type='button' value='<?php echo _('Show Scoring Rubrics') ?>'>
 		<input id='survival_button' type='button' value='<?php echo _('Show Survival Rubrics') ?>'>
-	</section>
+	</div>
     <div id='scoring_rubrics' class='rubrics'>
         <p><strong id='scoringNotes'><?php echo _('Scoring Notes') ?></strong></p>
 		<ul>

@@ -236,7 +236,7 @@
 		'Allows for 8 savestates and requires a separate font file, linked below.');
 	?></p>
 	<div>
-		<p><a href='https://www.zophar.net/download_file/2133'><?php echo _('Download') ?></a></p></p>
+		<p><a href='https://www.zophar.net/download_file/2133'><?php echo _('Download') ?></a></p>
 		<p><a href='https://www.zophar.net/download_file/2134'><?php echo _('Font') ?></a></p>
 	</div>
 	<p><strong>DOSBox-X</strong></p>
@@ -264,8 +264,8 @@
 		'Includes Stage 4 Books and Play Time tracking, as well as allowing for multiple save files.');
 	?></p>
     <div>
-		<p><a href='https://mega.nz/file/URxkUSAa!bmKsMnqX8XZxovn9TY1njoa0-2nnC57Sl15KJWs_iy0' target='_blank'><?php echo _('Download') ?></a></p></p>
-        <p><a href='https://mega.nz/file/RIhCRDLB#2PElQfJqi9Mg5JV-1x8AKsQDzcbo51flK2Lxytt-s_k' target='_blank'><?php echo _('Source') ?></a></p></p>
+		<p><a href='https://mega.nz/file/URxkUSAa!bmKsMnqX8XZxovn9TY1njoa0-2nnC57Sl15KJWs_iy0' target='_blank'><?php echo _('Download') ?></a></p>
+        <p><a href='https://mega.nz/file/RIhCRDLB#2PElQfJqi9Mg5JV-1x8AKsQDzcbo51flK2Lxytt-s_k' target='_blank'><?php echo _('Source') ?></a></p>
     </div>
     <p><strong><?php
         echo _('PoFV Play Time Recorder by ');
@@ -283,7 +283,7 @@
 		'instead allowing you to use them starting at 1/3 full gauge.');
 	?></p>
     <div>
-        <p><a href='https://kawashi.ro/th13arr.zip'><?php echo _('Download') ?></a></p></p>
+        <p><a href='https://kawashi.ro/th13arr.zip'><?php echo _('Download') ?></a></p>
         <p><a href='https://pastebin.com/1jD5GZRe' target='_blank'>Readme</a></p>
     </div>
     <p><strong><?php
@@ -520,5 +520,5 @@
 	<p><?php echo _('Gives Star\'s first non from Route A1 Stage 2 infinite health. This will produce an infinite amount of rings, since the nonspell adds more rings every wave. The stage background from Route A2 is used.') ?></p>
 	<p><a href='https://mega.nz/file/0DAVjJjT#Gb279_wmj8ZOkkrVdcgTLQkH6151slKEIsbVWKaDuDY' target='_blank'><?php echo _('Download') ?></a></p>
 	<hr>
-    <footer><strong><a href='#top'><?php echo _('Back to Top') ?></a></strong></p>
+    <footer><strong><a href='#top'><?php echo _('Back to Top') ?></a></strong></footer>
 </div>

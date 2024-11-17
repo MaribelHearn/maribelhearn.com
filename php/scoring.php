@@ -186,6 +186,8 @@ if (strpos($wr_data, 'Internal Server Error') === false) {
                             $shot = str_replace('Spring', '', $shot);
                             echo '<td class="break"><label for="' . $game . 'Extra' . $shot . '" class="label">Extra</label>' .
                             '<input id="' . $game . 'Extra' . $shot . '" type="text"></td>';
+                        } else if ($game == 'HSiFS' && $diff == 'Lunatic' && strpos($shot, 'Spring') === false) {
+                            echo '<td></td>'; // hidden
                         }
                     }
                     echo '</tr>';
@@ -197,19 +199,19 @@ if (strpos($wr_data, 'Internal Server Error') === false) {
             }
         }
 	    ?>
-        <section>
+        <div class='center'>
             <label for='precision'>Number of decimals:</label>
             <input id='precision' type='number' value='0' min='0' max='5' step='1'>
-        </section>
+        </div>
         <p id='message' class='center'></p>
         <p id='error_message' class='center'></p>
-        <section>
+        <div class='center'>
             <input id='save' type='button' value='Save'>
             <input id='calc' type='button' value='Calculate'>
         	<input id='import_button' type='button' value='Import'>
         	<input id='export' type='button' value='Export'>
             <input id='reset' type='button' value='Reset'>
-        </section>
+        </div>
     </form>
 	<div id='top_list'>
         <table id='score_table' class='sortable result_table'>

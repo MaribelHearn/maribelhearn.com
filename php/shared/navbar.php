@@ -200,8 +200,8 @@ function navbar(string $page) {
         $navbar .= '</div>';
         if (has_translation($page)) {
             $navbar .= '<div id="languages_mobile" class="ext_mobile">';
-                $navbar .= '<img id="lang_icon" class="lang_icon" src="/assets/shared/langs/lang.png">';
-                $navbar .= '<img id="lang_icon_dark" class="lang_icon" src="/assets/shared/langs/lang_dark.png">';
+                $navbar .= '<img id="lang_icon" class="lang_icon" src="/assets/shared/langs/lang.png" alt="Language icon">';
+                $navbar .= '<img id="lang_icon_dark" class="lang_icon" src="/assets/shared/langs/lang_dark.png" alt="Language icon">';
                 $navbar .= '<div class="ext_menu dropdown_right ' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
                     $navbar .= '<ul id="lang_list">';
                         $navbar .= '<li class="subpage flag_container ' . ($lang == 'en_GB' ? 'selected' : '') . '"><a data-lang="en_GB" class="language" href="?hl=en-gb">';

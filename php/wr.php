@@ -189,7 +189,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
                 echo '<p><a href="#' . $data['short_name'] . '">' . $data['full_name'] . '</a></p>';
             }
         }
-        echo '<p id="westernlink"><a href="#western">' . _('Western Records') . '</a></p>';
+        echo '<p id="westernlink"><a href="#western_records">' . _('Western Records') . '</a></p>';
         echo '<p id="playersearchlink"><a href="#playerwrs">' . _('Player Search') . '</a></p>';
         echo '<p><a href="#recent">' . _('Recent Records') . '</a></p>';
         echo '<p><a href="#history_old">' . _('History') . '</a></p>';
@@ -361,7 +361,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
             echo '</tbody></table></div>';
         }
         // Old layout western records
-        echo '<h2 id="western">' . _('Western Records') . '</h2>';
+        echo '<h2 id="western_records">' . _('Western Records') . '</h2>';
         foreach ($west as $game => $obj) {
             echo '<table class="' . $game . 't"><tr class="irregular_tr"><th colspan="3">' . _($game) .
             '</th></tr><tr class="irregular_tr"><th>' . _('World') .
@@ -427,7 +427,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
 	?>
 	<div id='wr_list'>
         <p id='fullname' class='center'></p>
-        <section>
+        <div class='center'>
             <input id='western' type='checkbox'>
             <label id='label_western' for='western'><?php echo _('Show Western records') ?></label>
             <br>
@@ -436,7 +436,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
             <br>
             <input id='toggle_video' type='checkbox'>
             <label id='label_video' for='toggle_video'><?php echo _('Link videos over replays') ?></label>
-        </section>
+        </div>
         <div class='overflow_mobile'>
             <table id='world' class='sortable'>
                 <thead id='world_thead'></thead>
@@ -454,12 +454,12 @@ if (strpos($west_data, 'Internal Server Error') === false) {
             <tbody id='west_tbody'></tbody>
         </table>
         <div id='history'>
-            <section>
+            <div class='center'>
                 <label for='history_category'><?php echo _('Browse History') ?></label>
                 <select id='history_category'>
                     <option value=''>...</option>
                 </select>
-            </section>
+            </div>
         </div>
         <div id='history_list' class='overflow_mobile'>
             <p id='no_history'><?php echo _('No history available.') ?></p>
@@ -481,7 +481,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
     <div id='player_search'>
 		<h2><?php echo _('Player Search') ?></h2>
         <p id='playerwrs' class='center'><?php echo _('Choose a player name from the menu below to show their WRs.') ?></p>
-        <section>
+        <div class='center'>
             <label for='player'><?php echo _('Player') ?></label>
             <input id='player' type='text'>
             <label class='hidden' for='search'><?php echo _('Search') ?></label>
@@ -499,7 +499,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
                     }
                 ?>
             </select>
-        </section>
+        </div>
     </div>
 	<div id='player_list' class='overflow_mobile'>
 		<table class='sortable'>
@@ -577,7 +577,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
     ?>
     <div id='history_old'>
         <h2><?php echo _('History') ?></h2>
-        <section>
+        <div class='center'>
             <label for='history_category_old'><?php echo _('Category') ?></label>
             <select id='history_category_old'>
                 <option value=''>...</option>
@@ -594,7 +594,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
                     }
                 ?>
             </select>
-        </section>
+        </div>
     </div>
     <?php
         if ($layout == 'New') {

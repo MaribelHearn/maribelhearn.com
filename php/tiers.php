@@ -147,7 +147,7 @@
             </a>
         </p>
         <p id='screenshot_msg_container'></p>
-        <p><img id='screenshot_base64' src='' alt='Tier list screenshot'></p>
+        <p><img id='screenshot_base64' src='#' alt='Tier list screenshot'></p>
     </div>
     <div id='settings' class='modal_inner'>
         <h2>Settings</h2>

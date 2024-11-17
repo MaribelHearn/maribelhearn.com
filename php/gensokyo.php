@@ -248,7 +248,7 @@ function check_conditions(array $rep, string $player, string $shot, string $game
                 ?>
             </select>
         </p>
-        <section id='conditions'>
+        <div id='conditions' class='center'>
             <span><label for='nd'><img src='assets/games/gensokyo/gif/nd.gif' title='No Deaths' alt='No Deaths icon'></label>
             <input id='nd' name='nd' type='checkbox'<?php echo !empty($_GET['nd']) && $_GET['nd'] == 'on' ? ' checked' : '' ?>></span>
             <span><label for='nb'><img src='assets/games/gensokyo/gif/nb.gif' title='No Bomb Usage' alt='No Bombs icon'></label>
@@ -265,11 +265,10 @@ function check_conditions(array $rep, string $player, string $shot, string $game
             <input id='pa' name='pa' type='checkbox'<?php echo !empty($_GET['pa']) && $_GET['pa'] == 'on' ? ' checked' : '' ?>></span>
             <span><label for='co'><img src='assets/games/gensokyo/gif/co.gif' title='Other Condition' alt='Other icon'></label>
             <input id='co' name='co' type='checkbox'<?php echo !empty($_GET['co']) && $_GET['co'] == 'on' ? ' checked' : '' ?>></span>
-        </section>
-        <br>
-        <section>
+        </div>
+        <div class='center'>
             <input type='submit' value='Search'>
-        </section>
+        </div>
     </form>
     <?php
         $searched = !empty($_SERVER['QUERY_STRING']);

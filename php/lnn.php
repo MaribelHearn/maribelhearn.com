@@ -245,10 +245,10 @@ $missing_runs = 0;
     <div id='search'>
         <h2><?php echo _('Search'); ?></h2>
 		<p id='playerlnns'><?php echo _('Choose a player or category from the menus below to show their LNNs.') ?></p>
-        <section>
+        <div class='center'>
             <label for='player'><?php echo _('Player') ?></label>
             <input id='player' type='text'>
-            <label class='search_label' for='search'><?php echo _('Search') ?></label>
+            <label class='search_label' for='search_player'><?php echo _('Search') ?></label>
             <select id='search_player'>
                 <option value=''>...</option>
                 <?php
@@ -267,8 +267,8 @@ $missing_runs = 0;
                     }
                 ?>
             </select>
-        </section>
-        <section id='category_search'>
+        </div>
+        <div id='category_search' class='center'>
             <label for='category'><?php echo _('Category') ?></label>
             <input id='category' type='text'>
             <label class='search_label' for='search_category'><?php echo _('Search') ?></label>
@@ -290,7 +290,7 @@ $missing_runs = 0;
                     }
                 ?>
             </select>
-        </section>
+        </div>
     </div>
 	<div id='search_results'>
 		<table class='sortable asc'>
