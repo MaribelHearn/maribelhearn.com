@@ -499,9 +499,7 @@ function display_name(string $game) {
             <input id='text_file' type='hidden' value=''>
         </p>
         <p>
-            <a id='save_link' href='#' download='#' class='device_link'>
-                <input type='button' class='button' value='Save to Device'>
-            </a>
+            <a id='save_link' href='#' download='#' class='device_link'>Save to Device</a>
         </p>
     </div>
 </div>
