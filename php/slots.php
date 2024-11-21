@@ -1,11 +1,11 @@
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
         <p class='center'>Click any of the slot title texts to change what it says.</p>
-        <section>
+        <div class='center'>
             <input id='insert_coin' type='button' value='Insert Coin'>
             <input id='screenshot' type='button' value='Screenshot'>
             <input id='reset' type='button' value='Reset Titles'>
-        </section>
+        </div>
     </div>
     <p id='message'></p>
     <table id='table'>
@@ -53,7 +53,7 @@
     </div>
     <div id='modal_screenshot' class='modal_inner'>
         <h2>Screenshot</h2>
-        <p><a id='save_link' href='' download=''><input type='button' value='Save to Device'></a></p>
+        <p><a id='save_link' href='#' download='#'>Save to Device</p>
         <p><img id='screenshot_base64' src='#' alt='Slot machine screenshot'></p>
     </div>
 </div>

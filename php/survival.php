@@ -112,20 +112,18 @@ function display_name(string $game) {
             <li><?php echo _('Reset: R') ?></li>
         </ul>
         <div id='buttons'>
-            <section>
-                <input id='save' type='button' value='Save'>
-                <input id='apply' type='button' value='Generate Tables'>
-                <br id='buttons_br'>
-                <input id='import_button' type='button' value='Import'>
-                <input id='export' type='button' value='Export'>
-                <input id='reset' type='button' value='Reset'>
-            </section>
+            <input id='save' type='button' value='Save'>
+            <input id='apply' type='button' value='Generate Tables'>
+            <br id='buttons_br'>
+            <input id='import_button' type='button' value='Import'>
+            <input id='export' type='button' value='Export'>
+            <input id='reset' type='button' value='Reset'>
         </div>
         <p class='message center'></p>
         <p class='error_message center'></p>
     </div>
     <div id='container' class='overflow'>
-        <section>
+        <div class='center'>
             <label for='fillGameDifficulty'><?php echo _('Game / Difficulty') ?></label>
             <select id='fillGameDifficulty'>
 				<?php
@@ -152,7 +150,7 @@ function display_name(string $game) {
             </select>
             <br>
             <input id='fill_all' type='button' value='Fill All'>
-		</section>
+        </div>
         <table id='survival' class='progress_table'>
             <caption id='legend' class='legend_surv'>
     			<span class='legend clear'></span> <?php echo _('1cc') ?>
@@ -192,7 +190,7 @@ function display_name(string $game) {
                         if ($game == 'PCB' && $diff == 'Extra') {
                             echo '<td><div class="dropdown-check-list" tabindex="100"><span id="PCBPhantasma" class="anchor">Select</span><ul id="PCBPhantasm" class="category">';
                             foreach ($achievs as $key => $achiev) {
-                                echo '<li><input type="checkbox" value="' . $achiev . '" id="' . $game . $diff . $key . '"><label for="' . $game . $diff . $key . '">' . _($achiev) . '</label></li>';
+                                echo '<li><input type="checkbox" value="' . $achiev . '" id="PCBPhantasm' . $key . '"><label for="PCBPhantasm' . $key . '">' . _($achiev) . '</label></li>';
                             }
                             echo '</ul></div></td>';
                         } else if ($game != 'PCB' && $diff == 'Extra') {
@@ -216,7 +214,7 @@ function display_name(string $game) {
         <p class='center'><?php echo _('Tick scenes that you have cleared.') ?></p>
         <p class='message center'></p>
         <p class='error_message center'></p>
-        <section>
+        <div class='center'>
             <label for='fill_stb_stage'><?php echo _('Stage') ?></label>
             <select id='fill_stb_stage'><?php
                 for ($i = 1; $i <= 10; $i++) {
@@ -232,7 +230,7 @@ function display_name(string $game) {
             </select>
             <br>
             <input id='fill_stb' type='button' value='Fill All' data_id='stb'>
-        </section>
+        </div>
         <table id='stb' class='progress_table'>
             <thead>
                 <tr>
@@ -253,7 +251,7 @@ function display_name(string $game) {
         <p class='center'><?php echo _('You can specify whether you have cleared a scene with Aya or Hatate.') ?></p>
         <p class='message center'></p>
         <p class='error_message center'></p>
-        <section>
+        <div class='center'>
             <label for='fill_ds_stage'><?php echo _('Stage') ?></label>
             <select id='fill_ds_stage'><?php
                 for ($i = 1; $i <= 12; $i++) {
@@ -272,7 +270,7 @@ function display_name(string $game) {
             </select>
             <br>
             <input id='fill_ds' type='button' value='Fill All' data_id='ds'>
-        </section>
+        </div>
         <table id='ds' class='progress_table'>
             <caption id='legendDS' class='legend_surv'>
     			<span class='legend clear'></span> <?php echo _('Aya') ?>
@@ -294,8 +292,8 @@ function display_name(string $game) {
                         }
                         if ($stage != 'SP' || $i >= 5) {
                             echo '<li><input type="checkbox" value="' . _('Hatate') . '" id="ds' . $stage . '-' . $i . '1"><label for="ds' . $stage . '-' . $i . '1">' . _('Hatate') . '</label></li>';
-                            echo '</ul></div></td>';
                         }
+                        echo '</ul></div></td>';
                     }
                     echo '</tr>';
                 }
@@ -305,7 +303,7 @@ function display_name(string $game) {
         <p class='center'><?php echo _('You can specify No Items clears as well as regular ones.') ?></p>
         <p class='message center'></p>
         <p class='error_message center'></p>
-        <section>
+        <div class='center'>
             <label for='fill_isc_stage'><?php echo _('Stage') ?></label>
             <select id='fill_isc_stage'><?php
                 for ($i = 1; $i <= 10; $i++) {
@@ -321,7 +319,7 @@ function display_name(string $game) {
             </select>
             <br>
             <input id='fill_isc' type='button' value='Fill All' data_id='isc'>
-        </section>
+        </div>
         <table id='isc' class='progress_table'>
             <caption id='legendISC' class='legend_surv'>
     			<span class='legend clear'></span> <?php echo _('Clear') ?>
@@ -349,7 +347,7 @@ function display_name(string $game) {
         <p class='center'><?php echo _('Tick scenes that you have cleared.') ?></p>
         <p class='message center'></p>
         <p class='error_message center'></p>
-        <section>
+        <div class='center'>
             <label for='fill_vd_stage'><?php echo _('Stage') ?></label>
             <select id='fill_vd_stage'><?php
                 foreach ($vd as $stage => $scenes) {
@@ -364,7 +362,7 @@ function display_name(string $game) {
             </select>
             <br>
             <input id='fill_vd' type='button' value='Fill All' data_id='vd'>
-        </section>
+        </div>
         <table id='vd' class='progress_table'>
             <thead>
                 <tr>
