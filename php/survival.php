@@ -335,8 +335,8 @@ function display_name(string $game) {
                     echo '<tr><th>' . $stage . '</th>';
                     for ($i = 1; $i <= $scenes; $i++) {
                         echo '<td class="isc_td scene_td"><div class="dropdown-check-list" tabindex="100"><span id="isc' . $stage . '-' . $i . 'a" class="anchor">Select</span><ul id="isc' . $stage . '-' . $i . '" class="category">';
-                        echo '<li><input type="checkbox" value="' . _('Clear') . '" id="isc' . $stage . '-' . $i . '0"><label for="isc' . $stage . '-' . $i . '0">' . _('Clear') . '</label></li>';
-                        echo '<li><input type="checkbox" value="' . _('No Items') . '" id="isc' . $stage . '-' . $i . '1"><label for="isc' . $stage . '-' . $i . '1">' . _('No Items') . '</label></li>';
+                        echo '<li><input type="checkbox" value="' . _('Clear') . '" id="isc' . $stage . '-' . $i . 'a"><label for="isc' . $stage . '-' . $i . 'a">' . _('Clear') . '</label></li>';
+                        echo '<li><input type="checkbox" value="' . _('No Items') . '" id="isc' . $stage . '-' . $i . 'b"><label for="isc' . $stage . '-' . $i . 'b">' . _('No Items') . '</label></li>';
                         echo '</ul></div></td>';
                     }
                     echo '</tr>';
@@ -373,7 +373,7 @@ function display_name(string $game) {
                 foreach ($vd as $stage => $scenes) {
                     echo '<tr><th>' . $stage . '</th>';
                     for ($i = 1; $i <= $scenes; $i++) {
-                        echo '<td class="vd_td scene_td"><input type="checkbox" id="vd' . $stage . '-' . $i . '" class="checkbox_scene"></td>';
+                        echo '<td class="vd_td scene_td"><input type="checkbox" id="vd' . str_replace(' ', '', $stage) . '-' . $i . '" class="checkbox_scene"></td>';
                     }
                     echo '</tr>';
                 }

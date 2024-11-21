@@ -365,7 +365,7 @@ function applyColours() {
     }
 
     for (const scene in sceneVals) {
-        const element = document.getElementById(scene);
+        const element = document.getElementById(scene.removeSpaces());
         const value = sceneVals[scene];
 
         if (scene.includes("stb") || scene.includes("vd")) {
@@ -814,7 +814,7 @@ function initValues() {
         const progress = sceneVals[scene];
 
         if (scene.includes("stb") || scene.includes("vd")) {
-            document.getElementById(scene).checked = progress == "1cc";
+            document.getElementById(scene.removeSpaces()).checked = progress == "1cc";
             continue;
         }
 
@@ -852,7 +852,7 @@ function fillScene() {
     for (const scene in sceneVals) {
         if (scene.includes(game) && scene.replace(game, "").slice(0, -2) == stage) {
             sceneVals[scene] = progress;
-            document.getElementById(scene).checked = progress == "1cc";
+            document.getElementById(scene.removeSpaces()).checked = progress == "1cc";
         }
     }
 
