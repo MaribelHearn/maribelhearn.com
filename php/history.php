@@ -428,10 +428,10 @@
                 </tr>
                 <tr id='oUDoALG'>
                     <th>UDoALG</th>
-                    <td id='eUM' class='nmnb'></td>
-                    <td id='nUM' class='nmnb'></td>
-                    <td id='hUM' class='nmnb'></td>
-                    <td id='lUM' class='nmnb'></td>
+                    <td id='eUDoALG' class='nmnb'></td>
+                    <td id='nUDoALG' class='nmnb'></td>
+                    <td id='hUDoALG' class='nmnb'></td>
+                    <td id='lUDoALG' class='nmnb'></td>
                     <td colspan='2'>X</td>
                 </tr>
             </tbody>
@@ -525,7 +525,7 @@
                 </tr>
                 <tr id='oESP2'>
                     <th>Espgaluda II</th>
-                    <td id='1ESPg' class='clear'></td>
+                    <td id='1ESPg2' class='clear'></td>
                     <td colspan='2'>X</td>
                 </tr>
                 <tr id='oDF'>

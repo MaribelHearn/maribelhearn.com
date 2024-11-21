@@ -131,9 +131,7 @@
             <input id='text_file' type='hidden' value=''>
         </p>
         <p class='mobile_button_p'>
-            <a id='save_link' href='#' download='#'>
-                <input type='button' class='button' value='Save to Device'>
-            </a>
+            <a id='save_link' href='#' download='#'>Save to Device</a>
         </p>
     </div>
     <div id='screenshot' class='modal_inner'>
@@ -142,9 +140,7 @@
             <input id='image_to_clipboard' type='button' value='Copy to Clipboard'>
         </p>
         <p class='mobile_button_p'>
-            <a id='screenshot_link' href='#' download='#'>
-                <input type='button' class='button' value='Save to Device'>
-            </a>
+            <a id='screenshot_link' href='#' download='#'>Save to Device</a>
         </p>
         <p id='screenshot_msg_container'></p>
         <p><img id='screenshot_base64' src='#' alt='Tier list screenshot'></p>

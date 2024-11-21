@@ -403,45 +403,35 @@ function display_name(string $game) {
 	<div id='results' class='modal_inner'>
 		<h2><?php echo _('Progress Table') ?></h2>
 		<div id='screenshot'>
-            <a id='screenshot_link' href='' download='' class='device_link'>
-                <input type='button' value='Save to Device'>
-            </a>
+            <a id='screenshot_link' href='#' download='' class='device_link'>Save to Device</a>
             <input id='clipboard' type='button' value='Copy to Clipboard' data_id='screenshot_base64'>
 		    <p id='rendering_message' class='rendering_message'></p>
             <p><img id='screenshot_base64' src='#' alt='Survival progress table'></p>
         </div>
         <h2><?php echo _('Shoot the Bullet') ?></h2>
         <div>
-            <a id='stb_link' href='' download='' class='device_link'>
-                <input type='button' value='Save to Device'>
-            </a>
+            <a id='stb_link' href='#' download='#' class='device_link'>Save to Device</a>
             <input id='clipboard_stb' type='button' value='Copy to Clipboard' data_id='stb_base64'>
 		    <p id='rendering_message_stb' class='rendering_message'></p>
             <p><img id='stb_base64' src='#' alt='StB progress table'></p>
         </div>
         <h2><?php echo _('Double Spoiler') ?></h2>
         <div>
-            <a id='ds_link' href='' download='' class='device_link'>
-                <input type='button' value='Save to Device'>
-            </a>
+            <a id='ds_link' href='#' download='#' class='device_link'>Save to Device</a>
             <input id='clipboard_ds' type='button' value='Copy to Clipboard' data_id='ds_base64'>
 		    <p id='rendering_message_ds' class='rendering_message'></p>
             <p><img id='ds_base64' src='#' alt='DS progress table'></p>
         </div>
         <h2><?php echo _('Impossible Spell Card') ?></h2>
         <div>
-            <a id='isc_link' href='' download='' class='device_link'>
-                <input type='button' value='Save to Device'>
-            </a>
+            <a id='isc_link' href='#' download='#' class='device_link'>Save to Device</a>
             <input id='clipboard_isc' type='button' value='Copy to Clipboard' data_id='isc_base64'>
 		    <p id='rendering_message_isc' class='rendering_message'></p>
             <p><img id='isc_base64' src='#' alt='ISC progress table'></p>
         </div>
         <h2><?php echo _('Violet Detector') ?></h2>
         <div>
-            <a id='vd_link' href='' download='' class='device_link'>
-                <input type='button' value='Save to Device'>
-            </a>
+            <a id='vd_link' href='#' download='#' class='device_link'>Save to Device</a>
             <input id='clipboard_vd' type='button' value='Copy to Clipboard' data_id='vd_base64'>
 		    <p id='rendering_message_vd' class='rendering_message'></p>
             <p><img id='vd_base64' src='#' alt='VD progress table'></p>

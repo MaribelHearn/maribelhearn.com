@@ -259,9 +259,7 @@ if (strpos($wr_data, 'Internal Server Error') === false) {
             <input id='text_file' type='hidden' value=''>
         </p>
         <p>
-            <a id='save_link' href='#' download='#'>
-                <input type='button' class='button' value='Save to Device'>
-            </a>
+            <a id='save_link' href='#' download='#'>Save to Device</a>
         </p>
     </div>
 	<input id='WRs' type='hidden' value='<?php echo json_encode($wrs); ?>'>
