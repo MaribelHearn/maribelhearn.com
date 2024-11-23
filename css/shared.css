@@ -292,13 +292,8 @@ img {
     vertical-align: baseline;
     white-space: nowrap;
 }
-.sortable:not(.poll) th:not(.no-sort):hover::after {
-    color: inherit;
-    font-size: 1.2em;
-    content: ' \025B8';
-}
 .sortable:not(.poll) th:not(.no-sort)::after {
-    color: transparent;
+    color: inherit;
     font-size: 1.2em;
     content: ' \025B8';
 }
