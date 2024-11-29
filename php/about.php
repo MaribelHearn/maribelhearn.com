@@ -40,9 +40,8 @@
         <li>Saitama Saisyu Heiki (aka S.S.H, most notably eXceed 3rd)</li>
     </ul>
     <p class='wide'>OST makes up more than 90% of all of my time spent listening to music. My favourite OSTs to listen to
-    include Labyrinth of Touhou, Seihou Shuusou Gyoku, Samidare, Dodonpachi Saidaioujou, Mushihime-sama as well as Futari,
-    Great Fairy Wars, Subterranean Animism, Shining Shooting Star, Mrs. Estacion, eXceed 3rd, Guwange and Ikaruga;
-    many more follow suit. Some of my favourite themes are listed in the table below.</p>
+    include Labyrinth of Touhou, Seihou Shuusou Gyoku and various other games that I have played.
+    Some of my favourite themes are listed in the table below.</p>
     <table id='music_links' class='noborders'>
         <thead>
             <tr>
@@ -52,6 +51,11 @@
             </tr>
         </thead>
         <tbody>
+            <tr>
+                <td><a href='https://www.youtube.com/watch?v=AAdHRSUNZUs' target='_blank'>Bloom Nobly, Ink-Black Cherry Blossom ~ Border of Life</a></td>
+                <td>Touhou 7: Perfect Cherry Blossom, Final Boss</td>
+                <td>ZUN</td>
+            </tr>
             <tr>
                 <td><a href='https://www.youtube.com/watch?v=pw2WQjqKpVM' target='_blank'>Flight of the Bamboo Cutter ~ Lunatic Princess</a></td>
                 <td>Touhou 8: Imperishable Night, Final Boss</td>
@@ -63,20 +67,48 @@
                 <td>ZUN</td>
             </tr>
             <tr>
+                <td><a href='https://www.youtube.com/watch?v=ITYCfbE76ZM' target='_blank'>The Venerable Ancient Battlefield ~ Suwa Foughten Field</a></td>
+                <td>Touhou 10: Mountain of Faith, Stage 5</td>
+                <td>ZUN</td>
+            </tr>
+            <tr>
+                <td><a href='https://www.youtube.com/watch?v=mkziV4fQy2Y' target='_blank'>Skies Beyond the Clouds</a></td>
+                <td>Touhou 10.5: Scarlet Weather Rhapsody, Iku Pre-Battle</td>
+                <td>U2 Akiyama</td>
+            </tr>
+            <tr>
+                <td><a href='https://www.youtube.com/watch?v=5Bda8sKdoIk' target='_blank'>Heartfelt Fancy</a></td>
+                <td>Touhou 11: Subterranean Animism, Stage 4</td>
+                <td>ZUN</td>
+            </tr>
+            <tr>
                 <td><a href='https://www.youtube.com/watch?v=7wEHo_uUgZ0' target='_blank'>Hartmann's Youkai Girl</a></td>
                 <td>Touhou 11: Subterranean Animism, Extra Stage Boss</td>
                 <td>ZUN</td>
+            </tr>
             <tr>
                 <td><a href='https://www.youtube.com/watch?v=yHlbViNW-eI' target='_blank'>The Refrain of the Lovely Great War</a></td>
                 <td>Touhou 12.8: Great Fairy Wars, Stage 1</td>
                 <td>ZUN</td>
+            </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=IUKsMBN7dS4&t=54s' target='_blank'>The Hall of Dreams' Great Mausoleum</a></td>
+                <td><a href='https://www.youtube.com/watch?v=Sf0weS6_iuM' target='_blank'>Staking Your Life on a Prank</a></td>
+                <td>Touhou 12.8: Great Fairy Wars, Boss Battle</td>
+                <td>ZUN</td>
+            </tr>
+            <tr>
+                <td><a href='https://www.youtube.com/watch?v=IUKsMBN7dS4' target='_blank'>The Hall of Dreams' Great Mausoleum</a></td>
                 <td>Touhou 13: Ten Desires, Stage 5</td>
                 <td>ZUN</td>
+            </tr>
             <tr>
                 <td><a href='https://www.youtube.com/watch?v=0o8xTL_W-9I' target='_blank'>Illusionary White Traveler</a></td>
                 <td>Touhou 16: Hidden Star in Four Seasons, Stage 4</td>
+                <td>ZUN</td>
+            </tr>
+            <tr>
+                <td><a href='https://www.youtube.com/watch?v=sxpRSGm-2ao#t=5m29s' target='_blank'>False Strawberry</a></td>
+                <td>Seihou Shuusou Gyoku, Stage 1</td>
                 <td>ZUN</td>
             </tr>
             <tr>
@@ -90,9 +122,15 @@
                 <td>ZUN</td>
             </tr>
             <tr>
+                <td><a href='https://www.youtube.com/watch?v=HshrdY3Mu8I' target='_blank'>Endless Night View</a></td>
+                <td>Seihou Banshiryuu C67, Stage 2</td>
+                <td>halt, Doku Den P</td>
+            </tr>
+            <tr>
                 <td><a href='https://www.youtube.com/watch?v=gJuIRucytTc' target='_blank'>Trans--</a></td>
                 <td>Seihou Banshiryuu C67, Final Boss</td>
                 <td>halt, Doku Den P</td>
+            </tr>
             <tr>
                 <td><a href='https://www.youtube.com/watch?v=OfH1FrSlDws' target='_blank'>Broken Strawberry Shortcake</a></td>
                 <td>Samidare, Extra Stage Second Boss</td>
@@ -104,14 +142,29 @@
                 <td>Misora</td>
             </tr>
             <tr>
+                <td><a href='https://www.youtube.com/watch?v=hW0imzh6KiU' target='_blank'>And Forever, the End of the Dream</a></td>
+                <td>Mrs. Estacion, Staff Roll</td>
+                <Td>Misora</td>
+            </tr>
+            <tr>
                 <td><a href='https://www.youtube.com/watch?v=L_aUBbZ2rJQ' target='_blank'>Eternal Stars in Memories</a></td>
                 <td>Touhou Shining Shooting Star, Stage 5</td>
                 <td>Shihenwx</td>
             </tr>
             <tr>
+                <td><a href='https://www.youtube.com/watch?v=AoE-S6z5K-E' target='_blank'>Flowers in the Wind, Moon in the Snow</a></td>
+                <td>Touhou Shining Shooting Star, Extra Boss</td>
+                <td>11</td>
+            </tr>
+            <tr>
                 <td><a href='https://www.youtube.com/watch?v=8ym2uK-nm7k' target='_blank'>Reality</a></td>
                 <td>Ikaruga, Stage 4</td>
                 <td>Hiroshi Iuchi</td>
+            </tr>
+            <tr>
+                <td><a href='https://www.youtube.com/watch?v=5kjD1AYEpV0' target='_blank'>Geo Frontier</a></td>
+                <td>Batsugun, Stage 5</td>
+                <td>Yoshitatsu Sakai</td>
             </tr>
             <tr>
                 <td><a href='https://www.youtube.com/watch?v=MipAMcUWQfI' target='_blank'>Ai</a></td>
@@ -126,6 +179,11 @@
             <tr>
                 <td><a href='https://www.youtube.com/watch?v=SimTGe2xYno' target='_blank'>Vertigo</a></td>
                 <td>Dodonpachi Daifukkatsu Black Label, Stage 5</td>
+                <td>Manabu Namiki</td>
+            </tr>
+            <tr>
+                <td><a href='https://www.youtube.com/watch?v=TumC-lBTD6U' target='_blank'>Walking on the Land of Flame</a></td>
+                <td>Mushihimesama, Stage 3</td>
                 <td>Manabu Namiki</td>
             </tr>
             <tr>
@@ -144,6 +202,16 @@
                 <td>Manabu Namiki</td>
             </tr>
             <tr>
+                <td><a href='https://www.youtube.com/watch?v=CYSAwgic8nc' target='_blank'>Aerial ~ Sadness Bathes in Dust</a></td>
+                <td>Espgaluda II, Stage 4</td>
+                <td>Manabu Namiki</td>
+            </tr>
+            <tr>
+                <td><a href='https://www.youtube.com/watch?v=I-CmMZxvFO0' target='_blank'>Galuda ~ Achieving Perfection</a></td>
+                <td>Espgaluda II, Stage 6</td>
+                <td>Manabu Namiki</td>
+            </tr>
+            <tr>
                 <td><a href='https://www.youtube.com/watch?v=C4OIyerQUWU' target='_blank'>Maid to Order</a></td>
                 <td>eXceed 3rd JADE PENETRATE, Stage 4</td>
                 <td>Saitama Saisyu Heiki (S.S.H)</td>
@@ -159,23 +227,69 @@
                 <td>Saitama Saisyu Heiki (S.S.H)</td>
             </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=nvowdGnQjXY' target='_blank'>Road to the Globe</a></td>
+                <td><a href='https://www.youtube.com/watch?v=ZG6n3zXnCiA' target='_blank'>The Fortress City Lea Monde</a></td>
+                <td>Labyrinth of Touhou, Dungeon (floors 3F, 4F, 29F)**</td>
+                <td>KMF</td>
+            </tr>
+            <tr>
+                <td><a href='https://www.youtube.com/watch?v=P5-0SONpflc' target='_blank'>Road to the Globe</a></td>
                 <td>Labyrinth of Touhou, Dungeon (floors 7F, 13F, 22F, 24F)*</td>
                 <td>Rengoku Teien</td>
             </tr>
             <tr>
-                <td><a href='https://www.youtube.com/watch?v=Q441gfsvzKM' target='_blank'>Dark a Liar</a></td>
+                <td><a href='https://www.youtube.com/watch?v=Hd26EqXP4PE' target='_blank'>Dark a Liar</a></td>
                 <td>Labyrinth of Touhou, Final Boss*</td>
                 <td>Rengoku Teien</td>
+            </tr>
+            <tr>
+                <td><a href='https://www.youtube.com/watch?v=gJkVwt_JJXo' target='_blank'>Stickerbush Symphony</a></td>
+                <td>Super Smash Bros. Brawl</td>
+                <td>Michiko Naruke</td>
+            </tr>
+            <tr>
+                <td><a href='https://www.youtube.com/watch?v=L_jHGmrmyh0' target='_blank'>Battle! Gym Leader</a></td>
+                <td>Pokemon Ruby, Sapphire, Emerald</td>
+                <td>Junichi Masuda</td>
             </tr>
             <tr>
                 <td><a href='https://www.youtube.com/watch?v=llnXhrCn9Yo' target='_blank'>Battle! Elite Four</a></td>
                 <td>Pokemon Black and White, Elite Four</td>
                 <td>Junichi Masuda</td>
             </tr>
+            <tr>
+                <td><a href='https://www.youtube.com/watch?v=WuhqoZvyntA' target='_blank'>Miror B. Battle</a></td>
+                <td>Pokemon XD</td>
+                <td>Tsukasa Tawada</td>
+            </tr>
+            <tr>
+                <td><a href='https://www.youtube.com/watch?v=g-4iSpyW5YY' target='_blank'>Title Screen</a></td>
+                <td>Pokemon Battle Revolution</td>
+                <td>Tsukasa Tawada</td>
+            </tr>
+            <tr>
+                <td><a href='https://www.youtube.com/watch?v=wprKfKj7tsc' target='_blank'>Neon Colosseum</a></td>
+                <td>Pokemon Battle Revolution</td>
+                <td>Tsukasa Tawada</td>
+            </tr>
+            <tr>
+                <td><a href='https://www.youtube.com/watch?v=iFJ_0h2j-Zk' target='_blank'>Battle! T-Fanger</a></td>
+                <td>Keitai Denjuu Telefang 2</td>
+                <td>Minako Adachi</td>
+            </tr>
+            <tr>
+                <td><a href='https://www.youtube.com/watch?v=QWiztiajOtI' target='_blank'>Rock Star</a></td>
+                <td>Kirby 64</td>
+                <td>Jun Ishikawa</td>
+            </tr>
+            <tr>
+                <td><a href='https://www.youtube.com/watch?v=HCIMHn5FEYQ' target='_blank'>Factory Inspection</a></td>
+                <td>Kirby 64</td>
+                <td>Jun Ishikawa</td>
+            </tr>
         </tbody>
     </table>
     <p class='wide-top'>* Rengoku Teien is a group of composers that produces royalty-free music; Labyrinth of Touhou simply uses it, among music by other composers.</p>
+    <p class='wide-top'>** Same story as above; this is royalty-free music that was used in Labyrinth of Touhou, but I personally associate it with the game.</p>
     <p class='wide-top'>Vertigo is possibly my favourite piece of music of all time.</p>
     <h2 id='trivia'>Trivia</h2>
     <ul>
@@ -192,7 +306,7 @@
     <h2 id='touhou'>Touhou Taste</h2>
     <figure>
         <img id='tiers' src='assets/main/about/tiers.png' alt='Maribel&#39;s Touhou character tier list'>
-        <figcaption><em>Touhou character tier list as of 22 September 2023</em></figcaption>
+        <figcaption><em>Touhou character tier list as of 31 October 2024</em></figcaption>
     </figure>
     <footer class='wide-top'><strong><a href='#top'>Back to Top</a></strong></footer>
 </div>
