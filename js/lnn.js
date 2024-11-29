@@ -289,6 +289,7 @@ function showPlayerLNNs(player, LNNs) {
 
     document.getElementById("category").value = "";
     document.getElementById("first_header").innerHTML = _("Game");
+    document.getElementById("first_header").classList.remove("first_header_category");
     document.getElementById("second_header").innerHTML = _("Shottype");
     document.getElementById("search_sum").innerHTML = numberOfLNNs;
     searchResults.style.display = "block";
@@ -417,6 +418,7 @@ function showCategoryLNNs(category, LNNs) {
     document.getElementById("player").value = "";
     document.getElementById("game_td").rowSpan = numberOfLNNs;
     document.getElementById("first_header").innerHTML = _("Category");
+    document.getElementById("first_header").classList.add("first_header_category");
     document.getElementById("second_header").innerHTML = _("Player");
     document.getElementById("search_sum").innerHTML = numberOfLNNs;
     emptyResults.style.display = "none";

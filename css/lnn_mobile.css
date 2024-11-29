@@ -4,6 +4,6 @@
 .FinalA, .FinalB, .in_route {
     font-size: 8px;
 }
-#toggle_layout {
+#toggle_layout, #search_tbody #tr_0 td:first-child, .first_header_category {
     display: none;
 }
