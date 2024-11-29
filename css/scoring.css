@@ -185,16 +185,8 @@ input[type=button] {
     }
 }
 @media only screen and (min-width: 910px) and (max-width: 1100px) {
-    h1 {
-        margin-bottom: 15px;
-    }
     .wrap {
         margin-left: 8%;
         margin-right: 8%;
-    }
-}
-@media only screen and (max-width: 910px) {
-    h1 {
-        margin-bottom: 15px;
     }
 }

@@ -286,28 +286,12 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
     }
 }
 @media only screen and (min-width: 800px) and (max-width: 1150px) {
-    h1 {
-        margin-bottom: 15px;
-        margin-top: 0px;
-    }
-    h2 {
-        margin-bottom: 10px;
-        margin-top: 5px;
-    }
     .wrap {
         margin-left: 8%;
         margin-right: 8%;
     }
 }
 @media only screen and (max-width: 800px) {
-    h1 {
-        margin-bottom: 15px;
-        margin-top: 0px;
-    }
-    h2 {
-        margin-bottom: 10px;
-        margin-top: 5px;
-    }
     #description {
         padding-left: 0px;
         padding-right: 0px;

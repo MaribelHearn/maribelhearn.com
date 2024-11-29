@@ -65,24 +65,7 @@ label > img {
 #conditions span {
     display: inline-block;
 }
-@media only screen and (min-width: 800px) and (max-width: 1100px) {
-    h1 {
-        margin-bottom: 15px;
-    }
-    h2 {
-        margin-bottom: 15px;
-        margin-top: 10px;
-    }
-}
 @media only screen and (max-width: 800px) {
-    h1 {
-        margin-bottom: 15px;
-        margin-top: 15px;
-    }
-    h2 {
-        margin-bottom: 15px;
-        margin-top: 10px;
-    }
     #replays {
         overflow-x: scroll;
     }

@@ -38,23 +38,3 @@ input[type=number] {
 #route, #season, #calculator, #scoring_button, #survival_button {
     display: none;
 }
-@media only screen and (min-width: 800px) and (max-width: 1100px) {
-    h1 {
-        margin-bottom: 15px;
-        margin-top: 0px;
-    }
-    h2 {
-        margin-bottom: 10px;
-        margin-top: 5px;
-    }
-}
-@media only screen and (max-width: 800px) {
-    h1 {
-        margin-bottom: 15px;
-        margin-top: 0px;
-    }
-    h2 {
-        margin-bottom: 10px;
-        margin-top: 5px;
-    }
-}

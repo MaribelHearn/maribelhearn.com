@@ -201,6 +201,8 @@ img {
 @media only screen and (max-width: 800px) {
     h1 {
         font-size: 36px;
+        margin-bottom: 15px;
+        margin-top: 10px;
     }
     h2 {
         font-size: 24px;
@@ -262,6 +264,9 @@ img {
     .wrap {
         margin-left: 10%;
         margin-right: 10%;
+    }
+    h1 {
+        margin-bottom: 15px;
     }
 }
 @media only screen and (max-width: 500px) {

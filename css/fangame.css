@@ -112,13 +112,6 @@ h2 {
 }
 @media only screen and (min-width: 800px) and (max-width: 1100px) {
     h1 {
-        margin-bottom: 15px;
         clear: both;
-    }
-}
-@media only screen and (max-width: 800px) {
-    h1 {
-        margin-bottom: 15px;
-        margin-top: 15px;
     }
 }
