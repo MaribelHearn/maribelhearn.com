@@ -159,7 +159,7 @@ if (strpos($west_data, 'Internal Server Error') === false) {
     <p id='unver'><?php
         echo _('If you toggle Unverified Scores, this will show scores that are higher than the World Record, but lack replay or video proof.');
     ?></p>
-    <p id='updaters'><?php echo _('For updates, you can contact <a href="https://twitter.com/MaribelHearn42" target="_blank">me</a> or <a href="https://www.youtube.com/@KirbyComment" target="_blank">KirbyComment</a>.') ?></p>
+    <p id='updaters'><?php echo _('For updates, you can contact <a href="https://bsky.app/profile/maribelhearn42.bsky.social" target="_blank">me</a> or <a href="https://www.youtube.com/@KirbyComment" target="_blank">KirbyComment</a>.') ?></p>
     <p id='history_source'><?php
         echo _('The world record history from before September 2024 was assembled using the research at <a href="https://nylilsa.github.io" target="_blank">Nylilsa\'s GitHub page.</a>');
     ?></p>
