@@ -424,11 +424,11 @@
         <tr id='term_thcrap'>
             <th><?php echo _('Thcrap')?></th>
             <td><?php echo _('<strong>T</strong>ou<strong>h</strong>ou <strong>C</strong>ommunity <strong>R</strong>eliant <strong>A</strong>utomatic <strong>P</strong>atcher, ' .
-            'a translation and modding tool; see <a href="tools#thcrap">Touhou Patches and Tools</a> for more information. Not to be confused with <a href="#term_thprac">thprac</a>.')?></td>
+            'a translation and modding tool; see <a href="/tools#thcrap">Touhou Patches and Tools</a> for more information. Not to be confused with <a href="#term_thprac">thprac</a>.')?></td>
         </tr>
         <tr id='term_thprac'>
             <th><?php echo _('Thprac')?></th>
-            <td><?php echo _('Universal practice tool; see <a href="tools#thprac">Touhou Patches and Tools</a> for more information. Not to be confused with <a href="#term_thcrap">thcrap</a>.')?></td>
+            <td><?php echo _('Universal practice tool; see <a href="/tools#thprac">Touhou Patches and Tools</a> for more information. Not to be confused with <a href="#term_thcrap">thcrap</a>.')?></td>
         </tr>
         <tr id='term_timelock'>
             <th><?php echo _('Timelock')?></th>

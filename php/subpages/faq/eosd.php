@@ -53,7 +53,7 @@ Also, some people's computers may refuse to go to exclusive fullscreen for these
 At the very least, it seems to have no negative effects, so it doesn't hurt to have it. When combined with vpatch, it may reduce input lag
 even further (not confirmed). <a href='http://enbdev.com/convertor_dx8_dx9_v0036.htm' target='_blank'>Download link</a>.</p>
 <h4 id='thprac'>thprac</h4>
-<p>thprac (not to be confused with <a href='tools#thcrap'>thcrap</a>) is a popular practice tool. It requires Japanese locale to use with EoSD.
+<p>thprac (not to be confused with <a href='/tools#thcrap'>thcrap</a>) is a popular practice tool. It requires Japanese locale to use with EoSD.
 It can be <a href='https://github.com/ack7139/thprac/releases' target='_blank'>downloaded here</a>.</p>
 <p>thprac is supposed to apply vpatch automatically if it's run in the same folder, but the vpatch Unicode DLL breaks this.
 To get around this, simply run the game with vpatch first, then apply thprac by running it. It should detect EoSD and ask to apply itself.</p>
