@@ -92,7 +92,7 @@ if ($layout == 'Old') {
         'is referred to as LNNFS.');
 	?></p>
     <p id='tables'><?php echo _('All of the table columns are sortable.') ?></p>
-    <p id='updaters'><?php echo _('For updates, you can contact <a href="https://bsky.app/profile/maribelhearn42.bsky.social" target="_blank">me</a>, <a href="https://x.com/CaoMinh_Touhou" target="_blank">Hoàng Cao Minh</a>, ' .
+    <p id='updaters'><?php echo _('For updates, you can contact <a href="https://bsky.app/profile/maribelhearn42.bsky.social" target="_blank">me</a>, <a href="https://hoangcaominh.github.io/#/profile" target="_blank">Hoàng Cao Minh</a>, ' .
             '<a href="https://www.youtube.com/@valivanvan" target="_blank">crazy4pokemon</a> or <a href="https://www.youtube.com/@allenko1122" target="_blank">AllenKO</a>.') ?></p>
     <p id='last_modified'><?php echo (!empty($last_modified) ? format_lm($last_modified, $lang) : '') ?></p>
     <h2><?php echo _('Contents') ?></h2>
