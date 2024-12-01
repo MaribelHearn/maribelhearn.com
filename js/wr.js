@@ -634,27 +634,10 @@ function setEventListeners() {
 }
 
 function setAttributes() {
-    if (!getCookie("wr_old_layout")) {
-        document.getElementById("newlayout").style.display = "block";
-        document.getElementById("contents_new").style.display = "block";
-    }
-    
-    document.getElementById("player_search").style.display = "block";
-    document.getElementById("checkboxes").style.display = "block";
     const flags = document.querySelectorAll(".flag");
-    const westernRecordsLink = document.getElementById("westernlink");
-    const playerSearchLink = document.getElementById("playersearchlink");
 
     for (const flag of flags) {
         flag.setAttribute("href", "");
-    }
-    
-    if (westernRecordsLink) {
-        document.getElementById("westernlink").style.display = "block";
-    }
-
-    if (playerSearchLink) {
-        document.getElementById("playersearchlink").style.display = "block";
     }
 }
 

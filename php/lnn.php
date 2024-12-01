@@ -103,14 +103,14 @@ if ($layout == 'Old') {
             foreach ($games as $key => $data) {
                 echo '<p><a href="#' . $data['short_name'] . '">' . $data['full_name'] . '</a></p>';
             }
-            echo '<p><a href="#player_search">' . _('Search') .
+            echo '<p><a href="#search">' . _('Search') .
             '</a></p><p><a href="#recent">' . _('Recent LNNs') .
             '</a></p><p><a href="#overall">' . _('Overall Count') .
             '</a></p><p><a href="#players">' . _('Player Ranking') .
             '</a></p></div>';
         } else { // $layout == 'New'
             echo '<div id="contents_new" class="contents"><p><a href="#lnns" class="lnns">' . _('LNN Lists') .
-            '</a></p><p><a href="#player_search">' . _('Search') .
+            '</a></p><p><a href="#search">' . _('Search') .
             '</a></p><p><a href="#recent">' . _('Recent LNNs') .
             '</a></p><p><a href="#overall">' . _('Overall Count') .
             '</a></p><p><a href="#players">' . _('Player Ranking') .

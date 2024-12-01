@@ -514,21 +514,10 @@ function setEventListeners() {
 }
 
 function setAttributes() {
-    if (!getCookie("lnn_old_layout")) {
-        document.getElementById("newlayout").style.display = "block";
-        document.getElementById("contents_new").style.display = "block";
-    }
-
-    document.getElementById("search").style.display = "block";
     const flags = document.querySelectorAll(".flag");
-    const playerSearchLink = document.getElementById("playersearchlink");
 
     for (const flag of flags) {
         flag.setAttribute("href", "");
-    }
-
-    if (playerSearchLink) {
-        document.getElementById("playersearchlink").style.display = "block";
     }
 }
 

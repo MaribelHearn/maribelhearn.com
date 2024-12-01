@@ -188,8 +188,8 @@ foreach ($west_data as $key => $data) {
                 }
                 echo '<p><a href="#' . $data['short_name'] . '">' . $data['full_name'] . '</a></p>';
             }
-            echo '<p id="westernlink"><a href="#western_records">' . _('Western Records') . '</a></p>';
-            echo '<p id="playersearchlink"><a href="#playerwrs">' . _('Player Search') . '</a></p>';
+            echo '<p><a href="#western_records">' . _('Western Records') . '</a></p>';
+            echo '<p><a href="#player_search">' . _('Player Search') . '</a></p>';
             echo '<p><a href="#recent">' . _('Recent Records') . '</a></p>';
             echo '<p><a href="#history_old">' . _('History') . '</a></p>';
             echo '<p><a href="#players" class="playerranking">' . _('Player Ranking') . '</a></p></div>';
@@ -197,6 +197,7 @@ foreach ($west_data as $key => $data) {
             echo '<div id="contents_new" class="contents">' .
             '<p><a href="#overall" class="overallrecords">' . _('Overall Records') . '</a></p>' .
             '<p><a href="#wrs" class="worldrecords">' . _('World Records') . '</a></p>' .
+            '<p><a href="#player_search">' . _('Player Search') . '</a></p>' .
             '<p><a href="#recent" >' . _('Recent Records') . '</a></p>' .
             '<p><a href="#players" class="playerranking">' . _('Player Ranking') . '</a></p>' .
             '</div>';
