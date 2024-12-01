@@ -1,10 +1,33 @@
 <?php
 global $API_BASE;
+
+$games = curl_get($API_BASE . '/api/v1/game/');
+if (strpos($games, 'Internal Server Error') !== false) {
+    $_GET['error'] = 500;
+    include_once('php/error.php');
+    include_once('php/shared/postscript.php');
+    die();
+} else if (strpos($games, 'Service Unavailable') !== false) {
+    $_GET['error'] = 503;
+    include_once('php/error.php');
+    include_once('php/shared/postscript.php');
+    die();
+} else {
+    $games = json_decode($games, true);
+}
+
 $ALL_LNN = 101;
 $ALL_GAME_LNN = 13;
 $RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_limit']), 1) : 15;
 $layout = (isset($_COOKIE['lnn_old_layout']) ? 'Old' : 'New');
 $pvp = ['PoDD', 'UDoALG'];
+$number_of_lnns = (object) [];
+$number_of_players = (object) [];
+$player_lnns = (object) [];
+$player_games = (object) [];
+$pvp_full_names = [];
+$total_players = 0;
+$missing_runs = 0;
 
 function lnn_type(string $game, string $lang) {
     switch ($game) {
@@ -46,20 +69,12 @@ function format_lm(string $lm, string $lang) {
     return str_replace('%date', date_tl($lm, $lang), $result);
 }
 
-$last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&date__isnull=False&type=LNN&limit=1');
-if (strpos($last_modified, 'Internal Server Error') === false) {
+if ($layout == 'Old') {
+    $last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&date__isnull=False&type=LNN&limit=1');
     $last_modified = json_decode($last_modified, true);
     $last_modified = $last_modified['results'][0]['date'];
-} else {
-    $last_modified = '';
 }
-$number_of_lnns = (object) [];
-$number_of_players = (object) [];
-$player_lnns = (object) [];
-$player_games = (object) [];
-$pvp_full_names = [];
-$total_players = 0;
-$missing_runs = 0;
+
 ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
@@ -79,33 +94,27 @@ $missing_runs = 0;
     <p id='tables'><?php echo _('All of the table columns are sortable.') ?></p>
     <p id='updaters'><?php echo _('For updates, you can contact <a href="https://bsky.app/profile/maribelhearn42.bsky.social" target="_blank">me</a>, <a href="https://x.com/CaoMinh_Touhou" target="_blank">Hoàng Cao Minh</a>, ' .
             '<a href="https://www.youtube.com/@valivanvan" target="_blank">crazy4pokemon</a> or <a href="https://www.youtube.com/@allenko1122" target="_blank">AllenKO</a>.') ?></p>
-    <p id='lastupdate'><?php echo (!empty($last_modified) ? format_lm($last_modified, $lang) : '') ?></p>
+    <p id='last_modified'><?php echo (!empty($last_modified) ? format_lm($last_modified, $lang) : '') ?></p>
     <h2><?php echo _('Contents') ?></h2>
     <?php
-        // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
-        if ($layout == 'New') {
+        // With lnn_old_layout cookie set, show links to all games and player search
+        if ($layout == 'Old') {
+            echo '<div class="contents"><p><a href="#lnns">' . _('LNN Lists') . '</a></p>';
+            foreach ($games as $key => $data) {
+                echo '<p><a href="#' . $data['short_name'] . '">' . $data['full_name'] . '</a></p>';
+            }
+            echo '<p><a href="#player_search">' . _('Search') .
+            '</a></p><p><a href="#recent">' . _('Recent LNNs') .
+            '</a></p><p><a href="#overall">' . _('Overall Count') .
+            '</a></p><p><a href="#players">' . _('Player Ranking') .
+            '</a></p></div>';
+        } else { // $layout == 'New'
             echo '<div id="contents_new" class="contents"><p><a href="#lnns" class="lnns">' . _('LNN Lists') .
             '</a></p><p><a href="#player_search">' . _('Search') .
             '</a></p><p><a href="#recent">' . _('Recent LNNs') .
             '</a></p><p><a href="#overall">' . _('Overall Count') .
             '</a></p><p><a href="#players">' . _('Player Ranking') .
-            '</a></p></div><noscript>';
-        }
-        echo '<div class="contents"><p><a href="#lnns">' . _('LNN Lists') . '</a></p>';
-        $games = curl_get($API_BASE . '/api/v1/game/');
-        if (strpos($games, 'Internal Server Error') === false) {
-            $games = json_decode($games, true);
-            foreach ($games as $key => $data) {
-                echo '<p><a href="#' . $data['short_name'] . '">' . $data['full_name'] . '</a></p>';
-            }
-        }
-        echo '<p><a href="#player_search">' . _('Search') .
-        '</a></p><p><a href="#recent">' . _('Recent LNNs') .
-        '</a></p><p><a href="#overall">' . _('Overall Count') .
-        '</a></p><p><a href="#players">' . _('Player Ranking') .
-        '</a></p></div>';
-        if ($layout == 'New') {
-            echo '</noscript>';
+            '</a></p></div>';
         }
     ?>
     <div id='checkboxes' class='contents'>
@@ -118,14 +127,11 @@ $missing_runs = 0;
     </div>
     <h2 id='lnns'><?php echo _('LNN Lists') ?></h2>
     <?php
-        // With JavaScript disabled OR lnn_old_layout cookie set, show classic all games layout
-        if ($layout == 'New') {
-            echo '<noscript>';
-        }
-        $sheet = '_1';
-        $lnn = curl_get($API_BASE . '/api/v1/replay/?ordering=game,shot&type=LNN');
-        $games_seen = [];
-        if (strpos($lnn, 'Internal Server Error') === false) {
+        // With lnn_old_layout cookie set, show classic all games layout
+        if ($layout == 'Old') {
+            $sheet = '_1';
+            $lnn = curl_get($API_BASE . '/api/v1/replay/?ordering=game,shot&type=LNN');
+            $games_seen = [];
             $lnn = json_decode($lnn, true);
             foreach ($lnn as $key => $data) {
                 $player = $data['player'];
@@ -171,6 +177,7 @@ $missing_runs = 0;
                     if (!isset($player_lnns->{$player})) {
                         $player_lnns->{$player} = 1;
                         $player_games->{$player} = [$game];
+                        $total_players += 1;
                     } else {
                         $player_lnns->{$player} += 1;
                         array_push($player_games->{$player}, $game);
@@ -195,51 +202,45 @@ $missing_runs = 0;
             sort($players_game);
             echo '</tbody><tfoot><tr><td class="foot">' . _('Overall') . '</td><td class="foot">' . $number_of_lnns->{$game} . ' (' . $number_of_players->{$game} . ')</td>' .
             '<td class="foot">' . implode(', ', $players_game) . '</td></tr></tfoot></table></div>';
-        }
-        if ($layout == 'New') {
-            echo '</noscript>';
-        }
-        // With lnn_old_layout cookie NOT set, show game image layout (CSS hides it with JavaScript disabled)
-        if ($layout == 'New') {
+        // With lnn_old_layout cookie NOT set, show game image layout
+        } else {
             echo '<div id="newlayout"><p id="clickgame">' . _('Click a game cover to show its list of LNNs.') . '</p>';
             $second_row = false;
-            if (gettype($games) != 'string' || strpos($games, 'Internal Server Error') === false) {
-                foreach ($games as $key => $data) {
-                    $game = $data['short_name'];
-                    $full_name = full_name($data['short_name']);
-                    if (in_array($game, $pvp)) {
-                        array_push($pvp_full_names, $full_name);
-                        continue;
-                    }
-                    if ($game == 'PoFV') {
-                        continue;
-                    }
-                    if ($game == 'MoF') {
-                        $second_row = true;
-                        echo '<br>';
-                    }
-                    if (!$second_row) {
-                        echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_1"></span>' .
-                        '<span class="full_name tooltip">' . $full_name . '</span></span>';
-                    } else {
-                        echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_2"></span>' .
-                        '<span class="full_name tooltip">' . $full_name . '</span></span>';
-                    }
+            foreach ($games as $key => $data) {
+                $game = $data['short_name'];
+                $full_name = full_name($data['short_name']);
+                if (in_array($game, $pvp)) {
+                    array_push($pvp_full_names, $full_name);
+                    continue;
                 }
-                echo '<br><br>';
-                foreach ($pvp as $key => $game) {
-                    echo '<span class="game_image"><span id="' . $game . '_image" class="game_img ' . ($game == 'UDoALG' ? 'sheet_2' : 'sheet_1') . '"></span>' .
-                    '<span class="full_name tooltip">' . $pvp_full_names[$key] . '</span></span>';
+                if ($game == 'PoFV') {
+                    continue;
                 }
-                echo '</div>';
-                echo '<div id="lnn_list"><p id="fullname" class="center"></p><table id="lnn_table">';
-                echo '<thead id="lnn_thead"><tr><th id="lnn_shotroute" class="general_header">' . _('Shottype') . '</th>';
-                echo '<th class="general_header nowrap"><span id="lnn_restrictions"></span><br>' . _('(Different players)') . '</th>';
-                echo '<th class="general_header">' . _('Players') . '</th>';
-                echo '</tr></thead><tbody id="lnn_tbody"></tbody><tfoot id="lnn_tfoot"><tr>';
-                echo '<td id="lnn_overall" class="foot">' . _('Overall') . '</td><td id="count" class="foot"></td><td id="total" class="foot"></td></tr></tfoot></table>';
-                echo '</div>';
+                if ($game == 'MoF') {
+                    $second_row = true;
+                    echo '<br>';
+                }
+                if (!$second_row) {
+                    echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_1"></span>' .
+                    '<span class="full_name tooltip">' . $full_name . '</span></span>';
+                } else {
+                    echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_2"></span>' .
+                    '<span class="full_name tooltip">' . $full_name . '</span></span>';
+                }
             }
+            echo '<br><br>';
+            foreach ($pvp as $key => $game) {
+                echo '<span class="game_image"><span id="' . $game . '_image" class="game_img ' . ($game == 'UDoALG' ? 'sheet_2' : 'sheet_1') . '"></span>' .
+                '<span class="full_name tooltip">' . $pvp_full_names[$key] . '</span></span>';
+            }
+            echo '</div>';
+            echo '<div id="lnn_list"><p id="fullname" class="center"></p><table id="lnn_table">';
+            echo '<thead id="lnn_thead"><tr><th id="lnn_shotroute" class="general_header">' . _('Shottype') . '</th>';
+            echo '<th class="general_header nowrap"><span id="lnn_restrictions"></span><br>' . _('(Different players)') . '</th>';
+            echo '<th class="general_header">' . _('Players') . '</th>';
+            echo '</tr></thead><tbody id="lnn_tbody"></tbody><tfoot id="lnn_tfoot"><tr>';
+            echo '<td id="lnn_overall" class="foot">' . _('Overall') . '</td><td id="count" class="foot"></td><td id="total" class="foot"></td></tr></tfoot></table>';
+            echo '</div>';
         }
     ?>
     <div id='search'>
@@ -253,17 +254,14 @@ $missing_runs = 0;
                 <option value=''>...</option>
                 <?php
                     $players = curl_get($API_BASE . '/api/v1/replay/players/');
-                    if (strpos($players, 'Internal Server Error') === false) {
-                        $players = json_decode($players, true);
-                        $players = $players['lnn'];
-                        natcasesort($players);
-                        foreach ($players as $key => $player) {
-                            if ($player == '-') {
-                                continue;
-                            }
-                            echo '<option value="' . $player . '">' . $player . '</option>';
-                            $total_players += 1;
+                    $players = json_decode($players, true);
+                    $players = $players['lnn'];
+                    natcasesort($players);
+                    foreach ($players as $key => $player) {
+                        if ($player == '-') {
+                            continue;
                         }
+                        echo '<option value="' . $player . '">' . $player . '</option>';
                     }
                 ?>
             </select>
@@ -276,17 +274,15 @@ $missing_runs = 0;
                 <option value=''>...</option>
                 <?php
                     $categories = curl_get($API_BASE . '/api/v1/category/?type=LNN&region=Eastern');
-                    if (strpos($categories, 'Internal Server Error') === false) {
-                        $categories = json_decode($categories, true);
-                        foreach ($categories as $key => $category) {
-                            $category_id = $category['game'] . ' ' . $category['shot'];
-                            $category_name = _($category['game']) . ' ' . _($category['shot']);
-                            if (!empty($category['route'])) {
-                                $category_id .= ' ' . $category['route'];
-                                $category_name .= ' ' . _($category['route']);
-                            }
-                            echo '<option value="' . $category_id . '">' . $category_name . '</option>';
+                    $categories = json_decode($categories, true);
+                    foreach ($categories as $key => $category) {
+                        $category_id = $category['game'] . ' ' . $category['shot'];
+                        $category_name = _($category['game']) . ' ' . _($category['shot']);
+                        if (!empty($category['route'])) {
+                            $category_id .= ' ' . $category['route'];
+                            $category_name .= ' ' . _($category['route']);
                         }
+                        echo '<option value="' . $category_id . '">' . $category_name . '</option>';
                     }
                 ?>
             </select>
@@ -325,8 +321,8 @@ $missing_runs = 0;
                 <th class='general_header'><?php echo _('Date') ?></th>
             </tr></thead>
             <tbody id='recentbody'><?php
-                $recent = curl_get($API_BASE . '/api/v1/replay/?limit=' . $RECENT_LIMIT . '&ordering=-date&date__isnull=False&type=LNN');
-                if (strpos($recent, 'Internal Server Error') === false) {
+                if ($layout == 'Old') {
+                    $recent = curl_get($API_BASE . '/api/v1/replay/?limit=' . $RECENT_LIMIT . '&ordering=-date&date__isnull=False&type=LNN');
                     $recent = json_decode($recent, true);
                     $recent = $recent['results'];
                     foreach ($recent as $key => $data) {
@@ -374,18 +370,20 @@ $missing_runs = 0;
                     <th class='general_header'><?php echo _('Different players') ?></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id='overallbody'>
                 <?php
                     $total_lnns = 0;
-                    if (!empty($number_of_lnns)) {
-                        foreach ($number_of_lnns as $game => $count) {
-                            if (in_array($game, $pvp)) {
-                                continue;
-                            }
-                            if (game_num($game) < 6 || $count > 0) {
-                                echo '<tr><td' . (game_num($game) == 128 ? ' data-sort="12.8"' : '') . '>' . game_num($game) . '</td><td class="' . $game . '">' . _($game) . '</td>';
-                                echo '<td>' . $number_of_lnns->{$game} . '</td><td>' . $number_of_players->{$game} . '</td></tr>';
-                                $total_lnns += $number_of_lnns->{$game};
+                    if ($layout == 'Old') {
+                        if (!empty($number_of_lnns)) {
+                            foreach ($number_of_lnns as $game => $count) {
+                                if (in_array($game, $pvp)) {
+                                    continue;
+                                }
+                                if (game_num($game) < 6 || $count > 0) {
+                                    echo '<tr><td' . (game_num($game) == 128 ? ' data-sort="12.8"' : '') . '>' . game_num($game) . '</td><td class="' . $game . '">' . _($game) . '</td>';
+                                    echo '<td>' . $number_of_lnns->{$game} . '</td><td>' . $number_of_players->{$game} . '</td></tr>';
+                                    $total_lnns += $number_of_lnns->{$game};
+                                }
                             }
                         }
                     }
@@ -394,13 +392,14 @@ $missing_runs = 0;
             <tfoot>
                 <tr>
                     <td class='foot' colspan='2'><?php echo _('Overall') ?></td>
-                    <td class='foot'><?php echo $total_lnns ?></td>
-                    <td class='foot'><?php echo $total_players ?></td>
+                    <td id='total_lnns' class='foot'><?php echo $total_lnns ?></td>
+                    <td id='total_players' class='foot'><?php echo $total_players ?></td>
                 </tr>
-                <tr>
-                    <td colspan='2'><?php echo _('Replays') ?></td>
-                    <td colspan='2'><?php echo $total_lnns - $missing_runs ?></td>
-                </tr>
+                <?php
+                    if ($layout == 'Old') {
+                        echo '<tr><td colspan="2">' . _('Replays') . '</td><td colspan="2">' . ($total_lnns - $missing_runs) . '</td></tr>';
+                    }
+                ?>
             </tfoot>
         </table>
     </div>
@@ -415,16 +414,18 @@ $missing_runs = 0;
                     <th class='general_header'><?php echo _('Games LNN\'d'); ?></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id='rankingbody'>
                 <?php
-                    foreach ($player_lnns as $player => $count) {
-                        $player_games->{$player} = count(array_unique($player_games->{$player}));
-                        $shot_lnns = $player_lnns->{$player} == $ALL_LNN ? $player_lnns->{$player} . _(' (All Windows)') : $player_lnns->{$player};
-                        $game_lnns = $player_games->{$player} >= $ALL_GAME_LNN ? $player_games->{$player} . _(' (All Windows)') : $player_games->{$player};
-                        echo '<tr><td></td>';
-                        echo '<td><a href="#' . urlencode($player) . '">' . $player . '</a></td>';
-                        echo '<td data-sort="' . $player_lnns->{$player} . '">' . $shot_lnns . '</td>';
-                        echo '<td data-sort="' . $player_games->{$player} . '">' . $game_lnns . '</td></tr>';
+                    if ($layout == 'Old') {
+                        foreach ($player_lnns as $player => $count) {
+                            $player_games->{$player} = count(array_unique($player_games->{$player}));
+                            $shot_lnns = $player_lnns->{$player} == $ALL_LNN ? $player_lnns->{$player} . _(' (All Windows)') : $player_lnns->{$player};
+                            $game_lnns = $player_games->{$player} >= $ALL_GAME_LNN ? $player_games->{$player} . _(' (All Windows)') : $player_games->{$player};
+                            echo '<tr><td></td>';
+                            echo '<td><a href="#' . urlencode($player) . '">' . $player . '</a></td>';
+                            echo '<td data-sort="' . $player_lnns->{$player} . '">' . $shot_lnns . '</td>';
+                            echo '<td data-sort="' . $player_games->{$player} . '">' . $game_lnns . '</td></tr>';
+                        }
                     }
                 ?>
             </tbody>

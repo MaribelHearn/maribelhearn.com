@@ -1,9 +1,13 @@
-/*global _ getCookie deleteCookie setCookie fullNameNumber*/
+/*global _ getCookie deleteCookie setCookie fullNameNumber gameAbbr*/
 const API_BASE = location.hostname.includes("maribelhearn.com") ? "https://maribelhearn.com" : "http://localhost";
 const banList = ["Reimu", "Marisa", "Sanae", "Seiran", "Biten", "Enoko", "Chiyari"];
+const allLNN = 101;
+const allGameLNN = 13;
 let language = "en_GB";
 let selected = "";
 let shots = {};
+let playerLNNs = {};
+let playerGames = {};
 
 function toggleLayout() {
     if (getCookie("lnn_old_layout")) {
@@ -528,6 +532,178 @@ function setAttributes() {
     }
 }
 
+function getLastModifiedDate() {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=-date&date__isnull=False&type=LNN&limit=1`);
+    xhr.onreadystatechange = function () {
+        if (this.readyState === 4) {
+            if (this.status === 200) {
+                const response = JSON.parse(this.response);
+                const lastModifiedDate = formatDate(new Date(response.results[0].submitted_date));
+                let lastModified = _(`LNNs are current as of <span id="lm">%date</span>.`).replace("%date", lastModifiedDate);
+                document.getElementById("last_modified").innerHTML = lastModified;
+            }
+        }
+    }
+
+    xhr.send();
+}
+
+/*function getPlayerSearchOptions() {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `${API_BASE}/api/v1/replay/players/`);
+    xhr.onreadystatechange = function () {
+        if (this.readyState === 4) {
+            if (this.status === 200) {
+                const playerSearch = document.getElementById("search_player");
+                const players = JSON.parse(this.response).lnn.sort();
+                
+                for (const player of players) {
+                    if (player == '-') {
+                        continue;
+                    }
+
+                    playerSearch.innerHTML += `<option value="${player}">${player}</option>`;
+                }
+            }
+        }
+    }
+
+    xhr.send();
+}*/
+
+function getRecentLNNs() {
+    const recentLimit = getCookie("recent_limit") ? Math.max(getCookie("recent_limit"), 1) : 15;
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `${API_BASE}/api/v1/replay/?limit=${recentLimit}&ordering=-date&date__isnull=False&type=LNN`);
+    xhr.onreadystatechange = function () {
+        if (this.readyState === 4) {
+            if (this.status === 200) {
+                const recentTable = document.getElementById("recentbody");
+                const recent = JSON.parse(this.response).results;
+
+                for (const entry of recent) {
+                    if (!entry["date"]) {
+                        continue;
+                    }
+
+                    const date = formatDate(new Date(entry["date"]), language);
+                    const dateRaw = formatDate(new Date(entry["date"]), "raw");
+                    let replay, video, route;
+
+                    if (!entry["replay"]) {
+                        replay = '-';
+                    } else {
+                        const chunks = entry["replay"].split(/\//);
+                        replay = `<a href='${entry["replay"]}'>${chunks[chunks.length - 1]}</a>`;
+                    }
+
+                    if (!entry["video"]) {
+                        video = '-';
+                    } else {
+                        video = `<a href='${entry["video"]}'>${_('Link')}</a>`;
+                    }
+
+                    if (!entry["category"]["route"]) {
+                        route = '';
+                    } else {
+                        route = _(' ') + _(entry["category"]["route"]);
+                    }
+
+                    let tableRow = '<tr>';
+                    tableRow += `<td class="${entry["category"]["game"]}p">${_(entry["category"]["game"]) + _(' ') + _(entry["category"]["shot"]) + route}</td>`;
+                    tableRow += `<td>${entry["player"]}</td>`;
+                    tableRow += `<td class="no_mobile">${replay}</td>`;
+                    tableRow += `<td>${video}</td>`;
+                    tableRow += `<td data-sort='${dateRaw}'>${date}</td>`;
+                    tableRow += '</tr>';
+                    recentTable.innerHTML += tableRow;
+                }
+            }
+        }
+    }
+
+    xhr.send();
+}
+
+function getOverallCountAndRanking() {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=game,shot&type=LNN`);
+    xhr.onreadystatechange = function () {
+        if (this.readyState === 4) {
+            if (this.status === 200) {
+                const overallBody = document.getElementById("overallbody");
+                let currentGame = "HRtP";
+                let totalLNNs = 0;
+                let totalPlayers = [];
+                let totalGame = {};
+                let totalGamePlayers = {};
+                const response = JSON.parse(this.response);
+                
+                for (const entry of response) {
+                    const game = entry.category.game;
+                    const player = entry.player;
+
+                    if (!["PoDD", "UDoALG"].includes(game)) {
+                        totalLNNs += 1;
+                        
+                        if (totalGame.hasOwnProperty(game)) {
+                            totalGame[game] += 1;
+                        } else {
+                            totalGame[game] = 1;
+                        }
+
+                        if (totalGamePlayers.hasOwnProperty(game)) {
+                            totalGamePlayers[game].pushStrict(player);
+                        } else {
+                            totalGamePlayers[game] = [player];
+                        }
+
+                        if (playerLNNs.hasOwnProperty(player)) {
+                            playerLNNs[player] += 1;
+                            playerGames[player].pushStrict(game);
+                        } else {
+                            playerLNNs[player] = 1;
+                            playerGames[player] = [game];
+                            totalPlayers.pushStrict(player);
+                        }
+
+                        if (currentGame != game) {
+                            totalGamePlayers[currentGame] = totalGamePlayers[currentGame].length;
+                            overallBody.innerHTML += `<tr><td${gameAbbr(currentGame) == 128 ? " data-sort='12.8'" : ""}>${gameAbbr(currentGame)}</td><td class='${currentGame}'>${_(currentGame)}</td>` +
+                                    `<td>${totalGame[currentGame]}</td><td>${totalGamePlayers[currentGame]}</td></tr>`;
+                            currentGame = game;
+                        }
+                    }
+                }
+
+                // add UM at the end
+                totalGamePlayers[currentGame] = totalGamePlayers[currentGame].length;
+                overallBody.innerHTML += `<tr><td${gameAbbr(currentGame) == 128 ? " data-sort='12.8'" : ""}>${gameAbbr(currentGame)}</td><td class='${currentGame}'>${_(currentGame)}</td>` +
+                        `<td>${totalGame[currentGame]}</td><td>${totalGamePlayers[currentGame]}</td></tr>`;
+
+                document.getElementById("total_lnns").innerHTML = totalLNNs;
+                document.getElementById("total_players").innerHTML = totalPlayers.length;
+
+                // add player ranking
+                const rankingBody = document.getElementById("rankingbody");
+
+                for (const player in playerLNNs) {
+                    playerGames[player] = playerGames[player].length;
+                    const shotLNNs = playerLNNs[player] + (playerLNNs[player] == allLNN ? _(" (All Windows)") : "");
+                    const gameLNNs = playerGames[player] + (playerGames[player] == allGameLNN ? _(" (All Windows)") : "");
+                    rankingBody.innerHTML += `<tr><td></td><td><a href='#${encodeURIComponent(player)}'>${player}</a></td><td data-sort='${playerLNNs[player]}'>${shotLNNs}</td><td data-sort='${playerGames[player]}'>${gameLNNs}</td></tr>`;
+                }
+
+                document.getElementById("number_of_lnns").click();
+            }
+        }
+    }
+
+    xhr.send();
+}
+
 function checkHash() {
     // player in hash links to player LNNs
     if (location.hash !== "") {
@@ -566,6 +742,13 @@ function init() {
     setEventListeners();
     setAttributes();
 
+    if (!getCookie("lnn_old_layout")) {
+        getLastModifiedDate();
+        //getPlayerSearchOptions();
+        getRecentLNNs();
+        getOverallCountAndRanking();
+    }
+
     // legacy video toggle
     if (getCookie("prefer_video")) {
         deleteCookie("prefer_video");
@@ -585,7 +768,10 @@ function init() {
     }
 
     checkHash();
-    document.getElementById("number_of_lnns").click();
+
+    if (getCookie("lnn_old_layout")) {
+        document.getElementById("number_of_lnns").click();
+    }
 }
 
 window.addEventListener("DOMContentLoaded", init, false);
