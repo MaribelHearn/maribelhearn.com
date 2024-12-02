@@ -715,7 +715,7 @@ function getRecentRecords() {
                     }
 
                     let tableRow = '<tr>';
-                    tableRow += `<td class="${entry["category"]["game"]}p">${_(entry["category"]["game"]) + _(' ') + _(entry["category"]["shot"])}</td>`;
+                    tableRow += `<td class="${entry["category"]["game"]}p">${_(entry["category"]["game"]) + _(' ') + _(entry["category"]["difficulty"]) + _(' ') + _(entry["category"]["shot"])}</td>`;
                     tableRow += `<td>${sep(entry["score"])}</td>`;
                     tableRow += `<td>${entry["player"]}</td>`;
                     tableRow += `<td class="no_mobile">${replay}</td>`;
