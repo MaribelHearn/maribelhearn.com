@@ -102,6 +102,10 @@ Note that most spinoffs consist of three digits; for example, GFW (Touhou 12.8) 
 <p>Screenshots made using the Home or P key are in the <span class='tt'>snapshot</span> subfolder in your game folder.</p>
 <h4 id='zip'>Why is the game not saving my progress?</h4>
 <p>You are playing inside a <span class='tt'>.zip</span> archive file. Right click the file and extract its contents into a folder, then play the game from that folder.</p>
+<h4 id='return'>Why is the game returning to the title screen after watching Stage 1 in a replay?</h4>
+<p>This is an issue when using <a href='/tools#thcrap'>THCRAP</a> with MoF (Touhou 10). You can watch the replay by opening the game without THCRAP.</p>
+<p>If you feel comfortable touching script files, you can do the following: navigate to the THCRAP folder, then to <span class='code'>repos/nmlgc/base_tsa</span> and open the <span class='code'>th10.v1.00a.js</span> file.
+In the file, delete the block that is named <span class='code'>fix_practice_replay_crash#1</span>.</p>
 <hr>
 <h2 id='desync'>Why does my replay desync?</h2>
 <h4 id='classic'>EoSD to IN (Touhou 6-8)</h4>
