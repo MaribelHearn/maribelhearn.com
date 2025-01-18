@@ -198,8 +198,10 @@ function showLNNs() { // .game_img onclick
     }
 }
 
-function formatDate(date) {
-    if (language == "ja_JP" || language == "zh_CN") {
+function formatDate(date, raw) {
+    if (raw) {
+        return date.toLocaleString("en-US", {"year": "numeric", "month": "2-digit", "day": "2-digit"}).split('/').reverse().join("");
+    } else if (language == "ja_JP" || language == "zh_CN") {
         return date.toLocaleString(language.replace('_', '-'), {"dateStyle": "long"});
     } else {
         return date.toLocaleString(language.replace('_', '-'), {"year": "numeric", "month": "2-digit", "day": "2-digit"});
@@ -382,7 +384,7 @@ function showCategoryLNNs(category, LNNs) {
         const game = data.category.game;
         const shot = data.category.shot;
         const route = data.category.route;
-        let replay, video, date, dateSort;
+        let replay, video, date, dateRaw;
 
         if (!data.replay) {
             replay = '-';
@@ -401,7 +403,7 @@ function showCategoryLNNs(category, LNNs) {
         }
 
         date = (!data.date ? _("Unknown") : formatDate(new Date(data.date)));
-        dateSort = date.replace(/-/g, "");
+        dateRaw = (!data.date ? _("Unknown") : formatDate(new Date(data.date), "raw"));
         searchTable.innerHTML += `<tr id='tr_${numberOfLNNs}'></tr>`;
 
         if (first) {
@@ -409,7 +411,7 @@ function showCategoryLNNs(category, LNNs) {
             first = false;
         }
 
-        document.getElementById(`tr_${numberOfLNNs}`).innerHTML += `<td>${data.player}</td><td>${replay}</td><td>${video}</td><td data-sort="${dateSort}">${date}</td>`;
+        document.getElementById(`tr_${numberOfLNNs}`).innerHTML += `<td>${data.player}</td><td>${replay}</td><td>${video}</td><td data-sort="${dateRaw}">${date}</td>`;
         numberOfLNNs += 1;
     }
 
@@ -577,7 +579,7 @@ function getRecentLNNs() {
                         continue;
                     }
 
-                    const date = formatDate(new Date(entry["date"]), language);
+                    const date = formatDate(new Date(entry["date"]));
                     const dateRaw = formatDate(new Date(entry["date"]), "raw");
                     let replay, video, route;
 
