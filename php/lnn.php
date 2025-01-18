@@ -289,7 +289,7 @@ if ($layout == 'Old') {
         </div>
     </div>
 	<div id='search_results'>
-		<table class='sortable asc'>
+		<table id='search_table' class='sortable asc'>
 			<thead id='search_thead'><tr>
                 <th id='first_header' class='general_header'><?php echo _('Game') ?></th>
                 <th id='second_header' class='general_header'><?php echo _('Shottype') ?></th>
