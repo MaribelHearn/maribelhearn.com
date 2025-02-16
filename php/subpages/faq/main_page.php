@@ -102,6 +102,8 @@ Note that most spinoffs consist of three digits; for example, GFW (Touhou 12.8) 
 <p>Screenshots made using the Home or P key are in the <span class='tt'>snapshot</span> subfolder in your game folder.</p>
 <h4 id='zip'>Why is the game not saving my progress?</h4>
 <p>You are playing inside a <span class='tt'>.zip</span> archive file. Right click the file and extract its contents into a folder, then play the game from that folder.</p>
+<h4 id='cfgbug'>Why is the game not saving my options I set in the game?</h4>
+<p>If your in-game settings (for example the volume) are not being remembered after closing the game, you are using an old version of <a href='/tools#vpatch'>vpatch</a> for DDC (Touhou 14) or LoLK (Touhou 15). To fix this, either set your input latency to Fast using custom.exe, or download the newest version from <a href='/tools#vpatch'>Touhou Patches and Tools</a>.</p>
 <h4 id='return'>Why is the game returning to the title screen after watching Stage 1 in a replay?</h4>
 <p>This is an issue when using <a href='/tools#thcrap'>THCRAP</a> with MoF (Touhou 10). You can watch the replay by opening the game without THCRAP.</p>
 <p>If you feel comfortable touching script files, you can do the following: navigate to the THCRAP folder, then to <span class='code'>repos/nmlgc/base_tsa</span> and open the <span class='code'>th10.v1.00a.js</span> file.
