@@ -29,6 +29,21 @@ input[type=button].delete {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.donation {
+    border: 1px solid black;
+    border-radius: 8px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    padding: 12px 0px 12px 0px;
+}
+.donation a {
+    color: white;
+    padding: 12px;
+    text-decoration: none;
+    font-weight: bold;
+}
 .warning {
     color: darkred;
     font-weight: bold;

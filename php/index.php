@@ -2,6 +2,11 @@
     <?php echo wrap_top() ?>
     <p class='center'>A privacy-friendly collection of convenient webpages for the Touhou community.</p>
     <p id='desktop_hover' class='center'>Hover your cursor over a link for a description of that page. Flags show available translations.</p>
+    <p class='donation wide center'>
+        <a href='https://ko-fi.com/maribelhearn42'>
+            <span class='icon kofi_icon'></span> Support me
+        </a>
+    </p>
     <h2 id='page_links'>Page Links</h2>
     <div>
         <div class='pages_left'>

@@ -112,7 +112,7 @@ function navbar(string $page) {
     $navbar .= '<a href="/credits">Credits</a> | ';
     $navbar .= '<a href="/contact">Contact</a> ';
 
-    if (!show_admin($token_path)) {
+    if (!show_admin($token_path) && $page != 'index') {
         $navbar .= '| <a href="https://ko-fi.com/maribelhearn42">Buy me a coffee</a>';
     }
 
