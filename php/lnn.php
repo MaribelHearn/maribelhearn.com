@@ -17,7 +17,7 @@ if (strpos($games, 'Internal Server Error') !== false) {
 }
 
 $ALL_LNN = 101;
-$ALL_GAME_LNN = 13;
+$WINDOWS_LNN = ['EoSD', 'PCB', 'IN', 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC', 'UM'];
 $RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_limit']), 1) : 15;
 $layout = (isset($_COOKIE['lnn_old_layout']) ? 'Old' : 'New');
 $pvp = ['PoDD', 'UDoALG'];
@@ -418,9 +418,8 @@ if ($layout == 'Old') {
                 <?php
                     if ($layout == 'Old') {
                         foreach ($player_lnns as $player => $count) {
-                            $player_games->{$player} = count(array_unique($player_games->{$player}));
                             $shot_lnns = $player_lnns->{$player} == $ALL_LNN ? $player_lnns->{$player} . _(' (All Windows)') : $player_lnns->{$player};
-                            $game_lnns = $player_games->{$player} >= $ALL_GAME_LNN ? $player_games->{$player} . _(' (All Windows)') : $player_games->{$player};
+                            $game_lnns = array_intersect($WINDOWS_LNN, $player_games->{$player}) == $WINDOWS_LNN ? count(array_unique($player_games->{$player})) . _(' (All Windows)') : count(array_unique($player_games->{$player}));
                             echo '<tr><td></td>';
                             echo '<td><a href="#' . urlencode($player) . '">' . $player . '</a></td>';
                             echo '<td data-sort="' . $player_lnns->{$player} . '">' . $shot_lnns . '</td>';

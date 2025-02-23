@@ -2,7 +2,7 @@
 const API_BASE = location.hostname.includes("maribelhearn.com") ? "https://maribelhearn.com" : "http://localhost";
 const banList = ["Reimu", "Marisa", "Sanae", "Seiran", "Biten", "Enoko", "Chiyari"];
 const allLNN = 101;
-const allGameLNN = 13;
+const windowsLNNs = ["EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
 let language = "en_GB";
 let selected = "";
 let shots = {};
@@ -683,9 +683,8 @@ function getOverallCountAndRanking() {
                 const rankingBody = document.getElementById("rankingbody");
 
                 for (const player in playerLNNs) {
-                    playerGames[player] = playerGames[player].length;
                     const shotLNNs = playerLNNs[player] + (playerLNNs[player] == allLNN ? _(" (All Windows)") : "");
-                    const gameLNNs = playerGames[player] + (playerGames[player] == allGameLNN ? _(" (All Windows)") : "");
+                    const gameLNNs = playerGames[player].length + (windowsLNNs.every(val => playerGames[player].includes(val)) ? _(" (All Windows)") : "");
                     rankingBody.innerHTML += `<tr><td></td><td><a href='#${encodeURIComponent(player)}'>${player}</a></td><td data-sort='${playerLNNs[player]}'>${shotLNNs}</td><td data-sort='${playerGames[player]}'>${gameLNNs}</td></tr>`;
                 }
 
