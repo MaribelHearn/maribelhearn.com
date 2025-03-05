@@ -423,7 +423,7 @@ if ($layout == 'Old') {
                             echo '<tr><td></td>';
                             echo '<td><a href="#' . urlencode($player) . '">' . $player . '</a></td>';
                             echo '<td data-sort="' . $player_lnns->{$player} . '">' . $shot_lnns . '</td>';
-                            echo '<td data-sort="' . $player_games->{$player} . '">' . $game_lnns . '</td></tr>';
+                            echo '<td data-sort="' . count(array_unique($player_games->{$player})) . '">' . $game_lnns . '</td></tr>';
                         }
                     }
                 ?>

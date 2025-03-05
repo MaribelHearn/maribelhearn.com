@@ -685,7 +685,7 @@ function getOverallCountAndRanking() {
                 for (const player in playerLNNs) {
                     const shotLNNs = playerLNNs[player] + (playerLNNs[player] == allLNN ? _(" (All Windows)") : "");
                     const gameLNNs = playerGames[player].length + (windowsLNNs.every(val => playerGames[player].includes(val)) ? _(" (All Windows)") : "");
-                    rankingBody.innerHTML += `<tr><td></td><td><a href='#${encodeURIComponent(player)}'>${player}</a></td><td data-sort='${playerLNNs[player]}'>${shotLNNs}</td><td data-sort='${playerGames[player]}'>${gameLNNs}</td></tr>`;
+                    rankingBody.innerHTML += `<tr><td></td><td><a href='#${encodeURIComponent(player)}'>${player}</a></td><td data-sort='${playerLNNs[player]}'>${shotLNNs}</td><td data-sort='${playerGames[player].length}'>${gameLNNs}</td></tr>`;
                 }
 
                 document.getElementById("number_of_lnns").click();
