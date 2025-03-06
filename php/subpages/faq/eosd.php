@@ -73,6 +73,7 @@ This happens occasionally after you try to close the game - the game is still ru
 Open Task Manager, and you should be able to find it in the "Processes" tab (likely in the "Background Processes" section when it's a ghost process) and right click -> "End Task".</p>
 <h4>vpatch error</h4>
 <img class='error' src='/assets/games/faq/eosd/eosd_error_vpatch.png' alt='EoSD vpatch error message'>
-<p>A "game not found" error message given by vpatch. Make sure your EoSD executable is named <span class='code'>東方紅魔郷.exe</span>.</p>
-<p>This error can also occur if you have corrupted files. If all of your files are named correctly, but EoSD still won't start, check your disk for file corruption.</p>
+<p>A "game not found" error message given by vpatch. Make sure your EoSD executable is named <span class='code'>東方紅魔郷.exe</span> and make sure that vpatch is in the same folder.</p>
+<p>This error can also occur if you have more than one vpatch DLL file in your game folder. In that case, remove all vpatch DLL files except the th06 one.</p>
+<p>In <em>very rare</em> cases, this error will occur because of corrupted files. If all of your files are named correctly, but EoSD still won't start, consider checking your disk for file corruption.</p>
 <?php // language detection hack ?>
