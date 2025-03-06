@@ -50,6 +50,9 @@ Many games will also require vpatch or the game will have input lag. EoSD (Touho
 <p>If you are playing Touhou 11 or newer in fullscreen, try lowering the resolution in the dialog when you open the game.
 If the dialog does not open, change it via <span class='tt'>custom.exe</span>. Be sure to launch it either in Japanese locale,
 or in English using <a href='/tools#thcrap'>THCRAP</a>.</p>
+<h4 id='cfg'>Why do I get this error message when starting my game?</h4>
+<img src='/assets/games/faq/error_cfg.png' alt='CFG file error message'>
+<p>If you get an error message that mentions "thXX.cfg", that means the game does not have permission to write files in its folder. Most likely, your game is installed into Program Files. Move the game to a location in your Users folder to fix this.</p>
 <h4 id='keys'>How do I remap my keys?</h4>
 <p>If you are playing UM (Touhou 18), you can do this in-game. Otherwise, use <a href='https://www.autohotkey.com/'>AutoHotKey</a>.
 For Mac or Linux, see <a href='https://en.touhouwiki.net/wiki/Running_in_Linux_and_Mac_OS_X/Misc_fixes#Remapping_Keys'>this Touhou Wiki page</a>.</p>
