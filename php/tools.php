@@ -40,16 +40,19 @@
 		'experience. It allows you to set a custom screen resolution as well.</p>' .
 		'<p>Vpatch is applicable to all official shooting games bar HSiFS, WBaWC and UM.');
 	?></p>
-    <p><a href='https://maribelhearn.com/mirror/VsyncPatch.zip' target='_blank'><?php echo _('Download') ?></a></p>
+	<div>
+    	<p><a href='https://maribelhearn.com/mirror/VsyncPatch.zip' target='_blank'><?php echo _('Download') ?></a></p>
+    	<p><a href='https://maribelhearn.com/mirror/VsyncPatchUnicode.zip' target='_blank'><?php echo _('Unicode vpatch for EoSD (th06)') ?></a></p>
+	</div>
 	<!-- Thprac -->
 	<hr>
+	<?php echo _('<h2 id="thprac">thprac (universal practice tool by Ack)</h2>') ?>
+	<p>
+		<?php echo _('Single practice tool that works on all of the official Touhou shoot \'em up games, ' .
+		'allowing you to change settings or skip to patterns at will.'); ?>
+	</p>
 	<div><!--  class='main' -->
-		<?php echo _('<h2 id="thprac">thprac (universal practice tool by Ack)</h2>') ?>
-		<p>
-			<?php echo _('Single practice tool that works on all of the official Touhou shoot \'em up games, ' .
-			'allowing you to change settings or skip to patterns at will.'); ?>
-		</p>
-		<p><a href='https://github.com/touhouworldcup/thprac#thprac' target='_blank'><?php echo _('Download') ?></a></p>
+	<p><a href='https://github.com/touhouworldcup/thprac#thprac' target='_blank'><?php echo _('Download') ?></a></p>
 	</div>
 	<!--<div class='side'>
 		<div id='thprac_img'></div>
@@ -69,10 +72,10 @@
 		'instructions on how to use the patcher.');
 	?></p>
 	<div>
-    	<p><p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Download' target='_blank'>
+    	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Download' target='_blank'>
 			<?php echo _('Download') ?> (thpatch.net)
 		</a></p>
-    	<p><p><a href='https://maribelhearn.com/mirror/thcrap.zip' target='_blank'><?php
+    	<p><a href='https://maribelhearn.com/mirror/thcrap.zip' target='_blank'><?php
 			echo _('Download') . _(' (maribelhearn.com mirror)')
 		?></a></p>
 	</div>
