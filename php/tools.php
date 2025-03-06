@@ -15,7 +15,7 @@
         <p><a href='#vpatch'><strong>Vpatch</strong></a></p>
         <p><a href='#thprac'><strong>thprac</strong></a></p>
         <p><a href='#thcrap'>thcrap</a></p>
-        <p><a href='#enbconvertor'><?php echo _('DX8 to DX9 converter') ?></a></p>
+        <p><a href='#d8d9'><?php echo _('DX8 to DX9 converter') ?></a></p>
         <p><a href='#shottypes'><?php echo _('Shottype Modifications') ?></a></p>
         <p><a href='#hardultra'><?php echo _('Hard Mode / Ultra Patches') ?></a></p>
         <p><a href='#graphical'><?php echo _('Graphical Patches') ?></a></p>
@@ -79,14 +79,14 @@
 			echo _('Download') . _(' (maribelhearn.com mirror)')
 		?></a></p>
 	</div>
-    <!-- Enbconvertor -->
+    <!-- d8d9 -->
     <hr>
-    <h2 id='enbconvertor'><?php echo _('DX8 to DX9 converter') ?></h2>
+    <h2 id='d8d9'><?php echo _('DX8 to DX9 converter') ?></h2>
     <p><?php
-		echo _('Makes the older Touhou Windows games (EoSD, PCB, IN, PoFV and StB) run properly on Windows 10. ' .
+		echo _('Makes the older Touhou Windows games (EoSD, PCB, IN, PoFV and StB) run properly on Windows 10 and 11. ' .
 		'Extract it into the folders of these games for it to take effect.');
 	?></p>
-    <p><a href='http://enbdev.com/convertor_dx8_dx9_v0036.htm' target='_blank'><?php echo _('Download') ?></a></p>
+    <p><a href='https://github.com/crosire/d3d8to9/releases/latest' target='_blank'><?php echo _('Download') ?></a></p>
     <!-- Shottype Modifications -->
     <hr>
     <h2 id='shottypes'><?php echo _('Shottype Modifications') ?></h2>

@@ -1,5 +1,5 @@
 <h2 id='gfx'>Graphical issues</h2>
-<p><strong>Note:</strong> this guide is based on Windows 10. Other operating systems may or may not have similar graphics configuration screens.</p>
+<p><strong>Note:</strong> this guide is based on Windows 10 and 11. Other operating systems may or may not have similar graphics configuration screens.</p>
 <br>
 <p>Touhou shoot 'em up games are 4:3 games, meaning they are intended to be played in that aspect ratio. However, when launching the games in fullscreen,
 they might be stretched to your full display, which is likely a 16:9 display, the standard aspect ratio. Your game might also be too small or otherwise render weirdly.
@@ -7,7 +7,7 @@ they might be stretched to your full display, which is likely a 16:9 display, th
 If you encounter any of these issues, you are on the right page.</p>
 <p>There are two ways to address this: configuring your graphics to maintain the game's aspect ratio, or using <a href='/faq#vpatch'>vpatch</a> to play in a window scaled to your preferred size.
 <br>
-<strong>Warning:</strong> When using Windows 10, playing in windowed mode increases input lag.</p>
+<strong>Warning:</strong> When using Windows 10 or 11, playing in windowed mode increases input lag.</p>
 <p>If you own an NVIDIA graphics card, such as the GeForce GTX 1060 or RTX 2070, see <a href='#nvidia'>NVIDIA</a>.
 <br>
 If you own an AMD graphics card, such as the Radeon RX 580 or Radeon Vega 8, see <a href='#amd'>AMD</a>.
@@ -33,7 +33,7 @@ Alternatively, you can play in a window and use <a href='/faq#vpatch'>vpatch</a>
 <p>If this does not fix your problem, go to "Custom Resolutions" and enter your own values under "Add". Click the '+' icon in the bottom right corner to add the resolution.
 Use this resolution when playing Touhou. Alternatively, you can play in a window and use <a href='/faq#vpatch'>vpatch</a> to scale the window to your preferred size.</p>
 <h4 id='vpatch'>vpatch</h4>
-<p><strong>Warning:</strong> When using Windows 10, playing in windowed mode increases input lag.</p>
+<p><strong>Warning:</strong> When using Windows 10 or 11, playing in windowed mode increases input lag.</p>
 <p>Edit the <span class='code'>vpatch.ini</span> file in your game folder. If you want to get a fullscreen-like experience when playing windowed, set <span class='tt'>TitleBar</span>
 to <span class='tt'>0</span> to hide the window title bar. Additionally, set <span class='tt'>AlwaysOnTop</span> to <span class='tt'>1</span> to make sure the Windows taskbar does
 not obscure the bottom of your game. To change the window size, adjust the values for <span class='tt'>Width</span> and <span class='tt'>Height</span> to your liking.</p>

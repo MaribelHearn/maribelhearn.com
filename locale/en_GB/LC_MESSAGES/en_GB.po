@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2024-11-12 19:33+0100\n"
-"PO-Revision-Date: 2024-11-12 19:33+0100\n"
+"PO-Revision-Date: 2025-03-06 21:57+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_GB\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-Basepath: ../../..\n"
 "X-Poedit-SearchPath-0: php/drc.php\n"
 "X-Poedit-SearchPath-1: php/lnn.php\n"
@@ -32,8 +32,7 @@ msgid "usage of the MarisaB damage bug is BANNED in survival."
 msgstr ""
 
 #: js/drc.js:41
-msgid ""
-"<em>manual</em> trances count as bombs (that is, trances from pressing C)."
+msgid "<em>manual</em> trances count as bombs (that is, trances from pressing C)."
 msgstr ""
 
 #: js/drc.js:43
@@ -129,8 +128,8 @@ msgstr ""
 msgid "block"
 msgstr ""
 
-#: js/lnn.js:32 js/lnn.js:35 js/lnn.js:36 js/lnn.js:38 php/lnn.php:11
-#: php/lnn.php:14 php/lnn.php:15 php/lnn.php:17
+#: js/lnn.js:32 js/lnn.js:35 js/lnn.js:36 js/lnn.js:38 php/lnn.php:11 php/lnn.php:14
+#: php/lnn.php:15 php/lnn.php:17
 msgid "No. of LNNNs"
 msgstr ""
 
@@ -155,8 +154,7 @@ msgstr ""
 msgid "Link"
 msgstr ""
 
-#: js/lnn.js:255 js/lnn.js:398 js/wr.js:463 js/wr.js:524 php/lnn.php:24
-#: php/wr.php:23
+#: js/lnn.js:255 js/lnn.js:398 js/wr.js:463 js/wr.js:524 php/lnn.php:24 php/wr.php:23
 msgid "Unknown"
 msgstr ""
 
@@ -164,8 +162,8 @@ msgstr ""
 msgid "(All)"
 msgstr ""
 
-#: js/lnn.js:291 php/drc.php:203 php/drc.php:387 php/drc.php:421
-#: php/lnn.php:298 php/lnn.php:372 php/wr.php:215
+#: js/lnn.js:291 php/drc.php:203 php/drc.php:387 php/drc.php:421 php/lnn.php:298
+#: php/lnn.php:372 php/wr.php:215
 msgid "Game"
 msgstr ""
 
@@ -186,26 +184,25 @@ msgstr ""
 
 #: php/drc.php:71
 msgid ""
-"The <strong>Dodging Rain Competition (DRC)</strong> is a Touhou game "
-"competition that was devised by <a href=\"https://www.youtube.com/user/"
-"mariomaster657\">ZM</a> and is held on <a href=\"https://discord.gg/"
-"Ucae3Uf\">the official DRC Discord</a>. Two teams go up against each other "
-"in several different categories. Each player posts an arbitrarily long list "
-"of categories, ordered by preference, which can be either survival or "
-"scoring of any Touhou shooting game and any difficulty. They will be matched "
-"up against a player from the other team, in a category that both players had "
-"on their list. The teams and categories are determined by the DRC management "
-"team. Players are given two weeks to sign up for the competition, and once "
-"it starts, two weeks to submit a replay, which will be awarded points "
-"dependent on the rubrics. Runs done outside those two weeks are invalid. "
-"Players can submit an unlimited number of replays; the replay that is worth "
-"the most DRC points will count."
+"The <strong>Dodging Rain Competition (DRC)</strong> is a Touhou game competition "
+"that was devised by <a href=\"https://www.youtube.com/user/mariomaster657\">ZM</a> "
+"and is held on <a href=\"https://discord.gg/Ucae3Uf\">the official DRC Discord</a>. "
+"Two teams go up against each other in several different categories. Each player "
+"posts an arbitrarily long list of categories, ordered by preference, which can be "
+"either survival or scoring of any Touhou shooting game and any difficulty. They "
+"will be matched up against a player from the other team, in a category that both "
+"players had on their list. The teams and categories are determined by the DRC "
+"management team. Players are given two weeks to sign up for the competition, and "
+"once it starts, two weeks to submit a replay, which will be awarded points "
+"dependent on the rubrics. Runs done outside those two weeks are invalid. Players "
+"can submit an unlimited number of replays; the replay that is worth the most DRC "
+"points will count."
 msgstr ""
 
 #: php/drc.php:84
 msgid ""
-"If you want to know how many DRC points a run is worth, the points for a "
-"given run can be determined using the calculator below."
+"If you want to know how many DRC points a run is worth, the points for a given run "
+"can be determined using the calculator below."
 msgstr ""
 
 #: php/drc.php:88
@@ -213,14 +210,13 @@ msgid "Points Calculator"
 msgstr ""
 
 #: php/drc.php:89
-msgid ""
-"<em>Sorry, you cannot calculate DRC points with JavaScript disabled.</em>"
+msgid "<em>Sorry, you cannot calculate DRC points with JavaScript disabled.</em>"
 msgstr ""
 
 #: php/drc.php:91
 msgid ""
-"Scores can only contain digits, commas, dots and spaces. Survival runs are "
-"assumed to have cleared, scoring runs not."
+"Scores can only contain digits, commas, dots and spaces. Survival runs are assumed "
+"to have cleared, scoring runs not."
 msgstr ""
 
 #: php/drc.php:96
@@ -349,8 +345,8 @@ msgstr ""
 
 #: php/drc.php:153
 msgid ""
-"Replays are required for Windows game submissions, while for PC-98 a video "
-"is accepted."
+"Replays are required for Windows game submissions, while for PC-98 a video is "
+"accepted."
 msgstr ""
 
 #: php/drc.php:154
@@ -363,9 +359,9 @@ msgstr ""
 
 #: php/drc.php:158
 msgid ""
-"The rubrics are the formulas and fixed values used to calculate the number "
-"of DRC points for a run. If you are curious about how your points are being "
-"determined, click the button below to expand."
+"The rubrics are the formulas and fixed values used to calculate the number of DRC "
+"points for a run. If you are curious about how your points are being determined, "
+"click the button below to expand."
 msgstr ""
 
 #: php/drc.php:162
@@ -386,14 +382,14 @@ msgstr ""
 
 #: php/drc.php:172
 msgid ""
-"If you achieve a new World Record, your points are equal to the maximum "
-"number of points; otherwise, the formula applies."
+"If you achieve a new World Record, your points are equal to the maximum number of "
+"points; otherwise, the formula applies."
 msgstr ""
 
 #: php/drc.php:176
 msgid ""
-"Some categories use a fictional WR. <a href=\"#fictionalWRtitle\">Click "
-"here</a> for the list of them."
+"Some categories use a fictional WR. <a href=\"#fictionalWRtitle\">Click here</a> "
+"for the list of them."
 msgstr ""
 
 #: php/drc.php:180
@@ -404,14 +400,14 @@ msgstr ""
 
 #: php/drc.php:184
 msgid ""
-"MoF uses a separate system. <a href=\"#mountainOfFaith\">Click here</a> for "
-"said system."
+"MoF uses a separate system. <a href=\"#mountainOfFaith\">Click here</a> for said "
+"system."
 msgstr ""
 
 #: php/drc.php:188
 msgid ""
-"DS uses a separate system. <a href=\"#doubleSpoiler\">Click here</a> for "
-"said system."
+"DS uses a separate system. <a href=\"#doubleSpoiler\">Click here</a> for said "
+"system."
 msgstr ""
 
 #: php/drc.php:196
@@ -431,8 +427,7 @@ msgid "Fictional WRs"
 msgstr ""
 
 #: php/drc.php:217
-msgid ""
-"The categories in the table below use a fictional WR instead of the real one."
+msgid "The categories in the table below use a fictional WR instead of the real one."
 msgstr ""
 
 #: php/drc.php:238
@@ -440,8 +435,7 @@ msgid "'WR' definition"
 msgstr ""
 
 #: php/drc.php:240
-msgid ""
-"The categories in the table below always use the WR of a specific shottype."
+msgid "The categories in the table below always use the WR of a specific shottype."
 msgstr ""
 
 #: php/drc.php:257
@@ -450,10 +444,10 @@ msgstr ""
 
 #: php/drc.php:259
 msgid ""
-"For each difficulty and shottype there are six thresholds, at which you will "
-"have set numbers of points respectively. Then, increments are done, "
-"dependent on how much higher than the threshold your score is. The maximum "
-"is 375 on Easy and 500 on Lunatic."
+"For each difficulty and shottype there are six thresholds, at which you will have "
+"set numbers of points respectively. Then, increments are done, dependent on how "
+"much higher than the threshold your score is. The maximum is 375 on Easy and 500 on "
+"Lunatic."
 msgstr ""
 
 #: php/drc.php:270
@@ -486,9 +480,9 @@ msgstr ""
 
 #: php/drc.php:305
 msgid ""
-"For each scene there are three thresholds, at which you will have set "
-"numbers of points points respectively. Then, increments are done, dependent "
-"on how much higher than the threshold your score is."
+"For each scene there are three thresholds, at which you will have set numbers of "
+"points points respectively. Then, increments are done, dependent on how much higher "
+"than the threshold your score is."
 msgstr ""
 
 #: php/drc.php:312
@@ -507,8 +501,7 @@ msgstr ""
 msgid "Threshold 3"
 msgstr ""
 
-#: php/drc.php:346 php/drc.php:466 php/lnn.php:433 php/tools.php:522
-#: php/wr.php:645
+#: php/drc.php:346 php/drc.php:466 php/lnn.php:433 php/tools.php:522 php/wr.php:645
 msgid "Back to Top"
 msgstr ""
 
@@ -518,27 +511,27 @@ msgstr ""
 
 #: php/drc.php:353
 msgid ""
-"For a main game clear, a shottype multiplier is applied to your DRC points, "
-"the result of which is again rounded. <a href=\"#shottypeMultipliers\">Click "
-"here</a> for the list of them."
+"For a main game clear, a shottype multiplier is applied to your DRC points, the "
+"result of which is again rounded. <a href=\"#shottypeMultipliers\">Click here</a> "
+"for the list of them."
 msgstr ""
 
 #: php/drc.php:358
 msgid ""
-"The Phantasmagorias use a separate system. <a href=\"#phantasmagoria\">Click "
-"here</a> for said system."
+"The Phantasmagorias use a separate system. <a href=\"#phantasmagoria\">Click here</"
+"a> for said system."
 msgstr ""
 
 #: php/drc.php:363
 msgid ""
-"For IN, you obtain 2 (1 on Easy) additional points for each captured Last "
-"Spell, with the exception of Imperishable Shooting, which yields 5 points."
+"For IN, you obtain 2 (1 on Easy) additional points for each captured Last Spell, "
+"with the exception of Imperishable Shooting, which yields 5 points."
 msgstr ""
 
 #: php/drc.php:369
 msgid ""
-"For HSiFS, the first release adds 2 to <em>n</em>, and further releases add "
-"0.5, 0.4, 0.3, 0.2, 0.1 to <em>n</em>."
+"For HSiFS, the first release adds 2 to <em>n</em>, and further releases add 0.5, "
+"0.4, 0.3, 0.2, 0.1 to <em>n</em>."
 msgstr ""
 
 #: php/drc.php:377
@@ -555,10 +548,10 @@ msgstr ""
 
 #: php/drc.php:408
 msgid ""
-"In the below formula, MaxLives is equal to 5 for PoDD, 7 for PoFV main game "
-"and 8 for PoFV Extra. NoBombBonus is a difficulty-specific No Bomb bonus for "
-"PoDD and a No Charge Attacks bonus for PoFV. RoundsLost is equal to how many "
-"rounds the player lost."
+"In the below formula, MaxLives is equal to 5 for PoDD, 7 for PoFV main game and 8 "
+"for PoFV Extra. NoBombBonus is a difficulty-specific No Bomb bonus for PoDD and a "
+"No Charge Attacks bonus for PoFV. RoundsLost is equal to how many rounds the player "
+"lost."
 msgstr ""
 
 #: php/drc.php:414
@@ -579,10 +572,9 @@ msgstr ""
 
 #: php/drc.php:441
 msgid ""
-"These are applied to the result of the survival formula for a main game run "
-"only; they do <em>not</em> apply for Extra, nor do they apply for HSiFS runs "
-"that use releases.For all shots not listed here, the shottype multipliers "
-"are equal to 1."
+"These are applied to the result of the survival formula for a main game run only; "
+"they do <em>not</em> apply for Extra, nor do they apply for HSiFS runs that use "
+"releases.For all shots not listed here, the shottype multipliers are equal to 1."
 msgstr ""
 
 #: php/drc.php:451
@@ -596,21 +588,21 @@ msgstr ""
 
 #: php/lnn.php:67
 msgid ""
-"A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. "
-"For every shottype in a game, tables will tell you which players have done "
-"an LNN with it, if any. If a player has multiple LNNs for one particular "
-"shottype, those are not factored in."
+"A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. For "
+"every shottype in a game, tables will tell you which players have done an LNN with "
+"it, if any. If a player has multiple LNNs for one particular shottype, those are "
+"not factored in."
 msgstr ""
 
 #: php/lnn.php:72
 msgid ""
-"Extra conditions are required for PCB, TD, HSiFS, WBaWC and UM; these are No "
-"Border Breaks for PCB, No Trance for TD, No Release for HSiFS, No Berserk "
-"Roar No Roar Breaks for WBaWC and No Cards for UM. LNN in these games is "
-"called LNNN or LNNNN, with extra Ns to denote the extra conditions. The "
-"extra condition in UFO, no UFO summons, is optional, as it is not considered "
-"to have a significant impact on the difficulty of the run. As for IN, an LNN "
-"is assumed to capture all Last Spells and is referred to as LNNFS."
+"Extra conditions are required for PCB, TD, HSiFS, WBaWC and UM; these are No Border "
+"Breaks for PCB, No Trance for TD, No Release for HSiFS, No Berserk Roar No Roar "
+"Breaks for WBaWC and No Cards for UM. LNN in these games is called LNNN or LNNNN, "
+"with extra Ns to denote the extra conditions. The extra condition in UFO, no UFO "
+"summons, is optional, as it is not considered to have a significant impact on the "
+"difficulty of the run. As for IN, an LNN is assumed to capture all Last Spells and "
+"is referred to as LNNFS."
 msgstr ""
 
 #: php/lnn.php:79 php/wr.php:154
@@ -622,8 +614,8 @@ msgid ""
 "For updates, you can contact <a href=\"https://twitter.com/MaribelHearn42\" "
 "target=\"_blank\">me</a>, <a href=\"https://x.com/CaoMinh_Touhou\" "
 "target=\"_blank\">Hoàng Cao Minh</a>, <a href=\"https://www.youtube.com/"
-"@valivanvan\" target=\"_blank\">crazy4pokemon</a> or <a href=\"https://www."
-"youtube.com/@allenko1122\" target=\"_blank\">AllenKO</a>."
+"@valivanvan\" target=\"_blank\">crazy4pokemon</a> or <a href=\"https://"
+"www.youtube.com/@allenko1122\" target=\"_blank\">AllenKO</a>."
 msgstr ""
 
 #: php/lnn.php:83 php/tools.php:13 php/wr.php:167
@@ -634,8 +626,8 @@ msgstr ""
 msgid "LNN Lists"
 msgstr ""
 
-#: php/lnn.php:88 php/lnn.php:102 php/lnn.php:246 php/lnn.php:251
-#: php/lnn.php:274 php/wr.php:487
+#: php/lnn.php:88 php/lnn.php:102 php/lnn.php:246 php/lnn.php:251 php/lnn.php:274
+#: php/wr.php:487
 msgid "Search"
 msgstr ""
 
@@ -721,257 +713,242 @@ msgstr ""
 
 #: php/pofv.php:70
 msgid ""
-"Her movement speeds allow her to be either very slow or very fast at will. "
-"The sword has little cooldown, so it can be used repeatedly despite her slow "
-"charge speed. With that speed, the bullet clearing effect, and the "
-"invincibility frames that come with all charge attacks, she can easily cut "
-"through situations that no mortal should be able to dodge, and she can do it "
-"very often. The dead souls suffocate the opponent much like Marisa's lasers "
-"(though they can be cleared away), her spell attack is long lasting (so it "
-"cannot be totally countered by the opponent's spellcasting), and the boss "
-"summon uses movement restricting patterns that are completely devoid of "
-"pellet bullets. The result of these facts is that Youmu is absolutely top "
-"tier."
+"Her movement speeds allow her to be either very slow or very fast at will. The "
+"sword has little cooldown, so it can be used repeatedly despite her slow charge "
+"speed. With that speed, the bullet clearing effect, and the invincibility frames "
+"that come with all charge attacks, she can easily cut through situations that no "
+"mortal should be able to dodge, and she can do it very often. The dead souls "
+"suffocate the opponent much like Marisa's lasers (though they can be cleared away), "
+"her spell attack is long lasting (so it cannot be totally countered by the "
+"opponent's spellcasting), and the boss summon uses movement restricting patterns "
+"that are completely devoid of pellet bullets. The result of these facts is that "
+"Youmu is absolutely top tier."
 msgstr ""
 
 #: php/pofv.php:78
 msgid ""
-"Marisa's charge attack not only instantly destroys spirits, but causes them "
-"to explode as if they had been activated. This allows her to easily set off "
-"chain reactions anywhere on the screen, without the need to rely on her "
-"scope. Her special ability means she can cast spells more often. Her high "
-"unfocused speed is great for macrododging and synergizes with her laser, "
-"which can be swept across the screen. Marisa can also make very good use of "
-"level 1 invincibility frames, due to her fast charge and movement speeds. "
-"Altogether, these give her excellent survivability. Offensively, her lasers "
-"suffocate the opponent and cannot be cleared by any means, eventually "
-"producing nigh-impossible situations with brutal frequency. In a late game "
-"spell war, Marisa is probably the strongest character in the game."
+"Marisa's charge attack not only instantly destroys spirits, but causes them to "
+"explode as if they had been activated. This allows her to easily set off chain "
+"reactions anywhere on the screen, without the need to rely on her scope. Her "
+"special ability means she can cast spells more often. Her high unfocused speed is "
+"great for macrododging and synergizes with her laser, which can be swept across the "
+"screen. Marisa can also make very good use of level 1 invincibility frames, due to "
+"her fast charge and movement speeds. Altogether, these give her excellent "
+"survivability. Offensively, her lasers suffocate the opponent and cannot be cleared "
+"by any means, eventually producing nigh-impossible situations with brutal "
+"frequency. In a late game spell war, Marisa is probably the strongest character in "
+"the game."
 msgstr ""
 
 #: php/pofv.php:87
 msgid ""
-"She's powerful because of her level 2 spell, which limits the opponent's "
-"movement and spawns over a long period of time, meaning it cannot itself be "
-"entirely countered by a spell from the opponent. However, she faces "
-"extremely fast bullets constantly as they are returned from her own spells "
-"(speed is retained when bullets are reflected). Her movement is slow, and "
-"her scope is slow to expand. The charge attack is useless. These make "
-"surviving with her somewhat difficult. Overall, she's unremarkable in every "
-"way except for her spell, which is by far the best in the game and single-"
-"handedly makes her a high tier character."
+"She's powerful because of her level 2 spell, which limits the opponent's movement "
+"and spawns over a long period of time, meaning it cannot itself be entirely "
+"countered by a spell from the opponent. However, she faces extremely fast bullets "
+"constantly as they are returned from her own spells (speed is retained when bullets "
+"are reflected). Her movement is slow, and her scope is slow to expand. The charge "
+"attack is useless. These make surviving with her somewhat difficult. Overall, she's "
+"unremarkable in every way except for her spell, which is by far the best in the "
+"game and single-handedly makes her a high tier character."
 msgstr ""
 
 #: php/pofv.php:94
 msgid ""
-"Her awesome scope and auto-targeting charge attack give her a lot of "
-"freedom. She can essentially start a combo at will, from anywhere on the "
-"screen. She's not obligated to chase the fairies and spirits around to "
-"maintain her spell points, and so can pay more attention to dodging. Her "
-"spell is not very dangerous, but neither does it feed the opponent much "
-"energy, and since most characters' spells are basically free energy for the "
-"opponent anyway, this is actually pretty good. Her Extra attacks are great. "
-"They constantly cover the opponent's screen with random bullets, forcing "
-"them to the bottom. They're especially effective against fast characters who "
-"like to macrododge since they cover the whole screen evenly. In short, "
-"Komachi is a strong character that is definitely capable of winning matches "
+"Her awesome scope and auto-targeting charge attack give her a lot of freedom. She "
+"can essentially start a combo at will, from anywhere on the screen. She's not "
+"obligated to chase the fairies and spirits around to maintain her spell points, and "
+"so can pay more attention to dodging. Her spell is not very dangerous, but neither "
+"does it feed the opponent much energy, and since most characters' spells are "
+"basically free energy for the opponent anyway, this is actually pretty good. Her "
+"Extra attacks are great. They constantly cover the opponent's screen with random "
+"bullets, forcing them to the bottom. They're especially effective against fast "
+"characters who like to macrododge since they cover the whole screen evenly. In "
+"short, Komachi is a strong character that is definitely capable of winning matches "
 "against top tier characters."
 msgstr ""
 
 #: php/pofv.php:103
 msgid ""
-"Great movement speeds, scope, and charge attack. Her boss is also pretty "
-"good. Her extra attack 'clones' existing bullets on the opponent's screen by "
-"firing a special, faster bullet in the same trajectory. Because the speed is "
-"determined by the original bullet, this is more effective against characters "
-"whose spells use fast bullets (Yuuka, Reimu, etc.). It's less effective "
-"against fast characters, because pellet bullets are loosely aimed and thus "
-"the Extra attacks they spawn will tend to all fly in one direction and can "
-"be macrododged. Eiki's critical weakness is her spell. It's totally non-"
-"threatening and every apparent pellet it creates is actually 2 or 3 pellets "
-"stacked directly on top of each other. All this does is feed the opponent "
-"tons of free energy. Falling short of the top tier largely due to this key "
-"disadvantage, Eiki is still a notable character that should not be taken "
+"Great movement speeds, scope, and charge attack. Her boss is also pretty good. Her "
+"extra attack 'clones' existing bullets on the opponent's screen by firing a "
+"special, faster bullet in the same trajectory. Because the speed is determined by "
+"the original bullet, this is more effective against characters whose spells use "
+"fast bullets (Yuuka, Reimu, etc.). It's less effective against fast characters, "
+"because pellet bullets are loosely aimed and thus the Extra attacks they spawn will "
+"tend to all fly in one direction and can be macrododged. Eiki's critical weakness "
+"is her spell. It's totally non-threatening and every apparent pellet it creates is "
+"actually 2 or 3 pellets stacked directly on top of each other. All this does is "
+"feed the opponent tons of free energy. Falling short of the top tier largely due to "
+"this key disadvantage, Eiki is still a notable character that should not be taken "
 "lightly."
 msgstr ""
 
 #: php/pofv.php:113
 msgid ""
 "Lyrica's scope is similar to Marisa's, but is much harder to use due to her "
-"slowness. Her charge attack also only shoots straight forward, and, due to "
-"the fact that it stays in place, it cannot be swept horizontally in the "
-"hopes of hitting an exposed fairy. This lack of coverage, again coupled with "
-"her slow movement, makes her extremely dependent on her scope to start "
-"chains, and her scope is just not very good. She also has rather slow charge "
-"speed. Her saving grace is her offense, particularly her spell. It covers a "
-"huge part of the screen and continues spawning over a long period of time, "
-"becoming an omnipresent threat much like Youmu's. Her boss and extra attack "
-"are also solid. Similarly to Reimu, but not as extremely, the spell turns "
-"Lyrica into a serious threat that should not be underestimated."
+"slowness. Her charge attack also only shoots straight forward, and, due to the fact "
+"that it stays in place, it cannot be swept horizontally in the hopes of hitting an "
+"exposed fairy. This lack of coverage, again coupled with her slow movement, makes "
+"her extremely dependent on her scope to start chains, and her scope is just not "
+"very good. She also has rather slow charge speed. Her saving grace is her offense, "
+"particularly her spell. It covers a huge part of the screen and continues spawning "
+"over a long period of time, becoming an omnipresent threat much like Youmu's. Her "
+"boss and extra attack are also solid. Similarly to Reimu, but not as extremely, the "
+"spell turns Lyrica into a serious threat that should not be underestimated."
 msgstr ""
 
 #: php/pofv.php:121
 msgid ""
-"She boasts nice movement speeds and scope, and her ability to pass through "
-"spirits is sometimes useful. Her charge speed is kind of low and her charge "
-"attack sucks. Her spell, much like Eiki's, does nothing but feed her "
-"opponent. Her extra attack is terrifying and its effect stacks, eventually "
-"almost freezing the enemy in place. Unfortunately they will usually have "
-"lots of energy to save themselves and the absence of an Extra attack that is "
-"directly lethal becomes really apparent as they have nothing to worry about "
-"but pellets. She's more effective against characters who have weak charge "
-"attacks, whose spells use fast bullets, and who are forced to stay focused "
-"for a long time in order to activate spirits, since this furthers their "
-"slowness and deprives them of fairy spawns. While not a great character "
+"She boasts nice movement speeds and scope, and her ability to pass through spirits "
+"is sometimes useful. Her charge speed is kind of low and her charge attack sucks. "
+"Her spell, much like Eiki's, does nothing but feed her opponent. Her extra attack "
+"is terrifying and its effect stacks, eventually almost freezing the enemy in place. "
+"Unfortunately they will usually have lots of energy to save themselves and the "
+"absence of an Extra attack that is directly lethal becomes really apparent as they "
+"have nothing to worry about but pellets. She's more effective against characters "
+"who have weak charge attacks, whose spells use fast bullets, and who are forced to "
+"stay focused for a long time in order to activate spirits, since this furthers "
+"their slowness and deprives them of fairy spawns. While not a great character "
 "overall, Medicine is certainly usable and has some good matchups."
 msgstr ""
 
 #: php/pofv.php:130
 msgid ""
-"Her boss, spell, and Extra attacks give her a decent offense as they force "
-"the opponent downward, but her defense is ruined by her slow movement. She "
-"has a hard time getting high enough on the screen to clear a decent area "
-"with her spells, and she's terrible at misdirecting and macrododging. This "
-"is a big problem, because the number of pellets she creates tends to push "
-"the game toward a spell war, and she's just poorly equipped to handle that. "
-"Her offense also suffers from this as its main strength (trapping the "
-"opponent and pushing them down) starts to fail completely and the other "
-"player will actually stay very high on the screen with ease. Even her "
-"normally powerful boss is bad at preventing this. Despite these "
-"disadvantages that significantly impact her viability, she can perform "
-"fairly well in the right hands."
+"Her boss, spell, and Extra attacks give her a decent offense as they force the "
+"opponent downward, but her defense is ruined by her slow movement. She has a hard "
+"time getting high enough on the screen to clear a decent area with her spells, and "
+"she's terrible at misdirecting and macrododging. This is a big problem, because the "
+"number of pellets she creates tends to push the game toward a spell war, and she's "
+"just poorly equipped to handle that. Her offense also suffers from this as its main "
+"strength (trapping the opponent and pushing them down) starts to fail completely "
+"and the other player will actually stay very high on the screen with ease. Even her "
+"normally powerful boss is bad at preventing this. Despite these disadvantages that "
+"significantly impact her viability, she can perform fairly well in the right hands."
 msgstr ""
 
 #: php/pofv.php:138
 msgid ""
-"Good defense, terrible offense; that is Reisen in a nutshell. Her spell "
-"creates too many bullets. She should only win against characters with slow "
-"charge speeds who cannot keep up with the all-out spell spam that will "
-"inevitably ensue. Reisen herself is well-equipped to deal with that "
-"situation, with her good scope, charge speed, and charge attack. Even then, "
-"between skilled enough players, a single round with Reisen in it can easily "
-"take a half hour or longer, regardless of which player theoretically has the "
-"upper hand. All in all, while Reisen is by no means high tier, she is "
-"potentially dangerous by forcing her opponent to endure for a long time."
+"Good defense, terrible offense; that is Reisen in a nutshell. Her spell creates too "
+"many bullets. She should only win against characters with slow charge speeds who "
+"cannot keep up with the all-out spell spam that will inevitably ensue. Reisen "
+"herself is well-equipped to deal with that situation, with her good scope, charge "
+"speed, and charge attack. Even then, between skilled enough players, a single round "
+"with Reisen in it can easily take a half hour or longer, regardless of which player "
+"theoretically has the upper hand. All in all, while Reisen is by no means high "
+"tier, she is potentially dangerous by forcing her opponent to endure for a long "
+"time."
 msgstr ""
 
 #: php/pofv.php:145
 msgid ""
-"Her focused movement speed is barely different from her normal speed. This "
-"is strictly a weakness: she's too fast for precision, while also being too "
-"slow for anything else. The scope is awkward. The charge attack is even more "
-"useless than Reimu's. She is subject to a strange glitch; her time stop ends "
-"the bullet clearing effect of her spells. The result is that both the level "
-"2 and level 3 spells clear the same area on her field, and this area is "
-"smaller than the area a normal character's level 2 would clear. "
-"Additionally, should you cast a level 2 just before an automatic level 3 "
-"occurs (through spell points reaching 500k) the time stop will cut it short "
-"instantaneously, and it will clear no bullets at all. The time stop can also "
-"toy with enemy spells, causing bullets which should have spawned over time "
-"to spawn all at once (for instance, Aya's spell can become a blanket across "
-"the whole screen). This is yet another weakness in many cases, as it can "
-"lead to unpredictable things, though arguably it could be advantageous in "
-"some cases. Her spell itself is not threatening to the opponent, since it "
-"spawns very few bullets that also appear all at once; this makes it easy for "
-"the opponent to clear it away with their own spell. In fact, it can often be "
-"cleared by a spell that was cast before the bullets even appeared. The knife "
-"rows can limit the opponent's movement but are very slow and become a non-"
-"issue, as spells are cast more frequently as the match progresses. The boss "
-"summon also uses slow, simple patterns. To summarize, while she does have "
-"some minor positive points, the negative outweighs the positive for the "
-"knife-throwing maid."
+"Her focused movement speed is barely different from her normal speed. This is "
+"strictly a weakness: she's too fast for precision, while also being too slow for "
+"anything else. The scope is awkward. The charge attack is even more useless than "
+"Reimu's. She is subject to a strange glitch; her time stop ends the bullet clearing "
+"effect of her spells. The result is that both the level 2 and level 3 spells clear "
+"the same area on her field, and this area is smaller than the area a normal "
+"character's level 2 would clear. Additionally, should you cast a level 2 just "
+"before an automatic level 3 occurs (through spell points reaching 500k) the time "
+"stop will cut it short instantaneously, and it will clear no bullets at all. The "
+"time stop can also toy with enemy spells, causing bullets which should have spawned "
+"over time to spawn all at once (for instance, Aya's spell can become a blanket "
+"across the whole screen). This is yet another weakness in many cases, as it can "
+"lead to unpredictable things, though arguably it could be advantageous in some "
+"cases. Her spell itself is not threatening to the opponent, since it spawns very "
+"few bullets that also appear all at once; this makes it easy for the opponent to "
+"clear it away with their own spell. In fact, it can often be cleared by a spell "
+"that was cast before the bullets even appeared. The knife rows can limit the "
+"opponent's movement but are very slow and become a non-issue, as spells are cast "
+"more frequently as the match progresses. The boss summon also uses slow, simple "
+"patterns. To summarize, while she does have some minor positive points, the "
+"negative outweighs the positive for the knife-throwing maid."
 msgstr ""
 
 #: php/pofv.php:162
 msgid ""
-"While her movement and charge speeds are good, her defense is still a bit "
-"low thanks to her awkward scope and three-way shot. Her offense is likewise "
-"nothing to write home about. Her spell is so slow it hardly matters at all. "
-"Her extra attacks are okay for limiting the opponent's space, but are again "
-"very slow and can be easily streamed much like Aya's. Her boss is also "
-"unimpressive, with one attack in particular that's just free energy for the "
-"opponent. The overall mediocre offensive and defensive capability result in "
-"this Prismriver sister being a low tier character."
+"While her movement and charge speeds are good, her defense is still a bit low "
+"thanks to her awkward scope and three-way shot. Her offense is likewise nothing to "
+"write home about. Her spell is so slow it hardly matters at all. Her extra attacks "
+"are okay for limiting the opponent's space, but are again very slow and can be "
+"easily streamed much like Aya's. Her boss is also unimpressive, with one attack in "
+"particular that's just free energy for the opponent. The overall mediocre offensive "
+"and defensive capability result in this Prismriver sister being a low tier "
+"character."
 msgstr ""
 
 #: php/pofv.php:168
 msgid ""
-"Her movement, scope, and charge speed are all very slow. The scope is "
-"essentially Lyrica's, but horizontal, and her charge attack shoots "
-"horizontally as well. Her basic shots do not spawn from the center of her "
-"sprite but rather from two points to her left and right. The shots from the "
-"right fly diagonally left and the ones from the left fly diagonally right, "
-"crossing each other's paths a short distance in front of her. If she hugs a "
-"wall, the shots that should be spawning from off screen will simply fail to "
-"appear. Thanks to her scope, she has difficulty dealing with spirits, unless "
-"she stays focused for long stretches of time, which of course slows her down "
-"even further and limits the fairy spawns on her screen. Offensively, she's "
-"pretty good. Her spells last forever and limit the opponent's movement, "
-"while her extra attacks send big bullets all over the screen. Her boss is "
-"also fairly strong. Worse than her sisters in terms of defense, Merlin's "
-"offense somewhat makes up for it, keeping her out of the lowest tier."
+"Her movement, scope, and charge speed are all very slow. The scope is essentially "
+"Lyrica's, but horizontal, and her charge attack shoots horizontally as well. Her "
+"basic shots do not spawn from the center of her sprite but rather from two points "
+"to her left and right. The shots from the right fly diagonally left and the ones "
+"from the left fly diagonally right, crossing each other's paths a short distance in "
+"front of her. If she hugs a wall, the shots that should be spawning from off screen "
+"will simply fail to appear. Thanks to her scope, she has difficulty dealing with "
+"spirits, unless she stays focused for long stretches of time, which of course slows "
+"her down even further and limits the fairy spawns on her screen. Offensively, she's "
+"pretty good. Her spells last forever and limit the opponent's movement, while her "
+"extra attacks send big bullets all over the screen. Her boss is also fairly strong. "
+"Worse than her sisters in terms of defense, Merlin's offense somewhat makes up for "
+"it, keeping her out of the lowest tier."
 msgstr ""
 
 #: php/pofv.php:180
 msgid ""
 "Her focused speed is uncomfortably fast. Her spell and Extra attack aren't "
-"individually terrible, but play exactly the same role, so as long as the "
-"opponent carefully moves in one direction, they have very little to worry "
-"about. Still, her offense can be okay when the game picks up, especially "
-"when her boss is present, since this makes it very hard for the opponent to "
-"move up. Her big problem is her defense. She has a hard time micrododging "
-"and gets tons of fast bullets continuously sent back at her from her spells. "
-"With this decidedly weak defense, combined with her decent, but not great, "
-"offense, she struggles to win most matches."
+"individually terrible, but play exactly the same role, so as long as the opponent "
+"carefully moves in one direction, they have very little to worry about. Still, her "
+"offense can be okay when the game picks up, especially when her boss is present, "
+"since this makes it very hard for the opponent to move up. Her big problem is her "
+"defense. She has a hard time micrododging and gets tons of fast bullets "
+"continuously sent back at her from her spells. With this decidedly weak defense, "
+"combined with her decent, but not great, offense, she struggles to win most matches."
 msgstr ""
 
 #: php/pofv.php:186
 msgid ""
-"Defensively, she's not bad. Good speeds, fast scope, and an acceptable "
-"charge attack. Her offense, however, is miserable. The spell takes a "
-"thousand years to appear, and even once it starts to move, the bullets are "
-"slow. You might think at first that its slow appearance would make it "
-"somewhat resistant to being cancelled by the opponent's spells, but there is "
-"actually a single 'generator' bullet (the bird-like thing) that spawns all "
-"of the others, and when that gets cleared, the whole spell fails to appear. "
-"Once the game picks up, the generator bullet will invariably be cleared away "
-"every time before the spell does anything at all and her boss and extra "
-"attacks all behave similarly. Everything's just way too slow, the combined "
-"effect of which leads to Mystia's bottom tier placement."
+"Defensively, she's not bad. Good speeds, fast scope, and an acceptable charge "
+"attack. Her offense, however, is miserable. The spell takes a thousand years to "
+"appear, and even once it starts to move, the bullets are slow. You might think at "
+"first that its slow appearance would make it somewhat resistant to being cancelled "
+"by the opponent's spells, but there is actually a single 'generator' bullet (the "
+"bird-like thing) that spawns all of the others, and when that gets cleared, the "
+"whole spell fails to appear. Once the game picks up, the generator bullet will "
+"invariably be cleared away every time before the spell does anything at all and her "
+"boss and extra attacks all behave similarly. Everything's just way too slow, the "
+"combined effect of which leads to Mystia's bottom tier placement."
 msgstr ""
 
 #: php/pofv.php:194
 msgid ""
-"She's fast and has an okay scope. She charges a bit slowly, but this doesn't "
-"matter too much. Her spell attack creates a simple ring of bullets, then "
-"freezes all bullets on both players screens (with the exception of a few "
-"character's extra attacks, including Cirno's), randomly changes their "
-"directions, then sends them all moving at once. The original speed of the "
-"bullets is not retained. Additionally, some non-pellet bullets on Cirno's "
-"screen (not the opponent's) will degrade into pellets, allowing them to be "
-"reflected. Her boss is very weak and her extra attacks are nothing special. "
-"Thanks to the freezing effect of her spells, Cirno has excellent defense and "
-"terrible offense, as her spells essentially help the opponent just as much "
-"as they help her. She's like Reisen, but even more extreme. The ice fairy's "
-"horribly skewed playability, fully specializing in defensive play, renders "
+"She's fast and has an okay scope. She charges a bit slowly, but this doesn't matter "
+"too much. Her spell attack creates a simple ring of bullets, then freezes all "
+"bullets on both players screens (with the exception of a few character's extra "
+"attacks, including Cirno's), randomly changes their directions, then sends them all "
+"moving at once. The original speed of the bullets is not retained. Additionally, "
+"some non-pellet bullets on Cirno's screen (not the opponent's) will degrade into "
+"pellets, allowing them to be reflected. Her boss is very weak and her extra attacks "
+"are nothing special. Thanks to the freezing effect of her spells, Cirno has "
+"excellent defense and terrible offense, as her spells essentially help the opponent "
+"just as much as they help her. She's like Reisen, but even more extreme. The ice "
+"fairy's horribly skewed playability, fully specializing in defensive play, renders "
 "her hard to use in a competitive environment."
 msgstr ""
 
 #: php/pofv.php:204
 msgid ""
-"Fast while unfocused, slow when focused. Her charge speed is excellent. Her "
-"scope is slow and poorly shaped (much like Merlin's), her charge attack is "
-"terrible. While slow focused speed is normally ideal, it's a rotten "
-"combination with slow scope speed, so spirits become a much greater nuisance "
-"than they would usually be. Her extra attacks aren't garbage, but aren't "
-"very good either. They move too slowly to really accomplish anything. Her "
-"spell has barely any bullets and on top of that is easily cleared away "
-"before it does anything. The boss is pretty wimpy and has a pellet attack "
-"that's basically free energy for the opponent. Her ability is passable; it "
-"allows you attempt a level 2 rather than bombing even in very risky "
-"situations, knowing the bomb will save you anyway if you get hit. "
-"Altogether, her offense is pathetic and her terrible scope cripples her "
-"defense, making her one of the least viable characters in the game."
+"Fast while unfocused, slow when focused. Her charge speed is excellent. Her scope "
+"is slow and poorly shaped (much like Merlin's), her charge attack is terrible. "
+"While slow focused speed is normally ideal, it's a rotten combination with slow "
+"scope speed, so spirits become a much greater nuisance than they would usually be. "
+"Her extra attacks aren't garbage, but aren't very good either. They move too slowly "
+"to really accomplish anything. Her spell has barely any bullets and on top of that "
+"is easily cleared away before it does anything. The boss is pretty wimpy and has a "
+"pellet attack that's basically free energy for the opponent. Her ability is "
+"passable; it allows you attempt a level 2 rather than bombing even in very risky "
+"situations, knowing the bomb will save you anyway if you get hit. Altogether, her "
+"offense is pathetic and her terrible scope cripples her defense, making her one of "
+"the least viable characters in the game."
 msgstr ""
 
 #: php/shared/shared.php:48
@@ -1446,13 +1423,12 @@ msgstr ""
 
 #: php/tools.php:7
 msgid ""
-"Some of the patches are also available at <a href=\"https://www.thpatch.net/"
-"wiki/Touhou_Patch_Center:Servers\"><span class=\"icon thcrap_icon\"></span> "
-"Touhou Patch Center</a> and can be used through <a href=\"https://www."
-"thpatch.net/wiki/Touhou_Patch_Center:Download\">their automatic translation "
-"patcher and modding tool</a>, which can also be downloaded using our mirror "
-"below (see THCRAP section). These patches will have the favicon of their "
-"site next to them."
+"Some of the patches are also available at <a href=\"https://www.thpatch.net/wiki/"
+"Touhou_Patch_Center:Servers\"><span class=\"icon thcrap_icon\"></span> Touhou Patch "
+"Center</a> and can be used through <a href=\"https://www.thpatch.net/wiki/"
+"Touhou_Patch_Center:Download\">their automatic translation patcher and modding "
+"tool</a>, which can also be downloaded using our mirror below (see THCRAP section). "
+"These patches will have the favicon of their site next to them."
 msgstr ""
 
 #: php/tools.php:18 php/tools.php:81
@@ -1501,13 +1477,12 @@ msgstr ""
 
 #: php/tools.php:37
 msgid ""
-"Removes input delay, allows you to increase in-game FPS (default is 60), "
-"optionally fixes several bugs (PCB cherry display, MoF MarisaB 3-power "
-"unfocus, UFO 2.147b score display). The input delay is mostly prevalent in "
-"the older games (EoSD to IN) and running them on Vpatch will significantly "
-"improve the gameplay experience. It allows you to set a custom screen "
-"resolution as well.</p><p>Vpatch is applicable to all official shooting "
-"games bar HSiFS, WBaWC and UM."
+"Removes input delay, allows you to increase in-game FPS (default is 60), optionally "
+"fixes several bugs (PCB cherry display, MoF MarisaB 3-power unfocus, UFO 2.147b "
+"score display). The input delay is mostly prevalent in the older games (EoSD to IN) "
+"and running them on Vpatch will significantly improve the gameplay experience. It "
+"allows you to set a custom screen resolution as well.</p><p>Vpatch is applicable to "
+"all official shooting games bar HSiFS, WBaWC and UM."
 msgstr ""
 
 #: php/tools.php:43 php/tools.php:52 php/tools.php:73 php/tools.php:76
@@ -1530,8 +1505,8 @@ msgstr ""
 
 #: php/tools.php:49
 msgid ""
-"Single practice tool that works on all of the official Touhou shoot 'em up "
-"games, allowing you to change settings or skip to patterns at will."
+"Single practice tool that works on all of the official Touhou shoot 'em up games, "
+"allowing you to change settings or skip to patterns at will."
 msgstr ""
 
 #: php/tools.php:56
@@ -1540,19 +1515,18 @@ msgstr ""
 
 #: php/tools.php:61
 msgid ""
-"<h2 id=\"thcrap\">thcrap (Translation patches / Modding tool) <a "
-"id=\"thcrap_link\" href=\"https://www.thpatch.net/wiki/Touhou_Patch_Center:"
-"Main_page\" target=\"_blank\"><span class=\"icon thcrap_icon\"></span> "
-"thcrap</a></h2>"
+"<h2 id=\"thcrap\">thcrap (Translation patches / Modding tool) <a id=\"thcrap_link\" "
+"href=\"https://www.thpatch.net/wiki/Touhou_Patch_Center:Main_page\" "
+"target=\"_blank\"><span class=\"icon thcrap_icon\"></span> thcrap</a></h2>"
 msgstr ""
 
 #: php/tools.php:66
 msgid ""
-"Translation patches into English and many other languages, as well as "
-"countless modifications to gameplay, graphics and more, plus the ability to "
-"make your own, are provided by the Touhou Community Reliant Automatic "
-"Patcher (thcrap) for all Windows Touhou games. The thpatch.net link also "
-"links to instructions on how to use the patcher."
+"Translation patches into English and many other languages, as well as countless "
+"modifications to gameplay, graphics and more, plus the ability to make your own, "
+"are provided by the Touhou Community Reliant Automatic Patcher (thcrap) for all "
+"Windows Touhou games. The thpatch.net link also links to instructions on how to use "
+"the patcher."
 msgstr ""
 
 #: php/tools.php:76
@@ -1561,9 +1535,8 @@ msgstr ""
 
 #: php/tools.php:83
 msgid ""
-"Makes the older Touhou Windows games (EoSD, PCB, IN, PoFV and StB) run "
-"properly on Windows 10. Extract it into the folders of these games for it to "
-"take effect."
+"Makes the older Touhou Windows games (EoSD, PCB, IN, PoFV and StB) run properly on "
+"Windows 10 and 11. Extract it into the folders of these games for it to take effect."
 msgstr ""
 
 #: php/tools.php:90
@@ -1580,8 +1553,8 @@ msgstr ""
 
 #: php/tools.php:96
 msgid ""
-"Replaces both Reimu shottypes in UFO with Tsubakura shottypes, a character "
-"from the Len'en series. Also changes the dialogues and endings."
+"Replaces both Reimu shottypes in UFO with Tsubakura shottypes, a character from the "
+"Len'en series. Also changes the dialogues and endings."
 msgstr ""
 
 #: php/tools.php:100
@@ -1642,10 +1615,9 @@ msgstr ""
 
 #: php/tools.php:136
 msgid ""
-"Patches that increase the bullet density and speed throughout the game, "
-"while giving you autobombs to compensate for it. The Hard Mode patches also "
-"change the actual patterns. The main Ultra patch collection includes the "
-"games up to ISC."
+"Patches that increase the bullet density and speed throughout the game, while "
+"giving you autobombs to compensate for it. The Hard Mode patches also change the "
+"actual patterns. The main Ultra patch collection includes the games up to ISC."
 msgstr ""
 
 #: php/tools.php:141
@@ -1662,8 +1634,7 @@ msgstr ""
 
 #: php/tools.php:145
 msgid ""
-"Patches for UFO and DDC that modify patterns, besides simply making them "
-"harder."
+"Patches for UFO and DDC that modify patterns, besides simply making them harder."
 msgstr ""
 
 #: php/tools.php:150
@@ -1672,8 +1643,8 @@ msgstr ""
 
 #: php/tools.php:153
 msgid ""
-"A collection of modified <span class=\"code\">.dat</span> files that "
-"randomise the patterns in the game."
+"A collection of modified <span class=\"code\">.dat</span> files that randomise the "
+"patterns in the game."
 msgstr ""
 
 #: php/tools.php:156
@@ -1682,8 +1653,8 @@ msgstr ""
 
 #: php/tools.php:158
 msgid ""
-"Allows you to play 4A, 4B, 6A and 6B in a single run. Optionally also "
-"includes Extra at the end."
+"Allows you to play 4A, 4B, 6A and 6B in a single run. Optionally also includes "
+"Extra at the end."
 msgstr ""
 
 #: php/tools.php:164
@@ -1696,9 +1667,9 @@ msgstr ""
 
 #: php/tools.php:172
 msgid ""
-"Combines LoLK with DDC, making each boss fight a dual boss fight against the "
-"bosses of both games.It removes all stage portions, effectively making it a "
-"boss rush, and also combines the HUDs of both games."
+"Combines LoLK with DDC, making each boss fight a dual boss fight against the bosses "
+"of both games.It removes all stage portions, effectively making it a boss rush, and "
+"also combines the HUDs of both games."
 msgstr ""
 
 #: php/tools.php:176
@@ -1707,11 +1678,11 @@ msgstr ""
 
 #: php/tools.php:179
 msgid ""
-"Remastered version of Stage 6 and harder version of Extra in HSiFS, "
-"including an original character replacing Okina and alternate story along "
-"with pattern, bullet type, stage music and graphical changes. There is "
-"another patch with the same OC replacement and pattern modding for VD on the "
-"Okina scenes on the same download page."
+"Remastered version of Stage 6 and harder version of Extra in HSiFS, including an "
+"original character replacing Okina and alternate story along with pattern, bullet "
+"type, stage music and graphical changes. There is another patch with the same OC "
+"replacement and pattern modding for VD on the Okina scenes on the same download "
+"page."
 msgstr ""
 
 #: php/tools.php:184 php/tools.php:248
@@ -1720,8 +1691,8 @@ msgstr ""
 
 #: php/tools.php:189
 msgid ""
-"Modifications to the main <span class=\"code\">.dat</span> files of the "
-"games that change the way the game looks."
+"Modifications to the main <span class=\"code\">.dat</span> files of the games that "
+"change the way the game looks."
 msgstr ""
 
 #: php/tools.php:192
@@ -1730,8 +1701,8 @@ msgstr ""
 
 #: php/tools.php:194
 msgid ""
-"Includes PCB and HSiFS in MS Paint style, an emoji-themed version of UFO and "
-"a Christmas-themed version of LoLK."
+"Includes PCB and HSiFS in MS Paint style, an emoji-themed version of UFO and a "
+"Christmas-themed version of LoLK."
 msgstr ""
 
 #: php/tools.php:199
@@ -1756,31 +1727,31 @@ msgstr ""
 
 #: php/tools.php:213
 msgid ""
-"Makes MoF, SA, UFO and TD play in the arcade-style vertical resolution, also "
-"known as TATE."
+"Makes MoF, SA, UFO and TD play in the arcade-style vertical resolution, also known "
+"as TATE."
 msgstr ""
 
 #: php/tools.php:221
 msgid ""
-"The only emulator that is currently still maintained together with DOSBox-X. "
-"It offers unlimited savestates and has high accuracy, but requires the right "
-"configurations; can be confusing for new users. The emulator is located in "
-"the bin folder with two versions, 32-bit and 64-bit (x64)."
+"The only emulator that is currently still maintained together with DOSBox-X. It "
+"offers unlimited savestates and has high accuracy, but requires the right "
+"configurations; can be confusing for new users. The emulator is located in the bin "
+"folder with two versions, 32-bit and 64-bit (x64)."
 msgstr ""
 
 #: php/tools.php:228
 msgid ""
-"Easy-to-use emulator that will emulate the Touhou games properly without "
-"needing configuration of any kind, but less feature-rich, and allows 8 "
-"active savestates at a time, 4 of which through hotkeys."
+"Easy-to-use emulator that will emulate the Touhou games properly without needing "
+"configuration of any kind, but less feature-rich, and allows 8 active savestates at "
+"a time, 4 of which through hotkeys."
 msgstr ""
 
 #: php/tools.php:234
 msgid ""
-"This emulator has low system requirements and can run even on very old "
-"computers. However, the graphics are mediocre and the sound emulation "
-"requires proper configuration to be accurate. Allows for 8 savestates and "
-"requires a separate font file, linked below."
+"This emulator has low system requirements and can run even on very old computers. "
+"However, the graphics are mediocre and the sound emulation requires proper "
+"configuration to be accurate. Allows for 8 savestates and requires a separate font "
+"file, linked below."
 msgstr ""
 
 #: php/tools.php:240
@@ -1789,9 +1760,9 @@ msgstr ""
 
 #: php/tools.php:244
 msgid ""
-"A fork of the DOSBox project that has support for PC-98. It is the only "
-"emulator to run natively under not only Windows, but also Mac and Linux. A "
-"list of downloads for each system can be found via the link below."
+"A fork of the DOSBox project that has support for PC-98. It is the only emulator to "
+"run natively under not only Windows, but also Mac and Linux. A list of downloads "
+"for each system can be found via the link below."
 msgstr ""
 
 #: php/tools.php:252
@@ -1800,9 +1771,8 @@ msgstr ""
 
 #: php/tools.php:254
 msgid ""
-"A tool that tracks in-game data such as misses, bombs, etc, thus calculating "
-"<a href=\"drc\">DRC</a> points for both survival and scoring during a Touhou "
-"run."
+"A tool that tracks in-game data such as misses, bombs, etc, thus calculating <a "
+"href=\"drc\">DRC</a> points for both survival and scoring during a Touhou run."
 msgstr ""
 
 #: php/tools.php:258
@@ -1819,9 +1789,9 @@ msgstr ""
 
 #: php/tools.php:263
 msgid ""
-"Command-line tool that allows you to track how many times you captured "
-"spells in EoSD. Includes Stage 4 Books and Play Time tracking, as well as "
-"allowing for multiple save files."
+"Command-line tool that allows you to track how many times you captured spells in "
+"EoSD. Includes Stage 4 Books and Play Time tracking, as well as allowing for "
+"multiple save files."
 msgstr ""
 
 #: php/tools.php:270
@@ -1838,8 +1808,8 @@ msgstr ""
 
 #: php/tools.php:276
 msgid ""
-"Launching this alongside the game fixes the bug that makes the game crash "
-"whenever you save a replay."
+"Launching this alongside the game fixes the bug that makes the game crash whenever "
+"you save a replay."
 msgstr ""
 
 #: php/tools.php:279
@@ -1848,8 +1818,8 @@ msgstr ""
 
 #: php/tools.php:281
 msgid ""
-"Modification of TD that removes the invincibility from trances, instead "
-"allowing you to use them starting at 1/3 full gauge."
+"Modification of TD that removes the invincibility from trances, instead allowing "
+"you to use them starting at 1/3 full gauge."
 msgstr ""
 
 #: php/tools.php:289
@@ -1866,11 +1836,10 @@ msgstr ""
 
 #: php/tools.php:299
 msgid ""
-"Allows you to run the fangame Shining Shooting Star without requiring you to "
-"set your locale to Chinese. Note that it does not fix the pattern speed bug "
-"on locales that use a comma for decimals, which makes certain patterns "
-"extremely fast until a full run is played or a replay of one of certain "
-"stages is watched."
+"Allows you to run the fangame Shining Shooting Star without requiring you to set "
+"your locale to Chinese. Note that it does not fix the pattern speed bug on locales "
+"that use a comma for decimals, which makes certain patterns extremely fast until a "
+"full run is played or a replay of one of certain stages is watched."
 msgstr ""
 
 #: php/tools.php:306
@@ -1887,8 +1856,8 @@ msgstr ""
 
 #: php/tools.php:316
 msgid ""
-"Disables the 0.01 power loss mechanic of Pointdevice Mode in LoLK, making "
-"sure you never lose power upon restarting a chapter."
+"Disables the 0.01 power loss mechanic of Pointdevice Mode in LoLK, making sure you "
+"never lose power upon restarting a chapter."
 msgstr ""
 
 #: php/tools.php:321
@@ -1909,10 +1878,9 @@ msgstr ""
 
 #: php/tools.php:342
 msgid ""
-"These are (mostly) complete <span class=\"code\">score.dat</span> files "
-"useful for practice combined with other tools, as they have unlocked the "
-"Extra Stage, every practice stage and spell in Spell Practice for all "
-"shottypes."
+"These are (mostly) complete <span class=\"code\">score.dat</span> files useful for "
+"practice combined with other tools, as they have unlocked the Extra Stage, every "
+"practice stage and spell in Spell Practice for all shottypes."
 msgstr ""
 
 #: php/tools.php:346
@@ -1921,20 +1889,19 @@ msgstr ""
 
 #: php/tools.php:352
 msgid ""
-"Japanese program that can load <span class=\"code\">.ssg</span> files that "
-"modify the game while it is running, allowing for practice options as well "
-"as cheats. SpoilerAL SSGs require the <em>original Japanese versions</em> of "
-"the games to work. The 4.6 SSGs have practice options such as skipping to a "
-"specific frame of the game or a specific spell, while the niL SSGs have "
-"cheat options such as invincibility. There is also a separate MoF SSG made "
-"by <a href=\"https://www.twitch.tv/akaldar\" target=\"_blank\">Akaldar</a> "
-"for efficient practice in that game specifically, a separate GFW SSG, as "
-"well as a TD SSG specifically designed for efficient scoring practice, made "
-"by Leo, a DDC SSG and a LoLK Chapter Practice SSG by <a href=\"https://www."
-"youtube.com/channel/UChyVpooBi31k3xPbWYsoq3w\" target=\"_blank\">32th "
-"System</a> and separate HSiFS SSGs with cheat options. Be wary of an "
-"occasional menu bug that causes an SSG to duplicate itself and make other "
-"SSGs invisible."
+"Japanese program that can load <span class=\"code\">.ssg</span> files that modify "
+"the game while it is running, allowing for practice options as well as cheats. "
+"SpoilerAL SSGs require the <em>original Japanese versions</em> of the games to "
+"work. The 4.6 SSGs have practice options such as skipping to a specific frame of "
+"the game or a specific spell, while the niL SSGs have cheat options such as "
+"invincibility. There is also a separate MoF SSG made by <a href=\"https://"
+"www.twitch.tv/akaldar\" target=\"_blank\">Akaldar</a> for efficient practice in "
+"that game specifically, a separate GFW SSG, as well as a TD SSG specifically "
+"designed for efficient scoring practice, made by Leo, a DDC SSG and a LoLK Chapter "
+"Practice SSG by <a href=\"https://www.youtube.com/channel/"
+"UChyVpooBi31k3xPbWYsoq3w\" target=\"_blank\">32th System</a> and separate HSiFS "
+"SSGs with cheat options. Be wary of an occasional menu bug that causes an SSG to "
+"duplicate itself and make other SSGs invisible."
 msgstr ""
 
 #: php/tools.php:364
@@ -1995,8 +1962,8 @@ msgstr ""
 
 #: php/tools.php:411
 msgid ""
-"Patches intended for efficient practice in one or more games, allowing the "
-"player to skip to patterns or changing power and such."
+"Patches intended for efficient practice in one or more games, allowing the player "
+"to skip to patterns or changing power and such."
 msgstr ""
 
 #: php/tools.php:414
@@ -2006,10 +1973,9 @@ msgstr ""
 #: php/tools.php:416
 msgid ""
 "Tools that allow you to skip to specific patterns in SA, UFO and LoLK, also "
-"allowing for other settings like your current power. The UFO and LoLK tools "
-"are external programs, while the SA tool is a modification of the program. "
-"The LoLK one was made for v1.00a but mostly functions properly on v1.00b as "
-"well."
+"allowing for other settings like your current power. The UFO and LoLK tools are "
+"external programs, while the SA tool is a modification of the program. The LoLK one "
+"was made for v1.00a but mostly functions properly on v1.00b as well."
 msgstr ""
 
 #: php/tools.php:426
@@ -2018,8 +1984,8 @@ msgstr ""
 
 #: php/tools.php:428
 msgid ""
-"Allows skipping to any part of the game, similar to Riri's practice tools, "
-"using an in-game menu."
+"Allows skipping to any part of the game, similar to Riri's practice tools, using an "
+"in-game menu."
 msgstr ""
 
 #: php/tools.php:431
@@ -2028,17 +1994,17 @@ msgstr ""
 
 #: php/tools.php:433
 msgid ""
-"Modified <span class=\"code\">.dat</span> files that allow you to practice "
-"specific stages of any route in the game. Select A in-game for full stage "
-"practice, B for midboss and boss and C for boss only. Refer to the readme "
-"file for further information."
+"Modified <span class=\"code\">.dat</span> files that allow you to practice specific "
+"stages of any route in the game. Select A in-game for full stage practice, B for "
+"midboss and boss and C for boss only. Refer to the readme file for further "
+"information."
 msgstr ""
 
 #: php/tools.php:441
 msgid ""
-"Modifications to the main <span class=\"code\">.dat</span> files of the "
-"games that skip stage portions, allowing you to efficiently practice boss "
-"battles. The skipping applies to both full runs and practice runs."
+"Modifications to the main <span class=\"code\">.dat</span> files of the games that "
+"skip stage portions, allowing you to efficiently practice boss battles. The "
+"skipping applies to both full runs and practice runs."
 msgstr ""
 
 #: php/tools.php:445 php/tools.php:466
@@ -2047,8 +2013,8 @@ msgstr ""
 
 #: php/tools.php:447
 msgid ""
-"All midbosses and bosses are included, everything else being kept the same. "
-"There are also 'boss-only' versions that do skip the midbosses."
+"All midbosses and bosses are included, everything else being kept the same. There "
+"are also 'boss-only' versions that do skip the midbosses."
 msgstr ""
 
 #: php/tools.php:451
@@ -2057,10 +2023,10 @@ msgstr ""
 
 #: php/tools.php:468
 msgid ""
-"Patches for SA and UFO that not only remove stage portions, but also bombs. "
-"The SA one includes turning Stage 4 into 'Satori Rush', where you fight "
-"every single one of her Spell Cards. Note that the safe areas on Border of "
-"Wave and Particle and Utsuho's 3rd spell are removed in this patch."
+"Patches for SA and UFO that not only remove stage portions, but also bombs. The SA "
+"one includes turning Stage 4 into 'Satori Rush', where you fight every single one "
+"of her Spell Cards. Note that the safe areas on Border of Wave and Particle and "
+"Utsuho's 3rd spell are removed in this patch."
 msgstr ""
 
 #: php/tools.php:477
@@ -2089,8 +2055,8 @@ msgstr ""
 
 #: php/tools.php:489
 msgid ""
-"Patches intended for practicing one or a few specific patterns in a game. "
-"Usually <span class=\"code\">.dat</span> modifications."
+"Patches intended for practicing one or a few specific patterns in a game. Usually "
+"<span class=\"code\">.dat</span> modifications."
 msgstr ""
 
 #: php/tools.php:492
@@ -2107,9 +2073,8 @@ msgstr ""
 
 #: php/tools.php:497
 msgid ""
-"Makes Kanako skip to Virtue of Wind God (her final spell) and makes Aya skip "
-"to Peerless Wind God (her timeout spell), which will also repeat itself "
-"indefinitely."
+"Makes Kanako skip to Virtue of Wind God (her final spell) and makes Aya skip to "
+"Peerless Wind God (her timeout spell), which will also repeat itself indefinitely."
 msgstr ""
 
 #: php/tools.php:502
@@ -2126,9 +2091,9 @@ msgstr ""
 
 #: php/tools.php:507
 msgid ""
-"Patches for practicing the timeout phases of the final spells on Lunatic and "
-"Extra from MoF to HSiFS, plus Devil's Recitation, but not including GFW "
-"Stage 3 final spells."
+"Patches for practicing the timeout phases of the final spells on Lunatic and Extra "
+"from MoF to HSiFS, plus Devil's Recitation, but not including GFW Stage 3 final "
+"spells."
 msgstr ""
 
 #: php/tools.php:512
@@ -2145,9 +2110,9 @@ msgstr ""
 
 #: php/tools.php:519
 msgid ""
-"Gives Star's first non from Route A1 Stage 2 infinite health. This will "
-"produce an infinite amount of rings, since the nonspell adds more rings "
-"every wave. The stage background from Route A2 is used."
+"Gives Star's first non from Route A1 Stage 2 infinite health. This will produce an "
+"infinite amount of rings, since the nonspell adds more rings every wave. The stage "
+"background from Route A2 is used."
 msgstr ""
 
 #: php/wr.php:44
@@ -2157,42 +2122,40 @@ msgstr ""
 
 #: php/wr.php:148
 msgid ""
-"An accurate list of Touhou world records, updated every so often. Note that "
-"the player ranking at the bottom does not take into account how strong "
-"specific records are, only numbers. The list does not include scene games as "
-"of now."
+"An accurate list of Touhou world records, updated every so often. Note that the "
+"player ranking at the bottom does not take into account how strong specific records "
+"are, only numbers. The list does not include scene games as of now."
 msgstr ""
 
 #: php/wr.php:153
 msgid ""
-"Click a score to download the corresponding replay, if there is one "
-"available. "
+"Click a score to download the corresponding replay, if there is one available. "
 msgstr ""
 
 #: php/wr.php:157
 msgid ""
-"The replays provided are <strong>not</strong> meant to be reuploaded to any "
-"replay uploading services."
+"The replays provided are <strong>not</strong> meant to be reuploaded to any replay "
+"uploading services."
 msgstr ""
 
 #: php/wr.php:160
 msgid ""
-"If you toggle Unverified Scores, this will show scores that are higher than "
-"the World Record, but lack replay or video proof."
+"If you toggle Unverified Scores, this will show scores that are higher than the "
+"World Record, but lack replay or video proof."
 msgstr ""
 
 #: php/wr.php:162
 msgid ""
 "For updates, you can contact <a href=\"https://twitter.com/MaribelHearn42\" "
-"target=\"_blank\">me</a> or <a href=\"https://www.youtube.com/"
-"@KirbyComment\" target=\"_blank\">KirbyComment</a>."
+"target=\"_blank\">me</a> or <a href=\"https://www.youtube.com/@KirbyComment\" "
+"target=\"_blank\">KirbyComment</a>."
 msgstr ""
 
 #: php/wr.php:164
 msgid ""
 "The world record history from before September 2024 was assembled using the "
-"research at <a href=\"https://nylilsa.github.io\" "
-"target=\"_blank\">Nylilsa's GitHub page.</a>"
+"research at <a href=\"https://nylilsa.github.io\" target=\"_blank\">Nylilsa's "
+"GitHub page.</a>"
 msgstr ""
 
 #: php/wr.php:172 php/wr.php:179 php/wr.php:210

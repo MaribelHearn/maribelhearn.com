@@ -1,9 +1,9 @@
 <h2 id='eosd'>Getting EoSD to work</h2>
 <p><em>This guide is courtesy of <a href='https://www.twitch.tv/the_star_king'>Star King</a></em></p>
-<p>Getting EoSD to run properly on Windows - especially Windows 10 - can seem like an arduous task, but generally speaking, there's really just three main issues that need to be addressed:</p>
+<p>Getting EoSD to run properly on Windows - especially Windows 10 and 11 - can seem like an arduous task, but generally speaking, there's really just three main issues that need to be addressed:</p>
 <ol>
     <li>Incorrectly named files.</li>
-    <li>Uncapped FPS bug, where your game runs at a much higher speed than the intended 60 FPS (issue with EoSD on Windows 10 specifically).</li>
+    <li>Uncapped FPS bug, where your game runs at a much higher speed than the intended 60 FPS (issue with EoSD on Windows 10/11 specifically).</li>
     <li>The need to run EoSD on Japanese locale, or a way to bypass this need (issue with EoSD on any Windows).</li>
 </ol>
 <p>These three problems will be addressed, in order, by the following three sections. For the vast majority of people, this will be enough to get EoSD to run well.</p>
