@@ -35,7 +35,7 @@
 Importantly for this guide, it also happens to fix the uncapped FPS bug. <a href='https://maribelhearn.com/mirror/VsyncPatch.zip' target='_blank'>Download vpatch here</a>.</p>
 <p>Follow the instructions in the text file that's in the folder. As it mentions, whatever executable you are running with vpatch must be named <span class='code'>東方紅魔郷.exe</span>.</p>
 <p>Optionally, you can replace <span class='code'>vpatch_th06.dll</span>
-with <span class='code'>vpatch_th06_unicode.dll</span>. <a href='https://www.thpatch.net/wiki/File:vpatch_th06_unicode.zip' target='_blank'>Download it here.</a></p>
+with <span class='code'>vpatch_th06_unicode.dll</span>. <a href='https://maribelhearn.com/mirror/VsyncPatchUnicode.zip' target='_blank'>Download it here.</a></p>
 <p>This bypasses the need for Japanese locale <em>if</em> you play with THCRAP or the static English patch. You still need Japanese locale to run the game in Japanese, which leads us to the next section.</p>
 <h4 id='jplocale'>Japanese locale</h4>
 <p>What changing your locale does is change the default language that is used for non-Unicode programs. It does <em>not</em> change the language your Windows environment will be in.
@@ -51,7 +51,7 @@ Open it, click on "Clock and Region", then "Region". Go to the "Administrative" 
 <p>This fixes some issues for the older Touhou games (Touhou 6 to 9.5). This is another solution to the uncapped FPS bug, although vpatch already does that.
 Also, some people's computers may refuse to go to exclusive fullscreen for these games, and this fixes that (which also results in less input lag).
 At the very least, it seems to have no negative effects, so it doesn't hurt to have it. When combined with vpatch, it may reduce input lag
-even further (not confirmed). <a href='http://enbdev.com/convertor_dx8_dx9_v0036.htm' target='_blank'>Download link</a>.</p>
+even further (not confirmed). <a href='https://github.com/crosire/d3d8to9/releases/latest' target='_blank'>Download link</a>.</p>
 <h4 id='thprac'>thprac</h4>
 <p>thprac (not to be confused with <a href='/tools#thcrap'>thcrap</a>) is a popular practice tool. It requires Japanese locale to use with EoSD.
 It can be <a href='https://github.com/ack7139/thprac/releases' target='_blank'>downloaded here</a>.</p>
