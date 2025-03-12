@@ -152,7 +152,7 @@ function prepareShowWR(game) {
 
 function formatDate(date, raw) {
     if (raw) {
-        return date.toLocaleString("en-US", {"year": "numeric", "month": "2-digit", "day": "2-digit"}).split('/').reverse().join("");
+        return date.toLocaleString("en-GB", {"year": "numeric", "month": "2-digit", "day": "2-digit"}).split('/').reverse().join("");
     } else if (language == "ja_JP" || language == "zh_CN") {
         date = new Date(date).toLocaleString(language.replace('_', '-'), {"dateStyle": "long"});
     } else {
