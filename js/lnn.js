@@ -199,12 +199,26 @@ function showLNNs() { // .game_img onclick
 }
 
 function formatDate(date, raw) {
+    if (!date) {
+        return "Unknown";
+    }
+
+    let tmp = date.replace(/-/g, '/');
+    tmp = tmp.split(/\//);
+    const day = tmp[2].padStart(2, '0');
+    const month = tmp[1].padStart(2, '0');
+    const year = tmp[0];
+
     if (raw) {
-        return date.toLocaleString("en-GB", {"year": "numeric", "month": "2-digit", "day": "2-digit"}).split('/').reverse().join("");
+        return year + month + day;
+    } else if (language == "en_US") {
+        return `${month}/${day}/${year}`;
     } else if (language == "ja_JP" || language == "zh_CN") {
-        return date.toLocaleString(language.replace('_', '-'), {"dateStyle": "long"});
-    } else {
-        return date.toLocaleString(language.replace('_', '-'), {"year": "numeric", "month": "2-digit", "day": "2-digit"});
+        return `${year}年${month}月${day}日`;
+    } else if (language == 'ru_RU' || language == 'de_DE') {
+        return `${day}.${month}.${year}`;
+    } else { // en_GB || es_ES
+        return `${day}/${month}/${year}`;
     }
 }
 
@@ -258,7 +272,7 @@ function showPlayerLNNs(player, LNNs) {
             first = new Date(data.date);
         }
 
-        date = (!data.date ? _("Unknown") : formatDate(new Date(data.date)));
+        date = (!data.date ? _("Unknown") : formatDate(data.date));
 
         document.getElementById(`${game}s`).innerHTML += _(data.category.shot);
 
@@ -403,8 +417,8 @@ function showCategoryLNNs(category, LNNs) {
             first = new Date(data.date);
         }
 
-        date = (!data.date ? _("Unknown") : formatDate(new Date(data.date)));
-        dateRaw = (!data.date ? _("Unknown") : formatDate(new Date(data.date), "raw"));
+        date = (!data.date ? _("Unknown") : formatDate(data.date));
+        dateRaw = (!data.date ? _("Unknown") : formatDate(data.date), "raw");
         searchTable.innerHTML += `<tr id='tr_${numberOfLNNs}'></tr>`;
 
         if (first) {
@@ -532,7 +546,7 @@ function getLastModifiedDate() {
         if (this.readyState === 4) {
             if (this.status === 200) {
                 const response = JSON.parse(this.response);
-                const lastModifiedDate = formatDate(new Date(response.results[0].submitted_date));
+                const lastModifiedDate = formatDate(response.results[0].submitted_date);
                 let lastModified = _(`LNNs are current as of <span id="lm">%date</span>.`).replace("%date", lastModifiedDate);
                 document.getElementById("last_modified").innerHTML = lastModified;
             }
@@ -581,8 +595,8 @@ function getRecentLNNs() {
                         continue;
                     }
 
-                    const date = formatDate(new Date(entry["date"]));
-                    const dateRaw = formatDate(new Date(entry["date"]), "raw");
+                    const date = formatDate(entry["date"]);
+                    const dateRaw = formatDate(entry["date"], "raw");
                     let replay, video, route;
 
                     if (!entry["replay"]) {

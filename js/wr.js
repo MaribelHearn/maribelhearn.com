@@ -151,15 +151,27 @@ function prepareShowWR(game) {
 }
 
 function formatDate(date, raw) {
-    if (raw) {
-        return date.toLocaleString("en-GB", {"year": "numeric", "month": "2-digit", "day": "2-digit"}).split('/').reverse().join("");
-    } else if (language == "ja_JP" || language == "zh_CN") {
-        date = new Date(date).toLocaleString(language.replace('_', '-'), {"dateStyle": "long"});
-    } else {
-        date = new Date(date).toLocaleString(language.replace('_', '-'), {"year": "numeric", "month": "2-digit", "day": "2-digit"});
+    if (!date) {
+        return "Unknown";
     }
 
-    return date;
+    let tmp = date.replace(/-/g, '/');
+    tmp = tmp.split(/\//);
+    const day = tmp[2].padStart(2, '0');
+    const month = tmp[1].padStart(2, '0');
+    const year = tmp[0];
+
+    if (raw) {
+        return year + month + day;
+    } else if (language == "en_US") {
+        return `${month}/${day}/${year}`;
+    } else if (language == "ja_JP" || language == "zh_CN") {
+        return `${year}年${month}月${day}日`;
+    } else if (language == 'ru_RU' || language == 'de_DE') {
+        return `${day}.${month}.${year}`;
+    } else { // en_GB || es_ES
+        return `${day}/${month}/${year}`;
+    }
 }
 
 function showWesternRecords(game, overalls, westScores) {
@@ -462,7 +474,7 @@ function showPlayerWRs(player, records) {
             first = new Date(data.date);
         }
 
-        date = (!data.date ? _("Unknown") : formatDate(new Date(data.date)));
+        date = (!data.date ? _("Unknown") : formatDate(data.date));
 
         document.getElementById(`${game}${diff}s`).innerHTML += sep(data.score) + "<br>";
         document.getElementById(`${game}${diff}t`).innerHTML += _(data.category.shot) + "<br>";
@@ -523,7 +535,7 @@ function showHistory(category, game, records, idSuffix) {
         }
 
         shot = (game == "GFW" && data.category.difficulty == "Extra" ? '-' : _(data.category.shot));
-        date = (!data.date ? _("Unknown") : formatDate(new Date(data.date)));
+        date = (!data.date ? _("Unknown") : formatDate(data.date));
         historyBody.innerHTML += "<tr id='" + data.score + "'></tr>";
         document.getElementById(data.score).innerHTML = `<td>${sep(data.score)}</td>`;
         document.getElementById(data.score).innerHTML += `<td>${data.player}</td>`;
@@ -650,7 +662,7 @@ function getLastModifiedDate() {
         if (this.readyState === 4) {
             if (this.status === 200) {
                 const response = JSON.parse(this.response);
-                const lastModifiedDate = formatDate(new Date(response.results[0].submitted_date));
+                const lastModifiedDate = formatDate(response.results[0].submitted_date);
                 let lastModified = _(`World records are current as of <span id="lm">%date</span>.`).replace("%date", lastModifiedDate);
                 document.getElementById("last_modified").innerHTML = lastModified;
             }
@@ -699,8 +711,8 @@ function getRecentRecords() {
                         continue;
                     }
 
-                    const date = formatDate(new Date(entry["date"]));
-                    const dateRaw = formatDate(new Date(entry["date"]), "raw");
+                    const date = formatDate(entry["date"]);
+                    const dateRaw = formatDate(entry["date"], "raw");
                     let replay, video;
 
                     if (!entry["replay"]) {
