@@ -22,7 +22,7 @@ SA, UFO and LoLK (Touhou 11, 12 and 15) are not recommended, but are perfectly f
 <hr>
 <h2 id='where'>Where do I get the games?</h2>
 <h4 id='steam'>Steam</h4>
-<p>Steam is the most reliable way to purchase the official Touhou games. Shoot 'em up games from Shoot the Bullet (Touhou 9.5) onwards are all available on Steam. The mainline games cost $15 while spinoff games cost $11.
+<p>Steam is the most reliable way to purchase the official Touhou games. Shoot 'em up games from Phantasmagoria of Flower View (Touhou 9) onwards are all available on Steam. The mainline games cost $15 while spinoff games cost $11.
 Go to <a href='https://hakureishrine.org'>hakureishrine.org</a> for all of the official games that are available on Steam.</p>
 <h4 id='amazon'>Amazon and other webshops</h4>
 <p>For games not on Steam, or if you do not want to use Steam, there are other places where you can buy the games legally. Amazon has physical copies of these games but for a higher price.
@@ -32,7 +32,7 @@ Check out the Touhou Wiki <a href='https://en.touhouwiki.net/wiki/Purchasing_Gui
 <h2 id='setup'>Setting up</h2>
 <p>After getting the game, <em>assuming you got the game legally</em>, you will most likely want to set up before playing. If you want to play in English or any other language you will need to download THCRAP.
 Many games will also require vpatch or the game will have input lag. EoSD (Touhou 6) is pretty stubborn and needs more setup, see the page <a href='/faq/eosd'>Getting EoSD to work</a>.</p>
-<p>Other than the newest game, UM (18), Touhou does not have built-in rebinding for keyboards. An external program such as AutoHotkey is needed, explained further below.</p>
+<p>Apart from UM (Touhou 18) and newer, Touhou does not have built-in rebinding for keyboards. An external program such as AutoHotkey is needed, explained further below.</p>
 <h4 id='vpatch'>What is vpatch and how do I use it?</h4>
 <p>An essential tool to remove input lag. See the <a href='/tools#vpatch'>Touhou Patches and Tools</a> page.</p>
 <p>To set it up, extract it from the <span class=tt>.zip</span> archive file you downloaded. Read the readme file that is contained inside.
@@ -87,9 +87,21 @@ You do <em>not</em> need to see the Good Ending for a run to count as a 1cc.</p>
 <p><em>See the <a href='/faq/resources'>Resources</a> page.</em></p>
 <h4 id='score'>How do I play for score?</h4>
 <p><em>See the <a href='/faq/scoring'>Scoring</a> page.</em></p>
-<h4 id='bombing'>When should I be bombing?</h4>
-<p>Practice the game and find out which patterns you can dodge easily and which ones you cannot. You want to plan bombs for anything that is not consistent for you,
-while also leaving some room for unplanned bombs, so you can bomb when you mess up.</p>
+<h4 id='deathbomb'>How do I get good at deathbombing?</h4>
+<p>Intentionally <strong>deathbombing</strong> for a 1cc is a poor decision and will likely reinforce bad habits. A successful deathbomb relies on bombing within an incredibly strict timeframe, often below the threshold of a human's reaction speed.
+This window does not serve as a reward to those who wish to test their reflexes -- it is a mechanic designed to save a lucky and desperate player from certain death.</p>
+<h4 id='bombing'>But... when should I be bombing?</h4>
+<p>If you seek to improve your bombing habits, here are a few helpful tips:</p>
+<ol>
+    <li><strong>Be reasonable:</strong> If you are at any point unsure of your ability to make it through a fast wave of bullets or a tight gap, bomb.
+    It is much better to lose a bomb than to be overconfident and lose a life.</li>
+    <li><strong>Time your bombs:</strong> Some patterns act slowly enough that a significant portion or majority of their threat comes near the end of the healthbar.
+    Bombing too early may skip the easier part, but it may leave you with the hardest phase as well. Keep in mind, even the easy part can kill you, so at the end of the day follow step 1.</li>
+    <li><strong>Use all of your bombs:</strong> Finally, arguably the most important tip: never die with bombs in stock.
+    Facing a risky pattern with a bomb to spare has an obvious solution -- bomb! Once you are out of bombs, the worst that can happen is that you get hit and lose a life.
+    Best case scenario, you make it past a pattern you don't expect to.</li>
+</ol>
+<p>If you follow these 3 rules, deathbombing will no longer feel like an appealing option, and you'll be well on your way to becoming a 1cc pro.</p>
 <h4 id='ending'>Does Easy 1cc give the Bad Ending?</h4>
 <p>In most games, no, it does not. Only in LLS (Touhou 4), EoSD (Touhou 6) and MoF (Touhou 10) does this occur.</p>
 <h4 id='replays'>How do I play <span class='tt'>.rpy</span> files?</h4>
@@ -103,6 +115,7 @@ Note that most spinoffs consist of three digits; for example, GFW (Touhou 12.8) 
 <p>For EoSD (Touhou 6) up to UFO (Touhou 12), replays are in the <span class='tt'>replay</span> subfolder in your game folder.
 <br>From DS (Touhou 12.5) onwards, press Win+R and run <span class='code'>%appdata%/ShanghaiAlice</span> to open the folder. Making a shortcut to it is recommended.</p>
 <p>Screenshots made using the Home or P key are in the <span class='tt'>snapshot</span> subfolder in your game folder.</p>
+<p>The PC-98 titles (Touhou 1 to 5) do not offer replays or screenshots.</p>
 <h4 id='zip'>Why is the game not saving my progress?</h4>
 <p>You are playing inside a <span class='tt'>.zip</span> archive file. Right click the file and extract its contents into a folder, then play the game from that folder.</p>
 <h4 id='cfgbug'>Why is the game not saving my options I set in the game?</h4>
