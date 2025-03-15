@@ -16,6 +16,7 @@
         <p><a href='#thprac'><strong>thprac</strong></a></p>
         <p><a href='#thcrap'>thcrap</a></p>
         <p><a href='#d8d9'><?php echo _('DX8 to DX9 converter') ?></a></p>
+        <p><a href='#oilp'><?php echo _('OpenInputLagPatch') ?></a></p>
         <p><a href='#shottypes'><?php echo _('Shottype Modifications') ?></a></p>
         <p><a href='#hardultra'><?php echo _('Hard Mode / Ultra Patches') ?></a></p>
         <p><a href='#graphical'><?php echo _('Graphical Patches') ?></a></p>
@@ -87,6 +88,16 @@
 		'Extract it into the folders of these games for it to take effect.');
 	?></p>
     <p><a href='https://github.com/crosire/d3d8to9/releases/latest' target='_blank'><?php echo _('Download') ?></a></p>
+    <!-- OILP -->
+    <hr>
+    <h2 id='d8d9'><?php echo _('OpenInputLagPatch') ?></h2>
+    <p><?php
+		echo _('An alternative to vpatch, which fixes frame limiter and input lag issues in Touhou games. Put the files in the same directory as the game and run oilp_loader.exe to launch the game.');
+	?></p>
+	<p><?php
+		echo _('If you are playing the older Touhou Windows games (EoSD, PCB, IN, PoFV and StB), you also need the <strong>DX8 to DX9 converter</strong>.');
+	?></p>
+    <p><a href='https://maribelhearn.com/mirror/OpenInputLagPatch.zip' target='_blank'><?php echo _('Download') ?></a></p>
     <!-- Shottype Modifications -->
     <hr>
     <h2 id='shottypes'><?php echo _('Shottype Modifications') ?></h2>
