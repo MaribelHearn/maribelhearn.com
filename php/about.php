@@ -68,7 +68,7 @@
             </tr>
             <tr>
                 <td><a href='https://www.youtube.com/watch?v=ITYCfbE76ZM' target='_blank'>The Venerable Ancient Battlefield ~ Suwa Foughten Field</a></td>
-                <td>Touhou 10: Mountain of Faith, Stage 5</td>
+                <td>Touhou 10: Mountain of Faith, Final Boss</td>
                 <td>ZUN</td>
             </tr>
             <tr>
