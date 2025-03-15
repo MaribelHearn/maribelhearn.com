@@ -90,7 +90,7 @@
     <p><a href='https://github.com/crosire/d3d8to9/releases/latest' target='_blank'><?php echo _('Download') ?></a></p>
     <!-- OILP -->
     <hr>
-    <h2 id='d8d9'><?php echo _('OpenInputLagPatch') ?></h2>
+    <h2 id='oilp'><?php echo _('OpenInputLagPatch') ?></h2>
     <p><?php
 		echo _('An alternative to vpatch, which fixes frame limiter and input lag issues in Touhou games. Put the files in the same directory as the game and run oilp_loader.exe to launch the game.');
 	?></p>
