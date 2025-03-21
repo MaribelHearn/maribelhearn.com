@@ -1594,7 +1594,7 @@ function togglePC98() {
 }
 
 function toggleWindows() {  
-    const windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "Spinoff"];
+    const windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "UDoALG", "Spinoff"];
 
     for (const id of windows) {
         const element = document.getElementById(`checkbox_${id}`);
