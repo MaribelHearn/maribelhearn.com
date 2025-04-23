@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-09-13 13:06+0200\n"
-"PO-Revision-Date: 2024-09-13 13:07+0200\n"
+"POT-Creation-Date: 2025-04-23 20:43+0200\n"
+"PO-Revision-Date: 2025-04-23 20:44+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-Basepath: ../../..\n"
 "X-Poedit-SearchPath-0: php/drc.php\n"
 "X-Poedit-SearchPath-1: php/lnn.php\n"
@@ -19,9 +19,9 @@ msgstr ""
 "X-Poedit-SearchPath-4: js/lnn.js\n"
 "X-Poedit-SearchPath-5: js/wr.js\n"
 "X-Poedit-SearchPath-6: php/pofv.php\n"
-"X-Poedit-SearchPath-7: php/jargon.php\n"
-"X-Poedit-SearchPath-8: php/shared/shared.php\n"
-"X-Poedit-SearchPath-9: php/shared/translations.php\n"
+"X-Poedit-SearchPath-7: php/shared/shared.php\n"
+"X-Poedit-SearchPath-8: php/shared/translations.php\n"
+"X-Poedit-SearchPath-9: php/subpages/faq/jargon.php\n"
 
 #: js/drc.js:36
 msgid "Important Notice:"
@@ -84,18 +84,18 @@ msgstr ""
 msgid "Releases"
 msgstr ""
 
-#: js/drc.js:140 php/wr.php:213 php/wr.php:466 php/wr.php:506 php/wr.php:531
-#: php/wr.php:605
+#: js/drc.js:140 php/wr.php:221 php/wr.php:469 php/wr.php:507 php/wr.php:532
+#: php/wr.php:594
 msgid "Score"
 msgstr "分数"
 
-#: js/drc.js:186 js/lnn.js:44 js/wr.js:59 php/shared/shared.php:109
+#: js/drc.js:186 js/lnn.js:48 js/wr.js:59 php/shared/shared.php:109
 msgid "Route"
 msgstr "路线"
 
-#: js/drc.js:188 js/lnn.js:44 js/wr.js:59 php/drc.php:450 php/lnn.php:236
-#: php/lnn.php:271 php/shared/shared.php:109 php/wr.php:216 php/wr.php:468
-#: php/wr.php:507 php/wr.php:607
+#: js/drc.js:188 js/lnn.js:48 js/lnn.js:314 js/wr.js:59 php/drc.php:450
+#: php/lnn.php:238 php/lnn.php:295 php/shared/shared.php:109 php/wr.php:224
+#: php/wr.php:471 php/wr.php:508 php/wr.php:596
 msgid "Shottype"
 msgstr "机体"
 
@@ -131,43 +131,74 @@ msgstr ""
 msgid "block"
 msgstr ""
 
-#: js/lnn.js:32 js/lnn.js:35 js/lnn.js:36 js/lnn.js:38 php/lnn.php:11
-#: php/lnn.php:14 php/lnn.php:15 php/lnn.php:17
+#: js/lnn.js:36 js/lnn.js:39 js/lnn.js:40 js/lnn.js:42 php/lnn.php:34
+#: php/lnn.php:37 php/lnn.php:38 php/lnn.php:40
 msgid "No. of LNNNs"
 msgstr "LNNN的数量"
 
-#: js/lnn.js:33 php/lnn.php:12
+#: js/lnn.js:37 php/lnn.php:35
 msgid "No. of LNNFSs"
 msgstr "LNNFS的数量"
 
-#: js/lnn.js:34 php/lnn.php:13
+#: js/lnn.js:38 php/lnn.php:36
 msgid "No. of LNN(N)s"
 msgstr "LNN(N)的数量"
 
-#: js/lnn.js:37 php/lnn.php:16
+#: js/lnn.js:41 php/lnn.php:39
 msgid "No. of LNNNNs"
 msgstr "LNNNN的数量"
 
-#: js/lnn.js:39 php/lnn.php:18 php/lnn.php:339 php/lnn.php:380
+#: js/lnn.js:43 php/lnn.php:41 php/lnn.php:369 php/lnn.php:413
 msgid "No. of LNNs"
 msgstr "LNN的数量"
 
-#: js/lnn.js:248 js/wr.js:445 js/wr.js:509 php/lnn.php:318 php/wr.php:246
-#: php/wr.php:554
+#: js/lnn.js:268 js/lnn.js:413 js/lnn.js:612 js/wr.js:470 js/wr.js:534
+#: js/wr.js:728 php/lnn.php:343 php/wr.php:254 php/wr.php:555
 msgid "Link"
 msgstr "链接"
 
-#: js/lnn.js:255 js/wr.js:452 js/wr.js:512 php/lnn.php:24 php/wr.php:23
+#: js/lnn.js:275 js/lnn.js:420 js/lnn.js:421 js/wr.js:477 js/wr.js:538
+#: php/lnn.php:47 php/wr.php:45
 msgid "Unknown"
 msgstr "未知"
 
-#: js/lnn.js:281
+#: js/lnn.js:301
 msgid "(All)"
 msgstr "（全）"
 
-#: js/wr.js:424 php/lnn.php:321 php/wr.php:557 php/wr.php:587
+#: js/lnn.js:311 php/drc.php:203 php/drc.php:387 php/drc.php:421
+#: php/lnn.php:294 php/lnn.php:368 php/wr.php:220
+msgid "Game"
+msgstr "游戏"
+
+#: js/lnn.js:425 js/lnn.js:618 js/lnn.js:622 js/wr.js:377 js/wr.js:449
+#: js/wr.js:732 php/lnn.php:348 php/lnn.php:351 php/wr.php:558 php/wr.php:582
 msgid " "
 msgstr ""
+
+#: js/lnn.js:441 php/drc.php:94 php/lnn.php:270 php/lnn.php:317 php/wr.php:506
+#: php/wr.php:531 php/wr.php:575
+msgid "Category"
+msgstr "项目"
+
+#: js/lnn.js:444 php/lnn.php:250 php/lnn.php:318 php/lnn.php:412 php/wr.php:222
+#: php/wr.php:470 php/wr.php:485 php/wr.php:533 php/wr.php:595 php/wr.php:611
+msgid "Player"
+msgstr "玩家"
+
+#: js/lnn.js:550 php/lnn.php:68
+#, javascript-format, php-format
+msgid "LNNs are current as of <span id=\"lm\">%date</span>."
+msgstr "LNN更新于<span id=\"lm\">%date</span>。"
+
+#: js/lnn.js:700 js/lnn.js:701 php/lnn.php:421 php/lnn.php:422
+msgid " (All Windows)"
+msgstr "（全Windows）"
+
+#: js/wr.js:666 php/wr.php:66
+#, javascript-format, php-format
+msgid "World records are current as of <span id=\"lm\">%date</span>."
+msgstr "世界记录更新于<span id=\"lm\">%date</span>。"
 
 #: php/drc.php:71
 msgid ""
@@ -186,8 +217,8 @@ msgid ""
 "Players can submit an unlimited number of replays; the replay that is worth "
 "the most DRC points will count."
 msgstr ""
-"<strong>Dodging Rain Competition(DRC)</strong>是由<a href=\"https://www."
-"youtube.com/user/mariomaster657\">ZM</a>发起的东方比赛，举办地点：<a "
+"<strong>Dodging Rain Competition(DRC)</strong>是由<a href=\"https://"
+"www.youtube.com/user/mariomaster657\">ZM</a>发起的东方比赛，举办地点：<a "
 "href=\"https://discord.gg/Ucae3Uf\">DRC Discord</a>。两队进行不同项目的比赛。"
 "每位选手报名时写下想打的任意项目，根据偏好排序，可以是避弹向的生存，也可以是"
 "打分，任意作品、任意难度均可。列出的项目会与另一队进行匹配，相同项目的选手即"
@@ -216,10 +247,6 @@ msgid ""
 "assumed to have cleared, scoring runs not."
 msgstr ""
 "分数可包含数字、逗号、句号、空格。生存向将会被假定为已通关，打分则不会。"
-
-#: php/drc.php:94 php/lnn.php:292 php/wr.php:505 php/wr.php:530 php/wr.php:578
-msgid "Category"
-msgstr "项目"
 
 #: php/drc.php:96
 msgid "HRtP"
@@ -426,11 +453,6 @@ msgstr ""
 msgid "||Max * (Score/WR)^Exp||"
 msgstr "||最大值 *（得分 / 世界纪录）^ 指数||"
 
-#: php/drc.php:203 php/drc.php:387 php/drc.php:421 php/lnn.php:270
-#: php/lnn.php:338 php/wr.php:212
-msgid "Game"
-msgstr "游戏"
-
 #: php/drc.php:204 php/drc.php:388 php/drc.php:422
 msgid "Max points"
 msgstr "最大值"
@@ -524,8 +546,7 @@ msgstr "第二阈值"
 msgid "Threshold 3"
 msgstr "第三阈值"
 
-#: php/drc.php:346 php/drc.php:466 php/jargon.php:839 php/lnn.php:399
-#: php/wr.php:641
+#: php/drc.php:346 php/drc.php:466 php/lnn.php:433 php/wr.php:628
 msgid "Back to Top"
 msgstr "回到顶部"
 
@@ -617,1926 +638,7 @@ msgstr ""
 msgid "Multiplier"
 msgstr "系数"
 
-#: php/jargon.php:3
-msgid ""
-"This list contains explanations for terms and acronyms used in the community "
-"of Touhou players. It also contains general gaming and shoot 'em up terms "
-"that are relevant to Touhou."
-msgstr ""
-"这个网页收录了西方的东方Project玩家社区中使用的术语和缩写。同时，也会收录一些"
-"与东方相关的通用游戏术语和STG术语。"
-
-#: php/jargon.php:4 php/lnn.php:83 php/wr.php:164
-msgid "Contents"
-msgstr "内容"
-
-#: php/jargon.php:6
-msgid "Spell Card / Pattern Acronyms"
-msgstr "符卡/特殊弹幕"
-
-#: php/jargon.php:7 php/jargon.php:716
-msgid "Bullet Type Names"
-msgstr "子弹类型"
-
-#: php/jargon.php:9
-msgid "Gameplay Related Terms"
-msgstr "游戏相关术语"
-
-#: php/jargon.php:13
-msgid "Jargon"
-msgstr "术语"
-
-#: php/jargon.php:14
-msgid "Meaning"
-msgstr "解释"
-
-#: php/jargon.php:19
-msgid "0/0"
-msgstr "0/0"
-
-#: php/jargon.php:20
-msgid ""
-"0 extra lives and 0 bombs, the point at which the player has no <a "
-"href=\"#term_resources\">resources</a> left and is thus forced to survive "
-"all of the upcoming patterns to still clear. The 'x/y' notation is often "
-"used to denote the number of spare lives and bombs a player has at a given "
-"point in time in a run."
-msgstr ""
-"0残0雷，0 extra lives and 0 bombs；这种情况下玩家没有任何资源，必须强扭后面的"
-"所有弹幕。此“x/y”形式的标记法经常用来描述玩家在游戏指定阶段中的剩余残雷资源。"
-
-#: php/jargon.php:29
-msgid "1cc"
-msgstr "1cc"
-
-#: php/jargon.php:30
-msgid ""
-"1 credit clear; a clear without using continues, which is equivalent to only "
-"using one coin if playing on an arcade machine, the origin of the term. This "
-"is the primary goal that people will have in a game when starting to play it."
-msgstr ""
-"1币通关，1 credit clear；即不续关通关，源自于街机中的只用1个币通关。这是大多"
-"数玩家在玩一个游戏时的主要目标。"
-
-#: php/jargon.php:34
-msgid "Bottomhugging"
-msgstr "Bottomhugging"
-
-#: php/jargon.php:35
-msgid ""
-"Being at the bottom of the screen all the time while playing, a tendency "
-"that newer players often have, due to being afraid of the bullets and "
-"wanting to be as far away from them as possible. While sometimes useful, "
-"this is not always the best general strategy."
-msgstr ""
-"缩版底；在游戏中一直呆在版底的行为。新手通常会出于恐惧心理，想尽可能远离子弹"
-"而缩版底。有些时候缩版底很有用，但往往并不是最优解。"
-
-#: php/jargon.php:39
-msgid "Cancel"
-msgstr "Cancel"
-
-#: php/jargon.php:40
-msgid ""
-"Bullets being converted into items, effectively wiping them from the screen, "
-"which is often important for score. This occurs when the player ends a boss "
-"pattern by shooting the boss, but can have several other causes too, such as "
-"enemies that cancel their bullets when killed, or bombing."
-msgstr ""
-"消弹；即玩家通过击破BOSS某一阶段，击杀特定敌人或者放雷，让子弹从屏幕上消失"
-"（有时会转化为消弹道具）。消弹在一些作品的打分中很重要。"
-
-#: php/jargon.php:44
-msgid "Cap"
-msgstr "Cap"
-
-#: php/jargon.php:45
-msgid ""
-"Abbreviation of 'capture'; a Spell Card being dodged without dying or "
-"bombing, which awards a Spell Card Bonus."
-msgstr ""
-"收取；Capture；在不掉残和用雷的情况下击破符卡，收取符卡可以获得符卡分。"
-
-#: php/jargon.php:48
-msgid "Clipdeath"
-msgstr "Clipdeath"
-
-#: php/jargon.php:49
-msgid "Dying because of wrongly estimating bullet hitbox size(s)."
-msgstr "判定杀；由于错误判断子弹判定而撞弹。"
-
-#: php/jargon.php:52
-msgid "Counterstop"
-msgstr "Counterstop"
-
-#: php/jargon.php:53
-msgid ""
-"The point at which the score counter stops increasing; the score limit of a "
-"game. Sometimes this is reachable, but most of the time it is not. Not to be "
-"confused with <a href=\"#term_overflow\">overflow</a> or <a "
-"href=\"#term_underflow\">underflow</a>."
-msgstr ""
-"爆分；分数达到游戏计分上限。爆分在一些作品中是可以做到的。注意不要和<a "
-"href=\"#term_overflow\">上溢</a>和<a href=\"#term_underflow\">下溢</a>混淆。"
-
-#: php/jargon.php:57
-msgid "CS"
-msgstr "CS"
-
-#: php/jargon.php:58
-msgid "See <a href=\"#term_counterstop\">counterstop</a>."
-msgstr "见<a href=\"#term_counterstop\">counterstop</a>。"
-
-#: php/jargon.php:61
-msgid "DB"
-msgstr "DB"
-
-#: php/jargon.php:62
-msgid ""
-"Deathbomb; a bomb within a few frames after getting hit, which saves you "
-"from dying."
-msgstr "决死，Deathbomb；撞弹之后的几帧内成功丢雷，决死可以免于掉残。"
-
-#: php/jargon.php:66
-msgid "Touhou 14: Double Dealing Character."
-msgstr "东方辉针城　～ Double Dealing Character。"
-
-#: php/jargon.php:70
-msgid "Touhou 12.5: Double Spoiler."
-msgstr "Double Spoiler　～ 东方文花帖。"
-
-#: php/jargon.php:74
-msgid "Touhou 6: the Embodiment of Scarlet Devil."
-msgstr "东方红魔乡　～ the Embodiment of Scarlet Devil。"
-
-#: php/jargon.php:77
-msgid "Ex"
-msgstr "Ex"
-
-#: php/jargon.php:78
-msgid "Extra; the Extra Stage."
-msgstr "Extra；Extra关卡。"
-
-#: php/jargon.php:81
-msgid "Extend"
-msgstr "Extend"
-
-#: php/jargon.php:82
-msgid "An extra life; a 1up."
-msgstr "奖残；奖励一条命，或者说1up。"
-
-#: php/jargon.php:85
-msgid "ExNN"
-msgstr "ExNN"
-
-#: php/jargon.php:86
-msgid ""
-"Extra No Miss No Bomb; a <a href=\"#term_1cc\">1cc</a> of some Extra Stage "
-"without dying or using bombs. A third 'N' is appended if there is a game-"
-"specific third restriction."
-msgstr ""
-"Extra No Miss No Bomb；在Ex关卡中全程不掉残不用雷过关，如果在一些作品禁用其特"
-"色系统，会加第3个N。"
-
-#: php/jargon.php:89
-msgid "FS"
-msgstr "FS"
-
-#: php/jargon.php:90
-msgid "Full Spell; a run that captures all Spell Cards."
-msgstr "全卡，Full Spell；收取所有符卡通关。"
-
-#: php/jargon.php:93
-msgid "FW"
-msgstr "FW"
-
-#: php/jargon.php:94
-msgid "See <a href=\"#term_gfw\">GFW</a>."
-msgstr "见<a href=\"#term_gfw\">GFW</a>。"
-
-#: php/jargon.php:97
-msgid "Graze"
-msgstr "Graze"
-
-#: php/jargon.php:98
-msgid ""
-"Having a bullet come very close to your hitbox, which means it touches your "
-"'grazebox', a hitbox larger than your main hitbox that is used to detect "
-"grazing."
-msgstr ""
-"擦弹；即子弹十分靠近自机，此时子弹进入了自机的“擦弹判定”。擦弹判定比自机判定"
-"大，用于检测擦弹。"
-
-#: php/jargon.php:102
-msgid "Touhou 12.8: Great Fairy Wars."
-msgstr "妖精大战争　～ 东方三月精。"
-
-#: php/jargon.php:105 php/jargon.php:550
-msgid "GO"
-msgstr "GO"
-
-#: php/jargon.php:106
-msgid ""
-"(Uncommon) Game over. Not to be confused with <a href=\"#term_go\">\"Good "
-"Omen\"</a>, a Spell Card."
-msgstr ""
-"（不常用）疮痍，Game Over；注意不要和符卡<a href=\"#term_go\">\"Good Omen\"</"
-"a>（吉兆「极乐的紫色云路」）混淆。"
-
-#: php/jargon.php:109
-msgid "Hitbox"
-msgstr "Hitbox"
-
-#: php/jargon.php:110
-msgid ""
-"The part of a sprite that is used for collision detection; that is, the part "
-"of the player character or an enemy that can get hit, and the part of a "
-"bullet that kills you when touched. In Touhou, hitboxes of a sprite are "
-"smaller than the full size of the sprite."
-msgstr ""
-"判定；用于检测物体（包括自机，子弹，敌人等）碰撞的范围；对于自机来说，子弹碰"
-"到自机判定时就会造成撞弹。在东方中，物体的判定通常比其视觉大小要小。"
-
-#: php/jargon.php:115
-msgid "Touhou 1: Highly Responsive to Prayers."
-msgstr "东方灵异传　～ The Highly Responsive to Prayers。"
-
-#: php/jargon.php:119
-msgid "Touhou 16: Hidden Star in Four Seasons."
-msgstr "东方天空璋　～ Hidden Star in Four Seasons。"
-
-#: php/jargon.php:122
-msgid "I-frames"
-msgstr "I-frames"
-
-#: php/jargon.php:123
-msgid ""
-"Invincibility frames; frames during which something does not take any hits. "
-"Your player character has a number of I-frames after a death, as well as "
-"during a bomb. Under certain circumstances, some enemy characters can also "
-"have I-frames."
-msgstr ""
-"无敌帧，nvincibility frames；不会造成任何撞弹判定的帧。自机在掉残后，用雷时会"
-"有一段无敌帧。在一些情况下，一些敌人也会有无敌帧。"
-
-#: php/jargon.php:128
-msgid "Touhou 8: Imperishable Night."
-msgstr "东方永夜抄　～ Imperishable Night。"
-
-#: php/jargon.php:132
-msgid "Touhou 14.3: Impossible Spell Card."
-msgstr "弹幕天邪鬼 ～ Impossible Spell Card。"
-
-#: php/jargon.php:136
-msgid "Touhou 4: Lotus Land Story."
-msgstr "东方幻想乡　～ Lotus Land Story。"
-
-#: php/jargon.php:139
-msgid "LNB"
-msgstr "LNB"
-
-#: php/jargon.php:140
-msgid ""
-"Lunatic No Bomb; a <a href=\"#term_1cc\">1cc</a> of some game on Lunatic "
-"difficulty without using bombs."
-msgstr "Lunatic No Bomb；在Lunatic难度中全程不用雷不续关通关。"
-
-#: php/jargon.php:143
-msgid "LNN"
-msgstr "LNN"
-
-#: php/jargon.php:144
-msgid ""
-"Lunatic No Miss No Bomb; a <a href=\"#term_1cc\">1cc</a> of some game on "
-"Lunatic difficulty without dying or using bombs. A third 'N' is appended if "
-"there is a game-specific third restriction."
-msgstr ""
-"Lunatic No Miss No Bomb；在Lunatic难度中全程不掉残不用雷通关，若在一些作品禁"
-"用其特色系统，会加第3个N。"
-
-#: php/jargon.php:148
-msgid "Touhou 15: Legacy of Lunatic Kingdom."
-msgstr "东方绀珠传　～ Legacy of Lunatic Kingdom。"
-
-#: php/jargon.php:151
-msgid "LS"
-msgstr "LS"
-
-#: php/jargon.php:152
-msgid ""
-"Last Spell; a spell used at the end of an <a href=\"#term_in\">IN</a> boss "
-"fight when the time requirement is met. It does not cost a life to die to it."
-msgstr ""
-"Last Spell；在<a href=\"#term_in\">永夜抄</a>中，关卡刻符达标后击破关底BOSS会"
-"出现一张额外的符卡，称为LS。在LS中撞弹不会掉残。"
-
-#: php/jargon.php:155
-msgid "LW"
-msgstr "LW"
-
-#: php/jargon.php:156
-msgid ""
-"Last Word; a special spell (and the difficulty of such a spell) used by an "
-"<a href=\"#term_in\">IN</a> boss,\n"
-"\t\t\t\twhich is only available in Spell Practice mode."
-msgstr ""
-"Last Word；在永夜抄的符卡练习模式中每个BOSS都有的一张特殊符卡，称为LW。"
-
-#: php/jargon.php:160
-msgid "Macrododging"
-msgstr "Macrododging"
-
-#: php/jargon.php:161
-msgid ""
-"Dodging waves of bullets by going around them rather than through them, "
-"which may or may not be to avoid having to <a "
-"href=\"#term_micrododging\">micrododge</a>. Often abbreviated to 'macro'."
-msgstr "大拉/绕；用绕过弹幕的方式进行躲避，避免强扭弹幕。有时会缩写为marco"
-
-#: php/jargon.php:164
-msgid "Maingames"
-msgstr "Maingames"
-
-#: php/jargon.php:165
-msgid ""
-"<em>Disputed.</em> Generally means integer games, but the status of PC-98 "
-"games and <a href=\"#term_pofv\">PoFV</a> as maingames is not agreed upon. "
-"The integer games from <a href=\"#term_eosd\">EoSD</a> to <a "
-"href=\"#term_um\">UM</a>, excluding <a href=\"#term_pofv\">PoFV</a>, are "
-"always included."
-msgstr ""
-"<em>有争议</em>，通常指整数正作，但有时该指代并不包括旧作、<a "
-"href=\"#term_pofv\">花映塚</a>和兽王园。"
-
-#: php/jargon.php:169
-msgid "Memo"
-msgstr "Memo"
-
-#: php/jargon.php:170
-msgid ""
-"Memorisation; remembering a specific <a href=\"#term_route\">route</a> for a "
-"pattern in order to dodge it."
-msgstr ""
-"背板，Memorisation；记忆解一段弹幕的<a href=\"#term_route\">固定走位</a>。"
-
-#: php/jargon.php:173
-msgid "Micrododging"
-msgstr "Micrododging"
-
-#: php/jargon.php:174
-msgid ""
-"Dodging dense waves of bullets by navigating through them, usually using "
-"small taps to get safely through. Often abbreviated to 'micro'."
-msgstr ""
-"微移/扭，用硬扭弹幕的方式进行躲避，通常会进行小幅度操作以确保安全。有时会缩写"
-"为micro。"
-
-#: php/jargon.php:177
-msgid "Midnon"
-msgstr "Midnon"
-
-#: php/jargon.php:178
-msgid "A <a href=\"#term_nonspell\">nonspell</a> used by a midboss."
-msgstr "道中非；道中BOSS发动的<a href=\"#term_nonspell\">非符</a>。"
-
-#: php/jargon.php:181
-msgid "Midspell"
-msgstr "Midspell"
-
-#: php/jargon.php:182
-msgid "A Spell Card used by a midboss."
-msgstr "道中卡；道中BOSS发动的符卡。"
-
-#: php/jargon.php:185
-msgid "Milking"
-msgstr "Milking"
-
-#: php/jargon.php:186
-msgid ""
-"Stalling a pattern for as long as possible to maximise the value of "
-"something, which is mostly graze. In <a href=\"#term_gfw\">GFW</a>, players "
-"milk freezes instead."
-msgstr ""
-"拖击破；为了最大化收益（比如擦弹）而尽可能长地拖延一段弹幕的持续时间。在<a "
-"href=\"#term_gfw\">大战争</a>中，拖击破一般是为了多冻结弹幕。"
-
-#: php/jargon.php:189
-msgid "Misdirection"
-msgstr "Misdirection"
-
-#: php/jargon.php:190
-msgid ""
-"Making aimed bullets go into a direction away from you, to make sure you are "
-"safe."
-msgstr "引狙；把自机狙引向远离自机的方向。"
-
-#: php/jargon.php:193
-msgid "Miss"
-msgstr "Miss"
-
-#: php/jargon.php:194
-msgid ""
-"Losing a life. This term came from the Japanese transliteration of "
-"\"mistake\", ミステイク misuteiku,\n"
-"\t\t\t\twhich has as abbreviation ミス misu, i.e. \"miss\"."
-msgstr ""
-"掉残；失去一个残机。这个术语来源于日语中mistake的片假名转写ミステイク，后来简"
-"化为ミス，也就是miss。"
-
-#: php/jargon.php:199
-msgid "Touhou 10: Mountain of Faith."
-msgstr "东方风神录　～ Mountain of Faith。"
-
-#: php/jargon.php:203
-msgid "Touhou 5: Mystic Square."
-msgstr "东方怪绮谈　～ Mystic Square。"
-
-#: php/jargon.php:206
-msgid "Non"
-msgstr "Non"
-
-#: php/jargon.php:207
-msgid "Nonspell; a boss attack that is not a Spell Card."
-msgstr "非符，Nonspell；BOSS发动的非符卡攻击。"
-
-#: php/jargon.php:210
-msgid "NB"
-msgstr "NB"
-
-#: php/jargon.php:211
-msgid "No Bomb; a clear without bombing."
-msgstr "禁雷，No Bomb；不用雷通关。"
-
-#: php/jargon.php:214
-msgid "NBB"
-msgstr "NBB"
-
-#: php/jargon.php:215
-msgid ""
-"No Border Breaks; used in <a href=\"#term_pcb\">PCB</a> to mean a clear "
-"without breaking Supernatural Borders, whether it be by getting hit during "
-"one or by pressing the X key."
-msgstr ""
-"禁结界，No Border Breaks；在<a href=\"#term_pcb\">妖妖梦</a>中，不通过结界内"
-"撞弹或者主动按X爆结界通关。"
-
-#: php/jargon.php:218
-msgid "NC"
-msgstr "NC"
-
-#: php/jargon.php:219
-msgid ""
-"No Cards; used in <a href=\"#term_um\">UM</a> to mean a clear without using "
-"any active, equipment or passive cards. Cards that do not affect <a "
-"href=\"#term_nmnb\">NMNB</a> play, such as the life card, the bomb card and "
-"the money card, may be exempt from this."
-msgstr ""
-"禁卡牌，No Cards；在<a href=\"#term_um\">虹龙洞</a>中，不使用任何主动卡，装备"
-"卡，被动卡通关，残机，雷和资金力卡牌这类不影响<a href=\"#term_nmnb\">NMNB</a>"
-"的卡牌例外。"
-
-#: php/jargon.php:223
-msgid "NF"
-msgstr "NF"
-
-#: php/jargon.php:224
-msgid ""
-"No Focus; a clear without using focus mode, that is, without pressing Shift."
-msgstr "低封，No Focus；不用低速模式通关，也就是不按Shift键。"
-
-#: php/jargon.php:227
-msgid "NM"
-msgstr "NM"
-
-#: php/jargon.php:228
-msgid "No Miss; a clear without dying. Also known as '1 life clear'."
-msgstr "一命，No Miss；不掉残通关，也就是一命通关。"
-
-#: php/jargon.php:231
-msgid "NMNB"
-msgstr "NMNB"
-
-#: php/jargon.php:232
-msgid ""
-"No Miss No Bomb; a clear without dying or bombing. Also known as <a "
-"href=\"#term_perfect\">Perfect</a> or the even shorter acronym <a "
-"href=\"#term_nn\">NN</a>."
-msgstr ""
-"一命禁雷，No Miss No Bomb；不掉残不用雷通关。亦称为<a "
-"href=\"#term_perfect\">Perfect</a>或者<a href=\"#term_nn\">NN</a>。"
-
-#: php/jargon.php:235
-msgid "NN"
-msgstr "NN"
-
-#: php/jargon.php:236
-msgid "See <a href=\"#term_nmnb\">NMNB</a>."
-msgstr "见<a href=\"#term_nmnb\">NMNB</a>。"
-
-#: php/jargon.php:239
-msgid "NNN"
-msgstr "NNN"
-
-#: php/jargon.php:240
-msgid ""
-"<a href=\"#term_nmnb\">NMNB</a>, plus a game-specific third restriction, "
-"which is\n"
-"                <a href=\"#term_nbb\">NBB</a> for <a href=\"#term_pcb\">PCB</"
-"a>, <a href=\"#term_nv\">NV</a>\n"
-"\t\t\t\tfor <a href=\"#term_ufo\">UFO</a>, <a href=\"#term_nt\">NT</a>\n"
-"\t\t\t\tfor <a href=\"#term_td\">TD</a>, <a href=\"#term_nr\">NR</a> for <a "
-"href=\"#term_hsifs\">HSiFS</a>\n"
-"\t\t\t\tand <a href=\"#term_nc\">NC</a> for <a href=\"#term_um\">UM</a>. "
-"Also known\n"
-"\t\t\t\tas <a href=\"#term_perfect\">Perfect</a> or a more comprehensive "
-"version of the acronym,\n"
-"\t\t\t\tsuch as 'NMNBNT' for <a href=\"#term_td\">TD</a>."
-msgstr ""
-"在<a href=\"#term_nmnb\">NMNB</a>的基础上，禁用下列作品的特色系统：\n"
-"<a href=\"#term_pcb\">妖妖梦</a><a href=\"#term_nbb\">禁结界</a>，\n"
-"<a href=\"#term_ufo\">星莲船</a><a href=\"#term_nv\">禁开飞碟</a>，\n"
-"<a href=\"#term_td\">神灵庙</a><a href=\"#term_nt\">禁灵界</a>，\n"
-"<a href=\"#term_hsifs\">天空璋</a><a href=\"#term_nr\">禁季节解放</a>，\n"
-"<a href=\"#term_um\">虹龙洞</a><a href=\"#term_nc\">禁卡牌</a>。\n"
-"亦称为<a href=\"#term_perfect\">Perfect</a>或者NMNBNT（以<a "
-"href=\"#term_td\">神灵庙</a>为例）。"
-
-#: php/jargon.php:249
-msgid "NNNN"
-msgstr "NNNN"
-
-#: php/jargon.php:250
-msgid ""
-"Used in <a href=\"#term_wbawc\">WBaWC</a> to mean <a "
-"href=\"#term_nmnb\">NMNB</a>,\n"
-"\t\t\t\tplus two game-specific restrictions, which are No Berserk Roars (No "
-"Hypers)\n"
-"\t\t\t\tand No Roar Breaks (No Hyper Breaks). Also known as <a "
-"href=\"#term_perfect\">Perfect</a>."
-msgstr ""
-"在<a href=\"#term_wbawc\">鬼形兽</a><a href=\"#term_nmnb\">NMNB</a>的基础"
-"上，\n"
-"禁用带加成的暴走（No Hypers），禁炸暴走结界（No Roar Breaks）。\n"
-"亦称为<a href=\"#term_perfect\">Perfect</a>或者NMNBNHNR。"
-
-#: php/jargon.php:255
-msgid "NR"
-msgstr "NR"
-
-#: php/jargon.php:256
-msgid ""
-"No Release; used in <a href=\"#term_hsifs\">HSiFS</a> to mean a clear "
-"without using releases; that is, without pressing the C key. In Japan, this "
-"is also used in <a href=\"#term_pcb\">PCB</a>, to mean <a "
-"href=\"#term_nbb\">NBB</a>."
-msgstr ""
-"禁季节解放，No Release；在<a href=\"#term_hsifs\">天空璋</a>中，不使用季节解"
-"放通关，也就是不按C键。在中文和日语语境下，NR也用于指代<a href=\"#term_pcb\">"
-"妖妖梦</a>的<a href=\"#term_nbb\">禁结界</a>。"
-
-#: php/jargon.php:260
-msgid "NT"
-msgstr "NT"
-
-#: php/jargon.php:261
-msgid ""
-"No Trance; used in <a href=\"#term_td\">TD</a> to mean a clear without using "
-"manual trances; that is, without pressing the C key."
-msgstr ""
-"禁灵界，No Trance；在<a href=\"#term_td\">神灵庙</a>中，不主动开启灵界通关，"
-"也就是不按C键。"
-
-#: php/jargon.php:264
-msgid "NUFO"
-msgstr "NUFO"
-
-#: php/jargon.php:265
-msgid ""
-"(Uncommon) No UFO summons; used in <a href=\"#term_ufo\">UFO</a> to mean a "
-"clear without summoning UFOs. Because of the length of the acronym, <a "
-"href=\"#term_nv\">NV</a> is often used instead."
-msgstr ""
-"（不常用）禁开飞碟，No UFO summons；在<a href=\"#term_ufo\">星莲船</a>中，不"
-"开出飞碟通关。由于此缩写过长，被更常用的<a href=\"#term_nv\">NV</a>取代。中文"
-"语境下，NU特指禁开飞碟。"
-
-#: php/jargon.php:268
-msgid "NV"
-msgstr "NV"
-
-#: php/jargon.php:269
-msgid ""
-"No Ventora (Japanese for UFO summons); used in <a href=\"#term_ufo\">UFO</a> "
-"to mean a clear without summoning UFOs.\n"
-"\t\t\t\tIn Japanese, this also means not picking up any tokens at all."
-msgstr ""
-"禁开飞碟，No Ventora（日语中开飞碟的意思）；在<a href=\"#term_ufo\">星莲船</"
-"a>中，不开出飞碟通关。在日语中，NV有不收集任何飞碟碎片的意思。中文语境下，NV"
-"特指不收集飞碟碎片。"
-
-#: php/jargon.php:273
-msgid "Opener"
-msgstr "Opener"
-
-#: php/jargon.php:274
-msgid ""
-"The first nonspell of a boss, which is the first attack that they use, "
-"unless there are only Spell Cards."
-msgstr "开场；通常指BOSS的第一张非符，除非BOSS只有符卡攻击。"
-
-#: php/jargon.php:277
-msgid "Overflow"
-msgstr "Overflow"
-
-#: php/jargon.php:278
-msgid ""
-"When a number becomes higher than its maximum value, causing strange "
-"behaviour. Notoriously occurs in <a href=\"#term_ufo\">UFO</a>, in which the "
-"score will be displayed wrongly once it reaches higher than 2,147,483,647. "
-"It loops back to 0 again once it reaches 4,294,967,295. Not to be confused "
-"with <a href=\"#term_counterstop\">counterstop</a> or <a "
-"href=\"#term_underflow\">underflow</a>."
-msgstr ""
-"数值超过表示上限导致显示异常。在<a href=\"#term_ufo\">星莲船</a>中，真实分数"
-"超过2,147,483,647会显示错误，之后随着真实分数越来越高，分数显示开始倒计至0，"
-"直到真实分数达到4,294,967,295。注意不要和<a href=\"#term_counterstop\">爆分</"
-"a>和<a href=\"#term_underflow\">下溢</a>混淆。"
-
-#: php/jargon.php:283
-msgid "OD"
-msgstr "OD"
-
-#: php/jargon.php:284
-msgid ""
-"Overdrive; the difficulty above Lunatic that is used for a select few "
-"unlockable Spell Cards in <a href=\"#term_td\">TD</a>."
-msgstr ""
-"Overdrive；在<a href=\"#term_td\">神灵庙</a>中，只能在符卡练习模式中挑战，难"
-"度标记为Overdrive的符卡。"
-
-#: php/jargon.php:287
-msgid "PB"
-msgstr "PB"
-
-#: php/jargon.php:288
-msgid ""
-"Personal Best; someone's highest score or best survival in a specific "
-"category."
-msgstr ""
-"个人纪录，Personal Best；某个玩家的个人最佳表现（如个人最高分，避弹最少Miss数"
-"等）。"
-
-#: php/jargon.php:292
-msgid "Touhou 7: Perfect Cherry Blossom."
-msgstr "东方妖妖梦　～ Perfect Cherry Blossom。"
-
-#: php/jargon.php:295
-msgid "Perfect"
-msgstr "Perfect"
-
-#: php/jargon.php:296
-msgid "See <a href=\"#term_nmnb\">NMNB</a> or <a href=\"#term_nnn\">NNN</a>."
-msgstr "见<a href=\"#term_nmnb\">NMNB</a>或<a href=\"#term_nnn\">NNN</a>。"
-
-#: php/jargon.php:299
-msgid "Pause buffering"
-msgstr "Pause buffering"
-
-#: php/jargon.php:300
-msgid ""
-"Repeatedly pausing the game in order to make reading and dodging a pattern "
-"easier. Doing this during a run is commonly considered cheating."
-msgstr ""
-"滥用暂停；为了更简单地观察、躲避弹幕，进行反复暂停。滥用暂停普遍被认为是作"
-"弊。"
-
-#: php/jargon.php:303
-msgid "Penult"
-msgstr "Penult"
-
-#: php/jargon.php:304
-msgid "The penultimate Spell Card of a boss fight."
-msgstr "伪终符；BOSS战的倒数第二张符卡。"
-
-#: php/jargon.php:307
-msgid "Ph"
-msgstr "Ph"
-
-#: php/jargon.php:308
-msgid "Phantasm; the Phantasm Stage in <a href=\"#term_pcb\">PCB</a>."
-msgstr "Phantasm；在<a href=\"#term_pcb\">妖妖梦</a>中的Phantasm关卡。"
-
-#: php/jargon.php:311
-msgid "PIV"
-msgstr "PIV"
-
-#: php/jargon.php:312
-msgid ""
-"Point Item Value; the number of points awarded for collecting a point item "
-"(blue item). The higher up on the screen you are, the higher the value is, "
-"with the maximum value at the <a href=\"#term_poc\">PoC</a>. Most games have "
-"a system that allows the player to increase this value in some way."
-msgstr ""
-"最大得点，Point Item Value；吃蓝点时能获取的分数奖励。自机在版面的位置越高，"
-"获取的分数奖励就越多，在<a href=\"#term_poc\">收点线</a>以上可以获取最高的分"
-"数奖励（最大得点）。很多游戏的分数系统会允许玩家以某种方式提高最大得点。"
-
-#: php/jargon.php:316
-msgid "Pointblanking"
-msgstr "Pointblanking"
-
-#: php/jargon.php:317
-msgid "See <a href=\"#term_shotgunning\">shotgunning</a>."
-msgstr "见<a href=\"#term_shotgunning\">shotgunning</a>。"
-
-#: php/jargon.php:320
-msgid "PoC"
-msgstr "PoC"
-
-#: php/jargon.php:321
-msgid ""
-"Point of Collection; this is the area at the top of the screen that, when "
-"entered,\n"
-"\t\t\t\tmakes your character automatically collect all items on screen. In "
-"<a href=\"#term_td\">TD</a>,\n"
-"\t\t\t\tthis does not work on spirits. Also used as a verb, e.g. 'poccing', "
-"to mean collecting\n"
-"\t\t\t\titems this way."
-msgstr ""
-"收点线，Point of Collection；收点线位于版面顶部，当进入收点线时，自机可以自动"
-"收取版面的所有道具。\n"
-"在<a href=\"#term_td\">神灵庙</a>中，上收点线不收灵。作为动词使用时，比"
-"如“poccing”，意味着上线收点。"
-
-#: php/jargon.php:328
-msgid "Touhou 3: Phantasmagoria of Dim.Dream."
-msgstr "东方梦时空　～ Phantasmagoria of Dim.Dream。"
-
-#: php/jargon.php:332
-msgid "Touhou 9: Phantasmagoria of Flower View."
-msgstr "东方花映塚　～ Phantasmagoria of Flower View。"
-
-#: php/jargon.php:335
-msgid "Rage phase"
-msgstr "Rage phase"
-
-#: php/jargon.php:336
-msgid "See <a href=\"#term_timeoutphase\">timeout phase</a>."
-msgstr "见<a href=\"#term_timeoutphase\">timeout phase</a>。"
-
-#: php/jargon.php:339
-msgid "Resources"
-msgstr "Resources"
-
-#: php/jargon.php:340
-msgid ""
-"Extra lives and bombs, the tools given to you to survive through a game "
-"with. Making good use of them is known as 'resource management'. Resources "
-"are often denoted with the 'x/y' notation, for example 0/0 for when the "
-"player has no extra lives and bombs left."
-msgstr ""
-"资源；即额外的残机和雷。规划资源的使用被称为“resource management”。常以“x/"
-"y”形式的标记法经常用来描述玩家在游戏指定阶段中的剩余残雷资源。"
-
-#: php/jargon.php:344
-msgid "Restreaming"
-msgstr "Restreaming"
-
-#: php/jargon.php:345
-msgid ""
-"Changing your <a href=\"#term_streaming\">streaming</a> direction, usually "
-"by making a quick, unfocused movement to misdirect the bullets and then "
-"streaming into the other direction. Also known as 'cutback'."
-msgstr ""
-"折返；即通过用一段高速移动拉开自机狙再反向穿狙，改变<a "
-"href=\"#term_streaming\">引狙</a>方向。也被称作“cutback”。"
-
-#: php/jargon.php:349
-msgid "RNG"
-msgstr "RNG"
-
-#: php/jargon.php:350
-msgid ""
-"Random Number Generator; used to refer to random bullet patterns, which, "
-"because of their randomness, do not have a <a href=\"#term_route\">route</a>."
-msgstr ""
-"随机（随机弹），Random Number Generator；用于指代没有<a href=\"#term_route\">"
-"固定走位</a>的随机子弹。"
-
-#: php/jargon.php:354
-msgid ""
-"A specific path used to navigate through one or more bullet patterns. The "
-"routing approach is used on both <a href=\"#term_static\">static</a> "
-"patterns and patterns aimed at you."
-msgstr ""
-"走位（固定走位）；某段弹幕（特别是对于<a href=\"#term_static\">固定弹</a>和自"
-"机狙）的一种特定解法。"
-
-#: php/jargon.php:357
-msgid "s1"
-msgstr "s1"
-
-#: php/jargon.php:358
-msgid "Stage 1; similarly, 's2' means Stage 2, 's3' means Stage 3, etc."
-msgstr "一面；即第1关。同样地，“s2”表示二面，“s3”表示三面，以此类推。"
-
-#: php/jargon.php:362
-msgid "Touhou 11: Subterranean Animism."
-msgstr "东方地灵殿　～ Subterranean Animism。"
-
-#: php/jargon.php:365
-msgid "Safespot"
-msgstr "Safespot"
-
-#: php/jargon.php:366
-msgid ""
-"A spot, or a larger area, inside of which the player cannot be hit by "
-"anything. There is a large grey area to the application of the term in "
-"practice, as it is not necessarily only used for singular spots;\n"
-"                it can include safe areas that require the player to move, "
-"although safer than doing the pattern in question \"normally\". It can even "
-"include spots or areas that are not actually completely safe,\n"
-"                just <em>mostly</em> safe."
-msgstr ""
-"安定点；即玩家不会被任何子弹击中的点位或区域。实际使用时，该术语不一定会特指"
-"某个一定安全的区域，也有可能指代<em>大多数情况</em>是安全的区域。"
-
-#: php/jargon.php:371
-msgid "SCB"
-msgstr "SCB"
-
-#: php/jargon.php:372
-msgid ""
-"Spell Card Bonus; the score awarded from <a "
-"href=\"#term_capture\">capturing</a> a Spell Card."
-msgstr ""
-"符卡分，Spell Card Bonus；<a href=\"#term_capture\">收取</a>符卡后奖励的分"
-"数。"
-
-#: php/jargon.php:375
-msgid "Shmup"
-msgstr "Shmup"
-
-#: php/jargon.php:376
-msgid ""
-"Abbreviation of shoot 'em up, which is the genre of games that bullet hell "
-"is part of. <a href=\"#term_stg\">STG</a> has the same meaning."
-msgstr ""
-"弹幕射击游戏，shoot 'em up；同样意思的还有<a href=\"#term_stg\">STG</a>。"
-
-#: php/jargon.php:379
-msgid "Shotgunning"
-msgstr "Shotgunning"
-
-#: php/jargon.php:380
-msgid ""
-"Shooting an enemy up close. Typically done with a spreadshot to deal as much "
-"damage as possible, as most or all of the shots will hit. Also known as <a "
-"href=\"#term_pointblanking\">pointblanking</a>."
-msgstr ""
-"贴脸输出；靠近敌人进行射击，用自机全部火力造成尽可能高的伤害。也被称作<a "
-"href=\"#term_pointblanking\">pointblanking</a>。"
-
-#: php/jargon.php:384
-msgid "Touhou 2: Story of Eastern Wonderland."
-msgstr "东方封魔录　～ the Story of Eastern Wonderland。"
-
-#: php/jargon.php:387
-msgid "Speedkill"
-msgstr "Speedkill"
-
-#: php/jargon.php:388
-msgid "Shooting down an enemy or ending a boss pattern as fast as possible."
-msgstr "速破；尽可能快地击破敌人或者BOSS的某个阶段。"
-
-#: php/jargon.php:391
-msgid "Static"
-msgstr "Static"
-
-#: php/jargon.php:392
-msgid ""
-"A bullet pattern that is always the exact same, and thus can be <a "
-"href=\"#term_route\">routed</a>."
-msgstr ""
-"固定（固定弹）；一段完全不会有任何变化的弹幕，可以用<a href=\"#term_route\">"
-"固定走位</a>解固定弹。"
-
-#: php/jargon.php:396
-msgid "Touhou 9.5: Shoot the Bullet."
-msgstr "东方文花帖　～ Shoot the Bullet。"
-
-#: php/jargon.php:399
-msgid "STG"
-msgstr "STG"
-
-#: php/jargon.php:400
-msgid ""
-"<strong>S</strong>hoo<strong>t</strong>ing <strong>G</strong>ame; an acronym "
-"used to refer to shoot 'em up games, just as <a href=\"#term_shmup\">shmup</"
-"a> does. Used primarily by Japanese players."
-msgstr ""
-"弹幕射击游戏，<strong>S</strong>hoo<strong>t</strong>ing <strong>G</"
-"strong>ame；意思与<a href=\"#term_shmup\">shoot 'em up</a>相同，在中文和日文"
-"语境下常用。"
-
-#: php/jargon.php:403
-msgid "Streaming"
-msgstr "Streaming"
-
-#: php/jargon.php:404
-msgid ""
-"Tapping into a certain direction to dodge aimed bullets, making them move "
-"behind you in a stream-like fashion. This can be done either horizontally or "
-"vertically. If a player comes close to either edge of the screen while doing "
-"this, they will want to <a href=\"#term_restreaming\">restream</a> the "
-"pattern."
-msgstr ""
-"引狙；即往同一个方向微移去躲避自机狙。引狙可以在水平方向上引，也可以在垂直方"
-"向上引。如果玩家引狙快引到版边，通常会进行一次<a href=\"#term_restreaming\">"
-"折返</a>。"
-
-#: php/jargon.php:408
-msgid "Suicide bullets"
-msgstr "Suicide bullets"
-
-#: php/jargon.php:409
-msgid ""
-"Extra bullets fired by an enemy when it dies, usually aimed at the player. "
-"On Hard or Lunatic difficulty in <a href=\"#term_gfw\">GFW</a>, all enemies "
-"fire these."
-msgstr ""
-"死尸弹；敌人死亡时释放的额外子弹，通常是自机狙。在<a href=\"#term_gfw\">妖精"
-"大战争</a>的Hard和Lunatic难度中所有的敌人都会发死尸弹。"
-
-#: php/jargon.php:412
-msgid "Survival spell"
-msgstr "Survival spell"
-
-#: php/jargon.php:413
-msgid ""
-"A Spell Card during which the boss is invincible, forcing the player to "
-"survive until the time is up, which is referred to as a <a "
-"href=\"#term_timeout\">timeout</a>. Because of this, such a spell is also "
-"known as a 'timeout spell'."
-msgstr ""
-"时符；BOSS无敌且玩家只能通过<a href=\"#term_timeout\">全避</a>结束的符卡。时"
-"符也被称为“timeout spell”。"
-
-#: php/jargon.php:417
-msgid "TAS"
-msgstr "TAS"
-
-#: php/jargon.php:418
-msgid ""
-"Tool-Assisted Superplay; used to refer not to speedruns, but to runs that "
-"used external tools, such as slowing down the game, savestates and <a "
-"href=\"#term_pausebuffering\">pause buffering</a>,\n"
-"                which is often done to see what is theoretically possible in "
-"a game."
-msgstr ""
-"Tool-Assisted Superplay（S指代speedrun则专指速通）；用外部工具（如变速、存档"
-"和<a href=\"#term_pausebuffering\">暂停滥用</a>）来达成一些理论可行（不一定手"
-"操可行）的游戏操作。"
-
-#: php/jargon.php:423
-msgid "Touhou 13: Ten Desires."
-msgstr "东方神灵庙　～ Ten Desires。"
-
-#: php/jargon.php:426
-msgid "Thcrap"
-msgstr "Thcrap"
-
-#: php/jargon.php:427
-msgid ""
-"<strong>T</strong>ou<strong>h</strong>ou <strong>C</strong>ommunity "
-"<strong>R</strong>eliant <strong>A</strong>utomatic <strong>P</"
-"strong>atcher, a translation and modding tool; see <a "
-"href=\"tools#thcrap\">Touhou Patches and Tools</a> for more information. Not "
-"to be confused with <a href=\"#term_thprac\">thprac</a>."
-msgstr ""
-"<strong>T</strong>ou<strong>h</strong>ou <strong>C</strong>ommunity "
-"<strong>R</strong>eliant <strong>A</strong>utomatic <strong>P</"
-"strong>atcher；一个翻译和mod工具，参阅<a href=\"tools#thcrap\">Touhou "
-"Patches and Tools</a>页面查看更多信息。注意不要和<a "
-"href=\"#term_thprac\">thprac混淆</a>。"
-
-#: php/jargon.php:431
-msgid "Thprac"
-msgstr "Thprac"
-
-#: php/jargon.php:432
-msgid ""
-"Universal practice tool; see <a href=\"tools#thprac\">Touhou Patches and "
-"Tools</a> for more information. Not to be confused with <a "
-"href=\"#term_thcrap\">thcrap</a>."
-msgstr ""
-"全作通用练习器；参阅<a href=\"tools#thprac\">Touhou Patches and Tools</a>页面"
-"查看更多信息。注意不要和<a href=\"#term_thcrap\">thcrap</a>混淆。"
-
-#: php/jargon.php:435
-msgid "Timelock"
-msgstr "Timelock"
-
-#: php/jargon.php:436
-msgid ""
-"A feature in <a href=\"#term_thprac\">thprac</a> that allows the player to "
-"lock the timer on a boss pattern, so that it never ends. Typically used to "
-"practice dodging skills."
-msgstr ""
-"锁时；指<a href=\"#term_thprac\">thprac</a>中的一个功能，可以让玩家锁定BOSS阶"
-"段的时间，让该阶段永远不会结束。通常用锁时来练习某个弹幕的避弹。"
-
-#: php/jargon.php:439
-msgid "Timeout"
-msgstr "Timeout"
-
-#: php/jargon.php:440
-msgid ""
-"Surviving a pattern until the time is up. <a "
-"href=\"#term_survivalspell\">Survival spells</a>, Spell Cards that force "
-"this on the player, are also called timeout spells."
-msgstr ""
-"全避；扭一段弹幕直到时间结束。需要玩家强制全避才能通过的符卡被称为<a "
-"href=\"#term_survivalspell\">时符</a>。"
-
-#: php/jargon.php:443
-msgid "Timeout phase"
-msgstr "Timeout phase"
-
-#: php/jargon.php:444
-msgid ""
-"A (very) hard phase of a Spell Card that starts when you get close to timing "
-"it out. They typically start when the timer is at 30 seconds and they are "
-"typically found on final Spell Cards in final boss or Extra boss fights."
-msgstr ""
-"狂暴阶段；即某一张特定符卡临近时间结束时，进入的一个非常难的阶段。通常狂暴在"
-"终BOSS和Extra关BOSS的终符最后30秒出现。"
-
-#: php/jargon.php:448
-msgid "TO"
-msgstr "TO"
-
-#: php/jargon.php:449
-msgid "(Uncommon) see <a href=\"#term_timeout\">timeout</a>."
-msgstr "全避；（不常用）见<a href=\"#term_timeout\">timeout</a>。"
-
-#: php/jargon.php:452
-msgid "Token"
-msgstr "Token"
-
-#: php/jargon.php:453
-msgid ""
-"Refers to either a small <a href=\"#term_ufo\">UFO</a> or a beast in <a "
-"href=\"#term_wbawc\">WBaWC</a>, both of which float around the screen."
-msgstr ""
-"道具碎片；指代<a href=\"#term_ufo\">星莲船</a>中的飞碟碎片和<a "
-"href=\"#term_wbawc\">鬼形兽</a>中的动物灵碎片。"
-
-#: php/jargon.php:457
-msgid "Touhou 12: Undefined Fantastic Object."
-msgstr "东方星莲船　～ Undefined Fantastic Object。"
-
-#: php/jargon.php:461
-msgid "Touhou 18: Unconnected Marketeers."
-msgstr "东方虹龙洞　～ Unconnected Marketeers。"
-
-#: php/jargon.php:464
-msgid "Underflow"
-msgstr "Underflow"
-
-#: php/jargon.php:465
-msgid ""
-"When a negative number is converted to a format that does not have negative "
-"numbers, causing a very high positive number. Notoriously occurs in <a "
-"href=\"#term_ddc\">DDC</a> and <a href=\"#term_isc\">ISC</a>, in which the "
-"Spell Card Bonus can be made negative, which, if the score becomes negative "
-"when the bonus is added, increases the score to 9,999,999,990, a <a "
-"href=\"#term_counterstop\">counterstop</a>. Not to be confused with <a "
-"href=\"#term_overflow\">overflow</a>."
-msgstr ""
-"下溢；数值出现负数，而低于表示下限导致显示异常（显示为一个特别大的数）。在<a "
-"href=\"#term_ddc\">辉针城</a>和<a href=\"#term_isc\">弹幕天邪鬼</a>中，有的符"
-"卡分会出现负数，如果获得负数符卡分并且让分数低于0会显示为9,999,999,990，也就"
-"是爆分。注意不要和<a href=\"#term_counterstop\">爆分</a>和<a "
-"href=\"#term_overflow\">上溢</a>混淆。"
-
-#: php/jargon.php:471
-msgid "Touhou 16.5: Violet Detector."
-msgstr "秘封噩梦日记　～ Violet Detector。"
-
-#: php/jargon.php:474
-msgid "Wall"
-msgstr "Wall"
-
-#: php/jargon.php:475
-msgid ""
-"A cluster of bullets with no space that a hitbox can pass through in between "
-"them, although it can also refer to a cluster of bullets that <em>looks</em> "
-"like that."
-msgstr ""
-"墙；即一排以自机判定无法穿过的弹幕，当然有时候也指<em>看上去</em>无法穿过的弹"
-"幕。"
-
-#: php/jargon.php:479
-msgid "Touhou 17: Wily Beast and Weakest Creature."
-msgstr "东方鬼形兽　～ Wily Beast and Weakest Creature。"
-
-#: php/jargon.php:483
-msgid "Common Spell Card / Pattern Acronyms"
-msgstr "符卡/特殊弹幕"
-
-#: php/jargon.php:484
-msgid ""
-"These acronyms for particular patterns usually refer to the Lunatic "
-"difficulty version of the abbreviated Spell Card or pattern."
-msgstr "下列是一些Lunatic难度下常见符卡或弹幕的缩写。"
-
-#: php/jargon.php:488
-msgid "Acronym"
-msgstr "缩写"
-
-#: php/jargon.php:489
-msgid "Spell Card / Pattern"
-msgstr "符卡/特殊弹幕"
-
-#: php/jargon.php:494
-msgid "AoJ"
-msgstr "AoJ"
-
-#: php/jargon.php:495
-msgid ""
-"\"Aura of Justice\", Shou's second spell in <a href=\"#term_ufo\">UFO</a>."
-msgstr ""
-"光符「正义之威光」，\"Aura of Justice\"；<a href=\"#term_ufo\">星莲船</a>中，"
-"星的第2张符卡。"
-
-#: php/jargon.php:498
-msgid "BD"
-msgstr "BD"
-
-#: php/jargon.php:499
-msgid ""
-"\"Buddhist Diamond\", Kaguya's second Spell Card in <a href=\"#term_in\">IN</"
-"a>."
-msgstr ""
-"神宝「Buddhist Diamond」（佛体的金刚石）；<a href=\"#term_in\">永夜抄</a>中，"
-"辉夜的第2张符卡。"
-
-#: php/jargon.php:502
-msgid "BDB"
-msgstr "BDB"
-
-#: php/jargon.php:503
-msgid ""
-"\"Brilliant Dragon Bullet\", Kaguya's first Spell Card in <a "
-"href=\"#term_in\">IN</a>."
-msgstr ""
-"神宝「Brilliant Dragon Bullet」（耀眼的龙玉）；<a href=\"#term_in\">永夜抄</"
-"a>中，辉夜的第1张符卡。"
-
-#: php/jargon.php:506
-msgid "BLS"
-msgstr "BLS"
-
-#: php/jargon.php:507
-msgid ""
-"\"Blue Lady Show\", Raiko's <a href=\"#term_survivalspell\">survival Spell "
-"Card</a> in <a href=\"#term_ddc\">DDC</a>."
-msgstr ""
-"「Blue Lady Show」（蓝色佳人的演出）；<a href=\"#term_ddc\">辉针城中</a>，雷"
-"鼓的<a href=\"#term_survivalspell\">时符</a>。"
-
-#: php/jargon.php:510
-msgid "BoLaD"
-msgstr "BoLaD"
-
-#: php/jargon.php:511
-msgid ""
-"\"Border of Life and Death\", Yukari's semifinal Spell Card in <a "
-"href=\"#term_pcb\">PCB</a>."
-msgstr ""
-"结界「生与死的境界」，\"Border of Life and Death\"；<a href=\"#term_pcb\">妖"
-"妖梦</a>中，紫的倒数第2张符卡。"
-
-#: php/jargon.php:514
-msgid "Books"
-msgstr "Books"
-
-#: php/jargon.php:515
-msgid ""
-"The section of <a href=\"#term_eosd\">EoSD</a> Stage 4 where books spawn in "
-"random locations and repeatedly shoot green bullets."
-msgstr ""
-"魔法书；<a href=\"#term_eosd\">红魔乡</a>中，四面前半道中一直发射绿色子弹的六"
-"本书。"
-
-#: php/jargon.php:518
-msgid "BoWaP"
-msgstr "BoWaP"
-
-#: php/jargon.php:519
-msgid ""
-"\"Border of Wave and Particle\", Satori's final Spell Card if you use ReimuA "
-"in <a href=\"#term_sa\">SA</a>."
-msgstr ""
-"回忆「波与粒的境界」，\"Border of Wave and Particle\"；<a href=\"#term_sa\">"
-"地灵殿</a>中，觉的终符（灵梦A）。"
-
-#: php/jargon.php:522
-msgid "Cats Walk"
-msgstr "Cats Walk"
-
-#: php/jargon.php:523
-msgid ""
-"\"Vengeful Cat Spirit's Erratic Step\", Rin's midboss Spell Card in <a "
-"href=\"#term_sa\">SA</a> Stage 5. This is the name on Easy and Normal only, "
-"but it's used for Lunatic regardless."
-msgstr ""
-"猫符「怨灵猫乱步」，\"Vengeful Cat Spirit's Erratic Step\"；<a "
-"href=\"#term_sa\">地灵殿</a>中，阿燐的五面道中符。"
-
-#: php/jargon.php:526
-msgid "CC"
-msgstr "CC"
-
-#: php/jargon.php:527
-msgid ""
-"\"Complete Clarification\", Shou's final Spell Card in <a "
-"href=\"#term_ufo\">UFO</a>."
-msgstr ""
-"「Complete Clarification」（完全净化）；<a href=\"#term_ufo\">星莲船</a>中，"
-"星的终符。"
-
-#: php/jargon.php:530
-msgid "DBDB"
-msgstr "DBDB"
-
-#: php/jargon.php:531
-msgid ""
-"\"Double Black Death Butterfly\", Satori's first ReimuA-specific Spell Card "
-"in <a href=\"#term_sa\">SA</a>."
-msgstr ""
-"回忆「二重黑死蝶」，\"Double Black Death Butterfly\"；<a href=\"#term_sa\">地"
-"灵殿</a>中，觉的第3张符卡（灵梦A）。"
-
-#: php/jargon.php:534
-msgid "DR"
-msgstr "DR"
-
-#: php/jargon.php:535
-msgid ""
-"\"Devil's Recitation\", Byakuren's fourth Spell Card in <a "
-"href=\"#term_ufo\">UFO</a>."
-msgstr ""
-"大魔法「魔神复诵」，\"Devil's Recitation\"；<a href=\"#term_ufo\">星莲船</a>"
-"中，白莲的第4张符卡。"
-
-#: php/jargon.php:538
-msgid "FIN"
-msgstr "FIN"
-
-#: php/jargon.php:539
-msgid ""
-"\"Flying Insect's Nest\", Satori's second ReimuA-specific Spell Card in <a "
-"href=\"#term_sa\">SA</a>."
-msgstr ""
-"回忆「飞行虫之巢」，\"Flying Insect's Nest\"；<a href=\"#term_sa\">地灵殿</a>"
-"中，觉的第4张符卡（灵梦A）。"
-
-#: php/jargon.php:542
-msgid "GC"
-msgstr "GC"
-
-#: php/jargon.php:543
-msgid ""
-"\"Geometric Creature\", Keiki's penultimate Spell Card in <a "
-"href=\"#term_wbawc\">WBaWC</a>."
-msgstr ""
-"「Geometric Creature」（几何造物）；<a href=\"#term_wbawc\">鬼形兽</a>中，袿"
-"姬的倒数第2张符卡。"
-
-#: php/jargon.php:546
-msgid "Ghost Wheels"
-msgstr "Ghost Wheels"
-
-#: php/jargon.php:547
-msgid ""
-"\"The Needles of Yore and the Vengeful Spirits in Pain\", Rin's third Spell "
-"Card in <a href=\"#term_sa\">SA</a>. Also known as 'needles' or just "
-"'wheels'."
-msgstr ""
-"赎罪「古时之针与痛楚的怨灵」，\"The Needles of Yore and the Vengeful Spirits "
-"in Pain\"；<a href=\"#term_sa\">地灵殿</a>中，阿燐的第3张符卡，也被称为"
-"\"\"needles\"或者\"wheels\"。"
-
-#: php/jargon.php:551
-msgid ""
-"\"Good Omen\", Byakuren's first Spell Card in <a href=\"#term_ufo\">UFO</a>. "
-"Not to be confused with <a href=\"#term_gameover\">game over</a>."
-msgstr ""
-"吉兆「极乐的紫色云路」，\"Good Omen\"；<a href=\"#term_ufo\">星莲船</a>中，白"
-"莲的第1张符卡。"
-
-#: php/jargon.php:554
-msgid "GT"
-msgstr "GT"
-
-#: php/jargon.php:555
-msgid ""
-"\"Greatest Treasure\", Nazrin's midboss Spell Card in <a "
-"href=\"#term_ufo\">UFO</a> Stage 5."
-msgstr ""
-"宝塔「Greatest Treasure」（最优良的宝物）；<a href=\"#term_ufo\">星莲船</a>"
-"中，娜兹玲的五面道中符。"
-
-#: php/jargon.php:558
-msgid "HBCB"
-msgstr "HBCB"
-
-#: php/jargon.php:559
-msgid ""
-"\"Hidden Breezy Cherry Blossom\", Okina's final Spell Card if you use the "
-"Spring season in <a href=\"#term_hsifs\">HSiFS</a>. Also known as 'BCB'."
-msgstr ""
-"「里·Breezy Cherry Blossom」（里·风吹樱花）；<a href=\"#term_hsifs\">天空璋</"
-"a>中，隐岐奈的终符（春季节支援），也被称作\"BCB\"。"
-
-#: php/jargon.php:562
-msgid "HCFW"
-msgstr "HCFW"
-
-#: php/jargon.php:563
-msgid ""
-"\"Hidden Crazy Fall Wind\", Okina's final Spell Card if you use the Autumn "
-"season in <a href=\"#term_hsifs\">HSiFS</a>. Also known as 'CFW'."
-msgstr ""
-"「里·Crazy Fall Wind」（里·疯狂秋风）；<a href=\"#term_hsifs\">天空璋</a>中，"
-"隐岐奈的终符（秋季节支援），也被称作\"CFW\"。"
-
-#: php/jargon.php:566
-msgid "HEW"
-msgstr "HEW"
-
-#: php/jargon.php:567
-msgid ""
-"\"Hidden Extreme Winter\", Okina's final Spell Card if you use the Winter "
-"season in <a href=\"#term_hsifs\">HSiFS</a>. Also known as 'EW'."
-msgstr ""
-"「里·Extreme Winter」（里·极端寒冬）；<a href=\"#term_hsifs\">天空璋</a>中，"
-"隐岐奈的终符（冬季节支援），也被称作\"EW\"。"
-
-#: php/jargon.php:570
-msgid "HGS"
-msgstr "HGS"
-
-#: php/jargon.php:571
-msgid ""
-"\"Hell God Sword\", Youmu's first Spell Card in <a href=\"#term_pcb\">PCB</"
-"a>."
-msgstr ""
-"狱神剑「业风神闪斩」，\"Hell God Sword\"；<a href=\"#term_pcb\">妖妖梦</a>"
-"中，妖梦的第1张符卡"
-
-#: php/jargon.php:574
-msgid "HPSI"
-msgstr "HPSI"
-
-#: php/jargon.php:575
-msgid ""
-"\"Hidden Perfect Summer Ice\", Okina's final Spell Card if you use the "
-"Summer season in <a href=\"#term_hsifs\">HSiFS</a>. Also known as 'PSI'."
-msgstr ""
-"「里·Perfect Summer Ice」（里·完美夏冰）；<a href=\"#term_hsifs\">天空璋</a>"
-"中，隐岐奈的终符（夏季节支援），也被称作\"PSI\"。"
-
-#: php/jargon.php:578
-msgid "HJ"
-msgstr "HJ"
-
-#: php/jargon.php:579
-msgid ""
-"\"Hourai Jewel\", Kaguya's final Spell Card that is not a <a "
-"href=\"#term_ls\">Last Spell</a> in <a href=\"#term_in\">IN</a>."
-msgstr ""
-"神宝「蓬莱的玉枝　-梦色之乡-」，\"Hourai Jewel\"；<a href=\"#term_in\">永夜抄"
-"</a>中，辉夜的终符（不是<a href=\"#term_ls\">LS</a>）。"
-
-#: php/jargon.php:582
-msgid "HMD"
-msgstr "HMD"
-
-#: php/jargon.php:583
-msgid ""
-"\"Honest Man's Death\", Mokou's fifth Spell Card in <a href=\"#term_in\">IN</"
-"a>."
-msgstr ""
-"灭罪「正直者之死」，\"Honest Man's Death\"；<a href=\"#term_in\">永夜抄</a>"
-"中，妹红的第5张符卡。"
-
-#: php/jargon.php:586
-msgid "ID"
-msgstr "ID"
-
-#: php/jargon.php:587
-msgid ""
-"\"Idola Diabolus\", Keiki's final Spell Card in <a "
-"href=\"#term_wbawc\">WBaWC</a>."
-msgstr ""
-"「Idola Diabolus」（造形恶魔）；<a href=\"#term_wbawc\">鬼形兽</a>中，袿姬的"
-"最后一张符卡。"
-
-#: php/jargon.php:590
-msgid "IS"
-msgstr "IS"
-
-#: php/jargon.php:591
-msgid ""
-"\"Imperishable Shooting\", Mokou's final Spell Card in <a "
-"href=\"#term_in\">IN</a>."
-msgstr ""
-"「Imperishable Shooting」（不朽的弹幕）；<a href=\"#term_in\">永夜抄</a>中，"
-"妹红的<a href=\"#term_ls\">LS</a>。"
-
-#: php/jargon.php:594
-msgid "KD"
-msgstr "KD"
-
-#: php/jargon.php:595
-msgid ""
-"\"Killing Doll\", Sakuya's final Spell Card in <a href=\"#term_eosd\">EoSD</"
-"a>."
-msgstr ""
-"女仆秘技「杀人玩偶」，\"Killing Doll\"；<a href=\"#term_eosd\">红魔乡</a>中，"
-"咲夜的终符。"
-
-#: php/jargon.php:598
-msgid "KKS"
-msgstr "KKS"
-
-#: php/jargon.php:599
-msgid ""
-"\"King Kraken Strike\", Ichirin's first Spell Card in <a "
-"href=\"#term_ufo\">UFO</a>."
-msgstr ""
-"连打「帝王海妖来袭」，\"King Kraken Strike\"；<a href=\"#term_ufo\">星莲船</"
-"a>中，一轮的第1张符卡。"
-
-#: php/jargon.php:602
-msgid "LC"
-msgstr "LC"
-
-#: php/jargon.php:603
-msgid ""
-"\"Linear Creature\", Keiki's third Spell Card in <a "
-"href=\"#term_wbawc\">WBaWC</a>. Also known as \"lines\"."
-msgstr ""
-"线形「Linear Creature」（线形造物）；<a href=\"#term_wbawc\">鬼形兽</a>中，袿"
-"姬的第3张符卡。"
-
-#: php/jargon.php:606
-msgid "LFS"
-msgstr "LFS"
-
-#: php/jargon.php:607
-msgid ""
-"\"Legendary Flying Saucer\", Byakuren's final Spell Card in <a "
-"href=\"#term_ufo\">UFO</a>."
-msgstr ""
-"飞钵「传说的飞空圆盘」，\"Legendary Flying Saucer\"；<a href=\"#term_ufo\">星"
-"莲船</a>中，白莲的终符。"
-
-#: php/jargon.php:610
-msgid "MDSW"
-msgstr "MDSW"
-
-#: php/jargon.php:611
-msgid ""
-"\"Modern Divine Spirit World\", Junko's third Spell Card in <a "
-"href=\"#term_lolk\">LoLK</a>."
-msgstr ""
-"「现代的神灵界」，\"Modern Divine Spirit World\"；<a href=\"#term_lolk\">绀珠"
-"传</a>中，纯狐的第3张符卡。"
-
-#: php/jargon.php:614
-msgid "NDS"
-msgstr "NDS"
-
-#: php/jargon.php:615
-msgid ""
-"\"Newborn Divine Spirit\", Miko's final Spell Card in <a "
-"href=\"#term_td\">TD</a>."
-msgstr ""
-"「新生的神灵」，\"Newborn Divine Spirit\"；<a href=\"#term_td\">神灵庙</a>"
-"中，神子的终符。"
-
-#: php/jargon.php:618
-msgid "Nueball"
-msgstr "Nueball"
-
-#: php/jargon.php:619
-msgid ""
-"Refers to both the Stage 4 midboss and Stage 6 midboss in <a "
-"href=\"#term_ufo\">UFO</a>."
-msgstr "封兽球；<a href=\"#term_ufo\">星莲船</a>中，四面和六面的道中BOSS。"
-
-#: php/jargon.php:622
-msgid "Peta"
-msgstr "Peta"
-
-#: php/jargon.php:623
-msgid ""
-"\"Peta Flare\", Utsuho's second Spell Card in <a href=\"#term_sa\">SA</a>."
-msgstr ""
-"爆符「Peta-Flare」（千兆耀斑）；<a href=\"#term_sa\">地灵殿</a>中，空的第2张"
-"符卡。"
-
-#: php/jargon.php:626
-msgid "PDH"
-msgstr "PDH"
-
-#: php/jargon.php:627
-msgid ""
-"\"Pristine Danmaku Hell\", Junko's final Spell Card in <a "
-"href=\"#term_lolk\">LoLK</a>."
-msgstr ""
-"纯符「纯粹的弹幕地狱」，\"Pristine Danmaku Hell\"；<a href=\"#term_lolk\">绀"
-"珠传</a>中，纯狐的终符。"
-
-#: php/jargon.php:630
-msgid "PWG"
-msgstr "PWG"
-
-#: php/jargon.php:631
-msgid ""
-"\"Peerless Wind God\", Aya's <a href=\"#term_survivalspell\">survival Spell "
-"Card</a> in <a href=\"#term_mof\">MoF</a>."
-msgstr ""
-"「无双风神」，\"Peerless Wind God\"；<a href=\"#term_mof\">风神录</a>中，文的"
-"<a href=\"#term_survivalspell\">时符</a>。"
-
-#: php/jargon.php:634
-msgid "QED"
-msgstr "QED"
-
-#: php/jargon.php:635
-msgid ""
-"QED \"Ripples of 495 Years\", Flandre's final Spell Card in <a "
-"href=\"#term_eosd\">EoSD</a>."
-msgstr ""
-"QED「495年的波纹」，QED \"Ripples of 495 Years\"；<a href=\"#term_eosd\">红魔"
-"乡</a>中，芙兰朵露的终符。"
-
-#: php/jargon.php:638
-msgid "Rain"
-msgstr "Rain"
-
-#: php/jargon.php:639
-msgid ""
-"The section of <a href=\"#term_lolk\">LoLK</a> Stage 6 where blue bullets "
-"spawn in a rain pattern, combined with aimed red stars."
-msgstr ""
-"流星雨；<a href=\"#term_lolk\">绀珠传</a>中，六面道中发射数列蓝色子弹和红色星"
-"弹自机狙的阶段。"
-
-#: php/jargon.php:642
-msgid "RB"
-msgstr "RB"
-
-#: php/jargon.php:643
-msgid ""
-"\"Resurrection Butterfly\", Yuyuko's final Spell Card in <a "
-"href=\"#term_pcb\">PCB</a>."
-msgstr ""
-"「反魂蝶 -八分咲-」，\"Resurrection Butterfly\"；<a href=\"#term_pcb\">妖妖梦"
-"</a>中，幽幽子的终符。"
-
-#: php/jargon.php:646
-msgid "Rings"
-msgstr "Rings"
-
-#: php/jargon.php:647
-msgid "The final section of <a href=\"#term_lls\">LLS</a> Stage 5."
-msgstr "波纹阵；<a href=\"#term_lls\">幻想乡</a>中，五面道中闭幕。"
-
-#: php/jargon.php:650
-msgid "Rings of Death"
-msgstr "Rings of Death"
-
-#: php/jargon.php:651
-msgid "Mokou's final non in <a href=\"#term_in\">IN</a>."
-msgstr "<a href=\"#term_in\">永夜抄</a>中，妹红的第8张非符。"
-
-#: php/jargon.php:654
-msgid "RRoP"
-msgstr "RRoP"
-
-#: php/jargon.php:655
-msgid ""
-"\"Rainbow Ring of People\", Chimata's survival Spell Card in <a "
-"href=\"#term_um\">UM</a>."
-msgstr ""
-"「虹人环」，\"Rainbow Ring of People\"；<a href=\"#term_um\">虹龙洞</a>中，千"
-"亦的<a href=\"#term_survivalspell\">时符</a>。"
-
-#: php/jargon.php:658
-msgid "RTG"
-msgstr "RTG"
-
-#: php/jargon.php:659
-msgid ""
-"\"Radiant Treasure Gun\", Shou's first Spell Card in <a "
-"href=\"#term_ufo\">UFO</a>."
-msgstr ""
-"宝塔「Radiant Treasure Gun」（闪亮宝枪）；<a href=\"#term_ufo\">星莲船</a>"
-"中，星的第1张符卡。"
-
-#: php/jargon.php:662
-msgid "RW"
-msgstr "RW"
-
-#: php/jargon.php:663
-msgid ""
-"\"Rising World\", Kaguya's final <a href=\"#term_ls\">Last Spell</a> in <a "
-"href=\"#term_in\">IN</a>."
-msgstr ""
-"「永夜归返　-世间开明-」，\"Rising World\"；<a href=\"#term_in\">永夜抄</a>"
-"中，辉夜的最后一张<a href=\"#term_ls\">LS</a>。"
-
-#: php/jargon.php:666
-msgid "SG"
-msgstr "SG"
-
-#: php/jargon.php:667
-msgid ""
-"\"Scarlet Gensokyo\", Remilia's final Spell Card in <a "
-"href=\"#term_eosd\">EoSD</a>. Also commonly called 'Gensokyo'."
-msgstr ""
-"「红色的幻想乡」，\"Scarlet Gensokyo\"；<a href=\"#term_eosd\">红魔乡</a>中，"
-"蕾米莉亚的终符。"
-
-#: php/jargon.php:670
-msgid "SM"
-msgstr "SM"
-
-#: php/jargon.php:671
-msgid ""
-"\"Scarlet Meister\", Remilia's semifinal Spell Card in <a "
-"href=\"#term_eosd\">EoSD</a>. Also commonly called 'Meister'."
-msgstr ""
-"红符「Scarlet Meister」（绯红之主）；<a href=\"#term_eosd\">红魔乡</a>中，蕾"
-"米莉亚的第4张符卡。"
-
-#: php/jargon.php:674
-msgid "Spam"
-msgstr "Spam"
-
-#: php/jargon.php:675
-msgid ""
-"If said without context, typically refers to the final section of Stage 6 in "
-"<a href=\"#term_pcb\">PCB</a>. It can also refer to any other \"bullet "
-"spam\" stage section, typically with added context (such as \"HSiFS Stage 4 "
-"spam\")."
-msgstr ""
-"如果不结合语境特别说明，spam特指<a href=\"#term_pcb\">妖妖梦</a>的六面道中。"
-"此外，结合语境spam也可指代任何有“一大堆乱弹”的道中（例如\"HSiFS Stage 4 "
-"spam\"，天空璋四面道中乱弹）"
-
-#: php/jargon.php:678
-msgid "Subsun"
-msgstr "Subsun"
-
-#: php/jargon.php:679
-msgid ""
-"\"Subterranean Sun\", Utsuho's final Spell Card in <a href=\"#term_sa\">SA</"
-"a>."
-msgstr ""
-"「Subterranean Sun」（地底太阳）；<a href=\"#term_sa\">地灵殿</a>中，空的终"
-"符。"
-
-#: php/jargon.php:682
-msgid "Sumizome"
-msgstr "Sumizome"
-
-#: php/jargon.php:683
-msgid ""
-"\"Perfect Ink-Black Cherry Blossom -Bloom-\", Yuyuko's penultimate Spell "
-"Card in <a href=\"#term_pcb\">PCB</a>. \"Sumizome\" comes from the old "
-"English translation patch."
-msgstr ""
-"樱符「完全墨染的樱花 -开花-」，\"Perfect Ink-Black Cherry Blossom -Bloom-\"；"
-"<a href=\"#term_pcb\">妖妖梦</a>中，幽幽子的第5张符卡。Sumizome源自老版本英文"
-"符卡翻译。"
-
-#: php/jargon.php:686
-msgid "TSS"
-msgstr "TSS"
-
-#: php/jargon.php:687
-msgid ""
-"\"Trembling Shivering Star\", Junko's fourth Spell Card in <a "
-"href=\"#term_lolk\">LoLK</a>."
-msgstr ""
-"「战栗的寒冷之星」，\"Trembling Shivering Star\"；<a href=\"#term_lolk\">绀珠"
-"传</a>中，纯狐的第4张符卡。"
-
-#: php/jargon.php:690
-msgid "UNR"
-msgstr "UNR"
-
-#: php/jargon.php:691
-msgid ""
-"\"Uncontainable Nuclear Reaction\", Utsuho's first Spell Card in <a "
-"href=\"#term_sa\">SA</a>."
-msgstr ""
-"核热「核反应失控」，\"Uncontainable Nuclear Reaction\"；<a href=\"#term_sa\">"
-"地灵殿</a>中，空的第1张符卡。"
-
-#: php/jargon.php:694
-msgid "VI"
-msgstr "VI"
-
-#: php/jargon.php:695
-msgid ""
-"\"Vampire Illusion\", Remilia's third Spell Card in <a "
-"href=\"#term_eosd\">EoSD</a>."
-msgstr ""
-"神术「吸血鬼幻想」，\"Vampire Illusion\"；<a href=\"#term_eosd\">红魔乡</a>"
-"中，蕾米莉亚的第3张符卡。"
-
-#: php/jargon.php:698
-msgid "VoWG"
-msgstr "VoWG"
-
-#: php/jargon.php:699
-msgid ""
-"\"Virtue of Wind God\", Kanako's final Spell Card in <a "
-"href=\"#term_mof\">MoF</a>. Occasionally it will be called 'DVoWG' (D for "
-"Divine), because of either the translation as of 2020 or the old English "
-"translation patch."
-msgstr ""
-"「风神之神德」，\"Virtue of Wind God\"；<a href=\"#term_mof\">风神录</a>中，"
-"神奈子的终符，有时也会被称为\"DVoWG\"（D是Divine，此简称源自老版本的英文符卡"
-"翻译）。"
-
-#: php/jargon.php:703
-msgid "YDL"
-msgstr "YDL"
-
-#: php/jargon.php:704
-msgid ""
-"\"Young Demon Lord\", Remilia's first Spell Card in <a "
-"href=\"#term_eosd\">EoSD</a>."
-msgstr ""
-"神罚「年幼的恶魔之王」，\"Young Demon Lord\"；<a href=\"#term_eosd\">红魔乡</"
-"a>中，蕾米莉亚的第1张符卡。"
-
-#: php/jargon.php:707
-msgid "YGB"
-msgstr "YGB"
-
-#: php/jargon.php:708
-msgid ""
-"\"You Grow Bigger!\", Shinmyoumaru's <a "
-"href=\"#term_survivalspell\">survival Spell Card</a> in <a "
-"href=\"#term_ddc\">DDC</a>."
-msgstr ""
-"小槌「你给我变大吧」，\"You Grow Bigger!\"；<a href=\"#term_ddc\">辉针城</a>"
-"中，针妙丸的<a href=\"#term_survivalspell\">时符</a>。"
-
-#: php/jargon.php:711
-msgid "YYDO"
-msgstr "YYDO"
-
-#: php/jargon.php:712
-msgid ""
-"\"Yin-Yang Divine Orbs\", Misumaru's first Spell Card in <a "
-"href=\"#term_um\">UM</a>."
-msgstr ""
-"玉符「阴阳神玉」，\"Yin-Yang Divine Orbs\"；<a href=\"#term_um\">虹龙洞</a>"
-"中，魅须丸的第1张符卡。"
-
-#: php/jargon.php:720
-msgid "Name"
-msgstr "姓名"
-
-#: php/jargon.php:721 php/jargon.php:754
-msgid "Bullet"
-msgstr "铳弹"
-
-#: php/jargon.php:726
-msgid "Amulet"
-msgstr "札弹"
-
-#: php/jargon.php:730
-msgid "Arrow"
-msgstr "箭弹"
-
-#: php/jargon.php:734
-msgid "Arrowhead"
-msgstr "鳞弹"
-
-#: php/jargon.php:738
-msgid "Bacteria, dark rice"
-msgstr "杆菌弹"
-
-#: php/jargon.php:742
-msgid "Ball"
-msgstr "小玉"
-
-#: php/jargon.php:746
-msgid "Ball (outlined)"
-msgstr "小玉（轮廓）"
-
-#: php/jargon.php:750
-msgid "Bubble"
-msgstr "大玉"
-
-#: php/jargon.php:758
-msgid "Butterfly"
-msgstr "蝶弹"
-
-#: php/jargon.php:762
-msgid "Coin"
-msgstr "钱弹"
-
-#: php/jargon.php:766
-msgid "Fireball"
-msgstr "火弹"
-
-#: php/jargon.php:770
-msgid "Fireball (glowy)"
-msgstr "火弹（发光）"
-
-#: php/jargon.php:774
-msgid "Heart"
-msgstr "心弹"
-
-#: php/jargon.php:778
-msgid "Jellybean"
-msgstr "椭弹"
-
-#: php/jargon.php:782
-msgid "Knife"
-msgstr "刀弹"
-
-#: php/jargon.php:786
-msgid "Kunai"
-msgstr "苦无"
-
-#: php/jargon.php:790
-msgid "Mentos"
-msgstr "中玉"
-
-#: php/jargon.php:794
-msgid "Note"
-msgstr "音符弹"
-
-#: php/jargon.php:798
-msgid "Orb"
-msgstr "光玉"
-
-#: php/jargon.php:802
-msgid "Pellet"
-msgstr "点弹"
-
-#: php/jargon.php:806
-msgid "Popcorn"
-msgstr "菌弹"
-
-#: php/jargon.php:810
-msgid "Raindrop, droplet"
-msgstr "滴弹"
-
-#: php/jargon.php:814
-msgid "Rest"
-msgstr "休止符"
-
-#: php/jargon.php:818
-msgid "Rice"
-msgstr "米弹"
-
-#: php/jargon.php:822
-msgid "Rose"
-msgstr "蔷薇"
-
-#: php/jargon.php:826
-msgid "Shard, icicle"
-msgstr "冰弹"
-
-#: php/jargon.php:830
-msgid "Star (big)"
-msgstr "星弹（大）"
-
-#: php/jargon.php:834
-msgid "Star (small)"
-msgstr "星弹（小）"
-
-#: php/lnn.php:45
-#, php-format
-msgid "LNNs are current as of <span id=\"lm\">%date</span>."
-msgstr "LNN更新于<span id=\"lm\">%date</span>。"
-
-#: php/lnn.php:67
+#: php/lnn.php:82
 msgid ""
 "A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. "
 "For every shottype in a game, tables will tell you which players have done "
@@ -2547,7 +649,7 @@ msgstr ""
 "新。每作游戏的每个机体有一行显示打出LNN的玩家。如果某一位玩家用一个机体打出多"
 "次LNN，只算一次，其余次数不算入统计。"
 
-#: php/lnn.php:72
+#: php/lnn.php:87
 msgid ""
 "Extra conditions are required for PCB, TD, HSiFS, WBaWC and UM; these are No "
 "Border Breaks for PCB, No Trance for TD, No Release for HSiFS, No Berserk "
@@ -2562,111 +664,110 @@ msgstr ""
 "第三个N代表着附加的条件。星莲船的附加条件（不开飞碟）由于对难度没有大量的影"
 "响，可以自选。永夜抄的LNN必须收取所有LSC，称做LNNFS。"
 
-#: php/lnn.php:79 php/wr.php:154
+#: php/lnn.php:94 php/wr.php:164
 msgid "All of the table columns are sortable."
 msgstr "点击任何标题即可排序表格内容。"
 
-#: php/lnn.php:80
+#: php/lnn.php:95
 msgid ""
-"For updates, you can contact <a href=\"https://twitter.com/MaribelHearn42\" "
-"target=\"_blank\">me</a>, <a href=\"https://x.com/CaoMinh_Touhou\" "
-"target=\"_blank\">Hoàng Cao Minh</a>, <a href=\"https://www.youtube.com/"
-"@valivanvan\" target=\"_blank\">crazy4pokemon</a> or <a href=\"https://www."
-"youtube.com/@allenko1122\" target=\"_blank\">AllenKO</a>."
+"For updates, you can contact <a href=\"https://bsky.app/profile/"
+"maribelhearn42.bsky.social\" target=\"_blank\">me</a>, <a href=\"https://"
+"hoangcaominh.github.io/#/profile\" target=\"_blank\">Hoàng Cao Minh</a>, <a "
+"href=\"https://www.youtube.com/@valivanvan\" "
+"target=\"_blank\">crazy4pokemon</a> or <a href=\"https://www.youtube.com/"
+"@allenko1122\" target=\"_blank\">AllenKO</a>."
 msgstr ""
 
-#: php/lnn.php:87 php/lnn.php:94 php/lnn.php:119
+#: php/lnn.php:98 php/subpages/faq/jargon.php:3 php/wr.php:177
+msgid "Contents"
+msgstr "内容"
+
+#: php/lnn.php:102 php/lnn.php:112 php/lnn.php:128
 msgid "LNN Lists"
 msgstr "LNN列表"
 
-#: php/lnn.php:88 php/lnn.php:102 php/lnn.php:246 php/wr.php:190 php/wr.php:479
-msgid "Player Search"
-msgstr "玩家搜寻"
-
-#: php/lnn.php:89 php/lnn.php:103 php/lnn.php:289
-msgid "Recent LNNs"
-msgstr "最近LNN"
-
-#: php/lnn.php:90 php/lnn.php:104 php/lnn.php:333
-msgid "Overall Count"
-msgstr "总数"
-
-#: php/lnn.php:91 php/lnn.php:105 php/lnn.php:374 php/wr.php:172 php/wr.php:193
-#: php/wr.php:617
-msgid "Player Ranking"
-msgstr "玩家排行"
-
-#: php/lnn.php:113
-msgid "Number of Recent LNNs"
-msgstr "最近LNN的数量"
-
-#: php/lnn.php:116 php/wr.php:203
-msgid "Save Changes"
-msgstr "保存更改"
-
-#: php/lnn.php:148 php/lnn.php:196 php/lnn.php:240 php/lnn.php:362
-msgid "Overall"
-msgstr "合計"
-
-#: php/lnn.php:157 php/lnn.php:237
-msgid "(Different players)"
-msgstr "（玩家）"
-
-#: php/lnn.php:158 php/lnn.php:238
-msgid "Players"
-msgstr "玩家"
-
-#: php/lnn.php:204
-msgid "Click a game cover to show its list of LNNs."
-msgstr "单击游戏处查看LNN列表。"
-
-#: php/lnn.php:247
-msgid "Choose a player name from the menu below to show their LNNs."
-msgstr "在以下的菜单选择玩家的名字则可查看其LNN。"
-
-#: php/lnn.php:248 php/lnn.php:293 php/lnn.php:379 php/wr.php:214
-#: php/wr.php:467 php/wr.php:482 php/wr.php:532 php/wr.php:606 php/wr.php:622
-msgid "Player"
-msgstr "玩家"
-
-#: php/lnn.php:250 php/wr.php:484
+#: php/lnn.php:106 php/lnn.php:113 php/lnn.php:247 php/lnn.php:252
+#: php/lnn.php:272 php/wr.php:487
 msgid "Search"
 msgstr "搜索"
 
-#: php/lnn.php:272 php/lnn.php:294 php/wr.php:217 php/wr.php:469 php/wr.php:508
-#: php/wr.php:533 php/wr.php:608
+#: php/lnn.php:107 php/lnn.php:114 php/lnn.php:314
+msgid "Recent LNNs"
+msgstr "最近LNN"
+
+#: php/lnn.php:108 php/lnn.php:115 php/lnn.php:363
+msgid "Overall Count"
+msgstr "总数"
+
+#: php/lnn.php:109 php/lnn.php:116 php/lnn.php:407 php/wr.php:195
+#: php/wr.php:202 php/wr.php:606
+msgid "Player Statistics"
+msgstr "玩家统计"
+
+#: php/lnn.php:122
+msgid "Number of Recent LNNs"
+msgstr "最近LNN的数量"
+
+#: php/lnn.php:125 php/wr.php:211
+msgid "Save Changes"
+msgstr "保存更改"
+
+#: php/lnn.php:154 php/lnn.php:203 php/lnn.php:242 php/lnn.php:394
+msgid "Overall"
+msgstr "合計"
+
+#: php/lnn.php:163 php/lnn.php:239
+msgid "(Different players)"
+msgstr "（玩家）"
+
+#: php/lnn.php:164 php/lnn.php:240
+msgid "Players"
+msgstr "玩家"
+
+#: php/lnn.php:207
+msgid "Click a game cover to show its list of LNNs."
+msgstr "单击游戏处查看LNN列表。"
+
+#: php/lnn.php:248
+#, fuzzy
+#| msgid "Choose a player name from the menu below to show their LNNs."
+msgid "Choose a player or category from the menus below to show their LNNs."
+msgstr "在以下的菜单选择玩家的名字则可查看其LNN。"
+
+#: php/lnn.php:296 php/lnn.php:319 php/wr.php:225 php/wr.php:472 php/wr.php:509
+#: php/wr.php:534 php/wr.php:597
 msgid "Replay"
 msgstr "Rep"
 
-#: php/lnn.php:273 php/lnn.php:295 php/wr.php:218 php/wr.php:470 php/wr.php:509
-#: php/wr.php:534 php/wr.php:609
+#: php/lnn.php:297 php/lnn.php:320 php/wr.php:226 php/wr.php:473 php/wr.php:510
+#: php/wr.php:535 php/wr.php:598
 msgid "Video"
 msgstr "视频"
 
-#: php/lnn.php:274 php/lnn.php:296 php/wr.php:219 php/wr.php:471 php/wr.php:510
-#: php/wr.php:535 php/wr.php:610
+#: php/lnn.php:298 php/lnn.php:321 php/wr.php:227 php/wr.php:474 php/wr.php:511
+#: php/wr.php:536 php/wr.php:599
 msgid "Date"
 msgstr "日期"
 
-#: php/lnn.php:282 php/wr.php:519
+#: php/lnn.php:306 php/wr.php:520
 msgid "Total"
 msgstr "合計"
 
-#: php/lnn.php:340
+#: php/lnn.php:312
+msgid "There are currently no LNNs in that category."
+msgstr ""
+
+#: php/lnn.php:370
 msgid "Different players"
 msgstr "玩家"
 
-#: php/lnn.php:367
+#: php/lnn.php:400
 msgid "Replays"
 msgstr "Rep"
 
-#: php/lnn.php:381
+#: php/lnn.php:414
 msgid "Games LNN'd"
 msgstr "游戏"
-
-#: php/lnn.php:388 php/lnn.php:389
-msgid " (All Windows)"
-msgstr "（全Windows）"
 
 #: php/pofv.php:70
 msgid ""
@@ -3482,12 +1583,1991 @@ msgstr "残无"
 msgid "UDoALG"
 msgstr "兽"
 
-#: php/wr.php:44
-#, php-format
-msgid "World records are current as of <span id=\"lm\">%date</span>."
-msgstr "世界记录更新于<span id=\"lm\">%date</span>。"
+#: php/subpages/faq/jargon.php:2
+msgid ""
+"This list contains explanations for terms and acronyms used in the community "
+"of Touhou players. It also contains general gaming and shoot 'em up terms "
+"that are relevant to Touhou."
+msgstr ""
+"这个网页收录了西方的东方Project玩家社区中使用的术语和缩写。同时，也会收录一些"
+"与东方相关的通用游戏术语和STG术语。"
 
-#: php/wr.php:148
+#: php/subpages/faq/jargon.php:5
+msgid "Spell Card / Pattern Acronyms"
+msgstr "符卡/特殊弹幕"
+
+#: php/subpages/faq/jargon.php:6 php/subpages/faq/jargon.php:715
+msgid "Bullet Type Names"
+msgstr "子弹类型"
+
+#: php/subpages/faq/jargon.php:8
+msgid "Gameplay Related Terms"
+msgstr "游戏相关术语"
+
+#: php/subpages/faq/jargon.php:12
+msgid "Jargon"
+msgstr "术语"
+
+#: php/subpages/faq/jargon.php:13
+msgid "Meaning"
+msgstr "解释"
+
+#: php/subpages/faq/jargon.php:18
+msgid "0/0"
+msgstr "0/0"
+
+#: php/subpages/faq/jargon.php:19
+msgid ""
+"0 extra lives and 0 bombs, the point at which the player has no <a "
+"href=\"#term_resources\">resources</a> left and is thus forced to survive "
+"all of the upcoming patterns to still clear. The 'x/y' notation is often "
+"used to denote the number of spare lives and bombs a player has at a given "
+"point in time in a run."
+msgstr ""
+"0残0雷，0 extra lives and 0 bombs；这种情况下玩家没有任何资源，必须强扭后面的"
+"所有弹幕。此“x/y”形式的标记法经常用来描述玩家在游戏指定阶段中的剩余残雷资源。"
+
+#: php/subpages/faq/jargon.php:28
+msgid "1cc"
+msgstr "1cc"
+
+#: php/subpages/faq/jargon.php:29
+msgid ""
+"1 credit clear; a clear without using continues, which is equivalent to only "
+"using one coin if playing on an arcade machine, the origin of the term. This "
+"is the primary goal that people will have in a game when starting to play it."
+msgstr ""
+"1币通关，1 credit clear；即不续关通关，源自于街机中的只用1个币通关。这是大多"
+"数玩家在玩一个游戏时的主要目标。"
+
+#: php/subpages/faq/jargon.php:33
+msgid "Bottomhugging"
+msgstr "Bottomhugging"
+
+#: php/subpages/faq/jargon.php:34
+msgid ""
+"Being at the bottom of the screen all the time while playing, a tendency "
+"that newer players often have, due to being afraid of the bullets and "
+"wanting to be as far away from them as possible. While sometimes useful, "
+"this is not always the best general strategy."
+msgstr ""
+"缩版底；在游戏中一直呆在版底的行为。新手通常会出于恐惧心理，想尽可能远离子弹"
+"而缩版底。有些时候缩版底很有用，但往往并不是最优解。"
+
+#: php/subpages/faq/jargon.php:38
+msgid "Cancel"
+msgstr "Cancel"
+
+#: php/subpages/faq/jargon.php:39
+msgid ""
+"Bullets being converted into items, effectively wiping them from the screen, "
+"which is often important for score. This occurs when the player ends a boss "
+"pattern by shooting the boss, but can have several other causes too, such as "
+"enemies that cancel their bullets when killed, or bombing."
+msgstr ""
+"消弹；即玩家通过击破BOSS某一阶段，击杀特定敌人或者放雷，让子弹从屏幕上消失"
+"（有时会转化为消弹道具）。消弹在一些作品的打分中很重要。"
+
+#: php/subpages/faq/jargon.php:43
+msgid "Cap"
+msgstr "Cap"
+
+#: php/subpages/faq/jargon.php:44
+msgid ""
+"Abbreviation of 'capture'; a Spell Card being dodged without dying or "
+"bombing, which awards a Spell Card Bonus."
+msgstr ""
+"收取；Capture；在不掉残和用雷的情况下击破符卡，收取符卡可以获得符卡分。"
+
+#: php/subpages/faq/jargon.php:47
+msgid "Clipdeath"
+msgstr "Clipdeath"
+
+#: php/subpages/faq/jargon.php:48
+msgid "Dying because of wrongly estimating bullet hitbox size(s)."
+msgstr "判定杀；由于错误判断子弹判定而撞弹。"
+
+#: php/subpages/faq/jargon.php:51
+msgid "Counterstop"
+msgstr "Counterstop"
+
+#: php/subpages/faq/jargon.php:52
+msgid ""
+"The point at which the score counter stops increasing; the score limit of a "
+"game. Sometimes this is reachable, but most of the time it is not. Not to be "
+"confused with <a href=\"#term_overflow\">overflow</a> or <a "
+"href=\"#term_underflow\">underflow</a>."
+msgstr ""
+"爆分；分数达到游戏计分上限。爆分在一些作品中是可以做到的。注意不要和<a "
+"href=\"#term_overflow\">上溢</a>和<a href=\"#term_underflow\">下溢</a>混淆。"
+
+#: php/subpages/faq/jargon.php:56
+msgid "CS"
+msgstr "CS"
+
+#: php/subpages/faq/jargon.php:57
+msgid "See <a href=\"#term_counterstop\">counterstop</a>."
+msgstr "见<a href=\"#term_counterstop\">counterstop</a>。"
+
+#: php/subpages/faq/jargon.php:60
+msgid "DB"
+msgstr "DB"
+
+#: php/subpages/faq/jargon.php:61
+msgid ""
+"Deathbomb; a bomb within a few frames after getting hit, which saves you "
+"from dying."
+msgstr "决死，Deathbomb；撞弹之后的几帧内成功丢雷，决死可以免于掉残。"
+
+#: php/subpages/faq/jargon.php:65
+msgid "Touhou 14: Double Dealing Character."
+msgstr "东方辉针城　～ Double Dealing Character。"
+
+#: php/subpages/faq/jargon.php:69
+msgid "Touhou 12.5: Double Spoiler."
+msgstr "Double Spoiler　～ 东方文花帖。"
+
+#: php/subpages/faq/jargon.php:73
+msgid "Touhou 6: the Embodiment of Scarlet Devil."
+msgstr "东方红魔乡　～ the Embodiment of Scarlet Devil。"
+
+#: php/subpages/faq/jargon.php:76
+msgid "Ex"
+msgstr "Ex"
+
+#: php/subpages/faq/jargon.php:77
+msgid "Extra; the Extra Stage."
+msgstr "Extra；Extra关卡。"
+
+#: php/subpages/faq/jargon.php:80
+msgid "Extend"
+msgstr "Extend"
+
+#: php/subpages/faq/jargon.php:81
+msgid "An extra life; a 1up."
+msgstr "奖残；奖励一条命，或者说1up。"
+
+#: php/subpages/faq/jargon.php:84
+msgid "ExNN"
+msgstr "ExNN"
+
+#: php/subpages/faq/jargon.php:85
+msgid ""
+"Extra No Miss No Bomb; a <a href=\"#term_1cc\">1cc</a> of some Extra Stage "
+"without dying or using bombs. A third 'N' is appended if there is a game-"
+"specific third restriction."
+msgstr ""
+"Extra No Miss No Bomb；在Ex关卡中全程不掉残不用雷过关，如果在一些作品禁用其特"
+"色系统，会加第3个N。"
+
+#: php/subpages/faq/jargon.php:88
+msgid "FS"
+msgstr "FS"
+
+#: php/subpages/faq/jargon.php:89
+msgid "Full Spell; a run that captures all Spell Cards."
+msgstr "全卡，Full Spell；收取所有符卡通关。"
+
+#: php/subpages/faq/jargon.php:92
+msgid "FW"
+msgstr "FW"
+
+#: php/subpages/faq/jargon.php:93
+msgid "See <a href=\"#term_gfw\">GFW</a>."
+msgstr "见<a href=\"#term_gfw\">GFW</a>。"
+
+#: php/subpages/faq/jargon.php:96
+msgid "Graze"
+msgstr "Graze"
+
+#: php/subpages/faq/jargon.php:97
+msgid ""
+"Having a bullet come very close to your hitbox, which means it touches your "
+"'grazebox', a hitbox larger than your main hitbox that is used to detect "
+"grazing."
+msgstr ""
+"擦弹；即子弹十分靠近自机，此时子弹进入了自机的“擦弹判定”。擦弹判定比自机判定"
+"大，用于检测擦弹。"
+
+#: php/subpages/faq/jargon.php:101
+msgid "Touhou 12.8: Great Fairy Wars."
+msgstr "妖精大战争　～ 东方三月精。"
+
+#: php/subpages/faq/jargon.php:104 php/subpages/faq/jargon.php:549
+msgid "GO"
+msgstr "GO"
+
+#: php/subpages/faq/jargon.php:105
+msgid ""
+"(Uncommon) Game over. Not to be confused with <a href=\"#term_go\">\"Good "
+"Omen\"</a>, a Spell Card."
+msgstr ""
+"（不常用）疮痍，Game Over；注意不要和符卡<a href=\"#term_go\">\"Good Omen\"</"
+"a>（吉兆「极乐的紫色云路」）混淆。"
+
+#: php/subpages/faq/jargon.php:108
+msgid "Hitbox"
+msgstr "Hitbox"
+
+#: php/subpages/faq/jargon.php:109
+msgid ""
+"The part of a sprite that is used for collision detection; that is, the part "
+"of the player character or an enemy that can get hit, and the part of a "
+"bullet that kills you when touched. In Touhou, hitboxes of a sprite are "
+"smaller than the full size of the sprite."
+msgstr ""
+"判定；用于检测物体（包括自机，子弹，敌人等）碰撞的范围；对于自机来说，子弹碰"
+"到自机判定时就会造成撞弹。在东方中，物体的判定通常比其视觉大小要小。"
+
+#: php/subpages/faq/jargon.php:114
+msgid "Touhou 1: Highly Responsive to Prayers."
+msgstr "东方灵异传　～ The Highly Responsive to Prayers。"
+
+#: php/subpages/faq/jargon.php:118
+msgid "Touhou 16: Hidden Star in Four Seasons."
+msgstr "东方天空璋　～ Hidden Star in Four Seasons。"
+
+#: php/subpages/faq/jargon.php:121
+msgid "I-frames"
+msgstr "I-frames"
+
+#: php/subpages/faq/jargon.php:122
+msgid ""
+"Invincibility frames; frames during which something does not take any hits. "
+"Your player character has a number of I-frames after a death, as well as "
+"during a bomb. Under certain circumstances, some enemy characters can also "
+"have I-frames."
+msgstr ""
+"无敌帧，nvincibility frames；不会造成任何撞弹判定的帧。自机在掉残后，用雷时会"
+"有一段无敌帧。在一些情况下，一些敌人也会有无敌帧。"
+
+#: php/subpages/faq/jargon.php:127
+msgid "Touhou 8: Imperishable Night."
+msgstr "东方永夜抄　～ Imperishable Night。"
+
+#: php/subpages/faq/jargon.php:131
+msgid "Touhou 14.3: Impossible Spell Card."
+msgstr "弹幕天邪鬼 ～ Impossible Spell Card。"
+
+#: php/subpages/faq/jargon.php:135
+msgid "Touhou 4: Lotus Land Story."
+msgstr "东方幻想乡　～ Lotus Land Story。"
+
+#: php/subpages/faq/jargon.php:138
+msgid "LNB"
+msgstr "LNB"
+
+#: php/subpages/faq/jargon.php:139
+msgid ""
+"Lunatic No Bomb; a <a href=\"#term_1cc\">1cc</a> of some game on Lunatic "
+"difficulty without using bombs."
+msgstr "Lunatic No Bomb；在Lunatic难度中全程不用雷不续关通关。"
+
+#: php/subpages/faq/jargon.php:142
+msgid "LNN"
+msgstr "LNN"
+
+#: php/subpages/faq/jargon.php:143
+msgid ""
+"Lunatic No Miss No Bomb; a <a href=\"#term_1cc\">1cc</a> of some game on "
+"Lunatic difficulty without dying or using bombs. A third 'N' is appended if "
+"there is a game-specific third restriction."
+msgstr ""
+"Lunatic No Miss No Bomb；在Lunatic难度中全程不掉残不用雷通关，若在一些作品禁"
+"用其特色系统，会加第3个N。"
+
+#: php/subpages/faq/jargon.php:147
+msgid "Touhou 15: Legacy of Lunatic Kingdom."
+msgstr "东方绀珠传　～ Legacy of Lunatic Kingdom。"
+
+#: php/subpages/faq/jargon.php:150
+msgid "LS"
+msgstr "LS"
+
+#: php/subpages/faq/jargon.php:151
+msgid ""
+"Last Spell; a spell used at the end of an <a href=\"#term_in\">IN</a> boss "
+"fight when the time requirement is met. It does not cost a life to die to it."
+msgstr ""
+"Last Spell；在<a href=\"#term_in\">永夜抄</a>中，关卡刻符达标后击破关底BOSS会"
+"出现一张额外的符卡，称为LS。在LS中撞弹不会掉残。"
+
+#: php/subpages/faq/jargon.php:154
+msgid "LW"
+msgstr "LW"
+
+#: php/subpages/faq/jargon.php:155
+#, fuzzy
+#| msgid ""
+#| "Last Word; a special spell (and the difficulty of such a spell) used by "
+#| "an <a href=\"#term_in\">IN</a> boss,\n"
+#| "\t\t\t\twhich is only available in Spell Practice mode."
+msgid ""
+"Last Word; a special spell (and the difficulty of such a spell) used by an "
+"<a href=\"#term_in\">IN</a> boss,\n"
+"            which is only available in Spell Practice mode."
+msgstr ""
+"Last Word；在永夜抄的符卡练习模式中每个BOSS都有的一张特殊符卡，称为LW。"
+
+#: php/subpages/faq/jargon.php:159
+msgid "Macrododging"
+msgstr "Macrododging"
+
+#: php/subpages/faq/jargon.php:160
+msgid ""
+"Dodging waves of bullets by going around them rather than through them, "
+"which may or may not be to avoid having to <a "
+"href=\"#term_micrododging\">micrododge</a>. Often abbreviated to 'macro'."
+msgstr "大拉/绕；用绕过弹幕的方式进行躲避，避免强扭弹幕。有时会缩写为marco"
+
+#: php/subpages/faq/jargon.php:163
+msgid "Maingames"
+msgstr "Maingames"
+
+#: php/subpages/faq/jargon.php:164
+msgid ""
+"<em>Disputed.</em> Generally means integer games, but the status of PC-98 "
+"games and <a href=\"#term_pofv\">PoFV</a> as maingames is not agreed upon. "
+"The integer games from <a href=\"#term_eosd\">EoSD</a> to <a "
+"href=\"#term_um\">UM</a>, excluding <a href=\"#term_pofv\">PoFV</a>, are "
+"always included."
+msgstr ""
+"<em>有争议</em>，通常指整数正作，但有时该指代并不包括旧作、<a "
+"href=\"#term_pofv\">花映塚</a>和兽王园。"
+
+#: php/subpages/faq/jargon.php:168
+msgid "Memo"
+msgstr "Memo"
+
+#: php/subpages/faq/jargon.php:169
+msgid ""
+"Memorisation; remembering a specific <a href=\"#term_route\">route</a> for a "
+"pattern in order to dodge it."
+msgstr ""
+"背板，Memorisation；记忆解一段弹幕的<a href=\"#term_route\">固定走位</a>。"
+
+#: php/subpages/faq/jargon.php:172
+msgid "Micrododging"
+msgstr "Micrododging"
+
+#: php/subpages/faq/jargon.php:173
+msgid ""
+"Dodging dense waves of bullets by navigating through them, usually using "
+"small taps to get safely through. Often abbreviated to 'micro'."
+msgstr ""
+"微移/扭，用硬扭弹幕的方式进行躲避，通常会进行小幅度操作以确保安全。有时会缩写"
+"为micro。"
+
+#: php/subpages/faq/jargon.php:176
+msgid "Midnon"
+msgstr "Midnon"
+
+#: php/subpages/faq/jargon.php:177
+msgid "A <a href=\"#term_nonspell\">nonspell</a> used by a midboss."
+msgstr "道中非；道中BOSS发动的<a href=\"#term_nonspell\">非符</a>。"
+
+#: php/subpages/faq/jargon.php:180
+msgid "Midspell"
+msgstr "Midspell"
+
+#: php/subpages/faq/jargon.php:181
+msgid "A Spell Card used by a midboss."
+msgstr "道中卡；道中BOSS发动的符卡。"
+
+#: php/subpages/faq/jargon.php:184
+msgid "Milking"
+msgstr "Milking"
+
+#: php/subpages/faq/jargon.php:185
+msgid ""
+"Stalling a pattern for as long as possible to maximise the value of "
+"something, which is mostly graze. In <a href=\"#term_gfw\">GFW</a>, players "
+"milk freezes instead."
+msgstr ""
+"拖击破；为了最大化收益（比如擦弹）而尽可能长地拖延一段弹幕的持续时间。在<a "
+"href=\"#term_gfw\">大战争</a>中，拖击破一般是为了多冻结弹幕。"
+
+#: php/subpages/faq/jargon.php:188
+msgid "Misdirection"
+msgstr "Misdirection"
+
+#: php/subpages/faq/jargon.php:189
+msgid ""
+"Making aimed bullets go into a direction away from you, to make sure you are "
+"safe."
+msgstr "引狙；把自机狙引向远离自机的方向。"
+
+#: php/subpages/faq/jargon.php:192
+msgid "Miss"
+msgstr "Miss"
+
+#: php/subpages/faq/jargon.php:193
+#, fuzzy
+#| msgid ""
+#| "Losing a life. This term came from the Japanese transliteration of "
+#| "\"mistake\", ミステイク misuteiku,\n"
+#| "\t\t\t\twhich has as abbreviation ミス misu, i.e. \"miss\"."
+msgid ""
+"Losing a life. This term came from the Japanese transliteration of "
+"\"mistake\", ミステイク misuteiku,\n"
+"            which has as abbreviation ミス misu, i.e. \"miss\"."
+msgstr ""
+"掉残；失去一个残机。这个术语来源于日语中mistake的片假名转写ミステイク，后来简"
+"化为ミス，也就是miss。"
+
+#: php/subpages/faq/jargon.php:198
+msgid "Touhou 10: Mountain of Faith."
+msgstr "东方风神录　～ Mountain of Faith。"
+
+#: php/subpages/faq/jargon.php:202
+msgid "Touhou 5: Mystic Square."
+msgstr "东方怪绮谈　～ Mystic Square。"
+
+#: php/subpages/faq/jargon.php:205
+msgid "Non"
+msgstr "Non"
+
+#: php/subpages/faq/jargon.php:206
+msgid "Nonspell; a boss attack that is not a Spell Card."
+msgstr "非符，Nonspell；BOSS发动的非符卡攻击。"
+
+#: php/subpages/faq/jargon.php:209
+msgid "NB"
+msgstr "NB"
+
+#: php/subpages/faq/jargon.php:210
+msgid "No Bomb; a clear without bombing."
+msgstr "禁雷，No Bomb；不用雷通关。"
+
+#: php/subpages/faq/jargon.php:213
+msgid "NBB"
+msgstr "NBB"
+
+#: php/subpages/faq/jargon.php:214
+msgid ""
+"No Border Breaks; used in <a href=\"#term_pcb\">PCB</a> to mean a clear "
+"without breaking Supernatural Borders, whether it be by getting hit during "
+"one or by pressing the X key."
+msgstr ""
+"禁结界，No Border Breaks；在<a href=\"#term_pcb\">妖妖梦</a>中，不通过结界内"
+"撞弹或者主动按X爆结界通关。"
+
+#: php/subpages/faq/jargon.php:217
+msgid "NC"
+msgstr "NC"
+
+#: php/subpages/faq/jargon.php:218
+msgid ""
+"No Cards; used in <a href=\"#term_um\">UM</a> to mean a clear without using "
+"any active, equipment or passive cards. Cards that do not affect <a "
+"href=\"#term_nmnb\">NMNB</a> play, such as the life card, the bomb card and "
+"the money card, may be exempt from this."
+msgstr ""
+"禁卡牌，No Cards；在<a href=\"#term_um\">虹龙洞</a>中，不使用任何主动卡，装备"
+"卡，被动卡通关，残机，雷和资金力卡牌这类不影响<a href=\"#term_nmnb\">NMNB</a>"
+"的卡牌例外。"
+
+#: php/subpages/faq/jargon.php:222
+msgid "NF"
+msgstr "NF"
+
+#: php/subpages/faq/jargon.php:223
+msgid ""
+"No Focus; a clear without using focus mode, that is, without pressing Shift."
+msgstr "低封，No Focus；不用低速模式通关，也就是不按Shift键。"
+
+#: php/subpages/faq/jargon.php:226
+msgid "NM"
+msgstr "NM"
+
+#: php/subpages/faq/jargon.php:227
+msgid "No Miss; a clear without dying. Also known as '1 life clear'."
+msgstr "一命，No Miss；不掉残通关，也就是一命通关。"
+
+#: php/subpages/faq/jargon.php:230
+msgid "NMNB"
+msgstr "NMNB"
+
+#: php/subpages/faq/jargon.php:231
+msgid ""
+"No Miss No Bomb; a clear without dying or bombing. Also known as <a "
+"href=\"#term_perfect\">Perfect</a> or the even shorter acronym <a "
+"href=\"#term_nn\">NN</a>."
+msgstr ""
+"一命禁雷，No Miss No Bomb；不掉残不用雷通关。亦称为<a "
+"href=\"#term_perfect\">Perfect</a>或者<a href=\"#term_nn\">NN</a>。"
+
+#: php/subpages/faq/jargon.php:234
+msgid "NN"
+msgstr "NN"
+
+#: php/subpages/faq/jargon.php:235
+msgid "See <a href=\"#term_nmnb\">NMNB</a>."
+msgstr "见<a href=\"#term_nmnb\">NMNB</a>。"
+
+#: php/subpages/faq/jargon.php:238
+msgid "NNN"
+msgstr "NNN"
+
+#: php/subpages/faq/jargon.php:239
+#, fuzzy
+#| msgid ""
+#| "<a href=\"#term_nmnb\">NMNB</a>, plus a game-specific third restriction, "
+#| "which is\n"
+#| "                <a href=\"#term_nbb\">NBB</a> for <a "
+#| "href=\"#term_pcb\">PCB</a>, <a href=\"#term_nv\">NV</a>\n"
+#| "\t\t\t\tfor <a href=\"#term_ufo\">UFO</a>, <a href=\"#term_nt\">NT</a>\n"
+#| "\t\t\t\tfor <a href=\"#term_td\">TD</a>, <a href=\"#term_nr\">NR</a> for "
+#| "<a href=\"#term_hsifs\">HSiFS</a>\n"
+#| "\t\t\t\tand <a href=\"#term_nc\">NC</a> for <a href=\"#term_um\">UM</a>. "
+#| "Also known\n"
+#| "\t\t\t\tas <a href=\"#term_perfect\">Perfect</a> or a more comprehensive "
+#| "version of the acronym,\n"
+#| "\t\t\t\tsuch as 'NMNBNT' for <a href=\"#term_td\">TD</a>."
+msgid ""
+"<a href=\"#term_nmnb\">NMNB</a>, plus a game-specific third restriction, "
+"which is\n"
+"            <a href=\"#term_nbb\">NBB</a> for <a href=\"#term_pcb\">PCB</a>, "
+"<a href=\"#term_nv\">NV</a>\n"
+"            for <a href=\"#term_ufo\">UFO</a>, <a href=\"#term_nt\">NT</a>\n"
+"            for <a href=\"#term_td\">TD</a>, <a href=\"#term_nr\">NR</a> for "
+"<a href=\"#term_hsifs\">HSiFS</a>\n"
+"            and <a href=\"#term_nc\">NC</a> for <a href=\"#term_um\">UM</a>. "
+"Also known\n"
+"            as <a href=\"#term_perfect\">Perfect</a> or a more comprehensive "
+"version of the acronym,\n"
+"            such as 'NMNBNT' for <a href=\"#term_td\">TD</a>."
+msgstr ""
+"在<a href=\"#term_nmnb\">NMNB</a>的基础上，禁用下列作品的特色系统：\n"
+"<a href=\"#term_pcb\">妖妖梦</a><a href=\"#term_nbb\">禁结界</a>，\n"
+"<a href=\"#term_ufo\">星莲船</a><a href=\"#term_nv\">禁开飞碟</a>，\n"
+"<a href=\"#term_td\">神灵庙</a><a href=\"#term_nt\">禁灵界</a>，\n"
+"<a href=\"#term_hsifs\">天空璋</a><a href=\"#term_nr\">禁季节解放</a>，\n"
+"<a href=\"#term_um\">虹龙洞</a><a href=\"#term_nc\">禁卡牌</a>。\n"
+"亦称为<a href=\"#term_perfect\">Perfect</a>或者NMNBNT（以<a "
+"href=\"#term_td\">神灵庙</a>为例）。"
+
+#: php/subpages/faq/jargon.php:248
+msgid "NNNN"
+msgstr "NNNN"
+
+#: php/subpages/faq/jargon.php:249
+#, fuzzy
+#| msgid ""
+#| "Used in <a href=\"#term_wbawc\">WBaWC</a> to mean <a "
+#| "href=\"#term_nmnb\">NMNB</a>,\n"
+#| "\t\t\t\tplus two game-specific restrictions, which are No Berserk Roars "
+#| "(No Hypers)\n"
+#| "\t\t\t\tand No Roar Breaks (No Hyper Breaks). Also known as <a "
+#| "href=\"#term_perfect\">Perfect</a>."
+msgid ""
+"Used in <a href=\"#term_wbawc\">WBaWC</a> to mean <a "
+"href=\"#term_nmnb\">NMNB</a>,\n"
+"            plus two game-specific restrictions, which are No Berserk Roars "
+"(No Hypers)\n"
+"            and No Roar Breaks (No Hyper Breaks). Also known as <a "
+"href=\"#term_perfect\">Perfect</a>."
+msgstr ""
+"在<a href=\"#term_wbawc\">鬼形兽</a><a href=\"#term_nmnb\">NMNB</a>的基础"
+"上，\n"
+"禁用带加成的暴走（No Hypers），禁炸暴走结界（No Roar Breaks）。\n"
+"亦称为<a href=\"#term_perfect\">Perfect</a>或者NMNBNHNR。"
+
+#: php/subpages/faq/jargon.php:254
+msgid "NR"
+msgstr "NR"
+
+#: php/subpages/faq/jargon.php:255
+msgid ""
+"No Release; used in <a href=\"#term_hsifs\">HSiFS</a> to mean a clear "
+"without using releases; that is, without pressing the C key. In Japan, this "
+"is also used in <a href=\"#term_pcb\">PCB</a>, to mean <a "
+"href=\"#term_nbb\">NBB</a>."
+msgstr ""
+"禁季节解放，No Release；在<a href=\"#term_hsifs\">天空璋</a>中，不使用季节解"
+"放通关，也就是不按C键。在中文和日语语境下，NR也用于指代<a href=\"#term_pcb\">"
+"妖妖梦</a>的<a href=\"#term_nbb\">禁结界</a>。"
+
+#: php/subpages/faq/jargon.php:259
+msgid "NT"
+msgstr "NT"
+
+#: php/subpages/faq/jargon.php:260
+msgid ""
+"No Trance; used in <a href=\"#term_td\">TD</a> to mean a clear without using "
+"manual trances; that is, without pressing the C key."
+msgstr ""
+"禁灵界，No Trance；在<a href=\"#term_td\">神灵庙</a>中，不主动开启灵界通关，"
+"也就是不按C键。"
+
+#: php/subpages/faq/jargon.php:263
+msgid "NUFO"
+msgstr "NUFO"
+
+#: php/subpages/faq/jargon.php:264
+msgid ""
+"(Uncommon) No UFO summons; used in <a href=\"#term_ufo\">UFO</a> to mean a "
+"clear without summoning UFOs. Because of the length of the acronym, <a "
+"href=\"#term_nv\">NV</a> is often used instead."
+msgstr ""
+"（不常用）禁开飞碟，No UFO summons；在<a href=\"#term_ufo\">星莲船</a>中，不"
+"开出飞碟通关。由于此缩写过长，被更常用的<a href=\"#term_nv\">NV</a>取代。中文"
+"语境下，NU特指禁开飞碟。"
+
+#: php/subpages/faq/jargon.php:267
+msgid "NV"
+msgstr "NV"
+
+#: php/subpages/faq/jargon.php:268
+#, fuzzy
+#| msgid ""
+#| "No Ventora (Japanese for UFO summons); used in <a href=\"#term_ufo\">UFO</"
+#| "a> to mean a clear without summoning UFOs.\n"
+#| "\t\t\t\tIn Japanese, this also means not picking up any tokens at all."
+msgid ""
+"No Ventora (Japanese for UFO summons); used in <a href=\"#term_ufo\">UFO</a> "
+"to mean a clear without summoning UFOs.\n"
+"            In Japanese, this also means not picking up any tokens at all."
+msgstr ""
+"禁开飞碟，No Ventora（日语中开飞碟的意思）；在<a href=\"#term_ufo\">星莲船</"
+"a>中，不开出飞碟通关。在日语中，NV有不收集任何飞碟碎片的意思。中文语境下，NV"
+"特指不收集飞碟碎片。"
+
+#: php/subpages/faq/jargon.php:272
+msgid "Opener"
+msgstr "Opener"
+
+#: php/subpages/faq/jargon.php:273
+msgid ""
+"The first nonspell of a boss, which is the first attack that they use, "
+"unless there are only Spell Cards."
+msgstr "开场；通常指BOSS的第一张非符，除非BOSS只有符卡攻击。"
+
+#: php/subpages/faq/jargon.php:276
+msgid "Overflow"
+msgstr "Overflow"
+
+#: php/subpages/faq/jargon.php:277
+msgid ""
+"When a number becomes higher than its maximum value, causing strange "
+"behaviour. Notoriously occurs in <a href=\"#term_ufo\">UFO</a>, in which the "
+"score will be displayed wrongly once it reaches higher than 2,147,483,647. "
+"It loops back to 0 again once it reaches 4,294,967,295. Not to be confused "
+"with <a href=\"#term_counterstop\">counterstop</a> or <a "
+"href=\"#term_underflow\">underflow</a>."
+msgstr ""
+"数值超过表示上限导致显示异常。在<a href=\"#term_ufo\">星莲船</a>中，真实分数"
+"超过2,147,483,647会显示错误，之后随着真实分数越来越高，分数显示开始倒计至0，"
+"直到真实分数达到4,294,967,295。注意不要和<a href=\"#term_counterstop\">爆分</"
+"a>和<a href=\"#term_underflow\">下溢</a>混淆。"
+
+#: php/subpages/faq/jargon.php:282
+msgid "OD"
+msgstr "OD"
+
+#: php/subpages/faq/jargon.php:283
+msgid ""
+"Overdrive; the difficulty above Lunatic that is used for a select few "
+"unlockable Spell Cards in <a href=\"#term_td\">TD</a>."
+msgstr ""
+"Overdrive；在<a href=\"#term_td\">神灵庙</a>中，只能在符卡练习模式中挑战，难"
+"度标记为Overdrive的符卡。"
+
+#: php/subpages/faq/jargon.php:286
+msgid "PB"
+msgstr "PB"
+
+#: php/subpages/faq/jargon.php:287
+msgid ""
+"Personal Best; someone's highest score or best survival in a specific "
+"category."
+msgstr ""
+"个人纪录，Personal Best；某个玩家的个人最佳表现（如个人最高分，避弹最少Miss数"
+"等）。"
+
+#: php/subpages/faq/jargon.php:291
+msgid "Touhou 7: Perfect Cherry Blossom."
+msgstr "东方妖妖梦　～ Perfect Cherry Blossom。"
+
+#: php/subpages/faq/jargon.php:294
+msgid "Perfect"
+msgstr "Perfect"
+
+#: php/subpages/faq/jargon.php:295
+msgid "See <a href=\"#term_nmnb\">NMNB</a> or <a href=\"#term_nnn\">NNN</a>."
+msgstr "见<a href=\"#term_nmnb\">NMNB</a>或<a href=\"#term_nnn\">NNN</a>。"
+
+#: php/subpages/faq/jargon.php:298
+msgid "Pause buffering"
+msgstr "Pause buffering"
+
+#: php/subpages/faq/jargon.php:299
+msgid ""
+"Repeatedly pausing the game in order to make reading and dodging a pattern "
+"easier. Doing this during a run is commonly considered cheating."
+msgstr ""
+"滥用暂停；为了更简单地观察、躲避弹幕，进行反复暂停。滥用暂停普遍被认为是作"
+"弊。"
+
+#: php/subpages/faq/jargon.php:302
+msgid "Penult"
+msgstr "Penult"
+
+#: php/subpages/faq/jargon.php:303
+msgid "The penultimate Spell Card of a boss fight."
+msgstr "伪终符；BOSS战的倒数第二张符卡。"
+
+#: php/subpages/faq/jargon.php:306
+msgid "Ph"
+msgstr "Ph"
+
+#: php/subpages/faq/jargon.php:307
+msgid "Phantasm; the Phantasm Stage in <a href=\"#term_pcb\">PCB</a>."
+msgstr "Phantasm；在<a href=\"#term_pcb\">妖妖梦</a>中的Phantasm关卡。"
+
+#: php/subpages/faq/jargon.php:310
+msgid "PIV"
+msgstr "PIV"
+
+#: php/subpages/faq/jargon.php:311
+msgid ""
+"Point Item Value; the number of points awarded for collecting a point item "
+"(blue item). The higher up on the screen you are, the higher the value is, "
+"with the maximum value at the <a href=\"#term_poc\">PoC</a>. Most games have "
+"a system that allows the player to increase this value in some way."
+msgstr ""
+"最大得点，Point Item Value；吃蓝点时能获取的分数奖励。自机在版面的位置越高，"
+"获取的分数奖励就越多，在<a href=\"#term_poc\">收点线</a>以上可以获取最高的分"
+"数奖励（最大得点）。很多游戏的分数系统会允许玩家以某种方式提高最大得点。"
+
+#: php/subpages/faq/jargon.php:315
+msgid "Pointblanking"
+msgstr "Pointblanking"
+
+#: php/subpages/faq/jargon.php:316
+msgid "See <a href=\"#term_shotgunning\">shotgunning</a>."
+msgstr "见<a href=\"#term_shotgunning\">shotgunning</a>。"
+
+#: php/subpages/faq/jargon.php:319
+msgid "PoC"
+msgstr "PoC"
+
+#: php/subpages/faq/jargon.php:320
+#, fuzzy
+#| msgid ""
+#| "Point of Collection; this is the area at the top of the screen that, when "
+#| "entered,\n"
+#| "\t\t\t\tmakes your character automatically collect all items on screen. "
+#| "In <a href=\"#term_td\">TD</a>,\n"
+#| "\t\t\t\tthis does not work on spirits. Also used as a verb, e.g. "
+#| "'poccing', to mean collecting\n"
+#| "\t\t\t\titems this way."
+msgid ""
+"Point of Collection; this is the area at the top of the screen that, when "
+"entered,\n"
+"            makes your character automatically collect all items on screen. "
+"In <a href=\"#term_td\">TD</a>,\n"
+"            this does not work on spirits. Also used as a verb, e.g. "
+"'poccing', to mean collecting\n"
+"            items this way."
+msgstr ""
+"收点线，Point of Collection；收点线位于版面顶部，当进入收点线时，自机可以自动"
+"收取版面的所有道具。\n"
+"在<a href=\"#term_td\">神灵庙</a>中，上收点线不收灵。作为动词使用时，比"
+"如“poccing”，意味着上线收点。"
+
+#: php/subpages/faq/jargon.php:327
+msgid "Touhou 3: Phantasmagoria of Dim.Dream."
+msgstr "东方梦时空　～ Phantasmagoria of Dim.Dream。"
+
+#: php/subpages/faq/jargon.php:331
+msgid "Touhou 9: Phantasmagoria of Flower View."
+msgstr "东方花映塚　～ Phantasmagoria of Flower View。"
+
+#: php/subpages/faq/jargon.php:334
+msgid "Rage phase"
+msgstr "Rage phase"
+
+#: php/subpages/faq/jargon.php:335
+msgid "See <a href=\"#term_timeoutphase\">timeout phase</a>."
+msgstr "见<a href=\"#term_timeoutphase\">timeout phase</a>。"
+
+#: php/subpages/faq/jargon.php:338
+msgid "Resources"
+msgstr "Resources"
+
+#: php/subpages/faq/jargon.php:339
+msgid ""
+"Extra lives and bombs, the tools given to you to survive through a game "
+"with. Making good use of them is known as 'resource management'. Resources "
+"are often denoted with the 'x/y' notation, for example 0/0 for when the "
+"player has no extra lives and bombs left."
+msgstr ""
+"资源；即额外的残机和雷。规划资源的使用被称为“resource management”。常以“x/"
+"y”形式的标记法经常用来描述玩家在游戏指定阶段中的剩余残雷资源。"
+
+#: php/subpages/faq/jargon.php:343
+msgid "Restreaming"
+msgstr "Restreaming"
+
+#: php/subpages/faq/jargon.php:344
+msgid ""
+"Changing your <a href=\"#term_streaming\">streaming</a> direction, usually "
+"by making a quick, unfocused movement to misdirect the bullets and then "
+"streaming into the other direction. Also known as 'cutback'."
+msgstr ""
+"折返；即通过用一段高速移动拉开自机狙再反向穿狙，改变<a "
+"href=\"#term_streaming\">引狙</a>方向。也被称作“cutback”。"
+
+#: php/subpages/faq/jargon.php:348
+msgid "RNG"
+msgstr "RNG"
+
+#: php/subpages/faq/jargon.php:349
+msgid ""
+"Random Number Generator; used to refer to random bullet patterns, which, "
+"because of their randomness, do not have a <a href=\"#term_route\">route</a>."
+msgstr ""
+"随机（随机弹），Random Number Generator；用于指代没有<a href=\"#term_route\">"
+"固定走位</a>的随机子弹。"
+
+#: php/subpages/faq/jargon.php:353
+msgid ""
+"A specific path used to navigate through one or more bullet patterns. The "
+"routing approach is used on both <a href=\"#term_static\">static</a> "
+"patterns and patterns aimed at you."
+msgstr ""
+"走位（固定走位）；某段弹幕（特别是对于<a href=\"#term_static\">固定弹</a>和自"
+"机狙）的一种特定解法。"
+
+#: php/subpages/faq/jargon.php:356
+msgid "s1"
+msgstr "s1"
+
+#: php/subpages/faq/jargon.php:357
+msgid "Stage 1; similarly, 's2' means Stage 2, 's3' means Stage 3, etc."
+msgstr "一面；即第1关。同样地，“s2”表示二面，“s3”表示三面，以此类推。"
+
+#: php/subpages/faq/jargon.php:361
+msgid "Touhou 11: Subterranean Animism."
+msgstr "东方地灵殿　～ Subterranean Animism。"
+
+#: php/subpages/faq/jargon.php:364
+msgid "Safespot"
+msgstr "Safespot"
+
+#: php/subpages/faq/jargon.php:365
+#, fuzzy
+#| msgid ""
+#| "A spot, or a larger area, inside of which the player cannot be hit by "
+#| "anything. There is a large grey area to the application of the term in "
+#| "practice, as it is not necessarily only used for singular spots;\n"
+#| "                it can include safe areas that require the player to "
+#| "move, although safer than doing the pattern in question \"normally\". It "
+#| "can even include spots or areas that are not actually completely safe,\n"
+#| "                just <em>mostly</em> safe."
+msgid ""
+"A spot, or a larger area, inside of which the player cannot be hit by "
+"anything. There is a large grey area to the application of the term in "
+"practice, as it is not necessarily only used for singular spots;\n"
+"            it can include safe areas that require the player to move, "
+"although safer than doing the pattern in question \"normally\". It can even "
+"include spots or areas that are not actually completely safe,\n"
+"            just <em>mostly</em> safe."
+msgstr ""
+"安定点；即玩家不会被任何子弹击中的点位或区域。实际使用时，该术语不一定会特指"
+"某个一定安全的区域，也有可能指代<em>大多数情况</em>是安全的区域。"
+
+#: php/subpages/faq/jargon.php:370
+msgid "SCB"
+msgstr "SCB"
+
+#: php/subpages/faq/jargon.php:371
+msgid ""
+"Spell Card Bonus; the score awarded from <a "
+"href=\"#term_capture\">capturing</a> a Spell Card."
+msgstr ""
+"符卡分，Spell Card Bonus；<a href=\"#term_capture\">收取</a>符卡后奖励的分"
+"数。"
+
+#: php/subpages/faq/jargon.php:374
+msgid "Shmup"
+msgstr "Shmup"
+
+#: php/subpages/faq/jargon.php:375
+msgid ""
+"Abbreviation of shoot 'em up, which is the genre of games that bullet hell "
+"is part of. <a href=\"#term_stg\">STG</a> has the same meaning."
+msgstr ""
+"弹幕射击游戏，shoot 'em up；同样意思的还有<a href=\"#term_stg\">STG</a>。"
+
+#: php/subpages/faq/jargon.php:378
+msgid "Shotgunning"
+msgstr "Shotgunning"
+
+#: php/subpages/faq/jargon.php:379
+msgid ""
+"Shooting an enemy up close. Typically done with a spreadshot to deal as much "
+"damage as possible, as most or all of the shots will hit. Also known as <a "
+"href=\"#term_pointblanking\">pointblanking</a>."
+msgstr ""
+"贴脸输出；靠近敌人进行射击，用自机全部火力造成尽可能高的伤害。也被称作<a "
+"href=\"#term_pointblanking\">pointblanking</a>。"
+
+#: php/subpages/faq/jargon.php:383
+msgid "Touhou 2: Story of Eastern Wonderland."
+msgstr "东方封魔录　～ the Story of Eastern Wonderland。"
+
+#: php/subpages/faq/jargon.php:386
+msgid "Speedkill"
+msgstr "Speedkill"
+
+#: php/subpages/faq/jargon.php:387
+msgid "Shooting down an enemy or ending a boss pattern as fast as possible."
+msgstr "速破；尽可能快地击破敌人或者BOSS的某个阶段。"
+
+#: php/subpages/faq/jargon.php:390
+msgid "Static"
+msgstr "Static"
+
+#: php/subpages/faq/jargon.php:391
+msgid ""
+"A bullet pattern that is always the exact same, and thus can be <a "
+"href=\"#term_route\">routed</a>."
+msgstr ""
+"固定（固定弹）；一段完全不会有任何变化的弹幕，可以用<a href=\"#term_route\">"
+"固定走位</a>解固定弹。"
+
+#: php/subpages/faq/jargon.php:395
+msgid "Touhou 9.5: Shoot the Bullet."
+msgstr "东方文花帖　～ Shoot the Bullet。"
+
+#: php/subpages/faq/jargon.php:398
+msgid "STG"
+msgstr "STG"
+
+#: php/subpages/faq/jargon.php:399
+msgid ""
+"<strong>S</strong>hoo<strong>t</strong>ing <strong>G</strong>ame; an acronym "
+"used to refer to shoot 'em up games, just as <a href=\"#term_shmup\">shmup</"
+"a> does. Used primarily by Japanese players."
+msgstr ""
+"弹幕射击游戏，<strong>S</strong>hoo<strong>t</strong>ing <strong>G</"
+"strong>ame；意思与<a href=\"#term_shmup\">shoot 'em up</a>相同，在中文和日文"
+"语境下常用。"
+
+#: php/subpages/faq/jargon.php:402
+msgid "Streaming"
+msgstr "Streaming"
+
+#: php/subpages/faq/jargon.php:403
+msgid ""
+"Tapping into a certain direction to dodge aimed bullets, making them move "
+"behind you in a stream-like fashion. This can be done either horizontally or "
+"vertically. If a player comes close to either edge of the screen while doing "
+"this, they will want to <a href=\"#term_restreaming\">restream</a> the "
+"pattern."
+msgstr ""
+"引狙；即往同一个方向微移去躲避自机狙。引狙可以在水平方向上引，也可以在垂直方"
+"向上引。如果玩家引狙快引到版边，通常会进行一次<a href=\"#term_restreaming\">"
+"折返</a>。"
+
+#: php/subpages/faq/jargon.php:407
+msgid "Suicide bullets"
+msgstr "Suicide bullets"
+
+#: php/subpages/faq/jargon.php:408
+msgid ""
+"Extra bullets fired by an enemy when it dies, usually aimed at the player. "
+"On Hard or Lunatic difficulty in <a href=\"#term_gfw\">GFW</a>, all enemies "
+"fire these."
+msgstr ""
+"死尸弹；敌人死亡时释放的额外子弹，通常是自机狙。在<a href=\"#term_gfw\">妖精"
+"大战争</a>的Hard和Lunatic难度中所有的敌人都会发死尸弹。"
+
+#: php/subpages/faq/jargon.php:411
+msgid "Survival spell"
+msgstr "Survival spell"
+
+#: php/subpages/faq/jargon.php:412
+msgid ""
+"A Spell Card during which the boss is invincible, forcing the player to "
+"survive until the time is up, which is referred to as a <a "
+"href=\"#term_timeout\">timeout</a>. Because of this, such a spell is also "
+"known as a 'timeout spell'."
+msgstr ""
+"时符；BOSS无敌且玩家只能通过<a href=\"#term_timeout\">全避</a>结束的符卡。时"
+"符也被称为“timeout spell”。"
+
+#: php/subpages/faq/jargon.php:416
+msgid "TAS"
+msgstr "TAS"
+
+#: php/subpages/faq/jargon.php:417
+#, fuzzy
+#| msgid ""
+#| "Tool-Assisted Superplay; used to refer not to speedruns, but to runs that "
+#| "used external tools, such as slowing down the game, savestates and <a "
+#| "href=\"#term_pausebuffering\">pause buffering</a>,\n"
+#| "                which is often done to see what is theoretically possible "
+#| "in a game."
+msgid ""
+"Tool-Assisted Superplay; used to refer not to speedruns, but to runs that "
+"used external tools, such as slowing down the game, savestates and <a "
+"href=\"#term_pausebuffering\">pause buffering</a>,\n"
+"            which is often done to see what is theoretically possible in a "
+"game."
+msgstr ""
+"Tool-Assisted Superplay（S指代speedrun则专指速通）；用外部工具（如变速、存档"
+"和<a href=\"#term_pausebuffering\">暂停滥用</a>）来达成一些理论可行（不一定手"
+"操可行）的游戏操作。"
+
+#: php/subpages/faq/jargon.php:422
+msgid "Touhou 13: Ten Desires."
+msgstr "东方神灵庙　～ Ten Desires。"
+
+#: php/subpages/faq/jargon.php:425
+msgid "Thcrap"
+msgstr "Thcrap"
+
+#: php/subpages/faq/jargon.php:426
+#, fuzzy
+#| msgid ""
+#| "<strong>T</strong>ou<strong>h</strong>ou <strong>C</strong>ommunity "
+#| "<strong>R</strong>eliant <strong>A</strong>utomatic <strong>P</"
+#| "strong>atcher, a translation and modding tool; see <a "
+#| "href=\"tools#thcrap\">Touhou Patches and Tools</a> for more information. "
+#| "Not to be confused with <a href=\"#term_thprac\">thprac</a>."
+msgid ""
+"<strong>T</strong>ou<strong>h</strong>ou <strong>C</strong>ommunity "
+"<strong>R</strong>eliant <strong>A</strong>utomatic <strong>P</"
+"strong>atcher, a translation and modding tool; see <a href=\"/"
+"tools#thcrap\">Touhou Patches and Tools</a> for more information. Not to be "
+"confused with <a href=\"#term_thprac\">thprac</a>."
+msgstr ""
+"<strong>T</strong>ou<strong>h</strong>ou <strong>C</strong>ommunity "
+"<strong>R</strong>eliant <strong>A</strong>utomatic <strong>P</"
+"strong>atcher；一个翻译和mod工具，参阅<a href=\"tools#thcrap\">Touhou "
+"Patches and Tools</a>页面查看更多信息。注意不要和<a "
+"href=\"#term_thprac\">thprac混淆</a>。"
+
+#: php/subpages/faq/jargon.php:430
+msgid "Thprac"
+msgstr "Thprac"
+
+#: php/subpages/faq/jargon.php:431
+#, fuzzy
+#| msgid ""
+#| "Universal practice tool; see <a href=\"tools#thprac\">Touhou Patches and "
+#| "Tools</a> for more information. Not to be confused with <a "
+#| "href=\"#term_thcrap\">thcrap</a>."
+msgid ""
+"Universal practice tool; see <a href=\"/tools#thprac\">Touhou Patches and "
+"Tools</a> for more information. Not to be confused with <a "
+"href=\"#term_thcrap\">thcrap</a>."
+msgstr ""
+"全作通用练习器；参阅<a href=\"tools#thprac\">Touhou Patches and Tools</a>页面"
+"查看更多信息。注意不要和<a href=\"#term_thcrap\">thcrap</a>混淆。"
+
+#: php/subpages/faq/jargon.php:434
+msgid "Timelock"
+msgstr "Timelock"
+
+#: php/subpages/faq/jargon.php:435
+msgid ""
+"A feature in <a href=\"#term_thprac\">thprac</a> that allows the player to "
+"lock the timer on a boss pattern, so that it never ends. Typically used to "
+"practice dodging skills."
+msgstr ""
+"锁时；指<a href=\"#term_thprac\">thprac</a>中的一个功能，可以让玩家锁定BOSS阶"
+"段的时间，让该阶段永远不会结束。通常用锁时来练习某个弹幕的避弹。"
+
+#: php/subpages/faq/jargon.php:438
+msgid "Timeout"
+msgstr "Timeout"
+
+#: php/subpages/faq/jargon.php:439
+msgid ""
+"Surviving a pattern until the time is up. <a "
+"href=\"#term_survivalspell\">Survival spells</a>, Spell Cards that force "
+"this on the player, are also called timeout spells."
+msgstr ""
+"全避；扭一段弹幕直到时间结束。需要玩家强制全避才能通过的符卡被称为<a "
+"href=\"#term_survivalspell\">时符</a>。"
+
+#: php/subpages/faq/jargon.php:442
+msgid "Timeout phase"
+msgstr "Timeout phase"
+
+#: php/subpages/faq/jargon.php:443
+msgid ""
+"A (very) hard phase of a Spell Card that starts when you get close to timing "
+"it out. They typically start when the timer is at 30 seconds and they are "
+"typically found on final Spell Cards in final boss or Extra boss fights."
+msgstr ""
+"狂暴阶段；即某一张特定符卡临近时间结束时，进入的一个非常难的阶段。通常狂暴在"
+"终BOSS和Extra关BOSS的终符最后30秒出现。"
+
+#: php/subpages/faq/jargon.php:447
+msgid "TO"
+msgstr "TO"
+
+#: php/subpages/faq/jargon.php:448
+msgid "(Uncommon) see <a href=\"#term_timeout\">timeout</a>."
+msgstr "全避；（不常用）见<a href=\"#term_timeout\">timeout</a>。"
+
+#: php/subpages/faq/jargon.php:451
+msgid "Token"
+msgstr "Token"
+
+#: php/subpages/faq/jargon.php:452
+msgid ""
+"Refers to either a small <a href=\"#term_ufo\">UFO</a> or a beast in <a "
+"href=\"#term_wbawc\">WBaWC</a>, both of which float around the screen."
+msgstr ""
+"道具碎片；指代<a href=\"#term_ufo\">星莲船</a>中的飞碟碎片和<a "
+"href=\"#term_wbawc\">鬼形兽</a>中的动物灵碎片。"
+
+#: php/subpages/faq/jargon.php:456
+msgid "Touhou 12: Undefined Fantastic Object."
+msgstr "东方星莲船　～ Undefined Fantastic Object。"
+
+#: php/subpages/faq/jargon.php:460
+msgid "Touhou 18: Unconnected Marketeers."
+msgstr "东方虹龙洞　～ Unconnected Marketeers。"
+
+#: php/subpages/faq/jargon.php:463
+msgid "Underflow"
+msgstr "Underflow"
+
+#: php/subpages/faq/jargon.php:464
+msgid ""
+"When a negative number is converted to a format that does not have negative "
+"numbers, causing a very high positive number. Notoriously occurs in <a "
+"href=\"#term_ddc\">DDC</a> and <a href=\"#term_isc\">ISC</a>, in which the "
+"Spell Card Bonus can be made negative, which, if the score becomes negative "
+"when the bonus is added, increases the score to 9,999,999,990, a <a "
+"href=\"#term_counterstop\">counterstop</a>. Not to be confused with <a "
+"href=\"#term_overflow\">overflow</a>."
+msgstr ""
+"下溢；数值出现负数，而低于表示下限导致显示异常（显示为一个特别大的数）。在<a "
+"href=\"#term_ddc\">辉针城</a>和<a href=\"#term_isc\">弹幕天邪鬼</a>中，有的符"
+"卡分会出现负数，如果获得负数符卡分并且让分数低于0会显示为9,999,999,990，也就"
+"是爆分。注意不要和<a href=\"#term_counterstop\">爆分</a>和<a "
+"href=\"#term_overflow\">上溢</a>混淆。"
+
+#: php/subpages/faq/jargon.php:470
+msgid "Touhou 16.5: Violet Detector."
+msgstr "秘封噩梦日记　～ Violet Detector。"
+
+#: php/subpages/faq/jargon.php:473
+msgid "Wall"
+msgstr "Wall"
+
+#: php/subpages/faq/jargon.php:474
+msgid ""
+"A cluster of bullets with no space that a hitbox can pass through in between "
+"them, although it can also refer to a cluster of bullets that <em>looks</em> "
+"like that."
+msgstr ""
+"墙；即一排以自机判定无法穿过的弹幕，当然有时候也指<em>看上去</em>无法穿过的弹"
+"幕。"
+
+#: php/subpages/faq/jargon.php:478
+msgid "Touhou 17: Wily Beast and Weakest Creature."
+msgstr "东方鬼形兽　～ Wily Beast and Weakest Creature。"
+
+#: php/subpages/faq/jargon.php:482
+msgid "Common Spell Card / Pattern Acronyms"
+msgstr "符卡/特殊弹幕"
+
+#: php/subpages/faq/jargon.php:483
+msgid ""
+"These acronyms for particular patterns usually refer to the Lunatic "
+"difficulty version of the abbreviated Spell Card or pattern."
+msgstr "下列是一些Lunatic难度下常见符卡或弹幕的缩写。"
+
+#: php/subpages/faq/jargon.php:487
+msgid "Acronym"
+msgstr "缩写"
+
+#: php/subpages/faq/jargon.php:488
+msgid "Spell Card / Pattern"
+msgstr "符卡/特殊弹幕"
+
+#: php/subpages/faq/jargon.php:493
+msgid "AoJ"
+msgstr "AoJ"
+
+#: php/subpages/faq/jargon.php:494
+msgid ""
+"\"Aura of Justice\", Shou's second spell in <a href=\"#term_ufo\">UFO</a>."
+msgstr ""
+"光符「正义之威光」，\"Aura of Justice\"；<a href=\"#term_ufo\">星莲船</a>中，"
+"星的第2张符卡。"
+
+#: php/subpages/faq/jargon.php:497
+msgid "BD"
+msgstr "BD"
+
+#: php/subpages/faq/jargon.php:498
+msgid ""
+"\"Buddhist Diamond\", Kaguya's second Spell Card in <a href=\"#term_in\">IN</"
+"a>."
+msgstr ""
+"神宝「Buddhist Diamond」（佛体的金刚石）；<a href=\"#term_in\">永夜抄</a>中，"
+"辉夜的第2张符卡。"
+
+#: php/subpages/faq/jargon.php:501
+msgid "BDB"
+msgstr "BDB"
+
+#: php/subpages/faq/jargon.php:502
+msgid ""
+"\"Brilliant Dragon Bullet\", Kaguya's first Spell Card in <a "
+"href=\"#term_in\">IN</a>."
+msgstr ""
+"神宝「Brilliant Dragon Bullet」（耀眼的龙玉）；<a href=\"#term_in\">永夜抄</"
+"a>中，辉夜的第1张符卡。"
+
+#: php/subpages/faq/jargon.php:505
+msgid "BLS"
+msgstr "BLS"
+
+#: php/subpages/faq/jargon.php:506
+msgid ""
+"\"Blue Lady Show\", Raiko's <a href=\"#term_survivalspell\">survival Spell "
+"Card</a> in <a href=\"#term_ddc\">DDC</a>."
+msgstr ""
+"「Blue Lady Show」（蓝色佳人的演出）；<a href=\"#term_ddc\">辉针城中</a>，雷"
+"鼓的<a href=\"#term_survivalspell\">时符</a>。"
+
+#: php/subpages/faq/jargon.php:509
+msgid "BoLaD"
+msgstr "BoLaD"
+
+#: php/subpages/faq/jargon.php:510
+msgid ""
+"\"Border of Life and Death\", Yukari's semifinal Spell Card in <a "
+"href=\"#term_pcb\">PCB</a>."
+msgstr ""
+"结界「生与死的境界」，\"Border of Life and Death\"；<a href=\"#term_pcb\">妖"
+"妖梦</a>中，紫的倒数第2张符卡。"
+
+#: php/subpages/faq/jargon.php:513
+msgid "Books"
+msgstr "Books"
+
+#: php/subpages/faq/jargon.php:514
+msgid ""
+"The section of <a href=\"#term_eosd\">EoSD</a> Stage 4 where books spawn in "
+"random locations and repeatedly shoot green bullets."
+msgstr ""
+"魔法书；<a href=\"#term_eosd\">红魔乡</a>中，四面前半道中一直发射绿色子弹的六"
+"本书。"
+
+#: php/subpages/faq/jargon.php:517
+msgid "BoWaP"
+msgstr "BoWaP"
+
+#: php/subpages/faq/jargon.php:518
+msgid ""
+"\"Border of Wave and Particle\", Satori's final Spell Card if you use ReimuA "
+"in <a href=\"#term_sa\">SA</a>."
+msgstr ""
+"回忆「波与粒的境界」，\"Border of Wave and Particle\"；<a href=\"#term_sa\">"
+"地灵殿</a>中，觉的终符（灵梦A）。"
+
+#: php/subpages/faq/jargon.php:521
+msgid "Cats Walk"
+msgstr "Cats Walk"
+
+#: php/subpages/faq/jargon.php:522
+msgid ""
+"\"Vengeful Cat Spirit's Erratic Step\", Rin's midboss Spell Card in <a "
+"href=\"#term_sa\">SA</a> Stage 5. This is the name on Easy and Normal only, "
+"but it's used for Lunatic regardless."
+msgstr ""
+"猫符「怨灵猫乱步」，\"Vengeful Cat Spirit's Erratic Step\"；<a "
+"href=\"#term_sa\">地灵殿</a>中，阿燐的五面道中符。"
+
+#: php/subpages/faq/jargon.php:525
+msgid "CC"
+msgstr "CC"
+
+#: php/subpages/faq/jargon.php:526
+msgid ""
+"\"Complete Clarification\", Shou's final Spell Card in <a "
+"href=\"#term_ufo\">UFO</a>."
+msgstr ""
+"「Complete Clarification」（完全净化）；<a href=\"#term_ufo\">星莲船</a>中，"
+"星的终符。"
+
+#: php/subpages/faq/jargon.php:529
+msgid "DBDB"
+msgstr "DBDB"
+
+#: php/subpages/faq/jargon.php:530
+msgid ""
+"\"Double Black Death Butterfly\", Satori's first ReimuA-specific Spell Card "
+"in <a href=\"#term_sa\">SA</a>."
+msgstr ""
+"回忆「二重黑死蝶」，\"Double Black Death Butterfly\"；<a href=\"#term_sa\">地"
+"灵殿</a>中，觉的第3张符卡（灵梦A）。"
+
+#: php/subpages/faq/jargon.php:533
+msgid "DR"
+msgstr "DR"
+
+#: php/subpages/faq/jargon.php:534
+msgid ""
+"\"Devil's Recitation\", Byakuren's fourth Spell Card in <a "
+"href=\"#term_ufo\">UFO</a>."
+msgstr ""
+"大魔法「魔神复诵」，\"Devil's Recitation\"；<a href=\"#term_ufo\">星莲船</a>"
+"中，白莲的第4张符卡。"
+
+#: php/subpages/faq/jargon.php:537
+msgid "FIN"
+msgstr "FIN"
+
+#: php/subpages/faq/jargon.php:538
+msgid ""
+"\"Flying Insect's Nest\", Satori's second ReimuA-specific Spell Card in <a "
+"href=\"#term_sa\">SA</a>."
+msgstr ""
+"回忆「飞行虫之巢」，\"Flying Insect's Nest\"；<a href=\"#term_sa\">地灵殿</a>"
+"中，觉的第4张符卡（灵梦A）。"
+
+#: php/subpages/faq/jargon.php:541
+msgid "GC"
+msgstr "GC"
+
+#: php/subpages/faq/jargon.php:542
+msgid ""
+"\"Geometric Creature\", Keiki's penultimate Spell Card in <a "
+"href=\"#term_wbawc\">WBaWC</a>."
+msgstr ""
+"「Geometric Creature」（几何造物）；<a href=\"#term_wbawc\">鬼形兽</a>中，袿"
+"姬的倒数第2张符卡。"
+
+#: php/subpages/faq/jargon.php:545
+msgid "Ghost Wheels"
+msgstr "Ghost Wheels"
+
+#: php/subpages/faq/jargon.php:546
+msgid ""
+"\"The Needles of Yore and the Vengeful Spirits in Pain\", Rin's third Spell "
+"Card in <a href=\"#term_sa\">SA</a>. Also known as 'needles' or just "
+"'wheels'."
+msgstr ""
+"赎罪「古时之针与痛楚的怨灵」，\"The Needles of Yore and the Vengeful Spirits "
+"in Pain\"；<a href=\"#term_sa\">地灵殿</a>中，阿燐的第3张符卡，也被称为"
+"\"\"needles\"或者\"wheels\"。"
+
+#: php/subpages/faq/jargon.php:550
+msgid ""
+"\"Good Omen\", Byakuren's first Spell Card in <a href=\"#term_ufo\">UFO</a>. "
+"Not to be confused with <a href=\"#term_gameover\">game over</a>."
+msgstr ""
+"吉兆「极乐的紫色云路」，\"Good Omen\"；<a href=\"#term_ufo\">星莲船</a>中，白"
+"莲的第1张符卡。"
+
+#: php/subpages/faq/jargon.php:553
+msgid "GT"
+msgstr "GT"
+
+#: php/subpages/faq/jargon.php:554
+msgid ""
+"\"Greatest Treasure\", Nazrin's midboss Spell Card in <a "
+"href=\"#term_ufo\">UFO</a> Stage 5."
+msgstr ""
+"宝塔「Greatest Treasure」（最优良的宝物）；<a href=\"#term_ufo\">星莲船</a>"
+"中，娜兹玲的五面道中符。"
+
+#: php/subpages/faq/jargon.php:557
+msgid "HBCB"
+msgstr "HBCB"
+
+#: php/subpages/faq/jargon.php:558
+msgid ""
+"\"Hidden Breezy Cherry Blossom\", Okina's final Spell Card if you use the "
+"Spring season in <a href=\"#term_hsifs\">HSiFS</a>. Also known as 'BCB'."
+msgstr ""
+"「里·Breezy Cherry Blossom」（里·风吹樱花）；<a href=\"#term_hsifs\">天空璋</"
+"a>中，隐岐奈的终符（春季节支援），也被称作\"BCB\"。"
+
+#: php/subpages/faq/jargon.php:561
+msgid "HCFW"
+msgstr "HCFW"
+
+#: php/subpages/faq/jargon.php:562
+msgid ""
+"\"Hidden Crazy Fall Wind\", Okina's final Spell Card if you use the Autumn "
+"season in <a href=\"#term_hsifs\">HSiFS</a>. Also known as 'CFW'."
+msgstr ""
+"「里·Crazy Fall Wind」（里·疯狂秋风）；<a href=\"#term_hsifs\">天空璋</a>中，"
+"隐岐奈的终符（秋季节支援），也被称作\"CFW\"。"
+
+#: php/subpages/faq/jargon.php:565
+msgid "HEW"
+msgstr "HEW"
+
+#: php/subpages/faq/jargon.php:566
+msgid ""
+"\"Hidden Extreme Winter\", Okina's final Spell Card if you use the Winter "
+"season in <a href=\"#term_hsifs\">HSiFS</a>. Also known as 'EW'."
+msgstr ""
+"「里·Extreme Winter」（里·极端寒冬）；<a href=\"#term_hsifs\">天空璋</a>中，"
+"隐岐奈的终符（冬季节支援），也被称作\"EW\"。"
+
+#: php/subpages/faq/jargon.php:569
+msgid "HGS"
+msgstr "HGS"
+
+#: php/subpages/faq/jargon.php:570
+msgid ""
+"\"Hell God Sword\", Youmu's first Spell Card in <a href=\"#term_pcb\">PCB</"
+"a>."
+msgstr ""
+"狱神剑「业风神闪斩」，\"Hell God Sword\"；<a href=\"#term_pcb\">妖妖梦</a>"
+"中，妖梦的第1张符卡"
+
+#: php/subpages/faq/jargon.php:573
+msgid "HPSI"
+msgstr "HPSI"
+
+#: php/subpages/faq/jargon.php:574
+msgid ""
+"\"Hidden Perfect Summer Ice\", Okina's final Spell Card if you use the "
+"Summer season in <a href=\"#term_hsifs\">HSiFS</a>. Also known as 'PSI'."
+msgstr ""
+"「里·Perfect Summer Ice」（里·完美夏冰）；<a href=\"#term_hsifs\">天空璋</a>"
+"中，隐岐奈的终符（夏季节支援），也被称作\"PSI\"。"
+
+#: php/subpages/faq/jargon.php:577
+msgid "HJ"
+msgstr "HJ"
+
+#: php/subpages/faq/jargon.php:578
+msgid ""
+"\"Hourai Jewel\", Kaguya's final Spell Card that is not a <a "
+"href=\"#term_ls\">Last Spell</a> in <a href=\"#term_in\">IN</a>."
+msgstr ""
+"神宝「蓬莱的玉枝　-梦色之乡-」，\"Hourai Jewel\"；<a href=\"#term_in\">永夜抄"
+"</a>中，辉夜的终符（不是<a href=\"#term_ls\">LS</a>）。"
+
+#: php/subpages/faq/jargon.php:581
+msgid "HMD"
+msgstr "HMD"
+
+#: php/subpages/faq/jargon.php:582
+msgid ""
+"\"Honest Man's Death\", Mokou's fifth Spell Card in <a href=\"#term_in\">IN</"
+"a>."
+msgstr ""
+"灭罪「正直者之死」，\"Honest Man's Death\"；<a href=\"#term_in\">永夜抄</a>"
+"中，妹红的第5张符卡。"
+
+#: php/subpages/faq/jargon.php:585
+msgid "ID"
+msgstr "ID"
+
+#: php/subpages/faq/jargon.php:586
+msgid ""
+"\"Idola Diabolus\", Keiki's final Spell Card in <a "
+"href=\"#term_wbawc\">WBaWC</a>."
+msgstr ""
+"「Idola Diabolus」（造形恶魔）；<a href=\"#term_wbawc\">鬼形兽</a>中，袿姬的"
+"最后一张符卡。"
+
+#: php/subpages/faq/jargon.php:589
+msgid "IS"
+msgstr "IS"
+
+#: php/subpages/faq/jargon.php:590
+msgid ""
+"\"Imperishable Shooting\", Mokou's final Spell Card in <a "
+"href=\"#term_in\">IN</a>."
+msgstr ""
+"「Imperishable Shooting」（不朽的弹幕）；<a href=\"#term_in\">永夜抄</a>中，"
+"妹红的<a href=\"#term_ls\">LS</a>。"
+
+#: php/subpages/faq/jargon.php:593
+msgid "KD"
+msgstr "KD"
+
+#: php/subpages/faq/jargon.php:594
+msgid ""
+"\"Killing Doll\", Sakuya's final Spell Card in <a href=\"#term_eosd\">EoSD</"
+"a>."
+msgstr ""
+"女仆秘技「杀人玩偶」，\"Killing Doll\"；<a href=\"#term_eosd\">红魔乡</a>中，"
+"咲夜的终符。"
+
+#: php/subpages/faq/jargon.php:597
+msgid "KKS"
+msgstr "KKS"
+
+#: php/subpages/faq/jargon.php:598
+msgid ""
+"\"King Kraken Strike\", Ichirin's first Spell Card in <a "
+"href=\"#term_ufo\">UFO</a>."
+msgstr ""
+"连打「帝王海妖来袭」，\"King Kraken Strike\"；<a href=\"#term_ufo\">星莲船</"
+"a>中，一轮的第1张符卡。"
+
+#: php/subpages/faq/jargon.php:601
+msgid "LC"
+msgstr "LC"
+
+#: php/subpages/faq/jargon.php:602
+msgid ""
+"\"Linear Creature\", Keiki's third Spell Card in <a "
+"href=\"#term_wbawc\">WBaWC</a>. Also known as \"lines\"."
+msgstr ""
+"线形「Linear Creature」（线形造物）；<a href=\"#term_wbawc\">鬼形兽</a>中，袿"
+"姬的第3张符卡。"
+
+#: php/subpages/faq/jargon.php:605
+msgid "LFS"
+msgstr "LFS"
+
+#: php/subpages/faq/jargon.php:606
+msgid ""
+"\"Legendary Flying Saucer\", Byakuren's final Spell Card in <a "
+"href=\"#term_ufo\">UFO</a>."
+msgstr ""
+"飞钵「传说的飞空圆盘」，\"Legendary Flying Saucer\"；<a href=\"#term_ufo\">星"
+"莲船</a>中，白莲的终符。"
+
+#: php/subpages/faq/jargon.php:609
+msgid "MDSW"
+msgstr "MDSW"
+
+#: php/subpages/faq/jargon.php:610
+msgid ""
+"\"Modern Divine Spirit World\", Junko's third Spell Card in <a "
+"href=\"#term_lolk\">LoLK</a>."
+msgstr ""
+"「现代的神灵界」，\"Modern Divine Spirit World\"；<a href=\"#term_lolk\">绀珠"
+"传</a>中，纯狐的第3张符卡。"
+
+#: php/subpages/faq/jargon.php:613
+msgid "NDS"
+msgstr "NDS"
+
+#: php/subpages/faq/jargon.php:614
+msgid ""
+"\"Newborn Divine Spirit\", Miko's final Spell Card in <a "
+"href=\"#term_td\">TD</a>."
+msgstr ""
+"「新生的神灵」，\"Newborn Divine Spirit\"；<a href=\"#term_td\">神灵庙</a>"
+"中，神子的终符。"
+
+#: php/subpages/faq/jargon.php:617
+msgid "Nueball"
+msgstr "Nueball"
+
+#: php/subpages/faq/jargon.php:618
+msgid ""
+"Refers to both the Stage 4 midboss and Stage 6 midboss in <a "
+"href=\"#term_ufo\">UFO</a>."
+msgstr "封兽球；<a href=\"#term_ufo\">星莲船</a>中，四面和六面的道中BOSS。"
+
+#: php/subpages/faq/jargon.php:621
+msgid "Peta"
+msgstr "Peta"
+
+#: php/subpages/faq/jargon.php:622
+msgid ""
+"\"Peta Flare\", Utsuho's second Spell Card in <a href=\"#term_sa\">SA</a>."
+msgstr ""
+"爆符「Peta-Flare」（千兆耀斑）；<a href=\"#term_sa\">地灵殿</a>中，空的第2张"
+"符卡。"
+
+#: php/subpages/faq/jargon.php:625
+msgid "PDH"
+msgstr "PDH"
+
+#: php/subpages/faq/jargon.php:626
+msgid ""
+"\"Pristine Danmaku Hell\", Junko's final Spell Card in <a "
+"href=\"#term_lolk\">LoLK</a>."
+msgstr ""
+"纯符「纯粹的弹幕地狱」，\"Pristine Danmaku Hell\"；<a href=\"#term_lolk\">绀"
+"珠传</a>中，纯狐的终符。"
+
+#: php/subpages/faq/jargon.php:629
+msgid "PWG"
+msgstr "PWG"
+
+#: php/subpages/faq/jargon.php:630
+msgid ""
+"\"Peerless Wind God\", Aya's <a href=\"#term_survivalspell\">survival Spell "
+"Card</a> in <a href=\"#term_mof\">MoF</a>."
+msgstr ""
+"「无双风神」，\"Peerless Wind God\"；<a href=\"#term_mof\">风神录</a>中，文的"
+"<a href=\"#term_survivalspell\">时符</a>。"
+
+#: php/subpages/faq/jargon.php:633
+msgid "QED"
+msgstr "QED"
+
+#: php/subpages/faq/jargon.php:634
+msgid ""
+"QED \"Ripples of 495 Years\", Flandre's final Spell Card in <a "
+"href=\"#term_eosd\">EoSD</a>."
+msgstr ""
+"QED「495年的波纹」，QED \"Ripples of 495 Years\"；<a href=\"#term_eosd\">红魔"
+"乡</a>中，芙兰朵露的终符。"
+
+#: php/subpages/faq/jargon.php:637
+msgid "Rain"
+msgstr "Rain"
+
+#: php/subpages/faq/jargon.php:638
+msgid ""
+"The section of <a href=\"#term_lolk\">LoLK</a> Stage 6 where blue bullets "
+"spawn in a rain pattern, combined with aimed red stars."
+msgstr ""
+"流星雨；<a href=\"#term_lolk\">绀珠传</a>中，六面道中发射数列蓝色子弹和红色星"
+"弹自机狙的阶段。"
+
+#: php/subpages/faq/jargon.php:641
+msgid "RB"
+msgstr "RB"
+
+#: php/subpages/faq/jargon.php:642
+msgid ""
+"\"Resurrection Butterfly\", Yuyuko's final Spell Card in <a "
+"href=\"#term_pcb\">PCB</a>."
+msgstr ""
+"「反魂蝶 -八分咲-」，\"Resurrection Butterfly\"；<a href=\"#term_pcb\">妖妖梦"
+"</a>中，幽幽子的终符。"
+
+#: php/subpages/faq/jargon.php:645
+msgid "Rings"
+msgstr "Rings"
+
+#: php/subpages/faq/jargon.php:646
+msgid "The final section of <a href=\"#term_lls\">LLS</a> Stage 5."
+msgstr "波纹阵；<a href=\"#term_lls\">幻想乡</a>中，五面道中闭幕。"
+
+#: php/subpages/faq/jargon.php:649
+msgid "Rings of Death"
+msgstr "Rings of Death"
+
+#: php/subpages/faq/jargon.php:650
+msgid "Mokou's final non in <a href=\"#term_in\">IN</a>."
+msgstr "<a href=\"#term_in\">永夜抄</a>中，妹红的第8张非符。"
+
+#: php/subpages/faq/jargon.php:653
+msgid "RRoP"
+msgstr "RRoP"
+
+#: php/subpages/faq/jargon.php:654
+msgid ""
+"\"Rainbow Ring of People\", Chimata's survival Spell Card in <a "
+"href=\"#term_um\">UM</a>."
+msgstr ""
+"「虹人环」，\"Rainbow Ring of People\"；<a href=\"#term_um\">虹龙洞</a>中，千"
+"亦的<a href=\"#term_survivalspell\">时符</a>。"
+
+#: php/subpages/faq/jargon.php:657
+msgid "RTG"
+msgstr "RTG"
+
+#: php/subpages/faq/jargon.php:658
+msgid ""
+"\"Radiant Treasure Gun\", Shou's first Spell Card in <a "
+"href=\"#term_ufo\">UFO</a>."
+msgstr ""
+"宝塔「Radiant Treasure Gun」（闪亮宝枪）；<a href=\"#term_ufo\">星莲船</a>"
+"中，星的第1张符卡。"
+
+#: php/subpages/faq/jargon.php:661
+msgid "RW"
+msgstr "RW"
+
+#: php/subpages/faq/jargon.php:662
+msgid ""
+"\"Rising World\", Kaguya's final <a href=\"#term_ls\">Last Spell</a> in <a "
+"href=\"#term_in\">IN</a>."
+msgstr ""
+"「永夜归返　-世间开明-」，\"Rising World\"；<a href=\"#term_in\">永夜抄</a>"
+"中，辉夜的最后一张<a href=\"#term_ls\">LS</a>。"
+
+#: php/subpages/faq/jargon.php:665
+msgid "SG"
+msgstr "SG"
+
+#: php/subpages/faq/jargon.php:666
+msgid ""
+"\"Scarlet Gensokyo\", Remilia's final Spell Card in <a "
+"href=\"#term_eosd\">EoSD</a>. Also commonly called 'Gensokyo'."
+msgstr ""
+"「红色的幻想乡」，\"Scarlet Gensokyo\"；<a href=\"#term_eosd\">红魔乡</a>中，"
+"蕾米莉亚的终符。"
+
+#: php/subpages/faq/jargon.php:669
+msgid "SM"
+msgstr "SM"
+
+#: php/subpages/faq/jargon.php:670
+msgid ""
+"\"Scarlet Meister\", Remilia's semifinal Spell Card in <a "
+"href=\"#term_eosd\">EoSD</a>. Also commonly called 'Meister'."
+msgstr ""
+"红符「Scarlet Meister」（绯红之主）；<a href=\"#term_eosd\">红魔乡</a>中，蕾"
+"米莉亚的第4张符卡。"
+
+#: php/subpages/faq/jargon.php:673
+msgid "Spam"
+msgstr "Spam"
+
+#: php/subpages/faq/jargon.php:674
+msgid ""
+"If said without context, typically refers to the final section of Stage 6 in "
+"<a href=\"#term_pcb\">PCB</a>. It can also refer to any other \"bullet "
+"spam\" stage section, typically with added context (such as \"HSiFS Stage 4 "
+"spam\")."
+msgstr ""
+"如果不结合语境特别说明，spam特指<a href=\"#term_pcb\">妖妖梦</a>的六面道中。"
+"此外，结合语境spam也可指代任何有“一大堆乱弹”的道中（例如\"HSiFS Stage 4 "
+"spam\"，天空璋四面道中乱弹）"
+
+#: php/subpages/faq/jargon.php:677
+msgid "Subsun"
+msgstr "Subsun"
+
+#: php/subpages/faq/jargon.php:678
+msgid ""
+"\"Subterranean Sun\", Utsuho's final Spell Card in <a href=\"#term_sa\">SA</"
+"a>."
+msgstr ""
+"「Subterranean Sun」（地底太阳）；<a href=\"#term_sa\">地灵殿</a>中，空的终"
+"符。"
+
+#: php/subpages/faq/jargon.php:681
+msgid "Sumizome"
+msgstr "Sumizome"
+
+#: php/subpages/faq/jargon.php:682
+msgid ""
+"\"Perfect Ink-Black Cherry Blossom -Bloom-\", Yuyuko's penultimate Spell "
+"Card in <a href=\"#term_pcb\">PCB</a>. \"Sumizome\" comes from the old "
+"English translation patch."
+msgstr ""
+"樱符「完全墨染的樱花 -开花-」，\"Perfect Ink-Black Cherry Blossom -Bloom-\"；"
+"<a href=\"#term_pcb\">妖妖梦</a>中，幽幽子的第5张符卡。Sumizome源自老版本英文"
+"符卡翻译。"
+
+#: php/subpages/faq/jargon.php:685
+msgid "TSS"
+msgstr "TSS"
+
+#: php/subpages/faq/jargon.php:686
+msgid ""
+"\"Trembling Shivering Star\", Junko's fourth Spell Card in <a "
+"href=\"#term_lolk\">LoLK</a>."
+msgstr ""
+"「战栗的寒冷之星」，\"Trembling Shivering Star\"；<a href=\"#term_lolk\">绀珠"
+"传</a>中，纯狐的第4张符卡。"
+
+#: php/subpages/faq/jargon.php:689
+msgid "UNR"
+msgstr "UNR"
+
+#: php/subpages/faq/jargon.php:690
+msgid ""
+"\"Uncontainable Nuclear Reaction\", Utsuho's first Spell Card in <a "
+"href=\"#term_sa\">SA</a>."
+msgstr ""
+"核热「核反应失控」，\"Uncontainable Nuclear Reaction\"；<a href=\"#term_sa\">"
+"地灵殿</a>中，空的第1张符卡。"
+
+#: php/subpages/faq/jargon.php:693
+msgid "VI"
+msgstr "VI"
+
+#: php/subpages/faq/jargon.php:694
+msgid ""
+"\"Vampire Illusion\", Remilia's third Spell Card in <a "
+"href=\"#term_eosd\">EoSD</a>."
+msgstr ""
+"神术「吸血鬼幻想」，\"Vampire Illusion\"；<a href=\"#term_eosd\">红魔乡</a>"
+"中，蕾米莉亚的第3张符卡。"
+
+#: php/subpages/faq/jargon.php:697
+msgid "VoWG"
+msgstr "VoWG"
+
+#: php/subpages/faq/jargon.php:698
+msgid ""
+"\"Virtue of Wind God\", Kanako's final Spell Card in <a "
+"href=\"#term_mof\">MoF</a>. Occasionally it will be called 'DVoWG' (D for "
+"Divine), because of either the translation as of 2020 or the old English "
+"translation patch."
+msgstr ""
+"「风神之神德」，\"Virtue of Wind God\"；<a href=\"#term_mof\">风神录</a>中，"
+"神奈子的终符，有时也会被称为\"DVoWG\"（D是Divine，此简称源自老版本的英文符卡"
+"翻译）。"
+
+#: php/subpages/faq/jargon.php:702
+msgid "YDL"
+msgstr "YDL"
+
+#: php/subpages/faq/jargon.php:703
+msgid ""
+"\"Young Demon Lord\", Remilia's first Spell Card in <a "
+"href=\"#term_eosd\">EoSD</a>."
+msgstr ""
+"神罚「年幼的恶魔之王」，\"Young Demon Lord\"；<a href=\"#term_eosd\">红魔乡</"
+"a>中，蕾米莉亚的第1张符卡。"
+
+#: php/subpages/faq/jargon.php:706
+msgid "YGB"
+msgstr "YGB"
+
+#: php/subpages/faq/jargon.php:707
+msgid ""
+"\"You Grow Bigger!\", Shinmyoumaru's <a "
+"href=\"#term_survivalspell\">survival Spell Card</a> in <a "
+"href=\"#term_ddc\">DDC</a>."
+msgstr ""
+"小槌「你给我变大吧」，\"You Grow Bigger!\"；<a href=\"#term_ddc\">辉针城</a>"
+"中，针妙丸的<a href=\"#term_survivalspell\">时符</a>。"
+
+#: php/subpages/faq/jargon.php:710
+msgid "YYDO"
+msgstr "YYDO"
+
+#: php/subpages/faq/jargon.php:711
+msgid ""
+"\"Yin-Yang Divine Orbs\", Misumaru's first Spell Card in <a "
+"href=\"#term_um\">UM</a>."
+msgstr ""
+"玉符「阴阳神玉」，\"Yin-Yang Divine Orbs\"；<a href=\"#term_um\">虹龙洞</a>"
+"中，魅须丸的第1张符卡。"
+
+#: php/subpages/faq/jargon.php:719
+msgid "Name"
+msgstr "姓名"
+
+#: php/subpages/faq/jargon.php:720 php/subpages/faq/jargon.php:753
+msgid "Bullet"
+msgstr "铳弹"
+
+#: php/subpages/faq/jargon.php:725
+msgid "Amulet"
+msgstr "札弹"
+
+#: php/subpages/faq/jargon.php:729
+msgid "Arrow"
+msgstr "箭弹"
+
+#: php/subpages/faq/jargon.php:733
+msgid "Arrowhead"
+msgstr "鳞弹"
+
+#: php/subpages/faq/jargon.php:737
+msgid "Bacteria, dark rice"
+msgstr "杆菌弹"
+
+#: php/subpages/faq/jargon.php:741
+msgid "Ball"
+msgstr "小玉"
+
+#: php/subpages/faq/jargon.php:745
+msgid "Ball (outlined)"
+msgstr "小玉（轮廓）"
+
+#: php/subpages/faq/jargon.php:749
+msgid "Bubble"
+msgstr "大玉"
+
+#: php/subpages/faq/jargon.php:757
+msgid "Butterfly"
+msgstr "蝶弹"
+
+#: php/subpages/faq/jargon.php:761
+msgid "Coin"
+msgstr "钱弹"
+
+#: php/subpages/faq/jargon.php:765
+msgid "Fireball"
+msgstr "火弹"
+
+#: php/subpages/faq/jargon.php:769
+msgid "Fireball (glowy)"
+msgstr "火弹（发光）"
+
+#: php/subpages/faq/jargon.php:773
+msgid "Heart"
+msgstr "心弹"
+
+#: php/subpages/faq/jargon.php:777
+msgid "Jellybean"
+msgstr "椭弹"
+
+#: php/subpages/faq/jargon.php:781
+msgid "Knife"
+msgstr "刀弹"
+
+#: php/subpages/faq/jargon.php:785
+msgid "Kunai"
+msgstr "苦无"
+
+#: php/subpages/faq/jargon.php:789
+msgid "Mentos"
+msgstr "中玉"
+
+#: php/subpages/faq/jargon.php:793
+msgid "Note"
+msgstr "音符弹"
+
+#: php/subpages/faq/jargon.php:797
+msgid "Orb"
+msgstr "光玉"
+
+#: php/subpages/faq/jargon.php:801
+msgid "Pellet"
+msgstr "点弹"
+
+#: php/subpages/faq/jargon.php:805
+msgid "Popcorn"
+msgstr "菌弹"
+
+#: php/subpages/faq/jargon.php:809
+msgid "Raindrop, droplet"
+msgstr "滴弹"
+
+#: php/subpages/faq/jargon.php:813
+msgid "Rest"
+msgstr "休止符"
+
+#: php/subpages/faq/jargon.php:817
+msgid "Rice"
+msgstr "米弹"
+
+#: php/subpages/faq/jargon.php:821
+msgid "Rose"
+msgstr "蔷薇"
+
+#: php/subpages/faq/jargon.php:825
+msgid "Shard, icicle"
+msgstr "冰弹"
+
+#: php/subpages/faq/jargon.php:829
+msgid "Star (big)"
+msgstr "星弹（大）"
+
+#: php/subpages/faq/jargon.php:833
+msgid "Star (small)"
+msgstr "星弹（小）"
+
+#: php/wr.php:158
 msgid ""
 "An accurate list of Touhou world records, updated every so often. Note that "
 "the player ranking at the bottom does not take into account how strong "
@@ -3498,106 +3578,120 @@ msgstr ""
 "的玩家排行榜只算玩家们得到的记录有多少，并不算记录的强度。目前数据并不包括摄"
 "影游戏。"
 
-#: php/wr.php:153
+#: php/wr.php:163
 msgid ""
 "Click a score to download the corresponding replay, if there is one "
 "available. "
 msgstr "点击任何分数即可下载对应的rep。"
 
-#: php/wr.php:157
+#: php/wr.php:167
 msgid ""
 "The replays provided are <strong>not</strong> meant to be reuploaded to any "
 "replay uploading services."
 msgstr "请勿将rep上传到别的存rep网站。"
 
-#: php/wr.php:160
+#: php/wr.php:170
 msgid ""
 "If you toggle Unverified Scores, this will show scores that are higher than "
 "the World Record, but lack replay or video proof."
 msgstr ""
 
-#: php/wr.php:162
+#: php/wr.php:172
 msgid ""
-"For updates, you can contact <a href=\"https://twitter.com/MaribelHearn42\" "
-"target=\"_blank\">me</a> or <a href=\"https://www.youtube.com/"
-"@KirbyComment\" target=\"_blank\">KirbyComment</a>."
+"For updates, you can contact <a href=\"https://bsky.app/profile/"
+"maribelhearn42.bsky.social\" target=\"_blank\">me</a> or <a href=\"https://"
+"www.youtube.com/@KirbyComment\" target=\"_blank\">KirbyComment</a>."
 msgstr ""
 
-#: php/wr.php:169 php/wr.php:176 php/wr.php:207
+#: php/wr.php:174
+msgid ""
+"The world record history from before September 2024 was assembled using the "
+"research at <a href=\"https://nylilsa.github.io\" "
+"target=\"_blank\">Nylilsa's GitHub page.</a>"
+msgstr ""
+
+#: php/wr.php:182 php/wr.php:198 php/wr.php:215
 msgid "Overall Records"
 msgstr "整体世界纪录"
 
-#: php/wr.php:170 php/wr.php:177 php/wr.php:258
+#: php/wr.php:183 php/wr.php:199 php/wr.php:266
 msgid "World Records"
 msgstr "世界纪录"
 
-#: php/wr.php:171 php/wr.php:191 php/wr.php:526
-msgid "Recent Records"
-msgstr "最近世界纪录"
-
-#: php/wr.php:189 php/wr.php:361
+#: php/wr.php:191 php/wr.php:367
 msgid "Western Records"
 msgstr "西方纪录"
 
-#: php/wr.php:192 php/wr.php:576
+#: php/wr.php:192 php/wr.php:200 php/wr.php:482
+msgid "Player Search"
+msgstr "玩家搜寻"
+
+#: php/wr.php:193 php/wr.php:201 php/wr.php:527
+msgid "Recent Records"
+msgstr "最近世界纪录"
+
+#: php/wr.php:194 php/wr.php:573
 msgid "History"
 msgstr "历史"
 
-#: php/wr.php:200
+#: php/wr.php:208
 msgid "Number of Recent Records"
 msgstr "最近世界纪录的数量"
 
-#: php/wr.php:215
+#: php/wr.php:223
 msgid "Difficulty"
 msgstr "难度"
 
-#: php/wr.php:364 php/wr.php:446
+#: php/wr.php:370 php/wr.php:449
 msgid "World"
 msgstr "世界"
 
-#: php/wr.php:365 php/wr.php:447
+#: php/wr.php:371 php/wr.php:450
 msgid "West"
 msgstr "西方"
 
-#: php/wr.php:365 php/wr.php:448
+#: php/wr.php:371 php/wr.php:451
 msgid "Percentage"
 msgstr "百分"
 
-#: php/wr.php:400
+#: php/wr.php:403
 msgid "Click a game cover to show its list of world records."
 msgstr "单击游戏处查看世界纪录列表。"
 
-#: php/wr.php:429
+#: php/wr.php:432
 msgid "Show Western records"
 msgstr "显示西方纪录"
 
-#: php/wr.php:432
+#: php/wr.php:435
 msgid "Unverified scores"
 msgstr ""
 
-#: php/wr.php:435
+#: php/wr.php:438
 msgid "Link videos over replays"
 msgstr ""
 
-#: php/wr.php:455
+#: php/wr.php:458
 msgid "Browse History"
 msgstr ""
 
-#: php/wr.php:462 php/wr.php:601
+#: php/wr.php:465 php/wr.php:590
 msgid "No history available."
 msgstr ""
 
-#: php/wr.php:480
+#: php/wr.php:483
 msgid "Choose a player name from the menu below to show their WRs."
 msgstr "在以下的菜单选择玩家的名字则可查看其WR。"
 
-#: php/wr.php:623
+#: php/wr.php:612
 msgid "No. of WRs"
 msgstr "WR数量"
 
-#: php/wr.php:624
+#: php/wr.php:613
 msgid "Different games"
 msgstr "游戏"
+
+#~ msgid "Player Ranking"
+#~ msgstr "玩家排行"
 
 #~ msgid "Dates"
 #~ msgstr "日期"

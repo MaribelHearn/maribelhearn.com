@@ -106,14 +106,14 @@ if ($layout == 'Old') {
             echo '<p><a href="#search">' . _('Search') .
             '</a></p><p><a href="#recent">' . _('Recent LNNs') .
             '</a></p><p><a href="#overall">' . _('Overall Count') .
-            '</a></p><p><a href="#players">' . _('Player Ranking') .
+            '</a></p><p><a href="#players">' . _('Player Statistics') .
             '</a></p></div>';
         } else { // $layout == 'New'
             echo '<div id="contents_new" class="contents"><p><a href="#lnns" class="lnns">' . _('LNN Lists') .
             '</a></p><p><a href="#search">' . _('Search') .
             '</a></p><p><a href="#recent">' . _('Recent LNNs') .
             '</a></p><p><a href="#overall">' . _('Overall Count') .
-            '</a></p><p><a href="#players">' . _('Player Ranking') .
+            '</a></p><p><a href="#players">' . _('Player Statistics') .
             '</a></p></div>';
         }
     ?>
@@ -403,8 +403,8 @@ if ($layout == 'Old') {
             </tfoot>
         </table>
     </div>
-    <div id='players'>
-        <h2><?php echo _('Player Ranking') ?></h2>
+    <div id='players'>`
+        <h2><?php echo _('Player Statistics') ?></h2>
         <table id='ranking' class='sortable'>
             <thead>
                 <tr>
