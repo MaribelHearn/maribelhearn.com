@@ -46,8 +46,10 @@ if ($page == 'tiers') {
     array_push($css, '../../assets/other/tiers/tiers_override.css');
 }
 foreach ($css as $css_file) {
-    $css_content = file_get_contents($css_file);
-    echo $css_content;
+    if (file_exists($css_file)) {
+        $css_content = file_get_contents($css_file);
+        echo $css_content;
+    }
 }
 if (isset($_COOKIE['theme']) && ($page == 'lnn' || $page == 'gensokyo' || $page == 'royalflare' || $page == 'wr')) {
     echo 'tr:not(.irregular_tr):nth-child(even),tr.irregular_tr:nth-child(odd),#player_td{background-color:#555555;}';
