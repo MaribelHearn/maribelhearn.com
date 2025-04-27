@@ -73,6 +73,8 @@ function format_conditions(string $conditions) {
 
 function ds_table_no_ver(string $id, array $rep, string $url, string $backlink) {
     $score = intval($rep['type']);
+    $comment = str_replace('<', '&lt;', $rep['conditions']);
+    $comment = str_replace('>', '&gt;', $comment);
     echo '<div class="overflow"><table id="replay" class="sortable"><tbody>';
     echo '<tr><th class="general_header no-sort">Player</th><td>' . $rep['player'] . '</td></tr>';
     echo '<tr><th class="general_header no-sort">Category</th><td>' . $rep['category'] . '</td></tr>';
@@ -83,7 +85,7 @@ function ds_table_no_ver(string $id, array $rep, string $url, string $backlink) 
     echo '<tr><th class="general_header no-sort">Slowdown</th><td>-</td></tr>';
     echo '<tr><th class="general_header no-sort">Shottype</th><td>' . $rep['slowdown'] . '</td></tr>';
     echo '<tr><th class="general_header no-sort">Conditions</th><td></td></tr>';
-    echo '<tr><th class="general_header no-sort">Comment</th><td>' . $rep['conditions'] . '</td></tr>';
+    echo '<tr><th class="general_header no-sort">Comment</th><td>' . $comment . '</td></tr>';
     echo '<tr><th class="general_header no-sort">Download</th><td><a href="' . $url . '">' . $rep['rpy'] . '</a></td></tr>';
     echo '</tbody><tfoot><tr><td id="back" colspan="2"><strong><a href="' . $backlink . '">Back</a></strong></td></tr></tfoot></table></div>';
 }
@@ -289,21 +291,32 @@ function check_conditions(array $rep, string $player, string $shot, string $game
                     if ($found === 0) {
                         $table .= '<div class="overflow"><table id="replays" class="sortable"><thead><tr><th class="general_header">Player</th><th class="general_header">Category</th>' .
                         '<th class="general_header">Score</th><th class="general_header sorttable_mmdd">Date added</th><th class="general_header">Type</th>' .
-                        '<th class="general_header">Conditions</th><th class="general_header">Download</th></tr></thead><tbody>';
+                        '<th class="general_header">Conditions</th><th class="general_header">Comment</th><th class="general_header">Download</th></tr></thead><tbody>';
                     }
                     if (!empty($rep['rpy'])) {
                         $url = (is_localhost($_SERVER['REMOTE_ADDR']) ? 'https://maribelhearn.com/' : '') . 'replays/gensokyo/' . $key . '/' . $rep['rpy'];
                         if ($rep['category'] == 'DS' && $rep['ver'] != '1.00a') {
                             $score = intval($rep['type']);
+                            $comment = str_replace('<', '&lt;', $rep['conditions']);
+                            $comment = str_replace('>', '&gt;', $comment);
+                            if (strlen($comment) > 100) {
+                                $comment = substr($comment, 0, 100) . '...';
+                            }
                             $table .= '<tr><td><a href="' . $_SERVER['REQUEST_URI'] . '&id=' . $key . '">' . $rep['player'] .
                             '</a></td><td>' . $rep['category'] . '<br>' . $rep['slowdown'] . // shottype
                             '</td><td data-sort="' . $score . '">' . number_format($score, 0, '.', ',') . // score
                             '</td><td>' . substr($rep['ver'], 0, 10) . '<br>' . substr($rep['ver'], 10) . // date
                             '</td><td>' . $rep['date'] . // type
                             '</td><td>' . format_conditions($rep['shottype']) . // conditions
+                            '</td><td class="comment">' . $comment .
                             '</td><td><a href="' . $url . '">' . $rep['rpy'] . '</a></td></tr>';
                         } else {
                             $conditions = format_conditions($rep['conditions']);
+                            $comment = str_replace('<', '&lt;', $rep['comment']);
+                            $comment = str_replace('>', '&gt;', $comment);
+                            if (strlen($comment) > 100) {
+                                $comment = substr($comment, 0, 100) . '...';
+                            }
                             $table .= '<tr><td><a href="' . $_SERVER['REQUEST_URI'] . '&id=' . $key . '">' . $rep['player'] .
                             '</a></td><td>' . $rep['category'] .
                             (strpos($rep['category'], 'GFW') === false
@@ -311,7 +324,7 @@ function check_conditions(array $rep, string $player, string $shot, string $game
                                     : ''
                             ) . '</td><td data-sort="' . intval(str_replace(',', '', $rep['score'])) . '">' . $rep['score'] .
                             '</td><td>' . str_replace(' ', '<br>', $rep['date']) . '</td><td>' . $rep['type'] .
-                            '</td><td>' . $conditions . '</td><td><a href="' . $url . '">' . $rep['rpy'] .
+                            '</td><td>' . $conditions . '</td><td class="comment">' . $comment . '</td><td><a href="' . $url . '">' . $rep['rpy'] .
                             '</a></td></tr>';
                         }
                         $found += 1;

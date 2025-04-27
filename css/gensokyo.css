@@ -28,6 +28,9 @@ label > img {
 .sorttable_mmdd {
     white-space: nowrap;
 }
+.comment {
+    max-width: 250px;
+}
 #nav {
     margin-bottom: 5px;
 }
@@ -65,9 +68,50 @@ label > img {
 #conditions span {
     display: inline-block;
 }
+@media only screen and (max-width: 2350px) {
+    .wrap {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
+@media only screen and (max-width: 2050px) {
+    .wrap {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
+@media only screen and (max-width: 1750px) {
+    .wrap {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    p {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+@media only screen and (max-width: 1450px) {
+    .wrap {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    p {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    .wrap {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    p {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
 @media only screen and (max-width: 800px) {
     #replays {
         overflow-x: scroll;
     }
-
 }
