@@ -33,7 +33,11 @@
     // Check for redirection
     $status_code = empty($_GET['error']) ? '' : $_GET['error'];
     $page_path = 'php/' . $page . '.php'; // without subdir
+    $page_pre_redirect = $page;
     $page = redirect($page, $page_path, $status_code);
+    if ($page != $page_pre_redirect) {
+        exit();
+    }
 
     // Record page hit
     if ($page == 'error' && empty($status_code)) {
@@ -47,7 +51,6 @@
     // Set page language
     $lang = set_lang_cookie();
     $locale = $lang . '.UTF-8';
-    $page = preg_replace('/\//', '', $page);
     if (has_translation($page)) {
         setlocale(LC_ALL, $locale);
         bindtextdomain($lang, 'locale');
