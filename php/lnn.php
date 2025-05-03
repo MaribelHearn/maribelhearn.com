@@ -309,7 +309,8 @@ if ($layout == 'Old') {
             </tfoot>
 		</table>
 	</div>
-    <p id='empty_results' class='center'><?php echo _('There are currently no LNNs in that category.'); ?></p>
+    <p id='empty_player' class='center'><?php echo _('No such player.'); ?></p>
+    <p id='empty_category' class='center'><?php echo _('There are currently no LNNs in that category.'); ?></p>
     <div id='recent'>
         <h2><?php echo _('Recent LNNs') ?></h2>
         <table class='sortable'>

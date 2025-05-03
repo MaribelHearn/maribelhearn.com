@@ -230,6 +230,7 @@ function setPlayer(event) {
 
 function showPlayerLNNs(player, LNNs) {
     const searchResults = document.getElementById("search_results");
+    const emptyResults = document.getElementById("empty_category");
 
     if (player === "") {
         searchResults.style.display = "none";
@@ -304,6 +305,7 @@ function showPlayerLNNs(player, LNNs) {
 
     if (numberOfLNNs === 0) {
         searchResults.style.display = "none";
+        emptyResults.style.display = "block";
         return;
     }
 
@@ -313,6 +315,7 @@ function showPlayerLNNs(player, LNNs) {
     document.getElementById("search_table").classList.add("sortable");
     document.getElementById("second_header").innerHTML = _("Shottype");
     document.getElementById("search_sum").innerHTML = numberOfLNNs;
+    emptyResults.style.display = "none";
     searchResults.style.display = "block";
 }
 
@@ -389,7 +392,7 @@ function setCategory(event) {
 
 function showCategoryLNNs(category, LNNs) {
     const searchResults = document.getElementById("search_results");
-    const emptyResults = document.getElementById("empty_results");
+    const emptyResults = document.getElementById("empty_category");
     let numberOfLNNs = 0;
     let first = true;
     const searchTable = document.getElementById("search_tbody");
@@ -485,7 +488,7 @@ function detectEnter(event) {
     if (event.key && event.key == "Enter") {
         const value = event.target.value;
 
-        if (event.target.id == "search_player") {
+        if (event.target.id == "player") {
             getPlayerLNNs(value);
         } else { // event.target.id == "search_category"
             getCategoryLNNs(value);
