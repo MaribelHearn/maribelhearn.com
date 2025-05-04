@@ -33,11 +33,7 @@
     // Check for redirection
     $status_code = empty($_GET['error']) ? '' : $_GET['error'];
     $page_path = 'php/' . $page . '.php'; // without subdir
-    $page_pre_redirect = $page;
     $page = redirect($page, $page_path, $status_code);
-    if ($page != $page_pre_redirect) {
-        exit();
-    }
 
     // Record page hit
     if ($page == 'error' && empty($status_code)) {

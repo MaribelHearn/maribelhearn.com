@@ -52,7 +52,7 @@ function redirect(string $page, string $page_path, string $error) {
     if (property_exists($aliases, $page)) {
         $location = is_localhost($_SERVER['REMOTE_ADDR']) ? 'http://localhost/' : 'https://maribelhearn.com/';
         header('Location: ' . $location . $aliases->{$page} . '?redirect=' . $page);
-        return $aliases->{$page};
+        exit();
     }
     if (!file_exists($page_path) && $page != 'index' || !empty($error)) {
         $page = 'error';
