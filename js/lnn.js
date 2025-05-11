@@ -230,7 +230,7 @@ function setPlayer(event) {
 
 function showPlayerLNNs(player, LNNs) {
     const searchResults = document.getElementById("search_results");
-    const emptyResults = document.getElementById("empty_category");
+    const emptyResults = document.getElementById("empty_player");
 
     if (player === "") {
         searchResults.style.display = "none";
@@ -304,6 +304,7 @@ function showPlayerLNNs(player, LNNs) {
     }
 
     if (numberOfLNNs === 0) {
+        document.getElementById("empty_category").style.display = "none";
         searchResults.style.display = "none";
         emptyResults.style.display = "block";
         return;
@@ -315,6 +316,7 @@ function showPlayerLNNs(player, LNNs) {
     document.getElementById("search_table").classList.add("sortable");
     document.getElementById("second_header").innerHTML = _("Shottype");
     document.getElementById("search_sum").innerHTML = numberOfLNNs;
+    document.getElementById("empty_category").style.display = "none";
     emptyResults.style.display = "none";
     searchResults.style.display = "block";
 }
@@ -434,6 +436,7 @@ function showCategoryLNNs(category, LNNs) {
     }
 
     if (numberOfLNNs === 0) {
+        document.getElementById("empty_player").style.display = "none";
         searchResults.style.display = "none";
         emptyResults.style.display = "block";
         return;
@@ -446,6 +449,7 @@ function showCategoryLNNs(category, LNNs) {
     document.getElementById("search_table").classList.remove("sortable");
     document.getElementById("second_header").innerHTML = _("Player");
     document.getElementById("search_sum").innerHTML = numberOfLNNs;
+    document.getElementById("empty_player").style.display = "none";
     emptyResults.style.display = "none";
     searchResults.style.display = "block";
 }
