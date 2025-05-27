@@ -99,7 +99,7 @@ function display_name(string $game) {
 ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
-        <noscript><?php echo _('<strong>Notice:</strong> this page requires JavaScript.') ?></noscript>
+        <noscript><p><?php echo _('<strong>Notice:</strong> this page requires JavaScript.') ?></p></noscript>
 		<p><?php echo _('Fill in the best survivals you have pulled off in the table below. Click \'Save\' in the top left to save your progress.') ?></p>
         <p><?php echo _('When you click \'Generate Tables\', several tables indicating your survival progress will be generated. The coloured survival progress table are images that can be copied or saved to your device. ' .
         'Use the below selectors to fill up many achievements at once, either by game or by difficulty. See the bottom of this page for an explanation of the acronyms.') ?></p>

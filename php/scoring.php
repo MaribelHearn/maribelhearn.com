@@ -35,7 +35,7 @@ if (strpos($wr_data, 'Internal Server Error') === false) {
 ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
-    <noscript><strong>Notice:</strong> this page requires JavaScript.</noscript>
+    <noscript><p><?php echo _('<strong>Notice:</strong> this page requires JavaScript.') ?></p></noscript>
     <p>Enter your high scores. You can leave any high score empty. The scores you entered will be compared to the world records that
     were achieved with the same shottypes and percentages will be given. When you click the 'Calculate' button at the bottom of the
     page, sortable tables will be generated to tell you how your scores compare to the world records.</p>

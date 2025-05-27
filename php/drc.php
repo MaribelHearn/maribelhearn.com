@@ -86,7 +86,7 @@ function is_phantasmagoria(string $game) {
 	?></p>
     <p id='countdown'></p>
     <h2 id='pointsCalculator'><?php echo _('Points Calculator') ?></h2>
-	<noscript><?php echo _('<em>Sorry, you cannot calculate DRC points with JavaScript disabled.</em>') ?></noscript>
+	<noscript><p><?php echo _('<em>Sorry, you cannot calculate DRC points with JavaScript disabled.</em>') ?></p></noscript>
 	<div id='calculator'>
         <p id='drcScores'><?php echo _('Scores can only contain digits, commas, dots and spaces. Survival runs are assumed to have cleared, scoring runs not.') ?></p>
         <p id='notify'></p>
