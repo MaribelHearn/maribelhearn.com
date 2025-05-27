@@ -616,6 +616,7 @@ function setLanguage(event) {
 }
 
 function setEventListeners() {
+    document.getElementById("toggle_layout").href = document.getElementById("toggle_layout").href.split('?')[0];
     document.getElementById("toggle_layout").addEventListener("click", toggleLayout, false);
     document.getElementById("recent_limit").addEventListener("keyup", setRecentLimit, false);
     document.getElementById("recent_limit").addEventListener("mouseup", setRecentLimit, false);

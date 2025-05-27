@@ -139,13 +139,31 @@ function hit(string $filename, string $status_code) {
 
 function set_theme_cookie() {
     if (is_localhost($_SERVER['REMOTE_ADDR'])) {
-        setcookie('theme', ($_GET['theme'] == 'dark' ? 'dark' : ''), array(
+        setcookie('theme', $_GET['theme'] == 'dark' ? 'dark' : '', array(
             'expires' => 2147483647,
             'path' => '/',
             'samesite' => 'Strict'
         ));
     } else {
-        setcookie('theme', ($_GET['theme'] == 'dark' ? 'dark' : ''), array(
+        setcookie('theme', $_GET['theme'] == 'dark' ? 'dark' : '', array(
+            'expires' => 2147483647,
+            'path' => '/',
+            'secure' => true,
+            'samesite' => 'Strict'
+        ));
+    }
+}
+
+function set_layout_cookie($page) {
+    $cookie_name = $page . '_old_layout';
+    if (is_localhost($_SERVER['REMOTE_ADDR'])) {
+        setcookie($cookie_name, $_GET['layout'] == 'old' ? true : '', array(
+            'expires' => 2147483647,
+            'path' => '/',
+            'samesite' => 'Strict'
+        ));
+    } else {
+        setcookie($cookie_name, $_GET['layout'] == 'old' ? true : '', array(
             'expires' => 2147483647,
             'path' => '/',
             'secure' => true,
