@@ -3,7 +3,7 @@ const SPECIES = ["Human", "Magician", "Devil", "Ghost", "Yuki-onna", "Night spar
 "Tsurube-otoshi", "Tsuchigumo", "Hashihime", "Satori", "Shuchuu", "Tsukumogami", "Nyuudou",
 "Nue", "Daidarabotchi", "Yamabiko", "Zombie", "Gashadokuro", "Kirin", "Wanyuudou", "Katawa-guruma",
 "Zashiki-warashi", "Hobgoblin", "Enenra", "Mermaid", "Rokurokubi", "Amanojaku", "Baku", "Yamanba",
-"Komainu", "Haniwa", "Oomukade", "Sarugami", "Tenkajin"];
+"Komainu", "Haniwa", "Oomukade", "Sarugami", "Tenkajin", "Chimi"];
 const NUMBERS = ["None", "1", "2", "3", "4", "5+"];
 const OFFSET = -120;
 const ROW_SIZE = 9;
@@ -26,6 +26,13 @@ function randomiseImage(max, slot, previous) {
     let y = Math.floor(slots[slot] / ROW_SIZE) * OFFSET;
 
     if (x <= -120 && y == -2160) {
+        slots[slot] += 10;
+        x = (slots[slot] % ROW_SIZE) * OFFSET;
+        y = Math.floor(slots[slot] / ROW_SIZE) * OFFSET;
+        slots[slot] -= 10;
+    }
+
+    if (x >= -240 && y == -2280) {
         slots[slot] += 10;
         x = (slots[slot] % ROW_SIZE) * OFFSET;
         y = Math.floor(slots[slot] / ROW_SIZE) * OFFSET;

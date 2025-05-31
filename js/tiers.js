@@ -32,6 +32,7 @@ const defaultColour = "#a0a0a0";
 const defaultWidth = isMobile() ? 60 : 120;
 const defaultSize = 32;
 const sorts = ["characters", "works", "shots", "cards"];
+const windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "UDoALG", "FW", "Spinoff"];
 const spinoffs = ["IaMP", "SWR", "Soku", "DS", "GFW", "HM", "ULiL", "AoCF"];
 const maleCharacters = ["SinGyokuM", "Genjii", "Unzan", "RinnosukeMorichika", "FortuneTeller"];
 const clans = ["FujiwaranoMokou", "SoganoTojiko", "MononobenoFuto", "ToyosatomiminoMiko", "HiedanoAkyuu", "WatatsukinoToyohime", "WatatsukinoYorihime"];
@@ -58,7 +59,8 @@ const DEFAULT_SETTINGS = {
             "LLS": { enabled: true }, "MS": { enabled: true }, "EoSD": { enabled: true }, "PCB": { enabled: true },
             "IN": { enabled: true }, "PoFV": { enabled: true }, "MoF": { enabled: true }, "SA": { enabled: true },
             "UFO": { enabled: true }, "TD": { enabled: true }, "DDC": { enabled: true }, "LoLK": { enabled: true },
-            "HSiFS": { enabled: true }, "WBaWC": { enabled: true }, "UM": { enabled: true }, "Spinoff": { enabled: true },
+            "HSiFS": { enabled: true }, "WBaWC": { enabled: true }, "UM": { enabled: true }, "UDoALG": { enabled: true },
+            "FW": { enabled: true }, "Spinoff": { enabled: true },
             "Manga": { enabled: true }, "CD": { enabled: true }
         },
         "works": {
@@ -1594,8 +1596,6 @@ function togglePC98() {
 }
 
 function toggleWindows() {  
-    const windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "UDoALG", "Spinoff"];
-
     for (const id of windows) {
         const element = document.getElementById(`checkbox_${id}`);
         element.checked = !element.checked;
