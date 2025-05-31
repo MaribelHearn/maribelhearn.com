@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
     session_start();
     include_once 'php/shared/http.php';
@@ -104,6 +103,7 @@
         exit();
     }
 ?>
+<!DOCTYPE html>
 <html id='top' lang='<?php echo lang_code() ?>'>
 
     <head>
