@@ -38,6 +38,12 @@
     }
 
     function format_country(string $country) {
+        if ($country == 'Turkey') {
+            return 'Türkiye';
+        }
+        else if ($country == 'Netherlands') {
+            return 'The-Netherlands';
+        }
         return str_replace(' ', '-', $country);
     }
 

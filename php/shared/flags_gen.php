@@ -16,7 +16,7 @@ $flags = array('Afghanistan', 'Aland-Islands', 'Albania', 'Algeria', 'American-S
 'San-Marino', 'Sao-Tome-and-Principe', 'Saudi-Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra-Leone', 'Singapore', 'Slovakia', 'Slovenia', 'Solomon-Islands', 'Somalia', 'South-Africa', 'South-Georgia', 'Spain',
 'Sri-Lanka', 'Sudan', 'Suriname', 'Svalbard', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', 'Timor-Leste', 'Togo', 'Tokelau', 'Tonga', 'Trinidad-and-Tobago',
 'Tunisia', 'Türkiye', 'Turkmenistan', 'Turks-and-Caicos-Islands', 'Tuvalu', 'Uganda', 'Ukraine', 'United-Arab-Emirates', 'United-Kingdom', 'United-States', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Vatican-City',
-'Venezuela', 'Vietnam', 'Virgin-Islands', 'Wallis-and-Futuna', 'Western-Sahara', 'Yemen', 'Zambia', 'Zimbabwe');
+'Venezuela', 'Vietnam', 'U.S.-Virgin-Islands', 'Wallis-and-Futuna', 'Western-Sahara', 'Yemen', 'Zambia', 'Zimbabwe');
 for ($i = 0; $i < count($flags); $i++) {
     $x = ($i % $row_size) * $offset;
     $y = floor($i / $row_size) * $offset;
