@@ -305,6 +305,11 @@ function applyColours() {
             const id = game + diff;
             const element = document.getElementById(id);
 
+            // ignore malformed entries
+            if (!element) {
+                continue;
+            }
+
             if (id.includes("Extra") && !id.includes("PCB") && !id.includes("IN")) {
                 element.parentNode.parentNode.setAttribute("colspan", 2);
                 element.parentNode.parentNode.classList.add("overview");
@@ -367,6 +372,11 @@ function applyColours() {
     for (const scene in sceneVals) {
         const element = document.getElementById(scene.removeSpaces());
         const value = sceneVals[scene];
+
+        // ignore malformed entries
+        if (!element) {
+            continue;
+        }
 
         if (scene.includes("stb") || scene.includes("vd")) {
             if (format(value) !== "") {
