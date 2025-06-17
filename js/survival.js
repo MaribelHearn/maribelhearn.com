@@ -305,11 +305,6 @@ function applyColours() {
             const id = game + diff;
             const element = document.getElementById(id);
 
-            // ignore malformed entries
-            if (!element) {
-                continue;
-            }
-
             if (id.includes("Extra") && !id.includes("PCB") && !id.includes("IN")) {
                 element.parentNode.parentNode.setAttribute("colspan", 2);
                 element.parentNode.parentNode.classList.add("overview");
@@ -372,11 +367,6 @@ function applyColours() {
     for (const scene in sceneVals) {
         const element = document.getElementById(scene.removeSpaces());
         const value = sceneVals[scene];
-
-        // ignore malformed entries
-        if (!element) {
-            continue;
-        }
 
         if (scene.includes("stb") || scene.includes("vd")) {
             if (format(value) !== "") {
@@ -804,6 +794,9 @@ function progressToCheckboxesScene(scene, progress) {
 }
 
 function initValues() {
+    let malformedEntries = [];
+    let malformedScenes = [];
+
     for (const game in vals) {
         for (const difficulty in vals[game]) {
             const category = game + difficulty;
@@ -815,6 +808,9 @@ function initValues() {
                 if (boxesToCheck.includes(element.value)) {
                     element.checked = true;
                     document.getElementById(category + "a").innerHTML = progress;
+                } else {
+                    // remove malformed entry
+                    malformedEntries.push(category);
                 }
             }
         }
@@ -835,8 +831,19 @@ function initValues() {
             if (boxesToCheck.includes(element.value)) {
                 element.checked = true;
                 document.getElementById(scene + "a").innerHTML = progress;
+            } else {
+                // remove malformed entry
+                malformedScenes.push(scene);
             }
         }
+    }
+
+    for (const entry of malformedEntries) {
+        delete vals[entry];
+    }
+
+    for (const scene of malformedScenes) {
+        delete malformedScenes[scene];
     }
 }
 
