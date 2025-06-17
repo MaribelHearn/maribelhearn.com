@@ -798,13 +798,20 @@ function progressToCheckboxesScene(progress) {
 }
 
 function initValues() {
-    let malformedEntries = [];
+    let malformedCategories = [];
     let malformedScenes = [];
 
     for (const game in vals) {
         for (const difficulty in vals[game]) {
             const category = game + difficulty;
             const checkboxes = document.querySelectorAll(`#${category} input[type='checkbox']`);
+
+            // remove malformed entry
+            if (checkboxes.length === 0) {
+                malformedCategories.push(category);
+                continue;
+            }
+
             const progress = vals[game][difficulty];
             const boxesToCheck = progressToCheckboxes(game, progress);
             
@@ -812,9 +819,6 @@ function initValues() {
                 if (boxesToCheck.includes(element.value)) {
                     element.checked = true;
                     document.getElementById(category + "a").innerHTML = progress;
-                } else {
-                    // remove malformed entry
-                    malformedEntries.push(category);
                 }
             }
         }
@@ -846,8 +850,8 @@ function initValues() {
         }
     }
 
-    for (const entry of malformedEntries) {
-        delete vals[entry];
+    for (const category of malformedCategories) {
+        delete vals[category];
     }
 
     for (const scene of malformedScenes) {
