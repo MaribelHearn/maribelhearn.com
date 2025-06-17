@@ -843,7 +843,7 @@ function initValues() {
     }
 
     for (const scene of malformedScenes) {
-        delete malformedScenes[scene];
+        delete sceneVals[scene];
     }
 }
 
