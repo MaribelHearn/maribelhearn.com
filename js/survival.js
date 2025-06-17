@@ -781,13 +781,17 @@ function progressToCheckboxes(game, progress) {
     return boxesToCheck;
 }
 
-function progressToCheckboxesScene(scene, progress) {
+function progressToCheckboxesScene(progress) {
     if (progress == "Not cleared") {
         return [];
     }
 
     if (progress == "Both") {
         return ["Aya", "Hatate"];
+    }
+
+    if (progress == "No Items") {
+        return ["Clear", "No Items"];
     }
 
     return [progress];
@@ -825,15 +829,19 @@ function initValues() {
         }
 
         const checkboxes = document.querySelectorAll(`#${scene} input[type='checkbox']`);
-        const boxesToCheck = progressToCheckboxesScene(scene, progress);
+
+        // remove malformed entry
+        if (checkboxes.length === 0) {
+            malformedScenes.push(scene);
+            continue;
+        }
+
+        const boxesToCheck = progressToCheckboxesScene(progress);
 
         for (const element of checkboxes) {
             if (boxesToCheck.includes(element.value)) {
                 element.checked = true;
                 document.getElementById(scene + "a").innerHTML = progress;
-            } else {
-                // remove malformed entry
-                malformedScenes.push(scene);
             }
         }
     }
@@ -885,7 +893,7 @@ function fillSceneAlt() {
     for (const scene in sceneVals) {
         if (scene.includes(game) && scene.replace(game, "").slice(0, -2) == stage || stage == "10" && scene.includes("10-10")) {
             const checkboxes = document.querySelectorAll(`#${scene} input[type='checkbox']`);
-            const boxesToCheck = progressToCheckboxesScene(scene, progress);
+            const boxesToCheck = progressToCheckboxesScene(progress);
 
             for (const element of checkboxes) {
                 element.checked = boxesToCheck.includes(element.value);
