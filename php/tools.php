@@ -237,7 +237,10 @@
 		'savestates and has high accuracy, but requires the right configurations; can be confusing for new users. ' .
 		'The emulator is located in the bin folder with two versions, 32-bit and 64-bit (x64).');
 	?></p>
-	<p><a href='https://github.com/sor593/np21w' target='_blank'><?php echo _('Download') ?></a></p>
+	<div>
+		<p><a href='https://github.com/spaztron64/th98tuc_site/raw/main/packages/2022_04_12/np21_nogame.zip' target='_blank'><?php echo _('Download (Configured for Touhou)') ?></a></p>
+		<p><a href='https://github.com/sor593/np21w' target='_blank'><?php echo _('Download') ?></a></p>
+	</div>
 	<p><strong>T98-Next</strong></p>
 	<p><?php
 		echo _('Easy-to-use emulator that will emulate the Touhou games properly without needing configuration ' .
@@ -260,7 +263,10 @@
 		'under not only Windows, but also Mac and Linux. A list of downloads for each system can be found ' .
 		'via the link below.');
 	?></p>
-	<p><a href='https://github.com/joncampbell123/dosbox-x/releases' target='_blank'><?php echo _('Downloads') ?> (GitHub)</a>
+	<div>
+		<p><a href='https://github.com/spaztron64/th98tuc_site/raw/main/packages/2022_04_12/dosboxx_nogame.zip' target='_blank'><?php echo _('Download (Configured for Touhou)') ?></a></p>
+		<p><a href='https://github.com/joncampbell123/dosbox-x/releases' target='_blank'><?php echo _('Download') ?> (GitHub)</a></p>
+	</div>
     <!-- Miscellaneous -->
     <hr>
     <h2 id='miscellaneous'><?php echo _('Miscellaneous') ?></h2>
@@ -349,6 +355,11 @@
 		echo _('Allows the in-game score counter to exceed 9,999,999,990 points.');
 	?></p>
 	<p><a href='https://maribelhearn.com/mirror/th17_score_uncap.zip' target='_blank'><?php echo _('Download') ?></a></p>
+	<p><strong><?php echo _('EditDisk') ?></strong></p>
+	<p><?php
+		echo _('Tool for modifying PC-98 game HDI files. Required to install English patches for the PC-98 games.');
+	?></p>
+	<p><a href='https://maribelhearn.com/mirror/editd169.zip' target='_blank'><?php echo _('Download') ?></a></p>
 	<!-- Legacy / Deprecated -->
 	<hr>
     <h2 id='legacy'><?php echo _('Deprecated') ?></h2>
