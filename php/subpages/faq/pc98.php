@@ -41,10 +41,9 @@
                 <li><span class='sign green'>+</span> Very low system requirements</li>
                 <li><span class='sign green'>+</span> Savestates with thumbnails</li>
                 <li><span class='sign red'>−</span> Only supports 8 savestates</li>
-                <li><span class='sign red'>−</span> Least accurate graphics and sound</li>
+                <li><span class='sign red'>−</span> Least accurate sound</li>
             </ul></td>
             <td><ul>
-                <li><span class='sign green'>+</span> Accurate</li>
                 <li><span class='sign green'>+</span> Savestates with thumbnails<br> and timestamps</li>
                 <li><span class='sign red'>−</span> Only supports 4 savestates</li>
                 <li><span class='sign red'>−</span> High system requirements</li>
@@ -59,13 +58,14 @@
                 <li><span class='sign green'>+</span> Supports Mac and Linux</li>
                 <li><span class='sign green'>+</span> Low system requirements</li>
                 <li><span class='sign green'>+</span> Possible to open games from desktop</li>
-                <li><span class='sign red'>−</span> No savestate support</li>
+                <li><span class='sign red'>−</span> Savestates have issues</li>
                 <li><span class='sign red'>−</span> Maybe less stable than other emulators</li>
             </ul></td>
         </tr>
     </tbody>
 </table>
 <div id='emus_text'>
+    <p><em>The pre-configured Neko Project 21 and DOSBox-X downloads are courtesy of <a href='https://spaztron64.github.io/th98tuc_site/' target='_blank'>Spaztron64</a></em></p>
     <p class='flat'>See the <a href='#anex'>setup guides</a> below for how to open a game and use savestates in each emulator.</p>
     <p class='flat'>Each setup guide will also explain how to set up each emulator yourself, should you want to do this.</p>
     <p class='wide-top'>Note that none of the emulators have accurate slowdown; the slowdown will not match real hardware.</p>
@@ -197,6 +197,8 @@ Then, go to 終了 and hit Enter to save the setting. The emulator is now fully 
 <h3 id='dosbox'>DOSBox-X</h3>
 <p>Refer to the guide on <a href='https://dosbox-x.com/wiki/Guide%3APC%E2%80%9098-emulation-in-DOSBox%E2%80%90X' target='_blank'>the official DOSBox-X website</a> for how to set it up for PC-98 games.
 This guide includes Touhou as an example.</p>
+<p>For savestates, open the Capture tab and click Save state and Load state respectively. Under "Select save slot" you can find a total of 100 save slots; click Previous page and Next page for navigation.
+There are currently various issues with savestates in this emulator, such as sound issues and broken graphics. Timing your savestates when there is no music playing may help prevent this.</p>
 <p>If you want desktop shortcuts for your games, you can make shortcuts to the following:</p>
 <p><span class='code'>&lt;path_to_dosbox&gt; -conf &lt;path_to_config_file&gt;</span></p>
 <p>This will launch DOSBox-X with that particular config file. Each game should have its own config file. On Linux, the game manager <a href='https://lutris.net/' target='_blank'>Lutris</a> supports DOSBox-X,
