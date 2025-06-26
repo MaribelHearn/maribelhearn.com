@@ -34,6 +34,7 @@ function subpage_name(string $subpage) {
         case 'eosd': return 'EoSD';
         case 'gfx': return 'Graphics';
         case 'res': return 'Resources';
+        case 'pc98': return 'PC-98';
         case 'extras': return 'Extra Statistics';
         case 'jargon': return 'Touhou Community Jargon';
         default: return ucfirst($subpage);

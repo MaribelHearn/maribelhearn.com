@@ -66,6 +66,29 @@ ol {
 .jargon {
     width: 150px;
 }
+.contents ul {
+    padding-left: 20%;
+}
+.sign {
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 14px;
+}
+.flat {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.dual_images {
+    overflow: hidden;
+}
+.dual_left {
+    float: left;
+    margin-left: 5%;
+}
+.dual_right {
+    float: right;
+    margin-right: 5%;
+}
 #contents {
     margin-left: auto;
     margin-right: auto;
@@ -144,10 +167,59 @@ ol {
 #UM_image {
     background-position: -900px 0px;
 }
+#emus {
+    border-spacing: 30px 0;
+}
+#emus li {
+    list-style-type: none;
+    text-align: left;
+}
+#emus .t98next {
+    padding: 8px;
+}
+#t98_hotkeys {
+    border-spacing: 10px;
+}
+@media only screen and (max-width: 2300px) {
+    #emus {
+        display: flex;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+    #emus tbody {
+        display: flex;
+    }
+    #emus tr {
+        display: flex;
+        flex-basis: 10%;
+        flex-wrap: wrap;
+    }
+    #emus th, #emus td {
+        display: flex;
+        flex-basis: 100%;
+        height: 120px;
+    }
+    #emu_names td {
+        height: 48px;
+    }
+    .dual_left, .dual_right {
+        margin: 0;
+    }
+}
+@media only screen and (max-width: 2000px) {
+    #fonts .dual_left, #fonts .dual_right {
+        float: none;
+        margin-bottom: 15px;
+    }
+}
 @media only screen and (max-width: 1800px) {
     #eosd_files {
         margin-left: 10%;
         margin-right: 10%;
+    }
+    #neko_config .dual_left, #neko_config .dual_right {
+        float: none;
+        margin-bottom: 15px;
     }
 }
 @media only screen and (max-width: 1400px) {
@@ -160,13 +232,34 @@ ol {
         margin-left: 5%;
         margin-right: 5%;
     }
+    .dual_left, .dual_right {
+        float: none;
+        margin-bottom: 15px;
+    }
 }
 @media only screen and (max-width: 1000px) {
+    img:not(.emu) {
+        width: 80%;
+        height: 80%;
+    }
     #wrap {
         font-size: 11px;
+    }
+    #emus {
+        display: flex;
+        margin-left: 0%;
+        margin-right: 0%;
     }
     #eosd_files {
         margin-left: 0%;
         margin-right: 0%;
+    }
+    .sign {
+        font-size: 15px;
+        line-height: 11px;
+    }
+    .dual_left, .dual_right {
+        float: none;
+        margin-bottom: 15px;
     }
 }

@@ -7,6 +7,7 @@
     <p><a href='#setup'>Setting up</a></p>
     <p><a href='#eosd'>Getting EoSD (Touhou 6) to work</a></p>
     <p><a href='#gfx'>Graphical issues</a></p>
+    <p><a href='#pc98'>Running PC-98 games</a></p>
     <p><a href='#gameplay'>Gameplay questions</a></p>
     <p><a href='#desync'>Why does my replay desync?</a></p>
 </div>
@@ -73,6 +74,10 @@ delete it and try again. Otherwise, try any of the following:</p>
 <h2 id='gfx'>Graphical issues</h2>
 <p><em>See the page <a href='/faq/graphics'>Graphical issues</a>.</em></p>
 <p>If your game is wide, small, pixelated or otherwise not shown correctly on your screen, check out the page linked above.</p>
+<hr>
+<h2 id='pc98'>Running PC-98 games</h2>
+<p><em>See the page <a href='/faq/pc98'>Running PC-98 games</a>.</em></p>
+<p>The PC-98 Touhou games (Touhou 1 to Touhou 5) require the use of an emulator to play. These games were developed for the old Japanese NEC-PC9801 computers.</p>
 <hr>
 <h2 id='gameplay'>Gameplay questions</h2>
 <h4 id='clear'>What is a '1cc'? What does 'LNB' mean?</h4>
