@@ -1441,18 +1441,22 @@ function doImport() {
             scenes = true;
             continue;
         } else if (!game) {
+            //console.log(`Failed to import '${line}': invalid game`);
             printError("<strong class='error_message'>Error: invalid survival progress. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
             return;
         }
 
         value = value.split(' ');
         difficulty = value[0];
-        achievement = value[1];
+        value.splice(0, 1);
+        achievement = value.join(' ');
+        //console.log(`Importing ${game} ${difficulty} ${achievement}`);
 
         if (vals[game].hasOwnProperty(difficulty) && achievs(game).includes(achievement.toLowerCase())) {
             vals[game][difficulty] = achievement;
             continue;
         } else {
+            //console.log(`Failed to import ${game} ${difficulty} ${achievement}: invalid difficulty or invalid achievement`);
             printError("<strong class='error_message'>Error: invalid survival progress. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
             return;
         }
