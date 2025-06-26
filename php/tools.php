@@ -246,16 +246,15 @@
 		echo _('Easy-to-use emulator that will emulate the Touhou games properly without needing configuration ' .
 		'of any kind, but less feature-rich, and allows 8 active savestates at a time, 4 of which through hotkeys.');
 	?></p>
-	<p><a href='http://www.mediafire.com/file/myjyjyett2d/T98+english.rar' target='_blank'><?php echo _('Download') ?></a></p>
+	<p><a href='https://maribelhearn.com/mirror/T98-Next.zip'><?php echo _('Download (Configured for Touhou)') ?></a></p>
 	<p><strong>Anex86</strong></p>
 	<p><?php
 		echo _('This emulator has low system requirements and can run even on very old computers. ' .
 		'However, the graphics are mediocre and the sound emulation requires proper configuration to be accurate. ' .
-		'Allows for 8 savestates and requires a separate font file, linked below.');
+		'Allows for 8 savestates and requires a separate font file, included in the download.');
 	?></p>
 	<div>
-		<p><a href='https://www.zophar.net/download_file/2133'><?php echo _('Download') ?></a></p>
-		<p><a href='https://www.zophar.net/download_file/2134'><?php echo _('Font') ?></a></p>
+		<p><a href='https://maribelhearn.com/mirror/Anex86.zip'><?php echo _('Download (Configured for Touhou)') ?></a></p>
 	</div>
 	<p><strong>DOSBox-X</strong></p>
 	<p><?php
@@ -355,6 +354,16 @@
 		echo _('Allows the in-game score counter to exceed 9,999,999,990 points.');
 	?></p>
 	<p><a href='https://maribelhearn.com/mirror/th17_score_uncap.zip' target='_blank'><?php echo _('Download') ?></a></p>
+	<p><strong><?php echo _('PoDDofire') ?></strong></p>
+	<p><?php
+		echo _('PoDD autofire script for AutoHotkey, to avoid hand fatigue from button mashing. Hold Z to shoot, press X to bomb and press C to hyper.');
+	?></p>
+	<p><a href='https://maribelhearn.com/mirror/PoDDofire.ahk' target='_blank'><?php echo _('Download') ?></a></p>
+	<p><strong><?php echo _('SoEWofire') ?></strong></p>
+	<p><?php
+		echo _('SoEW autofire script for AutoHotkey. Holding down Z will shoot just as if you were mashing Z, dealing more damage than by holding Z without this script.');
+	?></p>
+	<p><a href='https://maribelhearn.com/mirror/SoEWofire.ahk' target='_blank'><?php echo _('Download') ?></a></p>
 	<p><strong><?php echo _('EditDisk') ?></strong></p>
 	<p><?php
 		echo _('Tool for modifying PC-98 game HDI files. Required to install English patches for the PC-98 games.');
