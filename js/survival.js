@@ -798,6 +798,7 @@ function progressToCheckboxesScene(progress) {
 }
 
 function initValues() {
+    let duplicateCheck = [];
     let malformedCategories = [];
     let malformedScenes = [];
 
@@ -806,8 +807,14 @@ function initValues() {
             const category = game + difficulty;
             const checkboxes = document.querySelectorAll(`#${category} input[type='checkbox']`);
 
-            // remove malformed entry
+            if (duplicateCheck.includes(category)) {
+                //console.log(`Cleared duplicate entry '${category}'`);
+                malformedScenes.push(category);
+                continue;
+            }
+
             if (checkboxes.length === 0) {
+                //console.log(`Cleared malformed entry '${category}'`);
                 malformedCategories.push(category);
                 continue;
             }
@@ -821,21 +828,30 @@ function initValues() {
                     document.getElementById(category + "a").innerHTML = progress;
                 }
             }
+
+            duplicateCheck.push(category);
         }
     }
 
     for (const scene in sceneVals) {
         const progress = sceneVals[scene];
 
+        if (duplicateCheck.includes(scene.removeSpaces())) {
+            //console.log(`Cleared duplicate entry '${scene}'`);
+            malformedScenes.push(scene);
+            continue;
+        }
+
         if (scene.includes("stb") || scene.includes("vd")) {
             document.getElementById(scene.removeSpaces()).checked = progress == "1cc";
+            duplicateCheck.push(scene.removeSpaces());
             continue;
         }
 
         const checkboxes = document.querySelectorAll(`#${scene} input[type='checkbox']`);
 
-        // remove malformed entry
         if (checkboxes.length === 0) {
+            //console.log(`Cleared malformed entry '${scene}'`);
             malformedScenes.push(scene);
             continue;
         }
@@ -848,6 +864,8 @@ function initValues() {
                 document.getElementById(scene + "a").innerHTML = progress;
             }
         }
+
+        duplicateCheck.push(scene);
     }
 
     for (const category of malformedCategories) {
@@ -857,6 +875,9 @@ function initValues() {
     for (const scene of malformedScenes) {
         delete sceneVals[scene];
     }
+
+    localStorage.setItem("vals", JSON.stringify(vals));
+    localStorage.setItem("sceneVals", JSON.stringify(sceneVals));
 }
 
 function fillAll() {
