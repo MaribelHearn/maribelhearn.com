@@ -69,6 +69,14 @@ ol {
 .contents ul {
     padding-left: 20%;
 }
+.recommended {
+    color: orangered;
+    font-size: 16px;
+    line-height: 14px;
+}
+.small_screen {
+    display: none !important;
+}
 .sign {
     font-weight: 800;
     font-size: 18px;
@@ -77,6 +85,10 @@ ol {
 .flat {
     margin-top: 2px;
     margin-bottom: 2px;
+}
+.wide-bottom {
+    margin-top: 2px;
+    margin-bottom: 15px;
 }
 .dual_images {
     overflow: hidden;
@@ -195,15 +207,21 @@ ol {
         flex-wrap: wrap;
     }
     #emus th, #emus td {
-        display: flex;
         flex-basis: 100%;
         height: 120px;
     }
-    #emu_names td {
-        height: 48px;
+    #emus th {
+        height: 16px;
+        padding-bottom: 8px;
     }
     .dual_left, .dual_right {
         margin: 0;
+    }
+    .small_screen {
+        display: flex !important;
+    }
+    .recommended:not(.small_screen) {
+        display: none !important;
     }
 }
 @media only screen and (max-width: 2000px) {
@@ -256,6 +274,10 @@ ol {
     }
     .sign {
         font-size: 15px;
+        line-height: 11px;
+    }
+    .recommended {
+        font-size: 13px;
         line-height: 11px;
     }
     .dual_left, .dual_right {
