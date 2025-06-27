@@ -20,7 +20,7 @@
 </div>
 
 <h3 id='files'>Summary</h3>
-<p class='flat'><strong>TL;DR:</strong> In general, Neko Project 21 and DOSBox-X are recommended for playing Touhou.</p>
+<p class='flat'><strong>TL;DR:</strong> In general, Neko Project 21 and DOSBox-X are the recommended emulators.</p>
 <p class='wide-bottom'>If your system cannot run them very well, Anex86 can work instead. T98-Next is a last resort option.</p>
 <table id='emus' class='noborders'>
     <thead>
@@ -163,12 +163,11 @@ simply change the title back to that collection's name.</p>
 You should see a screen like the screenshot below.</p>
 <img src='/assets/games/faq/pc98/neko_config4.png' alt='Neko Project 21 boot config screen'>
 <p>Go to the second option and press Enter. Scroll down using the arrow keys until you reach the GDCクロック option. There, press the Right arrow key and press Enter to set it to 2.5 MHz.
-Then, go to 終了 and hit Enter to save the setting. The emulator is now fully configured for Touhou.</p>
+Then, go to 終了 and hit Enter to save the setting. The emulator is now fully configured and ready for play.</p>
 <img src='/assets/games/faq/pc98/neko_config5.png' alt='Neko Project 21 boot config screen'>
 
 <h3 id='dosbox'>DOSBox-X</h3>
-<p>Refer to the guide on <a href='https://dosbox-x.com/wiki/Guide%3APC%E2%80%9098-emulation-in-DOSBox%E2%80%90X' target='_blank'>the official DOSBox-X website</a> for how to set it up for PC-98 games.
-This guide includes Touhou as an example.</p>
+<p>Refer to the guide on <a href='https://dosbox-x.com/wiki/Guide%3APC%E2%80%9098-emulation-in-DOSBox%E2%80%90X' target='_blank'>the official DOSBox-X website</a> for how to set it up for PC-98 games.</p>
 <p>For savestates, open the Capture tab and click Save state and Load state respectively. Under "Select save slot" you can find a total of 100 save slots; click Previous page and Next page for navigation.
 There are currently various issues with savestates in this emulator, such as sound issues and broken graphics. Timing your savestates when there is no music playing may help prevent this.</p>
 <p>If you want desktop shortcuts for your games, you can make shortcuts to the following:</p>
@@ -179,7 +178,7 @@ so it is also possible to make shortcuts through there.</p>
 <h3 id='anex'>Anex86</h3>
 <img src='/assets/games/faq/pc98/anex86.png' alt='Anex86 main screen'>
 <p>To load a game, click the three dots "..." next to HDD1 and click your desired <span class='code'>.hdi</span> file. Click the Start button to launch it.</p>
-<p><em>The Anex86 download provided on this page is already configured for Touhou. If you obtained it elsewhere, follow the steps below.</em></p>
+<p><em>The Anex86 download provided on this page is already correctly configured. If you obtained it elsewhere, follow the steps below.</em></p>
 <p>Before getting started, click Config to improve the sound quality, as it is not great by default.</p>
 <div class='dual_images'>
     <figure class='dual_left'>
@@ -196,7 +195,7 @@ To load a savestate, press the same key combinations, but without the game windo
 <h3 id='t98'>T98-Next</h3>
 <img src='/assets/games/faq/pc98/t98.png' alt='T98-Next main screen'>
 <p>To load a game, click the grey bar that is highlighted in the above screenshot, then choose your <span class='code'>.hdi</span> file.</p>
-<p>The 1st button starts the game, 3rd button restarts the emulator, 4th button toggles between hiding and showing the menu, and the 6th button closes the emulator. The 2nd and 5th buttons are unused for Touhou.</p>
+<p>The 1st button starts the game, 3rd button restarts the emulator, 4th button toggles between hiding and showing the menu, and the 6th button closes the emulator. The 2nd and 5th buttons are not used for these games.</p>
 <img src='/assets/games/faq/pc98/t98_config.png' alt='T98-Next config screen'>
 <p>Click the "MotherBoard Setting" tab and make sure it looks like the above screenshot.</p>
 <p>To create a savestate, press F11, followed by anywhere between F1 and F4. To load a savestate, press F12, then F1-F4.</p>
