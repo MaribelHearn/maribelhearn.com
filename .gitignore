@@ -13,6 +13,9 @@ locale/*/*/*.json
 # sitemap
 sitemap.xml
 
+# file hosting
+mirror/
+
 # stats dir
 .stats/*
 !.stats/.gitkeep
