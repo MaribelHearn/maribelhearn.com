@@ -8,6 +8,7 @@ apt-get -q -y upgrade
 apt-get install -y sudo curl wget nano locales
 rm -rf /var/lib/apt/lists/*
 a2enmod rewrite headers expires proxy proxy_balancer proxy_fcgi proxy_http proxy_wstunnel
+mv /usr/lib/etc/php/php.ini-production /usr/lib/etc/php.ini
 EOF
 
 # Copy over the Apache configuration
