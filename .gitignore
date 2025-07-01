@@ -1,16 +1,17 @@
 # data files
 json/gensokyo.json
 json/admin.json
-bestinthewest.json
-unverified.json
-lnnvideos.json
-lnnlist.json
-wrlist.json
 
 # minified files
 *-min.json
 *-min.css
 *-min.js
+
+# translation JSON files
+locale/*/*/*.json
+
+# sitemap
+sitemap.xml
 
 # stats dir
 .stats/*
