@@ -275,7 +275,7 @@ function generate_string(string $type = 'nonce') {
     $dir = ($type == 'token' ? '../' : '') . '.stats/';
     $file = fopen($dir . $type, 'w');
     if (flock($file, LOCK_EX)) {
-        fwrite($file, $str);
+        fwrite($file, '"' . $str . '"');
         flock($file, LOCK_UN);
     }
     return $str;
