@@ -13,7 +13,9 @@ function affiliate_sites() {
     '<p><a href="https://zps-stg.github.io">' .
     '<span class="icon zps_icon"></span>ZPS\'s site</a></p>' .
     '<p><a href="https://touhou-memories.com/">' .
-    '<span class="icon memories_icon"></span>touhou-memories</a></p>';
+    '<span class="icon memories_icon"></span>touhou-memories</a></p>' .
+    '<p><a href="https://thelibraryoflotus.neocities.org/">' .
+    '<span class="icon rox_icon"></span>Library of Lotus</a></p>';
 }
 
 function touhou_sites() {
