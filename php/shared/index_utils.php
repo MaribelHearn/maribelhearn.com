@@ -76,7 +76,7 @@ function redirect(string $page, string $page_path, string $error) {
     return $page;
 }
 
-function hit(string $filename, string $status_code) {
+/*function hit(string $filename, string $status_code) {
     $path = $filename == 'error.php' ? '../../.stats/' : '.stats/';
     if (file_exists($path)) {
         if (!empty($_SERVER['HTTP_USER_AGENT']) && preg_match('~(bot|crawl|slurp|spider|archiver|facebook|lighthouse|jigsaw|validator|w3c|hexometer)~i', $_SERVER['HTTP_USER_AGENT'])) {
@@ -136,7 +136,7 @@ function hit(string $filename, string $status_code) {
             fclose($file);
         }
     }
-}
+}*/
 
 function set_theme_cookie() {
     if (is_localhost($_SERVER['REMOTE_ADDR'])) {

@@ -41,7 +41,7 @@
     if (!empty($status_code)) {
         http_response_code(intval($status_code));
     }
-    hit($page, $status_code);
+    //hit($page, $status_code);
 
     // Set page language
     $lang = set_lang_cookie();
