@@ -18,6 +18,7 @@ mv /etc/apache2/sites-available/apache.conf /etc/apache2/sites-available/mh.conf
 echo ServerTokens ProductOnly >> /etc/apache2/apache2.conf
 echo ServerSignature Off >> /etc/apache2/apache2.conf
 echo TraceEnable Off >> /etc/apache2/apache2.conf
+echo Protocols h2 h2c http/1.1 >> /etc/apache2/apache2.conf
 EOF
 
 # Install locales
