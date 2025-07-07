@@ -7,7 +7,7 @@ apt-get -qq update
 apt-get -q -y upgrade
 apt-get install -y sudo curl wget nano locales
 rm -rf /var/lib/apt/lists/*
-a2enmod rewrite headers expires proxy proxy_balancer proxy_fcgi proxy_http proxy_wstunnel actions fastcgi alias
+a2enmod rewrite headers expires proxy proxy_balancer proxy_fcgi proxy_http proxy_wstunnel
 mv /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
 EOF
 
