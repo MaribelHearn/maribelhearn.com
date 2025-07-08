@@ -8,7 +8,7 @@ First, clone the repository in whatever way you prefer and navigate to its direc
 git clone https://github.com/MaribelHearn/maribelhearn.com.git
 cd maribelhearn.com
 ```
-Use the Dockerfile provided in the repository to build a [Docker image](https://docs.docker.com/).
+Use the Dockerfile provided in the repository to build a [Docker image](https://docs.docker.com/). This website uses PHP-FPM, so a separate container should be run for that as well.
 
 In the repository's parent directory, you may use a Docker Compose file:
 ```YAML
@@ -22,10 +22,20 @@ maribelhearn:
     - ./mh_backend/media:/var/www/maribelhearn.com/media:ro
   ports:
     - <your_port_here>:80
+  env_file:
+    - ./maribelhearn.com/.php_host
+php:
+  image: bitnami/php-fpm
+  ports:
+    - 9000:9000
+  volumes:
+    - ./maribelhearn.com:/var/www/maribelhearn.com
 ```
 
 This assumes you are also running the [backend](https://github.com/MaribelHearn/maribelhearn_backend), which is necessary for the WR and LNN data.
 The backend also comes with a Dockerfile to run it as a container.
+
+Make sure to include your copy of the `php_host.template` file as the env_file, containing the IP address PHP-FPM is run at (usually 127.0.0.1).
 
 ## Running without Docker
 Prerequisites:

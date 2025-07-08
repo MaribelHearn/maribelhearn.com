@@ -34,3 +34,6 @@ package*.json
 # django
 media/
 static/
+
+# environment
+.php_host
