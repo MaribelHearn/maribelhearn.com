@@ -374,17 +374,15 @@ if ($layout == 'Old') {
             <tbody id='overallbody'>
                 <?php
                     $total_lnns = 0;
-                    if ($layout == 'Old') {
-                        if (!empty($number_of_lnns)) {
-                            foreach ($number_of_lnns as $game => $count) {
-                                if (in_array($game, $pvp)) {
-                                    continue;
-                                }
-                                if (game_num($game) < 6 || $count > 0) {
-                                    echo '<tr><td' . (game_num($game) == 128 ? ' data-sort="12.8"' : '') . '>' . game_num($game) . '</td><td class="' . $game . '">' . _($game) . '</td>';
-                                    echo '<td>' . $number_of_lnns->{$game} . '</td><td>' . $number_of_players->{$game} . '</td></tr>';
-                                    $total_lnns += $number_of_lnns->{$game};
-                                }
+                    if (!empty($number_of_lnns)) {
+                        foreach ($number_of_lnns as $game => $count) {
+                            if (in_array($game, $pvp)) {
+                                continue;
+                            }
+                            if (game_num($game) < 6 || $count > 0) {
+                                echo '<tr><td' . (game_num($game) == 128 ? ' data-sort="12.8"' : '') . '>' . game_num($game) . '</td><td class="' . $game . '">' . _($game) . '</td>';
+                                echo '<td>' . $number_of_lnns->{$game} . '</td><td>' . $number_of_players->{$game} . '</td></tr>';
+                                $total_lnns += $number_of_lnns->{$game};
                             }
                         }
                     }
@@ -417,15 +415,13 @@ if ($layout == 'Old') {
             </thead>
             <tbody id='rankingbody'>
                 <?php
-                    if ($layout == 'Old') {
-                        foreach ($player_lnns as $player => $count) {
-                            $shot_lnns = $player_lnns->{$player} == $ALL_LNN ? $player_lnns->{$player} . _(' (All Windows)') : $player_lnns->{$player};
-                            $game_lnns = array_intersect($WINDOWS_LNN, $player_games->{$player}) == $WINDOWS_LNN ? count(array_unique($player_games->{$player})) . _(' (All Windows)') : count(array_unique($player_games->{$player}));
-                            echo '<tr><td></td>';
-                            echo '<td><a href="#' . urlencode($player) . '">' . $player . '</a></td>';
-                            echo '<td data-sort="' . $player_lnns->{$player} . '">' . $shot_lnns . '</td>';
-                            echo '<td data-sort="' . count(array_unique($player_games->{$player})) . '">' . $game_lnns . '</td></tr>';
-                        }
+                    foreach ($player_lnns as $player => $count) {
+                        $shot_lnns = $player_lnns->{$player} == $ALL_LNN ? $player_lnns->{$player} . _(' (All Windows)') : $player_lnns->{$player};
+                        $game_lnns = array_intersect($WINDOWS_LNN, $player_games->{$player}) == $WINDOWS_LNN ? count(array_unique($player_games->{$player})) . _(' (All Windows)') : count(array_unique($player_games->{$player}));
+                        echo '<tr><td></td>';
+                        echo '<td><a href="#' . urlencode($player) . '">' . $player . '</a></td>';
+                        echo '<td data-sort="' . $player_lnns->{$player} . '">' . $shot_lnns . '</td>';
+                        echo '<td data-sort="' . count(array_unique($player_games->{$player})) . '">' . $game_lnns . '</td></tr>';
                     }
                 ?>
             </tbody>

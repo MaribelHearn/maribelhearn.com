@@ -1,13 +1,9 @@
-/*global _ getCookie deleteCookie setCookie fullNameNumber gameAbbr*/
+/*global _ getCookie deleteCookie setCookie fullNameNumber*/
 const API_BASE = location.hostname.includes("maribelhearn.com") ? "https://maribelhearn.com" : "http://localhost";
 const banList = ["Reimu", "Marisa", "Sanae", "Seiran", "Biten", "Enoko", "Chiyari"];
-const allLNN = 101;
-const windowsLNNs = ["EoSD", "PCB", "IN", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
 let language = "en_GB";
 let selected = "";
 let shots = {};
-let playerLNNs = {};
-let playerGames = {};
 
 function toggleLayout() {
     if (getCookie("lnn_old_layout")) {
@@ -642,82 +638,6 @@ function getRecentLNNs() {
     xhr.send();
 }
 
-function getOverallCountAndRanking() {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=game,shot&type=LNN`);
-    xhr.onreadystatechange = function () {
-        if (this.readyState === 4) {
-            if (this.status === 200) {
-                const overallBody = document.getElementById("overallbody");
-                let currentGame = "HRtP";
-                let totalLNNs = 0;
-                let totalPlayers = [];
-                let totalGame = {};
-                let totalGamePlayers = {};
-                const response = JSON.parse(this.response);
-                
-                for (const entry of response) {
-                    const game = entry.category.game;
-                    const player = entry.player;
-
-                    if (!["PoDD", "UDoALG"].includes(game)) {
-                        totalLNNs += 1;
-                        
-                        if (totalGame.hasOwnProperty(game)) {
-                            totalGame[game] += 1;
-                        } else {
-                            totalGame[game] = 1;
-                        }
-
-                        if (totalGamePlayers.hasOwnProperty(game)) {
-                            totalGamePlayers[game].pushStrict(player);
-                        } else {
-                            totalGamePlayers[game] = [player];
-                        }
-
-                        if (playerLNNs.hasOwnProperty(player)) {
-                            playerLNNs[player] += 1;
-                            playerGames[player].pushStrict(game);
-                        } else {
-                            playerLNNs[player] = 1;
-                            playerGames[player] = [game];
-                            totalPlayers.pushStrict(player);
-                        }
-
-                        if (currentGame != game) {
-                            totalGamePlayers[currentGame] = totalGamePlayers[currentGame].length;
-                            overallBody.innerHTML += `<tr><td${gameAbbr(currentGame) == 128 ? " data-sort='12.8'" : ""}>${gameAbbr(currentGame)}</td><td class='${currentGame}'>${_(currentGame)}</td>` +
-                                    `<td>${totalGame[currentGame]}</td><td>${totalGamePlayers[currentGame]}</td></tr>`;
-                            currentGame = game;
-                        }
-                    }
-                }
-
-                // add UM at the end
-                totalGamePlayers[currentGame] = totalGamePlayers[currentGame].length;
-                overallBody.innerHTML += `<tr><td${gameAbbr(currentGame) == 128 ? " data-sort='12.8'" : ""}>${gameAbbr(currentGame)}</td><td class='${currentGame}'>${_(currentGame)}</td>` +
-                        `<td>${totalGame[currentGame]}</td><td>${totalGamePlayers[currentGame]}</td></tr>`;
-
-                document.getElementById("total_lnns").innerHTML = totalLNNs;
-                document.getElementById("total_players").innerHTML = totalPlayers.length;
-
-                // add player ranking
-                const rankingBody = document.getElementById("rankingbody");
-
-                for (const player in playerLNNs) {
-                    const shotLNNs = playerLNNs[player] + (playerLNNs[player] == allLNN ? _(" (All Windows)") : "");
-                    const gameLNNs = playerGames[player].length + (windowsLNNs.every(val => playerGames[player].includes(val)) ? _(" (All Windows)") : "");
-                    rankingBody.innerHTML += `<tr><td></td><td><a href='#${encodeURIComponent(player)}'>${player}</a></td><td data-sort='${playerLNNs[player]}'>${shotLNNs}</td><td data-sort='${playerGames[player].length}'>${gameLNNs}</td></tr>`;
-                }
-
-                document.getElementById("number_of_lnns").click();
-            }
-        }
-    }
-
-    xhr.send();
-}
-
 function checkHash() {
     // player in hash links to player LNNs
     if (location.hash !== "") {
@@ -760,7 +680,6 @@ function init() {
         getLastModifiedDate();
         //getPlayerSearchOptions();
         getRecentLNNs();
-        getOverallCountAndRanking();
     }
 
     // legacy video toggle
