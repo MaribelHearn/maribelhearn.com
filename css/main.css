@@ -44,6 +44,11 @@ input[type=button].delete {
     text-decoration: none;
     font-weight: bold;
 }
+@supports not (width: fit-content) {
+    .donation {
+        width: 125px;
+    }
+}
 .warning {
     color: darkred;
     font-weight: bold;
@@ -186,29 +191,29 @@ input[type=button].delete {
     }
 }
 @media only screen and (min-width: 2000px) and (max-width: 2300px) {
-    ul {
+    ul:not(#contact) {
         padding-left: 10%;
         padding-right: 10%;
     }
 }
 @media only screen and (min-width: 1800px) and (max-width: 2000px) {
-    ul {
+    ul:not(#contact) {
         padding-left: 5%;
         padding-right: 5%;
     }
 }
 @media only screen and (min-width: 1400px) and (max-width: 1800px) {
-    ul {
+    ul:not(#contact) {
         padding: 0px;
     }
 }
 @media only screen and (min-width: 1100px) and (max-width: 1400px) {
-    ul {
+    ul:not(#contact) {
         padding: 0px;
     }
 }
 @media only screen and (min-width: 800px) and (max-width: 1100px) {
-    ul {
+    ul:not(#contact) {
         padding: 0px;
     }
     #avatar {
