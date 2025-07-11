@@ -6,9 +6,11 @@ function download_content(string $url) {
     $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     if ($data === false) {
         echo 'Failed to use cURL to fetch country for ' . $ip . '<br>';
+        curl_close($ch);
         return false;
     } else if ($status != 200) {
         echo 'Error ' . $status . ' while fetching country for ' . $ip . '<br>';
+        curl_close($ch);
         return false;
     }
     curl_close($ch);
