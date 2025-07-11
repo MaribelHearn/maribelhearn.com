@@ -1,14 +1,14 @@
 h1, h2, h3, h4, table:not(.poll):not(.rendering), label, li, figcaption, dt, p:not(.language):not(#ack), caption:not(.legend_surv), input[type='file'], #nav, #hy_text {
     color: white;
 }
-.rendering th, .rendering td:not(.overview):not(.overview_half), .PoDD, .PoDDp, .LLS, .LLSp, .EoSD, .EoSDp, .PCB, .PCBp, .PoFV, .PoFVp, .MoF, .MoFp, .GFW, .GFWp, .TD, .TDp, .DDC, .DDCp, .UM, .UMp, .UDoALG, .UDoALGp,
+.rendering th, .rendering td:not(.overview):not(.overview_half), .donation a, .PoDD, .PoDDp, .LLS, .LLSp, .EoSD, .EoSDp, .PCB, .PCBp, .PoFV, .PoFVp, .MoF, .MoFp, .GFW, .GFWp, .TD, .TDp, .DDC, .DDCp, .UM, .UMp, .UDoALG, .UDoALGp,
 .PoDDt th, .LLSt th, .EoSDt th, .PCBt th, .PoFVt th, .MoFt th, .GFWt th, .DDCt th, .UMt th, .UDoALGt th, .tier th, .tier {
     color: black;
 }
 body, div:not(.dropdown):not(.dropdown_content):not(.nav_right):not(.dark_bg):not(.dropdowns):not(.ext_menu):not(#ext_mobile):not(#ext_desktop):not(#modal) {
     background-color: #202020;
 }
-a:link:not(.replay):not(.i):not(.dropdown_button) {
+a:link:not(.replay):not(.i):not(.dropdown_button):not(.donation a) {
     color: #0fa7ff;
 }
 #replays a:link, #replay a:link {
@@ -49,6 +49,10 @@ a:visited:not(.replay):not(.i):not(.dropdown_button) {
 }
 a:link.dropdown_button, a:visited.dropdown_button {
     color: white;
+}
+.donation {
+    background-color: white;
+    border: 1px solid white;
 }
 .dropdown_content, .ext_menu {
     background-color: #202020;
