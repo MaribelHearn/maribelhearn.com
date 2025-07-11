@@ -36,4 +36,5 @@ media/
 static/
 
 # environment
-.php_host
+.env*
+!.env.template

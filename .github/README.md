@@ -23,7 +23,7 @@ maribelhearn:
   ports:
     - <your_port_here>:80
   env_file:
-    - ./maribelhearn.com/.php_host
+    - ./maribelhearn.com/.env.prod
 php:
   image: bitnami/php-fpm
   ports:
@@ -35,7 +35,8 @@ php:
 This assumes you are also running the [backend](https://github.com/MaribelHearn/maribelhearn_backend), which is necessary for the WR and LNN data.
 The backend also comes with a Dockerfile to run it as a container.
 
-Make sure to include your copy of the `php_host.template` file as the env_file, containing the IP address PHP-FPM is run at (usually 127.0.0.1).
+Copy the environment file from `.env.template` and name it for example `.env.dev` or `.env.prod`.
+In it, you should specify the address PHP-FPM is run at (usually your device's local IP address).
 
 In the PHP-FPM container, enable the `gettext` module. Install the `locales` package and enable every locale listed in the `locale` directory in this repository, such as `en_GB.UTF-8 UTF-8`.
 
