@@ -21,6 +21,7 @@ echo ServerSignature Off >> /usr/local/apache2/conf/httpd.conf
 echo TraceEnable Off >> /usr/local/apache2/conf/httpd.conf
 echo Protocols h2 h2c http/1.1 >> /usr/local/apache2/conf/httpd.conf
 echo ServerName localhost >> /usr/local/apache2/conf/httpd.conf
+echo MaxRequestsPerChild 10000 >> /usr/local/apache2/conf/httpd.conf
 echo Include conf/extra/mh.conf >> /usr/local/apache2/conf/httpd.conf
 sed -i 's,#\(LoadModule expires_module modules/mod_expires.so\),\1,g' /usr/local/apache2/conf/httpd.conf
 sed -i 's,#\(LoadModule rewrite_module modules/mod_rewrite.so\),\1,g' /usr/local/apache2/conf/httpd.conf
