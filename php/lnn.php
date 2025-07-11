@@ -128,82 +128,87 @@ if ($layout == 'Old') {
     <h2 id='lnns'><?php echo _('LNN Lists') ?></h2>
     <?php
         // With lnn_old_layout cookie set, show classic all games layout
-        if ($layout == 'Old') {
-            $sheet = '_1';
-            $lnn = curl_get($API_BASE . '/api/v1/replay/?ordering=game,shot&type=LNN');
-            $games_seen = [];
-            $lnn = json_decode($lnn, true);
-            foreach ($lnn as $key => $data) {
-                $player = $data['player'];
-                $game = $data['category']['game'];
-                $shot = $data['category']['shot'];
-                $route = $data['category']['route'];
-                if ($game == 'MoF' || $game == 'GFW') {
-                    $sheet = '_2';
+        if ($layout == 'New') {
+            echo '<noscript>';
+        }
+        $sheet = '_1';
+        $lnn = curl_get($API_BASE . '/api/v1/replay/?ordering=game,shot&type=LNN');
+        $games_seen = [];
+        $lnn = json_decode($lnn, true);
+        foreach ($lnn as $key => $data) {
+            $player = $data['player'];
+            $game = $data['category']['game'];
+            $shot = $data['category']['shot'];
+            $route = $data['category']['route'];
+            if ($game == 'MoF' || $game == 'GFW') {
+                $sheet = '_2';
+            }
+            if (!in_array($game, $games_seen)) {
+                if (!empty($games_seen)) {
+                    $players_shot = array_unique($players_shot);
+                    sort($players_shot);
+                    echo '<td>' . count($players_shot) . '</td><td>' . implode(', ', $players_shot) . '</td></tr>';
+                    $prev_game = end($games_seen);
+                    $number_of_lnns->{$prev_game} = count($players_game);
+                    $players_game = array_unique($players_game);
+                    $number_of_players->{$prev_game} = count($players_game);
+                    sort($players_game);
+                    echo '</tbody><tfoot><tr><td class="foot">' . _('Overall') . '</td><td class="foot">' . $number_of_lnns->{$prev_game} . ' (' . $number_of_players->{$prev_game} . ')</td>' .
+                    '<td class="foot">' . implode(', ', $players_game) . '</td></tr></tfoot></table></div>';
                 }
-                if (!in_array($game, $games_seen)) {
-                    if (!empty($games_seen)) {
-                        $players_shot = array_unique($players_shot);
-                        sort($players_shot);
-                        echo '<td>' . count($players_shot) . '</td><td>' . implode(', ', $players_shot) . '</td></tr>';
-                        $prev_game = end($games_seen);
-                        $number_of_lnns->{$prev_game} = count($players_game);
-                        $players_game = array_unique($players_game);
-                        $number_of_players->{$prev_game} = count($players_game);
-                        sort($players_game);
-                        echo '</tbody><tfoot><tr><td class="foot">' . _('Overall') . '</td><td class="foot">' . $number_of_lnns->{$prev_game} . ' (' . $number_of_players->{$prev_game} . ')</td>' .
-                        '<td class="foot">' . implode(', ', $players_game) . '</td></tr></tfoot></table></div>';
-                    }
-                    array_push($games_seen, $game);
-                    $shots_seen = [];
-                    $players_game = [];
-                    echo '<div id="' . $game . '"><p><table id="' . $game . 't" class="' . $game . 't">' .
-                    '<caption><span id="' . $game . '_image_old" class="cover sheet' . $sheet . (game_num($game) <= 5 ? ' cover98' : '') . '"></span> ' . full_name($game) . '</caption>' .
-                    '<thead><tr><th class="general_header">' . shot_route($game) . '</th>' .
-                    '<th class="general_header nowrap">' . lnn_type($game, $lang) . '<br>' . _('(Different players)') . '</th>' .
-                    '<th class="general_header">' . _('Players') . '</tr></thead><tbody>';
+                array_push($games_seen, $game);
+                $shots_seen = [];
+                $players_game = [];
+                echo '<div id="' . $game . '"><p><table id="' . $game . 't" class="' . $game . 't">' .
+                '<caption><span id="' . $game . '_image_old" class="cover sheet' . $sheet . (game_num($game) <= 5 ? ' cover98' : '') . '"></span> ' . full_name($game) . '</caption>' .
+                '<thead><tr><th class="general_header">' . shot_route($game) . '</th>' .
+                '<th class="general_header nowrap">' . lnn_type($game, $lang) . '<br>' . _('(Different players)') . '</th>' .
+                '<th class="general_header">' . _('Players') . '</tr></thead><tbody>';
+            }
+            if (!in_array($shot, $shots_seen)) {
+                if (!empty($shots_seen)) {
+                    $players_shot = array_unique($players_shot);
+                    sort($players_shot);
+                    echo '<td>' . count($players_shot) . '</td><td>' . implode(', ', $players_shot) . '</td></tr>';
                 }
-                if (!in_array($shot, $shots_seen)) {
-                    if (!empty($shots_seen)) {
-                        $players_shot = array_unique($players_shot);
-                        sort($players_shot);
-                        echo '<td>' . count($players_shot) . '</td><td>' . implode(', ', $players_shot) . '</td></tr>';
-                    }
-                    array_push($shots_seen, $shot);
-                    $players_shot = [];
-                    echo '<tr><td class="nowrap">' . format_shot($game, $shot) . '</td>';
-                }
-                if (!in_array($game, $pvp)) {
-                    if (!isset($player_lnns->{$player})) {
-                        $player_lnns->{$player} = 1;
-                        $player_games->{$player} = [$game];
-                        $total_players += 1;
-                    } else {
-                        $player_lnns->{$player} += 1;
-                        array_push($player_games->{$player}, $game);
-                    }
-                }
-                if ($route == 'UFOs') {
-                    array_push($players_shot, $player . ' (UFOs)');
+                array_push($shots_seen, $shot);
+                $players_shot = [];
+                echo '<tr><td class="nowrap">' . format_shot($game, $shot) . '</td>';
+            }
+            if (!in_array($game, $pvp)) {
+                if (!isset($player_lnns->{$player})) {
+                    $player_lnns->{$player} = 1;
+                    $player_games->{$player} = [$game];
+                    $total_players += 1;
                 } else {
-                    array_push($players_shot, $player);
-                }
-                array_push($players_game, $player);
-                if (empty($data['replay']) && empty($data['video'])) {
-                    $missing_runs += 1;
+                    $player_lnns->{$player} += 1;
+                    array_push($player_games->{$player}, $game);
                 }
             }
-            $players_shot = array_unique($players_shot);
-            sort($players_shot);
-            echo '<td>' . count($players_shot) . '</td><td>' . implode(',', $players_shot) . '</td></tr>';
-            $number_of_lnns->{$game} = count($players_game);
-            $players_game = array_unique($players_game);
-            $number_of_players->{$game} = count($players_game);
-            sort($players_game);
-            echo '</tbody><tfoot><tr><td class="foot">' . _('Overall') . '</td><td class="foot">' . $number_of_lnns->{$game} . ' (' . $number_of_players->{$game} . ')</td>' .
-            '<td class="foot">' . implode(', ', $players_game) . '</td></tr></tfoot></table></div>';
+            if ($route == 'UFOs') {
+                array_push($players_shot, $player . ' (UFOs)');
+            } else {
+                array_push($players_shot, $player);
+            }
+            array_push($players_game, $player);
+            if (empty($data['replay']) && empty($data['video'])) {
+                $missing_runs += 1;
+            }
+        }
+        $players_shot = array_unique($players_shot);
+        sort($players_shot);
+        echo '<td>' . count($players_shot) . '</td><td>' . implode(',', $players_shot) . '</td></tr>';
+        $number_of_lnns->{$game} = count($players_game);
+        $players_game = array_unique($players_game);
+        $number_of_players->{$game} = count($players_game);
+        sort($players_game);
+        echo '</tbody><tfoot><tr><td class="foot">' . _('Overall') . '</td><td class="foot">' . $number_of_lnns->{$game} . ' (' . $number_of_players->{$game} . ')</td>' .
+        '<td class="foot">' . implode(', ', $players_game) . '</td></tr></tfoot></table></div>';
+        if ($layout == 'New') {
+            echo '</noscript>';
+        }
         // With lnn_old_layout cookie NOT set, show game image layout
-        } else {
+        if ($layout == 'New') {
             echo '<div id="newlayout"><p id="clickgame">' . _('Click a game cover to show its list of LNNs.') . '</p>';
             $second_row = false;
             foreach ($games as $key => $data) {
