@@ -22,10 +22,10 @@ echo TraceEnable Off >> /usr/local/apache2/conf/httpd.conf
 echo Protocols h2 h2c http/1.1 >> /usr/local/apache2/conf/httpd.conf
 echo ServerName localhost >> /usr/local/apache2/conf/httpd.conf
 echo Include conf/extra/mh.conf >> /usr/local/apache2/conf/httpd.conf
-sed -i 's,#\(LoadModule expires_module modules/mod_expires.so\),\1,g'
-sed -i 's,#\(LoadModule rewrite_module modules/mod_rewrite.so\),\1,g'
-sed -i 's,#\(LoadModule proxy_module modules/mod_proxy.so\),\1,g'
-sed -i 's,#\(LoadModule proxy_fcgi_module modules/mod_proxy_fcgi.so\),\1,g'
+sed -i 's,#\(LoadModule expires_module modules/mod_expires.so\),\1,g' /usr/local/apache2/conf/httpd.conf
+sed -i 's,#\(LoadModule rewrite_module modules/mod_rewrite.so\),\1,g' /usr/local/apache2/conf/httpd.conf
+sed -i 's,#\(LoadModule proxy_module modules/mod_proxy.so\),\1,g' /usr/local/apache2/conf/httpd.conf
+sed -i 's,#\(LoadModule proxy_fcgi_module modules/mod_proxy_fcgi.so\),\1,g' /usr/local/apache2/conf/httpd.conf
 echo "<Directory /var/www/maribelhearn.com>" >> /usr/local/apache2/conf/httpd.conf
 echo   Options -Indexes -MultiViews +FollowSymLinks >> /usr/local/apache2/conf/httpd.conf
 echo   AllowOverride None >> /usr/local/apache2/conf/httpd.conf
