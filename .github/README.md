@@ -37,6 +37,8 @@ The backend also comes with a Dockerfile to run it as a container.
 
 Make sure to include your copy of the `php_host.template` file as the env_file, containing the IP address PHP-FPM is run at (usually 127.0.0.1).
 
+In the PHP-FPM container, enable the `gettext` module. Install the `locales` package and enable every locale listed in the `locale` directory in this repository, such as `en_GB.UTF-8 UTF-8`.
+
 ## Running without Docker
 Prerequisites:
 * PHP (version 8 or newer)
@@ -52,6 +54,8 @@ Apache is assumed, for the purpose of the Docker image.
 
 The `apache.conf` file contains the Apache virtual host used for the site. It assumes it is running behind a reverse proxy.
 If you are not using a reverse proxy, remove the `LogFormat` line from `apache.conf` and replace `custom` with `common` for the `CustomLog`.
+
+For translations to work, you need to enable every locale listed in the `locale` directory in this repository, such as `en_GB.UTF-8 UTF-8`.
 
 ## Development
 Once you have cloned the repository, run the PHP development server from the directory you cloned to.
