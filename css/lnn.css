@@ -161,7 +161,7 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
 #nav {
     margin-bottom: 5px;
 }
-#lnn_list, #search_results, #empty_player, #empty_category, .search_label {
+#newlayout, #contents_new, #lnn_list, #search, #searchlink, #search_results, #empty_player, #empty_category, .search_label {
     display: none;
 }
 #newlayout, #pvp_games, #search {

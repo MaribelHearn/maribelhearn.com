@@ -649,28 +649,33 @@ function setEventListeners() {
 }
 
 function setAttributes() {
+    if (!getCookie("wr_old_layout")) {
+        document.getElementById("newlayout").style.display = "block";
+        document.getElementById("contents_new").style.display = "block";
+    }
+    
+    document.getElementById("player_search").style.display = "block";
+    document.getElementById("checkboxes").style.display = "block";
     const flags = document.querySelectorAll(".flag");
+    const historyOld = document.getElementById("history_old");
+    const historyLink = document.getElementById("historylink");
+    const playerSearchLink = document.getElementById("playersearchlink");
 
     for (const flag of flags) {
         flag.setAttribute("href", "");
     }
-}
-
-function getLastModifiedDate() {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=-date&date__isnull=False&type=Score&limit=1`);
-    xhr.onreadystatechange = function () {
-        if (this.readyState === 4) {
-            if (this.status === 200) {
-                const response = JSON.parse(this.response);
-                const lastModifiedDate = formatDate(response.results[0].submitted_date);
-                let lastModified = _(`World records are current as of <span id="lm">%date</span>.`).replace("%date", lastModifiedDate);
-                document.getElementById("last_modified").innerHTML = lastModified;
-            }
-        }
+    
+    if (historyOld) {
+        historyOld.style.display = "block";
     }
-
-    xhr.send();
+    
+    if (historyLink) {
+        historyLink.style.display = "block";
+    }
+    
+    if (playerSearchLink) {
+        playerSearchLink.style.display = "block";
+    }
 }
 
 /*function getPlayerSearchOptions() {
@@ -695,56 +700,6 @@ function getLastModifiedDate() {
 
     xhr.send();
 }*/
-
-function getRecentRecords() {
-    const recentLimit = getCookie("recent_limit") ? Math.max(getCookie("recent_limit"), 1) : 15;
-
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/replay/?limit=${recentLimit}&ordering=-date&type=Score&region=Eastern&verified=true`);
-    xhr.onreadystatechange = function () {
-        if (this.readyState === 4) {
-            if (this.status === 200) {
-                const recentTable = document.getElementById("recentbody");
-                const recent = JSON.parse(this.response).results;
-
-                for (const entry of recent) {
-                    if (!entry["date"]) {
-                        continue;
-                    }
-
-                    const date = formatDate(entry["date"]);
-                    const dateRaw = formatDate(entry["date"], "raw");
-                    let replay, video;
-
-                    if (!entry["replay"]) {
-                        replay = '-';
-                    } else {
-                        const chunks = entry["replay"].split(/\//);
-                        replay = `<a href='${entry["replay"]}'>${chunks[chunks.length - 1]}</a>`;
-                    }
-
-                    if (!entry["video"]) {
-                        video = '-';
-                    } else {
-                        video = `<a href='${entry["video"]}'>${_('Link')}</a>`;
-                    }
-
-                    let tableRow = '<tr>';
-                    tableRow += `<td class="${entry["category"]["game"]}p">${_(entry["category"]["game"]) + _(' ') + _(entry["category"]["difficulty"]) + _(' ') + _(entry["category"]["shot"])}</td>`;
-                    tableRow += `<td>${sep(entry["score"])}</td>`;
-                    tableRow += `<td>${entry["player"]}</td>`;
-                    tableRow += `<td class="no_mobile">${replay}</td>`;
-                    tableRow += `<td>${video}</td>`;
-                    tableRow += `<td data-sort='${dateRaw}'>${date}</td>`;
-                    tableRow += '</tr>';
-                    recentTable.innerHTML += tableRow;
-                }
-            }
-        }
-    }
-
-    xhr.send();
-}
 
 function checkHash() {
     // player in hash links to player WRs
@@ -785,9 +740,7 @@ function init() {
     unverifiedEnabled = localStorage.getItem("unverifiedEnabled") ? true : false;
     setEventListeners();
     setAttributes();
-    getLastModifiedDate();
     //getPlayerSearchOptions();
-    getRecentRecords();
 
     if (getCookie("video_enabled")) {
         videoEnabled = Boolean(getCookie("video_enabled"));

@@ -67,12 +67,9 @@ function format_lm(string $lm, string $lang) {
     return str_replace('%date', date_tl($lm, $lang), $result);
 }
 
-if ($layout == 'Old') {
-    $last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&date__isnull=False&type=Score&limit=1');
-    $last_modified = json_decode($last_modified, true);
-    $last_modified = $last_modified['results'][0]['date'];
-}
-
+$last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&date__isnull=False&type=Score&limit=1');
+$last_modified = json_decode($last_modified, true);
+$last_modified = $last_modified['results'][0]['date'];
 $wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty,shot&type=Score&region=Eastern&verified=true&historical=false');
 $games_seen = [];
 $wr_data = json_decode($wr_data, true);
@@ -176,31 +173,37 @@ foreach ($west_data as $key => $data) {
     <p id='last_modified'><?php echo (!empty($last_modified) ? format_lm($last_modified, $lang) : '') ?></p>
     <h2><?php echo _('Contents') ?></h2>
     <?php
-        // With wr_old_layout cookie set, show links to all games and player search
-        if ($layout == 'Old') {
-            echo '<div class="contents">' .
-            '<p><a href="#overall" class="overallrecords">' . _('Overall Records') . '</a></p>' .
-            '<p><a href="#wrs" class="worldrecords">' . _('World Records') . '
-            </a></p>';
-            foreach ($games as $key => $data) {
-                if ($data['short_name'] == 'UDoALG') {
-                    continue;
-                }
-                echo '<p><a href="#' . $data['short_name'] . '">' . $data['full_name'] . '</a></p>';
-            }
-            echo '<p><a href="#western_records">' . _('Western Records') . '</a></p>';
-            echo '<p><a href="#player_search">' . _('Player Search') . '</a></p>';
-            echo '<p><a href="#recent">' . _('Recent Records') . '</a></p>';
-            echo '<p><a href="#history_old">' . _('History') . '</a></p>';
-            echo '<p><a href="#players" class="playerranking">' . _('Player Statistics') . '</a></p></div>';
-        } else { // $layout == 'New'
+        // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
+        if ($layout == 'New') {
             echo '<div id="contents_new" class="contents">' .
             '<p><a href="#overall" class="overallrecords">' . _('Overall Records') . '</a></p>' .
             '<p><a href="#wrs" class="worldrecords">' . _('World Records') . '</a></p>' .
             '<p><a href="#player_search">' . _('Player Search') . '</a></p>' .
             '<p><a href="#recent" >' . _('Recent Records') . '</a></p>' .
             '<p><a href="#players" class="playerranking">' . _('Player Statistics') . '</a></p>' .
-            '</div>';
+            '</div><noscript>';
+        }
+        echo '<div class="contents">' .
+        '<p><a href="#overall" class="overallrecords">' . _('Overall Records') . '</a></p>' .
+        '<p><a href="#wrs" class="worldrecords">' . _('World Records') . '
+        </a></p>';
+        $games = curl_get($API_BASE . '/api/v1/game/');
+        if (strpos($games, 'Internal Server Error') === false) {
+            $games = json_decode($games, true);
+            foreach ($games as $key => $data) {
+                if ($data['short_name'] == 'UDoALG') {
+                    continue;
+                }
+                echo '<p><a href="#' . $data['short_name'] . '">' . $data['full_name'] . '</a></p>';
+            }
+        }
+        echo '<p><a href="#western_records">' . _('Western Records') . '</a></p>';
+        echo '<p><a id="playersearchlink" href="#player_search">' . _('Player Search') . '</a></p>';
+        echo '<p><a href="#recent">' . _('Recent Records') . '</a></p>';
+        echo '<p><a id="historylink" href="#history_old">' . _('History') . '</a></p>';
+        echo '<p><a href="#players" class="playerranking">' . _('Player Statistics') . '</a></p></div>';
+        if ($layout == 'New') {
+            echo '</noscript>';
         }
     ?>
     <div id='checkboxes' class='contents'>
@@ -265,141 +268,146 @@ foreach ($west_data as $key => $data) {
     </div>
     <h2 id='wrs'><?php echo _('World Records') ?></h2>
     <?php
-        // With wr_old_layout cookie set, show classic all games layout
-        if ($layout == 'Old') {
-            $sheet = '_1';
-            $diff_key = 'Easy';
-            foreach ($wrs as $game => $obj) {
-                if ($game == 'MoF' || $game == 'GFW') {
-                    $sheet = '_2';
-                    $diff_key = 'Easy';
-                } else if ($game == 'StB' || $game == 'DS') {
-                    $diff_key = '1';
+        // With JavaScript disabled OR wr_old_layout cookie set, show classic all games layout
+        if ($layout == 'New') {
+            echo '<noscript>';
+        }
+        $sheet = '_1';
+        $diff_key = 'Easy';
+        foreach ($wrs as $game => $obj) {
+            if ($game == 'MoF' || $game == 'GFW') {
+                $sheet = '_2';
+                $diff_key = 'Easy';
+            } else if ($game == 'StB' || $game == 'DS') {
+                $diff_key = '1';
+            }
+            echo '<div id="' . $game . '">';
+            echo '<table id="' . $game . '_table" class="' . $game . 't' . ($game != 'HSiFS' ? ' sortable' : '') . '">' .
+            '<caption><p><span id="' . $game . '_image_old" class="cover sheet' . $sheet . (game_num($game) <= 5 ? ' cover98' : '') . '"></span> ' . full_name($game) . '</p></caption>' .
+            '<thead><tr><th>' . shot_route($game) . '</th>';
+            foreach ($obj as $diff => $shots) {
+                if ($game != 'GFW' || $diff != 'Extra') {
+                    echo '<th>' . $diff . '</th>';
                 }
-                echo '<div id="' . $game . '">';
-                echo '<table id="' . $game . '_table" class="' . $game . 't' . ($game != 'HSiFS' ? ' sortable' : '') . '">' .
-                '<caption><p><span id="' . $game . '_image_old" class="cover sheet' . $sheet . (game_num($game) <= 5 ? ' cover98' : '') . '"></span> ' . full_name($game) . '</p></caption>' .
-                '<thead><tr><th>' . shot_route($game) . '</th>';
-                foreach ($obj as $diff => $shots) {
-                    if ($game != 'GFW' || $diff != 'Extra') {
-                        echo '<th>' . $diff . '</th>';
+            }
+            echo '</tr></thead><tbody>';
+            for ($i = 0; $i < sizeof($obj[$diff_key]); $i++) {
+                $shot = array_keys($obj[$diff_key])[$i];
+                echo '<tr><td>' . format_shot($game, $shot) . '</td>';
+                for ($j = 0; $j < sizeof($obj); $j++) {
+                    $diff = array_keys($obj)[$j];
+                    $shots = $obj[array_keys($obj)[$j]];
+                    if (isset($shots[$shot])) {
+                        $score = $shots[$shot][0];
+                        $player = $shots[$shot][1];
+                        $date = $shots[$shot][2];
+                        $replay = $shots[$shot][3];
+                        $video = empty($shots[$shot][4]) ? '' : $shots[$shot][4];
+                    } else {
+                        $score = 0;
+                        $player = '';
+                        $date = '';
+                        $replay = '';
+                        $video = '';
                     }
-                }
-                echo '</tr></thead><tbody>';
-                for ($i = 0; $i < sizeof($obj[$diff_key]); $i++) {
-                    $shot = array_keys($obj[$diff_key])[$i];
-                    echo '<tr><td>' . format_shot($game, $shot) . '</td>';
-                    for ($j = 0; $j < sizeof($obj); $j++) {
-                        $diff = array_keys($obj)[$j];
-                        $shots = $obj[array_keys($obj)[$j]];
-                        if (isset($shots[$shot])) {
-                            $score = $shots[$shot][0];
-                            $player = $shots[$shot][1];
-                            $date = $shots[$shot][2];
-                            $replay = $shots[$shot][3];
-                            $video = empty($shots[$shot][4]) ? '' : $shots[$shot][4];
-                        } else {
-                            $score = 0;
-                            $player = '';
-                            $date = '';
-                            $replay = '';
-                            $video = '';
-                        }
-                        if ($game == 'GFW' && $diff == 'Extra') {
-                            continue;
-                        } else if ($game == 'HSiFS' && $diff == 'Extra') {
-                            if (strpos($shot, 'Spring')) {
-                                $shot = substr($shot, 0, -6);
-                                $score_text = number_format($shots[$shot][0], 0, '.', ',');
-                                if (isset($_COOKIE['prefer_video']) && !empty($video)) {
-                                    $score = '<a class="replay" href="' . $video . '" target="_blank">' . $score . '</a>';
-                                    echo '<td rowspan="4">' . $score_text . '<span class="dl_icon"></span>';
-                                } else if (!empty($replay)) {
-                                    $score = '<a class="replay" href="' . $replay . '">' . $score . '</a>';
-                                    echo '<td rowspan="4">' . $score_text . '<span class="dl_icon"></span>';
-                                } else if (!empty($video)) {
-                                    $score = '<a class="replay" href="' . $video . '" target="_blank">' . $score . '</a>';
-                                    echo '<td rowspan="4">' . $score_text . '<span class="dl_icon"></span>';
-                                } else {
-                                    echo '<td rowspan="4">' . $score_text;
-                                }
-                                echo '<br>by <em>' . $shots[$shot][1] . '</em><span class="dimgrey"><br>' . date_tl($shots[$shot][2], $lang) . '</span></td>';
-                            }
-                        } else {
-                            if ($score >= $MAX_SCORE) {
-                                $score_text = '<span class="cs">' . number_format($MAX_SCORE, 0, '.', ',') . '<span class="tooltip">' . number_format($score, 0, '.', ',') . '</span></span>';
-                            } else {
-                                $score_text = number_format($score, 0, '.', ',');
-                            }
+                    if ($game == 'GFW' && $diff == 'Extra') {
+                        continue;
+                    } else if ($game == 'HSiFS' && $diff == 'Extra') {
+                        if (strpos($shot, 'Spring')) {
+                            $shot = substr($shot, 0, -6);
+                            $score_text = number_format($shots[$shot][0], 0, '.', ',');
                             if (isset($_COOKIE['prefer_video']) && !empty($video)) {
-                                $score_text = '<a class="replay" href="' . $video . '" target="_blank">' . $score_text . '<span class="dl_icon"></span></a>';
+                                $score = '<a class="replay" href="' . $video . '" target="_blank">' . $score . '</a>';
+                                echo '<td rowspan="4">' . $score_text . '<span class="dl_icon"></span>';
                             } else if (!empty($replay)) {
-                                $score_text = '<a class="replay" href="' . $replay . '">' . $score_text . '<span class="dl_icon"></span></a>';
+                                $score = '<a class="replay" href="' . $replay . '">' . $score . '</a>';
+                                echo '<td rowspan="4">' . $score_text . '<span class="dl_icon"></span>';
                             } else if (!empty($video)) {
-                                $score_text = '<a class="replay" href="' . $video . '" target="_blank">' . $score_text . '<span class="dl_icon"></span></a>';
-                            }
-                            if ($score == $overall->{$game}['score'] && $game != 'StB' && $game != 'DS') {
-                                $score_text = '<strong>' . $score_text . '</strong>';
-                            }
-                            if ($score == $diff_max->{$game}->{$diff}['score'] && $game != 'StB' && $game != 'DS') {
-                                $score_text = '<u>' . $score_text . '</u>';
-                            }
-                            if ($score == 0) {
-                                echo '<td></td>';
+                                $score = '<a class="replay" href="' . $video . '" target="_blank">' . $score . '</a>';
+                                echo '<td rowspan="4">' . $score_text . '<span class="dl_icon"></span>';
                             } else {
-                                echo '<td data-sort="' . $score . '">' . $score_text . '<br>by <em>' . $player . '</em><span class="dimgrey"><br>' . date_tl($date, $lang) . '</span></td>';
+                                echo '<td rowspan="4">' . $score_text;
                             }
+                            echo '<br>by <em>' . $shots[$shot][1] . '</em><span class="dimgrey"><br>' . date_tl($shots[$shot][2], $lang) . '</span></td>';
+                        }
+                    } else {
+                        if ($score >= $MAX_SCORE) {
+                            $score_text = '<span class="cs">' . number_format($MAX_SCORE, 0, '.', ',') . '<span class="tooltip">' . number_format($score, 0, '.', ',') . '</span></span>';
+                        } else {
+                            $score_text = number_format($score, 0, '.', ',');
+                        }
+                        if (isset($_COOKIE['prefer_video']) && !empty($video)) {
+                            $score_text = '<a class="replay" href="' . $video . '" target="_blank">' . $score_text . '<span class="dl_icon"></span></a>';
+                        } else if (!empty($replay)) {
+                            $score_text = '<a class="replay" href="' . $replay . '">' . $score_text . '<span class="dl_icon"></span></a>';
+                        } else if (!empty($video)) {
+                            $score_text = '<a class="replay" href="' . $video . '" target="_blank">' . $score_text . '<span class="dl_icon"></span></a>';
+                        }
+                        if ($score == $overall->{$game}['score'] && $game != 'StB' && $game != 'DS') {
+                            $score_text = '<strong>' . $score_text . '</strong>';
+                        }
+                        if ($score == $diff_max->{$game}->{$diff}['score'] && $game != 'StB' && $game != 'DS') {
+                            $score_text = '<u>' . $score_text . '</u>';
+                        }
+                        if ($score == 0) {
+                            echo '<td></td>';
+                        } else {
+                            echo '<td data-sort="' . $score . '">' . $score_text . '<br>by <em>' . $player . '</em><span class="dimgrey"><br>' . date_tl($date, $lang) . '</span></td>';
                         }
                     }
-                    echo '</tr>';
                 }
-                if ($game == 'GFW') {
-                    $score = number_format($obj['Extra']['A1'][0], 0, '.', ',');
-                    if (!empty($replay)) {
-                        $score = '<a class="replay" href="' .$replay . '">' . $score . '<span class="dl_icon"></span></a>';
-                    }
-                    echo '<tr><td>Extra</td><td colspan="4">' . $score . '<br>by <em>' . $obj['Extra']['A1'][1] .
-                    '</em><span class="dimgrey"><br>' . date_tl($obj['Extra']['A1'][2], $lang) . '</span></td></tr>';
-                }
-                echo '</tbody></table></div>';
+                echo '</tr>';
             }
-            // Old layout western records
-            echo '<h2 id="western_records">' . _('Western Records') . '</h2>';
-            foreach ($west as $game => $obj) {
-                echo '<table class="' . $game . 't"><tr class="irregular_tr"><th colspan="3">' . _($game) .
-                '</th></tr><tr class="irregular_tr"><th>' . _('World') .
-                '</th><th>' . _('West') . '</th><th>' . _('Percentage') . '</th></tr>';
-                foreach ($obj as $diff => $shots) {
-                    $westt = $west[$game][$diff];
-                    $world = $diff_max->{$game}->{$diff};
-                    if ($westt[0] == $world['score']) {
-                        $percentage = 100;
-                    } else {
-                        $percentage = number_format((float) $westt[0] / $world['score'] * 100, 2, '.', ',');
-                    }
-                    if ($world['score'] >= $MAX_SCORE) {
-                        $world_text = '<abbr title="' . number_format($world['score'], 0, '.', ',') .
-                        '">' . number_format($MAX_SCORE, 0, '.', ',') . '</abbr>';
-                    } else {
-                        $world_text = number_format($world['score'], 0, '.', ',');
-                    }
-                    if ($westt[0] >= $MAX_SCORE) {
-                        $west_text = '<abbr title="' . number_format($westt[0], 0, '.', ',') .
-                        '">' . number_format($MAX_SCORE, 0, '.', ',') . '</abbr>';
-                    } else {
-                        $west_text = number_format($westt[0], 0, '.', ',');
-                    }
-                    echo '<tr class="irregular_tr"><td colspan="3">' . $diff . '</td></tr>' .
-                    '<tr class="irregular_tr"><td>' . $world_text .
-                    '<br>by <em>' . $world['player'] . '</em><br>(' . _($world['shottype']) .
-                    ')</td><td>' . $west_text .
-                    '<br>by <em>' . $westt[1] . '</em><br>(' . (empty($westt[2]) ? $westt[2] : _($westt[2])) .
-                    ')</td><td class="' . pc_class($percentage) . '">(' . $percentage . '%)</td></tr>';
+            if ($game == 'GFW') {
+                $score = number_format($obj['Extra']['A1'][0], 0, '.', ',');
+                if (!empty($replay)) {
+                    $score = '<a class="replay" href="' .$replay . '">' . $score . '<span class="dl_icon"></span></a>';
                 }
-                echo '</table>';
+                echo '<tr><td>Extra</td><td colspan="4">' . $score . '<br>by <em>' . $obj['Extra']['A1'][1] .
+                '</em><span class="dimgrey"><br>' . date_tl($obj['Extra']['A1'][2], $lang) . '</span></td></tr>';
             }
+            echo '</tbody></table></div>';
+        }
+        // Old layout western records
+        echo '<h2 id="western_records">' . _('Western Records') . '</h2>';
+        foreach ($west as $game => $obj) {
+            echo '<table class="' . $game . 't"><tr class="irregular_tr"><th colspan="3">' . _($game) .
+            '</th></tr><tr class="irregular_tr"><th>' . _('World') .
+            '</th><th>' . _('West') . '</th><th>' . _('Percentage') . '</th></tr>';
+            foreach ($obj as $diff => $shots) {
+                $westt = $west[$game][$diff];
+                $world = $diff_max->{$game}->{$diff};
+                if ($westt[0] == $world['score']) {
+                    $percentage = 100;
+                } else {
+                    $percentage = number_format((float) $westt[0] / $world['score'] * 100, 2, '.', ',');
+                }
+                if ($world['score'] >= $MAX_SCORE) {
+                    $world_text = '<abbr title="' . number_format($world['score'], 0, '.', ',') .
+                    '">' . number_format($MAX_SCORE, 0, '.', ',') . '</abbr>';
+                } else {
+                    $world_text = number_format($world['score'], 0, '.', ',');
+                }
+                if ($westt[0] >= $MAX_SCORE) {
+                    $west_text = '<abbr title="' . number_format($westt[0], 0, '.', ',') .
+                    '">' . number_format($MAX_SCORE, 0, '.', ',') . '</abbr>';
+                } else {
+                    $west_text = number_format($westt[0], 0, '.', ',');
+                }
+                echo '<tr class="irregular_tr"><td colspan="3">' . $diff . '</td></tr>' .
+                '<tr class="irregular_tr"><td>' . $world_text .
+                '<br>by <em>' . $world['player'] . '</em><br>(' . _($world['shottype']) .
+                ')</td><td>' . $west_text .
+                '<br>by <em>' . $westt[1] . '</em><br>(' . (empty($westt[2]) ? $westt[2] : _($westt[2])) .
+                ')</td><td class="' . pc_class($percentage) . '">(' . $percentage . '%)</td></tr>';
+            }
+            echo '</table>';
+        }
+        if ($layout == 'New') {
+            echo '</noscript>';
+        }
         // With wr_old_layout cookie NOT set, show game image layout (CSS hides it with JavaScript disabled)
-        } else { // $layout == 'New'
+        if ($layout == 'New') {
             echo '<div id="newlayout"><p id="clickgame">' . _('Click a game cover to show its list of world records.') . '</p>';
             $second_row = false;
             if (gettype($games) != 'string') {
@@ -536,56 +544,62 @@ foreach ($west_data as $key => $data) {
                     <th class='general_header'><?php echo _('Date') ?></th>
                 </tr></thead>
                 <tbody id='recentbody'><?php
-                    if ($layout == 'Old') {
-                        $recent = curl_get($API_BASE . '/api/v1/replay/?limit=' . $RECENT_LIMIT . '&ordering=-date&type=Score&region=Eastern&verified=true');
-                        $recent = json_decode($recent, true);
-                        $recent = $recent['results'];
-                        foreach ($recent as $key => $data) {
-                            $date = date_tl($data['date'], $lang);
-                            $date_raw = date_tl($data['date'], 'raw');
-                            if (empty($data['replay'])) {
-                                $replay = '-';
-                            } else {
-                                $chunks = preg_split('/\//', $data['replay']);
-                                $replay = '<a href="' . $data['replay'] . '">' . $chunks[count($chunks) - 1] . '</a>';
-                            }
-                            if (empty($data['video'])) {
-                                $video = '-';
-                            } else {
-                                $video = '<a href="' . $data['video'] . '">' . _('Link') . '</a>';
-                            }
-                            echo '<tr>';
-                            echo '<td class="' . $data['category']['game'] . 'p">' . _($data['category']['game']) . _(' ') . _($data['category']['difficulty']) . _(' ') . _($data['category']['shot']) . '</td>';
-                            echo '<td>' . number_format($data['score'], 0, '.', ',') . '</td>';
-                            echo '<td>' . $data['player'] . '</td>';
-                            echo '<td>' . $replay . '</td>';
-                            echo '<td>' . $video . '</td>';
-                            echo '<td data-sort="' . $date_raw . '">' . $date . '</td>';
-                            echo '</tr>';
+                    $recent = curl_get($API_BASE . '/api/v1/replay/?limit=' . $RECENT_LIMIT . '&ordering=-date&type=Score&region=Eastern&verified=true');
+                    $recent = json_decode($recent, true);
+                    $recent = $recent['results'];
+                    foreach ($recent as $key => $data) {
+                        $date = date_tl($data['date'], $lang);
+                        $date_raw = date_tl($data['date'], 'raw');
+                        if (empty($data['replay'])) {
+                            $replay = '-';
+                        } else {
+                            $chunks = preg_split('/\//', $data['replay']);
+                            $replay = '<a href="' . $data['replay'] . '">' . $chunks[count($chunks) - 1] . '</a>';
                         }
+                        if (empty($data['video'])) {
+                            $video = '-';
+                        } else {
+                            $video = '<a href="' . $data['video'] . '">' . _('Link') . '</a>';
+                        }
+                        echo '<tr>';
+                        echo '<td class="' . $data['category']['game'] . 'p">' . _($data['category']['game']) . _(' ') . _($data['category']['difficulty']) . _(' ') . _($data['category']['shot']) . '</td>';
+                        echo '<td>' . number_format($data['score'], 0, '.', ',') . '</td>';
+                        echo '<td>' . $data['player'] . '</td>';
+                        echo '<td>' . $replay . '</td>';
+                        echo '<td>' . $video . '</td>';
+                        echo '<td data-sort="' . $date_raw . '">' . $date . '</td>';
+                        echo '</tr>';
                     }
                 ?></tbody>
             </table>
         </div>
     </div>
-    <?php if ($layout == 'Old') {
-        echo '<div id="history_old">';
-        echo '<h2>' . _("History") . '</h2>';
-        echo '<div class="center">';
-            echo '<label for="history_category_old">' . _("Category") . '</label>';
-            echo '<select id="history_category_old">';
-                echo '<option value="">...</option>';
-                $categories = curl_get($API_BASE . '/api/v1/category/?type=Score&region=Eastern');
-                $categories = json_decode($categories, true);
-                foreach ($categories as $key => $category) {
-                    $category_val = $category['game'] . ' ' . $category['difficulty'] . ' ' . $category['shot'];
-                    $category_str = _($category['game']) . _(' ') . _($category['difficulty']) . _(' ') . _($category['shot']);
-                    echo '<option value="' . $category_val . '">' . $category_str . '</option>';
-                }
-            echo '</select>';
-        echo '</div>';
-        echo '</div>';
-    }?>
+    <?php
+        if ($layout == 'New') {
+            echo '<noscript>';
+        }
+    ?>
+    <div id='history_old'>
+        <h2><?php echo _('History') ?></h2>
+        <div class='center'>
+            <label for='history_category_old'><?php echo _('Category') ?></label>
+            <select id='history_category_old'>
+                <option value=''>...</option>
+                <?php
+                    $categories = curl_get($API_BASE . '/api/v1/category/?type=Score&region=Eastern');
+                    if (strpos($categories, 'Internal Server Error') === false) {
+                        $categories = json_decode($categories, true);
+                        natcasesort($categories);
+                        foreach ($categories as $key => $category) {
+                            $category_val = $category['game'] . ' ' . $category['difficulty'] . ' ' . $category['shot'];
+                            $category_str = _($category['game']) . _(' ') . _($category['difficulty']) . _(' ') . _($category['shot']);
+                            echo '<option value="' . $category_val . '">' . $category_str . '</option>';
+                        }
+                    }
+                ?>
+            </select>
+        </div>
+    </div>
     <div id='history_list_old' class='overflow_mobile'>
         <p id='no_history_old'><?php echo _('No history available.') ?></p>
         <table id='history_table_old' class='sortable'>
@@ -602,6 +616,11 @@ foreach ($west_data as $key => $data) {
             <tbody id='history_tbody_old'></tbody>
         </table>
     </div>
+    <?php
+        if ($layout == 'New') {
+            echo '</noscript>';
+        }
+    ?>
     <div id='players'>
         <h2><?php echo _('Player Statistics') ?></h2>
         <table id='ranking' class='sortable'>

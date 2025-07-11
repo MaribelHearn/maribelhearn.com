@@ -69,11 +69,9 @@ function format_lm(string $lm, string $lang) {
     return str_replace('%date', date_tl($lm, $lang), $result);
 }
 
-if ($layout == 'Old') {
-    $last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&date__isnull=False&type=LNN&limit=1');
-    $last_modified = json_decode($last_modified, true);
-    $last_modified = $last_modified['results'][0]['date'];
-}
+$last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&date__isnull=False&type=LNN&limit=1');
+$last_modified = json_decode($last_modified, true);
+$last_modified = $last_modified['results'][0]['date'];
 
 ?>
 <div id='wrap' class='wrap'>
@@ -97,24 +95,30 @@ if ($layout == 'Old') {
     <p id='last_modified'><?php echo (!empty($last_modified) ? format_lm($last_modified, $lang) : '') ?></p>
     <h2><?php echo _('Contents') ?></h2>
     <?php
-        // With lnn_old_layout cookie set, show links to all games and player search
-        if ($layout == 'Old') {
-            echo '<div class="contents"><p><a href="#lnns">' . _('LNN Lists') . '</a></p>';
-            foreach ($games as $key => $data) {
-                echo '<p><a href="#' . $data['short_name'] . '">' . $data['full_name'] . '</a></p>';
-            }
-            echo '<p><a href="#search">' . _('Search') .
-            '</a></p><p><a href="#recent">' . _('Recent LNNs') .
-            '</a></p><p><a href="#overall">' . _('Overall Count') .
-            '</a></p><p><a href="#players">' . _('Player Statistics') .
-            '</a></p></div>';
-        } else { // $layout == 'New'
+        // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
+        if ($layout == 'New') {
             echo '<div id="contents_new" class="contents"><p><a href="#lnns" class="lnns">' . _('LNN Lists') .
             '</a></p><p><a href="#search">' . _('Search') .
             '</a></p><p><a href="#recent">' . _('Recent LNNs') .
             '</a></p><p><a href="#overall">' . _('Overall Count') .
             '</a></p><p><a href="#players">' . _('Player Statistics') .
-            '</a></p></div>';
+            '</a></p></div><noscript>';
+        }
+        echo '<div class="contents"><p><a href="#lnns">' . _('LNN Lists') . '</a></p>';
+        $games = curl_get($API_BASE . '/api/v1/game/');
+        if (strpos($games, 'Internal Server Error') === false) {
+            $games = json_decode($games, true);
+            foreach ($games as $key => $data) {
+                echo '<p><a href="#' . $data['short_name'] . '">' . $data['full_name'] . '</a></p>';
+            }
+        }
+        echo '<p><a id="searchlink" href="#search">' . _('Search') .
+        '</a></p><p><a href="#recent">' . _('Recent LNNs') .
+        '</a></p><p><a href="#overall">' . _('Overall Count') .
+        '</a></p><p><a href="#players">' . _('Player Statistics') .
+        '</a></p></div>';
+        if ($layout == 'New') {
+            echo '</noscript>';
         }
     ?>
     <div id='checkboxes' class='contents'>
@@ -251,7 +255,7 @@ if ($layout == 'Old') {
     <div id='search'>
         <h2><?php echo _('Search'); ?></h2>
 		<p id='playerlnns'><?php echo _('Choose a player or category from the menus below to show their LNNs.') ?></p>
-        <div class='center'>
+        <div id='player_search' class='center'>
             <label for='player'><?php echo _('Player') ?></label>
             <input id='player' type='text'>
             <label class='search_label' for='search_player'><?php echo _('Search') ?></label>
@@ -327,40 +331,38 @@ if ($layout == 'Old') {
                 <th class='general_header'><?php echo _('Date') ?></th>
             </tr></thead>
             <tbody id='recentbody'><?php
-                if ($layout == 'Old') {
-                    $recent = curl_get($API_BASE . '/api/v1/replay/?limit=' . $RECENT_LIMIT . '&ordering=-date&date__isnull=False&type=LNN');
-                    $recent = json_decode($recent, true);
-                    $recent = $recent['results'];
-                    foreach ($recent as $key => $data) {
-                        if (empty($data['date'])) {
-                            continue;
-                        }
-                        $date = date_tl($data['date'], $lang);
-                        $date_raw = date_tl($data['date'], 'raw');
-                        if (empty($data['replay'])) {
-                            $replay = '-';
-                        } else {
-                            $chunks = preg_split('/\//', $data['replay']);
-                            $replay = '<a href="' . $data['replay'] . '">' . $chunks[count($chunks) - 1] . '</a>';
-                        }
-                        if (empty($data['video'])) {
-                            $video = '-';
-                        } else {
-                            $video = '<a href="' . $data['video'] . '">' . _('Link') . '</a>';
-                        }
-                        if (empty($data['category']['route'])) {
-                            $route = '';
-                        } else {
-                            $route = _(' ') . _($data['category']['route']);
-                        }
-                        echo '<tr>';
-                        echo '<td class="' . $data['category']['game'] . 'p">' . _($data['category']['game']) . _(' ') . _($data['category']['shot'])  . $route . '</td>';
-                        echo '<td>' . $data['player'] . '</td>';
-                        echo '<td class="no_mobile">' . $replay . '</td>';
-                        echo '<td>' . $video . '</td>';
-                        echo '<td data-sort="' . $date_raw . '">' . $date . '</td>';
-                        echo '</tr>';
+                $recent = curl_get($API_BASE . '/api/v1/replay/?limit=' . $RECENT_LIMIT . '&ordering=-date&date__isnull=False&type=LNN');
+                $recent = json_decode($recent, true);
+                $recent = $recent['results'];
+                foreach ($recent as $key => $data) {
+                    if (empty($data['date'])) {
+                        continue;
                     }
+                    $date = date_tl($data['date'], $lang);
+                    $date_raw = date_tl($data['date'], 'raw');
+                    if (empty($data['replay'])) {
+                        $replay = '-';
+                    } else {
+                        $chunks = preg_split('/\//', $data['replay']);
+                        $replay = '<a href="' . $data['replay'] . '">' . $chunks[count($chunks) - 1] . '</a>';
+                    }
+                    if (empty($data['video'])) {
+                        $video = '-';
+                    } else {
+                        $video = '<a href="' . $data['video'] . '">' . _('Link') . '</a>';
+                    }
+                    if (empty($data['category']['route'])) {
+                        $route = '';
+                    } else {
+                        $route = _(' ') . _($data['category']['route']);
+                    }
+                    echo '<tr>';
+                    echo '<td class="' . $data['category']['game'] . 'p">' . _($data['category']['game']) . _(' ') . _($data['category']['shot'])  . $route . '</td>';
+                    echo '<td>' . $data['player'] . '</td>';
+                    echo '<td class="no_mobile">' . $replay . '</td>';
+                    echo '<td>' . $video . '</td>';
+                    echo '<td data-sort="' . $date_raw . '">' . $date . '</td>';
+                    echo '</tr>';
                 }
             ?></tbody>
         </table>

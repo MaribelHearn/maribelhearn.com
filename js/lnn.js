@@ -536,28 +536,22 @@ function setEventListeners() {
 }
 
 function setAttributes() {
+    if (!getCookie("lnn_old_layout")) {
+        document.getElementById("newlayout").style.display = "block";
+        document.getElementById("contents_new").style.display = "block";
+    }
+
+    document.getElementById("search").style.display = "block";
     const flags = document.querySelectorAll(".flag");
+    const searchLink = document.getElementById("searchlink");
 
     for (const flag of flags) {
         flag.setAttribute("href", "");
     }
-}
-
-function getLastModifiedDate() {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=-date&date__isnull=False&type=LNN&limit=1`);
-    xhr.onreadystatechange = function () {
-        if (this.readyState === 4) {
-            if (this.status === 200) {
-                const response = JSON.parse(this.response);
-                const lastModifiedDate = formatDate(response.results[0].submitted_date);
-                let lastModified = _(`LNNs are current as of <span id="lm">%date</span>.`).replace("%date", lastModifiedDate);
-                document.getElementById("last_modified").innerHTML = lastModified;
-            }
-        }
+    
+    if (searchLink) {
+        searchLink.style.display = "block";
     }
-
-    xhr.send();
 }
 
 /*function getPlayerSearchOptions() {
@@ -582,61 +576,6 @@ function getLastModifiedDate() {
 
     xhr.send();
 }*/
-
-function getRecentLNNs() {
-    const recentLimit = getCookie("recent_limit") ? Math.max(getCookie("recent_limit"), 1) : 15;
-
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/replay/?limit=${recentLimit}&ordering=-date&date__isnull=False&type=LNN`);
-    xhr.onreadystatechange = function () {
-        if (this.readyState === 4) {
-            if (this.status === 200) {
-                const recentTable = document.getElementById("recentbody");
-                const recent = JSON.parse(this.response).results;
-
-                for (const entry of recent) {
-                    if (!entry["date"]) {
-                        continue;
-                    }
-
-                    const date = formatDate(entry["date"]);
-                    const dateRaw = formatDate(entry["date"], "raw");
-                    let replay, video, route;
-
-                    if (!entry["replay"]) {
-                        replay = '-';
-                    } else {
-                        const chunks = entry["replay"].split(/\//);
-                        replay = `<a href='${entry["replay"]}'>${chunks[chunks.length - 1]}</a>`;
-                    }
-
-                    if (!entry["video"]) {
-                        video = '-';
-                    } else {
-                        video = `<a href='${entry["video"]}'>${_('Link')}</a>`;
-                    }
-
-                    if (!entry["category"]["route"]) {
-                        route = '';
-                    } else {
-                        route = _(' ') + _(entry["category"]["route"]);
-                    }
-
-                    let tableRow = '<tr>';
-                    tableRow += `<td class="${entry["category"]["game"]}p">${_(entry["category"]["game"]) + _(' ') + _(entry["category"]["shot"]) + route}</td>`;
-                    tableRow += `<td>${entry["player"]}</td>`;
-                    tableRow += `<td class="no_mobile">${replay}</td>`;
-                    tableRow += `<td>${video}</td>`;
-                    tableRow += `<td data-sort='${dateRaw}'>${date}</td>`;
-                    tableRow += '</tr>';
-                    recentTable.innerHTML += tableRow;
-                }
-            }
-        }
-    }
-
-    xhr.send();
-}
 
 function checkHash() {
     // player in hash links to player LNNs
@@ -677,9 +616,7 @@ function init() {
     setAttributes();
 
     if (!getCookie("lnn_old_layout")) {
-        getLastModifiedDate();
         //getPlayerSearchOptions();
-        getRecentLNNs();
     }
 
     // legacy video toggle
