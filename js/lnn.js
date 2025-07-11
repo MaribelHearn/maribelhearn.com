@@ -638,10 +638,7 @@ function init() {
     }
 
     checkHash();
-
-    if (getCookie("lnn_old_layout")) {
-        document.getElementById("number_of_lnns").click();
-    }
+    document.getElementById("number_of_lnns").click();
 }
 
 window.addEventListener("DOMContentLoaded", init, false);
