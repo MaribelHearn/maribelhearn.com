@@ -231,41 +231,8 @@
     <!-- Emulators -->
     <hr>
     <h2 id='emulators'><?php echo _('PC-98 Emulators') ?></h2>
-	<p><strong>Neko Project 21</strong></p>
-	<p><?php
-		echo _('The only emulator that is currently still maintained together with DOSBox-X. It offers unlimited ' .
-		'savestates and has high accuracy, but requires the right configurations; can be confusing for new users. ' .
-		'The emulator is located in the bin folder with two versions, 32-bit and 64-bit (x64).');
-	?></p>
-	<div>
-		<p><a href='https://github.com/spaztron64/th98tuc_site/raw/main/packages/2022_04_12/np21_nogame.zip' target='_blank'><?php echo _('Download (Configured for Touhou)') ?></a></p>
-		<p><a href='https://github.com/sor593/np21w' target='_blank'><?php echo _('Download') ?></a></p>
-	</div>
-	<p><strong>T98-Next</strong></p>
-	<p><?php
-		echo _('Easy-to-use emulator that will emulate the Touhou games properly without needing configuration ' .
-		'of any kind, but less feature-rich, and allows 8 active savestates at a time, 4 of which through hotkeys.');
-	?></p>
-	<p><a href='https://maribelhearn.com/mirror/T98-Next.zip'><?php echo _('Download (Configured for Touhou)') ?></a></p>
-	<p><strong>Anex86</strong></p>
-	<p><?php
-		echo _('This emulator has low system requirements and can run even on very old computers. ' .
-		'However, the graphics are mediocre and the sound emulation requires proper configuration to be accurate. ' .
-		'Allows for 8 savestates and requires a separate font file, included in the download.');
-	?></p>
-	<div>
-		<p><a href='https://maribelhearn.com/mirror/Anex86.zip'><?php echo _('Download (Configured for Touhou)') ?></a></p>
-	</div>
-	<p><strong>DOSBox-X</strong></p>
-	<p><?php
-		echo _('A fork of the DOSBox project that has support for PC-98. It is the only emulator to run natively ' .
-		'under not only Windows, but also Mac and Linux. A list of downloads for each system can be found ' .
-		'via the link below.');
-	?></p>
-	<div>
-		<p><a href='https://github.com/spaztron64/th98tuc_site/raw/main/packages/2022_04_12/dosboxx_nogame.zip' target='_blank'><?php echo _('Download (Configured for Touhou)') ?></a></p>
-		<p><a href='https://github.com/joncampbell123/dosbox-x/releases' target='_blank'><?php echo _('Download') ?> (GitHub)</a></p>
-	</div>
+	<p><em>This section has been moved.</em></p>
+	<p>See the page <a href='/faq/pc98'>Running PC-98 games</a> in the <a href='/faq'>FAQ</a>.</p>
     <!-- Miscellaneous -->
     <hr>
     <h2 id='miscellaneous'><?php echo _('Miscellaneous') ?></h2>
