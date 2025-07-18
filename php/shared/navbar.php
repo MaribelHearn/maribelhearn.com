@@ -2,6 +2,8 @@
 function affiliate_sites() {
     return '<p><a href="https://touhouworldcup.com">' .
     '<span class="icon twc_icon"></span>Touhou World Cup</a></p>' .
+    '<p><a href="https://touhoureplayshowcase.com">' .
+    '<span class="icon trs_icon"></span>Touhou Replay Showcase</a></p>' .
     '<p><a href="https://priw8.github.io">' .
     '<span class="icon priw8_icon"></span>Priw8\'s site</a></p>' .
     '<p><a href="https://exphp.github.io/thpages">' .
@@ -55,7 +57,6 @@ function game_pages() {
     '<p><a href="/tools"><span class="icon tools_icon"></span>Tools</a></p>' .
     '<p><a href="/wr"><span class="icon wr_icon"></span>WR</a></p>' .
     '<p><a href="/lnn"><span class="icon lnn_icon"></span>LNN</a></p>' .
-    '<p><a href="/trs"><span class="icon trs_icon"></span>TRS</a></p>' .
     '<p><a href="/gensokyo"><span class="icon gensokyo_icon"></span>Gensokyo</a></p>' .
     '<p><a href="/pofv"><span class="icon pofv_icon"></span>PoFV</a></p>' .
     '<p><a href="/fangame"><span class="icon fangame_icon"></span>Fangame</a></p>' .
@@ -121,7 +122,7 @@ function navbar(string $page) {
     $navbar .= '</div><div class="nav_right">';
         $navbar .= '<div class="dropdown">';
             $navbar .= '<a href="#" class="dropdown_button">Affiliates&#x25BF;</a>';
-            $navbar .= '<div class="dropdown_content dropdown_right' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
+            $navbar .= '<div class="dropdown_content dropdown_affiliates dropdown_right' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
                 $navbar .= affiliate_sites();
             $navbar .= '</div>';
         $navbar .= '</div> ';

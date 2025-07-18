@@ -118,6 +118,9 @@ img {
     z-index: 1;
     background-color: white;
 }
+.dropdown_affiliates {
+    min-width: 200px;
+}
 .dropdown_content p {
     margin: 4px;
     padding: 0px 0px 0px 0px;

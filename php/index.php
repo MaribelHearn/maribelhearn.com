@@ -55,10 +55,6 @@
                     runs of the Touhou shooting games are listed here.</span>
                 </li>
                 <li class='link'>
-                    <a href='/trs'><span class='icon trs_icon'></span> Touhou Replay Showcase</a>
-                    <span class='tooltip'>Read about the weekly Touhou Replay Showcase Twitch streams.</span>
-                </li>
-                <li class='link'>
                     <a href='/gensokyo'><span class='icon gensokyo_icon'></span> Gensokyo Replay Archive</a>
                     <span class='tooltip'>A complete and searchable archive of the replays from replays.gensokyo.org.</span>
                 </li>
@@ -119,8 +115,8 @@
             </ul>
         </div>
         <div>
-            <h2>Danmaku Gameplay Wiki</h2>
-            <p class='wide center'><a href='https://wiki.maribelhearn.com'><span class='icon wiki_icon'></span> The Danmaku Gameplay Wiki</a> is now live! You can browse gameplay knowledge or help out by adding more information.</p>
+            <h2>Touhou Replay Showcase</h2>
+            <p class='wide center'><a href='https://touhoureplayshowcase.com'><span class='icon trs_icon'></span> Touhou Replay Showcase</a> has been moved to its own domain! The former page on this website will redirect you there.</p>
         </div>
         <div id='special_thanks'>
             <h2>Special Thanks</h2>
