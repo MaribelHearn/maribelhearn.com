@@ -62,8 +62,8 @@ function redirect(string $page, string $page_path, string $error) {
             $query = $_SERVER['QUERY_STRING'];
             $url = str_replace('?' . $query, '', $url);
         }
-        if (file_exists('../../json/admin.json')) {
-            $json = file_get_contents('../../json/admin.json');
+        if (file_exists('json/admin.json')) {
+            $json = file_get_contents('json/admin.json');
             $data = json_decode($json, true);
             $query = str_replace('hl=jp', 'hl=ja', $query);
             if (isset($data[$url])) {
