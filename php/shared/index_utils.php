@@ -76,13 +76,13 @@ function redirect(string $page, string $page_path, string $error) {
     return $page;
 }
 
-/*function hit(string $filename, string $status_code) {
+function hit(string $filename, string $status_code) {
     $path = $filename == 'error.php' ? '../../.stats/' : '.stats/';
     if (file_exists($path)) {
         if (!empty($_SERVER['HTTP_USER_AGENT']) && preg_match('~(bot|crawl|slurp|spider|archiver|facebook|lighthouse|jigsaw|validator|w3c|hexometer)~i', $_SERVER['HTTP_USER_AGENT'])) {
             return;
         }
-        $ip = $_SERVER['REMOTE_ADDR'];
+        $ip = (empty($_SERVER['X_REAL_IP']) ? $_SERVER['REMOTE_ADDR'] : $_SERVER['X_REAL_IP']);
         $ip_log = $path . 'ips.log';
         $url = substr($_SERVER['REQUEST_URI'], 1);
         $token = (file_exists($path . 'token') ? trim(file_get_contents($path . 'token')) : '');
@@ -136,7 +136,7 @@ function redirect(string $page, string $page_path, string $error) {
             fclose($file);
         }
     }
-}*/
+}
 
 function set_theme_cookie() {
     if (is_localhost($_SERVER['REMOTE_ADDR'])) {
