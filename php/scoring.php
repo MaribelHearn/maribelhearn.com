@@ -5,7 +5,17 @@ $games_seen = [];
 $diffs_seen = [];
 $shots_seen = [];
 $wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty,shot&type=Score&region=Eastern&verified=true');
-if (strpos($wr_data, 'Internal Server Error') === false) {
+if (strpos($wr_data, 'Internal Server Error') !== false) {
+    $_GET['error'] = 500;
+    include_once('php/error.php');
+    include_once('php/shared/postscript.php');
+    die();
+} else if (strpos($wr_data, 'Service Unavailable') !== false || strpos($wr_data, 'ConnectionError') !== false) {
+    $_GET['error'] = 503;
+    include_once('php/error.php');
+    include_once('php/shared/postscript.php');
+    die();
+} else {
     $wr_data = json_decode($wr_data, true);
     foreach ($wr_data as $key => $data) {
         $score = $data['score'];
@@ -44,14 +54,12 @@ if (strpos($wr_data, 'Internal Server Error') === false) {
     <div class='contents'>
 		<?php
             $games = curl_get($API_BASE . '/api/v1/game/');
-            if (strpos($games, 'Internal Server Error') === false) {
-                $games = json_decode($games, true);
-                foreach ($games as $key => $data) {
-                    if ($data['short_name'] == 'UDoALG') {
-                        continue;
-                    }
-                    echo '<p><a href="#' . $data['short_name'] . '">' . $data['full_name'] . '</a></p>';
+            $games = json_decode($games, true);
+            foreach ($games as $key => $data) {
+                if ($data['short_name'] == 'UDoALG') {
+                    continue;
                 }
+                echo '<p><a href="#' . $data['short_name'] . '">' . $data['full_name'] . '</a></p>';
             }
 		?>
     </div>
@@ -140,63 +148,61 @@ if (strpos($wr_data, 'Internal Server Error') === false) {
         </tfoot>
     </table>
     <form><?php
-        if (gettype($games) != 'string' || strpos($games, 'Internal Server Error') === false) {
-            foreach ($games as $key => $data) {
-                $game = $data['short_name'];
-                if ($game == 'UDoALG') {
+        foreach ($games as $key => $data) {
+            $game = $data['short_name'];
+            if ($game == 'UDoALG') {
+                continue;
+            }
+            echo '<div id="' . $game . '"><table class="noborders"><caption><p><span id="' . $game . '_image" ' .
+            'class="cover ' . ($data['number'] <= 5 ? ' cover98' : '') . '"></span> ' . $data['full_name'] .
+            '</p></caption><tr><th>' . shot_route($game) . '</th>';
+            $categories = $data['shots'][0]['categories'];
+            foreach ($categories as $key => $category_data) {
+                if ($category_data['type'] == 'LNN' || $category_data['region'] == 'Western') {
                     continue;
                 }
-                echo '<div id="' . $game . '"><table class="noborders"><caption><p><span id="' . $game . '_image" ' .
-                'class="cover ' . ($data['number'] <= 5 ? ' cover98' : '') . '"></span> ' . $data['full_name'] .
-                '</p></caption><tr><th>' . shot_route($game) . '</th>';
-                $categories = $data['shots'][0]['categories'];
-                foreach ($categories as $key => $category_data) {
+                $diff = $category_data['difficulty'];
+                if ($game == 'GFW' && $diff == 'Extra') {
+                    continue;
+                }
+                echo '<th>' . $diff . '</th>';
+            }
+            if ($game == 'HSiFS') {
+                echo '<th>Extra</th>';
+            }
+            echo '</tr>';
+            foreach ($data['shots'] as $key => $shot_data) {
+                $shot = $shot_data['name'];
+                if ($game == 'HSiFS' && strlen($shot) <= 6) {
+                    continue;
+                }
+                echo '<tr><td>' . $shot . '</td>';
+                foreach ($shot_data['categories'] as $key => $category_data) {
                     if ($category_data['type'] == 'LNN' || $category_data['region'] == 'Western') {
                         continue;
                     }
                     $diff = $category_data['difficulty'];
-                    if ($game == 'GFW' && $diff == 'Extra') {
+                    if (($game == 'GFW' || $game == 'HSiFS') && $diff == 'Extra') {
                         continue;
                     }
-                    echo '<th>' . $diff . '</th>';
-                }
-                if ($game == 'HSiFS') {
-                    echo '<th>Extra</th>';
+                    $shot = str_replace(' ', '', $shot);
+                    echo '<td' . ($diff == 'Hard' || $diff == 'Extra' ? ' class="break"' : '') . '>' .
+                    '<label for="' . $game . $diff . $shot . '" class="label">' . $diff . '</label>' .
+                    '<input id="' . $game . $diff . $shot . '" type="text"></td>';
+                    if ($game == 'HSiFS' && $diff == 'Lunatic' && strpos($shot, 'Spring') !== false) {
+                        $shot = str_replace('Spring', '', $shot);
+                        echo '<td class="break"><label for="' . $game . 'Extra' . $shot . '" class="label">Extra</label>' .
+                        '<input id="' . $game . 'Extra' . $shot . '" type="text"></td>';
+                    } else if ($game == 'HSiFS' && $diff == 'Lunatic' && strpos($shot, 'Spring') === false) {
+                        echo '<td></td>'; // hidden
+                    }
                 }
                 echo '</tr>';
-                foreach ($data['shots'] as $key => $shot_data) {
-                    $shot = $shot_data['name'];
-                    if ($game == 'HSiFS' && strlen($shot) <= 6) {
-                        continue;
-                    }
-                    echo '<tr><td>' . $shot . '</td>';
-                    foreach ($shot_data['categories'] as $key => $category_data) {
-                        if ($category_data['type'] == 'LNN' || $category_data['region'] == 'Western') {
-                            continue;
-                        }
-                        $diff = $category_data['difficulty'];
-                        if (($game == 'GFW' || $game == 'HSiFS') && $diff == 'Extra') {
-                            continue;
-                        }
-                        $shot = str_replace(' ', '', $shot);
-                        echo '<td' . ($diff == 'Hard' || $diff == 'Extra' ? ' class="break"' : '') . '>' .
-                        '<label for="' . $game . $diff . $shot . '" class="label">' . $diff . '</label>' .
-                        '<input id="' . $game . $diff . $shot . '" type="text"></td>';
-                        if ($game == 'HSiFS' && $diff == 'Lunatic' && strpos($shot, 'Spring') !== false) {
-                            $shot = str_replace('Spring', '', $shot);
-                            echo '<td class="break"><label for="' . $game . 'Extra' . $shot . '" class="label">Extra</label>' .
-                            '<input id="' . $game . 'Extra' . $shot . '" type="text"></td>';
-                        } else if ($game == 'HSiFS' && $diff == 'Lunatic' && strpos($shot, 'Spring') === false) {
-                            echo '<td></td>'; // hidden
-                        }
-                    }
-                    echo '</tr>';
-                }
-                if ($game == 'GFW') {
-                    echo '<tr><td><label for="GFWExtraA1">Extra</label></td><td id="GFWExtra" colspan="4"><input id="GFWExtraA1" type="text"></td></tr>';
-                }
-                echo '</table></div>';
             }
+            if ($game == 'GFW') {
+                echo '<tr><td><label for="GFWExtraA1">Extra</label></td><td id="GFWExtra" colspan="4"><input id="GFWExtraA1" type="text"></td></tr>';
+            }
+            echo '</table></div>';
         }
 	    ?>
         <div class='center'>

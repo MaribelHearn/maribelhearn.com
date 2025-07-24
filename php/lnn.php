@@ -7,7 +7,7 @@ if (strpos($games, 'Internal Server Error') !== false) {
     include_once('php/error.php');
     include_once('php/shared/postscript.php');
     die();
-} else if (strpos($games, 'Service Unavailable') !== false) {
+} else if (strpos($games, 'Service Unavailable') !== false || strpos($wr_data, 'ConnectionError') !== false) {
     $_GET['error'] = 503;
     include_once('php/error.php');
     include_once('php/shared/postscript.php');
