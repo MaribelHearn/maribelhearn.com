@@ -134,7 +134,7 @@ If you want, you can download the two fonts from the links below. You can use ei
     </figure>
 </div>
 
-<h3 id='font_files'>Autofire</h3>
+<h3 id='autofire'>Autofire</h3>
 <p>PoDD (Touhou 3) requires mashing the Z key to shoot, while in SoEW (Touhou 2), you deal more damage by mashing the Z key than by holding it.
 The following autofire scripts allow you to play more comfortably for your hands, avoiding button mashing:
 <p><a href='https://maribelhearn.com/mirror/PoDDofire.ahk'>PoDDofire.ahk</a></p>
