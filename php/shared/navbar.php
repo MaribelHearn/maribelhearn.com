@@ -31,6 +31,8 @@ function touhou_sites() {
     '<span class="icon lunarcast_icon"></span>Lunarcast</a></p>' .
     '<p><a href="https://thscore.pndsng.com/index.php">' .
     '<span class="icon pndsng_icon"></span>PND List</a></p>' .
+    '<p><a href="https://thex-score.net/">' .
+    '<span class="icon thex_icon"></span>Touhou Extra Scoreboard</a></p>' .
     '<p><a href="https://wikiwiki.jp/thscorekg/">' .
     '<span class="icon kg_icon"></span>KG\'s Site</a></p>';
 }
@@ -128,7 +130,7 @@ function navbar(string $page) {
         $navbar .= '</div> ';
         $navbar .= '<div class="dropdown">';
             $navbar .= '<a href="#" class="dropdown_button">Touhou Sites&#x25BF;</a>';
-            $navbar .= '<div class="dropdown_content dropdown_right' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
+            $navbar .= '<div class="dropdown_content dropdown_affiliates dropdown_right' . ($page == 'tiers' ? ' dark_bg' : '') . '">';
                 $navbar .= touhou_sites();
             $navbar .= '</div>';
         $navbar .= '</div> ';
