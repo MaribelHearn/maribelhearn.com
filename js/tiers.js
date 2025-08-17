@@ -418,14 +418,19 @@ function printMessage(message) {
     document.getElementById(id).innerHTML = message;
 }
 
-function switchSort() {
+function switchSort(event) {
+    if (!isMobile() && event.target.nodeName !== 'P') {
+        return;
+    }
     document.getElementById("characters").innerHTML = "";
     document.getElementById("tier_list_tbody").innerHTML = "";
 
     if (isMobile()) {
         settings.sort = sorts[(sorts.indexOf(settings.sort) + 1) % sorts.length];
     } else {
-        settings.sort = document.getElementById("sort").value;
+        document.getElementById(`sort_${settings.sort}`).classList.remove("current_sort");
+        settings.sort = event.target.id.slice(5);
+        document.getElementById(`sort_${settings.sort}`).classList.add("current_sort");
     }
 
     multiSelection = [];
@@ -1971,6 +1976,10 @@ function addCategoryNamesToShots() {
     }
 }
 
+function initCurrentSort() {
+    document.getElementById(`sort_${settings.sort}`).classList.add("current_sort");
+}
+
 function loadTier(tiersData, tierNum, sort) {
     tiers[sort][tierNum] = {};
     tiers[sort][tierNum].name = tiersData.name;
@@ -2224,7 +2233,7 @@ function setEventListeners() {
 
     document.body.addEventListener("click", closeModal, false);
     document.body.addEventListener("keyup", detectKey, false);
-    document.getElementById("sort").addEventListener("change", switchSort, false);
+    document.getElementById("sort").addEventListener("click", switchSort, false);
     document.getElementById("toggle_view").addEventListener("click", toggleTierView, false);
     document.getElementById("toggle_picker").addEventListener("click", togglePickerSize, false);
     document.getElementById("info_button").addEventListener("click", showInformation, false);
@@ -2286,7 +2295,7 @@ function init() {
     }
 
     document.getElementById("tier_list_caption").innerHTML = settings.props[settings.sort].tierListName;
-    document.getElementById("sort").value = settings.sort;
+    document.getElementById(`sort_${settings.sort}`).classList.add("current_sort");
     loadItems(true);
 
     if (!getCookie("sort")) {

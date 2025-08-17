@@ -10,13 +10,6 @@
             }
         ?>
         <div id='sort_selection' class='dark_bg'>
-            <label id='currently_tiering' for='sort'>Currently tiering:</label>
-            <select id='sort'>
-                <option value='characters'>Characters</option>
-                <option value='works'>Works</option>
-                <option value='shots'>Shottypes</option>
-                <option value='cards'>Cards</option>
-            </select>
             <label for='toggle_view'>Change view:</label>
             <input id='toggle_view' class='button' type='button' value='Tier List View'>
             <input id='toggle_picker' class='button' type='button' value='Small Picker'>
@@ -34,6 +27,12 @@
 		<p id='msg_container'></p>
     </div>
     <div id='tier_list_container' class='dark_bg'>
+        <div id='sort' class='tabs dark_bg'>
+            <p id='sort_characters'>Characters</p>
+            <p id='sort_works'>Works</p>
+            <p id='sort_shots'>Shottypes</p>
+            <p id='sort_cards'>Cards</p>
+        </div>
         <table id='tier_list_table' class='noborders'>
 			<caption id='tier_list_caption'></caption>
             <thead id='tier_list_thead' data-html2canvas-ignore>

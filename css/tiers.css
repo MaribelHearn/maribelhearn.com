@@ -32,6 +32,18 @@ input[type=number] {
 li {
     list-style-position: inside;
 }
+.tabs {
+    display: flex;
+    flex-direction: row;
+    max-width: 30%;
+}
+.tabs p {
+    padding: 15px 5px 15px 5px;
+    margin: 0px 15px 0px 15px;
+    text-align: center;
+    border-bottom: 1px solid #606060;
+    cursor: pointer;
+}
 .tier_header {
     font-size: 32px;
     width: 120px;
@@ -123,6 +135,9 @@ li {
     margin: -2px;
     border: 2px solid #ddd;
 }
+.current_sort {
+    font-weight: bold;
+}
 .instructions_list {
     text-align: left;
 }
@@ -202,9 +217,6 @@ li {
 }
 #add_tier {
     margin-bottom: 10px;
-}
-#currently_tiering {
-    color: white;
 }
 #tier_list_container_mobile {
     overflow-y: auto;
