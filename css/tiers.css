@@ -137,6 +137,7 @@ li {
 }
 .current_sort {
     font-weight: bold;
+    color: #ddd;
 }
 .instructions_list {
     text-align: left;
