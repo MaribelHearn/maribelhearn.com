@@ -54,6 +54,7 @@ function gameSpecific(game, achievement) {
         case "HSiFS": return ({"NM+": "NMNR", "NB+": "NBNR", "NMNB+": "NNN"}[achievement]);
         case "WBaWC": return ({"NM+": "NMNHNRB", "NB+": "NBNHNRB", "NMNB+": "NNNN"}[achievement]);
         case "UM": return ({"NM+": "NMNC", "NB+": "NBNC", "NMNB+": "NNN"}[achievement]);
+        case "FW": return ({"NM+": "NMNHB", "NB+": "NBNHB", "NMNB+": "NNN"}[achievement]);
         default: return ({"NM+": "NM", "NB+": "NB", "NMNB+": "NMNB"}[achievement]);
     }
 }
@@ -720,6 +721,12 @@ function readLocalStorage() {
                     vals.UM[diff] = "NNN";
                 }
             }
+
+            for (const diff in vals.FW) {
+                if (vals.FW[diff] == "NMNBNHB") {
+                    vals.FW[diff] = "NNN";
+                }
+            }
         }
 
         const sceneData = localStorage.getItem("sceneVals");
@@ -758,12 +765,12 @@ function progressToCheckboxes(game, progress) {
         return [];
     }
 
-    if (progress == "Not cleared" || progress == "1cc" || progress.length == "2" || progress == "NBB" || progress == "NRB") {
+    if (progress == "Not cleared" || progress == "1cc" || progress.length == "2" || progress == "NBB" || progress == "NH" || progress == "NRB" || progress == 'NHB') {
         return [progress];
     }
 
     if (progress == "NNN" || progress == "NNNN") {
-        return ["NM", "NB", "NBB", "NV", "NT", "NR", "NH", "NRB", "NC"];
+        return ["NM", "NB", "NBB", "NV", "NT", "NR", "NH", "NRB", "NC", "NHB"];
     }
 
     if (progress.includes("NM")) {
@@ -1288,7 +1295,7 @@ function getCheckedBoxes(checkboxes) {
 }
 
 function determineProgress(game, checkedBoxes) {
-    const thirdCondition = ["PCB", "UFO", "TD", "HSiFS", "WBaWC", "UM"];
+    const thirdCondition = ["PCB", "UFO", "TD", "HSiFS", "WBaWC", "UM", "FW"];
 
     if (checkedBoxes.length === 0) {
         return "N/A";
@@ -1440,6 +1447,7 @@ function achievs(game) {
         case "HSiFS": return achievs.concat(["nr", "nmnr", "nbnr", "nnn"]);
         case "WBaWC": return achievs.concat( ["nhnrb", "nmnhnrb", "nbnhnrb", "nnnn"]);
         case "UM": return achievs.concat(["nc", "nmnc", "nbnc", "nnn"]);
+        case "FW": return achievs.concat(["nc", "nmnc", "nbnhb", "nnn"]);
         default: return achievs;
     }
 }

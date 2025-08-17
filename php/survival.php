@@ -73,6 +73,7 @@ function achievs(string $game) {
         case 'HSiFS': return array_merge($achievs, ['NR']);
         case 'WBaWC': return array_merge($achievs, ['NH', 'NRB']);
         case 'UM': return array_merge($achievs, ['NC']);
+        case 'FW': return array_merge($achievs, ['NHB']);
         default: return $achievs;
     }
 }
@@ -392,6 +393,7 @@ function display_name(string $game) {
             <li><strong><?php echo _('NR:') ?></strong> <?php echo _('No Releases. Clear without using season releases (Touhou 16 HSiFS).') ?></li>
             <li><strong><?php echo _('NHNRB:') ?></strong> <?php echo _('No Hypers, No Roar Breaks. Clear without using Berserk Roar, also called hypers, and without breaking them. (Touhou 17 WBaWC).') ?></li>
             <li><strong><?php echo _('NC:') ?></strong> <?php echo _('No Cards. Clear without using cards (Touhou 18 UM).') ?></li>
+            <li><strong><?php echo _('NHB:') ?></strong> <?php echo _('No Hyper Breaks. Clear without breaking hypers. (Touhou 20 FW).') ?></li>
             <li><strong><?php echo _('NNN:') ?></strong> <?php echo _('No Miss, No Bomb, No Third Condition. Clear without dying, bombing, or violating a third condition.') ?></li>
             <li><strong><?php echo _('NNNN:') ?></strong> <?php echo _('The above, but including a fourth condition.') ?></li>
         </ul>
