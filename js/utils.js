@@ -203,7 +203,8 @@ function gameAbbr(game) {
         "HSiFS": 16,
         "WBaWC": 17,
         "UM": 18,
-        "UDoALG": 19
+        "UDoALG": 19,
+        "FW": 20
     })[game];
 }
 
@@ -230,7 +231,8 @@ function fullNameNumber(game) {
         "HSiFS": _("Touhou 16 - Hidden Star in Four Seasons"),
         "WBaWC": _("Touhou 17 - Wily Beast and Weakest Creature"),
         "UM": _("Touhou 18 - Unconnected Marketeers"),
-        "UDoALG": _("Touhou 19 - Unfinished Dream of All Living Ghost")
+        "UDoALG": _("Touhou 19 - Unfinished Dream of All Living Ghost"),
+        "FW": _("Touhou 20 - Fossilized Wonders")
     }[game]);
 }
 
@@ -301,6 +303,22 @@ function shottypeAbbr(shottype) {
         "MarisaEagle": "ME",
         "YoumuWolf": "YW",
         "YoumuOtter": "YO",
-        "YoumuEagle": "YE"
+        "YoumuEagle": "YE",
+        "ReimuR1": "RR",
+        "ReimuR2": "RD",
+        "ReimuB1": "RB",
+        "ReimuB2": "RE",
+        "ReimuY1": "RY",
+        "ReimuY2": "RW",
+        "ReimuG1": "RG",
+        "ReimuG2": "RN",
+        "MarisaR1": "MR",
+        "MarisaR2": "MD",
+        "MarisaB1": "MB",
+        "MarisaB2": "ME",
+        "MarisaY1": "MY",
+        "MarisaY2": "MW",
+        "MarisaG1": "MG",
+        "MarisaG2": "MN"
     })[shottype];
 }

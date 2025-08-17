@@ -1,6 +1,6 @@
 <?php
 $games = ['HRtPMakai', 'HRtPJigoku', 'SoEW', 'PoDD', 'LLS', 'MS', 'EoSD', 'PCB', 'INFinalA', 'INFinalB', 'PoFV',
-'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLKLegacy', 'LoLKPointdevice', 'HSiFS', 'WBaWC', 'UM', 'UDoALG'];
+'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLKLegacy', 'LoLKPointdevice', 'HSiFS', 'WBaWC', 'UM', 'UDoALG', 'FW'];
 $diffs = ['Easy', 'Normal', 'Hard', 'Lunatic', 'Extra'];
 $stb = (object) [
     '1' => 6,

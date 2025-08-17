@@ -130,7 +130,7 @@ function prepareShowWR(game) {
 
     if (selected !== "") {
         const selectedImg = document.getElementById(`${selected}_image`);
-        const border = selectedImg.classList.contains("cover98") ? "1px solid black" : "none";
+        const border = "none";
         selectedImg.style.border = border;
     }
 
@@ -333,6 +333,11 @@ function showWRtable(game, records) {
 
 function highlightBests(game, records) {
     const overalls = {};
+
+    if (records.length === 0) {
+        return;
+    }
+
     const sortedRecords = records.sort(function (a, b) { return b.score - a.score; });
     const overallRecord = document.getElementById(game + sortedRecords[0].category.difficulty + sortedRecords[0].category.shot);
     overallRecord.innerHTML = "<u><strong>" + overallRecord.innerHTML.replace("<br>", "</strong></u><br>");
@@ -397,7 +402,7 @@ function showWRs(event) {
         document.getElementById("history_list").style.display = "none";
     } else {
         const gameImg = document.getElementById(`${game}_image`);
-        const border = (gameImg.classList.contains("cover98") ? "1px solid black" : "none");
+        const border = "none";
         gameImg.style.border = border;
         document.getElementById("world").classList.remove(`${game}t`);
         document.getElementById("wr_list").style.display = "none";

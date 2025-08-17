@@ -41,6 +41,7 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
             $wrs[$game][$diff][$shot] = [$score, $player];
         }
     }
+    $games = curl_get($API_BASE . '/api/v1/game/');
 }
 ?>
 <div id='wrap' class='wrap'>
@@ -49,7 +50,6 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
     <p>Enter your high scores. You can leave any high score empty. The scores you entered will be compared to the world records that
     were achieved with the same shottypes and percentages will be given. When you click the 'Calculate' button at the bottom of the
     page, sortable tables will be generated to tell you how your scores compare to the world records.</p>
-    <p>Your scores should not include any characters other than digits, dots, commas and spaces.</p>
     <h2>Contents</h2>
     <div class='contents'>
 		<?php
@@ -135,6 +135,9 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
                 </td><td>
                     <input id='DDCc' type='checkbox' class='check' checked>
                     <label for='DDCc'>DDC</label>
+                </td><td>
+                    <input id='FWc' type='checkbox' class='check' checked>
+                    <label for='FWc'>FW</label>
                 </td><td class='noborders'></td>
             </tr>
         </tbody>

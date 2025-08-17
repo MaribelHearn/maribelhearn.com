@@ -154,5 +154,11 @@
         "Normal": "N/A",
         "Hard": "N/A",
         "Lunatic": "N/A"
+    },
+    "FW": {
+        "Easy": "N/A",
+        "Normal": "N/A",
+        "Hard": "N/A",
+        "Lunatic": "N/A"
     }
 }

@@ -35,7 +35,7 @@ $works = array(
     'AlternativeFactsinEasternUtopia', 'DollsinPseudoParadise', 'GhostlyFieldClub', 'ChangeabilityofStrangeDream', 'Retrospective53minutes', 'AkyuusUntouchedScoreVolume1',
     'AkyuusUntouchedScoreVolume2', 'AkyuusUntouchedScoreVolume3', 'AkyuusUntouchedScoreVolume4', 'AkyuusUntouchedScoreVolume5', 'MagicalAstronomy', 'UnknownFlowerMesmerizingJourney',
     'TrojanGreenAsteroid', 'Neo-traditionalismofJapan', 'DrLatencysFreakReport', 'DatelessBarOldAdam', 'GouyokuIbun', 'TheGrimoireofUsami', 'FoulDetectiveSatori', 'LotusEaters', 'Rainbow-ColoredSeptentrion',
-    'HundredthBlackMarket', 'UnfinishedDreamofAllLivingGhost'
+    'HundredthBlackMarket', 'UnfinishedDreamofAllLivingGhost', 'TabooJapanDisentanglement', 'WhisperedOracleOfHakureiShrine', 'FossilizedWonders',
 );
 $shots = array(
     'EoSDReimuA', 'EoSDReimuB', 'EoSDMarisaA', 'EoSDMarisaB', 'PCBReimuA', 'PCBReimuB', 'PCBMarisaA', 'PCBMarisaB', 'PCBSakuyaA', 'PCBSakuyaB', 'INBorderTeam', 'INMagicTeam', 'INScarletTeam',
@@ -48,7 +48,8 @@ $shots = array(
     'WBaWCYoumuWolf', 'WBaWCYoumuOtter', 'WBaWCYoumuEagle', 'UMReimu', 'UMMarisa', 'UMSakuya', 'UMSanae', 'SoEWReimuA', 'SoEWReimuB', 'SoEWReimuC', 'PoDDReimu', 'PoDDMima', 'PoDDMarisa',
     'PoDDEllen', 'PoDDKotohime', 'PoDDKana', 'PoDDRikako', 'PoDDChiyuri', 'PoDDYumemi', 'LLSReimuA', 'LLSReimuB', 'LLSMarisaA', 'LLSMarisaB', 'MSReimu', 'MSMarisa', 'MSMima', 'MSYuuka',
     'PoFVMerlin', 'PoFVLunasa', 'HSiFSReimuExtra', 'HSiFSCirnoExtra', 'HSiFSAyaExtra', 'HSiFSMarisaExtra', 'UDoALGReimu', 'UDoALGMarisa', 'UDoALGSanae', 'UDoALGRan', 'UDoALGAunn', 'UDoALGNazrin',
-    'UDoALGSeiran', 'UDoALGRin', 'UDoALGTsukasa', 'UDoALGMamizou', 'UDoALGYachie', 'UDoALGSaki', 'UDoALGYuuma', 'UDoALGSuika', 'UDoALGBiten', 'UDoALGEnoko', 'UDoALGChiyari', 'UDoALGHisami', 'UDoALGZanmu'
+    'UDoALGSeiran', 'UDoALGRin', 'UDoALGTsukasa', 'UDoALGMamizou', 'UDoALGYachie', 'UDoALGSaki', 'UDoALGYuuma', 'UDoALGSuika', 'UDoALGBiten', 'UDoALGEnoko', 'UDoALGChiyari', 'UDoALGHisami', 'UDoALGZanmu',
+    'FWReimuR1', 'FWReimuR2', 'FWReimuB1', 'FWReimuB2', 'FWReimuY1', 'FWReimuY2', 'FWReimuG1', 'FWReimuG2', 'FWMarisaR1', 'FWMarisaR2', 'FWMarisaB1', 'FWMarisaB2', 'FWMarisaY1', 'FWMarisaY2', 'FWMarisaG1', 'FWMarisaG2',
 );
 $cards = array(
     'LifeCard', 'SpellCard', 'FragmentedLifeCard', 'FragmentedSpellCard', 'MoneyComesAndGoesOnItsOwn', 'Ringo-BrandDango', 'PhoenixsTail', 'Yin-YangOrb', 'Yin-YangOrbNeedle',

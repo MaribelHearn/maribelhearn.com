@@ -67,6 +67,9 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
 .UMt th, .UMp, .UM {
     background-color: #23fcb1;
 }
+.FWt th, .FWp, .FW {
+    background-color: #00ffff;
+}
 .unver {
     color: darkred;
 }
@@ -93,9 +96,6 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
 }
 .sheet_2 {
     background-image: url('/assets/shared/spritesheets/game_sheet50x50_2.png');
-}
-.cover98 {
-    border: 1px solid #000;
 }
 .Spring {
     color: #990099;
@@ -278,6 +278,9 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
 }
 #UM_image, #UM_image_old {
     background-position: -500px 0px;
+}
+#FW_image, #FW_image_old {
+    background-position: -600px 0px;
 }
 @media only screen and (min-width: 1550px) and (max-width: 1750px) {
     .wrap {

@@ -212,5 +212,25 @@
             "Hisami",
             "Zanmu"
         ]
+    },
+    "FW": {
+        "chars": [
+            "ReimuR1",
+            "ReimuR2",
+            "ReimuB1",
+            "ReimuB2",
+            "ReimuY1",
+            "ReimuY2",
+            "ReimuG1",
+            "ReimuG2",
+            "MarisaR1",
+            "MarisaR2",
+            "MarisaB1",
+            "MarisaB2",
+            "MarisaY1",
+            "MarisaY2",
+            "MarisaG1",
+            "MarisaG2"
+        ]
     }
 }

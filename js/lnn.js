@@ -36,6 +36,7 @@ function restrictions(game) {
         case "HSiFS": return _("No. of LNNNs");
         case "WBaWC": return _("No. of LNNNNs");
         case "UM": return _("No. of LNNNs");
+        case "FW": return _("No. of LNNNs");
         default: return _("No. of LNNs");
     }
 }
@@ -47,7 +48,7 @@ function shotRoute(game) {
 function prepareShowLNNs(game) {
     if (selected !== "") {
         const selectedImg = document.getElementById(`${selected}_image`);
-        const border = (selectedImg.classList.contains("cover98") ? "1px solid black" : "none");
+        const border = "none";
         selectedImg.style.border = border;
     }
 
@@ -151,7 +152,9 @@ function showLNNtable(game, LNNs) {
         }
     }
 
-    document.getElementById(`${currentShot}${currentRoute}n`).innerHTML = shotCount;
+    if (LNNs.length > 0) {
+        document.getElementById(`${currentShot}${currentRoute}n`).innerHTML = shotCount;
+    }
 
     if (game == "UDoALG") {
         for (const chara of banList) {
@@ -186,7 +189,7 @@ function showLNNs() { // .game_img onclick
         document.getElementById("lnn_list").style.display = "block";
     } else {
         const gameImg = document.getElementById(`${game}_image`);
-        const border = (gameImg.classList.contains("cover98") ? "1px solid black" : "none");
+        const border = "none";
         gameImg.style.border = border;
         document.getElementById("lnn_table").classList.remove(`${game}t`);
         document.getElementById("lnn_list").style.display = "none";

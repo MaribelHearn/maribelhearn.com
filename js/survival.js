@@ -3,7 +3,8 @@ String.prototype.strip = function () {
     return this.replace(/<\/?[^>]*>/g, "");
 };
 
-const games = ["HRtPMakai", "HRtPJigoku", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "INFinalA", "INFinalB", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLKLegacy", "LoLKPointdevice", "HSiFS", "WBaWC", "UM", "UDoALG"];
+const games = ["HRtPMakai", "HRtPJigoku", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "INFinalA", "INFinalB", "PoFV",
+"MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLKLegacy", "LoLKPointdevice", "HSiFS", "WBaWC", "UM", "UDoALG", "FW"];
 const stbScenes = 85;
 const ayaScenes = 103;
 const hatateScenes = 104;
@@ -167,7 +168,8 @@ function initGameCounts() {
         "HSiFS": 0,
         "WBaWC": 0,
         "UM": 0,
-        "UDoALG": 0
+        "UDoALG": 0,
+        "FW": 0
     };
 }
 
@@ -635,6 +637,16 @@ function readLocalStorage() {
                     "Normal": "N/A",
                     "Hard": "N/A",
                     "Lunatic": "N/A"
+                };
+            }
+
+            if (!vals.hasOwnProperty("FW")) {
+                vals.FW = {
+                    "Easy": "N/A",
+                    "Normal": "N/A",
+                    "Hard": "N/A",
+                    "Lunatic": "N/A",
+                    "Extra": "N/A"
                 };
             }
 

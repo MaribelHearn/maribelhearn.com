@@ -163,6 +163,9 @@ input[type=button] {
 #UM_image {
     background-position: -900px 0px;
 }
+#FW_image {
+    background-position: -1000px 0px;
+}
 #GFWExtra {
      text-align: left;
 }

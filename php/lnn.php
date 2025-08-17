@@ -16,8 +16,8 @@ if (strpos($games, 'Internal Server Error') !== false) {
     $games = json_decode($games, true);
 }
 
-$ALL_LNN = 101;
-$WINDOWS_LNN = ['EoSD', 'PCB', 'IN', 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC', 'UM'];
+$ALL_LNN = 117;
+$WINDOWS_LNN = ['EoSD', 'PCB', 'IN', 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC', 'UM', 'FW'];
 $RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_limit']), 1) : 15;
 $layout = (isset($_COOKIE['lnn_old_layout']) ? 'Old' : 'New');
 $pvp = ['PoDD', 'UDoALG'];
@@ -25,7 +25,8 @@ $number_of_lnns = (object) [];
 $number_of_players = (object) [];
 $player_lnns = (object) [];
 $player_games = (object) [];
-$pvp_full_names = [];
+$full_names = (object) [];
+$game_nums = (object) [];
 $total_players = 0;
 $missing_runs = 0;
 
@@ -38,6 +39,7 @@ function lnn_type(string $game, string $lang) {
         case 'HSiFS': return _('No. of LNNNs');
         case 'WBaWC': return _('No. of LNNNNs');
         case 'UM': return _('No. of LNNNs');
+        case 'FW': return _('No. of LNNNs');
         default: return _('No. of LNNs');
     }
 }
@@ -83,7 +85,7 @@ $last_modified = $last_modified['results'][0]['date'];
 	?></p>
     <p id='conditions'><?php
         echo _('Extra conditions are required for PCB, TD, HSiFS, WBaWC and UM; these are No Border Breaks for PCB, ' .
-        'No Trance for TD, No Release for HSiFS, No Berserk Roar No Roar Breaks for WBaWC and No Cards for UM. ' .
+        'No Trance for TD, No Release for HSiFS, No Berserk Roar No Roar Breaks for WBaWC, No Cards for UM and No Hyper Breaks for FW. ' .
         'LNN in these games is called LNNN or LNNNN, with extra Ns to denote the extra conditions. ' .
         'The extra condition in UFO, no UFO summons, is optional, as it is not considered to have a significant ' .
         'impact on the difficulty of the run. As for IN, an LNN is assumed to capture all Last Spells and '.
@@ -164,7 +166,7 @@ $last_modified = $last_modified['results'][0]['date'];
                 $shots_seen = [];
                 $players_game = [];
                 echo '<div id="' . $game . '"><p><table id="' . $game . 't" class="' . $game . 't">' .
-                '<caption><span id="' . $game . '_image_old" class="cover sheet' . $sheet . (game_num($game) <= 5 ? ' cover98' : '') . '"></span> ' . full_name($game) . '</caption>' .
+                '<caption><span id="' . $game . '_image_old" class="cover sheet' . $sheet . '"></span> ' . $full_names->{$game} . '</caption>' .
                 '<thead><tr><th class="general_header">' . shot_route($game) . '</th>' .
                 '<th class="general_header nowrap">' . lnn_type($game, $lang) . '<br>' . _('(Different players)') . '</th>' .
                 '<th class="general_header">' . _('Players') . '</tr></thead><tbody>';
@@ -217,9 +219,10 @@ $last_modified = $last_modified['results'][0]['date'];
             $second_row = false;
             foreach ($games as $key => $data) {
                 $game = $data['short_name'];
-                $full_name = full_name($data['short_name']);
+                $full_name = $data['full_name'];
+                $game_nums->{$game} = $data['number'];
+                $full_names->{$game} = $full_name;
                 if (in_array($game, $pvp)) {
-                    array_push($pvp_full_names, $full_name);
                     continue;
                 }
                 if ($game == 'PoFV') {
@@ -240,7 +243,7 @@ $last_modified = $last_modified['results'][0]['date'];
             echo '<br><br>';
             foreach ($pvp as $key => $game) {
                 echo '<span class="game_image"><span id="' . $game . '_image" class="game_img ' . ($game == 'UDoALG' ? 'sheet_2' : 'sheet_1') . '"></span>' .
-                '<span class="full_name tooltip">' . $pvp_full_names[$key] . '</span></span>';
+                '<span class="full_name tooltip">' . $full_names->{$game} . '</span></span>';
             }
             echo '</div>';
             echo '<div id="lnn_list"><p id="fullname" class="center"></p><table id="lnn_table">';
@@ -386,8 +389,8 @@ $last_modified = $last_modified['results'][0]['date'];
                             if (in_array($game, $pvp)) {
                                 continue;
                             }
-                            if (game_num($game) < 6 || $count > 0) {
-                                echo '<tr><td' . (game_num($game) == 128 ? ' data-sort="12.8"' : '') . '>' . game_num($game) . '</td><td class="' . $game . '">' . _($game) . '</td>';
+                            if ($game_nums->{$game} < 6 || $count > 0) {
+                                echo '<tr><td>' . $game_nums->{$game} . '</td><td class="' . $game . '">' . _($game) . '</td>';
                                 echo '<td>' . $number_of_lnns->{$game} . '</td><td>' . $number_of_players->{$game} . '</td></tr>';
                                 $total_lnns += $number_of_lnns->{$game};
                             }

@@ -25,6 +25,7 @@ $player_wrs = (object) [];
 $player_games = (object) [];
 $overall = (object) [];
 $diff_max = (object) [];
+$full_names = (object) [];
 
 function pc_class(int $pc) {
     if ($pc < 50) {
@@ -283,7 +284,7 @@ foreach ($west_data as $key => $data) {
             }
             echo '<div id="' . $game . '">';
             echo '<table id="' . $game . '_table" class="' . $game . 't' . ($game != 'HSiFS' ? ' sortable' : '') . '">' .
-            '<caption><p><span id="' . $game . '_image_old" class="cover sheet' . $sheet . (game_num($game) <= 5 ? ' cover98' : '') . '"></span> ' . full_name($game) . '</p></caption>' .
+            '<caption><p><span id="' . $game . '_image_old" class="cover sheet' . $sheet . '"></span> ' . $full_names->{$game} . '</p></caption>' .
             '<thead><tr><th>' . shot_route($game) . '</th>';
             foreach ($obj as $diff => $shots) {
                 if ($game != 'GFW' || $diff != 'Extra') {
@@ -414,6 +415,7 @@ foreach ($west_data as $key => $data) {
                 foreach ($games as $key => $data) {
                     $game = $data['short_name'];
                     $full_name = $data['full_name'];
+                    $full_names->{$game} = $full_name;
                     if ($game == 'UDoALG') {
                         continue;
                     }

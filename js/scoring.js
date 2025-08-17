@@ -1,13 +1,14 @@
-/*global scores getCookie deleteCookie*/
+/*global getCookie deleteCookie*/
 String.prototype.strip = function () {
     return this.replace(/<\/?[^>]*>/g, "");
 };
 
-const games = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM"];
+const games = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "FW"];
 const diffs = ["Easy", "Normal", "Hard", "Lunatic", "Extra", "Phantasm"];
 let unsavedChanges = false;
 let precision = 0;
 let WRs = {};
+let scores = {};
 
 function closeModal(event) {
     const modal = document.getElementById("modal");
@@ -100,7 +101,7 @@ function parseScore(game, diff, shot) {
         shot = shot.replace(" Team", "Team");
     }
 
-    return document.getElementById(game + diff + shot).value.replace(/,/g, "").replace(/\./g, "").replace(/ /g, "");
+    return document.getElementById(game + diff + shot).value.replace(/[^0-9]+/g, "");
 }
 
 function validateScore(score) {
@@ -109,39 +110,39 @@ function validateScore(score) {
     }
 
     if (isNaN(score)) {
-        return "invalid";
+        return false;
     }
 
     return score;
 }
 
-function getRow(game, diff, shot, precision) {
+function getRow(game, diff, shot, precision, emptyWR) {
     let score = parseScore(game, diff, shot);
     const valid = validateScore(score);
 
-    if (valid === false || valid == "invalid") {
+    if (!valid) {
         return valid;
     }
 
-    const wr = WRs[game][diff][shot];
+    const wr = !emptyWR ? WRs[game][diff][shot] : [0, "no one"];
     score = parseInt(score);
     let percentage, percentageSort, wrText;
     let categories = 0;
     let total = 0;
 
     if (wr[0] === 0) {
-        percentage = '-';
+        percentage = '100';
         wrText = '-';
     } else {
-        percentage = score / wr[0] * 100;
+        percentage = score / Math.max(wr[0], 1) * 100;
         wrText = `${sep(wr[0])} by <em>${wr[1]}</em>`;
         percentage = (precision === 0 ? Math.round(percentage) : Number(percentage).toFixed(precision));
-        percentageSort = percentage * Math.pow(10, precision);
-        total += Number(percentage);
-        categories += 1;
     }
 
     const shotText = shot.replace("Team", " Team");
+    categories += 1;
+    total += Number(percentage);
+    percentageSort = percentage * Math.pow(10, precision);
     return {
         "total": total,
         "categories": categories,
@@ -157,7 +158,7 @@ function calc() {
     let gameTable = "";
     let zero = true;
 
-    for (const game in WRs) {
+    for (const game of games) {
         if (document.getElementById(game).style.display == "none") {
             continue;
         }
@@ -165,16 +166,14 @@ function calc() {
         let total = 0;
         let categories = 0;
 
-        for (const diff in WRs[game]) {
-            for (const shot in WRs[game][diff]) {
-                const row = getRow(game, diff, shot, precision);
+        for (const diff in scores[game]) {
+            for (const shot in scores[game][diff]) {
+                const emptyWR = !WRs.hasOwnProperty(game) || !WRs[game].hasOwnProperty(diff) || !WRs[game][diff].hasOwnProperty(shot);
+                const row = getRow(game, diff, shot, precision, emptyWR);
 
                 if (row === false) {
                     scores[game][diff][shot] = 0;
                     continue;
-                } else if (row == "invalid") {
-                    printError("You entered one or more invalid scores. Please use only digits, dots, commas and spaces.");
-                    return;
                 } else {
                     total += row.total;
                     categories += row.categories;
@@ -196,7 +195,7 @@ function calc() {
     }
 
     for (const game in averages) {
-        gameTable += `<tr><td>${game}</td><td>${averages[game]}%</td></tr>`;
+        gameTable += `<tr><td>${game}</td><td data-sort='${averages[game]}'>${averages[game]}%</td></tr>`;
     }
 
     document.getElementById("score_table").style.display = "table";
@@ -274,15 +273,14 @@ function reset() {
         localStorage.removeItem("shown");
         localStorage.removeItem("precision");
 
-        for (const game in scores) {
+        for (const game of games) {
             localStorage.removeItem(game);
+        }
 
-            for (const diff in scores[game]) {
-                for (const shot in scores[game][diff]) {
-                    scores[game][diff][shot] = 0;
-                    document.getElementById(game + diff + shot).value = "";
-                }
-            }
+        const inputs = document.querySelectorAll("input[type=text]");
+        
+        for (const input of inputs) {
+            input.value = "";
         }
     }
 
@@ -312,7 +310,7 @@ function deleteLegacyCookies() {
 }
 
 function loadScores() {
-    for (const game in scores) {
+    for (const game of games) {
         const data = localStorage.getItem(game);
 
         if (data) {
@@ -381,6 +379,14 @@ function scoreChanged() {
 
     if (valid === false || valid == "invalid") {
         return;
+    }
+
+    if (!scores.hasOwnProperty(category.game)) {
+        scores[category.game] = {};
+    }
+
+    if (!scores[category.game].hasOwnProperty(category.diff)) {
+        scores[category.game][category.diff] = {};
     }
 
     scores[category.game][category.diff][category.shot] = score;
@@ -480,6 +486,24 @@ function init() {
     const importElement = document.getElementById("import");
     const errorElement = document.getElementById("error");
 
+    try {
+        WRs = JSON.parse(document.getElementById("WRs").value);
+
+        for (const game in WRs) {
+            scores[game] = {};
+
+            for (const diff in WRs[game]) {
+                scores[game][diff] = {};
+
+                for (const shot in WRs[game][diff]) {
+                    scores[game][diff][shot] = 0;
+                }
+            }
+        }
+    } catch (e) {
+        // do nothing
+    }
+
     if (importElement) {
         doImport();
         importElement.parentNode.removeChild(importElement);
@@ -500,12 +524,6 @@ function init() {
 
     if (localStorage.hasOwnProperty("precision")) {
         precision = document.getElementById("precision").value = parseInt(localStorage.getItem("precision"));
-    }
-
-    try {
-        WRs = JSON.parse(document.getElementById("WRs").value);
-    } catch (e) {
-        // do nothing
     }
     setEventListeners();
     window.onbeforeunload = function () {
