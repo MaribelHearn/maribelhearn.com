@@ -17,7 +17,8 @@ $extras = [
     'LoLK' => [15, 'Pointdevice Easy 1cc <strong>OR</strong> Legacy Easy 1cc'],
     'HSiFS' => [16, 'Easy 1cc'],
     'WBaWC' => [17, 'Easy 1cc'],
-    'UM' => [18, 'Easy 1cc']
+    'UM' => [18, 'Easy 1cc'],
+    'FW' => [20, 'Normal 1cc'],
 ];
 ?>
 <h2 id='extra'>How do I unlock the Extra Stage?</h2>
