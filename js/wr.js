@@ -184,6 +184,7 @@ function showWesternRecords(game, overalls, westScores) {
     westTable.innerHTML = "";
 
     if (westScores.length === 0) {
+        west.classList.remove(`${game}t`);
         west.style.display = "none";
         return;
     }
