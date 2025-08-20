@@ -240,11 +240,15 @@ foreach ($west_data as $key => $data) {
                             continue;
                         }
                         $wr = $overall->{$game};
+                        $score_text = number_format($wr['score'], 0, '.', ',');
+                        if ($game == 'WBaWC' || $game == 'UM') {
+                            $score_text = '<span class="cs">9,999,999,990<span class="tooltip truescore">' . number_format($wr['score'], 0, '.', ',') . '</span></span> ';
+                        }
+                        if ($game == 'FW') {
+                            $score_text = '<span class="cs">' . number_format($wr['score'], 0, '.', ',') . '<span class="tooltip truescore">Uncapped</span></span> ';
+                        }
                         echo '<tr id="' . $game . 'o"><td' . ($num == 128 ? ' data-sort="12.8"' : '') . '>' . $num . '</td><td class="' . $game . '">' . _($game) . '</td>';
-                        echo '<td id="' . $game . 'overall0" data-sort="' . $wr['score'] . '">' . ($game == 'WBaWC' || $game == 'UM'
-                                ? '<span class="cs">9,999,999,990<span class="tooltip truescore">' . number_format($wr['score'], 0, '.', ',') . '</span></span> '
-                                : number_format($wr['score'], 0, '.', ',')
-                        ) . '</td>';
+                        echo '<td id="' . $game . 'overall0" data-sort="' . $wr['score'] . '">' . $score_text . '</td>';
                         echo '<td id="' . $game . 'overall1">' . ($wr['score'] == 0 ? '-' : $wr['player']) . '</td>';
                         echo '<td id="' . $game . 'overall2">' . ($wr['score'] == 0 ? '-' : $wr['category']['difficulty']) . '</td>';
                         echo '<td id="' . $game . 'overall3">' . ($wr['score'] == 0 ? '-' : _($wr['category']['shot'])) . '</td>';
@@ -437,6 +441,7 @@ foreach ($west_data as $key => $data) {
 	?>
 	<div id='wr_list'>
         <p id='fullname' class='center'></p>
+        <p class='center'><strong><?php echo _('Important Notice:') ?></strong> <span id='notice'></span></p>
         <div class='center'>
             <input id='western' type='checkbox'>
             <label id='label_western' for='western'><?php echo _('Show Western records') ?></label>
