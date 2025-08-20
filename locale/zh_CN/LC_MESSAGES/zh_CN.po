@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-08-20 19:52+0200\n"
-"PO-Revision-Date: 2025-08-20 19:53+0200\n"
+"POT-Creation-Date: 2025-08-20 20:23+0200\n"
+"PO-Revision-Date: 2025-08-20 20:25+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Poedit-SearchPath-8: php/shared/translations.php\n"
 "X-Poedit-SearchPath-9: php/subpages/faq/jargon.php\n"
 
-#: js/drc.js:36 php/wr.php:444
+#: js/drc.js:36 php/wr.php:441
 msgid "Important Notice:"
 msgstr ""
 
@@ -80,8 +80,8 @@ msgstr ""
 msgid "Releases"
 msgstr ""
 
-#: js/drc.js:140 php/wr.php:225 php/wr.php:484 php/wr.php:522 php/wr.php:547
-#: php/wr.php:615
+#: js/drc.js:140 php/wr.php:225 php/wr.php:481 php/wr.php:519 php/wr.php:544
+#: php/wr.php:612
 msgid "Score"
 msgstr "分数"
 
@@ -91,7 +91,7 @@ msgstr "路线"
 
 #: js/drc.js:188 js/lnn.js:45 js/lnn.js:316 js/wr.js:59 php/drc.php:450
 #: php/lnn.php:250 php/lnn.php:307 php/shared/shared.php:109 php/wr.php:228
-#: php/wr.php:486 php/wr.php:523 php/wr.php:617
+#: php/wr.php:483 php/wr.php:520 php/wr.php:614
 msgid "Shottype"
 msgstr "机体"
 
@@ -149,7 +149,7 @@ msgid "No. of LNNs"
 msgstr "LNN的数量"
 
 #: js/lnn.js:268 js/lnn.js:417 js/wr.js:483 js/wr.js:547 php/lnn.php:355
-#: php/wr.php:262 php/wr.php:569
+#: php/wr.php:259 php/wr.php:566
 msgid "Link"
 msgstr "链接"
 
@@ -168,17 +168,17 @@ msgid "Game"
 msgstr "游戏"
 
 #: js/lnn.js:429 js/wr.js:390 js/wr.js:462 php/lnn.php:360 php/lnn.php:363
-#: php/wr.php:572 php/wr.php:602
+#: php/wr.php:569 php/wr.php:599
 msgid " "
 msgstr ""
 
-#: js/lnn.js:446 php/drc.php:94 php/lnn.php:282 php/lnn.php:330 php/wr.php:521
-#: php/wr.php:546 php/wr.php:592
+#: js/lnn.js:446 php/drc.php:94 php/lnn.php:282 php/lnn.php:330 php/wr.php:518
+#: php/wr.php:543 php/wr.php:589
 msgid "Category"
 msgstr "项目"
 
 #: js/lnn.js:449 php/lnn.php:262 php/lnn.php:331 php/lnn.php:421 php/wr.php:226
-#: php/wr.php:485 php/wr.php:500 php/wr.php:548 php/wr.php:616 php/wr.php:637
+#: php/wr.php:482 php/wr.php:497 php/wr.php:545 php/wr.php:613 php/wr.php:634
 msgid "Player"
 msgstr "玩家"
 
@@ -186,6 +186,10 @@ msgstr "玩家"
 msgid ""
 "This game's records assume that the overflow bug has been fixed. Check the "
 "score after applying the fix using <a href='/tools#thprac'>thprac</a>."
+msgstr ""
+
+#: js/wr.js:211 js/wr.js:217 php/wr.php:245
+msgid "Uncapped"
 msgstr ""
 
 #: php/drc.php:71
@@ -534,7 +538,7 @@ msgstr "第二阈值"
 msgid "Threshold 3"
 msgstr "第三阈值"
 
-#: php/drc.php:346 php/drc.php:466 php/lnn.php:440 php/wr.php:654
+#: php/drc.php:346 php/drc.php:466 php/lnn.php:440 php/wr.php:651
 msgid "Back to Top"
 msgstr "回到顶部"
 
@@ -697,7 +701,7 @@ msgid "LNN Lists"
 msgstr "LNN列表"
 
 #: php/lnn.php:103 php/lnn.php:117 php/lnn.php:259 php/lnn.php:264
-#: php/lnn.php:284 php/wr.php:502
+#: php/lnn.php:284 php/wr.php:499
 msgid "Search"
 msgstr "搜索"
 
@@ -710,7 +714,7 @@ msgid "Overall Count"
 msgstr "总数"
 
 #: php/lnn.php:106 php/lnn.php:120 php/lnn.php:416 php/wr.php:184
-#: php/wr.php:205 php/wr.php:632
+#: php/wr.php:205 php/wr.php:629
 msgid "Player Statistics"
 msgstr "玩家统计"
 
@@ -744,22 +748,22 @@ msgstr "单击游戏处查看LNN列表。"
 msgid "Choose a player or category from the menus below to show their LNNs."
 msgstr "在以下的菜单选择玩家的名字则可查看其LNN。"
 
-#: php/lnn.php:308 php/lnn.php:332 php/wr.php:229 php/wr.php:487 php/wr.php:524
-#: php/wr.php:549 php/wr.php:618
+#: php/lnn.php:308 php/lnn.php:332 php/wr.php:229 php/wr.php:484 php/wr.php:521
+#: php/wr.php:546 php/wr.php:615
 msgid "Replay"
 msgstr "Rep"
 
-#: php/lnn.php:309 php/lnn.php:333 php/wr.php:230 php/wr.php:488 php/wr.php:525
-#: php/wr.php:550 php/wr.php:619
+#: php/lnn.php:309 php/lnn.php:333 php/wr.php:230 php/wr.php:485 php/wr.php:522
+#: php/wr.php:547 php/wr.php:616
 msgid "Video"
 msgstr "视频"
 
-#: php/lnn.php:310 php/lnn.php:334 php/wr.php:231 php/wr.php:489 php/wr.php:526
-#: php/wr.php:551 php/wr.php:620
+#: php/lnn.php:310 php/lnn.php:334 php/wr.php:231 php/wr.php:486 php/wr.php:523
+#: php/wr.php:548 php/wr.php:617
 msgid "Date"
 msgstr "日期"
 
-#: php/lnn.php:318 php/wr.php:535
+#: php/lnn.php:318 php/wr.php:532
 msgid "Total"
 msgstr "合計"
 
@@ -1513,6 +1517,10 @@ msgstr "残无"
 msgid "UDoALG"
 msgstr "兽"
 
+#: php/shared/translations.php:88 php/subpages/faq/jargon.php:92
+msgid "FW"
+msgstr "錦"
+
 #: php/subpages/faq/jargon.php:2
 msgid ""
 "This list contains explanations for terms and acronyms used in the community "
@@ -1697,10 +1705,6 @@ msgstr "FS"
 #: php/subpages/faq/jargon.php:89
 msgid "Full Spell; a run that captures all Spell Cards."
 msgstr "全卡，Full Spell；收取所有符卡通关。"
-
-#: php/subpages/faq/jargon.php:92
-msgid "FW"
-msgstr "FW"
 
 #: php/subpages/faq/jargon.php:93
 msgid "See <a href=\"#term_gfw\">GFW</a>."
@@ -3540,23 +3544,23 @@ msgstr ""
 msgid "Overall Records"
 msgstr "整体世界纪录"
 
-#: php/wr.php:181 php/wr.php:189 php/wr.php:274
+#: php/wr.php:181 php/wr.php:189 php/wr.php:271
 msgid "World Records"
 msgstr "世界纪录"
 
-#: php/wr.php:182 php/wr.php:202 php/wr.php:497
+#: php/wr.php:182 php/wr.php:202 php/wr.php:494
 msgid "Player Search"
 msgstr "玩家搜寻"
 
-#: php/wr.php:183 php/wr.php:203 php/wr.php:542
+#: php/wr.php:183 php/wr.php:203 php/wr.php:539
 msgid "Recent Records"
 msgstr "最近世界纪录"
 
-#: php/wr.php:201 php/wr.php:377
+#: php/wr.php:201 php/wr.php:374
 msgid "Western Records"
 msgstr "西方纪录"
 
-#: php/wr.php:204 php/wr.php:590
+#: php/wr.php:204 php/wr.php:587
 msgid "History"
 msgstr "历史"
 
@@ -3568,51 +3572,51 @@ msgstr "最近世界纪录的数量"
 msgid "Difficulty"
 msgstr "难度"
 
-#: php/wr.php:380 php/wr.php:464
+#: php/wr.php:377 php/wr.php:461
 msgid "World"
 msgstr "世界"
 
-#: php/wr.php:381 php/wr.php:465
+#: php/wr.php:378 php/wr.php:462
 msgid "West"
 msgstr "西方"
 
-#: php/wr.php:381 php/wr.php:466
+#: php/wr.php:378 php/wr.php:463
 msgid "Percentage"
 msgstr "百分"
 
-#: php/wr.php:416
+#: php/wr.php:413
 msgid "Click a game cover to show its list of world records."
 msgstr "单击游戏处查看世界纪录列表。"
 
-#: php/wr.php:447
+#: php/wr.php:444
 msgid "Show Western records"
 msgstr "显示西方纪录"
 
-#: php/wr.php:450
+#: php/wr.php:447
 msgid "Unverified scores"
 msgstr ""
 
-#: php/wr.php:453
+#: php/wr.php:450
 msgid "Link videos over replays"
 msgstr ""
 
-#: php/wr.php:473
+#: php/wr.php:470
 msgid "Browse History"
 msgstr ""
 
-#: php/wr.php:480 php/wr.php:611
+#: php/wr.php:477 php/wr.php:608
 msgid "No history available."
 msgstr ""
 
-#: php/wr.php:498
+#: php/wr.php:495
 msgid "Choose a player name from the menu below to show their WRs."
 msgstr "在以下的菜单选择玩家的名字则可查看其WR。"
 
-#: php/wr.php:638
+#: php/wr.php:635
 msgid "No. of WRs"
 msgstr "WR数量"
 
-#: php/wr.php:639
+#: php/wr.php:636
 msgid "Different games"
 msgstr "游戏"
 

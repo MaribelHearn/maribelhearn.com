@@ -85,4 +85,5 @@ echo _('Chiyari');
 echo _('Hisami');
 echo _('Zanmu');
 echo _('UDoALG');
+echo _('FW');
 ?>

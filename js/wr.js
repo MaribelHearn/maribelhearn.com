@@ -208,13 +208,13 @@ function showWesternRecords(game, overalls, westScores) {
         const percentage = (west / world * 100).toFixed(2);
         const percentageText = parseInt(percentage) == 100 ? 100 : percentage;
         west = ((game == "WBaWC" || game == "UM") && west > MAX_SCORE
-                ? `<span class='cs'>9,999,999,990<span class='tooltip truescore'>${sep(west)}</span></span>`
+                ? `<span class='cs'>${sep(west)}<span class='tooltip truescore'>${_("Uncapped")}</span></span>`
                 : sep(west)
         );
         westShot = (westShot != '-' ? `<br>(${_(westShot)})` : "");
 
         world = ((game == "WBaWC" || game == "UM") && world > MAX_SCORE
-                ? `<span class='cs'>9,999,999,990<span class='tooltip truescore'>${sep(world)}</span></span>`
+                ? `<span class='cs'>${sep(world)}<span class='tooltip truescore'>${_("Uncapped")}</span></span>`
                 : sep(world)
         );
         world = (overalls[diff].verified ? world : formatUnverified(world));

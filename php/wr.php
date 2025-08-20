@@ -241,11 +241,8 @@ foreach ($west_data as $key => $data) {
                         }
                         $wr = $overall->{$game};
                         $score_text = number_format($wr['score'], 0, '.', ',');
-                        if ($game == 'WBaWC' || $game == 'UM') {
-                            $score_text = '<span class="cs">9,999,999,990<span class="tooltip truescore">' . number_format($wr['score'], 0, '.', ',') . '</span></span> ';
-                        }
-                        if ($game == 'FW') {
-                            $score_text = '<span class="cs">' . number_format($wr['score'], 0, '.', ',') . '<span class="tooltip truescore">Uncapped</span></span> ';
+                        if ($game == 'WBaWC' || $game == 'UM' || $game == 'FW') {
+                            $score_text = '<span class="cs">' . number_format($wr['score'], 0, '.', ',') . '<span class="tooltip truescore">' . _('Uncapped') . '</span></span> ';
                         }
                         echo '<tr id="' . $game . 'o"><td' . ($num == 128 ? ' data-sort="12.8"' : '') . '>' . $num . '</td><td class="' . $game . '">' . _($game) . '</td>';
                         echo '<td id="' . $game . 'overall0" data-sort="' . $wr['score'] . '">' . $score_text . '</td>';
