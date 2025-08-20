@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-08-20 20:23+0200\n"
-"PO-Revision-Date: 2025-08-20 20:25+0200\n"
+"POT-Creation-Date: 2025-08-20 20:35+0200\n"
+"PO-Revision-Date: 2025-08-20 20:35+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -1520,6 +1520,70 @@ msgstr "兽"
 #: php/shared/translations.php:88 php/subpages/faq/jargon.php:92
 msgid "FW"
 msgstr "錦"
+
+#: php/shared/translations.php:89
+msgid "ReimuR1"
+msgstr "灵梦R1"
+
+#: php/shared/translations.php:90
+msgid "ReimuR2"
+msgstr "灵梦R2"
+
+#: php/shared/translations.php:91
+msgid "ReimuB1"
+msgstr "灵梦B1"
+
+#: php/shared/translations.php:92
+msgid "ReimuB2"
+msgstr "灵梦B2"
+
+#: php/shared/translations.php:93
+msgid "ReimuY1"
+msgstr "灵梦Y1"
+
+#: php/shared/translations.php:94
+msgid "ReimuY2"
+msgstr "灵梦Y2"
+
+#: php/shared/translations.php:95
+msgid "ReimuG1"
+msgstr "灵梦G1"
+
+#: php/shared/translations.php:96
+msgid "ReimuG2"
+msgstr "灵梦G2"
+
+#: php/shared/translations.php:97
+msgid "MarisaR1"
+msgstr "魔理沙R1"
+
+#: php/shared/translations.php:98
+msgid "MarisaR2"
+msgstr "魔理沙R2"
+
+#: php/shared/translations.php:99
+msgid "MarisaB1"
+msgstr "魔理沙B1"
+
+#: php/shared/translations.php:100
+msgid "MarisaB2"
+msgstr "魔理沙B2"
+
+#: php/shared/translations.php:101
+msgid "MarisaY1"
+msgstr "魔理沙Y1"
+
+#: php/shared/translations.php:102
+msgid "MarisaY2"
+msgstr "魔理沙Y2"
+
+#: php/shared/translations.php:103
+msgid "MarisaG1"
+msgstr "魔理沙G1"
+
+#: php/shared/translations.php:104
+msgid "MarisaG2"
+msgstr "魔理沙G2"
 
 #: php/subpages/faq/jargon.php:2
 msgid ""

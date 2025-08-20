@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-08-20 20:26+0200\n"
-"PO-Revision-Date: 2025-08-20 20:26+0200\n"
+"POT-Creation-Date: 2025-08-20 20:36+0200\n"
+"PO-Revision-Date: 2025-08-20 20:36+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_GB\n"
@@ -1368,6 +1368,90 @@ msgstr ""
 msgid "FW"
 msgstr ""
 
+#: php/shared/translations.php:89
+msgid "ReimuR1"
+msgstr ""
+
+#: php/shared/translations.php:90
+msgid "ReimuR2"
+msgstr ""
+
+#: php/shared/translations.php:91
+msgid "ReimuB1"
+msgstr ""
+
+#: php/shared/translations.php:92
+msgid "ReimuB2"
+msgstr ""
+
+#: php/shared/translations.php:93
+#, fuzzy
+#| msgid "ReimuYukari"
+msgid "ReimuY1"
+msgstr "Reimu & Yukari"
+
+#: php/shared/translations.php:94
+#, fuzzy
+#| msgid "ReimuYukari"
+msgid "ReimuY2"
+msgstr "Reimu & Yukari"
+
+#: php/shared/translations.php:95
+msgid "ReimuG1"
+msgstr ""
+
+#: php/shared/translations.php:96
+msgid "ReimuG2"
+msgstr ""
+
+#: php/shared/translations.php:97
+#, fuzzy
+#| msgid "MarisaAlice"
+msgid "MarisaR1"
+msgstr "Marisa & Alice"
+
+#: php/shared/translations.php:98
+#, fuzzy
+#| msgid "MarisaAlice"
+msgid "MarisaR2"
+msgstr "Marisa & Alice"
+
+#: php/shared/translations.php:99
+#, fuzzy
+#| msgid "MarisaAlice"
+msgid "MarisaB1"
+msgstr "Marisa & Alice"
+
+#: php/shared/translations.php:100
+#, fuzzy
+#| msgid "MarisaAlice"
+msgid "MarisaB2"
+msgstr "Marisa & Alice"
+
+#: php/shared/translations.php:101
+#, fuzzy
+#| msgid "MarisaAlice"
+msgid "MarisaY1"
+msgstr "Marisa & Alice"
+
+#: php/shared/translations.php:102
+#, fuzzy
+#| msgid "MarisaAlice"
+msgid "MarisaY2"
+msgstr "Marisa & Alice"
+
+#: php/shared/translations.php:103
+#, fuzzy
+#| msgid "MarisaAlice"
+msgid "MarisaG1"
+msgstr "Marisa & Alice"
+
+#: php/shared/translations.php:104
+#, fuzzy
+#| msgid "MarisaAlice"
+msgid "MarisaG2"
+msgstr "Marisa & Alice"
+
 #: php/tools.php:4
 msgid ""
 "This page contains download links to all kinds of different patches or tools "
@@ -2231,12 +2315,6 @@ msgstr ""
 
 #~ msgid "Touhou 19 - Unfinished Dream of All Living Ghost"
 #~ msgstr "Touhou 19 - Unfinished Dream of All Living Ghost (v1.00a)"
-
-#~ msgid "ReimuYukari"
-#~ msgstr "Reimu & Yukari"
-
-#~ msgid "MarisaAlice"
-#~ msgstr "Marisa & Alice"
 
 #~ msgid "SakuyaRemilia"
 #~ msgstr "Sakuya & Remilia"

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-08-20 20:26+0200\n"
-"PO-Revision-Date: 2025-08-20 20:26+0200\n"
+"POT-Creation-Date: 2025-08-20 20:36+0200\n"
+"PO-Revision-Date: 2025-08-20 20:36+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -1198,6 +1198,86 @@ msgstr ""
 #: php/shared/translations.php:88
 msgid "FW"
 msgstr ""
+
+#: php/shared/translations.php:89
+msgid "ReimuR1"
+msgstr ""
+
+#: php/shared/translations.php:90
+msgid "ReimuR2"
+msgstr ""
+
+#: php/shared/translations.php:91
+msgid "ReimuB1"
+msgstr ""
+
+#: php/shared/translations.php:92
+msgid "ReimuB2"
+msgstr ""
+
+#: php/shared/translations.php:93
+msgid "ReimuY1"
+msgstr ""
+
+#: php/shared/translations.php:94
+msgid "ReimuY2"
+msgstr ""
+
+#: php/shared/translations.php:95
+msgid "ReimuG1"
+msgstr ""
+
+#: php/shared/translations.php:96
+msgid "ReimuG2"
+msgstr ""
+
+#: php/shared/translations.php:97
+#, fuzzy
+#| msgid "MarisaEagle"
+msgid "MarisaR1"
+msgstr "MarisaAdler"
+
+#: php/shared/translations.php:98
+#, fuzzy
+#| msgid "MarisaEagle"
+msgid "MarisaR2"
+msgstr "MarisaAdler"
+
+#: php/shared/translations.php:99
+#, fuzzy
+#| msgid "MarisaEagle"
+msgid "MarisaB1"
+msgstr "MarisaAdler"
+
+#: php/shared/translations.php:100
+#, fuzzy
+#| msgid "MarisaEagle"
+msgid "MarisaB2"
+msgstr "MarisaAdler"
+
+#: php/shared/translations.php:101
+#, fuzzy
+#| msgid "MarisaEagle"
+msgid "MarisaY1"
+msgstr "MarisaAdler"
+
+#: php/shared/translations.php:102
+#, fuzzy
+#| msgid "MarisaEagle"
+msgid "MarisaY2"
+msgstr "MarisaAdler"
+
+#: php/shared/translations.php:103
+#, fuzzy
+#| msgid "MarisaEagle"
+msgid "MarisaG1"
+msgstr "MarisaAdler"
+
+#: php/shared/translations.php:104
+#, fuzzy
+#| msgid "MarisaEagle"
+msgid "MarisaG2"
+msgstr "MarisaAdler"
 
 #: php/tools.php:4
 msgid ""
