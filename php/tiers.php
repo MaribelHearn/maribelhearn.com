@@ -27,7 +27,7 @@
 		<p id='msg_container'></p>
     </div>
     <div id='tier_list_container' class='dark_bg'>
-        <div id='sort' class='tabs dark_bg'>
+        <div id='sort' class='tabs dark_bg'  data-html2canvas-ignore>
             <p id='sort_characters'>Characters</p>
             <p id='sort_works'>Works</p>
             <p id='sort_shots'>Shottypes</p>
