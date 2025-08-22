@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-08-22 10:54+0200\n"
-"PO-Revision-Date: 2025-08-22 11:03+0200\n"
+"POT-Creation-Date: 2025-08-22 11:23+0200\n"
+"PO-Revision-Date: 2025-08-22 11:59+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -91,7 +91,7 @@ msgid "Route"
 msgstr "路线"
 
 #: js/drc.js:188 js/lnn.js:45 js/lnn.js:316 js/wr.js:59 php/drc.php:450
-#: php/lnn.php:250 php/lnn.php:307 php/shared/shared.php:109 php/wr.php:228
+#: php/lnn.php:249 php/lnn.php:306 php/shared/shared.php:109 php/wr.php:228
 #: php/wr.php:481 php/wr.php:518 php/wr.php:612
 msgid "Shottype"
 msgstr "机体"
@@ -145,11 +145,11 @@ msgstr "LNN(N)的数量"
 msgid "No. of LNNNNs"
 msgstr "LNNNN的数量"
 
-#: js/lnn.js:40 php/lnn.php:43 php/lnn.php:380 php/lnn.php:422
+#: js/lnn.js:40 php/lnn.php:43 php/lnn.php:379 php/lnn.php:421
 msgid "No. of LNNs"
 msgstr "LNN的数量"
 
-#: js/lnn.js:268 js/lnn.js:417 js/wr.js:483 js/wr.js:547 php/lnn.php:355
+#: js/lnn.js:268 js/lnn.js:417 js/wr.js:483 js/wr.js:547 php/lnn.php:354
 #: php/wr.php:259 php/wr.php:564
 msgid "Link"
 msgstr "链接"
@@ -164,21 +164,21 @@ msgid "(All)"
 msgstr "（全）"
 
 #: js/lnn.js:313 php/drc.php:203 php/drc.php:387 php/drc.php:421
-#: php/lnn.php:306 php/lnn.php:379 php/wr.php:224
+#: php/lnn.php:305 php/lnn.php:378 php/wr.php:224
 msgid "Game"
 msgstr "游戏"
 
-#: js/lnn.js:429 js/wr.js:390 js/wr.js:462 php/lnn.php:360 php/lnn.php:363
+#: js/lnn.js:429 js/wr.js:390 js/wr.js:462 php/lnn.php:359 php/lnn.php:362
 #: php/wr.php:567 php/wr.php:597
 msgid " "
 msgstr ""
 
-#: js/lnn.js:446 php/drc.php:94 php/lnn.php:282 php/lnn.php:330 php/wr.php:516
+#: js/lnn.js:446 php/drc.php:94 php/lnn.php:281 php/lnn.php:329 php/wr.php:516
 #: php/wr.php:541 php/wr.php:587
 msgid "Category"
 msgstr "项目"
 
-#: js/lnn.js:449 php/lnn.php:262 php/lnn.php:331 php/lnn.php:421 php/wr.php:226
+#: js/lnn.js:449 php/lnn.php:261 php/lnn.php:330 php/lnn.php:420 php/wr.php:226
 #: php/wr.php:480 php/wr.php:495 php/wr.php:543 php/wr.php:611 php/wr.php:632
 msgid "Player"
 msgstr "玩家"
@@ -639,7 +639,7 @@ msgstr "第二阈值"
 msgid "Threshold 3"
 msgstr "第三阈值"
 
-#: php/drc.php:346 php/drc.php:466 php/lnn.php:440 php/wr.php:649
+#: php/drc.php:346 php/drc.php:466 php/lnn.php:439 php/wr.php:649
 msgid "Back to Top"
 msgstr "回到顶部"
 
@@ -748,16 +748,6 @@ msgstr ""
 "次LNN，只算一次，其余次数不算入统计。"
 
 #: php/lnn.php:87
-#, fuzzy
-#| msgid ""
-#| "Extra conditions are required for PCB, TD, HSiFS, WBaWC and UM; these are "
-#| "No Border Breaks for PCB, No Trance for TD, No Release for HSiFS, No "
-#| "Berserk Roar No Roar Breaks for WBaWC and No Cards for UM. LNN in these "
-#| "games is called LNNN or LNNNN, with extra Ns to denote the extra "
-#| "conditions. The extra condition in UFO, no UFO summons, is optional, as "
-#| "it is not considered to have a significant impact on the difficulty of "
-#| "the run. As for IN, an LNN is assumed to capture all Last Spells and is "
-#| "referred to as LNNFS."
 msgid ""
 "Extra conditions are required for PCB, TD, HSiFS, WBaWC and UM; these are No "
 "Border Breaks for PCB, No Trance for TD, No Release for HSiFS, No Berserk "
@@ -797,98 +787,96 @@ msgstr ""
 msgid "Contents"
 msgstr "内容"
 
-#: php/lnn.php:102 php/lnn.php:109 php/lnn.php:134
+#: php/lnn.php:102 php/lnn.php:109 php/lnn.php:136
 msgid "LNN Lists"
 msgstr "LNN列表"
 
-#: php/lnn.php:103 php/lnn.php:117 php/lnn.php:259 php/lnn.php:264
-#: php/lnn.php:284 php/wr.php:497
+#: php/lnn.php:103 php/lnn.php:119 php/lnn.php:258 php/lnn.php:263
+#: php/lnn.php:283 php/wr.php:497
 msgid "Search"
 msgstr "搜索"
 
-#: php/lnn.php:104 php/lnn.php:118 php/lnn.php:327
+#: php/lnn.php:104 php/lnn.php:120 php/lnn.php:326
 msgid "Recent LNNs"
 msgstr "最近LNN"
 
-#: php/lnn.php:105 php/lnn.php:119 php/lnn.php:374
+#: php/lnn.php:105 php/lnn.php:121 php/lnn.php:373
 msgid "Overall Count"
 msgstr "总数"
 
-#: php/lnn.php:106 php/lnn.php:120 php/lnn.php:416 php/wr.php:184
+#: php/lnn.php:106 php/lnn.php:122 php/lnn.php:415 php/wr.php:184
 #: php/wr.php:205 php/wr.php:627
 msgid "Player Statistics"
 msgstr "玩家统计"
 
-#: php/lnn.php:128
+#: php/lnn.php:130
 msgid "Number of Recent LNNs"
 msgstr "最近LNN的数量"
 
-#: php/lnn.php:131 php/wr.php:215
+#: php/lnn.php:133 php/wr.php:215
 msgid "Save Changes"
 msgstr "保存更改"
 
-#: php/lnn.php:162 php/lnn.php:211 php/lnn.php:254 php/lnn.php:403
+#: php/lnn.php:164 php/lnn.php:213 php/lnn.php:253 php/lnn.php:402
 msgid "Overall"
 msgstr "合計"
 
-#: php/lnn.php:171 php/lnn.php:251
+#: php/lnn.php:173 php/lnn.php:250
 msgid "(Different players)"
 msgstr "（玩家）"
 
-#: php/lnn.php:172 php/lnn.php:252
+#: php/lnn.php:174 php/lnn.php:251
 msgid "Players"
 msgstr "玩家"
 
-#: php/lnn.php:218
+#: php/lnn.php:220
 msgid "Click a game cover to show its list of LNNs."
 msgstr "单击游戏处查看LNN列表。"
 
-#: php/lnn.php:260
-#, fuzzy
-#| msgid "Choose a player name from the menu below to show their LNNs."
+#: php/lnn.php:259
 msgid "Choose a player or category from the menus below to show their LNNs."
-msgstr "在以下的菜单选择玩家的名字则可查看其LNN。"
+msgstr "在以下的菜单选择玩家或者项目则可查看其LNN。"
 
-#: php/lnn.php:308 php/lnn.php:332 php/wr.php:229 php/wr.php:482 php/wr.php:519
+#: php/lnn.php:307 php/lnn.php:331 php/wr.php:229 php/wr.php:482 php/wr.php:519
 #: php/wr.php:544 php/wr.php:613
 msgid "Replay"
 msgstr "Rep"
 
-#: php/lnn.php:309 php/lnn.php:333 php/wr.php:230 php/wr.php:483 php/wr.php:520
+#: php/lnn.php:308 php/lnn.php:332 php/wr.php:230 php/wr.php:483 php/wr.php:520
 #: php/wr.php:545 php/wr.php:614
 msgid "Video"
 msgstr "视频"
 
-#: php/lnn.php:310 php/lnn.php:334 php/wr.php:231 php/wr.php:484 php/wr.php:521
+#: php/lnn.php:309 php/lnn.php:333 php/wr.php:231 php/wr.php:484 php/wr.php:521
 #: php/wr.php:546 php/wr.php:615
 msgid "Date"
 msgstr "日期"
 
-#: php/lnn.php:318 php/wr.php:530
+#: php/lnn.php:317 php/wr.php:530
 msgid "Total"
 msgstr "合計"
 
-#: php/lnn.php:324
+#: php/lnn.php:323
 msgid "No such player."
-msgstr ""
+msgstr "没有这样的玩家。"
 
-#: php/lnn.php:325
+#: php/lnn.php:324
 msgid "There are currently no LNNs in that category."
-msgstr ""
+msgstr "没有LNN在那个项目。"
 
-#: php/lnn.php:381
+#: php/lnn.php:380
 msgid "Different players"
 msgstr "玩家"
 
-#: php/lnn.php:409
+#: php/lnn.php:408
 msgid "Replays"
 msgstr "Rep"
 
-#: php/lnn.php:423
+#: php/lnn.php:422
 msgid "Games LNN'd"
 msgstr "游戏"
 
-#: php/lnn.php:429 php/lnn.php:430
+#: php/lnn.php:428 php/lnn.php:429
 msgid " (All Windows)"
 msgstr "（全Windows）"
 
@@ -1988,11 +1976,6 @@ msgid "LW"
 msgstr "LW"
 
 #: php/subpages/faq/jargon.php:155
-#, fuzzy
-#| msgid ""
-#| "Last Word; a special spell (and the difficulty of such a spell) used by "
-#| "an <a href=\"#term_in\">IN</a> boss,\n"
-#| "\t\t\t\twhich is only available in Spell Practice mode."
 msgid ""
 "Last Word; a special spell (and the difficulty of such a spell) used by an "
 "<a href=\"#term_in\">IN</a> boss,\n"
@@ -2093,11 +2076,6 @@ msgid "Miss"
 msgstr "Miss"
 
 #: php/subpages/faq/jargon.php:193
-#, fuzzy
-#| msgid ""
-#| "Losing a life. This term came from the Japanese transliteration of "
-#| "\"mistake\", ミステイク misuteiku,\n"
-#| "\t\t\t\twhich has as abbreviation ミス misu, i.e. \"miss\"."
 msgid ""
 "Losing a life. This term came from the Japanese transliteration of "
 "\"mistake\", ミステイク misuteiku,\n"
@@ -2201,20 +2179,6 @@ msgid "NNN"
 msgstr "NNN"
 
 #: php/subpages/faq/jargon.php:239
-#, fuzzy
-#| msgid ""
-#| "<a href=\"#term_nmnb\">NMNB</a>, plus a game-specific third restriction, "
-#| "which is\n"
-#| "                <a href=\"#term_nbb\">NBB</a> for <a "
-#| "href=\"#term_pcb\">PCB</a>, <a href=\"#term_nv\">NV</a>\n"
-#| "\t\t\t\tfor <a href=\"#term_ufo\">UFO</a>, <a href=\"#term_nt\">NT</a>\n"
-#| "\t\t\t\tfor <a href=\"#term_td\">TD</a>, <a href=\"#term_nr\">NR</a> for "
-#| "<a href=\"#term_hsifs\">HSiFS</a>\n"
-#| "\t\t\t\tand <a href=\"#term_nc\">NC</a> for <a href=\"#term_um\">UM</a>. "
-#| "Also known\n"
-#| "\t\t\t\tas <a href=\"#term_perfect\">Perfect</a> or a more comprehensive "
-#| "version of the acronym,\n"
-#| "\t\t\t\tsuch as 'NMNBNT' for <a href=\"#term_td\">TD</a>."
 msgid ""
 "<a href=\"#term_nmnb\">NMNB</a>, plus a game-specific third restriction, "
 "which is\n"
@@ -2243,14 +2207,6 @@ msgid "NNNN"
 msgstr "NNNN"
 
 #: php/subpages/faq/jargon.php:249
-#, fuzzy
-#| msgid ""
-#| "Used in <a href=\"#term_wbawc\">WBaWC</a> to mean <a "
-#| "href=\"#term_nmnb\">NMNB</a>,\n"
-#| "\t\t\t\tplus two game-specific restrictions, which are No Berserk Roars "
-#| "(No Hypers)\n"
-#| "\t\t\t\tand No Roar Breaks (No Hyper Breaks). Also known as <a "
-#| "href=\"#term_perfect\">Perfect</a>."
 msgid ""
 "Used in <a href=\"#term_wbawc\">WBaWC</a> to mean <a "
 "href=\"#term_nmnb\">NMNB</a>,\n"
@@ -2310,11 +2266,6 @@ msgid "NV"
 msgstr "NV"
 
 #: php/subpages/faq/jargon.php:268
-#, fuzzy
-#| msgid ""
-#| "No Ventora (Japanese for UFO summons); used in <a href=\"#term_ufo\">UFO</"
-#| "a> to mean a clear without summoning UFOs.\n"
-#| "\t\t\t\tIn Japanese, this also means not picking up any tokens at all."
 msgid ""
 "No Ventora (Japanese for UFO summons); used in <a href=\"#term_ufo\">UFO</a> "
 "to mean a clear without summoning UFOs.\n"
@@ -2444,15 +2395,6 @@ msgid "PoC"
 msgstr "PoC"
 
 #: php/subpages/faq/jargon.php:320
-#, fuzzy
-#| msgid ""
-#| "Point of Collection; this is the area at the top of the screen that, when "
-#| "entered,\n"
-#| "\t\t\t\tmakes your character automatically collect all items on screen. "
-#| "In <a href=\"#term_td\">TD</a>,\n"
-#| "\t\t\t\tthis does not work on spirits. Also used as a verb, e.g. "
-#| "'poccing', to mean collecting\n"
-#| "\t\t\t\titems this way."
 msgid ""
 "Point of Collection; this is the area at the top of the screen that, when "
 "entered,\n"
@@ -2548,15 +2490,6 @@ msgid "Safespot"
 msgstr "Safespot"
 
 #: php/subpages/faq/jargon.php:365
-#, fuzzy
-#| msgid ""
-#| "A spot, or a larger area, inside of which the player cannot be hit by "
-#| "anything. There is a large grey area to the application of the term in "
-#| "practice, as it is not necessarily only used for singular spots;\n"
-#| "                it can include safe areas that require the player to "
-#| "move, although safer than doing the pattern in question \"normally\". It "
-#| "can even include spots or areas that are not actually completely safe,\n"
-#| "                just <em>mostly</em> safe."
 msgid ""
 "A spot, or a larger area, inside of which the player cannot be hit by "
 "anything. There is a large grey area to the application of the term in "
@@ -2695,13 +2628,6 @@ msgid "TAS"
 msgstr "TAS"
 
 #: php/subpages/faq/jargon.php:417
-#, fuzzy
-#| msgid ""
-#| "Tool-Assisted Superplay; used to refer not to speedruns, but to runs that "
-#| "used external tools, such as slowing down the game, savestates and <a "
-#| "href=\"#term_pausebuffering\">pause buffering</a>,\n"
-#| "                which is often done to see what is theoretically possible "
-#| "in a game."
 msgid ""
 "Tool-Assisted Superplay; used to refer not to speedruns, but to runs that "
 "used external tools, such as slowing down the game, savestates and <a "
@@ -3678,7 +3604,7 @@ msgstr "请勿将rep上传到别的存rep网站。"
 msgid ""
 "If you toggle Unverified Scores, this will show scores that are higher than "
 "the World Record, but lack replay or video proof."
-msgstr ""
+msgstr "如果 \"未公開的分数\" 切换，查看超过世界纪录的分数，没有rep或者视频。"
 
 #: php/wr.php:170
 msgid ""
@@ -3696,6 +3622,8 @@ msgid ""
 "research at <a href=\"https://nylilsa.github.io\" "
 "target=\"_blank\">Nylilsa's GitHub page.</a>"
 msgstr ""
+"世界纪录历史2024年9月以前，这研究在<a href=\"https://nylilsa.github.io\" "
+"target=\"_blank\">Nylilsa的网页</a>。"
 
 #: php/wr.php:180 php/wr.php:188 php/wr.php:219
 msgid "Overall Records"
@@ -3751,19 +3679,19 @@ msgstr "显示西方纪录"
 
 #: php/wr.php:445
 msgid "Unverified scores"
-msgstr ""
+msgstr "未公開的分数"
 
 #: php/wr.php:448
 msgid "Link videos over replays"
-msgstr ""
+msgstr "视频而不是rep"
 
 #: php/wr.php:468
 msgid "Browse History"
-msgstr ""
+msgstr "浏览历史"
 
 #: php/wr.php:475 php/wr.php:606
 msgid "No history available."
-msgstr ""
+msgstr "没有可用的历史。"
 
 #: php/wr.php:493
 msgid "Choose a player name from the menu below to show their WRs."
