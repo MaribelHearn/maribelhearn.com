@@ -108,11 +108,13 @@ $last_modified = $last_modified['results'][0]['date'];
         }
         echo '<div class="contents"><p><a href="#lnns">' . _('LNN Lists') . '</a></p>';
         $games = curl_get($API_BASE . '/api/v1/game/');
-        if (strpos($games, 'Internal Server Error') === false) {
-            $games = json_decode($games, true);
-            foreach ($games as $key => $data) {
-                echo '<p><a href="#' . $data['short_name'] . '">' . $data['full_name'] . '</a></p>';
-            }
+        $games = json_decode($games, true);
+        foreach ($games as $key => $data) {
+            $game = $data['short_name'];
+            $full_name = _($data['full_name']);
+            $game_nums->{$game} = $data['number'];
+            $full_names->{$game} = $full_name;
+            echo '<p><a href="#' . $game . '">' . $full_name . '</a></p>';
         }
         echo '<p><a id="searchlink" href="#search">' . _('Search') .
         '</a></p><p><a href="#recent">' . _('Recent LNNs') .
@@ -219,9 +221,6 @@ $last_modified = $last_modified['results'][0]['date'];
             $second_row = false;
             foreach ($games as $key => $data) {
                 $game = $data['short_name'];
-                $full_name = $data['full_name'];
-                $game_nums->{$game} = $data['number'];
-                $full_names->{$game} = $full_name;
                 if (in_array($game, $pvp)) {
                     continue;
                 }
@@ -234,10 +233,10 @@ $last_modified = $last_modified['results'][0]['date'];
                 }
                 if (!$second_row) {
                     echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_1"></span>' .
-                    '<span class="full_name tooltip">' . $full_name . '</span></span>';
+                    '<span class="full_name tooltip">' . $full_names->{$game} . '</span></span>';
                 } else {
                     echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_2"></span>' .
-                    '<span class="full_name tooltip">' . $full_name . '</span></span>';
+                    '<span class="full_name tooltip">' . $full_names->{$game} . '</span></span>';
                 }
             }
             echo '<br><br>';

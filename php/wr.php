@@ -189,14 +189,14 @@ foreach ($west_data as $key => $data) {
         '<p><a href="#wrs" class="worldrecords">' . _('World Records') . '
         </a></p>';
         $games = curl_get($API_BASE . '/api/v1/game/');
-        if (strpos($games, 'Internal Server Error') === false) {
-            $games = json_decode($games, true);
-            foreach ($games as $key => $data) {
-                if ($data['short_name'] == 'UDoALG') {
-                    continue;
-                }
-                echo '<p><a href="#' . $data['short_name'] . '">' . $data['full_name'] . '</a></p>';
+        $games = json_decode($games, true);
+        foreach ($games as $key => $data) {
+            $full_name = _($data['full_name']);
+            $full_names->{$data['short_name']} = $full_name;
+            if ($data['short_name'] == 'UDoALG') {
+                continue;
             }
+            echo '<p><a href="#' . $data['short_name'] . '">' . $full_name . '</a></p>';
         }
         echo '<p><a href="#western_records">' . _('Western Records') . '</a></p>';
         echo '<p><a id="playersearchlink" href="#player_search">' . _('Player Search') . '</a></p>';
@@ -415,8 +415,6 @@ foreach ($west_data as $key => $data) {
             if (gettype($games) != 'string') {
                 foreach ($games as $key => $data) {
                     $game = $data['short_name'];
-                    $full_name = $data['full_name'];
-                    $full_names->{$game} = $full_name;
                     if ($game == 'UDoALG') {
                         continue;
                     }
@@ -426,10 +424,10 @@ foreach ($west_data as $key => $data) {
                     }
                     if (!$second_row) {
                         echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_1"></span>' .
-                        '<span class="full_name tooltip">' . $full_name . '</span></span>';
+                        '<span class="full_name tooltip">' . $full_names->{$game} . '</span></span>';
                     } else {
                         echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_2"></span>' .
-                        '<span class="full_name tooltip">' . $full_name . '</span></span>';
+                        '<span class="full_name tooltip">' . $full_names->{$game} . '</span></span>';
                     }
                 }
             }

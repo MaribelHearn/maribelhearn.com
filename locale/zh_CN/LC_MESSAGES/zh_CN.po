@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-08-20 20:35+0200\n"
-"PO-Revision-Date: 2025-08-20 20:35+0200\n"
+"POT-Creation-Date: 2025-08-22 10:54+0200\n"
+"PO-Revision-Date: 2025-08-22 11:03+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -22,8 +22,9 @@ msgstr ""
 "X-Poedit-SearchPath-7: php/shared/shared.php\n"
 "X-Poedit-SearchPath-8: php/shared/translations.php\n"
 "X-Poedit-SearchPath-9: php/subpages/faq/jargon.php\n"
+"X-Poedit-SearchPath-10: js/utils.js\n"
 
-#: js/drc.js:36 php/wr.php:441
+#: js/drc.js:36 php/wr.php:439
 msgid "Important Notice:"
 msgstr ""
 
@@ -80,8 +81,8 @@ msgstr ""
 msgid "Releases"
 msgstr ""
 
-#: js/drc.js:140 php/wr.php:225 php/wr.php:481 php/wr.php:519 php/wr.php:544
-#: php/wr.php:612
+#: js/drc.js:140 php/wr.php:225 php/wr.php:479 php/wr.php:517 php/wr.php:542
+#: php/wr.php:610
 msgid "Score"
 msgstr "分数"
 
@@ -91,7 +92,7 @@ msgstr "路线"
 
 #: js/drc.js:188 js/lnn.js:45 js/lnn.js:316 js/wr.js:59 php/drc.php:450
 #: php/lnn.php:250 php/lnn.php:307 php/shared/shared.php:109 php/wr.php:228
-#: php/wr.php:483 php/wr.php:520 php/wr.php:614
+#: php/wr.php:481 php/wr.php:518 php/wr.php:612
 msgid "Shottype"
 msgstr "机体"
 
@@ -149,7 +150,7 @@ msgid "No. of LNNs"
 msgstr "LNN的数量"
 
 #: js/lnn.js:268 js/lnn.js:417 js/wr.js:483 js/wr.js:547 php/lnn.php:355
-#: php/wr.php:259 php/wr.php:566
+#: php/wr.php:259 php/wr.php:564
 msgid "Link"
 msgstr "链接"
 
@@ -168,19 +169,119 @@ msgid "Game"
 msgstr "游戏"
 
 #: js/lnn.js:429 js/wr.js:390 js/wr.js:462 php/lnn.php:360 php/lnn.php:363
-#: php/wr.php:569 php/wr.php:599
+#: php/wr.php:567 php/wr.php:597
 msgid " "
 msgstr ""
 
-#: js/lnn.js:446 php/drc.php:94 php/lnn.php:282 php/lnn.php:330 php/wr.php:518
-#: php/wr.php:543 php/wr.php:589
+#: js/lnn.js:446 php/drc.php:94 php/lnn.php:282 php/lnn.php:330 php/wr.php:516
+#: php/wr.php:541 php/wr.php:587
 msgid "Category"
 msgstr "项目"
 
 #: js/lnn.js:449 php/lnn.php:262 php/lnn.php:331 php/lnn.php:421 php/wr.php:226
-#: php/wr.php:482 php/wr.php:497 php/wr.php:545 php/wr.php:613 php/wr.php:634
+#: php/wr.php:480 php/wr.php:495 php/wr.php:543 php/wr.php:611 php/wr.php:632
 msgid "Player"
 msgstr "玩家"
+
+#: js/utils.js:126 js/utils.js:151 php/shared/shared.php:48
+msgid "Youkai mode (Dark)"
+msgstr "Youkai mode (Dark)"
+
+#: js/utils.js:138 php/shared/shared.php:48
+msgid "Human mode (Light)"
+msgstr "Human mode (Light)"
+
+#: js/utils.js:213
+msgid "Touhou 1 - The Highly Responsive to Prayers"
+msgstr "东方灵异传　～ The Highly Responsive to Prayers"
+
+#: js/utils.js:214
+msgid "Touhou 2 - The Story of Eastern Wonderland"
+msgstr "东方封魔录　～ the Story of Eastern Wonderland"
+
+#: js/utils.js:215
+msgid "Touhou 3 - Phantasmagoria of Dim.Dream"
+msgstr "东方梦时空　～ Phantasmagoria of Dim.Dream"
+
+#: js/utils.js:216
+msgid "Touhou 4 - Lotus Land Story"
+msgstr "东方幻想乡　～ Lotus Land Story"
+
+#: js/utils.js:217
+msgid "Touhou 5 - Mystic Square"
+msgstr "东方怪绮谈　～ Mystic Square"
+
+#: js/utils.js:218
+msgid "Touhou 6 - The Embodiment of Scarlet Devil"
+msgstr "东方红魔乡　～ the Embodiment of Scarlet Devil"
+
+#: js/utils.js:219
+msgid "Touhou 7 - Perfect Cherry Blossom"
+msgstr "东方妖妖梦　～ Perfect Cherry Blossom"
+
+#: js/utils.js:220
+msgid "Touhou 8 - Imperishable Night"
+msgstr "东方永夜抄　～ Imperishable Night"
+
+#: js/utils.js:221
+msgid "Touhou 9 - Phantasmagoria of Flower View"
+msgstr "东方花映塚　～ Phantasmagoria of Flower View"
+
+#: js/utils.js:222
+msgid "Touhou 9.5 - Shoot the Bullet"
+msgstr "东方文花帖　～ Shoot the Bullet"
+
+#: js/utils.js:223
+msgid "Touhou 10 - Mountain of Faith"
+msgstr "东方风神录　～ Mountain of Faith"
+
+#: js/utils.js:224
+msgid "Touhou 11 - Subterranean Animism"
+msgstr "东方地灵殿　～ Subterranean Animism"
+
+#: js/utils.js:225
+msgid "Touhou 12 - Undefined Fantastic Object"
+msgstr "东方星莲船　～ Undefined Fantastic Object"
+
+#: js/utils.js:226
+msgid "Touhou 12.5 - Double Spoiler"
+msgstr "对抗新闻　～ 东方文花帖"
+
+#: js/utils.js:227
+msgid "Touhou 12.8 - Great Fairy Wars"
+msgstr "妖精大战争　～ 东方三月精"
+
+#: js/utils.js:228
+msgid "Touhou 13 - Ten Desires"
+msgstr "东方神灵庙　～ Ten Desires"
+
+#: js/utils.js:229
+msgid "Touhou 14 - Double Dealing Character"
+msgstr "东方辉针城　～ Double Dealing Character"
+
+#: js/utils.js:230
+msgid "Touhou 15 - Legacy of Lunatic Kingdom"
+msgstr "东方绀珠传　～ Legacy of Lunatic Kingdom"
+
+#: js/utils.js:231
+msgid "Touhou 16 - Hidden Star in Four Seasons"
+msgstr "东方天空璋　～ Hidden Star in Four Seasons"
+
+#: js/utils.js:232
+msgid "Touhou 17 - Wily Beast and Weakest Creature"
+msgstr "东方鬼形獣　～ Wily Beast and Weakest Creature"
+
+#: js/utils.js:233
+msgid "Touhou 18 - Unconnected Marketeers"
+msgstr "东方虹龙洞　～ Unconnected Marketeers"
+
+#: js/utils.js:234
+msgid "Touhou 19 - Unfinished Dream of All Living Ghost"
+msgstr "东方兽王园　～ Unfinished Dream of All Living Ghost（v1.00a）"
+
+#: js/utils.js:235
+msgid "Touhou 20 - Fossilized Wonders"
+msgstr "东方錦上京　～ Fossilized Wonders"
 
 #: js/wr.js:151
 msgid ""
@@ -190,7 +291,7 @@ msgstr ""
 
 #: js/wr.js:211 js/wr.js:217 php/wr.php:245
 msgid "Uncapped"
-msgstr ""
+msgstr "不分上限"
 
 #: php/drc.php:71
 msgid ""
@@ -538,7 +639,7 @@ msgstr "第二阈值"
 msgid "Threshold 3"
 msgstr "第三阈值"
 
-#: php/drc.php:346 php/drc.php:466 php/lnn.php:440 php/wr.php:651
+#: php/drc.php:346 php/drc.php:466 php/lnn.php:440 php/wr.php:649
 msgid "Back to Top"
 msgstr "回到顶部"
 
@@ -701,7 +802,7 @@ msgid "LNN Lists"
 msgstr "LNN列表"
 
 #: php/lnn.php:103 php/lnn.php:117 php/lnn.php:259 php/lnn.php:264
-#: php/lnn.php:284 php/wr.php:499
+#: php/lnn.php:284 php/wr.php:497
 msgid "Search"
 msgstr "搜索"
 
@@ -714,7 +815,7 @@ msgid "Overall Count"
 msgstr "总数"
 
 #: php/lnn.php:106 php/lnn.php:120 php/lnn.php:416 php/wr.php:184
-#: php/wr.php:205 php/wr.php:629
+#: php/wr.php:205 php/wr.php:627
 msgid "Player Statistics"
 msgstr "玩家统计"
 
@@ -748,22 +849,22 @@ msgstr "单击游戏处查看LNN列表。"
 msgid "Choose a player or category from the menus below to show their LNNs."
 msgstr "在以下的菜单选择玩家的名字则可查看其LNN。"
 
-#: php/lnn.php:308 php/lnn.php:332 php/wr.php:229 php/wr.php:484 php/wr.php:521
-#: php/wr.php:546 php/wr.php:615
+#: php/lnn.php:308 php/lnn.php:332 php/wr.php:229 php/wr.php:482 php/wr.php:519
+#: php/wr.php:544 php/wr.php:613
 msgid "Replay"
 msgstr "Rep"
 
-#: php/lnn.php:309 php/lnn.php:333 php/wr.php:230 php/wr.php:485 php/wr.php:522
-#: php/wr.php:547 php/wr.php:616
+#: php/lnn.php:309 php/lnn.php:333 php/wr.php:230 php/wr.php:483 php/wr.php:520
+#: php/wr.php:545 php/wr.php:614
 msgid "Video"
 msgstr "视频"
 
-#: php/lnn.php:310 php/lnn.php:334 php/wr.php:231 php/wr.php:486 php/wr.php:523
-#: php/wr.php:548 php/wr.php:617
+#: php/lnn.php:310 php/lnn.php:334 php/wr.php:231 php/wr.php:484 php/wr.php:521
+#: php/wr.php:546 php/wr.php:615
 msgid "Date"
 msgstr "日期"
 
-#: php/lnn.php:318 php/wr.php:532
+#: php/lnn.php:318 php/wr.php:530
 msgid "Total"
 msgstr "合計"
 
@@ -1140,14 +1241,6 @@ msgstr ""
 "就很容易被消除。Boss进攻能力也很差，也有个完全给对面送气的攻击。她的能力还不"
 "错，在高压下可以不用按X硬扭。总而言之，小兔子进攻差，而且固灵范围让她的防守也"
 "变得很差，使得她是游戏中最弱的角色之一。"
-
-#: php/shared/shared.php:48
-msgid "Youkai mode (Dark)"
-msgstr "Youkai mode (Dark)"
-
-#: php/shared/shared.php:48
-msgid "Human mode (Light)"
-msgstr "Human mode (Light)"
 
 #: php/shared/shared.php:57 php/shared/shared.php:64
 msgid "Flag of the United Kingdom"
@@ -3612,11 +3705,11 @@ msgstr "整体世界纪录"
 msgid "World Records"
 msgstr "世界纪录"
 
-#: php/wr.php:182 php/wr.php:202 php/wr.php:494
+#: php/wr.php:182 php/wr.php:202 php/wr.php:492
 msgid "Player Search"
 msgstr "玩家搜寻"
 
-#: php/wr.php:183 php/wr.php:203 php/wr.php:539
+#: php/wr.php:183 php/wr.php:203 php/wr.php:537
 msgid "Recent Records"
 msgstr "最近世界纪录"
 
@@ -3624,7 +3717,7 @@ msgstr "最近世界纪录"
 msgid "Western Records"
 msgstr "西方纪录"
 
-#: php/wr.php:204 php/wr.php:587
+#: php/wr.php:204 php/wr.php:585
 msgid "History"
 msgstr "历史"
 
@@ -3636,15 +3729,15 @@ msgstr "最近世界纪录的数量"
 msgid "Difficulty"
 msgstr "难度"
 
-#: php/wr.php:377 php/wr.php:461
+#: php/wr.php:377 php/wr.php:459
 msgid "World"
 msgstr "世界"
 
-#: php/wr.php:378 php/wr.php:462
+#: php/wr.php:378 php/wr.php:460
 msgid "West"
 msgstr "西方"
 
-#: php/wr.php:378 php/wr.php:463
+#: php/wr.php:378 php/wr.php:461
 msgid "Percentage"
 msgstr "百分"
 
@@ -3652,103 +3745,37 @@ msgstr "百分"
 msgid "Click a game cover to show its list of world records."
 msgstr "单击游戏处查看世界纪录列表。"
 
-#: php/wr.php:444
+#: php/wr.php:442
 msgid "Show Western records"
 msgstr "显示西方纪录"
 
-#: php/wr.php:447
+#: php/wr.php:445
 msgid "Unverified scores"
 msgstr ""
 
-#: php/wr.php:450
+#: php/wr.php:448
 msgid "Link videos over replays"
 msgstr ""
 
-#: php/wr.php:470
+#: php/wr.php:468
 msgid "Browse History"
 msgstr ""
 
-#: php/wr.php:477 php/wr.php:608
+#: php/wr.php:475 php/wr.php:606
 msgid "No history available."
 msgstr ""
 
-#: php/wr.php:495
+#: php/wr.php:493
 msgid "Choose a player name from the menu below to show their WRs."
 msgstr "在以下的菜单选择玩家的名字则可查看其WR。"
 
-#: php/wr.php:635
+#: php/wr.php:633
 msgid "No. of WRs"
 msgstr "WR数量"
 
-#: php/wr.php:636
+#: php/wr.php:634
 msgid "Different games"
 msgstr "游戏"
-
-#~ msgid "Touhou 1 - The Highly Responsive to Prayers"
-#~ msgstr "东方灵异传　～ The Highly Responsive to Prayers"
-
-#~ msgid "Touhou 2 - The Story of Eastern Wonderland"
-#~ msgstr "东方封魔录　～ the Story of Eastern Wonderland"
-
-#~ msgid "Touhou 3 - Phantasmagoria of Dim.Dream"
-#~ msgstr "东方梦时空　～ Phantasmagoria of Dim.Dream"
-
-#~ msgid "Touhou 4 - Lotus Land Story"
-#~ msgstr "东方幻想乡　～ Lotus Land Story"
-
-#~ msgid "Touhou 5 - Mystic Square"
-#~ msgstr "东方怪绮谈　～ Mystic Square"
-
-#~ msgid "Touhou 6 - The Embodiment of Scarlet Devil"
-#~ msgstr "东方红魔乡　～ the Embodiment of Scarlet Devil"
-
-#~ msgid "Touhou 7 - Perfect Cherry Blossom"
-#~ msgstr "东方妖妖梦　～ Perfect Cherry Blossom"
-
-#~ msgid "Touhou 8 - Imperishable Night"
-#~ msgstr "东方永夜抄　～ Imperishable Night"
-
-#~ msgid "Touhou 9 - Phantasmagoria of Flower View"
-#~ msgstr "东方花映塚　～ Phantasmagoria of Flower View"
-
-#~ msgid "Touhou 9.5 - Shoot the Bullet"
-#~ msgstr "东方文花帖　～ Shoot the Bullet"
-
-#~ msgid "Touhou 10 - Mountain of Faith"
-#~ msgstr "东方风神录　～ Mountain of Faith"
-
-#~ msgid "Touhou 11 - Subterranean Animism"
-#~ msgstr "东方地灵殿　～ Subterranean Animism"
-
-#~ msgid "Touhou 12 - Undefined Fantastic Object"
-#~ msgstr "东方星莲船　～ Undefined Fantastic Object"
-
-#~ msgid "Touhou 12.5 - Double Spoiler"
-#~ msgstr "对抗新闻　～ 东方文花帖"
-
-#~ msgid "Touhou 12.8 - Great Fairy Wars"
-#~ msgstr "妖精大战争　～ 东方三月精"
-
-#~ msgid "Touhou 13 - Ten Desires"
-#~ msgstr "东方神灵庙　～ Ten Desires"
-
-#~ msgid "Touhou 14 - Double Dealing Character"
-#~ msgstr "东方辉针城　～ Double Dealing Character"
-
-#~ msgid "Touhou 15 - Legacy of Lunatic Kingdom"
-#~ msgstr "东方绀珠传　～ Legacy of Lunatic Kingdom"
-
-#~ msgid "Touhou 16 - Hidden Star in Four Seasons"
-#~ msgstr "东方天空璋　～ Hidden Star in Four Seasons"
-
-#~ msgid "Touhou 17 - Wily Beast and Weakest Creature"
-#~ msgstr "东方鬼形獣　～ Wily Beast and Weakest Creature"
-
-#~ msgid "Touhou 18 - Unconnected Marketeers"
-#~ msgstr "东方虹龙洞　～ Unconnected Marketeers"
-
-#~ msgid "Touhou 19 - Unfinished Dream of All Living Ghost"
-#~ msgstr "东方兽王园　～ Unfinished Dream of All Living Ghost（v1.00a）"
 
 #~ msgid "Player Ranking"
 #~ msgstr "玩家排行"
