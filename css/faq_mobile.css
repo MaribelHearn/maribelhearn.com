@@ -13,7 +13,7 @@
 #back {
     float: none;
 }
-#lang_icon {
+#lang_icon, .flag_img {
     width: auto;
     height: auto;
 }
