@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-08-22 10:50+0200\n"
-"PO-Revision-Date: 2025-08-22 10:54+0200\n"
+"POT-Creation-Date: 2025-08-24 22:26+0200\n"
+"PO-Revision-Date: 2025-08-24 22:26+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -85,12 +85,12 @@ msgstr ""
 msgid "Score"
 msgstr "スコア"
 
-#: js/drc.js:186 js/lnn.js:45 js/wr.js:59 php/shared/shared.php:109
+#: js/drc.js:186 js/lnn.js:45 js/wr.js:59 php/shared/shared.php:117
 msgid "Route"
 msgstr "ルート"
 
 #: js/drc.js:188 js/lnn.js:45 js/lnn.js:316 js/wr.js:59 php/drc.php:450
-#: php/lnn.php:250 php/lnn.php:307 php/shared/shared.php:109 php/wr.php:228
+#: php/lnn.php:249 php/lnn.php:306 php/shared/shared.php:117 php/wr.php:228
 #: php/wr.php:481 php/wr.php:518 php/wr.php:612
 msgid "Shottype"
 msgstr "キャラ"
@@ -144,11 +144,11 @@ msgstr "LNN(N)の数"
 msgid "No. of LNNNNs"
 msgstr "LNNNNの数"
 
-#: js/lnn.js:40 php/lnn.php:43 php/lnn.php:380 php/lnn.php:422
+#: js/lnn.js:40 php/lnn.php:43 php/lnn.php:379 php/lnn.php:421
 msgid "No. of LNNs"
 msgstr "LNNの数"
 
-#: js/lnn.js:268 js/lnn.js:417 js/wr.js:483 js/wr.js:547 php/lnn.php:355
+#: js/lnn.js:268 js/lnn.js:417 js/wr.js:483 js/wr.js:547 php/lnn.php:354
 #: php/wr.php:259 php/wr.php:564
 msgid "Link"
 msgstr "リンク"
@@ -163,30 +163,30 @@ msgid "(All)"
 msgstr "（全）"
 
 #: js/lnn.js:313 php/drc.php:203 php/drc.php:387 php/drc.php:421
-#: php/lnn.php:306 php/lnn.php:379 php/wr.php:224
+#: php/lnn.php:305 php/lnn.php:378 php/wr.php:224
 msgid "Game"
 msgstr "ゲーム"
 
-#: js/lnn.js:429 js/wr.js:390 js/wr.js:462 php/lnn.php:360 php/lnn.php:363
+#: js/lnn.js:429 js/wr.js:390 js/wr.js:462 php/lnn.php:359 php/lnn.php:362
 #: php/wr.php:567 php/wr.php:597
 msgid " "
 msgstr ""
 
-#: js/lnn.js:446 php/drc.php:94 php/lnn.php:282 php/lnn.php:330 php/wr.php:516
+#: js/lnn.js:446 php/drc.php:94 php/lnn.php:281 php/lnn.php:329 php/wr.php:516
 #: php/wr.php:541 php/wr.php:587
 msgid "Category"
 msgstr "カテゴリー"
 
-#: js/lnn.js:449 php/lnn.php:262 php/lnn.php:331 php/lnn.php:421 php/wr.php:226
+#: js/lnn.js:449 php/lnn.php:261 php/lnn.php:330 php/lnn.php:420 php/wr.php:226
 #: php/wr.php:480 php/wr.php:495 php/wr.php:543 php/wr.php:611 php/wr.php:632
 msgid "Player"
 msgstr "プレイヤー"
 
-#: js/utils.js:126 js/utils.js:151 php/shared/shared.php:48
+#: js/utils.js:126 js/utils.js:151 php/shared/shared.php:52
 msgid "Youkai mode (Dark)"
 msgstr "妖怪モード（ダーク）"
 
-#: js/utils.js:138 php/shared/shared.php:48
+#: js/utils.js:138 php/shared/shared.php:52
 msgid "Human mode (Light)"
 msgstr "人間モード（ライト）"
 
@@ -287,7 +287,7 @@ msgid ""
 "This game's records assume that the overflow bug has been fixed. Check the "
 "score after applying the fix using <a href='/tools#thprac'>thprac</a>."
 msgstr ""
-"錦上京では素点オーバーフローバグ解除の前提で記録しています。<a href='/"
+"錦上京では素点オーバーフローバグ修正の前提で記録しています。<a href='/"
 "tools#thprac'>thprac</a>によるバグ修正でリプレイ再生でスコアを確認します。"
 
 #: js/wr.js:211 js/wr.js:217 php/wr.php:245
@@ -446,19 +446,19 @@ msgstr "稼ぎ"
 msgid "Survival"
 msgstr "クリア重視"
 
-#: php/drc.php:136 php/shared/shared.php:127
+#: php/drc.php:136 php/shared/shared.php:135
 msgid "Spring"
 msgstr "春"
 
-#: php/drc.php:137 php/shared/shared.php:128
+#: php/drc.php:137 php/shared/shared.php:136
 msgid "Summer"
 msgstr "夏"
 
-#: php/drc.php:138 php/shared/shared.php:129
+#: php/drc.php:138 php/shared/shared.php:137
 msgid "Autumn"
 msgstr "秋"
 
-#: php/drc.php:139 php/shared/shared.php:130
+#: php/drc.php:139 php/shared/shared.php:138
 msgid "Winter"
 msgstr "冬"
 
@@ -657,7 +657,7 @@ msgstr "閾値2"
 msgid "Threshold 3"
 msgstr "閾値3"
 
-#: php/drc.php:346 php/drc.php:466 php/lnn.php:440 php/tools.php:525
+#: php/drc.php:346 php/drc.php:466 php/lnn.php:439 php/tools.php:525
 #: php/wr.php:649
 msgid "Back to Top"
 msgstr "上に帰る"
@@ -813,126 +813,126 @@ msgstr ""
 msgid "Contents"
 msgstr "内容"
 
-#: php/lnn.php:102 php/lnn.php:109 php/lnn.php:134
+#: php/lnn.php:102 php/lnn.php:109 php/lnn.php:136
 msgid "LNN Lists"
 msgstr "LNNリスト"
 
-#: php/lnn.php:103 php/lnn.php:117 php/lnn.php:259 php/lnn.php:264
-#: php/lnn.php:284 php/wr.php:497
+#: php/lnn.php:103 php/lnn.php:119 php/lnn.php:258 php/lnn.php:263
+#: php/lnn.php:283 php/wr.php:497
 msgid "Search"
 msgstr "探索"
 
-#: php/lnn.php:104 php/lnn.php:118 php/lnn.php:327
+#: php/lnn.php:104 php/lnn.php:120 php/lnn.php:326
 msgid "Recent LNNs"
 msgstr "最近のLNN"
 
-#: php/lnn.php:105 php/lnn.php:119 php/lnn.php:374
+#: php/lnn.php:105 php/lnn.php:121 php/lnn.php:373
 msgid "Overall Count"
 msgstr "総数"
 
-#: php/lnn.php:106 php/lnn.php:120 php/lnn.php:416 php/wr.php:184
+#: php/lnn.php:106 php/lnn.php:122 php/lnn.php:415 php/wr.php:184
 #: php/wr.php:205 php/wr.php:627
 msgid "Player Statistics"
 msgstr "プレイヤーの統計"
 
-#: php/lnn.php:128
+#: php/lnn.php:130
 msgid "Number of Recent LNNs"
 msgstr "最近のLNNの数"
 
-#: php/lnn.php:131 php/wr.php:215
+#: php/lnn.php:133 php/wr.php:215
 msgid "Save Changes"
 msgstr "変更をセーブ"
 
-#: php/lnn.php:162 php/lnn.php:211 php/lnn.php:254 php/lnn.php:403
+#: php/lnn.php:164 php/lnn.php:213 php/lnn.php:253 php/lnn.php:402
 msgid "Overall"
 msgstr "合計"
 
-#: php/lnn.php:171 php/lnn.php:251
+#: php/lnn.php:173 php/lnn.php:250
 msgid "(Different players)"
 msgstr "（プレイヤー）"
 
-#: php/lnn.php:172 php/lnn.php:252
+#: php/lnn.php:174 php/lnn.php:251
 msgid "Players"
 msgstr "プレイヤー"
 
-#: php/lnn.php:218
+#: php/lnn.php:220
 msgid "Click a game cover to show its list of LNNs."
 msgstr "LNNリストはゲームをクリック。"
 
-#: php/lnn.php:260
+#: php/lnn.php:259
 msgid "Choose a player or category from the menus below to show their LNNs."
 msgstr ""
 "個人のLNNを表示するには、下記のメニューからプレイヤー名をまたはカテゴリーを選"
 "んでください。"
 
-#: php/lnn.php:308 php/lnn.php:332 php/wr.php:229 php/wr.php:482 php/wr.php:519
+#: php/lnn.php:307 php/lnn.php:331 php/wr.php:229 php/wr.php:482 php/wr.php:519
 #: php/wr.php:544 php/wr.php:613
 msgid "Replay"
 msgstr "リプレイ"
 
-#: php/lnn.php:309 php/lnn.php:333 php/wr.php:230 php/wr.php:483 php/wr.php:520
+#: php/lnn.php:308 php/lnn.php:332 php/wr.php:230 php/wr.php:483 php/wr.php:520
 #: php/wr.php:545 php/wr.php:614
 msgid "Video"
 msgstr "ビデオ"
 
-#: php/lnn.php:310 php/lnn.php:334 php/wr.php:231 php/wr.php:484 php/wr.php:521
+#: php/lnn.php:309 php/lnn.php:333 php/wr.php:231 php/wr.php:484 php/wr.php:521
 #: php/wr.php:546 php/wr.php:615
 msgid "Date"
 msgstr "日付"
 
-#: php/lnn.php:318 php/wr.php:530
+#: php/lnn.php:317 php/wr.php:530
 msgid "Total"
 msgstr "合計"
 
-#: php/lnn.php:324
+#: php/lnn.php:323
 msgid "No such player."
 msgstr ""
 
-#: php/lnn.php:325
+#: php/lnn.php:324
 msgid "There are currently no LNNs in that category."
 msgstr ""
 
-#: php/lnn.php:381
+#: php/lnn.php:380
 msgid "Different players"
 msgstr "プレイヤー"
 
-#: php/lnn.php:409
+#: php/lnn.php:408
 msgid "Replays"
 msgstr "リプレイ"
 
-#: php/lnn.php:423
+#: php/lnn.php:422
 msgid "Games LNN'd"
 msgstr "ゲーム"
 
-#: php/lnn.php:429 php/lnn.php:430
+#: php/lnn.php:428 php/lnn.php:429
 msgid " (All Windows)"
 msgstr "（全Windows）"
 
-#: php/shared/shared.php:57 php/shared/shared.php:64
+#: php/shared/shared.php:65 php/shared/shared.php:72
 msgid "Flag of the United Kingdom"
 msgstr "イギリスの国旗"
 
-#: php/shared/shared.php:60
+#: php/shared/shared.php:68
 msgid "Flag of the United States"
 msgstr "アメリカ合衆国の国旗"
 
-#: php/shared/shared.php:68
+#: php/shared/shared.php:76
 msgid "Flag of Japan"
 msgstr "日本の国旗"
 
-#: php/shared/shared.php:72
+#: php/shared/shared.php:80
 msgid "Flag of the P.R.C."
 msgstr "中華人民共和国の国旗"
 
-#: php/shared/shared.php:76
+#: php/shared/shared.php:84
 msgid "Flag of Russia"
 msgstr "ロシアの国旗"
 
-#: php/shared/shared.php:80
+#: php/shared/shared.php:88
 msgid "Flag of Germany"
 msgstr "ドイツの国旗"
 
-#: php/shared/shared.php:84
+#: php/shared/shared.php:92
 msgid "Flag of Spain"
 msgstr "スペインの国旗"
 
