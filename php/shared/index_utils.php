@@ -82,7 +82,7 @@ function hit(string $filename, string $status_code) {
         if (!empty($_SERVER['HTTP_USER_AGENT']) && preg_match('~(bot|crawl|slurp|spider|archiver|facebook|lighthouse|jigsaw|validator|w3c|hexometer)~i', $_SERVER['HTTP_USER_AGENT'])) {
             return;
         }
-        $ip = (empty($_SERVER['X_REAL_IP']) ? $_SERVER['REMOTE_ADDR'] : $_SERVER['X_REAL_IP']);
+        $ip = (empty($_SERVER['HTTP_X_REAL_IP']) ? $_SERVER['REMOTE_ADDR'] : $_SERVER['HTTP_X_REAL_IP']);
         $ip_log = $path . 'ips.log';
         $url = substr($_SERVER['REQUEST_URI'], 1);
         $token = (file_exists($path . 'token') ? trim(file_get_contents($path . 'token')) : '');
