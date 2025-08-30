@@ -238,15 +238,15 @@
         </tr>
     </thead>
     <tbody>
-        <tr><td>4</td><td>Flandre Scarlet</td><td>23917</td><td>3,726</td><td>4,400</td><td>23</td></tr>
-        <tr><td>5</td><td>Sakuya Izayoi</td><td>19804</td><td>2,518</td><td>3,620</td><td>14</td></tr>
-        <tr><td>6</td><td>Remilia Scarlet</td><td>19638</td><td>2,366</td><td>3,669</td><td>19</td></tr>
-        <tr><td>10</td><td>Cirno</td><td>12447</td><td>1,575</td><td>2,744</td><td>8</td></tr>
-        <tr><td>17</td><td>Hong Meiling</td><td>7315</td><td>712</td><td>1,437</td><td>4</td></tr>
-        <tr><td>18</td><td>Patchouli Knowledge</td><td>7216</td><td>702</td><td>1,180</td><td>6</td></tr>
-        <tr><td>19</td><td>Rumia</td><td>7062</td><td>727</td><td>1,536</td><td>16</td></tr>
-        <tr><td>53</td><td>Daiyousei</td><td>2633</td><td>126</td><td>523</td><td>1</td></tr>
-        <tr><td>57</td><td>Koakuma</td><td>2289</td><td>130</td><td>439</td><td>1</td></tr>
+        <tr><td>4</td><td>Flandre Scarlet</td><td>23,917</td><td>3,726</td><td>4,400</td><td>23</td></tr>
+        <tr><td>5</td><td>Sakuya Izayoi</td><td>19,804</td><td>2,518</td><td>3,620</td><td>14</td></tr>
+        <tr><td>6</td><td>Remilia Scarlet</td><td>19,638</td><td>2,366</td><td>3,669</td><td>19</td></tr>
+        <tr><td>10</td><td>Cirno</td><td>12,447</td><td>1,575</td><td>2,744</td><td>8</td></tr>
+        <tr><td>17</td><td>Hong Meiling</td><td>7,315</td><td>712</td><td>1,437</td><td>4</td></tr>
+        <tr><td>18</td><td>Patchouli Knowledge</td><td>7,216</td><td>702</td><td>1,180</td><td>6</td></tr>
+        <tr><td>19</td><td>Rumia</td><td>7,062</td><td>727</td><td>1,536</td><td>16</td></tr>
+        <tr><td>53</td><td>Daiyousei</td><td>2,633</td><td>126</td><td>523</td><td>1</td></tr>
+        <tr><td>57</td><td>Koakuma</td><td>2,289</td><td>130</td><td>439</td><td>1</td></tr>
     </tbody>
 </table></div>
 <h3 id='cpcb'>Touhou 7 - Perfect Cherry Blossom</h3>
@@ -270,13 +270,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr><td>7</td><td>Youmu Konpaku</td><td>18435</td><td>2,933</td><td>3,156</td><td>17</td></tr>
-        <tr><td>12</td><td>Yuyuko Saigyouji</td><td>9612</td><td>1,022</td><td>1,586</td><td>5</td></tr>
-        <tr><td>14</td><td>Alice Margatroid</td><td>9331</td><td>972</td><td>1,405</td><td>18</td></tr>
-        <tr><td>16</td><td>Yukari Yakumo</td><td>7376</td><td>699</td><td>1,178</td><td>5</td></tr>
-        <tr><td>31</td><td>Ran Yakumo</td><td>4325</td><td>416</td><td>747</td><td>4</td></tr>
-        <tr><td>51</td><td>Chen</td><td>2726</td><td>198</td><td>583</td><td>4</td></tr>
-        <tr><td>71</td><td>Lily White</td><td>1692</td><td>139</td><td>307</td><td>3</td></tr>
+        <tr><td>7</td><td>Youmu Konpaku</td><td>18,435</td><td>2,933</td><td>3,156</td><td>17</td></tr>
+        <tr><td>12</td><td>Yuyuko Saigyouji</td><td>9,612</td><td>1,022</td><td>1,586</td><td>5</td></tr>
+        <tr><td>14</td><td>Alice Margatroid</td><td>9,331</td><td>972</td><td>1,405</td><td>18</td></tr>
+        <tr><td>16</td><td>Yukari Yakumo</td><td>7,376</td><td>699</td><td>1,178</td><td>5</td></tr>
+        <tr><td>31</td><td>Ran Yakumo</td><td>4,325</td><td>416</td><td>747</td><td>4</td></tr>
+        <tr><td>51</td><td>Chen</td><td>2,726</td><td>198</td><td>583</td><td>4</td></tr>
+        <tr><td>71</td><td>Lily White</td><td>1,692</td><td>139</td><td>307</td><td>3</td></tr>
         <tr><td>100</td><td>Letty Whiterock</td><td>983</td><td>94</td><td>212</td><td>1</td></tr>
         <tr><td>103</td><td>Lunasa Prismriver</td><td>969</td><td>85</td><td>152</td><td>3</td></tr>
         <tr><td>125</td><td>Merlin Prismriver</td><td>634</td><td>45</td><td>126</td><td>2</td></tr>
@@ -304,14 +304,14 @@
         </tr>
     </thead>
     <tbody>
-        <tr><td>9</td><td>Fujiwara no Mokou</td><td>12665</td><td>1,755</td><td>2,254</td><td>7</td></tr>
-        <tr><td>15</td><td>Reisen Udongein Inaba</td><td>8609</td><td>896</td><td>1,383</td><td>1</td></tr>
-        <tr><td>25</td><td>Kaguya Houraisan</td><td>5022</td><td>431</td><td>830</td><td>0</td></tr>
-        <tr><td>28</td><td>Eirin Yagokoro</td><td>4889</td><td>428</td><td>1,198</td><td>5</td></tr>
-        <tr><td>47</td><td>Mystia Lorelei</td><td>2906</td><td>268</td><td>486</td><td>7</td></tr>
-        <tr><td>52</td><td>Keine Kamishirasawa</td><td>2688</td><td>187</td><td>509</td><td>1</td></tr>
-        <tr><td>63</td><td>Wriggle Nightbug</td><td>1906</td><td>227</td><td>390</td><td>6</td></tr>
-        <tr><td>64</td><td>Tewi Inaba</td><td>1871</td><td>120</td><td>338</td><td>1</td></tr>
+        <tr><td>9</td><td>Fujiwara no Mokou</td><td>12,665</td><td>1,755</td><td>2,254</td><td>7</td></tr>
+        <tr><td>15</td><td>Reisen Udongein Inaba</td><td>8,609</td><td>896</td><td>1,383</td><td>1</td></tr>
+        <tr><td>25</td><td>Kaguya Houraisan</td><td>5,022</td><td>431</td><td>830</td><td>0</td></tr>
+        <tr><td>28</td><td>Eirin Yagokoro</td><td>4,889</td><td>428</td><td>1,198</td><td>5</td></tr>
+        <tr><td>47</td><td>Mystia Lorelei</td><td>2,906</td><td>268</td><td>486</td><td>7</td></tr>
+        <tr><td>52</td><td>Keine Kamishirasawa</td><td>2,688</td><td>187</td><td>509</td><td>1</td></tr>
+        <tr><td>63</td><td>Wriggle Nightbug</td><td>1,906</td><td>227</td><td>390</td><td>6</td></tr>
+        <tr><td>64</td><td>Tewi Inaba</td><td>1,871</td><td>120</td><td>338</td><td>1</td></tr>
     </tbody>
 </table></div>
 <h3 id='cpofv'>Touhou 9 - Phantasmagoria of Flower View</h3>
@@ -336,10 +336,10 @@
     </thead>
     <tbody>
         <tr><td>11</td><td>Aya Shameimaru</td><td>10,133</td><td>1,116</td><td>1,633</td><td>9</td></tr>
-        <tr><td>24</td><td>Eiki Shiki, Yamaxanadu</td><td>5524</td><td>536</td><td>942</td><td>3</td></tr>
-        <tr><td>27</td><td>Yuuka Kazami</td><td>4959</td><td>518</td><td>784</td><td>8</td></tr>
-        <tr><td>75</td><td>Komachi Onozuka</td><td>1555</td><td>91</td><td>306</td><td>4</td></tr>
-        <tr><td>93</td><td>Medicine Melancholy</td><td>1132</td><td>99</td><td>212</td><td>3</td></tr>
+        <tr><td>24</td><td>Eiki Shiki, Yamaxanadu</td><td>5,524</td><td>536</td><td>942</td><td>3</td></tr>
+        <tr><td>27</td><td>Yuuka Kazami</td><td>4,959</td><td>518</td><td>784</td><td>8</td></tr>
+        <tr><td>75</td><td>Komachi Onozuka</td><td>1,555</td><td>91</td><td>306</td><td>4</td></tr>
+        <tr><td>93</td><td>Medicine Melancholy</td><td>1,132</td><td>99</td><td>212</td><td>3</td></tr>
     </tbody>
 </table></div>
 <h3 id='cmof'>Touhou 10 - Mountain of Faith</h3>
@@ -363,12 +363,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr><td>13</td><td>Sanae Kochiya</td><td>9426</td><td>1,082</td><td>1,419</td><td>13</td></tr>
-        <tr><td>23</td><td>Suwako Moriya</td><td>5943</td><td>665</td><td>1,024</td><td>2</td></tr>
-        <tr><td>30</td><td>Momiji Inubashiri</td><td>4621</td><td>534</td><td>812</td><td>11</td></tr>
-        <tr><td>39</td><td>Hina Kagiyama</td><td>3647</td><td>436</td><td>627</td><td>4</td></tr>
-        <tr><td>44</td><td>Nitori Kawashiro</td><td>3262</td><td>333</td><td>572</td><td>3</td></tr>
-        <tr><td>69</td><td>Kanako Yasaka</td><td>1734</td><td>130</td><td>353</td><td>0</td></tr>
+        <tr><td>13</td><td>Sanae Kochiya</td><td>9,426</td><td>1,082</td><td>1,419</td><td>13</td></tr>
+        <tr><td>23</td><td>Suwako Moriya</td><td>5,943</td><td>665</td><td>1,024</td><td>2</td></tr>
+        <tr><td>30</td><td>Momiji Inubashiri</td><td>4,621</td><td>534</td><td>812</td><td>11</td></tr>
+        <tr><td>39</td><td>Hina Kagiyama</td><td>3,647</td><td>436</td><td>627</td><td>4</td></tr>
+        <tr><td>44</td><td>Nitori Kawashiro</td><td>3,262</td><td>333</td><td>572</td><td>3</td></tr>
+        <tr><td>69</td><td>Kanako Yasaka</td><td>1,734</td><td>130</td><td>353</td><td>0</td></tr>
         <tr><td>106</td><td>Minoriko Aki</td><td>944</td><td>43</td><td>179</td><td>6</td></tr>
         <tr><td>107</td><td>Shizuha Aki</td><td>937</td><td>75</td><td>172</td><td>4</td></tr>
     </tbody>
@@ -394,12 +394,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr><td>1</td><td>Koishi Komeiji</td><td>27688</td><td>5,133</td><td>4,238</td><td>28</td></tr>
-        <tr><td>8</td><td>Satori Komeiji</td><td>13504</td><td>1,399</td><td>2,215</td><td>7</td></tr>
-        <tr><td>32</td><td>Utsuho Reiuji</td><td>4315</td><td>479</td><td>787</td><td>2</td></tr>
-        <tr><td>37</td><td>Parsee Mizuhashi</td><td>3825</td><td>362</td><td>707</td><td>2</td></tr>
-        <tr><td>46</td><td>Rin Kaenbyou</td><td>2952</td><td>216</td><td>525</td><td>4</td></tr>
-        <tr><td>84</td><td>Yuugi Hoshiguma</td><td>1360</td><td>106</td><td>286</td><td>1</td></tr>
+        <tr><td>1</td><td>Koishi Komeiji</td><td>27,688</td><td>5,133</td><td>4,238</td><td>28</td></tr>
+        <tr><td>8</td><td>Satori Komeiji</td><td>13,504</td><td>1,399</td><td>2,215</td><td>7</td></tr>
+        <tr><td>32</td><td>Utsuho Reiuji</td><td>4,315</td><td>479</td><td>787</td><td>2</td></tr>
+        <tr><td>37</td><td>Parsee Mizuhashi</td><td>3,825</td><td>362</td><td>707</td><td>2</td></tr>
+        <tr><td>46</td><td>Rin Kaenbyou</td><td>2,952</td><td>216</td><td>525</td><td>4</td></tr>
+        <tr><td>84</td><td>Yuugi Hoshiguma</td><td>1,360</td><td>106</td><td>286</td><td>1</td></tr>
         <tr><td>113</td><td>Yamame Kurodani</td><td>822</td><td>59</td><td>162</td><td>0</td></tr>
         <tr><td>151</td><td>Kisume</td><td>313</td><td>15</td><td>65</td><td>1</td></tr>
     </tbody>
@@ -425,11 +425,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr><td>22</td><td>Kogasa Tatara</td><td>6249</td><td>627</td><td>1,093</td><td>12</td></tr>
-        <tr><td>50</td><td>Byakuren Hijiri</td><td>2733</td><td>204</td><td>478</td><td>2</td></tr>
-        <tr><td>54</td><td>Nue Houjuu</td><td>2581</td><td>222</td><td>448</td><td>7</td></tr>
-        <tr><td>58</td><td>Nazrin</td><td>2156</td><td>215</td><td>371</td><td>5</td></tr>
-        <tr><td>67</td><td>Minamitsu Murasa</td><td>1832</td><td>196</td><td>302</td><td>3</td></tr>
+        <tr><td>22</td><td>Kogasa Tatara</td><td>6,249</td><td>627</td><td>1,093</td><td>12</td></tr>
+        <tr><td>50</td><td>Byakuren Hijiri</td><td>2,733</td><td>204</td><td>478</td><td>2</td></tr>
+        <tr><td>54</td><td>Nue Houjuu</td><td>2,581</td><td>222</td><td>448</td><td>7</td></tr>
+        <tr><td>58</td><td>Nazrin</td><td>2,156</td><td>215</td><td>371</td><td>5</td></tr>
+        <tr><td>67</td><td>Minamitsu Murasa</td><td>1,832</td><td>196</td><td>302</td><td>3</td></tr>
         <tr><td>109</td><td>Shou Toramaru</td><td>879</td><td>76</td><td>160</td><td>0</td></tr>
         <tr><td>118</td><td>Ichirin Kumoi</td><td>704</td><td>57</td><td>150</td><td>1</td></tr>
         <tr><td>168</td><td>Unzan</td><td>166</td><td>9</td><td>49</td><td>0</td></tr>
@@ -456,12 +456,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr><td>36</td><td>Toyosatomimi no Miko</td><td>3952</td><td>444</td><td>659</td><td>6</td></tr>
-        <tr><td>40</td><td>Mononobe no Futo</td><td>3571</td><td>365</td><td>665</td><td>13</td></tr>
-        <tr><td>68</td><td>Seiga Kaku</td><td>1820</td><td>123</td><td>306</td><td>3</td></tr>
-        <tr><td>78</td><td>Mamizou Futatsuiwa</td><td>1513</td><td>136</td><td>285</td><td>0</td></tr>
-        <tr><td>88</td><td>Soga no Tojiko</td><td>1285</td><td>106</td><td>243</td><td>7</td></tr>
-        <tr><td>98</td><td>Yoshika Miyako</td><td>1039</td><td>92</td><td>234</td><td>2</td></tr>
+        <tr><td>36</td><td>Toyosatomimi no Miko</td><td>3,952</td><td>444</td><td>659</td><td>6</td></tr>
+        <tr><td>40</td><td>Mononobe no Futo</td><td>3,571</td><td>365</td><td>665</td><td>13</td></tr>
+        <tr><td>68</td><td>Seiga Kaku</td><td>1,820</td><td>123</td><td>306</td><td>3</td></tr>
+        <tr><td>78</td><td>Mamizou Futatsuiwa</td><td>1,513</td><td>136</td><td>285</td><td>0</td></tr>
+        <tr><td>88</td><td>Soga no Tojiko</td><td>1,285</td><td>106</td><td>243</td><td>7</td></tr>
+        <tr><td>98</td><td>Yoshika Miyako</td><td>1,039</td><td>92</td><td>234</td><td>2</td></tr>
         <tr><td>110</td><td>Kyouko Kasodani</td><td>864</td><td>66</td><td>177</td><td>3</td></tr>
     </tbody>
 </table></div>
@@ -486,12 +486,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr><td>35</td><td>Seija Kijin</td><td>4035</td><td>546</td><td>686</td><td>9</td></tr>
-        <tr><td>65</td><td>Sekibanki</td><td>1860</td><td>183</td><td>324</td><td>1</td></tr>
-        <tr><td>83</td><td>Kagerou Imaizumi</td><td>1394</td><td>113</td><td>277</td><td>4</td></tr>
-        <tr><td>87</td><td>Shinmyoumaru Sukuna</td><td>1287</td><td>118</td><td>222</td><td>3</td></tr>
-        <tr><td>92</td><td>Raiko Horikawa</td><td>1199</td><td>104</td><td>226</td><td>2</td></tr>
-        <tr><td>99</td><td>Wakasagihime</td><td>1032</td><td>76</td><td>225</td><td>0</td></tr>
+        <tr><td>35</td><td>Seija Kijin</td><td>4,035</td><td>546</td><td>686</td><td>9</td></tr>
+        <tr><td>65</td><td>Sekibanki</td><td>1,860</td><td>183</td><td>324</td><td>1</td></tr>
+        <tr><td>83</td><td>Kagerou Imaizumi</td><td>1,394</td><td>113</td><td>277</td><td>4</td></tr>
+        <tr><td>87</td><td>Shinmyoumaru Sukuna</td><td>1,287</td><td>118</td><td>222</td><td>3</td></tr>
+        <tr><td>92</td><td>Raiko Horikawa</td><td>1,199</td><td>104</td><td>226</td><td>2</td></tr>
+        <tr><td>99</td><td>Wakasagihime</td><td>1,032</td><td>76</td><td>225</td><td>0</td></tr>
         <tr><td>124</td><td>Benben Tsukumo</td><td>642</td><td>42</td><td>136</td><td>3</td></tr>
         <tr><td>144</td><td>Yatsuhashi Tsukumo</td><td>379</td><td>40</td><td>82</td><td>3</td></tr>
     </tbody>
@@ -517,11 +517,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr><td>26</td><td>Junko</td><td>4972</td><td>479</td><td>845</td><td>4</td></tr>
-        <tr><td>33</td><td>Hecatia Lapislazuli</td><td>4069</td><td>326</td><td>829</td><td>6</td></tr>
-        <tr><td>41</td><td>Sagume Kishin</td><td>3561</td><td>324</td><td>599</td><td>11</td></tr>
-        <tr><td>59</td><td>Doremy Sweet</td><td>2094</td><td>194</td><td>382</td><td>3</td></tr>
-        <tr><td>70</td><td>Clownpiece</td><td>1724</td><td>117</td><td>311</td><td>4</td></tr>
+        <tr><td>26</td><td>Junko</td><td>4,972</td><td>479</td><td>845</td><td>4</td></tr>
+        <tr><td>33</td><td>Hecatia Lapislazuli</td><td>4,069</td><td>326</td><td>829</td><td>6</td></tr>
+        <tr><td>41</td><td>Sagume Kishin</td><td>3,561</td><td>324</td><td>599</td><td>11</td></tr>
+        <tr><td>59</td><td>Doremy Sweet</td><td>2,094</td><td>194</td><td>382</td><td>3</td></tr>
+        <tr><td>70</td><td>Clownpiece</td><td>1,724</td><td>117</td><td>311</td><td>4</td></tr>
         <tr><td>117</td><td>Seiran</td><td>706</td><td>42</td><td>135</td><td>1</td></tr>
         <tr><td>137</td><td>Ringo</td><td>442</td><td>29</td><td>93</td><td>0</td></tr>
     </tbody>
@@ -547,8 +547,8 @@
         </tr>
     </thead>
     <tbody>
-        <tr><td>43</td><td>Okina Matara</td><td>3430</td><td>356</td><td>630</td><td>2</td></tr>
-        <tr><td>95</td><td>Aunn Komano</td><td>1104</td><td>69</td><td>233</td><td>4</td></tr>
+        <tr><td>43</td><td>Okina Matara</td><td>3,430</td><td>356</td><td>630</td><td>2</td></tr>
+        <tr><td>95</td><td>Aunn Komano</td><td>1,104</td><td>69</td><td>233</td><td>4</td></tr>
         <tr><td>123</td><td>Mai Teireida</td><td>647</td><td>47</td><td>135</td><td>1</td></tr>
         <tr><td>127</td><td>Eternity Larva</td><td>586</td><td>43</td><td>124</td><td>0</td></tr>
         <tr><td>129</td><td>Satono Nishida</td><td>534</td><td>25</td><td>100</td><td>1</td></tr>
@@ -577,9 +577,9 @@
         </tr>
     </thead>
     <tbody>
-        <tr><td>62</td><td>Keiki Haniyasushin</td><td>1916</td><td>177</td><td>323</td><td>7</td></tr>
-        <tr><td>81</td><td>Yachie Kicchou</td><td>1478</td><td>90</td><td>278</td><td>3</td></tr>
-        <tr><td>86</td><td>Kutaka Niwatari</td><td>1324</td><td>96</td><td>223</td><td>5</td></tr>
+        <tr><td>62</td><td>Keiki Haniyasushin</td><td>1,916</td><td>177</td><td>323</td><td>7</td></tr>
+        <tr><td>81</td><td>Yachie Kicchou</td><td>1,478</td><td>90</td><td>278</td><td>3</td></tr>
+        <tr><td>86</td><td>Kutaka Niwatari</td><td>1,324</td><td>96</td><td>223</td><td>5</td></tr>
         <tr><td>112</td><td>Saki Kurokoma</td><td>849</td><td>53</td><td>193</td><td>1</td></tr>
         <tr><td>120</td><td>Mayumi Joutouguu</td><td>671</td><td>53</td><td>126</td><td>5</td></tr>
         <tr><td>145</td><td>Eika Ebisu</td><td>362</td><td>31</td><td>68</td><td>0</td></tr>
@@ -607,9 +607,9 @@
         </tr>
     </thead>
     <tbody>
-        <tr><td>42</td><td>Megumu Iizunamaru</td><td>3482</td><td>394</td><td>691</td><td>4</td></tr>
-        <tr><td>56</td><td>Chimata Tenkyuu</td><td>2468</td><td>209</td><td>488</td><td>3</td></tr>
-        <tr><td>66</td><td>Tsukasa Kudamaki</td><td>1848</td><td>116</td><td>357</td><td>1</td></tr>
+        <tr><td>42</td><td>Megumu Iizunamaru</td><td>3,482</td><td>394</td><td>691</td><td>4</td></tr>
+        <tr><td>56</td><td>Chimata Tenkyuu</td><td>2,468</td><td>209</td><td>488</td><td>3</td></tr>
+        <tr><td>66</td><td>Tsukasa Kudamaki</td><td>1,848</td><td>116</td><td>357</td><td>1</td></tr>
         <tr><td>102</td><td>Momoyo Himemushi</td><td>970</td><td>80</td><td>193</td><td>4</td></tr>
         <tr><td>121</td><td>Mike Goutokuji</td><td>660</td><td>45</td><td>139</td><td>1</td></tr>
         <tr><td>146</td><td>Takane Yamashiro</td><td>361</td><td>31</td><td>65</td><td>1</td></tr>
@@ -638,7 +638,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr><td>96</td><td>Hisami Yomotsu</td><td>1096</td><td>55</td><td>221</td><td>2</td></tr>
+        <tr><td>96</td><td>Hisami Yomotsu</td><td>1,096</td><td>55</td><td>221</td><td>2</td></tr>
         <tr><td>103</td><td>Zanmu Nippaku</td><td>969</td><td>54</td><td>176</td><td>2</td></tr>
         <tr><td>111</td><td>Chiyari Tenkajin</td><td>858</td><td>43</td><td>189</td><td>5</td></tr>
         <tr><td>128</td><td>Enoko Mitsugashira</td><td>561</td><td>18</td><td>133</td><td>1</td></tr>
@@ -666,7 +666,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr><td>60</td><td>Nareko Michigami</td><td>2076</td><td>83</td><td>475</td><td>10</td></tr>
+        <tr><td>60</td><td>Nareko Michigami</td><td>2,076</td><td>83</td><td>475</td><td>10</td></tr>
         <tr><td>133</td><td>Chimi Houjuu</td><td>511</td><td>21</td><td>166</td><td>6</td></tr>
         <tr><td>163</td><td>Ubame Chirizuka</td><td>200</td><td>6</td><td>53</td><td>6</td></tr>
     </tbody>
