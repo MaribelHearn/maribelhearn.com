@@ -21,9 +21,9 @@ music and works will not change when the full results are published.</p>-->
 </div>
 <h2>Valid responses</h2>
 <div class='contents'>
-    <p>Characters: a <small>(in 2024: 56,855; in 2023: 52,447; in 2022: 51,652)</small></p>
-    <p>Music: b <small>(in 2024: 37,742; in 2023: 36,451; in 2022: 37,659)</small></p>
-    <p>Works: c <small>(in 2024: 29,083; in 2023: 28,171; in 2022: 28,558)</small></p>
+    <p>Characters: 58,509 <small>(in 2024: 56,855; in 2023: 52,447; in 2022: 51,652)</small></p>
+    <p>Music: 37,970 <small>(in 2024: 37,742; in 2023: 36,451; in 2022: 37,659)</small></p>
+    <p>Works: 29,791 <small>(in 2024: 29,083; in 2023: 28,171; in 2022: 28,558)</small></p>
 </div>
 <h2 id='characters'>Characters</h2>
 <div class='overflow'><table class='poll table sortable noborders'>
