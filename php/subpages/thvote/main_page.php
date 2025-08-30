@@ -6,6 +6,11 @@ It does not mean the results are not final. The number of votes for the characte
 music and works will not change when the full results are published.</p>-->
 <p>All of the table columns are sortable.</p>
 <p>Source: <a href='https://toho-vote.info/'>https://toho-vote.info/</a></p>
+    <p class='donation wide center'>
+        <a href='https://ko-fi.com/maribelhearn42'>
+            <span class='icon kofi_icon'></span> Support me
+        </a>
+    </p>
 <!--<h2>How do I vote?</h2>
 <p>Please have a look at the <a href='/thvote/guide'>voting guide</a>.</p>-->
 <!--<p>The official site now has <strong>English translated results!</strong> Go here to read them: <a href='https://toho-vote.info/'>https://toho-vote.info/</a></p>
