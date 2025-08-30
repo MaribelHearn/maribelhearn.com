@@ -13,7 +13,7 @@
         <col class='col5'>
     </colgroup>
     <thead>
-        <tr><th>Current Rank</th><th>Previous Rank</th><th>Character</th><th id='change' class='sorttable_numeric'>Change from 2023</th></tr>
+        <tr><th>Current Rank</th><th>Previous Rank</th><th>Character</th><th id='change' class='sorttable_numeric'>Change from 2024</th></tr>
     </thead>
     <tbody>
         <tr><td>1</td><td>2</td><td>Reimu Hakurei</td><td class='jump'>+1</td></tr>
@@ -170,8 +170,7 @@
 </table></div>
 <p class='center'><strong><a href='#top'>Back to Top</a></strong></p>
 <h2 id='cpg'>Character vote per maingame</h2>
-<p>Coming soon!</p>
-<!--<h3 id='ctotals'>Totals per maingame</h3>
+<h3 id='ctotals'>Totals per maingame</h3>
 <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
             <col class='col2game'>
@@ -186,7 +185,7 @@
                 <th class='sorttable_numeric'>Rank</th>
                 <th>Name</th>
                 <th class='sorttable_numeric'>Points</th>
-                <th class='sorttable_numeric'>Change from 2022</th>
+                <th class='sorttable_numeric'>Change from 2024</th>
                 <th class='sorttable_numeric'>No. 1 Votes</th>
                 <th class='sorttable_numeric'>Comments</th>
             </tr>
@@ -207,6 +206,7 @@
         <tr><td>13</td><td>WBaWC</td><td>7,238</td><td class='jump'>+55</td><td>626</td><td>1,536</td></tr>
         <tr><td>14</td><td>UDoALG</td><td>7,237</td><td class='stable'>0</td><td>341</td><td>1,868</td></tr>
         <tr><td>15</td><td>HSiFS</td><td>5,178</td><td class='drop'>-382</td><td>469</td><td>1,065</td></tr>
+        <tr><td>16</td><td>HSiFS</td><td>5,178</td><td class='drop'>-382</td><td>469</td><td>1,065</td></tr>
     </tbody>
 </table></div>
 <h3 id='ceosd'>Touhou 6 - The Embodiment of Scarlet Devil</h3>
@@ -636,4 +636,30 @@
         <tr><td>78</td><td>Son Biten</td><td>1,269</td><td>55</td><td>321</td><td>2</td></tr>
     </tbody>
 </table></div>
-<footer><strong><a href='#top'>Back to Top</a></strong></footer>-->
+<h3 id='cfw'>Touhou 20 - Fossilized Wonders</h3>
+<div class='overflow'><table class='poll table sortable noborders'>
+    <colgroup>
+        <col class='col2game'>
+        <col class='col4'>
+        <col class='col3'>
+        <col class='col5'>
+        <col class='col6per'>
+        <col class='col4'>
+    </colgroup>
+    <thead>
+        <tr>
+            <th class='sorttable_numeric'>Rank</th>
+            <th>Name</th>
+            <th class='sorttable_numeric'>Points</th>
+            <th class='sorttable_numeric'>No. 1 Votes</th>
+            <th class='sorttable_numeric'>Comments</th>
+            <th class='sorttable_numeric'>Fanworks</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>52</td><td>Hisami Yomotsu</td><td>1,907</td><td>102</td><td>500</td><td>6</td></tr>
+        <tr><td>68</td><td>Zanmu Nippaku</td><td>1,403</td><td>67</td><td>278</td><td>6</td></tr>
+        <tr><td>71</td><td>Enoko Mitsugashira</td><td>1,348</td><td>47</td><td>379</td><td>7</td></tr>
+    </tbody>
+</table></div>
+<footer><strong><a href='#top'>Back to Top</a></strong></footer>
