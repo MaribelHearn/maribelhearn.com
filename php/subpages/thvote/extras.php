@@ -188,32 +188,33 @@
             <col class='col4'>
             <col class='col5'>
             <col class='col6per'>
-            <col class='col7per'>
         </colgroup>
         <thead>
             <tr>
                 <th class='sorttable_numeric'>Rank</th>
                 <th>Name</th>
                 <th class='sorttable_numeric'>Points</th>
+                <th class='sorttable_numeric'>Change from 2024</th>
+                <th class='sorttable_numeric'>Points 2024</th>
             </tr>
         </thead>
     <tbody>
-        <tr><td>1</td><td>EoSD</td><td>102,321</td></tr>
-        <tr><td>2</td><td>PCB</td><td>56,596</td></tr>
-        <tr><td>3</td><td>Reimu &amp; Marisa</td><td>54,961</td></tr>
-        <tr><td>4</td><td>SA</td><td>54,779</td></tr>
-        <tr><td>5</td><td>IN</td><td>40,556</td></tr>
-        <tr><td>6</td><td>MoF</td><td>30,514</td></tr>
-        <tr><td>7</td><td>LoLK</td><td>17,568</td></tr>
-        <tr><td>8</td><td>UFO</td><td>17,300</td></tr>
-        <tr><td>9</td><td>TD</td><td>14,044</td></tr>
-        <tr><td>10</td><td>PoFV</td><td>13,170</td></tr>
-        <tr><td>11</td><td>DDC</td><td>11,828</td></tr>
-        <tr><td>12</td><td>UM</td><td>10,396</td></tr>
-        <tr><td>13</td><td>HSiFS</td><td>7,086</td></tr>
-        <tr><td>14</td><td>WBaWC</td><td>7,024</td></tr>
-        <tr><td>15</td><td>UDoALG</td><td>3,945</td></tr>
-        <tr><td>16</td><td>FW</td><td>2,787</td></tr>
+        <tr><td>1</td><td>EoSD</td><td>102,321</td><td class='jump'>+36,775</td><td>65,546</td></tr>
+        <tr><td>2</td><td>PCB</td><td>56,596</td><td class='jump'>+13,525</td><td>43,071</td></tr>
+        <tr><td>3</td><td>Reimu &amp; Marisa</td><td>54,961</td><td class='jump'>+20,852</td><td>34,109</td></tr>
+        <tr><td>4</td><td>SA</td><td>54,779</td><td class='jump'>+21,370</td><td>33,409</td></tr>
+        <tr><td>5</td><td>IN</td><td>40,556</td><td class='jump'>+15,087</td><td>25,469</td></tr>
+        <tr><td>6</td><td>MoF</td><td>30,514</td><td class='jump'>+7,754</td><td>22,760</td></tr>
+        <tr><td>7</td><td>PoFV</td><td>23,303</td><td class='jump'>+7,275</td><td>16,028</td></tr>
+        <tr><td>8</td><td>LoLK</td><td>17,568</td><td class='jump'>+4,047</td><td>13,521</td></tr>
+        <tr><td>9</td><td>UFO</td><td>17,300</td><td class='jump'>+4,216</td><td>13,084</td></tr>
+        <tr><td>10</td><td>TD</td><td>14,044</td><td class='jump'>+2,592</td><td>11,452</td></tr>
+        <tr><td>11</td><td>DDC</td><td>11,828</td><td class='jump'>+2,856</td><td>8,972</td></tr>
+        <tr><td>12</td><td>UM</td><td>10,396</td><td class='jump'>+3,111</td><td>7,285</td></tr>
+        <tr><td>13</td><td>HSiFS</td><td>7,086</td><td class='jump'>+1,908</td><td>5,178</td></tr>
+        <tr><td>14</td><td>WBaWC</td><td>7,024</td><td class='drop'>-214</td><td>7,238</td></tr>
+        <tr><td>15</td><td>UDoALG</td><td>3,945</td><td class='drop'>-3,292</td><td>7,237</td></tr>
+        <tr><td>16</td><td>FW</td><td>2,787</td><td class='stable'>0</td><td>-</td></tr>
     </tbody>
 </table></div>
 <h3 id='ceosd'>Touhou 6 - The Embodiment of Scarlet Devil</h3>
