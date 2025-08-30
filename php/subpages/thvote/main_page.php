@@ -1094,7 +1094,7 @@ music and works will not change when the full results are published.</p>-->
             <td>105</td>
             <td>-</td>
             <td>-</td>
-            <td>Zanmu Nippaku</td>
+            <td>Previous Hakurei Miko</td>
             <td>945</td>
             <td>40</td>
             <td>227</td>

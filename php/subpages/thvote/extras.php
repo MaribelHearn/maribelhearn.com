@@ -75,7 +75,7 @@
         <tr><td>57</td><td>57</td><td>Koakuma</td><td class='stable'>0</td></tr>
         <tr><td>58</td><td>54</td><td>Nazrin</td><td class='drop'>-4</td></tr>
         <tr><td>59</td><td>58</td><td>Doremy Sweet</td><td class='drop'>-1</td></tr>
-        <tr><td>60</td><td>-</td><td>Nareko Michigami</td><td class='stable'>NaN</td></tr>
+        <tr><td>60</td><td>-</td><td>Nareko Michigami</td><td class='stable'>0</td></tr>
         <tr><td>61</td><td>67</td><td>Shinki</td><td class='jump'>+6</td></tr>
         <tr><td>62</td><td>66</td><td>Keiki Haniyasushin</td><td class='jump'>+4</td></tr>
         <tr><td>63</td><td>71</td><td>Wriggle Nightbug</td><td class='jump'>+8</td></tr>
@@ -120,7 +120,7 @@
         <tr><td>102</td><td>98</td><td>Momoyo Himemushi</td><td class='drop'>-4</td></tr>
         <tr><td>103</td><td>90</td><td>Lunasa Prismriver</td><td class='drop'>-13</td></tr>
         <tr><td>103</td><td>87</td><td>Zanmu Nippaku</td><td class='drop'>-16</td></tr>
-        <tr><td>105</td><td>-</td><td>Zanmu Nippaku</td><td class='stable'>NaN</td></tr>
+        <tr><td>105</td><td>-</td><td>Previous Hakurei Miko</td><td class='stable'>0</td></tr>
         <tr><td>106</td><td>99</td><td>Minoriko Aki</td><td class='drop'>-7</td></tr>
         <tr><td>107</td><td>101</td><td>Shizuha Aki</td><td class='drop'>-6</td></tr>
         <tr><td>108</td><td>120</td><td>Mugetsu</td><td class='jump'>+12</td></tr>
@@ -148,7 +148,7 @@
         <tr><td>130</td><td>146</td><td>Kurumi</td><td class='jump'>+16</td></tr>
         <tr><td>131</td><td>139</td><td>Kasen's arm</td><td class='jump'>+8</td></tr>
         <tr><td>132</td><td>125</td><td>Lyrica Prismriver</td><td class='drop'>-7</td></tr>
-        <tr><td>133</td><td>-</td><td>Chimi Houjuu</td><td class='stable'>NaN</td></tr>
+        <tr><td>133</td><td>-</td><td>Chimi Houjuu</td><td class='stable'>0</td></tr>
         <tr><td>134</td><td>128</td><td>Unnamed Book-Reading Youkai (Tokiko)</td><td class='drop'>-6</td></tr>
         <tr><td>135</td><td>135</td><td>Yumeko</td><td class='stable'>0</td></tr>
         <tr><td>136</td><td>110</td><td>Son Biten</td><td class='drop'>-26</td></tr>
@@ -195,13 +195,10 @@
                 <th class='sorttable_numeric'>Rank</th>
                 <th>Name</th>
                 <th class='sorttable_numeric'>Points</th>
-                <th class='sorttable_numeric'>Change from 2024</th>
-                <th class='sorttable_numeric'>No. 1 Votes</th>
-                <th class='sorttable_numeric'>Comments</th>
             </tr>
         </thead>
     <tbody>
-        <tr><td>1</td><td>EoSD</td><td>65,546</td><td class='drop'>-2,127</td><td>11,598</td><td>14,460</td></tr>
+        <tr><td>1</td><td>EoSD</td><td>102,321</td></tr>
         <tr><td>2</td><td>PCB</td><td>43,071</td><td class='jump'>+28</td><td>7,055</td><td>8,608</td></tr>
         <tr><td>3</td><td>Reimu &amp; Marisa</td><td>34,109</td><td class='jump'>+1,852</td><td>6,560</td><td>7,078</td></tr></tr>
         <tr><td>4</td><td>SA</td><td>33,409</td><td class='jump'>+2,158</td><td>5,289</td><td>6,781</td></tr>
@@ -211,7 +208,7 @@
         <tr><td>8</td><td>LoLK</td><td>13,521</td><td class='drop'>-1,451</td><td>1,429</td><td>2,722</td></tr>
         <tr><td>9</td><td>UFO</td><td>13,084</td><td class='drop'>-144</td><td>1,675</td><td>2,464</td></tr>
         <tr><td>10</td><td>TD</td><td>11,452</td><td class='drop'>-1,181</td><td>1,411</td><td>2,280</td></tr>
-        <tr><td>11</td><td>DDC</td><td>8,972</td><td class='drop'>-674</td><td>1,112</td><td>1,816</td></tr>
+        <tr><td>11</td><td>DDC</td><td>11,828</td></tr>
         <tr><td>12</td><td>UM</td><td>7,285</td><td class='drop'>-560</td><td>727</td><td>1,711</td></tr>
         <tr><td>13</td><td>WBaWC</td><td>7,238</td><td class='jump'>+55</td><td>626</td><td>1,536</td></tr>
         <tr><td>14</td><td>UDoALG</td><td>7,237</td><td class='stable'>0</td><td>341</td><td>1,868</td></tr>
@@ -646,7 +643,7 @@
         <tr><td>78</td><td>Son Biten</td><td>1,269</td><td>55</td><td>321</td><td>2</td></tr>
     </tbody>
 </table></div>
-<h3 id='cfw'>Touhou 20 - Fossilized Wonders</h3>
+<!--<h3 id='cfw'>Touhou 20 - Fossilized Wonders</h3>
 <div class='overflow'><table class='poll table sortable noborders'>
     <colgroup>
         <col class='col2game'>
@@ -671,5 +668,5 @@
         <tr><td>68</td><td>Zanmu Nippaku</td><td>1,403</td><td>67</td><td>278</td><td>6</td></tr>
         <tr><td>71</td><td>Enoko Mitsugashira</td><td>1,348</td><td>47</td><td>379</td><td>7</td></tr>
     </tbody>
-</table></div>
+</table></div>-->
 <footer><strong><a href='#top'>Back to Top</a></strong></footer>
