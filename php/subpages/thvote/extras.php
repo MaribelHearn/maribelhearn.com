@@ -199,21 +199,21 @@
         </thead>
     <tbody>
         <tr><td>1</td><td>EoSD</td><td>102,321</td></tr>
-        <tr><td>2</td><td>PCB</td><td>43,071</td><td class='jump'>+28</td><td>7,055</td><td>8,608</td></tr>
-        <tr><td>3</td><td>Reimu &amp; Marisa</td><td>34,109</td><td class='jump'>+1,852</td><td>6,560</td><td>7,078</td></tr></tr>
-        <tr><td>4</td><td>SA</td><td>33,409</td><td class='jump'>+2,158</td><td>5,289</td><td>6,781</td></tr>
-        <tr><td>5</td><td>IN</td><td>25,469</td><td class='drop'>-366</td><td>3,483</td><td>4,911</td></tr></tr>
-        <tr><td>6</td><td>MoF</td><td>22,760</td><td class='drop'>-1,253</td><td>3,193</td><td>4,517</td></tr>
-        <tr><td>7</td><td>PoFV</td><td>16,028</td><td class='drop'>-1,342</td><td>2,137</td><td>2,937</td></tr>
-        <tr><td>8</td><td>LoLK</td><td>13,521</td><td class='drop'>-1,451</td><td>1,429</td><td>2,722</td></tr>
-        <tr><td>9</td><td>UFO</td><td>13,084</td><td class='drop'>-144</td><td>1,675</td><td>2,464</td></tr>
-        <tr><td>10</td><td>TD</td><td>11,452</td><td class='drop'>-1,181</td><td>1,411</td><td>2,280</td></tr>
+        <tr><td>2</td><td>PCB</td><td>56,596</td></tr>
+        <tr><td>3</td><td>Reimu &amp; Marisa</td><td>54,961</td></tr>
+        <tr><td>4</td><td>SA</td><td>54,779</td></tr>
+        <tr><td>5</td><td>IN</td><td>40,556</td></tr>
+        <tr><td>6</td><td>MoF</td><td>30,514</td></tr>
+        <tr><td>7</td><td>LoLK</td><td>17,568</td></tr>
+        <tr><td>8</td><td>UFO</td><td>17,300</td></tr>
+        <tr><td>9</td><td>TD</td><td>14,044</td></tr>
+        <tr><td>10</td><td>PoFV</td><td>13,170</td></tr>
         <tr><td>11</td><td>DDC</td><td>11,828</td></tr>
-        <tr><td>12</td><td>UM</td><td>7,285</td><td class='drop'>-560</td><td>727</td><td>1,711</td></tr>
-        <tr><td>13</td><td>WBaWC</td><td>7,238</td><td class='jump'>+55</td><td>626</td><td>1,536</td></tr>
-        <tr><td>14</td><td>UDoALG</td><td>7,237</td><td class='stable'>0</td><td>341</td><td>1,868</td></tr>
-        <tr><td>15</td><td>HSiFS</td><td>5,178</td><td class='drop'>-382</td><td>469</td><td>1,065</td></tr>
-        <tr><td>16</td><td>HSiFS</td><td>5,178</td><td class='drop'>-382</td><td>469</td><td>1,065</td></tr>
+        <tr><td>12</td><td>UM</td><td>10,396</td></tr>
+        <tr><td>13</td><td>HSiFS</td><td>7,086</td></tr>
+        <tr><td>14</td><td>WBaWC</td><td>7,024</td></tr>
+        <tr><td>15</td><td>UDoALG</td><td>3,945</td></tr>
+        <tr><td>16</td><td>FW</td><td>2,787</td></tr>
     </tbody>
 </table></div>
 <h3 id='ceosd'>Touhou 6 - The Embodiment of Scarlet Devil</h3>
