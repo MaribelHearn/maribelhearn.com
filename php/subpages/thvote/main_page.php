@@ -7831,7 +7831,7 @@ music and works will not change when the full results are published.</p>-->
         </tr>
         <tr>
             <td>7</td>
-            <td>9</td>
+            <td>7</td>
             <td>9</td>
             <td>UFO</td>
             <td>5524</td>
@@ -7839,8 +7839,8 @@ music and works will not change when the full results are published.</p>-->
             <td>537</td>
         </tr>
         <tr>
+            <td>8</td>
             <td>9</td>
-            <td>14</td>
             <td>14</td>
             <td>PoFV</td>
             <td>4739</td>
@@ -7848,7 +7848,7 @@ music and works will not change when the full results are published.</p>-->
             <td>404</td>
         </tr>
         <tr>
-            <td>8</td>
+            <td>9</td>
             <td>8</td>
             <td>8</td>
             <td>UM</td>
@@ -7857,7 +7857,7 @@ music and works will not change when the full results are published.</p>-->
             <td>459</td>
         </tr>
         <tr>
-            <td>18</td>
+            <td>10</td>
             <td>18</td>
             <td>18</td>
             <td>LLS</td>
@@ -7866,8 +7866,8 @@ music and works will not change when the full results are published.</p>-->
             <td>306</td>
         </tr>
         <tr>
-            <td>10</td>
             <td>11</td>
+            <td>10</td>
             <td>11</td>
             <td>TD</td>
             <td>4219</td>
@@ -7875,8 +7875,8 @@ music and works will not change when the full results are published.</p>-->
             <td>378</td>
         </tr>
         <tr>
+            <td>12</td>
             <td>15</td>
-            <td>13</td>
             <td>13</td>
             <td>DDC</td>
             <td>4031</td>
@@ -7884,8 +7884,8 @@ music and works will not change when the full results are published.</p>-->
             <td>376</td>
         </tr>
         <tr>
+            <td>13</td>
             <td>14</td>
-            <td>10</td>
             <td>10</td>
             <td>WBaWC</td>
             <td>3525</td>
@@ -7893,8 +7893,8 @@ music and works will not change when the full results are published.</p>-->
             <td>298</td>
         </tr>
         <tr>
+            <td>14</td>
             <td>11</td>
-            <td>15</td>
             <td>15</td>
             <td>Hisoutensoku</td>
             <td>3447</td>
@@ -7902,7 +7902,7 @@ music and works will not change when the full results are published.</p>-->
             <td>253</td>
         </tr>
         <tr>
-            <td>19</td>
+            <td>15</td>
             <td>19</td>
             <td>19</td>
             <td>HSiFS</td>
@@ -7911,8 +7911,8 @@ music and works will not change when the full results are published.</p>-->
             <td>350</td>
         </tr>
         <tr>
+            <td>16</td>
             <td>13</td>
-            <td>12</td>
             <td>12</td>
             <td>Wild and Horned Hermit</td>
             <td>3267</td>
@@ -7920,7 +7920,7 @@ music and works will not change when the full results are published.</p>-->
             <td>310</td>
         </tr>
         <tr>
-            <td>-</td>
+            <td>17</td>
             <td>-</td>
             <td>-</td>
             <td>FW</td>
@@ -7929,8 +7929,8 @@ music and works will not change when the full results are published.</p>-->
             <td>509</td>
         </tr>
         <tr>
+            <td>18</td>
             <td>12</td>
-            <td>16</td>
             <td>16</td>
             <td>AoCF</td>
             <td>3226</td>
@@ -7938,8 +7938,8 @@ music and works will not change when the full results are published.</p>-->
             <td>350</td>
         </tr>
         <tr>
+            <td>19</td>
             <td>20</td>
-            <td>25</td>
             <td>25</td>
             <td>Cheating Detective Satori</td>
             <td>3189</td>
@@ -7947,7 +7947,7 @@ music and works will not change when the full results are published.</p>-->
             <td>382</td>
         </tr>
         <tr>
-            <td>17</td>
+            <td>20</td>
             <td>17</td>
             <td>17</td>
             <td>Forbidden Scrollery</td>
@@ -7957,7 +7957,7 @@ music and works will not change when the full results are published.</p>-->
         </tr>
         <tr>
             <td>21</td>
-            <td>20</td>
+            <td>21</td>
             <td>20</td>
             <td>Dolls in Pseudo Paradise</td>
             <td>2899</td>
@@ -7974,8 +7974,8 @@ music and works will not change when the full results are published.</p>-->
             <td>264</td>
         </tr>
         <tr>
+            <td>23</td>
             <td>16</td>
-            <td>7</td>
             <td>7</td>
             <td>UDoALG</td>
             <td>2357</td>
@@ -7984,7 +7984,7 @@ music and works will not change when the full results are published.</p>-->
         </tr>
         <tr>
             <td>24</td>
-            <td>27</td>
+            <td>24</td>
             <td>27</td>
             <td>HRtP</td>
             <td>2254</td>
@@ -7992,7 +7992,7 @@ music and works will not change when the full results are published.</p>-->
             <td>311</td>
         </tr>
         <tr>
-            <td>23</td>
+            <td>25</td>
             <td>23</td>
             <td>23</td>
             <td>SWR</td>
@@ -8002,7 +8002,7 @@ music and works will not change when the full results are published.</p>-->
         </tr>
         <tr>
             <td>26</td>
-            <td>24</td>
+            <td>26</td>
             <td>24</td>
             <td>Touhou Bougetsushou</td>
             <td>1849</td>
@@ -8010,8 +8010,8 @@ music and works will not change when the full results are published.</p>-->
             <td>207</td>
         </tr>
         <tr>
+            <td>27</td>
             <td>29</td>
-            <td>34</td>
             <td>34</td>
             <td>MS</td>
             <td>1829</td>
@@ -8019,8 +8019,8 @@ music and works will not change when the full results are published.</p>-->
             <td>179</td>
         </tr>
         <tr>
+            <td>28</td>
             <td>27</td>
-            <td>26</td>
             <td>26</td>
             <td>Touhou Sangetsusei</td>
             <td>1818</td>
@@ -8028,8 +8028,8 @@ music and works will not change when the full results are published.</p>-->
             <td>153</td>
         </tr>
         <tr>
+            <td>29</td>
             <td>25</td>
-            <td>21</td>
             <td>21</td>
             <td>Gouyoku Ibun</td>
             <td>1736</td>
@@ -8037,7 +8037,7 @@ music and works will not change when the full results are published.</p>-->
             <td>197</td>
         </tr>
         <tr>
-            <td>28</td>
+            <td>30</td>
             <td>28</td>
             <td>28</td>
             <td>Magical Astronomy</td>
@@ -8046,7 +8046,7 @@ music and works will not change when the full results are published.</p>-->
             <td>155</td>
         </tr>
         <tr>
-            <td>32</td>
+            <td>31</td>
             <td>32</td>
             <td>32</td>
             <td>PoDD</td>
@@ -8055,8 +8055,8 @@ music and works will not change when the full results are published.</p>-->
             <td>139</td>
         </tr>
         <tr>
+            <td>32</td>
             <td>34</td>
-            <td>41</td>
             <td>41</td>
             <td>SoEW</td>
             <td>1565</td>
@@ -8065,7 +8065,7 @@ music and works will not change when the full results are published.</p>-->
         </tr>
         <tr>
             <td>33</td>
-            <td>38</td>
+            <td>33</td>
             <td>38</td>
             <td>GFW</td>
             <td>1450</td>
@@ -8073,8 +8073,8 @@ music and works will not change when the full results are published.</p>-->
             <td>148</td>
         </tr>
         <tr>
+            <td>34</td>
             <td>31</td>
-            <td>33</td>
             <td>33</td>
             <td>Retrospective 53 minutes</td>
             <td>1343</td>
@@ -8083,7 +8083,7 @@ music and works will not change when the full results are published.</p>-->
         </tr>
         <tr>
             <td>35</td>
-            <td>29</td>
+            <td>35</td>
             <td>29</td>
             <td>ISC</td>
             <td>1331</td>
@@ -8091,8 +8091,8 @@ music and works will not change when the full results are published.</p>-->
             <td>146</td>
         </tr>
         <tr>
+            <td>36</td>
             <td>37</td>
-            <td>39</td>
             <td>39</td>
             <td>StB</td>
             <td>1291</td>
@@ -8100,7 +8100,7 @@ music and works will not change when the full results are published.</p>-->
             <td>127</td>
         </tr>
         <tr>
-            <td>-</td>
+            <td>37</td>
             <td>-</td>
             <td>-</td>
             <td>Whispered Oracle of Hakurei Shrine</td>
@@ -8109,7 +8109,7 @@ music and works will not change when the full results are published.</p>-->
             <td>198</td>
         </tr>
         <tr>
-            <td>40</td>
+            <td>38</td>
             <td>40</td>
             <td>40</td>
             <td>IaMP</td>
@@ -8118,8 +8118,8 @@ music and works will not change when the full results are published.</p>-->
             <td>114</td>
         </tr>
         <tr>
+            <td>39</td>
             <td>38</td>
-            <td>35</td>
             <td>35</td>
             <td>HM</td>
             <td>1168</td>
@@ -8127,8 +8127,8 @@ music and works will not change when the full results are published.</p>-->
             <td>118</td>
         </tr>
         <tr>
+            <td>40</td>
             <td>39</td>
-            <td>36</td>
             <td>36</td>
             <td>ULiL</td>
             <td>1053</td>
@@ -8136,8 +8136,8 @@ music and works will not change when the full results are published.</p>-->
             <td>93</td>
         </tr>
         <tr>
+            <td>41</td>
             <td>42</td>
-            <td>37</td>
             <td>37</td>
             <td>Curiosities of Lotus Asia</td>
             <td>978</td>
@@ -8145,8 +8145,8 @@ music and works will not change when the full results are published.</p>-->
             <td>112</td>
         </tr>
         <tr>
+            <td>42</td>
             <td>30</td>
-            <td>-</td>
             <td>-</td>
             <td>Taboo Japan Disentanglement</td>
             <td>947</td>
@@ -8154,8 +8154,8 @@ music and works will not change when the full results are published.</p>-->
             <td>112</td>
         </tr>
         <tr>
+            <td>43</td>
             <td>36</td>
-            <td>30</td>
             <td>30</td>
             <td>Perfect Memento in Strict Sense / Symposium of Post-mysticism</td>
             <td>943</td>
@@ -8163,8 +8163,8 @@ music and works will not change when the full results are published.</p>-->
             <td>106</td>
         </tr>
         <tr>
+            <td>44</td>
             <td>41</td>
-            <td>31</td>
             <td>31</td>
             <td>100BM</td>
             <td>900</td>
@@ -8172,7 +8172,7 @@ music and works will not change when the full results are published.</p>-->
             <td>102</td>
         </tr>
         <tr>
-            <td>44</td>
+            <td>45</td>
             <td>44</td>
             <td>44</td>
             <td>DS</td>
@@ -8181,8 +8181,8 @@ music and works will not change when the full results are published.</p>-->
             <td>82</td>
         </tr>
         <tr>
+            <td>46</td>
             <td>43</td>
-            <td>42</td>
             <td>42</td>
             <td>Ghostly Field Club</td>
             <td>757</td>
@@ -8190,8 +8190,8 @@ music and works will not change when the full results are published.</p>-->
             <td>63</td>
         </tr>
         <tr>
+            <td>47</td>
             <td>45</td>
-            <td>42</td>
             <td>42</td>
             <td>Changeability of Strange Dream</td>
             <td>752</td>
@@ -8199,8 +8199,8 @@ music and works will not change when the full results are published.</p>-->
             <td>55</td>
         </tr>
         <tr>
+            <td>48</td>
             <td>46</td>
-            <td>45</td>
             <td>45</td>
             <td>The Grimoire of Marisa</td>
             <td>479</td>
@@ -8208,7 +8208,7 @@ music and works will not change when the full results are published.</p>-->
             <td>49</td>
         </tr>
         <tr>
-            <td>48</td>
+            <td>49</td>
             <td>48</td>
             <td>48</td>
             <td>VD</td>
@@ -8218,7 +8218,7 @@ music and works will not change when the full results are published.</p>-->
         </tr>
         <tr>
             <td>50</td>
-            <td>47</td>
+            <td>50</td>
             <td>47</td>
             <td>Neo-traditionalism of Japan</td>
             <td>409</td>
@@ -8226,7 +8226,7 @@ music and works will not change when the full results are published.</p>-->
             <td>29</td>
         </tr>
         <tr>
-            <td>49</td>
+            <td>51</td>
             <td>49</td>
             <td>49</td>
             <td>Dr. Latency's Freak Report</td>
@@ -8235,8 +8235,8 @@ music and works will not change when the full results are published.</p>-->
             <td>40</td>
         </tr>
         <tr>
-            <td>53</td>
             <td>52</td>
+            <td>53</td>
             <td>52</td>
             <td>Trojan Green Asteroid</td>
             <td>367</td>
@@ -8244,8 +8244,8 @@ music and works will not change when the full results are published.</p>-->
             <td>41</td>
         </tr>
         <tr>
+            <td>53</td>
             <td>54</td>
-            <td>51</td>
             <td>51</td>
             <td>Bohemian Archive in Japanese Red</td>
             <td>366</td>
@@ -8253,8 +8253,8 @@ music and works will not change when the full results are published.</p>-->
             <td>41</td>
         </tr>
         <tr>
+            <td>54</td>
             <td>47</td>
-            <td>46</td>
             <td>46</td>
             <td>The Grimoire of Usami</td>
             <td>358</td>
@@ -8262,8 +8262,8 @@ music and works will not change when the full results are published.</p>-->
             <td>29</td>
         </tr>
         <tr>
+            <td>55</td>
             <td>51</td>
-            <td>50</td>
             <td>50</td>
             <td>Alternative Facts in Eastern Utopia</td>
             <td>354</td>
@@ -8271,8 +8271,8 @@ music and works will not change when the full results are published.</p>-->
             <td>41</td>
         </tr>
         <tr>
+            <td>56</td>
             <td>55</td>
-            <td>53</td>
             <td>53</td>
             <td>Dateless Bar "Old Adam"</td>
             <td>294</td>
@@ -8280,8 +8280,8 @@ music and works will not change when the full results are published.</p>-->
             <td>34</td>
         </tr>
         <tr>
+            <td>57</td>
             <td>52</td>
-            <td>54</td>
             <td>54</td>
             <td>Akyuu's Untouched Score</td>
             <td>280</td>
@@ -8289,8 +8289,8 @@ music and works will not change when the full results are published.</p>-->
             <td>35</td>
         </tr>
         <tr>
+            <td>58</td>
             <td>56</td>
-            <td>55</td>
             <td>55</td>
             <td>Unknown Flower, Mesmerizing Journey</td>
             <td>231</td>
@@ -8298,8 +8298,8 @@ music and works will not change when the full results are published.</p>-->
             <td>24</td>
         </tr>
         <tr>
+            <td>59</td>
             <td>57</td>
-            <td>56</td>
             <td>56</td>
             <td>Who's Who of Humans &amp; Youkai - Everlasting Edition</td>
             <td>218</td>
@@ -8307,8 +8307,8 @@ music and works will not change when the full results are published.</p>-->
             <td>18</td>
         </tr>
         <tr>
+            <td>60</td>
             <td>58</td>
-            <td>57</td>
             <td>57</td>
             <td>Who's Who of Humans &amp; Youkai - Dusk Edition</td>
             <td>140</td>
@@ -8316,8 +8316,8 @@ music and works will not change when the full results are published.</p>-->
             <td>13</td>
         </tr>
         <tr>
+            <td>61</td>
             <td>59</td>
-            <td>58</td>
             <td>58</td>
             <td>Rainbow-colored Septentrion</td>
             <td>103</td>
