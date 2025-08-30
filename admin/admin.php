@@ -26,8 +26,6 @@
     }
     $ip_count = (object) array();
     $countries = new ArrayObject();
-    $flag_url = 'https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/16/';
-    $lang_code = 'en';
     $page = 'admin';
 
     function cmp(int $a, int $b) {
