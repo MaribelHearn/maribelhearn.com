@@ -15,7 +15,7 @@ music and works will not change when the full results are published.</p>-->
     <p><a href='#characters'>Characters</a></p>
     <p><a href='#music'>Music</a></p>
     <p><a href='#works'>Works</a></p>
-    <p><a href='#questionnaire'>Questionnaire (Coming soon!)</a></p>
+    <p><a href='#questionnaire'>Questionnaire</a></p>
     <br>
     <p><a href='/thvote/extras'>Extra Statistics (separate page)</a></p>
 </div>
@@ -8519,7 +8519,7 @@ music and works will not change when the full results are published.</p>-->
 </section>
 <section>
 	<h2>03. Location</h2>
-	<p class='center'>Valid responses: 14,807</p>
+	<p class='center'>Valid responses: 14,739</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
             <col class='col2'>
@@ -8983,7 +8983,7 @@ music and works will not change when the full results are published.</p>-->
 </section>
 <section>
 	<h2>05. Sidegames played (spin-offs)</h2>
-	<p class='center'>Valid responses: 9,174</p>
+	<p class='center'>Valid responses: 8,139</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
             <col class='col2'>
@@ -9158,7 +9158,7 @@ music and works will not change when the full results are published.</p>-->
 </section>
 <section>
 	<h2>07. How you purchased the games</h2>
-	<p class='center'>Valid responses: 10,320</p>
+	<p class='center'>Valid responses: 9,903</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
             <col class='col2'>
@@ -9196,7 +9196,7 @@ music and works will not change when the full results are published.</p>-->
 	<div>
 		<div>
 			<h3>Curiosities of Lotus Asia</h3>
-			<p class='center'>Valid responses: 10,615</p>
+			<p class='center'>Valid responses: 9,407</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
             <colgroup>
@@ -9228,7 +9228,7 @@ music and works will not change when the full results are published.</p>-->
 	<div>
 		<div>
 			<h3>Lotus Eaters</h3>
-			<p class='center'>Valid responses: 10,970</p>
+			<p class='center'>Valid responses: 9,992</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
             <colgroup>
@@ -9280,7 +9280,7 @@ music and works will not change when the full results are published.</p>-->
 	<div>
 		<div>
 			<h3>Foul Detective Satori</h3>
-			<p class='center'>Valid responses: 10,705</p>
+			<p class='center'>Valid responses: 9,793</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
             <colgroup>
@@ -9327,7 +9327,7 @@ music and works will not change when the full results are published.</p>-->
 </section>
 <section>
 	<h2>09. What do you like about Touhou? (multiple answers possible)</h2>
-	<p class='center'>Valid responses: 16,670</p>
+	<p class='center'>Valid responses: 15,591</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
             <col class='col2'>
@@ -9527,7 +9527,7 @@ music and works will not change when the full results are published.</p>-->
 </section>
 <section>
 	<h2>11. How did you discover Touhou?</h2>
-	<p class='center'>Valid responses: 15,400</p>
+	<p class='center'>Valid responses: 15,208</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
             <col class='col2'>
@@ -9667,7 +9667,7 @@ music and works will not change when the full results are published.</p>-->
 </section>
 <section>
 	<h2>13. Participation in doujin events such as Comiket and Reitaisai (multiple answers possible)</h2>
-	<p class='center'>Valid responses: 16,670</p>
+	<p class='center'>Valid responses: 14,771</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
             <col class='col2'>
@@ -9757,7 +9757,7 @@ music and works will not change when the full results are published.</p>-->
 </section>
 <section>
 	<h2>14. Participation in Touhou-related events (multiple answers possible)</h2>
-	<p class='center'>Valid responses: 16,670</p>
+	<p class='center'>Valid responses: 7,009</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
             <col class='col2'>
@@ -9822,7 +9822,7 @@ music and works will not change when the full results are published.</p>-->
 </section>
 <section>
 	<h2>15. How many people can you talk about Touhou to in real life?</h2>
-	<p class='center'>Valid responses: 15,671</p>
+	<p class='center'>Valid responses: 15,123</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
             <col class='col2'>
