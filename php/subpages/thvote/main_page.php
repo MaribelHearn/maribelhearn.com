@@ -165,7 +165,7 @@ music and works will not change when the full results are published.</p>-->
             <td>11</td>
             <td>10</td>
             <td>Yuyuko Saigyouji</td>
-            <td>9612</td>
+            <td>9,612</td>
             <td>1,022</td>
             <td>1,586</td>
             <td>5</td>
@@ -175,7 +175,7 @@ music and works will not change when the full results are published.</p>-->
             <td>14</td>
             <td>12</td>
             <td>Sanae Kochiya</td>
-            <td>9426</td>
+            <td>9,426</td>
             <td>1,082</td>
             <td>1,419</td>
             <td>13</td>
@@ -185,7 +185,7 @@ music and works will not change when the full results are published.</p>-->
             <td>12</td>
             <td>11</td>
             <td>Alice Margatroid</td>
-            <td>9331</td>
+            <td>9,331</td>
             <td>972</td>
             <td>1,405</td>
             <td>18</td>
@@ -195,7 +195,7 @@ music and works will not change when the full results are published.</p>-->
             <td>15</td>
             <td>14</td>
             <td>Reisen Udongein Inaba</td>
-            <td>8609</td>
+            <td>8,609</td>
             <td>896</td>
             <td>1,383</td>
             <td>1</td>
@@ -205,7 +205,7 @@ music and works will not change when the full results are published.</p>-->
             <td>16</td>
             <td>16</td>
             <td>Yukari Yakumo</td>
-            <td>7376</td>
+            <td>7,376</td>
             <td>699</td>
             <td>1,178</td>
             <td>5</td>
@@ -215,7 +215,7 @@ music and works will not change when the full results are published.</p>-->
             <td>18</td>
             <td>23</td>
             <td>Hong Meiling</td>
-            <td>7315</td>
+            <td>7,315</td>
             <td>712</td>
             <td>1,437</td>
             <td>4</td>
@@ -225,7 +225,7 @@ music and works will not change when the full results are published.</p>-->
             <td>17</td>
             <td>18</td>
             <td>Patchouli Knowledge</td>
-            <td>7216</td>
+            <td>7,216</td>
             <td>702</td>
             <td>1,180</td>
             <td>6</td>
@@ -235,7 +235,7 @@ music and works will not change when the full results are published.</p>-->
             <td>21</td>
             <td>19</td>
             <td>Rumia</td>
-            <td>7062</td>
+            <td>7,062</td>
             <td>727</td>
             <td>1,536</td>
             <td>16</td>
@@ -245,7 +245,7 @@ music and works will not change when the full results are published.</p>-->
             <td>19</td>
             <td>21</td>
             <td>Hata no Kokoro</td>
-            <td>6729</td>
+            <td>6,729</td>
             <td>791</td>
             <td>1,188</td>
             <td>6</td>
@@ -255,7 +255,7 @@ music and works will not change when the full results are published.</p>-->
             <td>20</td>
             <td>17</td>
             <td>Tenshi Hinanawi</td>
-            <td>6672</td>
+            <td>6,672</td>
             <td>829</td>
             <td>934</td>
             <td>6</td>
@@ -265,7 +265,7 @@ music and works will not change when the full results are published.</p>-->
             <td>23</td>
             <td>22</td>
             <td>Kogasa Tatara</td>
-            <td>6249</td>
+            <td>6,249</td>
             <td>627</td>
             <td>1,093</td>
             <td>12</td>
@@ -275,7 +275,7 @@ music and works will not change when the full results are published.</p>-->
             <td>22</td>
             <td>20</td>
             <td>Suwako Moriya</td>
-            <td>5943</td>
+            <td>5,943</td>
             <td>665</td>
             <td>1,024</td>
             <td>2</td>
@@ -285,7 +285,7 @@ music and works will not change when the full results are published.</p>-->
             <td>25</td>
             <td>25</td>
             <td>Eiki Shiki, Yamaxanadu</td>
-            <td>5524</td>
+            <td>5,524</td>
             <td>536</td>
             <td>942</td>
             <td>3</td>
@@ -295,7 +295,7 @@ music and works will not change when the full results are published.</p>-->
             <td>30</td>
             <td>34</td>
             <td>Kaguya Houraisan</td>
-            <td>5022</td>
+            <td>5,022</td>
             <td>431</td>
             <td>830</td>
             <td>0</td>
@@ -305,7 +305,7 @@ music and works will not change when the full results are published.</p>-->
             <td>26</td>
             <td>28</td>
             <td>Junko</td>
-            <td>4972</td>
+            <td>4,972</td>
             <td>479</td>
             <td>845</td>
             <td>4</td>
@@ -315,7 +315,7 @@ music and works will not change when the full results are published.</p>-->
             <td>24</td>
             <td>26</td>
             <td>Yuuka Kazami</td>
-            <td>4959</td>
+            <td>4,959</td>
             <td>518</td>
             <td>784</td>
             <td>8</td>
@@ -325,7 +325,7 @@ music and works will not change when the full results are published.</p>-->
             <td>37</td>
             <td>53</td>
             <td>Eirin Yagokoro</td>
-            <td>4889</td>
+            <td>4,889</td>
             <td>428</td>
             <td>1,198</td>
             <td>5</td>
@@ -335,7 +335,7 @@ music and works will not change when the full results are published.</p>-->
             <td>27</td>
             <td>30</td>
             <td>Suika Ibuki</td>
-            <td>4733</td>
+            <td>4,733</td>
             <td>441</td>
             <td>781</td>
             <td>7</td>
@@ -345,7 +345,7 @@ music and works will not change when the full results are published.</p>-->
             <td>28</td>
             <td>27</td>
             <td>Momiji Inubashiri</td>
-            <td>4621</td>
+            <td>4,621</td>
             <td>534</td>
             <td>812</td>
             <td>11</td>
@@ -355,7 +355,7 @@ music and works will not change when the full results are published.</p>-->
             <td>29</td>
             <td>24</td>
             <td>Ran Yakumo</td>
-            <td>4325</td>
+            <td>4,325</td>
             <td>416</td>
             <td>747</td>
             <td>4</td>
@@ -365,7 +365,7 @@ music and works will not change when the full results are published.</p>-->
             <td>31</td>
             <td>33</td>
             <td>Utsuho Reiuji</td>
-            <td>4315</td>
+            <td>4,315</td>
             <td>479</td>
             <td>787</td>
             <td>2</td>
@@ -375,7 +375,7 @@ music and works will not change when the full results are published.</p>-->
             <td>38</td>
             <td>38</td>
             <td>Hecatia Lapislazuli</td>
-            <td>4069</td>
+            <td>4,069</td>
             <td>326</td>
             <td>829</td>
             <td>6</td>
@@ -385,7 +385,7 @@ music and works will not change when the full results are published.</p>-->
             <td>32</td>
             <td>32</td>
             <td>Shion Yorigami</td>
-            <td>4065</td>
+            <td>4,065</td>
             <td>420</td>
             <td>687</td>
             <td>7</td>
@@ -395,7 +395,7 @@ music and works will not change when the full results are published.</p>-->
             <td>35</td>
             <td>35</td>
             <td>Seija Kijin</td>
-            <td>4035</td>
+            <td>4,035</td>
             <td>546</td>
             <td>686</td>
             <td>9</td>
@@ -405,7 +405,7 @@ music and works will not change when the full results are published.</p>-->
             <td>33</td>
             <td>31</td>
             <td>Toyosatomimi no Miko</td>
-            <td>3952</td>
+            <td>3,952</td>
             <td>444</td>
             <td>659</td>
             <td>6</td>
@@ -415,7 +415,7 @@ music and works will not change when the full results are published.</p>-->
             <td>36</td>
             <td>37</td>
             <td>Parsee Mizuhashi</td>
-            <td>3825</td>
+            <td>3,825</td>
             <td>362</td>
             <td>707</td>
             <td>2</td>
@@ -425,7 +425,7 @@ music and works will not change when the full results are published.</p>-->
             <td>34</td>
             <td>41</td>
             <td>Renko Usami</td>
-            <td>3690</td>
+            <td>3,690</td>
             <td>323</td>
             <td>550</td>
             <td>15</td>
@@ -435,7 +435,7 @@ music and works will not change when the full results are published.</p>-->
             <td>43</td>
             <td>45</td>
             <td>Hina Kagiyama</td>
-            <td>3647</td>
+            <td>3,647</td>
             <td>436</td>
             <td>627</td>
             <td>4</td>
@@ -445,7 +445,7 @@ music and works will not change when the full results are published.</p>-->
             <td>40</td>
             <td>39</td>
             <td>Mononobe no Futo</td>
-            <td>3571</td>
+            <td>3,571</td>
             <td>365</td>
             <td>665</td>
             <td>13</td>
@@ -455,7 +455,7 @@ music and works will not change when the full results are published.</p>-->
             <td>44</td>
             <td>36</td>
             <td>Sagume Kishin</td>
-            <td>3561</td>
+            <td>3,561</td>
             <td>324</td>
             <td>599</td>
             <td>11</td>
@@ -465,7 +465,7 @@ music and works will not change when the full results are published.</p>-->
             <td>55</td>
             <td>66</td>
             <td>Megumu Iizunamaru</td>
-            <td>3482</td>
+            <td>3,482</td>
             <td>394</td>
             <td>691</td>
             <td>4</td>
@@ -475,7 +475,7 @@ music and works will not change when the full results are published.</p>-->
             <td>45</td>
             <td>44</td>
             <td>Okina Matara</td>
-            <td>3430</td>
+            <td>3,430</td>
             <td>356</td>
             <td>630</td>
             <td>2</td>
@@ -485,7 +485,7 @@ music and works will not change when the full results are published.</p>-->
             <td>41</td>
             <td>40</td>
             <td>Nitori Kawashiro</td>
-            <td>3262</td>
+            <td>3,262</td>
             <td>333</td>
             <td>572</td>
             <td>3</td>
@@ -495,7 +495,7 @@ music and works will not change when the full results are published.</p>-->
             <td>46</td>
             <td>43</td>
             <td>Kasen Ibaraki</td>
-            <td>3027</td>
+            <td>3,027</td>
             <td>262</td>
             <td>514</td>
             <td>4</td>
@@ -505,7 +505,7 @@ music and works will not change when the full results are published.</p>-->
             <td>47</td>
             <td>42</td>
             <td>Rin Kaenbyou</td>
-            <td>2952</td>
+            <td>2,952</td>
             <td>216</td>
             <td>525</td>
             <td>4</td>
@@ -515,7 +515,7 @@ music and works will not change when the full results are published.</p>-->
             <td>52</td>
             <td>63</td>
             <td>Mystia Lorelei</td>
-            <td>2906</td>
+            <td>2,906</td>
             <td>268</td>
             <td>486</td>
             <td>7</td>
@@ -525,7 +525,7 @@ music and works will not change when the full results are published.</p>-->
             <td>42</td>
             <td>29</td>
             <td>Yuuma Toutetsu</td>
-            <td>2886</td>
+            <td>2,886</td>
             <td>237</td>
             <td>539</td>
             <td>7</td>
@@ -535,7 +535,7 @@ music and works will not change when the full results are published.</p>-->
             <td>56</td>
             <td>70</td>
             <td>Mima</td>
-            <td>2860</td>
+            <td>2,860</td>
             <td>170</td>
             <td>668</td>
             <td>4</td>
@@ -545,7 +545,7 @@ music and works will not change when the full results are published.</p>-->
             <td>49</td>
             <td>48</td>
             <td>Byakuren Hijiri</td>
-            <td>2733</td>
+            <td>2,733</td>
             <td>204</td>
             <td>478</td>
             <td>2</td>
@@ -555,7 +555,7 @@ music and works will not change when the full results are published.</p>-->
             <td>51</td>
             <td>50</td>
             <td>Chen</td>
-            <td>2726</td>
+            <td>2,726</td>
             <td>198</td>
             <td>583</td>
             <td>4</td>
@@ -565,7 +565,7 @@ music and works will not change when the full results are published.</p>-->
             <td>50</td>
             <td>55</td>
             <td>Keine Kamishirasawa</td>
-            <td>2688</td>
+            <td>2,688</td>
             <td>187</td>
             <td>509</td>
             <td>1</td>
@@ -575,7 +575,7 @@ music and works will not change when the full results are published.</p>-->
             <td>63</td>
             <td>61</td>
             <td>Daiyousei</td>
-            <td>2633</td>
+            <td>2,633</td>
             <td>126</td>
             <td>523</td>
             <td>1</td>
@@ -585,7 +585,7 @@ music and works will not change when the full results are published.</p>-->
             <td>53</td>
             <td>51</td>
             <td>Nue Houjuu</td>
-            <td>2581</td>
+            <td>2,581</td>
             <td>222</td>
             <td>448</td>
             <td>7</td>
@@ -595,7 +595,7 @@ music and works will not change when the full results are published.</p>-->
             <td>48</td>
             <td>54</td>
             <td>Maribel Hearn</td>
-            <td>2511</td>
+            <td>2,511</td>
             <td>128</td>
             <td>406</td>
             <td>12</td>
@@ -605,7 +605,7 @@ music and works will not change when the full results are published.</p>-->
             <td>59</td>
             <td>64</td>
             <td>Chimata Tenkyuu</td>
-            <td>2468</td>
+            <td>2,468</td>
             <td>209</td>
             <td>488</td>
             <td>3</td>
@@ -615,7 +615,7 @@ music and works will not change when the full results are published.</p>-->
             <td>57</td>
             <td>57</td>
             <td>Koakuma</td>
-            <td>2289</td>
+            <td>2,289</td>
             <td>130</td>
             <td>439</td>
             <td>1</td>
@@ -625,7 +625,7 @@ music and works will not change when the full results are published.</p>-->
             <td>54</td>
             <td>48</td>
             <td>Nazrin</td>
-            <td>2156</td>
+            <td>2,156</td>
             <td>215</td>
             <td>371</td>
             <td>5</td>
@@ -635,7 +635,7 @@ music and works will not change when the full results are published.</p>-->
             <td>58</td>
             <td>56</td>
             <td>Doremy Sweet</td>
-            <td>2094</td>
+            <td>2,094</td>
             <td>194</td>
             <td>382</td>
             <td>3</td>
@@ -645,7 +645,7 @@ music and works will not change when the full results are published.</p>-->
             <td>-</td>
             <td>-</td>
             <td>Nareko Michigami</td>
-            <td>2076</td>
+            <td>2,076</td>
             <td>83</td>
             <td>475</td>
             <td>10</td>
@@ -655,7 +655,7 @@ music and works will not change when the full results are published.</p>-->
             <td>67</td>
             <td>94</td>
             <td>Shinki</td>
-            <td>2055</td>
+            <td>2,055</td>
             <td>109</td>
             <td>451</td>
             <td>4</td>
@@ -665,7 +665,7 @@ music and works will not change when the full results are published.</p>-->
             <td>66</td>
             <td>58</td>
             <td>Keiki Haniyasushin</td>
-            <td>1916</td>
+            <td>1,916</td>
             <td>177</td>
             <td>323</td>
             <td>7</td>
@@ -675,7 +675,7 @@ music and works will not change when the full results are published.</p>-->
             <td>71</td>
             <td>87</td>
             <td>Wriggle Nightbug</td>
-            <td>1906</td>
+            <td>1,906</td>
             <td>227</td>
             <td>390</td>
             <td>6</td>
@@ -685,7 +685,7 @@ music and works will not change when the full results are published.</p>-->
             <td>69</td>
             <td>67</td>
             <td>Tewi Inaba</td>
-            <td>1871</td>
+            <td>1,871</td>
             <td>120</td>
             <td>338</td>
             <td>1</td>
@@ -695,7 +695,7 @@ music and works will not change when the full results are published.</p>-->
             <td>64</td>
             <td>64</td>
             <td>Sekibanki</td>
-            <td>1860</td>
+            <td>1,860</td>
             <td>183</td>
             <td>324</td>
             <td>1</td>
@@ -705,7 +705,7 @@ music and works will not change when the full results are published.</p>-->
             <td>61</td>
             <td>47</td>
             <td>Tsukasa Kudamaki</td>
-            <td>1848</td>
+            <td>1,848</td>
             <td>116</td>
             <td>357</td>
             <td>1</td>
@@ -715,7 +715,7 @@ music and works will not change when the full results are published.</p>-->
             <td>65</td>
             <td>59</td>
             <td>Minamitsu Murasa</td>
-            <td>1832</td>
+            <td>1,832</td>
             <td>196</td>
             <td>302</td>
             <td>3</td>
@@ -725,7 +725,7 @@ music and works will not change when the full results are published.</p>-->
             <td>62</td>
             <td>60</td>
             <td>Seiga Kaku</td>
-            <td>1820</td>
+            <td>1,820</td>
             <td>123</td>
             <td>306</td>
             <td>3</td>
@@ -735,7 +735,7 @@ music and works will not change when the full results are published.</p>-->
             <td>74</td>
             <td>76</td>
             <td>Kanako Yasaka</td>
-            <td>1734</td>
+            <td>1,734</td>
             <td>130</td>
             <td>353</td>
             <td>0</td>
@@ -745,7 +745,7 @@ music and works will not change when the full results are published.</p>-->
             <td>60</td>
             <td>62</td>
             <td>Clownpiece</td>
-            <td>1724</td>
+            <td>1,724</td>
             <td>117</td>
             <td>311</td>
             <td>4</td>
@@ -755,7 +755,7 @@ music and works will not change when the full results are published.</p>-->
             <td>79</td>
             <td>90</td>
             <td>Lily White</td>
-            <td>1692</td>
+            <td>1,692</td>
             <td>139</td>
             <td>307</td>
             <td>3</td>
@@ -765,7 +765,7 @@ music and works will not change when the full results are published.</p>-->
             <td>72</td>
             <td>72</td>
             <td>Kosuzu Motoori</td>
-            <td>1657</td>
+            <td>1,657</td>
             <td>100</td>
             <td>276</td>
             <td>3</td>
@@ -775,7 +775,7 @@ music and works will not change when the full results are published.</p>-->
             <td>119</td>
             <td>115</td>
             <td>Watatsuki no Toyohime</td>
-            <td>1629</td>
+            <td>1,629</td>
             <td>135</td>
             <td>373</td>
             <td>5</td>
@@ -785,7 +785,7 @@ music and works will not change when the full results are published.</p>-->
             <td>68</td>
             <td>76</td>
             <td>Joon Yorigami</td>
-            <td>1575</td>
+            <td>1,575</td>
             <td>124</td>
             <td>268</td>
             <td>3</td>
@@ -795,7 +795,7 @@ music and works will not change when the full results are published.</p>-->
             <td>76</td>
             <td>88</td>
             <td>Komachi Onozuka</td>
-            <td>1555</td>
+            <td>1,555</td>
             <td>91</td>
             <td>306</td>
             <td>4</td>
@@ -805,7 +805,7 @@ music and works will not change when the full results are published.</p>-->
             <td>75</td>
             <td>73</td>
             <td>Iku Nagae</td>
-            <td>1554</td>
+            <td>1,554</td>
             <td>124</td>
             <td>261</td>
             <td>3</td>
@@ -815,7 +815,7 @@ music and works will not change when the full results are published.</p>-->
             <td>78</td>
             <td>84</td>
             <td>Hatate Himekaidou</td>
-            <td>1527</td>
+            <td>1,527</td>
             <td>104</td>
             <td>260</td>
             <td>7</td>
@@ -825,7 +825,7 @@ music and works will not change when the full results are published.</p>-->
             <td>73</td>
             <td>75</td>
             <td>Mamizou Futatsuiwa</td>
-            <td>1513</td>
+            <td>1,513</td>
             <td>136</td>
             <td>285</td>
             <td>0</td>
@@ -835,7 +835,7 @@ music and works will not change when the full results are published.</p>-->
             <td>39</td>
             <td>86</td>
             <td>Hieda no Akyuu</td>
-            <td>1499</td>
+            <td>1,499</td>
             <td>119</td>
             <td>239</td>
             <td>3</td>
@@ -845,7 +845,7 @@ music and works will not change when the full results are published.</p>-->
             <td>102</td>
             <td>118</td>
             <td>Gengetsu</td>
-            <td>1481</td>
+            <td>1,481</td>
             <td>90</td>
             <td>313</td>
             <td>7</td>
@@ -855,7 +855,7 @@ music and works will not change when the full results are published.</p>-->
             <td>70</td>
             <td>46</td>
             <td>Yachie Kicchou</td>
-            <td>1478</td>
+            <td>1,478</td>
             <td>90</td>
             <td>278</td>
             <td>3</td>
@@ -865,7 +865,7 @@ music and works will not change when the full results are published.</p>-->
             <td>77</td>
             <td>83</td>
             <td>Rinnosuke Morichika</td>
-            <td>1436</td>
+            <td>1,436</td>
             <td>139</td>
             <td>307</td>
             <td>2</td>
@@ -875,7 +875,7 @@ music and works will not change when the full results are published.</p>-->
             <td>84</td>
             <td>69</td>
             <td>Kagerou Imaizumi</td>
-            <td>1394</td>
+            <td>1,394</td>
             <td>113</td>
             <td>277</td>
             <td>4</td>
@@ -885,7 +885,7 @@ music and works will not change when the full results are published.</p>-->
             <td>80</td>
             <td>82</td>
             <td>Yuugi Hoshiguma</td>
-            <td>1360</td>
+            <td>1,360</td>
             <td>106</td>
             <td>286</td>
             <td>1</td>
@@ -895,7 +895,7 @@ music and works will not change when the full results are published.</p>-->
             <td>82</td>
             <td>80</td>
             <td>Sumireko Usami</td>
-            <td>1346</td>
+            <td>1,346</td>
             <td>115</td>
             <td>214</td>
             <td>1</td>
@@ -905,7 +905,7 @@ music and works will not change when the full results are published.</p>-->
             <td>83</td>
             <td>79</td>
             <td>Kutaka Niwatari</td>
-            <td>1324</td>
+            <td>1,324</td>
             <td>96</td>
             <td>223</td>
             <td>5</td>
@@ -915,7 +915,7 @@ music and works will not change when the full results are published.</p>-->
             <td>89</td>
             <td>91</td>
             <td>Shinmyoumaru Sukuna</td>
-            <td>1287</td>
+            <td>1,287</td>
             <td>118</td>
             <td>222</td>
             <td>3</td>
@@ -925,7 +925,7 @@ music and works will not change when the full results are published.</p>-->
             <td>86</td>
             <td>85</td>
             <td>Soga no Tojiko</td>
-            <td>1285</td>
+            <td>1,285</td>
             <td>106</td>
             <td>243</td>
             <td>7</td>
@@ -935,7 +935,7 @@ music and works will not change when the full results are published.</p>-->
             <td>88</td>
             <td>92</td>
             <td>Miyoi Okunoda</td>
-            <td>1229</td>
+            <td>1,229</td>
             <td>39</td>
             <td>274</td>
             <td>3</td>
@@ -945,7 +945,7 @@ music and works will not change when the full results are published.</p>-->
             <td>94</td>
             <td>103</td>
             <td>Yumemi Okazaki</td>
-            <td>1221</td>
+            <td>1,221</td>
             <td>101</td>
             <td>250</td>
             <td>3</td>
@@ -955,7 +955,7 @@ music and works will not change when the full results are published.</p>-->
             <td>118</td>
             <td>136</td>
             <td>Mizuchi Miyadeguchi</td>
-            <td>1207</td>
+            <td>1,207</td>
             <td>91</td>
             <td>284</td>
             <td>138</td>
@@ -965,7 +965,7 @@ music and works will not change when the full results are published.</p>-->
             <td>95</td>
             <td>99</td>
             <td>Raiko Horikawa</td>
-            <td>1199</td>
+            <td>1,199</td>
             <td>104</td>
             <td>226</td>
             <td>2</td>
@@ -975,7 +975,7 @@ music and works will not change when the full results are published.</p>-->
             <td>93</td>
             <td>96</td>
             <td>Medicine Melancholy</td>
-            <td>1132</td>
+            <td>1,132</td>
             <td>99</td>
             <td>212</td>
             <td>3</td>
@@ -985,7 +985,7 @@ music and works will not change when the full results are published.</p>-->
             <td>96</td>
             <td>97</td>
             <td>Watatsuki no Yorihime</td>
-            <td>1128</td>
+            <td>1,128</td>
             <td>83</td>
             <td>213</td>
             <td>1</td>
@@ -995,7 +995,7 @@ music and works will not change when the full results are published.</p>-->
             <td>85</td>
             <td>93</td>
             <td>Aunn Komano</td>
-            <td>1104</td>
+            <td>1,104</td>
             <td>69</td>
             <td>233</td>
             <td>4</td>
@@ -1005,7 +1005,7 @@ music and works will not change when the full results are published.</p>-->
             <td>81</td>
             <td>52</td>
             <td>Hisami Yomotsu</td>
-            <td>1096</td>
+            <td>1,096</td>
             <td>55</td>
             <td>221</td>
             <td>2</td>
@@ -1015,7 +1015,7 @@ music and works will not change when the full results are published.</p>-->
             <td>103</td>
             <td>111</td>
             <td>Luna Child</td>
-            <td>1046</td>
+            <td>1,046</td>
             <td>59</td>
             <td>189</td>
             <td>4</td>
@@ -1025,7 +1025,7 @@ music and works will not change when the full results are published.</p>-->
             <td>92</td>
             <td>97</td>
             <td>Yoshika Miyako</td>
-            <td>1039</td>
+            <td>1,039</td>
             <td>92</td>
             <td>234</td>
             <td>2</td>
@@ -1035,7 +1035,7 @@ music and works will not change when the full results are published.</p>-->
             <td>104</td>
             <td>105</td>
             <td>Wakasagihime</td>
-            <td>1032</td>
+            <td>1,032</td>
             <td>76</td>
             <td>225</td>
             <td>0</td>
@@ -2291,7 +2291,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>1</td>
 	<td>1</td>
 	<td>U.N. Owen Was Her?</td>
-	<td>25153</td>
+	<td>25,153</td>
 	<td>4,459</td>
 	<td>3,004</td>
 </tr>
@@ -2300,7 +2300,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>2</td>
 	<td>2</td>
 	<td>Septette for a Dead Princess</td>
-	<td>16828</td>
+	<td>16,828</td>
 	<td>2,020</td>
 	<td>1,808</td>
 </tr>
@@ -2309,7 +2309,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>3</td>
 	<td>3</td>
 	<td>Hartmann's Youkai Girl</td>
-	<td>12299</td>
+	<td>12,299</td>
 	<td>1,547</td>
 	<td>1,410</td>
 </tr>
@@ -2318,7 +2318,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>5</td>
 	<td>5</td>
 	<td>Love-Coloured Master Spark</td>
-	<td>11441</td>
+	<td>11,441</td>
 	<td>1,164</td>
 	<td>1,390</td>
 </tr>
@@ -2327,7 +2327,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>6</td>
 	<td>6</td>
 	<td>The Gensokyo The Gods Loved</td>
-	<td>10799</td>
+	<td>10,799</td>
 	<td>1,093</td>
 	<td>1,383</td>
 </tr>
@@ -2336,7 +2336,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>4</td>
 	<td>4</td>
 	<td>Reach for the Moon, Immortal Smoke</td>
-	<td>10679</td>
+	<td>10,679</td>
 	<td>1,280</td>
 	<td>1,163</td>
 </tr>
@@ -2345,7 +2345,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>7</td>
 	<td>8</td>
 	<td>Shanghai Teahouse ~ Chinese Tea</td>
-	<td>8483</td>
+	<td>8,483</td>
 	<td>809</td>
 	<td>794</td>
 </tr>
@@ -2354,7 +2354,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>8</td>
 	<td>7</td>
 	<td>Entrust this World to Idols ~ Idolatrize World</td>
-	<td>7724</td>
+	<td>7,724</td>
 	<td>1,007</td>
 	<td>758</td>
 </tr>
@@ -2363,7 +2363,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>9</td>
 	<td>10</td>
 	<td>Necrofantasia</td>
-	<td>7337</td>
+	<td>7,337</td>
 	<td>616</td>
 	<td>788</td>
 </tr>
@@ -2372,7 +2372,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>11</td>
 	<td>15</td>
 	<td>Tomboyish Girl in Love</td>
-	<td>7163</td>
+	<td>7,163</td>
 	<td>643</td>
 	<td>991</td>
 </tr>
@@ -2381,7 +2381,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>10</td>
 	<td>9</td>
 	<td>Bloom Nobly, Ink-Black Cherry Blossom ~ Border of Life</td>
-	<td>6717</td>
+	<td>6,717</td>
 	<td>598</td>
 	<td>613</td>
 </tr>
@@ -2390,7 +2390,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>12</td>
 	<td>11</td>
 	<td>Pure Furies ~ Whereabouts of the Heart</td>
-	<td>6214</td>
+	<td>6,214</td>
 	<td>731</td>
 	<td>642</td>
 </tr>
@@ -2399,7 +2399,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>13</td>
 	<td>14</td>
 	<td>Lunar Clock ~ Luna Dial</td>
-	<td>5996</td>
+	<td>5,996</td>
 	<td>504</td>
 	<td>582</td>
 </tr>
@@ -2408,7 +2408,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>16</td>
 	<td>18</td>
 	<td>Satori Maiden ~ 3rd eye</td>
-	<td>5736</td>
+	<td>5,736</td>
 	<td>573</td>
 	<td>629</td>
 </tr>
@@ -2417,7 +2417,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>14</td>
 	<td>13</td>
 	<td>Broken Moon</td>
-	<td>5424</td>
+	<td>5,424</td>
 	<td>488</td>
 	<td>542</td>
 </tr>
@@ -2426,7 +2426,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>20</td>
 	<td>17</td>
 	<td>Maiden's Capriccio / Dream Battle</td>
-	<td>5415</td>
+	<td>5,415</td>
 	<td>427</td>
 	<td>586</td>
 </tr>
@@ -2435,7 +2435,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>15</td>
 	<td>16</td>
 	<td>Native Faith</td>
-	<td>5386</td>
+	<td>5,386</td>
 	<td>529</td>
 	<td>667</td>
 </tr>
@@ -2444,7 +2444,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>17</td>
 	<td>20</td>
 	<td>Flight in the Bamboo Cutter ~ Lunatic Princess</td>
-	<td>5289</td>
+	<td>5,289</td>
 	<td>393</td>
 	<td>661</td>
 </tr>
@@ -2453,7 +2453,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>19</td>
 	<td>19</td>
 	<td>Gensokyo Millennium ~ History of the Moon</td>
-	<td>4984</td>
+	<td>4,984</td>
 	<td>451</td>
 	<td>558</td>
 </tr>
@@ -2462,7 +2462,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>18</td>
 	<td>12</td>
 	<td>Ghostly Band ~ Phantom Ensemble</td>
-	<td>4958</td>
+	<td>4,958</td>
 	<td>422</td>
 	<td>531</td>
 </tr>
@@ -2471,7 +2471,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>21</td>
 	<td>23</td>
 	<td>Flowering Night</td>
-	<td>4455</td>
+	<td>4,455</td>
 	<td>338</td>
 	<td>532</td>
 </tr>
@@ -2480,7 +2480,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>24</td>
 	<td>22</td>
 	<td>Emotional Skyscraper ~ Cosmic Mind</td>
-	<td>4368</td>
+	<td>4,368</td>
 	<td>439</td>
 	<td>446</td>
 </tr>
@@ -2489,7 +2489,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>23</td>
 	<td>27</td>
 	<td>Shanghai Alice of Meiji 17</td>
-	<td>4308</td>
+	<td>4,308</td>
 	<td>339</td>
 	<td>511</td>
 </tr>
@@ -2498,7 +2498,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>25</td>
 	<td>25</td>
 	<td>Faith Is for the Transient People</td>
-	<td>3837</td>
+	<td>3,837</td>
 	<td>381</td>
 	<td>360</td>
 </tr>
@@ -2507,7 +2507,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>30</td>
 	<td>34</td>
 	<td>The Maid and the Pocket Watch of Blood</td>
-	<td>3699</td>
+	<td>3,699</td>
 	<td>287</td>
 	<td>383</td>
 </tr>
@@ -2516,7 +2516,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>27</td>
 	<td>28</td>
 	<td>Last Remote</td>
-	<td>3672</td>
+	<td>3,672</td>
 	<td>308</td>
 	<td>343</td>
 </tr>
@@ -2525,7 +2525,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>29</td>
 	<td>29</td>
 	<td>Crimson Tower ~ Eastern Dream...</td>
-	<td>3609</td>
+	<td>3,609</td>
 	<td>289</td>
 	<td>427</td>
 </tr>
@@ -2534,7 +2534,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>22</td>
 	<td>21</td>
 	<td>Tonight Stars an Easygoing Egoist (Live ver.) ~ Egoistic Flowers.</td>
-	<td>3519</td>
+	<td>3,519</td>
 	<td>387</td>
 	<td>367</td>
 </tr>
@@ -2543,7 +2543,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>28</td>
 	<td>26</td>
 	<td>Lunatic Eyes ~ Invisible Full Moon</td>
-	<td>3394</td>
+	<td>3,394</td>
 	<td>230</td>
 	<td>395</td>
 </tr>
@@ -2552,7 +2552,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>26</td>
 	<td>24</td>
 	<td>The Centennial Festival for Magical Girls</td>
-	<td>3365</td>
+	<td>3,365</td>
 	<td>202</td>
 	<td>322</td>
 </tr>
@@ -2561,7 +2561,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>34</td>
 	<td>33</td>
 	<td>Apparitions Stalk the Night</td>
-	<td>3184</td>
+	<td>3,184</td>
 	<td>288</td>
 	<td>353</td>
 </tr>
@@ -2570,7 +2570,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>31</td>
 	<td>32</td>
 	<td>Desire Drive</td>
-	<td>3180</td>
+	<td>3,180</td>
 	<td>311</td>
 	<td>323</td>
 </tr>
@@ -2579,7 +2579,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>32</td>
 	<td>30</td>
 	<td>Inchlings of the Shining Needle ~ Little Princess</td>
-	<td>3080</td>
+	<td>3,080</td>
 	<td>324</td>
 	<td>266</td>
 </tr>
@@ -2588,7 +2588,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>33</td>
 	<td>31</td>
 	<td>Hiroari Shoots a Strange Bird ~ Till When?</td>
-	<td>3052</td>
+	<td>3,052</td>
 	<td>336</td>
 	<td>339</td>
 </tr>
@@ -2597,7 +2597,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>36</td>
 	<td>35</td>
 	<td>Eastern Judgement in the Sixtieth Year ~ Fate of Sixty Years</td>
-	<td>2885</td>
+	<td>2,885</td>
 	<td>266</td>
 	<td>308</td>
 </tr>
@@ -2606,7 +2606,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>35</td>
 	<td>36</td>
 	<td>Doll Judgment</td>
-	<td>2671</td>
+	<td>2,671</td>
 	<td>176</td>
 	<td>251</td>
 </tr>
@@ -2615,7 +2615,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>37</td>
 	<td>39</td>
 	<td>Wind God Girl</td>
-	<td>2510</td>
+	<td>2,510</td>
 	<td>220</td>
 	<td>231</td>
 </tr>
@@ -2624,7 +2624,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>43</td>
 	<td>53</td>
 	<td>A Dream that Is More Scarlet than Red</td>
-	<td>2442</td>
+	<td>2,442</td>
 	<td>188</td>
 	<td>272</td>
 </tr>
@@ -2633,7 +2633,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>38</td>
 	<td>37</td>
 	<td>Fall of Fall ~ Autumnal Waterfall</td>
-	<td>2375</td>
+	<td>2,375</td>
 	<td>237</td>
 	<td>254</td>
 </tr>
@@ -2642,7 +2642,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>42</td>
 	<td>58</td>
 	<td>Bad Apple!!</td>
-	<td>2362</td>
+	<td>2,362</td>
 	<td>268</td>
 	<td>344</td>
 </tr>
@@ -2651,7 +2651,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>40</td>
 	<td>38</td>
 	<td>Solar Sect of Mystic Wisdom ~ Nuclear Fusion</td>
-	<td>2357</td>
+	<td>2,357</td>
 	<td>202</td>
 	<td>256</td>
 </tr>
@@ -2660,7 +2660,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>39</td>
 	<td>41</td>
 	<td>Locked Girl ~ The Girl's Secret Room</td>
-	<td>2316</td>
+	<td>2,316</td>
 	<td>147</td>
 	<td>226</td>
 </tr>
@@ -2669,7 +2669,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>44</td>
 	<td>42</td>
 	<td>Where Is That Bustling Marketplace Now ~ Immemorial Marketeers</td>
-	<td>2239</td>
+	<td>2,239</td>
 	<td>177</td>
 	<td>231</td>
 </tr>
@@ -2678,7 +2678,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>41</td>
 	<td>40</td>
 	<td>Border of Life</td>
-	<td>2067</td>
+	<td>2,067</td>
 	<td>108</td>
 	<td>251</td>
 </tr>
@@ -2687,7 +2687,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>48</td>
 	<td>44</td>
 	<td>The World Is Made in an Adorable Way</td>
-	<td>2041</td>
+	<td>2,041</td>
 	<td>144</td>
 	<td>224</td>
 </tr>
@@ -2696,7 +2696,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>47</td>
 	<td>46</td>
 	<td>Secret God Matara ~ Hidden Star in All Seasons.</td>
-	<td>1931</td>
+	<td>1,931</td>
 	<td>150</td>
 	<td>248</td>
 </tr>
@@ -2705,7 +2705,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>55</td>
 	<td>52</td>
 	<td>The Primal Scene of Japan the Girl Saw</td>
-	<td>1890</td>
+	<td>1,890</td>
 	<td>153</td>
 	<td>156</td>
 </tr>
@@ -2714,7 +2714,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>57</td>
 	<td>75</td>
 	<td>Legend of Hourai</td>
-	<td>1888</td>
+	<td>1,888</td>
 	<td>280</td>
 	<td>199</td>
 </tr>
@@ -2723,7 +2723,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>52</td>
 	<td>48</td>
 	<td>Shoutoku Legend ~ True Administrator</td>
-	<td>1851</td>
+	<td>1,851</td>
 	<td>191</td>
 	<td>183</td>
 </tr>
@@ -2732,7 +2732,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>46</td>
 	<td>56</td>
 	<td>The Youkai Mountain ~ Mysterious Mountain</td>
-	<td>1834</td>
+	<td>1,834</td>
 	<td>140</td>
 	<td>177</td>
 </tr>
@@ -2741,7 +2741,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>69</td>
 	<td>78</td>
 	<td>A Soul as Red as a Ground Cherry</td>
-	<td>1816</td>
+	<td>1,816</td>
 	<td>105</td>
 	<td>173</td>
 </tr>
@@ -2750,7 +2750,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>45</td>
 	<td>45</td>
 	<td>Tomorrow Will Be Special, Yesterday Was Not</td>
-	<td>1754</td>
+	<td>1,754</td>
 	<td>125</td>
 	<td>196</td>
 </tr>
@@ -2759,7 +2759,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>50</td>
 	<td>47</td>
 	<td>Magus Night</td>
-	<td>1735</td>
+	<td>1,735</td>
 	<td>140</td>
 	<td>218</td>
 </tr>
@@ -2768,7 +2768,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>54</td>
 	<td>49</td>
 	<td>Eastern Mystical Dream ~ Ancient Temple</td>
-	<td>1680</td>
+	<td>1,680</td>
 	<td>133</td>
 	<td>140</td>
 </tr>
@@ -2777,7 +2777,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>49</td>
 	<td>55</td>
 	<td>Lullaby of Deserted Hell</td>
-	<td>1673</td>
+	<td>1,673</td>
 	<td>135</td>
 	<td>192</td>
 </tr>
@@ -2786,7 +2786,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>61</td>
 	<td>64</td>
 	<td>The Sea Where the Home Planet is Reflected</td>
-	<td>1666</td>
+	<td>1,666</td>
 	<td>120</td>
 	<td>169</td>
 </tr>
@@ -2795,7 +2795,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>51</td>
 	<td>51</td>
 	<td>Akutagawa Ryuunosuke's "Kappa" ~ Candid Friend</td>
-	<td>1664</td>
+	<td>1,664</td>
 	<td>138</td>
 	<td>215</td>
 </tr>
@@ -2804,7 +2804,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>63</td>
 	<td>75</td>
 	<td>Voyage 1969</td>
-	<td>1642</td>
+	<td>1,642</td>
 	<td>118</td>
 	<td>140</td>
 </tr>
@@ -2813,7 +2813,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>60</td>
 	<td>65</td>
 	<td>Pandemonic Planet</td>
-	<td>1615</td>
+	<td>1,615</td>
 	<td>136</td>
 	<td>205</td>
 </tr>
@@ -2822,7 +2822,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>72</td>
 	<td>81</td>
 	<td>Kid's Festival ~ Innocent Treasures</td>
-	<td>1599</td>
+	<td>1,599</td>
 	<td>173</td>
 	<td>168</td>
 </tr>
@@ -2831,7 +2831,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>64</td>
 	<td>60</td>
 	<td>The Road of the Misfortune God ~ Dark Road</td>
-	<td>1572</td>
+	<td>1,572</td>
 	<td>130</td>
 	<td>161</td>
 </tr>
@@ -2840,7 +2840,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>53</td>
 	<td>84</td>
 	<td>The Concealed Four Seasons</td>
-	<td>1555</td>
+	<td>1,555</td>
 	<td>132</td>
 	<td>199</td>
 </tr>
@@ -2849,7 +2849,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>62</td>
 	<td>74</td>
 	<td>Hiroshige No.36 ~ Neo Super-Express</td>
-	<td>1525</td>
+	<td>1,525</td>
 	<td>123</td>
 	<td>183</td>
 </tr>
@@ -2858,7 +2858,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>59</td>
 	<td>59</td>
 	<td>Heian Alien</td>
-	<td>1508</td>
+	<td>1,508</td>
 	<td>121</td>
 	<td>176</td>
 </tr>
@@ -2867,7 +2867,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>56</td>
 	<td>57</td>
 	<td>Catastrophe in Bhavaagra ~ Wonderful Heaven</td>
-	<td>1483</td>
+	<td>1,483</td>
 	<td>121</td>
 	<td>121</td>
 </tr>
@@ -2876,7 +2876,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>68</td>
 	<td>62</td>
 	<td>The Venerable Ancient Battlefield ~ Suwa Foughten Field</td>
-	<td>1472</td>
+	<td>1,472</td>
 	<td>103</td>
 	<td>171</td>
 </tr>
@@ -2885,7 +2885,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>58</td>
 	<td>50</td>
 	<td>The Fantastic Tales from Tono</td>
-	<td>1434</td>
+	<td>1,434</td>
 	<td>106</td>
 	<td>158</td>
 </tr>
@@ -2894,7 +2894,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>79</td>
 	<td>67</td>
 	<td>A Maiden's Illusionary Funeral ~ Necro-Fantasy</td>
-	<td>1418</td>
+	<td>1,418</td>
 	<td>108</td>
 	<td>111</td>
 </tr>
@@ -2903,7 +2903,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>66</td>
 	<td>71</td>
 	<td>Reverse Ideology</td>
-	<td>1406</td>
+	<td>1,406</td>
 	<td>131</td>
 	<td>149</td>
 </tr>
@@ -2912,7 +2912,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>75</td>
 	<td>69</td>
 	<td>The Capital City of Flowers in the Sky</td>
-	<td>1354</td>
+	<td>1,354</td>
 	<td>135</td>
 	<td>120</td>
 </tr>
@@ -2921,7 +2921,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>65</td>
 	<td>54</td>
 	<td>At the End of Spring</td>
-	<td>1354</td>
+	<td>1,354</td>
 	<td>92</td>
 	<td>135</td>
 </tr>
@@ -2930,7 +2930,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>82</td>
 	<td>72</td>
 	<td>Primordial Beat ~ Pristine Beat</td>
-	<td>1345</td>
+	<td>1,345</td>
 	<td>132</td>
 	<td>164</td>
 </tr>
@@ -2939,7 +2939,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>73</td>
 	<td>82</td>
 	<td>Alice in Wonderland</td>
-	<td>1341</td>
+	<td>1,341</td>
 	<td>139</td>
 	<td>146</td>
 </tr>
@@ -2948,7 +2948,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>67</td>
 	<td>68</td>
 	<td>Dichromatic Lotus Butterfly ~ Ancients / Red and White</td>
-	<td>1336</td>
+	<td>1,336</td>
 	<td>89</td>
 	<td>179</td>
 </tr>
@@ -2957,7 +2957,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>78</td>
 	<td>79</td>
 	<td>Deaf to All but the Song</td>
-	<td>1277</td>
+	<td>1,277</td>
 	<td>73</td>
 	<td>137</td>
 </tr>
@@ -2966,7 +2966,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>84</td>
 	<td>96</td>
 	<td>Extend Ash ~ Person of Hourai</td>
-	<td>1272</td>
+	<td>1,272</td>
 	<td>79</td>
 	<td>128</td>
 </tr>
@@ -2975,7 +2975,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>70</td>
 	<td>66</td>
 	<td>The Pierrot of the Star-Spangled Banner</td>
-	<td>1250</td>
+	<td>1,250</td>
 	<td>67</td>
 	<td>161</td>
 </tr>
@@ -2984,7 +2984,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>93</td>
 	<td>95</td>
 	<td>Voile, the Magic Library</td>
-	<td>1240</td>
+	<td>1,240</td>
 	<td>71</td>
 	<td>125</td>
 </tr>
@@ -2993,7 +2993,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>71</td>
 	<td>63</td>
 	<td>Dark Side of Fate</td>
-	<td>1240</td>
+	<td>1,240</td>
 	<td>85</td>
 	<td>138</td>
 </tr>
@@ -3002,7 +3002,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>77</td>
 	<td>70</td>
 	<td>Greenwich in the Sky</td>
-	<td>1227</td>
+	<td>1,227</td>
 	<td>91</td>
 	<td>117</td>
 </tr>
@@ -3011,7 +3011,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>90</td>
 	<td>99</td>
 	<td>Lunate Elf</td>
-	<td>1203</td>
+	<td>1,203</td>
 	<td>80</td>
 	<td>132</td>
 </tr>
@@ -3020,7 +3020,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>76</td>
 	<td>83</td>
 	<td>Green-Eyed Jealousy</td>
-	<td>1184</td>
+	<td>1,184</td>
 	<td>125</td>
 	<td>104</td>
 </tr>
@@ -3029,7 +3029,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>80</td>
 	<td>92</td>
 	<td>Crazy Backup Dancers</td>
-	<td>1181</td>
+	<td>1,181</td>
 	<td>83</td>
 	<td>178</td>
 </tr>
@@ -3038,7 +3038,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>74</td>
 	<td>72</td>
 	<td>Because Princess Inada Is Scolding Me</td>
-	<td>1172</td>
+	<td>1,172</td>
 	<td>50</td>
 	<td>131</td>
 </tr>
@@ -3047,7 +3047,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>81</td>
 	<td>88</td>
 	<td>Nostalgic Blood of the East ~ Old World</td>
-	<td>1171</td>
+	<td>1,171</td>
 	<td>75</td>
 	<td>109</td>
 </tr>
@@ -3056,7 +3056,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>83</td>
 	<td>85</td>
 	<td>Sakura, Sakura ~ Japanize Dream...</td>
-	<td>1165</td>
+	<td>1,165</td>
 	<td>41</td>
 	<td>124</td>
 </tr>
@@ -3065,7 +3065,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>99</td>
 	<td>101</td>
 	<td>Eastern Heaven of Scarlet Perception</td>
-	<td>1125</td>
+	<td>1,125</td>
 	<td>132</td>
 	<td>106</td>
 </tr>
@@ -3074,7 +3074,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>-</td>
 	<td>-</td>
 	<td>Golden Land of Prester John</td>
-	<td>1101</td>
+	<td>1,101</td>
 	<td>64</td>
 	<td>204</td>
 </tr>
@@ -3083,7 +3083,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>87</td>
 	<td>97</td>
 	<td>Plain Asia</td>
-	<td>1085</td>
+	<td>1,085</td>
 	<td>77</td>
 	<td>118</td>
 </tr>
@@ -3092,7 +3092,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>91</td>
 	<td>101</td>
 	<td>Beware the Umbrella Left There Forever</td>
-	<td>1081</td>
+	<td>1,081</td>
 	<td>115</td>
 	<td>136</td>
 </tr>
@@ -3101,7 +3101,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>89</td>
 	<td>94</td>
 	<td>Vanishing Dream ~ Lost Dream</td>
-	<td>1068</td>
+	<td>1,068</td>
 	<td>88</td>
 	<td>130</td>
 </tr>
@@ -3110,7 +3110,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>85</td>
 	<td>87</td>
 	<td>Cinderella Cage ~ Kagome-Kagome</td>
-	<td>1053</td>
+	<td>1,053</td>
 	<td>72</td>
 	<td>101</td>
 </tr>
@@ -3119,7 +3119,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>86</td>
 	<td>90</td>
 	<td>The Lost Emotion</td>
-	<td>1044</td>
+	<td>1,044</td>
 	<td>115</td>
 	<td>104</td>
 </tr>
@@ -3128,7 +3128,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>92</td>
 	<td>86</td>
 	<td>Eternal Spring Dream</td>
-	<td>1036</td>
+	<td>1,036</td>
 	<td>79</td>
 	<td>110</td>
 </tr>
@@ -7780,7 +7780,7 @@ music and works will not change when the full results are published.</p>-->
             <td>1</td>
             <td>1</td>
             <td>EoSD</td>
-            <td>30612</td>
+            <td>30,612</td>
             <td>6,945</td>
             <td>2,496</td>
         </tr>
@@ -7789,7 +7789,7 @@ music and works will not change when the full results are published.</p>-->
             <td>2</td>
             <td>2</td>
             <td>IN</td>
-            <td>23763</td>
+            <td>23,763</td>
             <td>3,921</td>
             <td>1,777</td>
         </tr>
@@ -7798,7 +7798,7 @@ music and works will not change when the full results are published.</p>-->
             <td>3</td>
             <td>3</td>
             <td>PCB</td>
-            <td>17771</td>
+            <td>17,771</td>
             <td>2,375</td>
             <td>1,312</td>
         </tr>
@@ -7807,7 +7807,7 @@ music and works will not change when the full results are published.</p>-->
             <td>4</td>
             <td>4</td>
             <td>MoF</td>
-            <td>17457</td>
+            <td>17,457</td>
             <td>2,582</td>
             <td>1,388</td>
         </tr>
@@ -7816,7 +7816,7 @@ music and works will not change when the full results are published.</p>-->
             <td>5</td>
             <td>5</td>
             <td>SA</td>
-            <td>14353</td>
+            <td>14,353</td>
             <td>2,022</td>
             <td>1,196</td>
         </tr>
@@ -7825,7 +7825,7 @@ music and works will not change when the full results are published.</p>-->
             <td>6</td>
             <td>6</td>
             <td>LoLK</td>
-            <td>9788</td>
+            <td>9,788</td>
             <td>1,341</td>
             <td>870</td>
         </tr>
@@ -7834,7 +7834,7 @@ music and works will not change when the full results are published.</p>-->
             <td>7</td>
             <td>9</td>
             <td>UFO</td>
-            <td>5524</td>
+            <td>5,524</td>
             <td>721</td>
             <td>537</td>
         </tr>
@@ -7843,7 +7843,7 @@ music and works will not change when the full results are published.</p>-->
             <td>9</td>
             <td>14</td>
             <td>PoFV</td>
-            <td>4739</td>
+            <td>4,739</td>
             <td>518</td>
             <td>404</td>
         </tr>
@@ -7852,7 +7852,7 @@ music and works will not change when the full results are published.</p>-->
             <td>8</td>
             <td>8</td>
             <td>UM</td>
-            <td>4713</td>
+            <td>4,713</td>
             <td>594</td>
             <td>459</td>
         </tr>
@@ -7861,7 +7861,7 @@ music and works will not change when the full results are published.</p>-->
             <td>18</td>
             <td>18</td>
             <td>LLS</td>
-            <td>4231</td>
+            <td>4,231</td>
             <td>652</td>
             <td>306</td>
         </tr>
@@ -7870,7 +7870,7 @@ music and works will not change when the full results are published.</p>-->
             <td>10</td>
             <td>11</td>
             <td>TD</td>
-            <td>4219</td>
+            <td>4,219</td>
             <td>625</td>
             <td>378</td>
         </tr>
@@ -7879,7 +7879,7 @@ music and works will not change when the full results are published.</p>-->
             <td>15</td>
             <td>13</td>
             <td>DDC</td>
-            <td>4031</td>
+            <td>4,031</td>
             <td>546</td>
             <td>376</td>
         </tr>
@@ -7888,7 +7888,7 @@ music and works will not change when the full results are published.</p>-->
             <td>14</td>
             <td>10</td>
             <td>WBaWC</td>
-            <td>3525</td>
+            <td>3,525</td>
             <td>392</td>
             <td>298</td>
         </tr>
@@ -7897,7 +7897,7 @@ music and works will not change when the full results are published.</p>-->
             <td>11</td>
             <td>15</td>
             <td>Hisoutensoku</td>
-            <td>3447</td>
+            <td>3,447</td>
             <td>402</td>
             <td>253</td>
         </tr>
@@ -7906,7 +7906,7 @@ music and works will not change when the full results are published.</p>-->
             <td>19</td>
             <td>19</td>
             <td>HSiFS</td>
-            <td>3284</td>
+            <td>3,284</td>
             <td>417</td>
             <td>350</td>
         </tr>
@@ -7915,7 +7915,7 @@ music and works will not change when the full results are published.</p>-->
             <td>13</td>
             <td>12</td>
             <td>Wild and Horned Hermit</td>
-            <td>3267</td>
+            <td>3,267</td>
             <td>360</td>
             <td>310</td>
         </tr>
@@ -7924,7 +7924,7 @@ music and works will not change when the full results are published.</p>-->
             <td>-</td>
             <td>-</td>
             <td>FW</td>
-            <td>3252</td>
+            <td>3,252</td>
             <td>329</td>
             <td>509</td>
         </tr>
@@ -7933,7 +7933,7 @@ music and works will not change when the full results are published.</p>-->
             <td>12</td>
             <td>16</td>
             <td>AoCF</td>
-            <td>3226</td>
+            <td>3,226</td>
             <td>336</td>
             <td>350</td>
         </tr>
@@ -7942,7 +7942,7 @@ music and works will not change when the full results are published.</p>-->
             <td>20</td>
             <td>25</td>
             <td>Cheating Detective Satori</td>
-            <td>3189</td>
+            <td>3,189</td>
             <td>308</td>
             <td>382</td>
         </tr>
@@ -7951,7 +7951,7 @@ music and works will not change when the full results are published.</p>-->
             <td>17</td>
             <td>17</td>
             <td>Forbidden Scrollery</td>
-            <td>2937</td>
+            <td>2,937</td>
             <td>310</td>
             <td>233</td>
         </tr>
@@ -7960,7 +7960,7 @@ music and works will not change when the full results are published.</p>-->
             <td>21</td>
             <td>20</td>
             <td>Dolls in Pseudo Paradise</td>
-            <td>2899</td>
+            <td>2,899</td>
             <td>375</td>
             <td>292</td>
         </tr>
@@ -7969,7 +7969,7 @@ music and works will not change when the full results are published.</p>-->
             <td>22</td>
             <td>22</td>
             <td>Lotus Eaters</td>
-            <td>2609</td>
+            <td>2,609</td>
             <td>227</td>
             <td>264</td>
         </tr>
@@ -7978,7 +7978,7 @@ music and works will not change when the full results are published.</p>-->
             <td>16</td>
             <td>7</td>
             <td>UDoALG</td>
-            <td>2357</td>
+            <td>2,357</td>
             <td>184</td>
             <td>249</td>
         </tr>
@@ -7987,7 +7987,7 @@ music and works will not change when the full results are published.</p>-->
             <td>24</td>
             <td>27</td>
             <td>HRtP</td>
-            <td>2254</td>
+            <td>2,254</td>
             <td>268</td>
             <td>311</td>
         </tr>
@@ -7996,7 +7996,7 @@ music and works will not change when the full results are published.</p>-->
             <td>23</td>
             <td>23</td>
             <td>SWR</td>
-            <td>2125</td>
+            <td>2,125</td>
             <td>233</td>
             <td>171</td>
         </tr>
@@ -8005,7 +8005,7 @@ music and works will not change when the full results are published.</p>-->
             <td>26</td>
             <td>24</td>
             <td>Touhou Bougetsushou</td>
-            <td>1849</td>
+            <td>1,849</td>
             <td>150</td>
             <td>207</td>
         </tr>
@@ -8014,7 +8014,7 @@ music and works will not change when the full results are published.</p>-->
             <td>29</td>
             <td>34</td>
             <td>MS</td>
-            <td>1829</td>
+            <td>1,829</td>
             <td>201</td>
             <td>179</td>
         </tr>
@@ -8023,7 +8023,7 @@ music and works will not change when the full results are published.</p>-->
             <td>27</td>
             <td>26</td>
             <td>Touhou Sangetsusei</td>
-            <td>1818</td>
+            <td>1,818</td>
             <td>215</td>
             <td>153</td>
         </tr>
@@ -8032,7 +8032,7 @@ music and works will not change when the full results are published.</p>-->
             <td>25</td>
             <td>21</td>
             <td>Gouyoku Ibun</td>
-            <td>1736</td>
+            <td>1,736</td>
             <td>139</td>
             <td>197</td>
         </tr>
@@ -8041,7 +8041,7 @@ music and works will not change when the full results are published.</p>-->
             <td>28</td>
             <td>28</td>
             <td>Magical Astronomy</td>
-            <td>1713</td>
+            <td>1,713</td>
             <td>161</td>
             <td>155</td>
         </tr>
@@ -8050,7 +8050,7 @@ music and works will not change when the full results are published.</p>-->
             <td>32</td>
             <td>32</td>
             <td>PoDD</td>
-            <td>1586</td>
+            <td>1,586</td>
             <td>170</td>
             <td>139</td>
         </tr>
@@ -8059,7 +8059,7 @@ music and works will not change when the full results are published.</p>-->
             <td>34</td>
             <td>41</td>
             <td>SoEW</td>
-            <td>1565</td>
+            <td>1,565</td>
             <td>124</td>
             <td>107</td>
         </tr>
@@ -8068,7 +8068,7 @@ music and works will not change when the full results are published.</p>-->
             <td>33</td>
             <td>38</td>
             <td>GFW</td>
-            <td>1450</td>
+            <td>1,450</td>
             <td>126</td>
             <td>148</td>
         </tr>
@@ -8077,7 +8077,7 @@ music and works will not change when the full results are published.</p>-->
             <td>31</td>
             <td>33</td>
             <td>Retrospective 53 minutes</td>
-            <td>1343</td>
+            <td>1,343</td>
             <td>113</td>
             <td>129</td>
         </tr>
@@ -8086,7 +8086,7 @@ music and works will not change when the full results are published.</p>-->
             <td>35</td>
             <td>29</td>
             <td>ISC</td>
-            <td>1331</td>
+            <td>1,331</td>
             <td>119</td>
             <td>146</td>
         </tr>
@@ -8095,7 +8095,7 @@ music and works will not change when the full results are published.</p>-->
             <td>37</td>
             <td>39</td>
             <td>StB</td>
-            <td>1291</td>
+            <td>1,291</td>
             <td>113</td>
             <td>127</td>
         </tr>
@@ -8104,7 +8104,7 @@ music and works will not change when the full results are published.</p>-->
             <td>-</td>
             <td>-</td>
             <td>Whispered Oracle of Hakurei Shrine</td>
-            <td>1225</td>
+            <td>1,225</td>
             <td>85</td>
             <td>198</td>
         </tr>
@@ -8113,7 +8113,7 @@ music and works will not change when the full results are published.</p>-->
             <td>40</td>
             <td>40</td>
             <td>IaMP</td>
-            <td>1186</td>
+            <td>1,186</td>
             <td>110</td>
             <td>114</td>
         </tr>
@@ -8122,7 +8122,7 @@ music and works will not change when the full results are published.</p>-->
             <td>38</td>
             <td>35</td>
             <td>HM</td>
-            <td>1168</td>
+            <td>1,168</td>
             <td>142</td>
             <td>118</td>
         </tr>
@@ -8131,7 +8131,7 @@ music and works will not change when the full results are published.</p>-->
             <td>39</td>
             <td>36</td>
             <td>ULiL</td>
-            <td>1053</td>
+            <td>1,053</td>
             <td>79</td>
             <td>93</td>
         </tr>
@@ -9144,7 +9144,7 @@ music and works will not change when the full results are published.</p>-->
                 <td>50.89%</td>
             </tr>
             <tr>
-                <td>東方Project人妖名鑑</td>
+                <td>Touhou Project: Who's Who of Humans and Youkai</td>
                 <td>2,079</td>
                 <td>26.92%</td>
             </tr>
