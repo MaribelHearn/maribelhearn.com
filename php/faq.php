@@ -1,9 +1,9 @@
 <div id='wrap' class='wrap'>
     <?php
-        echo wrap_top();
         if (!empty($subpage) || !empty($_GET['p'])) {
             echo '<aside id="back"><a href="/faq">&lt;= Back to Main Page</a></aside>';
         }
+        echo wrap_top();
         echo '<h1>Frequently Asked Questions</h1>';
         if (!empty($_GET['redirect'])) {
             echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';

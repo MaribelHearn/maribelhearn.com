@@ -89,8 +89,8 @@
             <td><?php echo _('Full Spell; a run that captures all Spell Cards.')?></td>
         </tr>
         <tr id='term_fw'>
-            <th><?php echo _('FW')?></th>
-            <td><?php echo _('See <a href="#term_gfw">GFW</a>.')?></td>
+            <th>FW</th><!-- <?php echo _('FW')?> -->
+            <td><?php echo _('Touhou 20: Fossilized Wonders.')?></td>
         </tr>
         <tr id='term_graze'>
             <th><?php echo _('Graze')?></th>
