@@ -208,13 +208,64 @@
         <tr><td>7</td><td>PoFV</td><td>23,303</td><td class='jump'>+7,275</td><td>16,028</td></tr>
         <tr><td>8</td><td>LoLK</td><td>17,568</td><td class='jump'>+4,047</td><td>13,521</td></tr>
         <tr><td>9</td><td>UFO</td><td>17,300</td><td class='jump'>+4,216</td><td>13,084</td></tr>
-        <tr><td>10</td><td>TD</td><td>14,044</td><td class='jump'>+2,592</td><td>11,452</td></tr>
-        <tr><td>11</td><td>DDC</td><td>11,828</td><td class='jump'>+2,856</td><td>8,972</td></tr>
-        <tr><td>12</td><td>UM</td><td>10,396</td><td class='jump'>+3,111</td><td>7,285</td></tr>
-        <tr><td>13</td><td>HSiFS</td><td>7,086</td><td class='jump'>+1,908</td><td>5,178</td></tr>
-        <tr><td>14</td><td>WBaWC</td><td>7,024</td><td class='drop'>-214</td><td>7,238</td></tr>
-        <tr><td>15</td><td>UDoALG</td><td>3,945</td><td class='drop'>-3,292</td><td>7,237</td></tr>
-        <tr><td>16</td><td>FW</td><td>2,787</td><td class='stable'>0</td><td>-</td></tr>
+        <tr><td>10</td><td>PC-98</td><td>14,590</td><td class='jump'>+5,937</td><td>8,653</td></tr>
+        <tr><td>11</td><td>TD</td><td>14,044</td><td class='jump'>+2,592</td><td>11,452</td></tr>
+        <tr><td>12</td><td>DDC</td><td>11,828</td><td class='jump'>+2,856</td><td>8,972</td></tr>
+        <tr><td>13</td><td>UM</td><td>10,396</td><td class='jump'>+3,111</td><td>7,285</td></tr>
+        <tr><td>14</td><td>HSiFS</td><td>7,086</td><td class='jump'>+1,908</td><td>5,178</td></tr>
+        <tr><td>15</td><td>WBaWC</td><td>7,024</td><td class='drop'>-214</td><td>7,238</td></tr>
+        <tr><td>16</td><td>UDoALG</td><td>3,945</td><td class='drop'>-3,292</td><td>7,237</td></tr>
+        <tr><td>17</td><td>FW</td><td>2,787</td><td class='stable'>0</td><td>-</td></tr>
+    </tbody>
+</table></div>
+<h3 id='cpc98'>Touhou 1-5 - PC-98 Games</h3>
+<div class='overflow'><table class='poll table sortable noborders'>
+    <colgroup>
+        <col class='col2game'>
+        <col class='col4'>
+        <col class='col3'>
+        <col class='col5'>
+        <col class='col6per'>
+        <col class='col4'>
+    </colgroup>
+    <thead>
+        <tr>
+            <th class='sorttable_numeric'>Rank</th>
+            <th>Name</th>
+            <th class='sorttable_numeric'>Points</th>
+            <th class='sorttable_numeric'>No. 1 Votes</th>
+            <th class='sorttable_numeric'>Comments</th>
+            <th class='sorttable_numeric'>Fanworks</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>49</td><td>Mima</td><td>2,860</td><td>170</td><td>668</td><td>4</td></tr>
+        <tr><td>61</td><td>Shinki</td><td>2,055</td><td>109</td><td>451</td><td>4</td></tr>
+        <tr><td>80</td><td>Gengetsu</td><td>1,481</td><td>90</td><td>313</td><td>7</td></tr>
+        <tr><td>90</td><td>Yumemi Okazaki</td><td>1,221</td><td>101</td><td>250</td><td>3</td></tr>
+        <tr><td>108</td><td>Mugetsu</td><td>912</td><td>19</td><td>235</td><td>5</td></tr>
+        <tr><td>122</td><td>Kana Anaberal</td><td>648</td><td>36</td><td>163</td><td>9</td></tr>
+        <tr><td>130</td><td>Kurumi</td><td>520</td><td>30</td><td>131</td><td>3</td></tr>
+        <tr><td>135</td><td>Yumeko</td><td>482</td><td>19</td><td>110</td><td>4</td></tr>
+        <tr><td>139</td><td>Chiyuri Kitashirakawa</td><td>418</td><td>12</td><td>97</td><td>1</td></tr>
+        <tr><td>142</td><td>Sariel</td><td>403</td><td>26</td><td>90</td><td>0</td></tr>
+        <tr><td>147</td><td>Ellen</td><td>350</td><td>19</td><td>94</td><td>2</td></tr>
+        <tr><td>149</td><td>Elly</td><td>326</td><td>17</td><td>75</td><td>2</td></tr>
+        <tr><td>150</td><td>Elis</td><td>318</td><td>12</td><td>84</td><td>4</td></tr>
+        <tr><td>153</td><td>Mai</td><td>277</td><td>15</td><td>68</td><td>2</td></tr>
+        <tr><td>154</td><td>Konngara</td><td>272</td><td>15</td><td>68</td><td>0</td></tr>
+        <tr><td>156</td><td>Yuki</td><td>256</td><td>17</td><td>57</td><td>3</td></tr>
+        <tr><td>160</td><td>Kotohime</td><td>224</td><td>15</td><td>62</td><td>0</td></tr>
+        <tr><td>161</td><td>Orange</td><td>222</td><td>9</td><td>63</td><td>0</td></tr>
+        <tr><td>162</td><td>Meira</td><td>217</td><td>18</td><td>55</td><td>0</td></tr>
+        <tr><td>164</td><td>Rika</td><td>192</td><td>15</td><td>56</td><td>0</td></tr>
+        <tr><td>165</td><td>Rikako Asakura</td><td>178</td><td>11</td><td>48</td><td>0</td></tr>
+        <tr><td>167</td><td>YuugenMagan</td><td>170</td><td>8</td><td>51</td><td>2</td></tr>
+        <tr><td>169</td><td>Genjii</td><td>162</td><td>8</td><td>46</td><td>0</td></tr>
+        <tr><td>170</td><td>SinGyoku</td><td>154</td><td>16</td><td>34</td><td>2</td></tr>
+        <tr><td>176</td><td>Louise</td><td>108</td><td>8</td><td>27</td><td>1</td></tr>
+        <tr><td>178</td><td>Sara</td><td>87</td><td>3</td><td>23</td><td>0</td></tr>
+        <tr><td>181</td><td>Kikuri</td><td>77</td><td>4</td><td>21</td><td>1</td></tr>
     </tbody>
 </table></div>
 <h3 id='ceosd'>Touhou 6 - The Embodiment of Scarlet Devil</h3>
