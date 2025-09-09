@@ -146,7 +146,7 @@ The following autofire scripts allow you to play more comfortably for your hands
 <img src='/assets/games/faq/pc98/neko_open.png' alt='Neko Project 21 main screen'>
 <p>To load a game, open the Harddisk tab and click Open under IDE #0. Choose your <span class='code'>.hdi</span> file.</p>
 <p>For savestates, open the <span class='code'>np21.ini</span> file and add this line: <span class='code'>STATSAVE=true</span>. This will add the Stat tab to the emulator window. This tab is used for savestates.
-Ope the Stat tab and click "Title" to change your current savestate collection. Any savestate you make will have the title in its name. This allows you to make essentially infinite savestates. To load a savestate from a different collection,
+Open the Stat tab and click "Title" to change your current savestate collection. Any savestate you make will have the title in its name. This allows you to make essentially infinite savestates. To load a savestate from a different collection,
 simply change the title back to that collection's name.</p>
 <img src='/assets/games/faq/pc98/neko_config1.png' alt='Neko Project 21 config screen'>
 <p>Open the Emulate tab and click Configure. Adjust the settings so that it looks like the screenshot.</p>
