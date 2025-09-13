@@ -24,7 +24,7 @@ $chars = array(
     'TakaneYamashiro', 'TsukasaKudamaki', 'FortuneTeller', 'HiedanoAkyuu', 'KasenIbaraki', 'KosuzuMotoori', 'MiyoiOkunoda', 'ReisenII', 'RinnosukeMorichika', 'Tokiko', 'WatatsukinoToyohime',
     'WatatsukinoYorihime', 'MaribelHearn', 'RenkoUsami', 'AlicePC-98Extra', 'FiveMagicStones', 'KaguyaHouraisanLastSpells', 'MarisaKirisameGFW', 'MarisaPC-98LLS', 'OkinaMataraExtra', 'YukiandMai',
     'YuukaPC-98Stage5', 'YuyukoSaigyoujiResurrectionButterfly', 'YuyukoSaigyoujiTD', 'SonBiten', 'EnokoMitsugashira', 'ChiyariTenkajin', 'HisamiYomotsu', 'ZanmuNippaku', 'MizuchiMiyadeguchi',
-    'UbameChirizuka', 'ChimiHoujuu', 'NarekoMichigami'
+    'UbameChirizuka', 'ChimiHoujuu', 'NarekoMichigami', 'YuimanAsama', 'AriyaIwanaga', 'NinaWatari',
 );
 $works = array(
     'HighlyResponsivetoPrayers', 'StoryofEasternWonderland', 'PhantasmagoriaofDimDream', 'LotusLandStory', 'MysticSquare', 'EmbodimentofScarletDevil', 'PerfectCherryBlossom', 'ImmaterialandMissingPower',
