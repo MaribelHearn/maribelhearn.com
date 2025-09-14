@@ -85,21 +85,20 @@ input[type=button].delete {
 .link {
     position: relative;
 }
-/* temporary */
 .link a {
     width: 100%;
 }
 .link a:hover {
     background-color: #bbb;
 }
-.tooltip {
-    display: none;
-}
-/*.link .tooltip {
+.link .tooltip {
     width: 300px;
 }
 .link:hover .tooltip {
     visibility: visible;
+}
+.link:hover .tooltip:hover {
+    visibility: hidden;
 }
 .tooltip_link:link {
     color: #1e90ff;
@@ -121,7 +120,7 @@ input[type=button].delete {
     z-index: 1;
     top: 100%;
     left: 0%;
-}*/
+}
 .flag {
     width: 16px;
     height: 16px;

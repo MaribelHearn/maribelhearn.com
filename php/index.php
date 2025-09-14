@@ -76,6 +76,10 @@
                     <span class='icon flag_japan'></span>
                     <span class='tooltip'>A complete and searchable archive of the replays, history and player rankings from score.royalflare.net.</span>
                 </li>
+                <li class='link'>
+                    <a href='https://wiki.maribelhearn.com'><span class='icon wiki_icon'></span> Danmaku Gameplay Wiki</a>
+                    <span class='tooltip'>The wiki for the Touhou gameplay community, covering strategies and gameplay information for the bullet hell games.</span>
+                </li>
             </ul>
         </div>
         <div class='pages_right'>
