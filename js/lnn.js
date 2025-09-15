@@ -101,8 +101,6 @@ function showLNNtable(game, LNNs) {
         const shot = lnn.category.shot;
         let route = lnn.category.route;
 
-        let shotPlayers = [];
-
         let chara = shot;
 
         if (game == "HSiFS") {
@@ -128,7 +126,6 @@ function showLNNtable(game, LNNs) {
             currentShot = shot;
         }
 
-        shotPlayers.push(player);
         players.pushStrict(player);
         shotCount += 1;
 
@@ -136,15 +133,11 @@ function showLNNtable(game, LNNs) {
             gameCount += 1;
         }
 
-        shotPlayers.sort();
         const shotElement = document.getElementById(`${shot}${currentRoute}`);
-
-        for (const shotPlayer of shotPlayers) {
-            shotElement.innerHTML += `, ${shotPlayer}`;
-            
-            if (route == "UFOs") {
-                shotElement.innerHTML += " (UFOs)";
-            }
+        shotElement.innerHTML += `, ${player}`;
+        
+        if (route == "UFOs") {
+            shotElement.innerHTML += " (UFOs)";
         }
 
         if (shotElement.innerHTML.substring(0, 2) == ", ") {
@@ -168,7 +161,7 @@ function showLNNtable(game, LNNs) {
         }
     }
 
-    players.sort();
+    players.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
     const total = document.getElementById("total");
     total.innerHTML = "";
 
