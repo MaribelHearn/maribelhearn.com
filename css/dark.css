@@ -1,7 +1,7 @@
 h1, h2, h3, h4, table:not(.poll):not(.rendering), label, li, figcaption, dt, p:not(.language):not(#ack), caption:not(.legend_surv), input[type='file'], #nav, #hy_text {
     color: white;
 }
-.rendering th, .rendering td:not(.overview):not(.overview_half), .donation a, .PoDD, .PoDDp, .LLS, .LLSp, .EoSD, .EoSDp, .PCB, .PCBp, .PoFV, .PoFVp, .MoF, .MoFp, .GFW, .GFWp, .TD, .TDp, .DDC, .DDCp, .UM, .UMp, .UDoALG, .UDoALGp,
+.rendering th, .rendering td:not(.overview):not(.overview_half), .donation a, .PoDD, .PoDDp, .LLS, .LLSp, .EoSD, .EoSDp, .PCB, .PCBp, .PoFV, .PoFVp, .MoF, .MoFp, .GFW, .GFWp, .TD, .TDp, .DDC, .DDCp, .UM, .UMp, .UDoALG, .UDoALGp, .FW, .FWp,
 .PoDDt th, .LLSt th, .EoSDt th, .PCBt th, .PoFVt th, .MoFt th, .GFWt th, .DDCt th, .UMt th, .UDoALGt th, .FWt th, .tier th, .tier {
     color: black;
 }
