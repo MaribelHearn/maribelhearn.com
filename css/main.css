@@ -109,18 +109,6 @@ input[type=button].delete {
 .tooltip_link:visited {
     color: #ff69b4;
 }
-.tooltip {
-    visibility: hidden;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    top: 100%;
-    left: 0%;
-}
 .flag {
     width: 16px;
     height: 16px;
@@ -149,9 +137,6 @@ input[type=button].delete {
 }
 .cookie {
     width: 250px;
-}
-#nav {
-    margin-bottom: 5px;
 }
 #map {
     width: 53%;

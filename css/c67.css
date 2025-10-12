@@ -14,22 +14,8 @@ li {
     font-style: italic;
     text-align: center;
 }
-.tooltip {
-    visibility: hidden;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    top: 100%;
-}
 #wrap > ol {
     display: inline-block;
-}
-#nav {
-    margin-bottom: 5px;
 }
 #contents td, #contents th {
     border: none;

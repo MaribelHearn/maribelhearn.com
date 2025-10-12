@@ -29,17 +29,6 @@ ul {
 .wide-bottom {
     margin-bottom: 25px;
 }
-.tooltip {
-    visibility: hidden;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    top: 100%;
-}
 #thprac_img {
     background-image: url('/assets/games/tools/thprac_small.png');
     height: 180px;

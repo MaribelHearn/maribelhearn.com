@@ -11,22 +11,8 @@ input[type=number] {
 .error {
     color: red;
 }
-.tooltip {
-    visibility: hidden;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    top: 100%;
-}
 #wrap {
     padding-bottom: 15px;
-}
-#nav {
-    margin-bottom: 5px;
 }
 #result {
     margin: 4px;

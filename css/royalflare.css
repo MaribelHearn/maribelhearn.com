@@ -32,17 +32,6 @@ li.scene_li {
 a.scene {
     margin: 2px;
 }
-.tooltip {
-    visibility: hidden;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    top: 100%;
-}
 .head {
     content: '';
     display: table-cell;
@@ -78,72 +67,8 @@ a.scene {
 .search_header th {
     background-color: #aaaaaa;
 }
-.EoSDt th, .EoSDp, .EoSD {
-    color: white;
-    background-color: #990000;
-}
-.PCBt th, .PCBp, .PCB {
-    background-color: #ff8ed2;
-}
-.INt th, .INp, .IN {
-    color: white;
-    background-color: #339;
-}
-.StBt th, .StBp, .StB {
-    background-color: #009973;
-}
-.MoFt th, .MoFp, .MoF {
-    background-color: #96b300;
-}
-.SAt th, .SAp, .SA {
-    color: white;
-    background-color: #591400;
-}
-.UFOt th, .UFOp, .UFO {
-    color: white;
-    background-color: #4169e1;
-}
-.DSt th, .DSp, .DS {
-    color: white;
-    background-color: #7D3884;
-}
-.GFWt th, .GFWp, .GFW {
-    background-color: #00c8c8;
-}
-.TDt th, .TDp, .TD {
-    color: white;
-    background-color: #4a808c;
-}
-.DDCt th, .DDCp, .DDC {
-    background-color: #a77;
-}
-.ISCt th, .ISCp, .ISC {
-    background-color: #B6423C;
-}
-.LoLKt th, .LoLKp, .LoLK {
-    color: white;
-    background-color: #6a47be;
-}
-.HSiFSsmallt th, .HSiFSt th, .HSiFSp, .HSiFS {
-    color: white;
-    background-color: #176e0e;
-}
-.VDt th, .VDp, .VD {
-    color: white;
-    background-color: #ae11d5;
-}
-.WBaWCt th, .WBaWCp, .WBaWC {
-    color: white;
-    background-color: #190e0e;
-}
-.UMt th, .UMp, .UM {
-    background-color: #23fcb1;
-}
 #wrap {
     padding-bottom: 15px;
-}
-#nav {
-    margin-bottom: 5px;
 }
 #back {
     float: left;

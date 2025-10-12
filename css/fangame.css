@@ -86,17 +86,6 @@ h2 {
 .sortable {
     margin-top: 25px;
 }
-.tooltip {
-    visibility: hidden;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    top: 100%;
-}
 #lastupdate {
     background-color: lightsalmon;
     font-size: 24px;

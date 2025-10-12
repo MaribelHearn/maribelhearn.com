@@ -56,6 +56,94 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
+.HRtPt th, .HRtPp, .HRtP {
+    color: white;
+    background-color: #b6423c;
+}
+.SoEWt th, .SoEWp, .SoEW {
+    color: white;
+    background-color: #7d3884;
+}
+.PoDDt th, .PoDDp, .PoDD {
+    background-color: gold;
+}
+.LLSt th, .LLSp, .LLS {
+    background-color: #90ee90;
+}
+.MSt th, .MSp, .MS {
+    color: white;
+    background-color: #ae11d5;
+}
+.EoSDt th, .EoSDp, .EoSD {
+    color: white;
+    background-color: #990000;
+}
+.PCBt th, .PCBp, .PCB {
+    background-color: #ff8ed2;
+}
+.INt th, .INp, .IN {
+    color: white;
+    background-color: #339;
+}
+.PoFVt th, .PoFVp, .PoFV {
+    background-color: #009973;
+}
+.StBt th, .StBp, .StB {
+    background-color: #009973;
+}
+.MoFt th, .MoFp, .MoF {
+    background-color: #96b300;
+}
+.SAt th, .SAp, .SA {
+    color: white;
+    background-color: #591400;
+}
+.UFOt th, .UFOp, .UFO {
+    color: white;
+    background-color: #4169e1;
+}
+.DSt th, .DSp, .DS {
+    color: white;
+    background-color: #7D3884;
+}
+.GFWt th, .GFWp, .GFW {
+    background-color: #00c8c8;
+}
+.TDt th, .TDp, .TD {
+    color: white;
+    background-color: #4a808c;
+}
+.DDCt th, .DDCp, .DDC {
+    background-color: #a77;
+}
+.ISCt th, .ISCp, .ISC {
+    background-color: #B6423C;
+}
+.LoLKt th, .LoLKp, .LoLK {
+    color: white;
+    background-color: #6a47be;
+}
+.HSiFSt th, .HSiFSp, .HSiFS {
+    color: white;
+    background-color: #176e0e;
+}
+.VDt th, .VDp, .VD {
+    color: white;
+    background-color: #ae11d5;
+}
+.WBaWCt th, .WBaWCp, .WBaWC {
+    color: white;
+    background-color: #190e0e;
+}
+.UMt th, .UMp, .UM {
+    background-color: #23fcb1;
+}
+.UDoALGt th, .UDoALGp, .UDoALG {
+    background-color: #f0e68c;
+}
+.FWt th, .FWp, .FW {
+    background-color: #00ffff;
+}
 .noborders {
     border: none;
 }
@@ -91,6 +179,19 @@ img {
 }
 .wide-top {
     margin-top: 25px;
+}
+.tooltip {
+    font-weight: initial;
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0%;
 }
 .dropdowns {
     margin-left: auto;
@@ -162,6 +263,28 @@ img {
     margin-left: 24%;
     margin-right: 24%;
     font: 14px verdana, sans-serif;
+}
+.modal_inner {
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-height: 80%;
+    display: none;
+    overflow-y: auto;
+}
+#modal {
+    font: 14px verdana, sans-serif;
+    text-align: center;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 3%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.4);
 }
 #wrap {
     padding-left: 15px;

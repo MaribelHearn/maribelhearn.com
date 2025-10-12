@@ -14,17 +14,6 @@ ol {
     text-align: left;
     margin: 25px 0 25px 25px;
 }
-.tooltip {
-    visibility: hidden;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    top: 100%;
-}
 .tt {
     font-family: 'courier new';
 }

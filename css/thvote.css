@@ -213,20 +213,6 @@
 .guide {
     width: 75%;
 }
-.tooltip {
-    visibility: hidden;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    top: 100%;
-}
-#nav {
-    margin-bottom: 5px;
-}
 #age_summary {
     display: table;
 }

@@ -27,78 +27,6 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
 .general_header {
     background-color: #aaaaaa;
 }
-.HRtPt th, .HRtPp, .HRtP {
-    color: white;
-    background-color: #b6423c;
-}
-.SoEWt th, .SoEWp, .SoEW {
-    color: white;
-    background-color: #7d3884;
-}
-.PoDDt th, .PoDDp, .PoDD {
-    background-color: gold;
-}
-.LLSt th, .LLSp, .LLS {
-    background-color: #90ee90;
-}
-.MSt th, .MSp, .MS {
-    color: white;
-    background-color: #ae11d5;
-}
-.EoSDt th, .EoSDp, .EoSD {
-    background-color: #ff2400;
-}
-.PCBt th, .PCBp, .PCB {
-    background-color: #ff8ed2;
-}
-.INt th, .INp, .IN {
-    color: white;
-    background-color: #339;
-}
-.PoFVt th, .PoFVp, .PoFV {
-    background-color: #009973;
-}
-.MoFt th, .MoFp, .MoF {
-    background-color: #96b300;
-}
-.SAt th, .SAp, .SA {
-    color: white;
-    background-color: #591400;
-}
-.UFOt th, .UFOp, .UFO {
-    color: white;
-    background-color: #4169e1;
-}
-.GFWt th, .GFWp, .GFW {
-    background-color: #00c8c8;
-}
-.TDt th, .TDp, .TD {
-    background-color: #4a808c;
-}
-.DDCt th, .DDCp, .DDC {
-    background-color: #a77;
-}
-.LoLKt th, .LoLKp, .LoLK {
-    color: white;
-    background-color: #6a47be;
-}
-.HSiFSt th, .HSiFSp, .HSiFS {
-    color: white;
-    background-color: #176e0e;
-}
-.WBaWCt th, .WBaWCp, .WBaWC {
-    color: white;
-    background-color: #190e0e;
-}
-.UMt th, .UMp, .UM {
-    background-color: #23fcb1;
-}
-.UDoALGt th, .UDoALGp, .UDoALG {
-    background-color: #f0e68c;
-}
-.FWt th, .FWp, .FW {
-    background-color: #00ffff;
-}
 .FinalA, .FinalB, .in_route {
     font-size: 12px;
     color: #339;
@@ -125,18 +53,6 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
     left: 0%;
     margin-left: -60px;
 }
-.tooltip {
-    font-weight: initial;
-    visibility: hidden;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    top: 100%;
-}
 .game_image:hover .tooltip {
     visibility: visible;
 }
@@ -157,9 +73,6 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
     display: block;
     line-height: 1em;
     color: #000;
-}
-#nav {
-    margin-bottom: 5px;
 }
 #newlayout, #contents_new, #lnn_list, #search, #searchlink, #search_results, #empty_player, #empty_category, .search_label {
     display: none;
