@@ -207,13 +207,13 @@ function showWesternRecords(game, overalls, westScores) {
 
         const percentage = (west / world * 100).toFixed(2);
         const percentageText = parseInt(percentage) == 100 ? 100 : percentage;
-        west = ((game == "WBaWC" || game == "UM") && west > MAX_SCORE
+        west = ((game == "WBaWC" || game == "UM" || game == "FW") && west > MAX_SCORE
                 ? `<span class='cs'>${sep(west)}<span class='tooltip truescore'>${_("Uncapped")}</span></span>`
                 : sep(west)
         );
         westShot = (westShot != '-' ? `<br>(${_(westShot)})` : "");
 
-        world = ((game == "WBaWC" || game == "UM") && world > MAX_SCORE
+        world = ((game == "WBaWC" || game == "UM" || game == "FW") && world > MAX_SCORE
                 ? `<span class='cs'>${sep(world)}<span class='tooltip truescore'>${_("Uncapped")}</span></span>`
                 : sep(world)
         );
@@ -303,8 +303,8 @@ function showWRtable(game, records) {
             continue;
         }
 
-        let text = ((game == "WBaWC" || game == "UM") && score > MAX_SCORE
-                ? `<span class='cs'>9,999,999,990<span class='tooltip truescore'>${sep(score)}</span></span>`
+        let text = ((game == "WBaWC" || game == "UM" || game == "FW") && score > MAX_SCORE
+                ? `<span class='cs'>${sep(score)}<span class='tooltip truescore'>${_("Uncapped")}</span></span>`
                 : sep(score)
         );
 
@@ -413,6 +413,7 @@ function showWRs(event) {
         const border = "none";
         gameImg.style.border = border;
         document.getElementById("world").classList.remove(`${game}t`);
+        document.getElementById("west").classList.remove(`${game}t`);
         document.getElementById("wr_list").style.display = "none";
         selected = "";
     }
