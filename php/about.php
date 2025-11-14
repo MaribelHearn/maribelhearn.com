@@ -13,11 +13,11 @@
     likes to play shoot 'em up games seriously.</p>
     <p class='wide'>I am a nerdy person that studied Computer Science and takes keen interests in countries, travel,
     geography, history, and public transportation. Traveling is my absolute favourite activity in life. I have
-    visited 41 different countries so far, including my home country of the Netherlands, and one of my life goals is to
+    visited 43 different countries so far, including my home country of the Netherlands, and one of my life goals is to
     visit every country in Europe, as well as at least one country per continent. Of course, I also like Web development.</p>
     <figure>
         <img id='map' src='assets/main/about/countries.png' alt='Maribel&#39;s visited countries map'>
-        <figcaption><em>Countries visited as of 2024</em></figcaption>
+        <figcaption><em>Countries visited as of 2025</em></figcaption>
     </figure>
     <p class='wide'>Other than shoot 'em ups, there's a good number of games I value highly, as I loved playing them (still do) and they had
     a great positive influence on my life:</p>
