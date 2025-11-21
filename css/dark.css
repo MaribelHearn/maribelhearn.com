@@ -8,16 +8,16 @@ h1, h2, h3, h4, table:not(.poll):not(.rendering), label, li, figcaption, dt, p:n
 body, div:not(.dropdown):not(.dropdown_content):not(.nav_right):not(.dark_bg):not(.dropdowns):not(.ext_menu):not(#ext_mobile):not(#ext_desktop):not(#modal) {
     background-color: #202020;
 }
-a:link:not(.replay):not(.i):not(.dropdown_button):not(.donation a) {
-    color: #0fa7ff;
-}
 #replays a:link, #replay a:link {
     color: #00bfff;
 }
-a:active:not(.replay):not(.i):not(.dropdown_button) {
+a:link:not(.replay):not(.i):not(.dropdown_button):not(.donation a) {
+    color: #0fa7ff;
+}
+a:active:not(.replay):not(.i):not(.dropdown_button):not(.donation a) {
     color: red;
 }
-a:visited:not(.replay):not(.i):not(.dropdown_button) {
+a:visited:not(.replay):not(.i):not(.dropdown_button):not(.donation a) {
     color: #ff69b4;
 }
 #hy {
