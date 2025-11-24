@@ -4,6 +4,8 @@ const banList = ["Reimu", "Marisa", "Sanae", "Seiran", "Biten", "Enoko", "Chiyar
 let language = "en_GB";
 let selected = "";
 let shots = {};
+let pc98Excluded = false;
+let versusIncluded = false;
 
 function toggleLayout() {
     if (getCookie("lnn_old_layout")) {
@@ -25,6 +27,12 @@ function setRecentLimit(event) {
 
 function saveChanges() {
     location.reload();
+}
+
+function toggleVersus() {
+    versusIncluded = !versusIncluded;
+    versusIncluded ? setCookie("include_vs", true) : deleteCookie("include_vs");
+    saveChanges();
 }
 
 function restrictions(game) {
@@ -517,6 +525,8 @@ function setEventListeners() {
     document.getElementById("search_category").addEventListener("change", setCategory, false);
     document.getElementById("search_category").addEventListener("select", setCategory, false);
     document.getElementById("category").addEventListener("keypress", detectEnter, false);
+    document.getElementById("showversus1").addEventListener("click", toggleVersus, false);
+    document.getElementById("showversus2").addEventListener("click", toggleVersus, false);
     const gameImg = document.querySelectorAll(".game_img");
 
     for (const element of gameImg) {
@@ -608,6 +618,9 @@ function init() {
         language = "en_US";
     }
 
+    versusIncluded = getCookie("include_vs") ? true : false;
+    document.getElementById("showversus1").checked = versusIncluded;
+    document.getElementById("showversus2").checked = versusIncluded;
     setEventListeners();
     setAttributes();
 

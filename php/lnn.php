@@ -20,6 +20,7 @@ $ALL_LNN = 117;
 $WINDOWS_LNN = ['EoSD', 'PCB', 'IN', 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC', 'UM', 'FW'];
 $RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_limit']), 1) : 15;
 $layout = (isset($_COOKIE['lnn_old_layout']) ? 'Old' : 'New');
+$include_vs = (isset($_COOKIE['include_vs']) ? true : false);
 $pvp = ['PoDD', 'UDoALG'];
 $number_of_lnns = (object) [];
 $number_of_players = (object) [];
@@ -183,7 +184,7 @@ $last_modified = $last_modified['results'][0]['date'];
                 $players_shot = [];
                 echo '<tr><td class="nowrap">' . format_shot($game, $shot) . '</td>';
             }
-            if (!in_array($game, $pvp)) {
+            if ($include_vs || !in_array($game, $pvp)) {
                 if (!isset($player_lnns->{$player})) {
                     $player_lnns->{$player} = 1;
                     $player_games->{$player} = [$game];
@@ -371,6 +372,10 @@ $last_modified = $last_modified['results'][0]['date'];
     </div>
     <div id='overall'>
         <h2><?php echo _('Overall Count'); ?></h2>
+        <div class='center'>
+            <input id='showversus1' type='checkbox'>
+            <label id='label_versus1' for='showversus1'><?php echo _('Include Versus games') ?></label>
+        </div>
         <table class='sortable'>
             <thead>
                 <tr>
@@ -385,7 +390,7 @@ $last_modified = $last_modified['results'][0]['date'];
                     $total_lnns = 0;
                     if (!empty($number_of_lnns)) {
                         foreach ($number_of_lnns as $game => $count) {
-                            if (in_array($game, $pvp)) {
+                            if (!$include_vs && in_array($game, $pvp)) {
                                 continue;
                             }
                             if ($game_nums->{$game} < 6 || $count > 0) {
@@ -413,6 +418,10 @@ $last_modified = $last_modified['results'][0]['date'];
     </div>
     <div id='players'>`
         <h2><?php echo _('Player Statistics') ?></h2>
+        <div class='center'>
+            <input id='showversus2' type='checkbox'>
+            <label id='label_versus2' for='showversus2'><?php echo _('Include Versus games') ?></label>
+        </div>
         <table id='ranking' class='sortable'>
             <thead>
                 <tr>
