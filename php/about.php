@@ -306,7 +306,7 @@
     <h2 id='touhou'>Touhou Taste</h2>
     <figure>
         <img id='tiers' src='assets/main/about/tiers.png' alt='Maribel&#39;s Touhou character tier list'>
-        <figcaption><em>Touhou character tier list as of 31 October 2024</em></figcaption>
+        <figcaption><em>Touhou character tier list as of 27 November 2025</em></figcaption>
     </figure>
     <footer class='wide-top'><strong><a href='#top'>Back to Top</a></strong></footer>
 </div>
