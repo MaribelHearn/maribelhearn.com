@@ -1726,7 +1726,7 @@ function eraseAllConfirmed() {
     localStorage.removeItem("settings");
     deleteCookie("sort");
     initialise();
-    printMessage("<strong class='confirmation'>Reset the tier list and settings to their default states!</strong>");
+    printMessage("<strong class='confirmation'>Reset the tier lists and settings to their default states!</strong>");
 }
 
 function modalEraseAll() {
