@@ -16,7 +16,6 @@
         </div>
         <div id='buttons' class='dark_bg'>
             <input id='info_button' type='button' value='Information'>
-            <input id='save_button' type='button' class='button menu' value='Save'>
         	<input id='import_button' type='button' class='button menu' value='Import'>
         	<input id='export_button' type='button' class='button menu' value='Export'>
             <input id='screenshot_button' type='button' class='button menu' value='Screenshot'>
@@ -94,7 +93,8 @@
             Asks for confirmation if there are items in it.</li>
             <li><strong>Emptying Tiers:</strong> Ctrl+Right Click a tier to empty it. Asks for confirmation.</li>
         </ul>
-        <p>Use the buttons at the top of the screen to save your tier lists, import/export to text, take a screenshot, change the tier list settings, view the changelog, or reset for a new start.</p>
+        <p>Your tier lists will save automatically.</p>
+        <p>Use the buttons at the top of the screen to change the tier list settings, import/export to text, take a screenshot, view the changelog, or reset for a new start.</p>
         <p>Click outside the window, or press Esc, to close popup windows like this one.</p>
     </div>
     <div id='info_mobile' class='modal_inner'>
@@ -110,7 +110,8 @@
             <li><strong>Editing Tiers:</strong> Tap a tier to edit that tier, such as its name or background colour.</li>
             <li><strong>Removing Tiers:</strong> Tap a tier and click the Remove This Tier button to remove it and all of its contents.</li>
         </ul>
-        <p>Use the buttons at the bottom of the screen to save your tier lists, open the main menu, view these instructions, and switch between tiering characters, works, and shottypes (Switch Mode).</p>
+        <p>Your tier lists will save automatically.</p>
+        <p>Use the buttons at the bottom of the screen to open the main menu, view these instructions, change the tier list settings, and switch between tiering characters, works, and shottypes (Switch Mode).</p>
         <p>Tap outside the window to close popup windows like this one.</p>
     </div>
     <div id='import_text' class='modal_inner'>
@@ -226,6 +227,7 @@
             <li>22/09/2023: UDoALG characters added</li>
             <li>05/11/2023: Mizuchi Miyadeguchi added</li>
             <li>31/05/2025: FW demo characters added</li>
+            <li>13/09/2025: FW characters added</li>
         </ul>
     </div>
     <div id='reset' class='modal_inner'>
@@ -261,7 +263,6 @@
         <input id='import_button_mobile' type='button' class='button menu' value='Import'>
         <input id='export_button_mobile' type='button' class='button menu' value='Export'>
         <input id='screenshot_button_mobile' type='button' class='button menu' value='Screenshot'>
-        <input id='settings_button_mobile' type='button' class='button menu' value='Settings'>
         <input id='changelog_button_mobile' type='button' class='button menu' value='Changelog'>
         <input id='reset_button_mobile' type='button' class='button menu' value='Reset'>
         <h3>Navigation</h3>
@@ -282,9 +283,9 @@
     </div>
 </div>
 <div id='buttons_mobile' class='dark_bg' data-html2canvas-ignore>
-	<input id='save_button_mobile' type='button' value='Save'>
-	<input id='menu_button' type='button' value='Menu'>
 	<input id='information_button' class='button_bottom' type='button' value='Information'>
+	<input id='menu_button' type='button' value='Menu'>
+    <input id='settings_button_mobile' type='button' class='button menu' value='Settings'>
 	<input id='switch_button' class='button_bottom' type='button' value='Switch Mode'>
 </div>
 <div id='characters' class='dark_bg' data-html2canvas-ignore><?php

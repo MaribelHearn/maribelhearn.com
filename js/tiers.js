@@ -121,7 +121,6 @@ let following = "";
 let tierView = false;
 let firstTime = false;
 let smallPicker = false;
-let unsavedChanges = false;
 
 function addSpacing(item) {
     const sort = whichSort(item);
@@ -436,7 +435,7 @@ function switchSort(event) {
     multiSelection = [];
     loadItems(false);
     reloadTiers();
-    saveWithoutMenu();
+    saveData();
     setCookie("sort", settings.sort);
 
     if (isMobile()) {
@@ -504,8 +503,7 @@ function addToTier(item, tierNum, pos, noDisplay) {
     if (!noDisplay) {
         for (const item of cats[categoryName].chars) {
             if (!isTiered(item)) {
-                printMessage("");
-                unsavedChanges = true;
+                saveData();
                 return;
             }
         }
@@ -513,8 +511,7 @@ function addToTier(item, tierNum, pos, noDisplay) {
         document.getElementById(categoryName).style.display = "none";
     }
     
-    printMessage("");
-    unsavedChanges = true;
+    saveData();
 }
 
 function addMultiSelection(tierNum) {
@@ -662,8 +659,7 @@ function moveToBack(character, tierNum) {
 
     removeFromTier(character, tierNum);
     addToTier(character, tierNum);
-    printMessage("");
-    unsavedChanges = true;
+    saveData();
 }
 
 function moveItemTo(sourceItem, targetItem) {
@@ -700,8 +696,7 @@ function moveItemTo(sourceItem, targetItem) {
         setTieredItemEvents(item);
     }
 
-    printMessage("");
-    unsavedChanges = true;
+    saveData();
 }
 
 function moveMultiSelectionTo(targetItem) {
@@ -759,8 +754,7 @@ function removeFromTier(item, tierNum, multi, noDisplay) {
         multiSelection.remove(item);
     }
 
-    printMessage("");
-    unsavedChanges = true;
+    saveData();
 }
 
 function changeToTier(item, tierNum, pos, multi) {
@@ -823,8 +817,7 @@ function addTier(tierName, noDisplay) {
         createTier(tierNum);
     }
     
-    printMessage("");
-    unsavedChanges = true;
+    saveData();
 }
 
 function copyTierSettings(tierList, tierNum, otherTierNum) {
@@ -877,8 +870,7 @@ function moveTierTo(sourceTierNum, targetTierNum) {
     tierList[targetTierNum].colour = sourceBackup.colour;
     tierList[targetTierNum].bg = sourceBackup.bg;
     tierList[targetTierNum].name = sourceBackup.name;
-    printMessage("");
-    unsavedChanges = true;
+    saveData();
 }
 
 function removeCharacters(tierNum, noDisplay) {
@@ -945,7 +937,7 @@ function removeTier(sourceTierNum, skipConfirmation, noDisplay) {
         }
 
         delete tierList[lastTierNum];
-        unsavedChanges = true;
+        saveData();
 
         if (!noDisplay) {
             const lastTier = document.getElementById(`tr${lastTierNum}`);
@@ -953,7 +945,6 @@ function removeTier(sourceTierNum, skipConfirmation, noDisplay) {
         }
     }   
 
-    printMessage("");
     return confirmation;
 }
 
@@ -1010,10 +1001,6 @@ function saveSingleTierSettings() {
     const tierBg = document.getElementById("custom_bg_tier").value;
     const tierColour = document.getElementById("custom_colour_tier").value;
 
-    if (!allowData()) {
-        return;
-    }
-
     if (!validateTierName(tierName)) {
         document.getElementById("tier_menu_msg_container").innerHTML = `<strong class='error'>Error: tier names may not be empty, nor exceed ${MAX_NAME_LENGTH} characters.</strong>`;
         return;
@@ -1027,13 +1014,13 @@ function saveSingleTierSettings() {
     tierList[tierNum].name = tierName;
     tierList[tierNum].bg = tierBg;
     tierList[tierNum].colour = tierColour;
-    saveTiersData();
-    printMessage("<strong class='confirmation'>Tier settings saved!</strong>");
+    saveData();
 }
 
 function tierMenu(tierNum) {
     const tierList = getCurrentTierList();
     emptyModal();
+    printMessage("");
     document.getElementById("tier_num").value = tierNum;
     document.getElementById("tier_menu_header").innerHTML = "Customise Tier " + tierList[tierNum].name;
     document.getElementById("custom_name_tier").value = tierList[tierNum].name;
@@ -1084,42 +1071,10 @@ function detectRightCtrlCombo(event) {
     return false;
 }
 
-function storageUsed() {
-    return localStorage.hasOwnProperty("settings") || localStorage.hasOwnProperty("tiers");
-}
-
-function allowData() {
-    if (!storageUsed()) {
-        return confirm("This will store data in your browser's local storage. Do you allow this?");
-    } else {
-        return true;
-    }
-}
-
-function saveTiersData() {
-    if (!allowData()) {
-        return;
-    }
-
-    localStorage.setItem("tiers", JSON.stringify(tiers));
-    unsavedChanges = false;
-}
-
-function saveTiersAndSettings() {
-    saveSettingsData();
-    saveTiersData();
-    printMessage("<strong class='confirmation'>Tier list(s) and settings saved!</strong>");
-}
-
-function saveWithoutMenu() {
-    if (!allowData()) {
-        return;
-    }
-
+function saveData() {
     localStorage.setItem("settings", JSON.stringify(settings));
     localStorage.setItem("tiers", JSON.stringify(tiers));
-    printMessage("<strong class='confirmation'>Tier list(s) and settings saved!</strong>");
-    unsavedChanges = false;
+    printMessage("");
 }
 
 function showInformation() {
@@ -1308,8 +1263,7 @@ function doImport() {
     settings.sort = originalSort;
     document.getElementById("import_text").style.display = "none";
     document.getElementById("modal").style.display = "none";
-    saveTiersData();
-    localStorage.setItem("settings", JSON.stringify(settings));
+    saveData();
     printMessage("<strong class='confirmation'>Tier list successfully imported!</strong>");
 }
 
@@ -1624,10 +1578,6 @@ function toggleThemes() {
 }
 
 function saveSettingsData() {
-    if (!allowData()) {
-        return;
-    }
-
     const fontSizeLimit = 72;
     const cats = categories[settings.sort];
     let checked = {};
@@ -1644,8 +1594,6 @@ function saveSettingsData() {
                 }
             }
         }
-
-        unsavedChanges = true;
     }
 
     const maleChecked = document.getElementById("male").checked;
@@ -1706,7 +1654,8 @@ function saveSettingsData() {
     document.getElementById("tier_list_caption").innerHTML = settings.props[settings.sort].tierListName;
     document.getElementById("settings").style.display = "none";
     document.getElementById("modal").style.display = "none";
-    localStorage.setItem("settings", JSON.stringify(settings));
+    saveData();
+    printMessage("<strong class='confirmation'>Settings saved!</strong>");
 }
 
 function toggleTierView() {
@@ -1751,7 +1700,7 @@ function togglePickerSize(onLoad) {
     }
 
     if (onLoad !== true) {
-        saveWithoutMenu();
+        saveData();
     }
 
     printMessage("");
@@ -1778,7 +1727,6 @@ function eraseAllConfirmed() {
     deleteCookie("sort");
     initialise();
     printMessage("<strong class='confirmation'>Reset the tier list and settings to their default states!</strong>");
-    unsavedChanges = false;
 }
 
 function modalEraseAll() {
@@ -1814,9 +1762,8 @@ function modalEraseSingle() {
     }
 
     localStorage.setItem("settings", JSON.stringify(settings));
-    saveTiersData();
+    saveData();
     printMessage("<strong class='confirmation'>Reset the current tier list and its settings to their default states!</strong>");
-    unsavedChanges = false;
 }
 
 function eraseAll() {
@@ -1974,10 +1921,6 @@ function addCategoryNamesToShots() {
             categories.shots[key].chars[i] = key + categories.shots[key].chars[i].replace(" Team", "Team");
         }
     }
-}
-
-function initCurrentSort() {
-    document.getElementById(`sort_${settings.sort}`).classList.add("current_sort");
 }
 
 function loadTier(tiersData, tierNum, sort) {
@@ -2214,7 +2157,7 @@ function detectAddTierEnter(event) {
 
 function detectSettingsEnter(event) {
     if (event.key && event.key == "Enter") {
-        saveTiersAndSettings();
+        saveSettingsData();
     }
 }
 
@@ -2240,7 +2183,6 @@ function setEventListeners() {
     document.getElementById("tier_name").addEventListener("keyup", detectAddTierEnter, false);
     document.getElementById("tier_name_mobile").addEventListener("keyup", detectAddTierEnter, false);
     document.getElementById("tier_list_name").addEventListener("keyup", detectTierListNameEnter, false);
-    document.getElementById("save_button").addEventListener("click", saveWithoutMenu, false);
     document.getElementById("import_button").addEventListener("click", importText, false);
     document.getElementById("export_button").addEventListener("click", exportText, false);
     document.getElementById("screenshot_button").addEventListener("click", takeScreenshot, false);
@@ -2248,7 +2190,6 @@ function setEventListeners() {
     document.getElementById("changelog_button").addEventListener("click", changeLog, false);
     document.getElementById("reset_button").addEventListener("click", eraseAll, false);
     document.getElementById("information_button").addEventListener("click", showInformation, false);
-    document.getElementById("save_button_mobile").addEventListener("click", saveWithoutMenu, false);
     document.getElementById("menu_button").addEventListener("click", menuMobile, false);
     document.getElementById("switch_button").addEventListener("click", switchSort, false);
     document.getElementById("characters").addEventListener("dragover", allowDrop, false);
@@ -2259,7 +2200,7 @@ function setEventListeners() {
     document.getElementById("wrap").addEventListener("drop", drop, false);
     document.getElementById("pc98").addEventListener("click", togglePC98, false);
     document.getElementById("windows").addEventListener("click", toggleWindows, false);
-    document.getElementById("save_settings").addEventListener("click", saveTiersAndSettings, false);
+    document.getElementById("save_settings").addEventListener("click", saveSettingsData, false);
     document.getElementById("erase_all_button").addEventListener("click", modalEraseAll, false);
     document.getElementById("erase_single_button").addEventListener("click", modalEraseSingle, false);
     document.getElementById("cancel_button").addEventListener("click", emptyModal, false);
@@ -2273,13 +2214,6 @@ function setEventListeners() {
     document.getElementById("add_tier").addEventListener("click", addTierDesktop, false);
     document.getElementById("add_tier_mobile").addEventListener("click", addTierMobile, false);
     document.getElementById("add_tier_list_name").addEventListener("click", changeTierListName, false);
-    window.onbeforeunload = function () {
-        if (unsavedChanges) {
-            return "";
-        }
-
-        return undefined;
-    }
 }
 
 function init() {
@@ -2327,7 +2261,6 @@ function init() {
     }
 
     setEventListeners();
-    unsavedChanges = false;
 }
 
 window.addEventListener("DOMContentLoaded", init, false);
