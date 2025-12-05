@@ -55,6 +55,7 @@ input[type=button]:not(.button_bottom) {
 }
 .screenshot_margin {
     margin-left: 0px !important;
+    max-height: none !important;
 }
 #wrap {
     top: 5px;
@@ -115,8 +116,11 @@ input[type=button]:not(.button_bottom) {
     margin: 0px;
 }
 #screenshot_base64 {
-    width: 85%;
-    height: 85%;
+    width: 50%;
+    height: 50%;
+}
+#screenshot_msg_container {
+    text-align: center;
 }
 @media only screen and (orientation: portrait) {
     #modal {

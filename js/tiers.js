@@ -50,7 +50,7 @@ const DEFAULT_PROPS = {
     "tierListColour": defaultBg,
     "tierHeaderWidth": defaultWidth,
     "tierHeaderFontSize": defaultSize,
-    "screenshotWidth": "",
+    //"screenshotWidth": "",
 };
 const DEFAULT_SETTINGS = {
     "categories": {
@@ -84,28 +84,28 @@ const DEFAULT_SETTINGS = {
             "tierListColour": defaultBg,
             "tierHeaderWidth": defaultWidth,
             "tierHeaderFontSize": defaultSize,
-            "screenshotWidth": ""
+            //"screenshotWidth": ""
         },
         "works": {
             "tierListName": "",
             "tierListColour": defaultBg,
             "tierHeaderWidth": defaultWidth,
             "tierHeaderFontSize": defaultSize,
-            "screenshotWidth": ""
+            //"screenshotWidth": ""
         },
         "shots": {
             "tierListName": "",
             "tierListColour": defaultBg,
             "tierHeaderWidth": defaultWidth,
             "tierHeaderFontSize": defaultSize,
-            "screenshotWidth": ""
+            //"screenshotWidth": ""
         },
         "cards": {
             "tierListName": "",
             "tierListColour": defaultBg,
             "tierHeaderWidth": defaultWidth,
             "tierHeaderFontSize": defaultSize,
-            "screenshotWidth": ""
+            //"screenshotWidth": ""
         }
     },
     "pc98Enabled": true,
@@ -1153,7 +1153,7 @@ function parseSettings(string, sort) {
         settings.props[sort].tierListColour = settingsArray[1];
         settings.props[sort].tierHeaderWidth = settingsArray[2];
         settings.props[sort].tierHeaderFontSize = settingsArray[3];
-        settings.props[sort].screenshotWidth = settingsArray[4];
+        //settings.props[sort].screenshotWidth = settingsArray[4];
     }
 }
 
@@ -1341,8 +1341,8 @@ function exportText() {
     "\n" + (settings.props[settings.sort].tierListName ? settings.props[settings.sort].tierListName : "-") +
     ";" + settings.props[settings.sort].tierListColour +
     ";" + settings.props[settings.sort].tierHeaderWidth +
-    ";" + settings.props[settings.sort].tierHeaderFontSize +
-    ";" + settings.props[settings.sort].screenshotWidth;
+    ";" + settings.props[settings.sort].tierHeaderFontSize;
+    //";" + settings.props[settings.sort].screenshotWidth;
 
     for (const tierNum in tierList) {
         textFile += "\n" + tierList[tierNum].name + ":\n" + tierList[tierNum].bg + " " + tierList[tierNum].colour + "\n";
@@ -1365,17 +1365,7 @@ function exportText() {
     document.getElementById("modal").style.display = "block";
 }
 
-function getScreenshotWidth() {
-    let screenshotWidth = settings.props[settings.sort].screenshotWidth;
-
-    if (screenshotWidth === "") {
-        return atLeastHalfTiered() ? 15 : 10;
-    }
-    
-    return screenshotWidth;
-}
-
-function tieredItems() {
+/*function tieredItems() {
     const tierList = getCurrentTierList();
     let result = 0;
 
@@ -1400,9 +1390,9 @@ function atLeastHalfTiered() {
     }
 
     return tiered >= (groupSize / 2);
-}
+}*/
 
-function longestTier() {
+function longestTierLength() {
     const tierList = getCurrentTierList();
     let longest = 0;
     let length;
@@ -1418,10 +1408,41 @@ function longestTier() {
     return longest;
 }
 
-function takeScreenshot() {
-    const BASE = getScreenshotWidth() + 1;
-    const MAX_WIDTH = defaultWidth * BASE + 15;
+function getRowBoundary() {
+    const firstTier = document.getElementById("tier0");
 
+    if (!firstTier) {
+        return 0;
+    }
+
+    const tierHeaderWidth = parseInt(settings.props[settings.sort].tierHeaderWidth);
+    let tierWidth = firstTier.getBoundingClientRect().width;
+    let result = 0;
+
+    while (tierWidth > tierHeaderWidth) {
+        tierWidth -= tierHeaderWidth;
+        result += 1;
+    }
+
+    return result;
+}
+
+function getExcessRows(rowBoundary) {
+    let result = 0;
+
+    for (const tierNum in tiers[settings.sort]) {
+        const tier = tiers[settings.sort][tierNum];
+        const rowCount = Math.ceil(tier.chars.length / rowBoundary);
+
+        if (rowCount > 1) {
+            result += rowCount - 1;
+        }
+    }
+
+    return result;
+}
+
+function takeScreenshot() {
     try {
         const isTierView = tierView;
 
@@ -1431,16 +1452,18 @@ function takeScreenshot() {
 
         printMessage("<strong class='confirmation'>Girls are being screenshotted, please watch warmly...</strong>");
         const tierListTable = document.getElementById("tier_list_tbody");
-        let width = longestTier() * (isMobile() ? 60 : 120) + parseInt(settings.props[settings.sort].tierHeaderWidth) + 50;
 
-        if (width > MAX_WIDTH) {
-            document.getElementById("tier_list_table").style.tableLayout = "fixed";
-            document.getElementById("tier_list_table").style.width = MAX_WIDTH;
-        }
-
+        const longestTier = longestTierLength();
+        const rowBoundary = getRowBoundary(); // point where next character goes to next row
+        const numberOfExcessRows = getExcessRows(rowBoundary); // number of additional rows in tiers
         const positionInfo = tierListTable.getBoundingClientRect();
-        width = Math.min(width, MAX_WIDTH);
-        let height = positionInfo.height + 50;
+        const captionHeight = document.getElementById("tier_list_caption").getBoundingClientRect().height;
+        let height = parseInt(positionInfo.height) + 15 + (!isMobile() ? 3 * numberOfExcessRows : 0) + captionHeight;
+        let width = parseInt(positionInfo.width) + (isMobile() ? 15 : 0);
+
+        if (longestTier < rowBoundary) {
+            width -= (rowBoundary - longestTier) * (isMobile() ? 60 : 120);
+        }
 
         if (isMobile()) {
             document.getElementById("tier_list_container").classList.add("screenshot_margin");
@@ -1523,7 +1546,7 @@ function settingsMenu() {
     document.getElementById("tier_header_width").value = settings.props[settings.sort].tierHeaderWidth;
     document.getElementById("tier_header_width").min = defaultWidth;
     document.getElementById("tier_header_font_size").value = settings.props[settings.sort].tierHeaderFontSize;
-    document.getElementById("screenshot_width").value = getScreenshotWidth();
+    //document.getElementById("screenshot_width").value = getScreenshotWidth();
     document.getElementById("settings").style.display = "block";
     document.getElementById("modal").style.display = "block";
 }
@@ -1634,12 +1657,12 @@ function saveSettingsData() {
     const tierContents = document.querySelectorAll(".tier_content");
     const tierHeaderWidth = document.getElementById("tier_header_width").value;
     const tierHeaderFontSize = Math.min(document.getElementById("tier_header_font_size").value, fontSizeLimit);
-    const screenshotWidth = document.getElementById("screenshot_width").value;
+    //const screenshotWidth = document.getElementById("screenshot_width").value;
     settings.props[settings.sort].tierListName = escapeHTML(document.getElementById("tier_list_name_menu").value);
     settings.props[settings.sort].tierListColour = document.getElementById("tier_list_colour").value;
     settings.props[settings.sort].tierHeaderWidth = tierHeaderWidth > defaultWidth ? tierHeaderWidth : defaultWidth;
     settings.props[settings.sort].tierHeaderFontSize = tierHeaderFontSize != defaultSize ? tierHeaderFontSize : defaultSize;
-    settings.props[settings.sort].screenshotWidth = Math.max(parseInt(screenshotWidth), 1);
+    //settings.props[settings.sort].screenshotWidth = Math.max(parseInt(screenshotWidth), 1);
 
     for (const element of tierHeaders) {
         element.style.width = settings.props[settings.sort].tierHeaderWidth + "px";
@@ -1746,7 +1769,7 @@ function modalEraseSingle() {
     settings.props[settings.sort].tierListColour = defaultBg;
     settings.props[settings.sort].tierHeaderWidth = defaultWidth;
     settings.props[settings.sort].tierHeaderFontSize = defaultSize;
-    settings.props[settings.sort].screenshotWidth = "";
+    //settings.props[settings.sort].screenshotWidth = "";
     document.getElementById("tier_list_caption").innerHTML = "";
     const tierHeaders = document.querySelectorAll(".tier_header");
     const tierContents = document.querySelectorAll(".tier_content");
@@ -2068,7 +2091,7 @@ function loadLegacySettings(settingsData) {
             settings.props[sort].tierListColour = (settingsData[sort] && settingsData[sort].tierListColour ? settingsData[sort].tierListColour : defaultBg);
             settings.props[sort].tierHeaderWidth = (settingsData[sort] && settingsData[sort].tierHeaderWidth ? settingsData[sort].tierHeaderWidth : defaultWidth);
             settings.props[sort].tierHeaderFontSize = (settingsData[sort] && settingsData[sort].tierHeaderFontSize ? settingsData[sort].tierHeaderFontSize : defaultSize);
-            settings.props[sort].screenshotWidth = (settingsData[sort] && settingsData[sort].screenshotWidth ? settingsData[sort].screenshotWidth : "");
+            //settings.props[sort].screenshotWidth = (settingsData[sort] && settingsData[sort].screenshotWidth ? settingsData[sort].screenshotWidth : "");
         }
 
         if (settingsData.picker && settingsData.picker == "small") {
@@ -2123,7 +2146,7 @@ function loadSettingsFromStorage() {
                 settings.props[sort].tierListColour = (settingsData.props[sort].tierListColour ? settingsData.props[sort].tierListColour : defaultBg);
                 settings.props[sort].tierHeaderWidth = (settingsData.props[sort].tierHeaderWidth ? settingsData.props[sort].tierHeaderWidth : defaultWidth);
                 settings.props[sort].tierHeaderFontSize = (settingsData.props[sort].tierHeaderFontSize ? settingsData.props[sort].tierHeaderFontSize : defaultSize);
-                settings.props[sort].screenshotWidth = (settingsData.props[sort].screenshotWidth ? settingsData.props[sort].screenshotWidth : "");
+                //settings.props[sort].screenshotWidth = (settingsData.props[sort].screenshotWidth ? settingsData.props[sort].screenshotWidth : "");
             } else {
                 settings.props[sort] = DEFAULT_PROPS;
             }
