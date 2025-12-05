@@ -514,7 +514,7 @@ function addToTier(item, tierNum, pos, noDisplay) {
     saveData();
 }
 
-function addMultiSelection(tierNum) {
+function addMultiSelection(tierNum, pos) {
     const multi = true;
 
     if (multiSelection.includes(following)) {
@@ -523,7 +523,7 @@ function addMultiSelection(tierNum) {
                 removeFromTier(item, getTierNumOf(item), multi);
             }
 
-            addToTier(item, tierNum);
+            addToTier(item, tierNum, pos + multiSelection.indexOf(item));
         }
     } else {
         for (const item of multiSelection) {
@@ -534,7 +534,7 @@ function addMultiSelection(tierNum) {
             removeFromTier(following, getTierNumOf(following));
         }
 
-        addToTier(following, tierNum);
+        addToTier(following, tierNum, pos + multiSelection.indexOf(following));
     }
 
     multiSelection = [];
@@ -1855,7 +1855,11 @@ function itemOntoTieredItem(event) {
             }
         }
     } else {
-        addToTier(following, getTierNumOf(event.target.id), getPositionOf(event.target.id));
+        if (multiSelection.length > 0) {
+            addMultiSelection(getTierNumOf(event.target.id), getPositionOf(event.target.id));
+        } else {
+            addToTier(following, getTierNumOf(event.target.id), getPositionOf(event.target.id));
+        }
     }
 }
 
