@@ -32,7 +32,6 @@ const defaultColour = "#a0a0a0";
 const defaultWidth = isMobile() ? 60 : 120;
 const defaultSize = 32;
 const sorts = ["characters", "works", "shots", "cards"];
-const windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "UDoALG", "FW", "Spinoff"];
 const spinoffs = ["IaMP", "SWR", "Soku", "DS", "GFW", "HM", "ULiL", "AoCF"];
 const maleCharacters = ["SinGyokuM", "Genjii", "Unzan", "RinnosukeMorichika", "FortuneTeller"];
 const clans = ["FujiwaranoMokou", "SoganoTojiko", "MononobenoFuto", "ToyosatomiminoMiko", "HiedanoAkyuu", "WatatsukinoToyohime", "WatatsukinoYorihime"];
@@ -1521,19 +1520,45 @@ function massRemoval(toRemove) {
     }
 }
 
-function togglePC98() {
+function togglePC98(event) {
     const pc98 = ["HRtP", "SoEW", "PoDD", "LLS", "MS"];
+    let checked = [];
 
     for (const id of pc98) {
         const element = document.getElementById(`checkbox_${id}`);
+        checked.pushStrict(element.checked);
         element.checked = !element.checked;
+    }
+
+    if (checked.length === 1) {
+        return;
+    }
+
+    // if PC-98 games were manually toggled
+    for (const id of pc98) {
+        const element = document.getElementById(`checkbox_${id}`);
+        element.checked = event.target.checked;
     }
 }
 
-function toggleWindows() {  
+function toggleWindows(event) {
+    const windows = ["EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "UDoALG", "FW", "Spinoff"];
+    let checked = [];
+
     for (const id of windows) {
         const element = document.getElementById(`checkbox_${id}`);
+        checked.pushStrict(element.checked);
         element.checked = !element.checked;
+    }
+
+    if (checked.length === 1) {
+        return;
+    }
+
+    // if Windows games were manually toggled
+    for (const id of windows) {
+        const element = document.getElementById(`checkbox_${id}`);
+        element.checked = event.target.checked;
     }
 }
 
