@@ -142,6 +142,9 @@ li {
 .instructions_list {
     text-align: left;
 }
+.screenshot_margin {
+    max-height: none !important;
+}
 .github_icon {
     background-position: -1040px 0px;
 }
