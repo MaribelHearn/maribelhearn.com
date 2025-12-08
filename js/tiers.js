@@ -1425,6 +1425,7 @@ function takeScreenshot() {
             "windowWidth": width,
             "height": height,
             "windowHeight": height,
+            "backgroundColor": "#1b232e",
             "logging": false,
             "scrollX": 0,
             "scrollY": 0
