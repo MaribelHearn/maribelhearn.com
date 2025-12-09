@@ -586,7 +586,7 @@ function setAttributes() {
 function checkHash() {
     // player in hash links to player LNNs
     if (location.hash !== "") {
-        const hash = decodeURIComponent(location.hash.substring(1));
+        const hash = decodeURIComponent(location.hash.substring(1).replace('+', "%20"));
         const players = document.getElementById("search_player").children;
 
         for (const option of players) {
