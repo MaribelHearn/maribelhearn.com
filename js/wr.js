@@ -300,6 +300,7 @@ function showWRtable(game, records) {
 
         if (score === 0) {
             document.getElementById(id).innerHTML = '-';
+            document.getElementById(id).setAttribute("data-sort", 0);
             continue;
         }
 
@@ -335,6 +336,7 @@ function showWRtable(game, records) {
         }
 
         document.getElementById(id).innerHTML = text;
+        document.getElementById(id).setAttribute("data-sort", score);
         currentScore[id] = score;
     }
 }
