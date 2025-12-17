@@ -765,7 +765,7 @@ function progressToCheckboxes(game, progress) {
         return [];
     }
 
-    if (progress == "Not cleared" || progress == "1cc" || progress.length == "2" || progress == "NBB" || progress == "NH" || progress == "NRB" || progress == 'NHB') {
+    if (progress == "Not cleared" || progress == "1cc" || progress.length == "2" || progress == "NBB" || progress == "NH" || progress == "NRB" || progress == "NHB") {
         return [progress];
     }
 
@@ -781,6 +781,11 @@ function progressToCheckboxes(game, progress) {
     if (progress.includes("NB")) {
         boxesToCheck.push("NB");
         progress = progress.replace("NB", "");
+    }
+
+    if (progress.includes("NHB")) {
+        boxesToCheck.push("NHB");
+        progress = progress.replace("NHB", "");
     }
 
     if (progress.includes("NH")) {
