@@ -53,7 +53,7 @@
         <tr>
             <th class='small_screen'></th>
             <td><ul>
-                <li><span class='sign green'>+</span> Infinite savestate slots</li>
+                <li><span class='sign green'>+</span> Good savestate support</li>
                 <li><span class='sign green'>+</span> Very accurate</li>
                 <li><span class='sign red'>−</span> Autofire scripts may have issues</li>
             </ul></td>
@@ -146,9 +146,11 @@ The following autofire scripts allow you to play more comfortably for your hands
 <img src='/assets/games/faq/pc98/neko_open.png' alt='Neko Project 21 main screen'>
 <p>To open the emulator, open <span class='code'>np21.exe</span>.</p>
 <p>To load a game, open the Harddisk tab and click Open under IDE #0. Choose your <span class='code'>.hdi</span> file.</p>
-<p>For savestates, you need to have opened the emulator at least once. Once you have done that, open the <span class='code'>np21.ini</span> file and add this line: <span class='code'>STATSAVE=true</span>. This will add the Stat tab to the emulator window. This tab is used for savestates.
-Open the Stat tab and click "Title" to change your current savestate collection. Any savestate you make will have the title in its name. This allows you to make essentially infinite savestates. To load a savestate from a different collection,
-simply change the title back to that collection's name.</p>
+<p>For savestates, you need to have opened the emulator at least once. Once you have done that, open the <span class='code'>np21.ini</span> file and add this line: <span class='code'>STATSAVE=true</span>.
+This will add the Stat tab to the emulator window; this tab is used for savestates. There are 10 slots by default, but you can organise the savestate files into folders to keep many more than 10 around.</p>
+<p>There is an unofficial, alternative Neko Project version called <strong>fmgen</strong>, which you can download here: <a href="http://nenecchi.kirara.st/#PC-98">http://nenecchi.kirara.st/#PC-98</a>.
+This version is not as up-to-date, but it offers <strong>infinite savestate slots</strong>. Open the Stat tab and click "Title" to change your current savestate collection.
+Any savestate you make will have the title in its name. This allows you to make essentially infinite savestates. To load a savestate from a different collection, simply change the title back to that collection's name.</p>
 <img src='/assets/games/faq/pc98/neko_config1.png' alt='Neko Project 21 config screen'>
 <p>Open the Emulate tab and click Configure. Adjust the settings so that it looks like the screenshot.</p>
 <p>Open the Device tab, then Memory, and set it to 1.6 MB.</p>
