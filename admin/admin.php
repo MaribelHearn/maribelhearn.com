@@ -42,6 +42,9 @@
         else if ($country == 'Netherlands') {
             return 'The-Netherlands';
         }
+        else if ($country == 'Palestinian Territory') {
+            return 'Palestine';
+        }
         return str_replace(' ', '-', $country);
     }
 
