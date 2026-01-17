@@ -1,4 +1,6 @@
 # Maribel Hearn's Web Portal
+![website-status](https://img.shields.io/website?url=https://maribelhearn.com/)
+
 This website provides a collection of conveninent Web pages that is primarily targetted at the Touhou gameplay community, such as the current world records, patch and tool downloads, and explanations of community jargon.
 It also hosts a tool to create Touhou tier lists, as well as an English translation of the results of the annual Japanese Touhou popularity poll.
 
