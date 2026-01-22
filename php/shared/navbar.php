@@ -10,8 +10,6 @@ function affiliate_sites() {
     '<span class="icon exphp_icon"></span>ExpHP\'s site</a></p>' .
     '<p><a href="https://gensakudan.com/">' .
     '<span class="icon gsd_icon"></span>Retrograde Road</a></p>' .
-    '<p><a href="https://nylilsa.github.io">' .
-    '<span class="icon nylilsa_icon"></span>Nylilsa\'s site</a></p>' .
     '<p><a href="https://zps-stg.github.io">' .
     '<span class="icon zps_icon"></span>ZPS\'s site</a></p>' .
     '<p><a href="https://touhou-memories.com/">' .
