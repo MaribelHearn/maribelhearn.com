@@ -169,7 +169,7 @@ foreach ($west_data as $key => $data) {
     ?></p>
     <p id='updaters'><?php echo _('For updates, you can contact <a href="https://bsky.app/profile/maribelhearn42.bsky.social" target="_blank">me</a> or <a href="https://www.youtube.com/@KirbyComment" target="_blank">KirbyComment</a>.') ?></p>
     <p id='history_source'><?php
-        echo _('The world record history from before September 2024 was assembled using the research at <a href="https://nylilsa.github.io" target="_blank">Nylilsa\'s GitHub page.</a>');
+        echo _('Historical records older than September 2024 were sourced from the Touhou WR History Repository, a publicly available dataset created and maintained by Nylilsa found at <a href="https://nylilsa.github.io/#/wr" target="_blank">Nylilsa\'s GitHub page</a>. Ongoing maintenance and expansion of the dataset are supported by the author through <a href="https://ko-fi.com/nylilsa">their Ko-fi</a>.');
     ?></p>
     <p id='last_modified'><?php echo (!empty($last_modified) ? format_lm($last_modified, $lang) : '') ?></p>
     <h2><?php echo _('Contents') ?></h2>
