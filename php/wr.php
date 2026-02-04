@@ -565,7 +565,7 @@ foreach ($west_data as $key => $data) {
                         }
                         echo '<tr>';
                         echo '<td class="' . $data['category']['game'] . 'p">' . _($data['category']['game']) . _(' ') . _($data['category']['difficulty']) . _(' ') . _($data['category']['shot']) . '</td>';
-                        echo '<td>' . number_format($data['score'], 0, '.', ',') . '</td>';
+                        echo '<td data-sort="' . number_format($data['score'], 0, '', '') . '">' . number_format($data['score'], 0, '.', ',') . '</td>';
                         echo '<td>' . $data['player'] . '</td>';
                         echo '<td>' . $replay . '</td>';
                         echo '<td>' . $video . '</td>';

@@ -536,7 +536,7 @@ function showHistory(category, game, records, idSuffix) {
     historyBody.innerHTML = "";
 
     for (const data of records) {
-        let replay, video, shot, date;
+        let replay, video;
 
         if (!data.replay) {
             replay = '-';
@@ -550,15 +550,21 @@ function showHistory(category, game, records, idSuffix) {
             video = `<a href='${data.video}' target='_blank'>${_("Link")}</a>`;
         }
 
-        shot = (game == "GFW" && data.category.difficulty == "Extra" ? '-' : _(data.category.shot));
-        date = (!data.date ? _("Unknown") : formatDate(data.date));
+        let shot = (game == "GFW" && data.category.difficulty == "Extra" ? '-' : _(data.category.shot));
+        let date = (!data.date ? _("Unknown") : formatDate(data.date));
         historyBody.innerHTML += "<tr id='" + data.score + "'></tr>";
-        document.getElementById(data.score).innerHTML = `<td>${sep(data.score)}</td>`;
+        document.getElementById(data.score).innerHTML = `<td data-sort="${data.score}">${sep(data.score)}</td>`;
         document.getElementById(data.score).innerHTML += `<td>${data.player}</td>`;
         document.getElementById(data.score).innerHTML += `<td>${shot}</td>`;
         document.getElementById(data.score).innerHTML += `<td>${replay}</td>`;
         document.getElementById(data.score).innerHTML += `<td>${video}</td>`;
-        document.getElementById(data.score).innerHTML += `<td>${date}</td>`;
+
+        if (date === _("Unknown")) {
+            document.getElementById(data.score).innerHTML += `<td>${date}</td>`;
+        } else {
+            let dateSort = new Date(data.date).toISOString().split("T")[0].replace(/-/g, "");
+            document.getElementById(data.score).innerHTML += `<td data-sort="${dateSort}">${date}</td>`;
+        }
         numberOfWRs += 1;
     }
 
