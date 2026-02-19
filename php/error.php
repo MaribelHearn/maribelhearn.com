@@ -6,6 +6,7 @@ function error_title($error_code) {
         case '401': return '401 Unauthorized';
         case '403': return '403 Forbidden';
         case '500': return '500 Internal Server Error';
+        case '502': return '502 Bad Gateway';
         case '503': return '503 Service Unavailable';
         default: return '404 Not Found';
     }
@@ -16,6 +17,7 @@ function error_text($error_code) {
         case '401': return 'You are not authorized to access this resource.';
         case '403': return 'You do not have permission to access this resource.';
         case '500': return 'The server encountered an internal error or misconfiguration and was unable to complete your request.';
+        case '502': return 'The server was unable to complete your request. Please try again later.';
         case '503': return 'The server could not handle your request.';
         default: return 'You got only 404 points? That\'s not a very good score. I would suggest you go for at least 1 billion!';
     }
@@ -24,7 +26,7 @@ function error_text($error_code) {
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
     <p class='center'><strong><?php
-        $supported_errors = ['400', '401', '403', '500', '503'];
+        $supported_errors = ['400', '401', '403', '500', '502', '503'];
         if ($error_code == '404' || !in_array($error_code, $supported_errors)) {
             $description = '404 Not Found';
             $url = substr($_SERVER['REQUEST_URI'], 1);
