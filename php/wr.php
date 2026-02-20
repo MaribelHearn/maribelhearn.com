@@ -546,7 +546,7 @@ foreach ($west_data as $key => $data) {
                     <th class='general_header'><?php echo _('Date') ?></th>
                 </tr></thead>
                 <tbody id='recentbody'><?php
-                    $recent = curl_get($API_BASE . '/api/v1/replay/?limit=' . $RECENT_LIMIT . '&ordering=-date&type=Score&region=Eastern&verified=true');
+                    $recent = curl_get($API_BASE . '/api/v1/replay/?limit=' . $RECENT_LIMIT . '&ordering=-date,-score&type=Score&region=Eastern&verified=true');
                     $recent = json_decode($recent, true);
                     $recent = $recent['results'];
                     foreach ($recent as $key => $data) {
