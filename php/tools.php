@@ -204,6 +204,12 @@
 		echo _('Modifications to the main <span class="code">.dat</span> files of the games ' .
 		'that change the way the game looks.');
 	?></p>
+	<p><strong>THRotator by massanoori</strong></p>
+	<p><?php
+		echo _('Changes the screen layout to be vertically oriented, similar to arcade shoot \'em up games. Ideal for vertical displays.');
+	?></p>
+	<p><a href='https://throtator-manual.readthedocs.io/en/stable/' target='_blank'><?php echo _('Download') ?></a>
+	<p><a href='https://maribelhearn.com/mirror/THRotater_th20.zip'><?php echo _('Download') ?> (th20 update)</a>
     <p><strong><?php echo _('Graphical Patches by ') ?><a href='https://twitter.com/Gastari_' target='_blank'>Gastari</a></strong></p>
     <p><?php
 		echo _('Includes PCB and HSiFS in MS Paint style, an emoji-themed version of UFO and ' .
