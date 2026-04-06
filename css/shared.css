@@ -162,6 +162,7 @@ img {
 }
 .flag {
     display: inline-block;
+    image-rendering: crisp-edges;
 }
 .language {
     margin-top: 0px;
@@ -173,6 +174,7 @@ img {
     display: inline-block;
     width: 16px;
     height: 16px;
+    image-rendering: crisp-edges;
 }
 .overflow {
     overflow-x: auto;

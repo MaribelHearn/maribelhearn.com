@@ -61,6 +61,7 @@ li {
 .item {
     cursor: pointer;
     display: inline-block;
+    image-rendering: crisp-edges;
 }
 .list_characters {
     width: 80px;

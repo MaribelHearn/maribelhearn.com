@@ -11,6 +11,7 @@ table, th, td {
     background-repeat: no-repeat;
     width: 115px;
     height: 115px;
+    image-rendering: crisp-edges;
 }
 .charslot {
     background-image: url('/assets/shared/spritesheets/characters_sheet.png');

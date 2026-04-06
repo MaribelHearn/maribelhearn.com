@@ -55,6 +55,7 @@ ol > li {
     cursor: pointer;
     display: inline-block;
     background-image: url('/assets/games/pofv/images/faces.png');
+    image-rendering: crisp-edges;
 }
 .char:hover {
     background-color: #bbb;
