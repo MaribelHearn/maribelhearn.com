@@ -44,6 +44,7 @@
 	<div>
     	<p><a href='https://maribelhearn.com/mirror/VsyncPatch.zip' target='_blank'><?php echo _('Download') ?></a></p>
     	<p><a href='https://maribelhearn.com/mirror/VsyncPatchUnicode.zip' target='_blank'><?php echo _('Unicode vpatch for EoSD (th06)') ?></a></p>
+    	<p><a href='https://maribelhearn.com/mirror/VsyncPatchPoFV.zip' target='_blank'><?php echo _('Alternate vpatch for PoFV (th09)') ?></a></p>
 	</div>
 	<!-- Thprac -->
 	<hr>
