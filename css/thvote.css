@@ -213,6 +213,10 @@
 .guide {
     width: 75%;
 }
+.thin {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
 #age_summary {
     display: table;
 }

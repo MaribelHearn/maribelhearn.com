@@ -13,13 +13,13 @@
         $subpage_title = (object) array();
         $subpage_title->extras = 'Extra Statistics';
         $subpage_title->guide = 'Voting Guide';
-        echo '<h1>THWiki Popularity Poll 2025 Results' . (!empty($subpage) && property_exists($subpage_title, $subpage) ? ' - ' . $subpage_title->{$subpage} : '') . '</h1>';
+        echo '<h1>THWiki Popularity Poll Results' . (!empty($subpage) && property_exists($subpage_title, $subpage) ? ' - ' . $subpage_title->{$subpage} : '') . '</h1>';
         if (!empty($_GET['redirect'])) {
             echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
         }
-        if ($subpage == 'extras' || $subpage == 'guide') {
+        if ($subpage == 'extras' || $subpage == 'guide' || (intval($subpage) >= 2017 && intval($subpage) <= 2024)) {
             include_once 'php/subpages/thvote/' . $subpage . '.php';
-        } else if (empty($subpage)) {
+        } else if (empty($subpage) || intval($subpage) == 2025) {
             include_once 'php/subpages/thvote/main_page.php';
         } else {
             echo '<p>No such page.</p>';

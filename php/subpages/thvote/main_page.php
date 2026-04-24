@@ -1,3 +1,4 @@
+<?php echo '<p>' . ($subpage == '2025' ? '<p><a href="/thvote/2024">2024 =&gt;</a></p>' : '') . '</p>' ?>
 <p>An English translation of the full results of the 2025 incarnation of the annual THWiki Popularity Poll, held from 15 August 2025 to 29 August 2025.</p>
 <!--<p>The 2025 poll is currently ongoing and it has <strong>partial English support!</strong> See the guide page linked below for more information.</p>-->
 <!--<p>The full results, including the questionnaire, comments, and detailed statistics per character, were released on [date].</p>-->
@@ -6,11 +7,10 @@ It does not mean the results are not final. The number of votes for the characte
 music and works will not change when the full results are published.</p>-->
 <p>All of the table columns are sortable.</p>
 <p>Source: <a href='https://toho-vote.info/'>https://toho-vote.info/</a></p>
-    <p class='donation wide center'>
-        <a href='https://ko-fi.com/maribelhearn42'>
-            <span class='icon kofi_icon'></span> Support me
-        </a>
-    </p>
+<?php if (empty($subpage)) echo '<p class="thin">History can be found here: <a href="/thvote/2024">Past Voting Results (separate page)</a>.</p>' ?>
+<?php if (empty($subpage)) echo '<p class="thin">Currently, only the old polls up until 2017 are included in the history. Older polls may be added later.</p>' ?>
+<?php if (empty($subpage)) echo '<p class="thin">You may navigate the history using the arrow keys.</p>' ?>
+<?php if (empty($subpage)) echo '<p class="donation wide center"><a href="https://ko-fi.com/maribelhearn42"><span class="icon kofi_icon"></span> Support me</a></p>' ?>
 <!--<h2>How do I vote?</h2>
 <p>Please have a look at the <a href='/thvote/guide'>voting guide</a>.</p>-->
 <!--<p>The official site now has <strong>English translated results!</strong> Go here to read them: <a href='https://toho-vote.info/'>https://toho-vote.info/</a></p>
@@ -21,14 +21,13 @@ music and works will not change when the full results are published.</p>-->
     <p><a href='#music'>Music</a></p>
     <p><a href='#works'>Works</a></p>
     <p><a href='#questionnaire'>Questionnaire</a></p>
-    <br>
-    <p><a href='/thvote/extras'>Extra Statistics (separate page)</a></p>
+    <?php if (empty($subpage)) echo '<br><p><a href="/thvote/extras">Extra Statistics (separate page)</a></p>' ?>
 </div>
 <h2>Valid responses</h2>
 <div class='contents'>
-    <p>Characters: 58,509 <small>(in 2024: 56,855; in 2023: 52,447; in 2022: 51,652)</small></p>
-    <p>Music: 37,970 <small>(in 2024: 37,742; in 2023: 36,451; in 2022: 37,659)</small></p>
-    <p>Works: 29,791 <small>(in 2024: 29,083; in 2023: 28,171; in 2022: 28,558)</small></p>
+    <p>Characters: 58,509 <?php if (empty($subpage)) echo '<small>(in 2024: 56,855; in 2023: 52,447; in 2022: 51,652)</small>' ?></p>
+    <p>Music: 37,970 <?php if (empty($subpage)) echo '<small>(in 2024: 37,742; in 2023: 36,451; in 2022: 37,659)</small>' ?></p>
+    <p>Works: 29,791 <?php if (empty($subpage)) echo '<small>(in 2024: 29,083; in 2023: 28,171; in 2022: 28,558)</small>' ?></p>
 </div>
 <h2 id='characters'>Characters</h2>
 <div class='overflow'><table class='poll table sortable noborders'>
@@ -9523,7 +9522,7 @@ music and works will not change when the full results are published.</p>-->
                 <td>5.73%</td>
             </tr>
             <tr>
-                <td><strong>UDoALG - now</strong><br>(August 2023 - August 2025)</td>
+                <td><strong>UDoALG - now</strong><br>(August 2023 - 29 August 2025)</td>
                 <td>1,319</td>
                 <td>8.74%</td>
             </tr>
@@ -10202,4 +10201,3 @@ music and works will not change when the full results are published.</p>-->
     <footer><strong><a href='#top'>Back to Top</a></strong></footer>
 </section>
 </div>
-<?php // language detection hack ?>

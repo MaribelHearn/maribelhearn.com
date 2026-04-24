@@ -23,4 +23,22 @@ function init() {
     }
 }
 
+function navigateHistory(event) {
+    if (event.key && event.key.startsWith("Arrow")) {
+        const direction = event.key.replace("Arrow", "");
+        const year = parseInt(window.location.pathname.split('/')[2]);
+        
+        if (direction === "Left" && year !== 2025) {
+            window.location.pathname = `/thvote/${year + 1}`;
+        } else if (direction === "Right" && year !== 2017) {
+            window.location.pathname = `/thvote/${year - 1}`;
+        }
+    }
+}
+
+// history
+if (window.location.pathname.includes("20")) {
+    document.body.addEventListener("keydown", navigateHistory, false)
+}
+
 window.addEventListener("DOMContentLoaded", init, false);
