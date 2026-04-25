@@ -45,6 +45,9 @@
         else if ($country == 'Palestinian Territory') {
             return 'Palestine';
         }
+        else if ($country == 'Congo Republic') {
+            return 'Republic-of-the-Congo';
+        }
         return str_replace(' ', '-', $country);
     }
 
