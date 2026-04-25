@@ -1,4 +1,4 @@
-<p><a href='/thvote/2018'>&lt;= 2018</a></p>
+<p><a href='/thvote/2018'>&lt;= 2018</a> <a href='/thvote/2016'>2016 =&gt;</a></p>
 <p>An English translation of the full results of the 2017 incarnation of the annual THWiki Popularity Poll, held from 15 January 2017 to 21 January 2017.</p>
 <p>All of the table columns are sortable.</p>
 <p>Source: <a href='http://toho-vote.info/'>http://toho-vote.info/</a></p>
@@ -244,7 +244,7 @@
         <tr><td>1</td><td>1</td><td>1</td><td>U.N. Owen Was Her?</td><td>9,513</td><td>2,028</td><td>762</td></tr>
         <tr><td>2</td><td>2</td><td>2</td><td>Septette of Dead Princess</td><td>9,367</td><td>1,773</td><td>682</td></tr>
         <tr><td>3</td><td>4</td><td>3</td><td>Hartmann's Youkai Girl</td><td>6,070</td><td>779</td><td>474</td></tr>
-        <tr><td>4</td><td>3</td><td>4</td><td>Bloom Nobly, Cherry Blossoms of Sumizome ~ Border of Life</td><td>5,874</td><td>872</td><td>409</td></tr>
+        <tr><td>4</td><td>3</td><td>4</td><td>Bloom Nobly, Ink-Black Cherry Blossom ~ Border of Life</td><td>5,874</td><td>872</td><td>409</td></tr>
         <tr><td>5</td><td>5</td><td>6</td><td>Reach for the Moon ~ Immortal Smoke</td><td>5,728</td><td>713</td><td>370</td></tr>
         <tr><td>6</td><td>6</td><td>9</td><td>Necrofantasia</td><td>5,311</td><td>617</td><td>412</td></tr>
         <tr><td>7</td><td>10</td><td>－</td><td>Pure Furies ~ Whereabouts of the Heart</td><td>5,115</td><td>785</td><td>572</td></tr>
@@ -259,7 +259,7 @@
         <tr><td>16</td><td>17</td><td>22</td><td>Lunar Clock ~ Luna Dial</td><td>3,415</td><td>398</td><td>205</td></tr>
         <tr><td>17</td><td>16</td><td>11</td><td>Last Remote</td><td>3,303</td><td>333</td><td>278</td></tr>
         <tr><td>18</td><td>19</td><td>20</td><td>Native Faith</td><td>3,097</td><td>295</td><td>252</td></tr>
-        <tr><td>19</td><td>18</td><td>19</td><td>Flight in the Bamboo Cutter ~ Lunatic Princess</td><td>2,960</td><td>275</td><td>207</td></tr>
+        <tr><td>19</td><td>18</td><td>19</td><td>Flight of the Bamboo Cutter ~ Lunatic Princess</td><td>2,960</td><td>275</td><td>207</td></tr>
         <tr><td>20</td><td>20</td><td>16</td><td>Desire Drive</td><td>2,884</td><td>272</td><td>227</td></tr>
         <tr><td>21</td><td>22</td><td>17</td><td>Gensokyo Millenium ~ History of the Moon</td><td>2,883</td><td>298</td><td>218</td></tr>
         <tr><td>22</td><td>23</td><td>21</td><td>Faith Is for the Transient People</td><td>2,724</td><td>265</td><td>193</td></tr>
@@ -677,7 +677,7 @@
         <tr><td>430</td><td>419</td><td>395</td><td>Touhou Fuumaroku ~ A Phantom's Boisterous Dance</td><td>8</td><td>0</td><td>3</td></tr>
         <tr><td>430</td><td>445</td><td>436</td><td>Forest of Tono</td><td>8</td><td>0</td><td>2</td></tr>
         <tr><td>430</td><td>408</td><td>380</td><td>Illusion of Flowers, Air of Scarlet Dream</td><td>8</td><td>1</td><td>2</td></tr>
-        <tr><td>437</td><td>384</td><td>388</td><td>An Ice Fairy in Spring -Still-</td><td>7</td><td>0</td><td>2</td></tr>
+        <tr><td>437</td><td>384</td><td>388</td><td>An Ice Fairy in Spring - still -</td><td>7</td><td>0</td><td>2</td></tr>
         <tr><td>437</td><td>408</td><td>395</td><td>Selection</td><td>7</td><td>0</td><td>2</td></tr>
         <tr><td>437</td><td>422</td><td>395</td><td>Warrior Maiden ~ Heart of Valkyrie</td><td>7</td><td>0</td><td>2</td></tr>
         <tr><td>440</td><td>422</td><td>449</td><td>The Moon</td><td>6</td><td>0</td><td>0</td></tr>
@@ -1274,7 +1274,6 @@
                 <col class='col5 w7'>
                 <col class='col2 w7'>
                 <col class='col3 w7'>
-                <col class='col4 w7'>
             </colgroup>
             <thead>
                 <tr>
@@ -1292,11 +1291,9 @@
                     <th>Doujin shops</th>
                     <th>Music games</th>
                     <th>Other games</th>
-                    <th>Mobile apps</th>
                 </tr>
             </thead>
             <tbody>
-                <tr><th>Period of time</th><th>Offline</th><th>Online</th><th>Personal site</th><th>Image site/SNS</th><th>Anonymous board</th><th>Video site</th><th>Twitter</th><th>Magazine/TV</th><th>Doujinshi</th><th>Doujin stores</th><th>VGM</th><th>STG</th><th>Fighters</th></tr>
                 <tr><th rowspan='2'>PC98 - SG</th><td>36</td><td>7</td><td>4</td><td>0</td><td>2</td><td>8</td><td>1</td><td>0</td><td>13</td><td>3</td><td>4</td><td>16</td><td>1</td></tr>
                 <tr><td>37.89%</td><td>7.37%</td><td>4.21%</td><td>0%</td><td>2.11%</td><td>8.42%</td><td>1.05%</td><td>0%</td><td>13.68%</td><td>3.16%</td><td>4.21%</td><td>16.84%</td><td>1.05%</td></tr>
                 <tr><th rowspan='2'>SG - EoSD</th><td>52</td><td>17</td><td>11</td><td>6</td><td>4</td><td>31</td><td>1</td><td>3</td><td>13</td><td>3</td><td>8</td><td>18</td><td>1</td></tr>
@@ -1395,7 +1392,7 @@
             <tr><td>Voted 4 or more times</td><td>3,533</td><td>21.61%</td></tr>
         </tbody>
     </table></div>
-    <p><a href='/thvote/2018'>&lt;= 2018</a></p>
+    <p><a href='/thvote/2018'>&lt;= 2018</a> <a href='/thvote/2016'>2016 =&gt;</a></p>
     <p><strong><a href='#top'>Back to Top</a></strong></p>
 </section>
 </div>

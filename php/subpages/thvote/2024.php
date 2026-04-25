@@ -287,7 +287,7 @@
         <tr><td>2</td><td>2</td><td>2</td><td>Septette for a Dead Princess</td><td>12,140</td><td>2,088</td><td>1,520</td></tr>
         <tr><td>3</td><td>3</td><td>3</td><td>Hartmann's Youkai Girl</td><td>9,811</td><td>1,579</td><td>1,341</td></tr>
         <tr><td>4</td><td>4</td><td>4</td><td>Reach for the Moon, Immortal Smoke</td><td>8,841</td><td>1,271</td><td>1,095</td></tr>
-        <tr><td>5</td><td>5</td><td>5</td><td>Love-Coloured Master Spark（Love-coloured Magic）</td><td>8,785</td><td>1,100</td><td>1,203</td></tr>
+        <tr><td>5</td><td>5</td><td>5</td><td>Love-Coloured Master Spark (Love-coloured Magic)</td><td>8,785</td><td>1,100</td><td>1,203</td></tr>
         <tr><td>6</td><td>6</td><td>8</td><td>The Gensokyo The Gods Loved</td><td>8,361</td><td>936</td><td>1,197</td></tr>
         <tr><td>7</td><td>8</td><td>7</td><td>Shanghai Teahouse ~ Chinese Tea</td><td>6,630</td><td>983</td><td>721</td></tr>
         <tr><td>8</td><td>7</td><td>6</td><td>Entrust this World to Idols ~ Idolatrize World</td><td>6,306</td><td>1,010</td><td>752</td></tr>
@@ -299,7 +299,7 @@
         <tr><td>14</td><td>13</td><td>14</td><td>Broken Moon</td><td>4,606</td><td>468</td><td>545</td></tr>
         <tr><td>15</td><td>16</td><td>15</td><td>Native Faith</td><td>4,541</td><td>517</td><td>677</td></tr>
         <tr><td>16</td><td>18</td><td>18</td><td>Satori Maiden ~ 3rd eye</td><td>4,439</td><td>479</td><td>562</td></tr>
-        <tr><td>17</td><td>20</td><td>19</td><td>Flight in the Bamboo Cutter ~ Lunatic Princess</td><td>4,379</td><td>368</td><td>542</td></tr>
+        <tr><td>17</td><td>20</td><td>19</td><td>Flight of the Bamboo Cutter ~ Lunatic Princess</td><td>4,379</td><td>368</td><td>542</td></tr>
         <tr><td>18</td><td>12</td><td>13</td><td>Ghostly Band ~ Phantom Ensemble</td><td>4,361</td><td>451</td><td>552</td></tr>
         <tr><td>19</td><td>19</td><td>22</td><td>Gensokyo Millennium ~ History of the Moon</td><td>4,324</td><td>426</td><td>531</td></tr>
         <tr><td>20</td><td>17</td><td>17</td><td>Maiden's Capriccio / Dream Battle</td><td>4,316</td><td>390</td><td>509</td></tr>
@@ -820,7 +820,7 @@
         <tr><td>531</td><td>516</td><td>502</td><td>Game Over</td><td>10</td><td>0</td><td>1</td></tr>
         <tr><td>531</td><td>505</td><td>478</td><td>Inventive City</td><td>10</td><td>0</td><td>0</td></tr>
         <tr><td>531</td><td>447</td><td>-</td><td>Do Beasts Have Intelligence?</td><td>10</td><td>0</td><td>3</td></tr>
-        <tr><td>531</td><td>484</td><td>-</td><td>Pre-Battle Conversation theme 2（曲名不明）</td><td>10</td><td>0</td><td>2</td></tr>
+        <tr><td>531</td><td>484</td><td>-</td><td>UDoALG Story 2nd Half Song</td><td>10</td><td>0</td><td>2</td></tr>
         <tr><td>539</td><td>546</td><td>540</td><td>Solitary Place</td><td>9</td><td>0</td><td>1</td></tr>
         <tr><td>539</td><td>528</td><td>502</td><td>Bad Omen</td><td>9</td><td>0</td><td>2</td></tr>
         <tr><td>539</td><td>500</td><td>507</td><td>The Arcane Is Revealed</td><td>9</td><td>1</td><td>1</td></tr>
@@ -852,7 +852,7 @@
         <tr><td>557</td><td>546</td><td>555</td><td>Lotus Road</td><td>6</td><td>0</td><td>2</td></tr>
         <tr><td>557</td><td>555</td><td>507</td><td>Shinto Shrine</td><td>6</td><td>0</td><td>1</td></tr>
         <tr><td>557</td><td>581</td><td>576</td><td>Titled Maid</td><td>6</td><td>0</td><td>1</td></tr>
-        <tr><td>557</td><td>528</td><td>-</td><td>Pre-Battle Conversation theme 1（曲名不明）</td><td>6</td><td>0</td><td>0</td></tr>
+        <tr><td>557</td><td>528</td><td>-</td><td>UDoALG Story 1st Half Song</td><td>6</td><td>0</td><td>0</td></tr>
         <tr><td>571</td><td>555</td><td>507</td><td>A New Wind at the Shrine</td><td>5</td><td>0</td><td>1</td></tr>
         <tr><td>571</td><td>555</td><td>555</td><td>Forms of Manifested Folklore</td><td>5</td><td>0</td><td>2</td></tr>
         <tr><td>571</td><td>-</td><td>-</td><td>Arrival of the Winds of the Era</td><td>5</td><td>0</td><td>0</td></tr>

@@ -268,14 +268,14 @@
         <tr><td>1</td><td>2</td><td>1</td><td>U.N. Owen Was Her?</td><td>8,568</td><td>1,771</td><td>661</td></tr>
         <tr><td>2</td><td>1</td><td>2</td><td>Septette for a Dead Princess</td><td>8,239</td><td>1,664</td><td>574</td></tr>
         <tr><td>3</td><td>4</td><td>4</td><td>Hartmann's Youkai Girl</td><td>6,204</td><td>856</td><td>495</td></tr>
-        <tr><td>4</td><td>-</td><td>-</td><td>Entrust this World to Idols　〜 Idoratrize World</td><td>5,655</td><td>1,045</td><td>691</td></tr>
+        <tr><td>4</td><td>-</td><td>-</td><td>Entrust this World to Idols　〜 Idolatrize World</td><td>5,655</td><td>1,045</td><td>691</td></tr>
         <tr><td>5</td><td>3</td><td>3</td><td>Pure Furies ~ Whereabouts of the Heart</td><td>5,351</td><td>906</td><td>554</td></tr>
         <tr><td>6</td><td>5</td><td>5</td><td>Bloom Nobly, Ink-Black Cherry Blossom ~ Border of Life</td><td>5,051</td><td>683</td><td>320</td></tr>
         <tr><td>7</td><td>6</td><td>7</td><td>Reach for the Moon, Immortal Smoke</td><td>4,943</td><td>589</td><td>349</td></tr>
         <tr><td>8</td><td>9</td><td>8</td><td>Shanghai Teahouse ~ Chinese Tea</td><td>4,588</td><td>722</td><td>278</td></tr>
         <tr><td>9</td><td>8</td><td>9</td><td>The Gensokyo The Gods Loved</td><td>4,455</td><td>415</td><td>360</td></tr>
         <tr><td>10</td><td>7</td><td>6</td><td>Necrofantasia</td><td>4,390</td><td>467</td><td>307</td></tr>
-        <tr><td>11</td><td>12</td><td>12</td><td>Love-Coloured Master Spark（Love-coloured Magic）</td><td>4,110</td><td>410</td><td>268</td></tr>
+        <tr><td>11</td><td>12</td><td>12</td><td>Love-Coloured Master Spark (Love-coloured Magic)</td><td>4,110</td><td>410</td><td>268</td></tr>
         <tr><td>12</td><td>10</td><td>11</td><td>Broken Moon</td><td>3,820</td><td>369</td><td>274</td></tr>
         <tr><td>13</td><td>11</td><td>10</td><td>Inchlings of the Shining Needle ~ Little Princess</td><td>3,490</td><td>421</td><td>304</td></tr>
         <tr><td>14</td><td>15</td><td>13</td><td>Ghostly Band ~ Phantom Ensemble</td><td>3,081</td><td>354</td><td>221</td></tr>
@@ -283,7 +283,7 @@
         <tr><td>16</td><td>19</td><td>16</td><td>Lunar Clock ~ Luna Dial</td><td>2,937</td><td>362</td><td>182</td></tr>
         <tr><td>17</td><td>14</td><td>15</td><td>Satori Maiden ~ 3rd eye</td><td>2,894</td><td>306</td><td>202</td></tr>
         <tr><td>18</td><td>16</td><td>13</td><td>Emotional Skyscraper ~ Cosmic Mind</td><td>2,805</td><td>284</td><td>224</td></tr>
-        <tr><td>19</td><td>21</td><td>18</td><td>Flight in the Bamboo Cutter ~ Lunatic Princess</td><td>2,730</td><td>234</td><td>206</td></tr>
+        <tr><td>19</td><td>21</td><td>18</td><td>Flight of the Bamboo Cutter ~ Lunatic Princess</td><td>2,730</td><td>234</td><td>206</td></tr>
         <tr><td>20</td><td>13</td><td>22</td><td>Tonight Stars an Easygoing Egoist (Live ver.) ~ Egoistic Flowers.</td><td>2,679</td><td>247</td><td>231</td></tr>
         <tr><td>21</td><td>17</td><td>17</td><td>Last Remote</td><td>2,667</td><td>240</td><td>185</td></tr>
         <tr><td>22</td><td>24</td><td>26</td><td>Maiden's Capriccio / Dream Battle</td><td>2,515</td><td>229</td><td>172</td></tr>

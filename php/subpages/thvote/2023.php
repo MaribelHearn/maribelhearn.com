@@ -286,7 +286,7 @@
         <tr><td>2</td><td>2</td><td>2</td><td>Septette for a Dead Princess</td><td>11,605</td><td>2,114</td><td>1,319</td></tr>
         <tr><td>3</td><td>3</td><td>4</td><td>Hartmann's Youkai Girl</td><td>8,519</td><td>1,314</td><td>1,064</td></tr>
         <tr><td>4</td><td>4</td><td>5</td><td>Reach for the Moon, Immortal Smoke</td><td>7,901</td><td>1,120</td><td>907</td></tr>
-        <tr><td>5</td><td>5</td><td>6</td><td>Love-Coloured Master Spark（Love-coloured Magic）</td><td>7,479</td><td>913</td><td>922</td></tr>
+        <tr><td>5</td><td>5</td><td>6</td><td>Love-Coloured Master Spark (Love-coloured Magic)</td><td>7,479</td><td>913</td><td>922</td></tr>
         <tr><td>6</td><td>8</td><td>8</td><td>The Gensokyo The Gods Loved</td><td>6,786</td><td>761</td><td>901</td></tr>
         <tr><td>7</td><td>6</td><td>3</td><td>Entrust this World to Idols ~ Idolatrize World</td><td>6,775</td><td>1,091</td><td>786</td></tr>
         <tr><td>8</td><td>7</td><td>7</td><td>Shanghai Teahouse ~ Chinese Tea</td><td>6,349</td><td>950</td><td>624</td></tr>
@@ -301,7 +301,7 @@
         <tr><td>17</td><td>17</td><td>18</td><td>Maiden's Capriccio / Dream Battle</td><td>4,158</td><td>388</td><td>454</td></tr>
         <tr><td>18</td><td>18</td><td>20</td><td>Satori Maiden ~ 3rd eye</td><td>3,913</td><td>454</td><td>435</td></tr>
         <tr><td>19</td><td>22</td><td>21</td><td>Gensokyo Millennium ~ History of the Moon</td><td>3,790</td><td>369</td><td>442</td></tr>
-        <tr><td>20</td><td>19</td><td>17</td><td>Flight in the Bamboo Cutter ~ Lunatic Princess</td><td>3,570</td><td>319</td><td>379</td></tr>
+        <tr><td>20</td><td>19</td><td>17</td><td>Flight of the Bamboo Cutter ~ Lunatic Princess</td><td>3,570</td><td>319</td><td>379</td></tr>
         <tr><td>21</td><td>21</td><td>22</td><td>Tonight Stars an Easygoing Egoist (Live ver.) ~ Egoistic Flowers.</td><td>3,323</td><td>371</td><td>341</td></tr>
         <tr><td>22</td><td>27</td><td>23</td><td>Emotional Skyscraper ~ Cosmic Mind</td><td>3,107</td><td>366</td><td>317</td></tr>
         <tr><td>23</td><td>23</td><td>24</td><td>Flowering Night</td><td>3,055</td><td>263</td><td>401</td></tr>
@@ -769,7 +769,7 @@
         <tr><td>484</td><td>486</td><td>462</td><td>Blade of Banishment</td><td>16</td><td>2</td><td>4</td></tr>
         <tr><td>484</td><td>486</td><td>462</td><td>Iris</td><td>16</td><td>2</td><td>2</td></tr>
         <tr><td>484</td><td>494</td><td>420</td><td>Phantasmagoria</td><td>16</td><td>1</td><td>2</td></tr>
-        <tr><td>484</td><td>-</td><td>-</td><td>Pre-battle conversation theme 2 (unknown name)</td><td>16</td><td>0</td><td>7</td></tr>
+        <tr><td>484</td><td>-</td><td>-</td><td>UDoALG Story 2nd Half Song</td><td>16</td><td>0</td><td>7</td></tr>
         <tr><td>489</td><td>451</td><td>447</td><td>A Huge Shadow and a Tiny Conclusion</td><td>15</td><td>0</td><td>1</td></tr>
         <tr><td>489</td><td>462</td><td>429</td><td>Newshound</td><td>15</td><td>2</td><td>1</td></tr>
         <tr><td>489</td><td>486</td><td>483</td><td>Oriental Magician</td><td>15</td><td>0</td><td>2</td></tr>
@@ -817,7 +817,7 @@
         <tr><td>528</td><td>514</td><td>498</td><td>Selection</td><td>8</td><td>1</td><td>3</td></tr>
         <tr><td>528</td><td>532</td><td>511</td><td>Magic Formation ~ Magic Square</td><td>8</td><td>1</td><td>1</td></tr>
         <tr><td>528</td><td>514</td><td>459</td><td>Dream Machine ~ Innocent Power</td><td>8</td><td>1</td><td>0</td></tr>
-        <tr><td>528</td><td>-</td><td>-</td><td>Pre-battle conversation theme 1 (unknown name)</td><td>8</td><td>0</td><td>2</td></tr>
+        <tr><td>528</td><td>-</td><td>-</td><td>UDoALG Story 1st Half Song</td><td>8</td><td>0</td><td>2</td></tr>
         <tr><td>537</td><td>494</td><td>472</td><td>Usual Days</td><td>7</td><td>0</td><td>3</td></tr>
         <tr><td>537</td><td>478</td><td>545</td><td>A Popular Location</td><td>7</td><td>0</td><td>1</td></tr>
         <tr><td>537</td><td>540</td><td>533</td><td>An Unpopular Location</td><td>7</td><td>0</td><td>0</td></tr>

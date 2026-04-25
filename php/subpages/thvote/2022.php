@@ -292,7 +292,7 @@
         <tr><td>16</td><td>15</td><td>24</td><td>Tomboyish Girl in Love</td><td>4,617</td><td>552</td><td>526</td></tr>
         <tr><td>17</td><td>18</td><td>22</td><td>Maiden's Capriccio / Dream Battle</td><td>4,031</td><td>359</td><td>406</td></tr>
         <tr><td>18</td><td>20</td><td>17</td><td>Satori Maiden ~ 3rd eye</td><td>3,544</td><td>406</td><td>350</td></tr>
-        <tr><td>19</td><td>17</td><td>19</td><td>Flight in the Bamboo Cutter ~ Lunatic Princess</td><td>3,381</td><td>278</td><td>321</td></tr>
+        <tr><td>19</td><td>17</td><td>19</td><td>Flight of the Bamboo Cutter ~ Lunatic Princess</td><td>3,381</td><td>278</td><td>321</td></tr>
         <tr><td>20</td><td>28</td><td>29</td><td>Lunatic Eyes ~ Invisible Full Moon</td><td>3,357</td><td>270</td><td>334</td></tr>
         <tr><td>21</td><td>22</td><td>20</td><td>Tonight Stars an Easygoing Egoist (Live ver.) ~ Egoistic Flowers.</td><td>3,317</td><td>368</td><td>338</td></tr>
         <tr><td>22</td><td>21</td><td>25</td><td>Gensokyo Millennium ~ History of the Moon</td><td>3,303</td><td>329</td><td>314</td></tr>

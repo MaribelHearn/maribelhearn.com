@@ -278,7 +278,7 @@
         <tr><td>3</td><td>4</td><td>-</td><td>Entrust this World to Idols ~ Idolatrize World</td><td>7,107</td><td>1,271</td><td>826</td></tr>
         <tr><td>4</td><td>3</td><td>4</td><td>Hartmann's Youkai Girl</td><td>6,211</td><td>854</td><td>616</td></tr>
         <tr><td>5</td><td>7</td><td>6</td><td>Reach for the Moon, Immortal Smoke</td><td>5,921</td><td>771</td><td>560</td></tr>
-        <tr><td>6</td><td>11</td><td>12</td><td>Love-Coloured Master Spark（Love-coloured Magic）</td><td>5,861</td><td>623</td><td>548</td></tr>
+        <tr><td>6</td><td>11</td><td>12</td><td>Love-Coloured Master Spark (Love-coloured Magic)</td><td>5,861</td><td>623</td><td>548</td></tr>
         <tr><td>7</td><td>8</td><td>9</td><td>Shanghai Teahouse ~ Chinese Tea</td><td>5,431</td><td>834</td><td>458</td></tr>
         <tr><td>8</td><td>9</td><td>8</td><td>The Gensokyo The Gods Loved</td><td>5,425</td><td>561</td><td>587</td></tr>
         <tr><td>9</td><td>6</td><td>5</td><td>Bloom Nobly, Ink-Black Cherry Blossom ~ Border of Life</td><td>5,403</td><td>684</td><td>442</td></tr>
@@ -289,7 +289,7 @@
         <tr><td>14</td><td>12</td><td>10</td><td>Broken Moon</td><td>3,693</td><td>378</td><td>338</td></tr>
         <tr><td>15</td><td>24</td><td>25</td><td>Tomboyish Girl in Love</td><td>3,485</td><td>421</td><td>360</td></tr>
         <tr><td>16</td><td>15</td><td>18</td><td>Native Faith</td><td>3,353</td><td>431</td><td>349</td></tr>
-        <tr><td>17</td><td>19</td><td>21</td><td>Flight in the Bamboo Cutter ~ Lunatic Princess</td><td>3,212</td><td>299</td><td>306</td></tr>
+        <tr><td>17</td><td>19</td><td>21</td><td>Flight of the Bamboo Cutter ~ Lunatic Princess</td><td>3,212</td><td>299</td><td>306</td></tr>
         <tr><td>18</td><td>22</td><td>24</td><td>Maiden's Capriccio / Dream Battle</td><td>3,138</td><td>283</td><td>266</td></tr>
         <tr><td>19</td><td>13</td><td>11</td><td>Inchlings of the Shining Needle ~ Little Princess</td><td>2,988</td><td>339</td><td>275</td></tr>
         <tr><td>20</td><td>17</td><td>14</td><td>Satori Maiden ~ 3rd eye</td><td>2,774</td><td>342</td><td>263</td></tr>

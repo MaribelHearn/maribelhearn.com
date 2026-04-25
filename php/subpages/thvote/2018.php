@@ -267,13 +267,13 @@
         <tr><td>9</td><td>8</td><td>7</td><td>The Gensokyo The Gods Loved</td><td>3,862</td><td>3,437</td><td>425</td><td>295</td>
         <tr><td>10</td><td>12</td><td>9</td><td>Inchlings of the Shining Needle ~ Little Princess</td><td>3,558</td><td>3,126</td><td>432</td><td>352</td>
         <tr><td>11</td><td>11</td><td>12</td><td>Broken Moon</td><td>3,460</td><td>3,117</td><td>343</td><td>216</td>
-        <tr><td>12</td><td>10</td><td>11</td><td>Love-Coloured Master Spark（Love-coloured Magic）</td><td>3,026</td><td>2,753</td><td>273</td><td>206</td>
+        <tr><td>12</td><td>10</td><td>11</td><td>Love-Coloured Master Spark (Love-coloured Magic)</td><td>3,026</td><td>2,753</td><td>273</td><td>206</td>
         <tr><td>13</td><td>13</td><td>14</td><td>Ghostly Band ~ Phantom Ensemble</td><td>2,996</td><td>2,579</td><td>417</td><td>227</td>
         <tr><td>13</td><td>14</td><td>13</td><td>Emotional Skyscraper ~ Cosmic Mind</td><td>2,996</td><td>2,681</td><td>315</td><td>223</td>
         <tr><td>15</td><td>15</td><td>15</td><td>Satori Maiden ~ 3rd eye</td><td>2,820</td><td>2,522</td><td>298</td><td>164</td>
         <tr><td>16</td><td>16</td><td>17</td><td>Lunar Clock ~ Luna Dial</td><td>2,579</td><td>2,259</td><td>320</td><td>141</td>
         <tr><td>17</td><td>17</td><td>16</td><td>Last Remote</td><td>2,551</td><td>2,306</td><td>245</td><td>184</td>
-        <tr><td>18</td><td>19</td><td>18</td><td>Flight in the Bamboo Cutter ~ Lunatic Princess</td><td>2,491</td><td>2,262</td><td>229</td><td>171</td>
+        <tr><td>18</td><td>19</td><td>18</td><td>Flight of the Bamboo Cutter ~ Lunatic Princess</td><td>2,491</td><td>2,262</td><td>229</td><td>171</td>
         <tr><td>19</td><td>18</td><td>19</td><td>Native Faith</td><td>2,442</td><td>2,208</td><td>234</td><td>172</td>
         <tr><td>20</td><td>20</td><td>20</td><td>Desire Drive</td><td>2,383</td><td>2,180</td><td>203</td><td>173</td>
         <tr><td>21</td><td>21</td><td>22</td><td>Gensokyo Millennium ~ History of the Moon</td><td>2,321</td><td>2,070</td><td>251</td><td>199</td>

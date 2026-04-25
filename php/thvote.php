@@ -17,7 +17,7 @@
         if (!empty($_GET['redirect'])) {
             echo '<p>(Redirected from <em>' . htmlentities($_GET['redirect']) . '</em>)</p>';
         }
-        if ($subpage == 'extras' || $subpage == 'guide' || (intval($subpage) >= 2017 && intval($subpage) <= 2024)) {
+        if ($subpage == 'extras' || $subpage == 'guide' || (intval($subpage) >= 2016 && intval($subpage) <= 2024)) {
             include_once 'php/subpages/thvote/' . $subpage . '.php';
         } else if (empty($subpage) || intval($subpage) == 2025) {
             include_once 'php/subpages/thvote/main_page.php';

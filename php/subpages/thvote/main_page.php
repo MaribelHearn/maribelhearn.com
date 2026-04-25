@@ -8,7 +8,7 @@ music and works will not change when the full results are published.</p>-->
 <p>All of the table columns are sortable.</p>
 <p>Source: <a href='https://toho-vote.info/'>https://toho-vote.info/</a></p>
 <?php if (empty($subpage)) echo '<p class="thin">History can be found here: <a href="/thvote/2024">Past Voting Results (separate page)</a>.</p>' ?>
-<?php if (empty($subpage)) echo '<p class="thin">Currently, only the old polls up until 2017 are included in the history. Older polls may be added later.</p>' ?>
+<?php if (empty($subpage)) echo '<p class="thin">Currently, only the old polls up until 2016 are included in the history. Older polls may be added later.</p>' ?>
 <?php if (empty($subpage)) echo '<p class="thin">You may navigate the history using the arrow keys.</p>' ?>
 <?php if (empty($subpage)) echo '<p class="donation wide center"><a href="https://ko-fi.com/maribelhearn42"><span class="icon kofi_icon"></span> Support me</a></p>' ?>
 <!--<h2>How do I vote?</h2>
@@ -2447,7 +2447,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>18</td>
 	<td>17</td>
 	<td>20</td>
-	<td>Flight in the Bamboo Cutter ~ Lunatic Princess</td>
+	<td>Flight of the Bamboo Cutter ~ Lunatic Princess</td>
 	<td>5,289</td>
 	<td>393</td>
 	<td>661</td>
@@ -5642,7 +5642,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>369</td>
 	<td>373</td>
 	<td>328</td>
-	<td>A Land Resplendent With Nature's Beauty</td>
+	<td>Independent Simulacrum</td>
 	<td>73</td>
 	<td>2</td>
 	<td>10</td>
@@ -6938,7 +6938,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>516</td>
 	<td>506</td>
 	<td>489</td>
-	<td>Immortal Red Soul</td>
+	<td>Selene's Light</td>
 	<td>16</td>
 	<td>1</td>
 	<td>1</td>
@@ -7469,7 +7469,7 @@ music and works will not change when the full results are published.</p>-->
 	<td>571</td>
 	<td>506</td>
 	<td>500</td>
-	<td>Titled Maid</td>
+	<td>Mysterious Shrine</td>
 	<td>7</td>
 	<td>0</td>
 	<td>2</td>
