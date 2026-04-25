@@ -896,7 +896,7 @@
         </colgroup>
         <thead>
             <tr>
-                <th class='header'>Age range</th>
+                <th class='header'>Age</th>
                 <th class='header'>Responses</th>
                 <th class='header'>Percentage</th>
             </tr>
@@ -1040,7 +1040,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr><th>Hokkaido</th><td>399</td><td>4%</td></tr>
+            <tr><th>Hokkaido</td><td>399</td><td>4%</td></tr>
             <tr><td><b>Northern Tohoku</b><br>(Aomori, Iwate, Akita)</td><td>187</td><td>1.87%</td></tr>
             <tr><td><b>Southern Tohoku</b><br>(Miyagi, Yamagata, Fukushima)</td><td>338</td><td>3.39%</td></tr>
             <tr><td><b>Northern Kanto</b><br>(Ibaraki, Tochigi, Gunma)</td><td>510</td><td>5.11%</td></tr>
@@ -1054,13 +1054,13 @@
             <tr><td><b>Northern Kyushu</b><br>(Fukuoka, Saga, Nagasaki, Oita)</td><td>398</td><td>3.99%</td></tr>
             <tr><td><b>Southern Kyushu</b><br>(Kumamoto, Miyazaki, Kagoshima, Okinawa)</td><td>225</td><td>2.25%</td></tr>
             <tr><td><b>East Asia</b><br>(China, Taiwan, Korea, etc.)</td><td>1,015</td><td>10.17%</td></tr>
-            <tr><th>Southeast Asia</th><td>85</td><td>0.85%</td></tr>
-            <tr><th>South, Central, West Asia</th><td>14</td><td>0.14%</td></tr>
-            <tr><th>Europe</th><td>154</td><td>1.54%</td></tr>
-            <tr><th>Africa</th><td>10</td><td>0.1%</td></tr>
-            <tr><th>North America</th><td>224</td><td>2.24%</td></tr>
-            <tr><th>South America</th><td>52</td><td>0.52%</td></tr>
-            <tr><th>Oceania</th><td>28</td><td>0.28%</td></tr>
+            <tr><td>Southeast Asia</td><td>85</td><td>0.85%</td></tr>
+            <tr><td>South, Central, West Asia</td><td>14</td><td>0.14%</td></tr>
+            <tr><td>Europe</td><td>154</td><td>1.54%</td></tr>
+            <tr><td>Africa</td><td>10</td><td>0.1%</td></tr>
+            <tr><td>North America</td><td>224</td><td>2.24%</td></tr>
+            <tr><td>South America</td><td>52</td><td>0.52%</td></tr>
+            <tr><td>Oceania</td><td>28</td><td>0.28%</td></tr>
         </tbody>
     </table>
 </section>

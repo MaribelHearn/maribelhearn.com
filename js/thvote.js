@@ -30,7 +30,7 @@ function navigateHistory(event) {
         
         if (direction === "Left" && year !== 2025) {
             window.location.pathname = `/thvote/${year + 1}`;
-        } else if (direction === "Right" && year !== 2016) {
+        } else if (direction === "Right" && year !== 2015) {
             window.location.pathname = `/thvote/${year - 1}`;
         }
     }

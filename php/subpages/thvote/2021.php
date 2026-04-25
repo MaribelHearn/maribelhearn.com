@@ -987,9 +987,9 @@
     </table></div>
     <div class='overflow'><table id='age_detail' class='poll table sortable noborders'>
         <colgroup>
-            <col class='col2'>
-            <col class='col3'>
-            <col class='col4'>
+            <col class='col2qm'>
+            <col class='col3q'>
+            <col class='col4q'>
         </colgroup>
         <thead>
             <tr>
@@ -1111,7 +1111,7 @@
         </thead>
         <tbody>
             <tr>
-                <td><strong>Hokkaido</strong></td>
+                <td>Hokkaido</td>
                 <td>429</td>
                 <td>3.93%</td>
             </tr>
@@ -1181,37 +1181,37 @@
                 <td>10.70%</td>
             </tr>
             <tr>
-                <td><strong>Southeast Asia</strong></td>
+                <td>Southeast Asia</td>
                 <td>193</td>
                 <td>1.77%</td>
             </tr>
             <tr>
-                <td><strong>South, Central, West Asia</strong></td>
+                <td>South, Central, West Asia</td>
                 <td>37</td>
                 <td>0.34%</td>
             </tr>
             <tr>
-                <td><strong>Europe</strong></td>
+                <td>Europe</td>
                 <td>277</td>
                 <td>2.53%</td>
             </tr>
             <tr>
-                <td><strong>Africa</strong></td>
+                <td>Africa</td>
                 <td>19</td>
                 <td>0.17%</td>
             </tr>
             <tr>
-                <td><strong>North America</strong></td>
+                <td>North America</td>
                 <td>380</td>
                 <td>3.48%</td>
             </tr>
             <tr>
-                <td><strong>South America</strong></td>
+                <td>South America</td>
                 <td>135</td>
                 <td>1.24%</td>
             </tr>
             <tr>
-                <td><strong>Oceania</strong></td>
+                <td>Oceania</td>
                 <td>36</td>
                 <td>0.33%</td>
             </tr>
@@ -1616,13 +1616,13 @@
                 <tr><td>Bought the serialization (Comp Ace)</td><td>610</td><td>7.32%</td></tr>
                 <tr><td>Reading on Comic Walker</td><td>1,109</td><td>13.30%</td></tr>
                 <tr><td>Reading on Niconico</td><td>791</td><td>9.49%</td></tr>
-                <tr><td>Reading in Strange Creators of Outer World</td><td>935</td><td>11.21%</td></tr>
+                <tr><td>Reading in the Touhou Garakuta magazine</td><td>935</td><td>11.21%</td></tr>
             </tbody>
         </table></div>
     </div>
 </section>
 <section>
-    <h3>06. What do you like about Touhou? (Multiple answers possible)</h3>
+    <h3>06. What do you like about Touhou? (multiple answers possible)</h3>
     <p>Valid responses: 12,451</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>

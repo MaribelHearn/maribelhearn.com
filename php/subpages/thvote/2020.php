@@ -930,7 +930,7 @@
         </colgroup>
         <thead>
             <tr>
-                <th class='header'>Age range</th>
+                <th class='header'>Age</th>
                 <th class='header'>Responses</th>
                 <th class='header'>Percentage</th>
             </tr>
@@ -1032,7 +1032,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr><th>Hokkaido</th><td>426</td><td>3.27%</td></tr>
+            <tr><td>Hokkaido</td><td>426</td><td>3.27%</td></tr>
             <tr><td><strong>Northern Tohoku</strong><br>(Aomori, Iwate, Akita)</td><td>220</td><td>1.69%</td></tr>
             <tr><td><strong>Southern Tohoku</strong><br>(Miyagi, Yamagata, Fukushima)</td><td>442</td><td>3.39%</td></tr>
             <tr><td><strong>Northern Kanto</strong><br>(Ibaraki, Tochigi, Gunma)</td><td>589</td><td>4.52%</td></tr>
@@ -1046,13 +1046,13 @@
             <tr><td><strong>Northern Kyushu</strong><br>(Fukuoka, Saga, Nagasaki, Oita)</td><td>425</td><td>3.26%</td></tr>
             <tr><td><strong>Southern Kyushu</strong><br>(Kumamoto, Miyazaki, Kagoshima, Okinawa)</td><td>266</td><td>2.04%</td></tr>
             <tr><td><strong>East Asia</strong><br>(China, Taiwan, Korea, etc.)</td><td>1,789</td><td>13.73%</td></tr>
-            <tr><th>Southeast Asia</th><td>145</td><td>1.11%</td></tr>
-            <tr><th>South, Central, West Asia</th><td>28</td><td>0.21%</td></tr>
-            <tr><th>Europe</th><td>229</td><td>1.76%</td></tr>
-            <tr><th>Africa</th><td>12</td><td>0.09%</td></tr>
-            <tr><th>North America</th><td>307</td><td>2.36%</td></tr>
-            <tr><th>South America</th><td>58</td><td>0.44%</td></tr>
-            <tr><th>Oceania</th><td>39</td><td>0.30%</td></tr>
+            <tr><td>Southeast Asia</td><td>145</td><td>1.11%</td></tr>
+            <tr><td>South, Central, West Asia</td><td>28</td><td>0.21%</td></tr>
+            <tr><td>Europe</td><td>229</td><td>1.76%</td></tr>
+            <tr><td>Africa</td><td>12</td><td>0.09%</td></tr>
+            <tr><td>North America</td><td>307</td><td>2.36%</td></tr>
+            <tr><td>South America</td><td>58</td><td>0.44%</td></tr>
+            <tr><td>Oceania</td><td>39</td><td>0.30%</td></tr>
         </tbody>
     </table>
 </section>
@@ -1158,7 +1158,7 @@
                 <tr><td>Not read</td><td>6,005</td><td>60.06%</td></tr>
                 <tr><td>Reading on Comic Walker</td><td>1,543</td><td>15.43%</td></tr>
                 <tr><td>Reading on Niconico</td><td>1,160</td><td>11.60%</td></tr>
-                <tr><td>Reading on Strange Articles of the Outer World</td><td>1,291</td><td>12.91%</td></tr>
+                <tr><td>Reading in the Touhou Garakuta magazine</td><td>1,291</td><td>12.91%</td></tr>
             </tbody>
         </table></div>
     </div><div>

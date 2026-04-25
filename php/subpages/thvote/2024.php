@@ -973,7 +973,7 @@
 <h2 id='questionnaire'>Questionnaire</h2>
 <div>
 <section>
-    <h2>01. Age</h2>
+    <h3>01. Age</h3>
     <p class='center'>Valid responses: 15,273 <button id='age_detail_button'>Show Details</button> <button id='age_summary_button'>Hide Details</button></p>
     <div class='overflow'><table id='age_summary' class='poll table sortable noborders'>
         <colgroup>
@@ -989,14 +989,63 @@
             </tr>
         </thead>
         <tbody>
-
+<tr>
+                <td>&lt;= 9</td>
+                <td>62</td>
+                <td>0.39%</td>
+            </tr>
+            <tr>
+                <td>10-14</td>
+                <td>2,697</td>
+                <td>16.82%</td>
+            </tr>
+            <tr>
+                <td>15-19</td>
+                <td>6,518</td>
+                <td>40.66%</td>
+            </tr>
+            <tr>
+                <td>20-24</td>
+                <td>3,298</td>
+                <td>20.57%</td>
+            </tr>
+            <tr>
+                <td>25-29</td>
+                <td>1,621</td>
+                <td>10.11%</td>
+            </tr>
+            <tr>
+                <td>30-34</td>
+                <td>900</td>
+                <td>5.61%</td>
+            </tr>
+            <tr>
+                <td>35-39</td>
+                <td>454</td>
+                <td>2.83%</td>
+            </tr>
+            <tr>
+                <td>40-44</td>
+                <td>245</td>
+                <td>1.53%</td>
+            </tr>
+            <tr>
+                <td>45-49</td>
+                <td>122</td>
+                <td>0.76%</td>
+            </tr>
+            <tr>
+                <td>&gt;= 50</td>
+                <td>113</td>
+                <td>0.70%</td>
+            </tr>
         </tbody>
     </table></div>
     <div class='overflow'><table id='age_detail' class='poll table sortable noborders'>
         <colgroup>
-            <col class='col2'>
-            <col class='col3'>
-            <col class='col4'>
+            <col class='col2qm'>
+            <col class='col3q'>
+            <col class='col4q'>
         </colgroup>
         <thead>
             <tr>
@@ -1355,7 +1404,7 @@
     </table></div>
 </section>
 <section>
-    <h2>02. Gender</h2>
+    <h3>02. Gender</h3>
     <p class='center'>Valid responses: 15,591</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -1390,7 +1439,7 @@
     </table></div>
 </section>
 <section>
-	<h2>03. Location</h2>
+	<h3>03. Location</h3>
 	<p class='center'>Valid responses: 14,807</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -1515,10 +1564,10 @@
 	</table></div>
 </section>
 <section>
-	<h2>04. Difficulty level 1cc'd</h2>
+	<h3>04. Difficulty level 1cc'd</h3>
 	<div>
 		<div>
-			<h3>Touhou 6 - The Embodiment of Scarlet Devil</h3>
+			<h4>Touhou 6 - The Embodiment of Scarlet Devil</h4>
 			<p class='center'>Valid responses: 12,692</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1536,32 +1585,32 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>Not played</th>
+                    <td>Not played</td>
                     <td>4,720</td>
                     <td>37.19%</td>
                 </tr>
                 <tr>
-                    <th>Not cleared</th>
+                    <td>Not cleared</td>
                     <td>1,241</td>
                     <td>9.78%</td>
                 </tr>
                 <tr>
-                    <th>Easy 1cc</th>
+                    <td>Easy 1cc</td>
                     <td>1,565</td>
                     <td>12.33%</td>
                 </tr>
                 <tr>
-                    <th>Normal 1cc</th>
+                    <td>Normal 1cc</td>
                     <td>3,253</td>
                     <td>25.63%</td>
                 </tr>
                 <tr>
-                    <th>Hard 1cc</th>
+                    <td>Hard 1cc</td>
                     <td>977</td>
                     <td>7.70%</td>
                 </tr>
                 <tr>
-                    <th>Lunatic 1cc</th>
+                    <td>Lunatic 1cc</td>
                     <td>936</td>
                     <td>7.37%</td>
                 </tr>
@@ -1570,7 +1619,7 @@
     </div>
     <div>
 		<div>
-			<h3>Touhou 7 - Perfect Cherry Blossom</h3>
+			<h4>Touhou 7 - Perfect Cherry Blossom</h4>
 			<p class='center'>Valid responses: 12,376</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1588,32 +1637,32 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>Not played</th>
+                    <td>Not played</td>
                     <td>5,140</td>
                     <td>41.53%</td>
                 </tr>
                 <tr>
-                    <th>Not cleared</th>
+                    <td>Not cleared</td>
                     <td>1,036</td>
                     <td>8.37%</td>
                 </tr>
                 <tr>
-                    <th>Easy 1cc</th>
+                    <td>Easy 1cc</td>
                     <td>1,324</td>
                     <td>10.70%</td>
                 </tr>
                 <tr>
-                    <th>Normal 1cc</th>
+                    <td>Normal 1cc</td>
                     <td>2,933</td>
                     <td>23.70%</td>
                 </tr>
                 <tr>
-                    <th>Hard 1cc</th>
+                    <td>Hard 1cc</td>
                     <td>943</td>
                     <td>7.62%</td>
                 </tr>
                 <tr>
-                    <th>Lunatic 1cc</th>
+                    <td>Lunatic 1cc</td>
                     <td>1,000</td>
                     <td>8.08%</td>
                 </tr>
@@ -1622,7 +1671,7 @@
     </div>
     <div>
 		<div>
-			<h3>Touhou 8 - Imperishable Night</h3>
+			<h4>Touhou 8 - Imperishable Night</h4>
 			<p class='center'>Valid responses: 12,375</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1640,32 +1689,32 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>Not played</th>
+                    <td>Not played</td>
                     <td>4,894</td>
                     <td>39.55%</td>
                 </tr>
                 <tr>
-                    <th>Not cleared</th>
+                    <td>Not cleared</td>
                     <td>758</td>
                     <td>6.13%</td>
                 </tr>
                 <tr>
-                    <th>Easy 1cc</th>
+                    <td>Easy 1cc</td>
                     <td>1,609</td>
                     <td>13.00%</td>
                 </tr>
                 <tr>
-                    <th>Normal 1cc</th>
+                    <td>Normal 1cc</td>
                     <td>3,043</td>
                     <td>24.59%</td>
                 </tr>
                 <tr>
-                    <th>Hard 1cc</th>
+                    <td>Hard 1cc</td>
                     <td>1,051</td>
                     <td>8.49%</td>
                 </tr>
                 <tr>
-                    <th>Lunatic 1cc</th>
+                    <td>Lunatic 1cc</td>
                     <td>1,020</td>
                     <td>8.24%</td>
                 </tr>
@@ -1674,7 +1723,7 @@
     </div>
     <div>
 		<div>
-			<h3>Touhou 9 - Phantasmagoria of Flower View</h3>
+			<h4>Touhou 9 - Phantasmagoria of Flower View</h4>
 			<p class='center'>Valid responses: 11,770</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1692,32 +1741,32 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>Not played</th>
+                    <td>Not played</td>
                     <td>6,557</td>
                     <td>55.71%</td>
                 </tr>
                 <tr>
-                    <th>Not cleared</th>
+                    <td>Not cleared</td>
                     <td>698</td>
                     <td>5.93%</td>
                 </tr>
                 <tr>
-                    <th>Easy 1cc</th>
+                    <td>Easy 1cc</td>
                     <td>1,143</td>
                     <td>9.71%</td>
                 </tr>
                 <tr>
-                    <th>Normal 1cc</th>
+                    <td>Normal 1cc</td>
                     <td>2,138</td>
                     <td>18.16%</td>
                 </tr>
                 <tr>
-                    <th>Hard 1cc</th>
+                    <td>Hard 1cc</td>
                     <td>463</td>
                     <td>3.93%</td>
                 </tr>
                 <tr>
-                    <th>Lunatic 1cc</th>
+                    <td>Lunatic 1cc</td>
                     <td>771</td>
                     <td>6.55%</td>
                 </tr>
@@ -1726,7 +1775,7 @@
     </div>
     <div>
 		<div>
-			<h3>Touhou 10 - Mountain of Faith</h3>
+			<h4>Touhou 10 - Mountain of Faith</h4>
 			<p class='center'>Valid responses: 12,075</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1744,32 +1793,32 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>Not played</th>
+                    <td>Not played</td>
                     <td>4,957</td>
                     <td>41.05%</td>
                 </tr>
                 <tr>
-                    <th>Not cleared</th>
+                    <td>Not cleared</td>
                     <td>1,007</td>
                     <td>8.34%</td>
                 </tr>
                 <tr>
-                    <th>Easy 1cc</th>
+                    <td>Easy 1cc</td>
                     <td>1,259</td>
                     <td>10.43%</td>
                 </tr>
                 <tr>
-                    <th>Normal 1cc</th>
+                    <td>Normal 1cc</td>
                     <td>2,970</td>
                     <td>24.60%</td>
                 </tr>
                 <tr>
-                    <th>Hard 1cc</th>
+                    <td>Hard 1cc</td>
                     <td>929</td>
                     <td>7.69%</td>
                 </tr>
                 <tr>
-                    <th>Lunatic 1cc</th>
+                    <td>Lunatic 1cc</td>
                     <td>953</td>
                     <td>7.89%</td>
                 </tr>
@@ -1778,7 +1827,7 @@
     </div>
     <div>
 		<div>
-			<h3>Touhou 11 - Subterranean Animism</h3>
+			<h4>Touhou 11 - Subterranean Animism</h4>
 			<p class='center'>Valid responses: 11,789</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1796,32 +1845,32 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>Not played</th>
+                    <td>Not played</td>
                     <td>5,482</td>
                     <td>46.50%</td>
                 </tr>
                 <tr>
-                    <th>Not cleared</th>
+                    <td>Not cleared</td>
                     <td>1,281</td>
                     <td>10.87%</td>
                 </tr>
                 <tr>
-                    <th>Easy 1cc</th>
+                    <td>Easy 1cc</td>
                     <td>1,381</td>
                     <td>11.71%</td>
                 </tr>
                 <tr>
-                    <th>Normal 1cc</th>
+                    <td>Normal 1cc</td>
                     <td>2,203</td>
                     <td>18.69%</td>
                 </tr>
                 <tr>
-                    <th>Hard 1cc</th>
+                    <td>Hard 1cc</td>
                     <td>672</td>
                     <td>5.70%</td>
                 </tr>
                 <tr>
-                    <th>Lunatic 1cc</th>
+                    <td>Lunatic 1cc</td>
                     <td>770</td>
                     <td>6.53%</td>
                 </tr>
@@ -1830,7 +1879,7 @@
     </div>
     <div>
 		<div>
-			<h3>Touhou 12 - Undefined Fantastic Object</h3>
+			<h4>Touhou 12 - Undefined Fantastic Object</h4>
 			<p class='center'>Valid responses: 11,555</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1848,32 +1897,32 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>Not played</th>
+                    <td>Not played</td>
                     <td>6,232</td>
                     <td>53.93%</td>
                 </tr>
                 <tr>
-                    <th>Not cleared</th>
+                    <td>Not cleared</td>
                     <td>1,137</td>
                     <td>9.84%</td>
                 </tr>
                 <tr>
-                    <th>Easy 1cc</th>
+                    <td>Easy 1cc</td>
                     <td>1,088</td>
                     <td>9.42%</td>
                 </tr>
                 <tr>
-                    <th>Normal 1cc</th>
+                    <td>Normal 1cc</td>
                     <td>2,051</td>
                     <td>17.75%</td>
                 </tr>
                 <tr>
-                    <th>Hard 1cc</th>
+                    <td>Hard 1cc</td>
                     <td>519</td>
                     <td>4.49%</td>
                 </tr>
                 <tr>
-                    <th>Lunatic 1cc</th>
+                    <td>Lunatic 1cc</td>
                     <td>528</td>
                     <td>4.57%</td>
                 </tr>
@@ -1882,7 +1931,7 @@
     </div>
     <div>
 		<div>
-			<h3>Touhou 13 - Ten Desires</h3>
+			<h4>Touhou 13 - Ten Desires</h4>
 			<p class='center'>Valid responses: 11,513</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1900,32 +1949,32 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>Not played</th>
+                    <td>Not played</td>
                     <td>6,232</td>
                     <td>54.13%</td>
                 </tr>
                 <tr>
-                    <th>Not cleared</th>
+                    <td>Not cleared</td>
                     <td>736</td>
                     <td>6.39%</td>
                 </tr>
                 <tr>
-                    <th>Easy 1cc</th>
+                    <td>Easy 1cc</td>
                     <td>1,034</td>
                     <td>8.98%</td>
                 </tr>
                 <tr>
-                    <th>Normal 1cc</th>
+                    <td>Normal 1cc</td>
                     <td>2,182</td>
                     <td>18.95%</td>
                 </tr>
                 <tr>
-                    <th>Hard 1cc</th>
+                    <td>Hard 1cc</td>
                     <td>667</td>
                     <td>5.79%</td>
                 </tr>
                 <tr>
-                    <th>Lunatic 1cc</th>
+                    <td>Lunatic 1cc</td>
                     <td>662</td>
                     <td>5.75%</td>
                 </tr>
@@ -1934,7 +1983,7 @@
     </div>
     <div>
 		<div>
-			<h3>Touhou 14 - Double Dealing Character</h3>
+			<h4>Touhou 14 - Double Dealing Character</h4>
 			<p class='center'>Valid responses: 11,478</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1952,32 +2001,32 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>Not played</th>
+                    <td>Not played</td>
                     <td>6,351</td>
                     <td>55.33%</td>
                 </tr>
                 <tr>
-                    <th>Not cleared</th>
+                    <td>Not cleared</td>
                     <td>787</td>
                     <td>6.86%</td>
                 </tr>
                 <tr>
-                    <th>Easy 1cc</th>
+                    <td>Easy 1cc</td>
                     <td>1,080</td>
                     <td>9.41%</td>
                 </tr>
                 <tr>
-                    <th>Normal 1cc</th>
+                    <td>Normal 1cc</td>
                     <td>2,021</td>
                     <td>17.61%</td>
                 </tr>
                 <tr>
-                    <th>Hard 1cc</th>
+                    <td>Hard 1cc</td>
                     <td>566</td>
                     <td>4.93%</td>
                 </tr>
                 <tr>
-                    <th>Lunatic 1cc</th>
+                    <td>Lunatic 1cc</td>
                     <td>673</td>
                     <td>5.86%</td>
                 </tr>
@@ -1986,7 +2035,7 @@
     </div>
     <div>
 		<div>
-			<h3>Touhou 15 - Legacy of Lunatic Kingdom (Pointdevice)</h3>
+			<h4>Touhou 15 - Legacy of Lunatic Kingdom (Pointdevice)</h4>
 			<p class='center'>Valid responses: 11,482</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -2004,32 +2053,32 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>Not played</th>
+                    <td>Not played</td>
                     <td>6,087</td>
                     <td>53.01%</td>
                 </tr>
                 <tr>
-                    <th>Not cleared</th>
+                    <td>Not cleared</td>
                     <td>972</td>
                     <td>8.47%</td>
                 </tr>
                 <tr>
-                    <th>Easy 1cc</th>
+                    <td>Easy 1cc</td>
                     <td>1,118</td>
                     <td>9.74%</td>
                 </tr>
                 <tr>
-                    <th>Normal 1cc</th>
+                    <td>Normal 1cc</td>
                     <td>1,997</td>
                     <td>17.39%</td>
                 </tr>
                 <tr>
-                    <th>Hard 1cc</th>
+                    <td>Hard 1cc</td>
                     <td>512</td>
                     <td>4.46%</td>
                 </tr>
                 <tr>
-                    <th>Lunatic 1cc</th>
+                    <td>Lunatic 1cc</td>
                     <td>796</td>
                     <td>6.93%</td>
                 </tr>
@@ -2038,7 +2087,7 @@
     </div>
     <div>
 		<div>
-			<h3>Touhou 15 - Legacy of Lunatic Kingdom (Legacy)</h3>
+			<h4>Touhou 15 - Legacy of Lunatic Kingdom (Legacy)</h4>
 			<p class='center'>Valid responses: 11,306</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -2056,32 +2105,32 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>Not played</th>
+                    <td>Not played</td>
                     <td>6,168</td>
                     <td>54.56%</td>
                 </tr>
                 <tr>
-                    <th>Not cleared</th>
+                    <td>Not cleared</td>
                     <td>1,988</td>
                     <td>17.58%</td>
                 </tr>
                 <tr>
-                    <th>Easy 1cc</th>
+                    <td>Easy 1cc</td>
                     <td>883</td>
                     <td>7.81%</td>
                 </tr>
                 <tr>
-                    <th>Normal 1cc</th>
+                    <td>Normal 1cc</td>
                     <td>1,278</td>
                     <td>11.30%</td>
                 </tr>
                 <tr>
-                    <th>Hard 1cc</th>
+                    <td>Hard 1cc</td>
                     <td>344</td>
                     <td>3.04%</td>
                 </tr>
                 <tr>
-                    <th>Lunatic 1cc</th>
+                    <td>Lunatic 1cc</td>
                     <td>645</td>
                     <td>5.70%</td>
                 </tr>
@@ -2090,7 +2139,7 @@
     </div>
     <div>
 		<div>
-			<h3>Touhou 16 - Hidden Star in Four Seasons</h3>
+			<h4>Touhou 16 - Hidden Star in Four Seasons</h4>
 			<p class='center'>Valid responses: 11,437</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -2108,32 +2157,32 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>Not played</th>
+                    <td>Not played</td>
                     <td>6,379</td>
                     <td>55.78%</td>
                 </tr>
                 <tr>
-                    <th>Not cleared</th>
+                    <td>Not cleared</td>
                     <td>716</td>
                     <td>6.26%</td>
                 </tr>
                 <tr>
-                    <th>Easy 1cc</th>
+                    <td>Easy 1cc</td>
                     <td>1,139</td>
                     <td>9.96%</td>
                 </tr>
                 <tr>
-                    <th>Normal 1cc</th>
+                    <td>Normal 1cc</td>
                     <td>1,957</td>
                     <td>17.11%</td>
                 </tr>
                 <tr>
-                    <th>Hard 1cc</th>
+                    <td>Hard 1cc</td>
                     <td>446</td>
                     <td>3.90%</td>
                 </tr>
                 <tr>
-                    <th>Lunatic 1cc</th>
+                    <td>Lunatic 1cc</td>
                     <td>800</td>
                     <td>6.99%</td>
                 </tr>
@@ -2142,7 +2191,7 @@
     </div>
     <div>
 		<div>
-			<h3>Touhou 17: Wily Beast and Weakest Creature</h3>
+			<h4>Touhou 17 - Wily Beast and Weakest Creature</h4>
 			<p class='center'>Valid responses: 11,479</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -2160,32 +2209,32 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>Not played</th>
+                    <td>Not played</td>
                     <td>6,463</td>
                     <td>56.30%</td>
                 </tr>
                 <tr>
-                    <th>Not cleared</th>
+                    <td>Not cleared</td>
                     <td>676</td>
                     <td>5.89%</td>
                 </tr>
                 <tr>
-                    <th>Easy 1cc</th>
+                    <td>Easy 1cc</td>
                     <td>1,131</td>
                     <td>9.85%</td>
                 </tr>
                 <tr>
-                    <th>Normal 1cc</th>
+                    <td>Normal 1cc</td>
                     <td>2,019</td>
                     <td>17.59%</td>
                 </tr>
                 <tr>
-                    <th>Hard 1cc</th>
+                    <td>Hard 1cc</td>
                     <td>519</td>
                     <td>4.52%</td>
                 </tr>
                 <tr>
-                    <th>Lunatic 1cc</th>
+                    <td>Lunatic 1cc</td>
                     <td>671</td>
                     <td>5.85%</td>
                 </tr>
@@ -2194,7 +2243,7 @@
     </div>
     <div>
 		<div>
-			<h3>Touhou 18: Unconnected Marketeers</h3>
+			<h4>Touhou 18 - Unconnected Marketeers</h4>
 			<p class='center'>Valid responses: 11,534</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -2212,32 +2261,32 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>Not played</th>
+                    <td>Not played</td>
                     <td>6,383</td>
                     <td>55.34%</td>
                 </tr>
                 <tr>
-                    <th>Not cleared</th>
+                    <td>Not cleared</td>
                     <td>674</td>
                     <td>5.84%</td>
                 </tr>
                 <tr>
-                    <th>Easy 1cc</th>
+                    <td>Easy 1cc</td>
                     <td>1,148</td>
                     <td>9.95%</td>
                 </tr>
                 <tr>
-                    <th>Normal 1cc</th>
+                    <td>Normal 1cc</td>
                     <td>1,941</td>
                     <td>16.83%</td>
                 </tr>
                 <tr>
-                    <th>Hard 1cc</th>
+                    <td>Hard 1cc</td>
                     <td>538</td>
                     <td>4.66%</td>
                 </tr>
                 <tr>
-                    <th>Lunatic 1cc</th>
+                    <td>Lunatic 1cc</td>
                     <td>850</td>
                     <td>7.37%</td>
                 </tr>
@@ -2246,7 +2295,7 @@
     </div>
     <div>
 		<div>
-			<h3>Touhou 19: Unfinished Dream of All Living Ghost</h3>
+			<h4>Touhou 19 - Unfinished Dream of All Living Ghost</h4>
 			<p class='center'>Valid responses: 11,526</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -2264,32 +2313,32 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>Not played</th>
+                    <td>Not played</td>
                     <td>6,676</td>
                     <td>57.92%</td>
                 </tr>
                 <tr>
-                    <th>Not cleared</th>
+                    <td>Not cleared</td>
                     <td>642</td>
                     <td>5.57%</td>
                 </tr>
                 <tr>
-                    <th>Easy 1cc</th>
+                    <td>Easy 1cc</td>
                     <td>894</td>
                     <td>7.76%</td>
                 </tr>
                 <tr>
-                    <th>Normal 1cc</th>
+                    <td>Normal 1cc</td>
                     <td>1,979</td>
                     <td>17.17%</td>
                 </tr>
                 <tr>
-                    <th>Hard 1cc</th>
+                    <td>Hard 1cc</td>
                     <td>427</td>
                     <td>3.70%</td>
                 </tr>
                 <tr>
-                    <th>Lunatic 1cc</th>
+                    <td>Lunatic 1cc</td>
                     <td>908</td>
                     <td>7.88%</td>
                 </tr>
@@ -2298,7 +2347,7 @@
     </div>
 </section>
 <section>
-	<h2>05. Sidegames played (spin-offs)</h2>
+	<h3>05. Sidegames played (spin-offs)</h3>
 	<p class='center'>Valid responses: 9,174</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -2383,7 +2432,7 @@
 	</table></div>
 </section>
 <section>
-	<h2>06. How you purchased the games</h2>
+	<h3>06. How you purchased the games</h3>
 	<p class='center'>Valid responses: 10,320</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -2418,10 +2467,10 @@
 	</table></div>
 </section>
 <section>
-	<h2>07. Publications subscribed to</h2>
+	<h3>07. Publications subscribed to</h3>
 	<div>
 		<div>
-			<h3>Curiosities of Lotus Asia</h3>
+			<h4>Curiosities of Lotus Asia</h4>
 			<p class='center'>Valid responses: 10,615</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -2453,7 +2502,7 @@
 	</div>
 	<div>
 		<div>
-			<h3>Lotus Eaters</h3>
+			<h4>Lotus Eaters</h4>
 			<p class='center'>Valid responses: 10,970</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -2505,7 +2554,7 @@
 	</div>
 	<div>
 		<div>
-			<h3>Foul Detective Satori</h3>
+			<h4>Foul Detective Satori</h4>
 			<p class='center'>Valid responses: 10,705</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -2552,7 +2601,7 @@
 	</div>
 </section>
 <section>
-	<h2>08. What do you like about Touhou? (multiple answers possible)</h2>
+	<h3>08. What do you like about Touhou? (multiple answers possible)</h3>
 	<p class='center'>Valid responses: 16,670</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -2589,7 +2638,7 @@
 				<td>69.72%</td>
 			</tr>
 			<tr>
-				<td>Worldbuilding</td>
+				<td>Lore</td>
 				<td>13,481</td>
 				<td>81.30%</td>
 			</tr>
@@ -2607,7 +2656,7 @@
 	</table></div>
 </section>
 <section>
-	<h2>09. When did you discover Touhou?</h2>
+	<h3>09. When did you discover Touhou?</h3>
 	<p class='center'>Valid responses: 15,376</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -2752,7 +2801,7 @@
 	</table></div>
 </section>
 <section>
-	<h2>10. How did you discover Touhou?</h2>
+	<h3>10. How did you discover Touhou?</h3>
 	<p class='center'>Valid responses: 15,400</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -2852,7 +2901,7 @@
 	</table></div>
 </section>
 <section>
-	<h2>11. Participation in doujin events such as Comiket and Reitaisai (multiple answers possible)</h2>
+	<h3>11. Participation in doujin events such as Comiket and Reitaisai (multiple answers possible)</h3>
 	<p class='center'>Valid responses: 16,670</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -2942,7 +2991,7 @@
 	</table></div>
 </section>
 <section>
-	<h2>12. Participation in Touhou-related events (multiple answers possible)</h2>
+	<h3>12. Participation in Touhou-related events (multiple answers possible)</h3>
 	<p class='center'>Valid responses: 16,670</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -3002,7 +3051,7 @@
 	</table></div>
 </section>
 <section>
-	<h2>13. How many people can you talk about Touhou to in real life?</h2>
+	<h3>13. How many people can you talk about Touhou to in real life?</h3>
 	<p class='center'>Valid responses: 15,671</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -3047,7 +3096,7 @@
 	</table></div>
 </section>
 <section>
-	<h2>14. What have you done since the previous Touhou Popularity Poll (September 2023)?</h2>
+	<h3>14. What have you done since the previous Touhou Popularity Poll (September 2023)?</h3>
 	<p class='center'>Valid responses: 15,221</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -3202,7 +3251,7 @@
 	</table></div>
 </section>
 <section>
-	<h2>15. Have you voted on the Touhou Popularity Poll before?</h2>
+	<h3>15. Have you voted on the Touhou Popularity Poll before?</h3>
 	<p class='center'>Valid responses: 15,880</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>

@@ -837,7 +837,7 @@
         </colgroup>
         <thead>
             <tr>
-                <th class='header'>Age range</th>
+                <th class='header'>Age</th>
                 <th class='header'>Responses</th>
                 <th class='header'>Percentage</th>
             </tr>
@@ -950,7 +950,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr><th>Hokkaido</th><td>598</td><td>4.04%</td></tr>
+            <tr><td>Hokkaido</td><td>598</td><td>4.04%</td></tr>
             <tr><td><b>Northern Tohoku</b><br>(Aomori, Iwate, Akita)</td><td>360</td><td>2.43%</td></tr>
             <tr><td><b>Southern Tohoku</b><br>(Miyagi, Yamagata, Fukushima)</td><td>563</td><td>3.81%</td></tr>
             <tr><td><b>Northern Kanto</b><br>(Ibaraki, Tochigi, Gunma)</td><td>750</td><td>5.07%</td></tr>
@@ -964,13 +964,13 @@
             <tr><td><b>Northern Kyushu</b><br>(Fukuoka, Saga, Nagasaki, Oita)</td><td>638</td><td>4.31%</td></tr>
             <tr><td><b>Southern Kyushu</b><br>(Kumamoto, Miyazaki, Kagoshima, Okinawa)</td><td>380</td><td>2.57%</td></tr>
             <tr><td><b>East Asia</b><br>(China, Taiwan, Korea, etc.)</td><td>959</td><td>6.48%</td></tr>
-            <tr><th>Southeast Asia</th><td>121</td><td>0.82%</td></tr>
-            <tr><th>South, Central, West Asia</th><td>15</td><td>0.1%</td></tr>
-            <tr><th>Europe</th><td>155</td><td>1.05%</td></tr>
-            <tr><th>Africa</th><td>14</td><td>0.09%</td></tr>
-            <tr><th>North America</th><td>224</td><td>1.51%</td></tr>
-            <tr><th>South America</th><td>66</td><td>0.45%</td></tr>
-            <tr><th>Oceania</th><td>26</td><td>0.18%</td></tr>
+            <tr><td>Southeast Asia</td><td>121</td><td>0.82%</td></tr>
+            <tr><td>South, Central, West Asia</td><td>15</td><td>0.1%</td></tr>
+            <tr><td>Europe</td><td>155</td><td>1.05%</td></tr>
+            <tr><td>Africa</td><td>14</td><td>0.09%</td></tr>
+            <tr><td>North America</td><td>224</td><td>1.51%</td></tr>
+            <tr><td>South America</td><td>66</td><td>0.45%</td></tr>
+            <tr><td>Oceania</td><td>26</td><td>0.18%</td></tr>
         </tbody>
     </table>
 </section>
@@ -1047,9 +1047,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td>Not purchased</td><td>4,848</td><td>36.04%</td></tr>
-                <tr><td>Purchased on release</td><td>8,248</td><td>61.31%</td></tr>
-                <tr><td>Subscribed</td><td>356</td><td>2.65%</td></tr>
+                <tr><td>Not bought</td><td>4,848</td><td>36.04%</td></tr>
+                <tr><td>Bought the tankobon volumes</td><td>8,248</td><td>61.31%</td></tr>
+                <tr><td>Bought the serialization (Febri)</td><td>356</td><td>2.65%</td></tr>
             </tbody>
         </table></div>
     </div><div>
@@ -1069,9 +1069,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td>Not purchased</td><td>4,519</td><td>33.35%</td></tr>
-                <tr><td>Purchased on release</td><td>8,444</td><td>62.31%</td></tr>
-                <tr><td>Subscribed</td><td>588</td><td>4.34%</td></tr>
+                <tr><td>Not bought</td><td>4,519</td><td>33.35%</td></tr>
+                <tr><td>Bought the tankobon volumes</td><td>8,444</td><td>62.31%</td></tr>
+                <tr><td>Bought the serialization (Comp Ace)</td><td>588</td><td>4.34%</td></tr>
             </tbody>
         </table></div>
     </div><div>
@@ -1091,14 +1091,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td>Not purchased</td><td>7,547</td><td>59.45%</td></tr>
-                <tr><td>Purchased</td><td>5,148</td><td>40.55%</td></tr>
+                <tr><td>Not bought</td><td>7,547</td><td>59.45%</td></tr>
+                <tr><td>Bought the serialization (Strange Creators of Outer World)</td><td>5,148</td><td>40.55%</td></tr>
             </tbody>
         </table></div>
     </div>
 </section>
 <section>
-    <h3>06. What do you like about Touhou?</h3>
+    <h3>06. What do you like about Touhou? (multiple answers possible)</h3>
     <p>Valid responses: 16,464</p>
     <table class='poll table sortable noborders'>
         <colgroup>
@@ -1181,43 +1181,43 @@
         </colgroup>
         <tbody>
             <tr><th>Period of time</th><th>&lt;= 9</th><th>10-14</th><th>15-19</th><th>20-24</th><th>25-29</th><th>30-34</th><th>35-39</th><th>40-44</th><th>45-49</th><th>>= 50</th></tr>
-            <tr><th rowspan='2'>PC98 - SG</th><td>4</td><td>3</td><td>17</td><td>24</td><td>10</td><td>9</td><td>8</td><td>7</td><td>2</td><td>5</td></tr>
+            <tr><th rowspan='2'>PC98-SG</th><td>4</td><td>3</td><td>17</td><td>24</td><td>10</td><td>9</td><td>8</td><td>7</td><td>2</td><td>5</td></tr>
             <tr><td>4.49%</td><td>3.37%</td><td>19.1%</td><td>26.97%</td><td>11.24%</td><td>10.11%</td><td>8.99%</td><td>7.87%</td><td>2.25%</td><td>5.62%</td></tr>
-            <tr><th rowspan='2'>SG - EoSD</th><td>0</td><td>8</td><td>48</td><td>34</td><td>17</td><td>29</td><td>12</td><td>8</td><td>1</td><td>4</td></tr>
+            <tr><th rowspan='2'>SG-EoSD</th><td>0</td><td>8</td><td>48</td><td>34</td><td>17</td><td>29</td><td>12</td><td>8</td><td>1</td><td>4</td></tr>
             <tr><td>0%</td><td>4.97%</td><td>29.81%</td><td>21.12%</td><td>10.56%</td><td>18.01%</td><td>7.45%</td><td>4.97%</td><td>0.62%</td><td>2.48%</td></tr>
-            <tr><th rowspan='2'>EoSD - PCB</th><td>0</td><td>13</td><td>104</td><td>136</td><td>101</td><td>139</td><td>77</td><td>33</td><td>7</td><td>5</td></tr>
+            <tr><th rowspan='2'>EoSD-PCB</th><td>0</td><td>13</td><td>104</td><td>136</td><td>101</td><td>139</td><td>77</td><td>33</td><td>7</td><td>5</td></tr>
             <tr><td>0%</td><td>2.11%</td><td>16.91%</td><td>22.11%</td><td>16.42%</td><td>22.6%</td><td>12.52%</td><td>5.37%</td><td>1.14%</td><td>0.81%</td></tr>
-            <tr><th rowspan='2'>PCB - IN</th><td>1</td><td>6</td><td>39</td><td>60</td><td>116</td><td>122</td><td>52</td><td>11</td><td>6</td><td>1</td></tr>
+            <tr><th rowspan='2'>PCB-IN</th><td>1</td><td>6</td><td>39</td><td>60</td><td>116</td><td>122</td><td>52</td><td>11</td><td>6</td><td>1</td></tr>
             <tr><td>0.24%</td><td>1.45%</td><td>9.42%</td><td>14.49%</td><td>28.02%</td><td>29.47%</td><td>12.56%</td><td>2.66%</td><td>1.45%</td><td>0.24%</td></tr>
-            <tr><th rowspan='2'>IN - IaMP</th><td>0</td><td>1</td><td>29</td><td>46</td><td>100</td><td>91</td><td>36</td><td>11</td><td>3</td><td>2</td></tr>
+            <tr><th rowspan='2'>IN-IaMP</th><td>0</td><td>1</td><td>29</td><td>46</td><td>100</td><td>91</td><td>36</td><td>11</td><td>3</td><td>2</td></tr>
             <tr><td>0%</td><td>0.31%</td><td>9.09%</td><td>14.42%</td><td>31.35%</td><td>28.53%</td><td>11.29%</td><td>3.45%</td><td>0.94%</td><td>0.63%</td></tr>
-            <tr><th rowspan='2'>IaMP - PoFV</th><td>0</td><td>2</td><td>19</td><td>36</td><td>83</td><td>45</td><td>22</td><td>3</td><td>1</td><td>0</td></tr>
+            <tr><th rowspan='2'>IaMP-PoFV</th><td>0</td><td>2</td><td>19</td><td>36</td><td>83</td><td>45</td><td>22</td><td>3</td><td>1</td><td>0</td></tr>
             <tr><td>0%</td><td>0.95%</td><td>9%</td><td>17.06%</td><td>39.34%</td><td>21.33%</td><td>10.43%</td><td>1.42%</td><td>0.47%</td><td>0%</td></tr>
-            <tr><th rowspan='2'>PoFV - StB</th><td>0</td><td>0</td><td>24</td><td>47</td><td>75</td><td>41</td><td>18</td><td>4</td><td>3</td><td>1</td></tr>
+            <tr><th rowspan='2'>PoFV-StB</th><td>0</td><td>0</td><td>24</td><td>47</td><td>75</td><td>41</td><td>18</td><td>4</td><td>3</td><td>1</td></tr>
             <tr><td>0%</td><td>0%</td><td>11.27%</td><td>22.07%</td><td>35.21%</td><td>19.25%</td><td>8.45%</td><td>1.88%</td><td>1.41%</td><td>0.47%</td></tr>
-            <tr><th rowspan='2'>StB - PMiSS</th><td>0</td><td>5</td><td>36</td><td>81</td><td>103</td><td>52</td><td>13</td><td>4</td><td>3</td><td>4</td></tr>
+            <tr><th rowspan='2'>StB-PMiSS</th><td>0</td><td>5</td><td>36</td><td>81</td><td>103</td><td>52</td><td>13</td><td>4</td><td>3</td><td>4</td></tr>
             <tr><td>0%</td><td>1.66%</td><td>11.96%</td><td>26.91%</td><td>34.22%</td><td>17.28%</td><td>4.32%</td><td>1.33%</td><td>1%</td><td>1.33%</td></tr>
-            <tr><th rowspan='2'>PMiSS - MoF</th><td>0</td><td>11</td><td>100</td><td>312</td><td>316</td><td>141</td><td>43</td><td>15</td><td>2</td><td>1</td></tr>
+            <tr><th rowspan='2'>PMiSS-MoF</th><td>0</td><td>11</td><td>100</td><td>312</td><td>316</td><td>141</td><td>43</td><td>15</td><td>2</td><td>1</td></tr>
             <tr><td>0%</td><td>1.17%</td><td>10.63%</td><td>33.16%</td><td>33.58%</td><td>14.98%</td><td>4.57%</td><td>1.59%</td><td>0.21%</td><td>0.11%</td></tr>
-            <tr><th rowspan='2'>MoF - SA</th><td>0</td><td>40</td><td>271</td><td>746</td><td>532</td><td>218</td><td>73</td><td>27</td><td>10</td><td>6</td></tr>
+            <tr><th rowspan='2'>MoF-SA</th><td>0</td><td>40</td><td>271</td><td>746</td><td>532</td><td>218</td><td>73</td><td>27</td><td>10</td><td>6</td></tr>
             <tr><td>0%</td><td>2.08%</td><td>14.09%</td><td>38.79%</td><td>27.67%</td><td>11.34%</td><td>3.8%</td><td>1.4%</td><td>0.52%</td><td>0.31%</td></tr>
-            <tr><th rowspan='2'>SA - UFO</th><td>0</td><td>28</td><td>294</td><td>599</td><td>257</td><td>101</td><td>43</td><td>19</td><td>2</td><td>5</td></tr>
+            <tr><th rowspan='2'>SA-UFO</th><td>0</td><td>28</td><td>294</td><td>599</td><td>257</td><td>101</td><td>43</td><td>19</td><td>2</td><td>5</td></tr>
             <tr><td>0%</td><td>2.08%</td><td>21.81%</td><td>44.44%</td><td>19.07%</td><td>7.49%</td><td>3.19%</td><td>1.41%</td><td>0.15%</td><td>0.37%</td></tr>
-            <tr><th rowspan='2'>UFO - GFW</th><td>2</td><td>45</td><td>337</td><td>423</td><td>167</td><td>44</td><td>22</td><td>17</td><td>2</td><td>1</td></tr>
+            <tr><th rowspan='2'>UFO-GFW</th><td>2</td><td>45</td><td>337</td><td>423</td><td>167</td><td>44</td><td>22</td><td>17</td><td>2</td><td>1</td></tr>
             <tr><td>0.19%</td><td>4.25%</td><td>31.79%</td><td>39.91%</td><td>15.75%</td><td>4.15%</td><td>2.08%</td><td>1.6%</td><td>0.19%</td><td>0.09%</td></tr>
-            <tr><th rowspan='2'>GFW - TD</th><td>0</td><td>49</td><td>475</td><td>370</td><td>94</td><td>32</td><td>16</td><td>8</td><td>2</td><td>2</td></tr>
+            <tr><th rowspan='2'>GFW-TD</th><td>0</td><td>49</td><td>475</td><td>370</td><td>94</td><td>32</td><td>16</td><td>8</td><td>2</td><td>2</td></tr>
             <tr><td>0%</td><td>4.68%</td><td>45.32%</td><td>35.31%</td><td>8.97%</td><td>3.05%</td><td>1.53%</td><td>0.76%</td><td>0.19%</td><td>0.19%</td></tr>
-            <tr><th rowspan='2'>TD - SoPM</th><td>1</td><td>109</td><td>691</td><td>420</td><td>71</td><td>25</td><td>10</td><td>9</td><td>0</td><td>3</td></tr>
+            <tr><th rowspan='2'>TD-SoPM</th><td>1</td><td>109</td><td>691</td><td>420</td><td>71</td><td>25</td><td>10</td><td>9</td><td>0</td><td>3</td></tr>
             <tr><td>0.07%</td><td>8.14%</td><td>51.61%</td><td>31.37%</td><td>5.3%</td><td>1.87%</td><td>0.75%</td><td>0.67%</td><td>0%</td><td>0.22%</td></tr>
-            <tr><th rowspan='2'>SoPM - DDC</th><td>0</td><td>147</td><td>826</td><td>320</td><td>64</td><td>26</td><td>12</td><td>4</td><td>3</td><td>3</td></tr>
+            <tr><th rowspan='2'>SoPM-DDC</th><td>0</td><td>147</td><td>826</td><td>320</td><td>64</td><td>26</td><td>12</td><td>4</td><td>3</td><td>3</td></tr>
             <tr><td>0%</td><td>10.46%</td><td>58.79%</td><td>22.78%</td><td>4.56%</td><td>1.85%</td><td>0.85%</td><td>0.28%</td><td>0.21%</td><td>0.21%</td></tr>
-            <tr><th rowspan='2'>DDC - ISC</th><td>2</td><td>200</td><td>949</td><td>296</td><td>46</td><td>15</td><td>9</td><td>3</td><td>2</td><td>3</td></tr>
+            <tr><th rowspan='2'>DDC-ISC</th><td>2</td><td>200</td><td>949</td><td>296</td><td>46</td><td>15</td><td>9</td><td>3</td><td>2</td><td>3</td></tr>
             <tr><td>0.13%</td><td>13.11%</td><td>62.23%</td><td>19.41%</td><td>3.02%</td><td>0.98%</td><td>0.59%</td><td>0.2%</td><td>0.13%</td><td>0.2%</td></tr>
-            <tr><th rowspan='2'>ISC - LoLK</th><td>1</td><td>193</td><td>711</td><td>225</td><td>35</td><td>18</td><td>4</td><td>4</td><td>0</td><td>3</td></tr>
+            <tr><th rowspan='2'>ISC-LoLK</th><td>1</td><td>193</td><td>711</td><td>225</td><td>35</td><td>18</td><td>4</td><td>4</td><td>0</td><td>3</td></tr>
             <tr><td>0.08%</td><td>16.16%</td><td>59.55%</td><td>18.84%</td><td>2.93%</td><td>1.51%</td><td>0.34%</td><td>0.34%</td><td>0%</td><td>0.25%</td></tr>
-            <tr><th rowspan='2'>LoLK - DBOA</th><td>0</td><td>79</td><td>252</td><td>76</td><td>18</td><td>4</td><td>2</td><td>1</td><td>1</td><td>1</td></tr>
+            <tr><th rowspan='2'>LoLK-DBOA</th><td>0</td><td>79</td><td>252</td><td>76</td><td>18</td><td>4</td><td>2</td><td>1</td><td>1</td><td>1</td></tr>
             <tr><td>0%</td><td>18.2%</td><td>58.06%</td><td>17.51%</td><td>4.15%</td><td>0.92%</td><td>0.46%</td><td>0.23%</td><td>0.23%</td><td>0.23%</td></tr>
-            <tr><th rowspan='2'>DBOA - now</th><td>3</td><td>16</td><td>83</td><td>33</td><td>4</td><td>2</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><th rowspan='2'>DBOA-now</th><td>3</td><td>16</td><td>83</td><td>33</td><td>4</td><td>2</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
             <tr><td>2.11%</td><td>11.27%</td><td>58.45%</td><td>23.24%</td><td>2.82%</td><td>1.41%</td><td>0.7%</td><td>0%</td><td>0%</td><td>0%</td></tr>
         </tbody>
     </table>
@@ -1256,7 +1256,7 @@
     </table>
 </section>
 <section>
-    <h2>08. Correlation between when and how people discovered Touhou</h2>
+    <h3>08. Correlation between when and how people discovered Touhou</h3>
     <div id='corr_container' class='container'>
         <table class='poll table noborders'>
             <colgroup>
@@ -1294,50 +1294,50 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><th rowspan='2'>PC98 - SG</th><td>36</td><td>7</td><td>4</td><td>0</td><td>2</td><td>8</td><td>1</td><td>0</td><td>13</td><td>3</td><td>4</td><td>16</td><td>1</td></tr>
+                <tr><th rowspan='2'>PC98-SG</th><td>36</td><td>7</td><td>4</td><td>0</td><td>2</td><td>8</td><td>1</td><td>0</td><td>13</td><td>3</td><td>4</td><td>16</td><td>1</td></tr>
                 <tr><td>37.89%</td><td>7.37%</td><td>4.21%</td><td>0%</td><td>2.11%</td><td>8.42%</td><td>1.05%</td><td>0%</td><td>13.68%</td><td>3.16%</td><td>4.21%</td><td>16.84%</td><td>1.05%</td></tr>
-                <tr><th rowspan='2'>SG - EoSD</th><td>52</td><td>17</td><td>11</td><td>6</td><td>4</td><td>31</td><td>1</td><td>3</td><td>13</td><td>3</td><td>8</td><td>18</td><td>1</td></tr>
+                <tr><th rowspan='2'>SG-EoSD</th><td>52</td><td>17</td><td>11</td><td>6</td><td>4</td><td>31</td><td>1</td><td>3</td><td>13</td><td>3</td><td>8</td><td>18</td><td>1</td></tr>
                 <tr><td>30.95%</td><td>10.12%</td><td>6.55%</td><td>3.57%</td><td>2.38%</td><td>18.45%</td><td>0.6%</td><td>1.79%</td><td>7.74%</td><td>1.79%</td><td>4.76%</td><td>10.71%</td><td>0.6%</td></tr>
-                <tr><th rowspan='2'>EoSD - PCB</th><td>240</td><td>46</td><td>53</td><td>8</td><td>33</td><td>120</td><td>0</td><td>8</td><td>18</td><td>39</td><td>22</td><td>49</td><td>2</td></tr>
+                <tr><th rowspan='2'>EoSD-PCB</th><td>240</td><td>46</td><td>53</td><td>8</td><td>33</td><td>120</td><td>0</td><td>8</td><td>18</td><td>39</td><td>22</td><td>49</td><td>2</td></tr>
                 <tr><td>37.62%</td><td>7.21%</td><td>8.31%</td><td>1.25%</td><td>5.17%</td><td>18.81%</td><td>0%</td><td>1.25%</td><td>2.82%</td><td>6.11%</td><td>3.45%</td><td>7.68%</td><td>0.31%</td></tr>
-                <tr><th rowspan='2'>PCB - IN</th><td>149</td><td>45</td><td>46</td><td>7</td><td>30</td><td>78</td><td>2</td><td>1</td><td>10</td><td>22</td><td>19</td><td>34</td><td>4</td></tr>
+                <tr><th rowspan='2'>PCB-IN</th><td>149</td><td>45</td><td>46</td><td>7</td><td>30</td><td>78</td><td>2</td><td>1</td><td>10</td><td>22</td><td>19</td><td>34</td><td>4</td></tr>
                 <tr><td>33.33%</td><td>10.07%</td><td>10.29%</td><td>1.57%</td><td>6.71%</td><td>17.45%</td><td>0.45%</td><td>0.22%</td><td>2.24%</td><td>4.92%</td><td>4.25%</td><td>7.61%</td><td>0.89%</td></tr>
-                <tr><th rowspan='2'>IN - IaMP</th><td>122</td><td>18</td><td>44</td><td>9</td><td>17</td><td>60</td><td>1</td><td>2</td><td>5</td><td>21</td><td>10</td><td>12</td><td>9</td></tr>
+                <tr><th rowspan='2'>IN-IaMP</th><td>122</td><td>18</td><td>44</td><td>9</td><td>17</td><td>60</td><td>1</td><td>2</td><td>5</td><td>21</td><td>10</td><td>12</td><td>9</td></tr>
                 <tr><td>36.97%</td><td>5.45%</td><td>13.33%</td><td>2.73%</td><td>5.15%</td><td>18.18%</td><td>0.3%</td><td>0.61%</td><td>1.52%</td><td>6.36%</td><td>3.03%</td><td>3.64%</td><td>2.73%</td></tr>
-                <tr><th rowspan='2'>IaMP - PoFV</th><td>85</td><td>14</td><td>20</td><td>1</td><td>17</td><td>42</td><td>1</td><td>2</td><td>3</td><td>12</td><td>7</td><td>11</td><td>8</td></tr>
+                <tr><th rowspan='2'>IaMP-PoFV</th><td>85</td><td>14</td><td>20</td><td>1</td><td>17</td><td>42</td><td>1</td><td>2</td><td>3</td><td>12</td><td>7</td><td>11</td><td>8</td></tr>
                 <tr><td>38.12%</td><td>6.28%</td><td>8.97%</td><td>0.45%</td><td>7.62%</td><td>18.83%</td><td>0.45%</td><td>0.9%</td><td>1.35%</td><td>5.38%</td><td>3.14%</td><td>4.93%</td><td>3.59%</td></tr>
-                <tr><th rowspan='2'>PoFV - StB</th><td>70</td><td>10</td><td>21</td><td>7</td><td>11</td><td>56</td><td>0</td><td>2</td><td>5</td><td>16</td><td>9</td><td>14</td><td>2</td></tr>
+                <tr><th rowspan='2'>PoFV-StB</th><td>70</td><td>10</td><td>21</td><td>7</td><td>11</td><td>56</td><td>0</td><td>2</td><td>5</td><td>16</td><td>9</td><td>14</td><td>2</td></tr>
                 <tr><td>31.39%</td><td>4.48%</td><td>9.42%</td><td>3.14%</td><td>4.93%</td><td>25.11%</td><td>0%</td><td>0.9%</td><td>2.24%</td><td>7.17%</td><td>4.04%</td><td>6.28%</td><td>0.9%</td></tr>
-                <tr><th rowspan='2'>StB - PMiSS</th><td>86</td><td>25</td><td>20</td><td>6</td><td>30</td><td>99</td><td>0</td><td>3</td><td>8</td><td>12</td><td>10</td><td>11</td><td>2</td></tr>
+                <tr><th rowspan='2'>StB-PMiSS</th><td>86</td><td>25</td><td>20</td><td>6</td><td>30</td><td>99</td><td>0</td><td>3</td><td>8</td><td>12</td><td>10</td><td>11</td><td>2</td></tr>
                 <tr><td>27.56%</td><td>8.01%</td><td>6.41%</td><td>1.92%</td><td>9.62%</td><td>31.73%</td><td>0%</td><td>0.96%</td><td>2.56%</td><td>3.85%</td><td>3.21%</td><td>3.53%</td><td>0.64%</td></tr>
-                <tr><th rowspan='2'>PMiSS - MoF</th><td>248</td><td>28</td><td>47</td><td>16</td><td>47</td><td>507</td><td>0</td><td>3</td><td>8</td><td>19</td><td>20</td><td>13</td><td>8</td></tr>
+                <tr><th rowspan='2'>PMiSS-MoF</th><td>248</td><td>28</td><td>47</td><td>16</td><td>47</td><td>507</td><td>0</td><td>3</td><td>8</td><td>19</td><td>20</td><td>13</td><td>8</td></tr>
                 <tr><td>25.73%</td><td>2.9%</td><td>4.88%</td><td>1.66%</td><td>4.88%</td><td>52.59%</td><td>0%</td><td>0.31%</td><td>0.83%</td><td>1.97%</td><td>2.07%</td><td>1.35%</td><td>0.83%</td></tr>
-                <tr><th rowspan='2'>MoF - SA</th><td>561</td><td>66</td><td>61</td><td>50</td><td>42</td><td>1,033</td><td>3</td><td>2</td><td>14</td><td>34</td><td>38</td><td>30</td><td>6</td></tr>
+                <tr><th rowspan='2'>MoF-SA</th><td>561</td><td>66</td><td>61</td><td>50</td><td>42</td><td>1,033</td><td>3</td><td>2</td><td>14</td><td>34</td><td>38</td><td>30</td><td>6</td></tr>
                 <tr><td>28.92%</td><td>3.4%</td><td>3.14%</td><td>2.58%</td><td>2.16%</td><td>53.25%</td><td>0.15%</td><td>0.1%</td><td>0.72%</td><td>1.75%</td><td>1.96%</td><td>1.55%</td><td>0.31%</td></tr>
-                <tr><th rowspan='2'>SA - UFO</th><td>406</td><td>52</td><td>33</td><td>41</td><td>19</td><td>703</td><td>3</td><td>5</td><td>12</td><td>21</td><td>33</td><td>21</td><td>11</td></tr>
+                <tr><th rowspan='2'>SA-UFO</th><td>406</td><td>52</td><td>33</td><td>41</td><td>19</td><td>703</td><td>3</td><td>5</td><td>12</td><td>21</td><td>33</td><td>21</td><td>11</td></tr>
                 <tr><td>29.85%</td><td>3.82%</td><td>2.43%</td><td>3.01%</td><td>1.4%</td><td>51.69%</td><td>0.22%</td><td>0.37%</td><td>0.88%</td><td>1.54%</td><td>2.43%</td><td>1.54%</td><td>0.81%</td></tr>
-                <tr><th rowspan='2'>UFO - GFW</th><td>322</td><td>41</td><td>34</td><td>48</td><td>21</td><td>554</td><td>2</td><td>7</td><td>11</td><td>9</td><td>23</td><td>16</td><td>4</td></tr>
+                <tr><th rowspan='2'>UFO-GFW</th><td>322</td><td>41</td><td>34</td><td>48</td><td>21</td><td>554</td><td>2</td><td>7</td><td>11</td><td>9</td><td>23</td><td>16</td><td>4</td></tr>
                 <tr><td>29.49%</td><td>3.75%</td><td>3.11%</td><td>4.4%</td><td>1.92%</td><td>50.73%</td><td>0.18%</td><td>0.64%</td><td>1.01%</td><td>0.82%</td><td>2.11%</td><td>1.47%</td><td>0.37%</td></tr>
-                <tr><th rowspan='2'>GFW - TD</th><td>293</td><td>35</td><td>26</td><td>30</td><td>9</td><td>566</td><td>9</td><td>4</td><td>7</td><td>18</td><td>37</td><td>12</td><td>4</td></tr>
+                <tr><th rowspan='2'>GFW-TD</th><td>293</td><td>35</td><td>26</td><td>30</td><td>9</td><td>566</td><td>9</td><td>4</td><td>7</td><td>18</td><td>37</td><td>12</td><td>4</td></tr>
                 <tr><td>27.9%</td><td>3.33%</td><td>2.48%</td><td>2.86%</td><td>0.86%</td><td>53.9%</td><td>0.86%</td><td>0.38%</td><td>0.67%</td><td>1.71%</td><td>3.52%</td><td>1.14%</td><td>0.38%</td></tr>
-                <tr><th rowspan='2'>TD - SoPM</th><td>373</td><td>43</td><td>24</td><td>58</td><td>10</td><td>763</td><td>5</td><td>3</td><td>10</td><td>10</td><td>51</td><td>20</td><td>9</td></tr>
+                <tr><th rowspan='2'>TD-SoPM</th><td>373</td><td>43</td><td>24</td><td>58</td><td>10</td><td>763</td><td>5</td><td>3</td><td>10</td><td>10</td><td>51</td><td>20</td><td>9</td></tr>
                 <tr><td>27.05%</td><td>3.12%</td><td>1.74%</td><td>4.21%</td><td>0.73%</td><td>55.33%</td><td>0.36%</td><td>0.22%</td><td>0.73%</td><td>0.73%</td><td>3.7%</td><td>1.45%</td><td>0.65%</td></tr>
-                <tr><th rowspan='2'>SoPM - DDC</th><td>383</td><td>47</td><td>13</td><td>29</td><td>17</td><td>824</td><td>5</td><td>3</td><td>5</td><td>8</td><td>65</td><td>22</td><td>4</td></tr>
+                <tr><th rowspan='2'>SoPM-DDC</th><td>383</td><td>47</td><td>13</td><td>29</td><td>17</td><td>824</td><td>5</td><td>3</td><td>5</td><td>8</td><td>65</td><td>22</td><td>4</td></tr>
                 <tr><td>26.88%</td><td>3.3%</td><td>0.91%</td><td>2.04%</td><td>1.19%</td><td>57.82%</td><td>0.35%</td><td>0.21%</td><td>0.35%</td><td>0.56%</td><td>4.56%</td><td>1.54%</td><td>0.28%</td></tr>
-                <tr><th rowspan='2'>DDC - ISC</th><td>395</td><td>41</td><td>16</td><td>62</td><td>18</td><td>868</td><td>14</td><td>4</td><td>10</td><td>9</td><td>80</td><td>26</td><td>2</td></tr>
+                <tr><th rowspan='2'>DDC-ISC</th><td>395</td><td>41</td><td>16</td><td>62</td><td>18</td><td>868</td><td>14</td><td>4</td><td>10</td><td>9</td><td>80</td><td>26</td><td>2</td></tr>
                 <tr><td>25.57%</td><td>2.65%</td><td>1.04%</td><td>4.01%</td><td>1.17%</td><td>56.18%</td><td>0.91%</td><td>0.26%</td><td>0.65%</td><td>0.58%</td><td>5.18%</td><td>1.68%</td><td>0.13%</td></tr>
-                <tr><th rowspan='2'>ISC - LoLK</th><td>310</td><td>34</td><td>18</td><td>33</td><td>10</td><td>674</td><td>9</td><td>4</td><td>6</td><td>12</td><td>73</td><td>23</td><td>2</td></tr>
+                <tr><th rowspan='2'>ISC-LoLK</th><td>310</td><td>34</td><td>18</td><td>33</td><td>10</td><td>674</td><td>9</td><td>4</td><td>6</td><td>12</td><td>73</td><td>23</td><td>2</td></tr>
                 <tr><td>25.66%</td><td>2.81%</td><td>1.49%</td><td>2.73%</td><td>0.83%</td><td>55.79%</td><td>0.75%</td><td>0.33%</td><td>0.5%</td><td>0.99%</td><td>6.04%</td><td>1.9%</td><td>0.17%</td></tr>
-                <tr><th rowspan='2'>LoLK - DBOA</th><td>120</td><td>23</td><td>6</td><td>4</td><td>4</td><td>236</td><td>6</td><td>0</td><td>2</td><td>1</td><td>32</td><td>6</td><td>6</td></tr>
+                <tr><th rowspan='2'>LoLK-DBOA</th><td>120</td><td>23</td><td>6</td><td>4</td><td>4</td><td>236</td><td>6</td><td>0</td><td>2</td><td>1</td><td>32</td><td>6</td><td>6</td></tr>
                 <tr><td>26.91%</td><td>5.16%</td><td>1.35%</td><td>0.9%</td><td>0.9%</td><td>52.91%</td><td>1.35%</td><td>0%</td><td>0.45%</td><td>0.22%</td><td>7.17%</td><td>1.35%</td><td>1.35%</td></tr>
-                <tr><th rowspan='2'>DBOA - now</th><td>34</td><td>6</td><td>3</td><td>4</td><td>2</td><td>76</td><td>1</td><td>0</td><td>0</td><td>3</td><td>6</td><td>0</td><td>0</td></tr>
+                <tr><th rowspan='2'>DBOA-now</th><td>34</td><td>6</td><td>3</td><td>4</td><td>2</td><td>76</td><td>1</td><td>0</td><td>0</td><td>3</td><td>6</td><td>0</td><td>0</td></tr>
                 <tr><td>25.19%</td><td>4.44%</td><td>2.22%</td><td>2.96%</td><td>1.48%</td><td>56.3%</td><td>0.74%</td><td>0%</td><td>0%</td><td>2.22%</td><td>4.44%</td><td>0%</td><td>0%</td></tr>
             </tbody>
         </table>
     </div>
 </section>
 <section>
-    <h3>09. Participation in sale of doujinshi such as Comiket</h3>
+    <h3>09. Participation in sale of doujinshi such as Comiket (multiple answers possible)</h3>
     <p>Valid responses: 15,920</p>
     <table class='poll table sortable noborders'>
         <colgroup>
@@ -1353,17 +1353,17 @@
             </tr>
         </thead>
         <tbody>
-            <tr><td>Not participating</td><td>7,318</td><td>45.97%</td></tr>
+            <tr><td>No participation</td><td>7,318</td><td>45.97%</td></tr>
             <tr><td>Purchased official works</td><td>4,076</td><td>55.7%</td></tr>
             <tr><td>Purchased doujinshi</td><td>7,033</td><td>96.11%</td></tr>
             <tr><td>Purchased doujin music</td><td>5,537</td><td>75.66%</td></tr>
             <tr><td>Purchased doujin software</td><td>3,440</td><td>47.01%</td></tr>
             <tr><td>Purchased doujin goods</td><td>5,087</td><td>69.51%</td></tr>
             <tr><td>Purchased corporate works</td><td>1,265</td><td>17.29%</td></tr>
-            <tr><td>Distributed works (circle)</td><td>1,678</td><td>22.93%</td></tr>
+            <tr><td>Distributed works (as a circle)</td><td>1,678</td><td>22.93%</td></tr>
             <tr><td>Staff</td><td>242</td><td>3.31%</td></tr>
             <tr><td>Interacted with circles and friends</td><td>2,650</td><td>36.21%</td></tr>
-            <tr><td>Cosplayer</td><td>622</td><td>8.5%</td></tr>
+            <tr><td>Cosplayed</td><td>622</td><td>8.5%</td></tr>
             <tr><td>Viewed or photographed cosplay</td><td>1,422</td><td>19.43%</td></tr>
             <tr><td>Collaborated on rhythm games</td><td>878</td><td>12%</td></tr>
             <tr><td>Performed live music</td><td>965</td><td>13.19%</td></tr>

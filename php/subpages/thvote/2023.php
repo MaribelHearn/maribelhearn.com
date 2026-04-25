@@ -967,7 +967,7 @@
 <h2 id='questionnaire'>Questionnaire</h2>
 <div>
 <section>
-    <h2>01. Age</h2>
+    <h3>01. Age</h3>
     <p class='center'>Valid responses: 15,273 <button id='age_detail_button'>Show Details</button> <button id='age_summary_button'>Hide Details</button></p>
     <div class='overflow'><table id='age_summary' class='poll table sortable noborders'>
         <colgroup>
@@ -997,13 +997,13 @@
     </table></div>
     <div class='overflow'><table id='age_detail' class='poll table sortable noborders'>
         <colgroup>
-            <col class='col2'>
-            <col class='col3'>
-            <col class='col4'>
+            <col class='col2qm'>
+            <col class='col3q'>
+            <col class='col4q'>
         </colgroup>
         <thead>
             <tr>
-                <th class='header'>Age range</th>
+                <th class='header'>Age</th>
                 <th class='header'>Responses</th>
                 <th class='header'>Percentage</th>
             </tr>
@@ -1080,7 +1080,7 @@
     </table></div>
 </section>
 <section>
-    <h2>02. Gender</h2>
+    <h3>02. Gender</h3>
     <p class='center'>Valid responses: 15,591</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -1103,7 +1103,7 @@
     </table></div>
 </section>
 <section>
-	<h2>03. Location</h2>
+	<h3>03. Location</h3>
 	<p class='center'>Valid responses: 14,807</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -1144,10 +1144,10 @@
 	</table></div>
 </section>
 <section>
-	<h2>04. Difficulty level 1cc'd</h2>
+	<h3>04. Difficulty level 1cc'd</h3>
 	<div>
 		<div>
-			<h3>Touhou 6 - The Embodiment of Scarlet Devil</h3>
+			<h4>Touhou 6 - The Embodiment of Scarlet Devil</h4>
 			<p class='center'>Valid responses: 11,994</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1199,7 +1199,7 @@
 	</div>
 	<div>
 		<div>
-			<h3>Touhou 7 - Perfect Cherry Blossom</h3>
+			<h4>Touhou 7 - Perfect Cherry Blossom</h4>
 			<p class='center'>Valid responses: 11,726</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1251,7 +1251,7 @@
 	</div>
 	<div>
 		<div>
-			<h3>Touhou 8 - Imperishable Night</h3>
+			<h4>Touhou 8 - Imperishable Night</h4>
 			<p class='center'>Valid responses: 11,622</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1303,7 +1303,7 @@
 	</div>
 	<div>
 		<div>
-			<h3>Touhou 9 - Phantasmagoria of Flower View</h3>
+			<h4>Touhou 9 - Phantasmagoria of Flower View</h4>
 			<p class='center'>Valid responses: 11,164</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1355,7 +1355,7 @@
 	</div>
 	<div>
 		<div>
-			<h3>Touhou 10 - Mountain of Faith</h3>
+			<h4>Touhou 10 - Mountain of Faith</h4>
 			<p class='center'>Valid responses: 11,409</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1407,7 +1407,7 @@
 	</div>
 	<div>
 		<div>
-			<h3>Touhou 11 - Subterranean Animism</h3>
+			<h4>Touhou 11 - Subterranean Animism</h4>
 			<p class='center'>Valid responses: 11,158</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1459,7 +1459,7 @@
 	</div>
 	<div>
 		<div>
-			<h3>Touhou 12 - Undefined Fantastic Object</h3>
+			<h4>Touhou 12 - Undefined Fantastic Object</h4>
 			<p class='center'>Valid responses: 10,933</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1511,7 +1511,7 @@
 	</div>
 	<div>
 		<div>
-			<h3>Touhou 13 - Ten Desires</h3>
+			<h4>Touhou 13 - Ten Desires</h4>
 			<p class='center'>Valid responses: 10,893</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1563,7 +1563,7 @@
 	</div>
 	<div>
 		<div>
-			<h3>Touhou 14 - Double Dealing Character</h3>
+			<h4>Touhou 14 - Double Dealing Character</h4>
 			<p class='center'>Valid responses: 10,839</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1615,7 +1615,7 @@
 	</div>
 	<div>
 		<div>
-			<h3>Touhou 15 - Legacy of Lunatic Kingdom (Pointdevice)</h3>
+			<h4>Touhou 15 - Legacy of Lunatic Kingdom (Pointdevice)</h4>
 			<p class='center'>Valid responses: 10,822</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1667,7 +1667,7 @@
 	</div>
 	<div>
 		<div>
-			<h3>Touhou 15 - Legacy of Lunatic Kingdom (Legacy)</h3>
+			<h4>Touhou 15 - Legacy of Lunatic Kingdom (Legacy)</h4>
 			<p class='center'>Valid responses: 10,619</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1719,7 +1719,7 @@
 	</div>
 	<div>
 		<div>
-			<h3>Touhou 16 - Hidden Star in Four Seasons</h3>
+			<h4>Touhou 16 - Hidden Star in Four Seasons</h4>
 			<p class='center'>Valid responses: 10,827</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1771,7 +1771,7 @@
 	</div>
 	<div>
 		<div>
-			<h3>Touhou 17: Wily Beast and Weakest Creature</h3>
+			<h4>Touhou 17 - Wily Beast and Weakest Creature</h4>
 			<p class='center'>Valid responses: 10,830</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1823,7 +1823,7 @@
 	</div>
 	<div>
 		<div>
-			<h3>Touhou 18: Unconnected Marketeers</h3>
+			<h4>Touhou 18 - Unconnected Marketeers</h4>
 			<p class='center'>Valid responses: 10,878</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1875,7 +1875,7 @@
 	</div>
 	<div>
 		<div>
-			<h3>Touhou 19: Unfinished Dream of All Living Ghost</h3>
+			<h4>Touhou 19 - Unfinished Dream of All Living Ghost</h4>
 			<p class='center'>Valid responses: 10,872</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1927,7 +1927,7 @@
 	</div>
 </section>
 <section>
-	<h2>05. How you purchased the games</h2>
+	<h3>05. How you purchased the games</h3>
 	<p class='center'>Valid responses: 10,320</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -1962,10 +1962,10 @@
 	</table></div>
 </section>
 <section>
-	<h2>06. Publications subscribed to</h2>
+	<h3>06. Publications subscribed to</h3>
 	<div>
 		<div>
-			<h3>Curiosities of Lotus Asia</h3>
+			<h4>Curiosities of Lotus Asia</h4>
 			<p class='center'>Valid responses: 10,615</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -1997,7 +1997,7 @@
 	</div>
 	<div>
 		<div>
-			<h3>Lotus Eaters</h3>
+			<h4>Lotus Eaters</h4>
 			<p class='center'>Valid responses: 10,970</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -2049,7 +2049,7 @@
 	</div>
 	<div>
 		<div>
-			<h3>Foul Detective Satori</h3>
+			<h4>Foul Detective Satori</h4>
 			<p class='center'>Valid responses: 10,705</p>
 		</div>
         <div class='overflow'><table class='poll table sortable noborders'>
@@ -2096,7 +2096,7 @@
 	</div>
 </section>
 <section>
-	<h2>07. What do you like about Touhou? (multiple answers possible)</h2>
+	<h3>07. What do you like about Touhou? (multiple answers possible)</h3>
 	<p class='center'>Valid responses: 16,670</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -2133,7 +2133,7 @@
 				<td>67.82%</td>
 			</tr>
 			<tr>
-				<td>Worldbuilding</td>
+				<td>Lore</td>
 				<td>13,162</td>
 				<td>78.96%</td>
 			</tr>
@@ -2151,7 +2151,7 @@
 	</table></div>
 </section>
 <section>
-	<h2>08. When did you discover Touhou?</h2>
+	<h3>08. When did you discover Touhou?</h3>
 	<p class='center'>Valid responses: 15,376</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -2296,7 +2296,7 @@
 	</table></div>
 </section>
 <section>
-	<h2>09. How did you discover Touhou?</h2>
+	<h3>09. How did you discover Touhou?</h3>
 	<p class='center'>Valid responses: 15,400</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -2396,7 +2396,7 @@
 	</table></div>
 </section>
 <section>
-	<h2>10. Participation in doujin events such as Comiket and Reitaisai (multiple answers possible)</h2>
+	<h3>10. Participation in doujin events such as Comiket and Reitaisai (multiple answers possible)</h3>
 	<p class='center'>Valid responses: 16,670</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -2486,7 +2486,7 @@
 	</table></div>
 </section>
 <section>
-	<h2>11. Participation in Touhou-related events (multiple answers possible)</h2>
+	<h3>11. Participation in Touhou-related events (multiple answers possible)</h3>
 	<p class='center'>Valid responses: 16,670</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>
@@ -2546,7 +2546,7 @@
 	</table></div>
 </section>
 <section>
-	<h2>12. Have you voted on the Touhou Popularity Poll before?</h2>
+	<h3>12. Have you voted on the Touhou Popularity Poll before?</h3>
 	<p class='center'>Valid responses: 15,880</p>
     <div class='overflow'><table class='poll table sortable noborders'>
         <colgroup>

@@ -1012,9 +1012,9 @@
     </table></div>
     <div class='overflow'><table id='age_detail' class='poll table sortable noborders'>
         <colgroup>
-            <col class='col2'>
-            <col class='col3'>
-            <col class='col4'>
+            <col class='col2qm'>
+            <col class='col3q'>
+            <col class='col4q'>
         </colgroup>
         <thead>
             <tr>
@@ -1145,7 +1145,7 @@
         </thead>
         <tbody>
             <tr>
-                <td><strong>Hokkaido</strong></td>
+                <td>Hokkaido</td>
                 <td>496</td>
                 <td>3.41%</td>
             </tr>
@@ -1215,37 +1215,37 @@
                 <td>8.41%</td>
             </tr>
             <tr>
-                <td><strong>Southeast Asia</strong></td>
+                <td>Southeast Asia</td>
                 <td>270</td>
                 <td>1.85%</td>
             </tr>
             <tr>
-                <td><strong>South, Central, West Asia</strong></td>
+                <td>South, Central, West Asia</td>
                 <td>39</td>
                 <td>0.27%</td>
             </tr>
             <tr>
-                <td><strong>Europe</strong></td>
+                <td>Europe</td>
                 <td>482</td>
                 <td>3.31%</td>
             </tr>
             <tr>
-                <td><strong>Africa</strong></td>
+                <td>Africa</td>
                 <td>21</td>
                 <td>0.14%</td>
             </tr>
             <tr>
-                <td><strong>North America</strong></td>
+                <td>North America</td>
                 <td>681</td>
                 <td>4.68%</td>
             </tr>
             <tr>
-                <td><strong>South America</strong></td>
+                <td>South America</td>
                 <td>222</td>
                 <td>1.52%</td>
             </tr>
             <tr>
-                <td><strong>Oceania</strong></td>
+                <td>Oceania</td>
                 <td>63</td>
                 <td>0.43%</td>
             </tr>
@@ -2071,7 +2071,7 @@
     </div>
     <div>
         <div>
-            <h3>Foul Detective Satori</h3>
+            <h4>Foul Detective Satori</h4>
             <p class='center'>Valid responses: 10,475</p>
         </div>
         <div class='overflow'><table class='poll table sortable noborders'>
