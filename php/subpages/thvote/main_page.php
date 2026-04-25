@@ -8549,8 +8549,8 @@ music and works will not change when the full results are published.</p>-->
             <tr><td><strong>Kansai</strong><br>(Osaka, Kyoto, Hyogo, Nara, Shiga, Wakayama)</td><td>1,583</td><td>10.74%</td></tr>
             <tr><td><strong>Chugoku</strong><br>(Tottori, Shimane, Okayama, Hiroshima, Yamaguchi)</td><td>574</td><td>3.89%</td></tr>
             <tr><td><strong>Shikoku</strong><br>(Tokushima, Ehime, Kagawa, Kochi)</td><td>271</td><td>1.84%</td></tr>
-            <tr><td><strong>Northern Kyushu</strong> (Fukuoka, Saga, Nagasaki, Oita)</td><td>524</td><td>3.56%</td></tr>
-            <tr><td><strong>Southern Kyushu</strong> (Kumamoto, Miyazaki, Kagoshima, Okinawa)</td><td>358</td><td>2.43%</td></tr>
+            <tr><td><strong>Northern Kyushu</strong><br>(Fukuoka, Saga, Nagasaki, Oita)</td><td>524</td><td>3.56%</td></tr>
+            <tr><td><strong>Southern Kyushu</strong><br>(Kumamoto, Miyazaki, Kagoshima, Okinawa)</td><td>358</td><td>2.43%</td></tr>
             <tr><td>East Asia</td><td>2,062</td><td>13.99%</td></tr>
             <tr><td>Southeast Asia</td><td>249</td><td>1.69%</td></tr>
             <tr><td>South, Central, West Asia</td><td>84</td><td>0.57%</td></tr>

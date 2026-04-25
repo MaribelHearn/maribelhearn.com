@@ -1169,18 +1169,18 @@
             </tr>
         </thead>
         <tbody>
-            <tr><th>Offline (School, club activities, family, etc.)</th><td>5,074</td><td>29.96%</td></tr>
-            <tr><th>Online games, online friends, chat (IRC, etc.)</th><td>739</td><td>4.36%</td></tr>
-            <tr><th>Personal sites, blogs, news sites, etc.</th><td>637</td><td>3.76%</td></tr>
-            <tr><th>Image sites (Pixiv, Nijie, TINAMI, SNS, etc.)</th><td>485</td><td>2.86%</td></tr>
-            <tr><th>Anonymous boards (2ch, Futaba, etc.)</th><td>430</td><td>2.54%</td></tr>
-            <tr><th>YouTube, Nicovideo, etc.</th><td>8,194</td><td>48.38%</td></tr>
-            <tr><th>Twitter</th><td>77</td><td>0.45%</td></tr>
-            <tr><th>Magazine articles, TV programs, etc.</th><td>105</td><td>0.62%</td></tr>
-            <tr><th>Doujinshi (Comiket, etc.)</th><td>285</td><td>1.68%</td></tr>
-            <tr><th>Doujin stores, etc.</th><td>299</td><td>1.77%</td></tr>
-            <tr><th>When looking for interesting STGs</th><td>511</td><td>3.02%</td></tr>
-            <tr><th>When looking for interesting fighters</th><td>100</td><td>0.59%</td></tr>
+            <tr><td>Offline (School, club activities, family, etc.)</td><td>5,074</td><td>29.96%</td></tr>
+            <tr><td>Online games, online friends, chat (IRC, etc.)</td><td>739</td><td>4.36%</td></tr>
+            <tr><td>Personal sites, blogs, news sites, etc.</td><td>637</td><td>3.76%</td></tr>
+            <tr><td>Image sites (Pixiv, Nijie, TINAMI, SNS, etc.)</td><td>485</td><td>2.86%</td></tr>
+            <tr><td>Anonymous boards (2ch, Futaba, etc.)</td><td>430</td><td>2.54%</td></tr>
+            <tr><td>YouTube, Nicovideo, etc.</td><td>8,194</td><td>48.38%</td></tr>
+            <tr><td>Twitter</td><td>77</td><td>0.45%</td></tr>
+            <tr><td>Magazine articles, TV programs, etc.</td><td>105</td><td>0.62%</td></tr>
+            <tr><td>Doujinshi (Comiket, etc.)</td><td>285</td><td>1.68%</td></tr>
+            <tr><td>Doujin stores, etc.</td><td>299</td><td>1.77%</td></tr>
+            <tr><td>When looking for interesting STGs</td><td>511</td><td>3.02%</td></tr>
+            <tr><td>When looking for interesting fighters</td><td>100</td><td>0.59%</td></tr>
         </tbody>
     </table>
 </section>

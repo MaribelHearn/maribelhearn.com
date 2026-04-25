@@ -1434,7 +1434,7 @@
             <tr><td>Distributed works (as a circle)</td><td>1,290</td><td>17.71%</td></tr>
             <tr><td>Staff</td><td>174</td><td>2.39%</td></tr>
             <tr><td>Interacted with circles and friends</td><td>2,129</td><td>29.24%</td></tr>
-            <tr><td>Cosplayer</td><td>456</td><td>6.26%</td></tr>
+            <tr><td>Cosplayed</td><td>456</td><td>6.26%</td></tr>
             <tr><td>Viewed or photographed cosplay</td><td>1,103</td><td>15.15%</td></tr>
             <tr><td>Collaborated on rhythm games</td><td>663</td><td>9.1%</td></tr>
             <tr><td>Performed live music</td><td>732</td><td>10.05%</td></tr>
