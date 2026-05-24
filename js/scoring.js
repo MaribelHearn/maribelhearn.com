@@ -101,6 +101,11 @@ function parseScore(game, diff, shot) {
         shot = shot.replace(" Team", "Team");
     }
 
+    // Legacy GFW Extra
+    if (shot === '-') {
+        shot = "A1";
+    }
+
     return document.getElementById(game + diff + shot).value.replace(/[^0-9]+/g, "");
 }
 
