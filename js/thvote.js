@@ -44,7 +44,7 @@ function navigateHistory(event) {
             }
             window.location.pathname = `/thvote/${nextYear}`;
         }
-        else if (direction === "Right" && year !== 2003) {
+        else if (direction === "Right" && year > 2003) {
             let previousYear = year - 1;
             if (previousYear === 2007) {
                 previousYear -= 1;
