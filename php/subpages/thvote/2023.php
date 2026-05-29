@@ -802,7 +802,7 @@
         <tr><td>516</td><td>486</td><td>459</td><td>the Legend of KAGE</td><td>10</td><td>0</td><td>0</td></tr>
         <tr><td>516</td><td>576</td><td>533</td><td>Sunfall</td><td>10</td><td>1</td><td>0</td></tr>
         <tr><td>516</td><td>503</td><td>498</td><td>Game Over</td><td>10</td><td>0</td><td>3</td></tr>
-        <tr><td>516</td><td>465</td><td>493</td><td>My Maid Sweet Maid</td><td>10</td><td>1</td><td>2</td></tr>
+        <tr><td>516</td><td>465</td><td>493</td><td>My Maid, Sweet Maid</td><td>10</td><td>1</td><td>2</td></tr>
         <tr><td>522</td><td>524</td><td>498</td><td>Swing a Fish to Drive Away Flies</td><td>9</td><td>1</td><td>0</td></tr>
         <tr><td>522</td><td>503</td><td>511</td><td>Youkai Temple</td><td>9</td><td>0</td><td>2</td></tr>
         <tr><td>522</td><td>503</td><td>472</td><td>The Ravine Kappa's Technological Prowess</td><td>9</td><td>1</td><td>2</td></tr>

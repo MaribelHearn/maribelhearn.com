@@ -741,7 +741,7 @@
         <tr><td>465</td><td>451</td><td>448</td><td>Magical Power of the Mallet</td><td>18</td><td>0</td><td>3</td></tr>
         <tr><td>465</td><td>409</td><td>396</td><td>Two Worlds</td><td>18</td><td>1</td><td>3</td></tr>
         <tr><td>465</td><td>524</td><td>442</td><td>Holy Knight of Orléans</td><td>18</td><td>0</td><td>2</td></tr>
-        <tr><td>465</td><td>493</td><td>458</td><td>My Maid Sweet Maid</td><td>18</td><td>2</td><td>2</td></tr>
+        <tr><td>465</td><td>493</td><td>458</td><td>My Maid, Sweet Maid</td><td>18</td><td>2</td><td>2</td></tr>
         <tr><td>469</td><td>447</td><td>438</td><td>Eastern Wind</td><td>17</td><td>3</td><td>1</td></tr>
         <tr><td>469</td><td>429</td><td>442</td><td>Shining Heavenly Armillary</td><td>17</td><td>0</td><td>1</td></tr>
         <tr><td>469</td><td>469</td><td>438</td><td>Spiritual Heaven</td><td>17</td><td>0</td><td>3</td></tr>

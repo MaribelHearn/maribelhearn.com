@@ -178,7 +178,7 @@
         <tr><td>135</td><td>136</td><td>117</td><td>Luize</td><td>74</td><td>9</td><td>25</td><td>0</td></tr>
         <tr><td>137</td><td>131</td><td>132</td><td>Kappa (Yamawaro)</td><td>64</td><td>2</td><td>19</td><td>0</td></tr>
         <tr><td>138</td><td>132</td><td>125</td><td>UFO tokens</td><td>62</td><td>4</td><td>17</td><td>0</td></tr>
-        <tr><td>139</td><td>150</td><td>145</td><td>Shingyoku</td><td>61</td><td>5</td><td>27</td><td>0</td></tr>
+        <tr><td>139</td><td>150</td><td>145</td><td>SinGyoku</td><td>61</td><td>5</td><td>27</td><td>0</td></tr>
         <tr><td>139</td><td>138</td><td>127</td><td>Rikako Asakura</td><td>61</td><td>6</td><td>15</td><td>0</td></tr>
         <tr><td>139</td><td>147</td><td>136</td><td>Dragon (Dragon Child, Unnamed Evil Dragon)</td><td>61</td><td>1</td><td>20</td><td>3</td></tr>
         <tr><td>142</td><td>141</td><td>140</td><td>Kitsune (Youkai kitsune, Fox Child, etc.)</td><td>50</td><td>2</td><td>12</td><td>2</td></tr>

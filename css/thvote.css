@@ -217,6 +217,9 @@
     margin-top: 2px;
     margin-bottom: 2px;
 }
+.tbd {
+    text-decoration: line-through;
+}
 #age_summary {
     display: table;
 }

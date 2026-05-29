@@ -8,7 +8,7 @@ music and works will not change when the full results are published.</p>-->
 <p>All of the table columns are sortable.</p>
 <p>Source: <a href='https://toho-vote.info/'>https://toho-vote.info/</a></p>
 <?php if (empty($subpage)) echo '<p class="thin">History can be found here: <a href="/thvote/2024">Past Voting Results (separate page)</a>.</p>' ?>
-<?php if (empty($subpage)) echo '<p class="thin">Currently, only the old polls up until 2015 are included in the history. Older polls may be added later.</p>' ?>
+<?php if (empty($subpage)) echo '<p class="thin">Currently, only the old polls up until 2014 are included in the history. Older polls may be added later.</p>' ?>
 <?php if (empty($subpage)) echo '<p class="thin">You may navigate the history using the arrow keys.</p>' ?>
 <?php if (empty($subpage)) echo '<p class="donation wide center"><a href="https://ko-fi.com/maribelhearn42"><span class="icon kofi_icon"></span> Support me</a></p>' ?>
 <!--<h2>How do I vote?</h2>
