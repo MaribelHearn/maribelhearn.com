@@ -64,9 +64,7 @@ function save() {
 }
 
 function parseScore(game, diff, shot) {
-    if (shot.includes(" Team")) {
-        shot = shot.replace(" Team", "Team");
-    }
+    shot = shot.replace(" Team", "Team");
 
     // Legacy GFW Extra
     if (shot === '-') {
@@ -174,7 +172,7 @@ function apply() {
     document.getElementById("game_tbody").innerHTML = gameTable;
     document.getElementById("score_table").style.display = "table";
     document.getElementById("game_table").style.display = "table";
-    document.getElementById("top_list").style.display = "block";
+    document.getElementById("results").style.display = "block";
     document.getElementById("modal").style.display = "block";
 }
 
@@ -301,6 +299,7 @@ function showScores() {
             for (let shot in scores[game][diff]) {
                 if (scores[game][diff][shot] != 0) {
                     const score = sep(scores[game][diff][shot]);
+                    shot = shot.replace(" Team", "Team");
 
                     if (game == "GFW" && diff == "Extra" && shot == '-') {
                         shot = "A1"; // legacy
@@ -438,8 +437,8 @@ function doImport() {
             return;
         }
 
-        value = value.split(' ');
-        shot = value[0];
+        value = value.replace(" Team", "Team").split(' ');
+        shot = value[0].replace("Team", " Team");
         score = parseInt(value[1]);
 
         if (isNaN(score) || score < 0) {

@@ -56,6 +56,9 @@ input[type=button] {
     font-weight: bold;
     color: orange;
 }
+.device_link {
+    text-decoration: none;
+}
 .dropdown-check-list {
     display: inline-block;
 }
@@ -182,27 +185,45 @@ input[type=button] {
 #GFWExtra {
      text-align: left;
 }
-@media only screen and (min-width: 1500px) and (max-width: 1700px) {
+@media only screen and (min-width: 2000px) and (max-width: 2300px) {
     .wrap {
         margin-left: 20%;
         margin-right: 20%;
     }
 }
-@media only screen and (min-width: 1300px) and (max-width: 1500px) {
+@media only screen and (min-width: 1700px) and (max-width: 2000px) {
+    .wrap {
+        margin-left: 18%;
+        margin-right: 18%;
+    }
+    #buttons_br {
+        display: inline;
+    }
+}
+@media only screen and (min-width: 1500px) and (max-width: 1700px) {
     .wrap {
         margin-left: 15%;
         margin-right: 15%;
     }
+    #buttons_br {
+        display: inline;
+    }
+}
+@media only screen and (min-width: 1300px) and (max-width: 1500px) {
+    .wrap {
+        margin-left: 12%;
+        margin-right: 12%;
+    }
 }
 @media only screen and (min-width: 1100px) and (max-width: 1300px) {
     .wrap {
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-}
-@media only screen and (min-width: 910px) and (max-width: 1100px) {
-    .wrap {
         margin-left: 8%;
         margin-right: 8%;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    .wrap {
+        margin-left: 0%;
+        margin-right: 0%;
     }
 }

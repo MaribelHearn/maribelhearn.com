@@ -148,7 +148,7 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
     <footer><strong><a href='#top'>Back to Top</a></strong></footer>
 </div>
 <div id='modal'>
-	<div id='top_list' class='modal_inner'>
+	<div id='results' class='modal_inner'>
         <h2>WR Comparison</h2>
         <table id='score_table' class='sortable result_table'>
             <thead>
@@ -192,7 +192,7 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
             <input id='text_file' type='hidden' value=''>
         </p>
         <p>
-            <a id='save_link' href='#' download='#'>Save to Device</a>
+            <a id='save_link' href='#' download='#' class='device_link'>Save to Device</a>
         </p>
     </div>
 	<input id='WRs' type='hidden' value='<?php echo json_encode($wrs); ?>'>
