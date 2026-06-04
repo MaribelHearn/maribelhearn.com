@@ -16,45 +16,15 @@ function closeModal(event) {
     if ((event.target && event.target == modal) || (event.key && event.key == "Escape")) {
         emptyModal();
     }
-}
 
-function show(game) {
-    document.getElementById(game).style.display = "block";
-
-    if (!document.getElementById(`${game}c`).checked) {
-        document.getElementById(`${game}c`).checked = true;
-    }
-}
-
-function hide(game) {
-    document.getElementById(game).style.display = "none";
-
-    if (document.getElementById(`${game}c`).checked) {
-        document.getElementById(`${game}c`).checked = false;
-    }
-}
-
-function checkGame() {
-    const checkbox = this.id;
-    const element = checkbox.replace('c', "");
-
-    if (document.getElementById(checkbox).checked) {
-        show(element);
-    } else {
-        hide(element);
-    }
-}
-
-function checkAll() {
-    const checked = document.getElementById("all").checked;
-
-    if (checked) {
-        for (const game of games) {
-            show(game);
-        }
-    } else {
-        for (const game of games) {
-            hide(game);
+    // hotkeys
+    if (modal.style.display != "block" && event.key) {
+        switch (event.key) {
+            case 's': save(); break;
+            case 't': apply(); break;
+            case 'i': importText(); break;
+            case 'e': exportText(); break;
+            case 'r': reset(); break;
         }
     }
 }
@@ -68,11 +38,11 @@ function sep(number) {
 }
 
 function printMessage(message) {
-    document.getElementById("message").innerHTML = message;
+    document.getElementById("message").innerHTML = `<strong class="message">${message}</strong>`;
 }
 
 function printError(error) {
-    document.getElementById("error_message").innerHTML = error;
+    document.getElementById("error_message").innerHTML = `<strong class="error_message">${error}</strong>`;
 }
 
 function clearMessages() {
@@ -84,14 +54,11 @@ function save() {
     clearMessages();
     const precision = parseInt(document.getElementById("precision").value);
     localStorage.setItem("precision", precision);
-    let shown = {};
 
     for (const game in scores) {
-        shown[game] = document.getElementById(`${game}c`).checked;
         localStorage.setItem(game, JSON.stringify(scores[game]));
     }
 
-    localStorage.setItem("shown", JSON.stringify(shown));
     unsavedChanges = false;
     printMessage("Scores saved!");
 }
@@ -110,11 +77,15 @@ function parseScore(game, diff, shot) {
 }
 
 function validateScore(score) {
-    if (score === "" || score < 0) {
-        return false;
+    if (score === "") {
+        return true;
     }
 
     if (isNaN(score)) {
+        return false;
+    }
+    
+    if (score < 0) {
         return false;
     }
 
@@ -125,8 +96,8 @@ function getRow(game, diff, shot, precision, emptyWR) {
     let score = parseScore(game, diff, shot);
     const valid = validateScore(score);
 
-    if (!valid) {
-        return valid;
+    if (!valid || score === "") {
+        return false;
     }
 
     const wr = !emptyWR ? WRs[game][diff][shot] : [0, "no one"];
@@ -156,7 +127,7 @@ function getRow(game, diff, shot, precision, emptyWR) {
     };
 }
 
-function calc() {
+function apply() {
     clearMessages();
     let averages = {};
     let scoreTable = "";
@@ -164,10 +135,6 @@ function calc() {
     let zero = true;
 
     for (const game of games) {
-        if (document.getElementById(game).style.display == "none") {
-            continue;
-        }
-
         let total = 0;
         let categories = 0;
 
@@ -203,10 +170,12 @@ function calc() {
         gameTable += `<tr><td>${game}</td><td data-sort='${averages[game]}'>${averages[game]}%</td></tr>`;
     }
 
-    document.getElementById("score_table").style.display = "table";
-    document.getElementById("game_table").style.display = "table";
     document.getElementById("score_tbody").innerHTML = scoreTable;
     document.getElementById("game_tbody").innerHTML = gameTable;
+    document.getElementById("score_table").style.display = "table";
+    document.getElementById("game_table").style.display = "table";
+    document.getElementById("top_list").style.display = "block";
+    document.getElementById("modal").style.display = "block";
 }
 
 function emptyModal() {
@@ -239,7 +208,7 @@ function copyToClipboard() {
     emptyModal();
     const text = document.getElementById("text_file").value;
     navigator.clipboard.writeText(text.replace(/<\/p><p>/g, "\n").strip());
-    printMessage("<strong>Copied to clipboard!</strong>");
+    printMessage("Copied to clipboard!");
 }
 
 function exportText() {
@@ -287,14 +256,15 @@ function reset() {
         for (const input of inputs) {
             input.value = "";
         }
+
+        unsavedChanges = false;
+        document.getElementById("score_table").style.display = "none";
+        document.getElementById("game_table").style.display = "none";
+        document.getElementById("score_tbody").innerHTML = "";
+        document.getElementById("game_tbody").innerHTML = "";
+        printMessage("Reset the scores!");
     }
 
-    unsavedChanges = false;
-    document.getElementById("score_table").style.display = "none";
-    document.getElementById("game_table").style.display = "none";
-    document.getElementById("score_tbody").innerHTML = "";
-    document.getElementById("game_tbody").innerHTML = "";
-    printMessage("Reset the scores!");
 }
 
 function deleteLegacyCookies() {
@@ -311,6 +281,7 @@ function deleteLegacyCookies() {
     if (localStorage.hasOwnProperty("saveScoringData") || localStorage.hasOwnProperty("saveData")) {
         localStorage.removeItem("saveScoringData");
         localStorage.removeItem("saveData");
+        localStorage.removeItem("shown");
     }
 }
 
@@ -342,20 +313,6 @@ function showScores() {
     }
 }
 
-function checkShown() {
-    let shownData = localStorage.getItem("shown");
-
-    if (shownData) {
-        shownData = JSON.parse(shownData);
-    }
-
-    for (const game in shownData) {
-        if (!shownData[game]) {
-            hide(game);
-        }
-    }
-}
-
 function idToCategory(id) {
     const diffs = ["Easy", "Normal", "Hard", "Lunatic", "Extra", "Phantasm"];
     let result = {};
@@ -382,7 +339,7 @@ function scoreChanged() {
     const score = parseScore(category.game, category.diff, category.shot);
     const valid = validateScore(score);
 
-    if (valid === false || valid == "invalid") {
+    if (!valid) {
         return;
     }
 
@@ -394,7 +351,7 @@ function scoreChanged() {
         scores[category.game][category.diff] = {};
     }
 
-    scores[category.game][category.diff][category.shot] = score;
+    scores[category.game][category.diff][category.shot] = score ? score : 0;
     unsavedChanges = true;
 }
 
@@ -402,12 +359,14 @@ function precisionChanged() {
     clearMessages();
 
     if (!document.getElementById("precision").checkValidity()) {
-        document.getElementById("calc").removeEventListener("click", calc, false);
+        document.getElementById("apply").removeEventListener("click", apply, false);
         printError("Invalid precision; minimum is 0, maximum is 5.");
+        document.getElementById("precision").value = 0;
+        precision = 0;
         return;
     }
 
-    document.getElementById("calc").addEventListener("click", calc, false);
+    document.getElementById("apply").addEventListener("click", apply, false);
     precision = parseInt(this.value);
 }
 
@@ -415,13 +374,12 @@ function setEventListeners() {
     document.body.addEventListener("click", closeModal, false);
     document.body.addEventListener("keyup", closeModal, false);
     document.getElementById("save").addEventListener("click", save, false);
-    document.getElementById("calc").addEventListener("click", calc, false);
+    document.getElementById("apply").addEventListener("click", apply, false);
     document.getElementById("import_button").addEventListener("click", importText, false);
     document.getElementById("export").addEventListener("click", exportText, false);
     document.getElementById("reset").addEventListener("click", reset, false);
-    document.getElementById("all").addEventListener("click", checkAll, false);
     const input = document.querySelectorAll("input");
-    const check = document.querySelectorAll(".check");
+    const select = document.querySelectorAll(".dropdown-check-list");
 
     for (const element of input) {
         if (element.id == "precision") {
@@ -432,8 +390,26 @@ function setEventListeners() {
         element.addEventListener("change", scoreChanged, false);
     }
 
-    for (const element of check) {
-        element.addEventListener("click", checkGame, false);
+    for (const element of select) {
+        element.getElementsByClassName("anchor")[0].addEventListener("click", function() {
+            if (element.classList.contains("visible")) {
+                element.classList.remove("visible");
+            } else {
+                element.classList.add("visible");
+            }
+            
+            element.childNodes[0].innerHTML = (element.childNodes[0].innerHTML === "Expand" ? "Collapse" : "Expand");
+            const game = element.id.replace("dropdown_", "");
+            const tr = document.getElementsByClassName(`row_${game}`);
+
+            for (const row of tr) {
+                if (row.classList.contains("visible")) {
+                    row.classList.remove("visible");
+                } else {
+                    row.classList.add("visible");
+                }
+            }
+        });
     }
 }
 
@@ -458,7 +434,7 @@ function doImport() {
             diff = value;
             continue;
         } else if (!game) {
-            printError("<strong>Error: invalid high scores. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
+            printError("Error: invalid high scores. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.");
             return;
         }
 
@@ -467,7 +443,7 @@ function doImport() {
         score = parseInt(value[1]);
 
         if (isNaN(score) || score < 0) {
-            printError("<strong>Error: invalid high scores. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
+            printError("Error: invalid high scores. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.");
             return;
         }
 
@@ -475,15 +451,14 @@ function doImport() {
             scores[game][diff][shot] = score;
             continue;
         } else {
-            printError("<strong>Error: invalid high scores. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.</strong>");
+            printError("Error: invalid high scores. Either there is a typo somewhere, or this is a bug. Please contact Maribel in case of the latter.");
             return;
         }
     }
 
     save();
     showScores();
-    checkShown();
-    printMessage("<strong>High scores successfully imported!</strong>");
+    printMessage("High scores successfully imported!");
 }
 
 function init() {
@@ -521,7 +496,6 @@ function init() {
         try {
             loadScores();
             showScores();
-            checkShown();
         } catch (e) {
             // do nothing
         }

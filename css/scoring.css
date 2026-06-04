@@ -48,25 +48,76 @@ input[type=button] {
 .border p {
     margin: 4px;
 }
-#notice {
-    display: none;
-}
-#message {
+.message {
     font-weight: bold;
     color: green;
 }
-#error_message {
+.error_message {
     font-weight: bold;
     color: orange;
 }
-#checkboxes {
-    margin-top: 15px;
+.dropdown-check-list {
+    display: inline-block;
 }
-#checkboxes tbody:after {
-    content: '\200C';
-    display: block;
-    line-height: 1em;
-    color: #000;
+.dropdown-check-list .anchor {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 50px 5px 10px;
+    border: 1px solid #ccc;
+}
+.dropdown-check-list .anchor:after {
+    position: absolute;
+    content: "";
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    padding: 5px;
+    right: 10px;
+    top: 20%;
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+.dropdown-check-list.visible .anchor:after {
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.dropdown-check-list .anchor:active:after {
+    right: 8px;
+    top: 21%;
+}
+/*.dropdown-check-list.visible .anchor {
+    color: #0094ff;
+}*/
+#score_input td:not(.nohide) {
+    display: none;
+}
+#score_input tr.visible td {
+    display: table-cell;
+}
+#buttons {
+    border: 1px solid #000;
+    text-align: left;
+    font: 14px verdana, sans-serif;
+    padding-bottom: 15px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 9999;
+}
+#hotkeys {
+    margin-left: 30px;
+}
+#buttons_br {
+    margin-bottom: 10px;
+}
+#buttons_br, #notice {
+    display: none;
 }
 #HRtP_image {
     background-position: 0px 0px;
