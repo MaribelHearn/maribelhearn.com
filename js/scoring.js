@@ -47,7 +47,12 @@ function sep(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
-function printMessage(message, rendering) {
+function printMessage(message, rendering, comparison) {
+    if (comparison) {
+        document.getElementById("comparison_message").innerHTML = `<strong class="message">${message}</strong>`;
+        return;
+    }
+
     if (rendering) {
         document.getElementById("rendering_message").innerHTML = `<strong class="message">${message}</strong>`;
         return;
@@ -70,6 +75,8 @@ function clearMessages() {
     printError("");
     const rendering = true;
     printMessage("", rendering);
+    const comparison = true;
+    printMessage("", false, comparison);
 }
 
 function save() {
@@ -147,6 +154,51 @@ function getRow(game, diff, shot, precision, emptyWR) {
         "row": `<tr><td>${game} ${diff}</td><td>${shotText}</td><td data-sort='${score}'>${sep(score)}</td><td data-sort='${percentageSort}'>${percentage}%</td>` +
         `<td><progress value='${percentage}' max='100'></progress></td><td data-sort='${wr[0]}'>${wrText}</td>`
     };
+}
+
+function comparisonToClipboard() {
+    clearMessages();
+    const rendering = false;
+    const comparison = true;
+    const text = document.getElementById("comparison_file").value;
+    navigator.clipboard.writeText(text.replace(/<\/p><p>/g, "\n").strip());
+    printMessage("Copied to clipboard!", rendering, comparison);
+}
+
+function exportComparison() {
+    let comparison = document.getElementById("score_table").childNodes[3].innerHTML;
+    comparison = comparison.slice(4, -5)
+    comparison = comparison.split("</tr><tr>");
+    
+    for (let i = 0; i < comparison.length; i++) {
+        comparison[i] = comparison[i].slice(4, -5);
+        comparison[i] = comparison[i].replace(/ data-sort="\d+"/g, "");
+        comparison[i] = comparison[i].replace(/<progress(.*?)\/progress>/g, "");
+        comparison[i] = comparison[i].replace(/<\/?em>/g, "");
+        comparison[i] = comparison[i].replace(/<\/td><td>/g, "\t");
+        comparison[i] = comparison[i].replace(/\t\t/g, "\t");
+        comparison[i] = comparison[i].replace(/\s\sTeam/g, " Team");
+        const parts = comparison[i].split("\t");
+
+        for (let j = 0; j < parts.length; j++) {
+            if (parts[j].length <= 3) {
+                comparison[i] = comparison[i].replace(parts[j] + "\t", parts[j] + "\t\t\t\t");
+            }
+            else if (parts[j].length <= 7) {
+                comparison[i] = comparison[i].replace(parts[j] + "\t", parts[j] + "\t\t\t");
+            }
+            else if (parts[j].length <= 11) {
+                comparison[i] = comparison[i].replace(parts[j] + "\t", parts[j] + "\t\t");
+            }
+        }
+    }
+
+    comparison = comparison.join("\n");
+    const saveLink = document.getElementById("comparison_link");
+    saveLink.href = "data:text/plain;charset=utf-8," + encodeURIComponent(comparison);
+    saveLink.download = comparisonFileName("txt");
+    document.getElementById("comparison_file").value = comparison;
+    document.getElementById("clipboard_comp").addEventListener("click", comparisonToClipboard, false);
 }
 
 function percentageToHex(percentage) {
@@ -316,6 +368,7 @@ function apply() {
     document.getElementById("game_table").style.display = "table";
     document.getElementById("results").style.display = "block";
     document.getElementById("modal").style.display = "block";
+    exportComparison();
     applyColours(highest);
     prepareRendering();
     drawOverview();
@@ -346,6 +399,16 @@ function fileName(extension) {
     const minutes = (date.getMinutes()).toLocaleString("en-US", {minimumIntegerDigits: 2});
     const seconds = (date.getSeconds()).toLocaleString("en-US", {minimumIntegerDigits: 2});
     return `touhou_high_scores_${date.getFullYear()}_${month}_${day}_${hours}_${minutes}_${seconds}.${extension}`;
+}
+
+function comparisonFileName(extension) {
+    const date = new Date();
+    const month = (date.getMonth() + 1).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    const day = (date.getDate()).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    const hours = (date.getHours()).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    const minutes = (date.getMinutes()).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    const seconds = (date.getSeconds()).toLocaleString("en-US", {minimumIntegerDigits: 2});
+    return `touhou_wr_comparison_${date.getFullYear()}_${month}_${day}_${hours}_${minutes}_${seconds}.${extension}`;
 }
 
 function copyToClipboard() {
@@ -408,7 +471,6 @@ function reset() {
         document.getElementById("game_tbody").innerHTML = "";
         printMessage("Reset the scores!");
     }
-
 }
 
 function deleteLegacyCookies() {
@@ -522,6 +584,7 @@ function base64toBlob(b64Data, contentType) {
 }
 
 function imageToClipboard() {
+    clearMessages();
     const id = this.getAttribute("data_id");
     const rendering = true;
 
@@ -535,7 +598,7 @@ function imageToClipboard() {
         ]);
         printMessage("Copied to clipboard!", rendering);
     } catch (err) {
-        printMessage("Your browser does not support image to clipboard.", rendering);
+        printError("Your browser does not support image to clipboard.", rendering);
     }
 }
 

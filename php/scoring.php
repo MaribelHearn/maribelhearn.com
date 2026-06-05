@@ -193,12 +193,16 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
 	<div id='results' class='modal_inner'>
 		<h2>Summary Table</h2>
 		<div id='screenshot'>
-            <a id='screenshot_link' href='#' download='' class='device_link'>Save to Device</a>
+            <a id='screenshot_link' href='#' download='#' class='device_link'>Save to Device</a>
             <input id='clipboard' type='button' value='Copy to Clipboard' data_id='screenshot_base64'>
 		    <p id='rendering_message' class='rendering_message'></p>
             <p><img id='screenshot_base64' src='#' alt='Scoring summary table'></p>
         </div>
         <h2>WR Comparison</h2>
+        <a id='comparison_link' href='#' download='#' class='device_link'>Save to Device</a>
+        <input id='comparison_file' type='hidden' value=''>
+        <input id='clipboard_comp' type='button' value='Copy to Clipboard'>
+        <p id='comparison_message' class='rendering_message'></p>
         <table id='score_table' class='sortable result_table'>
             <thead>
                 <tr>
