@@ -152,26 +152,26 @@ function getRow(game, diff, shot, precision, emptyWR) {
 function percentageToHex(percentage) {
     if (percentage <= 50) {
         const blue = (255 - Math.round(percentage / 50 * 127)).toString(16);
-        return "#FFFF" + blue;
+        return "#FFFF" + blue.toString().padStart(2, '0');
     }
 
     if (percentage <= 70) {
         const blue = (128 - Math.round((percentage - 50) / 20 * 127)).toString(16);
-        return "#FFFF" + blue;
+        return "#FFFF" + blue.toString().padStart(2, '0');
     }
 
     if (percentage <= 85) {
         const green = (255 - Math.round((percentage - 70) / 15 * 127)).toString(16);
-        return "#FF" + green + "00";
+        return "#FF" + green.toString().padStart(2, '0') + "00";
     }
 
     if (percentage <= 95) {
         const green = (128 - Math.round((percentage - 85) / 10 * 127)).toString(16);
-        return "#FF" + green + "00";
+        return "#FF" + green.toString().padStart(2, '0') + "00";
     }
 
     const red = (255 - Math.round((percentage - 95) / 5 * 127)).toString(16);
-    return "#" + red + "0000";
+    return "#" + red.toString().padStart(2, '0') + "0000";
 }
 
 function applyColours(highest) {
