@@ -1,4 +1,4 @@
-h1, h2, h3, h4, table:not(.poll):not(.rendering), label, li, figcaption, dt, p:not(.language):not(#ack), caption:not(.legend_surv), input[type='file'], #nav, #hy_text {
+h1, h2, h3, h4, table:not(.poll):not(.rendering), label, li, figcaption, dt, p:not(.language):not(#ack), caption:not(.legend_surv):not(.legend_score), input[type='file'], #nav, #hy_text {
     color: white;
 }
 .rendering th, .rendering td:not(.overview):not(.overview_half), .donation a, .PoDD, .PoDDp, .LLS, .LLSp, .PCB, .PCBp, .PoFV, .PoFVp, .MoF, .MoFp, .GFW, .GFWp, .TD, .TDp, .DDC, .DDCp, .UM, .UMp, .UDoALG, .UDoALGp, .FW, .FWp,

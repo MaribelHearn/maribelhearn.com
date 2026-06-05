@@ -47,32 +47,75 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
 ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
-    <noscript><p><?php echo _('<strong>Notice:</strong> this page requires JavaScript.') ?></p></noscript>
-    <p>Enter your high scores. You can leave any high score empty. The scores you entered will be compared to the world records that
-    were achieved with the same shottypes and percentages will be given. When you click the 'Calculate' button at the bottom of the
-    page, sortable tables will be generated to tell you how your scores compare to the world records.</p>
-    <div class='center'>
-        <label for='precision'>Number of decimals for WR percentages:</label>
-        <input id='precision' type='number' value='0' min='0' max='5' step='1'>
+        <noscript><p><?php echo _('<strong>Notice:</strong> this page requires JavaScript.') ?></p></noscript>
+        <p>Enter your high scores. You can leave any high score empty. The scores you entered will be compared to the world records that
+        were achieved with the same shottypes and percentages will be given. When you click the 'Calculate' button at the bottom of the
+        page, sortable tables will be generated to tell you how your scores compare to the world records.</p>
+        <div class='center'>
+            <label for='precision'>Number of decimals for WR percentages:</label>
+            <input id='precision' type='number' value='0' min='0' max='5' step='1'>
+        </div>
+        <p><?php echo _('Hotkeys:') ?></p>
+        <ul id='hotkeys'>
+            <li><?php echo _('Save: S') ?></li>
+            <li><?php echo _('Generate Tables: T') ?></li>
+            <li><?php echo _('Import: I') ?></li>
+            <li><?php echo _('Export: E') ?></li>
+            <li><?php echo _('Reset: R') ?></li>
+        </ul>
+        <div id='buttons'>
+            <input id='save' type='button' value='Save'>
+            <input id='apply' type='button' value='Generate Tables'>
+            <br id='buttons_br'>
+            <input id='import_button' type='button' value='Import'>
+            <input id='export' type='button' value='Export'>
+            <input id='reset' type='button' value='Reset'>
+        </div>
+        <p id='message' class='center'></p>
+        <p id='error_message' class='center'></p>
     </div>
-    <p><?php echo _('Hotkeys:') ?></p>
-    <ul id='hotkeys'>
-        <li><?php echo _('Save: S') ?></li>
-        <li><?php echo _('Generate Tables: T') ?></li>
-        <li><?php echo _('Import: I') ?></li>
-        <li><?php echo _('Export: E') ?></li>
-        <li><?php echo _('Reset: R') ?></li>
-    </ul>
-    <div id='buttons'>
-        <input id='save' type='button' value='Save'>
-        <input id='apply' type='button' value='Generate Tables'>
-        <br id='buttons_br'>
-        <input id='import_button' type='button' value='Import'>
-        <input id='export' type='button' value='Export'>
-        <input id='reset' type='button' value='Reset'>
-    </div>
-    <p id='message' class='center'></p>
-    <p id='error_message' class='center'></p>
+    <table id='summary_table' class='rendering'>
+        <caption id='legend' class='legend_score'>
+            <span class='legend big'></span> 70%
+            <span class='legend bigger'></span> 85%
+            <span class='legend superbig'></span> 95%
+            <span class='legend biggest'></span> WR
+        </caption>
+        <thead>
+            <tr>
+                <th>Game</th>
+                <th>Easy</th>
+                <th>Normal</th>
+                <th>Hard</th>
+                <th>Lunatic</th>
+                <th colspan='2'>Extra</th>
+            </tr>
+        </thead>
+        <tbody><?php
+            foreach ($games as $key => $data) {
+                $game = $data['short_name'];
+                if ($game == 'UDoALG') {
+                    continue;
+                }
+                echo '<tr id="' . $game . 'tr">';
+                echo '<th>' . $game . '</th>';
+                echo '<td id="' . $game . 'Easy" class="overview"></td>';
+                echo '<td id="' . $game . 'Normal" class="overview"></td>';
+                echo '<td id="' . $game . 'Hard" class="overview"></td>';
+                echo '<td id="' . $game . 'Lunatic" class="overview"></td>';
+                if ($game === 'HRtP' || $game === 'PoDD') {
+                    echo '<td id="' . $game . '" colspan="2" class="overview no_extra">X</td>';
+                }
+                else if ($game === 'PCB') {
+                    echo '<td id="PCBExtra" class="overview_half"></td><td id="PCBPhantasm" class="overview_half"></td>';
+                }
+                else {
+                    echo '<td id="' . $game . 'Extra" colspan="2" class="overview"></td>';
+                }
+                echo '</tr>';
+            }
+        ?></tbody>
+    </table>
     <form>
         <div><table id='score_input' class='noborders'>
             <thead>
@@ -137,10 +180,9 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
                         echo '</tr>';
                     }
                     if ($game == 'GFW') {
-                        echo '<tr class="row_GFW"><td><label for="GFWExtraA1">Extra</label></td><td id="GFWExtra" colspan="4"><input id="GFWExtraA1" type="text"></td></tr>';
+                        echo '<tr class="row_GFW"><td><label for="GFWExtraA1">Extra</label></td><td id="GFWExtra_td" colspan="4"><input id="GFWExtraA1" type="text"></td></tr>';
                     }
                     echo '<tr><td colspan="8"><hr></td></tr>';
-                    //echo '</table></div>';
                 }
             ?></tbody>
         </table></div>
@@ -149,6 +191,13 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
 </div>
 <div id='modal'>
 	<div id='results' class='modal_inner'>
+		<h2>Summary Table</h2>
+		<div id='screenshot'>
+            <a id='screenshot_link' href='#' download='' class='device_link'>Save to Device</a>
+            <input id='clipboard' type='button' value='Copy to Clipboard' data_id='screenshot_base64'>
+		    <p id='rendering_message' class='rendering_message'></p>
+            <p><img id='screenshot_base64' src='#' alt='Scoring summary table'></p>
+        </div>
         <h2>WR Comparison</h2>
         <table id='score_table' class='sortable result_table'>
             <thead>

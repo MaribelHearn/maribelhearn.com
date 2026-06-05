@@ -16,7 +16,7 @@ if (!isset($_GET['page'])) {
 $min = (!is_localhost($_SERVER['REMOTE_ADDR']) ? '-min' : '');
 $sorttable = array('thvote');
 $sortable = array('admin', 'fangame', 'gensokyo', 'lnn', 'royalflare', 'scoring', 'survival', 'wr');
-$canvas = array('slots', 'survival', 'tiers');
+$canvas = array('scoring', 'slots', 'survival', 'tiers');
 $po2json = array('drc', 'lnn', 'wr');
 $page = $_GET['page'];
 $js = array();

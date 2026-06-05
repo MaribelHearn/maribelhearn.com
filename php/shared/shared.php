@@ -96,7 +96,7 @@ function wrap_top() {
     if (has_translation($page)) {
         echo '</div>';
     }
-    if ($page == 'survival' || $page == 'slots') {
+    if ($page == 'scoring' || $page == 'survival' || $page == 'slots') {
         echo '<div id="content" data-html2canvas-ignore="" style="display:block">';
     }
     if ($page == 'faq' || $page == 'royalflare' || $page == 'thvote') {
