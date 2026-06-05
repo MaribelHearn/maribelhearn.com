@@ -1137,6 +1137,7 @@ function apply() {
     document.getElementById("results").style.display = "block";
     document.getElementById("modal").style.display = "block";
     window.scrollTo(0, 0);
+    document.getElementById("results").scrollTo(0, 0);
     const success = drawOverview();
 
     if (success) {
