@@ -133,7 +133,7 @@ function getRow(game, diff, shot, precision, emptyWR) {
         percentage = score / Math.max(wr[0], 1) * 100;
         wrText = `${sep(wr[0])} by <em>${wr[1]}</em>`;
         percentage = (precision === 0 ? Math.round(percentage) : Number(percentage).toFixed(precision));
-        percentagePrecise = (score / Math.max(wr[0], 1) * 100).toFixed(2);
+        percentagePrecise = Math.min((score / Math.max(wr[0], 1) * 100).toFixed(8), 100);
     }
 
     const shotText = shot.replace("Team", " Team");
