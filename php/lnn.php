@@ -216,10 +216,11 @@ $last_modified = $last_modified['results'][0]['date'];
         // With lnn_old_layout cookie NOT set, show game image layout
         if ($layout == 'New') {
             echo '<div id="newlayout"><p id="clickgame">' . _('Click a game cover to show its list of LNNs.') . '</p>';
+            echo '<p><input id="showversus1" type="checkbox"><label id="label_versus1" for="showversus1">' . _('Include Versus games') . '</label></p>';
             $second_row = false;
             foreach ($games as $key => $data) {
                 $game = $data['short_name'];
-                if (in_array($game, $pvp)) {
+                if (!$include_vs && in_array($game, $pvp)) {
                     continue;
                 }
                 if ($game == 'PoFV') {
@@ -237,10 +238,12 @@ $last_modified = $last_modified['results'][0]['date'];
                     '<span class="full_name tooltip">' . $full_names->{$game} . '</span></span>';
                 }
             }
-            echo '<br><br>';
-            foreach ($pvp as $key => $game) {
-                echo '<span class="game_image"><span id="' . $game . '_image" class="game_img ' . ($game == 'UDoALG' ? 'sheet_2' : 'sheet_1') . '"></span>' .
-                '<span class="full_name tooltip">' . $full_names->{$game} . '</span></span>';
+            if (!$include_vs) {
+                echo '<br><br>';
+                foreach ($pvp as $key => $game) {
+                    echo '<span class="game_image"><span id="' . $game . '_image" class="game_img ' . ($game == 'UDoALG' ? 'sheet_2' : 'sheet_1') . '"></span>' .
+                    '<span class="full_name tooltip">' . $full_names->{$game} . '</span></span>';
+                }
             }
             echo '</div>';
             echo '<div id="lnn_list"><p id="fullname" class="center"></p><table id="lnn_table">';
@@ -370,8 +373,8 @@ $last_modified = $last_modified['results'][0]['date'];
     <div id='overall'>
         <h2><?php echo _('Overall Count'); ?></h2>
         <div class='center'>
-            <input id='showversus1' type='checkbox'>
-            <label id='label_versus1' for='showversus1'><?php echo _('Include Versus games') ?></label>
+            <input id='showversus2' type='checkbox'>
+            <label id='label_versus2' for='showversus2'><?php echo _('Include Versus games') ?></label>
         </div>
         <table class='sortable'>
             <thead>
@@ -416,8 +419,8 @@ $last_modified = $last_modified['results'][0]['date'];
     <div id='players'>`
         <h2><?php echo _('Player Statistics') ?></h2>
         <div class='center'>
-            <input id='showversus2' type='checkbox'>
-            <label id='label_versus2' for='showversus2'><?php echo _('Include Versus games') ?></label>
+            <input id='showversus3' type='checkbox'>
+            <label id='label_versus3' for='showversus3'><?php echo _('Include Versus games') ?></label>
         </div>
         <table id='ranking' class='sortable'>
             <thead>

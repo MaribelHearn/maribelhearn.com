@@ -554,6 +554,7 @@ function setEventListeners() {
     document.getElementById("category").addEventListener("keypress", detectEnter, false);
     document.getElementById("showversus1").addEventListener("click", toggleVersus, false);
     document.getElementById("showversus2").addEventListener("click", toggleVersus, false);
+    document.getElementById("showversus3").addEventListener("click", toggleVersus, false);
     document.getElementById("information").addEventListener("click", openModal, false);
     const gameImg = document.querySelectorAll(".game_img");
 
@@ -649,6 +650,7 @@ function init() {
     versusIncluded = getCookie("include_vs") ? true : false;
     document.getElementById("showversus1").checked = versusIncluded;
     document.getElementById("showversus2").checked = versusIncluded;
+    document.getElementById("showversus3").checked = versusIncluded;
     setEventListeners();
     setAttributes();
 
