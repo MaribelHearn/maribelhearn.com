@@ -20,26 +20,11 @@ $MAX_SCORE = 9999999990;
 $RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_limit']), 1) : 15;
 $layout = (isset($_COOKIE['wr_old_layout']) ? 'Old' : 'New');
 $wrs = [];
-$west = [];
 $player_wrs = (object) [];
 $player_games = (object) [];
 $overall = (object) [];
 $diff_max = (object) [];
 $full_names = (object) [];
-
-function pc_class(int $pc) {
-    if ($pc < 50) {
-        return 'does_not_even_score';
-    } else if ($pc < 75) {
-        return 'barely_even_scores';
-    } else if ($pc < 90) {
-        return 'moderately_even_scores';
-    } else if ($pc < 100) {
-        return 'does_even_score';
-    } else {
-        return 'does_even_score_well';
-    }
-}
 
 function date_tl($date, string $lang) {
     if (empty($date) || $date == '') {
@@ -127,28 +112,6 @@ foreach ($wr_data as $key => $data) {
         $diff_max->{$game}->{$diff}['shottype'] = $shot;
     }
 }
-
-$west_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty&type=Score&region=Western');
-$games_seen = [];
-$west_data = json_decode($west_data, true);
-foreach ($west_data as $key => $data) {
-    $score = $data['score'];
-    $player = $data['player'];
-    $game = $data['category']['game'];
-    $diff = $data['category']['difficulty'];
-    $shot = $data['category']['shot'];
-    if (!in_array($game, $games_seen)) {
-        $west[$game] = [];
-        $diffs_seen = [];
-        array_push($games_seen, $game);
-    }
-    if (!in_array($diff, $diffs_seen)) {
-        $west[$game][$diff] = [];
-        array_push($diffs_seen, $diff);
-    }
-    $west[$game][$diff] = [$score, $player, $shot];
-}
-
 ?>
 <div id='wrap' class='wrap'>
 	<?php echo wrap_top() ?>
@@ -198,7 +161,6 @@ foreach ($west_data as $key => $data) {
             }
             echo '<p><a href="#' . $data['short_name'] . '">' . $full_name . '</a></p>';
         }
-        echo '<p><a href="#western_records">' . _('Western Records') . '</a></p>';
         echo '<p><a id="playersearchlink" href="#player_search">' . _('Player Search') . '</a></p>';
         echo '<p><a href="#recent">' . _('Recent Records') . '</a></p>';
         echo '<p><a id="historylink" href="#history_old">' . _('History') . '</a></p>';
@@ -370,41 +332,6 @@ foreach ($west_data as $key => $data) {
             }
             echo '</tbody></table></div>';
         }
-        // Old layout western records
-        echo '<h2 id="western_records">' . _('Western Records') . '</h2>';
-        foreach ($west as $game => $obj) {
-            echo '<table class="' . $game . 't"><tr class="irregular_tr"><th colspan="3">' . _($game) .
-            '</th></tr><tr class="irregular_tr"><th>' . _('World') .
-            '</th><th>' . _('West') . '</th><th>' . _('Percentage') . '</th></tr>';
-            foreach ($obj as $diff => $shots) {
-                $westt = $west[$game][$diff];
-                $world = $diff_max->{$game}->{$diff};
-                if ($westt[0] == $world['score']) {
-                    $percentage = 100;
-                } else {
-                    $percentage = number_format((float) $westt[0] / $world['score'] * 100, 2, '.', ',');
-                }
-                if ($world['score'] >= $MAX_SCORE) {
-                    $world_text = '<abbr title="' . number_format($world['score'], 0, '.', ',') .
-                    '">' . number_format($MAX_SCORE, 0, '.', ',') . '</abbr>';
-                } else {
-                    $world_text = number_format($world['score'], 0, '.', ',');
-                }
-                if ($westt[0] >= $MAX_SCORE) {
-                    $west_text = '<abbr title="' . number_format($westt[0], 0, '.', ',') .
-                    '">' . number_format($MAX_SCORE, 0, '.', ',') . '</abbr>';
-                } else {
-                    $west_text = number_format($westt[0], 0, '.', ',');
-                }
-                echo '<tr class="irregular_tr"><td colspan="3">' . $diff . '</td></tr>' .
-                '<tr class="irregular_tr"><td>' . $world_text .
-                '<br>by <em>' . $world['player'] . '</em><br>(' . _($world['shottype']) .
-                ')</td><td>' . $west_text .
-                '<br>by <em>' . $westt[1] . '</em><br>(' . (empty($westt[2]) ? $westt[2] : _($westt[2])) .
-                ')</td><td class="' . pc_class($percentage) . '">(' . $percentage . '%)</td></tr>';
-            }
-            echo '</table>';
-        }
         if ($layout == 'New') {
             echo '</noscript>';
         }
@@ -438,9 +365,6 @@ foreach ($west_data as $key => $data) {
         <p id='fullname' class='center'></p>
         <p class='center'><strong><?php echo _('Important Notice:') ?></strong> <span id='notice'></span></p>
         <div class='center'>
-            <input id='western' type='checkbox'>
-            <label id='label_western' for='western'><?php echo _('Show Western records') ?></label>
-            <br>
             <input id='unverified' type='checkbox'>
             <label id='label_unverified' for='unverified'><?php echo _('Unverified scores') ?></label>
             <br>
@@ -453,16 +377,7 @@ foreach ($west_data as $key => $data) {
                 <tbody id='world_tbody'></tbody>
             </table>
         </div>
-        <table id='west'>
-            <thead id='west_thead'>
-                <tr class='irregular_tr'>
-                    <th><?php echo _('World') ?></th>
-                    <th><?php echo _('West') ?></th>
-                    <th><?php echo _('Percentage') ?></th>
-                </tr>
-            </thead>
-            <tbody id='west_tbody'></tbody>
-        </table>
+        <h3><?php echo _('History') ?></h3>
         <div id='history'>
             <div class='center'>
                 <label for='history_category'><?php echo _('Browse History') ?></label>
@@ -656,9 +571,6 @@ foreach ($west_data as $key => $data) {
 			$diffs .= '"' . $data['short_name'] . '":[';
 			foreach ($data['shots'][0]['categories'] as $key => $category) {
                 if ($category['type'] == 'LNN') {
-                    continue;
-                }
-                if ($category['region'] == 'Western') {
                     continue;
                 }
 				$diffs .= '"' . $category['difficulty'] . '",';

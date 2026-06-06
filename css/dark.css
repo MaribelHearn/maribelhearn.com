@@ -29,19 +29,7 @@ a:visited:not(.replay):not(.i):not(.dropdown_button):not(.donation a) {
 .Winter, .FinalA, .FinalB, .in_route {
     color: cyan;
 }
-.does_not_even_score {
-    color: gold;
-}
-.barely_even_scores {
-    color: #FF8C00;
-}
-.moderately_even_scores {
-    color: #00A000;
-}
-.does_even_score {
-    color: dodgerblue;
-}
-.does_even_score_well, .hrtp_route {
+.hrtp_route {
     color: #E768C3;
 }
 .lolk_mode {

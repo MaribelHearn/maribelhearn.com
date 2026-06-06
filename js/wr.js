@@ -4,7 +4,6 @@ const hsifsExtraShots = ["Reimu", "Cirno", "Aya", "Marisa"];
 let language = "en_GB";
 let selected = "";
 let videoEnabled = false;
-let westernEnabled = false;
 let unverifiedEnabled = false;
 
 function getSeason(string) {
@@ -43,12 +42,6 @@ function saveChanges() {
     location.reload();
 }
 
-function toggleWestern() {
-    westernEnabled = !westernEnabled;
-    westernEnabled ? localStorage.setItem("westernEnabled", true) : localStorage.removeItem("westernEnabled");
-    reloadTable();
-}
-
 function toggleUnverified() {
     unverifiedEnabled = !unverifiedEnabled;
     unverifiedEnabled ? localStorage.setItem("unverifiedEnabled", true) : localStorage.removeItem("unverifiedEnabled");
@@ -57,20 +50,6 @@ function toggleUnverified() {
 
 function shotRoute(game) {
     return game == "HRtP" || game == "GFW" ? _("Route") : _("Shottype");
-}
-
-function percentageClass(percentage) {
-    if (percentage < 50) {
-        return "does_not_even_score";
-    } else if (percentage < 75) {
-        return "barely_even_scores";
-    } else if (percentage < 90) {
-        return "moderately_even_scores";
-    } else if (percentage < 100) {
-        return "does_even_score";
-    } else {
-        return "does_even_score_well";
-    }
 }
 
 function formatUnverified(score) {
@@ -120,10 +99,6 @@ function prepareShowWR(game) {
     const diffs = JSON.parse(document.getElementById("diffs").value)[game];
     const shots = JSON.parse(document.getElementById("shots").value)[game];
 
-    if (westernEnabled) {
-        document.getElementById("western").checked = true;
-    }
-
     if (unverifiedEnabled) {
         document.getElementById("unverified").checked = true;
     }
@@ -135,11 +110,8 @@ function prepareShowWR(game) {
     }
 
     const wrTable = document.getElementById("world");
-    const westTable = document.getElementById("west");
     wrTable.classList.remove(`${selected}t`);
     wrTable.classList.add(`${game}t`);
-    westTable.classList.remove(`${selected}t`);
-    westTable.classList.add(`${game}t`);
     selected = game;
     document.getElementById(`${game}_image`).style.border = "3px solid gold";
     document.getElementById("fullname").innerHTML = fullNameNumber(game);
@@ -181,67 +153,6 @@ function formatDate(date, raw) {
     }
 }
 
-function showWesternRecords(game, overalls, westScores) {
-    /*if (game == "StB" || game == "DS") {
-        return;
-    }*/
-
-    const west = document.getElementById("west");
-    const westTable = document.getElementById("west_tbody");
-    westTable.innerHTML = "";
-
-    if (westScores.length === 0) {
-        west.classList.remove(`${game}t`);
-        west.style.display = "none";
-        return;
-    }
-
-    for (const data of westScores) {
-        let west = data.score;
-        const westPlayer = data.player;
-        const diff = data.category.difficulty;
-        let westShot = data.category.shot;
-        let world = overalls[diff].score;
-        let worldPlayer = overalls[diff].player;
-        let worldShot = overalls[diff].category.shot;
-
-        const percentage = (west / world * 100).toFixed(2);
-        const percentageText = parseInt(percentage) == 100 ? 100 : percentage;
-        west = ((game == "WBaWC" || game == "UM" || game == "FW") && west > MAX_SCORE
-                ? `<span class='cs'>${sep(west)}<span class='tooltip truescore'>${_("Uncapped")}</span></span>`
-                : sep(west)
-        );
-        westShot = (westShot != '-' ? `<br>(${_(westShot)})` : "");
-
-        world = ((game == "WBaWC" || game == "UM" || game == "FW") && world > MAX_SCORE
-                ? `<span class='cs'>${sep(world)}<span class='tooltip truescore'>${_("Uncapped")}</span></span>`
-                : sep(world)
-        );
-        world = (overalls[diff].verified ? world : formatUnverified(world));
-        worldShot = (worldShot != '-' ? `<br>(${_(worldShot)})` : "");
-        westTable.innerHTML += `<tr class='irregular_tr'><td colspan='3'>${diff}</td></tr>`;
-        westTable.innerHTML += `<tr class='irregular_tr'><td>${world}<br>by <em>${worldPlayer}</em>${worldShot}</td>` +
-                `<td>${west}<br>by <em>${westPlayer}</em>${westShot}</td><td class='${percentageClass(percentage)}'>(${percentageText}%)</td></tr>`;
-    }
-
-    west.style.display = "table";
-}
-
-function getWesternRecords(game, overalls) {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/replay/?type=Score&game=${game}&ordering=difficulty&region=Western`);
-    xhr.onreadystatechange = function () {
-        if (this.readyState === 4) {
-            if (this.status === 200) {
-                const westScores = JSON.parse(this.response);
-                showWesternRecords(game, overalls, westScores);
-            }
-        }
-    }
-
-    xhr.send();
-}
-
 function getWRs(game) {
     const gameImg = document.querySelectorAll(".game_img");
     let verification = "";
@@ -262,14 +173,8 @@ function getWRs(game) {
                 const records = JSON.parse(this.response);
                 prepareShowWR(game);
                 showWRtable(game, records);
-                const overalls = highlightBests(game, records);
+                highlightBests(game, records);
                 getHistoryCategories(game);
-
-                if (westernEnabled) {
-                    getWesternRecords(game, overalls);
-                } else {
-                    document.getElementById("west").style.display = "none";
-                }
             
                 for (const element of gameImg) {
                     element.addEventListener("click", showWRs, false);
@@ -415,7 +320,6 @@ function showWRs(event) {
         const border = "none";
         gameImg.style.border = border;
         document.getElementById("world").classList.remove(`${game}t`);
-        document.getElementById("west").classList.remove(`${game}t`);
         document.getElementById("wr_list").style.display = "none";
         selected = "";
     }
@@ -647,7 +551,6 @@ function setEventListeners() {
     document.getElementById("search").addEventListener("select", setPlayer, false);
     document.getElementById("player").addEventListener("change", getPlayerWRs, false);
     document.getElementById("player").addEventListener("keypress", detectEnter, false);
-    document.getElementById("western").addEventListener("click", toggleWestern, false);
     document.getElementById("unverified").addEventListener("click", toggleUnverified, false);
     document.getElementById("toggle_video").addEventListener("click", toggleVideo, false);
     document.getElementById("history_category").addEventListener("change", getHistory, false);
@@ -758,7 +661,11 @@ function init() {
         language = "en_US";
     }
 
-    westernEnabled = localStorage.getItem("westernEnabled") ? true : false;
+    // legacy
+    if (localStorage.getItem("westernEnabled")) {
+        localStorage.removeItem("westernEnabled");
+    }
+
     unverifiedEnabled = localStorage.getItem("unverifiedEnabled") ? true : false;
     setEventListeners();
     setAttributes();

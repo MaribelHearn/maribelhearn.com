@@ -40,26 +40,6 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
 .Winter {
     color: blue;
 }
-.does_not_even_score {
-    color: #B60000;
-    font-weight: bold;
-}
-.barely_even_scores {
-    color: #894800;
-    font-weight: bold;
-}
-.moderately_even_scores {
-    color: green;
-    font-weight: bold;
-}
-.does_even_score {
-    color: #00008B;
-    font-weight: bold;
-}
-.does_even_score_well {
-    color: #990099;
-    font-weight: bold;
-}
 .cs, .unver_container {
     cursor: help;
     position: relative;
