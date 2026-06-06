@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-09-03 20:53+0200\n"
-"PO-Revision-Date: 2025-09-03 20:53+0200\n"
+"POT-Creation-Date: 2026-06-06 09:55+0200\n"
+"PO-Revision-Date: 2026-06-06 09:57+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.8\n"
 "X-Poedit-Basepath: ../../..\n"
 "X-Poedit-SearchPath-0: php/drc.php\n"
 "X-Poedit-SearchPath-1: php/lnn.php\n"
@@ -86,12 +86,12 @@ msgstr ""
 msgid "Score"
 msgstr "スコア"
 
-#: js/drc.js:186 js/lnn.js:45 js/wr.js:59 php/shared/shared.php:117
+#: js/drc.js:186 js/lnn.js:52 js/wr.js:59 php/shared/shared.php:117
 msgid "Route"
 msgstr "ルート"
 
-#: js/drc.js:188 js/lnn.js:45 js/lnn.js:316 js/wr.js:59 php/drc.php:450
-#: php/lnn.php:249 php/lnn.php:306 php/shared/shared.php:117 php/wr.php:228
+#: js/drc.js:188 js/lnn.js:52 js/lnn.js:316 js/wr.js:59 php/drc.php:450
+#: php/lnn.php:247 php/lnn.php:304 php/shared/shared.php:117 php/wr.php:228
 #: php/wr.php:481 php/wr.php:518 php/wr.php:612
 msgid "Shottype"
 msgstr "キャラ"
@@ -128,34 +128,34 @@ msgstr ""
 msgid "block"
 msgstr ""
 
-#: js/lnn.js:32 js/lnn.js:35 js/lnn.js:36 js/lnn.js:38 js/lnn.js:39
-#: php/lnn.php:35 php/lnn.php:38 php/lnn.php:39 php/lnn.php:41 php/lnn.php:42
+#: js/lnn.js:39 js/lnn.js:42 js/lnn.js:43 js/lnn.js:45 js/lnn.js:46
+#: php/lnn.php:43 php/lnn.php:46 php/lnn.php:47 php/lnn.php:49 php/lnn.php:50
 msgid "No. of LNNNs"
 msgstr "LNNNの数"
 
-#: js/lnn.js:33 php/lnn.php:36
+#: js/lnn.js:40 php/lnn.php:44
 msgid "No. of LNNFSs"
 msgstr "LNNFSの数"
 
-#: js/lnn.js:34 php/lnn.php:37
+#: js/lnn.js:41 php/lnn.php:45
 msgid "No. of LNN(N)s"
 msgstr "LNN(N)の数"
 
-#: js/lnn.js:37 php/lnn.php:40
+#: js/lnn.js:44 php/lnn.php:48
 msgid "No. of LNNNNs"
 msgstr "LNNNNの数"
 
-#: js/lnn.js:40 php/lnn.php:43 php/lnn.php:379 php/lnn.php:421
+#: js/lnn.js:47 php/lnn.php:51 php/lnn.php:381 php/lnn.php:427
 msgid "No. of LNNs"
 msgstr "LNNの数"
 
-#: js/lnn.js:268 js/lnn.js:417 js/wr.js:483 js/wr.js:547 php/lnn.php:354
+#: js/lnn.js:268 js/lnn.js:417 js/wr.js:486 js/wr.js:550 php/lnn.php:352
 #: php/wr.php:259 php/wr.php:564
 msgid "Link"
 msgstr "リンク"
 
-#: js/lnn.js:275 js/lnn.js:424 js/lnn.js:425 js/wr.js:490 js/wr.js:551
-#: php/lnn.php:49 php/wr.php:46
+#: js/lnn.js:275 js/lnn.js:424 js/lnn.js:425 js/wr.js:493 js/wr.js:554
+#: js/wr.js:562 php/lnn.php:57 php/wr.php:46
 msgid "Unknown"
 msgstr "不明"
 
@@ -164,21 +164,21 @@ msgid "(All)"
 msgstr "（全）"
 
 #: js/lnn.js:313 php/drc.php:203 php/drc.php:387 php/drc.php:421
-#: php/lnn.php:305 php/lnn.php:378 php/wr.php:224
+#: php/lnn.php:303 php/lnn.php:380 php/lnn.php:475 php/wr.php:224
 msgid "Game"
 msgstr "ゲーム"
 
-#: js/lnn.js:429 js/wr.js:390 js/wr.js:462 php/lnn.php:359 php/lnn.php:362
+#: js/lnn.js:429 js/wr.js:392 js/wr.js:465 php/lnn.php:357 php/lnn.php:360
 #: php/wr.php:567 php/wr.php:597
 msgid " "
 msgstr ""
 
-#: js/lnn.js:446 php/drc.php:94 php/lnn.php:281 php/lnn.php:329 php/wr.php:516
+#: js/lnn.js:446 php/drc.php:94 php/lnn.php:279 php/lnn.php:327 php/wr.php:516
 #: php/wr.php:541 php/wr.php:587
 msgid "Category"
 msgstr "カテゴリー"
 
-#: js/lnn.js:449 php/lnn.php:261 php/lnn.php:330 php/lnn.php:420 php/wr.php:226
+#: js/lnn.js:449 php/lnn.php:259 php/lnn.php:328 php/lnn.php:426 php/wr.php:226
 #: php/wr.php:480 php/wr.php:495 php/wr.php:543 php/wr.php:611 php/wr.php:632
 msgid "Player"
 msgstr "プレイヤー"
@@ -215,11 +215,11 @@ msgstr "東方怪綺談　～ Mystic Square"
 msgid "Touhou 6 - The Embodiment of Scarlet Devil"
 msgstr "東方紅魔郷　～ the Embodiment of Scarlet Devil"
 
-#: js/utils.js:219
+#: js/utils.js:219 php/lnn.php:481
 msgid "Touhou 7 - Perfect Cherry Blossom"
 msgstr "東方妖々夢　～ Perfect Cherry Blossom"
 
-#: js/utils.js:220
+#: js/utils.js:220 php/lnn.php:485
 msgid "Touhou 8 - Imperishable Night"
 msgstr "東方永夜抄　～ Imperishable Night"
 
@@ -239,7 +239,7 @@ msgstr "東方風神録　～ Mountain of Faith"
 msgid "Touhou 11 - Subterranean Animism"
 msgstr "東方地霊殿　～ Subterranean Animism"
 
-#: js/utils.js:225
+#: js/utils.js:225 php/lnn.php:489
 msgid "Touhou 12 - Undefined Fantastic Object"
 msgstr "東方星蓮船　～ Undefined Fantastic Object"
 
@@ -251,7 +251,7 @@ msgstr "妖精大戦争　～ 東方三月精"
 msgid "Touhou 12.8 - Great Fairy Wars"
 msgstr "妖精大戦争　～ 東方三月精"
 
-#: js/utils.js:228
+#: js/utils.js:228 php/lnn.php:493
 msgid "Touhou 13 - Ten Desires"
 msgstr "東方神霊廟　～ Ten Desires"
 
@@ -263,15 +263,15 @@ msgstr "東方輝針城　～ Double Dealing Character"
 msgid "Touhou 15 - Legacy of Lunatic Kingdom"
 msgstr "東方紺珠伝　～ Legacy of Lunatic Kingdom"
 
-#: js/utils.js:231
+#: js/utils.js:231 php/lnn.php:497
 msgid "Touhou 16 - Hidden Star in Four Seasons"
 msgstr "東方天空璋　～ Hidden Star in Four Seasons"
 
-#: js/utils.js:232
+#: js/utils.js:232 php/lnn.php:501
 msgid "Touhou 17 - Wily Beast and Weakest Creature"
 msgstr "東方鬼形獣　～ Wily Beast and Weakest Creature"
 
-#: js/utils.js:233
+#: js/utils.js:233 php/lnn.php:505
 msgid "Touhou 18 - Unconnected Marketeers"
 msgstr "東方虹龍洞　～ Unconnected Marketeers"
 
@@ -279,7 +279,7 @@ msgstr "東方虹龍洞　～ Unconnected Marketeers"
 msgid "Touhou 19 - Unfinished Dream of All Living Ghost"
 msgstr "東方獣王園　～ Unfinished Dream of All Living Ghost（v1.00a）"
 
-#: js/utils.js:235
+#: js/utils.js:235 php/lnn.php:509
 msgid "Touhou 20 - Fossilized Wonders"
 msgstr "東方錦上京　～ Fossilized Wonders"
 
@@ -291,7 +291,7 @@ msgstr ""
 "錦上京では素点オーバーフローバグ修正の前提で記録しています。<a href='/"
 "tools#thprac'>thprac</a>によるバグ修正でリプレイ再生でスコアを確認します。"
 
-#: js/wr.js:211 js/wr.js:217 php/wr.php:245
+#: js/wr.js:211 js/wr.js:217 js/wr.js:308 php/wr.php:245
 msgid "Uncapped"
 msgstr "カンスト解除"
 
@@ -658,7 +658,7 @@ msgstr "閾値2"
 msgid "Threshold 3"
 msgstr "閾値3"
 
-#: php/drc.php:346 php/drc.php:466 php/lnn.php:439 php/tools.php:525
+#: php/drc.php:346 php/drc.php:466 php/lnn.php:450 php/tools.php:532
 #: php/wr.php:649
 msgid "Back to Top"
 msgstr "上に帰る"
@@ -755,12 +755,12 @@ msgstr ""
 msgid "Multiplier"
 msgstr "倍率"
 
-#: php/lnn.php:70
+#: php/lnn.php:78
 #, php-format
 msgid "LNNs are current as of <span id=\"lm\">%date</span>."
 msgstr "<span id=\"lm\">%date</span>現在のLNN記録です。"
 
-#: php/lnn.php:82
+#: php/lnn.php:90
 msgid ""
 "A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. "
 "For every shottype in a game, tables will tell you which players have done "
@@ -772,142 +772,227 @@ msgstr ""
 "特定の作品、ショットタイプで複数回のLNNを達成している場合でも１回とカウントさ"
 "れます。"
 
-#: php/lnn.php:87
-msgid ""
-"Extra conditions are required for PCB, TD, HSiFS, WBaWC and UM; these are No "
-"Border Breaks for PCB, No Trance for TD, No Release for HSiFS, No Berserk "
-"Roar No Roar Breaks for WBaWC, No Cards for UM and No Hyper Breaks for FW. "
-"LNN in these games is called LNNN or LNNNN, with extra Ns to denote the "
-"extra conditions. The extra condition in UFO, no UFO summons, is optional, "
-"as it is not considered to have a significant impact on the difficulty of "
-"the run. As for IN, an LNN is assumed to capture all Last Spells and is "
-"referred to as LNNFS."
-msgstr ""
-"また妖々夢では霊撃無し、神霊廟ではトランス無し、天空璋では開放無し、鬼形獣で"
-"は霊撃無し、暴走ロアリング無し、虹龍洞ではカード無し、錦上京では霊撃無しが条"
-"件となります。この６作品では追加条件によってNが追加され、LNNN又はLNNNNと呼称"
-"します。また星蓮船ではUFO招喚無しも考慮されますが、難易度が劇的に変化するわけ"
-"ではないため必須条件とはなっていません。永夜抄ではラストスペル取得を含めLNNFS"
-"が条件となります。"
+#: php/lnn.php:94
+msgid "Click here to view further information and guidelines for this page."
+msgstr "ここをクリックすると、LNNスレの詳細情報が表示されます。"
 
-#: php/lnn.php:94 php/wr.php:162
-msgid "All of the table columns are sortable."
-msgstr "並べ替えには各表の最上段をクリックしてください。"
-
-#: php/lnn.php:95
-msgid ""
-"For updates, you can contact <a href=\"https://bsky.app/profile/"
-"maribelhearn42.bsky.social\" target=\"_blank\">me</a>, <a href=\"https://"
-"hoangcaominh.github.io/#/profile\" target=\"_blank\">Hoàng Cao Minh</a>, <a "
-"href=\"https://www.youtube.com/@valivanvan\" "
-"target=\"_blank\">crazy4pokemon</a> or <a href=\"https://www.youtube.com/"
-"@allenko1122\" target=\"_blank\">AllenKO</a>."
-msgstr ""
-"更新があれば、<a href=\"https://bsky.app/profile/"
-"maribelhearn42.bsky.social\" target=\"_blank\">管理者</a>・<a href=\"https://"
-"x.com/CaoMinh_Touhou\" target=\"_blank\">Hoàng Cao Minhさん</a>・<a "
-"href=\"https://www.youtube.com/@valivanvan\" target=\"_blank\">crazy4pokemon"
-"さん</a>・<a href=\"https://www.youtube.com/@allenko1122\" "
-"target=\"_blank\">AllenKOさん</a>を連絡して下さい。"
-
-#: php/lnn.php:98 php/subpages/faq/jargon.php:3 php/tools.php:13 php/wr.php:175
+#: php/lnn.php:96 php/subpages/faq/jargon.php:3 php/tools.php:13 php/wr.php:175
 msgid "Contents"
 msgstr "内容"
 
-#: php/lnn.php:102 php/lnn.php:109 php/lnn.php:136
+#: php/lnn.php:100 php/lnn.php:107 php/lnn.php:134
 msgid "LNN Lists"
 msgstr "LNNリスト"
 
-#: php/lnn.php:103 php/lnn.php:119 php/lnn.php:258 php/lnn.php:263
-#: php/lnn.php:283 php/wr.php:497
+#: php/lnn.php:101 php/lnn.php:117 php/lnn.php:256 php/lnn.php:261
+#: php/lnn.php:281 php/wr.php:497
 msgid "Search"
 msgstr "探索"
 
-#: php/lnn.php:104 php/lnn.php:120 php/lnn.php:326
+#: php/lnn.php:102 php/lnn.php:118 php/lnn.php:324
 msgid "Recent LNNs"
 msgstr "最近のLNN"
 
-#: php/lnn.php:105 php/lnn.php:121 php/lnn.php:373
+#: php/lnn.php:103 php/lnn.php:119 php/lnn.php:371
 msgid "Overall Count"
 msgstr "総数"
 
-#: php/lnn.php:106 php/lnn.php:122 php/lnn.php:415 php/wr.php:184
+#: php/lnn.php:104 php/lnn.php:120 php/lnn.php:417 php/wr.php:184
 #: php/wr.php:205 php/wr.php:627
 msgid "Player Statistics"
 msgstr "プレイヤーの統計"
 
-#: php/lnn.php:130
+#: php/lnn.php:128
 msgid "Number of Recent LNNs"
 msgstr "最近のLNNの数"
 
-#: php/lnn.php:133 php/wr.php:215
+#: php/lnn.php:131 php/wr.php:215
 msgid "Save Changes"
 msgstr "変更をセーブ"
 
-#: php/lnn.php:164 php/lnn.php:213 php/lnn.php:253 php/lnn.php:402
+#: php/lnn.php:162 php/lnn.php:211 php/lnn.php:251 php/lnn.php:404
 msgid "Overall"
 msgstr "合計"
 
-#: php/lnn.php:173 php/lnn.php:250
+#: php/lnn.php:171 php/lnn.php:248
 msgid "(Different players)"
 msgstr "（プレイヤー）"
 
-#: php/lnn.php:174 php/lnn.php:251
+#: php/lnn.php:172 php/lnn.php:249
 msgid "Players"
 msgstr "プレイヤー"
 
-#: php/lnn.php:220
+#: php/lnn.php:218
 msgid "Click a game cover to show its list of LNNs."
 msgstr "LNNリストはゲームをクリック。"
 
-#: php/lnn.php:259
+#: php/lnn.php:257
 msgid "Choose a player or category from the menus below to show their LNNs."
 msgstr ""
 "個人のLNNを表示するには、下記のメニューからプレイヤー名をまたはカテゴリーを選"
 "んでください。"
 
-#: php/lnn.php:307 php/lnn.php:331 php/wr.php:229 php/wr.php:482 php/wr.php:519
+#: php/lnn.php:305 php/lnn.php:329 php/wr.php:229 php/wr.php:482 php/wr.php:519
 #: php/wr.php:544 php/wr.php:613
 msgid "Replay"
 msgstr "リプレイ"
 
-#: php/lnn.php:308 php/lnn.php:332 php/wr.php:230 php/wr.php:483 php/wr.php:520
+#: php/lnn.php:306 php/lnn.php:330 php/wr.php:230 php/wr.php:483 php/wr.php:520
 #: php/wr.php:545 php/wr.php:614
 msgid "Video"
 msgstr "ビデオ"
 
-#: php/lnn.php:309 php/lnn.php:333 php/wr.php:231 php/wr.php:484 php/wr.php:521
+#: php/lnn.php:307 php/lnn.php:331 php/wr.php:231 php/wr.php:484 php/wr.php:521
 #: php/wr.php:546 php/wr.php:615
 msgid "Date"
 msgstr "日付"
 
-#: php/lnn.php:317 php/wr.php:530
+#: php/lnn.php:315 php/wr.php:530
 msgid "Total"
 msgstr "合計"
 
-#: php/lnn.php:323
+#: php/lnn.php:321
 msgid "No such player."
-msgstr ""
+msgstr "該当者なし。"
 
-#: php/lnn.php:324
+#: php/lnn.php:322
 msgid "There are currently no LNNs in that category."
-msgstr ""
+msgstr "この部門においてLNNは未達成。"
 
-#: php/lnn.php:380
+#: php/lnn.php:374 php/lnn.php:420
+msgid "Include Versus games"
+msgstr "対戦ゲームを含む"
+
+#: php/lnn.php:382
 msgid "Different players"
 msgstr "プレイヤー"
 
-#: php/lnn.php:408
+#: php/lnn.php:410
 msgid "Replays"
 msgstr "リプレイ"
 
-#: php/lnn.php:422
+#: php/lnn.php:428
 msgid "Games LNN'd"
 msgstr "ゲーム"
 
-#: php/lnn.php:428 php/lnn.php:429
+#: php/lnn.php:438
+msgid " (All PC-98)"
+msgstr "（全旧作）"
+
+#: php/lnn.php:439
 msgid " (All Windows)"
 msgstr "（全Windows）"
+
+#: php/lnn.php:440
+msgid " (All Games)"
+msgstr "（全ゲーム）"
+
+#: php/lnn.php:465
+msgid "Information"
+msgstr "情報"
+
+#: php/lnn.php:466
+msgid "This is an unofficial, community-maintained website."
+msgstr ""
+"LNNスレッドはあくまで、非公式のコミュニティに管理されるサイトでございます。"
+
+#: php/lnn.php:467
+msgid ""
+"In general, you need to upload a replay or a video to an online platform for "
+"an LNN clear to be accepted on the website, for example <a href=\"https://"
+"www.silentselene.net\">Silent Selene</a> for replays or <a href=\"https://"
+"www.youtube.com\">YouTube</a> for videos. Streaming to a live streaming "
+"platform like <a href=\"https://twitch.tv\">Twitch</a> is also accepted, "
+"provided that the VOD is not deleted. Exceptions may be made on a case-by-"
+"case basis."
+msgstr ""
+"LNNスレッドに登録されるには基本的に証明としてリプレイや動画などが必要です"
+"（例：サイレントセレナ、YouTube）。Twitchなどのライブ放送のプラットフォームも"
+"可能です。例外の場合もあります。"
+
+#: php/lnn.php:471
+msgid ""
+"Extra conditions are required for certain games. These conditions are as "
+"follows:"
+msgstr "作品によってノーミスノーボムの上に以下の条件も必要とされます。"
+
+#: php/lnn.php:476
+msgid "Condition"
+msgstr "条件"
+
+#: php/lnn.php:482
+msgid "No Border Breaks"
+msgstr "ノー撃無"
+
+#: php/lnn.php:486
+msgid "All Spells Captured"
+msgstr "フルスペカ"
+
+#: php/lnn.php:490
+msgid "No UFO Summons*"
+msgstr "ノーベントラー*"
+
+#: php/lnn.php:494
+msgid "No Trance"
+msgstr "ノートランス"
+
+#: php/lnn.php:498
+msgid "No Release"
+msgstr "ノー開放"
+
+#: php/lnn.php:502
+msgid "No Berserk Roar, No Roar Breaks"
+msgstr "ノー霊撃ノー暴走ロアリング"
+
+#: php/lnn.php:506
+msgid "No Cards"
+msgstr "ノーカード"
+
+#: php/lnn.php:510
+msgid "No Hyper Breaks"
+msgstr "ノー霊撃"
+
+#: php/lnn.php:514
+msgid "* Optional"
+msgstr "* 任意"
+
+#: php/lnn.php:515
+msgid ""
+"If a run is shown to have been cheated beyond reasonable doubt, for example "
+"by using savestates, pause buffering, or slowdown, it will be removed from "
+"the website."
+msgstr ""
+"登録されたLNNが不正だと判明された場合（クイックセーブ、ポーズ連打、低速ツール"
+"使用など）、LNNスレッドから削除されます。"
+
+#: php/lnn.php:516
+msgid "Submission"
+msgstr "提出"
+
+#: php/lnn.php:517
+msgid ""
+"At present, we do <strong>not</strong> use a submission form. If you upload "
+"your replay or video somewhere, it will eventually be noticed by us and "
+"added to the website."
+msgstr ""
+"現在は提出機能を設けて<strong>いません</strong>。リプレイや動画を上げること"
+"で、管理人に見つかる次第で登録します。"
+
+#: php/lnn.php:518
+msgid ""
+"If we missed your run, you can contact <a href=\"https://bsky.app/profile/"
+"maribelhearn42.bsky.social\" target=\"_blank\">me</a>, <a href=\"https://"
+"hoangcaominh.github.io/#/profile\" target=\"_blank\">Hoàng Cao Minh</a>, <a "
+"href=\"https://www.youtube.com/@valivanvan\" "
+"target=\"_blank\">crazy4pokemon</a> or <a href=\"https://www.youtube.com/"
+"@allenko1122\" target=\"_blank\">AllenKO</a> to add it to the website."
+msgstr ""
+"まだ登録されていない方は、<a href=\"https://bsky.app/profile/"
+"maribelhearn42.bsky.social\" target=\"_blank\">管理者</a>・<a href=\"https://"
+"x.com/CaoMinh_Touhou\" target=\"_blank\">Hoàng Cao Minhさん</a>・<a "
+"href=\"https://www.youtube.com/@valivanvan\" target=\"_blank\">crazy4pokemon"
+"さん</a>・<a href=\"https://www.youtube.com/@allenko1122\" "
+"target=\"_blank\">AllenKOさん</a>に連絡してください。"
 
 #: php/shared/shared.php:65 php/shared/shared.php:72
 msgid "Flag of the United Kingdom"
@@ -3332,51 +3417,51 @@ msgstr ""
 "す。またそれらは本サイトのミラーからもダウンロード可能で、それらにはfaviconを"
 "併記してあります。(THCRAPの項目を参照)。"
 
-#: php/tools.php:18 php/tools.php:85
+#: php/tools.php:18 php/tools.php:86
 msgid "DX8 to DX9 converter"
 msgstr "DX8からDX9へのコンバータ"
 
-#: php/tools.php:19 php/tools.php:93
+#: php/tools.php:19 php/tools.php:94
 msgid "OpenInputLagPatch"
 msgstr ""
 
-#: php/tools.php:20 php/tools.php:104
+#: php/tools.php:20 php/tools.php:105
 msgid "Shottype Modifications"
 msgstr "ショットタイプ改変ツール"
 
-#: php/tools.php:21 php/tools.php:149
+#: php/tools.php:21 php/tools.php:150
 msgid "Hard Mode / Ultra Patches"
 msgstr "ハードモード/ウルトラモードパッチ"
 
-#: php/tools.php:22 php/tools.php:202
+#: php/tools.php:22 php/tools.php:203
 msgid "Graphical Patches"
 msgstr "グラフィックパッチ"
 
-#: php/tools.php:23 php/tools.php:233
+#: php/tools.php:23 php/tools.php:240
 msgid "PC-98 Emulators"
 msgstr "PC-98エミュレータ"
 
-#: php/tools.php:24 php/tools.php:238
+#: php/tools.php:24 php/tools.php:245
 msgid "Miscellaneous"
 msgstr "その他"
 
-#: php/tools.php:25 php/tools.php:341
+#: php/tools.php:25 php/tools.php:348
 msgid "Deprecated"
 msgstr "非推奨"
 
-#: php/tools.php:27 php/tools.php:343
+#: php/tools.php:27 php/tools.php:350
 msgid "Completed Scorefiles"
 msgstr "全開放済みのスコアデータファイル"
 
-#: php/tools.php:29 php/tools.php:412
+#: php/tools.php:29 php/tools.php:419
 msgid "General Practice Tools"
 msgstr "全般的プラクティスツール"
 
-#: php/tools.php:30 php/tools.php:442
+#: php/tools.php:30 php/tools.php:449
 msgid "Boss Rush Patches"
 msgstr "ボスラッシュパッチ"
 
-#: php/tools.php:31 php/tools.php:490
+#: php/tools.php:31 php/tools.php:497
 msgid "Specific Pattern Practice"
 msgstr "特定パターンのプラクティスツール"
 
@@ -3396,17 +3481,18 @@ msgstr ""
 "ることで劇的にプレイ体験を向上できます。</p><p>Vpatchは天空璋、鬼形獣と虹龍洞"
 "を除く全てのシューティングゲームに適用可能です。"
 
-#: php/tools.php:45 php/tools.php:56 php/tools.php:77 php/tools.php:80
-#: php/tools.php:90 php/tools.php:101 php/tools.php:107 php/tools.php:114
-#: php/tools.php:120 php/tools.php:126 php/tools.php:132 php/tools.php:137
-#: php/tools.php:140 php/tools.php:143 php/tools.php:146 php/tools.php:170
-#: php/tools.php:183 php/tools.php:190 php/tools.php:230 php/tools.php:244
-#: php/tools.php:247 php/tools.php:254 php/tools.php:261 php/tools.php:266
-#: php/tools.php:273 php/tools.php:282 php/tools.php:292 php/tools.php:299
-#: php/tools.php:307 php/tools.php:315 php/tools.php:323 php/tools.php:328
-#: php/tools.php:333 php/tools.php:338 php/tools.php:350 php/tools.php:433
-#: php/tools.php:440 php/tools.php:482 php/tools.php:485 php/tools.php:488
-#: php/tools.php:497 php/tools.php:503 php/tools.php:507 php/tools.php:523
+#: php/tools.php:45 php/tools.php:57 php/tools.php:78 php/tools.php:81
+#: php/tools.php:91 php/tools.php:102 php/tools.php:108 php/tools.php:115
+#: php/tools.php:121 php/tools.php:127 php/tools.php:133 php/tools.php:138
+#: php/tools.php:141 php/tools.php:144 php/tools.php:147 php/tools.php:171
+#: php/tools.php:184 php/tools.php:191 php/tools.php:212 php/tools.php:213
+#: php/tools.php:237 php/tools.php:251 php/tools.php:254 php/tools.php:261
+#: php/tools.php:268 php/tools.php:273 php/tools.php:280 php/tools.php:289
+#: php/tools.php:299 php/tools.php:306 php/tools.php:314 php/tools.php:322
+#: php/tools.php:330 php/tools.php:335 php/tools.php:340 php/tools.php:345
+#: php/tools.php:357 php/tools.php:440 php/tools.php:447 php/tools.php:489
+#: php/tools.php:492 php/tools.php:495 php/tools.php:504 php/tools.php:510
+#: php/tools.php:514 php/tools.php:530
 msgid "Download"
 msgstr "ダウンロード"
 
@@ -3414,13 +3500,17 @@ msgstr "ダウンロード"
 msgid "Unicode vpatch for EoSD (th06)"
 msgstr ""
 
-#: php/tools.php:50
+#: php/tools.php:47
+msgid "Alternate vpatch for PoFV (th09)"
+msgstr ""
+
+#: php/tools.php:51
 msgid "<h2 id=\"thprac\">thprac (universal practice tool by Ack)</h2>"
 msgstr ""
 "<h2 id=\"thprac\">thprac</h2><h3>(ユニバーサルプラクティスツール by Ack）</"
 "h3>"
 
-#: php/tools.php:52
+#: php/tools.php:53
 msgid ""
 "Single practice tool that works on all of the official Touhou shoot 'em up "
 "games, allowing you to change settings or skip to patterns at will."
@@ -3428,11 +3518,11 @@ msgstr ""
 "全ての公式シューティング作品で多数の設定項目を持ち、また特定の箇所へのスキッ"
 "プ機能をもつ万能ツール。"
 
-#: php/tools.php:60
+#: php/tools.php:61
 msgid "thprac main window"
 msgstr ""
 
-#: php/tools.php:65
+#: php/tools.php:66
 msgid ""
 "<h2 id=\"thcrap\">thcrap (Translation patches / Modding tool) <a "
 "id=\"thcrap_link\" href=\"https://www.thpatch.net/wiki/"
@@ -3444,7 +3534,7 @@ msgstr ""
 "class=\"icon thcrap_icon\"></span> thcrap</a></h2><h3>(翻訳パッチ / 改変ツー"
 "ル)</h3>"
 
-#: php/tools.php:70
+#: php/tools.php:71
 msgid ""
 "Translation patches into English and many other languages, as well as "
 "countless modifications to gameplay, graphics and more, plus the ability to "
@@ -3458,11 +3548,11 @@ msgstr ""
 "供されています。thpatch.netへのリンクはパッチ使用方法の解説にもリンクしていま"
 "す。"
 
-#: php/tools.php:80
+#: php/tools.php:81
 msgid " (maribelhearn.com mirror)"
 msgstr " (maribelhearn.com mirror)"
 
-#: php/tools.php:87
+#: php/tools.php:88
 msgid ""
 "Makes the older Touhou Windows games (EoSD, PCB, IN, PoFV and StB) run "
 "properly on Windows 10 and 11. Extract it into the folders of these games "
@@ -3472,14 +3562,14 @@ msgstr ""
 "Windows10とWindows11で正常に動作させるコンバータです。ファイルを解凍し、適用"
 "したいゲームのフォルダに移動させると有効になります。"
 
-#: php/tools.php:95
+#: php/tools.php:96
 msgid ""
 "An alternative to vpatch, which fixes frame limiter and input lag issues in "
 "Touhou games. Put the files in the same directory as the game and run "
 "oilp_loader.exe to launch the game."
 msgstr ""
 
-#: php/tools.php:98
+#: php/tools.php:99
 msgid ""
 "If you are playing the older Touhou Windows games (EoSD, PCB, IN, PoFV and "
 "StB), you also need the <strong>DX8 to DX9 converter</strong>. \n"
@@ -3487,19 +3577,19 @@ msgid ""
 "above."
 msgstr ""
 
-#: php/tools.php:105
+#: php/tools.php:106
 msgid "MoF Reisen by "
 msgstr "鈴仙風神録鈴仙 by "
 
-#: php/tools.php:106
+#: php/tools.php:107
 msgid "Replaces ReimuC with Reisen in MoF."
 msgstr "風神録の霊夢Cを鈴仙に置き換えます。"
 
-#: php/tools.php:108
+#: php/tools.php:109
 msgid "UFO Tsubakura mod by "
 msgstr "星蓮船ツバクラ改変パッチ by "
 
-#: php/tools.php:111
+#: php/tools.php:112
 msgid ""
 "Replaces both Reimu shottypes in UFO with Tsubakura shottypes, a character "
 "from the Len'en series. Also changes the dialogues and endings."
@@ -3507,64 +3597,64 @@ msgstr ""
 "星蓮船の霊夢両機体を鏈縁キャラ\"ツバクラ\"に置き換えます。また、会話とエン"
 "ディングも差し替えます。"
 
-#: php/tools.php:115
+#: php/tools.php:116
 msgid "DDC Sanae by "
 msgstr "輝針城早苗パッチ by "
 
-#: php/tools.php:118
+#: php/tools.php:119
 msgid "Replaces ReimuB with Sanae in DDC."
 msgstr "輝針城の霊夢Bを早苗に置き換えます。"
 
-#: php/tools.php:121
+#: php/tools.php:122
 msgid "HSiFS Sanae by "
 msgstr "天空璋早苗パッチ by "
 
-#: php/tools.php:124
+#: php/tools.php:125
 msgid "Replaces Marisa with Sanae in HSiFS."
 msgstr "天空璋魔理沙を早苗に差し替えます。"
 
-#: php/tools.php:127
+#: php/tools.php:128
 msgid "LoLK Sakuya by "
 msgstr "紺珠伝咲夜パッチ by "
 
-#: php/tools.php:130
+#: php/tools.php:131
 msgid "Replaces Reisen with Sakuya in LoLK."
 msgstr "紺珠伝鈴仙を咲夜に差し替えます。"
 
-#: php/tools.php:133
+#: php/tools.php:134
 msgid "TD Yuuka by "
 msgstr "神霊廟幽香パッチ by "
 
-#: php/tools.php:135
+#: php/tools.php:136
 msgid "Replaces Marisa with Yuuka in TD. Also changes the dialogues."
 msgstr "神霊廟魔理沙を幽香に差し替え、会話も変化させます。"
 
-#: php/tools.php:138
+#: php/tools.php:139
 msgid "DS Seija by "
 msgstr "ダブルスポイラー正邪パッチ by "
 
-#: php/tools.php:139
+#: php/tools.php:140
 msgid "Replaces Aya in DS with Seija, including when she shows up as a boss."
 msgstr ""
 "ダブルスポイラーの文を正邪に差し替えます。ボスとして出てきた際も有効です。"
 
-#: php/tools.php:141
+#: php/tools.php:142
 msgid "WBaWC (Demo) Reisen by "
 msgstr "鬼形獣体験版、霊夢カワウソ鈴仙パッチ by "
 
-#: php/tools.php:142
+#: php/tools.php:143
 msgid "Replaces ReimuOtter with Reisen in the WBaWC demo."
 msgstr "鬼形獣体験版の霊夢カワウソを鈴仙に差し替えます。"
 
-#: php/tools.php:144
+#: php/tools.php:145
 msgid "WBaWC Narumi by "
 msgstr "鬼形獣成美パッチ by "
 
-#: php/tools.php:145
+#: php/tools.php:146
 msgid "Adds Narumi to WBaWC as a shottype."
 msgstr "成美を自機として鬼形獣に加えます。"
 
-#: php/tools.php:151
+#: php/tools.php:152
 msgid ""
 "Patches that increase the bullet density and speed throughout the game, "
 "while giving you autobombs to compensate for it. The Hard Mode patches also "
@@ -3575,29 +3665,29 @@ msgstr ""
 "ボムが補償されます。ハードモードパッチはパターンの変更を余儀なくさせ、各ウル"
 "トラパッチはスペルカードを不可能弾幕に改変したりします。"
 
-#: php/tools.php:156
+#: php/tools.php:157
 msgid "Main Ultra Patches"
 msgstr "メインウルトラパッチ"
 
-#: php/tools.php:157
+#: php/tools.php:158
 msgid "Alternate EoSD Ultra"
 msgstr "紅魔郷極弩パッチ"
 
-#: php/tools.php:159
+#: php/tools.php:160
 msgid "Hard Mode patches by "
 msgstr "ハードモードパッチ by "
 
-#: php/tools.php:160
+#: php/tools.php:161
 msgid ""
 "Patches for UFO and DDC that modify patterns, besides simply making them "
 "harder."
 msgstr "星蓮船と輝針城に使用できるパッチで、難易度が上昇します。"
 
-#: php/tools.php:165
+#: php/tools.php:166
 msgid "RNG patches by "
 msgstr "ランダムパッチ by "
 
-#: php/tools.php:168
+#: php/tools.php:169
 msgid ""
 "A collection of modified <span class=\"code\">.dat</span> files that "
 "randomise the patterns in the game."
@@ -3605,11 +3695,11 @@ msgstr ""
 "<span class=\"code\">.dat</span> ファイルを改変し、敵の攻撃をランダムにする一"
 "連のパッチです。"
 
-#: php/tools.php:171
+#: php/tools.php:172
 msgid "IN Double Stage "
 msgstr "永夜抄ダブルステージ "
 
-#: php/tools.php:173
+#: php/tools.php:174
 msgid ""
 "Allows you to play 4A, 4B, 6A and 6B in a single run. Optionally also "
 "includes Extra at the end."
@@ -3617,15 +3707,15 @@ msgstr ""
 "永夜抄の１回のプレイでで4A,4B,6A,6Bを遊べるツールです。また最後にエクストラが"
 "追加されているバージョンもあります。"
 
-#: php/tools.php:179
+#: php/tools.php:180
 msgid "HSiFS UltraB by "
 msgstr "天空璋ウルトラB by "
 
-#: php/tools.php:181
+#: php/tools.php:182
 msgid "An alternate HSiFS Ultra patch that also increases density."
 msgstr "天空璋の弾幕を激しくするもう一つのパッチです。"
 
-#: php/tools.php:187
+#: php/tools.php:188
 msgid ""
 "Combines LoLK with DDC, making each boss fight a dual boss fight against the "
 "bosses of both games.It removes all stage portions, effectively making it a "
@@ -3635,11 +3725,11 @@ msgstr ""
 "す。道中は省略され、効率的なボスラッシュとなっています。また両作品のHUD(残機"
 "やボムなどの表記)は両作品が混在する形になります。"
 
-#: php/tools.php:191
+#: php/tools.php:192
 msgid "OC Patches by "
 msgstr "OCパッチ by "
 
-#: php/tools.php:194
+#: php/tools.php:195
 msgid ""
 "Remastered version of Stage 6 and harder version of Extra in HSiFS, "
 "including an original character replacing Okina and alternate story along "
@@ -3652,11 +3742,11 @@ msgstr ""
 "BGM、グラフィックも変更されます。ナイトメアダイアリーの隠岐奈登場シーンを改変"
 "する別のOCパッチも同じダウンロードページにあります。"
 
-#: php/tools.php:199
+#: php/tools.php:200
 msgid "Downloads"
 msgstr "ダウンロード"
 
-#: php/tools.php:204
+#: php/tools.php:205
 msgid ""
 "Modifications to the main <span class=\"code\">.dat</span> files of the "
 "games that change the way the game looks."
@@ -3664,11 +3754,17 @@ msgstr ""
 "ゲームの <span class=\"code\">.dat</span> ファイルを改変し、ゲームの見た目を"
 "変更するパッチです。"
 
-#: php/tools.php:207
+#: php/tools.php:210
+msgid ""
+"Changes the screen layout to be vertically oriented, similar to arcade shoot "
+"'em up games. Ideal for vertical displays."
+msgstr ""
+
+#: php/tools.php:214
 msgid "Graphical Patches by "
 msgstr "グラフィックパッチ by "
 
-#: php/tools.php:209
+#: php/tools.php:216
 msgid ""
 "Includes PCB and HSiFS in MS Paint style, an emoji-themed version of UFO and "
 "a Christmas-themed version of LoLK."
@@ -3676,27 +3772,27 @@ msgstr ""
 "妖々夢と天空璋をマイクロソフトペイントのスタイルでプレイできます。絵文字テー"
 "マの星蓮船とクリスマステーマの紺珠伝のそれぞれパッチがあります。"
 
-#: php/tools.php:214
+#: php/tools.php:221
 msgid "Paint Cherry Blossom"
 msgstr "ペイント妖々夢"
 
-#: php/tools.php:217
+#: php/tools.php:224
 msgid "Painting Stars in Four Seasons"
 msgstr "ペインティングスター天空璋"
 
-#: php/tools.php:220
+#: php/tools.php:227
 msgid "Undefined Fantastic Emoji"
 msgstr "絵文字星蓮船"
 
-#: php/tools.php:223
+#: php/tools.php:230
 msgid "Legacy of Lunatic Christmas"
 msgstr "クリスマス紺珠伝"
 
-#: php/tools.php:226
+#: php/tools.php:233
 msgid "Vertical Play Patches by "
 msgstr "真・東方縦画面化ツール by "
 
-#: php/tools.php:228
+#: php/tools.php:235
 msgid ""
 "Makes MoF, SA, UFO and TD play in the arcade-style vertical resolution, also "
 "known as TATE."
@@ -3704,11 +3800,11 @@ msgstr ""
 "風神録、地霊殿、星蓮船、神霊廟をアーケードスタイルのバーティカル解像度、いわ"
 "ゆる縦画面でプレイできるようにするパッチです。"
 
-#: php/tools.php:239
+#: php/tools.php:246
 msgid "Real Time DRC Points Displayer by "
 msgstr "リアルタイムDRCポイント可視化ツール by "
 
-#: php/tools.php:241
+#: php/tools.php:248
 msgid ""
 "A tool that tracks in-game data such as misses, bombs, etc, thus calculating "
 "<a href=\"drc\">DRC</a> points for both survival and scoring during a Touhou "
@@ -3717,19 +3813,19 @@ msgstr ""
 "ゲーム内データを追跡し、被弾やボムなどDRCポイントをいくつ獲得できるかを、サバ"
 "イバル、スコアリング両対応で支援するソフトウェアです。"
 
-#: php/tools.php:245
+#: php/tools.php:252
 msgid "MS Black Label by "
 msgstr "MSブラックレーベル by "
 
-#: php/tools.php:246
+#: php/tools.php:253
 msgid "Increases the graze cap from 999 to 65536."
 msgstr "グレイズのカウントストップを999から65536に変更するツールです。"
 
-#: php/tools.php:248
+#: php/tools.php:255
 msgid "EoSD Capture History Tracker by "
 msgstr "紅魔郷スペルカードヒストリートラッカー by "
 
-#: php/tools.php:250
+#: php/tools.php:257
 msgid ""
 "Command-line tool that allows you to track how many times you captured "
 "spells in EoSD. Includes Stage 4 Books and Play Time tracking, as well as "
@@ -3738,23 +3834,23 @@ msgstr ""
 "ステージ４魔導書地帯の突破カウント、複数のセーブファイルに対応した、紅魔郷ス"
 "ペルカードの取得回数をカウントするコマンドラインツールです。"
 
-#: php/tools.php:255
+#: php/tools.php:262
 msgid "Source"
 msgstr ""
 
-#: php/tools.php:258
+#: php/tools.php:265
 msgid "PoFV Play Time Recorder by "
 msgstr "花映塚プレイタイムレコーダー by "
 
-#: php/tools.php:260
+#: php/tools.php:267
 msgid "Keeps track of your play time in PoFV."
 msgstr "花映塚のプレイ時間を追跡するツールです。"
 
-#: php/tools.php:262
+#: php/tools.php:269
 msgid "PoFV Replay Save Crash Fixer"
 msgstr "花映塚リプレイ保存クラッシュ回避ツール"
 
-#: php/tools.php:264
+#: php/tools.php:271
 msgid ""
 "Launching this alongside the game fixes the bug that makes the game crash "
 "whenever you save a replay."
@@ -3762,11 +3858,11 @@ msgstr ""
 "このツールを起動した状態では、花映塚のリプレイ保存画面で花映塚がクラッシュし"
 "てリプレイを保存できない状況を回避できます。"
 
-#: php/tools.php:267
+#: php/tools.php:274
 msgid "TD Arrange Patch by "
 msgstr "神霊廟アレンジパッチ by "
 
-#: php/tools.php:269
+#: php/tools.php:276
 msgid ""
 "Modification of TD that removes the invincibility from trances, instead "
 "allowing you to use them starting at 1/3 full gauge."
@@ -3774,19 +3870,19 @@ msgstr ""
 "神霊廟のトランス中無敵をなくす代わりに、３ゲージのうち１ゲージ以上の状態であ"
 "ればトランスできるようになるツールです。"
 
-#: php/tools.php:277
+#: php/tools.php:284
 msgid "HSiFS Max Season Start by "
 msgstr "天空璋季節ゲージマックススタート by "
 
-#: php/tools.php:280
+#: php/tools.php:287
 msgid "Lets you start with your season level at 6."
 msgstr "季節ゲージがマックスの状態で始められるツールです。"
 
-#: php/tools.php:284
+#: php/tools.php:291
 msgid "Polished Shooting Star by "
 msgstr "ポリッシュシューティングスター by "
 
-#: php/tools.php:287
+#: php/tools.php:294
 msgid ""
 "Allows you to run the fangame Shining Shooting Star without requiring you to "
 "set your locale to Chinese. Note that it does not fix the pattern speed bug "
@@ -3799,21 +3895,21 @@ msgstr ""
 "ランを再生するか特定のステージのリプレイを見るまで、特定のパターンが極端に速"
 "くなるパターンスピードのバグは修正されません。"
 
-#: php/tools.php:294
+#: php/tools.php:301
 msgid "Input Display by "
 msgstr "インプットディスプレイ by "
 
-#: php/tools.php:297
+#: php/tools.php:304
 msgid "Shows your button presses. Works on both gameplay and replays."
 msgstr ""
 "ボタンの押下状態を表示します。実際のプレイ中、リプレイ再生中ともに動作しま"
 "す。"
 
-#: php/tools.php:301
+#: php/tools.php:308
 msgid "LoLK Pointdevice no power loss by "
 msgstr "紺珠伝完全無欠パワー低下無効パッチ by "
 
-#: php/tools.php:304
+#: php/tools.php:311
 msgid ""
 "Disables the 0.01 power loss mechanic of Pointdevice Mode in LoLK, making "
 "sure you never lose power upon restarting a chapter."
@@ -3821,56 +3917,56 @@ msgstr ""
 "紺珠伝完全無欠モードでの被弾時のパワー0.01の低下をなくし、再挑戦できるように"
 "するツールです。"
 
-#: php/tools.php:309
+#: php/tools.php:316
 msgid "HSiFS UFO mod by "
 msgstr "天空璋UFOモッド by "
 
-#: php/tools.php:313
+#: php/tools.php:320
 msgid "Adds UFOs to HSiFS."
 msgstr "天空璋に星蓮船のUFOシステムを移植するツールです。"
 
-#: php/tools.php:317
+#: php/tools.php:324
 msgid "WBaWC score cap mod by "
 msgstr "鬼形獣スコアカンスト解除モッド by "
 
-#: php/tools.php:321
+#: php/tools.php:328
 msgid "Allows the in-game score counter to exceed 9,999,999,990 points."
 msgstr ""
 "ゲーム内の9,999,999,990を突破しているスコアを実際のスコアで表示するツールで"
 "す。"
 
-#: php/tools.php:324
+#: php/tools.php:331
 msgid "PoDDofire"
 msgstr ""
 
-#: php/tools.php:326
+#: php/tools.php:333
 msgid ""
 "PoDD autofire script for AutoHotkey, to avoid hand fatigue from button "
 "mashing. Hold Z to shoot, press X to bomb and press C to hyper."
 msgstr ""
 
-#: php/tools.php:329
+#: php/tools.php:336
 msgid "SoEWofire"
 msgstr ""
 
-#: php/tools.php:331
+#: php/tools.php:338
 msgid ""
 "SoEW autofire script for AutoHotkey. Holding down Z will shoot just as if "
 "you were mashing Z, dealing more damage than by holding Z without this "
 "script."
 msgstr ""
 
-#: php/tools.php:334
+#: php/tools.php:341
 msgid "EditDisk"
 msgstr ""
 
-#: php/tools.php:336
+#: php/tools.php:343
 msgid ""
 "Tool for modifying PC-98 game HDI files. Required to install English patches "
 "for the PC-98 games."
 msgstr ""
 
-#: php/tools.php:345
+#: php/tools.php:352
 msgid ""
 "These are (mostly) complete <span class=\"code\">score.dat</span> files "
 "useful for practice combined with other tools, as they have unlocked the "
@@ -3881,12 +3977,12 @@ msgstr ""
 "放、ステージプラクティス開放、スペルプラクティス開放を全ての機体で済ませてあ"
 "り、他のツールと合わせての練習に役立ちます。"
 
-#: php/tools.php:349
+#: php/tools.php:356
 msgid "All official shooting games aside from VD are included."
 msgstr ""
 "全ての公式シューティングゲーム（ナイトメアダイアリーを除く）を含んでいます。"
 
-#: php/tools.php:355
+#: php/tools.php:362
 msgid ""
 "Japanese program that can load <span class=\"code\">.ssg</span> files that "
 "modify the game while it is running, allowing for practice options as well "
@@ -3907,63 +4003,63 @@ msgstr ""
 "定が出来る日本産のプログラムです。SpoilerALはオリジナルの日本語版ゲームにのみ"
 "適用可能です。"
 
-#: php/tools.php:367
+#: php/tools.php:374
 msgid "Main Program"
 msgstr "メインプログラム"
 
-#: php/tools.php:368
+#: php/tools.php:375
 msgid "SSG Pack (4.6)"
 msgstr "SSGパック（4.6）"
 
-#: php/tools.php:375
+#: php/tools.php:382
 msgid "SSG Pack (niL)"
 msgstr "SSGパック（niL）"
 
-#: php/tools.php:378
+#: php/tools.php:385
 msgid "SSG Pack (LET)"
 msgstr "SSGパック（LET）"
 
-#: php/tools.php:381
+#: php/tools.php:388
 msgid "SSG Pack (niL, English translated)"
 msgstr "SSGパック（niL　英語翻訳版）"
 
-#: php/tools.php:384
+#: php/tools.php:391
 msgid "MoF SSG by Akaldar"
 msgstr "風神録SSG（Akaldar）"
 
-#: php/tools.php:387
+#: php/tools.php:394
 msgid "GFW SSG (English translated)"
 msgstr "大戦争SSG（英語翻訳版）"
 
-#: php/tools.php:390
+#: php/tools.php:397
 msgid "TD Scoring SSG by Leo (English translated)"
 msgstr "神霊廟スコアリングSSG by Leo（英語翻訳版）"
 
-#: php/tools.php:393
+#: php/tools.php:400
 msgid "HSiFS Scoring SSG by Sonitsuku"
 msgstr "天空璋スコアリングSSG by Sonitsuku"
 
-#: php/tools.php:396
+#: php/tools.php:403
 msgid "DDC SSG by 32th System"
 msgstr "輝針城SSG by 32th System"
 
-#: php/tools.php:399
+#: php/tools.php:406
 msgid "LoLK SSG by CreepyNinja"
 msgstr "紺珠伝SSG by CreepyNinja"
 
-#: php/tools.php:402
+#: php/tools.php:409
 msgid "LoLK Chapter Practice SSG by 32th System"
 msgstr "紺珠伝チャプタープラクティスSSG by 32th System"
 
-#: php/tools.php:405
+#: php/tools.php:412
 msgid "HSiFS SSG (cheats, English translated)"
 msgstr "天空璋SSG（チート用。英語翻訳版）"
 
-#: php/tools.php:408
+#: php/tools.php:415
 msgid "Alternative HSiFS SSG (English translated)"
 msgstr "オルタナティブ天空璋SSG（英語翻訳版）"
 
-#: php/tools.php:414
+#: php/tools.php:421
 msgid ""
 "Patches intended for efficient practice in one or more games, allowing the "
 "player to skip to patterns or changing power and such."
@@ -3971,11 +4067,11 @@ msgstr ""
 "パッチを使うことにより、複数の特定のゲームにおいてパターンの練習、または希望"
 "するパワーでの効果的な練習ができます。"
 
-#: php/tools.php:417
+#: php/tools.php:424
 msgid "Practice Tools by "
 msgstr "プラクティスツール by "
 
-#: php/tools.php:419
+#: php/tools.php:426
 msgid ""
 "Tools that allow you to skip to specific patterns in SA, UFO and LoLK, also "
 "allowing for other settings like your current power. The UFO and LoLK tools "
@@ -3988,11 +4084,11 @@ msgstr ""
 "殿ではプログラム自体を改変して動作します。紺珠伝では1.00a向けに作成されていま"
 "すが、1.00bでも動作するはずです。"
 
-#: php/tools.php:429
+#: php/tools.php:436
 msgid "WBaWC Practice by "
 msgstr "鬼形獣プラクティス by "
 
-#: php/tools.php:431
+#: php/tools.php:438
 msgid ""
 "Allows skipping to any part of the game, similar to Riri's practice tools, "
 "using an in-game menu."
@@ -4000,11 +4096,11 @@ msgstr ""
 "Ririさんのプラクティスツールに似た、ゲームの好きな箇所にスキップできるツール"
 "です。ゲーム内メニューで操作します。"
 
-#: php/tools.php:434
+#: php/tools.php:441
 msgid "GFW \"Brown Label\" Practice by "
 msgstr "大戦争 \"ブラウンレーベル\" プラクティス by "
 
-#: php/tools.php:436
+#: php/tools.php:443
 msgid ""
 "Modified <span class=\"code\">.dat</span> files that allow you to practice "
 "specific stages of any route in the game. Select A in-game for full stage "
@@ -4014,7 +4110,7 @@ msgstr ""
 "特定のルートの特定のステージを練習できる改変 <span class=\"code\">.dat</"
 "span> ファイルです。"
 
-#: php/tools.php:444
+#: php/tools.php:451
 msgid ""
 "Modifications to the main <span class=\"code\">.dat</span> files of the "
 "games that skip stage portions, allowing you to efficiently practice boss "
@@ -4024,11 +4120,11 @@ msgstr ""
 "ることなく効果的にボスを練習できるツールです。本編にもプラクティスにも適用さ"
 "れます。"
 
-#: php/tools.php:448 php/tools.php:469
+#: php/tools.php:455 php/tools.php:476
 msgid "Boss Rush Patches by "
 msgstr "ボスラッシュパッチ by "
 
-#: php/tools.php:450
+#: php/tools.php:457
 msgid ""
 "All midbosses and bosses are included, everything else being kept the same. "
 "There are also 'boss-only' versions that do skip the midbosses."
@@ -4036,11 +4132,11 @@ msgstr ""
 "全ての中ボスとボスが登場します。通常のボスラッシュです。”ボスオンリー”バー"
 "ジョンでは中ボスもスキップされます。"
 
-#: php/tools.php:454
+#: php/tools.php:461
 msgid "Full Pack"
 msgstr ""
 
-#: php/tools.php:471
+#: php/tools.php:478
 msgid ""
 "Patches for SA and UFO that not only remove stage portions, but also bombs. "
 "The SA one includes turning Stage 4 into 'Satori Rush', where you fight "
@@ -4052,51 +4148,51 @@ msgstr ""
 "りラッシュ\"が出現します。波と粒の境界やお空３枚目の安全地帯はこのパッチでは"
 "消滅しています。"
 
-#: php/tools.php:480
+#: php/tools.php:487
 msgid "EoSD Boss Rush by "
 msgstr "紅魔郷ボスラッシュ by "
 
-#: php/tools.php:481
+#: php/tools.php:488
 msgid "Another boss rush patch for EoSD, also including 'Patchouli Rush'."
 msgstr ""
 "もうひとつの紅魔郷向けボスラッシュパッチです。こちらでは\"パチュリーラッシュ"
 "\"が実装されています。"
 
-#: php/tools.php:483
+#: php/tools.php:490
 msgid "PCB Boss Rush by rsy_type1 and "
 msgstr "妖々夢ボスラッシュ by rsy_type1 and "
 
-#: php/tools.php:484
+#: php/tools.php:491
 msgid "A boss rush patch for PCB."
 msgstr "妖々夢のボスラッシュパッチです。"
 
-#: php/tools.php:486
+#: php/tools.php:493
 msgid "WBaWC Boss Rush by "
 msgstr "鬼形獣ボスラッシュ by "
 
-#: php/tools.php:487
+#: php/tools.php:494
 msgid "A boss rush patch for WBaWC."
 msgstr "鬼形獣のボスラッシュパッチです。"
 
-#: php/tools.php:492
+#: php/tools.php:499
 msgid ""
 "Patches intended for practicing one or a few specific patterns in a game. "
 "Usually <span class=\"code\">.dat</span> modifications."
 msgstr "ゲーム内の特定のパターンの練習を目的とし作成されたツールです。"
 
-#: php/tools.php:495
+#: php/tools.php:502
 msgid "Books Practice for EoSD by "
 msgstr "紅魔郷４面、魔導書地帯練習ツール by "
 
-#: php/tools.php:496
+#: php/tools.php:503
 msgid "Repeats the Stage 4 Books section for easy practicing."
 msgstr "４面魔導書地帯を簡易に反復練習できます。"
 
-#: php/tools.php:498
+#: php/tools.php:505
 msgid "VoWG + PWG Practice for MoF by "
 msgstr "VoWG + PWG Practice for MoF by "
 
-#: php/tools.php:500
+#: php/tools.php:507
 msgid ""
 "Makes Kanako skip to Virtue of Wind God (her final spell) and makes Aya skip "
 "to Peerless Wind God (her timeout spell), which will also repeat itself "
@@ -4105,19 +4201,19 @@ msgstr ""
 "風神録の神奈子ファイナルスペル\"風神様の神徳\"と、文の耐久スペル\"無双風神"
 "\"を無限に繰り返し練習出来るツールです。"
 
-#: php/tools.php:505
+#: php/tools.php:512
 msgid "IN Nonspell Practice"
 msgstr "永夜抄　通常攻撃プラクティスパッチ"
 
-#: php/tools.php:506
+#: php/tools.php:513
 msgid "Patch that lets you practice nonspells in IN."
 msgstr "永夜抄のボスの通常攻撃を練習できるようになるパッチです。"
 
-#: php/tools.php:508
+#: php/tools.php:515
 msgid "Timeout Phase Collection by "
 msgstr "Timeout Phase Collection by "
 
-#: php/tools.php:510
+#: php/tools.php:517
 msgid ""
 "Patches for practicing the timeout phases of the final spells on Lunatic and "
 "Extra from MoF to HSiFS, plus Devil's Recitation, but not including GFW "
@@ -4127,19 +4223,19 @@ msgstr ""
 "璋まで対応しています。また、星蓮船の魔神復誦を含みますが大戦争の３種の最終ス"
 "ペルは対応していません。"
 
-#: php/tools.php:515
+#: php/tools.php:522
 msgid "MoF to LoLK"
 msgstr "風神録から紺珠伝まで"
 
-#: php/tools.php:518
+#: php/tools.php:525
 msgid "HSiFS season finals and Extra final"
 msgstr "天空璋各季節のファイナルスペルとエクストラファイナルスペル"
 
-#: php/tools.php:521
+#: php/tools.php:528
 msgid "Star Sapphire First Non Practice by "
 msgstr ""
 
-#: php/tools.php:522
+#: php/tools.php:529
 msgid ""
 "Gives Star's first non from Route A1 Stage 2 infinite health. This will "
 "produce an infinite amount of rings, since the nonspell adds more rings "
@@ -4170,6 +4266,10 @@ msgid ""
 msgstr ""
 "該当のリプレイファイルをダウンロードするにはスコアをクリックしてください。"
 
+#: php/wr.php:162
+msgid "All of the table columns are sortable."
+msgstr "並べ替えには各表の最上段をクリックしてください。"
+
 #: php/wr.php:165
 msgid ""
 "The replays provided are <strong>not</strong> meant to be reuploaded to any "
@@ -4197,9 +4297,12 @@ msgstr ""
 
 #: php/wr.php:172
 msgid ""
-"The world record history from before September 2024 was assembled using the "
-"research at <a href=\"https://nylilsa.github.io\" "
-"target=\"_blank\">Nylilsa's GitHub page.</a>"
+"Historical records older than September 2024 were sourced from the Touhou WR "
+"History Repository, a publicly available dataset created and maintained by "
+"Nylilsa found at <a href=\"https://nylilsa.github.io/#/wr\" "
+"target=\"_blank\">Nylilsa's GitHub page</a>. Ongoing maintenance and "
+"expansion of the dataset are supported by the author through <a "
+"href=\"https://ko-fi.com/nylilsa\">their Ko-fi</a>."
 msgstr ""
 
 #: php/wr.php:180 php/wr.php:188 php/wr.php:219
@@ -4282,6 +4385,43 @@ msgstr "WR数"
 #: php/wr.php:634
 msgid "Different games"
 msgstr "ゲーム"
+
+#~ msgid ""
+#~ "As for Touhou 8 - Imperishable Night, an LNN is assumed to capture all "
+#~ "Last Spells and is referred to as LNNFS."
+#~ msgstr "永夜抄ではラストスペル取得を含めLNNFSが条件となります。"
+
+#, fuzzy
+#~| msgid "Touhou 7: Perfect Cherry Blossom."
+#~ msgid "Touhou 7: Perfect Cherry Blossom"
+#~ msgstr "東方妖々夢　～ Perfect Cherry Blossom."
+
+#, fuzzy
+#~| msgid ""
+#~| "Extra conditions are required for PCB, TD, HSiFS, WBaWC and UM; these "
+#~| "are No Border Breaks for PCB, No Trance for TD, No Release for HSiFS, No "
+#~| "Berserk Roar No Roar Breaks for WBaWC, No Cards for UM and No Hyper "
+#~| "Breaks for FW. LNN in these games is called LNNN or LNNNN, with extra Ns "
+#~| "to denote the extra conditions. The extra condition in UFO, no UFO "
+#~| "summons, is optional, as it is not considered to have a significant "
+#~| "impact on the difficulty of the run. As for IN, an LNN is assumed to "
+#~| "capture all Last Spells and is referred to as LNNFS."
+#~ msgid ""
+#~ " PCB, TD, HSiFS, WBaWC and UM; these are No Border Breaks for PCB, No "
+#~ "Trance for TD, No Release for HSiFS, No Berserk Roar No Roar Breaks for "
+#~ "WBaWC, No Cards for UM and No Hyper Breaks for FW. LNN in these games is "
+#~ "called LNNN or LNNNN, with extra Ns to denote the extra conditions. The "
+#~ "extra condition in UFO, no UFO summons, is optional, as it is not "
+#~ "considered to have a significant impact on the difficulty of the run. As "
+#~ "for IN, an LNN is assumed to capture all Last Spells and is referred to "
+#~ "as LNNFS."
+#~ msgstr ""
+#~ "また妖々夢では霊撃無し、神霊廟ではトランス無し、天空璋では開放無し、鬼形獣"
+#~ "では霊撃無し、暴走ロアリング無し、虹龍洞ではカード無し、錦上京では霊撃無し"
+#~ "が条件となります。この６作品では追加条件によってNが追加され、LNNN又はLNNNN"
+#~ "と呼称します。また星蓮船ではUFO招喚無しも考慮されますが、難易度が劇的に変"
+#~ "化するわけではないため必須条件とはなっていません。永夜抄ではラストスペル取"
+#~ "得を含めLNNFSが条件となります。"
 
 #~ msgid "See <a href=\"#term_gfw\">GFW</a>."
 #~ msgstr "<a href=\"#term_gfw\">GFW</a>参照。"

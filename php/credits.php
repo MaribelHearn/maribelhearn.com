@@ -4,6 +4,7 @@
     <ul class='credits'>
         <li><a href='https://www.youtube.com/@KirbyComment' target='_blank'>KirbyComment</a>: WR updates</li>
         <li><a href='https://twitter.com/DagothUrTH' target='_blank'>Dagoth2hu</a>: WR updates</li>
+        <li><a href='https://www.youtube.com/@413rb' target='_blank'>RB</a>: WR updates</li>
         <li><a href='https://github.com/hoangcaominh' target='_blank'>Hoàng Cao Minh</a>: LNN updates, DRC calculator integration</li>
         <li><a href='https://www.youtube.com/@valivanvan' target='_blank'>crazy4pokemon</a>: LNN updates</li>
         <li><a href='https://www.youtube.com/@allenko1122' target='_blank'>AllenKO</a>: LNN updates</li>
@@ -21,6 +22,7 @@
     <ul class='credits'>
         <li><a href='https://twitter.com/7bitm' target='_blank'>7bitm</a>: DRC</li>
         <li><a href='https://twitter.com/toho_yumiya' target='_blank'><?php echo ($lang == 'ja_JP' ? 'ゆーみや' : 'Yu-miya') ?></a>: DRC, Tools, WR, LNN</li>
+        <li><a href='https://www.youtube.com/@413rb' target='_blank'>RB</a>: LNN</li>
     </ul>
     <h3><span class='icon flag_china'></span> <?php echo _('Chinese') ?></h3>
     <ul class='credits'>

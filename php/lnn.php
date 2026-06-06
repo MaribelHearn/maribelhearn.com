@@ -16,8 +16,9 @@ if (strpos($games, 'Internal Server Error') !== false) {
     $games = json_decode($games, true);
 }
 
-$ALL_LNN = 117;
+$PC98_LNN = ['HRtP', 'SoEW', 'LLS', 'MS'];
 $WINDOWS_LNN = ['EoSD', 'PCB', 'IN', 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC', 'UM', 'FW'];
+$ALL_LNN = array_merge($PC98_LNN, $WINDOWS_LNN);
 $RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_limit']), 1) : 15;
 $layout = (isset($_COOKIE['lnn_old_layout']) ? 'Old' : 'New');
 $include_vs = (isset($_COOKIE['include_vs']) ? true : false);
@@ -30,6 +31,12 @@ $full_names = (object) [];
 $game_nums = (object) [];
 $total_players = 0;
 $missing_runs = 0;
+
+if ($include_vs) {
+    $PC98_LNN = ['HRtP', 'SoEW', 'PoDD', 'LLS', 'MS'];
+    $WINDOWS_LNN = ['EoSD', 'PCB', 'IN', 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC', 'UM', 'UDoALG', 'FW'];
+    $ALL_LNN = array_merge($PC98_LNN, $WINDOWS_LNN);
+}
 
 function lnn_type(string $game, string $lang) {
     switch ($game) {
@@ -84,17 +91,7 @@ $last_modified = $last_modified['results'][0]['date'];
         'For every shottype in a game, tables will tell you which players have done an LNN with it, if any. ' .
         'If a player has multiple LNNs for one particular shottype, those are not factored in.');
 	?></p>
-    <p id='conditions'><?php
-        echo _('Extra conditions are required for PCB, TD, HSiFS, WBaWC and UM; these are No Border Breaks for PCB, ' .
-        'No Trance for TD, No Release for HSiFS, No Berserk Roar No Roar Breaks for WBaWC, No Cards for UM and No Hyper Breaks for FW. ' .
-        'LNN in these games is called LNNN or LNNNN, with extra Ns to denote the extra conditions. ' .
-        'The extra condition in UFO, no UFO summons, is optional, as it is not considered to have a significant ' .
-        'impact on the difficulty of the run. As for IN, an LNN is assumed to capture all Last Spells and '.
-        'is referred to as LNNFS.');
-	?></p>
-    <p id='tables'><?php echo _('All of the table columns are sortable.') ?></p>
-    <p id='updaters'><?php echo _('For updates, you can contact <a href="https://bsky.app/profile/maribelhearn42.bsky.social" target="_blank">me</a>, <a href="https://hoangcaominh.github.io/#/profile" target="_blank">Hoàng Cao Minh</a>, ' .
-            '<a href="https://www.youtube.com/@valivanvan" target="_blank">crazy4pokemon</a> or <a href="https://www.youtube.com/@allenko1122" target="_blank">AllenKO</a>.') ?></p>
+    <p><a id='information' href='#'><?php echo _('Click here to view further information and guidelines for this page.') ?></a></p>
     <p id='last_modified'><?php echo (!empty($last_modified) ? format_lm($last_modified, $lang) : '') ?></p>
     <h2><?php echo _('Contents') ?></h2>
     <?php
@@ -434,8 +431,13 @@ $last_modified = $last_modified['results'][0]['date'];
             <tbody id='rankingbody'>
                 <?php
                     foreach ($player_lnns as $player => $count) {
-                        $shot_lnns = $player_lnns->{$player} == $ALL_LNN ? $player_lnns->{$player} . _(' (All Windows)') : $player_lnns->{$player};
-                        $game_lnns = array_intersect($WINDOWS_LNN, $player_games->{$player}) == $WINDOWS_LNN ? count(array_unique($player_games->{$player})) . _(' (All Windows)') : count(array_unique($player_games->{$player}));
+                        if ($player == '-') {
+                            continue;
+                        }
+                        $shot_lnns = $player_lnns->{$player};
+                        $game_lnns = array_intersect($PC98_LNN, $player_games->{$player}) == $PC98_LNN ? count(array_unique($player_games->{$player})) . _(' (All PC-98)') : count(array_unique($player_games->{$player}));
+                        $game_lnns = array_intersect($WINDOWS_LNN, $player_games->{$player}) == $WINDOWS_LNN ? count(array_unique($player_games->{$player})) . _(' (All Windows)') : $game_lnns;
+                        $game_lnns = array_intersect($ALL_LNN, $player_games->{$player}) == $ALL_LNN ? count(array_unique($player_games->{$player})) . _(' (All Games)') : $game_lnns;
                         echo '<tr><td></td>';
                         echo '<td><a href="#' . urlencode($player) . '">' . $player . '</a></td>';
                         echo '<td data-sort="' . $player_lnns->{$player} . '">' . $shot_lnns . '</td>';
@@ -457,4 +459,64 @@ $last_modified = $last_modified['results'][0]['date'];
 		}
 		echo substr($shots, 0, -1) . '}';
 	?>'>
+</div>
+<div id='modal'>
+    <div class='modal_inner'>
+        <h2><?php echo _('Information') ?></h2>
+        <p><?php echo _('This is an unofficial, community-maintained website.') ?></p>
+        <p><?php echo _('In general, you need to upload a replay or a video to an online platform for an LNN clear to be accepted on the website, ' .
+            'for example <a href="https://www.silentselene.net">Silent Selene</a> for replays or <a href="https://www.youtube.com">YouTube</a> for videos. ' .
+            'Streaming to a live streaming platform like <a href="https://twitch.tv">Twitch</a> is also accepted, provided that the VOD is not deleted. ' .
+            'Exceptions may be made on a case-by-case basis.') ?></p>
+        <p><?php echo _('Extra conditions are required for certain games. These conditions are as follows:') ?></p>
+        <table>
+            <thead>
+                <tr>
+                    <th><?php echo _('Game') ?></th>
+                    <th><?php echo _('Condition') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><?php echo _('Touhou 7 - Perfect Cherry Blossom') ?></td>
+                    <td><?php echo _('No Border Breaks') ?></td>
+                </tr>
+                <tr>
+                    <td><?php echo _('Touhou 8 - Imperishable Night') ?></td>
+                    <td><?php echo _('All Spells Captured') ?></td>
+                </tr>
+                <tr>
+                    <td><?php echo _('Touhou 12 - Undefined Fantastic Object') ?></td>
+                    <td><?php echo _('No UFO Summons*') ?></td>
+                </tr>
+                <tr>
+                    <td><?php echo _('Touhou 13 - Ten Desires') ?></td>
+                    <td><?php echo _('No Trance') ?></td>
+                </tr>
+                <tr>
+                    <td><?php echo _('Touhou 16 - Hidden Star in Four Seasons') ?></td>
+                    <td><?php echo _('No Release') ?></td>
+                </tr>
+                <tr>
+                    <td><?php echo _('Touhou 17 - Wily Beast and Weakest Creature') ?></td>
+                    <td><?php echo _('No Berserk Roar, No Roar Breaks') ?></td>
+                </tr>
+                <tr>
+                    <td><?php echo _('Touhou 18 - Unconnected Marketeers') ?></td>
+                    <td><?php echo _('No Cards') ?></td>
+                </tr>
+                <tr>
+                    <td><?php echo _('Touhou 20 - Fossilized Wonders') ?></td>
+                    <td><?php echo _('No Hyper Breaks') ?></td>
+                </tr>
+            </tbody>
+        </table>
+        <p><?php echo _('* Optional') ?></p>
+        <p><?php echo _('If a run is shown to have been cheated beyond reasonable doubt, for example by using savestates, pause buffering, or slowdown, it will be removed from the website.') ?></p>
+        <h2><?php echo _('Submission') ?></h2>
+        <p><?php echo _('At present, we do <strong>not</strong> use a submission form. If you upload your replay or video somewhere, it will eventually be noticed by us and added to the website.') ?></p>
+        <p><?php echo _('If we missed your run, you can contact <a href="https://bsky.app/profile/maribelhearn42.bsky.social" target="_blank">me</a>, ' .
+            '<a href="https://hoangcaominh.github.io/#/profile" target="_blank">Hoàng Cao Minh</a>, <a href="https://www.youtube.com/@valivanvan" target="_blank">crazy4pokemon</a> or ' .
+            '<a href="https://www.youtube.com/@allenko1122" target="_blank">AllenKO</a> to add it to the website.') ?></p>
+    </div>
 </div>

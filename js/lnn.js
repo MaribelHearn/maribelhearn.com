@@ -4,7 +4,6 @@ const banList = ["Reimu", "Marisa", "Sanae", "Seiran", "Biten", "Enoko", "Chiyar
 let language = "en_GB";
 let selected = "";
 let shots = {};
-let pc98Excluded = false;
 let versusIncluded = false;
 
 function toggleLayout() {
@@ -488,6 +487,32 @@ function getCategoryLNNs(category) {
     xhr.send();
 }
 
+function openModal() {
+    const modal = document.getElementById("modal");
+    modal.style.display = "block";
+    modal.childNodes[1].style.display = "block";
+}
+
+function emptyModal() {
+    const modal = document.getElementById("modal");
+    modal.style.display = "none";
+    modal.childNodes[1].style.display = "none";
+}
+
+function closeModal(event) {
+    const modal = document.getElementById("modal");
+
+    if (event.target && event.target == modal) {
+        emptyModal();
+    }
+}
+
+function detectKey(event) {
+    if (event.key && event.key == "Escape") {
+        emptyModal();
+    }
+}
+
 function detectEnter(event) {
     if (event.key && event.key == "Enter") {
         const value = event.target.value;
@@ -514,6 +539,8 @@ function setLanguage(event) {
 }
 
 function setEventListeners() {
+    document.body.addEventListener("click", closeModal, false);
+    document.body.addEventListener("keyup", detectKey, false);
     document.getElementById("toggle_layout").href = document.getElementById("toggle_layout").href.split('?')[0];
     document.getElementById("toggle_layout").addEventListener("click", toggleLayout, false);
     document.getElementById("recent_limit").addEventListener("keyup", setRecentLimit, false);
@@ -527,6 +554,7 @@ function setEventListeners() {
     document.getElementById("category").addEventListener("keypress", detectEnter, false);
     document.getElementById("showversus1").addEventListener("click", toggleVersus, false);
     document.getElementById("showversus2").addEventListener("click", toggleVersus, false);
+    document.getElementById("information").addEventListener("click", openModal, false);
     const gameImg = document.querySelectorAll(".game_img");
 
     for (const element of gameImg) {
