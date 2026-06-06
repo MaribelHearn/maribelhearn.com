@@ -17,7 +17,6 @@ const screenshotOptions = {
 };
 const screenshotOptionsMobile = {
     scale: 1,
-    height: document.getElementById("container").offsetHeight,
     backgroundColor: "white",
     logging: false
 };
@@ -1141,10 +1140,17 @@ function apply() {
     const success = drawOverview();
 
     if (success) {
-        html2canvas(document.getElementById("stb"), screenshotOptions).then(afterStB);
-        html2canvas(document.getElementById("ds"), screenshotOptions).then(afterDS);
-        html2canvas(document.getElementById("isc"), screenshotOptions).then(afterISC);
-        html2canvas(document.getElementById("vd"), screenshotOptions).then(afterVD);
+        if (isMobile()) {
+            html2canvas(document.getElementById("stb"), screenshotOptionsMobile).then(afterStB);
+            html2canvas(document.getElementById("ds"), screenshotOptionsMobile).then(afterDS);
+            html2canvas(document.getElementById("isc"), screenshotOptionsMobile).then(afterISC);
+            html2canvas(document.getElementById("vd"), screenshotOptionsMobile).then(afterVD);
+        } else {
+            html2canvas(document.getElementById("stb"), screenshotOptions).then(afterStB);
+            html2canvas(document.getElementById("ds"), screenshotOptions).then(afterDS);
+            html2canvas(document.getElementById("isc"), screenshotOptions).then(afterISC);
+            html2canvas(document.getElementById("vd"), screenshotOptions).then(afterVD);
+        }
     }
 
     clearMessages();

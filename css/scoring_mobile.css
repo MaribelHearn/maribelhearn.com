@@ -5,20 +5,29 @@ input[type=text] {
     width: 65px;
     height: 10px;
 }
-tr {
-    display: block;
-}
-th {
+th, td.progress {
     display: none;
 }
-td.break {
-    float: left;
+
+#summary_table th {
+    display: table-cell;
 }
 .label {
     display: inline;
     font-weight: bold;
 }
-#checkboxes tr {
-    border-spacing: 10px;
-    border-collapse: separate;
+#buttons {
+    position: relative;
+    border: none;
+    padding-bottom: 0px;
+    top: auto;
+    left: auto;
+}
+#score_input tr {
+    display: flex;
+    flex-wrap: wrap;
+}
+#score_input td {
+    display: flex;
+    flex-basis: 100%;
 }

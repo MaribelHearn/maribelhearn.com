@@ -11,7 +11,6 @@ const screenshotOptions = {
 };
 const screenshotOptionsMobile = {
     scale: 1,
-    height: document.getElementById("summary_table").offsetHeight,
     backgroundColor: "white",
     logging: false
 };
@@ -152,7 +151,7 @@ function getRow(game, diff, shot, precision, emptyWR) {
         "categories": categories,
         "percentage": Number(percentagePrecise),
         "row": `<tr><td>${game} ${diff}</td><td>${shotText}</td><td data-sort='${score}'>${sep(score)}</td><td data-sort='${percentageSort}'>${percentage}%</td>` +
-        `<td><progress value='${percentage}' max='100'></progress></td><td data-sort='${wr[0]}'>${wrText}</td>`
+        `<td class='progress'><progress value='${percentage}' max='100'></progress></td><td data-sort='${wr[0]}'>${wrText}</td>`
     };
 }
 

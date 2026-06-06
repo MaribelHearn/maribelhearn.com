@@ -117,7 +117,7 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
         ?></tbody>
     </table>
     <form>
-        <div><table id='score_input' class='noborders'>
+        <table id='score_input' class='noborders'>
             <thead>
                 <tr>
                     <th>Game</th>
@@ -131,6 +131,7 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
                 </tr>
             </thead>
             <tbody><?php
+                global $is_mobile;
                 foreach ($games as $key => $data) {
                     $game = $data['short_name'];
                     if ($game == 'UDoALG') {
@@ -148,11 +149,15 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
                         if ($game === 'HSiFS') {
                             $rowspan -= 4;
                         }
+                        if ($key === 0 && $is_mobile) {
+                            echo '<td rowspan="' . $rowspan . '" class="nohide"><span id="' . $game . '_image" title="' . $data['full_name'] .
+                                '" class="cover' . ($data['number'] <= 5 ? ' cover98' : '') . '"></span></td>';
+                        }
                         if ($key === 0) {
                             echo '<tr><td colspan="8" class="nohide"><div id="dropdown_' . $game . '" class="dropdown-check-list" tabindex="100"><span class="anchor">Expand</span></div></td></tr>';
                         }
                         echo '<tr class="row_' . $game . '">';
-                        if ($key === 0) {
+                        if ($key === 0 && !$is_mobile) {
                             echo '<td rowspan="' . $rowspan . '" class="nohide"><span id="' . $game . '_image" title="' . $data['full_name'] .
                                 '" class="cover' . ($data['number'] <= 5 ? ' cover98' : '') . '"></span></td>';
                         }
@@ -166,12 +171,11 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
                                 continue;
                             }
                             $shot = str_replace(' ', '', $shot);
-                            echo '<td' . ($diff == 'Hard' || $diff == 'Extra' ? ' class="break"' : '') . '>' .
-                            '<label for="' . $game . $diff . $shot . '" class="label">' . $diff . '</label>' .
+                            echo '<td><label for="' . $game . $diff . $shot . '" class="label">' . $diff . '</label>' .
                             '<input id="' . $game . $diff . $shot . '" type="text"></td>';
                             if ($game == 'HSiFS' && $diff == 'Lunatic' && strpos($shot, 'Spring') !== false) {
                                 $shot = str_replace('Spring', '', $shot);
-                                echo '<td class="break"><label for="' . $game . 'Extra' . $shot . '" class="label">Extra</label>' .
+                                echo '<td><label for="' . $game . 'Extra' . $shot . '" class="label">Extra</label>' .
                                 '<input id="' . $game . 'Extra' . $shot . '" type="text"></td>';
                             } else if ($game == 'HSiFS' && $diff == 'Lunatic' && strpos($shot, 'Spring') === false) {
                                 echo '<td></td>'; // hidden
@@ -182,10 +186,9 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
                     if ($game == 'GFW') {
                         echo '<tr class="row_GFW"><td><label for="GFWExtraA1">Extra</label></td><td id="GFWExtra_td" colspan="4"><input id="GFWExtraA1" type="text"></td></tr>';
                     }
-                    echo '<tr><td colspan="8"><hr></td></tr>';
                 }
             ?></tbody>
-        </table></div>
+        </table>
     </form>
     <footer><strong><a href='#top'>Back to Top</a></strong></footer>
 </div>
