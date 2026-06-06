@@ -570,7 +570,7 @@ foreach ($wr_data as $key => $data) {
             }
 			$diffs .= '"' . $data['short_name'] . '":[';
 			foreach ($data['shots'][0]['categories'] as $key => $category) {
-                if ($category['type'] == 'LNN') {
+                if ($category['type'] == 'LNN' || $category['region'] == 'Western') {
                     continue;
                 }
 				$diffs .= '"' . $category['difficulty'] . '",';
