@@ -2,7 +2,7 @@
     <?php echo wrap_top() ?>
     <h2><?php echo _('Contributors') ?></h2>
     <ul class='credits'>
-        <li><a href='https://www.youtube.com/@KirbyComment' target='_blank'>KirbyComment</a>: WR updates</li>
+        <li><a href='https://www.youtube.com/@KirbyComment' target='_blank'>KirbyComment</a>: WR updates, WR history</li>
         <li><a href='https://twitter.com/DagothUrTH' target='_blank'>Dagoth2hu</a>: WR updates</li>
         <li><a href='https://www.youtube.com/@413rb' target='_blank'>RB</a>: WR updates</li>
         <li><a href='https://github.com/hoangcaominh' target='_blank'>Hoàng Cao Minh</a>: LNN updates, DRC calculator integration</li>
