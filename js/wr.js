@@ -209,7 +209,7 @@ function showWRtable(game, records) {
             continue;
         }
 
-        let text = ((game == "WBaWC" || game == "UM" || game == "FW") && score > MAX_SCORE
+        let text = ((game === "HSiFS" || game === "WBaWC" || game === "UM" || game === "FW") && score > MAX_SCORE
                 ? `<span class='cs'>${sep(score)}<span class='tooltip truescore'>${_("Uncapped")}</span></span>`
                 : sep(score)
         );

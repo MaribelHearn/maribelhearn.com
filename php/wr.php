@@ -203,7 +203,7 @@ foreach ($wr_data as $key => $data) {
                         }
                         $wr = $overall->{$game};
                         $score_text = number_format($wr['score'], 0, '.', ',');
-                        if ($game == 'WBaWC' || $game == 'UM' || $game == 'FW') {
+                        if ($num >= 16) {
                             $score_text = '<span class="cs">' . number_format($wr['score'], 0, '.', ',') . '<span class="tooltip truescore">' . _('Uncapped') . '</span></span> ';
                         }
                         echo '<tr id="' . $game . 'o"><td' . ($num == 128 ? ' data-sort="12.8"' : '') . '>' . $num . '</td><td class="' . $game . '">' . _($game) . '</td>';
