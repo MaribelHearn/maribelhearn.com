@@ -109,15 +109,14 @@ function prepareShowWR(game) {
 
     if (selected !== "") {
         const selectedImg = document.getElementById(`${selected}_image`);
-        const border = "none";
-        selectedImg.style.border = border;
+        selectedImg.classList.remove("selected");
     }
 
     const wrTable = document.getElementById("world");
     wrTable.classList.remove(`${selected}t`);
     wrTable.classList.add(`${game}t`);
     selected = game;
-    document.getElementById(`${game}_image`).style.border = "3px solid gold";
+    document.getElementById(`${game}_image`).classList.add("selected");
     document.getElementById("fullname").innerHTML = fullNameNumber(game);
     document.getElementById("notice").parentNode.style.display = "none";
     document.getElementById("notice").innerHTML = "";
@@ -321,8 +320,7 @@ function showWRs(event) {
         document.getElementById("history_list").style.display = "none";
     } else {
         const gameImg = document.getElementById(`${game}_image`);
-        const border = "none";
-        gameImg.style.border = border;
+        gameImg.classList.remove("selected");
         document.getElementById("world").classList.remove(`${game}t`);
         document.getElementById("wr_list").style.display = "none";
         selected = "";

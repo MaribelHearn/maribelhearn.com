@@ -21,6 +21,10 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
 }
 .game_img {
     cursor: pointer;
+    box-sizing: border-box;
+}
+.game_img.selected {
+    border: 3px solid gold;
 }
 .sheet_1 {
     background-image: url('/assets/shared/spritesheets/game_sheet50x50_1.png');
