@@ -55,15 +55,14 @@ function shotRoute(game) {
 function prepareShowLNNs(game) {
     if (selected !== "") {
         const selectedImg = document.getElementById(`${selected}_image`);
-        const border = "none";
-        selectedImg.style.border = border;
+        selectedImg.classList.remove("selected");
     }
 
     const lnnTable = document.getElementById("lnn_table");
     lnnTable.classList.remove(`${selected}t`);
     lnnTable.classList.add(`${game}t`);
     selected = game;
-    document.getElementById(`${game}_image`).style.border = "3px solid gold";
+    document.getElementById(`${game}_image`).classList.add("selected");
     document.getElementById("fullname").innerHTML = fullNameNumber(game);
     document.getElementById("lnn_shotroute").innerHTML = shotRoute(game);
     document.getElementById("lnn_restrictions").innerHTML = restrictions(game);
@@ -189,8 +188,7 @@ function showLNNs() { // .game_img onclick
         document.getElementById("lnn_list").style.display = "block";
     } else {
         const gameImg = document.getElementById(`${game}_image`);
-        const border = "none";
-        gameImg.style.border = border;
+        gameImg.classList.remove("selected");
         document.getElementById("lnn_table").classList.remove(`${game}t`);
         document.getElementById("lnn_list").style.display = "none";
         selected = "";
