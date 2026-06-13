@@ -1,5 +1,9 @@
 /*global _ MAX_SCORE setCookie getCookie deleteCookie sep fullNameNumber*/
 const API_BASE = location.hostname.includes("maribelhearn.com") ? "https://maribelhearn.com" : "http://localhost";
+const releaseDate = {
+    "EoSD": "2002-08-11", "PCB": "2003-08-17", "IN": "2004-08-15", "PoFV": "2005-08-14", "MoF": "2007-08-17", "SA": "2008-08-16", "UFO": "2009-08-15",
+    "TD": "2011-08-13", "DDC": "2013-08-12", "LoLK": "2015-08-14", "HSiFS": "2017-08-11", "WBaWC": "2019-08-12", "UM": "2021-05-04", "FW": "2025-08-17"
+}
 const hsifsExtraShots = ["Reimu", "Cirno", "Aya", "Marisa"];
 let language = "en_GB";
 let selected = "";
@@ -482,6 +486,8 @@ function showHistory(category, game, records, idSuffix) {
         historyTable.classList.remove(historyTable.classList[1]);
     }
 
+    let dateSort = new Date(releaseDate[game]).toISOString().split("T")[0].replace(/-/g, "");
+    document.getElementById("history_tbody").innerHTML += `<tr><td colspan="5" data-sort="0">${_("Release date")}</td><td data-sort="${dateSort}">${formatDate(releaseDate[game])}</td>`;
     noHistory.style.display = "none";
     historyTable.classList.add(`${game}t`);
     historyTable.style.display = "table";
