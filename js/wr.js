@@ -1,7 +1,7 @@
 /*global _ MAX_SCORE setCookie getCookie deleteCookie sep fullNameNumber*/
 const API_BASE = location.hostname.includes("maribelhearn.com") ? "https://maribelhearn.com" : "http://localhost";
 const releaseDate = {
-    "EoSD": "2002-08-11", "PCB": "2003-08-17", "IN": "2004-08-15", "PoFV": "2005-08-14", "MoF": "2007-08-17", "SA": "2008-08-16", "UFO": "2009-08-15",
+    "EoSD": "2002-08-11", "PCB": "2003-08-17", "IN": "2004-08-15", "PoFV": "2005-08-14", "MoF": "2007-08-17", "SA": "2008-08-16", "UFO": "2009-08-15", "GFW": "2010-08-14",
     "TD": "2011-08-13", "DDC": "2013-08-12", "LoLK": "2015-08-14", "HSiFS": "2017-08-11", "WBaWC": "2019-08-12", "UM": "2021-05-04", "FW": "2025-08-17"
 }
 const hsifsExtraShots = ["Reimu", "Cirno", "Aya", "Marisa"];
