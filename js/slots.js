@@ -89,8 +89,12 @@ function closeModal(event) {
     }
 }
 
-function setMessage(message) {
-    document.getElementById("message").innerHTML = message;
+function printMessage(message) {
+    document.getElementById("message").innerHTML = `<strong class="message">${message}</strong>`;
+}
+
+function printError(message) {
+    document.getElementById("message").innerHTML = `<strong class="error_message">${message}</strong>`;
 }
 
 function toggleSlots() {
@@ -103,7 +107,7 @@ function toggleSlots() {
 
     running = setInterval(tick, SPEED);
     document.getElementById("insert_coin").value = "Stop";
-    setMessage("");
+    printMessage("");
 }
 
 function fileName() {
@@ -125,7 +129,7 @@ function takeScreenshot() {
     const width = document.getElementById("table").offsetWidth + 20;
     const height = document.getElementById("table").offsetHeight + (isMobile() ? 20 : 0);
     const windowHeight = height + (isMobile() ? 15 : 0);
-    setMessage("");
+    printMessage("");
 
     try {
         html2canvas(document.body, {
@@ -148,7 +152,7 @@ function takeScreenshot() {
             document.getElementById("modal").style.display = "block";
         });
     } catch (err) {
-        alert("Your browser is outdated. Use a different browser to screenshot your slot machine.");
+        printError("Your browser is outdated. Use a different browser to screenshot your slot machine.");
     }
 }
 
@@ -160,7 +164,7 @@ function reset() {
         document.getElementById(`title${i}`).innerHTML = slotTitles[i];
     }
 
-    setMessage("Reset the titles!");
+    printMessage("Reset the titles!");
 }
 
 function checkBannedChars(event) {
@@ -192,7 +196,7 @@ function updateTitle() {
     document.getElementById(`title${currentID}`).innerHTML = title;
     slotTitles[currentID] = title;
     localStorage.setItem("slotTitles", JSON.stringify(slotTitles));
-    setMessage("");
+    printMessage("");
     emptyModal();
 }
 
@@ -223,7 +227,7 @@ function titleMenu(event) {
     document.getElementById("title_length").innerHTML = `${slotTitles[id].length}/${MAX_TITLE_LENGTH}`;
     document.getElementById("modal_title").style.display = "block";
     document.getElementById("modal").style.display = "block";
-    setMessage("");
+    printMessage("");
     currentID = id;
 }
 

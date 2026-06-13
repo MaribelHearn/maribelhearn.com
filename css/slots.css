@@ -32,6 +32,15 @@ table, th, td {
     cursor: pointer;
     width: 100px;
 }
+.message {
+    color: green;
+}
+.error_message {
+    color: orange;
+}
+#message {
+    text-align: center;
+}
 #save_link {
     text-decoration: none;
 }
@@ -44,10 +53,6 @@ table, th, td {
 }
 #slot7 {
     font-size: 42px;
-}
-#message {
-    color: green;
-    font-weight: bold;
 }
 #hy_text {
     margin: 4px 0px 0px 0px;
