@@ -11,8 +11,8 @@
 </div>
 <h2>Valid responses</h2>
 <div class='contents'>
-    <p>Characters: 544</p>
-    <p>Music: 678</p>
+    <p>Characters: 1,195</p>
+    <p>Music: 945</p>
     <p>Spell Cards: 711</p>
     <p>Questionnaire: 728</p>
 </div>
