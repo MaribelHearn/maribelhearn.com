@@ -119,9 +119,9 @@
             </ul>
         </div>
         <div>
-            <h2>Touhou Replay Showcase</h2>
-            <p class='wide center'><a href='https://touhoureplayshowcase.com'><span class='icon trs_icon'></span> Touhou Replay Showcase</a> has been moved to its own domain! The former page on this website will redirect you there.</p>
-        </div>
+            <h2>Discord Server</h2>
+            <p class='wide center'>We have set up the <a href='https://discord.gg/EpYuQ7kWEK'><span class='icon discord_icon'></span> Maribel Hearn's Touhou Portal</a> Discord server!
+            Centered around the website, feel free to join and chat about the Touhou games with us.</p>
         <div id='special_thanks'>
             <h2>Special Thanks</h2>
             <p class='wide center'>Many thanks to my awesome supporters for covering server costs!</p>
