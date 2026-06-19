@@ -175,7 +175,7 @@ $last_modified = $last_modified['results'][0]['date'];
                 if (!empty($shots_seen)) {
                     $players_shot = array_unique($players_shot);
                     sort($players_shot);
-                    echo '<td>' . count($players_shot) . '</td><td>' . implode(', ', $players_shot) . '</td></tr>';
+                    echo '<td>' . (count($players_shot) == 1 && $game == 'UDoALG' ? '-' : count($players_shot)) . '</td><td>' . implode(', ', $players_shot) . '</td></tr>';
                 }
                 array_push($shots_seen, $shot);
                 $players_shot = [];
@@ -196,7 +196,9 @@ $last_modified = $last_modified['results'][0]['date'];
             } else {
                 array_push($players_shot, $player);
             }
-            array_push($players_game, $player);
+            if ($player != '-') {
+                array_push($players_game, $player);
+            }
             if (empty($data['replay']) && empty($data['video'])) {
                 $missing_runs += 1;
             }

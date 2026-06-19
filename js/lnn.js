@@ -132,7 +132,10 @@ function showLNNtable(game, LNNs) {
             currentShot = shot;
         }
 
-        players.pushStrict(player);
+        if (player !== '-') {
+            players.pushStrict(player);
+        }
+
         shotCount += 1;
 
         if (game != "UDoALG" || !banList.includes(shot)) {
