@@ -47,7 +47,7 @@ input[type=button] {
 .cover98 {
     border: 1px solid #000;
 }
-.label {
+.label, .no_scores {
     display: none;
 }
 .result_table {

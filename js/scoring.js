@@ -270,7 +270,7 @@ function prepareRendering() {
 
         if (gameSum === 0) {
             const element = document.getElementById(`${game}tr`);
-            element.parentNode.removeChild(element);
+            element.classList.add("no_scores");
         }
     }
 }
@@ -323,6 +323,23 @@ function cleanupRendering() {
 
     for (const id of toDisplay) {
         document.getElementById(id).style.display = "block";
+    }
+
+    // Undo hidden games
+    for (const game in scores) {
+        let gameSum = 0;
+
+        for (const diff in scores[game]) {
+            for (const shot in scores[game][diff]) {
+                const score = scores[game][diff][shot];
+                gameSum += score;
+            }
+        }
+
+        if (gameSum === 0) {
+            const element = document.getElementById(`${game}tr`);
+            element.classList.remove("no_scores");
+        }
     }
 }
 
@@ -518,10 +535,17 @@ function loadScores() {
 }
 
 function showScores() {
+    let expandedGames = []; // expanded at page load
+
     for (const game in scores) {
         for (const diff in scores[game]) {
             for (let shot in scores[game][diff]) {
-                if (scores[game][diff][shot] != 0) {
+                if (scores[game][diff][shot] !== 0) {
+                    if (!expandedGames.includes(game)) {
+                        document.getElementById(`dropdown_${game}`).childNodes[0].click();
+                        expandedGames.push(game);
+                    }
+
                     const score = sep(scores[game][diff][shot]);
                     shot = shot.replace(" Team", "Team");
 
@@ -574,7 +598,7 @@ function scoreChanged() {
         scores[category.game][category.diff] = {};
     }
 
-    scores[category.game][category.diff][category.shot] = score ? score : 0;
+    scores[category.game][category.diff][category.shot] = score ? parseInt(score) : 0;
     unsavedChanges = true;
 }
 
@@ -748,6 +772,19 @@ function init() {
         // do nothing
     }
 
+    if (localStorage.hasOwnProperty("precision")) {
+        precision = document.getElementById("precision").value = parseInt(localStorage.getItem("precision"));
+    }
+
+    setEventListeners();
+    window.onbeforeunload = function () {
+        if (unsavedChanges) {
+            return "";
+        }
+
+        return undefined;
+    }
+
     if (importElement) {
         doImport();
         importElement.parentNode.removeChild(importElement);
@@ -763,18 +800,6 @@ function init() {
         } catch (e) {
             // do nothing
         }
-    }
-
-    if (localStorage.hasOwnProperty("precision")) {
-        precision = document.getElementById("precision").value = parseInt(localStorage.getItem("precision"));
-    }
-    setEventListeners();
-    window.onbeforeunload = function () {
-        if (unsavedChanges) {
-            return "";
-        }
-
-        return undefined;
     }
 }
 
