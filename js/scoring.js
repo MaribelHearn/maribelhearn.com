@@ -256,6 +256,23 @@ function prepareRendering() {
     for (const id of toHide) {
         document.getElementById(id).style.display = "none";
     }
+
+    // Hide games without scores
+    for (const game in scores) {
+        let gameSum = 0;
+
+        for (const diff in scores[game]) {
+            for (const shot in scores[game][diff]) {
+                const score = scores[game][diff][shot];
+                gameSum += score;
+            }
+        }
+
+        if (gameSum === 0) {
+            const element = document.getElementById(`${game}tr`);
+            element.parentNode.removeChild(element);
+        }
+    }
 }
 
 function afterScreenshot(canvas) {
