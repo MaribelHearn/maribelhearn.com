@@ -29,7 +29,7 @@ function touhou_sites() {
     '<span class="icon lunarcast_icon"></span>Lunarcast</a></p>' .
     '<p><a href="https://thscore.pndsng.com/index.php">' .
     '<span class="icon pndsng_icon"></span>PND List</a></p>' .
-    '<p><a href="https://thex-score.net/">' .
+    '<p><a href="https://balisman.github.io/">' .
     '<span class="icon thex_icon"></span>Touhou Extra Scoreboard</a></p>' .
     '<p><a href="https://wikiwiki.jp/thscorekg/">' .
     '<span class="icon kg_icon"></span>KG\'s Site</a></p>';
