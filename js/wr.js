@@ -4,7 +4,7 @@ const releaseDate = {
     "HRtP": "1997-08-15", "SoEW": "1997-08-15", "PoDD": "1997-12-29", "LLS": "1998-08-14", "MS": "1998-12-30",
     "EoSD": "2002-08-11", "PCB": "2003-08-17", "IN": "2004-08-15", "PoFV": "2005-08-14", "MoF": "2007-08-17", "SA": "2008-08-16", "UFO": "2009-08-15", "GFW": "2010-08-14",
     "TD": "2011-08-13", "DDC": "2013-08-12", "LoLK": "2015-08-14", "HSiFS": "2017-08-11", "WBaWC": "2019-08-12", "UM": "2021-05-04", "FW": "2025-08-17"
-}
+};
 const hsifsExtraShots = ["Reimu", "Cirno", "Aya", "Marisa"];
 let language = "en_GB";
 let selected = "";
@@ -118,7 +118,7 @@ function prepareShowWR(game) {
     wrTable.classList.add(`${game}t`);
     selected = game;
     document.getElementById(`${game}_image`).classList.add("selected");
-    document.getElementById("fullname").innerHTML = fullNameNumber(game);
+    document.getElementById("fullname").innerHTML = `<a href="#${game}">${fullNameNumber(game)}</a>`;
     document.getElementById("notice").parentNode.style.display = "none";
     document.getElementById("notice").innerHTML = "";
     appendShottypeHeaders(game, shots);
@@ -319,12 +319,14 @@ function showWRs(event) {
         document.getElementById("wr_list").style.display = "block";
         document.getElementById("history_table").classList.remove(`${selected}t`);
         document.getElementById("history_list").style.display = "none";
+        location.hash = game;
     } else {
         const gameImg = document.getElementById(`${game}_image`);
         gameImg.classList.remove("selected");
         document.getElementById("world").classList.remove(`${game}t`);
         document.getElementById("wr_list").style.display = "none";
         selected = "";
+        location.hash = "";
     }
 }
 
@@ -637,10 +639,17 @@ function checkHash() {
         const hash = decodeURIComponent(location.hash.substring(1).replace('+', "%20"));
         const players = document.getElementById("search").children;
 
+        for (const game of Object.keys(releaseDate)) {
+            if (hash === game && game !== selected) {
+                showWRs({ data: { game: game } });
+                document.getElementById("wrs").scrollIntoView();
+            }
+        }
+
         for (const option of players) {
             const player = option.value;
 
-            if (hash == player) {
+            if (hash === player) {
                 document.getElementById("player").value = player;
                 document.getElementById("search").value = player;
                 document.getElementById("player_search").scrollIntoView();

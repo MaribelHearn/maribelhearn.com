@@ -1,5 +1,9 @@
 /*global _ getCookie deleteCookie setCookie fullNameNumber*/
 const API_BASE = location.hostname.includes("maribelhearn.com") ? "https://maribelhearn.com" : "http://localhost";
+const games = [
+    "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA",
+    "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "UDoALG", "FW"
+];
 const banList = ["Reimu", "Marisa", "Sanae", "Seiran", "Biten", "Enoko", "Chiyari"];
 let language = "en_GB";
 let selected = "";
@@ -63,7 +67,7 @@ function prepareShowLNNs(game) {
     lnnTable.classList.add(`${game}t`);
     selected = game;
     document.getElementById(`${game}_image`).classList.add("selected");
-    document.getElementById("fullname").innerHTML = fullNameNumber(game);
+    document.getElementById("fullname").innerHTML = `<a href="#${game}">${fullNameNumber(game)}</a>`;
     document.getElementById("lnn_shotroute").innerHTML = shotRoute(game);
     document.getElementById("lnn_restrictions").innerHTML = restrictions(game);
     document.getElementById("lnn_tbody").innerHTML = "";
@@ -182,19 +186,21 @@ function showLNNtable(game, LNNs) {
     total.innerHTML = total.innerHTML.replace(", ", "");
 }
 
-function showLNNs() { // .game_img onclick
-    const game = this.id.replace("_image", "");
+function showLNNs(event) {
+    const game = event.data ? event.data.game : this.id.replace("_image", "");
 
     if (game != selected) {
         prepareShowLNNs(game);
         getLNNs(game);
         document.getElementById("lnn_list").style.display = "block";
+        location.hash = game;
     } else {
         const gameImg = document.getElementById(`${game}_image`);
         gameImg.classList.remove("selected");
         document.getElementById("lnn_table").classList.remove(`${game}t`);
         document.getElementById("lnn_list").style.display = "none";
         selected = "";
+        location.hash = "";
     }
 }
 
@@ -618,11 +624,19 @@ function checkHash() {
     if (location.hash !== "") {
         const hash = decodeURIComponent(location.hash.substring(1).replace('+', "%20"));
         const players = document.getElementById("search_player").children;
+        
+        for (const game of games) {
+            if (hash === game && game !== selected) {
+                showLNNs({ data: { game: game } });
+                document.getElementById("lnns").scrollIntoView();
+                return;
+            }
+        }
 
         for (const option of players) {
             const player = option.value;
 
-            if (hash == player) {
+            if (hash === player) {
                 document.getElementById("player").value = player;
                 document.getElementById("search_player").value = player;
                 document.getElementById("search").scrollIntoView();
