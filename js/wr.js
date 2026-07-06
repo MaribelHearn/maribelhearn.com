@@ -643,6 +643,7 @@ function checkHash() {
             if (hash === game && game !== selected) {
                 showWRs({ data: { game: game } });
                 document.getElementById("wrs").scrollIntoView();
+                return;
             }
         }
 
