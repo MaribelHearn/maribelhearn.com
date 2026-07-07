@@ -118,7 +118,7 @@ function prepareShowWR(game) {
     wrTable.classList.add(`${game}t`);
     selected = game;
     document.getElementById(`${game}_image`).classList.add("selected");
-    document.getElementById("fullname").innerHTML = `<a href="#${game}">${fullNameNumber(game)}</a>`;
+    document.getElementById("fullname").innerHTML = `<a href="?game=${game}">${fullNameNumber(game)}</a>`;
     document.getElementById("notice").parentNode.style.display = "none";
     document.getElementById("notice").innerHTML = "";
     appendShottypeHeaders(game, shots);
@@ -319,14 +319,12 @@ function showWRs(event) {
         document.getElementById("wr_list").style.display = "block";
         document.getElementById("history_table").classList.remove(`${selected}t`);
         document.getElementById("history_list").style.display = "none";
-        location.hash = game;
     } else {
         const gameImg = document.getElementById(`${game}_image`);
         gameImg.classList.remove("selected");
         document.getElementById("world").classList.remove(`${game}t`);
         document.getElementById("wr_list").style.display = "none";
         selected = "";
-        location.hash = "";
     }
 }
 
@@ -633,19 +631,26 @@ function setAttributes() {
     xhr.send();
 }*/
 
-function checkHash() {
-    // player in hash links to player WRs
+function checkQueryString() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const game = urlParams.get('game');
+    const player = urlParams.get('player');
+
+    if (game) {
+        showWRs({ data: { game: game } });
+        document.getElementById("wrs").scrollIntoView();
+        return;
+    }
+    else if (player) {
+        document.getElementById("player").value = player;
+        document.getElementById("search").value = player;
+        document.getElementById("player_search").scrollIntoView();
+        return;
+    }
+
     if (location.hash !== "") {
         const hash = decodeURIComponent(location.hash.substring(1).replace('+', "%20"));
         const players = document.getElementById("search").children;
-
-        for (const game of Object.keys(releaseDate)) {
-            if (hash === game && game !== selected) {
-                showWRs({ data: { game: game } });
-                document.getElementById("wrs").scrollIntoView();
-                return;
-            }
-        }
 
         for (const option of players) {
             const player = option.value;
@@ -697,9 +702,9 @@ function init() {
         getPlayerWRs(player);
     }
 
-    checkHash();
+    checkQueryString();
     document.getElementById("number_of_wrs").click();
 }
 
 window.addEventListener("DOMContentLoaded", init, false);
-window.addEventListener("hashchange", checkHash, false);
+window.addEventListener("hashchange", checkQueryString, false);

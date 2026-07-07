@@ -1,9 +1,5 @@
 /*global _ getCookie deleteCookie setCookie fullNameNumber*/
 const API_BASE = location.hostname.includes("maribelhearn.com") ? "https://maribelhearn.com" : "http://localhost";
-const games = [
-    "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA",
-    "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "UDoALG", "FW"
-];
 const banList = ["Reimu", "Marisa", "Sanae", "Seiran", "Biten", "Enoko", "Chiyari"];
 let language = "en_GB";
 let selected = "";
@@ -67,7 +63,7 @@ function prepareShowLNNs(game) {
     lnnTable.classList.add(`${game}t`);
     selected = game;
     document.getElementById(`${game}_image`).classList.add("selected");
-    document.getElementById("fullname").innerHTML = `<a href="#${game}">${fullNameNumber(game)}</a>`;
+    document.getElementById("fullname").innerHTML = `<a href="?game=${game}">${fullNameNumber(game)}</a>`;
     document.getElementById("lnn_shotroute").innerHTML = shotRoute(game);
     document.getElementById("lnn_restrictions").innerHTML = restrictions(game);
     document.getElementById("lnn_tbody").innerHTML = "";
@@ -193,14 +189,12 @@ function showLNNs(event) {
         prepareShowLNNs(game);
         getLNNs(game);
         document.getElementById("lnn_list").style.display = "block";
-        location.hash = game;
     } else {
         const gameImg = document.getElementById(`${game}_image`);
         gameImg.classList.remove("selected");
         document.getElementById("lnn_table").classList.remove(`${game}t`);
         document.getElementById("lnn_list").style.display = "none";
         selected = "";
-        location.hash = "";
     }
 }
 
@@ -619,19 +613,27 @@ function setAttributes() {
     xhr.send();
 }*/
 
-function checkHash() {
-    // player in hash links to player LNNs
+function checkQueryString() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const game = urlParams.get('game');
+    const player = urlParams.get('player');
+
+    if (game) {
+        showLNNs({ data: { game: game } });
+        document.getElementById("lnns").scrollIntoView();
+        return;
+    }
+    else if (player) {
+        document.getElementById("player").value = player;
+        document.getElementById("search_player").value = player;
+        document.getElementById("search").scrollIntoView();
+        getPlayerLNNs(player);
+        return;
+    }
+
     if (location.hash !== "") {
         const hash = decodeURIComponent(location.hash.substring(1).replace('+', "%20"));
         const players = document.getElementById("search_player").children;
-        
-        for (const game of games) {
-            if (hash === game && game !== selected) {
-                showLNNs({ data: { game: game } });
-                document.getElementById("lnns").scrollIntoView();
-                return;
-            }
-        }
 
         for (const option of players) {
             const player = option.value;
@@ -691,9 +693,9 @@ function init() {
         getPlayerLNNs(player);
     }
 
-    checkHash();
+    checkQueryString();
     document.getElementById("number_of_lnns").click();
 }
 
 window.addEventListener("DOMContentLoaded", init, false);
-window.addEventListener("hashchange", checkHash, false);
+window.addEventListener("hashchange", checkQueryString, false);
