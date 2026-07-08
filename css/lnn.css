@@ -28,9 +28,6 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
 .sheet_2 {
     background-image: url('/assets/shared/spritesheets/game_sheet50x50_2.png');
 }
-.general_header {
-    background-color: #aaaaaa;
-}
 .FinalA, .FinalB, .in_route {
     font-size: 12px;
     color: #339;

@@ -11,9 +11,6 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
     color: inherit;
     text-decoration: none;
 }
-.general_header {
-    background-color: #aaaaaa;
-}
 .cover, .game_img {
     display: inline-block;
     height: 50px;

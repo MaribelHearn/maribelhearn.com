@@ -144,6 +144,9 @@ img {
 .FWt th, .FWp, .FW {
     background-color: #00ffff;
 }
+.general_header {
+    background-color: #aaaaaa;
+}
 .noborders {
     border: none;
 }
