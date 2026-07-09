@@ -236,17 +236,14 @@ function showWRtable(game, records) {
             text += `<span class='dimgrey'><br>${date}</span>`;
         }
 
+        currentScore[id] = score;
+
         if (game == "GFW" && diff == "Extra") {
             id = "GFWExtra-";
         }
 
-        if (game == "HSiFS" && diff == "Extra") {
-            id += "";
-        }
-
         document.getElementById(id).innerHTML = text;
         document.getElementById(id).setAttribute("data-sort", score);
-        currentScore[id] = score;
     }
 }
 
