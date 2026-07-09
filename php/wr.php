@@ -296,7 +296,7 @@ foreach ($wr_data as $key => $data) {
                         }
                     } else {
                         if ($score >= $MAX_SCORE) {
-                            $score_text = '<span class="cs">' . number_format($MAX_SCORE, 0, '.', ',') . '<span class="tooltip">' . number_format($score, 0, '.', ',') . '</span></span>';
+                            $score_text = '<span class="cs">' . number_format($score, 0, '.', ',') . '<span class="tooltip truescore">' . _('Uncapped') . '</span></span> ';
                         } else {
                             $score_text = number_format($score, 0, '.', ',');
                         }
