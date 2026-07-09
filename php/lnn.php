@@ -444,7 +444,7 @@ $last_modified = $last_modified['results'][0]['date'];
                         $game_lnns = array_intersect($WINDOWS_LNN, $player_games->{$player}) == $WINDOWS_LNN ? count(array_unique($player_games->{$player})) . _(' (All Windows)') : $game_lnns;
                         $game_lnns = array_intersect($ALL_LNN, $player_games->{$player}) == $ALL_LNN ? count(array_unique($player_games->{$player})) . _(' (All Games)') : $game_lnns;
                         echo '<tr><td></td>';
-                        echo '<td><a href="#' . urlencode($player) . '">' . $player . '</a></td>';
+                        echo '<td><a href="?player=' . urlencode($player) . '">' . $player . '</a></td>';
                         echo '<td data-sort="' . $player_lnns->{$player} . '">' . $shot_lnns . '</td>';
                         echo '<td data-sort="' . count(array_unique($player_games->{$player})) . '">' . $game_lnns . '</td></tr>';
                     }

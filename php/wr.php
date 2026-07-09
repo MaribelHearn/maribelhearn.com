@@ -554,7 +554,7 @@ foreach ($wr_data as $key => $data) {
                     $player_wrs->{$player} = count(array_unique($player_wrs->{$player}));
                     $player_games->{$player} = count(array_unique($player_games->{$player}));
                     echo '<tr><td></td>';
-                    echo '<td><a href="#' . urlencode($player) . '">' . $player . '</a></td>';
+                    echo '<td><a href="?player=' . urlencode($player) . '">' . $player . '</a></td>';
                     echo '<td data-sort="' . $player_wrs->{$player} . '">' . $player_wrs->{$player} . '</td>';
                     echo '<td data-sort="' . $player_games->{$player} . '">' . $player_games->{$player} . '</td></tr>';
                 }
