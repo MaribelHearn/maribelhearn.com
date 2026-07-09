@@ -170,7 +170,7 @@ function getWRs(game) {
     }
 
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/replay/?type=Score&game=${game}&ordering=-score&region=Eastern&historical=false${verification}`);
+    xhr.open('GET', `${API_BASE}/api/v1/replay/?type=Score&game=${game}&ordering=-score&region=Eastern&historical=true${verification}`);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200) {
@@ -422,7 +422,7 @@ function getPlayerWRs(player) {
     }
 
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=game,difficulty&player=${encodeURIComponent(player)}&type=Score&region=Eastern&verified=true&historical=false`);
+    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=game,difficulty&player=${encodeURIComponent(player)}&type=Score&region=Eastern&verified=true&historical=true`);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200) {
@@ -514,7 +514,7 @@ function getHistory(category) {
     tmp.splice(0, 1);
     const shot = tmp.join(' ');
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=-score&game=${game}&shot=${shot}&difficulty=${diff}&type=Score&region=Eastern&verified=true`);
+    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=-score&game=${game}&shot=${shot}&difficulty=${diff}&type=Score&region=Eastern&verified=true&historical=true`);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200) {

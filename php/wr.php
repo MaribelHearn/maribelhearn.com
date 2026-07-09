@@ -56,7 +56,7 @@ function format_lm(string $lm, string $lang) {
 $last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&date__isnull=False&type=Score&limit=1');
 $last_modified = json_decode($last_modified, true);
 $last_modified = $last_modified['results'][0]['date'];
-$wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty,shot&type=Score&region=Eastern&verified=true&historical=false');
+$wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty,shot&type=Score&region=Eastern&verified=true&historical=true');
 $games_seen = [];
 $wr_data = json_decode($wr_data, true);
 foreach ($wr_data as $key => $data) {
@@ -413,7 +413,7 @@ foreach ($wr_data as $key => $data) {
             <select id='search'>
                 <option value=''>...</option>
                 <?php
-                    $players = curl_get($API_BASE . '/api/v1/replay/players/?region=Eastern&verified=true&historical=false');
+                    $players = curl_get($API_BASE . '/api/v1/replay/players/?region=Eastern&verified=true&historical=true');
                     $players = json_decode($players, true);
                     $players = $players['score'];
                     natcasesort($players);
@@ -461,7 +461,7 @@ foreach ($wr_data as $key => $data) {
                     <th class='general_header'><?php echo _('Date') ?></th>
                 </tr></thead>
                 <tbody id='recentbody'><?php
-                    $recent = curl_get($API_BASE . '/api/v1/replay/?limit=' . $RECENT_LIMIT . '&ordering=-date,-score&type=Score&region=Eastern&verified=true');
+                    $recent = curl_get($API_BASE . '/api/v1/replay/?limit=' . $RECENT_LIMIT . '&ordering=-date,-score&type=Score&region=Eastern&verified=true&historical=true');
                     $recent = json_decode($recent, true);
                     $recent = $recent['results'];
                     foreach ($recent as $key => $data) {
@@ -503,7 +503,7 @@ foreach ($wr_data as $key => $data) {
             <select id='history_category_old'>
                 <option value=''>...</option>
                 <?php
-                    $categories = curl_get($API_BASE . '/api/v1/category/?type=Score&region=Eastern');
+                    $categories = curl_get($API_BASE . '/api/v1/category/?type=Score&region=Eastern&historical=true');
                     if (strpos($categories, 'Internal Server Error') === false) {
                         $categories = json_decode($categories, true);
                         natcasesort($categories);

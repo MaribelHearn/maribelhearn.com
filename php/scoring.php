@@ -4,7 +4,7 @@ $wrs = [];
 $games_seen = [];
 $diffs_seen = [];
 $shots_seen = [];
-$wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty,shot&type=Score&region=Eastern&verified=true');
+$wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty,shot&type=Score&region=Eastern&verified=true&historical=true');
 if (strpos($wr_data, 'Internal Server Error') !== false) {
     $_GET['error'] = 500;
     include_once('php/error.php');
