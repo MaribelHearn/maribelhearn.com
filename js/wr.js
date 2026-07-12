@@ -350,13 +350,20 @@ function showPlayerWRs(player, records) {
     let numberOfWRs = 0;
     let currentGame = "";
     let currentDiff = "";
-    let first;
+    let highest = 0;
+    let first, firstRaw;
     const playerTable = document.getElementById("player_tbody");
     playerTable.innerHTML = "";
 
     for (const data of records) {
+        if (data.player !== player) {
+            continue;
+        }
+
         const game = data.category.game;
         const diff = data.category.difficulty;
+        const shot = data.category.shot;
+
         let replay, video, date;
 
         if (currentGame != game) {
@@ -368,6 +375,8 @@ function showPlayerWRs(player, records) {
             currentDiff = diff;
             playerTable.innerHTML += `<tr><td class='${game}p'>${_(game)}${_(' ')}${diff}</td><td id='${game}${diff}s'></td><td id='${game}${diff}t'></td><td id='${game}${diff}r'></td><td id='${game}${diff}v'></td><td id='${game}${diff}d'></td></tr>`;
             first = new Date("9999/12/31");
+            highest = 0;
+            firstRaw = 0;
         } else if (currentDiff != diff) {
             if (currentGame !== "" && currentDiff !== "") {
                 document.getElementById(`${currentGame}${currentDiff}d`).setAttribute("data-sort", first.toISOString().split("T")[0].replace(/-/g, ""));
@@ -376,6 +385,8 @@ function showPlayerWRs(player, records) {
             currentDiff = diff;
             playerTable.innerHTML += `<tr><td class='${game}p'>${_(game)} ${diff}</td><td id='${game}${diff}s'></td><td id='${game}${diff}t'></td><td id='${game}${diff}r'></td><td id='${game}${diff}v'></td><td id='${game}${diff}d'></td></tr>`;
             first = new Date("9999/12/31");
+            highest = 0;
+            firstRaw = 0;
         }
 
         if (!data.replay) {
@@ -392,15 +403,22 @@ function showPlayerWRs(player, records) {
 
         if (new Date(data.date) < first) {
             first = new Date(data.date);
+            firstRaw = (!data.date ? 0 : formatDate(data.date, "raw"));
         }
 
         date = (!data.date ? _("Unknown") : formatDate(data.date));
 
+        if (data.score > highest) {
+            highest = data.score;
+        }
+
         document.getElementById(`${game}${diff}s`).innerHTML += sep(data.score) + "<br>";
-        document.getElementById(`${game}${diff}t`).innerHTML += _(data.category.shot) + "<br>";
+        document.getElementById(`${game}${diff}t`).innerHTML += _(shot) + "<br>";
         document.getElementById(`${game}${diff}r`).innerHTML += replay + "<br>";
         document.getElementById(`${game}${diff}v`).innerHTML += video + "<br>";
         document.getElementById(`${game}${diff}d`).innerHTML += date + "<br>";
+        document.getElementById(`${game}${diff}s`).setAttribute("data-sort", highest);
+        document.getElementById(`${game}${diff}d`).setAttribute("data-sort", firstRaw);
         numberOfWRs += 1;
     }
 
@@ -419,7 +437,7 @@ function getPlayerWRs(player) {
     }
 
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=game,difficulty&player=${encodeURIComponent(player)}&type=Score&region=Eastern&verified=true&historical=true`);
+    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=game,difficulty&type=Score&region=Eastern&verified=true&historical=true&score__wr=true`);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200) {

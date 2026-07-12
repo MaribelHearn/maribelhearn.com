@@ -56,7 +56,7 @@ function format_lm(string $lm, string $lang) {
 $last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&date__isnull=False&type=Score&limit=1');
 $last_modified = json_decode($last_modified, true);
 $last_modified = $last_modified['results'][0]['date'];
-$wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty,shot&type=Score&region=Eastern&verified=true&historical=true');
+$wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty,shot&type=Score&region=Eastern&verified=true&historical=true&score__wr=true');
 $games_seen = [];
 $wr_data = json_decode($wr_data, true);
 foreach ($wr_data as $key => $data) {
@@ -413,7 +413,7 @@ foreach ($wr_data as $key => $data) {
             <select id='search'>
                 <option value=''>...</option>
                 <?php
-                    $players = curl_get($API_BASE . '/api/v1/replay/players/?region=Eastern&verified=true&historical=true');
+                    $players = curl_get($API_BASE . '/api/v1/replay/players/?type=Score&region=Eastern');
                     $players = json_decode($players, true);
                     $players = $players['score'];
                     natcasesort($players);
