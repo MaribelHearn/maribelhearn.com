@@ -210,7 +210,7 @@ function formatDate(date, raw) {
     const year = tmp[0];
 
     if (raw) {
-        return year + month + day;
+        return  year + month + day;
     } else if (language == "en_US") {
         return `${month}/${day}/${year}`;
     } else if (language == "ja_JP" || language == "zh_CN") {
@@ -234,7 +234,7 @@ function showPlayerLNNs(player, LNNs) {
     let numberOfLNNs = 0;
     let currentGame = "";
     let highestScore = 0;
-    let first;
+    let first, firstRaw;
     const searchTable = document.getElementById("search_tbody");
     searchTable.innerHTML = "";
 
@@ -246,6 +246,7 @@ function showPlayerLNNs(player, LNNs) {
             currentGame = game;
             searchTable.innerHTML += `<tr><td id='${game}l' class='${game}'>${_(game)}</td><td id='${game}s'></td><td id='${game}c'><td id='${game}r'></td><td id='${game}v'></td><td id='${game}d'></td></tr>`;
             first = new Date("9999/12/31");
+            firstRaw = 0;
             highestScore = 0;
         }
 
@@ -272,6 +273,7 @@ function showPlayerLNNs(player, LNNs) {
 
         if (new Date(data.date) < first) {
             first = new Date(data.date);
+            firstRaw = (!data.date ? 0 : formatDate(data.date, "raw"));
         }
 
         date = (!data.date ? _("Unknown") : formatDate(data.date));
@@ -292,7 +294,7 @@ function showPlayerLNNs(player, LNNs) {
         document.getElementById(`${game}v`).innerHTML += video + "<br>";
         document.getElementById(`${game}d`).innerHTML += date + "<br>";
         document.getElementById(`${game}c`).setAttribute("data-sort", highestScore);
-        document.getElementById(`${game}d`).setAttribute("data-sort", first.toISOString().split("T")[0].replace(/-/g, ""));
+        document.getElementById(`${game}d`).setAttribute("data-sort", firstRaw);
         numberOfLNNs += 1;
 
         const lnnShots = document.getElementById(`${game}l`);
@@ -442,7 +444,7 @@ function showCategoryLNNs(category, LNNs) {
         }
 
         date = (!data.date ? _("Unknown") : formatDate(data.date));
-        dateRaw = (!data.date ? _("Unknown") : formatDate(data.date), "raw");
+        dateRaw = (!data.date ? 0 : formatDate(data.date, "raw"));
         searchTable.innerHTML += `<tr id='tr_${numberOfLNNs}'></tr>`;
 
         document.getElementById(`tr_${numberOfLNNs}`).innerHTML += `<td>${data.player}</td><td data-sort="${scoreSort}">${score}</td><td>${replay}</td><td>${video}</td><td data-sort="${dateRaw}">${date}</td>`;
