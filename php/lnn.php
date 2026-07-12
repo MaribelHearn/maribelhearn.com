@@ -307,6 +307,7 @@ $last_modified = $last_modified['results'][0]['date'];
 			<thead id='search_thead'><tr>
                 <th id='first_header' class='general_header'><?php echo _('Game') ?></th>
                 <th id='second_header' class='general_header'><?php echo _('Shottype') ?></th>
+                <th class='general_header'><?php echo _('Score') ?></th>
                 <th class='general_header'><?php echo _('Replay') ?></th>
                 <th class='general_header'><?php echo _('Video') ?></th>
                 <th class='general_header'><?php echo _('Date') ?></th>
@@ -314,11 +315,11 @@ $last_modified = $last_modified['results'][0]['date'];
 			<tbody id='search_tbody'></tbody>
 			<tfoot id='search_tfoot'>
                 <tr>
-                    <td colspan='5'></td>
+                    <td colspan='6'></td>
                 </tr>
                 <tr class='irregular_tr'>
                     <td><?php echo _('Total') ?></td>
-                    <td id='search_sum' colspan='4'></td>
+                    <td id='search_sum' colspan='5'></td>
                 </tr>
             </tfoot>
 		</table>

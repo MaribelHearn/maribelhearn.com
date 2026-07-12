@@ -1,4 +1,4 @@
-/*global _ getCookie deleteCookie setCookie fullNameNumber*/
+/*global _ getCookie deleteCookie setCookie sep fullNameNumber*/
 const API_BASE = location.hostname.includes("maribelhearn.com") ? "https://maribelhearn.com" : "http://localhost";
 const banList = ["Reimu", "Marisa", "Sanae", "Seiran", "Biten", "Enoko", "Chiyari"];
 let language = "en_GB";
@@ -245,7 +245,7 @@ function showPlayerLNNs(player, LNNs) {
 
     for (const data of LNNs) {
         const game = data.category.game;
-        let replay, video, date;
+        let score, replay, video, date;
 
         if (currentGame != game) {
             if (currentGame !== "") {
@@ -253,8 +253,14 @@ function showPlayerLNNs(player, LNNs) {
             }
 
             currentGame = game;
-            searchTable.innerHTML += `<tr><td id='${game}l' class='${game}'>${_(game)}</td><td id='${game}s'></td><td id='${game}r'></td><td id='${game}v'></td><td id='${game}d'></td></tr>`;
+            searchTable.innerHTML += `<tr><td id='${game}l' class='${game}'>${_(game)}</td><td id='${game}s'></td><td id='${game}c'><td id='${game}r'></td><td id='${game}v'></td><td id='${game}d'></td></tr>`;
             first = new Date("9999/12/31");
+        }
+
+        if (data.score === 0) {
+            score = _("Unknown");
+        } else {
+            score = sep(data.score);
         }
 
         if (!data.replay) {
@@ -286,6 +292,7 @@ function showPlayerLNNs(player, LNNs) {
         }
 
         document.getElementById(`${game}s`).innerHTML += "<br>";
+        document.getElementById(`${game}c`).innerHTML += score + "<br>";
         document.getElementById(`${game}r`).innerHTML += replay + "<br>";
         document.getElementById(`${game}v`).innerHTML += video + "<br>";
         document.getElementById(`${game}d`).innerHTML += date + "<br>";
