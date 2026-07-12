@@ -314,10 +314,14 @@ function showPlayerLNNs(player, LNNs) {
         return;
     }
 
+    const firstHeader = document.getElementById("first_header");
+
+    if (!firstHeader) {
+        document.getElementById("search_thead").children[0].innerHTML = `<th id='first_header' class='general_header'>${_("Game")}</th>${document.getElementById("search_thead").children[0].innerHTML}`;
+        document.getElementById("search_thead").classList = [];
+    }
+
     document.getElementById("category").value = "";
-    document.getElementById("first_header").innerHTML = _("Game");
-    document.getElementById("first_header").classList.remove("first_header_category");
-    document.getElementById("search_table").classList.add("sortable");
     document.getElementById("second_header").innerHTML = _("Shottype");
     document.getElementById("search_sum").innerHTML = numberOfLNNs;
     document.getElementById("empty_category").style.display = "none";
@@ -407,15 +411,12 @@ function showCategoryLNNs(category, LNNs) {
     const searchResults = document.getElementById("search_results");
     const emptyResults = document.getElementById("empty_category");
     let numberOfLNNs = 0;
-    let first = true;
     const searchTable = document.getElementById("search_tbody");
     searchTable.innerHTML = "";
 
     for (const data of LNNs) {
         const game = data.category.game;
-        const shot = data.category.shot;
-        const route = data.category.route;
-        let score, replay, video, date, dateRaw;
+        let score, scoreSort, replay, video, date, dateRaw;
 
         if (!data.replay) {
             replay = '-';
@@ -425,10 +426,13 @@ function showCategoryLNNs(category, LNNs) {
 
         if (game === "UDoALG") {
             score = '-';
+            scoreSort = 0;
         } else if (data.score === 0) {
             score = _("Unknown");
+            scoreSort = 0;
         } else {
             score = sep(data.score);
+            scoreSort = data.score;
         }
 
         if (!data.video) {
@@ -437,20 +441,11 @@ function showCategoryLNNs(category, LNNs) {
             video = `<a href='${data.video}' target='_blank'>${_("Link")}</a>`;
         }
 
-        if (new Date(data.date) < first) {
-            first = new Date(data.date);
-        }
-
         date = (!data.date ? _("Unknown") : formatDate(data.date));
         dateRaw = (!data.date ? _("Unknown") : formatDate(data.date), "raw");
         searchTable.innerHTML += `<tr id='tr_${numberOfLNNs}'></tr>`;
 
-        if (first) {
-            document.getElementById(`tr_${numberOfLNNs}`).innerHTML += `<td id='game_td' class='${game}'>${_(game)}${_(' ')}${_(shot)}${route ? _(' ') : ''}${_(route)}</td>`;
-            first = false;
-        }
-
-        document.getElementById(`tr_${numberOfLNNs}`).innerHTML += `<td>${data.player}</td><td>${score}</td><td>${replay}</td><td>${video}</td><td data-sort="${dateRaw}">${date}</td>`;
+        document.getElementById(`tr_${numberOfLNNs}`).innerHTML += `<td>${data.player}</td><td data-sort="${scoreSort}">${score}</td><td>${replay}</td><td>${video}</td><td data-sort="${dateRaw}">${date}</td>`;
         numberOfLNNs += 1;
     }
 
@@ -461,11 +456,15 @@ function showCategoryLNNs(category, LNNs) {
         return;
     }
 
+    const firstHeader = document.getElementById("first_header");
+
+    if (firstHeader) {
+        firstHeader.parentNode.removeChild(firstHeader);
+    }
+
     document.getElementById("player").value = "";
-    document.getElementById("game_td").rowSpan = numberOfLNNs;
-    document.getElementById("first_header").innerHTML = _("Category");
-    document.getElementById("first_header").classList.add("first_header_category");
-    document.getElementById("search_table").classList.remove("sortable");
+    document.getElementById("search_thead").classList = [];
+    document.getElementById("search_thead").classList.add(`${category.split(' ')[0]}t`);
     document.getElementById("second_header").innerHTML = _("Player");
     document.getElementById("search_sum").innerHTML = numberOfLNNs;
     document.getElementById("empty_player").style.display = "none";
