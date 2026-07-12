@@ -231,12 +231,6 @@ function setPlayer(event) {
 function showPlayerLNNs(player, LNNs) {
     const searchResults = document.getElementById("search_results");
     const emptyResults = document.getElementById("empty_player");
-
-    if (player === "") {
-        searchResults.style.display = "none";
-        return;
-    }
-
     let numberOfLNNs = 0;
     let currentGame = "";
     let highestScore = 0;
@@ -255,7 +249,9 @@ function showPlayerLNNs(player, LNNs) {
             highestScore = 0;
         }
 
-        if (data.score === 0) {
+        if (game === "UDoALG") {
+            score = '-';
+        } else if (data.score === 0) {
             score = _("Unknown");
         } else {
             score = sep(data.score);
@@ -330,8 +326,15 @@ function showPlayerLNNs(player, LNNs) {
 }
 
 function getPlayerLNNs(player) {
+    const searchResults = document.getElementById("search_results");
+
     if (typeof player == "object") {
         player = this.value; // if event listener fired
+    }
+
+    if (player === "") {
+        searchResults.style.display = "none";
+        return;
     }
 
     const xhr = new XMLHttpRequest();
@@ -412,12 +415,20 @@ function showCategoryLNNs(category, LNNs) {
         const game = data.category.game;
         const shot = data.category.shot;
         const route = data.category.route;
-        let replay, video, date, dateRaw;
+        let score, replay, video, date, dateRaw;
 
         if (!data.replay) {
             replay = '-';
         } else {
             replay = `<a href='${data.replay.replace("com/replays", "com/media/replays")}'>${data.replay.split('/')[data.replay.split('/').length - 1]}</a>`;
+        }
+
+        if (game === "UDoALG") {
+            score = '-';
+        } else if (data.score === 0) {
+            score = _("Unknown");
+        } else {
+            score = sep(data.score);
         }
 
         if (!data.video) {
@@ -439,7 +450,7 @@ function showCategoryLNNs(category, LNNs) {
             first = false;
         }
 
-        document.getElementById(`tr_${numberOfLNNs}`).innerHTML += `<td>${data.player}</td><td>${replay}</td><td>${video}</td><td data-sort="${dateRaw}">${date}</td>`;
+        document.getElementById(`tr_${numberOfLNNs}`).innerHTML += `<td>${data.player}</td><td>${score}</td><td>${replay}</td><td>${video}</td><td data-sort="${dateRaw}">${date}</td>`;
         numberOfLNNs += 1;
     }
 
