@@ -239,6 +239,7 @@ function showPlayerLNNs(player, LNNs) {
 
     let numberOfLNNs = 0;
     let currentGame = "";
+    let highestScore = 0;
     let first;
     const searchTable = document.getElementById("search_tbody");
     searchTable.innerHTML = "";
@@ -248,19 +249,17 @@ function showPlayerLNNs(player, LNNs) {
         let score, replay, video, date;
 
         if (currentGame != game) {
-            if (currentGame !== "") {
-                document.getElementById(`${currentGame}d`).setAttribute("data-sort", first.toISOString().split("T")[0].replace(/-/g, ""));
-            }
-
             currentGame = game;
             searchTable.innerHTML += `<tr><td id='${game}l' class='${game}'>${_(game)}</td><td id='${game}s'></td><td id='${game}c'><td id='${game}r'></td><td id='${game}v'></td><td id='${game}d'></td></tr>`;
             first = new Date("9999/12/31");
+            highestScore = 0;
         }
 
         if (data.score === 0) {
             score = _("Unknown");
         } else {
             score = sep(data.score);
+            highestScore = Math.max(data.score, highestScore);
         }
 
         if (!data.replay) {
@@ -296,6 +295,8 @@ function showPlayerLNNs(player, LNNs) {
         document.getElementById(`${game}r`).innerHTML += replay + "<br>";
         document.getElementById(`${game}v`).innerHTML += video + "<br>";
         document.getElementById(`${game}d`).innerHTML += date + "<br>";
+        document.getElementById(`${game}c`).setAttribute("data-sort", highestScore);
+        document.getElementById(`${game}d`).setAttribute("data-sort", first.toISOString().split("T")[0].replace(/-/g, ""));
         numberOfLNNs += 1;
 
         const lnnShots = document.getElementById(`${game}l`);
