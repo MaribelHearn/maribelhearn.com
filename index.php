@@ -18,7 +18,7 @@
         $tmp = preg_split('/\//', $page);
         $subpage = $tmp[1];
         $mainpage = $tmp[0];
-        if ($mainpage == 'royalflare' || $mainpage == 'thvote' || $mainpage == 'faq') {
+        if ($mainpage == 'faq' || $mainpage == 'pc98' || $mainpage == 'royalflare' || $mainpage == 'thvote') {
             if (count($tmp) == 3) {
                 $subpage .= '/' . $tmp[2];
             }
@@ -54,7 +54,7 @@
 
     // Background position
     function background_position($page) {
-        $top = array('c67', 'drc', 'history', 'survival', 'slots', 'tools');
+        $top = array('c67', 'drc', 'history', 'pc98', 'survival', 'slots', 'tools');
         $bottom = array('fangame', 'lnn', 'scoring', 'wr');
         if (in_array($page, $top)) {
             return 'top';

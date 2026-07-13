@@ -1,8 +1,8 @@
-h1, h2, h3, h4, table:not(.poll):not(.rendering), label, li, figcaption, dt, p:not(.language):not(#ack), caption:not(.legend_surv):not(.legend_score), input[type='file'], #nav, #hy_text {
+h1, h2, h3, h4, table:not(.poll):not(.rendering), label, li, figcaption, dt, p:not(.language):not(#ack), caption:not(.legend_surv):not(.legend_score), input[type='file'], #nav, #hy_text, .card_link {
     color: white;
 }
 .rendering th, .rendering td:not(.overview):not(.overview_half), .donation a, .PoDD, .PoDDp, .LLS, .LLSp, .PCB, .PCBp, .PoFV, .PoFVp, .MoF, .MoFp, .GFW, .GFWp, .TD, .TDp, .DDC, .DDCp, .UM, .UMp, .UDoALG, .UDoALGp, .FW, .FWp,
-.PoDDt th, .LLSt th, .PCBt th, .PoFVt th, .MoFt th, .GFWt th, .DDCt th, .UMt th, .UDoALGt th, .FWt th, .tier th, .tier {
+.PoDDt th, .LLSt th, .PCBt th, .PoFVt th, .MoFt th, .GFWt th, .DDCt th, .UMt th, .UDoALGt th, .FWt th, .tier th, .tier, .big, .bigger, .superbig {
     color: black;
 }
 body, div:not(.dropdown):not(.dropdown_content):not(.nav_right):not(.dark_bg):not(.dropdowns):not(.ext_menu):not(#ext_mobile):not(#ext_desktop):not(#modal) {
@@ -11,13 +11,13 @@ body, div:not(.dropdown):not(.dropdown_content):not(.nav_right):not(.dark_bg):no
 #replays a:link, #replay a:link {
     color: #00bfff;
 }
-a:link:not(.replay):not(.i):not(.dropdown_button):not(.donation a) {
+a:link:not(.replay):not(.i):not(.dropdown_button):not(.donation a):not(.card_link) {
     color: #0fa7ff;
 }
-a:active:not(.replay):not(.i):not(.dropdown_button):not(.donation a) {
+a:active:not(.replay):not(.i):not(.dropdown_button):not(.donation a):not(.card_link) {
     color: red;
 }
-a:visited:not(.replay):not(.i):not(.dropdown_button):not(.donation a) {
+a:visited:not(.replay):not(.i):not(.dropdown_button):not(.donation a):not(.card_link) {
     color: #ff69b4;
 }
 #hy {
@@ -96,6 +96,15 @@ a:link.dropdown_button, a:visited.dropdown_button {
 }
 .general_header {
     background-color: #888;
+}
+.card {
+    border: 1px solid #fff;
+    box-shadow: 2px 2px 2px 1px #888;
+  	-webkit-box-shadow: 2px 2px 2px 1px #888;
+}
+.card:hover {
+    box-shadow: 6px 6px 6px 3px #888;
+    -webkit-box-shadow: 6px 6px 6px 3px #888;
 }
 #hy_link {
     color: white;

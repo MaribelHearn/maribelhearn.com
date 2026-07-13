@@ -1,0 +1,118 @@
+.game_img {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    aspect-ratio: auto 50 / 50;
+    image-rendering: crisp-edges;
+    margin-right: 4px;
+}
+.sheet {
+    background-image: url('/assets/shared/spritesheets/game_sheet50x50_1.png');
+}
+.big {
+    background-color: #ffffbf;
+    border: 3px solid yellow !important;
+    border-radius: 4px;
+}
+.bigger {
+    background-color: #ffe9bf;
+    border: 3px solid orange !important;
+    border-radius: 4px;
+}
+.superbig {
+    background-color: #ffbfbf;
+    border: 3px solid red !important;
+    border-radius: 4px;
+}
+.thresholds {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+.thresholds td:first-child {
+    width: 120px;
+}
+.thresholds td:last-child {
+    width: 100px;
+}
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.large {
+    font-size: 16px;
+}
+.cards_inner {
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+}
+.card {
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px #555;
+  	-webkit-box-shadow: 2px 2px 2px 1px #555;
+    margin: 0px auto 25px auto;
+    display: block;
+    width: 500px;
+    overflow: hidden;
+}
+.card:hover {
+    box-shadow: 6px 6px 6px 3px #555;
+    -webkit-box-shadow: 6px 6px 6px 3px #555;
+}
+.card_link {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+}
+.card_link:hover {
+    background-color: #888;
+}
+#cards {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+#thresholds {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+#thresholds th, #thresholds td {
+    border: 3px solid transparent;
+}
+#HRtP_image {
+    background-position: 0px 0px;
+}
+#SoEW_image {
+    background-position: -50px 0px;
+}
+#PoDD_image {
+    background-position: -100px 0px;
+}
+#LLS_image {
+    background-position: -150px 0px;
+}
+#MS_image {
+    background-position: -200px 0px;
+}
+@media only screen and (max-width: 2000px) {
+    .card {
+        width: 400px;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .card {
+        width: 300px;
+    }
+}
+@media only screen and (max-width: 900px) {
+    #cards {
+        flex-direction: column;
+    }
+}

@@ -99,7 +99,7 @@ function wrap_top() {
     if ($page == 'scoring' || $page == 'survival' || $page == 'slots') {
         echo '<div id="content" data-html2canvas-ignore="" style="display:block">';
     }
-    if ($page == 'faq' || $page == 'royalflare' || $page == 'thvote') {
+    if (empty($error_code) && ($page == 'faq' || $page == 'pc98' || $page == 'royalflare' || $page == 'thvote')) {
         return;
     }
     if (empty($error_code)) {

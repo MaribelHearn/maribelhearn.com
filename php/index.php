@@ -77,6 +77,10 @@
                     <span class='tooltip'>A complete and searchable archive of the replays, history and player rankings from score.royalflare.net.</span>
                 </li>
                 <li class='link'>
+                    <a href='/pc98'><span class='icon pc98_icon'></span> Touhou PC-98 Leaderboard</a>
+                    <span class='tooltip'>A leaderboard for the Touhou PC-98 games, featuring Lunatic and Extra difficulty.</span>
+                </li>
+                <li class='link'>
                     <a href='https://wiki.maribelhearn.com'><span class='icon wiki_icon'></span> Danmaku Gameplay Wiki</a>
                     <span class='tooltip'>The wiki for the Touhou gameplay community, covering strategies and gameplay information for the bullet hell games.</span>
                 </li>

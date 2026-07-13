@@ -5,7 +5,7 @@
         <li><a href='https://www.youtube.com/@KirbyComment' target='_blank'>KirbyComment</a>: WR updates, WR history</li>
         <li><a href='https://twitter.com/DagothUrTH' target='_blank'>Dagoth2hu</a>: WR updates</li>
         <li><a href='https://www.youtube.com/@413rb' target='_blank'>RB</a>: WR updates</li>
-        <li><a href='https://github.com/hoangcaominh' target='_blank'>Hoàng Cao Minh</a>: LNN updates, DRC calculator integration</li>
+        <li><a href='https://github.com/hoangcaominh' target='_blank'>Hoàng Cao Minh</a>: LNN updates, replay parser, DRC calculator integration</li>
         <li><a href='https://www.youtube.com/@valivanvan' target='_blank'>crazy4pokemon</a>: LNN updates</li>
         <li><a href='https://www.youtube.com/@allenko1122' target='_blank'>AllenKO</a>: LNN updates</li>
         <li>kagami: Database</li>
@@ -68,6 +68,8 @@
         Jargon (<a href='https://www.pixiv.net/en/artworks/2217502' target='_blank'>Source</a>)</li>-->
         <li><a href='https://www.pixiv.net/member.php?id=1111435' target='_blank'>C.Z</a>:
         LNN (<a href='https://www.pixiv.net/en/artworks/26565744' target='_blank'>Source</a>)</li>
+        <li><a href='https://www.pixiv.net/en/users/4602524' target='_blank'>YorktownCV-5</a>:
+        PC-98 (<a href='https://www.pixiv.net/en/artworks/144071772' target='_blank'>Source</a>)</li>
         <li><a href='https://www.pixiv.net/member.php?id=21613' target='_blank'>Kong Xian</a>:
         PoFV (<a href='https://www.deviantart.com/ramosfox/art/40423051-669167462' target='_blank'>Source</a>)</li>
         <li><a href='https://www.pixiv.net/member.php?id=87950' target='_blank'>りすたる</a>:

@@ -62,6 +62,7 @@ function game_pages() {
     '<p><a href="/fangame"><span class="icon fangame_icon"></span>Fangame</a></p>' .
     '<p><a href="/faq"><span class="icon faq_icon"></span>FAQ</a></p>' .
     '<p><a href="/royalflare"><span class="icon royalflare_icon"></span>Royalflare</a></p>' .
+    '<p><a href="/pc98"><span class="icon pc98_icon"></span>PC-98</a></p>' .
     '<p><a href="https://wiki.maribelhearn.com"><span class="icon wiki_icon"></span>Wiki</a></p>';
 }
 
@@ -252,6 +253,8 @@ function navbar(string $page) {
         $cap = 'Poll';
     } else if ($page == 'pofv') {
         $cap = 'PoFV';
+    } else if ($page == 'pc98') {
+        $cap = 'PC-98';
     } else if ($page == 'admin') {
         $cap = 'Admin';
     }
