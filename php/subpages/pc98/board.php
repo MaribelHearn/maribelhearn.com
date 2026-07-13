@@ -91,7 +91,7 @@ $scores = json_decode($scores, true);
                     $rank_player += 1;
                 }
                 else {
-                    echo '<td></td>';
+                    echo '<td data-sort=999></td>';
                 }
                 echo '<td data-sort="' . $data['score'] . '">' . $score_text . '</td>';
                 echo '<td>' . $data['player'] . '</td>';
