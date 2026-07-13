@@ -105,7 +105,10 @@ function get_status($thresholds, $score, $game, $diff, $shot = '') {
         $game_codes = ['HRtP', 'SoEW', 'SoEW', 'PoDD', 'LLS', 'LLS', 'MS', 'MS'];
         $subpages = ['th01', 'th02', 'th02ex', 'th03', 'th04', 'th04ex', 'th05', 'th05ex'];
         $subpages_alt = ['hrtp', 'soew', 'soewex', 'podd', 'lls', 'llsex', 'ms', 'msex'];
-        if (in_array($subpage, $subpages)) {
+        if ($subpage == 'info') {
+            include_once 'php/subpages/pc98/info.php';
+        }
+        else if (in_array($subpage, $subpages)) {
             $full_name = $game_names[array_search($subpage, $subpages)];
             $game = $game_codes[array_search($subpage, $subpages)];
             $diff = strpos($subpage, 'ex') !== false ? 'Extra' : 'Lunatic';
