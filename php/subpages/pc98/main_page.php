@@ -113,6 +113,7 @@ $RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_li
             'for example <a href="https://www.silentselene.net" target="_blank">Silent Selene</a> or <a href="https://www.youtube.com" target="_blank">YouTube</a>. ' .
             'Streaming to a live streaming platform like <a href="https://twitch.tv" target="_blank">Twitch</a> is also accepted, provided that the VOD is not deleted. ' .
             'Exceptions may be made on a case-by-case basis.') ?></p>
+        <p><?php echo _('The threshold system was inspired by <a href="https://balisman.github.io/" target="_blank">Touhou Extra Scoreboard</a> that was originally made by Nyanko.') ?></p>
         <p><?php echo _('To qualify for each leaderboard, you must meet at least its "Big" threshold. See below for the scoring thresholds that can be achieved.') ?></p>
         <table class='thresholds noborders'>
             <tbody>
