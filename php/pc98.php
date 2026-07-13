@@ -1,6 +1,6 @@
 <?php
 global $API_BASE;
-$last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&game=HRtP&difficulty=Lunatic&date__isnull=False&type=Score&limit=1');
+$last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&game__lte=5&difficulty=Lunatic&difficulty=Extra&date__isnull=False&type=Score&limit=1');
 if (strpos($last_modified, 'Internal Server Error') !== false) {
     $_GET['error'] = 500;
     include_once('php/error.php');
