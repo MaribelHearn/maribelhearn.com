@@ -734,6 +734,10 @@ function init() {
         document.getElementById("toggle_video").checked = videoEnabled;
     }
 
+    if (formerWRenabled) {
+        document.getElementById("former").checked = true;
+    }
+
     const player = document.getElementById("player").value;
 
     if (player !== "") {
