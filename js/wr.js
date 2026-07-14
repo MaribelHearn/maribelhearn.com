@@ -10,6 +10,7 @@ let language = "en_GB";
 let selected = "";
 let videoEnabled = false;
 let unverifiedEnabled = false;
+let formerWRenabled = false;
 
 function getSeason(string) {
     return string.replace("Reimu", "").replace("Cirno", "").replace("Aya", "").replace("Marisa", "");
@@ -51,6 +52,12 @@ function toggleUnverified() {
     unverifiedEnabled = !unverifiedEnabled;
     unverifiedEnabled ? localStorage.setItem("unverifiedEnabled", true) : localStorage.removeItem("unverifiedEnabled");
     reloadTable();
+}
+
+function toggleFormerWR() {
+    formerWRenabled = !formerWRenabled;
+    formerWRenabled ? localStorage.setItem("formerWRenabled", true) : localStorage.removeItem("formerWRenabled");
+    reloadPlayerTable();
 }
 
 function shotRoute(game) {
@@ -333,6 +340,14 @@ function reloadTable() {
     }
 }
 
+function reloadPlayerTable() {
+    const player = document.getElementById("player").value;
+
+    if (player !== "") {
+        getPlayerWRs(player);
+    }
+}
+
 function setPlayer(event) {
     const player = event.target.value;
     document.getElementById("player").value = player;
@@ -343,7 +358,7 @@ function showPlayerWRs(player, records) {
     const playerList = document.getElementById("player_list");
 
     if (player === "") {
-        playerList.style.display = "none";
+        document.getElementById("player_loading").style.display = "none";
         return;
     }
 
@@ -422,6 +437,8 @@ function showPlayerWRs(player, records) {
         numberOfWRs += 1;
     }
 
+    document.getElementById("player_loading").style.display = "none";
+
     if (numberOfWRs === 0) {
         playerList.style.display = "none";
         return;
@@ -436,8 +453,11 @@ function getPlayerWRs(player) {
         player = this.value; // if event listener fired
     }
 
+    const playerList = document.getElementById("player_list");
+    playerList.style.display = "none";
+    document.getElementById("player_loading").style.display = "block";
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=game,difficulty&type=Score&region=Eastern&verified=true&historical=true&score__wr=true`);
+    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=game,difficulty&type=Score&region=Eastern&verified=true&historical=true${!formerWRenabled ? "&score__wr=true" : ""}`);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200) {
@@ -573,6 +593,7 @@ function setEventListeners() {
     document.getElementById("player").addEventListener("keypress", detectEnter, false);
     document.getElementById("unverified").addEventListener("click", toggleUnverified, false);
     document.getElementById("toggle_video").addEventListener("click", toggleVideo, false);
+    document.getElementById("former").addEventListener("click", toggleFormerWR, false);
     document.getElementById("history_category").addEventListener("change", getHistory, false);
 
     if (document.getElementById("history_category_old")) {
@@ -703,6 +724,7 @@ function init() {
     }
 
     unverifiedEnabled = localStorage.getItem("unverifiedEnabled") ? true : false;
+    formerWRenabled = localStorage.getItem("formerWRenabled") ? true : false;
     setEventListeners();
     setAttributes();
     //getPlayerSearchOptions();

@@ -406,6 +406,8 @@ foreach ($wr_data as $key => $data) {
     <div id='player_search'>
 		<h2><?php echo _('Player Search') ?></h2>
         <p id='playerwrs' class='center'><?php echo _('Choose a player name from the menu below to show their WRs.') ?></p>
+        <input id='former' type='checkbox'>
+        <label id='label_former' for='former'><?php echo _('Include former WRs') ?></label>
         <div class='center'>
             <label for='player'><?php echo _('Player') ?></label>
             <input id='player' type='text'>
@@ -424,6 +426,7 @@ foreach ($wr_data as $key => $data) {
             </select>
         </div>
     </div>
+    <p id='player_loading' class='center'>Loading...</p>
 	<div id='player_list' class='overflow_mobile'>
 		<table class='sortable'>
 			<thead id='player_thead'>
