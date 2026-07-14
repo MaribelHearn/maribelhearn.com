@@ -156,7 +156,7 @@ foreach ($wr_data as $key => $data) {
         foreach ($games as $key => $data) {
             $full_name = _($data['full_name']);
             $full_names->{$data['short_name']} = $full_name;
-            if ($data['short_name'] == 'UDoALG') {
+            if ($data['short_name'] == 'UDoALG' || !property_exists($overall, $data['short_name'])) {
                 continue;
             }
             echo '<p><a href="#' . $data['short_name'] . '">' . $full_name . '</a></p>';
@@ -198,7 +198,7 @@ foreach ($wr_data as $key => $data) {
                     foreach ($games as $key => $data) {
                         $game = $data['short_name'];
                         $num = $data['number'];
-                        if ($game == 'UDoALG') {
+                        if ($game == 'UDoALG' || !property_exists($overall, $game)) {
                             continue;
                         }
                         $wr = $overall->{$game};
@@ -506,7 +506,6 @@ foreach ($wr_data as $key => $data) {
                     $categories = curl_get($API_BASE . '/api/v1/category/?type=Score&region=Eastern&historical=true');
                     if (strpos($categories, 'Internal Server Error') === false) {
                         $categories = json_decode($categories, true);
-                        natcasesort($categories);
                         foreach ($categories as $key => $category) {
                             $category_val = $category['game'] . ' ' . $category['difficulty'] . ' ' . $category['shot'];
                             $category_str = _($category['game']) . _(' ') . _($category['difficulty']) . _(' ') . _($category['shot']);
