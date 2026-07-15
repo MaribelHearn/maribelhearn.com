@@ -373,11 +373,11 @@
     <div>
         <p><a href='http://wcs.main.jp/index/software/spal/' target='_blank'><?php echo _('Main Program') ?></a></p>
 		<p class='wide-top'><a href='https://maribelhearn.com/mirror/4.6_SSGs.zip' target='_blank'><?php echo _('SSG Pack (4.6)') ?></a></p>
-        <p class='wide-bottom'><a href='http://thusagi.starfree.jp/ssg/th06ssg.zip' target='_blank'>EoSD</a> |
-        <a href='http://thusagi.starfree.jp/ssg/th07ssg.zip' target='_blank'>PCB</a> |
-        <a href='http://thusagi.starfree.jp/ssg/th08ssg.zip' target='_blank'>IN</a> |
-        <a href='http://thusagi.starfree.jp/ssg/th12ssg.zip' target='_blank'>UFO</a> |
-        <a href='http://thusagi.starfree.jp/ssg/th16ssg.zip' target='_blank'>HSiFS</a></p>
+        <p class='wide-bottom'><a href='http://usagith.stars.ne.jp/ssg/th06ssg.zip' target='_blank'>EoSD</a> |
+        <a href='http://usagith.stars.ne.jp/ssg/th07ssg.zip' target='_blank'>PCB</a> |
+        <a href='http://usagith.stars.ne.jp/ssg/th08ssg.zip' target='_blank'>IN</a> |
+        <a href='http://usagith.stars.ne.jp/ssg/th12ssg.zip' target='_blank'>UFO</a> |
+        <a href='http://usagith.stars.ne.jp/ssg/th16ssg.zip' target='_blank'>HSiFS</a></p>
 		<p><a href='https://mega.nz/#!OpxFSSJB!2eUH91vJAF_ejq7S5r3x5Jx7GYCP67LSSo4BuXhoDa4' target='_blank'><?php
             echo _('SSG Pack (niL)')
         ?></a></p>
