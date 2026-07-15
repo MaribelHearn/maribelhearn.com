@@ -203,7 +203,7 @@ foreach ($wr_data as $key => $data) {
                         }
                         $wr = $overall->{$game};
                         $score_text = number_format($wr['score'], 0, '.', ',');
-                        if ($num >= 16) {
+                        if ($wr['score'] > $MAX_SCORE) {
                             $score_text = '<span class="cs">' . number_format($wr['score'], 0, '.', ',') . '<span class="tooltip truescore">' . _('Uncapped') . '</span></span> ';
                         }
                         echo '<tr id="' . $game . 'o"><td' . ($num == 128 ? ' data-sort="12.8"' : '') . '>' . $num . '</td><td class="' . $game . '">' . _($game) . '</td>';
@@ -363,7 +363,6 @@ foreach ($wr_data as $key => $data) {
 	?>
 	<div id='wr_list'>
         <p id='fullname' class='center'></p>
-        <p class='center'><strong><?php echo _('Important Notice:') ?></strong> <span id='notice'></span></p>
         <div class='center'>
             <input id='unverified' type='checkbox'>
             <label id='label_unverified' for='unverified'><?php echo _('Unverified scores') ?></label>

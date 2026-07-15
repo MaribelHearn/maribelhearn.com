@@ -126,14 +126,7 @@ function prepareShowWR(game) {
     selected = game;
     document.getElementById(`${game}_image`).classList.add("selected");
     document.getElementById("fullname").innerHTML = `<a href="?game=${game}">${fullNameNumber(game)}</a>`;
-    document.getElementById("notice").parentNode.style.display = "none";
-    document.getElementById("notice").innerHTML = "";
     appendShottypeHeaders(game, shots);
-
-    if (game === "FW") {
-        document.getElementById("notice").innerHTML = _("This game's records assume that the overflow bug has been fixed. Check the score after applying the fix using <a href='/tools#thprac'>thprac</a>.");
-        document.getElementById("notice").parentNode.style.display = "block";
-    }
 
     for (const diff of diffs) {
         appendDifficultyHeaders(game, diff, shots);
