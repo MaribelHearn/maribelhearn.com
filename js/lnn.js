@@ -96,7 +96,7 @@ function getLNNs(game) {
 
 function showLNNtable(game, LNNs) {
     const lnnTable = document.getElementById("lnn_tbody");
-    let players = [];
+    let players = {};
     let gameCount = 0;
     let shotCount = 0;
     let currentShot = "";
@@ -105,8 +105,12 @@ function showLNNtable(game, LNNs) {
     for (const lnn of LNNs) {
         const player = lnn.player;
         const shot = lnn.category.shot;
-        let route = lnn.category.route;
 
+        if (players.hasOwnProperty(player) && players[player].includes(shot)) {
+            continue;
+        }
+
+        let route = lnn.category.route;
         let chara = shot;
 
         if (game == "HSiFS") {
@@ -133,7 +137,7 @@ function showLNNtable(game, LNNs) {
         }
 
         if (player !== '-') {
-            players.pushStrict(player);
+            players[player] = [shot];
         }
 
         shotCount += 1;
@@ -170,15 +174,15 @@ function showLNNtable(game, LNNs) {
         }
     }
 
-    players.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+    const sortedPlayers = Object.keys(players).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
     const total = document.getElementById("total");
     total.innerHTML = "";
 
-    for (const player of players) {
+    for (const player of sortedPlayers) {
         total.innerHTML += `, ${player}`;
     }
 
-    document.getElementById("count").innerHTML = `${gameCount} (${players.length})`;
+    document.getElementById("count").innerHTML = `${gameCount} (${sortedPlayers.length})`;
     total.innerHTML = total.innerHTML.replace(", ", "");
 }
 
