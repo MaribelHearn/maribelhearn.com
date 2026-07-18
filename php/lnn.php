@@ -302,6 +302,7 @@ $last_modified = $last_modified['results'][0]['date'];
             </select>
         </div>
     </div>
+    <p id='search_loading' class='center'>Loading...</p>
 	<div id='search_results'>
 		<table id='search_table' class='sortable asc'>
 			<thead id='search_thead'><tr>

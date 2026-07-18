@@ -327,6 +327,7 @@ function showPlayerLNNs(player, LNNs) {
     document.getElementById("second_header").innerHTML = _("Shottype");
     document.getElementById("search_sum").innerHTML = numberOfLNNs;
     document.getElementById("empty_category").style.display = "none";
+    document.getElementById("search_loading").style.display = "none";
     emptyResults.style.display = "none";
     searchResults.style.display = "block";
 }
@@ -344,6 +345,7 @@ function getPlayerLNNs(player) {
     }
 
     const xhr = new XMLHttpRequest();
+    document.getElementById("search_loading").style.display = "block";
     xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=game&player=${encodeURIComponent(player)}&type=LNN`);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
@@ -453,6 +455,7 @@ function showCategoryLNNs(category, LNNs) {
 
     if (numberOfLNNs === 0) {
         document.getElementById("empty_player").style.display = "none";
+        document.getElementById("search_loading").style.display = "none";
         searchResults.style.display = "none";
         emptyResults.style.display = "block";
         return;
@@ -470,6 +473,7 @@ function showCategoryLNNs(category, LNNs) {
     document.getElementById("second_header").innerHTML = _("Player");
     document.getElementById("search_sum").innerHTML = numberOfLNNs;
     document.getElementById("empty_player").style.display = "none";
+    document.getElementById("search_loading").style.display = "none";
     emptyResults.style.display = "none";
     searchResults.style.display = "block";
 }
@@ -488,6 +492,7 @@ function getCategoryLNNs(category) {
 
     const categoryName = splitCategory(category);
     let url = `${API_BASE}/api/v1/replay/?ordering=-date&game=${encodeURIComponent(categoryName[0])}&shot=${encodeURIComponent(categoryName[1])}`;
+    document.getElementById("search_loading").style.display = "block";
 
     if (categoryName.length > 2) { // has route
         url += `&route=${encodeURIComponent(categoryName[2])}`;
