@@ -75,7 +75,7 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
     line-height: 1em;
     color: #000;
 }
-#newlayout, #contents_new, #lnn_list, #search, #searchlink, #search_results, #empty_player, #empty_category, .search_label {
+#newlayout, #contents_new, #lnn_list, #search, #searchlink, #search_results, #empty_player, #empty_category, #search_loading, .search_label {
     display: none;
 }
 #newlayout, #pvp_games, #search {

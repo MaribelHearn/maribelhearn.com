@@ -20,6 +20,7 @@ $PC98_LNN = ['HRtP', 'SoEW', 'LLS', 'MS'];
 $WINDOWS_LNN = ['EoSD', 'PCB', 'IN', 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC', 'UM', 'FW'];
 $ALL_LNN = array_merge($PC98_LNN, $WINDOWS_LNN);
 $RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_limit']), 1) : 15;
+$BANNED_CHARS = ['Reimu', 'Marisa', 'Sanae', 'Seiran', 'Biten', 'Enoko', 'Chiyari']; // Touhou 19 UDoALG
 $layout = (isset($_COOKIE['lnn_old_layout']) ? 'Old' : 'New');
 $include_vs = (isset($_COOKIE['include_vs']) ? true : false);
 $pvp = ['PoDD', 'UDoALG'];
@@ -290,6 +291,9 @@ $last_modified = $last_modified['results'][0]['date'];
                     $categories = curl_get($API_BASE . '/api/v1/category/?type=LNN&region=Eastern');
                     $categories = json_decode($categories, true);
                     foreach ($categories as $key => $category) {
+                        if ($category['game'] == 'UDoALG' && in_array($category['shot'], $BANNED_CHARS)) {
+                            continue;
+                        }
                         $category_id = $category['game'] . ' ' . $category['shot'];
                         $category_name = _($category['game']) . ' ' . _($category['shot']);
                         if (!empty($category['route'])) {
