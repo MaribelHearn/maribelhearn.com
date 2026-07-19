@@ -369,7 +369,7 @@ $last_modified = $last_modified['results'][0]['date'];
                     }
                     echo '<tr>';
                     echo '<td class="' . $data['category']['game'] . 'p">' . _($data['category']['game']) . _(' ') . _($data['category']['shot'])  . $route . '</td>';
-                    echo '<td>' . $data['player'] . '</td>';
+                    echo '<td><a href="?player=' . urlencode($data['player']) . '">' . $data['player'] . '</a></td>';
                     echo '<td class="no_mobile">' . $replay . '</td>';
                     echo '<td>' . $video . '</td>';
                     echo '<td data-sort="' . $date_raw . '">' . $date . '</td>';

@@ -208,9 +208,15 @@ foreach ($wr_data as $key => $data) {
                         }
                         echo '<tr id="' . $game . 'o"><td' . ($num == 128 ? ' data-sort="12.8"' : '') . '>' . $num . '</td><td class="' . $game . '">' . _($game) . '</td>';
                         echo '<td id="' . $game . 'overall0" data-sort="' . $wr['score'] . '">' . $score_text . '</td>';
-                        echo '<td id="' . $game . 'overall1">' . ($wr['score'] == 0 ? '-' : $wr['player']) . '</td>';
-                        echo '<td id="' . $game . 'overall2">' . ($wr['score'] == 0 ? '-' : $wr['category']['difficulty']) . '</td>';
-                        echo '<td id="' . $game . 'overall3">' . ($wr['score'] == 0 ? '-' : _($wr['category']['shot'])) . '</td>';
+                        if ($wr['score'] == 0) {
+                            echo '<td id="' . $game . 'overall1">-</td>';
+                            echo '<td id="' . $game . 'overall2">-</td>';
+                            echo '<td id="' . $game . 'overall3">-</td>';
+                        } else {
+                            echo '<td id="' . $game . 'overall1"><a href="?player=' . urlencode($wr['player']) . '">' . $wr['player'] . '</a></td>';
+                            echo '<td id="' . $game . 'overall2">' . $wr['category']['difficulty'] . '</td>';
+                            echo '<td id="' . $game . 'overall3">' . _($wr['category']['shot']) . '</td>';
+                        }
                         if (!empty($wr['replay'])) {
                             $chunks = preg_split('/\//', $wr['replay']);
                             $replay = '<a href="' . $wr['replay'] . '">' . $chunks[count($chunks) - 1] . '</a>';
@@ -483,7 +489,7 @@ foreach ($wr_data as $key => $data) {
                         echo '<tr>';
                         echo '<td class="' . $data['category']['game'] . 'p">' . _($data['category']['game']) . _(' ') . _($data['category']['difficulty']) . _(' ') . _($data['category']['shot']) . '</td>';
                         echo '<td data-sort="' . number_format($data['score'], 0, '', '') . '">' . number_format($data['score'], 0, '.', ',') . '</td>';
-                        echo '<td>' . $data['player'] . '</td>';
+                        echo '<td><a href="?player=' . urlencode($data['player']) . '">' . $data['player'] . '</a></td>';
                         echo '<td>' . $replay . '</td>';
                         echo '<td>' . $video . '</td>';
                         echo '<td data-sort="' . $date_raw . '">' . $date . '</td>';
