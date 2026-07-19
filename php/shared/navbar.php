@@ -90,7 +90,7 @@ function show_db(string $db_cookie_path) {
 }
 
 function navbar(string $page) {
-    global $lang, $is_mobile;
+    global $lang;
     $token_path = ($page == 'admin' ? '../.stats/token' : '.stats/token');
     $db_cookie_path = ($page == 'admin' ? '../.stats/db_cookie' : '.stats/db_cookie');
     $navbar = '<div class="dropdown nav_left">';
@@ -102,7 +102,7 @@ function navbar(string $page) {
     }
 
     if (show_db($db_cookie_path)) {
-        $navbar .= '<a href="/db/">' . ($is_mobile ? 'DB' : 'Database') . '</a> | ';
+        $navbar .= '<a href="/db/">Database</a> | ';
     }
 
     $navbar .= '<a href="/credits">Credits</a> | ';

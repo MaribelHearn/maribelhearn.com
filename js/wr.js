@@ -1,5 +1,5 @@
 /*global _ MAX_SCORE setCookie getCookie deleteCookie sep fullNameNumber*/
-const API_BASE = location.hostname.includes("maribelhearn.com") ? "https://maribelhearn.com" : "http://localhost";
+const API_BASE = location.hostname.includes("maribelhearn.com") ? "https://maribelhearn.com" : `http://${location.hostname}`;
 const releaseDate = {
     "HRtP": "1997-08-15", "SoEW": "1997-08-15", "PoDD": "1997-12-29", "LLS": "1998-08-14", "MS": "1998-12-30",
     "EoSD": "2002-08-11", "PCB": "2003-08-17", "IN": "2004-08-15", "PoFV": "2005-08-14", "MoF": "2007-08-17", "SA": "2008-08-16", "UFO": "2009-08-15", "GFW": "2010-08-14",

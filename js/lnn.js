@@ -1,5 +1,5 @@
 /*global _ getCookie deleteCookie setCookie sep fullNameNumber*/
-const API_BASE = location.hostname.includes("maribelhearn.com") ? "https://maribelhearn.com" : "http://localhost";
+const API_BASE = location.hostname.includes("maribelhearn.com") ? "https://maribelhearn.com" : `http://${location.hostname}`;
 const banList = ["Reimu", "Marisa", "Sanae", "Seiran", "Biten", "Enoko", "Chiyari"];
 let language = "en_GB";
 let selected = "";
