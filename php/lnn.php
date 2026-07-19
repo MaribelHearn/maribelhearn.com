@@ -1,5 +1,6 @@
 <?php
 global $API_BASE;
+global $is_mobile;
 
 $games = curl_get($API_BASE . '/api/v1/game/');
 if (strpos($games, 'Internal Server Error') !== false) {
@@ -231,7 +232,7 @@ $last_modified = $last_modified['results'][0]['date'];
                 }
                 if ($game == 'MoF') {
                     $second_row = true;
-                    echo '<br>';
+                    echo !$is_mobile ? '<br>' : '';
                 }
                 if (!$second_row) {
                     echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_1"></span>' .
@@ -307,7 +308,7 @@ $last_modified = $last_modified['results'][0]['date'];
         </div>
     </div>
     <p id='search_loading' class='center'>Loading...</p>
-	<div id='search_results'>
+	<div id='search_results' class='overflow_mobile'>
 		<table id='search_table' class='sortable asc'>
 			<thead id='search_thead'><tr>
                 <th id='first_header' class='general_header'><?php echo _('Game') ?></th>

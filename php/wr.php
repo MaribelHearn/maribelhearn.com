@@ -1,5 +1,6 @@
 <?php
 global $API_BASE;
+global $is_mobile;
 
 $games = curl_get($API_BASE . '/api/v1/game/');
 if (strpos($games, 'Internal Server Error') !== false) {
@@ -353,7 +354,7 @@ foreach ($wr_data as $key => $data) {
                     }
                     if ($game == 'MoF') {
                         $second_row = true;
-                        echo '<br>';
+                        echo !$is_mobile ? '<br>' : '';
                     }
                     if (!$second_row) {
                         echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_1"></span>' .
