@@ -95,11 +95,6 @@ function navbar(string $page) {
     $db_cookie_path = ($page == 'admin' ? '../.stats/db_cookie' : '.stats/db_cookie');
     $navbar = '<div class="dropdown nav_left">';
     $navbar .= '<a href="/"><span class="icon index_icon"></span> Index</a>';
-
-    if (is_localhost($_SERVER['REMOTE_ADDR'])) {
-        $navbar .= ' <strong class="dev_instance">(Dev)</strong>';
-    }
-
     $navbar .= ' | ';
 
     if (show_admin($token_path)) {
