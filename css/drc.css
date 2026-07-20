@@ -24,3 +24,8 @@ input[type=number] {
 #route, #season, #calculator, #scoring_button, #survival_button {
     display: none;
 }
+#lastupdate {
+    background-color: lightsalmon;
+    font-size: 24px;
+    font-weight: bold;
+}

@@ -19,6 +19,10 @@ function changeDifficulty() {
 }
 
 function checkValues(event) {
+    if (!document.getElementById("game")) { // if 503 error occurred
+        return;
+    }
+
     const diffOptions = "<option>Easy</option>\n<option>Normal</option>\n<option>Hard</option>\n<option>Lunatic</option>";
     const changePerformance = event.data.changePerf;
     const changeShottypes = event.data.changeShots;
@@ -495,19 +499,21 @@ function setLanguage(event) {
 }
 
 function setEventListeners() {
-    document.getElementById("calculate").addEventListener("click", drcPoints, false);
-    document.getElementById("scoring_button").addEventListener("click", toggleRubrics), false;
-    document.getElementById("survival_button").addEventListener("click", toggleRubrics, false);
-    document.getElementById("game").addEventListener("change", gameChanged, false);
-    document.getElementById("difficulty").addEventListener("change", changeDifficulty, false);
-    document.getElementById("challenge").addEventListener("change", challengeChanged, false);
-    document.getElementById("challenge").addEventListener("change", checkShottypes, false);
-    document.getElementById("shottype").addEventListener("change", shottypeChanged, false);
-    document.getElementById("calculator").style.display = "block";
-    document.getElementById("scoring_button").style.display = "inline";
-    document.getElementById("survival_button").style.display = "inline";
-    document.getElementById("scoring_rubrics").style.display = "none";
-    document.getElementById("survival_rubrics").style.display = "none";
+    if (document.getElementById("calculate")) {
+        document.getElementById("calculate").addEventListener("click", drcPoints, false);
+        document.getElementById("scoring_button").addEventListener("click", toggleRubrics), false;
+        document.getElementById("survival_button").addEventListener("click", toggleRubrics, false);
+        document.getElementById("game").addEventListener("change", gameChanged, false);
+        document.getElementById("difficulty").addEventListener("change", changeDifficulty, false);
+        document.getElementById("challenge").addEventListener("change", challengeChanged, false);
+        document.getElementById("challenge").addEventListener("change", checkShottypes, false);
+        document.getElementById("shottype").addEventListener("change", shottypeChanged, false);
+        document.getElementById("calculator").style.display = "block";
+        document.getElementById("scoring_button").style.display = "inline";
+        document.getElementById("survival_button").style.display = "inline";
+        document.getElementById("scoring_rubrics").style.display = "none";
+        document.getElementById("survival_rubrics").style.display = "none";
+    }
 }
 
 function init() {

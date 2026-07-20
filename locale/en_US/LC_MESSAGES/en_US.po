@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-06-13 14:27+0200\n"
-"PO-Revision-Date: 2026-06-13 14:27+0200\n"
+"POT-Creation-Date: 2026-07-20 19:00+0200\n"
+"PO-Revision-Date: 2026-07-20 19:01+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 "X-Poedit-Basepath: ../../..\n"
 "X-Poedit-SearchPath-0: php/drc.php\n"
 "X-Poedit-SearchPath-1: php/lnn.php\n"
@@ -24,162 +24,152 @@ msgstr ""
 "X-Poedit-SearchPath-9: php/shared/translations.php\n"
 "X-Poedit-SearchPath-10: js/utils.js\n"
 
-#: js/drc.js:36 php/wr.php:366
+#: js/drc.js:40
 msgid "Important Notice:"
 msgstr ""
 
-#: js/drc.js:39
+#: js/drc.js:43
 msgid "usage of the MarisaB damage bug is BANNED in survival."
 msgstr ""
 
-#: js/drc.js:41
+#: js/drc.js:45
 msgid ""
 "<em>manual</em> trances count as bombs (that is, trances from pressing C)."
 msgstr ""
 
-#: js/drc.js:43
+#: js/drc.js:47
 msgid "border breaks count as bombs <em>even if they are accidental</em>."
 msgstr ""
 
-#: js/drc.js:89
+#: js/drc.js:93
 msgid "No Bomb"
 msgstr ""
 
-#: js/drc.js:90 js/drc.js:94 js/drc.js:128
+#: js/drc.js:94 js/drc.js:98 js/drc.js:132
 msgid "Misses"
 msgstr ""
 
-#: js/drc.js:90 js/drc.js:94
+#: js/drc.js:94 js/drc.js:98
 msgid "Rounds lost"
 msgstr ""
 
-#: js/drc.js:93
+#: js/drc.js:97
 msgid "No Charge Attacks"
 msgstr ""
 
-#: js/drc.js:98 js/drc.js:106
+#: js/drc.js:102 js/drc.js:110
 msgid "Bombs"
 msgstr ""
 
-#: js/drc.js:100
+#: js/drc.js:104
 msgid "Border Breaks"
 msgstr ""
 
-#: js/drc.js:103
+#: js/drc.js:107
 msgid "Bombs / Trances"
 msgstr ""
 
-#: js/drc.js:114
+#: js/drc.js:118
 msgid "Imperishable Shooting Captured"
 msgstr ""
 
-#: js/drc.js:117
+#: js/drc.js:121
 msgid "Last Spells Captured"
 msgstr ""
 
-#: js/drc.js:123
+#: js/drc.js:127
 msgid "Releases"
 msgstr ""
 
-#: js/drc.js:140 php/wr.php:187 php/wr.php:394 php/wr.php:432 php/wr.php:457
-#: php/wr.php:525
+#: js/drc.js:144 php/lnn.php:316 php/wr.php:188 php/wr.php:400 php/wr.php:442
+#: php/wr.php:467 php/wr.php:534
 msgid "Score"
 msgstr ""
 
-#: js/drc.js:186 js/lnn.js:52 js/wr.js:56 php/shared/shared.php:117
+#: js/drc.js:190 js/lnn.js:52 js/wr.js:64 php/shared/shared.php:117
 msgid "Route"
 msgstr ""
 
-#: js/drc.js:188 js/lnn.js:52 js/lnn.js:314 js/wr.js:56 php/drc.php:450
-#: php/lnn.php:250 php/lnn.php:307 php/shared/shared.php:117 php/wr.php:190
-#: php/wr.php:396 php/wr.php:433 php/wr.php:527
+#: js/drc.js:192 js/lnn.js:52 js/lnn.js:331 js/wr.js:64 php/drc.php:459
+#: php/lnn.php:254 php/lnn.php:315 php/shared/shared.php:117 php/wr.php:191
+#: php/wr.php:402 php/wr.php:443 php/wr.php:536
 msgid "Shottype"
 msgstr ""
 
-#: js/drc.js:210 js/drc.js:367 js/drc.js:370 js/drc.js:449
+#: js/drc.js:214 js/drc.js:371 js/drc.js:374 js/drc.js:453
 msgid "Error: "
 msgstr ""
 
-#: js/drc.js:223
+#: js/drc.js:227
 msgid "the survival rubrics for this game are undetermined as of now."
 msgstr ""
 
-#: js/drc.js:242
+#: js/drc.js:246
 msgid "the scoring rubrics for this game are undetermined as of now."
 msgstr ""
 
-#: js/drc.js:243 js/drc.js:259
+#: js/drc.js:247 js/drc.js:263
 msgid "Your DRC points for this run: "
 msgstr ""
 
-#: js/drc.js:367
+#: js/drc.js:371
 msgid "the scoring rubrics for this difficulty are undetermined as of now."
 msgstr ""
 
-#: js/drc.js:370
+#: js/drc.js:374
 msgid "the scoring rubrics for this shottype are undetermined as of now."
 msgstr ""
 
-#: js/drc.js:449
+#: js/drc.js:453
 msgid "invalid score."
 msgstr ""
 
-#: js/drc.js:479
+#: js/drc.js:483
 msgid "block"
 msgstr ""
 
 #: js/lnn.js:39 js/lnn.js:42 js/lnn.js:43 js/lnn.js:45 js/lnn.js:46
-#: php/lnn.php:43 php/lnn.php:46 php/lnn.php:47 php/lnn.php:49 php/lnn.php:50
+#: php/lnn.php:45 php/lnn.php:48 php/lnn.php:49 php/lnn.php:51 php/lnn.php:52
 msgid "No. of LNNNs"
 msgstr ""
 
-#: js/lnn.js:40 php/lnn.php:44
+#: js/lnn.js:40 php/lnn.php:46
 msgid "No. of LNNFSs"
 msgstr ""
 
-#: js/lnn.js:41 php/lnn.php:45
+#: js/lnn.js:41 php/lnn.php:47
 msgid "No. of LNN(N)s"
 msgstr ""
 
-#: js/lnn.js:44 php/lnn.php:48
+#: js/lnn.js:44 php/lnn.php:50
 msgid "No. of LNNNNs"
 msgstr ""
 
-#: js/lnn.js:47 php/lnn.php:51 php/lnn.php:384 php/lnn.php:430
+#: js/lnn.js:47 php/lnn.php:53 php/lnn.php:393 php/lnn.php:439
 msgid "No. of LNNs"
 msgstr ""
 
-#: js/lnn.js:266 js/lnn.js:415 js/wr.js:392 js/wr.js:456 php/lnn.php:355
-#: php/wr.php:221 php/wr.php:479
-msgid "Link"
-msgstr ""
-
-#: js/lnn.js:273 js/lnn.js:422 js/lnn.js:423 js/wr.js:399 js/wr.js:460
-#: js/wr.js:468 php/lnn.php:57 php/wr.php:31
+#: js/lnn.js:260 js/lnn.js:283 js/lnn.js:439 js/lnn.js:452 js/wr.js:417
+#: js/wr.js:492 js/wr.js:500 php/lnn.php:59 php/wr.php:32
 msgid "Unknown"
 msgstr ""
 
-#: js/lnn.js:299
+#: js/lnn.js:275 js/lnn.js:449 js/wr.js:409 js/wr.js:488 php/lnn.php:364
+#: php/wr.php:228 php/wr.php:489
+msgid "Link"
+msgstr ""
+
+#: js/lnn.js:312
 msgid "(All)"
 msgstr ""
 
-#: js/lnn.js:311 php/drc.php:203 php/drc.php:387 php/drc.php:421
-#: php/lnn.php:306 php/lnn.php:383 php/lnn.php:478 php/wr.php:186
+#: js/lnn.js:326 php/drc.php:212 php/drc.php:396 php/drc.php:430
+#: php/lnn.php:314 php/lnn.php:392 php/lnn.php:487 php/wr.php:187
 msgid "Game"
 msgstr ""
 
-#: js/lnn.js:427 js/wr.js:300 js/wr.js:371 php/lnn.php:360 php/lnn.php:363
-#: php/wr.php:482 php/wr.php:512
-msgid " "
-msgstr " "
-
-#: js/lnn.js:444 php/drc.php:94 php/lnn.php:282 php/lnn.php:330 php/wr.php:431
-#: php/wr.php:456 php/wr.php:502
-msgid "Category"
-msgstr ""
-
-#: js/lnn.js:447 php/lnn.php:262 php/lnn.php:331 php/lnn.php:429 php/wr.php:188
-#: php/wr.php:395 php/wr.php:410 php/wr.php:458 php/wr.php:526 php/wr.php:547
+#: js/lnn.js:477 php/lnn.php:266 php/lnn.php:340 php/lnn.php:438 php/wr.php:189
+#: php/wr.php:401 php/wr.php:418 php/wr.php:468 php/wr.php:535 php/wr.php:556
 msgid "Player"
 msgstr ""
 
@@ -215,11 +205,11 @@ msgstr ""
 msgid "Touhou 6 - The Embodiment of Scarlet Devil"
 msgstr ""
 
-#: js/utils.js:219 php/lnn.php:484
+#: js/utils.js:219 php/lnn.php:493
 msgid "Touhou 7 - Perfect Cherry Blossom"
 msgstr ""
 
-#: js/utils.js:220 php/lnn.php:488
+#: js/utils.js:220 php/lnn.php:497
 msgid "Touhou 8 - Imperishable Night"
 msgstr ""
 
@@ -239,7 +229,7 @@ msgstr ""
 msgid "Touhou 11 - Subterranean Animism"
 msgstr ""
 
-#: js/utils.js:225 php/lnn.php:492
+#: js/utils.js:225 php/lnn.php:501
 msgid "Touhou 12 - Undefined Fantastic Object"
 msgstr ""
 
@@ -251,7 +241,7 @@ msgstr ""
 msgid "Touhou 12.8 - Great Fairy Wars"
 msgstr ""
 
-#: js/utils.js:228 php/lnn.php:496
+#: js/utils.js:228 php/lnn.php:505
 msgid "Touhou 13 - Ten Desires"
 msgstr ""
 
@@ -263,15 +253,15 @@ msgstr ""
 msgid "Touhou 15 - Legacy of Lunatic Kingdom"
 msgstr ""
 
-#: js/utils.js:231 php/lnn.php:500
+#: js/utils.js:231 php/lnn.php:509
 msgid "Touhou 16 - Hidden Star in Four Seasons"
 msgstr ""
 
-#: js/utils.js:232 php/lnn.php:504
+#: js/utils.js:232 php/lnn.php:513
 msgid "Touhou 17 - Wily Beast and Weakest Creature"
 msgstr ""
 
-#: js/utils.js:233 php/lnn.php:508
+#: js/utils.js:233 php/lnn.php:517
 msgid "Touhou 18 - Unconnected Marketeers"
 msgstr ""
 
@@ -279,289 +269,298 @@ msgstr ""
 msgid "Touhou 19 - Unfinished Dream of All Living Ghost"
 msgstr "Touhou 19 - Unfinished Dream of All Living Ghost (v1.00a)"
 
-#: js/utils.js:235 php/lnn.php:512
+#: js/utils.js:235 php/lnn.php:521
 msgid "Touhou 20 - Fossilized Wonders"
 msgstr ""
 
-#: js/wr.js:126
-msgid ""
-"This game's records assume that the overflow bug has been fixed. Check the "
-"score after applying the fix using <a href='/tools#thprac'>thprac</a>."
-msgstr ""
-
-#: js/wr.js:216 php/wr.php:207
+#: js/wr.js:217 php/wr.php:208 php/wr.php:306
 msgid "Uncapped"
 msgstr ""
 
-#: js/wr.js:488
+#: js/wr.js:298 js/wr.js:384 php/lnn.php:369 php/lnn.php:372 php/wr.php:492
+#: php/wr.php:521
+msgid " "
+msgstr " "
+
+#: js/wr.js:520
 msgid "Release date"
 msgstr ""
 
-#: php/drc.php:71
+#: php/drc.php:79
 msgid ""
-"The <strong>Dodging Rain Competition (DRC)</strong> is a Touhou game "
-"competition that was devised by <a href=\"https://www.youtube.com/user/"
-"mariomaster657\">ZM</a> and is held on <a href=\"https://discord.gg/"
-"Ucae3Uf\">the official DRC Discord</a>. Two teams go up against each other "
-"in several different categories. Each player posts an arbitrarily long list "
-"of categories, ordered by preference, which can be either survival or "
-"scoring of any Touhou shooting game and any difficulty. They will be matched "
-"up against a player from the other team, in a category that both players had "
-"on their list. The teams and categories are determined by the DRC management "
-"team. Players are given two weeks to sign up for the competition, and once "
-"it starts, two weeks to submit a replay, which will be awarded points "
-"dependent on the rubrics. Runs done outside those two weeks are invalid. "
-"Players can submit an unlimited number of replays; the replay that is worth "
-"the most DRC points will count."
+"This event has been discontinued as of 2020. This page remains up for "
+"archival purposes."
 msgstr ""
 
-#: php/drc.php:84
+#: php/drc.php:81
 msgid ""
-"If you want to know how many DRC points a run is worth, the points for a "
+"The <strong>Dodging Rain Competition (DRC)</strong> was a Touhou game "
+"competition that was started by <a href=\"https://www.youtube.com/user/"
+"mariomaster657\">ZM</a> and was held on the DRC Discord. Two teams went up "
+"against each other in several different categories. Each player posted an "
+"arbitrarily long list of categories, ordered by preference, which can be "
+"either survival or scoring of any Touhou shooting game and any difficulty. "
+"They would be matched up against a player from the other team, in a category "
+"that both players had on their list. The teams and categories were "
+"determined by the DRC management team. Players were given two weeks to sign "
+"up for the competition, and once it started, two weeks to submit a replay, "
+"which would be awarded points dependent on the rubrics. Runs done outside "
+"those two weeks were invalid. Players could submit an unlimited number of "
+"replays; the replay that was worth the most DRC points would count."
+msgstr ""
+
+#: php/drc.php:93
+msgid ""
+"If you want to know how many DRC points a run was worth, the points for a "
 "given run can be determined using the calculator below."
 msgstr ""
 
-#: php/drc.php:88
+#: php/drc.php:97
 msgid "Points Calculator"
 msgstr ""
 
-#: php/drc.php:89
+#: php/drc.php:98
 msgid ""
 "<em>Sorry, you cannot calculate DRC points with JavaScript disabled.</em>"
 msgstr ""
 
-#: php/drc.php:91
+#: php/drc.php:100
 msgid ""
 "Scores can only contain digits, commas, dots and spaces. Survival runs are "
 "assumed to have cleared, scoring runs not."
 msgstr ""
 
-#: php/drc.php:96
-msgid "HRtP"
-msgstr ""
-
-#: php/drc.php:97
-msgid "SoEW"
-msgstr ""
-
-#: php/drc.php:98
-msgid "PoDD"
-msgstr ""
-
-#: php/drc.php:99
-msgid "LLS"
-msgstr ""
-
-#: php/drc.php:100
-msgid "MS"
-msgstr ""
-
-#: php/drc.php:101
-msgid "EoSD"
-msgstr ""
-
-#: php/drc.php:102
-msgid "PCB"
-msgstr ""
-
-#: php/drc.php:103
-msgid "IN"
-msgstr ""
-
-#: php/drc.php:104
-msgid "PoFV"
+#: php/drc.php:103 php/lnn.php:286 php/lnn.php:339 php/wr.php:441
+#: php/wr.php:466 php/wr.php:512
+msgid "Category"
 msgstr ""
 
 #: php/drc.php:105
-msgid "MoF"
+msgid "HRtP"
 msgstr ""
 
 #: php/drc.php:106
-msgid "SA"
+msgid "SoEW"
 msgstr ""
 
 #: php/drc.php:107
-msgid "UFO"
+msgid "PoDD"
 msgstr ""
 
 #: php/drc.php:108
-msgid "DS"
+msgid "LLS"
 msgstr ""
 
 #: php/drc.php:109
-msgid "GFW"
+msgid "MS"
 msgstr ""
 
 #: php/drc.php:110
-msgid "TD"
+msgid "EoSD"
 msgstr ""
 
 #: php/drc.php:111
-msgid "DDC"
+msgid "PCB"
 msgstr ""
 
 #: php/drc.php:112
-msgid "LoLK"
+msgid "IN"
 msgstr ""
 
 #: php/drc.php:113
-msgid "HSiFS"
+msgid "PoFV"
 msgstr ""
 
 #: php/drc.php:114
-msgid "WBaWC"
+msgid "MoF"
 msgstr ""
 
 #: php/drc.php:115
+msgid "SA"
+msgstr ""
+
+#: php/drc.php:116
+msgid "UFO"
+msgstr ""
+
+#: php/drc.php:117
+msgid "DS"
+msgstr ""
+
+#: php/drc.php:118
+msgid "GFW"
+msgstr ""
+
+#: php/drc.php:119
+msgid "TD"
+msgstr ""
+
+#: php/drc.php:120
+msgid "DDC"
+msgstr ""
+
+#: php/drc.php:121
+msgid "LoLK"
+msgstr ""
+
+#: php/drc.php:122
+msgid "HSiFS"
+msgstr ""
+
+#: php/drc.php:123
+msgid "WBaWC"
+msgstr ""
+
+#: php/drc.php:124
 msgid "UM"
 msgstr ""
 
-#: php/drc.php:125
+#: php/drc.php:134
 msgid "FinalA"
 msgstr ""
 
-#: php/drc.php:126
+#: php/drc.php:135
 msgid "FinalB"
 msgstr ""
 
-#: php/drc.php:129 php/drc.php:195
+#: php/drc.php:138 php/drc.php:204
 msgid "Scoring"
 msgstr ""
 
-#: php/drc.php:130 php/drc.php:376
+#: php/drc.php:139 php/drc.php:385
 msgid "Survival"
 msgstr ""
 
-#: php/drc.php:136 php/shared/shared.php:135
+#: php/drc.php:145 php/shared/shared.php:135
 msgid "Spring"
 msgstr ""
 
-#: php/drc.php:137 php/shared/shared.php:136
+#: php/drc.php:146 php/shared/shared.php:136
 msgid "Summer"
 msgstr ""
 
-#: php/drc.php:138 php/shared/shared.php:137
+#: php/drc.php:147 php/shared/shared.php:137
 msgid "Autumn"
 msgstr ""
 
-#: php/drc.php:139 php/shared/shared.php:138
+#: php/drc.php:148 php/shared/shared.php:138
 msgid "Winter"
 msgstr ""
 
-#: php/drc.php:147
+#: php/drc.php:156
 msgid "Calculate"
 msgstr ""
 
-#: php/drc.php:150
+#: php/drc.php:159
 msgid "Rules"
 msgstr ""
 
-#: php/drc.php:152
+#: php/drc.php:161
 msgid "No cheating by using external programs or modifying the game FPS."
 msgstr ""
 
-#: php/drc.php:153
+#: php/drc.php:162
 msgid ""
 "Replays are required for Windows game submissions, while for PC-98 a video "
 "is accepted."
 msgstr ""
 
-#: php/drc.php:154
+#: php/drc.php:163
 msgid "All runs must be played using at most default lives and bombs."
 msgstr ""
 
-#: php/drc.php:156
+#: php/drc.php:165
 msgid "Rubrics"
 msgstr ""
 
-#: php/drc.php:158
+#: php/drc.php:167
 msgid ""
 "The rubrics are the formulas and fixed values used to calculate the number "
 "of DRC points for a run. If you are curious about how your points are being "
 "determined, click the button below to expand."
 msgstr ""
 
-#: php/drc.php:162
+#: php/drc.php:171
 msgid "Show Scoring Rubrics"
 msgstr ""
 
-#: php/drc.php:163
+#: php/drc.php:172
 msgid "Show Survival Rubrics"
 msgstr ""
 
-#: php/drc.php:166
+#: php/drc.php:175
 msgid "Scoring Notes"
 msgstr ""
 
-#: php/drc.php:169
+#: php/drc.php:178
 msgid "The World Records are taken from <a href=\"wr\">the WR page</a>."
 msgstr ""
 
-#: php/drc.php:172
+#: php/drc.php:181
 msgid ""
 "If you achieve a new World Record, your points are equal to the maximum "
 "number of points; otherwise, the formula applies."
 msgstr ""
 
-#: php/drc.php:176
+#: php/drc.php:185
 msgid ""
 "Some categories use a fictional WR. <a href=\"#fictionalWRtitle\">Click "
 "here</a> for the list of them."
 msgstr ""
 
-#: php/drc.php:180
+#: php/drc.php:189
 msgid ""
 "Some categories always use the WR of a specific shottype. <a "
 "href=\"#WRdefinitionTitle\">Click here</a> for the list of them."
 msgstr ""
 
-#: php/drc.php:184
+#: php/drc.php:193
 msgid ""
 "MoF uses a separate system. <a href=\"#mountainOfFaith\">Click here</a> for "
 "said system."
 msgstr ""
 
-#: php/drc.php:188
+#: php/drc.php:197
 msgid ""
 "DS uses a separate system. <a href=\"#doubleSpoiler\">Click here</a> for "
 "said system."
 msgstr ""
 
-#: php/drc.php:196
+#: php/drc.php:205
 msgid "||Max * (Score/WR)^Exp||"
 msgstr ""
 
-#: php/drc.php:204 php/drc.php:388 php/drc.php:422
+#: php/drc.php:213 php/drc.php:397 php/drc.php:431
 msgid "Max points"
 msgstr ""
 
-#: php/drc.php:205
+#: php/drc.php:214
 msgid "Exponent"
 msgstr ""
 
-#: php/drc.php:216
+#: php/drc.php:225
 msgid "Fictional WRs"
 msgstr ""
 
-#: php/drc.php:217
+#: php/drc.php:226
 msgid ""
 "The categories in the table below use a fictional WR instead of the real one."
 msgstr ""
 
-#: php/drc.php:238
+#: php/drc.php:247
 msgid "'WR' definition"
 msgstr ""
 
-#: php/drc.php:240
+#: php/drc.php:249
 msgid ""
 "The categories in the table below always use the WR of a specific shottype."
 msgstr ""
 
-#: php/drc.php:257
+#: php/drc.php:266
 msgid "MoF Scoring"
 msgstr ""
 
-#: php/drc.php:259
+#: php/drc.php:268
 msgid ""
 "For each difficulty and shottype there are six thresholds, at which you will "
 "have set numbers of points respectively. Then, increments are done, "
@@ -569,104 +568,104 @@ msgid ""
 "is 375 on Easy and 500 on Lunatic."
 msgstr ""
 
-#: php/drc.php:270
+#: php/drc.php:279
 msgid "If score &lt; 1st threshold, then: ||220*(Score/T1)^2||"
 msgstr ""
 
-#: php/drc.php:272
+#: php/drc.php:281
 msgid "If score &lt; 2b, then: ||200*(Score/2b)^2||"
 msgstr ""
 
-#: php/drc.php:274
+#: php/drc.php:283
 msgid "If score &lt; 900m, then: ||100*(Score/900m)^2||"
 msgstr ""
 
-#: php/drc.php:278
+#: php/drc.php:287
 msgid "Threshold"
 msgstr ""
 
-#: php/drc.php:279 php/drc.php:312
+#: php/drc.php:288 php/drc.php:321
 msgid "Base points"
 msgstr ""
 
-#: php/drc.php:280 php/drc.php:313 php/drc.php:315 php/drc.php:317
+#: php/drc.php:289 php/drc.php:322 php/drc.php:324 php/drc.php:326
 msgid "Increments"
 msgstr ""
 
-#: php/drc.php:303
+#: php/drc.php:312
 msgid "DS Scoring"
 msgstr ""
 
-#: php/drc.php:305
+#: php/drc.php:314
 msgid ""
 "For each scene there are three thresholds, at which you will have set "
 "numbers of points points respectively. Then, increments are done, dependent "
 "on how much higher than the threshold your score is."
 msgstr ""
 
-#: php/drc.php:312
+#: php/drc.php:321
 msgid "Scene"
 msgstr ""
 
-#: php/drc.php:314
+#: php/drc.php:323
 msgid "Threshold 1"
 msgstr ""
 
-#: php/drc.php:316
+#: php/drc.php:325
 msgid "Threshold 2"
 msgstr ""
 
-#: php/drc.php:318
+#: php/drc.php:327
 msgid "Threshold 3"
 msgstr ""
 
-#: php/drc.php:346 php/drc.php:466 php/lnn.php:453 php/tools.php:532
-#: php/wr.php:564
+#: php/drc.php:355 php/drc.php:475 php/lnn.php:462 php/tools.php:532
+#: php/wr.php:573
 msgid "Back to Top"
 msgstr ""
 
-#: php/drc.php:349
+#: php/drc.php:358
 msgid "Survival Notes"
 msgstr ""
 
-#: php/drc.php:353
+#: php/drc.php:362
 msgid ""
 "For a main game clear, a shottype multiplier is applied to your DRC points, "
 "the result of which is again rounded. <a href=\"#shottypeMultipliers\">Click "
 "here</a> for the list of them."
 msgstr ""
 
-#: php/drc.php:358
+#: php/drc.php:367
 msgid ""
 "The Phantasmagorias use a separate system. <a href=\"#phantasmagoria\">Click "
 "here</a> for said system."
 msgstr ""
 
-#: php/drc.php:363
+#: php/drc.php:372
 msgid ""
 "For IN, you obtain 2 (1 on Easy) additional points for each captured Last "
 "Spell, with the exception of Imperishable Shooting, which yields 5 points."
 msgstr ""
 
-#: php/drc.php:369
+#: php/drc.php:378
 msgid ""
 "For HSiFS, the first release adds 2 to <em>n</em>, and further releases add "
 "0.5, 0.4, 0.3, 0.2, 0.1 to <em>n</em>."
 msgstr ""
 
-#: php/drc.php:377
+#: php/drc.php:386
 msgid "||Max * (Base^-n)||"
 msgstr ""
 
-#: php/drc.php:389
+#: php/drc.php:398
 msgid "Base"
 msgstr ""
 
-#: php/drc.php:406
+#: php/drc.php:415
 msgid "PoDD & PoFV Survival"
 msgstr ""
 
-#: php/drc.php:408
+#: php/drc.php:417
 msgid ""
 "In the below formula, MaxLives is equal to 5 for PoDD, 7 for PoFV main game "
 "and 8 for PoFV Extra. NoBombBonus is a difficulty-specific No Bomb bonus for "
@@ -674,23 +673,23 @@ msgid ""
 "rounds the player lost."
 msgstr ""
 
-#: php/drc.php:414
+#: php/drc.php:423
 msgid "||Max - ((Max - Min) / MaxLives * RoundsLost)|| + NoBombBonus"
 msgstr ""
 
-#: php/drc.php:423
+#: php/drc.php:432
 msgid "Min points"
 msgstr ""
 
-#: php/drc.php:424
+#: php/drc.php:433
 msgid "No Bomb bonus"
 msgstr ""
 
-#: php/drc.php:439
+#: php/drc.php:448
 msgid "Shottype Multipliers"
 msgstr ""
 
-#: php/drc.php:441
+#: php/drc.php:450
 msgid ""
 "These are applied to the result of the survival formula for a main game run "
 "only; they do <em>not</em> apply for Extra, nor do they apply for HSiFS runs "
@@ -698,16 +697,16 @@ msgid ""
 "are equal to 1."
 msgstr ""
 
-#: php/drc.php:451
+#: php/drc.php:460
 msgid "Multiplier"
 msgstr ""
 
-#: php/lnn.php:78
+#: php/lnn.php:80
 #, php-format
 msgid "LNNs are current as of <span id=\"lm\">%date</span>."
 msgstr ""
 
-#: php/lnn.php:90
+#: php/lnn.php:92
 msgid ""
 "A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. "
 "For every shottype in a game, tables will tell you which players have done "
@@ -715,128 +714,128 @@ msgid ""
 "shottype, those are not factored in."
 msgstr ""
 
-#: php/lnn.php:94
+#: php/lnn.php:96
 msgid "Click here to view further information and guidelines for this page."
 msgstr ""
 
-#: php/lnn.php:96 php/tools.php:13 php/wr.php:138
+#: php/lnn.php:98 php/tools.php:13 php/wr.php:139
 msgid "Contents"
 msgstr ""
 
-#: php/lnn.php:100 php/lnn.php:107 php/lnn.php:134
+#: php/lnn.php:102 php/lnn.php:109 php/lnn.php:136
 msgid "LNN Lists"
 msgstr ""
 
-#: php/lnn.php:101 php/lnn.php:117 php/lnn.php:259 php/lnn.php:264
-#: php/lnn.php:284 php/wr.php:412
+#: php/lnn.php:103 php/lnn.php:119 php/lnn.php:263 php/lnn.php:268
+#: php/lnn.php:288 php/wr.php:420
 msgid "Search"
 msgstr ""
 
-#: php/lnn.php:102 php/lnn.php:118 php/lnn.php:327
+#: php/lnn.php:104 php/lnn.php:120 php/lnn.php:336
 msgid "Recent LNNs"
 msgstr ""
 
-#: php/lnn.php:103 php/lnn.php:119 php/lnn.php:374
+#: php/lnn.php:105 php/lnn.php:121 php/lnn.php:383
 msgid "Overall Count"
 msgstr ""
 
-#: php/lnn.php:104 php/lnn.php:120 php/lnn.php:420 php/wr.php:147
-#: php/wr.php:167 php/wr.php:542
+#: php/lnn.php:106 php/lnn.php:122 php/lnn.php:429 php/wr.php:148
+#: php/wr.php:168 php/wr.php:551
 msgid "Player Statistics"
 msgstr ""
 
-#: php/lnn.php:128
+#: php/lnn.php:130
 msgid "Number of Recent LNNs"
 msgstr ""
 
-#: php/lnn.php:131 php/wr.php:177
+#: php/lnn.php:133 php/wr.php:178
 msgid "Save Changes"
 msgstr ""
 
-#: php/lnn.php:162 php/lnn.php:211 php/lnn.php:254 php/lnn.php:407
+#: php/lnn.php:164 php/lnn.php:215 php/lnn.php:258 php/lnn.php:416
 msgid "Overall"
 msgstr ""
 
-#: php/lnn.php:171 php/lnn.php:251
+#: php/lnn.php:173 php/lnn.php:255
 msgid "(Different players)"
 msgstr ""
 
-#: php/lnn.php:172 php/lnn.php:252
+#: php/lnn.php:174 php/lnn.php:256
 msgid "Players"
 msgstr ""
 
-#: php/lnn.php:218
+#: php/lnn.php:222
 msgid "Click a game cover to show its list of LNNs."
 msgstr ""
 
-#: php/lnn.php:219 php/lnn.php:377 php/lnn.php:423
+#: php/lnn.php:223 php/lnn.php:386 php/lnn.php:432
 msgid "Include Versus games"
 msgstr ""
 
-#: php/lnn.php:260
+#: php/lnn.php:264
 msgid "Choose a player or category from the menus below to show their LNNs."
 msgstr ""
 
-#: php/lnn.php:308 php/lnn.php:332 php/wr.php:191 php/wr.php:397 php/wr.php:434
-#: php/wr.php:459 php/wr.php:528
+#: php/lnn.php:317 php/lnn.php:341 php/wr.php:192 php/wr.php:403 php/wr.php:444
+#: php/wr.php:469 php/wr.php:537
 msgid "Replay"
 msgstr ""
 
-#: php/lnn.php:309 php/lnn.php:333 php/wr.php:192 php/wr.php:398 php/wr.php:435
-#: php/wr.php:460 php/wr.php:529
+#: php/lnn.php:318 php/lnn.php:342 php/wr.php:193 php/wr.php:404 php/wr.php:445
+#: php/wr.php:470 php/wr.php:538
 msgid "Video"
 msgstr ""
 
-#: php/lnn.php:310 php/lnn.php:334 php/wr.php:193 php/wr.php:399 php/wr.php:436
-#: php/wr.php:461 php/wr.php:530
+#: php/lnn.php:319 php/lnn.php:343 php/wr.php:194 php/wr.php:405 php/wr.php:446
+#: php/wr.php:471 php/wr.php:539
 msgid "Date"
 msgstr ""
 
-#: php/lnn.php:318 php/wr.php:445
+#: php/lnn.php:327 php/wr.php:455
 msgid "Total"
 msgstr ""
 
-#: php/lnn.php:324
+#: php/lnn.php:333
 msgid "No such player."
 msgstr ""
 
-#: php/lnn.php:325
+#: php/lnn.php:334
 msgid "There are currently no LNNs in that category."
 msgstr ""
 
-#: php/lnn.php:385
+#: php/lnn.php:394
 msgid "Different players"
 msgstr ""
 
-#: php/lnn.php:413
+#: php/lnn.php:422
 msgid "Replays"
 msgstr ""
 
-#: php/lnn.php:431
+#: php/lnn.php:440
 msgid "Games LNN'd"
 msgstr ""
 
-#: php/lnn.php:441
+#: php/lnn.php:450
 msgid " (All PC-98)"
 msgstr ""
 
-#: php/lnn.php:442
+#: php/lnn.php:451
 msgid " (All Windows)"
 msgstr ""
 
-#: php/lnn.php:443
+#: php/lnn.php:452
 msgid " (All Games)"
 msgstr ""
 
-#: php/lnn.php:468
+#: php/lnn.php:477
 msgid "Information"
 msgstr ""
 
-#: php/lnn.php:469
+#: php/lnn.php:478
 msgid "This is an unofficial, community-maintained website."
 msgstr ""
 
-#: php/lnn.php:470
+#: php/lnn.php:479
 msgid ""
 "In general, you need to upload a replay or a video to an online platform for "
 "an LNN clear to be accepted on the website, for example <a href=\"https://"
@@ -847,71 +846,71 @@ msgid ""
 "case basis."
 msgstr ""
 
-#: php/lnn.php:474
+#: php/lnn.php:483
 msgid ""
 "Extra conditions are required for certain games. These conditions are as "
 "follows:"
 msgstr ""
 
-#: php/lnn.php:479
+#: php/lnn.php:488
 msgid "Condition"
 msgstr ""
 
-#: php/lnn.php:485
+#: php/lnn.php:494
 msgid "No Border Breaks"
 msgstr ""
 
-#: php/lnn.php:489
+#: php/lnn.php:498
 msgid "All Spells Captured"
 msgstr ""
 
-#: php/lnn.php:493
+#: php/lnn.php:502
 msgid "No UFO Summons*"
 msgstr ""
 
-#: php/lnn.php:497
+#: php/lnn.php:506
 msgid "No Trance"
 msgstr ""
 
-#: php/lnn.php:501
+#: php/lnn.php:510
 msgid "No Release"
 msgstr ""
 
-#: php/lnn.php:505
+#: php/lnn.php:514
 msgid "No Berserk Roar, No Roar Breaks"
 msgstr ""
 
-#: php/lnn.php:509
+#: php/lnn.php:518
 msgid "No Cards"
 msgstr ""
 
-#: php/lnn.php:513
+#: php/lnn.php:522
 msgid "No Hyper Breaks"
 msgstr ""
 
-#: php/lnn.php:517
+#: php/lnn.php:526
 msgid "* Optional"
 msgstr ""
 
-#: php/lnn.php:518
+#: php/lnn.php:527
 msgid ""
 "If a run is shown to have been cheated beyond reasonable doubt, for example "
 "by using savestates, pause buffering, or slowdown, it will be removed from "
 "the website."
 msgstr ""
 
-#: php/lnn.php:519
+#: php/lnn.php:528
 msgid "Submission"
 msgstr ""
 
-#: php/lnn.php:520
+#: php/lnn.php:529
 msgid ""
 "At present, we do <strong>not</strong> use a submission form. If you upload "
 "your replay or video somewhere, it will eventually be noticed by us and "
 "added to the website."
 msgstr ""
 
-#: php/lnn.php:521
+#: php/lnn.php:530
 msgid ""
 "If we missed your run, you can contact <a href=\"https://bsky.app/profile/"
 "maribelhearn42.bsky.social\" target=\"_blank\">me</a>, <a href=\"https://"
@@ -2361,12 +2360,12 @@ msgid ""
 "every wave. The stage background from Route A2 is used."
 msgstr ""
 
-#: php/wr.php:52
+#: php/wr.php:53
 #, php-format
 msgid "World records are current as of <span id=\"lm\">%date</span>."
 msgstr ""
 
-#: php/wr.php:119
+#: php/wr.php:120
 msgid ""
 "An accurate list of Touhou world records, updated every so often. Note that "
 "the player ranking at the bottom does not take into account how strong "
@@ -2374,36 +2373,36 @@ msgid ""
 "of now."
 msgstr ""
 
-#: php/wr.php:124
+#: php/wr.php:125
 msgid ""
 "Click a score to download the corresponding replay, if there is one "
 "available. "
 msgstr ""
 
-#: php/wr.php:125
+#: php/wr.php:126
 msgid "All of the table columns are sortable."
 msgstr ""
 
-#: php/wr.php:128
+#: php/wr.php:129
 msgid ""
 "The replays provided are <strong>not</strong> meant to be reuploaded to any "
 "replay uploading services."
 msgstr ""
 
-#: php/wr.php:131
+#: php/wr.php:132
 msgid ""
 "If you toggle Unverified Scores, this will show scores that are higher than "
 "the World Record, but lack replay or video proof."
 msgstr ""
 
-#: php/wr.php:133
+#: php/wr.php:134
 msgid ""
 "For updates, you can contact <a href=\"https://bsky.app/profile/"
 "maribelhearn42.bsky.social\" target=\"_blank\">me</a> or <a href=\"https://"
 "www.youtube.com/@KirbyComment\" target=\"_blank\">KirbyComment</a>."
 msgstr ""
 
-#: php/wr.php:135
+#: php/wr.php:136
 msgid ""
 "Historical records older than September 2024 were sourced from the Touhou WR "
 "History Repository, a publicly available dataset created and maintained by "
@@ -2413,63 +2412,75 @@ msgid ""
 "href=\"https://ko-fi.com/nylilsa\">their Ko-fi</a>."
 msgstr ""
 
-#: php/wr.php:143 php/wr.php:151 php/wr.php:181
+#: php/wr.php:144 php/wr.php:152 php/wr.php:182
 msgid "Overall Records"
 msgstr ""
 
-#: php/wr.php:144 php/wr.php:152 php/wr.php:233
+#: php/wr.php:145 php/wr.php:153 php/wr.php:240
 msgid "World Records"
 msgstr ""
 
-#: php/wr.php:145 php/wr.php:164 php/wr.php:407
+#: php/wr.php:146 php/wr.php:165 php/wr.php:413
 msgid "Player Search"
 msgstr ""
 
-#: php/wr.php:146 php/wr.php:165 php/wr.php:452
+#: php/wr.php:147 php/wr.php:166 php/wr.php:462
 msgid "Recent Records"
 msgstr ""
 
-#: php/wr.php:166 php/wr.php:380 php/wr.php:500
+#: php/wr.php:167 php/wr.php:386 php/wr.php:510
 msgid "History"
 msgstr ""
 
-#: php/wr.php:174
+#: php/wr.php:175
 msgid "Number of Recent Records"
 msgstr ""
 
-#: php/wr.php:189
+#: php/wr.php:190
 msgid "Difficulty"
 msgstr ""
 
-#: php/wr.php:340
+#: php/wr.php:347
 msgid "Click a game cover to show its list of world records."
 msgstr ""
 
-#: php/wr.php:369
+#: php/wr.php:375
 msgid "Unverified scores"
 msgstr ""
 
-#: php/wr.php:372
+#: php/wr.php:378
 msgid "Link videos over replays"
 msgstr ""
 
-#: php/wr.php:383
+#: php/wr.php:389
 msgid "Browse History"
 msgstr ""
 
-#: php/wr.php:390 php/wr.php:521
+#: php/wr.php:396 php/wr.php:530
 msgid "No history available."
 msgstr ""
 
-#: php/wr.php:408
+#: php/wr.php:414
 msgid "Choose a player name from the menu below to show their WRs."
 msgstr ""
 
-#: php/wr.php:548
+#: php/wr.php:416
+msgid "Include former WRs"
+msgstr ""
+
+#: php/wr.php:435
+msgid "Loading..."
+msgstr ""
+
+#: php/wr.php:436
+msgid "That player only holds former WRs."
+msgstr ""
+
+#: php/wr.php:557
 msgid "No. of WRs"
 msgstr ""
 
-#: php/wr.php:549
+#: php/wr.php:558
 msgid "Different games"
 msgstr ""
 

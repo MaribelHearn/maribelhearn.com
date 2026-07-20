@@ -2,11 +2,20 @@
 global $API_BASE;
 $id = 0;
 $games = curl_get($API_BASE . '/api/v1/game/');
-if ($games === false || strpos($games, 'Internal Server Error') !== false) {
-	die('Download failed!');
+if (strpos($games, 'Internal Server Error') !== false) {
+    $_GET['error'] = 500;
+    include_once('php/error.php');
+    include_once('php/shared/postscript.php');
+    die();
+} else if (strpos($games, 'Service Unavailable') !== false) {
+    $_GET['error'] = 503;
+    include_once('php/error.php');
+    include_once('php/shared/postscript.php');
+    die();
+} else {
+    $games = json_decode($games, true);
 }
 $rubrics_json = file_get_contents('json/rubrics.json');
-$games = json_decode($games, true);
 $Rubrics = json_decode($rubrics_json, true);
 
 function manoku(string $str, int $len, int $offset, string $lang) {
@@ -67,21 +76,21 @@ function is_phantasmagoria(string $game) {
 ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>
+    <p id='lastupdate'><?php echo _('This event has been discontinued as of 2020. This page remains up for archival purposes.') ?></p>
     <p id='drcIntro'><?php
-		echo _('The <strong>Dodging Rain Competition (DRC)</strong> is a Touhou game competition that was devised by ' .
-		'<a href="https://www.youtube.com/user/mariomaster657">ZM</a> and is held on <a href="https://discord.gg/Ucae3Uf">' .
-		'the official DRC Discord</a>. Two teams go up against each other in several different categories. ' .
-		'Each player posts an arbitrarily long list of categories, ordered by preference, which can be either survival ' .
-		'or scoring of any Touhou shooting game and any difficulty. They will be matched up against a player from ' .
+		echo _('The <strong>Dodging Rain Competition (DRC)</strong> was a Touhou game competition that was started by ' .
+		'<a href="https://www.youtube.com/user/mariomaster657">ZM</a> and was held on the DRC Discord. Two teams went up against each other in several different categories. ' .
+		'Each player posted an arbitrarily long list of categories, ordered by preference, which can be either survival ' .
+		'or scoring of any Touhou shooting game and any difficulty. They would be matched up against a player from ' .
 		'the other team, in a category that both players had on their list. ' .
-		'The teams and categories are determined by the DRC management team. ' .
-		'Players are given two weeks to sign up for the competition, and once it starts, ' .
-		'two weeks to submit a replay, which will be awarded points dependent on the rubrics. ' .
-		'Runs done outside those two weeks are invalid. ' .
-		'Players can submit an unlimited number of replays; the replay that is worth the most DRC points will count.');
+		'The teams and categories were determined by the DRC management team. ' .
+		'Players were given two weeks to sign up for the competition, and once it started, ' .
+		'two weeks to submit a replay, which would be awarded points dependent on the rubrics. ' .
+		'Runs done outside those two weeks were invalid. ' .
+		'Players could submit an unlimited number of replays; the replay that was worth the most DRC points would count.');
 	?></p>
     <p id='drcIntroPts'><?php
-		echo _('If you want to know how many DRC points a run is worth, ' .
+		echo _('If you want to know how many DRC points a run was worth, ' .
 		'the points for a given run can be determined using the calculator below.');
 	?></p>
     <p id='countdown'></p>
