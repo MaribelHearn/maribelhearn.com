@@ -7,36 +7,13 @@
             <span class='icon kofi_icon'></span> Support me
         </a>
     </p>
-    <h2 id='page_links'>Page Links</h2>
     <div>
         <div class='pages_left'>
-            <h3>Games</h3>
+            <h3>Records</h3>
             <ul class='page_table'>
                 <li class='link'>
-                    <a href='/scoring'><span class='icon scoring_icon'></span> High Score Storage</a>
-                    <span class='tooltip'>Allows you to save your Touhou game scores, as well as calculate how they compare to the world records.</span>
-                </li>
-                <li class='link'>
-                    <a href='/survival'><span class='icon survival_icon'></span> Survival Progress Table Generator</a>
-                    <span class='tooltip'>Tool that lets you generate a table that summarises your Touhou survival progress.</span>
-                </li>
-                <li class='link'>
-                    <a href='/drc'><span class='icon drc_icon'></span> Dodging Rain Competition</a>
-                    <span class='icon flag_japan'></span>
-                    <span class='icon flag_china'></span>
-                    <span class='icon flag_germany'></span>
-                    <span class='tooltip'>Webpage intended for use by the Dodging Rain Competition (see page for explanation).</span>
-                </li>
-                <li class='link'>
-                    <a href='/tools'><span class='icon tools_icon'></span> Touhou Patches and Tools</a>
-                    <span class='icon flag_japan'></span>
-                    <span class='icon flag_russia'></span>
-                    <span class='icon flag_germany'></span>
-                    <span class='icon flag_spain'></span>
-                    <span class='tooltip'>A collection of helpful patches and tools for the Touhou shooting games, many of which are for efficient practicing.</span>
-                </li>
-                <li class='link'>
                     <a href='/wr'><span class='icon wr_icon'></span> Touhou World Records</a>
+                    <br class='language_br'>
                     <span class='icon flag_japan'></span>
                     <span class='icon flag_china'></span>
                     <span class='icon flag_russia'></span>
@@ -46,6 +23,7 @@
                 </li>
                 <li class='link'>
                     <a href='/lnn'><span class='icon lnn_icon'></span> Touhou Lunatic No Miss No Bombs</a>
+                    <br class='language_br'>
                     <span class='icon flag_japan'></span>
                     <span class='icon flag_china'></span>
                     <span class='icon flag_russia'></span>
@@ -55,47 +33,83 @@
                     runs of the Touhou shooting games are listed here.</span>
                 </li>
                 <li class='link'>
+                    <a href='/pc98'><span class='icon pc98_icon'></span> Touhou PC-98 Leaderboard</a>
+                    <span class='tooltip'>A leaderboard for the Touhou PC-98 games, featuring Lunatic and Extra difficulty.</span>
+                </li>
+            </ul>
+            <h3>Utilities</h3>
+            <ul class='page_table'>
+                <li class='link'>
+                    <a href='/tiers'><span class='icon tiers_icon'></span> Touhou Tier List Creator</a>
+                    <span class='tooltip'>Custom Touhou tier lists can be created here, both characters and official works.</span>
+                </li>
+                <li class='link'>
+                    <a href='/scoring'><span class='icon scoring_icon'></span> High Score Storage</a>
+                    <span class='tooltip'>Allows you to save your Touhou game scores, as well as calculate how they compare to the world records.</span>
+                </li>
+                <li class='link'>
+                    <a href='/survival'><span class='icon survival_icon'></span> Survival Progress Table Generator</a>
+                    <span class='tooltip'>Tool that lets you generate a table that summarises your Touhou survival progress.</span>
+                </li>
+                <li class='link'>
+                    <a href='/tools'><span class='icon tools_icon'></span> Touhou Patches and Tools</a>
+                    <br class='language_br'>
+                    <span class='icon flag_japan'></span>
+                    <span class='icon flag_russia'></span>
+                    <span class='icon flag_germany'></span>
+                    <span class='icon flag_spain'></span>
+                    <span class='tooltip'>A collection of helpful patches and tools for the Touhou shooting games, many of which are for efficient practicing.</span>
+                </li>
+            </ul>
+            <h3>Archives</h3>
+            <ul class='page_table'>
+                <li class='link'>
                     <a href='/gensokyo'><span class='icon gensokyo_icon'></span> Gensokyo Replay Archive</a>
                     <span class='tooltip'>A complete and searchable archive of the replays from replays.gensokyo.org.</span>
                 </li>
                 <li class='link'>
-                    <a href='/pofv'><span class='icon pofv_icon'></span> Phantasmagoria of Flower View</a>
+                    <a href='/royalflare'><span class='icon royalflare_icon'></span> ロイヤルフレアの記録 Royalflare Archive</a>
+                    <br class='language_br'>
+                    <span class='icon flag_japan'></span>
+                    <span class='tooltip'>A complete and searchable archive of the replays, history and player rankings from score.royalflare.net.</span>
+                </li>
+                <li class='link'>
+                    <a href='/drc'><span class='icon drc_icon'></span> Dodging Rain Competition</a>
+                    <br class='language_br'>
+                    <span class='icon flag_japan'></span>
                     <span class='icon flag_china'></span>
-                    <span class='tooltip'>Portal for competitive PoFV play, featuring info about its metagame and tournaments and links to relevant resources.</span>
+                    <span class='icon flag_germany'></span>
+                    <span class='tooltip'>Webpage intended for use by the Dodging Rain Competition (see page for explanation).</span>
                 </li>
                 <li class='link'>
                     <a href='/fangame'><span class='icon fangame_icon'></span> Fangame Accomplishments</a>
                     <span class='tooltip'>Notable accomplishments in Touhou fangames and Touhou-related games, including both LNNs and score runs.</span>
                 </li>
+            </ul>
+        </div>
+        <div class='pages_right'>
+            <h3>Support</h3>
+            <ul class='page_table'>
                 <li class='link'>
                     <a href='/faq'><span class='icon faq_icon'></span> Frequently Asked Questions</a>
                     <span class='tooltip'>Answers to some of the most frequently asked questions about the Touhou shoot 'em up games by beginning players.</span>
-                </li>
-                <li class='link'>
-                    <a href='/royalflare'><span class='icon royalflare_icon'></span> ロイヤルフレアの記録 Royalflare Archive</a>
-                    <span class='icon flag_japan'></span>
-                    <span class='tooltip'>A complete and searchable archive of the replays, history and player rankings from score.royalflare.net.</span>
-                </li>
-                <li class='link'>
-                    <a href='/pc98'><span class='icon pc98_icon'></span> Touhou PC-98 Leaderboard</a>
-                    <span class='tooltip'>A leaderboard for the Touhou PC-98 games, featuring Lunatic and Extra difficulty.</span>
                 </li>
                 <li class='link'>
                     <a href='https://wiki.maribelhearn.com'><span class='icon wiki_icon'></span> Danmaku Gameplay Wiki</a>
                     <span class='tooltip'>The wiki for the Touhou gameplay community, covering strategies and gameplay information for the bullet hell games.</span>
                 </li>
             </ul>
-        </div>
-        <div class='pages_right'>
             <h3>Other</h3>
             <ul class='page_table'>
                 <li class='link'>
-                    <a href='/thvote'><span class='icon thvote_icon'></span> THWiki Popularity Poll Results Translation</a>
-                    <span class='tooltip'>Complete English translation of the full results of the THWiki Popularity Poll.</span>
+                    <a href='/pofv'><span class='icon pofv_icon'></span> Phantasmagoria of Flower View</a>
+                    <br class='language_br'>
+                    <span class='icon flag_china'></span>
+                    <span class='tooltip'>Portal for competitive PoFV play, featuring info about its metagame and tournaments and links to relevant resources.</span>
                 </li>
                 <li class='link'>
-                    <a href='/tiers'><span class='icon tiers_icon'></span> Touhou Tier List Creator</a>
-                    <span class='tooltip'>Custom Touhou tier lists can be created here, both characters and official works.</span>
+                    <a href='/thvote'><span class='icon thvote_icon'></span> THWiki Popularity Poll Results Translation</a>
+                    <span class='tooltip'>Complete English translation of the full results of the THWiki Popularity Poll.</span>
                 </li>
                 <li class='link'>
                     <a href='/slots'><span class='icon slots_icon'></span> Touhou Slot Machine</a>
@@ -132,8 +146,8 @@
             <p class='center'>Taishisamaaa, Omega, MeFigaYoma, Sodamachine, guy, 32th System, Redaction, Kawaii_Shadowii, Isaac, yeashie, めいたむ, hakatashi, Famas2995, RB, Moo, patchouli, iHateBlueTalismans, Crow and anonymous supporters</p>
         </div>
     </div>
-    <footer id='bottom'>
-        <p class='center'><a href='/privacy'>Privacy Policy</a></p>
+    <footer id='bottom' class='center'>
+        <p><a href='/privacy'>Privacy Policy</a></p>
         <?php if (file_exists('.git/FETCH_HEAD')) { echo '<p id="last_modified" class="center">Last updated at ' . date('Y-m-d H:i:s', filemtime('.git/FETCH_HEAD')) . ' ' . date('T') . '</p>'; } ?>
     </footer>
 </div>

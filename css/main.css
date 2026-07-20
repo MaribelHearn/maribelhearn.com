@@ -138,6 +138,9 @@ input[type=button].delete {
 .cookie {
     width: 250px;
 }
+.language_br {
+    display: none;
+}
 #map {
     width: 53%;
 }
@@ -146,7 +149,7 @@ input[type=button].delete {
 }
 #bottom {
     clear: both;
-    padding-top: 25px;
+    padding-top: 10px;
     font-size: 11px;
     color: #505050;
 }
