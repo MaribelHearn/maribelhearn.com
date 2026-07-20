@@ -432,7 +432,8 @@ foreach ($wr_data as $key => $data) {
             </select>
         </div>
     </div>
-    <p id='player_loading' class='center'>Loading...</p>
+    <p id='player_loading' class='center'><?php echo _('Loading...') ?></p>
+    <p id='empty_results' class='center'><?php echo _('That player only holds former WRs.'); ?></p>
 	<div id='player_list' class='overflow_mobile'>
 		<table class='sortable'>
 			<thead id='player_thead'>

@@ -434,9 +434,11 @@ function showPlayerWRs(player, records) {
 
     if (numberOfWRs === 0) {
         playerList.style.display = "none";
+        document.getElementById("empty_results").style.display = "block";
         return;
     }
 
+    document.getElementById("empty_results").style.display = "none";
     document.getElementById("player_sum").innerHTML = numberOfWRs;
     playerList.style.display = "block";
 }
@@ -449,6 +451,7 @@ function getPlayerWRs(player) {
     const playerList = document.getElementById("player_list");
     playerList.style.display = "none";
     document.getElementById("player_loading").style.display = "block";
+    document.getElementById("empty_results").style.display = "none";
     const xhr = new XMLHttpRequest();
     xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=game,difficulty&type=Score&region=Eastern&verified=true&historical=true${!formerWRenabled ? "&score__wr=true" : ""}`);
     xhr.onreadystatechange = function () {
