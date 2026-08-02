@@ -73,7 +73,8 @@ $RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_li
                 $recent = json_decode($recent, true);
                 $recent = $recent['results'];
                 foreach ($recent as $key => $data) {
-                    $status = get_status($thresholds, $data['score'], $data['category']['game'], $data['category']['difficulty']);
+                    $shot = $data['category']['shot'];
+                    $status = get_status($thresholds, $data['score'], $data['category']['game'], $data['category']['difficulty'], $shot);
                     if (!$status) {
                         continue;
                     }
@@ -96,7 +97,7 @@ $RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_li
                     echo '<td class="' . $data['category']['game'] . 'p">' . _($data['category']['game']) . _(' ') . _($data['category']['difficulty']) . '</td>';
                     echo '<td data-sort="' . $data['score'] . '">' . $score_text . '</td>';
                     echo '<td>' . $data['player'] . '</td>';
-                    echo '<td>' . $data['category']['shot'] . '</td>';
+                    echo '<td>' . $shot . '</td>';
                     echo '<td class="' . $status_class . '">' . $status . '</td>';
                     echo '<td>' . $video . '</td>';
                     echo '<td data-sort="' . $date_raw . '">' . $date . '</td>';
