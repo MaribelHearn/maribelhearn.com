@@ -105,11 +105,6 @@ function showLNNtable(game, LNNs) {
     for (const lnn of LNNs) {
         const player = lnn.player;
         const shot = lnn.category.shot;
-
-        if (players.hasOwnProperty(player) && players[player].includes(shot)) {
-            continue;
-        }
-
         let route = lnn.category.route;
         let chara = shot;
 
@@ -117,6 +112,10 @@ function showLNNtable(game, LNNs) {
             const tmp = shot.slice(0, -6);
             route = shot.replace(tmp, "");
             chara = tmp;
+        }
+
+        if (players.hasOwnProperty(player) && players[player].includes(shot + route)) {
+            continue;
         }
 
         if (currentShot != shot || game != "UFO" && currentRoute != route) {
