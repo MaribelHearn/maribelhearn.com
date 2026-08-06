@@ -147,7 +147,7 @@
         </div>
     </div>
     <footer id='bottom' class='center'>
-        <p><a href='/privacy'>Privacy Policy</a></p>
+        <p class='center'><a href='/privacy'>Privacy Policy</a></p>
         <?php if (file_exists('.git/FETCH_HEAD')) { echo '<p id="last_modified" class="center">Last updated at ' . date('Y-m-d H:i:s', filemtime('.git/FETCH_HEAD')) . ' ' . date('T') . '</p>'; } ?>
     </footer>
 </div>
