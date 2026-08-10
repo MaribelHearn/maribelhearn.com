@@ -69,6 +69,10 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
     display: inline-block;
     background-image: url('/assets/games/wr/dl.png');
 }
+.gold {
+    font-weight: bold;
+    color: gold;
+}
 #wrap:after {
     content: "\200C";
     display: block;

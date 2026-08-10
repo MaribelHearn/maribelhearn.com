@@ -118,7 +118,7 @@ function showLNNtable(game, LNNs) {
             continue;
         }
 
-        if (currentShot != shot || game != "UFO" && currentRoute != route) {
+        if (currentShot != shot || !["UFO", "GFW"].includes(game) && currentRoute != route) {
             if (currentShot !== "") {
                 document.getElementById(`${currentShot}${currentRoute}n`).innerHTML = shotCount;
                 shotCount = 0;
@@ -135,6 +135,11 @@ function showLNNtable(game, LNNs) {
             currentShot = shot;
         }
 
+        if (route === "Gold" && document.getElementById(player)) {
+            document.getElementById(player).classList.add("gold");
+            continue;
+        }
+
         if (player !== '-') {
             players[player] = [shot];
         }
@@ -146,7 +151,7 @@ function showLNNtable(game, LNNs) {
         }
 
         const shotElement = document.getElementById(`${shot}${currentRoute}`);
-        shotElement.innerHTML += `, ${player}`;
+        shotElement.innerHTML += `, <span id='${player}'${route === "Gold" ? " class='gold'" : ""}'>${player}</span>`;
         
         if (route == "UFOs") {
             shotElement.innerHTML += " (UFOs)";
@@ -281,7 +286,13 @@ function showPlayerLNNs(player, LNNs) {
 
         date = (!data.date ? _("Unknown") : formatDate(data.date));
 
-        document.getElementById(`${game}s`).innerHTML += _(data.category.shot);
+
+        if (game == "GFW" && data.category.route == "Gold") {
+            document.getElementById(`${game}s`).innerHTML += `<span class='gold'>${_(data.category.shot)} (Gold)</span>`;
+        }
+        else {
+            document.getElementById(`${game}s`).innerHTML += _(data.category.shot);
+        }
 
         if (game == "IN") {
             document.getElementById(`${game}s`).innerHTML += `<span class='${data.category.route}'>${_(data.category.route)}</span>`;
@@ -375,7 +386,7 @@ function splitCategory(category, translate) {
         parts.splice(parts.length - 1, 1);
     }
 
-    if (game == "UFO" && route != "UFOs") {
+    if (game == "UFO" && route != "UFOs" || game == "GFW" && route != "Gold") {
         shot = route;
         route = undefined;
     } else {
