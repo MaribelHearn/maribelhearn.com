@@ -135,8 +135,8 @@ function showLNNtable(game, LNNs) {
             currentShot = shot;
         }
 
-        if (route === "Gold" && document.getElementById(player)) {
-            document.getElementById(player).classList.add("gold");
+        if (route === "Gold" && document.getElementById(player + shot)) {
+            document.getElementById(player + shot).classList.add("gold");
             continue;
         }
 
@@ -151,7 +151,7 @@ function showLNNtable(game, LNNs) {
         }
 
         const shotElement = document.getElementById(`${shot}${currentRoute}`);
-        shotElement.innerHTML += `, <span id='${player}'${route === "Gold" ? " class='gold'" : ""}'>${player}</span>`;
+        shotElement.innerHTML += `, <span id='${player}${shot}'${route === "Gold" ? " class='gold'" : ""}>${player}</span>`;
         
         if (route == "UFOs") {
             shotElement.innerHTML += " (UFOs)";
