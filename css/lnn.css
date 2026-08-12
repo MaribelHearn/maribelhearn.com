@@ -71,7 +71,7 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
 }
 .gold {
     font-weight: bold;
-    color: #826d00;
+    background-color: gold;
 }
 #wrap:after {
     content: "\200C";

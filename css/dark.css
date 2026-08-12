@@ -135,5 +135,6 @@ a:link.dropdown_button, a:visited.dropdown_button {
     background-position: -1104px 0px;
 }
 .gold {
+    background-color: inherit;
     color: gold;
 }
