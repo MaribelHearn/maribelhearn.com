@@ -81,6 +81,10 @@ function format_lm(string $lm, string $lang) {
     return str_replace('%date', date_tl($lm, $lang), $result);
 }
 
+function player_sort(string $a, string $b) {
+    return strip_tags($a) <=> strip_tags($b);
+}
+
 $last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&date__isnull=False&type=LNN&limit=1');
 $last_modified = json_decode($last_modified, true);
 $last_modified = $last_modified['results'][0]['date'];
@@ -176,7 +180,7 @@ $last_modified = $last_modified['results'][0]['date'];
             if (!in_array($shot, $shots_seen)) {
                 if (!empty($shots_seen)) {
                     $players_shot = array_unique($players_shot);
-                    sort($players_shot);
+                    usort($players_shot, 'player_sort');
                     echo '<td>' . (count($players_shot) == 1 && $game == 'UDoALG' ? '-' : count($players_shot)) . '</td><td>' . implode(', ', $players_shot) . '</td></tr>';
                 }
                 array_push($shots_seen, $shot);
@@ -194,11 +198,24 @@ $last_modified = $last_modified['results'][0]['date'];
                 }
             }
             if ($route == 'UFOs') {
+                // add player to the list (with UFOs)
                 array_push($players_shot, $player . ' (UFOs)');
-            } else {
-                array_push($players_shot, $player);
             }
-            if ($player != '-') {
+            else if ($route == 'Gold') {
+                // if player is already listed, replace listing with gold listing
+                if (array_search('<span>' . $player . '</span>', $players_shot)) {
+                    unset($players_shot[array_search('<span>' . $player . '</span>', $players_shot)]);
+                    unset($players_game[array_search($player, $players_game)]);
+                }
+                array_push($players_shot, '<span class="gold">' . $player . '</span>');
+                array_push($players_game, $player);
+            }
+            else if (!array_search('<span class="gold">' . $player . '</span>', $players_shot)) {
+                // add player to the list (if not already listed with gold)
+                array_push($players_shot, '<span>' . $player . '</span>');
+            }
+            if ($player != '-' && !array_search('<span class="gold">' . $player . '</span>', $players_shot)) {
+                // avoid adding duplicate GFW LNNs (regular + gold) to the count
                 array_push($players_game, $player);
             }
             if (empty($data['replay']) && empty($data['video'])) {
@@ -206,7 +223,7 @@ $last_modified = $last_modified['results'][0]['date'];
             }
         }
         $players_shot = array_unique($players_shot);
-        sort($players_shot);
+        usort($players_shot, 'player_sort');
         echo '<td>' . count($players_shot) . '</td><td>' . implode(',', $players_shot) . '</td></tr>';
         $number_of_lnns->{$game} = count($players_game);
         $players_game = array_unique($players_game);

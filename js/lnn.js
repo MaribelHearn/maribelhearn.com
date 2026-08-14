@@ -325,6 +325,7 @@ function showPlayerLNNs(player, LNNs) {
 
     if (numberOfLNNs === 0) {
         document.getElementById("empty_category").style.display = "none";
+        document.getElementById("search_loading").style.display = "none";
         searchResults.style.display = "none";
         emptyResults.style.display = "block";
         return;
@@ -338,7 +339,9 @@ function showPlayerLNNs(player, LNNs) {
     }
 
     document.getElementById("category").value = "";
+    document.getElementById("search_category").value = "";
     document.getElementById("second_header").innerHTML = _("Shottype");
+    document.getElementById("search_player").value = player;
     document.getElementById("search_sum").innerHTML = numberOfLNNs;
     document.getElementById("empty_category").style.display = "none";
     document.getElementById("search_loading").style.display = "none";
@@ -482,6 +485,7 @@ function showCategoryLNNs(category, LNNs) {
     }
 
     document.getElementById("player").value = "";
+    document.getElementById("search_player").value = "";
     document.getElementById("search_thead").classList = [];
     document.getElementById("search_thead").classList.add(`${category.split(' ')[0]}t`);
     document.getElementById("second_header").innerHTML = _("Player");
@@ -592,7 +596,11 @@ function setEventListeners() {
     document.getElementById("search_category").addEventListener("change", setCategory, false);
     document.getElementById("search_category").addEventListener("select", setCategory, false);
     document.getElementById("category").addEventListener("keypress", detectEnter, false);
-    document.getElementById("showversus1").addEventListener("click", toggleVersus, false);
+
+    if (document.getElementById("showversus1")) {
+        document.getElementById("showversus1").addEventListener("click", toggleVersus, false);
+    }
+
     document.getElementById("showversus2").addEventListener("click", toggleVersus, false);
     document.getElementById("showversus3").addEventListener("click", toggleVersus, false);
     document.getElementById("information").addEventListener("click", openModal, false);
@@ -704,7 +712,11 @@ function init() {
     }
 
     versusIncluded = getCookie("include_vs") ? true : false;
-    document.getElementById("showversus1").checked = versusIncluded;
+    
+    if (document.getElementById("showversus1")) {
+        document.getElementById("showversus1").checked = versusIncluded;
+    }
+
     document.getElementById("showversus2").checked = versusIncluded;
     document.getElementById("showversus3").checked = versusIncluded;
     setEventListeners();
