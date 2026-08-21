@@ -40,6 +40,9 @@ The backend also comes with a Dockerfile to run it as a container.
 Copy the environment file from `.env.template` and name it for example `.env.dev` or `.env.prod`.
 In it, you should specify the address PHP-FPM is run at (usually your device's local IP address).
 
+For the page background as well as page visit statistics to work, the `.stats` directory needs to be owned by the process that runs PHP. Usually this will be `daemon` (user ID 6).
+Make sure that the `.stats` directory and all files inside of it are owned by that user. To do that, run `chown -R 6:6 .stats`.
+
 In the PHP-FPM container, enable the `gettext` module. Install the `locales` package and enable every locale listed in the `locale` directory in this repository, such as `en_GB.UTF-8 UTF-8`.
 
 ## Running without Docker

@@ -152,6 +152,9 @@ function generate_string(string $type = 'nonce') {
     for ($i = 0; $i < 32; $i++) {
         $str .= $chars[rand(0, $number_of_chars - 1)];
     }
+    if (!file_exists($dir)) {
+        return $str;
+    }
     $dir = ($type == 'token' ? '../' : '') . '.stats/';
     $file = fopen($dir . $type, 'w');
     if (flock($file, LOCK_EX)) {

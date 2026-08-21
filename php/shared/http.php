@@ -17,7 +17,7 @@ function curl_get(string $url){
 }
 
 function is_localhost(string $addr) {
-    return $addr == '::1' || $addr == '127.0.0.1' || substr($addr, 0, 8) == '192.168.';
+    return !filter_var($addr, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE);
 }
 
 $API_BASE = is_localhost($_SERVER['REMOTE_ADDR']) ? 'http://' . $_SERVER['HTTP_HOST'] : 'https://maribelhearn.com';
