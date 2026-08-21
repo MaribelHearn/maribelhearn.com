@@ -309,7 +309,7 @@ $last_modified = $last_modified['results'][0]['date'];
                     $categories = curl_get($API_BASE . '/api/v1/category/?type=LNN&region=Eastern');
                     $categories = json_decode($categories, true);
                     foreach ($categories as $key => $category) {
-                        if ($category['game'] == 'UDoALG' && in_array($category['shot'], $BANNED_CHARS)) {
+                        if ($category['game'] == 'UDoALG' && in_array($category['shot'], $BANNED_CHARS) || $category['route'] == 'Gold') {
                             continue;
                         }
                         $category_id = $category['game'] . ' ' . $category['shot'];

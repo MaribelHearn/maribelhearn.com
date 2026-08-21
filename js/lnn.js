@@ -389,7 +389,7 @@ function splitCategory(category, translate) {
         parts.splice(parts.length - 1, 1);
     }
 
-    if (game == "UFO" && route != "UFOs" || game == "GFW" && route != "Gold") {
+    if (game == "UFO" && route != "UFOs") {
         shot = route;
         route = undefined;
     } else {
@@ -466,7 +466,8 @@ function showCategoryLNNs(category, LNNs) {
         dateRaw = (!data.date ? 0 : formatDate(data.date, "raw"));
         searchTable.innerHTML += `<tr id='tr_${numberOfLNNs}'></tr>`;
 
-        document.getElementById(`tr_${numberOfLNNs}`).innerHTML += `<td>${data.player}</td><td data-sort="${scoreSort}">${score}</td><td>${replay}</td><td>${video}</td><td data-sort="${dateRaw}">${date}</td>`;
+        document.getElementById(`tr_${numberOfLNNs}`).innerHTML += `<td${data.category.route === "Gold" ? " class='gold'" : ""}>${data.player}</td>`;
+        document.getElementById(`tr_${numberOfLNNs}`).innerHTML += `<td data-sort="${scoreSort}">${score}</td><td>${replay}</td><td>${video}</td><td data-sort="${dateRaw}">${date}</td>`;
         numberOfLNNs += 1;
     }
 
