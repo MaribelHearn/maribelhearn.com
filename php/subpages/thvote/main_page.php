@@ -11,8 +11,8 @@ music and works will not change when the full results are published.</p>-->
 <?php if (empty($subpage)) echo '<p class="thin">Currently, the questionnaires of older polls are still missing. They may be translated at a later date.</p>' ?>
 <?php if (empty($subpage)) echo '<p class="thin">You may navigate the history using the arrow keys.</p>' ?>
 <?php if (empty($subpage)) echo '<p class="donation wide center"><a href="https://ko-fi.com/maribelhearn42"><span class="icon kofi_icon"></span> Support me</a></p>' ?>
-<!--<h2>How do I vote?</h2>
-<p>Please have a look at the <a href='/thvote/guide'>voting guide</a>.</p>-->
+<h2>How do I vote?</h2>
+<p>Please have a look at the <a href='/thvote/guide'>voting guide</a>.</p>
 <!--<p>The official site now has <strong>English translated results!</strong> Go here to read them: <a href='https://toho-vote.info/'>https://toho-vote.info/</a></p>
 <p>The questionnaire results are still in Japanese, however. The questionnaire translation on this page and the Extra Statistics section are coming soon.</p>-->
 <h2>Contents</h2>

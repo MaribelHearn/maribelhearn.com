@@ -20,7 +20,7 @@
 <p>The characters, music and works are <strong>in English</strong> as of this year! This makes voting much easier. Everything is chronologically ordered.</p>
 <img class='guide_mobile' src='../assets/other/thvote/voting_english.png' alt='English voting'>
 <p>The first one gets 2 points, all others get 1 point. The second textbox for each item is optional; you can fill in additional comments there.</p>
-<p>For the questionnaire, there is a translation of the 2023 iteration  on the main page on this site: <a href='/thvote#questionnaire'>https://maribelhearn.com/thvote#questionnaire</a>.</p>
+<p>For the questionnaire, there is a translation on the main page on this site: <a href='/thvote#questionnaire'>https://maribelhearn.com/thvote#questionnaire</a>.</p>
 <p>At the bottom, there is a checkbox. If you check it, you agree to potentially having your comments featured on the <strong>Touhou Station stream</strong>. Leave it unchecked if you do not want to be part of it.</p>
 <h2 id='fanworks'>Submitting supporting fanworks</h2>
 <p>To submit a supporting fanwork for a character, navigate to "Support Works" using the navigation menu on the left.</p>
@@ -38,7 +38,7 @@ Liven up the popularity poll with your support!</p>
     <li>You can submit as many works as you want in any format; manga, fanfic, music, video, etc.;</li>
     <li>You can only submit your own work;</li>							
     <li>Please only submit completed works. Refrain from submitting unfinished works;</li>
-    <li>Please submit works that were made after the previous poll (September of 2023);</li>
+    <li>Please submit works that were made after the previous poll;</li>
     <li>While there are no limitations on word count, please refrain from submitting a simple support comment;</li>
     <li>Please refrain from submitting works with requests such as "I'll do 〇〇〇 (If this character gets within 〇〇th place / if you vote for 〇〇〇)";</li>
     <li>We do not provide a platform to upload your works. Please upload the works on your own website or a different website and then submit a link to that work;</li>
