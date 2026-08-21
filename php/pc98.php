@@ -6,7 +6,7 @@ if (strpos($last_modified, 'Internal Server Error') !== false) {
     include_once('php/error.php');
     include_once('php/shared/postscript.php');
     die();
-} else if (strpos($last_modified, 'Service Unavailable') !== false) {
+} else if (strpos($last_modified, 'Service Unavailable') !== false || strpos($last_modified, 'Not Found') !== false) {
     $_GET['error'] = 503;
     include_once('php/error.php');
     include_once('php/shared/postscript.php');

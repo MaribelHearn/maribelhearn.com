@@ -10,7 +10,7 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
     include_once('php/error.php');
     include_once('php/shared/postscript.php');
     die();
-} else if (strpos($wr_data, 'Service Unavailable') !== false || strpos($wr_data, 'ConnectionError') !== false) {
+} else if (strpos($wr_data, 'Service Unavailable') !== false || strpos($wr_data, 'Not Found') !== false) {
     $_GET['error'] = 503;
     include_once('php/error.php');
     include_once('php/shared/postscript.php');
