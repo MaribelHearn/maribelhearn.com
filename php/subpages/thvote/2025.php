@@ -9873,7 +9873,7 @@
         </thead>
 		<tbody>
 			<tr>
-				<td>Played the official game</td>
+				<td>Played the official games</td>
 				<td>8,679</td>
 				<td>61.35%</td>
 			</tr>
