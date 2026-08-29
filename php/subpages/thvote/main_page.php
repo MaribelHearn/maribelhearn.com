@@ -215,7 +215,7 @@ music and works will not change when the full results are published.</p>-->
 <tr><td>159</td><td>150</td><td>157</td><td><span>Elis</span></td><td>266</td><td>16</td><td>50</td><td>1</td></tr>
 <tr><td>160</td><td>160</td><td>154</td><td><span>Kotohime</span></td><td>256</td><td>20</td><td>45</td><td>1</td></tr>
 <tr><td>161</td><td>168</td><td>158</td><td><span>Unzan</span></td><td>249</td><td>11</td><td>74</td><td>0</td></tr>
-<tr><td>162</td><td>157</td><td>164</td><td><span>る〜こと</span></td><td>238</td><td>13</td><td>71</td><td>0</td></tr>
+<tr><td>162</td><td>157</td><td>164</td><td><span>Ruukoto</span></td><td>238</td><td>13</td><td>71</td><td>0</td></tr>
 <tr><td>163</td><td>154</td><td>155</td><td><span>Konngara</span></td><td>236</td><td>18</td><td>51</td><td>1</td></tr>
 <tr><td>164</td><td>164</td><td>161</td><td><span>Rika</span></td><td>227</td><td>22</td><td>61</td><td>0</td></tr>
 <tr><td>165</td><td>159</td><td>152</td><td><span>Urumi Ushizaki</span></td><td>223</td><td>17</td><td>51</td><td>3</td></tr>
@@ -277,7 +277,7 @@ music and works will not change when the full results are published.</p>-->
 <tr><td>221</td><td>209</td><td>208</td><td><span>Moon Capital Gate Guards</span></td><td>13</td><td>1</td><td>5</td><td>0</td></tr>
 <tr><td>222</td><td>202</td><td>209</td><td><span>Shirou Sendai</span></td><td>11</td><td>1</td><td>4</td><td>0</td></tr>
 <tr><td>222</td><td>207</td><td>216</td><td><span>Salt Merchant</span></td><td>11</td><td>0</td><td>3</td><td>0</td></tr>
-<tr><td>224</td><td>-</td><td>-</td><td><span>牡丹太夫</span></td><td>8</td><td>0</td><td>4</td><td>0</td></tr>
+<tr><td>224</td><td>-</td><td>-</td><td><span>Botan Dayuu</span></td><td>8</td><td>0</td><td>4</td><td>0</td></tr>
 <tr><td>225</td><td>215</td><td>217</td><td><span>Zashiki-warashi</span></td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
 	</tbody>
 </table></div>
@@ -660,7 +660,7 @@ music and works will not change when the full results are published.</p>-->
 <tr><td>353</td><td>280</td><td>295</td><td><span>Year-Round Absorbed Curiosity</span></td><td>96</td><td>3</td><td>14</td></tr>
 <tr><td>353</td><td>361</td><td>356</td><td><span>Magical Storm</span></td><td>96</td><td>5</td><td>13</td></tr>
 <tr><td>353</td><td>347</td><td>314</td><td><span>Silent Beast Spirits</span></td><td>96</td><td>8</td><td>18</td></tr>
-<tr><td>356</td><td>-</td><td>-</td><td><span>文化計画都市　霊長新益京</span></td><td>95</td><td>7</td><td>11</td></tr>
+<tr><td>356</td><td>-</td><td>-</td><td><span>Planned City of Culture, Primate Spirit Aramashi-kyou</span></td><td>95</td><td>7</td><td>11</td></tr>
 <tr><td>357</td><td>-</td><td>-</td><td><span>Nara Otherworld Park</span></td><td>94</td><td>3</td><td>15</td></tr>
 <tr><td>358</td><td>374</td><td>368</td><td><span>The Tank Girl's Dream</span></td><td>93</td><td>6</td><td>18</td></tr>
 <tr><td>359</td><td>392</td><td>395</td><td><span>The Earth Spirits' Homecoming</span></td><td>92</td><td>3</td><td>13</td></tr>
@@ -821,7 +821,7 @@ music and works will not change when the full results are published.</p>-->
 <tr><td>510</td><td>520</td><td>506</td><td><span>Disastrous Gemini</span></td><td>21</td><td>1</td><td>3</td></tr>
 <tr><td>510</td><td>520</td><td>475</td><td><span>Firmament Army</span></td><td>21</td><td>1</td><td>4</td></tr>
 <tr><td>516</td><td>467</td><td>501</td><td><span>Scarlet Night</span></td><td>20</td><td>2</td><td>1</td></tr>
-<tr><td>516</td><td>467</td><td>502</td><td><span>An Ice Fairy in Spring　- 静 -</span></td><td>20</td><td>0</td><td>1</td></tr>
+<tr><td>516</td><td>467</td><td>502</td><td><span>An Ice Fairy in Spring　- still -</span></td><td>20</td><td>0</td><td>1</td></tr>
 <tr><td>516</td><td>482</td><td>489</td><td><span>Magical Power of the Mallet</span></td><td>20</td><td>1</td><td>5</td></tr>
 <tr><td>516</td><td>450</td><td>462</td><td><span>Two Worlds</span></td><td>20</td><td>0</td><td>5</td></tr>
 <tr><td>516</td><td>520</td><td>481</td><td><span>Holy Knight of Orléans</span></td><td>20</td><td>1</td><td>3</td></tr>
