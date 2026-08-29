@@ -39,7 +39,7 @@
         if ($country == 'Turkey') {
             return 'Türkiye';
         }
-        else if ($country == 'Netherlands') {
+        else if ($country == 'Netherlands' || $country == 'Curacao') {
             return 'The-Netherlands';
         }
         else if ($country == 'Palestinian Territory') {
