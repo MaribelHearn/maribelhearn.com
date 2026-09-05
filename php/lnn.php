@@ -209,6 +209,7 @@ $last_modified = $last_modified['results'][0]['date'];
                 }
                 array_push($players_shot, '<span class="gold">' . $player . '</span>');
                 array_push($players_game, $player);
+                $player_lnns->{$player} -= 1;
             }
             else if (!array_search('<span class="gold">' . $player . '</span>', $players_shot)) {
                 // add player to the list (if not already listed with gold)
