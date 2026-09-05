@@ -289,6 +289,7 @@ function showPlayerLNNs(player, LNNs) {
 
         if (game == "GFW" && data.category.route == "Gold") {
             document.getElementById(`${game}s`).innerHTML += `<span class='gold'>${_(data.category.shot)} (Gold)</span>`;
+            numberOfLNNs -= 1;
         }
         else {
             document.getElementById(`${game}s`).innerHTML += _(data.category.shot);
@@ -431,8 +432,9 @@ function setCategory(event) {
 function showCategoryLNNs(category, LNNs) {
     const searchResults = document.getElementById("search_results");
     const emptyResults = document.getElementById("empty_category");
-    let numberOfLNNs = 0;
     const searchTable = document.getElementById("search_tbody");
+    let numberOfLNNs = 0;
+    let i = 0;
     searchTable.innerHTML = "";
 
     for (const data of LNNs) {
@@ -464,11 +466,16 @@ function showCategoryLNNs(category, LNNs) {
 
         date = (!data.date ? _("Unknown") : formatDate(data.date));
         dateRaw = (!data.date ? 0 : formatDate(data.date, "raw"));
-        searchTable.innerHTML += `<tr id='tr_${numberOfLNNs}'></tr>`;
+        searchTable.innerHTML += `<tr id='tr_${i}'></tr>`;
 
-        document.getElementById(`tr_${numberOfLNNs}`).innerHTML += `<td${data.category.route === "Gold" ? " class='gold'" : ""}>${data.player}</td>`;
-        document.getElementById(`tr_${numberOfLNNs}`).innerHTML += `<td data-sort="${scoreSort}">${score}</td><td>${replay}</td><td>${video}</td><td data-sort="${dateRaw}">${date}</td>`;
+        document.getElementById(`tr_${i}`).innerHTML += `<td${data.category.route === "Gold" ? " class='gold'" : ""}>${data.player}</td>`;
+        document.getElementById(`tr_${i}`).innerHTML += `<td data-sort="${scoreSort}">${score}</td><td>${replay}</td><td>${video}</td><td data-sort="${dateRaw}">${date}</td>`;
         numberOfLNNs += 1;
+        i += 1;
+
+        if (data.category.route === "Gold") {
+            numberOfLNNs -= 1;
+        }
     }
 
     if (numberOfLNNs === 0) {
