@@ -35,7 +35,7 @@ $works = array(
     'AlternativeFactsinEasternUtopia', 'DollsinPseudoParadise', 'GhostlyFieldClub', 'ChangeabilityofStrangeDream', 'Retrospective53minutes', 'AkyuusUntouchedScoreVolume1',
     'AkyuusUntouchedScoreVolume2', 'AkyuusUntouchedScoreVolume3', 'AkyuusUntouchedScoreVolume4', 'AkyuusUntouchedScoreVolume5', 'MagicalAstronomy', 'UnknownFlowerMesmerizingJourney',
     'TrojanGreenAsteroid', 'Neo-traditionalismofJapan', 'DrLatencysFreakReport', 'DatelessBarOldAdam', 'GouyokuIbun', 'TheGrimoireofUsami', 'FoulDetectiveSatori', 'LotusEaters', 'Rainbow-ColoredSeptentrion',
-    'HundredthBlackMarket', 'UnfinishedDreamofAllLivingGhost', 'TabooJapanDisentanglement', 'WhisperedOracleOfHakureiShrine', 'FossilizedWonders',
+    'HundredthBlackMarket', 'UnfinishedDreamofAllLivingGhost', 'TabooJapanDisentanglement', 'WhisperedOracleOfHakureiShrine', 'FossilizedWonders', 'ArtificialUtopiainRuins', 'EmbodimentofScarletDevilNewClassic',
 );
 $shots = array(
     'EoSDReimuA', 'EoSDReimuB', 'EoSDMarisaA', 'EoSDMarisaB', 'PCBReimuA', 'PCBReimuB', 'PCBMarisaA', 'PCBMarisaB', 'PCBSakuyaA', 'PCBSakuyaB', 'INBorderTeam', 'INMagicTeam', 'INScarletTeam',
