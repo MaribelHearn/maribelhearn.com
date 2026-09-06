@@ -119,14 +119,17 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
 #EoSD_image, #EoSD_image_old {
     background-position: -250px 0px;
 }
-#PCB_image, #PCB_image_old {
+#EoSD-NC_image, #EoSD-NC_image_old {
     background-position: -300px 0px;
 }
-#IN_image, #IN_image_old {
+#PCB_image, #PCB_image_old {
     background-position: -350px 0px;
 }
-#PoFV_image, #PoFV_image_old {
+#IN_image, #IN_image_old {
     background-position: -400px 0px;
+}
+#PoFV_image, #PoFV_image_old {
+    background-position: -450px 0px;
 }
 #MoF_image, #MoF_image_old {
     background-position: 0px 0px;

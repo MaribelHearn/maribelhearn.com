@@ -3,7 +3,7 @@ String.prototype.strip = function () {
     return this.replace(/<\/?[^>]*>/g, "");
 };
 
-const games = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "FW"];
+const games = ["HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "EoSD-NC", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC", "UM", "FW"];
 const diffs = ["Easy", "Normal", "Hard", "Lunatic", "Extra", "Phantasm"];
 const screenshotOptions = {
     backgroundColor: "white",

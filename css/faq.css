@@ -129,44 +129,50 @@ ol {
 #EoSD_image {
     background-position: -250px 0px;
 }
-#PCB_image {
+#EoSD-NC_image {
     background-position: -300px 0px;
 }
-#IN_image {
+#PCB_image {
     background-position: -350px 0px;
 }
-#PoFV_image {
+#IN_image {
     background-position: -400px 0px;
 }
-#MoF_image {
+#PoFV_image {
     background-position: -450px 0px;
 }
-#SA_image {
+#MoF_image {
     background-position: -500px 0px;
 }
-#UFO_image {
+#SA_image {
     background-position: -550px 0px;
 }
-#GFW_image {
+#UFO_image {
     background-position: -600px 0px;
 }
-#TD_image {
+#GFW_image {
     background-position: -650px 0px;
 }
-#DDC_image {
+#TD_image {
     background-position: -700px 0px;
 }
-#LoLK_image {
+#DDC_image {
     background-position: -750px 0px;
 }
-#HSiFS_image {
+#LoLK_image {
     background-position: -800px 0px;
 }
-#WBaWC_image {
+#HSiFS_image {
     background-position: -850px 0px;
 }
-#UM_image {
+#WBaWC_image {
     background-position: -900px 0px;
+}
+#UM_image {
+    background-position: -950px 0px;
+}
+#FW_image {
+    background-position: -1050px 0px;
 }
 #emus {
     border-spacing: 30px 0;

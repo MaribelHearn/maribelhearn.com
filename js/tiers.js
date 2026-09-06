@@ -58,8 +58,7 @@ const DEFAULT_SETTINGS = {
             "IN": { enabled: true }, "PoFV": { enabled: true }, "MoF": { enabled: true }, "SA": { enabled: true },
             "UFO": { enabled: true }, "TD": { enabled: true }, "DDC": { enabled: true }, "LoLK": { enabled: true },
             "HSiFS": { enabled: true }, "WBaWC": { enabled: true }, "UM": { enabled: true }, "UDoALG": { enabled: true },
-            "FW": { enabled: true }, "Spinoff": { enabled: true },
-            "Manga": { enabled: true }, "CD": { enabled: true }
+            "FW": { enabled: true }, "Spinoff": { enabled: true }, "Manga": { enabled: true }, "CD": { enabled: true }
         },
         "works": {
             "PC-98": { enabled: true }, "Classic": { enabled: true }, "Modern1": { enabled: true }, "Modern2": { enabled: true },
@@ -70,7 +69,7 @@ const DEFAULT_SETTINGS = {
             "EoSD": { enabled: true }, "PCB": { enabled: true }, "IN": { enabled: true }, "PoFV": { enabled: true },
             "MoF": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true }, "TD": { enabled: true },
             "DDC": { enabled: true }, "LoLK": { enabled: true }, "HSiFS": { enabled: true }, "WBaWC": { enabled: true },
-            "UM": { enabled: true }
+            "UM": { enabled: true }, "UDoALG": { enabled: true }, "FW": { enabled: true },
         },
         "cards": {
             "Touhou18": { enabled: true }, "Touhou185": { enabled: true }, "Touhou19": { enabled: true}
@@ -163,7 +162,13 @@ function addSpacing(item) {
     }
 
 
-    return item.replace("Sin Gyoku", "SinGyoku").replace("Yuugen Magan", "YuugenMagan").replace("P C-9 8", "PC-98").replace("L L S", "LLS").replace("G F W", "GFW").replace("T D", "TD");
+    return item.replace("Sin Gyoku", "SinGyoku")
+            .replace("Yuugen Magan", "YuugenMagan")
+            .replace("P C-9 8", "PC-98")
+            .replace("L L S", "LLS")
+            .replace("G F W", "GFW")
+            .replace("T D", "TD")
+            .replace("New Classic", "(New Classic)");
 }
 
 function getTierNumOf(item) {
