@@ -207,7 +207,7 @@ foreach ($wr_data as $key => $data) {
                         if ($wr['score'] > $MAX_SCORE) {
                             $score_text = '<span class="cs">' . number_format($wr['score'], 0, '.', ',') . '<span class="tooltip truescore">' . _('Uncapped') . '</span></span> ';
                         }
-                        echo '<tr id="' . $game . 'o"><td' . ($num == 128 ? ' data-sort="12.8"' : '') . '>' . $num . '</td><td class="' . $game . '">' . _($game) . '</td>';
+                        echo '<tr id="' . $game . 'o"><td>' . ($num == 6.5 ? 6 : $num) . '</td><td class="' . $game . '">' . _($game) . '</td>';
                         echo '<td id="' . $game . 'overall0" data-sort="' . $wr['score'] . '">' . $score_text . '</td>';
                         if ($wr['score'] == 0) {
                             echo '<td id="' . $game . 'overall1">-</td>';
@@ -262,72 +262,74 @@ foreach ($wr_data as $key => $data) {
                 }
             }
             echo '</tr></thead><tbody>';
-            for ($i = 0; $i < sizeof($obj[$diff_key]); $i++) {
-                $shot = array_keys($obj[$diff_key])[$i];
-                echo '<tr><td>' . format_shot($game, $shot) . '</td>';
-                for ($j = 0; $j < sizeof($obj); $j++) {
-                    $diff = array_keys($obj)[$j];
-                    $shots = $obj[array_keys($obj)[$j]];
-                    if (isset($shots[$shot])) {
-                        $score = $shots[$shot][0];
-                        $player = $shots[$shot][1];
-                        $date = $shots[$shot][2];
-                        $replay = $shots[$shot][3];
-                        $video = empty($shots[$shot][4]) ? '' : $shots[$shot][4];
-                    } else {
-                        $score = 0;
-                        $player = '';
-                        $date = '';
-                        $replay = '';
-                        $video = '';
-                    }
-                    if ($game == 'GFW' && $diff == 'Extra') {
-                        continue;
-                    } else if ($game == 'HSiFS' && $diff == 'Extra') {
-                        if (strpos($shot, 'Spring')) {
-                            $shot = substr($shot, 0, -6);
-                            $score_text = number_format($shots[$shot][0], 0, '.', ',');
-                            if (isset($_COOKIE['prefer_video']) && !empty($video)) {
-                                $score = '<a class="replay" href="' . $video . '" target="_blank">' . $score . '</a>';
-                                echo '<td rowspan="4">' . $score_text . '<span class="dl_icon"></span>';
-                            } else if (!empty($replay)) {
-                                $score = '<a class="replay" href="' . $replay . '">' . $score . '</a>';
-                                echo '<td rowspan="4">' . $score_text . '<span class="dl_icon"></span>';
-                            } else if (!empty($video)) {
-                                $score = '<a class="replay" href="' . $video . '" target="_blank">' . $score . '</a>';
-                                echo '<td rowspan="4">' . $score_text . '<span class="dl_icon"></span>';
-                            } else {
-                                echo '<td rowspan="4">' . $score_text;
+            if (array_key_exists($diff_key, $obj)) {
+                for ($i = 0; $i < sizeof($obj[$diff_key]); $i++) {
+                    $shot = array_keys($obj[$diff_key])[$i];
+                    echo '<tr><td>' . format_shot($game, $shot) . '</td>';
+                    for ($j = 0; $j < sizeof($obj); $j++) {
+                        $diff = array_keys($obj)[$j];
+                        $shots = $obj[array_keys($obj)[$j]];
+                        if (isset($shots[$shot])) {
+                            $score = $shots[$shot][0];
+                            $player = $shots[$shot][1];
+                            $date = $shots[$shot][2];
+                            $replay = $shots[$shot][3];
+                            $video = empty($shots[$shot][4]) ? '' : $shots[$shot][4];
+                        } else {
+                            $score = 0;
+                            $player = '';
+                            $date = '';
+                            $replay = '';
+                            $video = '';
+                        }
+                        if ($game == 'GFW' && $diff == 'Extra') {
+                            continue;
+                        } else if ($game == 'HSiFS' && $diff == 'Extra') {
+                            if (strpos($shot, 'Spring')) {
+                                $shot = substr($shot, 0, -6);
+                                $score_text = number_format($shots[$shot][0], 0, '.', ',');
+                                if (isset($_COOKIE['prefer_video']) && !empty($video)) {
+                                    $score = '<a class="replay" href="' . $video . '" target="_blank">' . $score . '</a>';
+                                    echo '<td rowspan="4">' . $score_text . '<span class="dl_icon"></span>';
+                                } else if (!empty($replay)) {
+                                    $score = '<a class="replay" href="' . $replay . '">' . $score . '</a>';
+                                    echo '<td rowspan="4">' . $score_text . '<span class="dl_icon"></span>';
+                                } else if (!empty($video)) {
+                                    $score = '<a class="replay" href="' . $video . '" target="_blank">' . $score . '</a>';
+                                    echo '<td rowspan="4">' . $score_text . '<span class="dl_icon"></span>';
+                                } else {
+                                    echo '<td rowspan="4">' . $score_text;
+                                }
+                                echo '<br>by <em>' . $shots[$shot][1] . '</em><span class="dimgrey"><br>' . date_tl($shots[$shot][2], $lang) . '</span></td>';
                             }
-                            echo '<br>by <em>' . $shots[$shot][1] . '</em><span class="dimgrey"><br>' . date_tl($shots[$shot][2], $lang) . '</span></td>';
-                        }
-                    } else {
-                        if ($score >= $MAX_SCORE) {
-                            $score_text = '<span class="cs">' . number_format($score, 0, '.', ',') . '<span class="tooltip truescore">' . _('Uncapped') . '</span></span> ';
                         } else {
-                            $score_text = number_format($score, 0, '.', ',');
-                        }
-                        if (isset($_COOKIE['prefer_video']) && !empty($video)) {
-                            $score_text = '<a class="replay" href="' . $video . '" target="_blank">' . $score_text . '<span class="dl_icon"></span></a>';
-                        } else if (!empty($replay)) {
-                            $score_text = '<a class="replay" href="' . $replay . '">' . $score_text . '<span class="dl_icon"></span></a>';
-                        } else if (!empty($video)) {
-                            $score_text = '<a class="replay" href="' . $video . '" target="_blank">' . $score_text . '<span class="dl_icon"></span></a>';
-                        }
-                        if ($score == $overall->{$game}['score'] && $game != 'StB' && $game != 'DS') {
-                            $score_text = '<strong>' . $score_text . '</strong>';
-                        }
-                        if ($score == $diff_max->{$game}->{$diff}['score'] && $game != 'StB' && $game != 'DS') {
-                            $score_text = '<u>' . $score_text . '</u>';
-                        }
-                        if ($score == 0) {
-                            echo '<td></td>';
-                        } else {
-                            echo '<td data-sort="' . $score . '">' . $score_text . '<br>by <em>' . $player . '</em><span class="dimgrey"><br>' . date_tl($date, $lang) . '</span></td>';
+                            if ($score >= $MAX_SCORE) {
+                                $score_text = '<span class="cs">' . number_format($score, 0, '.', ',') . '<span class="tooltip truescore">' . _('Uncapped') . '</span></span> ';
+                            } else {
+                                $score_text = number_format($score, 0, '.', ',');
+                            }
+                            if (isset($_COOKIE['prefer_video']) && !empty($video)) {
+                                $score_text = '<a class="replay" href="' . $video . '" target="_blank">' . $score_text . '<span class="dl_icon"></span></a>';
+                            } else if (!empty($replay)) {
+                                $score_text = '<a class="replay" href="' . $replay . '">' . $score_text . '<span class="dl_icon"></span></a>';
+                            } else if (!empty($video)) {
+                                $score_text = '<a class="replay" href="' . $video . '" target="_blank">' . $score_text . '<span class="dl_icon"></span></a>';
+                            }
+                            if ($score == $overall->{$game}['score'] && $game != 'StB' && $game != 'DS') {
+                                $score_text = '<strong>' . $score_text . '</strong>';
+                            }
+                            if ($score == $diff_max->{$game}->{$diff}['score'] && $game != 'StB' && $game != 'DS') {
+                                $score_text = '<u>' . $score_text . '</u>';
+                            }
+                            if ($score == 0) {
+                                echo '<td></td>';
+                            } else {
+                                echo '<td data-sort="' . $score . '">' . $score_text . '<br>by <em>' . $player . '</em><span class="dimgrey"><br>' . date_tl($date, $lang) . '</span></td>';
+                            }
                         }
                     }
+                    echo '</tr>';
                 }
-                echo '</tr>';
             }
             if ($game == 'GFW') {
                 $score = number_format($obj['Extra']['A1'][0], 0, '.', ',');
