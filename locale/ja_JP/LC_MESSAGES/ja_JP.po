@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-07-20 18:59+0200\n"
-"PO-Revision-Date: 2026-07-20 18:59+0200\n"
+"POT-Creation-Date: 2026-09-09 21:21+0200\n"
+"PO-Revision-Date: 2026-09-09 21:21+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -81,8 +81,8 @@ msgstr ""
 msgid "Releases"
 msgstr ""
 
-#: js/drc.js:144 php/lnn.php:316 php/wr.php:188 php/wr.php:400 php/wr.php:442
-#: php/wr.php:467 php/wr.php:534
+#: js/drc.js:144 php/lnn.php:334 php/wr.php:188 php/wr.php:402 php/wr.php:444
+#: php/wr.php:469 php/wr.php:536
 msgid "Score"
 msgstr "スコア"
 
@@ -90,9 +90,9 @@ msgstr "スコア"
 msgid "Route"
 msgstr "ルート"
 
-#: js/drc.js:192 js/lnn.js:52 js/lnn.js:331 js/wr.js:64 php/drc.php:459
-#: php/lnn.php:254 php/lnn.php:315 php/shared/shared.php:117 php/wr.php:191
-#: php/wr.php:402 php/wr.php:443 php/wr.php:536
+#: js/drc.js:192 js/lnn.js:52 js/lnn.js:344 js/wr.js:64 php/drc.php:459
+#: php/lnn.php:272 php/lnn.php:333 php/shared/shared.php:117 php/wr.php:191
+#: php/wr.php:404 php/wr.php:445 php/wr.php:538
 msgid "Shottype"
 msgstr "キャラ"
 
@@ -145,31 +145,31 @@ msgstr "LNN(N)の数"
 msgid "No. of LNNNNs"
 msgstr "LNNNNの数"
 
-#: js/lnn.js:47 php/lnn.php:53 php/lnn.php:393 php/lnn.php:439
+#: js/lnn.js:47 php/lnn.php:53 php/lnn.php:411 php/lnn.php:457
 msgid "No. of LNNs"
 msgstr "LNNの数"
 
-#: js/lnn.js:260 js/lnn.js:283 js/lnn.js:439 js/lnn.js:452 js/wr.js:417
+#: js/lnn.js:264 js/lnn.js:287 js/lnn.js:454 js/lnn.js:467 js/wr.js:417
 #: js/wr.js:492 js/wr.js:500 php/lnn.php:59 php/wr.php:32
 msgid "Unknown"
 msgstr "不明"
 
-#: js/lnn.js:275 js/lnn.js:449 js/wr.js:409 js/wr.js:488 php/lnn.php:364
-#: php/wr.php:228 php/wr.php:489
+#: js/lnn.js:279 js/lnn.js:464 js/wr.js:409 js/wr.js:488 php/lnn.php:382
+#: php/wr.php:228 php/wr.php:491
 msgid "Link"
 msgstr "リンク"
 
-#: js/lnn.js:312
+#: js/lnn.js:323
 msgid "(All)"
 msgstr "（全）"
 
-#: js/lnn.js:326 php/drc.php:212 php/drc.php:396 php/drc.php:430
-#: php/lnn.php:314 php/lnn.php:392 php/lnn.php:487 php/wr.php:187
+#: js/lnn.js:338 php/drc.php:212 php/drc.php:396 php/drc.php:430
+#: php/lnn.php:332 php/lnn.php:410 php/lnn.php:505 php/wr.php:187
 msgid "Game"
 msgstr "ゲーム"
 
-#: js/lnn.js:477 php/lnn.php:266 php/lnn.php:340 php/lnn.php:438 php/wr.php:189
-#: php/wr.php:401 php/wr.php:418 php/wr.php:468 php/wr.php:535 php/wr.php:556
+#: js/lnn.js:499 php/lnn.php:284 php/lnn.php:358 php/lnn.php:456 php/wr.php:189
+#: php/wr.php:403 php/wr.php:420 php/wr.php:470 php/wr.php:537 php/wr.php:558
 msgid "Player"
 msgstr "プレイヤー"
 
@@ -181,104 +181,108 @@ msgstr "妖怪モード（ダーク）"
 msgid "Human mode (Light)"
 msgstr "人間モード（ライト）"
 
-#: js/utils.js:213
+#: js/utils.js:214
 msgid "Touhou 1 - The Highly Responsive to Prayers"
 msgstr "東方靈異伝　～ The Highly Responsive to Prayers"
 
-#: js/utils.js:214
+#: js/utils.js:215
 msgid "Touhou 2 - The Story of Eastern Wonderland"
 msgstr "東方封魔録　～ the Story of Eastern Wonderland"
 
-#: js/utils.js:215
+#: js/utils.js:216
 msgid "Touhou 3 - Phantasmagoria of Dim.Dream"
 msgstr "東方夢時空　～ Phantasmagoria of Dim.Dream"
 
-#: js/utils.js:216
+#: js/utils.js:217
 msgid "Touhou 4 - Lotus Land Story"
 msgstr "東方幻想郷　～ Lotus Land Story"
 
-#: js/utils.js:217
+#: js/utils.js:218
 msgid "Touhou 5 - Mystic Square"
 msgstr "東方怪綺談　～ Mystic Square"
 
-#: js/utils.js:218
+#: js/utils.js:219
 msgid "Touhou 6 - The Embodiment of Scarlet Devil"
 msgstr "東方紅魔郷　～ the Embodiment of Scarlet Devil"
 
-#: js/utils.js:219 php/lnn.php:493
+#: js/utils.js:220
+msgid "Touhou 6 - The Embodiment of Scarlet Devil (New Classic)"
+msgstr "東方紅魔郷: New Classic　～ the Embodiment of Scarlet Devil"
+
+#: js/utils.js:221 php/lnn.php:511
 msgid "Touhou 7 - Perfect Cherry Blossom"
 msgstr "東方妖々夢　～ Perfect Cherry Blossom"
 
-#: js/utils.js:220 php/lnn.php:497
+#: js/utils.js:222 php/lnn.php:515
 msgid "Touhou 8 - Imperishable Night"
 msgstr "東方永夜抄　～ Imperishable Night"
 
-#: js/utils.js:221
+#: js/utils.js:223
 msgid "Touhou 9 - Phantasmagoria of Flower View"
 msgstr "東方花映塚　～ Phantasmagoria of Flower View"
 
-#: js/utils.js:222
+#: js/utils.js:224
 msgid "Touhou 9.5 - Shoot the Bullet"
 msgstr "東方文花帖　～ Shoot the Bullet"
 
-#: js/utils.js:223
+#: js/utils.js:225
 msgid "Touhou 10 - Mountain of Faith"
 msgstr "東方風神録　～ Mountain of Faith"
 
-#: js/utils.js:224
+#: js/utils.js:226
 msgid "Touhou 11 - Subterranean Animism"
 msgstr "東方地霊殿　～ Subterranean Animism"
 
-#: js/utils.js:225 php/lnn.php:501
+#: js/utils.js:227 php/lnn.php:519
 msgid "Touhou 12 - Undefined Fantastic Object"
 msgstr "東方星蓮船　～ Undefined Fantastic Object"
 
-#: js/utils.js:226
+#: js/utils.js:228
 msgid "Touhou 12.5 - Double Spoiler"
 msgstr "妖精大戦争　～ 東方三月精"
 
-#: js/utils.js:227
+#: js/utils.js:229
 msgid "Touhou 12.8 - Great Fairy Wars"
 msgstr "妖精大戦争　～ 東方三月精"
 
-#: js/utils.js:228 php/lnn.php:505
+#: js/utils.js:230 php/lnn.php:523
 msgid "Touhou 13 - Ten Desires"
 msgstr "東方神霊廟　～ Ten Desires"
 
-#: js/utils.js:229
+#: js/utils.js:231
 msgid "Touhou 14 - Double Dealing Character"
 msgstr "東方輝針城　～ Double Dealing Character"
 
-#: js/utils.js:230
+#: js/utils.js:232
 msgid "Touhou 15 - Legacy of Lunatic Kingdom"
 msgstr "東方紺珠伝　～ Legacy of Lunatic Kingdom"
 
-#: js/utils.js:231 php/lnn.php:509
+#: js/utils.js:233 php/lnn.php:527
 msgid "Touhou 16 - Hidden Star in Four Seasons"
 msgstr "東方天空璋　～ Hidden Star in Four Seasons"
 
-#: js/utils.js:232 php/lnn.php:513
+#: js/utils.js:234 php/lnn.php:531
 msgid "Touhou 17 - Wily Beast and Weakest Creature"
 msgstr "東方鬼形獣　～ Wily Beast and Weakest Creature"
 
-#: js/utils.js:233 php/lnn.php:517
+#: js/utils.js:235 php/lnn.php:535
 msgid "Touhou 18 - Unconnected Marketeers"
 msgstr "東方虹龍洞　～ Unconnected Marketeers"
 
-#: js/utils.js:234
+#: js/utils.js:236
 msgid "Touhou 19 - Unfinished Dream of All Living Ghost"
 msgstr "東方獣王園　～ Unfinished Dream of All Living Ghost（v1.00a）"
 
-#: js/utils.js:235 php/lnn.php:521
+#: js/utils.js:237 php/lnn.php:539
 msgid "Touhou 20 - Fossilized Wonders"
 msgstr "東方錦上京　～ Fossilized Wonders"
 
-#: js/wr.js:217 php/wr.php:208 php/wr.php:306
+#: js/wr.js:217 php/wr.php:208 php/wr.php:307
 msgid "Uncapped"
 msgstr "カンスト解除"
 
-#: js/wr.js:298 js/wr.js:384 php/lnn.php:369 php/lnn.php:372 php/wr.php:492
-#: php/wr.php:521
+#: js/wr.js:298 js/wr.js:384 php/lnn.php:387 php/lnn.php:390 php/wr.php:494
+#: php/wr.php:523
 msgid " "
 msgstr ""
 
@@ -346,8 +350,8 @@ msgstr ""
 "スコアは桁、カンマ、ドット、スペースを含めることができます。クリア重視ではク"
 "リアする必要があります。稼ぎではクリアしなくてもよいです。"
 
-#: php/drc.php:103 php/lnn.php:286 php/lnn.php:339 php/wr.php:441
-#: php/wr.php:466 php/wr.php:512
+#: php/drc.php:103 php/lnn.php:304 php/lnn.php:357 php/wr.php:443
+#: php/wr.php:468 php/wr.php:514
 msgid "Category"
 msgstr "カテゴリー"
 
@@ -658,8 +662,8 @@ msgstr "閾値2"
 msgid "Threshold 3"
 msgstr "閾値3"
 
-#: php/drc.php:355 php/drc.php:475 php/lnn.php:462 php/tools.php:532
-#: php/wr.php:573
+#: php/drc.php:355 php/drc.php:475 php/lnn.php:480 php/tools.php:532
+#: php/wr.php:575
 msgid "Back to Top"
 msgstr "上に帰る"
 
@@ -760,7 +764,7 @@ msgstr "倍率"
 msgid "LNNs are current as of <span id=\"lm\">%date</span>."
 msgstr "<span id=\"lm\">%date</span>現在のLNN記録です。"
 
-#: php/lnn.php:92
+#: php/lnn.php:96
 msgid ""
 "A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. "
 "For every shottype in a game, tables will tell you which players have done "
@@ -772,131 +776,132 @@ msgstr ""
 "特定の作品、ショットタイプで複数回のLNNを達成している場合でも１回とカウントさ"
 "れます。"
 
-#: php/lnn.php:96
+#: php/lnn.php:100
 msgid "Click here to view further information and guidelines for this page."
 msgstr "ここをクリックすると、LNNスレの詳細情報が表示されます。"
 
-#: php/lnn.php:98 php/subpages/faq/jargon.php:3 php/tools.php:13 php/wr.php:139
+#: php/lnn.php:102 php/subpages/faq/jargon.php:3 php/tools.php:13
+#: php/wr.php:139
 msgid "Contents"
 msgstr "内容"
 
-#: php/lnn.php:102 php/lnn.php:109 php/lnn.php:136
+#: php/lnn.php:106 php/lnn.php:113 php/lnn.php:140
 msgid "LNN Lists"
 msgstr "LNNリスト"
 
-#: php/lnn.php:103 php/lnn.php:119 php/lnn.php:263 php/lnn.php:268
-#: php/lnn.php:288 php/wr.php:420
+#: php/lnn.php:107 php/lnn.php:123 php/lnn.php:281 php/lnn.php:286
+#: php/lnn.php:306 php/wr.php:422
 msgid "Search"
 msgstr "探索"
 
-#: php/lnn.php:104 php/lnn.php:120 php/lnn.php:336
+#: php/lnn.php:108 php/lnn.php:124 php/lnn.php:354
 msgid "Recent LNNs"
 msgstr "最近のLNN"
 
-#: php/lnn.php:105 php/lnn.php:121 php/lnn.php:383
+#: php/lnn.php:109 php/lnn.php:125 php/lnn.php:401
 msgid "Overall Count"
 msgstr "総数"
 
-#: php/lnn.php:106 php/lnn.php:122 php/lnn.php:429 php/wr.php:148
-#: php/wr.php:168 php/wr.php:551
+#: php/lnn.php:110 php/lnn.php:126 php/lnn.php:447 php/wr.php:148
+#: php/wr.php:168 php/wr.php:553
 msgid "Player Statistics"
 msgstr "プレイヤーの統計"
 
-#: php/lnn.php:130
+#: php/lnn.php:134
 msgid "Number of Recent LNNs"
 msgstr "最近のLNNの数"
 
-#: php/lnn.php:133 php/wr.php:178
+#: php/lnn.php:137 php/wr.php:178
 msgid "Save Changes"
 msgstr "変更をセーブ"
 
-#: php/lnn.php:164 php/lnn.php:215 php/lnn.php:258 php/lnn.php:416
+#: php/lnn.php:168 php/lnn.php:233 php/lnn.php:276 php/lnn.php:434
 msgid "Overall"
 msgstr "合計"
 
-#: php/lnn.php:173 php/lnn.php:255
+#: php/lnn.php:177 php/lnn.php:273
 msgid "(Different players)"
 msgstr "（プレイヤー）"
 
-#: php/lnn.php:174 php/lnn.php:256
+#: php/lnn.php:178 php/lnn.php:274
 msgid "Players"
 msgstr "プレイヤー"
 
-#: php/lnn.php:222
+#: php/lnn.php:240
 msgid "Click a game cover to show its list of LNNs."
 msgstr "LNNリストはゲームをクリック。"
 
-#: php/lnn.php:223 php/lnn.php:386 php/lnn.php:432
+#: php/lnn.php:241 php/lnn.php:404 php/lnn.php:450
 msgid "Include Versus games"
 msgstr "対戦ゲームを含む"
 
-#: php/lnn.php:264
+#: php/lnn.php:282
 msgid "Choose a player or category from the menus below to show their LNNs."
 msgstr ""
 "個人のLNNを表示するには、下記のメニューからプレイヤー名をまたはカテゴリーを選"
 "んでください。"
 
-#: php/lnn.php:317 php/lnn.php:341 php/wr.php:192 php/wr.php:403 php/wr.php:444
-#: php/wr.php:469 php/wr.php:537
+#: php/lnn.php:335 php/lnn.php:359 php/wr.php:192 php/wr.php:405 php/wr.php:446
+#: php/wr.php:471 php/wr.php:539
 msgid "Replay"
 msgstr "リプレイ"
 
-#: php/lnn.php:318 php/lnn.php:342 php/wr.php:193 php/wr.php:404 php/wr.php:445
-#: php/wr.php:470 php/wr.php:538
+#: php/lnn.php:336 php/lnn.php:360 php/wr.php:193 php/wr.php:406 php/wr.php:447
+#: php/wr.php:472 php/wr.php:540
 msgid "Video"
 msgstr "ビデオ"
 
-#: php/lnn.php:319 php/lnn.php:343 php/wr.php:194 php/wr.php:405 php/wr.php:446
-#: php/wr.php:471 php/wr.php:539
+#: php/lnn.php:337 php/lnn.php:361 php/wr.php:194 php/wr.php:407 php/wr.php:448
+#: php/wr.php:473 php/wr.php:541
 msgid "Date"
 msgstr "日付"
 
-#: php/lnn.php:327 php/wr.php:455
+#: php/lnn.php:345 php/wr.php:457
 msgid "Total"
 msgstr "合計"
 
-#: php/lnn.php:333
+#: php/lnn.php:351
 msgid "No such player."
 msgstr "該当者なし。"
 
-#: php/lnn.php:334
+#: php/lnn.php:352
 msgid "There are currently no LNNs in that category."
 msgstr "この部門においてLNNは未達成。"
 
-#: php/lnn.php:394
+#: php/lnn.php:412
 msgid "Different players"
 msgstr "プレイヤー"
 
-#: php/lnn.php:422
+#: php/lnn.php:440
 msgid "Replays"
 msgstr "リプレイ"
 
-#: php/lnn.php:440
+#: php/lnn.php:458
 msgid "Games LNN'd"
 msgstr "ゲーム"
 
-#: php/lnn.php:450
+#: php/lnn.php:468
 msgid " (All PC-98)"
 msgstr "（全旧作）"
 
-#: php/lnn.php:451
+#: php/lnn.php:469
 msgid " (All Windows)"
 msgstr "（全Windows）"
 
-#: php/lnn.php:452
+#: php/lnn.php:470
 msgid " (All Games)"
 msgstr "（全ゲーム）"
 
-#: php/lnn.php:477
+#: php/lnn.php:495
 msgid "Information"
 msgstr "情報"
 
-#: php/lnn.php:478
+#: php/lnn.php:496
 msgid "This is an unofficial, community-maintained website."
 msgstr ""
 "LNNスレッドはあくまで、非公式のコミュニティに管理されるサイトでございます。"
 
-#: php/lnn.php:479
+#: php/lnn.php:497
 msgid ""
 "In general, you need to upload a replay or a video to an online platform for "
 "an LNN clear to be accepted on the website, for example <a href=\"https://"
@@ -910,53 +915,53 @@ msgstr ""
 "（例：サイレントセレナ、YouTube）。Twitchなどのライブ放送のプラットフォームも"
 "可能です。例外の場合もあります。"
 
-#: php/lnn.php:483
+#: php/lnn.php:501
 msgid ""
 "Extra conditions are required for certain games. These conditions are as "
 "follows:"
 msgstr "作品によってノーミスノーボムの上に以下の条件も必要とされます。"
 
-#: php/lnn.php:488
+#: php/lnn.php:506
 msgid "Condition"
 msgstr "条件"
 
-#: php/lnn.php:494
+#: php/lnn.php:512
 msgid "No Border Breaks"
 msgstr "ノー撃無"
 
-#: php/lnn.php:498
+#: php/lnn.php:516
 msgid "All Spells Captured"
 msgstr "フルスペカ"
 
-#: php/lnn.php:502
+#: php/lnn.php:520
 msgid "No UFO Summons*"
 msgstr "ノーUFO*"
 
-#: php/lnn.php:506
+#: php/lnn.php:524
 msgid "No Trance"
 msgstr "ノートランス"
 
-#: php/lnn.php:510
+#: php/lnn.php:528
 msgid "No Release"
 msgstr "ノー開放"
 
-#: php/lnn.php:514
+#: php/lnn.php:532
 msgid "No Berserk Roar, No Roar Breaks"
 msgstr "ノー霊撃ノー暴走ロアリング"
 
-#: php/lnn.php:518
+#: php/lnn.php:536
 msgid "No Cards"
 msgstr "ノーカード"
 
-#: php/lnn.php:522
+#: php/lnn.php:540
 msgid "No Hyper Breaks"
 msgstr "ノー霊撃"
 
-#: php/lnn.php:526
+#: php/lnn.php:544
 msgid "* Optional"
 msgstr "* 任意"
 
-#: php/lnn.php:527
+#: php/lnn.php:545
 msgid ""
 "If a run is shown to have been cheated beyond reasonable doubt, for example "
 "by using savestates, pause buffering, or slowdown, it will be removed from "
@@ -965,11 +970,11 @@ msgstr ""
 "登録されたLNNが不正だと判明された場合（クイックセーブ、ポーズ連打、低速ツール"
 "使用など）、LNNスレッドから削除されます。"
 
-#: php/lnn.php:528
+#: php/lnn.php:546
 msgid "Submission"
 msgstr "提出"
 
-#: php/lnn.php:529
+#: php/lnn.php:547
 msgid ""
 "At present, we do <strong>not</strong> use a submission form. If you upload "
 "your replay or video somewhere, it will eventually be noticed by us and "
@@ -978,7 +983,7 @@ msgstr ""
 "現在は提出機能を設けて<strong>いません</strong>。リプレイや動画を上げること"
 "で、管理人に見つかる次第で登録します。"
 
-#: php/lnn.php:530
+#: php/lnn.php:548
 msgid ""
 "If we missed your run, you can contact <a href=\"https://bsky.app/profile/"
 "maribelhearn42.bsky.social\" target=\"_blank\">me</a>, <a href=\"https://"
@@ -1429,6 +1434,10 @@ msgstr "魔理沙G1"
 #: php/shared/translations.php:104
 msgid "MarisaG2"
 msgstr "魔理沙G2"
+
+#: php/shared/translations.php:105
+msgid "EoSD-NC"
+msgstr "紅NC"
 
 #: php/subpages/faq/jargon.php:2
 msgid ""
@@ -4313,15 +4322,15 @@ msgstr "各作品世界記録一覧"
 msgid "World Records"
 msgstr "世界記録"
 
-#: php/wr.php:146 php/wr.php:165 php/wr.php:413
+#: php/wr.php:146 php/wr.php:165 php/wr.php:415
 msgid "Player Search"
 msgstr "プレイヤーを捜す"
 
-#: php/wr.php:147 php/wr.php:166 php/wr.php:462
+#: php/wr.php:147 php/wr.php:166 php/wr.php:464
 msgid "Recent Records"
 msgstr "最近の世界記録"
 
-#: php/wr.php:167 php/wr.php:386 php/wr.php:510
+#: php/wr.php:167 php/wr.php:388 php/wr.php:512
 msgid "History"
 msgstr "履歴"
 
@@ -4333,50 +4342,50 @@ msgstr "最近の世界記録の数"
 msgid "Difficulty"
 msgstr "難易度"
 
-#: php/wr.php:347
+#: php/wr.php:349
 msgid "Click a game cover to show its list of world records."
 msgstr "世界記録リストはゲームをクリック。"
 
-#: php/wr.php:375
+#: php/wr.php:377
 msgid "Unverified scores"
 msgstr "非公開スコア"
 
-#: php/wr.php:378
+#: php/wr.php:380
 msgid "Link videos over replays"
 msgstr "リプレイより動画を表示"
 
-#: php/wr.php:389
+#: php/wr.php:391
 msgid "Browse History"
 msgstr "部門の履歴を参照"
 
-#: php/wr.php:396 php/wr.php:530
+#: php/wr.php:398 php/wr.php:532
 msgid "No history available."
 msgstr "履歴はありません。"
 
-#: php/wr.php:414
+#: php/wr.php:416
 msgid "Choose a player name from the menu below to show their WRs."
 msgstr ""
 "個人のWRを表示するには、下記のメニューからプレイヤー名を選んでください。"
 
-#: php/wr.php:416
+#: php/wr.php:418
 #, fuzzy
 #| msgid "Include Versus games"
 msgid "Include former WRs"
 msgstr "対戦ゲームを含む"
 
-#: php/wr.php:435
+#: php/wr.php:437
 msgid "Loading..."
 msgstr ""
 
-#: php/wr.php:436
+#: php/wr.php:438
 msgid "That player only holds former WRs."
 msgstr ""
 
-#: php/wr.php:557
+#: php/wr.php:559
 msgid "No. of WRs"
 msgstr "WR数"
 
-#: php/wr.php:558
+#: php/wr.php:560
 msgid "Different games"
 msgstr "ゲーム"
 

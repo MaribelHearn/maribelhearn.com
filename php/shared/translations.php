@@ -102,4 +102,5 @@ echo _('MarisaY1');
 echo _('MarisaY2');
 echo _('MarisaG1');
 echo _('MarisaG2');
+echo _('EoSD-NC');
 ?>
