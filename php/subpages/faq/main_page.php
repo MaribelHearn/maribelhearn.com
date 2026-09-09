@@ -18,7 +18,7 @@ as well as what mindset to have when playing these games and gameplay tips. You 
 You will need to learn and practice and you will improve over time.</p>
 <h4 id='start'>What game should I start with?</h4>
 <p><em>See the <a href='/faq/start'>Which game to start with</a> page for the full story.</em></p>
-<p>Tl;dr: PCB, IN, MoF and DDC (Touhou 7, 8, 10 and 14) for simple mechanics and a smooth learning curve.
+<p>TL;DR: PCB, IN, MoF and DDC (Touhou 7, 8, 10 and 14) for simple mechanics and a smooth learning curve.
 SA, UFO and LoLK (Touhou 11, 12 and 15) are not recommended, but are perfectly fine if you are up to the challenge.</p>
 <hr>
 <h2 id='where'>Where do I get the games?</h2>
@@ -27,12 +27,14 @@ SA, UFO and LoLK (Touhou 11, 12 and 15) are not recommended, but are perfectly f
 Go to <a href='https://hakureishrine.org'>hakureishrine.org</a> for all of the official games that are available on Steam.</p>
 <h4 id='amazon'>Amazon and other webshops</h4>
 <p>For games not on Steam, or if you do not want to use Steam, there are other places where you can buy the games legally. Amazon has physical copies of these games but for a higher price.
-This currently is the only legal way to obtain games EoSD (Touhou 6) to PoFV (Touhou 9). Other distributors such as DLSite, DMM and PLAYISM have some of the entries if you do not want to buy from Steam.
+This currently is the only legal way to obtain games PCB (Touhou 7) to PoFV (Touhou 9). Other distributors such as DLSite, DMM and PLAYISM have some of the entries if you do not want to buy from Steam.
 Check out the Touhou Wiki <a href='https://en.touhouwiki.net/wiki/Purchasing_Guide'>Purchasing Guide</a> for help with this.</p>
 <hr>
 <h2 id='setup'>Setting up</h2>
-<p>After getting the game, <em>assuming you got the game legally</em>, you will most likely want to set up before playing. If you want to play in English or any other language you will need to download THCRAP.
-Many games will also require vpatch or the game will have input lag. EoSD (Touhou 6) is pretty stubborn and needs more setup, see the page <a href='/faq/eosd'>Getting EoSD to work</a>.</p>
+<p>After getting the game, <em>assuming you got the game legally</em>, you will most likely want to set up before playing.
+EoSD New Classic (Touhou Koumakyou: New Classic - the Embodiment of Scarlet Devil) officially supports 12 languages, including English.</p>
+<p>If you want to play in English or any other language in any other Touhou game, however, you will need to download THCRAP.
+Many games will also require vpatch or the game will have input lag.</p>
 <p>Apart from UM (Touhou 18) and newer, Touhou does not have built-in rebinding for keyboards. An external program such as AutoHotkey is needed, explained further below.</p>
 <h4 id='vpatch'>What is vpatch and how do I use it?</h4>
 <p>An essential tool to remove input lag. See the <a href='/tools#vpatch'>Touhou Patches and Tools</a> page.</p>
@@ -55,7 +57,7 @@ or in English using <a href='/tools#thcrap'>THCRAP</a>.</p>
 <img src='/assets/games/faq/error_cfg.png' alt='CFG file error message'>
 <p>If you get an error message that mentions "thXX.cfg", that means the game does not have permission to write files in its folder. Most likely, your game is installed into Program Files. Move the game to a location in your Users folder to fix this.</p>
 <h4 id='keys'>How do I remap my keys?</h4>
-<p>If you are playing UM (Touhou 18), you can do this in-game. Otherwise, use <a href='https://www.autohotkey.com/'>AutoHotKey</a>.
+<p>If you are playing UM (Touhou 18) or newer, you can do this in-game. Otherwise, use <a href='https://www.autohotkey.com/'>AutoHotKey</a>.
 For Mac or Linux, see <a href='https://en.touhouwiki.net/wiki/Running_in_Linux_and_Mac_OS_X/Misc_fixes#Remapping_Keys'>this Touhou Wiki page</a>.</p>
 <h4 id='maclinux'>I use Mac / Linux, can I play Touhou?</h4>
 <p>Yes. See the Touhou Wiki <a href='https://en.touhouwiki.net/wiki/Running_in_Linux_and_Mac_OS_X'>Running in Linux and Mac OS X</a> page for help.</p>
@@ -69,6 +71,7 @@ delete it and try again. Otherwise, try any of the following:</p>
 </ul>
 <hr>
 <h2 id='eosd'>Getting EoSD (Touhou 6) to work</h2>
+<p><strong>NOTE: this only applies to the original 2002 version of the game. The Steam release works on modern computers.</strong></p>
 <p><em>See the page <a href='/faq/eosd'>Getting EoSD to work</a> for how to run Touhou 6.</em></p>
 <hr>
 <h2 id='gfx'>Graphical issues</h2>

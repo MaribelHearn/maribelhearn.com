@@ -1,4 +1,6 @@
 <h2 id='eosd'>Getting EoSD to work</h2>
+<p><strong>NOTE: With the release of <em>New Classic</em> on 9 September 2026, <a href='https://store.steampowered.com/app/4924840/Classic__the_Embodiment_of_Scarlet_Devil'>the original EoSD has been released on Steam</a> to work on modern computers.</strong></p>
+<p><strong>This renders this guide <em>obsolete</em>, except for those people running specifically the 2002 release of the game.</strong></p>
 <p><em>This guide is courtesy of <a href='https://www.twitch.tv/the_star_king'>Star King</a></em></p>
 <p>Getting EoSD to run properly on Windows - especially Windows 10 and 11 - can seem like an arduous task, but generally speaking, there's really just three main issues that need to be addressed:</p>
 <ol>
