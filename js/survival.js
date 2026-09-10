@@ -3,7 +3,7 @@ String.prototype.strip = function () {
     return this.replace(/<\/?[^>]*>/g, "");
 };
 
-const games = ["HRtPMakai", "HRtPJigoku", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "INFinalA", "INFinalB", "PoFV",
+const games = ["HRtPMakai", "HRtPJigoku", "SoEW", "PoDD", "LLS", "MS", "EoSD", "EoSD-NC", "PCB", "INFinalA", "INFinalB", "PoFV",
 "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLKLegacy", "LoLKPointdevice", "HSiFS", "WBaWC", "UM", "UDoALG", "FW"];
 const stbScenes = 85;
 const ayaScenes = 103;
@@ -155,6 +155,7 @@ function initGameCounts() {
         "LLS": 0,
         "MS": 0,
         "EoSD": 0,
+        "EoSD-NC": 0,
         "PCB": 0,
         "IN": 0,
         "PoFV": 0,
@@ -650,6 +651,16 @@ function readLocalStorage() {
                 };
             }
 
+            if (!vals.hasOwnProperty("EoSD-NC")) {
+                vals["EoSD-NC"] = {
+                    "Easy": "N/A",
+                    "Normal": "N/A",
+                    "Hard": "N/A",
+                    "Lunatic": "N/A",
+                    "Extra": "N/A"
+                };
+            }
+
             if (vals.hasOwnProperty("IN")) {
                 vals.INFinalA = vals.IN;
                 vals.INFinalB = {
@@ -1082,7 +1093,15 @@ function fillCompletionTables() {
             continue;
         }
 
-        if (game == "PCB" && na.IN < 100) { // otherwise IN is at the end
+        if (game.includes("EoSD-NC")) {
+            continue;
+        }
+
+        if (game == "PCB" && na["EoSD-NC"] < 100) { // otherwise EoSD-NC is at the end
+            tbody.innerHTML += `<tr><td>EoSD-NC</td><td>${Math.round(completions["EoSD-NC"])}%</td></tr>`;
+        }
+
+        if (game == "PoFV" && na.IN < 100) { // otherwise IN is at the end
             tbody.innerHTML += `<tr><td>IN</td><td>${Math.round(completions["IN"])}%</td></tr>`;
         }
 

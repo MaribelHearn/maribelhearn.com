@@ -1,5 +1,5 @@
 <?php
-$games = ['HRtPMakai', 'HRtPJigoku', 'SoEW', 'PoDD', 'LLS', 'MS', 'EoSD', 'PCB', 'INFinalA', 'INFinalB', 'PoFV',
+$games = ['HRtPMakai', 'HRtPJigoku', 'SoEW', 'PoDD', 'LLS', 'MS', 'EoSD', 'EoSD-NC', 'PCB', 'INFinalA', 'INFinalB', 'PoFV',
 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLKLegacy', 'LoLKPointdevice', 'HSiFS', 'WBaWC', 'UM', 'UDoALG', 'FW'];
 $diffs = ['Easy', 'Normal', 'Hard', 'Lunatic', 'Extra'];
 $stb = (object) [
