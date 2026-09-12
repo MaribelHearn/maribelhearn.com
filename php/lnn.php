@@ -421,7 +421,7 @@ $last_modified = $last_modified['results'][0]['date'];
                                 continue;
                             }
                             if ($game_nums->{$game} < 6 || $count > 0) {
-                                echo '<tr><td>' . $game_nums->{$game} . '</td><td class="' . $game . '">' . _($game) . '</td>';
+                                echo '<tr><td>' . ($game_nums->{$game} == 6.5 ? 6 : $game_nums->{$game}) . '</td><td class="' . $game . '">' . _($game) . '</td>';
                                 echo '<td>' . $number_of_lnns->{$game} . '</td><td>' . $number_of_players->{$game} . '</td></tr>';
                                 $total_lnns += $number_of_lnns->{$game};
                             }
