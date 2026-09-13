@@ -52,6 +52,7 @@ li {
     border: 1px solid #606060;
     word-wrap: break-word;
     cursor: pointer;
+    font-family: 'Lucida Console', 'Noto Sans Mono', monospace;
 }
 .tier_content {
     text-align: left;

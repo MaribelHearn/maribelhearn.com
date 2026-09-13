@@ -191,7 +191,7 @@
             </p>
             <p>
                 <label for='tier_header_font_size'>Tier header font size</label>
-                <input id='tier_header_font_size' class='settings_input' type='number' max='72' value=''>
+                <input id='tier_header_font_size' class='settings_input' type='number' max='32' value=''>
             </p>
             <!--<p>
                 <label for='screenshot_width'>Screenshot width (by number of items)</label>
