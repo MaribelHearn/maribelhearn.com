@@ -8,7 +8,7 @@ $lives = [
     'EoSD' => [6, 'Score', 'Maingame: 10m, 20m, 40m, 60m<br>Extra: -'],
     'PCB' => [7, 'Point items', 'Maingame: 50, 125, 200, 300, 450, 800, every +200 onwards<br>Extra/Phantasm: 200, 500, 800, 1300'],
     'IN' => [8, 'Point items', 'Maingame: 100, 250, 500, 800, 1100<br>Extra: 200 and 666'],
-    'PoFV' => [9, 'Score', '10m, 30m, 50m, 70m, 90m'],
+    'PoFV' => [9, 'Score', 'Maingame: 10m, 30m, 50m, 70m, 90m<br>Extra: Every 5m, up to and including 40m'],
     'MoF' => [10, 'Score', 'Maingame: 20m, 40m, 80m, 150m<br>Extra: 30m, 100m'],
     'SA' => [11, 'Lifepieces', 'Dropped when clearing a boss attack without dying, 5 per life'],
     'UFO' => [12, 'Lifepieces', 'Dropped from red UFOs and bosses, 4 per life'],
@@ -16,9 +16,10 @@ $lives = [
     'TD' => [13, 'Lifepieces', 'Dropped by pink spirits and boss attacks, gradually increases from 8 per life up to 25 per life'],
     'DDC' => [14, 'Lifepieces', 'Dropped every 5th bonus or on a x2.0 bonus, 3 per life'],
     'LoLK' => [15, 'Lifepieces', '<strong>Pointdevice Mode:</strong> -<br><strong>Legacy Mode:</strong> Gained by getting Chapter Bonuses, 3 per life**'],
-    'HSiFS' => [16, 'Score', 'Maingame: 10m, 20m, 40m, 70m, 100m, 150m, 250m, 500m, 1b<br>Extra: 10m, 20m, 40m, 60m, 80m, 100m'],
+    'HSiFS' => [16, 'Score', 'Maingame: 5m, 10m, 20m, 40m, 70m, 100m, 150m, 250m, 500m, 1b<br>Extra: 10m, 20m, 40m, 60m, 80m, 100m***'],
     'WBaWC' => [17, 'Lifepieces', 'Dropped when ending Roaring Mode with a lifepiece spirit in stock, 3 per life'],
-    'UM' => [18, 'Cards', 'See bottom of page']
+    'UM' => [18, 'Cards', 'See bottom of page'],
+    'FW' => [20, 'Lifepieces', 'Dropped when destroying pyramids, 3 per life']
 ];
 $bombs = [
     'HRtP' => [1, 'Standard', '1', 'Bomb items; you gain 1 bomb when you die'],
@@ -39,7 +40,8 @@ $bombs = [
     'LoLK' => [15, 'Standard', '3', '<strong>Pointdevice Mode:</strong> Gained by getting Chapter Bonuses, 5 per bomb<br><strong>Legacy Mode:</strong> Dropped by Spell Cards in Extra only, 5 per bomb'],
     'HSiFS' => [16, 'Standard', '3', 'Bomb items, bombpieces dropped from capturing boss attacks and certain enemies'],
     'WBaWC' => [17, 'Standard', '3*****', 'Dropped when ending Roaring Mode with a bombpiece spirit in stock, 3 per bomb'],
-    'UM' => [18, 'Standard', '3', 'See bottom of page']
+    'UM' => [18, 'Standard', '3', 'See bottom of page'],
+    'FW' => [20, 'Standard', '2', 'Bombpieces dropped when destroying pyramids, 3 per bomb']
 ];
 ?>
 <h2 id='resources'>How do I get more resources?</h2>
@@ -61,6 +63,7 @@ $bombs = [
 </table></div>
 <p>* In HRtP (Touhou 1), you do not get an extra life for a multiple of 400k if the score is achieved through a stage clear bonus.</p>
 <p>** In LoLK (Touhou 15), you need 5 lifepieces instead of 3 to gain a life in Extra.</p>
+<p>*** In HSiFS (Touhou 16), if you reach the maximum score of 9,999,999,990, you will automatically attain a full stock of 8 lives, no matter how many lives you had prior to that.</p>
 <h4 id='bombs'>Bombs</h4>
 <p>Most games have bombs as a separate resource, shown right below your life count. However, in MoF (Touhou 10) and SA (Touhou 11) you bomb by spending Power.
 GFW (Touhou 12.8) has a unique bomb system, known as Perfect Freeze, which is a percentage up to 300% and costs 100% to use. Bombs do not exist in PoFV (Touhou 9).</p>
