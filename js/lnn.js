@@ -325,6 +325,8 @@ function showPlayerLNNs(player, LNNs) {
     }
 
     if (numberOfLNNs === 0) {
+        document.getElementById("category").value = "";
+        document.getElementById("search_category").value = "";
         document.getElementById("empty_category").style.display = "none";
         document.getElementById("search_loading").style.display = "none";
         searchResults.style.display = "none";
@@ -479,6 +481,8 @@ function showCategoryLNNs(category, LNNs) {
     }
 
     if (numberOfLNNs === 0) {
+        document.getElementById("player").value = "";
+        document.getElementById("search_player").value = "";
         document.getElementById("empty_player").style.display = "none";
         document.getElementById("search_loading").style.display = "none";
         searchResults.style.display = "none";
@@ -567,11 +571,12 @@ function detectKey(event) {
 
 function detectEnter(event) {
     if (event.key && event.key == "Enter") {
-        const value = event.target.value;
+        let value = event.target.value;
 
         if (event.target.id == "player") {
             getPlayerLNNs(value);
         } else { // event.target.id == "search_category"
+            value = value.replaceAll(':', '-');
             getCategoryLNNs(value);
         }
         
