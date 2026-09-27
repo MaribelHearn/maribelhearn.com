@@ -426,4 +426,3 @@
     </tbody>
 </table></div>
 <p class='center'><strong><a href='#top'>Back to Top</a></strong></p>
-<?php // language detection hack ?>

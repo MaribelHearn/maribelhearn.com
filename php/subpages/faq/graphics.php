@@ -71,4 +71,3 @@ not obscure the bottom of your game. To change the window size, adjust the value
         <td>480</td>
     </tr>
 </table>
-<?php // language detection hack ?>

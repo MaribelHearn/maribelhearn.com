@@ -252,4 +252,3 @@ Anyone is welcome here, we have new players, old-time players, big community fig
 This server is your best chance to interact and talk with other Touhou players, it's also your best chance of trying to
 ask a good western scoring player of your category for help (assuming they are in here, which MOST are, but it's not guaranteed).</p>
 <p>Thanks for reading!</p>
-<?php // language detection hack ?>

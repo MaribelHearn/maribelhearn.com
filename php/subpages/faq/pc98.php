@@ -217,4 +217,3 @@ To load a savestate, press the same key combinations, but without the game windo
         <td>Toggle fullscreen</td>
     </tr>
 </table>
-<?php // language detection hack ?>

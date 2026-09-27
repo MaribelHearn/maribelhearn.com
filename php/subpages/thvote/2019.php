@@ -1429,4 +1429,3 @@
     <p><strong><a href='#top'>Back to Top</a></strong></p>
 </section>
 </div>
-<?php // language detection hack ?>

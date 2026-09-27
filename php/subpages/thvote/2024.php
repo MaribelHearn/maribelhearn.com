@@ -3297,4 +3297,3 @@
     <footer><strong><a href='#top'>Back to Top</a></strong></footer>
 </section>
 </div>
-<?php // language detection hack ?>

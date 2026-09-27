@@ -547,4 +547,3 @@ Keep in mind that these evaluations do <em>not</em> necessarily translate to dif
         <td>Low shot damage.</td>
     </tr>
 </table>
-<?php // language detection hack ?>

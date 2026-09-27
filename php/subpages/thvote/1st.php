@@ -152,4 +152,3 @@ while the character vote was held from 6 March 2003 to 6 April 2003.</p>
     </tbody>
 </table></div>
 <p class='center'><strong><a href='#top'>Back to Top</a></strong></p>
-<?php // language detection hack ?>
