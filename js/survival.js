@@ -1476,9 +1476,9 @@ function achievs(game) {
         case "UFO": return achievs.concat(["nv", "nmnv", "nbnv", "nnn"]);
         case "TD": return achievs.concat(["nt", "nmnt", "nbnt", "nnn"]);
         case "HSiFS": return achievs.concat(["nr", "nmnr", "nbnr", "nnn"]);
-        case "WBaWC": return achievs.concat( ["nhnrb", "nmnhnrb", "nbnhnrb", "nnnn"]);
+        case "WBaWC": return achievs.concat( ["nh", "nrb", "nhnrb", "nmnh", "nmnrb", "nmnhnrb", "nbnh", "nbnrb", "nbnhnrb", "nnnn"]);
         case "UM": return achievs.concat(["nc", "nmnc", "nbnc", "nnn"]);
-        case "FW": return achievs.concat(["nc", "nmnc", "nbnhb", "nnn"]);
+        case "FW": return achievs.concat(["nhb", "nmnhb", "nbnhb", "nnn"]);
         default: return achievs;
     }
 }
