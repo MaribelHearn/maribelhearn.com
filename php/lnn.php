@@ -443,7 +443,7 @@ $last_modified = $last_modified['results'][0]['date'];
             </tfoot>
         </table>
     </div>
-    <div id='players'>`
+    <div id='players'>
         <h2><?php echo _('Player Statistics') ?></h2>
         <div class='center'>
             <input id='showversus3' type='checkbox'>
