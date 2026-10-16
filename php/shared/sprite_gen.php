@@ -50,6 +50,7 @@ $shots = array(
     'PoFVMerlin', 'PoFVLunasa', 'HSiFSReimuExtra', 'HSiFSCirnoExtra', 'HSiFSAyaExtra', 'HSiFSMarisaExtra', 'UDoALGReimu', 'UDoALGMarisa', 'UDoALGSanae', 'UDoALGRan', 'UDoALGAunn', 'UDoALGNazrin',
     'UDoALGSeiran', 'UDoALGRin', 'UDoALGTsukasa', 'UDoALGMamizou', 'UDoALGYachie', 'UDoALGSaki', 'UDoALGYuuma', 'UDoALGSuika', 'UDoALGBiten', 'UDoALGEnoko', 'UDoALGChiyari', 'UDoALGHisami', 'UDoALGZanmu',
     'FWReimuR1', 'FWReimuR2', 'FWReimuB1', 'FWReimuB2', 'FWReimuY1', 'FWReimuY2', 'FWReimuG1', 'FWReimuG2', 'FWMarisaR1', 'FWMarisaR2', 'FWMarisaB1', 'FWMarisaB2', 'FWMarisaY1', 'FWMarisaY2', 'FWMarisaG1', 'FWMarisaG2',
+    'EoSDNCReimuA', 'EoSDNCReimuB', 'EoSDNCMarisaA', 'EoSDNCMarisaB',
 );
 $cards = array(
     'LifeCard', 'SpellCard', 'FragmentedLifeCard', 'FragmentedSpellCard', 'MoneyComesAndGoesOnItsOwn', 'Ringo-BrandDango', 'PhoenixsTail', 'Yin-YangOrb', 'Yin-YangOrbNeedle',

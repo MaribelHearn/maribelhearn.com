@@ -67,10 +67,10 @@ const DEFAULT_SETTINGS = {
         },
         "shots": {
             "SoEW": { enabled: true }, "PoDD": { enabled: true }, "LLS": { enabled: true }, "MS": { enabled: true },
-            "EoSD": { enabled: true }, "PCB": { enabled: true }, "IN": { enabled: true }, "PoFV": { enabled: true },
-            "MoF": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true }, "TD": { enabled: true },
-            "DDC": { enabled: true }, "LoLK": { enabled: true }, "HSiFS": { enabled: true }, "WBaWC": { enabled: true },
-            "UM": { enabled: true }, "UDoALG": { enabled: true }, "FW": { enabled: true },
+            "EoSD": { enabled: true }, "EoSDNC": { enabled: true }, "PCB": { enabled: true }, "IN": { enabled: true },
+            "PoFV": { enabled: true }, "MoF": { enabled: true }, "SA": { enabled: true }, "UFO": { enabled: true },
+            "TD": { enabled: true }, "DDC": { enabled: true }, "LoLK": { enabled: true }, "HSiFS": { enabled: true },
+            "WBaWC": { enabled: true }, "UM": { enabled: true }, "UDoALG": { enabled: true }, "FW": { enabled: true },
         },
         "cards": {
             "Touhou18": { enabled: true }, "Touhou185": { enabled: true }, "Touhou19": { enabled: true}
@@ -120,8 +120,8 @@ function addSpacing(item) {
     const sort = whichSort(item);
 
     if (sort == "shots") {
-        if (item.includes("HSiFS") || item.includes("WBaWC") || item.includes("UDoALG")) {
-            return item.replace("HSiFS", "HSiFS ").replace("WBaWC", "WBaWC ").replace("UDoALG", "UDoALG ");
+        if (item.includes("HSiFS") || item.includes("WBaWC") || item.includes("UDoALG") || item.includes("EoSDNC")) {
+            return item.replace("HSiFS", "HSiFS ").replace("WBaWC", "WBaWC ").replace("UDoALG", "UDoALG ").replace("EoSDNC", "EoSD:NC ");
         }
 
         return item.replace(item.match(/[A-Z][A-Z][a-z]/)[0], item.match(/[A-Z][A-Z][a-z]/)[0].substr(0, 1) + " " + item.match(/[A-Z][A-Z][a-z]/)[0].substr(1)).replace("Team", " Team");
