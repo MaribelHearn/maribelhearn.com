@@ -112,6 +112,9 @@ function hit(string $filename, string $status_code) {
             } else {
                 $file = fopen($hitcount, 'r+');
                 if (flock($file, LOCK_EX)) {
+                    if (filesize($hitcount) == 0) { // fwrite failed
+                        return;
+                    }
                     $json = fread($file, filesize($hitcount));
                     $json = trim($json);
                     $stats = json_decode($json, true);
