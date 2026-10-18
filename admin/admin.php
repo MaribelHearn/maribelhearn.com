@@ -11,8 +11,12 @@
     if (file_exists($hitcount)) {
         $file = fopen($hitcount, 'r');
         if (flock($file, LOCK_SH)) {
-            $json = trim(fread($file, filesize($hitcount)));
-            flock($file, LOCK_UN);
+            if (filesize($hitcount) == 0) {
+                $hitcount = 'empty';
+            } else {
+                $json = trim(fread($file, filesize($hitcount)));
+                flock($file, LOCK_UN);
+            }
         }
         fclose($file);
         $stats = json_decode($json, true);
