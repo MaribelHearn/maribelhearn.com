@@ -146,14 +146,14 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
                             $rowspan -= 4;
                         }
                         if ($key === 0 && $is_mobile) {
-                            echo '<td rowspan="' . $rowspan . '" class="nohide"><span id="' . $game . '_image" class="cover' . ($data['number'] <= 5 ? ' cover98' : '') . '"></span></td>';
+                            echo '<td rowspan="' . $rowspan . '" class="nohide"><span id="' . $game . '_image" class="cover cover98"></span></td>';
                         }
                         if ($key === 0) {
                             echo '<tr><td colspan="8" class="nohide"><div id="dropdown_' . $game . '" class="dropdown-check-list" tabindex="100"><span class="anchor">Expand</span></div></td></tr>';
                         }
                         echo '<tr class="row_' . $game . '">';
                         if ($key === 0 && !$is_mobile) {
-                            echo '<td rowspan="' . $rowspan . '" class="nohide"><span id="' . $game . '_image" class="cover' . ($data['number'] <= 5 ? ' cover98' : '') . '"></span></td>';
+                            echo '<td rowspan="' . $rowspan . '" class="nohide"><span id="' . $game . '_image" class="cover cover98"></span></td>';
                         }
                         echo '<td>' . $shot . '</td>';
                         foreach ($diffs_seen->{$game} as $key => $diff) {
