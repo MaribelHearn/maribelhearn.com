@@ -1,4 +1,4 @@
-/*global _ MAX_SCORE setCookie getCookie deleteCookie sep fullNameNumber*/
+/*global _ MAX_SCORE Litepicker setCookie getCookie deleteCookie sep fullNameNumber*/
 const API_BASE = location.hostname.includes("maribelhearn.com") ? "https://maribelhearn.com" : `http://${location.hostname}`;
 const releaseDate = {
     "HRtP": "1997-08-15", "SoEW": "1997-08-15", "PoDD": "1997-12-29", "LLS": "1998-08-14", "MS": "1998-12-30",
@@ -11,6 +11,22 @@ let selected = "";
 let videoEnabled = false;
 let unverifiedEnabled = false;
 let formerWRenabled = false;
+let timeTravel = false;
+
+const picker = new Litepicker({ 
+    element: document.getElementById("time_travel"),
+    dropdowns: {
+        minYear: 2003,
+        maxYear: new Date().getFullYear(),
+        months: true,
+        years: true
+    }
+});
+
+picker.on("selected", (date) => {
+    const newDate = new Date(date.dateInstance.setHours(12));
+    setCookie("time_travel", newDate.toISOString().split('T')[0]);
+});
 
 function getSeason(string) {
     return string.replace("Reimu", "").replace("Cirno", "").replace("Aya", "").replace("Marisa", "");
@@ -35,12 +51,18 @@ function toggleVideo() {
 }
 
 function setRecentLimit(event) {
-    let limit = Math.max(parseInt(event.target.value), 1);
+    const limit = Math.max(parseInt(event.target.value), 1);
 
     if (limit == 15 || isNaN(limit)) {
         deleteCookie("recent_limit");
     } else {
         setCookie("recent_limit", limit);
+    }
+}
+
+function clearTimeTravel() {
+    if (new Date(document.getElementById("time_travel").value) == "Invalid Date") {
+        deleteCookie("time_travel");
     }
 }
 
@@ -170,7 +192,7 @@ function getWRs(game) {
     }
 
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/replay/?type=Score&game=${game}&ordering=-score&region=Eastern&historical=true${verification}`);
+    xhr.open('GET', `${API_BASE}/api/v1/replay/?type=Score&game=${game}&ordering=-score&region=Eastern&historical=true${verification}${timeTravel ? "&date__lte=" + timeTravel : ""}`);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200) {
@@ -453,7 +475,7 @@ function getPlayerWRs(player) {
     document.getElementById("player_loading").style.display = "block";
     document.getElementById("empty_results").style.display = "none";
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=game,difficulty&type=Score&region=Eastern&verified=true&historical=true${!formerWRenabled ? "&score__wr=true" : ""}`);
+    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=game,difficulty&type=Score&region=Eastern&verified=true&historical=true${timeTravel ? "&date__lte=" + timeTravel : ""}${!formerWRenabled ? "&score__wr=true" : ""}`);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200) {
@@ -545,7 +567,7 @@ function getHistory(category) {
     tmp.splice(0, 1);
     const shot = tmp.join(' ');
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=-score&game=${game}&shot=${shot}&difficulty=${diff}&type=Score&region=Eastern&verified=true&historical=true`);
+    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=-score&game=${game}&shot=${shot}&difficulty=${diff}&type=Score&region=Eastern&verified=true&historical=true${timeTravel ? "&date__lte=" + timeTravel : ""}`);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200) {
@@ -582,6 +604,8 @@ function setEventListeners() {
     document.getElementById("toggle_layout").addEventListener("click", toggleLayout, false);
     document.getElementById("recent_limit").addEventListener("keyup", setRecentLimit, false);
     document.getElementById("recent_limit").addEventListener("mouseup", setRecentLimit, false);
+    document.getElementById("time_travel").addEventListener("keyup", clearTimeTravel, false);
+    document.body.addEventListener("mouseup", clearTimeTravel, false);
     document.getElementById("save_changes").addEventListener("click", saveChanges, false);
     document.getElementById("search").addEventListener("change", setPlayer, false);
     document.getElementById("search").addEventListener("select", setPlayer, false);
@@ -712,6 +736,19 @@ function init() {
         language = "es_ES";
     } else if (getCookie("lang") == "en_US" || location.href.includes("?hl=en-us")) {
         language = "en_US";
+    }
+
+    if (getCookie("time_travel")) {
+        timeTravel = getCookie("time_travel");
+
+        if (timeTravel == new Date().toISOString().split('T')[0]) {
+            timeTravel = "";
+            document.getElementById("lastupdate").parentNode.removeChild(document.getElementById("lastupdate"));
+        } else {
+            document.getElementById("time_travel").value = timeTravel;
+        }
+
+        deleteCookie("time_travel");
     }
 
     // legacy

@@ -2,19 +2,17 @@
 global $API_BASE;
 global $is_mobile;
 
-$games = curl_get($API_BASE . '/api/v1/game/');
-if (strpos($games, 'Internal Server Error') !== false) {
+$connection_test = curl_get($API_BASE . '/api/v1/');
+if (strpos($connection_test, 'Internal Server Error') !== false) {
     $_GET['error'] = 500;
     include_once('php/error.php');
     include_once('php/shared/postscript.php');
     die();
-} else if (strpos($games, 'Service Unavailable') !== false || strpos($games, 'Not Found') !== false) {
+} else if (strpos($connection_test, 'Service Unavailable') !== false || strpos($connection_test, 'Not Found') !== false) {
     $_GET['error'] = 503;
     include_once('php/error.php');
     include_once('php/shared/postscript.php');
     die();
-} else {
-    $games = json_decode($games, true);
 }
 
 $PC98_LNN = ['HRtP', 'SoEW', 'LLS', 'MS'];
@@ -24,6 +22,7 @@ $RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_li
 $BANNED_CHARS = ['Reimu', 'Marisa', 'Sanae', 'Seiran', 'Biten', 'Enoko', 'Chiyari']; // Touhou 19 UDoALG
 $layout = (isset($_COOKIE['lnn_old_layout']) ? 'Old' : 'New');
 $include_vs = (isset($_COOKIE['include_vs']) ? true : false);
+$time_travel = (isset($_COOKIE['time_travel']) ? $_COOKIE['time_travel'] : false);
 $pvp = ['PoDD', 'UDoALG'];
 $number_of_lnns = (object) [];
 $number_of_players = (object) [];
@@ -85,7 +84,7 @@ function player_sort(string $a, string $b) {
     return strip_tags($a) <=> strip_tags($b);
 }
 
-$last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&date__isnull=False&type=LNN&limit=1');
+$last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&date__isnull=False&type=LNN&limit=1' . ($time_travel ? '&date__lte=' . $time_travel : ''));
 $last_modified = json_decode($last_modified, true);
 $last_modified = $last_modified['results'][0]['date'];
 
@@ -114,6 +113,9 @@ $last_modified = $last_modified['results'][0]['date'];
         $games = curl_get($API_BASE . '/api/v1/game/');
         $games = json_decode($games, true);
         foreach ($games as $key => $data) {
+            if ($time_travel !== false && $data['release_date'] > $time_travel) {
+                continue;
+            }
             $game = $data['short_name'];
             $full_name = _($data['full_name']);
             $game_nums->{$game} = $data['number'];
@@ -134,6 +136,9 @@ $last_modified = $last_modified['results'][0]['date'];
             <label for='recent_limit'><?php echo _('Number of Recent LNNs') ?></label>
             <input id='recent_limit' type='number' value='<?php echo (isset($_COOKIE['recent_limit']) ? $_COOKIE['recent_limit'] : 15) ?>' min=1>
         </p><p>
+            <label for='time_travel'><?php echo _('Time Travel') ?></label>
+            <input id='time_travel' type='text'>
+        </p><p>
             <input id='save_changes' type='button' value='<?php echo _('Save Changes') ?>'>
         </p>
     </div>
@@ -144,7 +149,7 @@ $last_modified = $last_modified['results'][0]['date'];
             echo '<noscript>';
         }
         $sheet = '_1';
-        $lnn = curl_get($API_BASE . '/api/v1/replay/?ordering=game,shot&type=LNN');
+        $lnn = curl_get($API_BASE . '/api/v1/replay/?ordering=game,shot&type=LNN' . ($time_travel ? '&date__lte=' . $time_travel : ''));
         $games_seen = [];
         $lnn = json_decode($lnn, true);
         foreach ($lnn as $key => $data) {
@@ -241,6 +246,9 @@ $last_modified = $last_modified['results'][0]['date'];
             echo '<p><input id="showversus1" type="checkbox"><label id="label_versus1" for="showversus1">' . _('Include Versus games') . '</label></p>';
             $second_row = false;
             foreach ($games as $key => $data) {
+                if ($time_travel !== false && $data['release_date'] > $time_travel) {
+                    continue;
+                }
                 $game = $data['short_name'];
                 if (!$include_vs && in_array($game, $pvp)) {
                     continue;
@@ -287,7 +295,7 @@ $last_modified = $last_modified['results'][0]['date'];
             <select id='search_player'>
                 <option value=''>...</option>
                 <?php
-                    $players = curl_get($API_BASE . '/api/v1/replay/players/');
+                    $players = curl_get($API_BASE . '/api/v1/replay/players/?type=LNN' . ($time_travel ? '&date__lte=' . $time_travel : ''));
                     $players = json_decode($players, true);
                     $players = $players['lnn'];
                     natcasesort($players);
@@ -361,7 +369,7 @@ $last_modified = $last_modified['results'][0]['date'];
                 <th class='general_header'><?php echo _('Date') ?></th>
             </tr></thead>
             <tbody id='recentbody'><?php
-                $recent = curl_get($API_BASE . '/api/v1/replay/?limit=' . $RECENT_LIMIT . '&ordering=-date&date__isnull=False&type=LNN');
+                $recent = curl_get($API_BASE . '/api/v1/replay/?limit=' . $RECENT_LIMIT . '&ordering=-date&date__isnull=False&type=LNN' . ($time_travel ? '&date__lte=' . $time_travel : ''));
                 $recent = json_decode($recent, true);
                 $recent = $recent['results'];
                 foreach ($recent as $key => $data) {

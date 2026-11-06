@@ -1,10 +1,26 @@
-/*global _ getCookie deleteCookie setCookie sep fullNameNumber*/
+/*global _ Litepicker getCookie deleteCookie setCookie sep fullNameNumber*/
 const API_BASE = location.hostname.includes("maribelhearn.com") ? "https://maribelhearn.com" : `http://${location.hostname}`;
 const banList = ["Reimu", "Marisa", "Sanae", "Seiran", "Biten", "Enoko", "Chiyari"];
 let language = "en_GB";
 let selected = "";
 let shots = {};
 let versusIncluded = false;
+let timeTravel = false;
+
+const picker = new Litepicker({ 
+    element: document.getElementById("time_travel"),
+    dropdowns: {
+        minYear: 2009,
+        maxYear: new Date().getFullYear(),
+        months: true,
+        years: true
+    }
+});
+
+picker.on("selected", (date) => {
+    const newDate = new Date(date.dateInstance.setHours(12));
+    setCookie("time_travel", newDate.toISOString().split('T')[0]);
+});
 
 function toggleLayout() {
     if (getCookie("lnn_old_layout")) {
@@ -21,6 +37,12 @@ function setRecentLimit(event) {
         deleteCookie("recent_limit");
     } else {
         setCookie("recent_limit", limit);
+    }
+}
+
+function clearTimeTravel() {
+    if (new Date(document.getElementById("time_travel").value) == "Invalid Date") {
+        deleteCookie("time_travel");
     }
 }
 
@@ -77,7 +99,7 @@ function getLNNs(game) {
     }
 
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/replay/?type=LNN&ordering=shot,route,player&game=${game}`);
+    xhr.open('GET', `${API_BASE}/api/v1/replay/?type=LNN&ordering=shot,route,player&game=${game}${timeTravel ? "&date__lte=" + timeTravel : ""}`);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200) {
@@ -131,6 +153,13 @@ function showLNNtable(game, LNNs) {
             } else {
                 lnnTable.innerHTML += `<tr><td class='nowrap'>${_(shot)}</td><td id='${shot}n'></td><td id='${shot}'></td>`;
             }
+            /*if (game == "IN" || game == "HSiFS") {
+                currentRoute = route;
+                lnnTable.innerHTML += `<tr><td class="nowrap"><a href="?game=${game}&shottype=${chara}${route}"><span class="${chara}">${_(chara)}</span>` +
+                        `<span class="${route}">${_(route)}</span></a></td><td id="${shot}${route}n"></td><td id="${shot}${route}"></td>`;
+            } else {
+                lnnTable.innerHTML += `<tr><td class="nowrap"><a href="?game=${game}&shottype=${shot}">${_(shot)}</a></td><td id="${shot}n"></td><td id="${shot}"></td>`;
+            }*/
 
             currentShot = shot;
         }
@@ -184,6 +213,7 @@ function showLNNtable(game, LNNs) {
 
     for (const player of sortedPlayers) {
         total.innerHTML += `, ${player}`;
+        //total.innerHTML += `, <a href="?player=${player}">${player}</a>`;
     }
 
     document.getElementById("count").innerHTML = `${gameCount} (${sortedPlayers.length})`;
@@ -366,7 +396,7 @@ function getPlayerLNNs(player) {
 
     const xhr = new XMLHttpRequest();
     document.getElementById("search_loading").style.display = "block";
-    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=game&player=${encodeURIComponent(player)}&type=LNN`);
+    xhr.open('GET', `${API_BASE}/api/v1/replay/?ordering=game&player=${encodeURIComponent(player)}&type=LNN${timeTravel ? "&date__lte=" + timeTravel : ""}`);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200) {
@@ -471,6 +501,7 @@ function showCategoryLNNs(category, LNNs) {
         searchTable.innerHTML += `<tr id='tr_${i}'></tr>`;
 
         document.getElementById(`tr_${i}`).innerHTML += `<td${data.category.route === "Gold" ? " class='gold'" : ""}>${data.player}</td>`;
+        //document.getElementById(`tr_${i}`).innerHTML += `<td${data.category.route === "Gold" ? " class='gold'" : ""}><a href="?player=${data.player}">${data.player}</a></td>`;
         document.getElementById(`tr_${i}`).innerHTML += `<td data-sort="${scoreSort}">${score}</td><td>${replay}</td><td>${video}</td><td data-sort="${dateRaw}">${date}</td>`;
         numberOfLNNs += 1;
         i += 1;
@@ -521,7 +552,7 @@ function getCategoryLNNs(category) {
     }
 
     const categoryName = splitCategory(category);
-    let url = `${API_BASE}/api/v1/replay/?ordering=-date&game=${encodeURIComponent(categoryName[0])}&shot=${encodeURIComponent(categoryName[1])}`;
+    let url = `${API_BASE}/api/v1/replay/?ordering=-date&game=${encodeURIComponent(categoryName[0])}&shot=${encodeURIComponent(categoryName[1])}${timeTravel ? "&date__lte=" + timeTravel : ""}`;
     document.getElementById("search_loading").style.display = "block";
 
     if (categoryName.length > 2) { // has route
@@ -602,6 +633,8 @@ function setEventListeners() {
     document.getElementById("toggle_layout").addEventListener("click", toggleLayout, false);
     document.getElementById("recent_limit").addEventListener("keyup", setRecentLimit, false);
     document.getElementById("recent_limit").addEventListener("mouseup", setRecentLimit, false);
+    document.getElementById("time_travel").addEventListener("keyup", clearTimeTravel, false);
+    document.body.addEventListener("mouseup", clearTimeTravel, false);
     document.getElementById("save_changes").addEventListener("click", saveChanges, false);
     document.getElementById("search_player").addEventListener("change", setPlayer, false);
     document.getElementById("search_player").addEventListener("select", setPlayer, false);
@@ -677,10 +710,19 @@ function checkQueryString() {
     const urlParams = new URLSearchParams(window.location.search);
     const game = urlParams.get('game');
     const player = urlParams.get('player');
+    const shottype = urlParams.get('shottype');
 
-    if (game) {
+    if (game && !shottype) {
         showLNNs({ data: { game: game } });
         document.getElementById("lnns").scrollIntoView();
+        return;
+    }
+    else if (game && shottype) {
+        const category = `${game} ${shottype}`;
+        document.getElementById("category").value = category;
+        document.getElementById("search_category").value = category;
+        document.getElementById("search").scrollIntoView();
+        getCategoryLNNs(category);
         return;
     }
     else if (player) {
@@ -722,6 +764,19 @@ function init() {
         language = "es_ES";
     } else if (getCookie("lang") == "en_US" || location.href.includes("?hl=en-us")) {
         language = "en_US";
+    }
+
+    if (getCookie("time_travel")) {
+        timeTravel = getCookie("time_travel");
+
+        if (timeTravel == new Date().toISOString().split('T')[0]) {
+            timeTravel = "";
+            document.getElementById("lastupdate").parentNode.removeChild(document.getElementById("lastupdate"));
+        } else {
+            document.getElementById("time_travel").value = timeTravel;
+        }
+
+        deleteCookie("time_travel");
     }
 
     versusIncluded = getCookie("include_vs") ? true : false;

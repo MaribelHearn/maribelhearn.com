@@ -132,6 +132,7 @@
     </head>
 
     <body>
+        <?php if (($page == 'wr' || $page == 'lnn') && isset($_COOKIE['time_travel'])) { echo '<p id="lastupdate" class="time_travel_banner">You are viewing the page as of ' . $_COOKIE['time_travel'] . '</p>'; } ?>
         <?php if ($page != 'tiers') { echo '<nav data-html2canvas-ignore><div id="nav" class="wrap">' . navbar($page) . '</div></nav>'; } ?>
         <main><?php if ($page == 'error') { include_once 'php/error.php'; } else { include_once $page_path; } ?></main>
         <?php include_once 'php/shared/postscript.php'; ?>

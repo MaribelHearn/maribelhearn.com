@@ -20,6 +20,9 @@ $canvas = array('scoring', 'slots', 'survival', 'tiers');
 $po2json = array('drc', 'lnn', 'wr');
 $page = $_GET['page'];
 $js = array();
+if ($page == 'wr' || $page == 'lnn') {
+    array_push($js, '../../js/lib/litepicker' . $min . '.js');
+}
 if (in_array($page, $canvas)) {
     array_push($js, '../../js/lib/html2canvas' . $min . '.js');
     array_push($js, '../../js/lib/polyfill_promise' . $min . '.js');

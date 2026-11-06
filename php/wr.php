@@ -2,24 +2,23 @@
 global $API_BASE;
 global $is_mobile;
 
-$games = curl_get($API_BASE . '/api/v1/game/');
-if (strpos($games, 'Internal Server Error') !== false) {
+$connection_test = curl_get($API_BASE . '/api/v1/');
+if (strpos($connection_test, 'Internal Server Error') !== false) {
     $_GET['error'] = 500;
     include_once('php/error.php');
     include_once('php/shared/postscript.php');
     die();
-} else if (strpos($games, 'Service Unavailable') !== false || strpos($games, 'Not Found') !== false) {
+} else if (strpos($connection_test, 'Service Unavailable') !== false || strpos($connection_test, 'Not Found') !== false) {
     $_GET['error'] = 503;
     include_once('php/error.php');
     include_once('php/shared/postscript.php');
     die();
-} else {
-    $games = json_decode($games, true);
 }
 
 $MAX_SCORE = 9999999990;
 $RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_limit']), 1) : 15;
 $layout = (isset($_COOKIE['wr_old_layout']) ? 'Old' : 'New');
+$time_travel = (isset($_COOKIE['time_travel']) ? $_COOKIE['time_travel'] : false);
 $wrs = [];
 $player_wrs = (object) [];
 $player_games = (object) [];
@@ -54,10 +53,10 @@ function format_lm(string $lm, string $lang) {
     return str_replace('%date', date_tl($lm, $lang), $result);
 }
 
-$last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&date__isnull=False&type=Score&limit=1');
+$last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&date__isnull=False&type=Score&limit=1' . ($time_travel ? '&date__lte=' . $time_travel : ''));
 $last_modified = json_decode($last_modified, true);
 $last_modified = $last_modified['results'][0]['date'];
-$wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty,shot&type=Score&region=Eastern&verified=true&historical=true&score__wr=true');
+$wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty,shot&type=Score&region=Eastern&verified=true&historical=true' . ($time_travel ? '&date__lte=' . $time_travel : '') . '&score__wr=true');
 $games_seen = [];
 $wr_data = json_decode($wr_data, true);
 foreach ($wr_data as $key => $data) {
@@ -155,6 +154,9 @@ foreach ($wr_data as $key => $data) {
         $games = curl_get($API_BASE . '/api/v1/game/');
         $games = json_decode($games, true);
         foreach ($games as $key => $data) {
+            if ($time_travel !== false && $data['release_date'] > $time_travel) {
+                continue;
+            }
             $full_name = _($data['full_name']);
             $full_names->{$data['short_name']} = $full_name;
             if ($data['short_name'] == 'UDoALG' || !property_exists($overall, $data['short_name'])) {
@@ -174,6 +176,9 @@ foreach ($wr_data as $key => $data) {
         <p>
             <label for='recent_limit'><?php echo _('Number of Recent Records') ?></label>
             <input id='recent_limit' type='number' value='<?php echo (isset($_COOKIE['recent_limit']) ? $_COOKIE['recent_limit'] : 15) ?>' min=1>
+        </p><p>
+            <label for='time_travel'><?php echo _('Time Travel') ?></label>
+            <input id='time_travel' type='text'>
         </p><p>
             <input id='save_changes' type='button' value='<?php echo _('Save Changes') ?>'>
         </p>
@@ -354,6 +359,9 @@ foreach ($wr_data as $key => $data) {
                     if ($game == 'UDoALG') {
                         continue;
                     }
+                    if ($time_travel !== false && $data['release_date'] > $time_travel) {
+                        continue;
+                    }
                     if ($game == 'MoF') {
                         $second_row = true;
                         echo !$is_mobile ? '<br>' : '';
@@ -423,7 +431,7 @@ foreach ($wr_data as $key => $data) {
             <select id='search'>
                 <option value=''>...</option>
                 <?php
-                    $players = curl_get($API_BASE . '/api/v1/replay/players/?type=Score&region=Eastern');
+                    $players = curl_get($API_BASE . '/api/v1/replay/players/?type=Score&region=Eastern' . ($time_travel ? '&date__lte=' . $time_travel : ''));
                     $players = json_decode($players, true);
                     $players = $players['score'];
                     natcasesort($players);
@@ -473,7 +481,7 @@ foreach ($wr_data as $key => $data) {
                     <th class='general_header'><?php echo _('Date') ?></th>
                 </tr></thead>
                 <tbody id='recentbody'><?php
-                    $recent = curl_get($API_BASE . '/api/v1/replay/?limit=' . $RECENT_LIMIT . '&ordering=-date,-score&type=Score&region=Eastern&verified=true&historical=true');
+                    $recent = curl_get($API_BASE . '/api/v1/replay/?limit=' . $RECENT_LIMIT . '&ordering=-date,-score&type=Score&region=Eastern&verified=true&historical=true' . ($time_travel ? '&date__lte=' . $time_travel : ''));
                     $recent = json_decode($recent, true);
                     $recent = $recent['results'];
                     foreach ($recent as $key => $data) {

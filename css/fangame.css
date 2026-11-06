@@ -86,11 +86,6 @@ h2 {
 .sortable {
     margin-top: 25px;
 }
-#lastupdate {
-    background-color: lightsalmon;
-    font-size: 24px;
-    font-weight: bold;
-}
 #sheet_link {
     white-space: nowrap;
 }

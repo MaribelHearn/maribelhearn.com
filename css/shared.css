@@ -185,6 +185,16 @@ img {
 .wide-top {
     margin-top: 25px;
 }
+.time_travel_banner {
+    position: sticky;
+    top: 0px;
+    text-align: center;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin-top: -15px;
+    z-index: 1000;
+    color: black !important;
+}
 .tooltip {
     font-weight: initial;
     visibility: hidden;
@@ -328,6 +338,11 @@ img {
 #hy_link {
     color: black;
     text-decoration: none;
+}
+#lastupdate {
+    background-color: lightsalmon;
+    font-size: 24px;
+    font-weight: bold;
 }
 @media only screen and (max-width: 800px) {
     h1 {

@@ -15,6 +15,9 @@ $css = array(
     '../../css/shared' . $min . '.css',
     '../../css/' . ($page == 'index' ? 'main' : $page) . $min . '.css'
 );
+if ($page == 'wr' || $page == 'lnn') {
+    array_push($css, '../../css/lib/litepicker' . $min . '.css');
+}
 if (isset($_GET['mobile']) && $_GET['mobile']) {
     array_push($css, '../../css/shared_mobile' . $min . '.css');
     $page_specific_mobile = '../../css/' . ($page == 'index' ? 'main' : $page) . '_mobile' . $min . '.css';
