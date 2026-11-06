@@ -1,4 +1,5 @@
-/*global _ WRs rubrics getCookie setCookie*/
+/*global _ rubrics getCookie setCookie*/
+let WRs = {};
 let phantasm = true;
 let noExtra = true;
 let noShottypes = true;
@@ -525,6 +526,12 @@ function init() {
         language = "de_DE";
     } else if (getCookie("lang") == "en_US" || location.href.includes("?hl=en-us")) {
         language = "en_US";
+    }
+
+    try {
+        WRs = JSON.parse(document.getElementById("WRs").value);
+    } catch (e) {
+        // do nothing
     }
 
     setEventListeners();

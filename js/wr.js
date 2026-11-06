@@ -305,7 +305,7 @@ function getHistoryCategories(game) {
     historyCategory.innerHTML = "<option value=''>...</option>";
 
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/category/?game=${game}&type=Score&region=Eastern`);
+    xhr.open('GET', `${API_BASE}/api/v1/category/?game=${game}&type=Score&region=Eastern${timeTravel ? "&release_date__lte=" + timeTravel : ""}`);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200) {
@@ -663,29 +663,6 @@ function setAttributes() {
         playerSearchLink.style.display = "block";
     }
 }
-
-/*function getPlayerSearchOptions() {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/replay/players/`);
-    xhr.onreadystatechange = function () {
-        if (this.readyState === 4) {
-            if (this.status === 200) {
-                const playerSearch = document.getElementById("search");
-                const players = JSON.parse(this.response).score.sort();
-                
-                for (const player of players) {
-                    if (player == '-') {
-                        continue;
-                    }
-
-                    playerSearch.innerHTML += `<option value="${player}">${player}</option>`;
-                }
-            }
-        }
-    }
-
-    xhr.send();
-}*/
 
 function checkQueryString() {
     const urlParams = new URLSearchParams(window.location.search);

@@ -58,6 +58,8 @@ $last_modified = json_decode($last_modified, true);
 $last_modified = $last_modified['results'][0]['date'];
 $wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty,shot&type=Score&region=Eastern&verified=true&historical=true' . ($time_travel ? '&date__lte=' . $time_travel : '') . '&score__wr=true');
 $games_seen = [];
+$diffs_seen = (object) [];
+$shots_seen = (object) [];
 $wr_data = json_decode($wr_data, true);
 foreach ($wr_data as $key => $data) {
     $score = $data['score'];
@@ -70,20 +72,20 @@ foreach ($wr_data as $key => $data) {
     $shot = $data['category']['shot'];
     if (!in_array($game, $games_seen)) {
         $wrs[$game] = [];
-        $diffs_seen = [];
-        $shots_seen = [];
+        $diffs_seen->{$game} = [];
+        $shots_seen->{$game} = [];
         $overall->{$game} = 0;
         $diff_max->{$game} = (object) [];
         array_push($games_seen, $game);
     }
-    if (!in_array($diff, $diffs_seen)) {
+    if (!in_array($diff, $diffs_seen->{$game})) {
         $wrs[$game][$diff] = [];
         $diff_max->{$game}->{$diff} = [];
-        array_push($diffs_seen, $diff);
+        array_push($diffs_seen->{$game}, $diff);
     }
-    if (!in_array($shot, $shots_seen)) {
+    if (!in_array($shot, $shots_seen->{$game})) {
         $wrs[$game][$diff][$shot] = [];
-        array_push($shots_seen, $shot);
+        array_push($shots_seen->{$game}, $shot);
     }
     if (empty($wrs[$game][$diff][$shot]) || $score > $wrs[$game][$diff][$shot][0]) {
         $wrs[$game][$diff][$shot] = [$score, $player, $date];
@@ -151,12 +153,9 @@ foreach ($wr_data as $key => $data) {
         '<p><a href="#overall" class="overallrecords">' . _('Overall Records') . '</a></p>' .
         '<p><a href="#wrs" class="worldrecords">' . _('World Records') . '
         </a></p>';
-        $games = curl_get($API_BASE . '/api/v1/game/');
+        $games = curl_get($API_BASE . '/api/v1/game/' . ($time_travel ? '?release_date__lte=' . $time_travel : ''));
         $games = json_decode($games, true);
         foreach ($games as $key => $data) {
-            if ($time_travel !== false && $data['release_date'] > $time_travel) {
-                continue;
-            }
             $full_name = _($data['full_name']);
             $full_names->{$data['short_name']} = $full_name;
             if ($data['short_name'] == 'UDoALG' || !property_exists($overall, $data['short_name'])) {
@@ -200,44 +199,42 @@ foreach ($wr_data as $key => $data) {
                 </tr>
             </thead>
             <tbody><?php
-                if (gettype($games) != 'string') {
-                    foreach ($games as $key => $data) {
-                        $game = $data['short_name'];
-                        $num = $data['number'];
-                        if ($game == 'UDoALG' || !property_exists($overall, $game)) {
-                            continue;
-                        }
-                        $wr = $overall->{$game};
-                        $score_text = number_format($wr['score'], 0, '.', ',');
-                        if ($wr['score'] > $MAX_SCORE) {
-                            $score_text = '<span class="cs">' . number_format($wr['score'], 0, '.', ',') . '<span class="tooltip truescore">' . _('Uncapped') . '</span></span> ';
-                        }
-                        echo '<tr id="' . $game . 'o"><td>' . ($num == 6.5 ? 6 : $num) . '</td><td class="' . $game . '">' . _($game) . '</td>';
-                        echo '<td id="' . $game . 'overall0" data-sort="' . $wr['score'] . '">' . $score_text . '</td>';
-                        if ($wr['score'] == 0) {
-                            echo '<td id="' . $game . 'overall1">-</td>';
-                            echo '<td id="' . $game . 'overall2">-</td>';
-                            echo '<td id="' . $game . 'overall3">-</td>';
-                        } else {
-                            echo '<td id="' . $game . 'overall1"><a href="?player=' . urlencode($wr['player']) . '">' . $wr['player'] . '</a></td>';
-                            echo '<td id="' . $game . 'overall2">' . $wr['category']['difficulty'] . '</td>';
-                            echo '<td id="' . $game . 'overall3">' . _($wr['category']['shot']) . '</td>';
-                        }
-                        if (!empty($wr['replay'])) {
-                            $chunks = preg_split('/\//', $wr['replay']);
-                            $replay = '<a href="' . $wr['replay'] . '">' . $chunks[count($chunks) - 1] . '</a>';
-                        } else {
-                            $replay = '-';
-                        }
-                        if (!empty($wr['video'])) {
-                            $video = '<a href="' . $wr['video'] . '" target="_blank">' . _('Link') . '</a>';
-                        } else {
-                            $video = '-';
-                        }
-                        echo '<td id="' . $game . 'overall4">' . $replay . '</td>';
-                        echo '<td id="' . $game . 'overall5">' . $video . '</td>';
-                        echo '<td id="' . $game . 'overall6" data-sort="' . date_tl($wr['date'], 'raw') . '">' . ($wr['score'] == 0 ? '-' : date_tl($wr['date'], $lang)) . '</td></tr>';
+                foreach ($games as $key => $data) {
+                    $game = $data['short_name'];
+                    $num = $data['number'];
+                    if ($game == 'UDoALG' || !property_exists($overall, $game)) {
+                        continue;
                     }
+                    $wr = $overall->{$game};
+                    $score_text = number_format($wr['score'], 0, '.', ',');
+                    if ($wr['score'] > $MAX_SCORE) {
+                        $score_text = '<span class="cs">' . number_format($wr['score'], 0, '.', ',') . '<span class="tooltip truescore">' . _('Uncapped') . '</span></span> ';
+                    }
+                    echo '<tr id="' . $game . 'o"><td>' . ($num == 6.5 ? 6 : $num) . '</td><td class="' . $game . '">' . _($game) . '</td>';
+                    echo '<td id="' . $game . 'overall0" data-sort="' . $wr['score'] . '">' . $score_text . '</td>';
+                    if ($wr['score'] == 0) {
+                        echo '<td id="' . $game . 'overall1">-</td>';
+                        echo '<td id="' . $game . 'overall2">-</td>';
+                        echo '<td id="' . $game . 'overall3">-</td>';
+                    } else {
+                        echo '<td id="' . $game . 'overall1"><a href="?player=' . urlencode($wr['player']) . '">' . $wr['player'] . '</a></td>';
+                        echo '<td id="' . $game . 'overall2">' . $wr['category']['difficulty'] . '</td>';
+                        echo '<td id="' . $game . 'overall3">' . _($wr['category']['shot']) . '</td>';
+                    }
+                    if (!empty($wr['replay'])) {
+                        $chunks = preg_split('/\//', $wr['replay']);
+                        $replay = '<a href="' . $wr['replay'] . '">' . $chunks[count($chunks) - 1] . '</a>';
+                    } else {
+                        $replay = '-';
+                    }
+                    if (!empty($wr['video'])) {
+                        $video = '<a href="' . $wr['video'] . '" target="_blank">' . _('Link') . '</a>';
+                    } else {
+                        $video = '-';
+                    }
+                    echo '<td id="' . $game . 'overall4">' . $replay . '</td>';
+                    echo '<td id="' . $game . 'overall5">' . $video . '</td>';
+                    echo '<td id="' . $game . 'overall6" data-sort="' . date_tl($wr['date'], 'raw') . '">' . ($wr['score'] == 0 ? '-' : date_tl($wr['date'], $lang)) . '</td></tr>';
                 }
 			?></tbody>
         </table></div>
@@ -353,26 +350,21 @@ foreach ($wr_data as $key => $data) {
         if ($layout == 'New') {
             echo '<div id="newlayout"><p id="clickgame">' . _('Click a game cover to show its list of world records.') . '</p>';
             $second_row = false;
-            if (gettype($games) != 'string') {
-                foreach ($games as $key => $data) {
-                    $game = $data['short_name'];
-                    if ($game == 'UDoALG') {
-                        continue;
-                    }
-                    if ($time_travel !== false && $data['release_date'] > $time_travel) {
-                        continue;
-                    }
-                    if ($game == 'MoF') {
-                        $second_row = true;
-                        echo !$is_mobile ? '<br>' : '';
-                    }
-                    if (!$second_row) {
-                        echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_1"></span>' .
-                        '<span class="full_name tooltip">' . $full_names->{$game} . '</span></span>';
-                    } else {
-                        echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_2"></span>' .
-                        '<span class="full_name tooltip">' . $full_names->{$game} . '</span></span>';
-                    }
+            foreach ($games as $key => $data) {
+                $game = $data['short_name'];
+                if ($game == 'UDoALG') {
+                    continue;
+                }
+                if ($game == 'MoF') {
+                    $second_row = true;
+                    echo !$is_mobile ? '<br>' : '';
+                }
+                if (!$second_row) {
+                    echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_1"></span>' .
+                    '<span class="full_name tooltip">' . $full_names->{$game} . '</span></span>';
+                } else {
+                    echo '<span class="game_image"><span id="' . $game . '_image" class="game_img sheet_2"></span>' .
+                    '<span class="full_name tooltip">' . $full_names->{$game} . '</span></span>';
                 }
             }
             echo '</div>';
@@ -523,7 +515,7 @@ foreach ($wr_data as $key => $data) {
             <select id='history_category_old'>
                 <option value=''>...</option>
                 <?php
-                    $categories = curl_get($API_BASE . '/api/v1/category/?type=Score&region=Eastern&historical=true');
+                    $categories = curl_get($API_BASE . '/api/v1/category/?type=Score&region=Eastern&historical=true' . ($time_travel ? '&release_date__lte=' . $time_travel : ''));
                     if (strpos($categories, 'Internal Server Error') === false) {
                         $categories = json_decode($categories, true);
                         foreach ($categories as $key => $category) {
@@ -583,33 +575,27 @@ foreach ($wr_data as $key => $data) {
     <footer><strong><a href='#top'><?php echo _('Back to Top') ?></a></strong></footer>
 	<input id='diffs' type='hidden' value='<?php
 		$diffs = '{';
-		foreach ($games as $key => $data) {
-            if ($data['short_name'] == 'UDoALG') {
+		foreach ($games_seen as $key => $game) {
+            if ($game == 'UDoALG') {
                 continue;
             }
-			$diffs .= '"' . $data['short_name'] . '":[';
-			foreach ($data['shots'][0]['categories'] as $key => $category) {
-                if ($category['type'] == 'LNN' || $category['region'] == 'Western') {
-                    continue;
-                }
-				$diffs .= '"' . $category['difficulty'] . '",';
+			$diffs .= '"' . $game . '":[';
+			foreach ($diffs_seen->{$game} as $key => $diff) {
+				$diffs .= '"' . $diff . '",';
 			}
-            if ($data['short_name'] == 'HSiFS') {
-                $diffs .= '"Extra",';
-            }
 			$diffs = substr($diffs, 0, -1) . '],';
 		}
 		echo substr($diffs, 0, -1) . '}';
 	?>'>
 	<input id='shots' type='hidden' value='<?php
 		$shots = '{';
-		foreach ($games as $key => $data) {
-			$shots .= '"' . $data['short_name'] . '":[';
-			foreach ($data['shots'] as $key => $shot) {
-                if ($data['short_name'] == 'HSiFS' && strlen($shot['name']) <= 6) {
+		foreach ($games_seen as $key => $game) {
+			$shots .= '"' . $game . '":[';
+			foreach ($shots_seen->{$game} as $key => $shot) {
+                if ($game == 'HSiFS' && strlen($shot) <= 6) {
                     continue;
                 }
-				$shots .= '"' . $shot['name'] . '",';
+				$shots .= '"' . $shot . '",';
 			}
 			$shots = substr($shots, 0, -1) . '],';
 		}

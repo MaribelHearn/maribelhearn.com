@@ -110,12 +110,9 @@ $last_modified = $last_modified['results'][0]['date'];
             '</a></p></div><noscript>';
         }
         echo '<div class="contents"><p><a href="#lnns">' . _('LNN Lists') . '</a></p>';
-        $games = curl_get($API_BASE . '/api/v1/game/');
+        $games = curl_get($API_BASE . '/api/v1/game/' . ($time_travel ? '?release_date__lte=' . $time_travel : ''));
         $games = json_decode($games, true);
         foreach ($games as $key => $data) {
-            if ($time_travel !== false && $data['release_date'] > $time_travel) {
-                continue;
-            }
             $game = $data['short_name'];
             $full_name = _($data['full_name']);
             $game_nums->{$game} = $data['number'];
@@ -151,6 +148,7 @@ $last_modified = $last_modified['results'][0]['date'];
         $sheet = '_1';
         $lnn = curl_get($API_BASE . '/api/v1/replay/?ordering=game,shot&type=LNN' . ($time_travel ? '&date__lte=' . $time_travel : ''));
         $games_seen = [];
+        $shots_seen = (object) [];
         $lnn = json_decode($lnn, true);
         foreach ($lnn as $key => $data) {
             $player = $data['player'];
@@ -174,7 +172,7 @@ $last_modified = $last_modified['results'][0]['date'];
                     '<td class="foot">' . implode(', ', $players_game) . '</td></tr></tfoot></table></div>';
                 }
                 array_push($games_seen, $game);
-                $shots_seen = [];
+                $shots_seen->{$game} = [];
                 $players_game = [];
                 echo '<div id="' . $game . '"><p><table id="' . $game . 't" class="' . $game . 't">' .
                 '<caption><span id="' . $game . '_image_old" class="cover sheet' . $sheet . '"></span> ' . $full_names->{$game} . '</caption>' .
@@ -182,13 +180,13 @@ $last_modified = $last_modified['results'][0]['date'];
                 '<th class="general_header nowrap">' . lnn_type($game, $lang) . '<br>' . _('(Different players)') . '</th>' .
                 '<th class="general_header">' . _('Players') . '</tr></thead><tbody>';
             }
-            if (!in_array($shot, $shots_seen)) {
-                if (!empty($shots_seen)) {
+            if (!in_array($shot, $shots_seen->{$game})) {
+                if (!empty($shots_seen->{$game})) {
                     $players_shot = array_unique($players_shot);
                     usort($players_shot, 'player_sort');
                     echo '<td>' . (count($players_shot) == 1 && $game == 'UDoALG' ? '-' : count($players_shot)) . '</td><td>' . implode(', ', $players_shot) . '</td></tr>';
                 }
-                array_push($shots_seen, $shot);
+                array_push($shots_seen->{$game}, $shot);
                 $players_shot = [];
                 echo '<tr><td class="nowrap">' . format_shot($game, $shot) . '</td>';
             }
@@ -246,9 +244,6 @@ $last_modified = $last_modified['results'][0]['date'];
             echo '<p><input id="showversus1" type="checkbox"><label id="label_versus1" for="showversus1">' . _('Include Versus games') . '</label></p>';
             $second_row = false;
             foreach ($games as $key => $data) {
-                if ($time_travel !== false && $data['release_date'] > $time_travel) {
-                    continue;
-                }
                 $game = $data['short_name'];
                 if (!$include_vs && in_array($game, $pvp)) {
                     continue;
@@ -271,6 +266,9 @@ $last_modified = $last_modified['results'][0]['date'];
             if (!$include_vs) {
                 echo '<br><br>';
                 foreach ($pvp as $key => $game) {
+                    if (!property_exists($full_names, $game)) {
+                        continue;
+                    }
                     echo '<span class="game_image"><span id="' . $game . '_image" class="game_img ' . ($game == 'UDoALG' ? 'sheet_2' : 'sheet_1') . '"></span>' .
                     '<span class="full_name tooltip">' . $full_names->{$game} . '</span></span>';
                 }
@@ -315,7 +313,7 @@ $last_modified = $last_modified['results'][0]['date'];
             <select id='search_category'>
                 <option value=''>...</option>
                 <?php
-                    $categories = curl_get($API_BASE . '/api/v1/category/?type=LNN&region=Eastern');
+                    $categories = curl_get($API_BASE . '/api/v1/category/?type=LNN&region=Eastern' . ($time_travel ? '&release_date__lte=' . $time_travel : ''));
                     $categories = json_decode($categories, true);
                     foreach ($categories as $key => $category) {
                         if ($category['game'] == 'UDoALG' && in_array($category['shot'], $BANNED_CHARS) || $category['route'] == 'Gold') {
@@ -488,10 +486,10 @@ $last_modified = $last_modified['results'][0]['date'];
     <footer><strong><a href='#top'><?php echo _('Back to Top'); ?></a></strong></footer>
 	<input id='shots' type='hidden' value='<?php
 		$shots = '{';
-		foreach ($games as $key => $data) {
-			$shots .= '"' . $data['short_name'] . '":[';
-			foreach ($data['shots'] as $key => $shot) {
-				$shots .= '"' . $shot['name'] . '",';
+		foreach ($games_seen as $key => $game) {
+			$shots .= '"' . $game . '":[';
+			foreach ($shots_seen->{$game} as $key => $shot) {
+				$shots .= '"' . $shot . '",';
 			}
 			$shots = substr($shots, 0, -1) . '],';
 		}

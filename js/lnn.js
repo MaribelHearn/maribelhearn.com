@@ -683,29 +683,6 @@ function setAttributes() {
     }
 }
 
-/*function getPlayerSearchOptions() {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', `${API_BASE}/api/v1/replay/players/`);
-    xhr.onreadystatechange = function () {
-        if (this.readyState === 4) {
-            if (this.status === 200) {
-                const playerSearch = document.getElementById("search_player");
-                const players = JSON.parse(this.response).lnn.sort();
-                
-                for (const player of players) {
-                    if (player == '-') {
-                        continue;
-                    }
-
-                    playerSearch.innerHTML += `<option value="${player}">${player}</option>`;
-                }
-            }
-        }
-    }
-
-    xhr.send();
-}*/
-
 function checkQueryString() {
     const urlParams = new URLSearchParams(window.location.search);
     const game = urlParams.get('game');

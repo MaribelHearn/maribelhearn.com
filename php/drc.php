@@ -1,22 +1,50 @@
 <?php
 global $API_BASE;
 $id = 0;
-$games = curl_get($API_BASE . '/api/v1/game/');
-if (strpos($games, 'Internal Server Error') !== false) {
+$wrs = [];
+$games_seen = [];
+$diffs_seen = (object) [];
+$shots_seen = (object) [];
+$wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty,shot&type=Score&region=Eastern&verified=true&historical=true&score__wr=true');
+if (strpos($wr_data, 'Internal Server Error') !== false) {
     $_GET['error'] = 500;
     include_once('php/error.php');
     include_once('php/shared/postscript.php');
     die();
-} else if (strpos($games, 'Service Unavailable') !== false || strpos($games, 'Not Found') !== false) {
+} else if (strpos($wr_data, 'Service Unavailable') !== false || strpos($wr_data, 'Not Found') !== false) {
     $_GET['error'] = 503;
     include_once('php/error.php');
     include_once('php/shared/postscript.php');
     die();
 } else {
-    $games = json_decode($games, true);
+	$wr_data = json_decode($wr_data, true);
+	foreach ($wr_data as $key => $data) {
+		$score = $data['score'];
+		$player = $data['player'];
+		$game = $data['category']['game'];
+		$diff = $data['category']['difficulty'];
+		$shot = $data['category']['shot'];
+		if (!in_array($game, $games_seen)) {
+			$wrs[$game] = [];
+			array_push($games_seen, $game);
+			$diffs_seen->{$game} = [];
+			$shots_seen->{$game} = [];
+		}
+		if (!in_array($diff, $diffs_seen->{$game})) {
+			$wrs[$game][$diff] = [];
+			array_push($diffs_seen->{$game}, $diff);
+		}
+		if (!in_array($shot, $shots_seen->{$game})) {
+			$wrs[$game][$diff][$shot] = [];
+			array_push($shots_seen->{$game}, $shot);
+		}
+		if (empty($wrs[$game][$diff][$shot]) || $score > $wrs[$game][$diff][$shot][0]) {
+			$wrs[$game][$diff][$shot] = [$score, $player];
+		}
+	}
+	$rubrics_json = file_get_contents('json/rubrics.json');
+	$Rubrics = json_decode($rubrics_json, true);
 }
-$rubrics_json = file_get_contents('json/rubrics.json');
-$Rubrics = json_decode($rubrics_json, true);
 
 function manoku(string $str, int $len, int $offset, string $lang) {
     if ($str[$len-$offset] != '0') {
@@ -474,12 +502,13 @@ function is_phantasmagoria(string $game) {
         <br>
         <footer><strong><a href='#top'><?php echo _('Back to Top') ?></a></strong></footer>
     </div>
+	<input id='WRs' type='hidden' value='<?php echo json_encode($wrs); ?>'>
 	<input id='shots' type='hidden' value='<?php
 		$shots = '{';
-		foreach ($games as $key => $data) {
-			$shots .= '"' . $data['short_name'] . '":[';
-			foreach ($data['shots'] as $key => $shot) {
-				$shots .= '"' . $shot['name'] . '",';
+		foreach ($games_seen as $key => $game) {
+			$shots .= '"' . $game . '":[';
+			foreach ($shots_seen->{$game} as $key => $shot) {
+				$shots .= '"' . $shot . '",';
 			}
 			$shots = substr($shots, 0, -1) . '],';
 		}

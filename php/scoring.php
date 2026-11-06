@@ -2,7 +2,9 @@
 global $API_BASE;
 $wrs = [];
 $games_seen = [];
-$games_fullnames = [];
+$full_names = (object) [];
+$full_names = (object) [];
+$game_numbers = (object) [];
 $diffs_seen = (object) [];
 $shots_seen = (object) [];
 $wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty,shot&type=Score&region=Eastern&verified=true&historical=true&score__wr=true');
@@ -91,7 +93,12 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
             </tr>
         </thead>
         <tbody><?php
-            foreach ($games_seen as $key => $game) {
+            $games = curl_get($API_BASE . '/api/v1/game/');
+            $games = json_decode($games, true);
+            foreach ($games as $key => $data) {
+                $game = $data['short_name'];
+                $full_names->{$game} = $data['full_name'];
+                $game_numbers->{$game} = $data['number'];
                 if ($game == 'UDoALG') {
                     continue;
                 }
@@ -130,7 +137,8 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
             </thead>
             <tbody><?php
                 global $is_mobile;
-                foreach ($games_seen as $key => $game) {
+                foreach ($games as $key => $data) {
+                    $game = $data['short_name'];
                     if ($game == 'UDoALG') {
                         continue;
                     }
@@ -146,14 +154,14 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
                             $rowspan -= 4;
                         }
                         if ($key === 0 && $is_mobile) {
-                            echo '<td rowspan="' . $rowspan . '" class="nohide"><span id="' . $game . '_image" class="cover cover98"></span></td>';
+                            echo '<td rowspan="' . $rowspan . '" class="nohide"><span id="' . $game . '_image" title="' . $full_names->{$game} . '" class="cover' . ($game_numbers->{$game} <= 5 ? ' cover98' : '') . '"></span></td>';
                         }
                         if ($key === 0) {
                             echo '<tr><td colspan="8" class="nohide"><div id="dropdown_' . $game . '" class="dropdown-check-list" tabindex="100"><span class="anchor">Expand</span></div></td></tr>';
                         }
                         echo '<tr class="row_' . $game . '">';
                         if ($key === 0 && !$is_mobile) {
-                            echo '<td rowspan="' . $rowspan . '" class="nohide"><span id="' . $game . '_image" class="cover cover98"></span></td>';
+                            echo '<td rowspan="' . $rowspan . '" class="nohide"><span id="' . $game . '_image" title="' . $full_names->{$game} . '" class="cover' . ($game_numbers->{$game} <= 5 ? ' cover98' : '') . '"></span></td>';
                         }
                         echo '<td>' . $shot . '</td>';
                         foreach ($diffs_seen->{$game} as $key => $diff) {
