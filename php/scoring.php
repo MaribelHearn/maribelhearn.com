@@ -2,9 +2,10 @@
 global $API_BASE;
 $wrs = [];
 $games_seen = [];
-$diffs_seen = [];
-$shots_seen = [];
-$wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty,shot&type=Score&region=Eastern&verified=true&historical=true');
+$games_fullnames = [];
+$diffs_seen = (object) [];
+$shots_seen = (object) [];
+$wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty,shot&type=Score&region=Eastern&verified=true&historical=true&score__wr=true');
 if (strpos($wr_data, 'Internal Server Error') !== false) {
     $_GET['error'] = 500;
     include_once('php/error.php');
@@ -25,24 +26,22 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
         $shot = $data['category']['shot'];
         if (!in_array($game, $games_seen)) {
             $wrs[$game] = [];
-            $diffs_seen = [];
-            $shots_seen = [];
             array_push($games_seen, $game);
+            $diffs_seen->{$game} = [];
+            $shots_seen->{$game} = [];
         }
-        if (!in_array($diff, $diffs_seen)) {
+        if (!in_array($diff, $diffs_seen->{$game})) {
             $wrs[$game][$diff] = [];
-            array_push($diffs_seen, $diff);
+            array_push($diffs_seen->{$game}, $diff);
         }
-        if (!in_array($shot, $shots_seen)) {
+        if (!in_array($shot, $shots_seen->{$game})) {
             $wrs[$game][$diff][$shot] = [];
-            array_push($shots_seen, $shot);
+            array_push($shots_seen->{$game}, $shot);
         }
         if (empty($wrs[$game][$diff][$shot]) || $score > $wrs[$game][$diff][$shot][0]) {
             $wrs[$game][$diff][$shot] = [$score, $player];
         }
     }
-    $games = curl_get($API_BASE . '/api/v1/game/');
-    $games = json_decode($games, true);
 }
 ?>
 <div id='wrap' class='wrap'>
@@ -92,8 +91,7 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
             </tr>
         </thead>
         <tbody><?php
-            foreach ($games as $key => $data) {
-                $game = $data['short_name'];
+            foreach ($games_seen as $key => $game) {
                 if ($game == 'UDoALG') {
                     continue;
                 }
@@ -132,17 +130,15 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
             </thead>
             <tbody><?php
                 global $is_mobile;
-                foreach ($games as $key => $data) {
-                    $game = $data['short_name'];
+                foreach ($games_seen as $key => $game) {
                     if ($game == 'UDoALG') {
                         continue;
                     }
-                    foreach ($data['shots'] as $key => $shot_data) {
-                        $shot = $shot_data['name'];
+                    foreach ($shots_seen->{$game} as $key => $shot) {
                         if ($game == 'HSiFS' && strlen($shot) <= 6) {
                             continue;
                         }
-                        $rowspan = count($data['shots']);
+                        $rowspan = count($shots_seen->{$game});
                         if ($game === 'GFW') {
                             $rowspan += 1;
                         }
@@ -150,23 +146,17 @@ if (strpos($wr_data, 'Internal Server Error') !== false) {
                             $rowspan -= 4;
                         }
                         if ($key === 0 && $is_mobile) {
-                            echo '<td rowspan="' . $rowspan . '" class="nohide"><span id="' . $game . '_image" title="' . $data['full_name'] .
-                                '" class="cover' . ($data['number'] <= 5 ? ' cover98' : '') . '"></span></td>';
+                            echo '<td rowspan="' . $rowspan . '" class="nohide"><span id="' . $game . '_image" class="cover' . ($data['number'] <= 5 ? ' cover98' : '') . '"></span></td>';
                         }
                         if ($key === 0) {
                             echo '<tr><td colspan="8" class="nohide"><div id="dropdown_' . $game . '" class="dropdown-check-list" tabindex="100"><span class="anchor">Expand</span></div></td></tr>';
                         }
                         echo '<tr class="row_' . $game . '">';
                         if ($key === 0 && !$is_mobile) {
-                            echo '<td rowspan="' . $rowspan . '" class="nohide"><span id="' . $game . '_image" title="' . $data['full_name'] .
-                                '" class="cover' . ($data['number'] <= 5 ? ' cover98' : '') . '"></span></td>';
+                            echo '<td rowspan="' . $rowspan . '" class="nohide"><span id="' . $game . '_image" class="cover' . ($data['number'] <= 5 ? ' cover98' : '') . '"></span></td>';
                         }
                         echo '<td>' . $shot . '</td>';
-                        foreach ($shot_data['categories'] as $key => $category_data) {
-                            if ($category_data['type'] == 'LNN' || $category_data['region'] == 'Western') {
-                                continue;
-                            }
-                            $diff = $category_data['difficulty'];
+                        foreach ($diffs_seen->{$game} as $key => $diff) {
                             if (($game == 'GFW' || $game == 'HSiFS') && $diff == 'Extra') {
                                 continue;
                             }
