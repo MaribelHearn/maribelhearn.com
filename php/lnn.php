@@ -1,28 +1,30 @@
 <?php
 global $API_BASE;
 global $is_mobile;
+$layout = (isset($_COOKIE['lnn_old_layout']) ? 'Old' : 'New');
+$include_vs = (isset($_COOKIE['include_vs']) ? true : false);
+$time_travel = (isset($_COOKIE['time_travel']) ? $_COOKIE['time_travel'] : false);
 
-$connection_test = curl_get($API_BASE . '/api/v1/');
-if (strpos($connection_test, 'Internal Server Error') !== false) {
+$last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&date__isnull=False&type=LNN&limit=1' . ($time_travel ? '&date__lte=' . $time_travel : ''));
+if (strpos($last_modified, 'Internal Server Error') !== false) {
     $_GET['error'] = 500;
     include_once('php/error.php');
     include_once('php/shared/postscript.php');
     die();
-} else if (strpos($connection_test, 'Service Unavailable') !== false || strpos($connection_test, 'Not Found') !== false) {
+} else if (strpos($last_modified, 'Service Unavailable') !== false || strpos($last_modified, 'Not Found') !== false) {
     $_GET['error'] = 503;
     include_once('php/error.php');
     include_once('php/shared/postscript.php');
     die();
 }
 
+$last_modified = json_decode($last_modified, true);
+$last_modified = $last_modified['results'][0]['date'];
 $PC98_LNN = ['HRtP', 'SoEW', 'LLS', 'MS'];
 $WINDOWS_LNN = ['EoSD', 'PCB', 'IN', 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC', 'UM', 'FW'];
 $ALL_LNN = array_merge($PC98_LNN, $WINDOWS_LNN);
 $RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_limit']), 1) : 15;
 $BANNED_CHARS = ['Reimu', 'Marisa', 'Sanae', 'Seiran', 'Biten', 'Enoko', 'Chiyari']; // Touhou 19 UDoALG
-$layout = (isset($_COOKIE['lnn_old_layout']) ? 'Old' : 'New');
-$include_vs = (isset($_COOKIE['include_vs']) ? true : false);
-$time_travel = (isset($_COOKIE['time_travel']) ? $_COOKIE['time_travel'] : false);
 $pvp = ['PoDD', 'UDoALG'];
 $number_of_lnns = (object) [];
 $number_of_players = (object) [];
@@ -83,11 +85,6 @@ function format_lm(string $lm, string $lang) {
 function player_sort(string $a, string $b) {
     return strip_tags($a) <=> strip_tags($b);
 }
-
-$last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&date__isnull=False&type=LNN&limit=1' . ($time_travel ? '&date__lte=' . $time_travel : ''));
-$last_modified = json_decode($last_modified, true);
-$last_modified = $last_modified['results'][0]['date'];
-
 ?>
 <div id='wrap' class='wrap'>
     <?php echo wrap_top() ?>

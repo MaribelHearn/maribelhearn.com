@@ -1,61 +1,32 @@
 <?php
 global $API_BASE;
 global $is_mobile;
+$MAX_SCORE = 9999999990;
+$RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_limit']), 1) : 15;
+$layout = (isset($_COOKIE['wr_old_layout']) ? 'Old' : 'New');
+$time_travel = (isset($_COOKIE['time_travel']) ? $_COOKIE['time_travel'] : false);
 
-$connection_test = curl_get($API_BASE . '/api/v1/');
-if (strpos($connection_test, 'Internal Server Error') !== false) {
+$last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&date__isnull=False&type=Score&limit=1' . ($time_travel ? '&date__lte=' . $time_travel : ''));
+if (strpos($last_modified, 'Internal Server Error') !== false) {
     $_GET['error'] = 500;
     include_once('php/error.php');
     include_once('php/shared/postscript.php');
     die();
-} else if (strpos($connection_test, 'Service Unavailable') !== false || strpos($connection_test, 'Not Found') !== false) {
+} else if (strpos($last_modified, 'Service Unavailable') !== false || strpos($last_modified, 'Not Found') !== false) {
     $_GET['error'] = 503;
     include_once('php/error.php');
     include_once('php/shared/postscript.php');
     die();
 }
 
-$MAX_SCORE = 9999999990;
-$RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_limit']), 1) : 15;
-$layout = (isset($_COOKIE['wr_old_layout']) ? 'Old' : 'New');
-$time_travel = (isset($_COOKIE['time_travel']) ? $_COOKIE['time_travel'] : false);
+$last_modified = json_decode($last_modified, true);
+$last_modified = $last_modified['results'][0]['date'];
 $wrs = [];
 $player_wrs = (object) [];
 $player_games = (object) [];
 $overall = (object) [];
 $diff_max = (object) [];
 $full_names = (object) [];
-
-function date_tl($date, string $lang) {
-    if (empty($date) || $date == '') {
-        return _('Unknown');
-    }
-    $tmp = preg_replace('/-/', '/', $date);
-    $tmp = preg_split('/\//', $tmp);
-    $day = str_pad($tmp[2], 2, '0', STR_PAD_LEFT);
-    $month = str_pad($tmp[1], 2, '0', STR_PAD_LEFT);
-    $year = $tmp[0];
-    if ($lang == 'raw') { // raw YMD; used for sorting
-        return $year . $month . $day;
-    } else if ($lang == 'en_US') {
-        return $month . '/' . $day . '/' . $year;
-    } else if ($lang == 'ja_JP' || $lang == 'zh_CN') {
-        return $year . '年' . $month . '月' . $day . '日';
-    } else if ($lang == 'ru_RU' || $lang == 'de_DE') {
-        return $day . '.' . $month . '.' . $year;
-    } else { // en_GB || es_ES
-        return $day . '/' . $month . '/' . $year;
-    }
-}
-
-function format_lm(string $lm, string $lang) {
-    $result = _('World records are current as of <span id="lm">%date</span>.');
-    return str_replace('%date', date_tl($lm, $lang), $result);
-}
-
-$last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&date__isnull=False&type=Score&limit=1' . ($time_travel ? '&date__lte=' . $time_travel : ''));
-$last_modified = json_decode($last_modified, true);
-$last_modified = $last_modified['results'][0]['date'];
 $wr_data = curl_get($API_BASE . '/api/v1/replay/?ordering=game,difficulty,shot&type=Score&region=Eastern&verified=true&historical=true' . ($time_travel ? '&date__lte=' . $time_travel : '') . '&score__wr=true');
 $games_seen = [];
 $diffs_seen = (object) [];
@@ -113,6 +84,33 @@ foreach ($wr_data as $key => $data) {
         $diff_max->{$game}->{$diff} = $data;
         $diff_max->{$game}->{$diff}['shottype'] = $shot;
     }
+}
+
+function date_tl($date, string $lang) {
+    if (empty($date) || $date == '') {
+        return _('Unknown');
+    }
+    $tmp = preg_replace('/-/', '/', $date);
+    $tmp = preg_split('/\//', $tmp);
+    $day = str_pad($tmp[2], 2, '0', STR_PAD_LEFT);
+    $month = str_pad($tmp[1], 2, '0', STR_PAD_LEFT);
+    $year = $tmp[0];
+    if ($lang == 'raw') { // raw YMD; used for sorting
+        return $year . $month . $day;
+    } else if ($lang == 'en_US') {
+        return $month . '/' . $day . '/' . $year;
+    } else if ($lang == 'ja_JP' || $lang == 'zh_CN') {
+        return $year . '年' . $month . '月' . $day . '日';
+    } else if ($lang == 'ru_RU' || $lang == 'de_DE') {
+        return $day . '.' . $month . '.' . $year;
+    } else { // en_GB || es_ES
+        return $day . '/' . $month . '/' . $year;
+    }
+}
+
+function format_lm(string $lm, string $lang) {
+    $result = _('World records are current as of <span id="lm">%date</span>.');
+    return str_replace('%date', date_tl($lm, $lang), $result);
 }
 ?>
 <div id='wrap' class='wrap'>
