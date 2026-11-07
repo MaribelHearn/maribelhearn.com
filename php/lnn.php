@@ -482,8 +482,8 @@ function player_sort(string $a, string $b) {
         </table>
     </div>
     <footer><strong><a href='#top'><?php echo _('Back to Top'); ?></a></strong></footer>
-	<!--<input id='shots' type='hidden' value='<?php
-		/*$shots = '{';
+	<input id='shots' type='hidden' value='<?php
+		$shots = '{';
 		foreach ($games as $key => $game) {
 			$shots .= '"' . $game . '":[';
 			foreach ($shots_seen->{$game} as $key => $shot) {
@@ -491,8 +491,8 @@ function player_sort(string $a, string $b) {
 			}
 			$shots = substr($shots, 0, -1) . '],';
 		}
-		echo substr($shots, 0, -1) . '}';*/
-	?>'>-->
+		echo substr($shots, 0, -1) . '}';
+	?>'>
 </div>
 <div id='modal'>
     <div class='modal_inner'>
