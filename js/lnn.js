@@ -22,14 +22,6 @@ picker.on("selected", (date) => {
     setCookie("time_travel", newDate.toISOString().split('T')[0]);
 });
 
-function toggleLayout() {
-    if (getCookie("lnn_old_layout")) {
-        deleteCookie("lnn_old_layout");
-    } else {
-        setCookie("lnn_old_layout", true);
-    }
-}
-
 function setRecentLimit(event) {
     let limit = Math.max(parseInt(event.target.value), 1);
 
@@ -629,8 +621,6 @@ function setLanguage(event) {
 function setEventListeners() {
     document.body.addEventListener("click", closeModal, false);
     document.body.addEventListener("keyup", detectKey, false);
-    document.getElementById("toggle_layout").href = document.getElementById("toggle_layout").href.split('?')[0];
-    document.getElementById("toggle_layout").addEventListener("click", toggleLayout, false);
     document.getElementById("recent_limit").addEventListener("keyup", setRecentLimit, false);
     document.getElementById("recent_limit").addEventListener("mouseup", setRecentLimit, false);
     document.getElementById("time_travel").addEventListener("keyup", clearTimeTravel, false);
@@ -665,11 +655,6 @@ function setEventListeners() {
 }
 
 function setAttributes() {
-    if (!getCookie("lnn_old_layout")) {
-        document.getElementById("newlayout").style.display = "block";
-        document.getElementById("contents_new").style.display = "block";
-    }
-
     document.getElementById("search").style.display = "block";
     const flags = document.querySelectorAll(".flag");
     const searchLink = document.getElementById("searchlink");
@@ -767,13 +752,14 @@ function init() {
     setEventListeners();
     setAttributes();
 
-    if (!getCookie("lnn_old_layout")) {
-        //getPlayerSearchOptions();
-    }
 
-    // legacy video toggle
+    // legacy
     if (getCookie("prefer_video")) {
         deleteCookie("prefer_video");
+    }
+
+    if (getCookie("lnn_old_layout")) {
+        deleteCookie("lnn_old_layout");
     }
 
     const player = document.getElementById("player").value;

@@ -1,9 +1,15 @@
 <?php
 global $API_BASE;
 global $is_mobile;
-$layout = (isset($_COOKIE['lnn_old_layout']) ? 'Old' : 'New');
+$BANNED_CHARS = ['Reimu', 'Marisa', 'Sanae', 'Seiran', 'Biten', 'Enoko', 'Chiyari']; // Touhou 19 UDoALG
+$PC98_LNN = ['HRtP', 'SoEW', 'LLS', 'MS'];
+$WINDOWS_LNN = ['EoSD', 'PCB', 'IN', 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC', 'UM', 'FW'];
+$pvp = ['PoDD', 'UDoALG'];
+$ALL_LNN = array_merge($PC98_LNN, $WINDOWS_LNN);
+$RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_limit']), 1) : 15;
 $include_vs = (isset($_COOKIE['include_vs']) ? true : false);
 $time_travel = (isset($_COOKIE['time_travel']) ? $_COOKIE['time_travel'] : false);
+$layout = (isset($_GET['layout']) ? 'Old' : 'New');
 
 $last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&date__isnull=False&type=LNN&limit=1' . ($time_travel ? '&date__lte=' . $time_travel : ''));
 if (strpos($last_modified, 'Internal Server Error') !== false) {
@@ -20,12 +26,8 @@ if (strpos($last_modified, 'Internal Server Error') !== false) {
 
 $last_modified = json_decode($last_modified, true);
 $last_modified = $last_modified['results'][0]['date'];
-$PC98_LNN = ['HRtP', 'SoEW', 'LLS', 'MS'];
-$WINDOWS_LNN = ['EoSD', 'PCB', 'IN', 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC', 'UM', 'FW'];
-$ALL_LNN = array_merge($PC98_LNN, $WINDOWS_LNN);
-$RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_limit']), 1) : 15;
-$BANNED_CHARS = ['Reimu', 'Marisa', 'Sanae', 'Seiran', 'Biten', 'Enoko', 'Chiyari']; // Touhou 19 UDoALG
-$pvp = ['PoDD', 'UDoALG'];
+$games = curl_get($API_BASE . '/api/v1/game/' . ($time_travel ? '?release_date__lte=' . $time_travel : ''));
+$games = json_decode($games, true);
 $number_of_lnns = (object) [];
 $number_of_players = (object) [];
 $player_lnns = (object) [];
@@ -39,6 +41,12 @@ if ($include_vs) {
     $PC98_LNN = ['HRtP', 'SoEW', 'PoDD', 'LLS', 'MS'];
     $WINDOWS_LNN = ['EoSD', 'PCB', 'IN', 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC', 'UM', 'UDoALG', 'FW'];
     $ALL_LNN = array_merge($PC98_LNN, $WINDOWS_LNN);
+}
+
+foreach ($games as $key => $data) {
+    $full_name = _($data['full_name']);
+    $game_nums->{$data['short_name']} = $data['number'];
+    $full_names->{$data['short_name']} = $full_name;
 }
 
 function lnn_type(string $game, string $lang) {
@@ -87,7 +95,12 @@ function player_sort(string $a, string $b) {
 }
 ?>
 <div id='wrap' class='wrap'>
-    <?php echo wrap_top() ?>
+    <?php
+        echo wrap_top();
+        if ($layout == 'New') {
+            echo '<noscript><p>' . _('<strong>Notice:</strong> this page requires JavaScript.') . ' ' . _('<a href="?layout=old">Click here to view the script-free version.</a>') . '</p></noscript>';
+        }
+    ?>
     <p id='description'><?php
         echo _('A list of Touhou Lunatic No Miss No Bomb (LNN) runs, updated every so often. ' .
         'For every shottype in a game, tables will tell you which players have done an LNN with it, if any. ' .
@@ -97,32 +110,26 @@ function player_sort(string $a, string $b) {
     <p id='last_modified'><?php echo (!empty($last_modified) ? format_lm($last_modified, $lang) : '') ?></p>
     <h2><?php echo _('Contents') ?></h2>
     <?php
-        // With JavaScript disabled OR wr_old_layout cookie set, show links to all games and player search
-        if ($layout == 'New') {
+        // With ?layout=old set, show links to all games and player search
+        if ($layout == 'Old') {
+            echo '<div class="contents"><p><a href="#lnns">' . _('LNN Lists') . '</a></p>';
+            foreach ($games as $key => $data) {
+                echo '<p><a href="#' . $data['short_name'] . '">' . $data['full_name'] . '</a></p>';
+            }
+            echo '<p><a id="searchlink" href="#search">' . _('Search') .
+            '</a></p><p><a href="#recent">' . _('Recent LNNs') .
+            '</a></p><p><a href="#overall">' . _('Overall Count') .
+            '</a></p><p><a href="#players">' . _('Player Statistics') .
+            '</a></p></div>';
+        }
+        // With ?layout=old NOT set, show only section links
+        else {
             echo '<div id="contents_new" class="contents"><p><a href="#lnns" class="lnns">' . _('LNN Lists') .
             '</a></p><p><a href="#search">' . _('Search') .
             '</a></p><p><a href="#recent">' . _('Recent LNNs') .
             '</a></p><p><a href="#overall">' . _('Overall Count') .
             '</a></p><p><a href="#players">' . _('Player Statistics') .
-            '</a></p></div><noscript>';
-        }
-        echo '<div class="contents"><p><a href="#lnns">' . _('LNN Lists') . '</a></p>';
-        $games = curl_get($API_BASE . '/api/v1/game/' . ($time_travel ? '?release_date__lte=' . $time_travel : ''));
-        $games = json_decode($games, true);
-        foreach ($games as $key => $data) {
-            $game = $data['short_name'];
-            $full_name = _($data['full_name']);
-            $game_nums->{$game} = $data['number'];
-            $full_names->{$game} = $full_name;
-            echo '<p><a href="#' . $game . '">' . $full_name . '</a></p>';
-        }
-        echo '<p><a id="searchlink" href="#search">' . _('Search') .
-        '</a></p><p><a href="#recent">' . _('Recent LNNs') .
-        '</a></p><p><a href="#overall">' . _('Overall Count') .
-        '</a></p><p><a href="#players">' . _('Player Statistics') .
-        '</a></p></div>';
-        if ($layout == 'New') {
-            echo '</noscript>';
+            '</a></p></div>';
         }
     ?>
     <div id='checkboxes' class='contents'>
@@ -138,10 +145,7 @@ function player_sort(string $a, string $b) {
     </div>
     <h2 id='lnns'><?php echo _('LNN Lists') ?></h2>
     <?php
-        // With lnn_old_layout cookie set, show classic all games layout
-        if ($layout == 'New') {
-            echo '<noscript>';
-        }
+        // With ?layout=old set, show classic all games layout
         $sheet = '_1';
         $lnn = curl_get($API_BASE . '/api/v1/replay/?ordering=game,shot&type=LNN' . ($time_travel ? '&date__lte=' . $time_travel : ''));
         $games_seen = [];
@@ -159,19 +163,19 @@ function player_sort(string $a, string $b) {
                 if (!empty($games_seen)) {
                     $players_shot = array_unique($players_shot);
                     sort($players_shot);
-                    echo '<td>' . count($players_shot) . '</td><td>' . implode(', ', $players_shot) . '</td></tr>';
+                    if ($layout == 'Old') echo '<td>' . count($players_shot) . '</td><td>' . implode(', ', $players_shot) . '</td></tr>';
                     $prev_game = end($games_seen);
                     $number_of_lnns->{$prev_game} = count($players_game);
                     $players_game = array_unique($players_game);
                     $number_of_players->{$prev_game} = count($players_game);
                     sort($players_game);
-                    echo '</tbody><tfoot><tr><td class="foot">' . _('Overall') . '</td><td class="foot">' . $number_of_lnns->{$prev_game} . ' (' . $number_of_players->{$prev_game} . ')</td>' .
+                    if ($layout == 'Old') echo '</tbody><tfoot><tr><td class="foot">' . _('Overall') . '</td><td class="foot">' . $number_of_lnns->{$prev_game} . ' (' . $number_of_players->{$prev_game} . ')</td>' .
                     '<td class="foot">' . implode(', ', $players_game) . '</td></tr></tfoot></table></div>';
                 }
                 array_push($games_seen, $game);
                 $shots_seen->{$game} = [];
                 $players_game = [];
-                echo '<div id="' . $game . '"><p><table id="' . $game . 't" class="' . $game . 't">' .
+                if ($layout == 'Old') echo '<div id="' . $game . '"><p><table id="' . $game . 't" class="' . $game . 't">' .
                 '<caption><span id="' . $game . '_image_old" class="cover sheet' . $sheet . '"></span> ' . $full_names->{$game} . '</caption>' .
                 '<thead><tr><th class="general_header">' . shot_route($game) . '</th>' .
                 '<th class="general_header nowrap">' . lnn_type($game, $lang) . '<br>' . _('(Different players)') . '</th>' .
@@ -181,11 +185,11 @@ function player_sort(string $a, string $b) {
                 if (!empty($shots_seen->{$game})) {
                     $players_shot = array_unique($players_shot);
                     usort($players_shot, 'player_sort');
-                    echo '<td>' . (count($players_shot) == 1 && $game == 'UDoALG' ? '-' : count($players_shot)) . '</td><td>' . implode(', ', $players_shot) . '</td></tr>';
+                    if ($layout == 'Old') echo '<td>' . (count($players_shot) == 1 && $game == 'UDoALG' ? '-' : count($players_shot)) . '</td><td>' . implode(', ', $players_shot) . '</td></tr>';
                 }
                 array_push($shots_seen->{$game}, $shot);
                 $players_shot = [];
-                echo '<tr><td class="nowrap">' . format_shot($game, $shot) . '</td>';
+                if ($layout == 'Old') echo '<tr><td class="nowrap">' . format_shot($game, $shot) . '</td>';
             }
             if ($include_vs || !in_array($game, $pvp)) {
                 if (!isset($player_lnns->{$player})) {
@@ -225,17 +229,14 @@ function player_sort(string $a, string $b) {
         }
         $players_shot = array_unique($players_shot);
         usort($players_shot, 'player_sort');
-        echo '<td>' . count($players_shot) . '</td><td>' . implode(',', $players_shot) . '</td></tr>';
+        if ($layout == 'Old') echo '<td>' . count($players_shot) . '</td><td>' . implode(',', $players_shot) . '</td></tr>';
         $number_of_lnns->{$game} = count($players_game);
         $players_game = array_unique($players_game);
         $number_of_players->{$game} = count($players_game);
         sort($players_game);
-        echo '</tbody><tfoot><tr><td class="foot">' . _('Overall') . '</td><td class="foot">' . $number_of_lnns->{$game} . ' (' . $number_of_players->{$game} . ')</td>' .
+        if ($layout == 'Old') echo '</tbody><tfoot><tr><td class="foot">' . _('Overall') . '</td><td class="foot">' . $number_of_lnns->{$game} . ' (' . $number_of_players->{$game} . ')</td>' .
         '<td class="foot">' . implode(', ', $players_game) . '</td></tr></tfoot></table></div>';
-        if ($layout == 'New') {
-            echo '</noscript>';
-        }
-        // With lnn_old_layout cookie NOT set, show game image layout
+        // With ?layout=old NOT set, show game image layout
         if ($layout == 'New') {
             echo '<div id="newlayout"><p id="clickgame">' . _('Click a game cover to show its list of LNNs.') . '</p>';
             echo '<p><input id="showversus1" type="checkbox"><label id="label_versus1" for="showversus1">' . _('Include Versus games') . '</label></p>';
@@ -481,17 +482,17 @@ function player_sort(string $a, string $b) {
         </table>
     </div>
     <footer><strong><a href='#top'><?php echo _('Back to Top'); ?></a></strong></footer>
-	<input id='shots' type='hidden' value='<?php
-		$shots = '{';
-		foreach ($games_seen as $key => $game) {
+	<!--<input id='shots' type='hidden' value='<?php
+		/*$shots = '{';
+		foreach ($games as $key => $game) {
 			$shots .= '"' . $game . '":[';
 			foreach ($shots_seen->{$game} as $key => $shot) {
 				$shots .= '"' . $shot . '",';
 			}
 			$shots = substr($shots, 0, -1) . '],';
 		}
-		echo substr($shots, 0, -1) . '}';
-	?>'>
+		echo substr($shots, 0, -1) . '}';*/
+	?>'>-->
 </div>
 <div id='modal'>
     <div class='modal_inner'>

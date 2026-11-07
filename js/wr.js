@@ -36,14 +36,6 @@ function getCharacter(string) {
     return string.replace("Spring", "").replace("Summer", "").replace("Autumn", "").replace("Winter", "");
 }
 
-function toggleLayout() {
-    if (getCookie("wr_old_layout")) {
-        deleteCookie("wr_old_layout");
-    } else {
-        setCookie("wr_old_layout", true);
-    }
-}
-
 function toggleVideo() {
     videoEnabled = !videoEnabled;
     videoEnabled ? setCookie("video_enabled", true) : deleteCookie("video_enabled");
@@ -600,8 +592,6 @@ function setLanguage(event) {
 }
 
 function setEventListeners() {
-    document.getElementById("toggle_layout").href = document.getElementById("toggle_layout").href.split('?')[0];
-    document.getElementById("toggle_layout").addEventListener("click", toggleLayout, false);
     document.getElementById("recent_limit").addEventListener("keyup", setRecentLimit, false);
     document.getElementById("recent_limit").addEventListener("mouseup", setRecentLimit, false);
     document.getElementById("time_travel").addEventListener("keyup", clearTimeTravel, false);
@@ -635,11 +625,6 @@ function setEventListeners() {
 }
 
 function setAttributes() {
-    if (!getCookie("wr_old_layout")) {
-        document.getElementById("newlayout").style.display = "block";
-        document.getElementById("contents_new").style.display = "block";
-    }
-    
     document.getElementById("player_search").style.display = "block";
     document.getElementById("checkboxes").style.display = "block";
     const flags = document.querySelectorAll(".flag");
@@ -731,6 +716,10 @@ function init() {
     // legacy
     if (localStorage.getItem("westernEnabled")) {
         localStorage.removeItem("westernEnabled");
+    }
+
+    if (getCookie("wr_old_layout")) {
+        deleteCookie("wr_old_layout");
     }
 
     unverifiedEnabled = localStorage.getItem("unverifiedEnabled") ? true : false;

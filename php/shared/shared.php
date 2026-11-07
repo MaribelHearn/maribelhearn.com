@@ -52,7 +52,7 @@ function wrap_top() {
         '"><span id="hy"></span><br><span id="hy_text">' . (isset($_COOKIE['theme']) ? _('Youkai mode (Dark)') : _('Human mode (Light)')) . '</span></a></span>';
     }
     if ($page == 'lnn' || $page == 'wr') {
-        echo '<span id="toggle"><a id="toggle_layout" href="' . $page . '?layout=' . ($layout == 'New' ? 'old' : 'new') . '">' . ($layout == 'New' ? 'Old' : 'New') . ' layout</a></span>';
+        echo '<span id="toggle"><a id="toggle_layout" href="' . $page . ($layout == 'New' ? '?layout=old' : '') . '">' . ($layout == 'New' ? 'Old' : 'New') . ' layout</a></span>';
     }
     if (has_translation($page)) {
         $path = $page;

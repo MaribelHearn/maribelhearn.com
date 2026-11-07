@@ -90,12 +90,6 @@
         header("Location: {$page}", true, 303);
         exit();
     }
-    if (!empty($_GET['layout'])) {
-        set_layout_cookie($page);
-        $page = ($page == 'index' ? '/' : preg_split('/\?/', $_SERVER['REQUEST_URI'])[0]);
-        header("Location: {$page}", true, 303);
-        exit();
-    }
     if (!empty($file_upload)) {
         $_SESSION['data'] = $file_upload;
         unset($_POST);
