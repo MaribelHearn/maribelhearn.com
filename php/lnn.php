@@ -484,8 +484,7 @@ function player_sort(string $a, string $b) {
     <footer><strong><a href='#top'><?php echo _('Back to Top'); ?></a></strong></footer>
 	<input id='shots' type='hidden' value='<?php
 		$shots = '{';
-		foreach ($games as $key => $data) {
-            $game = $data['short_name'];
+		foreach ($games_seen as $key => $game) {
 			$shots .= '"' . $game . '":[';
 			foreach ($shots_seen->{$game} as $key => $shot) {
 				$shots .= '"' . $shot . '",';
