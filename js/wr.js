@@ -719,6 +719,7 @@ function init() {
     }
 
     if (getCookie("wr_old_layout")) {
+        location.href = "?layout=old";
         deleteCookie("wr_old_layout");
     }
 

@@ -759,6 +759,7 @@ function init() {
     }
 
     if (getCookie("lnn_old_layout")) {
+        location.href = "?layout=old";
         deleteCookie("lnn_old_layout");
     }
 
