@@ -136,10 +136,10 @@
                 </tr>
                 <tr>
                     <td><abbr title='Banshiryuu (C67)'>BSR</abbr> Easy</td>
-                    <td>206,254,030 (WR)</td>
+                    <td>217,910,330 (WR)</td>
                     <td>HiranoS</td>
-                    <td>October 21, 2019</td>
-                    <td><strong><a href='https://www.youtube.com/watch?v=r-xKFTUhNP8'>Link (YouTube)</a></strong></td>
+                    <td>October 1, 2026</td>
+                    <td><strong><a href='https://www.youtube.com/watch?v=rF84mJPFnY8'>Link (YouTube)</a></strong></td>
                 </tr>
                 <tr>
                     <td><abbr title='Banshiryuu (C67)'>BSR</abbr> Easy</td>
@@ -3442,10 +3442,10 @@
             <tr>
                 <td><strong>Easy</strong></td>
                 <td>HiranoS</td>
-                <td>206,254,030 (WR)</td>
+                <td>217,910,330 (WR)</td>
                 <td class='g'>Yes</td>
-                <td>October 21, 2019</td>
-                <td><strong><a href='https://www.youtube.com/watch?v=r-xKFTUhNP8'>Link (YouTube)</a></strong></td>
+                <td>October 1, 2026</td>
+                <td><strong><a href='https://www.youtube.com/watch?v=rF84mJPFnY8'>Link (YouTube)</a></strong></td>
             </tr>
             <tr>
                 <td><strong>Easy</strong></td>
