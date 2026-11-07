@@ -83,7 +83,7 @@
                     <td>3,475,825,090</td>
                     <td>Marisa</td>
                     <td>April 18, 2021</td>
-                    <td><strong><a href='https://www.youtube.com/watch?v=a-vejcZEMnQ'>Old link (YouTube)</a></strong></td>
+                    <td><strong><a href='https://www.twitch.tv/videos/1006478970?t=30m28s'>Link (Twitch)</a></strong></td>
                 </tr>
                 <tr>
                     <td>TD Hard</td>
@@ -2163,7 +2163,7 @@
                 <td>3,475,825,090</td>
                 <td class='g'>Yes</td>
                 <td>April 18, 2021</td>
-                <td><strong><a href='https://www.youtube.com/watch?v=a-vejcZEMnQ'>Old link (YouTube)</a></strong></td>
+                <td><strong><a href='https://www.twitch.tv/videos/1006478970?t=30m28s'>Link (Twitch)</a></strong></td>
             </tr>
             <tr>
                 <td>Hard</td>
