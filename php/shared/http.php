@@ -21,5 +21,4 @@ function is_localhost(string $addr) {
 }
 
 $API_BASE = is_localhost($_SERVER['REMOTE_ADDR']) ? 'http://' . $_SERVER['HTTP_HOST'] : 'https://maribelhearn.com';
-error_reporting(is_localhost($_SERVER['REMOTE_ADDR']) ? E_ALL & ~E_DEPRECATED : 0);
 ?>
