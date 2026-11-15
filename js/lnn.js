@@ -569,13 +569,13 @@ function getCategoryLNNs(category) {
 function openModal() {
     const modal = document.getElementById("modal");
     modal.style.display = "block";
-    modal.childNodes[1].style.display = "block";
+    modal.childNodes[0].style.display = "block";
 }
 
 function emptyModal() {
     const modal = document.getElementById("modal");
     modal.style.display = "none";
-    modal.childNodes[1].style.display = "none";
+    modal.childNodes[0].style.display = "none";
 }
 
 function closeModal(event) {
@@ -639,7 +639,7 @@ function setEventListeners() {
 
     document.getElementById("showversus2").addEventListener("click", toggleVersus, false);
     document.getElementById("showversus3").addEventListener("click", toggleVersus, false);
-    document.getElementById("information").addEventListener("click", openModal, false);
+    document.getElementById("information_link").addEventListener("click", openModal, false);
     const gameImg = document.querySelectorAll(".game_img");
 
     for (const element of gameImg) {

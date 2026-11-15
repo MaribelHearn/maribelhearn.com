@@ -106,7 +106,16 @@ function player_sort(string $a, string $b) {
         'For every shottype in a game, tables will tell you which players have done an LNN with it, if any. ' .
         'If a player has multiple LNNs for one particular shottype, those are not factored in.');
 	?></p>
-    <p><a id='information' href='#'><?php echo _('Click here to view further information and guidelines for this page.') ?></a></p>
+    <?php
+        // With ?layout=old set, link opens modal using script
+        if ($layout == 'Old') {
+            echo '<p><a id="information_link" href="#information">' . _('Click here to view further information and guidelines for this page.') . '</a></p>';
+        }
+        // With ?layout=old NOT set, link goes to bottom of page
+        else {
+            echo '<p><a id="information_link" href="#">' . _('Click here to view further information and guidelines for this page.') . '</a></p>';
+        }
+    ?>
     <p id='last_modified'><?php echo (!empty($last_modified) ? format_lm($last_modified, $lang) : '') ?></p>
     <h2><?php echo _('Contents') ?></h2>
     <?php
@@ -464,17 +473,26 @@ function player_sort(string $a, string $b) {
             </thead>
             <tbody id='rankingbody'>
                 <?php
+                    function compare_func($a, $b) {
+                        return $a[1] < $b[1];
+                    }
+                    $player_lnns_arr = [];
                     foreach ($player_lnns as $player => $count) {
+                        array_push($player_lnns_arr, [$player, $count]);
+                    }
+                    usort($player_lnns_arr, 'compare_func');
+                    foreach ($player_lnns_arr as $key => $arr) {
+                        $player = $arr[0];
+                        $count = $arr[1];
                         if ($player == '-') {
                             continue;
                         }
-                        $shot_lnns = $player_lnns->{$player};
                         $game_lnns = array_intersect($PC98_LNN, $player_games->{$player}) == $PC98_LNN ? count(array_unique($player_games->{$player})) . _(' (All PC-98)') : count(array_unique($player_games->{$player}));
                         $game_lnns = array_intersect($WINDOWS_LNN, $player_games->{$player}) == $WINDOWS_LNN ? count(array_unique($player_games->{$player})) . _(' (All Windows)') : $game_lnns;
                         $game_lnns = array_intersect($ALL_LNN, $player_games->{$player}) == $ALL_LNN ? count(array_unique($player_games->{$player})) . _(' (All Games)') : $game_lnns;
                         echo '<tr><td></td>';
                         echo '<td><a href="?player=' . urlencode($player) . '">' . $player . '</a></td>';
-                        echo '<td data-sort="' . $player_lnns->{$player} . '">' . $shot_lnns . '</td>';
+                        echo '<td data-sort="' . $count . '">' . $count . '</td>';
                         echo '<td data-sort="' . count(array_unique($player_games->{$player})) . '">' . $game_lnns . '</td></tr>';
                     }
                 ?>
@@ -493,64 +511,55 @@ function player_sort(string $a, string $b) {
 		}
 		echo substr($shots, 0, -1) . '}';
 	?>'>
-</div>
-<div id='modal'>
-    <div class='modal_inner'>
-        <h2><?php echo _('Information') ?></h2>
-        <p><?php echo _('This is an unofficial, community-maintained website.') ?></p>
-        <p><?php echo _('In general, you need to upload a replay or a video to an online platform for an LNN clear to be accepted on the website, ' .
-            'for example <a href="https://www.silentselene.net">Silent Selene</a> for replays or <a href="https://www.youtube.com">YouTube</a> for videos. ' .
-            'Streaming to a live streaming platform like <a href="https://twitch.tv">Twitch</a> is also accepted, provided that the VOD is not deleted. ' .
-            'Exceptions may be made on a case-by-case basis.') ?></p>
-        <p><?php echo _('Extra conditions are required for certain games. These conditions are as follows:') ?></p>
-        <table>
-            <thead>
-                <tr>
-                    <th><?php echo _('Game') ?></th>
-                    <th><?php echo _('Condition') ?></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><?php echo _('Touhou 7 - Perfect Cherry Blossom') ?></td>
-                    <td><?php echo _('No Border Breaks') ?></td>
-                </tr>
-                <tr>
-                    <td><?php echo _('Touhou 8 - Imperishable Night') ?></td>
-                    <td><?php echo _('All Spells Captured') ?></td>
-                </tr>
-                <tr>
-                    <td><?php echo _('Touhou 12 - Undefined Fantastic Object') ?></td>
-                    <td><?php echo _('No UFO Summons*') ?></td>
-                </tr>
-                <tr>
-                    <td><?php echo _('Touhou 13 - Ten Desires') ?></td>
-                    <td><?php echo _('No Trance') ?></td>
-                </tr>
-                <tr>
-                    <td><?php echo _('Touhou 16 - Hidden Star in Four Seasons') ?></td>
-                    <td><?php echo _('No Release') ?></td>
-                </tr>
-                <tr>
-                    <td><?php echo _('Touhou 17 - Wily Beast and Weakest Creature') ?></td>
-                    <td><?php echo _('No Berserk Roar, No Roar Breaks') ?></td>
-                </tr>
-                <tr>
-                    <td><?php echo _('Touhou 18 - Unconnected Marketeers') ?></td>
-                    <td><?php echo _('No Cards') ?></td>
-                </tr>
-                <tr>
-                    <td><?php echo _('Touhou 20 - Fossilized Wonders') ?></td>
-                    <td><?php echo _('No Hyper Breaks') ?></td>
-                </tr>
-            </tbody>
-        </table>
-        <p><?php echo _('* Optional') ?></p>
-        <p><?php echo _('If a run is shown to have been cheated beyond reasonable doubt, for example by using savestates, pause buffering, or slowdown, it will be removed from the website.') ?></p>
-        <h2><?php echo _('Submission') ?></h2>
-        <p><?php echo _('At present, we do <strong>not</strong> use a submission form. If you upload your replay or video somewhere, it will eventually be noticed by us and added to the website.') ?></p>
-        <p><?php echo _('If we missed your run, you can contact <a href="https://bsky.app/profile/maribelhearn42.bsky.social" target="_blank">me</a>, ' .
-            '<a href="https://hoangcaominh.github.io/#/profile" target="_blank">Hoàng Cao Minh</a>, <a href="https://www.youtube.com/@valivanvan" target="_blank">crazy4pokemon</a> or ' .
-            '<a href="https://www.youtube.com/@allenko1122" target="_blank">AllenKO</a> to add it to the website.') ?></p>
-    </div>
-</div>
+<?php
+    // With ?layout=old set, show modal as a part of the page
+    if ($layout == 'Old') {
+        echo '<div id="information">';
+    }
+    // With ?layout=old NOT set, keep modal hidden until link clicked
+    else {
+        echo '</div><div id="modal">';
+        echo '<div class="modal_inner">';
+    }
+    echo '<h2>' . _('Information') . '</h2>';
+    echo '<p>' . _('This is an unofficial, community-maintained website.') . '</p>';
+    echo '<p>' . _('In general, you need to upload a replay or a video to an online platform for an LNN clear to be accepted on the website, ' .
+        'for example <a href="https://www.silentselene.net">Silent Selene</a> for replays or <a href="https://www.youtube.com">YouTube</a> for videos. ' .
+        'Streaming to a live streaming platform like <a href="https://twitch.tv">Twitch</a> is also accepted, provided that the VOD is not deleted. ' .
+        'Exceptions may be made on a case-by-case basis.') . '</p>
+    <p>' . _('Extra conditions are required for certain games. These conditions are as follows:') . '</p>';
+    echo '<table><thead><tr><th>' . _('Game') . '</th><th>' . _('Condition') . '</th></tr></thead>';
+    echo '<tbody><tr>';
+    echo '<td>' . _('Touhou 7 - Perfect Cherry Blossom') . '</td>';
+    echo '<td>' . _('No Border Breaks') . '</td>';
+    echo '</tr><tr>';
+    echo '<td>' . _('Touhou 8 - Imperishable Night') . '</td>';
+    echo '<td>' . _('All Spells Captured') . '</td>';
+    echo '</tr><tr>';
+    echo '<td>' . _('Touhou 12 - Undefined Fantastic Object') . '</td>';
+    echo '<td>' . _('No UFO Summons*') . '</td>';
+    echo '</tr><tr>';
+    echo '<td>' . _('Touhou 13 - Ten Desires') . '</td>';
+    echo '<td>' . _('No Trance') . '</td>';
+    echo '</tr><tr>';
+    echo '<td>' . _('Touhou 16 - Hidden Star in Four Seasons') . '</td>';
+    echo '<td>' . _('No Release') . '</td>';
+    echo '</tr><tr>';
+    echo '<td>' . _('Touhou 17 - Wily Beast and Weakest Creature') . '</td>';
+    echo '<td>' . _('No Berserk Roar, No Roar Breaks') . '</td>';
+    echo '</tr><tr>';
+    echo '<td>' . _('Touhou 18 - Unconnected Marketeers') . '</td>';
+    echo '<td>' . _('No Cards') . '</td>';
+    echo '</tr><tr>';
+    echo '<td>' . _('Touhou 20 - Fossilized Wonders') . '</td>';
+    echo '<td>' . _('No Hyper Breaks') . '</td>';
+    echo '</tr></tbody></table>';
+    echo '<p>' . _('* Optional') . '</p>';
+    echo '<p>' . _('If a run is shown to have been cheated beyond reasonable doubt, for example by using savestates, pause buffering, or slowdown, it will be removed from the website.') . '</p>';
+    echo '<h2>' . _('Submission') . '</h2>';
+    echo '<p>' . _('At present, we do <strong>not</strong> use a submission form. If you upload your replay or video somewhere, it will eventually be noticed by us and added to the website.') . '</p>';
+    echo '<p>' . _('If we missed your run, you can contact <a href="https://bsky.app/profile/maribelhearn42.bsky.social" target="_blank">me</a>, ' .
+        '<a href="https://hoangcaominh.github.io/#/profile" target="_blank">Hoàng Cao Minh</a>, <a href="https://www.youtube.com/@valivanvan" target="_blank">crazy4pokemon</a> or ' .
+        '<a href="https://www.youtube.com/@allenko1122" target="_blank">AllenKO</a> to add it to the website.') . '</p>';
+    echo '</div></div>';
+?>

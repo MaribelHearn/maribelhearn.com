@@ -545,12 +545,21 @@ function format_lm(string $lm, string $lang) {
                 </tr>
             </thead>
             <tbody><?php
+                function compare_func($a, $b) {
+                    return $a[1] < $b[1];
+                }
+                $player_wrs_arr = [];
                 foreach ($player_wrs as $player => $count) {
-                    $player_wrs->{$player} = count(array_unique($player_wrs->{$player}));
+                    array_push($player_wrs_arr, [$player, count(array_unique($count))]);
+                }
+                usort($player_wrs_arr, 'compare_func');
+                foreach ($player_wrs_arr as $key => $arr) {
+                    $player = $arr[0];
+                    $count = $arr[1];
                     $player_games->{$player} = count(array_unique($player_games->{$player}));
                     echo '<tr><td></td>';
                     echo '<td><a href="?player=' . urlencode($player) . '">' . $player . '</a></td>';
-                    echo '<td data-sort="' . $player_wrs->{$player} . '">' . $player_wrs->{$player} . '</td>';
+                    echo '<td data-sort="' . $count . '">' . $count . '</td>';
                     echo '<td data-sort="' . $player_games->{$player} . '">' . $player_games->{$player} . '</td></tr>';
                 }
             ?></tbody>
