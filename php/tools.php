@@ -1,5 +1,16 @@
 <div id='wrap' class='wrap'>
-    <?php echo wrap_top() ?>
+    <?php
+		echo wrap_top();
+
+		// check current thprac version
+		$is_locally_hosted = false;
+
+		if (file_exists('json/thprac_version.json')) {
+			$is_locally_hosted = true;
+			$thprac_version = json_decode(file_get_contents('json/thprac_version.json'));
+			$thprac_release_tag = implode('.', $thprac_version->version);
+		}
+	?>
     <p><?php
 		echo _('This page contains download links to all kinds of different patches or tools applicable to the official Touhou shooting games.');
 	?></p>
@@ -54,7 +65,8 @@
 		'allowing you to change settings or skip to patterns at will.'); ?>
 	</p>
 	<div><!--  class='main' -->
-	<p><a href='https://github.com/touhouworldcup/thprac#thprac' target='_blank'><?php echo _('Download') ?></a></p>
+	<p><a href='https://github.com/touhouworldcup/thprac#thprac' target='_blank'><?php echo _('Download') ?> (github.com)</a></p>
+	<?php if ($is_locally_hosted) echo '<p><a href="https://maribelhearn.com/mirror/thprac.v' . $thprac_release_tag . '.exe" target="_blank">' . _('Download') . _(' (maribelhearn.com mirror)') . '</a></p>' ?>
 	</div>
 	<!--<div class='side'>
 		<div id='thprac_img'></div>
@@ -74,12 +86,8 @@
 		'instructions on how to use the patcher.');
 	?></p>
 	<div>
-    	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Download' target='_blank'>
-			<?php echo _('Download') ?> (thpatch.net)
-		</a></p>
-    	<p><a href='https://maribelhearn.com/mirror/thcrap.zip' target='_blank'><?php
-			echo _('Download') . _(' (maribelhearn.com mirror)')
-		?></a></p>
+    	<p><a href='https://www.thpatch.net/wiki/Touhou_Patch_Center:Download' target='_blank'><?php echo _('Download') ?> (thpatch.net)</a></p>
+    	<p><a href='https://maribelhearn.com/mirror/thcrap.zip' target='_blank'><?php echo _('Download') . _(' (maribelhearn.com mirror)') ?></a></p>
 	</div>
     <!-- d8d9 -->
     <hr>

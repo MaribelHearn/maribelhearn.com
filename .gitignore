@@ -1,6 +1,8 @@
 # data files
 json/gensokyo.json
 json/admin.json
+json/thprac_version.json
+json/thcrap_update.json
 
 # minified files
 *-min.json
