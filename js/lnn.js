@@ -333,15 +333,34 @@ function showPlayerLNNs(player, LNNs) {
         document.getElementById(`${game}c`).setAttribute("data-sort", highestScore);
         document.getElementById(`${game}d`).setAttribute("data-sort", firstRaw);
         numberOfLNNs += 1;
+    }
 
+    // check whether the player has done all shots
+    for (const game in shots) {
         const lnnShots = document.getElementById(`${game}l`);
-        let gameShots = shots[game].length;
 
-        if (game == "IN") {
+        if (!lnnShots) {
+            continue; // player does not have this game
+        }
+
+        let gameShots = shots[game].length;
+        let playerShots = document.getElementById(`${game}s`).children.length;
+
+        if (game === "IN") {
             gameShots *= 4; // span elements are also children
         }
 
-        if (shots[game] && document.getElementById(`${game}s`).children.length == gameShots) {
+        if (game === "UFO") {
+            const currentShots = document.getElementById(`${game}s`).innerHTML.split("<br>");
+
+            for (const shot of currentShots) {
+                if (currentShots.includes(shot + " (UFOs)")) {
+                    playerShots -= 1; // avoid counting shottypes twice
+                }
+            }
+        }
+
+        if (shots[game] && playerShots >= gameShots) {
             lnnShots.innerHTML += `<br><strong>${_("(All)")}</strong>`;
         }
     }

@@ -323,14 +323,20 @@ function player_sort(string $a, string $b) {
                     $categories = curl_get($API_BASE . '/api/v1/category/?type=LNN&region=Eastern' . ($time_travel ? '&release_date__lte=' . $time_travel : ''));
                     $categories = json_decode($categories, true);
                     foreach ($categories as $key => $category) {
-                        if ($category['game'] == 'UDoALG' && in_array($category['shot'], $BANNED_CHARS) || $category['route'] == 'Gold') {
+                        $game = $category['game'];
+                        $shot = $category['shot'];
+                        $route = $category['route'];
+                        if ($game == 'UDoALG' && in_array($shot, $BANNED_CHARS) || $route == 'Gold') {
                             continue;
                         }
-                        $category_id = $category['game'] . ' ' . $category['shot'];
-                        $category_name = _($category['game']) . ' ' . _($category['shot']);
-                        if (!empty($category['route'])) {
-                            $category_id .= ' ' . $category['route'];
-                            $category_name .= ' ' . _($category['route']);
+                        if (!in_array($shot, $shots_seen->{$game})) {
+                            array_push($shots_seen->{$game}, $shot);
+                        }
+                        $category_id = $game . ' ' . $shot;
+                        $category_name = _($game) . ' ' . _($shot);
+                        if (!empty($route)) {
+                            $category_id .= ' ' . $route;
+                            $category_name .= ' ' . _($route);
                         }
                         echo '<option value="' . $category_id . '">' . $category_name . '</option>';
                     }
@@ -505,6 +511,9 @@ function player_sort(string $a, string $b) {
 		foreach ($games_seen as $key => $game) {
 			$shots .= '"' . $game . '":[';
 			foreach ($shots_seen->{$game} as $key => $shot) {
+                if ($game == 'UDoALG' && in_array($shot, $BANNED_CHARS)) {
+                    continue;
+                }
 				$shots .= '"' . $shot . '",';
 			}
 			$shots = substr($shots, 0, -1) . '],';
