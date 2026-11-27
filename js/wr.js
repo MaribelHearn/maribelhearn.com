@@ -87,6 +87,10 @@ function formatUnverified(score) {
 }
 
 function appendShottypeHeaders(game, shots) {
+    if (!shots) {
+        return;
+    }
+
     const worldTable = document.getElementById("world_tbody");
     worldTable.innerHTML = "";
     document.getElementById("world_thead").innerHTML = `<tr id='world_thead_tr'><th>${shotRoute(game)}</th></tr>`;
@@ -141,6 +145,12 @@ function prepareShowWR(game) {
     document.getElementById(`${game}_image`).classList.add("selected");
     document.getElementById("fullname").innerHTML = `<a href="?game=${game}">${fullNameNumber(game)}</a>`;
     appendShottypeHeaders(game, shots);
+
+    if (!diffs) {
+        document.getElementById("world_thead").innerHTML = "";
+        document.getElementById("world_tbody").innerHTML = "";
+        return;
+    }
 
     for (const diff of diffs) {
         appendDifficultyHeaders(game, diff, shots);

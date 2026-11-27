@@ -20,7 +20,11 @@ if (strpos($last_modified, 'Internal Server Error') !== false) {
 }
 
 $last_modified = json_decode($last_modified, true);
-$last_modified = $last_modified['results'][0]['date'];
+if (count($last_modified['results']) === 0) {
+    $last_modified = '';
+} else {
+    $last_modified = $last_modified['results'][0]['date'];
+}
 $wrs = [];
 $player_wrs = (object) [];
 $player_games = (object) [];

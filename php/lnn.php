@@ -25,7 +25,11 @@ if (strpos($last_modified, 'Internal Server Error') !== false) {
 }
 
 $last_modified = json_decode($last_modified, true);
-$last_modified = $last_modified['results'][0]['date'];
+if (count($last_modified['results']) === 0) {
+    $last_modified = '';
+} else {
+    $last_modified = $last_modified['results'][0]['date'];
+}
 $games = curl_get($API_BASE . '/api/v1/game/' . ($time_travel ? '?release_date__lte=' . $time_travel : ''));
 $games = json_decode($games, true);
 $number_of_lnns = (object) [];
@@ -236,15 +240,20 @@ function player_sort(string $a, string $b) {
                 $missing_runs += 1;
             }
         }
-        $players_shot = array_unique($players_shot);
+        $players_shot = isset($players_shot) ? array_unique($players_shot) : [];
         usort($players_shot, 'player_sort');
-        if ($layout == 'Old') echo '<td>' . count($players_shot) . '</td><td>' . implode(',', $players_shot) . '</td></tr>';
-        $number_of_lnns->{$game} = count($players_game);
-        $players_game = array_unique($players_game);
-        $number_of_players->{$game} = count($players_game);
-        sort($players_game);
-        if ($layout == 'Old') echo '</tbody><tfoot><tr><td class="foot">' . _('Overall') . '</td><td class="foot">' . $number_of_lnns->{$game} . ' (' . $number_of_players->{$game} . ')</td>' .
-        '<td class="foot">' . implode(', ', $players_game) . '</td></tr></tfoot></table></div>';
+        if ($layout == 'Old' && isset($game)) echo '<td>' . count($players_shot) . '</td><td>' . implode(',', $players_shot) . '</td></tr>';
+        if (isset($game)) {
+            $number_of_lnns->{$game} = count($players_game);
+            $players_game = array_unique($players_game);
+            $number_of_players->{$game} = count($players_game);
+            sort($players_game);
+        }
+        if ($layout == 'Old' && isset($game)) {
+            echo '</tbody><tfoot><tr><td class="foot">' . _('Overall') . '</td><td class="foot">' . $number_of_lnns->{$game} . ' (' . $number_of_players->{$game} . ')</td>' .
+            '<td class="foot">' . implode(', ', $players_game) . '</td></tr></tfoot></table></div>';
+        }
+
         // With ?layout=old NOT set, show game image layout
         if ($layout == 'New') {
             echo '<div id="newlayout"><p id="clickgame">' . _('Click a game cover to show its list of LNNs.') . '</p>';
@@ -329,7 +338,7 @@ function player_sort(string $a, string $b) {
                         if ($game == 'UDoALG' && in_array($shot, $BANNED_CHARS) || $route == 'Gold') {
                             continue;
                         }
-                        if (!in_array($shot, $shots_seen->{$game})) {
+                        if (property_exists($shots_seen, $game) && !in_array($shot, $shots_seen->{$game})) {
                             array_push($shots_seen->{$game}, $shot);
                         }
                         $category_id = $game . ' ' . $shot;
