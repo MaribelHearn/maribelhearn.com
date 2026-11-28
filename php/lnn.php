@@ -225,22 +225,22 @@ function player_sort(string $a, string $b) {
                 // add player to the list (with UFOs)
                 array_push($players_shot, $player . ' (UFOs)');
             }
-            else if ($route == 'Gold') {
-                // if player is already listed, replace listing with gold listing
+            else if ($route == 'Gold' || $route == 'NoToken') {
+                // if player is already listed, replace listing with gold listing or no token listing
                 if (array_search('<span>' . $player . '</span>', $players_shot)) {
                     unset($players_shot[array_search('<span>' . $player . '</span>', $players_shot)]);
                     unset($players_game[array_search($player, $players_game)]);
                 }
-                array_push($players_shot, '<span class="gold">' . $player . '</span>');
+                array_push($players_shot, '<span class="' . strtolower($route) . '">' . $player . '</span>');
                 array_push($players_game, $player);
                 $player_lnns->{$player} -= 1;
             }
-            else if (!array_search('<span class="gold">' . $player . '</span>', $players_shot)) {
-                // add player to the list (if not already listed with gold)
+            else if (!array_search('<span class="gold">' . $player . '</span>', $players_shot) && !array_search('<span class="notoken">' . $player . '</span>', $players_shot)) {
+                // add player to the list (if not already listed with gold or no tokens)
                 array_push($players_shot, '<span>' . $player . '</span>');
             }
-            if ($player != '-' && !array_search('<span class="gold">' . $player . '</span>', $players_shot)) {
-                // avoid adding duplicate GFW LNNs (regular + gold) to the count
+            if ($player != '-' && !array_search('<span class="gold">' . $player . '</span>', $players_shot) && !array_search('<span class="notoken">' . $player . '</span>', $players_shot)) {
+                // avoid adding duplicate GFW LNNs (regular + gold) or duplicate WBaWC LNNNNs (regular + no tokens) to the count
                 array_push($players_game, $player);
             }
             if (empty($data['replay']) && empty($data['video'])) {
@@ -342,7 +342,7 @@ function player_sort(string $a, string $b) {
                         $game = $category['game'];
                         $shot = $category['shot'];
                         $route = $category['route'];
-                        if ($game == 'UDoALG' && in_array($shot, $BANNED_CHARS) || $route == 'Gold') {
+                        if ($game == 'UDoALG' && in_array($shot, $BANNED_CHARS) || $route == 'Gold' || $route == 'NoToken') {
                             continue;
                         }
                         if (property_exists($shots_seen, $game) && !in_array($shot, $shots_seen->{$game})) {

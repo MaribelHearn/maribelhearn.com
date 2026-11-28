@@ -138,6 +138,10 @@ a:link.dropdown_button, a:visited.dropdown_button {
     background-color: inherit;
     color: gold;
 }
+.notoken {
+    background-color: darkred;
+    color: white;
+}
 .litepicker .container__days .day-item:not(.is-today) {
     color: white !important;
 }

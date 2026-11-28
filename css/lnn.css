@@ -73,6 +73,10 @@ tr:not(.irregular_tr):nth-child(even), tr.irregular_tr:nth-child(odd) {
     font-weight: bold;
     background-color: gold;
 }
+.notoken {
+    font-weight: bold;
+    color: darkred;
+}
 #wrap:after {
     content: "\200C";
     display: block;

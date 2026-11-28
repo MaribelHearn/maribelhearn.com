@@ -132,7 +132,7 @@ function showLNNtable(game, LNNs) {
             continue;
         }
 
-        if (currentShot != shot || !["UFO", "GFW"].includes(game) && currentRoute != route) {
+        if (currentShot != shot || !["UFO", "GFW", "WBaWC"].includes(game) && currentRoute != route) {
             if (currentShot !== "") {
                 document.getElementById(`${currentShot}${currentRoute}n`).innerHTML = shotCount;
                 shotCount = 0;
@@ -161,6 +161,11 @@ function showLNNtable(game, LNNs) {
             continue;
         }
 
+        if (route === "NoToken" && document.getElementById(player + shot)) {
+            document.getElementById(player + shot).classList.add("notoken");
+            continue;
+        }
+
         if (player !== '-') {
             players[player] = [shot];
         }
@@ -172,7 +177,7 @@ function showLNNtable(game, LNNs) {
         }
 
         const shotElement = document.getElementById(`${shot}${currentRoute}`);
-        shotElement.innerHTML += `, <span id='${player}${shot}'${route === "Gold" ? " class='gold'" : ""}>${player}</span>`;
+        shotElement.innerHTML += `, <span id='${player}${shot}'${route === "Gold" ? " class='gold'" : ""}${route === "NoToken" ? " class='notoken'" : ""}>${player}</span>`;
         
         if (route == "UFOs") {
             shotElement.innerHTML += " (UFOs)";
@@ -264,6 +269,7 @@ function showPlayerLNNs(player, LNNs) {
     let numberOfLNNs = 0;
     let currentGame = "";
     let highestScore = 0;
+    let goldOrNoToken = false;
     let first, firstRaw;
     const searchTable = document.getElementById("search_tbody");
     searchTable.innerHTML = "";
@@ -308,10 +314,15 @@ function showPlayerLNNs(player, LNNs) {
 
         date = (!data.date ? _("Unknown") : formatDate(data.date));
 
-
         if (game == "GFW" && data.category.route == "Gold") {
             document.getElementById(`${game}s`).innerHTML += `<span class='gold'>${_(data.category.shot)} (Gold)</span>`;
             numberOfLNNs -= 1;
+            goldOrNoToken = true;
+        }
+        else if (game == "WBaWC" && data.category.route == "NoToken") {
+            document.getElementById(`${game}s`).innerHTML += `<span class='notoken'>${_(data.category.shot)} (No Tokens)</span>`;
+            numberOfLNNs -= 1;
+            goldOrNoToken = true;
         }
         else {
             document.getElementById(`${game}s`).innerHTML += _(data.category.shot);
@@ -365,7 +376,10 @@ function showPlayerLNNs(player, LNNs) {
         }
     }
 
-    if (numberOfLNNs === 0) {
+    if (numberOfLNNs === 0 && goldOrNoToken) {
+        numberOfLNNs += 1;
+    }
+    else if (numberOfLNNs === 0) {
         document.getElementById("category").value = "";
         document.getElementById("search_category").value = "";
         document.getElementById("empty_category").style.display = "none";
@@ -478,6 +492,7 @@ function showCategoryLNNs(category, LNNs) {
     const searchTable = document.getElementById("search_tbody");
     let numberOfLNNs = 0;
     let i = 0;
+    let goldOrNoToken = false;
     searchTable.innerHTML = "";
 
     for (const data of LNNs) {
@@ -511,18 +526,22 @@ function showCategoryLNNs(category, LNNs) {
         dateRaw = (!data.date ? 0 : formatDate(data.date, "raw"));
         searchTable.innerHTML += `<tr id='tr_${i}'></tr>`;
 
-        document.getElementById(`tr_${i}`).innerHTML += `<td${data.category.route === "Gold" ? " class='gold'" : ""}>${data.player}</td>`;
+        document.getElementById(`tr_${i}`).innerHTML += `<td${data.category.route === "Gold" ? " class='gold'" : ""}${data.category.route === "NoToken" ? " class='notoken'" : ""}>${data.player}</td>`;
         //document.getElementById(`tr_${i}`).innerHTML += `<td${data.category.route === "Gold" ? " class='gold'" : ""}><a href="?player=${data.player}">${data.player}</a></td>`;
         document.getElementById(`tr_${i}`).innerHTML += `<td data-sort="${scoreSort}">${score}</td><td>${replay}</td><td>${video}</td><td data-sort="${dateRaw}">${date}</td>`;
         numberOfLNNs += 1;
         i += 1;
 
-        if (data.category.route === "Gold") {
+        if (data.category.route === "Gold" || data.category.route === "NoToken") {
+            goldOrNoToken = true;
             numberOfLNNs -= 1;
         }
     }
 
-    if (numberOfLNNs === 0) {
+    if (numberOfLNNs === 0 && goldOrNoToken) {
+        numberOfLNNs += 1;
+    }
+    else if (numberOfLNNs === 0) {
         document.getElementById("player").value = "";
         document.getElementById("search_player").value = "";
         document.getElementById("empty_player").style.display = "none";
