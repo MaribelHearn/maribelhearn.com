@@ -4,6 +4,7 @@ global $is_mobile;
 $MAX_SCORE = 9999999990;
 $RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_limit']), 1) : 15;
 $time_travel = (isset($_COOKIE['time_travel']) ? $_COOKIE['time_travel'] : false);
+$time_travel = (!empty($_GET['time_travel']) ? $_GET['time_travel'] : $time_travel);
 $layout = (isset($_GET['layout']) ? 'Old' : 'New');
 
 $last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&date__isnull=False&type=Score&limit=1' . ($time_travel ? '&date__lte=' . $time_travel : ''));
@@ -182,17 +183,17 @@ function format_lm(string $lm, string $lang) {
             '</div>';
         }
     ?>
-    <div id='checkboxes' class='contents'>
+    <form id='checkboxes' class='contents'>
         <p>
             <label for='recent_limit'><?php echo _('Number of Recent Records') ?></label>
-            <input id='recent_limit' type='number' value='<?php echo (isset($_COOKIE['recent_limit']) ? $_COOKIE['recent_limit'] : 15) ?>' min=1>
+            <input id='recent_limit' <?php if ($layout == 'Old') echo 'name="recent_limit"' ?> type='number' value='<?php echo (isset($_COOKIE['recent_limit']) ? $_COOKIE['recent_limit'] : 15) ?>' min=1>
         </p><p>
             <label for='time_travel'><?php echo _('Time Travel') ?></label>
-            <input id='time_travel' type='text'>
+            <input id='time_travel' <?php if ($layout == 'Old') echo 'name="time_travel"' ?> type='text'>
         </p><p>
-            <input id='save_changes' type='button' value='<?php echo _('Save Changes') ?>'>
+            <input id='save_changes' <?php if ($layout == 'Old') { echo 'type="submit"'; } else { echo 'type="button"'; } ?> value='<?php echo _('Save Changes') ?>'>
         </p>
-    </div>
+    </form>
     <div id='overall'>
         <h2><?php echo _('Overall Records') ?></h2>
         <div class='overflow_mobile'><table class='sortable'>

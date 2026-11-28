@@ -161,6 +161,23 @@ function set_theme_cookie() {
     }
 }
 
+function set_other_cookie($name) {
+    if (is_localhost($_SERVER['REMOTE_ADDR'])) {
+        setcookie($name, $_GET[$name], array(
+            'expires' => 2147483647,
+            'path' => '/',
+            'samesite' => 'Strict'
+        ));
+    } else {
+        setcookie($name, $_GET[$name], array(
+            'expires' => 2147483647,
+            'path' => '/',
+            'secure' => true,
+            'samesite' => 'Strict'
+        ));
+    }
+}
+
 function set_lang_cookie() {
     if (empty($_GET['hl']) || $_GET['hl'] == 'en-gb' || $_GET['hl'] == 'en') {
         $lang = 'en_GB';

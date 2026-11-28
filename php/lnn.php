@@ -9,6 +9,7 @@ $ALL_LNN = array_merge($PC98_LNN, $WINDOWS_LNN);
 $RECENT_LIMIT = isset($_COOKIE['recent_limit']) ? max(intval($_COOKIE['recent_limit']), 1) : 15;
 $include_vs = (isset($_COOKIE['include_vs']) ? true : false);
 $time_travel = (isset($_COOKIE['time_travel']) ? $_COOKIE['time_travel'] : false);
+$time_travel = (!empty($_GET['time_travel']) ? $_GET['time_travel'] : $time_travel);
 $layout = (isset($_GET['layout']) ? 'Old' : 'New');
 
 $last_modified = curl_get($API_BASE . '/api/v1/replay/?ordering=-date&date__isnull=False&type=LNN&limit=1' . ($time_travel ? '&date__lte=' . $time_travel : ''));
@@ -41,7 +42,7 @@ $game_nums = (object) [];
 $total_players = 0;
 $missing_runs = 0;
 
-if ($include_vs) {
+if ($include_vs !== false) {
     $PC98_LNN = ['HRtP', 'SoEW', 'PoDD', 'LLS', 'MS'];
     $WINDOWS_LNN = ['EoSD', 'PCB', 'IN', 'MoF', 'SA', 'UFO', 'GFW', 'TD', 'DDC', 'LoLK', 'HSiFS', 'WBaWC', 'UM', 'UDoALG', 'FW'];
     $ALL_LNN = array_merge($PC98_LNN, $WINDOWS_LNN);
@@ -145,17 +146,20 @@ function player_sort(string $a, string $b) {
             '</a></p></div>';
         }
     ?>
-    <div id='checkboxes' class='contents'>
+    <form id='checkboxes' class='contents'>
         <p>
             <label for='recent_limit'><?php echo _('Number of Recent LNNs') ?></label>
-            <input id='recent_limit' type='number' value='<?php echo (isset($_COOKIE['recent_limit']) ? $_COOKIE['recent_limit'] : 15) ?>' min=1>
+            <input id='recent_limit' <?php if ($layout == 'Old') echo 'name="recent_limit"' ?> type='number' value='<?php echo (isset($_COOKIE['recent_limit']) ? $_COOKIE['recent_limit'] : 15) ?>' min=1>
         </p><p>
             <label for='time_travel'><?php echo _('Time Travel') ?></label>
-            <input id='time_travel' type='text'>
-        </p><p>
-            <input id='save_changes' type='button' value='<?php echo _('Save Changes') ?>'>
+            <input id='time_travel' <?php if ($layout == 'Old') echo 'name="time_travel"' ?> type='text'>
+        </p><?php if ($layout == 'Old') {
+            echo '<p><label for="include_vs">' . _('Include Versus games') . '</label>';
+            echo '<input id="include_vs" name="include_vs" type="checkbox" value="true"' . ($include_vs !== false ? ' checked' : '') . '></p>';
+        } ?><p>
+            <input id='save_changes' <?php if ($layout == 'Old') { echo 'type="submit"'; } else { echo 'type="button"'; } ?> value='<?php echo _('Save Changes') ?>'>
         </p>
-    </div>
+    </form>
     <h2 id='lnns'><?php echo _('LNN Lists') ?></h2>
     <?php
         // With ?layout=old set, show classic all games layout
@@ -173,6 +177,9 @@ function player_sort(string $a, string $b) {
                 $sheet = '_2';
             }
             if (!in_array($game, $games_seen)) {
+                if ($include_vs === false && in_array($game, $pvp)) {
+                    continue;
+                }
                 if (!empty($games_seen)) {
                     $players_shot = array_unique($players_shot);
                     sort($players_shot);
@@ -204,7 +211,7 @@ function player_sort(string $a, string $b) {
                 $players_shot = [];
                 if ($layout == 'Old') echo '<tr><td class="nowrap">' . format_shot($game, $shot) . '</td>';
             }
-            if ($include_vs || !in_array($game, $pvp)) {
+            if ($include_vs !== false || !in_array($game, $pvp)) {
                 if (!isset($player_lnns->{$player})) {
                     $player_lnns->{$player} = 1;
                     $player_games->{$player} = [$game];
@@ -261,7 +268,7 @@ function player_sort(string $a, string $b) {
             $second_row = false;
             foreach ($games as $key => $data) {
                 $game = $data['short_name'];
-                if (!$include_vs && in_array($game, $pvp)) {
+                if ($include_vs === false && in_array($game, $pvp)) {
                     continue;
                 }
                 if ($game == 'PoFV') {
@@ -279,7 +286,7 @@ function player_sort(string $a, string $b) {
                     '<span class="full_name tooltip">' . $full_names->{$game} . '</span></span>';
                 }
             }
-            if (!$include_vs) {
+            if ($include_vs === false) {
                 echo '<br><br>';
                 foreach ($pvp as $key => $game) {
                     if (!property_exists($full_names, $game)) {
@@ -427,10 +434,10 @@ function player_sort(string $a, string $b) {
     </div>
     <div id='overall'>
         <h2><?php echo _('Overall Count'); ?></h2>
-        <div class='center'>
-            <input id='showversus2' type='checkbox'>
-            <label id='label_versus2' for='showversus2'><?php echo _('Include Versus games') ?></label>
-        </div>
+        <?php if ($layout == 'New') {
+            echo '<div class="center"><input id="showversus2" type="checkbox">';
+            echo '<label id="label_versus2" for="showversus2">' . _('Include Versus games') . '</label></div>';
+        } ?>
         <table class='sortable'>
             <thead>
                 <tr>
@@ -445,7 +452,7 @@ function player_sort(string $a, string $b) {
                     $total_lnns = 0;
                     if (!empty($number_of_lnns)) {
                         foreach ($number_of_lnns as $game => $count) {
-                            if (!$include_vs && in_array($game, $pvp)) {
+                            if ($include_vs === false && in_array($game, $pvp)) {
                                 continue;
                             }
                             if ($game_nums->{$game} < 6 || $count > 0) {
@@ -473,10 +480,10 @@ function player_sort(string $a, string $b) {
     </div>
     <div id='players'>
         <h2><?php echo _('Player Statistics') ?></h2>
-        <div class='center'>
-            <input id='showversus3' type='checkbox'>
-            <label id='label_versus3' for='showversus3'><?php echo _('Include Versus games') ?></label>
-        </div>
+        <?php if ($layout == 'New') {
+            echo '<div class="center"><input id="showversus3" type="checkbox">';
+            echo '<label id="label_versus3" for="showversus3">' . _('Include Versus games') . '</label></div>';
+        } ?>
         <table id='ranking' class='sortable'>
             <thead>
                 <tr>

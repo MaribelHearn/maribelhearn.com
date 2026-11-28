@@ -82,11 +82,23 @@
     $favicon_dir = ($page == 'error' ? 'https://maribelhearn.com/' : '/') . (!in_array($page, $use_index) ? 'assets/' . $dir . '/' . $page : '');
     $bg_pos = background_position($page);
 
-    // File uploads and theme changes
+    // File uploads, theme changes, WR/LNN settings
     $file_upload = handle_file_upload();
     if (!empty($_GET['theme'])) {
         set_theme_cookie();
         $page = ($page == 'index' ? '/' : preg_split('/\?/', $_SERVER['REQUEST_URI'])[0]);
+        header("Location: {$page}", true, 303);
+        exit();
+    }
+    if (!empty($_GET['recent_limit']) || !empty($_GET['include_vs'])) {
+        if (!empty($_GET['recent_limit'])) set_other_cookie('recent_limit');
+        if (filter_has_var(INPUT_GET, 'include_vs')) {
+            set_other_cookie('include_vs');
+        } else {
+            setcookie('include_vs', '', time() - 1);
+        }
+        $time_travel_query = (!empty($_GET['time_travel']) ? '&time_travel=' . $_GET['time_travel'] : '');
+        $page = ($page == 'index' ? '/' : preg_split('/\?/', $_SERVER['REQUEST_URI'])[0]) . '?layout=old' . $time_travel_query;
         header("Location: {$page}", true, 303);
         exit();
     }
@@ -126,8 +138,12 @@
     </head>
 
     <body>
-        <?php if (($page == 'wr' || $page == 'lnn') && isset($_COOKIE['time_travel'])) { echo '<p id="lastupdate" class="time_travel_banner">You are viewing the page as of ' . $_COOKIE['time_travel'] . '</p>'; } ?>
-        <?php if ($page != 'tiers') { echo '<nav data-html2canvas-ignore><div id="nav" class="wrap">' . navbar($page) . '</div></nav>'; } ?>
+        <?php if (($page == 'wr' || $page == 'lnn') && (isset($_COOKIE['time_travel']) || !empty($_GET['time_travel']))) {
+            echo '<p id="lastupdate" class="time_travel_banner">You are viewing the page as of ' . (isset($_COOKIE['time_travel']) ? $_COOKIE['time_travel'] : $_GET['time_travel']) . '</p>';
+        }
+        if ($page != 'tiers') {
+            echo '<nav data-html2canvas-ignore><div id="nav" class="wrap">' . navbar($page) . '</div></nav>';
+        } ?>
         <main><?php if ($page == 'error') { include_once 'php/error.php'; } else { include_once $page_path; } ?></main>
         <?php include_once 'php/shared/postscript.php'; ?>
     </body>
